@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.9 1995/07/02 10:08:13 torstenb Exp $
+# $Id: Makefile,v 1.10 1995/08/08 21:50:39 torstenb Exp $
 #
 
 DISTNAME=	inn1.4sec
@@ -25,7 +25,19 @@ NO_WRKSUBDIR=	YES
 pre-install:
 	mkdir -p ${PREFIX}/news
 
+update: build
+	@(cd ${WRKSRC} ; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} update)
+	@${MAKE} ${.MAKEFLAGS} post-install
+
 post-install:
+	install -c -o bin -g bin -m 0444 ${WRKSRC}/lib/libinn.a \
+		${PREFIX}/lib/
+	install -c -o bin -g bin -m 0444 ${WRKSRC}/include/inndcomm.h \
+		${PREFIX}/include/
+	install -c -o bin -g bin -m 0444 ${WRKSRC}/include/libinn.h \
+		${PREFIX}/include/
+	install -c -o bin -g bin -m 0444 ${WRKSRC}/include/qio.h \
+		${PREFIX}/include/
 	if [ -d /var/spool/news ] && [ ! -d /var/news ]; then \
 		mkdir -m 0775 -p /var/spool/news/over.view; \
 		chown news.news /var/spool/news/over.view; \
@@ -33,6 +45,9 @@ post-install:
 		mkdir -m 0775 -p /var/news/over.view; \
 		chown news.news /var/news/over.view; \
 	fi
+	-mkdir ${PREFIX}/news/locks
+	chown news.news ${PREFIX}/news/locks
+	chmod 0755 ${PREFIX}/news/locks
 	gzip -9nf ${PREFIX}/man/man1/convdate.1 ${PREFIX}/man/man1/getlist.1 \
 	${PREFIX}/man/man1/grephistory.1 ${PREFIX}/man/man1/inews.1 \
 	${PREFIX}/man/man1/innconfval.1 ${PREFIX}/man/man1/installit.1 \
