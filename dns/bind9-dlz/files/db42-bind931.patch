@@ -1,0 +1,41 @@
+--- configure.orig	Wed Mar 16 22:05:10 2005
++++ configure	Wed Mar 16 22:11:32 2005
+@@ -4919,7 +4919,7 @@
+                         DLZ_BDB_LIB="yes"
+ 
+                         # check other locations for includes.
+-                        bdb_incdirs="/ /db41/ /db4/ /db/"
++                        bdb_incdirs="/ /db42/ /db41/ /db4/ /db/"
+ 			for d in $bdb_incdirs
+                         do
+ 				if test -f $use_dlz_bdb/include${d}db.h
+@@ -4934,14 +4934,14 @@
+                                 echo "$as_me:$LINENO: result: not found" >&5
+ echo "${ECHO_T}not found" >&6
+                                 { { echo "$as_me:$LINENO: error: Berkeley DB header was not found in $use_dlz_bdb/include, \
+-$use_dlz_bdb/include/db41, $use_dlz_bdb/include/db4 or $use_dlz_bdb/include/db" >&5
++$use_dlz_bdb/include/db42, $use_dlz_bdb/include/db41, $use_dlz_bdb/include/db4 or $use_dlz_bdb/include/db" >&5
+ echo "$as_me: error: Berkeley DB header was not found in $use_dlz_bdb/include, \
+-$use_dlz_bdb/include/db41, $use_dlz_bdb/include/db4 or $use_dlz_bdb/include/db" >&2;}
++$use_dlz_bdb/include/db42, $use_dlz_bdb/include/db41, $use_dlz_bdb/include/db4 or $use_dlz_bdb/include/db" >&2;}
+    { (exit 1); exit 1; }; }
+                         fi
+ 
+ 			# look for libname other than libdb.so
+-                        bdb_libnames="db41 db-4.1 db"
++                        bdb_libnames="db-4.2 db42 db41 db-4.1 db"
+ 			for d in $bdb_libnames
+                         do
+ 				if test -f $use_dlz_bdb/lib/lib${d}.so
+@@ -4954,9 +4954,9 @@
+                         then
+                                 echo "$as_me:$LINENO: result: not found" >&5
+ echo "${ECHO_T}not found" >&6
+-                                { { echo "$as_me:$LINENO: error: Berkeley DB library libdb41.so, libdb-4.1.so or libdb.so could not be found \
++                                { { echo "$as_me:$LINENO: error: Berkeley DB library libdb-4.2.so, libdb42.so libdb41.so, libdb-4.1.so, or libdb.so could not be found \
+ in $use_dlz_bdb/lib" >&5
+-echo "$as_me: error: Berkeley DB library libdb41.so, libdb-4.1.so or libdb.so could not be found \
++echo "$as_me: error: Berkeley DB library libdb-4.2.so, libdb42.so, libdb41.so, libdb-4.1.so or libdb.so could not be found \
+ in $use_dlz_bdb/lib" >&2;}
+    { (exit 1); exit 1; }; }
+                         fi
