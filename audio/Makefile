@@ -66,7 +66,13 @@
     SUBDIR += splaytk
     SUBDIR += tclmidi
     SUBDIR += timidity
-    SUBDIR += timidity++
+    sUBDIR += timidity++
+    SUBDIR += timidity++-emacs
+    SUBDIR += timidity++-gtk
+    SUBDIR += timidity++-slang
+    SUBDIR += timidity++-motif
+    SUBDIR += timidity++-xaw
+    SUBDIR += timidity++-xskin
     SUBDIR += tosha
     SUBDIR += tracker
     SUBDIR += waveplay
