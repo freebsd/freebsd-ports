@@ -70,9 +70,7 @@ INSTALL_TARGET?=install-arch-dep
 FILESDIR=	${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}/files
 PLIST?=		${PKGLDIR}/PLIST
 
-.include	<bsd.port.pre.mk>
-
-XEMACS_MAJOR_VER?=	${.CURDIR:S!^${PORTSDIR}/editors/xemacs!!:S!-mule$!!}
+XEMACS_MAJOR_VER?=	21
 MULE_PORT=		yes
 PKGNAMEEXT?=		-mule
 DESCR_TMPL?=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-mule/files/DESCR.tmpl

@@ -6,9 +6,7 @@
 # $FreeBSD$
 #
 
-.include	<bsd.port.pre.mk>
-
-XEMACS_MAJOR_VER=	${.CURDIR:S!^${PORTSDIR}/japanese/xemacs!!:S!-wnn4$!!}
+XEMACS_MAJOR_VER=	21
 WNN4=			yes
 
 .include	"${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-canna/Makefile"

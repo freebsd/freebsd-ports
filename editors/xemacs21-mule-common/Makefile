@@ -22,9 +22,7 @@
 #	LIB_INPUT_METHOD  : LIB_DEPENDS list of Input Methods
 #	BUILD_INPUT_METHOD: BUILD_DEPENDS list of Input Methods
 
-.include <bsd.port.pre.mk>
-
-XEMACS_MAJOR_VER=	${.CURDIR:S!^${PORTSDIR}/editors/xemacs!!:S!-mule-common$!!}
+XEMACS_MAJOR_VER=	21
 
 .for dir in \
 	editors/xemacs${XEMACS_MAJOR_VER}-mule \
