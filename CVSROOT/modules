@@ -7239,6 +7239,7 @@ pear-HTML_Template_IT	ports/devel/pear-HTML_Template_IT
 pear-HTML_Template_PHPLIB	ports/devel/pear-HTML_Template_PHPLIB
 pear-HTTP	ports/www/pear-HTTP
 pear-HTTP_Header	ports/www/pear-HTTP_Header
+pear-HTTP_Request	ports/www/pear-HTTP_Request
 pear-HTTP_Session	ports/www/pear-HTTP_Session
 pear-HTTP_Upload	ports/www/pear-HTTP_Upload
 pear-I18N	ports/devel/pear-I18N
