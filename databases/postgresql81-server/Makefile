@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	postgresql
+PORTNAME?=	postgresql
 PORTVERSION?=	7.4
 PORTREVISION?=	0
 CATEGORIES?=	databases
