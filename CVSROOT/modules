@@ -443,6 +443,7 @@ avr-binutils	ports/devel/avr-binutils
 avr-gcc		ports/devel/avr-gcc
 avr-gdb		ports/devel/avr-gdb
 avr-libc	ports/devel/avr-libc
+avrdude		ports/devel/avrdude
 avrprog		ports/devel/avrprog
 awele		ports/games/awele
 awka		ports/lang/awka
