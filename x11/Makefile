@@ -150,6 +150,7 @@
     SUBDIR += wmfstatus
     SUBDIR += wmmatrix
     SUBDIR += wmmenu
+    SUBDIR += wmmsg
     SUBDIR += wmoldmenu2new
     SUBDIR += wmxss
     SUBDIR += workrave
