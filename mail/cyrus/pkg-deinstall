@@ -39,7 +39,7 @@ case $2 in
 	DEINSTALL)
 		cd ${PKG_PREFIX}
 		cyrus_conf
-		checkfile ${PKG_PREIFX}/etc/imapd.conf
+		checkfile ${PKG_PREFIX}/etc/imapd.conf
 		;;
 	POST-DEINSTALL)
 		;;
