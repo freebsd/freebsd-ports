@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	bomberclone
-PORTVERSION=	0.9.9
+PORTVERSION=	0.10.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 \
-		${PORTNAME}-data-0.7.tar.bz2
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Reimplementation of Atomic Bomber Man
@@ -34,13 +32,12 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CXXFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include"
 
 post-extract:
-	${RM} -rf ${WRKDIR}/data/tileset/default/.xvpics
-
-post-install:
-	${MKDIR} ${PREFIX}/share/bomberclone
-	${CP} -R ${WRKDIR}/data/gfx ${PREFIX}/share/bomberclone
-	${CP} -R ${WRKDIR}/data/maps ${PREFIX}/share/bomberclone
-	${CP} -R ${WRKDIR}/data/player ${PREFIX}/share/bomberclone
-	${CP} -R ${WRKDIR}/data/tileset ${PREFIX}/share/bomberclone
+	${RM} -rf ${WRKSRC}/data/tileset/cemetery/.xvpics
+	${RM} -rf ${WRKSRC}/data/tileset/hell/.xvpics
+	${CHMOD} 755 ${WRKSRC}/data/tileset/cemetery
+	${CHMOD} 755 ${WRKSRC}/data/tileset/farm
+	${CHMOD} 755 ${WRKSRC}/data/tileset/hell
+	${CHMOD} 755 ${WRKSRC}/data/tileset/sheep
+	${CHMOD} 755 ${WRKSRC}/data/tileset/supermario
 
 .include <bsd.port.mk>
