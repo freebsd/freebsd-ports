@@ -11,6 +11,7 @@
     SUBDIR += ack
     SUBDIR += acroread-jpnfont
     SUBDIR += addttfont
+    SUBDIR += another-htmllint
     SUBDIR += balsa
     SUBDIR += binder
     SUBDIR += bookview

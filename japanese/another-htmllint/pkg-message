@@ -1,0 +1,9 @@
+To activate htmllint, use Alias directive in httd.conf or symbolic link
+from ${PREFIX}/share/htmllint/html/ like as:
+
+Alias	/htmllint/	/usr/local/share/htmllint/html/
+
+<Directory /usr/local/share/htmllint/html>
+  AddHandler cgi-script	.cgi
+  Options +ExecCGI
+</Directory>

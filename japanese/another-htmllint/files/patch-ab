@@ -1,0 +1,22 @@
+--- htmllintenv.orig	Tue Aug  1 11:45:50 2000
++++ htmllintenv	Fri Sep 29 14:34:59 2000
+@@ -5,15 +5,15 @@
+ #   アクセス権をうまく工夫して、他人から見えないようにしてください。
+ 
+ # CGI 用ディレクトリ (絶対パスかCGI相対パスで指定、なるべく絶対パスにしてください)
+-$RULEDIR  = './';        # 規則ファイルの場所
+-$LOGSDIR  = './logs/';   # ログファイルの場所
++$RULEDIR  = '%PREFIX%/share/htmllint/rule/';        # 規則ファイルの場所
++$LOGSDIR  = '%PREFIX%/share/htmllint/logs/';   # ログファイルの場所
+ $TMPDIR   = '/tmp/';     # テンポラリファイルの場所
+-$IMGDIR   = './';        # イメージファイルの場所
++$IMGDIR   = '%PREFIX%/share/htmllint/html/';        # イメージファイルの場所
+ $TAGSLIST = '';          # タグ一覧キャッシュ用の場所 (空ならキャッシュしない)
+                          # 設定するときはアクセス権を適当に与えておくこと
+ 
+ # HTML 用ディレクトリ (CGI が出力する HTML 中で使う)
+-$HTMLDIR    = './';                     # HTMLファイルの場所
++$HTMLDIR    = '';                     # HTMLファイルの場所
+ $GATEWAYURL = $HTMLDIR.'htmllint.html'; # ゲイトウェイサーヴィス HTML
+ $EXPLAIN    = $HTMLDIR.'explain.html';  # 解説用 HTML (HTML用)
+ $CGIROOT    = $HTMLDIR;                 # CGIの場所
