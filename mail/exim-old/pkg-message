@@ -9,7 +9,10 @@ as a comprehensive FAQ list, are available on the Exim web site:
 
 	http://www.exim.org/
 
-To activate Exim:
+To replace sendmail with Exim:
 
 1) Create exim/configure from exim/configure.default .
-2) Use the rc.d/exim/sh script to start the Exim daemon .
+2) Stop the sendmail daemon.
+3) Adjust mailer.conf(5) and set 'sendmail_enable' and 'sendmail_flags'
+   as appropriate in rc.conf(5).
+4) Start exim with appropriate command-line options.
