@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grip
-PORTVERSION=	2.95
+PORTVERSION=	2.96
 CATEGORIES=	audio
 MASTER_SITES=	http://www.nostatic.org/grip/
 EXTRACT_SUFX=	.tgz
