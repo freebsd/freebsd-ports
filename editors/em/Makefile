@@ -1,4 +1,4 @@
-# New ports collection makefile for:	MicroEmacs/PK-TOY 4.0.16
+# New ports collection makefile for:	MicroEmacs/PK-TOY
 # Date created:         27 Jan 2001
 # Whom:                 Tadashi Yumoto
 #
@@ -7,13 +7,21 @@
 
 PORTNAME=	em
 PORTVERSION=	4.0.16
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www3.famille.ne.jp/~ncc1701/em/
-DISTNAME=	em-4.0.16-lt
+DISTNAME=	${PORTNAME}-${PORTVERSION}-lt
 
 MAINTAINER=	ports@FreeBSD.org
 
-post-install:
-	strip ${PREFIX}/bin/em
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" DEFINES=""
+
+pre-patch:
+	@${PERL} -pi -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/epath.h
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/em ${PREFIX}/bin/em
+	${INSTALL_DATA} ${WRKSRC}/emacs.hlp ${PREFIX}/etc/emacs.hlp
+	${INSTALL_DATA} ${WRKSRC}/emacs.rc ${PREFIX}/etc/dot.emacsrc
 
 .include <bsd.port.mk>
