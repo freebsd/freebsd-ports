@@ -1,8 +1,8 @@
 bin/jfkserver
 bin/jfkclient
-%%PORTDOCS%%share/doc/jfk/controls.txt
-%%PORTDOCS%%share/doc/jfk/jfkclient.sample
-%%PORTDOCS%%share/doc/jfk/jfkserver.sample
+%%PORTDOCS%%%%DOCSDIR%%/controls.txt
+%%PORTDOCS%%%%DOCSDIR%%/jfkclient.sample
+%%PORTDOCS%%%%DOCSDIR%%/jfkserver.sample
 share/jfk/art/bar/weapon_5.png
 share/jfk/art/bar/arrow.png
 share/jfk/art/bar/bar.png
@@ -137,7 +137,7 @@ share/jfk/art/object/obstacle/stone_0.png
 share/jfk/art/object/obstacle/tree_0.png
 share/jfk/levels/demolevel
 share/jfk/levels/level1
-%%PORTDOCS%%@dirrm share/doc/jfk
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/jfk/art/bar
 @dirrm share/jfk/art/font
 @dirrm share/jfk/art/ground
