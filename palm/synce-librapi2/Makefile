@@ -6,6 +6,7 @@
 
 PORTNAME=	synce-librapi2
 PORTVERSION=	0.8.9
+PORTREVISION=	1
 CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
@@ -19,6 +20,7 @@ ONLY_FOR_ARCHS=	i386
 
 MAN1=		pcp.1 pls.1 pmkdir.1 pmv.1 prm.1 prmdir.1 prun.1 pstatus.1 rapiconfig.1 synce-install-cab.1 synce-remove-program.1 synce-list-programs.1
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=13
 USE_ICONV=	yes
@@ -27,4 +29,10 @@ CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-libsynce=${LOCALBASE}
 
 INSTALLS_SHLIB=	yes
+
+post-patch:
+.for f in synce-install-cab.in synce-remove-program.in
+	@${REINPLACE_CMD} -e 's+bin/bash+bin/sh+' ${WRKSRC}/script/${f}
+.endfor
+
 .include <bsd.port.mk>
