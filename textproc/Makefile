@@ -61,6 +61,7 @@
     SUBDIR += html
     SUBDIR += html2fo
     SUBDIR += htmldoc
+    SUBDIR += htmlsection
     SUBDIR += info2html
     SUBDIR += info_to_html
     SUBDIR += isearch
