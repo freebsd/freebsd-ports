@@ -1,7 +1,20 @@
 bin/xml++-config
-include/libxml++-1.0/libxml++/xml++.h
+include/libxml++-1.0/libxml++/attribute.h
+include/libxml++-1.0/libxml++/dtd.h
+include/libxml++-1.0/libxml++/exceptions/exception.h
+include/libxml++-1.0/libxml++/exceptions/internal_error.h
+include/libxml++-1.0/libxml++/exceptions/parse_error.h
+include/libxml++-1.0/libxml++/libxml++.h
+include/libxml++-1.0/libxml++/node.h
+include/libxml++-1.0/libxml++/parsers/domparser.h
+include/libxml++-1.0/libxml++/parsers/parser.h
+include/libxml++-1.0/libxml++/parsers/saxparser.h
+@dirrm include/libxml++-1.0/libxml++/exceptions
+@dirrm include/libxml++-1.0/libxml++/parsers
+@dirrm include/libxml++-1.0/libxml++
+@dirrm include/libxml++-1.0
 lib/libxml++-0.1.a
 lib/libxml++-0.1.so
-lib/libxml++-0.1.so.1
+lib/libxml++-0.1.so.2
 libdata/pkgconfig/libxml++-1.0.pc
 share/aclocal/libxml++.m4
