@@ -3,12 +3,13 @@
 # Date created:		15 Jul 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/07/15 14:57:38 itojun Exp $
+# $Id: Makefile,v 1.2 1997/07/16 14:50:37 itojun Exp $
 #
 
 DISTNAME=	dc3play-970716
 CATEGORIES=	graphics
-MASTER_SITES=   ftp://ftp.csl.sony.co.jp/pub/DC-3/unix/
+MASTER_SITES=   ftp://ftp.itojun.org/pub/digi-cam/DC-3/unix/ \
+		ftp://ftp.digipri.co.jp/pub/free-software/Ricoh/DC-3/unix/
 
 MAINTAINER=	itojun@itojun.org
 
