@@ -1,0 +1,39 @@
+--- configure.in.orig	Wed Oct 17 19:06:20 2001
++++ configure.in	Wed Oct 17 19:06:41 2001
+@@ -9,36 +9,11 @@
+ dnl GCC-specific flags
+ if test x"$GCC" = x"yes"; then
+ 
+-    dnl -O2
+     changequote(<<,>>)
+     OPT_CFLAGS=`echo "$CFLAGS"|sed "s/-O[s0-9]*//g;"`
+     changequote([,])
+-    OPT_CFLAGS="$OPT_CFLAGS -O2"
+     AC_TRY_CFLAGS([$OPT_CFLAGS],[CFLAGS=$OPT_CFLAGS])
+ 
+-    dnl arch-specific flags
+-    case "$host_alias" in
+-    i?86-* | k?-*)
+-        case "$host_alias" in
+-        i386-*) OPT_CFLAGS="$CFLAGS -mcpu=i386";;
+-        i486-*) OPT_CFLAGS="$CFLAGS -mcpu=i486";;
+-        i586-*) OPT_CFLAGS="$CFLAGS -mcpu=pentium";;
+-        i686-*) OPT_CFLAGS="$CFLAGS -mcpu=pentiumpro";;
+-        k6-*)   OPT_CFLAGS="$CFLAGS -mcpu=k6";;
+-        esac
+-        AC_TRY_CFLAGS([$OPT_CFLAGS],[CFLAGS=$OPT_CFLAGS]);;
+-    sparc-*)
+-        OPT_CFLAGS="$CFLAGS -mcpu=ultrasparc -mvis"
+-        AC_TRY_CFLAGS([$OPT_CFLAGS],[CFLAGS=$OPT_CFLAGS]);;
+-    esac
+-else
+-
+-    dnl non-gcc flags - we probably need exact configuration triplets here.
+-    case "$host_alias" in
+-    sparc-sun-solaris*)
+-        OPT_CFLAGS="$CFLAGS -xCC -xmemalign"
+-        AC_TRY_CFLAGS([$OPT_CFLAGS],[CFLAGS=$OPT_CFLAGS]);;
+-    esac
+ fi
+ 
+ 

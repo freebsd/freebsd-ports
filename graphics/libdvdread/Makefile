@@ -6,23 +6,38 @@
 #
 
 PORTNAME=	libdvdread
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/
+MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
 MAINTAINER=	3d@FreeBSD.org
 
-USE_GMAKE=	yes
-USE_AUTOMAKE=	yes
-AUTOMAKE_ARGS=	--add-missing  --copy
+GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
-USE_NEWGCC=	yes
+DOC_FILES=	AUTHORS NEWS README TODO
 
-# cf the excellent goat book:
-#    http://sources.redhat.com/autobook/autobook/autobook_43.html
-post-patch:
-	@cd ${WRKSRC} && ./bootstrap
+# optional CFLAGS safeness
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+USE_AUTOCONF=	yes
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure.in
+.endif
+
+pre-everything::
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_MSG} "====> If you want to enable optimizations, please define WITH_OPTIMIZED_CFLAGS"
+.endif
+
+post-configure:
+	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
