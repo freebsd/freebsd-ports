@@ -3,19 +3,20 @@
 # Date created:         23 Jan 1998
 # Whom:                 housel@acm.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/12 21:58:07 hsu Exp $
+# $Id: Makefile,v 1.2 1998/07/14 16:15:13 jdp Exp $
 #
 
 DISTNAME=	gd20-source
 PKGNAME=	dylan-2.0
 CATEGORIES=	lang
-MASTER_SITES=	http://legend.gwydion.cs.cmu.edu/gwydion/dylan/release/
+MASTER_SITES=	http://legend.gwydion.cs.cmu.edu/gwydion/dylan/release/ http://www.freebsd.org/~hsu/ports/files/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} d2c_2_0-FreeBSD.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER= 	housel@acm.org
 
 WRKSRC=		$(WRKDIR)/src
 
-BROKEN=		"Awaiting installation of local distfile"
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS= --prefix=$(PREFIX) --srcdir=$(WRKSRC)
 CONFIGURE_ENV=	D2C="$(WRKDIR)/d2c -p$(WRKSRC)/d2c/compiler/platforms.descr"
@@ -25,7 +26,7 @@ MAKEFILE=	GNUmakefile
 ALL_TARGET=	default
 
 post-extract:
-	uudecode -p $(FILESDIR)/d2c.gz.uu | $(GUNZIP_CMD) > $(WRKDIR)/d2c
+	$(GUNZIP_CMD) -c $(DISTDIR)/d2c_2_0-FreeBSD.gz > $(WRKDIR)/d2c
 	chmod ugo+x $(WRKDIR)/d2c
 
 .include <bsd.port.mk>
