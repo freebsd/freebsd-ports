@@ -64,6 +64,7 @@ share/doc/wwwoffle/pl/README.lang
 html/README
 html/de/README.CONF.html
 html/de/Welcome.html
+html/de/index.html
 html/de/local/index.html
 html/de/messages/AddCacheInfo.html
 html/de/messages/CantRefreshPosted.html
