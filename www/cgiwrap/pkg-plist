@@ -16,8 +16,8 @@
 %%PORTDOCS%%share/doc/cgiwrap/todo.html
 %%PORTDOCS%%share/doc/cgiwrap/tricks.html
 %%PORTDOCS%%share/doc/cgiwrap/y2k.html
+www/cgi-bin/cgiwrap
+www/cgi-bin/cgiwrapd
+www/cgi-bin/nph-cgiwrap
+www/cgi-bin/nph-cgiwrapd
 %%PORTDOCS%%@dirrm share/doc/cgiwrap
-share/apache/cgi-bin/cgiwrap
-share/apache/cgi-bin/cgiwrapd
-share/apache/cgi-bin/nph-cgiwrap
-share/apache/cgi-bin/nph-cgiwrapd
