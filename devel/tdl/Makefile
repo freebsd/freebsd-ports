@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tdl
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rrbcurnow.freeuk.com/tdl/
 
@@ -19,6 +19,6 @@ MAN1=	tdl.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},; s,gcc,${CC},; \
-		s,-O2,${CFLAGS},' ${WRKSRC}/Makefile
+		s,^CFLAGS=,CFLAGS+=,' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
