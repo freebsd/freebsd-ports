@@ -1,5 +1,5 @@
---- Makefile.am.orig	Sun Aug 29 21:35:42 2004
-+++ Makefile.am	Sun Aug 29 21:37:04 2004
+--- Makefile.am.orig
++++ Makefile.am
 @@ -2,7 +2,7 @@
  
  topdir = $(prefix)
