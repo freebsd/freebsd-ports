@@ -9,7 +9,7 @@ PORTNAME=	TekNap
 PORTVERSION=	1.3.g
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.sra.co.jp/pub/os/OpenBSD/distfiles/ \
+MASTER_SITES=	http://got.net/~brian/teknap/ \
 		ftp://ftp.arnes.si/packages2/OpenBSD/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.g/g/}
 
