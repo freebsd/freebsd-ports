@@ -7,5 +7,6 @@
 #
 
 BROWSER=	navigator
+PKGMESSAGE=	../bsdi-netscape47-communicator/pkg-message
 
 .include "../bsdi-netscape47-communicator/Makefile"
