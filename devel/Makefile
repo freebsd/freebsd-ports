@@ -91,6 +91,7 @@
     SUBDIR += elib-emacs20
     SUBDIR += entity
     SUBDIR += f77flow
+    SUBDIR += fam
     SUBDIR += fastcrc
     SUBDIR += ffcall
     SUBDIR += fhist
