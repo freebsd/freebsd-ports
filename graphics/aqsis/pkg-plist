@@ -10,6 +10,7 @@ bin/teqser
 etc/ddmsock.ini
 include/aqsis.h
 include/aqsis_types.h
+include/argparse.h
 include/bitvector.h
 include/color.h
 include/exception.h
@@ -88,6 +89,7 @@ lib/libshadervm.so.0
 lib/libslparse.a
 lib/libslparse.so
 lib/libslparse.so.0
+lib/libslpp.a
 lib/libslpp.so
 lib/libslpp.so.0
 lib/libslxargs.a
