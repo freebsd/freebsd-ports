@@ -6,24 +6,26 @@
 #
 
 PORTNAME=	proftpd
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.8
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
 		ftp://ftp.stikman.com/pub/proftpd/source/ \
 		ftp://ftp.dataguard.no/pub/proftpd/distrib/source/ \
 		ftp://ftp.club-internet.fr/pub/mirrors/ftp.proftpd.org/distrib/source/
-DISTNAME=	${PORTNAME}-1.2.6
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mharo@FreeBSD.org
 COMMENT=	Highly configurable ftp daemon
 
-MAN1=	ftpcount.1 ftpwho.1
+MAN1=	ftpcount.1 ftpwho.1 ftptop.1
 MAN5=	xferlog.5
 MAN8=	proftpd.8 ftpshut.8
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_BZIP2=	YES
+USE_BZIP2=	yes
+# WANT_AUTOCONF_VER=213
+# USE_AUTOCONF=	yes
 
 CONFIGURE_ARGS=	--localstatedir=/var/run \
 		--disable-sendfile
@@ -60,7 +62,7 @@ LIBDIRS:=${LIBDIRS}:${PREFIX}/lib/mysql
 POSTGRESQL_PORT?=	databases/postgresql7
 MODULES:=${MODULES}:mod_sql:mod_sql_postgres
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-INCLUDEDIRS:=${INCLUDEDIRS}:${PREFIX}/include/pgsql
+INCLUDEDIRS:=${INCLUDEDIRS}:${PREFIX}/include
 LIBDIRS:=${LIBDIRS}:${PREFIX}/lib
 .endif
 
@@ -91,24 +93,26 @@ post-configure:
 		-e 's:/usr/bin:${PREFIX}/bin:' \
 		< ${WRKSRC}/src/proftpd.8.pre_sed > ${WRKSRC}/src/proftpd.8
 
-	@${MV} ${WRKSRC}/src/ftpshut.8 ${WRKSRC}/src/ftpshut.8.pre_sed
+	@${MV} ${WRKSRC}/utils/ftpshut.8 ${WRKSRC}/utils/ftpshut.8.pre_sed
 	@${SED}	-e 's:/usr/sbin:${PREFIX}/sbin:' \
 		-e 's:/etc:/var/run:' \
-		< ${WRKSRC}/src/ftpshut.8.pre_sed > ${WRKSRC}/src/ftpshut.8
+		< ${WRKSRC}/utils/ftpshut.8.pre_sed > ${WRKSRC}/utils/ftpshut.8
 
-	@${MV} ${WRKSRC}/src/ftpcount.1 ${WRKSRC}/src/ftpcount.1.pre_sed
+	@${MV} ${WRKSRC}/utils/ftpcount.1 ${WRKSRC}/utils/ftpcount.1.pre_sed
 	@${SED}	-e 's:/usr/bin:${PREFIX}/bin:' \
-		< ${WRKSRC}/src/ftpcount.1.pre_sed > ${WRKSRC}/src/ftpcount.1
+		< ${WRKSRC}/utils/ftpcount.1.pre_sed > ${WRKSRC}/utils/ftpcount.1
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpcount ${PREFIX}/bin/ftpcount
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpwho ${PREFIX}/bin/ftpwho
+	@${INSTALL_PROGRAM} ${WRKSRC}/ftptop ${PREFIX}/bin/ftptop
 	@${INSTALL_PROGRAM} ${WRKSRC}/proftpd ${PREFIX}/libexec/proftpd
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpshut ${PREFIX}/sbin/ftpshut
-	@${INSTALL_MAN} ${WRKSRC}/src/ftpcount.1 ${PREFIX}/man/man1/ftpcount.1
-	@${INSTALL_MAN} ${WRKSRC}/src/ftpwho.1 ${PREFIX}/man/man1/ftpwho.1
+	@${INSTALL_MAN} ${WRKSRC}/utils/ftpcount.1 ${PREFIX}/man/man1/ftpcount.1
+	@${INSTALL_MAN} ${WRKSRC}/utils/ftpwho.1 ${PREFIX}/man/man1/ftpwho.1
+	@${INSTALL_MAN} ${WRKSRC}/utils/ftptop.1 ${PREFIX}/man/man1/ftptop.1
 	@${INSTALL_MAN} ${WRKSRC}/src/xferlog.5 ${PREFIX}/man/man5/xferlog.5
-	@${INSTALL_MAN} ${WRKSRC}/src/ftpshut.8 ${PREFIX}/man/man8/ftpshut.8
+	@${INSTALL_MAN} ${WRKSRC}/utils/ftpshut.8 ${PREFIX}/man/man8/ftpshut.8
 	@${INSTALL_MAN} ${WRKSRC}/src/proftpd.8 ${PREFIX}/man/man8/proftpd.8
 	@${INSTALL_DATA} \
 		${WRKSRC}/sample-configurations/basic.conf ${PREFIX}/etc/proftpd.conf.default
