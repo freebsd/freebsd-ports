@@ -1,3 +1,4 @@
 bin/btedit
 bin/dbverify
 bin/llines
+lib/libarch.a
