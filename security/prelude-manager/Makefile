@@ -18,8 +18,9 @@ LIB_DEPENDS+=	prelude.1:${PORTSDIR}/security/libprelude \
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc \
-			--program-prefix="" --localstatedir=/var
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc \
+			--localstatedir=/var
 
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--disable-openssl
