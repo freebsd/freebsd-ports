@@ -1,22 +1,21 @@
 # New ports collection makefile for:	code2html
-# Version required:			0.8.9
+# Version required:			0.8.9a
 # Date created:				01 October 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	code2html-0.8.9
+DISTNAME=	code2html-0.8.9a
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://code2html.sourceforge.net/pub/code2html/all/ \
-		http://www.cosy.sbg.ac.at/~ppalfrad/code2html/all/latest/
+		http://www.cosy.sbg.ac.at/~ppalfrad/code2html/all/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
 RUN_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/code2html-8.8.9
 
 MAN1=		code2html.1
 
