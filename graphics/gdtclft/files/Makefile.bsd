@@ -9,8 +9,16 @@ SRCS		= gdhandle.c gdCmd.c
 PREFIX		?=/usr/local
 TCL_VER		?=8.2
 
+.if exists(${PREFIX}/lib/tcl${TCL_VER}/tclConfig.sh)
+# If for some reason  the file does not exist -- make the best guess. In
+# reality, it will exist by the time we are actually doing the build, so
+# the quality of the guess does not matter. But we still try well. -mi
 TCL_STUB_LIB_SPEC!=	. ${PREFIX}/lib/tcl${TCL_VER}/tclConfig.sh; \
 		echo $$TCL_STUB_LIB_SPEC
+.else
+TCL_STUB_LIB_SPEC=	-L${PREFIX}/lib -ltclstub${TCL_VER:S/.//}
+.endif
+
 LDADD		= -L${PREFIX}/lib -lgd -lttf -lpng -lz -lm ${TCL_STUB_LIB_SPEC}
 
 CFLAGS		+=-I${PREFIX}/include/tcl${TCL_VER} -I${PREFIX}/include/gd
