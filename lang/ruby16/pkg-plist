@@ -1,6 +1,6 @@
-%%IF_DEFAULT%%bin/irb%%RUBY_R%%
+%%IF_DEFAULT%%bin/irb
 bin/irb%%RUBY_SUFFIX%%
-%%IF_DEFAULT%%bin/ruby%%RUBY_R%%
+%%IF_DEFAULT%%bin/ruby
 bin/ruby%%RUBY_SUFFIX%%
 lib/lib%%RUBY_NAME%%.so
 lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%

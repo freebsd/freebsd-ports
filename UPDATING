@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050205:
+  AFFECTS: users of lang/ruby16_r, lang/ruby18_r and lang/ruby18
+  AUTHOR: knu@FreeBSD.org
+
+  The slippery pthread support for systems prior to 502102 has been
+  dropped and lang/ruby16_r and lang/ruby18_r ports have been removed,
+  since no one seems to appreciate the partially working solution.
+
+  Good news is that the pthread support of lang/ruby18 is now enabled
+  by default for newer systems, which means the ruby interpreter is
+  linked with libpthread.  This will allow threaded extension
+  libraries to run and work properly on those systems.
+
 20050201:
   AFFECTS: users of lang/perl5 and lang/perl5.8
   AUTHOR: tobez@FreeBSD.org

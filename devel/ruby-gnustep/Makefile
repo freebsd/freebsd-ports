@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep
 PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel ruby
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/libs/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -36,7 +36,6 @@ RUN_DEPENDS+=	${COMBOLIBDIR}/libobjc.so:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
 .endif
 
 USE_RUBY=	yes
-RUBY_WITH_PTHREAD=	yes
 USE_GMAKE=	yes
 CC=		gcc32
 CXX=		g++32
@@ -60,6 +59,9 @@ COMBOLIBDIR=	${SYSLIBDIR}
 MAKE_ENV+=	GNUSTEP_FLATTENED=yes
 
 .include <bsd.port.pre.mk>
+.if ${OSVERSION} < 502102
+BROKEN=		"Systems prior to FreeBSD 502102 are out of support"
+.endif
 
 .if ${MACHINE_ARCH} == "i386"
 GNU_ARCH=	ix86

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ruby${RUBY_R}
+PORTNAME=	ruby
 PORTVERSION=	${RUBY_PORTVERSION}
 PORTREVISION=	1
 CATEGORIES=	lang ruby ipv6
@@ -68,7 +68,7 @@ CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
-MLINKS=		${RUBY_NAME}.1 ruby${RUBY_R}.1
+MLINKS=		${RUBY_NAME}.1 ruby.1
 IF_DEFAULT=	""
 .else
 IF_DEFAULT=	"@comment "
@@ -115,10 +115,9 @@ post-install:
 .endif
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 # Link just installed "ruby" to "ruby16", etc.
-	${LN} -f ${RUBY_WITH_SUFFIX} ${RUBY_WITHOUT_SUFFIX}${RUBY_R}
-	${LN} -f ${PREFIX}/man/man1/${RUBY_NAME}.1 ${PREFIX}/man/man1/ruby${RUBY_R}.1
+	${LN} -f ${RUBY_WITH_SUFFIX} ${RUBY_WITHOUT_SUFFIX}
 	for f in ${INSTALLED_SCRIPTS}; do \
-		${LN} -f $${f}${RUBY_SUFFIX} $${f}${RUBY_R}; \
+		${LN} -f $${f}${RUBY_SUFFIX} $${f}; \
 	done
 .endif
 	${LDCONFIG} -m ${PREFIX}/lib

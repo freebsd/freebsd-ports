@@ -27,7 +27,6 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_NO_BUILD_DEPENDS	- Says that the port should not build-depend on ruby.
 # RUBY_NO_RUN_DEPENDS	- Says that the port should not run-depend on ruby.
 # USE_LIBRUBY		- Says that the port uses libruby.
-# RUBY_WITH_PTHREAD	- Says that the port needs to be compiled with pthread.
 # USE_RUBY_EXTCONF	- Says that the port uses extconf.rb to configure.  Implies USE_RUBY.
 # RUBY_EXTCONF		- Set to the alternative name of extconf.rb (default: extconf.rb).
 # RUBY_EXTCONF_SUBDIRS	- Set to list of subdirectories, if multiple modules are included.
@@ -70,8 +69,7 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 #
 # RUBY_SHLIBVER		- Major version of libruby (see below for current value).
 # RUBY_ARCH		- Set to target architecture name. (e.g. i386-freebsdelf4.3)
-# RUBY_R		- Extra suffix only defined when RUBY_WITH_PTHREAD is defined. (_r)
-# RUBY_SUFFIX		- Suffix for ruby binaries and directories (${RUBY_VER:S/.//}${RUBY_R}).
+# RUBY_SUFFIX		- Suffix for ruby binaries and directories (${RUBY_VER:S/.//}).
 # RUBY_WITHOUT_SUFFIX	- Always ${LOCALBASE}/bin/ruby.
 # RUBY_WITH_SUFFIX	- Always ${RUBY_WITHOUT_SUFFIX}${RUBY_SUFFIX}.
 # RUBY_NAME		- Ruby's name with trailing suffix.
@@ -156,9 +154,9 @@ MASTER_SITE_SUBDIR_RUBY=	snapshots
 .endif
 #      defined(RUBY_VER) && ${RUBY_VER} == 1.8
 
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL:C/\..*//}${RUBY_R}
+CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL:C/\..*//}
 
-RUBY_ARCH?=		${ARCH}-freebsd${OSREL:C/\..*//}${RUBY_R}
+RUBY_ARCH?=		${ARCH}-freebsd${OSREL:C/\..*//}
 RUBY_NAME?=		ruby${RUBY_SUFFIX}
 
 _RUBY_SYSLIBDIR?=	${LOCALBASE}/lib
@@ -177,7 +175,7 @@ RUBY_WRKSRC?=		${WRKDIR}/${RUBY_DISTNAME}
 
 RUBY_VERSION_CODE?=	${RUBY_VERSION:S/.//g}
 RUBY_VER=		${RUBY_VERSION:R}
-RUBY_SUFFIX=		${RUBY_VER:S/.//}${RUBY_R}
+RUBY_SUFFIX=		${RUBY_VER:S/.//}
 
 RUBY_WITHOUT_SUFFIX?=	${LOCALBASE}/bin/ruby
 RUBY_WITH_SUFFIX?=	${RUBY_WITHOUT_SUFFIX}${RUBY_SUFFIX}
@@ -187,21 +185,7 @@ RUBY_SHLIBVER?=		${RUBY_VER:S/.//}
 
 RUBY_CONFIGURE_ARGS+=	--program-prefix=""
 
-# PORTDIRNAME is not defined yet
-_IS_RUBY_R_PORT=	${.CURDIR:M*_r}
-.if ${OSVERSION} >= 501000 && empty(_IS_RUBY_R_PORT)
-.undef RUBY_WITH_PTHREAD
-.endif
-
-.if defined(RUBY_WITH_PTHREAD)
-RUBY_CONFIGURE_ARGS+=	--with-libc_r=yes
-RUBY_R=			_r
-.else
-RUBY_CONFIGURE_ARGS+=	--with-libc_r=no
-RUBY_R=			# none
-.endif
-
-DEPENDS_ARGS+=		RUBY_VER="${RUBY_VER}" RUBY_R="${RUBY_R}"
+DEPENDS_ARGS+=		RUBY_VER="${RUBY_VER}"
 
 RUBY_CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
 
@@ -213,7 +197,7 @@ RUBY_RDOC?=		${LOCALBASE}/bin/rdoc
 
 # Ports
 RUBY_BASE_PORT?=	lang/ruby${RUBY_VER:S/.//}
-RUBY_PORT?=		${RUBY_BASE_PORT}${RUBY_R}
+RUBY_PORT?=		${RUBY_BASE_PORT}
 RUBY_SHIM18_PORT?=	lang/ruby16-shim-ruby18
 RUBY_AMSTD_PORT?=	devel/ruby-amstd
 RUBY_RDTOOL_PORT?=	textproc/ruby-rdtool
@@ -264,7 +248,6 @@ PLIST_SUB+=		RUBY_VERSION="${RUBY_VERSION}" \
 			RUBY_ARCH="${RUBY_ARCH}" \
 			RUBY_SUFFIX="${RUBY_SUFFIX}" \
 			RUBY_NAME="${RUBY_NAME}" \
-			RUBY_R="${RUBY_R}" \
 			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}" \
 			${PLIST_RUBY_DIRS:S,DIR="${LOCALBASE}/,DIR=",}
 
@@ -327,9 +310,7 @@ RUBY_FLAGS+=	-d
 USE_RUBY=		yes
 
 RUBY_EXTCONF?=		extconf.rb
-CONFIGURE_ARGS+=	--with-opt-dir="${LOCALBASE}" \
-			--with-pthread-cflags="${PTHREAD_CFLAGS}" \
-			--with-pthread-libs="${PTHREAD_LIBS}"
+CONFIGURE_ARGS+=	--with-opt-dir="${LOCALBASE}"
 
 do-configure:	ruby-extconf-configure
 
@@ -337,29 +318,11 @@ ruby-extconf-configure:
 .if defined(RUBY_EXTCONF_SUBDIRS)
 .for d in ${RUBY_EXTCONF_SUBDIRS}
 	@${ECHO_MSG} "===>  Running ${RUBY_EXTCONF} in ${d} to configure"
-.if defined(RUBY_WITH_PTHREAD)
-	cd ${CONFIGURE_WRKSRC}/${d}; \
-	${RUBY} ${RUBY_FLAGS} -i -pe '~ /\brequire\s+[\047"]mkmf[\047"]/ \
-	and $$_ += %Q|\
-		$$libs.sub!(/-lc\\b/, "")\n \
-		$$libs += " " + with_config("pthread-libs") + " "\n \
-		$$CFLAGS += " " + with_config("pthread-cflags") + " "\n \
-	|' ${RUBY_EXTCONF}
-.endif
 	@cd ${CONFIGURE_WRKSRC}/${d}; \
 	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
 .endfor
 .else
 	@${ECHO_MSG} "===>  Running ${RUBY_EXTCONF} to configure"
-.if defined(RUBY_WITH_PTHREAD)
-	cd ${CONFIGURE_WRKSRC}; if [ ! -e ${CONFIGURE_WRKSRC}/${RUBY_EXTCONF}.pth.orig ]; then \
-	${RUBY} ${RUBY_FLAGS} -i.pth.orig -pe '~ /\brequire\s+[\047"]mkmf[\047"]/ \
-	and $$_ += %Q|\
-		$$libs.sub!(/-lc\\b/, "")\n \
-		$$libs += " " + with_config("pthread-libs") + " "\n \
-		$$CFLAGS += " " + with_config("pthread-cflags") + " "\n \
-	|' ${RUBY_EXTCONF}; fi
-.endif
 	@cd ${CONFIGURE_WRKSRC}; \
 	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
 .endif
