@@ -78,6 +78,7 @@
     SUBDIR += libaudiofile
     SUBDIR += libcdaudio
     SUBDIR += libmikmod
+    SUBDIR += libogg
     SUBDIR += libshout
     SUBDIR += libsidplay
     SUBDIR += libworkman

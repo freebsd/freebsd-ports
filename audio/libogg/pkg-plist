@@ -1,0 +1,14 @@
+include/ogg/config_types.h
+include/ogg/ogg.h
+include/ogg/os_types.h
+lib/libogg.a
+lib/libogg.so
+lib/libogg.so.0
+share/doc/libogg-1.0.0/framing.html
+share/doc/libogg-1.0.0/index.html
+share/doc/libogg-1.0.0/oggstream.html
+share/doc/libogg-1.0.0/stream.png
+share/doc/libogg-1.0.0/white-ogg.png
+share/doc/libogg-1.0.0/white-xifish.png
+@dirrm include/ogg
+@dirrm share/doc/libogg-1.0.0
