@@ -18,6 +18,8 @@ COMMENT=	GTK2 client for giFT daemon
 
 LIB_DEPENDS=	gift.0:${PORTSDIR}/net/gift
 
+BROKEN=	"Needs an update for GTK+ 2.6"
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gconf2 gtk20
