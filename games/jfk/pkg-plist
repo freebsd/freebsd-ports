@@ -1,0 +1,154 @@
+bin/jfkserver
+bin/jfkclient
+%%PORTDOCS%%share/doc/jfk/controls.txt
+%%PORTDOCS%%share/doc/jfk/jfkclient.sample
+%%PORTDOCS%%share/doc/jfk/jfkserver.sample
+share/jfk/art/bar/weapon_5.png
+share/jfk/art/bar/arrow.png
+share/jfk/art/bar/bar.png
+share/jfk/art/bar/number_0.png
+share/jfk/art/bar/number_1.png
+share/jfk/art/bar/number_2.png
+share/jfk/art/bar/number_3.png
+share/jfk/art/bar/number_4.png
+share/jfk/art/bar/number_5.png
+share/jfk/art/bar/number_6.png
+share/jfk/art/bar/number_7.png
+share/jfk/art/bar/number_8.png
+share/jfk/art/bar/number_9.png
+share/jfk/art/bar/weapon_0.png
+share/jfk/art/bar/weapon_1.png
+share/jfk/art/bar/weapon_2.png
+share/jfk/art/bar/weapon_3.png
+share/jfk/art/bar/weapon_4.png
+share/jfk/art/bar/player_0.png
+share/jfk/art/bar/player_1.png
+share/jfk/art/bar/player_2.png
+share/jfk/art/bar/player_3.png
+share/jfk/art/bar/player_4.png
+share/jfk/art/bar/player_X.png
+share/jfk/art/font/console.png
+share/jfk/art/font/consoler.png
+share/jfk/art/font/consoley.png
+share/jfk/art/font/highscore.png
+share/jfk/art/ground/waste.png
+share/jfk/art/ground/grass.png
+share/jfk/art/splash/screen.png
+share/jfk/art/object/weapon/weapon_0.png
+share/jfk/art/object/weapon/weapon_1.png
+share/jfk/art/object/weapon/weapon_2.png
+share/jfk/art/object/weapon/weapon_3.png
+share/jfk/art/object/weapon/weapon_4.png
+share/jfk/art/object/weapon/weapon_5.png
+share/jfk/art/object/item/ammo.png
+share/jfk/art/object/item/ammo_s.png
+share/jfk/art/object/item/medikit.png
+share/jfk/art/object/item/medikit_s.png
+share/jfk/art/object/item/beer.png
+share/jfk/art/object/item/grave_0.png
+share/jfk/art/object/item/grave_1.png
+share/jfk/art/object/item/grave_2.png
+share/jfk/art/object/item/grave_3.png
+share/jfk/art/object/item/grave_4.png
+share/jfk/art/object/item/grave_5.png
+share/jfk/art/object/item/grave_6.png
+share/jfk/art/object/person/player_0.png
+share/jfk/art/object/person/player_1.png
+share/jfk/art/object/person/player_2.png
+share/jfk/art/object/person/player_3.png
+share/jfk/art/object/person/player_4.png
+share/jfk/art/object/person/player_5.png
+share/jfk/art/object/person/player_6.png
+share/jfk/art/object/person/player_7.png
+share/jfk/art/object/person/player_8.png
+share/jfk/art/object/person/player_9.png
+share/jfk/art/object/person/player_10.png
+share/jfk/art/object/person/player_11.png
+share/jfk/art/object/person/player_12.png
+share/jfk/art/object/person/player_13.png
+share/jfk/art/object/person/player_14.png
+share/jfk/art/object/person/player_15.png
+share/jfk/art/object/person/player_16.png
+share/jfk/art/object/person/player_17.png
+share/jfk/art/object/person/player_18.png
+share/jfk/art/object/person/player_19.png
+share/jfk/art/object/person/player_20.png
+share/jfk/art/object/person/player_21.png
+share/jfk/art/object/person/player_22.png
+share/jfk/art/object/person/player_23.png
+share/jfk/art/object/person/player_24.png
+share/jfk/art/object/person/player_25.png
+share/jfk/art/object/person/player_26.png
+share/jfk/art/object/person/player_27.png
+share/jfk/art/object/person/player_28.png
+share/jfk/art/object/person/player_29.png
+share/jfk/art/object/person/player_30.png
+share/jfk/art/object/person/player_31.png
+share/jfk/art/object/person/player_32.png
+share/jfk/art/object/person/player_33.png
+share/jfk/art/object/person/player_34.png
+share/jfk/art/object/person/player_35.png
+share/jfk/art/object/explosion/explode_0.png
+share/jfk/art/object/explosion/explode_1.png
+share/jfk/art/object/explosion/explode_2.png
+share/jfk/art/object/explosion/explode_3.png
+share/jfk/art/object/explosion/explode_4.png
+share/jfk/art/object/explosion/explode_5.png
+share/jfk/art/object/explosion/explode_6.png
+share/jfk/art/object/explosion/explode_7.png
+share/jfk/art/object/explosion/explode_8.png
+share/jfk/art/object/explosion/explode_9.png
+share/jfk/art/object/explosion/explode_10.png
+share/jfk/art/object/explosion/explode_11.png
+share/jfk/art/object/explosion/explode_12.png
+share/jfk/art/object/explosion/explode_13.png
+share/jfk/art/object/explosion/explode_14.png
+share/jfk/art/object/explosion/explode_15.png
+share/jfk/art/object/explosion/explode_16.png
+share/jfk/art/object/explosion/explode_17.png
+share/jfk/art/object/explosion/explode_18.png
+share/jfk/art/object/bullet/weapon_0_bullet_0.png
+share/jfk/art/object/bullet/weapon_0_bullet_1.png
+share/jfk/art/object/bullet/weapon_0_bullet_2.png
+share/jfk/art/object/bullet/weapon_0_bullet_3.png
+share/jfk/art/object/bullet/weapon_0_bullet_4.png
+share/jfk/art/object/bullet/weapon_0_bullet_5.png
+share/jfk/art/object/bullet/weapon_0_bullet_6.png
+share/jfk/art/object/bullet/weapon_0_bullet_7.png
+share/jfk/art/object/bullet/weapon_0_bullet_8.png
+share/jfk/art/object/bullet/weapon_0_bullet_9.png
+share/jfk/art/object/bullet/weapon_0_bullet_10.png
+share/jfk/art/object/bullet/weapon_0_bullet_11.png
+share/jfk/art/object/bullet/weapon_0_bullet_12.png
+share/jfk/art/object/bullet/weapon_0_bullet_13.png
+share/jfk/art/object/bullet/weapon_0_bullet_14.png
+share/jfk/art/object/bullet/weapon_0_bullet_15.png
+share/jfk/art/object/bullet/weapon_0_bullet_16.png
+share/jfk/art/object/bullet/weapon_0_bullet_17.png
+share/jfk/art/object/bullet/weapon_0_bullet_18.png
+share/jfk/art/object/bullet/weapon_0_bullet_19.png
+share/jfk/art/object/bullet/weapon_0_bullet_20.png
+share/jfk/art/object/bullet/weapon_0_bullet_21.png
+share/jfk/art/object/bullet/weapon_0_bullet_22.png
+share/jfk/art/object/bullet/weapon_0_bullet_23.png
+share/jfk/art/object/obstacle/bush_0.png
+share/jfk/art/object/obstacle/lake_0.png
+share/jfk/art/object/obstacle/stone_0.png
+share/jfk/art/object/obstacle/tree_0.png
+share/jfk/levels/demolevel
+share/jfk/levels/level1
+%%PORTDOCS%%@dirrm share/doc/jfk
+@dirrm share/jfk/art/bar
+@dirrm share/jfk/art/font
+@dirrm share/jfk/art/ground
+@dirrm share/jfk/art/splash
+@dirrm share/jfk/art/object/weapon
+@dirrm share/jfk/art/object/item
+@dirrm share/jfk/art/object/person
+@dirrm share/jfk/art/object/explosion
+@dirrm share/jfk/art/object/bullet
+@dirrm share/jfk/art/object/obstacle
+@dirrm share/jfk/art/object
+@dirrm share/jfk/art
+@dirrm share/jfk/levels
+@dirrm share/jfk
