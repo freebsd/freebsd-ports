@@ -26,5 +26,3 @@ INSTALLS_SHLIB=	yes
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/manpages.mk"
 .include <bsd.port.post.mk>
-
-#EOF

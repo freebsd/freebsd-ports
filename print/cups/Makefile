@@ -19,9 +19,9 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Common UNIX Printing System: Metaport to install complete system
 
-LIB_DEPENDS+=	cups.2:${.CURDIR}/../../print/cups-base
-RUN_DEPENDS+=	espgs:${.CURDIR}/../../print/cups-pstoraster \
-		${LOCALBASE}/sbin/cupsaddsmb:${.CURDIR}/../../print/cups-lpr
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+RUN_DEPENDS+=	espgs:${PORTSDIR}/print/cups-pstoraster \
+		${LOCALBASE}/sbin/cupsaddsmb:${PORTSDIR}/print/cups-lpr
 
 .if make(package)
 DEPENDS_TARGET="package"
@@ -39,5 +39,3 @@ do-install:
 .include "${.CURDIR}/../../print/cups/Makefile.common"
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>
-
-#EOF

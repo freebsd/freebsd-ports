@@ -45,7 +45,7 @@ post-patch:
 # make the plist here (for now)
 do-build:
 	cd ${WRKSRC};\
-	echo bin/${PORTNAME} >${PLIST};\
+	${ECHO_CMD} bin/${PORTNAME} >${PLIST};\
 	${FIND} . ! -type d | cut -c3- | sort \
 		| ${SED} -e "s|^|${MY_SITELIBSUBDIR}/|" >>${PLIST};\
 	${FIND} . -type d | cut -c3- | sort -r \
@@ -64,5 +64,3 @@ do-install:
 	${CHMOD} ${BINMODE} ${MY_SITELIBDIR}/main.py
 
 .include <bsd.port.post.mk>
-
-#EOF

@@ -35,5 +35,3 @@ post-install:
 	${CHMOD} ugo+x ${DESTDIR}${RUBY_MODEXAMPLESDIR}/example-*.rb
 .endif # !defined(NOPORTDOCS)
 .include <bsd.port.post.mk>
-
-#EOF

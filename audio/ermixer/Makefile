@@ -30,5 +30,3 @@ CONFIGURE_ENV+=	CPPFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include"
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/manpages.mk"
 .include <bsd.port.post.mk>
-
-#EOF

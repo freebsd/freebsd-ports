@@ -18,15 +18,13 @@ PKGNAMEPREFIX=	ossp-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Defines an abstract type of buffer that can move data without copying
 
-LIB_DEPENDS=	ex.10:${.CURDIR}/../../devel/ossp-ex
+LIB_DEPENDS=	ex.10:${PORTSDIR}/devel/ossp-ex
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
-INSTALLS_SHLIB= yes
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/manpages.mk"
 .include <bsd.port.post.mk>
-
-#EOF

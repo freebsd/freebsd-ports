@@ -40,5 +40,3 @@ do-install:
 .endfor # i in midgard backgrounds solid gradient
 
 .include <bsd.port.post.mk>
-
-#EOF
