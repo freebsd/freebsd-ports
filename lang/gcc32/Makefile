@@ -20,7 +20,7 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-java-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-objc-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER?=	dinoex@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 3.2.3
 
 LATEST_LINK?=	gcc32${PKGNAMESUFFIX}
