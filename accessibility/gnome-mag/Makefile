@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gnomemag
-PORTVERSION=	0.10.6
-CATEGORIES=	accessibility x11 gnome
+PORTVERSION=	0.10.7
+CATEGORIES=	accessibility gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-mag/0.10
 DISTNAME=	gnome-mag-${PORTVERSION}
@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME screen magnifier
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix atspi libbonobo
+USE_GNOME=	gnomehack gnomeprefix atspi libbonobo lthack intlhack
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
