@@ -1,0 +1,127 @@
+--- Makefile.in.orig	Fri Feb 14 17:19:03 2003
++++ Makefile.in	Wed Apr 16 19:38:50 2003
+@@ -99,16 +99,18 @@
+ 	     ldap.conf nss_ldap.spec nsswitch.ldap 
+ 
+ 
+-nss_ldap_so_SOURCES = ldap-nss.c ldap-pwd.c ldap-grp.c ldap-netgrp.c ldap-rpc.c \
+-	ldap-hosts.c ldap-network.c ldap-proto.c ldap-spwd.c \
+-	ldap-alias.c ldap-service.c ldap-schema.c ldap-ethers.c \
+-	ldap-bp.c util.c globals.c ltf.c snprintf.c resolve.c \
+-	dnsconfig.c irs-nss.c sasl.c pagectrl.c
++nss_ldap_so_SOURCES = ldap-nss.c ldap-pwd.c ldap-grp.c \
++	\
++	ldap-schema.c \
++	util.c globals.c ltf.c snprintf.c resolve.c \
++	dnsconfig.c irs-nss.c sasl.c pagectrl.c \
++	bsdnss.c
+ 
+ 
+-NSS_LDAP_SOURCES = ldap-nss.c ldap-grp.c ldap-pwd.c ldap-netgrp.c ldap-schema.c \
++NSS_LDAP_SOURCES = ldap-nss.c ldap-pwd.c ldap-grp.c ldap-schema.c \
+ 	util.c globals.c ltf.c snprintf.c resolve.c dnsconfig.c \
+-	irs-nss.c sasl.c pagectrl.c aix_authmeth.c
++	irs-nss.c sasl.c pagectrl.c aix_authmeth.c \
++	bsdnss.c
+ 
+ DEFS = @DEFS@
+ 
+@@ -134,23 +136,23 @@
+ PROGRAMS = $(noinst_PROGRAMS)
+ 
+ am_NSS_LDAP_OBJECTS = ldap-nss.$(OBJEXT) ldap-grp.$(OBJEXT) \
+-	ldap-pwd.$(OBJEXT) ldap-netgrp.$(OBJEXT) ldap-schema.$(OBJEXT) \
++	ldap-pwd.$(OBJEXT) ldap-schema.$(OBJEXT) \
+ 	util.$(OBJEXT) globals.$(OBJEXT) ltf.$(OBJEXT) \
+ 	snprintf.$(OBJEXT) resolve.$(OBJEXT) dnsconfig.$(OBJEXT) \
+ 	irs-nss.$(OBJEXT) sasl.$(OBJEXT) pagectrl.$(OBJEXT) \
+-	aix_authmeth.$(OBJEXT)
++	aix_authmeth.$(OBJEXT) bsdnss.$(OBJEXT)
+ NSS_LDAP_OBJECTS = $(am_NSS_LDAP_OBJECTS)
+ NSS_LDAP_LDADD = $(LDADD)
+ NSS_LDAP_DEPENDENCIES =
+-am_nss_ldap_so_OBJECTS = ldap-nss.$(OBJEXT) ldap-pwd.$(OBJEXT) \
+-	ldap-grp.$(OBJEXT) ldap-netgrp.$(OBJEXT) ldap-rpc.$(OBJEXT) \
+-	ldap-hosts.$(OBJEXT) ldap-network.$(OBJEXT) \
+-	ldap-proto.$(OBJEXT) ldap-spwd.$(OBJEXT) ldap-alias.$(OBJEXT) \
+-	ldap-service.$(OBJEXT) ldap-schema.$(OBJEXT) \
+-	ldap-ethers.$(OBJEXT) ldap-bp.$(OBJEXT) util.$(OBJEXT) \
++am_nss_ldap_so_OBJECTS = ldap-nss.$(OBJEXT) \
++	ldap-grp.$(OBJEXT) \
++	ldap-pwd.$(OBJEXT) \
++	\
++	ldap-schema.$(OBJEXT) \
++	util.$(OBJEXT) \
+ 	globals.$(OBJEXT) ltf.$(OBJEXT) snprintf.$(OBJEXT) \
+ 	resolve.$(OBJEXT) dnsconfig.$(OBJEXT) irs-nss.$(OBJEXT) \
+-	sasl.$(OBJEXT) pagectrl.$(OBJEXT)
++	sasl.$(OBJEXT) pagectrl.$(OBJEXT) bsdnss.$(OBJEXT)
+ nss_ldap_so_OBJECTS = $(am_nss_ldap_so_OBJECTS)
+ nss_ldap_so_LDADD = $(LDADD)
+ nss_ldap_so_DEPENDENCIES =
+@@ -162,15 +164,15 @@
+ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/aix_authmeth.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/dnsconfig.Po ./$(DEPDIR)/globals.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/irs-nss.Po ./$(DEPDIR)/ldap-alias.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/ldap-bp.Po ./$(DEPDIR)/ldap-ethers.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/ldap-grp.Po ./$(DEPDIR)/ldap-hosts.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/ldap-netgrp.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/ldap-network.Po ./$(DEPDIR)/ldap-nss.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/ldap-proto.Po ./$(DEPDIR)/ldap-pwd.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/ldap-rpc.Po ./$(DEPDIR)/ldap-schema.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/ldap-service.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/ldap-spwd.Po ./$(DEPDIR)/ltf.Po \
++@AMDEP_TRUE@	./$(DEPDIR)/irs-nss.Po \
++@AMDEP_TRUE@	\
++@AMDEP_TRUE@	./$(DEPDIR)/ldap-grp.Po \
++@AMDEP_TRUE@	\
++@AMDEP_TRUE@	./$(DEPDIR)/ldap-nss.Po \
++@AMDEP_TRUE@	\
++@AMDEP_TRUE@	./$(DEPDIR)/ldap-schema.Po \
++@AMDEP_TRUE@	\
++@AMDEP_TRUE@	./$(DEPDIR)/ltf.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/pagectrl.Po ./$(DEPDIR)/resolve.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/sasl.Po ./$(DEPDIR)/snprintf.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/util.Po
+@@ -193,19 +195,6 @@
+ 
+ am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
+  configure.lineno
+-$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
+-	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --gnu  Makefile
+-Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+-	cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe)
+-
+-$(top_builddir)/config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+-	$(SHELL) ./config.status --recheck
+-$(srcdir)/configure:  $(srcdir)/configure.in $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
+-	cd $(srcdir) && $(AUTOCONF)
+-
+-$(ACLOCAL_M4):  configure.in 
+-	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
+ 
+ config.h: stamp-h1
+ 	@if test ! -f $@; then \
+@@ -243,20 +232,9 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dnsconfig.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/globals.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/irs-nss.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ldap-alias.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ldap-bp.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ldap-ethers.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ldap-grp.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ldap-hosts.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ldap-netgrp.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ldap-network.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ldap-nss.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ldap-proto.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ldap-pwd.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ldap-rpc.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ldap-schema.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ldap-service.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ldap-spwd.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ltf.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pagectrl.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/resolve.Po@am__quote@
