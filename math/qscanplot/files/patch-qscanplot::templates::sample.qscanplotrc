@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- qscanplot/templates/sample.qscanplotrc	2002/04/23 20:34:58	1.1
++++ qscanplot/templates/sample.qscanplotrc	2002/04/23 20:35:32
+@@ -7,7 +7,7 @@
+   <option key="Font_Weight" value="75" />
+   <option key="GUI_Style" value="5" />
+   <option key="Initial_Zoom" value="100" />
+-  <option key="Plugins_Directory" value="/usr/lib/qscanplot/plugins/" />
++  <option key="Plugins_Directory" value="%%PREFIX%%/lib/qscanplot/plugins/" />
+   <option key="Splash" value="true" />
+   <option key="Window_Height" value="738" />
+   <option key="Window_Width" value="848" />
