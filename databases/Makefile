@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.37 1999/06/22 00:43:56 billf Exp $
+# $Id: Makefile,v 1.38 1999/06/22 10:05:57 asami Exp $
 #
     SUBDIR += cdb
     SUBDIR += db
@@ -11,8 +11,8 @@
     SUBDIR += interbase4
     SUBDIR += msql
     SUBDIR += mysql321
-    SUBDIR += mysql322
-#    SUBDIR += mysql322-client
+    SUBDIR += mysql322-client
+    SUBDIR += mysql322-server
     SUBDIR += mysqltutor
     SUBDIR += p5-DBD-Pg
     SUBDIR += p5-DBI

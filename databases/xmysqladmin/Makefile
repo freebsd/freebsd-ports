@@ -3,10 +3,10 @@
 # Date created:			Di   2 Sep 1997 16:29:27 CEST
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.18 1999/02/12 11:57:57 dirk Exp $
+# $Id: Makefile,v 1.19 1999/06/08 22:15:07 steve Exp $
 #
 
-DISTNAME=	xmysqladmin-0.4.4
+DISTNAME=	xmysqladmin-1.0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tcx.se/Contrib/ \
 		http://www.buoy.com/mysql/Contrib/ \
@@ -17,7 +17,7 @@ MAINTAINER=	andreas@FreeBSD.ORG
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		xforms.0:${PORTSDIR}/x11-toolkits/xforms \
-		mysqlclient.6:${PORTSDIR}/databases/mysql322
+		mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 
 WRKSRC=		${WRKDIR}/xmysqladmin
 USE_X_PREFIX=	yes
