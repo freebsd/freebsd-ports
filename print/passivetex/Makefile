@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		passivetex
-PORTVERSION=		1.0
+PORTVERSION=		1.17
 CATEGORIES=		print
 MASTER_SITES=		http://www.tei-c.org.uk/Software/passivetex/
 DISTFILES=		passivetex.zip
