@@ -1,0 +1,4 @@
+mod_cfgldap can be used to keep VirtualHost configuration of the Apache web 
+server in a LDAP directory and to make changes visible in nearly realtime.
+
+WWW: http://modcfgldap.sourceforge.net/
