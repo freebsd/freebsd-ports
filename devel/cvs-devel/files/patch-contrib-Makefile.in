@@ -1,0 +1,10 @@
+--- contrib/Makefile.in.orig	Fri Apr 19 00:55:53 2002
++++ contrib/Makefile.in	Sun Aug 25 06:03:37 2002
+@@ -126,6 +126,7 @@
+ 
+ 
+ contrib_DATA = \
++	${contrib_MANS} \
+ 	README \
+ 	intro.doc
+ 
