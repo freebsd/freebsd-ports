@@ -1,0 +1,15 @@
+--- configure.orig	Tue Jun 11 07:24:56 1996
++++ configure	Sun Dec 29 05:15:45 1996
+@@ -1135,8 +1135,10 @@
+ 	TIFFLIBREF='-L${DEPTH}/libtiff -ltiff'
+ 	;;
+     *-freebsd*)
+-	DSOSUF=so.${DIST_MAJOR}.0
+-	LIBCOPTS='-fpic -fPIC'
++	DSOSUF=so
++	DSOSUF_VERSION=${DSOSUF}.4.0
++	LIBCOPTS='-fpic -DPIC'
++	DSOOPTS='-Bshareable'
+ 	DSO=FREEBSD
+ 	TIFFLIBREF='-L${DEPTH}/libtiff -ltiff'
+ 	;;
