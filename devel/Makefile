@@ -402,6 +402,7 @@
     SUBDIR += libowfat
     SUBDIR += libpci
     SUBDIR += libpdel
+    SUBDIR += libpreps
     SUBDIR += libredblack
     SUBDIR += libshbuf
     SUBDIR += libshhmsg
