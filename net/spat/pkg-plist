@@ -11,4 +11,5 @@ share/gnome/pixmaps/spat/away_with_msg.png
 share/gnome/pixmaps/spat/gnome-intranet.png
 share/gnome/pixmaps/spat/ok.png
 share/gnome/pixmaps/spat/spat.png
+@dirrm share/gnome/pixmaps/spat
 @dirrm share/doc/spat

@@ -1,11 +1,11 @@
---- spatd/callbacks.c	2000/10/31 11:45:02	1.1
-+++ spatd/callbacks.c	2000/10/31 11:43:46
-@@ -129,7 +129,7 @@
+--- spatd/callbacks.c.orig	Wed Jan  3 20:42:27 2001
++++ spatd/callbacks.c	Thu Jan  4 13:48:04 2001
+@@ -110,7 +110,7 @@
   {
    //exit(0);
   }
 - strcpy(command, "/usr/local/bin/spat ");
-+ strcpy(command, PREFIX "bin/spat ");
-  strcat(command, login);
++ strcpy(command, PREFIX "/bin/spat ");
+  strcat(command, remote_login);
  
   strcat(command, " &");
