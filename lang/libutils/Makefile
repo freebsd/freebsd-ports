@@ -8,6 +8,7 @@
 
 PORTNAME=	libutils
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://savannah.gnu.org/download/nsl/ \
 		http://iling.nw.ru/~artem/downloads/ \
@@ -16,9 +17,10 @@ MASTER_SITES=	http://savannah.gnu.org/download/nsl/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Support lib for Tensile/NSL
 
+USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+MAKE_ARGS=	CFLAGS="${CFLAGS}"
 INSTALLS_SHLIB=	yes
 
 MAN3=		libutils.3
