@@ -1,0 +1,11 @@
+--- g-wrap/Makefile.in.orig	Tue Feb  4 20:45:49 2003
++++ g-wrap/Makefile.in	Tue Feb  4 20:46:00 2003
+@@ -197,7 +197,7 @@
+ 
+ 
+ #AM_CFLAGS = -O2 -g -Wall -Wno-uninitialized -Werror
+-AM_CFLAGS = -O2 -g -Wall -Werror \
++AM_CFLAGS = -Wall -Werror \
+  ${GW_GLIB_CFLAGS_ADD} \
+  ${GW_GUILE_GTK_CFLAGS_ADD}
+ 
