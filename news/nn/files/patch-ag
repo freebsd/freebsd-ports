@@ -1,35 +1,14 @@
---- Makefile.orig	Mon Jul  2 06:54:34 2001
-+++ Makefile	Sun Oct 27 16:54:54 2002
-@@ -18,17 +18,16 @@
- #
- # Use /lib/cpp or /usr/ccs/lib/cpp for CPP on Solaris or SVR4 machines.
- 
--CC =		gcc
-+CC ?=		gcc
- CPP =		$(CC) -E
- #CPP =		/lib/cpp
- #CFLAGS =	-O2 # -g # -I/usr/local/lib/malloc-debug -DMALLOC_FUNC_CHECK
--CFLAGS =	-O # -g -Wall -ansi -pedantic
-+#CFLAGS =	-O # -g -Wall -ansi -pedantic
- #-Wall -Wcomment \
- #-Wtraditional -Wshadow \
- #-Wpointer-arith -Wcast-qual -Wcast-align -Wconversion \
- #-Waggregate-return -Wmissing-prototypes -Wnested-externs
--#LDFLAGS =	-s # -lmalloc # /usr/local/lib/malloc-debug/libmalloc.a
--MAKE =		make
-+LDFLAGS =	-s # -lmalloc # /usr/local/lib/malloc-debug/libmalloc.a
- 
- 
- SHELL = /bin/sh
-@@ -63,6 +62,7 @@
- 	    -e '/^#/d' \
+--- Makefile.orig	Thu Feb  7 22:14:41 2002
++++ Makefile	Wed Apr 28 17:47:59 2004
+@@ -63,6 +64,7 @@
+ 	    -e 's/^        /	/' \
  	    -e '/^[ \f	]$$/d' \
  	    -e '/^[ \/]*[*]/d' | \
 +	    unexpand | \
  	sed -n -e '/^..*$$/p' > ymakefile
  	rm -f MF.c
  
-@@ -97,3 +97,5 @@
+@@ -97,3 +99,5 @@
  man/nn.1.D: man/nn.1
  	sh SPLITNN1
  
