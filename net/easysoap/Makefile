@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	easysoap
-PORTVERSION=	0.5
-PORTREVISION=	2
+PORTVERSION=	0.6
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,18 +20,13 @@ LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CXXFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lexpat"
+CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500035
-BROKEN=		"Does not compile on 5.0"
-.endif
-
-pre-patch:
-	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
-		${WRKSRC}/src/abyss/src/data.c
+pre-configure:
+	@echo "CPPFLAGS=${CPPFLAGS} CXXFLAGS=${CXXFLAGS}"
 
 .include <bsd.port.post.mk>
