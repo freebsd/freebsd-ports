@@ -118,6 +118,7 @@
     SUBDIR += ebnf2yacc
     SUBDIR += ecgi
     SUBDIR += eieio
+    SUBDIR += eieio-emacs20
     SUBDIR += elfio
     SUBDIR += elftoaout
     SUBDIR += elib-emacs
