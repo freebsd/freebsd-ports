@@ -41,8 +41,6 @@ ONLY_FOR_ARCHS=	i386
 MLARCH=		x86
 #.elif (${MACHINE_ARCH} == "alpha")
 #MLARCH=		alpha32
-#.else
-#BROKEN=		not ported to ${MACHINE_ARCH}
 .endif
 
 .if defined(WITH_FLINT)
@@ -74,8 +72,8 @@ MLPLISTFILES=	${.CURDIR}/pkg-plist ${FILESDIR}/plist-everything \
 pre-fetch:
 	@${ECHO}
 .if !defined(WITH_EVERYTHING)
-	@${ECHO} 'Use make WITH_EVERYTHING=yes to also build ml-burg,'
-	@${ECHO} ' CML (Concurrent ML), eXene (X Windows toolkit),'
+	@${ECHO} 'Use make WITH_EVERYTHING=yes to also build ml-burg'
+	@${ECHO} ' (tree transformer), eXene (X Windows toolkit),'
 	@${ECHO} ' ml-nlffi (foreign function interface to C code),'
 	@${ECHO} ' nowhere (preprocessor for conditional patterns),'
 	@${ECHO} ' and all the sources.'

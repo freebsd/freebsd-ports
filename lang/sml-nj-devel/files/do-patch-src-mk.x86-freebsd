@@ -1,11 +1,11 @@
 --- src/runtime/objs/mk.x86-freebsd.orig	Mon Nov  6 22:41:04 2000
-+++ src/runtime/objs/mk.x86-freebsd	Mon Mar 17 01:43:31 2003
++++ src/runtime/objs/mk.x86-freebsd	Thu Aug 14 06:06:06 2003
 @@ -10,7 +10,7 @@
  ARFLAGS =	Trcv
  CC =		gcc -ansi
  CFLAGS =	-O2
 -CPP =		gcc -x c -E -P -ansi
-+CPP =		gcc -x assembler-with-cpp -E -P -ansi
++CPP =		gcc -x assembler-with-cpp -E -P
  #CPP =		/usr/bin/cpp -P
  
  XOBJS =
