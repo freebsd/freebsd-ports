@@ -42,6 +42,9 @@ post-configure:
 	@${PERL} -p -i.bak -e 's/deplibs -lc/deplibs/;' ${WRKSRC}/libtool
 
 post-install:
+	@${CP} ${WRKSRC}/libgii.conf ${PREFIX}/etc/ggi/libgii.conf.dist
+	@${CP} ${WRKSRC}/filter/mouse/mouse ${PREFIX}/etc/ggi/filter/mouse.dist
+	@${CP} ${WRKSRC}/filter/keytrans/keytrans ${PREFIX}/etc/ggi/filter/keytrans.dist
 	@${MAKE} install-examples
 .if !defined(NOPORTDOCS)
 	@${MAKE} install-documents

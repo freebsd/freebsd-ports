@@ -1,8 +1,14 @@
 bin/mhub
 bin/xsendbut
-etc/ggi/filter/keytrans
-etc/ggi/filter/mouse
-etc/ggi/libgii.conf
+@unexec if cmp -s %D/etc/ggi/filter/keytrans %D/etc/ggi/filter/keytrans.dist; then rm -f %D/etc/ggi/filter/keytrans; fi
+etc/ggi/filter/keytrans.dist
+@exec [ -f %B/keytrans ] || cp %B/%f %B/keytrans
+@unexec if cmp -s %D/etc/ggi/filter/mouse %D/etc/ggi/filter/mouse.dist; then rm -f %D/etc/ggi/filter/mouse; fi
+etc/ggi/filter/mouse.dist
+@exec [ -f %B/mouse ] || cp %B/%f %B/mouse
+@unexec if cmp -s %D/etc/ggi/libgii.conf %D/etc/ggi/libgii.conf.dist; then rm -f %D/etc/ggi/libgii.conf; fi
+etc/ggi/libgii.conf.dist
+@exec [ -f %B/libgii.conf ] || cp %B/%f %B/libgii.conf
 include/ggi/errors.h
 include/ggi/events.h
 include/ggi/gg.h
@@ -58,13 +64,13 @@ share/examples/libgii/demo.c
 share/examples/libgii/filter.c
 share/examples/libgii/mhub.c
 share/examples/libgii/xsendbut.c
-@dirrm etc/ggi/filter
-@dirrm etc/ggi
-@dirrm include/ggi/input
-@dirrm include/ggi/internal
-@dirrm include/ggi
-@dirrm lib/ggi/filter
-@dirrm lib/ggi/input
-@dirrm lib/ggi
-@dirrm share/doc/libgii
 @dirrm share/examples/libgii
+@dirrm share/doc/libgii
+@dirrm lib/ggi/input
+@dirrm lib/ggi/filter
+@dirrm lib/ggi
+@dirrm include/ggi/internal
+@dirrm include/ggi/input
+@dirrm include/ggi
+@unexec rmdir %D/etc/ggi/filter 2>/dev/null || true
+@unexec rmdir %D/etc/ggi 2>/dev/null || true
