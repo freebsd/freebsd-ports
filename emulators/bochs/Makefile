@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	bochs
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -16,29 +16,29 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+# Global variables
+#
+
+USE_XLIB=	yes
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+
+USE_AUTOCONF_VER=	213
+CONFIGURE_ARGS=	--disable-split-hd
+
+CFLAGS+=	-fno-rtti -fno-exceptions -fomit-frame-pointer
+
+# PREFIX isn't honored. force it w/ prefix.
+MAKE_ARGS=	prefix=${PREFIX}
+
+MAN1=		bochs.1 bochsrc.1 bximage.1
+
 .include <bsd.port.pre.mk>
 
 .if ${XFREE86_VERSION} == 4
 BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 .endif
-
-# Global variables
-#
-
-USE_XLIB=	yes
-USE_GMAKE=	yes
-
-USE_AUTOCONF=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--enable-cdrom \
-		--disable-split-hd
-
-CFLAGS+=	-fno-rtti -fno-exceptions -fomit-frame-pointer \
-		-I${X11BASE}/include
-
-# PREFIX isn't honored. force it w/ prefix.
-MAKE_ARGS=	prefix=${PREFIX}
 
 .if defined(WITH_BOCHS_PROCESSORS)
 .if ${WITH_BOCHS_CPU_LEVEL} < 1 || ${WITH_BOCHS_CPU_LEVEL} > 15
@@ -70,8 +70,6 @@ CONFIGURE_ARGS+=	--enable-ne2000
 .if defined(WITH_SOUND)
 CONFIGURE_ARGS+=	--enable-sb16=linux
 .endif
-
-MAN1=		bochs.1 bochsrc.1 bximage.1
 
 MSG_FILE=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -131,13 +129,13 @@ pre-everything::
 post-patch: patch-bochsrc patch-mans patch-wrapper patch-message
 
 patch-bochsrc:
-	@${PERL} -pi.fbsd -e ' \
+	@${REINPLACE_CMD} -E ' \
 		s|^vgaromimage:\sbios/|vgaromimage: ${BIOS_DIR}/|; \
 		s|^romimage:\sfile=bios/|romimage: file=${BIOS_DIR}/|; \
 		' ${WRKSRC}/.bochsrc
 
 patch-mans:
-	@${PERL} -pi.fbsd -e ' \
+	@${REINPLACE_CMD} -e ' \
 		s|/usr/local/bochs|${DATADIR}|; \
 		s|\@VERSION\@|${PORTVERSION}|; \
 		' ${WRKSRC}/doc/man/*.1
@@ -192,11 +190,11 @@ install-fonts:
 
 install-docs:
 .if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs-html/*.txt ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
-	@${INSTALL_MAN} ${WRKSRC}/docs-html/*.html ${DOCSDIR}/html
+	@${INSTALL_DATA} ${WRKSRC}/docs-html/*.html ${DOCSDIR}/html
 	@${INSTALL_DATA} ${WRKSRC}/docs-html/*.gif ${DOCSDIR}/html
-	@${INSTALL_MAN} ${WRKSRC}/docs-html/*.txt ${DOCSDIR}/html
-	@${MV} ${DOCSDIR}/html/*.txt ${DOCSDIR}
 .endif
 
 # Post-install
