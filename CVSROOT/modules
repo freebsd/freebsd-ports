@@ -8578,6 +8578,7 @@ spiralsynthbaby	ports/audio/spiralsynthbaby
 spiralsynthmodular	ports/audio/spiralsynthmodular
 spirit		ports/devel/spirit
 spl		ports/lang/spl
+splashsetter	ports/deskutils/splashsetter
 splay		ports/audio/splay
 splaytk		ports/audio/splaytk
 splint		ports/devel/splint
