@@ -51,6 +51,9 @@ do-build:
 	cd ${WRKSRC}/common/src && ${GMAKE}
 	cd ${WRKSRC}/rat && ${GMAKE}
 
+run-autotools:
+	@${DO_NADA}
+
 do-configure:
 	cd ${WRKSRC}/common && ${AUTOCONF} && ./configure ${CONFIGURE_ARGS} ${ENABLE_IPv6}
 	cd ${WRKSRC}/rat && ${AUTOCONF} && ./configure ${CONFIGURE_ARGS} --with-tcl=${LOCALBASE} --with-tk=${LOCALBASE} ${ENABLE_IPv6} --with-tcltk-version=${TCLTK_VERSION}
