@@ -19,8 +19,8 @@ MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sourc
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - development version
 
-PORTVER_MAJ=	3.4.r1
-SNAP_DATE=	.20050216.0945
+PORTVER_MAJ=	3.4.r2
+SNAP_DATE=	.20050305.0930
 
 .ifdef(SNAP_DATE)
 WRKSRC=		${WRKDIR}/dspam-cvs-devel${SNAP_DATE}
@@ -100,7 +100,7 @@ CFLAGS+=	-g -DDEBUG
 
 PKGMESSAGE=	 ${WRKSRC}/src/README.FreeBSD
 
-UPD_LINE_NO=	15
+UPD_LINE_NO=	24
 
 CONFLICTS=	dspam-2* dspam-3*
 
