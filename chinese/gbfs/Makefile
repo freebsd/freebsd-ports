@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gbfs
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/gbfs/
 
