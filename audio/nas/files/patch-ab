@@ -11,6 +11,6 @@
 + #define NO_16_BIT_SAMPLING
 + #endif
 + 
-  static void setupSoundcard(sndStat)
-  SndStat* sndStat;
+  static void setupSoundcard(sndStatPtr)
+  SndStat* sndStatPtr;
   {
