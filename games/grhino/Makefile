@@ -15,11 +15,9 @@ MASTER_SITE_SUBDIR=	rhino
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	GRhino Othello/Reversi Program
 
-USE_GETTEXT=	yes
-USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gtk20 gnomeprefix gnomelibs pkgconfig
+USE_GNOME=	gnomeprefix libgnomeui
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
