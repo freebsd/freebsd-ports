@@ -16,12 +16,20 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A parser generator from FSF, (mostly) compatible with Yacc
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+.if !defined(WITHOUT_NLS)
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+PLIST_SUB=	NLS=""
+.else
+PLIST_SUB=	NLS="@comment "
+.endif
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS=	--disable-nls
+.endif
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		MAKEINFO="makeinfo --no-split"
