@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.283 1999/06/28 07:02:11 cpiazza Exp $
+# $Id: Makefile,v 1.284 1999/06/28 08:54:04 asami Exp $
 #
 
     SUBDIR += IglooFTP
@@ -36,6 +36,7 @@
     SUBDIR += cvsup-bin
     SUBDIR += cvsup-mirror
     SUBDIR += cvsupd-bin
+    SUBDIR += cvsweb
     SUBDIR += delegate
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
