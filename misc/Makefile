@@ -55,6 +55,7 @@
     SUBDIR += ftree
     SUBDIR += geekcode
     SUBDIR += git
+    SUBDIR += gman
     SUBDIR += gnomepm
     SUBDIR += gnomeusersguide
     SUBDIR += gnomeutils
