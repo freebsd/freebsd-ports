@@ -11,7 +11,7 @@ CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	prc-tools
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	linimon@lonesome.com
 
 BUILD_DEPENDS=	${PREFIX}/bin/m68k-palmos-gcc:${PORTSDIR}/palm/prc-tools-gcc \
 		${LOCALBASE}/palmdev/sdk-3.5/include/Core/System/NetMgr.h:${PORTSDIR}/palm/palmos-sdk
