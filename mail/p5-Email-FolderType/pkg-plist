@@ -1,8 +1,7 @@
 %%SITE_PERL%%/Email/FolderType.pm
-%%SITE_PERL%%/Email/FolderType/Local.pm
-%%SITE_PERL%%/Email/FolderType/Register.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/FolderType/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/FolderType
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email 2>/dev/null || true
+%%SITE_PERL%%/Email/FolderType/Ezmlm.pm
+%%SITE_PERL%%/Email/FolderType/MH.pm
+%%SITE_PERL%%/Email/FolderType/Maildir.pm
+%%SITE_PERL%%/Email/FolderType/Mbox.pm
 @unexec rmdir %D/%%SITE_PERL%%/Email/FolderType 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Email 2>/dev/null || true
