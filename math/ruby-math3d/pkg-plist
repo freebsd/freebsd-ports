@@ -1,5 +1,0 @@
-%%RUBY_SITEARCHLIBDIR%%/math3d.so
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/manual.en
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/manual.jis
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
