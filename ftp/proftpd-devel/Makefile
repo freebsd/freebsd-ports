@@ -6,15 +6,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	proftpd-1.2.0pre3
-PKGNAME=	proftpd-1.2.0
+DISTNAME=	proftpd-1.2.0pre6
+PKGNAME=	proftpd-1.2.0p6
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://ftp.proftpd.org/distrib/ \
-		ftp://ftp3.proftpd.org/distrib/
-
-PATCH_SITES=	ftp://ftp.tos.net/pub/proftpd/
-PATCHFILES=	proftpd-1.2.0pre3a.patch.gz
-PATCH_DIST_STRIP= -p1
+MASTER_SITES=	ftp://ftp.tos.net/pub/proftpd/
 
 MAINTAINER=	mharo@FreeBSD.org
 
@@ -22,12 +17,10 @@ MAN1=	ftpcount.1
 MAN8=	proftpd.8 ftpshut.8
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 
 CONFIGURE_ARGS=	--localstatedir=/var/run \
 		--with-modules=mod_ratio
-
-FORBIDDEN=	security problems
 
 post-configure:
 	@${MV} ${WRKSRC}/src/proftpd.8 ${WRKSRC}/src/proftpd.8.pre_sed
@@ -60,5 +53,7 @@ do-install:
 		${INSTALL_SCRIPT} \
 		${WRKSRC}/sample-configurations/basic.conf ${PREFIX}/etc/proftpd.conf; \
 	fi
+
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
