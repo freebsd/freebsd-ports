@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	DBI
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/RPC/pServer.pm:${PORTSDIR}/net/p5-pRPC
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/RPC/PlServer.pm:${PORTSDIR}/net/p5-PlRPC
 
 USE_PERL5=	YES
 CONFIGURE_ARGS=	PREFIX=${PREFIX}
