@@ -7,6 +7,7 @@
 
 PORTNAME=	iv
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	japanese graphics
 MASTER_SITES=	ftp://interviews.stanford.edu/pub/ \
 		${MASTER_SITE_PORTS_JP}
