@@ -3,10 +3,10 @@
 # Date created:		22 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.3 1994/09/01 08:08:00 ache Exp $
+# $Id: Makefile,v 1.4 1994/09/13 06:34:59 jkh Exp $
 #
 
 DISTNAME=	tcsh-6.05
-MASTER_SITES=	ftp://tesla.ee.cornell.edu/pub/tcsh
+MASTER_SITES=	ftp://tesla.ee.cornell.edu/pub/tcsh/
 
 .include <bsd.port.mk>
