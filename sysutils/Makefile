@@ -191,6 +191,7 @@
     SUBDIR += lsmlib
     SUBDIR += lsof
     SUBDIR += ltrace
+    SUBDIR += luma
     SUBDIR += lxsplit
     SUBDIR += maint
     SUBDIR += makefs
