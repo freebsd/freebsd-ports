@@ -1,9 +1,9 @@
---- kadu/Makefile.in.orig	Sun Jan 11 16:28:21 2004
-+++ kadu/Makefile.in	Tue Feb 17 14:04:23 2004
-@@ -545,33 +545,19 @@
- 	$(QT_MOC_DIR)/moc -o $@ $<
- 
+--- kadu/Makefile.in.orig	Tue Apr 27 22:47:40 2004
++++ kadu/Makefile.in	Tue Apr 27 22:46:31 2004
+@@ -533,33 +533,19 @@
  install-data-local:
+ 	$(mkinstalldirs) "$(DESTDIR)/$(includedir)/kadu/"
+ 	$(INSTALL_DATA) *.h "$(DESTDIR)/$(includedir)/kadu/"
 -	@if test -w "/usr/share"; then \
 -		$(mkinstalldirs) "$(DESTDIR)/usr/share/applnk/Internet/"; \
 -		echo "[Desktop Entry]" > "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"; \
@@ -44,6 +44,6 @@
 +		$(INSTALL_DATA) hi32-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/32x32/apps/kadu.png"
 +		$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/hicolor/16x16/apps
 +		$(INSTALL_DATA) hi16-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/16x16/apps/kadu.png"
+ 
  uninstall-local:
- 	rm -f "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"
- 	rm -f "$(DESTDIR)/usr/share/pixmaps/kadu-48.png"
+ 	rm -f "$(DESTDIR)/$(includedir)/kadu"/*.h

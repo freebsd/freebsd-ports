@@ -6,16 +6,17 @@
 #
 
 PORTNAME=		kadu
-PORTVERSION=		0.3.7
+PORTVERSION=		0.3.8
 PORTEPOCH=		1
 CATEGORIES=		polish net
-MASTER_SITES=		http://cyberfirma.home.pl/kadu/download/stable/
+MASTER_SITES=		http://www.kadu.net/download/stable/
 DISTNAME=		${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		jacek@combit.com.pl
 COMMENT=		QT Gadu-Gadu client
 
-LIB_DEPENDS=		gadu.3:${PORTSDIR}/polish/ekg:install
+LIB_DEPENDS=		gadu.3:${PORTSDIR}/polish/ekg:install\
+			gsm.1:${PORTSDIR}/audio/gsm:install
 
 USE_BZIP2=		yes
 USE_GMAKE=		yes
@@ -23,7 +24,11 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-existing-libgadu \
 			--program-transform-name=''\
 			--mandir=${PREFIX}/man
-CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"\
+			GADU_INCLUDES="-I${LOCALBASE}/include"\
+			GSM_LIB="-L${LOCALBASE}/lib"\
+			GSM_INCLUDES="-I${LOCALBASE}/include"
+			
 USE_QT_VER=		3
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
