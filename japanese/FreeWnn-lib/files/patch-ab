@@ -1,64 +1,29 @@
---- Wnn/jserver/de.c~	Fri Aug 19 10:31:23 1994
-+++ Wnn/jserver/de.c	Fri Mar 10 00:44:42 2000
-@@ -65,6 +65,9 @@
+--- Makefile.in.orig	Tue Feb  1 22:18:59 2000
++++ Makefile.in	Tue Aug 29 14:32:22 2000
+@@ -31,13 +31,22 @@
  
- #include <sys/ioctl.h>
+ include @top_srcdir@/makerule.mk
  
-+#if (defined(__unix__) || defined(unix)) && !defined(USG)
-+#include <sys/param.h>
-+#endif
- #ifdef SYSVR2
- #include <sys/param.h>
- #ifndef SIGCHLD
-@@ -264,7 +267,16 @@
- 	fclose(stdin);
- 	fclose(stdout);
- 	if(!noisy){
-+#if !(defined(BSD) && (BSD >= 199306)) /* !4.4BSD-Lite by Taoka */
- 	    fclose(stderr);
-+#else /* 4.4BSD-Lite */
-+	    int fd = open("/dev/null", O_WRONLY);
-+	    if (fd < 0) {
-+		xerror("Cannot open /dev/null\n");
-+	    }
-+	    dup2(fd, 2);
-+	    close(fd);
-+#endif /* 4.4BSD-Lite */
- 	}
+-WNNDIR = Wnn
++WNNDIR = @Wnn@
  
- #if defined(hpux) || defined(SOLARIS)
-@@ -542,10 +554,14 @@
+-CWNNDIR = cWnn
++CWNNDIR = @cWnn@
  
- /**	**/
- void
--gets_cur(cp)
-+gets_cur(cp, len)
- register char *cp;
-+int len;
- {
--    while((*cp++ = getc_cur()) != '\0');
-+    int i;
+-KWNNDIR = kWnn
++KWNNDIR = @kWnn@
+ 
+-SUBDIRS= PubdicPlus $(WNNDIR) Contrib/dic/gerodic $(CWNNDIR) $(KWNNDIR) 
++LIB_SUBDIRS =  
++SEVER_SUBDIRS =	
 +
-+    for (i = 0; i < len; i++)
-+	if ((*(cp + i) = getc_cur()) == '\0') break;
- }
- 
- /**	**/
-@@ -648,6 +664,17 @@
- {
-     register int c;
-     while(c= *p++) putc_cur(c);
-+    putc_cur(0);
-+}
++# PubdicPlusとContrib/dic/gerodicをSERVER_SUBDIRSにまとめいところだが、
++# SUBDIRSの処理順をうまくしないとWnn/pubdicplusのmakeに失敗するので仕方
++# ない
++JSERVER_SUBDIRS1 = PubdicPlus
++JSERVER_SUBDIRS2 = Contrib/dic/gerodic
 +
-+/**	**/
-+void
-+puts_n_cur(p,n)
-+char *p;
-+int n;
-+{
-+    register int c;
-+    while((c = *p++) && --n >= 0) putc_cur(c);
-     putc_cur(0);
- }
++SUBDIRS= @JSERVER_SUBDIRS1@ $(WNNDIR) @JSERVER_SUBDIRS2@ $(CWNNDIR) $(KWNNDIR) @SUBDIRS@
  
+ World::
+ 	@echo ""

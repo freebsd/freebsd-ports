@@ -1,14 +1,25 @@
---- ./Contrib/dic/gerodic/Makefile.orig	Sun Jun 27 00:09:13 1993
-+++ ./Contrib/dic/gerodic/Makefile	Tue Jul 29 12:06:28 1997
-@@ -4,8 +4,9 @@
- #	Jun. 26th '93 Wnn Consortium
- #
+--- kWnn/Makefile.in.orig	Tue Feb  1 23:12:42 2000
++++ kWnn/Makefile.in	Fri Sep  1 02:54:36 2000
+@@ -39,13 +39,19 @@
  
--WNNBINDIR=/usr/local/bin/Wnn4
--WNNWNNDIR=/usr/local/lib/wnn
-+PREFIX = /usr/local
-+WNNBINDIR=${PREFIX}/bin/Wnn4
-+WNNWNNDIR=${PREFIX}/lib/wnn
+ WNNCLIENTSDIR = conv
  
- WNNOWNER=wnn
+-JLIBDIR = romkan jlib
++JLIBDIR = include etc romkan jlib
  
+ KDICDIR = kdic
+ 
+-KDDIR = include kd
++KDDIR = kd
+ 
+-SUBDIRS = $(KDDIR) etc $(JLIBDIR) $(JSERVERDIR) $(WNNCLIENTSDIR) 	$(WNNJUTILDIR) $(KDICDIR) $(WNNMANDIR)
++LIB_SUBDIRS = $(KDDIR) $(JLIBDIR) $(WNNCLIENTSDIR)
++
++SERVER_SUBDIRS = $(JSERVERDIR) $(WNNJUTILDIR) $(KDICDIR) $(WNNMANDIR)
++
++SUBDIRS = @SUBDIRS@
++
++ALL_SUBDIRS = $(LIB_SUBDIRS) $(SERVER_SUBDIRS)
+ 
+ install::
+ 	@for flag in ${MAKEFLAGS} ''; do \

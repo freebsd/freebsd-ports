@@ -1,0 +1,15 @@
+--- ../Xsi.org/Wnn/romkan/Makefile.in	Sun Jan 30 12:48:51 2000
++++ Wnn/romkan/Makefile.in	Thu Aug 31 09:54:43 2000
+@@ -51,9 +51,11 @@
+ 
+ .c.o:
+ 	$(RM) $@
+-	$(CC) -c $(CFLAGS) $(_NOOP_) $*.c
++	$(LIBTOOL) $(CC) -c $(CFLAGS) $(_NOOP_) $*.c
+ 
+ clean::
++	$(RM) -r .libs
++	$(RM) *.lo *.la
+ 
+ all:: $(OBJS)
+ 

@@ -1,28 +1,94 @@
---- ./Wnn/jlib.V3/Imakefile.orig	Wed Aug 17 10:10:13 1994
-+++ ./Wnn/jlib.V3/Imakefile	Fri Aug  1 14:11:09 1997
-@@ -19,6 +19,10 @@
- OBJ3= sstrings.o
- SRCS= $(SRC1) $(SRC2) $(SRC3)
- OBJS= $(OBJ1) $(OBJ2) $(OBJ3)
-+SRC4= $(WNNETCSRC)/xutoj.c
-+OBJ4= xutoj.o
-+SRCS= $(SRC1) $(SRC2) $(SRC3) $(SRC4)
-+OBJS= $(OBJ1) $(OBJ2) $(OBJ3) $(OBJ4)
+--- ../Xsi.org/kWnn/jutil/Makefile.in	Sun Jan 30 16:02:26 2000
++++ kWnn/jutil/Makefile.in	Thu Aug 31 10:10:02 2000
+@@ -105,65 +105,69 @@
  
- LibraryObjectRule()
+ all:: $(PROGRAMS)
  
-@@ -31,7 +35,7 @@
++clean::
++	$(RM) -r .libs
++	$(RM) *.lo *.la
++
+ katod: $(OBJATOD)
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJATOD) @LIBS@
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJATOD) @LIBS@
  
- LintLibraryTarget(jd,$(SRCS))
- InstallLibrary(jd,$(WNNLIBDIR))
--InstallNonExecFile($(WNNINCLUDESRC)/jlib.h,$(JWNNINCDIR))
-+InstallNonExecFile(jlib.h,$(JWNNINCDIR))
+ clean::
+ 	$(RM) katod
  
- #if DebugLibJd
- DebuggedLibraryTarget(jd,$(OBJS))
-@@ -42,4 +46,5 @@
+ katof: $(OBJATOF)
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJATOF) @LIBS@
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJATOF) @LIBS@
  
- WnnSpecialObjectRule($(OBJ2),$(SRC2),$(WNNETCSRC),)
- WnnSpecialObjectRule($(OBJ3),$(SRC3),$(WNNETCSRC),)
-+WnnSpecialObjectRule($(OBJ4),$(SRC4),$(WNNETCSRC),)
- DependTarget()
+ clean::
+ 	$(RM) katof
+ 
+ kwnntouch: $(OBJTOUCH)
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJTOUCH) @LIBS@
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJTOUCH) @LIBS@
+ 
+ clean::
+ 	$(RM) kwnntouch
+ 
+ kdicsort: $(OBJSORT)
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJSORT)
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJSORT)
+ 
+ clean::
+ 	$(RM) kdicsort
+ 
+ kdtoa: $(OBJDTOA)
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJDTOA) @LIBS@
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJDTOA) @LIBS@
+ 
+ clean::
+ 	$(RM) kdtoa
+ 
+-kwnnstat: $(OBJSTAT) $(KWNNJLIB)
++kwnnstat: $(OBJSTAT) @DEPKWNNJLIB@
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJSTAT) $(KWNNJLIB) @LIBS@
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJSTAT) $(KWNNJLIB) @LIBS@
+ 
+ clean::
+ 	$(RM) kwnnstat
+ 
+-kwnnkill: $(OBJKILL) $(KWNNJLIB)
++kwnnkill: $(OBJKILL) @DEPKWNNJLIB@
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJKILL) $(KWNNJLIB) @LIBS@
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJKILL) $(KWNNJLIB) @LIBS@
+ 
+ clean::
+ 	$(RM) kwnnkill
+ 
+-kwddel: $(OBJWDDEL) $(KWNNJLIB)
++kwddel: $(OBJWDDEL) @DEPKWNNJLIB@
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJWDDEL) $(KWNNJLIB) @LIBS@
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJWDDEL) $(KWNNJLIB) @LIBS@
+ 
+ clean::
+ 	$(RM) kwddel
+ 
+-kwdreg: $(OBJWDREG) $(KWNNJLIB)
++kwdreg: $(OBJWDREG) @DEPKWNNJLIB@
+ 	$(RM) $@
+-	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJWDREG) $(KWNNJLIB) @LIBS@
++	$(LIBTOOL) $(CCLINK) -o $@ $(LDOPTIONS) $(OBJWDREG) $(KWNNJLIB) @LIBS@
+ 
+ clean::
+ 	$(RM) kwdreg
+@@ -321,7 +325,7 @@
+ 	@for flag in ${MAKEFLAGS} ''; do \
+ 	case "$$flag" in *=*) ;; *[i]*) set +e;; esac; done; \
+ 	for i in $(PROGRAMS); do \
+-	(set -x; $(INSTALL) $(INSTALLFLAGS)  $$i $(DESTDIR)$(KWNNBINDIR)); \
++	(set -x; $(LIBTOOL) $(INSTALL) $(INSTALLFLAGS)  $$i $(DESTDIR)$(KWNNBINDIR)); \
+ 	done
+ 
+ $(OBJ1) : $(SRC1)
