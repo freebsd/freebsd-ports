@@ -1,0 +1,9 @@
+svk is a decentralized version control system written in Perl.
+It uses the subversion filesystem but provides additional features:
+
+    - Offline operations like checkin, log, merge.
+    - Distributed branches.
+    - Lightweight checkout copy management (no .svn directories).
+    - Advanced merge algorithms, like star-merge and cherry picking.
+
+WWW: http://svk.elixus.org/
