@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xinetd
-# Version required:			2.1.8.6b5
+# Version required:			2.1.8.6b6
 # Date created:				28 June 1996
 # Whom:					markm
 #
-# $Id: Makefile,v 1.6 1998/12/06 09:34:31 vanilla Exp $
+# $Id: Makefile,v 1.7 1999/05/10 17:14:56 vanilla Exp $
 #
 
-DISTNAME=	xinetd-2.1.8.6b5
+DISTNAME=	xinetd-2.1.8.6b6
 CATEGORIES=	security
 MASTER_SITES=	http://synack.net/xinetd/
 
