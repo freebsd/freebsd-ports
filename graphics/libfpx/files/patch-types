@@ -147,3 +147,21 @@
 +    FastAllocArray(decompressBuffer, int8, size);
      if (decompressBuffer)
        decompressSize = size;
+--- oless/h/dir.hxx	Thu Feb  7 17:04:15 2002
++++ oless/h/dir.hxx	Wed Nov 20 13:38:02 2002
+@@ -87,5 +87,5 @@
+ //
+ //-----------------------------------------------------------------------
+-const unsigned int CBDIRPAD = DIRENTRYSIZE - sizeof(SPreDirEntry);
++const unsigned int CBDIRPAD = (unsigned int)DIRENTRYSIZE - (unsigned int)sizeof(SPreDirEntry);
+ 
+ //  DirEntry bit flags are used for the following private state
+--- oless/wchar.c	Fri Feb  8 11:23:42 2002
++++ oless/wchar.c	Wed Nov 20 13:59:38 2002
+@@ -32,4 +32,6 @@
+ #ifndef _MSC_VER
+ 
++#include <string.h>	/* strlen()'s declaration */
++
+ size_t sbstowcs(WCHAR *pwcs, const char *s, size_t n )
+ {
