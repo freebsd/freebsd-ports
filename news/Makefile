@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.26 1997/05/29 10:57:52 andreas Exp $
+# $Id: Makefile,v 1.27 1997/06/02 19:55:11 jfitz Exp $
 #
 
     SUBDIR += cnews
@@ -6,6 +6,7 @@
     SUBDIR += dnews
     SUBDIR += inn
     SUBDIR += knews
+    SUBDIR += leafnode
     SUBDIR += nn
     SUBDIR += nn-current
     SUBDIR += nntp
