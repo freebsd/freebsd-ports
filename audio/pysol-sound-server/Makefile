@@ -8,8 +8,7 @@
 PORTNAME=	pysol-sound-server
 PORTVERSION=	2.50
 CATEGORIES=	audio games
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://wildsau.idv.uni-linz.ac.at/mfx/download/pysol/pysol-sound-server/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sobomax
 
 MAINTAINER=	sobomax@FreeBSD.org
