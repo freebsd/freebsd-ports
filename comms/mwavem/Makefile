@@ -7,9 +7,10 @@
 
 PORTNAME=	mwavem-fbsd
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	comms
-MASTER_SITES=	http://home.pacbell.net/simonw2/src/ \
-		http://www.escape.com/developer/~simonw/ \
+MASTER_SITES=	http://www.escape.com/~simonw/ \
+		http://home.pacbell.net/simonw2/src/ \
 		${MASTER_SITE_LOCAL}
 EXTRACT_SUFX=	.tgz
 
