@@ -878,6 +878,7 @@ AUTOMAKE_DIR?=		${LOCALBASE}/share/automake
 .else
 BUILD_DEPENDS+=		automake14:${PORTSDIR}/devel/automake14
 
+AUTOMAKE_ARGS+=		-i
 USE_AUTOCONF_VER?=	213
 .endif
 .endif
