@@ -1,0 +1,35 @@
+# New ports collection makefile for:	xmms-imms
+# Date created:				Wed Feb 11 17:11:37 EST 2004
+# Whom:					Brian Feldman <green@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	imms
+PORTVERSION=	1.0
+CATEGORIES=	audio
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= ${PORTNAME}
+PKGNAMEPREFIX=	xmms-
+
+MAINTAINER=	green@FreeBSD.org
+COMMENT=	Automatic, weight-based playlist ordering plugin for XMMS
+
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
+		sqlite.2:${PORTSDIR}/databases/sqlite \
+		pcre.0:${PORTSDIR}/devel/pcre \
+		id3:${PORTSDIR}/audio/id3lib \
+		vorbis.2:${PORTSDIR}/audio/libvorbis
+
+USE_BZIP2=	yes
+USE_X_PREFIX=	yes
+USE_GNOME=	gtk12
+USE_GMAKE=	yes
+USE_AUTOCONF=	yes
+USE_AUTOHEADER=	yes
+WANT_AUTOCONF_VER= 257
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" CFLAGS="-I${LOCALBASE}/include"
+INSTALLS_SHLIB=	yes
+
+.include <bsd.port.mk>
