@@ -3,7 +3,7 @@
 # Date created:		13 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.21 1998/09/17 00:32:43 asami Exp $
+# $Id: Makefile,v 1.22 1998/10/16 03:41:49 jseger Exp $
 #
 
 DISTNAME=	nethack-3.2.2
@@ -15,8 +15,6 @@ PATCH_SITES=	ftp://mitsuko.jaist.ac.jp/pub/nethack/
 PATCHFILES=	jnethack-1.0.5.19970924.gz
 
 MAINTAINER=	max@FreeBSD.ORG
-
-BROKEN_ELF=	yes
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

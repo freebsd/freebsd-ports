@@ -1,0 +1,14 @@
+diff -ruN ./win/X11/JNetHack.ad ../nethack-3.2.2/win/X11/JNetHack.ad
+--- ./win/X11/JNetHack.ad	Sat Nov 21 01:38:14 1998
++++ ../nethack-3.2.2/win/X11/JNetHack.ad	Sat Nov 21 01:40:00 1998
+@@ -154,7 +154,7 @@
+ !
+ !
+ !
+-JNetHack*fontSet: -*-fixed-medium-r-normal--14-*-iso8859-1,\
+-                  -*-fixed-medium-r-normal--14-*-iso8859-1,\
+-                  -*-fixed-medium-r-*--14-*-jisx0208.1983-*
++JNetHack*fontSet: -*-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1,\
++                  -*-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1,\
++                  -*-fixed-medium-r-*--14-*-*-*-*-*-jisx0208.1983-*
+ JNetHack*international:	True
