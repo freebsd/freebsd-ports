@@ -130,6 +130,10 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 CONFIGURE_ARGS+=	--runtimedir=${APACHE_RELATIVE_RUNTIMEDIR}
 .endif
 
+.if defined(APACHE_WITHOUT_EXPAT)
+CONFIGURE_ARGS+=	--disable-rule=EXPAT
+.endif
+
 .if defined(APACHE_HARD_SERVER_LIMIT)
 HARD_SERVER_LIMIT=-DHARD_SERVER_LIMIT=${APACHE_HARD_SERVER_LIMIT}
 .else
@@ -322,6 +326,9 @@ pre-fetch:
 	@${ECHO_MSG} "  APACHE_WITH_MODDEFLATE=yes	mod_deflate support."
 	@${ECHO_MSG} "				This setting activates build of mod_deflate."
 	@${ECHO_MSG} "				[default is no]"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  APACHE_WITHOUT_EXPAT=yes	don't compile in expat."
+	@${ECHO_MSG} "				[default is no (expat is included)]"
 	@${ECHO_MSG} ""
 
 post-extract:
