@@ -5,15 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=       xmon
-PORTVERSION=    1.5.6
-CATEGORIES=     x11
-MASTER_SITES=   ftp://ftp.x.org/contrib/devel_tools/
+PORTNAME=	xmon
+PORTVERSION=	1.5.6
+CATEGORIES=	x11
+MASTER_SITES=	http://www.ibiblio.org/pub/X11/contrib/devel_tools/
 DISTNAME=	xmon.${PORTVERSION}
 
-MAINTAINER=     bms@spc.org
+MAINTAINER=	bms@spc.org
 
-WRKSRC=         ${WRKDIR}/xmon.1.5.6
+WRKSRC=		${WRKDIR}/xmon.${PORTVERSION}
 USE_IMAKE=	yes
 
 MAN1=		xmon.1
