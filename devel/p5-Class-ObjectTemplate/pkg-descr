@@ -1,0 +1,8 @@
+Class::ObjectTemplate is a utility class to assist in the building
+of other Object Oriented Perl classes.  It was described in detail in
+the O'Reilly book, "Advanced Perl Programming" by Sriram Srinivasam.
+
+WWW: http://search.cpan.org/search?dist=Class-ObjectTemplate
+
+--
+Tony Maher <tonym@biolateral.com.au>

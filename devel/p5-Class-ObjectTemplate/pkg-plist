@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/Class/ObjectTemplate.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/ObjectTemplate/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/ObjectTemplate
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Class 2>/dev/null || true
