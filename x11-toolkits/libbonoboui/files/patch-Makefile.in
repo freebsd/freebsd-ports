@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Apr  3 14:15:20 2002
++++ Makefile.in	Wed Apr  3 14:15:25 2002
+@@ -118,7 +118,7 @@
+ YACC = @YACC@
+ cxxflags_set = @cxxflags_set@
+ 
+-SUBDIRS = bonobo glade samples tests po doc
++SUBDIRS = bonobo glade samples po doc
+ 
+ libincludedir = $(includedir)/libbonoboui-2.0
+ libinclude_HEADERS =  	bonobo.h		libbonoboui.h
