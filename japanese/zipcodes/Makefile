@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	zipcodes
-PORTVERSION=	19980130
+PORTVERSION=	20001101
 CATEGORIES=	japanese misc
-MASTER_SITES=	http://www.postal.mpt.go.jp/lzh/ \
-		http://freefall.freebsd.org/~itojun/distfiles/
+MASTER_SITES=	http://www.post.yusei.go.jp/newnumber/lzh/s/
 EXTRACT_SUFX=	.lzh
 DISTNAME=	ken_all
 
@@ -19,10 +18,13 @@ BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		nkf:${PORTSDIR}/japanese/nkf
 
 EXTRACT_CMD=	lha
-EXTRACT_BEFORE_ARGS=	xfqw=${WRKDIR}
-EXTRACT_AFTER_ARGS=	# empty
+EXTRACT_BEFORE_ARGS=	p
+EXTRACT_AFTER_ARGS=	>ken_all.csv
 NO_WRKSUBDIR=	yes
 
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}" SCRIPTDIR=${SCRIPTDIR}
+
+post-extract:
+	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
 
 .include <bsd.port.mk>
