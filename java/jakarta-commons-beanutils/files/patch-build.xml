@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- build.xml.orig	Mon Nov 29 03:07:46 2004
++++ build.xml	Mon Nov 29 03:09:59 2004
+@@ -214,6 +215,8 @@
+                doctitle="&lt;h1&gt;${component.title} (Version ${component.version})&lt;/h1&gt;"
+             windowtitle="${component.title} (Version ${component.version})"
+                  bottom="Copyright (c) 2001-2004 - Apache Software Foundation">
++                 <link offline="true" packagelistLoc="${commons-collections.api}" href="http://jakarta.apache.org/commons/collections/api/"/>
++                 <link offline="true" packagelistLoc="${commons-logging.api}" href="http://jakarta.apache.org/commons/logging/api/"/>
+       <classpath refid="compile.classpath"/>
+     </javadoc>
+   </target>
