@@ -1,0 +1,59 @@
+Index: imap/message.c
+diff -u -p imap/message.c.orig imap/message.c
+--- imap/message.c.orig	Sat Feb 28 02:44:55 2004
++++ imap/message.c	Thu Oct  7 20:21:04 2004
+@@ -227,6 +227,7 @@ unsigned size;
+     int n;
+     int sawcr = 0, sawnl;
+     int reject8bit = config_getswitch(IMAPOPT_REJECT8BIT);
++    int pass8bit = config_getswitch(IMAPOPT_PASS8BIT);
+     int inheader = 1, blankline = 1;
+ 
+     while (size) {
+@@ -262,7 +263,7 @@ unsigned size;
+ 			/* We have been configured to reject all mail of this
+ 			   form. */
+ 			if (!r) r = IMAP_MESSAGE_CONTAINS8BIT;
+-		    } else {
++		    } else if (!pass8bit) {
+ 			/* We have been configured to munge all mail of this
+ 			   form. */
+ 			*p = 'X';
+Index: imap/spool.c
+diff -u -p imap/spool.c.orig imap/spool.c
+--- imap/spool.c.orig	Fri Mar  5 01:09:34 2004
++++ imap/spool.c	Thu Oct  7 20:20:57 2004
+@@ -140,6 +140,7 @@ static int parseheader(struct protstream
+     state s = NAME_START;
+     int r = 0;
+     int reject8bit = config_getswitch(IMAPOPT_REJECT8BIT);
++    int pass8bit = config_getswitch(IMAPOPT_PASS8BIT);
+     const char **skip = NULL;
+ 
+     if (namelen == 0) {
+@@ -266,7 +267,7 @@ static int parseheader(struct protstream
+ 			   form. */
+ 			r = IMAP_MESSAGE_CONTAINS8BIT;
+ 			goto ph_error;
+-		    } else {
++		    } else if (!pass8bit) {
+ 			/* We have been configured to munge all mail of this
+ 			   form. */
+ 			c = 'X';
+Index: lib/imapoptions
+diff -u lib/imapoptions.orig lib/imapoptions
+--- lib/imapoptions.orig	Thu Jul 22 04:07:45 2004
++++ lib/imapoptions	Thu Oct  7 20:00:04 2004
+@@ -95,6 +95,12 @@
+ { "afspts_mycell", NULL, STRING }
+ /* Cell to use for AFS PTS lookups.  Defaults to the local cell. */
+ 
++{ "pass8bit", 0, SWITCH }
++/* If enabled, lmtpd accepts messages with 8-bit characters in the
++   headers without changing to `X'.  This option is strongly not
++   recommended.  (A proper soultion to non-ASCII characters in headers
++   is offered by RFC 2047 and its predecessors.) */
++
+ { "allowallsubscribe", 0, SWITCH }
+ /* Allow subscription to nonexistent mailboxes.  This option is
+    typically used on backend servers in a Murder so that users can

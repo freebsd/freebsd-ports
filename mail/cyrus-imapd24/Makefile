@@ -78,6 +78,7 @@ OPTIONS+=	NETSCAPEHACK	"Enable X-NETSCAPE extensions"		off
 OPTIONS+=	NNTP		"Enable NNTP support"			off
 OPTIONS+=	SNMP_4		"Enable SNMP support using net-snmp v4"	off \
 		SNMP_5		"Enable SNMP support using net-snmp v5"	off
+OPTIONS+=	PASS8BITHACK	"Add pass8bit option (not recommended)"	off
 
 .include <bsd.port.pre.mk>
 
@@ -196,6 +197,10 @@ PLIST_SUB+=	LDAP_PTLOADER="@comment "
 .else
 CONFIGURE_ARGS+=--with-auth=unix
 PLIST_SUB+=	LDAP_PTLOADER="@comment "
+.endif
+
+.if defined(WITH_PASS8BITHACK)
+EXTRA_PATCHES+=	${FILESDIR}/pass8bit.diff
 .endif
 
 CYRUS_USER?=	cyrus
