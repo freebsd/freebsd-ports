@@ -1,0 +1,59 @@
+--- Makefile.orig	Wed Dec 25 18:35:43 2002
++++ Makefile	Wed Dec 25 18:36:49 2002
+@@ -8,12 +8,13 @@
+ SUBDIRS = c_src src test doc
+ 
+ DATE    = $(shell date +%m%d)
+-REL     = esdl-0.91.$(DATE)
+-RELDIR  = /tmp/$(REL)
++RELDIR  = $(PREFIX)/lib/erlang/lib/esdl
+ 
+ WWWDIR  = /home/dgud/public_html/external/esdl
+ BUPDIR  = /tmp/oldesdl/
+ 
++all: target
++
+ target clean:
+ 	@for d in $(SUBDIRS); do         \
+            if test ! -d $$d ; then \
+@@ -29,8 +30,8 @@
+ 
+ release: target relsrc relwin www
+ 
+-relsrc: target
+-	@echo Making $(RELDIR).tgz
++install: target
++	@echo Making $(RELDIR)
+ 	@if test ! -d $(RELDIR) ; then \
+ 		mkdir $(RELDIR) ; \
+ 	else \
+@@ -50,11 +51,12 @@
+ 	mkdir $(RELDIR)/include
+ 	cp include/*.hrl $(RELDIR)/include
+ 	mkdir $(RELDIR)/priv
++	cp priv/sdl_driver.so $(RELDIR)/priv
++	cp priv/sdlwrapper $(RELDIR)/priv
+ 	mkdir $(RELDIR)/src
+ 	cp src/Makefile* src/*.?rl $(RELDIR)/src
+ 	mkdir $(RELDIR)/test
+ 	cp test/Makefile* test/*.erl test/*.wav test/*.bmp $(RELDIR)/test
+-	(cd $(RELDIR)/..; gtar zcfv $(REL).src.tar.gz $(REL) )
+ relwin: relsrc
+ 	cp priv/SDL.dll $(RELDIR)/priv
+ 	cp priv/sdlwrapper.exe priv/sdl_driver.dll $(RELDIR)/priv
+@@ -63,15 +65,6 @@
+ 
+ www:
+ 	@echo Copying files ...
+-	@if test ! -d $(BUPDIR) ; then \
+-		mkdir $(BUPDIR) ; \
+-	else \
+-		rm -rf $(BUPDIR)/* ; \
+-	fi ;
+-	mv $(WWWDIR)/*.gz $(BUPDIR)/
+-	mv $(WWWDIR)/*.zip $(BUPDIR)/
+-	cp $(RELDIR)/../$(REL).src.tar.gz $(WWWDIR)
+-	cp $(RELDIR)/../$(REL).win.zip $(WWWDIR)
+ 	cp Readme $(WWWDIR)
+ 	cp doc/*.html $(WWWDIR)/doc
+ 	$(shell sed 's,esdl-.\..\.....,$(REL),g' $(WWWDIR)/index.html > $(WWWDIR)/index.html.new)
