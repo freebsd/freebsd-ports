@@ -21,6 +21,7 @@ MAINTAINER=	tg@FreeBSD.org
 
 LIB_DEPENDS=	${TK_DEPENDS}
 
+DIST_SUBDIR=    python
 WRKSRC=		${WRKDIR}/Python-1.5.2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fpectl --with-libs='-lxpg4'
