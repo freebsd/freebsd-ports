@@ -44,6 +44,8 @@ post-patch:
 post-configure:
 	${REINPLACE_CMD} -e '/MALLOC_H/s/^#define \(HAVE_.*_MALLOC_H\).*/\/\* #undef \1 \*\//g' \
 		${WRKSRC}/src/config.h
+	${REINPLACE_CMD} -e '/^ARCH=/s/^ARCH=.*/ARCH=${ARCH}-${OPSYS:L}/' \
+		${WRKSRC}/src/Makefile
 
 post-install:
 .for f in pl plld plrc
