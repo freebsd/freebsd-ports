@@ -18,6 +18,7 @@
     SUBDIR += gtar
     SUBDIR += gzip
     SUBDIR += ha
+    SUBDIR += hffzip
     SUBDIR += hpack.non-usa.only
     SUBDIR += lbrate
     SUBDIR += lha
