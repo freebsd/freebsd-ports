@@ -6,27 +6,23 @@
 #
 
 PORTNAME=	swi-pl
-PORTVERSION=	3.4.4
+PORTVERSION=	5.0.10
 CATEGORIES=	lang
-MASTER_SITES=	ftp://swi.psy.uva.nl/pub/SWI-Prolog/
+MASTER_SITES=	ftp://ftp.swi.psy.uva.nl/pub/SWI-Prolog/
 DISTNAME=	pl-${PORTVERSION}
 
 MAINTAINER=	max@FreeBSD.org
 
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--host=${ARCH}-${OS}
+CONFIGURE_ARGS=	--host=${MACHINE_ARCH}-${OPSYS:L}
 STRIP=
-MAKE_FLAGS+=	CIFLAGS=-DRTLD_LAZY -f
 MAN1=		pl.1 plrc.1 plld.1
-PLIST_SUB=	DISTNAME=${DISTNAME} ARCH=${ARCH} OS=${OS}
-
-OS!=	uname -s | tr '[:upper:]' '[:lower:]'
+PLIST_SUB=	DISTNAME=${DISTNAME} ARCH=${ARCH} OS=${OPSYS:L}
 
 post-install:
 .for f in pl plld plrc
-	@/usr/bin/strip ${PREFIX}/lib/${DISTNAME}/bin/${ARCH}-${OS}/$f
+	@${STRIP_CMD} ${PREFIX}/lib/${DISTNAME}/bin/${ARCH}-${OPSYS:L}/$f
 .endfor
 
 .include <bsd.port.mk>

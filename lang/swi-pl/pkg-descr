@@ -2,3 +2,5 @@ Edinburgh-style Prolog compiler including modules, autoload,
 libraries, Garbage-collector, stack-expandor, C-interface,
 GNU-readline and GNU-Emacs interface, very fast compiler,
 X11 interface using XPCE (info: ftp swi.psy.uva.nl:/pub/xpce).
+
+WWW: http://www.swi-pl.org/

@@ -2,21 +2,22 @@ bin/pl
 bin/plld
 bin/plrc
 include/SWI-Prolog.h
+include/SWI-Stream.h
 lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/pl
 lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/plld
 lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/plrc
 lib/%%DISTNAME%%/bin/swipl
-lib/%%DISTNAME%%/boot32.prc
 lib/%%DISTNAME%%/boot/apply.pl
 lib/%%DISTNAME%%/boot/autoload.pl
 lib/%%DISTNAME%%/boot/bags.pl
 lib/%%DISTNAME%%/boot/dwim.pl
 lib/%%DISTNAME%%/boot/history.pl
 lib/%%DISTNAME%%/boot/init.pl
+lib/%%DISTNAME%%/boot/license.pl
 lib/%%DISTNAME%%/boot/list.pl
-lib/%%DISTNAME%%/boot/listing.pl
 lib/%%DISTNAME%%/boot/load.pl
 lib/%%DISTNAME%%/boot/make.pl
+lib/%%DISTNAME%%/boot/menu.pl
 lib/%%DISTNAME%%/boot/messages.pl
 lib/%%DISTNAME%%/boot/parms.pl
 lib/%%DISTNAME%%/boot/profile.pl
@@ -27,7 +28,11 @@ lib/%%DISTNAME%%/boot/syspred.pl
 lib/%%DISTNAME%%/boot/toplevel.pl
 lib/%%DISTNAME%%/boot/topvars.pl
 lib/%%DISTNAME%%/boot/writef.pl
-lib/%%DISTNAME%%/include/SWI-Exports
+lib/%%DISTNAME%%/boot32.prc
+lib/%%DISTNAME%%/dotfiles/README
+lib/%%DISTNAME%%/dotfiles/dotplrc
+lib/%%DISTNAME%%/dotfiles/dotxpcerc
+lib/%%DISTNAME%%/dotfiles/edit
 lib/%%DISTNAME%%/include/SWI-Prolog.h
 lib/%%DISTNAME%%/include/SWI-Stream.h
 lib/%%DISTNAME%%/include/stub.c
@@ -46,11 +51,17 @@ lib/%%DISTNAME%%/library/files.pl
 lib/%%DISTNAME%%/library/gensym.pl
 lib/%%DISTNAME%%/library/help.pl
 lib/%%DISTNAME%%/library/helpidx.pl
+lib/%%DISTNAME%%/library/listing.pl
+lib/%%DISTNAME%%/library/main.pl
 lib/%%DISTNAME%%/library/netscape.pl
+lib/%%DISTNAME%%/library/occurs.pl
+lib/%%DISTNAME%%/library/ordsets.pl
 lib/%%DISTNAME%%/library/oset.pl
+lib/%%DISTNAME%%/library/qpforeign.pl
 lib/%%DISTNAME%%/library/qsave.pl
 lib/%%DISTNAME%%/library/quintus.pl
 lib/%%DISTNAME%%/library/readln.pl
+lib/%%DISTNAME%%/library/readutil.pl
 lib/%%DISTNAME%%/library/shell.pl
 lib/%%DISTNAME%%/library/shlib.pl
 lib/%%DISTNAME%%/library/statistics.pl
@@ -58,19 +69,17 @@ lib/%%DISTNAME%%/library/system.pl
 lib/%%DISTNAME%%/library/threadutil.pl
 lib/%%DISTNAME%%/library/tty.pl
 lib/%%DISTNAME%%/library/url.pl
-lib/%%DISTNAME%%/man/pl.1
-lib/%%DISTNAME%%/man/plld.1
-lib/%%DISTNAME%%/man/plrc.1
 lib/%%DISTNAME%%/runtime/%%ARCH%%-%%OS%%/libpl.a
 lib/%%DISTNAME%%/swipl
-@dirrm lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%
-@dirrm lib/%%DISTNAME%%/bin
-@dirrm lib/%%DISTNAME%%/boot
-@dirrm lib/%%DISTNAME%%/include
-@dirrm lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%
-@dirrm lib/%%DISTNAME%%/lib
-@dirrm lib/%%DISTNAME%%/library
-@dirrm lib/%%DISTNAME%%/man
 @dirrm lib/%%DISTNAME%%/runtime/%%ARCH%%-%%OS%%
 @dirrm lib/%%DISTNAME%%/runtime
+@dirrm lib/%%DISTNAME%%/man
+@dirrm lib/%%DISTNAME%%/library
+@dirrm lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%
+@dirrm lib/%%DISTNAME%%/lib
+@dirrm lib/%%DISTNAME%%/include
+@dirrm lib/%%DISTNAME%%/dotfiles
+@dirrm lib/%%DISTNAME%%/boot
+@dirrm lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%
+@dirrm lib/%%DISTNAME%%/bin
 @dirrm lib/%%DISTNAME%%
