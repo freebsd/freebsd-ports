@@ -1,6 +1,6 @@
 --- configure.orig	Mon May 17 14:46:54 2004
 +++ configure	Mon May 17 14:47:14 2004
-@@ -2423,6 +2423,7 @@
+@@ -2434,6 +2434,7 @@
    cat > conftest.$ac_ext <<EOF
  #line 2425 "configure"
  #include "confdefs.h"

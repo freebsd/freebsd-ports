@@ -11,10 +11,10 @@
  
  #include <fcntl.h>
 +#include <netdb.h>
- #include <setjmp.h>
  #include <signal.h>
  #include <stdio.h>
-@@ -57,7 +59,6 @@
+ #include <string.h>
+@@ -56,7 +58,6 @@
  #ifdef SUPPORT_UTMPX
  #include <utmpx.h>
  #endif
@@ -22,7 +22,7 @@
  
  #ifdef KERBEROS5
  #include <krb5/krb5.h>
-@@ -80,6 +81,26 @@
+@@ -79,6 +80,26 @@
  {
  	struct utmp ut;
  	struct stat buf;

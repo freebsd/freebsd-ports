@@ -1,6 +1,6 @@
 --- src/Makefile.in-orig	Mon Feb 17 22:57:18 2003
 +++ src/Makefile.in	Mon Feb 17 22:57:48 2003
-@@ -22,8 +22,7 @@
+@@ -23,8 +23,7 @@
  INSTALL	= @INSTALL@
  
  PROG	= tnftpd
