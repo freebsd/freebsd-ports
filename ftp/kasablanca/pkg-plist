@@ -1,22 +1,26 @@
 bin/kasablanca
-bin/kbftp
 share/applnk/Utilities/kasablanca.desktop
 share/apps/kasablanca/about.png
 share/apps/kasablanca/kasablancaui.rc
+share/config.kcfg/kbconfig.kcfg
 share/doc/HTML/en/kasablanca/common
 share/doc/HTML/en/kasablanca/index.cache.bz2
 share/doc/HTML/en/kasablanca/index.docbook
 share/icons/hicolor/128x128/apps/kasablanca.png
 share/icons/hicolor/16x16/apps/kasablanca.png
+share/icons/hicolor/22x22/apps/kasablanca.png
 share/icons/hicolor/32x32/apps/kasablanca.png
 share/icons/hicolor/48x48/apps/kasablanca.png
 share/icons/hicolor/64x64/apps/kasablanca.png
+share/locale/de/LC_MESSAGES/kasablanca.mo
 @unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/128x128/apps 2>/dev/null || true
@@ -26,6 +30,7 @@ share/icons/hicolor/64x64/apps/kasablanca.png
 @dirrm share/doc/HTML/en/kasablanca
 @unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@unexec rmdir %D/share/config.kcfg 2>/dev/null || true
 @dirrm share/apps/kasablanca
 @unexec rmdir %D/share/apps 2>/dev/null || true
 @unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
