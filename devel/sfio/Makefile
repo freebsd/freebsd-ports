@@ -1,13 +1,13 @@
 # New ports collection makefile for:  sfio
-# Version required:	97
+# Version required:	1999
 # Date created: 	8 November 1997
 # Whom:			jraynard
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sfio_1998
-PKGNAME=	sfio-98
+DISTNAME=	sfio_1999
+PKGNAME=	sfio-1999
 CATEGORIES=	devel
 #Users must register with AT&T before downloading tarball.
 #MASTER_SITES=	http://www.research.att.com/sw/tools/sfio/
@@ -16,9 +16,12 @@ EXTRACT_CMD=	cpio
 EXTRACT_BEFORE_ARGS=	-idF
 EXTRACT_AFTER_ARGS=	# empty
 
+MAINTAINER=	ports@FreeBSD.org
+
 NO_WRKSUBDIR=	yes
 IS_INTERACTIVE=	yes
-MAN3=		cdt.3 sfio.3 vmalloc.3
+MAN1=		iffe.1
+MAN3=		sfio.3
 
 RESTRICTED=	Requires user to register with AT&T.
 
@@ -45,8 +48,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/include/* ${PREFIX}/include
 	${INSTALL_DATA} ${WRKDIR}/lib/libsfio.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKDIR}/lib/libstdio.a ${PREFIX}/lib
-	${INSTALL_MAN} ${WRKDIR}/man/man3/cdt.3 ${PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKDIR}/man/man1/iffe.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKDIR}/man/man3/sfio.3 ${PREFIX}/man/man3
-	${INSTALL_MAN} ${WRKDIR}/man/man3/vmalloc.3 ${PREFIX}/man/man3
 
 .include <bsd.port.mk>
