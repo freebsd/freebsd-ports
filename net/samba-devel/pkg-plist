@@ -69,6 +69,7 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/htmldocs/OS2-Client-HOWTO.html
 %%PORTDOCS%%share/doc/samba/htmldocs/PAM-Authentication-And-Samba.html
 %%PORTDOCS%%share/doc/samba/htmldocs/Samba-HOWTO-Collection.html
+%%PORTDOCS%%share/doc/samba/htmldocs/Samba-BDC-HOWTO.html
 %%PORTDOCS%%share/doc/samba/htmldocs/Samba-PDC-HOWTO.html
 %%PORTDOCS%%share/doc/samba/htmldocs/Samba-LDAP-HOWTO.html
 %%PORTDOCS%%share/doc/samba/htmldocs/UNIX_INSTALL.html
@@ -142,9 +143,6 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/textdocs/Win95.txt
 %%PORTDOCS%%share/doc/samba/textdocs/WinNT.txt
 %%PORTDOCS%%share/doc/samba/textdocs/cifsntdomain.txt
-%%PORTDOCS%%share/doc/samba/textdocs/kurs.pdf
-%%PORTDOCS%%share/doc/samba/textdocs/kurs.tex
-%%PORTDOCS%%share/doc/samba/textdocs/logo.ps
 %%PORTDOCS%%share/doc/samba/textdocs/security_level.txt
 share/examples/samba/README
 share/examples/samba/VFS/.cvsignore
@@ -179,6 +177,9 @@ share/examples/samba/libsmbclient/tree.c
 share/examples/samba/misc/extra_smbstatus
 share/examples/samba/misc/swat.pl
 share/examples/samba/misc/wall.perl
+share/examples/samba/pdb/Makefile
+share/examples/samba/pdb/README
+share/examples/samba/pdb/pdb_test.c
 share/examples/samba/printer-accounting/README
 share/examples/samba/printer-accounting/acct-all
 share/examples/samba/printer-accounting/acct-sum
@@ -186,6 +187,7 @@ share/examples/samba/printer-accounting/hp5-redir
 share/examples/samba/printer-accounting/lp-acct
 share/examples/samba/printer-accounting/printcap
 share/examples/samba/printing/smbprint
+share/examples/samba/printing/smbprint-new.sh
 share/examples/samba/printing/smbprint.sysv
 share/examples/samba/simple/README
 share/examples/samba/simple/smb.conf
@@ -212,6 +214,7 @@ share/swat/help/NT_Security.html
 share/swat/help/OS2-Client-HOWTO.html
 share/swat/help/PAM-Authentication-And-Samba.html
 share/swat/help/Samba-HOWTO-Collection.html
+share/swat/help/Samba-BDC-HOWTO.html
 share/swat/help/Samba-PDC-HOWTO.html
 share/swat/help/UNIX_INSTALL.html
 share/swat/help/findsmb.1.html
@@ -464,6 +467,7 @@ share/swat/using_samba/this_edition.html
 @dirrm share/examples/samba/svr4-startup
 @dirrm share/examples/samba/simple
 @dirrm share/examples/samba/printing
+@dirrm share/examples/samba/pdb
 @dirrm share/examples/samba/printer-accounting
 @dirrm share/examples/samba/misc
 @dirrm share/examples/samba/libsmbclient
