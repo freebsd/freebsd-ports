@@ -18,12 +18,6 @@ USE_ZIP=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/metaserver2open/spaghetti
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
 pre-everything::
 		@${ECHO_CMD} "#############################################"
 		@${ECHO_CMD} "                 IMPORTANT!"
@@ -43,4 +37,4 @@ do-install:
 		@${TOUCH} ${PREFIX}/share/${PORTNAME}/db/orders.dat
 		@${TOUCH} ${PREFIX}/share/${PORTNAME}/db/users.dat
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,0 +1,37 @@
+--- build_settings.txt.orig	Wed Jan  7 16:45:59 2004
++++ build_settings.txt	Wed Jan  7 16:47:33 2004
+@@ -5,8 +5,8 @@
+ # build settings
+ 
+ ####### compiler settings
+-CPP = g++
+-CC = gcc
++CXX?= g++
++CC?= gcc
+ 
+ # compiler flags
+ # -g				generate extra debugging info
+@@ -18,14 +18,12 @@
+ # -D RUNNING_LOCALLY set if testing on the localhost
+ 
+ # Note: you will get a *ton* of warnings, don't be alarmed :O)
+-CFLAGS = \
+-		-O2 \
+-		-Wall \
++CFLAGS+= \
+ 		-D BN2_FULLVERSION \
+ 		-D HARDCODE_USERD_SETTINGS 
+ 
+ ####### linker settings
+-LINK = gcc
++LINK?= ${CC}
+ LFLAGS =
+ 
+ ####### Implicit rules
+@@ -36,5 +34,5 @@
+ 	$(CC) -c $(CFLAGS) $(INCPATH) -o $@ $<
+ 
+ .cpp.o:
+-	$(CPP) -c $(CFLAGS) $(INCPATH) -o $@ $<
++	$(CXX) -c $(CFLAGS) $(INCPATH) -o $@ $<
+ 
