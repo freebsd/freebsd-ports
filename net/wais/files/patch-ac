@@ -1,0 +1,20 @@
+--- Makefile.freebsd.orig	Mon Aug 18 22:03:40 2003
++++ Makefile.freebsd	Mon Aug 18 22:03:58 2003
+@@ -48,7 +48,7 @@
+ #
+ # Some default programs
+ # CC = cc
+-CC	= gcc
++#CC	= gcc
+ AR	= ar
+ RM	= /bin/rm
+ MV	= mv
+@@ -149,7 +149,7 @@
+ # -DSOLARIS for SunOS 5.2 (Solaris 2.2) machines.
+ #
+ # Use this version of CFLAGS for BSDI
+-CFLAGS = -I$(INCLUDE) -D__bsdi__ -DBSD43 -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB
++CFLAGS += -I$(INCLUDE) -D__bsdi__ -DBSD43 -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB
+ 
+ #
+ # Flag definitions
