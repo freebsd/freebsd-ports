@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Oct 22 17:52:17 2003
-+++ Makefile	Wed Oct 22 19:21:17 2003
+--- Makefile.orig	Sat Jan 31 13:43:04 2004
++++ Makefile	Sat Jan 31 13:44:35 2004
 @@ -4,13 +4,15 @@
  
  # Where to install binary and manpage on "make install":
@@ -28,7 +28,7 @@
  .if defined(WITH_ICONV)
  CFLAGS+=-DWITH_ICONV -I${LOCALBASE}/include
  LDFLAGS+=-L${LOCALBASE}/lib -liconv
-@@ -308,35 +313,62 @@
+@@ -308,35 +313,63 @@
  .endif
  .endif
  
@@ -79,6 +79,7 @@
 -			-DREAD_MMAP \
 -			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
 +	${MAKE}	OBJECTS='${ARCHFILES} audio_oss.o term.o' \
++		CFLAGS="${CFLAGS} -DWITH_FREEBSD_DSP_ONLY" \
  		mpg123-make
  
  freebsd-esd:
@@ -112,7 +113,7 @@
  		$(FRONTEND)
   
  
-@@ -575,7 +607,7 @@
+@@ -575,7 +608,7 @@
  	@ $(MAKE) CFLAGS='$(CFLAGS)' BINNAME=mpg123m mpg123
  
  mpg123-make:
