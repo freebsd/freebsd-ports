@@ -18,10 +18,6 @@ include/pari/genpari.h
 lib/libpari-%%MAJOR_VERSION%%.%%MINOR_VERSION%%.so.%%REV_VERSION%%.0.0
 lib/libpari-%%MAJOR_VERSION%%.%%MINOR_VERSION%%.so.%%REV_VERSION%%
 lib/libpari-%%MAJOR_VERSION%%.%%MINOR_VERSION%%.so
-share/doc/pari/emacs/pari.el
-share/doc/pari/emacs/pariemacs.txt
-share/doc/pari/emacs/with-syntax.el
-share/doc/pari/emacs/pari-translator.el
 share/doc/pari/AUTHORS
 share/doc/pari/Announce.2.1
 share/doc/pari/CHANGES
@@ -32,6 +28,8 @@ share/doc/pari/MACHINES
 share/doc/pari/NEW
 share/doc/pari/README
 share/doc/pari/TODO
+share/doc/pari/pari.desc
+share/doc/pari/PARI/822.pm
 share/doc/pari/misc/README
 share/doc/pari/misc/color.dft
 share/doc/pari/misc/gpalias
@@ -69,7 +67,7 @@ share/doc/pari/examples/rho.gp
 share/doc/pari/examples/squfof.gp
 share/doc/pari/examples/taylor.gp
 @dirrm include/pari
-@dirrm share/doc/pari/emacs
+@dirrm share/doc/pari/PARI
 @dirrm share/doc/pari/misc
 @dirrm share/doc/pari/doc
 @dirrm share/doc/pari/examples
