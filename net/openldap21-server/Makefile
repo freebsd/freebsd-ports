@@ -21,7 +21,7 @@ MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	openldap-release
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	db3.2:${PORTSDIR}/databases/db3
 
