@@ -1,10 +1,13 @@
-This is a package containing only the executables for mule-2.3, a
-multilingual editor based on emacs-19.34.
+This package contains only the executables for mule-2.3, a multilingual
+editor based on emacs-19.34.
 
-You should install a package, mule-common-2.3, containing emacs lisp
+You should install the mule-common-2.3 package containing emacs lisp
 files, info pages, and so on (except executables) for mule-2.3.
 
-This package is built with Japanese support, using SJ3 as default.
+This package is built with Japanese support, using sj3.
+It supports the following input methods: jeonkak, hangul for
+Korean (Hanja), and quanjiao, zhuyin, erpin for Chinese (check out
+${LOCALBASE}/lib/mule/site-lisp/site-start.el).
 
 This package and the package, mule-common-2.3, *will* clobber any
 existing emacs installation.  In particular, the executables and man
@@ -15,7 +18,7 @@ Although this shouldn't cause any problems to run both mule and emacs,
 it may cause some confusion when one of them is pkg_delete'd.  If
 someone has a solution to this, please tell me.
 
-A "dir" file is supplied in the ${PORTSDIR}/editors/mule-common/files/
+A info "dir" file is supplied in the ${PORTSDIR}/editors/mule-common/files/
 subdirectory of the ports package.  Copy it into your /usr/local/info
 to read mule info pages, but also make sure you also add everything
 that may have been added to that file!
