@@ -11,7 +11,7 @@ CATEGORIES=	palm comms deskutils
 MASTER_SITES=	http://hopf.math.nwu.edu/syncal/ \
 		ftp://ftp.Uni-Bielefeld.DE/pub/systems/FreeBSD/lkoeller/
 
-MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Synchronize your PalmPilot with ical
 
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
