@@ -1,1 +1,3 @@
 bin/makeself
+%%PORTDOCS%%%%DOCSDIR%%/README                                          
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
