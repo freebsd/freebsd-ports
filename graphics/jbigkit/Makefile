@@ -3,7 +3,7 @@
 # Date created:		19 November 1996
 # Whom:			mi
 #
-# $Id: Makefile,v 1.3 1997/07/17 15:12:42 max Exp $
+# $Id: Makefile,v 1.4 1998/06/25 07:07:12 vanilla Exp $
 #
 
 DISTNAME=	jbigkit-1.0
@@ -21,6 +21,6 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/jbig
 	${INSTALL_DATA} ${WRKSRC}/libjbig/jbig.doc ${PREFIX}/share/doc/jbig
 .endif
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
