@@ -9,7 +9,7 @@ PORTNAME=	utserver
 PORTVERSION=	436
 PORTREVISION=	3
 CATEGORIES=	games linux
-MASTER_SITES=	http://public.planetmirror.com/pub/lokigames/installers/ut/ \    
+MASTER_SITES=	http://public.planetmirror.com/pub/lokigames/installers/ut/ \
 		http://fileserver.talkware.net/ut/
 DISTNAME=	ut-server-${PORTVERSION}
 
