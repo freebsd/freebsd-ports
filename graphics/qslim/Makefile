@@ -37,5 +37,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/mixkit/src/libmix.a ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/qslim/qslim ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/qslim/qvis ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/include/mixkit
+	${INSTALL_DATA} ${WRKSRC}/mixkit/src/*.h ${PREFIX}/include/mixkit
+	@${RM} -f ${PREFIX}/include/mixkit/getopt.h
 
 .include <bsd.port.mk>
