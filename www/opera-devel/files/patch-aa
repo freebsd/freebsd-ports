@@ -1,6 +1,6 @@
---- install.sh.orig	Tue Oct 29 16:31:24 2002
-+++ install.sh	Mon Nov 11 19:34:42 2002
-@@ -1065,16 +1065,10 @@
+--- install.sh.orig	Tue Mar 11 15:29:39 2003
++++ install.sh	Tue Mar 11 15:30:46 2003
+@@ -1092,16 +1092,10 @@
  	mkdir $mkdirv $mkdirp $plugin_dir/
  	chmod $chmodv 755 $plugin_dir
  
@@ -19,7 +19,7 @@
  	    echo
  	    echo "System wide configuration files:"
  	    echo "  $config_dir/opera6rc"
-@@ -1101,6 +1095,7 @@
+@@ -1128,6 +1122,7 @@
  			;;
  		esac
  	    done
