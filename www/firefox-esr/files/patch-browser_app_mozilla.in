@@ -1,37 +1,9 @@
---- browser/app/mozilla.in.orig	Tue Oct 26 10:26:11 2004
-+++ browser/app/mozilla.in	Mon Feb 28 02:14:53 2005
-@@ -28,52 +28,110 @@
- ## The script will setup all the environment voodoo needed to make
+--- browser/app/mozilla.in.orig	Tue Oct 26 11:26:11 2004
++++ browser/app/mozilla.in	Mon Feb 28 23:32:14 2005
+@@ -29,51 +29,83 @@
  ## the mozilla-bin binary to work.
  ##
--
-+#!/bin/sh
-+#
-+# The contents of this file are subject to the Netscape Public License
-+# Version 1.0 (the "NPL"); you may not use this file except in
-+# compliance with the NPL.  You may obtain a copy of the NPL at
-+# http://www.mozilla.org/NPL/
-+#
-+# Software distributed under the NPL is distributed on an "AS IS" basis,
-+# WITHOUT WARRANTY OF ANY KIND, either express or implied. See the NPL
-+# for the specific language governing rights and limitations under the
-+# NPL.
-+#
-+# The Initial Developer of this code under the NPL is Netscape
-+# Communications Corporation.  Portions created by Netscape are
-+# Copyright (C) 1998 Netscape Communications Corporation.  All Rights
-+# Reserved.
-+#
-+
-+# $from: mozilla.in,v 1.3.4.9 2004/10/26 09:26:11 bryner%brianryner.com Exp $
-+# Usage:
-+#
-+# $ mozilla [args]
-+#
-+# The script will setup all the environment voodoo needed to make
-+# the mozilla-bin binary to work.
-+#
-+
+ 
 +#
 +# MOZ_PIS, "Mozilla Plugable Init Scripts"
 +# MOZ_PIS_ is the name space used
@@ -151,7 +123,7 @@
  
  # Use run-mozilla.sh in the current dir if it exists
  # If not, then start resolving symlinks until we find run-mozilla.sh
-@@ -82,149 +140,233 @@
+@@ -82,149 +114,217 @@
  curdir=`dirname "$progname"`
  progbase=`basename "$progname"`
  run_moz="$curdir/run-mozilla.sh"
@@ -208,24 +180,13 @@
 -    echo "Cannot find mozilla runtime directory. Exiting."
 -    exit 1
 -  fi
-+    # Check default compile-time libdir
-+    if [ -x "${moz_libdir}/run-mozilla.sh" ]; then
-+	dist_bin="$moz_libdir"
-+	run_moz="${dist_bin}/run-mozilla.sh"
-+    else
-+	echo "$0: Cannot find mozilla runtime directory. Exiting." 1>&2
-+	exit 1
-+    fi
- fi
- 
+-fi
+-
 -script_args=""
 -moreargs=""
 -debugging=0
- MOZILLA_BIN="${progbase}-bin"
-+if [ "$OSTYPE" = "beos" ]; then
-+    mimeset -F "$MOZILLA_BIN"
-+fi
- 
+-MOZILLA_BIN="${progbase}-bin"
+-
 -# The following is to check for a currently running instance.
 -# This is taken almost verbatim from the Mozilla RPM package's launch script.
 -MOZ_CLIENT_PROGRAM="$dist_bin/mozilla-xremote-client"
@@ -235,6 +196,26 @@
 -    if [ $RETURN_VAL -eq 0 ]; then
 -        echo 1
 -        return 1
++    # Check default compile-time libdir
++    if [ -x "${moz_libdir}/run-mozilla.sh" ]; then
++	dist_bin="$moz_libdir"
++	run_moz="${dist_bin}/run-mozilla.sh"
+     else
+-        echo 0
+-        return 0
++	echo "$0: Cannot find mozilla runtime directory. Exiting." 1>&2
++	exit 1
+     fi
+-}
++fi
+ 
++MOZILLA_BIN="${progbase}-bin"
+ if [ "$OSTYPE" = "beos" ]; then
+-  mimeset -F "$MOZILLA_BIN"
++    mimeset -F "$MOZILLA_BIN"
+ fi
+ 
+-ALREADY_RUNNING=`check_running`
 +# test for binary apps in ${dist_bin}
 +if [ -x "${dist_bin}/${MOZILLA_BIN}" ]; then
 +    MOZILLA_BIN="${dist_bin}/${progbase}-bin"
@@ -247,32 +228,7 @@
 +else
 +    MOZ_CLIENT_PROGRAM="${MOZILLA_BIN} -remote -a ${progbase}"
 +fi
-+
-+# guest a default remote command
-+_remote_cmd="xfeDoCommand(openBrowser)"
-+
-+# test for a running copy of firefox
-+ALREADY_RUNNING=	# null
-+if [ -n "${DISPLAY}" ]; then
-+    if [ -n "${debugging}" ]; then
-+	echo "${run_moz} ${MOZ_CLIENT_PROGRAM} ping()"
-+	${run_moz} ${MOZ_CLIENT_PROGRAM} 'ping()' && ALREADY_RUNNING="yes"
-     else
--        echo 0
--        return 0
-+	${run_moz} ${MOZ_CLIENT_PROGRAM} 'ping()' >/dev/null 2>&1 &&
-+		ALREADY_RUNNING="yes"
-     fi
--}
--
--if [ "$OSTYPE" = "beos" ]; then
--  mimeset -F "$MOZILLA_BIN"
-+elif [ -n "${debugging}" ]; then
-+    echo "$0: WARN, no DISPLAY environment" 1>&2
- fi
  
--ALREADY_RUNNING=`check_running`
--
 -################################################################ Parse Arguments
 -# If there's a command line argument but it doesn't begin with a -
 -# it's probably a url.  Try to send it to a running instance.
@@ -281,19 +237,24 @@
 -case "${_optOne}" in
 -	-*) 
 -		;;
++# guest a default remote command
++_remote_cmd="xfeDoCommand(openBrowser)"
++
 +# parse options
 +script_args=	# null
 +moreargs=	# null
 +target=		# null
++ALREADY_RUNNING="test"
 +while [ $# -gt 0 ]
 +do
 +    if [ -n "${target}" ]; then
 +	# well, this can't be the target if not last
-+	moreargs="${moreargs} ${target}"
++	moreargs="${moreargs} \"${target}\""
 +	target=	# null
 +    fi
 +    case "$1" in
-+	-p | --pure | -pure)
++	# preserve [pP] for profile
++	--pure | -pure)
 +	    MOZILLA_BIN="${MOZILLA_BIN}.pure"
 +	    shift
 +	    ;;
@@ -307,59 +268,40 @@
 +		script_args="${script_args} -d $2"
 +		shift 2
 +	    else
-+		"$0: ERROR, -d needs an argument. Exiting" 1>&2
++		"$0: ERROR, $1 needs an argument. Exiting" 1>&2
 +		exit 1
 +	    fi
 +	    ;;
-+	-UILocale)
++	-[Uu][Ii][Ll]ocale)
 +	    if [ -n "$2" ]; then
 +		uilocale="$2"
 +		shift 2
 +	    else
-+		echo "$0: ERROR, -UILocale needs an argument. Exiting" 1>&2
++		echo "$0: ERROR, $1 needs an argument. Exiting" 1>&2
 +		exit 1
 +	    fi
 +	    ;;
-+	-UIRegion)
++	-[Uu][Ii][Rr]egion)
 +	    if [ -n "$2" ]; then
 +		uiregion="$2"
 +		shift 2
 +	    else
-+		echo "$0: ERROR, -UIRegion needs an argument. Exiting" 1>&2
++		echo "$0: ERROR, $1 needs an argument. Exiting" 1>&2
 +		exit 1
 +	    fi
 +	    ;;
 +	-browser)
-+	    _remote_cmd="xfeDoCommand(openBrowser)"
-+	    moreargs="${moreargs} $1"
++	    # browser is default for firefox
 +	    shift
 +	    ;;
-+	-mail)
-+	    _remote_cmd="xfeDoCommand(openInbox)"
++	-turbo | -nosplash | -quiet)
++	    # use remote even with this
 +	    moreargs="${moreargs} $1"
 +	    shift
-+	    ;;
-+	-compose)
-+	    _remote_cmd="xfeDoCommand(composeMessage)"
-+	    moreargs="${moreargs} $1"
-+	    shift
-+	    ;;
-+	-chat | -edit | -webcal)
-+	    # don't use remote for this
-+	    ALREADY_RUNNING=	# null
-+	    moreargs="${moreargs} $1"
-+	    shift
-+	    ;;
-+	-P)
-+	    if [ -n "$2" ]; then
-+		moreargs="${moreargs} $1 '$2'"
-+		shift 2
-+	    else
-+		echo "$0: ERROR, -P needs an argument. Exiting" 1>&2
-+		exit 1
-+	    fi
 +	    ;;
 +	-*)
++	    # don't use remote with options
++	    ALREADY_RUNNING=	# null
 +	    moreargs="${moreargs} $1"
 +	    shift
 +	    ;;
@@ -400,25 +342,44 @@
 +    esac
 +done
 +
++# test for a running copy of firefox
++# seems this is not needed
++#if [-n "${ALREADY_RUNNING}" ]; then
++#    if [ -n "${DISPLAY}" ]; then
++#	if [ -n "${debugging}" ]; then
++#	    echo "${run_moz} ${MOZ_CLIENT_PROGRAM} ping()"
++#	    ${run_moz} ${MOZ_CLIENT_PROGRAM} 'ping()' && ALREADY_RUNNING="yes"
++#	else
++#	    ${run_moz} ${MOZ_CLIENT_PROGRAM} 'ping()' >/dev/null 2>&1 &&
++#		ALREADY_RUNNING="yes"
++#	fi
++#    elif [ -n "${debugging}" ]; then
++#	echo "$0: WARN, no DISPLAY environment" 1>&2
++#    fi
++#fi
++
 +# process target
 +if [ -n "${target}" ]; then
-+    if [ `expr "${target}" : '.*:.*'` -eq 0 ]; then
-+	if [ `expr "${target}" : '/.*'` -eq 0 ]; then
-+	    target="${here}/${target}"
-+	fi
-+	if [ -r "${target}" -o -d "${target}" ]; then
-+	    [ -n "${use_openFile}" ] || target="file://${target}"
++    moreargs="${moreargs} \"${target}\""
++    if [ -n "${ALREADY_RUNNING}" ]; then
++	if [ `expr "${target}" : '.*:.*'` -eq 0 ]; then
++	    if [ `expr "${target}" : '/.*'` -eq 0 ]; then
++		target="${here}/${target}"
++	    fi
++	    if [ -r "${target}" -o -d "${target}" ]; then
++		[ -n "${use_openFile}" ] || target="file://${target}"
++	    else
++		echo "$0: WARN, target: ${target} not an URI/file/dir" 1>&2
++		ALREADY_RUNNING=	# null
++	    fi
  	else
 -		# No command line args. Open new window/tab
 -		#exec "${run_moz}" "$MOZ_CLIENT_PROGRAM" -a "${progbase}" "xfeDoCommand(openBrowser)"
 -		"${run_moz}" "$MOZ_CLIENT_PROGRAM" -a "${progbase}" "xfeDoCommand(openBrowser)"
 -		exit $?
-+	    echo "$0: WARN, target: ${target} not an URI/file/dir" 1>&2
-+	    ALREADY_RUNNING=	# null
++	    # an former URI, don't use openFile
++	    use_openFile=	# null
  	fi
-+    else
-+	# an former URI, don't use openFile
-+	use_openFile=	# null
 +    fi
  fi
 -# Default action - no running instance or _USE_EXIST (${_USE_EXIST}) ! -eq 1
@@ -478,19 +439,15 @@
 +fi
 +if [ -n "${uilocale}" ]; then
 +    if [ -n "${uiregion}" ]; then
-+	moreargs="-UIRegion ${uiregion} ${more_args}"
++	moreargs="-UIRegion ${uiregion} ${moreargs}"
 +    fi
-+    moreargs="-UILocale ${uilocale} ${more_args}"
++    moreargs="-UILocale ${uilocale} ${moreargs}"
 +fi
  
 -export MRE_HOME
 -eval "set -- $moreargs"
 +# real invocation
-+if [ -n "${target}" ]; then
-+    eval "set -- ${moreargs} \"${target}\""
-+else
-+    eval "set -- ${moreargs}"
-+fi
++eval "set -- ${moreargs}"
  
  ## Start addon scripts
  moz_pis_startstop_scripts "start"

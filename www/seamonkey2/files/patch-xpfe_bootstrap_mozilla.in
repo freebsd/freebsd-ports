@@ -1,6 +1,6 @@
 --- xpfe/bootstrap/mozilla.in.orig	Sat Apr 17 18:51:11 2004
-+++ xpfe/bootstrap/mozilla.in	Thu Feb 17 14:55:17 2005
-@@ -49,139 +49,314 @@
++++ xpfe/bootstrap/mozilla.in	Tue Mar  1 00:12:20 2005
+@@ -49,139 +49,319 @@
  ## the mozilla-bin binary to work.
  ##
  
@@ -145,9 +145,6 @@
 +    curdir="$MOZILLA_FIVE_HOME"
 +    run_moz="$curdir/run-mozilla.sh"
 +    dist_bin="$curdir"
-+    found=1
-+elif [ -x "$run_moz" ]; then
-+    dist_bin="$curdir"
      found=1
 -  else
 -    here=`/bin/pwd`
@@ -166,6 +163,9 @@
 -        found=1
 -        break
 -      fi
++elif [ -x "$run_moz" ]; then
++    dist_bin="$curdir"
++    found=1
 +else
 +    while [ -h "${progname}" ]; do
 +	bn=`basename "${progname}"`
@@ -216,40 +216,29 @@
  if [ "$OSTYPE" = "beos" ]; then
 -  mimeset -F $MOZILLA_BIN
 +    mimeset -F "$MOZILLA_BIN"
-+fi
-+MOZILLA_BIN="${dist_bin}/${progbase}-bin"
-+
+ fi
+ 
 +# test for binary apps in ${dist_bin}
-+if [ -x "${dist_bin}/mozilla-xremote-client" ]; then
-+    MOZ_CLIENT_PROGRAM="${dist_bin}/mozilla-xremote-client -a ${progbase}"
-+elif [ -x "${MOZILLA_BIN}" ]; then
-+    MOZ_CLIENT_PROGRAM="${MOZILLA_BIN} -remote -a ${progbase}"
++if [ -x "${dist_bin}/${MOZILLA_BIN}" ]; then
++    MOZILLA_BIN="${dist_bin}/${progbase}-bin"
 +else
 +    echo "$0: Cannot find mozilla binary executable. Exiting." 1>&2
 +    exit 1
++fi
++if [ -x "${dist_bin}/mozilla-xremote-client" ]; then
++    MOZ_CLIENT_PROGRAM="${dist_bin}/mozilla-xremote-client -a ${progbase}"
++else
++    MOZ_CLIENT_PROGRAM="${MOZILLA_BIN} -remote -a ${progbase}"
 +fi
 +
 +# guest a default remote command
 +_remote_cmd="xfeDoCommand(openBrowser)"
 +
-+# test for a running copy of mozilla
-+ALREADY_RUNNING=	# null
-+if [ -n "${DISPLAY}" ]; then
-+    if [ -n "${debugging}" ]; then
-+	echo "${run_moz} ${MOZ_CLIENT_PROGRAM} ping()"
-+	${run_moz} ${MOZ_CLIENT_PROGRAM} 'ping()' && ALREADY_RUNNING="yes"
-+    else
-+	${run_moz} ${MOZ_CLIENT_PROGRAM} 'ping()' >/dev/null 2>&1 &&
-+		ALREADY_RUNNING="yes"
-+    fi
-+elif [ -n "${debugging}" ]; then
-+    echo "$0: WARN, no DISPLAY environment" 1>&2
- fi
- 
 +# parse options
 +script_args=	# null
 +moreargs=	# null
 +target=		# null
++ALREADY_RUNNING="test"
  while [ $# -gt 0 ]
  do
 -  case "$1" in
@@ -273,11 +262,12 @@
 -  esac
 +    if [ -n "${target}" ]; then
 +	# well, this can't be the target if not last
-+	moreargs="${moreargs} ${target}"
++	moreargs="${moreargs} \"${target}\""
 +	target=	# null
 +    fi
 +    case "$1" in
-+	-p | --pure | -pure)
++	# preserve [pP] for profile
++	--pure | -pure)
 +	    MOZILLA_BIN="${MOZILLA_BIN}.pure"
 +	    shift
 +	    ;;
@@ -291,31 +281,30 @@
 +		script_args="${script_args} -d $2"
 +		shift 2
 +	    else
-+		"$0: ERROR, -d needs an argument. Exiting" 1>&2
++		"$0: ERROR, $1 needs an argument. Exiting" 1>&2
 +		exit 1
 +	    fi
 +	    ;;
-+	-UILocale)
++	-[Uu][Ii][Ll]ocale)
 +	    if [ -n "$2" ]; then
 +		uilocale="$2"
 +		shift 2
 +	    else
-+		echo "$0: ERROR, -UILocale needs an argument. Exiting" 1>&2
++		echo "$0: ERROR, $1 needs an argument. Exiting" 1>&2
 +		exit 1
 +	    fi
 +	    ;;
-+	-UIRegion)
++	-[Uu][Ii][Rr]egion)
 +	    if [ -n "$2" ]; then
 +		uiregion="$2"
 +		shift 2
 +	    else
-+		echo "$0: ERROR, -UIRegion needs an argument. Exiting" 1>&2
++		echo "$0: ERROR, $1 needs an argument. Exiting" 1>&2
 +		exit 1
 +	    fi
 +	    ;;
 +	-browser)
-+	    _remote_cmd="xfeDoCommand(openBrowser)"
-+	    moreargs="${moreargs} $1"
++	    # browser is default for mozilla
 +	    shift
 +	    ;;
 +	-mail)
@@ -328,13 +317,14 @@
 +	    moreargs="${moreargs} $1"
 +	    shift
 +	    ;;
-+	-chat | -edit | -webcal)
-+	    # don't use remote for this
-+	    ALREADY_RUNNING=    # null
++	-turbo | -nosplash | -quiet)
++	    # use remote even with this
 +	    moreargs="${moreargs} $1"
 +	    shift
 +	    ;;
 +	-*)
++	    # don't use remote with options
++	    ALREADY_RUNNING=	# null
 +	    moreargs="${moreargs} $1"
 +	    shift
 +	    ;;
@@ -347,21 +337,40 @@
  
 -export MRE_HOME
 -eval "set -- $moreargs"
++# test for a running copy of firefox
++# seems this is not needed
++#if [-n "${ALREADY_RUNNING}" ]; then
++#    if [ -n "${DISPLAY}" ]; then
++#	if [ -n "${debugging}" ]; then
++#	    echo "${run_moz} ${MOZ_CLIENT_PROGRAM} ping()"
++#	    ${run_moz} ${MOZ_CLIENT_PROGRAM} 'ping()' && ALREADY_RUNNING="yes"
++#	else
++#	    ${run_moz} ${MOZ_CLIENT_PROGRAM} 'ping()' >/dev/null 2>&1 &&
++#		ALREADY_RUNNING="yes"
++#	fi
++#    elif [ -n "${debugging}" ]; then
++#	echo "$0: WARN, no DISPLAY environment" 1>&2
++#    fi
++#fi
++
 +# process target
 +if [ -n "${target}" ]; then
-+    if [ `expr "${target}" : '.*:.*'` -eq 0 ]; then
-+	if [ `expr "${target}" : '/.*'` -eq 0 ]; then
-+	    target="${here}/${target}"
-+	fi
-+	if [ -r "${target}" -o -d "${target}" ]; then
-+	    [ -n "${use_openFile}" ] || target="file://${target}"
++    moreargs="${moreargs} \"${target}\""
++    if [ -n "${ALREADY_RUNNING}" ]; then
++	if [ `expr "${target}" : '.*:.*'` -eq 0 ]; then
++	    if [ `expr "${target}" : '/.*'` -eq 0 ]; then
++		target="${here}/${target}"
++	    fi
++	    if [ -r "${target}" -o -d "${target}" ]; then
++		[ -n "${use_openFile}" ] || target="file://${target}"
++	    else
++		echo "$0: WARN, target: ${target} not an URI/file/dir" 1>&2
++		ALREADY_RUNNING=	# null
++	    fi
 +	else
-+	    echo "$0: WARN, target: ${target} not an URI/file/dir" 1>&2
-+	    ALREADY_RUNNING=    # null
++	    # an former URI, don't use openFile
++	    use_openFile=	# null
 +	fi
-+    else
-+	# an former URI, don't use openFile
-+	use_openFile=	# null
 +    fi
 +fi
 +
@@ -397,17 +406,13 @@
 +fi
 +if [ -n "${uilocale}" ]; then
 +    if [ -n "${uiregion}" ]; then
-+	moreargs="-UIRegion ${uiregion} ${more_args}"
++	moreargs="-UIRegion ${uiregion} ${moreargs}"
 +    fi
-+    moreargs="-UILocale ${uilocale} ${more_args}"
++    moreargs="-UILocale ${uilocale} ${moreargs}"
 +fi
 +
 +# real invocation
-+if [ -n "${target}" ]; then
-+    eval "set -- ${moreargs} \"${target}\""
-+else
-+    eval "set -- ${moreargs}"
-+fi
++eval "set -- ${moreargs}"
  
  ## Start addon scripts
  moz_pis_startstop_scripts "start"
