@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fvwm
-PORTVERSION=	2.5.8
-PORTREVISION=	2
+PORTVERSION=	2.5.10
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -22,10 +21,15 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Popular virtual window manager for X
 
-CONFIGURE_ARGS=	--with-iconv-library=${LOCALBASE}/lib \
-		--with-iconv-includes=${LOCALBASE}/include
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft \
-		biconv.2:${PORTSDIR}/converters/iconv
+.if defined(WITHOUT_ICONV)
+CONFIGURE_ARGS+=	--disable-iconv
+.else
+LIB_DEPENDS+=	biconv.2:${PORTSDIR}/converters/iconv
+CONFIGURE_ARGS+=	--with-iconv-library=${LOCALBASE}/lib \
+			--with-iconv-includes=${LOCALBASE}/include
+.endif
+
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 .if defined(WITH_STROKE)
@@ -80,14 +84,16 @@ PKGNAMESUFFIX=	-imlib
 CONFIGURE_ARGS+=	--enable-gtktest --enable-imlibtest
 PLIST_SUB+=	GTK=""
 .else
-CONFIGURE_ARGS+=	--disable-gtktest --disable-imlibtest
+CONFIGURE_ARGS+=	--disable-gtktest --disable-imlibtest \
+			--with-gtk-prefix=/no/dir --with-imlib-prefix=/no/dir
 PLIST_SUB+=	GTK="@comment not installed: "
+WITHOUT_GNOME=	true
 .endif
 
-.if !defined(WITHOUT_GNOME)
-CONFIGURE_ARGS+=	--with-gnome --enable-gnome-hints
-.else
+.if defined(WITHOUT_GNOME)
 CONFIGURE_ARGS+=	--without-gnome --disable-gnome-hints
+.else
+CONFIGURE_ARGS+=	--with-gnome --enable-gnome-hints
 .endif
 
 MAN1=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
@@ -126,9 +132,9 @@ post-install:
 	fi
 
 .if !defined(WITHOUT_ICONS)
-	@${MKDIR} ${PREFIX}/share/fvwm2/pixmaps
+	@${MKDIR} ${PREFIX}/share/fvwm/pixmaps
 	${INSTALL_DATA} ${WRKDIR}/icons/fvwm_icons/*.xpm \
-		${PREFIX}/share/fvwm2/pixmaps
+		${PREFIX}/share/fvwm/pixmaps
 .endif
 
 .include <bsd.port.post.mk>
