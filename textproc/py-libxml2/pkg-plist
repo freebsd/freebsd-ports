@@ -28,6 +28,7 @@ lib/%%PYTHON_VERSION%%/site-packages/libxml2mod.so
 %%EXAMPLESDIR%%/reader7.py
 %%EXAMPLESDIR%%/reader8.py
 %%EXAMPLESDIR%%/readererr.py
+%%EXAMPLESDIR%%/readernext.py
 %%EXAMPLESDIR%%/regexp.py
 %%EXAMPLESDIR%%/relaxng.py
 %%EXAMPLESDIR%%/resolver.py
@@ -40,6 +41,7 @@ lib/%%PYTHON_VERSION%%/site-packages/libxml2mod.so
 %%EXAMPLESDIR%%/tst.xml
 %%EXAMPLESDIR%%/tstLastError.py
 %%EXAMPLESDIR%%/tstURI.py
+%%EXAMPLESDIR%%/tstmem.py
 %%EXAMPLESDIR%%/tstxpath.py
 %%EXAMPLESDIR%%/valid.xml
 %%EXAMPLESDIR%%/validate.py
