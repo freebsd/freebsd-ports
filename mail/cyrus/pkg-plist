@@ -1,3 +1,4 @@
+@unexec if cmp -s %D/etc/imapd.conf %D/etc/imapd.conf.dist; then rm -f %D/etc/imapd.conf; fi
 bin/cyradm
 bin/imtest
 bin/installsieve
