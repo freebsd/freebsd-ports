@@ -63,6 +63,8 @@ share/locale/wa/LC_MESSAGES/gnomemeeting.mo
 share/locale/zh_CN/LC_MESSAGES/gnomemeeting.mo
 share/locale/zh_TW/LC_MESSAGES/gnomemeeting.mo
 @dirrm share/gnome/sounds/gnomemeeting
+@dirrm share/gnome/gnomemeeting/xdap
+@dirrm share/gnome/gnomemeeting
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/view
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/video_settings
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/video_display
