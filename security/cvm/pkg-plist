@@ -35,3 +35,4 @@ lib/libcvm-udp.a
 %%PORTDOCS%%%%DOCSDIR%%/rationale.html
 %%PORTDOCS%%%%DOCSDIR%%/sasl.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/cvm

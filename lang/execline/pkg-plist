@@ -95,3 +95,4 @@ lib/libexls1.a
 %%EXAMPLESDIR%%/execline-shell
 %%EXAMPLESDIR%%/execline-startup
 @dirrm %%EXAMPLESDIR%%
+@dirrm include/execline
