@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: freshclam
-# REQUIRE: LOGIN
+# REQUIRE: LOGIN clamd
 # BEFORE: mail
 # KEYWORD: FreeBSD shutdown
 
@@ -22,7 +22,7 @@ name=clamav_freshclam
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/bin/freshclam
-pidfile=/var/run/clamav/freshclam.pid
+pidfile=%%RUNDIR%%/freshclam.pid
 command_args="--daemon"
 required_dirs=%%DBDIR%%
 required_files=%%PREFIX%%/etc/freshclam.conf
