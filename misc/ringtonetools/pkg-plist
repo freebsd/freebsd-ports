@@ -1,0 +1,8 @@
+bin/ringtonetools
+share/ringtonetools/face.icon
+share/ringtonetools/hemglass.mid
+share/ringtonetools/ionian.rtttl
+share/ringtonetools/usa.imelody
+share/ringtonetools/yngwie_trilogy.rtttl
+%%PORTDOCS%%share/doc/ringtonetools/README
+%%PORTDOCS%%@dirrm share/doc/ringtonetools
