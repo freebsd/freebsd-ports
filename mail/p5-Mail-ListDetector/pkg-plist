@@ -1,10 +1,13 @@
 %%SITE_PERL%%/Mail/ListDetector.pm
 %%SITE_PERL%%/Mail/ListDetector/Detector/Base.pm
+%%SITE_PERL%%/Mail/ListDetector/Detector/CommuniGate.pm
 %%SITE_PERL%%/Mail/ListDetector/Detector/CommuniGatePro.pm
 %%SITE_PERL%%/Mail/ListDetector/Detector/Ecartis.pm
 %%SITE_PERL%%/Mail/ListDetector/Detector/Ezmlm.pm
 %%SITE_PERL%%/Mail/ListDetector/Detector/Fml.pm
 %%SITE_PERL%%/Mail/ListDetector/Detector/Listar.pm
+%%SITE_PERL%%/Mail/ListDetector/Detector/Listbox.pm
+%%SITE_PERL%%/Mail/ListDetector/Detector/Listserv.pm
 %%SITE_PERL%%/Mail/ListDetector/Detector/Mailman.pm
 %%SITE_PERL%%/Mail/ListDetector/Detector/Majordomo.pm
 %%SITE_PERL%%/Mail/ListDetector/Detector/RFC2369.pm
