@@ -3,7 +3,7 @@
 # Date created:		27 March 1995
 # Whom:			asami
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1995/03/28 12:13:25 asami Exp $
 #
 
 DISTNAME=	nethack3.1.3
@@ -13,6 +13,7 @@ MAINTAINER=	asami@FreeBSD.ORG
 WRKSRC=		${WRKDIR}/nethack313
 USE_GMAKE=	yes
 PKGNAME=	nethack-3.1.3
+SHELL=		/bin/sh
 
 pre-configure:
 	@cd ${WRKSRC}/sys/unix; ${SHELL} setup.sh
