@@ -1,6 +1,7 @@
 bin/l2h
 bin/latex2gif
 bin/ps2gif
+bin/ps2png
 bin/tth
 share/doc/tth/license.txt
 share/doc/tth/tth_manual.html
