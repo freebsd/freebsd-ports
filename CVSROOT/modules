@@ -7850,6 +7850,7 @@ tei-p3		ports/textproc/tei-p3
 tei-p4		ports/textproc/tei-p4
 tei-xlite	ports/textproc/tei-xlite
 tei-xsl-fo	ports/textproc/tei-xsl-fo
+tei-xsl-html	ports/textproc/tei-xsl-html
 teknap		ports/audio/teknap
 telnet		src/usr.bin/telnet
 telnetd		src/libexec/telnetd
