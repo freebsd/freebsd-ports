@@ -14,6 +14,10 @@ for each job, so all it requires of the volunteer machines is that
 they be running the distccd daemon, and that they have an appropriate
 compiler installed.
 
+This version also comes with a text-based as well as a GNOME-based monitor
+to inspect the load on the cluster, and how it is distributed among the
+various distcc nodes.
+
 WWW: http://distcc.samba.org/
 
 - Frerich Raabe frerich.raabe@gmx.de
