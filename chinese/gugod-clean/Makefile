@@ -10,6 +10,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/gugod/
 
 MAINTAINER=	gugod@gugod.org
 
+USE_X_PREFIX=	yes
 .include <bsd.port.pre.mk>
 
 .if ${XFREE86_VERSION} == 4
@@ -17,7 +18,6 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
 FONTFILES=	gugod16.bdf gugod18.bdf gugod20.bdf gugod22.bdf
-USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
