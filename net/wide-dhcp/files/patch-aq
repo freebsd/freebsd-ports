@@ -1,26 +1,28 @@
---- tools/Makefile.FreeBSD.orig	Mon Oct  9 15:00:53 1995
-+++ tools/Makefile.FreeBSD	Fri May 30 22:48:22 1997
-@@ -1,10 +1,19 @@
+--- tools/Makefile.FreeBSD.orig	Tue Jun  4 12:30:49 1996
++++ tools/Makefile.FreeBSD	Wed Apr 22 01:47:54 1998
+@@ -1,10 +1,10 @@
 -CC = gcc
 -CFLAGS = -g -Wall -I. -I../server
 -#CC = cc
+-#CFLAGS = -g -I. -I../server
+-SBIN =		/usr/local/sbin
+-LIBEXEC =	/usr/local/libexec
+-MAN =		/usr/local/man
 +#CC = gcc
-+CFLAGS += -Wall -I. -I../server
++#CFLAGS = -g -Wall -I. -I../server
 +CC = cc
- #CFLAGS = -g -I. -I../server
-+SBIN=		${PREFIX}/sbin
-+LIBEXEC=	${PREFIX}/libexec
-+MAN=		${PREFIX}/man
-+CP=		/bin/cp
-+RM=		/bin/rm
++CFLAGS += -Wall -I. -I../server
++SBIN =		${PREFIX}/sbin
++LIBEXEC =	${PREFIX}/libexec
++MAN =		${PREFIX}/man
  
  dhcpm: dhcpm.c ../server/dhcp.h
  	$(CC) $(CFLAGS) dhcpm.c -o dhcpm
+@@ -12,7 +12,6 @@
+ install: dhcpm
+ 	${INSTALL} -m 755 -s dhcpm ${SBIN}/dhcpm
+ 	cp dhcpm.8 ${MAN}/man8/dhcpm.8
+-	gzip ${MAN}/man8/dhcpm.8
  
-+install: dhcpm
-+	${INSTALL} -c -m 755 -s dhcpm ${SBIN}/dhcpm
-+	${CP} dhcpm.8 ${MAN}/man8/dhcpm.8
-+
  clean:
--	rm -rf *~ *.o *core* dhcpm
-+	${RM} -rf *~ *.o *core* dhcpm
+ 	rm -rf *~ *.o *core* dhcpm

@@ -1,5 +1,5 @@
---- client/dhcpc.c.orig	Fri Nov  3 01:40:40 1995
-+++ client/dhcpc.c	Thu Mar 27 15:11:20 1997
+--- client/dhcpc.c.orig	Mon Jul  7 17:08:35 1997
++++ client/dhcpc.c	Wed Apr 22 01:34:39 1998
 @@ -53,6 +53,12 @@
  #ifndef sun
  #include <net/bpf.h>
@@ -13,24 +13,24 @@
  #include <netinet/in.h>
  #include <netinet/in_systm.h>
  #include <netinet/if_ether.h>
-@@ -86,6 +92,7 @@
+@@ -82,6 +88,7 @@
  struct dhcp_reqspec reqspec;
  struct if_info intface;
  struct dhcp_param *param_list;
 +int f_resolv, f_hostname;
+ char pid_filename[MAXPATHLEN];
  
  int (*fsm[MAX_STATES])();
- 
 @@ -227,6 +234,14 @@
- 		((brdaddr.s_addr != 0) ? &brdaddr : NULL)) != 1) {
-     set_route(paramp);
+     (void) sndcamt();
+ #endif
    }
 +#ifdef __FreeBSD__
 +  if (f_resolv) {
-+	set_resolv(param_list);
++    set_resolv(param_list);
 +  }
 +  if (f_hostname) {
-+	set_hostname(param_list);
++    set_hostname(param_list);
 +  }
 +#endif
  #endif
@@ -41,9 +41,9 @@
     * split conditions into pieces for debugging
     */
 -#ifndef sun
--  if (ntohs(rcv.ip->ip_len) < DFLTBOOTPLEN + UDPHL + IPHL)
+-  if (ntohs(rcv.ip->ip_len) < MINDHCPLEN + UDPHL + IPHL)
 -    return(0);
--  if (ntohs(rcv.udp->uh_ulen) < DFLTBOOTPLEN + UDPHL)
+-  if (ntohs(rcv.udp->uh_ulen) < MINDHCPLEN + UDPHL)
 -    return(0);
 -#else
    if (rcv.udp->uh_dport != dhcpc_port)
@@ -57,9 +57,9 @@
     * split conditions into pieces for debugging
     */
 -#ifndef sun
--  if (ntohs(rcv.ip->ip_len) < DFLTBOOTPLEN + UDPHL + IPHL)
+-  if (ntohs(rcv.ip->ip_len) < MINDHCPLEN + UDPHL + IPHL)
 -    return(0);
--  if (ntohs(rcv.udp->uh_ulen) < DFLTBOOTPLEN + UDPHL)
+-  if (ntohs(rcv.udp->uh_ulen) < MINDHCPLEN + UDPHL)
 -    return(0);
 -#else
    if (rcv.udp->uh_dport != dhcpc_port)
@@ -68,7 +68,7 @@
    if (ripcksum != cksum((u_short *) rcv.ip, rcv.ip->ip_hl * 2))
      return(0);
    if (rcv.udp->uh_sum != 0 &&
-@@ -1740,7 +1741,11 @@
+@@ -1761,7 +1762,11 @@
  void
  usage()
  {
@@ -81,16 +81,12 @@
    exit(1);
  }
  
-@@ -1760,17 +1765,42 @@
+@@ -1781,26 +1786,38 @@
  {
    int debug = 0;
    int n = 0;
 +  int count;
-+  FILE *pid_file;
    struct if_info ifinfo;
-+#ifdef __FreeBSD__
-+  char pid_filename[MAXPATHLEN];
-+#endif
  
    bzero(&reqspec, sizeof(reqspec));
    bzero(&ifinfo, sizeof(ifinfo));
@@ -99,14 +95,22 @@
 +#else
 +#define COM_OPTS        "vd"
 +#endif
-+
-   if (argc < 2) usage();
--  --argc, ++argv;
--  if (argv[0][0] == '-' && argv[0][1] == 'v') version();
--  if (argv[0][0] == '-' && argv[0][1] == 'd') {
--    debug = 1;
--    --argc, ++argv;
-+
+ 
+-  while (*++argv && argv[0][0] == '-') {
+-    switch (argv[0][1]) {
+-    case 'v':
+-      version();
+-      break;
+-    case 'd':
+-      debug = 1;
+-      break;
+-    default:
+-      usage();
+-      break;
+-    }
+-  }
+-  if (argv[0] == NULL) usage();
+-
 +  while ((count = getopt(argc, argv, COM_OPTS)) != EOF) {
 +    switch (count) {
 +      case 'v':
@@ -123,33 +127,15 @@
 +        break;
 +#endif
 +    }
-   }
++   }
 +  argc -= optind;
 +  argv += optind;
- 
-   if (argc < 1) usage();
++ 
++  if (argc < 1) usage();
    strcpy(ifinfo.name, argv[0]);
-@@ -1790,6 +1820,19 @@
-       close(n);
-     }
-   }
-+  /* initialization works well, so recored its own pid */
-+#ifdef __FreeBSD__
-+  strncpy(pid_filename, PATH_PID, MAXPATHLEN);
-+  strncat(pid_filename, "/dhcpc.", (MAXPATHLEN - strlen(pid_filename)));
-+  strncat(pid_filename, ifinfo.name, (MAXPATHLEN - strlen(pid_filename)));
-+  strncat(pid_filename, ".pid", (MAXPATHLEN - strlen(pid_filename)));
-+  if ((pid_file = fopen(pid_filename, "w")) != NULL) {
-+#else
-+  if ((pid_file = fopen(PATH_PID, "w")) != NULL) {
-+#endif
-+    fprintf(pid_file, "%d\n", (int) getpid());
-+    fclose(pid_file);
-+  }
  
    /*
-    * set request specification
-@@ -1802,6 +1845,11 @@
+@@ -1831,6 +1848,11 @@
    reqspec.reqlist.list[reqspec.reqlist.len++] = SUBNET_MASK;
    reqspec.reqlist.list[reqspec.reqlist.len++] = ROUTER;
    reqspec.reqlist.list[reqspec.reqlist.len++] = BRDCAST_ADDR;
@@ -159,5 +145,5 @@
 +  reqspec.reqlist.list[reqspec.reqlist.len++] = HOSTNAME;
 +#endif
    
-   return(dhcp_client(&ifinfo));
- }
+   n = dhcp_client(&ifinfo);
+   unlink(pid_filename);

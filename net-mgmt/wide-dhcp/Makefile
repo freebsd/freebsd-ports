@@ -1,33 +1,24 @@
 # New ports collection makefile for:    dhcp
-# Version required:     1.3beta
+# Version required:     1.4.0p1
 # Date created:         21 November 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.10 1997/05/30 18:52:44 max Exp $
+# $Id: Makefile,v 1.11 1998/04/18 12:40:04 itojun Exp $
 #
 
-DISTNAME=       dhcp-1.3beta
-PKGNAME=        wide-dhcp-1.3b
+DISTNAME=       dhcp-1.4.0p1
+PKGNAME=        wide-dhcp-1.4.0p1
 CATEGORIES=     net
-MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/ \
-		ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/lib/libc/stdtime/
-DISTFILES=	dhcp-1.3beta.tar.gz tzfile.h
+MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/
 
-MAINTAINER=     sanpei@yy.cs.keio.ac.jp
+MAINTAINER=     hideyuki@sat.t.u-tokyo.ac.jp
 
-EXTRACT_ONLY=	dhcp-1.3beta.tar.gz
-IGNOREFILES=	tzfile.h
 MAKE_ENV=	OSTYPE=`uname`
 
 MAN5=	dhcpdb.server.5 dhcpdb.pool.5 dhcpdb.relay.5
 MAN8=	dhcpc.8 dhcps.8 relay.8 dhcpm.8
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/wide-dhcps.sh.sample
-
-post-patch:
-	@if [ ! -f ${WRKSRC}/server/tzfile.h ]; then \
-		${CP} ${DISTDIR}/tzfile.h ${WRKSRC}/server/; \
-	fi
 
 post-install:
 .if !defined(NOPORTDOCS)
