@@ -1,0 +1,37 @@
+--- Makefile.in.orig
++++ Makefile.in
+@@ -246,7 +246,7 @@
+ 	chgrp -R $(RTGROUP) $(DESTDIR)/$(RT_ETC_PATH)
+ 
+ 	chmod 0550 $(DESTDIR)/$(CONFIG_FILE)
+-	chmod 0550 $(DESTDIR)/$(SITE_CONFIG_FILE)
++	chmod 0550 $(DESTDIR)/$(SITE_CONFIG_FILE)-dist
+ 
+ 	# Make the interfaces executable and setgid rt
+ 	chown $(BIN_OWNER) $(BINARIES)
+@@ -276,7 +276,7 @@
+ 	@echo "You should never be running RT this way. it's unsafe"
+ 	chmod 0555 $(SETGID_BINARIES)
+ 	chmod 0555 $(DESTDIR)/$(CONFIG_FILE)
+-	chmod 0555 $(DESTDIR)/$(SITE_CONFIG_FILE)
++	chmod 0555 $(DESTDIR)/$(SITE_CONFIG_FILE)-dist
+ 
+ # {{{ dirs
+ dirs:
+@@ -300,13 +300,13 @@
+ config-install:
+ 	mkdir -p $(DESTDIR)/$(CONFIG_FILE_PATH)	
+ 	cp etc/RT_Config.pm $(DESTDIR)/$(CONFIG_FILE)
+-	[ -f $(DESTDIR)/$(SITE_CONFIG_FILE) ] || cp etc/RT_SiteConfig.pm $(DESTDIR)/$(SITE_CONFIG_FILE) 
++	cp etc/RT_SiteConfig.pm $(DESTDIR)/$(SITE_CONFIG_FILE)-dist
+ 
+ 	chgrp $(RTGROUP) $(DESTDIR)/$(CONFIG_FILE)
+ 	chown $(BIN_OWNER) $(DESTDIR)/$(CONFIG_FILE)
+ 
+-	chgrp $(RTGROUP) $(DESTDIR)/$(SITE_CONFIG_FILE)
+-	chown $(BIN_OWNER) $(DESTDIR)/$(SITE_CONFIG_FILE)
++	chgrp $(RTGROUP) $(DESTDIR)/$(SITE_CONFIG_FILE)-dist
++	chown $(BIN_OWNER) $(DESTDIR)/$(SITE_CONFIG_FILE)-dist
+ 
+ 	@echo "Installed configuration. about to install rt in  $(RT_PATH)"
+ 

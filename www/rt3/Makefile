@@ -7,6 +7,7 @@
 
 PORTNAME=	rt
 PORTVERSION?=	3.0.12
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES?=	http://download.bestpractical.com/pub/rt/release/ \
 		http://download.bestpractical.com/pub/rt/devel/ \
@@ -136,6 +137,8 @@ post-patch:
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/README ${RT_PATH}/README
+	@[ -f ${RT_PATH}/etc/RT_SiteConfig.pm ] ||
+		${CP} -p ${RT_PATH}/etc/RT_SiteConfig.pm-dist ${RT_PATH}/etc/RT_SiteConfig.pm
 	@PKG_PREFIX=${PREFIX} RT_PATH=${RT_PATH} \
 	 DB_DBA_USER=${DB_DBA_USER} DB_DBA_PASSWORD=${DB_DBA_USER} \
 	 INITIAL_INSTALL=${INITIAL_INSTALL} PKGMESSAGE=${PKGMESSAGE} \
