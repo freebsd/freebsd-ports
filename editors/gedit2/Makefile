@@ -16,10 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A small but powerful text editor for Gnome 2.0 Desktop Environment
 
-LIB_DEPENDS=	gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
-		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
-		eel-2.4:${PORTSDIR}/x11-toolkits/eel2 \
-		pspell.15:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	pspell.15:${PORTSDIR}/textproc/aspell
 
 WRKSRC=	${WRKDIR}/gedit-${PORTVERSION}
 
@@ -28,10 +25,9 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier
+USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeprintui eel2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=	gedit.1
 

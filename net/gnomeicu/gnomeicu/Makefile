@@ -15,15 +15,12 @@ DISTNAME=	gnomeicu-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME2 ICQ client
 
-LIB_DEPENDS+=	glade-2.0.0:${PORTSDIR}/devel/libglade2 \
-		panel-applet-2.0:${PORTSDIR}/x11/gnomepanel \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gnet-glib2.7:${PORTSDIR}/net/gnet-glib2 \
+LIB_DEPENDS+=	gnet-glib2.7:${PORTSDIR}/net/gnet-glib2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomeprefix gnomehack libglade2 gnomepanel libxml2
 USE_GMAKE=		yes
 USE_LIBTOOL=	yes
 .if defined(WITH_DANTE)
@@ -47,7 +44,6 @@ CONFIGURE_ARGS=	--with-statusmenu
 CONFIGURE_ENV=	CPPFLAGS="${SOCKSFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-liconv ${SOCKSLIBS} -lintl" \
 		CFLAGS="${CFLAGS}"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

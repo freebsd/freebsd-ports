@@ -22,11 +22,7 @@ RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
+USE_GNOME=	gnomehack gnometarget
 USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
-
-pre-patch:
-	@find ${WRKSRC} -name Makefile.in | xargs ${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
 .include <bsd.port.mk>

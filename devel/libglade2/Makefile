@@ -18,8 +18,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME glade library
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pyexpat.so:${PORTSDIR}/textproc/py-expat
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyexpat.so:${PORTSDIR}/textproc/py-expat
 
 USE_BZIP2=	yes
@@ -28,10 +26,9 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack libxml2 gtk20
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .include <bsd.port.mk>

@@ -16,13 +16,11 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A preprocessor for making GObjects with inline C
 
-LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20
-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_GNOME=	glib20
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		gob2.1
 
