@@ -22,6 +22,6 @@ MAN1=		sntop.1
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/sntop
-	@cat ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -15,7 +15,7 @@ COMMENT=	Sends magic packets to WOL enabled NIC to switch on the called PC
 
 PERL_CONFIGURE=	yes
 
-MAN1=           wakeonlan.1
+MAN1=		wakeonlan.1
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}

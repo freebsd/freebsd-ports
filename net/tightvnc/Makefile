@@ -51,8 +51,8 @@ post-patch:
 
 do-install:
 	@(cd ${WRKSRC}; ./vncinstall ${PREFIX}/bin ${PREFIX}/man)
-.for file in Xvnc vncviewer vncpasswd vncconnect
-	@${STRIP_CMD} ${PREFIX}/bin/${file}
+.for FILE in Xvnc vncviewer vncpasswd vncconnect
+	@${STRIP_CMD} ${PREFIX}/bin/${FILE}
 .endfor
 	@${MKDIR} ${DATADIR}/classes
 	${INSTALL_DATA} ${WRKSRC}/classes/*.* ${DATADIR}/classes
