@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	cyrus
-PORTVERSION= 	1.5.19
+PORTVERSION= 	1.6.22
 CATEGORIES=	mail tcl82
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		http://people.FreeBSD.org/~stb/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
-DISTNAME=	${PORTNAME}-imapd-v${PORTVERSION}
+DISTNAME=	${PORTNAME}-imapd-${PORTVERSION}
 
 MAINTAINER=	stb@FreeBSD.org
 
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-cyrus-group=cyrus \
-		--with-login=unix_pwcheck \
+		--with-sasldir=/usr/local \
 		--with-tclsh=${PREFIX}/bin/tclsh8.2 \
 		--with-auth=unix \
 		--with-com-err
@@ -44,7 +44,7 @@ pre-install:
 DOCS=	README acl-extension anoncvs bugs changes copyrights install \
 	mailing-list overview quota-extension server-design
 HTDOCS=	anoncvs bugs changes index install mailing-list overview \
-	readme unpack
+	questions readme sieve-protocol sieve
 post-install:
 		@ ${MV} ${PREFIX}/cyrus/bin/quota ${PREFIX}/cyrus/bin/cyrquota
 .if !defined(NOPORTDOCS)
