@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	afterstep
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	${MASTER_SITE_AFTERSTEP} \
 		ftp://ftp.cs.tu-berlin.de/pub/X/afterstep/

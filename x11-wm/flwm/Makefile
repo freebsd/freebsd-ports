@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flwm
-PORTVERSION= 	1.00
+PORTVERSION=	1.00
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://flwm.sourceforge.net/ \
 		http://www.cinenet.net/users/spitzak/flwm/ \

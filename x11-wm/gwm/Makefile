@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gwm
-PORTVERSION= 	1.8d
+PORTVERSION=	1.8d
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 		ftp://koala.inria.fr/pub/gwm/

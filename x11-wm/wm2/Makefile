@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wm2
-PORTVERSION= 	4.0
+PORTVERSION=	4.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.all-day-breakfast.com/wm2/
 DISTNAME=	${PORTNAME}-4

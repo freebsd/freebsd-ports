@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amiwm
-PORTVERSION= 	0.20.p48
+PORTVERSION=	0.20.p48
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/X11/wm/amiwm/
 DISTNAME=	${PORTNAME}0.20pl48

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdockapp
-PORTVERSION= 	0.4.0
+PORTVERSION=	0.4.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://shadowmere.student.utwente.nl/pub/WindowMaker/ \
 		http://soupnazi.org/FreeBSD/ports/distfiles/

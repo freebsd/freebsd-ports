@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mlvwm
-PORTVERSION= 	0.9.1
+PORTVERSION=	0.9.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www2u.biglobe.ne.jp/~y-miyata/mlvwm/
 DISTNAME=	mlvwm091

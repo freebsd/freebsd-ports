@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmx
-PORTVERSION= 	5.6
+PORTVERSION=	5.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.42.org/pub/wmx/ \
 		http://www.all-day-breakfast.com/wmx/

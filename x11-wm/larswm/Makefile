@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	larswm
-PORTVERSION= 	7.0.13
+PORTVERSION=	7.0.13
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.fnurt.net/larswm/
 

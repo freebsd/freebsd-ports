@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ude
-PORTVERSION= 	0.2.7b.1
+PORTVERSION=	0.2.7b.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ude.the-coffeeshop.dk/pub/UDE/

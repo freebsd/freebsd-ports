@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	9wm
-PORTVERSION= 	1.1
+PORTVERSION=	1.1
 CATEGORIES=	x11-wm plan9
 MASTER_SITES=	ftp://ftp.mathcs.emory.edu/pub/arnold/
 EXTRACT_SUFX=	.shar.gz
