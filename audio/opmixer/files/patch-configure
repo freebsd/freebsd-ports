@@ -1,0 +1,23 @@
+$FreeBSD$
+
+--- configure.orig	Wed Jun 20 16:34:09 2001
++++ configure	Sat Sep 21 14:53:40 2002
+@@ -874,18 +874,6 @@ fi
+ echo "$ac_t""$ac_cv_prog_cxx_g" 1>&6
+ if test "$ac_test_CXXFLAGS" = set; then
+   CXXFLAGS="$ac_save_CXXFLAGS"
+-elif test $ac_cv_prog_cxx_g = yes; then
+-  if test "$GXX" = yes; then
+-    CXXFLAGS="-g -O2"
+-  else
+-    CXXFLAGS="-g"
+-  fi
+-else
+-  if test "$GXX" = yes; then
+-    CXXFLAGS="-O2"
+-  else
+-    CXXFLAGS=
+-  fi
+ fi
+ 
+ echo $ac_n "checking how to run the C++ preprocessor""... $ac_c" 1>&6
