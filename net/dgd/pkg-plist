@@ -1,6 +1,6 @@
 @srcdir /usr/ports/net/dgd/work
 @owner mud
-@group mudadmin
+@group mud
 @cwd /usr/local
 dgd/Copyright
 dgd/Credits
