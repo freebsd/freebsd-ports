@@ -10209,6 +10209,7 @@ yaunc		ports/misc/yaunc
 yawho		ports/sysutils/yawho
 yawm		ports/x11-wm/yawm
 yawmppp		ports/comms/yawmppp
+yaws		ports/www/yaws
 yaz		ports/net/yaz
 yaz++		ports/net/yaz++
 yelp		ports/x11/yelp
