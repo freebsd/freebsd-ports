@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ming
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2a
 CATEGORIES=	graphics python
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ DISTFILES=	# none
 MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/ming:patch
-LIB_DEPENDS=	ming.2:${PORTSDIR}/graphics/ming
+LIB_DEPENDS=	ming.3:${PORTSDIR}/graphics/ming
 
 USE_PYTHON=	yes
 

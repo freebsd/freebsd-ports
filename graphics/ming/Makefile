@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ming
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2a
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.opaque.net/ming/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-examples${EXTRACT_SUFX}
@@ -40,7 +40,9 @@ post-extract:
 	${SED} -e 's:"\.\./\.\./ming\.h":<ming.h>:g' \
 		${WRKSRC}/ming.h > ${WRKSRC}/mingpp.h
 	cd ${WRKSRC}/../util && \
-	${RM} bindump.c hexdump.c listmp3.c
+	${RM} bindump.c decompile5.c hexdump.c listmp3.c
+#	cd ${WRKSRC}/../php_ext && ${LN} -sf ming-4.0.6.c ming.c
+	${RM} -rf ${WRKSRC}/../examples/results
 
 pre-build:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
