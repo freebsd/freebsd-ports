@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += zodb
     SUBDIR += zpygresqlda
     SUBDIR += adodb
     SUBDIR += cdb
