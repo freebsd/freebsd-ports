@@ -17,6 +17,20 @@
   
   #have-vpix#VPIX_DIR = /usr/src/local/vfc-1.0
 ***************
+*** 132,136 ****
+  #have-i386#MD_DEF = -DNOSHM
+  #have-i386#TAR_PREFIX = i386
+! #have-i386#LIB_X = -L/usr/X11/lib -lXext -lX11
+  #have-netbsd_sparc#TAR_PREFIX = netbsd_sparc
+  #have-netbsd_sparc#TARCMD = tar -h -c -f
+--- 132,137 ----
+  #have-i386#MD_DEF = -DNOSHM
+  #have-i386#TAR_PREFIX = i386
+! #have-i386#MD_INC = -I/usr/X11R6/include
+! #have-i386#LIB_X = -L/usr/X11R6/lib -lXext -lX11
+  #have-netbsd_sparc#TAR_PREFIX = netbsd_sparc
+  #have-netbsd_sparc#TARCMD = tar -h -c -f
+***************
 *** 368,372 ****
   	install -c vic /usr/local/bin/vic
   	install -c histtolut /usr/local/bin/histtolut
