@@ -10113,6 +10113,7 @@ sbagen		ports/audio/sbagen
 sbcl		ports/lang/sbcl
 sbd		ports/net/sbd
 sbniconfig	ports/sysutils/sbniconfig
+sbox-dtc	ports/www/sbox-dtc
 sc		ports/math/sc
 sc-aspell	ports/textproc/sc-aspell
 scalapack	ports/math/scalapack
