@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diveintopython
-PORTVERSION=	3.4
+PORTVERSION=	3.5
 CATEGORIES=	lang python
 MASTER_SITES=	http://diveintopython.org/download/
 DISTNAME=	${PORTNAME}
@@ -37,9 +37,9 @@ post-patch:
 	   s#<tr>(.(?!<tr>))*(Microsoft Word|Windows Help)(.(?!</tr>))*.</tr>##g; \
 	   s#<td>(.(?!<td>))*cn/(.(?!</td>))*.</td>##g; \
 	   s#zip#tgz#g' ${WRKSRC}/index.html
-	@ ${PERL} -pi.orig -e \
+	@ ${PERL} -pi -e \
 	  's#http[^>]*(download/${PORTNAME}-examples-${VERSIONSTR}.tgz)#$$1#' \
-	  ${WRKSRC}/odbchelper_divein.html
+	  ${WRKSRC}/*.html
 
 do-install:
 	@ ${MKDIR} ${DIPDLDIR}
