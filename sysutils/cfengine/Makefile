@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	cfengine
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES=	ftp://ftp.iu.hioslo.no/pub/cfengine/ \
+		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	cfengine
 
 MAINTAINER=	jseger@FreeBSD.org

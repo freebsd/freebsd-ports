@@ -1,0 +1,11 @@
+--- src/classes.c.orig	Wed Oct 20 03:41:30 1999
++++ src/classes.c	Tue Apr 25 16:37:00 2000
+@@ -97,7 +97,7 @@
+    "irix4","ip*","4*",         /* irix4 */
+    "irix", "ip*","*",          /* irix */
+    "irix64","ip*","*",         /* irix64 */
+-   "freebsd","i?86","*",       /* freebsd */
++   "freebsd","*","*",          /* freebsd */
+    "sunos","i86pc","5*",       /* solarisx86 */
+    "bsd","*","*",              /* bsd 4.3 */
+    "newsos","*","*",           /* newsos4 */
