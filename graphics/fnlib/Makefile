@@ -3,7 +3,7 @@
 # Date created:		23 June 1997
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.3 1998/07/18 18:45:22 vanilla Exp $
+# $Id: Makefile,v 1.4 1998/08/05 09:31:07 asami Exp $
 #
 
 DISTNAME=	fnlib_DR-0.3
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://www.rasterman.com/pub/enlightenment/enlightenment/ \
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-LIB_DEPENDS=	Imlib\\.1\\.7:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	Imlib.1:${PORTSDIR}/graphics/imlib
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -23,6 +23,6 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/fnlib
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
