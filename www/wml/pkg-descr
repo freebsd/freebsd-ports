@@ -1,12 +1,12 @@
-  __        ____  __ _     
-  \ \      / /  \/  | |    
-   \ \ /\ / /| |\/| | |    
-    \ V  V / | |  | | |___ 
-     \_/\_/  |_|  |_|_____|
+  __        ___  __ _     
+  \ \      / / \/  | |    
+   \ \ /\ / / |\/| | |    
+    \ V  V /| |  | | |___ 
+     \_/\_/ |_|  |_|_____|
                          
   WML -- Website META Language
 
-  Version 1.2.0 (25-08-1997)
+  Version 1.2.2 (08-09-1997)
 
   WML is a free HTML generation toolkit consisting of 9 independent languages.
   The main idea of WML is a sequential filtering scheme where each language
