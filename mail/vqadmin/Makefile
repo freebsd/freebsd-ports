@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	vqadmin
-PORTVERSION=	1.4
+PORTVERSION=	2.2
 CATEGORIES=	mail
-MASTER_SITES= 	http://www.vpopmail.cx/
+MASTER_SITES= 	http://www.inter7.com/vqadmin/
 
 MAINTAINER=	nbm@FreeBSD.org
 
