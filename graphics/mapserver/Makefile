@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		mapserver
-PORTVERSION=		4.4.0
+PORTVERSION=		4.4.1
 PORTREVISION=		0
 CATEGORIES=		graphics www misc
 MASTER_SITES=		http://cvs.gis.umn.edu/dist/
