@@ -20,6 +20,8 @@ COMMENT=	MySQL Database Adapter for the Zope web application framework
 
 RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb
 
+BROKEN=		Incomplete pkg-plist
+
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope
