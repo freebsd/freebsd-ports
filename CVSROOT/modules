@@ -8583,6 +8583,7 @@ wget		ports/ftp/wget
 wget+ipv6	ports/ftp/wget+ipv6
 what		src/usr.bin/what
 whatmask	ports/net/whatmask
+whatpix		ports/sysutils/whatpix
 whereintheworld	src/tools/tools/whereintheworld
 whereis		src/usr.bin/whereis
 which		src/usr.bin/which
