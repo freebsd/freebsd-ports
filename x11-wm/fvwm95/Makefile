@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=   http://ftp.yars.free.net/pub/software/unix/platforms/linux/x/fvwm95/ \
 		http://ftp.cc.ntut.edu.tw/ftp/Xwindow/xfree86/Linux/wm/fvwm-95/
-DISTNAME=	${PKGNAME}-Autoconf
+DISTNAME=	${PORTNAME}-${PORTVERSION}-Autoconf
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	demon@FreeBSD.org
