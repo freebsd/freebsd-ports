@@ -6,48 +6,37 @@
 #
 
 PORTNAME=	shujit
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.5
 CATEGORIES=	java
 MASTER_SITES=	http://www.shudo.net/jit/dist/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/ruby:${PORTSDIR}/lang/ruby \
-		${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk
+BUILD_DEPENDS=	${LOCALBASE}/bin/ruby:${PORTSDIR}/lang/ruby14 \
+		${JAVADIR}/bin/javac:${PORTSDIR}/java/jdk
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
-RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
 
 WRKSRC=		${WRKDIR}/shujit
 ONLY_FOR_ARCHS=	i386
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_NEWGCC=	yes
-MAKE_FLAGS=
-MAKEFILE=
-MAKE_ARGS=
-ALL_TARGET=
+MAKEFILE=	GNUmakefile
 
 JAVADIR=	${LOCALBASE}/jdk1.1.8
-JAVALIBDIR=	${JAVADIR}/lib/i386/green_threads
-JAVABINDIR=	${JAVADIR}/bin/i386/green_threads
-JAVAOBJFORMAT=	`file ${JAVABINDIR}/java | ${AWK} '{print $$2}'`
+JAVALIBDIR=	${PREFIX}/lib/${PORTNAME}
 CONFIGURE_ARGS+=	--with-jdk="${JAVADIR}"
 
-pre-build:
-	@( if [ ${JAVAOBJFORMAT} != ELF ]; then	\
-		${CAT} ${PKGDIR}/MESSAGE;	\
-		exit 1;				\
-	fi; )
-
 do-install:
+	@${MKDIR} ${JAVALIBDIR}
 	@${INSTALL_PROGRAM} ${WRKSRC}/libshujit.so ${JAVALIBDIR}
 
 post-install:
-	@${MKDIR} ${JAVADIR}/shujit
-	@${INSTALL_MAN} ${WRKSRC}/README ${JAVADIR}/shujit
+	@${MKDIR} ${PREFIX}/share/shujit
+	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/shujit
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "See ${JAVADIR}/shujit/README for usage instructions."
+	@${ECHO_MSG} "See ${PREFIX}/shujit/README for usage instructions."
 	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
