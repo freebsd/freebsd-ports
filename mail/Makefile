@@ -189,6 +189,7 @@
     SUBDIR += pronto
     SUBDIR += py-milter
     SUBDIR += pygmy
+    SUBDIR += pyzor
     SUBDIR += qmHandle
     SUBDIR += qmail
     SUBDIR += qmail-contrib
