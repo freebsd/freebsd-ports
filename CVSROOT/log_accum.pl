@@ -1,6 +1,6 @@
 #!/usr/local/bin/perl
 #
-# $Id: log_accum.pl,v 1.22 1997/05/15 19:53:32 peter Exp $
+# $Id: log_accum.pl,v 1.23 1997/05/15 23:45:01 peter Exp $
 #
 # Perl filter to handle the log messages from the checkin of files in
 # a directory.  This script will group the lists of files by log
@@ -389,6 +389,11 @@ sub mail_notification {
 ############################################################
 
 #
+# Setup environment
+#
+umask (002);
+
+#
 # Initialize basic variables
 #
 $id = getpgrp();
@@ -431,6 +436,7 @@ if ($ARGV[0] =~ /New directory/) {
     exit 0;
 }
 
+#
 # Check for an import command.  This will always appear as a
 # single item in the argument list, and a log message.
 #
@@ -614,6 +620,7 @@ for ($i = 0; ; $i++) {
 # Put the log message at the beginning of the Changes file
 #
 &do_changes_file(@text);
+
 #
 # Now generate the extra info for the mail message..
 #
@@ -632,6 +639,7 @@ if ($rcsidinfo == 1) {
 	push(@text, "");	# consistancy...
     }
 }
+
 #
 # Mail out the notification.
 #
