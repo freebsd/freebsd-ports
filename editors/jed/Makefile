@@ -7,6 +7,7 @@
 
 PORTNAME=	jed
 PORTVERSION=	0.99.16
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v${PORTVERSION:R}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
@@ -19,7 +20,7 @@ LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 XJED=		xjed
-PLIST_SUB+=  	NOXJED=""
+PLIST_SUB+=	NOXJED=""
 .else
 PLIST_SUB+=	NOXJED="@comment "
 .endif
