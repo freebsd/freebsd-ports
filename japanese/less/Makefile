@@ -20,7 +20,7 @@ PATCH_SITES=	http://www.io.com/~kazushi/less/
 PATCHFILES=	${DISTNAME}-iso${PORTVERSION:E}.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	k5@cheerful.com
+MAINTAINER=	sf@FreeBSD.org
 
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes

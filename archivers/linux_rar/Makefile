@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.netlab.sk/public/rarsoft/rar/ \
 DISTNAME=	rarlnx271
 EXTRACT_SUFX=	.sfx
 
-MAINTAINER=	k5@cheerful.com
+MAINTAINER=	sf@FreeBSD.org
 
 BUILD_DEPENDS=	/compat/linux/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
 RUN_DEPENDS=	/compat/linux/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
