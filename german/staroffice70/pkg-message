@@ -11,19 +11,16 @@ Note that this a a BETA RELEASE of Staroffice6.0
 
 BUGS:
 
-A userinstall is handled unproperly. Staroffice tries to
-write to the wrong location and doesn't handle this properly
-and crashes.
+We have found a workaround for the install-user segfaults.
+The installation does not create serveral .dat files, which
+leads to segfaults and startup problems.
 
-Workaround:
+WARNING:
 
-# chmod a=rwx,+s $PREFIX/staroffice6.0/share/config/registry/instance/org/openoffice/Office
-
-$PREFIX is in most cases "/usr/local". Adding +s on the
-config directory does make it writable for later.
-
-This should only be done as urgent workaround if you don't
-want to work as root and really like to test Staroffice6.0-Beta.
+If you have already Staroffice5.2 installed and your work
+directory is a symlink to somewhere else and you do a upgrade,
+all your files in this directory will be lost ! Please make
+a backup of these files or the entire $HOME/office52 folder.
 
 ------------------------------------------------------------------
 
