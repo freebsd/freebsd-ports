@@ -1,0 +1,26 @@
+--- Makefile.orig	Sat Jun 22 03:39:00 2002
++++ Makefile	Sat Jun 22 03:39:19 2002
+@@ -16,7 +16,7 @@
+ # (and.init.debian for Debian GNU/Linux or and.init for others;
+ # leave empty for BSD!)
+ #
+-INITSCRIPT=and.init
++INITSCRIPT=
+ 
+ #
+ # Target directories. Examples for common configurations are
+@@ -30,10 +30,10 @@
+ 
+ # typical OpenBSD or FreeBSD configuration
+ #PREFIX=/usr/local
+-#INSTALL_ETC=/etc
+-#INSTALL_INITD=
+-#INSTALL_SBIN=$(PREFIX)/sbin
+-#INSTALL_MAN=$(PREFIX)/man
++INSTALL_ETC=${PREFIX}/etc
++INSTALL_INITD=
++INSTALL_SBIN=$(PREFIX)/sbin
++INSTALL_MAN=$(PREFIX)/man
+ 
+ # typical Debian or SuSE 7.x configuration
+ #PREFIX=/usr
