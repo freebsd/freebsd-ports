@@ -1,0 +1,12 @@
+The program makeindex is a general purpose hierarchical index
+generator; it accepts one or more input files (often produced by a
+text formatter such as TeX or troff, sorts the entries, and produces
+an output file which can be formatted.  The index can have up to three
+levels (0, 1, and 2) of subitem nesting.  The way in which words are
+flagged for indexing within the main document is specific to the
+formatter used; makeindex does not automate the process of selecting
+these words.  As the output index is hierarchical, makeindex can be
+considered complimentary to the awk(1)-based make.index(1L) system of
+Bentley and Kernighan, which is specific to troff(1), generates
+non-hierarchical indices, and employs a much simpler syntax for
+indicating index entries.
