@@ -7,7 +7,7 @@
 
 PORTNAME=		heimdal
 PORTVERSION=		0.3c
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		security ipv6
 MASTER_SITES=		ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 			ftp://ftp.replay.com/pub/replay/crypto/APPS/kerberos/heimdal/ \
@@ -38,6 +38,7 @@ MAN8=			ftpd.8 hprop.8 hpropd.8 kadmind.8 kdc.8 kfd.8 kpasswdd.8 \
 #USE_LIBTOOL=		yes
 
 GNU_CONFIGURE=		yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}--freebsd${OSREL}
 INSTALLS_SHLIB=		yes
 CONFIGURE_ARGS=		--prefix=${PREFIX} --enable-shared
 .if defined(WITH_LDAP)
@@ -68,6 +69,12 @@ CONFIGURE_ARGS+=	--without-krb4
 .endif
 
 PLIST:=			${WRKDIR}/PLIST
+
+pre-configure:
+	@(set -e; \
+	cd ${CONFIGURE_WRKSRC}; \
+	find . -type f -name 'Makefile.in' -print | xargs perl -i -pe \
+	's,\$$\(top_builddir\)/lib/com_err/compile_et,compile_et,';)
 
 pre-install:
 	@${CP} ${PKGDIR}/pkg-plist ${PLIST}

@@ -1,0 +1,14 @@
+--- kadmin/get.c.orig	Wed Nov  8 12:28:57 2000
++++ kadmin/get.c	Wed Nov  8 12:44:44 2000
+@@ -150,7 +150,10 @@
+     printf("%24s: %d\n", "Failed login count", princ->fail_auth_count);
+     time_t2str(princ->mod_date, buf, sizeof(buf), 1);
+     printf("%24s: %s\n", "Last modified", buf);
+-    krb5_unparse_name_fixed(context, princ->mod_name, buf, sizeof(buf));
++    if (princ->mod_name)
++	    krb5_unparse_name_fixed(context, princ->mod_name, buf, sizeof(buf));
++    else
++	    strcpy(buf, "<none>");
+     printf("%24s: %s\n", "Modifier", buf);
+     attributes2str (princ->attributes, buf, sizeof(buf));
+     printf("%24s: %s\n", "Attributes", buf);

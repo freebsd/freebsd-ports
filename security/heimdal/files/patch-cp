@@ -1,0 +1,24 @@
+--- lib/asn1/Makefile.in.orig	Wed Nov  8 10:31:04 2000
++++ lib/asn1/Makefile.in	Wed Nov  8 10:31:52 2000
+@@ -279,7 +279,6 @@
+ 
+ check_der_LDADD = \
+ 	libasn1.la \
+-	../com_err/libcom_err.la \
+ 	$(LIB_roken)
+ 
+ 
+@@ -339,11 +338,11 @@
+ asn1_compile_LDFLAGS = 
+ asn1_print_SOURCES = asn1_print.c
+ asn1_print_OBJECTS =  asn1_print.$(OBJEXT)
+-asn1_print_DEPENDENCIES =  libasn1.la ../com_err/libcom_err.la
++asn1_print_DEPENDENCIES =  libasn1.la 
+ asn1_print_LDFLAGS = 
+ check_der_SOURCES = check-der.c
+ check_der_OBJECTS =  check-der.$(OBJEXT)
+-check_der_DEPENDENCIES =  libasn1.la ../com_err/libcom_err.la
++check_der_DEPENDENCIES =  libasn1.la 
+ check_der_LDFLAGS = 
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
