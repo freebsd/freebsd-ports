@@ -3,7 +3,7 @@
 # Date created:        16 December 1997
 # Whom:                alex
 #
-# $Id: Makefile,v 1.1.1.1 1997/12/18 03:47:32 alex Exp $
+# $Id: Makefile,v 1.2 1997/12/21 14:34:55 alex Exp $
 #
 
 VGABIOS=	VGABIOS-elpin-2.00A
@@ -17,7 +17,7 @@ MASTER_SITES= 	ftp://ftp.std.com/pub/bochs/
 MAINTAINER=	alex@FreeBSD.ORG
 
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS+=--enable-80386 --enable-debugger --enable-memory=16 \
+CONFIGURE_ARGS=	--enable-80386 --enable-debugger --enable-memory=16 \
 	--enable-v8086-mode --enable-paging --enable-vga \
 	--enable-bochs-bios-hooks --enable-dma-floppy-io \
 	--enable-processor-ips=200000
