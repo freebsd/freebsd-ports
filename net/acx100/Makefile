@@ -7,6 +7,7 @@
 
 PORTNAME=	acx100
 PORTVERSION=	20040701
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://wlan.kewl.org/download/:file_0 \
 		ftp://ftp.dlink.co.uk/wireless/dwl-650+/:file_1
@@ -44,15 +45,9 @@ pre-build:
 
 pre-install:
 	@${INSTALL_MAN} ${WRKSRC}/if_acx.4 ${PREFIX}/man/man4
-#
-#   Comment this out when headers will be up to date.
-#
-#.if !exists($INCLUDEDIR})
-#	@${MKDIR} ${INCLUDEDIR}
-#.endif
-#	@${CP} ${WRKSRC}/include/if_acxioctl.h  ${INCLUDEDIR}
-#	@${CP} ${WRKSRC}/include/if_acxpacket.h ${INCLUDEDIR}
-#
+
+	@${MKDIR} ${INCLUDEDIR}
+	@${CP} ${WRKSRC}/include/if_acxioctl.h  ${INCLUDEDIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
