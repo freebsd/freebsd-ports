@@ -1,23 +1,23 @@
+apsfilter is a magic printfilter, that saves you work to "look for" and
+"use different filter programs", that convert your file into something
+suitable for your printer.
+
 Here a "real life" example, how apsfilter makes your life easier
 printing different document format, even if compressed:
     lpr ascii.Z test.gif picture.tiff TeX.dvi.gz webpage.html docu.pdf
 
-apsfilter is a magic printfilter, that saves you work to "look for" and
-"use different filter programs", that convert your file into something
-suitable for your printer. Apsfilter first translates every document
-into Postscript and then pipes it through ghostscript, if you don't
-have a PS printer. Printer Setup is done with the SETUP program.
-It saves your current printcap entries and creates printcap entries
-for one or more of your local printers. New features: 
-	- various bugfixes and feature enhancements, see ChangeLog file
-	- supports different print resolutions (requires manual configuration)
-		lpr -P{low,med,high} test.ps
-	- supports LPRng as printer scheduler
-	- supports ghostscript5.x uniprint driver
-	- writes the first 8k of a print job to /tmp for file type
-	  recognition, so file(1) doesn't need to be able to read from
-	  a pipe (stdin) and rewindstdin isn't needed anymore for dvips.
-If you are a satisfied apsfilter customer, then send mail to 
-apsfilter-promo@klemm.gtn.com and tell me, how apsfilter made your
-life easier. Send me a postcard if you like ! Have fun !
-	-Andreas (Juni 1999)
+- Apsfilter first translates every document into Postscript and then pipes
+  it through ghostscript, if you don't have a PS printer.
+- Printer Setup is done with the SETUP program.
+
+See my homepage for more informations:
+	http://www.FreeBSD.org/~andreas/apsfilter
+
+*** Please note: COPYRIGHT CHANGED ***
+  GPL + Postcard license. I'd like to get a postcard from you, to
+  see who is using apsfilter and where. That would be very kind !
+
+If you are a satisfied apsfilter customer, then send mail to
+apsfilter-promo@klemm.gtn.com and tell me, how apsfilter made your life easier.
+
+	-Andreas (August 1999)
