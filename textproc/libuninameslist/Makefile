@@ -7,7 +7,6 @@
 
 PORTNAME=	libuninameslist
 PORTVERSION=	20${DIST_VER}
-PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libuninameslist
@@ -17,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	kanou@khdd.net
 COMMENT=	A library of Unicode annotation data
 
-DIST_VER=	030713
+DIST_VER=	040707
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
