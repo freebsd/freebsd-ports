@@ -2,7 +2,7 @@
 --- Makefile.in	Sat Aug  5 22:03:43 2000
 ***************
 *** 31,37 ****
-  CFLAGS = -Wall -Wstrict-prototypes -O2 -fomit-frame-pointer @DEFS@
+! CFLAGS = -Wall -Wstrict-prototypes -O2 -fomit-frame-pointer @DEFS@
   INCLUDE = .
   INSTDIR = @bindir@
 ! ETCDIR = /etc
@@ -10,7 +10,7 @@
   OBJS = @LIBOBJS@
   DOWENEEDGETOPT = @LIBOBJS@
 --- 31,37 ----
-  CFLAGS = -Wall -Wstrict-prototypes -O2 -fomit-frame-pointer @DEFS@
+! CFLAGS += -Wall -Wstrict-prototypes -fomit-frame-pointer @DEFS@
   INCLUDE = .
   INSTDIR = @bindir@
 ! ETCDIR = @sysconfdir@

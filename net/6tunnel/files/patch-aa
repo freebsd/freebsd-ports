@@ -2,7 +2,7 @@
 +++ Makefile	Fri Jan  5 17:00:06 2001
 @@ -1,4 +1,4 @@
 -CC = gcc -O2 -Wall
-+CFLAGS += -O2 -Wall
++CFLAGS += -Wall
  VER = 0.07
  RPM_ROOT = /home/wojtekka/rpm
  

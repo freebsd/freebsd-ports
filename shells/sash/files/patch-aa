@@ -5,7 +5,7 @@
  #
  
 -CFLAGS = -O3 -Wall -Wmissing-prototypes -DHAVE_GZIP -DHAVE_EXT2
-+CFLAGS += -O2 -Wall -Wmissing-prototypes $(OPTS)
++CFLAGS += -Wall -Wmissing-prototypes $(OPTS)
  LDFLAGS = -static -s
  LIBS = -lz
  
