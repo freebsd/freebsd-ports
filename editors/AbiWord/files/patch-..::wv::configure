@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- ../wv/configure.orig	Tue Jul 24 00:47:56 2001
-+++ ../wv/configure	Wed Aug  8 14:47:05 2001
+--- ../wv/configure.orig	Fri Aug 10 16:54:41 2001
++++ ../wv/configure	Thu Aug 16 10:49:37 2001
 @@ -2351,7 +2351,7 @@
  #               LIBXML2_LIBS="-lxml" ]))
  
@@ -12,14 +12,85 @@ $FreeBSD$
  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
  echo "configure:2357: checking for $ac_word" >&5
  if eval "test \"`echo '$''{'ac_cv_path_GLIB_CONFIG'+set}'`\" = set"; then
-@@ -2867,14 +2867,14 @@
- have_iconv=no
+@@ -2930,15 +2930,15 @@
+   echo "$ac_t""yes" 1>&6
+   
+ 		ac_safe=`echo "iconv.h" | sed 'y%./+-%__p_%'`
+-echo $ac_n "checking for iconv.h""... $ac_c" 1>&6
+-echo "configure:2935: checking for iconv.h" >&5
++echo $ac_n "checking for giconv.h""... $ac_c" 1>&6
++echo "configure:2935: checking for giconv.h" >&5
+ if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   cat > conftest.$ac_ext <<EOF
+ #line 2940 "configure"
+ #include "confdefs.h"
+-#include <iconv.h>
++#include <giconv.h>
+ EOF
+ ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+ { (eval echo configure:2945: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+@@ -2981,11 +2981,11 @@
+ 			ICONV_LIBS="-L$LIBICONV_DIR/lib/.libs -liconv"
+ 		else
+ 			ICONV_CFLAGS="-I$LIBICONV_DIR/include"
+-			ICONV_LIBS="-L$LIBICONV_DIR/lib -liconv"
++			ICONV_LIBS="-L$LIBICONV_DIR/lib -lgiconv"
+ 		fi
+ 	else
+ 		ICONV_CFLAGS=""
+-		ICONV_LIBS="-liconv"
++		ICONV_LIBS="-lgiconv"
+ 	fi
  
- if test "$check_for_libiconv" = "yes"; then
--    echo $ac_n "checking for iconv_open in -liconv""... $ac_c" 1>&6
--echo "configure:2872: checking for iconv_open in -liconv" >&5
-+    echo $ac_n "checking for iconv_open in -lgiconv""... $ac_c" 1>&6
-+echo "configure:2872: checking for iconv_open in -lgiconv" >&5
+ 	CPPFLAGS="${CPPFLAGS} $ICONV_CFLAGS"
+@@ -2993,15 +2993,15 @@
+ 
+ 	if  test "$use_peer_libiconv" = "abi" ; then
+ 								ac_safe=`echo "iconv.h" | sed 'y%./+-%__p_%'`
+-echo $ac_n "checking for iconv.h""... $ac_c" 1>&6
+-echo "configure:2998: checking for iconv.h" >&5
++echo $ac_n "checking for giconv.h""... $ac_c" 1>&6
++echo "configure:2998: checking for giconv.h" >&5
+ if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   cat > conftest.$ac_ext <<EOF
+ #line 3003 "configure"
+ #include "confdefs.h"
+-#include <iconv.h>
++#include <giconv.h>
+ EOF
+ ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+ { (eval echo configure:3008: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+@@ -3027,15 +3027,15 @@
+ 
+ 	else
+ 		ac_safe=`echo "iconv.h" | sed 'y%./+-%__p_%'`
+-echo $ac_n "checking for iconv.h""... $ac_c" 1>&6
+-echo "configure:3032: checking for iconv.h" >&5
++echo $ac_n "checking for giconv.h""... $ac_c" 1>&6
++echo "configure:3032: checking for giconv.h" >&5
+ if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   cat > conftest.$ac_ext <<EOF
+ #line 3037 "configure"
+ #include "confdefs.h"
+-#include <iconv.h>
++#include <giconv.h>
+ EOF
+ ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+ { (eval echo configure:3042: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+@@ -3055,14 +3055,14 @@
+ if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+   
+-			echo $ac_n "checking for iconv_open in -liconv""... $ac_c" 1>&6
+-echo "configure:3060: checking for iconv_open in -liconv" >&5
++			echo $ac_n "checking for iconv_open in -lgiconv""... $ac_c" 1>&6
++echo "configure:3060: checking for iconv_open in -lgiconv" >&5
  ac_lib_var=`echo iconv'_'iconv_open | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -28,28 +99,16 @@ $FreeBSD$
 -LIBS="-liconv  $LIBS"
 +LIBS="-lgiconv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 2880 "configure"
+ #line 3068 "configure"
  #include "confdefs.h"
-@@ -2905,9 +2905,9 @@
-   
-         if test "x$LIBICONV_DIR" != "x"; then
-             ICONV_CFLAGS="-I$LIBICONV_DIR/include"
--            ICONV_LIBS="-L$LIBICONV_DIR/lib -liconv"
-+            ICONV_LIBS="-L$LIBICONV_DIR/lib -lgiconv"
-         else
--            ICONV_LIBS="-liconv"
-+            ICONV_LIBS="-lgiconv"
-         fi
-         cat >> confdefs.h <<\EOF
- #define USE_ICONV 1
-@@ -2919,14 +2919,14 @@
- fi
- 
-         if test "$have_iconv" = "no"; then
--        echo $ac_n "checking for libiconv_open in -liconv""... $ac_c" 1>&6
--echo "configure:2924: checking for libiconv_open in -liconv" >&5
-+        echo $ac_n "checking for libiconv_open in -lgiconv""... $ac_c" 1>&6
-+echo "configure:2924: checking for libiconv_open in -lgiconv" >&5
+@@ -3095,14 +3095,14 @@
+ 			
+ else
+   echo "$ac_t""no" 1>&6
+-	echo $ac_n "checking for libiconv_open in -liconv""... $ac_c" 1>&6
+-echo "configure:3100: checking for libiconv_open in -liconv" >&5
++	echo $ac_n "checking for libiconv_open in -lgiconv""... $ac_c" 1>&6
++echo "configure:3100: checking for libiconv_open in -lgiconv" >&5
  ac_lib_var=`echo iconv'_'libiconv_open | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -58,143 +117,14 @@ $FreeBSD$
 -LIBS="-liconv  $LIBS"
 +LIBS="-lgiconv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 2932 "configure"
+ #line 3108 "configure"
  #include "confdefs.h"
-@@ -2957,9 +2957,9 @@
-   
-             if test "x$LIBICONV_DIR" != "x"; then
-                 ICONV_CFLAGS="-I$LIBICONV_DIR/include"
--                ICONV_LIBS="-L$LIBICONV_DIR/lib -liconv"
-+                ICONV_LIBS="-L$LIBICONV_DIR/lib -lgiconv"
-             else
--                ICONV_LIBS="-liconv"
-+                ICONV_LIBS="-lgiconv"
-             fi
-             cat >> confdefs.h <<\EOF
- #define USE_ICONV 1
-@@ -3073,7 +3073,7 @@
- #line 3074 "configure"
+@@ -3168,7 +3168,7 @@
+ #line 3169 "configure"
  #include "confdefs.h"
  
--	#include <iconv.h>
-+	#include <giconv.h>
- 	#include <stdio.h>
- 	#include <errno.h>
- 	#include <string.h>
-@@ -3152,7 +3152,7 @@
- #line 3153 "configure"
- #include "confdefs.h"
+-#include <iconv.h>
++#include <giconv.h>
  
--	#include <iconv.h>
-+	#include <giconv.h>
- 	#include <stdio.h>
- 	#include <errno.h>
- 	#include <string.h>
-@@ -3231,7 +3231,7 @@
- #line 3232 "configure"
- #include "confdefs.h"
+ int main() {
  
--	#include <iconv.h>
-+	#include <giconv.h>
- 	#include <stdio.h>
- 	#include <errno.h>
- 	#include <string.h>
-@@ -3310,7 +3310,7 @@
- #line 3311 "configure"
- #include "confdefs.h"
- 
--	#include <iconv.h>
-+	#include <giconv.h>
- 	#include <stdio.h>
- 	#include <errno.h>
- 	#include <string.h>
-@@ -3389,7 +3389,7 @@
- #line 3390 "configure"
- #include "confdefs.h"
- 
--	#include <iconv.h>
-+	#include <giconv.h>
- 	#include <stdio.h>
- 	#include <errno.h>
- 	#include <string.h>
-@@ -3468,7 +3468,7 @@
- #line 3469 "configure"
- #include "confdefs.h"
- 
--	#include <iconv.h>
-+	#include <giconv.h>
- 	#include <stdio.h>
- 	#include <errno.h>
- 	#include <string.h>
-@@ -3547,7 +3547,7 @@
- #line 3548 "configure"
- #include "confdefs.h"
- 
--	#include <iconv.h>
-+	#include <giconv.h>
- 	#include <stdio.h>
- 	#include <errno.h>
- 	#include <string.h>
-@@ -3626,7 +3626,7 @@
- #line 3627 "configure"
- #include "confdefs.h"
- 
--	#include <iconv.h>
-+	#include <giconv.h>
- 	#include <stdio.h>
- 	#include <errno.h>
- 	#include <string.h>
-@@ -3705,7 +3705,7 @@
- #line 3706 "configure"
- #include "confdefs.h"
- 
--	#include <iconv.h>
-+	#include <giconv.h>
- 	#include <stdio.h>
- 	#include <errno.h>
- 	#include <string.h>
-@@ -3785,7 +3785,7 @@
- #line 3786 "configure"
- #include "confdefs.h"
- 
--	#include <iconv.h>
-+	#include <giconv.h>
- 	#include <stdio.h>
- 	#include <errno.h>
- 	#include <string.h>
-@@ -3864,7 +3864,7 @@
- #line 3865 "configure"
- #include "confdefs.h"
- 
--	#include <iconv.h>
-+	#include <giconv.h>
- 	#include <stdio.h>
- 	#include <errno.h>
- 	#include <string.h>
-@@ -3943,7 +3943,7 @@
- #line 3944 "configure"
- #include "confdefs.h"
- 
--	#include <iconv.h>
-+	#include <giconv.h>
- 	#include <stdio.h>
- 	#include <errno.h>
- 	#include <string.h>
-@@ -4022,7 +4022,7 @@
- #line 4023 "configure"
- #include "confdefs.h"
- 
--	#include <iconv.h>
-+	#include <giconv.h>
- 	#include <stdio.h>
- 	#include <errno.h>
- 	#include <string.h>
-@@ -4101,7 +4101,7 @@
- #line 4102 "configure"
- #include "confdefs.h"
- 
--	#include <iconv.h>
-+	#include <giconv.h>
- 	#include <stdio.h>
- 	#include <errno.h>
- 	#include <string.h>
