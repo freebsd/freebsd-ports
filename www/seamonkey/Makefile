@@ -160,6 +160,8 @@ JPI_LIST=\
 	${LOCALBASE}/diablo-jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
 	${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so
 
+NOT_FOR_ARCHS=	amd64
+
 .include <bsd.port.pre.mk>
 
 MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin \

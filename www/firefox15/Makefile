@@ -43,6 +43,8 @@ LOCAL_PREFIX=		${PREFIX}/${LOCAL_SUBDIR}
 JREDIR=			${LOCALBASE}/jdk1.3.1/jre
 PLUGINSDIR=		${PREFIX}/lib/browser_plugins
 
+NOT_FOR_ARCHS=		amd64
+
 .include <bsd.port.pre.mk>
 
 #.if ${PERL_LEVEL} < 500601
