@@ -73,6 +73,9 @@ while [ "$1" ]; do
 			echo "PHP_CONF_ARGS+=	--with-mhash=\${PREFIX}"
 			;;
 		\"pdflib\")
+			echo "pdflib is DISABLED for now. Ignoring." > /dev/stderr
+			;;
+		\"nothing\")
 			echo "LIB_DEPENDS+=	pdf.2:\${PORTSDIR}/print/pdflib"
 			echo "PHP_CONF_ARGS+=	--with-pdflib=\${PREFIX} \\"
 			echo "		--with-jpeg-dir=\${PREFIX} \\"
@@ -82,6 +85,9 @@ while [ "$1" ]; do
 			fi
 			;;
 		\"IMAP\")
+			echo "IMAP is DISABLED for now. Ignoring." > /dev/stderr
+			;;
+		\"nothing\")
 			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/libc-client4.a:\${PORTSDIR}/mail/imap-uw"
 			echo "PHP_CONF_ARGS+=	--with-imap=\${PREFIX}"
 			;;
