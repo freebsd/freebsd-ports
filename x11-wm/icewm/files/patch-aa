@@ -10,12 +10,3 @@
  
  doc:
  	cd doc ; $(MAKE)
-@@ -57,7 +56,7 @@
-                 $(INSTALLLIB) $$config $(LIBDIR)/themes/$$theme; \
-             done; \
-             for l in $(XPMDIRS) ; do \
--                if [ -a lib/themes/$$theme/$$l ] ; then \
-+                if [ -d lib/themes/$$theme/$$l ] ; then \
-                     $(INSTALLDIR) $(LIBDIR)/themes/$$theme/$$l; \
-                     for f in lib/themes/$$theme/$$l/* ; do \
-                         $(INSTALLLIB) $$f $(LIBDIR)/themes/$$theme/$$l; \
