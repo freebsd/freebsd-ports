@@ -1,0 +1,16 @@
+KeyNote is a simple and flexible trust-management system designed to
+work well for a variety of large- and small- scale Internet-based
+applications.  It provides a single, unified language for both local
+policies and credentials.  KeyNote policies and credentials, called
+`assertions,' contain predicates that describe the trusted actions
+permitted by the holders of specific public keys.  KeyNote assertions
+are essentially small, highly-structured programs.  A signed
+assertion, which can be sent over an untrusted network, is also
+called a `credential assertion.'  Credential assertions, which also
+serve the role of certificates, have the same syntax as policy
+assertions but are also signed by the principal delegating the trust.
+
+This is an example implementation of the KeyNote Trust-Management System
+as specified in IETF draft <draft-blaze-ietf-trustmgt-keynote-02.txt>.
+
+WWW: http://www.cis.upenn.edu/~angelos/keynote.html

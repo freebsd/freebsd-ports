@@ -1,0 +1,4 @@
+bin/keynote
+share/doc/keynote/keynote-spec
+share/doc/keynote/keynote-spec.nroff
+@dirrm share/doc/keynote/
