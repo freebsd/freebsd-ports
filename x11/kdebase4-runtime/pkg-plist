@@ -1284,14 +1284,8 @@ share/config/imsmaprc
 share/config/interferencerc
 share/config/kdesktop_custom_menu1
 share/config/kdesktop_custom_menu2
-share/config/kdm/Xaccess
-share/config/kdm/Xreset
-share/config/kdm/Xservers
-share/config/kdm/Xsession
-share/config/kdm/Xsetup
-share/config/kdm/Xstartup
-share/config/kdm/Xwilling
 share/config/kdm/kdmrc
+share/config/kdm/README
 share/config/klipperrc
 share/config/konqsidebartng.rc
 share/config/konsolerc
