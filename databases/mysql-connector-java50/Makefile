@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysql-connector-java
-PORTVERSION=	3.0.9
+PORTVERSION=	3.0.10
 CATEGORIES=	databases java
 MASTER_SITES=	ftp://mysql.secsup.org/pub/software/mysql/Downloads/Connector-J/ \
 		http://mysql.tzone.it/Downloads/Connector-J/ \
@@ -59,7 +59,7 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
-	@${ECHO} "    WITHOUT_COMPILE-yes    Install the pre-compiled .jar file"
+	@${ECHO} "    WITHOUT_COMPILE=yes    Install the pre-compiled .jar file"
 	@${ECHO} ""
 	@${ECHO} "This port requires JDK 1.4.x or better to compile, but the"
 	@${ECHO} "JDBC driver will operate with JVM 1.2.x or better"
