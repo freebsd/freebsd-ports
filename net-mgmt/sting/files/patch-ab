@@ -1,0 +1,11 @@
+--- gmt2local.c Fri Nov  5 06:00:22 1999
++++ gmt2local.c.new     Wed May 10 11:10:05 2000
+@@ -32,7 +32,7 @@
+ #include <time.h>
+ #endif
+ 
+-#include "gnuc.h"
++/* #include "gnuc.h" */
+ #ifdef HAVE_OS_PROTO_H
+ #include "os-proto.h"
+ #endif

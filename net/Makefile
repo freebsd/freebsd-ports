@@ -204,6 +204,7 @@
     SUBDIR += smbtcpdump
     SUBDIR += sniffit
     SUBDIR += socks5
+    SUBDIR += sting
     SUBDIR += sup
     SUBDIR += tac_plus4
     SUBDIR += tcpflow
