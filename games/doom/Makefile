@@ -3,7 +3,7 @@
 # Date created:         Mon Dec 14 21:03:01 MET 1998
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.13 1999/05/01 12:34:16 jseger Exp $
+# $Id: Makefile,v 1.14 1999/06/20 01:14:06 cpiazza Exp $
 #
 
 DISTNAME=	doomsrc
@@ -21,6 +21,8 @@ MASTER_SITES2=	ftp://sunsite.unc.edu/pub/Linux/games/doom/ \
 		ftp://ftp.infomagic.com/pub/mirrors/linux/sunsite/games/doom/ \
 		ftp://ftp.funet.fi/pub/mirrors/sunsite.unc.edu/pub/Linux/games/doom/
 DISTFILES2=	doom1v18.wad.gz
+
+ONLY_FOR_ARCHS=	i386
 
 USE_XLIB=	yes
 USE_ZIP=	yes
