@@ -28,4 +28,16 @@ upgrades.
   4) Deinstall ruby 1.6 stuff (if you are paranoia)
         pkg_deinstall -ri lang/ruby16
 
+
+20040204:
+  AFFECTS: 5.2-CURRENT users who started with a 5.2-RELEASE or older.
+
+  Change the default version of perl to 5.8.
+
+  1) Force perl-5.6.1 to be upgraded with perl-5.8.
+        portupgrade -o lang/perl5.8 -f perl-5.6.1_15
+
+  2) Update all p5-* modules.
+	portupgrade -f p5-\*
+
 $FreeBSD$
