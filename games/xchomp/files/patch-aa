@@ -1,0 +1,19 @@
+*** Imakefile.orig	Mon Apr 23 05:50:51 1990
+--- Imakefile	Wed Jan  4 00:23:19 1995
+***************
+*** 2,8 ****
+  #include BandAidCompiler
+  #endif
+  
+! DEFINES = -DX11
+  INCLUDES = -I$(TOP) -I$(TOP)/X11
+  DEPLIBS = $(DEPXLIB)
+  LOCAL_LIBRARIES = $(XLIB)
+--- 2,8 ----
+  #include BandAidCompiler
+  #endif
+  
+! DEFINES = -DX11 -DFRAME_DELAY=40000
+  INCLUDES = -I$(TOP) -I$(TOP)/X11
+  DEPLIBS = $(DEPXLIB)
+  LOCAL_LIBRARIES = $(XLIB)
