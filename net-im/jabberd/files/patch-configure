@@ -1,11 +1,11 @@
---- configure.orig	Sun Feb 22 13:14:13 2004
-+++ configure	Sun Feb 22 13:14:42 2004
-@@ -23709,7 +23709,7 @@
-         ;;
-       esac
+--- configure.orig	Mon Jul 12 10:15:17 2004
++++ configure	Mon Jul 12 10:15:26 2004
+@@ -20575,7 +20575,7 @@
+ done
  
--      for db_libname in db-4.2 db-4.1 db-4 db4 db; do
-+      for db_libname in db-4.2 db-4.1 db-4 db4 db41 db; do
-         # We generate a separate cache variable for each prefix and libname
-         # we search under.  That way, we avoid caching information that
-         # changes if the user runs `configure' with a different set of
+     if test "x-$ac_cv_header_db_h" = "x-yes" ; then
+-        for lib in db-4.2 db-4.1 db-4 db4 db ; do
++        for lib in db-4.2 db-4.1 db-4 db4 db41 ; do
+             if test "x-$have_db_version" != "x-yes" ; then
+                 echo "$as_me:$LINENO: checking for db_create in -l$lib" >&5
+ echo $ECHO_N "checking for db_create in -l$lib... $ECHO_C" >&6
