@@ -1,0 +1,11 @@
+--- Magick++/lib/Makefile.in.orig	Mon Oct 28 20:47:18 2002
++++ Magick++/lib/Makefile.in	Mon Oct 28 20:47:34 2002
+@@ -337,7 +337,7 @@
+ 
+ # Add -no-undefined once Cygwin supports throwing C++ exceptions from DLLs.
+ libMagick___la_LDFLAGS = \
+-	-release $(MAJOR_VERSION).$(MINOR_VERSION).$(MICRO_VERSION)
++	-version-info $(MAJOR_VERSION):$(MINOR_VERSION):$(MICRO_VERSION)
+ 
+ 
+ libMagick___la_LIBADD = ../../magick/libMagick.la

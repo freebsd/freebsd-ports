@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.5.1.1
+PORTVERSION=	5.5.1.4
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://imagemagick.sourceforge.net/http/ \
@@ -47,7 +47,6 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_PERL5=	yes
-PLIST_SUB+=	MVERSION=${PORTVERSION:R}
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	# none
@@ -128,9 +127,14 @@ post-patch:
 		 s|^tagnames=|#tagnames=|g ; \
 		 s|lcms/lcms.h|lcms.h|g ; \
 		 s|lcms_lcms_h|lcms_h|g' ${WRKSRC}/configure
+# version neither libraries nor directories
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
 		's|pkgdocdir =.*$$|pkgdocdir = ${DOCSDIR}/|g ; \
+		 s|-\$$\(VERSION\)||; \
 		 s| install-data-html||g'
+# do not version lib directories
+	@${PERL} -pi -e 's|^(MagickLibSubdir).*$$|\1="ImageMagick"|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${PERL} -pi -e 's|lcms/lcms.h|lcms.h|g' ${WRKSRC}/magick/transform.c
 	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/ltdl/ltdl.c
 	@${PERL} -pi -e 's|timestamp: %ld|timestamp: %d|g' \
