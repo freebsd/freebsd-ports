@@ -24,8 +24,8 @@ do-extract:
 	@${CP} ${DISTDIR}/${DISTNAME} ${WRKDIR}/${DISTNAME}
 
 do-configure:
-	@${PERL} -pi.orig -e 's|/etc/rfc|${PREFIX}/etc/rfc|' ${WRKDIR}/${DISTNAME}
-	@${PERL} -pi.orig -e 's|/etc/nmap|${PREFIX}/share/misc/nmap|' ${WRKDIR}/${DISTNAME}
+	@${PERL} -pi.orig -e 's|/usr/local/etc/rfc|${PREFIX}/etc/rfc|' ${WRKDIR}/${DISTNAME}
+	@${PERL} -pi.orig -e 's|/usr/local/etc/nmap|${PREFIX}/share/misc/nmap|' ${WRKDIR}/${DISTNAME}
 	@${PERL} -pi.orig -e 's|lynx|w3m|' ${WRKDIR}/${DISTNAME}
 
 do-install:
