@@ -7,7 +7,7 @@
 
 PORTNAME=	tac_plus
 PORTVERSION=	F4.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp-eng.cisco.com/pub/tacacs/
 DISTNAME=	tac_plus.F4.0.4.alpha
@@ -49,6 +49,7 @@ MAKE_ENV+=	WITH_OPIE=1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tac_plus ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/generate_passwd ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/tac_plus.1 ${PREFIX}/man/man1/tac_plus.1
 	${INSTALL_DATA} ${FILESDIR}/tac_plus.conf.example ${PREFIX}/etc/
 	@if [ ! -f ${PREFIX}/etc/rc.d/tac_plus.sh ]; then \

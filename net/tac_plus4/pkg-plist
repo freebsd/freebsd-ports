@@ -1,3 +1,4 @@
+bin/generate_passwd
 etc/rc.d/tac_plus.sh
 etc/tac_plus.conf.example
 sbin/tac_plus
