@@ -27,6 +27,7 @@
     SUBDIR += bonk
     SUBDIR += btc
     SUBDIR += cam
+    SUBDIR += cantus
     SUBDIR += ccaudio
     SUBDIR += cd-console
     SUBDIR += cd-discid

@@ -1,0 +1,7 @@
+Cantus is an easy to use tool for tagging and renaming MP3 and OGG/Vorbis files.
+It has many features including mass tagging and renaming of MP3s, the ability to
+generate a tag out of the filename, filter definitions for renaming, recursive
+actions, CDDB (Freedb) lookup (no CD needed), copy between ID3V1 and ID3V2 tags,
+and a lot more.
+
+WWW: http://freshmeat.net/projects/cantus
