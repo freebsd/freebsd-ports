@@ -1,5 +1,17 @@
---- config.c.bak	Wed Sep  2 21:55:04 1998
-+++ config.c	Sun Mar 11 09:49:40 2001
+--- config.c.orig	Wed Sep  2 10:55:04 1998
++++ config.c	Fri Jan 25 23:36:18 2002
+@@ -311,9 +311,9 @@
+ char *gcc_opts[] =
+ {
+ #ifdef PEDANTIC
+-	"\t-pedantic -ansi -O2 -fno-builtin\\\n",	/* UH OH: see ecu README */
++	"\t-pedantic -ansi -fno-builtin\\\n",	/* UH OH: see ecu README */
+ #else
+-	"\t-O2 -fno-builtin\\\n",
++	"\t-fno-builtin\\\n",
+ #endif
+ 	"\t-fpcc-struct-return -fwritable-strings -finline-functions\\\n",
+ 	"\t-W -Wuninitialized -Wunused -Wshadow -Wcomment -Wswitch\\\n",
 @@ -447,7 +447,7 @@
  
  char *bsd_libs = "-lcurses -ltermcap";
@@ -9,3 +21,21 @@
  
  char *sco_system[] =
  {
+@@ -729,7 +729,7 @@
+ {
+ 	char **strs;
+ 
+-	fputs("CFLAGS = \\\n", fpmake);
++	fputs("CFLAGS += \\\n", fpmake);
+ 	strs = gcc_opts;
+ 	while (*strs)
+ 		fputs(*strs++, fpmake);
+@@ -1235,7 +1235,7 @@
+ 			break;
+ 		case C_GCC:
+ 			if (sys == S_FREEBSD)
+-				fputs("CC = cc\n", fpmake);
++				fputs("CC ?= cc\n", fpmake);
+ 			else
+ 				fputs("CC = gcc\n", fpmake);
+ 			gen_gcc_cflags();

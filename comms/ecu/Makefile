@@ -15,6 +15,11 @@ MAINTAINER=	ache@FreeBSD.org
 do-configure:
 	cd ${WRKSRC}; yes "" | ./Configure
 
+pre-patch:
+	@${PERL} -pi.orig -e "s@#include +<malloc.h>@@g" \
+	${WRKSRC}/ecu.h ${WRKSRC}/ecunumrev.c ${WRKSRC}/ptyfork.c \
+	${WRKSRC}/qmake.c ${WRKSRC}/unsupported/tts/tts.c
+
 post-install:
 	cd ${WRKSRC}/doc; \
 	   ${INSTALL_MAN} ecu.man ${PREFIX}/man/cat1/ecu.1; \
