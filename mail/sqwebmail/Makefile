@@ -227,7 +227,8 @@ post-patch:
 
 	@${REINPLACE_CMD} -e 's|mkdir -p|${MKDIR}|g' ${WRKSRC}/pcp/configure
 
-	@${REINPLACE_CMD} -e 's|@LIBTOOL@|${LIBTOOL}|' \
+	@${REINPLACE_CMD} -e 's|@LIBTOOL@|${LIBTOOL}| ; \
+		s|$$(SHELL) $$(MKINSTALLDIRS)|$$(MKINSTALLDIRS)|' \
 		${WRKSRC}/pcp/intl/Makefile.in
 
 post-install:
