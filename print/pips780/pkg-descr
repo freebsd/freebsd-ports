@@ -14,4 +14,4 @@ print out more than one page. Then you execute the next command:
 to setup /etc/printcap, make a spool in /var/spool/lpd/ and so on.
 
 To run with Japanese messages, you have to execute as follows:
- env LANG=ja_JP pips780 -la JP
+ env LANG=ja_JP pips780
