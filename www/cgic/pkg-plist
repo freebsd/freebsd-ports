@@ -2,11 +2,11 @@ include/cgic.h
 lib/libcgic.a
 lib/libcgic.so
 lib/libcgic.so.%%SHLIB_MAJOR%%
-%%PORTDOCS%%share/doc/cgic/cgic.html
-%%PORTDOCS%%share/doc/cgic/license.txt
-%%PORTDOCS%%share/doc/cgic/readme.txt
-%%PORTDOCS%%share/doc/cgic/support.txt
-%%PORTDOCS%%share/examples/cgic/capture.c
-%%PORTDOCS%%share/examples/cgic/cgictest.c
-%%PORTDOCS%%@dirrm share/examples/cgic
-%%PORTDOCS%%@dirrm share/doc/cgic
+%%PORTDOCS%%%%DOCSDIR%%/cgic.html
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/support.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/capture.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/cgictest.c
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
