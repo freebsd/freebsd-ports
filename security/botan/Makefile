@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	opencl
 DISTNAME=	Botan-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	clsung@dragon2.net
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A portable, easy to use, and efficient C++ crypto library
 
 USE_REINPLACE=	yes

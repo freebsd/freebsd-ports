@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@dragon2.net
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Perl Module with magic merger of runtime values with templates
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/TableTiler.pm:${PORTSDIR}/www/p5-HTML-TableTiler \
