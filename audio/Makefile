@@ -19,6 +19,7 @@
     SUBDIR += cdrdao
     SUBDIR += cmp3
     SUBDIR += csound
+    SUBDIR += csound-manual
     SUBDIR += dagrab
     SUBDIR += dap
     SUBDIR += esound
