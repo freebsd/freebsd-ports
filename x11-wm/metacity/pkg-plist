@@ -2,19 +2,9 @@ bin/metacity
 bin/metacity-message
 bin/metacity-theme-viewer
 bin/metacity-window-demo
-etc/gconf/gconf.xml.defaults/apps/metacity/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/metacity/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/metacity/global_keybindings/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/metacity/keybinding_commands/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/metacity/window_keybindings/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/metacity/workspace_names/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/metacity/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/metacity/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/metacity/global_keybindings/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/metacity/keybinding_commands/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/metacity/window_keybindings/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/metacity/workspace_names/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/metacity.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/metacity.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/metacity.schemas > /dev/null || /usr/bin/true
 include/metacity-1/metacity-private/common.h
 include/metacity-1/metacity-private/gradient.h
 include/metacity-1/metacity-private/preview-widget.h
@@ -198,15 +188,3 @@ share/locale/zh_TW/LC_MESSAGES/metacity.mo
 @dirrm share/gnome/metacity
 @dirrm include/metacity-1/metacity-private
 @dirrm include/metacity-1
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity/workspace_names
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity/window_keybindings
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity/keybinding_commands
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity/global_keybindings
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity/general
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity
-@dirrm etc/gconf/gconf.xml.defaults/apps/metacity/workspace_names
-@dirrm etc/gconf/gconf.xml.defaults/apps/metacity/window_keybindings
-@dirrm etc/gconf/gconf.xml.defaults/apps/metacity/keybinding_commands
-@dirrm etc/gconf/gconf.xml.defaults/apps/metacity/global_keybindings
-@dirrm etc/gconf/gconf.xml.defaults/apps/metacity/general
-@dirrm etc/gconf/gconf.xml.defaults/apps/metacity

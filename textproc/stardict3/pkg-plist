@@ -1,19 +1,7 @@
 bin/stardict
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/stardict.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/stardict.schemas
-etc/gconf/gconf.xml.defaults/apps/stardict/manage_dictionaries/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/stardict/preferences/dictionary/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/stardict/preferences/floating_window/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/stardict/preferences/main_window/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/stardict/preferences/notification_area_icon/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/stardict/preferences/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/stardict/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/stardict/manage_dictionaries/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/stardict/preferences/dictionary/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/stardict/preferences/floating_window/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/stardict/preferences/main_window/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/stardict/preferences/notification_area_icon/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/stardict/preferences/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/stardict/%gconf.xml
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/stardict.schemas > /dev/null || /usr/bin/true
 libdata/bonobo/servers/GNOME_Stardict.server
 share/gnome/applications/stardict.desktop
 share/gnome/help/stardict/C/figures/stardict_float_window.png
@@ -63,20 +51,6 @@ share/locale/de/LC_MESSAGES/stardict.mo
 share/locale/mk/LC_MESSAGES/stardict.mo
 share/locale/ru/LC_MESSAGES/stardict.mo
 share/locale/zh_CN/LC_MESSAGES/stardict.mo
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/stardict/preferences/notification_area_icon
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/stardict/preferences/main_window
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/stardict/preferences/floating_window
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/stardict/preferences/dictionary
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/stardict/preferences
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/stardict/manage_dictionaries
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/stardict
-@dirrm etc/gconf/gconf.xml.defaults/apps/stardict/preferences/notification_area_icon
-@dirrm etc/gconf/gconf.xml.defaults/apps/stardict/preferences/main_window
-@dirrm etc/gconf/gconf.xml.defaults/apps/stardict/preferences/floating_window
-@dirrm etc/gconf/gconf.xml.defaults/apps/stardict/preferences/dictionary
-@dirrm etc/gconf/gconf.xml.defaults/apps/stardict/preferences
-@dirrm etc/gconf/gconf.xml.defaults/apps/stardict/manage_dictionaries
-@dirrm etc/gconf/gconf.xml.defaults/apps/stardict
 @dirrm share/gnome/stardict/sounds
 @dirrm share/gnome/stardict/pixmaps
 @dirrm share/gnome/stardict

@@ -1,9 +1,7 @@
 bin/grdesktop
-etc/gconf/gconf.xml.defaults/apps/grdesktop/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/grdesktop/options/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/grdesktop/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/grdesktop/options/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/grdesktop.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/grdesktop.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/grdesktop.schemas > /dev/null || /usr/bin/true
 share/gnome/application-registry/grdesktop.applications
 share/gnome/applications/grdesktop.desktop
 share/gnome/help/grdesktop/C/grdesktop.xml
@@ -36,7 +34,3 @@ share/locale/fr/LC_MESSAGES/grdesktop.mo
 @dirrm share/gnome/omf/grdesktop
 @dirrm share/gnome/help/grdesktop/C
 @dirrm share/gnome/help/grdesktop
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/grdesktop/options
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/grdesktop
-@dirrm etc/gconf/gconf.xml.defaults/apps/grdesktop/options
-@dirrm etc/gconf/gconf.xml.defaults/apps/grdesktop

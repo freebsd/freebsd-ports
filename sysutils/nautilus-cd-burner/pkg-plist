@@ -1,7 +1,7 @@
 bin/nautilus-cd-burner
-etc/gconf/gconf.xml.defaults/apps/nautilus-cd-burner/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/nautilus-cd-burner/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/ncb.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/ncb.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/ncb.schemas > /dev/null || /usr/bin/true
 etc/gnome-vfs-2.0/modules/mapping-modules.conf
 lib/gnome-vfs-2.0/modules/libmapping.so
 lib/nautilus/extensions-1.0/libnautilus-burn.a
@@ -72,5 +72,3 @@ share/locale/vi/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus-cd-burner.mo
 @dirrm share/gnome/nautilus-cd-burner
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus-cd-burner
-@dirrm etc/gconf/gconf.xml.defaults/apps/nautilus-cd-burner

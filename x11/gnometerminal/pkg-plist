@@ -1,15 +1,7 @@
 bin/gnome-terminal
-etc/gconf/gconf.xml.defaults/apps/gnome-terminal/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-terminal/global/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-terminal/keybindings/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-terminal/profiles/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-terminal/profiles/Default/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/global/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/keybindings/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/profiles/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/profiles/Default/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-terminal.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnome-terminal.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-terminal.schemas > /dev/null || /usr/bin/true
 libdata/bonobo/servers/gnome-terminal.server
 share/gnome/application-registry/gnome-terminal.applications
 share/gnome/applications/gnome-terminal.desktop
@@ -173,16 +165,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
 @dirrm share/gnome/help/gnome-terminal/de/figures
 @dirrm share/gnome/help/gnome-terminal/de
 @dirrm share/gnome/help/gnome-terminal/C/figures
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/profiles/Default
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/profiles
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/keybindings
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/global
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-terminal/profiles/Default
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-terminal/profiles
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-terminal/keybindings
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-terminal/global
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-terminal
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-de.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-es.omf 2>/dev/null || /usr/bin/true

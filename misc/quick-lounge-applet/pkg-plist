@@ -1,6 +1,6 @@
-etc/gconf/gconf.xml.defaults/schemas/apps/quick-lounge-applet/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/quick-lounge-applet/prefs/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/quick-lounge.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/quick-lounge.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/quick-lounge.schemas > /dev/null || /usr/bin/true
 libdata/bonobo/servers/GNOME_QuickLoungeApplet_Factory.server
 libexec/quick-lounge-applet
 share/gnome/gnome-2.0/ui/GNOME_QuickLoungeApplet.xml
@@ -163,8 +163,6 @@ share/locale/zh_CN/LC_MESSAGES/quick-lounge-applet.mo
 @dirrm share/gnome/help/quick-lounge/C/figures
 @dirrm share/gnome/help/quick-lounge/C
 @dirrm share/gnome/help/quick-lounge
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/quick-lounge-applet/prefs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/quick-lounge-applet
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-de.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-es.omf 2>/dev/null || /usr/bin/true

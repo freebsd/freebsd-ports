@@ -1,17 +1,7 @@
 bin/gtetrinet
-etc/gconf/gconf.xml.defaults/apps/gtetrinet/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gtetrinet/keys/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gtetrinet/partyline/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gtetrinet/player/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gtetrinet/sound/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gtetrinet/themes/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gtetrinet/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gtetrinet/keys/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gtetrinet/partyline/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gtetrinet/player/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gtetrinet/sound/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gtetrinet/themes/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gtetrinet.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gtetrinet.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gtetrinet.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/gtetrinet.desktop
 share/gnome/gtetrinet/themes/default/blocks.png
 share/gnome/gtetrinet/themes/default/theme.cfg
@@ -49,15 +39,3 @@ share/locale/zh_TW/LC_MESSAGES/gtetrinet.mo
 @dirrm share/gnome/gtetrinet/themes
 @dirrm share/gnome/gtetrinet
 @dirrm share/gnome/pixmaps/gtetrinet
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtetrinet/themes
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtetrinet/sound
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtetrinet/partyline
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtetrinet/player
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtetrinet/keys
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtetrinet
-@dirrm etc/gconf/gconf.xml.defaults/apps/gtetrinet/themes
-@dirrm etc/gconf/gconf.xml.defaults/apps/gtetrinet/sound
-@dirrm etc/gconf/gconf.xml.defaults/apps/gtetrinet/partyline
-@dirrm etc/gconf/gconf.xml.defaults/apps/gtetrinet/player
-@dirrm etc/gconf/gconf.xml.defaults/apps/gtetrinet/keys
-@dirrm etc/gconf/gconf.xml.defaults/apps/gtetrinet

@@ -1,14 +1,8 @@
 bin/seahorse
 bin/seahorse-pgp-preferences
-etc/gconf/gconf.xml.defaults/apps/seahorse/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/seahorse/listing/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/seahorse/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/pgp/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/listing/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/pgp/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/seahorse.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/seahorse.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/seahorse.schemas > /dev/null || /usr/bin/true
 lib/bonobo/libseahorse-pgp-file-listener.so
 libdata/bonobo/servers/Seahorse_PGP_File_Listener.server
 share/gnome/applications/seahorse.desktop
@@ -71,12 +65,4 @@ share/locale/zh_CN/LC_MESSAGES/seahorse.mo
 @dirrm share/gnome/omf/seahorse
 @dirrm share/gnome/seahorse/glade
 @dirrm share/gnome/seahorse
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/pgp
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/ui
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/listing
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/seahorse
-@dirrm etc/gconf/gconf.xml.defaults/desktop/pgp
-@dirrm etc/gconf/gconf.xml.defaults/apps/seahorse/ui
-@dirrm etc/gconf/gconf.xml.defaults/apps/seahorse/listing
-@dirrm etc/gconf/gconf.xml.defaults/apps/seahorse
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/seahorse/seahorse-C.omf 2>/dev/null || /usr/bin/true

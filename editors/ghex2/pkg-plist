@@ -1,7 +1,7 @@
 bin/ghex2
-etc/gconf/gconf.xml.defaults/apps/ghex2/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/ghex2/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/ghex2.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/ghex2.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/ghex2.schemas > /dev/null || /usr/bin/true
 include/gtkhex/accessiblegtkhex.h
 include/gtkhex/accessiblegtkhexfactory.h
 include/gtkhex/gtkhex.h
@@ -143,8 +143,6 @@ share/locale/zh_TW/LC_MESSAGES/ghex-2.0.mo
 @dirrm share/gnome/help/ghex2/C
 @dirrm share/gnome/help/ghex2
 @dirrm include/gtkhex
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/ghex2
-@dirrm etc/gconf/gconf.xml.defaults/apps/ghex2
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ghex/ghex-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ghex/ghex2-de.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ghex/ghex2-es.omf 2>/dev/null || /usr/bin/true

@@ -4,11 +4,9 @@ bin/gnome-session-remove
 bin/gnome-session-save
 bin/gnome-smproxy
 bin/gnome-wm
-etc/gconf/gconf.xml.defaults/apps/gnome-session/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-session/options/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-session/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-session/options/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-session.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnome-session.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-session.schemas > /dev/null || /usr/bin/true
 share/gnome/control-center-2.0/capplets/session-properties.desktop
 share/gnome/default.session
 share/gnome/default.wm
@@ -80,7 +78,3 @@ share/locale/vi/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-session-2.0.mo
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-session/options
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-session
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-session/options
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-session

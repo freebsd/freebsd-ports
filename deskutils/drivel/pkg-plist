@@ -1,11 +1,7 @@
 bin/drivel
-etc/gconf/gconf.xml.defaults/apps/drivel/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/drivel/global_settings/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/drivel/moods/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/drivel/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/drivel/global_settings/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/drivel/moods/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/drivel.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/drivel.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/drivel.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/drivel.desktop
 share/gnome/pixmaps/drivel/community.png
 share/gnome/pixmaps/drivel/doublearrow.png

@@ -1,9 +1,9 @@
 bin/tegclient
 bin/tegrobot
 bin/tegserver
-etc/gconf/gconf.xml.defaults/apps/teg/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/teg/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/teg.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/teg.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/teg.schemas > /dev/null || /usr/bin/true
 share/gnome/apps/Games/teg.desktop
 share/gnome/help/teg/C/figures/connect.png
 share/gnome/help/teg/C/figures/dices.png
@@ -269,5 +269,3 @@ share/locale/pt_BR/LC_MESSAGES/teg.mo
 @dirrm share/gnome/help/teg/C/figures
 @dirrm share/gnome/help/teg/C
 @dirrm share/gnome/help/teg
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/teg
-@dirrm etc/gconf/gconf.xml.defaults/apps/teg

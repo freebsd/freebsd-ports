@@ -5,32 +5,18 @@ bin/gnome-sound-recorder
 bin/gnome-volume-control
 bin/gstreamer-properties
 bin/vumeter
-etc/gconf/gconf.xml.defaults/apps/CDDB-Slave2/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-cd/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-sound-recorder/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-sound-recorder/system-state/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/CDDB-Slave2/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-cd/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-sound-recorder/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-sound-recorder/system-state/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/audio/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/audio/global/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/audio/profiles/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/audio/profiles/cdlossless/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/audio/profiles/cdlossy/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/audio/profiles/voice/%gconf.xml
-etc/gconf/gconf.xml.defaults/system/gstreamer/%gconf.xml
-etc/gconf/gconf.xml.defaults/system/gstreamer/audio/%gconf.xml
-etc/gconf/gconf.xml.defaults/system/gstreamer/audio/global/%gconf.xml
-etc/gconf/gconf.xml.defaults/system/gstreamer/audio/profiles/%gconf.xml
-etc/gconf/gconf.xml.defaults/system/gstreamer/audio/profiles/cdlossless/%gconf.xml
-etc/gconf/gconf.xml.defaults/system/gstreamer/audio/profiles/cdlossy/%gconf.xml
-etc/gconf/gconf.xml.defaults/system/gstreamer/audio/profiles/voice/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/CDDB-Slave2.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/CDDB-Slave2.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/CDDB-Slave2.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-audio-profiles.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnome-audio-profiles.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-audio-profiles.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-cd.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnome-cd.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-cd.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-sound-recorder.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnome-sound-recorder.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-sound-recorder.schemas > /dev/null || /usr/bin/true
 include/cddb-slave2/cddb-slave-client.h
 include/gnome-media/profiles/audio-profile-choose.h
 include/gnome-media/profiles/audio-profile-edit.h
@@ -571,26 +557,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
 @dirrm include/gnome-media/profiles
 @dirrm include/gnome-media
 @dirrm include/cddb-slave2
-@dirrm etc/gconf/gconf.xml.defaults/system/gstreamer/audio/profiles/voice
-@dirrm etc/gconf/gconf.xml.defaults/system/gstreamer/audio/profiles/cdlossy
-@dirrm etc/gconf/gconf.xml.defaults/system/gstreamer/audio/profiles/cdlossless
-@dirrm etc/gconf/gconf.xml.defaults/system/gstreamer/audio/profiles
-@dirrm etc/gconf/gconf.xml.defaults/system/gstreamer/audio/global
-@dirrm etc/gconf/gconf.xml.defaults/system/gstreamer/audio
-@dirrm etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/audio/profiles/voice
-@dirrm etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/audio/profiles/cdlossy
-@dirrm etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/audio/profiles/cdlossless
-@dirrm etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/audio/profiles
-@dirrm etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/audio/global
-@dirrm etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/audio
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-sound-recorder/system-state
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-sound-recorder
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-cd
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/CDDB-Slave2
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-sound-recorder/system-state
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-sound-recorder
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-cd
-@dirrm etc/gconf/gconf.xml.defaults/apps/CDDB-Slave2
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-de.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-es.omf 2>/dev/null || /usr/bin/true

@@ -1,7 +1,7 @@
 bin/battfink
-etc/gconf/gconf.xml.defaults/apps/battfink/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/battfink/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/battfink.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/battfink.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/battfink.schemas > /dev/null || /usr/bin/true
 libdata/bonobo/servers/GNOME_Battfink.server
 share/gnome/battfink/battfink.glade
 share/gnome/battfink/help/C/battfink.xml
@@ -41,6 +41,4 @@ share/locale/zh_TW/LC_MESSAGES/battfink-0.1.mo
 @dirrm share/gnome/battfink/help/C
 @dirrm share/gnome/battfink/help
 @dirrm share/gnome/battfink
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/battfink
-@dirrm etc/gconf/gconf.xml.defaults/apps/battfink
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/battfink/battfink-C.omf 2>/dev/null || /usr/bin/true

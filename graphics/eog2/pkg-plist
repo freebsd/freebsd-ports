@@ -1,15 +1,7 @@
 bin/eog
-etc/gconf/gconf.xml.defaults/apps/eog/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/eog/full_screen/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/eog/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/eog/view/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/eog/window/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/eog/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/eog/full_screen/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/eog/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/eog/view/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/eog/window/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/eog.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/eog.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/eog.schemas > /dev/null || /usr/bin/true
 libdata/bonobo/servers/GNOME_EOG.server
 libdata/bonobo/servers/GNOME_EOG_Collection.server
 libexec/eog-collection-view
@@ -171,8 +163,6 @@ share/locale/zh_TW/LC_MESSAGES/eog.mo
 @dirrm share/gnome/help/eog/C/figures
 @dirrm share/gnome/eog/glade
 @dirrm share/gnome/eog
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/eog/ui
-@dirrm etc/gconf/gconf.xml.defaults/apps/eog/ui
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-de.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-es.omf 2>/dev/null || /usr/bin/true

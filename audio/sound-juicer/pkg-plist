@@ -1,7 +1,7 @@
 bin/sound-juicer
-etc/gconf/gconf.xml.defaults/apps/sound-juicer/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/sound-juicer/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/sound-juicer.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/sound-juicer.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/sound-juicer.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/sound-juicer.desktop
 share/gnome/help/sound-juicer/C/fdl-appendix.xml
 share/gnome/help/sound-juicer/C/figures/prefs.png
@@ -18,6 +18,4 @@ share/gnome/sound-juicer/sound-juicer.glade
 @dirrm share/gnome/help/sound-juicer/C/figures
 @dirrm share/gnome/help/sound-juicer/C
 @dirrm share/gnome/help/sound-juicer
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/sound-juicer
-@dirrm etc/gconf/gconf.xml.defaults/apps/sound-juicer
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/sound-juicer/sound-juicer-manual-C.omf 2>/dev/null || /usr/bin/true

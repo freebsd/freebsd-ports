@@ -1,8 +1,8 @@
 bin/gcalctool
 bin/gnome-calculator
-etc/gconf/gconf.xml.defaults/apps/gcalctool/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gcalctool/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gcalctool.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gcalctool.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gcalctool.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/gcalctool.desktop
 share/gnome/help/gcalctool/C/figures/gcalctool_basic_window.png
 share/gnome/help/gcalctool/C/figures/gcalctool_financial_window.png
@@ -169,8 +169,6 @@ share/locale/zh_TW/LC_MESSAGES/gcalctool.mo
 @dirrm share/gnome/help/gcalctool/C/figures
 @dirrm share/gnome/help/gcalctool/C
 @dirrm share/gnome/help/gcalctool
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gcalctool
-@dirrm etc/gconf/gconf.xml.defaults/apps/gcalctool
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-de.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-es.omf 2>/dev/null || /usr/bin/true

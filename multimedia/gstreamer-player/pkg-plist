@@ -1,7 +1,7 @@
 bin/gst-player
-etc/gconf/gconf.xml.defaults/apps/gst-player/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gst-player/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gst-player.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gst-player.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gst-player.schemas > /dev/null || /usr/bin/true
 include/gst-player-%%VERSION%%/gst/gstvideowidget.h
 include/gst-player-%%VERSION%%/gst/gtk-playlist.h
 lib/libgstplayer.a
@@ -46,5 +46,3 @@ share/locale/no/LC_MESSAGES/gst-player.mo
 @unexec rmdir %D/share/gnome/application-registry 2>/dev/null || true
 @dirrm include/gst-player-%%VERSION%%/gst
 @dirrm include/gst-player-%%VERSION%%
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gst-player
-@dirrm etc/gconf/gconf.xml.defaults/apps/gst-player

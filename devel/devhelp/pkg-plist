@@ -1,10 +1,8 @@
 bin/devhelp
 bin/devhelp-bin
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/devhelp.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/devhelp.schemas
-etc/gconf/gconf.xml.defaults/apps/devhelp/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/devhelp/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/devhelp/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/devhelp/%gconf.xml
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/devhelp.schemas > /dev/null || /usr/bin/true
 include/devhelp-1.0/devhelp/dh-base.h
 include/devhelp-1.0/devhelp/dh-book-tree.h
 include/devhelp-1.0/devhelp/dh-error.h
@@ -69,10 +67,6 @@ share/locale/uk/LC_MESSAGES/devhelp.mo
 share/locale/vi/LC_MESSAGES/devhelp.mo
 share/locale/zh_CN/LC_MESSAGES/devhelp.mo
 share/locale/zh_TW/LC_MESSAGES/devhelp.mo
-@dirrm etc/gconf/gconf.xml.defaults/apps/devhelp/ui
-@dirrm etc/gconf/gconf.xml.defaults/apps/devhelp
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/devhelp/ui
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/devhelp
 @dirrm share/gnome/devhelp/ui
 @dirrm share/gnome/devhelp/images
 @dirrm share/gnome/devhelp/dtd

@@ -1,17 +1,15 @@
 bin/gnome-dictionary
 bin/gnome-search-tool
 bin/gnome-system-log
-etc/gconf/gconf.xml.defaults/apps/gnome-dictionary/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-search-tool/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-search-tool/select/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-system-log/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-dictionary/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-search-tool/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-search-tool/select/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-system-log/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gdict.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gdict.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gdict.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-search-tool.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnome-search-tool.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-search-tool.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/logview.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/logview.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/logview.schemas > /dev/null || /usr/bin/true
 libdata/bonobo/servers/GNOME_GDictApplet.server
 libexec/gdict-applet
 share/gnome/applications/gnome-dictionary.desktop
@@ -241,14 +239,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
 @dirrm share/gnome/help/gnome-dictionary/C
 @dirrm share/gnome/help/gnome-dictionary
 @dirrm share/gnome/gnome-system-log
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-system-log
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-search-tool/select
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-search-tool
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-dictionary
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-system-log
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-search-tool/select
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-search-tool
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-dictionary
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-dictionary-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-dictionary-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-C.omf 2>/dev/null || /usr/bin/true
