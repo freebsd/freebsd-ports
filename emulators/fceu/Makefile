@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	fceu
-PORTVERSION=	0.98.8
+PORTVERSION=	0.98.10
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://fceultra.sourceforge.net/releases/
 MASTER_SITE_SUBDIR=	fceultra
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
@@ -19,6 +20,7 @@ USE_SDL=	sdl
 MAN6=		fceu.6
 WRKSRC=		${WRKDIR}/fceu
 USE_X_PREFIX=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
