@@ -30,6 +30,12 @@ CONFIGURE_ENV=  LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-svga-driver=no
 .endif
 
+.if defined(WITH_PTHREAD)
+CONFIGURE_ARGS+=	--with-pthread=yes
+CONFIGURE_ENV+=		LIBS="${PTHREAD_LIBS}" \
+			CFLAGS="${PTHREAD_CFLAGS} ${CFLAGS}"
+.endif
+
 CFLAGS=		-DHAVE_SYS_PARAM_H \
 		-I${PREFIX}/include \
 		-pipe -O6 -fstrength-reduce -ffast-math -fomit-frame-pointer\
