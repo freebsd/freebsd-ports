@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pixilate
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.4.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	winfingerprint
@@ -26,5 +25,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${LIBS}" CPPFLAGS="-I${LOCALBASE}/include"
 
 MAN1=		pixilate.1
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in README
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
