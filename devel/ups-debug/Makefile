@@ -24,6 +24,14 @@ ALL_TARGET=	ups
 MAN1=		ups.1
 DOCS=		CHANGES FAQ README
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != i386 || ${OSVERSION} > 500000
+BROKEN=	"compiles only under -STABLE on i386"
+# Avoid building packages on bento for unsupported platforms
+IGNORE=	${BROKEN}
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -33,4 +41,4 @@ post-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/Ups ${X11BASE}/lib/X11/app-defaults
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
