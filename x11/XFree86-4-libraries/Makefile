@@ -7,6 +7,7 @@
 
 PORTNAME=	libraries
 PORTVERSION=	4.0.3
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -81,8 +82,7 @@ PLIST_SUB+=	OSMESA:=""
 .endif
 
 .if ${HasXdmAuth} == DEFAULT || ${HasXdmAuth} == YES
-.if defined(USA_RESIDENT)
-.if ${USA_RESIDENT} == YES
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 pre-fetch:
 	@${ECHO}
 	@${ECHO} Assuming that you have fetched a USA-Legal Wraphelp.c.
@@ -95,9 +95,16 @@ DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
 .endif
 .endif
-.endif
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
+
+post-build:
+	cd ${WRKSRC}/extras/freetype2/builds/unix; \
+	./configure --prefix=${PREFIX}
+
+post-install:
+	cd ${WRKSRC}/extras/freetype2/builds/unix; \
+	${INSTALL_SCRIPT} freetype-config ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
