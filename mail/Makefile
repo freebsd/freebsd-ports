@@ -374,8 +374,9 @@
     SUBDIR += sccmilter
     SUBDIR += scmail
     SUBDIR += sendmail
+    SUBDIR += sendmail811
+    SUBDIR += sendmail812
     SUBDIR += sendmail-ldap
-    SUBDIR += sendmail-old
     SUBDIR += sendmail-sasl
     SUBDIR += sentinel
     SUBDIR += serialmail
