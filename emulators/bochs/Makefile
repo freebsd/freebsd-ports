@@ -57,8 +57,12 @@ CONFIGURE_ARGS+=	--disable-mmx
 .endif
 .endif
 
-.if defined(WITH_BOCHS_TERM)
+.if defined(WITH_BOCHS_GUI_TERM)
 CONFIGURE_ARGS+=	--with-term
+.endif
+
+.if defined(WITH_BOCHS_GUI_NOGUI)
+CONFIGURE_ARGS+=	--with-nogui
 .endif
 
 .if defined(WITH_BOCHS_AMD64)
@@ -84,9 +88,14 @@ pre-patch::
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_CPU_LEVEL=<cpu level>\""
 	@${ECHO_MSG}
 .endif
-.if !defined(WITH_BOCHS_TERM)
+.if !defined(WITH_BOCHS_GUI_TERM)
 	@${ECHO_MSG} "If you want to enable the plain text, console-based bochs interface"
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_GUI_TERM=yes\""
+	@${ECHO_MSG}
+.endif
+.if !defined(WITH_BOCHS_GUI_NOGUI)
+	@${ECHO_MSG} "If you want the bochs display"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_GUI_NOGUI=yes\""
 	@${ECHO_MSG}
 .endif
 .if !defined(WITH_BOCHS_PROCESSORS)
