@@ -38,7 +38,6 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}"
 USE_GMAKE=		yes
 MAKEFILE=
 MAKE_FLAGS+=		OPTFLAG="${CFLAGS} -I${X11BASE}/include"
-MAKE_ENV+=		ADDITIONAL_LDFLAGS=-lcipher
 BREAKS_IF_PEDANTIC=	yes
 
 .if defined(WITH_GNUSTEP_XDPS)
@@ -64,6 +63,10 @@ PLIST_SUB+=		USE_XLIB="" USE_XDPS="@comment " USE_ART="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+MAKE_ENV+=		ADDITIONAL_LDFLAGS=-lcipher
+.endif
 
 USE_GNUSTEP_GUI=	yes
 USE_GNUSTEP_CONFIGURE=	yes
