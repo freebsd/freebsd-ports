@@ -6517,6 +6517,7 @@ p5-Net-Nslookup	ports/dns/p5-Net-Nslookup
 p5-Net-ParseWhois	ports/net/p5-Net-ParseWhois
 p5-Net-Patricia	ports/net/p5-Net-Patricia
 p5-Net-Pcap	ports/net/p5-Net-Pcap
+p5-Net-Ping-External	ports/net/p5-Net-Ping-External
 p5-Net-Printer	ports/print/p5-Net-Printer
 p5-Net-QMTP	ports/mail/p5-Net-QMTP
 p5-Net-Radius	ports/net/p5-Net-Radius
