@@ -12,6 +12,9 @@
     SUBDIR += palmos-sdk
     SUBDIR += pilot-link
     SUBDIR += pilot_makedoc
+    SUBDIR += prc-tools
+    SUBDIR += prc-tools-binutils
+    SUBDIR += prc-tools-gcc
     SUBDIR += syncal
     SUBDIR += xcopilot
 
