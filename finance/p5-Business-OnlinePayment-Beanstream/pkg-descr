@@ -1,0 +1,2 @@
+A Business::OnlinePayment backend module for Beanstream.  It is only useful
+if you have a merchant account with Beanstream: http://www.beanstream.com

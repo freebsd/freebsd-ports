@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment/Beanstream.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/Beanstream/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/Beanstream/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/Beanstream
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/Beanstream
