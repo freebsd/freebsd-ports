@@ -7,7 +7,7 @@
 
 PORTNAME=	sound-juicer
 PORTVERSION=	0.5.10.1
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://www.burtonini.com/computing/
 DIST_SUBDIR=	gnome2
@@ -20,7 +20,7 @@ LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui gstreamerplugins
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--enable-ignore-missing-cd
 
 pre-everything::

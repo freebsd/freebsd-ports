@@ -7,7 +7,7 @@
 
 PORTNAME=	gedit-plugins
 PORTVERSION=	2.3.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.3
@@ -21,10 +21,15 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget lthack
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|gedit-2.4|gedit-2.6|g" \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
