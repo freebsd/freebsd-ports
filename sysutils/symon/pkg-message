@@ -1,0 +1,15 @@
+For the system monitor symon, use the following steps
+
+  1. Copy %%LOCALBASE%%/share/examples/symon/symon.conf
+     to %%LOCALBASE%%/etc and edit.
+  2. Run symon
+
+For the data collector symux, use the following steps
+
+  1. Copy %%LOCALBASE%%/share/examples/symon/symux.conf
+     to %%LOCALBASE%%/etc and edit.
+  2. Enter the directory, where symux should store its data
+     (e.g. /var/db/symux) and run
+	%%LOCALBASE%%/share/symon/c_smrrds.sh all
+     to create the RR database.
+  3. Run symux

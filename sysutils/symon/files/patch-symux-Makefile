@@ -1,0 +1,14 @@
+--- symux/Makefile.orig	Fri Mar  4 10:43:43 2005
++++ symux/Makefile	Fri Mar  4 10:44:01 2005
+@@ -17,9 +17,9 @@
+ clean:
+ 	rm -f conf.h symux symux.cat8 symux.core ${OBJS}
+ 
+-install: symux symux.cat8 c_smrrds.sh symux.conf
++install: symux symux.8 c_smrrds.sh symux.conf
+ 	${INSTALL} -c -m 555 -g bin   -o root symux      ${PREFIX}/${BINDIR}
+-	${INSTALL} -c -m 444 -g wheel -o root symux.cat8 ${PREFIX}/${MANDIR}/cat8/symux.0
++	${INSTALL} -c -m 444 -g wheel -o root symux.8 ${PREFIX}/${MANDIR}/man8/symux.8
+ 	${INSTALL} -d -m 555 -g bin   -o root ${PREFIX}/${SHRDIR}
+ 	${INSTALL} -c -m 544 -g bin   -o root c_smrrds.sh  ${PREFIX}/${SHRDIR}
+ 	${INSTALL} -d -m 555 -g bin   -o root ${PREFIX}/${EXADIR}
