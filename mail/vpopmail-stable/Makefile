@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	4.9.8
-PORTREVISION=	1
+PORTVERSION=	4.9.10
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/vpopmail/
 
