@@ -4,9 +4,9 @@
  		  :status Makefile READ_ME
  DIRS		= include cadlib
  CMD		= echo Need to define your command via 'make cmd CMD=command'
--CADDIR		= `:findcad`
+-CADDIR		= `./:findcad`
 -CADDIR_SUB	= `../:findcad`
-+CADDIR		= `/bin/csh :findcad`
++CADDIR		= `/bin/csh ./:findcad`
 +CADDIR_SUB	= `/bin/csh ../:findcad`
  
  everything: ${MODULES} .config
@@ -15,30 +15,16 @@
  
  
  directories:
--	:mkdir ${CADDIR}/bin
--	:mkdir ${CADDIR}/lib
--	:mkdir ${CADDIR}/lib/magic
--	:mkdir ${CADDIR}/lib/magic/sys
--	:mkdir ${CADDIR}/man
-+	/bin/csh :mkdir ${CADDIR}/bin
-+	/bin/csh :mkdir ${CADDIR}/lib
-+	/bin/csh :mkdir ${CADDIR}/lib/magic
-+	/bin/csh :mkdir ${CADDIR}/lib/magic/sys
-+	/bin/csh :mkdir ${CADDIR}/man
+-	./:mkdir ${CADDIR}/bin
+-	./:mkdir ${CADDIR}/lib
+-	./:mkdir ${CADDIR}/lib/magic
+-	./:mkdir ${CADDIR}/lib/magic/sys
+-	./:mkdir ${CADDIR}/man
++	/bin/csh ./:mkdir ${CADDIR}/bin
++	/bin/csh ./:mkdir ${CADDIR}/lib
++	/bin/csh ./:mkdir ${CADDIR}/lib/magic
++	/bin/csh ./:mkdir ${CADDIR}/lib/magic/sys
++	/bin/csh ./:mkdir ${CADDIR}/man
  
  # Remakes the binary in 'lib', if needed.  Used for recompiling on 
  # a remote machine.
-@@ -145,10 +145,12 @@
- 	cd magic; make magicp
- 
- wc:	${MODULES}
--	:countlines ${MODULES}
-+	/bin/csh :countlines ${MODULES}
- 
- moduleNames:
- 	echo ${MODULES}
- 
- forceit:
- 	
-+all:  everything
-+all:  everything
