@@ -8,7 +8,7 @@
 PORTNAME=	mp3tag
 PORTVERSION=	1.0
 CATEGORIES=	audio ruby
-MASTER_SITES=	http://www.cs.auc.dk/~larsch/ruby/
+MASTER_SITES=	http://users.cybercity.dk/~dsl8950/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
