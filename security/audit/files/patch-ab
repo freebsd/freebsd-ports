@@ -1,0 +1,10 @@
+--- src/include/buffer.h.orig	Sat Mar 30 22:41:58 2002
++++ src/include/buffer.h	Sat Mar 30 22:42:01 2002
+@@ -32,6 +32,7 @@
+ #ifndef BUFFER_H
+ #define BUFFER_H
+ 
++#include <arpa/inet.h>
+ #include <openssl/evp.h>
+ 
+ typedef struct _buffer {

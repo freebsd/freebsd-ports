@@ -1,0 +1,10 @@
+--- src/lib/buffer.c.orig	Sat Mar 30 22:39:49 2002
++++ src/lib/buffer.c	Sat Mar 30 22:40:08 2002
+@@ -35,6 +35,7 @@
+  */
+ 
+ #include <sys/types.h>
++#include <arpa/inet.h>
+ 
+ #ifndef WIN32
+ #include <sys/uio.h>
