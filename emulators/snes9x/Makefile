@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.snes9x.com/zips/
 
 MAINTAINER=	nacai@iname.com
 
-BUILD_DEPENDS=	egcc:${PORTSDIR}/lang/pgcc
+BUILD_DEPENDS=	pgcc:${PORTSDIR}/lang/pgcc
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 
 ONLY_FOR_ARCHS=	i386

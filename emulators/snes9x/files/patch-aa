@@ -24,8 +24,8 @@
  
 -CCC = gcc
 -CC = gcc
-+CCC = egcc
-+CC = egcc
++CCC = pgcc
++CC = pgcc
  NASM = nasm
  
  INCLUDES=-I/usr/X11R6/include -I/usr/local/include
