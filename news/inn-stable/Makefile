@@ -125,6 +125,17 @@ MAN8=	actsync.8 actsyncd.8 archive.8 auth_smb.8 batcher.8 buffchan.8 \
 	radius.8 rc.news.8 scanlogs.8 send-nntp.8 send-uucp.8 sendinpaths.8 \
 	tally.control.8 tdx-util.8 writelog.8
 
+TO_BE_STRIPPED=	bin/auth/resolv/domain bin/auth/resolv/ident bin/auth/passwd/auth_smb \
+		bin/auth/passwd/ckpasswd bin/auth/passwd/radius bin/rnews.libexec/decode \
+		bin/rnews.libexec/encode bin/tdx-util bin/innd bin/inndstart bin/nnrpd \
+		bin/innfeed bin/startinnfeed bin/imapfeed bin/convdate bin/expire \
+		bin/expireover bin/fastrm bin/grephistory bin/makedbz bin/makehistory \
+		bin/prunehistory bin/ctlinnd bin/getlist bin/inews bin/innconfval \
+		bin/ovdb_init bin/ovdb_monitor bin/ovdb_server bin/ovdb_stat bin/rnews \
+		bin/sm bin/actsync bin/archive bin/batcher bin/buffchan bin/cvtbatch \
+		bin/filechan bin/inndf bin/innxmit bin/innxbatch bin/ninpaths bin/nntpget \
+		bin/overchan bin/shlock bin/shrinkfile
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_STANDARD_ETC)
@@ -142,6 +153,11 @@ post-patch:
 .endif
 
 post-install:
+.if !defined(WITHOUT_STRIP)
+.for FILE in ${TO_BE_STRIPPED}
+	${STRIP_CMD} ${PREFIX}/news/${FILE}
+.endfor
+.endif
 	${CHOWN} root:wheel ${PREFIX}/man ${PREFIX}/man/man1 ${PREFIX}/man/man3 \
 		${PREFIX}/man/man5 ${PREFIX}/man/man8
 	${MKDIR} ${INN_NEWSSPOOL}
