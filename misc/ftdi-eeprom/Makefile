@@ -10,6 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.bwct.de/
 
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to programm the eeprom on FTDI usb devices
 
 MAKE_ARGS=	BINDIR="${PREFIX}/sbin" \
