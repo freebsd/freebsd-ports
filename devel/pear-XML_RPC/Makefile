@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_RPC
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
