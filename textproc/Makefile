@@ -129,6 +129,7 @@
     SUBDIR += p5-Lingua-EN-Gender
     SUBDIR += p5-Lingua-EN-Infinitive
     SUBDIR += p5-Lingua-EN-Inflect
+    SUBDIR += p5-Lingua-EN-MatchNames
     SUBDIR += p5-Lingua-EN-NameCase
     SUBDIR += p5-Lingua-EN-NameParse
     SUBDIR += p5-Lingua-EN-Nickname
