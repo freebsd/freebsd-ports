@@ -106,10 +106,10 @@ post-install:
 CONFIGURE_ARGS+= --with-libwrap
 .else
 .if defined(WITH_TCPWRAP) || (exists(${PREFIX}/lib/libwrap.a) \
-    && !defined(WITHOUT_TCPWRAP))
+	&& !defined(WITHOUT_TCPWRAP))
 CONFIGURE_ENV+= LDFLAGS=-L${PREFIX}/lib CFLAGS="${CFLAGS} -I${PREFIX}/include"
 CONFIGURE_ARGS+= --with-libwrap
-LIB_DEPENDS+=   wrap.7:${PORTSDIR}/security/tcp_wrapper
+LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
 .endif
 
@@ -130,7 +130,7 @@ CONFIGURE_ARGS+= --with-socks="-L${PREFIX}/lib -lsocks5" --with-socks5
 
 # Include extra files if X11 is installed
 .if defined(WITH_X11) || (exists(${X11BASE}/lib/libX11.a) \
-    && !defined(WITHOUT_X11))
+	&& !defined(WITHOUT_X11))
 USE_XLIB=	yes
 PLIST:=		${WRKDIR}/PLIST
 pre-install:

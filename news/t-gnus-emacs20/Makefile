@@ -27,7 +27,7 @@ MIMEUI_COOKIE=	${MIMEUI_PRODUCT}-${EMACS_PORT_NAME}-${MIMEUI_VERSION}.FreeBSD-pa
 EMACS_PORT_NAME?=emacs20
 
 .if (${EMACS_PORT_NAME} == "emacs20" || ${EMACS_PORT_NAME} == "mule" || \
-     ${EMACS_PORT_NAME} == "xemacs21-mule")
+	${EMACS_PORT_NAME} == "xemacs21-mule")
 WITH_MULE=yes
 .else
 WITHOUT_MULE=yes

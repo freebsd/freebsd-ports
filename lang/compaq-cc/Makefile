@@ -52,7 +52,7 @@ do-install:
 	cd ${PREFIX} ; rpm2cpio ${DISTDIR}/$F |cpio -idum
 .endfor
 .for F in ${CCC_ROOT}/alpha-linux/bin/lnxcc \
-    ${CCC_ROOT}/alpha-linux/bin/lnxcc_driver
+	${CCC_ROOT}/alpha-linux/bin/lnxcc_driver
 	brandelf -t Linux ${PREFIX}$F
 .endfor
 	cd ${CCC_ROOT}/alpha-linux/bin	\

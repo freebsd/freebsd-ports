@@ -9,7 +9,7 @@ PORTNAME=	xtail
 PORTVERSION=	2.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.unicom.com/sw/xtail/ \
- 		http://www.giovannelli.it/~gmarco/files/
+		http://www.giovannelli.it/~gmarco/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gmarco@giovannelli.it

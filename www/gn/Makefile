@@ -37,7 +37,7 @@ post-install:
 	  if ! cmp -s etc/gn_mime.types ${WRKSRC}/etc/gn_mime.types; then \
 		${ECHO} ${MV} etc/gn_mime.types etc/gn_mime.types.old; \
 		${MV} etc/gn_mime.types etc/gn_mime.types.old; \
-  	  fi; \
+	  fi; \
 	  [ -s gnroot/menu ] && \
 	  if ! cmp -s gnroot/menu ${WRKSRC}/gnroot/menu; then \
 		${ECHO} ${MV} gnroot/menu gnroot/menu.old; \

@@ -67,7 +67,7 @@ do-configure:
 		@${PERL} -i -p \
 			-e 's/^(CC = ).*/$$1 ${CC}/;' \
 			-e 's/^(CCFLAGS = ).*/$$1 ${CFLAGS}/' \
-                	${WRKSRC}/Leak/Makefile ${WRKSRC}/Symbol/Makefile
+			${WRKSRC}/Leak/Makefile ${WRKSRC}/Symbol/Makefile
 
 post-install:
 		${MKDIR} ${PREFIX}/include/apache/modules/perl

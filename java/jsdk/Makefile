@@ -23,14 +23,14 @@ WRKSRC=		${WRKDIR}/JSDK2.0
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
-	  ${ECHO} "=========================================================="; \
-	  ${ECHO} " You must a fetch the Java Servlet Development Kit 2.0"; \
-	  ${ECHO} " (for Unix) archive from"; \
-	  ${ECHO} ""; \
-	  ${ECHO} "     http://java.sun.com/products/servlet/download.html"; \
-	  ${ECHO} ""; \
- 	  ${ECHO} " And copy into ${DISTDIR}"; \
-	  ${ECHO} "=========================================================="; \
+		${ECHO} "=========================================================="; \
+		${ECHO} " You must a fetch the Java Servlet Development Kit 2.0"; \
+		${ECHO} " (for Unix) archive from"; \
+		${ECHO} ""; \
+		${ECHO} "     http://java.sun.com/products/servlet/download.html"; \
+		${ECHO} ""; \
+		${ECHO} " And copy into ${DISTDIR}"; \
+		${ECHO} "=========================================================="; \
 	 fi
 
 do-build:
