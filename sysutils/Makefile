@@ -187,7 +187,6 @@
     SUBDIR += lxsplit
     SUBDIR += maint
     SUBDIR += manck
-    SUBDIR += medusa
     SUBDIR += memgrep
     SUBDIR += memtest
     SUBDIR += metalog
