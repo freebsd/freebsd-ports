@@ -1,0 +1,24 @@
+--- perldl.conf.orig	Wed Mar 10 14:23:59 2004
++++ perldl.conf	Wed Mar 10 14:25:31 2004
+@@ -82,9 +82,9 @@
+ #	OPENGL_DEFINE => '',
+ #
+ # Let perl try to figure it out
+-	OPENGL_LIBS => undef,
+- 	OPENGL_INC => undef,
+-	OPENGL_DEFINE => undef,
++	OPENGL_LIBS => '-L/usr/X11R6/lib -lGL -lGLU -lXext -lX11',
++ 	OPENGL_INC => '-I/usr/X11R6/include',
++	OPENGL_DEFINE => '-DGL_GLEXT_LEGACY',
+ # Whether or not to build the Karma interface module
+ 
+         WITH_KARMA => undef,    # Leave it up to PDL to decide
+@@ -141,7 +141,7 @@
+ #    about curses to fix it 
+ #  - 1 builds, 0 or undef does not build
+ #
+-        WITH_IO_BROWSER => 0,
++        WITH_IO_BROWSER => 1,
+ );
+ 
+ 

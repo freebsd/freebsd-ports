@@ -1,0 +1,12 @@
+--- Basic/Math/mconf.h.orig	Wed Sep 25 00:57:31 2002
++++ Basic/Math/mconf.h	Wed Sep 25 00:58:06 2002
+@@ -89,7 +89,9 @@
+ #endif
+ #if defined __alpha && ! defined __linux
+ #include <float.h>
++#ifndef __FreeBSD__
+ #include <nan.h>
++#endif
+ #endif
+ #ifndef NANARG
+ #define NANARG
