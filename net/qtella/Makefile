@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		qtella
-PORTVERSION=		0.2.1
+PORTVERSION=		0.4.0
 CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qtella
@@ -17,13 +17,12 @@ USE_KDELIBS_VER=	2
 HAS_CONFIGURE=		yes
 USE_GMAKE=		yes
 CONFIGURE_ARGS+=	--with-qt-dir=${X11BASE} --with-qt-moc=${X11BASE}/bin
+CONFIGURE_ENV+=		LDFLAGS=-pthread CXXFLAGS="${CXXFLAGS} -pthread"
 MAKE_ENV+=		MOC=${X11BASE}/bin/moc2
+MAKE_ARGS+=		-j2
 
 pre-patch:
-	@${PERL} -pi -e 's|stdint.h|inttypes.h|g' ${WRKSRC}/include/* ${WRKSRC}/src/Servent.cc \
-			${WRKSRC}/src/SearchViewItem.cc ${WRKSRC}/src/SharedViewItem.cc
-
-post-install:
-	strip ${PREFIX}/bin/qtella
+	@${PERL} -pi.orig -e 's|/moc(\W)|/moc2\1|g' \
+		${WRKSRC}/configure ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

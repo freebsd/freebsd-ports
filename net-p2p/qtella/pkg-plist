@@ -1,1 +1,12 @@
 bin/qtella
+share/qtella/pixmaps/remove.xpm
+share/qtella/pixmaps/ball_g.xpm
+share/qtella/pixmaps/ball_r.xpm
+share/qtella/pixmaps/ball_y.xpm
+share/qtella/pixmaps/smile.xpm
+share/qtella/pixmaps/ball_d.xpm
+share/qtella/pixmaps/gsmile.xpm
+share/qtella/pixmaps/research.xpm
+share/qtella/pixmaps/removeresearch.xpm
+@dirrm share/qtella/pixmaps
+@dirrm share/qtella
