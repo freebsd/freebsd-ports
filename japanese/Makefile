@@ -113,9 +113,6 @@
     SUBDIR += jls
     SUBDIR += jmode
     SUBDIR += jpilot
-    SUBDIR += jtex209-ascii
-    SUBDIR += jtex209-both
-    SUBDIR += jtex209-ntt
     SUBDIR += jvim
     SUBDIR += jvim-canna
     SUBDIR += jvim-canna+freewnn

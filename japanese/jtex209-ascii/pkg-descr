@@ -1,9 +1,0 @@
-ja-jlatex209-a17- is the last version of ASCII JTeX based on LaTeX 209.
-
-ASCII jtex-1.7-p1.0.9F is available by this package.
-Names of commads are shown below:
-'ajtex',   'jtex'   -> ascii ptex
-'ajlatex', 'jlatex' -> ascii platex
-
-EUC & JIS kanji code is available by default. 
-SJIS & JIS code will be available after recompiling with ports.
