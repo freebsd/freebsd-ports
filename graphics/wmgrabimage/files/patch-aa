@@ -1,19 +1,22 @@
---- Makefile.orig      Thu Nov  4 01:07:27 1999
-+++ Makefile   Thu Nov  4 01:07:55 1999
-@@ -1,6 +1,6 @@
- CC     = gcc
- CFLAGS = -O2 -Wall
+--- Makefile.orig	Mon Feb  1 15:55:30 1999
++++ Makefile	Wed Jan  5 14:31:02 2000
+@@ -1,6 +1,7 @@
+-CC     = gcc
+-CFLAGS = -O2 -Wall
 -INCDIR = -I/usr/X11R6/include/X11
++CC     ?= gcc
++CFLAGS ?= -O2
++CFLAGS += -Wall
 +INCDIR = -I/usr/X11R6/include
  DESTDIR= /usr/X11R6
  LIBDIR = -L/usr/X11R6/lib
  # for linux
-@@ -12,7 +12,7 @@
-
-
+@@ -12,7 +13,7 @@
+ 
+ 
  .c.o:
 -	$(CC) $(CFLAGS) -D$(shell echo `uname -s`) -c $< -o $*.o $(INCDIR)
 +	$(CC) $(CFLAGS) -c $< -o $*.o $(INCDIR)
-
-
- all:  wmGrabImage.o wmGrabImage
+ 
+ 
+ all:	wmGrabImage.o wmGrabImage
