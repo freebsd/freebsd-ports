@@ -494,6 +494,7 @@ barcode		ports/graphics/barcode
 barrage		ports/games/barrage
 barry		ports/sysutils/barry
 base64		ports/converters/base64
+bash-completion	ports/shells/bash-completion
 bash1		ports/shells/bash1
 bash2		ports/shells/bash2
 basiliskII	ports/emulators/basiliskII
