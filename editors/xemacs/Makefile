@@ -22,7 +22,7 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 XEMACS_REL=	21.4
-XEMACS_VER=	21.4.5
+XEMACS_VER=	21.4.6
 XEMACS_ARCH=	${CONFIGURE_TARGET}
 
 USE_XLIB=	yes
