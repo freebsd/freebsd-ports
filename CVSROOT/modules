@@ -3926,6 +3926,7 @@ keychain	ports/security/keychain
 keylaunch	ports/x11/keylaunch
 keynote		ports/security/keynote
 keyprint	ports/security/keyprint
+kfile-plugins	ports/misc/kfile-plugins
 kfreerings	ports/games/kfreerings
 kgpg		ports/security/kgpg
 khacc		ports/finance/khacc
