@@ -18,6 +18,7 @@ LIB_DEPENDS=	gnomeole2.0:${PORTSDIR}/devel/libole2 \
 		gbrun.0:${PORTSDIR}/lang/gnomebasic \
 		giconv.2:${PORTSDIR}/converters/libiconv \
 		psiconv.8:${PORTSDIR}/converters/psiconv
+RUN_DEPENDS=	guppi-gnumeric:${PORTSDIR}/math/guppi
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
