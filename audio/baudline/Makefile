@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	baudline
-PORTVERSION=	0.92
+PORTVERSION=	0.94
 CATEGORIES=	audio linux
 MASTER_SITES=	http://www.baudline.com/
 PKGNAMEPREFIX=	linux-
