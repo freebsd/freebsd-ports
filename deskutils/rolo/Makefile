@@ -30,5 +30,12 @@ post-install:
 	@${ECHO_CMD} "mutt_vc_query is no longer available as part of deskutils/rolo."
 	@${ECHO_CMD} "Install mail/mutt_vc_query instead."
 	@${ECHO_CMD} "***************************************************************"
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for DOC in AUTHORS ChangeLog NEWS README THANKS
+	@${INSTALL_DATA} ${WRKSRC}/${DOC} ${DOCSDIR}
+.endfor
+.endif
+
 
 .include <bsd.port.mk>

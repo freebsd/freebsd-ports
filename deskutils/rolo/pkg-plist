@@ -1,1 +1,7 @@
 bin/rolo
+%%PORTDOCS%%share/doc/rolo/AUTHORS
+%%PORTDOCS%%share/doc/rolo/ChangeLog
+%%PORTDOCS%%share/doc/rolo/NEWS
+%%PORTDOCS%%share/doc/rolo/README
+%%PORTDOCS%%share/doc/rolo/THANKS
+%%PORTDOCS%%@dirrm share/doc/rolo
