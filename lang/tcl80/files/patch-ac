@@ -1,0 +1,10 @@
+--- ../generic/tclDate.c.orig	Mon Sep 14 14:39:58 1998
++++ ../generic/tclDate.c	Sat Apr  3 17:16:30 1999
+@@ -290,6 +290,7 @@
+     { "nt",     tZONE,     HOUR(11) },      /* Nome */
+     { "idlw",   tZONE,     HOUR(12) },      /* International Date Line West */
+     { "cet",    tZONE,    -HOUR( 1) },      /* Central European */
++    { "cest",	tDAYZONE, -HOUR( 1) },	    /* Central European Summer */
+     { "met",    tZONE,    -HOUR( 1) },      /* Middle European */
+     { "mewt",   tZONE,    -HOUR( 1) },      /* Middle European Winter */
+     { "mest",   tDAYZONE, -HOUR( 1) },      /* Middle European Summer */
