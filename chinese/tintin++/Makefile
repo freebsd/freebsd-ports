@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	chinese
+CATEGORIES?=	chinese net games
 
 MAINTAINER=	foxfair@FreeBSD.org
 
