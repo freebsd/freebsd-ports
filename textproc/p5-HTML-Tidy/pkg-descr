@@ -1,0 +1,5 @@
+HTML::Tidy is an HTML checker in a handy dandy object. It's meant as a
+replacement for HTML::Lint. If you're currently an HTML::Lint user looking to
+migrate, see the section "Converting from HTML::Lint".
+
+WWW: http://search.cpan.org/dist/HTML-Tidy
