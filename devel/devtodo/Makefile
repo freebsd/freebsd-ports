@@ -8,12 +8,10 @@
 PORTNAME=	devtodo
 PORTVERSION=	0.1.17
 CATEGORIES=	devel
-MASTER_SITES=	http://devtodo.sourceforge.net/?${PORTVERSION}/
+MASTER_SITES=	http://swapoff.org/files/devtodo/
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Tool to effectively maintain todo lists aimed at developers
-
-BROKEN=		"Checksum mismatch"
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
