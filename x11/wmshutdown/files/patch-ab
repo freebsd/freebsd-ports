@@ -1,0 +1,20 @@
+--- shutdown.c	Sun Dec  1 23:28:23 2002
++++ shutdown.c	Sun Dec  1 23:29:16 2002
+@@ -18,7 +18,7 @@
+ 			FILE *output;
+ 
+ 			printf("Rebooting...\n");
+-			output = popen("/sbin/shutdown now -r", "r");
++			output = popen("/sbin/shutdown -r now", "r");
+ 			teste = (char*) fgetc(output);
+ 			while ((int)teste != EOF) {
+ 				printf("%c", teste);
+@@ -32,7 +32,7 @@
+ 			FILE *output;
+ 
+ 			printf("Halting...\n");
+-			output = popen("/sbin/shutdown now -h", "r");
++			output = popen("/sbin/shutdown -h now", "r");
+ 			teste = (char*) fgetc(output);
+ 			while ((int)teste != EOF) {
+ 				printf("%c", teste);

@@ -113,6 +113,7 @@
     SUBDIR += wmmatrix
     SUBDIR += wmmenu
     SUBDIR += wmoldmenu2new
+    SUBDIR += wmshutdown
     SUBDIR += wrapper
     SUBDIR += wscan
     SUBDIR += wterm
