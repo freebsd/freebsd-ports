@@ -3,7 +3,7 @@
 # Date created:        11 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.8 1998/10/30 04:42:13 scrappy Exp $
+# $Id: Makefile,v 1.9 1998/10/31 04:03:07 scrappy Exp $
 #
 
 DISTNAME=	mico-2.2.1
@@ -13,6 +13,8 @@ MASTER_SITES=	http://diamant-atm.vsb.cs.uni-frankfurt.de/~mico/
 MAINTAINER=	scrappy@freebsd.org
 
 LIB_DEPENDS=	gtk.1:${PORTSDIR}/x11-toolkits/gtk
+
+BROKEN=		build
 
 USE_QT=		yes
 GNU_CONFIGURE=	yes
