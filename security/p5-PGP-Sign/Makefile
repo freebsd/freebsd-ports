@@ -3,7 +3,7 @@
 # Date created: January 2, 1998
 # Whom: Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/04 03:50:45 mph Exp $
 #
 
 DISTNAME=	PGP-Sign-0.08
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PREFIX}/bin/pgp:${PORTSDIR}/security/pgp
 USE_PERL5=	yes
 
 MAN3=		PGP::Sign.3
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
 	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
