@@ -119,10 +119,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/COPYING* ${RUBY_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/LEGAL ${RUBY_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README* ${RUBY_DOCDIR}
+	${MKDIR} ${RUBY_DOCDIR}/digest
+	${INSTALL_DATA} ${WRKSRC}/ext/digest/digest.txt* ${RUBY_DOCDIR}/digest
 	${MKDIR} ${RUBY_DOCDIR}/etc
 	${INSTALL_DATA} ${WRKSRC}/ext/etc/etc.txt* ${RUBY_DOCDIR}/etc
-	${MKDIR} ${RUBY_DOCDIR}/md5
-	${INSTALL_DATA} ${WRKSRC}/ext/md5/md5.txt* ${RUBY_DOCDIR}/md5
 	${MKDIR} ${RUBY_DOCDIR}/pty
 	${INSTALL_DATA} ${WRKSRC}/ext/pty/README* ${RUBY_DOCDIR}/pty
 	${MKDIR} ${RUBY_DOCDIR}/readline
