@@ -4,9 +4,9 @@ Watanabe-vector font is used by default for mincho(min) and gothic(goth).
 You can use your own font by installing them (/usr/share/font/ is recommended)
 and modify /usr/local/lib/VFlib/vfontcap file.
 
-See /usr/local/lib/VFlib/doc/man.ps or
-http://www.se.hiroshima-u.ac.jp/~kakugawa/Hacks/VFlibMan/Index.html for
-more details (in Japanese)
+See /usr/local/lib/VFlib/doc/man.ps or web for more details (in Japanese).
+
+WWW: http://www.se.hiroshima-u.ac.jp/~kakugawa/Hacks/VFlibMan/Index.html
 
 Note this port supports FreeType library from 16/Mar/98.  Freetype makes
 use of Hinting information in TrueType (i.e.clearer output is possible).
