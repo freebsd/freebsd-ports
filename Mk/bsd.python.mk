@@ -111,13 +111,13 @@ _PYTHON_VERSION!=	(python -c 'import sys; print sys.version[:3]') 2> /dev/null \
 					|| echo 2.2
 .endif
 PYTHON_VERSION?=	python${_PYTHON_VERSION}
-_PYTHON_PORTVERSION=	2.2.2
-PYTHON_PORTVERSION!=	(${PYTHON_VERSION} -c 'import string, sys; \
+_PYTHON_PORTVERSION=	2.2.3
+PYTHON_CMD?=		${PYTHONBASE}/bin/${PYTHON_VERSION}
+PYTHON_PORTVERSION!=	(${PYTHON_CMD} -c 'import string, sys; \
 								print string.split(sys.version)[0]') 2> /dev/null \
 					|| echo ${_PYTHON_PORTVERSION}
-PYTHONBASE!=		(${PYTHON_VERSION} -c 'import sys; print sys.prefix') \
+PYTHONBASE!=		(${PYTHON_CMD} -c 'import sys; print sys.prefix') \
 						2> /dev/null || echo ${LOCALBASE}
-PYTHON_CMD?=		${PYTHONBASE}/bin/${PYTHON_VERSION}
 
 # Python-2.2
 .if ${PYTHON_VERSION} == "python2.2"
@@ -127,7 +127,7 @@ PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
 PYTHON_DISTFILE=	Python-${_PYTHON_PORTVERSION}.tgz
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
-PYTHON_REL=			222
+PYTHON_REL=			223
 PYTHON_SUFFIX=		22
 PYTHON_WRKSRC=		${WRKDIR}/Python-${_PYTHON_PORTVERSION}
 

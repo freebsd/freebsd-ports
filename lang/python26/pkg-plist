@@ -248,6 +248,7 @@ lib/%%PYTHON_VERSION%%/TERMIOS.pyo
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/modulator/Templates/object_tp_as_sequence
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/modulator/Templates/object_tp_call
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/modulator/Templates/object_tp_compare
+%%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/modulator/Templates/object_tp_dealloc
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/modulator/Templates/object_tp_getattr
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/modulator/Templates/object_tp_hash
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/modulator/Templates/object_tp_print
@@ -288,6 +289,7 @@ lib/%%PYTHON_VERSION%%/TERMIOS.pyo
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/scripts/copytime.py
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/scripts/crlf.py
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/scripts/cvsfiles.py
+%%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/scripts/dutree.doc
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/scripts/dutree.py
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/scripts/eptags.py
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/scripts/finddiv.py
@@ -318,6 +320,7 @@ lib/%%PYTHON_VERSION%%/TERMIOS.pyo
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/scripts/pdeps.py
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/scripts/pindent.py
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/scripts/ptags.py
+%%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/scripts/pydoc
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/scripts/pydocgui.pyw
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/scripts/redemo.py
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/scripts/reindent.py
@@ -692,12 +695,64 @@ lib/%%PYTHON_VERSION%%/email/_compat21.pyo
 lib/%%PYTHON_VERSION%%/email/_compat22.py
 lib/%%PYTHON_VERSION%%/email/_compat22.pyc
 lib/%%PYTHON_VERSION%%/email/_compat22.pyo
+lib/%%PYTHON_VERSION%%/email/_parseaddr.py
+lib/%%PYTHON_VERSION%%/email/_parseaddr.pyc
+lib/%%PYTHON_VERSION%%/email/_parseaddr.pyo
 lib/%%PYTHON_VERSION%%/email/base64MIME.py
 lib/%%PYTHON_VERSION%%/email/base64MIME.pyc
 lib/%%PYTHON_VERSION%%/email/base64MIME.pyo
 lib/%%PYTHON_VERSION%%/email/quopriMIME.py
 lib/%%PYTHON_VERSION%%/email/quopriMIME.pyc
 lib/%%PYTHON_VERSION%%/email/quopriMIME.pyo
+lib/%%PYTHON_VERSION%%/email/test/__init__.py
+lib/%%PYTHON_VERSION%%/email/test/__init__.pyc
+lib/%%PYTHON_VERSION%%/email/test/__init__.pyo
+lib/%%PYTHON_VERSION%%/email/test/data/PyBanner048.gif
+lib/%%PYTHON_VERSION%%/email/test/data/audiotest.au
+lib/%%PYTHON_VERSION%%/email/test/data/msg_01.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_02.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_03.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_04.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_05.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_06.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_07.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_08.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_09.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_10.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_11.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_12.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_13.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_14.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_15.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_16.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_17.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_18.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_19.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_20.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_21.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_22.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_23.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_24.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_25.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_26.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_27.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_28.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_29.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_30.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_31.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_32.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_33.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_34.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_35.txt
+lib/%%PYTHON_VERSION%%/email/test/test_email.py
+lib/%%PYTHON_VERSION%%/email/test/test_email.pyc
+lib/%%PYTHON_VERSION%%/email/test/test_email.pyo
+lib/%%PYTHON_VERSION%%/email/test/test_email_codecs.py
+lib/%%PYTHON_VERSION%%/email/test/test_email_codecs.pyc
+lib/%%PYTHON_VERSION%%/email/test/test_email_codecs.pyo
+lib/%%PYTHON_VERSION%%/email/test/test_email_torture.py
+lib/%%PYTHON_VERSION%%/email/test/test_email_torture.pyc
+lib/%%PYTHON_VERSION%%/email/test/test_email_torture.pyo
 lib/%%PYTHON_VERSION%%/encodings/__init__.py
 lib/%%PYTHON_VERSION%%/encodings/__init__.pyc
 lib/%%PYTHON_VERSION%%/encodings/__init__.pyo
@@ -857,6 +912,9 @@ lib/%%PYTHON_VERSION%%/encodings/iso8859_9.pyo
 lib/%%PYTHON_VERSION%%/encodings/koi8_r.py
 lib/%%PYTHON_VERSION%%/encodings/koi8_r.pyc
 lib/%%PYTHON_VERSION%%/encodings/koi8_r.pyo
+lib/%%PYTHON_VERSION%%/encodings/koi8_u.py
+lib/%%PYTHON_VERSION%%/encodings/koi8_u.pyc
+lib/%%PYTHON_VERSION%%/encodings/koi8_u.pyo
 lib/%%PYTHON_VERSION%%/encodings/latin_1.py
 lib/%%PYTHON_VERSION%%/encodings/latin_1.pyc
 lib/%%PYTHON_VERSION%%/encodings/latin_1.pyo
@@ -1427,7 +1485,6 @@ lib/%%PYTHON_VERSION%%/test/greyrgb.uue
 lib/%%PYTHON_VERSION%%/test/output/test_MimeWriter
 lib/%%PYTHON_VERSION%%/test/output/test_asynchat
 lib/%%PYTHON_VERSION%%/test/output/test_augassign
-lib/%%PYTHON_VERSION%%/test/output/test_bastion
 lib/%%PYTHON_VERSION%%/test/output/test_binascii
 lib/%%PYTHON_VERSION%%/test/output/test_builtin
 lib/%%PYTHON_VERSION%%/test/output/test_cfgparser
@@ -2617,6 +2674,8 @@ share/emacs/site-lisp/python-mode.el
 @dirrm lib/%%PYTHON_VERSION%%/lib-dynload
 @dirrm lib/%%PYTHON_VERSION%%/hotshot
 @dirrm lib/%%PYTHON_VERSION%%/encodings
+@dirrm lib/%%PYTHON_VERSION%%/email/test/data
+@dirrm lib/%%PYTHON_VERSION%%/email/test
 @dirrm lib/%%PYTHON_VERSION%%/email
 @dirrm lib/%%PYTHON_VERSION%%/distutils/command
 @dirrm lib/%%PYTHON_VERSION%%/distutils
