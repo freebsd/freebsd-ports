@@ -1,13 +1,13 @@
 # New ports collection makefile for:   gtk
-# Version required:		1.1.1
+# Version required:		1.1.2
 # Date Created:			28 Sep 1997
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.25 1998/09/15 11:41:42 vanilla Exp $
+# $Id: Makefile,v 1.26 1998/09/22 23:31:14 asami Exp $
 #
 
-DISTNAME=	gtk+-1.1.1
-PKGNAME=	gtk-1.1.1
+DISTNAME=	gtk+-1.1.2
+PKGNAME=	gtk-1.1.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.1/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.1/ \
@@ -30,7 +30,7 @@ pre-install:
 	fi
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>

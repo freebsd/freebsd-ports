@@ -91,6 +91,7 @@ include/gtk11/gtk/gtkspinbutton.h
 include/gtk11/gtk/gtkstatusbar.h
 include/gtk11/gtk/gtkstyle.h
 include/gtk11/gtk/gtktable.h
+include/gtk11/gtk/gtktearoffmenuitem.h
 include/gtk11/gtk/gtktext.h
 include/gtk11/gtk/gtktipsquery.h
 include/gtk11/gtk/gtktogglebutton.h
@@ -123,13 +124,13 @@ info/gtk.info
 lib/libgdk11.a
 lib/libgdk11.la
 lib/libgdk11.so
-lib/libgdk11.so.1.0
+lib/libgdk11.so.1
 lib/libgtk11.a
 lib/libgtk11.la
 lib/libgtk11.so
-lib/libgtk11.so.1.0
-@unexec /sbin/ldconfig -R
-@exec /sbin/ldconfig -m %D/lib
+lib/libgtk11.so.1
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @dirrm include/gtk11/gdk
 @dirrm include/gtk11/gtk
 @dirrm include/gtk11
