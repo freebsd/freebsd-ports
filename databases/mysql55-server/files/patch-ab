@@ -1,25 +1,52 @@
-
-From josh@ican.net Wed Jul  2 17:10:11 1997
-Date: Wed, 2 Jul 1997 17:07:20 -0400
-From: Josh Tiefenbach <josh@ican.net>
-To: James FitzGibbon <james@ican.net>
-Subject: Patch for mysql port
-
-Here. Satoshi will be satisfied
-
--- 
-Josh Tiefenbach - Assistant Gopher - ACC TelEnterprises - josh@ican.net
-
-  [ Part 2: "Attached Text" ]
-
---- mit-pthreads/config/configure.orig	Wed Jul  2 17:06:00 1997
-+++ mit-pthreads/config/configure	Wed Jul  2 17:06:29 1997
-@@ -1246,7 +1246,7 @@
-     m68*-*-netbsd*)
- 	name=m68000-netbsd
- 	;;
--    i386-*-freebsd2.*)
-+    i386-*-freebsd2.* | i386-*-freebsd3.*)
-         name=i386-freebsd-2.0
-         sysincludes=freebsd-2.0
-         except="fork lseek sigsuspend sigprocmask"
+--- scripts/mysql_install_db.sh.orig	Tue Feb 17 13:18:22 1998
++++ scripts/mysql_install_db.sh	Thu Mar  5 11:16:28 1998
+@@ -3,24 +3,12 @@
+ # For a more info consult the file COPYRIGHT distributed with this file
+ 
+ # This scripts creates the privilige tables db, host, user in mysql
+-# It should be run from the top level installation directory
+ #
+ # All arguments to this script is passed to safe_mysqld
+ 
+ if test ! -x @bindir@/mysqladmin
+ then
+   echo "Can't execute @bindir@/mysqladmin"
+-  if test "@localstatedir@" = "./data"
+-  then
+-    echo "You should be in the distribution directory when executing this script"
+-  else
+-    echo "You should do a 'make install' before executing this script"
+-  fi
+-  exit 1
+-fi
+-if test ! -d "./data"
+-then
+-  echo "You should be in the distribution directory when executing this script"
+   exit 1
+ fi
+ 
+@@ -78,10 +66,7 @@
+ 
+ # copy the definition files
+ #
+-if test "@localstatedir@" != "./data"
+-then
+-  cp -p ./data/mysql/*.frm @localstatedir@/mysql
+-fi
++cp @pkgdatadir@/mysql/*.frm @localstatedir@/mysql
+ 
+ @bindir@/mysql mysql <<END_OF_DATA
+ # Create tables from the .frm files
+@@ -122,11 +107,7 @@
+   echo
+   echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
+   echo
+-  echo "You can test the MySQL demon with the benchmarks in the 'bench'"
+-  echo "directory:"
+-  echo "cd bench ; run-all-tests"
+-  echo
+-  echo "You can also try the mysql command line tool with:"
++  echo "You can test the MySQL daemon with the mysql command line tool:"
+   echo "@bindir@/mysql test"
+   echo
+   echo "Plese report any problems with the @scriptdir@/mysqlbug script!"
