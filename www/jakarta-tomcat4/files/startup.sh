@@ -3,21 +3,17 @@
 # Set some variables
 USER_NAME=%%USER_NAME%%
 MYSELF=`basename $0`
-CONTROL_SCRIPT=%%CONTROL_SCRIPT%%
 
 case "$1" in
 	start)
-		su - ${USER_NAME} -c "%%CONTROL_SCRIPT%% start" > /dev/null ; echo -n
+		su -f -m ${USER_NAME} -c "exec %%CONTROL_SCRIPT%% start" && echo -n ' %%APP_SHORTNAME%%'
 		;;
 	stop)
-		su - ${USER_NAME} -c "%%CONTROL_SCRIPT%% stop"
-		;;
-	restart)
-		su - ${USER_NAME} -c "%%CONTROL_SCRIPT%% restart"
+		su -f -m ${USER_NAME} -c "exec %%CONTROL_SCRIPT%% stop" && echo -n ' %%APP_SHORTNAME%%'
 		;;
 	*)
 		echo ""
-		echo "Usage: ${MYSELF} { start | stop | restart }"
+		echo "Usage: ${MYSELF} { start | stop }"
 		echo ""
 		exit 64
 		;;

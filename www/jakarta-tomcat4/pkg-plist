@@ -410,5 +410,3 @@ etc/rc.d/020.jakarta-tomcat.sh
 @dirrm %%T%%/conf
 @dirrm %%T%%/bin
 @dirrm %%T%%
-@unexec pw groupdel tomcat || true
-@unexec pw userdel tomcat || true
