@@ -10,14 +10,12 @@ PORTNAME=	bro
 PORTVERSION=	0.8
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/
-DISTNAME=	${PORTNAME}-pub-${PORTVERSION}-current
+DISTNAME=	${PORTNAME}-pub-${PORTVERSION}a37
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System for detecting Network Intruders in real-time
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-pub-${PORTVERSION}a37
-
-BROKEN=		Checksum mismatch, will be removed after Feb 2
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
