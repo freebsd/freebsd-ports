@@ -8,6 +8,7 @@
     SUBDIR += altivore
     SUBDIR += amavis-perl
     SUBDIR += amavisd
+    SUBDIR += amavisd-new
     SUBDIR += apg
     SUBDIR += arirang
     SUBDIR += audit

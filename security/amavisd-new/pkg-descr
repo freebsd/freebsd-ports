@@ -1,0 +1,9 @@
+amavisd-new is a performance-enhanced daemonized version of amavis-perl 
+
+Note that the installation is different than the original package, and the
+integration into your MTA can be different, so please read the README and
+INSTALL files very carefully. 
+
+amavisd-new also supports SpamAssassin integration.
+
+WWW: http://www.ijs.si/software/amavisd/
