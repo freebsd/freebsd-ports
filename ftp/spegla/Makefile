@@ -23,8 +23,10 @@ post-extract:
 	@${CP} ${WRKSRC}/regex/${file} ${WRKSRC}
 .endfor
 
-post-install:
+pre-install:
 	@${MKDIR} ${PREFIX}/share/examples/spegla
+
+post-install:
 	${INSTALL_DATA} ${WRKSRC}/freebsd.org ${PREFIX}/share/examples/spegla
 
 .include <bsd.port.mk>
