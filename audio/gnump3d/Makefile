@@ -44,10 +44,11 @@ pre-everything::
 .endif
 
 post-patch:
+	@${TOUCH} -r ${WRKSRC}/aclocal.m4 ${WRKSRC}/aclocal.m4.time
 	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g ; \
 		 s|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/aclocal.m4
 # Avoid triggering automake
-	@${TOUCH} -r ${WRKSRC}/aclocal.m4.bak ${WRKSRC}/aclocal.m4
+	@${TOUCH} -r ${WRKSRC}/aclocal.m4.time ${WRKSRC}/aclocal.m4
 
 pre-configure:
 .for dir in . mplib libltdl
