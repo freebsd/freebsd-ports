@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	BitTornado
-PORTVERSION=	0.3.7
-PORTREVISION=	2
+PORTVERSION=	0.3.9a
 PORTEPOCH=	1
 CATEGORIES?=	net python ipv6
-MASTER_SITES=	http://e.scarywater.net/bt/download/ \
+MASTER_SITES=	http://www.bittornado.com/download/ \
+		http://e.scarywater.net/bt/download/ \
 		http://mediahost.inetsalestech.com/shadow/ \
 		http://www.hypermax.net.au/~gamr/ \
 		http://ftp.acc.umu.se/mirror/bittornado/
@@ -19,23 +19,23 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT?=	An extended BitTorrent peer-to-peer tool for distributing files
 
-CONFLICTS=	py??-*[Bb]it[Tt]ornado* py??-*[Bb]it[Tt]orrent* btqueue*
+CONFLICTS=	py??-*[Bb]it[Tt]ornado-core-[0-9]* py??-*[Bb]it[Tt]orrent*-[0-9]* btqueue-[0-9]*
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-CVS
 
-DOC_FILES=	BUILD.windows.txt FAQ.txt IMPORTANT-multitracker-readme.txt \
-		INSTALL.unix.txt LICENSE.txt README.txt \
-		README-experimental.txt credits.txt multitracker-spec.txt \
-		README-Psyco.txt todo.txt webseed-spec.txt
+DOC_FILES1=	BUILD.windows.txt FAQ.txt IMPORTANT-multitracker-readme.txt \
+		INSTALL.unix.txt credits.txt multitracker-spec.txt \
+		README-Psyco.txt webseed-spec.txt
+DOC_FILES2=	LICENSE.txt README.txt
 EXTRA_DOC_FILES=	multitracker/README.txt
 MAN1=		bittorrent-downloader.1 bittorrent-multi-downloader.1 \
 		btcompletedir.1 btcopyannounce.1 btdownloadcurses.1 \
-		btdownloadheadless.1 btlaunchmany.1 btlaunchmanycurses.1 \
-		btmakemetafile.1 btreannounce.1 btrename.1 btsethttpseeds.1 \
-		btshowmetainfo.1 bttrack.1
+		btdownloadgui.1 btdownloadheadless.1 btlaunchmany.1 \
+		btlaunchmanycurses.1 btmakemetafile.1 btreannounce.1 \
+		btrename.1 btsethttpseeds.1 btshowmetainfo.1 bttrack.1
 
 # required for GUI
 .ifndef(WITHOUT_GUI)
@@ -74,18 +74,21 @@ pre-everything::
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
+.for file in ${DOC_FILES1}
+	@${INSTALL_DATA} ${WRKSRC}/docs/${file} ${DOCSDIR}
+.endfor
+.for file in ${DOC_FILES2}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .for file in ${EXTRA_DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/`${ECHO} ${file} | ${SED} -e 's|/|_|g'`
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/`${ECHO} ${file} | ${SED} -e 's|/|_|g'`
 .endfor
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${FILESDIR}/bittornado.sh.sample ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${FILESDIR}/bittornado.sh.sample ${EXAMPLESDIR}
 .endif
 .ifndef(NO_INSTALL_MANPAGES)
 .for file in ${MAN1}
-	${INSTALL_MAN} ${FILESDIR}/${file} ${PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/docs/man/${file} ${PREFIX}/man/man1
 .endfor
 .endif
 

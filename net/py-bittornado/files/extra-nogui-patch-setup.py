@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- setup.py.orig	Sun May 16 13:40:26 2004
-+++ setup.py	Tue May 25 10:21:43 2004
-@@ -18,12 +18,16 @@
+--- setup.py.orig	Wed Oct  6 11:50:10 2004
++++ setup.py	Fri Dec 17 17:42:32 2004
+@@ -18,11 +18,15 @@
      
      packages = ["BitTornado","BitTornado.BT1"],
  
@@ -13,14 +13,13 @@ $FreeBSD$
 -        "btdownloadcurses.py", "btcompletedirgui.py", "btlaunchmanycurses.py", 
 +        "btdownloadcurses.py", "btlaunchmanycurses.py", 
          "btmakemetafile.py", "btreannounce.py", "btrename.py", "btshowmetainfo.py",
-         "bttest.py",
 -        'btmaketorrentgui.py', 'btcopyannounce.py', 'btsethttpseeds.py',
 +        'btcopyannounce.py', 'btsethttpseeds.py',
          'bt-t-make.py',
 -        ]
 +        ],
 +    data_files = [('share/BitTornado', 
-+	['alloc.gif','black1.ico','black.ico','blue.ico','green1.ico','green.ico',
-+          'icon_bt.ico','icon_done.ico','red.ico','white.ico',
-+         'yellow1.ico','yellow.ico'])]
++	['icons/alloc.gif','icons/black1.ico','icons/black.ico','icons/blue.ico','icons/green1.ico','icons/green.ico',
++          'icons/icon_bt.ico','icons/icon_done.ico','icons/red.ico','icons/white.ico',
++         'icons/yellow1.ico','icons/yellow.ico'])]
      )
