@@ -4807,6 +4807,7 @@ pdnsd		ports/net/pdnsd
 pdq		ports/print/pdq
 pdumpfs		ports/sysutils/pdumpfs
 peacock		ports/www/peacock
+pear		ports/devel/pear
 pedisassem	ports/devel/pedisassem
 pen		ports/net/pen
 pengpong	ports/games/pengpong
