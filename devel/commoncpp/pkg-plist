@@ -31,21 +31,14 @@ include/cc++2/cc++/oststring.h
 include/cc++2/cc++/functions.h
 include/cc++2/cc++/pointer.h
 include/cc++2/cc++/counter.h
+@dirrm include/cc++2/cc++
+@dirrm include/cc++2
 share/aclocal/ost_check2.m4
-lib/libccgnu2.la
 lib/libccgnu2.a
 lib/libccgnu2.so
 lib/libccgnu2-1.0.so
 lib/libccgnu2-1.0.so.0
-lib/libccext2.la
 lib/libccext2.a
 lib/libccext2.so
 lib/libccext2-1.0.so
 lib/libccext2-1.0.so.0
-@unexec install-info --delete %D/info/commoncpp2.info %D/info/dir
-info/commoncpp2.info
-info/commoncpp2.info-1
-info/commoncpp2.info-2
-info/commoncpp2.info-3
-@exec install-info %D/info/commoncpp2.info %D/info/dir
-@dirrm include/cc++2/cc++
