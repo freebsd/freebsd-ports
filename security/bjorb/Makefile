@@ -3,10 +3,10 @@
 # Date created:		May 16, 1998
 # Whom:			issei@jp.FreeBSD.ORG
 #
-# $Id: Makefile,v 1.3 1998/09/25 10:20:21 asami Exp $
+# $Id: Makefile,v 1.4 1999/01/10 14:11:17 dirk Exp $
 #
 
-DISTNAME=	bjorb-0.5.4p4
+DISTNAME=	bjorb-0.5.5p1
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.hitachi-ms.co.jp/pub/bjorb/
 
@@ -24,8 +24,8 @@ pre-fetch:
 LIB_DEPENDS=		rsaref.2:${PORTSDIR}/security/rsaref
 .endif
 .endif
-BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/openssl
-RUN_DEPENDS=	ssleay:${PORTSDIR}/security/openssl
+BUILD_DEPENDS=	openssl:${PORTSDIR}/security/openssl
+RUN_DEPENDS=	openssl:${PORTSDIR}/security/openssl
 
 RESTRICTED=	"Cryptography"
 

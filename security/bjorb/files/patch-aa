@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Jul 24 10:53:37 1998
-+++ Makefile.in	Tue Aug 25 14:17:09 1998
+--- src/Makefile.in.orig	Mon Feb 22 05:01:20 1999
++++ src/Makefile.in	Wed Mar 24 20:52:03 1999
 @@ -29,7 +29,7 @@
  LDFLAGS =
  LIBS = @LIBS@
@@ -19,8 +19,8 @@
 +	(\
 +	[ -f $(PREFIX)/certs/bjorb.pem ] && exit 0; \
 +	cd $(PREFIX)/certs; \
-+	ssleay req -new -x509 -nodes -days 365 -out bjorb.pem -keyout bjorb.pem; \
-+	ln -s bjorb.pem `ssleay x509 -noout -hash < bjorb.pem`.0 ;\
++	openssl req -new -x509 -nodes -days 365 -out bjorb.pem -keyout bjorb.pem; \
++	ln -s bjorb.pem `openssl x509 -noout -hash < bjorb.pem`.0 ;\
 +	chmod 644 $(PREFIX)/certs/bjorb.pem; \
 +	)
  
