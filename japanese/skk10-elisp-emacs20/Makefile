@@ -22,30 +22,15 @@ PORT_CLASS?=	master
 .if (${PORT_CLASS} == "master")
 # emacsen-port-name
 EMACS_PORT_NAME=	emacs20
-# emacsen-information
-EMACS_NAME=		emacs
-EMACS_VER=		20.6
-EMACS_CMD=		${LOCALBASE}/bin/${EMACS_NAME}-${EMACS_VER}
-EMACS_LIBDIR=		share/${EMACS_NAME}
-EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}/${EMACS_VER}
-# Whether emacs requires *-setupel.el
-REQUIRE_SETUPEL=	NO
-# Whether emacs port has *-common port
-HAVE_COMMON_PORT=	NO
 .endif
+
+.include <bsd.port.pre.mk>
 
 # dependency: skk-jisyo
 RUN_DEPENDS+=	${LOCALBASE}/${SKKJISYODIR}/${SKKJISYO}:${SKK_MASTERDIR}
 # dependency: apel
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
 RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
-# dependency: emacsen
-BUILD_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT_NAME}
-.if defined(HAVE_COMMON_PORT) && (${HAVE_COMMON_PORT} == "YES")
-RUN_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT_NAME}-common
-.else
-RUN_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT_NAME}
-.endif
 
 WRKSRC=		${WRKDIR}/skk-${SKK10_VER}
 ALL_TARGET?=	elc
@@ -104,4 +89,4 @@ startup-install:
 	@${INSTALL_DATA} ${FILESDIR}/${SKK_STARTUPEL} \
 		${PREFIX}/${EMACS_LIBDIR}/site-lisp/skk
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
