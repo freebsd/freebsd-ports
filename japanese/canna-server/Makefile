@@ -4,7 +4,7 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.23 1998/11/14 09:43:14 asami Exp $
+# $Id: Makefile,v 1.24 1999/01/04 20:21:59 sada Exp $
 #
 
 DISTNAME=	Canna32p2
@@ -17,6 +17,7 @@ MAINTAINER=	max@FreeBSD.ORG
 BUILD_DEPENDS=	imake:${PORTSDIR}/x11/XFree86
 
 ALL_TARGET=	canna
+INSTALL_TARGET=	install install.man
 MAN1=	addwords.1 cannacheck.1 cannakill.1 cannaserver.1 cannastat.1 \
 	canvert.1 catdic.1 cpdic.1 cshost.1 ctow.1 delwords.1 dicar.1 \
 	dpbindic.1 dpromdic.1 lsdic.1 mkbindic.1 mkdic.1 mkromdic.1 \
@@ -28,7 +29,6 @@ MAN3=	RkCloseRoma.3 RkCvtEuc.3 RkCvtHan.3 RkCvtHira.3 RkCvtKana.3 \
 	RkMapPhonogram.3 RkMapRoma.3 RkMountD.3 RkNext.3 RkNfer.3 \
 	RkOpenRoma.3 RkPrev.3 RkRemountDic.3 RkResize.3 RkRgnBun.3 RkRight.3 \
 	RkShorten.3 RkStoreYomi.3 RkUnmountDic.3 RkXfer.3 cannalib.3 uilib.3
-MANCOMPRESSED=	yes
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/canna.sh
 
