@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-0.5.14-bw6
 
 MAINTAINER=	sumikawa@FreeBSD.org
 
-LIB_DEPENDS=	wmf.1:${PORTSDIR}/graphics/libwmf
+LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf
 
 WRKSRC=		${WRKDIR}/mswordview
 GNU_CONFIGURE=	yes
