@@ -250,6 +250,7 @@
     SUBDIR += telserv
     SUBDIR += tik
     SUBDIR += tintin++
+    SUBDIR += tintin++-devel
     SUBDIR += tinyfugue
     SUBDIR += tn3270
     SUBDIR += tn5250
