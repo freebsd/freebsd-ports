@@ -1,5 +1,6 @@
 @exec mkdir -p %D/var/rancid
 @exec chmod 775 %D/var/rancid
+@unexec rmdir %D/var 2>/dev/null || true
 bin/rancid-cvs
 bin/rancid-run
 libexec/rancid/alogin
