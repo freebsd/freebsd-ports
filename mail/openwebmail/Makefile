@@ -7,6 +7,7 @@
 
 PORTNAME=	openwebmail
 PORTVERSION=	1.65
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://turtle.ee.ncku.edu.tw/openwebmail/download/
 EXTRACT_SUFX=	.tgz
@@ -15,7 +16,7 @@ MAINTAINER=	leeym@leeym.com
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
