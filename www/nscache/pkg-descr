@@ -1,0 +1,22 @@
+from nscache's README:
+
+NScache is simple program for viewing and amanging contents of Netscape(tm)
+browsers cache directory.
+
+It have very easy user interface writen by using of GTK+1.2 widget libraries.
+It shows 3 levels tree of cache contents. At first level are protocols, at 
+second level are servers and at third level are regular documents.
+
+For each document there is shown its URL, name of cache file, its size, 
+MIME type, encoding type, character set for HTML documents, modification
+time, access time and time when document expires.
+
+When you press right mouse button inside tree list, you can make any action
+on selected item. You can save file from cache to other location, you can 
+remove files and entries from chache (one or all entries for server), or you
+can compute numbers of documents in subtrees and size of all documets in 
+subtree. You can launch any viewer command on cache file or on source URL.
+The viewers you can assign to any MIME type. You can also copy selected URL
+to clipboard.
+
+WWW: http://www.idata.sk/~ondrej/

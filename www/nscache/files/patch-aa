@@ -1,0 +1,21 @@
+--- configure.in.orig	Sat Jan 15 09:40:55 2000
++++ configure.in	Sun Mar  5 02:00:42 2000
+@@ -41,14 +41,14 @@
+ 
+ AC_CHECK_LIB(c, gettext, CFLAGS="$CFLAGS -DHAVE_GETTEXT -DNLS_DIR=\"\\\"\$(prefix)/share/locale\\\"\"";MSUBDIRS="po", AC_CHECK_LIB(intl, gettext, LIBS="$LIBS -lintl";CFLAGS="$CFLAGS -DHAVE_GETTEXT -DNLS_DIR=\"\\\"\$(prefix)/share/locale\\\"\"";MSUBDIRS="po"))
+ 
+-AC_CHECK_LIB(db1, dbopen, CFLAGS="$CFLAGS -DHAVE_DBOPEN";LIBS="$LIBS -ldb1", AC_CHECK_LIB(db, dbopen, CFLAGS="$CFLAGS -DHAVE_DBOPEN";LIBS="$LIBS -ldb", AC_MSG_ERROR("NScache can\'t work withou clasical Berkeley DB libraries")))
++AC_CHECK_LIB(db1, dbopen, CFLAGS="$CFLAGS -DHAVE_DBOPEN";LIBS="$LIBS -ldb1", AC_CHECK_LIB(c, dbopen, CFLAGS="$CFLAGS -DHAVE_DBOPEN", AC_MSG_ERROR("NScache can\'t work withou clasical Berkeley DB libraries")))
+ 
+ AC_CHECK_HEADER(db1/db.h, CFLAGS="$CFLAGS -DHAVE_DB1_H", AC_CHECK_HEADER(db.h, CFLAGS="$CFLAGS -DHAVE_DB_H"))
+ 
+-AC_CHECK_PROG(GTK_CONFIG, gtk-config, "yes", "no")
++AC_CHECK_PROG(GTK_CONFIG, gtk12-config, "yes", "no")
+ if eval "test x$GTK_CONFIG = xyes"; then
+-	CFLAGS="$CFLAGS `gtk-config --cflags`"
+-	LIBS="$LIBS `gtk-config --libs`"
++	CFLAGS="$CFLAGS `gtk12-config --cflags`"
++	LIBS="$LIBS `gtk12-config --libs`"
+ else
+ 	AC_MSG_ERROR("Unable to find \"gtk-config\" program")
+ fi
