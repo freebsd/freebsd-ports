@@ -1,0 +1,13 @@
+--- src/Makefile.in.old	Wed Jul 19 16:44:37 2000
++++ src/Makefile.in	Wed Jul 19 16:45:06 2000
+@@ -58,8 +58,8 @@
+ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ AWK = @AWK@
+-CXX = @CXX@
+-CXXFLAGS = @CXXFLAGS@
++CXX ?= @CXX@
++CXXFLAGS += @CXXFLAGS@
+ LN_S = @LN_S@
+ MAKEINFO = @MAKEINFO@
+ PACKAGE = @PACKAGE@
