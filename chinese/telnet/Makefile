@@ -11,7 +11,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	leeym@leeym.com
+MAINTAINER=	leeym@FreeBSD.org
 
 SRCDIR=		/usr/src/usr.bin/telnet
 

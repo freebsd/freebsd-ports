@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	leeym@leeym.com
+MAINTAINER=	leeym@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 

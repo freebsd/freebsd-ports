@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	linux-igd
 DISTNAME=	gateway-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	leeym@leeym.com
+MAINTAINER=	leeym@FreeBSD.org
 
 LIB_DEPENDS=	upnp.1:${PORTSDIR}/devel/upnp
 

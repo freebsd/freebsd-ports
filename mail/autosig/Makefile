@@ -10,7 +10,7 @@ PORTVERSION=	2.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.irendi.com/
 
-MAINTAINER=	leeym@cae.ce.ntu.edu.tw
+MAINTAINER=	leeym@FreeBSD.org
 
 MAKEFILE=	makefile
 ALL_TARGET=	${PORTNAME}

@@ -11,7 +11,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/benchmark
 
-MAINTAINER=	leeym@cae.ce.ntu.edu.tw
+MAINTAINER=	leeym@FreeBSD.org
 
 HAS_CONFIGURE=	yes
 

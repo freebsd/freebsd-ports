@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.drbl.ofisp.org/drbl/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	leeym@leeym.com
+MAINTAINER=	leeym@FreeBSD.org
 
 NO_BUILD=	yes
 

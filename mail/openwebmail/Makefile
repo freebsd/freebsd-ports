@@ -13,7 +13,7 @@ MASTER_SITES=	http://openwebmail.org/openwebmail/download/ \
 		http://turtle.ee.ncku.edu.tw/openwebmail/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	leeym@leeym.com
+MAINTAINER=	leeym@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
