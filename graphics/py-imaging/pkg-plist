@@ -183,6 +183,7 @@ lib/python1.5/site-packages/PIL/__init__.pyc
 lib/python1.5/site-packages/PIL/__init__.pyo
 lib/python1.5/site-packages/PIL.pth
 lib/python1.5/site-packages/_imaging.so
+lib/python1.5/site-packages/_imagingtk.so
 share/doc/PIL/FORMATS
 share/doc/PIL/README
 share/examples/PIL/README

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imaging
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.pythonware.com/downloads/ \
 		ftp://www.python.org/pub/python/src/ \
