@@ -1,0 +1,8 @@
+"RC6 is an evolutionary improvement of RC5, designed to meet the
+requirements of the Advanced Encryption Standard (AES). Like RC5,
+RC6 makes essential use of data-dependent rotations. New features
+of RC6 include the use of four working registers instead of two,
+and the inclusion of integer multiplication as an additional primitive
+operation. The use of multiplication greatly increases the diffusion
+achieved per round, allowing for greater security, fewer rounds, and
+increased throughput."
