@@ -1,3 +1,4 @@
+bin/gb
 etc/gbConf.sh
 include/gb/gb-constants.h
 include/gb/gb-eval.h
@@ -8,6 +9,7 @@ include/gb/gb-mmap-lex.h
 include/gb/gb-object.h
 include/gb/gb-project.h
 include/gb/gb-statement.h
+include/gb/gb-type.h
 include/gb/gb-value.h
 include/gb/gb.h
 include/gb/libgb.h
