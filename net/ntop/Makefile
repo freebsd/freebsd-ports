@@ -3,7 +3,7 @@
 # Date created:        10 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/11 02:59:56 mph Exp $
+# $Id: Makefile,v 1.2 1998/08/11 09:57:51 andreas Exp $
 #
 
 DISTNAME=	ntop-0.4-src
@@ -17,6 +17,7 @@ WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_AUTOCONF=	yes
 ALL_TARGET=
 INSTALL_TARGET=	install install-man
+CFLAGS+=	-D__dead=
 
 MAN8=		ntop.8
 
