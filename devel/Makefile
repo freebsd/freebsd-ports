@@ -276,6 +276,7 @@
     SUBDIR += p5-Term-ReadKey
     SUBDIR += p5-Term-Size
     SUBDIR += p5-Tie-DB_FileLock
+    SUBDIR += p5-Tie-IxHash
     SUBDIR += p5-Time
     SUBDIR += p5-Time-HiRes
     SUBDIR += p5-Time-Period
