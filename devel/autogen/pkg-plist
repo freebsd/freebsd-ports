@@ -12,7 +12,7 @@ lib/libguileopts.so
 lib/libguileopts.so.0
 lib/libopts.a
 lib/libopts.so
-lib/libopts.so.18
+lib/libopts.so.19
 share/aclocal/autoopts.m4
 share/autogen/aginfo.tpl
 share/autogen/aginfo3.tpl
@@ -23,7 +23,7 @@ share/autogen/conftest.tpl
 share/autogen/fsm-macro.tpl
 share/autogen/fsm-trans.tpl
 share/autogen/fsm.tpl
-share/autogen/libopts-18.6.9.tar.gz
+share/autogen/libopts-19.0.10.tar.gz
 share/autogen/optcode.tpl
 share/autogen/opthead.tpl
 share/autogen/options.tpl
