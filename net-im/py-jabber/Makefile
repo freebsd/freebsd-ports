@@ -7,19 +7,22 @@
 #
 
 PORTNAME=	jabber
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	net python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jabberpy
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	jabberpy${PORTVERSION}-0
+DISTNAME=	jabberpy-${PORTVERSION}-0
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flz@xbsd.org
 COMMENT=	A Python Jabber library
 
 RUN_DEPENDS=	${PYEXPAT}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+
+post-install:
+	@${ECHO} "jabber" > ${PYTHON_SITELIBDIR}/jabber.pth
 
 .include <bsd.port.mk>
