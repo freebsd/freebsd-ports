@@ -9,24 +9,20 @@
 PORTNAME=	mixal
 PORTVERSION=	1.07
 CATEGORIES=	lang
-MASTER_SITES=	http://www.tuxedo.org/~esr/retro/ \
+MASTER_SITES=	http://www.catb.org/~esr/retro/ \
 		http://dl.droso.net/ports/
 
 MAINTAINER=	ports@FreeBSD.org
 
-ALL_TARGET=
-
-DOCDIR=		${PREFIX}/share/doc/mix
+ALL_TARGET=	# none
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mix ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/READ.ME ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/MIX.DOC ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/NOTES ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/opcodes ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.mix ${DOCDIR}
+	@${MKDIR} ${DOCSDIR}
+.for F in READ.ME MIX.DOC NOTES opcodes *.mix
+	${INSTALL_DATA} ${WRKSRC}/${F} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
