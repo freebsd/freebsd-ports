@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sun Feb  7 12:23:10 1999
-+++ Makefile.in	Mon Feb  8 03:18:01 1999
+--- Makefile.in.orig	Fri May  7 04:20:11 1999
++++ Makefile.in	Thu Jul 22 10:45:28 1999
 @@ -5,12 +5,12 @@
  sbindir = @sbindir@
  mandir = @mandir@
@@ -15,12 +15,12 @@
  DEFS = @DEFS@ -DVERSION=\"$(VERSION)\" -DLIBDIR=\"$(libdir)\"
  CFLAGS = @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
  # CFLAGS = -g -Wall $(DEFS) $(INCLS)
-@@ -32,7 +32,7 @@
+@@ -33,7 +33,7 @@
  
  all: $(TARGET)
  
--$(TARGET): $(DEPS) @PCAP_DEPENDS@ $(OBJS)
-+$(TARGET): $(DEPS) $(OBJS) # @PCAP_DEPENDS@
+-$(TARGET): $(DEPS) @PCAP_DEPENDS@ $(OBJS) nmapfe/nmapfe
++$(TARGET): $(DEPS) $(OBJS) nmapfe/nmapfe # @PCAP_DEPENDS@
  	@echo Compiling nmap
  	rm -f $@
  	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
