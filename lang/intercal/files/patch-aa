@@ -1,0 +1,67 @@
+--- Makefile.orig	Fri Feb 27 02:33:59 1998
++++ Makefile	Fri Apr 17 17:44:20 1998
+@@ -8,31 +8,31 @@
+ # all over creation behind your back.
+ # (/dev/null may be another good choice :-))
+ 
+-DVMT=~/WWW/intercal-0.17
+-#DVMT=/usr/local
++#DVMT=~/WWW/intercal-0.17
++DVMT=$(PREFIX)
+ 
+ BINDIR = $(DVMT)/bin
+-INCDIR = $(DVMT)/lib
+-LIBDIR = $(DVMT)/lib
++INCDIR = $(DVMT)/share/intercal
++LIBDIR = $(DVMT)/lib/intercal
+ #INCDIR = $(PWD)
+ #LIBDIR = $(PWD)
+ 
+ YDEBUG = -vlt
+-DEBUG	= -g -DDEBUG
++# DEBUG	= -g -DDEBUG
+ # DEBUG = -O
+-CFLAGS = -I. $(DEBUG) -DICKINCLUDEDIR=\"$(INCDIR)\" \
++CFLAGS += -I. $(DEBUG) -DICKINCLUDEDIR=\"$(INCDIR)\" \
+ 	-DICKLIBDIR=\"$(LIBDIR)\" -DYYDEBUG
+ LDFLAGS =
+ 
+-CC = gcc -Wall -W
++#CC = gcc -Wall -W
+ 
+ # You can use lex or flex
+-#LEX = lex
+-LEX = flex
++LEX = lex
++#LEX = flex
+ 
+ # You can use either yacc or bison
+-#YACC = yacc
+-YACC = bison -y
++YACC = yacc
++#YACC = bison -y
+ 
+ CSOURCES = ick.y lexer.l feh.c lose.c fiddle.c perpetrate.c
+ ISOURCES = cesspool.c arrgghh.c ick-wrap.c
+@@ -53,7 +53,7 @@
+ 	mv lex.yy.c lexer.c 
+ 
+ # Uncomment the following if using a stock lex
+-# LEXLIBS = -ll
++LEXLIBS = -ll
+ lextest: y.tab.h lexer.c ick.h lose.o
+ 	$(CC) -DMAIN lexer.c lose.o $(LEXLIBS) -o lextest
+ 
+@@ -70,9 +70,9 @@
+ 	-ranlib libick.a
+ 
+ install: all
+-	cp ick $(BINDIR)
+-	cp lose.h abcess.h fiddle.h ick-wrap.c $(INCDIR)
+-	cp libick.a ../pit/lib/syslib.i ../pit/lib/syslib.?i $(LIBDIR)
++	$(BSD_INSTALL_PROGRAM) ick $(BINDIR)
++	$(BSD_INSTALL_DATA) lose.h abcess.h fiddle.h ick-wrap.c $(INCDIR)
++	$(BSD_INSTALL_DATA) libick.a ../pit/lib/syslib.i ../pit/lib/syslib.?i $(LIBDIR)
+ 
+ clean:
+ 	rm -f yacc.* y.tab.* y.output *~ *.[oa] lexer.c ick.c lextest ick
