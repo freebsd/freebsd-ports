@@ -388,6 +388,7 @@
     SUBDIR += xemacs21-sumo-wnn6
     SUBDIR += xemacs21-wnn6
     SUBDIR += xjman
+    SUBDIR += xjman-3
     SUBDIR += xjtext
     SUBDIR += xklock
     SUBDIR += xmsgsaver
