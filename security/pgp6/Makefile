@@ -1,18 +1,18 @@
 # New ports collection makefile for: pgp
-# Version required:     MIT 2.6.2 / International 2.6.2i
-# PGP 2.6.2i homepage is http://www.ifi.uio.no/~staalesc/PGP/home.html
+# Version required:     MIT 2.6.2 / International 2.6.3i
+# PGP 2.6.3i homepage is http://www.ifi.uio.no/~staalesc/PGP/home.html
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1995/07/08 00:28:30 ache Exp $
+# $Id: Makefile,v 1.4 1995/07/13 01:15:30 asami Exp $
 #
 
 CATEGORIES+=	security
 
 MAINTAINER=	ache@FreeBSD.ORG
 WRKSRC=         ${WRKDIR}/src
-MAKEFILE=       makefile
 NO_PACKAGE=     YES
+MAKEFILE=       makefile
 ALL_TARGET=     freebsd
 PGPLIB=         ${PREFIX}/lib/pgp
 # Need to define USA_RESIDENT to YES or NO
@@ -61,15 +61,19 @@ post-extract:
 pre-build:
 	cd ${WRKDIR}/rsaref/install/unix; ${GMAKE}
 .else
-DISTNAME=       pgp262is
-PKGNAME=        pgp-2.6.2i
-MASTER_SITES=   ftp://sable.ox.ac.uk/pub/crypto/pgp/unix/ \
+DISTNAME=       pgp263i-dev
+PKGNAME=        pgp-2.6.3i
+MASTER_SITES=   ftp://ftp.ifi.uio.no/pub/pgp/incoming/ \
 		ftp://ftp.kiae.su/unix/crypto/pgp/
+EXTRACT_SUFX=   .zip
+EXEC_DEPENDS=   unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_CMD=    unzip
+EXTRACT_ARGS=   -qa
 FILESDIR=       ${.CURDIR}/files.non_usa
-PATCHDIR=       ${.CURDIR}/patches.non_usa
 
-post-extract:
-	cd ${WRKDIR}; tar xf pgp262ii.tar; rm -f *.tar
+pre-configure:
+	cd ${WRKSRC}; cp makefile.unx makefile
+
 .endif
 .endif
 
