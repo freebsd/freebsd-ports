@@ -18,6 +18,7 @@ APEL is programed by MORIOKA Tomohiko <morioka@jaist.ac.jp>.
      - emu: bundled in tm-7.106 compat module
      - invisible: provide features about invisible region
      - mcharset: provide MIME charset related features
+     - pces: provide portable character encoding scheme features
      - pccl: utility to write portable CCL program
      - pcustom: provide portable custom environment
      - poe: emulation module mainly for basic functions and special forms/macros
