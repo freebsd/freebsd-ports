@@ -76,7 +76,7 @@ CONFIGURE_ENV+=	WITH_LOGGING=yes
 .if defined(WITHOUT_XFT)
 CONFIGURE_ENV+=	WITHOUT_XFT=yes
 .else
-LIB_DEPENDS+=	Xft2.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 .endif # !defined(WITHOUT_XFT)
 
 CPPFLAGS+=		-I${X11BASE}/include
@@ -100,12 +100,6 @@ post-extract::
 		-e 's|@LOCALBASE@|${LOCALBASE}|'	\
 		-e 's|@PREFIX@|${LOCAL_PREFIX}|'	\
 		<${FILESDIR}/mozconfig.in >${WRKSRC}/.mozconfig
-
-# fix for Xft (thanks to marcus@)
-post-patch:
-	cd ${WRKSRC}/gfx/src/gtk;				\
-	${REINPLACE_CMD} -e 's|X11/Xft/Xft\.h|X11/Xft/Xft2.h|g'	\
-		nsDrawingSurfaceGTK.cpp	nsFontMetricsXft.h
 
 post-build:
 	${RM} -f ${PLIST}

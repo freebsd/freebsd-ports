@@ -20,6 +20,7 @@ PATCHFILES=	remember-0.1.14-4.gz
 
 MAINTAINER=	hendrik@scholz.net
 
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 RUN_DEPENDS=	bsetbg:${PORTSDIR}/x11-wm/boxtools \
 		xterm:${PORTSDIR}/x11/XFree86-4-clients
 BUILD_DEPENDS=	xterm:${PORTSDIR}/x11/XFree86-4-clients

@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.handhelds.org/pub/projects/xstroke/release-${PORTVERSION
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		Needs updates for Xft and XFree86 4.3
+
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
 USE_REINPLACE=	yes

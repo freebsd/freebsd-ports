@@ -40,7 +40,7 @@ USE_GNOME=	gtk12
 .endif
 
 .if !defined(WITHOUT_XFT)
-LIB_DEPENDS+=	Xft2.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 .if exists(${X11BASE}/lib/X11/fonts/mozilla/fonts.dir)
 BROKEN=		Mozilla and Xft2 render the mozilla-fonts \
 	 	illegibly. Please remove the mozilla-fonts package.
@@ -167,11 +167,6 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/build/unix/run-mozilla.sh
-.if !defined(WITHOUT_XFT)
-	@${REINPLACE_CMD} -e 's|X11/Xft/Xft\.h|X11/Xft/Xft2.h|g' \
-		${WRKSRC}/gfx/src/gtk/nsDrawingSurfaceGTK.cpp \
-		${WRKSRC}/gfx/src/gtk/nsFontMetricsXft.h
-.endif
 	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
 		-e 's|%%HEADERS_SUFX%%||g' \
 			${WRKSRC}/config/autoconf.mk.in

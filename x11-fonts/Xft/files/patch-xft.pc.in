@@ -9,10 +9,3 @@
  freetypecflags=@FREETYPE_CFLAGS@
  xrenderlibs=@XRENDER_LIBS@
  xrendercflags=@XRENDER_CFLAGS@
-@@ -11,5 +11,5 @@
- Description: X FreeType library
- Version: @PACKAGE_VERSION@
- Requires: fontconfig
--Libs: -L${libdir} -lXft ${freetypelibs} ${xrenderlibs}
-+Libs: -L${libdir} -lXft2 ${freetypelibs} ${xrenderlibs}
- Cflags: -I${includedir} ${freetypecflags} ${xrendercflags}

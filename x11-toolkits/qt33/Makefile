@@ -22,7 +22,8 @@ MAINTAINER?=	kde@FreeBSD.org
 
 LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		Xft.2:${PORTSDIR}/x11-fonts/Xft
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

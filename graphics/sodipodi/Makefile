@@ -33,9 +33,5 @@ MAN1=		sodipodi.1
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|X11/Xft/Xft\.h|X11/Xft/Xft2.h|g' \
-		${WRKSRC}/configure \
-		${WRKSRC}/src/libnrtype/nr-type-xft.c
-
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	libraries
 PORTVERSION=	4.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -50,7 +50,7 @@ MAKE_ENV=		PKGNAMEPREFIX=${PKGNAMEPREFIX} \
 			PORTNAME=${PORTNAME} \
 			PORTVERSION=${PORTVERSION}
 MAN1=			libxrx.1
-MAN3=			Xaw.3 Xft.3
+MAN3=			Xaw.3
 XBUILD_DIRS=		lib nls programs/Xserver/include \
 			programs/Xserver/hw/xfree86/parser \
 			programs/xrx

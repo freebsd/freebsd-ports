@@ -18,7 +18,8 @@ BUILD_DEPENDS=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall
 RUN_DEPENDS=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		Xft.2:${PORTSDIR}/x11-fonts/Xft
 
 USE_XLIB=		yes
 BREAKS_IF_PEDANTIC=	yes
