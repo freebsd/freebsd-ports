@@ -461,6 +461,30 @@ etc/squid/errors/Korean/ERR_UNSUP_REQ
 etc/squid/errors/Korean/ERR_URN_RESOLVE
 etc/squid/errors/Korean/ERR_WRITE_ERROR
 etc/squid/errors/Korean/ERR_ZERO_SIZE_OBJECT
+etc/squid/errors/Lithuanian/ERR_ACCESS_DENIED
+etc/squid/errors/Lithuanian/ERR_CACHE_ACCESS_DENIED
+etc/squid/errors/Lithuanian/ERR_CACHE_MGR_ACCESS_DENIED
+etc/squid/errors/Lithuanian/ERR_CANNOT_FORWARD
+etc/squid/errors/Lithuanian/ERR_CONNECT_FAIL
+etc/squid/errors/Lithuanian/ERR_DNS_FAIL
+etc/squid/errors/Lithuanian/ERR_FORWARDING_DENIED
+etc/squid/errors/Lithuanian/ERR_FTP_DISABLED
+etc/squid/errors/Lithuanian/ERR_FTP_FAILURE
+etc/squid/errors/Lithuanian/ERR_FTP_PUT_CREATED
+etc/squid/errors/Lithuanian/ERR_FTP_PUT_ERROR
+etc/squid/errors/Lithuanian/ERR_FTP_PUT_MODIFIED
+etc/squid/errors/Lithuanian/ERR_INVALID_REQ
+etc/squid/errors/Lithuanian/ERR_INVALID_URL
+etc/squid/errors/Lithuanian/ERR_LIFETIME_EXP
+etc/squid/errors/Lithuanian/ERR_NO_RELAY
+etc/squid/errors/Lithuanian/ERR_ONLY_IF_CACHED_MISS
+etc/squid/errors/Lithuanian/ERR_READ_ERROR
+etc/squid/errors/Lithuanian/ERR_READ_TIMEOUT
+etc/squid/errors/Lithuanian/ERR_SOCKET_FAILURE
+etc/squid/errors/Lithuanian/ERR_UNSUP_REQ
+etc/squid/errors/Lithuanian/ERR_URN_RESOLVE
+etc/squid/errors/Lithuanian/ERR_WRITE_ERROR
+etc/squid/errors/Lithuanian/ERR_ZERO_SIZE_OBJECT
 etc/squid/errors/Polish/ERR_ACCESS_DENIED
 etc/squid/errors/Polish/ERR_CACHE_ACCESS_DENIED
 etc/squid/errors/Polish/ERR_CACHE_MGR_ACCESS_DENIED
@@ -847,6 +871,7 @@ sbin/squid
 @dirrm etc/squid/errors/Italian
 @dirrm etc/squid/errors/Japanese
 @dirrm etc/squid/errors/Korean
+@dirrm etc/squid/errors/Lithuanian
 @dirrm etc/squid/errors/Polish
 @dirrm etc/squid/errors/Portuguese
 @dirrm etc/squid/errors/Romanian
