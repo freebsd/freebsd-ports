@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	conquest
-PORTVERSION=	7.1.1
+PORTVERSION=	7.1.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.radscan.com/conquest/
 EXTRACT_SUFX=	.src.tar.gz
@@ -14,24 +14,18 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	markp@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc/conquest \
+		--datadir=${LOCALBASE}/share/conquest \
+		--localstatedir=/var/games
 USE_REINPLACE=	yes
 BINGRP=		conquest
 SHAREGRP=	conquest
 
 post-patch:
-	${REINPLACE_CMD} -e "s|@prefix@/conquest|@prefix@|g; \
-		s|^.*@chgrp .(CONQGROUP) conq.*||g; \
+	${REINPLACE_CMD} -e "s|^.*@chgrp .(CONQGROUP) conq.*||g; \
 		s|^.*@chmod 2771 conq.*||g;" ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e "s/# include <termio.h>//g" ${WRKSRC}/c_defs.h
 	${REINPLACE_CMD} -e "s/-O2 -fPIC//g" ${WRKSRC}/configure
-	${REINPLACE_CMD} -e "s|/opt/conquest|${PREFIX}|g; \
-		s|etc/conquestrc|etc/conquest/conquestrc|g; \
-		s|bin/conqdriv|libexec/conqdriv|g; \
-		s|etc/conquest_common.img|etc/conquest/conquest_common.img|g; \
-		s|etc/conquest.log|share/conquest/conquest.log|g; \
-		s|etc/conqnews.doc|share/conquest/conqnews.doc|g; \
-		s|etc/conquest.doc|share/conquest/conquest.doc|g;" \
-		${WRKSRC}/defs.h ${WRKSRC}/conf.h ${WRKSRC}/README
 
 do-install:
 	@${SH} pkg-install ${PORTNAME} PRE-INSTALL
@@ -49,8 +43,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/conquest.doc ${PREFIX}/share/conquest
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/conquest
-	${INSTALL_DATA} ${WRKSRC}/SERVER.DOC ${WRKSRC}/README \
-		${PREFIX}/share/doc/conquest
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/conquest
 .endif
 	@${SH} pkg-install ${PORTNAME} POST-INSTALL
 
