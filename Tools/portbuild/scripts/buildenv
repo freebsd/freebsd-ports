@@ -8,10 +8,17 @@ buildenv () {
 
     case "x$branch" in
 	x4)
+    	export PKGSUFFIX=.tgz
+    	export PKGZIPCMD=gzip
 	    ;;
 	x4-exp)
+    	export PKGSUFFIX=.tgz
+    	export PKGZIPCMD=gzip
+	export PORTS_AUDIT=1
 	    ;;
 	x5)
+    	export PKGSUFFIX=.tbz
+    	export PKGZIPCMD=bzip2
 	    ;;
 	*)
 	    echo "buildenv: invalid branch"
@@ -20,8 +27,6 @@ buildenv () {
     esac
 
     export XFREE86_VERSION=4
-    export PKGSUFFIX=.tbz
-    export PKGZIPCMD=bzip2
 
     # Have to use realpath because 'make index' doesn't deal with symlinks in PORTSDIR
     # - kk 020311
@@ -39,6 +44,7 @@ buildenv () {
     export PARALLEL_PACKAGE_BUILD=1
     export PORTOBJFORMAT=elf
     export USA_RESIDENT=yes
+    export FTP_PASSIVE_MODE=yes
 
     # Need to make it fetch a full set say once a week to catch distfiles
     # which change md5 sum but not name
