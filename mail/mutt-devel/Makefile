@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.3.23.2
+PORTVERSION=	1.3.24
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -15,7 +15,10 @@ CATEGORIES+=	news
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/mirrors/mutt/ \
 		ftp://ftp.parodius.com/pub/mutt/ \
 		ftp://ftp.demon.co.uk/pub/mirrors/mutt/devel/ \
-		ftp://ftp.parodius.com/pub/mutt/devel/
+		ftp://ftp.parodius.com/pub/mutt/devel/ \
+		ftp://ftp.mutt.org/pub/mutt/ \
+		ftp://ftp.mutt.org/pub/mutt/devel/ 
+
 DISTNAME=	mutt-${PORTVERSION}i
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -31,7 +34,7 @@ CONFIGURE_ARGS=	--enable-flock --disable-fcntl \
 .include <bsd.port.pre.mk>
 
 USE_AUTOMAKE=	yes
-USE_GMAKE=	yes
+AUTOMAKE_ARGS= -i
 
 .if defined(WITH_MUTT_COMPRESSED_FOLDERS) || defined(WITH_MUTT_NNTP) || \
 		defined(WITH_MUTT_RU_PATCH) || defined(WITH_MUTT_QUOTE_PATCH)
@@ -143,8 +146,6 @@ MAN5=		muttrc.5 mbox.5
 post-patch::
 	 @${PERL} -pi.fbsd -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
 		${WRKSRC}/contrib/gpg.rc
-	 @${CP} ${PATCHDIR}/extra-patchlist.sh ${WRKSRC}/patchlist.sh
-	 @${CHMOD} 700 ${WRKSRC}/patchlist.sh
 
 pre-configure::
 	@(cd ${WRKSRC}; ${ACLOCAL} -I m4)
