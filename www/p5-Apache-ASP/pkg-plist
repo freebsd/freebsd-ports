@@ -2,6 +2,7 @@ bin/asp-perl
 lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP.pm
 lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/Application.pm
 lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/CGI.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/CGI/Table.pm
 lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/CGI/Test.pm
 lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/Collection.pm
 lib/perl5/site_perl/%%PERL_VER%%/Apache/ASP/CollectionItem.pm
