@@ -56,6 +56,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/modules/perl/*.h \
 	    ${PREFIX}/include/apache/modules/perl
 	${INSTALL_PROGRAM} ${WRKSRC}/apaci/libperl.so ${PREFIX}/libexec/apache
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} POST-INSTALL
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
