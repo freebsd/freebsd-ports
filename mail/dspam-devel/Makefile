@@ -8,14 +8,12 @@
 PORTNAME=	dspam
 PORTVERSION=	2.7.1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.nuclearelephant.com/projects/dspam/
+MASTER_SITES=	http://www.nuclearelephant.com/projects/dspam/sources/
 
 MAINTAINER=	dom@wirespeed.org.uk
 COMMENT=	A server-side bayesian spam filter
 
 LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
-
-BROKEN=		Does not fetch, will be removed after Feb 2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-userdir=${PREFIX}/etc/dspam \
