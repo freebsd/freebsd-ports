@@ -4132,6 +4132,7 @@ nslookup	src/usr.sbin/nslookup
 nsping		ports/net/nsping
 nspmod		ports/audio/nspmod
 nspostgres	ports/www/nspostgres
+nspr		ports/devel/nspr
 nstreams	ports/net/nstreams
 ntalk		ports/net/ntalk
 nte		ports/mbone/nte
