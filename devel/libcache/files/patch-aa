@@ -1,0 +1,11 @@
+--- src/Makefile.in	Wed Dec 22 12:00:17 1999
++++ src/Makefile.in.new	Fri Feb  4 15:13:19 2000
+@@ -6,7 +6,7 @@
+ OBJS=parse.o access.o
+ 
+ 
+-CFLAGS=${DEBUG} ${DEFINES} -Wall -O3 -I. -I../include -c
++CFLAGS=${PCFLAGS} ${DEBUG} ${DEFINES} -Wall -O3 -I. -I../include -c
+ LIBEXEC=@LIBBIN@
+ 
+ all: ${OBJS}

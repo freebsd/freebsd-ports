@@ -80,6 +80,7 @@
     SUBDIR += lclint
     SUBDIR += libPropList
     SUBDIR += libU77
+    SUBDIR += libcache
     SUBDIR += libcii
     SUBDIR += libdlmalloc
     SUBDIR += libffi
