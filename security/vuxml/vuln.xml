@@ -32,6 +32,30 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="12b7b4cf-1d53-11d9-814e-0001020eed82">
+    <topic>wordpress -- XSS in administration panel</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+        <range><lt>1.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Pages in the administration panel of Wordpress are
+          vulnerable for XSS attacks.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://wordpress.org/development/2004/10/wp-121/</url>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109641484723194</url>
+    </references>
+    <dates>
+      <discovery>2004-09-27</discovery>
+      <entry>2004-10-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3897a2f8-1d57-11d9-bc4a-000c41e2cdad">
     <topic>tiff -- multiple integer overflows</topic>
     <affects>
