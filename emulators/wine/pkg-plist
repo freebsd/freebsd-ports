@@ -184,14 +184,14 @@ lib/wine/winedefault.reg
 lib/wine/bug_report.pl
 lib/wine/reg/regFixer.pl
 lib/wine/reg/regRestorer.pl
-lib/wine/documentation/ANNOUNCE
-lib/wine/documentation/AUTHORS
-lib/wine/documentation/LICENSE
-lib/wine/documentation/WARRANTY
-lib/wine/documentation/README
-lib/wine/documentation/psdrv.reg
-lib/wine/documentation/README.debugger
-lib/wine/documentation/README.regapi
+%%PORTDOCS%%share/doc/wine/ANNOUNCE
+%%PORTDOCS%%share/doc/wine/AUTHORS
+%%PORTDOCS%%share/doc/wine/LICENSE
+%%PORTDOCS%%share/doc/wine/WARRANTY
+%%PORTDOCS%%share/doc/wine/README
+%%PORTDOCS%%share/doc/wine/psdrv.reg
+%%PORTDOCS%%share/doc/wine/README.debugger
+%%PORTDOCS%%share/doc/wine/README.regapi
 lib/wine/libadvapi32.so
 lib/wine/libavifil32.so
 lib/wine/libavifile.so
@@ -316,5 +316,5 @@ lib/wine/libx11drv.so
 @dirrm include/wine/wine
 @dirrm include/wine
 @dirrm lib/wine/reg
-@dirrm lib/wine/documentation
+%%PORTDOCS%%@dirrm share/doc/wine
 @dirrm lib/wine
