@@ -19,13 +19,7 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/py-numeric
 
 USE_PYTHON=	yes
-SETUP_CMD=	cd ${WRKSRC}; ${PYTHON_CMD} setup.py
-
-do-build:
-	@${SETUP_CMD} build
-
-do-install:
-	@${SETUP_CMD} install
+USE_PYDISTUTILS=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
