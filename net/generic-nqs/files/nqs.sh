@@ -8,7 +8,7 @@ start)
 	fi
 	;;
 stop)
-	killall nqsdaemon && echo -n ' nqs'
+	killall -KILL nqsdaemon netdaemon loaddaemon && echo -n ' nqs'
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
