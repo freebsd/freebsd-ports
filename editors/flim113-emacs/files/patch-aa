@@ -1,0 +1,11 @@
+--- FLIM-CFG.orig	Tue Sep 15 15:26:08 1998
++++ FLIM-CFG	Sun May  9 01:33:26 1999
+@@ -8,6 +8,8 @@
+ 
+ (add-to-list 'load-path
+ 	     (expand-file-name "../../site-lisp/apel" data-directory))
++(add-to-list 'load-path
++	     (expand-file-name "../site-lisp/emu" data-directory))
+ 
+ (if (boundp 'LISPDIR)
+     (progn
