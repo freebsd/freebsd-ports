@@ -37,6 +37,7 @@ CONFIGURE_ARGS?=--with-clash-detection \
 		--site-libraries=${LOCALBASE}/lib \
 		--with-png=yes \
 		--with-tiff=yes \
+		--with-ldap=no \
 		--with-site-lisp \
 		--with-database=berkdb \
 		${WITH_XFACE} ${WITH_DIALOGS} ${WITH_OFFIX} ${WITH_GTK}
