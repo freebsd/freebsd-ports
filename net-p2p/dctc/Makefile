@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.83.2
+PORTVERSION=	0.83.3
 CATEGORIES=	net
 MASTER_SITES=	http://unixpages.org/distfiles/ \
 		http://ac2i.tzo.com/dctc/
@@ -44,6 +44,7 @@ DOC_FILES=      COPYING ChangeLog INSTALL README \
 		Documentation/GDL.nl \
 		Documentation/GDL Documentation/VAR \
 		Documentation/LS_cache Documentation/UNODE.nl \
+		Documentation/LS_cache.nl \
 		Documentation/VAR.nl \
 		Documentation/UNODE Documentation/Vshare \
 		Documentation/Vshare.nl \
