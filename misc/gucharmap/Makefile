@@ -7,6 +7,7 @@
 
 PORTNAME=	gucharmap
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.4
@@ -15,13 +16,12 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A Unicode/ISO10646 character map and font viewer
 
-LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomeprefix gnomehack gtk20
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
