@@ -1,0 +1,16 @@
+bin/tim-config
+bin/wrap
+lib/gtk-2.0/2.2.0/immodules/im-tim.la
+lib/gtk-2.0/2.2.0/immodules/im-tim.so
+%%DATADIR%%/cj.tim
+%%DATADIR%%/erbi.tim
+%%DATADIR%%/liu.tim
+%%DATADIR%%/phone.tim
+%%DATADIR%%/pinyin-p.tim
+%%DATADIR%%/pinyin.tim
+%%DATADIR%%/qfrench.tim
+%%DATADIR%%/wubi.tim
+%%DATADIR%%/wubihua-n.tim
+@dirrm %%DATADIR%%
+@exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
+@unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
