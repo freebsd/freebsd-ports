@@ -18,6 +18,8 @@ COMMENT=	OpenGL hardware acceleration drivers for the DRI
 
 EXTRA_PATCHES+=		${CF_PATCHES}
 
+USE_XLIB=		yes
+
 ONLY_FOR_ARCHS=		i386 alpha amd64
 
 XBUILD_DIRS=		lib/GL
