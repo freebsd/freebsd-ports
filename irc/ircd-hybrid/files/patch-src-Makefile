@@ -1,14 +1,5 @@
 --- src/Makefile.in.orig	Wed May 28 21:02:15 2003
-+++ src/Makefile.in	Wed Jan 28 01:19:55 2004
-@@ -11,7 +11,7 @@
- RM		= @RM@
- LEX		= @LEX@
- LEXLIB		= @LEXLIB@
--CFLAGS		= @IRC_CFLAGS@ -DIRCD_PREFIX=\"@prefix@\"
-+CFLAGS		= @IRC_CFLAGS@ -DIRCD_PREFIX=\"@prefix@\" -DMODPATH=\"@moduledir@\" -DAUTOMODPATH=\"@moduledir@/autoload\"
- LDFLAGS   	= @LDFLAGS@
- MKDEP		= @MKDEP@ -DIRCD_PREFIX=\"@prefix@\"
- MV		= @MV@
++++ src/Makefile.in	Thu Jan 29 19:54:25 2004
 @@ -23,6 +23,8 @@
  libexecdir	= @libexecdir@
  sysconfdir	= @sysconfdir@
