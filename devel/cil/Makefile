@@ -29,6 +29,12 @@ BINFILES=	cilly patcher teetwo
 LIBFILES=	Cilly.pm KeptFile.pm OutputFile.pm TempFile.pm
 EXECFILES=	cilly.byte.exe machdep.exe
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		"Does not work with perl < 5.6.1"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's:@CILHOME@/lib:${SITE_PERL}/CIL:g; s:\@CILHOME\@:${PREFIX}:g' ${WRKSRC}/bin/CilConfig.pm.in
 	@${REINPLACE_CMD} -e 's|$$::cilhome|${PREFIX}|g; s|obj/$$::archos|libexec/cil|g' ${WRKSRC}/bin/cilly
@@ -52,4 +58,4 @@ do-install:
 	${INSTALL} ${WRKSRC}/obj/x86_LINUX/${file} ${PREFIX}/libexec/cil/
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
