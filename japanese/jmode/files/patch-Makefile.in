@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Apr 14 22:12:05 2003
++++ Makefile.in	Thu May 22 19:00:49 2003
+@@ -430,7 +430,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-gnorbaDATA install-pkgdataDATA
++install-data-am: install-pkgdataDATA
+ 
+ install-exec-am:
+ 

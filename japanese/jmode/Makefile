@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	jmode
-PORTVERSION=	0.4.29
+PORTVERSION=	0.6.6
 CATEGORIES=	japanese
-MASTER_SITES=	http://www.kmc.gr.jp/proj/heke/
+MASTER_SITES=	http://downloads.sourceforge.jp/anthy/4445/
 
 MAINTAINER=	nakai@FreeBSD.org
 COMMENT=	XIM server for Anthy input method
 
-BROKEN=		"Bad dependency"
+LIB_DEPENDS=	anthy.0:${PORTSDIR}/japanese/anthy
 
-BUILD_DEPENDS=	${LOCALBASE}/include/anthy.h:${PORTSDIR}/japanese/anthy
-
-GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
-
+USE_GNOME=	gnometarget gtk12
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-skk
 
 .include <bsd.port.mk>
