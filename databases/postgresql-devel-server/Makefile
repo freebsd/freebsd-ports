@@ -15,8 +15,10 @@ MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
 DISTFILES?=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
 		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER?=	girgen@FreeBSD.org
+MAINTAINER?=	seanc@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
+
+BROKEN=		Work in progress
 
 CONFLICTS?=	${PORTNAME}-client-7.[0-9]* \
 		${PORTNAME}${PKGNAMESUFFIX}-7.[0-9]*
