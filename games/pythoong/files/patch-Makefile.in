@@ -1,0 +1,17 @@
+--- Makefile.in.orig	Fri Aug  8 05:25:23 2003
++++ Makefile.in	Fri Aug  8 05:25:50 2003
+@@ -554,10 +554,10 @@
+ 
+ install-data-local:
+ 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+-	touch $(DESTDIR)$(scoredir)/pythoong.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/pythoong.scores
+-	-chmod 664 $(DESTDIR)$(scoredir)/pythoong.scores
+-	-chgrp games $(DESTDIR)$(bindir)/pythoong && chmod 2111 $(DESTDIR)$(bindir)/pythoong
++	touch $(DESTDIR)$(scoredir)/Pythoong.scores
++	-chown games:games $(DESTDIR)$(scoredir)/Pythoong.scores
++	-chmod 664 $(DESTDIR)$(scoredir)/Pythoong.scores
++	-chgrp games $(DESTDIR)$(bindir)/pythoong
+ 
+ @MAINT@include macros/macros.dep
+ @MAINT@macros/macros.dep: macros/Makefile.am
