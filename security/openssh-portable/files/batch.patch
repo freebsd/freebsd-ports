@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Wed Jun 26 01:45:42 2002
-+++ Makefile.in	Thu Jul  4 20:23:43 2002
++++ Makefile.in	Tue Sep 17 07:22:43 2002
 @@ -199,6 +199,7 @@
  	(cd scard && $(MAKE) -f Makefile.in distprep)
  
@@ -8,7 +8,7 @@
  install-nokeys: $(CONFIGFILES) $(MANPAGES) $(TARGETS) install-files
  
  check-user:
-@@ -251,37 +252,6 @@
+@@ -251,27 +252,6 @@
  	ln -s ssh$(EXEEXT) $(DESTDIR)$(bindir)/slogin
  	-rm -f $(DESTDIR)$(mandir)/$(mansubdir)1/slogin.1
  	ln -s ssh.1 $(DESTDIR)$(mandir)/$(mansubdir)1/slogin.1
@@ -33,16 +33,6 @@
 -			echo "$(DESTDIR)$(sysconfdir)/ssh_prng_cmds already exists, install will not overwrite"; \
 -		fi ; \
 -	fi
--	if [ ! -f $(DESTDIR)$(sysconfdir)/moduli ]; then \
--		if [ -f $(DESTDIR)$(sysconfdir)/primes ]; then \
--			echo "moving $(DESTDIR)$(sysconfdir)/primes to $(DESTDIR)$(sysconfdir)/moduli"; \
--			mv "$(DESTDIR)$(sysconfdir)/primes" "$(DESTDIR)$(sysconfdir)/moduli"; \
--		else \
--			$(INSTALL) -m 644 moduli.out $(DESTDIR)$(sysconfdir)/moduli; \
--		fi ; \
--	else \
--		echo "$(DESTDIR)$(sysconfdir)/moduli already exists, install will not overwrite"; \
--	fi
- 
- host-key: ssh-keygen$(EXEEXT)
- 	if [ -z "$(DESTDIR)" ] ; then \
+ 	if [ ! -f $(DESTDIR)$(sysconfdir)/moduli ]; then \
+ 		if [ -f $(DESTDIR)$(sysconfdir)/primes ]; then \
+ 			echo "moving $(DESTDIR)$(sysconfdir)/primes to $(DESTDIR)$(sysconfdir)/moduli"; \
