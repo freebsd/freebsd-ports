@@ -15,6 +15,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	roland.jesse@gmx.net
 COMMENT=	A recipe management software
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+
 .if defined(WITH_KDE)
 LIB_DEPENDS+=	kextmdi.2:${PORTSDIR}/devel/qextmdi
 PKGNAMESUFFIX=	-kde

@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	psi
 MAINTAINER=	dd@FreeBSD.org
 COMMENT=	QSSL is a Qt plugin that helps applications use OpenSSL
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+
 SHLIB_MAJOR=	1
 
 USE_OPENSSL=	yes

@@ -14,7 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1/-1/}.src
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Professional CAD system
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
+		qmake:${PORTSDIR}/devel/qmake
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.1/-1/}.src
 

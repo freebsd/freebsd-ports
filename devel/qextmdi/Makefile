@@ -15,6 +15,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	roland.jesse@gmx.net
 COMMENT=	Qt extension for creating SDI/MDI user interfaces
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+
 .if defined(WITH_KDE)
 USE_KDELIBS_VER=	3
 PKGNAMESUFFIX=	-kde

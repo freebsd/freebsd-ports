@@ -14,6 +14,8 @@ MASTER_SITES=	http://psi.affinix.com/beta/
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	SSL/TLS plugin for Qt
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes

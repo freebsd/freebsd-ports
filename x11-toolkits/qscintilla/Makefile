@@ -13,6 +13,8 @@ DISTNAME=	qscintilla-1.54-x11-gpl-${PORTVERSION}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	QT port of scintilla
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+
 USE_QT_VER=	3
 WRKSRC=		${WRKDIR}/${DISTNAME}/qt
 CONFIGURE_ENV=	QTDIR="${X11BASE}"

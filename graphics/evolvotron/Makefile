@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	Generative software that evolves images/textures/patterns
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_QT_VER=	3
