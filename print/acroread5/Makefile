@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	acroread
-PORTVERSION=	5.07
-#PORTREVISION=	1
+PORTVERSION=	5.08
 CATEGORIES=	print linux
-MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
+MASTER_SITES=	http://download.adobe.com/pub/adobe/acrobatreader/unix/5.x/ \
+		ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "i386"
-DISTNAME=	linux-507
+DISTNAME=	linux-508
 .endif
 DIST_SUBDIR=	acroread
 
