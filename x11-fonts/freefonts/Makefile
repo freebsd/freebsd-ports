@@ -9,7 +9,11 @@ PORTNAME=	freefonts
 PORTVERSION=	0.10
 PORTREVISION=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/
+MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
+		ftp://ftp.fh-heilbronn.de/mirrors/ftp.gimp.org/%SUBDIR%/ \
+		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/%SUBDIR%,}
+MASTER_SITE_SUBDIR=	gimp/fonts
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A collection of ATM fonts (not all free) from the CICA archives
