@@ -1,6 +1,6 @@
 @comment $FreeBSD$
 bin/tkcvs
-bin/tkdiff
+bin/tkdiffb
 lib/tkcvs/annotate.tcl
 lib/tkcvs/bitmaps/add.gif
 lib/tkcvs/bitmaps/adir.gif
@@ -12,16 +12,22 @@ lib/tkcvs/bitmaps/arrow_hl_up.gif
 lib/tkcvs/bitmaps/arrow_up.gif
 lib/tkcvs/bitmaps/ball.gif
 lib/tkcvs/bitmaps/branch.gif
+lib/tkcvs/bitmaps/branch.xbm
 lib/tkcvs/bitmaps/branchtag.gif
+lib/tkcvs/bitmaps/check.gif
 lib/tkcvs/bitmaps/checkin.gif
 lib/tkcvs/bitmaps/checkout.gif
-lib/tkcvs/bitmaps/clean.gif
-lib/tkcvs/bitmaps/clear.gif
+lib/tkcvs/bitmaps/checkout_opts.gif
 lib/tkcvs/bitmaps/conflict.gif
+lib/tkcvs/bitmaps/cvs-says.xbm
 lib/tkcvs/bitmaps/cvsdir.gif
 lib/tkcvs/bitmaps/delete.gif
 lib/tkcvs/bitmaps/diff.gif
 lib/tkcvs/bitmaps/dir.gif
+lib/tkcvs/bitmaps/dir.xbm
+lib/tkcvs/bitmaps/dir_new.gif
+lib/tkcvs/bitmaps/dirbranch.gif
+lib/tkcvs/bitmaps/dirbranch.xbm
 lib/tkcvs/bitmaps/edit.gif
 lib/tkcvs/bitmaps/export.gif
 lib/tkcvs/bitmaps/fileedit.gif
@@ -29,21 +35,21 @@ lib/tkcvs/bitmaps/files.gif
 lib/tkcvs/bitmaps/fileview.gif
 lib/tkcvs/bitmaps/folder.gif
 lib/tkcvs/bitmaps/folderopen.gif
-lib/tkcvs/bitmaps/gray75.xbm
 lib/tkcvs/bitmaps/import.gif
 lib/tkcvs/bitmaps/logfile.gif
 lib/tkcvs/bitmaps/loop-glasses.gif
 lib/tkcvs/bitmaps/loop-half.gif
 lib/tkcvs/bitmaps/loop.gif
+lib/tkcvs/bitmaps/man.gif
 lib/tkcvs/bitmaps/mdir.gif
-lib/tkcvs/bitmaps/mergebranch.gif
-lib/tkcvs/bitmaps/mergediff.gif
+lib/tkcvs/bitmaps/merge.gif
+lib/tkcvs/bitmaps/merge_changes.gif
 lib/tkcvs/bitmaps/mod.gif
 lib/tkcvs/bitmaps/modbrowse.gif
-lib/tkcvs/bitmaps/modules.gif
 lib/tkcvs/bitmaps/paper.gif
 lib/tkcvs/bitmaps/patches.gif
 lib/tkcvs/bitmaps/patchfile.gif
+lib/tkcvs/bitmaps/rcsdir.gif
 lib/tkcvs/bitmaps/refresh.gif
 lib/tkcvs/bitmaps/remove.gif
 lib/tkcvs/bitmaps/stat_conf.gif
@@ -53,19 +59,22 @@ lib/tkcvs/bitmaps/stat_merge.gif
 lib/tkcvs/bitmaps/stat_minus.gif
 lib/tkcvs/bitmaps/stat_mod.gif
 lib/tkcvs/bitmaps/stat_ok.gif
-lib/tkcvs/bitmaps/stat_okay.gif
 lib/tkcvs/bitmaps/stat_ood.gif
 lib/tkcvs/bitmaps/stat_plus.gif
 lib/tkcvs/bitmaps/stat_plus_kb.gif
 lib/tkcvs/bitmaps/stat_ques.gif
+lib/tkcvs/bitmaps/stat_rcs.gif
+lib/tkcvs/bitmaps/stat_rcs_mod.gif
 lib/tkcvs/bitmaps/tag.gif
 lib/tkcvs/bitmaps/tags.gif
+lib/tkcvs/bitmaps/tick.xbm
 lib/tkcvs/bitmaps/ticklefish_med.gif
 lib/tkcvs/bitmaps/tkcvs-ghost.xbm
 lib/tkcvs/bitmaps/tkcvs-help.xbm
 lib/tkcvs/bitmaps/tkcvs48.xbm
 lib/tkcvs/bitmaps/trace.xbm
 lib/tkcvs/bitmaps/unedit.gif
+lib/tkcvs/bitmaps/updir.gif
 lib/tkcvs/bitmaps/who.gif
 lib/tkcvs/cde_params.tcl
 lib/tkcvs/commit.tcl
@@ -78,11 +87,13 @@ lib/tkcvs/filebrowse.tcl
 lib/tkcvs/gen_log.tcl
 lib/tkcvs/help.tcl
 lib/tkcvs/import.tcl
+lib/tkcvs/joincanvas.tcl
 lib/tkcvs/logcanvas.tcl
 lib/tkcvs/merge.tcl
 lib/tkcvs/modbrowse.tcl
 lib/tkcvs/modtree.tcl
 lib/tkcvs/modules.tcl
+lib/tkcvs/picklist.tcl
 lib/tkcvs/reports.tcl
 lib/tkcvs/scrollbindings.tcl
 lib/tkcvs/search.tcl
@@ -91,7 +102,7 @@ lib/tkcvs/tclIndex
 lib/tkcvs/tkcvs_def.tcl
 lib/tkcvs/tooltips.tcl
 lib/tkcvs/workdir.tcl
-share/doc/tkcvs/README.tkcvs
+%%PORTDOCS%%share/doc/tkcvs/README.tkcvs
 @dirrm lib/tkcvs/bitmaps
 @dirrm lib/tkcvs
-@dirrm share/doc/tkcvs
+%%PORTDOCS%%@dirrm share/doc/tkcvs
