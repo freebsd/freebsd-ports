@@ -1,5 +1,5 @@
-lib/licq/licq_qt-gui.la
-lib/licq/licq_qt-gui.so
+lib/licq/licq_%%GUI_NAME%%-gui.la
+lib/licq/licq_%%GUI_NAME%%-gui.so
 share/licq/qt-gui/dock.console/away.xpm
 share/licq/qt-gui/dock.console/bothmsg.xpm
 share/licq/qt-gui/dock.console/console.dock
