@@ -6,5 +6,11 @@ This port uses Linux patch.
 
 Minematsu makes FreeBSD patchs, and Miyamoto is porting them.
 And enlarging max atoms as  MAXHEV=50 & MAXLIT=50.
+
+Potring to 4.0-CURRENT (__FreeBSD_version == 400005) and later versions 
+have been assisted greatly by Glenn Johnson <gjohnson@nola.srrc.usda.gov>, 
+thanks a lot !
+He found that an unusable binary was produced using g77 at FreeBSD 4,
+then it is recommended to use f2c/cc.
 --
 rmiya

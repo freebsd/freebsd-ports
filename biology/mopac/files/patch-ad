@@ -1,58 +1,32 @@
-*** Makefile.orig	Sat May 22 13:51:28 1999
---- Makefile	Sat May 22 13:56:17 1999
-***************
-*** 7,13 ****
-  #	make		Makes the MOPAC file
-  #	make clean	Clean up disk to minimum config
-  #
-! FFLAGS	        = -O2 -w
-  HDRS		= SIZES
-  SRCS		:= $(shell ls *.f)
-  CSRCS           := $(shell ls *.c) 
---- 7,19 ----
-  #	make		Makes the MOPAC file
-  #	make clean	Clean up disk to minimum config
-  #
-! FFLAGS	        ?= -O2 -w
-! ifdef HAVE_G2C
-! LFLAGS		= -lg2c
-! CFLAGS		+= -DHAVE_G2C
-! else
-! LFLAGS		= -lf2c
-! endif
-  HDRS		= SIZES
-  SRCS		:= $(shell ls *.f)
-  CSRCS           := $(shell ls *.c) 
-***************
-*** 15,28 ****
-  SIZEDEPSRC	:= $(shell grep -l -i '      INCLUDE ' *.f; true)
-  SIZEDEPEND	= $(SIZEDEPSRC:.f=.o)
-  MOPAC		= MOPAC7
-! MOPACSHELL	= mopac
-! BINDIR		= /usr/local/bin
-  OWNER		= root.bin
-  
-  $(MOPAC):     	SIZES $(OBJS) 
-  		@echo -n "Loading $@ ... "
-! 		f77 -O $(OBJS) -o $@
-  		@echo "done"
-  
-  clean:
-  	 	$(RM) $(OBJS) *.trace core
---- 21,36 ----
-  SIZEDEPSRC	:= $(shell grep -l -i '      INCLUDE ' *.f; true)
-  SIZEDEPEND	= $(SIZEDEPSRC:.f=.o)
-  MOPAC		= MOPAC7
-! MOPACSHELL	= rmopac
-! BINDIR		= $(PREFIX)/bin
-  OWNER		= root.bin
-  
-  $(MOPAC):     	SIZES $(OBJS) 
-  		@echo -n "Loading $@ ... "
-! 		$(FC) -O $(OBJS) $(LFLAGS) -o $@
-  		@echo "done"
-+ 
-+ all:          $(MOPAC)
-  
-  clean:
-  	 	$(RM) $(OBJS) *.trace core
+--- Makefile.orig	Wed Jun  7 19:24:45 2000
++++ Makefile	Wed Jun  7 19:27:38 2000
+@@ -7,7 +7,8 @@
+ #	make		Makes the MOPAC file
+ #	make clean	Clean up disk to minimum config
+ #
+-FFLAGS	        = -O2 -w
++FFLAGS	        = -O -Wall
++CFLAGS		= -I$(PREFIX)/include -Wall
+ HDRS		= SIZES
+ SRCS		:= $(shell ls *.f)
+ CSRCS           := $(shell ls *.c) 
+@@ -15,14 +16,16 @@
+ SIZEDEPSRC	:= $(shell grep -l -i '      INCLUDE ' *.f; true)
+ SIZEDEPEND	= $(SIZEDEPSRC:.f=.o)
+ MOPAC		= MOPAC7
+-MOPACSHELL	= mopac
+-BINDIR		= /usr/local/bin
++MOPACSHELL	= rmopac
++BINDIR		= $(PREFIX)/bin
+ OWNER		= root.bin
+ 
+ $(MOPAC):     	SIZES $(OBJS) 
+ 		@echo -n "Loading $@ ... "
+-		f77 -O $(OBJS) -o $@
++		$(FC) $(OBJS) $(LFLAGS) -o $@
+ 		@echo "done"
++
++all:          $(MOPAC)
+ 
+ clean:
+ 	 	$(RM) $(OBJS) *.trace core
