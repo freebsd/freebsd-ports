@@ -3,7 +3,7 @@
 # Date created:				September 29th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1996/10/23 23:53:25 jfitz Exp $
+#   $Id: Makefile,v 1.2 1996/10/24 07:49:44 jfitz Exp $
 #
 
 DISTNAME=	MsqlPerl-1.11
@@ -20,6 +20,7 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 
 BUILD_DEPENDS= 	${PREFIX}/Minerva/lib/libmsql.a:${PORTSDIR}/databases/msql \
 		perl5.003:${PORTSDIR}/lang/perl5
+RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL

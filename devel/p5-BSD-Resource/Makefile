@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1996/10/23 23:56:54 jfitz Exp $
 #
 
 DISTNAME=	BSD-Resource-1.03
@@ -19,6 +19,8 @@ MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/BSD/ \
 MAINTAINER=	jfitz@FreeBSD.ORG
 
 BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5
+RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
+
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL

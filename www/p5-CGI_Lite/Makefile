@@ -3,7 +3,7 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1996/10/24 08:41:38 jfitz Exp $
 #
 
 DISTNAME=	CGI_Lite-1.62.pm
@@ -20,6 +20,7 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 
 EXTRACT_SUFX=	.gz
 BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5
+RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
 NO_BUILD=	yes
 

@@ -3,7 +3,7 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1996/10/24 08:40:27 jfitz Exp $
 #
 
 DISTNAME=	CGI-modules-2.75
@@ -20,6 +20,7 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 
 BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5 \
 		${PREFIX}/lib/perl5/site_perl/URI/Escape.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL

@@ -3,7 +3,7 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1996/10/24 08:51:22 jfitz Exp $
 #
 
 DISTNAME=	libwww-perl-5.03
@@ -21,6 +21,7 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5 \
 		${PREFIX}/lib/perl5/site_perl/MD5.pm:${PORTSDIR}/security/p5-MD5 \
 		${PREFIX}/lib/perl5/site_perl/Net/FTP.pm:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
