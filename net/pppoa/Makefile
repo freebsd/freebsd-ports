@@ -18,6 +18,7 @@ MAINTAINER=	brian@Awfulhak.org
 HAS_CONFIGURE=		yes
 SPEEDTOUCH=		speedtouch-15082001
 NO_CDROM=		"http://www.alcatel.com/consumer/dsl/disclaimer_lx.htm"
+NO_PACKAGE=		"http://www.alcatel.com/consumer/dsl/disclaimer_lx.htm"
 RESTRICTED_FILES=	speedmgmt.tar.gz
 
 WRKSRC=			${WRKDIR}/${SPEEDTOUCH}
