@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	acid
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.6b1
 CATEGORIES=	security
-MASTER_SITES=	http://www.cert.org/kb/acid/
-DISTFILES=	acid.0.9.4.tar.gz
+MASTER_SITES=	http://www.andrew.cmu.edu/~rdanyliw/snort/
+DISTFILES=	acid-0.9.6b1.tar.gz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAINTAINER=	foxfair@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
-		${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3 \
+		${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4 \
 		${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql323-server \
 		${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort
 
