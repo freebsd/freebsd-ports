@@ -1,0 +1,60 @@
+
+$FreeBSD$
+
+--- lib3ds/Makefile.in.orig	Mon Jan 14 16:24:32 2002
++++ lib3ds/Makefile.in	Wed Apr 24 12:57:03 2002
+@@ -85,6 +85,7 @@
+ INCLUDES = -I$(top_srcdir)
+ 
+ lib_LIBRARIES = lib3ds.a
++lib_SHLIBRARIES = lib3ds.so.1
+ 
+ lib3ds_a_SOURCES = \
+   io.c \
+@@ -139,7 +140,7 @@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
+-LIBRARIES =  $(lib_LIBRARIES)
++LIBRARIES =  $(lib_LIBRARIES) $(lib_SHLIBRARIES)
+ 
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+@@ -150,6 +151,7 @@
+ lib3ds_a_OBJECTS =  io.o float.o vector.o matrix.o quat.o tcb.o ease.o \
+ chunk.o file.o background.o atmosphere.o shadow.o viewport.o material.o \
+ mesh.o camera.o light.o tracks.o node.o
++lib3ds_so_OBJECTS = $(lib3ds_a_OBJECTS:S/.o$/.so/)
+ AR = ar
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+@@ -169,7 +171,7 @@
+ 
+ all: all-redirect
+ .SUFFIXES:
+-.SUFFIXES: .S .c .o .s
++.SUFFIXES: .S .c .o .s .so
+ $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+ 	cd $(top_srcdir) && $(AUTOMAKE) --gnu --include-deps lib3ds/Makefile
+ 
+@@ -219,6 +221,9 @@
+ .S.o:
+ 	$(COMPILE) -c $<
+ 
++.c.so:
++	$(COMPILE) -fpic -DPIC -c $< -o $(.TARGET)
++
+ mostlyclean-compile:
+ 	-rm -f *.o core *.core
+ 
+@@ -233,6 +238,10 @@
+ 	-rm -f lib3ds.a
+ 	$(AR) cru lib3ds.a $(lib3ds_a_OBJECTS) $(lib3ds_a_LIBADD)
+ 	$(RANLIB) lib3ds.a
++
++lib3ds.so.1: $(lib3ds_so_OBJECTS) $(lib3ds_a_DEPENDENCIES)
++	$(CC) -shared -o lib3ds.so.1 -Wl,-soname=lib3ds.so.1 $(lib3ds_so_OBJECTS) $(lib3ds_a_LIBADD)
++	ln -sf lib3ds.so.1 lib3ds.so
+ 
+ install-lib3dsHEADERS: $(lib3ds_HEADERS)
+ 	@$(NORMAL_INSTALL)

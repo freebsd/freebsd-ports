@@ -6,16 +6,25 @@
 #
 
 PORTNAME=	lib3ds
-PORTVERSION=	1.0.0
+PORTVERSION=	1.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-USE_LIBTOOL=	yes
+USE_MESA=	yes
 INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib"
 
-MAN1=		3ds2m.1 3ds2rib.1 3dsdump.1 lib3ds-config.1
+MAN1=		3ds2m.1 3dsdump.1 lib3ds-config.1
+
+post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/examples/3ds2rib ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/examples/player ${PREFIX}/bin/3dsplayer
+	${INSTALL_PROGRAM} ${WRKSRC}/lib3ds/lib3ds.so.1 ${PREFIX}/lib
+	${LN} -sf ${PREFIX}/lib/lib3ds.so.1 ${PREFIX}/lib/lib3ds.so
 
 .include <bsd.port.mk>
