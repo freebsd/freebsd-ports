@@ -7,9 +7,9 @@
 
 PORTNAME=	PDFJ
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	japanese perl5
 MASTER_SITES=	http://hp1.jonex.ne.jp/%7Enakajima.yasushi/archives/
-PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
@@ -17,4 +17,8 @@ USE_ZIP=	YES
 PERL_CONFIGURE=	YES
 WRKSRC=		${WRKDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
+
+.include <bsd.port.post.mk>
