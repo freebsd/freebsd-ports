@@ -15,17 +15,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flash Rendering Library
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		mad.1:${PORTSDIR}/audio/mad
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
+LIB_DEPENDS=	mad.1:${PORTSDIR}/audio/mad
 
 USE_X_PREFIX=	yes
+USE_SDL=	yes
 USE_GNOME=	gnomehack gtk20 libartlgpl2
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
