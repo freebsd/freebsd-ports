@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mitsuru@riken.go.jp
+MAINTAINER=	so14k@so14k.com
 COMMENT=	A small, efficient HTTP proxy server
 
 GNU_CONFIGURE=	yes
@@ -24,12 +24,15 @@ MAN8=		tinyproxy.8
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@cd ${WRKSRC}/doc; f=tinyproxy.8; \
-	${MV} $$f $$f.orig; \
-	${SED} -e s:/etc/tinyproxy/tinyproxy.conf:${PREFIX}/etc/tinyproxy/tinyproxy.conf: \
-	< $$f.orig > $$f
+	${REINPLACE_CMD} -e s:/etc/tinyproxy/tinyproxy.conf:${PREFIX}/etc/tinyproxy/tinyproxy.conf: \
+	  ${WRKSRC}/doc/tinyproxy.8
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's|stdint.h|stdlib.h|' ${WRKSRC}/src/scanner.c
 .endif
+
+post-install:
+	@${SED} -e "s#%PREFIX%#${PREFIX}#" ${FILESDIR}/tinyproxy.sh > ${WRKDIR}/tinyproxy.sh
+	@${INSTALL_SCRIPT} ${WRKDIR}/tinyproxy.sh ${LOCALBASE}/etc/rc.d
+	@${SED} -e "s#/usr/local/#${LOCALBASE}/#" ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

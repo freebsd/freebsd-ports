@@ -1,0 +1,4 @@
+You may then start the server by running:
+
+   /usr/local/etc/rc.d/tinyproxy.sh start
+
