@@ -22,7 +22,7 @@ MAN8=		bftpd.8
 post-patch:
 	@${REINPLACE_CMD} -e "s@chmod 644 /var@#chmod 644 /var@g; \
 			s@touch /var@#touch /var@g; \
-			s@DESTDIR\)/etc@prefix\)/etc@g; \
+			s@DESTDIR)/etc@prefix)/etc@g; \
 			s@bftpd.conf @bftpd.conf.sample @g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s@-ldl@@" ${WRKSRC}/configure
 	@${CP} ${WRKSRC}/bftpd.conf ${WRKSRC}/bftpd.conf.sample
