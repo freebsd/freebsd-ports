@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.6 1998/11/24 08:53:54 flathill Exp $
+# $Id: Makefile,v 1.7 1999/01/17 20:20:57 vanilla Exp $
 #
 
     SUBDIR += abacus
@@ -20,6 +20,7 @@
     SUBDIR += xopps
     SUBDIR += xpostit
     SUBDIR += xpostitPlus
+    SUBDIR += xrolo
     SUBDIR += zorro
 
 .include <bsd.port.subdir.mk>
