@@ -8,7 +8,6 @@ lib/netscape/LICENSE
 lib/netscape/Netscape.ad
 lib/netscape/XKeysymDB
 lib/netscape/plugins/libnullplugin.so
-lib/netscape/libAutoAdmin.so
 lib/netscape/bookmark.htm
 lib/netscape/vreg
 lib/netscape/navigator-4.5.bin
@@ -115,10 +114,6 @@ lib/netscape/nethelp/Back_up.gif
 lib/netscape/nethelp/Back_sel.gif
 lib/netscape/nethelp/Back_dis.gif
 lib/netscape/nethelp/Utility.js
-lib/netscape/nethelp/netscape/collabra/security.gif
-lib/netscape/nethelp/netscape/collabra/coll.htm
-lib/netscape/nethelp/netscape/collabra/collHdr.htm
-lib/netscape/nethelp/netscape/collabra/help.hpf
 lib/netscape/nethelp/netscape/home/home.gif
 lib/netscape/nethelp/netscape/home/home.htm
 lib/netscape/nethelp/netscape/home/homeHdr.htm
@@ -127,22 +122,14 @@ lib/netscape/nethelp/netscape/navigatr/navigatr.gif
 lib/netscape/nethelp/netscape/navigatr/nav.htm
 lib/netscape/nethelp/netscape/navigatr/navHdr.htm
 lib/netscape/nethelp/netscape/navigatr/help.hpf
-lib/netscape/nethelp/netscape/netcastr/netcastr.gif
-lib/netscape/nethelp/netscape/netcastr/net.htm
-lib/netscape/nethelp/netscape/netcastr/netHdr.htm
-lib/netscape/nethelp/netscape/netcastr/help.hpf
 lib/netscape/nethelp/netscape/shared/collIcon.gif
 lib/netscape/nethelp/netscape/shared/commIcon.gif
 lib/netscape/nethelp/netscape/shared/navIcon.gif
 lib/netscape/nethelp/netscape/shared/netIcon.gif
-lib/netscape/nethelp/netscape/shared/Contents.htm
-lib/netscape/nethelp/netscape/shared/NetHelp1.css
 @dirrm lib/netscape/plugins
 @dirrm lib/netscape/nethelp/netscape/shared
-@dirrm lib/netscape/nethelp/netscape/netcastr
 @dirrm lib/netscape/nethelp/netscape/navigatr
 @dirrm lib/netscape/nethelp/netscape/home
-@dirrm lib/netscape/nethelp/netscape/collabra
 @dirrm lib/netscape/nethelp/netscape
 @dirrm lib/netscape/nethelp
 @dirrm lib/netscape/java/classes/irix
