@@ -1,0 +1,19 @@
+--- libgimp/Makefile.in.orig	Tue Feb 12 05:46:08 2002
++++ libgimp/Makefile.in	Wed Feb 20 14:02:07 2002
+@@ -225,13 +225,13 @@
+ gimpinclude_HEADERS =  	gimp.h				${PDB_WRAPPERS_H}		gimpchainbutton.h		gimpchannel.h			gimpcolorbutton.h		gimpcolordisplay.h		gimpcolorselector.h		gimpcolorspace.h	        gimpcompat.h			gimpdrawable.h			gimpdialog.h			gimpenums.h			gimpenv.h			gimpexport.h			gimpfeatures.h			gimpfileselection.h		gimpgradientselect.h		gimphelpui.h			gimpimage.h			gimplayer.h			gimplimits.h			gimpmath.h			gimpmatrix.h			gimpmenu.h			gimpmodule.h			gimpparasite.h			gimpparasiteio.h		gimppatheditor.h		gimppixelrgn.h			gimppixmap.h			gimpproceduraldb.h		gimpquerybox.h			gimpselection.h			gimpsignal.h			gimpsizeentry.h			gimptile.h			gimptypes.h			gimpui.h			gimpunit.h			gimpunitmenu.h			gimputils.h			gimpvector.h			gimpwidgets.h			gimpintl.h
+ 
+ 
+-libgimp_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE) 	$(no_undefined) 	$(libgimp_export_symbols)
++libgimp_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) $(no_undefined) 	$(libgimp_export_symbols)
+ 
+-libgimp_la_LIBADD = $(GLIB_LIBS) -lm
++libgimp_la_LIBADD = $(GTK_LIBS) -lm
+ 
+ libgimp_la_DEPENDENCIES = $(gimp_def)
+ 
+-libgimpui_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE) 	$(no_undefined) 	$(libgimpui_export_symbols)
++libgimpui_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) $(no_undefined) 	$(libgimpui_export_symbols)
+ 
+ 
+ libgimpui_la_LIBADD = $(GTK_LIBS) $(conditional_libgimp_la)

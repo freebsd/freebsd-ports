@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	1.2.2
-PORTREVISION=	1
-PORTEPOCH=	1
+PORTVERSION=	1.2.3
+PORTREVISION=	0
+#PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
@@ -24,7 +24,8 @@ LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-SHLIBVER?=	${PORTVERSION:S/1.2.//g}
+#SHLIBVER?=	${PORTVERSION:S/1.2.//g}
+SHLIBVER?=	2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -34,6 +35,7 @@ USE_GTK=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+LIBTOOLFILES=	aclocal.m4
 PLIST_SUB=	SHLIBVER="${SHLIBVER}"
 CONFIGURE_ARGS=	--disable-perl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
