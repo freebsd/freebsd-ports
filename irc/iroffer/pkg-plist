@@ -1,6 +1,8 @@
 bin/iroffer
-share/doc/iroffer/README
-share/doc/iroffer/WHATSNEW
-share/doc/iroffer/iroffer.cron
-share/doc/iroffer/sample.config
-@dirrm share/doc/iroffer
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/WHATSNEW
+%%PORTDOCS%%%%EXAMPLESDIR%%/dynip.sh
+%%PORTDOCS%%%%EXAMPLESDIR%%/iroffer.cron
+%%PORTDOCS%%%%EXAMPLESDIR%%/sample.config
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
