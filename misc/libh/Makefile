@@ -13,6 +13,8 @@ MASTER_SITES=	http://rtp.freebsd.org/~libh/distfiles/
 MAINTAINER=	anarcat@anarcat.ath.cx
 COMMENT=	FreeBSD's next-generation sysinstall/package management tool
 
+BROKEN=		"fails to compile due to recent changes elsewhere"
+
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83 \
 		tvision.0:${PORTSDIR}/devel/tvision
 BUILD_DEPENDS= 	${X11BASE}/lib/libqt2.a:${PORTSDIR}/x11-toolkits/qt2-static
