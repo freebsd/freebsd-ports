@@ -20,6 +20,7 @@
     SUBDIR += jlex
     SUBDIR += jsdk
     SUBDIR += kaffe
+    SUBDIR += linux-jdk
     SUBDIR += netrexx
     SUBDIR += shujit
     SUBDIR += tya
