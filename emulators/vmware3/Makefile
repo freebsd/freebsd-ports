@@ -175,18 +175,18 @@ pre-install: setoptions
 		 ; do \
 		${INSTALL_SCRIPT} ${WRKSRC}/bin/$${i} ${VMDIR}/bin; \
 	done
-	for file in ${WRKSRC}/lib/bin/*; do \
-		${INSTALL_SCRIPT} $${file} ${VMDIR}/bin; \
+	for f in ${WRKSRC}/lib/bin/*; do \
+		${INSTALL_SCRIPT} $${f} ${VMDIR}/bin; \
 	done
 
 	${MKDIR} ${VMDIR}/configurator
-	for file in ${WRKSRC}/lib/configurator/* ; do \
-		${INSTALL_DATA} $${file} ${VMDIR}/configurator; \
+	for f in ${WRKSRC}/lib/configurator/* ; do \
+		${INSTALL_DATA} $${f} ${VMDIR}/configurator; \
 	done
 
 	${MKDIR} ${VMDIR}/isoimages
-	for file in ${WRKSRC}/lib/isoimages/* ; do \
-		${INSTALL_DATA} $${file} ${VMDIR}/isoimages; \
+	for f in ${WRKSRC}/lib/isoimages/* ; do \
+		${INSTALL_DATA} $${f} ${VMDIR}/isoimages; \
 	done
 
 	${MKDIR} ${VMDIR}/licenses/site
@@ -231,8 +231,8 @@ pre-clean:
 	@${FIND} ${WRKSRC} | ${GREP} \@ | ${XARGS} ${RM}
 .endif
 
-.include <bsd.port.post.mk>
-
 .if exists(${WRKDIR}/Makefile.inc.net)
 .include "${WRKDIR}/Makefile.inc.net"
 .endif
+
+.include <bsd.port.post.mk>
