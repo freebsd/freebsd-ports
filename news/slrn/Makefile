@@ -3,11 +3,10 @@
 # Date created:        28 March 1997
 # Whom:                Carey Jones <mcj@acquiesce.org>
 #
-# $Id: Makefile,v 1.12 1998/12/06 21:40:51 billf Exp $
+# $Id: Makefile,v 1.13 1999/05/16 23:41:01 steve Exp $
 #
 
-DISTNAME=	slrn0.9.5.5
-PKGNAME=	slrn-0.9.5.5
+DISTNAME=	slrn-0.9.5.6
 CATEGORIES=	news
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slrn/
 
@@ -15,7 +14,6 @@ MAINTAINER=	xaa@xaa.iae.nl
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
-WRKSRC=		${WRKDIR}/slrn
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all slrnpull
 MAN1=		slrn.1
