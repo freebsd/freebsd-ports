@@ -1,0 +1,19 @@
+--- loop.c.orig	Fri Feb  6 11:23:34 1998
++++ loop.c	Tue Aug 11 16:57:35 1998
+@@ -1637,6 +1637,7 @@
+ 	     extra cost because something else was already moved.  */
+ 
+ 	  if (already_moved[regno]
++	      || flag_move_all_movables
+ 	      || (threshold * savings * m->lifetime) >= insn_count
+ 	      || (m->forces && m->forces->done
+ 		  && n_times_used[m->forces->regno] == 1))
+@@ -3911,7 +3912,7 @@
+ 	     of such giv's whether or not we know they are used after the loop
+ 	     exit.  */
+ 
+-	  if (v->lifetime * threshold * benefit < insn_count
++	  if (!flag_reduce_all_givs && v->lifetime * threshold * benefit < insn_count
+ 	      && ! bl->reversed)
+ 	    {
+ 	      if (loop_dump_stream)

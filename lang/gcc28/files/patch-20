@@ -1,0 +1,11 @@
+--- config/alpha/alpha.c.orig	Fri Feb  6 17:23:50 1998
++++ config/alpha/alpha.c	Tue Aug 11 04:06:42 1998
+@@ -1843,7 +1843,7 @@
+ /* Write a version stamp.  Don't write anything if we are running as a
+    cross-compiler.  Otherwise, use the versions in /usr/include/stamp.h.  */
+ 
+-#if !defined(CROSS_COMPILE) && !defined(_WIN32) && !defined(__linux__) && !defined(VMS)
++#if !defined(CROSS_COMPILE) && !defined(_WIN32) && !defined(__OpenBSD__) && !defined(__FreeBSD__) && !defined(__linux__) && !defined(VMS)
+ #include <stamp.h>
+ #endif
+ 

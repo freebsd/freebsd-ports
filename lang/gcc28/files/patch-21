@@ -1,0 +1,11 @@
+--- ginclude/stdarg.h.orig	Sat Oct 18 10:26:07 1997
++++ ginclude/stdarg.h	Tue Aug 11 13:27:03 1998
+@@ -64,7 +64,7 @@
+ 
+ #ifndef __GNUC_VA_LIST
+ #define __GNUC_VA_LIST
+-#if defined(__svr4__) || defined(_AIX) || defined(_M_UNIX) || defined(__NetBSD__)
++#if defined(__svr4__) || defined(_AIX) || defined(_M_UNIX) || defined(__NetBSD__) || defined(__OpenBSD__)
+ typedef char *__gnuc_va_list;
+ #else
+ typedef void *__gnuc_va_list;
