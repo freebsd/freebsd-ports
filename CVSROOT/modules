@@ -2040,6 +2040,7 @@ gindent		ports/devel/gindent
 gini		ports/net/gini
 giram		ports/graphics/giram
 git		ports/misc/git
+gj-jdk11	ports/java/gj-jdk11
 gkermit		ports/comms/gkermit
 gkleds2		ports/sysutils/gkleds2
 gkrellflynn	ports/sysutils/gkrellflynn
