@@ -9,19 +9,6 @@
  
  if test -n "$with_libs"; then
      for dir in $with_libs; do
-@@ -392,9 +392,9 @@
- ])])
- AC_SUBST(DLLIB)
- 
--AC_CHECK_FUNC(iconv, ICONVLIB=, [
--AC_CHECK_LIB(giconv, iconv, ICONVLIB=-lgiconv, [
--    AC_MSG_WARN([*** Unable to locate iconv() function.])
-+AC_CHECK_FUNC(libiconv, ICONVLIB=, [
-+AC_CHECK_LIB(giconv, libiconv, ICONVLIB=-lgiconv, [
-+    AC_MSG_WARN([*** Unable to locate libiconv() function.])
-     ICONVLIB=
- ])])
- AC_SUBST(ICONVLIB)
 @@ -439,7 +439,7 @@
  
  LOC_CHECK_INC_PATH(dbm,DBM,DBMINCPATH)
