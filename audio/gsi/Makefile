@@ -8,8 +8,7 @@
 PORTNAME=	gsi
 PORTVERSION=	0.9.4
 CATEGORIES=	audio
-MASTER_SITES=	http://www.farley.org/ \
-		http://www.xs4all.nl/~whs/gsi/bestanden/
+MASTER_SITES=	http://www.farley.org/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
