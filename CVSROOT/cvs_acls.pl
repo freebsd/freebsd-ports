@@ -166,17 +166,20 @@ while (<AVAIL>) {
 	# Module matches if it is a NULL module list in the avail line.
 	# If module list is not null, we check every argument combination.
 	my $in_repo = (!$m || 0);
-	if (!$in_repo) {
-		my @tmp = split(/[\s,]+/,$m);
+	unless ($in_repo) {
+		my @tmp = split(/[\s,]+/, $m);
 		for my $j (@tmp) {
 			# If the repos from avail is a parent(or equal)
 			# dir of $repos, OK
-			$in_repo = 1, last if ($repos eq $j || $repos =~ /^$j\//);
+			if ($repos eq $j || $repos =~ /^$j\//) {
+				$in_repo = 1;
+				last;
+			}
 		}
-		if (!$in_repo) {
+		unless ($in_repo) {
 			#$in_repo = 1;
 			for my $j (@ARGV) {
-				last if !($in_repo = grep ($_ eq $j, @tmp));
+				last unless $in_repo = grep ($_ eq $j, @tmp);
 			}
 		}
 	}
