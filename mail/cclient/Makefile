@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cclient
-PORTVERSION=	2002d
+PORTVERSION=	2004
 PORTEPOCH=	1
-CATEGORIES=	mail devel
+CATEGORIES=	mail devel ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		http://atreides.freenix.no/~anders/%SUBDIR%/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/imap/%SUBDIR%/ \
@@ -56,11 +56,10 @@ post-patch:
 post-configure:
 	@${ECHO_MSG} ">> The c-client shared library will be named ${SHLIBNAME}"
 
-HEADERS=	c-client.h dummy.h env.h env_unix.h fdstring.h flocksim.h \
-		flstring.h fs.h ftl.h imap4r1.h linkage.c linkage.h mail.h \
-		mbox.h mbx.h mh.h misc.h mmdf.h mtx.h mx.h netmsg.h news.h \
-		newsrc.h nl.h nntp.h osdep.h phile.h pop3.h pseudo.h rfc822.h \
-		smtp.h sslio.h tcp.h tcp_unix.h tenex.h unix.h utf8.h
+HEADERS=	c-client.h dummy.h env.h env_unix.h fdstring.h flstring.h \
+		fs.h ftl.h imap4r1.h linkage.c linkage.h mail.h mbx.h mh.h \
+		misc.h mx.h netmsg.h newsrc.h nl.h nntp.h osdep.h pseudo.h \
+		rfc822.h smtp.h sslio.h tcp.h tcp_unix.h unix.h utf8.h
 PORTREV_H=	${WRKDIR}/portrevision.h
 
 post-build:
