@@ -1,5 +1,5 @@
---- Makefile.linux.orig	Fri Aug 30 19:19:25 1996
-+++ Makefile.linux	Thu Apr 16 20:30:53 1998
+--- Makefile.linux.orig	Sat Aug 31 02:19:25 1996
++++ Makefile.linux	Sat Feb 24 11:29:47 2001
 @@ -34,8 +34,8 @@
  # Set path where you want to install xaero and it's application-default
  # resource file.
@@ -11,7 +11,7 @@
  
  
  ###########################################################################
-@@ -43,17 +43,17 @@
+@@ -43,19 +43,19 @@
  # of X11 in parallel on their systems, e.g. X11R5 and X11R6. So here
  # you can choose the one you want.
  
@@ -22,17 +22,21 @@
 +XINCLUDE   = ${PREFIX}/include      
 +XLIB       = ${PREFIX}/lib 
 +FWFINCLUDE = $(XINCLUDE)
-+FWFLIB	   = $(XLIB)
++FWFLIB     = $(XLIB)
  
  
  ###########################################################################
  # Compiler and Linker definitions.
  
- CC       = gcc
+-CC       = gcc
 -COPTS    = -ansi -Wall $(OPTIMIZE) 
-+COPTS    = -ansi -Wall $(OPTIMIZE)
++CC       ?= gcc
++COPTS    = -ansi $(OPTIMIZE)
  DEBUG    = 
- OPTIMIZE = -O2 -DNODEBUG
+-OPTIMIZE = -O2 -DNODEBUG
++OPTIMIZE = -DNODEBUG
+ 
+ LD       = ld
  
 @@ -63,16 +63,16 @@
  #libraries if needed; use -L and -l syntax, e.g.
@@ -54,6 +58,15 @@
  
  
  ###########################################################################
+@@ -101,7 +101,7 @@
+ ###########################################################################
+ # compiler-options
+ 
+-CFLAGS = $(COPTS) $(DEBUG) -I$(XINCLUDE) -I$(FWFINCLUDE)
++CFLAGS += $(COPTS) $(DEBUG) -I$(XINCLUDE) -I$(FWFINCLUDE)
+ 
+ 
+ ###########################################################################
 @@ -134,7 +134,7 @@
  # The default rule for compiling .o files from .c files
  
@@ -63,27 +76,30 @@
  
  
  ###########################################################################
-@@ -158,7 +158,23 @@
+@@ -157,8 +157,24 @@
+ # to compile this application type 'make all'. For infos type 'make help'.
  
  copyFilesToDestination::
- 	$(CP) xaero $(XAEROBIN)
-+	strip $(XAEROBIN)/xaero
+-	$(CP) xaero $(XAEROBIN)
+-	$(CP) ../app-defaults/XAero $(XAEROAPPL)
++	${BSD_INSTALL_PROGRAM} xaero $(XAEROBIN)
 +	[ -d $(XAEROAPPL) ] || mkdir -p $(XAEROAPPL)
 +	[ -d ${PREFIX}/lib/X11/xaero ] || mkdir -p ${PREFIX}/lib/X11/xaero
- 	$(CP) ../app-defaults/XAero $(XAEROAPPL)
-+	$(CP) ../scripts/povsubst $(XAEROBIN)
-+	$(CP) ../scripts/rayclear $(XAEROBIN)
-+	$(CP) ../scripts/raystart $(XAEROBIN)
-+	$(CP) ../scripts/raystat $(XAEROBIN)
-+	sed 's:__XAERO_LIB_PATH__:${PREFIX}/lib/X11/xaero:' ../scripts/raymany > $(XAEROBIN)/raymany
++	${BSD_INSTALL_DATA} ../app-defaults/XAero $(XAEROAPPL)
++	${BSD_INSTALL_SCRIPT} ../scripts/povsubst $(XAEROBIN)
++	${BSD_INSTALL_SCRIPT} ../scripts/rayclear $(XAEROBIN)
++	${BSD_INSTALL_SCRIPT} ../scripts/raystart $(XAEROBIN)
++	${BSD_INSTALL_SCRIPT} ../scripts/raystat $(XAEROBIN)
 +	chmod +x $(XAEROBIN)/raymany
-+	$(CP) ../povray-include/FILELIST.povray-include ${PREFIX}/lib/X11/xaero
-+	$(CP) ../povray-include/aeromat2.inc ${PREFIX}/lib/X11/xaero
-+	$(CP) ../povray-include/aerop1materials.inc ${PREFIX}/lib/X11/xaero
-+	$(CP) ../povray-include/aeropov1.inc ${PREFIX}/lib/X11/xaero
-+	$(CP) ../povray-include/aeropov2.inc ${PREFIX}/lib/X11/xaero
++	sed 's:__XAERO_LIB_PATH__:${PREFIX}/lib/X11/xaero:' ../scripts/raymany > ../scripts/raymany.in
++	${BSD_INSTALL_SCRIPT} ../scripts/raymany.in $(XAEROBIN)/raymany
++	${BSD_INSTALL_DATA} ../povray-include/FILELIST.povray-include ${PREFIX}/lib/X11/xaero
++	${BSD_INSTALL_DATA} ../povray-include/aeromat2.inc ${PREFIX}/lib/X11/xaero
++	${BSD_INSTALL_DATA} ../povray-include/aerop1materials.inc ${PREFIX}/lib/X11/xaero
++	${BSD_INSTALL_DATA} ../povray-include/aeropov1.inc ${PREFIX}/lib/X11/xaero
++	${BSD_INSTALL_DATA} ../povray-include/aeropov2.inc ${PREFIX}/lib/X11/xaero
 +	mkdir -p ${PREFIX}/lib/X11/xaero/examples
-+	$(CP) ../examples/* ${PREFIX}/lib/X11/xaero/examples
++	${BSD_INSTALL_DATA} ../examples/* ${PREFIX}/lib/X11/xaero/examples
  
  all:: xaero
  	strip xaero
