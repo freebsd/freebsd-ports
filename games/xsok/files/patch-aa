@@ -1,6 +1,6 @@
 --- src/Imakefile.orig	Sun Mar 17 20:54:27 1996
-+++ src/Imakefile	Tue Jan 18 00:00:00 2000
-@@ -46,17 +46,17 @@
++++ src/Imakefile	Tue Sep 12 05:02:42 2000
+@@ -46,17 +46,18 @@
  # BINDIR and LIBDIR should be predefined by the templates
  # BINDIR = /usr/bin/X11
  # LIBDIR = /usr/lib/X11
@@ -10,7 +10,8 @@
 -XSOKDOCDIR = /usr/doc/xsok
 +XSOKLIBDIR = $(LIBDIR)/xsok
 +APPDEFSDIR = $(LIBDIR)/app-defaults
-+XSOKMANDIR = $(MANDIR)/../man6
++XSOKMANDIR = $(MANDIR)
++MANSUFFIX = 6
 +XSOKDOCDIR = $(X11BASE)/share/doc/xsok
  
  # This is the name of the save directory, where solved games are stored:
@@ -23,7 +24,7 @@
  
  # paths for installation in user's home-directory.
  LXSOKBINDIR = $(HOME)/bin
-@@ -65,7 +65,7 @@
+@@ -65,7 +66,7 @@
  
  # xsok needs to know where the xpm library resides
  XPMLIB 			= -L$(USRLIBDIR) -lXpm
@@ -32,7 +33,7 @@
  
  # *****************************************************************************
  # I hope you don't need to change anything below this point
-@@ -74,14 +74,14 @@
+@@ -74,14 +75,14 @@
  CC = c89
  CCOPTIONS =
  #else
@@ -49,7 +50,7 @@
  #endif
  #endif
  
-@@ -109,7 +109,7 @@
+@@ -109,7 +110,7 @@
  # *.c  require  version.h xsok.h
  # X*.c additionally require X-sok.h and Tableau.h
  # X-widget.c additionally requires TableauP.h
@@ -58,7 +59,7 @@
  
  all::	$(ALLTARGETS)
  
-@@ -132,9 +132,9 @@
+@@ -132,9 +133,9 @@
  
  # the install targets require that make has been run in the lib directory
  install:: $(MYPROGS)
@@ -70,18 +71,21 @@
  	chmod 777 $(XSOKSAVEDIR)
  	(cd ../lib; tar cf - $(LIBCONTS) | (cd $(XSOKLIBDIR); tar xf -))
  	chown -R root $(XSOKLIBDIR) $(XSOKSAVEDIR)
-@@ -142,12 +142,12 @@
+@@ -142,14 +143,11 @@
  	(cd ../lib && ../src/mergescores $(XSOKSAVEDIR)/Xsok.score \
  	   $(XSOKSAVEDIR)/Sokoban.score $(XSOKSAVEDIR)/Cyberbox.score)
  	chmod 666 $(XSOKSAVEDIR)/[A-z]*.score
 -	(umask 022 && mkdirhier $(XSOKDOCDIR))
 +	(umask 022 && $(MKDIRHIER) $(XSOKDOCDIR))
  	if [ -r ../doc/xsok.dvi ]; then cp ../doc/xsok.dvi $(XSOKDOCDIR); fi
- 	cp ../doc/cyberbox.doc $(XSOKDOCDIR)
- 	cp ../etc/COPYRIGHT* $(XSOKDOCDIR)
+-	cp ../doc/cyberbox.doc $(XSOKDOCDIR)
+-	cp ../etc/COPYRIGHT* $(XSOKDOCDIR)
++	$(INSTALL) $(INSTALLFLAGS) ../doc/cyberbox.doc $(XSOKDOCDIR)
++	$(INSTALL) $(INSTALLFLAGS) ../etc/COPYRIGHT* $(XSOKDOCDIR)
  	chmod -R a+r $(XSOKDOCDIR)
 -	mkdirhier $(XSOKMANDIR)
-+	$(MKDIRHIER) $(XSOKMANDIR)
- 	cp xsok.man $(XSOKMANDIR)/xsok.6x
- 	chmod 644 $(XSOKMANDIR)/xsok.6x
+-	cp xsok.man $(XSOKMANDIR)/xsok.6x
+-	chmod 644 $(XSOKMANDIR)/xsok.6x
  
+ ComplexProgramTarget($(MYPROG))
+ InstallAppDefaults(XSok)
