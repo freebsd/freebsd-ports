@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomeuserdocs2
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome2-user-docs/2.0
@@ -23,7 +24,8 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomehack
+CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share/gnome
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
