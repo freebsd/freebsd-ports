@@ -2,4 +2,6 @@ bin/gtksee
 share/locale/de/LC_MESSAGES/gtksee.mo
 share/locale/es/LC_MESSAGES/gtksee.mo
 share/locale/fr/LC_MESSAGES/gtksee.mo
+share/locale/ru/LC_MESSAGES/gtksee.mo
+share/locale/ru_UA/LC_MESSAGES/gtksee.mo
 share/locale/zh_CN.EUC/LC_MESSAGES/gtksee.mo
