@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amaya
-PORTVERSION=	5.3
+PORTVERSION=	6.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/
@@ -21,13 +21,13 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/Amaya/obj
 
-USE_MOTIF=	yes
+USE_IMLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--without-graphic-libs
+CONFIGURE_ARGS=	--with-gtk --without-graphic-libs --without-i18n
 
 DICT?=		none
 
@@ -55,10 +55,13 @@ post-extract:
 	${MKDIR} ${WRKSRC}
 
 post-patch:
-	${PERL} -pi.dist -e 's|\"1.0\\.|\"1\\.|g' ${WRKSRC}/../configure
+	${PERL} -pi.dist -e 's|\"1.0\\.|\"1\\.|g ; \
+		 s|gtk-config --cflags|imlib-config --cflags-gdk|g ; \
+		 s|gtk-config --libs|imlib-config --libs-gdk|g ; \
+		 s| -lgdk_imlib||g' ${WRKSRC}/../configure
 
 post-configure:
-	${CP} ${WRKSRC}/Options.orig ${WRKSRC}/Options
+	${LN} -sf ${WRKSRC}/Options.orig ${WRKSRC}/Options
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/../amaya/COPYRIGHT.html ${PREFIX}/Amaya/amaya
