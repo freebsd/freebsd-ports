@@ -8,7 +8,7 @@
 PORTNAME=	xmps
 PORTVERSION=	0.1.0
 CATEGORIES=	graphics gnome
-MASTER_SITES=	http://www-eleves.enst-bretagne.fr/~chavarri/xmps/sources/
+MASTER_SITES=	http://xmps.sourceforge.net/sources/
 
 MAINTAINER=	sobomax@FreeBSD.org
 

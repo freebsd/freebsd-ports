@@ -8,4 +8,4 @@ XMPS is built on top of the SMPEG library from Loki entertainment. It has full
 playlist support, can use OpenGL for the display if available, so that you can
 play full-screen MPEGs without having to change screen resolution.
 
-WWW: http://www-eleves.enst-bretagne.fr/~chavarri/xmps/
+WWW: http://xmps.sourceforge.net/
