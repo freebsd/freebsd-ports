@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	centericq
-PORTVERSION=	4.9.10
-PORTREVISION=	1
+PORTVERSION=	4.9.11
 CATEGORIES=	net
 MASTER_SITES=	http://centericq.de/archive/source/releases/
 
@@ -38,22 +37,8 @@ LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
 CONFIGURE_ARGS+=	--with-fribidi
 .endif
 
-.if defined(WITH_MSN)
-CONFIGURE_ARGS+=	--enable-msn
-EXTRA_PATCHES=		${.CURDIR}/files/msn-*
-pre-patch:
-	@${ECHO_CMD} "========================================================="
-	@${ECHO_CMD} "=====================Important !!!======================="
-	@${ECHO_CMD} "========================================================="
-	@${ECHO_CMD} "There may be some sticky legal issues with the new"
-	@${ECHO_CMD} "version of this protocol. Users should be aware that they"
-	@${ECHO_CMD} "might be in violation of the DMCA or other laws. If this"
-	@${ECHO_CMD} "is unacceptable, hit Ctrl-C now and remove WITH_MSN from"
-	@${ECHO_CMD} "your make flags. The FreeBSD group assumes no"
-	@${ECHO_CMD} "responsibility or liability for any losses or damages"
-	@${ECHO_CMD} "sustained by use or disuse of software in the ports tree."
-	@${ECHO_CMD} "========================================================="
-	@sleep 5
+.if !defined(WITH_MSN)
+CONFIGURE_ARGS+=	--disable-msn
 .endif
 
 .if !defined(WITH_YAHOO)

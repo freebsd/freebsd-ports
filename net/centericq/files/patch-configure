@@ -1,0 +1,20 @@
+--- configure.orig	Mon Mar 22 21:27:18 2004
++++ configure	Sun Mar 28 12:33:02 2004
+@@ -4907,7 +4907,7 @@
+ #include "confdefs.h"
+ #include <libintl.h>
+ extern int _nl_msg_cat_cntr;
+-extern int *_nl_domain_bindings;
++extern int *libintl_nl_domain_bindings;
+ extern
+ #ifdef __cplusplus
+ "C"
+@@ -4915,7 +4915,7 @@
+ const char *_nl_expand_alias ();
+ int main() {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
++return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings + *_nl_expand_alias (0)
+ ; return 0; }
+ EOF
+ if { (eval echo configure:4922: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
