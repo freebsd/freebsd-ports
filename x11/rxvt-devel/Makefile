@@ -6,20 +6,18 @@
 # $Id: Makefile,v 1.10 1996/12/08 02:30:29 obrien Exp $
 #
 
-DISTNAME=	rxvt-2.16
+DISTNAME=	rxvt-2.20
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
-		ftp://ftp.jurai.net/users/winter/rxvt/distfiles/
-MASTER_SITE_SUBDIR=	X11/xutils/terms
+		ftp://ftp.nuclecu.unam.mx/linux/local/rxvt/  \
+		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin.X11/
+MASTER_SITE_SUBDIR=	utils/file/managers/mc/rxvt
+#MASTER_SITE_SUBDIR=	X11/xutils/terms
 
 MAINTAINER=	winter@jurai.net
 
 USE_X11=	yes
 GNU_CONFIGURE=  yes
 MAN1=		rxvt.1
-
-post-install:
-	/usr/sbin/chown root ${PREFIX}/bin/rxvt
-	/bin/chmod 4755 ${PREFIX}/bin/rxvt
 
 .include <bsd.port.mk>
