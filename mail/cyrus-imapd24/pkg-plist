@@ -18,10 +18,12 @@ cyrus/bin/mkimap
 cyrus/bin/pop3d
 cyrus/bin/reconstruct
 cyrus/bin/timsieved
+@unexec if cmp -s %D/etc/cyrus.conf %D/etc/cyrus.conf.dist; then rm -f %D/etc/cyrus.conf; fi
 etc/cyrus.conf.dist
-etc/cyrus.conf
+@exec [ -f %B/cyrus.conf ] || cp %B/%f %B/cyrus.conf
+@unexec if cmp -s %D/etc/imapd.conf %D/etc/imapd.conf.dist; then rm -f %D/etc/imapd.conf; fi
 etc/imapd.conf.dist
-etc/imapd.conf
+@exec [ -f %B/imapd.conf ] || cp %B/%f %B/imapd.conf
 etc/rc.d/imapd.sh.sample
 include/cyrus/acap.h
 include/cyrus/acl.h
