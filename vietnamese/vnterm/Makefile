@@ -4,7 +4,7 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.7 1997/09/22 16:54:25 max Exp $
+# $Id: Makefile,v 1.8 1997/10/10 06:53:45 obrien Exp $
 #
 
 DISTNAME=	vnterm3.3
@@ -25,7 +25,7 @@ post-patch:
 	@/bin/ln ${WRKSRC}/vnterm.1V ${WRKSRC}/vnterm.man
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/VNterm.sh ${PREFIX}/bin/VNterm 
+	@${INSTALL_SCRIPT} ${WRKDIR}/VNterm.sh ${PREFIX}/bin/VNterm
 	@${MKDIR} ${PREFIX}/lib/X11/fonts/vietnamese
 	@(cd ${WRKSRC}/../fonts/X ; \
 	${INSTALL_DATA} fonts.dir *.pcf.Z  \
