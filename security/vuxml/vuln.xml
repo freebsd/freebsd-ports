@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3cc84400-6576-11d9-a9e7-0001020eed82">
+    <topic>mpg123 -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>mpg123</name>
+	<name>mpg123-nas</name>
+	<name>mpg123-esound</name>
+	<range><lt>0.59r_17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Yuri D'Elia has found a buffer overflow vulnerability in
+	  mpg123's parsing of frame headers in input streams.  This
+	  vulnerability can potentially lead to execution of arbitrary
+	  code with the permissions of the user running mpg123, if the
+	  user runs mpg123 on a specially crafted MP2 or MP3 file.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0991</cvename>
+    </references>
+    <dates>
+      <discovery>2005-01-01</discovery>
+      <entry>2005-01-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5fe7e27a-64cb-11d9-9e1e-c296ac722cb3">
     <topic>squid -- denial of service with forged WCCP messages</topic>
     <affects>
@@ -540,7 +568,7 @@ http_access deny Gopher</pre>
   </vuln>
 
   <vuln vid="ca9ce879-5ebb-11d9-a01c-0050569f0001">
-    <topic>exim -- two relatively minor security issues</topic>
+    <topic>exim -- two buffer overflow vulnerabilities</topic>
     <affects>
       <package>
         <name>exim</name>
@@ -570,7 +598,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2005-01-05</discovery>
       <entry>2005-01-05</entry>
-      <modified>2005-01-09</modified>
+      <modified>2005-01-13</modified>
     </dates>
   </vuln>
 
@@ -579,9 +607,7 @@ http_access deny Gopher</pre>
     <affects>
       <package>
         <name>mpg123</name>
-        <range><le>0.59r_15</le></range>
-      </package>
-      <package>
+        <name>mpg123-nas</name>
         <name>mpg123-esound</name>
         <range><le>0.59r_15</le></range>
       </package>
@@ -605,6 +631,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-12-15</discovery>
       <entry>2005-01-03</entry>
+      <modified>2005-01-13</modified>
     </dates>
   </vuln>
 
@@ -956,7 +983,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-11-23</discovery>
       <entry>2004-12-23</entry>
-      <modified>2005-12-11</modified>
+      <modified>2005-01-13</modified>
     </dates>
   </vuln>
 
