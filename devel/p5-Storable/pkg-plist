@@ -1,11 +1,15 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/Storable.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/Storable.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/_freeze.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/_retrieve.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/_store.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/_store_fd.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/fd_retrieve.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/freeze.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/lock_nstore.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/lock_retrieve.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/lock_store.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/nfreeze.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/nstore.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/nstore_fd.al
