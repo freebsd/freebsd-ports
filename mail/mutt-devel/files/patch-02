@@ -1,35 +1,16 @@
---- doc/Makefile.in.orig	Wed Mar 29 11:42:49 2000
-+++ doc/Makefile.in	Mon Jun 12 16:50:51 2000
-@@ -58,13 +58,16 @@
+--- doc/Makefile.in.orig	Tue Nov  6 20:12:31 2001
++++ doc/Makefile.in	Tue Jan 15 17:22:04 2002
+@@ -60,7 +60,7 @@
  topsrcdir_DOCFILES = COPYRIGHT GPL INSTALL ChangeLog	\
- 	README NEWS TODO README.SECURITY README.SSL README.UPGRADE
+ 	README NEWS TODO README.SECURITY README.SSL 
  
 -all: muttrc.man try-html try-txt
-+all: muttrc.man try-html try-txt try-latin1
++all: 
  
  try-html: ../makedoc
--	test -f manual.html || $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
-+	rm -f *.html && $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
- 
- try-txt: ../makedoc
--	test -f manual.txt || $(MAKE) manual.txt || cp $(srcdir)/manual.txt ./
-+	$(MAKE) manual.txt || cp $(srcdir)/manual.txt ./
-+
-+try-latin1: 
-+	$(MAKE) manual.latin1 || cp $(srcdir)/manual.latin1 ./
- 
- install: all
- 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
-@@ -75,16 +78,16 @@
- 	$(INSTALL) -m 644 muttrc.man $(DESTDIR)$(mandir)/man5/muttrc.5
- 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)
- 	for f in $(srcdir_DOCFILES) ; do \
--		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
-+	 	$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
- 	done
- 	for f in $(topsrcdir_DOCFILES) ; do \
--		$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
-+	 	$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
+ 	test -f manual.html || $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
+@@ -86,10 +86,10 @@
+ 		$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
  	done
  	$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
 -	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
@@ -43,26 +24,3 @@
  
  uninstall:
  	-rm -f $(DESTDIR)$(mandir)/man1/mutt.1
-@@ -93,14 +96,18 @@
- 	-rm -rf $(DESTDIR)$(docdir)
- 
- manual.txt: manual.sgml
--	if sgml2txt -c latin manual ; then \
--		uniq < manual.txt | expand > _manual.txt ; \
--		rm manual.txt ; \
-+	if sgmlfmt -f ascii manual; then \
-+		uniq < manual.ascii | expand > _manual.txt ; \
-+		rm -f manual.txt manual.ascii; \
- 		mv _manual.txt manual.txt ;\
- 	fi
- 
- manual.html: manual.sgml
--	sgml2html manual  || true
-+	@# sgml2html manual  || true
-+	sgmlfmt -f html manual  || true
-+
-+manual.latin1: manual.sgml
-+	sgmlfmt -f latin1 manual  || true
- 
- manual.ps: manual.sgml
- 	sgml2latex --output=ps manual || true
