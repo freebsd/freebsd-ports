@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnet
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.eecs.umich.edu/~dhelder/misc/gnet/src/
 
