@@ -13,7 +13,7 @@ MASTER_SITES=	http://autotrace.sourceforge.net/frontline/
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	autotrace.2:${PORTSDIR}/graphics/autotrace \
+LIB_DEPENDS=	autotrace.3:${PORTSDIR}/graphics/autotrace \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		popt.0:${PORTSDIR}/devel/popt
 
