@@ -9,7 +9,7 @@ PORTNAME=	libXau
 PORTVERSION=	0.1.1
 PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
+MASTER_SITES=	http://freedesktop.org/~ajax/xlibs-release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Authentication Protocol library for X11
