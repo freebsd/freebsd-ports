@@ -17,6 +17,7 @@
     SUBDIR += dragstack
     SUBDIR += drivel
     SUBDIR += egroupware
+    SUBDIR += freemind
     SUBDIR += fusenshi
     SUBDIR += gaddr
     SUBDIR += ganttproject

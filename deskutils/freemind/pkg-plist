@@ -1,0 +1,12 @@
+bin/freemind
+freemind-%%VER%%/accessories/mm2xbel.xsl
+freemind-%%VER%%/accessories/xbel2mm.xsl
+freemind-%%VER%%/doc/freemind.mm
+freemind-%%VER%%/lib/freemind.jar
+freemind-%%VER%%/license
+freemind-%%VER%%/patterns.xml
+freemind-%%VER%%/user.properties
+@dirrm freemind-%%VER%%/accessories
+@dirrm freemind-%%VER%%/doc
+@dirrm freemind-%%VER%%/lib
+@dirrm freemind-%%VER%%
