@@ -5,7 +5,7 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.31 1996/11/18 11:41:29 asami Exp $
+# $Id: Makefile,v 1.32 1996/11/18 14:15:15 asami Exp $
 #
 
 DISTNAME=       lynx2-6
@@ -13,8 +13,8 @@ PKGNAME=        lynx-2.6
 CATEGORIES=	www
 MASTER_SITES=   ftp://ftp2.cc.ukans.edu/pub/lynx/lynx2-6/ \
 		ftp://ftp.more.net/pub/mirrors/lynx/ \
-		http://www.mtsu.edu/~ripa0003/
-DISTFILES=      ${DISTNAME}.zip 2-6update.zip
+		http://www.wfbr.edu/lynx/
+DISTFILES=      ${DISTNAME}.zip lynx2-6mods.zip
 
 #PATCH_SITES=    http://www.nyu.edu/pages/wsn/subir/lynx/patches/
 #PATCHFILES=     2-6-patch11.txt
