@@ -7,7 +7,7 @@
 
 PORTNAME=	sympa
 PORTVERSION?=	4.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES?=	http://www.sympa.org/distribution/old/
 
@@ -28,8 +28,6 @@ BUILD_DEPENDS+=	${SITE_PERL}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/${PERL_ARCH}/Locale/Msgcat.pm:${PORTSDIR}/misc/p5-Locale-Msgcat \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Uses non-standard httpd directory
 
 DB_TYPE=
 
@@ -64,9 +62,12 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}/sympa \
 		--with-confdir=${PREFIX}/etc \
 		--with-initdir=${PREFIX}/etc/rc.d \
 		--with-etcdir=${PREFIX}/sympa/bin/etc \
+		--with-iconsdir=${PREFIX}/www/icons \
 		${CONFIGURE_TARGET}
 CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
+
+MAN8=		alias_manager.8 archived.8 bounced.8 sympa.8
 
 pre-fetch:
 	@${ECHO} ""
