@@ -6,10 +6,10 @@
 #
 
 PORTNAME=		xzip
-PORTVERSION=		1.8.1
+PORTVERSION=		1.8.2
 CATEGORIES=		games
 MASTER_SITES=   	ftp://ftp.gmd.de/if-archive/infocom/interpreters/zip/
-DISTFILES=		xzip181.tar.Z
+DISTFILES=		xzip182.tar.Z
 
 MAINTAINER=		mph@freebsd.org
 
