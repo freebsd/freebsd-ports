@@ -9,9 +9,9 @@
 -SPOOLDIR	= /var/spool/fido
 -LOGDIR		= /var/log/fido
 +# BINDIR	= /usr/local/bin
-+BINDIR		= /libexec/fidogate
++BINDIR		= /usr/local/libexec/fidogate
 +# LIBDIR	= /usr/local/lib/fidogate
-+LIBDIR		= /libexec/fidogate
++LIBDIR		= /usr/local/libexec/fidogate
 +# SPOOLDIR	= /var/spool/fido
 +SPOOLDIR	= /var/spool/fidogate
 +# LOGDIR	= /var/log/fido
@@ -21,9 +21,9 @@
 -INFODIR		= /usr/local/info
 -HTMLDIR		= /home/mj/public_html/fidogate
 +# INFODIR	= /usr/local/info
-+INFODIR		= /share/doc/fidogate/info
++INFODIR		= /usr/local/share/doc/fidogate/info
 +# HTMLDIR	= /home/mj/public_html/fidogate
-+HTMLDIR		= /share/doc/fidogate/html
++HTMLDIR		= /usr/local/share/doc/fidogate/html
 +  
  
  # Outbound *base* directory, i.e. outbound is OUTBOUND/out.xxx
@@ -49,23 +49,14 @@
 -NEWSLIBDIR	= /usr/lib/news
 -NEWSSPOOLDIR	= /var/spool/news
 +# NEWSLIBDIR	= /usr/lib/news
-+NEWSLIBDIR	= /usr/local/libexec/news
++NEWSLIBDIR	= /usr/local/libexec/cnews
 +# NEWSSPOOLDIR	= /var/spool/news
 +NEWSSPOOLDIR	= /var/news
  
  # Ifmail directory
 -IFMAILDIR       = /usr/local/lib/ifmail
 +# IFMAILDIR       = /usr/local/lib/ifmail
-+IFMAILDIR       = $(PREFIX)/libexec/ifmail
++IFMAILDIR       = /usr/local/libexec/ifmail
  
  # perl
  PERL		= /usr/bin/perl
-@@ -103,8 +117,6 @@
-  INSTALL_DATA	= $(INSTALL) -c -g $(GROUP) -o $(OWNER) -m $(PERM_DATA)
-  INSTALL_SETUID	= $(INSTALL) -c -g $(GROUP) -o $(OWNER) -m $(PERM_SETUID)
-  INSTALL_DIR	= $(INSTALL) -g $(GROUP) -o $(OWNER) -m $(PERM_DIR) -d
--# extra prefix for installation
-- PREFIX         =
- 
- # library name
- # LIB		= fidogate.a			# OS2
