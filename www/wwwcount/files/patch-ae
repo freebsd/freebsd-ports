@@ -1,5 +1,5 @@
-*** Count-install.orig	Mon Nov 24 04:49:51 1997
---- Count-install	Sat Nov 29 18:33:38 1997
+*** Count-install.orig	Sat May  9 16:53:02 1998
+--- Count-install	Sun Jun  7 15:03:51 1998
 ***************
 *** 193,199 ****
   
@@ -90,7 +90,7 @@
   fi
   
 ! echo "installing rgb.txt->$BASE_DIR"
-! $INSTALL_PROG -c -o $UserId -g $GroupId -m 644 $Rgbfile $BASE_DIR/rgb.txt
+! $INSTALL_PROG -c -m 644 $Rgbfile $BASE_DIR/rgb.txt
   
 ! echo "creating Log directory $LOG_DIR"
 ! ./mkdirhier $LOG_DIR
@@ -99,13 +99,13 @@
 ! chmod 775 $LOG_DIR
   
   echo "installing image strip for digit style A->$DIGIT_DIR/A"
-  $INSTALL_PROG -c -o $UserId -g $GroupId -m 644 $DigitA/strip.gif\
+  $INSTALL_PROG -c -m 644 $DigitA/strip.gif\
 --- 323,335 ----
       echo 
   fi
   
 ! echo "installing rgb.txt->$RGB_DIR"
-! $INSTALL_PROG -c -o $UserId -g $GroupId -m 644 $Rgbfile $RGB_DIR/rgb.txt
+! $INSTALL_PROG -c -m 644 $Rgbfile $RGB_DIR/rgb.txt
   
 ! echo "installing $LOG_FILE->$LOG_DIR"
 ! touch $LOG_DIR/$LOG_FILE
@@ -113,15 +113,25 @@
 ! chown $UserId.$GroupId $LOG_DIR/$LOG_FILE
   
   echo "installing image strip for digit style A->$DIGIT_DIR/A"
-  $INSTALL_PROG -c -o $UserId -g $GroupId -m 644 $DigitA/strip.gif\
+  $INSTALL_PROG -c -m 644 $DigitA/strip.gif\
 ***************
-*** 362,367 ****
---- 361,368 ----
+*** 360,367 ****
+  # -R is not portable, reported by Geoff Scully <gws@dis.on.ca> and suggested
+  # the alternative (01/15/96)
   #chown -R $UserId.$GroupId $BASE_DIR
-  find $BASE_DIR -exec chown $UserId {} \;
-  find $BASE_DIR -exec chgrp $GroupId {} \;
-+ find $LIB_DIR -exec chown $UserId {} \;
-+ find $LIB_DIR -exec chgrp $GroupId {} \;
+! #find $BASE_DIR -exec chown $UserId {} \;
+! #find $BASE_DIR -exec chgrp $GroupId {} \;
+  #            echo "UserId=$UserId"
+  #            echo "GroupId=$GroupId"
+          ;;
+--- 359,368 ----
+  # -R is not portable, reported by Geoff Scully <gws@dis.on.ca> and suggested
+  # the alternative (01/15/96)
+  #chown -R $UserId.$GroupId $BASE_DIR
+! find $BASE_DIR -exec chown $UserId {} \;
+! find $BASE_DIR -exec chgrp $GroupId {} \;
+! find $LIB_DIR -exec chown $UserId {} \;
+! find $LIB_DIR -exec chgrp $GroupId {} \;
   #            echo "UserId=$UserId"
   #            echo "GroupId=$GroupId"
           ;;
