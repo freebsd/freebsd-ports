@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	insub
-PORTVERSION=	9.4
+PORTVERSION=	9.6
 PORTREVISION=	0
 CATEGORIES=	irc
 MASTER_SITES=	http://gruntle.org/projects/irssi/insub/
@@ -15,6 +15,8 @@ MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	Some scripts for expressing how you feel on irc and the web
 
 NO_BUILD=	YES
+
+USE_BZIP2=	YES
 
 SCRIPT=		${PORTNAME}.pl
 
