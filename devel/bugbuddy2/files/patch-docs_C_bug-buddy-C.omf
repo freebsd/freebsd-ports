@@ -1,0 +1,12 @@
+--- docs/C/bug-buddy-C.omf.orig	Tue Nov  9 21:19:52 2004
++++ docs/C/bug-buddy-C.omf	Tue Nov  9 21:19:57 2004
+@@ -3,8 +3,8 @@
+   <resource>
+     <creator>baudais@kkpsi.org (Eric Baudais)</creator>
+     <creator>telsa@linuxchix.org (Telsa Gwynne)</creator>
+-    <contributor>kevin@kevindumpscore.com (Kevin Conder)</contributor>
+     <maintainer>docs@gnome.org (GNOME Documentation Project)</maintainer>
++    <contributor>kevin@kevindumpscore.com (Kevin Conder)</contributor>
+     <title>Bug Buddy Manual</title>
+     <date>September 11, 2004</date>
+     <version identifier="2.8" date="2004-09-11" description="Updated to bug buddy 2.8"/>
