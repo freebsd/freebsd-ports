@@ -1,18 +1,18 @@
 # New ports collection makefile for:   getmail
 # Date created:        06 May 2001
-# # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
+# Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	getmail
-PORTVERSION=	4.1.3
+PORTVERSION=	4.2.2
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.qcc.ca/~charlesc/software/getmail-4/%SUBDIR%/
 MASTER_SITE_SUBDIR=	old-versions
 
-MAINTAINER=	sergei@FreeBSD.org
-COMMENT=	POP3 mail retriever with reliable Maildir/command delivery
+MAINTAINER=	question+fbsdports@closedsrc.org
+COMMENT=	POP3/IMAP mail retriever with Maildir and command delivery
 
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
