@@ -131,11 +131,7 @@ post-install:
 	fi
 	@ ${CHOWN} -R pgsql:pgsql ${PREFIX}/pgsql
 	@ ${CHOWN} root:pgsql ${PREFIX}/pgsql/lib
-	@ ${ECHO} 'Initializing PostgreSQL Databases - this may take a few minutes...'
 	@ ${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/pgsql/lib
-# '-' so we don't fail to create packagelist at this stage,
-# when we already have everything installed on top of previous version
-	-@ su -l pgsql -c 'PATH=${PREFIX}/pgsql/bin:${PATH} ${PREFIX}/pgsql/bin/initdb --pglib=${PREFIX}/pgsql/lib --pgdata=${PREFIX}/pgsql/data'
 	@ ${SED} -e "s=!!PREFIX!!=${PREFIX}=g" < ${FILESDIR}/pgsql.sh.tmpl \
 		> ${PREFIX}/etc/rc.d/pgsql.sh
 	@ ${CHMOD} 554 ${PREFIX}/etc/rc.d/pgsql.sh
@@ -194,6 +190,9 @@ post-install:
 	@ strip ${PREFIX}/pgsql/bin/${file}
 .endfor
 .endif
+	@ ${RMDIR} ${PREFIX}/pgsql/include/port/freebsd
+	@ ${RMDIR} ${PREFIX}/pgsql/include/port
+	@ ${CAT} ${PKGMESSAGE}
 
 post-clean:
 	@ ${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
