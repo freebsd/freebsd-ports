@@ -1,0 +1,64 @@
+diff -ru orig/src/rad.kerberos.c ./src/rad.kerberos.c
+--- orig/src/rad.kerberos.c	Wed Sep 18 11:34:21 1996
++++ src/rad.kerberos.c	Sat Jul 26 17:33:30 1997
+@@ -177,7 +177,8 @@
+ #if defined(M_KERB)
+ 	if (strcmp (authreq->direct_aatv->id, "MKERB") == 0)
+ 	{
+-		krbval = krb_get_in_tkt (userid, "", realm, "krbtgt", realm,
++		krbval = krb_get_in_tkt (userid, KRB_INSTANCE, realm, "krbtgt",
++					 realm,
+ 					DEFAULT_TKT_LIFE, mit_passwd_to_key,
+ 					NULL, passwd);
+ 	}
+@@ -192,6 +193,12 @@
+ 	}
+ #endif	/* A_KERB */
+ 
++	/*
++	 * XXX
++	 * This can be spoofed fairly easily... Should attempt to authenticate
++	 * to some service on this machine (e.g., radius.thishost@REALM)
++	 * in order to ensure that the ticket we just got is really valid.
++	 */
+ 	switch (krbval)
+ 	{
+ 	    case INTK_OK:
+@@ -207,6 +214,37 @@
+ 			func, krbval);
+ 		break;
+ 	}
++#ifdef M_KERB
++	/*
++	 * Ticket verification code based loosely on Berkeley klogin.c 8.3
++	 */
++	if (krbreturn != EV_ACK) {
++		dest_tkt();
++		memset(passwd, 0, sizeof passwd);
++	} else {
++		struct sockaddr_in sin;
++		char host[MAXHOSTNAMELEN], *p;
++		AUTH_DAT authdata;
++		KTEXT_ST ticket;
++
++		krb_get_local_addr(&sin);
++		gethostname(host, sizeof host);
++		if ((p = strchr(host, '.')) != 0)
++			*p = '\0';
++		krbval = krb_mk_req(&ticket, "radius", host, realm, 33);
++		if (krbval == KSUCCESS) {
++			krbval = krb_rd_req(&ticket, "radius", host, 
++					    sin.sin_addr.s_addr, &authdata,
++					    "");
++		}
++		if (krbval != KSUCCESS) {
++			logit(LOG_DAEMON, LOG_ERR, 
++			      "Kerberos error verifying ticket for %s: %s",
++			      func, krb_err_txt[krbval]);
++			krbreturn = EV_NAK;
++		}
++	}
++#endif /* M_KERB */
+ 
+ 	dest_tkt ();		/* destroy the ticket */
+ 	memset (passwd, 0, sizeof (passwd));
