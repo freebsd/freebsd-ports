@@ -19,6 +19,7 @@ DESTDIR=${PREFIX}/
 DESTDIR=/usr/local/
 .endif
 INCDIR=include/divx/
+INCLUDEDIR=include/divx/
 LIBDIR=lib/
 
 .include <bsd.lib.mk>
