@@ -1,0 +1,11 @@
+--- plug-ins/pygimp/Makefile.in.orig	Fri Dec 24 15:37:44 2004
++++ plug-ins/pygimp/Makefile.in	Fri Dec 24 16:14:44 2004
+@@ -433,7 +433,7 @@
+ 	gimpfu.py
+ 
+ 
+-pygimp_DATA = pygimp-logo.png
++pygimp_DATA =
+ 
+ pyenvdir = $(gimpplugindir)/environ
+ 
