@@ -1,0 +1,13 @@
+diff -ru work/dc20ctrl-0.4/convert_pic.c dc20ctrl-0.4/convert_pic.c
+--- work/dc20ctrl-0.4/convert_pic.c	Tue Feb 17 09:19:46 1998
++++ convert_pic.c	Mon Feb  5 18:43:44 2001
+@@ -166,7 +166,8 @@
+ 	 *	Remove the extension (.cmt) from the file name
+ 	 */
+ 
+-	strcpy(file, base_name);
++	if (strlcpy(file, base_name, sizeof(file)) >= sizeof(file))
++		return -1;
+ 	if ((extp = strrchr(file, '.')) != NULL)
+ 		*extp = '\0';
+ 

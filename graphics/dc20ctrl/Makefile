@@ -7,11 +7,11 @@
 
 PORTNAME=	dc20ctrl
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=   http://www.paternostro.org/~ugo/binaries/
 
 MAINTAINER=	ports@FreeBSD.org
-FORBIDDEN=	"Mark FORBIDDEN; exploitable buffer overflows yielding gid dialer"
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \

@@ -1,0 +1,23 @@
+diff -ru work/dc20ctrl-0.4/session.c dc20ctrl-0.4/session.c
+--- work/dc20ctrl-0.4/session.c	Tue Feb 17 09:19:47 1998
++++ session.c	Mon Feb  5 18:53:30 2001
+@@ -58,7 +58,8 @@
+ 			if (!quiet) fprintf(stderr, "%s: get_session: error: cannot get home directory\n", __progname);
+ 			return -1;
+ 		}
+-		sprintf(rc_name, "%s/" RC_NAME, home_dir);
++		if (snprintf(rc_name, sizeof(rc_name), "%s/" RC_NAME, home_dir) >= sizeof(rc_name))
++			return -1;
+ 		if ((rcd = open(rc_name, O_RDWR | O_CREAT, 0644)) < 0) {
+ 			if (!quiet) fprintf(stderr, "%s: get_session: warning: cannot open rc file\n", __progname);
+ 		}
+@@ -84,7 +85,8 @@
+ 			if (!quiet) fprintf(stderr, "%s: put_session: error: cannot get home directory\n", __progname);
+ 			return -1;
+ 		}
+-		sprintf(rc_name, "%s/" RC_NAME, home_dir);
++		if (snprintf(rc_name, sizeof(rc_name), "%s/" RC_NAME, home_dir) >= sizeof(rc_name))
++			return -1;
+ 		if ((rcd = open(rc_name, O_RDWR | O_CREAT, 0644)) < 0) {
+ 			if (!quiet) fprintf(stderr, "%s: put_session: warning: cannot open rc file\n", __progname);
+ 		}
