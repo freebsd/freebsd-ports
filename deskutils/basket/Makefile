@@ -6,6 +6,7 @@
 
 PORTNAME=		basket
 PORTVERSION=		0.4.0
+PORTREVISION=	1
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://les83plus.free.fr/sebastien.laout/basket/downloads/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-aqualightblue-theme
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	aqualightblue-gtk2

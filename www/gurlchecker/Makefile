@@ -7,7 +7,7 @@
 
 PORTNAME=	gurlchecker
 PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://labs.libre-entreprise.org/download.php/57/

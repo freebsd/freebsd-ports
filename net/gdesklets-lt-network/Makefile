@@ -7,6 +7,7 @@
 
 PORTNAME=	lt-network
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-

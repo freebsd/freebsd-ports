@@ -6,7 +6,7 @@
 
 PORTNAME=	kbilliards
 PORTVERSION=	0.4.b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games kde
 MASTER_SITES=	http://members.xoom.virgilio.it/samuele_c/kbilliards/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}

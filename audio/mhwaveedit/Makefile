@@ -8,6 +8,7 @@
 
 PORTNAME=	mhwaveedit
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mtek.chalmers.se/~hjormagn/
 

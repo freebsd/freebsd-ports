@@ -7,6 +7,7 @@
 
 PORTNAME=	gave
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	science graphics ruby
 MASTER_SITES=	http://www-mete.kugi.kyoto-u.ac.jp/seiya/tarball/
 DIST_SUBDIR=	ruby

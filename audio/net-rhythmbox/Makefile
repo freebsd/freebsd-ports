@@ -7,7 +7,7 @@
 
 PORTNAME=	net-rhythmbox
 PORTVERSION=	0.4.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://download.raisdorf.net/files/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-menueditor
 PORTVERSION=	1.05
+PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://users.skynet.be/p0llux/files/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	Search-Saryer
 PORTVERSION=	0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc perl5
 MASTER_SITES=	ftp://ftp.namazu.org/sary/perl/
 PKGNAMEPREFIX=	p5-

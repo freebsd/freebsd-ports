@@ -7,6 +7,7 @@
 
 PORTNAME=	mysql-administrator
 PORTVERSION=	1.0.2b.a
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://planetmirror.com/pub/mysql/%SUBDIR%/ \
 		http://www.softagency.co.jp/MySQL/%SUBDIR%/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	opale
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	finance kde
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://orzel.freehackers.org/download/ \

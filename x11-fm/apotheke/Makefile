@@ -7,7 +7,7 @@
 
 PORTNAME=	apotheke
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fm
 MASTER_SITES=	ftp://ftp.berlios.de/pub/apotheke/
 

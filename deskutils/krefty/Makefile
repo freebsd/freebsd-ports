@@ -6,7 +6,7 @@
 
 PORTNAME=	krefty
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://www.gnomedia.com/cw/krefty/
 

@@ -6,6 +6,7 @@
 
 PORTNAME=	xlog
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.qsl.net/pg4i/download/
 

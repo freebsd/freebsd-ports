@@ -6,7 +6,7 @@
 
 PORTNAME=	kimagemapeditor
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://www.brueffer.de/distfiles/
 

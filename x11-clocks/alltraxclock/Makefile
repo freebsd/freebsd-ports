@@ -7,6 +7,7 @@
 
 PORTNAME=	alltraxclock
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://perso.wanadoo.fr/alltrax/
 DISTNAME=	${PORTNAME}2_0.2-1
