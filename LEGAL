@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.115 1998/08/25 22:08:03 kuriyama Exp $
+# $Id: LEGAL,v 1.116 1998/08/27 16:05:40 rse Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -117,6 +117,8 @@ xfntmizi-*.noarch	ports/korean/mizifont	Not a free software, but
 						redistributable on FreeBSD
 						mirrors
 xgs-*			ports/emulators/xgs	Contains ROM (C) by Apple
+xhime*.tgz		ports/deskutils/xhime	Contains commercial character
+						data
 xinvaders-*		ports/games/xinvaders	Don't sell for profit
 xmdiary-*		ports/misc/xmdiary	Don't sell for profit
 xothello-*		ports/games/xothello	Possible trademark infringement
