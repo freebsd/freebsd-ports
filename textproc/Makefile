@@ -3,6 +3,7 @@
 
     SUBDIR += agrep
     SUBDIR += antiword
+    SUBDIR += ascii2pdf
     SUBDIR += aspell
     SUBDIR += br-ispell
     SUBDIR += british-ispell
