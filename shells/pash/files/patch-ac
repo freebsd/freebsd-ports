@@ -1,0 +1,42 @@
+--- copy.c.orig		Wed Nov  6 21:13:06 1996
++++ copy.c		Sat Dec 30 02:30:37 2000
+@@ -305,9 +305,6 @@
+ 	     case ENOSPC:
+ 	       AddAnswerBoxItem(&InfoMsg,"Out of inodes.");
+ 	       break;
+-	     case ENOSR:
+-	       AddAnswerBoxItem(&InfoMsg,"Unable to allocate stream.");
+-	       break;
+              case ENOENT:
+ 	     case ENOTDIR:
+ 	       AddAnswerBoxItem(&InfoMsg,"Invalid file specification.");
+@@ -369,9 +366,6 @@
+ 	     case ENOSPC:
+ 	       AddAnswerBoxItem(&InfoMsg,"Out of inodes.");
+ 	       break;
+-	     case ENOSR:
+-	       AddAnswerBoxItem(&InfoMsg,"Unable to allocate stream.");
+-	       break;
+              case ENOENT:
+ 	     case ENOTDIR:
+ 	       AddAnswerBoxItem(&InfoMsg,"Invalid file specification.");
+@@ -992,9 +986,6 @@
+ 	   case ENOSPC:
+ 	     AddAnswerBoxItem(&InfoMsg,"Out of inodes.");
+ 	     break;
+-	   case ENOSR:
+-	     AddAnswerBoxItem(&InfoMsg,"Unable to allocate stream.");
+-	     break;
+            case ENOENT:
+ 	   case ENOTDIR:
+ 	     AddAnswerBoxItem(&InfoMsg,"Invalid file specification.");
+@@ -1055,9 +1046,6 @@
+ 	     break;
+ 	   case ENOSPC:
+ 	     AddAnswerBoxItem(&InfoMsg,"Out of inodes.");
+-	     break;
+-	   case ENOSR:
+-	     AddAnswerBoxItem(&InfoMsg,"Unable to allocate stream.");
+ 	     break;
+            case ENOENT:
+ 	   case ENOTDIR:

@@ -1,0 +1,12 @@
+--- findfile.c.orig	Wed Nov  6 21:39:52 1996
++++ findfile.c		Sat Dec 30 02:30:51 2000
+@@ -201,9 +201,6 @@
+ 	    case ENOSPC:
+ 	      AddAnswerBoxItem(&InfoMsg,"Out of inodes.");
+ 	      break;
+-	    case ENOSR:
+-	      AddAnswerBoxItem(&InfoMsg,"Unable to allocate stream.");
+-	      break;
+ 	    case ENOTDIR:
+ 	      AddAnswerBoxItem(&InfoMsg,"Invalid file specification.");
+ 	      break;

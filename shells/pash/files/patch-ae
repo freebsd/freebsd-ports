@@ -1,0 +1,285 @@
+--- keyboard.c.orig	Sun Jan 12 18:11:44 1997
++++ keyboard.c		Sat Dec 30 03:06:17 2000
+@@ -26,7 +26,7 @@
+ #define _TEXT_TAIL_ ':'
+ 
+ /* Memorisation de l'etat de depart du terminal */
+-struct termio _InitialState_;
++struct termios _InitialState_;
+ int _fcntl_flags_;
+ 
+ jmp_buf _uk_buf_, /* Reveil de lecture des touches speciales */
+@@ -104,7 +104,7 @@
+     case SIGBUS:  printf("SIGBUS");  break;
+     case SIGSEGV: printf("SIGSEGV"); break;
+     case SIGPIPE: printf("SIGPIPE"); break;
+-    case SIGCLD:  printf("SIGCLD");  break;
++    case SIGCHLD:  printf("SIGCHLD");  break;
+    }
+   if(_InFree_) printf(" (%d) received on a free() system call. Exiting.\n",Num);
+   else         printf(" (%d) received. Exiting.\n",Num);
+@@ -229,7 +229,7 @@
+ void GetKey(char *Buf)
+  {
+   int i;
+-  struct termio Avant,Apres;
++  struct termios Avant,Apres;
+ #ifdef SIGACT  
+   struct sigaction IntNew,IntOld,
+   		   TermNew,TermOld,
+@@ -259,21 +259,21 @@
+   QuitFct = signal(SIGQUIT,_terminate_);
+ #endif
+   
+-  ioctl(0,TCGETA,&Avant);
++  tcgetattr(0, &Avant);
+ 
+-  memcpy(&Apres,&Avant,sizeof(struct termio));
+-  Apres.c_iflag &= ~(INLCR | ICRNL | IUCLC | ISTRIP | BRKINT | IXON);
++  memcpy(&Apres,&Avant,sizeof(struct termios));
++  Apres.c_iflag &= ~(INLCR | ICRNL | ISTRIP | BRKINT | IXON);
+   Apres.c_oflag &= ~OPOST;
+   Apres.c_lflag &= ~ICANON;
+   Apres.c_cc[VMIN] = MAX_KEY;
+   Apres.c_cc[VTIME] = 1;
+-  ioctl(0,TCSETA,&Apres);
++  tcsetattr(0, TCSANOW, &Apres);
+ 
+   for(i=0;i<MAX_KEY;i++) Buf[i] = 0;
+ 
+   while((read(0,Buf,MAX_KEY) == -1) && (errno == EINTR));
+ 
+-  ioctl(0,TCSETA,&Avant);
++  tcsetattr(0, TCSANOW, &Avant);
+ 
+ #ifdef SIGACT
+   sigaction(SIGINT,&IntOld,&IntNew);
+@@ -388,7 +388,7 @@
+   char Temp[MAX_KEY];
+   int i,offset,rc,Code = -1,Fini = 0,CodeRead;
+   unsigned int Remains;
+-  struct termio Avant,Apres;
++  struct termios Avant,Apres;
+ #ifdef SIGACT
+   struct sigaction IntNew,IntOld,
+   		   TermNew,TermOld,
+@@ -418,14 +418,13 @@
+   QuitFct = signal(SIGQUIT,_terminate_);
+ #endif
+ 
+-  ioctl(0,TCGETA,&Avant);
++  tcgetattr(0, &Avant);
+ 
+   for(i=0;i<MAX_KEY;i++) Temp[i] = 0;
+ 
+-  memcpy(&Apres,&Avant,sizeof(struct termio));
++  memcpy(&Apres,&Avant,sizeof(struct termios));
+   Apres.c_iflag &= ~(INLCR |   /* Pas de conversion LF -> CR */
+ 		     ICRNL |   /* Pas de conversion CR -> LF */
+-		     IUCLC |   /* Pas de conversion Maj -> Min */
+ 		     ISTRIP |  /* Pas de conversion 8 bits -> 7 bits */
+ 		     BRKINT |  /* Pas de caractere de controle */
+ 		     IXON);    /* Pas de controle de flux par Ctrl-S */
+@@ -435,7 +434,7 @@
+   Apres.c_cc[VSTOP] = 0;       /* Pour empecher Ctrl-S d'envoyer un Stop */
+   Apres.c_cc[VSTART] = 0;      /* Si Ctrl-S est deconnecte, Ctrl-Q ne */
+ 			       /* sert plus a rien: on le vire        */
+-  ioctl(0,TCSETA,&Apres);
++  tcsetattr(0, TCSANOW, &Apres);
+ 
+   SetNonBlock();
+ 
+@@ -477,7 +476,7 @@
+    }
+ 
+   SetBlock();
+-  ioctl(0,TCSETA,&Avant);
++  tcsetattr(0, TCSANOW, &Avant);
+ 
+ #ifdef SIGACT
+   sigaction(SIGINT,&IntOld,&IntNew);
+@@ -512,7 +511,7 @@
+   char Temp[MAX_KEY];
+   int i,offset,rc,Code = -1,Fini = 0,CodeRead;
+   unsigned int Remains;
+-  struct termio Avant,Apres;
++  struct termios Avant,Apres;
+ #ifdef SIGACT
+   struct sigaction IntNew,IntOld,
+   		   TermNew,TermOld,
+@@ -547,14 +546,13 @@
+     QuitFct = signal(SIGQUIT,_terminate_);
+ #endif
+ 
+-    ioctl(0,TCGETA,&Avant);
++    tcgetattr(0, &Avant);
+ 
+     for(i=0;i<MAX_KEY;i++) Temp[i] = 0;
+ 
+-    memcpy(&Apres,&Avant,sizeof(struct termio));
++    memcpy(&Apres,&Avant,sizeof(struct termios));
+     Apres.c_iflag &= ~(INLCR |   /* Pas de conversion LF -> CR */
+ 		       ICRNL |   /* Pas de conversion CR -> LF */
+-		       IUCLC |   /* Pas de conversion Maj -> Min */
+ 		       ISTRIP |  /* Pas de conversion 8 bits -> 7 bits */
+ 		       BRKINT |  /* Pas de caractere de controle */
+ 		       IXON);    /* Pas de controle de flux par Ctrl-S */
+@@ -564,7 +562,7 @@
+     Apres.c_cc[VSTOP] = 0;       /* Pour empecher Ctrl-S d'envoyer un Stop */
+     Apres.c_cc[VSTART] = 0;      /* Si Ctrl-S est deconnecte, Ctrl-Q ne */
+ 				 /* sert plus a rien: on le vire        */
+-    ioctl(0,TCSETA,&Apres);
++    tcsetattr(0, TCSANOW, &Apres);
+ 
+     while((read(0,Temp,1) == -1) && (errno == EINTR));
+ 
+@@ -596,7 +594,7 @@
+       SetBlock();
+      }
+ 
+-    ioctl(0,TCSETA,&Avant);
++    tcsetattr(0, TCSANOW, &Avant);
+     
+ #ifdef SIGACT    
+     sigaction(SIGINT,&IntOld,&IntNew);
+@@ -619,7 +617,7 @@
+   char Temp[MAX_KEY];
+   int i,offset,rc,Code = -1,Fini = 0,CodeRead;
+   unsigned int Remains;
+-  struct termio Avant,Apres;
++  struct termios Avant,Apres;
+ #ifdef SIGACT
+   struct sigaction IntNew,IntOld,
+   		   TermNew,TermOld,
+@@ -656,14 +654,13 @@
+     QuitFct = signal(SIGQUIT,_terminate_);
+ #endif
+ 
+-    ioctl(0,TCGETA,&Avant);
++    tcgetattr(0, &Avant);
+ 
+     for(i=0;i<MAX_KEY;i++) Temp[i] = 0;
+ 
+-    memcpy(&Apres,&Avant,sizeof(struct termio));
++    memcpy(&Apres,&Avant,sizeof(struct termios));
+     Apres.c_iflag &= ~(INLCR |   /* Pas de conversion LF -> CR */
+ 		       ICRNL |   /* Pas de conversion CR -> LF */
+-		       IUCLC |   /* Pas de conversion Maj -> Min */
+ 		       ISTRIP |  /* Pas de conversion 8 bits -> 7 bits */
+ 		       BRKINT |  /* Pas de caractere de controle */
+ 		       IXON);    /* Pas de controle de flux par Ctrl-S */
+@@ -673,7 +670,7 @@
+     Apres.c_cc[VSTOP] = 0;       /* Pour empecher Ctrl-S d'envoyer un Stop */
+     Apres.c_cc[VSTART] = 0;      /* Si Ctrl-S est deconnecte, Ctrl-Q ne */
+ 				 /* sert plus a rien: on le vire        */
+-    ioctl(0,TCSETA,&Apres);
++    tcsetattr(0, TCSANOW, &Apres);
+ 
+     while((read(0,Temp,1) == -1) && (errno == EINTR));
+ 
+@@ -738,7 +735,7 @@
+        }
+      }
+ 
+-    ioctl(0,TCSETA,&Avant);
++    tcsetattr(0, TCSANOW, &Avant);
+     
+ #ifdef SIGACT    
+     sigaction(SIGINT,&IntOld,&IntNew);
+@@ -767,7 +764,7 @@
+ int Getch(void)
+  {
+   char Temp;
+-  struct termio Avant,Apres;
++  struct termios Avant,Apres;
+ #ifdef SIGACT
+   struct sigaction IntNew,IntOld,
+   		   TermNew,TermOld,
+@@ -797,19 +794,19 @@
+   QuitFct = signal(SIGQUIT,_terminate_);
+ #endif
+   
+-  ioctl(0,TCGETA,&Avant);
+-  memcpy(&Apres,&Avant,sizeof(struct termio));
+-  Apres.c_iflag &= ~(INLCR | ICRNL | IUCLC | ISTRIP | IXON | BRKINT);
++  tcgetattr(0, &Avant);
++  memcpy(&Apres,&Avant,sizeof(struct termios));
++  Apres.c_iflag &= ~(INLCR | ICRNL | ISTRIP | IXON | BRKINT);
+   Apres.c_oflag &= ~OPOST;
+   Apres.c_lflag &= ~ICANON;
+   Apres.c_cc[VMIN] = 1;
+   Apres.c_cc[VSTOP] = 0;
+   Apres.c_cc[VSTART] = 0;
+-  ioctl(0,TCSETA,&Apres);
++  tcsetattr(0, TCSANOW, &Apres);
+ 
+   while((read(0,&Temp,1) == -1) && (errno == EINTR));
+ 
+-  ioctl(0,TCSETA,&Avant);
++  tcsetattr(0, TCSANOW, &Avant);
+ 
+ #ifdef SIGACT
+   sigaction(SIGINT,&IntOld,&IntNew);
+@@ -1021,7 +1018,7 @@
+   SetKeyboard();
+   printf("Please press the <Enter> key to begin...");
+   fflush(stdout);
+-  gets(D);
++  fgets(D, sizeof(D), stdin);
+ 
+   printf("\n\n");
+ 
+@@ -1058,7 +1055,7 @@
+   printf(" and restart the program.\n\n");
+   printf("[Press Enter to go on...]");
+   fflush(stdout);
+-  gets(D);
++  fgets(D, sizeof(D), stdin);
+  }
+ 
+ /*****************************************************************************
+@@ -1073,14 +1070,14 @@
+ 
+ void SetKeyboard(void)
+  {
+-  struct termio Tmp;
++  struct termios Tmp;
+ 
+   /* Retablir les valeurs de depart */
+   RestoreKeyboard();
+-  memcpy(&Tmp,&_InitialState_,sizeof(struct termio));
++  memcpy(&Tmp,&_InitialState_,sizeof(struct termios));
+   /* Modifier ce qu'il faut */
+   Tmp.c_lflag &= ~(ISIG | ECHO);
+-  ioctl(0,TCSETA,&Tmp);
++  tcsetattr(0, TCSANOW, &Tmp);
+  }
+ 
+ /*****************************************************************************
+@@ -1092,7 +1089,7 @@
+ void RestoreKeyboard(void)
+  {
+   fcntl(0,F_SETFL,_fcntl_flags_);
+-  ioctl(0,TCSETA,&_InitialState_);
++  tcsetattr(0, TCSANOW, &_InitialState_);
+  }
+ 
+ /*****************************************************************************
+@@ -1128,7 +1125,7 @@
+   sigaction(SIGHUP,&New,&Old);
+   sigaction(SIGUSR1,&New,&Old);
+   sigaction(SIGUSR2,&New,&Old);
+-  sigaction(SIGCLD,&New,&Old);
++  sigaction(SIGCHLD,&New,&Old);
+   sigemptyset(&New.sa_mask);
+   sigaction(SIGALRM,&New,&Old);
+ 
+@@ -1415,7 +1412,7 @@
+    { fprintf(stderr,"Unable to get the terminal configuration through fcntl.\n");
+      exit(1); }
+   fprintf(stderr,"Getting terminal configuration through ioctl().\n");
+-  ioctl(0,TCGETA,&_InitialState_);
++  tcgetattr(0, &_InitialState_);
+ 
+   fprintf(stderr,"Setting terminal state.\n");
+   SetKeyboard();

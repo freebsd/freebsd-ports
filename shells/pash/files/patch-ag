@@ -1,0 +1,11 @@
+--- screen.h.orig	Sat Nov 11 20:31:16 1995
++++ screen.h		Sat Dec 30 02:27:14 2000
+@@ -28,7 +28,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <termio.h>
++#include <term.h>
+ #include <signal.h>
+ #include <limits.h>
+ #include <unistd.h>
