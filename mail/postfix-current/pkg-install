@@ -17,6 +17,12 @@ else
     DEFAULT_REPLACE_MAILERCONF=y
 fi
 
+if [ -x /usr/sbin/nologin ]; then
+    NOLOGIN=/usr/sbin/nologin
+else
+    NOLOGIN=/sbin/nologin
+fi
+
 ask() {
     local question default answer
 
@@ -48,13 +54,16 @@ yesno() {
 
 if [ x"$2" = xPRE-INSTALL ]; then
     USER=postfix
+    UID=125
     GROUP=postfix
+    GID=125
     GROUP2=maildrop
+    GID2=126
 
     if /usr/sbin/pw groupshow "${GROUP}" 2>/dev/null; then
         echo "You already have a group \"${GROUP}\", so I will use it."
     else
-        if /usr/sbin/pw groupadd ${GROUP} -h -
+        if /usr/sbin/pw groupadd ${GROUP} -g ${GID}
 	then
 	    echo "Added group \"${GROUP}\"."
 	else
@@ -67,7 +76,7 @@ if [ x"$2" = xPRE-INSTALL ]; then
     if /usr/sbin/pw groupshow "${GROUP2}" 2>/dev/null; then
         echo "You already have a group \"${GROUP2}\", so I will use it."
     else
-        if /usr/sbin/pw groupadd ${GROUP2} -h -
+        if /usr/sbin/pw groupadd ${GROUP2} -g ${GID2}
 	then
 	    echo "Added group \"${GROUP2}\"."
 	else
@@ -80,9 +89,9 @@ if [ x"$2" = xPRE-INSTALL ]; then
     if /usr/sbin/pw user show "${USER}" 2>/dev/null; then
         echo "You already have a user \"${USER}\", so I will use it."
     else
-        if /usr/sbin/pw useradd ${USER} -g ${GROUP} -h - \
+        if /usr/sbin/pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
            -d /var/spool/postfix \
-           -s /sbin/nologin \
+           -s ${NOLOGIN} \
            -c "Postfix Mail System"
 	then
 	    echo "Added user \"${USER}\"."
