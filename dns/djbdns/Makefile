@@ -53,6 +53,12 @@ PATCHFILES+=	djbdns-1.05-ignoreip2.patch:ignoreip
 PATCH_DIST_STRIP=	-p1
 .endif
 
+.if defined(WITH_PERSISTENT_MMAP)
+PATCH_SITES+=	http://people.FreeBSD.org/~roam/ports/patches/dns/:persistent
+PATCHFILES+=	tinydns-persistmmap-20040418.patch:persistent
+PATCH_DIST_STRIP=	-p1
+.endif
+
 DJBDNS_VER=	1.05
 DJBDNS_V6_VER=	test14
 
@@ -84,6 +90,9 @@ pre-fetch:
 	@${ECHO} "                            http://smarden.org/pape/djb/manpages/"
 	@${ECHO} "- WITH_IGNOREIP           - build with Russel Nelson's ignoreip2 patch"
 	@${ECHO} "                            http://tinydns.org/djbdns-1.05-ignoreip2.patch"
+	@${ECHO} "- WITH_PERSISTENT_MMAP    - build with Lennert Buytenhek's persistent mmap"
+	@${ECHO} "                            patch for tinydns"
+	@${ECHO} "                            http://marc.theaimsgroup.com/?l=djbdns&m=108229203212517&w=2"
 
 post-patch:
 	@echo "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
