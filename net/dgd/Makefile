@@ -12,7 +12,7 @@ PATCHFILES=	1.0.8-1.0.8.1.gz 1.0.8.1-1.0.8.2.gz 1.0.8.2-1.0.8.3.gz \
 		1.0.8.6-1.0.8.7.gz 1.0.8.7-1.0.8.8.gz
 PATCHSITE=	epsilon.me.chalmers.se
 NCFTPFLAGS=	-P
-PATCH_COOKIE=	${.CURDIR}/work/.patch_done
+_PATCH_COOKIE=	${.CURDIR}/work/._patch_done
 PATCHLIST=	${.CURDIR}/work/.patchlist
 PATCHLEVEL=	`tail -1 ${PATCHLIST} | sed 's/^.*\.\(.*\)\.gz$$/\1/'`
 WRKSRC=		${WRKDIR}/dgd/src
@@ -37,7 +37,7 @@ pre-fetch:
 # Need to determine whether all author-supplied patches are correctly applied
 ### not yet implemented
 
-pre-configure: extract ${PATCH_COOKIE}
+pre-patch: extract ${_PATCH_COOKIE}
 	@find -X ${WRKDIR}/dgd -name '*.orig' -print | xargs rm -f
 
 ${PATCHLIST}:
@@ -45,13 +45,13 @@ ${PATCHLIST}:
 		ls *.[0-9].gz *.[0-9][0-9].gz \
 		2>/dev/null >${PATCHLIST}
 
-${PATCH_COOKIE}: ${PATCHLIST}
+${_PATCH_COOKIE}: ${PATCHLIST}
 	@if [ -s ${PATCHLIST} ]; then \
 		echo "===>  Updating to ${DISTNAME}.${PATCHLEVEL}"; \
 		cd ${DISTDIR}/${DISTNAME}; \
 		gzcat `cat ${PATCHLIST}` | patch -d ${WRKDIR} --quiet -E -p0; \
 	fi
-	@touch -f ${PATCH_COOKIE}
+	@touch -f ${_PATCH_COOKIE}
 
 install: all
 	@chown -R mud.mud ${WRKDIR}/dgd
