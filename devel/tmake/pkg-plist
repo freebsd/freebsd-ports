@@ -49,10 +49,6 @@ share/tmake/irix-64/app.t
 share/tmake/irix-64/lib.t
 share/tmake/irix-64/subdirs.t
 share/tmake/irix-64/tmake.conf
-share/tmake/irix-dcc/app.t
-share/tmake/irix-dcc/lib.t
-share/tmake/irix-dcc/subdirs.t
-share/tmake/irix-dcc/tmake.conf
 share/tmake/irix-g++/app.t
 share/tmake/irix-g++/lib.t
 share/tmake/irix-g++/subdirs.t
@@ -93,18 +89,26 @@ share/tmake/osf1-g++/app.t
 share/tmake/osf1-g++/lib.t
 share/tmake/osf1-g++/subdirs.t
 share/tmake/osf1-g++/tmake.conf
-share/tmake/qnx-g++/app.t
-share/tmake/qnx-g++/lib.t
-share/tmake/qnx-g++/subdirs.t
-share/tmake/qnx-g++/tmake.conf
+share/tmake/qnx-rtp-g++/app.t
+share/tmake/qnx-rtp-g++/lib.t
+share/tmake/qnx-rtp-g++/subdirs.t
+share/tmake/qnx-rtp-g++/tmake.conf
 share/tmake/qws/linux-arm-g++/app.t
 share/tmake/qws/linux-arm-g++/lib.t
 share/tmake/qws/linux-arm-g++/subdirs.t
 share/tmake/qws/linux-arm-g++/tmake.conf
+share/tmake/qws/linux-cassiopeia-g++/app.t
+share/tmake/qws/linux-cassiopeia-g++/lib.t
+share/tmake/qws/linux-cassiopeia-g++/subdirs.t
+share/tmake/qws/linux-cassiopeia-g++/tmake.conf
 share/tmake/qws/linux-generic-g++/app.t
 share/tmake/qws/linux-generic-g++/lib.t
 share/tmake/qws/linux-generic-g++/subdirs.t
 share/tmake/qws/linux-generic-g++/tmake.conf
+share/tmake/qws/linux-ipaq-g++/app.t
+share/tmake/qws/linux-ipaq-g++/lib.t
+share/tmake/qws/linux-ipaq-g++/subdirs.t
+share/tmake/qws/linux-ipaq-g++/tmake.conf
 share/tmake/qws/linux-mips-g++/app.t
 share/tmake/qws/linux-mips-g++/lib.t
 share/tmake/qws/linux-mips-g++/subdirs.t
@@ -113,14 +117,14 @@ share/tmake/qws/linux-x86-g++/app.t
 share/tmake/qws/linux-x86-g++/lib.t
 share/tmake/qws/linux-x86-g++/subdirs.t
 share/tmake/qws/linux-x86-g++/tmake.conf
-share/tmake/sco-g++/app.t
-share/tmake/sco-g++/lib.t
-share/tmake/sco-g++/subdirs.t
-share/tmake/sco-g++/tmake.conf
 share/tmake/reliant-cds/app.t
 share/tmake/reliant-cds/lib.t
 share/tmake/reliant-cds/subdirs.t
 share/tmake/reliant-cds/tmake.conf
+share/tmake/sco-g++/app.t
+share/tmake/sco-g++/lib.t
+share/tmake/sco-g++/subdirs.t
+share/tmake/sco-g++/tmake.conf
 share/tmake/solaris-64/app.t
 share/tmake/solaris-64/lib.t
 share/tmake/solaris-64/subdirs.t
@@ -147,9 +151,9 @@ share/tmake/ultrix-g++/subdirs.t
 share/tmake/ultrix-g++/tmake.conf
 share/tmake/unix/app.t
 share/tmake/unix/generic.t
-share/tmake/unix/generic.t.orig
 share/tmake/unix/lib.t
 share/tmake/unix/subdirs.t
+share/tmake/unix/generic.t.orig
 share/tmake/unixware-g++/app.t
 share/tmake/unixware-g++/lib.t
 share/tmake/unixware-g++/subdirs.t
@@ -211,7 +215,6 @@ share/tmake/win32/subdirs.t
 @dirrm share/tmake/hpux-o64
 @dirrm share/tmake/hurd-g++
 @dirrm share/tmake/irix-64
-@dirrm share/tmake/irix-dcc
 @dirrm share/tmake/irix-g++
 @dirrm share/tmake/irix-n32
 @dirrm share/tmake/irix-o32
@@ -222,14 +225,16 @@ share/tmake/win32/subdirs.t
 @dirrm share/tmake/openbsd-g++
 @dirrm share/tmake/osf1-cxx
 @dirrm share/tmake/osf1-g++
-@dirrm share/tmake/qnx-g++
+@dirrm share/tmake/qnx-rtp-g++
 @dirrm share/tmake/qws/linux-arm-g++
+@dirrm share/tmake/qws/linux-cassiopeia-g++
 @dirrm share/tmake/qws/linux-generic-g++
+@dirrm share/tmake/qws/linux-ipaq-g++
 @dirrm share/tmake/qws/linux-mips-g++
 @dirrm share/tmake/qws/linux-x86-g++
 @dirrm share/tmake/qws
-@dirrm share/tmake/sco-g++
 @dirrm share/tmake/reliant-cds
+@dirrm share/tmake/sco-g++
 @dirrm share/tmake/solaris-64
 @dirrm share/tmake/solaris-cc-gcc
 @dirrm share/tmake/solaris-cc
