@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=		perl2html-0.6.1
+DISTNAME=		perl2html-0.6.3
 CATEGORIES=		textproc www
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/www/converters
