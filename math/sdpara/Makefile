@@ -34,7 +34,7 @@ CBLAS=		-lcblas -lf77blas -latlas -lg2c
 .if defined(WITH_OPTIMIZED_FLAGS)
 FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
 CXXFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double  -Wno-multichar
-.if (${MACHINE_ARCH} == "i386")
+.if (${ARCH} == "i386")
 FFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3
 CXXFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3
 .endif # i386
