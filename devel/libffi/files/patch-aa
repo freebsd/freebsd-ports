@@ -1,6 +1,6 @@
---- configure.orig	Sun Jun 14 14:42:47 1998
-+++ configure	Sun Jun 14 14:33:17 1998
-@@ -1234,6 +1234,7 @@
+--- configure.orig	Mon Oct  5 17:26:04 1998
++++ configure	Sat Oct 24 00:42:30 1998
+@@ -1415,6 +1415,7 @@
  case "$host" in
  mips-sgi-irix5.* | mips-sgi-irix6.*) TARGET=MIPS; TARGETDIR=mips;;
  i*86-pc-linux*) TARGET=X86; TARGETDIR=x86;;
