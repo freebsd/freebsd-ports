@@ -1,0 +1,11 @@
+--- doc/C/Makefile.in.orig	Sun Jun  2 23:38:54 2002
++++ doc/C/Makefile.in	Sun Jun  2 23:39:46 2002
+@@ -131,7 +131,7 @@
+ cxxflags_set = @cxxflags_set@
+ 
+ DOC_MODULE = libgnomedb
+-HTML_DIR = $(datadir)/gtk-doc/html
++HTML_DIR = $(prefix)/share/doc
+ 
+ # The top-level SGML file. Change it if you want.
+ DOC_MAIN_SGML_FILE = $(DOC_MODULE)-docs.sgml
