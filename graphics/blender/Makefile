@@ -24,7 +24,7 @@ USE_MESA=	YES
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
 .endif
 
 do-install:
