@@ -1,17 +1,10 @@
 include/nettle/aes.h
 include/nettle/arcfour.h
 include/nettle/blowfish.h
-include/nettle/cast128.h
-include/nettle/cbc.h
-include/nettle/des-compat.h
-include/nettle/des.h
-include/nettle/md5-compat.h
-include/nettle/md5.h
-include/nettle/serpent.h
-include/nettle/sha1.h
-include/nettle/twofish.h
 @dirrm include/nettle
 @unexec install-info --delete %D/info/nettle.info %D/info/dir
 info/nettle.info
+info/nettle.info-1
+info/nettle.info-2
 @exec install-info %D/info/nettle.info %D/info/dir
 lib/libnettle.a
