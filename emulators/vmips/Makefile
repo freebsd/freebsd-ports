@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vmips
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.dgate.org/vmips/releases/vmips-${PORTVERSION}/
