@@ -1,38 +1,68 @@
---- autoconf/acconfig.h.orig	Fri Oct  9 16:09:57 1998
-+++ autoconf/acconfig.h	Fri Oct  9 16:10:32 1998
-@@ -35,6 +35,9 @@
+--- configure.orig	Tue Dec  8 23:17:30 1998
++++ configure	Tue Dec  8 23:18:24 1998
+@@ -32,6 +32,8 @@
+ ac_help="$ac_help
+   --enable-big5           enable big5 support"
+ ac_help="$ac_help
++  --enable-xcin           enable Chinese input support"
++ac_help="$ac_help
+   --enable-greek          enable greek keyboard support"
+ ac_help="$ac_help
+   --enable-ttygid         enable tty setting to group \"tty\" - use only if
+@@ -722,6 +724,18 @@
+   if test x$enableval = xyes; then
+     cat >> confdefs.h <<\EOF
+ #define ZH 1
++EOF
++
++  fi
++fi
++
++
++# Check whether --enable-xcin or --disable-xcin was given.
++if test "${enable_xcin+set}" = set; then
++  enableval="$enable_xcin"
++  if test x$enableval = xyes; then
++    cat >> confdefs.h <<\EOF
++#define XCIN 1
+ EOF
+ 
+   fi
+--- autoconf/acconfig.h.orig	Tue Dec  8 21:26:28 1998
++++ autoconf/acconfig.h	Tue Dec  8 21:27:20 1998
+@@ -34,6 +34,9 @@
  /* after compilation, rename executable as `crxvt' */
  #undef ZH
  
-+/* Define if you want XCIN Chinese Input support */
++/* Define if you want chinese input support */
 +#undef XCIN
 +
  /* Define if Xlocale support doesn't work */
  #undef NO_XLOCALE
  
---- autoconf/config.h.in.orig	Fri Oct  9 16:10:46 1998
-+++ autoconf/config.h.in	Fri Oct  9 16:11:23 1998
-@@ -80,6 +80,9 @@
+--- autoconf/config.h.in.orig	Tue Dec  8 21:27:34 1998
++++ autoconf/config.h.in	Tue Dec  8 21:28:02 1998
+@@ -76,6 +76,9 @@
  /* after compilation, rename executable as `crxvt' */
  #undef ZH
  
-+/* Define if you want XCIN Chinese Input support */
++/* Define if you want chinese input support */
 +#undef XCIN
 +
  /* Define if Xlocale support doesn't work */
  #undef NO_XLOCALE
  
---- autoconf/configure.in.orig	Fri Oct  9 16:11:33 1998
-+++ autoconf/configure.in	Fri Oct  9 16:12:13 1998
+--- autoconf/configure.in.orig	Tue Dec  8 21:28:18 1998
++++ autoconf/configure.in	Tue Dec  8 21:29:12 1998
 @@ -82,6 +82,12 @@
      AC_DEFINE(ZH)
    fi])
  
 +AC_ARG_ENABLE(xcin,
-+[  --enable-xcin           enable XCIN support],
-+[if test x$enableval = xyes; then
-+  AC_DEFINE(XCIN)
-+fi])
++  [  --enable-xcin           enable Chinese input support],
++  [if test x$enableval = xyes; then
++    AC_DEFINE(XCIN)
++  fi])
 +
  AC_ARG_ENABLE(greek,
    [  --enable-greek          enable greek keyboard support],
