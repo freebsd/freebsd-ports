@@ -1,28 +1,20 @@
-*** Rosegarden.orig	Wed Sep 11 06:25:10 1996
---- Rosegarden	Thu Aug 28 15:51:58 1997
-***************
-*** 8,19 ****
-  Rosegarden*sequencerName:	/usr/local/lib/rosegarden/sequencer
-  Rosegarden*helpFile:		/usr/local/lib/rosegarden/rosehelp.info
-  Rosegarden*midiFmPatchFile:	/usr/local/lib/rosegarden/std.sb
-! Rosegarden*externalPlayer:	/usr/local/bin/playmidi
-  
-! Rosegarden*musicDirectory:	/usr/local/lib/music
-  Rosegarden*midiFmPatchFile:	/usr/local/lib/rosegarden/std.sb
-! !Rosegarden*midiPort:		/dev/sequencer2
-! Rosegarden*externalPlayer:	/usr/local/bin/xplaymidi
-  
-  Rosegarden*shouldWarpPointer:	False
-  
---- 8,18 ----
-  Rosegarden*sequencerName:	/usr/local/lib/rosegarden/sequencer
-  Rosegarden*helpFile:		/usr/local/lib/rosegarden/rosehelp.info
-  Rosegarden*midiFmPatchFile:	/usr/local/lib/rosegarden/std.sb
-! Rosegarden*externalPlayer:	/usr/local/bin/playmidi -f
-  
-! Rosegarden*musicDirectory:	/usr/local/lib/rosegarden/music
-  Rosegarden*midiFmPatchFile:	/usr/local/lib/rosegarden/std.sb
-! Rosegarden*midiPort:		/dev/sequencer
-  
-  Rosegarden*shouldWarpPointer:	False
-  
+--- /tmp/rosegarden-2.1/petal/Makefile.in	Sat Oct 18 11:43:27 1997
++++ ./petal/Makefile.in	Fri May 14 17:29:54 1999
+@@ -7,7 +7,7 @@
+ 
+ pkgIndex.tcl : Petal.so Petal.tcl
+ 	@echo "The error message for Petal.tcl is normal"
+-	echo "pkg_mkIndex . Petal.so Petal.tcl" | tclsh
++	echo "pkg_mkIndex . Petal.so Petal.tcl" | tclsh8.0
+ 
+ petaleditor/pkgIndex.tcl : petaleditor/PetalEditor.tcl
+ 	cd petaleditor; make
+@@ -19,7 +19,7 @@
+ 	$(LD) $(LDFLAGS) Petal.o -o Petal.so
+ 
+ Petal.o : Petal.c
+-	$(CC) $(CFLAGS) -c -o Petal.o Petal.c
++	$(CC) $(CFLAGS) -I/usr/local/include -c -o Petal.o Petal.c
+ 
+ clean :
+ 	rm -f Petal.o Petal.so

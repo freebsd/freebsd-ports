@@ -1,14 +1,23 @@
-@cwd /usr/local
+lib/tclmidi/Petal.so
 bin/rosegarden
-lib/rosegarden/editor
-lib/rosegarden/rosehelp.hnx
-lib/rosegarden/rosehelp.info
-lib/rosegarden/sequencer
-lib/rosegarden/std.sb
-lib/rosegarden/music/glazunov.rose
-lib/rosegarden/music/sonataC.rose
-lib/rosegarden/music/vivaldi.rose
-@dirrm lib/rosegarden/music
-@dirrm lib/rosegarden
-@cwd /usr/X11R6
+lib/rosegarden/bin/editor
+lib/rosegarden/bin/sequencer
+lib/rosegarden/example/glazunov.rose
+lib/rosegarden/synth-patches/std.sb
+lib/rosegarden/synth-patches/drums.sb
+lib/rosegarden/help/rosehelp.hnx
+lib/rosegarden/help/rosehelp.info
+lib/rosegarden/petal/Petal.tcl
+lib/rosegarden/petal/PetalEditor.tcl
+lib/rosegarden/petal/PetalMidi.tcl
+lib/rosegarden/petal/pkgIndex.tcl
+lib/rosegarden/rosepetal-filters/harmonizer.tcl
+lib/rosegarden/rosepetal-filters/pattern.tcl
 lib/X11/app-defaults/Rosegarden
+@dirrm lib/rosegarden/example
+@dirrm lib/rosegarden/help
+@dirrm lib/rosegarden/bin
+@dirrm lib/rosegarden/petal
+@dirrm lib/rosegarden/rosepetal-filters
+@dirrm lib/rosegarden/synth-patches
+@dirrm lib/rosegarden

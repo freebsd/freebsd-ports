@@ -1,29 +1,33 @@
 # New ports collection makefile for:	rosegarden
-# Version required:	2.0.1
+# Version required:	2.1
 # Date created:		04 Aug 1996
-# Whom:			shanee
+# Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.6 1998/09/21 01:35:21 steve Exp $
+# $Id: Makefile,v 1.7 1998/12/09 22:35:04 billf Exp $
 #
 
-DISTNAME=	rosegarden-2.0.1
+DISTNAME=	rosegarden-2.1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.maths.bath.ac.uk/pub/dream/ROSE/ \
-		ftp://ftp.sao.ru/pub1/src/dream/ROSE/ \
-		ftp://ftp.loxinfo.co.th/pub/unix/sound/ \
-		ftp://ftp.uni-trier.de/pub/unix/audio/rosegarden/ \
-		ftp://ftp.funet.fi/pub/sci/audio/rosegarden/
-EXTRACT_SUFX=	-sources.tgz
+		ftp://ftp.unina.it/pub/Unix/pkgs/audio/rosegarden/ \
+		ftp://sunsite.auc.dk//disk6/linuxberg.com/files/x11/media/ \
+		ftp://ftp.flashnet.it//mirror/8/linuxberg/files/x11/media/
+EXTRACT_SUFX=	-sources.tar.gz
 
 MAINTAINER=	shanee@augusta.de
 
-LIB_DEPENDS=	Xaw3d.6:$(PORTSDIR)/x11-toolkits/Xaw3d
-RUN_DEPENDS=	playmidi:${PORTSDIR}/audio/playmidi
+BUILD_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:$(PORTSDIR)/audio/tclmidi
+RUN_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:$(PORTSDIR)/audio/tclmidi	
 
-ALL_TARGET=	all ROSEGARDEN=$(WRKSRC) SYSLIBS="\"-lXaw3d -lXext -lXmu -lXt -lX11\"" SYSEXTRALIBS=""
+GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
+USE_XLIB=	yes
+CONFIGURE_ARGS=	--with-tclincl=${LOCALBASE}/include/tcl8.0/
+CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib"
 
-WRKSRC=		${WRKDIR}/rosegarden
-MAKEFILE=	Makefile.FreeBSD
-MAKE_ENV+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_DATA="${INSTALL_DATA}" MKDIR="${MKDIR}"
+do-install:
+	@( \
+	 cd ${WRKSRC} ; ${SETENV} PREFIX="${PREFIX}" ./do-install \
+	)
 
 .include <bsd.port.mk>
