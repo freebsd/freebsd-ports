@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	t1lib
-PORTVERSION=	5.0.1
+PORTVERSION=	5.0.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/graphics
@@ -17,6 +17,7 @@ COMMENT=	A Type 1 Rasterizer Library for UNIX/X11
 
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	13
+ALL_TARGET=	without_doc
 INSTALLS_SHLIB=	yes
 
 .if !defined(WITHOUT_X11)
@@ -28,11 +29,10 @@ CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=	X11="@comment "
 .endif
 
-# DOCS depends on LaTeX and LaTeX-babel module
-#.if defined(NOPORTDOCS)
-ALL_TARGET=	without_doc
-#.else
-#BUILD_DEPEND+=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/latex
-#.endif
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/t1lib_doc.pdf ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
