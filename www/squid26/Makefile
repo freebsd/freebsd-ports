@@ -1,13 +1,13 @@
 # New ports collection makefile for:	squid
-# Version required:	2.0.RELEASE
+# Version required:	2.1.PATCH2
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.52 1998/10/06 00:19:50 peter Exp $
+# $Id: Makefile,v 1.53 1998/10/19 12:12:45 peter Exp $
 #
 
-DISTNAME=	squid-2.0.RELEASE
-PKGNAME=	squid-2.0
+DISTNAME=	squid-2.1.PATCH2
+PKGNAME=	squid-2.1
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://squid.nlanr.net/pub/squid-2/ \
@@ -16,14 +16,13 @@ MASTER_SITES=  \
 	ftp://ftp.net.lut.ac.uk/squid/squid-2/
 EXTRACT_SUFX=	-src.tar.gz
 
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	diff-2.0.RELEASE-2.0.PATCH1.gz \
-		diff-2.0.PATCH1-2.0.PATCH2.gz
+PATCH_SITES=	http://squid.nlanr.net/Squid/v2/2.1/
+PATCHFILES=	squid-2.1.PATCH2-clientHandleIMSReply-leak.patch
 
 MAINTAINER=	peter@freebsd.org
 
-DIST_SUBDIR=	squid2.0
-PATCH_DIST_STRIP= -p1
+DIST_SUBDIR=	squid2.1
+PATCH_DIST_STRIP= -p0
 GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
@@ -45,7 +44,7 @@ NO_LATEST_LINK=	yes
 #CONFIGURE_ARGS+= --enable-xmalloc-statistics
 #  - Enable CARP support
 #CONFIGURE_ARGS+= --enable-carp
-#  - Use ASYNC disk I/O (Requires real pthreads)
+#  - Use ASYNC disk I/O (Requires real threads, apparently runs on 3.0 libc_r)
 #CONFIGURE_ARGS+= --enable-async-io
 #  - Enable ICMP pinging for heirarchy stats and selection
 #CONFIGURE_ARGS+= --enable-icmp
@@ -104,6 +103,3 @@ post-install:
 	fi
 
 .include <bsd.port.mk>
-
-# Put on peril sensitive sunglasses in case of stupid GNU make v2.5!
-PATCH:=         env POSIXLY_CORRECT=yes ${PATCH}
