@@ -1,4 +1,4 @@
-%%PYTHON_SITELIBDIR%%/_tarfile.so
+%%NO_PY23%%%%PYTHON_SITELIBDIR%%/_tarfile.so
 %%PYTHON_SITELIBDIR%%/tarfile.py
 %%PYTHON_SITELIBDIR%%/tarfile.pyc
 %%PYTHON_SITELIBDIR%%/tarfile.pyo

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tarfile
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	archivers python
 MASTER_SITES=	http://www.gustaebel.de/lars/tarfile/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,4 +17,12 @@ COMMENT=	Python library for reading and writing tarballs
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 230
+PLIST_SUB+=	NO_PY23=""
+.else
+PLIST_SUB+=	NO_PY23="@comment "
+.endif
+
+.include <bsd.port.post.mk>
