@@ -11,12 +11,10 @@ PORTREVISION=		0
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
-DISTFILES=		${RPM_GLIBC_COMMON} \
-			redhat-release-7.1-1.noarch.rpm \
+DISTFILES=		redhat-release-7.1-1.noarch.rpm \
 			${RPM_SETUP} \
 			filesystem-2.0.7-1.noarch.rpm \
 			basesystem-7.0-2.noarch.rpm \
-			${RPM_GLIBC} \
 			termcap-11.0.1-8.noarch.rpm \
 			db1-1.85-5.${MACHINE_ARCH}.rpm \
 			db3-3.1.17-7.${MACHINE_ARCH}.rpm \
@@ -46,8 +44,6 @@ PATCHFILES=		${UPDATES}
 
 MAINTAINER=		ports@FreeBSD.org
 
-FORBIDDEN=		"security bugs--see <URL:http://rhn.redhat.com/errata/RHSA-2002-166.html> and <URL:http://rhn.redhat.com/errata/RHSA-2002-139.html>"
-
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
 ONLY_FOR_ARCHS=		alpha i386
@@ -63,29 +59,28 @@ MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 # Let's avoid hardcoding 'en' as the language.
 LANG=			en
 
+UPDATES=		glibc-common-2.2.4-29.${MACHINE_ARCH}.rpm \
+				glibc-2.2.4-29.${MACHINE_ARCH}.rpm \
+				zlib-1.1.3-25.7.${MACHINE_ARCH}.rpm
+
 .include <bsd.port.pre.mk>
 
-UPDATES=		zlib-1.1.3-25.7.${MACHINE_ARCH}.rpm
 .if (${MACHINE_ARCH} == "i386")
 RPM_BZIP2=		bzip2-1.0.1-3.i386.rpm
 RPM_FREETYPE=		freetype-2.0.1-4.i386.rpm
 RPM_GDBM=		gdbm-1.8.0-5.i386.rpm
-RPM_GLIBC=		glibc-2.2.2-10.i386.rpm
-RPM_GLIBC_COMMON=	glibc-common-2.2.2-10.i386.rpm
-RPM_LIBSTDCXX=
+RPM_LIBSTDCXX=		libstdc++-2.96-85.i386.rpm
 RPM_COMPAT_LIBSTDCXX=	compat-libstdc++-6.2-2.9.0.14.i386.rpm
 RPM_SETSERIAL=		setserial-2.17-2.i386.rpm
 RPM_SETUP=		setup-2.4.7-1.noarch.rpm
 RPM_XFREE86_LIBS=	XFree86-libs-4.0.3-5.i386.rpm
-UPDATES+=		libstdc++-2.96-85.i386.rpm
+UPDATES+=		${RPM_LIBSTDCXX}
 .else
 RPM_BZIP2=		bzip2-1.0.1-4.alpha.rpm
 RPM_FREETYPE=		freetype-2.0.1-5.alpha.rpm
 RPM_GDBM=		gdbm-1.8.0-6.alpha.rpm
-RPM_GLIBC=		glibc-2.2.3-11.alpha.rpm
-RPM_GLIBC_COMMON=	glibc-common-2.2.3-11.alpha.rpm
 RPM_LIBSTDCXX=		libstdc++-2.96-87.alpha.rpm
-RPM_COMPAT_LIBSTDCXX=	
+RPM_COMPAT_LIBSTDCXX=
 RPM_SETSERIAL=		setserial-2.17-3.alpha.rpm
 RPM_SETUP=		setup-2.4.7-2.noarch.rpm
 RPM_XFREE86_LIBS=	XFree86-libs-4.0.3-21.alpha.rpm
@@ -131,18 +126,14 @@ do-install:
 # Also, set the ELF fallback brand to Linux, so that we don't have to do
 # anything special to run staticly linked binaries.
 	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${LINUX_ELF}
-	@for R in ${DISTFILES}; do \
+	@for R in glibc-common-2.2.4-29.${MACHINE_ARCH}.rpm \
+		glibc-2.2.4-29.${MACHINE_ARCH}.rpm \
+		${DISTFILES} zlib-1.1.3-25.7.${MACHINE_ARCH}.rpm; do \
 		${ECHO} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
 	@for F in ${BRAND_FILES}; do \
 		brandelf -t Linux ${LINUXBASE}/$$F; \
-	done
-#
-# Install updates
-	@for R in ${PATCHFILES}; do \
-		${ECHO} $$R; \
-		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
 	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${PREVIOUS_ELF}
 #
