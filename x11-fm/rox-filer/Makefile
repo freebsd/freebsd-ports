@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	rox
 DISTNAME=	rox-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	olgeni@uli.it
+MAINTAINER=	olgeni@freebsd.org
 
 RUN_DEPENDS=	${LOCALBASE}/share/Choices:${PORTSDIR}/x11-fm/rox-base
 

@@ -11,7 +11,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.gimp.org/
 DISTNAME=	urw-fonts
 
-MAINTAINER=	olgeni@uli.it
+MAINTAINER=	olgeni@freebsd.org
 
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes

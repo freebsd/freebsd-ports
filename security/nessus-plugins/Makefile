@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${PORTVERSION}/ \
 		ftp://ftp.chg.ru/pub/security/nessus/nessus-${PORTVERSION}/ \
 		ftp://ftp.sekure.net/pub/nessus/nessus-${PORTVERSION}/
 
-MAINTAINER=	olgeni@uli.it
+MAINTAINER=	olgeni@freebsd.org
 
 BUILD_DEPENDS=	${LOCALBASE}/include/nessus/config.h:${PORTSDIR}/security/nessus \
 		${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap
