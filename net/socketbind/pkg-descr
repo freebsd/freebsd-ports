@@ -1,0 +1,11 @@
+This library allows you to bind any application which is dynamically linked
+with libc. It provides convient way to bind socket's source IP to one of the
+multiple IP's available on computer.
+
+To use it first of all point LD_PRELOAD to installed library and set BINDTO
+variable to desired IP address to bind.
+
+Here is the wrapper to run any command binded to some IP address:
+env LD_PRELOAD=/usr/local/lib/libsocketbind.so.1 BINDTO=$MY_IP_ADDRESS $*
+
+Author can be reached at "nm at web dot am" address.
