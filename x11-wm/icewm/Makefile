@@ -3,7 +3,7 @@
 # Date created:		10 August 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.35 1999/05/09 16:32:13 steve Exp $
+# $Id: Makefile,v 1.36 1999/05/16 23:20:18 mharo Exp $
 #
 
 DISTNAME=	icewm-0.9.39
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	nacai@iname.com
 
 .if defined(GNOME)
-LIB_DEPENDS=	gnome.1:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS=	gnome.2:${PORTSDIR}/x11/gnomelibs
 .endif
 LIB_DEPENDS+=	Xpm.4:${PORTSDIR}/graphics/xpm
 
