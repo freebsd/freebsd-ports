@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sword
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.5
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.5/ \
 		http://www.crosswire.org/sword/download/ftpmirror/pub/sword/source/v1.5/ \
@@ -18,16 +18,35 @@ MAINTAINER=	wvengen@stack.nl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--program-transform-name=""
+CONFIGURE_ARGS+=	--program-transform-name="" --without-conf
+
+.if defined(WITH_INSTALLMGR)
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=	--enable-installmgr
+PLIST_SUB+=	INSTALLMGR=""
+.else
+CONFIGURE_ARGS+=	--disable-installmgr
+PLIST_SUB+=	INSTALLMGR="@comment "
+
+pre-everything:
+	@${ECHO_CMD} "Define WITH_INSTALLMGR to include the installmanager (curl)"
+.endif
 
 post-install: register
 .if !exists(${PREFIX}/etc/sword.conf)
 	@${ECHO_CMD} "[Install]" >${PREFIX}/etc/sword.conf
-	@${ECHO_CMD} "DataPath=${DATADIR}" >>${PREFIX}/etc/sword.conf
+	@${ECHO_CMD} "DataPath=${DATADIR}/" >>${PREFIX}/etc/sword.conf
 	@${ECHO_CMD} "Config file installed in ${PREFIX}/etc/sword.conf"
 .else
 	@${ECHO_CMD} "Config file not installed since ${PREFIX}/etc/sword.conf already exists."
 	@${ECHO_CMD} "Please check that DataPath points to your modules (default ${DATADIR}).";
+.endif
+.if !exists(${PREFIX}/share/sword/mods.d/globals.conf)
+	@${MKDIR} ${PREFIX}/share/sword/mods.d
+	@${ECHO_CMD} "[Globals]" >${PREFIX}/share/sword/mods.d/globals.conf
+	@${ECHO_CMD} "" >>${PREFIX}/share/sword/mods.d/globals.conf
+	@${ECHO_CMD} "Global sword runtime settings installed in"
+	@${ECHO_CMD} "       ${PREFIX}/share/sword/mods.d/globals.conf
 .endif
 	@${ECHO_CMD} ""
 	@${CAT} ${PKGMESSAGE}
