@@ -1,0 +1,50 @@
+bin/lgeneral
+share/games/lgeneral/gfx/font_credit.bmp
+share/games/lgeneral/gfx/title.bmp
+share/games/lgeneral/themes/default/click.wav
+share/games/lgeneral/themes/default/edit.wav
+share/games/lgeneral/themes/default/bkgnd.bmp
+share/games/lgeneral/themes/default/brief_frame.bmp
+share/games/lgeneral/themes/default/confirm_buttons.bmp
+share/games/lgeneral/themes/default/ctrl_buttons.bmp
+share/games/lgeneral/themes/default/cursors.bmp
+share/games/lgeneral/themes/default/deploy_buttons.bmp
+share/games/lgeneral/themes/default/folder.bmp
+share/games/lgeneral/themes/default/font_brief.bmp
+share/games/lgeneral/themes/default/font_error.bmp
+share/games/lgeneral/themes/default/font_status.bmp
+share/games/lgeneral/themes/default/font_std.bmp
+share/games/lgeneral/themes/default/font_turn_info.bmp
+share/games/lgeneral/themes/default/fr_hori.bmp
+share/games/lgeneral/themes/default/fr_llc.bmp
+share/games/lgeneral/themes/default/fr_luc.bmp
+share/games/lgeneral/themes/default/fr_rlc.bmp
+share/games/lgeneral/themes/default/fr_ruc.bmp
+share/games/lgeneral/themes/default/fr_vert.bmp
+share/games/lgeneral/themes/default/menu0_buttons.bmp
+share/games/lgeneral/themes/default/menu1_buttons.bmp
+share/games/lgeneral/themes/default/menu2_buttons.bmp
+share/games/lgeneral/themes/default/menu3_buttons.bmp
+share/games/lgeneral/themes/default/menu4_buttons.bmp
+share/games/lgeneral/themes/default/module_buttons.bmp
+share/games/lgeneral/themes/default/scen_dlg_buttons.bmp
+share/games/lgeneral/themes/default/scroll_buttons.bmp
+share/games/lgeneral/themes/default/setup_confirm_buttons.bmp
+share/games/lgeneral/themes/default/unit_buttons.bmp
+share/games/lgeneral/themes/default/wallpaper.bmp
+@dirrm share/games/lgeneral/gfx/terrain
+@dirrm share/games/lgeneral/gfx/units
+@dirrm share/games/lgeneral/gfx/flags
+@dirrm share/games/lgeneral/themes/default
+@dirrm share/games/lgeneral/campaigns
+@dirrm share/games/lgeneral/maps
+@dirrm share/games/lgeneral/nations
+@dirrm share/games/lgeneral/sounds
+@dirrm share/games/lgeneral/music
+@dirrm share/games/lgeneral/units
+@dirrm share/games/lgeneral/scenarios
+@dirrm share/games/lgeneral/ai_modules
+@dirrm share/games/lgeneral/gfx
+@dirrm share/games/lgeneral/themes
+@dirrm share/games/lgeneral
+@dirrm share/games
