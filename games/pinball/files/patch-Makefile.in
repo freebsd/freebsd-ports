@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu May 29 06:47:43 2003
++++ Makefile.in	Thu Jun  5 22:12:54 2003
+@@ -107,7 +107,7 @@
+ install_sh = @install_sh@
+ AUTOMAKE_OPTIONS = gnu
+ 
+-SUBDIRS = libltdl addon base data src test
++SUBDIRS = addon base data src test
+ 
+ EXTRA_DIST = bootstrap pinball.spec clean
+ 
