@@ -292,6 +292,7 @@ anteater	ports/sysutils/anteater
 anthy		ports/japanese/anthy
 antipolix	ports/games/antipolix
 antiword	ports/textproc/antiword
+aoi		ports/graphics/aoi
 aolserver	ports/www/aolserver
 apache-contrib	ports/www/apache-contrib
 apache-jserv	ports/www/apache-jserv
