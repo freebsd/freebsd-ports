@@ -1,0 +1,10 @@
+-----
+How to process japanese.
+
+1. Make resource file.
+   Sample resource file is installed in
+     /usr/local/share/examples/MHonArc/mhonarc.rc.sample
+
+2. Use -rcfile option and specify resource file
+   when you excute mknmz.
+-----
