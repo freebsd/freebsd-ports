@@ -1,0 +1,11 @@
+--- util/MYODBCUtilReadDataSourceStr.c.orig	Wed Feb  2 05:01:28 2005
++++ util/MYODBCUtilReadDataSourceStr.c	Sat Mar  5 02:05:08 2005
+@@ -20,7 +20,7 @@
+ 
+ #include "MYODBCUtil.h"
+ 
+-#if defined(__APPLE__) || defined(WIN32) || defined(__SPARC__)
++#if defined(__APPLE__) || defined(WIN32) || defined(__SPARC__) || defined(__FreeBSD__)
+ char *strndup( const char *s, size_t n )
+ {
+     size_t nAvail;

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	myodbc
-PORTVERSION=	3.51.10
+PORTVERSION=	3.51.11
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=MyODBC3
@@ -19,12 +19,8 @@ USE_MYSQL=		yes
 USE_GMAKE=		yes
 USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=		yes
-CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib -lltdl -lpub"
 CONFIGURE_ARGS+=	--with-mysql-path=${LOCALBASE} --without-samples \
 			--disable-gui --enable-test=no
-
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libpub.a:${PORTSDIR}/devel/publib
-LIB_DEPENDS+=		ltdl.4:${PORTSDIR}/devel/libltdl15
 
 PORTDOCS=	README
 
