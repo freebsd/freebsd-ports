@@ -20,3 +20,6 @@ If you built with Java support, add
 
 If you have many tables and many clients running, consider raising
 kern.maxfiles using sysctl(8).
+
+Use createlang(1) to install languages into your database.
+Supported languages are 'plpgsql', 'pltcl', 'pltclu', and 'plperl'.
