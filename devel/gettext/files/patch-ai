@@ -1,0 +1,12 @@
+--- m4/gettext.m4.orig	Fri Dec 24 20:23:44 1999
++++ m4/gettext.m4	Fri Dec 24 20:25:52 1999
+@@ -73,6 +73,9 @@
+ 		INSTOBJEXT=.mo
+ 	      fi
+ 	    fi
++	    if test "$gt_cv_func_gettext_libintl" = "yes"; then
++		INTLLIBS='-lintl'
++	    fi
+ 	])
+ 
+         if test "$CATOBJEXT" = "NONE"; then
