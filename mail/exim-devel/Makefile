@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	exim
-PORTVERSION= 	3.13
+PORTVERSION= 	3.14
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/ \
 		http://www.exim.org/ftp/ \
 		ftp://ftp.is.co.za/networking/mail/transport/exim/
-DISTFILES=	exim-3.13.tar.gz exim-texinfo-3.10.tar.gz
+DISTFILES=	exim-3.14.tar.gz exim-texinfo-3.10.tar.gz
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
@@ -25,20 +25,22 @@ USE_PERL5=	yes
 
 MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 
-# Uncomment the WITH_MYSQL and WITH_PAM definitions to link against
-# libmysqlclient and libpam respectively.  The libpam linkage is
-# required for SMTP AUTH support.
+# Uncomment the WITH_LDAP, WITH_MYSQL, WITH_PAM and WITH_PGSQL definitions
+# to link against libmysqlclient, libpam and libpq respectively.
+# The libpam linkage is required for SMTP AUTH support.
+#WITH_LDAP=	yes
 #WITH_MYSQL=	yes
 #WITH_PAM=	yes
+#WITH_PGSQL=	yes
+
+# Enable the embedded Perl interpreter, allowing Perl subroutines to be
+# called during string expansion.
+WITH_PERL=	yes
 
 # If WITH_PAM is defined then one or more of PAM_CRAM_MD5 and PAM_PLAINTEXT
 # must be left uncommented.
 PAM_CRAM_MD5=	yes
 PAM_PLAINTEXT=	yes
-
-# Uncommment the WITH_LDAP definition to enable LDAP lookups (requires
-# the openldap port.
-#WITH_LDAP=	yes
 
 # If WITH_LDAP is defined, LDAP_LIB_TYPE must be one of UMICHIGAN,
 # NETSCAPE or SOLARIS7.
@@ -54,7 +56,11 @@ LDAP_LIB_TYPE=UMICHIGAN
 SEDLIST=	-e 's,XX_PREFIX_XX,${PREFIX},' \
 		-e 's,XX_BINOWN_XX,${BINOWN},'
 .if !defined(USE_XLIB)
-SEDLIST+=	-e 's/^EXIM_MONITOR/\#EXIM_MONITOR/'
+SEDLIST+=	-e 's,^EXIM_MONITOR,\#EXIM_MONITOR,'
+.endif
+
+.if !defined(WITH_PERL)
+SEDLIST+=	-e 's,^EXIM_PERL,\#EXIM_PERL,'
 .endif
 
 .if defined(WITH_LDAP)
@@ -77,34 +83,45 @@ SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${PREFIX}/lib/mysql -lmysqlclient,' \
 SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
 .endif
 
-.if !defined(WITH_MYSQL)
-SEDLIST+=	-e 's/^LOOKUP_LIBS/\#LOOKUP_LIBS/' \
-		-e 's/^LOOKUP_INCLUDE/\#LOOKUP_INCLUDE/'
-.endif
-
-.if !defined(WITH_PAM)
-SEDLIST+=	-e 's/^SUPPORT_PAM/\#SUPPORT_PAM/' \
-		-e 's/^PAM_LIBS/\#PAM_LIBS/'
+.if defined(WITH_PAM)
+SEDLIST+=	-e 's,XX_PAM_LIBS_XX,-lpam,'
+.else
+SEDLIST+=	-e 's,XX_PAM_LIBS_XX,,' \
+		-e 's,^SUPPORT_PAM,\#SUPPORT_PAM,' 
 .endif
 
 .if !defined(WITH_PAM) || !defined(PAM_CRAM_MD5)
-SEDLIST+=	-e 's/^AUTH_CRAM_MD5/\#AUTH_CRAM_MD5/'
+SEDLIST+=	-e 's,^AUTH_CRAM_MD5,\#AUTH_CRAM_MD5,'
 .endif
 
 .if !defined(WITH_PAM) || !defined(PAM_PLAINTEXT)
-SEDLIST+=	-e 's/^AUTH_PLAINTEXT/\#AUTH_PLAINTEXT/'
+SEDLIST+=	-e 's,^AUTH_PLAINTEXT,\#AUTH_PLAINTEXT,'
+.endif
+
+.if defined(WITH_PGSQL)
+LIB_DEPENDS+=	libpq.2:${PORTSDIR}/databases/postgresql
+SEDLIST+=	-e 's,XX_PGSQL_LIBS_XX,-L${PREFIX}/pgsql/lib -lpq,' \
+		-e 's,XX_PGSQL_INCLUDE_XX,-I${PREFIX}/pgsql/include,' \
+		-e 's,^\# LOOKUP_PGSQL,LOOKUP_PGSQL,'
+.else
+SEDLIST+=	-e 's,XX_PGSQL_[^ ]*_XX,,'
+.endif
+
+.if !defined(WITH_PGSQL) && !defined(WITH_MYSQL) && !defined(WITH_LDAP)
+SEDLIST+=	-e 's,^LOOKUP_LIBS,\#LOOKUP_LIBS,' \
+		-e 's,^LOOKUP_INCLUDE,\#LOOKUP_INCLUDE,'
 .endif
 
 .if defined(WITH_MAILDIR)
-SEDLIST+=	-e 's/^\# SUPPORT_MAILDIR/SUPPORT_MAILDIR/'
+SEDLIST+=	-e 's,^\# SUPPORT_MAILDIR,SUPPORT_MAILDIR,'
 .endif
 
 .if defined(WITH_MAILSTORE)
-SEDLIST+=	-e 's/^\# SUPPORT_MAILSTORE/SUPPORT_MAILSTORE/'
+SEDLIST+=	-e 's,^\# SUPPORT_MAILSTORE,SUPPORT_MAILSTORE,'
 .endif
 
 .if defined(WITH_MBX)
-SEDLIST+=	-e 's/^\# SUPPORT_MBX/SUPPORT_MBX/'
+SEDLIST+=	-e 's,^\# SUPPORT_MBX,SUPPORT_MBX,'
 .endif
 
 do-configure:
