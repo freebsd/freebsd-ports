@@ -1,6 +1,6 @@
 @exec mkdir -p %D/System/Library/Makefiles
 @exec ln -s Library/Makefiles %D/System
-%%GNUSTEP_STABLE%%System/.GNUsteprc
+System/.GNUsteprc
 System/Library/Makefiles/GNUstep-reset.sh
 System/Library/Makefiles/GNUstep.csh
 System/Library/Makefiles/GNUstep.sh
@@ -103,7 +103,7 @@ System/Library/Makefiles/spec-debug-alone-rules.template
 System/Library/Makefiles/spec-debug-rules.template
 System/Library/Makefiles/spec-rules.template
 System/Library/Makefiles/strip_makefiles.sh
-%%GNUSTEP_STABLE%%System/Library/Makefiles/tar-exclude-list
+System/Library/Makefiles/tar-exclude-list
 System/Library/Makefiles/subproject.make
 System/Library/Makefiles/target.make
 System/Library/Makefiles/test-application.make
