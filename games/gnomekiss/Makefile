@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomekiss
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	http://www.ecs.soton.ac.uk/~njl98r/code/kiss/
 
@@ -16,7 +17,7 @@ COMMENT=	GNOME version of Kisekae Set System
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12 orbit
+USE_GNOME=	gnomeprefix gnomehack gnomelibs
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
