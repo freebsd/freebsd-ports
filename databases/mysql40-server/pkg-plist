@@ -206,5 +206,5 @@ share/mysql/ukrainian/errmsg.txt
 @dirrm share/mysql/swedish
 @dirrm share/mysql/ukrainian
 @dirrm share/mysql
-@exec %D/bin/mysql_install_db
+@exec [ -d %%DB_DIR%% ] || %D/bin/mysql_install_db --ldata=%%DB_DIR%%
 @unexec /usr/bin/killall mysqld > /dev/null 2>&1 || true
