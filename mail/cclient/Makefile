@@ -9,10 +9,10 @@ PORTNAME=	cclient
 PORTVERSION=	2002c1
 PORTEPOCH=	1
 CATEGORIES=	mail devel
-MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
-		http://atreides.freenix.no/~anders/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/imap/ \
-		ftp://ftp.nuug.no/pub/anders/distfiles/
+MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
+		http://atreides.freenix.no/~anders/%SUBDIR%/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/imap/%SUBDIR%/ \
+		ftp://ftp.nuug.no/pub/anders/distfiles/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 DISTNAME=	imap-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
