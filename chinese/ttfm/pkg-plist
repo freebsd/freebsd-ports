@@ -1,10 +1,10 @@
 bin/ttfinfo
 bin/ttfm.sh
-share/doc/ttfm/README
-share/doc/ttfm/USAGE
-share/ttfm/gscjk.ttfm
-share/ttfm/xttfm.ttfm
-@dirrm share/ttfm
-@dirrm share/doc/ttfm
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/USAGE
+%%DATADIR%%/gscjk.ttfm
+%%DATADIR%%/xttfm.ttfm
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/share/fonts/TrueType 2>/dev/null || true
 @unexec rmdir %D/share/fonts 2>/dev/null || true

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ttfm
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	chinese print
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/ttfm/
 
@@ -17,19 +17,20 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 FONTSDIR=	${PREFIX}/share/fonts/TrueType/
-MODULESDIR=	${PREFIX}/share/ttfm/
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/ttfinfo ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/ttfm.sh ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/doc/ttfm
+	${INSTALL_PROGRAM} ${WRKSRC}/ttfinfo ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/ttfm.sh ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
 .for doc in README USAGE
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${PREFIX}/share/doc/ttfm
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
-	@${INSTALL_MAN} ${WRKSRC}/ttfm.sh.1 ${PREFIX}/man/man1
-	@${MKDIR} ${MODULESDIR}
+.endif
+	${INSTALL_MAN} ${WRKSRC}/ttfm.sh.1 ${PREFIX}/man/man1
+	@${MKDIR} ${DATADIR}
 .for module in gscjk.ttfm xttfm.ttfm
-	@${INSTALL_SCRIPT} ${WRKSRC}/modules/${module} ${MODULESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/modules/${module} ${DATADIR}
 .endfor
 	@${MKDIR} ${FONTSDIR}
 
