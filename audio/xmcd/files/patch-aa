@@ -1,5 +1,5 @@
-*** xmcd.d/Imakefile~	Thu Feb 16 20:48:56 1995
---- xmcd.d/Imakefile	Thu Feb 16 20:49:17 1995
+*** ./xmcd_d/Imakefile.orig	Thu Apr  4 21:42:31 1996
+--- ./xmcd_d/Imakefile	Thu Apr  4 23:31:17 1996
 ***************
 *** 43,49 ****
    * #include "Motif.tmpl"
@@ -13,7 +13,76 @@
    * #include "Motif.tmpl"
    * #include "Motif.rules"
    */
-! LOCAL_LIBRARIES= -lXm -lXt -lX11 -lXext
+! LOCAL_LIBRARIES= ${MOTIFLIB} XawClientLibs
   
   
   /**** Optional defines:  Change as you see fit. *****************************
+***************
+*** 67,78 ****
+  DEFINES=
+  #endif
+  
+  
+  /*
+   * Add local include path
+   */
+  INCLUDES=-I..
+- 
+  
+  /*
+   * C Source files
+--- 67,78 ----
+  DEFINES=
+  #endif
+  
++ MANSUFFIX = 1
+  
+  /*
+   * Add local include path
+   */
+  INCLUDES=-I..
+  
+  /*
+   * C Source files
+*** ./cda_d/Imakefile.orig	Thu Apr  4 21:43:05 1996
+--- ./cda_d/Imakefile	Thu Apr  4 23:32:25 1996
+***************
+*** 90,96 ****
+  #if defined(SNIArchitecture) 
+  LOCAL_LIBRARIES=/usr/ccs/lib/libcurses.a
+  #else
+! LOCAL_LIBRARIES=-lcurses
+  #endif	/* SINIX */
+  #endif	/* ultrix */
+  #endif	/* NetBSDArchitecture __bsdi__ */
+--- 90,96 ----
+  #if defined(SNIArchitecture) 
+  LOCAL_LIBRARIES=/usr/ccs/lib/libcurses.a
+  #else
+! LOCAL_LIBRARIES=-lncurses -lmytinfo
+  #endif	/* SINIX */
+  #endif	/* ultrix */
+  #endif	/* NetBSDArchitecture __bsdi__ */
+***************
+*** 98,103 ****
+--- 98,104 ----
+  #endif	/* LinuxArchitecture */
+  #endif	/* SunArchitecture */
+  
++ MANSUFFIX = 1
+  
+  /*
+   * C Source files
+*** ./dbconv_d/Imakefile.orig	Thu Apr  4 23:33:09 1996
+--- ./dbconv_d/Imakefile	Thu Apr  4 23:33:53 1996
+***************
+*** 24,29 ****
+--- 24,31 ----
+   *
+   */
+  
++ MANSUFFIX = 1
++ 
+  
+  /*
+   * Add local include path
