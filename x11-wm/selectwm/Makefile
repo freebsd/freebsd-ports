@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	selectwm
-PORTVERSION=	0.4
-PORTREVISION=	2
+PORTVERSION=	0.4.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://ordiluc.net/selectwm/
 
@@ -22,6 +21,8 @@ USE_GNOME=	gtk20
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+
+PLIST_FILES=	bin/selectwm
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,-O2,${CFLAGS},g' ${WRKSRC}/configure
