@@ -1,0 +1,18 @@
+bin/irb
+lib/ruby/irb/frame.rb
+lib/ruby/irb/input-method.rb
+lib/ruby/irb/loader.rb
+lib/ruby/irb/main.rb
+lib/ruby/irb/multi-irb.rb
+lib/ruby/irb/rtags.rb
+lib/ruby/irb/ruby-lex.rb
+lib/ruby/irb/ruby-token.rb
+lib/ruby/irb/slex.rb
+lib/ruby/irb/version.rb
+lib/ruby/irb/xmp.rb
+@dirrm lib/ruby/irb
+share/doc/ruby/irb/README
+share/doc/ruby/irb/README-add
+share/doc/ruby/irb/README-install
+@dirrm share/doc/ruby/irb
+@unexec /bin/rmdir %D/share/doc/ruby >/dev/null 2>&1 || true

@@ -1,0 +1,6 @@
+Irb is an abbrevation of "interactive ruby."
+It's a tool to input and evaluate expressions of Ruby
+from standard input easily.
+
+- Yasuhiro Fukuma
+yasuf@big.or.jp
