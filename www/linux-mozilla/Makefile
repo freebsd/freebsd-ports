@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi
@@ -44,8 +44,10 @@ IS_INTERACTIVE=	yes
 
 pre-everything::
 	${MKDIR} ${WRKSRC}
+.if !exists(${WRKDIRPREFIX}${.CURDIR}/work/netscape-installer/xpi/components.conf)
 .if !defined(BATCH)
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
+.endif
 .endif
 DISTFILES=	browser.xpi \
 		deflenus.xpi \
