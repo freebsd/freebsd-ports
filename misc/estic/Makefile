@@ -8,9 +8,7 @@
 PORTNAME=		estic
 PORTVERSION=		1.40
 CATEGORIES=		misc
-MASTER_SITES=		ftp://linux01.gwdg.de/pub/isdn/estic/  \
-			ftp://ftp.franken.de/pub/isdn4linux/estic/  \
-			http://www.fast.de/~uli/isdn/estic/
+MASTER_SITES=		ftp://linux01.gwdg.de/pub/isdn/estic/old-versions/v1.40/
 DISTNAME=		estic-${PORTVERSION}-sources
 
 MAINTAINER=		jhs@FreeBSD.org
