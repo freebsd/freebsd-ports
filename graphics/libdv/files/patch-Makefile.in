@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Mon Nov 19 02:04:08 2001
++++ Makefile.in	Mon Nov 19 02:05:55 2001
+@@ -348,7 +348,7 @@
+ install-exec-am:
+ install-exec: install-exec-recursive
+ 
+-install-data-am: install-pkgconfigDATA
++install-data-am: 
+ install-data: install-data-recursive
+ 
+ install-am: all-am
+@@ -356,7 +356,7 @@
+ install: install-recursive
+ uninstall-am: uninstall-pkgconfigDATA
+ uninstall: uninstall-recursive
+-all-am: Makefile $(DATA) config.h
++all-am: Makefile config.h
+ all-redirect: all-recursive-am
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
