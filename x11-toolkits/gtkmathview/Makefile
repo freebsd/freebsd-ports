@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gtkmathview
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://helm.cs.unibo.it/mml-widget/sources/
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	glib12 gtk12
+USE_GNOME=	glib20 gtk20
 USE_LIBTOOL=	yes
 CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
 LDFLAGS=	-L${LOCALBASE}/lib
@@ -32,15 +32,9 @@ INSTALLS_SHLIB=	yes
 
 MAN1=	mathmlviewer.1 mathml2ps.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
 .for file in src/stringAux.cc src/PS_T1_FontManager.cc
 	@${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|g" ${WRKSRC}/${file}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

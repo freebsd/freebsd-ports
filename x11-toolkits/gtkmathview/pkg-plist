@@ -7,7 +7,7 @@ include/gtkmathview/gtkmathview.h
 lib/libgtkmathview.a
 lib/libgtkmathview.la
 lib/libgtkmathview.so
-lib/libgtkmathview.so.4
+lib/libgtkmathview.so.5
 lib/pkgconfig/gtkmathview.pc
 share/gtkmathview/dictionary-combining.xml
 share/gtkmathview/dictionary-local.xml
