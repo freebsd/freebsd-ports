@@ -1,0 +1,22 @@
+
+$FreeBSD$
+
+--- programs/Imakefile.orig	Sat Jul 24 02:13:01 2004
++++ programs/Imakefile	Sat Jul 24 02:13:23 2004
+@@ -57,7 +57,6 @@
+        XRXSRCDIR = xrx
+ #endif
+        XSMSRCDIR = xsm
+-     XTERMSRCDIR = xterm
+       SCRIPTSDIR = scripts
+ #endif
+ #if BuildCID
+@@ -129,7 +128,7 @@
+ 	xlsclients xlsfonts xmag xman xmessage xmh xmodmap xprop xrdb \
+ 	xrefresh $(XRXSRCDIR) xset \
+ 	xsetroot $(XSMSRCDIR) xstdcmap $(XINPUTCLIENTDIRS) \
+-	$(XTERMSRCDIR) $(XTRAPCLIENTDIRS) $(XVIDTUNESRCDIR) xwd xwininfo xwud \
++	$(XTRAPCLIENTDIRS) $(XVIDTUNESRCDIR) xwd xwininfo xwud \
+ 	$(XPMCLIENTDIRS) $(XVINFOSRCDIR) \
+ 	$(XSSRCDIR) $(XASSRCDIR) $(LBXPROXYSRCDIR) $(SCRIPTSDIR) \
+ 	$(GLXCLIENTDIRS) $(XRANDRDIR) $(XCURSORGENDIR) 

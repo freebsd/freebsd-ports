@@ -7,7 +7,7 @@
 
 PORTNAME=	xorg-clients
 PORTVERSION=	6.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/
 DISTFILES=	X11R6.7.0-src1.tar.gz \
@@ -17,9 +17,8 @@ DISTFILES=	X11R6.7.0-src1.tar.gz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X client programs and related files from X.Org
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		expat.5:${PORTSDIR}/textproc/expat2 \
-		png.5:${PORTSDIR}/graphics/png \
+BUILD_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 CONFLICTS=	XFree86-clients-*
@@ -61,7 +60,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM:L} != xorg
-IGNORE= is part of X.Org. For switching to X.Org, read UPDATING entry 20040723
+IGNORE=	is part of X.Org. For switching to X.Org, read UPDATING entry 20040723
 .endif
 
 .include "${FILESDIR}/manpages"
