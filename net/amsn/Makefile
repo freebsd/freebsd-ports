@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	amsn
-PORTVERSION=	0.81
+PORTVERSION=	0.82
 CATEGORIES=	net
-MASTER_SITES=	http://download.sourceforge.net/${PORTNAME}/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
@@ -22,8 +23,12 @@ WRKSRC=		${WRKDIR}/msn
 LIBDIR=		${PREFIX}/lib/msn
 DOCSDIR=	${PREFIX}/share/doc/amsn
 CORE=		FAQ HELP README amsn jwakeup langlist *tcl *htm*
-SUBDIR=		i lang s
+SUBDIR=		icons lang skins
 DOC_FILES=	README TODO
+
+post-extract:
+	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
+	@${RM} -rf ${WRKSRC}/skins/default/smileys/.xvpics
 
 do-install:
 	@${MKDIR} ${LIBDIR}
@@ -43,7 +48,7 @@ post-install:
 		> ${PREFIX}/bin/amsn
 	@${CHMOD} 555 ${PREFIX}/bin/amsn
 	@${CHMOD} 555 ${PREFIX}/lib/msn/amsn
-	@uudecode -o ${PREFIX}/lib/msn/i/logolinmsn.gif \
+	@uudecode -o ${PREFIX}/lib/msn/icons/logolinmsn.gif \
 		${FILESDIR}/logolinmsn.gif.uue
 
 .include <bsd.port.mk>
