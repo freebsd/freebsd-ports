@@ -20,7 +20,7 @@ fi
 
 case $2 in
     POST-INSTALL)
-	UID=90
+	UID=101
 	GID=${UID}
 	if pw group show "${ENABLE_GROUP}" 2>/dev/null; then
 	    echo "You already have a group \"${ENABLE_GROUP}\", so I will use it."
