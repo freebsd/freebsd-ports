@@ -11,6 +11,7 @@
     SUBDIR += colorstep
     SUBDIR += easygtk
     SUBDIR += eazel-themes
+    SUBDIR += eel
     SUBDIR += engradient
     SUBDIR += fltk
     SUBDIR += fltk-xunicode
