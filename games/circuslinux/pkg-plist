@@ -1,0 +1,147 @@
+share/doc/circuslinux-1.0.3/TODO.txt
+share/doc/circuslinux-1.0.3/README.txt
+share/doc/circuslinux-1.0.3/README-SDL.txt
+share/doc/circuslinux-1.0.3/INSTALL.txt
+share/doc/circuslinux-1.0.3/FAQ.txt
+share/doc/circuslinux-1.0.3/COPYING.txt
+share/doc/circuslinux-1.0.3/CHANGES.txt
+share/doc/circuslinux-1.0.3/AUTHORS.txt
+@dirrm share/doc/circuslinux-1.0.3
+share/circuslinux/data/sounds/wahoo.wav
+share/circuslinux/data/sounds/teeter2.wav
+share/circuslinux/data/sounds/teeter1.wav
+share/circuslinux/data/sounds/splat.wav
+share/circuslinux/data/sounds/pop.wav
+share/circuslinux/data/sounds/keypress.wav
+share/circuslinux/data/sounds/cheering.wav
+share/circuslinux/data/sounds/bounce.wav
+share/circuslinux/data/sounds/applause.wav
+@dirrm share/circuslinux/data/sounds
+share/circuslinux/data/music/klovninarki.mod
+share/circuslinux/data/music/kaupunki.mod
+share/circuslinux/data/music/hiscreen.mod
+share/circuslinux/data/music/hiscore.mod
+share/circuslinux/data/music/finally.mod
+@dirrm share/circuslinux/data/music
+share/circuslinux/data/images/title/title.png
+share/circuslinux/data/images/title/title-highlights.png
+share/circuslinux/data/images/title/programming.png
+share/circuslinux/data/images/title/music.png
+share/circuslinux/data/images/title/light-on.png
+share/circuslinux/data/images/title/light-off.png
+share/circuslinux/data/images/title/graphics.png
+@dirrm share/circuslinux/data/images/title
+share/circuslinux/data/images/teeter-totter/right-3.png
+share/circuslinux/data/images/teeter-totter/right-2.png
+share/circuslinux/data/images/teeter-totter/right-1.png
+share/circuslinux/data/images/teeter-totter/right-0.png
+share/circuslinux/data/images/teeter-totter/left-3.png
+share/circuslinux/data/images/teeter-totter/left-2.png
+share/circuslinux/data/images/teeter-totter/left-1.png
+share/circuslinux/data/images/teeter-totter/left-0.png
+@dirrm share/circuslinux/data/images/teeter-totter
+share/circuslinux/data/images/status/times.png
+share/circuslinux/data/images/status/sadclown-2.png
+share/circuslinux/data/images/status/sadclown-1.png
+share/circuslinux/data/images/status/sadclown-0.png
+share/circuslinux/data/images/status/numbers-1.png
+share/circuslinux/data/images/status/numbers-0.png
+share/circuslinux/data/images/status/letters.png
+share/circuslinux/data/images/status/fuzz.png
+share/circuslinux/data/images/status/enter-initials.png
+share/circuslinux/data/images/status/clown-head.png
+share/circuslinux/data/images/status/clown-head-oh.png
+@dirrm share/circuslinux/data/images/status
+share/circuslinux/data/images/icon.png
+share/circuslinux/data/images/highscore/top.png
+share/circuslinux/data/images/highscore/left.png
+@dirrm share/circuslinux/data/images/highscore
+share/circuslinux/data/images/clowns/right-leg-1.png
+share/circuslinux/data/images/clowns/right-leg-1-upside-down.png
+share/circuslinux/data/images/clowns/right-leg-0.png
+share/circuslinux/data/images/clowns/right-leg-0-upside-down.png
+share/circuslinux/data/images/clowns/right-arm-2.png
+share/circuslinux/data/images/clowns/right-arm-1.png
+share/circuslinux/data/images/clowns/right-arm-0.png
+share/circuslinux/data/images/clowns/left-leg-1.png
+share/circuslinux/data/images/clowns/left-leg-1-upside-down.png
+share/circuslinux/data/images/clowns/left-leg-0.png
+share/circuslinux/data/images/clowns/left-leg-0-upside-down.png
+share/circuslinux/data/images/clowns/left-arm-2.png
+share/circuslinux/data/images/clowns/left-arm-1.png
+share/circuslinux/data/images/clowns/left-arm-0.png
+share/circuslinux/data/images/clowns/body-upside-down.png
+share/circuslinux/data/images/clowns/body-right.png
+share/circuslinux/data/images/clowns/body-left.png
+@dirrm share/circuslinux/data/images/clowns
+share/circuslinux/data/images/circuslinux-icon.xpm
+share/circuslinux/data/images/bouncers/bouncer-1.png
+share/circuslinux/data/images/bouncers/bouncer-0.png
+share/circuslinux/data/images/bouncers/barrier.png
+@dirrm share/circuslinux/data/images/bouncers
+share/circuslinux/data/images/balloons/yellow-right-1.png
+share/circuslinux/data/images/balloons/yellow-right-0.png
+share/circuslinux/data/images/balloons/yellow-left-1.png
+share/circuslinux/data/images/balloons/yellow-left-0.png
+share/circuslinux/data/images/balloons/yellow-die-1.png
+share/circuslinux/data/images/balloons/yellow-die-0.png
+share/circuslinux/data/images/balloons/white-right-1.png
+share/circuslinux/data/images/balloons/white-right-0.png
+share/circuslinux/data/images/balloons/white-left-1.png
+share/circuslinux/data/images/balloons/white-left-0.png
+share/circuslinux/data/images/balloons/white-die-1.png
+share/circuslinux/data/images/balloons/white-die-0.png
+share/circuslinux/data/images/balloons/red-right-1.png
+share/circuslinux/data/images/balloons/red-right-0.png
+share/circuslinux/data/images/balloons/red-left-1.png
+share/circuslinux/data/images/balloons/red-left-0.png
+share/circuslinux/data/images/balloons/red-die-1.png
+share/circuslinux/data/images/balloons/red-die-0.png
+share/circuslinux/data/images/balloons/purple-right-1.png
+share/circuslinux/data/images/balloons/purple-right-0.png
+share/circuslinux/data/images/balloons/purple-left-1.png
+share/circuslinux/data/images/balloons/purple-left-0.png
+share/circuslinux/data/images/balloons/purple-die-1.png
+share/circuslinux/data/images/balloons/purple-die-0.png
+share/circuslinux/data/images/balloons/orange-right-1.png
+share/circuslinux/data/images/balloons/orange-right-0.png
+share/circuslinux/data/images/balloons/orange-left-1.png
+share/circuslinux/data/images/balloons/orange-left-0.png
+share/circuslinux/data/images/balloons/orange-die-1.png
+share/circuslinux/data/images/balloons/orange-die-0.png
+share/circuslinux/data/images/balloons/green-right-1.png
+share/circuslinux/data/images/balloons/green-right-0.png
+share/circuslinux/data/images/balloons/green-left-1.png
+share/circuslinux/data/images/balloons/green-left-0.png
+share/circuslinux/data/images/balloons/green-die-1.png
+share/circuslinux/data/images/balloons/green-die-0.png
+share/circuslinux/data/images/balloons/cyan-right-1.png
+share/circuslinux/data/images/balloons/cyan-right-0.png
+share/circuslinux/data/images/balloons/cyan-left-1.png
+share/circuslinux/data/images/balloons/cyan-left-0.png
+share/circuslinux/data/images/balloons/cyan-die-1.png
+share/circuslinux/data/images/balloons/cyan-die-0.png
+share/circuslinux/data/images/balloons/blue-right-1.png
+share/circuslinux/data/images/balloons/blue-right-0.png
+share/circuslinux/data/images/balloons/blue-left-1.png
+share/circuslinux/data/images/balloons/blue-left-0.png
+share/circuslinux/data/images/balloons/blue-die-1.png
+share/circuslinux/data/images/balloons/blue-die-0.png
+@dirrm share/circuslinux/data/images/balloons
+share/circuslinux/data/images/backgrounds/background1.png
+share/circuslinux/data/images/backgrounds/background0.png
+@dirrm share/circuslinux/data/images/backgrounds
+share/circuslinux/data/images/acts/seal-1.png
+share/circuslinux/data/images/acts/seal-0.png
+share/circuslinux/data/images/acts/bear-right-1.png
+share/circuslinux/data/images/acts/bear-right-0.png
+share/circuslinux/data/images/acts/bear-left-1.png
+share/circuslinux/data/images/acts/bear-left-0.png
+share/circuslinux/data/images/acts/beachball-2.png
+share/circuslinux/data/images/acts/beachball-1.png
+share/circuslinux/data/images/acts/beachball-0.png
+@dirrm share/circuslinux/data/images/acts
+@dirrm share/circuslinux/data/images
+@dirrm share/circuslinux/data
+@dirrm share/circuslinux
+bin/circuslinux
