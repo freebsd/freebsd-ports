@@ -1,75 +1,74 @@
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/x.tld
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/c.tld
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/commons-beanutils.jar
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/commons-collections.jar
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/commons-digester.jar
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/commons-fileupload.jar
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/commons-lang.jar
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/commons-logging.jar
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/commons-validator.jar
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/fmt-rt.tld
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/fmt.tld
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/jakarta-oro.jar
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/jstl.jar
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/sql-rt.tld
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/sql.tld
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/standard.jar
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/struts-bean-el.tld
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/struts-bean.tld
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/struts-el.jar
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/struts.jar
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/struts-html-el.tld
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/struts-html.tld
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/struts-legacy.jar
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/struts-logic-el.tld
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/struts-logic.tld
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/struts-nested.tld
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/struts-template.tld
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/struts-tiles.tld
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/x-rt.tld
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib/c-rt.tld
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/webapps/strutsel-exercise-taglib.war
-share/java/jakarta-struts-1.1-rc2/contrib/struts-el/README.txt
-share/java/jakarta-struts-1.1-rc2/lib/web-app_2_3.dtd
-share/java/jakarta-struts-1.1-rc2/lib/commons-collections.jar
-share/java/jakarta-struts-1.1-rc2/lib/commons-digester.jar
-share/java/jakarta-struts-1.1-rc2/lib/commons-fileupload.jar
-share/java/jakarta-struts-1.1-rc2/lib/commons-lang.jar
-share/java/jakarta-struts-1.1-rc2/lib/commons-logging.jar
-share/java/jakarta-struts-1.1-rc2/lib/commons-validator.jar
-share/java/jakarta-struts-1.1-rc2/lib/jakarta-oro.jar
-share/java/jakarta-struts-1.1-rc2/lib/struts-bean.tld
-share/java/jakarta-struts-1.1-rc2/lib/struts-config_1_0.dtd
-share/java/jakarta-struts-1.1-rc2/lib/struts-config_1_1.dtd
-share/java/jakarta-struts-1.1-rc2/lib/struts-html.tld
-share/java/jakarta-struts-1.1-rc2/lib/struts-legacy.jar
-share/java/jakarta-struts-1.1-rc2/lib/struts-logic.tld
-share/java/jakarta-struts-1.1-rc2/lib/struts-nested.tld
-share/java/jakarta-struts-1.1-rc2/lib/struts-template.tld
-share/java/jakarta-struts-1.1-rc2/lib/struts.jar
-share/java/jakarta-struts-1.1-rc2/lib/struts-tiles.tld
-share/java/jakarta-struts-1.1-rc2/lib/tiles-config.dtd
-share/java/jakarta-struts-1.1-rc2/lib/tiles-config_1_1.dtd
-share/java/jakarta-struts-1.1-rc2/lib/validation_1_1.dtd
-share/java/jakarta-struts-1.1-rc2/lib/validator-rules.xml
-share/java/jakarta-struts-1.1-rc2/lib/validator-rules_1_1.dtd
-share/java/jakarta-struts-1.1-rc2/lib/web-app_2_2.dtd
-share/java/jakarta-struts-1.1-rc2/lib/commons-beanutils.jar
-share/java/jakarta-struts-1.1-rc2/webapps/tiles-documentation.war
-share/java/jakarta-struts-1.1-rc2/webapps/struts-documentation.war
-share/java/jakarta-struts-1.1-rc2/webapps/struts-example.war
-share/java/jakarta-struts-1.1-rc2/webapps/struts-exercise-taglib.war
-share/java/jakarta-struts-1.1-rc2/webapps/struts-template.war
-share/java/jakarta-struts-1.1-rc2/webapps/struts-upload.war
-share/java/jakarta-struts-1.1-rc2/webapps/struts-validator.war
-share/java/jakarta-struts-1.1-rc2/webapps/struts-blank.war
-share/java/jakarta-struts-1.1-rc2/INSTALL
-share/java/jakarta-struts-1.1-rc2/LICENSE
-share/java/jakarta-struts-1.1-rc2/README
-@dirrm share/java/jakarta-struts-1.1-rc2/contrib/struts-el/lib
-@dirrm share/java/jakarta-struts-1.1-rc2/contrib/struts-el/webapps
-@dirrm share/java/jakarta-struts-1.1-rc2/contrib/struts-el
-@dirrm share/java/jakarta-struts-1.1-rc2/contrib
-@dirrm share/java/jakarta-struts-1.1-rc2/lib
-@dirrm share/java/jakarta-struts-1.1-rc2/webapps
-@dirrm share/java/jakarta-struts-1.1-rc2
+%%T%%/contrib/struts-el/lib/x.tld
+%%T%%/contrib/struts-el/lib/c.tld
+%%T%%/contrib/struts-el/lib/commons-beanutils.jar
+%%T%%/contrib/struts-el/lib/commons-collections.jar
+%%T%%/contrib/struts-el/lib/commons-digester.jar
+%%T%%/contrib/struts-el/lib/commons-fileupload.jar
+%%T%%/contrib/struts-el/lib/commons-lang.jar
+%%T%%/contrib/struts-el/lib/commons-logging.jar
+%%T%%/contrib/struts-el/lib/commons-validator.jar
+%%T%%/contrib/struts-el/lib/fmt-rt.tld
+%%T%%/contrib/struts-el/lib/fmt.tld
+%%T%%/contrib/struts-el/lib/jakarta-oro.jar
+%%T%%/contrib/struts-el/lib/jstl.jar
+%%T%%/contrib/struts-el/lib/sql-rt.tld
+%%T%%/contrib/struts-el/lib/sql.tld
+%%T%%/contrib/struts-el/lib/standard.jar
+%%T%%/contrib/struts-el/lib/struts-bean-el.tld
+%%T%%/contrib/struts-el/lib/struts-bean.tld
+%%T%%/contrib/struts-el/lib/struts-el.jar
+%%T%%/contrib/struts-el/lib/struts.jar
+%%T%%/contrib/struts-el/lib/struts-html-el.tld
+%%T%%/contrib/struts-el/lib/struts-html.tld
+%%T%%/contrib/struts-el/lib/struts-logic-el.tld
+%%T%%/contrib/struts-el/lib/struts-logic.tld
+%%T%%/contrib/struts-el/lib/struts-nested.tld
+%%T%%/contrib/struts-el/lib/struts-template.tld
+%%T%%/contrib/struts-el/lib/struts-tiles.tld
+%%T%%/contrib/struts-el/lib/x-rt.tld
+%%T%%/contrib/struts-el/lib/c-rt.tld
+%%T%%/contrib/struts-el/webapps/strutsel-exercise-taglib.war
+%%T%%/contrib/struts-el/README.txt
+%%T%%/lib/web-app_2_3.dtd
+%%T%%/lib/commons-collections.jar
+%%T%%/lib/commons-digester.jar
+%%T%%/lib/commons-fileupload.jar
+%%T%%/lib/commons-lang.jar
+%%T%%/lib/commons-logging.jar
+%%T%%/lib/commons-validator.jar
+%%T%%/lib/jakarta-oro.jar
+%%T%%/lib/struts-bean.tld
+%%T%%/lib/struts-config_1_0.dtd
+%%T%%/lib/struts-config_1_1.dtd
+%%T%%/lib/struts-html.tld
+%%T%%/lib/struts-legacy.jar
+%%T%%/lib/struts-logic.tld
+%%T%%/lib/struts-nested.tld
+%%T%%/lib/struts-template.tld
+%%T%%/lib/struts.jar
+%%T%%/lib/struts-tiles.tld
+%%T%%/lib/tiles-config.dtd
+%%T%%/lib/tiles-config_1_1.dtd
+%%T%%/lib/validation_1_1.dtd
+%%T%%/lib/validator-rules.xml
+%%T%%/lib/validator-rules_1_1.dtd
+%%T%%/lib/web-app_2_2.dtd
+%%T%%/lib/commons-beanutils.jar
+%%T%%/webapps/tiles-documentation.war
+%%T%%/webapps/struts-documentation.war
+%%T%%/webapps/struts-example.war
+%%T%%/webapps/struts-exercise-taglib.war
+%%T%%/webapps/struts-template.war
+%%T%%/webapps/struts-upload.war
+%%T%%/webapps/struts-validator.war
+%%T%%/webapps/struts-blank.war
+%%T%%/INSTALL
+%%T%%/LICENSE
+%%T%%/README
+@dirrm %%T%%/contrib/struts-el/lib
+@dirrm %%T%%/contrib/struts-el/webapps
+@dirrm %%T%%/contrib/struts-el
+@dirrm %%T%%/contrib
+@dirrm %%T%%/lib
+@dirrm %%T%%/webapps
+@dirrm %%T%%
