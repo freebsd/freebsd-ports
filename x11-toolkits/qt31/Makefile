@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.14 1997/10/30 05:15:19 jkh Exp $
+# $Id: Makefile,v 1.15 1998/04/11 17:45:40 andreas Exp $
 #
 
 DISTNAME=	qt-1.31
@@ -11,6 +11,8 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 MAINTAINER=	searle@longacre.demon.co.uk
+
+BROKEN=		repository copied, awaiting upgrade to 1.33
 
 USE_GMAKE=	yes
 USE_X11=	yes
