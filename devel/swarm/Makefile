@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.santafe.edu/pub/swarm/src/swarm/
 MAINTAINER=	horance@freedom.ie.cycu.edu.tw
 
 LIB_DEPENDS=	ffi.2:${PORTSDIR}/devel/libffi \
-		png.4:${PORTSDIR}/graphics/png \
+		png.5:${PORTSDIR}/graphics/png \
 		BLT24.2:${PORTSDIR}/x11-toolkits/blt
 
 USE_GMAKE=	yes
