@@ -1,9 +1,4 @@
-XmySQL is a front end to the MySQL database engine.  It allows for
+XmySQL is a front end to the MySQL database engine. It allows for
 simple queries and table maintenance, as well as batch queries.
-XmySQL has been compiled and tested on Linux 2.0.0 with MySQL 3.20.16 
-and Xforms version 0.86.
 
-Rick Mehalick
-dblhack@wt.net
-rmehalic@i-o.com
-http://web.wt.net/~dblhack
+WWW: http://web.wt.net/~dblhack/
