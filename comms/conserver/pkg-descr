@@ -6,6 +6,5 @@ machines running conserver(8), a master conserver(8) can be run to
 connect to all the slave servers, providing a single point of access
 to the entire cluster.
 
-This is very handy for remote unattended FreeBSD servers. It can
-send serial break signals (if the driver supports it, cy does not!)
-which is useful for breaking into DDB on hung machines.
+This is very handy for remote unattended FreeBSD servers.  It can send
+serial break signals which is useful for breaking into DDB on hung machines.
