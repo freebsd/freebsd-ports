@@ -3,7 +3,7 @@
 # Date created:         13 Nov 1997
 # Whom:                 Sheldon Hearn <axl@iafrica.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/13 12:34:24 tg Exp $
 #
 
 DISTNAME=	xzx-2.2.1
@@ -17,5 +17,6 @@ MAINTAINER=	axl@iafrica.com
 
 USE_IMAKE=	yes
 MAN1=		xzx.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
