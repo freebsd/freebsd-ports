@@ -3,7 +3,7 @@
 # Date created:                1998-11-06
 # Whom:                        Christian Weisgerber <naddy@mips.rhein-neckar.de>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	xlogout-1.1

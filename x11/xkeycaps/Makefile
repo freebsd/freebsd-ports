@@ -3,7 +3,7 @@
 # Date created:         12 February 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.9 1998/04/08 21:30:38 jmz Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xkeycaps-2.42

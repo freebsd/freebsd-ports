@@ -3,7 +3,7 @@
 # Date created:		22nd March 1995
 # Whom:			jkh@FreeBSD.org
 #
-# $Id: Makefile,v 1.5 1997/01/06 12:14:56 jkh Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sxpc-1.4

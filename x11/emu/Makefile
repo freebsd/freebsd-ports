@@ -3,7 +3,7 @@
 # Date created:		13 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.14 1999/07/23 05:34:54 dbaker Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	emu-1.31

@@ -6,7 +6,7 @@
 # ATTENTION: It not work in > 256 colors modes, please fix it
 # if you can.
 #
-# $Id: Makefile,v 1.8 1999/08/22 19:01:06 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xfedor

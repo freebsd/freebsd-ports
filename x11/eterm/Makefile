@@ -3,7 +3,7 @@
 # Date created:        24 November 1997
 # Whom:                Murray Stokely <murray@cdrom.com>
 #
-# $Id: Makefile,v 1.17 1999/05/29 04:10:06 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Eterm-0.8.8

@@ -3,7 +3,7 @@
 # Date created:         9 January 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.14 1998/10/16 02:12:34 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xloadimage.4.1

@@ -3,7 +3,7 @@
 # Date created:        12 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.12 1998/11/07 18:30:55 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kworldwatch-0.6

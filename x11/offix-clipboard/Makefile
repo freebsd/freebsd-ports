@@ -3,7 +3,7 @@
 # Date created:      28 Jun 1997
 # Whom:              Ruslan Shevchenko <ruslan@shevchenko.kiev.ua>
 #
-# $Id: Makefile,v 1.2 1998/08/05 09:31:44 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Clipboard-2.4

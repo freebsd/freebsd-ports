@@ -3,7 +3,7 @@
 # Date created:		2 May 1998
 # Whom:			Bruce A. Mah <bmah@ca.sandia.gov>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/17 06:27:45 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       dxpc-3.7.0

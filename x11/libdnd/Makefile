@@ -3,7 +3,7 @@
 # Date created:                8 August 1997
 # Whom:                        lukin@okbmei.msk.su
 #
-# $Id: Makefile,v 1.4 1998/09/27 03:15:32 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dnd.1.1

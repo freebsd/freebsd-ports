@@ -3,7 +3,7 @@
 # Date created:		20 April 1997
 # Whom:			nkazushi@highway.or.jp
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	xskyroot-920428

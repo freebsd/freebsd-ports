@@ -3,7 +3,7 @@
 # Date created:			31 July 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/08/16 09:06:25 jim Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gyroscope-1.0

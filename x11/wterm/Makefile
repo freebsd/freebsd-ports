@@ -3,7 +3,7 @@
 # Date created:		25 February 1999
 # Whom:		 	Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1999/06/18 02:55:28 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wterm-6.2.6

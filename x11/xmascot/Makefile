@@ -3,7 +3,7 @@
 # Date created:        20 November 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1997/06/07 19:47:09 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmascot2.5p2

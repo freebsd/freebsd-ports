@@ -3,7 +3,7 @@
 # Date created:        20 Sep 1997
 # Whom:                Stefan Zehl <sec@42.org>
 #
-# $Id: Makefile,v 1.2 1998/10/05 05:17:58 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xaniroc

@@ -3,7 +3,7 @@
 # Date created:			12 January 1999
 # Whom:				Matthew Fuller <fullermd@futuresouth.com>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/18 04:46:23 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bgrot-1.20

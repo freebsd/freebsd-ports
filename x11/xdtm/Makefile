@@ -3,7 +3,7 @@
 # Date created:         		26th April 1995
 # Whom:                 		gpalmer
 #
-# $Id: Makefile,v 1.6 1998/09/17 00:33:00 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xdtm-2.5.8

@@ -3,7 +3,7 @@
 # Date created:        30 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/10/05 05:18:06 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xzoom-0.3

@@ -3,7 +3,7 @@
 # Date created:		19 September 1997
 # Whom:			steve@farrell.org
 #
-# $Id: Makefile,v 1.6 1999/01/07 08:19:51 simokawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tycoon-1.07o

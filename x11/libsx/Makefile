@@ -3,7 +3,7 @@
 # Date created:			5 December 1996
 # Whom:				Pedro Giffuni
 #
-# $Id: Makefile,v 1.7 1998/08/07 23:56:54 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libsx

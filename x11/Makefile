@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.266 1999/08/18 08:24:15 jim Exp $
+# $FreeBSD$
 #
 
     SUBDIR += 9term

@@ -3,7 +3,7 @@
 # Date created:        22 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.11 1999/01/23 07:05:21 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dgs-0.5.0

@@ -3,7 +3,7 @@
 # Date created:         25 July 1996
 # Whom:                 matt@bdd.net
 #
-# $Id: Makefile,v 1.5 1998/08/23 07:34:47 hoek Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xtacy114

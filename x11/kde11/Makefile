@@ -3,7 +3,7 @@
 # Date created:        4 November 1997
 # Whom:                Satoshi Asami <asami@FreeBSD.org>
 #
-# $Id: Makefile,v 1.21 1999/05/03 22:29:13 se Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kde-1.1.1

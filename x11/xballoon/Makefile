@@ -3,7 +3,7 @@
 # Date created:        3 March 1999
 # Whom:                Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	xballoon-1.0

@@ -3,7 +3,7 @@
 # Date created:        24th April 1997
 # Whom:                jacs
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/17 06:47:57 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=      xfishtank-2.2

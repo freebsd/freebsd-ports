@@ -3,7 +3,7 @@
 # Date created:         11 March 1997
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.4 1998/07/23 13:03:54 joerg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xtestpicture-1.2

@@ -3,7 +3,7 @@
 # Date created:		February 23, 1999
 # Whom:			Oliver Breuninger <ob@seicom.NET>
 #
-# $Id: $
+# $FreeBSD$
 
 DISTNAME=	xmx-1.1
 CATEGORIES=	x11

@@ -3,7 +3,7 @@
 # Date created:        15 November 1998
 # Whom:                Josh Gilliam <josh@quick.net>
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/19 08:15:39 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kvidtune-0.4.1

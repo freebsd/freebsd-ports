@@ -3,7 +3,7 @@
 # Date created:		24 December 1997
 # Whom:			Tatsumi Hosokawa
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/12 22:54:06 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kb2mb2-1.0

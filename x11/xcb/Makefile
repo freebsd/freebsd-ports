@@ -3,7 +3,7 @@
 # Date created:		1 August 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.3 1997/01/06 12:15:11 jkh Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xcb-2.3

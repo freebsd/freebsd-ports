@@ -3,7 +3,7 @@
 # Date created:        11 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1999/08/22 19:01:07 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmold

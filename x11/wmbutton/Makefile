@@ -3,7 +3,7 @@
 # Date created:			10 Apr 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1999/08/22 19:01:04 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmbutton-0.4

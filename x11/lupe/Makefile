@@ -3,7 +3,7 @@
 # Date created:		4 February 1998
 # Whom:			FURUSAWA,Kazuhisa <kazu@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.7 1998/11/17 16:49:38 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	lupe008
