@@ -1,0 +1,4 @@
+lib/perl5/site_perl/%%PERL_VER%%/XML/DOM.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/DOM/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/DOM
