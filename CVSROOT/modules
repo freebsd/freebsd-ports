@@ -2211,6 +2211,7 @@ gnome-icon-theme	ports/misc/gnome-icon-theme
 gnome-look	ports/x11-toolkits/gnome-look
 gnome-mud	ports/net/gnome-mud
 gnome-pkgview	ports/sysutils/gnome-pkgview
+gnome-ssh-askpass	ports/security/gnome-ssh-askpass
 gnome-swallow	ports/x11/gnome-swallow
 gnome-themes	ports/x11-toolkits/gnome-themes
 gnome-themes-extras	ports/x11-toolkits/gnome-themes-extras
