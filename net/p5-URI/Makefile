@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=     URI
 
 MAINTAINER=     ache@FreeBSD.org
 
+BUILD_DEPENDS=  ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+
 USE_PERL5=      YES
 MAN3=   \
 	URI::WithBase.3 \
