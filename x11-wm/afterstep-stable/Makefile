@@ -1,13 +1,13 @@
 # New ports collection makefile for:	afterstep
-# Version required:	1.0pre5
+# Version required:	1.0pre6
 # Date created:		October 29th 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.14 1996/12/10 20:07:30 obrien Exp $
+# $Id: Makefile,v 1.15 1997/03/23 16:22:41 jfitz Exp $
 #
 
-DISTNAME=	AfterStep-1.0pre5
-PKGNAME=	afterstep-1.0pr5
+DISTNAME=	AfterStep-1.0pre6
+PKGNAME=	afterstep-1.0pr6
 CATEGORIES=	x11
 MASTER_SITES=	ftp://afterstep.foo.net/pub/AfterStep/
 
@@ -16,7 +16,6 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 USE_X11=	yes
-WRKSRC=		${WRKDIR}/AfterStep-1.0pre5
 INSTALL_TARGET=	install install.man
 MANCOMPRESSED=	yes
 MAN1=		afterstep.1 asclock.1 Animate.1 Audio.1 Auto.1 Banner.1 Pager.1 Wharf.1
@@ -30,10 +29,21 @@ post-install:
 		@ ${MKDIR} -p ${PREFIX}/lib/X11/afterstep/sounds/
 		${INSTALL_DATA} ${WRKSRC}/sounds/* ${PREFIX}/lib/X11/afterstep/sounds/
 		@ ${MKDIR} -p ${PREFIX}/include/X11/pixmaps/
+.if defined(USE_HICOLOR_ICONS)
 		${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${PREFIX}/include/X11/pixmaps/
+.else
+.if !defined(BATCH)
+		@echo "===>  Note: to use the hi-color icons,"
+		@echo "      reinstall this port with -DUSE_HICOLOR_ICONS"
+		@echo "      defined"
+.endif
+		@for file in AFstep.xpm penguin.xpm; do \
+			${CP} ${FILESDIR}/$$file ${WRKSRC}/icons/8bit; \
+		done
 		${INSTALL_DATA} ${WRKSRC}/icons/8bit/*.xpm ${PREFIX}/include/X11/pixmaps/
+.endif
 		@ ${MKDIR} -p ${PREFIX}/lib/X11/afterstep/doc/
-		@for file in CHANGES CREDITS README README.8bit afterstep.faq; do \
+		@for file in CHANGES CREDITS README README.8bit FAQ module-interface.txt; do \
 			${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/lib/X11/afterstep/doc/; \
 		done
 
