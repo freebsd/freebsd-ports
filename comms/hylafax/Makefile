@@ -9,7 +9,7 @@ PORTNAME=	hylafax
 PORTVERSION=	4.1.b2
 PORTREVISION=	1
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.hylafax.org/hylafax/source/BETA/
+MASTER_SITES=	ftp://ftp.hylafax.org/source/
 DISTNAME=	${PORTNAME}-4.1beta2
 
 PATCH_SITES=	http://www.hylafax.org/patches/
