@@ -192,24 +192,15 @@ pre-install:
 .endif
 .endif
 .if !defined(WITHOUT_LDAP)
-.if exists(${LOCALBASE}/lib/libldap.so.1)
-	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libldap.so.1"; then \
+	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libldap.so"; then \
 	    ${ECHO_MSG} "" ; \
-	    ${ECHO_MSG} "Please configure PHP with OpenLDAP support." ; \
-	    ${ECHO_MSG} "" ; \
-	    ${FALSE} ; \
-	fi
-.else
-	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libldap.so.2"; then \
-	    ${ECHO_MSG} "" ; \
-	    ${ECHO_MSG} "Please configure PHP with OpenLDAP2 support." ; \
+	    ${ECHO_MSG} "Please configure PHP with OpenLDAP or OpenLDAP2 support." ; \
 	    ${ECHO_MSG} "" ; \
 	    ${FALSE} ; \
 	fi
-.endif
 .endif
 .if !defined(NOCRYPT)
-	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libmcrypt.so.8"; then \
+	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libmcrypt.so"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with mcrypt support." ; \
 	    ${ECHO_MSG} "" ; \
@@ -218,9 +209,9 @@ pre-install:
 .endif
 .if !defined(WITHOUT_SUPPORTED_DB)
 	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libmysqlclient.so"; then \
-	 if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libpq.so.3" ; then \
-	  if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libsybdb.so.1" ; then \
-	   if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libct.so.0" ; then \
+	 if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libpq.so" ; then \
+	  if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libsybdb.so" ; then \
+	   if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libct.so" ; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with a database support." ; \
 	    ${ECHO_MSG} "MySQL, PostgreSQL and Sybase (CTLIB or DBLIB)" ; \
