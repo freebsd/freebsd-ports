@@ -1,8 +1,0 @@
-This is minimal release notes for the utilities that make up the public
-release of prc-tools version 0.5.0.  To install code in the Pilot device
-from a UNIX box, you will need to get the pilot-link package as well.
-
-You will want to pick up Andrew Howlett's <mailto:howlett@iosphere.net>
-_excellent_ GNU Pilot SDK Tutorial from his site...
-
-WWW: http://www.iosphere.net/~howlett/pilot/GNU_Pilot.html
