@@ -1,0 +1,9 @@
+--- complaint-template.bak	Thu Feb  8 18:09:41 2001
++++ complaint-template	Wed Oct  8 06:50:31 2003
+@@ -14,5 +14,5 @@
+ 
+ ------------ unsolicited commercial mail follows -----------
+ 
+-{return $self->spam} 
++>{return $self->spam}
+ 

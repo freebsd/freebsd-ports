@@ -1,5 +1,5 @@
---- ricochet.old	Tue Jun 24 22:40:18 2003
-+++ ricochet	Wed Sep 24 16:33:42 2003
+--- ricochet.orig	Tue Jun 24 22:40:18 2003
++++ ricochet	Wed Oct  8 06:42:08 2003
 @@ -566,15 +566,14 @@
      my ( $domain ) = @_;
      $ua = new LWP::UserAgent;
@@ -19,7 +19,7 @@
          return \@matches;
     } else {
          return undef;
-@@ -607,7 +606,8 @@
+@@ -607,13 +606,17 @@
  
  sub initialize { 
      my $self = shift; 
@@ -29,3 +29,13 @@
      Carp::croak "** Ricochet configuration file $rc doesn't exist. Aborting.\n" unless -e $rc; 
      open (RC, $rc); 
      grep { 
+         chomp; 
+         s/#.*$//; 
+-        my ($field, $value) = split /:/, $_, 2; $value =~ s/\s//g; $field =~ s/\s//g; 
++	my ($field, $value) = split /:/, $_, 2;
++	$value =~ s/^\s+//;
++	$value =~ s/\s+$//;
++	$field =~ s/\s//g;
+         $self->{$field} = $value unless $field ne "SENDMAIL" && defined $self->{$field}; 
+     } (<RC>); 
+     close RC; 
