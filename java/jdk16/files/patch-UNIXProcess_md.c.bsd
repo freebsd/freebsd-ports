@@ -1,0 +1,93 @@
+$FreeBSD$
+
+--- ../../j2se/src/solaris/native/java/lang/UNIXProcess_md.c.bsd.orig	Wed Oct 29 12:22:58 2003
++++ ../../j2se/src/solaris/native/java/lang/UNIXProcess_md.c.bsd	Wed Oct 29 12:23:33 2003
+@@ -22,6 +22,12 @@
+ #include <errno.h>
+ #include <unistd.h>
+ 
++#if defined(__FreeBSD__)
++#include <dlfcn.h>
++#include <pthread.h>
++#include <pthread_np.h>
++#endif
++
+ /* path in the environment */
+ static char **PATH = 0;
+ /* effective uid */
+@@ -228,6 +234,61 @@
+     }
+ }
+ 
++#if defined(__FreeBSD__)
++
++extern pid_t   __sys_fork(void);
++
++static pid_t
++jdk_fork_wrapper()
++{
++    pid_t resultPid;
++#if (__FreeBSD_version < 5)
++    static int is_libc_r = -1;
++    void *funcref;
++
++    if (is_libc_r == -1) {
++	is_libc_r = 1;
++
++	/*
++         * BSDNOTE: Check for loaded symbols.
++         *
++         * If "_thr_critical_enter" is found assume we are using 'libthr'.
++         * If _kse_critical_enter is found assume we are using 'libkse'.
++         * Otherwise we are using libc_r.
++         *
++         * If libc_r is loaded, use fork system call drectly to avoid
++         * problems with using protected pages. 
++         *
++         * --phantom
++	 */
++	funcref = dlsym(RTLD_DEFAULT, "_kse_critical_enter");
++	if (funcref != NULL)
++	    is_libc_r = 0;
++	else {
++	    funcref = dlsym(RTLD_DEFAULT, "_thr_critical_enter");
++	    if (funcref != NULL)
++		is_libc_r = 0;
++	}
++    }
++
++    if (is_libc_r == 0) {
++	/* Not a libc_r */
++	resultPid = fork();
++    } else {
++#endif /* __FreeBSD_version < 5 */
++        pthread_suspend_all_np(); 
++        resultPid = __sys_fork();
++        if (resultPid != 0)
++	    /* leave child in single threading mode */
++ 	    pthread_resume_all_np();
++#if (__FreeBSD_version < 5)
++    }
++#endif /* __FreeBSD_version < 5 */
++
++    return resultPid;
++}
++#endif /* __FreeBSD__ */
++
+ JNIEXPORT jint JNICALL
+ Java_java_lang_UNIXProcess_forkAndExec(JNIEnv *env,
+ 				       jobject process,
+@@ -335,8 +396,12 @@
+     if (path != NULL) {
+         cwd = (char *)JNU_GetStringPlatformChars(env, path, NULL);
+     }
+- 
++
++#if defined(__FreeBSD__)
++    resultPid = jdk_fork_wrapper();
++#else
+     resultPid = fork();
++#endif
+ 
+     if (resultPid < 0) {
+ 	char errmsg[128];

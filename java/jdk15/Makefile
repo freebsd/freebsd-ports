@@ -7,6 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk14.html
@@ -211,8 +212,6 @@ post-build:
 	@# XXX make sure that SwingSet2/resources does not exists
 	@${RM} -rf ${JDKIMAGEDIR}/demo/jfc/SwingSet2/resources
 	@${RM} -rf ${JDKIMAGEDIR}/demo/plugin/jfc/SwingSet2/resources
-	@# This file serves no purpose (in case of port)
-	@${RM} -f ${JDKIMAGEDIR}/src.zip
 
 .if !defined(NODEBUG)
 pre-install:

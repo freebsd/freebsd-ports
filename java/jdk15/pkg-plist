@@ -2,6 +2,7 @@ jdk%%JDK_VERSION%%/COPYRIGHT
 jdk%%JDK_VERSION%%/LICENSE
 jdk%%JDK_VERSION%%/README
 jdk%%JDK_VERSION%%/README.html
+jdk%%JDK_VERSION%%/src.zip
 jdk%%JDK_VERSION%%/bin/ControlPanel
 jdk%%JDK_VERSION%%/bin/HtmlConverter
 jdk%%JDK_VERSION%%/bin/appletviewer
