@@ -22,8 +22,11 @@ bin/ruby-asp.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/error.casp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/error.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/examples.casp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/footer.inc
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/global-asa/global.asa
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/global-asa/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/header.inc
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/image.casp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/index.casp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/index.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/load.casp
@@ -34,8 +37,11 @@ bin/ruby-asp.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/simple.casp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/source.casp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/subsmatch.casp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/title.gif
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/transfer.casp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/upload.casp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/xmlrpc_client.txt
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/xmlrpc_server.casp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/xslt.casp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/.htaccess
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/cookie.asp
@@ -43,8 +49,11 @@ bin/ruby-asp.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/error.asp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/error.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/examples.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/footer.inc
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/global-asa/global.asa
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/global-asa/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/header.inc
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/image.asp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/index.asp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/index.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/load.asp
@@ -55,8 +64,11 @@ bin/ruby-asp.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/simple.asp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/source.asp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/subsmatch.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/title.gif
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/transfer.asp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/upload.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/xmlrpc_client.txt
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/xmlrpc_server.asp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/xslt.asp
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tests/global-asa
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tests-cgi/global-asa
