@@ -1,6 +1,6 @@
---- Makefile.orig	Tue Feb  3 16:40:40 2004
-+++ Makefile	Fri Feb  6 02:45:24 2004
-@@ -3,8 +3,8 @@
+--- Makefile.orig	Thu Apr 15 21:15:33 2004
++++ Makefile	Thu Apr 15 21:15:44 2004
+@@ -3,24 +3,23 @@
  
  # Maybe you need one of these.  Maybe you don't.
  
@@ -11,13 +11,13 @@
  
  OGL_LIBS= -lGLU -lGL -lm
  #OGL_LIBS= -lm                                                # Think Different
-@@ -12,11 +12,11 @@
+ 
  #------------------------------------------------------------------------------
  
- #CFLAGS= -Wall -pg -ansi $(shell sdl-config --cflags)
 -CFLAGS= -Wall -O3 -ansi $(shell sdl-config --cflags)
 +CFLAGS+= -Wall -ansi $(shell ${SDL_CONFIG} --cflags) ${X11_PATHI}
  #CFLAGS= -Wall -g -ansi $(shell sdl-config --cflags)
+ #CFLAGS= -Wall -pg -ansi $(shell sdl-config --cflags)
  
 -SDL_LIBS= $(shell sdl-config --libs)
 -FT2_LIBS= $(shell freetype-config --libs)
@@ -25,15 +25,98 @@
 +FT2_LIBS= $(shell %%FREETYPE_CONFIG%% --libs)
  
  MAPC_TARG= mapc
- GAME_TARG= neverball
-@@ -45,8 +45,8 @@
- 	glext.o  \
- 	main.o
+ BALL_TARG= neverball
+-PUTT_TARG= neverputt
  
--GAME_DEPS= $(GAME_OBJS:.o=.d)
--MAPC_DEPS= $(MAPC_OBJS:.o=.d)
-+GAME_DEPS= $(GAME_OBJS:.o)
-+MAPC_DEPS= $(MAPC_OBJS:.o)
+ MAPC_OBJS= \
+ 	share/vec3.o   \
+@@ -45,31 +44,12 @@
+ 	ball/set.o     \
+ 	ball/state.o   \
+ 	ball/main.o
+-PUTT_OBJS= \
+-	share/vec3.o   \
+-	share/text.o   \
+-	share/image.o  \
+-	share/solid.o  \
+-	share/part.o   \
+-	share/geom.o   \
+-	share/back.o   \
+-	share/menu.o   \
+-	share/glext.o  \
+-	share/config.o \
+-	putt/audio.o   \
+-	putt/hud.o     \
+-	putt/game.o    \
+-	putt/hole.o    \
+-	putt/state.o   \
+-	putt/main.o
+ 
+ BALL_DEPS= $(BALL_OBJS:.o=.d)
+-PUTT_DEPS= $(PUTT_OBJS:.o=.d)
+ MAPC_DEPS= $(MAPC_OBJS:.o=.d)
  
  MAPC_LIBS= $(X11_PATH) $(SDL_LIBS) -lSDL_image $(OGL_LIBS)
- GAME_LIBS= $(X11_PATH) $(SDL_LIBS) -lSDL_image -lSDL_ttf -lSDL_mixer $(FT2_LIBS) $(OGL_LIBS)
+ BALL_LIBS= $(X11_PATH) $(SDL_LIBS) -lSDL_image -lSDL_ttf -lSDL_mixer $(FT2_LIBS) $(OGL_LIBS)
+-PUTT_LIBS= $(X11_PATH) $(SDL_LIBS) -lSDL_image -lSDL_ttf -lSDL_mixer $(FT2_LIBS) $(OGL_LIBS)
+ 
+ SOLS= \
+ 	data/sol-rlk/easy.sol     \
+@@ -146,26 +126,7 @@
+ 	data/sol-mym/bombman.sol        \
+ 	data/sol-mym/climb.sol          \
+ 	data/sol-mym/dance.sol          \
+-	data/sol-mym/hard.sol           \
+-	data/sol-putt/01_easy.sol    \
+-	data/sol-putt/02_uturn.sol   \
+-	data/sol-putt/03_kink.sol    \
+-	data/sol-putt/04_aych.sol    \
+-	data/sol-putt/05_ramp.sol    \
+-	data/sol-putt/06_cone.sol    \
+-	data/sol-putt/07_tele.sol    \
+-	data/sol-putt/08_zig.sol     \
+-	data/sol-putt/09_vturn.sol   \
+-	data/sol-putt/10_diamond.sol \
+-	data/sol-putt/11_mover.sol   \
+-	data/sol-putt/12_bumpy.sol   \
+-	data/sol-putt/13_choose.sol  \
+-	data/sol-putt/14_walls.sol   \
+-	data/sol-putt/15_hole.sol    \
+-	data/sol-putt/16_pipe.sol    \
+-	data/sol-putt/17_timing.sol  \
+-	data/sol-putt/18_hill.sol
+-
++	data/sol-mym/hard.sol
+ 
+ #------------------------------------------------------------------------------
+ 
+@@ -181,28 +142,21 @@
+ data/sol-mym/%.sol : data/map-mym/%.map $(MAPC_TARG)
+ 	./$(MAPC_TARG) $< $@ data
+ 
+-data/sol-putt/%.sol : data/map-putt/%.map $(MAPC_TARG)
+-	./$(MAPC_TARG) $< $@ data
+-
+ data/sol-misc/%.sol : data/map-misc/%.map $(MAPC_TARG)
+ 	./$(MAPC_TARG) $< $@ data
+ 
+ #------------------------------------------------------------------------------
+ 
+-all : $(BALL_TARG) $(PUTT_TARG) $(MAPC_TARG) $(SOLS)
++all : $(BALL_TARG) $(MAPC_TARG) $(SOLS)
+ 
+ $(BALL_TARG) : $(BALL_OBJS)
+ 	$(CC) $(CFLAGS) -o $(BALL_TARG) $(BALL_OBJS) $(BALL_LIBS)
+ 
+-$(PUTT_TARG) : $(PUTT_OBJS)
+-	$(CC) $(CFLAGS) -o $(PUTT_TARG) $(PUTT_OBJS) $(PUTT_LIBS)
+-
+ $(MAPC_TARG) : $(MAPC_OBJS)
+ 	$(CC) $(CFLAGS) -o $(MAPC_TARG) $(MAPC_OBJS) $(MAPC_LIBS)
+ 
+ clean :
+ 	rm -f $(BALL_TARG) $(BALL_OBJS) $(BALL_DEPS)
+-	rm -f $(PUTT_TARG) $(PUTT_OBJS) $(PUTT_DEPS)
+ 	rm -f $(MAPC_TARG) $(MAPC_OBJS) $(MAPC_DEPS)
+ 	rm -f $(SOLS)
+ 
