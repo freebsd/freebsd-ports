@@ -4596,7 +4596,6 @@ logtools	ports/www/logtools
 lookat		ports/sysutils/lookat
 lookout		ports/mail/lookout
 lopster		ports/audio/lopster
-loserjabber	ports/deskutils/loserjabber
 lostirc		ports/irc/lostirc
 loudmouth	ports/net/loudmouth
 lout		ports/print/lout
