@@ -5,9 +5,10 @@
 #
 
 PORTNAME=	jakarta-regexp
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	java
-MASTER_SITES=	http://www.apache.org/dist/jakarta/regexp/
+MASTER_SITES=	http://www.apache.org/dist/jakarta/regexp/binaries/ \
+		http://ftp.epix.net/apache/jakarta/regexp/binaries/
 
 MAINTAINER=	dglo@ssec.wisc.edu
 COMMENT=	Regular expressions for Java
@@ -27,8 +28,9 @@ pre-install:
 	@${TOUCH} ${PLIST}
 
 do-build:
-	@cd ${WRKSRC}/build && \
-		${SETENV} PATH=$$PATH:${JAVA_HOME}/bin JAVA_HOME=${JAVA_HOME} ${SH} build-regexp.sh package
+	@if [ ! -f ${WRKSRC}/lib ]; then ${MKDIR} ${WRKSRC}/lib; fi
+	@cd ${WRKSRC} && \
+		${SETENV} JAVA_HOME=${JAVA_HOME} ant -Djakarta-site2.dir=${WRKSRC} test package
 
 do-install: do-install-jar do-install-apidocs
 
