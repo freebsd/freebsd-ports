@@ -1,8 +1,0 @@
-bin/litestream
-bin/literestream
-bin/source
-%%PORTDOCS%%share/doc/litestream/README
-%%PORTDOCS%%share/doc/litestream/ABOUT
-%%PORTDOCS%%share/doc/litestream/LICENSE
-%%PORTDOCS%%share/doc/litestream/MAKEITGO
-%%PORTDOCS%%@dirrm share/doc/litestream
