@@ -18,12 +18,14 @@ MAINTAINER=     mi@aldan.algebra.com
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		lcms:${PORTSDIR}/graphics/lcms
 
-INSTALLS_SHLIB=	yes
 SHLIB_VER=	0
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-jpeg=${LOCALBASE} --with-lcms=${LOCALBASE}
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+INSTALLS_SHLIB=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--with-jpeg=${LOCALBASE} \
+		--with-lcms=${LOCALBASE}
 
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
