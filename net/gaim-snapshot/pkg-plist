@@ -8,12 +8,16 @@ lib/gaim/lagmeter.so
 lib/gaim/libgaimicq.a
 lib/gaim/libgaimicq.so
 lib/gaim/libgaimicq.so.0
+lib/gaim/libjabber.a
+lib/gaim/libjabber.so
+lib/gaim/libjabber.so.0
 lib/gaim/libyahoo.a
 lib/gaim/libyahoo.so
 lib/gaim/libyahoo.so.0
 lib/gaim/libmsn.a
 lib/gaim/libmsn.so
 lib/gaim/libmsn.so.0
+lib/gaim/napster.so
 lib/gaim/notify.so
 lib/gaim/spellchk.so
 %%DATADIR%%/pixmaps/gaim/about_small.xpm
@@ -24,6 +28,11 @@ lib/gaim/spellchk.so
 %%DATADIR%%/pixmaps/gaim/aimicon2.xpm
 %%DATADIR%%/pixmaps/gaim/angel.xpm
 %%DATADIR%%/pixmaps/gaim/aol_icon.xpm
+%%DATADIR%%/pixmaps/gaim/available-away.xpm
+%%DATADIR%%/pixmaps/gaim/available-chat.xpm
+%%DATADIR%%/pixmaps/gaim/available-dnd.xpm
+%%DATADIR%%/pixmaps/gaim/available-xa.xpm
+%%DATADIR%%/pixmaps/gaim/available.xpm
 %%DATADIR%%/pixmaps/gaim/away.xpm
 %%DATADIR%%/pixmaps/gaim/away_icon.xpm
 %%DATADIR%%/pixmaps/gaim/away_small.xpm
@@ -91,6 +100,7 @@ lib/gaim/spellchk.so
 %%DATADIR%%/pixmaps/gaim/msg_pending.xpm
 %%DATADIR%%/pixmaps/gaim/msn_away.xpm
 %%DATADIR%%/pixmaps/gaim/msn_online.xpm
+%%DATADIR%%/pixmaps/gaim/napster.xpm
 %%DATADIR%%/pixmaps/gaim/no_icon.xpm
 %%DATADIR%%/pixmaps/gaim/normal.xpm
 %%DATADIR%%/pixmaps/gaim/offline.xpm
@@ -107,6 +117,7 @@ lib/gaim/spellchk.so
 %%DATADIR%%/pixmaps/gaim/pounce_small.xpm
 %%DATADIR%%/pixmaps/gaim/prefs_small.xpm
 %%DATADIR%%/pixmaps/gaim/refresh.xpm
+%%DATADIR%%/pixmaps/gaim/register.xpm
 %%DATADIR%%/pixmaps/gaim/sad.xpm
 %%DATADIR%%/pixmaps/gaim/save.xpm
 %%DATADIR%%/pixmaps/gaim/scream.xpm
