@@ -1,5 +1,5 @@
 #
-# $Id: ac,v 1.1 1999/08/08 10:55:14 peter Exp $
+# $Id: ac,v 1.2 1999/08/09 08:45:08 jkh Exp $
 #
 # Please try to keep the handbook (contrib/chapter.sgml authors.ent) in
 # in sync with this.
@@ -174,3 +174,5 @@ sumikawa
 shin
 pho
 chris
+alfred
+jim
