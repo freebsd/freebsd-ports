@@ -3936,6 +3936,7 @@ mifluz		ports/textproc/mifluz
 migrate		ports/biology/migrate
 mikmod		ports/audio/mikmod
 mime		ports/devel/mime
+mime-support	ports/misc/mime-support
 mimedefang	ports/mail/mimedefang
 mimelib		ports/converters/mimelib
 mindfocus	ports/games/mindfocus
