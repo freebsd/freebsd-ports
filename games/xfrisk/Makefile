@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	xfrisk
-PORTVERSION=	1.00
+PORTVERSION=	1.2
 CATEGORIES=	games
-MASTER_SITES=	$(MASTER_SITE_XCONTRIB)
-MASTER_SITE_SUBDIR=	games/multiplayer
+MASTER_SITES=	http://cvs.morphy.iki.fi/xfrisk/
 DISTNAME=	XFrisk-${PORTVERSION}
 
 MAINTAINER=	mph@freebsd.org
 
+LIB_DEPENDS=	Xaw.6:${PORTSDIR}/x11-toolkits/Xaw3d
+
 NO_CDROM=	Possible trademark infringement
 
-USE_IMAKE=	yes
+USE_X_PREFIX=	yes
 NO_INSTALL_MANPAGES=	yes
-
-pre-configure:
-	${TOUCH} ${WRKSRC}/types.h
+WRKSRC=		${WRKDIR}/XFrisk
+USE_GMAKE=	yes
+MAKE_ENV+=	XDIR=${X11BASE}
 
 .include <bsd.port.mk>

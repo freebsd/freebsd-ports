@@ -1,0 +1,30 @@
+--- Makefile	Sun Jan 23 14:01:55 2000
++++ Makefile.new	Mon May 29 23:12:10 2000
+@@ -55,9 +55,9 @@
+ ####################
+ # C compiler options
+ # GNU gcc is recommended.
+-CC=gcc
++CC?=gcc
+ # Use these with gcc
+-CFLAGS=-g -Wall -W -fno-common -pedantic
++CFLAGS+= -Wall -W -fno-common -pedantic
+ 
+ # If you don't have gcc, don't use -Wall -W -fno-common
+ #CFLAGS=-g
+@@ -81,13 +81,13 @@
+ 
+ ## Installation prefix
+ # Adjust to taste. Stuff gets installed here.
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ #PREFIX=/usr/local/X11
+ 
+ ## X11 location and options
+ # for X11R6
+ # Point this at your X tree.
+-XDIR=/usr/X11R6
++XDIR?=/usr/X11R6
+ #XDIR=/usr/local/X11
+ #XDIR=/usr/openwin
+ 
