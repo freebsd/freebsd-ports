@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.9
+PORTVERSION=	7.9.1
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		http://download.sourceforge.net/curl/ \
@@ -47,19 +47,12 @@ CONFIGURE_ARGS += --with-krb4=/usr
 .endif
 
 GNU_CONFIGURE=	yes
-# Disable this for the present - curl breaks with automake 1.4 :(
-# (and besides, the pregenerated configure script will DTRT anyway)
-# USE_AUTOMAKE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-MAKEFILES=	Makefile src/Makefile
 
-post-configure:
-
-.for x in ${MAKEFILES}
-	@ ${MV} ${WRKSRC}/${x} ${WRKSRC}/${x}.pre_sed
-	@ ${SED} -e 's#@SHELL@#${SH}#' \
-	${WRKSRC}/${x}.pre_sed > ${WRKSRC}/${x}
-.endfor
+# Note: some of these tests seem to intermitently fail on my system.
+# I don't know why they would do that, yet.
+test:	build
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} test)
 
 .include <bsd.port.mk>
