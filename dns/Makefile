@@ -30,6 +30,7 @@
     SUBDIR += domtools
     SUBDIR += ez-ipupdate
     SUBDIR += firedns
+    SUBDIR += fpdns
     SUBDIR += geta
     SUBDIR += ghtool
     SUBDIR += h2n
