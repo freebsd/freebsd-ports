@@ -3,7 +3,7 @@
 # Date created:     	15th August 1997
 # Whom:			Mark Murray <mark@grondar.za>
 #
-# $Id: Makefile,v 1.41 1997/10/13 15:03:39 markm Exp $
+# $Id: Makefile,v 1.42 1998/02/17 12:52:26 markm Exp $
 
 DISTNAME=       apache_1.2.5
 PKGNAME=        apacheSSL-1.2.5
@@ -73,12 +73,7 @@ pre-fetch:
 .elif defined(USA_RESIDENT)
 .if ${USA_RESIDENT} == YES
 pre-build:
-	@${ECHO} If you are USA resident, then this port is broken for you.
-	@${ECHO} I am unable to get some of the necessary goodies, so
-	@${ECHO} please assist by fixing this and sending me the patches.
-	@${ECHO} Thanks\!
-	${PATCH} <${FILESDIR}/Makefile.rsa.patch
-BROKEN=     "RSAref code doesn't apply cleanly"
+	cd ${WRKSRC} && ${PATCH} -p2 <${FILESDIR}/Makefile.rsa.patch
 .endif
 .endif
 
