@@ -7,6 +7,7 @@
 
 PORTNAME=	dbskkd-cdb
 PORTVERSION=	1.71
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.ne.jp/asahi/bdx/info/software/
 DISTNAME=	${PORTNAME}-${PORTVERSION}dev
@@ -16,6 +17,9 @@ COMMENT=Yet another dictionary server for SKK
 
 BUILD_DEPENDS=	${NONEXISTENT}:${CDBPORTSDIR}:build
 RUN_DEPENDS=	${INSTALLEDJISYO}:${PORTSDIR}/japanese/skk-jisyo-cdb
+
+USE_REINPLACE=	yes
+PLIST_FILES=	libexec/dbskkd-cdb
 
 SKKDIR?=	share/skk
 SKKJISYO_TYPE?=	L
@@ -45,10 +49,10 @@ pre-fetch:
 
 post-patch:
 .for f in READMEJP copyfromcdb.sh
-	${SED} -e "s!%%PREFIX%%!${PREFIX}!g" -e "s!%%SKKDIR%%!${SKKDIR}!g" -e "s!%%JISYONAME%%!SKK-JISYO.${SKKJISYO_TYPE}!g" -e "s!%%CDBDIR%%!${CDBDIR}!g" < ${WRKSRC}/${f} > ${WRKSRC}/.tmp
-	${MV} -f ${WRKSRC}/.tmp ${WRKSRC}/${f}
+	${REINPLACE_CMD} -e "s!%%PREFIX%%!${PREFIX}!g" -e "s!%%SKKDIR%%!${SKKDIR}!g" -e "s!%%JISYONAME%%!SKK-JISYO.${SKKJISYO_TYPE}!g" -e "s!%%CDBDIR%%!${CDBDIR}!g" ${WRKSRC}/${f}
 .endfor
 	${CHMOD} +x ${WRKSRC}/copyfromcdb.sh
+	${REINPLACE_CMD} -e 's|-O2|${CFLAGS}|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dbskkd-cdb ${PREFIX}/libexec
@@ -61,13 +65,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${docs} ${DOCSDIR}
 .endfor
 .endif
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Note for inetd users:"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Add following line to /etc/inetd.conf"
-	@${ECHO_CMD} "   skkserv stream tcp nowait root ${PREFIX}/libexec/dbskkd-cdb dbskkd-cdb"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "If dbskkd-cdb 1.01 was running, please update your /etc/inetd.conf line."
-	@${ECHO_CMD} ""
+	@${SED} 's|/usr/local|${PREFIX}|' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -8,9 +8,4 @@ called from "super-server" programs such as inetd or tcpserver, and the
 I/O operation is solely with the stdio interface, so the code is compact
 and the access to the server can be easily restricted.
 
-You should invoke dbskkd-cdb via inetd. Add
-
-skkserv stream tcp nowait nobody ${PREFIX}/libexec/dbskkd-cdb dbskkd-cdb
-
-to your /etc/inetd.conf (usually, ${PREFIX} will be replaced to `/usr/local'),
-and send SIGHUP to your inetd.
+WWW: http://www.ne.jp/asahi/bdx/info/software/jp-dbskkd.html
