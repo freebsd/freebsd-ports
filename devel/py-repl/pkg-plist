@@ -1,11 +1,13 @@
 bin/pythoni
-%%PYTHON_SITELIBDIR%%/_pyrepl_utils.so
 %%PYTHON_SITELIBDIR%%/pyrepl/__init__.py
 %%PYTHON_SITELIBDIR%%/pyrepl/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pyrepl/__init__.pyo
 %%PYTHON_SITELIBDIR%%/pyrepl/cmdrepl.py
 %%PYTHON_SITELIBDIR%%/pyrepl/cmdrepl.pyc
 %%PYTHON_SITELIBDIR%%/pyrepl/cmdrepl.pyo
+%%PYTHON_SITELIBDIR%%/pyrepl/cocoasupport.py
+%%PYTHON_SITELIBDIR%%/pyrepl/cocoasupport.pyc
+%%PYTHON_SITELIBDIR%%/pyrepl/cocoasupport.pyo
 %%PYTHON_SITELIBDIR%%/pyrepl/commands.py
 %%PYTHON_SITELIBDIR%%/pyrepl/commands.pyc
 %%PYTHON_SITELIBDIR%%/pyrepl/commands.pyo
@@ -27,6 +29,12 @@ bin/pythoni
 %%PYTHON_SITELIBDIR%%/pyrepl/historical_reader.py
 %%PYTHON_SITELIBDIR%%/pyrepl/historical_reader.pyc
 %%PYTHON_SITELIBDIR%%/pyrepl/historical_reader.pyo
+%%PYTHON_SITELIBDIR%%/pyrepl/input.py
+%%PYTHON_SITELIBDIR%%/pyrepl/input.pyc
+%%PYTHON_SITELIBDIR%%/pyrepl/input.pyo
+%%PYTHON_SITELIBDIR%%/pyrepl/keymap.py
+%%PYTHON_SITELIBDIR%%/pyrepl/keymap.pyc
+%%PYTHON_SITELIBDIR%%/pyrepl/keymap.pyo
 %%PYTHON_SITELIBDIR%%/pyrepl/keymaps.py
 %%PYTHON_SITELIBDIR%%/pyrepl/keymaps.pyc
 %%PYTHON_SITELIBDIR%%/pyrepl/keymaps.pyo
@@ -48,7 +56,7 @@ bin/pythoni
 %%PYTHON_SITELIBDIR%%/pyrepl/unix_console.py
 %%PYTHON_SITELIBDIR%%/pyrepl/unix_console.pyc
 %%PYTHON_SITELIBDIR%%/pyrepl/unix_console.pyo
-%%PYTHON_SITELIBDIR%%/pyrepl/unix_keymap.py
-%%PYTHON_SITELIBDIR%%/pyrepl/unix_keymap.pyc
-%%PYTHON_SITELIBDIR%%/pyrepl/unix_keymap.pyo
+%%PYTHON_SITELIBDIR%%/pyrepl/unix_eventqueue.py
+%%PYTHON_SITELIBDIR%%/pyrepl/unix_eventqueue.pyc
+%%PYTHON_SITELIBDIR%%/pyrepl/unix_eventqueue.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/pyrepl

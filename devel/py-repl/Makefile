@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	repl
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://starship.python.net/crew/mwh/hacks/
+MASTER_SITES=	http://codespeak.net/pyrepl/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyrepl-${PORTVERSION}
 DIST_SUBDIR=	python
