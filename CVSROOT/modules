@@ -7469,6 +7469,7 @@ p5-Path-Class	ports/devel/p5-Path-Class
 p5-Penguin	ports/devel/p5-Penguin
 p5-Penguin-Easy	ports/devel/p5-Penguin-Easy
 p5-PerlIO-eol	ports/devel/p5-PerlIO-eol
+p5-PerlIO-gzip	ports/archivers/p5-PerlIO-gzip
 p5-PerlIO-via-dynamic	ports/devel/p5-PerlIO-via-dynamic
 p5-PerlIO-via-symlink	ports/devel/p5-PerlIO-via-symlink
 p5-PerlMenu	ports/devel/p5-PerlMenu
