@@ -13,6 +13,7 @@ MASTER_SITES=	http://dara.notbsd.org/~aholtzma/ac3/tarballs/
 MAINTAINER=	3d@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+ONLY_FOR_ARCHS=	i386 alpha
 
 post-patch:
 	@${SED} -e 's,machine/soundcard.h,sys/soundcard.h,' \
