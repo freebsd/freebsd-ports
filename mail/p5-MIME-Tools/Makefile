@@ -1,22 +1,22 @@
 # New ports collection makefile for:	p5-MIME-Tools
-# Version required:			4.121
+# Version required:			4.122
 # Date created:				April 27th 1998
 # Whom:	      				Eivind Eklund <eivind@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/08/23 02:57:11 jseger Exp $
+# $Id: Makefile,v 1.5 1998/09/15 21:31:47 asami Exp $
 #
 
-DISTNAME=	MIME-tools-4.121
-PKGNAME=	p5-MIME-Tools-4.121
+DISTNAME=	MIME-tools-4.122
+PKGNAME=	p5-MIME-Tools-4.122
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MIME
 
 MAINTAINER=	eivind@FreeBSD.ORG
 
-RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${PREFIX}/lib/perl5/site_perl/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64	\
-		${PREFIX}/lib/perl5/site_perl/IO/Wrap.pm:${PORTSDIR}/devel/p5-IO-stringy
+RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64	\
+		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/IO/Wrap.pm:${PORTSDIR}/devel/p5-IO-stringy
 
 USE_PERL5=	YES
 
