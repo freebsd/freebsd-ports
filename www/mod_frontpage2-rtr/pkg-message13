@@ -1,0 +1,115 @@
+************************************************************************
+
+1.)
+
+Check your httpd.conf, if you have included a ResourceConfig and
+AccessConfig. If you do not have these files, you'll have to add
+these lines to make the frontpage extensions work properly. These
+lines are commented out in the default config, so you'll have to
+activate them again. If you have a real ResourceConfig and
+AccessConfig, you can skip this part.
+
+ResourceConfig /dev/null
+AccessConfig /dev/null
+
+
+2.)
+
+You'll need to change the AllowOverride directive under the
+default web from None to at least "AuthConfig Limit Indexes Options".
+
+<Directory "%%PREFIX%%/www/data">
+:
+AllowOverride AuthConfig Limit Indexes Options
+:
+</Directory>
+
+Don't use "AllowOverride All" if you have a server environment
+with customers, since this can be a security risk, as they
+could modify the .htaccess files themselves.
+
+You'll also need to change the AllowOverride Directive on all
+virtual hosts that you are going to enable with Frontpage Extentions.
+
+
+3.)
+
+You can turn the extensions and the frontpage administration on/off
+per site in httpd.conf and per virtual server.
+
+FrontPage On/Off	# Allows/Disallows Client to publish with
+			  FrontPage Extensions
+FrontPageAdmin On/Off	# Allows/Disallows Administration of web site
+			  with FrontPage Extensions
+
+By default FrontPage Extentions and Administration are enabled.  If
+the module has been compiled with WITH_DISABLED, then you need to
+add one of the above directives.
+
+If the module has been compiled with WITH_MODFP_COMPAT, then the
+following directives from the Improved Mod_Frontpage are available:
+
+FrontPageEnable         # Same as 'FrontPage On'
+FrontPageDisable        # Same as 'FrontPage Off'
+FrontPageAdminEnable    # Same as 'FrontPageAdmin On'
+FrontPageAdminDisable   # Same as 'FrontPageAdmin Off'
+
+
+4.)
+
+If this is a fresh Apache install, you should remove the symbolic link
+to the %%PREFIX%%/www/data directory, and create a real directory.
+
+rm %%PREFIX%%/www/data
+mkdir %%PREFIX%%/www/data
+
+
+5.)
+
+After you have made these changes, you'll need to execute:
+
+%%PREFIX%%/frontpage/version5.0/fp_install.sh
+
+to build the base apache/frontpage web site and to setup frontpage
+users and admins.  You can also run this to add virtual hosts to
+the apache/frontpage system.
+
+NOTE: If you get this error:
+
+    Error: An access setup description is required when creating the root web.
+
+check the document root for .htaccess files.  Rename them, and then combine
+them with the .htaccess files created by the frontpage install.
+
+
+6.)
+
+If you have installed the port in another PREFIX than "/usr/local"
+you have to create a symlink. Microsoft has hardcoded the local
+path in their binarys. If you do not use fp_install.sh, you have
+to create the link manually:
+
+ln -s %%PREFIX%%/frontpage /usr/local/frontpage
+
+
+NOTE:
+
+1. When using owsadm.exe, you need to specify the server type in the
+   command.
+
+    owsadm.exe -t apache-fp ...
+
+2. To create the Global Administration web site use:
+
+    owsadm.exe -o setadminport -p <PORT> -t apache-fp \
+	-s %%PREFIX%%/etc/apache/httpd.conf -username <USERNAME> \
+	-pw <PASSWORD>
+
+    where PORT is not equal to any existing web servers port.
+
+3. To remove the Global Administration web site use:
+
+    owsadm -o deleteadminport -t apache-fp \
+	-s %%PREFIX%%/etc/apache/httpd.conf
+
+************************************************************************
