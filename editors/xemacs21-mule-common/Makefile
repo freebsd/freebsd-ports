@@ -3,7 +3,7 @@
 # Date created:		5 Dec 1997
 # Whom:			Kazuyuki IENAGA <ienaga@jsys.co.jp>
 #
-# $Id: Makefile,v 1.3 1998/12/02 08:01:14 asami Exp $
+# $Id: Makefile,v 1.4 1998/12/26 03:47:19 kuriyama Exp $
 #
 
 DISTNAME=	xemacs-20.4
@@ -40,13 +40,10 @@ EXTRACT_ONLY=	xemacs-20.4.tar.gz xemacs-20.4-elc.tar.gz \
 	japanese/xemacs-canna+wnn6 \
 	japanese/xemacs-wnn4 \
 	japanese/xemacs-wnn6
-.if exists(${WRKDIRPREFIX}${PORTSDIR}/${dir}/work/.install_done)
-WRKDIR=		${WRKDIRPREFIX}${PORTSDIR}/${dir}/work
-.if !exists(${WRKDIR}/.install_done-${PKGNAME})
-rvalue_touch!=	${TOUCH} ${WRKDIR}/.install_done-${PKGNAME}
-.endif
-.elif exists(${WRKDIRPREFIX}${PORTSDIR}/${dir}/work/.build_done)
-WRKDIR?=	${WRKDIRPREFIX}${PORTSDIR}/${dir}/work
+.if exists(${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work/.install_done)
+WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work
+.elif exists(${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work/.build_done)
+WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work
 .endif
 .endfor
 WRKSRC= ${WRKDIR}/xemacs-20.4
