@@ -1,0 +1,9 @@
+Arping is a util to find out it a specific IP address on the LAN is 'taken'
+and what MAC address owns it. Sure, you *could* just use 'ping' to find out if
+it's taken and even if the computer blocks ping (and everything else) you still
+get an entry in your arp cache. But what if you aren't on a routable net? Then
+you're screwed. Or you use arping.
+
+WWW: http://synscan.nss.nu/programs.php
+
+Roman Shterenzon <roman@xpert.com>

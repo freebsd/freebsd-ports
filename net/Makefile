@@ -10,6 +10,7 @@
     SUBDIR += archie.el
     SUBDIR += argus
     SUBDIR += arla
+    SUBDIR += arping
     SUBDIR += arpwatch
     SUBDIR += ascend-radius
     SUBDIR += bb
