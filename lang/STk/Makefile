@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://kaolin.unice.fr/pub/
 
 MAINTAINER=	jmacd@FreeBSD.org
 
-BROKEN_ELF=	yes
-
 USE_XLIB=	yes
 PATCH_STRIP=      -p1
 GNU_CONFIGURE=	yes

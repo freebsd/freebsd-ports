@@ -18,8 +18,6 @@ DISTFILES=      w3c-libwww-4.0D.tar.gz \
 
 MAINTAINER=	sa2c@and.or.jp
 
-BROKEN_ELF=	yes
-
 do-build:
 	cd ${WRKSRC}; ./BUILD linemode
 
