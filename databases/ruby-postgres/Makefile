@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	postgres
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	databases ruby
-MASTER_SITES=	http://webclub.kcom.ne.jp/mb/noborus/archive/
+MASTER_SITES=	http://www.jp.postgresql.org/interfaces/ruby/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -19,8 +20,7 @@ LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-CONFIGURE_ARGS+= --with-pgsql-include-dir="${PGDIR}/include" \
+CONFIGURE_ARGS=	--with-pgsql-include-dir="${PGDIR}/include" \
 		--with-pgsql-lib-dir="${PGDIR}/lib"
 INSTALL_TARGET=	site-install
 
@@ -32,7 +32,7 @@ DOCS_JA=	README.jp doc/postgres.jp.html
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/postgres
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}/postgres/
+	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_EXAMPLESDIR}/postgres/
 	${MKDIR} ${RUBY_DOCDIR}/postgres/ja
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/postgres/
