@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_MESA=	yes
 
-LIB_DIR_ABS!=	ghc --print-libdir
+LIB_DIR_ABS!=	(ghc --print-libdir || true) 2>/dev/null
 IMPORT_DIR_ABS=	${LIB_DIR_ABS}/imports/HOpenGL
 LIB_DIR_REL=	${LIB_DIR_ABS:S/^${PREFIX}\///}
 IMPORT_DIR_REL=	${LIB_DIR_REL}/imports/HOpenGL
