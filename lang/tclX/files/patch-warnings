@@ -1,15 +1,23 @@
 --- ../tcl/generic/tclXbsearch.c	Wed Mar 31 01:37:43 1999
-+++ ../tcl/generic/tclXbsearch.c	Fri Jan 10 15:53:14 2003
-@@ -45,3 +45,3 @@ TclProcKeyCompare _ANSI_ARGS_((binSearch
- static int
--ReadAndCompare _ANSI_ARGS_((off_t          fileOffset,
-+ReadAndCompare _ANSI_ARGS_((int            fileOffset,
-                             binSearchCB_t *searchCBPtr));
-@@ -164,3 +164,3 @@ static int
- ReadAndCompare (fileOffset, searchCBPtr)
--    off_t          fileOffset;
-+    int            fileOffset;
-     binSearchCB_t *searchCBPtr;
++++ ../tcl/generic/tclXbsearch.c	Mon Apr  5 13:30:43 2004
+@@ -123,15 +120,9 @@
+     if (Tcl_GetIntFromObj (searchCBPtr->interp,
+                            Tcl_GetObjResult (searchCBPtr->interp),
+                            &searchCBPtr->cmpResult) != TCL_OK) {
+-        oldResult = Tcl_GetStringFromObj (
+-            Tcl_GetObjResult (searchCBPtr->interp), NULL);
+-        oldResult = ckstrdup (oldResult);
+-
+-        Tcl_ResetResult (searchCBPtr->interp);
+-        TclX_AppendObjResult (searchCBPtr->interp, "invalid integer \"",
+-                              oldResult, "\" returned from compare proc \"",
++        TclX_AppendObjResult (searchCBPtr->interp,
++                              "\" returned from compare proc \"",
+                               searchCBPtr->tclProc, "\"", (char *) NULL);
+-        ckfree (oldResult);
+         return TCL_ERROR;
+     }
+     Tcl_ResetResult (searchCBPtr->interp);
 @@ -254,3 +254,4 @@ BinSearch (searchCBPtr)
  {
 -    off_t middle, high, low;
@@ -139,42 +147,26 @@
          keylIntPtr->entries [findIdx].key [keyLen] = '\0';
 --- ../tcl/generic/tclXlib.c	Wed Oct 24 18:57:02 2001
 +++ ../tcl/generic/tclXlib.c	Fri Jan 10 18:01:02 2003
-@@ -70,3 +70,3 @@
-                           off_t        offset,
--                          off_t        length));
-+                          int          length));
- 
 @@ -89,3 +89,3 @@
                                    off_t      *offsetPtr,
 -                                  unsigned   *lengthPtr));
-+                                  int        *lengthPtr));
++                                  long       *lengthPtr));
  
-@@ -161,3 +161,3 @@
-     off_t        offset;
--    off_t        length;
-+    int          length;
- {
-@@ -193,3 +193,4 @@
- 
--    if (Tcl_Seek (channel, offset, SEEK_SET) < 0)
-+    /* XXX casting to int is wrong below, but that's what Tcl_Seek wants */
-+    if (Tcl_Seek (channel, (int)offset, SEEK_SET) < 0)
-         goto posixError;
 @@ -386,3 +387,3 @@
      off_t       *offsetPtr;
 -    unsigned   *lengthPtr;
-+    int         *lengthPtr;
++    long       *lengthPtr;
  {
 @@ -414,3 +415,4 @@
          goto invalidEntry;
 -    if (TclX_GetUnsignedFromObj (interp, pkgDataObjv [2], lengthPtr) != TCL_OK)
-+    if (Tcl_GetIntFromObj (interp, pkgDataObjv [2], lengthPtr) != TCL_OK
++    if (Tcl_GetLongFromObj (interp, pkgDataObjv [2], lengthPtr) != TCL_OK
 +	|| *lengthPtr < 0)
          goto invalidEntry;
 @@ -886,3 +888,3 @@
      off_t     offset;
 -    unsigned  length;
-+    int       length;
++    long      length;
      int       result;
 --- ../tcl/generic/tclXlist.c	Sat May 19 12:39:44 2001
 +++ ../tcl/generic/tclXlist.c	Fri Jan 10 18:04:21 2003
