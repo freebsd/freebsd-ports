@@ -1,15 +1,20 @@
-rtty/bin/ttysrv
-rtty/bin/rtty
-rtty/bin/locbrok
 rtty/bin/Startup
-rtty/bin/console
-rtty/bin/startsrv
-rtty/bin/agelogs
 rtty/bin/agelog
+rtty/bin/agelogs
+rtty/bin/console
+rtty/bin/locbrok
+rtty/bin/rtty
+rtty/bin/startsrv
+rtty/bin/ttysrv
+@exec mkdir -p %D/rtty/dev
+@exec mkdir -p %D/rtty/log
+@exec mkdir -p %D/rtty/opt
+@exec mkdir -p %D/rtty/pid
+@exec mkdir -p %D/rtty/sock
+@unexec rmdir %D/rtty/sock 2>/dev/null || true
+@unexec rmdir %D/rtty/pid 2>/dev/null || true
+@unexec rmdir %D/rtty/opt 2>/dev/null || true
+@unexec rmdir %D/rtty/log 2>/dev/null || true
+@unexec rmdir %D/rtty/dev 2>/dev/null || true
 @dirrm rtty/bin
-@dirrm rtty/dev
-@dirrm rtty/log
-@dirrm rtty/opt
-@dirrm rtty/pid
-@dirrm rtty/sock
 @dirrm rtty
