@@ -18,6 +18,7 @@ lib/gaim/liboscar.so
 lib/gaim/libtoc.so
 lib/gaim/libyahoo.so
 lib/gaim/libzephyr.so
+lib/gaim/notify.so
 lib/gaim/perl.so
 lib/gaim/spellchk.so
 lib/gaim/statenotify.so
@@ -198,6 +199,7 @@ share/gnome/pixmaps/gaim/status/default/female.png
 share/gnome/pixmaps/gaim/status/default/freeforchat.png
 share/gnome/pixmaps/gaim/status/default/gadu-gadu.png
 share/gnome/pixmaps/gaim/status/default/game.png
+share/gnome/pixmaps/gaim/status/default/hiptop.png
 share/gnome/pixmaps/gaim/status/default/icq.png
 share/gnome/pixmaps/gaim/status/default/invisible.png
 share/gnome/pixmaps/gaim/status/default/irc.png
@@ -236,6 +238,7 @@ share/locale/es/LC_MESSAGES/gaim.mo
 share/locale/fi/LC_MESSAGES/gaim.mo
 share/locale/fr/LC_MESSAGES/gaim.mo
 share/locale/he/LC_MESSAGES/gaim.mo
+share/locale/hi/LC_MESSAGES/gaim.mo
 share/locale/hu/LC_MESSAGES/gaim.mo
 share/locale/it/LC_MESSAGES/gaim.mo
 share/locale/ja/LC_MESSAGES/gaim.mo
@@ -248,6 +251,7 @@ share/locale/ro/LC_MESSAGES/gaim.mo
 share/locale/ru/LC_MESSAGES/gaim.mo
 share/locale/sk/LC_MESSAGES/gaim.mo
 share/locale/sr/LC_MESSAGES/gaim.mo
+share/locale/sr@Latn/LC_MESSAGES/gaim.mo
 share/locale/sv/LC_MESSAGES/gaim.mo
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
 share/locale/zh_TW/LC_MESSAGES/gaim.mo
