@@ -3,16 +3,12 @@ include/auth-client.h
 include/auth-plugin.h
 include/libesmtp.h
 lib/esmtp/sasl-cram-md5.a
-lib/esmtp/sasl-cram-md5.la
 lib/esmtp/sasl-cram-md5.so
 lib/esmtp/sasl-login.a
-lib/esmtp/sasl-login.la
 lib/esmtp/sasl-login.so
 lib/esmtp/sasl-plain.a
-lib/esmtp/sasl-plain.la
 lib/esmtp/sasl-plain.so
 lib/libesmtp.a
-lib/libesmtp.la
 lib/libesmtp.so
 lib/libesmtp.so.5
 %%PORTDOCS%%share/doc/libesmtp/INSTALL
