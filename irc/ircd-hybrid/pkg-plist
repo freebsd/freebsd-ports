@@ -1,4 +1,8 @@
 sbin/ircd
+bin/buildm4
+bin/fixklines
+bin/mkpasswd
+bin/viconf
 etc/rc.d/ircd.sh
 etc/ircd/example.conf.trillian
 etc/ircd/ircd.conf
