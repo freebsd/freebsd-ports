@@ -3,7 +3,7 @@
 # Date created:         19 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/04 09:06:45 asami Exp $
 #
 
 DISTNAME=	nhppf-1.2
@@ -16,7 +16,7 @@ MAINTAINER=	junker@jazz.snu.ac.kr
 NO_BUILD=	yes
 
 RUN_DEPENDS=    ${PREFIX}/share/fonts/HLaTeX-0.95-pfb:$(PORTSDIR)/korean/hlatexpsfonts \
-		perl5.004:${PORTSDIR}/lang/perl5
+		perl5.00401:${PORTSDIR}/lang/perl5
 
 do-configure:
 	@cd ${WRKSRC}; \

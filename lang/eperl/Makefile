@@ -3,7 +3,7 @@
 # Date created:		Fri May  2 13:16:31 MET DST 1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.5 1997/05/03 12:36:05 andreas Exp $
+# $Id: Makefile,v 1.6 1997/05/24 13:17:10 jfitz Exp $
 #
 
 DISTNAME=	eperl-2.1.1
@@ -24,14 +24,11 @@ MAINTAINER=	rse@engelschall.com
 INSTALL_ALSO_AS_SSSL=	yes
 #ENABLE_UID_SWITCHING=	yes
 
-BUILD_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
 .if defined(INSTALL_ALSO_AS_SSSL)
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5 \
-		${PREFIX}/etc/apache/srm.conf:${PORTSDIR}/www/apache
-.else
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+RUN_DEPENDS=	${PREFIX}/etc/apache/srm.conf:${PORTSDIR}/www/apache
 .endif
 
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-perl=${PREFIX}/bin/perl
 
