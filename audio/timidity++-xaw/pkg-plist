@@ -1,7 +1,20 @@
-bin/xawmidi
-lib/timidity/interface_a.so
-share/doc/timidity/C/README.xaw
-share/doc/timidity/ja/README.xaw
 @cwd /usr/X11R6
 lib/X11/app-defaults/TiMidity
 lib/X11/ja_JP.EUC/app-defaults/TiMidity
+@cwd /usr/local
+bin/xawmidi
+lib/timidity/bitmaps/back.xbm
+lib/timidity/bitmaps/fwrd.xbm
+lib/timidity/bitmaps/next.xbm
+lib/timidity/bitmaps/pause.xbm
+lib/timidity/bitmaps/play.xbm
+lib/timidity/bitmaps/prev.xbm
+lib/timidity/bitmaps/quit.xbm
+lib/timidity/bitmaps/random.xbm
+lib/timidity/bitmaps/repeat.xbm
+lib/timidity/bitmaps/stop.xbm
+lib/timidity/bitmaps/timidity.xbm
+lib/timidity/interface_a.so
+share/doc/timidity/C/README.xaw
+share/doc/timidity/ja/README.xaw
+@dirrm lib/timidity/bitmaps
