@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/kermit
 share/doc/kermit/READ.ME
 share/doc/kermit/ckuaaa.txt

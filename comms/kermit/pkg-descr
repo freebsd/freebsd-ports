@@ -1,8 +1,7 @@
-KERMIT file transfer/terminal emulation utility
-------------------------------------------------------
+C-Kermit is a combined serial and network communication software
+package offering a consistent, medium-independent, cross-platform
+approach to connection establishment, terminal sessions, file
+transfer, character-set translation, numeric and alphanumeric paging,
+and automation of communication tasks.
 
-This is a release of C-Kermit file transfer protocol utility.
-This version supports transfer of un-escaped control characters for
-very fast file transfers with high reliability.
-
-WWW: http://www.columbia.edu/kermit/
+WWW: http://www.kermit-project.org/
