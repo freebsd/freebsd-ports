@@ -416,6 +416,7 @@
     SUBDIR += peacock
     SUBDIR += pear-APC
     SUBDIR += pgdriver
+    SUBDIR += pglogd
     SUBDIR += photo_gallery
     SUBDIR += php-dyn
     SUBDIR += php-screw

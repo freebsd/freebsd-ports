@@ -1,0 +1,11 @@
+bin/pglogd
+share/pglogd/pglogd_tables.sql
+share/pglogd/queries.txt
+share/pglogd/weblog_daily.sql
+share/pglogd/README
+share/pglogd/CHANGELOG
+etc/pglogd.conf.sample
+etc/rc.d/020.pglogd.sh
+@dirrm share/pglogd
+@unexec if cmp -s %D/etc/rc.d/020.pglogd.sh %D/etc/rc.d/020.pglogd.sh-dist; then rm -f %D/etc/rc.d/020.pglogd.sh; fi
+@exec [ -f %B/020.pglogd.sh ] || ( cp %B/%f %B/020.pglogd.sh; chmod 755 %B/020.pglogd.sh )
