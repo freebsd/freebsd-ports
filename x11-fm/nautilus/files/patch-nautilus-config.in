@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- nautilus-config.in	2002/03/13 23:29:56	1.1
++++ nautilus-config.in	2002/03/13 23:30:46
+@@ -3,7 +3,7 @@
+ usage="\
+     Usage: nauilus-config [--version] [--config] [--cflags] [--libs]"
+ 
+-config_file="@LIBDIR@/nautilusConf.sh"
++config_file="@sysconfdir@/nautilusConf.sh"
+ . $config_file
+ 
+ if test $# -eq 0; then
