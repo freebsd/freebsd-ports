@@ -3,7 +3,7 @@
 # Date created:		18 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.24 1999/04/07 11:08:42 ache Exp $
+# $Id: Makefile,v 1.25 1999/06/07 20:51:18 ache Exp $
 #
 # REMINDER: to use ftpaccess(5) you need to specify -a in command line,
 # it is changed from previous versions
@@ -14,7 +14,7 @@ MASTER_SITES=   ftp://ftp.vr.net/pub/wu-ftpd/wu-ftpd/
 
 MAINTAINER=     ache@FreeBSD.org
 
-Y2K=		http://www.cetis.hvu.nl/~koos/wu-ftpd-faq.html#QA31
+Y2K=		http://www.cetis.hvu.nl/~koos/wu-ftpd-faq.html#QA35
 
 MAN1=		ftpcount.1 ftpwho.1
 MAN5=		ftpaccess.5 ftphosts.5 ftpconversions.5 xferlog.5
