@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jpgraph
-PORTVERSION=	1.12.1
+PORTVERSION=	1.12.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.aditus.nu/jpgraph/downloads/
 
@@ -34,7 +34,7 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/docs/ ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/src/examples/ ${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/src/Examples/ ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
