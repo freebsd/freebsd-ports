@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rssgrab
-PORTVERSION=	0.2.2
+PORTVERSION=	0.3.1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-

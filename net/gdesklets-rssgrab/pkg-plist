@@ -9,10 +9,8 @@ share/gnome/gdesklets/Displays/rssgrab/rssgrab.display
 share/gnome/gdesklets/Sensors/rssgrab/README
 share/gnome/gdesklets/Sensors/rssgrab/__init__.py
 share/gnome/gdesklets/Sensors/rssgrab/__init__.pyc
-share/gnome/gdesklets/Sensors/rssgrab/rssparser.py
-share/gnome/gdesklets/Sensors/rssgrab/rssparser.pyc
-share/gnome/gdesklets/Sensors/rssgrab/tester.py
-share/gnome/gdesklets/Sensors/rssgrab/tester.pyc
+share/gnome/gdesklets/Sensors/rssgrab/feedparser.py
+share/gnome/gdesklets/Sensors/rssgrab/feedparser.pyc
 @dirrm share/gnome/gdesklets/Sensors/rssgrab
 @dirrm share/gnome/gdesklets/Displays/rssgrab/gfx
 @dirrm share/gnome/gdesklets/Displays/rssgrab
