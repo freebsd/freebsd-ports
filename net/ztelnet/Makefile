@@ -3,7 +3,7 @@
 # Date created:         15 Mar 1998
 # Whom:                 CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.3 1998/03/16 07:22:11 steve Exp $
+# $Id: Makefile,v 1.4 1998/03/18 19:05:33 obrien Exp $
 #
 # In this ports..
 #   - new compilation diff for FreeBSD(now we can upload!)
@@ -11,8 +11,8 @@
 # NOTE: in post-patch, we can ignore warnings.
 
 DISTNAME=	ztelnet2
-PKGNAME=	ko-ztelnet-1.0p2
-CATEGORIES=	korean net
+PKGNAME=	ztelnet-1.0p2
+CATEGORIES=	net
 MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/net/
 DISTFILES=	ztelnet-linux.tar.gz ztelnet-patch.tar.gz
 
@@ -20,7 +20,7 @@ MAINTAINER=	junker@jazz.snu.ac.kr
 
 NO_WRKSUBDIR=	yes
 PATCH_STRIP=	-p1
-MAN1=			ztelnet.1
+MAN1=		ztelnet.1
 
 post-patch:
 	@( cd ${WRKSRC}/ztelnet && \
