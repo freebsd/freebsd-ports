@@ -1,30 +1,30 @@
 # New ports collection makefile for:	xabacus
-# Version required:			5.4.4
+# Version required:			5.5.2
 # Date created:				3 May 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		xabacus-5.4.4
-CATEGORIES=		games
-MASTER_SITES=		ftp://ftp.tux.org/pub/people/david-bagley/xabacus/ \
-			${MASTER_SITE_XCONTRIB}
+DISTNAME=	xabacus-5.5.2
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
+		ftp://ftp.tux.org/pub/tux/bagleyd/xabacus/
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=		yes
-USE_X_PREFIX=		yes
-REQUIRES_MOTIF=		yes
-WRKSRC=			${WRKDIR}/xabacus
+WRKSRC=		${WRKDIR}/xabacus
+REQUIRES_MOTIF=	yes
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
 
-MAN1=			xabacus.1
+MAN1=		xabacus.1
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/xabacus ${PREFIX}/bin
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/xmabacus ${PREFIX}/bin
-	@ ${INSTALL_DATA} ${WRKSRC}/Abacus.ad ${X11BASE}/lib/X11/app-defaults/Abacus
-	@ ${INSTALL_MAN} ${WRKSRC}/xabacus.man ${PREFIX}/man/man1/xabacus.1
+	${INSTALL_PROGRAM} ${WRKSRC}/xabacus ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xmabacus ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xabacus.man ${PREFIX}/man/man1/xabacus.1
+	${INSTALL_DATA} ${WRKSRC}/Abacus.ad ${X11BASE}/lib/X11/app-defaults/Abacus
 
 .include <bsd.port.mk>
