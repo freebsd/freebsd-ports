@@ -1,0 +1,7 @@
+This package contains [incr Tk] version 3.0.1.  [incr Tk] is a
+companion to [incr Tcl] and builds a ``mega-widget'' framework into
+Tk. The [incr Tk] extension is also known as ``itk''.
+
+A companion to [incr Tk] called [incr Widgets] provides a widget set,
+with many improved widgets. The [incr Widgets] collection is also known
+as ``iwidgets'' and is available in x11-toolkits.

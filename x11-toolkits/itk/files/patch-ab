@@ -1,0 +1,75 @@
+--- configure~	Mon Oct 19 21:14:57 1998
++++ configure	Fri Jan 15 18:41:16 1999
+@@ -877,15 +877,8 @@
+ DL_LIBS=$TCL_DL_LIBS
+ LD_FLAGS=$TCL_LD_FLAGS
+ LD_SEARCH_FLAGS=$TCL_LD_SEARCH_FLAGS
++TCL_INC_DIR=${TCL_PREFIX}/include/tcl${TCL_VERSION}
+ 
+-#--------------------------------------------------------------------
+-#   Make sure that we can find the Tcl sources, so we can include
+-#   the "tclInt.h" file.
+-#--------------------------------------------------------------------
+-
+-if test ! -d "$TCL_SRC_DIR"; then
+-    { echo "configure: error: Can't find Tcl source directory "$TCL_SRC_DIR".  Itcl can't be built without this directory." 1>&2; exit 1; }
+-fi
+ 
+ #--------------------------------------------------------------------
+ #   See if there was a command-line option for where Tk is;  if
+@@ -915,6 +908,7 @@
+ 
+ file=$TK_LIB_DIR/tkConfig.sh
+ . $file
++TK_INC_DIR=${TK_PREFIX}/include/tk${TK_VERSION}
+ 
+ #--------------------------------------------------------------------
+ #   See if there was a command-line option for where [incr Tcl] is.
+@@ -936,6 +930,7 @@
+ 
+ file=$ITCL_LIB_DIR/itclConfig.sh
+ . $file
++ITCL_INC_DIR=${TCL_PREFIX}/include/itcl${ITCL_VERSION}
+ 
+ #--------------------------------------------------------------------
+ #   If this is gcc, add some extra compile flags.
+@@ -1065,13 +1060,13 @@
+         { echo "configure: error: Tcl was not built with --enable-shared" 1>&2; exit 1; }
+     fi
+     SHLIB_CFLAGS="${SHLIB_CFLAGS}"
+-    eval "ITK_LIB_FILE=libitk${VERSION}${SHLIB_SUFFIX}"
++    eval "ITK_LIB_FILE=${ITK_LIB_FILE}"
+     ITK_PKG_FILE="[file join [file dirname \$dir] ${ITK_LIB_FILE}]"
+     MAKE_LIB="\$(SHLIB_LD) -o ${ITK_LIB_FILE} \$(OBJS) ${SHLIB_LD_LIBS} \$(LD_SEARCH_FLAGS)"
+     RANLIB=":"
+ else
+     SHLIB_CFLAGS=""
+-    eval "ITK_LIB_FILE=libitk${VERSION}.a"
++    eval "ITK_LIB_FILE=${ITK_LIB_FILE}"
+     ITK_PKG_FILE=""
+     MAKE_LIB="ar cr ${ITK_LIB_FILE} \${OBJS}"
+ fi
+@@ -1279,6 +1274,7 @@
+ s%@LD_SEARCH_FLAGS@%$LD_SEARCH_FLAGS%g
+ s%@TCL_VERSION@%$TCL_VERSION%g
+ s%@TCL_SRC_DIR@%$TCL_SRC_DIR%g
++s%@TCL_INC_DIR@%$TCL_INC_DIR%g
+ s%@TCL_LIB_SPEC@%$TCL_LIB_SPEC%g
+ s%@TCL_LIB_FLAG@%$TCL_LIB_FLAG%g
+ s%@TCL_DBGX@%$TCL_DBGX%g
+@@ -1295,6 +1291,7 @@
+ s%@TK_XINCLUDES@%$TK_XINCLUDES%g
+ s%@TK_XLIBSW@%$TK_XLIBSW%g
+ s%@TK_SRC_DIR@%$TK_SRC_DIR%g
++s%@TK_INC_DIR@%$TK_INC_DIR%g
+ s%@ITCL_VERSION@%$ITCL_VERSION%g
+ s%@ITCL_MAJOR_VERSION@%$ITCL_MAJOR_VERSION%g
+ s%@ITCL_MINOR_VERSION@%$ITCL_MINOR_VERSION%g
+@@ -1304,6 +1301,7 @@
+ s%@ITCL_LIB_SPEC@%$ITCL_LIB_SPEC%g
+ s%@ITCL_PKG_FILE@%$ITCL_PKG_FILE%g
+ s%@ITCL_SRC_DIR@%$ITCL_SRC_DIR%g
++s%@ITCL_INC_DIR@%$ITCL_INC_DIR%g
+ s%@ITK_BUILD_LIB_SPEC@%$ITK_BUILD_LIB_SPEC%g
+ s%@ITK_LIB_FILE@%$ITK_LIB_FILE%g
+ s%@ITK_LIB_SPEC@%$ITK_LIB_SPEC%g
