@@ -1,17 +1,21 @@
---- share/bcih/Makefile.in.orig	Wed Apr  9 03:57:19 2003
-+++ share/bcih/Makefile.in	Mon Apr 14 16:07:21 2003
-@@ -2,11 +2,12 @@
+--- share/bcih/Makefile.in.orig	Sat Apr 26 04:32:37 2003
++++ share/bcih/Makefile.in	Sun May  4 03:16:24 2003
+@@ -4,7 +4,10 @@
+ INSTALL_DATA = cp -fp
  
- CC = @CC@
  prefix = @prefix@
-+datadir = @datadir@
- 
- VPATH = $(topsrc)/share/bcih
- 
 -gretldir = $(prefix)/share/gretl
--INSTALL_DATA = cp -fp
++datadir = @datadir@
 +gretldir = $(datadir)/gretl
 +INSTALL_DATA = @INSTALL_DATA@
++
+ VPATH = $(topsrc)/share/bcih
  
- mkbin: mkbin.c
- 	$(CC) -o $@ $<
+ bcih.bin: mkbin bcih.dat
+@@ -21,4 +24,4 @@
+ 	rm -f mkbin bcih.bin
+ 
+ distclean: clean
+-	rm -f Makefile
+\ No newline at end of file
++	rm -f Makefile

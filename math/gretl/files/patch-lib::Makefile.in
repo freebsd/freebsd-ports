@@ -1,5 +1,5 @@
---- lib/Makefile.in.orig	Wed Apr  9 03:57:16 2003
-+++ lib/Makefile.in	Mon Apr 14 17:50:12 2003
+--- lib/Makefile.in.orig	Mon Apr 21 23:24:57 2003
++++ lib/Makefile.in	Sun May  4 03:12:41 2003
 @@ -16,6 +16,11 @@
  GMP_LIBS = @GMP_LIBS@
  have_gtk = @have_gtk@
@@ -43,8 +43,8 @@
  
  $(LIBGRETL): $(OBJS) $(LOBJS) $(CEPHES_OBJ) $(CEPHES_LOBJ)
  	$(LIBTOOL) --mode=link $(CC) -o $@ $(LOBJS) $(CEPHES_LOBJ) \
--	-rpath $(prefix)/lib $(LIBS) -version-info 0:6:0
-+	-rpath $(prefix)/lib $(LIBS) -version-info 0:6:0 $(LDFLAGS)
+-	-rpath $(prefix)/lib $(LIBS) -version-info 0:7:0
++	-rpath $(prefix)/lib $(LIBS) -version-info 0:7:0 $(LDFLAGS)
  
  -include $(OBJS:.o=.d)
  

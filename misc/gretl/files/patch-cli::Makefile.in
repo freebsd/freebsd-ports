@@ -1,8 +1,17 @@
---- cli/Makefile.in.orig	Wed Apr  9 03:57:13 2003
-+++ cli/Makefile.in	Mon Apr 14 16:59:22 2003
-@@ -15,6 +15,10 @@
- RL_OBJ = @RL_OBJ@
- USE_NLS = @USE_NLS@
+--- cli/Makefile.in.orig	Mon Apr 28 21:44:49 2003
++++ cli/Makefile.in	Sun May  4 03:10:33 2003
+@@ -9,7 +9,7 @@
+ exec_prefix = @exec_prefix@
+ bindir = @bindir@
+ datadir = @datadir@
+-localedir = $(datadir)/locale
++localedir = $(prefix)/share/locale
+ 
+ have_readline = @have_readline@
+ READLINE_LIBS = @READLINE_LIBS@
+@@ -17,6 +17,10 @@
+ 
+ GMP_CFLAGS = @GMP_CFLAGS@
  
 +CPPFLAGS = @CPPFLAGS@
 +LDFLAGS = @LDFLAGS@
@@ -11,41 +20,21 @@
  ifeq ($(CC),)
    CC = gcc
  endif
-@@ -25,15 +29,14 @@
-   LN = ln -sf
- endif
- ifeq ($(USE_NLS),yes)
--  datadir = @datadir@
--  localedir = $(datadir)/locale
-+  localedir = $(prefix)/share/locale
-   DEFS = -DLOCALEDIR=\"$(localedir)\" -DHAVE_CONFIG_H
- endif
+@@ -41,7 +45,7 @@
  
- GRETLLIB = ../lib/libgretl-1.0.la
+ DEFS = -DLOCALEDIR=\"$(localedir)\" -DHAVE_CONFIG_H
  
- # General compile options and libs:
--LIBS = $(CLI_LIBS)
-+LIBS = $(CLI_LIBS) $(INTL_LIBS)
- 
- # Directories
- tooldir = $(topsrc)/tools
-@@ -45,7 +48,7 @@
- SRCS = gretlcli.c common.c complete.c
- OBJS = gretlcli.o $(RL_OBJ)
- 
--override CFLAGS += -I.. -I$(topsrc) -I$(libsrc) $(DEFS)
-+override CFLAGS += -I.. -I$(topsrc) -I$(libsrc) $(DEFS) $(CPPFLAGS)
+-override CFLAGS += -I.. -I$(topsrc) -I$(libsrc) $(GMP_CFLAGS) $(READLINE_CFLAGS) $(DEFS)
++override CFLAGS += -I.. -I$(topsrc) -I$(libsrc) $(GMP_CFLAGS) $(READLINE_CFLAGS) $(DEFS) $(CPPFLAGS)
  
  CLI = gretlcli
  LIBTOOL = ../libtool
-@@ -55,9 +58,7 @@
- 	$(CC) -MM -MG -I.. -I$(topsrc) -I$(libsrc) $(DEFS) $< >$*.d 2>/dev/null
+@@ -51,7 +55,7 @@
+ 	$(CC) -MM -MG -I$(libsrc) $(DEFS) $< >$*.d 2>/dev/null
  
  $(CLI): $(OBJS)
--	../libtool --mode=link $(CC) -o $@ $^ $(GRETLLIB) $(CLI_LIBS) 
--
---include gretlcli.d
-+	../libtool --mode=link $(CC) -o $@ $^ $(GRETLLIB) $(CLI_LIBS) $(LDFLAGS)
+-	../libtool --mode=link $(CC) -o $@ $^ $(GRETLLIB) $(READLINE_LIBS) 
++	../libtool --mode=link $(CC) -o $@ $^ $(GRETLLIB) $(READLINE_LIBS) $(INTL_LIBS) $(LDFLAGS)
  
- .PHONY :
+ -include gretlcli.d
  

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,7 +38,7 @@ MAN1=	gretl.1 gretl-config.1
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 PKGNAMESUFFIX=	-gnome
-USE_GNOME+=	gnomeprefix libgnomeprintui
+USE_GNOME+=	gnomeprefix libgnomeprintui libgnomeui
 PLIST_SUB+=	GRETLDATADIR="share/gnome"
 .else
 CONFIGURE_ARGS+=	--without-gnome
