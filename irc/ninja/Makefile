@@ -8,7 +8,7 @@
 PORTNAME=	ninja
 PORTVERSION=	1.1
 CATEGORIES=	irc
-MASTER_SITES=	http://ninja.qoop.org/ftp/ninja/unstable/
+MASTER_SITES=	ftp://ninja.qoop.org/ninja/
 DISTNAME= 	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	cpiazza@FreeBSD.org
