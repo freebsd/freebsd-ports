@@ -1,0 +1,11 @@
+--- ./Imakefile.org	Wed Sep 18 12:57:31 1991
++++ ./Imakefile	Tue Feb 14 18:44:28 1995
+@@ -11,7 +11,7 @@
+ 
+ 
+ INCLUDES =		-I. -I$(TOP) -I$(TOP)/X11 -I$(TOP)/X11/bitmaps
+-LOCAL_LIBRARIES =	$(XLIB)
++LOCAL_LIBRARIES =	$(XLIB) -lcompat
+ DEPLIBS =		$(DEPXLIB)
+ LDLIBS =		-lm
+ 
