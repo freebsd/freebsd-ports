@@ -3,13 +3,13 @@
 # Date created:        18 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.6 1998/09/30 02:07:28 jseger Exp $
+# $Id: Makefile,v 1.7 1998/10/02 18:21:30 brian Exp $
 #
 
 DISTNAME=	ksamba-0.3.3
 CATEGORIES=	x11 kde net
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= /unstable/apps/network
+MASTER_SITE_SUBDIR= unstable/apps/network
 
 MAINTAINER=	hanspb@persbraten.vgs.no
 
