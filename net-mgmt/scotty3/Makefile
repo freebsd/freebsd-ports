@@ -3,7 +3,7 @@
 # Date created:		18 Februar 1995
 # Whom:			Gennady Sorokopud <gena@netvision.net.il>
 #
-# $Id: Makefile,v 1.22 1998/02/12 22:50:36 phk Exp $
+# $Id: Makefile,v 1.23 1998/02/16 11:53:08 asami Exp $
 #
 
 DISTNAME=	scotty-2.1.8
@@ -14,7 +14,7 @@ MAINTAINER=	phk@freebsd.org
 
 LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11/tk80
 
-BROKEN=		files/md5 and pkg/PLIST (at least) need to be updated too
+BROKEN=		'files/md5 and pkg/PLIST (at least) need to be updated too'
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS= --with-tcl-config=/usr/local/lib/tcl8.0 \
 		--with-tk-config=/usr/local/lib/tk8.0
