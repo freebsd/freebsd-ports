@@ -17,7 +17,7 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Scan Java source code and look for potential problems
 
-BROKEN=		It is too hard to adopt Eclipse 3.0.
+IGNORE=		is too hard to adopt Eclipse 3.0
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
