@@ -108,6 +108,7 @@
     SUBDIR += gkrellweather
     SUBDIR += gkrellweather2
     SUBDIR += gkx86info
+    SUBDIR += globus2
     SUBDIR += gman
     SUBDIR += gnome-icon-theme
     SUBDIR += gnomehier
