@@ -12,15 +12,11 @@ DISTFILES=	#empty
 
 MAINTAINER=	jasone@freebsd.org
 
-NO_CHECKSUM=	yes
-NO_WRKSUBDIR=	yes
-
+# setting MAKEOBJDIR doesn't work for some reason
+MAKE_ENV=	MAKEOBJDIRPREFIX=${WRKDIR}
 WRKSRC=		${.CURDIR}/src
 
-do-fetch:
-	@${DO_NADA}
-
-pre-clean:
-	@$(SH) -ec "cd $(WRKSRC) ; make clean"
+pre-build:
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} obj
 
 .include <bsd.port.mk>
