@@ -1,25 +1,25 @@
 bin/guile
+bin/guile-config
 bin/guile-snarf
 include/guile/gh.h
-include/libguile/scmconfig.h
 include/libguile/__scm.h
 include/libguile/alist.h
-include/libguile/append.h
 include/libguile/arbiters.h
 include/libguile/async.h
 include/libguile/backtrace.h
 include/libguile/boolean.h
 include/libguile/chars.h
 include/libguile/continuations.h
+include/libguile/coop-defs.h
 include/libguile/debug.h
 include/libguile/dynl.h
 include/libguile/dynwind.h
 include/libguile/eq.h
 include/libguile/error.h
 include/libguile/eval.h
-include/libguile/extchrs.h
 include/libguile/feature.h
 include/libguile/filesys.h
+include/libguile/fluids.h
 include/libguile/fports.h
 include/libguile/gc.h
 include/libguile/gdb_interface.h
@@ -30,32 +30,34 @@ include/libguile/hash.h
 include/libguile/hashtab.h
 include/libguile/init.h
 include/libguile/ioext.h
+include/libguile/iselect.h
 include/libguile/kw.h
 include/libguile/list.h
 include/libguile/load.h
 include/libguile/mallocs.h
 include/libguile/markers.h
-include/libguile/mbstrings.h
 include/libguile/net_db.h
 include/libguile/numbers.h
+include/libguile/objects.h
 include/libguile/objprop.h
 include/libguile/options.h
 include/libguile/pairs.h
 include/libguile/ports.h
 include/libguile/posix.h
-include/libguile/regex-posix.h
 include/libguile/print.h
 include/libguile/procprop.h
 include/libguile/procs.h
 include/libguile/ramap.h
 include/libguile/read.h
+include/libguile/readline.h
+include/libguile/regex-posix.h
 include/libguile/root.h
-include/libguile/scmhob.h
+include/libguile/scmconfig.h
 include/libguile/scmsigs.h
 include/libguile/script.h
-include/libguile/sequences.h
 include/libguile/simpos.h
 include/libguile/smob.h
+include/libguile/snarf.h
 include/libguile/socket.h
 include/libguile/srcprop.h
 include/libguile/stackchk.h
@@ -69,6 +71,7 @@ include/libguile/struct.h
 include/libguile/symbols.h
 include/libguile/tag.h
 include/libguile/tags.h
+include/libguile/threads.h
 include/libguile/throw.h
 include/libguile/unif.h
 include/libguile/variable.h
@@ -76,33 +79,47 @@ include/libguile/vectors.h
 include/libguile/version.h
 include/libguile/vports.h
 include/libguile/weaks.h
-include/libguile/snarf.h
-include/libguile/threads.h
-include/libguile/coop-defs.h
 include/libguile.h
+@unexec install-info --delete %D/info/data-rep.info %D/info/dir
+info/data-rep.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/data-rep.info %D/info/dir
 lib/libguile.a
 lib/libguile.la
 lib/libguile.so
-lib/libguile.so.2
+lib/libguile.so.4
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/aclocal/guile.m4
-share/aclocal/threads.m4
-share/guile/1.2/ice-9/boot-9.scm
-share/guile/1.2/ice-9/debug.scm
-share/guile/1.2/ice-9/expect.scm
-share/guile/1.2/ice-9/hcons.scm
-share/guile/1.2/ice-9/lineio.scm
-share/guile/1.2/ice-9/mapping.scm
-share/guile/1.2/ice-9/poe.scm
-share/guile/1.2/ice-9/regex.scm
-share/guile/1.2/ice-9/slib.scm
-share/guile/1.2/ice-9/tags.scm
-share/guile/1.2/ice-9/threads.scm
-share/guile/1.2/ice-9/r4rs.scm
-share/guile/1.2/ice-9/version.scm
+share/aclocal/qthreads.m4
+share/guile/1.3/ice-9/boot-9.scm
+share/guile/1.3/ice-9/calling.scm
+share/guile/1.3/ice-9/common-list.scm
+share/guile/1.3/ice-9/debug.scm
+share/guile/1.3/ice-9/emacs.scm
+share/guile/1.3/ice-9/expect.scm
+share/guile/1.3/ice-9/getopt-gnu-style.scm
+share/guile/1.3/ice-9/hcons.scm
+share/guile/1.3/ice-9/lineio.scm
+share/guile/1.3/ice-9/ls.scm
+share/guile/1.3/ice-9/mapping.scm
+share/guile/1.3/ice-9/poe.scm
+share/guile/1.3/ice-9/psyntax.pp
+share/guile/1.3/ice-9/psyntax.ss
+share/guile/1.3/ice-9/q.scm
+share/guile/1.3/ice-9/r4rs.scm
+share/guile/1.3/ice-9/readline.scm
+share/guile/1.3/ice-9/regex.scm
+share/guile/1.3/ice-9/runq.scm
+share/guile/1.3/ice-9/session.scm
+share/guile/1.3/ice-9/slib.scm
+share/guile/1.3/ice-9/string-fun.scm
+share/guile/1.3/ice-9/syncase.scm
+share/guile/1.3/ice-9/tags.scm
+share/guile/1.3/ice-9/threads.scm
+share/guile/1.3/ice-9/version.scm
 @dirrm include/guile
 @dirrm include/libguile
-@dirrm share/guile/1.2/ice-9
-@dirrm share/guile/1.2
+@dirrm share/guile/1.3/ice-9
+@dirrm share/guile/1.3
 @dirrm share/guile

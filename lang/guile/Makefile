@@ -1,12 +1,12 @@
 # New ports collection makefile for:	guile
-# Version required:	1.2
+# Version required:	1.3
 # Date created:		2 November 1997
 # Whom:			jseger@FreeBSD.org
 #
-# $Id: Makefile,v 1.12 1997/11/22 16:01:32 jseger Exp $
+# $Id: Makefile,v 1.13 1998/09/22 15:44:11 vanilla Exp $
 #
 
-DISTNAME=	guile-1.2
+DISTNAME=	guile-1.3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 
@@ -16,6 +16,9 @@ GNU_CONFIGURE=	YES
 MAKE_ENV+=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 post-install:
+	@if [ ! -f ${PREFIX}/info/dir ]; then \
+	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	 fi
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
