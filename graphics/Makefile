@@ -139,6 +139,7 @@
     SUBDIR += jpeg2ps-a4
     SUBDIR += jpeg2ps-letter
     SUBDIR += jpeginfo
+    SUBDIR += jpegpixi
     SUBDIR += jpgtn
     SUBDIR += jslice
     SUBDIR += juno-2

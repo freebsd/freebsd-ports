@@ -1,0 +1,17 @@
+"Jpegpixi" is short for "JPEG pixel interpolator". The intent of the
+program is to interpolate pixels in JFIF images (commonly refered to as
+"JPEG images"). This is useful to correct images from a digital camera
+with CCD defects. For example, if one pixel is always bright green, this
+pixel can be interpolated away with jpegpixi.
+
+Jpegpixi is unique in that it tries to preserve the quality of the JFIF
+image as much as possible. Usual graphics programs decode JFIF images
+when they are loaded, and re-encode them when they are saved, which
+results in an overall loss of quality.  Jpegpixi, on the other hand, does
+not decode and re-encode the image, but manipulates the encoded image
+data (known as the "DCT coefficients"). Therefore, the blocks (typically 
+8x8, 8x16, or 16x16 pixel areas) which contain the pixels to be
+interpolated are minimally disturbed, and other blocks remain
+pixel-by-pixel identical to the original image.
+
+WWW: http://jpegpixi.sourceforge.net/
