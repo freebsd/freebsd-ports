@@ -100,6 +100,7 @@
     SUBDIR += festvox-rab8
     SUBDIR += festvox-tll
     SUBDIR += flac
+    SUBDIR += flac123
     SUBDIR += fluidsynth
     SUBDIR += fmio
     SUBDIR += freebirth

@@ -1,0 +1,5 @@
+Flac123 is a  console-line Free Lossless Audio Codec (flac) audio player.
+It implements mpg123's 'Remote Control' interface and has the ability to 
+output to a wav file or stdout.
+
+WWW:	http://flac-tools.sf.net
