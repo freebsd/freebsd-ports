@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	proftpd
-PORTVERSION=	1.2.8
-PORTREVISION=	1
+PORTVERSION=	1.2.9
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
 		ftp://ftp.stikman.com/pub/proftpd/source/ \
 		ftp://ftp.dataguard.no/pub/proftpd/distrib/source/ \
 		ftp://ftp.club-internet.fr/pub/mirrors/ftp.proftpd.org/distrib/source/
-DISTNAME=	${PORTNAME}-${PORTVERSION}p
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mharo@FreeBSD.org
 COMMENT=	Highly configurable ftp daemon
@@ -28,6 +25,17 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 # WANT_AUTOCONF_VER=213
 # USE_AUTOCONF=	yes
+
+SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g'
+
+USE_RC_SUBR=	yes
+RC_DIR=		${PREFIX}/etc/rc.d
+RC_SUFX=	.sh
+SED_SCRIPT+=	-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
+		-e 's|%%RC_DIR%%|${RC_DIR}|g' \
+		-e 's|%%RC_SUFX%%|${RC_SUFX}|g'
+PLIST_SUB+=	RC_DIR=${RC_DIR} \
+		RC_SUFX=${RC_SUFX}
 
 CONFIGURE_ARGS=	--localstatedir=/var/run \
 		--disable-sendfile
@@ -47,27 +55,36 @@ INCLUDEDIRS=
 LIBDIRS=
 
 .if defined(WITH_LDAP)
+USE_OPENLDAP=	yes
 MODULES:=${MODULES}:mod_ldap
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libldap.a:${PORTSDIR}/net/openldap12
 INCLUDEDIRS:=${INCLUDEDIRS}:${PREFIX}/include
 LIBDIRS:=${LIBDIRS}:${PREFIX}/lib
 .endif
 
 .if defined(WITH_MYSQL)
+USE_MYSQL=	yes
 MODULES:=${MODULES}:mod_sql:mod_sql_mysql
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 INCLUDEDIRS:=${INCLUDEDIRS}:${PREFIX}/include
 LIBDIRS:=${LIBDIRS}:${PREFIX}/lib/mysql
 .endif
 
 .if defined(WITH_POSTGRES)
 POSTGRESQL_PORT?=	databases/postgresql7
-MODULES:=${MODULES}:mod_sql:mod_sql_postgres
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+MODULES:=${MODULES}:mod_sql:mod_sql_postgres
 INCLUDEDIRS:=${INCLUDEDIRS}:${PREFIX}/include
 LIBDIRS:=${LIBDIRS}:${PREFIX}/lib
 .endif
 
+.if defined(WITH_OPENSSL)
+CFLAGS+=	-DHAVE_OPENSSL
+USE_OPENSSL=	yes
+PROFTPD_LIBS+=	-lssl -lcrypto
+.endif
+
+# Keep this here below, in case similar constructs need to be made
+CONFIGURE_ENV+=	"LIBS=${PROFTPD_LIBS}"
+ 
 .if !empty(MODULES)
 CONFIGURE_ARGS+= --with-modules=${MODULES}
 .endif
@@ -104,6 +121,10 @@ post-configure:
 	@${SED}	-e 's:/usr/bin:${PREFIX}/bin:' \
 		< ${WRKSRC}/utils/ftpcount.1.pre_sed > ${WRKSRC}/utils/ftpcount.1
 
+post-build:
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/proftpd.sh > ${WRKSRC}/proftpd.sh
+
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpcount ${PREFIX}/bin/ftpcount
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpwho ${PREFIX}/bin/ftpwho
@@ -122,7 +143,7 @@ do-install:
 		${INSTALL_DATA} \
 		${WRKSRC}/sample-configurations/basic.conf ${PREFIX}/etc/proftpd.conf; \
 	fi
-	@${SED} -e 's,/usr/local,${PREFIX},g' ${FILESDIR}/proftpd.sh.sample > ${PREFIX}/etc/rc.d/proftpd.sh.sample
+	@${INSTALL_SCRIPT} ${WRKSRC}/proftpd.sh ${PREFIX}/etc/rc.d/proftpd${RC_SUFX}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/proftpd
 	@${INSTALL_DATA} ${WRKSRC}/doc/Configuration.html ${PREFIX}/share/doc/proftpd
