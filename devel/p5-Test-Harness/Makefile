@@ -25,4 +25,11 @@ MAN3=		Test::Harness.3 Test::Harness::Assert.3 \
 post-patch:
 	${PERL} -pi -e 'm.INSTALLDIRS.&&s,.,,sg' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+BUILD_DEPENDS=  ${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
+RUN_DEPENDS=    ${BUILD_DEPENDS}
+.endif
+
+.include <bsd.port.post.mk>
