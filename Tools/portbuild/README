@@ -30,10 +30,13 @@ find.
  (4) Put the list of machines you have in "mlist".  There is a sample
      provided in this directory.  Each line should have two entries,
      "hostname" and "power".  The "hostname" is self-explanatory; the
-     "power" entry generally discribes how many compilations that
-     machine can run in parallel.  It is only relative, so designating
-     two machines 1 and 2 is the same as having them as 10 and 20
-     (modulo any rounding errors).
+     "power" entry generally describes how many compilations that
+     machine can run in parallel.  This number is used by the checkmachines
+     script to work out which machines should be handed new jobs, by
+     dividing the number of running jobs on the client by its weight and
+     taking the integer part, and choosing all clients with minimal value.
+     Because it takes the integer value this algorithm will select machines
+     with loads in a certain range, not just the single least loaded machine.
 
      Note that you can put the master here as well, but our experience 
      is that our NFS is likely to act up when the master is too busy.
@@ -55,9 +58,9 @@ find.
      directories on the build machines.  Create a directory
      ${branch}/chroot on the build machines.
 
- (9) Create the directory ${buildroot}/distfiles, ${branch}/{errors,logs}
-     and ${branch}/packages/All on the master.  Copy the XFree86 and
-     Motif tarballs to the latter directory.
+ (9) Create the directory ${buildroot}/{distfiles,loads},
+     ${branch}/{errors,logs} and ${branch}/packages/All on the master.
+     Copy the XFree86 and Motif tarballs to the latter directory.
 
 (10) Run the "reportload" script on the build machines in the
      background (you can put reportload.sh in /usr/local/etc/rc.d to
