@@ -3671,6 +3671,7 @@ jaxen		ports/java/jaxen
 jbigkit		ports/graphics/jbigkit
 jboss2		ports/java/jboss2
 jboss3		ports/java/jboss3
+jc		ports/java/jc
 jce-aba		ports/java/jce-aba
 jcommon		ports/java/jcommon
 jday		ports/astro/jday
@@ -3718,9 +3719,9 @@ jive		ports/misc/jive
 jlex		ports/java/jlex
 jlint		ports/java/jlint
 jlj		ports/deskutils/jlj
+jmf		ports/java/jmf
 jmirror		ports/ftp/jmirror
 jmk-x11-fonts	ports/x11-fonts/jmk-x11-fonts
-jmf		ports/java/jmf
 jmp		ports/java/jmp
 jode		ports/java/jode
 joe		ports/editors/joe
