@@ -46,7 +46,7 @@ share/doc/wanderlust/wl-ja.texi
 %%EMACS_LIBDIR%%/site-lisp/wanderlust/wl-util.elc
 %%EMACS_LIBDIR%%/site-lisp/wanderlust/wl-vars.elc
 %%EMACS_LIBDIR%%/site-lisp/wanderlust/wl.elc
-%%EMACS_LIBDIR%%/site-lisp/wanderlust-startup.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/wanderlust-startup.el
 share/examples/wanderlust/sample.addresses
 share/examples/wanderlust/sample.dot.wl
 share/examples/wanderlust/sample.folders
