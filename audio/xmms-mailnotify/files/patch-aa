@@ -1,0 +1,19 @@
+--- mailnotify.c.orig	Sun Feb  3 21:12:45 2002
++++ mailnotify.c	Sun Feb  3 21:13:05 2002
+@@ -82,14 +82,14 @@
+ 		gchar command[256];
+ 		gboolean runcmd;
+ 		gchar alertfile[256];
+-	} folders[MAX_FOLDERS] = {0};
++	} folders[MAX_FOLDERS] = {{{0}}};
+ 
+ struct origin {
+ 		gchar senderaddr[256];
+ 		gboolean runcmd;
+ 		gchar command[256];
+ 		gchar alertfile[256];
+-	} origins[MAX_ORIGINS] = {0};
++	} origins[MAX_ORIGINS] = {{{0}}};
+ 
+ 
+ /* #if !defined(UTIMBUF)
