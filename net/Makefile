@@ -198,6 +198,7 @@
     SUBDIR += oproute
     SUBDIR += p0f
     SUBDIR += p5-Archie
+    SUBDIR += p5-Cflow
     SUBDIR += p5-Frontier-RPC
     SUBDIR += p5-Mon
     SUBDIR += p5-Net
