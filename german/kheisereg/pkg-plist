@@ -1,0 +1,51 @@
+bin/kheisereg
+share/applnk/Utilities/kheisereg.desktop
+share/apps/kheisereg/icons/hicolor/16x16/actions/goct.png
+share/apps/kheisereg/icons/hicolor/16x16/actions/goix.png
+share/apps/kheisereg/icons/hicolor/22x22/actions/goct.png
+share/apps/kheisereg/icons/hicolor/22x22/actions/goix.png
+share/apps/kheisereg/icons/hicolor/32x32/actions/goct.png
+share/apps/kheisereg/icons/hicolor/32x32/actions/goix.png
+share/apps/kheisereg/pics/cdrom.png
+share/apps/kheisereg/pics/general.png
+share/apps/kheisereg/pics/network.png
+share/apps/kheisereg/pics/search.png
+share/doc/HTML/de/kheisereg/common
+share/doc/HTML/de/kheisereg/index.cache.bz2
+share/doc/HTML/de/kheisereg/index.docbook
+share/doc/HTML/en/kheisereg/common
+share/doc/HTML/en/kheisereg/index.cache.bz2
+share/doc/HTML/en/kheisereg/index.docbook
+share/icons/hicolor/16x16/apps/kheisereg.png
+share/icons/hicolor/32x32/apps/kheisereg.png
+share/icons/hicolor/48x48/apps/kheisereg.png
+share/locale/de/LC_MESSAGES/kheisereg.mo
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/en/kheisereg
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrm share/doc/HTML/de/kheisereg
+@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/kheisereg/pics
+@dirrm share/apps/kheisereg/icons/hicolor/32x32/actions
+@dirrm share/apps/kheisereg/icons/hicolor/32x32
+@dirrm share/apps/kheisereg/icons/hicolor/22x22/actions
+@dirrm share/apps/kheisereg/icons/hicolor/22x22
+@dirrm share/apps/kheisereg/icons/hicolor/16x16/actions
+@dirrm share/apps/kheisereg/icons/hicolor/16x16
+@dirrm share/apps/kheisereg/icons/hicolor
+@dirrm share/apps/kheisereg/icons
+@dirrm share/apps/kheisereg
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
