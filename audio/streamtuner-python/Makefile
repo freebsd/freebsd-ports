@@ -22,6 +22,6 @@ USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes
 USE_PYTHON=		yes
 USE_LIBTOOL=		yes
-INSTALLS_SHLIB=		yes
+#INSTALLS_SHLIB=	not needed, the libs are plugins for streamtuner only
 
 .include <bsd.port.mk>
