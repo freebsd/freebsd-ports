@@ -1,0 +1,11 @@
+--- Makefile.shared.orig	Sat Feb  8 00:59:46 2003
++++ Makefile.shared	Sat Feb  8 01:00:00 2003
+@@ -62,7 +62,7 @@
+ 	$(CAMLYACC) $<
+ 
+ .c.o: ../config.h
+-	$(CAMLC) -ccopt "-I.. $(CFLAGS) -I/usr/local/include" -c $< 
++	$(CAMLC) -ccopt "-I.. $(CFLAGS) -I/usr/X11R6/include -I/usr/local/include" -c $< 
+ 
+ depend: .depend
+ 

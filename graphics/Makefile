@@ -237,6 +237,7 @@
     SUBDIR += netpbm
     SUBDIR += netshow
     SUBDIR += nurbs++
+    SUBDIR += ocaml-images
     SUBDIR += ocaml-lablgl
     SUBDIR += opendis
     SUBDIR += opendx
