@@ -30,7 +30,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
-
   <vuln vid="bfb36941-84fa-11d8-a41f-0020ed76ef5a">
     <topic>Incorrect cross-realm trust handling in Heimdal</topic>
     <affects>
@@ -261,6 +260,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-03-12</discovery>
       <entry>2004-03-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="705e003a-7f36-11d8-9645-0020ed76ef5a">
+    <topic>squid ACL bypass due to URL decoding bug</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>squid-2.5.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From the Squid advisory:</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2004_1.txt">
+          <p>Squid versions 2.5.STABLE4 and earlier contain a bug
+          in the "%xx" URL decoding function.  It may insert a NUL
+          character into decoded URLs, which may allow users to bypass
+          url_regex ACLs.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2004_1.txt</url>
+      <cvename>CAN-2004-0189</cvename>
+    </references>
+    <dates>
+      <discovery>2004-02-29</discovery>
+      <entry>2004-03-26</entry>
+      <modified>2004-03-30</modified>
     </dates>
   </vuln>
 
@@ -879,36 +908,6 @@ misc.c:
     <dates>
       <discovery>2004-03-26</discovery>
       <entry>2004-03-28</entry>
-    </dates>
-  </vuln>
-
-  <vuln vid="705e003a-7f36-11d8-9645-0020ed76ef5a">
-    <topic>squid ACL bypass due to URL decoding bug</topic>
-    <affects>
-      <package>
-	<name>squid</name>
-	<range><lt>squid-2.5.5</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>From the Squid advisory:</p>
-	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2004_1.txt">
-          <p>Squid versions 2.5.STABLE4 and earlier contain a bug
-          in the "%xx" URL decoding function.  It may insert a NUL
-          character into decoded URLs, which may allow users to bypass
-          url_regex ACLs.</p>
-	</blockquote>
-      </body>
-    </description>
-    <references>
-      <url>http://www.squid-cache.org/Advisories/SQUID-2004_1.txt</url>
-      <cvename>CAN-2004-0189</cvename>
-    </references>
-    <dates>
-      <discovery>2004-02-29</discovery>
-      <entry>2004-03-26</entry>
-      <modified>2004-03-30</modified>
     </dates>
   </vuln>
 
