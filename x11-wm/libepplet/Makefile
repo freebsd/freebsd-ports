@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	libepplet
-PORTVERSION=	0.5
+PORTVERSION=	0.7
 CATEGORIES=	x11-wm devel
-MASTER_SITES=	ftp://kde.planetmirror.com/pub/enlightenment/epplets/ \
-		ftp://ftp.dti.ad.jp/pub/X/enlightenment/epplets/
-DISTNAME=	epplet-base-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	enlightenment
+DISTNAME=	epplets-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for building enlightenment dock applications
 
-WRKSRC=		${WRKDIR}/Epplets-${PORTVERSION}
-
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
+USE_GL=		yes
+USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	EROOT=${X11BASE}/share/enlightenment \
-		EBIN=${X11BASE}/bin
-CONFIGURE_ARGS=	--enable-fsstd
+CONFIGURE_ENV=	EROOT="${X11BASE}/share/enlightenment" \
+		EBIN="${X11BASE}/bin" \
+		CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's|api epplets|api|g' ${WRKSRC}/Makefile.in
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lGL -lGLU ${PTHREAD_LIBS}
 
 .include <bsd.port.mk>

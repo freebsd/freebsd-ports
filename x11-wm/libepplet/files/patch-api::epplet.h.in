@@ -1,0 +1,10 @@
+--- api/epplet.h.in.orig	Fri Jun 30 08:54:24 2000
++++ api/epplet.h.in	Mon Dec  8 23:43:09 2003
+@@ -28,7 +28,6 @@
+ 
+ /* preliminary OpenGL Checking */
+ #ifdef HAVE_LIBGL
+-#include <GL/glut.h>
+ #include <GL/glx.h>
+ #endif
+ 
