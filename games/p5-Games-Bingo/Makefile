@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Games-Bingo
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	games perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Games
@@ -20,7 +20,8 @@ PERL_CONFIGURE=	yes
 MAN3=		Games::Bingo.3 \
 		Games::Bingo::Card.3 \
 		Games::Bingo::Column.3 \
-		Games::Bingo::ColumnCollection.3
+		Games::Bingo::ColumnCollection.3 \
+		Games::Bingo::Constants.3
 
 post-install:
 .ifndef(NOPORTDOCS)
