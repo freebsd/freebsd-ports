@@ -1445,6 +1445,7 @@ evas		ports/graphics/evas
 everybuddy	ports/net/everybuddy
 evg		ports/www/evg
 evilbar		ports/audio/evilbar
+evilfinder	ports/games/evilfinder
 evilwm		ports/x11-wm/evilwm
 evolution	ports/mail/evolution
 evolvotron	ports/graphics/evolvotron
