@@ -4146,6 +4146,7 @@ p5-Apache-Icon	ports/www/p5-Apache-Icon
 p5-Apache-Language	ports/www/p5-Apache-Language
 p5-Apache-MP3	ports/www/p5-Apache-MP3
 p5-Apache-NNTPGateway	ports/www/p5-Apache-NNTPGateway
+p5-Apache-PageKit	ports/www/p5-Apache-PageKit
 p5-Apache-Peek	ports/www/p5-Apache-Peek
 p5-Apache-Radius	ports/www/p5-Apache-Radius
 p5-Apache-Reload	ports/www/p5-Apache-Reload
