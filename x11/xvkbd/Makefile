@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xvkbd
-PORTVERSION=	2.5a
+PORTVERSION=	2.6
 CATEGORIES=	x11
-MASTER_SITES=	http://member.nifty.ne.jp/tsato/xvkbd/
+MASTER_SITES=	http://homepage3.nifty.com/tsato/xvkbd/
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A virtual keyboard for X applications
