@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	teTeX
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	japanese print
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	ja-
@@ -20,9 +20,9 @@ RUN_DEPENDS=	${TETEX_MODESW}:${PORTSDIR}/print/tex-texmflocal \
 		tex:${PORTSDIR}/print/teTeX-base \
 		ptex:${PORTSDIR}/japanese/ptex-tetex \
 		dvips:${PORTSDIR}/japanese/dvipsk \
-		xdvi:${PORTSDIR}/japanese/xdvik-vflib \
+		xdvi:${PORTSDIR}/japanese/xdvik \
 		jtex:${PORTSDIR}/japanese/texfamily \
-		#${JTEXVF}:${PORTSDIR}/japanese/texfamily-vfn2a
+		${JTEXVF}:${PORTSDIR}/japanese/texfamily-vfn2a
 
 TETEX_MODESW=	${LOCALBASE}/bin/tetex-modesw
 JTEXVF=		${LOCALBASE}/share/texmf-local/fonts/vf/n2a/dmjsy5.vf
