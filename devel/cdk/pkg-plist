@@ -60,6 +60,7 @@ share/examples/cdk/hello_ex.c
 share/examples/cdk/histogram_ex.c
 share/examples/cdk/itemlist_ex.c
 share/examples/cdk/label_ex.c
+share/examples/cdk/lowerCDKObject_ex.c
 share/examples/cdk/marquee_ex.c
 share/examples/cdk/matrix_ex.c
 share/examples/cdk/mentry_ex.c
@@ -67,6 +68,7 @@ share/examples/cdk/menu_ex.c
 share/examples/cdk/position_ex.c
 share/examples/cdk/preprocess_ex.c
 share/examples/cdk/radio_ex.c
+share/examples/cdk/raiseCDKObject_ex.c
 share/examples/cdk/scale_ex.c
 share/examples/cdk/scroll_ex.c
 share/examples/cdk/selection_ex.c
