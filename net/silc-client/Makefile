@@ -28,6 +28,8 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	aquatique-ports@rambler.ru
 COMMENT=	Secure Internet Live Conferencing (SILC) network client
 
+BROKEN=		"Broken pkg-plist"
+
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
