@@ -12,7 +12,9 @@ MASTER_SITES=	http://www.ipsmart.com/src/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Runs command repeatedly; shows output (can conflict with ImageMagick)
+COMMENT=	Runs command repeatedly; shows output
+
+CONFLICTS=	ImageMagick-[0-9]* goblin-*
 
 GNU_CONFIGURE=	yes
 
@@ -20,6 +22,6 @@ MAN1=		display.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/display ${PREFIX}/bin/display
-	${INSTALL_MAN} ${WRKSRC}/display.man ${PREFIX}/man/man1/display.1
+	${INSTALL_MAN} ${WRKSRC}/display.man ${MANPREFIX}/man/man1/display.1
 
 .include <bsd.port.mk>
