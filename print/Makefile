@@ -1,10 +1,8 @@
-# $Id: Makefile,v 1.64 1998/08/14 00:16:29 kuriyama Exp $
+# $Id: Makefile,v 1.65 1998/10/19 14:30:06 vanilla Exp $
 #
 
-# the reversed ordering of a2ps43 and a2ps is intentional -- this
-# is to make sure the "Latest" link points to the latest version
-    SUBDIR += a2ps43
     SUBDIR += a2ps
+    SUBDIR += a2ps43
     SUBDIR += acroread
     SUBDIR += afm
     SUBDIR += apsfilter
