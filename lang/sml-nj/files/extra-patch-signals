@@ -1,0 +1,21 @@
+*** src.old/runtime/mach-dep/signal-sysdep.h	Sat Jan 22 18:15:21 2000
+--- src/runtime/mach-dep/signal-sysdep.h	Sun Jan 23 01:46:53 2000
+***************
+*** 396,403 ****
+  #  elif defined(OPSYS_FREEBSD)
+      /** x86, FreeBSD **/
+  #    define SIG_FAULT1		SIGFPE
+! #    define INT_DIVZERO(s, c)	(((s) == SIGFPE) && ((c) == FPE_INTDIV_TRAP))
+! #    define INT_OVFLW(s, c)	(((s) == SIGFPE) && ((c) == FPE_INTOVF_TRAP))
+  
+  #    define SIG_GetCode(info, scp)	(info)
+  #    define SIG_GetPC(scp)		((scp)->sc_pc)
+--- 396,403 ----
+  #  elif defined(OPSYS_FREEBSD)
+      /** x86, FreeBSD **/
+  #    define SIG_FAULT1		SIGFPE
+! #    define INT_DIVZERO(s, c)	(((s) == SIGFPE) && ((c) == FPE_INTDIV))
+! #    define INT_OVFLW(s, c)	(((s) == SIGFPE) && ((c) == FPE_INTOVF))
+  
+  #    define SIG_GetCode(info, scp)	(info)
+  #    define SIG_GetPC(scp)		((scp)->sc_pc)
