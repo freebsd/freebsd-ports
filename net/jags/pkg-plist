@@ -19,21 +19,16 @@ share/jags/pixmaps/settings.xpm
 share/jags/pixmaps/unmount.xpm
 share/jags/plugins/freebsd-samba-2.0.7.plugin/fetch_master_browser.sh
 share/jags/plugins/freebsd-samba-2.0.7.plugin/fetch_master_browser.sh.old
-share/jags/plugins/freebsd-samba-2.0.7.plugin/fetch_master_browser.sh~
 share/jags/plugins/freebsd-samba-2.0.7.plugin/list_masterbrowsers.sh
 share/jags/plugins/freebsd-samba-2.0.7.plugin/list_servercomments.sh
 share/jags/plugins/freebsd-samba-2.0.7.plugin/list_servers.sh
-share/jags/plugins/freebsd-samba-2.0.7.plugin/list_servers.sh~
 share/jags/plugins/freebsd-samba-2.0.7.plugin/list_shares.sh
 share/jags/plugins/freebsd-samba-2.0.7.plugin/list_workgroups.sh
 share/jags/plugins/freebsd-samba-2.0.7.plugin/ls_mnts.sh
-share/jags/plugins/freebsd-samba-2.0.7.plugin/ls_mnts.sh~
 share/jags/plugins/freebsd-samba-2.0.7.plugin/mount_share.sh
 share/jags/plugins/freebsd-samba-2.0.7.plugin/mount_share_with.sh
-share/jags/plugins/freebsd-samba-2.0.7.plugin/mount_share_with.sh~
 share/jags/plugins/freebsd-samba-2.0.7.plugin/search.sh
 share/jags/plugins/freebsd-samba-2.0.7.plugin/umount.sh
-share/jags/plugins/freebsd-samba-2.0.7.plugin/umount.sh~
 share/jags/plugins/offline.plugin/fetch_master_browser.sh
 share/jags/plugins/offline.plugin/list_masterbrowsers.sh
 share/jags/plugins/offline.plugin/list_servers.sh
@@ -45,20 +40,16 @@ share/jags/plugins/offline.plugin/sample_smb_output
 share/jags/plugins/samba-2.0.7.plugin/]
 share/jags/plugins/samba-2.0.7.plugin/fetch_master_browser.sh
 share/jags/plugins/samba-2.0.7.plugin/fetch_master_browser.sh.old
-share/jags/plugins/samba-2.0.7.plugin/fetch_master_browser.sh~
 share/jags/plugins/samba-2.0.7.plugin/list_masterbrowsers.sh
 share/jags/plugins/samba-2.0.7.plugin/list_servercomments.sh
 share/jags/plugins/samba-2.0.7.plugin/list_servers.sh
-share/jags/plugins/samba-2.0.7.plugin/list_servers.sh~
 share/jags/plugins/samba-2.0.7.plugin/list_shares.sh
 share/jags/plugins/samba-2.0.7.plugin/list_workgroups.sh
 share/jags/plugins/samba-2.0.7.plugin/ls_mnts.sh
 share/jags/plugins/samba-2.0.7.plugin/mount_share.sh
 share/jags/plugins/samba-2.0.7.plugin/mount_share_with.sh
-share/jags/plugins/samba-2.0.7.plugin/mount_share_with.sh~
 share/jags/plugins/samba-2.0.7.plugin/search.sh
 share/jags/plugins/samba-2.0.7.plugin/umount.sh
-share/jags/plugins/samba-2.0.7.plugin/umount.sh~
 @dirrm share/jags/plugins/samba-2.0.7.plugin
 @dirrm share/jags/plugins/offline.plugin
 @dirrm share/jags/plugins/freebsd-samba-2.0.7.plugin

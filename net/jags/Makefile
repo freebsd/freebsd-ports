@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jags
-PORTVERSION=	0.20
+PORTVERSION=	0.20.1
 CATEGORIES=	net
 MASTER_SITES=	http://sumpan.campus.luth.se/software/jags/download/
 
