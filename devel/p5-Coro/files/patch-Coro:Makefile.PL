@@ -1,8 +1,8 @@
 $FreeBSD$
 
---- Coro/Makefile.PL.orig	Tue Dec 16 11:11:52 2003
-+++ Coro/Makefile.PL	Tue Dec 16 11:14:33 2003
-@@ -31,58 +31,15 @@ if ($^O =~ /win32/i or $^O =~ /cygwin/) 
+--- Coro/Makefile.PL.orig	Tue Aug 10 03:53:02 2004
++++ Coro/Makefile.PL	Tue Aug 10 16:14:57 2004
+@@ -31,62 +31,15 @@
     $iface = "s";
  }
  
@@ -53,6 +53,10 @@ $FreeBSD$
 -i  IRIX. For some reason, SGI really does not like to follow the unix
 -   standard (does that surprise you?), so this workaround might be needed
 -   (it's fast), although s and u should also work now.
+-
+-For most systems, the default chosen should be OK. If you experience
+-problems then you should experiment with this setting and/or turn off
+-optimizations (make OPTIMIZE=-O0).
 -
 -EOF
 -
