@@ -8,7 +8,8 @@
 PORTNAME=	tridiavnc
 PORTVERSION=	1.4
 CATEGORIES=	net
-MASTER_SITES=	http://www.developvnc.org/logged-in/downloadnow/
+MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/dwcjr/ \
+		http://www.developvnc.org/logged-in/downloadnow/
 DISTNAME=	DevVNC_unix
 EXTRACT_SUFX=	.tgz
 
