@@ -5,21 +5,20 @@
 #
 # $FreeBSD$
 #
+# "?=" and "+=" are for localized (i.e. Japanese) version
 
 DISTNAME=	magicpoint-1.05a
-# question is for localized (i.e. Japanese) version
 PKGNAME?=	magicpoint-1.05a
-CATEGORIES=	misc
+CATEGORIES+=	misc
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER?=	itojun@itojun.org
 
-# plus sign is for localized (i.e. Japanese) version
 LIB_DEPENDS+=	ttf.3:${PORTSDIR}/print/freetype
 
 USE_IMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-vflib
+CONFIGURE_ARGS?=--disable-vflib
 
 post-configure:
 	(cd ${WRKSRC}/contrib/xmindpath; ./configure --prefix=${PREFIX})
