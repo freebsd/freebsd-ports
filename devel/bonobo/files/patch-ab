@@ -9,10 +9,10 @@
  confexec_DATA = bonoboConf.sh
  
  EXTRA_DIST = bonoboConf.sh.in bonobo.spec.in
---- components/application-x-gnomine/Makefile.in.orig	Sun Mar 26 10:16:13 2000
-+++ components/application-x-gnomine/Makefile.in	Fri Apr 21 10:18:21 2000
-@@ -133,9 +133,9 @@
- l = @l@
+--- components/application-x-gnomine/Makefile.in.orig	Fri May 12 13:03:29 2000
++++ components/application-x-gnomine/Makefile.in	Wed May 17 10:29:13 2000
+@@ -138,9 +138,9 @@
+ @OAF_FALSE@OBJECT_DIRECTORY_LIBS = $(GNOMEGNORBA_LIBS)
  
  scoredir = $(localstatedir)/games
 -Gamesdir = $(datadir)/gnome/apps/Games
@@ -23,22 +23,6 @@
  
  
  #bin_PROGRAMS = gnomine bonobo-application-x-mines
-@@ -163,12 +163,14 @@
- EXTRA_DIST = flag.xpm mine.xpm face-cool.xpm face-sad.xpm 	face-smile.xpm face-win.xpm face-worried.xpm 	gnomine.desktop README AUTHORS $(gnorba_DATA)
- 
- 
--Games_DATA = gnomine.desktop
-+Games_DATA = gnomine-bonobo.desktop
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../../config.h
- CONFIG_CLEAN_FILES = 
- PROGRAMS =  $(bin_PROGRAMS)
- 
-+gnomine-bonobo.desktop: gnomine.desktop
-+	cp gnomine.desktop gnomine-bonobo.desktop
- 
- DEFS = @DEFS@ -I. -I$(srcdir) -I../..
- LIBS = @LIBS@
 --- components/audio-ulaw/Makefile.in.orig	Tue Feb 22 00:06:59 2000
 +++ components/audio-ulaw/Makefile.in	Tue Feb 22 11:15:23 2000
 @@ -139,7 +139,7 @@
@@ -50,25 +34,6 @@
  
  
  bonobo_audio_ulaw_LDADD =  	$(top_builddir)/bonobo/libbonobo.la		$(GTK_LIBS)					$(GNOME_LIBDIR)					$(GNOMEGNORBA_LIBS)				$(INTLLIBS)
---- components/image-x-png/Makefile.in.orig	Tue Feb 22 00:06:54 2000
-+++ components/image-x-png/Makefile.in	Tue Feb 22 11:16:15 2000
-@@ -132,14 +132,14 @@
- cxxflags_set = @cxxflags_set@
- l = @l@
- 
--SUBDIRS = doc
-+SUBDIRS = # doc
- 
- bin_PROGRAMS = bonobo-image-x-png
- 
- bonobo_image_x_png_SOURCES =  	bonobo-image-x-png.c
- 
- 
--INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. 							-I$(top_srcdir)/bonobo				        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
-+INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. 							-I$(top_srcdir)/bonobo				        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
- 
- 
- bonobo_image_x_png_LDADD =  	$(top_builddir)/bonobo/libbonobo.la		$(GTK_LIBS)					$(GNOME_LIBDIR)					$(GNOMEGNORBA_LIBS)				$(INTLLIBS)					-lpng -lz
 --- components/text-plain/Makefile.in.orig	Tue Feb 22 00:06:58 2000
 +++ components/text-plain/Makefile.in	Tue Feb 22 11:16:45 2000
 @@ -137,7 +137,7 @@
@@ -137,17 +102,17 @@
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/../mkinstalldirs
  CONFIG_HEADER = config.h
---- bonobo/Makefile.in.orig	Sun Mar 26 10:16:10 2000
-+++ bonobo/Makefile.in	Fri Apr 21 10:08:50 2000
-@@ -140,7 +140,7 @@
+--- bonobo/Makefile.in.orig	Fri May 12 13:03:26 2000
++++ bonobo/Makefile.in	Wed May 17 10:32:46 2000
+@@ -139,7 +139,7 @@
  @OAF_TRUE@OBJECT_DIRECTORY_IMPL = bonobo-object-directory-oaf.c
  @OAF_FALSE@OBJECT_DIRECTORY_IMPL = bonobo-object-directory-goad.c
  
--INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        	-DSTORAGE_LIB=\""$(libdir)"\"				-DG_LOG_DOMAIN=\"Bonobo\"				-I. 							-I$(srcdir) -I$(top_srcdir) 				-I$(top_builddir)				        -I$(includedir)                                         $(GNOME_INCLUDEDIR)
-+INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-DSTORAGE_LIB=\""$(libdir)"\"				-DG_LOG_DOMAIN=\"Bonobo\"				-I. 							-I$(srcdir) -I$(top_srcdir) 				-I$(top_builddir)				        -I$(includedir)                                         $(GNOME_INCLUDEDIR)
+-INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        	-DSTORAGE_LIB=\""$(libdir)"\"				-DG_LOG_DOMAIN=\"Bonobo\"				-I. 							-I$(srcdir) -I$(top_srcdir) 				-I$(top_builddir)				        -I$(includedir)                                 	$(GNOME_INCLUDEDIR)					$(GDK_PIXBUF_CFLAGS)
++INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-DSTORAGE_LIB=\""$(libdir)"\"				-DG_LOG_DOMAIN=\"Bonobo\"				-I. 							-I$(srcdir) -I$(top_srcdir) 				-I$(top_builddir)				        -I$(includedir)                                 	$(GNOME_INCLUDEDIR)					$(GDK_PIXBUF_CFLAGS)
  
  
- gnome_libs =  	$(GNOME_LIBDIR)		        $(GNOMEUI_LIBS)			$(OBJECT_DIRECTORY_LIBS) 	$(INTLLIBS)
+ gnome_libs =  	$(GNOME_LIBDIR)			$(GDK_PIXBUF_LIBS)         $(GNOMEUI_LIBS)			$(OBJECT_DIRECTORY_LIBS) 	$(INTLLIBS)
 --- gshell/Makefile.in.orig	Sun Mar 26 10:16:20 2000
 +++ gshell/Makefile.in	Fri Apr 21 10:19:33 2000
 @@ -132,7 +132,7 @@
