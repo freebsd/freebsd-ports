@@ -14,9 +14,10 @@ EXTRACT_SUFX=	.exe
 
 MAINTAINER=	dbader@eece.unm.edu
 
-RUN_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base
+BUILD_DEPENDS=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
+USE_LINUX=	yes
 
 NO_BUILD=	Yes
 NO_PACKAGE=	Shareware
