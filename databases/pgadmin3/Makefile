@@ -40,4 +40,8 @@ LIB_DEPENDS+=	wx_gtk2_stc-2.5.3:${PORTSDIR}/x11-toolkits/wxgtk2-contrib-devel
 CONFIGURE_ARGS+=--with-wx-config=wxgtk2-2.5-config
 .endif # WITH_UNICODE
 
+.if ${OSVERSION} >= 502000
+BROKEN=		"Please use binary version distributed by http://pgadmin.org/"
+.endif
+
 .include <bsd.port.post.mk>
