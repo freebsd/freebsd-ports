@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	3.17
+PORTVERSION=	3.18
 CATEGORIES=	security
-MASTER_SITES=	ftp://stunnel.mirt.net/stunnel/ \
-		http://www.stunnel.org/download/stunnel/src/ \
+MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
+		ftp://stunnel.mirt.net/stunnel/ \
 		ftp://opensores.thebunker.net/pub/mirrors/stunnel/ \
 		ftp://ftp.cryptoarchive.net/pub/cryptoarchive/mirrors/opensores.thebunker.net/pub/mirrors/stunnel/
 
