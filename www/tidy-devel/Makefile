@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	tidy
-PORTVERSION=	040720
+PORTVERSION=	040728
 CATEGORIES=	www
 MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
 		http://tidy.sourceforge.net/docs/:docs
