@@ -4,6 +4,7 @@
     SUBDIR += dgpsip
     SUBDIR += ephem
     SUBDIR += luna
+    SUBDIR += pyweather
     SUBDIR += saoimage
     SUBDIR += sattrack
     SUBDIR += setiathome
