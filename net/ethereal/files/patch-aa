@@ -1,0 +1,25 @@
+--- gtk/main.c.orig	Wed Apr  5 10:17:53 2000
++++ gtk/main.c	Sat Apr 22 20:33:00 2000
+@@ -1161,6 +1161,7 @@
+ 
+   /* Let GTK get its args */
+   gtk_init (&argc, &argv);
++  gtk_set_locale ();
+   
+   prefs = read_prefs(&pf_path);
+   if (pf_path != NULL) {
+@@ -1440,12 +1441,12 @@
+   sprintf(rc_file, "%s/%s", get_home_dir(), RC_FILE);
+   gtk_rc_parse(rc_file);
+ 
+-  if ((m_r_font = gdk_font_load(medium_font)) == NULL) {
++  if ((m_r_font = gdk_fontset_load(medium_font)) == NULL) {
+     fprintf(stderr, "ethereal: Error font %s not found (use -m option)\n", medium_font);
+     exit(1);
+   }
+ 
+-  if ((m_b_font = gdk_font_load(bold_font)) == NULL) {
++  if ((m_b_font = gdk_fontset_load(bold_font)) == NULL) {
+     fprintf(stderr, "ethereal: Error font %s not found (use -b option)\n", bold_font);
+     exit(1);
+   }
