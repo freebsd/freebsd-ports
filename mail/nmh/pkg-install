@@ -1,7 +1,22 @@
 #!/bin/sh
 
 case "$2" in
-  ""|POST-INSTALL) cat <<EOF
+  ""|POST-INSTALL)
+    echo "Changing ${PKG_PREFIX}/bin/inc to group 'mail'"
+    chgrp mail ${PKG_PREFIX}/bin/inc
+
+    echo "Enabling setgid for ${PKG_PREFIX}/bin/inc"
+    chmod g+s ${PKG_PREFIX}/bin/inc
+
+    for file in ${PKG_PREFIX}/etc/nmh/*.default ; do
+      b=`basename $file .default`
+      if [ \! -f ${PKG_PREFIX}/etc/nmh/$b ] ; then
+	cp $file ${PKG_PREFIX}/etc/nmh/$b
+	chmod u+w ${PKG_PREFIX}/etc/nmh/$b
+      fi
+    done
+ 
+    cat <<EOF
 =============================================================
 
 Some files you might need to customize include the following:
