@@ -5,29 +5,22 @@
 # $FreeBSD$
 
 PORTNAME=	kasablanca
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4
 CATEGORIES=	ftp kde
 MASTER_SITES=	http://download.berlios.de/kasablanca/
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Graphical ftp client for KDE
 
-USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-post-extract:
-	@${CP} ${FILESDIR}/subdirs ${WRKSRC}
-	@${TOUCH} -t 200404130000 ${WRKSRC}/subdirs
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g; s|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's|\(-lssl\)|\1 -lcrypto ${PTHREAD_LIBS}|' \
-		${WRKSRC}/src/Makefile.in \
-		${WRKSRC}/src/kbftp/Makefile.in
+	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|\(-lssl\)|\1 -lcrypto|' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
