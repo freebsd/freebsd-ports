@@ -1,0 +1,34 @@
+--- iiimsf/src/Makefile.am.orig	Fri Oct 15 03:39:38 2004
++++ iiimsf/src/Makefile.am	Sun Feb 20 19:42:40 2005
+@@ -22,6 +22,7 @@
+ libiiimsf_la_LIBADD =		\
+ 	$(TLS_LIBS)		\
+ 	$(XML_LIBS)		\
++	-liiimp			\
+ 	$(NULL)
+ 
+ sbindir = $(IMBINDIR)
+@@ -56,7 +57,6 @@
+ 
+ htt_server_LDADD =			\
+ 	$(LIB_DIR)/iml/libiml.la	\
+-	$(IM_LIBDIR)/iiimp/libiiimp.la	\
+ 	$(SOCKET_LIBS)			\
+ 	$(LIBCRYPT_FLAGS)		\
+ 	$(LIBPAM_FLAGS)			\
+@@ -72,7 +72,6 @@
+ 	$(NULL)
+ iiimf_le_tools_LDADD =		\
+ 	$(XML_LIBS)		\
+-	-ldl			\
+ 	libiiimsf.la		\
+ 	$(NULL)
+ 
+@@ -82,6 +81,7 @@
+ iiimf_segv_logger_CFLAGS =				\
+ 	-DLOGDIR="\"$(localstatedir)/log/iiim\""	\
+ 	-DDATADIR="\"$(gdbcmddir)\""			\
++	-DIMBINDIR="\"$(IMBINDIR)\""			\
+ 	-g						\
+ 	$(NULL)
+ gdbcmddir = $(datadir)/iiim

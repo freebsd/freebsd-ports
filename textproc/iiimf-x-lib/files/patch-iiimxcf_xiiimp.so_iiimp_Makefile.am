@@ -1,12 +1,21 @@
---- iiimp/Makefile.am.orig	Sun Sep  5 05:33:03 2004
-+++ iiimp/Makefile.am	Sun Sep  5 05:33:26 2004
-@@ -9,7 +9,7 @@
+--- iiimxcf/xiiimp.so/iiimp/Makefile.am	Tue Mar 23 07:37:51 2004
++++ iiimxcf/xiiimp.so/iiimp/Makefile.am	Thu Feb 17 21:32:52 2005
+@@ -1,15 +1,14 @@
+ moduledir = $(IMDIR)
+ xiiimp_la_CFLAGS = $(X_CFLAGS) -I$(X_PRIVATEINC) \
+                    $(SHLIBCFLAGS) $(THREAD_CXX_CFLAGS) \
+-                   -I$(CSCONV_DIR)
++                   -I$(CSCONV_DIR) -I/usr/local/include -DUSE_CSCONV
+ xiiimp_la_LDFLAGS = -rpath $(moduledir) -version-info $(XIIIMP_SOX18N_VERSION) \
+-                    -module -export-dynamic -no-undefined
++                    -module -export-dynamic -no-undefined -L/usr/local/include \
++		    -liiimcf -liiimp
+ # On GNU/Linux system, libtool does not take care of -no-undefined so that
+ # you have to add the following by yourself to check undefined symbols.
  #                   -Wl,-z -Wl,defs
  xiiimp_la_LIBADD = $(X_LIBS)  \
 -		   $(IM_LIBDIR)/iiimcf/libiiimcf.la \
 -		   $(IM_LIBDIR)/iiimp/libiiimp.la \
-+ 		   -L$(LOCALBASE)/lib -liiimcf \
-+		   -L$(LOCALBASE)/lib -liiimp \
                     $(DLOPEN_LIBS) $(THREAD_LIBS)
  xiiimp_la_SOURCES = \
  	genutil.c \

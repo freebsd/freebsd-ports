@@ -1,16 +1,11 @@
---- iiimp/iiimpAux.c.orig	Wed Oct 13 21:13:37 2004
-+++ iiimp/iiimpAux.c	Wed Oct 13 21:14:40 2004
-@@ -1997,11 +1997,12 @@
- static void
- service_set_conversion_mode(aux_t * aux, int conversion_mode)
- {
-+  XVaNestedList preedit_attr;
-   XIC xic = (XIC)aux->ic;
-   XIMPreeditState preedit_state;
+--- iiimxcf/xiiimp.so/iiimp/iiimpAux.c	Sat Sep 11 01:41:45 2004
++++ iiimxcf/xiiimp.so/iiimp/iiimpAux.c	Wed Feb 16 20:40:57 2005
+@@ -80,7 +80,7 @@
+ #include "trace_message.h"
  
-   preedit_state = (conversion_mode == 1 ? XIMPreeditEnable : XIMPreeditDisable);
--  XVaNestedList preedit_attr = XVaCreateNestedList(0,
-+  preedit_attr = XVaCreateNestedList(0,
- 						   XNPreeditState, preedit_state,
- 						   0);
-   XSetICValues((XIC)xic,
+ 
+-#define AUX_BASE_DIR		"/usr/lib/im/"
++#define AUX_BASE_DIR		"/usr/local/lib/im/"
+ 
+ #if defined(__sparcv9)
+ #define SPARCV9_DIR		"sparcv9/"

@@ -1,4 +1,19 @@
-lib/im/htt_server
+bin/iiimf-le-tools
+etc/iiim/htt.xml.conf.sample
+etc/iiim/le.xml.conf.sample
 lib/im/htt
-lib/im/htt.conf
-@dirrm lib/im
+lib/im/htt_server
+libexec/iiimf-segv-logger
+share/iiim/gdbcmd
+@dirrm etc/iiim
+@dirrm share/iiim
+@unexec rmdir %D/lib/im > /dev/null 2>&1 || true
+@exec mkdir -p /var/log/iiim
+@unexec rm -f /var/log/iiim/*.log
+@unexec rmdir /var/log/iiim > /dev/null 2>&1 || true
+@exec mkdir -p /var/run/iiim
+@unexec rm -f /var/run/iiim/.iiimp-unix/[0-9]* > /dev/null 2>&1 || true
+@unexec rm -f /var/run/iiim/.iiimp-unix-*/[0-9]* > /dev/null 2>&1 || true
+@unexec rmdir /var/run/iiim/.iiimp-unix > /dev/null 2>&1 || true
+@unexec rmdir /var/run/iiim/.iiimp-unix-* > /dev/null 2>&1 || true
+@unexec rmdir /var/run/iiim > /dev/null 2>&1 || true

@@ -1,0 +1,19 @@
+--- Makefile	Thu Apr  8 03:28:00 2004
++++ Makefile	Wed Feb 16 14:09:34 2005
+@@ -2,6 +2,7 @@
+ AUTOMAKE = automake
+ AUTOHEADER = autoheader
+ AUTOCONF = autoconf
++LIBTOOLIZE = libtoolize
+ 
+ CONFIG_CMD = $(ACLOCAL) -I $${acfilesdir} && \
+              $(AUTOHEADER) && \
+@@ -21,7 +22,7 @@
+ 
+ update-acfiles:
+ 	cd acfiles && \
+-        $(ACLOCAL) && $(AUTOMAKE) --add-missing --copy && libtoolize --force --copy && \
++        $(ACLOCAL) && $(AUTOMAKE) --add-missing --copy && $(LIBTOOLIZE) --force --copy && \
+         rm -f Makefile.in aclocal.m4
+ 
+ config:

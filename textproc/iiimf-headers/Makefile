@@ -10,14 +10,14 @@ PORTVERSION=	${IIIMF_VER:S/_/./g:C/-.*//}
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
-DISTNAME=	im-sdk
-DISTFILES=	${DISTNAME}-src-${IIIMF_VER}.tgz
+DISTNAME=	im-sdk-src-${IIIMF_VER}
+EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	kcwu@csie.org
 COMMENT=	Header files for Internet/Intranet Input Method Framework
 
-IIIMF_VER=	r12_0_1-svn1891
-WRKSRC=		${WRKDIR}/${DISTNAME}-${IIIMF_VER}
+IIIMF_VER=	r12_1-svn2002
+WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 NO_BUILD=	yes
 
 do-install:

@@ -1,0 +1,8 @@
+--- iiimsf/Makefile.am.orig	Sat Feb 19 03:33:28 2005
++++ iiimsf/Makefile.am	Sat Feb 19 03:33:48 2005
+@@ -2,4 +2,4 @@
+ SUBDIRS = lib src
+ 
+ confdir = $(XMLCONFDIR)
+-conf_DATA = htt.xml.conf
++conf_DATA = htt.xml.conf.sample src/le.xml.conf.sample
