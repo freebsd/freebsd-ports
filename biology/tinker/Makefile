@@ -42,12 +42,6 @@ USE_XLIB=       yes
 post-build:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/build_viewer
 .else
-pre-extract:
-	@${ECHO} ""
-	@${ECHO} If you would like to also build
-	@${ECHO} the molecular viewer, define WITH_VIEWER.
-	@${ECHO} ""
-.endif
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 FFLAGS+=        -O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
@@ -60,9 +54,6 @@ pre-everything::
 .if !defined(WITH_OPTIMIZED_FLAGS)
 	@${ECHO_MSG} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
 .endif
-
-post-build:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/build_viewer
 
 pre-extract:
 	@${ECHO} ""
