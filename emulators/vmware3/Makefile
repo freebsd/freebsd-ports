@@ -8,6 +8,7 @@
 
 PORTNAME=	vmware2
 PORTVERSION=	2.0.3.799
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		${FREEBSD_MODULE_SITES} \
