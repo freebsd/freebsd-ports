@@ -7,6 +7,7 @@
 
 PORTNAME=	vmware3
 PORTVERSION=	3.2.0-2230
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		${FREEBSD_MODULE_SITES} \
@@ -148,25 +149,51 @@ pre-install: setoptions
 	${INSTALL_SCRIPT} ${FILESDIR}/df ${VMDIR}/bin
 	[ -f ${LINUXBASE}/bin/df ] || ${LN} -s ${VMDIR}/bin/df ${LINUXBASE}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.pl ${VMDIR}/bin
+
 	for i in \
-		 vmnet-bridge vmnet-dhcpd vmnet-sniffer \
-		 vmware-ping vmware-wizard \
+		 vmnet-bridge vmnet-dhcpd vmnet-natd vmnet-netifup \
+		 vmnet-sniffer vmware-nmbd vmware-smbd vmware-smbpasswd  \
+		 vmware-smbpasswd.bin vmware-ping vmware-wizard \
 		 ; do \
 		${INSTALL_SCRIPT} ${WRKSRC}/bin/$${i} ${VMDIR}/bin; \
 	done
-	for i in \
-		vmware-ui vmware-mks \
-		; do \
-		${INSTALL_SCRIPT} ${WRKSRC}/lib/bin/$${i} ${VMDIR}/bin; \
+	for file in ${WRKSRC}/lib/bin/*; do \
+		${INSTALL_SCRIPT} $${file} ${VMDIR}/bin; \
 	done
+
+	${MKDIR} ${VMDIR}/lib/configurator
+	for file in ${WRKSRC}/lib/configurator/* ; do \
+		${INSTALL_DATA} $${file} ${VMDIR}/lib/configurator; \
+	done
+
+	${MKDIR} ${VMDIR}/lib/isoimages
+	for file in ${WRKSRC}/lib/isoimages/* ; do \
+		${INSTALL_DATA} $${file} ${VMDIR}/lib/isoimages; \
+	done
+
+	${MKDIR} ${VMDIR}/lib/licenses/site
+	${MKDIR} ${VMDIR}/lib/licenses/user
+	${INSTALL_DATA} -m 4555 ${WRKSRC}/lib/licenses/user/license.ws.3.0 \
+		${VMDIR}/lib/licenses/user
 	${INSTALL_SCRIPT} -m 4555 ${WRKSRC}/bin/vmware ${VMDIR}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/vmware ${PREFIX}/bin
 	${MKDIR} ${VMDIR}/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/config ${VMDIR}/lib
 	${MKDIR} ${VMDIR}/lib/help
 	${INSTALL_DATA} ${WRKSRC}/lib/help/* ${VMDIR}/lib/help
+
 	${MKDIR} ${VMDIR}/lib/xkeymap
 	${INSTALL_DATA} ${WRKSRC}/lib/xkeymap/* ${VMDIR}/lib/xkeymap
+
+	${MKDIR} ${VMDIR}/lib/smb/codepages
+	${INSTALL_DATA} ${WRKSRC}/lib/smb/codepages/* ${VMDIR}/lib/smb/codepages
+
+	${MKDIR} ${VMDIR}/lib/messages/chef
+	${INSTALL_DATA} ${WRKSRC}/lib/messages/chef/* ${VMDIR}/lib/messages/chef
+	${MKDIR} ${VMDIR}/lib/messages/ja
+	${INSTALL_DATA} ${WRKSRC}/lib/messages/ja/* ${VMDIR}/lib/messages/ja
+	${MKDIR} ${VMDIR}/lib/messages/jive
+	${INSTALL_DATA} ${WRKSRC}/lib/messages/jive/* ${VMDIR}/lib/messages/jive
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/vmware
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/vmware
@@ -177,7 +204,9 @@ pre-install: setoptions
 
 post-install:
 	${LN} -sf ${PREFIX}/etc/vmware /etc/
-	${LN} -sf ${PREFIX}/lib/vmware /compat/linux/usr/lib/vmware
+	@if [ ! -e /compat/linux/usr/lib/vmware/bin/vmware ]; then \
+		${LN} -sf ${PREFIX}/lib/vmware /compat/linux/usr/lib/vmware; \
+	fi
 	@${CAT} ${PKGMESSAGE}
 
 pre-clean:

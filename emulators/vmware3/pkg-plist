@@ -6,6 +6,12 @@ lib/vmware/lib/modules/linker.hints
 lib/vmware/lib/modules/vmmon_up.ko
 lib/vmware/lib/modules/vmnet.ko
 lib/vmware/lib/config
+lib/vmware/lib/configurator/vmnet-dhcpd.conf
+lib/vmware/lib/configurator/vmnet-nat.conf
+lib/vmware/lib/configurator/vmnet-smb.conf
+lib/vmware/lib/isoimages/freebsd.iso
+lib/vmware/lib/isoimages/linux.iso
+lib/vmware/lib/isoimages/windows.iso
 lib/vmware/lib/xkeymap/be101
 lib/vmware/lib/xkeymap/be104
 lib/vmware/lib/xkeymap/chde101
@@ -262,6 +268,15 @@ lib/vmware/lib/help/ConfigWiz.htm
 lib/vmware/lib/help/FullScreen.gif
 lib/vmware/lib/help/Help.gif
 lib/vmware/bin/df
+lib/vmware/lib/messages/chef/vmware-mks.vmsg
+lib/vmware/lib/messages/chef/vmware-ui.vmsg
+lib/vmware/lib/messages/chef/vmware.vmsg
+lib/vmware/lib/messages/ja/vmware-mks.vmsg
+lib/vmware/lib/messages/ja/vmware-ui.vmsg
+lib/vmware/lib/messages/ja/vmware.vmsg
+lib/vmware/lib/messages/jive/vmware-mks.vmsg
+lib/vmware/lib/messages/jive/vmware-ui.vmsg
+lib/vmware/lib/messages/jive/vmware.vmsg
 lib/vmware/bin/vmware-config.pl
 lib/vmware/bin/vmware-uninstall.pl
 lib/vmware/bin/vmnet-bridge
@@ -272,6 +287,23 @@ lib/vmware/bin/vmware-ui
 lib/vmware/bin/vmware-mks
 lib/vmware/bin/vmware-wizard
 lib/vmware/bin/vmware
+lib/vmware/bin/vmnet-natd
+lib/vmware/bin/vmnet-netifup
+lib/vmware/bin/vmware-nmbd
+lib/vmware/bin/vmware-smbd
+lib/vmware/bin/vmware-smbpasswd
+lib/vmware/bin/vmware-smbpasswd.bin
+lib/vmware/lib/licenses/user/license.ws.3.0
+lib/vmware/lib/smb/codepages/codepage.437
+lib/vmware/lib/smb/codepages/codepage.737
+lib/vmware/lib/smb/codepages/codepage.850
+lib/vmware/lib/smb/codepages/codepage.852
+lib/vmware/lib/smb/codepages/codepage.861
+lib/vmware/lib/smb/codepages/codepage.866
+lib/vmware/lib/smb/codepages/codepage.932
+lib/vmware/lib/smb/codepages/codepage.936
+lib/vmware/lib/smb/codepages/codepage.949
+lib/vmware/lib/smb/codepages/codepage.950
 share/doc/vmware/Hints.FreeBSD
 share/doc/vmware/README.FreeBSD
 share/doc/vmware/open_source_licenses.txt
@@ -294,6 +326,17 @@ share/doc/vmware/README
 @dirrm lib/vmware/lib/help
 @dirrm lib/vmware/lib/modules
 @dirrm lib/vmware/lib/xkeymap
+@dirrm lib/vmware/lib/configurator
+@dirrm lib/vmware/lib/isoimages
+@dirrm lib/vmware/lib/licenses/site
+@dirrm lib/vmware/lib/licenses/user
+@dirrm lib/vmware/lib/licenses
+@dirrm lib/vmware/lib/messages/chef
+@dirrm lib/vmware/lib/messages/jive
+@dirrm lib/vmware/lib/messages/ja
+@dirrm lib/vmware/lib/messages
+@dirrm lib/vmware/lib/smb/codepages
+@dirrm lib/vmware/lib/smb
 @dirrm lib/vmware/lib
 @dirrm lib/vmware
 @dirrm share/doc/vmware
