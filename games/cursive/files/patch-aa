@@ -1,0 +1,10 @@
+--- Makefile.orig	Sat Dec  4 17:19:30 1999
++++ Makefile	Sat Dec  4 17:19:40 1999
+@@ -1,5 +1,7 @@
+ CFLAGS = -g
+ 
++all: cursive
++
+ cursive: cursive.o x.o xs.o
+ 	cc -g -o cursive cursive.o x.o xs.o
+ 
