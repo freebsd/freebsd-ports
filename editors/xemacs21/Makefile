@@ -84,7 +84,7 @@ WITH_OFFIX?=	--with-offix=no
 
 post-install::
 .if !defined(MULE_COMMON)
-	${LN} -sf xemacs-${XEMACS_VER} ${PREFIX}/bin/xemacs21
+	${LN} -sf xemacs-${XEMACS_VER} ${PREFIX}/bin/xemacs21${BINNAMEEXT}
 .for file in b2m ctags etags gnuclient xemacs-${XEMACS_VER}
 	strip ${PREFIX}/bin/${file}
 .endfor
