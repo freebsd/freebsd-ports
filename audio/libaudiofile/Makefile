@@ -19,13 +19,9 @@ COMMENT=	A sound library for SGI audio file
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
-USE_REINPLACE=	yes
+USE_GNOME=	gnomehack
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
-
-pre-patch:
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
 .include <bsd.port.mk>
