@@ -21,7 +21,7 @@ CAT?=		/bin/cat
 DISTFILES!=	${CAT} ${FILESDIR}/distfiles
 
 CVS_CMD?=	cvs -z3
-CVS_DATE=	Fri Nov 12 20:27:53 EST 1999
+CVS_DATE=	Mon Nov 15 01:30:17 EST 1999
 CVS_SITE?=	anoncvs@anoncvs1.ca.openbsd.org:/cvs
 CRYPTOLIBS=	-L${PREFIX}/lib -lcrypto
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
@@ -48,6 +48,9 @@ do-fetch:
 	@if [ ! -e ${STAMPFILE} ] || \
 	    [ "X${CVS_DATE}" != "X$$(${CAT} ${STAMPFILE})" ]; then \
 		unset CVS_RSH CVS_SERVER || ${TRUE}; \
+		if [ -n "${PORTS_CVS_RSH}" ]; then \
+			export CVS_RSH="${PORTS_CVS_RSH}"; \
+		fi; \
 		${MKDIR} ${DISTDIR}/${PKGNAME} && \
 		cd ${DISTDIR}/${PKGNAME} && \
 		${CVS_CMD} -d ${CVS_SITE} co -D "${CVS_DATE}" ${DISTNAME} && \
