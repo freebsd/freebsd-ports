@@ -1,5 +1,5 @@
---- /usr/ports/devel/cocktail/work/cocktail-9309//./reuse/m2c/SYSTEM_.h	Tue Feb 15 14:26:45 1994
-+++ ./reuse/m2c/SYSTEM_.h	Thu Aug  5 18:49:33 2004
+--- reuse/m2c/SYSTEM_.h.orig	Wed Feb 16 00:26:45 1994
++++ reuse/m2c/SYSTEM_.h	Fri Dec 17 09:21:56 2004
 @@ -16,10 +16,18 @@
  /*									*/
  /************************************************************************/
@@ -8,7 +8,7 @@
 +
 +# include <stdlib.h>
 +# include <string.h>
-+# include <sys/limits.h>
++# include <limits.h>
 +
  # ifdef __STDC__
  # define ARGS(parameters)	parameters
