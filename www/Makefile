@@ -442,6 +442,7 @@
     SUBDIR += p5-libwww
     SUBDIR += peacock
     SUBDIR += pear-APC
+    SUBDIR += pear-HTTP
     SUBDIR += pgdriver
     SUBDIR += pglogd
     SUBDIR += photo_gallery
