@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gdesklets-clock
+PORTNAME=	clock
 PORTVERSION=	0.32
 CATEGORIES=	x11-clocks gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
+PKGNAMEPREFIX= gdesklets-
 DISTNAME=	clock-desklet-${PORTVERSION}
 
 MAINTAINER=	mezz7@cox.net
@@ -18,20 +19,30 @@ RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutil
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+
 NAME=		Clock
+DATADIR=	${PREFIX}/share/gnome
+LANG=		de fr pt sq sr sr@Latn sv
 
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/gnome/gdesklets/Displays/${NAME}
-	@${CP} ${WRKSRC}/*.display ${PREFIX}/share/gnome/gdesklets/Displays/${NAME}/
-	@${CP} -Rp ${WRKSRC}/gfx ${PREFIX}/share/gnome/gdesklets/Displays/${NAME}/
-	@${CP} -Rp ${WRKSRC}/${NAME} ${PREFIX}/share/gnome/gdesklets/Sensors/
-	@${CP} ${WRKSRC}/README ${PREFIX}/share/gnome/gdesklets/Displays/${NAME}/
-	@${LN} -s ${PREFIX}/share/gnome/gdesklets/Displays/${NAME}/README \
-		${PREFIX}/share/gnome/gdesklets/Sensors/${NAME}/README
+	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/gfx
+.for ii in ${LANG}
+	@${MKDIR} ${DATADIR}/gdesklets/Sensors/${NAME}/locale/${ii}/LC_MESSAGES
+	@${INSTALL_DATA} ${WRKSRC}/${NAME}/locale/${ii}/LC_MESSAGES/*.mo \
+		${DATADIR}/gdesklets/Sensors/${NAME}/locale/${ii}/LC_MESSAGES/
+.endfor
+	@${INSTALL_DATA} ${WRKSRC}/${NAME}/*.py ${DATADIR}/gdesklets/Sensors/${NAME}/
+	@${INSTALL_DATA} ${WRKSRC}/${NAME}/*.dat ${DATADIR}/gdesklets/Sensors/${NAME}/
+	@${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/gdesklets/Displays/${NAME}/
+	@${INSTALL_DATA} ${WRKSRC}/gfx/*.png ${DATADIR}/gdesklets/Displays/${NAME}/gfx/
+	@${INSTALL_DATA} ${WRKSRC}/gfx/*.xcf ${DATADIR}/gdesklets/Displays/${NAME}/gfx/
+	@${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}/gdesklets/Displays/${NAME}/
+	@${LN} -s ${DATADIR}/gdesklets/Displays/${NAME}/README \
+		${DATADIR}/gdesklets/Sensors/${NAME}/README
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
