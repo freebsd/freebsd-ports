@@ -28,7 +28,7 @@ post-patch:
 .endfor
 
 do-install:
-.for file in grc grcat ${MAN1}
+.for file in grc grcat
 	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
 .endfor
 
