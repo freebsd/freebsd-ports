@@ -1,18 +1,18 @@
-#! /bin/sh
+#!/bin/sh
 
 # Set printer drivers automatically if BATCH is set
 
 if [ ! "X"${BATCH} = "X" ] ; then
 
-PRINTER_JAPAN=' epag300.dev epag600.dev mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips3.dev lips4.dev lips4c.dev rpdlA3.dev rpdlA4.dev rpdlB4.dev rpdlB5.dev bj10v.dev bj10vh.dev'
+PRINTER_JAPAN=' epag300.dev epag600.dev mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips3.dev lips4.dev lips4c.dev rpdlA3.dev rpdlA4.dev rpdlB4.dev rpdlB5.dev bj10v.dev bj10vh.dev dmprt.dev npdl.dev'
 
 sed -e "s;XINCLUDE=-I/usr/local/X/include;XINCLUDE=-I/usr/X11R6/include;" \
     -e "s;XLIBDIRS=-L/usr/X11/lib;XLIBDIRS=-L/usr/X11R6/lib;" \
     -e "s;JSRCDIR=jpeg-6a;JSRCDIR=${WRKDIR}/jpeg-6a;" \
-    -e "s;PSRCDIR=libpng;PSRCDIR=${WRKDIR}/libpng-0.89c;" \
+    -e "s;PSRCDIR=libpng;PSRCDIR=${WRKDIR}/libpng-0.96;" \
     -e "s;ZSRCDIR=zlib;ZSRCDIR=.;" \
     -e "s;CC=gcc;CC=cc;" \
-    -e "s;DEVICE_DEVS15=pdfwrite.dev;DEVICE_DEVS15=pdfwrite.dev stcolor.dev ${PRINTER_JAPAN};" \
+    -e "s;DEVICE_DEVS15=pdfwrite.dev;DEVICE_DEVS15=pdfwrite.dev stcolor.dev st800.dev uniprint.dev ${PRINTER_JAPAN};" \
     < ${WRKSRC}/unix-gcc.mak > ${WRKSRC}/unix-gcc.mak.bak && \
     mv ${WRKSRC}/unix-gcc.mak.bak ${WRKSRC}/unix-gcc.mak
 touch ${WRKSRC}/makefile
@@ -24,7 +24,7 @@ else
 sed -e "s;XINCLUDE=-I/usr/local/X/include;XINCLUDE=-I/usr/X11R6/include;" \
     -e "s;XLIBDIRS=-L/usr/X11/lib;XLIBDIRS=-L/usr/X11R6/lib;" \
     -e "s;JSRCDIR=jpeg-6a;JSRCDIR=${WRKDIR}/jpeg-6a;" \
-    -e "s;PSRCDIR=libpng;PSRCDIR=${WRKDIR}/libpng-0.89c;" \
+    -e "s;PSRCDIR=libpng;PSRCDIR=${WRKDIR}/libpng-0.96;" \
     -e "s;ZSRCDIR=zlib;ZSRCDIR=.;" \
     -e "s;CC=gcc;CC=cc;" \
     -e "s;^DEVICE_DEVS=.*;;" \
@@ -62,14 +62,14 @@ Have fun with this new configuration style !     -andreas \n\n\
    "x11"      "X version 11, release >=4" ON \
    "x11alpha" "X masquer. as device with alpha capability" ON \
    "x11cmyk"  "X masquer. as 1-bit-per-plane CMYK device" ON \
+   "x11gray2" "X masquer. as device with 2-bit gray-scale device" ON \
    "x11mono"  "X masquer. as black-and-white device" ON \
-   "sxlcrt"   "CRT sixels, e.g. for VT240-like terminals" OFF \
    "ap3250"   "Epson AP3250" OFF \
    "appledmp" "Apple Dot Matrix Printer / Imagewriter" OFF \
-   "bj10e"    "Canon BubbleJet BJ10e" OFF \
+   "bj10e"    "Canon BubbleJet BJ10e" ON \
    "bj10v"    "Canon BubbleJet BJ10v" ON \
    "bj10vh"    "Canon BubbleJet BJ10v" ON \
-   "bj200"    "Canon BubbleJet BJ200" OFF \
+   "bj200"    "Canon BubbleJet BJ200" ON \
    "bjc600"   "Canon Color BubbleJet BJC-600/4000/70" ON \
    "bjc800"   "Canon Color BubbleJet BJC-800" ON \
    "ccr"      "CalComp Raster format" OFF \
@@ -82,6 +82,7 @@ Have fun with this new configuration style !     -andreas \n\n\
    "deskjet"  "HP DeskJet and DeskJet Plus" ON \
    "djet500"  "HP DeskJet 500" ON \
    "djet500c" "HP DeskJet 500C alternate driver, not for 550/560C" OFF \
+   "dmprt"    "Generic Printer" ON \
    "dnj650c"  "HP DesignJet 650C" OFF \
    "epag300"  "Epson ESC/PS laser printer 300dpi, mono" ON \
    "epag600"  "Epson ESC/PS laser printer 600dpi, mono" ON \
@@ -100,15 +101,10 @@ Have fun with this new configuration style !     -andreas \n\n\
    "iwlq"     "Apple Imagewriter LQ in 320 x 216 dpi mode" OFF \
    "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" OFF \
    "laserjet" "HP LaserJet" ON \
-   "la50"     "DEC LA50 printer" OFF \
-   "la70"     "DEC LA70 printer" OFF \
-   "la75"     "DEC LA75 printer" OFF \
-   "la75plus" "DEC LA75plus printer" OFF \
    "lbp8"     "Canon LBP-8II laser printer" OFF \
    "lips3"    "Canon LIPS III laser printer " ON \
    "lips4"    "Canon LIPSIV laser printer 600dpi, mono" ON \
    "lips4c"   "Canon LIPSIV laser printer 600dpi,CMYK" ON \
-   "ln03"     "DEC LN03 printer" OFF \
    "lj250"    "DEC LJ250 Companion color printer" OFF \
    "ljet2p"   "HP LaserJet IId/IIp/III* with TIFF compression" ON \
    "ljet3"    "HP LaserJet III* with Delta Row compression" ON \
@@ -117,8 +113,11 @@ Have fun with this new configuration style !     -andreas \n\n\
    "lj4dith"  "HP LaserJet 4 with Floyd-Steinberg dithering" OFF \
    "ljetplus" "HP LaserJet Plus" ON \
    "lp2563"   "HP 2563B line printer" OFF \
+   "lp8000"   "Epson LP8000 laser printer" OFF \
    "m8510"    "C.Itoh M8510 printer" OFF \
    "necp6"    "NEC P6/P6+/P60, 360x360 DPI resol" OFF \
+   "npdl"      "NEC Printer Description Language (NPDL)" ON \
+   "nwp533"   "Sony Microsystems NWP533 laser printer" OFF \
    "oce9050"  "OCE 9050 printer" OFF \
    "oki182"   "Okidata MicroLine 182" OFF \
    "okiibm"   "Okidata MicroLine IBM-compatible printers" OFF \
@@ -133,12 +132,13 @@ Have fun with this new configuration style !     -andreas \n\n\
    "rpdlB4"  "Ricoh Printer Description Language (RPDL) B4 600 dpi" ON \
    "rpdlB5"  "Ricoh Printer Description Language (RPDL) B5 600 dpi" ON \
    "sj48"     "StarJet 48 inkjet printer" OFF \
-   "st800"    "Epson Stylus 800 printer" OFF \
-   "stcolor"  "Epson Stylus Color" OFF \
+   "st800"    "Epson Stylus 800 printer" ON \
+   "stcolor"  "Epson Stylus Color" ON \
    "t4693d2"  "Tektronix 4693d color, 2 bits per R/G/B component" OFF \
    "t4693d4"  "Tektronix 4693d color, 4 bits per R/G/B component" OFF \
    "t4693d8"  "Tektronix 4693d color, 8 bits per R/G/B component" OFF \
    "tek4696"  "Tektronix 4695/4696 inkjet plotter" OFF \
+   "uniprint" "Unified printer driver ESC/P ESC/P2 HP-RTL/PCL..." ON \
    "xes"      "Xerox XES printers (2700, 3700, 4045, etc.)" OFF \
    "dfaxhigh" "DigiBoard, DigiFAX software format (high resol)" OFF \
    "dfaxlow"  "DigiFAX low (normal) resol" OFF \
@@ -160,6 +160,8 @@ Have fun with this new configuration style !     -andreas \n\n\
    "cgm8"     "8-bit 256-color CGM -- DITTO" OFF \
    "cgm24"    "24-bit color CGM -- DITTO" OFF \
    "cif"      "CIF file format for VLSI" OFF \
+   "jpeg"     "JPEG format, RGB output" ON \
+   "jpeggray" "JPEG format, gray output" ON \
    "miff24"   "ImageMagick MIFF, 24-bit direct color, RLE compressed" OFF \
    "mgrmono"  "1-bit monochrome MGR devices" OFF \
    "mgrgray2" "2-bit gray scale MGR devices" OFF \
@@ -172,6 +174,7 @@ Have fun with this new configuration style !     -andreas \n\n\
    "pcx16"    "PCX file format, 4-bit planar EGA/VGA color" ON \
    "pcx256"   "PCX file format, 8-bit chunky color" ON \
    "pcx24b"   "PCX file format, 24-bit color 3x8-bit planes" ON \
+   "pcxcmyk"  "PCX file format,  4-bit chunky CMYK color" ON \
    "pbm"      "Portable Bitmap,  plain format" ON \
    "pbmraw"   "Portable Bitmap,  raw format" ON \
    "pgm"      "Portable Graymap, plain format" ON \
@@ -182,12 +185,20 @@ Have fun with this new configuration style !     -andreas \n\n\
    "pnmraw"   "Portable Pixmap,  raw format RGB, optim. to PGM/PBM" ON \
    "ppm"      "Portable Pixmap,  plain format RGB" ON \
    "ppmraw"   "Portable Pixmap,  raw format RGB" ON \
+   "pkm"      "Portable inKmap   plain format 4bit CMYK to RGB" OFF \
+   "pkmraw"   "Portable inKmap   raw format 4bit CMYK to RGB" OFF \
    "pngmono"  "Monochrome Portable Network Graphics, PNG" ON \
    "pnggray"  "8-bit gray Portable Network Graphics, PNG" ON \
    "png16"    "4-bit color Portable Network Graphics, PNG" ON \
    "png256"   "8-bit color Portable Network Graphics, PNG" ON \
    "png16m"   "24-bit color Portable Network Graphics, PNG" ON \
    "psmono"   "PostScript, Level 1, monochrome image" ON \
+   "psgray"   "PostScript, Level 1, grayscale  image" ON \
+   "epswrite" "EPS output" ON \
+   "pdfwrite" "PDF output" ON \
+   "pswrite"  "PostScript output" ON \
+   "pxlmono"  "Black-and-white PCL XL" ON \
+   "pxlcolor" "Color PCL XL" ON \
    "sgirgb"   "SGI RGB pixmap format" OFF \
    "tiff12nc" "TIFF 12-bit RGB, no compression" ON \
    "tiff24nc" "TIFF 24-bit RGB, no compression, NeXT std. format)" ON \
