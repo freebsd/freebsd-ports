@@ -1,4 +1,4 @@
-etc/rc.d/jakarta-tomcat.sh
+etc/rc.d/020.jakarta-tomcat.sh
 %%T%%/KEYS
 %%T%%/LICENSE
 %%T%%/RELEASE-NOTES
