@@ -18,6 +18,8 @@ USE_GMAKE=	yes
 USE_QT=		yes
 WRKSRC=		${WRKDIR}/fine
 
+MAKE_ENV=	CXX="${CXX}" CC="${CC}"
+
 do-install:
 	@${MKDIR} ${PREFIX}/share/fine
 	${INSTALL_DATA} ${WRKSRC}/.editor ${PREFIX}/share/fine/editor
