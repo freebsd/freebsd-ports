@@ -1398,6 +1398,7 @@ ethereal	ports/net/ethereal
 etlfonts	ports/x11-fonts/etlfonts
 ettercap	ports/net/ettercap
 eudc-emacs20	ports/net/eudc-emacs20
+euler		ports/science/euler
 eval		ports/math/eval
 evas		ports/graphics/evas
 everybuddy	ports/net/everybuddy
