@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/SubProcess/SubProcess.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/SubProcess/SubProcess.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/SubProcess/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/SubProcess.pm
+@unexec %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/SubProcess 2>/dev/null || true
+@unexec %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache            2>/dev/null || true
+@unexec %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache                 2>/dev/null || true

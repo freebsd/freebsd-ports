@@ -1,0 +1,4 @@
+Apache::SubProcess provides the Perl API for running and communicating
+with processes spawned from mod_perl handlers.
+
+Author: Doug MacEachern
