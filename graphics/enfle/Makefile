@@ -12,13 +12,14 @@ MASTER_SITES=	http://enfle.fennel.org/
 
 MAINTAINER=	mami@whale.cc.muroran-it.ac.jp
 
+BUILD_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2
 LIB_DEPENDS=    png.3:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-all-plugins \
+CONFIGURE_ARGS=	--enable-all-plugins --disable-static \
 		--enable-plugins-dir
 
 .include <bsd.port.mk>
