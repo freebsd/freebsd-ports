@@ -14,7 +14,11 @@ lib/python1.5/site-packages/TextTools/TextTools.pyo
 lib/python1.5/site-packages/TextTools/__init__.py
 lib/python1.5/site-packages/TextTools/__init__.pyc
 lib/python1.5/site-packages/TextTools/__init__.pyo
-lib/python1.5/site-packages/mxTextTools.so
+lib/python1.5/site-packages/TextTools/mxTextTools/__init__.py
+lib/python1.5/site-packages/TextTools/mxTextTools/__init__.pyc
+lib/python1.5/site-packages/TextTools/mxTextTools/__init__.pyo
+lib/python1.5/site-packages/TextTools/mxTextTools/mxTextTools.so
+@dirrm lib/python1.5/site-packages/TextTools/mxTextTools
 @dirrm lib/python1.5/site-packages/TextTools
 share/doc/py-mxTextTools/mxTextTools.html
 @dirrm share/doc/py-mxTextTools

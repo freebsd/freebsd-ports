@@ -8,7 +8,7 @@
 PORTNAME=	py-mxTextTools
 PORTVERSION= 	1.1.1
 CATEGORIES=	textproc python
-MASTER_SITES=	http://starship.skyport.net/~lemburg/
+MASTER_SITES=	http://starship.python.net/~lemburg/
 DISTNAME=	mxTextTools-1.1.1
 
 MAINTAINER=	tg@FreeBSD.org
@@ -32,11 +32,15 @@ post-extract:
 do-configure:
 	@(cd ${WRKSRC} && ${CONFIGURE_ENV} ${MAKE} -f Makefile.pre.in boot)
 
-post-install:
+do-install:
 	@${MKDIR} ${TEXTTOOLSDIR}
 	${INSTALL_DATA} ${WRKDIR}/TextTools/*.py ${TEXTTOOLSDIR}
 	@${MKDIR} ${TEXTTOOLSDIR}/Constants
 	${INSTALL_DATA} ${WRKDIR}/TextTools/Constants/*.py ${TEXTTOOLSDIR}/Constants
+	@${MKDIR} ${TEXTTOOLSDIR}/mxTextTools
+.for file in __init__.py mxTextTools.so
+	${INSTALL_DATA} ${WRKDIR}/TextTools/mxTextTools/${file} ${TEXTTOOLSDIR}/mxTextTools
+.endfor
 	@${PREFIX}/bin/python ${PYTHONSCRIPTDIR}/compileall.py ${TEXTTOOLSDIR}
 	@${PREFIX}/bin/python -O ${PYTHONSCRIPTDIR}/compileall.py ${TEXTTOOLSDIR}
 	@${MKDIR} ${EXAMPLEDIR}
