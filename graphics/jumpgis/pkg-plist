@@ -1,0 +1,14 @@
+bin/jumpgis
+jumpgis/lib/Jama-1.0.1.jar
+jumpgis/lib/jdom.jar
+jumpgis/lib/jts-1.4.0.jar
+jumpgis/lib/jump-1.1.1.jar
+jumpgis/lib/junit.jar
+jumpgis/lib/xercesImpl.jar
+jumpgis/lib/xml-apis.jar
+@dirrm jumpgis/lib/ext
+@dirrm jumpgis/lib
+@dirrm jumpgis
+@cwd %%X11BASE%%
+%%GNOMELINKS%%share/gnome/applications/jump.desktop
+%%GNOMELINKS%%share/gnome/pixmaps/jump.png

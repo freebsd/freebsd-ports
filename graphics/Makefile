@@ -194,6 +194,7 @@
     SUBDIR += jpgraph
     SUBDIR += jpgtn
     SUBDIR += jslice
+    SUBDIR += jumpgis
     SUBDIR += juno-2
     SUBDIR += k3d
     SUBDIR += kalbum
