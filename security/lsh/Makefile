@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	eric@cybernut.com
 
+BROKEN=		"Does not fetch"
+
 RESTRICTED=	"Crypto; export-controlled"
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install
