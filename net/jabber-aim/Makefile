@@ -22,9 +22,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-stable-${PORTVERSION:R}
 PLIST_FILES=	lib/jabber/aimtrans.so
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=	259
+USE_ICONV=	yes
 
 CONFIGURE_ARGS+=--with-jabberd=${LOCALBASE}/include/jabber
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include/pth
+CONFIGURE_ENV=	LDFLAGS="-liconv" LIBS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include/pth -I${LOCALBASE}/include"
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/jabber
