@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20011104
+PORTVERSION=	20011105
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -42,9 +42,10 @@ MLINKS=		pkgdb.1 pkg_which.1 \
 		portsdb.1 ports_glob.1
 MANCOMPRESSED=	maybe
 
-DOCS=		ChangeLog README
-
-DOCSDIR=	${PREFIX}/share/doc/pkgtools
+INSTALL_TARGET=		install
+.if !defined(NOPORTDOCS)
+INSTALL_TARGET+=	install-doc
+.endif
 
 post-install:
 	# Remove old database
@@ -52,11 +53,5 @@ post-install:
 	if [ ! -f ${PREFIX}/etc/pkgtools.conf ]; then \
 		${CP} -p ${PREFIX}/etc/pkgtools.conf.sample ${PREFIX}/etc/pkgtools.conf; \
 	fi
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
-.endfor
-.endif
 
 .include <bsd.port.mk>
