@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	whisker
-PORTVERSION=	2.1
+PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.wiretrip.net/rfp/bins/whisker/
 DISTNAME=	${PORTNAME}
