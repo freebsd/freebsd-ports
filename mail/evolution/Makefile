@@ -7,6 +7,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	0.99.0
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/evolution
@@ -44,5 +45,9 @@ pre-patch:
 		xargs ${PERL} -pi -e 's|<db.h>|<db3/db.h>|g'
 	@find ${WRKSRC} -type f -name "*.[ch]" | xargs ${GREP} -l 'wrong DB3' | \
 		xargs ${PERL} -pi -e 's|.*wrong DB3.*||'
+
+post-install:
+	@find ${PREFIX}/share/gnome/evolution/default_user -type f | \
+		xargs ${CHMOD} 644
 
 .include <bsd.port.mk>
