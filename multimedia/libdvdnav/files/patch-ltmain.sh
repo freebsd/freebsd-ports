@@ -1,6 +1,6 @@
---- ltmain.sh.orig	Mon Aug  5 16:46:18 2002
-+++ ltmain.sh	Mon Aug  5 22:32:19 2002
-@@ -961,6 +961,7 @@
+--- ltmain.sh.orig	Tue May 20 23:20:02 2003
++++ ltmain.sh	Thu Feb 12 20:46:44 2004
+@@ -973,6 +973,7 @@
  	;;
  
        -avoid-version)
@@ -8,16 +8,16 @@
  	avoid_version=yes
  	continue
  	;;
-@@ -2507,7 +2508,7 @@
+@@ -2501,7 +2502,7 @@
  	  *)
  	    # Add libc to deplibs on all other systems if necessary.
- 	    if test "$build_libtool_need_lc" = "yes"; then
+ 	    if test $build_libtool_need_lc = "yes"; then
 -	      deplibs="$deplibs -lc"
 +	      deplibs="$deplibs"
  	    fi
  	    ;;
  	  esac
-@@ -4329,10 +4330,12 @@
+@@ -4325,10 +4326,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
