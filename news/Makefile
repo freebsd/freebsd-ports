@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.8 1995/05/14 03:29:54 asami Exp $
+# $Id: Makefile,v 1.9 1995/07/01 10:08:26 asami Exp $
 #
 
    SUBDIR += cnews
    SUBDIR += inn
    SUBDIR += nn
    SUBDIR += nntp
+   SUBDIR += rkive
    SUBDIR += tin
    SUBDIR += trn
 
