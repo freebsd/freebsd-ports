@@ -9322,6 +9322,7 @@ pymsgauth	ports/mail/pymsgauth
 pyne		ports/news/pyne
 pyobfuscate	ports/devel/pyobfuscate
 pypanda		ports/misc/pypanda
+pypvm		ports/net/pypvm
 pyrex		ports/devel/pyrex
 pyslsk		ports/net/pyslsk
 pysol		ports/games/pysol
