@@ -1,0 +1,3 @@
+These are DSSSL stylesheets for the DocBook DTD by Norm Walsh. Use them
+in conjunction with a DSSSL processor (such as jade) to convert documents
+marked up as DocBook to RTF, HTML and TeX.
