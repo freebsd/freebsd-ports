@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.106 1997/06/08 16:17:49 jfitz Exp $
+# $Id: Makefile,v 1.107 1997/06/10 09:11:05 asami Exp $
 #
 
     SUBDIR += archie
@@ -69,6 +69,7 @@
     SUBDIR += wu-ftpd
     SUBDIR += xarchie
     SUBDIR += xgopher
+    SUBDIR += xipmsg
     SUBDIR += yale-tftpd
     SUBDIR += ytalk
     SUBDIR += zircon
