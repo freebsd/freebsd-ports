@@ -11505,6 +11505,7 @@ yaws		ports/www/yaws
 yaz		ports/net/yaz
 yaz++		ports/net/yaz++
 yazproxy	ports/net/yazproxy
+yell		ports/audio/yell
 yelp		ports/x11/yelp
 yencode		ports/news/yencode
 ymessenger	ports/net/ymessenger
