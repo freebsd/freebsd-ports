@@ -17,6 +17,7 @@ OPTIONS=	MYSQL "Use MySQL and not db4 as database" off \
 		MYSQL_COMPRESS "Compress dspam <--> MySQL" off \
 		MAILDROP "Use Maildrop as local delivery agent" off \
 		PROCMAIL "Use Procmail as local delivery agent" off \
+		SENDMAIL_LDA "Use Sendmail as local delivery agent" off \
 		SENDMAIL "Play nice with sendmail server" off \
 		QMAIL "Play nice with Qmail mail server" off \
 		ENABLE_SPAM_DELIVERY "Deliver messages marked as spam" off \
@@ -82,6 +83,14 @@ RUN_DEPENDS+=	procmail:${PORTSDIR}/mail/procmail
 CONFIGURE_ARGS+=	--with-local-delivery-agent='${LOCALBASE}/bin/procmail $u'
 .endif
 
+.if defined(WITH_SENDMAIL_LDA) && exists(/usr/sbin/sendmail)
+CONFIGURE_ARGS+=	--with-local-delivery-agent=/usr/sbin/sendmail
+.else
+.if defined(WITH_SENDMAIL_LDA) && exists(${LOCALBASE}/sbin/sendmail)
+CONFIGURE_ARGS+=	--with-local-delivery-agent='${LOCALBASE}/sbin/sendmail'
+.endif
+.endif
+
 .if defined(WITH_SENDMAIL)
 CONFIGURE_ARGS+=	--with-dspam-mode=4511
 .endif
@@ -145,11 +154,15 @@ post-patch:
 		s|-ldb-4.1|-ldb41|g' ${WRKSRC}/configure
 
 pre-configure:
-.if defined(WITH_MAILDROP) && defined(WITH_PROCMAIL)
+.if defined(WITH_MAILDROP) && (defined(WITH_PROCMAIL) || defined(WITH_SENDMAIL_LDA))
 	@${ECHO_CMD} "You can only use one local delivery agent at once."
 	@${FALSE}
 .endif
-.if defined(WITH_VIRT_USERS) && !defined(WITH_MYSQL)
+.if defined(WITH_PROCMAIL) && (defined(WITH_MAILDROP) || defined(WITH_SENDMAIL_LDA))
+	@${ECHO_CMD} "You can only use one local delivery agent at once."
+	@${FALSE}
+.endif
+.if !defined(WITH_MYSQL) && (defined(WITH_MYSQL_COMPRESS) || defined(WITH_VIRT_USERS))
 	@${ECHO_CMD} "You need MySQL support to use this feature."
 	@${FALSE}
 .endif
@@ -158,7 +171,7 @@ post-install:
 .if defined(WITH_MYSQL)
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/tools.mysql_drv && \
-		${INSTALL_DATA} README *.sql.* ${EXAMPLESDIR}
+		${INSTALL_DATA} README *.sql* ${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/mysql.data ${EXAMPLESDIR}
 .endif
 .if !defined(NOPORTDOCS)
