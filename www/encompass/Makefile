@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	encompass
-PORTVERSION=	0.1.2
+PORTVERSION=	0.2.0
 CATEGORIES=	www gnome
 MASTER_SITES=	http://www.geocities.com/lordzephyroth/
 
