@@ -3,7 +3,7 @@
 # Date created:			03 May 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1996/09/17 15:07:53 max Exp $
+# $Id: Makefile,v 1.3 1996/09/18 12:36:58 max Exp $
 #
 
 DISTNAME=	qkcc100
@@ -25,9 +25,7 @@ ALL_TARGET=
 do-install:
 	install -cs -o bin -g bin -m 755 ${WRKSRC}/qkc ${PREFIX}/bin
 	install -c -m 644 -o bin -g bin ${WRKSRC}/qkc.1 ${PREFIX}/man/man1
-.if !defined(NOMANCOMPRESS)
 post-install:
-	gzip -9nf ${PREFIX}/man/man1/qkc.1
-.endif
+	${COMPRESS_MAN} ${PREFIX}/man/man1/qkc.1
 
 .include <bsd.port.mk>

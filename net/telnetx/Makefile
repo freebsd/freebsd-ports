@@ -3,7 +3,7 @@
 # Date created:			22 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: porting.sgml,v 1.16 1996/03/21 14:15:01 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/09/25 20:36:31 max Exp $
 #
 
 DISTNAME=	telnetx+transit.src.940401
@@ -26,8 +26,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/telnet/telnet ${PREFIX}/bin/telnetx
 	${INSTALL_PROGRAM} ${WRKSRC}/transit/transit ${PREFIX}/bin/transit
 	${INSTALL_MAN} ${WRKSRC}/telnet/telnet.1 ${PREFIX}/man/man1/telnetx.1
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/telnetx.1
-.endif
+	${COMPRESS_MAN} ${PREFIX}/man/man1/telnetx.1
 
 .include <bsd.port.mk>
