@@ -8230,6 +8230,7 @@ pine4		ports/mail/pine4
 pinentry	ports/security/pinentry
 pinentry-curses	ports/security/pinentry-curses
 pinentry-gtk	ports/security/pinentry-gtk
+pinentry-gtk2	ports/security/pinentry-gtk2
 pinentry-qt	ports/security/pinentry-qt
 pinfo		ports/misc/pinfo
 pinstall	ports/devel/pinstall
