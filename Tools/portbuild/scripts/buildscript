@@ -12,6 +12,8 @@ if [ "$(echo $(/bin/ls | wc -c))" != 0 ]; then
 fi
 
 cd $dir || exit 1
+echo -n "maintained by: "
+make maintainer
 if make package; then
   echo "0" > /tmp/status
 else
