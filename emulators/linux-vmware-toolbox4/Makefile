@@ -26,16 +26,23 @@ RESTRICTED=	"Not sure if we can redistribute this."
 LINUX_FLP?=	${DISTDIR}/linux.flp
 MOUNT_PT?=	${WRKDIR}/mnt
 .if exists(${LINUX_FLP})
+.if ${OSVERSION} >= 500018
+DEV_ATTACH=	/usr/sbin/mdconfig -a -t vnode -f ${LINUX_FLP} -u ${MOUNT_DEV}
+DEV_DETACH=	/usr/sbin/mdconfig -d -u ${MOUNT_DEV}
+MOUNT_DEV?=	md0
+.else
+DEV_ATTACH=	/usr/sbin/vnconfig -c ${MOUNT_DEV} ${LINUX_FLP}
+DEV_DETACH=	/usr/sbin/vnconfig -u ${MOUNT_DEV}
 MOUNT_DEV?=	vn0
+.endif
 .else
 MOUNT_DEV?=	fd0
 .endif
-VMWARE_VER=	2.0.3
-BUILD_VER=	799
+VMWARE_VER=	2.0.4
+BUILD_VER=	1142
 
 MOUNT=		/sbin/mount
 UMOUNT=		/sbin/umount
-VNCONFIG=	/usr/sbin/vnconfig
 
 pre-fetch:
 	@${ECHO} "========================================================================"
@@ -57,14 +64,14 @@ do-fetch:
 	-@${UMOUNT} ${MOUNT_PT} 2>&1 >/dev/null
 	-@${UMOUNT} /dev/${MOUNT_DEV} 2>&1 >/dev/null
 .if exists(${LINUX_FLP})
-	-@${VNCONFIG} -u /dev/r${MOUNT_DEV} 2>&1 >/dev/null
-	${VNCONFIG} -c /dev/r${MOUNT_DEV} ${LINUX_FLP}
+	-@${DEV_DETACH} 2>&1 >/dev/null
+	${DEV_ATTACH}
 .endif
 	${MOUNT} -t msdos -r /dev/${MOUNT_DEV} ${MOUNT_PT}
 	${CP} ${MOUNT_PT}/${DISTFILES} ${DISTDIR}
 	${UMOUNT} /dev/${MOUNT_DEV}
 .if exists(${LINUX_FLP})
-	${VNCONFIG} -u /dev/r${MOUNT_DEV}
+	${DEV_DETACH}
 .endif
 .endif
 
