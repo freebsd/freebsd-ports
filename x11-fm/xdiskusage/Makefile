@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	trevor@FreeBSD.org
 
+BROKEN=		"needs fltk 1.0.10"
+
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 USE_GMAKE=	yes
