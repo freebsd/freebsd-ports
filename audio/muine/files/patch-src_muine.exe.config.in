@@ -4,8 +4,8 @@
  <configuration>
 -  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0.so.0"/>
 -  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0.so.0"/>
-+  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0.so.%%GLIB_MIVER%%"/>
-+  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0.so.%%GLIB_MIVER%%"/>
++  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0.so"/>
++  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0.so"/>
    <dllmap dll="libgnomevfs-2.dll" target="libgnomevfs-2.so"/>
    <dllmap dll="libmuine" target="@prefix@/lib/muine/libmuine.so"/>
  </configuration>
