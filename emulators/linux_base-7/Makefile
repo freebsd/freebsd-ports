@@ -47,6 +47,7 @@ MAINTAINER=		marcel@FreeBSD.org
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
 ONLY_FOR_ARCHS=		alpha i386
+LATEST_LINK=		linux_base-7
 DIST_SUBDIR=		rpm
 PREFIX=			${LINUXBASE}
 NO_BUILD=		yes
