@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	0.8.5
-PORTREVISION=	1
+PORTVERSION=	0.8.6
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/
 
@@ -17,19 +16,18 @@ COMMENT=	Tools to extract from/get info about/create Matroska media streams
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatroska \
 		${LOCALBASE}/lib/libebml.a:${PORTSDIR}/textproc/libebml
 LIB_DEPENDS=	FLAC.5:${PORTSDIR}/audio/flac \
+		expat.5:${PORTSDIR}/textproc/expat2 \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
-BROKEN=		"Unfetchable"
-
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-extra-includes=${LOCALBASE}/include \
 		--with-extra-libs=${LOCALBASE}/lib
 
-MAN1=		base64tool.1 mkvextract.1 mkvinfo.1 mkvmerge.1 mmg.1
+MAN1=		base64tool.1 mkvextract.1 mkvinfo.1 mkvmerge.1
 
 post-patch:
 # disable GNU auto* tools
