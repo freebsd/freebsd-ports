@@ -1,0 +1,4 @@
+bin/ariadne
+bin/prospero
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
