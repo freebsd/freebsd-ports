@@ -1,0 +1,96 @@
+--- scripts/Makefile.in.orig	Sat Feb  7 10:55:57 2004
++++ scripts/Makefile.in	Sat Feb  7 10:58:13 2004
+@@ -318,17 +318,6 @@
+   cxxmetric extend_dmalloc kdekillall kdelnk2desktop.py
+ 
+ 
+-# sorted by bin_SCRIPTS reference
+-man1_MANS = \
+-  kde-build.1 \
+-  cvsversion.1 cvscheck.1 \
+-  noncvslist.1 \
+-  cvsblame.1 \
+-  includemocs.1 
+-
+-
+-CLEANFILES = $(man1_MANS)
+-
+ # sorted alphabetically
+ noinst_SCRIPTS = \
+   add_trace.pl alldcop.rb authors2xml.pl check_licenses colorcvs \
+@@ -397,52 +386,6 @@
+ 	-rm -f libtool
+ uninstall-info-am:
+ 
+-man1dir = $(mandir)/man1
+-install-man1: $(man1_MANS) $(man_MANS)
+-	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(man1dir)
+-	@list='$(man1_MANS) $(dist_man1_MANS) $(nodist_man1_MANS)'; \
+-	l2='$(man_MANS) $(dist_man_MANS) $(nodist_man_MANS)'; \
+-	for i in $$l2; do \
+-	  case "$$i" in \
+-	    *.1*) list="$$list $$i" ;; \
+-	  esac; \
+-	done; \
+-	for i in $$list; do \
+-	  if test -f $(srcdir)/$$i; then file=$(srcdir)/$$i; \
+-	  else file=$$i; fi; \
+-	  ext=`echo $$i | sed -e 's/^.*\\.//'`; \
+-	  case "$$ext" in \
+-	    1*) ;; \
+-	    *) ext='1' ;; \
+-	  esac; \
+-	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
+-	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
+-	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
+-	  echo " $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst"; \
+-	  $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst; \
+-	done
+-uninstall-man1:
+-	@$(NORMAL_UNINSTALL)
+-	@list='$(man1_MANS) $(dist_man1_MANS) $(nodist_man1_MANS)'; \
+-	l2='$(man_MANS) $(dist_man_MANS) $(nodist_man_MANS)'; \
+-	for i in $$l2; do \
+-	  case "$$i" in \
+-	    *.1*) list="$$list $$i" ;; \
+-	  esac; \
+-	done; \
+-	for i in $$list; do \
+-	  ext=`echo $$i | sed -e 's/^.*\\.//'`; \
+-	  case "$$ext" in \
+-	    1*) ;; \
+-	    *) ext='1' ;; \
+-	  esac; \
+-	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
+-	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
+-	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
+-	  echo " rm -f $(DESTDIR)$(man1dir)/$$inst"; \
+-	  rm -f $(DESTDIR)$(man1dir)/$$inst; \
+-	done
+ tags: TAGS
+ TAGS:
+ 
+@@ -576,22 +519,6 @@
+ 	uninstall-man uninstall-man1
+ 
+ 
+-# it'd be too good if this worked everywhere ...
+-#%.1: %
+-#	pod2man $< $@
+-
+-kde-build.1: kde-build
+-	pod2man $< > $@
+-cvsversion.1: cvsversion
+-	pod2man $< > $@
+-cvscheck.1: cvscheck
+-	pod2man $< > $@
+-noncvslist.1: noncvslist
+-	pod2man $< > $@
+-cvsblame.1: cvsblame
+-	pod2man $< > $@
+-includemocs.1: includemocs
+-	pod2man $< > $@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
