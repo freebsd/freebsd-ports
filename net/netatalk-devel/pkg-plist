@@ -28,6 +28,7 @@ include/atalk/pap.h
 include/atalk/paths.h
 include/atalk/rtmp.h
 include/atalk/zip.h
+@dirrm include/atalk
 include/netatalk/aarp.h
 include/netatalk/at.h
 include/netatalk/at_var.h
@@ -35,6 +36,7 @@ include/netatalk/ddp.h
 include/netatalk/ddp_var.h
 include/netatalk/endian.h
 include/netatalk/phase2.h
+@dirrm include/netatalk
 lib/libatalk.a
 lib/libatalk_p.a
 libexec/afpd
@@ -67,6 +69,7 @@ man/man8/papd.8
 man/man8/psf.8
 share/examples/netatalk/atalkd.conf
 share/examples/netatalk/papd.conf
+@dirrm share/examples/netatalk
 share/filters/ifmpap
 share/filters/ifmpaprev
 share/filters/ifpap
@@ -87,4 +90,5 @@ share/filters/tfwmpap
 share/filters/tfwmpaprev
 share/filters/tfwpap
 share/filters/tfwpaprev
+@dirrm share/filters
 share/pagecount.ps
