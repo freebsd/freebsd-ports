@@ -8,7 +8,7 @@
 PORTNAME=	LaBrea
 PORTVERSION=	2.3
 CATEGORIES=	security
-MASTER_SITES=	http://www.hackbusters.net/LaBrea/
+MASTER_SITES=	http://freebsd.rogness.net/ports/labrea/
 DISTNAME=	LaBrea${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.tgz
 
