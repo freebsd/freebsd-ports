@@ -7,6 +7,7 @@
 
 PORTNAME=	flac
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -37,11 +38,13 @@ PLIST_SUB=	XMMS="@comment "
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET= --target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS+=--enable-sse --enable-3dnow \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}"
+CONFIGURE_ENV+=	CPPFLAGS="-I${WRKSRC}/include"
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	DOC=""
@@ -55,6 +58,9 @@ MAN1=		flac.1 metaflac.1
 # "obj" is magic to our make(1)
 post-configure:
 	@${RM} -rf ${WRKSRC}/obj
+
+post-build:
+	${REINPLACE_CMD} 's:%%PREFIX%%:${PREFIX}:' ${WRKSRC}/man/flac.1
 
 test: build
 	@cd ${WRKSRC}; make check
