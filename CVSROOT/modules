@@ -9990,6 +9990,7 @@ xmlcatmgr	ports/textproc/xmlcatmgr
 xmlcharent	ports/textproc/xmlcharent
 xmleditor	ports/editors/xmleditor
 xmlenc		ports/textproc/xmlenc
+xmlformat	ports/textproc/xmlformat
 xmlindent	ports/textproc/xmlindent
 xmlink		ports/games/xmlink
 xmlpp		ports/textproc/xmlpp
