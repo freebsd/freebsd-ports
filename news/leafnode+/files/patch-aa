@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Jan 31 19:17:52 1999
-+++ Makefile	Tue Apr  6 17:12:29 1999
+--- Makefile.orig	Sun Jul  4 05:32:02 1999
++++ Makefile	Sun Jul  4 05:32:42 1999
 @@ -1,11 +1,8 @@
  # -*- makefile -*-
  # $Orig-Id: Makefile,v 1.16 1997/07/20 00:28:31 agulbra Exp $
@@ -13,12 +13,17 @@
  VERSION = 2.6
  #
  # if you want to use Socks, use following
-@@ -27,7 +24,7 @@
+@@ -23,11 +20,11 @@
+ #CFLAGS = $(DEBUG) -DDOTNGFILE
+ #
+ # this is the directory where the news is stored.
+-SPOOLDIR = /var/spool/news
++SPOOLDIR = @SPOOLDIR@
  #
  # this is the directory where the configuration and group information is
  # kept.  It should preferably not be on the same partition as spooldir
 -LIBDIR = /usr/lib/leafnode
-+LIBDIR = $(PREFIX)/lib/leafnode
++LIBDIR = @LIBDIR@
  
  all: leafnode fetchnews texpire checkgroups leaftool
  

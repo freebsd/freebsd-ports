@@ -1,28 +1,37 @@
 # New ports collection makefile for:	leafnode+
 # Version required:	2.6
 # Date created:		19 November 1998
-# Whom:			Tom Hukins <tom@eborcom.com>
+# Whom:			Tom Hukins <tom@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1999/04/07 18:21:49 jseger Exp $
+# $Id: Makefile,v 1.6 1999/04/22 00:17:13 scrappy Exp $
 #
 
 DISTNAME=	leafnode+-2.6
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.big.or.jp/pub/usr2/jam/leafnode/
 
-MAINTAINER=	tom@eborcom.com
+MAINTAINER=	tom@FreeBSD.org
 
 MAN8=		checkgroups.8 fetchnews.8 leafnode.8 texpire.8
+PKGINSTALL=	${WRKDIR}/INSTALL
 
 .if defined(NOPORTDOCS)
 PLIST=	${PKGDIR}/PLIST.nodocs
 .endif
 
+LEAFLIBDIR?=	${PREFIX}/lib/leafnode
+LEAFSPOOLDIR?=	/var/spool/leafnode
+REWRITE=	${SED} -e "s:@LIBDIR@:${LEAFLIBDIR}:g" \
+		-e "s:@SPOOLDIR@:${LEAFSPOOLDIR}:g" \
+		-e "s:@PREFIX@:${PREFIX}:g"
+
 post-patch:
-.for file in FAQ INSTALL README leafnode.8
+.for file in Makefile FAQ INSTALL README leafnode.8
 	@${MV} ${WRKSRC}/${file} ${WRKSRC}/${file}.bak
-	@${SED} < ${WRKSRC}/${file}.bak > ${WRKSRC}/${file} s+!!PREFIX!!+${PREFIX}+g
+	@${REWRITE} ${WRKSRC}/${file}.bak > ${WRKSRC}/${file}
 .endfor
+	@${REWRITE} ${FILESDIR}/INSTALL.in > ${PKGINSTALL}
+	@chmod 755 ${PKGINSTALL}
 
 do-install:
 .for file in leafnode fetchnews texpire checkgroups leaftool
@@ -38,6 +47,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/leafnode+
 .endfor
 .endif
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 post-install:
 	@test -d /var/spool/news -a -d ${PREFIX}/lib/leafnode || \
