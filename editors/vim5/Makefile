@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	vim
-PORTVERSION=	5.8.2
+PORTVERSION=	5.8.3
 CATEGORIES?=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://relay.nuxi.com/pub/vim/unreleased/unix/ \
@@ -21,7 +21,7 @@ DISTNAME=	vim-${PORTVERSION:C/\.[0-9]+$//g}
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-rt${EXTRACT_SUFX}
 
 PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
-.for p in 01
+.for p in 01 02 03
 PATCHFILES+=	5.8.0${p}
 .endfor
 
