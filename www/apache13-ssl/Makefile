@@ -6,7 +6,7 @@
 #			and apache-ssl port by Mark Murray <mark@grondar.za>.
 #			Oh, and with a little bit of help from Ben :)
 #
-# $Id: Makefile,v 1.52 1999/01/08 18:25:23 fenner Exp $
+# $Id: Makefile,v 1.53 1999/01/10 14:11:19 dirk Exp $
 
 APACHE= 	1.3.3
 APACHE-SSL=	1.28
@@ -14,20 +14,34 @@ APACHE-SSL=	1.28
 DISTNAME=       apache_${APACHE}
 PKGNAME=        apache-${APACHE}+ssl_${APACHE-SSL}
 CATEGORIES=	www security
-MASTER_SITES=   ftp://www.apache.org/apache/dist/ \
+MASTER_SITES=   http://www.apache.org/dist/ \
 		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
 		ftp://ftp.MASTER.pgp.net/pub/crypto/SSL/Apache-SSL/ \
 		ftp://ftp.replay.com/pub/crypto/apache/Apache-SSL/ \
+		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
+		ftp://ftp.rge.com/pub/infosystems/apache/dist/ \
 		ftp://ftp.win.or.jp/pub/network/security/apache-ssl/Apache-SSL/ \
 		ftp://ftp.sage-au.org.au/pub/network/security/apache-ssl/Apache-SSL/ \
+		ftp://apache.compuex.com/pub/apache/dist/ \
+		ftp://apache.arctic.org/pub/apache/dist/ \
 		ftp://ftp.vwv.com/pub/crypto/SSL/Apache-SSL/ \
 		ftp://mirror.aarnet.edu.au/www/servers/apache-ssl/ \
+		ftp://ftp.epix.net/pub/apache/dist/ \
+		ftp://ftp.ameth.org/pub/mirrors/ftp.apache.org/apache/dist/ \
 		ftp://ftp.it.net.au/mirrors/crypto/SSL/Apache-SSL/ \
 		ftp://ftp.infoscience.co.jp/pub/Crypto/SSL/Apache-SSL/Apache-SSL/ \
+		ftp://ftp.connectnet.com/pub/www/apache/ \
+		ftp://apache.technomancer.com/mirrors/apache/dist/ \
 		ftp://ftp.funet.fi/pub/crypt/mirrors/ftp.ox.ac.uk/SSL/Apache-SSL/ \
 		ftp://apache-ssl.raver.net/pub/ftp.apache-ssl.org/Apache-SSL/ \
+		ftp://ftp.raver.net/pub/ftp.apache.org/ \
+		ftp://www3.service.digital.com/apache/dist/ \
 		http://mirror.aarnet.edu.au/www/servers/apache-ssl/ \
 		http://ftp.it.net.au/mirrors/crypto/SSL/Apache-SSL/ \
+		ftp://galileo.galilei.com/pub/apache/ \
+		ftp://ftp.mtnranch.net/pub/apache/dist/ \
+		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
+		ftp://apache.nextpath.com/pub/apache/dist/ \
 		http://www.asap.cs.nott.ac.uk/SSL/
 
 DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} \
