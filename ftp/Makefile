@@ -82,7 +82,6 @@
     SUBDIR += vcheck
     SUBDIR += vsftpd
     SUBDIR += wget
-    SUBDIR += wget+ipv6
     SUBDIR += wget-devel
     SUBDIR += wmget
     SUBDIR += wput
