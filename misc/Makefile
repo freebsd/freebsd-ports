@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.191 1999/03/30 02:28:02 steve Exp $
+# $Id: Makefile,v 1.192 1999/03/30 18:49:26 taoka Exp $
 #
 
     SUBDIR += 221upgrade
@@ -52,6 +52,7 @@
     SUBDIR += man.el
     SUBDIR += mc
     SUBDIR += mmv
+    SUBDIR += mopac
     SUBDIR += most
     SUBDIR += mshell
     SUBDIR += nwrite
@@ -59,6 +60,7 @@
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Locale-Codes
     SUBDIR += pdmenu
+    SUBDIR += psi88
     SUBDIR += qclock
     SUBDIR += quotes
     SUBDIR += rc5des
