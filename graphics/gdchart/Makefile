@@ -25,6 +25,12 @@ MAKE_ARGS=	PREFIX="${PREFIX}" LOCALBASE="${LOCALBASE}"
 DOCS=		README
 EXAMPLES=	ft_samp.c gdc_pie_samp.c gdc_samp1.c gdc_samp2.c
 
+.if defined(NOPROFILE)
+PLIST_SUB+=	PROFILE="@comment "
+.else
+PLIST_SUB+=	PROFILE=
+.endif
+
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's/^#ifdef HAVE_JPEG/#ifndef NO_JPEG/' \

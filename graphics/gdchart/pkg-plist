@@ -3,6 +3,7 @@ include/gdchart.h
 include/gdcpie.h
 include/gifencode.h
 lib/libgdc.a
+%%PROFILE%%lib/libgdc_p.a
 %%PORTDOCS%%share/doc/gdchart/README
 %%PORTDOCS%%@dirrm share/doc/gdchart
 %%PORTDOCS%%share/examples/gdchart/ft_samp.c
