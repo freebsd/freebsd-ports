@@ -1,0 +1,37 @@
+# New ports collection makefile for:	ruby-aspectr
+# Date created:		08 April 2002
+# Whom:			Sean Chittenden <sean@chittenden.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	aspectr
+PORTVERSION=	0.3.5
+CATEGORIES=	devel ruby
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
+DIST_SUBDIR=	ruby
+
+MAINTAINER=	sean@chittenden.org
+
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/runit/error.rb:${PORTSDIR}/devel/ruby-unit
+
+USE_RUBY=	yes
+
+NO_BUILD=	yes
+
+DOCS=		CHANGELOG README TODO
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/lib/aspectr.rb ${RUBY_SITELIBDIR}/
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PORTDOCS}${RUBY_DOCDIR}/${PORTNAME}/
+.endfor
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/examples/logger.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+.endif
+
+.include <bsd.port.mk>

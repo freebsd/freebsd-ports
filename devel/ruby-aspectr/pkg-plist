@@ -1,0 +1,7 @@
+%%RUBY_SITELIBDIR%%/aspectr.rb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/aspectr/CHANGELOG
+%%PORTDOCS%%%%RUBY_DOCDIR%%/aspectr/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/aspectr/TODO
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/aspectr
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/aspectr/logger.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/aspectr
