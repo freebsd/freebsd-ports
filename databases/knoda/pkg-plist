@@ -55,6 +55,9 @@ lib/kde3/libhk_kdegridpart.la
 lib/kde3/libhk_kdegridpart.so
 lib/libhk_kdeclasses.la
 lib/libhk_kdeclasses.so
+%%PYTHON_SITELIBDIR%%/_hk_kdeclasses.so
+%%PYTHON_SITELIBDIR%%/hk_kdeclasses.py
+%%PYTHON_SITELIBDIR%%/hk_kdeclasses.pyc
 share/applnk/Office/knoda.desktop
 share/apps/hk_kdeclasses/hk_kdeform.rc
 share/apps/hk_kdeclasses/hk_kdegridpart.rc
