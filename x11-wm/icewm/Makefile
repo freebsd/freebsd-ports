@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION=	1.0.9.2
+PORTVERSION=	1.2.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	nakai@FreeBSD.org
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
-WANT_GNOME=	yes
-WANT_ESOUND=	yes
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+WANT_ESOUND=	yes
+WANT_GNOME=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
@@ -37,14 +34,15 @@ CONFIGURE_ARGS=	--enable-i18n --enable-nls \
 .include <bsd.port.pre.mk>
 
 .if defined(HAVE_GNOME)
+.undef HAVE_ESOUND
 USE_GNOME=	yes
-CONFIGURE_ARGS+=	--with-imlib --without-xpm --with-gnome-menus
+CONFIGURE_ARGS+=	--with-imlib --without-xpm --with-gnome-menus \
+			--enable-guievents --with-icesound=esound
 INSTALL_TARGET=		install install-gnome
+PLIST_SUB+=	ESOUND=""
 .else
 USE_XPM=	yes
 CONFIGURE_ARGS+=	--without-imlib --with-xpm --without-gnome-menus
-.endif
-
 .if defined(HAVE_ESOUND)
 USE_ESOUND=	yes
 CONFIGURE_ARGS+=	--enable-guievents --with-icesound=esound
@@ -52,8 +50,9 @@ PLIST_SUB+=	ESOUND=""
 .else
 PLIST_SUB+=	ESOUND="@comment "
 .endif
+.endif
 
-post-patch:
+pre-configure:
 	@cd ${CONFIGURE_WRKSRC} && ${LOCALBASE}/bin/autoconf
 
 post-install:

@@ -1,15 +1,6 @@
---- configure.in.orig	Tue Oct  9 23:54:02 2001
-+++ configure.in	Sat May 25 05:50:23 2002
-@@ -83,7 +83,7 @@
- AC_FUNC_SELECT_ARGTYPES
- 
- dnl Configuring features
--TARGETS='base docs'
-+TARGETS='base'
- APPLICATIONS='genpref icewm icesh icewmhint icewmbg'
- 
- dnl Checking for X11
-@@ -108,27 +108,28 @@
+--- configure.in.orig	Fri Jul 26 19:06:25 2002
++++ configure.in	Fri Jul 26 19:09:33 2002
+@@ -108,15 +108,15 @@
  AC_ARG_ENABLE(i18n,
    [  --enable-i18n           Enable internationalization],
    [ if test "$enable_i18n" != "no"; then
@@ -22,37 +13,34 @@
 -
 -      ice_nl_codesets=""
 -
-+dnl      AC_CHECK_HEADERS(langinfo.h,,
-+dnl      [ AC_MSG_ERROR([I18N support has been requested but langinfo.h wasn´t found.
++dnl       AC_CHECK_HEADERS(langinfo.h,,
++dnl       [ AC_MSG_ERROR([I18N support has been requested but langinfo.h wasn´t found.
 +dnl *** Check your installation.])])
-+dnl      AC_CHECK_FUNC(nl_langinfo,,
-+dnl      [ AC_MSG_ERROR([I18N support has been requested but nl_langinfo wasn´t found.
++dnl       AC_CHECK_FUNC(nl_langinfo,,
++dnl       [ AC_MSG_ERROR([I18N support has been requested but nl_langinfo wasn´t found.
 +dnl *** Check your installation.])])
-+dnl
-+dnl      ice_nl_codesets=""
-+dnl
++dnl 
++dnl       ice_nl_codesets=""
++dnl 
        ICE_CHECK_NL_ITEM(_NL_MESSAGES_CODESET,
          [ ice_nl_codesets="${ice_nl_codesets} _NL_MESSAGES_CODESET," ])
        ICE_CHECK_NL_ITEM(_NL_CTYPE_CODESET_NAME,
-         [ ice_nl_codesets="${ice_nl_codesets} _NL_CTYPE_CODESET_NAME," ])
-       ICE_CHECK_NL_ITEM(CODESET,
+@@ -125,10 +125,10 @@
          [ ice_nl_codesets="${ice_nl_codesets} CODESET," ])
--
-+dnl
+ 
        if test "${ice_nl_codesets}" = ""; then
 -        AC_MSG_ERROR([I18N support has been requested but nl_langinfo doesn't
 -*** return any information about the locale's codeset. Check your manuals.
 -*** Ask your vendor. Contact icewm-devel@lists.sourceforge.net when you know 
 -*** the name of the locale-dependent parameter for your platform.])
-+dnl        AC_MSG_ERROR([I18N support has been requested but nl_langinfo doesn't
++dnl         AC_MSG_ERROR([I18N support has been requested but nl_langinfo doesn't
 +dnl *** return any information about the locale's codeset. Check your manuals.
 +dnl *** Ask your vendor. Contact icewm-devel@lists.sourceforge.net when you know 
 +dnl *** the name of the locale-dependent parameter for your platform.])
-+        ice_nl_codesets="CODESET"
        fi
        
        ice_nl_codesets="${ice_nl_codesets} 0"
-@@ -164,7 +165,7 @@
+@@ -164,7 +164,7 @@
          [  --unicode-set=CODESET   your iconv's unicode set in machine endian encoding
                            (e.g. WCHAR_T, UCS-4-INTERNAL, UCS-4LE, UCS-4BE)],
  	   AC_DEFINE_UNQUOTED(CONFIG_UNICODE_SET, "$with_unicode_set"),
@@ -61,7 +49,7 @@
  
        ice_sufficent_iconv=no
        ICE_CHECK_CONVERSION(ISO-8859-1,$with_unicode_set,no,$ice_libiconv,
-@@ -203,7 +204,7 @@
+@@ -203,7 +203,7 @@
    features="${features} nls"
    TARGETS=$TARGETS' nls'
  
@@ -70,7 +58,7 @@
  fi
  
  dnl ======================================================= /proc/wm-session ===
-@@ -464,7 +465,7 @@
+@@ -464,7 +464,7 @@
  
  	AC_DEFINE(CONFIG_GNOME_MENUS, 1, [Define to make IceWM more GNOME-friendly])
        else

@@ -1,7 +1,7 @@
---- Makefile.in.orig	Mon Jan 15 06:49:38 2001
-+++ Makefile.in	Mon Jan 15 23:07:09 2001
-@@ -14,7 +14,7 @@
- GUIEVENTSFILES = src/icesound
+--- Makefile.in.orig	Wed Jun 12 13:56:52 2002
++++ Makefile.in	Wed Jun 12 21:46:20 2002
+@@ -19,7 +19,7 @@
+ 
  GNOMEFILES  = lib/IceWM.desktop
  
 -WMPROPDIR   = $(shell gnome-config --datadir)/gnome/wm-properties/
@@ -9,3 +9,12 @@
  
  all:		@TARGETS@
  install:	@TARGETS_INSTALL@
+@@ -111,7 +111,7 @@
+ 		  echo "         $(DESTDIR)$(LIBDIR)/themes/$$theme/fonts.dir"; \
+ 		  echo "         You better setup your path to point to mkfontdir or use the"; \
+ 		  echo "         --with-mkfontdir option of the configure script."; \
+-		  $(INSTALLLIB) "$(DESTDIR)/lib/themes/$$theme/fonts.dir.default" \
++		  $(INSTALLLIB) "lib/themes/$$theme/fonts.dir.default" \
+ 				"$(DESTDIR)$(LIBDIR)/themes/$$theme/fonts.dir"; \
+ 		fi; \
+ 	    fi; \

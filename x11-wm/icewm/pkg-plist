@@ -283,6 +283,7 @@ share/icewm/themes/win95/restore.xpm
 share/icewm/toolbar
 share/icewm/winoptions
 share/locale/ca/LC_MESSAGES/icewm.mo
+share/locale/cs/LC_MESSAGES/icewm.mo
 share/locale/de/LC_MESSAGES/icewm.mo
 share/locale/en/LC_MESSAGES/icewm.mo
 share/locale/es/LC_MESSAGES/icewm.mo
@@ -297,6 +298,8 @@ share/locale/pl/LC_MESSAGES/icewm.mo
 share/locale/pt_BR/LC_MESSAGES/icewm.mo
 share/locale/ro/LC_MESSAGES/icewm.mo
 share/locale/ru/LC_MESSAGES/icewm.mo
+share/locale/sv/LC_MESSAGES/icewm.mo
+share/locale/zh_CN.gb2312/LC_MESSAGES/icewm.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/icewm.mo
 %%PORTDOCS%%@dirrm share/doc/icewm
 @dirrm share/icewm/icons
