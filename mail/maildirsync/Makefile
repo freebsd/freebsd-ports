@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maildirsync
-PORTVERSION=	0.4
+PORTVERSION=	1.0
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://hacks.dlux.hu/maildirsync/
 
@@ -16,7 +16,6 @@ COMMENT=	Online synchronizer for Maildir-format mailboxes
 USE_PERL5=	yes
 
 MAN1=		maildirsync.1
-PLIST_FILES=	bin/maildirsync
 
 .include <bsd.port.pre.mk>
 
@@ -31,5 +30,13 @@ do-build:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/maildirsync.pl ${PREFIX}/bin/maildirsync
 	${INSTALL_MAN}    ${WRKSRC}/maildirsync.1  ${MANPREFIX}/man/man1
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/sample.sh ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}/mailbak ${EXAMPLESDIR}/mailbalance
+	${INSTALL_DATA} ${WRKSRC}/contrib/x/mailbak_scripts/* ${EXAMPLESDIR}/mailbak
+.for d in lib log trashbags
+	${RM} -rf ${WRKSRC}/contrib/mailbalance-0.2.0/${d}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/contrib/mailbalance-0.2.0/* ${EXAMPLESDIR}/mailbalance
 
 .include <bsd.port.post.mk>
