@@ -54,6 +54,8 @@ include/apr_xml.h
 include/apu.h
 include/apu_compat.h
 lib/APRVARS
+lib/apr.exp
+lib/aprutil.exp
 lib/libapr.a
 lib/libapr.la
 lib/libapr.so
