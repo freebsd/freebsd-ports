@@ -14,7 +14,7 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
 
-LIB_DEPENDS+=	noatun.0:${PORTSDIR}/audio/kdemultimedia3 \
+LIB_DEPENDS+=	noatun.0:${PORTSDIR}/multimedia/kdemultimedia3 \
 		SDL-1.1.4:${PORTSDIR}/devel/sdl12
 
 WITH_SDL=	yes
@@ -22,6 +22,7 @@ USE_KDEBASE_VER=3
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 PLIST_SUB+=	RM=${RM}
 SDL_CONFIG=	sdl11-config
 CONFIGURE_ENV+=	SDL_CONFIG="${LOCALBASE}/bin/${SDL_CONFIG}"
@@ -30,9 +31,7 @@ CONFIGURE_ENV+=	SDL_CONFIG="${LOCALBASE}/bin/${SDL_CONFIG}"
 
 pre-configure:
 	${FIND} ${WRKSRC} -type f | ${XARGS} ${GREP} -l sdl-config \
-		| ${XARGS} ${PERL} -pi -e "s@sdl-config@${SDL_CONFIG}@g"
+		| ${XARGS} ${REINPLACE_CMD} -e "s@sdl-config@${SDL_CONFIG}@g"
 	${FIND} ${WRKSRC} | ${XARGS} touch
 
-.include <bsd.port.pre.mk>
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
