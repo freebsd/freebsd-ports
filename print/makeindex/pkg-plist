@@ -16,3 +16,4 @@ share/texmf/makeindx/german/wb.ist
 @dirrm share/texmf/makeindx/english
 @dirrm share/texmf/makeindx/german
 @dirrm share/texmf/makeindx
+@unexec rmdir %D/share/texmf 2>/dev/null || true
