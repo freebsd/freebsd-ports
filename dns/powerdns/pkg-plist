@@ -2,6 +2,11 @@ bin/pdns_control
 bin/zone2ldap
 bin/zone2sql
 sbin/pdns_server
+%%WITHLDAP%%lib/libldapbackend.so.0
+%%WITHLDAP%%lib/libldapbackend.la
+%%WITHLDAP%%lib/libldapbackend.a
+%%WITHLDAP%%@exec ln -fs libldapbackend.so.0 %D/lib/libldapbackend.so
+%%WITHLDAP%%@unexec rm -f %D/lib/libldapbackend.so
 %%RECURSOR%%sbin/pdns_recursor
 @unexec if cmp -s %D/etc/pdns.conf %D/etc/pdns.conf-dist; then rm -f %D/etc/pdns.conf; fi
 etc/pdns.conf-dist
