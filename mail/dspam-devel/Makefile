@@ -7,6 +7,7 @@
 
 PORTNAME=	dspam-devel
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.nuclearelephant.com/projects/dspam/sources/ \
 		http://people.tecnik93.com/~itetcu/FreeBSD/ports/dspam-devel/sources/

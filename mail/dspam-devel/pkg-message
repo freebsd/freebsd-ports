@@ -8,9 +8,8 @@
 %%POSTFIX_MBC%%
 %%POSTFIX_MBC%% Quick Postfix setup guide:
 %%POSTFIX_MBC%% Add root, postfix and cgiuser to %%PREFIX%%/etc/dspam/trusted.users
-%%POSTFIX_MBC%% (Do NOT add --user $USER to the call of dspam binary)
 %%POSTFIX_MBC%% In main.cf set 
-%%POSTFIX_MBC%%  mailbox_command = %%PREFIX%%/bin/dspam --mode=teft --deliver=innocent,spam --feature=chained,noise -d %u
+%%POSTFIX_MBC%%  mailbox_command = %%PREFIX%%/bin/dspam --user $USER --mode=teft --deliver=innocent,spam --feature=chained,noise -d %u
 %%POSTFIX_MBC%% And don't forget to set
 %%POSTFIX_MBC%% %%PREFIX%%/etc/dspam/untrusted.mailer_args
 %%POSTFIX_MBC%% (for mail.local it could be /usr/libexec/mail.local -s %u)
