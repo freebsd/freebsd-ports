@@ -1,12 +1,12 @@
 # New ports collection makefile for:   mm
-# Version required:		1.0.0
+# Version required:		1.0.1
 # Date Created:			14 March 1999
 # Whom:				Ralf S. Engelschall
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/24 14:14:13 rse Exp $
+# $Id: Makefile,v 1.2 1999/03/28 11:55:25 rse Exp $
 #
 
-DISTNAME=	mm-1.0.0
+DISTNAME=	mm-1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.engelschall.com/sw/mm/
 
@@ -18,10 +18,13 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 MAN1=		mm-config.1
 MAN3=		mm.3
 
-post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+post-build:
+	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
 
 test:
 	@cd ${WRKSRC} && ${MAKE} test
+
+post-install:
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
