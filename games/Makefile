@@ -267,6 +267,7 @@
     SUBDIR += netspades
     SUBDIR += nettoe
     SUBDIR += neverball
+    SUBDIR += neverputt
     SUBDIR += newvox
     SUBDIR += nibbles
     SUBDIR += nighthawk
