@@ -50,11 +50,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-pre-everything::
 .if ${PERL_LEVEL} < 500601
-BROKEN=        metalist only supports the ports versions of Perl.
-BROKEN+=If you have installed a Perl port, and are getting this message,
-BROKEN+=please make sure you have given the command \'use.perl port\'
-.endif # ${PERL_LEVEL} < 500601
+IGNORE=		This program only support perl 5.6.1 or above
+.endif
 
 .include <bsd.port.post.mk>
