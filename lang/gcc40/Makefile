@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.35 1998/10/01 21:40:03 obrien Exp $
+# $Id: Makefile,v 1.38 1998/12/02 09:41:27 obrien Exp $
 #
 
 DISTNAME=	egcs-1.1.1-prerelease-3
@@ -23,9 +23,9 @@ EGCS_REV=	egcs-2.91.59
 LIBSTDCPP_REV=	2.9.0
 
 .if ${PORTOBJFORMAT} == "elf"
-GNUHOST=	${ARCH}-unknown-freebsdelf
+GNUHOST=	${ARCH}-unknown-freebsdelf${OSREL}
 .else
-GNUHOST=	${ARCH}-unknown-freebsd
+GNUHOST=	${ARCH}-unknown-freebsd${OSREL}
 .endif
 
 PLIST_SUB=	EGCS_REV=${EGCS_REV} GNU_HOST=${GNUHOST}
