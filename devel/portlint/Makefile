@@ -1,4 +1,5 @@
 # New ports collection makefile for:	portlint
+# Version required:     (self contained)
 # Date created:		13 Jun 1997
 # Whom:			Jun-ichiro itojun Hagino <itojun@itojun.org>
 #

@@ -1,4 +1,5 @@
 # New ports collection makefile for:    elm-2.4h4.1
+# Version required:     2.4pl25.h4.1
 # Date created:         1 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #

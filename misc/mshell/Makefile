@@ -1,4 +1,5 @@
 # New ports collection makefile for:    mshell
+# Version required:     93/3/3
 # Date created:         24 September 1994
 # Whom:                 jmz
 #
