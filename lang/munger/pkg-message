@@ -1,0 +1,7 @@
+******************************************************************
+*                                                                *
+*    To use the FastCGI interface with Apache one must also      *
+*    install and configfure mod_fastcgi from                     *
+*    ${PORTSDIR}/www/mod_fastcgi                                 *
+*                                                                *
+******************************************************************
