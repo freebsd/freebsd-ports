@@ -1,0 +1,19 @@
+bin/g3dviewer
+include/g3dviewer_plugin.h
+share/g3dviewer/pixmaps/icon16_plugins.xpm
+share/g3dviewer/pixmaps/icon16_model.xpm
+share/g3dviewer/pixmaps/icon16_material.xpm
+share/g3dviewer/plugins/import/imp_lwo.so
+share/g3dviewer/plugins/import/imp_3ds.so
+share/g3dviewer/plugins/import/imp_obj.so
+share/g3dviewer/plugins/import/imp_dxf.so
+share/g3dviewer/plugins/import/imp_iob.so
+share/g3dviewer/plugins/import/imp_md2.so
+share/g3dviewer/plugins/import/imp_nff.so
+share/g3dviewer/plugins/import/imp_heightfield.so
+share/g3dviewer/plugins/image/img_bmp.so
+@dirrm share/g3dviewer/pixmaps
+@dirrm share/g3dviewer/plugins/import
+@dirrm share/g3dviewer/plugins/image
+@dirrm share/g3dviewer/plugins
+@dirrm share/g3dviewer

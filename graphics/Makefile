@@ -64,6 +64,7 @@
     SUBDIR += fujiplay
     SUBDIR += fxtv
     SUBDIR += g2
+    SUBDIR += g3dviewer
     SUBDIR += gcolor
     SUBDIR += gd
     SUBDIR += gd2
