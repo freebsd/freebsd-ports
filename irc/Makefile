@@ -9,6 +9,7 @@
     SUBDIR += infobot
     SUBDIR += irc
     SUBDIR += ircII
+    SUBDIR += ircatlite
     SUBDIR += ircd-hybrid
     SUBDIR += irssi
     SUBDIR += kvirc
