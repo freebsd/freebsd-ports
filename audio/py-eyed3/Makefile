@@ -17,7 +17,7 @@ COMMENT=	Python module for processing ID3 tags
 LIB_DEPENDS=	id3:${PORTSDIR}/audio/id3lib
 RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/optparse.py:${PORTSDIR}/devel/py-optik
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.2-
 USE_PYTHON_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -32,6 +32,7 @@ MANCOMPRESSED=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's,PYTHON="",,g' -e 's,/usr/local,${LOCALBASE},g' \
+		-e 's,2\\\.\[23456789\]\\\.,2.[23456789],g' \
 		${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's,\(setup.py build\),\1 $${SETUP_ARGS_BUILD},g' \
 		-e 's,\(setup.py install\),\1 $${SETUP_ARGS_INSTALL} ,g' \
