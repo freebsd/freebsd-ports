@@ -150,6 +150,7 @@
     SUBDIR += saint
     SUBDIR += scanssh
     SUBDIR += seahorse
+    SUBDIR += secpanel
     SUBDIR += siphon
     SUBDIR += skip
     SUBDIR += slurpie

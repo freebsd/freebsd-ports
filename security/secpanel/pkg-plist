@@ -1,0 +1,12 @@
+bin/secpanel
+share/secpanel/gui.tcl
+share/secpanel/listserver.tcl
+share/secpanel/secpanel.dist
+share/secpanel/secpanel.wait
+share/secpanel/images/configs.gif
+share/secpanel/images/connects.gif
+share/secpanel/images/keys.gif
+share/secpanel/images/profiles.gif
+share/secpanel/images/scp.gif
+@dirrm share/secpanel/images
+@dirrm share/secpanel
