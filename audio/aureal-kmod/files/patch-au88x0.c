@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- au88x0.c.orig	Fri May 10 10:34:49 2002
-+++ au88x0.c	Sun Aug 31 17:22:38 2003
+--- au88x0.c.orig	Fri May 10 10:32:55 2002
++++ au88x0.c	Thu Aug  5 05:44:30 2004
 @@ -29,10 +29,16 @@
   */
  
@@ -34,3 +34,14 @@ $FreeBSD$
  		device_printf(dev, "unable to create dma tag\n");
  		goto bad;
  	}
+@@ -942,6 +952,10 @@
+ 
+ 
+ DRIVER_MODULE(snd_au88x0, pci, au_driver, pcm_devclass, 0, 0);
++#if __FreeBSD_version > 502124
++MODULE_DEPEND(snd_au88x0, sound, SOUND_MINVER, SOUND_PREFVER, SOUND_MAXVER);
++#else
+ MODULE_DEPEND(snd_au88x0, snd_pcm, PCM_MINVER, PCM_PREFVER, PCM_MAXVER);
++#endif
+ MODULE_VERSION(snd_au88x0, 1);
+ 
