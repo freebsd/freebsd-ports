@@ -7,6 +7,7 @@
 
 PORTNAME=	libwhisker
 PORTVERSION= 	1.6
+PORTREVISION=	1
 CATEGORIES= 	security perl5
 
 MAINTAINER= 	jan@atstake.com
@@ -18,7 +19,7 @@ DISTNAME=	${PORTNAME}-current
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_BUILD=	yes
-STRIP_CMD=	# Do not strip file during installation
+USE_PERL5=	yes
 
 DOC1=		README CHANGES KNOWNBUGS
 DOCS=		docs/OPTIMIZE docs/evil.htm docs/whisker_hash.txt
