@@ -3,10 +3,11 @@
 # Date created:		21 December 1996
 # Whom:			jmz
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/12/22 04:36:42 jmz Exp $
 #
 
 DISTNAME=       pgplot5.1
+PKGNAME=        pgplot-5.1
 CATEGORIES=     graphics
 MASTER_SITES=   ftp://astro.caltech.edu/pub/pgplot/
 
