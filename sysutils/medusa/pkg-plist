@@ -10,11 +10,15 @@ include/libmedusa/medusa-index-progress.h
 include/libmedusa/medusa-index-service-private.h
 include/libmedusa/medusa-index-service.h
 include/libmedusa/medusa-indexed-search.h
+include/libmedusa/medusa-lock-file-paths.h
+include/libmedusa/medusa-lock.h
 include/libmedusa/medusa-log.h
 include/libmedusa/medusa-search-service-private.h
 include/libmedusa/medusa-search-service.h
 include/libmedusa/medusa-service-private.h
+include/libmedusa/medusa-stdio-extensions.h
 include/libmedusa/medusa-string.h
+include/libmedusa/medusa-system-state.h
 include/libmedusa/medusa-unindexed-search.h
 include/libmedusa/medusa-unsearched-locations.h
 include/libmedusa/medusa-utils.h

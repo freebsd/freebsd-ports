@@ -19,10 +19,8 @@ share/gnome/gedit/glade/prefs.glade
 share/gnome/gedit/glade/program.glade
 share/gnome/gedit/glade/replace.glade
 share/gnome/gedit/glade/shell_output.glade
-share/gnome/help/gedit/C/authors.html
-share/gnome/help/gedit/C/bugs.html
+share/gnome/gedit/glade/uri.glade
 share/gnome/help/gedit/C/docbook.css
-share/gnome/help/gedit/C/faq.html
 share/gnome/help/gedit/C/images/browse.png
 share/gnome/help/gedit/C/images/convert.png
 share/gnome/help/gedit/C/images/diff.png
@@ -44,11 +42,7 @@ share/gnome/help/gedit/C/images/replace.png
 share/gnome/help/gedit/C/images/shell.png
 share/gnome/help/gedit/C/images/toolbar.png
 share/gnome/help/gedit/C/index.html
-share/gnome/help/gedit/C/license.html
-share/gnome/help/gedit/C/ln10.html
-share/gnome/help/gedit/C/menus.html
 share/gnome/help/gedit/C/plugins.html
-share/gnome/help/gedit/C/prefs-0.html
 share/gnome/help/gedit/C/stylesheet-images/caution.gif
 share/gnome/help/gedit/C/stylesheet-images/home.gif
 share/gnome/help/gedit/C/stylesheet-images/important.gif
@@ -63,10 +57,7 @@ share/gnome/help/gedit/C/stylesheet-images/up.gif
 share/gnome/help/gedit/C/stylesheet-images/warning.gif
 share/gnome/help/gedit/C/topic.dat
 share/gnome/help/gedit/C/usage.html
-share/gnome/help/gedit/ja/authors.html
-share/gnome/help/gedit/ja/bugs.html
 share/gnome/help/gedit/ja/docbook.css
-share/gnome/help/gedit/ja/faq.html
 share/gnome/help/gedit/ja/images/browse.png
 share/gnome/help/gedit/ja/images/convert.png
 share/gnome/help/gedit/ja/images/diff.png
@@ -88,11 +79,7 @@ share/gnome/help/gedit/ja/images/replace.png
 share/gnome/help/gedit/ja/images/shell.png
 share/gnome/help/gedit/ja/images/toolbar.png
 share/gnome/help/gedit/ja/index.html
-share/gnome/help/gedit/ja/license.html
-share/gnome/help/gedit/ja/ln13.html
-share/gnome/help/gedit/ja/menus.html
 share/gnome/help/gedit/ja/plugins.html
-share/gnome/help/gedit/ja/prefs-0.html
 share/gnome/help/gedit/ja/stylesheet-images/caution.gif
 share/gnome/help/gedit/ja/stylesheet-images/home.gif
 share/gnome/help/gedit/ja/stylesheet-images/important.gif
@@ -110,6 +97,7 @@ share/gnome/help/gedit/ja/usage.html
 share/gnome/mime-info/gedit.keys
 share/gnome/pixmaps/gedit-icon.png
 share/gnome/pixmaps/gedit-logo.png
+share/locale/az/LC_MESSAGES/gedit.mo
 share/locale/ca/LC_MESSAGES/gedit.mo
 share/locale/cs/LC_MESSAGES/gedit.mo
 share/locale/da/LC_MESSAGES/gedit.mo

@@ -1,0 +1,7 @@
+--- Makefile.in.orig	Wed Feb 14 18:40:55 2001
++++ Makefile.in	Thu Mar  8 17:10:44 2001
+@@ -138,3 +138,3 @@
+ 
+-SUBDIRS =  	po 	macros 	doc 	idl 	lib 	bindings 	providers 	tools 	report 	testing
++SUBDIRS =  	po 	macros 	doc 	idl 	lib 	bindings 	providers 	tools 	report
+ 

@@ -8,8 +8,8 @@
 -#include <sys/types.h>
  #include <sys/un.h>
 
---- indexer/medusa-file-index-daemon.c.orig	Wed Jan 17 21:55:16 2001
-+++ indexer/medusa-file-index-daemon.c	Mon Jan 29 13:42:35 2001
+--- indexer/medusa-file-index-daemon.c.orig	Thu Feb 22 06:58:10 2001
++++ indexer/medusa-file-index-daemon.c	Fri Mar  2 13:46:16 2001
 @@ -44,3 +44,8 @@
  #include <sys/un.h>
 +#ifdef __FreeBSD__
@@ -18,4 +18,10 @@
 +#else
  #include <sys/vfs.h>
 +#endif
- #include <time.h>
+ 
+@@ -49,3 +54,5 @@
+ #elif defined(HAVE_STATFS)
++#ifndef __FreeBSD__
+ #include <sys/statfs.h>
++#endif
+ #endif /* HAVE_STATVFS */

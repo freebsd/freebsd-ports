@@ -21,6 +21,7 @@
     SUBDIR += gtksql
     SUBDIR += interbase4
     SUBDIR += jdbc-oracle816
+    SUBDIR += libgda
     SUBDIR += libiodbc
     SUBDIR += mdbtools
     SUBDIR += metakit

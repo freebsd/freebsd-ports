@@ -7,14 +7,14 @@
 
 PORTNAME=	gnomeicu
 PORTVERSION=	0.96.1
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= gnomeicu
 
 MAINTAINER=	nectar@FreeBSD.org
 
-LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
-		iconv.2:${PORTSDIR}/converters/iconv
+LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
@@ -35,7 +35,7 @@ SOCKSLIBS=	-lsocks
 
 CONFIGURE_ARGS= --with-statusmenu
 CONFIGURE_ENV=	CPPFLAGS="${SOCKSFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-liconv ${SOCKSLIBS}" \
+		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lgiconv ${SOCKSLIBS}" \
 		CFLAGS="${CFLAGS}"
 
 pre-patch:

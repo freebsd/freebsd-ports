@@ -7,14 +7,12 @@
 
 PORTNAME=	dia
 PORTVERSION=	0.86
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/dia
 
 MAINTAINER=	saper@system.pl
-
-LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml	\
-		popt.0:${PORTSDIR}/devel/popt
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

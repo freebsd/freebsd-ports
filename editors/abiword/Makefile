@@ -11,6 +11,7 @@
 
 PORTNAME=	AbiWord
 PORTVERSION=	0.7.13
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
 DISTNAME=	abi-${PORTVERSION}
@@ -24,7 +25,6 @@ MAINTAINER=	wolman@cs.washington.edu
 # unzip is needed during the installation process
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
-#		iconv.2:${PORTSDIR}/converters/iconv
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 DIST_SUBDIR=	AbiWord

@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	nautilus
-PORTVERSION=	0.8
+PORTVERSION=	1.0.2
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	unstable/sources/nautilus
+MASTER_SITE_SUBDIR=	stable/sources/nautilus
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm \
-		freetype-config:${PORTSDIR}/print/freetype2	# XXX
+BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
+# The following is only needed if --with-eazel-services is brought in,
+# which it isn't, because it depends on ammonite, which is Linux-only
+# BUILD_DEPENDS+=rpm:${PORTSDIR}/archivers/rpm
+
 LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
-		gtkhtml.8:${PORTSDIR}/www/gtkhtml \
-		ghttp.1:${PORTSDIR}/www/libghttp \
-		bz2.1:${PORTSDIR}/archivers/bzip2 \
 		freetype.6:${PORTSDIR}/print/freetype2
 
-.if defined(WITH_MOZILLA)
+.if !defined(WITHOUT_MOZILLA)
 MOZILLA=	mozilla
 BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
 		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
@@ -34,12 +34,12 @@ USE_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -fno-rtti -fno-exceptions" \
-		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
+		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LIBPNG="-L${LOCALBASE}/lib -lpng -lz ${MOZILLA_LIBS}"
-CONFIGURE_ARGS=	--with-freetype2-lib-place=${LOCALBASE}/lib \
-		--with-freetype2-include-place=${LOCALBASE}/include/freetype2
+CONFIGURE_ARGS=	--with-freetype2-lib-place=${X11BASE}/lib \
+		--with-freetype2-include-place=${X11BASE}/include/freetype2
 
-.if defined(WITH_MOZILLA)
+.if !defined(WITHOUT_MOZILLA)
 CONFIGURE_ARGS+= --with-mozilla-lib-place=${X11BASE}/lib/${MOZILLA} \
 		 --with-mozilla-include-place=${X11BASE}/include/mozilla
 MOZILLA_LIBS=	"-L${X11BASE}/lib/${MOZILLA}"
@@ -50,9 +50,11 @@ MOZILLA_LIBS=	""
 PLIST_SUB+=	MOZILLA:="@comment "
 .endif
 
-.if !defined(WITH_MOZILLA)
+MAN1=		nautilus-xml-migrate.1
+
+.if !defined(WITHOUT_MOZILLA)
 pre-extract:
-	@${ECHO} "You can add embedded mozilla support by defining WITH_MOZILLA"
+	@${ECHO} "You can remove embedded mozilla support by defining WITHOUT_MOZILLA"
 .endif
 
 pre-patch:

@@ -60,6 +60,7 @@ include/gtkhtml/htmllinktext.h
 include/gtkhtml/htmllist.h
 include/gtkhtml/htmlobject.h
 include/gtkhtml/htmlpainter.h
+include/gtkhtml/htmlplainpainter.h
 include/gtkhtml/htmlprinter.h
 include/gtkhtml/htmlradio.h
 include/gtkhtml/htmlreplace.h
@@ -72,6 +73,7 @@ include/gtkhtml/htmlstack.h
 include/gtkhtml/htmlstringtokenizer.h
 include/gtkhtml/htmltable.h
 include/gtkhtml/htmltablecell.h
+include/gtkhtml/htmltablepriv.h
 include/gtkhtml/htmltext.h
 include/gtkhtml/htmltextarea.h
 include/gtkhtml/htmltextinput.h
@@ -85,7 +87,7 @@ include/gtkhtml/htmlvspace.h
 lib/bonobo/plugin/libstorage_http.so
 lib/libgtkhtml.a
 lib/libgtkhtml.so
-lib/libgtkhtml.so.8
+lib/libgtkhtml.so.10
 share/gnome/apps/Settings/Documents/gtkhtml-properties.desktop
 share/gnome/control-center/Documents/gtkhtml-properties.desktop
 share/gnome/gtkhtml/Editor.idl
@@ -98,8 +100,8 @@ share/gnome/html/gtkhtml-sections.txt
 share/gnome/html/gtkhtml.hierarchy
 share/gnome/html/gtkhtml.sgml
 share/gnome/html/gtkhtml.types
-share/gnome/oaf/GNOME_GtkHTML_EBrowser.oafinfo
-share/gnome/oaf/GNOME_GtkHTML_Editor.oafinfo
+share/gnome/oaf/GNOME_GtkHTML_EBrowser.oaf
+share/gnome/oaf/GNOME_GtkHTML_Editor.oaf
 share/gnome/ui/GNOME_GtkHTML_Editor.xml
 share/locale/az/LC_MESSAGES/gtkhtml.mo
 share/locale/cs/LC_MESSAGES/gtkhtml.mo

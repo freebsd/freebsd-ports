@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	atomix
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.3
 CATEGORIES=	games gnome
 MASTER_SITES=	http://www.informatik.uni-oldenburg.de/~pearl/download/
 

@@ -6,14 +6,20 @@
 +#define	O_SYNC 0
 +#endif
          file_descriptor = open (file_name, O_RDWR | O_CREAT | O_SYNC, S_IRUSR | S_IWUSR);
---- libmedusa/medusa-index-progress.c.orig	Mon Oct 16 16:46:51 2000
-+++ libmedusa/medusa-index-progress.c	Fri Nov  3 11:38:01 2000
-@@ -90,2 +90,5 @@
-         g_return_val_if_fail (disk_information_was_found, NULL);
+--- libmedusa/medusa-index-progress.c.orig	Thu Feb 22 06:58:11 2001
++++ libmedusa/medusa-index-progress.c	Fri Mar  2 13:40:31 2001
+@@ -56,3 +56,5 @@
+ #elif HAVE_STATFS
++#ifndef __FreeBSD__
+ # include <sys/statfs.h>
++#endif
+ #else
+@@ -90,2 +92,5 @@
+         unlink (INDEX_PROGRESS_FILE_NAME);
 +#ifdef	__FreeBSD__
 +#define	O_SYNC 0
 +#endif
-         output_fd = open (INDEX_PROGRESS_FILE_NAME, O_RDWR | O_CREAT | O_EXCL | O_SYNC);
+ }
 --- libmedusa/medusa-unindexed-search.c.orig	Wed Sep 20 14:03:58 2000
 +++ libmedusa/medusa-unindexed-search.c	Fri Nov  3 11:38:30 2000
 @@ -1068,2 +1068,5 @@

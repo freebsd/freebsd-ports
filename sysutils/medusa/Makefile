@@ -6,16 +6,12 @@
 #
 
 PORTNAME=	medusa
-PORTVERSION=	0.3.0
+PORTVERSION=	0.5.0
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/medusa
 
 MAINTAINER=	ade@FreeBSD.org
-
-LIB_DEPENDS=	oaf.0:${PORTSDIR}/devel/oaf \
-		gnomevfs.0:${PORTSDIR}/devel/gnomevfs \
-		gconf-1.1:${PORTSDIR}/devel/gconf
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -24,6 +20,11 @@ USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+MAN1=		medusa-config.1 medusa-idled.1 msearch.1
+MAN5=		medusa.conf.5 medusa-file-index-stoplist.5
+MAN7=		medusa-search-uri.7
+MAN8=		medusa-searchd.8
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
