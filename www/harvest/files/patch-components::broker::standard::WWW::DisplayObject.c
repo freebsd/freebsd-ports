@@ -1,12 +1,15 @@
 --- components/broker/standard/WWW/DisplayObject.c.orig	Mon Feb 11 07:57:16 2002
-+++ components/broker/standard/WWW/DisplayObject.c	Wed Nov 13 09:01:03 2002
-@@ -215,8 +215,8 @@
++++ components/broker/standard/WWW/DisplayObject.c	Sat Nov 23 04:30:56 2002
+@@ -214,10 +214,12 @@
+  */
  char *xstrerror(n)
  int n;
++#if !defined(__FreeBSD__)
  {
--	extern int sys_nerr;
+ 	extern int sys_nerr;
  #ifdef NEED_SYS_ERRLIST
-+	extern int sys_nerr;
  	extern char *sys_errlist[];
++#endif
  #endif
  
+ 	if (n < 0 || n >= sys_nerr)
