@@ -29,8 +29,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
 .endif
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
-VERSION=	1.3.25
-JP_VERSION=	1
+VERSION=	1.3.27
+JP_VERSION=	2
 MANUALVERSION=	1.3.23
 
 DIST_SUBDIR=	mutt
