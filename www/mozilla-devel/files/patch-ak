@@ -3,11 +3,16 @@ $FreeBSD$
 
 --- nsprpub/pr/include/md/_freebsd.h.orig	Sat Jan  5 03:43:00 2002
 +++ nsprpub/pr/include/md/_freebsd.h	Tue Feb  5 11:14:27 2002
-@@ -40,6 +40,7 @@
- #if __FreeBSD__ >= 2
- #include <osreldate.h>  /* for __FreeBSD_version */
- #endif
-+#include <sys/param.h>
- #include <sys/syscall.h>
+@@ -87,6 +88,12 @@
  
- #define PR_LINKER_ARCH	"freebsd"
+ #define _PR_HAVE_SYSV_SEMAPHORES
+ #define PR_HAVE_SYSV_NAMED_SHARED_MEMORY
++
++#if __FreeBSD_version >= 400014
++#define _PR_INET6
++#define _PR_HAVE_GETHOSTBYNAME2
++#define _PR_INET6_PROBE
++#endif
+ 
+ #define USE_SETJMP
+ 

@@ -1,85 +1,12 @@
 bin/mozilla
-lib/mozilla/DumpColors
-lib/mozilla/FilesTest
-lib/mozilla/OutTestData/doctype.xif
-lib/mozilla/OutTestData/entityxif.out
-lib/mozilla/OutTestData/entityxif.xif
-lib/mozilla/OutTestData/htmltable.html
-lib/mozilla/OutTestData/htmltable.out
-lib/mozilla/OutTestData/mailquote.html
-lib/mozilla/OutTestData/mailquote.out
-lib/mozilla/OutTestData/plain.html
-lib/mozilla/OutTestData/plainnowrap.out
-lib/mozilla/OutTestData/plainwrap.out
-lib/mozilla/OutTestData/simple.html
-lib/mozilla/OutTestData/simplecopy.out
-lib/mozilla/OutTestData/simplefmt.out
-lib/mozilla/OutTestData/simplemail.html
-lib/mozilla/OutTestData/simplemail.out
-lib/mozilla/OutTestData/xifdthtml.out
-lib/mozilla/OutTestData/xifdtplain.out
-lib/mozilla/OutTestData/xifstuff.out
-lib/mozilla/OutTestData/xifstuff.xif
-lib/mozilla/PrimitiveTest
-lib/mozilla/PropertiesTest
-lib/mozilla/SimpleTypeLib
-lib/mozilla/StringBundleTest
-lib/mozilla/TestArray
-lib/mozilla/TestAtoms
-lib/mozilla/TestAutoLock
-lib/mozilla/TestCOMPtr
-lib/mozilla/TestCOMPtrEq
-lib/mozilla/TestCRT
-lib/mozilla/TestCSSPropertyLookup
-lib/mozilla/TestCallTemplates
-lib/mozilla/TestCallbacks
-lib/mozilla/TestColorNames
-lib/mozilla/TestCookie
-lib/mozilla/TestDBMAccess
-lib/mozilla/TestFactory
-lib/mozilla/TestFileInput
-lib/mozilla/TestFileInput2
-lib/mozilla/TestFileTransport
 lib/mozilla/TestGtkEmbed
 lib/mozilla/TestGtkEmbedChild
 lib/mozilla/TestGtkEmbedNotebook
 lib/mozilla/TestGtkEmbedSocket
-lib/mozilla/TestHttp
-lib/mozilla/TestID
-lib/mozilla/TestIDN
-lib/mozilla/TestInterfaceInfo
-lib/mozilla/TestLineBreak
-lib/mozilla/TestMCTransport
-lib/mozilla/TestObserverService
-lib/mozilla/TestOutSinks.pl
-lib/mozilla/TestOutput
-lib/mozilla/TestPageLoad
-lib/mozilla/TestPerf
-lib/mozilla/TestPermanentAtoms
-lib/mozilla/TestPipes
-lib/mozilla/TestProtocols
-lib/mozilla/TestRect
-lib/mozilla/TestServMgr
-lib/mozilla/TestSocketIO
-lib/mozilla/TestSocketInput
-lib/mozilla/TestSocketTransport
-lib/mozilla/TestSpaceManager
-lib/mozilla/TestStandardURL
-lib/mozilla/TestStreamConv
-lib/mozilla/TestTXMgr
-lib/mozilla/TestThreads
-lib/mozilla/TestURLParser
-lib/mozilla/TestVoidBTree
-lib/mozilla/TestXMLExtras
-lib/mozilla/TestXPC
-lib/mozilla/TestXPIDLString
-lib/mozilla/TestXPTCInvoke
-lib/mozilla/UnicharSelfTest
 lib/mozilla/bloaturls.txt
 lib/mozilla/chrome/US.jar
 lib/mozilla/chrome/chatzilla.jar
 lib/mozilla/chrome/chrome.rdf
-@unexec rm -f %D/lib/mozilla/chrome/chrome.rdf || true
 lib/mozilla/chrome/chromelist.txt
 lib/mozilla/chrome/classic.jar
 lib/mozilla/chrome/comm.jar
@@ -105,7 +32,6 @@ lib/mozilla/chrome/pippki.jar
 lib/mozilla/chrome/toolkit.jar
 lib/mozilla/chrome/venkman.jar
 lib/mozilla/component.reg
-@unexec rm -f %D/lib/mozilla/component.reg || true
 lib/mozilla/components/absync.xpt
 lib/mozilla/components/accessibility.xpt
 lib/mozilla/components/addrbook.xpt
@@ -158,7 +84,6 @@ lib/mozilla/components/jsurl.xpt
 lib/mozilla/components/layout_base.xpt
 lib/mozilla/components/layout_xul.xpt
 lib/mozilla/components/layout_xul_outliner.xpt
-lib/mozilla/components/libMyService.so
 lib/mozilla/components/libabsyncsvc.so
 lib/mozilla/components/libaccessibility.so
 lib/mozilla/components/libaddrbook.so
@@ -226,10 +151,8 @@ lib/mozilla/components/libpref.so
 lib/mozilla/components/libprofile.so
 lib/mozilla/components/librdf.so
 lib/mozilla/components/libregviewer.so
-lib/mozilla/components/libsample.so
 lib/mozilla/components/libshistory.so
 lib/mozilla/components/libstrres.so
-lib/mozilla/components/libtestdynamic.so
 lib/mozilla/components/libtransformiix.so
 lib/mozilla/components/libtxmgr.so
 lib/mozilla/components/libtxtsvc.so
@@ -251,7 +174,6 @@ lib/mozilla/components/libwebbrwsr.so
 lib/mozilla/components/libwidget_gtk.so
 lib/mozilla/components/libxmlextras.so
 lib/mozilla/components/libxpconnect.so
-lib/mozilla/components/libxpctest.so
 lib/mozilla/components/libxpinstall.so
 lib/mozilla/components/libxremote_client.so
 lib/mozilla/components/libxremoteservice.so
@@ -288,7 +210,6 @@ lib/mozilla/components/nsFilePicker.js
 lib/mozilla/components/nsHelperAppDlg.js
 lib/mozilla/components/nsLDAPPrefsService.js
 lib/mozilla/components/nsProxyAutoConfig.js
-lib/mozilla/components/nsSample.js
 lib/mozilla/components/nsSidebar.js
 lib/mozilla/components/nsXmlRpcClient.js
 lib/mozilla/components/oji.xpt
@@ -300,11 +221,9 @@ lib/mozilla/components/pref.xpt
 lib/mozilla/components/prefmigr.xpt
 lib/mozilla/components/profile.xpt
 lib/mozilla/components/proxyObjInst.xpt
-lib/mozilla/components/proxytest.xpt
 lib/mozilla/components/rdf.xpt
 lib/mozilla/components/regviewer.xpt
 lib/mozilla/components/related.xpt
-lib/mozilla/components/sample.xpt
 lib/mozilla/components/search.xpt
 lib/mozilla/components/shistory.xpt
 lib/mozilla/components/sidebar.xpt
@@ -336,10 +255,8 @@ lib/mozilla/components/xpcom_io.xpt
 lib/mozilla/components/xpcom_threads.xpt
 lib/mozilla/components/xpcom_xpti.xpt
 lib/mozilla/components/xpconnect.xpt
-lib/mozilla/components/xpconnect_tests.xpt
 lib/mozilla/components/xpinstall.xpt
 lib/mozilla/components/xpti.dat
-@unexec rm -f %D/lib/mozilla/components/xpti.dat || true
 lib/mozilla/components/xremoteservice.xpt
 lib/mozilla/components/xuldoc.xpt
 lib/mozilla/components/xultmpl.xpt
@@ -378,10 +295,8 @@ lib/mozilla/defaults/wallet/VcardSchema.tbl
 lib/mozilla/dirver
 lib/mozilla/dtd/mathml.dtd
 lib/mozilla/dtd/svg.dtd
-lib/mozilla/htmlrobot
 lib/mozilla/icons/mozicon16.xpm
 lib/mozilla/icons/mozicon50.xpm
-lib/mozilla/libDebugRobot.so
 lib/mozilla/libgkgfx.so
 lib/mozilla/libgtkembedmoz.so
 lib/mozilla/libgtksuperwin.so
@@ -400,20 +315,12 @@ lib/mozilla/libplds4.so
 lib/mozilla/libxlibrgb.so
 lib/mozilla/libxpcom.so
 lib/mozilla/libxpistub.so
-lib/mozilla/lots
 lib/mozilla/mozilla
 lib/mozilla/mozilla-bin
 lib/mozilla/mozilla-config
-lib/mozilla/mozilla-viewer.sh
 lib/mozilla/mozilla-xremote-client
-lib/mozilla/nsIFileEnumerator
-lib/mozilla/nsIFileTest
-lib/mozilla/nsTestSample
 lib/mozilla/nsinstall
 lib/mozilla/plugins/libnullplugin.so
-lib/mozilla/proxytests
-lib/mozilla/rdfcat
-lib/mozilla/rdfpoll
 lib/mozilla/regExport
 lib/mozilla/regchrome
 lib/mozilla/regxpcom
@@ -454,7 +361,6 @@ lib/mozilla/res/html/gopher-text.gif
 lib/mozilla/res/html/gopher-unknown.gif
 lib/mozilla/res/inspector/search-registry.rdf
 lib/mozilla/res/inspector/viewer-registry.rdf
-lib/mozilla/res/jarlist.dat
 lib/mozilla/res/langGroups.properties
 lib/mozilla/res/language.properties
 lib/mozilla/res/loading-image.gif
@@ -489,7 +395,6 @@ lib/mozilla/res/samples/demoform.css
 lib/mozilla/res/samples/dexopenchrome.xul
 lib/mozilla/res/samples/dexparamdialog.html
 lib/mozilla/res/samples/dexparamdialog.xul
-lib/mozilla/res/samples/embed-test.html
 lib/mozilla/res/samples/find.html
 lib/mozilla/res/samples/gear1.gif
 lib/mozilla/res/samples/hidetoolicon.css
@@ -544,15 +449,8 @@ lib/mozilla/res/samples/toolbarTest1.xul
 lib/mozilla/res/samples/treeTest1.css
 lib/mozilla/res/samples/treeTest1.xul
 lib/mozilla/res/samples/widgets.xul
-lib/mozilla/res/samples/xpconnect-sample.html
 lib/mozilla/res/samples/xpmenu.xul
 lib/mozilla/res/samples/xulTest.css
-lib/mozilla/res/strres-test.dtd
-lib/mozilla/res/strres-test.html
-lib/mozilla/res/strres-test.js
-lib/mozilla/res/strres-test.xul
-lib/mozilla/res/strres.properties
-lib/mozilla/res/test.properties
 lib/mozilla/res/throbber/anim.gif
 lib/mozilla/res/throbber/anims00.gif
 lib/mozilla/res/throbber/anims01.gif
@@ -586,8 +484,6 @@ lib/mozilla/res/throbber/anims28.gif
 lib/mozilla/res/throbber/anims29.gif
 lib/mozilla/res/ua.css
 lib/mozilla/res/unixcharset.properties
-lib/mozilla/res/urlparse.dat
-lib/mozilla/res/urlparse_unx.dat
 lib/mozilla/res/viewer.properties
 lib/mozilla/res/viewsource.css
 lib/mozilla/run-mozilla.sh
@@ -603,16 +499,14 @@ lib/mozilla/searchplugins/lxrmozilla.gif
 lib/mozilla/searchplugins/lxrmozilla.src
 lib/mozilla/searchplugins/mozilla.gif
 lib/mozilla/searchplugins/mozilla.src
-lib/mozilla/testart
-lib/mozilla/testuta
-lib/mozilla/urltest
-lib/mozilla/viewer
-lib/mozilla/viewer_gtk
 lib/mozilla/xpcshell
 lib/mozilla/xpicleanup
 lib/mozilla/xpidl
 lib/mozilla/xpt_dump
 lib/mozilla/xpt_link
+@unexec rm -f %D/lib/mozilla/chrome/chrome.rdf || true
+@unexec rm -f %D/lib/mozilla/component.reg || true
+@unexec rm -f %D/lib/mozilla/components/xpti.dat || true
 @dirrm lib/mozilla/searchplugins
 @dirrm lib/mozilla/res/throbber
 @dirrm lib/mozilla/res/samples/sampleimages
@@ -649,5 +543,4 @@ lib/mozilla/xpt_link
 @dirrm lib/mozilla/chrome/overlayinfo/communicator
 @dirrm lib/mozilla/chrome/overlayinfo
 @dirrm lib/mozilla/chrome
-@dirrm lib/mozilla/OutTestData
 @dirrm lib/mozilla

@@ -1,0 +1,6 @@
+*/CVS/*
+*/macbuild/*
+*/package/*
+.cvsignore
+makefile.win
+MANIFEST

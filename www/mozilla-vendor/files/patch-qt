@@ -40,11 +40,3 @@ $FreeBSD$
      QT_LIBS="-L/usr/X11R6/lib -L${QTDIR}/lib -lqt -lXext -lX11"
  
      # Check whether --with-static-qt or --without-static-qt was given.
-@@ -13711,6 +13712,7 @@
-     echo "configure: warning: Recreating autoconf.mk with updated nspr-config output" 1>&2
-     if test ! "$VACPP" && test -z "$_WIN32_MSVC"; then
-         NSPR_LIBS=`./nsprpub/config/nspr-config --prefix=$MOZ_BUILD_ROOT/dist --exec-prefix=$MOZ_BUILD_ROOT/dist --libs`
-+	NSPR_LIBS="$NSPR_LIBS $BSD_PTHREAD_LIBS"
-         $PERL -pi.bak -e "s {^NSPR_LIBS\s*=.*} {NSPR_LIBS = $NSPR_LIBS }" config/autoconf.mk
-     fi
-     if test -z "$_WIN32_MSVC"; then

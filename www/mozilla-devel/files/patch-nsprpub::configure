@@ -1,0 +1,50 @@
+--- nsprpub/configure.orig	Tue Jan 22 23:57:37 2002
++++ nsprpub/configure	Thu Feb 14 01:13:13 2002
+@@ -3288,8 +3288,9 @@
+     else
+         DLL_SUFFIX=so.1.0
+     fi
++    MKSHLIB='$(CC) $(DSO_LDOPTS) -o $@'
+     DSO_CFLAGS=-fPIC
+-    DSO_LDOPTS=-Bshareable
++    DSO_LDOPTS='-shared -Wl,-soname -Wl,$(notdir $@)'
+     MDCPUCFG_H=_freebsd.cfg
+     PR_MD_CSRCS=freebsd.c
+     ;;
+@@ -5091,8 +5092,15 @@
+    if test $? -eq 0; then
+ 	if test -z "`egrep -i '(unrecognize|unknown)' conftest.out | grep pthread`" && test -z "`egrep -i '(error|incorrect)' conftest.out`" ; then
+ 	    ac_cv_have_dash_pthread=yes
+-	    CFLAGS="$CFLAGS -pthread"
+-	    CXXFLAGS="$CXXFLAGS -pthread"
++		case "$target_os" in
++	    freebsd*)
++# Freebsd doesn't use -pthread for compiles, it uses them for linking
++            ;;
++	    *)
++            CFLAGS="$CFLAGS -pthread"
++            CXXFLAGS="$CXXFLAGS -pthread"
++            ;;
++        esac
+ 	fi
+     fi
+     rm -f conftest*
+@@ -5123,11 +5131,17 @@
+ 	    ;;
+     *-freebsd*|*-openbsd*|*-bsdi*|*-netbsd*)
+ 	    cat >> confdefs.h <<\EOF
++#define _REENTRANT 1
++EOF
++
++	    cat >> confdefs.h <<\EOF
+ #define _THREAD_SAFE 1
+ EOF
+ 
+ 	    	    if test "$ac_cv_have_dash_pthread" = "yes"; then
+-	        _PTHREAD_LDFLAGS=
++	        _PTHREAD_LDFLAGS="-pthread"
++	    else
++	        _PTHREAD_LDFLAGS="-lc_r"
+ 	    fi
+ 	    ;;
+     *-linux*)
