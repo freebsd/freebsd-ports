@@ -15,12 +15,13 @@ else
 Please select desired options:" -1 -1 16 \
 PCRE		"Perl Compatible Regular Expressions" OFF \
 SASL		"Cyrus SASLv1 (Simple Authentication and Security Layer)" OFF \
+SASL2		"Cyrus SASLv2 (Simple Authentication and Security Layer)" OFF \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" OFF \
 MySQL		"MySQL map lookups" OFF \
 PgSQL		"PostgreSQL map lookups" OFF \
 OpenLDAP	"OpenLDAP map lookups" OFF \
 Test		"SMTP/LMTP test server and generator" OFF \
-TLS		"SSL and TLS (currently broken)" OFF \
+TLS		"SSL and TLS" OFF \
 IPv6		"IPv6 support (currently broken)" OFF \
 2> $tempfile
 
@@ -59,13 +60,32 @@ while [ "$1" ]; do
 			echo "PCRE_SUFFIX=	+pcre"
 			SUB_PCRE=""
 			;;
-		\"SASL\")
-			echo "LIB_DEPENDS+=	sasl.8:\${PORTSDIR}/security/cyrus-sasl"
-			echo "POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I\${LOCALBASE}/include"
-			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lsasl -lpam -lcrypt"
-			echo "SASL_SUFFIX=	+sasl"
-			if [ -f ${PREFIX}/lib/libsasl.a ]; then 
-				if nm ${PREFIX}/lib/libsasl.a | grep -wq "mysql_verify_password"; then
+                \"SASL\")
+                        echo "LIB_DEPENDS+=     sasl.8:\${PORTSDIR}/security/cyrus-sasl"
+                        echo "POSTFIX_CCARGS+=  -DUSE_SASL_AUTH -I\${LOCALBASE}/include -I\${LOCALBASE}/include/sasl1"
+                        echo "POSTFIX_AUXLIBS+= -L\${LOCALBASE}/lib -lsasl -lpam -lcrypt"
+                        echo "SASL_SUFFIX=      +sasl"
+                        if [ -f ${PREFIX}/lib/libsasl.a ]; then
+                                if nm ${PREFIX}/lib/libsasl.a | grep -wq "mysql_verify_password"; then
+                                        echo "POSTFIX_CCARGS+=  -DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
+                                        echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
+                                fi
+                        else
+                                echo "POSTFIX_CCARGS+=  -DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
+                                echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
+                        fi
+                        echo ".if exists(/usr/lib/libkrb.a)"
+                        echo "POSTFIX_AUXLIBS+= -lkrb -ldes -lcom_err"
+                        echo ".endif"
+                        SUB_SASL=""
+                        ;;
+		\"SASL2\")
+			echo "LIB_DEPENDS+=	sasl2.2:\${PORTSDIR}/security/cyrus-sasl2"
+			echo "POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I\${LOCALBASE}/include -I\${LOCALBASE}/include/sasl"
+			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lsasl2 -lpam -lcrypt"
+			echo "SASL_SUFFIX=	+sasl2"
+			if [ -f ${PREFIX}/lib/libsasl2.a ]; then
+				if nm ${PREFIX}/lib/libsasl2.a | grep -wq "mysql_verify_password"; then
 					echo "POSTFIX_CCARGS+=  -DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
 					echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
 				fi
@@ -82,8 +102,8 @@ while [ "$1" ]; do
 			echo "MAN8+=		tlsmgr.8"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
 			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.11a-1.1.11-20020613-0.9.6d.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.11a-1.1.11-20020613-0.9.6d/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.11a-1.1.11-20020822-0.9.6g.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.11a-1.1.11-20020822-0.9.6g/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls"
 			SUB_TLS=""
