@@ -19,6 +19,7 @@ EXTRACT_ONLY=	${DISTNAME}.tgz
 MAINTAINER=	perky@fallin.lv
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 PLIST_SUB+=	PYTHON_SITELIB=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||}
 
 CGIUSER?=	moinmoin
@@ -26,7 +27,6 @@ CGIUSERID?=	192
 CGIROOT=	${PREFIX}/www/cgi-bin
 HTDOCSROOT=	${PREFIX}/www/data
 MOINDIR=	${PREFIX}/share/moin
-SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
 
 do-configure:
 	@# Add the username, uid, group and gid
@@ -38,17 +38,14 @@ post-patch:
 		${WRKSRC}/wiki/cgi-bin/moin_config.py > \
 		${WRKSRC}/wiki/cgi-bin/moin_config.py.default
 
-do-build:
-	${SETUP_CMD} build
+post-build:
 	@# Compile setuid wrapper
 	${CC} ${CFLAGS} -o ${WRKDIR}/moin \
 		-DPYTHON_PATH='"${PYTHON_CMD}"' \
 		-DMOIN_PREFIX='"${MOINDIR}"' \
 		${FILESDIR}/wrapper.c
 
-do-install:
-	@# Install MoinMoin
-	${SETUP_CMD} install
+post-install:
 	${INSTALL_DATA} ${DISTDIR}/twikidraw.jar ${MOINDIR}/htdocs/applets/TWikiDrawPlugin/
 
 	@# Install Wrapper
@@ -69,7 +66,6 @@ do-install:
 		${LN} -sf ${MOINDIR}/data/text.default ${MOINDIR}/data/text
 	-${LN} -sf ${MOINDIR}/htdocs ${HTDOCSROOT}/moin
 
-post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
