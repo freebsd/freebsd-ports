@@ -1,0 +1,10 @@
+--- plugins/perl/Makefile.in.orig	Sun Feb 20 15:39:08 2005
++++ plugins/perl/Makefile.in	Sun Feb 20 15:40:16 2005
+@@ -680,6 +680,7 @@
+ 		done; \
+ 	fi
+ 	@cd common && $(perlpath) Makefile.PL $(PERL_MM_PARAMS)
++	@cd common && $(perlpath) -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
+ 
+ common/Makefile.PL: common/Makefile.PL.in $(top_builddir)/config.status
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
