@@ -21,7 +21,7 @@ LIB_DEPENDS+=	xmms.1:${PORTSDIR}/audio/xmms
 .endif
 
 .if ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/deve/nasm
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
 USE_LIBTOOL=	yes
