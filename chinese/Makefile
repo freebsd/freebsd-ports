@@ -20,6 +20,7 @@
     SUBDIR += bitchx
     SUBDIR += c2t
     SUBDIR += cdict5
+    SUBDIR += cdrtools
     SUBDIR += celvis
     SUBDIR += chinput
     SUBDIR += chinput2
