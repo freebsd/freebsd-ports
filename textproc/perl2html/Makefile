@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		perl2html
-PORTVERSION= 		0.9.1
+PORTVERSION= 		0.9.2
 CATEGORIES=		textproc www
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/www/converters
