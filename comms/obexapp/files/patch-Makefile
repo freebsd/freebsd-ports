@@ -1,5 +1,5 @@
 --- Makefile.orig	Fri Apr  9 23:09:09 2004
-+++ Makefile	Fri Jul 23 19:17:16 2004
++++ Makefile	Mon Jul 26 15:54:36 2004
 @@ -1,8 +1,10 @@
  # $Id: Makefile,v 1.7 2004/04/09 21:09:09 max Exp $
  # $FreeBSD$
@@ -13,14 +13,13 @@
  PROG=		obexapp
  MAN1=		obexapp.1
  
-@@ -13,8 +15,8 @@
+@@ -13,8 +15,7 @@
  
  DEBUG_FLAGS=	-g
  
 -CFLAGS=		-I/usr/local/include \
 -		-I/usr/local/include/openobex
-+CFLAGS=		-I/usr/local/include/openobex \
-+		-I/usr/local/include
++CFLAGS=		-I/usr/local/include/openobex
  
  DPADD=		${LIBBLUETOOTH} ${LIBSDP} ${LIBBSDXML}
  LDADD=		-L/usr/lib -L/usr/local/lib \
