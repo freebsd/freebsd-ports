@@ -6,11 +6,8 @@
 #
 
 PKGNAMESUFFIX=	-postgresql
-CATEGORIES=	mail
-PKGDIR=		../exim
-FILESDIR=	${PKGDIR}/files
-PATCHDIR=	${PKGDIR}/files
+MASTERDIR=	${.CURDIR}/../exim
 
 WITH_PGSQL=	yes
 
-.include "../exim/Makefile"
+.include "${MASTERDIR}/Makefile"
