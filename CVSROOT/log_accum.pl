@@ -22,7 +22,7 @@
 
 require 5.003;		# might work with older perl5
 
-###use strict;
+use strict;
 use lib $ENV{CVSROOT};
 use CVSROOT::cfg;
 
@@ -214,26 +214,26 @@ sub format_lists {
 	my $header = shift;
 	my @lines = @_;
 
-	my @text = ();
-	my @files = ();
-	my $lastdir = '';
-	my $lastsep = '';
-
 	print STDERR "format_lists(): ", join(":", @lines), "\n" if $cfg::DEBUG;
 
+	my $lastdir = '';
+	my $lastsep = '';
+	my $tag = '';
+	my @files = ();
+	my @text = ();
 	foreach my $line (@lines) {
 		if ($line =~ /.*\/$/) {
-			if ($lastdir) {
-				push @text, &format_names($lastdir, @files);
-			}
+			push @text, &format_names($lastdir, @files) if $lastdir;
+			@files = ();
 
 			$lastdir = $line;
 			$lastdir =~ s,/$,,;
+
 			$tag = "";	# next thing is a tag
-			@files = ();
 		} elsif (!$tag) {
 			$tag = $line;
-			next if ($header . $tag eq $lastsep);
+			next if $header . $tag eq $lastsep;
+
 			$lastsep = $header . $tag;
 			if ($tag eq 'HEAD') {
 				push @text, "  $header files:";
@@ -323,6 +323,8 @@ sub build_header {
 	my $datestr = `/bin/date +"%Y/%m/%d %H:%M:%S %Z"`;
 	chomp $datestr;
 
+	my $login = $ENV{'USER'} || getlogin ||
+	    (getpwuid($<))[0] || sprintf("uid#%d",$<);
 	my $header = sprintf("%-8s    %s", $login, $datestr);
 
 	my @text;
@@ -510,9 +512,12 @@ umask (002);
 #
 # Initialize basic variables
 #
-$login = $ENV{'USER'} || getlogin || (getpwuid($<))[0] || sprintf("uid#%d",$<);
-@files = split(' ', $ARGV[0]);
-@path = split('/', $files[0]);
+my $input_params = $ARGV[0];
+my ($directory, @filenames) = split " ", $input_params;
+#@files = split(' ', $input_params);
+
+my @path = split('/', $directory);
+my $dir;
 if ($#path == 0) {
 	$dir = ".";
 } else {
@@ -524,25 +529,26 @@ $dir = $dir . "/";
 # Throw some values at the developer if in debug mode
 #
 if ($cfg::DEBUG) {
-	print("ARGV  - ", join(":", @ARGV), "\n");
-	print("files - ", join(":", @files), "\n");
-	print("path  - ", join(":", @path), "\n");
-	print("dir   - ", $dir, "\n");
-	print("pid   - ", $PID, "\n");
+	print "ARGV      - ", join(":", @ARGV), "\n";
+	print "directory - ", $directory, "\n";
+	print "filenames - ", join(":", @filenames), "\n";
+	print "path      - ", join(":", @path), "\n";
+	print "dir       - ", $dir, "\n";
+	print "pid       - ", $PID, "\n";
 }
 
 # Was used for To: lines, still used for commitlogs naming.
-&append_line("$MAIL_FILE.$PID", &mlist_map($files[0] . "/"));
-&append_line("$SUBJ_FILE.$PID", $ARGV[0]);
+&append_line("$MAIL_FILE.$PID", &mlist_map("$directory/"));
+&append_line("$SUBJ_FILE.$PID", $input_params);
 
 #
 # Check for a new directory first.  This will always appear as a
 # single item in the argument list, and an empty log message.
 #
-if ($ARGV[0] =~ /New directory/) {
-	@text = &build_header();
+if ($input_params =~ /New directory/) {
+	my @text = &build_header();
 
-	push(@text, "  ".$ARGV[0]);
+	push @text, "  $input_params";
 	&do_changes_file(@text);
 	#&mail_notification(@text);
 	&cleanup_tmpfiles();
@@ -553,14 +559,14 @@ if ($ARGV[0] =~ /New directory/) {
 # Check for an import command.  This will always appear as a
 # single item in the argument list, and a log message.
 #
-if ($ARGV[0] =~ /Imported sources/) {
-	@text = &build_header();
+if ($input_params =~ /Imported sources/) {
+	my @text = &build_header();
 
-	push(@text, "  ".$ARGV[0]);
+	push @text, "  $input_params";
 
 	while (<STDIN>) {
-		chop;                   # Drop the newline
-		push(@text, "  ".$_);
+		chomp;
+		push @text, "  $_";
 	}
 
 	&do_changes_file(@text);
@@ -603,6 +609,7 @@ while (<STDIN>) {
 
 	# collect the log line (ignoring empty template entries)?
 	if ($state == $STATE_LOG) {
+		# XXX this stuff should come from the configuration file.
 		unless (
 		    /^PR:$/i ||
 		    /^Reviewed by:$/i ||
@@ -649,9 +656,10 @@ for (my $l = $#log_lines; $l > 0; $l--) {
 my $message_index;		# The index of this log message
 for ($message_index = 0; ; $message_index++) {
 	last unless -e "$LOG_FILE.$message_index.$PID";
-	@text = &read_logfile("$LOG_FILE.$message_index.$PID");
-	last if ($#text == -1);
-	last if (join(" ", @log_lines) eq join(" ", @text));
+
+	my @text = &read_logfile("$LOG_FILE.$message_index.$PID");
+	last if  $#text == -1;
+	last if join(" ", @log_lines) eq join(" ", @text);
 }
 
 #
@@ -692,7 +700,7 @@ foreach my $tag ( keys %removed_files ) {
 #
 if (-e "$LAST_FILE.$PID") {
 	$_ = &read_line("$LAST_FILE.$PID");
-	my $tmpfiles = $files[0];
+	my $tmpfiles = $directory;
 	$tmpfiles =~ s,([^a-zA-Z0-9_/]),\\$1,g;
 	if (! grep(/$tmpfiles$/, $_)) {
 		print "More commits to come...\n";
