@@ -1,0 +1,14 @@
+This module provide a simple interface to filter entries out
+of an httpd logfile. The constructor can be passed regular
+expressions to match against particular fields on the
+logfile.  It does its filtering line by line, using a filter
+method that takes a line of a logfile as input, and returns
+true if it matches, and false if it doesn't.
+
+There are two possible non-matching (false) conditions; one
+is where the line is a valid httpd logfile entry, but just
+doesn't happen to match the filter (where "" is returned).
+The other is where it is an invalid entry according to the
+format specified in the constructor.
+
+WWW: http://search.cpan.org/search?dist=HTTPD-Log-Filter

@@ -276,6 +276,7 @@
     SUBDIR += p5-HTML-Template-Expr
     SUBDIR += p5-HTML-Tree
     SUBDIR += p5-HTTP-GHTTP
+    SUBDIR += p5-HTTPD-Log-Filter
     SUBDIR += p5-HTTPD-Tools
     SUBDIR += p5-ParallelUA
     SUBDIR += p5-Template-Toolkit
