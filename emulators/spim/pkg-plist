@@ -1,7 +1,7 @@
 bin/spim
 bin/xspim
-share/spim/trap.handler
 %%PORTDOCS%%share/doc/spim/spim.ps.gz
 %%PORTDOCS%%share/doc/spim/cycle.ps.gz
-%%PORTDOCS%%@dirrm share/doc/spim
+share/spim/trap.handler
 @dirrm share/spim
+%%PORTDOCS%%@dirrm share/doc/spim
