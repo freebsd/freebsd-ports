@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	texmaker
-PORTVERSION=	1.0
+PORTVERSION=	1.11
 CATEGORIES=	editors
-MASTER_SITES=	http://perso.club-internet.fr/pascal.brachet/texmaker/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	http://www.xm1math.net/texmaker/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX Development Environment
@@ -19,18 +18,16 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_BZIP2=	yes
 USE_QT_VER=	3
+MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
-do-build:
-	@cd ${WRKSRC} && \
-	 qmake -makefile -spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
-		-unix "LIBS+=-lm -lqt-mt" texmaker.pro && \
-	 ${SETENV} QTDIR=${X11BASE} make
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
+		-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
+		-unix PREFIX="${PREFIX}" texmaker.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/texmaker ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
-.endif
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/utilities/*.* ${DATADIR}
 
 .include <bsd.port.mk>

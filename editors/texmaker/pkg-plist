@@ -1,4 +1,31 @@
 bin/texmaker
-%%PORTDOCS%%%%DOCSDIR%%/latexhelp.html
-%%PORTDOCS%%%%DOCSDIR%%/usermanual.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/blank.gif
+%%DATADIR%%/doc1.png
+%%DATADIR%%/doc11.png
+%%DATADIR%%/doc12.png
+%%DATADIR%%/doc13.png
+%%DATADIR%%/doc14.png
+%%DATADIR%%/doc15.png
+%%DATADIR%%/doc16.png
+%%DATADIR%%/doc17.png
+%%DATADIR%%/doc2.png
+%%DATADIR%%/doc3.png
+%%DATADIR%%/doc4.png
+%%DATADIR%%/doc5.png
+%%DATADIR%%/doc6.png
+%%DATADIR%%/doc7.png
+%%DATADIR%%/doc8.png
+%%DATADIR%%/latexhelp.html
+%%DATADIR%%/next.gif
+%%DATADIR%%/next_d.gif
+%%DATADIR%%/prev.gif
+%%DATADIR%%/prev_d.gif
+%%DATADIR%%/psheader.txt
+%%DATADIR%%/style.css
+%%DATADIR%%/texmaker16x16.png
+%%DATADIR%%/texmaker32x32.png
+%%DATADIR%%/texmaker48x48.png
+%%DATADIR%%/up.gif
+%%DATADIR%%/up_d.gif
+%%DATADIR%%/usermanual.html
+@dirrm %%DATADIR%%
