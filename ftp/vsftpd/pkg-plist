@@ -1,6 +1,6 @@
 libexec/vsftpd
 @exec mkdir -p %D/share/vsftpd/empty
-@unexec if ! `grep -q %D/etc/vsftpd.conf %D/etc/vsftpd.conf.dist`; then rm %D/etc/vsftpd.conf; fi
+@unexec if diff -q %D/etc/vsftpd.conf %D/etc/vsftpd.conf.dist; then rm %D/etc/vsftpd.conf; fi
 etc/vsftpd.conf.dist
 @exec if [ ! -f %B/vsftpd.conf ]; then cp %B/vsftpd.conf.dist %B/vsftpd.conf; fi
 @exec if [ ! -d /var/ftp ]; then mkdir /var/ftp ; fi
