@@ -109,6 +109,7 @@
     SUBDIR += xemacs-sumo-packages
     SUBDIR += xemacs20
     SUBDIR += xemacs21
+    SUBDIR += xenon
     SUBDIR += xvile
     SUBDIR += yudit
 
