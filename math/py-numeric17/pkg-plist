@@ -10,6 +10,8 @@ lib/python1.5/site-packages/Numeric/FFT.py
 lib/python1.5/site-packages/Numeric/FFT.pyc
 lib/python1.5/site-packages/Numeric/LinearAlgebra.py
 lib/python1.5/site-packages/Numeric/LinearAlgebra.pyc
+lib/python1.5/site-packages/Numeric/MA.py
+lib/python1.5/site-packages/Numeric/MA.pyc
 lib/python1.5/site-packages/Numeric/MLab.py
 lib/python1.5/site-packages/Numeric/MLab.pyc
 lib/python1.5/site-packages/Numeric/Matrix.py
