@@ -161,6 +161,8 @@ post-install:
 	@cd ${WRKDIR}/${THEMEFILE:C/.tar.gz//} && ${FIND} . -print | \
 		${GREP} -vE '(xvpics|.directory)' | \
 		${CPIO} -pdu -R ${BINOWN}:${BINGRP} --quiet ${DATADIR}/themes/
+	@${CHMOD} -R a+r ${DATADIR}/themes
+	@${FIND} ${DATADIR}/themes -type d -print0 | xargs -0 ${CHMOD} a+x
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylpheed-switcher ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylprint.pl ${PREFIX}/bin
