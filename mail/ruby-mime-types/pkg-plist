@@ -1,32 +1,35 @@
-%%RUBY_SITELIBDIR%%/MIME/Types.rb
-@dirrm %%RUBY_SITELIBDIR%%/MIME
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/MIME/InvalidContentType.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/MIME/Type.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/MIME/Type.src/M000005.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/MIME/Type.src/M000006.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/MIME/Type.src/M000007.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/MIME/Type.src/M000008.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/MIME/Type.src/M000009.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/MIME/Type.src/M000010.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/MIME/Type.src/M000011.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/MIME/Type.src/M000012.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/MIME/Type.src/M000013.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/MIME/Types.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/MIME/Types.src/M000001.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/MIME/Types.src/M000002.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/MIME/Types.src/M000003.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/MIME/Types.src/M000004.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/created.rid
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/MIME/types_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_class_index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_file_index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_method_index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc-style.css
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/MIME
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/MIME/Types.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/MIME/Type.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/MIME
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes
+%%RUBY_SITELIBDIR%%/mime/types.rb
+@dirrm %%RUBY_SITELIBDIR%%/mime
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Readme
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/InvalidContentType.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000001.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000002.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000003.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000004.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000005.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000006.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000007.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000008.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000009.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Types.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/created.rid
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/dot/f_0.dot
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/dot/f_0.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/dot/m_0_0.dot
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/dot/m_0_0.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/mime/types_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_class_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_file_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_method_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/rdoc-style.css
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/mime
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/dot
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/MIME
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
