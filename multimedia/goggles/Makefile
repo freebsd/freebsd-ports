@@ -36,8 +36,6 @@ pre-everything::
 #BROKEN=		"Does not compile on alpha 5.x"
 #.endif
 
-BROKEN=		"Install fails"
-
 .ifdef(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 .else
@@ -69,6 +67,11 @@ do-configure:
 		-e 's|%%X11BASE%%|${X11BASE}|g' \
 		-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%PTHREADLIBS%%|${PTHREAD_LIBS}|g' ${WRKSRC}/build/config.linux
+# uphold C{,XX}FLAGS
+	@${REINPLACE_CMD} -E \
+		-e 's|^(export[[:space:]]+CFLAGS=).+$$|\1"${CFLAGS}"|' \
+		-e 's|^(export[[:space:]]+CXXFLAGS=).+$$|\1"${CXXFLAGS}"|' \
+		${WRKSRC}/build/config.linux
 
 do-build:
 	@cd ${WRKSRC} && ./gb
