@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 
@@ -40,6 +40,12 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 .endif
 
+.if defined(WITHOUT_WWW)
+PLIST_SUB+=     WWWDATA="@comment "
+.else
+PLIST_SUB+=     WWWDATA=""
+.endif
+
 PLIST_FILES+=	etc/nginx/koi-win \
 		etc/rc.d/nginx.sh \
 		sbin/nginx
@@ -59,7 +65,7 @@ do-build:
 	@cd ${WRKSRC} && ${MAKE}
 
 do-install:
-	${MKDIR} ${PREFIX}/etc/nginx ${PREFIX}/www/nginx-dist
+	${MKDIR} ${PREFIX}/etc/nginx
 	${INSTALL_SCRIPT} ${WRKSRC}/nginx.sh ${PREFIX}/etc/rc.d
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/nginx ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/conf/koi-win ${PREFIX}/etc/nginx
@@ -68,8 +74,11 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/conf/${i} ${PREFIX}/etc/nginx
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${PREFIX}/etc/nginx/${i}-dist
 .endfor
+.if !defined(WITHOUT_WWW)
+	${MKDIR} ${PREFIX}/www/nginx-dist
 	${INSTALL_DATA} ${WRKSRC}/html/index.html ${PREFIX}/www/nginx-dist
 	${ECHO_CMD} "" >>${PREFIX}/www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 	${LN} -sf ${PREFIX}/www/nginx-dist ${PREFIX}/www/nginx
+.endif
 
 .include <bsd.port.mk>
