@@ -242,6 +242,7 @@
     SUBDIR += queue-repair
     SUBDIR += raysfilter
     SUBDIR += razor-agents
+    SUBDIR += rbl-milter
     SUBDIR += rblcheck
     SUBDIR += regm
     SUBDIR += rftp

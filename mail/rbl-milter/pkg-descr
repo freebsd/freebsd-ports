@@ -1,0 +1,14 @@
+This is a simple sendmail milter which adds an X-RBL-Warning header to
+any  Xemails that are received that come from an open relay as
+determined by your  Xchoice of RBL checking service (i.e.
+bl.spamcop.net).
+
+This is useful if you'd rather have the mail user agent (MUA) deal with
+ Xpotential spam rather than just blocking it in case you loose
+legitimate Xmessages.  Note that the X-RBL-Warning header is only set if
+the site was Xfound to be an open-relay.
+
+For more information, see the rbl-milter website at:
+  WWW: http://opensource.confusticate.com/rbl-milter/
+RBL-Milter was created by Jeremy Beker <gothmog@confusticate.com> and
+the Xport is maintained by Ned Wolpert <wolpert@codeheadsystems.com>
