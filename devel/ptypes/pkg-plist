@@ -6,10 +6,11 @@ include/ptypes/ptime.h
 include/ptypes/ptypes.h
 lib/libptypes.a
 lib/libptypes.so
-lib/libptypes.so.1
+lib/libptypes.so.%%SHLIB_VER%%
 lib/libptypesn.a
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/doc/async.examples.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/async.jobqueue.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/async.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/async.message.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/async.msgqueue.html
@@ -87,7 +88,7 @@ lib/libptypesn.a
 %%PORTDOCS%%%%DOCSDIR%%/doc/time.datetime.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/time.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/time.time.html
-%%PORTDOCS%%%%DOCSDIR%%/doc/title-1.8.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/title-1.9.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/unit.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/unknown.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/variant.arrays.html
