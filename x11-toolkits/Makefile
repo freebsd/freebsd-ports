@@ -190,9 +190,15 @@
     SUBDIR += whistlerk
     SUBDIR += wmapp
     SUBDIR += wxgtk
+    SUBDIR += wxgtk-common
     SUBDIR += wxgtk-contrib
+    SUBDIR += wxgtk-contrib-common
     SUBDIR += wxgtk-devel
     SUBDIR += wxgtk-docs
+    SUBDIR += wxgtk2
+    SUBDIR += wxgtk2-contrib
+    SUBDIR += wxgtk2-unicode
+    SUBDIR += wxgtk2-unicode-contrib
     SUBDIR += xbae
     SUBDIR += xclasses
     SUBDIR += xenophilia

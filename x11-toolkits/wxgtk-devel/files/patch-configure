@@ -1,5 +1,5 @@
---- configure.orig	Sun Nov  2 16:08:40 2003
-+++ configure	Sun Nov  2 16:17:32 2003
+--- configure.orig	Tue Nov  4 19:54:04 2003
++++ configure	Tue Nov  4 20:12:59 2003
 @@ -11731,7 +11731,7 @@
  
  
@@ -9,36 +9,21 @@
              system_zlib_h_ok="yes"
          else
                                                                                      echo $ac_n "checking for zlib.h >= 1.1.4""... $ac_c" 1>&6
-@@ -16048,8 +16048,8 @@
+@@ -16099,6 +16099,13 @@
+             WX_RESOURCES_MACOSX_DATA="lib${WX_LIBRARY}.${WX_CURRENT}.rsrc"
+         fi
+         ;;
++
++      *-*-freebsd* )
++	WX_LIBRARY_NAME_SHARED="lib${WX_LIBRARY}.${SO_SUFFIX}.${WX_CURRENT}"
++	WX_LIBRARY_NAME_SHARED_GL="lib${WX_LIBRARY_GL}.${SO_SUFFIX}.${WX_CURRENT}"
++	WX_LIBRARY_LINK1="lib${WX_LIBRARY}.${SO_SUFFIX}"
++	WX_LIBRARY_LINK1_GL="lib${WX_LIBRARY_GL}.${SO_SUFFIX}"
++      	;;
+ esac
  
- WX_VERSION_TAG=`echo WX${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}_${WX_RELEASE} | tr "[a-z]" "[A-Z]"`
- 
--TOOLCHAIN_NAME="${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}-${WX_RELEASE}"
--TOOLCHAIN_NAME_GL="${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}_gl-${WX_RELEASE}"
-+TOOLCHAIN_NAME="${TOOLKIT_DIR}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}"
-+TOOLCHAIN_NAME_GL="${TOOLKIT_DIR}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}_gl"
- 
- if test "$cross_compiling" = "yes"; then
-     TOOLCHAIN_NAME="${TOOLCHAIN_NAME}-${host_alias}"
-@@ -16060,13 +16060,11 @@
- WX_LIBRARY_GL="wx_${TOOLCHAIN_NAME_GL}"
- WX_LIBRARY_BASENAME="wx_${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}"
- 
--WX_LIBRARY_NAME_SHARED="lib${WX_LIBRARY}.${SO_SUFFIX}.${WX_CURRENT}.${WX_REVISION}.${WX_AGE}"
--WX_LIBRARY_NAME_SHARED_GL="lib${WX_LIBRARY_GL}.${SO_SUFFIX}.${WX_CURRENT}.${WX_REVISION}.${WX_AGE}"
-+WX_LIBRARY_NAME_SHARED="lib${WX_LIBRARY}.${SO_SUFFIX}.2"
-+WX_LIBRARY_NAME_SHARED_GL="lib${WX_LIBRARY_GL}.${SO_SUFFIX}.2"
- 
--WX_LIBRARY_LINK1="lib${WX_LIBRARY}.${SO_SUFFIX}.${WX_CURRENT}"
--WX_LIBRARY_LINK2="lib${WX_LIBRARY}.${SO_SUFFIX}"
--WX_LIBRARY_LINK1_GL="lib${WX_LIBRARY_GL}.${SO_SUFFIX}.${WX_CURRENT}"
--WX_LIBRARY_LINK2_GL="lib${WX_LIBRARY_GL}.${SO_SUFFIX}"
-+WX_LIBRARY_LINK1="lib${WX_LIBRARY}.${SO_SUFFIX}"
-+WX_LIBRARY_LINK1_GL="lib${WX_LIBRARY_GL}.${SO_SUFFIX}"
- 
- case "${host}" in
-     *-*-cygwin* | *-*-mingw32* )
-@@ -18679,7 +18677,7 @@
+ WX_LIBRARY_NAME_STATIC="lib${WX_LIBRARY}.a"
+@@ -18679,7 +18686,7 @@
                  ;;
          esac
  
@@ -47,7 +32,7 @@
  
                  THREADS_OK=no
          for flag in $THREAD_OPTS; do
-@@ -18736,6 +18734,8 @@
+@@ -18736,6 +18743,8 @@
                THREADS_CFLAGS=""
        done
  
@@ -56,7 +41,7 @@
        if test "x$THREADS_OK" != "xyes"; then
            wxUSE_THREADS=no
            echo "configure: warning: No thread support on this system... disabled" 1>&2
-@@ -18752,7 +18752,6 @@
+@@ -18752,7 +18761,6 @@
                  flag="-D_THREAD_SAFE"
                  ;;
              *-freebsd*)
@@ -64,10 +49,12 @@
                  ;;
              *-hp-hpux* )
                  flag="-D_REENTRANT"
-@@ -19531,21 +19530,6 @@
+@@ -19529,21 +19537,6 @@
+         CODE_GEN_FLAGS="$CODE_GEN_FLAGS -ffunction-sections"
+         ;;
      esac
- fi
- 
+-fi
+-
 -if test "$wxUSE_OPTIMISE" = "no" ; then
 -    OPTIMISE=
 -else
@@ -81,22 +68,6 @@
 -    else
 -        OPTIMISE="-O"
 -    fi
--fi
--
+ fi
+ 
  if test "$WXWIN_COMPATIBILITY_2" = "yes"; then
-     cat >> confdefs.h <<\EOF
- #define WXWIN_COMPATIBILITY_2 1
-@@ -22780,13 +22764,11 @@
- s%@WX_LIBRARY_IMPORTLIB@%$WX_LIBRARY_IMPORTLIB%g
- s%@WX_TARGET_LIBRARY@%$WX_TARGET_LIBRARY%g
- s%@WX_LIBRARY_LINK1@%$WX_LIBRARY_LINK1%g
--s%@WX_LIBRARY_LINK2@%$WX_LIBRARY_LINK2%g
- s%@PROGRAM_EXT@%$PROGRAM_EXT%g
- s%@WX_LIBRARY_NAME_STATIC_GL@%$WX_LIBRARY_NAME_STATIC_GL%g
- s%@WX_LIBRARY_NAME_SHARED_GL@%$WX_LIBRARY_NAME_SHARED_GL%g
- s%@WX_TARGET_LIBRARY_GL@%$WX_TARGET_LIBRARY_GL%g
- s%@WX_LIBRARY_LINK1_GL@%$WX_LIBRARY_LINK1_GL%g
--s%@WX_LIBRARY_LINK2_GL@%$WX_LIBRARY_LINK2_GL%g
- s%@WX_ALL@%$WX_ALL%g
- s%@WX_ALL_INSTALLED@%$WX_ALL_INSTALLED%g
- s%@SHARED_LD@%$SHARED_LD%g
