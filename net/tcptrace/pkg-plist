@@ -9,4 +9,5 @@ share/doc/tcptrace/README.mailing_list
 share/doc/tcptrace/README.modules
 share/doc/tcptrace/README.tput_graphs
 share/doc/tcptrace/WWW
+share/doc/tcptrace/dot_tcptracerc.sample
 @dirrm share/doc/tcptrace
