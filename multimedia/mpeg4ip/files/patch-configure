@@ -1,0 +1,14 @@
+--- configure.orig	Thu Dec  2 15:36:17 2004
++++ configure	Thu Dec  2 15:36:51 2004
+@@ -23179,7 +23179,11 @@
+    echo "$as_me:$LINENO: checking libmpeg2 version" >&5
+ echo $ECHO_N "checking libmpeg2 version... $ECHO_C" >&6
+    cat >conftest.$ac_ext <<_ACEOF
++#if defined(__FreeBSD__) && __FreeBSD__ < 5
++#include <inttypes.h>
++#else
+ #include <stdint.h>
++#endif
+ #include <mpeg2dec/mpeg2.h>
+ 
+ #ifndef MPEG2_VERSION
