@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	delegate
-PORTVERSION=	8.7.8
+PORTVERSION=	8.9.1
 CATEGORIES=	net www
 MASTER_SITES=	ftp://www.delegate.org/pub/DeleGate/ \
 		ftp://ftp.delegate.org/pub/DeleGate/
@@ -15,43 +15,19 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose TCP/IP proxy system
 
-NO_PACKAGE=	"Insecure program."
+USE_BZIP2=      yes
 IS_INTERACTIVE=	YES
-
-pre-everything::
-.if !defined(FORCE_BUILD) || ${FORCE_BUILD}!="YES"
-	@${ECHO_MSG} "*********************************************************************"
-	@${ECHO_MSG} "*   WARNING!     WARNING!     WARNING!     WARNING!     WARNING!    *"
-	@${ECHO_MSG} "* This program has known security problems which may allow a remote *"
-	@${ECHO_MSG} "* attacker to take control of your machine.                         *"
-	@${ECHO_MSG} "* See FreeBSD security advisory 00:04 for more information.         *"
-	@${ECHO_MSG} "*                                                                   *"
-	@${ECHO_MSG} "* It is strongly recommended that you avoid using this program.     *"
-	@${ECHO_MSG} "*                                                                   *"
-	@${ECHO_MSG} "* If you would like to use this program despite the danger, run     *"
-	@${ECHO_MSG} "* make with \`\`FORCE_BUILD=YES''                                     *"
-	@${ECHO_MSG} "*   WARNING!     WARNING!     WARNING!     WARNING!     WARNING!    *"
-	@${ECHO_MSG} "*********************************************************************"
-	@${FALSE}
-.else
-	@${ECHO_MSG} "*********************************************************************"
-	@${ECHO_MSG} "*   WARNING!     WARNING!     WARNING!     WARNING!     WARNING!    *"
-	@${ECHO_MSG} "* You have chosen to build an insecure program.                     *"
-	@${ECHO_MSG} "* This program has known security problems which may allow a remote *"
-	@${ECHO_MSG} "* attacker to take control of your machine.                         *"
-	@${ECHO_MSG} "* See FreeBSD security advisory 00:04 for more information.         *"
-	@${ECHO_MSG} "*********************************************************************"
-.endif
+PORTDOCS=	Manual.htm tutor-jp.htm tutor-en.htm
+PLIST_FILES=	sbin/delegated etc/rc.d/delegated.sh-dist
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/delegated ${PREFIX}/sbin
-	@${MKDIR} ${PREFIX}/share/examples/delegate
-	${INSTALL_DATA} ${FILESDIR}/delegated.sh \
-	   ${PREFIX}/share/examples/delegate
+	${INSTALL_SCRIPT} ${FILESDIR}/delegated.sh \
+	   ${PREFIX}/etc/rc.d/delegated.sh-dist 
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/delegate
-.for f in Manual.htm tutor-jp.htm tutor-en.htm
-	${INSTALL_DATA} ${WRKSRC}/doc/$f ${PREFIX}/share/doc/delegate
+	@${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/$f ${DOCSDIR}
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
