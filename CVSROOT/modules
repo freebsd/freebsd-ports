@@ -7539,6 +7539,7 @@ p5-PatchReader	ports/devel/p5-PatchReader
 p5-Path-Class	ports/devel/p5-Path-Class
 p5-Penguin	ports/devel/p5-Penguin
 p5-Penguin-Easy	ports/devel/p5-Penguin-Easy
+p5-Perl6-Export	ports/devel/p5-Perl6-Export
 p5-PerlIO-eol	ports/devel/p5-PerlIO-eol
 p5-PerlIO-gzip	ports/archivers/p5-PerlIO-gzip
 p5-PerlIO-via-dynamic	ports/devel/p5-PerlIO-via-dynamic
