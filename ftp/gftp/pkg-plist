@@ -31,7 +31,6 @@ bin/gftp-text
 %%DATADIR%%/gftp/world.xpm
 %%GNOME:%%share/gnome/pixmaps/gftp.png
 share/locale/bg/LC_MESSAGES/gftp.mo
-share/locale/br/LC_MESSAGES/gftp.mo
 share/locale/cs/LC_MESSAGES/gftp.mo
 share/locale/da/LC_MESSAGES/gftp.mo
 share/locale/de/LC_MESSAGES/gftp.mo
