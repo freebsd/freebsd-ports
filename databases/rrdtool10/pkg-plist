@@ -75,7 +75,7 @@ share/doc/rrdtool/html/rrdtutorial.es.html
 share/doc/rrdtool/html/RRDs.html
 share/doc/rrdtool/html/RRDp.html
 share/doc/rrdtool/html/rrdxport.html
-share/doc/rrdtool/rrd-beginners.html
+share/doc/rrdtool/html/rrd-beginners.html
 %%SITE_PERL%%/RRDp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDp/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/RRDs.pm
