@@ -11,3 +11,8 @@ Please execute the following command if you encounter problem with
 legacy bbs:
 
 echo "set bbsislame=yes" >> ~/.muttrc
+
+If you have to send signed mail to outlook users, please execute the
+following command:
+
+echo "set pgp_outlook_compat=yes" >> ~/.muttrc
