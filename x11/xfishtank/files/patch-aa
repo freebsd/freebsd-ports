@@ -1,0 +1,95 @@
+--- xfish.c.orig	Thu Dec 17 22:26:17 1992
++++ xfish.c	Tue Jun 17 08:31:49 1997
+@@ -46,13 +46,23 @@
+ 
+ /* constants are based on rand(3C) returning an integer between 0 and 32767 */
+ 
+-#if defined(ultrix) || defined(sun) || defined(linux)
++#if defined(ultrix) || defined(sun)
+ #define  RAND_I_1_16   134217728
+ #define  RAND_F_1_8    268435455.875
+ #define  RAND_I_1_4    536870911
+ #define  RAND_I_1_2   1073741823
+ #define  RAND_I_3_4   1610612735
+ #define  RAND_F_MAX   2147483647.0
++#else     
++#if defined(__FreeBSD__)
++#include <stdlib.h>
++
++#define  RAND_I_1_16   (RAND_MAX>>4)
++#define  RAND_F_1_8    ((float)(RAND_MAX>>3))
++#define  RAND_I_1_4    (RAND_MAX>>2)
++#define  RAND_I_1_2    (RAND_MAX>>1)
++#define  RAND_I_3_4    ((RAND_MAX>>2)*3)
++#define  RAND_F_MAX    ((float)RAND_MAX)
+ #else
+ #define  RAND_I_1_16   2048
+ #define  RAND_F_1_8    4096.0
+@@ -61,7 +71,7 @@
+ #define  RAND_I_3_4   24575
+ #define  RAND_F_MAX   32767.0
+ #endif
+-
++#endif
+ 
+ extern unsigned char *ReadBitmap();
+ 
+@@ -982,7 +992,6 @@
+ 	XColor hdef, edef;
+ 	struct colr_data *cdp;
+ 	struct colr_data colrs[256];
+-	extern char *malloc();
+ 
+ 	colormap = XDefaultColormap(Dpy, screen);
+ 
+@@ -1218,7 +1227,6 @@
+ 	unsigned char *data;
+ 	register int i, j, k;
+ 	int cnt, wcnt;
+-	extern char *malloc();
+ 
+ 	cnt = 1;
+ 	cnt += Pcnt;
+@@ -1465,34 +1473,6 @@
+ void 
+ init_signals()
+ {
+-	int ret;
+-#ifdef linux
+-	signal(SIGUSR1, toggle_secure);
+-#else			
+-#if defined(MOTOROLA) || defined(SCO)
+-    sigset(SIGUSR1, toggle_secure);
+-#else
+-    struct sigvec vec;
+-
+-    vec.sv_handler = toggle_secure;
+-    vec.sv_mask = 0;
+-    vec.sv_onstack = 0;
+-
+-#ifndef hpux
+-    ret = sigvec(SIGUSR1, &vec, &vec);
+-	if (ret != 0)
+-	{
+-		fprintf(stderr, "sigvec call failed\n");
+-	}
+-	else
+-	{
+-		fprintf(stderr, "sigvec call OK\n");
+-	}
+-#else
+-    sigvector(SIGUSR1, &vec, &vec);
+-#endif
+-#endif /* MOTOROLA */
+-#endif /* LINUX */
+ }
+ 
+ 
+@@ -1505,7 +1485,6 @@
+     XWindowAttributes winfo;
+     XSetWindowAttributes attr;
+     XGCValues   vals;
+-    extern char *malloc();
+     XSizeHints  xsh;
+     XImage *pimage;
+     int i, size, cnt;
