@@ -4264,7 +4264,6 @@ lacheck		ports/textproc/lacheck
 ladder		ports/games/ladder
 ladspa		ports/audio/ladspa
 lafontaine	ports/lang/lafontaine
-lam		ports/net/lam
 lam7		ports/net/lam7
 lamarc		ports/biology/lamarc
 lambda		ports/math/lambda
