@@ -10,6 +10,7 @@ start)
 	[ -x ${PREFIX}/sbin/cfsd ] && ${PREFIX}/sbin/cfsd > /dev/null 2>&1 && echo -n ' cfsd'
 	;;
 stop)
+	killall cfsd && echo -n ' cfsd'
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
