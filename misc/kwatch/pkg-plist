@@ -1,0 +1,9 @@
+bin/kwatch
+share/doc/HTML/en/kwatch/index.html
+share/doc/HTML/en/kwatch/index-1.html
+share/doc/HTML/en/kwatch/index-2.html
+share/doc/HTML/en/kwatch/index-3.html
+share/doc/HTML/en/kwatch/logotp3.gif
+share/locale/de/LC_MESSAGES/kwatch.mo
+share/applnk/Utilities/kwatch.kdelnk
+@dirrm share/doc/HTML/en/kwatch
