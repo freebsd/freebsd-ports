@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.2
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rexx${PORTNAME}
@@ -21,10 +20,6 @@ COMMENT=	External function package providing an interface to the cURL package
 BUILD_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
-
-BROKEN=		"Build fails"
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rexx=regina
