@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- conf/server.xml.orig	Sat Aug  9 14:51:53 2003
 +++ conf/server.xml	Sat Aug  9 14:57:48 2003
 @@ -10,7 +10,7 @@

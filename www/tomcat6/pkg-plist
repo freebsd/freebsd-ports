@@ -1,19 +1,14 @@
-@exec mkdir %D/%%T%%/server || true
-@exec mkdir %D/%%T%%/server/classes || true
-@exec mkdir %D/%%T%%/server/webapps/admin/connector || true
-@exec mkdir %D/%%T%%/server/webapps/admin/defaultcontext || true
-@exec mkdir %D/%%T%%/server/webapps/admin/host || true
-@exec mkdir %D/%%T%%/server/webapps/admin/logger || true
-@exec mkdir %D/%%T%%/server/webapps/admin/realm || true
-@exec mkdir %D/%%T%%/server/webapps/admin/context || true
-@exec mkdir %D/%%T%%/server/webapps/admin/server || true
-@exec mkdir %D/%%T%%/server/webapps/admin/service || true
-@exec mkdir %D/%%T%%/server/webapps/admin/valve || true
-@exec mkdir %D/%%T%%/shared || true
-@exec mkdir %D/%%T%%/shared/classes || true
-@exec mkdir %D/%%T%%/shared/lib || true
-@exec mkdir %D/%%T%%/temp || true
-@exec mkdir %D/%%T%%/conf.orig || true
+@comment $FreeBSD$
+@unexec if cmp -s %D/%%T%%/conf/Catalina/localhost/admin.xml %D/%%T%%/conf/Catalina/localhost/admin.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/Catalina/localhost/admin.xml; else echo If permanently deleting this package, %D/%%T%%/conf/Catalina/localhost/admin.xml must be removed manually; fi
+@unexec if cmp -s %D/%%T%%/conf/Catalina/localhost/balancer.xml %D/%%T%%/conf/Catalina/localhost/balancer.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/Catalina/localhost/balancer.xml; else echo If permanently deleting this package, %D/%%T%%/conf/Catalina/localhost/balancer.xml must be removed manually; fi
+@unexec if cmp -s %D/%%T%%/conf/Catalina/localhost/manager.xml %D/%%T%%/conf/Catalina/localhost/manager.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/Catalina/localhost/manager.xml; else echo If permanently deleting this package, %D/%%T%%/conf/Catalina/localhost/manager.xml must be removed manually; fi
+@unexec if cmp -s %D/%%T%%/conf/catalina.policy %D/%%T%%/conf/catalina.policy.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/catalina.policy; else echo If permanently deleting this package, %D/%%T%%/conf/catalina.policy must be removed manually; fi
+@unexec if cmp -s %D/%%T%%/conf/catalina.properties %D/%%T%%/conf/catalina.properties.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/catalina.properties; else echo If permanently deleting this package, %D/%%T%%/conf/catalina.properties must be removed manually; fi
+@unexec if cmp -s %D/%%T%%/conf/jk2.properties %D/%%T%%/conf/jk2.properties.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/jk2.properties; else echo If permanently deleting this package, %D/%%T%%/conf/jk2.properties must be removed manually; fi
+@unexec if cmp -s %D/%%T%%/conf/server-minimal.xml %D/%%T%%/conf/server-minimal.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/server-minimal.xml; else echo If permanently deleting this package, %D/%%T%%/conf/server-minimal.xml must be removed manually; fi
+@unexec if cmp -s %D/%%T%%/conf/server.xml %D/%%T%%/conf/server.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/server.xml; else echo If permanently deleting this package, %D/%%T%%/conf/server.xml must be removed manually; fi
+@unexec if cmp -s %D/%%T%%/conf/tomcat-users.xml %D/%%T%%/conf/tomcat-users.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/tomcat-users.xml; else echo If permanently deleting this package, %D/%%T%%/conf/tomcat-users.xml must be removed manually; fi
+@unexec if cmp -s %D/%%T%%/conf/web.xml %D/%%T%%/conf/web.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/web.xml; else echo If permanently deleting this package, %D/%%T%%/conf/web.xml must be removed manually; fi
 bin/tomcat50ctl
 etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/LICENSE
@@ -28,6 +23,9 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/bin/commons-daemon.jar
 %%T%%/bin/commons-launcher.jar
 %%T%%/bin/commons-logging-api.jar
+%%T%%/bin/contrib/GNU-Linux/catalina.sh
+%%T%%/bin/contrib/README.txt
+%%T%%/bin/contrib/openVMS-alpha/TOMCAT_Setup_Java.com
 %%T%%/bin/digest.sh
 %%T%%/bin/jmx.jar
 %%T%%/bin/jsvc.tar.gz
@@ -57,16 +55,16 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/common/lib/naming-resources.jar
 %%T%%/common/lib/servlet-api.jar
 %%T%%/common/lib/tools.jar
-%%T%%/conf/Catalina/localhost/admin.xml
-%%T%%/conf/Catalina/localhost/balancer.xml
-%%T%%/conf/Catalina/localhost/manager.xml
-%%T%%/conf/catalina.policy
-%%T%%/conf/catalina.properties
-%%T%%/conf/jk2.properties
-%%T%%/conf/server-minimal.xml
-%%T%%/conf/server.xml
-%%T%%/conf/tomcat-users.xml
-%%T%%/conf/web.xml
+%%T%%/conf/Catalina/localhost/admin.xml.%%CONF_EXT%%
+%%T%%/conf/Catalina/localhost/balancer.xml.%%CONF_EXT%%
+%%T%%/conf/Catalina/localhost/manager.xml.%%CONF_EXT%%
+%%T%%/conf/catalina.policy.%%CONF_EXT%%
+%%T%%/conf/catalina.properties.%%CONF_EXT%%
+%%T%%/conf/jk2.properties.%%CONF_EXT%%
+%%T%%/conf/server-minimal.xml.%%CONF_EXT%%
+%%T%%/conf/server.xml.%%CONF_EXT%%
+%%T%%/conf/tomcat-users.xml.%%CONF_EXT%%
+%%T%%/conf/web.xml.%%CONF_EXT%%
 %%T%%/logs/stderr.log
 %%T%%/logs/stdout.log
 %%T%%/server/lib/catalina-ant.jar
@@ -833,8 +831,11 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/package-summary.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/package-tree.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/ByteArrayServletOutputStream.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/ExpressionParseTree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/ExpressionTokenizer.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/ResponseIncludeWrapper.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/SSICommand.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/SSIConditional.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/SSIConfig.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/SSIEcho.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/SSIExec.html
@@ -851,9 +852,6 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/SSIServletRequestUtil.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/SSISet.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/SSIStopProcessingException.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/ExpressionParseTree.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/ExpressionTokenizer.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/SSIConditional.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/package-frame.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/package-summary.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi/package-tree.html
@@ -1447,6 +1445,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/runtime/package-summary.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/runtime/package-tree.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/security/SecurityClassLoad.html
+%%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/security/SecurityUtil.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/security/package-frame.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/security/package-summary.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/security/package-tree.html
@@ -1749,8 +1748,22 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/webdav/tomcat.gif
 @exec mkdir %D/%%T%%/work || true
 @exec mkdir %D/%%T%%/common/classes ||true
+@exec mkdir %D/%%T%%/server/classes || true
+@exec mkdir %D/%%T%%/server/webapps/admin/connector || true
+@exec mkdir %D/%%T%%/server/webapps/admin/defaultcontext || true
+@exec mkdir %D/%%T%%/server/webapps/admin/host || true
+@exec mkdir %D/%%T%%/server/webapps/admin/logger || true
+@exec mkdir %D/%%T%%/server/webapps/admin/realm || true
+@exec mkdir %D/%%T%%/server/webapps/admin/context || true
+@exec mkdir %D/%%T%%/server/webapps/admin/server || true
+@exec mkdir %D/%%T%%/server/webapps/admin/service || true
+@exec mkdir %D/%%T%%/server/webapps/admin/valve || true
+@exec mkdir %D/%%T%%/shared || true
+@exec mkdir %D/%%T%%/shared/classes || true
+@exec mkdir %D/%%T%%/shared/lib || true
+@exec mkdir %D/%%T%%/temp || true
+@exec mkdir %D/%%T%%/webapps/balancer/images || true
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/
-@unexec rm -Rf %%T%%/conf.orig
 @dirrm %%T%%/work
 @dirrm %%T%%/webapps/webdav/WEB-INF
 @dirrm %%T%%/webapps/webdav
@@ -2006,5 +2019,8 @@ etc/rc.d/020.jakarta-tomcat50.sh
 @dirrm %%T%%/common/endorsed
 @dirrm %%T%%/common/classes
 @dirrm %%T%%/common
+@dirrm %%T%%/bin/contrib/openVMS-alpha
+@dirrm %%T%%/bin/contrib/GNU-Linux
+@dirrm %%T%%/bin/contrib
 @dirrm %%T%%/bin
 @dirrm %%T%%
