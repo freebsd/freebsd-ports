@@ -4,24 +4,51 @@ include/beep/beepctrl.h
 include/beep/configfile.h
 include/beep/dirbrowser.h
 include/beep/formatter.h
-include/beep/fullscreen.h
-include/beep/plugin.h
+include/bmp/fullscreen.h
+include/bmp/plugin.h
 include/beep/titlestring.h
 include/beep/util.h
 lib/libbeep.a
 lib/libbeep.so
 lib/libbeep.so.1
-lib/beep/Input/libcdaudio.so
-lib/beep/Input/libmpg123.so
-%%VORBISPLUGIN:%%lib/beep/Input/libvorbis.so
-lib/beep/Output/libOSS.so
-%%ESDPLUGIN:%%lib/beep/Output/libesdout.so
-lib/beep/Visualization/libbscope.so
+lib/bmp/Input/libcdaudio.so
+lib/bmp/Input/libmpg123.so
+%%VORBISPLUGIN:%%lib/bmp/Input/libvorbis.so
+lib/bmp/Output/libOSS.so
+%%ESDPLUGIN:%%lib/bmp/Output/libesdout.so
+lib/bmp/Visualization/libbscope.so
+lib/pkgconfig/beep.pc
 share/aclocal/beep.m4
-@dirrm share/beep/Skins
-@dirrm share/beep
-@dirrm lib/beep/Visualization
-@dirrm lib/beep/Output
-@dirrm lib/beep/Input
-@dirrm lib/beep
+share/bmp/Skins/Default/Avs.bmp
+share/bmp/Skins/Default/Balance.bmp
+share/bmp/Skins/Default/Eq_ex.bmp
+share/bmp/Skins/Default/Eqmain.bmp
+share/bmp/Skins/Default/Main.bmp
+share/bmp/Skins/Default/Mb.bmp
+share/bmp/Skins/Default/Monoster.bmp
+share/bmp/Skins/Default/Nums_ex.bmp
+share/bmp/Skins/Default/Pledit.bmp
+share/bmp/Skins/Default/Posbar.bmp
+share/bmp/Skins/Default/Shufrep.bmp
+share/bmp/Skins/Default/Text.bmp
+share/bmp/Skins/Default/Titlebar.bmp
+share/bmp/Skins/Default/Volume.bmp
+share/bmp/Skins/Default/cButtons.bmp
+share/bmp/Skins/Default/pLaypaus.bmp
+share/bmp/Skins/Default/pLedit.txt
+share/bmp/Skins/Default/readme.txt
+share/bmp/Skins/Default/screenshot.bmp
+share/bmp/Skins/Default/vIscolor.txt
+share/bmp/beep_logo.xpm
+share/bmp/beep.svg
+share/applications/beep.desktop
+share/locale/fr/LC_MESSAGES/bmp.mo
+@dirrm share/bmp/Skins/Default
+@dirrm share/bmp/Skins
+@dirrm share/bmp
+@dirrm lib/bmp/Visualization
+@dirrm lib/bmp/Output
+@dirrm lib/bmp/Input
+@dirrm lib/bmp
+@dirrm include/bmp
 @dirrm include/beep
