@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Spreadsheet-WriteExcel
-PORTVERSION=	0.43
+PORTVERSION=	2.03
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Spreadsheet
@@ -44,11 +44,11 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*.p[lm]"| \
 	${XARGS} ${PERL} -pi -e 's/\x0D(?=\x0A)//g'
 
-pre-configure:
-	@${MV} ${WRKSRC}/WriteExcel/doc	${WRKSRC}
-	@${MV} ${WRKSRC}/WriteExcel/examples	${WRKSRC}
-	@${PERL} -pi -e 's:WriteExcel/(doc|examples):\1:g' \
-		${WRKSRC}/MANIFEST
+.if ${PERL_LEVEL} < 500600
+post-configure:
+# dirty hack to deceive irritable pod2man
+	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
+.endif
 
 post-install:
 .ifndef(NOPORTDOCS)
