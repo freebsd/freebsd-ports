@@ -3,11 +3,11 @@ bin/background-properties
 bin/batmon_applet
 bin/battery_applet
 bin/bell-properties
+bin/cdplay_applet
 bin/charpick_applet
 bin/clockmail_applet
 bin/cpuload_applet
 bin/cpumemusage_applet
-bin/dialer_applet
 bin/diskusage_applet
 bin/drivemount_applet
 bin/fifteen_applet
@@ -26,7 +26,6 @@ bin/mixer_applet
 bin/modemlights_applet
 bin/mouse-properties
 bin/multiload_applet
-bin/netload_applet
 bin/panel
 bin/save-session
 bin/screensaver-properties-capplet
@@ -63,12 +62,11 @@ share/gnome/applets/Monitors/cpuload_applet.desktop
 share/gnome/applets/Monitors/cpumemusage_applet.desktop
 share/gnome/applets/Monitors/diskusage_applet.desktop
 share/gnome/applets/Multimedia/.directory
+share/gnome/applets/Multimedia/cdplay_applet.desktop
 share/gnome/applets/Multimedia/mixer_applet.desktop
 share/gnome/applets/Network/.directory
-share/gnome/applets/Network/dialer_applet.desktop
 share/gnome/applets/Network/mailcheck_applet.desktop
 share/gnome/applets/Network/modemlights_applet.desktop
-share/gnome/applets/Network/netload_applet.desktop
 share/gnome/applets/Network/webcontrol_applet.desktop
 share/gnome/applets/Utility/.directory
 share/gnome/applets/Utility/asclock_applet.desktop
