@@ -7,18 +7,16 @@
 #
 
 PORTNAME=	botan
-PORTVERSION=	1.2.8
-PORTREVISION=	1
+PORTVERSION=	1.4.0
+PORTREVISION=	0
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	opencl
+MASTER_SITES=	http://botan.randombit.net/files/
 DISTNAME=	Botan-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A portable, easy to use, and efficient C++ crypto library
 
-USE_REINPLACE=	yes
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.pl
@@ -32,13 +30,16 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500035
+CONFIGURE_ARGS+=	--noauto
+PLIST_SUB+=	OS_4="@comment "
+.else
+PLIST_SUB+=	OS_4=""
+.endif
+
 .if ${PERL_LEVEL} < 500601
 BUILD_DEPENDS=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 RUN_DEPENDS=	${BUILD_DEPENDS}
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g ; \
-		s,%%CFLAGS%%,${CFLAGS},g" ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.post.mk>
