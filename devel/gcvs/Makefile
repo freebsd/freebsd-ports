@@ -22,12 +22,6 @@ BUILD_DEPENDS+=	glade:${PORTSDIR}/devel/glade
 BUILD_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 RUN_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
@@ -43,5 +37,13 @@ MAN5=		cvs.5
 MAN8=		cvsbug.8
 #USE_AUTOMAKE_VER=	14
 #USE_AUTOCONF_VER=	213
+
+.include <bsd.port.pre.mk>
+
+.if exists(/usr/include/krb5.h) || exists(/usr/include/gssapi.h)
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+.endif
 
 .include <bsd.port.post.mk>
