@@ -1,10 +1,11 @@
 lib/gaim/guifications.so
-share/gnome/pixmaps/gaim/guifications/backgrounds/background_default.png
-share/gnome/pixmaps/gaim/guifications/conf/icon_size_huge.png
-share/gnome/pixmaps/gaim/guifications/conf/icon_size_large.png
-share/gnome/pixmaps/gaim/guifications/conf/icon_size_normal.png
-share/gnome/pixmaps/gaim/guifications/conf/icon_size_small.png
-share/gnome/pixmaps/gaim/guifications/conf/icon_size_tiny.png
+share/gnome/pixmaps/gaim/guifications/conf/item_icon_size_big.png
+share/gnome/pixmaps/gaim/guifications/conf/item_icon_size_huge.png
+share/gnome/pixmaps/gaim/guifications/conf/item_icon_size_large.png
+share/gnome/pixmaps/gaim/guifications/conf/item_icon_size_little.png
+share/gnome/pixmaps/gaim/guifications/conf/item_icon_size_normal.png
+share/gnome/pixmaps/gaim/guifications/conf/item_icon_size_small.png
+share/gnome/pixmaps/gaim/guifications/conf/item_icon_size_tiny.png
 share/gnome/pixmaps/gaim/guifications/conf/item_position_center.png
 share/gnome/pixmaps/gaim/guifications/conf/item_position_east.png
 share/gnome/pixmaps/gaim/guifications/conf/item_position_north.png
@@ -14,10 +15,10 @@ share/gnome/pixmaps/gaim/guifications/conf/item_position_south.png
 share/gnome/pixmaps/gaim/guifications/conf/item_position_south_east.png
 share/gnome/pixmaps/gaim/guifications/conf/item_position_south_west.png
 share/gnome/pixmaps/gaim/guifications/conf/item_position_west.png
-share/gnome/pixmaps/gaim/guifications/conf/text_clipping_ellipsis_end.png
-share/gnome/pixmaps/gaim/guifications/conf/text_clipping_ellipsis_middle.png
-share/gnome/pixmaps/gaim/guifications/conf/text_clipping_ellipsis_start.png
-share/gnome/pixmaps/gaim/guifications/conf/text_clipping_truncate.png
+share/gnome/pixmaps/gaim/guifications/conf/item_text_clipping_ellipsis_end.png
+share/gnome/pixmaps/gaim/guifications/conf/item_text_clipping_ellipsis_middle.png
+share/gnome/pixmaps/gaim/guifications/conf/item_text_clipping_ellipsis_start.png
+share/gnome/pixmaps/gaim/guifications/conf/item_text_clipping_truncate.png
 share/gnome/pixmaps/gaim/guifications/conf/window_position_north_east.png
 share/gnome/pixmaps/gaim/guifications/conf/window_position_north_west.png
 share/gnome/pixmaps/gaim/guifications/conf/window_position_south_east.png
@@ -25,6 +26,24 @@ share/gnome/pixmaps/gaim/guifications/conf/window_position_south_west.png
 share/gnome/pixmaps/gaim/guifications/conf/window_zoom_in.png
 share/gnome/pixmaps/gaim/guifications/conf/window_zoom_normal.png
 share/gnome/pixmaps/gaim/guifications/conf/window_zoom_out.png
+share/gnome/pixmaps/gaim/guifications/themes/Penguins/penguin.png
+share/gnome/pixmaps/gaim/guifications/themes/Penguins/theme.xml
+share/gnome/pixmaps/gaim/guifications/themes/default/background.png
+share/gnome/pixmaps/gaim/guifications/themes/default/theme.xml
+share/gnome/pixmaps/gaim/guifications/themes/mini/background.png
+share/gnome/pixmaps/gaim/guifications/themes/mini/theme.xml
+%%NLS%%share/locale/de/LC_MESSAGES/guifications.mo
+%%NLS%%share/locale/en_AU/LC_MESSAGES/guifications.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/guifications.mo
+%%NLS%%share/locale/es/LC_MESSAGES/guifications.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/guifications.mo
+%%NLS%%share/locale/he/LC_MESSAGES/guifications.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/guifications.mo
+%%NLS%%share/locale/no/LC_MESSAGES/guifications.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/guifications.mo
+@dirrm share/gnome/pixmaps/gaim/guifications/themes/mini
+@dirrm share/gnome/pixmaps/gaim/guifications/themes/default
+@dirrm share/gnome/pixmaps/gaim/guifications/themes/Penguins
+@dirrm share/gnome/pixmaps/gaim/guifications/themes
 @dirrm share/gnome/pixmaps/gaim/guifications/conf
-@dirrm share/gnome/pixmaps/gaim/guifications/backgrounds
 @dirrm share/gnome/pixmaps/gaim/guifications
