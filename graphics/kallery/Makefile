@@ -17,6 +17,8 @@ COMMENT=	An image gallery generator for KDE
 
 LIB_DEPENDS=	Magick.6:${PORTSDIR}/graphics/ImageMagick
 
+BROKEN=		Checksum mismatch
+
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
