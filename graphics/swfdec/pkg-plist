@@ -1,10 +1,10 @@
 bin/swf_play
 include/swfdec/swf.h
 include/swfdec/swfdec.h
-@dirrm include/swfdec
 lib/gtk-2.0/2.2.0/loaders/swf_loader.a
 lib/gtk-2.0/2.2.0/loaders/swf_loader.so
 lib/libswfdec.a
 lib/libswfdec.so
 lib/libswfdec.so.0
-lib/pkgconfig/swfdec.pc
+libdata/pkgconfig/swfdec.pc
+@dirrm include/swfdec
