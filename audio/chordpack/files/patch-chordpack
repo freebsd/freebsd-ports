@@ -1,0 +1,11 @@
+--- chordpack.orig	Sun Jul  8 01:09:29 2001
++++ chordpack	Sun Jul  8 01:09:32 2001
+@@ -1590,7 +1590,7 @@
+ 
+         # {{{  Comment (programmer's kind of)
+         if (/^\x23/) {    # \x23 is  hash
+-            next LINE; }
++            next; }
+         # }}}
+         # {{{  Chord instructions
+         if (/\[[^:]/) {

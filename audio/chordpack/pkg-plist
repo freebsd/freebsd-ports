@@ -1,0 +1,4 @@
+bin/chordpack
+share/emacs/site-lisp/chordpro-mode.el
+%%PORTDOCS%%share/doc/chordpack/chordpack-documentation.html
+%%PORTDOCS%%@dirrm share/doc/chordpack
