@@ -7,7 +7,7 @@
 
 PORTNAME=	lpe
 PORTVERSION=	1.2.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.sasknow.com/pub/ \
 		ftp://ftp.twu.net/users/cdsmith/lpe/
@@ -27,6 +27,6 @@ CONFIGURE_ENV=	LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
 CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include
 
 MAN1=		lpe.1
-MANLANG=	bg cs de es fr pl ru
+MANLANG=	"" bg cs de es fr pl ru
 
 .include <bsd.port.mk>
