@@ -3,11 +3,11 @@
 # Date created:        4 September 1998
 # Whom:                KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/09/15 11:13:31 asami Exp $
+# $Id: Makefile,v 1.3 1998/09/17 00:32:54 asami Exp $
 #
 
 DISTNAME=	eyeclock-1.0
-CATEGORIES=	x11-clock
+CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.ed.kagu.sut.ac.jp/~j4397617/
 EXTRACT_SUFX=	.tgz
 

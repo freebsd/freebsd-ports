@@ -3,12 +3,12 @@
 # Date created:        December 05 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1997/12/13 07:01:38 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/07 22:28:03 asami Exp $
 #
 
 DISTNAME=	mlclock
 PKGNAME=	mlclock-1.0
-CATEGORIES=	x11-clock
+CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.bioele.nuee.nagoya-u.ac.jp/member/tak/
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp

@@ -4,12 +4,12 @@
 # Date created:			  24th Feburary 1997
 # Whom:				  obrien@NUXI.com
 #
-# $Id: Makefile,v 1.2 1998/08/05 09:31:47 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/07 22:28:03 asami Exp $
 #
 
 PKGNAME=	rclock-2.20
 DISTNAME=	rxvt-2.20
-CATEGORIES=	x11-clock
+CATEGORIES=	x11-clocks
 MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
 		ftp://ftp.nuclecu.unam.mx/linux/local/rxvt/  \
 		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin.X11/

@@ -3,11 +3,11 @@
 # Date created:				10th February 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.8 1998/08/07 22:28:05 asami Exp $
+# $Id: Makefile,v 1.9 1998/09/21 01:39:11 steve Exp $
 #
 
 DISTNAME=	xdaliclock-2.11
-CATEGORIES=	x11-clock
+CATEGORIES=	x11-clocks
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
