@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.4rc3
+PORTVERSION=	1.5rc2
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi
