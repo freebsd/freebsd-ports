@@ -7,7 +7,7 @@
 
 PORTNAME=	posadis
 PORTVERSION=	0.60.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,15 +15,25 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sergei@kolobov.com
 COMMENT=	"Domain Name Server (DNS) implementation"
 
-LIB_DEPENDS=	poslib.0:${PORTSDIR}/devel/poslib
+LIB_DEPENDS=	poslib.0:${PORTSDIR}/devel/poslib \
+		ltdl.4:${PORTSDIR}/devel/libltdl
+
+.if defined(WITH_FAM) || exists(${LOCALBASE}/lib/libfam.so)
+CONFIGURE_ARGS=	--enable-fam
+BUILD_DEPENDS=	${LOCALBASE}/include/fam.h:${PORTSDIR}/devel/fam
+RUN_DEPENDS=	${LOCALBASE}/bin/fam:${PORTSDIR}/devel/fam
+PLIST_SUB=	FAM=""
+.else
+CONFIGURE_ARGS=	--disable-fam
+PLIST_SUB=	FAM="@comment "
+.endif
 
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--disable-ltdl-install
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
-PLIST_SUB=	VERSION="${PORTVERSION}"
+PLIST_SUB+=	VERSION="${PORTVERSION}"
 
 MAN1=		getzone.1 posadis.1 posadis-getroots.1 posask.1 poshost.1
 MAN5=		posadisrc.5
