@@ -1,0 +1,11 @@
+--- Makefile.in	Wed Mar  1 06:44:52 2000
++++ Makefile.in.new	Thu Jun 29 22:35:07 2000
+@@ -96,7 +96,7 @@
+ # Allow the user to specify the install program.
+ INSTALL=@INSTALL@
+ INSTALL_PROGRAM=@INSTALL_PROGRAM@
+-INSTALL_SCRIPT=@INSTALL_PROGRAM@
++INSTALL_SCRIPT=@INSTALL_SCRIPT@
+ INSTALL_DATA=@INSTALL_DATA@
+ INSTALL_CMD=@INSTALL_CMD@  # used by installed oo2c
+ 

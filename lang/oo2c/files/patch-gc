@@ -1,0 +1,31 @@
+--- gc/Makefile.orig	Fri Mar 26 00:41:43 1999
++++ gc/Makefile	Fri Dec 17 11:49:52 1999
+@@ -255,4 +255,9 @@
+ 	ln liblinuxgc.so libgc.so
+ 
++# FreeBSD shared library version of the collector
++libfreebsdgc.so: $(OBJS) dyn_load.o
++	ld -shared $(ABI_FLAG) -o libfreebsdgc.so $(OBJS) dyn_load.o -lc
++	ln libfreebsdgc.so libgc.so
++
+ # Alternative Linux rule.  This is preferable, but is likely to break the
+ # Makefile for some non-linux platforms.
+@@ -331,4 +336,12 @@
+ 	-rm -f *~
+ 
++copy:
++	cat gc.man | gzip > gc.l.gz
++	cp -p gc.a	/usr/local/lib/libgc.a
++	cp -p libgc.so	/usr/local/lib/libgc.so.0
++	cp -p gc.h	/usr/local/include
++	cp -p gc.l.gz	/usr/local/man/manl
++	ln -s libgc.so.0 /usr/local/lib/libgc.so
++
+ gctest: test.o gc.a if_mach if_not_there
+ 	rm -f gctest
+@@ -417,2 +430,5 @@
+ 		cp tmp $$file; \
+ 		done
++
++install: all test libfreebsdgc.so copy
++

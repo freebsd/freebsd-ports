@@ -1,0 +1,8 @@
+--- src/frontend/Scanner.Mod.orig	Tue Oct 19 20:41:03 1999
++++ src/frontend/Scanner.Mod	Wed Oct 27 00:36:47 1999
+@@ -1335,4 +1335,5 @@
+       kwStr[i, 0, 0] := 0X; kwStr[i, 1, 0] := 0X
+     END;
++    KW ("AND", and);
+     KW ("ARRAY", array); KW ("BEGIN", begin); KW ("BY", by); KW ("CASE", case);
+     KW ("CONST", const); KW ("DIV", div); KW ("DO", do); KW ("ELSE", else);
