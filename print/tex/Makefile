@@ -9,8 +9,10 @@ PORTNAME=	tex
 PORTVERSION=	3.14159
 PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=   ${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=	systems/web2c
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	mikeh
+#${MASTER_SITE_TEX_CTAN} XXX distfiles disappeared/moved?
+#MASTER_SITE_SUBDIR=	systems/web2c
 DISTNAME=	web2c-7.2
 DISTFILES=	web2c-7.2b.tar.gz web-7.2a.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz modes.mf
@@ -19,8 +21,6 @@ EXTRACT_ONLY=	web2c-7.2b.tar.gz web-7.2a.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	TeX and METAFONT
-
-BROKEN=		Does not fetch
 
 DIST_SUBDIR=	tex
 
