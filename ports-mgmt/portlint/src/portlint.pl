@@ -99,16 +99,16 @@ sub version {
 }
 
 
-getopts('abchtvB:M:NV');
+getopts('AabchtvB:M:NV');
 
 &usage if $opt_h;
 &version if $opt_V;
-$extrafile = 1 if $opt_a;
-$parenwarn = 1 if $opt_b;
-$committer = 1 if $opt_c;
+$extrafile = 1 if $opt_a || $opt_A;
+$parenwarn = 1 if $opt_b || $opt_A;
+$committer = 1 if $opt_c || $opt_A;
 $verbose = 1 if $opt_v;
-$newport = 1 if $opt_N;
-$usetabs = 1 if $opt_t;
+$newport = 1 if $opt_N || $opt_A;
+$usetabs = 1 if $opt_t || $opt_A;
 $contblank = $opt_B if $opt_B;
 $makeenv = $opt_M;
 
