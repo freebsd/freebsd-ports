@@ -7,15 +7,21 @@
 
 PORTNAME=	wget
 PORTVERSION=	1.8.2
-PORTREVISION=	2
-CATEGORIES=	ftp www
+PORTREVISION=	3
+CATEGORIES=	ftp www ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	wget
+
+PATCH_SITES=	${MASTER_SITE_DEBIAN}
+PATCH_SITE_SUBDIR=	pool/main/w/wget
+PATCHFILES=	wget_${PORTVERSION}-9.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sf@FreeBSD.org
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
+USE_REINPLACE=	yes
 USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -34,6 +40,9 @@ post-patch:
 	${RM} -f ${WRKSRC}/doc/wget.info*
 # we don't need to run autoconf.
 	${TOUCH} ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's,/etc/wgetrc,${PREFIX}/etc/wgetrc,' \
+			 -e 's,@file{},@file{${PREFIX}},' \
+		${WRKSRC}/doc/sample.wgetrc* ${WRKSRC}/doc/wget.texi
 
 post-install:
 	install-info ${PREFIX}/info/wget.info ${PREFIX}/info/dir
