@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.18 1997/11/08 20:34:51 jraynard Exp $
+# $Id: Makefile,v 1.19 1997/11/13 12:34:54 tg Exp $
 #
 
     SUBDIR += aftp
@@ -8,6 +8,7 @@
     SUBDIR += cpmtools
     SUBDIR += fmsx
     SUBDIR += hfs
+    SUBDIR += hfsutils
     SUBDIR += ines
     SUBDIR += linux_lib
     SUBDIR += macutils
