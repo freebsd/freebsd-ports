@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_proxy_html
-PORTVERSION=	2.2
+PORTVERSION=	2.4.3
 CATEGORIES=	www
 MASTER_SITES=	http://apache.webthing.com/${PORTNAME}/
 DISTNAME=	${PORTNAME}
@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.c
 
 MAINTAINER=	dsl@webize.com.au
 COMMENT=	Apache module for rewriting HTML links in proxied content
-
-BROKEN=		Size mismatch
 
 USE_GNOME=	libxml2
 USE_APACHE=	yes
