@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	im-ja
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	japanese x11-toolkits
 MASTER_SITES=	http://im-ja.sourceforge.net/
 
@@ -21,7 +20,7 @@ OPTIONS+=	WNN	"Use FreeWnn" on
 USE_PERL5_BUILD=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_GNOME=	gnomeprefix gnomehack gnomepanel lthack
 GNU_CONFIGURE=	yes
 
