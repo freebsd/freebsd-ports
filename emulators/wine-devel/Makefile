@@ -3,7 +3,7 @@
 # Date created:         Sa   9 Nov 1996 00:52:22 MET
 # Whom:			se
 #
-# $Id: Makefile,v 1.68 1999/02/01 23:28:01 se Exp $
+# $Id: Makefile,v 1.69 1999/02/20 00:08:36 se Exp $
 #
 
 DATE=		990214
@@ -20,6 +20,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 WRKSRC=		${WRKDIR}/wine-${DATE}
 GNU_CONFIGURE=	yes
 MAN1=		wine.1
+ONLY_FOR_ARCHS=	i386
 
 pre-configure:
 	@${ECHO} "WINE_INI_GLOBAL \"${PREFIX}/etc/wine.conf\"" \
