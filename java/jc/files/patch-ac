@@ -1,0 +1,13 @@
+--- jc-1.0.1/libjc/libjc.h.orig	Wed Mar 17 16:25:39 2004
++++ jc-1.0.1/libjc/libjc.h	Wed Mar 17 16:25:58 2004
+@@ -10,6 +10,10 @@
+ 
+ #include "config.h"
+ 
++/* FreeBSD hack */
++#define __XSI_VISIBLE           600
++#define __BSD_VISIBLE           1
++
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/mman.h>
