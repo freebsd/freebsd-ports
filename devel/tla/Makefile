@@ -16,9 +16,9 @@ MASTER_SITE_SUBDIR=	gnu-arch
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	The original arch source control management CLI written in C
 
-RUN_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
+BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
 		gdiff:${PORTSDIR}/textproc/diffutils
-BUILD_DEPENDS=	gdiff:${PORTSDIR}/textproc/diffutils
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
