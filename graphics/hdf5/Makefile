@@ -3,19 +3,17 @@
 # Date created:		17 November 1996
 # Whom:			mi
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/03 12:10:42 tg Exp $
+# $Id: Makefile,v 1.2 1998/04/01 02:04:04 asami Exp $
 #
 
 DISTNAME=	HDF4.1r1
 PKGNAME=	hdf-4.1r1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/HDF/HDF_Current/tar/
+MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/HDF/HDF4.1r1/tar/
 
 MAINTAINER=	mi@aldan.ziplink.net
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
-
-BROKEN=		build
 
 GNU_CONFIGURE=	yes
 MAKE_FLAGS=	CC="$(CC)" -f
