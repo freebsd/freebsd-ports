@@ -281,7 +281,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/Components/cPickle/copy_reg.pyc
 %%ZOPEBASEDIR%%/lib/Components/cPickle/release.fl
 %%ZOPEBASEDIR%%/lib/Components/cPickle/release.sh
-%%ZOPEBASEDIR%%/lib/Components/initgroups/initgroups.c
 %%ZOPEBASEDIR%%/lib/Components/zlib/Setup
 %%ZOPEBASEDIR%%/lib/Components/zlib/adler32.c
 %%ZOPEBASEDIR%%/lib/Components/zlib/compress.c
@@ -385,6 +384,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/private_module/submodule/__init__.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/public_module/__init__.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/public_module/submodule/__init__.py
+%%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testClassSecurityInfo.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testDeprecatedAPI.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testModuleSecurity.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testPasswordDigest.py
@@ -526,6 +526,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/BTrees/SetTemplate.c
 %%ZOPEBASEDIR%%/lib/python/BTrees/Setup
 %%ZOPEBASEDIR%%/lib/python/BTrees/TreeSetTemplate.c
+%%ZOPEBASEDIR%%/lib/python/BTrees/_fsBTree.c
+%%ZOPEBASEDIR%%/lib/python/BTrees/_fsBTree.so
 %%ZOPEBASEDIR%%/lib/python/BTrees/_IIBTree.c
 %%ZOPEBASEDIR%%/lib/python/BTrees/_IIBTree.so
 %%ZOPEBASEDIR%%/lib/python/BTrees/_IOBTree.c
@@ -831,11 +833,11 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/help/External-Method_Try-It.stx
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/help/ExternalMethod.py
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/help/ExternalMethod.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/tests/Extensions/Test.py
+%%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/tests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/tests/testExternalMethod.py
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/www/function.gif
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2002-03-01/README.txt
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2002-03-01/__init__.py
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2002-03-01/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/MIMETag.py
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/MIMETag.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/README.txt
@@ -2070,6 +2072,10 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/ZODB/coptimizations.so
 %%ZOPEBASEDIR%%/lib/python/ZODB/dbmStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/dbmStorage.pyc
+%%ZOPEBASEDIR%%/lib/python/ZODB/fsIndex.py
+%%ZOPEBASEDIR%%/lib/python/ZODB/fsIndex.pyc
+%%ZOPEBASEDIR%%/lib/python/ZODB/fsdump.py
+%%ZOPEBASEDIR%%/lib/python/ZODB/fsdump.pyc
 %%ZOPEBASEDIR%%/lib/python/ZODB/fsrecover.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/fsrecover.pyc
 %%ZOPEBASEDIR%%/lib/python/ZODB/lock_file.py
@@ -2085,8 +2091,10 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/IteratorStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/LocalStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/MinPO.py
+%%ZOPEBASEDIR%%/lib/python/ZODB/tests/MTStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/PackableStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/PersistentStorage.py
+%%ZOPEBASEDIR%%/lib/python/ZODB/tests/ReadOnlyStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/RevisionStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/StorageTestBase.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/Synchronization.py
@@ -2095,13 +2103,16 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/VersionStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/speed.py
+%%ZOPEBASEDIR%%/lib/python/ZODB/tests/testCache.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/testDemoStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/testFileStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/testMappingStorage.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/testPersistentMapping.py
+%%ZOPEBASEDIR%%/lib/python/ZODB/tests/testTimeStamp.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/testTransaction.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/testUtils.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/tests/testZODB.py
+%%ZOPEBASEDIR%%/lib/python/ZODB/tests/testfsIndex.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/utils.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/utils.pyc
 %%ZOPEBASEDIR%%/lib/python/ZODB/winlock.c
@@ -2140,6 +2151,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/maybe_lock.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testHTTPRangeSupport.py
+%%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testHTTPRequest.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/xmlrpc.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/xmlrpc.pyc
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/Batch.py
@@ -2166,7 +2178,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/config.c
 %%ZOPEBASEDIR%%/lib/python/dcdb.py
 %%ZOPEBASEDIR%%/lib/python/dcdb.pyc
-%%ZOPEBASEDIR%%/lib/python/initgroups.so
 %%ZOPEBASEDIR%%/lib/python/intSet.so
 %%ZOPEBASEDIR%%/lib/python/sedscript
 %%ZOPEBASEDIR%%/lib/python/tempfile.py
@@ -2447,8 +2458,9 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MIMETools
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2002-03-01
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/www
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/tests/Extensions
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/help
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod
@@ -2487,7 +2499,6 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/AccessControl
 @dirrm %%ZOPEBASEDIR%%/lib/python
 @dirrm %%ZOPEBASEDIR%%/lib/Components/zlib
-@dirrm %%ZOPEBASEDIR%%/lib/Components/initgroups
 @dirrm %%ZOPEBASEDIR%%/lib/Components/cPickle
 @dirrm %%ZOPEBASEDIR%%/lib/Components/ExtensionClass/test/output
 @dirrm %%ZOPEBASEDIR%%/lib/Components/ExtensionClass/test
