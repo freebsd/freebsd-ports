@@ -262,6 +262,7 @@
     SUBDIR += libol
     SUBDIR += libole2
     SUBDIR += liboop
+    SUBDIR += libredblack
     SUBDIR += libshhmsg
     SUBDIR += libshhopt
     SUBDIR += libsigc++
