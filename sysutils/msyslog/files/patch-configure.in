@@ -1,5 +1,5 @@
---- configure.in.orig	Tue May  1 04:25:49 2001
-+++ configure.in	Mon May 14 00:23:17 2001
+--- configure.in.orig	Wed May 30 02:08:44 2001
++++ configure.in	Sun Jun  3 19:50:11 2001
 @@ -57,7 +57,7 @@
  AC_DEFINE_UNQUOTED(MSYSLOG_VERSION_STR, "$MSYSLOG_VERSION")dnl
  echo msyslog version... $MSYSLOG_VERSION
@@ -24,15 +24,16 @@
  AC_CHECK_LIB(socket, connect, SYSLOGD_LIBS="$SYSLOGD_LIBS -lsocket")dnl
  AC_CHECK_LIB(nsl, gethostbyname, SYSLOGD_LIBS="$SYSLOGD_LIBS -lnsl")dnl
  AC_DEFINE(SYSLOGD_LIBS, $SYSLOGD_LIBS)dnl
-@@ -155,6 +155,11 @@
+@@ -153,6 +153,12 @@
  	AC_DEFINE_UNQUOTED(SYMBOL_PREFIX, "_")dnl
  	SHARED_PARAMS="-Bshareable"
  	DCCFLAGS="-fPIC"
 +elif test "$UNAME" = "FreeBSD" ; then
 +	AC_DEFINE(DLOPEN_FLAGS, RTLD_LAZY)dnl
++	AC_DEFINE_UNQUOTED(SYMBOL_PREFIX, "")dnl
 +	SHARED_PARAMS="-Bshareable"
 +	DCCFLAGS="-fPIC"
 +	SYSLOGD_LIBS="$SYSLOGD_LIBS -Wl,-E"
  elif test "$UNAME" = "Linux" ; then
  	AC_DEFINE(DLOPEN_FLAGS, RTLD_LAZY | RTLD_GLOBAL)dnl
- 	MAIN_CPPFLAGS="-Xlinker -E";
+ 	AC_DEFINE_UNQUOTED(SYMBOL_PREFIX, "")dnl
