@@ -3,7 +3,7 @@
 # Date created:		03-Sep-1997
 # Whom:	      		Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.14 1998/07/10 09:11:59 rse Exp $
+# $Id: Makefile,v 1.15 1998/08/02 14:55:26 rse Exp $
 #
 
 DISTNAME=	eperl-2.2.14
@@ -20,7 +20,7 @@ MAINTAINER=	rse@engelschall.com
 USE_PERL5=	YES
 
 MAN3=		Parse::ePerl.3 Apache::ePerl.3
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
 	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
