@@ -1,8 +1,15 @@
 This code was originaly from FreeBSD and then the Linux folks greatly
-enhanced its functionality and capabilities.  It tftp's the kernel 
-and boots it.  It also has a menu capability.
+enhanced its functionality and capabilities. It produces ROM-able
+code to boot ELF/aout kernels over NFS or TFTP. It also includes
+boot loaders to load the ROM images from raw floppy or hard disks,
+or DOS disks.
 
-.rom images are built in work/etherboot/src/bin32.  Edit "Config"
-in work/etherboot/src directory for more features.  To make a floppy
-image cd in work/etherboot/src and type gmake bin32/<device type>.fd0 .
-.com images are made via  gmake bin32/<device type>.com .
+There are different ROM images for different network cards
+(many are supported). They are built in work/etherboot/src/bin32.
+
+Edit "Config" in work/etherboot/src directory for more features,
+default is to boot ELF kernels over NFS.
+
+To make a floppy image do
+	cd work/etherboot/src ; gmake bin32/<device.fd0
+.COM images are made via  gmake bin32/<device type>.com .
