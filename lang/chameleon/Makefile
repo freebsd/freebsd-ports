@@ -6,7 +6,7 @@
 
 PORTNAME=	chameleon
 PORTVERSION=	03.08
-CATEGORIES=	lang
+CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.comp.nus.edu.sg/~sulzmann/chameleon/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/}
 
