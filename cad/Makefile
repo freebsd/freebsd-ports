@@ -16,6 +16,7 @@
     SUBDIR += gnucap
     SUBDIR += gschem
     SUBDIR += gtkwave
+    SUBDIR += gwave
     SUBDIR += irsim
     SUBDIR += iverilog
     SUBDIR += kaskade
