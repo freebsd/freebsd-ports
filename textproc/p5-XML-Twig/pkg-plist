@@ -1,6 +1,8 @@
 bin/xml_grep
+bin/xml_merge
 bin/xml_pp
 bin/xml_spellcheck
+bin/xml_split
 %%SITE_PERL%%/XML/Twig.pm
 %%SITE_PERL%%/XML/Twig/XPath.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Twig/.packlist
