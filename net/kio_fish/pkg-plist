@@ -1,5 +1,0 @@
-share/services/fish.protocol
-share/doc/HTML/en/fish/fish.docbook
-lib/kde2/kio_fish.so
-lib/kde2/kio_fish.la
-@dirrm share/doc/HTML/en/fish
