@@ -407,7 +407,6 @@
     SUBDIR += opendchub
     SUBDIR += opengk
     SUBDIR += openh323
-    SUBDIR += openh323proxy
     SUBDIR += openldap12
     SUBDIR += openldap20
     SUBDIR += openldap21
