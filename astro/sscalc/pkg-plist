@@ -1,4 +1,4 @@
 bin/sscalc
-share/doc/sscalc/cities.txt
-share/doc/sscalc/README
-@dirrm share/doc/sscalc
+%%PORTDOCS%%%%DOCSDIR%%/cities.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
