@@ -190,6 +190,7 @@
     SUBDIR += pythoong
     SUBDIR += q3server
     SUBDIR += q3server-excessive
+    SUBDIR += q3server-freezetag
     SUBDIR += q3server-ra3
     SUBDIR += qcc
     SUBDIR += qix
