@@ -4320,6 +4320,7 @@ mmix		ports/lang/mmix
 mmosaic		ports/www/mmosaic
 mmr		ports/mail/mmr
 mmsclient	ports/graphics/mmsclient
+mmtk		ports/science/mmtk
 mmucl		ports/net/mmucl
 mmv		ports/misc/mmv
 mnogosearch	ports/www/mnogosearch
