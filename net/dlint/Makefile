@@ -10,7 +10,7 @@ PORTNAME=	dlint
 PORTVERSION=	1.3.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.domtools.com/pub/
-DISTFILES=	dlint-${PORTVERSION}
+DISTNAME=	dlint${PORTVERSION}
 
 MAINTAINER=	obrien@FreeBSD.org
 
