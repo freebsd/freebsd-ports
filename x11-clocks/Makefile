@@ -13,6 +13,7 @@
     SUBDIR += eyeclock
     SUBDIR += gdesklets-clock
     SUBDIR += gdesklets-countdown
+    SUBDIR += gdesklets-ebichuclock
     SUBDIR += gdesklets-praytime
     SUBDIR += glclock
     SUBDIR += kdetoys3
