@@ -6,7 +6,7 @@ include/varconf-1.0/varconf/dynvar.h
 include/varconf-1.0/varconf/parse_error.h
 include/varconf-1.0/varconf/varconf.h
 include/varconf-1.0/varconf/variable.h
-lib/libvarconf-1.0.la
+lib/libvarconf-1.0.a
 lib/libvarconf-1.0.so
 lib/libvarconf-1.0.so.2
 libdata/pkgconfig/varconf-1.0.pc
@@ -18,3 +18,4 @@ libdata/pkgconfig/varconf-1.0.pc
 @dirrm include/varconf-1.0/varconf
 @dirrm include/varconf-1.0
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
