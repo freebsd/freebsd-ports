@@ -21,8 +21,8 @@ rm -f $F
 
 # Tk detection
 tkversion=
-for v in 0 1 2 3 4; do
-  if `ls /usr/local/lib/libtk4.$v.so* >/dev/null 2>&1`; then
+for v in 1 2 3 4; do
+  if [ -f /usr/local/lib/libtk4$v.a ]; then
     tkversion=$v
   fi
 done
@@ -31,7 +31,7 @@ if [ X$tkversion != X ]; then
   echo "#define HasTk			YES" >>$F
   echo "#define TkLibDir		/usr/local/lib" >>$F
   echo "#define TkIncDir		/usr/local/include" >>$F
-  echo "#define TkLibName		tk4.$tkversion" >>$F
+  echo "#define TkLibName		tk4$tkversion" >>$F
   echo "#define HasTcl			YES" >>$F
   echo "#define TclLibDir		/usr/lib" >>$F
   echo "#define TclIncDir		/usr/include" >>$F
@@ -164,8 +164,8 @@ if [ $answ = YES ]; then
 
     if [ -f $WH ] ; then
 	echo "==> $WH found in source distribution."
-    elif [ -f $X11FIXES/Wraphelp.c ] ; then
-	echo "==> Wraphelp.c found in fix directory, copying to source tree."
+    elif [ -f $DISTDIR/Wraphelp.c ] ; then
+	echo "==> Wraphelp.c found in DISTDIR directory, copying to source tree."
 	cpwh=$X11FIXES/Wraphelp.c
     elif [ -f $FILESDIR/Wraphelp.c ] ; then
 	echo "==> Wraphelp.c found in files directory, copying to source tree."
