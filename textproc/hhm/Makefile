@@ -7,12 +7,15 @@
 
 PORTNAME=	hhm
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://bonedaddy.net/pabs3/hhm/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	HTML Help Maker
+
+LIB_DEPENDS=	lzxcomp.1:${PORTSDIR}/archivers/liblzxcomp
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
