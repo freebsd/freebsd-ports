@@ -1,0 +1,7 @@
+A little tool that will display dBase III files.  You can also use
+it to convert your old .dbf files for further use with Unix. It should
+also work with dBase IV files, but this is mostly untested.
+
+dbview displays the contents of a dBase III or IV database file.  This is
+done by displaying both the name of the field itself and its value.  At
+the end of every record a newline is appended.

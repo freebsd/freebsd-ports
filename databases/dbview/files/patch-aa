@@ -1,0 +1,57 @@
+--- Makefile	Fri Sep 27 00:05:30 1996
++++ /home/andy/tmp/wrk/Makefile	Fri May  7 09:48:58 1999
+@@ -18,8 +18,8 @@
+ 
+ MAN=man
+ 
+-CC= gcc
+-CFLAGS= -O6 -fomit-frame-pointer -Wall -pipe
++#CC= gcc
++#CFLAGS= -O6 -fomit-frame-pointer -Wall -pipe
+ # CFLAGS= -g -fomit-frame-pointer -Wall -pipe
+ 
+ # Look where your install program is
+@@ -32,15 +32,15 @@
+ obj = db_dump.o dbview.o version.o
+ 
+ .c.o:
+-	$(CC) ${CFLAGS} -c $*.c
++	$(CC) ${CFLAGS} -I$(LOCALBASE)/include -c $*.c
+ 
+ all:	dbview
+ 
+ dbview: $(obj)
+-	$(CC) $(CFLAGS) -o dbview $(obj)
++	$(CC) $(CFLAGS) -o dbview $(obj) -L$(LOCALBASE)/lib -lgnugetopt
+ 
+ depend:
+-	makedepend *.c
++	makedepend -I$(LOCALBASE)/include *.c
+ 
+ install: all
+ 	$(INSTALL) -d -o root -g root -m 755 $(bindir)
+@@ -56,13 +56,14 @@
+ 
+ # DO NOT DELETE
+ 
+-db_dump.o: db_dump.h /usr/include/fcntl.h /usr/include/features.h
+-db_dump.o: /usr/include/sys/cdefs.h /usr/include/sys/types.h
+-db_dump.o: /usr/include/linux/types.h /usr/include/asm/types.h
+-db_dump.o: /usr/include/gnu/types.h /usr/include/linux/fcntl.h
+-db_dump.o: /usr/include/sys/stat.h /usr/include/linux/stat.h
+-db_dump.o: /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h
+-db_dump.o: /usr/include/unistd.h /usr/include/posix_opt.h
+-db_dump.o: /usr/include/confname.h /usr/include/malloc.h
+-dbview.o: version.h db_dump.h /usr/include/stdio.h /usr/include/libio.h
+-dbview.o: /usr/include/_G_config.h /usr/include/getopt.h
++db_dump.o: db_dump.h /usr/include/fcntl.h /usr/include/sys/types.h
++db_dump.o: /usr/include/sys/cdefs.h /usr/include/sys/inttypes.h
++db_dump.o: /usr/include/machine/ansi.h /usr/include/machine/types.h
++db_dump.o: /usr/include/machine/endian.h /usr/include/sys/stat.h
++db_dump.o: /usr/include/sys/time.h /usr/include/time.h
++db_dump.o: /usr/include/sys/_posix.h /usr/include/stdio.h
++db_dump.o: /usr/include/unistd.h /usr/include/sys/unistd.h
++db_dump.o: /usr/include/malloc.h /usr/include/stdlib.h /usr/include/ctype.h
++db_dump.o: /usr/include/runetype.h /usr/include/string.h
++dbview.o: version.h db_dump.h /usr/include/stdio.h /usr/include/sys/cdefs.h
++dbview.o: /usr/include/machine/ansi.h /usr/local/include/getopt.h
