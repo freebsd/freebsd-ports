@@ -39,6 +39,8 @@ WRKSRC=		${WRKDIR}/cc65-${PORTVERSION}
 DEVNULL=	${__empty_string_for_portlint}/dev/null
 
 # These doc files can be compiled using the textproc/sgmltools port
+# XXX sgmltools port was removed, perhaps something else can be
+# used instead
 DOCFILES!=	${LS} ${WRKSRC}/doc 2> ${DEVNULL} | \
 		    ${SED} -E -e 's/^/doc\//' && ${ECHO_CMD} announce.txt
 
