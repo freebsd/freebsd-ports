@@ -19,14 +19,14 @@ MAKE_ENV+=	SH=${SH} AWK=${AWK} MORDA="${MORDA}" DEFS="${DEFS}"
 DEFS+=		-DAMIGA4D
 .endif
 
-.if !defined(WITHOUT_QICO_MORDA)
+.if defined(WITH_QICO_MORDA)
 MORDA=		1
 .endif
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/qico.conf.sample ${PREFIX}/etc/
 	${INSTALL_PROGRAM} ${WRKSRC}/src/qico ${PREFIX}/libexec/
-.if !defined(WITHOUT_QICO_MORDA)
+.if defined(WITH_QICO_MORDA)
 	${INSTALL_PROGRAM} ${WRKSRC}/src/qcc ${PREFIX}/bin/
 .endif
 
