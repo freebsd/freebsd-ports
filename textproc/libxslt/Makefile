@@ -7,7 +7,7 @@
 
 PORTNAME=	libxslt
 PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
@@ -21,6 +21,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gnometarget libxml2
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 
@@ -48,6 +49,11 @@ pre-everything::
 	@${ECHO_MSG} "	WITHOUT_PYTHON=yes		Turns off python support"
 	@${ECHO_MSG} "	WITH_MEM_DEBUG=yes		Turns on memory debugging"
 	@${ECHO_MSG} ""
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|[$$](bindir)/xsltproc|../xsltproc/xsltproc|g ; \
+		s|[$$](bindir)/xmllint|../xmllint/xmllint|g' \
+		${WRKSRC}/doc/Makefile.in
 
 .if !defined(WITHOUT_PYTHON)
 post-install:
