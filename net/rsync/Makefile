@@ -47,9 +47,11 @@ MAN5=		rsyncd.conf.5
 pre-configure:
 	@${REINPLACE_CMD} -e 's:/etc/:${PREFIX}/etc/:g'  \
 		${WRKSRC}/rsync.h ${WRKSRC}/rsync.1 ${WRKSRC}/rsyncd.conf.5
+	@${RM} ${WRKSRC}/rsync.h.bak
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
 		${WRKSRC}/rsync.h ${WRKSRC}/zlib/zutil.h
 .if defined(WITH_SSH)
+	@${RM} ${WRKSRC}/rsync.h.bak
 	@${REINPLACE_CMD} -e 's/"rsh"/"ssh"/g' ${WRKSRC}/rsync.h
 .endif
 
