@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Powerful IMAP/Maildir synchronization and reader support
 
-BROKEN=		Unfetchable
-
 .if !defined(WITHOUT_X11)
 RUN_DEPENDS=	${TKINTER}:${PORTSDIR}/x11-toolkits/py-tkinter
 TKINTER=	${PYTHON_SITELIBDIR}/_tkinter.so
