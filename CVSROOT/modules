@@ -2400,6 +2400,7 @@ itk		ports/x11-toolkits/itk
 its4		ports/security/its4
 iv		ports/x11-toolkits/iv
 iverilog	ports/cad/iverilog
+ivtools		ports/graphics/ivtools
 iwidgets	ports/x11-toolkits/iwidgets
 ixj		ports/comms/ixj
 ixlib		ports/devel/ixlib
