@@ -3,7 +3,7 @@
 # Date created:         Sat Nov  5 17:11:01 PST 1994
 # Whom:                 hsu
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1994/11/06 09:59:26 hsu Exp $
 #
 
 DISTNAME=       scm
@@ -18,9 +18,9 @@ MAKE_FLAGS=	CFLAGS=-O2 LDFLAGS=-s defines="-DSICP -DHAVE_CONFIG_H -DFLOATS -DIO_
 pre-install:
 	@if [ ! -e ${PREFIX}/lib ]; then mkdir -p ${PREFIX}/lib; fi
 	cp -rp ${WRKDIR}/slib ${PREFIX}/lib
-	@if [ ! -e /usr/gnu/info ]; then mkdir -p /usr/gnu/info; fi
+	@if [ ! -e /usr/local/info ]; then mkdir -p /usr/local/info; fi
 	(cd ${WRKDIR}/slib; \
 		install -c -m 444 slib.info slib.info-1 slib.info-2 \
-					slib.info-3 slib.info-4 /usr/gnu/info)
+				  slib.info-3 slib.info-4 /usr/local/info)
 
 .include <bsd.port.mk>
