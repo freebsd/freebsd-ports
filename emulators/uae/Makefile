@@ -24,12 +24,6 @@ USE_REINPLACE=	yes
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 pre-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure.in
@@ -55,4 +49,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/amiga/uae_rcli ${DATADIR}/amiga/
 	${INSTALL_DATA} ${WRKSRC}/amiga/uaectrl ${DATADIR}/amiga/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
