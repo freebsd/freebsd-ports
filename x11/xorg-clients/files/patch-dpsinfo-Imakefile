@@ -1,0 +1,23 @@
+--- programs/dpsinfo/Imakefile.orig	Thu Mar  4 09:48:47 2004
++++ programs/dpsinfo/Imakefile	Sat May 29 16:21:20 2004
+@@ -3,7 +3,6 @@
+ 
+         DEPLIBS = $(DEPDPSLIB) $(DEPXTOOLLIB) $(DEPXONLYLIB)
+ LOCAL_LIBRARIES = $(DPSLIB) $(XTOOLLIB) $(XONLYLIB)
+-         PSWRAP = PsWrap
+ 
+ SRCS = iwraps.psw dpsinfo.c
+ 
+@@ -13,10 +12,10 @@
+ 
+ .SUFFIXES: .psw .h
+ 
+-.psw.c : ProgramTargetName($(PSWRAP))
++.psw.c : PsWrapDependency
+ 	RunProgram(PSWRAP,-a -o $*.c -h $*.h $<)
+ 
+-.psw.h : ProgramTargetName($(PSWRAP))
++.psw.h : PsWrapDependency
+ 	RunProgram(PSWRAP,-a -h $*.h $< > /dev/null)
+ 
+ depend:: $(DERIVED_FILES)

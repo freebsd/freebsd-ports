@@ -1,0 +1,15 @@
+--- programs/xinit/Imakefile.orig	Sun May 30 11:47:25 2004
++++ programs/xinit/Imakefile	Sun May 30 11:53:23 2004
+@@ -48,10 +48,12 @@
+ #endif
+ InstallManPage(startx,$(MANDIR))
+ 
++#if 0
+ #if InstallXinitConfig
+ InstallNonExecFile($(SAMPLECONFIG),$(XINITDIR))
+ #else
+ InstallNonExecFileNoClobber($(SAMPLECONFIG),$(XINITDIR))
++#endif
+ #endif
+ 
+ LinkConfDirectory(xinit,.,xinit,.)

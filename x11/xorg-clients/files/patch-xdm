@@ -1,0 +1,27 @@
+--- programs/xdm/config/Imakefile.orig	Fri Apr  2 13:47:35 2004
++++ programs/xdm/config/Imakefile	Sun May 30 11:55:14 2004
+@@ -5,7 +5,7 @@
+ 
+ XCOMM $XFree86: xc/programs/xdm/config/Imakefile,v 1.14 2003/12/30 22:09:14 herrb Exp $
+ 
+-SERVERSTYPE = XdmServersType
++SERVERSTYPE = ws
+ 
+ all:: Xservers.ws xdm-config Xservers Xresources
+ 
+@@ -46,6 +46,7 @@
+ 
+ LinkFile(Xservers,Xservers.$(SERVERSTYPE))
+ 
++#if 0
+ #if InstallXdmConfig
+ InstallNonExecFile(xdm-config,$(XDMDIR))
+ InstallNonExecFile(Xresources,$(XDMDIR))
+@@ -66,6 +67,7 @@
+ InstallNamedProgNoClobber(TakeConsole,TakeConsole,$(XDMDIR))
+ InstallNamedProgNoClobber(Xsetup_0,Xsetup_0,$(XDMDIR))
+ InstallNamedProgNoClobber(Xwilling,Xwilling,$(XDMDIR))
++#endif
+ #endif
+ 
+ #if InstallXdmConfig

@@ -1,0 +1,23 @@
+--- programs/texteroids/Imakefile.orig	Mon Sep  2 13:23:43 2002
++++ programs/texteroids/Imakefile	Mon Sep  2 13:27:13 2002
+@@ -3,7 +3,6 @@
+         DEPLIBS = $(DEPDPSLIB) $(DEPXTOOLLIB) $(DEPXLIB)
+ LOCAL_LIBRARIES = $(XTOOLLIB) $(DPSLIB) $(XLIB)
+   SYS_LIBRARIES = MathLibrary
+-         PSWRAP = PsWrap
+ 
+ SRCS = twraps.psw texteroids.c
+ 
+@@ -13,10 +12,10 @@
+ 
+ .SUFFIXES: .psw .h
+ 
+-.psw.c : ProgramTargetName($(PSWRAP))
++.psw.c : PsWrapDependency
+ 	RunProgram(PSWRAP,-a -o $*.c -h $*.h $<)
+ 
+-.psw.h : ProgramTargetName($(PSWRAP))
++.psw.h : PsWrapDependency
+ 	RunProgram(PSWRAP,-a -h $*.h $< > /dev/null)
+ 
+ depend:: $(DERIVED_FILES)
