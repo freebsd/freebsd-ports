@@ -1281,6 +1281,7 @@ doomlegacy	ports/games/doomlegacy
 dopewars	ports/games/dopewars
 dore		ports/graphics/dore
 dosbox		ports/emulators/dosbox
+doscan		ports/security/doscan
 dosunix		ports/converters/dosunix
 dotconf		ports/devel/dotconf
 dotfile		ports/misc/dotfile
