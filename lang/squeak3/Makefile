@@ -21,7 +21,7 @@ COMMENT=	Full Smalltalk 80 with portability to UNIX, Mac, and Windows
 # Don't set USE_ZIP as this breaks EXTRACT_CMD, EXTRACT_SUFX, and what not.
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-SQUEAK_VERSION=	3.2-4
+SQUEAK_VERSION=	3.2-5
 SQUEAK_PATCHNR=	4956
 SQUEAK_SRC=	SqueakV3.sources.gz
 SQUEAK_IMAGE_SRC=	Squeak3.2-4956.zip
@@ -32,6 +32,7 @@ WRKSRC=		${WRKDIR}/Squeak-${SQUEAK_VERSION}
 MAN1=		inisqueak.1 squeak.1
 USE_XLIB=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${PREFIX}/share/squeak/${SQUEAK_VERSION}
@@ -54,6 +55,7 @@ MAKE_ARGS+=	CCFLAGS="${CFLAGS}"
 
 pre-configure:
 	@${MKDIR} ${BUILD_WRKSRC}
+	@cd ${WRKSRC}/platforms/unix/npsqueak && ${REINPLACE_CMD} -e 's|include|include -I${X11BASE}/include|g' Makefile
 
 post-install:
 	(cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${SQUEAK_SRC} ${PREFIX}/share/squeak/)
