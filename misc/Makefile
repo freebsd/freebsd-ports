@@ -346,6 +346,7 @@
     SUBDIR += shc
     SUBDIR += shuffle
     SUBDIR += since
+    SUBDIR += skyutils
     SUBDIR += sloccount
     SUBDIR += sls
     SUBDIR += smssend
