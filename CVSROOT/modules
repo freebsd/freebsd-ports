@@ -4412,6 +4412,7 @@ kaffe		ports/java/kaffe
 kaffeine	ports/multimedia/kaffeine
 kaffeine-mozilla	ports/multimedia/kaffeine-mozilla
 kahakai		ports/x11-wm/kahakai
+kaid		ports/games/kaid
 kalbum		ports/graphics/kalbum
 kallers		ports/comms/kallers
 kallery		ports/graphics/kallery
