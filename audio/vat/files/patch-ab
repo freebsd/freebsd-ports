@@ -1,0 +1,136 @@
+--- tkStripchart.c.orig	Tue Sep  9 11:00:42 1997
++++ tkStripchart.c	Tue Sep  9 10:52:30 1997
+@@ -148,7 +148,7 @@
+ 	int scrollrequired;
+ 	int guarantee_draw;
+ 	int grow_up;
+-	XFontStruct *fontPtr;	/* Information about text font, or NULL. */
++	Tk_Font tkfont;		/* Information about text font, or NULL. */
+ 	XColor *textColorPtr;	/* Color for drawing text. */
+ 	GC textGC;		/* GC for drawing text. */
+ 	XColor *tickColorPtr;	/* Color for drawing ticks. */
+@@ -257,7 +257,7 @@
+ 	{TK_CONFIG_SYNONYM, "-fg", "stripcolor", 0,
+ 	 0, 0, 0},
+ 	{TK_CONFIG_FONT, "-font", "font", "Font",
+-	 DEF_STRIPCHART_FONT, Tk_Offset(Stripchart, fontPtr),
++	 DEF_STRIPCHART_FONT, Tk_Offset(Stripchart, tkfont),
+ 	 0},
+ 	{TK_CONFIG_BOOLEAN, "-guaranteedrawing", "guaranteedrawing",
+ 	 "Guaranteedrawing", DEF_GUARANTEE_DRAW,
+@@ -570,8 +570,8 @@
+ 	if (StripchartPtr->value != NULL)
+ 		free(StripchartPtr->value);
+ 
+-	if (StripchartPtr->fontPtr != NULL)
+-		Tk_FreeFontStruct(StripchartPtr->fontPtr);
++	if (StripchartPtr->tkfont != NULL)
++		Tk_FreeFont(StripchartPtr->tkfont);
+ 
+ 	if (StripchartPtr->textColorPtr != NULL)
+ 		Tk_FreeColor(StripchartPtr->textColorPtr);
+@@ -631,7 +631,7 @@
+ 
+ 	Tk_SetBackgroundFromBorder(StripchartPtr->tkwin, StripchartPtr->border);
+ 
+-	gcValues.font = StripchartPtr->fontPtr->fid;
++	gcValues.font = Tk_FontId(StripchartPtr->tkfont);
+ 	gcValues.foreground = StripchartPtr->textColorPtr->pixel;
+ 	newGC = Tk_GetGC(StripchartPtr->tkwin, GCForeground|GCFont, &gcValues);
+ 	if (StripchartPtr->textGC != None && StripchartPtr->tkwin) {
+@@ -692,8 +692,11 @@
+  {
+ 	int tt = hasatitle(StripchartPtr);
+ 	int bd = StripchartPtr->borderWidth;
+-	int lineHeight = StripchartPtr->fontPtr->ascent +
+-	StripchartPtr->fontPtr->descent;
++	Tk_FontMetrics fm;
++	int lineHeight;
++
++	Tk_GetFontMetrics(StripchartPtr->tkfont, &fm);
++	lineHeight = fm.ascent + fm.descent;
+ 
+ 	Tk_GeometryRequest(StripchartPtr->tkwin,
+ 			   2 * (bd + PADDING) + StripchartPtr->num_strips *
+@@ -726,11 +729,13 @@
+ 	/*
+ 	 * Variable declarations used in the title drawing routines
+ 	 */
+-	XFontStruct *fp = StripchartPtr->fontPtr;
+-	XCharStruct bbox;
+-	int x, dummy;
+-	int lineHeight = StripchartPtr->fontPtr->ascent +
+-	StripchartPtr->fontPtr->descent;
++	Tk_Font tkf = StripchartPtr->tkfont;
++	int x;
++	Tk_FontMetrics fm;
++	int lineHeight;
++
++	Tk_GetFontMetrics(tkf, &fm);
++	lineHeight = fm.ascent + fm.descent;
+ 
+ 	StripchartPtr->displaybits &= ~REDRAW_PENDING;
+ 	if ((StripchartPtr->tkwin == NULL) || !Tk_IsMapped(tkwin))
+@@ -747,18 +752,17 @@
+ 	 * space. Otherwise left justified and clipped on the right.
+ 	 */
+ 	if (tt && StripchartPtr->displaybits & DISPLAY_TITLE) {
+-		XTextExtents(fp, StripchartPtr->title,
+-			     strlen(StripchartPtr->title),
+-			     &dummy, &dummy, &dummy, &bbox);
+-		if (bbox.lbearing + bbox.rbearing < Tk_Width(tkwin) - 2 * bd)
+-			x = (Tk_Width(tkwin) - bbox.lbearing - bbox.rbearing)/2;
++		int width = Tk_TextWidth(tkf, StripchartPtr->title,
++			     strlen(StripchartPtr->title));
++		if (width < Tk_Width(tkwin) - 2 * bd)
++			x = (Tk_Width(tkwin) - width)/2;
+ 		else
+ 			x = bd + PADDING;
+ 
+ 		XClearArea(Tk_Display(tkwin), Tk_WindowId(tkwin), bd, bd,
+ 		     Tk_Width(tkwin) - 2 * bd, lineHeight + PADDING, False);
+ 		XDrawString(Tk_Display(tkwin), Tk_WindowId(tkwin),
+-		       StripchartPtr->textGC, x, fp->max_bounds.ascent + bd,
++		       StripchartPtr->textGC, x, fm.ascent + bd,	/*XXX no max_bounds */
+ 			StripchartPtr->title, strlen(StripchartPtr->title));
+ 	}
+ 	/*
+@@ -1057,7 +1061,8 @@
+ DrawStripi(Stripchart* SPtr, int i)
+ {
+ 	Tk_Window tkwin = SPtr->tkwin;
+-	int lineHeight = SPtr->fontPtr->ascent + SPtr->fontPtr->descent;
++	Tk_FontMetrics fm;
++	int lineHeight;
+ 	int x = SPtr->borderWidth + PADDING + (i - 1) * SPtr->strip_width;
+ 	int y = SPtr->borderWidth + PADDING +
+ 		hasatitle(SPtr) * (lineHeight + PADDING);
+@@ -1066,6 +1071,9 @@
+ 	double maxv = SPtr->max_value;
+ 	double minv = SPtr->min_value;
+ 
++	Tk_GetFontMetrics(SPtr->tkfont, &fm);
++	lineHeight = fm.ascent + fm.descent;
++
+ 	if (i < 1 || i > SPtr->num_strips)
+ 		return;
+ 
+@@ -1136,7 +1144,8 @@
+ ScrollStrips(Stripchart* SPtr)
+ {
+ 	Tk_Window tkwin = SPtr->tkwin;
+-	int lineHeight = SPtr->fontPtr->ascent + SPtr->fontPtr->descent;
++	Tk_FontMetrics fm;
++	int lineHeight;
+ 	int src_x = SPtr->borderWidth + PADDING + SPtr->strip_width;
+ 	int src_y = SPtr->borderWidth + PADDING +
+ 		    hasatitle(SPtr) * (lineHeight + PADDING);
+@@ -1144,6 +1153,8 @@
+ 	int dest_y = src_y;
+ 	int w = (SPtr->num_strips - 1) * SPtr->strip_width;
+ 	int h = SPtr->max_height;
++
++	Tk_GetFontMetrics(SPtr->tkfont, &fm);
+ 
+ 	XCopyArea(Tk_Display(tkwin), Tk_WindowId(tkwin), Tk_WindowId(tkwin),
+ 	          Tk_GetGC(tkwin, 0, NULL), src_x, src_y, w, h, dest_x, dest_y);

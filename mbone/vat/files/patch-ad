@@ -1,0 +1,70 @@
+--- sitebox.cc.orig	Tue Sep  9 11:24:41 1997
++++ sitebox.cc	Tue Sep  9 11:24:43 1997
+@@ -112,7 +112,7 @@
+ 	static Drawable pixmap_;
+ 	static int pixw_;
+ 	static int pixh_;
+-	static XFontStruct* fs_;	/* font metrics */
++	static Tk_Font fs_;	/* font metrics */
+ };
+ 
+ class SiteBox : public TkWidget, public IdleCallback {
+@@ -160,7 +160,7 @@
+ GC Site::copy_gc_;
+ GC Site::fg_[4];
+ GC Site::bg_[4];
+-XFontStruct* Site::fs_;
++Tk_Font Site::fs_;
+ XColor* Site::fc_;
+ XColor* Site::bc_;
+ XColor* Site::ac_;
+@@ -190,15 +190,16 @@
+ 	sitebox_(sb)
+ {
+ 	Tcl& tcl = Tcl::instance();
++	Tk_FontMetrics fm;
+ 	if (fs_ == 0) {
+ 		const char* font = tcl.attr("siteFont");
+-		fs_ = Tk_GetFontStruct(tcl.interp(), tk_, (char*)font);
++		fs_ = Tk_GetFont(tcl.interp(), tk_, (char*)font);
+ 		if (fs_ == 0) {
+ 			fprintf(stderr,
+ 				"vat: couldn't find font: %s\n", font);
+-			fs_ = Tk_GetFontStruct(tcl.interp(), tk_, "screen");
++			fs_ = Tk_GetFont(tcl.interp(), tk_, "screen");
+ 			if (fs_ == 0)
+-				fs_ = Tk_GetFontStruct(tcl.interp(), tk_,
++				fs_ = Tk_GetFont(tcl.interp(), tk_,
+ 						       "fixed");
+ 			if (fs_ == 0) {
+ 				fprintf(stderr,
+@@ -220,8 +221,9 @@
+ 
+ 		copy_gc_ = sitebox_.lookup_gc(0, 0, 0);
+ 	}
+-	descent_ = fs_->descent;
+-	ascent_ = fs_->ascent;
++	Tk_GetFontMetrics(fs_, &fm);
++	descent_ = fm.descent;
++	ascent_ = fm.ascent;
+ 	major_ = ascent_;
+ 	minor_ = major_ / 2;
+ }
+@@ -292,7 +294,7 @@
+  */
+ inline int Site::textwidth(const char* s)
+ {
+-	return (XTextWidth(fs_, s, strlen(s)));
++	return (Tk_TextWidth(fs_, s, strlen(s)));
+ }
+ 
+ inline void Site::square(Display* dpy, Drawable window, GC gc,
+@@ -450,7 +452,7 @@
+ 			free_gc(bg_[0]);
+ 			free_gc(bg_[1]);
+ 		}
+-		Font fid = fs_->fid;
++		Font fid = Tk_FontId(fs_);
+ 		fg_[0] = raw_gc(fid, fc_, bc_, pixmap_);
+ 		fg_[2] = raw_gc(fid, dc_, bc_, pixmap_);
+ 		bg_[0] = raw_gc(fid, bc_, bc_, pixmap_);

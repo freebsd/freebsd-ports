@@ -3,18 +3,18 @@
 # Date created:		13 October 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.10 1996/11/19 21:42:08 fenner Exp $
+# $Id: Makefile,v 1.11 1997/04/20 13:19:20 wosch Exp $
 #
 
 DISTNAME=	imm-3.5a1
-CATEGORIES=	mbone tk41
+CATEGORIES=	mbone tk80
 MASTER_SITES=	ftp://ftp.hawaii.edu/paccom/imm-3.5a1/
 DISTFILES=	imm.source.tar.Z
 WRKSRC=		${WRKDIR}/mnm
 
 MAINTAINER=	fenner@freebsd.org
 
-LIB_DEPENDS=	tk41\\.1:${PORTSDIR}/x11/tk41
+LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
 
 USE_X11=	yes
 
