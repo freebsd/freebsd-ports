@@ -35,6 +35,10 @@ PLIST_SUB+=	X11=""
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} 's/$$(JPEGLIB)/$$(JPEGLIB) -lcrypto/' \
 		${WRKSRC}/Makefile.in

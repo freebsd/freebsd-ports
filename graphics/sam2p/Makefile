@@ -30,7 +30,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sam2p ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

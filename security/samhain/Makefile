@@ -36,6 +36,10 @@ OPTIONS=	KCHECK "Enable rogue KLD detection" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not build on FreeBSD >= 5.x"
+.endif
+
 .if defined(WITH_GPG)
 BUILD_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 .endif

@@ -19,6 +19,10 @@ COMMENT?=	Adaptation of SGI's Standard Template Library
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if ${ARCH} == "alpha" || ${ARCH} == "amd64"
 BROKEN=		"Segfault during build on alpha and amd64"
 .endif
