@@ -25,4 +25,10 @@ USE_LIBTOOL=	yes
 post-install:
 		gtk-query-immodules-2.0 > ${PREFIX}/etc/gtk-2.0/gtk.immodules
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500041
+PATCHFILES+=	configure-getopt.patch
+.endif
+
+.include <bsd.port.post.mk>
