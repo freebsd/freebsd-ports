@@ -26,6 +26,10 @@ ALL_TARGET=	freebsd
 CFLAGS+="-DXEVIL_KEYSET=UIalpha"
 .endif
 
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 pre-extract:
 	@${MKDIR} ${WRKDIR}/${DISTNAME}
 
