@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	WordNet-Similarity
-PORTVERSION=	0.06
-PORTREVISION=	1
+PORTVERSION=	0.07
+PORTREVISION=	0
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WordNet
@@ -29,14 +29,20 @@ USE_REINPLACE=	yes
 MAN3=		WordNet::Similarity.3 WordNet::Similarity::jcn.3 \
 		WordNet::Similarity::hso.3 WordNet::Similarity::vector.3 \
 		WordNet::Similarity::random.3 WordNet::Similarity::res.3 \
-		WordNet::Similarity::lesk.3 WordNet::Similarity::edge.3 \
+		WordNet::Similarity::lesk.3 \
 		WordNet::Similarity::lin.3 WordNet::Similarity::lch.3 \
-		WordNet::Similarity::wup.3
+		WordNet::Similarity::wup.3 WordNet::Similarity::path.3 \
+		WordNet::Similarity::DepthFinder.3 \
+		WordNet::Similarity::ICFinder.3 \
+		WordNet::Similarity::LCSFinder.3 \
+		WordNet::Similarity::PathFinder.3
 
 post-patch:
 	@${REINPLACE_CMD} -e  \
 		'/wnUnixPath/s|/usr/local/WordNet-1.7.1|${WNHOME}|; \
 		 /wnUnixPath/s|."/dict"||' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e  \
+		 "s|'dict|'|" ${WRKSRC}/utils/wnDepths.pl
 	@${FIND} ${WRKSRC}/utils -type f| ${XARGS} ${REINPLACE_CMD} -e \
 		's|/usr/local/bin/perl|${PERL}|'
 
