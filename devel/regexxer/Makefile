@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		regexxer
-PORTVERSION=		0.6
-PORTREVISION=	2
+PORTVERSION=		0.7
 CATEGORIES=		devel textproc gnome
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			${MASTER_SITE_SOURCEFORGE:S/$/:pcre/} \
@@ -20,8 +19,7 @@ DISTFILES=		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=		rui@ruilopes.com
 COMMENT=		An interactive tool for performing search and replace operations
 
-LIB_DEPENDS=		gnomevfsmm-1.3:${PORTSDIR}/devel/gnome-vfsmm \
-			gconfmm-2.0:${PORTSDIR}/devel/gconfmm
+LIB_DEPENDS=		gconfmm-2.0:${PORTSDIR}/devel/gconfmm
 
 USE_X_PREFIX=		yes
 USE_REINPLACE=		yes
@@ -31,7 +29,7 @@ USE_GNOME=		gnomehack gnomeprefix gnometarget
 CONFIGURE_ARGS=		PCRE_CONFIG="${PCRE_WRKDIR}/.install/bin/pcre-config"
 
 PCRE_NAME=		pcre
-PCRE_VERSION=		4.4
+PCRE_VERSION=		4.5
 PCRE_WRKDIR=		${WRKDIR}/${PCRE_NAME}-${PCRE_VERSION}
 
 post-patch:
@@ -49,4 +47,10 @@ pre-configure:
 		./configure --enable-utf8 --disable-shared --prefix="${PCRE_WRKDIR}/.install" && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} $(INSTALL_TARGET))
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-old_stl
+.endif
+
+.include <bsd.port.post.mk>
