@@ -46,6 +46,8 @@ post-install:
 	     ${PREFIX}/bin/acroread5
 	@${CHOWN} -R -h root:wheel ${PREFIX}/Acrobat5
 	@${CHMOD} +x ${PREFIX}/bin/acroread5
+	[ -e ${PREFIX}/bin/acroread ] \
+	    || (cd ${PREFIX}/bin ; ${LN} -s acroread5 acroread)
 	@${ECHO_MSG} "Be sure to read the license agreement in"
 	@${ECHO_MSG} "${PREFIX}/Acrobat5/Reader/license.txt"
 
