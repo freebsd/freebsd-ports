@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/ISIN/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Business/ISIN.pm
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Business 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/ISIN 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business 2>/dev/null || true
