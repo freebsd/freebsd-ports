@@ -1,16 +1,11 @@
---- make/sys.freebsd3.mk.orig	Tue Feb 17 22:31:33 1998
-+++ make/sys.freebsd3.mk	Mon Mar 30 00:52:19 1998
-@@ -32,13 +32,13 @@
- mk-libhelp = no
- 
- cc      = gcc 
--perl    = /usr/local/bin/perl
-+perl    = /usr/bin/perl
- warn    = -ansi -pedantic -Wall -Werror -Wmissing-prototypes
+--- make/sys.freebsd3.mk.orig	Thu Apr 16 01:58:12 1998
++++ make/sys.freebsd3.mk	Fri May 29 08:57:58 1998
+@@ -35,9 +35,9 @@
+ warn    = -ansi -pedantic -W -Wall -Werror -Wmissing-prototypes
  defs    = -D$(sys)
  opt     = -O2
--incl    = -I. -I/usr/local/include -I/usr/X11/include
--ldflags = -s -L/usr/local/lib -L/usr/X11/lib $(opt)
+-incl    = -I. -I/usr/local/include -I/usr/X11R6/include -I/usr/X11/include
+-ldflags = -s -L/usr/local/lib -L/usr/X11R6/lib -L/usr/X11/lib $(opt)
 -xlibs   = -lXm -lXpm -lXmu -lXt -lXext -lX11 -lm -lcompat
 +incl    = -I. -I${PREFIX}/include -I${X11BASE}/include
 +ldflags = -s -L${PREFIX}/lib -L${X11BASE}/lib $(opt)
@@ -18,7 +13,7 @@
  hlibs   = -lhlpclient
  ar      = ar
  arflags = -r
-@@ -50,11 +50,11 @@
+@@ -49,11 +49,11 @@
  
  mkdir    = mkdirhier
  install  = install -c
@@ -28,8 +23,8 @@
 -mandir   = /usr/local/man/man1
 +mandir   = ${PREFIX}/man/man1
  manflags = -o root -g bin -m 644
--docdir   = /usr/local/lib/$(projname)
-+docdir   = ${PREFIX}/share/$(projname)
- docflags = $(manflags)
- addir    = $(docdir)
- adflags  = $(docflags)
+-libdir   = /usr/local/lib/$(projname)
++libdir   = ${PREFIX}/share/$(projname)
+ libflags = $(manflags)
+ addir    = $(libdir)
+ adflags  = $(libflags)
