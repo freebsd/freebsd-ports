@@ -8,7 +8,8 @@
 PORTNAME=	popcheck
 PORTVERSION=	1.3
 CATEGORIES=	mail
-MASTER_SITES=	http://www.ludd.luth.se/~staham/linux/programs/
+MASTER_SITES=	http://www.ludd.luth.se/~staham/linux/programs/ \
+		http://home.tiscali.cz/~cz210552/distfiles/
 DISTNAME=	popcheck
 
 MAINTAINER=	hsn@netmag.cz
