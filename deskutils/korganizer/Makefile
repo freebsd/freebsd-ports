@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	korganizer
-PORTVERSION=	1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR=	stable/1.1/distribution/tar/generic/source/bz2
+MASTER_SITE_SUBDIR=	stable/1.1.2/distribution/tar/generic/source/bz2
 
 MAINTAINER=	hanspb@persbraten.vgs.no
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_BZIP2=	yes
 USE_QT=		yes
 HAS_CONFIGURE=	yes
+USE_BISON=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	"--prefix=$(PREFIX)"
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
