@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bnbt
-PORTVERSION=	7.5b2
+PORTVERSION=	7.5b3
 CATEGORIES=	net
 MASTER_SITES=	http://bnbt.go-dedicated.com/
-DISTNAME=	bnbt75b-2
+DISTNAME=	bnbt75b-3
 
 MAINTAINER=	flz@xbsd.org
 COMMENT=	A C++ BitTorrent Tracker
@@ -20,6 +20,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/src
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
+PLIST_FILES=	bin/bnbt
+PORTDOCS=	footer.html header.html lesser.txt readme.txt users.txt
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2 -w|${CFLAGS}| ; \
 		s|LFLAGS = -pthread|LFLAGS = ${PTHREAD_LIBS}| ; \
@@ -27,9 +30,9 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bnbt ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-.for i in footer.html header.html lesser.txt readme.txt users.txt
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/$i ${DATADIR}
+	${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/$i ${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
