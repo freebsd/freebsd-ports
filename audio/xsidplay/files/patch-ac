@@ -1,70 +1,11 @@
---- src/MainDialogData.cpp.orig	Mon Dec 14 06:50:51 1998
-+++ src/MainDialogData.cpp	Tue Sep 12 03:57:49 2000
-@@ -43,9 +43,30 @@
- 	songLCD = new QLCDNumber( this, "LCDNumber_2" );
- 	songLCD->setGeometry( 90, 35, 40, 30 );
- 	{
--		QColorGroup normal( QColor( QRgb(0) ), QColor( QRgb(11513755) ), QColor( QRgb(16777215) ), QColor( QRgb(6316128) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
--		QColorGroup disabled( QColor( QRgb(8421504) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(6316128) ), QColor( QRgb(10789024) ), QColor( QRgb(8421504) ), QColor( QRgb(12632256) ) );
--		QColorGroup active( QColor( QRgb(0) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(6316128) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
-+		QColorGroup normal(
-+			QColor( (unsigned int)0 ),
-+			QColor( (unsigned int)11513755 ),
-+			QColor( (unsigned int)16777215 ),
-+			QColor( (unsigned int)6316128 ),
-+			QColor( (unsigned int)10789024 ),
-+			QColor( (unsigned int)0 ),
-+			QColor( (unsigned int)16777215 ) );
-+		QColorGroup disabled(
-+			QColor( (unsigned int)8421504 ),
-+			QColor( (unsigned int)12632256 ),
-+			QColor( (unsigned int)16777215 ),
-+			QColor( (unsigned int)6316128 ),
-+			QColor( (unsigned int)10789024 ),
-+			QColor( (unsigned int)8421504 ),
-+			QColor( (unsigned int)12632256 ) );
-+		QColorGroup active(
-+			QColor( (unsigned int)0 ),
-+			QColor( (unsigned int)12632256 ),
-+			QColor( (unsigned int)16777215 ),
-+			QColor( (unsigned int)6316128 ),
-+			QColor( (unsigned int)10789024 ),
-+			QColor( (unsigned int)0 ),
-+			QColor( (unsigned int)16777215 ) );
- 		QPalette palette( normal, disabled, active );
- 		songLCD->setPalette( palette );
- 	}
-@@ -58,9 +79,30 @@
- 	timeLCD = new TimeLCD( this, "TimeLCD_1" );
- 	timeLCD->setGeometry( 10, 35, 75, 30 );
- 	{
--		QColorGroup normal( QColor( QRgb(0) ), QColor( QRgb(11513755) ), QColor( QRgb(16777215) ), QColor( QRgb(6316128) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
--		QColorGroup disabled( QColor( QRgb(8421504) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(6316128) ), QColor( QRgb(10789024) ), QColor( QRgb(8421504) ), QColor( QRgb(12632256) ) );
--		QColorGroup active( QColor( QRgb(0) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(6316128) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
-+		QColorGroup normal(
-+			QColor( (unsigned int)0 ),
-+			QColor( (unsigned int)11513755 ),
-+			QColor( (unsigned int)16777215 ),
-+			QColor( (unsigned int)6316128 ),
-+			QColor( (unsigned int)10789024 ),
-+			QColor( (unsigned int)0 ),
-+			QColor( (unsigned int)16777215 ) );
-+		QColorGroup disabled(
-+			QColor( (unsigned int)8421504 ),
-+			QColor( (unsigned int)12632256 ),
-+			QColor( (unsigned int)16777215 ),
-+			QColor( (unsigned int)6316128 ),
-+			QColor( (unsigned int)10789024 ),
-+			QColor( (unsigned int)8421504 ),
-+			QColor( (unsigned int)12632256 ) );
-+		QColorGroup active(
-+			QColor( (unsigned int)0 ),
-+			QColor( (unsigned int)12632256 ),
-+			QColor( (unsigned int)16777215 ),
-+			QColor( (unsigned int)6316128 ),
-+			QColor( (unsigned int)10789024 ),
-+			QColor( (unsigned int)0 ),
-+			QColor( (unsigned int)16777215 ) );
- 		QPalette palette( normal, disabled, active );
- 		timeLCD->setPalette( palette );
- 	}
+--- src/Makefile.in.old	Mon Oct  9 01:32:37 2000
++++ src/Makefile.in	Mon Oct  9 01:33:41 2000
+@@ -104,7 +104,7 @@
+ 
+ bin_PROGRAMS = xsidplay
+ 
+-xsidplay_LDADD = audio/libaudio.a stilview/libstilview.a songlendb/libsonglendb.a widgets/libwidgets.a @SIDPLAY_LDFLAGS@ -lsidplay @QT_LDFLAGS@ -lqt
++xsidplay_LDADD = audio/libaudio.a stilview/libstilview.a songlendb/libsonglendb.a widgets/libwidgets.a @SIDPLAY_LDFLAGS@ -lsidplay @QT_LDFLAGS@ -L$(X11BASE)/lib -lqt2
+ 
+ 
+ xsidplay_SOURCES = $(BUILT_SOURCES) AudioDialog.cpp AudioDialog.h AudioDialogData.cpp AudioDialogData.h ConfigFile.cpp ConfigFile.h EmuDialog.cpp EmuDialog.h EmuDialogData.cpp EmuDialogData.h FilterDialog.cpp FilterDialog.h FilterDialogData.cpp FilterDialogData.h GlobalIcon.h HVSCDialog.cpp HVSCDialog.h HVSCDialogData.cpp HVSCDialogData.h HVSCconfig.h HistoryDialog.cpp HistoryDialog.h HistoryDialogData.cpp HistoryDialogData.h HistoryFile.cpp HistoryFile.h HistoryItem.h MainDialog.cpp MainDialog.h MainDialogData.cpp MainDialogData.h MixerConfig.h MixerDialog.cpp MixerDialog.h MixerDialogData.cpp MixerDialogData.h Playlist.cpp Playlist.h PlaylistDialog.cpp PlaylistDialog.h PlaylistDialogData.cpp PlaylistDialogData.h PlaylistItem.h PlaylistOptDialog.cpp PlaylistOptDialog.h StilDialog.cpp StilDialog.h TextFile.cpp TextFile.h WaveViewDialog.cpp WaveViewDialog.h WaveViewDialogData.cpp WaveViewDialogData.h myTimer.h xsidplay.cpp
