@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	PHPUnit2
-PORTVERSION=	2.1.5
-PORTEPOCH=	2
+PORTVERSION=	2.1.6
+PORTEPOCH=	3
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
@@ -21,7 +21,6 @@ OPTIONS=	PEAR_LOG "PEAR::Log support" Off
 
 NO_PACKAGE=	Conflicting dependences between PHP4 and PHP5
 
-USE_PHP=	yes
 DEFAULT_PHP_VER=5
 BROKEN_WITH_PHP=4
 
@@ -75,15 +74,5 @@ RUN_DEPENDS+=	${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log
 .endif
 
 .include <bsd.port.pre.mk>
-
-PHP_VERS=	${PHP_VERSION:S/.//g}
-
-.if defined(PHP_VERS) && ${PHP_VERS} < 502
-IGNORE=		"You need PHP 5.0.2 or later to install PEAR::PHPUnit2"
-.endif
-
-do-build:
-	${DO_NADA}
-
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>
