@@ -20,7 +20,7 @@
 +#define frexpl frexp
 +#define fmodl fmod
 +
-+#if __FreeBSD_version < 600007
++#if __FreeBSD_version < 503105
 +#define ceill ceil
 +#define floorl floor
  #endif
