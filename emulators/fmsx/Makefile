@@ -3,7 +3,7 @@
 # Date created:         15 Oct 1996
 # Whom:                 dk
 #
-# $Id: Makefile,v 1.4 1997/07/21 19:28:42 max Exp $
+# $Id: Makefile,v 1.5 1998/06/01 01:59:16 dburr Exp $
 #
 
 DISTNAME=       fMSX
@@ -14,6 +14,7 @@ EXTRACT_SUFX=   .tar.Z
 
 MAINTAINER=	dk@farm.org
 
+USE_XLIB=	yes
 NO_PACKAGE=	${RESTRICTED}
 RESTRICTED=	Legal status of distributed ROM images unclear
 WRKSRC=         ${WRKDIR}/MSX
