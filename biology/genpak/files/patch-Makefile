@@ -1,0 +1,51 @@
+--- Makefile.orig	Tue Feb 13 22:41:12 2001
++++ Makefile	Wed Feb 28 01:01:15 2001
+@@ -5,15 +5,13 @@
+ ######################################################################
+ # Change the following to suit your needs
+ 
+-SHELL=/bin/bash
+-
+ # The directory root of your installation
+ # If you make a personal installation, change it to your home directory
+ # Default: /usr
+ # uncomment the following line to install to the default directories...
+ # TREE=/usr
+ # ...or the following line to install into your home directory:
+-TREE=$(HOME)
++TREE=%%PREFIX%%
+ 
+ # if you don't have the gd graphic library installed, you have to comment out or
+ # delete the following line. However, gp_map is such a nice program, so you
+@@ -25,7 +23,7 @@
+ BINDIR=$(TREE)/bin
+ 
+ # directory to install the manual pages
+-MANDIR=$(TREE)/man
++MANDIR=%%MANPREFIX%%/man
+ 
+ #directory to install the data directory
+ DATADIR=$(TREE)/lib
+@@ -36,11 +34,11 @@
+ # A catalog will be created: $(DOCDIR)/gp
+ # It will *not* be uninstalled automagically after a "make uninstall"
+ 
+-DOCDIR=$(TREE)/doc
++DOCDIR=%%DOCDIR%%
+ 
+ # Your favourite ANSI compiler and it's flags
+ CC=gcc
+-CFLAGS=-ansi -pedantic -O3 
++CFLAGS=%%CFLAGS%%
+ 
+ ######################################################################
+ # Do not change anything below this line
+@@ -58,7 +56,7 @@
+ 	mporfs.seq
+ 
+ all: 
+-	cd src ; make PROGRAMS="$(PROGRAMS)" GDPROGRAMS="$(GDPROGRAMS)" CC=$(CC) \
++	cd src ; gmake PROGRAMS="$(PROGRAMS)" GDPROGRAMS="$(GDPROGRAMS)" CC=$(CC) \
+ 		LIBS="$(LIBS)" CFLAGS="$(CFLAGS)" ; 
+ 	@echo -e "\nAll programs compiled. \nType 'make install' to install all programs."
+ 
