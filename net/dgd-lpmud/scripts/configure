@@ -1,10 +1,9 @@
 cd ${WRKDIR}
-patch -s <2.4.5/diffs
 find . -name '*.orig' -or -name '*.i' | xargs rm
-rm -r ACCESS.* OBJ_DUMP doc/previous_object *.log log 2.4.5/diff*
-mv 2.4.5/Copyright 2.4.5/dgd
-mv 2.4.5/dgd 2.4.5/lpmud .
-cp -pr 2.4.5/doc . && rm -r 2.4.5/doc
+mv 2.4.5/doc/LPC/closures doc/LPC
+rm -r ACCESS.* OBJ_DUMP doc/previous_object *.log log 2.4.5/diff* 2.4.5/doc
+mv 2.4.5/Copyright dgd
+mv 2.4.5/lpmud .
 mkdir -p lpmud-2.4.5/log; mv [A-Za-km-z]* lpmud-2.4.5
 mkdir -p bin; mv 2.4.5/hname.c 2.4.5/convert.c bin
 cp ${FILESDIR}/Makefile.bin bin/Makefile
