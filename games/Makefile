@@ -231,6 +231,7 @@
     SUBDIR += teg
     SUBDIR += tetrinet
     SUBDIR += tetrinet-x
+    SUBDIR += textmaze
     SUBDIR += tinymux
     SUBDIR += tkmoo
     SUBDIR += tksol
