@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += yelp
 
     SUBDIR += 9term
     SUBDIR += XFree86
