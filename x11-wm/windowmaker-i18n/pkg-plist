@@ -264,7 +264,6 @@ share/WindowMaker/plmenu.sk
 share/WindowMaker/plmenu.zh_CN
 share/WindowMaker/wmmacros
 share/WindowMaker/xtree.dat
-@exec mkdir -p %B/Sounds
 share/locale/bg/LC_MESSAGES/WPrefs.mo
 share/locale/bg/LC_MESSAGES/WindowMaker.mo
 share/locale/cs/LC_MESSAGES/WPrefs.mo
@@ -307,11 +306,13 @@ share/locale/zh_CN/LC_MESSAGES/WPrefs.mo
 share/locale/zh_CN/LC_MESSAGES/WindowMaker.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/WPrefs.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/WindowMaker.mo
+@exec mkdir -p %D/share/WindowMaker/Sounds
 @dirrm share/WindowMaker/Styles
 @dirrm share/WindowMaker/Sounds
 @dirrm share/WindowMaker/IconSets
 @dirrm share/WindowMaker/Backgrounds
 @dirrm share/WINGs
+@dirrm include/WINGs
 @dirrm etc/WindowMaker
 @dirrm GNUstep/Apps/WPrefs.app/xpm
 @dirrm GNUstep/Apps/WPrefs.app/tiff
