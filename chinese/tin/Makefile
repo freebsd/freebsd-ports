@@ -10,7 +10,6 @@ CATEGORIES=	chinese
 
 MASTERDIR=	${.CURDIR}/../../news/tin
 
-PORTREVISION=	2
 MAINTAINER=	yssu@CCCA.NCTU.edu.tw
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-charset.c \
