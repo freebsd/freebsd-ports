@@ -1,8 +1,10 @@
+majordomo/archive
 majordomo/bin/approve
 majordomo/bin/bounce
 majordomo/bin/medit
 majordomo/bounce-remind
 majordomo/config_parse.pl
+majordomo/digest
 majordomo/majordomo
 majordomo/majordomo.pl
 majordomo/majordomo_version.pl

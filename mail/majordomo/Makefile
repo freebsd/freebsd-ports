@@ -3,7 +3,7 @@
 # Date created:		23 October 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.5 1996/12/07 11:26:41 max Exp $
+# $Id: Makefile,v 1.6 1996/12/08 01:44:53 max Exp $
 #
 
 DISTNAME=	majordomo-1.94
@@ -32,6 +32,7 @@ pre-install:
 
 post-install:
 		@ ln -sf ${PREFIX}/majordomo/Tools/digest ${PREFIX}/majordomo
+		@ ln -sf ${PREFIX}/majordomo/Tools/archive2.pl ${PREFIX}/majordomo/archive
 		@ for dir in tmp lists/test-l.archive lists/test-l-digest.archive digests/test-l-digest doc; do \
 			${MKDIR} -p ${PREFIX}/majordomo/$$dir; \
 		done
