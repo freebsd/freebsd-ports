@@ -1,8 +1,8 @@
 #!/bin/sh
-ed $1 <<XXXEOF
+ed $1 <<XXXEOF > /dev/null 
 /#! \/bin\/sh
 1,.-1d
 w
 q
 XXXEOF
-/bin/sh $1
+/bin/sh $1 > /dev/null
