@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Perform consistency checks on DNS zone files
 
+BROKEN=		Broken dependency
+
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
