@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar 
 		${SITE_PERL}/Pod/Man.pm:${PORTSDIR}/textproc/p5-podlators
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Module::Build.3 \
 		Module::Build::Base.3 \
@@ -41,24 +41,6 @@ MAN3=		Module::Build.3 \
 		Module::Build::Platform::cygwin.3 \
 		Module::Build::Platform::darwin.3 \
 		Module::Build::Platform::os2.3
-
-PERL_CONFIGURE=		yes
-CONFIGURE_SCRIPT?=	Build.PL
-ALL_TARGET?=
-PL_BUILD?=		Build
-CONFIGURE_ARGS+= \
-	install_path=lib="${PREFIX}/${SITE_PERL_REL}" \
-	install_path=arch="${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}" \
-	install_path=script="${PREFIX}/bin" \
-	install_path=bin="${PREFIX}/bin" \
-	install_path=libdoc="${MAN3PREFIX}/man/man3" \
-	install_path=bindoc="${MAN1PREFIX}/man/man1"
-
-do-build:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} ${MAKE_ARGS} ${ALL_TARGET})
-
-do-install:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} ${MAKE_ARGS} ${INSTALL_TARGET})
 
 .include <bsd.port.pre.mk>
 
