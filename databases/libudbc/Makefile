@@ -8,8 +8,9 @@
 PORTNAME=	libudbc
 PORTVERSION=	4.1
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.openlinksw.com/open41/ \
-		ftp://www.kuzbass.ru/pub/FreeBSD/ports/distfiles/
+MASTER_SITES=	ftp://ftp.openlinksw.co.uk/open41/ \
+		ftp://www.kuzbass.ru/pub/FreeBSD/ports/distfiles/ \
+		ftp://ftp.svzserv.kemerovo.su/pub/FreeBSD/distfiles.misc/
 DISTNAME=	f6kuzzzz
 EXTRACT_SUFX=	.taz
 
@@ -21,7 +22,6 @@ NO_BUILD=	yes
 INSTALLS_SHLIB=	yes
 ONLY_FOR_ARCHS=	i386
 
-BROKEN=		"Distfile has disappeared"
 RESTRICTED=	'Downloading and redistribution terms are unclear'
 
 do-install:
