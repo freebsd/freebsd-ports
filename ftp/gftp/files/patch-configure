@@ -1,5 +1,13 @@
 --- configure.orig	Wed Nov 27 17:25:51 2002
 +++ configure	Wed Nov 27 17:30:47 2002
+@@ -3988,6 +3988,7 @@
+ 
+ GFTP_TEXT=""
+ EXTRA_LIBS=""
++EXTRA_LIBS="$EXTRA_LIBS -lutil"
+ USE_READLINE="yes"
+ READLINE_LIBS=""
+ if test "x$enable_textport" = "x1" ; then
 @@ -4725,9 +4725,9 @@
    
    rm -f conf.gtktest

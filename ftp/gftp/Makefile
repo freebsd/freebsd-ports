@@ -7,6 +7,7 @@
 
 PORTNAME=	gftp
 PORTVERSION=	2.0.14
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://gftp.seul.org/ \
 		ftp://gftp.seul.org/pub/gftp/
@@ -41,10 +42,6 @@ USE_GNOME+=	gtk12
 CONFIGURE_ENV+=	_GTHREAD_LIBS="-lgthread12"
 .endif
 .endif
-.if defined(WITH_SSH)
-RUN_DEPENDS+=	ssh-askpass:${PORTSDIR}/security/openssh-askpass
-CFLAGS+=	-DWITH_SSH
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -71,7 +68,6 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "	WITHOUT_X11=yes		Only build the text frontend."
 	@${ECHO} "	WITH_GTK2=yes		Use gtk 2.x instead of 1.x"
-	@${ECHO} "	WITH_SSH=yes		To enable SSH2 support"
 	@${ECHO} ""
 
 post-patch:

@@ -1,17 +1,6 @@
---- lib/sshv2.c.orig	Wed Apr 23 22:45:50 2003
-+++ lib/sshv2.c	Wed Apr 23 22:41:59 2003
-@@ -523,7 +523,9 @@
-   int version, fdm, fds, s[2];
-   sshv2_message message;
-   pid_t child;
--
-+#ifdef __FreeBSD__
-+  ssh_use_askpass=TRUE;
-+#endif
-   g_return_val_if_fail (request != NULL, -2);
-   g_return_val_if_fail (request->protonum == GFTP_SSHV2_NUM, -2);
-   g_return_val_if_fail (request->hostname != NULL, -2);
-@@ -543,8 +545,13 @@
+--- lib/sshv2.c.orig	Sat Nov 23 15:34:25 2002
++++ lib/sshv2.c	Thu Apr 24 21:57:04 2003
+@@ -543,8 +543,13 @@
    if (request->sftpserv_path == NULL ||
        *request->sftpserv_path == '\0')
      {
@@ -25,3 +14,49 @@
      }
    else
      {
+@@ -570,6 +575,15 @@
+   else
+     {
+       s[0] = s[1] = 0;
++#ifdef __FreeBSD__
++      if( openpty( &fdm, &fds, &pts_name, NULL, NULL ) < 0 )
++        {
++          request->logging_function (gftp_logging_error, request->user_data,
++        	                 _("Cannot create a socket pair: %s\n"),
++                                 g_strerror (errno));
++          return (-2);
++	}
++#else
+       if ((fdm = ptym_open (pts_name)) < 0)
+         {
+           request->logging_function (gftp_logging_error, request->user_data,
+@@ -577,6 +591,7 @@
+                                 g_strerror (errno));
+           return (-2);
+         }
++#endif
+     }
+  
+   if ((child = fork ()) == 0)
+@@ -589,6 +604,13 @@
+         }
+       else
+         {
++#ifdef __FreeBSD__
++          close (fdm);
++          if( ioctl( fds, TIOCSCTTY, NULL ) < 0 )
++            {
++              return( -2 );
++            }
++#else
+           if ((fds = ptys_open (fdm, pts_name)) < 0)
+             {
+               printf ("Cannot open slave pts %s: %s\n", pts_name, 
+@@ -596,6 +618,7 @@
+               return (-1);
+             }
+           close (fdm);
++#endif
+         }
+ 
+       tty_raw (fds);
