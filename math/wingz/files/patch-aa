@@ -35,6 +35,6 @@
 + 	pax -w Wingz |(cd ${PREFIX}/lib/X11; pax -r)
 + 	cp Wingz.sh ${PREFIX}/bin/Wingz
 + 	cp Wingz/Wingz.Xdefs ${PREFIX}/lib/X11/app-defaults/Wingz
-+ 	install -m 666 /dev/null ${PREFIX}/lib/X11/Wingz/.wingz
++ 	install -m 644 /dev/null ${PREFIX}/lib/X11/Wingz/.wingz
 + 
 + 
