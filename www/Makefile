@@ -355,6 +355,7 @@
     SUBDIR += ruboard
     SUBDIR += ruby-google
     SUBDIR += ruby-http-access
+    SUBDIR += ruby-mnogosearch
     SUBDIR += ruby-tmpl
     SUBDIR += ruby-webrick
     SUBDIR += ruby-webunit

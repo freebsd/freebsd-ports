@@ -1,0 +1,11 @@
+%%RUBY_SITEARCHLIBDIR%%/mnogo.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mnogosearch/example.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mnogosearch/old.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mnogosearch/test.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mnogosearch/test.rhtml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mnogosearch/test.xsl
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mnogosearch/testx.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/mnogosearch
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mnogosearch/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mnogosearch/README.ru
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mnogosearch
