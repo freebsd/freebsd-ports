@@ -1,0 +1,39 @@
+bin/dotconf-config
+include/dotconf.h
+include/libpool.h
+lib/libpool.a
+lib/libdotconf.a
+lib/libdotconf.la
+lib/libdotconf.so
+lib/libdotconf-1.0.so
+lib/libdotconf-1.0.so.0
+share/aclocal/dotconf.m4
+%%PORTDOCS%%share/dotconf/dotconf-api.txt
+%%PORTDOCS%%share/dotconf/dotconf-features.txt
+%%PORTDOCS%%share/dotconf/examples/README
+%%PORTDOCS%%share/dotconf/examples/caseinsensitive/Makefile
+%%PORTDOCS%%share/dotconf/examples/caseinsensitive/caseinsensitive.c
+%%PORTDOCS%%share/dotconf/examples/caseinsensitive/caseinsensitive.conf
+%%PORTDOCS%%share/dotconf/examples/context/Makefile
+%%PORTDOCS%%share/dotconf/examples/context/context.c
+%%PORTDOCS%%share/dotconf/examples/context/context.conf
+%%PORTDOCS%%share/dotconf/examples/errorhandler/Makefile
+%%PORTDOCS%%share/dotconf/examples/errorhandler/errorhandler.c
+%%PORTDOCS%%share/dotconf/examples/errorhandler/errorhandler.conf
+%%PORTDOCS%%share/dotconf/examples/modules/Makefile
+%%PORTDOCS%%share/dotconf/examples/modules/include.conf
+%%PORTDOCS%%share/dotconf/examples/modules/module.c
+%%PORTDOCS%%share/dotconf/examples/modules/my_module.c
+%%PORTDOCS%%share/dotconf/examples/modules/sample.conf
+%%PORTDOCS%%share/dotconf/examples/simple/Makefile
+%%PORTDOCS%%share/dotconf/examples/simple/included.conf
+%%PORTDOCS%%share/dotconf/examples/simple/linecat.conf
+%%PORTDOCS%%share/dotconf/examples/simple/simple.c
+%%PORTDOCS%%share/dotconf/examples/simple/simple.conf
+%%PORTDOCS%%@dirrm share/dotconf/examples/caseinsensitive
+%%PORTDOCS%%@dirrm share/dotconf/examples/context
+%%PORTDOCS%%@dirrm share/dotconf/examples/errorhandler
+%%PORTDOCS%%@dirrm share/dotconf/examples/modules
+%%PORTDOCS%%@dirrm share/dotconf/examples/simple
+%%PORTDOCS%%@dirrm share/dotconf/examples
+%%PORTDOCS%%@dirrm share/dotconf

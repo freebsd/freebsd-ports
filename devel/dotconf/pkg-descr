@@ -1,0 +1,17 @@
+dot.conf is a simple configuration-file parser library written in C.
+The configuration files created for dot.conf look very similar to
+those used by the Apache Webserver. Even Container-Directives known
+from httpd.conf can easily be used in the exact same manner as for
+Apache-Modules. It supports various types of arguments, dynamically
+loadable modules that create their own configuration options
+on-the-fly, a here-documents feature to pass very long ARG_STR data
+to your app, ${NAME:-default} style environment variable
+substitution for arguments, and on-the-fly inclusion of additional
+config files. Some behaviour can be toggled with flags at runtime.
+To keep dotconf from printing out warnings, you can install your
+own customized errorhandler.
+
+WWW: http://www.azzit.de/dotconf/
+
+-- Ying-Chieh Liao
+   ijliao@FreeBSD.org
