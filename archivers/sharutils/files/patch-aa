@@ -1,89 +1,90 @@
-*** Makefile.in.orig	Wed Feb 22 22:31:33 1995
---- Makefile.in	Sun Mar 26 05:58:40 1995
-***************
-*** 18,24 ****
-  
-  PACKAGE = @PACKAGE@
-  VERSION = @VERSION@
-! PROGRAMS = @PROGRAMS@
-  CATALOGS = de.msg fr.msg nl.msg sv.msg
-  
-  @SET_MAKE@
---- 18,25 ----
-  
-  PACKAGE = @PACKAGE@
-  VERSION = @VERSION@
-! PROGRAMS = shar unshar
-! SCRIPTS = mail-files mailshar remsync
-  CATALOGS = de.msg fr.msg nl.msg sv.msg
-  
-  @SET_MAKE@
-***************
-*** 167,176 ****
-  getopt.o getopt1.o: getopt.h
-  xgetcwd.o: pathmax.h
-  
-! .SUFFIXES: .msg .tt
-! .tt.msg:
-! 	cd $(srcdir) && \
-! 	  make-msg $*.tt $(PACKAGE).cod > $*.tmp && mv $*.tmp $@
-  
-  $(CATALOGS): $(PACKAGE).cod
-  
---- 168,177 ----
-  getopt.o getopt1.o: getopt.h
-  xgetcwd.o: pathmax.h
-  
-! #.SUFFIXES: .msg .tt
-! #.tt.msg:
-! #        cd $(srcdir) && \
-! #          make-msg $*.tt $(PACKAGE).cod > $*.tmp && mv $*.tmp $@
-  
-  $(CATALOGS): $(PACKAGE).cod
-  
-***************
-*** 215,220 ****
---- 216,225 ----
-  	  $(INSTALL_PROGRAM) $$name \
-  		$(bindir)/`echo $$name | sed '$(transform)'`; \
-  	done
-+ 	for name in $(SCRIPTS); do \
-+ 	  $(INSTALL_DATA) $$name $(bindir); \
-+ 	  chmod 755 $(bindir)/$$name; \
-+ 	done
-  	for name in $(CATALOGS); do \
-  	  lang=`echo $$name | sed 's/.msg$$//'`; \
-  	  $(srcdir)/mkinstalldirs $(localedir)/$$lang; \
-***************
-*** 237,251 ****
-  
-  install-man:
-  	$(srcdir)/mkinstalldirs $(man1dir) $(man5dir)
-! 	for name in shar unshar uuencode; do \
-  	  $(INSTALL_DATA) $(srcdir)/$$name.1 \
-  		$(man1dir)/`echo $$name | sed '$(transform)'`$(man1ext); \
-  	done
-! 	rm -f $(man1dir)/`echo uudecode | sed '$(transform)'`$(man1ext)
-! 	ln $(man1dir)/`echo uuencode | sed '$(transform)'`$(man1ext) \
-! 		$(man1dir)/`echo uudecode | sed '$(transform)'`$(man1ext)
-! 	$(INSTALL_DATA) $(srcdir)/uuencode.5 \
-! 		$(man5dir)/`echo uuencode | sed '$(transform)'`$(man5ext)
-  
-  uninstall-man:
-  	for name in shar unshar uudecode uuencode; do \
---- 242,256 ----
-  
-  install-man:
-  	$(srcdir)/mkinstalldirs $(man1dir) $(man5dir)
-! 	for name in shar unshar; do \
-  	  $(INSTALL_DATA) $(srcdir)/$$name.1 \
-  		$(man1dir)/`echo $$name | sed '$(transform)'`$(man1ext); \
-  	done
-! #        rm -f $(man1dir)/`echo uudecode | sed '$(transform)'`$(man1ext)
-! #        ln $(man1dir)/`echo uuencode | sed '$(transform)'`$(man1ext) \
-! #                $(man1dir)/`echo uudecode | sed '$(transform)'`$(man1ext)
-! #        $(INSTALL_DATA) $(srcdir)/uuencode.5 \
-! #                $(man5dir)/`echo uuencode | sed '$(transform)'`$(man5ext)
-  
-  uninstall-man:
-  	for name in shar unshar uudecode uuencode; do \
+--- doc/remsync.texi.orig	Sun Jun  8 22:59:35 1997
++++ doc/remsync.texi	Sun Jun  8 23:02:50 1997
+@@ -2,6 +2,10 @@
+ @c %**start of header
+ @setfilename remsync.info
+ @settitle @code{remsync} reference manual
++@dircategory File transfer and archiving tools
++@direntry
++* remsync: (remsync).		Synchronize remote directory trees using email.
++@end direntry
+ @finalout
+ @setchapternewpage odd
+ @c %**end of header
+--- doc/sharutils.texi.orig	Sun Jun  8 22:59:41 1997
++++ doc/sharutils.texi	Sun Jun  8 23:10:37 1997
+@@ -2,6 +2,17 @@
+ @c %**start of header
+ @setfilename sharutils.info
+ @settitle GNU @code{shar} utilities
++@dircategory File transfer and archiving tools
++@direntry
++* Shar utilities: (sharutils).          GNU shar utilities.
++* mail-files: (sharutils)mail-files invocation. Send files to remote site.
++* mailshar: (sharutils)mailshar invocation.     Make and send a shell archive.
++* remsync: (sharutils)remsync invocation.       Synchronize remote files.
++* shar: (sharutils)shar invocation.             Make a shell archive.
++* unshar: (sharutils)unshar invocation.         Explode a shell archive.
++* uudecode: (sharutils)uudecode invocation.     Restore file from 7-bits.
++* uuencode: (sharutils)uuencode invocation.     Force binary file to 7-bits.
++@end direntry
+ @finalout
+ @c %**end of header
+ 
+@@ -15,21 +26,6 @@
+ @end tex
+ 
+ @ifinfo
+-@format
+-START-INFO-DIR-ENTRY
+-* Shar utilities: (sharutils).          GNU shar utilities.
+-* mail-files: (sharutils)mail-files invocation. Send files to remote site.
+-* mailshar: (sharutils)mailshar invocation.     Make and send a shell archive.
+-* remsync: (sharutils)remsync invocation.       Synchronize remote files.
+-* shar: (sharutils)shar invocation.             Make a shell archive.
+-* unshar: (sharutils)unshar invocation.         Explode a shell archive.
+-* uudecode: (sharutils)uudecode invocation.     Restore file from 7-bits.
+-* uuencode: (sharutils)uuencode invocation.     Force binary file to 7-bits.
+-END-INFO-DIR-ENTRY
+-@end format
+-@end ifinfo
+-
+-@ifinfo
+ This file documents the GNU set of shar utilities.
+ 
+ Copyright (C) 1994 Free Software Foundation, Inc.
+@@ -157,8 +153,8 @@
+ The format of the @code{shar} command is one of:
+ 
+ @example
+-shar [ @var{option} ] @dots{} @var{file} @dots{}
+-shar -S [ @var{option} ] @dots{}
++gshar [ @var{option} ] @dots{} @var{file} @dots{}
++gshar -S [ @var{option} ] @dots{}
+ @end example
+ 
+ In the first form, the file list is given as command arguments.  In the
+@@ -548,7 +544,7 @@
+ The format of the @code{unshar} command is:
+ 
+ @example
+-unshar [ @var{option} ] @dots{} [ @var{file} @dots{} ]
++gunshar [ @var{option} ] @dots{} [ @var{file} @dots{} ]
+ @end example
+ 
+ Each @var{file} is processed in turn, as a shell archive or a
+@@ -635,10 +631,10 @@
+ Let us conclude by a showing a few examples of @code{shar} usage:
+ 
+ @example
+-shar *.c > cprog.shar
+-shar -Q *.[ch] > cprog.shar
+-shar -B -l28 -oarc.sh. *.arc
+-shar -f /lcl/src/u*.c > u.sh
++gshar *.c > cprog.shar
++gshar -Q *.[ch] > cprog.shar
++gshar -B -l28 -oarc.sh. *.arc
++gshar -f /lcl/src/u*.c > u.sh
+ @end example
+ 
+ @noindent
