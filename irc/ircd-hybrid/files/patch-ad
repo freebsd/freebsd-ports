@@ -1,20 +1,153 @@
---- src/list.c.orig	Tue Jul  7 17:40:52 1998
-+++ src/list.c	Sat Jul 11 23:12:41 1998
-@@ -49,7 +49,7 @@
-    for smaller nets who knows? -Dianora
-    */
+--- ircd-hybrid-6.2/tools/install_ircd.in.orig	Mon Oct  8 02:37:40 2001
++++ ircd-hybrid-6.2/tools/install_ircd.in	Tue Jul  3 22:52:19 2001
+@@ -7,6 +7,14 @@
+ # Fixed.
+ #
  
--#define LINK_PREALLOCATE 1024
-+#define LINK_PREALLOCATE 64
++if [ "x@prefix@" != "x${PREFIX}" ]; then
++  echo "ERROR: Different prefix used to install than for configure/build."
++  echo "The prefix is compiled into the binary, thus this will not work."
++  echo "Please be sure to use the same \$PREFIX throughout building of"
++  echo "this port."
++  exit 1
++fi
++
+ # Path to install-sh
+ INSTALL_SH="autoconf/install-sh"
  
- /* Number of aClient structures to preallocate at a time
-    for Efnet 1024 is reasonable 
-@@ -60,7 +60,7 @@
-    rather than 30k times -Dianora
- */
+@@ -39,6 +47,7 @@
+   fi
+ }
  
--#define CLIENTS_PREALLOCATE 1024
-+#define CLIENTS_PREALLOCATE 64
++BPATH=`grep '#define.BPATH' include/config.h|awk '{print $3}'|tr -d \"`;
+ DPATH=`grep '#define.DPATH' include/config.h|awk '{print $3}'|tr -d \"`;
+ SPATH=`grep '#define.SPATH' include/config.h|awk '{print $3}'|tr -d \"`;
+ CPATH=`grep '#define.CPATH' include/config.h|awk '{print $3}'|tr -d \"`;
+@@ -48,6 +57,7 @@
+ PPATH=`grep '#define.PPATH' include/config.h|awk '{print $3}'|tr -d \"`;
+ HPATH=`grep '#define.HPATH' include/config.h|awk '{print $3}'|tr -d \"`;
  
- void	outofmemory();
++BPATH=`dir_concat ${BPATH}`;
+ SPATH=`dir_concat ${SPATH}`;
+ CPATH=`dir_concat ${CPATH}`;
+ KPATH=`dir_concat ${KPATH}`;
+@@ -56,6 +66,7 @@
+ PPATH=`dir_concat ${PPATH}`;
+ HPATH=`dir_concat ${HPATH}`;
  
++#   BPATH = binary directory
+ #   DPATH = directory,
+ #   SPATH = server executable,
+ #   CPATH = conf file,
+@@ -74,88 +85,47 @@
+ fi
+ 
+ # try to install their ircd.conf file, unless it already exists.
+-# install ircd, save old one as ircd.old
+ dir_make `dirname ${SPATH}`
++echo installing ircd as ${SPATH}${EXESUFFIX}
++$INSTALL_SH -o 72 -g 72 -c src/ircd${EXESUFFIX} ${SPATH}${EXESUFFIX};
++strip ${SPATH}${EXESUFFIX};
+-if [ ! -f ${SPATH}${EXESUFFIX} ]; then
+-  echo installing ircd as ${SPATH}${EXESUFFIX}
+-  $INSTALL_SH -c src/ircd${EXESUFFIX} ${SPATH}${EXESUFFIX};
+-else
+-  echo installing ircd as ${SPATH}${EXESUFFIX}
+-  echo previous ircd saved as ircd${EXESUFFIX}.old
+-  mv ${SPATH}${EXESUFFIX} ${SPATH}${EXESUFFIX}.old
+-  $INSTALL_SH -c src/ircd${EXESUFFIX} ${SPATH}${EXESUFFIX};
+-fi
+ 
+ dir_make `dirname ${CPATH}`
++echo installing example.conf as ${CPATH}.sample
++$INSTALL_SH -o 72 -g 72 -c doc/example.conf ${CPATH}.sample;
+-if [ ! -f ${CPATH} ]; then
+-  echo installing example.conf as ${CPATH}
+-  $INSTALL_SH -c doc/example.conf ${CPATH};
+-else
+-  echo You already have ${CPATH}.;
+-fi
+ 
+ # try to install their motd file, unless it already exists.
+ dir_make `dirname ${MPATH}`
++echo installing a sample MOTD in ${MPATH}.sample
++echo "This is ircd-hybrid MOTD replace it with something better" \
++	> ${MPATH}.sample;
++chown 72:72 ${MPATH}.sample;
+-if [ ! -f ${MPATH} ]; then
+-  echo installing a sample MOTD in ${MPATH}
+-  echo "This is ircd-hybrid MOTD replace it with something better" > ${MPATH};
+-else
+-  echo You already have an MOTD in ${MPATH}.;
+-fi
+ 
+ # try to install their kpath file unless it already exists.
+ dir_make `dirname ${KPATH}`
++touch ${KPATH}.sample;
++chown 72:72 ${KPATH}.sample;
+-if [ ! -f ${KPATH} ]; then
+-  echo touching K-line file ${KPATH}
+-  touch ${KPATH};
+-else
+-  echo You already have a K-line file in ${KPATH}.;
+-fi
+ 
+ # try to install their opers.txt file, in all cases 
+ dir_make `dirname ${HPATH}`
++echo installing opers.txt as ${HPATH}.sample
++$INSTALL_SH -o 72 -g 72 -c opers.txt ${HPATH}.sample;
+-if [ ! -f ${HPATH} ]; then
+-  echo installing opers.txt as ${HPATH}
+-  $INSTALL_SH -c opers.txt ${HPATH};
+-else
+-   echo installing opers.txt as ${HPATH}
+-   echo previous opers.txt saved as opers.txt.old
+-   mv ${HPATH} ${HPATH}.old
+-   $INSTALL_SH -c opers.txt ${HPATH};
+-fi
+ 
+ # install mkpasswd
++echo installing mkpasswd as ${BPATH}mkpasswd${EXESUFFIX}
++$INSTALL_SH  -o 72 -g 72 -c tools/mkpasswd${EXESUFFIX} ${BPATH}mkpasswd${EXESUFFIX};
+-if [ ! -f ${DPATH}mkpasswd ]; then
+-  echo installing mkpasswd as ${DPATH}mkpasswd${EXESUFFIX}
+-  $INSTALL_SH -c tools/mkpasswd${EXESUFFIX} ${DPATH}mkpasswd${EXESUFFIX};
+-else
+-   echo installing mkpasswd as ${DPATH}mkpasswd${EXESUFFIX}
+-   echo previous mkpasswd saved as mkpasswd${EXESUFFIX}.old
+-   mv ${DPATH}mkpasswd${EXESUFFIX} ${DPATH}mkpasswd${EXESUFFIX}.old
+-   $INSTALL_SH -c tools/mkpasswd${EXESUFFIX} ${DPATH}mkpasswd${EXESUFFIX};
+-fi 
+ 
+ # install viconf
++echo installing viconf as ${BPATH}viconf${EXESUFFIX}
++$INSTALL_SH -o 72 -g 72 -c tools/viconf${EXESUFFIX} ${BPATH}viconf${EXESUFFIX}
++rm -f ${BPATH}vimotd${EXESUFFIX} ${BPATH}viklines${EXESUFFIX}
++ln ${BPATH}viconf${EXESUFFIX} ${BPATH}vimotd${EXESUFFIX}
++ln ${BPATH}viconf${EXESUFFIX} ${BPATH}viklines${EXESUFFIX};
+-if [ ! -f ${DPATH}viconf ]; then
+-  echo installing viconf as ${DPATH}viconf${EXESUFFIX}
+-  $INSTALL_SH -c tools/viconf${EXESUFFIX} ${DPATH}viconf${EXESUFFIX}
+-  rm -f ${DPATH}vimotd${EXESUFFIX} ${DPATH}viklines${EXESUFFIX}
+-  ln ${DPATH}viconf${EXESUFFIX} ${DPATH}vimotd${EXESUFFIX}
+-  ln ${DPATH}viconf${EXESUFFIX} ${DPATH}viklines${EXESUFFIX};
+-else
+-   echo installing viconf as ${DPATH}viconf${EXESUFFIX}
+-   echo previous viconf saved as viconf${EXESUFFIX}.old
+-   mv ${DPATH}viconf${EXESUFFIX} ${DPATH}viconf${EXESUFFIX}.old
+-   $INSTALL_SH -c tools/viconf${EXESUFFIX} ${DPATH}viconf${EXESUFFIX}
+-   rm -f ${DPATH}vimotd${EXESUFFIX} ${DPATH}viklines${EXESUFFIX}
+-   ln ${DPATH}viconf${EXESUFFIX} ${DPATH}vimotd${EXESUFFIX}
+-   ln ${DPATH}viconf${EXESUFFIX} ${DPATH}viklines${EXESUFFIX};
+-fi
+ 
+ # install ircd.8
++dir_make ${PREFIX}/man/man8
++echo installing ircd.8 as ${PREFIX}/man/man8/ircd.8
++$INSTALL_SH -o 72 -g 72 -c doc/ircd.8 ${PREFIX}/man/man8/ircd.8
+-dir_make ${DPATH}man8
+-echo installing ircd.8 as ${DPATH}man8/ircd.8
+-$INSTALL_SH -c doc/ircd.8 ${DPATH}man8/ircd.8
+ 
+ # finished.
+ echo install complete!

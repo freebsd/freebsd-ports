@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# This script is a slightly modified copy of the pkg-install script from the 
+# original ircd-hybrid port, by desmo@bandwidth.org.
+
 if [ "x$2" != "xPRE-INSTALL" ]; then
 	exit 0;
 fi
@@ -37,15 +40,10 @@ if which -s pw ; then
 	:
 else
 	cat <<EOF
-
-This system looks like a pre-2.2 version of FreeBSD.  I see that it
-is missing the "pw" utility.  I need this utility.  Please get them
-and install them, and try again.  You can get the sources from:
-
-  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar.gz
-
+Your system does not include the "pw" utility.  You should upgrade
+to a newer version of FreeBSD.  Without "pw" this script will not
+run.
 EOF
-
 	exit 1
 fi
 
@@ -53,8 +51,8 @@ echo ""
 if pw groupshow ircd 2> /dev/null ; then
 	echo "You already have a group \"ircd\", so I will use it."
 else
-	if pw usershow 72 2> /dev/null ; then
-		echo "You already have a uid \"72\".  Please create a user \"ircd\""
+	if pw groupshow 72 2> /dev/null ; then
+		echo "You already have a gid \"72\".  Please create a user \"ircd\""
 		echo "with a default group of \"ircd\"."
 		exit 1
 	fi
@@ -75,9 +73,14 @@ fi
 if pw usershow ircd 2> /dev/null ; then
 	echo "You already have a user \"ircd\", so I will use it."
 else
+        if pw usershow 72 2> /dev/null ; then
+                echo "You already have a uid \"72\".  Please create a user \"irc
+d\""
+                echo "with a default group of \"ircd\"."
+                exit 1
+        fi
 	echo "You need a user \"ircd\"."
 	if which -s pw && yesno "Would you like me to create it" y; then
-		ifkk
 		pw useradd ircd -g ircd -u 72 -h - -d /nonexistent \
 			-s /nonexistent -c "IRC Daemon" || exit
 		echo "Done."
@@ -86,4 +89,3 @@ else
 		exit 1
 	fi
 fi
-

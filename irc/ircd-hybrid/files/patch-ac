@@ -1,11 +1,25 @@
---- include/struct.h.old	Sun Jun  7 07:13:45 1998
-+++ include/struct.h	Sun Jun  7 07:14:03 1998
-@@ -89,7 +89,7 @@
+--- ircd-hybrid-6.2/include/config.h.in.orig	Wed Sep 26 04:04:02 2001
++++ ircd-hybrid-6.2/include/config.h.in	Mon Oct  8 02:31:28 2001
+@@ -109,8 +109,9 @@
+  *
+  */
  
- #define	USERLEN		10
- #define	REALLEN	 	50
--#define	TOPICLEN	90
-+#define	TOPICLEN	250
- #define	CHANNELLEN	200
- #define	PASSWDLEN 	20
- #define	KEYLEN		23
+-#define DPATH   "/usr/local/ircd/"
+-#define SPATH   "/usr/local/ircd/ircd"
++#define BPATH   "@prefix@/bin/"
++#define DPATH   "@prefix@/etc/ircd/"
++#define SPATH   "@prefix@/bin/ircd"
+ #define CPATH   "ircd.conf"
+ #define KPATH   "kline.conf"
+ #define DLPATH  "kline.conf"
+@@ -561,8 +562,8 @@
+  * define IRC_UID to that UID.  This should only be defined if you are running
+  * as root and even then perhaps not.
+  */
+-#define IRC_UID 1001
+-#define IRC_GID 31
++#define IRC_UID 72
++#define IRC_GID 72
+ 
+ /* CLIENT_FLOOD - client excess flood threshold
+  * this controls the number of bytes the server will allow a client to

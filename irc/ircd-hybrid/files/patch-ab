@@ -1,88 +1,30 @@
---- include/config.h.orig	Sat Sep 19 13:12:22 1998
-+++ include/config.h	Thu Oct 22 00:39:54 1998
-@@ -27,8 +27,8 @@
- /***************** MAKE SURE THIS IS CORRECT!!!!!!!!! **************/
- /* ONLY EDIT "HARD_FDLIMIT_" and "INIT_MAXCLIENTS" */
- 
--#define HARD_FDLIMIT_   1024
--#define INIT_MAXCLIENTS 800
-+#define HARD_FDLIMIT_   125
-+#define INIT_MAXCLIENTS 40
- 
- /*
-  * This is how many 'buffer connections' we allow... 
-@@ -82,8 +82,8 @@
-  * -Dianora
-  */
- 
--#define DPATH   "/usr/local/ircd/"
--#define SPATH   "/usr/local/ircd/ircd"
-+#define DPATH   "/usr/local/etc/ircd/"
-+#define SPATH   "/usr/local/sbin/ircd"
- #define	CPATH	"ircd.conf"
- #define KPATH   "kline.conf"
- #define	MPATH	"ircd.motd"
-@@ -144,8 +144,8 @@
-  *
-  * These need to be defined if you want to use SYSLOG logging, too.
-  */
--#define FNAME_USERLOG "/usr/local/ircd/users" /* */
--#define FNAME_OPERLOG "/usr/local/ircd/opers" /* */
-+#define FNAME_USERLOG "/var/log/ircd.users" /* */
-+#define FNAME_OPERLOG "/var/log/ircd.opers" /* */
- 
- /* FOLLOW_IDENT_RFC
-  * 
-@@ -180,7 +180,7 @@
-  * messages, define this.  Otherwise leave it undef'd for plain ole
-  * boring messages.
-  */
--#undef CUSTOM_ERR
-+#define CUSTOM_ERR
+diff -Nru ircd-hybrid-6.2.orig/configure ircd-hybrid-6.2/configure
+--- ircd-hybrid-6.2.orig/configure	Sun Oct  7 14:39:22 2001
++++ ircd-hybrid-6.2/configure	Sun Oct  7 15:33:36 2001
+@@ -544,7 +544,7 @@
  
  
- /* FAILED_OPER_NOTICE - send a notice to all opers when someone
-@@ -435,7 +435,7 @@
-  * mode "i" (i == invisible). Invisibility means people dont showup in
-  * WHO or NAMES unless they are on the same channel as you.
-  */
--#define	NO_DEFAULT_INVISIBLE
-+#undef	NO_DEFAULT_INVISIBLE
+ PACKAGE=ircd-hybrid
+-VERSION=6.0
++VERSION=6.2
  
- /* OPER_KILL OPER_REHASH OPER_RESTART OPER_DIE OPER_REMOTE -
-  *      restrict what local global-Opers can do
-@@ -534,7 +534,7 @@
-  * security problem - they can use the "-f" option to read any files
-  * that the 'new' access lets them.
-  */
--#define	CMDLINE_CONFIG
-+#undef	CMDLINE_CONFIG
  
- /* M4_PREPROC - run ircd.conf through m4 preprocessor
-  * To use m4 as a preprocessor on the ircd.conf file, define M4_PREPROC.
-@@ -563,11 +563,11 @@
-  * If you use syslog above, you may want to turn some (none) of the
-  * spurious log messages for KILL,SQUIT,etc off.
-  */
--#undef	SYSLOG_KILL	/* log all operator kills to syslog */
--#undef	SYSLOG_SQUIT	/* log all remote squits for all servers to syslog */
-+#define	SYSLOG_KILL	/* log all operator kills to syslog */
-+#define	SYSLOG_SQUIT	/* log all remote squits for all servers to syslog */
- #undef	SYSLOG_CONNECT	/* log remote connect messages for other all servs */
- #undef	SYSLOG_USERS	/* send userlog stuff to syslog */
--#undef	SYSLOG_OPER	/* log all users who successfully become an Op */
-+#define	SYSLOG_OPER	/* log all users who successfully become an Op */
- #undef  SYSLOG_BLOCK_ALLOCATOR /* debug block allocator */
  
- /* LOG_FACILITY - facility to use for syslog()
-@@ -615,8 +615,8 @@
-  * define IRC_UID to that UID.  This should only be defined if you are running
-  * as root and even then perhaps not.
-  */
--#define	IRC_UID 1001
--#define	IRC_GID 31
-+#define	IRC_UID 72
-+#define	IRC_GID 72
+@@ -2342,7 +2342,7 @@
+ ac_given_srcdir=$srcdir
+ ac_given_INSTALL="$INSTALL"
  
- /* CLIENT_FLOOD - client excess flood threshold
-  * this controls the number of bytes the server will allow a client to
+-trap 'rm -fr `echo "Makefile src/Makefile tools/Makefile zlib/Makefile include/setup.h zlib/setup.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
++trap 'rm -fr `echo "Makefile src/Makefile tools/Makefile zlib/Makefile include/config.h include/setup.h tools/install_ircd zlib/setup.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
+ EOF
+ cat >> $CONFIG_STATUS <<EOF
+ 
+@@ -2440,7 +2440,7 @@
+ 
+ cat >> $CONFIG_STATUS <<EOF
+ 
+-CONFIG_FILES=\${CONFIG_FILES-"Makefile src/Makefile tools/Makefile zlib/Makefile"}
++CONFIG_FILES=\${CONFIG_FILES-"Makefile src/Makefile tools/Makefile zlib/Makefile include/config.h tools/install_ircd"}
+ EOF
+ cat >> $CONFIG_STATUS <<\EOF
+ for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then

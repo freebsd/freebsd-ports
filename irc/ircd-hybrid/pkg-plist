@@ -1,12 +1,37 @@
-sbin/ircd
-bin/buildm4
-bin/fixklines
-bin/ircd-mkpasswd
+bin/ircd
+bin/mkpasswd
 bin/viconf
+bin/viklines
+bin/vimotd
+%%PORTDOCS%%share/doc/%%PORTNAME%%/old/US-Admin/Networking
+%%PORTDOCS%%share/doc/%%PORTNAME%%/old/US-Admin/Operators
+%%PORTDOCS%%share/doc/%%PORTNAME%%/old/US-Admin/README
+%%PORTDOCS%%share/doc/%%PORTNAME%%/old/Authors
+%%PORTDOCS%%share/doc/%%PORTNAME%%/old/Etiquette
+%%PORTDOCS%%share/doc/%%PORTNAME%%/old/README
+%%PORTDOCS%%share/doc/%%PORTNAME%%/CIDR.txt
+%%PORTDOCS%%share/doc/%%PORTNAME%%/INDEX
+%%PORTDOCS%%share/doc/%%PORTNAME%%/Makefile
+%%PORTDOCS%%share/doc/%%PORTNAME%%/README.TSora
+%%PORTDOCS%%share/doc/%%PORTNAME%%/Tao-of-IRC.940110
+%%PORTDOCS%%share/doc/%%PORTNAME%%/blalloc.txt
+%%PORTDOCS%%share/doc/%%PORTNAME%%/example.conf
+%%PORTDOCS%%share/doc/%%PORTNAME%%/example.conf.trillian
+%%PORTDOCS%%share/doc/%%PORTNAME%%/ircd.8
+%%PORTDOCS%%share/doc/%%PORTNAME%%/mtrie.txt
+%%PORTDOCS%%share/doc/%%PORTNAME%%/operguide.txt
+%%PORTDOCS%%share/doc/%%PORTNAME%%/opermyth.txt
+%%PORTDOCS%%share/doc/%%PORTNAME%%/rfc1459.txt
+%%PORTDOCS%%share/doc/%%PORTNAME%%/server-version-info
+%%PORTDOCS%%share/doc/%%PORTNAME%%/simple.conf
+%%PORTDOCS%%share/doc/%%PORTNAME%%/ts5.txt
+%%PORTDOCS%%share/doc/%%PORTNAME%%/yline.txt
+%%PORTDOCS%%@dirrm share/doc/%%PORTNAME%%/old/US-Admin
+%%PORTDOCS%%@dirrm share/doc/%%PORTNAME%%/old
+%%PORTDOCS%%@dirrm share/doc/%%PORTNAME%%
+etc/ircd/ircd.conf.sample
+etc/ircd/ircd.motd.sample
+etc/ircd/kline.conf.sample
+etc/ircd/opers.txt.sample
 etc/rc.d/ircd.sh
-etc/ircd/example.conf.trillian
-etc/ircd/ircd.conf
-etc/ircd/ircd.motd
-etc/ircd/kline.conf
-etc/ircd/opers.txt
-@dirrm etc/ircd
+@unexec rmdir %D/etc/ircd 2>/dev/null || true
