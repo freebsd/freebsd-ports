@@ -379,7 +379,7 @@
     SUBDIR += py-adns
     SUBDIR += py-ipy
     SUBDIR += py-jabber
-    SUBDIR += py-ldap1
+#    SUBDIR += py-ldap1
     SUBDIR += py-ldap2
     SUBDIR += py-libnet
     SUBDIR += py-pcap
