@@ -9,7 +9,7 @@ don't have to compile any C modules.  It uses the Perl 5 Socket.pm
 module and should therefore be very portable, even to non-Unix systems.
 
 The SNMP operations currently supported are "get", "get-next", "get-bulk"
-and "set", as well as trap generation and reception. 
+and "set", as well as trap generation and reception.
 
 WWW: http://www.switch.ch/misc/leinen/snmp/perl/
 
