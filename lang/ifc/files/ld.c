@@ -31,7 +31,7 @@
  */
 
 #include <sys/cdefs.h>
-__FBSDID("$FreeBSD: /tmp/pcvs/ports/lang/ifc/files/ld.c,v 1.6 2004-05-26 14:45:21 maho Exp $");
+__FBSDID("$FreeBSD: /tmp/pcvs/ports/lang/ifc/files/ld.c,v 1.7 2004-12-17 05:40:56 maho Exp $");
 
 #include <err.h>
 #include <stdio.h>
@@ -270,13 +270,14 @@ main(int argc, char *argv[], char *envp[])
 		}
 
 		/*
-		 * Force libcxa, libcxaguard and libunwind to static linkage,
+		 * Force libcxa, libcxaguard, libimf and libunwind to static linkage,
 		 * since the dynamic versions have glibc dependencies.
 		 * Don't add superfluous -Bdynamic.
 		 */
 		if (ARGCMP(i, "-Bdynamic") && i < argc - 1) {
 			if (ARGCMP(i + 1, "-lcxa") ||
 			    ARGCMP(i + 1, "-lcxaguard") ||
+			    ARGCMP(i + 1, "-limf") ||
 			    ARGCMP(i + 1, "-lunwind")) {
 				addarg(&al, "-Bstatic");
 				continue;
@@ -290,7 +291,7 @@ main(int argc, char *argv[], char *envp[])
 		/* Don't add superfluous -Bstatic. */
 		if (ARGCMP(i, "-Bstatic") && i < argc - 1 &&
 		    (ARGCMP(i + 1, "-lcprts") || ARGCMP(i + 1, "-lgcc_s") ||
-		    ARGCMP(i + 1, "-lunwind")))
+		    ARGCMP(i + 1, "-limf") || ARGCMP(i + 1, "-lunwind")))
 			continue;
 
 		/*

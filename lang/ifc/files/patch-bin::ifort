@@ -1,17 +1,19 @@
---- bin/ifort.orig	Tue Dec  9 19:55:12 2003
-+++ bin/ifort	Tue Dec  9 20:12:01 2003
-@@ -1,6 +1,9 @@
+--- bin/ifort.orig	Thu Nov 25 15:41:18 2004
++++ bin/ifort	Thu Nov 25 15:47:00 2004
+@@ -1,6 +1,11 @@
  #!/bin/sh
  
 -if [ -z INTEL_LICENSE_FILE ]
 +ICC_LOCALBASE=%%ICC_LOCALBASE%%
 +export ICC_LOCALBASE;
++GXX_ROOT=<INSTALLDIR>/lib
++export GXX_ROOT
 +
 +if [ -z "$INTEL_LICENSE_FILE" ]
  then
  INTEL_LICENSE_FILE=<INSTALLDIR>/licenses;
  else
-@@ -8,7 +11,7 @@
+@@ -8,7 +13,7 @@
  fi
  export INTEL_LICENSE_FILE;
  
@@ -20,7 +22,7 @@
  then 
   LD_LIBRARY_PATH=<INSTALLDIR>/lib;
  else
-@@ -16,7 +19,7 @@
+@@ -16,7 +21,7 @@
  fi
  export LD_LIBRARY_PATH;
  
@@ -29,7 +31,7 @@
  then
   PATH=<INSTALLDIR>/bin;
  else
-@@ -24,11 +27,31 @@
+@@ -24,11 +29,31 @@
  fi
  export PATH;
  
