@@ -6,23 +6,32 @@
 #
 
 PORTNAME=	motor
-PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTVERSION=	3.2.2
 CATEGORIES=	devel
-MASTER_SITES=	http://konst.org.ua/download/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	sobomax
+MASTER_SITES=	http://konst.org.ua/download/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	sysadmin@alexdupre.com
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl -lgnugetopt"
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 MAN1=		motor.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400010
+LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
+.endif
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC} ; ${INSTALL_DATA} FAQ README ${DOCSDIR})
+.endif
+
+.include <bsd.port.post.mk>
+

@@ -56,3 +56,6 @@ share/motor/themes
 @dirrm share/motor/templates/library
 @dirrm share/motor/templates
 @dirrm share/motor
+%%PORTDOCS%%share/doc/motor/FAQ
+%%PORTDOCS%%share/doc/motor/README
+%%PORTDOCS%%@dirrm share/doc/motor
