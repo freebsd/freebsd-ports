@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	lambdamoo
-PORTVERSION=	1.8.0.r8
+PORTVERSION=	1.8.1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.place.org/pub/moo/unofficial/
-DISTNAME=	LambdaMOO-1.8.0r8
+MASTER_SITES=	ftp://ftp.place.org/pub/moo/
+DISTNAME=	LambdaMOO-${PORTVERSION}
 
 MAINTAINER=	flathill@FreeBSD.ORG
 
-WRKSRC=		${WRKDIR}/MOO-1.8.0r8
+WRKSRC=		${WRKDIR}/MOO-${PORTVERSION}
 GNU_CONFIGURE=	yes
 ALL_TARGET=
 
