@@ -28,6 +28,7 @@ USE_REINPLACE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
 pre-configure:
-	@${FIND} ${WRKSRC} -name Makefile.in | xargs ${REINPLACE_CMD} 's|@DATADIRNAME@|share|'
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|@DATADIRNAME@|share|'
 
 .include <bsd.port.mk>
