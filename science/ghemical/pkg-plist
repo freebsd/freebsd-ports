@@ -1,35 +1,35 @@
 bin/ghemical
-share/ghemical/1.00/aromatic.txt
-share/ghemical/1.00/atomtyp.txt
-share/ghemical/1.00/element.txt
-share/ghemical/1.00/extable.txt
-share/ghemical/1.00/glade/file_export_dialog.glade
-share/ghemical/1.00/glade/file_import_dialog.glade
-share/ghemical/1.00/glade/geomopt_dialog.glade
-share/ghemical/1.00/glade/moldyn_dialog.glade
-share/ghemical/1.00/glade/setup_mm1_dialog.glade
-share/ghemical/1.00/glade/setup_qm1_dialog.glade
-share/ghemical/1.00/glade/trajview_dialog.glade
-share/ghemical/1.00/parameters/builder/amino.txt
-share/ghemical/1.00/parameters/builder/nucleic.txt
-share/ghemical/1.00/parameters/mm1param/stable/atomtypes.txt
-share/ghemical/1.00/parameters/mm1param/stable/parameters1.txt
-share/ghemical/1.00/parameters/mm1param/stable/parameters2.txt
-share/ghemical/1.00/parameters/mm1param/stable/parameters3.txt
-share/ghemical/1.00/parameters/mm1param/stable/parameters4.txt
-share/ghemical/1.00/parameters/mm1param/stable/parameters5.txt
-share/ghemical/1.00/parameters/mm1param/unstable/atomtypes.txt
-share/ghemical/1.00/parameters/mm1param/unstable/parameters1.txt
-share/ghemical/1.00/parameters/mm1param/unstable/parameters2.txt
-share/ghemical/1.00/parameters/mm1param/unstable/parameters3.txt
-share/ghemical/1.00/parameters/mm1param/unstable/parameters4.txt
-share/ghemical/1.00/parameters/mm1param/unstable/parameters5.txt
-share/ghemical/1.00/parameters/mm2param/loopdip.txt
-share/ghemical/1.00/parameters/mm2param/looptor.txt
-share/ghemical/1.00/parameters/mm2param/nonbonded.txt
-share/ghemical/1.00/phmodel.txt
-share/ghemical/1.00/resdata.txt
-share/ghemical/1.00/types.txt
+share/ghemical/1.01/aromatic.txt
+share/ghemical/1.01/atomtyp.txt
+share/ghemical/1.01/element.txt
+share/ghemical/1.01/extable.txt
+share/ghemical/1.01/glade/file_export_dialog.glade
+share/ghemical/1.01/glade/file_import_dialog.glade
+share/ghemical/1.01/glade/geomopt_dialog.glade
+share/ghemical/1.01/glade/moldyn_dialog.glade
+share/ghemical/1.01/glade/setup_mm1_dialog.glade
+share/ghemical/1.01/glade/setup_qm1_dialog.glade
+share/ghemical/1.01/glade/trajview_dialog.glade
+share/ghemical/1.01/parameters/builder/amino.txt
+share/ghemical/1.01/parameters/builder/nucleic.txt
+share/ghemical/1.01/parameters/mm1param/stable/atomtypes.txt
+share/ghemical/1.01/parameters/mm1param/stable/parameters1.txt
+share/ghemical/1.01/parameters/mm1param/stable/parameters2.txt
+share/ghemical/1.01/parameters/mm1param/stable/parameters3.txt
+share/ghemical/1.01/parameters/mm1param/stable/parameters4.txt
+share/ghemical/1.01/parameters/mm1param/stable/parameters5.txt
+share/ghemical/1.01/parameters/mm1param/unstable/atomtypes.txt
+share/ghemical/1.01/parameters/mm1param/unstable/parameters1.txt
+share/ghemical/1.01/parameters/mm1param/unstable/parameters2.txt
+share/ghemical/1.01/parameters/mm1param/unstable/parameters3.txt
+share/ghemical/1.01/parameters/mm1param/unstable/parameters4.txt
+share/ghemical/1.01/parameters/mm1param/unstable/parameters5.txt
+share/ghemical/1.01/parameters/mm2param/loopdip.txt
+share/ghemical/1.01/parameters/mm2param/looptor.txt
+share/ghemical/1.01/parameters/mm2param/nonbonded.txt
+share/ghemical/1.01/phmodel.txt
+share/ghemical/1.01/resdata.txt
+share/ghemical/1.01/types.txt
 share/ghemical/examples/1gar.mm2gp
 share/ghemical/examples/1hcl.mm2gp
 share/ghemical/examples/2-chlorobutane.gpr
@@ -132,13 +132,13 @@ share/gnome/help/ghemical/C/visualization.html
 @dirrm share/gnome/help
 @dirrm share/gnome
 @dirrm share/ghemical/examples
-@dirrm share/ghemical/1.00/parameters/mm2param
-@dirrm share/ghemical/1.00/parameters/mm1param/unstable
-@dirrm share/ghemical/1.00/parameters/mm1param/stable
-@dirrm share/ghemical/1.00/parameters/mm1param
-@dirrm share/ghemical/1.00/parameters/builder
-@dirrm share/ghemical/1.00/parameters
-@dirrm share/ghemical/1.00/glade
-@dirrm share/ghemical/1.00
+@dirrm share/ghemical/1.01/parameters/mm2param
+@dirrm share/ghemical/1.01/parameters/mm1param/unstable
+@dirrm share/ghemical/1.01/parameters/mm1param/stable
+@dirrm share/ghemical/1.01/parameters/mm1param
+@dirrm share/ghemical/1.01/parameters/builder
+@dirrm share/ghemical/1.01/parameters
+@dirrm share/ghemical/1.01/glade
+@dirrm share/ghemical/1.01
 @dirrm share/ghemical
 
