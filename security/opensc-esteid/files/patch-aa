@@ -1,0 +1,11 @@
+--- src/scrandom/Makefile.in.orig      Sat Jan 31 06:36:49 2004
++++ src/scrandom/Makefile.in   Sat Jan 31 06:37:20 2004
+@@ -157,7 +157,7 @@
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+       $(AM_LDFLAGS) $(LDFLAGS) -o $@
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ -fPIC
+ DIST_SOURCES = $(libscrandom_a_SOURCES) $(test_random_SOURCES)
+ HEADERS = $(include_HEADERS)
+ 
