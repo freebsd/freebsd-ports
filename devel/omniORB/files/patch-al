@@ -1,0 +1,11 @@
+--- tool/omniidl/cxx/dir.mk.orig	Thu Jul 13 17:25:54 2000
++++ tool/omniidl/cxx/dir.mk	Thu Sep 14 11:50:03 2000
+@@ -254,7 +254,7 @@
+        $(RM) $@; \
+        $(CXXLINK) $(CXXLINKOPTIONS) -shared -o $@ -Wl,-soname,$(soname) \
+        $(IMPORT_LIBRARY_FLAGS) \
+-       $(filter-out $(LibSuffixPattern),$^) $(LIBS)\
++       $(filter-out $(LibSuffixPattern),$^) $(LIBS) -lgcc\
+        )
+ 
+ export:: $(lib)
