@@ -286,6 +286,8 @@ include/qt2/qxml.h
 include/qt2/qxt.h
 lib/libqt2.so
 lib/libqt2.so.4
+lib/libqt2-mt.so
+lib/libqt2-mt.so.4
 lib/libqutil.so
 lib/libqutil.so.1
 share/doc/qt2/ANNOUNCE
