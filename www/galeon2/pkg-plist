@@ -10,6 +10,7 @@ lib/galeon/components/libgaleon-xpcom.so
 libdata/bonobo/servers/GNOME_Galeon_Automation.server
 libdata/bonobo/servers/GNOME_Galeon_NautilusView.server
 share/gnome/applications/galeon.desktop
+@exec update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/galeon/FAQ.html
 share/gnome/galeon/about_logo.png
 share/gnome/galeon/autoscroll.xpm
@@ -228,3 +229,4 @@ share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
 @dirrm lib/galeon
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/galeon/galeon-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/galeon/galeon-es.omf 2>/dev/null || /usr/bin/true
+@unexec update-desktop-database > /dev/null || /usr/bin/true
