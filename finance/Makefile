@@ -11,7 +11,6 @@
     SUBDIR += kexchange
     SUBDIR += khacc
     SUBDIR += ktoblzcheck
-    SUBDIR += ktoblzcheck
     SUBDIR += libofx
     SUBDIR += libstocks
     SUBDIR += moneydance
