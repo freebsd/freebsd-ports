@@ -74,6 +74,7 @@
     SUBDIR += crossfire-server
     SUBDIR += crossword
     SUBDIR += cryptoslam
+    SUBDIR += csmash
     SUBDIR += cube
     SUBDIR += cursive
     SUBDIR += deal
