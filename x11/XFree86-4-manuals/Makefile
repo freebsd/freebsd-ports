@@ -18,7 +18,7 @@ MAINTAINER=	taguchi@tohoku.iij.ad.jp
 XFREE86_VERSION=	4
 USE_IMAKE=		YES
 EXTRACT_TARGET=		xc/doc/man \
- 			xc/extras/ogl-sample/main/doc/man
+			xc/extras/ogl-sample/main/doc/man
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${EXTRACT_TARGET}
 PROJECTROOT=		-DProjectRoot=${PREFIX}
 DIST_SUBDIR=		xc
