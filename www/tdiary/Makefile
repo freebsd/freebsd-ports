@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tdiary
-PORTVERSION=	1.5.7
+PORTVERSION=	2.0.0
 CATEGORIES?=	www ruby
 MASTER_SITES=	\
 		${MASTER_SITE_SOURCEFORGE} \
@@ -18,7 +18,7 @@ MAINTAINER=	jfkimura@yahoo.co.jp
 COMMENT=	A Web-based diary system (like weblog) written in Ruby
 
 NO_BUILD=		yes
-CONFLICTS?=		ja-tdiary-1.*
+CONFLICTS?=		ja-tdiary-*
 PKGMESSAGE=		${WRKDIR}/pkg-message
 USE_RUBY=		yes
 .if  !defined(WITHOUT_RUBY_FEATURES)
@@ -26,7 +26,8 @@ USE_RUBY_FEATURES=	fileutils
 .endif
 
 RUBY_SHEBANG_FILES=	index.rb update.rb misc/convert2.rb misc/plugin/squeeze.rb \
-misc/plugin/windex.rb misc/plugin/a/a_conf.rb misc/plugin/trackback/tb.rb
+			misc/plugin/windex.rb misc/plugin/a/a_conf.rb \
+			misc/plugin/trackback/tb.rb misc/style/etdiary/etdiary_test.rb
 
 TDIARYDIR=	${EXAMPLESDIR}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -40,15 +41,6 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 .if defined(WITH_TDIARY_NORA)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/web/escape_ext.so:${PORTSDIR}/www/ruby-nora
 .endif
-
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "============================================================================="
-	@${ECHO_MSG} "When you chose plugin, it becomes necessary.  Use the following options:"
-	@${ECHO_MSG} "  WITH_TDIARY_UCONV=yes	(RDF file creates  with UTF-8 : output_rdf.rb)"
-	@${ECHO_MSG} "  WITH_TDIARY_NORA=yes	(Referer header support       : disp_referrer.rb)"
-	@${ECHO_MSG} "============================================================================="
-	@${ECHO_MSG}
 
 do-install:
 	@-${MKDIR} ${TDIARYDIR}
