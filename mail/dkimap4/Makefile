@@ -18,6 +18,7 @@ COMMENT=	IMAP4rev1 and POP3 server from the DBOX BBS package
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_GCC=	2.95
 
 # dkimap will look for incoming mail folders (mbox format) here instead of
 # the default from paths.h (/var/mail/) if you uncomment it:
@@ -31,13 +32,8 @@ MAKE_ARGS+=	BIN_DIR="${PREFIX}/bin" DKIMAPSPOOL="${DKIMAPSPOOL}"
 MAKE_ARGS+=	SPOOLDIR="${SPOOLDIR}"
 .endif
 
-DOCS=	README
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
+PORTDOCS=	README
+PLIST_FILES=	bin/movemail libexec/dkimap4 libexec/dkpop3
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/movemail/movemail ${PREFIX}/bin
@@ -46,11 +42,11 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/share/doc/${PORTNAME}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/${PORTNAME}
+	@${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
