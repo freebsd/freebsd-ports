@@ -8,7 +8,7 @@
 PORTNAME=	oracle7-client
 PORTVERSION=	0.01
 CATEGORIES=	databases
-MASTER_SITES=	\
+MASTER_SITES=	ftp://www.kuzbass.ru/pub/freebsd/oracle/ \
 		ftp://ftp.atnet.ru/pub/OS/FreeBSD/oracle/ \
 		ftp://ftp.lipetsk.ru/pub/unix/Oracle/FreeBSD/ \
 		ftp://ftp.redcom.ru/pub/Oracle/freebsd-client7/
@@ -26,14 +26,14 @@ PLIST_SUB=	ORACLE_PREFIX="${ORACLE_PREFIX}"
 NO_BUILD=	yes
 
 pre-install:
-		@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-		@${CP} -pRP ${WRKSRC}/network ${WRKSRC}/ocommon \
-			${WRKSRC}/rdbms ${ORACLE_HOME}
-		@${LN} -sf rdbms/lib ${ORACLE_HOME}/lib
+	@${CP} -pRP ${WRKSRC}/network ${WRKSRC}/ocommon ${WRKSRC}/rdbms \
+		${ORACLE_HOME}
+	@${LN} -sf rdbms/lib ${ORACLE_HOME}/lib
 
 post-install:
-		@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
