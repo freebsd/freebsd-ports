@@ -8,15 +8,6 @@
  # You can give a lot of options to configure.
  # Change this to your desire and do 'make config' afterwards
  
-@@ -1733,7 +1734,7 @@
- 	   INSTALL_DATA=$(INSTALL_DATA) FILEMOD=$(FILEMOD) install; \
- 	fi
- 	if test -d $(LANGSOURCE); then \
--	   $(INSTALL_DATA) $(LANGSOURCE)/README.txt $(LANGSOURCE)/*.vim $(DEST_LANG); \
-+	   $(INSTALL_DATA)                          $(LANGSOURCE)/*.vim $(DEST_LANG); \
- 	   chmod $(FILEMOD) $(DEST_LANG)/README.txt $(DEST_LANG)/*.vim; \
- 	fi
- 	if test -d $(KMAPSOURCE); then \
 @@ -1794,40 +1795,40 @@
  installgvimdiff: $(DEST_BIN)/$(GVIMDIFFTARGET)
  
