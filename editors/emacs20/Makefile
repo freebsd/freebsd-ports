@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.33 1998/09/01 07:11:31 asami Exp $
+# $Id: Makefile,v 1.34 1998/12/13 11:54:49 kuriyama Exp $
 #
 
 DISTNAME=	emacs-20.3
@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MAINTAINER=	jseger@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	i386--freebsd --with-x-toolkit --with-pop
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
