@@ -18,6 +18,7 @@ bin/string2key
 bin/su
 bin/telnet
 bin/verify_krb5_conf
+etc/rc.d/kdc.sh.sample
 include/asn1.h
 include/asn1_err.h
 include/base64.h
