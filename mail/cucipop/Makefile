@@ -10,8 +10,18 @@
 
 PORTNAME=	cucipop
 PORTVERSION=	1.31
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.informatik.rwth-aachen.de/pub/packages/cucipop/
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400014
+PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/ \
+		ftp://ftp.pasta.cs.uit.no/pub/IPv6/misc/
+PATCHFILES=	cucipop-1.31-v6-20010128.diff.gz
+PATCH_DIST_STRIP=	-p1
+.endif
 
 #BUILD_DEPENDS=  ${PREFIX}/include/db2/db.h:${PORTSDIR}/databases/db
 
@@ -19,4 +29,4 @@ MAINTAINER=	vanilla@FreeBSD.org
 
 MAN8=   cucipop.8 #makevpopdb.8
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
