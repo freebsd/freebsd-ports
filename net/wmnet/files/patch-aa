@@ -1,0 +1,20 @@
+--- Makefile.orig	Sat Sep 19 02:58:38 1998
++++ Makefile	Thu Dec  3 01:04:50 1998
+@@ -9,14 +9,15 @@
+ LIBDIR = -L/usr/X11R6/lib -L/usr/local/lib
+ LIBS = -lXpm -lXext -lX11 -lkvm
+ OBJS =	main.o if.o wmgeneral.o
++INCDIR = -I${X11BASE}/include
+ 
+ .c.o :
+-	cc -c -g -O1 -Wall $< -o $*.o
++	cc -c -g -O1 -Wall ${INCDIR} $< -o $*.o
+ 
+ all :: wmnet
+ 
+ wmnet : $(OBJS)
+-	cc -o wmnet $(OBJS) $(LIBDIR) $(LIBS)
++	cc -o wmnet $(OBJS) $(LIBDIR) $(LIBS) ${INCDIR}
+ 
+ main.o : wmnet-mask.xbm wmnet-master.xpm wmnet.h wmgeneral.h
+ 

@@ -1,0 +1,14 @@
+This application displays the data rate through a given network
+interface. It is intended to be run from the WindowMaker dock,
+but others have run it under the fvwm and AfterStep window managers.
+
+Information about this software can be found on my web page:
+
+	http://www.mcs.net/~rneswold/www/home.shtml
+
+Please report any problems or improvements to me.
+
+--
+
+Rich Neswold
+rneswold@mcs.net
