@@ -3,20 +3,24 @@
 # Date created:		23 August 1994
 # Whom:			adam
 #
+# $Id$
+#
 
-DISTNAME=	dgd-1.0.9
+DISTNAME=	dgd-1.0.37
 DISTFILES=	${DISTNAME}.tar.gz
-PATCHFILES=	1.0.9-1.0.9.1.gz
+#PATCHFILES=	1.0.9-1.0.9.1.gz
 MASTER_SITES=	ftp.lysator.liu.se:/pub/lpmud/drivers/dgd/
-PATCH_SITES=	ftp.veda.is:/pub/mud/dgd/patches/
+#PATCH_SITES=	ftp.veda.is:/pub/mud/dgd/patches/
 CATEGORIES=	net lang
 
 MAINTAINER=	adam@veda.is
 
+.ifdef PATCHFILES
 .if ${PATCHFILES} != ""
 PATCH_PRFX=	${DISTNAME}/
 PATCHLEVEL!=	echo ${PATCHFILES} | sed 's/^.*\.\(.*\)\.gz$$/\1/'
 PKGNAME=	${DISTNAME}.${PATCHLEVEL}
+.endif
 .endif
 WRKSRC=		${WRKDIR}/dgd/src
 
