@@ -44,10 +44,6 @@ LDCONFIG_DIRS+=		%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
-CFLAGS+=	-fPIC
-.endif
-
 WV2_CONFIG=	${LOCALBASE}/bin/wv2-config
 
 .if exists(${WV2_CONFIG})
