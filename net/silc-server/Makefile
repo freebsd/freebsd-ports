@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--with-silcd-config-file=${PREFIX}/etc/${PORTNAME}/silcd.conf \
 		--with-etcdir=${PREFIX}/etc/${PORTNAME} \
 		--with-helpdir=share/${PORTNAME}/help \
 		--with-logsdir=${PORTNAME}/logs \
-		--with-silcd-pid-file=/var/run \
+		--with-silcd-pid-file=/var/run/silcd.pid \
 		--with-simdir=libexec/${PORTNAME}/modules
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"
