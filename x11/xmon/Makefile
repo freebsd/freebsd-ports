@@ -12,6 +12,8 @@ MASTER_SITES=   ftp://ftp.mxlab.com/unix/x/
 
 MAINTAINER=     bms@spc.org
 
+BROKEN=		"Does not fetch"
+
 WRKSRC=         ${WRKDIR}/xmon.1.5.6
 USE_IMAKE=	yes
 
