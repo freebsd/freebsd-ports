@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	icc
-PORTVERSION=	6.0.139
-PORTREVISION=	1
+PORTVERSION=	6.0.149
 CATEGORIES=	lang linux
-MASTER_SITES=	http://www.intel.com/software/products/compilers/
-DISTNAME=	l_cc_p_6.0.139
+MASTER_SITES=
+DISTNAME=	l_cc_pu_6.0.149
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	netchild@FreeBSD.org
@@ -28,22 +27,24 @@ NO_WRKSUBDIR=		yes
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 
+ICC_SITE=	http://www.intel.com/software/products/compilers/
+
 .include <bsd.port.pre.mk>
 
 ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	"Please manually download it from ${MASTER_SITES}, e.g. from http://www.intel.com/software/products/compilers/c60l/noncom.htm. Put it into ${DISTDIR} and run make again. WARNING: this will lead to a mixed up installation if you already use the default linux emulation. This port uses the linux_base-7 port instead of the default linux_base port"
+.if !exists(${DISTDIR}/${DISTFILES})
+IGNORE=	"Please manually download ${DISTFILES} from ${ICC_SITE}, e.g. from ${ICC_SITE}c60l/noncom.htm. Put it into ${DISTDIR} and run make again."
 .endif
 
 post-extract:
 .for i in \
-	intel-icc6-6.0-139.i386.rpm \
-#	intel-ildb6-6.0-189.i386.rpm \
-#	intel-isubh6-6.0-139.i386.rpm \
-#	intel-ecc6-6.0-139.ia64.rpm \
-#	intel-eldb6-6.0-189.ia64.rpm \
-#	intel-esubh6-6.0-139.ia64.rpm
+	intel-icc6-6.0-149.i386.rpm \
+#	intel-ildb6-6.0-208.i386.rpm \
+#	intel-isubh6-6.0-149.i386.rpm \
+#	intel-ecc6-6.0-149.ia64.rpm \
+#	intel-eldb6-6.0-208.ia64.rpm \
+#	intel-esubh6-6.0-149.ia64.rpm
 	@cd ${WRKSRC};  rpm2cpio ${i} | cpio -idu --quiet
 .endfor
 
@@ -65,8 +66,8 @@ pre-patch:
 post-patch:
 # Correct some paths and patch some files
 .for i in ia32/bin/icc ia32/bin/icc.cfg ia32/bin/iccvars.csh \
-	ia32/bin/iccvars.sh ia32/bin/icpc ia32/bin/icpc.cfg
-	@${SED} 's@export -n IA32ROOT; unset IA32ROOT;@@g; s@-a "<INSTALLDIR>/compiler60/ia32/bin/icc" @@g; s@-a "<INSTALLDIR>/compiler60/ia32/bin/icpc" @@g; s@\<INSTALLDIR\>@${PREFIX}/intel@g; s@-tp p6@@; s@man -w@manpath -q@g' \
+	ia32/bin/iccvars.sh ia32/bin/icpc ia32/bin/icpc.cfg docs/csupport
+	@${SED} 's@export -n IA32ROOT; unset IA32ROOT;@@g; s@-a "<INSTALLDIR>/compiler60/ia32/bin/icc" @@g; s@-a "<INSTALLDIR>/compiler60/ia32/bin/icpc" @@g; s@\<INSTALLDIR\>@${PREFIX}/intel@g; s@-tp p6@@; s@man -w@manpath -q@g; s:\<INSTALLTIMECOMBOPACKAGEID\>:Intel(R) C++ Compiler for Linux:g' \
 		${WRKSRC}/opt/intel/compiler60/${i} \
 		>${WRKSRC}/opt/intel/compiler60/${i}.seded
 	@${MV} -f ${WRKSRC}/opt/intel/compiler60/${i}.seded \

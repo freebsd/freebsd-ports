@@ -505,6 +505,7 @@
 %%PORTDOCS%%intel/compiler60/docs/c_ug_lnx.pdf
 %%PORTDOCS%%intel/compiler60/docs/ccompindex.htm
 %%PORTDOCS%%intel/compiler60/docs/clicense
+%%PORTDOCS%%intel/compiler60/docs/credist.txt
 %%PORTDOCS%%intel/compiler60/docs/csupport
 %%PORTDOCS%%intel/compiler60/docs/enduser.pdf
 %%PORTDOCS%%intel/compiler60/docs/icid.htm
