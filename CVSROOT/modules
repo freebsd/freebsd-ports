@@ -8313,6 +8313,7 @@ pear-Net_IMAP	ports/mail/pear-Net_IMAP
 pear-Net_IPv6	ports/net/pear-Net_IPv6
 pear-Net_NNTP	ports/net/pear-Net_NNTP
 pear-Net_POP3	ports/net/pear-Net_POP3
+pear-Net_Ping	ports/net/pear-Net_Ping
 pear-Net_SMTP	ports/net/pear-Net_SMTP
 pear-Net_Server	ports/net/pear-Net_Server
 pear-Net_Sieve	ports/net/pear-Net_Sieve
