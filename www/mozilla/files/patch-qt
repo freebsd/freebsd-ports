@@ -1,14 +1,14 @@
---- configure.orig	Wed Aug 27 11:00:21 2003
-+++ configure	Sat Oct 11 12:22:54 2003
-@@ -11896,9 +11896,9 @@
+--- configure.orig	Fri Aug 29 13:19:05 2003
++++ configure	Sat Oct 18 15:43:27 2003
+@@ -11957,9 +11957,9 @@
  
  
  
 -MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref transformiix venkman inspector irc universalchardet typeaheadfind webservices spellcheck"
 +MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref transformiix venkman inspector universalchardet typeaheadfind webservices spellcheck"
  
--MOZ_EXTENSIONS_ALL="$MOZ_EXTENSIONS_DEFAULT xmlterm access-builtin datetime finger cview" 
-+MOZ_EXTENSIONS_ALL="$MOZ_EXTENSIONS_DEFAULT irc xmlterm access-builtin datetime finger cview" 
+-MOZ_EXTENSIONS_ALL="$MOZ_EXTENSIONS_DEFAULT xmlterm datetime finger cview layout-debug"
++MOZ_EXTENSIONS_ALL="$MOZ_EXTENSIONS_DEFAULT irc xmlterm datetime finger cview layout-debug"
  
  # Check whether --enable-extensions or --disable-extensions was given.
  if test "${enable_extensions+set}" = set; then

@@ -7,7 +7,7 @@
 
 PORTNAME=	galeon2
 PORTVERSION=	1.3.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/2$//}
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${X11BASE}/include/mozilla${HEADERS_SUFX}/gtkembedmoz/gtkmozembed
 		${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.4"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.5b"
 
 MOZILLA=	mozilla-gtk2
 HEADERS_SUFX=

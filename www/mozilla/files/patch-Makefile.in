@@ -1,16 +1,16 @@
---- Makefile.in.orig	Thu May 30 20:39:07 2002
-+++ Makefile.in	Wed Aug 28 13:55:32 2002
-@@ -70,8 +70,7 @@
- 	$(tier_0_dirs) \
- 	$(tier_1_dirs) \
+--- Makefile.in.orig	Fri Aug 29 20:20:58 2003
++++ Makefile.in	Sat Oct 18 15:34:15 2003
+@@ -67,8 +67,7 @@
  	$(tier_2_dirs) \
--	$(tier_9_dirs) \
+ 	$(tier_9_dirs) \
+ 	$(tier_40_dirs) \
+-	$(tier_50_dirs) \
 -	$(NULL)
-+	$(tier_9_dirs)
++	$(tier_50_dirs)
  
  ifdef GC_LEAK_DETECTOR
  DIRS += gc/boehm
-@@ -90,7 +89,8 @@
+@@ -87,7 +86,8 @@
  DIRS += $(tier_98_dirs)
  endif
  
