@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_throttle
 PORTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.snert.com/Software/mod_throttle/ \
 		http://atreides.freenix.no/~anders/
