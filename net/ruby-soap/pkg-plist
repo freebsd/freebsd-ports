@@ -20,6 +20,7 @@ bin/wsdl2ruby.rb
 %%RUBY_SITELIBDIR%%/soap/parser.rb
 %%RUBY_SITELIBDIR%%/soap/processor.rb
 %%RUBY_SITELIBDIR%%/soap/proxy.rb
+%%RUBY_SITELIBDIR%%/soap/qname.rb
 %%RUBY_SITELIBDIR%%/soap/rexmlparser.rb
 %%RUBY_SITELIBDIR%%/soap/rpcRouter.rb
 %%RUBY_SITELIBDIR%%/soap/rpcUtils.rb
@@ -28,14 +29,22 @@ bin/wsdl2ruby.rb
 %%RUBY_SITELIBDIR%%/soap/soap.rb
 %%RUBY_SITELIBDIR%%/soap/standaloneServer.rb
 %%RUBY_SITELIBDIR%%/soap/streamHandler.rb
+%%RUBY_SITELIBDIR%%/soap/typeMap.rb
+%%RUBY_SITELIBDIR%%/soap/wsdlDriver.rb
 %%RUBY_SITELIBDIR%%/soap/xmlparser.rb
+%%RUBY_SITELIBDIR%%/soap/xmlscanner.rb
+%%RUBY_SITELIBDIR%%/wsdl/nqxmlparser.rb
+%%RUBY_SITELIBDIR%%/wsdl/rexmlparser.rb
+%%RUBY_SITELIBDIR%%/wsdl/soap/complexType.rb
+%%RUBY_SITELIBDIR%%/wsdl/soap/definitions.rb
+%%RUBY_SITELIBDIR%%/wsdl/xmlSchema/import.rb
+%%RUBY_SITELIBDIR%%/wsdl/xmlscanner.rb
 %%RUBY_SITELIBDIR%%/wsdl/binding.rb
 %%RUBY_SITELIBDIR%%/wsdl/data.rb
 %%RUBY_SITELIBDIR%%/wsdl/definitions.rb
 %%RUBY_SITELIBDIR%%/wsdl/import.rb
 %%RUBY_SITELIBDIR%%/wsdl/info.rb
 %%RUBY_SITELIBDIR%%/wsdl/message.rb
-%%RUBY_SITELIBDIR%%/wsdl/name.rb
 %%RUBY_SITELIBDIR%%/wsdl/namedElements.rb
 %%RUBY_SITELIBDIR%%/wsdl/operation.rb
 %%RUBY_SITELIBDIR%%/wsdl/operationBinding.rb
@@ -95,6 +104,7 @@ bin/wsdl2ruby.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/GoogleSearch/GoogleSearchServiceClient.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/GoogleSearch/README
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/GoogleSearch/httpd.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/GoogleSearch/wsdlDriver.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ICD/IICD.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ICD/icd.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/RAA/RAA.rb
@@ -104,7 +114,10 @@ bin/wsdl2ruby.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/RAA/pocketSOAP.js
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/RAA/raa-div.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/RAA/soap4r.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/RAA/wsdl/soap4r.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/RAA/xmlrpc4r.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/RNN/client.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/RNN/post.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/RWiki/rwikiClient.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/RWiki/rwikiServer.cgi
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/SampleStruct/client.rb
@@ -139,9 +152,10 @@ bin/wsdl2ruby.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/client.NetRemoting.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/client4S4C.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/client4S4C2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientASP.NET.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientApacheAxis.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientApacheSOAP.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientASP.NET.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientBEAWebLogic.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientBase.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientCapeConnect.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientDelphi.rb
@@ -151,11 +165,13 @@ bin/wsdl2ruby.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientHP.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientJAX-RPC.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientJSOAP.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientKafkaXSLT.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientMSSOAPToolkit2.0.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientMSSOAPToolkit3.0.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientNuSOAP.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientOpenLink.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientNuWave.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientOpenLink.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientOracle.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientPEAR.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientPhalanx.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientSIMACE.rb
@@ -165,11 +181,13 @@ bin/wsdl2ruby.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientSilverStream.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientSoapRMI.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientSpray2001.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientSun.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientVWOpentalkSoap.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientWASP.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientWASPC.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientWebMethods.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientWhiteMesa.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientWingfoot.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientXMLBus.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientXMLRPC-EPI.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/clientZSI.rb
@@ -182,6 +200,7 @@ bin/wsdl2ruby.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/server.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/simonReg.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/test.sh
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/interopR2/uconv.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/sm11/classDef.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/sm11/client.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/sm11/driver.rb
@@ -193,7 +212,9 @@ bin/wsdl2ruby.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/Exchange
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/GoogleSearch
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/ICD
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/RAA/wsdl
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/RAA
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/RNN
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/RWiki
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/SampleStruct
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/WSDemo
