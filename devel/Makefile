@@ -359,6 +359,7 @@
     SUBDIR += libvanessa_socket
     SUBDIR += libvc
     SUBDIR += libxalloc
+    SUBDIR += libzt
     SUBDIR += libzvbi
     SUBDIR += lightning
     SUBDIR += lincvs

@@ -1,0 +1,25 @@
+include/libzt/assert.h
+include/libzt/cfg.h
+include/libzt/cfg/cfg_private.h
+include/libzt/cfg/ini.h
+include/libzt/cfg/interface.h
+include/libzt/common.h
+include/libzt/daemon.h
+include/libzt/log.h
+include/libzt/log/file.h
+include/libzt/log/interface.h
+include/libzt/log/log_private.h
+include/libzt/log/stderr.h
+include/libzt/log/syslog.h
+include/libzt/macros.h
+include/libzt/opts.h
+include/libzt/progname.h
+include/libzt/str.h
+include/libzt/zt.h
+lib/libzt.a
+lib/libzt.la
+lib/libzt.so
+lib/libzt.so.0
+@dirrm include/libzt/cfg
+@dirrm include/libzt/log
+@dirrm include/libzt
