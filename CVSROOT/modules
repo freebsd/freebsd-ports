@@ -9083,6 +9083,7 @@ saxon-devel	ports/textproc/saxon-devel
 sb16config	ports/sysutils/sb16config
 sbagen		ports/audio/sbagen
 sbcl		ports/lang/sbcl
+sbd		ports/net/sbd
 sbniconfig	ports/sysutils/sbniconfig
 sc		ports/math/sc
 scalapack	ports/math/scalapack
