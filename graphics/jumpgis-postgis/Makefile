@@ -26,8 +26,6 @@ NO_WRKSUBDIR=	yes
 
 do-install:
 	@${ECHO_MSG} " >> Installing JAR files"
-	${MKDIR} ${TARGET_DIR}/lib/ext
-	${CHMOD} 0755 ${TARGET_DIR}/lib/ext
 	${INSTALL_DATA} ${WRKSRC}/lib/ext/postgisdriver-1.1.0.jar ${TARGET_DIR}/lib/ext/
 	${INSTALL_DATA} ${WRKSRC}/lib/ext/pg74jdbc3.jar ${TARGET_DIR}/lib/
 
