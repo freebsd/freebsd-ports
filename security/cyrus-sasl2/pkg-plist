@@ -85,8 +85,8 @@ sbin/saslpasswd2
 @dirrm lib/sasl2
 @mode ug=rwx,o=
 @exec mkdir -p /var/state/saslauthd
-@exec chown -R cyrus:cyrus state
-@exec chmod -R o= state
+@exec chown -R cyrus:cyrus /var/state
+@exec chmod -R o= /var/state
 @comment This file gets created by the state/saslauthd program
 @unexec rm -fr /var/state/saslauthd
 @unexec rmdir /var/state
