@@ -1,0 +1,26 @@
+--- windiv.c.orig	Mon Mar  2 14:28:51 1998
++++ windiv.c	Tue Aug 11 02:48:32 1998
+@@ -12,6 +12,7 @@
+  *
+  * hgk+jl 02.98 File selection window
+  */
++#include <sys/types.h>
+ #include <dirent.h>
+ #include <sys/stat.h>
+ #include "port.h"
+@@ -244,8 +245,14 @@
+ 
+       /* get regular files */
+       dirlist[nCnt].d_ino    = dirent->d_ino;
+-      dirlist[nCnt].d_off    = dirent->d_off;
+       dirlist[nCnt].d_reclen = dirent->d_reclen;
++#if (defined(BSD) && (BSD >= 199306))
++      dirlist[nCnt].d_type   = dirent->d_type;
++      dirlist[nCnt].d_namlen = dirent->d_namlen;
++#else
++      dirlist[nCnt].d_off    = dirent->d_off;
++#endif
++
+       strcpy(dirlist[nCnt].d_name, dirent->d_name );
+       nMaxWidth = max(nMaxWidth, strlen(dirent->d_name));
+       nCnt++;

@@ -1,5 +1,5 @@
---- install.sh.orig	Sat Sep 27 10:21:12 1997
-+++ install.sh	Sat Jan 10 01:16:04 1998
+--- install.sh.orig	Sun Feb 22 14:59:37 1998
++++ install.sh	Tue Aug 11 02:57:05 1998
 @@ -29,6 +29,7 @@
  		exit 1
  	fi
@@ -8,17 +8,17 @@
  
  if test ! -d $2
  then
-@@ -47,8 +48,8 @@
+@@ -46,8 +47,8 @@
+ then
  	echo "Installing minicom in $2"
  	cp minicom $2/minicom
- 	chmod 755 $2/minicom
 -	chown root $2/minicom
--	chgrp root $2/minicom
+-	chgrp uucp $2/minicom
 +	chown uucp $2/minicom
 +	chgrp dialer $2/minicom
+ 	chmod 755 $2/minicom
  fi
  
- for i in runscript xminicom ascii-xfr
 @@ -59,7 +60,7 @@
  	cp $i $2/$i
  	chmod 755 $2/$i
@@ -55,16 +55,27 @@
  	chmod 644 $1/minicom.users
  fi
  
-@@ -98,7 +99,7 @@
- 		cp ../demos/$i $4/$i
- 		chmod 644 $4/$i
- 		chown root $4/$i
--		chgrp root $4/$i
-+		chgrp bin $4/$i
- 	done
+@@ -95,13 +96,13 @@
+ if test -d $4
+ then
+ 		echo "Installing script demos, docs, & character tables in $4"
+-		cp ../doc/* $4
++		##cp ../doc/* $4
+ 		cp -r ../demos $4
+-		cp -r ../tables $4
+-		chmod 644 $4/* $4/demos/* $4/tables/*
+-		chmod a+x $4/demos $4/tables
+-		chown root $4/* $4/demos/* $4/tables/*
+-		chgrp root $4/* $4/demos/* $4/tables/*
++		##cp -r ../tables $4
++		chmod 644 $4/* $4/demos/* ## $4/tables/*
++		chmod a+x $4/demos ## $4/tables
++		chown root $4/* $4/demos/* ## $4/tables/*
++		chgrp bin $4/* $4/demos/* ## $4/tables/*
  else
  	echo "You don't have a $4 directory - script examples not installed."
-@@ -109,9 +110,10 @@
+ fi
+@@ -111,11 +112,12 @@
      rm minicom.o
  fi
  	
@@ -72,10 +83,14 @@
 -echo
 -echo "chmod +s $2/minicom"
 -echo
+-echo "or make your modem device in the /dev directory world writable "
+-echo "with chmod a+rw"
 +###echo "Minicom is NOT setuid yet - you must do this yourself by entering:"
 +###echo
 +###echo "chmod +s $2/minicom"
 +###echo
 +chmod u+s $2/minicom
++###echo "or make your modem device in the /dev directory world writable "
++###echo "with chmod a+rw"
  
  exit 0

@@ -1,15 +1,15 @@
+@comment $Id$
 bin/minicom
 bin/xminicom
 bin/runscript
 bin/ascii-xfr
 etc/minicom/minicom.users
-etc/minicom/htsalogin
-etc/minicom/saralogin
-etc/minicom/scriptdemo
-etc/minicom/unixlogin     
+etc/minicom/demos/htsalogin
+etc/minicom/demos/saralogin
+etc/minicom/demos/scriptdemo
+etc/minicom/demos/unixlogin
 man/man1/minicom.1.gz
 man/man1/runscript.1.gz
 man/man1/ascii-xfr.1.gz
 @exec /usr/sbin/chown uucp %D/etc/minicom
-@unexec /bin/rm -rf %D/etc/minicom/*
-@dirrm etc/minicom
+@dirrm etc/minicom/demos
