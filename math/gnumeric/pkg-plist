@@ -12,6 +12,10 @@ lib/gnumeric/%%VERSION%%/plugins/gb/gnum_gb.so
 lib/gnumeric/%%VERSION%%/plugins/gb/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/gdaif/gdaif.so
 lib/gnumeric/%%VERSION%%/plugins/gdaif/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/glossary-po-header
+lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/gnome_glossary.py
+lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/gnome_glossary.pyc
+lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/html/html.so
 lib/gnumeric/%%VERSION%%/plugins/html/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/lotus/lotus.so
@@ -24,6 +28,13 @@ lib/gnumeric/%%VERSION%%/plugins/oleo/oleo.so
 lib/gnumeric/%%VERSION%%/plugins/oleo/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/psiconv/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/psiconv/psiconv.so
+lib/gnumeric/%%VERSION%%/plugins/py-func/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/py-func/py_func.py
+lib/gnumeric/%%VERSION%%/plugins/py-func/py_func.pyc
+lib/gnumeric/%%VERSION%%/plugins/python-loader/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/python-loader/python_loader.so
+lib/gnumeric/%%VERSION%%/plugins/python/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/python/python.so
 lib/gnumeric/%%VERSION%%/plugins/sc/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/sc/sc.so
 lib/gnumeric/%%VERSION%%/plugins/sylk/plugin.xml
@@ -114,6 +125,10 @@ share/gnome/gnumeric/%%VERSION%%/glade/workbook-attr.glade
 share/gnome/gnumeric/%%VERSION%%/gnome/ui/GNOME_Gnumeric.xml
 share/gnome/gnumeric/%%VERSION%%/idl/GNOME_Gnumeric.idl
 share/gnome/gnumeric/%%VERSION%%/idl/GNOME_Gnumeric_Graph.idl
+share/gnome/gnumeric/%%VERSION%%/python/gnumeric_defs.py
+share/gnome/gnumeric/%%VERSION%%/python/gnumeric_defs.pyc
+share/gnome/gnumeric/%%VERSION%%/python/gnumeric_startup.py
+share/gnome/gnumeric/%%VERSION%%/python/gnumeric_startup.pyc
 share/gnome/gnumeric/%%VERSION%%/templates/invoice.gnumeric
 share/gnome/gnumeric/%%VERSION%%/templates/loan.gnumeric
 share/gnome/gnumeric/%%VERSION%%/templates/mileage.gnumeric
@@ -589,7 +604,6 @@ share/gnome/help/gnumeric/C/r13775.html
 share/gnome/help/gnumeric/C/r13801.html
 share/gnome/help/gnumeric/C/r13827.html
 share/gnome/help/gnumeric/C/r13853.html
-share/gnome/help/gnumeric/C/x14057.html
 share/gnome/help/gnumeric/C/r4876.html
 share/gnome/help/gnumeric/C/r4899.html
 share/gnome/help/gnumeric/C/r4926.html
@@ -807,6 +821,7 @@ share/gnome/help/gnumeric/C/x13904.html
 share/gnome/help/gnumeric/C/x13930.html
 share/gnome/help/gnumeric/C/x13936.html
 share/gnome/help/gnumeric/C/x13949.html
+share/gnome/help/gnumeric/C/x14057.html
 share/gnome/help/gnumeric/C/x14071.html
 share/gnome/help/gnumeric/C/x14076.html
 share/gnome/help/gnumeric/C/x14084.html
@@ -951,6 +966,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm share/gnome/help/gnumeric/C
 @dirrm share/gnome/help/gnumeric
 @dirrm share/gnome/gnumeric/%%VERSION%%/templates
+@dirrm share/gnome/gnumeric/%%VERSION%%/python
 @dirrm share/gnome/gnumeric/%%VERSION%%/idl
 @dirrm share/gnome/gnumeric/%%VERSION%%/gnome/ui
 @dirrm share/gnome/gnumeric/%%VERSION%%/gnome
@@ -968,12 +984,16 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/xbase
 @dirrm lib/gnumeric/%%VERSION%%/plugins/sylk
 @dirrm lib/gnumeric/%%VERSION%%/plugins/sc
+@dirrm lib/gnumeric/%%VERSION%%/plugins/python-loader
+@dirrm lib/gnumeric/%%VERSION%%/plugins/python
+@dirrm lib/gnumeric/%%VERSION%%/plugins/py-func
 @dirrm lib/gnumeric/%%VERSION%%/plugins/psiconv
 @dirrm lib/gnumeric/%%VERSION%%/plugins/oleo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/numtheory
 @dirrm lib/gnumeric/%%VERSION%%/plugins/mps
 @dirrm lib/gnumeric/%%VERSION%%/plugins/lotus
 @dirrm lib/gnumeric/%%VERSION%%/plugins/html
+@dirrm lib/gnumeric/%%VERSION%%/plugins/gnome-glossary
 @dirrm lib/gnumeric/%%VERSION%%/plugins/gdaif
 @dirrm lib/gnumeric/%%VERSION%%/plugins/gb
 @dirrm lib/gnumeric/%%VERSION%%/plugins/excel
