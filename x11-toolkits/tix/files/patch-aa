@@ -1,86 +1,46 @@
---- configure.orig	Wed Dec 25 06:03:25 1996
-+++ configure	Sun Jan  5 20:14:01 1997
-@@ -2583,20 +2583,20 @@
-         done
-     fi
+--- configure.orig	Sun Feb 16 06:12:44 1997
++++ configure	Fri Feb 21 10:18:12 1997
+@@ -1047,7 +1047,7 @@
+ fi
+ echo "$ac_t""$TCL_SRC_DIR" 1>&6
  
--    if test ! -r $TCL75_SRC_DIR/unix/tclConfig.sh.in; then
--	TCL75_SRC_DIR=""
--    fi
-+#    if test ! -r $TCL75_SRC_DIR/unix/tclConfig.sh.in; then
-+#	TCL75_SRC_DIR=""
-+#    fi
+-TCL_BIN_DIR=$TCL_SRC_DIR/unix
++TCL_BIN_DIR=$TCL_SRC_DIR/../../libdata/tcl
  
-     if test "$TCL75_SRC_DIR" = ""; then
-         echo "$ac_t""(not found)" 1>&6
-     else
-         echo "$ac_t""$TCL75_SRC_DIR" 1>&6
+ #--------------------------------------------------------------------
+ #	See if there was a command-line option for where Tk is;  if
+@@ -1089,7 +1089,7 @@
+ fi
+ echo "$ac_t""$TK_SRC_DIR" 1>&6
  
--	if test ! -r "$TCL75_SRC_DIR/unix/tclConfig.sh"; then
--	    echo "warning: $TCL75_SRC_DIR/unix/tclConfig.sh missing"
--	    echo "         Please to configure tcl 7.5 first."
--	    TCL75_SRC_DIR=""
--        fi
-+#	if test ! -r "$TCL75_SRC_DIR/unix/tclConfig.sh"; then
-+#	    echo "warning: $TCL75_SRC_DIR/unix/tclConfig.sh missing"
-+#	    echo "         Please to configure tcl 7.5 first."
-+#	    TCL75_SRC_DIR=""
-+#        fi
-     fi
+-TK_BIN_DIR=$TK_SRC_DIR/unix
++TK_BIN_DIR=$TK_SRC_DIR/../../lib
  
-     #
-@@ -2614,20 +2614,20 @@
-         done
-     fi
- 
--    if test ! -r $TK41_SRC_DIR/unix/tkConfig.sh.in; then
--	TK41_SRC_DIR=""
--    fi
-+#    if test ! -r $TK41_SRC_DIR/unix/tkConfig.sh.in; then
-+#	TK41_SRC_DIR=""
-+#    fi
- 
-     if test "$TK41_SRC_DIR" = ""; then
-         echo "$ac_t""(not found)" 1>&6
-     else
-         echo "$ac_t""$TK41_SRC_DIR" 1>&6
- 
--        if test ! -r "$TK41_SRC_DIR/unix/tkConfig.sh"; then
--	    echo "warning: $TK41_SRC_DIR/unix/tkConfig.sh missing"
--  	    echo "         Please to configure tk 4.1 first."
--	    TK41_SRC_DIR=""
--        fi
-+#        if test ! -r "$TK41_SRC_DIR/unix/tkConfig.sh"; then
-+#	    echo "warning: $TK41_SRC_DIR/unix/tkConfig.sh missing"
-+#  	    echo "         Please to configure tk 4.1 first."
-+#	    TK41_SRC_DIR=""
-+#        fi
-     fi
-     #----------------------------------------------------------------------
-     #	MAIN STUFF
-@@ -2635,7 +2635,7 @@
-     if test "$TK41_SRC_DIR" != "" -a "$TCL75_SRC_DIR" != ""; then
- 	# 1. Load the compilation flags for TCL 7.5
- 	#
--	file="$TCL75_SRC_DIR/unix/tclConfig.sh"
-+	file=/usr/libdata/tcl/tclConfig.sh
- 	. $file
- 	
- 	
-@@ -2646,14 +2646,14 @@
- 	SHLIB_CFLAGS=$TCL_SHLIB_CFLAGS
- 	SHLIB_LD=$TCL_SHLIB_LD
- 	SHLIB_LD_LIBS=$TCL_SHLIB_LD_LIBS
--	SHLIB_SUFFIX=$TCL_SHLIB_SUFFIX
- 	SHLIB_VERSION=$TCL_SHLIB_VERSION
-+	SHLIB_SUFFIX=${TCL_SHLIB_SUFFIX}.1.0
- 	DL_LIBS=$TCL_DL_LIBS
- 	LD_FLAGS=$TCL_LD_FLAGS
- 	
- 	# 2. Load the compilation flags for TK 4.1
- 	#
--	file="$TK41_SRC_DIR/unix/tkConfig.sh"
-+	file="${PREFIX}/lib/tkConfig.sh"
- 	. $file
- 	
- 	TIX_TARGETS="$TIX_TARGETS unix-tk4.1"
+ #--------------------------------------------------------------------
+ #	Find out the top level source directory of the Tix package.
+@@ -1671,12 +1671,12 @@
+ s%@SHLIB_VERSION@%$SHLIB_VERSION%g
+ s%@DL_LIBS@%$DL_LIBS%g
+ s%@LD_FLAGS@%$LD_FLAGS%g
+-s%@TCL_BUILD_LIB_SPEC@%$TCL_BUILD_LIB_SPEC%g
++s%@TCL_LIB_SPEC@%$TCL_LIB_SPEC%g
+ s%@TCL_LIBS@%$TCL_LIBS%g
+ s%@TCL_VERSION@%$TCL_VERSION%g
+ s%@TCL_SRC_DIR@%$TCL_SRC_DIR%g
+ s%@TCL_BIN_DIR@%$TCL_BIN_DIR%g
+-s%@TK_BUILD_LIB_SPEC@%$TK_BUILD_LIB_SPEC%g
++s%@TK_LIB_SPEC@%$TK_LIB_SPEC%g
+ s%@TK_LIBS@%$TK_LIBS%g
+ s%@TK_VERSION@%$TK_VERSION%g
+ s%@TK_SRC_DIR@%$TK_SRC_DIR%g
+@@ -1702,8 +1702,8 @@
+ s%@TIX_SAM_FILE@%$TIX_SAM_FILE%g
+ s%@TIX_MAKE_SAM@%$TIX_MAKE_SAM%g
+ s%@TIX_DEFS@%$TIX_DEFS%g
+-s%@ITCL_BUILD_LIB_SPEC@%$ITCL_BUILD_LIB_SPEC%g
+-s%@ITK_BUILD_LIB_SPEC@%$ITK_BUILD_LIB_SPEC%g
++s%@ITCL_LIB_SPEC@%$ITCL_LIB_SPEC%g
++s%@ITK_LIB_SPEC@%$ITK_LIB_SPEC%g
+ s%@TCL_SAMEXE_FILE@%$TCL_SAMEXE_FILE%g
+ s%@TK_SAMEXE_FILE@%$TK_SAMEXE_FILE%g
+ s%@TIX_SAMEXE_FILE@%$TIX_SAMEXE_FILE%g

@@ -1,13 +1,13 @@
 # New ports collection makefile for:	tix
-# Version required:	4.1b2
+# Version required:	4.1.0
 # Date created:		22 December 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.3 1997/01/07 08:17:11 tg Exp $
+# $Id: Makefile,v 1.4 1997/01/24 10:43:07 asami Exp $
 #
 
-DISTNAME=	Tix4.1b2
-PKGNAME=	tix-4.1b2
+DISTNAME=	Tix4.1.0
+PKGNAME=	tix-4.1.0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.xpi.com/pub/
 
@@ -15,11 +15,11 @@ MAINTAINER=	ports@FreeBSD.ORG
 
 LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 
+WRKSRC=		${WRKDIR}/${DISTNAME}/unix/tk4.1
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-tk40 --enable-tk41 --enable-tk41-shared \
-		--with-tcl75_src_dir=/usr/include/tcl \
-		--with-tk41_src_dir="${PREFIX}/include/tk4.1" \
-		--with-extra_ldflags="-L${PREFIX}/lib"
+CONFIGURE_ARGS=	--enable-shared \
+		--with-tcl=/usr/include/tcl \
+		--with-tk="${PREFIX}/include/tk"
 # this should probably be added to bsd.port.mk
 CONFIGURE_ENV=	PREFIX=${PREFIX}
 MAN1=		tixwish.1 
@@ -32,14 +32,23 @@ MANN=		BtnBox.n Balloon.n ChkList.n Destroy.n ComboBox.n Control.n \
 		Select.n StdBBox.n TixIntro.n Tree.n Utils.n Wm.n compound.n \
 		pixmap.n tix.n
 
+pre-configure:
+	@(cd ${WRKDIR}/${DISTNAME}/unix && \
+	    CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
+            INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
+            INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+            ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
+		
 post-install:
+	@(cd ${WRKDIR}/${DISTNAME}/unix && \
+	    ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 	@${MKDIR} ${PREFIX}/man/man1
 	@mv ${PREFIX}/man/mann/tixwish.1 ${PREFIX}/man/man1
-	@ln -sf ${PREFIX}/bin/tixwish4.1.4.1 ${PREFIX}/bin/tixwish
+	@ln -sf ${PREFIX}/bin/tixwish4.1.7.5 ${PREFIX}/bin/tixwish
 	/sbin/ldconfig -m ${PREFIX}/lib
 .for dir in generic unix
 	@${MKDIR} ${PREFIX}/include/tix/${dir}
-	${INSTALL_DATA} ${WRKSRC}/${dir}/*.h ${PREFIX}/include/tix/${dir}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/${dir}/*.h ${PREFIX}/include/tix/${dir}
 .endfor
 	${RM} ${PREFIX}/include/tix/generic/tix.h
 	@# These two files are the same
