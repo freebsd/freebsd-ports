@@ -1,16 +1,18 @@
 --- Makefile.orig	Wed Feb 26 00:58:23 2003
-+++ Makefile	Fri Apr  4 16:36:05 2003
++++ Makefile	Sun Jul  6 08:02:42 2003
 @@ -1,15 +1,15 @@
  all: id3v2
  
 -PREFIX=	/usr/local
+-CXXFLAGS+=	-I${PREFIX}/include/
+-LDFLAGS+=	-L${PREFIX}/lib/
 +PREFIX?=	/usr/local
- CXXFLAGS+=	-I${PREFIX}/include/
- LDFLAGS+=	-L${PREFIX}/lib/
++#CXXFLAGS+=	-I${PREFIX}/include/
++#LDFLAGS+=	-L${PREFIX}/lib/
  
  id3v2:	convert.o list.o id3v2.o
 -	c++ ${LDFLAGS} -pedantic -Wall -lz -lid3 -g -o $@ id3v2.o list.o convert.o
-+	${CXX} ${LDFLAGS} -lz -lid3 -lgnugetopt -o $@ id3v2.o list.o convert.o
++	${CXX} ${LDFLAGS} -lz -lid3 -o $@ id3v2.o list.o convert.o
  
  install: all
 -	install -c -s id3v2 ${PREFIX}/bin/id3v2
