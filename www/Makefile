@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.133 1999/06/26 19:52:00 mharo Exp $
+# $Id: Makefile,v 1.134 1999/06/30 22:01:26 kuriyama Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -41,6 +41,7 @@
     SUBDIR += linbot
     SUBDIR += linemode
     SUBDIR += linux-netscape4
+    SUBDIR += linux-netscape46-communicator
     SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += lynx-ssl
