@@ -16,6 +16,7 @@ COMMENT=	Extracts documentation from C source code comments
 BUILD_DEPENDS+=	make+:${PORTSDIR}/devel/makeplus
 
 USE_PERL5_RUN=	yes
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
@@ -23,7 +24,7 @@ DOCS=		README
 
 do-build:
 	cd ${WRKSRC}; make+
-	${PERL} -pi.orig -e 's,#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/cdoc
+	${REINPLACE_CMD}  -e 's,#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/cdoc
 
 do-install:
 	cd ${WRKSRC}; make+ install 
