@@ -6239,6 +6239,7 @@ py-curl		ports/ftp/py-curl
 py-cxx		ports/devel/py-cxx
 py-dialog	ports/devel/py-dialog
 py-distutils	ports/misc/py-distutils
+py-dns		ports/net/py-dns
 py-docutils	ports/textproc/py-docutils
 py-dsv		ports/textproc/py-dsv
 py-exif		ports/graphics/py-exif
