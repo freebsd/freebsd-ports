@@ -6,27 +6,23 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	1.1.1.RC1
+PORTVERSION=	1.1.2.${SNAPDATE}
 CATEGORIES+=	editors
-MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
-		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/%SUBDIR%/ \
-		ftp://ftp.kddlabs.co.jp/office/openoffice/%SUBDIR%/ \
-		ftp://ftp.tu-chemnitz.de/pub/openoffice/%SUBDIR%/ \
-		http://ftp.stardiv.de/pub/OpenOffice.org/%SUBDIR%/ \
-		http://ftp.gwdg.de/pub/misc/openoffice/%SUBDIR%/ \
+MASTER_SITES+=	http://people.freebsd.org/~maho/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent/&,}:help \
 		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/helpcontent/:help \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
 		http://people.freebsd.org/~mbr/ooo/:moz
-MASTER_SITE_SUBDIR=	contrib/rc/1.1.1rc
-DISTFILES+=	OOo_1.1.1rc_source.tar.bz2 gpc231.tar.Z:gpc \
+MASTER_SITE_SUBDIR=	maho/openoffice.org
+LATEST_LINK=	${PORTNAME}-${PORTVERSION}-devel
+DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z:gpc \
 		patch-openoffice-mozilla101-2002-10-14:moz mozilla-vendor-1.0.2a.tgz:moz
 .if defined(L10NHELP)
 DISTFILES+=	${L10NHELP:S/$/:help/}
 .endif
-EXTRACT_ONLY=	OOo_1.1.1rc_source.tar.bz2
+EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
 ZIP?=	${PREFIX}/bin/zip
 UNZIP?=	${PREFIX}/bin/unzip
@@ -40,10 +36,12 @@ USE_REINPLACE=	yes
 
 BUILD_NR=		645
 RELEASE_NR=		1.1
-FRELEASE_NR=		1.1.1
+FRELEASE_NR=		1.1.2
+SNAPDATE=		20040408
 INSTALLATION_BASEDIR=	OpenOffice.org${FRELEASE_NR}
 DIST_SUBDIR=		openoffice1.1
 DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
+SIMPLEOSVER!=		${UNAME} -r | sed -e 's/\.//' | sed -e 's/\..*//'
 
 #
 # configuration for language specific slave ports
@@ -91,6 +89,7 @@ LANG_SORTED=`${ECHO} ${LANG_LIST} | ${TR} " " "\n" | ${PASTE} -d " " - -`
 # OOo requires gcc 3.2 (currently 3.3 is not supported)
 BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
 USE_GCC=3.2
+# XXX dirty
 CC=	gcc32
 CXX=	g++32
 
@@ -303,6 +302,7 @@ pre-fetch:
 	@${ECHO}
 	@${FALSE}
 .endif
+	@${ECHO} "If you want SDK and/or solver, please type make sdk and/or make solver"
 
 post-extract:
 	@for file in ${EXTRACT_REST}; do \
@@ -400,9 +400,9 @@ build-mozilla:
 		< ${WRKDIR}/mozilla/Makefile.new > ${WRKDIR}/mozilla/Makefile
 .endif
 .if defined(USE_GCC)
-	@cd ${WRKDIR}/mozilla && ${MAKE} CXX=${CXX} CC=${CC} CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build WRKDIRPREFIX=""
+	@cd ${WRKDIR}/mozilla && ${MAKE} CXX="${CXX}" CC="${CC}" CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build WRKDIRPREFIX=""
 .else
-	@cd ${WRKDIR}/mozilla && ${MAKE} CFLAGS="${CFLAGS}" build WRKDIRPREFIX=""
+	@cd ${WRKDIR}/mozilla && ${MAKE} CXX="${CXX}" CC="${CC}" CFLAGS="${CFLAGS}" build WRKDIRPREFIX=""
 .endif
 	@${CP} ${FILESDIR}/zipmoz.sh ${WRKDIR}
 	@${CHMOD} 755 ${WRKDIR}/zipmoz.sh
@@ -533,12 +533,33 @@ post-install:
 package-rename:
 	@${ECHO_MSG} "===>   Rename package for OO.org mirror upload";
 .if defined(LANG_SUFFIX)
-	@${MV} ${WRKDIR}/../${PKGNAMEPREFIX}openoffice-${LANG_SUFFIX}-${PORTVERSION}_${PORTREVISION}.tbz \
-	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}Intel_install_${LANG_PKGNAME}-${LANG_SUFFIX}.tbz
+	@${MV} ${PKGFILE} \
+	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_install_${LANG_PKGNAME}-${LANG_SUFFIX}${PKG_SUFX}
+.elif defined(LANG_PKGNAME)
+	@${MV} ${PKGFILE} \
+	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_install_${LANG_PKGNAME}${PKG_SUFX}
 .else
-	@${MV} ${WRKDIR}/../${PKGNAMEPREFIX}openoffice-${PORTVERSION}_${PORTREVISION}.tbz \
-	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}Intel_install_${LANG_PKGNAME}.tbz
+	@${MV} ${PKGFILE} \
+	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_install${PKG_SUFX}
 .endif
+
+sdk:
+	@${ECHO_MSG} "===>   Make SDK of OpenOffice.org"
+.if !defined(DISPLAY)
+	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAYHACK} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
+		${TCSH} -c 'source FreeBSDEnv.Set && unsetenv TOP && cd sdk_oo && build.pl && deliver.pl'
+	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
+	@${RM} -f ${WRKDIR}/.Xvfb.pid
+.else
+	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
+		${TCSH} -c 'source FreeBSDEnv.Set && unsetenv TOP && cd sdk_oo && build.pl && deliver.pl'
+.endif
+	${MV} ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/bin/OpenOffice.org${FRELEASE_NR}_SDK.tar.gz ${WRKDIR}/../OOo_${FRELEASE_NR}_${OPSYS}${SIMPLEOSVER}Intel_sdk.tar.gz 
+
+
+solver:
+	@${ECHO_MSG} "===>   Make Solver of OpenOffice.org"
+	@cd ${WRKSRC}/.. ; ${TAR} cfz ${WRKDIR}/../OOo_${FRELEASE_NR}_${OPSYS}${SIMPLEOSVER}Intel_solver.tar.gz solver
 
 update:
 	@${MAKE} fetch

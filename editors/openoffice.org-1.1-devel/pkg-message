@@ -1,9 +1,6 @@
-OpenOffice.org Build 1.1.0 Personal Install How-To
+OpenOffice.org Build 1.1.1 Personal Install How-To
 
 Written by:	Martin Blapp <mbr@freebsd.org>
-
-OpenOffice.org 1.1Beta will soon been installed in
-${PREFIX}/OpenOffice.org-1.1.0
 
 1 User installation
 -------------------
