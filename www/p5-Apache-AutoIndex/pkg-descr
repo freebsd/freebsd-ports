@@ -1,0 +1,8 @@
+Apache::AutoIndex is a perl module that can completely replace mod_dir
+and mod_autoindex, which are standard directory handling modules shipped
+with Apache.  It can currently live right on top of those modules, although
+it would be better to recompile httpd without these modules.
+
+Author: Philippe M. Chiasson <gozer@ectoplasm.dyndns.com>
+
+--will
