@@ -1,0 +1,38 @@
+--- ORIG/glclock.cpp	Wed Aug  4 16:28:02 1999
++++ glclock.cpp	Mon Sep 20 20:06:09 1999
+@@ -5716,7 +5716,10 @@
+ 	o_tick = n_tick ;
+ 
+ 	if ((n_tick = glutGet((GLenum)GLUT_ELAPSED_TIME)))
+-		fps = f_cnt / ((float)(n_tick - o_tick) / 1000) ;
++		if ( n_tick == o_tick )
++			fps = 0.0f;
++		else
++			fps = f_cnt / ((float)(n_tick - o_tick) / 1000) ;
+ 	else
+ 		fps = 0.0f ;
+ 
+@@ -5768,7 +5771,8 @@
+ 	{
+ 		if (fps_count)
+ 		{
+-			spin_x = -360.0f / fps ;
++			if (fps) spin_x = -360.0f / fps ;
++			else     spin_x = -30.0f;
+ 			if (spin_x < -30.0f) spin_x = -30.0f ;
+ 		}
+ 
+@@ -7098,6 +7102,13 @@
+ 	if (!env_file.Search(".ppm"))   env_file   += ".ppm" ;
+ 	if (!solid_file.Search(".ppm")) solid_file += ".ppm" ;
+ 	if (sld2_file != String("") && !sld2_file.Search(".ppm")) sld2_file += ".ppm" ;
++
++	if ( env_file.Length() && env_file.Character(0) != '/' ) \
++		env_file = String( GLCLOCK_DIR ) + env_file;
++	if ( solid_file.Length() && solid_file.Character(0) != '/' ) \
++		solid_file = String( GLCLOCK_DIR ) + solid_file;
++	if ( sld2_file.Length() && sld2_file.Character(0) != '/' ) \
++		sld2_file = String( GLCLOCK_DIR ) + sld2_file;
+ 
+ 
+ 	// 環境マッピングを使用する場合は、メッシュの座標値を多少変更

@@ -1,0 +1,17 @@
+bin/benchclock
+bin/crystalclock
+bin/f_crystalclock
+bin/f_glclock
+bin/f_marbleclock
+bin/f_metalclock
+bin/f_mwclock
+bin/f_woodclock
+bin/glclock
+bin/marbleclock
+bin/metalclock
+bin/mwclock
+bin/woodclock
+lib/X11/glclock/marble.ppm
+lib/X11/glclock/sky.ppm
+lib/X11/glclock/wood.ppm
+@dirrm lib/X11/glclock
