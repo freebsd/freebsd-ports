@@ -7,13 +7,11 @@
 
 PORTNAME=	psybnc
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	irc
-MASTER_SITES=	http://193.111.113.194/ \
+MASTER_SITES=	http://www.psychoid.lam3rz.de/ \
 		http://ircon.linux-de.org/files/ \
-		http://bluemoon.reverse.net/irc/bouncers/psybnc/ \
-		http://mek.la/irc/ \
-		http://irc.risp.pl/download/psybnc/ \
-		http://x-life.vip.lv/atlanta/software/
+		http://shell.reverse.net/irc/ 
 DISTNAME=	psyBNC${PORTVERSION}
 
 MAINTAINER=	webmaster@topfx.com
