@@ -53,4 +53,8 @@ post-install:
 USE_GCC=	3.3
 .endif
 
+.if ${PERL_LEVEL} < 500800
+IGNORE=		requires perl 5.8 or later. Install lang/perl5.8 and try again
+.endif
+
 .include <bsd.port.post.mk>
