@@ -1,15 +1,11 @@
---- main.cxx	Wed Jun  3 13:18:44 1998
-+++ /home/andy/tmp/wrk/main.cxx	Wed Oct 28 22:12:00 1998
-@@ -309,7 +309,12 @@
- 
-     compile_system_library = TRUE;
+--- main.cxx	Fri Nov  6 11:19:54 1998
++++ /home/andy/tmp/wrk/main.cxx	Sun Feb 14 15:11:06 1999
+@@ -319,7 +319,7 @@
+ #ifdef PREFIX
+     token::input(turbo_pascal 
+ 		 ? PREFIX "/share/ptoc/tptoc.pas" 
+-		 : PREFIX "/share/ptoc/ptoc.pas")); 
++		 : PREFIX "/share/ptoc/ptoc.pas"); 
+ #else
      token::input(dprintf("%s%s", prog_path, 
-+#ifdef PREFIX
-+			 turbo_pascal ? PREFIX "/share/ptoc/tptoc.pas" :
-+                                        PREFIX "/share/ptoc/ptoc.pas")); 
-+#else
- 			 turbo_pascal ? "tptoc.pas" : "ptoc.pas")); 
-+#endif
-     zzparse(); 
- 
-     compile_system_library = FALSE;
+  			 turbo_pascal ? "tptoc.pas" : "ptoc.pas")); 
