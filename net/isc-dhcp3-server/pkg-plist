@@ -1,3 +1,4 @@
 man/man5/dhcpd.conf.5.gz
 man/man8/dhcpd.8.gz
 sbin/dhcpd
+@exec touch /var/db/dhcpd.leases

@@ -1,87 +1,55 @@
-*** Makefile.dist	Fri Nov  8 12:28:18 1996
---- Makefile.dist	Tue Jan 14 12:07:47 1997
-***************
-*** 119,127 ****
-  ##--bsdos--
-  
-  ## FreeBSD
-! ##--freebsd--
-! #CF = cf/freebsd.h
-! ##--freebsd--
-  
-  ## NetBSD
-  ##--netbsd--
---- 119,136 ----
-  ##--bsdos--
-  
-  ## FreeBSD
-! ##--freebsd--
-! #CF = cf/freebsd.h
-! #COPTS  = -Wall -Wstrict-prototypes -Wno-unused -Wno-implicit -Wno-comment \
-! #	  -Wno-uninitialized -Werror
-! #PREFIX ?= /usr/local
-! #BINDIR = ${PREFIX}/sbin
-! #CATMANPAGES = dhcpd.out8 dhcpd.conf.out5
-! #ADMMANDIR = ${PREFIX}/man/man8
-! #ADMMANEXT = .8
-! #FFMANDIR = ${PREFIX}/man/man5
-! #FFMANEXT = .5
-! ##--freebsd--
-  
-  ## NetBSD
-  ##--netbsd--
-***************
-*** 196,202 ****
-  MAN    = dhcpd.8 dhcpd.conf.5
-  
-  DEBUG  = -g
-! CFLAGS = $(DEBUG) $(PREDEFINES) $(INCLUDES) $(COPTS)
-  
-  all:	dhcpd dhclient dhcpxlt $(CATMANPAGES)
-  
---- 205,211 ----
-  MAN    = dhcpd.8 dhcpd.conf.5
-  
-  DEBUG  = -g
-! CFLAGS += $(DEBUG) $(PREDEFINES) $(INCLUDES) $(COPTS)
-  
-  all:	dhcpd dhclient dhcpxlt $(CATMANPAGES)
-  
-***************
-*** 214,222 ****
-  	  mkdir $(VARDB); \
-  	  chmod 755 $(VARDB); \
-  	fi
-! 	$(MANINSTALL) $(MANFROM) dhcpd.cat8 $(MANTO) \
-  				$(ADMMANDIR)/dhcpd$(ADMMANEXT)
-! 	$(MANINSTALL) $(MANFROM) dhcpd.conf.cat5 $(MANTO) \
-  				$(FFMANDIR)/dhcpd.conf$(FFMANEXT)
-  
-  clean:
---- 223,231 ----
-  	  mkdir $(VARDB); \
-  	  chmod 755 $(VARDB); \
-  	fi
-! 	$(MANINSTALL) $(MANFROM) dhcpd.out8 $(MANTO) \
-  				$(ADMMANDIR)/dhcpd$(ADMMANEXT)
-! 	$(MANINSTALL) $(MANFROM) dhcpd.conf.out5 $(MANTO) \
-  				$(FFMANDIR)/dhcpd.conf$(FFMANEXT)
-  
-  clean:
-***************
-*** 239,244 ****
---- 248,261 ----
-  
-  dhcpd.conf.cat5:	dhcpd.conf.5
-  	nroff -man dhcpd.conf.5 >dhcpd.conf.cat5
-+ 
-+ dhcpd.out8:	dhcpd.8
-+ 	sed -e "s#ETCDIR#$(ETC)#" -e "s#DBDIR#$(VARDB)#" \
-+ 		-e "s#RUNDIR#$(VARRUN)#" < dhcpd.8 >dhcpd.out8
-+ 
-+ dhcpd.conf.out5:	dhcpd.conf.5
-+ 	cp dhcpd.conf.5 dhcpd.conf.out5
-+ 
-  
-  dhcpd:	$(OBJS) $(COBJ)
-  	$(CC) $(LFLAGS) -o dhcpd $(OBJS) $(COBJ) $(LIBS)
+--- Makefile.dist.orig	Fri May  9 01:44:13 1997
++++ Makefile.dist	Fri Nov 14 06:06:07 1997
+@@ -121,6 +121,16 @@
+ ## FreeBSD
+ ##--freebsd--
+ #CF = cf/freebsd.h
++#COPTS  = -Wall -Wstrict-prototypes -Wno-unused -Wno-implicit -Wno-comment \
++#	  -Wno-uninitialized -Werror
++#PREFIX ?= /usr/local
++#BINDIR = ${PREFIX}/sbin
++#ETC = ${PREFIX}/etc
++#CATMANPAGES = dhcpd.out8 dhcpd.conf.out5
++#ADMMANDIR = ${PREFIX}/man/man8
++#ADMMANEXT = .8
++#FFMANDIR = ${PREFIX}/man/man5
++#FFMANEXT = .5
+ ##--freebsd--
+ 
+ ## NetBSD
+@@ -199,7 +209,7 @@
+ MAN    = dhcpd.8 dhcpd.conf.5
+ 
+ DEBUG  = -g
+-CFLAGS = $(DEBUG) $(PREDEFINES) $(INCLUDES) $(COPTS)
++CFLAGS += $(DEBUG) $(PREDEFINES) $(INCLUDES) $(COPTS)
+ 
+ all:	$(PROG) $(CATMANPAGES)
+ 
+@@ -217,9 +227,9 @@
+ 	  mkdir $(VARDB); \
+ 	  chmod 755 $(VARDB); \
+ 	fi
+-	$(MANINSTALL) $(MANFROM) dhcpd.cat8 $(MANTO) \
++	$(MANINSTALL) $(MANFROM) dhcpd.out8 $(MANTO) \
+ 				$(ADMMANDIR)/dhcpd$(ADMMANEXT)
+-	$(MANINSTALL) $(MANFROM) dhcpd.conf.cat5 $(MANTO) \
++	$(MANINSTALL) $(MANFROM) dhcpd.conf.out5 $(MANTO) \
+ 				$(FFMANDIR)/dhcpd.conf$(FFMANEXT)
+ 
+ clean:
+@@ -242,6 +252,14 @@
+ 
+ dhcpd.conf.cat5:	dhcpd.conf.5
+ 	nroff -man dhcpd.conf.5 >dhcpd.conf.cat5
++
++dhcpd.out8:	dhcpd.8
++	sed -e "s#ETCDIR#$(ETC)#" -e "s#DBDIR#$(VARDB)#" \
++		-e "s#RUNDIR#$(VARRUN)#" < dhcpd.8 >dhcpd.out8
++
++dhcpd.conf.out5:	dhcpd.conf.5
++	cp dhcpd.conf.5 dhcpd.conf.out5
++
+ 
+ dhcpd:	$(OBJS) $(COBJ)
+ 	$(CC) $(LFLAGS) -o dhcpd $(OBJS) $(COBJ) $(LIBS)
