@@ -25,7 +25,7 @@ WRKSRC=		${PYTHON_WRKSRC}/Tools/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 .if ${PYTHON_REL} >= 220
-IGNORE=	"Part of the standard library from Python 2.2 upwards"
+IGNORE=	is part of the standard library from Python 2.2 upwards
 .endif
 
 .include <bsd.port.post.mk>
