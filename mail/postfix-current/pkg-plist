@@ -10,6 +10,7 @@ etc/postfix/sample-canonical
 etc/postfix/sample-canonical.cf
 etc/postfix/sample-debug.cf
 etc/postfix/sample-filter.cf
+etc/postfix/sample-flush.cf
 %%WITH_LDAP%%etc/postfix/sample-ldap.cf
 etc/postfix/sample-local.cf
 etc/postfix/sample-main.cf
@@ -26,6 +27,7 @@ etc/postfix/sample-resource.cf
 etc/postfix/sample-rewrite.cf
 etc/postfix/sample-smtp.cf
 etc/postfix/sample-smtpd.cf
+%%WITH_TLS%%etc/postfix/sample-tls.cf
 etc/postfix/sample-transport
 etc/postfix/sample-transport.cf
 etc/postfix/sample-virtual
@@ -45,6 +47,7 @@ libexec/postfix/showq
 libexec/postfix/smtp
 libexec/postfix/smtpd
 libexec/postfix/spawn
+%%WITH_TLS%%libexec/postfix/tlsmgr
 libexec/postfix/trivial-rewrite
 sbin/postalias
 sbin/postcat

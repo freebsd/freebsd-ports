@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	20001030
-PORTREVISION=	1
+PORTVERSION=	20001121
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.merit.edu/postfix/experimental/ \
+		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/ \
 		ftp://ftp.tux.org/pub/net/postfix/experimental/ \
 		ftp://ftp.utoronto.ca/mirror/packages/postfix/experimental/ \
 		ftp://ftp.samurai.com/pub/postfix/experimental/ \
@@ -36,7 +36,7 @@ CONF1=	access aliases canonical main.cf master.cf \
 	regexp_table relocated transport virtual
 
 CONF2=	sample-aliases.cf sample-canonical.cf sample-debug.cf \
-	sample-filter.cf sample-local.cf sample-misc.cf \
+	sample-filter.cf sample-flush.cf sample-local.cf sample-misc.cf \
 	sample-rate.cf sample-regexp.cf sample-relocated.cf \
 	sample-resource.cf sample-rewrite.cf sample-smtp.cf \
 	sample-smtpd.cf sample-transport.cf sample-virtual.cf
@@ -103,6 +103,19 @@ POSTFIX_AUXLIBS+=	-lkrb -ldes -lcom_err
 PLIST_SUB+=		WITH_SASL=""
 .else
 PLIST_SUB+=		WITH_SASL="@comment "
+.endif
+
+.if defined(WITH_TLS)
+CONF2+=			sample-tls.cf
+BIN1+=			tlsmgr
+POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl
+POSTFIX_AUXLIBS+=	-lssl -lcrypto
+DISTFILES+=		${DISTNAME}.tar.gz pfixtls-0.6.23-snap20001030-0.9.6.tar.gz
+EXTRA_PATCHES+=		${WRKDIR}/pfixtls-0.6.23-snap20001030-0.9.6/pfixtls.diff
+PATCH_STRIP=		-p1
+PLIST_SUB+=		WITH_TLS=""
+.else
+PLIST_SUB+=		WITH_TLS="@comment "
 .endif
 
 post-patch:
