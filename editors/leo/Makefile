@@ -8,13 +8,13 @@
 #
 
 PORTNAME=	leo
-PORTVERSION=	3.8
-PORTREVISION=	2
+PORTVERSION=	3.9
+PORTREVISION=	0
 PORTEPOCH=	0
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${DISTNAME}.zip ${SBOOKFILE} ${EXAMPLESFILES}
+DISTFILES=	${DISTNAME}.zip ${SBOOKFILE} ${EXAMPLESFILES} ${WEBDOCSFILE}
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
 MAINTAINER=	alane@freebsd.org
@@ -30,12 +30,16 @@ NO_BUILD=	yes
 ICONSDIR=	${LOCALBASE}/share/icons
 DESKTOPDIR=	${LOCALBASE}/share/applnk
 
-SBOOKNAME=	SbooksLeo
-SBOOKFILE=	${SBOOKNAME}.zip
-TUTORIALDIR=	${DOCSDIR}/${SBOOKNAME}
+SBOOK=		SbooksLeo
+SBOOKFILE=	${SBOOK}.zip
+SBOOKDIR=	${DOCSDIR}/${SBOOK}
 
 EXAMPLES=	cweb.leo noweb.leo python.leo tkinter.leo
 EXAMPLESFILES=	${EXAMPLES:S|leo$|leo.zip|}
+
+WEBDOCS=	LeoWeb
+WEBDOCSFILE=	leodocs.zip
+WEBDOCSDIR=	${DOCSDIR}/${WEBDOCS}
 
 PLIST=		${WRKDIR}/plist
 
@@ -71,9 +75,13 @@ do-install:
 	${FIND} ${PKGDATADIR} -type f | ${XARGS} ${CHMOD} ${LIBMODE}
 .if !defined(NOPORTDOCS)
 # install tutorial
-	${MKDIR} ${TUTORIALDIR}
-	cd ${WRKDIR}/${SBOOKNAME}; ${FIND} . \
-		| ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${TUTORIALDIR}
+	${MKDIR} ${SBOOKDIR}
+	cd ${WRKDIR}/${SBOOK}; ${FIND} . \
+		| ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${SBOOKDIR}
+# install web docs
+	${MKDIR} ${WEBDOCSDIR}
+	cd ${WRKDIR}/${WEBDOCS}; ${FIND} . \
+		| ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${WEBDOCSDIR}
 # fix docs perms
 	${FIND} ${DOCSDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${DOCMODE}
 # install examples
