@@ -1,0 +1,9 @@
+bin/tgif2tex
+share/doc/ja-tgif2tex/00readme
+share/doc/ja-tgif2tex/Makefile
+share/doc/ja-tgif2tex/how-to-use.tex
+share/doc/ja-tgif2tex/sample1.obj
+share/doc/ja-tgif2tex/sample2.obj
+share/doc/ja-tgif2tex/example.obj
+share/doc/ja-tgif2tex/example.tex
+@dirrm share/doc/ja-tgif2tex
