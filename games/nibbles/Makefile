@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	nibbles
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	games
-MASTER_SITES=	http://freebsdcluster.org/~mich/software/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://download.nmee.net/nibbles/
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Nibbles is a simple ncurses-based console game
