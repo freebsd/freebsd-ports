@@ -1,6 +1,19 @@
+%%HLDSDIR%%VS/1024_textscheme.txt
+%%HLDSDIR%%VS/1152_textscheme.txt
+%%HLDSDIR%%VS/1280_textscheme.txt
+%%HLDSDIR%%VS/1600_textscheme.txt
+%%HLDSDIR%%VS/320_textscheme.txt
+%%HLDSDIR%%VS/400_textscheme.txt
+%%HLDSDIR%%VS/512_textscheme.txt
+%%HLDSDIR%%VS/640_textscheme.txt
+%%HLDSDIR%%VS/800_textscheme.txt
 %%HLDSDIR%%VS/Titles.txt
 %%HLDSDIR%%VS/autoexec.cfg
-%%HLDSDIR%%VS/bots.txt
+%%HLDSDIR%%VS/bots/bot.cfg
+%%HLDSDIR%%VS/bots/changes.txt
+%%HLDSDIR%%VS/bots/chat.txt
+%%HLDSDIR%%VS/bots/names.txt
+%%HLDSDIR%%VS/bots/readme.txt
 %%HLDSDIR%%VS/cached.wad
 %%HLDSDIR%%VS/cl_dlls/client.dll
 %%HLDSDIR%%VS/classes/short_EDGAR.txt
@@ -13,6 +26,11 @@
 %%HLDSDIR%%VS/delta.lst
 %%HLDSDIR%%VS/dlls/mp.dll
 %%HLDSDIR%%VS/dlls/vs_i386.so
+%%HLDSDIR%%VS/events/effects.txt
+%%HLDSDIR%%VS/events/standard.efx
+%%HLDSDIR%%VS/events/vs_lynch.efx
+%%HLDSDIR%%VS/events/vs_raven.efx
+%%HLDSDIR%%VS/events/vsburn.sc
 %%HLDSDIR%%VS/events/vsclaw_fire1.sc
 %%HLDSDIR%%VS/events/vsclaw_fire2.sc
 %%HLDSDIR%%VS/events/vsclaw_ir.sc
@@ -20,12 +38,16 @@
 %%HLDSDIR%%VS/events/vscolt_fire2.sc
 %%HLDSDIR%%VS/events/vscrossbow_fire1.sc
 %%HLDSDIR%%VS/events/vscrossbow_fire2.sc
+%%HLDSDIR%%VS/events/vscue_fire1.sc
+%%HLDSDIR%%VS/events/vscue_fire2.sc
 %%HLDSDIR%%VS/events/vsdbshotgun_close.sc
 %%HLDSDIR%%VS/events/vsdbshotgun_eject.sc
 %%HLDSDIR%%VS/events/vsdbshotgun_fire1.sc
 %%HLDSDIR%%VS/events/vsdbshotgun_fire2.sc
 %%HLDSDIR%%VS/events/vsdbshotgun_open.sc
 %%HLDSDIR%%VS/events/vsdbshotgun_reload.sc
+%%HLDSDIR%%VS/events/vsgibs.sc
+%%HLDSDIR%%VS/events/vsmp5.sc
 %%HLDSDIR%%VS/events/vsmp5_reload.sc
 %%HLDSDIR%%VS/events/vsshotgun_fire1.sc
 %%HLDSDIR%%VS/events/vsshotgun_fire2.sc
@@ -220,13 +242,13 @@
 %%HLDSDIR%%VS/gfx/vgui/640_louis.tga
 %%HLDSDIR%%VS/gfx/vgui/640_molly.tga
 %%HLDSDIR%%VS/gfx/vgui/640_nina.tga
+%%HLDSDIR%%VS/gfx/vgui/fonts/1024_Scoreboard Title Text.tga
 %%HLDSDIR%%VS/liblist.gam
-%%PORTDOCS%%%%HLDSDIR%%VS/linux_readme.txt
 %%HLDSDIR%%VS/listenserver.cfg
 %%HLDSDIR%%VS/magilla.wad
 %%PORTDOCS%%%%HLDSDIR%%VS/manual/banner.jpg
-%%PORTDOCS%%%%HLDSDIR%%VS/manual/bots.doc
 %%PORTDOCS%%%%HLDSDIR%%VS/manual/clearpixel.gif
+%%PORTDOCS%%%%HLDSDIR%%VS/manual/commands.txt
 %%PORTDOCS%%%%HLDSDIR%%VS/manual/index.html
 %%HLDSDIR%%VS/mapcycle.txt
 %%HLDSDIR%%VS/maps/vs_asylum.bsp
@@ -257,15 +279,15 @@
 %%HLDSDIR%%VS/maps/vs_feint.txt
 %%HLDSDIR%%VS/maps/vs_feint.wp1
 %%HLDSDIR%%VS/maps/vs_feint.wpt
-%%HLDSDIR%%VS/maps/vs_hotel.bsp
-%%HLDSDIR%%VS/maps/vs_hotel.txt
-%%HLDSDIR%%VS/maps/vs_hotel.wp1
-%%HLDSDIR%%VS/maps/vs_hotel.wp2
-%%HLDSDIR%%VS/maps/vs_hotel.wpt
-%%HLDSDIR%%VS/maps/vs_house.bsp
-%%HLDSDIR%%VS/maps/vs_house.txt
-%%HLDSDIR%%VS/maps/vs_house.wp1
-%%HLDSDIR%%VS/maps/vs_house.wpt
+%%HLDSDIR%%VS/maps/vs_hunt.bsp
+%%HLDSDIR%%VS/maps/vs_hunt.txt
+%%HLDSDIR%%VS/maps/vs_hunt.wp1
+%%HLDSDIR%%VS/maps/vs_hunt.wpt
+%%HLDSDIR%%VS/maps/vs_jailhouse.bsp
+%%HLDSDIR%%VS/maps/vs_jailhouse.txt
+%%HLDSDIR%%VS/maps/vs_jailhouse.wp1
+%%HLDSDIR%%VS/maps/vs_jailhouse.wp2
+%%HLDSDIR%%VS/maps/vs_jailhouse.wpt
 %%HLDSDIR%%VS/maps/vs_lynch.bsp
 %%HLDSDIR%%VS/maps/vs_lynch.txt
 %%HLDSDIR%%VS/maps/vs_lynch.wp1
@@ -283,6 +305,10 @@
 %%HLDSDIR%%VS/maps/vs_quaint.txt
 %%HLDSDIR%%VS/maps/vs_quaint.wp1
 %%HLDSDIR%%VS/maps/vs_quaint.wpt
+%%HLDSDIR%%VS/maps/vs_raven.bsp
+%%HLDSDIR%%VS/maps/vs_raven.txt
+%%HLDSDIR%%VS/maps/vs_raven.wp1
+%%HLDSDIR%%VS/maps/vs_raven.wpt
 %%HLDSDIR%%VS/maps/vs_school.bsp
 %%HLDSDIR%%VS/maps/vs_school.txt
 %%HLDSDIR%%VS/maps/vs_school.wp1
@@ -336,7 +362,42 @@
 %%HLDSDIR%%VS/models/w_mh.mdl
 %%HLDSDIR%%VS/models/w_weaponbox.mdl
 %%HLDSDIR%%VS/motd.txt
-%%HLDSDIR%%VS/pldecal.wad
+%%HLDSDIR%%VS/overviews/vs_asylum.bmp
+%%HLDSDIR%%VS/overviews/vs_asylum.txt
+%%HLDSDIR%%VS/overviews/vs_blade.bmp
+%%HLDSDIR%%VS/overviews/vs_blade.txt
+%%HLDSDIR%%VS/overviews/vs_capitol.bmp
+%%HLDSDIR%%VS/overviews/vs_capitol.txt
+%%HLDSDIR%%VS/overviews/vs_carpark.bmp
+%%HLDSDIR%%VS/overviews/vs_carpark.txt
+%%HLDSDIR%%VS/overviews/vs_cemetery.bmp
+%%HLDSDIR%%VS/overviews/vs_cemetery.txt
+%%HLDSDIR%%VS/overviews/vs_church.bmp
+%%HLDSDIR%%VS/overviews/vs_church.txt
+%%HLDSDIR%%VS/overviews/vs_feint.bmp
+%%HLDSDIR%%VS/overviews/vs_feint.txt
+%%HLDSDIR%%VS/overviews/vs_hunt.bmp
+%%HLDSDIR%%VS/overviews/vs_hunt.txt
+%%HLDSDIR%%VS/overviews/vs_jailhouse.bmp
+%%HLDSDIR%%VS/overviews/vs_jailhouse.txt
+%%HLDSDIR%%VS/overviews/vs_lynch.bmp
+%%HLDSDIR%%VS/overviews/vs_lynch.txt
+%%HLDSDIR%%VS/overviews/vs_millstreet.bmp
+%%HLDSDIR%%VS/overviews/vs_millstreet.txt
+%%HLDSDIR%%VS/overviews/vs_niteclub.bmp
+%%HLDSDIR%%VS/overviews/vs_niteclub.txt
+%%HLDSDIR%%VS/overviews/vs_quaint.bmp
+%%HLDSDIR%%VS/overviews/vs_quaint.txt
+%%HLDSDIR%%VS/overviews/vs_raven.bmp
+%%HLDSDIR%%VS/overviews/vs_raven.txt
+%%HLDSDIR%%VS/overviews/vs_school.bmp
+%%HLDSDIR%%VS/overviews/vs_school.txt
+%%HLDSDIR%%VS/overviews/vs_station.bmp
+%%HLDSDIR%%VS/overviews/vs_station.txt
+%%HLDSDIR%%VS/overviews/vs_thebridge.bmp
+%%HLDSDIR%%VS/overviews/vs_thebridge.txt
+%%HLDSDIR%%VS/overviews/vs_yamamansion.bmp
+%%HLDSDIR%%VS/overviews/vs_yamamansion.txt
 %%PORTDOCS%%%%HLDSDIR%%VS/readme.txt
 %%HLDSDIR%%VS/server.cfg
 %%HLDSDIR%%VS/settings.scr
@@ -346,6 +407,10 @@
 %%HLDSDIR%%VS/sound/ambience/c-organ1.wav
 %%HLDSDIR%%VS/sound/ambience/caralarm.wav
 %%HLDSDIR%%VS/sound/ambience/carnival.wav
+%%HLDSDIR%%VS/sound/ambience/chicken10_31b.wav
+%%HLDSDIR%%VS/sound/ambience/church bells32_06.wav
+%%HLDSDIR%%VS/sound/ambience/cougar10_18b.wav
+%%HLDSDIR%%VS/sound/ambience/crow13_5.wav
 %%HLDSDIR%%VS/sound/ambience/disco.wav
 %%HLDSDIR%%VS/sound/ambience/evilaf1.wav
 %%HLDSDIR%%VS/sound/ambience/evillaugh.wav
@@ -353,13 +418,7 @@
 %%HLDSDIR%%VS/sound/ambience/ghost-short.wav
 %%HLDSDIR%%VS/sound/ambience/growl.wav
 %%HLDSDIR%%VS/sound/ambience/heavy19.wav
-%%HLDSDIR%%VS/sound/ambience/housesounds/bells.wav
-%%HLDSDIR%%VS/sound/ambience/housesounds/creak1.wav
-%%HLDSDIR%%VS/sound/ambience/housesounds/cuckoo.wav
-%%HLDSDIR%%VS/sound/ambience/housesounds/doorold.wav
-%%HLDSDIR%%VS/sound/ambience/housesounds/flush.wav
-%%HLDSDIR%%VS/sound/ambience/housesounds/interfer.wav
-%%HLDSDIR%%VS/sound/ambience/housesounds/msquito.wav
+%%HLDSDIR%%VS/sound/ambience/horse1.wav
 %%HLDSDIR%%VS/sound/ambience/laugh1.wav
 %%HLDSDIR%%VS/sound/ambience/laugh2.wav
 %%HLDSDIR%%VS/sound/ambience/monitor.wav
@@ -372,6 +431,7 @@
 %%HLDSDIR%%VS/sound/ambience/piejusu.wav
 %%HLDSDIR%%VS/sound/ambience/popcorn.wav
 %%HLDSDIR%%VS/sound/ambience/projector.wav
+%%HLDSDIR%%VS/sound/ambience/rwater1.wav
 %%HLDSDIR%%VS/sound/ambience/scream1.wav
 %%HLDSDIR%%VS/sound/ambience/scream3.wav
 %%HLDSDIR%%VS/sound/ambience/scream5.wav
@@ -388,14 +448,16 @@
 %%HLDSDIR%%VS/sound/items/feed.wav
 %%HLDSDIR%%VS/sound/items/messiah.wav
 %%HLDSDIR%%VS/sound/items/toccata.wav
-%%PORTDOCS%%%%HLDSDIR%%VS/sound/materials.txt
+%%HLDSDIR%%VS/sound/materials.txt
 %%HLDSDIR%%VS/sound/player/evilaugh.wav
 %%HLDSDIR%%VS/sound/player/flap-long2.wav
 %%HLDSDIR%%VS/sound/player/flap-short1.wav
 %%HLDSDIR%%VS/sound/player/head1.wav
 %%HLDSDIR%%VS/sound/player/head2.wav
+%%HLDSDIR%%VS/sound/player/ninalaugh.wav
 %%HLDSDIR%%VS/sound/player/vampsc.wav
-%%PORTDOCS%%%%HLDSDIR%%VS/sound/sentences.txt
+%%HLDSDIR%%VS/sound/player/vampscf.wav
+%%HLDSDIR%%VS/sound/sentences.txt
 %%HLDSDIR%%VS/sound/weapons/cbar_hit1.wav
 %%HLDSDIR%%VS/sound/weapons/cbar_hit2.wav
 %%HLDSDIR%%VS/sound/weapons/dbarrel1.wav
@@ -450,7 +512,10 @@
 %%HLDSDIR%%VS/sprites/bw_fire.spr
 %%HLDSDIR%%VS/sprites/crosshairs.spr
 %%HLDSDIR%%VS/sprites/fire.spr
+%%HLDSDIR%%VS/sprites/flake.spr
 %%HLDSDIR%%VS/sprites/hud.txt
+%%HLDSDIR%%VS/sprites/iplayerblue.spr
+%%HLDSDIR%%VS/sprites/vssmoke.spr
 %%HLDSDIR%%VS/sprites/weapon_claw.txt
 %%HLDSDIR%%VS/sprites/weapon_vsclaw.txt
 %%HLDSDIR%%VS/sprites/weapon_vscolt.txt
@@ -460,6 +525,8 @@
 %%HLDSDIR%%VS/sprites/weapon_vsshotgun.txt
 %%HLDSDIR%%VS/sprites/weapon_vsstake.txt
 %%HLDSDIR%%VS/street.wad
+%%HLDSDIR%%VS/user.scr
+%%HLDSDIR%%VS/voice_ban.dt
 %%PORTDOCS%%%%HLDSDIR%%VS/vs.ico
 %%HLDSDIR%%VS/vs.wad
 %%HLDSDIR%%VS/vs2.wad
@@ -470,9 +537,9 @@
 @dirrm %%HLDSDIR%%VS/sound/player
 @dirrm %%HLDSDIR%%VS/sound/items
 @dirrm %%HLDSDIR%%VS/sound/doors
-@dirrm %%HLDSDIR%%VS/sound/ambience/housesounds
 @dirrm %%HLDSDIR%%VS/sound/ambience
 @dirrm %%HLDSDIR%%VS/sound
+@dirrm %%HLDSDIR%%VS/overviews
 @dirrm %%HLDSDIR%%VS/models/player/nina
 @dirrm %%HLDSDIR%%VS/models/player/molly
 @dirrm %%HLDSDIR%%VS/models/player/louis
@@ -483,6 +550,7 @@
 @dirrm %%HLDSDIR%%VS/media
 @dirrm %%HLDSDIR%%VS/maps
 %%PORTDOCS%%@dirrm %%HLDSDIR%%VS/manual
+@dirrm %%HLDSDIR%%VS/gfx/vgui/fonts
 @dirrm %%HLDSDIR%%VS/gfx/vgui
 @dirrm %%HLDSDIR%%VS/gfx/shell
 @dirrm %%HLDSDIR%%VS/gfx/env
@@ -491,6 +559,8 @@
 @dirrm %%HLDSDIR%%VS/dlls
 @dirrm %%HLDSDIR%%VS/classes
 @dirrm %%HLDSDIR%%VS/cl_dlls
+@dirrm %%HLDSDIR%%VS/bots
+@unexec rmdir %D/%%HLDSDIR%%VS/SAVE 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%VS/save 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%VS/logs 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%VS 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%VS`` to remove any configuration files and logs left." | fmt
