@@ -20,3 +20,60 @@
  {"port",            "Port",            XtRInt,     sizeof (int),     offset (port),              XtRString, "4321"},
  {"buttonmove",      "ButtonMove",      XtRBoolean, sizeof (int),     offset (button_move),       XtRString, "0"}
  
+@@ -944,31 +944,31 @@
+ 	for (option=1; option<argc; option++) {
+ 		if (strcmp (argv[option], "-?") == 0 ||
+ 		    strcmp (argv[option], "-help") == 0) {
+-puts ("xgammon [-otherdisplay (display)]
+-        [-boardgeometry (string)]
+-        [-boardcolor (color)] [-bc (color)]
+-        [-darkcolor  (color)] [-dc (color)]
+-        [-lightcolor (color)] [-lc (color)]
+-        [-barcolor   (color)] [-b  (color)]
+-        [-whitecolor (color)]        the stone color for \"white\"
+-        [-blackcolor (color)]        the stone color for \"black\"
+-        [-doublerfont (font)]        sets the (big) font for the doubler dice
+-        [-doubling   +doubling]      sets if you wish the computer to double
+-        [-h (black|white)]           set the color for the human player
+-                                     (implies a human versus computer game)
+-        [-gamekind -g (hvc|cvc|hvh)] sets the gamekind to either
+-                                     human vs. human computer vs. computer
+-                                     or human vs. computer (default)
+-        [-winat      (points)]       play a tournament up to \"points\" points
+-        [-watchmove  +wachmove]      if you wish to see the flying stones
+-        [-buttonmove +buttonmove]    set stones by simply pressing button
+-        [-autoplay   +autoplay]      automatic play when only one move
+-                                     is possible
+-        [-stonesteps (number)]       sets the stepsize the stones fly
+-                                     in pixel (implies +watchmove)
+-        [-delaytime (tsec.)]         sets the time the cumputer waits
+-                                     after each turn (implies -watchmove)
+-        [-?] [-help]                 print this string");
++puts ("xgammon [-otherdisplay (display)]\n"
++      "\t[-boardgeometry (string)]\n"
++      "\t[-boardcolor (color)] [-bc (color)]\n"
++      "\t[-darkcolor  (color)] [-dc (color)]\n"
++      "\t[-lightcolor (color)] [-lc (color)]\n"
++      "\t[-barcolor   (color)] [-b  (color)]\n"
++      "\t[-whitecolor (color)]        the stone color for \"white\"\n"
++      "\t[-blackcolor (color)]        the stone color for \"black\"\n"
++      "\t[-doublerfont (font)]        sets the (big) font for the doubler dice\n"
++      "\t[-doubling   +doubling]      sets if you wish the computer to double\n"
++      "\t[-h (black|white)]           set the color for the human player\n"
++      "\t                             (implies a human versus computer game)\n"
++      "\t[-gamekind -g (hvc|cvc|hvh)] sets the gamekind to either\n"
++      "\t                             human vs. human computer vs. computer\n"
++      "\t                             or human vs. computer (default)\n"
++      "\t[-winat      (points)]       play a tournament up to \"points\" points\n"
++      "\t[-watchmove  +wachmove]      if you wish to see the flying stones\n"
++      "\t[-buttonmove +buttonmove]    set stones by simply pressing button\n"
++      "\t[-autoplay   +autoplay]      automatic play when only one move\n"
++      "\t                             is possible\n"
++      "\t[-stonesteps (number)]       sets the stepsize the stones fly\n"
++      "\t                             in pixel (implies +watchmove)\n"
++      "\t[-delaytime (tsec.)]         sets the time the cumputer waits\n"
++      "\t                             after each turn (implies -watchmove)\n"
++      "\t[-?] [-help]                 print this string");
+ 		exit (0);
+ 		} else {
+ 			fprintf (stderr,"xgammon: unknown option %s (ignored)\n", argv[option]);
