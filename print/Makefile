@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.81 1999/01/18 02:50:16 steve Exp $
+# $Id: Makefile,v 1.82 1999/01/20 14:51:16 dirk Exp $
 #
 
     SUBDIR += a2ps-a4
@@ -33,6 +33,7 @@
     SUBDIR += gp
     SUBDIR += gsfonts
     SUBDIR += gv
+    SUBDIR += hp2xx
     SUBDIR += html2latex
     SUBDIR += html2ps
     SUBDIR += jadetex
