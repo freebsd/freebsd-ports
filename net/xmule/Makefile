@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	xmule
-PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTVERSION=	1.9.4.b
 CATEGORIES=	net
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+#MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://download.berlios.de/%SUBDIR%/
 MASTER_SITE_SUBDIR=	xmule
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Port of eMule eDonkey P2P client using wxWindows class library
@@ -34,7 +35,7 @@ CONFIGURE_ARGS=	--without-included-gettext \
 		--with-libintl-prefix=${LOCALBASE} \
 		--enable-debug \
 		--with-wx-config=${WX_CONFIG}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 
@@ -74,14 +75,19 @@ pre-configure:
 		${XARGS} -x -n 10 \
 		${REINPLACE_CMD} -E \
 		-e 's!^(AUTOCONF|AUTOHEADER|AUTOMAKE|ACLOCAL).*$$!\1=${TRUE}!'
+	@${REINPLACE_CMD} -E \
+		-e 's|^(CXXFLAGS.*)$$|\1 -I${LOCALBASE}/include|' \
+		${WRKSRC}/xLibs/xrc/xrc.make.in
 
 post-install:
 # install xmule binary
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} \
+	@${INSTALL_PROGRAM} \
+		${WRKSRC}/${PORTNAME} \
 		${PREFIX}/bin
 # do not install a generic named ed2k binary
 # install it under a more specific name
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/ed2k \
+	@${INSTALL_PROGRAM} \
+		${WRKSRC}/ed2k \
 		${PREFIX}/bin/${PORTNAME}-ed2k-handler
 
 .include <bsd.port.mk>
