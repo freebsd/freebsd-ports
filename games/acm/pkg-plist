@@ -1,4 +1,5 @@
-@cd /usr/X11R6
+@cd ${X11BASE}
+man/man1/acm.1.gz
 @owner games
 @mode 555
 bin/acms
