@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.155 1997/09/27 19:00:05 andreas Exp $
+# $Id: Makefile,v 1.156 1997/09/30 07:54:42 asami Exp $
 #
 
     SUBDIR += FWF
@@ -86,6 +86,7 @@
     SUBDIR += xpostitPlus
     SUBDIR += xprompt
     SUBDIR += xscreensaver
+    SUBDIR += xskyroot
     SUBDIR += xsnow
     SUBDIR += xtacy
     SUBDIR += xtestpicture
