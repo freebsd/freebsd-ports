@@ -23,6 +23,7 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 USE_REINPLACE=	yes
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ARGS=	PREFIX="${PREFIX}" LOCALBASE="${LOCALBASE}"
+INSTALLS_SHLIB=	yes
 
 DOCS=		README
 EXAMPLES=	ft_samp.c gdc_pie_samp.c gdc_samp1.c gdc_samp2.c
