@@ -1,0 +1,11 @@
+share/xml/dtd/xhtml/xhtml-lat1.ent
+share/xml/dtd/xhtml/xhtml-special.ent
+share/xml/dtd/xhtml/xhtml-symbol.ent
+share/xml/dtd/xhtml/xhtml.soc
+share/xml/dtd/xhtml/xhtml1-frameset.dtd
+share/xml/dtd/xhtml/xhtml1-strict.dtd
+share/xml/dtd/xhtml/xhtml1-transitional.dtd
+share/xml/dtd/xhtml/xhtml1.dcl
+@dirrm share/xml/dtd/xhtml
+@unexec rmdir %D/share/xml/dtd 2>/dev/null || true
+@unexec rmdir %D/share/xml 2>/dev/null || true
