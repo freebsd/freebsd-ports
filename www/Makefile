@@ -398,6 +398,7 @@
     SUBDIR += p5-WWW-Search
     SUBDIR += p5-WWW-Search-AltaVista
     SUBDIR += p5-WWW-Search-Google
+    SUBDIR += p5-WWW-Shorten
     SUBDIR += p5-libapreq
     SUBDIR += p5-libservlet
     SUBDIR += p5-libwww
