@@ -12,6 +12,7 @@
     SUBDIR += acorn
     SUBDIR += acorn-media
     SUBDIR += actx
+    SUBDIR += adgali
     SUBDIR += adom
     SUBDIR += affenspiel
     SUBDIR += alephone
