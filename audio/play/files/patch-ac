@@ -1,0 +1,13 @@
+*** encode_riff.c.orig	Wed Mar 26 00:25:07 1997
+--- encode_riff.c	Wed May 20 22:45:03 1998
+***************
+*** 163,168 ****
+--- 163,170 ----
+  	    warn("read");
+  	    stat = FAIL; goto failplay2;
+  	}
++ /*	printf("len = %10d, len = %10d\n", stat, len); */
++ 	stat = (len < stat)? len : stat;
+  	if (write(devfd, bufp, stat) < 0) {
+  	    warn("write");
+  	    stat = FAIL; goto failplay2;

@@ -1,0 +1,15 @@
+*** Makefile.orig	Wed Mar 26 00:29:45 1997
+--- Makefile	Wed May 20 13:27:36 1998
+***************
+*** 10,14 ****
+  CFLAGS  = -O
+  DESTDIR = /usr/local
+  BINDIR  = /bin
+! MANDIR  = /man/ja_JP.EUC/man
+  
+--- 10,14 ----
+  CFLAGS  = -O
+  DESTDIR = /usr/local
+  BINDIR  = /bin
+! MANDIR  = /man/ja/man
+  
