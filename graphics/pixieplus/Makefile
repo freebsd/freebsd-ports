@@ -26,10 +26,6 @@ USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
-.endif
-
 post-patch:
 	@${CP} ${FILESDIR}/blob_private.h ${WRKSRC}/app/
 	@${CP} ${FILESDIR}/exception_private.h ${WRKSRC}/app/
