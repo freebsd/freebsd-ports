@@ -22,11 +22,13 @@ lib/X11/wdm/pixmaps/Stars.jpg
 lib/X11/wdm/pixmaps/StarsLogo.jpg
 lib/X11/wdm/pixmaps/daemon1-HQ-1280x960.jpg
 lib/X11/wdm/pixmaps/gnuLogo.xpm
-lib/X11/wdm/wdm-config
+@unexec if cmp -s %D/lib/X11/wdm/wdm-config.dist %D/lib/X11/wdm/wdm-config; then rm -f %D/lib/X11/wdm/wdm-config; fi
+lib/X11/wdm/wdm-config.dist
+@exec [ -f %D/lib/X11/wdm/wdm-config ] || (cp %D/lib/X11/wdm/wdm-config.dist %D/lib/X11/wdm/wdm-config)
 lib/X11/wdm/wdm-config.in
 lib/X11/wdm/wdmReconfig
-@dirrm lib/X11/wdm/pixmaps
+@unexec rmdir %D/lib/X11/wdm/pixmaps 2>/dev/null || true
 @exec mkdir -p %D/lib/X11/wdm/authdir
 @unexec rmdir %D/lib/X11/wdm/authdir/authfiles 2>/dev/null || true
 @dirrm lib/X11/wdm/authdir
-@dirrm lib/X11/wdm
+@unexec rmdir %D/lib/X11/wdm 2>/dev/null || true
