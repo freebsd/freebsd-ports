@@ -22,7 +22,7 @@ USE_RUBY_EXTCONF=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-TK_VERSION?=	82
+TK_VERSION?=	84
 .if defined(WITH_TCLTK_JP)
 TCLTKLIB_CATEGORY?=	japanese
 .else
@@ -48,7 +48,7 @@ do-extract:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
+	${CP} -R ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
 .endif
 
 .include <bsd.port.post.mk>
