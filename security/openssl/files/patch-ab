@@ -1,6 +1,9 @@
---- Makefile.org.orig	Sun Aug  8 12:29:52 1999
-+++ Makefile.org	Sun Nov  7 18:33:37 1999
-@@ -164,7 +164,7 @@
+
+$FreeBSD$
+
+--- Makefile.org.orig	Thu Mar 16 21:46:20 2000
++++ Makefile.org	Sun Apr 22 19:50:06 2001
+@@ -165,7 +165,7 @@
  ONEDIRS=out tmp
  EDIRS=  times doc bugs util include certs ms shlib mt demos perl sf dep VMS
  WDIRS=  windows
@@ -9,7 +12,7 @@
  
  GENERAL=        Makefile
  BASENAME=       openssl
-@@ -187,6 +187,21 @@
+@@ -189,6 +189,21 @@
  	do \
  	(cd $$i && echo "making all in $$i..." && \
  	$(MAKE) CC='${CC}' PLATFORM='${PLATFORM}' CFLAG='${CFLAG}' SDIRS='$(SDIRS)' INSTALLTOP='${INSTALLTOP}' PEX_LIBS='${PEX_LIBS}' EX_LIBS='${EX_LIBS}' BN_ASM='${BN_ASM}' DES_ENC='${DES_ENC}' BF_ENC='${BF_ENC}' CAST_ENC='${CAST_ENC}' RC4_ENC='${RC4_ENC}' RC5_ENC='${RC5_ENC}' SHA1_ASM_OBJ='${SHA1_ASM_OBJ}' MD5_ASM_OBJ='${MD5_ASM_OBJ}' RMD160_ASM_OBJ='${RMD160_ASM_OBJ}' AR='${AR}' PROCESSOR='${PROCESSOR}' PERL='${PERL}' RANLIB='${RANLIB}' all ) || exit 1; \
@@ -20,7 +23,7 @@
 +	rm -f lib$$i.a lib$$i.so \
 +		lib$$i.so.${SHLIBVER}; \
 +	${MAKE} CC='${CC}' PLATFORM='${PLATFORM}' CFLAG='-fPIC ${CFLAG}' SDIRS='${SDIRS}' INSTALLTOP='${INSTALLTOP}' PEX_LIBS='${PEX_LIBS}' EX_LIBS='${EX_LIBS}' BN_ASM='${BN_ASM}' DES_ENC='${DES_ENC}' BF_ENC='${BF_ENC}' CAST_ENC='${CAST_ENC}' RC4_ENC='${RC4_ENC}' RC5_ENC='${RC5_ENC}' SHA1_ASM_OBJ='${SHA1_ASM_OBJ}' MD5_ASM_OBJ='${MD5_ASM_OBJ}' RMD160_ASM_OBJ='${RMD160_ASM_OBJ}' AR='${AR}' DIRS=$$i clean all || exit 1; \
-+	( set -x; ${CC}  -shared -o lib$$i.so.${SHLIBVER} \
++	( set -x; ${CC}  -nodefaultlibs -shared -o lib$$i.so.${SHLIBVER} \
 +		-Wl,-S,-soname=lib$$i.so.${SHLIBVER} \
 +		-Wl,${WHOLE_ARCHIVE_FLAG} lib$$i.a ) || exit 1; \
 +	rm -f lib$$i.a; (cd $$i ; ${MAKE} clean) || exit 1 ;\
