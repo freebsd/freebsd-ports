@@ -3,6 +3,6 @@ layout and rendering of internationalized text. Pango is an offshoot of the
 GTK+ and GNOME projects, and the initial focus is operation in those
 environments, however there is nothing fundamentally GTK+ or GNOME specific
 about Pango. Pango uses Unicode for all of its encoding, and will eventually
-support output in all the worlds major languages. 
+support output in all the world's major languages. 
 
 WWW: http://www.pango.org/
