@@ -25,6 +25,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}
 INSTALLS_SHLIB=	yes
 
+OPTIONS=	NLS "NLS support" on \
+		GPHOTO2 "gPhoto2 support" off
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_NLS)
@@ -41,14 +44,6 @@ PLIST_SUB+=	GPHOTO2=""
 .else
 CONFIGURE_ARGS+=	--with-gphoto2=no
 PLIST_SUB+=	GPHOTO2="@comment "
-.endif
-
-pre-everything::
-.if !defined(WITH_GPHOTO2)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to compile with gPhoto2 support,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_GPHOTO2=yes\""
-	@${ECHO_MSG}
 .endif
 
 .include "Makefile.man"
