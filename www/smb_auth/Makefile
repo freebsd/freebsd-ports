@@ -14,7 +14,9 @@ MASTER_SITES=	http://www.hacom.nl/~richard/software/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A proxy authentication module against an SMB server
 
+.if !defined(WITHOUT_REGISTER_SAMBA)
 RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/${SAMBA_PORT}
+.endif
 
 ALL_TARGET=	smb_auth
 SAMBA_PORT?=	net/samba
