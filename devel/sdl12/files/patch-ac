@@ -62,8 +62,8 @@ $FreeBSD$
 +        
 +int main() {
 +
-+         VGLMode mode;
-+         exit(0);
++         VGLBitmap bitmap;
++         exit(bitmap.PixelBytes);
 +        
 +; return 0; }
 +EOF

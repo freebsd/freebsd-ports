@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- /dev/null	Mon Jan 22 20:53:09 2001
-+++ src/video/vgl/SDL_vglevents.c	Mon Jan 22 20:02:48 2001
+--- src/video/vgl/SDL_vglevents.c.orig	Wed Jan 24 00:51:13 2001
++++ src/video/vgl/SDL_vglevents.c	Wed Jan 24 00:51:13 2001
 @@ -0,0 +1,305 @@
 +/*
 +    SDL - Simple DirectMedia Layer

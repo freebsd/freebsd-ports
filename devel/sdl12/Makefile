@@ -25,10 +25,15 @@ INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm"
 CONFIGURE_ARGS=	--enable-video-aalib \
-		--enable-video-svga \
-		--enable-video-vgl
+		--enable-video-svga
 
 CFLAGS+=	-D_THREAD_SAFE
+
+.if exists(/usr/lib/libvgl.so.3)
+CONFIGURE_ARGS+=--enable-video-vgl
+.else
+CONFIGURE_ARGS+=--disable-video-vgl
+.endif
 
 .if defined(WITHOUT_GL)
 CONFIGURE_ARGS+=--disable-video-opengl
