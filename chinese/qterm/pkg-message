@@ -1,0 +1,6 @@
+*************************************************************************
+	You can't modify the SITE definition until setting
+QTerm's config file privilege in your ~/.qterm directory to 0755 at least
+		To display IP location when using QTerm
+you must get file "QQWry.dat" and put it into your ~/.qterm directory
+*************************************************************************
