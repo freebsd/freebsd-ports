@@ -1,166 +1,88 @@
-diff -ru /a/gimp-0.99.1/app/app_procs.c app/app_procs.c
---- /a/gimp-0.99.1/app/app_procs.c	Wed Feb 26 06:00:43 1997
-+++ app/app_procs.c	Fri Feb 28 21:25:57 1997
-@@ -217,6 +217,8 @@
-   menus_set_sensitive ("<Image>/File/Quit", FALSE);
+--- plug-ins/script-fu/scripts/Makefile.in.orig	Sun Mar  2 05:54:56 1997
++++ plug-ins/script-fu/scripts/Makefile.in	Sun Mar  2 08:00:11 1997
+@@ -50,7 +50,7 @@
  
-   dialog = gtk_dialog_new ();
-+  GTK_WINDOW(dialog)->type = GTK_WINDOW_DIALOG;
+ scriptdatadir = $(pkgdatadir)/scripts
+ 
+-scriptdata_DATA = \
++_scriptdata_DATA = \
+ 	alien-glow.scm		\
+ 	bds-logo-textured.scm	\
+ 	blend-logo.scm		\
+@@ -76,6 +76,7 @@
+ 
+ DIST_COMMON =  Makefile.am Makefile.in
+ 
++scriptdata_DATA = $(patsubst %.scm,%.sed,${_scriptdata_DATA})
+ 
+ DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) \
+ 	$(TEXINFOS) $(MANS) $(EXTRA_DIST)
+@@ -83,7 +84,7 @@
+ TAR = tar
+ default: all
+ 
+-.SUFFIXES:
++.SUFFIXES: .sed
+ $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL) 
+ 	cd $(top_srcdir) && automake --gnu plug-ins/script-fu/scripts/Makefile
+ 
+@@ -95,13 +96,15 @@
+ install-scriptdataDATA: $(scriptdata_DATA)
+ 	$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(scriptdatadir)
+-	@list="$(scriptdata_DATA)"; for p in $$list; do \
+-	  if test -f $(srcdir)/$$p; then \
+-	    echo "$(INSTALL_DATA) $(srcdir)/$$p $(scriptdatadir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(scriptdatadir)/$$p; \
+-	  else if test -f $$p; then \
+-	    echo "$(INSTALL_DATA) $$p $(scriptdatadir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(scriptdatadir)/$$p; \
++	@list="$(scriptdata_DATA)"; for s in $$list; do \
++	  p=$$(basename $$s .sed); \
++	  if [ $$p != $$s ]; then p=$$p.scm; fi; \
++	  if test -f $(srcdir)/$$s; then \
++	    echo "$(INSTALL_DATA) $(srcdir)/$$s $(scriptdatadir)/$$p"; \
++	    $(INSTALL_DATA) $(srcdir)/$$s $(scriptdatadir)/$$p; \
++	  else if test -f $$s; then \
++	    echo "$(INSTALL_DATA) $$s $(scriptdatadir)/$$p"; \
++	    $(INSTALL_DATA) $$s $(scriptdatadir)/$$p; \
+ 	  fi; fi; \
+ 	done
+ 
+@@ -188,3 +191,7 @@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
 +
-   gtk_window_set_title (GTK_WINDOW (dialog), "Really Quit?");
-   gtk_window_position (GTK_WINDOW (dialog), GTK_WIN_POS_MOUSE);
- 
-diff -ru /a/gimp-0.99.1/app/channels_dialog.c app/channels_dialog.c
---- /a/gimp-0.99.1/app/channels_dialog.c	Wed Feb 26 06:00:43 1997
-+++ app/channels_dialog.c	Fri Feb 28 21:30:04 1997
-@@ -1812,6 +1812,8 @@
- 
-   /*  the dialog  */
-   options->query_box = gtk_dialog_new ();
-+  GTK_WINDOW(options->query_box)->type = GTK_WINDOW_DIALOG;
 +
-   gtk_window_set_title (GTK_WINDOW (options->query_box), "New Channel Options");
-   gtk_window_position (GTK_WINDOW (options->query_box), GTK_WIN_POS_MOUSE);
++%.sed : %.scm
++	sed 's,@_scriptdatadir_@,${scriptdatadir},' $< > $@
+--- plug-ins/script-fu/scripts/chrome-it.scm.orig	Sun Mar  2 05:12:07 1997
++++ plug-ins/script-fu/scripts/chrome-it.scm	Sun Mar  2 07:43:14 1997
+@@ -153,5 +153,5 @@
+     (gimp-displays-flush)
+     (gimp-image-enable-undo img)))
  
-@@ -1967,6 +1969,7 @@
+-(script-fu-register "sota-chrome-it" "SOTA Chrome-IT (Gold Trim)" "Input Image" "1" "Highlight Color" "'(211 95 0)" "Chrome Color" "'(0 27 209)" "Chrome Saturation" "-80" "Chrome Lightness" "-47" "Chrome Factor" "0.75" "Environment Map" "\"/usr/local/share/gimp/scripts/beavis.jpg\"")
+-(script-fu-register "sota-chrome-it" "SOTA Chrome-IT (Copper Trim)" "Input Image" "1" "Highlight Color" "'(220 50 -20)" "Chrome Color" "'(0 0 0)" "Chrome Saturation" "0" "Chrome Lightness" "0" "Chrome Factor" "0.75" "Environment Map" "\"/usr/local/share/gimp/scripts/beavis.jpg\"")
++(script-fu-register "sota-chrome-it" "SOTA Chrome-IT (Gold Trim)" "Input Image" "1" "Highlight Color" "'(211 95 0)" "Chrome Color" "'(0 27 209)" "Chrome Saturation" "-80" "Chrome Lightness" "-47" "Chrome Factor" "0.75" "Environment Map" "\"@_scriptdatadir_@/beavis.jpg\"")
++(script-fu-register "sota-chrome-it" "SOTA Chrome-IT (Copper Trim)" "Input Image" "1" "Highlight Color" "'(220 50 -20)" "Chrome Color" "'(0 0 0)" "Chrome Saturation" "0" "Chrome Lightness" "0" "Chrome Factor" "0.75" "Environment Map" "\"@_scriptdatadir_@/beavis.jpg\"")
+--- plug-ins/script-fu/scripts/chrome2.scm.orig	Sun Mar  2 05:12:07 1997
++++ plug-ins/script-fu/scripts/chrome2.scm	Sun Mar  2 07:43:14 1997
+@@ -161,6 +161,6 @@
+     (gimp-image-enable-undo img)
+     (gimp-display-new img)))
  
-   /*  the dialog  */
-   options->query_box = gtk_dialog_new ();
-+  GTK_WINDOW(options->query_box)->type = GTK_WINDOW_DIALOG;
-   gtk_window_set_title (GTK_WINDOW (options->query_box), "Edit Channel Attributes");
-   gtk_window_position (GTK_WINDOW (options->query_box), GTK_WIN_POS_MOUSE);
+-(script-fu-register "sota-chrome-logo" "SOTA Chromed Logos (Gold Trim)" "Highlight Color" "'(211 95 0)" "Chrome Color" "'(0 27 209)" "Chrome Saturation" "-80" "Chrome Lightness" "-47" "Chrome Factor" "0.75" "Text String" "\"The GIMP\"" "Font Size (in pixels)" "150" "Font" "\"GoodCityModern(kbd)\"" "Environment Map" "\"/usr/local/share/gimp/scripts/beavis.jpg\"")
++(script-fu-register "sota-chrome-logo" "SOTA Chromed Logos (Gold Trim)" "Highlight Color" "'(211 95 0)" "Chrome Color" "'(0 27 209)" "Chrome Saturation" "-80" "Chrome Lightness" "-47" "Chrome Factor" "0.75" "Text String" "\"The GIMP\"" "Font Size (in pixels)" "150" "Font" "\"GoodCityModern(kbd)\"" "Environment Map" "\"@_scriptdatadir_@/beavis.jpg\"")
  
-diff -ru /a/gimp-0.99.1/app/fileops.c app/fileops.c
---- /a/gimp-0.99.1/app/fileops.c	Thu Feb 27 03:08:56 1997
-+++ app/fileops.c	Fri Feb 28 21:45:28 1997
-@@ -706,6 +708,7 @@
+-(script-fu-register "sota-chrome-logo" "SOTA Chromed Logos (Copper Trim)" "Highlight Color" "'(220 50 -20)" "Chrome Color" "'(0 0 0)" "Chrome Saturation" "0" "Chrome Lightness" "0" "Chrome Factor" "0.75"  "Text String" "\"The GIMP\"" "Font Size (in pixels)" "150" "Font" "\"RoostHeavy\"" "Environment Map" "\"/usr/local/share/gimp/scripts/beavis.jpg\"")
++(script-fu-register "sota-chrome-logo" "SOTA Chromed Logos (Copper Trim)" "Highlight Color" "'(220 50 -20)" "Chrome Color" "'(0 0 0)" "Chrome Saturation" "0" "Chrome Lightness" "0" "Chrome Factor" "0.75"  "Text String" "\"The GIMP\"" "Font Size (in pixels)" "150" "Font" "\"RoostHeavy\"" "Environment Map" "\"@_scriptdatadir_@/beavis.jpg\"")
+--- plug-ins/script-fu/scripts/crystal.scm.orig	Sun Mar  2 07:56:25 1997
++++ plug-ins/script-fu/scripts/crystal.scm	Sun Mar  2 07:57:25 1997
+@@ -164,4 +164,4 @@
+     (gimp-display-new img)))
  
-   overwrite_box->full_filename = filename;
-   overwrite_box->obox = gtk_dialog_new ();
-+  GTK_WINDOW(overwrite_box->obox)->type = GTK_WINDOW_DIALOG;
-   gtk_window_set_title (GTK_WINDOW (overwrite_box->obox), "File Exists!");
-   gtk_window_position (GTK_WINDOW (overwrite_box->obox), GTK_WIN_POS_MOUSE);
  
-diff -ru /a/gimp-0.99.1/app/gdisplay_ops.c app/gdisplay_ops.c
---- /a/gimp-0.99.1/app/gdisplay_ops.c	Thu Feb 27 02:21:41 1997
-+++ app/gdisplay_ops.c	Fri Feb 28 21:28:29 1997
-@@ -334,6 +334,7 @@
-   menus_set_sensitive ("<Image>/File/Close", FALSE);
- 
-   mbox = gtk_dialog_new ();
-+  GTK_WINDOW(mbox)->type = GTK_WINDOW_DIALOG;
-   gtk_window_set_title (GTK_WINDOW (mbox), image_name);
-   gtk_window_position (GTK_WINDOW (mbox), GTK_WIN_POS_MOUSE);
-   gtk_object_set_user_data (GTK_OBJECT (mbox), gdisp);
-diff -ru /a/gimp-0.99.1/app/global_edit.c app/global_edit.c
---- /a/gimp-0.99.1/app/global_edit.c	Thu Feb 27 01:01:22 1997
-+++ app/global_edit.c	Fri Feb 28 21:32:29 1997
-@@ -558,6 +558,7 @@
-   pn_dlg->gdisp = gdisp;
- 
-   pn_dlg->shell = gtk_dialog_new ();
-+  GTK_WINDOW(pn_dlg->shell)->type = GTK_WINDOW_DIALOG;
-   gtk_window_set_title (GTK_WINDOW (pn_dlg->shell), "Paste Named Buffer");
-   gtk_window_position (GTK_WINDOW (pn_dlg->shell), GTK_WIN_POS_MOUSE);
- 
-diff -ru /a/gimp-0.99.1/app/interface.c app/interface.c
---- /a/gimp-0.99.1/app/interface.c	Wed Feb 26 17:30:13 1997
-+++ app/interface.c	Fri Feb 28 21:32:56 1997
-@@ -758,6 +758,7 @@
-   query_box = (QueryBox *) g_malloc (sizeof (QueryBox));
- 
-   qbox = gtk_dialog_new ();
-+  GTK_WINDOW(qbox)->type = GTK_WINDOW_DIALOG;
-   gtk_window_set_title (GTK_WINDOW (qbox), title);
-   gtk_window_position (GTK_WINDOW (qbox), GTK_WIN_POS_MOUSE);
- 
-@@ -875,6 +876,7 @@
-   msg_box = (MessageBox *) g_malloc (sizeof (MessageBox));
- 
-   mbox = gtk_dialog_new ();
-+  GTK_WINDOW(mbox)->type = GTK_WINDOW_DIALOG;
-   gtk_window_set_title (GTK_WINDOW (mbox), "GIMP Message");
-   gtk_window_position (GTK_WINDOW (mbox), GTK_WIN_POS_MOUSE);
- 
-diff -ru /a/gimp-0.99.1/app/layer_select.c app/layer_select.c
---- /a/gimp-0.99.1/app/layer_select.c	Mon Feb 24 20:04:52 1997
-+++ app/layer_select.c	Fri Feb 28 21:33:18 1997
-@@ -94,6 +94,7 @@
- 
-       /*  The shell and main vbox  */
-       layer_select->shell = gtk_window_new (GTK_WINDOW_POPUP);
-+      GTK_WINDOW(layer_select->shell)->type = GTK_WINDOW_DIALOG;
-       gtk_window_set_title (GTK_WINDOW (layer_select->shell), "Layer Select");
-       gtk_window_position (GTK_WINDOW (layer_select->shell), GTK_WIN_POS_MOUSE);
-       gtk_signal_connect (GTK_OBJECT (layer_select->shell), "event",
-diff -ru /a/gimp-0.99.1/app/layers_dialog.c app/layers_dialog.c
---- /a/gimp-0.99.1/app/layers_dialog.c	Thu Feb 27 01:25:32 1997
-+++ app/layers_dialog.c	Fri Feb 28 21:34:14 1997
-@@ -2772,6 +2772,7 @@
- 
-   /*  the dialog  */
-   options->query_box = gtk_dialog_new ();
-+  GTK_WINDOW(options->query_box)->type = GTK_WINDOW_DIALOG;
-   gtk_window_set_title (GTK_WINDOW (options->query_box), "New Layer Options");
-   gtk_window_position (GTK_WINDOW (options->query_box), GTK_WIN_POS_MOUSE);
- 
-@@ -2930,6 +2931,7 @@
- 
-   /*  the dialog  */
-   options->query_box = gtk_dialog_new ();
-+  GTK_WINDOW(options->query_box)->type = GTK_WINDOW_DIALOG;
-   gtk_window_set_title (GTK_WINDOW (options->query_box), "Edit Layer Attributes");
-   gtk_window_position (GTK_WINDOW (options->query_box), GTK_WIN_POS_MOUSE);
- 
-@@ -3072,6 +3074,7 @@
- 
-   /*  the dialog  */
-   options->query_box = gtk_dialog_new ();
-+  GTK_WINDOW(options->query_box)->type = GTK_WINDOW_DIALOG;
-   gtk_window_set_title (GTK_WINDOW (options->query_box), "Add Mask Options");
-   gtk_window_position (GTK_WINDOW (options->query_box), GTK_WIN_POS_MOUSE);
- 
-@@ -3184,6 +3187,7 @@
- 
-   /*  the dialog  */
-   options->query_box = gtk_dialog_new ();
-+  GTK_WINDOW(options->query_box)->type = GTK_WINDOW_DIALOG;
-   gtk_window_set_title (GTK_WINDOW (options->query_box), "Layer Mask Options");
-   gtk_window_position (GTK_WINDOW (options->query_box), GTK_WIN_POS_MOUSE);
- 
-@@ -3291,6 +3295,7 @@
- 
-   /*  the dialog  */
-   options->query_box = gtk_dialog_new ();
-+  GTK_WINDOW(options->query_box)->type = GTK_WINDOW_DIALOG;
-   gtk_window_set_title (GTK_WINDOW (options->query_box), "Scale Layer");
-   gtk_window_set_policy (GTK_WINDOW (options->query_box), FALSE, FALSE, TRUE);
-   gtk_window_position (GTK_WINDOW (options->query_box), GTK_WIN_POS_MOUSE);
-@@ -3396,6 +3401,7 @@
- 
-   /*  the dialog  */
-   options->query_box = gtk_dialog_new ();
-+  GTK_WINDOW(options->query_box)->type = GTK_WINDOW_DIALOG;
-   gtk_window_set_title (GTK_WINDOW (options->query_box), "Resize Layer");
-   gtk_window_set_policy (GTK_WINDOW (options->query_box), FALSE, TRUE, TRUE);
-   gtk_window_set_policy (GTK_WINDOW (options->query_box), FALSE, FALSE, TRUE);
-@@ -3528,6 +3534,7 @@
- 
-   /*  the dialog  */
-   options->query_box = gtk_dialog_new ();
-+  GTK_WINDOW(options->query_box)->type = GTK_WINDOW_DIALOG;
-   gtk_window_set_title (GTK_WINDOW (options->query_box), "Layer Merge Options");
-   gtk_window_position (GTK_WINDOW (options->query_box), GTK_WIN_POS_MOUSE);
- 
-diff -ru /a/gimp-0.99.1/app/plug_in.c app/plug_in.c
---- /a/gimp-0.99.1/app/plug_in.c	Thu Feb 27 03:08:38 1997
-+++ app/plug_in.c	Fri Feb 28 21:23:35 1997
-@@ -2349,6 +2349,8 @@
-   if (!plug_in->progress)
-     {
-       plug_in->progress = gtk_dialog_new ();
-+		gtk_widget_set_uposition (plug_in->progress, progress_x, progress_y);
-+		GTK_WINDOW(plug_in->progress)->type=GTK_WINDOW_DIALOG;
-       gtk_window_set_title (GTK_WINDOW (plug_in->progress), prune_filename (plug_in->args[0]));
-       gtk_signal_connect (GTK_OBJECT (plug_in->progress), "destroy",
- 			  (GtkSignalFunc) plug_in_progress_cancel,
+-(script-fu-register "crystal-logo" "Crystal Logos" "Chrome Factor" "1.0" "Text String" "\"Crystal\"" "Font Size (in pixels)" "150" "Font" "\"Engraver\"" "Background Img" "\"/usr/local/share/gimp/scripts/texture1.jpg\"" "Environment Map" "\"/usr/local/share/gimp/scripts/beavis.jpg\"")
++(script-fu-register "crystal-logo" "Crystal Logos" "Chrome Factor" "1.0" "Text String" "\"Crystal\"" "Font Size (in pixels)" "150" "Font" "\"Engraver\"" "Background Img" "\"@_scriptdatadir_@/texture1.jpg\"" "Environment Map" "\"@_scriptdatadir_@/beavis.jpg\"")
