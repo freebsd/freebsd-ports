@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xscreensaver-gnome
-PORTVERSION=	4.10
+PORTVERSION=	4.11
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 DISTNAME=	xscreensaver-${PORTVERSION}
@@ -61,7 +61,8 @@ MAN1=   anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	xmatrix.1 xrayswarm.1 xspirograph.1 xsublim.1 xteevee.1 zoom.1 \
 	endgame.1 glblur.1 halftone.1 barcode.1 eruption.1 flurry.1 \
 	metaballs.1 atunnel.1 piecewise.1 bouncingcow.1 flyingtoasters.1 \
-	glslideshow.1 jigglypuff.1 klein.1 \
+	glslideshow.1 jigglypuff.1 klein.1 blocktube.1 cloudlife.1 \
+	cubestorm.1 glknots.1 glmatrix.1 hypertorus.1 \
 	xscreensaver-command.1 xscreensaver-demo.1 \
 	xscreensaver-getimage-file.1 xscreensaver-getimage-video.1 \
 	xscreensaver-getimage.1 xscreensaver-gl-helper.1 xscreensaver.1
@@ -71,9 +72,5 @@ post-patch:
 		${WRKSRC}/hacks/glx/extrusion.c
 	@${REINPLACE_CMD} -e 's|||' \
 		${WRKSRC}/hacks/glx/klein.c
-
-post-install:
-	@${INSTALL_DATA} ${WRKSRC}/utils/images/logo-50.xpm \
-		${PREFIX}/share/gnome/pixmaps/xscreensaver.xpm
 
 .include <bsd.port.mk>

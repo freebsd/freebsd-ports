@@ -1,6 +1,6 @@
---- driver/Makefile.in.orig	Tue Jun 17 10:54:08 2003
-+++ driver/Makefile.in	Tue Jun 17 10:56:37 2003
-@@ -24,11 +24,11 @@
+--- driver/Makefile.in.orig	Tue Jul 22 00:19:10 2003
++++ driver/Makefile.in	Tue Jul 22 00:26:47 2003
+@@ -24,14 +24,14 @@
  INTLTOOL_MERGE	= @INTLTOOL_MERGE@
  
  GNOME_DATADIR	= @GNOME_DATADIR@
@@ -15,8 +15,12 @@
 +GNOME_PANELDIR2 = $(GNOME_DATADIR)/gnome/applications
  GNOME_PANELDIR	= @GNOME_PANELDIR@
  GLADE_DATADIR	= @GLADE_DATADIR@
+-GNOME_ICONDIR	= $(GNOME_DATADIR)/pixmaps
++GNOME_ICONDIR	= $(GNOME_DATADIR)/gnome/pixmaps
  GNOME_BINDIR	= $(bindir)
-@@ -238,7 +238,7 @@
+ HACK_CONF_DIR	= @HACK_CONF_DIR@
+ 
+@@ -239,7 +239,7 @@
  tests: $(TEST_EXES)
  
  install:   install-program   install-ad    install-scripts \
@@ -25,7 +29,7 @@
  uninstall: uninstall-program uninstall-ad  \
  	   uninstall-gnome   uninstall-kde uninstall-man
  
-@@ -477,8 +477,11 @@
+@@ -478,8 +478,11 @@
  	                                                                      \
             echo $(INSTALL_DATA) screensaver-properties.desktop		      \
               $(install_prefix)$(GNOME_CCDIR_1)/screensaver-properties.desktop;\
