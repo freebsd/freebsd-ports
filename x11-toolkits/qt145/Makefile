@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	qt
+PORTNAME=	qt1
 PORTVERSION=	1.45
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
+DISTNAME=	${PORTNAME:S/1//}-${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.kde.gr.jp/pub/qt/patch/
 PATCHFILES=	qt-1.45-i18n-20000531.diff.gz
@@ -17,7 +18,6 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	kde@FreeBSD.org
 
-NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
