@@ -21,7 +21,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		manual_ja-${MANUALVERSION}i-1${EXTRACT_SUFX}
 DIST_SUBDIR=	mutt
 
-MAINTAINER=	iwashita@cqmail.net
+MAINTAINER=	st@be.to
 COMMENT=	Text-based mail client (Japanised Version)
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
@@ -46,7 +46,7 @@ USE_AUTOCONF_VER=	213
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include -I${LOCALBASE}/include/slang" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CC="${CC} -D_DONT_USE_CTYPE_INLINE_ -I${LOCALBASE}/include -I${LOCALBASE}/include/slang" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--without-wc-funcs \
