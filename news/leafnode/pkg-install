@@ -23,7 +23,6 @@ POST-INSTALL)
 	chown news:news $SPOOLDIR/interesting.groups
 	chown news:news $SPOOLDIR/out.going
 	chown news:news $SPOOLDIR/temp.files
-	${PKG_PREFIX}/sbin/quickmkdir
 	;;
 *)
 	echo >&2 "Unknown argument in $0 $@"
