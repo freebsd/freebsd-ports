@@ -33,7 +33,8 @@ USE_GMAKE=	yes
 PLIST_FILES=	bin/colorer lib/libcolorer.so
 
 do-build:
-	@(cd ${WRKSRC} && ${ANT} ${ANT_TARGET} ; \
+	@(cd ${WRKSRC} && \
+          ${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT} ${ANT_TARGET} ; \
 	  cd distr/Colorer-take5-linux.beta2 ; \
 	  ${REINPLACE_CMD} -e "s|make -C|${GMAKE} -C|" Makefile.in ; \
 	  ${CHMOD} +x configure && ${SETENV} ${CONFIGURE_ENV} ./configure ; \
