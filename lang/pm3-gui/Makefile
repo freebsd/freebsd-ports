@@ -30,6 +30,8 @@ BUILDDIRS=	graphics/gr-libs/X11 \
 L1=		${PREFIX}/lib/m3/${TARGET}/
 SOVERSION=	7
 VERSION=	1.1.13
+# hack to work around bsd.port.mk problem
+USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
