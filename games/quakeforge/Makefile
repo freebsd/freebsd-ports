@@ -140,4 +140,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/targets/${binary} ${PREFIX}/bin/
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
