@@ -10,7 +10,7 @@ PORTVERSION=	4.0
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS} \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	packages kiri
+MASTER_SITE_SUBDIR=	packages kiri/xemacs
 DISTFILES=	\
 		Sun-1.13-pkg.tar.gz \
 		ada-1.10-pkg.tar.gz \
