@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTVERSION=	1.4.1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,18 +14,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	wvengen@stack.nl
 COMMENT=	A powerful Bible study application for KDE3
 
-LIB_DEPENDS=	sword.1:${PORTSDIR}/misc/sword
-.if !defined(NOPORTDOCS)
-RUN_DEPENDS=	${LOCALBASE}/share/doc/HTML/en/bibletime:${PORTSDIR}/misc/bibletime-doc
-.endif
+LIB_DEPENDS=	sword.4:${PORTSDIR}/misc/sword
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ARGS+=--program-transform-name="" \
-		--with-sworddir=${PREFIX}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s^-lpthread^${PTHREAD_LIBS}^g" ${WRKSRC}/configure
