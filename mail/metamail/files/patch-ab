@@ -1,0 +1,33 @@
+*** config.h.orig	Mon Oct 17 21:06:22 1994
+--- config.h	Mon Oct 17 21:08:13 1994
+***************
+*** 73,79 ****
+  #ifdef SYSV
+  #define RESET_PROGRAM "tput clear"
+  #else
+! #ifdef __BSD_4_4__
+  #define RESET_PROGRAM "/usr/bin/reset"
+  #else
+  #define RESET_PROGRAM "/usr/ucb/reset"
+--- 73,79 ----
+  #ifdef SYSV
+  #define RESET_PROGRAM "tput clear"
+  #else
+! #if defined(__BSD_4_4__) || defined(__FreeBSD__)
+  #define RESET_PROGRAM "/usr/bin/reset"
+  #else
+  #define RESET_PROGRAM "/usr/ucb/reset"
+***************
+*** 155,161 ****
+--- 155,165 ----
+  #ifdef NeXT
+  #define sigtype void
+  #else
++ #ifdef __FreeBSD__
++ #define sigtype void
++ #else
+  #define sigtype int
++ #endif
+  #endif
+  #endif
+  
