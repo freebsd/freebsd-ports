@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	BBBike
-PORTVERSION=	3.11
+PORTVERSION=	3.12
 CATEGORIES=	german
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	bbbike
+MASTER_SITE_SUBDIR=     bbbike
 
-MAINTAINER=	slaven.rezic@berlin.de
+MAINTAINER=	slaven@rezic.de
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 
