@@ -9,7 +9,7 @@
 PORTNAME=	rfksay
 PORTVERSION=	0.1
 CATEGORIES=	games
-MASTER_SITES=	http://www.redhotlunix.com/
+MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 DISTNAME=	rfksay
 
 MAINTAINER=	mich@FreeBSD.org
