@@ -131,14 +131,13 @@ pre-fetch:
 pre-build:
 	find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 	${RM} -rf ${WRKSRC}/info/*
-	${LN} -sf DOC ${WRKSRC}/etc/${DOC_FILE}
 	@(cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} emacs)
 	@(cd ${WRKSRC}/src/../lisp; \
 	${WRKSRC}/src/emacs -batch -q -f batch-byte-compile \
 	ange-ftp.el help.el international/ccl.el international/mule-cmds.el \
 	international/mule.el international/titdic-cnv.el)
 	${RM} -f ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${EMACS_VER}.1
-	${RM} -f ${WRKSRC}/etc/DOC-${EMACS_VER}.1
+	${RM} -f ${WRKSRC}/etc/${DOC_FILE}
 	${RM} -f ${WRKSRC}/lib-src/fns-emcws-${EMACS_VER}.1.el
 
 do-install:
@@ -147,7 +146,7 @@ do-install:
 	@${LN} ${PREFIX}/bin/emcws-${EMACS_VER} ${PREFIX}/bin/emcws
 	@test -d ${PREFIX}/share/emacs/${EMACS_VER}-emcws/etc || \
 		${MKDIR} ${PREFIX}/share/emacs/${EMACS_VER}-emcws/etc
-	@${INSTALL_DATA} ${WRKSRC}/etc/DOC ${PREFIX}/share/emacs/${EMACS_VER}-emcws/etc/${DOC_FILE}
+	@${INSTALL_DATA} ${WRKSRC}/etc/${DOC_FILE} ${PREFIX}/share/emacs/${EMACS_VER}-emcws/etc/${DOC_FILE}
 	@test -d ${PREFIX}/share/emacs/${EMACS_VER}-emcws/lisp/its || \
 		${MKDIR} ${PREFIX}/share/emacs/${EMACS_VER}-emcws/lisp/its
 	@for i in ${EMCWS_ELCS}; do \
