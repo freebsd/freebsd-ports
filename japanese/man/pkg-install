@@ -1,28 +1,14 @@
 #!/bin/sh
 
-TOUCH=${TOUCH:-/usr/bin/touch}
-
-elispdir=${PKG_PREFIX}/lib/mule/site-lisp
-
-OptionStart=";;; Jman configuration options"
-OptionEnd=";;; End of Jman configuration options"
-
-if [ "X$2" = X"POST-INSTALL" ]; then
-	if [ ! -f ${elispdir}/site-start.el ]; then 
-		 ${TOUCH} ${elispdir}/site-start.el
+if [ "X$2" = X"PRE-INSTALL" ]; then
+    for d in /usr/local/man /usr/X11R6/man; do
+	if [ -d ${d}/ja_JP.EUC ]; then
+	    if [ -d ${d}/ja ]; then
+		(cd ${d}; tar cf - -C ja_JP.EUC . | tar xfp - -C ja; \
+		 rm -rf ${d}/ja_JP.EUC; ln -s ja ja_JP.EUC )
+	    else
+		(cd ${d}; mv ja_JP.EUC ja; ln -s ja ja_JP.EUC )
+	    fi
 	fi
-	if [ "`grep \"^${OptionStart}\"  ${elispdir}/site-start.el`" ]; then 
-		sed -e "/^${OptionStart}/,/^${OptionEnd}/d" \
-		    ${elispdir}/site-start.el > ${elispdir}/site-start.el.bak
-		mv ${elispdir}/site-start.el.bak ${elispdir}/site-start.el
-	fi
-	echo "Adding \"Jman\" entry to ${elispdir}/site-start.el"
-	echo "${OptionStart}" >> ${elispdir}/site-start.el
-	echo "(setq load-path (cons \"${elispdir}/jman\" load-path))" \
-					>> ${elispdir}/site-start.el
-	echo "(autoload 'jman \"jman\" nil t)"	>> ${elispdir}/site-start.el
-	echo "${OptionEnd}" \
-					>> ${elispdir}/site-start.el
-	exit 0
+    done
 fi
-
