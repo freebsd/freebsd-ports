@@ -1,5 +1,5 @@
 The diskprep program prepares a disk for use.  It can be used for a
-variety of purposes including initalizing flash disks to use as boot
-media or automaticly configured the disks of nodes in a cluster.
+variety of purposes including initializing flash disks to use as boot
+media or automatically configured the disks of nodes in a cluster.
 
 WWW: http://people.freebsd.org/~brooks/diskprep/
