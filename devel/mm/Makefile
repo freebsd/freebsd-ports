@@ -3,12 +3,13 @@
 # Date Created:			14 March 1999
 # Whom:				Ralf S. Engelschall
 #
-# $Id: Makefile,v 1.5 1999/05/17 06:22:04 rse Exp $
+# $Id: Makefile,v 1.6 1999/05/21 21:34:00 rse Exp $
 #
 
 DISTNAME=	mm-1.0.4
 CATEGORIES=	devel
-MASTER_SITES=	http://www.engelschall.com/sw/mm/
+MASTER_SITES=	http://www.engelschall.com/sw/mm/ \
+		ftp://ftp.engelschall.com/sw/mm/
 
 MAINTAINER=	rse@engelschall.com
 
