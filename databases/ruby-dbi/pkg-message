@@ -1,0 +1,4 @@
+====
+DBD modules are available as separate ports.  Check out
+databases/ruby-dbd_* and install the ones you need.
+====
