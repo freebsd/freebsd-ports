@@ -10,7 +10,7 @@ PORTVERSION=	3.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.ntrnet.net/~jmknoble/fonts/
 
-MAINTAINER=	olgeni@uli.it
+MAINTAINER=	olgeni@freebsd.org
 
 USE_IMAKE=	yes
 
