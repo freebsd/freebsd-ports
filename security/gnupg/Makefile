@@ -28,6 +28,9 @@ MLINKS=		gpg.1 gpgm.1
 .if exists(${PREFIX}/lib/libgdbm.so)
 LIB_DEPENDS+=	gdbm.2:${PORTSDIR}/databases/gdbm
 .endif
+.if exists(${PREFIX}/lib/libiconv.so)
+LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
+.endif
 
 .if ${OSVERSION} < 300000
 USE_GMAKE=	YES
