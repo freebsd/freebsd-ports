@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.223 1999/08/01 02:57:07 cpiazza Exp $
+# $Id: Makefile,v 1.224 1999/08/01 03:51:12 cpiazza Exp $
 #
 
     SUBDIR += 221upgrade
@@ -72,6 +72,7 @@
     SUBDIR += quotes
     SUBDIR += rc5des
     SUBDIR += rpm
+    SUBDIR += rpm2cpio
     SUBDIR += rtfm
     SUBDIR += screen
     SUBDIR += scriptkit
