@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yabasic
-PORTVERSION=	2.62
+PORTVERSION=	2.63
 CATEGORIES=	lang
 MASTER_SITES=	http://www.yabasic.de/download/
 DISTNAME=	yab
