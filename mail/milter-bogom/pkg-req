@@ -1,0 +1,35 @@
+#!/bin/sh
+
+need_milter() {
+
+echo "****************************************************************"
+echo "* You need at least the version 8.13 of sendmail compiled with *" 
+echo "* milter support enabled.                                      *"
+echo "****************************************************************"
+exit 1;
+
+}
+
+# check if we are not installing
+if [ "$2" != "INSTALL" ];
+then
+    exit 0;
+fi
+
+# check if sendmail have the MILTER API
+sendmail -d0.1 -bv root 2>&1 | grep MILTER > /dev/null
+
+if [ $? != 0 ];
+then
+    need_milter;
+fi
+
+# Check if sendmail is at least 8.13
+sendmail -d0.1 -bv root 2>& 1 | grep Version | awk '{ if ( $2 > "8.13" )\
+exit 0; else exit 1;}'
+
+if [ $? != 0 ];
+then
+    need_milter;
+fi
+exit 0
