@@ -57,4 +57,9 @@ MAN5= 		XF86Config.5
 # Set following as NO. or type make ExtendefInputDevices=NO
 ExtendedInputDevices?=	YES
 
+.pre-fetch:
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+	${SH} ${PKGDIR}/INSTALL
+.endif
+
 .include <bsd.port.mk>
