@@ -8875,6 +8875,7 @@ xtset		ports/x11/xtset
 xtu		ports/x11-clocks/xtu
 xtuner		ports/audio/xtuner
 xtux		ports/games/xtux
+xtypo		ports/misc/xtypo
 xunicode	ports/converters/xunicode
 xv		ports/graphics/xv
 xv-m17n		ports/graphics/xv-m17n
