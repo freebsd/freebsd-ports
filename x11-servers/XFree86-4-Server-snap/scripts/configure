@@ -221,7 +221,7 @@ else
   configure
 fi
 
-if [ $cpwh != NO ]; then
+if [ X$cpwh != XNO ]; then
   cp $cpwh $WH
 fi
 
