@@ -114,7 +114,6 @@
     SUBDIR += ksmp3play
     SUBDIR += ladspa
     SUBDIR += lame
-    SUBDIR += lame-devel
     SUBDIR += liba52
     SUBDIR += libao
     SUBDIR += libaudiofile

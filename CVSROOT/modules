@@ -3758,7 +3758,6 @@ lam		src/usr.bin/lam
 lamarc		ports/biology/lamarc
 lambdamoo	ports/net/lambdamoo
 lame		ports/audio/lame
-lame-devel	ports/audio/lame-devel
 landscape	ports/graphics/landscape
 lapack		ports/math/lapack
 lapack++	ports/math/lapack++
