@@ -6,7 +6,7 @@
 
 PORTNAME=	tsocks
 PORTVERSION=	1.8.b5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://ftp1.sourceforge.net/tsocks/ \
@@ -20,13 +20,12 @@ COMMENT=	Allow non SOCKS aware applications to use SOCKS without modification
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	${PREFIX}/lib/tsocks
 USE_REINPLACE=	yes
 
 WRKSRC=${WRKDIR}/${PORTNAME}-${PORTVERSION:C/.b.*//}
 
 CONFIGURE_ARGS=	--with-conf=${PREFIX}/etc/tsocks.conf \
-		--libdir=${LOCALBASE}/lib/tsocks
+		--libdir=${PREFIX}/lib
 
 MAN1=		tsocks.1
 MAN5=		tsocks.conf.5
@@ -94,6 +93,7 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|ufds|fds|g' ${WRKSRC}/tsocks.c
+	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/tsocks
 
 .if !defined(NOPORTDOCS)
 post-install:
