@@ -1,0 +1,20 @@
+                  LLNL XDIR Version 2.0,  October 23, 1995
+
+    LLNL XDIR, an OSF/Motif-based FTP client, provides a graphical user
+    interface for drag-and-drop file transfer.  LLNL XDIR simultaneously
+    displays any number of directories for any number of hosts, with each
+    directory being displayed in its own window.  LLNL XDIR supports
+    powerful directory browsing capability, including iconic and
+    hierarchical views.  One of LLNL XDIR's most powerful features is its
+    ability to search directory structures (even across multiple hosts)
+    for entry names that match a specified pattern.
+
+    LLNL XDIR is meant to be the successor to LLNL XFTP, another graphical
+    FTP client.  LLNL XDIR is considerably more sophisticated than LLNL
+    XFTP, and has all of its functionality.
+
+    LLNL XDIR is a component of the Intelligent Archive, which is currently
+    under development at LLNL.
+
+    LLNL XDIR was written by Neale Smith of the Lawrence Livermore National
+    Laboratory, which is operated by the University of California.
