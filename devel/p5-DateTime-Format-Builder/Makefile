@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Format-Builder
-PORTVERSION=	0.78.04
+PORTVERSION=	0.78.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -30,6 +30,18 @@ MAN3=		DateTime::Format::Builder.3 DateTime::Format::Builder::Parser.3 \
 		DateTime::Format::Builder::Parser::Strptime.3 \
 		DateTime::Format::Builder::Parser::generic.3 \
 		DateTime::Format::Builder::Tutorial.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	CREDITS Changes README
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
