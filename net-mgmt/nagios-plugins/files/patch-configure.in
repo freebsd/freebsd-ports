@@ -1,5 +1,5 @@
---- configure.in.orig	Wed Dec  1 09:41:08 2004
-+++ configure.in	Fri Dec  3 22:27:18 2004
+--- configure.in.orig	Wed Dec 15 21:54:37 2004
++++ configure.in	Fri Dec 17 12:31:43 2004
 @@ -10,7 +10,7 @@
  RELEASE=1
  AC_SUBST(RELEASE)
@@ -59,8 +59,8 @@
 +  LIBS="-L${LOCALBASE}/lib $LIBS"
    AC_CHECK_FUNCS(ldap_set_option)
    EXTRAS="$EXTRAS check_ldap"
- else
-@@ -209,6 +215,7 @@
+ 	AC_CHECK_FUNCS(ldap_init ldap_set_option ldap_get_option ldap_start_tls_s)
+@@ -210,6 +216,7 @@
    AC_MSG_WARN([install LDAP libs to compile this plugin (see REQUIREMENTS).])
  fi
  LIBS="$_SAVEDLIBS"
@@ -68,16 +68,234 @@
  
  
  dnl Check for mysql libraries
-@@ -676,7 +683,7 @@
- 	egrep -i ["^STAT +COMMAND +VSZ +RSS +UID +USER +PPID"] >/dev/null
- then
- 	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
+@@ -644,221 +651,11 @@
+ 
+ AC_PATH_PROG(PATH_TO_PS,ps)
+ 
+-AC_MSG_CHECKING(for ps syntax)
+-dnl For OpenBSD 3.2 & 3.3. Must come before ps -weo
+-dnl  STAT UCOMM              VSZ   RSS USER      PPID COMMAND
+-if ps -axwo 'stat comm vsz rss user uid ppid args' 2>/dev/null | \
+-	egrep -i ["^ *STAT +UCOMM +VSZ +RSS +USER +UID +PPID +COMMAND"] > /dev/null
+-then
+-	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
+-	ac_cv_ps_command="$PATH_TO_PS -axwo 'stat uid ppid vsz rss pcpu comm args'"
+-	ac_cv_ps_format="%s %d %d %d %d %f %s %n"
+-	ac_cv_ps_cols=8
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-dnl  STAT UCOMM              VSZ   RSS USER       UID  PPID COMMAND
+-elif ps -weo 'stat comm vsz rss user uid ppid etime args' 2>/dev/null | \
+-	egrep -i ["^ *S[TAUES]* +[UCOMDNA]+ +[VSIZE]+ +R[S]+ +U[SER]+ +U[ID]+ +P[PID]+ +[ELAPSD]+ +[RGSCOMDNA]+"] >/dev/null
+-then
+-	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procrss,&procpcpu,procetime,procprog,&pos]"
+-	ac_cv_ps_command="$PATH_TO_PS -weo 'stat uid ppid vsz rss pcpu etime comm args'"
+-	ac_cv_ps_format="%s %d %d %d %d %f %s %s %n"
+-	ac_cv_ps_cols=9
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-dnl FreeBSD
+-elif ps waxco 'state command vsz rss uid user ppid' 2>/dev/null | \
+-	egrep -i ["^STAT +COMMAND +VSZ +RSS +UID +USER +PPID"] >/dev/null
+-then
+-	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
 -	ac_cv_ps_command="$PATH_TO_PS waxco 'state uid ppid vsz rss pcpu command command'"
-+	ac_cv_ps_command="$PATH_TO_PS -axwo 'state uid ppid vsz rss pcpu command command'"
- 	ac_cv_ps_format="%s %d %d %d %d %f %s %n"
- 	ac_cv_ps_cols=8
- 	AC_MSG_RESULT([$ac_cv_ps_command])
-@@ -1221,6 +1228,8 @@
+-	ac_cv_ps_format="%s %d %d %d %d %f %s %n"
+-	ac_cv_ps_cols=8
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-dnl BSD-like mode in RH 6.1
+-elif ps waxno 'state comm vsz rss uid user ppid args' 2>/dev/null | \
+-	egrep -i ["^S +COMMAND +VSZ +RSS +UID +USER +PPID +[RGSCOMDNA]+"] >/dev/null
+-then
+-	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
+-	ac_cv_ps_command="$PATH_TO_PS waxno 'state uid ppid vsz rss pcpu comm args'"
+-	ac_cv_ps_format="%s %d %d %d %d %f %s %n"
+-	ac_cv_ps_cols=8
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-dnl SunOS 4.1.3:
+-dnl  F  UID  PID  PPID  CP  PRI  NI  SZ  RSS  WCHAN  STAT  TT  TIME  COMMAND
+-dnl Need the head -1 otherwise test will work because arguments are found
+-elif ps -laxnwww 2>/dev/null | head -1 | \
+-	egrep -i ["^ *F(LAGS)? +UID +PID +PPID +CP +PRI +NI +(SZ)|(VSZ)|(SIZE) +RSS +WCHAN +STAT? +TTY? +TIME +COMMAND"] >/dev/null
+-then
+-	ac_cv_ps_varlist="[&procuid,&procppid,&procvsz,&procrss,procstat,&pos,procprog]"
+-	ac_cv_ps_command="$PATH_TO_PS -laxnwww"
+-	ac_cv_ps_format="%*s %d %*s %d %*s %*s %*s %d %d %*s %s %*s %*s %n%s"
+-	ac_cv_ps_cols=8
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-dnl Debian Linux / procps v1.2.9:
+-dnl  FLAGS   UID   PID  PPID PRI  NI   SIZE   RSS WCHAN       STA TTY TIME COMMAND
+-dnl    100     0     1     0   0   0    776    76  c0131c8c   S  ffff  0:11 init [2]
+-dnl
+-elif ps laxnwww 2>/dev/null | \
+-	egrep -i ["^ *F(LAGS)? +UID +PID +PPID +PRI +NI +(VSZ)|(SIZE) +RSS +WCHAN +STAT? TTY +TIME +COMMAND"] >/dev/null
+-then
+-	ac_cv_ps_varlist="[&procuid,&procppid,procstat,&procvsz,&procrss,&pos,procprog]"
+-	ac_cv_ps_command="$PATH_TO_PS laxnwww"
+-	ac_cv_ps_format="%*s %d %*s %d %*s %*s %d %d %*s %s %*s %*s %n%s"
+-	ac_cv_ps_cols=8
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-dnl OpenBSD (needs to come early because -exo appears to work, but does not give all procs)
+-elif ps -axo 'stat comm vsz rss user uid ppid args' 2>/dev/null | \
+-	egrep -i ["^ *S[TAUES]* +[UCOMDNA]+ +[VSIZE]+ +R[S]+ +U[SER]+ +U[ID]+ +P[PID]+ +[RGSCOMDNA]+"] >/dev/null
+-then
+-	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
+-	ac_cv_ps_command="$PATH_TO_PS -axo 'stat uid ppid vsz rss pcpu comm args'"
+-	ac_cv_ps_format="%s %d %d %d %d %f %s %n"
+-	ac_cv_ps_cols=8
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-dnl Tru64 - needs %*[ +] in PS_FORMAT
+-elif ps -ao 'stat comm vsz rss user uid ppid args' 2>/dev/null | \
+-	egrep -i ["^ *S[TAUES]* +[UCOMDNA]+ +[VSIZE]+ +R[S]+ +U[SER]+ +U[ID]+ +P[PID]+ +[RGSCOMDNA]+"] >/dev/null
+-then
+-	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
+-	ac_cv_ps_command="$PATH_TO_PS -ao 'stat uid ppid vsz rss pcpu comm args'"
+-	ac_cv_ps_format=["%s%*[ +] %d %d %d %d %f %s %n"]
+-	ac_cv_ps_cols=8
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-elif ps -eo 's comm vsz rss user uid ppid args' 2>/dev/null | \
+-	egrep -i ["^S[TAUES]* +C[OMDNA]+ +[VSIZE]+ +U[SER]+ +U[ID]+ +P[PID]+ +[RGSCOMDNA]+"] >/dev/null
+-then
+-	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
+-	ac_cv_ps_command="$PATH_TO_PS -eo 's uid ppid vsz rss pcpu comm args'"
+-	ac_cv_ps_format="%s %d %d %d %d %f %s %n"
+-	ac_cv_ps_cols=8
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-dnl AIX 4.3.3 and 5.1 do not have an rss field
+-elif ps -eo 'stat uid ppid vsz pcpu comm args' 2>/dev/null | \
+-	egrep -i ["^ *S[TAUES]* +UID +PPID +VSZ +%CPU +COMMAND +COMMAND"] >/dev/null
+-then
+-	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procpcpu,procprog,&pos]"
+-	ac_cv_ps_command="$PATH_TO_PS -eo 'stat uid ppid vsz pcpu comm args'"
+-	ac_cv_ps_format="%s %d %d %d %f %s %n"
+-	ac_cv_ps_cols=7
+-	AC_MSG_RESULT([$ac_cv_ps_command - with no RSS])
+-
+-dnl Solaris 2.6
+-elif ps -Ao 's comm vsz rss uid user ppid args' 2>/dev/null | \
+-	egrep -i ["^S[TAUES]* +C[OMDNA]+ +V[SIZE]+ +RSS +UID +USER +PPID +[RGSCOMDNA]+"] >/dev/null
+-then
+-	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
+-	ac_cv_ps_command="$PATH_TO_PS -Ao 's uid ppid vsz rss pcpu comm args'"
+-	# There must be no space between the %s and %n due to a wierd problem in sscanf where
+-	# it will return %n as longer than the line length
+-	ac_cv_ps_format="%s %d %d %d %d %f %s%n"
+-	ac_cv_ps_cols=8
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-elif ps -Ao 'status comm vsz rss uid user ppid args' 2>/dev/null | \
+-	egrep -i ["^S[TAUES]* +C[OMDNA]+ +V[SIZE]+ +RSS +UID +USER +PPID +[RGSCOMDNA]+"] >/dev/null
+-then
+-	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
+-	ac_cv_ps_command="$PATH_TO_PS -Ao 'status uid ppid vsz rss pcpu comm args'"
+-	ac_cv_ps_format="%s %d %d %d %d %f %s %n"
+-	ac_cv_ps_cols=8
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-elif ps -Ao 'state comm vsz rss uid user ppid args' 2>/dev/null | \
+-	egrep -i ["^S[TAUES]* +C[OMDNA]+ +V[SIZE]+ +RSS +UID +USER +PPID +[RGSCOMDNA]+"] >/dev/null
+-then
+-	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
+-	ac_cv_ps_command="$PATH_TO_PS -Ao 'state uid ppid vsz rss pcpu comm args'"
+-	ac_cv_ps_format="%s %d %d %d %d %f %s %n"
+-	ac_cv_ps_cols=8
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-dnl wonder who takes state instead of stat
+-elif ps -ao 'state command vsz rss user ppid args' 2>/dev/null | \
+-	egrep -i ["^S[TAUES]* +C[OMDNA]+ +V[SIZE]+ +RSS +UID +USER +PPID +[RGSCOMDNA]+"] >/dev/null
+-then
+-	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
+-	ac_cv_ps_command="$PATH_TO_PS -ao 'state uid ppid vsz rss pcpu command args'"
+-	ac_cv_ps_format="%s %d %d %d %d %f %s %n"
+-	ac_cv_ps_cols=7
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-dnl IRIX 53
+-elif ps -el 2>/dev/null | \
+-	egrep -i ["^ *F +S +UID +PID +PPID +C +PRI +NI +P +SZ +RSS +WCHAN +TTY +TIME +[RGSCOMDNA]+"] >/dev/null
+-then
+-	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procrss,&pos,procprog]"
+-	ac_cv_ps_command="$PATH_TO_PS -el (IRIX 53)"
+-	ac_cv_ps_format="%*s %s %d %*s %d %*s %*s %*s %*s %d %d %*s %*s %*s %n%s"
+-	ac_cv_ps_cols=7
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-dnl IRIX 63
+-elif ps -el 2>/dev/null | \
+-	egrep -i ["^ *F +S +UID +PID +PPID +C +PRI +NI +P +ADDR +SZ +RSS +WCHAN +TTY +TIME +[RGSCOMDNA]+"] >/dev/null
+-then
+-	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&pos,procprog]"
+-	ac_cv_ps_command="$PATH_TO_PS -el (IRIX 63)"
+-	ac_cv_ps_format="%*s %s %d %*s %d %*s %*s %*s %*s %*s %*s %*s %*s %*s %*s %n%s"
+-	ac_cv_ps_cols=5
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-dnl AIX 4.1:
+-dnl     F S      UID   PID  PPID   C PRI NI ADDR  SZ  RSS   WCHAN    TTY  TIME CMD
+-dnl    303 A        0     0     0 120  16 -- 1c07  20   24              -  0:45 swapper
+-elif ps -el 2>/dev/null | \
+-	egrep -i ["^ *F +S +UID +PID +PPID +C +PRI +NI +ADDR +SZ +WCHAN +TTY +TIME +[RGSCOMDNA]+"] >/dev/null
+-then
+-	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&pos,procprog]"
+-	ac_cv_ps_command="$PATH_TO_PS -el (AIX 4.1 and HP-UX)"
+-	ac_cv_ps_format="%*s %s %d %*s %d %*s %*s %*s %*s %*s %*s %*s %*s %n%s"
+-	ac_cv_ps_cols=5
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-dnl AIX?
+-elif ps glaxen 2>/dev/null | \
+-	egrep -i ["^ *F +UID +PID +PPID +PRI +NI +VSZ +RSS +WCHAN +STAT +TTY +TIME +COMMAND"] >/dev/null
+-then
+-	ac_cv_ps_varlist="[&procuid,&procppid,&procvsz,&procrss,procstat,&pos,procprog]"
+-	ac_cv_ps_command="$PATH_TO_PS glaxen"
+-	ac_cv_ps_format="%*s %d %*s %d %*s %*s %d %d %*s %s %*s %*s %n%s"
+-	ac_cv_ps_cols=7
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-dnl MacOSX / Darwin
+-dnl TODO: MacOSX has commands with spaces which will cause problems to PS_FORMAT
+-dnl Some truncation will happen in UCOMM column
+-dnl STAT      VSZ    RSS   UID  PPID %CPU UCOMM            COMMAND
+-dnl Ss      52756  22496   501     1   6.9 Window Manager   /System/Library/CoreServices/WindowServer -daemon
+-elif ps wwaxo 'state vsz rss uid ppid pcpu ucomm command' 2>/dev/null | \
+-	egrep -i ["^STAT +VSZ +RSS +UID +PPID +%CPU +UCOMM +COMMAND"] >/dev/null
+-then
+-	ac_cv_ps_command="$PATH_TO_PS wwaxo 'state vsz rss uid ppid pcpu ucomm command'"
+-	ac_cv_ps_varlist="[procstat,&procvsz,&procrss,&procuid,&procppid,&procpcpu,procprog,&pos]"
+-	ac_cv_ps_format="%s %d %d %d %d %f %s %n"
+-	ac_cv_ps_cols=7
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-dnl UnixWare 
+-elif ps -Al 2>/dev/null | \
+-	egrep -i ["^ *F +S +UID +PID +PPID +CLS +PRI +NI +C +ADDR +SZ +WCHAN +TTY +TIME +COMD"] >/dev/null
+-then
+-	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&pos,procprog]"
+-	ac_cv_ps_command="$PATH_TO_PS -Al"
+-	ac_cv_ps_format="%*s %s %d %*s %d %*s %*s %*s %*s %*s %*s %*s %*s %*s %n%s"
+-	ac_cv_ps_cols=7
+-	AC_MSG_RESULT([$ac_cv_ps_command])
+-
+-else
+-	AC_MSG_WARN([unable to find usable ps syntax - check_procs and check_nagios will not be compiled])
+-fi
++ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
++ac_cv_ps_command="$PATH_TO_PS axwo 'state uid ppid vsz rss pcpu command command'"
++ac_cv_ps_format="%s %d %d %d %d %f %s %n"
++ac_cv_ps_cols=8
++AC_MSG_RESULT([$ac_cv_ps_command])
+ 
+ if test -n "$ac_cv_ps_varlist" ; then
+ 	AC_DEFINE_UNQUOTED(PS_VARLIST,$ac_cv_ps_varlist,
+@@ -1211,6 +1008,8 @@
  AC_DEFINE_UNQUOTED(WHO_COMMAND,"$ac_cv_path_to_who",
  	[path and arguments for invoking 'who'])
  
@@ -86,7 +304,7 @@
  AC_PATH_PROG(PATH_TO_SNMPGET,snmpget)
  if test -x "$PATH_TO_SNMPGET"
  then
-@@ -1243,7 +1252,10 @@
+@@ -1233,7 +1032,10 @@
  else
  	AC_MSG_WARN([Tried $PERL - install Net::SNMP perl module if you want to use the perl snmp plugins])
  fi
@@ -97,7 +315,7 @@
  AC_PATH_PROG(PATH_TO_QUAKESTAT,quakestat)
  AC_PATH_PROG(PATH_TO_QSTAT,qstat)
  
-@@ -1265,7 +1277,10 @@
+@@ -1255,7 +1057,10 @@
  	AC_DEFINE_UNQUOTED(PATH_TO_QSTAT,"$ac_cv_path_to_qstat",
  		[path to qstat/quakestat])
  fi
@@ -108,7 +326,7 @@
  AC_PATH_PROG(PATH_TO_FPING,fping)
  if test -x "$PATH_TO_FPING"
  then
-@@ -1273,6 +1288,7 @@
+@@ -1263,6 +1068,7 @@
  	EXTRAS="$EXTRAS check_fping"
  else
  	AC_MSG_WARN([Get fping from http://www.fping.com in order to make check_fping plugin])
