@@ -123,6 +123,7 @@ lib/ggi/helper/helper_x_shm.la
 lib/ggi/helper/helper_x_shm.so
 lib/ggi/helper/helper_x_vidmode.la
 lib/ggi/helper/helper_x_vidmode.so
+lib/libggi.la
 lib/libggi.so
 lib/libggi.so.2
 @dirrm include/ggi/display
