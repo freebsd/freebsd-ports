@@ -7,11 +7,13 @@
 
 PORTNAME=	zope
 PORTVERSION=	2.5.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www python zope
-MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
+MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/ \
+		http://www.zope.org/Products/Zope/Hotfix_2002-03-01/
 DISTNAME=	Zope-${PORTVERSION}-src
-EXTRACT_SUFX=	.tgz
+DISTFILES=	${DISTNAME}.tgz \
+		Hotfix_2002-03-01.tgz
 
 PATCHFILES=	Zope-2.5.0-unix-security.patch
 PATCH_DIST_STRIP=	-p1
@@ -27,6 +29,7 @@ PYTHON_VERSION=	python2.1
 DIST_SUBDIR=	zope
 
 post-patch:
+	@${CP} -Rp ${WRKDIR}/lib ${WRKSRC}
 	@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} {} \;
 
 # Build has to be done in the final location after installing the sources
