@@ -77,17 +77,17 @@ MASTER_SITE_FREEBSD_ORG+=	\
 
 MASTER_SITE_GNOME+=	\
 	ftp://ftp.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
-	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/X11/GNOME/%SUBDIR%/ \
 	ftp://ftp.dit.upm.es/linux/gnome/%SUBDIR%/ \
-	ftp://ftp.tr.gnome.org/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.no.gnome.org/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.dataplus.se/pub/linux/gnome/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
-	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/www.gnome.org/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/X11/gnome/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,} \
 	ftp://ftp.yggdrasil.com/mirrors/site/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/X11/gnome/%SUBDIR%/
+	ftp://ftp.tr.gnome.org/pub/GNOME/%SUBDIR%/ \
+	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/www.gnome.org/%SUBDIR%/ \
+	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/
 
 MASTER_SITE_GNU+=	\
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
