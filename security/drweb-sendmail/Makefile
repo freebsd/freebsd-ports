@@ -26,6 +26,8 @@ DOC_DIR=	${PREFIX}/share/doc/drweb-sendmail
 
 .if !exists( /usr/include/libmilter/mfapi.h )
 BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
+MAKE_ARGS+=	ADDLIB_FreeBSD=-L${LOCALBASE}/lib
+MAKE_ARGS+=	"ADDF_FreeBSD=-Iaddons/md5 -I${LOCALBASE}/include"
 .endif
 
 .if !defined(WITH_DRWEBSMF_HOSTNAME)
