@@ -9,7 +9,7 @@ PORTNAME=	phalanx
 PORTVERSION=	22
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.math.muni.cz/pub/math/people/Dobes/ \
-		http://www.crosswinds.net/~dobes/phalanx/
+		http://dusan.freeshell.org/phalanx/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -22,12 +22,12 @@ MAKEFILE=	makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/phalanx ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/phalanx
-	${INSTALL_DATA} ${WRKSRC}/pbook.phalanx ${PREFIX}/share/phalanx
-	${INSTALL_DATA} ${WRKSRC}/sbook.phalanx ${PREFIX}/share/phalanx
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/pbook.phalanx ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/sbook.phalanx ${DATADIR}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/phalanx
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/phalanx
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
