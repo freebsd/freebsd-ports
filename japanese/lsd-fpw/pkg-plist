@@ -1,0 +1,8 @@
+share/dict/lsd-fpw/lsd/data/honmon
+share/dict/lsd-fpw/catalogs
+share/doc/lsd-fpw/readme.txt
+share/doc/lsd-fpw/readme.pkg
+@dirrm share/dict/lsd-fpw/lsd/data
+@dirrm share/dict/lsd-fpw/lsd
+@dirrm share/dict/lsd-fpw
+@dirrm share/doc/lsd-fpw
