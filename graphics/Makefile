@@ -264,6 +264,7 @@
     SUBDIR += p5-chart
     SUBDIR += p5-ming
     SUBDIR += panorama
+    SUBDIR += passepartout
     SUBDIR += peps
     SUBDIR += pgperl
     SUBDIR += pgplot
