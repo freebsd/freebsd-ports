@@ -1,26 +1,21 @@
-# New ports collection makefile for:	vterrain-sdk
-# Date created:				27 Apr 2001
-# Whom:					Randall Hopper <aa8vb@nc.rr.com>
+# New ports collection makefile for:	vterrain-sdk virtual terrain development and modeling libraries
+# Date created:		27 Apr 2001
+# Whom:			Randall Hopper
 #
 # $FreeBSD$
 #
 
 PORTNAME=	vterrain-sdk
-PORTVERSION=	010423
+PORTVERSION=	010829
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.vterrain.org/pub/vterrain/dist/ \
-		http://www.boost.org/libs/dir_it/
-DISTFILES=	${EXTRACT_ONLY} \
-		dir_it.zip
-EXTRACT_ONLY=	TerrainSDK-${PORTVERSION}.zip
+MASTER_SITES=	ftp://ftp.vterrain.org/pub/vterrain/dist/
+DISTFILES=	TerrainSDK-${PORTVERSION}.zip
 
 MAINTAINER=	aa8vb@nc.rr.com
 
-LIB_DEPENDS=	netcdf.1:${PORTSDIR}/math/netcdf \
-		shp.1:${PORTSDIR}/devel/shapelib \
-		png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=    netcdf.1:${PORTSDIR}/math/netcdf \
 		osg.1:${PORTSDIR}/graphics/osg \
-		projection.1:${PORTSDIR}/misc/projectionlib
+		png.4:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/TerrainSDK
 
@@ -31,11 +26,11 @@ USE_MESA=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" \
-		COPT="${CXXFLAGS} -fpic -DPIC"
+		COPT="${CXXFLAGS} -fpic -DPIC" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-post-extract:
-	cd ${WRKSRC}/vtdata && \
-		unzip -aj ${DISTDIR}/dir_it.zip boost/directory.h src/directory.cpp
+#PREFIX seems broken -  Uses /usr/local even if USE_X_PREFIX set
+PREFIX=		${X11BASE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vtdata/libvtdata.so ${PREFIX}/lib/libvtdata.so.1

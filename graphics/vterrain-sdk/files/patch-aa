@@ -1,119 +1,26 @@
-
-$FreeBSD$
-
---- Make.defs.orig	Wed Apr  4 07:27:18 2001
-+++ Make.defs	Fri Jun  1 11:03:19 2001
-@@ -22,21 +22,6 @@
- # SGI IRIX with GCC  (tested with ver. 2.95.3-test2)
- #   (IRIX Folks:  Read TerrainApps/README.sgi!)
- #------------------------------------------------------------------------------
--CC        = gcc
--CXX       = g++
--AR        = ar ruv
--COPT      = -O -g
--LD        = $(CXX)
--LD_SHARED = $(CXX) -shared
--
--GLUT_LIB = $(HOME)/software/Mesa-3.4.1/lib/libglut.a
--GLU_LIB  = $(HOME)/software/Mesa-3.4.1/lib/libGLU.a
--LDIRFLAGS = $(LDIRS:%=-L%)                \
--            -Wl,-rpath,$(subst $(space),$(colon),$(LDIRS))
--
--#------------------------------------------------------------------------------
--# FreeBSD with GCC (tested with ver. 2.95.2)
--#------------------------------------------------------------------------------
- ## CC        = gcc
- ## CXX       = g++
- ## AR        = ar ruv
-@@ -44,11 +29,25 @@
- ## LD        = $(CXX)
- ## LD_SHARED = $(CXX) -shared
- ## 
--## GLUT_LIB = -lglut
--## GLU_LIB  = -lGLU
--## EXTRA_LIBS = -lXi
-+## GLUT_LIB = $(HOME)/software/Mesa-3.4.1/lib/libglut.a
-+## GLU_LIB  = $(HOME)/software/Mesa-3.4.1/lib/libGLU.a
- ## LDIRFLAGS = $(LDIRS:%=-L%)                \
--##             -rpath $(subst $(space),$(colon),$(LDIRS))
-+##             -Wl,-rpath,$(subst $(space),$(colon),$(LDIRS))
-+
-+#------------------------------------------------------------------------------
-+# FreeBSD with GCC (tested with ver. 2.95.2)
-+#------------------------------------------------------------------------------
-+#CC        = gcc
-+#CXX       = g++
-+AR        = ar ruv
-+LD        = $(CXX)
-+LD_SHARED = $(CXX) -shared
-+
-+GLUT_LIB = -lglut
-+GLU_LIB  = -lGLU
-+EXTRA_LIBS = -lXi
-+LDIRFLAGS = $(LDIRS:%=-L%)                \
-+            -rpath $(subst $(space),$(colon),$(LDIRS))
+--- ORIG/vtdata/BuildingArray.cpp	Sun Aug 19 18:01:40 2001
++++ vtdata/BuildingArray.cpp	Wed Aug 29 17:13:20 2001
+@@ -10,7 +10,7 @@
  
- #------------------------------------------------------------------------------
- # Linux with GCC (tested with ver. 2.95.3)
-@@ -92,35 +91,35 @@
- VTLIB_DIR        = $(TERRAIN_SDK_DIR)/vtlib
- VTOSG_DIR        = $(VTLIB_DIR)/vtosg
+ #include <stdlib.h>
+ #include <string.h>
+-#include "\APIs\gdal\frmts/shapelib/shapefil.h"
++#include "vtdata/shapelib/shapefil.h"
+ #include "BuildingArray.h"
  
--NETCDF_INC = $(APIS_DIR)/NetCDF/include
--NETCDF_LIB = $(APIS_DIR)/NetCDF/lib
--#NETCDF_INC = /usr/local/include
--#NETCDF_LIB = /usr/local/lib
-+#NETCDF_INC = $(APIS_DIR)/NetCDF/include
-+#NETCDF_LIB = $(APIS_DIR)/NetCDF/lib
-+NETCDF_INC = $(LOCALBASE)/include
-+NETCDF_LIB = $(LOCALBASE)/lib
+ void vtBuildingArray::DestructItems(int first, int last)
+--- ORIG/vtdata/Makefile	Tue Aug 28 20:13:38 2001
++++ vtdata/Makefile	Wed Aug 29 17:20:42 2001
+@@ -10,9 +10,9 @@
  
--SHAPE_INC = $(APIS_DIR)/shapelib/include
--SHAPE_LIB = $(APIS_DIR)/shapelib/lib
--#SHAPE_INC = /usr/local/include
--#SHAPE_LIB = /usr/local/lib
-+#SHAPE_INC = $(APIS_DIR)/shapelib/include
-+#SHAPE_LIB = $(APIS_DIR)/shapelib/lib
-+SHAPE_INC = $(LOCALBASE)/include
-+SHAPE_LIB = $(LOCALBASE)/lib
+ include $(VTP_ROOT)/TerrainSDK/Make.defs
  
--PNG_INC = $(APIS_DIR)/libpng-1.0.8/include
--PNG_LIB = $(APIS_DIR)/libpng-1.0.8/lib
--#PNG_INC = /usr/local/include
--#PNG_LIB = /usr/local/lib
-+#PNG_INC = $(APIS_DIR)/libpng-1.0.8/include
-+#PNG_LIB = $(APIS_DIR)/libpng-1.0.8/lib
-+PNG_INC = $(LOCALBASE)/include
-+PNG_LIB = $(LOCALBASE)/lib
+-IFLAGS = -I./shapelib \
+-         -I$(NETCDF_INC) \
+-         -I$(GDAL_INC)
++IFLAGS = -I$(NETCDF_INC) \
++         -I$(GDAL_INC) \
++	 -I$(TERRAIN_SDK_DIR) 
  
--OSG_INC = $(VTP_ROOT)/OpenSceneGraph-0.8/include
--OSG_LIB = $(VTP_ROOT)/OpenSceneGraph-0.8/lib
--#OSG_INC = /usr/local/include
--#OSG_LIB = /usr/local/lib
-+#OSG_INC = $(VTP_ROOT)/OpenSceneGraph-0.8/include
-+#OSG_LIB = $(VTP_ROOT)/OpenSceneGraph-0.8/lib
-+OSG_INC = $(LOCALBASE)/include
-+OSG_LIB = $(LOCALBASE)/lib
- 
--PROJECTION_INC = $(APIS_DIR)/ProjectionLib
--PROJECTION_LIB = $(APIS_DIR)/ProjectionLib
--#PROJECTION_INC = /usr/local/include
--#PROJECTION_LIB = /usr/local/lib
-+#PROJECTION_INC = $(APIS_DIR)/ProjectionLib
-+#PROJECTION_LIB = $(APIS_DIR)/ProjectionLib
-+PROJECTION_INC = $(LOCALBASE)/include
-+PROJECTION_LIB = $(LOCALBASE)/lib
- 
--BOOST_SRC = $(APIS_DIR)/boost
--BOOST_INC = $(APIS_DIR)
-+BOOST_SRC = $(VTDATA_DIR)
-+BOOST_INC = $(VTDATA_DIR)
- 
--VTDATA_INST_DIR = $(VTDATA_DIR)
--VTOSG_INST_DIR  = $(VTOSG_DIR)
--#VTDATA_INST_DIR = /usr/local/lib
--#VTOSG_INST_DIR  = /usr/local/lib
-+#VTDATA_INST_DIR = $(VTDATA_DIR)
-+#VTOSG_INST_DIR  = $(VTOSG_DIR)
-+VTDATA_INST_DIR = $(LOCALBASE)/lib
-+VTOSG_INST_DIR  = $(LOCALBASE)/lib
+ #SWITCHES = -DUNIX -DSUPPORT_NETCDF=1 -DSUPPORT_SDTS=1
+ SWITCHES = -DUNIX -DSUPPORT_NETCDF=1
