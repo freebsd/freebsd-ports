@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asir
-PORTVERSION=	20021020
+PORTVERSION=	20030215
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.jssac.org/pub/distfiles/asir/ \
 		ftp://ftp.asir.org/pub/asir/src/
@@ -19,8 +19,9 @@ COMMENT=	The system Risa/Asir is a general computer algebra system
 WRKSRC=		${WRKDIR}/asir2000
 PREFIX?=	${LOCALBASE}
 USE_IMAKE=	YES
-XFREE86_HTML_MAN=NO
-USE_X_PREFIX=	YES
+USE_REINPLACE=	yes
+XFREE86_HTML_MAN=	no
+USE_X_PREFIX =	no
 HAS_CONFIGURE=	YES
 CONFIGURE_ENV=	OLD_PARI_VERSION=${OLD_PARI_VERSION} \
 		PARI_VERSION=${PARI_VERSION} \
@@ -68,6 +69,21 @@ pre-extract:
 	@${ECHO_MSG} "To build include \"LAPACK\" library,"
 	@${ECHO_MSG} "    make USE_LAPACK=yes"
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
+		${WRKSRC}/configure			\
+		${WRKSRC}/gc/configure			\
+		${WRKSRC}/gc/libtool.m4			\
+		${WRKSRC}/include/Risa.tmpl		\
+		${WRKSRC}/include/Risa.tmpl-alpha	\
+		${WRKSRC}/lib/xm			\
+		${WRKSRC}/old/configure
+	${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' \
+		${WRKSRC}/Imakefile			\
+		${WRKSRC}/gc/configure			\
+		${WRKSRC}/gc/libtool.m4			\
+		${WRKSRC}/old/Imakefile
 
 pre-install:
 	@${MKDIR} ${DATADIR}
