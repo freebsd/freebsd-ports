@@ -1528,6 +1528,7 @@ dsbl-testers	ports/mail/dsbl-testers
 dsnake		ports/games/dsnake
 dsniff		ports/security/dsniff
 dspam		ports/mail/dspam
+dspam-devel	ports/mail/dspam-devel
 dsssl-docbook-cygnus	ports/textproc/dsssl-docbook-cygnus
 dsssl-docbook-modular	ports/textproc/dsssl-docbook-modular
 dt		ports/sysutils/dt
