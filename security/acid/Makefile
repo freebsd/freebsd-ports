@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	acid
-PORTVERSION=	0.9.6b21
+PORTVERSION=	0.9.6b23
 CATEGORIES=	security
 MASTER_SITES=	http://www.andrew.cmu.edu/~rdanyliw/snort/
 
@@ -29,6 +29,9 @@ do-install:
 .ifndef(NOPORTDOCS)
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/www/acid
 	@${INSTALL_DATA} ${WRKSRC}/README.mssql ${PREFIX}/www/acid
+	@${INSTALL_DATA} ${WRKSRC}/CREDITS ${PREFIX}/www/acid
+	@${INSTALL_DATA} ${WRKSRC}/TODO ${PREFIX}/www/acid
+	@${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${PREFIX}/www/acid
 .endif
 
 post-install:
