@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hcidump
-PORTVERSION=	1.5
+PORTVERSION=	1.5.1
 CATEGORIES=	comms sysutils
 MASTER_SITES=	http://www.geocities.com/m_evmenkin/
 
