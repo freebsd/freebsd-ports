@@ -1,6 +1,8 @@
 bin/opera
-bin/opera-bin
 share/doc/opera/LICENSE
+share/opera/bin/opera-static
+share/opera/buttons/DefSmall
+share/opera/buttons/Default
 share/opera/buttons/ReadMe.txt
 share/opera/buttons/default/abc.gif
 share/opera/buttons/default/buttons.ini
@@ -142,8 +144,6 @@ share/opera/buttons/examples/example_big.ini
 share/opera/buttons/examples/example_small.ini
 share/opera/buttons/examples/opera_22x22.png
 share/opera/buttons/examples/opera_32x32.png
-share/opera/buttons/DefSmall
-share/opera/buttons/Default
 share/opera/help/access.htm
 share/opera/help/alpha.htm
 share/opera/help/bookmark.htm
@@ -162,7 +162,6 @@ share/opera/help/security.htm
 share/opera/help/starter.htm
 share/opera/help/terms.htm
 share/opera/help/trouble.htm
-share/opera/icons/opera.xpm
 share/opera/images/background.gif
 share/opera/images/blank.gif
 share/opera/images/drive.gif
@@ -178,7 +177,11 @@ share/opera/opera_16x16.png
 share/opera/opera_22x22.png
 share/opera/opera_32x32.png
 share/opera/opera_48x48.png
-share/opera/pixmaps/opera.xpm
+share/opera/plugins/libnpp.so
+share/opera/plugins/libnpp.so.0
+share/opera/plugins/libnpp.so.0.1
+share/opera/plugins/libnpp.so.0.1.1
+share/opera/plugins/operamotifwrapper
 share/opera/styles/OPF.CSS
 share/opera/styles/about.css
 share/opera/styles/cache.css
@@ -193,13 +196,13 @@ share/opera/styles/mimehead.css
 share/opera/styles/plugins.css
 share/opera/styles/wml.css
 @dirrm share/opera/styles
-@dirrm share/opera/pixmaps
+@dirrm share/opera/plugins
 @dirrm share/opera/images
-@dirrm share/opera/icons
 @dirrm share/opera/help
 @dirrm share/opera/buttons/examples
 @dirrm share/opera/buttons/defsmall
 @dirrm share/opera/buttons/default
 @dirrm share/opera/buttons
+@dirrm share/opera/bin
 @dirrm share/opera
 @dirrm share/doc/opera

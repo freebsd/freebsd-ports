@@ -5,16 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	linux-opera
-PORTVERSION=	5.0
-PORTREVISION=	1
+PORTNAME=	opera
+PKGNAMEPREFIX=	linux-
+PORTVERSION=	5.05-tp1
 CATEGORIES=	www linux
-MASTER_SITES=	http://opera.online.no/linux/tgz/500/ \
-		ftp://ftp.opera.com/pub/opera/linux/500/ \
-		ftp://gd.tuwien.ac.at/infosys/browsers/opera/linux/500/ \
-		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/500/ \
-		ftp://ftp.planetmirror.com/pub/opera/linux/500/
-DISTNAME=	opera-${PORTVERSION}-static.i386
+MASTER_SITES=	http://opera.online.no/linux/tgz/505/ \
+		ftp://ftp.opera.com/pub/opera/linux/505/
+DISTNAME=	opera-5.05_tp1-static_qt-libnpp-0.1.1
+DISTFILES=	${DISTNAME}.x86${EXTRACT_SUFX}
 
 MAINTAINER=	des@FreeBSD.org
 
@@ -25,15 +23,18 @@ RUN_DEPENDS=	${LINUXBASE}/lib/ld.so:${PORTSDIR}/emulators/linux_base \
 ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	yes
+NO_FILTER_SHLIBS=yes
 
 do-configure:
-	${SED} 's|%%PREFIX%%|${PREFIX}|' <${FILESDIR}/opera.sh >${WRKDIR}/opera.sh
+	${SED} 's|%%PREFIX%%|${PREFIX}|; s|%%DATADIR%%|${DATADIR}|;' \
+	    <${FILESDIR}/opera.sh >${WRKSRC}/wrapper.sh
 
 do-install:
 	(cd ${WRKSRC} && ./install.sh \
-	    --exec_prefix=${PREFIX}/bin \
-	    --docdir=${PREFIX}/share/doc/opera \
-	    --sharedir=${PREFIX}/share/opera )
-	${INSTALL_SCRIPT} ${WRKDIR}/opera.sh ${PREFIX}/bin/opera
+	    --exec_prefix=${DATADIR}/bin \
+	    --wrapperdir=${PREFIX}/bin \
+	    --docdir=${DOCSDIR} \
+	    --sharedir=${DATADIR} \
+	    --plugindir=${DATADIR}/plugins )
 
 .include <bsd.port.mk>
