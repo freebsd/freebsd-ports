@@ -11,7 +11,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	leeym@caece.net
+MAINTAINER=	leeym@cae.ce.ntu.edu.tw
 
 SRCDIR=		/usr/src/usr.bin/telnet
 
