@@ -8,7 +8,8 @@
 
 DISTNAME=	atlast-1.0
 CATEGORIES=	lang
-MASTER_SITES=	http://www.fourmilab.ch/atlast/
+MASTER_SITES=	http://www.fourmilab.ch/atlast/ \
+		http://www.fourmilab.to/atlast/
 
 MAINTAINER=	giffunip@asme.org
 
