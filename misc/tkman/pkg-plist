@@ -2,7 +2,7 @@ bin/tkman
 bin/tkmanclient
 bin/retkman
 etc/periodic/weekly/310.index_manpages
-share/doc/tkman/tkman-help.html
-@dirrm share/doc/tkman
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/periodic/weekly
 @dirrm etc/periodic

@@ -6,26 +6,29 @@
 #
 
 PORTNAME=	tkman
-PORTVERSION=	2.1
-CATEGORIES=	misc tk83
+PORTVERSION=	2.2
+CATEGORIES=	misc tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tcl/Tk based manual browser
 
-LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
+LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 RUN_DEPENDS=	rman:${PORTSDIR}/textproc/rman \
 		glimpse:${PORTSDIR}/textproc/glimpse
 
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
+
 post-patch:
-	${PERL} -pi -e "s;/usr/local/bin/wish;${LOCALBASE}/bin/wish8.3;" \
+	@${REINPLACE_CMD} -e "s;/usr/local/bin/wish;${PREFIX}/bin/wish8.4;" \
 		${WRKSRC}/contrib/tkmanclient
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/tkman
-	${INSTALL_DATA} ${WRKSRC}/tkman-help.html ${PREFIX}/share/doc/tkman
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/manual.html ${DOCSDIR}
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/tkmanclient ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/etc/periodic/weekly
