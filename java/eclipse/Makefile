@@ -1,4 +1,4 @@
-apache New ports collection makefile for:	eclipse
+# New ports collection makefile for:	eclipse
 # Date created:				March 7, 2003
 #
 # $FreeBSD$
