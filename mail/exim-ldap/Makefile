@@ -8,7 +8,6 @@
 PKGNAMESUFFIX=	-ldap
 MASTERDIR=	${.CURDIR}/../exim
 
-# See ${MASTERDIR}/Makefile for options controlling the LDAP lookup type.
 WITH_LDAP=	yes
 
 .include "${MASTERDIR}/Makefile"
