@@ -416,6 +416,7 @@
     SUBDIR += py-pcap
     SUBDIR += py-rrdpipe
     SUBDIR += py-rrdtool
+    SUBDIR += py-rt
     SUBDIR += py-smb
     SUBDIR += py-snmp
     SUBDIR += py-soap

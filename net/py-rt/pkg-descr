@@ -1,0 +1,8 @@
+The Python Routeing Toolkit (`PyRT') enables routeing information in a
+network to be collected. The purpose of this software is to enable routeing
+information in a network to be collected. This package currently supports
+BGPv4 and ISIS and will dump MRTD format files. It also supports parsing of
+MRTD TABLE_DUMP files (as available from, eg., RouteViews and RIPE/RIS). A
+number of utilities for manipulating these dumps are also provided.
+
+WWW: http://www.sprintlabs.com/Department/IP-Interworking/Routing/PyRT/
