@@ -641,7 +641,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/template/titlepage.html
 %%PORTDOCS%%%%DOCSDIR%%/warranty.html
 share/xsl/docbook/VERSION
-share/xsl/docbook/catalog
 share/xsl/docbook/common/ChangeLog
 share/xsl/docbook/common/af.xml
 share/xsl/docbook/common/ar.xml
@@ -1450,7 +1449,6 @@ share/xsl/docbook/xhtml/xref.xsl
 @dirrm share/xsl/docbook/common
 @dirrm share/xsl/docbook
 @unexec rmdir %D/share/xsl || true
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tools
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/template
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pi
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/lib
