@@ -1,22 +1,15 @@
-
- DDDD    OOOO  NN  NN TTTTTT   NN  NN EEEE EEEE DDDD    !!
- DD  DD OO  OO NNN NN   TT     NNN NN EE   EE   DD  DD  !!
- DD  DD OO  OO NN NNN   TT     NN NNN EEEE EEEE DD  DD  !!
- DD  DD OO  OO NN  NN   TT     NN  NN EE   EE   D   DD
- DDDD    OOOO  NN  NN   TT     NN  NN EEEE EEEE DDDD    !!
-
 ================================================================
 ** PLEASE REMOVE FOLLOWING LINES FROM %%X11BASE%%/bin/mozilla **
 
 LD_PRELOAD=%%PREFIX%%/lib/pluginwrapper.so
 export LD_PRELOAD
-================================================================
 
- DDDD    OOOO  NN  NN TTTTTT   NN  NN EEEE EEEE DDDD    !!
- DD  DD OO  OO NNN NN   TT     NNN NN EE   EE   DD  DD  !!
- DD  DD OO  OO NN NNN   TT     NN NNN EEEE EEEE DD  DD  !!
- DD  DD OO  OO NN  NN   TT     NN  NN EE   EE   D   DD
- DDDD    OOOO  NN  NN   TT     NN  NN EEEE EEEE DDDD    !!
+** PLEASE CHANGE FOLLOWING LINES FROM /etc/libmap.conf **
+libpthread.so.0			liblthread.so.3
+	to
+libpthread.so.0			pluginwrapper/flash6.so
+
+================================================================
 
 
 Setup your /etc/libmap.conf.
