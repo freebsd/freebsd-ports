@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.tildeslash.org/re2c/ \
 		http://www.tobez.org/download/port-mirrors/devel/re2c/
 
-MAINTAINER=	eivind@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compile regular expression to C (much faster final code than flex)
 
 USE_GMAKE=	yes
