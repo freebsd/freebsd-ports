@@ -56,6 +56,7 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.dit.upm.es/linux/gnome/%SUBDIR%/ \
 	ftp://sunsite.uio.no/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.dataplus.se/pub/linux/gnome/%SUBDIR%/ \
+	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,} \
 
 MASTER_SITE_GNU+=	\
