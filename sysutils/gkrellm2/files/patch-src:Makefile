@@ -1,8 +1,8 @@
 Index: src/Makefile
 diff -u src/Makefile.orig src/Makefile
---- src/Makefile.orig	Thu Sep  5 00:45:29 2002
-+++ src/Makefile	Thu Sep  5 17:51:25 2002
-@@ -21,7 +22,7 @@
+--- src/Makefile.orig	Tue Sep 17 04:36:16 2002
++++ src/Makefile	Fri Sep 20 18:23:48 2002
+@@ -21,7 +21,7 @@
  
  PKG_LIB = `$(PKG_CONFIG) --libs gtk+-2.0 gthread-2.0`
  
@@ -11,12 +11,3 @@ diff -u src/Makefile.orig src/Makefile
  FLAGS+= $(PTHREAD_INC)
  
  LIBS = $(PKG_LIB) $(GTOP_LIBS) $(SMC_LIBS) $(SYS_LIBS)
-@@ -85,7 +86,7 @@
- 	$(INSTALL) -c -m $(INCLUDEMODE) $(GKRELLM_INCLUDES) $(INCLUDEDIR)/gkrellm2
- 	$(INSTALL) -d -m $(MANDIRMODE) $(MANDIR)
- 	$(INSTALL) -c -m $(MANMODE) ../gkrellm.1 $(MANDIR)/$(PACKAGE).1
--	$(INSTALL) -c -m $(MANMODE) ../gkrellmd.1 $(SMANDIR)/$(PACKAGE_D).1
-+	$(INSTALL) -c -m $(MANMODE) ../gkrellmd.1 $(SMANDIR)/$(PACKAGE_D).8
- 
- install_darwin:
- 	$(MAKE) install STRIP=

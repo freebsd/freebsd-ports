@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.3
+#PORTREVISION=	0
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -69,9 +69,7 @@ pre-everything:
 .endif
 
 post-install:
-.if defined(GKRELLM_SERVER_ONLY)
-	${INSTALL_MAN} ${WRKSRC}/gkrellmd.1 ${MANPREFIX}/man/man8/gkrellmd.8
-.else
+.if !defined(GKRELLM_SERVER_ONLY)
 	@${MKDIR} ${X11BASE}/libexec/gkrellm2/plugins
 	@${MKDIR} ${X11BASE}/share/gkrellm2/themes
 	@${GZIP_CMD} ${MAN1PREFIX}/man/man1/gkrellm.1

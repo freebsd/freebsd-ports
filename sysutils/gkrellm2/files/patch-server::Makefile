@@ -1,8 +1,8 @@
 Index: server/Makefile
 diff -u server/Makefile.orig server/Makefile
---- server/Makefile.orig	Thu Sep  5 00:44:39 2002
-+++ server/Makefile	Mon Sep  9 05:29:56 2002
-@@ -10,12 +10,12 @@
+--- server/Makefile.orig	Tue Sep 17 04:36:14 2002
++++ server/Makefile	Fri Sep 20 18:33:15 2002
+@@ -13,12 +13,12 @@
  PKG_INCLUDE = `$(PKG_CONFIG) --cflags glib-2.0 gthread-2.0`
  PKG_LIB = `$(PKG_CONFIG) --libs glib-2.0 gthread-2.0`
  
@@ -19,3 +19,12 @@ diff -u server/Makefile.orig server/Makefile
  endif
  
  FLAGS+= $(PTHREAD_INC)
+@@ -81,7 +81,7 @@
+ install:
+ 	$(INSTALL) -c $(STRIP) -m $(BINMODE) gkrellmd $(SINSTALLDIR)/$(PACKAGE_D)
+ 	$(INSTALL) -d -m $(MANDIRMODE) $(SMANDIR)
+-	$(INSTALL) -c -m $(MANMODE) ../gkrellmd.1 $(SMANDIR)/$(PACKAGE_D).1
++	$(INSTALL) -c -m $(MANMODE) ../gkrellmd.1 $(SMANDIR)/$(PACKAGE_D).8
+ 
+ install_darwin:
+ 	$(MAKE) install STRIP=
