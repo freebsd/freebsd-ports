@@ -1,27 +1,16 @@
---- html/Makefile.in.orig	Tue Jul 17 22:13:37 2001
-+++ html/Makefile.in	Sat Dec 15 00:00:00 2001
-@@ -77,8 +77,7 @@
- 	v3.5.1.html		\
- 	v3.5.2.html		\
- 	v3.5.3.html		\
--	v3.5.4.html		\
--	v3.5.5.html		\
-+	v3.5.7.html		\
- 	${NULL}
- IMAGES=\
- 	images/back.gif		\
-@@ -86,6 +85,8 @@
- 	images/cat.gif		\
- 	images/cover.jpg	\
- 	images/cramps.gif	\
-+	images/dave.gif		\
-+	images/info.gif		\
- 	images/jello.jpg	\
- 	images/jim.gif		\
- 	images/note.gif		\
-@@ -103,8 +104,7 @@
+--- html/Makefile.in.orig	Thu Oct  3 00:14:34 2002
++++ html/Makefile.in	Wed Oct  8 00:40:18 2003
+@@ -54,7 +54,6 @@
+ HTML		= @DIR_HTML@
+ 
+ HTMLFILES=\
+-	TIFFTechNote2.html	\
+ 	bugs.html		\
+ 	build.html		\
+ 	contrib.html		\
+@@ -112,8 +111,7 @@
  install: all
- 	${INSTALL} -m 755 -dir -idb tiff.man.html ${DESTDIR}${HTML} ${HTML}/images
+ 	${INSTALL} -m 755 -dir -idb tiff.man.html ${DESTDIR}${HTML} ${DESTDIR}${HTML}/images
  	for i in ${HTMLFILES} ${IMAGES}; do \
 -	    ${INSTALL} -idb tiff.man.html -m 444 -F ${DESTDIR}${HTML} \
 -		-src ${SRCDIR}/$$i -O $$i; \

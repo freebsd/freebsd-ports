@@ -8,11 +8,10 @@
 #
 
 PORTNAME=	tiff
-PORTVERSION=	3.5.7
-PORTREVISION=	1
+PORTVERSION=	3.6.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
-		http://www.libtiff.org/
+		http://libtiff.maptools.org/dl/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -41,29 +40,32 @@ CONFIGURE_ARGS+=	--with-HTML --with-DIR_HTML=${DOCSDIR}
 .endif
 
 MAN1=	fax2ps.1 fax2tiff.1 gif2tiff.1 pal2rgb.1 ppm2tiff.1 ras2tiff.1 \
-	rgb2ycbcr.1 sgi2tiff.1 thumbnail.1 tiff2bw.1 tiff2ps.1 tiff2rgba.1 \
-	tiffcmp.1 tiffcp.1 tiffdither.1 tiffdump.1 tiffgt.1 tiffinfo.1 \
-	tiffmedian.1 tiffsplit.1 tiffsv.1 
-MAN3=	TIFFClose.3t TIFFError.3t TIFFFlush.3t TIFFGetField.3t TIFFOpen.3t \
-	TIFFPrintDirectory.3t TIFFRGBAImage.3t TIFFReadDirectory.3t \
-	TIFFReadEncodedStrip.3t TIFFReadEncodedTile.3t TIFFReadRGBAImage.3t \
-	TIFFReadRGBAStrip.3t TIFFReadRGBATile.3t TIFFReadRawStrip.3t \
-	TIFFReadRawTile.3t TIFFReadScanline.3t TIFFReadTile.3t \
-	TIFFSetDirectory.3t TIFFSetField.3t TIFFWarning.3t \
+	raw2tiff.1 rgb2ycbcr.1 sgi2tiff.1 thumbnail.1 tiff2bw.1 tiff2ps.1 \
+	tiff2rgba.1 tiffcmp.1 tiffcp.1 tiffdither.1 tiffdump.1 tiffgt.1 \
+	tiffinfo.1 tiffmedian.1 tiffsplit.1 tiffsv.1
+MAN3=	TIFFClose.3t TIFFDataWidth.3t TIFFError.3t TIFFFlush.3t \
+	TIFFGetField.3t TIFFOpen.3t TIFFPrintDirectory.3t TIFFRGBAImage.3t \
+	TIFFReadDirectory.3t TIFFReadEncodedStrip.3t TIFFReadEncodedTile.3t \
+	TIFFReadRGBAImage.3t TIFFReadRGBAStrip.3t TIFFReadRGBATile.3t \
+	TIFFReadRawStrip.3t TIFFReadRawTile.3t TIFFReadScanline.3t \
+	TIFFReadTile.3t TIFFSetDirectory.3t TIFFSetField.3t TIFFWarning.3t \
 	TIFFWriteDirectory.3t TIFFWriteEncodedStrip.3t \
 	TIFFWriteEncodedTile.3t TIFFWriteRawStrip.3t TIFFWriteRawTile.3t \
 	TIFFWriteScanline.3t TIFFWriteTile.3t TIFFbuffer.3t TIFFcodec.3t \
 	TIFFmemory.3t TIFFquery.3t TIFFsize.3t TIFFstrip.3t TIFFswab.3t \
-	TIFFtile.3t libtiff.3t 
+	TIFFtile.3t libtiff.3t
 MLINKS=	TIFFError.3t          TIFFSetErrorHandler.3t \
 	TIFFFlush.3t          TIFFFlushData.3t \
+	TIFFGetField.3t       TIFFGetFieldDefaulted.3t \
 	TIFFGetField.3t       TIFFVGetField.3t \
+	TIFFGetField.3t       TIFFVGetFieldDefaulted.3t \
 	TIFFOpen.3t           TIFFFdOpen.3t \
 	TIFFOpen.3t           TIFFClientOpen.3t \
 	TIFFRGBAImage.3t      TIFFRGBAImageOK.3t \
 	TIFFRGBAImage.3t      TIFFRGBAImageBegin.3t \
 	TIFFRGBAImage.3t      TIFFRGBAImageGet.3t \
 	TIFFRGBAImage.3t      TIFFRGBAImageEnd.3t \
+	TIFFRGBAImage.3t      TIFFReadRGBAImageOriented.3t \
 	TIFFSetDirectory.3t   TIFFSetSubDirectory.3t \
 	TIFFSetField.3t       TIFFVSetField.3t \
 	TIFFWarning.3t        TIFFSetWarningHandler.3t \

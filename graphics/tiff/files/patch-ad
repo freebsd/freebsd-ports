@@ -1,26 +1,26 @@
---- man/Makefile.in.orig	Thu Sep 27 02:32:24 2001
-+++ man/Makefile.in	Sat Dec 15 00:00:00 2001
-@@ -343,9 +343,8 @@
+--- man/Makefile.in.orig	Sat Oct  4 20:43:16 2003
++++ man/Makefile.in	Wed Oct  8 00:22:56 2003
+@@ -354,9 +354,8 @@
  	 ${ECHO} 'install:';						\
  	 for i in *.1; do						\
  	    f=${MANAPPNAME};						\
 -	    ${ECHO} '	cd ..; ${INSTALL} -m 444 			\
--		-F ${DESTDIR}${MAN}/${MANAPPS}				\
+-		-F $${DESTDIR}${MAN}/${MANAPPS}				\
 -		-idb tiff.man.tools -src' apps/"$$i" '-O' "$$f";	\
 +	    ${ECHO} '	${BSD_INSTALL_MAN}'	 			\
-+		$$i ${DESTDIR}${MAN}/${MANAPPS}/$$f;			\
++		$$i $${DESTDIR}${MAN}/${MANAPPS}/$$f;			\
  	 done								\
  	)>apps/Makefile
  lib/Makefile:
-@@ -356,9 +355,8 @@
+@@ -367,9 +366,8 @@
  	 ${ECHO} 'install:';						\
  	 for i in *.3t; do						\
  	    f=${MANLIBNAME};						\
 -	    ${ECHO} '	cd ..; ${INSTALL} -m 444 			\
--		-F ${DESTDIR}${MAN}/${MANLIB}				\
+-		-F $${DESTDIR}${MAN}/${MANLIB}				\
 -		-idb tiff.man.dev -src' lib/"$$i" '-O' "$$f";		\
 +	    ${ECHO} '	${BSD_INSTALL_MAN}'	 			\
-+		$$i ${DESTDIR}${MAN}/${MANLIB}/$$f;			\
++		$$i $${DESTDIR}${MAN}/${MANLIB}/$$f;			\
  	 done								\
  	)>lib/Makefile
  
