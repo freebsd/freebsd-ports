@@ -19,7 +19,7 @@ USE_PERL5=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 pre-configure:
-	cd ${WRKSRC} ; aclocal
+	cd ${WRKSRC} ; aclocal14
 
 post-install:
 .if !defined(NOPORTDOCS)
