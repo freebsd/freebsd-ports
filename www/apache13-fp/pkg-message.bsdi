@@ -1,4 +1,0 @@
-The BSDI FrontPage Extentions require that libcrypt.* be linked to the
-libdescrypt.* libraries.  The fpsrvadm.exe program can only create DES
-passwords, but the Apache server is unable to use them when libcrypt.* 
-are linked to the libscrypt.* libraries.
