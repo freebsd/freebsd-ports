@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.48 1998/07/20 03:58:46 steve Exp $
+# $Id: Makefile,v 1.49 1998/07/25 21:36:33 steve Exp $
 #
 
     SUBDIR += amp
@@ -25,6 +25,7 @@
     SUBDIR += rplay
     SUBDIR += rsynth
     SUBDIR += s3mod
+    SUBDIR += sidplay
     SUBDIR += sox
     SUBDIR += splay
     SUBDIR += splaytk
