@@ -1,23 +1,21 @@
-adapted from the Web page and the README:
+from the Web page:
  
-Spiral Synth is a physically modelled, monophonic, analogue
-synthesizer.  It is capable of creating the kind of sounds made by
-hardware analogue synths, the noises used in electronic music.
-You can also use it to make stranger sounds.  MIDI is supported,
-including velocity detection, mapped to the volume of the oscillators
-(but you can also use the PC keyboard to play the synth).  Output
-is to /dev/dsp or in Microsoft RIFF (.WAV) format to a file.  You
-can save and recall your sounds using the 100 patch save slots.
+   SpiralLoops is an experimental loop-based sampler for Linux or
+   FreeBSD.
 
-The PC keyboard can be used to play the synth, "q" & "z" are C,
-and the keys progress from them:  "2" is C#, "w" is D, etc.  These
-are just the defaults, and can be changed from the .Spiralrc file.
-The function keys change the octave.
+   The idea of SpiralLoops is to provide a simple, visual tool for
+   looping and layering of sounds; which can be sourced from either wav
+   files on disk, or from sound-generating plugins.
 
-Sample output and a detailed list of features can be found on the
-home page.
+   SpiralLoops allows you to create loop based compositions with the
+   minimum feedback time between the decisions you make and your ears.
+   The looping mechanism is very flexible, you can lock the timing of
+   loops together, or offset them for creating complex sequences, such as
+   polyrhythms.
 
-WWW:  http://www.pawfal.org/SpiralSynth/
+Instructions for using the program are on its home page.
+
+WWW:  http://www.pawfal.org/SpiralLoops/
 
 Trevor Johnson
 trevor@FreeBSD.org
