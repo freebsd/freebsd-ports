@@ -1,0 +1,9 @@
+--- Makefile.in.orig	Tue Jul 13 02:43:40 2004
++++ Makefile.in	Wed Oct 27 23:10:27 2004
+@@ -17,5 +17,5 @@
+            srcdir='$(srcdir)'
+ 
+ all install clean:
+-	@$(MAKE) $(MAKEDEFS) -C src $@
++	cd src && $(MAKE) $(MAKEDEFS) $@
+ 
