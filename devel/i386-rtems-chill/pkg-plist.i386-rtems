@@ -14,3 +14,5 @@ lib/gcc-lib/i386-rtems/2.95.2/mpentiumpro/libchill.a
 lib/gcc-lib/i386-rtems/2.95.2/mpentiumpro/chillrt0.o
 lib/gcc-lib/i386-rtems/2.95.2/soft-float/chillrt0.o
 lib/gcc-lib/i386-rtems/2.95.2/soft-float/libchill.a
+lib/gcc-lib/i386-rtems/2.95.2/soft-float/nofp/chillrt0.o
+lib/gcc-lib/i386-rtems/2.95.2/soft-float/nofp/libchill.a
