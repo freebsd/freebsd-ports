@@ -7,6 +7,7 @@
 
 PORTNAME=	xine_d5d_plugin
 PORTVERSION=	0.2.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://debianlinux.net/ \
 		http://hermes.homelinux.net/xine/
@@ -15,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
-LIB_DEPENDS=	xine.1:${PORTSDIR}/graphics/libxine \
+LIB_DEPENDS=	xine.2:${PORTSDIR}/graphics/libxine \
 		dvdread.2:${PORTSDIR}/graphics/libdvdread
 
 USE_AUTOMAKE=	yes
