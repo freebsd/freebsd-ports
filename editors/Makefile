@@ -95,7 +95,6 @@
     SUBDIR += mg
     SUBDIR += mlview
     SUBDIR += mode-info
-    SUBDIR += moleskine
     SUBDIR += mp
     SUBDIR += muggy
     SUBDIR += mule

@@ -1190,3 +1190,4 @@ www/p5-Flash-FLAP|www/p5-AMF-Perl|2004-07-04|renamed
 net/gnomenetwork|net/gnomenettool|2004-07-05|gnomenettool replaces the unmaintained gnomenetwork
 misc/cfe||2004-07-06|no longer exists
 devel/p5-WWW-Mechanize-FormFiller|www/p5-WWW-Mechanize-FormFiller|2004-07-09|moved to correct category (www)
+editors/moleskine||2004-07-09|project officially dead for last 1.5 years
