@@ -20,6 +20,8 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 
 NO_PACKAGE=	"parts are under GPL, parts under X license"
 
+BROKEN=		Checksum mismatch
+
 DATADIR=	share/${PORTNAME}/
 DOCDIR=		share/doc/${PORTNAME}/
 DOCS=		COPYING README bomb.lsm guile.txt manual.txt notes.txt
