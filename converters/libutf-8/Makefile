@@ -8,7 +8,7 @@
 PORTNAME=	libutf
 PORTVERSION=	8.1.0
 CATEGORIES=	converters
-MASTER_SITES=	http://www.whizkidtech.net/fports/ \
+MASTER_SITES=	http://www.whizkidtech.redprince.net/i18n/ \
 		ftp://ftp.whizkidtech.net/unix/ \
 		http://www.whizkidtech.net/ISO-8859-2/
 DISTNAME=	libutf-8-1.0
