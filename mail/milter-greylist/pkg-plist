@@ -8,6 +8,6 @@ etc/rc.d/milter-greylist.sh
 @exec /usr/sbin/chown smmsp /var/milter-greylist /var/db/milter-greylist
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm etc/mail
+@unexec /bin/rmdir %D/etc/mail 2>/dev/null || true
 @unexec /bin/rmdir /var/milter-greylist 2>/dev/null || true
 @unexec [ -f /var/db/milter-greylist/greylist.db ] || /bin/rmdir /var/db/milter-greylist || true
