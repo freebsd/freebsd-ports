@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	afsp
-PORTVERSION=	5.2
+PORTVERSION=	6.3a
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.tsp.ece.mcgill.ca/pub/AFsp/
-DISTNAME=	AFsp-v5r2
+DISTNAME=	AFsp-v6r3a
 
-MAINTAINER=	ginga@athena.club.ne.jp
+MAINTAINER=	ginga-freebsd@ginganet.org
 
 USE_GMAKE=	yes
 
@@ -19,7 +19,8 @@ MAN1=	AFsp.1audio CompAudio.1audio CopyAudio.1audio FiltAudio.1audio \
 	GenNoise.1audio GenTone.1audio InfoAudio.1audio LPanal.1audio \
 	LPsyn.1audio ResampAudio.1audio
 MAN3=	AFclose.3tsp AFopenRead.3tsp AFopenWrite.3tsp AFreadData.3tsp \
-	AFsetFileType.3tsp AFsetHinfo.3tsp AFwriteData.3tsp AFsetNHpar.3tsp
+	AFsetFileType.3tsp AFsetHinfo.3tsp AFsetNHpar.3tsp \
+	AFwriteData.3tsp AFsetSpeaker.3tsp
 
 post-extract:
 	@${CP} -f ${FILESDIR}/Makefile ${WRKSRC}
