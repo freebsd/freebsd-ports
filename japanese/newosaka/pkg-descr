@@ -1,0 +1,14 @@
+This is the Osaka-Ben compiler.
+
+Usage:
+	cat EUC-CODE-TEXT | osaka
+
+	Use EUC code for the original Japanese text. Please try nkf or other
+	code filter to make EUC code from other code.
+
+	cat JAPANESE_TEXT | nkf -e | osaka
+
+HomePage:
+	See 
+
+	http://www.power.co.jp/tm/tanaka/unix.html
