@@ -7,6 +7,7 @@
 
 PORTNAME=	xpm
 PORTVERSION=	3.4k
+PORTREVISION=	1
 CATEGORIES=	graphics x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	libraries
@@ -27,9 +28,9 @@ MAN1=		cxpm.1 sxpm.1
 
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} != xfree86-3
-IGNORE=		is included in XFree86 >3.x
-.endif
+#.if ${X_WINDOW_SYSTEM:L} != xfree86-3
+#IGNORE=		is included in XFree86 >3.x
+#.endif
 
 post-install:
 	@ranlib ${PREFIX}/lib/libXpm.a
