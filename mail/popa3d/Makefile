@@ -9,9 +9,8 @@ PORTNAME=	popa3d
 PORTVERSION=	0.5.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.openwall.com/popa3d/ \
-		ftp://ftp.openwall.com/popa3d/ \
-		ftp://ftp.dataforce.net/pub/solar/ \
-		ftp://ftp.false.com/pub/security/popa3d/
+		ftp://ftp.openwall.com/pub/projects/popa3d/ \
+		ftp://ftp.dataforce.net/pub/solar/
 .if defined(SMTP_AFTER_POP3)
 PKGNAMESUFFIX?=	-before-sendmail
 .endif
