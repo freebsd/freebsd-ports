@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	open-cobol
-PORTVERSION=	0.12
+PORTVERSION=	0.20
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,17 +15,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open-source COBOL compiler
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
-		gmp.6:${PORTSDIR}/math/libgmp4 \
-		ltdl.1:${PORTSDIR}/devel/libtool
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+		ltdl.1:${PORTSDIR}/devel/libtool \
+		gmp.6:${PORTSDIR}/math/libgmp4
 
-USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 CONFIGURE_ARGS=	--with-readline
 INSTALLS_SHLIB=	yes
 
