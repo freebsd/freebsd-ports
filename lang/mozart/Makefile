@@ -35,7 +35,7 @@ USE_BISON=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_XLIB=	yes
-WANT_AUTOCONF_VER=	213
+USE_AUTOCONF_VER=	213
 # magic wand: set INSTALL to some absurd value, or else
 # mozart's configure will not find the right install
 # when configuring as root.

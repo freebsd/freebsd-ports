@@ -16,8 +16,7 @@ MASTER_SITES=	ftp://ftp.suse.com/pub/projects/proxy-suite/src/ \
 MAINTAINER=	thomas@cuivre.fr.eu.org
 COMMENT=	The SuSE Proxy-Suite, a set of programs to enhance firewall security
 
-USE_AUTOCONF=	yes
-WANT_AUTOCONF_VER= 253
+USE_AUTOCONF_VER= 253
 USE_GMAKE=	yes
 
 #

@@ -137,8 +137,7 @@ JDKDIR?=	${LOCALBASE}/jdk1.4.2
 JAVAVM=		${JDKDIR}/bin/java
 
 GNU_CONFIGURE=	yes
-USE_AUTOCONF=	yes
-WANT_AUTOCONF_VER= 253
+USE_AUTOCONF_VER= 253
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
 WRKSRC=		${WRKDIR}/oo_${RELEASE_NR}_src/config_office
 LD_PATH1=	${WRKSRC}/../vos/unxfbsd.pro/lib/:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib/

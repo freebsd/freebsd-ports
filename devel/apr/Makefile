@@ -29,8 +29,7 @@ COMMENT=	The Apache Group's Portability Library
 LIB_DEPENDS+=	expat.4:${PORTSDIR}/textproc/expat2 \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
-WANT_AUTOCONF_VER=	253
-
+USE_AUTOCONF_VER=	253
 USE_PERL5=		yes
 USE_GMAKE=		yes
 USE_LIBTOOL_VER=	14

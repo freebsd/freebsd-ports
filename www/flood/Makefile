@@ -20,8 +20,7 @@ LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		apr-0.9:${PORTSDIR}/devel/apr
 
-USE_AUTOCONF=	yes
-WANT_AUTOCONF_VER=	253
+USE_AUTOCONF_VER=	253
 CONFIGURE_ARGS=	--disable-shared
 CONFIGURE_ENV=	LDFLAGS="-L${PREFIX}/lib"
 USE_GMAKE=	yes
