@@ -1,4 +1,4 @@
 bin/epstool
-%%PORTDOCS%%share/doc/epstool/epstool.htm
-%%PORTDOCS%%share/doc/epstool/gsview.css
-%%PORTDOCS%%@dirrm share/doc/epstool
+%%PORTDOCS%%%%DOCSDIR%%/epstool.htm
+%%PORTDOCS%%%%DOCSDIR%%/gsview.css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
