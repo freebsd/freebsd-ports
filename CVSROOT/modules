@@ -2413,6 +2413,7 @@ grubinvaders	ports/games/grubinvaders
 gruftistats	ports/irc/gruftistats
 grun		ports/misc/grun
 grustibus	ports/emulators/grustibus
+gsasl		ports/security/gsasl
 gschem		ports/cad/gschem
 gscmxx		ports/comms/gscmxx
 gscommander	ports/shells/gscommander
