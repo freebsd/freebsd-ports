@@ -1,0 +1,13 @@
+A True Type Font Manager that handles true type font
+installation, uninstallation, list, and default font
+setting.  It was originally in the CLE distribution.
+
+The manager doesn't deal with applications using TTF
+directly.  Instead, it calls modules to handle the
+details.  There are only several predefined behaviours
+of the modules, like add/remove/list.  
+
+Some modules are Big5/GB enhanced, for better font
+detection/generation.
+
+WWW: http://firefly.idv.tw/test/Forum.php?Board=1
