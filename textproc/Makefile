@@ -327,6 +327,7 @@
     SUBDIR += p5-Text-Striphigh
     SUBDIR += p5-Text-Table
     SUBDIR += p5-Text-Tabs+Wrap
+    SUBDIR += p5-Text-TabularDisplay
     SUBDIR += p5-Text-Template
     SUBDIR += p5-Text-Tmpl
     SUBDIR += p5-Text-WikiFormat
