@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES+=	irc ipv6	# `+=' is for slave ports
 MASTER_SITES=	http://irssi.org/files/
 
-MAINTAINER?=	ports@FreeBSD.org	# `?=' is for slave ports
+MAINTAINER?=	vanilla@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
