@@ -30,15 +30,6 @@
  
  # Libraries we need
  #----------------------------------------------------------------------------------------------------------------
-@@ -45,7 +45,7 @@
- fi
-  
- if [ $CONFIG_XV -eq 1 ] ; then
--  XV_LIBS="-L${XLIB_PREFIX} -lXext -lXv"
-+  XV_LIBS="-L${XLIB_PREFIX}/lib -lXext -lXv"
-   XV_DEFS="-DHAVE_XV"
- else
-   XV_LIBS=""
 @@ -85,8 +85,8 @@
  
  export CFLAGS="-Wall -O2 -march=i586 -mcpu=i586"

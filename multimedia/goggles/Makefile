@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1//}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A FOX frontend to the Ogle DVD player
 
-BROKEN=		Size mismatch
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.11:${PORTSDIR}/multimedia/ogle
 LIB_DEPENDS=	FOX-1.2.9:${PORTSDIR}/x11-toolkits/fox-devel
 RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
