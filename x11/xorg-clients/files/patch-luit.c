@@ -1,14 +1,14 @@
---- programs/luit/luit.c.orig	Sat May 29 17:14:45 2004
-+++ programs/luit/luit.c	Sat May 29 17:15:01 2004
-@@ -549,9 +549,10 @@
+--- programs/luit/luit.c.orig	Thu Apr  8 05:14:16 2004
++++ programs/luit/luit.c	Thu Apr  8 05:20:18 2004
+@@ -545,9 +545,11 @@
+ #endif
+     installHandler(SIGCHLD, sigchldHandler);
+ 
++/*  Disabled, appears to break luit.
+     rc = copyTermios(0, pty);
      if(rc < 0)
          FatalError("Couldn't copy terminal settings\n");
++*/
  
--    rc = setRawTermios();
-+    /*rc = setRawTermios();
+     rc = setRawTermios();
      if(rc < 0)
-         FatalError("Couldn't set terminal to raw\n");
-+    */		/* Disabled, appears to break luit. */
- 
-     val = fcntl(0, F_GETFL, 0);
-     if(val >= 0) {
