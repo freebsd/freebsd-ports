@@ -15,11 +15,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VRML97 runtime and browser ("lookat")
 
-BUILD_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/firefox-js.pc:${PORTSDIR}/www/firefox
+BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-js.pc:${PORTSDIR}/www/mozilla
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/firefox-js.pc:${PORTSDIR}/www/firefox
+RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-js.pc:${PORTSDIR}/www/mozilla
 
 USE_REINPLACE=	yes
 USE_GL=		yes
@@ -29,8 +29,7 @@ USE_GNOME=	gnomehack
 USE_GCC=	3.3
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lXext" \
-		PKG_CONFIG_PATH="${X11BASE}/lib/firefox/lib/pkgconfig"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lXext"
 CONFIGURE_ARGS=	--without-jdk
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
@@ -46,8 +45,7 @@ BROKEN=		"Does not compile on !i386"
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g ; \
-		s|mozilla-js|firefox-js|g" \
+	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" \
 		${WRKSRC}/configure
 
 post-install:
