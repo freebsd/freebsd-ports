@@ -14,7 +14,7 @@ MAINTAINER=	fenner@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
-DOCFILES=	README CHANGES.html rtptools.html
+DOCFILES=	README ChangeLog.html rtptools.html
 
 post-install:
 .if !defined(NOPORTDOCS)
