@@ -1,0 +1,16 @@
+This is a Run... box, allowing you to spawn other programs.
+
+Features
+--------
+
+	* Tilde completion
+	* Completion for separate words
+	* Cycleable command history
+	* Configuration file in /usr/X11R6/etc/gmrunrc, which can be copied
+	  to ~/.gmrunrc
+	* Can spawn commands in a terminal
+	* Intelligent URL handling
+
+WWW: http://sourceforge.net/projects/gmrun
+
+- Adam Weinberger <adam@vectors.cx>
