@@ -537,7 +537,7 @@ syscmd(rm -f datestring())
 
 MFLAGS=mflags()
 LFLAGS=lflags()
-CC=thecompiler()
+CC?=thecompiler()
 LD=theloader()
 SHELL=/bin/sh
 INSTALLER=theinstaller()
