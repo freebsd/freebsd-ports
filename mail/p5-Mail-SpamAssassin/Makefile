@@ -7,7 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	2.01
-PORTREVISION=   2
+PORTREVISION=   3
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -30,8 +30,12 @@ MAN1=		spamd.1 spamassassin.1 spamc.1
 post-patch:
 	@find ${WRKSRC} -type f -name "*.orig" -exec rm -f "{}" ";"
 
-.if !defined(NOPORTDOCS)
 post-install:
+	strip ${PREFIX}/bin/spamc
+	cd ${FILESDIR}; \
+		${INSTALL_DATA} spamd.sh \
+		${PREFIX}/etc/rc.d/spamd.sh-dist
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample-nonspam.txt ${DOCSDIR}
