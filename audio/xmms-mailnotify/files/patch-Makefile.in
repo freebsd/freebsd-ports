@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Sat Feb  2 23:47:13 2002
++++ Makefile.in	Tue Jul  8 01:42:36 2003
+@@ -3,7 +3,7 @@
+ CC = @CC@
+ INSTALL = @INSTALL@
+ LIBS = @LIBS@
+-CFLAGS = -O -Wall @CFLAGS@ @DEFS@ -DVERSION=\"@VERSION@\"
++CFLAGS+= -fPIC -Wall @CFLAGS@ @DEFS@ -DVERSION=\"@VERSION@\"
+ LDFLAGS = @LDFLAGS@ $(LIBS) -shared
+ PREFIX = @prefix@
+ INSTALLPATH = @libdir@
+@@ -32,7 +32,7 @@
+ 	$(INSTALL) alert.wav $(INSTALLPATH)
+ 
+ mailnotify: $(OBJS)
+-	$(CC) -o $(TARGET) $(OBJS) $(LDFLAGS)
++	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS) $(LDFLAGS)
+ 
+ mailnotify.o: mailnotify.c
+ 
