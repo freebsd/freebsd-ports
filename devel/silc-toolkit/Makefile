@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	0.7
-CATEGORIES=	devel net security
+PORTVERSION=	0.7.2
+CATEGORIES=	devel ipv6 net security
 MASTER_SITES=	http://www.silcnet.org/download/toolkit/sources/ \
 		ftp://ftp.silcnet.org/silc/toolkit/sources/ \
 		http://www.planetmirror.com/pub/silcnet/toolkit/sources / \
@@ -60,13 +60,7 @@ post-patch:
 	@${PERL} -pi -ne 's|doc includes|includes|;s| doc-install| |; \
 		s|^.*-mkdir -p \$$\(docdir\).*$$||' ${WRKSRC}/Makefile.in
 .endif
-
-# ugly, ugly hack; for some reason (configure reason), this ports
-# breaks if CONFIGURE_TARGET is given as an argument
-do-configure:
-	@cd ${CONFIGURE_WRKSRC}; ${SETENV} ${CONFIGURE_ENV} \
-		./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS:S/${CONFIGURE_TARGET}//} \
-		--host=${CONFIGURE_TARGET}
+	@${PERL} -pi -e 's|-O2||' ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-install:
 	@${RM} -Rf ${WRKSRC}/doc/examples/CVS
@@ -75,6 +69,10 @@ pre-install:
 
 .if ${ARCH} != "i386"
 WITHOUT_OPTIMIZED_ASM=	yes
+.endif
+
+.if ${OSVERSION} >= 400014
+CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 .include <bsd.port.post.mk>

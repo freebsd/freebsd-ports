@@ -1,5 +1,5 @@
---- irssi/Makefile.in.orig	Fri Dec 21 02:55:17 2001
-+++ irssi/Makefile.in	Fri Dec 21 02:55:28 2001
+--- irssi/Makefile.in.orig	Sat Jan 19 21:07:04 2002
++++ irssi/Makefile.in	Sat Jan 19 21:07:24 2002
 @@ -486,7 +486,7 @@
  
  info-am:
