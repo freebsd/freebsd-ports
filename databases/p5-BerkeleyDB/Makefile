@@ -7,6 +7,7 @@
 
 PORTNAME=	BerkeleyDB
 PORTVERSION=	0.25
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	BerkeleyDB
@@ -20,14 +21,19 @@ WITH_BDB_VER?=	3
 
 .if ${WITH_BDB_VER} == 2
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
+BDB_LIB_VER=	db2
 .elif ${WITH_BDB_VER} == 3
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
+BDB_LIB_VER=	db3
 .elif ${WITH_BDB_VER} == 4
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
+BDB_LIB_VER=	db4
 .elif ${WITH_BDB_VER} == 41
 LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
+BDB_LIB_VER=	db41
 .elif ${WITH_BDB_VER} == 42
 LIB_DEPENDS=	db-4.2.2:${PORTSDIR}/databases/db42
+BDB_LIB_VER=	db-4.2
 .else
 .error WITH_BDB_VER must be one between 2, 3, 4, 41 and 42
 .endif
@@ -43,7 +49,7 @@ pre-everything::
 post-patch:
 	@${ECHO} "INCLUDE = ${LOCALBASE}/include/db${WITH_BDB_VER}" > ${WRKSRC}/config.in
 	@${ECHO} "LIB = ${LOCALBASE}/lib" >> ${WRKSRC}/config.in
-	@${ECHO} "DBNAME = -ldb${WITH_BDB_VER}" >> ${WRKSRC}/config.in
+	@${ECHO} "DBNAME = -l${BDB_LIB_VER}" >> ${WRKSRC}/config.in
 	${PERL} -pi -e '$$_="" if /MAN3PODS/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
