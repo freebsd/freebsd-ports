@@ -30,7 +30,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 IGNORE=		"This port is for FreeBSD 4 only"
 .else
 # Check for ZendOptimizer sources
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\
 Because of licensing restrictions, you must fetch the source distribution\n\
