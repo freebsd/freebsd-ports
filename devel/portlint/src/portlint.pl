@@ -98,7 +98,7 @@ sub version {
 }
 
 
-getopts('abchtvBM:N:V');
+getopts('abchtvB:M:NV');
 
 &usage if $opt_h;
 &version if $opt_V;
@@ -275,7 +275,7 @@ foreach my $i (@checker) {
 	} else {
 		my $proc = $checker{$i};
 		&$proc($i) || &perror("Cannot open the file $i\n");
-		if ($i !~ /^files\/patch-/) {
+		if ($i !~ m@/files/patch-@) {
 			&checklastline($i)
 				|| &perror("Cannot open the file $i\n");
 		}
