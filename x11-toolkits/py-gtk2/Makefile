@@ -3,13 +3,13 @@
 # Whom:					marc@informatik.uni-bremen.de
 #
 # $FreeBSD$
+#
 
 PORTNAME=	gtk
-PORTVERSION=	2.2.0
-PORTREVISION=	3
+PORTVERSION=	2.4.1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/pygtk/2.2
+MASTER_SITE_SUBDIR=	sources/pygtk/2.4
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pygtk-${PORTVERSION}
 DIST_SUBDIR=	gnome2
@@ -23,8 +23,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget libglade2
 USE_PYTHON=	yes
-USE_LIBTOOL_VER=15
 USE_GETTEXT=	yes
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-lintl"
 LDFLAGS+=	-L${LOCALBASE}/lib
