@@ -9,7 +9,7 @@ PORTNAME=	colortail
 PORTVERSION=	0.3.0
 PORTREVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	# none
+MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A colour-able replacement for tail(1)
