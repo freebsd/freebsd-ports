@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	borges
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	www ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/420/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/574/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
