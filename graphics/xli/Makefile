@@ -6,25 +6,18 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xli.1.16
-PKGNAME=	xli-1.16
+DISTNAME=	xli-1.17.0
 CATEGORIES=	graphics x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 		http://pantransit.reptiles.org/prog/
 MASTER_SITE_SUBDIR=	applications
-DISTFILES=	xli.1.16.tar.gz xli-png.tar.gz
 
 MAINTAINER=	jkoshy@FreeBSD.org
 
-LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_IMAKE=	yes
 MAN1=		xli.1 xlito.1
-
-NO_WRKSUBDIR=	yes
-
-post-patch:
-	@${ECHO_MSG} "===>  Applying png patch for ${PKGNAME}"
-	@${SED} -e 's/^--- xli/--- ./' ${WRKSRC}/png.patch | ${PATCH} ${PATCH_ARGS}
 
 .include <bsd.port.mk>
