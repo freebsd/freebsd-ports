@@ -10,6 +10,8 @@ CATEGORIES=	japanese
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XEmacs(stable version) text editor(SJ3, SKK and FreeWnn)
 
+BROKEN=		Incomplete pkg-plist
+
 MASTERDIR=	${.CURDIR}/../../editors/xemacs21-mule
 
 FREEWNN=	yes
