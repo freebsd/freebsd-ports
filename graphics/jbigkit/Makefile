@@ -1,25 +1,20 @@
 # New ports collection makefile for:	jbig
-# Version required:     0.9
+# Version required:     1.0
 # Date created:		19 November 1996
 # Whom:			mi
 #
-# $Id: Makefile,v 1.2 1996/12/24 07:35:26 asami Exp $
+# $Id: Makefile,v 1.3 1997/07/17 15:12:42 max Exp $
 #
 
-DISTNAME=	jbigkit-0.9
+DISTNAME=	jbigkit-1.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.informatik.uni-erlangen.de/pub/doc/ISO/JBIG/
 
 MAINTAINER=	mi@aldan.ziplink.net
 
-# Yes, CCFLAGS, not CFLAGS! -mi
-MAKE_FLAGS=	CCFLAGS="${CFLAGS}" CC="${CC}"
 WRKSRC= ${WRKDIR}/jbigkit
 MAN1=	jbgtopbm.1 pbmtojbg.1
-MAN5=	pbm.5
-
-post-build:
-	cd $(WRKSRC); make test
+MAN5=	pbm.5 pgm.5
 
 post-install:
 .if !defined(NOPORTDOCS)
