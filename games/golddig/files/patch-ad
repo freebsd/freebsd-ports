@@ -1,0 +1,31 @@
+--- Makefile.orig	Sun Apr 30 18:59:40 2000
++++ Makefile	Sun Apr 30 19:01:22 2000
+@@ -34,23 +34,25 @@
+ all: ${GAME} ${EDITOR}
+ 
+ install: all
+-	-mkdir ${LIB}
++	-mkdir -m 0664 ${LIB}
+ 	cp ${GAME} ${EDITOR} ${BIN}
+ # The next line sets up the level files so that anyone can edit all of
+ # the levels.  Remove this line to have better security.
+-	chmod 4755 ${BIN}/${EDITOR}
++	chmod 2755 ${BIN}/${EDITOR}
++	chown root:games ${BIN}/${EDITOR}
+ 	touch ${LIB}/scores
+ # Allow anyone to modify the high score file.  An alternative is to
+ # change the mode bits of ${GAME} to be 4755.
+ 	chmod 666 ${LIB}/scores
+ 	cp goldlev* default ${LIB}
++	chown -R root:games ${LIB}
+ 	cp golddig.p ${MAN}/golddig.${MANEXT}
+ 
+ update: all
+ 	cp ${GAME} ${EDITOR} ${BIN}
+ # The next line sets up the level files so that anyone can edit all of
+ # the levels.  Remove this line to have better security.
+-	chmod 4755 ${BIN}/${EDITOR}
++	chmod 2755 ${BIN}/${EDITOR}
+ 
+ clean:
+ 	rm -f *.o *~ bitmap/*~ core ${GAME} ${EDITOR}
