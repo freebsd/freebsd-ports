@@ -1,0 +1,24 @@
+--- configure.in.orig	Thu Jul 13 17:42:14 2000
++++ configure.in	Mon Oct  2 23:24:49 2000
+@@ -174,15 +174,19 @@
+   GALE_LIBS="$GALE_LIBS -lrsaref"
+ fi
+ 
++AC_CHECK_LIB(resolv,res_init,[
++ RESOLV_LIBS="-lresolv"
++])
++
+ AC_MSG_CHECKING([for local copy of liboop])
+ if test -f "${srcdir}/liboop/oop.h"; then
+   AC_MSG_RESULT(yes)
+   CPPFLAGS="-I\${top_srcdir}/liboop $CPPFLAGS"
+   build_liboop=true
+   AC_CHECK_LIB(adns,adns_init,[
+-   GALE_LIBS="$GALE_LIBS \${top_builddir}/liboop/liboop-adns.la -ladns -lresolv"
++    GALE_LIBS="$GALE_LIBS \${top_builddir}/liboop/liboop-adns.la -ladns ${RESOLV_LIBS}"
+     AC_DEFINE(HAVE_ADNS)
+-  ],[:],-lresolv)
++  ],[:],$RESOLV_LIBS)
+   GALE_LIBS="$GALE_LIBS \${top_builddir}/liboop/liboop.la"
+ else
+   AC_MSG_RESULT(no)
