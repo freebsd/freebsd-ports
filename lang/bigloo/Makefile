@@ -42,6 +42,10 @@ post-configure:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386" && ${ARCH} != "amd64"
+BROKEN=		"Does not compile on !i386 and !amd64"
+.endif
+
 post-install: install-info
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/bigloo.sh | ${SED} "s|%%BIGLOO_VERSION%%|${PORTVERSION}|g" > ${PREFIX}/etc/rc.d/000.bigloo.sh
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/000.bigloo.sh
