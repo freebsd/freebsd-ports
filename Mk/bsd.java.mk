@@ -42,7 +42,7 @@ JAVAJARDIR?=	${JAVASHAREDIR}/classes
 
 # The complete list of Java versions, os and vendors supported.
 _JAVA_VERSIONS=		1.1 1.2 1.3 1.4
-_JAVA_VERSIONS_ALL=		${_JAVA_VERSIONS} ${_JAVA_VERSIONS:S/$/+/}
+_JAVA_VERSIONS_ALL=	${_JAVA_VERSIONS} ${_JAVA_VERSIONS:S/$/+/}
 _JAVA_OS_LIST=		native linux
 _JAVA_VENDORS=		freebsd bsdjava sun blackdown ibm
 
@@ -72,34 +72,34 @@ _JAVA_OS_native=	Native
 _JAVA_OS_linux=		Linux
 
 # Set the JAVA_HOME directories for all recognized JDK's
-_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_1!=		echo "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1_INFO}" | awk '{ print $$2 }'
-_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_2!=		echo "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_2_INFO}" | awk '{ print $$2 }'
-_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_3!=		echo "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3_INFO}" | awk '{ print $$2 }'
-_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_4!=		echo "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4_INFO}" | awk '{ print $$2 }'
-_JAVA_HOME_NATIVE_FREEBSD_JDK_1_3!=		echo "${_JAVA_PORT_NATIVE_FREEBSD_JDK_1_3_INFO}" | awk '{ print $$2 }'
-_JAVA_HOME_LINUX_BLACKDOWN_JDK_1_2!=	echo "${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_2_INFO}" | awk '{ print $$2 }'
-_JAVA_HOME_LINUX_BLACKDOWN_JDK_1_3!=	echo "${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_3_INFO}" | awk '{ print $$2 }'
-_JAVA_HOME_LINUX_BLACKDOWN_JDK_1_4!=	echo "${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4_INFO}" | awk '{ print $$2 }'
-_JAVA_HOME_LINUX_IBM_JDK_1_3!=			echo "${_JAVA_PORT_LINUX_IBM_JDK_1_3_INFO}" | awk '{ print $$2 }'
-_JAVA_HOME_LINUX_IBM_JDK_1_4!=			echo "${_JAVA_PORT_LINUX_IBM_JDK_1_4_INFO}" | awk '{ print $$2 }'
-_JAVA_HOME_LINUX_SUN_JDK_1_2!=			echo "${_JAVA_PORT_LINUX_SUN_JDK_1_2_INFO}" | awk '{ print $$2 }'
-_JAVA_HOME_LINUX_SUN_JDK_1_3!=			echo "${_JAVA_PORT_LINUX_SUN_JDK_1_3_INFO}" | awk '{ print $$2 }'
-_JAVA_HOME_LINUX_SUN_JDK_1_4!=			echo "${_JAVA_PORT_LINUX_SUN_JDK_1_4_INFO}" | awk '{ print $$2 }'
+_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_1!=		${ECHO_CMD} "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1_INFO}" | ${AWK} '{ print $$2 }'
+_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_2!=		${ECHO_CMD} "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_2_INFO}" | ${AWK} '{ print $$2 }'
+_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_3!=		${ECHO_CMD} "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3_INFO}" | ${AWK} '{ print $$2 }'
+_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_4!=		${ECHO_CMD} "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4_INFO}" | ${AWK} '{ print $$2 }'
+_JAVA_HOME_NATIVE_FREEBSD_JDK_1_3!=		${ECHO_CMD} "${_JAVA_PORT_NATIVE_FREEBSD_JDK_1_3_INFO}" | ${AWK} '{ print $$2 }'
+_JAVA_HOME_LINUX_BLACKDOWN_JDK_1_2!=	${ECHO_CMD} "${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_2_INFO}" | ${AWK} '{ print $$2 }'
+_JAVA_HOME_LINUX_BLACKDOWN_JDK_1_3!=	${ECHO_CMD} "${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_3_INFO}" | ${AWK} '{ print $$2 }'
+_JAVA_HOME_LINUX_BLACKDOWN_JDK_1_4!=	${ECHO_CMD} "${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4_INFO}" | ${AWK} '{ print $$2 }'
+_JAVA_HOME_LINUX_IBM_JDK_1_3!=			${ECHO_CMD} "${_JAVA_PORT_LINUX_IBM_JDK_1_3_INFO}" | ${AWK} '{ print $$2 }'
+_JAVA_HOME_LINUX_IBM_JDK_1_4!=			${ECHO_CMD} "${_JAVA_PORT_LINUX_IBM_JDK_1_4_INFO}" | ${AWK} '{ print $$2 }'
+_JAVA_HOME_LINUX_SUN_JDK_1_2!=			${ECHO_CMD} "${_JAVA_PORT_LINUX_SUN_JDK_1_2_INFO}" | ${AWK} '{ print $$2 }'
+_JAVA_HOME_LINUX_SUN_JDK_1_3!=			${ECHO_CMD} "${_JAVA_PORT_LINUX_SUN_JDK_1_3_INFO}" | ${AWK} '{ print $$2 }'
+_JAVA_HOME_LINUX_SUN_JDK_1_4!=			${ECHO_CMD} "${_JAVA_PORT_LINUX_SUN_JDK_1_4_INFO}" | ${AWK} '{ print $$2 }'
 
 # Set the JDK ports for all recognized JDK's
-_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1!=		echo "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1_INFO}" | awk '{ print $$1 }'
-_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_2!=		echo "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_2_INFO}" | awk '{ print $$1 }'
-_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3!=		echo "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3_INFO}" | awk '{ print $$1 }'
-_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4!=		echo "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4_INFO}" | awk '{ print $$1 }'
-_JAVA_PORT_NATIVE_FREEBSD_JDK_1_3!=		echo "${_JAVA_PORT_NATIVE_FREEBSD_JDK_1_3_INFO}" | awk '{ print $$1 }'
-_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_2!=	echo "${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_2_INFO}" | awk '{ print $$1 }'
-_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_3!=	echo "${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_3_INFO}" | awk '{ print $$1 }'
-_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4!=	echo "${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4_INFO}" | awk '{ print $$1 }'
-_JAVA_PORT_LINUX_IBM_JDK_1_3!=			echo "${_JAVA_PORT_LINUX_IBM_JDK_1_3_INFO}" | awk '{ print $$1 }'
-_JAVA_PORT_LINUX_IBM_JDK_1_4!=			echo "${_JAVA_PORT_LINUX_IBM_JDK_1_4_INFO}" | awk '{ print $$1 }'
-_JAVA_PORT_LINUX_SUN_JDK_1_2!=			echo "${_JAVA_PORT_LINUX_SUN_JDK_1_2_INFO}" | awk '{ print $$1 }'
-_JAVA_PORT_LINUX_SUN_JDK_1_3!=			echo "${_JAVA_PORT_LINUX_SUN_JDK_1_3_INFO}" | awk '{ print $$1 }'
-_JAVA_PORT_LINUX_SUN_JDK_1_4!=			echo "${_JAVA_PORT_LINUX_SUN_JDK_1_4_INFO}" | awk '{ print $$1 }'
+_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1!=		${ECHO_CMD} "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1_INFO}" | ${AWK} '{ print $$1 }'
+_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_2!=		${ECHO_CMD} "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_2_INFO}" | ${AWK} '{ print $$1 }'
+_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3!=		${ECHO_CMD} "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3_INFO}" | ${AWK} '{ print $$1 }'
+_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4!=		${ECHO_CMD} "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4_INFO}" | ${AWK} '{ print $$1 }'
+_JAVA_PORT_NATIVE_FREEBSD_JDK_1_3!=		${ECHO_CMD} "${_JAVA_PORT_NATIVE_FREEBSD_JDK_1_3_INFO}" | ${AWK} '{ print $$1 }'
+_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_2!=	${ECHO_CMD} "${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_2_INFO}" | ${AWK} '{ print $$1 }'
+_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_3!=	${ECHO_CMD} "${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_3_INFO}" | ${AWK} '{ print $$1 }'
+_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4!=	${ECHO_CMD} "${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4_INFO}" | ${AWK} '{ print $$1 }'
+_JAVA_PORT_LINUX_IBM_JDK_1_3!=			${ECHO_CMD} "${_JAVA_PORT_LINUX_IBM_JDK_1_3_INFO}" | ${AWK} '{ print $$1 }'
+_JAVA_PORT_LINUX_IBM_JDK_1_4!=			${ECHO_CMD} "${_JAVA_PORT_LINUX_IBM_JDK_1_4_INFO}" | ${AWK} '{ print $$1 }'
+_JAVA_PORT_LINUX_SUN_JDK_1_2!=			${ECHO_CMD} "${_JAVA_PORT_LINUX_SUN_JDK_1_2_INFO}" | ${AWK} '{ print $$1 }'
+_JAVA_PORT_LINUX_SUN_JDK_1_3!=			${ECHO_CMD} "${_JAVA_PORT_LINUX_SUN_JDK_1_3_INFO}" | ${AWK} '{ print $$1 }'
+_JAVA_PORT_LINUX_SUN_JDK_1_4!=			${ECHO_CMD} "${_JAVA_PORT_LINUX_SUN_JDK_1_4_INFO}" | ${AWK} '{ print $$1 }'
 
 # Set the name of the file that indicates that a JDK is indeed installed, as a
 # relative path within the JAVA_HOME directory.
@@ -203,9 +203,9 @@ JAVA_HOME=	${_JAVA_HOME}
 #
 
 # First detect if we are using bsd.java.mk v1.0
-_USE_BSD_JAVA_MK_1_0!=	echo "${_JAVA_VERSIONS_ALL}" \
-						| tr " " "\n" \
-						| grep -q "^${USE_JAVA}$$" && echo "yes" || echo "no"
+_USE_BSD_JAVA_MK_1_0!=	${ECHO_CMD} "${_JAVA_VERSIONS_ALL}" \
+						| ${TR} " " "\n" \
+						| ${GREP} -q "^${USE_JAVA}$$" && ${ECHO_CMD} "yes" || ${ECHO_CMD} "no"
 .		if (${_USE_BSD_JAVA_MK_1_0} == "yes") && !defined(JAVA_VERSION)
 # Then affect the variables so that we may use v2.0
 JAVA_VERSION=	${USE_JAVA}
@@ -281,7 +281,7 @@ _JAVA_PORTS_BY_VERSION+= ${_JAVA_PORTS_1_4}
 .			endif
 .			if !defined(_JAVA_PORTS_BY_VERSION)
 .BEGIN:
-	@${ECHO} "${PKGNAME}: \"${JAVA_VERSION}\" is not a valid value for JAVA_VERSION. It should be one or more of: ${_JAVA_VERSIONS} (with an optional \"+\" suffix.)";
+	@${ECHO_CMD} "${PKGNAME}: \"${JAVA_VERSION}\" is not a valid value for JAVA_VERSION. It should be one or more of: ${_JAVA_VERSIONS} (with an optional \"+\" suffix.)";
 	@${FALSE}
 .			endif
 .		else
@@ -299,7 +299,7 @@ _JAVA_PORTS_BY_OS+= ${_JAVA_PORTS_LINUX}
 .			endif
 .			if !defined(_JAVA_PORTS_BY_OS)
 .BEGIN:
-	@${ECHO} "${PKGNAME}: \"${JAVA_OS}\" is not a valid value for JAVA_OS. It should be one or more of: ${_JAVA_OS_LIST}";
+	@${ECHO_CMD} "${PKGNAME}: \"${JAVA_OS}\" is not a valid value for JAVA_OS. It should be one or more of: ${_JAVA_OS_LIST}";
 	@${FALSE}
 .			endif
 .		else
@@ -326,7 +326,7 @@ _JAVA_PORTS_BY_VENDOR+= ${_JAVA_PORTS_IBM}
 .			endif
 .			if !defined(_JAVA_PORTS_BY_VENDOR)
 .BEGIN:
-	@${ECHO} "${PKGNAME}: \"${JAVA_VENDOR}\" is not a valid value for JAVA_VENDOR. It should be one or more of: ${_JAVA_VENDORS}";
+	@${ECHO_CMD} "${PKGNAME}: \"${JAVA_VENDOR}\" is not a valid value for JAVA_VENDOR. It should be one or more of: ${_JAVA_VENDORS}";
 	@${FALSE}
 .			endif
 .		else
@@ -336,44 +336,44 @@ _JAVA_PORTS_BY_VENDOR= ${_JAVA_PORTS_ALL}
 _MY_JAVA_PORTS:=		${_JAVA_PORTS_ALL:S/^/\${_/:S/$/_INFO} @ /}
 
 # Build the list of possible JDK ports by version, OS and vendor
-_JAVA_PORTS_BY_VERSION!=	echo "${_JAVA_PORTS_BY_VERSION}" | tr " " "\n" | sort | uniq
-_JAVA_PORTS_BY_OS!=			echo "${_JAVA_PORTS_BY_OS}" | tr " " "\n" | sort | uniq
-_JAVA_PORTS_BY_VENDOR!=		echo "${_JAVA_PORTS_BY_VENDOR}" | tr " " "\n" | sort | uniq
-_JAVA_PORTS_POSSIBLE!=		echo "${_JAVA_PORTS_BY_VERSION} ${_JAVA_PORTS_BY_OS} ${_JAVA_PORTS_BY_VENDOR}" \
-							| tr " " "\n" \
-							| sort -r \
-							| uniq -c \
-							| sed "s/^\( *\)//" \
-							| grep "^3 " \
-							| awk '{ print $$2 }'
+_JAVA_PORTS_BY_VERSION!=	${ECHO_CMD} "${_JAVA_PORTS_BY_VERSION}" | ${TR} " " "\n" | ${SORT} | /usr/bin/uniq
+_JAVA_PORTS_BY_OS!=			${ECHO_CMD} "${_JAVA_PORTS_BY_OS}" | ${TR} " " "\n" | ${SORT} | /usr/bin/uniq
+_JAVA_PORTS_BY_VENDOR!=		${ECHO_CMD} "${_JAVA_PORTS_BY_VENDOR}" | ${TR} " " "\n" | ${SORT} | /usr/bin/uniq
+_JAVA_PORTS_POSSIBLE!=		${ECHO_CMD} "${_JAVA_PORTS_BY_VERSION} ${_JAVA_PORTS_BY_OS} ${_JAVA_PORTS_BY_VENDOR}" \
+							| ${TR} " " "\n" \
+							| ${SORT} -r \
+							| /usr/bin/uniq -c \
+							| ${SED} "s/^\( *\)//" \
+							| ${GREP} "^3 " \
+							| ${AWK} '{ print $$2 }'
 
 #-----------------------------------------------------------------------------
 # Stage 5: Decide the exact JDK to use (or install)
 #
 
 # Find an installed JDK port that matches the requirements of the port
-_JAVA_PORTS_INSTALLED_POSSIBLE!=	echo "${_JAVA_PORTS_POSSIBLE} ${_JAVA_PORTS_INSTALLED}" \
-									| tr " " "\n" \
-									| sort -r \
-									| uniq -c \
-									| sed "s/^\( *\)//" \
-									| grep "^2 " \
-									| awk '{ print $$2 }'
+_JAVA_PORTS_INSTALLED_POSSIBLE!=	${ECHO_CMD} "${_JAVA_PORTS_POSSIBLE} ${_JAVA_PORTS_INSTALLED}" \
+									| ${TR} " " "\n" \
+									| ${SORT} -r \
+									| /usr/bin/uniq -c \
+									| ${SED} "s/^\( *\)//" \
+									| ${GREP} "^2 " \
+									| ${AWK} '{ print $$2 }'
 .		if ${_JAVA_PORTS_INSTALLED_POSSIBLE} != ""
-_JAVA_PORT!=	echo "${_JAVA_PORTS_INSTALLED_POSSIBLE}" \
-				| awk '{ print $$1 }'
+_JAVA_PORT!=	${ECHO_CMD} "${_JAVA_PORTS_INSTALLED_POSSIBLE}" \
+				| ${AWK} '{ print $$1 }'
 
 # If no installed JDK port fits, then pick one from the list of possible ones
 .		else
-_JAVA_PORT!=	echo "${_JAVA_PORTS_POSSIBLE}" \
-				| awk '{ print $$1 }'
+_JAVA_PORT!=	${ECHO_CMD} "${_JAVA_PORTS_POSSIBLE}" \
+				| ${AWK} '{ print $$1 }'
 .		endif
 _JAVA_PORT_INFO:=	${_JAVA_PORT:S/^/\${_/:S/$/_INFO}/}
-JAVA_PORT!=				echo "${_JAVA_PORT_INFO}" | awk '{ print $$1 }'
-JAVA_HOME!=				echo "${_JAVA_PORT_INFO}" | awk '{ print $$2 }'
-JAVA_PORT_VERSION!=		echo "${_JAVA_PORT_INFO}" | awk '{ print $$3 }'
-JAVA_PORT_OS!=			echo "${_JAVA_PORT_INFO}" | awk '{ print $$4 }'
-JAVA_PORT_VENDOR!=		echo "${_JAVA_PORT_INFO}" | awk '{ print $$5 }'
+JAVA_PORT!=				${ECHO_CMD} "${_JAVA_PORT_INFO}" | ${AWK} '{ print $$1 }'
+JAVA_HOME!=				${ECHO_CMD} "${_JAVA_PORT_INFO}" | ${AWK} '{ print $$2 }'
+JAVA_PORT_VERSION!=		${ECHO_CMD} "${_JAVA_PORT_INFO}" | ${AWK} '{ print $$3 }'
+JAVA_PORT_OS!=			${ECHO_CMD} "${_JAVA_PORT_INFO}" | ${AWK} '{ print $$4 }'
+JAVA_PORT_VENDOR!=		${ECHO_CMD} "${_JAVA_PORT_INFO}" | ${AWK} '{ print $$5 }'
 
 JAVA_PORT_VENDOR_DESCRIPTION:=	${JAVA_PORT_VENDOR:S/^/\${_JAVA_VENDOR_/:S/$/}/}
 JAVA_PORT_OS_DESCRIPTION:=		${JAVA_PORT_OS:S/^/\${_JAVA_OS_/:S/$/}/}
@@ -381,26 +381,26 @@ JAVA_PORT_OS_DESCRIPTION:=		${JAVA_PORT_OS:S/^/\${_JAVA_OS_/:S/$/}/}
 # Debug target
 # (will probably get removed in the final version)
 java-debug:
-	@${ECHO} "_USE_BSD_JAVA_MK_1_0=           ${_USE_BSD_JAVA_MK_1_0}"
-	@${ECHO}
-	@${ECHO} "# User specified parameters:"
-	@${ECHO} "JAVA_VERSION=                   ${JAVA_VERSION}	(${_JAVA_VERSION})"
-	@${ECHO} "JAVA_OS=                        ${JAVA_OS}"
-	@${ECHO} "JAVA_VENDOR=                    ${JAVA_VENDOR}"
-	@${ECHO}
-	@${ECHO} "# JDK port dependency selection process:"
-	@${ECHO} "_JAVA_PORTS_POSSIBLE=           ${_JAVA_PORTS_POSSIBLE}"
-	@${ECHO} "_JAVA_PORTS_INSTALLED=          ${_JAVA_PORTS_INSTALLED}"
-	@${ECHO} "_JAVA_PORTS_INSTALLED_POSSIBLE= ${_JAVA_PORTS_INSTALLED_POSSIBLE}"
-	@${ECHO} "_JAVA_PORT=                     ${_JAVA_PORT}"
-	@${ECHO} "_JAVA_PORT_INFO=                ${_JAVA_PORT_INFO:S/\t/ /}"
-	@${ECHO}
-	@${ECHO} "# Selected JDK port:"
-	@${ECHO} "JAVA_PORT=                      ${JAVA_PORT}"
-	@${ECHO} "JAVA_HOME=                      ${JAVA_HOME}"
-	@${ECHO} "JAVA_PORT_VERSION=              ${JAVA_PORT_VERSION}"
-	@${ECHO} "JAVA_PORT_OS=                   ${JAVA_PORT_OS}	(${JAVA_PORT_OS_DESCRIPTION})"
-	@${ECHO} "JAVA_PORT_VENDOR=               ${JAVA_PORT_VENDOR}	(${JAVA_PORT_VENDOR_DESCRIPTION})"
+	@${ECHO_CMD} "_USE_BSD_JAVA_MK_1_0=           ${_USE_BSD_JAVA_MK_1_0}"
+	@${ECHO_CMD}
+	@${ECHO_CMD} "# User specified parameters:"
+	@${ECHO_CMD} "JAVA_VERSION=                   ${JAVA_VERSION}	(${_JAVA_VERSION})"
+	@${ECHO_CMD} "JAVA_OS=                        ${JAVA_OS}"
+	@${ECHO_CMD} "JAVA_VENDOR=                    ${JAVA_VENDOR}"
+	@${ECHO_CMD}
+	@${ECHO_CMD} "# JDK port dependency selection process:"
+	@${ECHO_CMD} "_JAVA_PORTS_POSSIBLE=           ${_JAVA_PORTS_POSSIBLE}"
+	@${ECHO_CMD} "_JAVA_PORTS_INSTALLED=          ${_JAVA_PORTS_INSTALLED}"
+	@${ECHO_CMD} "_JAVA_PORTS_INSTALLED_POSSIBLE= ${_JAVA_PORTS_INSTALLED_POSSIBLE}"
+	@${ECHO_CMD} "_JAVA_PORT=                     ${_JAVA_PORT}"
+	@${ECHO_CMD} "_JAVA_PORT_INFO=                ${_JAVA_PORT_INFO:S/\t/ /}"
+	@${ECHO_CMD}
+	@${ECHO_CMD} "# Selected JDK port:"
+	@${ECHO_CMD} "JAVA_PORT=                      ${JAVA_PORT}"
+	@${ECHO_CMD} "JAVA_HOME=                      ${JAVA_HOME}"
+	@${ECHO_CMD} "JAVA_PORT_VERSION=              ${JAVA_PORT_VERSION}"
+	@${ECHO_CMD} "JAVA_PORT_OS=                   ${JAVA_PORT_OS}	(${JAVA_PORT_OS_DESCRIPTION})"
+	@${ECHO_CMD} "JAVA_PORT_VENDOR=               ${JAVA_PORT_VENDOR}	(${JAVA_PORT_VENDOR_DESCRIPTION})"
 
 #-----------------------------------------------------------------------------
 # Stage 6: Define all settings for the port to use
@@ -429,7 +429,7 @@ JAVAC=		${_JIKES_PATH}
 WITH_JIKES=	YES
 .				elif !((${USE_JIKES} == "NO") || (${USE_JIKES} == "no"))
 .BEGIN:
-	@${ECHO} "${PKGNAME}: \"${USE_JIKES}\" is not a valid value for USE_JIKES. It should be YES or NO, or it should be undefined.";
+	@${ECHO_CMD} "${PKGNAME}: \"${USE_JIKES}\" is not a valid value for USE_JIKES. It should be YES or NO, or it should be undefined.";
 	@${FALSE}
 .				endif
 .			elif exists(${_JIKES_PATH}) && !defined(NO_BUILD)
@@ -484,12 +484,12 @@ RUN_DEPENDS+=		${_DEPEND_JIKES}
 # Add the JDK port to the dependencies
 .		if defined(NO_BUILD_DEPENDS_JAVA) && defined(NO_RUN_DEPENDS_JAVA)
 .BEGIN:
-	@${ECHO} "${PKGNAME}: NO_BUILD_DEPENDS_JAVA and NO_RUN_DEPENDS_JAVA cannot be set at the same time.";
+	@${ECHO_CMD} "${PKGNAME}: NO_BUILD_DEPENDS_JAVA and NO_RUN_DEPENDS_JAVA cannot be set at the same time.";
 	@${FALSE}
 .		endif
 .		if defined(JAVA_BUILD) && defined(NO_BUILD)
 .BEGIN:
-	@${ECHO} "${PKGNAME}: JAVA_BUILD and NO_BUILD cannot be set at the same time.";
+	@${ECHO_CMD} "${PKGNAME}: JAVA_BUILD and NO_BUILD cannot be set at the same time.";
 	@${FALSE}
 .		endif
 _DEPEND_JAVA=	${JAVA}:${PORTSDIR}/${JAVA_PORT}
