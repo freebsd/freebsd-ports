@@ -250,6 +250,7 @@
     SUBDIR += qkc
     SUBDIR += rbnamazu
     SUBDIR += recjis
+    SUBDIR += roget-fpw
     SUBDIR += rogue_s
     SUBDIR += rskkserv
     SUBDIR += ruby-eb
