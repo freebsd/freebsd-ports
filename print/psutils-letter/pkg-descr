@@ -19,3 +19,5 @@ fixwwps    (perl) filter to fix Windows Write documents for PSUtils
 extractres (perl) filter to extract resources from PostScript files
 includeres (perl) filter to include resources into PostScript files
 psmerge    (perl) hack script to merge multiple PostScript files
+
+WWW: http://www.dcs.ed.ac.uk/home/ajcd/psutils/
