@@ -21,6 +21,8 @@ PLIST=		${WRKDIR}/plist
 RESTRICTED=	"binaries under GNU LGPL without accompanying source"
 RPM_SET=	gtk2-2.2.1-4.i386.rpm
 
+BROKEN=		"Build fails"
+
 pre-install:
 	${RM} -f ${PLIST}
 .for ii in gtk.immodules gdk-pixbuf.loaders
