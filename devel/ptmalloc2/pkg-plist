@@ -1,0 +1,3 @@
+lib/libptmalloc.a
+lib/libptmalloc.so
+lib/libptmalloc.so.1
