@@ -1,37 +1,57 @@
-
-*** stix/Makefile.orig	Thu Sep 12 15:11:30 1991
---- stix/Makefile	Sun Jun  2 17:51:14 1996
-***************
-*** 56,62 ****
-  CPP = cc -E
-  
-  # Uncomment this line to enable the ultra-winning readline-reader
-! #READLINE = -DUSE_READLINE
-  
-  ######################################################################
-  ######################################################################
---- 56,62 ----
-  CPP = cc -E
-  
-  # Uncomment this line to enable the ultra-winning readline-reader
-! READLINE = -DUSE_READLINE
-  
-  ######################################################################
-  ######################################################################
-***************
-*** 88,94 ****
-  
-  # Edit this to reflect the path on your system where the X include files
-  # may be found.
-! XINCLUDE = /usr/include/X11
-  
-  socket.o: socket.c
-  	$(CC) -I$(XINCLUDE) $(CFLAGS) -DUNIXCONN -c socket.c
---- 88,94 ----
-  
-  # Edit this to reflect the path on your system where the X include files
-  # may be found.
-! XINCLUDE = /usr/X11R6/include
-  
-  socket.o: socket.c
-  	$(CC) -I$(XINCLUDE) $(CFLAGS) -DUNIXCONN -c socket.c
+--- Makefile.in.orig	Sun Sep 17 11:49:10 1995
++++ Makefile.in	Sat Nov 29 01:33:15 1997
+@@ -70,7 +70,7 @@
+ COMPLETE_MAKE=@COMPLETE_MAKE@
+ 
+ # optimization flag -- may become host dependent
+-OPT_FLAG = -O
++#OPT_FLAG = -O
+ CDEBUG = @CDEBUG@
+ USER_OBJECTS = @USER_OBJECTS@
+ 
+@@ -90,7 +90,7 @@
+ # Where to put the system-wide image file
+ libdir = $(prefix)/lib
+ smlibdir = $(libdir)/smalltalk
+-stdir = $(prefix)/smalltalk
++stdir = $(libdir)/smalltalk
+ 
+ ## Where to put the manual pages.
+ #mandir = $(prefix)/man
+@@ -160,12 +160,12 @@
+     Makefile.defs.in Makefile.rules \
+     blox/Makefile.body \
+     stix/Makefile.body tcp/Makefile.body test/Makefile.body  \
+-    cxtnsn/Makefile.body examples/Makefile.body contrib/Makefile.body \
++    examples/Makefile.body contrib/Makefile.body \
+     info/Makefile.body
+ 
+ 
+ # Subdirectories to run make in for the primary targets.
+-SUBDIRS = lib stix blox info examples contrib cxtnsn test tcp
++SUBDIRS = lib stix blox info examples contrib test tcp
+ 
+ # Only make TAGS/tags files in these directories, in this order
+ ###TSUBDIRS= src lib
+@@ -197,7 +197,7 @@
+ 	$(RM) gst
+ 	$(CC) $(LDFLAGS) $(LDPATH) $(BINDING) -o $@ $(CFLAGS) $(CDEBUG) \
+ 		$(OBJECTS) lib/libgst.a $(LIBS)
+-	$(COMPLETE_MAKE)
++#	$(COMPLETE_MAKE)
+ 
+ # A hack to force this directory to be reevaluated.
+ libgst.a:
+@@ -219,8 +219,10 @@
+ #	$(RM) junk.c xmakefile
+ 
+ installdirs:
+-	$(SHELL) $(srcdir)/mkinstalldirs $(bindir) $(smlibdir) $(infodir) \
+-		 $(stdir)
++	if [ ! -d $(smlibdir) ]; then \
++	    $(SHELL) $(srcdir)/mkinstalldirs $(bindir) $(smlibdir) $(infodir) \
++		 $(stdir); \
++	fi
+ 
+ install:: installdirs all 
+ 	$(INSTALL_PROGRAM) gst $(bindir)/$(binprefix)gst
