@@ -7,7 +7,7 @@
 
 PORTNAME=	ucd-snmp
 PORTVERSION=	4.1.2
-CATEGORIES=	net
+CATEGORIES=	net ipv6
 MASTER_SITES= 	ftp://ucd-snmp.ucdavis.edu/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
 		ftp://ftp.win.or.jp/pub/network/snmp/ucd-snmp/
@@ -46,6 +46,10 @@ SBIN=		snmpd snmptrapd
 STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh.sample
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400014
+CONFIGURE_ARGS+= --enable-ipv6
+.endif
 
 SHLIB_VERSION=	4
 PLIST_SUB+=	shlib=${SHLIB_VERSION}
