@@ -33,7 +33,6 @@
 @dirrm %%SITE_PERL%%/auto/Mail/Util
 @dirrm %%SITE_PERL%%/auto/Mail/Internet
 @dirrm %%SITE_PERL%%/auto/Mail
-@unexec rmdir %D/%%SITE_PERL%%/auto 2>/dev/null || true
 @dirrm %%SITE_PERL%%/Mail/Mailer
 @dirrm %%SITE_PERL%%/Mail/Field
 @unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true
