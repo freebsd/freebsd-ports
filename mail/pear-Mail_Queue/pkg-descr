@@ -1,0 +1,11 @@
+Class to handle mail queue managment.
+Wrapper for PEAR::Mail and PEAR::DB (or PEAR::MDB/MDB2).
+It can load, save and send saved mails in background
+and also backup some mails.
+
+The Mail_Queue class puts mails in a temporary container,
+waiting to be fed to the MTA (Mail Transport Agent),
+and sends them later (e.g. a certain amount of mails
+every few minutes) by crontab or in other way.
+
+WWW: http://pear.php.net/package/Mail_Queue/
