@@ -3,7 +3,7 @@
 # Date created:		26 Oct 1996
 # Whom:			Ville Eerola <ve@sci.fi>
 #
-# $Id: Makefile,v 1.31 1997/05/30 07:30:38 max Exp $
+# $Id: Makefile,v 1.32 1997/06/09 23:49:42 max Exp $
 #
 
 DISTNAME=       fetchmail-3.9.7
@@ -17,6 +17,9 @@ CONFIGURE_ENV+= LDFLAGS="${CFLAGS}"
 MAN1=		fetchmail.1
 
 FDOC=   ${PREFIX}/share/doc/fetchmail
+
+post-patch:
+	cp /usr/include/md5.h ${WRKSRC}
 
 post-install:
 	install -d -m 555 -o ${DOCOWN} -g ${DOCGRP} ${FDOC}
