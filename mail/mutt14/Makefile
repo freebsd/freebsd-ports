@@ -4,7 +4,7 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.57 1999/02/16 15:32:31 ache Exp $
+# $Id: Makefile,v 1.58 1999/03/04 03:13:46 obrien Exp $
 
 DISTNAME=	mutt-0.95.4i
 PKGNAME=	mutt-0.95.4
@@ -37,6 +37,9 @@ RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 LIB_DEPENDS=	ncurses.4:${PORTSDIR}/devel/ncurses
 .elif defined(USE_SLANG)
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+.endif
+.if defined(PACKAGE_BUILDING)
+RUN_DEPENDS+=	urlview:${PORTSDIR}/textproc/urlview
 .endif
 
 DIST_SUBDIR=	mutt
