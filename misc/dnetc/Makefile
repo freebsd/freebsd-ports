@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	dnetc
-PORTVERSION=	2.8012.465
+PORTVERSION=	2.8010.462
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/%SUBDIR%/ \
 		http://http.distributed.net/pub/dcti/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION:S/^/v/:R}
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "i386"
-DISTFILES=	dnetc465-freebsd-x86-elf.tar.gz
+DISTFILES=	dnetc${PORTVERSION:E}-freebsd-x86-elf.tar.gz
 .elif ${ARCH} == "alpha"
 BROKEN=		"Not immediately available.  Please try again tomorrow."
 .endif
@@ -26,7 +26,7 @@ BROKEN=		"dnetc is not available for your version of FreeBSD.  Please upgrade."
 BROKEN=		"No version is currently available for your system.  Please try again later."
 .endif
 
-.if exists(/usr/local/distributed.net/rc5des)
+.if exists(${PREFIX}/distributed.net/rc5des)
 BROKEN=		"rc5des/dnetc conflict: Please deinstall all rc5des ports/packages first."
 .endif
 
