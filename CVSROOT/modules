@@ -6835,6 +6835,7 @@ shmap		ports/devel/shmap
 shntool		ports/audio/shntool
 shorten		ports/audio/shorten
 shout		ports/audio/shout
+showgrammar	ports/devel/showgrammar
 showimg		ports/graphics/showimg
 showmount	src/usr.bin/showmount
 shtool		ports/devel/shtool
