@@ -45,6 +45,7 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 # WITH_MYSQL	- allow authentitation via mysql
 # WITH_MYSQL_REPLICATION - enables MySQL database replication
 # WITH_MYSQL_LIMITS - enables the MySQL mailbox limit code
+# WITH_PGSQL	- allow authentication via PostgreSQL
 # WITH_SYBASE   - allow authentication via Sybase (NOT TESTED!)
 # WITH_ORACLE   - allow authentication via Oracle (NOT TESTED!)
 # WITH_VALIAS   - enable valias processing
@@ -70,6 +71,7 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 #		  v - verbose success and errors with passwords
 # WITHOUT_AUTH_LOG - disables authentication logging
 # WITH_MYSQL_LOG - enable logging to a MySQL database
+# WITH_PGSQL_LOG - enable logging to a PostgreSQL database
 # QMAIL_DIR     - location of qmail directory
 # PREFIX	- installation area for vpopmail (see comment below)
 # VCHKPW_GID	- the group ID of the new vchkpw group (89)
@@ -88,6 +90,11 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 # WITH_MYSQL_READ_SERVER, WITH_MYSQL_READ_USER, WITH_MYSQL_READ_PASSWD
 # WITH_MYSQL_UPDATE_SERVER, WITH_MYSQL_UPDATE_USER, WITH_MYSQL_UPDATE_PASSWD
 # Those variables, if defined, override WITH_MYSQL_{SERVER,USER,PASSWD}
+#
+# PostgreSQL database configuration options
+#
+# WITH_PGSQL_USER - the username for connecting to the PostgreSQL server (postgres)
+# WITH_PGSQL_DB - the name of the PostgreSQL database to use (vpopmail)
 #
 # Oracle database configuration options
 #
@@ -145,6 +152,20 @@ WITH_MYSQL_PASSWD?=		secret
 WITH_MYSQL_READ_PASSWD?=	${WITH_MYSQL_PASSWD}
 WITH_MYSQL_UPDATE_PASSWD?=	${WITH_MYSQL_PASSWD}
 WITH_MYSQL_DB?=			vpopmail
+.endif
+
+.if defined(WITH_POSTGRESQL)
+WITH_PGSQL=	yes
+.endif
+
+.if defined(WITH_PGSQL)
+POSTGRESQL_PORT?=	databases/postgresql-client
+LIB_DEPENDS+=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+CONFIGURE_ARGS+=	--enable-postgres=y
+
+.if defined(WITH_PGSQL_LOG)
+CONFIGURE_ARGS+=	--enable-pgsql-logging=y
+.endif
 .endif
 
 .include <bsd.port.pre.mk>
@@ -263,6 +284,14 @@ post-patch:
 
 pre-configure:
 	@PKG_PREFIX=${PREFIX}/vpopmail ${PERL5} ${PKGINSTALL}
+.if defined(WITH_PGSQL)
+.if defined(WITH_PGSQL_DB)
+	${REINPLACE_CMD} -E -e "s/(#define DB.*)vpopmail(.*)/\1${WITH_PGSQL_DB}\2/" ${WRKSRC}/vpgsql.h
+.endif
+.if defined(WITH_PGSQL_USER)
+	${REINPLACE_CMD} -E -e "s/(#define PG_CONNECT.*)postgres(.*)/\1${WITH_PGSQL_USER}\2/" ${WRKSRC}/vpgsql.h
+.endif
+.endif
 .if defined(WITH_ORACLE)
 .if defined(WITH_ORACLE_SERVICE)
 	${REINPLACE_CMD} -E -e "s/(#define ORACLE_SERVICE.*)jimmy(.*)/\1${WITH_ORACLE_SERVICE}\2/" ${WRKSRC}/voracle.h
