@@ -18,6 +18,7 @@ COMMENT=	Multi-lingual unicode text editor with TTF support
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
+USE_BZIP2=	YES
 USE_XLIB=	YES
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib" \
