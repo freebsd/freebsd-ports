@@ -1,4 +1,4 @@
 bin/bfe2
-share/bfe/bferc.sample
-share/bfe/README.bferc
-@dirrm share/bfe
+%%DATADIR%%/bferc.sample
+%%DATADIR%%/README.bferc
+@dirrm %%DATADIR%%
