@@ -139,6 +139,7 @@
     SUBDIR += p5-Gnome2-VFS
     SUBDIR += p5-Gtk
     SUBDIR += p5-Gtk2
+    SUBDIR += p5-Gtk2-Html2
     SUBDIR += p5-GtkXmHTML
     SUBDIR += p5-Prima
     SUBDIR += p5-Tcl-Tk

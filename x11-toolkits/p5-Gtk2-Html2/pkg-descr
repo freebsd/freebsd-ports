@@ -1,0 +1,2 @@
+The Gtk2::Html2 extension allows a perl developer to use the gtkhtml2 html
+display widget with Gtk2-Perl.
