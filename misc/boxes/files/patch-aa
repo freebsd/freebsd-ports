@@ -1,0 +1,11 @@
+--- ./src/regexp/Makefile.orig	Sun Oct 20 17:56:12 2002
++++ ./src/regexp/Makefile	Sun Oct 20 17:56:19 2002
+@@ -32,7 +32,7 @@
+ #============================================================================
+ 
+ 
+-CFLAGS   = -traditional -O -I. $(CFLAGS_ADDTL)
++CFLAGS   += -I. $(CFLAGS_ADDTL)
+ 
+ ALL_CL   = regexp/regexp.c regexp/regsub.c
+ C_SRC    = $(notdir $(ALL_CL))

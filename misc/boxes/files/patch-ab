@@ -1,0 +1,13 @@
+--- ./src/Makefile.orig	Sun Oct 20 17:58:59 2002
++++ ./src/Makefile	Sun Oct 20 17:59:05 2002
+@@ -78,8 +78,8 @@
+ 
+ LEX        = flex
+ YACC       = bison
+-CC         = gcc
+-CFLAGS     = -ansi -I. -Iregexp -Wall -W $(CFLAGS_ADDTL)
++CC         ?= cc
++CFLAGS     += -ansi -I. -Iregexp -Wall -W $(CFLAGS_ADDTL)
+ LDFLAGS    = -Lregexp
+ 
+ GEN_HDR    = parser.h boxes.h
