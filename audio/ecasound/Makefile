@@ -7,6 +7,7 @@
 
 PORTNAME=	ecasound
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -21,6 +22,9 @@ USE_AUTOCONF=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
+CONFIGURE_ARGS+=	--enable-sys-readline
+MAKE_ENV+=      ${CONFIGURE_ENV}
+
 .if defined(WITH_MPG123)
 RUN_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
 .endif
@@ -34,6 +38,11 @@ RUN_DEPENDS+=	mikmod:${PORTSDIR}/audio/mikmod
 .endif
 
 .if defined(WITH_AUDIOFILE)
+# very crappy hack to detect audiofile properly
+CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include" \
+                LDFLAGS="-L${LOCALBASE}/lib" \
+                CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
+		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}"
 LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 .else
 CONFIGURE_ARGS+=	--disable-audiofile
@@ -43,21 +52,19 @@ CONFIGURE_ARGS+=	--disable-audiofile
 #USE_PYTHON=	yes
 #PLIST_SUB+=	WITH_PYECASOUND=""
 #.else
-#CONFIGURE_ARGS+=	--disable-pyecasound
-#PLIST_SUB+=	WITH_PYECASOUND="@comment "
+CONFIGURE_ARGS+=	--disable-pyecasound
+PLIST_SUB+=	WITH_PYECASOUND="@comment "
 #.endif
 
 MAN1=		ecasound-iam.1 ecasound.1 ecatools.1
 MAN5=		ecasoundrc.5
 
-#post-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ecasound
 	${MKDIR} ${PREFIX}/share/doc/ecasound/programmers_guide
 	${MKDIR} ${PREFIX}/share/doc/ecasound/users_guide
-	${INSTALL_MAN} ${WRKSRC}/Documentation/*.html \
-		${WRKSRC}/Documentation/*.txt \
+	${INSTALL_MAN} ${WRKSRC}/Documentation/*.html ${WRKSRC}/Documentation/*.txt \
 		${PREFIX}/share/doc/ecasound
 	${INSTALL_MAN} ${WRKSRC}/Documentation/programmers_guide/*.html \
 		${PREFIX}/share/doc/ecasound/programmers_guide
