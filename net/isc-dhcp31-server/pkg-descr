@@ -5,15 +5,24 @@ DHCP Server (ISC dhcpd).  In this release, support for the core
 DHCP protocol is provided.  BOOTP support is also provided for
 backwards compatibility. 
 
-Version 3 of the ISC DHCP Distribution adds conditional behaviour,
-address pools with access control, and client classing.  An interim
-implementation of dynamic DNS updates for the server only is
-included, but is not supported. 
+Version 3, Beta 2 of the ISC DHCP Distribution includes the following
+features that are new since version 2.0: 
 
-Features in upcoming releases, starting with 3.1, will include the
-final asynchronous Dynamic DNS Support, DHCPv4 16-bit option codes,
-asynchronous DNS query resolution, DHCP Authentication, and support
-for a DHCP Interserver Protocol and live querying and update of the
-DHCP database.
+    * DHCP Failover Protocol support 
+    * OMAPI, an API for accessing and modifying the DHCP
+      server and client state. 
+    * Conditional behaviour 
+    * Storing arbitrary information on leases 
+    * Address pools with access control 
+    * Client classing 
+    * Address allocation restriction by class 
+    * Relay agent information option support 
+    * Dynamic DNS updates 
+    * Many bug fixes, performance enhancements, and minor
+      new DHCP protocol features. 
+
+A fully-featured implementation of dynamic DNS updates is included in
+this release.  There are no build dependencies with any BIND version.
+
 
 WWW: http://www.isc.org/products/DHCP/

@@ -14,13 +14,11 @@ DISTNAME=	dhcp-3.0b2pl5
 
 MAINTAINER=	obrien@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/include/bind/res_update.h:${PORTSDIR}/net/bind8
-
 Y2K=		http://www.isc.org/y2k.html
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-nsupdate
 
+MAN3=		dhcpctl.3 omapi.3
 MAN5=		dhclient.conf.5 dhclient.leases.5 dhcp-contrib.5 \
 		dhcp-eval.5 dhcp-options.5 dhcpd.conf.5 \
 		dhcpd.leases.5
