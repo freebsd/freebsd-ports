@@ -28,6 +28,9 @@ if [ "X$2" = X"POST-INSTALL" ]; then
 	    break
 	fi
 	file=`${ECHO} ${infofiles} | ${CUT} -d : -f $count`
+	if [ X%%EMACS%% = Xxemacs ]; then
+	    file=${file}.info
+	fi
 	nodename=`${ECHO} ${infonodes} | ${CUT} -d : -f $count`
 	nodeexp=`${ECHO} ${infonodeexps} | ${CUT} -d : -f $count`
 	if [ ! "`${GREP} \"START-INFO-DIR-ENTRY\" ${infodir}/${file}`" ]; then
