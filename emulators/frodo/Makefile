@@ -7,6 +7,7 @@
 
 PORTNAME=	frodo
 PORTVERSION=	4.1a
+PORTREVISION=	1
 CATEGORIES=	emulators tk83
 MASTER_SITES=	ftp://metalab.unc.edu/pub/micro/commodore/crossplatform/emulators/Frodo/ \
 		ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/Frodo/
@@ -15,7 +16,7 @@ DISTNAME=	FrodoV4_1a.Src
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Emulates a Commodore 64
 
-RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 USE_X_PREFIX=	yes
 ALL_TARGET=	Frodo
@@ -41,7 +42,7 @@ do-install:
 	${INSTALL_DATA} "${WRKDIR}/Frodo/${i} ROM" ${PREFIX}/libexec/frodo
 .endfor
 	${INSTALL_DATA} "${WRKDIR}/Frodo/Frodo Logo" ${PREFIX}/libexec/frodo
-	${CP} "${WRKDIR}/Frodo/TkGui.tcl" ${PREFIX}/libexec/frodo
+	${INSTALL_SCRIPT} "${WRKDIR}/Frodo/TkGui.tcl" ${PREFIX}/libexec/frodo
 	${MKDIR} ${PREFIX}/libexec/frodo/64prgs
 	@${TAR} -C ${WRKDIR}/Frodo/64prgs -cf - . | \
 		${TAR} -C ${PREFIX}/libexec/frodo/64prgs -xf -
