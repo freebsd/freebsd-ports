@@ -1,0 +1,181 @@
+bin/pgcalc2
+share/doc/HTML/en/pgcalc2/common
+share/doc/HTML/en/pgcalc2/index.docbook
+share/doc/HTML/en/pgcalc2/index.cache.bz2
+@dirrm share/doc/HTML/en/pgcalc2
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+%%DOCSDIR%%/alg_mode1.png
+%%DOCSDIR%%/alg_mode2.png
+%%DOCSDIR%%/apps_menu.png
+%%DOCSDIR%%/apps_menu_3.png
+%%DOCSDIR%%/apps_menu_4.png
+%%DOCSDIR%%/apps_menu_var.png
+%%DOCSDIR%%/cat_menu.png
+%%DOCSDIR%%/cmpl_format.png
+%%DOCSDIR%%/cnt.htm
+%%DOCSDIR%%/const_dlg.png
+%%DOCSDIR%%/hs10.htm
+%%DOCSDIR%%/hs100.htm
+%%DOCSDIR%%/hs110.htm
+%%DOCSDIR%%/hs120.htm
+%%DOCSDIR%%/hs130.htm
+%%DOCSDIR%%/hs140.htm
+%%DOCSDIR%%/hs150.htm
+%%DOCSDIR%%/hs160.htm
+%%DOCSDIR%%/hs170.htm
+%%DOCSDIR%%/hs180.htm
+%%DOCSDIR%%/hs181.htm
+%%DOCSDIR%%/hs182.htm
+%%DOCSDIR%%/hs190.htm
+%%DOCSDIR%%/hs20.htm
+%%DOCSDIR%%/hs200.htm
+%%DOCSDIR%%/hs21.htm
+%%DOCSDIR%%/hs210.htm
+%%DOCSDIR%%/hs22.htm
+%%DOCSDIR%%/hs23.htm
+%%DOCSDIR%%/hs230.htm
+%%DOCSDIR%%/hs24.htm
+%%DOCSDIR%%/hs240.htm
+%%DOCSDIR%%/hs25.htm
+%%DOCSDIR%%/hs250.htm
+%%DOCSDIR%%/hs26.htm
+%%DOCSDIR%%/hs260.htm
+%%DOCSDIR%%/hs27.htm
+%%DOCSDIR%%/hs270.htm
+%%DOCSDIR%%/hs28.htm
+%%DOCSDIR%%/hs280.htm
+%%DOCSDIR%%/hs29.htm
+%%DOCSDIR%%/hs290.htm
+%%DOCSDIR%%/hs30.htm
+%%DOCSDIR%%/hs300.htm
+%%DOCSDIR%%/hs310.htm
+%%DOCSDIR%%/hs320.htm
+%%DOCSDIR%%/hs330.htm
+%%DOCSDIR%%/hs340.htm
+%%DOCSDIR%%/hs350.htm
+%%DOCSDIR%%/hs360.htm
+%%DOCSDIR%%/hs380.htm
+%%DOCSDIR%%/hs390.htm
+%%DOCSDIR%%/hs40.htm
+%%DOCSDIR%%/hs400.htm
+%%DOCSDIR%%/hs410.htm
+%%DOCSDIR%%/hs420.htm
+%%DOCSDIR%%/hs440.htm
+%%DOCSDIR%%/hs450.htm
+%%DOCSDIR%%/hs460.htm
+%%DOCSDIR%%/hs465.htm
+%%DOCSDIR%%/hs470.htm
+%%DOCSDIR%%/hs480.htm
+%%DOCSDIR%%/hs490.htm
+%%DOCSDIR%%/hs50.htm
+%%DOCSDIR%%/hs500.htm
+%%DOCSDIR%%/hs520.htm
+%%DOCSDIR%%/hs530.htm
+%%DOCSDIR%%/hs540.htm
+%%DOCSDIR%%/hs550.htm
+%%DOCSDIR%%/hs560.htm
+%%DOCSDIR%%/hs580.htm
+%%DOCSDIR%%/hs590.htm
+%%DOCSDIR%%/hs60.htm
+%%DOCSDIR%%/hs600.htm
+%%DOCSDIR%%/hs610.htm
+%%DOCSDIR%%/hs630.htm
+%%DOCSDIR%%/hs650.htm
+%%DOCSDIR%%/hs655.htm
+%%DOCSDIR%%/hs657.htm
+%%DOCSDIR%%/hs660.htm
+%%DOCSDIR%%/hs670.htm
+%%DOCSDIR%%/hs680.htm
+%%DOCSDIR%%/hs690.htm
+%%DOCSDIR%%/hs70.htm
+%%DOCSDIR%%/hs700.htm
+%%DOCSDIR%%/hs710.htm
+%%DOCSDIR%%/hs715.htm
+%%DOCSDIR%%/hs720.htm
+%%DOCSDIR%%/hs730.htm
+%%DOCSDIR%%/hs75.htm
+%%DOCSDIR%%/hs750.htm
+%%DOCSDIR%%/hs760.htm
+%%DOCSDIR%%/hs770.htm
+%%DOCSDIR%%/hs780.htm
+%%DOCSDIR%%/hs790.htm
+%%DOCSDIR%%/hs80.htm
+%%DOCSDIR%%/hs85.htm
+%%DOCSDIR%%/hs90.htm
+%%DOCSDIR%%/idx.htm
+%%DOCSDIR%%/index.htm
+%%DOCSDIR%%/inp_complex.png
+%%DOCSDIR%%/inp_expression.png
+%%DOCSDIR%%/inp_unit1.png
+%%DOCSDIR%%/inp_unit2.png
+%%DOCSDIR%%/inp_unit4.png
+%%DOCSDIR%%/inp_vector.png
+%%DOCSDIR%%/math_menu.png
+%%DOCSDIR%%/mode_menu.png
+%%DOCSDIR%%/pgcalc2-htmldoc.desktop
+%%DOCSDIR%%/rn_formats.png
+%%DOCSDIR%%/rpn_mode1.png
+%%DOCSDIR%%/rpn_mode2.png
+%%DOCSDIR%%/screenshot1.png
+%%DOCSDIR%%/tvm_dlg1.png
+%%DOCSDIR%%/unit_converter.png
+%%DOCSDIR%%/unit_converter_cat.png
+%%DOCSDIR%%/unit_converter_unit.png
+%%DOCSDIR%%/unit_converter_value.png
+%%DOCSDIR%%/var_dlg1.png
+@dirrm %%DOCSDIR%%
+share/icons/hicolor/32x32/apps/pgcalc2.png
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+share/applnk/Office/PGCalculator/pgcalc2.desktop
+share/applnk/Office/PGCalculator/pgcalc2-BHP49G.desktop
+share/applnk/Office/PGCalculator/pgcalc2-Metallic.desktop
+share/applnk/Office/PGCalculator/pgcalc2-CFX-9850GB+.desktop
+share/applnk/Office/PGCalculator/pgcalc2-FX20.desktop
+share/applnk/Office/PGCalculator/pgcalc2-HP48GX.desktop
+share/applnk/Office/PGCalculator/pgcalc2-HP49G+.desktop
+@dirrm share/applnk/Office/PGCalculator
+@unexec rmdir %D/share/applnk/Office 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
+share/apps/pgcalc2/pgcalc2ui.rc
+share/apps/pgcalc2/skins/BHP49G/Backgrnd.bmp
+share/apps/pgcalc2/skins/BHP49G/HP49GFon.bmp
+share/apps/pgcalc2/skins/BHP49G/SmFonts8x8.bmp
+share/apps/pgcalc2/skins/BHP49G/skin.csk
+@dirrm share/apps/pgcalc2/skins/BHP49G
+share/apps/pgcalc2/skins/default/backgrnd.bmp
+share/apps/pgcalc2/skins/default/fonts.bmp
+share/apps/pgcalc2/skins/default/skin.csk
+share/apps/pgcalc2/skins/default/smfonts8x8.bmp
+@dirrm share/apps/pgcalc2/skins/default
+share/apps/pgcalc2/skins/Metallic/Backgrnd.bmp
+share/apps/pgcalc2/skins/Metallic/Fonts.bmp
+share/apps/pgcalc2/skins/Metallic/SmFonts7x8.bmp
+share/apps/pgcalc2/skins/Metallic/skin.csk
+@dirrm share/apps/pgcalc2/skins/Metallic
+share/apps/pgcalc2/skins/CFX-9850GB+/cfx9850gb+.bmp
+share/apps/pgcalc2/skins/CFX-9850GB+/fonts.bmp
+share/apps/pgcalc2/skins/CFX-9850GB+/smfonts7x8.bmp
+share/apps/pgcalc2/skins/CFX-9850GB+/skin.csk
+@dirrm share/apps/pgcalc2/skins/CFX-9850GB+
+share/apps/pgcalc2/skins/FX20/fx20.bmp
+share/apps/pgcalc2/skins/FX20/fonts.bmp
+share/apps/pgcalc2/skins/FX20/smfonts7x8.bmp
+share/apps/pgcalc2/skins/FX20/skin.csk
+@dirrm share/apps/pgcalc2/skins/FX20
+share/apps/pgcalc2/skins/HP48GX/Backgrnd.bmp
+share/apps/pgcalc2/skins/HP48GX/Fonts.bmp
+share/apps/pgcalc2/skins/HP48GX/skin.csk
+share/apps/pgcalc2/skins/HP48GX/SmFonts7x8.bmp
+@dirrm share/apps/pgcalc2/skins/HP48GX
+share/apps/pgcalc2/skins/HP49G+/Backgrnd.bmp
+share/apps/pgcalc2/skins/HP49G+/HP49GFon.bmp
+share/apps/pgcalc2/skins/HP49G+/smfonts7x8.bmp
+share/apps/pgcalc2/skins/HP49G+/skin.csk
+@dirrm share/apps/pgcalc2/skins/HP49G+
+@dirrm share/apps/pgcalc2/skins
+@dirrm share/apps/pgcalc2
+@unexec rmdir %D/share/apps 2>/dev/null || true

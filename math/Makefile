@@ -184,6 +184,7 @@
     SUBDIR += pear-Structures_Graph
     SUBDIR += petsc
     SUBDIR += petsc-mpich
+    SUBDIR += pgcalc
     SUBDIR += php4-bcmath
     SUBDIR += php4-gmp
     SUBDIR += php5-bcmath
