@@ -1,0 +1,31 @@
+%%PHPUA%%/images/plugin_cod/maps/mp_brecourt.jpg
+%%PHPUA%%/images/plugin_cod/maps/mp_carentan.jpg
+%%PHPUA%%/images/plugin_cod/maps/mp_chateau.jpg
+%%PHPUA%%/images/plugin_cod/maps/mp_dawnville.jpg
+%%PHPUA%%/images/plugin_cod/maps/mp_depot.jpg
+%%PHPUA%%/images/plugin_cod/maps/mp_harbor.jpg
+%%PHPUA%%/images/plugin_cod/maps/mp_hurtgen.jpg
+%%PHPUA%%/images/plugin_cod/maps/mp_pavlov.jpg
+%%PHPUA%%/images/plugin_cod/maps/mp_powcamp.jpg
+%%PHPUA%%/images/plugin_cod/maps/mp_railyard.jpg
+%%PHPUA%%/images/plugin_cod/maps/mp_rocket.jpg
+%%PHPUA%%/images/plugin_cod/maps/mp_ship.jpg
+%%PHPUA%%/images/templates/default/plugin_cod/unavailable.jpg
+%%PHPUA%%/plugins/plugin_cod/plugin_cod.inc
+%%PHPUA%%/plugins/plugin_cod/plugin_cod_mode_info.inc
+%%PHPUA%%/plugins/plugin_cod/plugin_cod_mode_rules.inc
+%%PHPUA%%/plugins/plugin_cod/plugin_cod_mode_watch.inc
+%%PHPUA%%/templates/default/plugin_cod/info.tpl
+%%PHPUA%%/templates/default/plugin_cod/rules.tpl
+%%PHPUA%%/templates/default/plugin_cod/watch.js
+%%PHPUA%%/templates/default/plugin_cod/watch.tpl
+%%PHPUA%%/templates/default/plugin_cod/x.js
+%%PHPUA%%/templates/javascript/plugin_cod/info.tpl
+%%PHPUA%%/templates/wap/plugin_cod/info.tpl
+@dirrm %%PHPUA%%/templates/wap/plugin_cod
+@dirrm %%PHPUA%%/templates/javascript/plugin_cod
+@dirrm %%PHPUA%%/templates/default/plugin_cod
+@dirrm %%PHPUA%%/plugins/plugin_cod
+@dirrm %%PHPUA%%/images/templates/default/plugin_cod
+@dirrm %%PHPUA%%/images/plugin_cod/maps
+@dirrm %%PHPUA%%/images/plugin_cod

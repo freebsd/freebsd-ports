@@ -327,6 +327,7 @@
     SUBDIR += pentix
     SUBDIR += phalanx
     SUBDIR += phpua-bf
+    SUBDIR += phpua-cod
     SUBDIR += phpua-engine
     SUBDIR += phpua-hl
     SUBDIR += phpua-q3
