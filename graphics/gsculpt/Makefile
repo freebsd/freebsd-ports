@@ -23,10 +23,6 @@ USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s,-O3 -Wall -Werror,${CXXFLAGS},g ; \
 		s,gtk-config,${GTK_CONFIG},g ; \

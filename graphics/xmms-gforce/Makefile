@@ -25,10 +25,6 @@ RESTRICTED=	"Non-commercial use only"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 .if defined(WANT_DGA)
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	gforce-1.1.6xp3.dga.patch.gz

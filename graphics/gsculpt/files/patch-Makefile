@@ -1,0 +1,27 @@
+--- Makefile.orig	Mon Jul 21 19:59:12 2003
++++ Makefile	Mon Jul 21 19:59:38 2003
+@@ -27,7 +27,6 @@
+ 
+ # C
+ 
+-CC     := gcc
+ CFLAGS  = ${DEPENDFLAGS}
+ 
+ %.o : %.c
+@@ -35,7 +34,6 @@
+ 
+ # C++
+ 
+-CXX      := g++
+ CXXFLAGS  = ${DEPENDFLAGS}
+ 
+ %.o : %.cc
+@@ -57,7 +55,7 @@
+ 
+ # linker
+ 
+-LINKER    := g++
++LINKER    := ${CXX}
+ LDFLAGS    = 
+ LOADLIBES := -O3 -lm `gtk-config --libs`
+ 
