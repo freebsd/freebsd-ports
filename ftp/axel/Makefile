@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	axel
-PORTVERSION=	1.0
+PORTVERSION=	1.0a
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.lintux.cx/downloads/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext-old
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/man --i18n=1
+CONFIGURE_ARGS=	-prefix=${PREFIX} --mandir=${PREFIX}/man --i18n=1
 
 MAN1=		axel.1
 
