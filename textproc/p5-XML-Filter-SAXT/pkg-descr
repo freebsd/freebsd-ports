@@ -1,0 +1,9 @@
+SAXT is like the Unix 'tee' command in that it multiplexes the input
+stream to several output streams.  In this case, the input stream is a
+PerlSAX event producer (like XML::Parser::PerlSAX) and the output
+streams are PerlSAX handlers or filters.
+
+WWW: http://search.cpan.org/search?dist=XML-Filter-SAXT
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
