@@ -1,9 +1,9 @@
---- libcqcam/camera.C.orig	Tue Apr 20 06:33:10 1999
-+++ libcqcam/camera.C	Sat Jul  8 11:51:06 2000
-@@ -18,7 +18,6 @@
-  */
+--- libcqcam/camera.C.orig	Thu Jul 12 03:44:46 2001
++++ libcqcam/camera.C	Sat Jul 14 00:08:57 2001
+@@ -19,7 +19,6 @@
  
  #include <stdio.h>
+ #include <stdlib.h>
 -#include <string.h>
  #include <unistd.h>
  
