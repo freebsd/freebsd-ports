@@ -169,6 +169,6 @@ fi
  echo "	@\${ECHO} \"--------------------------------------------------------\""
  echo "	@\${ECHO} \"*** In any case of trouble please read             ***  \""
  echo "	@\${ECHO} \"   the apsfilter handbook: handbook.html                \""
- echo "	@\${ECHO} \"   and FAQ, HOWTO-BUGREPORTS, TROUBLESHOOTING           \""
+ echo "	@\${ECHO} \"   and FAQ, HOWTO-BUGREPORTS                            \""
  echo "	@\${ECHO} \"   under ${PREFIX}/share/doc/apsfilter/                 \""
  echo "	@\${ECHO} \"   or visit http://www.apsfilter.org/support.html       \""

@@ -1,21 +1,23 @@
-This is the new Apsfilter-STABLE release V 6.0.0
-
-This version has been in use since several months without trouble.
-So this version completely replaces the old -STABLE version 5.4.2.
-
-As usual report trouble / suggestions / comments to:
-
-	apsfilter-stable@apsfilter.org
-
 Apsfilter is a magic printfilter, that allows you to print different document
 types "automagically" without having to convert them manually into something
-which is understood by your lineprinter. Apsfilter supports lots of file and
-compression types: gzip, bzip, compress, freeze, pack, ASCII, BMP,
-Data (data,PCL,...), English, TeX DVI, FIG, GIF, Group 3 Fax, HTML, JPEG,
-Mail/News, PBM/PNM/PPM, PC Bitmap Data, PDF, Postscript(tm), raw, script
-(shell,..), Text, sunraster, tiff, roff (nroff, groff, troff) and lots
-more in V 6.0.0. Docu concerning that is in the pipeline ...
+which is understood by your lineprinter. Apsfilter development started in 1994,
+so apsfilter is now a mature and powerful printing solution for any flavour of
+Unix running lpd or LPRng as line printer scheduler.
 
-Example: lpr -C duplex:high:presentation:glossy ascii.Z test.gif pic.tiff ...
+Apsfilter supports lots of file and compression types. Its even possible to
+print compressed documents. Apsfilter supports printing on local as well as
+on Appletalk-, Unix- and Windows remote printers.
+
+General and "per printer-queue" based config files allow you to configure
+the printer for your needs. Additionally lpr commandline options, -C for
+lpd and -Z for LPRng, allow you to change printing parameters like print
+quality, orientation, duplex mode, etc... "on the fly" without having to
+reconfigure any config file.
+
+A SETUP script helps you to test various supported ghostscript drivers prior
+installation. SETUP finally makes the necessary entries in /etc/printcap,
+creates spool directories and apsfilter default config files as needed.
+A handbook in HTML is now available. Support only via apsfilter mailinglists,
+see homepage !
 
 WWW:	http://www.apsfilter.org/
