@@ -7,7 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math cad parallel
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Meta2/Scilab/distributions/
 EXTRACT_SUFX=	.src.tar.gz
@@ -21,7 +21,7 @@ RUN_DEPENDS=	xless:${PORTSDIR}/misc/xless \
 		wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
 		pvm:${PORTSDIR}/net/pvm
 
-PVM_ROOT=	${PREFIX}/lib/pvm
+PVM_ROOT=	${LOCALBASE}/lib/pvm
 
 NO_CDROM=	"Don't sell for profit."
 
@@ -29,12 +29,16 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--without-xless --with-tk \
-		--with-tk-library=${PREFIX}/lib --with-tk-include=${PREFIX}/include/tk8.3 \
-		--with-tcl-library=${PREFIX}/lib --with-tcl-include=${PREFIX}/include/tcl8.3 \
-		--with-xaw3d
+		--with-tk-library=${LOCALBASE}/lib \
+		--with-tk-include=${LOCALBASE}/include/tk8.3 \
+		--with-tcl-library=${LOCALBASE}/lib \
+		--with-tcl-include=${LOCALBASE}/include/tcl8.3 \
+		--with-xaw3d \
+		--x-include=${X11BASE}/include \
+		--x-libraries=${X11BASE}/lib
 
-CONFIGURE_ENV=	PVM_ROOT=${PVM_ROOT} PVM_LIB=${PREFIX}/lib
-MAKE_ENV=	PVM_INCLUDE=${PREFIX}/include
+CONFIGURE_ENV=	PVM_ROOT=${PVM_ROOT} PVM_LIB=${LOCALBASE}/lib X11BASE=${X11BASE}
+MAKE_ENV=	PVM_INCLUDE=${LOCALBASE}/include
 
 post-extract:
 	${RM} ${WRKSRC}/examples/callsci/callsciJava/config/config
