@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	lsd-fpw
-PORTVERSION=	3.0
-PORTREVISION=	1
+PORTVERSION=	3.0.1
+PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/lsd/
 DISTNAME=	${PORTNAME}${PORTVERSION}
