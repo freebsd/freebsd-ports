@@ -1,6 +1,21 @@
---- Makefile.orig	Fri Sep 17 14:20:52 1999
-+++ Makefile	Fri Sep 17 14:21:05 1999
-@@ -10,13 +10,13 @@
+--- Makefile.orig	Tue Aug 24 03:48:00 1999
++++ Makefile	Sat Feb  5 22:30:00 2000
+@@ -1,22 +1,24 @@
+ 
+ RSA_KEY_LENGTH	=	1024
+ 
+-CFLAGS	=	-g -DDEBUG
++CFLAGS	?=	-O2
++CFLAGS	+=	-g -DDEBUG $(OPENSSL_CFLAGS)
+ # CFLAGS	=	-O6 -mpentium
+-CC	=	cc $(CFLAGS)
+-INC	=	-I/usr/local/include
+-LIB	=	-L/usr/local/lib
++CC	?=	cc
++CC	+=	$(CFLAGS)
++INC	=	-I$(OPENSSLINC)
++LIB	=	-L$(OPENSSLLIB)
+ 
  all: rsa_kg pkey_gen tund keygen
  
  rsa_kg: rsa_kg.c tund.h

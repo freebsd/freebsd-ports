@@ -12,11 +12,7 @@ MASTER_SITES=	ftp://ftp.chg.ru/pub/networking/freebsd/
 
 MAINTAINER=	ks@itp.ac.ru
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcrypto.a:${PORTSDIR}/security/openssl
-
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-MAKE_ENV+=	EXTRA_SSL_LIBS="-lRSAglue -lrsaref"
-.endif
+USE_OPENSSL=   RSA
 
 MAN8=		tund.8
 MANCOMPRESSED=	yes
