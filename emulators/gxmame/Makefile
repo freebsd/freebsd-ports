@@ -7,6 +7,7 @@
 
 PORTNAME=	gxmame
 PORTVERSION=	0.34b
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,6 +27,8 @@ ONLY_FOR_ARCHS=	i386
 
 DOCDIR=		share/doc/${PORTNAME}
 GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS=	--with-xmame-dir=${X11BASE}/share/xmame
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|$$(top_builddir)/./mkinstalldirs|./mkinstalldirs|' ${WRKSRC}/intl/Makefile
