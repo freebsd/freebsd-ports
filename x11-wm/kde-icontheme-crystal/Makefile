@@ -14,8 +14,6 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	olgeni@FreeBSD.org
 
-BROKEN=		"Does not install"
-
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 
@@ -23,6 +21,7 @@ post-extract:
 		@${FIND} ${WRKSRC} -name .xvpics | ${XARGS} ${RM} -r
 
 do-install:
+		@${MKDIR} ${PREFIX}/share/icons
 		@${CP} -r ${WRKSRC}/Crystal ${PREFIX}/share/icons/
 		@${CHMOD} -R a=rX,u+w ${PREFIX}/share/icons/Crystal
 

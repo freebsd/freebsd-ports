@@ -732,3 +732,4 @@ share/icons/Crystal/kdm/pinguim-user2.png
 @dirrm share/icons/Crystal/16x16/actions
 @dirrm share/icons/Crystal/16x16
 @dirrm share/icons/Crystal
+@unexec rmdir %D/share/icons || true 2>/dev/null
