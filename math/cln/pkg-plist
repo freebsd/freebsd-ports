@@ -1,8 +1,4 @@
 bin/cln-config
-share/aclocal/cln.m4
-@unexec install-info --delete %D/info/cln.info %D/info/dir
-info/cln.info
-@exec install-info %D/info/cln.info %D/info/dir
 include/cln/GV.h
 include/cln/GV_complex.h
 include/cln/GV_integer.h
@@ -81,26 +77,35 @@ include/cln/univpoly_modint.h
 include/cln/univpoly_rational.h
 include/cln/univpoly_real.h
 include/cln/version.h
-@dirrm include/cln
+@unexec install-info --delete %D/info/cln.info %D/info/dir
+info/cln.info
+@exec install-info %D/info/cln.info %D/info/dir
 lib/libcln.a
-lib/libcln.la
 lib/libcln.so
 lib/libcln.so.2
-share/cln/html/cln_1.html
-share/cln/html/cln_10.html
-share/cln/html/cln_11.html
-share/cln/html/cln_12.html
-share/cln/html/cln_13.html
-share/cln/html/cln_2.html
-share/cln/html/cln_3.html
-share/cln/html/cln_4.html
-share/cln/html/cln_5.html
-share/cln/html/cln_6.html
-share/cln/html/cln_7.html
-share/cln/html/cln_8.html
-share/cln/html/cln_9.html
-share/cln/html/cln_toc.html
-share/cln/dvi/cln.dvi
-@dirrm share/cln/html
-@dirrm share/cln/dvi
-@dirrm share/cln
+share/aclocal/cln.m4
+%%PORTDOCS%%share/doc/cln/dvi/cln.dvi
+%%PORTDOCS%%share/doc/cln/html/cln.html
+%%PORTDOCS%%share/doc/cln/html/cln_1.html
+%%PORTDOCS%%share/doc/cln/html/cln_10.html
+%%PORTDOCS%%share/doc/cln/html/cln_11.html
+%%PORTDOCS%%share/doc/cln/html/cln_12.html
+%%PORTDOCS%%share/doc/cln/html/cln_13.html
+%%PORTDOCS%%share/doc/cln/html/cln_14.html
+%%PORTDOCS%%share/doc/cln/html/cln_15.html
+%%PORTDOCS%%share/doc/cln/html/cln_16.html
+%%PORTDOCS%%share/doc/cln/html/cln_2.html
+%%PORTDOCS%%share/doc/cln/html/cln_3.html
+%%PORTDOCS%%share/doc/cln/html/cln_4.html
+%%PORTDOCS%%share/doc/cln/html/cln_5.html
+%%PORTDOCS%%share/doc/cln/html/cln_6.html
+%%PORTDOCS%%share/doc/cln/html/cln_7.html
+%%PORTDOCS%%share/doc/cln/html/cln_8.html
+%%PORTDOCS%%share/doc/cln/html/cln_9.html
+%%PORTDOCS%%share/doc/cln/html/cln_abt.html
+%%PORTDOCS%%share/doc/cln/html/cln_ovr.html
+%%PORTDOCS%%share/doc/cln/html/cln_toc.html
+%%PORTDOCS%%@dirrm share/doc/cln/html
+%%PORTDOCS%%@dirrm share/doc/cln/dvi
+%%PORTDOCS%%@dirrm share/doc/cln
+@dirrm include/cln
