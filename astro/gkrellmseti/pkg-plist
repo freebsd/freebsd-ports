@@ -1,0 +1,5 @@
+libexec/gkrellm/plugins/seti.so
+%%PORTDOCS%%share/doc/seti/AUTHORS
+%%PORTDOCS%%share/doc/seti/README
+%%PORTDOCS%%share/doc/seti/TODO
+%%PORTDOCS%%@dirrm share/doc/seti

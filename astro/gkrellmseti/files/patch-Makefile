@@ -1,0 +1,28 @@
+--- Makefile.orig	Sat Aug 18 07:56:04 2001
++++ Makefile	Sat Oct 13 12:39:09 2001
+@@ -1,9 +1,9 @@
+-CFLAGS= -fpic -Wall `gtk-config --cflags` `imlib-config --cflags-gdk`
+-LDFLAGS= -shared -Wl
++CFLAGS+= -fpic -Wall `${GTK_CONFIG} --cflags` `${IMLIB_CONFIG} --cflags-gdk`
++LDFLAGS+= -shared -Wl
+ 
+ # uncomment the second DBGFLAGS line to make seti@home plugin
+ # be verbose when GKrellM is launched with the --debug option.
+-DBGFLAGS= -O3
++#DBGFLAGS= -O3
+ #DBGFLAGS=-DDEBUG
+ 
+ all: seti.so
+@@ -12,10 +12,10 @@
+ 	cp seti.so ${HOME}/.gkrellm/plugins/
+ 
+ seti.so: seti.o
+-	gcc $(LDFLAGS) -o seti.so seti.o
++	${CC} $(LDFLAGS) -o seti.so seti.o
+ 
+ seti.o: seti.c seti.h
+-	gcc $(CFLAGS) $(DBGFLAGS) -c seti.c
++	${CC} $(CFLAGS) $(DBGFLAGS) -c seti.c
+ 
+ tags:
+ 	ctags seti.c seti.h
