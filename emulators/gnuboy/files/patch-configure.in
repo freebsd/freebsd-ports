@@ -1,5 +1,5 @@
---- configure.in.orig	Sun Mar 11 15:13:27 2001
-+++ configure.in	Sun Mar 11 15:18:58 2001
+--- configure.in.orig	Sat Mar 24 13:26:19 2001
++++ configure.in	Mon Apr 30 02:19:53 2001
 @@ -79,12 +79,12 @@
  if test "$with_sdl" != "no" ; then
  AC_CHECK_PROG(SDL_CONFIG, sdl-config, yes)
@@ -17,3 +17,18 @@
  AC_MSG_WARN(SDL found but headers are missing!!)
  with_sdl=no
  ])], [with_sdl=no], $SDL_LIBS)
+@@ -152,13 +152,7 @@
+ *486*) CFLAGS="$CFLAGS -m486" ;;
+ esac
+ 
+-CFLAGS="$CFLAGS -O3 -DALLOW_UNALIGNED_IO \
+- -fstrength-reduce -fthread-jumps \
+- -fcse-follow-jumps -fcse-skip-blocks -frerun-cse-after-loop \
+- -fschedule-insns -fschedule-insns2 -fexpensive-optimizations \
+- -fforce-mem -fforce-addr" ;;
+-*) CFLAGS="$CFLAGS -O3" ;;
+-
++CFLAGS="$CFLAGS -DALLOW_UNALIGNED_IO" ;;
+ esac
+ 
+ if test "$enable_debug" != yes -a "$enable_profile" != yes ; then
