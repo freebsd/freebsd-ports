@@ -16,6 +16,10 @@ PRE-INSTALL)
 		echo 'Un-mounting linprocfs...'
 		umount linprocfs
 	fi
+	if [ -n "`mount | grep -w ^linproc`" ]; then
+		echo 'Un-mounting linproc...'
+		umount linproc
+	fi
 	;;
 POST-INSTALL)
 	if [ -n "`grep -w ^linprocfs /etc/fstab`" ]; then
@@ -27,6 +31,10 @@ DEINSTALL)
 	if [ -n "`mount | grep -w ^linprocfs`" ]; then
 		echo 'Un-mounting linprocfs...'
 		umount linprocfs
+	fi
+	if [ -n "`mount | grep -w ^linproc`" ]; then
+		echo 'Un-mounting linproc...'
+		umount linproc
 	fi
 	;;
 esac
