@@ -68,8 +68,8 @@ jre/lib/%%ARCH%%/libzip.so
 jre/lib/security/java.security
 jre/lib/rt.jar
 lib/kjc.jar
-share/kaffe/BUILD_ENVIRONMENT
-share/kaffe/license.terms
+%%DATADIR%%/BUILD_ENVIRONMENT
+%%DATADIR%%/license.terms
 @dirrm include/kaffe
 @dirrm jre/bin
 @dirrm jre/lib/%%ARCH%%
