@@ -11,6 +11,7 @@ MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/libgcrypt
 
 MAINTAINER=	arved@FreeBSD.org
+COMMENT=	"General purpose crypto library based on code used in GnuPG"
 
 USE_REINPLACE=	yes
 USE_PERL5=	yes

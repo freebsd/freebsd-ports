@@ -12,6 +12,7 @@ MASTER_SITES=	http://steghide.sourceforge.net/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 
 MAINTAINER=	arved@FreeBSD.org
+COMMENT=	"Steganography tool to hide data in binary files"
 
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 		mhash.2:${PORTSDIR}/security/mhash \

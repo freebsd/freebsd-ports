@@ -11,6 +11,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= arved
 
 MAINTAINER=	arved@FreeBSD.org
+COMMENT=	"Linux Audio Developer's Simple Plugin API"
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

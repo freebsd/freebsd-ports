@@ -11,7 +11,8 @@ CATEGORIES=		security kde
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
 
-MAINTAINER=		arved@FreeBSD.org
+MAINTAINER=	arved@FreeBSD.org
+COMMENT=	"Shell for integrating PGP/GnuPG into KDE"
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes

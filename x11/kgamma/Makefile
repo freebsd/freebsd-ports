@@ -11,7 +11,8 @@ CATEGORIES=		x11 kde
 MASTER_SITES=		http://download.berlios.de/kgamma/
 DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p./_pre/}
 
-MAINTAINER=		arved@FreeBSD.org
+MAINTAINER=	arved@FreeBSD.org
+COMMENT=	"KDE Control Center module for gamma calibration/correction of XFree86"
 
 LIB_DEPENDS= 		intl.4:${PORTSDIR}/devel/gettext
 

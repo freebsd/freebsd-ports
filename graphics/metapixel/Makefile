@@ -10,6 +10,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.complang.tuwien.ac.at/~schani/metapixel/
 
 MAINTAINER=	arved@FreeBSD.org
+COMMENT=	"Metapixel is a program for generating photomosaics"
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

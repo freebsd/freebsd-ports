@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}-2
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	arved@FreeBSD.org
+COMMENT=	"Audacity is a GUI editor for digital audio waveforms"
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	wx_gtk-2.2.2:${PORTSDIR}/x11-toolkits/wxgtk \
