@@ -26,7 +26,7 @@
 56.2,	10.2,	"ftp3.dk.FreeBSD.org"		# Skejby, Aarhus, Denmark (TDC Internet)
 59.92,	10.75,	"ftp.no.FreeBSD.org"		# Oslo, Norway (University of Oslo)
 60.19, 24.83, "nic.funet.fi"                   # Espoo, Finland
-60.2,   25.0, "ftp.fi.FreeBSD.org"             # Helsinki?, Finland
+60.22, 24.88, "ftp.fi.FreeBSD.org"             # Helsinki, Finland
 48.9,    2.4, "ftp.fr.FreeBSD.org"             # Paris, France
 50.1,   14.4, "ftp.cz.FreeBSD.org"             # Czech Republic
 #              "ftp.luth.se"                   # Sweden
