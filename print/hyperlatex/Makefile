@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Hyperlatex
-PORTVERSION=	2.3.1
+PORTVERSION=	2.5
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.cs.uni-magdeburg.de/pub/ipe/
 
