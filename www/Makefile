@@ -312,6 +312,6 @@
     SUBDIR += xswallow
     SUBDIR += znavigator
     SUBDIR += zope
-    SUBDIR += zope-ptk
+    SUBDIR += zope-cmf
 
 .include <bsd.port.subdir.mk>
