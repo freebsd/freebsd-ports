@@ -36,12 +36,8 @@ Acrobat4/Reader/intellinux/lib/libICC.so
 Acrobat4/Reader/intellinux/lib/libICC.so.1.0
 Acrobat4/Reader/intellinux/lib/libreadcore.so
 Acrobat4/Reader/intellinux/lib/libreadcore.so.4.0
-Acrobat4/Reader/intellinux/optional/ConfigSuite.api
-Acrobat4/Reader/intellinux/optional/Exerciser.api
-Acrobat4/Reader/intellinux/optional/GeneralSuite.api
-Acrobat4/Reader/intellinux/optional/MiscSuite.api
-Acrobat4/Reader/intellinux/plug_ins/AFString.js
-Acrobat4/Reader/intellinux/plug_ins/AForm.js
+Acrobat4/Reader/intellinux/plug_ins/JavaScripts/AFStrENU.js
+Acrobat4/Reader/intellinux/plug_ins/JavaScripts/AForm.js
 Acrobat4/Reader/intellinux/plug_ins/AcroForm.api
 Acrobat4/Reader/intellinux/plug_ins/Highlight.api
 Acrobat4/Reader/intellinux/plug_ins/ewh.api
@@ -60,7 +56,7 @@ bin/acroread4
 @exec echo "%D/Acrobat4/Reader/License.pdf"
 @dirrm Acrobat4/bin
 @dirrm Acrobat4/Reader/res
-@dirrm Acrobat4/Reader/intellinux/optional
+@dirrm Acrobat4/Reader/intellinux/plug_ins/JavaScripts
 @dirrm Acrobat4/Reader/intellinux/plug_ins
 @dirrm Acrobat4/Reader/intellinux/lib
 @dirrm Acrobat4/Reader/intellinux/bin
