@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	socklog
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://smarden.org/socklog/
 
@@ -26,7 +25,7 @@ do-configure:
 
 do-build:
 	cd ${WRKSRC} && package/compile
-	
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/*.1 ${MANPREFIX}/man/man1
