@@ -1,0 +1,33 @@
+This patch was downloaded from SourceForge, to which it was submitted
+Matt <mws at rochester.rr.com>, who wrote:
+
+	This patch fixes the Jet4 tab_num_rows_offset constant 
+	and changes mdb_read_row so it checks the row number 
+	against the number of rows in the table. 
+ 
+	I have some MDB files for which the normal logic in 
+	mdb_read_row fails. This patch solves the problem. 
+
+--- src/libmdb/data.c	2003-01-12 17:59:43.000000000 -0500
++++ src/libmdb/data.c	2003-01-23 14:42:57.000000000 -0500
+@@ -171,6 +171,9 @@
+ unsigned char null_mask[33]; /* 256 columns max / 8 bits per byte */
+ unsigned char isnull;
+ 
++	if (table->num_rows <= row)
++		return 0;
++
+ 	row_start = mdb_get_int16(mdb, (fmt->row_count_offset + 2) + (row*2)); 
+ 	row_end = mdb_find_end_of_row(mdb, row);
+ 
+--- src/libmdb/file.c	2003-01-12 17:59:43.000000000 -0500
++++ src/libmdb/file.c	2003-01-23 14:43:04.000000000 -0500
+@@ -20,7 +20,7 @@
+ #include "mdbtools.h"
+ 
+ MdbFormatConstants MdbJet4Constants = {
+-	4096, 0x0c, 12, 45, 47, 51, 55, 56, 63, 12, 15, 23, 5, 25
++	4096, 0x0c, 16, 45, 47, 51, 55, 56, 63, 12, 15, 23, 5, 25
+ };
+ MdbFormatConstants MdbJet3Constants = {
+ 	2048, 0x08, 12, 25, 27, 31, 35, 36, 43, 8, 13, 16, 1, 18
