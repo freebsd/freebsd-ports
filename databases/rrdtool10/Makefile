@@ -35,7 +35,7 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LATIN2)
-CONFIGURE_ARGS+=	--with-latin2
+CONFIGURE_ARGS+=	--enable-latin2
 .endif
 
 .if ${ARCH} == "amd64"
