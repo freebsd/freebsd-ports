@@ -33,8 +33,8 @@ USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
-BROKEN=		"Does not compile on alpha 5.x"
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
 .endif
 
 pre-build:
