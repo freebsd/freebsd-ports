@@ -18,6 +18,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' \
@@ -26,8 +27,5 @@ post-patch:
 
 pre-install:
 	${MKDIR} ${PREFIX}/include/gd
-
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
