@@ -18,10 +18,18 @@ EXTRA_PATCHES+=	${QMAIL_PORT_PATCHDIR}/patch-ab ${QMAIL_PORT_PATCHDIR}/patch-ac
 
 MAINTAINER=	lioux@FreeBSD.org
 
+.if !defined(WITH_LDAP2)
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap
+.else
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
+.endif
+
+.if defined(WITH_LDAP2)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}2
+.endif # WITH_LDAP2
 
 .if !defined(WITHOUT_TLS)
-PKGNAMESUFFIX=	-ldap-with_tls
+PKGNAMESUFFIX:= ${PKGNAMESUFFIX}-with_tls
 USE_OPENSSL=	yes
 .endif # WITHOUT_TLS
 
@@ -29,7 +37,7 @@ USE_OPENSSL=	yes
 MAIN_QMAIL_PORT_DNS_PATCH_BARRIER=	yes
 MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER=	yes
 
-LDAP_PATCH_DATE=	20010501
+LDAP_PATCH_DATE=	20011001a
 
 # Using default from master port, i.e., /var/qmail
 PREFIX?=	${QMAIL_PORT_PREFIX}
@@ -52,6 +60,7 @@ DOCFILES+=	${WRKSRC}/QLDAPINSTALL ${WRKSRC}/QLDAPNEWS \
 slaveport-pre-fetch: qmail-ldap-pre-fetch
 
 qmail-ldap-pre-fetch:
+	@${ECHO_MSG} "WITH_LDAP2=yes			builds with LDAP2 instead of LDAP"
 	@${ECHO_MSG} "WITHOUT_TLS=yes			disable SMTP TLS support"
 	@${ECHO_MSG} "WITHOUT_LDAP_CLUSTER=yes		disable cluster support"
 	@${ECHO_MSG} "WITHOUT_AUTOMAILDIRMAKE=yes	disable the auto-maildir-make feature"
@@ -59,24 +68,28 @@ qmail-ldap-pre-fetch:
 	@${ECHO_MSG} "WITH_LDAP_DEBUG=yes		enable the possibility to log and"
 	@${ECHO_MSG} "				debug imap and pop"
 	@${ECHO_MSG} "WITH_CLEARTEXTPASSWD=yes	use cleartext passwords"
+	@${ECHO_MSG} "WITH_DASH_EXT=yes		enable dash_ext extended mail addresses"
+	@${ECHO_MSG} "				add"
 
 slaveport-post-patch: qmail-ldap-post-patch
 
 qmail-ldap-post-patch:
 	@${PERL} -pi -ne "s|LDAPLIBS=-L/usr/local/lib|LDAPLIBS=-L${LOCALBASE}/lib|;s|LDAPINCLUDES=-I/usr/local/include|LDAPINCLUDES=-I${LOCALBASE}/include|" ${WRKSRC}/Makefile
-.if defined(WITHOUT_TLS)
-	@${PERL} -pi -ne "s|TLSON=|#TLSON=|;s|TLSINCLUDES=|#TLSINCLUDES=|;s|TLSLIBS=|#TLSLIBS=|;s|OPENSSLBIN=|#OPENSSLBIN=|" ${WRKSRC}/Makefile
-.else # !WITH_TLS
-	@${PERL} -pi -ne "s|TLSINCLUDES=-I/usr/local/include|TLSINCLUDES=-I${OPENSSLBASE}/include|;s|TLSLIBS=-L/usr/local/lib|TLSLIBS=-L${OPENSSLBASE}/lib|;s|OPENSSLBIN=/usr/local/bin/openssl|OPENSSLBIN=${OPENSSLBASE}/bin/openssl|" ${WRKSRC}/Makefile
+.if !defined(WITHOUT_TLS)
+	@${PERL} -pi -ne "s|#TLSON=|TLSON=|; \
+		s|#TLSINCLUDES=-I/usr/local/include|TLSINCLUDES=-I${OPENSSLBASE}/include|; \
+		s|#TLSLIBS=-L/usr/local/lib|TLSLIBS=-L${OPENSSLBASE}/lib|; \
+		s|#OPENSSLBIN=/usr/local/bin/openssl|OPENSSLBIN=${OPENSSLBASE}/bin/openssl|" \
+			${WRKSRC}/Makefile
 .endif # !WITHOUT_TLS
-.if defined(WITHOUT_LDAP_CLUSTER)
-	@${PERL} -pi -ne "s|LDAPFLAGS=-DQLDAP_CLUSTER|#LDAPFLAGS\+=-DQLDAP_CLUSTER|" ${WRKSRC}/Makefile
+.if !defined(WITHOUT_LDAP_CLUSTER)
+	@${PERL} -pi -ne "s|#LDAPFLAGS=-DQLDAP_CLUSTER|LDAPFLAGS\+=-DQLDAP_CLUSTER|" ${WRKSRC}/Makefile
 .endif # WITHOUT_LDAP_CLUSTER
-.if defined(WITHOUT_AUTOMAILDIRMAKE)
-	@${PERL} -pi -ne "s|MDIRMAKE=-DAUTOMAILDIRMAKE|#MDIRMAKE=-DAUTOMAILDIRMAKE|" ${WRKSRC}/Makefile
+.if !defined(WITHOUT_AUTOMAILDIRMAKE)
+	@${PERL} -pi -ne "s|#MDIRMAKE=-DAUTOMAILDIRMAKE|MDIRMAKE=-DAUTOMAILDIRMAKE|" ${WRKSRC}/Makefile
 .endif # WITHOUT_AUTOMAILDIRMAKE
-.if defined(WITHOUT_AUTOHOMEDIRMAKE)
-	@${PERL} -pi -ne "s|HDIRMAKE=-DAUTOHOMEDIRMAKE|#HDIRMAKE=-DAUTOHOMEDIRMAKE|" ${WRKSRC}/Makefile
+.if !defined(WITHOUT_AUTOHOMEDIRMAKE)
+	@${PERL} -pi -ne "s|#HDIRMAKE=-DAUTOHOMEDIRMAKE|HDIRMAKE=-DAUTOHOMEDIRMAKE|" ${WRKSRC}/Makefile
 .endif # WITHOUT_AUTOHOMEDIRMAKE
 .if defined(WITH_LDAP_DEBUG)
 	@${PERL} -pi -ne "s|#DEBUG=-DDEBUG|DEBUG=-DDEBUG|" ${WRKSRC}/Makefile
@@ -85,6 +98,10 @@ qmail-ldap-post-patch:
 	@${PERL} -pi -ne "s|# -DCLEARTEXTPASSWD to the LDAPFLAGS|LDAPFLAGS\+=-DCLEARTEXTPASSWD|" \
 		${WRKSRC}/Makefile
 .endif # WITH_CLEARTEXTPASSWD
+.if defined(WITH_DASH_EXT)
+	@${PERL} -pi -ne "s|^# -DDASH_EXT.*$$|LDAPFLAGS\+=-DDASH_EXT|" \
+		${WRKSRC}/Makefile
+.endif # WITH_DASH_EXT
 
 certificate:
 	@cd ${QMAIL_TLS_PORT} && ${MAKE} $@ clean
