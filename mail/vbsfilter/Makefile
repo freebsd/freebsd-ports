@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vbsfilter
-PORTVERSION=	1.3
+PORTVERSION=	1.7
 CATEGORIES=	mail
 MASTER_SITES=	http://aeschi.ch.eu.org/milter/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -17,7 +17,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
 
-CTARGETS+=	vbsfilter-1.3
+CTARGETS+=	vbsfilter-${PORTVERSION}
 CFLAGS+=	-Wall -I$(LOCALBASE)/include ${PTHREAD_CFLAGS:S=""==}
 FLAGS+=		${PTHREAD_LIBS}
 LDFLAGS+=	-L$(LOCALBASE)/lib
@@ -41,7 +41,7 @@ pre-fetch:
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${CP} ${_DISTDIR}vbsfilter-1.3.c ${WRKSRC}
+	@${CP} ${_DISTDIR}vbsfilter-${PORTVERSION}.c ${WRKSRC}
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/vbsfilter.sh \
 		> ${WRKSRC}/vbsfilter.sh
 
@@ -55,7 +55,8 @@ ${i}:
 do-build:	${CTARGETS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/vbsfilter-1.3 ${PREFIX}/libexec/vbsfilter
+	${INSTALL_PROGRAM} ${WRKSRC}/vbsfilter-${PORTVERSION} \
+		${PREFIX}/libexec/vbsfilter
 	${INSTALL_DATA} ${WRKSRC}/vbsfilter.sh \
 		${PREFIX}/etc/rc.d/vbsfilter.sh.sample
 
