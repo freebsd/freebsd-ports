@@ -14,6 +14,7 @@ MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	guile.4:${PORTSDIR}/lang/guile \
 		Imlib.5:${PORTSDIR}/graphics/imlib \
+		esd.2:${PORTSDIR}/audio/esound \
 		Xpm.4:${PORTSDIR}/graphics/xpm
 RUN_DEPENDS=	${X11BASE}/share/scwm/pixmaps/Animator.xpm:${PORTSDIR}/graphics/scwm-icons
 
