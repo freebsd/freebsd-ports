@@ -1,25 +1,23 @@
---- Makefile.orig	Fri Nov  3 03:33:08 2000
-+++ Makefile	Tue Jan 30 21:25:55 2001
-@@ -2,16 +2,16 @@
- # Makefile for pnm2ppa
- #
+--- Makefile.orig	Tue Feb 12 00:49:11 2002
++++ Makefile	Fri Jul 12 20:48:40 2002
+@@ -5,14 +5,14 @@
+ # paths to locations where the pnm2ppa binary, the configuration file,
+ # and the man page should be installed.   On some systems (like Solaris)
+ # the install command requires the syntax BINDIR="-f /usr/local/bin".
+-BINDIR="/usr/local/bin"
+-CONFDIR="/etc"
+-MANDIR="/usr/local/man/man1"
++BINDIR="${PREFIX}/bin"
++CONFDIR="${PREFIX}/etc"
++MANDIR="${PREFIX}/man/man1"
  
--INSTALLDIR=/usr/local/bin
--CONFDIR=/etc
--MANDIR=/usr/local/man/man1
-+INSTALLDIR=${PREFIX}/bin
-+CONFDIR=${PREFIX}/etc
-+MANDIR=${PREFIX}/man/man1
- 
+ #compiler and linker options:
 -CC=gcc
-+CC?=gcc
- INSTALL=install
- 
- # production build
--CFLAGS=-Wall -pedantic -O2 -g -DNDEBUG 
+-CFLAGS=-Wall -pedantic -O2 -g 
 -LDFLAGS=-lm
-+CFLAGS+=-DCONFDIR=\"$(CONFDIR)\" -DNDEBUG -I${LOCALBASE}/include
++CC?=gcc
++CFLAGS+=-DCONFDIR=\"$(CONFDIR)\" -I${LOCALBASE}/include
 +LDFLAGS=-lm -L${LOCALBASE}/lib -lgnugetopt
- OBJS = pnm2ppa.o syslog.o ppa.o image.o dither.o cutswath.o hash_ink.o gamma.o
- SRC =  pnm2ppa.c syslog.c ppa.c image.c dither.c cutswath.c hash_ink.c gamma.c
  
+ INSTALL=install
+ # Install under Linux and other versions with the -b (backup) option
