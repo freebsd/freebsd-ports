@@ -13,22 +13,8 @@
  
  
  CC = @CC@
--CFLAGS= @CFLAGS@ -DVERSION=\"$(VERSION)\" -DSYSCONFDIR=\"$(sysconfdir)\" -Wall -I . -I $(includedir)
-+CFLAGS= @CFLAGS@ $(CPPFLAGS) -DVERSION=\"$(VERSION)\" -DSYSCONFDIR=\"$(sysconfdir)\" -Wall -I . -I $(includedir)
+-CFLAGS= @CFLAGS@ -DVERSION=\"$(VERSION)\" -DSYSCONFDIR=\"$(sysconfdir)\"  -Wall -I .
++CFLAGS= @CFLAGS@ $(CPPFLAGS) -DVERSION=\"$(VERSION)\" -DSYSCONFDIR=\"$(sysconfdir)\" -Wall -I .
  SOURCES = main.c signals.c utils.c readline.c pty.c completion.c term.c  
  OBJECTS = main.o signals.o utils.o readline.o pty.o completion.o term.o
  TESTCLIENT=testclient
-@@ -50,10 +52,11 @@
- check:	@CHECK@
- 
- no_perl :
--	@echo "warning: test client not made because configure didn't find perl" 
-+	sed -e 's#\@PERLBIN\@#/usr/bin/perl#' $(TESTCLIENT).in > $(TESTCLIENT) &&\
-+        chmod a+x $(TESTCLIENT)
- 
- _testclient:
--	perl -p -e 's#\@PERLBIN\@#$(PERL)#' $(TESTCLIENT).in > $(TESTCLIENT) &&\
-+	sed -e 's#\@PERLBIN\@#$(PERL)#' $(TESTCLIENT).in > $(TESTCLIENT) &&\
-         chmod a+x $(TESTCLIENT)
- 
- _check:   $(TESTCLIENT) rlwrap
