@@ -5,3 +5,7 @@ installed sample file. Following that you will need to setup your
 database tables, you can use the output of
 %%%PREFIX%%%/sbin/mydns --create-tables
 as a template.
+
+If you're upgrading from a version before 0.9.12 then please read the
+instructions at http://mydns.bboy.net/ptr.html before running MyDNS
+
