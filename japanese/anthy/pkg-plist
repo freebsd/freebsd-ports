@@ -6,10 +6,10 @@ include/anthy/dicutil.h
 include/anthy/input.h
 lib/libanthy.a
 lib/libanthy.so
-lib/libanthy.so.0
+lib/libanthy.so.1
 lib/libanthydic.a
 lib/libanthydic.so
-lib/libanthydic.so.0
+lib/libanthydic.so.1
 lib/libanthyinput.a
 lib/libanthyinput.so
 lib/libanthyinput.so.0
@@ -31,6 +31,7 @@ share/anthy/v.depword
 %%ELISPDIR%%/anthy-conf.el
 %%ELISPDIR%%/anthy-dic.el
 %%ELISPDIR%%/anthy-isearch.el
+%%ELISPDIR%%/anthy-azik.el
 %%ELISPDIR%%/anthy.el
 %%ELISPDIR%%/leim-list.el
 @dirrm share/anthy
