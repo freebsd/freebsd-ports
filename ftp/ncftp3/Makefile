@@ -4,7 +4,7 @@
 # Date created:         4 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.54 1998/08/13 23:26:43 ache Exp $
+# $Id: Makefile,v 1.56 1998/08/14 00:22:06 ache Exp $
 #
 
 DISTNAME=	ncftp-3.0beta14-src
@@ -34,8 +34,8 @@ do-install:
 	@cd ${WRKSRC}/bin ; $(INSTALL_PROGRAM) \
 		ncftpbatch ncftpget ncftpls ncftpput ncftpbookmarks \
 		$(PREFIX)/bin
-	@$(INSTALL_DATA) $(WRKSRC)/Strn/libStrn.so.1 $(PREFIX)/lib
-	@$(INSTALL_DATA) $(WRKSRC)/libncftp/libncftp.so.2 $(PREFIX)/lib
+	@$(INSTALL_DATA) $(WRKSRC)/Strn/libStrn.so.1.0 $(PREFIX)/lib
+	@$(INSTALL_DATA) $(WRKSRC)/libncftp/libncftp.so.2.0 $(PREFIX)/lib
 	@${LDCONFIG} -m ${PREFIX}/lib
 	@$(INSTALL_MAN) $(WRKSRC)/doc/man/ncftp.1 $(PREFIX)/man/man1/ncftp3.1
 	@cd ${WRKSRC}/doc/man ; $(INSTALL_MAN) \

@@ -1,5 +1,5 @@
-lib/libStrn.so.1
-lib/libncftp.so.2
+lib/libStrn.so.1.0
+lib/libncftp.so.2.0
 @exec /sbin/ldconfig -m %D/lib
 @unexec /sbin/ldconfig -R
 bin/ncftp3
