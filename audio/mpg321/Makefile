@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpg321
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.5
 CATEGORIES=	audio
 MASTER_SITES=	http://people.debian.org/~drew/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -17,6 +17,7 @@ LIB_DEPENDS=	ao.1:${PORTSDIR}/audio/libao
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmad.a:${PORTSDIR}/audio/mad
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-mpg123-symlink
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
