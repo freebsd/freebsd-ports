@@ -1,15 +1,15 @@
---- src/machine.h.orig	Mon Oct 23 10:59:26 1995
-+++ src/machine.h	Tue Sep 14 04:13:45 1999
+--- src/machine.h.orig	Mon Oct 23 03:59:26 1995
++++ src/machine.h	Sat Mar 31 02:57:59 2001
 @@ -33,6 +33,16 @@
  #      define M_MACHINE            "dec_alpha"
  #      define M_dec_alpha
  
-+#   elif defined(__FreeBSD__) && defined(i386)
++#   elif defined(__FreeBSD__) && defined(__i386__)
 +
 +	#define M_MACHINE          "i386_freebsd"
 +	#define M_i386_freebsd
 +
-+#   elif defined(__FreeBSD__) && defined(alpha)
++#   elif defined(__FreeBSD__) && defined(__alpha__)
 +
 +        #define M_MACHINE        "alpha_freebsd"
 +	#define M_alpha_freebsd
