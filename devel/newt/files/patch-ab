@@ -1,6 +1,6 @@
---- Makefile.in	Wed Feb  2 22:18:26 2000
-+++ Makefile.in.new	Wed Feb  2 22:19:01 2000
-@@ -1,16 +1,11 @@
+--- Makefile.in.orig	Thu Feb  3 18:57:57 2000
++++ Makefile.in	Sat Jul 22 01:45:55 2000
+@@ -1,16 +1,12 @@
 -LIBS = -lslang -lm #-lefence
 -SHLIBS = -lslang -lm -lc
 +CC ?= cc
@@ -16,14 +16,14 @@
 -endif
 -
 -VERSION = @VERSION@
--CVSTAG = r$(subst .,-,$(VERSION))
--SONAME = @VERSION@
 +VERSION ?= 0
+ CVSTAG = r$(subst .,-,$(VERSION))
+-SONAME = @SONAME@
 +SONAME = $(VERSION)
  
  PROGS = test whiptail whiptcl.so testgrid testtree
  TESTOBJS = test.o
-@@ -25,7 +20,7 @@
+@@ -25,7 +21,7 @@
  
  SHCFLAGS = -fPIC
  
@@ -32,7 +32,7 @@
  includedir = $(prefix)/include
  libdir = $(prefix)/lib
  bindir = $(prefix)/bin
-@@ -49,25 +44,25 @@
+@@ -49,25 +45,25 @@
  all:	$(TARGET) _snackmodule.so
  
  test:	$(TESTOBJS) $(LIBNEWT)
@@ -65,7 +65,7 @@
  
  $(LIBNEWT): $(LIBNEWT)($(LIBOBJS))
  
-@@ -90,7 +85,7 @@
+@@ -90,7 +86,7 @@
  sharedlib: $(LIBNEWTSH)
  
  $(LIBNEWTSH): $(SHAREDDIR) $(SHAREDOBJS)
@@ -74,7 +74,7 @@
  
  $(SHAREDDIR)/%.o : %.c
  	$(CC) $(SHCFLAGS) -c $(CFLAGS) -o $@ $<
-@@ -100,21 +95,21 @@
+@@ -100,21 +96,23 @@
  
  
  install: $(LIBNEWT) install-sh whiptail
@@ -90,14 +90,15 @@
 +	install -c -m 644 newt.h $(includedir)
 +	install -c -m 644 $(LIBNEWT) $(libdir)
 +	install -c -s -m 755 whiptail $(bindir)
++
  
  install-sh: sharedlib whiptcl.so _snackmodule.so
 -	[ -d $(instroot)/$(libdir) ] || install -m 755 -d $(instroot)/$(libdir)
--	install -m 755 $(LIBNEWTSH) $(instroot)/$(libdir)
+-	install -s -m 755 $(LIBNEWTSH) $(instroot)/$(libdir)
 -	ln -sf $(LIBNEWTSH) $(instroot)/$(libdir)/libnewt.so
--	install -m 755 whiptcl.so $(instroot)/$(libdir)
+-	install -s -m 755 whiptcl.so $(instroot)/$(libdir)
 -	[ -d $(instroot)/$(pythonbindir) ] || install -m 755 -d $(instroot)/$(pythonbindir)
--	install -m 755 _snackmodule.so $(instroot)/$(pythonbindir)
+-	install -s -m 755 _snackmodule.so $(instroot)/$(pythonbindir)
 -	install -m 755 snack.py $(instroot)/$(pythondir)
 +	[ -d $(libdir) ] || install -m 755 -d $(libdir)
 +	install -c -m 755 $(LIBNEWTSH) $(libdir)
@@ -106,6 +107,7 @@
 +	[ -d $(pythonbindir) ] || install -m 755 -d $(pythonbindir)
 +	install -c -m 755 _snackmodule.so $(pythonbindir)
 +	install -c -m 755 snack.py $(pythondir)
++
  
- archive:
- 	@cvs tag -F $(CVSTAG)
+ configure:  configure.in
+ 	autoconf
