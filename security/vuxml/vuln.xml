@@ -300,12 +300,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <bid>12354</bid>
       <cvename>CAN-2005-0102</cvename>
       <url>http://cvs.gnome.org/viewcvs/evolution/camel/camel-lock-helper.c?rev=1.7&amp;view=log#rev1.5.74.1</url>
     </references>
     <dates>
       <discovery>2005-01-20</discovery>
       <entry>2005-01-25</entry>
+      <modified>2005-02-02</modified>
     </dates>
   </vuln>
 
