@@ -7,7 +7,7 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.2,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
@@ -22,6 +22,8 @@ BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20 \
 		Xft.2:${PORTSDIR}/x11-fonts/Xft \
 		intl.4:${PORTSDIR}/devel/gettext
+RUN_DEPENDS=	${FONTSCALE}:${PORTSDIR}/x11-fonts/XFree86-4-fontScalable \
+		${FONTENCOD}:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -46,9 +48,18 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 PLIST_SUB=	VERSION="1.2.0"
 
+FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
+FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/tcvn-0.enc
+
 post-patch:
 	@${FIND} ${WRKSRC}/pango/opentype -name "*.[ch]" | ${XARGS} \
 		${REINPLACE_CMD} -e 's|internal/tterrors\.h|fterrors.h| ; \
 		s|TT_Err_|FT_Err_|g'
+post-install:
+	@${SED} -e 's|%%X11BASE%%|${X11BASE}|' < ${FILESDIR}/pkg-install.in \
+		> ${PKGINSTALL}
+.if !defined(PACKAGE_BUILDING)
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
 
 .include <bsd.port.mk>
