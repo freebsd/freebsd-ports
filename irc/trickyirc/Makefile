@@ -1,13 +1,13 @@
 # New ports collection makefile for:	TrickyIRC
-# Version required:		 	1.0
-# Date created:				Jun 20th 1999
+# Version required:		 	1.1
+# Date created:			 	Jun 20th 1999
 # Whom:					troll
 #
-# $Id: Makefile,v 1.2 1999/06/28 02:21:15 billf Exp $
+# $Id: Makefile,v 1.3 1999/07/08 05:43:48 cpiazza Exp $
 #
 
-DISTNAME=	TrickyIRC-1.00
-PKGNAME=	trickyirc-1.00
+DISTNAME=	TrickyIRC-1.1.0
+PKGNAME=	trickyirc-1.1.0
 CATEGORIES=	irc
 MASTER_SITES=	http://www.leb.net/~troll/
 
