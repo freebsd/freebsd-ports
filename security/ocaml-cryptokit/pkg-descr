@@ -1,0 +1,21 @@
+[ excerpt from developer's www site ]
+
+The Cryptokit library for Objective Caml provides a variety of
+cryptographic primitives that can be used to implement cryptographic
+protocols in security-sensitive applications. The primitives provided
+include:
+
+Symmetric-key cryptography: AES, DES, Triple-DES, ARCfour, in ECB,
+CBC, CFB and OFB modes. Public-key cryptography: RSA encryption and
+signature; Diffie-Hellman key agreement. Hash functions and MACs:
+SHA-1, MD5, and MACs based on AES and DES. Random number generation.
+Encodings and compression: base 64, hexadecimal, Zlib compression.
+
+Additional ciphers and hashes can easily be used in conjunction
+with the library. In particular, basic mechanisms such as chaining
+modes, output buffering, and padding are provided by generic classes
+that can easily be composed with user-provided ciphers. More
+generally, the library promotes a "Lego"-like style of constructing
+and composing transformations over character streams.
+
+WWW: http://cristal.inria.fr/~xleroy/software.html

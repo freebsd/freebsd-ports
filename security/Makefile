@@ -133,6 +133,7 @@
     SUBDIR += nmapfe
     SUBDIR += nofgpg
     SUBDIR += nss
+    SUBDIR += ocaml-cryptokit
     SUBDIR += oidentd
     SUBDIR += op
     SUBDIR += opensc
