@@ -1,0 +1,9 @@
+
+##############################################
+unicornscan has been successfully installed!
+
+Check the sample configuration files in 
+%%PREFIX%%/etc/unicornscan
+and rename or copy without the .sample suffix.
+##############################################
+

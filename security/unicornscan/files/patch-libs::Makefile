@@ -1,0 +1,36 @@
+--- libs/Makefile.orig	Thu Sep 30 05:29:05 2004
++++ libs/Makefile	Tue Oct  5 13:36:57 2004
+@@ -6,30 +6,10 @@
+ default: pcap_test libnet_test
+ 
+ pcap_test: pcap_test.c
+-	($(CC) $(CFLAGS) -o pcap_test pcap_test.c -lpcap $(LDADD) 2>/dev/null || $(MAKE) libpcap)
++	$(CC) $(CFLAGS) -o pcap_test pcap_test.c -lpcap $(LDADD)
+ 
+ libnet_test: libnet_test.c
+-	($(CC) $(CFLAGS) -o libnet_test libnet_test.c -lpcap -lnet $(LDADD) 2>/dev/null || $(MAKE) libnet)
+-	
+-
+-libnet: libnet/stamp
+-
+-libnet.tar.gz:
+-	wget http://www.packetfactory.net/libnet/dist/libnet.tar.gz
+-
+-libnet/stamp: libnet.tar.gz
+-	zcat libnet.tar.gz | tar -xvf -
+-	cd libnet && patch -p1 < ../libnet-nosample.patch && CPPFLAGS="-I`pwd`/../fake/include" LDFLAGS="-L`pwd`/../fake/lib" CFLAGS="$(BASECFLAGS)" ./configure --prefix=`pwd`/../fake && CPPFLAGS="-I`pwd`/../fake/include" LDFLAGS="-L`pwd`/../fake/lib" CFLAGS="$(BASECFLAGS)" $(MAKE) && $(MAKE) install && touch stamp
+-	cd ..
+-
+-libpcap: libpcap-$(PCAPVER)/stamp
+-
+-libpcap-$(PCAPVER)/stamp: libpcap-$(PCAPVER).tar.gz
+-	zcat libpcap-$(PCAPVER).tar.gz | tar -xvf -
+-	cd libpcap-$(PCAPVER) && CFLAGS="$(BASECFLAGS)" ./configure --prefix=`pwd`/../fake && CFLAGS="$(BASECFLAGS)" $(MAKE) && $(MAKE) install && touch stamp
+-
+-libpcap-$(PCAPVER).tar.gz:
+-	wget http://tcpdump.org/release/libpcap-$(PCAPVER).tar.gz
++	$(CC) $(CFLAGS) -o libnet_test libnet_test.c -lpcap -lnet $(LDADD)
+ 
+ clean:
+-	rm -rf fake libnet libpcap-$(PCAPVER) pcap_test libnet_test
++	rm -rf fake pcap_test libnet_test

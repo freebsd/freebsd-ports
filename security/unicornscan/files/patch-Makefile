@@ -1,0 +1,8 @@
+--- Makefile.orig	Mon Oct  4 23:22:49 2004
++++ Makefile	Mon Oct  4 23:22:55 2004
+@@ -1,4 +1,4 @@
+-default:
++all default:
+ 	(cd libs && make)
+ 	(cd src && make)
+ 

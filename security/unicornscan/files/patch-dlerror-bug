@@ -1,0 +1,109 @@
+diff -ru src/config.h src/config.h
+--- src/config.h	2004-09-30 03:29:05.000000000 -0700
++++ src/config.h	2004-10-05 18:05:17.000000000 -0700
+@@ -87,6 +87,11 @@
+  * XXX
+  */
+ 
++/*
++ * this really shouldnt matter to much
++ */
++#define DL_ERROR_RET const char *
++
+ /* tuneables */
+ #define SHLIB_EXT ".so"
+ 
+diff -ru src/modules.c src/modules.c
+--- src/modules.c	2004-09-30 03:29:05.000000000 -0700
++++ src/modules.c	2004-10-05 18:02:42.000000000 -0700
+@@ -39,6 +39,7 @@
+ 	DIR *moddir=NULL;
+ 	struct dirent *de=NULL;
+ 	mod_entry_t *mnew=NULL, *last=NULL;
++	DL_ERROR_RET dl_estr=NULL;
+ 
+ 	if (s->verbose > 5) MSG(M_DBG1, "Opening dir `%s'", s->mod_dir);
+ 
+@@ -87,16 +88,18 @@
+ 		}
+ 
+ 		mnew->dl_init_module=(int (*)(mod_entry_t *))dlsym(mnew->handle, "init_module");
+-		if (dlerror() != NULL) {
+-			MSG(M_ERR, "Can't find initialization hook for module `%s': %s", mnew->fname, dlerror());
++		dl_estr=dlerror();
++		if (dl_estr != NULL) {
++			MSG(M_ERR, "Can't find initialization hook for module `%s': %s", mnew->fname, dl_estr);
+ 			dlclose(mnew->handle);
+ 			xfree(mnew);
+ 			continue;
+ 		}
+ 
+ 		mnew->dl_delete_module=(void (*)(void))dlsym(mnew->handle, "delete_module");
+-		if (dlerror() != NULL) {
+-			MSG(M_ERR, "Can't find shutdown hook for module `%s': %s", mnew->fname, dlerror());
++		dl_estr=dlerror();
++		if (dl_estr != NULL) {
++			MSG(M_ERR, "Can't find shutdown hook for module `%s': %s", mnew->fname, dl_estr);
+ 			dlclose(mnew->handle);
+ 			xfree(mnew);
+ 			continue;
+@@ -174,6 +177,7 @@
+ 
+ int init_payload_modules(void) {
+ 	mod_entry_t *walk=NULL;
++	DL_ERROR_RET dl_estr=NULL;
+ 
+ 	if (mod_list_head == NULL) return 1;
+ 
+@@ -182,8 +186,9 @@
+ 	for (walk=mod_list_head ; walk != NULL ; walk=walk->next) {
+ 		if (walk->type == MI_TYPE_PAYLOAD) {
+ 			walk->func_u.dl_create_payload=(int (*)(uint8_t **, uint32_t *))dlsym(walk->handle, "create_payload");
+-			if (dlerror() != NULL) {
+-				MSG(M_ERR, "Can't find payload initialization hook for module `%s': %s", walk->fname, dlerror());
++			dl_estr=dlerror();
++			if (dl_estr != NULL) {
++				MSG(M_ERR, "Can't find payload initialization hook for module `%s': %s", walk->fname, dl_estr);
+ 				dlclose(walk->handle);
+ 				continue;
+ 			}
+@@ -209,6 +214,7 @@
+ 
+ int init_output_modules(void) {
+ 	mod_entry_t *walk=NULL;
++	DL_ERROR_RET dl_estr=NULL;
+ 
+ 	if (mod_list_head == NULL) return 1;
+ 
+@@ -222,8 +228,9 @@
+ 				continue;
+ 			}
+ 
+-			if (dlerror() != NULL) {
+-				MSG(M_ERR, "Can't find output initialization hook for module `%s': %s", walk->fname, dlerror());
++			dl_estr=dlerror();
++			if (dl_estr != NULL) {
++				MSG(M_ERR, "Can't find output initialization hook for module `%s': %s", walk->fname, dl_estr);
+ 				dlclose(walk->handle);
+ 				continue;
+ 			}
+@@ -245,6 +252,7 @@
+ 
+ int init_report_modules(void) {
+ 	mod_entry_t *walk=NULL;
++	DL_ERROR_RET dl_estr=NULL;
+ 
+ 	if (mod_list_head == NULL) return 1;
+ 
+@@ -258,8 +266,9 @@
+ 				continue;
+ 			}
+ 
+-			if (dlerror() != NULL) {
+-				MSG(M_ERR, "Can't find report initialization hook for module `%s': %s", walk->fname, dlerror());
++			dl_estr=dlerror();
++			if (dl_estr != NULL) {
++				MSG(M_ERR, "Can't find report initialization hook for module `%s': %s", walk->fname, dl_estr);
+ 				dlclose(walk->handle);
+ 				continue;
+ 			}
