@@ -35,7 +35,7 @@ USE_ESOUND=	yes
 USE_IMLIB=	yes
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-fsstd --with-included-gettext
+CONFIGURE_ARGS=	--enable-fsstd
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype1 \
 			  -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lxpg4"
