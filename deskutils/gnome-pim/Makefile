@@ -1,13 +1,13 @@
 # New ports collection makefile for:	gnomepim
-# Version required:			1.0.1
+# Version required:			1.0.7
 # Date created:				17 Jan 1999
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1999/03/27 10:35:55 vanilla Exp $
+# $Id: Makefile,v 1.7 1999/04/08 18:08:30 steve Exp $
 #
 
-DISTNAME=	gnome-pim-1.0.1
-PKGNAME=	gnomepim-1.0.1
+DISTNAME=	gnome-pim-1.0.7
+PKGNAME=	gnomepim-1.0.7
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-pim
