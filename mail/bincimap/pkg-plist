@@ -2,16 +2,6 @@
 bin/bincimapd
 bin/bincimap-up
 etc/bincimap/bincimap.conf.sample
-%%XINETD%%etc/bincimap/imap.sample
-%%XINETD%%%%SSL%%etc/bincimap/imaps.sample
-%%DJB%%etc/bincimap/imap.sample/run
-%%DJB%%etc/bincimap/imap.sample/log/run
-%%DJB%%@dirrm etc/bincimap/imap.sample/log
-%%DJB%%@dirrm etc/bincimap/imap.sample
-%%DJB%%%%SSL%%etc/bincimap/imaps.sample/run
-%%DJB%%%%SSL%%etc/bincimap/imaps.sample/log/run
-%%DJB%%%%SSL%%@dirrm etc/bincimap/imaps.sample/log
-%%DJB%%%%SSL%%@dirrm etc/bincimap/imaps.sample
 @unexec rmdir %D/etc/bincimap 2>/dev/null || true
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -23,9 +13,13 @@ etc/bincimap/bincimap.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/bincimap-tech.html
 %%PORTDOCS%%%%DOCSDIR%%/bincimap.css
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/README
-%%EXAMPLESDIR%%/bincimap-auth-teapop.sh
+%%EXAMPLESDIR%%/contrib/README
+%%EXAMPLESDIR%%/contrib/bincimap-auth-teapop.sh
+%%EXAMPLESDIR%%/bincimap.conf
 %%EXAMPLESDIR%%/checkpassword.pl
 %%EXAMPLESDIR%%/toimapdir
 %%EXAMPLESDIR%%/tomaildir++
+%%EXAMPLESDIR%%/xinetd-bincimap
+%%EXAMPLESDIR%%/xinetd-bincimaps
+@dirrm %%EXAMPLESDIR%%/contrib
 @dirrm %%EXAMPLESDIR%%
