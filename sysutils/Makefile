@@ -148,7 +148,6 @@
     SUBDIR += roottail
     SUBDIR += rotate
     SUBDIR += rtty
-    SUBDIR += ruby-application.rb
     SUBDIR += ruby-devel-logger
     SUBDIR += ruby-log4r
     SUBDIR += ruby-quota
