@@ -8,7 +8,7 @@
 PORTNAME=	libmorph
 PORTVERSION=	0.1.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://wine.sexcity.pl/morpheus/
+MASTER_SITES=	http://wine.sexcity.pl/morpheus/meat/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
