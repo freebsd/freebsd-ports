@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bookcase
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	misc kde
 MASTER_SITES=	http://www.periapsis.org/bookcase/download/
 
@@ -16,6 +16,9 @@ COMMENT=	Personal book collection manager for KDE
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+
+post-extract:
+	${TOUCH} ${WRKSRC}/config.h.in
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
