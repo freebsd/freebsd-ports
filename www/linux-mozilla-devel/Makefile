@@ -66,6 +66,8 @@ pre-install:
 	cd ${WRKSRC}/bin; for i in `find * \! -type d | sort`; do \
 		${ECHO} lib/linux-mozilla/$${i} >> ${PLIST}; \
 	done
+	${ECHO} lib/linux-mozilla/plugins/libflashplayer.so >> ${PLIST}
+	${ECHO} lib/linux-mozilla/plugins/ShockwaveFlash.class >> ${PLIST}
 	cd ${WRKSRC}/bin; \
 	for i in `find -d * -type d`; do \
 		${ECHO} @dirrm lib/linux-mozilla/$${i} >> ${PLIST}; \
@@ -75,6 +77,10 @@ pre-install:
 do-install:
 	${MKDIR} ${INSTALL_DIR}
 	${CP} -Rp ${WRKSRC}/bin/* ${INSTALL_DIR}
+# These links are broken if the linux-flashplugin package is not installed.
+	cd ${PREFIX}/lib/linux-mozilla/plugins \
+	&& ${LN} -s ../../netscape-linux/plugins/libflashplayer.so \
+	&& ${LN} -s ../../netscape-linux/plugins/ShockwaveFlash.class
 	${INSTALL_SCRIPT} ${WRKDIR}/${STARTUP_CMD} ${PREFIX}/bin
 
 post-install:
