@@ -1,23 +1,22 @@
 # New ports collection makefile for:	edict
-# Version required:	19980409
+# Version required:	19981007
 # Date created:		18 August 1997
 # Whom:			Jonathan Hanna
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/30 01:36:05 kuriyama Exp $
 #
 
-DISTNAME=	edict-19980409
-PKGNAME=	ja-edict-19980409
+DISTNAME=	edict-19981007
+PKGNAME=	ja-edict-19981007
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.cc.monash.edu.au/pub/nihongo/
-MASTER_SITES+=	ftp://enterprise.ic.gc.ca/pub/nihongo/
 MASTER_SITES+=	ftp://ftp.cdrom.com/pub/japanese/monash/
-MASTER_SITES+=	ftp://kuso.shef.ac.uk/pub/japanese/monash/
-MASTER_SITES+=	ftp://ftp.uwtc.washington.edu/pub/Japanese/Monash/
+MASTER_SITES+=	ftp://ftp.sedl.org/pub/mirrors/nihongo/
+MASTER_SITES+=	ftp://ftp.u-aizu.ac.jp/pub/SciEng/nihongo/ftp.cc.monash.edu.au/
 EXTRACT_SUFX=
 DISTFILES=	${DICTFILES} ${SRCFILES} ${DOCFILES}
 
-MAINTAINER=	jhanna@rogers.wave.ca
+MAINTAINER=	jhanna@home.com
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
@@ -54,7 +53,7 @@ DICTFILES+=	mktdic.zip
 DICTFILES+=	compverb.gz
 DICTFILES+=	4jwords.gz
 
-SRCFILES=	xjdic22.tar.gz
+SRCFILES=	xjdic23.tgz
 
 DOCFILES=	edict.doc
 DOCFILES+=	edicth.doc
@@ -77,14 +76,15 @@ DOCFILES+=	4jwords.doc
 IGNOREFILES=	$(DICTFILES) $(DOCFILES)
 
 BINFILES=	exjdxgen
-BINFILES+=	xjdic22cl
-BINFILES+=	xjdic22sa
-BINFILES+=	xjdserver22
+BINFILES+=	xjdic_cl
+BINFILES+=	xjdic_sa
+BINFILES+=	xjdserver
 BINFILES+=	xjdxgen
 
 # Where to install the data files
 DATADIR=	${PREFIX}/share/dict/edict
 DOCDIR=		${PREFIX}/share/doc/xjdic
+MAN1=		xjdic.1
 
 NO_WRKSUBDIR=
 
@@ -155,7 +155,7 @@ do-install:
 		) ; \
 	done
 	${RM} -f ${PREFIX}/bin/xjdic
-	ln -s ${PREFIX}/bin/xjdic22sa ${PREFIX}/bin/xjdic
+	ln -s ${PREFIX}/bin/xjdic_sa ${PREFIX}/bin/xjdic
 	${INSTALL_DATA} ${WRKDIR}/radicals.tm ${DATADIR} ;
 	${INSTALL_DATA} ${WRKDIR}/radkfile ${DATADIR} ;
 	${INSTALL_DATA} ${WRKDIR}/kanjstroke ${DATADIR} ;
@@ -164,29 +164,33 @@ do-install:
 	#
 	# Only 9 dictionaries can be enabled
 	#
-	@${ECHO} dicfile ${DATADIR}/edict > ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile ${DATADIR}/enamdict >> ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile ${DATADIR}/compdic >> ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile ${DATADIR}/lifscdic >> ${DATADIR}/.xjdicrc
-	# @${ECHO} dicfile ${DATADIR}/jddict.v02 >> ${DATADIR}/.xjdicrc
-	# @${ECHO} dicfile ${DATADIR}/lawgledt >> ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile ${DATADIR}/geodic >> ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile ${DATADIR}/pandpdic >> ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile ${DATADIR}/aviation >> ${DATADIR}/.xjdicrc
-	# @${ECHO} dicfile ${DATADIR}/findic >> ${DATADIR}/.xjdicrc
-	# @${ECHO} dicfile ${DATADIR}/mktdic >> ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile ${DATADIR}/compverb >> ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile ${DATADIR}/4jwords >> ${DATADIR}/.xjdicrc
+	@${ECHO} dicdir ${DATADIR} > ${DATADIR}/.xjdicrc
+	@${ECHO} dicfile edict >> ${DATADIR}/.xjdicrc
+	@${ECHO} dicfile enamdict >> ${DATADIR}/.xjdicrc
+	@${ECHO} dicfile compdic >> ${DATADIR}/.xjdicrc
+	@${ECHO} dicfile lifscdic >> ${DATADIR}/.xjdicrc
+	# @${ECHO} dicfile jddict.v02 >> ${DATADIR}/.xjdicrc
+	# @${ECHO} dicfile lawgledt >> ${DATADIR}/.xjdicrc
+	@${ECHO} dicfile geodic >> ${DATADIR}/.xjdicrc
+	@${ECHO} dicfile pandpdic >> ${DATADIR}/.xjdicrc
+	@${ECHO} dicfile aviation >> ${DATADIR}/.xjdicrc
+	# @${ECHO} dicfile findic >> ${DATADIR}/.xjdicrc
+	# @${ECHO} dicfile mktdic >> ${DATADIR}/.xjdicrc
+	@${ECHO} dicfile compverb >> ${DATADIR}/.xjdicrc
+	@${ECHO} dicfile 4jwords >> ${DATADIR}/.xjdicrc
 	@chown ${SHAREOWN}.${SHAREGRP} ${DATADIR}/.xjdicrc
 	@chmod ${SHAREMODE} ${DATADIR}/.xjdicrc
+	${INSTALL_MAN} ${WRKSRC}/xjdic.1 ${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
 	@if [ ! -d ${DOCDIR} ] ; \
 	then \
 		${MKDIR} ${DOCDIR} ; \
 	fi
-	${INSTALL_MAN} ${WRKSRC}/xjdic22.doc ${DOCDIR}
+	${INSTALL_MAN} ${WRKSRC}/xjdic23.inf ${DOCDIR}
 	@for docfile in ${DOCFILES} ; do \
-		${ECHO} Installing  ${DOCDIR}/$$docfile ; \
+		${ECHO} InstalLing  ${DOCDIR}/$$docfile ; \
 		${INSTALL_MAN}  ${_DISTDIR}/$$docfile ${DOCDIR} ; \
 	done
+.endif
 
 .include <bsd.port.mk>
