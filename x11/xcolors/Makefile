@@ -8,7 +8,7 @@
 PORTNAME=	xcolors
 PORTVERSION= 	1.3
 CATEGORIES=	x11
-MASTER_SITES=	http://www.lovett.com/~ade/FreeBSD/
+MASTER_SITES=	http://people.FreeBSD.org/~ade/distfiles/
 DISTNAME=	${PORTNAME}	
 
 MAINTAINER=	ade@FreeBSD.org
