@@ -37,11 +37,15 @@ PLIST_SUB+=	WITH_PATESTS=""
 
 pre-patch:
 # replace \r\n with \n
-# replace <malloc.h> with <stdlib.h>
 	@${FIND} ${WRKSRC} -type f \
 		| ${XARGS} -x -n 10 \
 			${REINPLACE_CMD} -E \
-				-e 's|||' \
+				-e 's|||'
+post-patch:
+# replace obsolete headers, and fix up thread library
+	@${FIND} ${WRKSRC} -type f \
+		| ${XARGS} -x -n 10 \
+			${REINPLACE_CMD} -E \
 				-e 's|malloc.h|stdlib.h|' \
 				-e 's|machine\/soundcard.h|sys\/soundcard.h|' \
 				-e 's|-lpthread|${PTHREAD_LIBS}|'
