@@ -8792,6 +8792,7 @@ uk-phone	ports/misc/uk-phone
 uk-pine.language	ports/ukrainian/pine.language
 uk-postcodes	ports/misc/uk-postcodes
 uk-webalizer	ports/ukrainian/webalizer
+ulxmlrpcpp	ports/net/ulxmlrpcpp
 umatrix		ports/math/umatrix
 umbrello	ports/devel/umbrello
 umfpack		ports/math/umfpack
