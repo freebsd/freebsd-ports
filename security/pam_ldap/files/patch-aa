@@ -1,12 +1,12 @@
---- Makefile.in.orig	Sat Aug 31 15:13:47 2002
-+++ Makefile.in	Sat Aug 31 15:14:53 2002
-@@ -364,17 +364,13 @@
+--- Makefile.in.orig	Wed Sep 25 09:49:08 2002
++++ Makefile.in	Sat Oct 12 00:52:19 2002
+@@ -405,17 +405,13 @@
  
  install-exec-local: pam_ldap.so
  	@$(NORMAL_INSTALL)
 -	$(mkinstalldirs) $(DESTDIR)$(libdir)/security
 -@EXTENSION_SO_TRUE@	$(INSTALL_PROGRAM) -o root -g root pam_ldap.so $(DESTDIR)$(libdir)/security/pam_ldap.so
--@EXTENSION_SO_FALSE@@EXTENSION_1_TRUE@	$(INSTALL_PROGRAM) -o root -g root pam_ldap.so $(DESTDIR)$(libdir)/security/pam_ldap.1
+-@EXTENSION_SO_FALSE@@EXTENSION_1_TRUE@	$(INSTALL_PROGRAM) -o root -g root pam_ldap.so $(DESTDIR)$(libdir)/security/libpam_ldap.1
 -@EXTENSION_SO_FALSE@@EXTENSION_1_FALSE@	$(INSTALL_PROGRAM) -o root -g root pam_ldap.so $(DESTDIR)$(libdir)/security/pam_ldap.so.1
 -@EXTENSION_SO_FALSE@@EXTENSION_1_FALSE@	(cd $(DESTDIR)$(libdir)/security; rm -f pam_ldap.so; ln -s pam_ldap.so.1 pam_ldap.so)
 +	$(INSTALL_PROGRAM) -o root -g wheel pam_ldap.so $(DESTDIR)$(libdir)/pam_ldap.so
@@ -17,7 +17,7 @@
 +	@if test ! -f $(DESTDIR)$(sysconfdir)/ldap.conf.dist; then \
  		$(mkinstalldirs) $(DESTDIR)$(sysconfdir); \
 -		$(INSTALL_DATA) -o root -g root $(srcdir)/ldap.conf $(DESTDIR)$(sysconfdir)/ldap.conf; \
-+		$(INSTALL_DATA) -o root -g wheel $(srcdir)/ldap.conf $(DESTDIR)$(sysconfdir)/ldap.conf.dist; \
++	$(INSTALL_DATA) -o root -g wheel $(srcdir)/ldap.conf $(DESTDIR)$(sysconfdir)/ldap.conf.dist; \
  	fi
  
  uninstall-local:

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pam_ldap
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.4
 CATEGORIES=	security net
 MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/
@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--with-ldap-lib=openldap \
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 post-extract:
-	@find ${WRKSRC} -type f | xargs ${TOUCH} -f
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 
 post-install:
 	@${ECHO} "================================================================================"
