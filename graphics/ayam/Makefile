@@ -35,6 +35,8 @@ PLUGINS_DIR=	${PREFIX}/lib/${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/tcl/ayam.tcl
+	@${REINPLACE_CMD} -e 's|^MF3DCFLAGS =|MF3DCFLAGS = -fPIC|g' \
+		${WRKSRC}/MF3D/Makefile.mf3d
 
 do-install:
 # binary and wrapper
