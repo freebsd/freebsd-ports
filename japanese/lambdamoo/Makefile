@@ -8,7 +8,7 @@
 PORTNAME=	lambdamoo
 PORTVERSION=	1.8.1
 CATEGORIES=	japanese net
-MASTER_SITES=	http://download.sourceforge.net/lambdamoo/
+MASTER_SITES=	http://download.sourceforge.net/lambdamoo/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/network/mnews/
 DISTNAME=	LambdaMOO-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -43,6 +43,5 @@ post-install:
 	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD \
 		${PREFIX}/share/doc/LambdaMOO
 .endif
-
 
 .include <bsd.port.mk>
