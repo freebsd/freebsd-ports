@@ -1,0 +1,8 @@
+Dvi2tty is intended for previewing dvi-files on text-only devices
+(terminals and lineprinters). The output is not very pretty many
+times, but it still saves quite a lot of work, especially if you
+have a little ways to walk to a laserprinter, for example.
+
+This package is capable of showing dvi-files created with ASCII-jTeX.
+
+- Masafumi

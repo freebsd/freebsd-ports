@@ -1,0 +1,29 @@
+*** Makefile.orig	Sat Mar 30 05:53:03 1996
+--- Makefile	Sat Mar 30 05:52:51 1996
+***************
+*** 1,12 ****
+  # Makefile for dvi2tty and disdvi       23/01/89   M.J.E. Mol
+  #
+  # For BSD Unix use the following CFLAGS definition
+! # CFLAGS = -Dstrchr=index
+  #
+  # This Makefile does not work for MSDOS. Make your 
+  # own one, or compile by hand.
+  #
+! CFLAGS = -s
+  
+  all:	jdvi2tty disdvi
+  
+--- 1,12 ----
+  # Makefile for dvi2tty and disdvi       23/01/89   M.J.E. Mol
+  #
+  # For BSD Unix use the following CFLAGS definition
+!  CFLAGS += -Dstrchr=index -DDEFPAGER='"${PREFIX}/bin/jless"'
+  #
+  # This Makefile does not work for MSDOS. Make your 
+  # own one, or compile by hand.
+  #
+! #CFLAGS = -s
+  
+  all:	jdvi2tty disdvi
+  

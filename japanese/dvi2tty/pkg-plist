@@ -1,0 +1,5 @@
+bin/jdvi2tty
+bin/dvi2tty
+bin/disdvi
+man/man1/dvi2tty.1.gz
+man/man1/jdvi2tty.1.gz
