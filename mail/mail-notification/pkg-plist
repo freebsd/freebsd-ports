@@ -27,6 +27,7 @@ share/gnome/pixmaps/mail-notification.png
 share/locale/bg/LC_MESSAGES/mail-notification.mo
 share/locale/de/LC_MESSAGES/mail-notification.mo
 share/locale/fr/LC_MESSAGES/mail-notification.mo
+share/locale/pl/LC_MESSAGES/mail-notification.mo
 share/locale/pt/LC_MESSAGES/mail-notification.mo
 share/locale/ru/LC_MESSAGES/mail-notification.mo
 share/locale/sr/LC_MESSAGES/mail-notification.mo
