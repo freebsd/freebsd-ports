@@ -1,16 +1,16 @@
---- agent/filter/logfile.c.orig	Fri Dec 27 00:53:50 1996
-+++ agent/filter/logfile.c	Thu Jan 16 13:57:14 1997
-@@ -49,6 +49,9 @@
- # include <sys/time.h>
- # undef KERNEL
+--- agent/filter/logfile.c.orig	Fri Apr 18 16:20:26 1997
++++ agent/filter/logfile.c	Fri Apr 18 16:41:06 1997
+@@ -65,6 +65,9 @@
+ #include <sys/fcntl.h>	/* Try this one in last resort */
+ #endif
  #endif
 +#ifdef I_SYS_PARAM
 +# include <sys/param.h>
 +#endif
+ 
  #include "confmagic.h"
  
- #define MAX_STRING	1024			/* Maximum length for logging string */
-@@ -180,8 +183,10 @@
+@@ -217,8 +220,10 @@
  	 */
  
  #ifdef HAS_SYS_ERRLIST
