@@ -3,13 +3,14 @@
 # Date created:		10 November 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.17 1996/12/08 09:48:56 max Exp $
+# $Id: Makefile,v 1.18 1997/01/08 08:09:56 adam Exp $
 #
 
 DISTNAME=	dgd-lpmud
 PKGNAME=	dgd-lpmud-2.4.5
 CATEGORIES=	net devel games
-MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/
+MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/ \
+		ftp://ftp.dreamlabs.com/pub/mud/dgd/mudlibs/
 DISTFILES=	2.4.5-for-1.1.tgz
 
 MAINTAINER=	adam@veda.is
