@@ -105,6 +105,12 @@ MAN7=		svgalib.7 svgalib.chips.7 svgalib.et4000.7		\
 		svgalib.faq.7 svgalib.mach32.7 threedkit.7 vgagl.7
 MAN8=		mode3.8
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400000
+BROKEN=		"3.* doesn't supported - please upgrade to use the port"
+.endif
+
 pre-patch:
 	${PERL} -pi -e 's.\x0D..' ${WRKSRC}/utils/gtf/*
 	${MKDIR} ${WRKSRC}/include/linux
@@ -114,4 +120,4 @@ post-install:
 	cd ${WRKSRC}/include/linux && \
 		${INSTALL_DATA} keyboard.h kd.h ${PREFIX}/include/linux
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
