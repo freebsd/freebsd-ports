@@ -11,7 +11,7 @@ CATEGORIES=	textproc www
 MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/ \
 		${MASTER_SITE_SOURCEFORGE}
 
-MAINTAINER=	Alexander@Leidinger.net
+MAINTAINER=	netchild@FreeBSD.org
 
 LIB_DEPENDS=	adns.1:${PORTSDIR}/net/adns \
 		gd.2:${PORTSDIR}/graphics/gd \
@@ -64,8 +64,8 @@ post-install:
 .endfor
 	@# remove .la (can't use USE_LIBTOOL)
 	-${RM} ${PREFIX}/lib/libmla_*.la
-	${MV} ${PREFIX}/bin/${MACHINE_ARCH}--freebsd${OSREL}-modlogan ${PREFIX}/bin/modlogan
-	${MV} ${PREFIX}/man/man1/${MACHINE_ARCH}--freebsd${OSREL}-modlogan.1 ${PREFIX}/man/man1/modlogan.1
+	${MV} ${PREFIX}/bin/${CONFIGURE_TARGET}-modlogan ${PREFIX}/bin/modlogan
+	${MV} ${PREFIX}/man/man1/${CONFIGURE_TARGET}-modlogan.1 ${PREFIX}/man/man1/modlogan.1
 .for i in css conf def.conf
 	[ -f ${PREFIX}/etc/modlogan/modlogan.${i} ] || ${INSTALL_DATA} ${PREFIX}/etc/modlogan/modlogan.${i}-dist ${PREFIX}/etc/modlogan/modlogan.${i}
 .endfor
