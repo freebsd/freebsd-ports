@@ -3,13 +3,14 @@
 # Date created:         27 Mar 1998
 # Whom:                 jeff@cetlink.net
 #
-# $Id: Makefile,v 1.3 1998/04/04 14:25:47 vanilla Exp $
+# $Id: Makefile,v 1.4 1998/04/19 15:38:31 steve Exp $
 #
 
 DISTNAME=       gd1.3
 PKGNAME=        gd-1.3
 CATEGORIES=	graphics
-MASTER_SITES=   http://www.boutell.com/gd/http/
+MASTER_SITES=   http://www.boutell.com/gd/http/ \
+		ftp://ftp.boutell.com/pub/boutell/gd/
 
 MAINTAINER=     jeff@cetlink.net
 
