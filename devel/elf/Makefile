@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	elf
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.4p1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kerneled.com/projects/elf/
 
