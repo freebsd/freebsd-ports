@@ -52,7 +52,6 @@ deinstall:
 	else \
 		${ECHO_MSG} "===> ${PKGNAME} not installed; skipping"; \
 	fi
-.endif
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
 
 .include <bsd.port.post.mk>
