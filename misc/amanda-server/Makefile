@@ -7,7 +7,7 @@
 
 PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	2.4.4
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -22,11 +22,15 @@ SLAVEDIRS=	misc/amanda-client
 MASTERPORTNAME=	amanda-server
 
 NO_LATEST_LINK=	yes
+USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	253
 USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
 PATCH_STRIP=
 
 .include <bsd.port.pre.mk>
+
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
 # amanda-server part
 .if !defined(CLIENT_ONLY)
 
