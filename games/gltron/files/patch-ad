@@ -8,7 +8,7 @@ $FreeBSD$
  
  
 -LIBS='-L/usr/X11R6/lib'
-+LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
++LIBS="$LIBS $LDFLAGS"
  
  # Extract the first word of "gcc", so it can be a program name with args.
  set dummy gcc; ac_word=$2
@@ -17,7 +17,7 @@ $FreeBSD$
  
  
 -CFLAGS=""
-+CFLAGS="$CFLAGS -I${X11BASE}/include -I${LOCALBASE}/include"
++CFLAGS="$CFLAGS $CPPFLAGS"
  
  # Check whether --enable-warn or --disable-warn was given.
  if test "${enable_warn+set}" = set; then
@@ -26,7 +26,7 @@ $FreeBSD$
  
  if test "x$enable_optimize" ; then
 -	CFLAGS="$CFLAGS -O$enable_optimize"
-+#	CFLAGS="$CFLAGS -O$enable_optimize"
++	CFLAGS="$CFLAGS"
  fi
  
  # Check whether --enable-network or --disable-network was given.
