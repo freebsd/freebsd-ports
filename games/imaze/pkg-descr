@@ -1,0 +1,22 @@
+iMaze is a multi-player network action game for TCP/IP with 3D graphics
+under X11 (XView or Motif). You run through a labyrinth and shoot everything
+that is round without being hit by other round anythings.
+
+Of course anything round is one of the following:
+
+ * other players playing over the net
+ * computer controlled ninjas
+ * deadly shots (except your own)
+
+Features:
+
+ * sophisticated, reliable network protocol, works even with SLIP connections
+   via modem
+ * windows can be freely scaled to avoid speed drawbacks due to poor display
+   performance
+ * modular, portable source code
+ * scores
+ * sound and joystick support
+
+- Ronald Kuehn
+kuehn@rz.tu-clausthal.de
