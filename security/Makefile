@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.53 1999/05/09 17:34:55 nsayer Exp $
+# $Id: Makefile,v 1.54 1999/05/09 17:51:20 steve Exp $
 #
 
     SUBDIR += bjorb
@@ -20,6 +20,7 @@
     SUBDIR += libident
     SUBDIR += libparanoia
     SUBDIR += nbaudit
+    SUBDIR += nessus
     SUBDIR += nmap
     SUBDIR += openssl
     SUBDIR += p5-Authen-Radius
