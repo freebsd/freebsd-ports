@@ -9,12 +9,3 @@
  XZIP="$DZIP/zip -g"
  XDZIP="$DZIP/zip -d"
  XUNZIP="$DZIP/unzip"
-@@ -67,7 +67,7 @@
- if ($8 ~ /\/$/)
-     printf "drwxr-xr-x   1 %-8d %-8d %8d %s %s %s\n", uid, 0, $1, $5, $6, $8
- else
--    printf "-rw-r--r--   1 %-8d %-8d %8d %s %s %s\n", uid, 0, $1, $5, $6, substr($0, index($0, $7) + length($7 "   ") 
-+    printf "-rw-r--r--   1 %-8d %-8d %8d %s %s %s\n", uid, 0, $1, $5, $6, substr($0, index($0, $7) + length($7 "  ")) 
- }' 2>/dev/null
- fi
- }
