@@ -8,7 +8,7 @@ OTHERLIBS   = "-lgcc"
 OTHERRULES  = OTHERRULES + r"""
 
 install-freebsd: $(TARGETDIR) $(TARGETDIR)/$(TARGET) pycfiles \
-	installLibDemo lib$(HELPERLIB)$(SO)
+	installLib installDemo installHelpers lib$(HELPERLIB)$(SO)
 	$(INSTALL_DATA) lib$(HELPERLIB)$(SO) \
 		$(HELPERLIBDIR)/lib$(HELPERLIB)$(SO).1
 	cd $(HELPERLIBDIR) && rm -f lib$(HELPERLIB)$(SO)
