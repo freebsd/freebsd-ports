@@ -56,6 +56,9 @@ COMMENT=	${.CURDIR}/pkg-comment
 .if exists(${.CURDIR}/pkg-descr)
 DESCR=	${.CURDIR}/pkg-descr
 .endif
+.if exists(${.CURDIR}/pkg-descr)
+PKGMESSAGE=	${.CURDIR}/pkg-message
+.endif
 #
 # Set prefix and suffix
 #
