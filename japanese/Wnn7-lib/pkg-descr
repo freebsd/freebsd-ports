@@ -1,31 +1,24 @@
-This is Wnn4.2, a Japanese/Chinese/Korean input method.  It is
-included primarily so that we can compile mule-2.1, a multilingual
-emacs.
+This has include files (e.g. wnn/commonhd.h) and a library (libwnn.a)
+to build Wnn6 clients. The files are included in
 
-Only the Japanese version is build for this port.
+ftp://ftp.omronsoft.co.jp/pub/Wnn6/sdk/FreeBSD-2.2R.tar.gz.
 
-Note that binaries and libraries go to /usr/local, while man pages and 
-includes go to /usr/X11R6.  That's the way it was designed, I don't
-know why.
+It is treated as a free software, so this package is, too. But a
+server of Wnn6, whose name is jserver, is not, and you must buy it
+from Omron Software Co., Ltd.
 
-- Satoshi
-(asami@cs.berkeley.edu)
++------------------------------------------+
+| URL:	   http://www.omronsoft.co.jp      |
+| E-mail:  wnn-info@omronsoft.co.jp        |
+| TEL:     +81-44-246-6006                 |
+| FAX:     +81-44-246-6011                 |
++------------------------------------------+
 
--------------------------------------------------------------------
 
-This also include some patches for FreeBSD or bugfix.
-If use this patches, you can compile Wnn-4.2 under XFree86 3.1.2E
- or later(X11Release6.1).
-If there are any problem in this patches, please know me via E-mail.
+Wnn6 is one of Japanese input methods. 'Wnn6 for Linux/FreeBSD' is
+supported an only Japanese method. However, Wnn4.2 which is free is
+supported Chinese and Korean ones, too.
 
-Hidekazu Kuroki
-(hidekazu@cs.titech.ac.jp)
 
--------------------------------------------------------------------
-
-Mr. Yoshio KATAYAMA <kate@pfu.co.jp> fixed many bugs for Wnn4.2.
-Patches for those are in 'Wnn4.2.patch.tar.gz' and are applied in this
-port.
-
--- S. Taoka
-<taoka@infonets.hiroshima-u.ac.jp>
+- S. Taoka
+taoka@infonets.hiroshima-u.ac.jp
