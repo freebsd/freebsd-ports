@@ -3,11 +3,11 @@
 # Date created:		24 Oct 1998
 # Whom:			FUJISHIMA Satsuki
 #
-# $Id: Makefile,v 1.6 1998/12/03 15:12:49 flathill Exp $
+# $Id: Makefile,v 1.7 1998/12/27 16:12:02 flathill Exp $
 #
 
-DISTNAME=	xsystem35-BETA-19981227
-PKGNAME=	xsystem-3.5-19981227
+DISTNAME=	xsystem35-1.0pre1
+PKGNAME=	xsystem-3.5-1.0p1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.aist-nara.ac.jp/~masaki-c/private/unitbase/xsys35/down/
 
