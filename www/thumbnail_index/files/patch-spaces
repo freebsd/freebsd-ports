@@ -1,0 +1,95 @@
+--- thumbnail_index.orig	Mon Sep  1 06:17:18 2003
++++ thumbnail_index	Fri Apr 25 18:07:39 2003
+@@ -99,7 +99,8 @@
+ subdir=.thumbnails
+ nindexname=/tmp/tinind.$$
+ stamp='This file produced by thumbnail_index - do not edit.'
+ cwd=`/bin/pwd -L`
++cwd="${cwd##${THUMBNAILBASEDIR}}"
+ makefile=/tmp/timake.$$
+ infoscript=/tmp/tiinsc.$$
+ rm -f $nindexname $makefile $infoscript
+@@ -114,27 +115,28 @@
+ fi
+ 
+ # Make temporary script to extract info.
+-cat > $infoscript << 'EOF'
++cat > "$infoscript" << 'EOF'
+ #!/bin/sh
+ 
+ file="$1"
+ what="$2"
+ thumb="$3"
++size="${4-70}"
+ 
+ kb=`wc -c < "$file" | awk '{print int(($1+1023)/1024)}'`
+ # (Slower but more portable than using ls.)
+ 
+ set junk `"$what" "$file" | pnmfile` ; shift
+-width=$4
+-height=$6
++width=${4-${size}}
++height=${6-${size}}
+ 
+ set junk `djpeg "$thumb" | pnmfile` ; shift
+-twidth=$4
+-theight=$6
++twidth=${4-${size}}
++theight=${6-${size}}
+ 
+ echo "$kb" "$width" "$height" "$twidth" "$theight"
+ EOF
+-chmod 755 $infoscript
++chmod 755 "$infoscript"
+ 
+ if [ ! -d $subdir ] ; then
+     mkdir $subdir
+@@ -261,23 +263,37 @@
+ 		if [ -f "$info" -a ! -s "$info" ] ; then
+ 		    rm -f "$info"
+ 		fi
+-		cat << EOF > $makefile
+-all:		$thumb $info
+-$thumb:		$file
+-	@echo "$file" >&2
+-	@$what "$file" | pnmscale -xy "$size" "$size" | cjpeg > "$thumb"
+-$info:		$thumb
+-	@$infoscript "$file" "$what" "$thumb" > "$info"
+-EOF
+-		make -f $makefile | egrep -v 'is up to date' >&2
+-		rm -f $makefile
++#		cat << EOF > $makefile
++#all:		$thumb $info
++#$thumb:		$file
++#	@echo "$file" >&2
++#	@$what "$file" | pnmscale -xy "$size" "$size" | cjpeg > "$thumb"
++#$info:		$thumb
++#	@$infoscript "$file" "$what" "$thumb" > "$info"
++#EOF
++#		make -f $makefile | egrep -v 'is up to date' >&2
++#		rm -f $makefile
++		if [ "$file" -nt "$thumb" ] ; then
++			rm -f "$thumb"
++		fi
++		if [ ! -s "$thumb" ] ; then
++			echo "$file" >&2
++			$what "$file" | pnmscale -xy "$size" "$size" |
++				cjpeg > "$thumb"
++		fi
++		if [ "$file" -nt "$info" ] ; then
++			rm -f "$info"
++		fi
++		if [ ! -s "$info" ] ; then
++			$infoscript "$file" "$what" "$thumb" "$size" > "$info"
++		fi
+ 		set junk `cat "$info"` ; shift
+ 		kb="$1"
+ 		width="$2"
+ 		height="$3"
+ 		twidth="$4"
+ 		theight="$5"
+-		if [ "$width" -le "$size" -a "$height" -le "$size" ] ; then
++		if [ "$width" -lt "$size" -a "$height" -lt "$size" ] ; then
+ 		    echo "<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><IMG WIDTH=$width HEIGHT=$height SRC=\"$file\"></TD></TR><TR><TD ALIGN=CENTER><SMALL>$file</SMALL></TD></TR><TR><TD ALIGN=CENTER><SMALL>${kb}K ${width}x${height}</SMALL></TD></TR></TABLE></TD>"
+ 		else
+ 		    echo "<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><A HREF=\"$file\"><IMG WIDTH=$twidth HEIGHT=$theight SRC=\"$thumb\"></A></TD></TR><TR><TD ALIGN=CENTER><SMALL><A HREF=\"$file\">$file</A></SMALL></TD></TR><TR><TD ALIGN=CENTER><SMALL>${kb}K ${width}x${height}</SMALL></TD></TR></TABLE></TD>"
