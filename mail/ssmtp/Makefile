@@ -7,6 +7,7 @@
 
 PORTNAME=	ssmtp
 PORTVERSION=	2.60.4
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -29,6 +30,15 @@ MAILERCONF=	/etc/mail/mailer.conf
 TRUE=		/usr/bin/true
 
 MAN8=		ssmtp.8
+
+.if defined(WITH_USERPREFS)
+CFLAGS+=	-DUSERPREFS
+.else
+pre-everything::
+	@${ECHO_CMD} 'If you want to let your users set their own revalias address,'
+	@${ECHO_CMD} 'please define WITH_USERPREFS (they just have to put their mail'
+	@${ECHO_CMD} 'address in ~/.ssmtprc).'
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e "s,/etc/ssl/certs/ssmtp.pem,${PREFIX}/etc/ssmtp/ssmtp.pem,g" \
