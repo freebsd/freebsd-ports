@@ -108,36 +108,31 @@ in /tmp and passes it to some external program; you'll see it actually
 creates a file in /compat/linux/tmp when the external program searches
 /tmp literally.
 
-- There is a bug you may wish to work around. It is unclear (at least to
-me) if this is a bug in VMware, the Linuxulator or the FreeBSD VM
-system.
+- There is a bug you may wish to work around if you aren't running
+5-current or a very recent 4-stable system.
 
-Some background first: When you mmap a file, the syncer will attempt to
-periodically synchronize the on-disk version of the file with the
-changes being made in the mmap'd region. If you unlink an mmap'd file,
-however, this no longer is necessary because if the machine were to
-reboot fsck would throw the file away. The hint is given to the syncer
-in the form of the MAP_NOSYNC flag to the mmap() syscall.
+Some background first: With FreeBSD, when you mmap a file, the syncer
+will attempt by default to periodically synchronize the on-disk version
+of the file with the changes being made in the mmap'd region. You can
+change this behavior using the MAP_NOSYNC flag to mmap(). With this
+flag, the syncer will leave the dirty pages alone and only the
+pagedaemon will flush them when it's absolutely necessary. However,
+Linux always behaves as if the MAP_NOSYNC flag was given, but the
+Linuxulator was not adding MAP_NOSYNC to the flags as part of the
+compatibility layer. But that is ok, since unlinking the last reference
+to an mmap()ed file causes FreeBSD to add MAP_NOSYNC in anyway (under
+the theory that if the machine reboots in that situation the file's
+inode would be freed since it would be an orphan).
 
-The problem is that VMware somehow performs the operations differently
-when resuming from a save-to-disk session than it does when booting. The
-result is that the MAP_NOSYNC flag doesn't get set, which causes the
-performance of a resumed session to be terrible compared to a new
-session.
+The problem is that VMware doesn't actually unlink the save-to-disk file
+when resuming -- it merely uses it in place. The result is that the
+MAP_NOSYNC flag doesn't get set, which causes the performance of a
+resumed session to be terrible compared to a new session. Every time the
+syncer runs (sysctl -a kern.filedelay), vmware hangs while the RAM file
+dirty pages are flushed.
 
-I suspect that the problem is that when an open file is unlinked, the
-unlink() call does not know to check to see if the file is mmap'ed and
-if so to add the MAP_NOSYNC flag. This means that open(), unlink(),
-mmap() sequences work, but open(), mmap(), unlink() sequences do not.
-VMware probably does not unlink the save-to-disk file right away in case
-the resume fails, which causes the difference in behavior compared to a
-clean boot.
-
-The only workaround at present is to force all Linuxulator mmap() calls
-to get MAP_NOSYNC. A patch against -current to do just this is available
-at http://home.jp.FreeBSD.ORG/cgi-bin/showmail/FreeBSD-users-jp/55885
-(ignore the Japanese text if you can't read it. -stable users may need
-to apply part of the patch to /sys/compat/linux/linux_mib.c).
+This problem has been fixed in 4.2-STABLE as of 2 Mar 2001
+(sys/i386/linux/linux_machdep.c versions 1.13 and 1.6.2.3).
 
 - If you configure vmware to use bridging, you must still specify the
 "Host only" mode to the VMware configurator. It will still work just
