@@ -23,7 +23,7 @@
   #
   #CC       = gcc
 ! #CFLAGS   = -O2 -Wall -ansi -fstrength-reduce -finline-functions
-  CC       = cc
+! CC       = cc
 ! CFLAGS   = -O
   
   #LFLAGS   =                # only sometimes needed; see below for examples
@@ -32,8 +32,8 @@
   # For non-gcc compilers, simply set CFLAGS = -O (to start with)
   #
   #CC       = gcc
-! CFLAGS   = -O2 -Wall -ansi -fstrength-reduce -finline-functions
-  CC       = cc
+! CFLAGS   += -Wall -ansi -fstrength-reduce -finline-functions
+! #CC       = cc
 ! #CFLAGS   = -O
   
   #LFLAGS   =                # only sometimes needed; see below for examples
