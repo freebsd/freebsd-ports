@@ -1,12 +1,60 @@
 @cwd /usr/local
-lib/news
-libexec/news
 @comment Package is not complete without minimal /var/news installation :-(
 @comment Basically just in.* and out.*    /var/news might be a symbolic link
 @comment and it might not exist yet :-(
 @exec ln -s /usr/local/newsspool /var/news
 @exec mkdir -p /usr/local/newsspool/in.coming/bad
 @exec cd /usr/local/newsspool; mkdir -p out.going out.master out.nntp
+lib/news/active
+lib/news/active.times
+lib/news/batchparms
+lib/news/bin
+lib/news/controlperm
+lib/news/explist
+lib/news/history
+lib/news/history.dir
+lib/news/history.pag
+lib/news/inews
+lib/news/mailname
+lib/news/mailpaths
+lib/news/organization
+lib/news/postdefltgroup
+lib/news/readnews.ctl
+lib/news/readnews.help
+lib/news/report.ctl
+lib/news/sys
+lib/news/versionname
+lib/news/whoami
+libexec/news/batch
+libexec/news/canonhdr
+libexec/news/canonsys.awk
+libexec/news/ctime
+libexec/news/ctl
+libexec/news/dbz
+libexec/news/dbzinfo
+libexec/news/decompressors
+libexec/news/dospacefor
+libexec/news/expire
+libexec/news/getabsdate
+libexec/news/gngp
+libexec/news/inject
+libexec/news/input
+libexec/news/lock
+libexec/news/maint
+libexec/news/mkpdir
+libexec/news/namecheck.awk
+libexec/news/newshostname
+libexec/news/newslock
+libexec/news/nov
+libexec/news/now
+libexec/news/queuelen
+libexec/news/relay
+libexec/news/report
+libexec/news/sizeof
+libexec/news/spacefor
+libexec/news/staleness
+libexec/news/touchlock
+libexec/news/unlock
 man/man1/checknews.1cn
 man/man1/inews.1cn
 man/man1/postnews.1cn
