@@ -2251,6 +2251,7 @@ gnat-doc-txt	ports/lang/gnat-doc-txt
 gnat-glade	ports/lang/gnat-glade
 gnats		ports/databases/gnats
 gnet		ports/net/gnet
+gnet-glib2	ports/net/gnet-glib2
 gnetlist	ports/cad/gnetlist
 gnewtellium	ports/net/gnewtellium
 gngb		ports/emulators/gngb
