@@ -7,11 +7,14 @@ Xfce Notification Area and the KDE System Tray.
 
 Mail Notification features include:
 
-	- multiple mailbox support
-	- mbox, MH, Maildir, Sylpheed and POP3 support
-	- automatic detection of mailbox format
-	- automatic notification
-	- HIG compliance
+	* multiple mailbox support
+	* mbox, MH, Maildir, Sylpheed, POP3, IMAP and Gmail support
+	* SASL authentication support
+	* APOP authentication support
+	* SSL support
+	* automatic detection of mailbox format
+	* automatic notification
+	* HIG 2.0 compliance
 
 WWW: http://www.nongnu.org/mailnotify/
 

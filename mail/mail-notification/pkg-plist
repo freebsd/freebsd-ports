@@ -2,26 +2,21 @@ bin/mail-notification
 @unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/mail-notification.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/mail-notification.schemas
 @exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/mail-notification.schemas > /dev/null || /usr/bin/true
+etc/sound/events/mail-notification.soundlist
+libdata/bonobo/servers/GNOME_MailNotification_Automation.server
 share/gnome/applications/mail-notification.desktop
+share/gnome/control-center-2.0/capplets/mail-notification-properties.desktop
 share/gnome/help/mail-notification/C/documentation-license.xml
-share/gnome/help/mail-notification/C/figures/mail-error.png
 share/gnome/help/mail-notification/C/figures/mail.png
-share/gnome/help/mail-notification/C/figures/no-mail-error.png
-share/gnome/help/mail-notification/C/figures/no-mail.png
 share/gnome/help/mail-notification/C/mail-notification.xml
 share/gnome/help/mail-notification/C/software-license.xml
 share/gnome/mail-notification/ui/about-icon.png
 share/gnome/mail-notification/ui/dialog.glade
 share/gnome/mail-notification/ui/gmail.png
 share/gnome/mail-notification/ui/logo.png
-share/gnome/mail-notification/ui/mail-error.png
-share/gnome/mail-notification/ui/mail.png
 share/gnome/mail-notification/ui/mailbox-properties.glade
-share/gnome/mail-notification/ui/menu.glade
-share/gnome/mail-notification/ui/no-mail-error.png
-share/gnome/mail-notification/ui/no-mail.png
-share/gnome/mail-notification/ui/preferences-icon.png
-share/gnome/mail-notification/ui/preferences.glade
+share/gnome/mail-notification/ui/properties-icon.png
+share/gnome/mail-notification/ui/properties.glade
 share/gnome/mail-notification/ui/unsupported.png
 share/gnome/omf/mail-notification/mail-notification-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/mail-notification/mail-notification-C.omf 2>/dev/null || /usr/bin/true
