@@ -8,7 +8,7 @@
 PORTNAME=	htmldoc
 PORTVERSION=	1.8.23
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.easysw.com/pub/htmldoc/htmldoc/
+MASTER_SITES=	ftp://ftp.easysw.com/pub/htmldoc/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	glenn@trewitt.org
