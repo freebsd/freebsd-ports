@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${site_perl}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
 	${site_perl}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail \
 	${site_perl}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
 	${site_perl}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 site_perl=	${SITE_PERL}
 
