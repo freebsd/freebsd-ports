@@ -1,5 +1,6 @@
 bin/nap
-share/nap/nap.conf
+share/nap/nap.conf.dist
 @dirrm share/nap
+share/doc/nap/NEWS
 share/doc/nap/README
 @dirrm share/doc/nap

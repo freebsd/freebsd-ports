@@ -6,37 +6,27 @@
 #
 
 PORTNAME=	napster
-PORTVERSION=	0.9b
+PORTVERSION=	1.4.4
 CATEGORIES=	audio net
-MASTER_SITES=	http://www.gis.net/~nite/
-DISTNAME=	nap-bsd-0.9BETA
+MASTER_SITES=	http://download.sourceforge.net/nap/
+DISTNAME=	nap-${PORTVERSION}
 
 MAINTAINER=	dburr@FreeBSD.org
 
-FORBIDDEN=	"Remote vulnerabilities"
+GNU_CONFIGURE=  yes
 
-# leaving this here, in case they decide to drop the BSD version again *sigh*
-# RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
-
-ONLY_FOR_ARCHS=	i386
-WRKSRC=		${WRKDIR}/nap
-NO_BUILD=	yes
-
-# leaving this here in case they decide to drop the BSD version again *sigh*
-# do-patch:
-#	brandelf -t Linux ${WRKSRC}/nap
-
-do-install:
-	${INSTALL} -c -o root -g wheel -m 555 ${WRKSRC}/nap ${PREFIX}/bin/nap
+pre-install:
 	${MKDIR} ${PREFIX}/share/nap
-	${INSTALL_DATA} ${WRKSRC}/nap.conf ${PREFIX}/share/nap
+	${INSTALL_DATA} ${WRKSRC}/nap.conf.dist ${PREFIX}/share/nap
+
 .if (!defined(NOPORTDOCS))
-	@${ECHO_MSG} "===>  Installing README in ${PREFIX}/share/doc/nap"
+	@${ECHO_MSG} "===>  Installing NEWS + README in ${PREFIX}/share/doc/nap"
 	${MKDIR} ${PREFIX}/share/doc/nap
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${PREFIX}/share/doc/nap
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/nap
 .endif
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE} | ${SED} 's:@PREFIX@:${PREFIX}:g'
 
 .include <bsd.port.mk>
