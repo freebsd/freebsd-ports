@@ -1,4 +1,0 @@
-lib/fpl/libfpl.a
-lib/fpl/libent.a
-lib/fpl/liballoc.a
-@dirrm lib/fpl/
