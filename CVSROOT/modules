@@ -3212,6 +3212,7 @@ inventor	ports/graphics/inventor
 invitation_to_ruby	ports/devel/invitation_to_ruby
 iog		ports/net-mgmt/iog
 ion		ports/x11-wm/ion
+ion-2		ports/x11-wm/ion-2
 iozone		ports/benchmarks/iozone
 iozone21	ports/benchmarks/iozone21
 ip6_int		ports/net/ip6_int
