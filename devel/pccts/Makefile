@@ -7,7 +7,7 @@
 #
 
 PORTNAME=		pccts
-PORTVERSION=		1.33.25
+PORTVERSION=		1.33.29
 CATEGORIES=		devel
 MASTER_SITES=		http://www.polhode.com/
 DISTNAME=		pccts133mr
