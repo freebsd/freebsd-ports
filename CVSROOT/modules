@@ -3329,6 +3329,7 @@ linux-jdk13	ports/java/linux-jdk13
 linux-jdk14	ports/java/linux-jdk14
 linux-jpeg	ports/graphics/linux-jpeg
 linux-lesstif-ns	ports/www/linux-lesstif-ns
+linux-libaudiofile	ports/audio/linux-libaudiofile
 linux-libglade	ports/devel/linux-libglade
 linux-libxml	ports/textproc/linux-libxml
 linux-netscape4	ports/www/linux-netscape4
