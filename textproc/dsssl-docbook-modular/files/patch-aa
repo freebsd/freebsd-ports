@@ -1,0 +1,11 @@
+--- dtds/dbdsssl/dbdsssl.dtd.orig	Sun Apr  4 16:47:26 1999
++++ dtds/dbdsssl/dbdsssl.dtd	Sun Apr  4 16:47:42 1999
+@@ -64,7 +64,7 @@
+ <!ENTITY % book.module "IGNORE">
+ <!ENTITY % programlisting.module "IGNORE">
+ 
+-<!ENTITY % docbook PUBLIC "-//OASIS//DTD DocBook V3.1//EN">
++<!ENTITY % docbook PUBLIC "-//Davenport//DTD DocBook V3.0//EN">
+ %docbook;
+                   
+ <!-- ============ Adjust DocBook to fit the DSSSL Architecture ======== -->
