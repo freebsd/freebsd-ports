@@ -1,0 +1,4 @@
+This module provides Perl bindings for the GNU IDN Library (Libidn)
+(see also Port devel/libidn).
+
+WWW: http://search.cpan.org/~thor/Net-LibIDN-0.04/
