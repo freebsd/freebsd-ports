@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nefu
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.6
 CATEGORIES=	net
 MASTER_SITES=	http://rsug.itd.umich.edu/software/nefu/files/
 
