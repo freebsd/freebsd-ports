@@ -1,0 +1,226 @@
+share/fluxbox/styles/Alien/pixmaps/close.xpm
+share/fluxbox/styles/Alien/pixmaps/edges.xpm
+share/fluxbox/styles/Alien/pixmaps/icon.xpm
+share/fluxbox/styles/Alien/pixmaps/iconbarf.xpm
+share/fluxbox/styles/Alien/pixmaps/iconbaru.xpm
+share/fluxbox/styles/Alien/pixmaps/max.xpm
+share/fluxbox/styles/Alien/pixmaps/menu.xpm
+share/fluxbox/styles/Alien/pixmaps/selected.xpm
+share/fluxbox/styles/Alien/pixmaps/stick.xpm
+share/fluxbox/styles/Alien/pixmaps/stuck.xpm
+share/fluxbox/styles/Alien/theme.cfg
+share/fluxbox/styles/CityOfDreams/pixmaps/close.xpm
+share/fluxbox/styles/CityOfDreams/pixmaps/close2.xpm
+share/fluxbox/styles/CityOfDreams/pixmaps/closep.xpm
+share/fluxbox/styles/CityOfDreams/pixmaps/max.xpm
+share/fluxbox/styles/CityOfDreams/pixmaps/max2.xpm
+share/fluxbox/styles/CityOfDreams/pixmaps/maxp.xpm
+share/fluxbox/styles/CityOfDreams/pixmaps/min.xpm
+share/fluxbox/styles/CityOfDreams/pixmaps/min2.xpm
+share/fluxbox/styles/CityOfDreams/pixmaps/minp.xpm
+share/fluxbox/styles/CityOfDreams/pixmaps/stick.xpm
+share/fluxbox/styles/CityOfDreams/pixmaps/stick2.xpm
+share/fluxbox/styles/CityOfDreams/pixmaps/toolbarb.xpm
+share/fluxbox/styles/CityOfDreams/pixmaps/toolbarw.xpm
+share/fluxbox/styles/CityOfDreams/theme.cfg
+share/fluxbox/styles/Excelsium/backgrounds/Excelsium.jpg
+share/fluxbox/styles/Excelsium/pixmaps/close-unfocus.xpm
+share/fluxbox/styles/Excelsium/pixmaps/close.xpm
+share/fluxbox/styles/Excelsium/pixmaps/icon-unfocus.xpm
+share/fluxbox/styles/Excelsium/pixmaps/icon.xpm
+share/fluxbox/styles/Excelsium/pixmaps/max-unfocus.xpm
+share/fluxbox/styles/Excelsium/pixmaps/max.xpm
+share/fluxbox/styles/Excelsium/pixmaps/selected.xpm
+share/fluxbox/styles/Excelsium/pixmaps/stick.xpm
+share/fluxbox/styles/Excelsium/pixmaps/stuck.xpm
+share/fluxbox/styles/Excelsium/pixmaps/title-active.xpm
+share/fluxbox/styles/Excelsium/pixmaps/toolbar.xpm
+share/fluxbox/styles/Excelsium/theme.cfg
+share/fluxbox/styles/Fire-Eye-II/backgrounds/Fire_eye_1600x1200.jpg
+share/fluxbox/styles/Fire-Eye-II/pixmaps/close-off.xpm
+share/fluxbox/styles/Fire-Eye-II/pixmaps/close-on.xpm
+share/fluxbox/styles/Fire-Eye-II/pixmaps/off.xpm
+share/fluxbox/styles/Fire-Eye-II/pixmaps/on.xpm
+share/fluxbox/styles/Fire-Eye-II/pixmaps/stick-off.xpm
+share/fluxbox/styles/Fire-Eye-II/pixmaps/stick-on.xpm
+share/fluxbox/styles/Fire-Eye-II/pixmaps/stuck-off.xpm
+share/fluxbox/styles/Fire-Eye-II/pixmaps/stuck-on.xpm
+share/fluxbox/styles/Fire-Eye-II/theme.cfg
+share/fluxbox/styles/Graphite-Integration/pixmaps/bar1.xpm
+share/fluxbox/styles/Graphite-Integration/pixmaps/bar2.xpm
+share/fluxbox/styles/Graphite-Integration/pixmaps/close1.xpm
+share/fluxbox/styles/Graphite-Integration/pixmaps/close2.xpm
+share/fluxbox/styles/Graphite-Integration/pixmaps/close2a.xpm
+share/fluxbox/styles/Graphite-Integration/pixmaps/max1.xpm
+share/fluxbox/styles/Graphite-Integration/pixmaps/max2.xpm
+share/fluxbox/styles/Graphite-Integration/pixmaps/max2a.xpm
+share/fluxbox/styles/Graphite-Integration/pixmaps/min1.xpm
+share/fluxbox/styles/Graphite-Integration/pixmaps/min2.xpm
+share/fluxbox/styles/Graphite-Integration/pixmaps/min2a.xpm
+share/fluxbox/styles/Graphite-Integration/pixmaps/stick1.xpm
+share/fluxbox/styles/Graphite-Integration/pixmaps/stick1a.xpm
+share/fluxbox/styles/Graphite-Integration/pixmaps/stick2.xpm
+share/fluxbox/styles/Graphite-Integration/pixmaps/stick2a.xpm
+share/fluxbox/styles/Graphite-Integration/theme.cfg
+share/fluxbox/styles/Harddriven/backgrounds/Julia_Trap.jpg
+share/fluxbox/styles/Harddriven/pixmaps/close-press.xpm
+share/fluxbox/styles/Harddriven/pixmaps/close-unfocus.xpm
+share/fluxbox/styles/Harddriven/pixmaps/close.xpm
+share/fluxbox/styles/Harddriven/pixmaps/icon-press.xpm
+share/fluxbox/styles/Harddriven/pixmaps/icon-unfocus.xpm
+share/fluxbox/styles/Harddriven/pixmaps/icon.xpm
+share/fluxbox/styles/Harddriven/pixmaps/max-press.xpm
+share/fluxbox/styles/Harddriven/pixmaps/max-unfocus.xpm
+share/fluxbox/styles/Harddriven/pixmaps/max.xpm
+share/fluxbox/styles/Harddriven/pixmaps/selected.xpm
+share/fluxbox/styles/Harddriven/pixmaps/stick-press.xpm
+share/fluxbox/styles/Harddriven/pixmaps/stick-unfocus.xpm
+share/fluxbox/styles/Harddriven/pixmaps/stick.xpm
+share/fluxbox/styles/Harddriven/pixmaps/stuck-unfocus.xpm
+share/fluxbox/styles/Harddriven/pixmaps/stuck.xpm
+share/fluxbox/styles/Harddriven/pixmaps/title-active.xpm
+share/fluxbox/styles/Harddriven/pixmaps/title-inactive.xpm
+share/fluxbox/styles/Harddriven/pixmaps/toolbar.xpm
+share/fluxbox/styles/Harddriven/theme.cfg
+share/fluxbox/styles/Milky/backgrounds/Sensitive_V2.jpg
+share/fluxbox/styles/Milky/pixmaps/close.xpm
+share/fluxbox/styles/Milky/pixmaps/close2.xpm
+share/fluxbox/styles/Milky/pixmaps/max.xpm
+share/fluxbox/styles/Milky/pixmaps/max2.xpm
+share/fluxbox/styles/Milky/pixmaps/menu.xpm
+share/fluxbox/styles/Milky/pixmaps/min.xpm
+share/fluxbox/styles/Milky/pixmaps/min2.xpm
+share/fluxbox/styles/Milky/pixmaps/stick.xpm
+share/fluxbox/styles/Milky/pixmaps/stick2.xpm
+share/fluxbox/styles/Milky/pixmaps/titel.xpm
+share/fluxbox/styles/Milky/theme.cfg
+share/fluxbox/styles/addicted2blue/backgrounds/introduction-1024x768.png
+share/fluxbox/styles/addicted2blue/backgrounds/introduction-1280x1024.png
+share/fluxbox/styles/addicted2blue/pixmaps/close3.pressed.xpm
+share/fluxbox/styles/addicted2blue/pixmaps/close3.xpm
+share/fluxbox/styles/addicted2blue/pixmaps/iconify3.pressed.xpm
+share/fluxbox/styles/addicted2blue/pixmaps/iconify3.xpm
+share/fluxbox/styles/addicted2blue/pixmaps/maximize3.pressed.xpm
+share/fluxbox/styles/addicted2blue/pixmaps/maximize3.xpm
+share/fluxbox/styles/addicted2blue/pixmaps/stick3.pressed.xpm
+share/fluxbox/styles/addicted2blue/pixmaps/stick3.stuck.xpm
+share/fluxbox/styles/addicted2blue/pixmaps/stick3.xpm
+share/fluxbox/styles/addicted2blue/pixmaps/title3.xpm
+share/fluxbox/styles/addicted2blue/theme.cfg
+share/fluxbox/styles/blue_boxish/pixmaps/bar.xcf
+share/fluxbox/styles/blue_boxish/pixmaps/bullet.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/closefcs.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/closepr.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/closeufcs.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/frame.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/highlight.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/maxfcs.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/maxpr.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/maxufcs.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/menu.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/minfcs.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/minpr.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/minufcs.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/selected.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/stickfcs.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/stickpr.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/stickufcs.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/stuckfcs.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/stuckufcs.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/tbarfcs.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/tbarufcs.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/toolbarfcs.xpm
+share/fluxbox/styles/blue_boxish/pixmaps/toolbarufcs.xpm
+share/fluxbox/styles/blue_boxish/theme.cfg
+share/fluxbox/styles/blue_wipe/backgrounds/ataraxia1-0.jpg
+share/fluxbox/styles/blue_wipe/theme.cfg
+share/fluxbox/styles/brushed/pixmaps/bar.xcf
+share/fluxbox/styles/brushed/pixmaps/bullet.xpm
+share/fluxbox/styles/brushed/pixmaps/closefcs.xpm
+share/fluxbox/styles/brushed/pixmaps/closepr.xpm
+share/fluxbox/styles/brushed/pixmaps/closeufcs.xpm
+share/fluxbox/styles/brushed/pixmaps/frame.xpm
+share/fluxbox/styles/brushed/pixmaps/highlight.xpm
+share/fluxbox/styles/brushed/pixmaps/maxfcs.xpm
+share/fluxbox/styles/brushed/pixmaps/maxpr.xpm
+share/fluxbox/styles/brushed/pixmaps/maxufcs.xpm
+share/fluxbox/styles/brushed/pixmaps/menu.xpm
+share/fluxbox/styles/brushed/pixmaps/minfcs.xpm
+share/fluxbox/styles/brushed/pixmaps/minpr.xpm
+share/fluxbox/styles/brushed/pixmaps/minufcs.xpm
+share/fluxbox/styles/brushed/pixmaps/selected.xpm
+share/fluxbox/styles/brushed/pixmaps/stickfcs.xpm
+share/fluxbox/styles/brushed/pixmaps/stickpr.xpm
+share/fluxbox/styles/brushed/pixmaps/stickufcs.xpm
+share/fluxbox/styles/brushed/pixmaps/stuckfcs.xpm
+share/fluxbox/styles/brushed/pixmaps/stuckufcs.xpm
+share/fluxbox/styles/brushed/pixmaps/tbarfcs.xpm
+share/fluxbox/styles/brushed/pixmaps/tbarufcs.xpm
+share/fluxbox/styles/brushed/pixmaps/toolbarfcs.xpm
+share/fluxbox/styles/brushed/pixmaps/toolbarufcs.xpm
+share/fluxbox/styles/brushed/pixmaps/workspace.xpm
+share/fluxbox/styles/brushed/theme.cfg
+share/fluxbox/styles/quasi-operational/backgrounds/thewall.png
+share/fluxbox/styles/quasi-operational/pixmaps/close.xpm
+share/fluxbox/styles/quasi-operational/pixmaps/close_fade.xpm
+share/fluxbox/styles/quasi-operational/pixmaps/left.xpm
+share/fluxbox/styles/quasi-operational/pixmaps/left_fade.xpm
+share/fluxbox/styles/quasi-operational/pixmaps/max.xpm
+share/fluxbox/styles/quasi-operational/pixmaps/max_fade.xpm
+share/fluxbox/styles/quasi-operational/pixmaps/min.xpm
+share/fluxbox/styles/quasi-operational/pixmaps/min_fade.xpm
+share/fluxbox/styles/quasi-operational/pixmaps/right.xpm
+share/fluxbox/styles/quasi-operational/pixmaps/right_fade.xpm
+share/fluxbox/styles/quasi-operational/pixmaps/stick.xpm
+share/fluxbox/styles/quasi-operational/pixmaps/stick_fade.xpm
+share/fluxbox/styles/quasi-operational/pixmaps/stuck.xpm
+share/fluxbox/styles/quasi-operational/theme.cfg
+share/fluxbox/styles/saphire-green/pixmaps/close.xpm
+share/fluxbox/styles/saphire-green/pixmaps/close_pressed.xpm
+share/fluxbox/styles/saphire-green/pixmaps/iconify.xpm
+share/fluxbox/styles/saphire-green/pixmaps/iconpressed.xpm
+share/fluxbox/styles/saphire-green/pixmaps/maximize.xpm
+share/fluxbox/styles/saphire-green/pixmaps/maxpressed.xpm
+share/fluxbox/styles/saphire-green/pixmaps/stick.xpm
+share/fluxbox/styles/saphire-green/pixmaps/stickpressed.xpm
+share/fluxbox/styles/saphire-green/pixmaps/stuck.xpm
+share/fluxbox/styles/saphire-green/pixmaps/stuck2.xpm
+share/fluxbox/styles/saphire-green/theme.cfg
+share/fluxbox/styles/system6/pixmaps/button.xpm
+share/fluxbox/styles/system6/pixmaps/buttonu.xpm
+share/fluxbox/styles/system6/theme.cfg
+@dirrm share/fluxbox/styles/system6/pixmaps
+@dirrm share/fluxbox/styles/system6
+@dirrm share/fluxbox/styles/saphire-green/pixmaps
+@dirrm share/fluxbox/styles/saphire-green
+@dirrm share/fluxbox/styles/quasi-operational/pixmaps
+@dirrm share/fluxbox/styles/quasi-operational/backgrounds
+@dirrm share/fluxbox/styles/quasi-operational
+@dirrm share/fluxbox/styles/brushed/pixmaps
+@dirrm share/fluxbox/styles/brushed
+@dirrm share/fluxbox/styles/blue_wipe/pixmaps
+@dirrm share/fluxbox/styles/blue_wipe/backgrounds
+@dirrm share/fluxbox/styles/blue_wipe
+@dirrm share/fluxbox/styles/blue_boxish/pixmaps
+@dirrm share/fluxbox/styles/blue_boxish
+@dirrm share/fluxbox/styles/addicted2blue/pixmaps
+@dirrm share/fluxbox/styles/addicted2blue/backgrounds
+@dirrm share/fluxbox/styles/addicted2blue
+@dirrm share/fluxbox/styles/Milky/pixmaps
+@dirrm share/fluxbox/styles/Milky/backgrounds
+@dirrm share/fluxbox/styles/Milky
+@dirrm share/fluxbox/styles/Harddriven/pixmaps
+@dirrm share/fluxbox/styles/Harddriven/backgrounds
+@dirrm share/fluxbox/styles/Harddriven
+@dirrm share/fluxbox/styles/Graphite-Integration/pixmaps
+@dirrm share/fluxbox/styles/Graphite-Integration
+@dirrm share/fluxbox/styles/Fire-Eye-II/pixmaps
+@dirrm share/fluxbox/styles/Fire-Eye-II/backgrounds
+@dirrm share/fluxbox/styles/Fire-Eye-II
+@dirrm share/fluxbox/styles/Excelsium/pixmaps
+@dirrm share/fluxbox/styles/Excelsium/backgrounds
+@dirrm share/fluxbox/styles/Excelsium
+@dirrm share/fluxbox/styles/CityOfDreams/pixmaps
+@dirrm share/fluxbox/styles/CityOfDreams
+@dirrm share/fluxbox/styles/Alien/pixmaps
+@dirrm share/fluxbox/styles/Alien

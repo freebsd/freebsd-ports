@@ -8,6 +8,7 @@
     SUBDIR += clean-theme-gtk
     SUBDIR += colorstep
     SUBDIR += engradient
+    SUBDIR += flux-art
     SUBDIR += fluxbox-sid-pack
     SUBDIR += fvwm-themes
     SUBDIR += geramik
