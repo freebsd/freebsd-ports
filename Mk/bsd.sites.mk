@@ -208,6 +208,7 @@ MASTER_SITE_SOURCEWARE+= \
 
 MASTER_SITE_SOURCEFORGE+= \
 	ftp://ftp2.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
+	http://prdownloads.sourceforge.net/%SUBDIR%/ \
 	http://ftp2.sourceforge.net/%SUBDIR%/ \
 	ftp://ftp3.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
 	http://ftp3.sourceforge.net/%SUBDIR%/ \
