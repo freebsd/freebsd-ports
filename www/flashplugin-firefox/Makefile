@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	flashplugin-firefox
-PORTVERSION=	0.4.10
-PORTREVISION=	6
+PORTVERSION=	0.4.12
 CATEGORIES=	www
-MASTER_SITES=	http://www.swift-tools.net/Flash/
-DISTNAME=	flash-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gplflash
+DISTNAME=	gplflash-${PORTVERSION}
 
 MAINTAINER=	sam@brj.pp.ru
 COMMENT=	A GPL standalone Flash (TM) plugin for FireFox web browser
@@ -19,11 +18,18 @@ COMMENT=	A GPL standalone Flash (TM) plugin for FireFox web browser
 LIB_DEPENDS=	flash.0:${PORTSDIR}/graphics/libflash
 RUN_DEPENDS?=	firefox:${PORTSDIR}/www/firefox
 
-USE_X_PREFIX=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}/plugin
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/Plugin
+USE_BZIP2=	yes
+USE_X_PREFIX=	yes
 PLUGIN_DIR?=	lib/firefox/plugins
 PLIST_SUB+=	PLUGIN_DIR=${PLUGIN_DIR}
+
+do-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -shared -fPIC -DXP_UNIX \
+	    -I${.CURDIR}../lib -I${LOCALBASE}/include -I${X11BASE}/include \
+	    -o npflash.so plugin.c npunix.c \
+	    -L${LOCALBASE}/lib -L${X11BASE}/lib -lflash -lXt
 
 do-install:
 	@${MKDIR} ${PREFIX}/${PLUGIN_DIR}
