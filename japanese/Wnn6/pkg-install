@@ -1,49 +1,19 @@
 #!/bin/sh
-# installation script for Wnn4.2
-if [ X"$2" != X"POST-INSTALL" ]; then
-  exit 0
+if [ "$2" != "POST-INSTALL" ]; then exit 0; fi
+
+mkdir -p /usr/local/bin
+mkdir -p /usr/local/lib
+cd /usr/local/bin; rm -f Wnn6; ln -s ${PKG_PREFIX}/OMRONWnn6/Wnn6fbsd Wnn6
+cd /usr/local/lib; rm -f wnn6; ln -s ${PKG_PREFIX}/OMRONWnn6/wnn6fbsd wnn6
+cd ${PKG_PREFIX}/OMRONWnn6/wnn6fbsd/ja_JP; rm -f dic; ln -s ../../wnn6dic dic
+chown -R 127.bin ${PKG_PREFIX}/OMRONWnn6
+
+echo "######################################################################"
+echo "Execute ${PKG_PREFIX}/OMRONWnn6/setup.sh  for startup configuration."
+if [ X${PKG_PREFIX} != X"/usr/local" ]; then
+    echo
+    echo "Warning!!"
+    echo "We made symbolic links from \"/usr/local/bin/Wnn6\" to \"${PKG_PREFIX}/OMRONWnn6/Wnn6fbsd\""
+    echo "and from \"/usr/local/lib/wnn6\" to \"${PKG_PREFIX}/OMRONWnn6/wnn6fbsd\""
 fi
-case $1 in
-  jp-Wnn-4.2)
-    sys_dirs="${PKG_PREFIX}/lib/wnn/ja_JP/dic/pubdic ${PKG_PREFIX}/lib/wnn/ja_JP/dic/wnncons"
-    usr_dirs=${PKG_PREFIX}/lib/wnn/ja_JP/dic/usr
-    wnntouch=${PKG_PREFIX}/bin/Wnn4/wnntouch
-    wnnserver=${PKG_PREFIX}/bin/Wnn4/jserver
-    wnnname=Wnn
-    ;;
-  cn-Wnn-4.2)
-    sys_dirs="${PKG_PREFIX}/lib/wnn/zh_CN/dic/sys ${PKG_PREFIX}/lib/wnn/zh_TW/dic/sys"
-    usr_dirs="${PKG_PREFIX}/lib/wnn/zh_CN/dic/usr ${PKG_PREFIX}/lib/wnn/zh_TW/dic/usr"
-    wnntouch=${PKG_PREFIX}/bin/cWnn4/cwnntouch
-    wnnserver=${PKG_PREFIX}/bin/cWnn4/cserver
-    wnnname=cWnn
-    ;;
-  kr-Wnn-4.2)
-    sys_dirs="${PKG_PREFIX}/lib/wnn/ko_KR/dic/sys"
-    usr_dirs=${PKG_PREFIX}/lib/wnn/ko_KR/dic/usr
-    wnntouch=${PKG_PREFIX}/bin/kWnn4/kwnntouch
-    wnnserver=${PKG_PREFIX}/bin/kWnn4/kserver
-    wnnname=kWnn
-    ;;
-esac
-for dir in $sys_dirs; do
-  $wnntouch $dir/*
-done
-for dir in $usr_dirs; do
-  if [ ! -d $dir ]; then
-    mkdir -p $dir
-  fi
-  chown wnn $dir
-done
-startup_script=${PKG_PREFIX}/etc/rc.d/${wnnname}.sh
-if [ ! -f ${startup_script} ]; then
-  echo "Installing ${startup_script} startup file.";
-  echo '#!/bin/sh' > ${startup_script};
-  echo "wnn=${wnnserver}" >> ${startup_script};
-  echo 'if [ -f $wnn ]; then' >> ${startup_script};
-  echo "    echo -n ' ${wnnname}'" >> ${startup_script};
-  echo '     $wnn' >> ${startup_script};
-  echo "fi" >> ${startup_script};
-  chmod 755 ${startup_script};
-  chown bin.bin ${startup_script};
-fi
+echo "######################################################################"

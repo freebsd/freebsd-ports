@@ -1,31 +1,22 @@
-This is Wnn4.2, a Japanese/Chinese/Korean input method.  It is
-included primarily so that we can compile mule-2.1, a multilingual
-emacs.
+This is Wnn6, a Japanese input method. This software is a commodity,
+and you can buy it from Omron Software Co., Ltd.
 
-Only the Japanese version is build for this port.
++------------------------------------------+
+| URL:	   http://www.omronsoft.co.jp      |
+| E-mail:  wnn-info@omronsoft.co.jp        |
+| TEL:     +81-44-246-6006                 |
+| FAX:     +81-44-246-6011                 |
++------------------------------------------+
 
-Note that binaries and libraries go to /usr/local, while man pages and 
-includes go to /usr/X11R6.  That's the way it was designed, I don't
-know why.
+Remark 1. If you install this package, the folloing symbolic links are
+made,
 
-- Satoshi
-(asami@cs.berkeley.edu)
+"/usr/local/bin/Wnn6" to "${PKG_PREFIX}/OMRONWnn6/Wnn6fbsd" and,
+"/usr/local/lib/wnn6" to "${PKG_PREFIX}/OMRONWnn6/wnn6fbsd".
 
--------------------------------------------------------------------
+Remark 2. We do not fetch by FTP.
 
-This also include some patches for FreeBSD or bugfix.
-If use this patches, you can compile Wnn-4.2 under XFree86 3.1.2E
- or later(X11Release6.1).
-If there are any problem in this patches, please know me via E-mail.
 
-Hidekazu Kuroki
-(hidekazu@cs.titech.ac.jp)
+- S. Taoka
+taoka@infonets.hiroshima-u.ac.jp
 
--------------------------------------------------------------------
-
-Mr. Yoshio KATAYAMA <kate@pfu.co.jp> fixed many bugs for Wnn4.2.
-Patches for those are in 'Wnn4.2.patch.tar.gz' and are applied in this
-port.
-
--- S. Taoka
-<taoka@infonets.hiroshima-u.ac.jp>

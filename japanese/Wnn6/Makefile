@@ -1,85 +1,91 @@
-# New ports collection makefile for:	Wnn for Japanese
-# Version required:	4.2
-# Date created:		20 July 1997
+# New ports collection makefile for:	Wnn6-demo
+# Version required:	97.6.6
+# Date created:		15 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.16 1997/06/19 11:26:07 asami Exp $
+# $Id: Makefile,v 1.17 1997/09/10 06:51:52 asami Exp $
 #
 
-DISTNAME=	Wnn4.2
-PKGNAME?=	jp-Wnn-4.2
-CATEGORIES?=	japanese
-MASTER_SITES=	ftp://ftp.u-tokyo.ac.jp/pub/Japanese/Wnn/ \
-		ftp://ports.jp.FreeBSD.org/pub/incoming/distfiles/
-DISTFILES=	Wnn4.2.tar.gz Wnn4.2.patch.tar.gz
+DISTNAME=	OMRONWnn6
+PKGNAME=	jp-Wnn6-97.6.6
+CATEGORIES=	japanese
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
 
-EXTRACT_ONLY=	Wnn4.2.tar.gz
-PATCHDIR=	${.CURDIR}/../../japanese/Wnn/patches
-FILESDIR=	${.CURDIR}/../../japanese/Wnn/files
-PKGDIR=		${.CURDIR}/../../japanese/Wnn/pkg
-WRKSRC=		${WRKDIR}/Xsi
-IS_INTERACTIVE=	yes	# needs "wnn" user
+IGNOREFILES=	${DISTFILES}
+WRKSRC=		${WRKDIR}
+LIBDIR=		${PREFIX}/OMRONWnn6
+STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/wnn6.sh
+DISTDIR=	${MOUNT_PT}/fbsd
+MOUNT_PT?=	/cdrom
+MOUNT_DEV?=	/dev/wcd0c
 
-.if (${PKGNAME} == jp-Wnn-4.2)
-PORT_DOCDIR=	${PREFIX}/share/doc/jp-Wnn
-DOC_FROM=	${WRKSRC}/Wnn
-.elif (${PKGNAME} == cn-Wnn-4.2)
-PORT_DOCDIR=	${PREFIX}/share/doc/cn-Wnn
-DOC_FROM=	${WRKSRC}/cWnn
-.endif  # kWnn has no manual.
+RESTRICTED=	"Restrictive copyright"
 
-post-extract:
-	${EXTRACT_CMD} -C ${WRKSRC} ${EXTRACT_BEFORE_ARGS} \
-		${_DISTDIR}/Wnn4.2.patch.tar.gz
-	/bin/ln -sf Project.tmpl ${WRKSRC}/config/X11.tmpl
+NO_CDROM=	yes
+NO_PACKAGE=	yes
+NO_CONFIGURE=	yes
+NO_PATCH=	yes
+IS_INTERACTIVE=	yes
 
-pre-patch:
-	cd ${WRKSRC}; ${PATCH} ${PATCH_DIST_ARGS} < ${WRKSRC}/Wnn4.2.patch
-
-# Applying a patch for depending on language
-post-patch:
-	case ${PKGNAME} in \
-	  jp-Wnn-4.2) \
-		LANG_PATCH=${FILESDIR}/patch-for-japanese;; \
-	  cn-Wnn-4.2) \
-		LANG_PATCH=${FILESDIR}/patch-for-chinese;; \
-	  kr-Wnn-4.2) \
-		LANG_PATCH=${FILESDIR}/patch-for-korean;; \
-	esac; \
-	(cd ${_DISTDIR}; \
-		${PATCH} ${PATCH_DIST_ARGS} < $${LANG_PATCH})
-
-# for PREFIX
-pre-build:
-	for file in ${WRKSRC}/config/Project.tmpl \
-		${WRKSRC}/Contrib/dic/gerodic/Makefile; do \
-	  mv $$file $$file.orig2; \
-	  sed 's!^\([ ]*PREFIX = \).*$$!\1${PREFIX}!' \
-		$$file.orig2 > $$file; \
+do-fetch:
+	@echo -n "Please set the CD-ROM of 'Wnn6' into your cdrom-drive. (Press Return)"; \
+	read dummy; \
+	echo "A mount point and the device file are '${MOUNT_PT}' and '${MOUNT_DEV}' respectively."; \
+	echo -n "Are these correct? (y/n) [y]"; \
+	(read ans; \
+	case x$${ans} in \
+	  xn*|xN*) \
+		echo "Please rerun 'make' in specifying MOUNT_PT and MOUNT_DEV"; \
+		echo "For example:"; \
+		echo "	make MOUNT_PT=/mnt MOUNT_DEV=/dev/cd0c"; \
+		/usr/bin/false; \
+		;; \
+	  *) \
+		echo "Now mounting the CD-ROM ..."; \
+		;; \
+	esac)
+	@for t in `mount | grep ${MOUNT_PT}`; do \
+	  if [ x"$$t" = x"${MOUNT_PT}" ]; then \
+	    echo "##################################################"; \
+	    echo "${MOUNT_PT} is busy"; \
+	    echo "Please umount ${MOUNT_PT}"; \
+	    echo "##################################################"; \
+	    /usr/bin/false; \
+	  fi; \
 	done
+	@/sbin/mount_cd9660 ${MOUNT_DEV} ${MOUNT_PT}
 
-# These are necesary because this package uses a different Makefile for
-#  building and installing etc.
+pre-extract:
+	@if [ ! -e ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
+		echo "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}: No such file"; \
+		echo "Perhaps the CD-ROM is not one of Wnn6"; \
+		/sbin/umount ${MOUNT_PT}; \
+		echo "Umounting is done ..."; \
+		/usr/bin/false; \
+	fi
+
 do-build:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} Makefile.inst World)
+	@/sbin/umount ${MOUNT_PT}
 
-pre-install:
-	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
+do-install:
+	@cd ${WRKSRC}/usr; tar cf - OMRONWnn6 | (cd ${PREFIX}; tar xvpf -)
+	@${INSTALL_SCRIPT} ${FILESDIR}/setup.sh ${LIBDIR}
+	@if [ ! -f ${STARTUP_SCRIPT} ]; then 				\
+		echo "Installing ${STARTUP_SCRIPT} startup file."; 	\
+		echo '#!/bin/sh' > ${STARTUP_SCRIPT}; 			\
+		echo 'wnn6=/usr/local/bin/Wnn6/jserver' 		\
+		  >> ${STARTUP_SCRIPT} ;				\
+		echo 'if [ -f $$wnn6 ]; then' >> ${STARTUP_SCRIPT} ;	\
+		echo "    echo -n ' Wnn6'" >> ${STARTUP_SCRIPT};	\
+		echo '     $$wnn6' >> ${STARTUP_SCRIPT} ;		\
+		echo "fi" >> ${STARTUP_SCRIPT} ;			\
+		chmod 755 ${STARTUP_SCRIPT} ;				\
+		chown bin.bin ${STARTUP_SCRIPT};			\
+	fi
 
 post-install:
-# This package uses imake's "install.man" target to install man pages but
-#  I can't define USE_IMAKE because it doesn't involve xmkmf
-	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install.man)
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
-.if !defined(NOPORTDOCS)
-.if defined(PORT_DOCDIR)
-	${MKDIR} ${PORT_DOCDIR}
-	@(cd ${DOC_FROM}; tar cvf - manual manual.en | \
-		(cd ${PORT_DOCDIR}; tar xf -))
-	@chown -R bin.bin ${PORT_DOCDIR}
-.endif
-.endif
 
 .include <bsd.port.mk>

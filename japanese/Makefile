@@ -1,8 +1,10 @@
-# $Id: Makefile,v 1.77 1997/08/19 07:10:06 fenner Exp $
+# $Id: Makefile,v 1.78 1997/08/25 00:27:46 asami Exp $
 #
 
     SUBDIR += Canna
     SUBDIR += Wnn
+    SUBDIR += Wnn6
+    SUBDIR += Wnn6-lib
     SUBDIR += a2ps
     SUBDIR += camltk41
     SUBDIR += cdrom2
