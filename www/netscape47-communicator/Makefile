@@ -14,7 +14,7 @@ DISTFILES=	${BROWSER_NAME}-v${PORTVERSION:S/.//g}-us.${NETSCAPE_DIST_TAG}.tar.gz
 
 FORBIDDEN=	multiple vulnerabilities with no hope of fixes
 DEPRECATED=	${FORBIDDEN}
-EXPIRATION_DATE=12/07/2004
+EXPIRATION_DATE=2004-12-07
 
 MAINTAINER=	freebsd-alpha@FreeBSD.org
 COMMENT?=	Netscape version 4 communicator web-surfboard for DEC Alpha

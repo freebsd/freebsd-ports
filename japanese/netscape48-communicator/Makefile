@@ -14,7 +14,7 @@ DISTNAME=	communicator-ja-euc-v475-export.generic-generic-generic
 
 FORBIDDEN=	multiple vulnerabilities with no hope of fixes
 DEPRECATED=	${FORBIDDEN}
-EXPIRATION_DATE=12/07/2004
+EXPIRATION_DATE=2004-12-07
 
 MAINTAINER?=	sada@FreeBSD.org
 COMMENT=	Netscape web-surfboard with Japanese resources
