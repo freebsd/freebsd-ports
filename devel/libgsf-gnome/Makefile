@@ -25,7 +25,7 @@ do-build:
 		@cd ${WRKSRC}/gsf-gnome && ${MAKE}
 
 do-install:
-		@cd ${WRKSRC}/gsf-gnome && ${MAKE} install
-		@${INSTALL_DATA} ${WRKSRC}/libgsf-gnome-1.pc ${PREFIX}/libdata/pkgconfig
+		cd ${WRKSRC}/gsf-gnome && ${MAKE} install
+		${INSTALL_DATA} ${WRKSRC}/libgsf-gnome-1.pc ${PREFIX}/libdata/pkgconfig
 
 .include "${MASTERDIR}/Makefile"
