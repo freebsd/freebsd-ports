@@ -40,6 +40,7 @@
     SUBDIR += maplay
     SUBDIR += mikmod
     SUBDIR += mixer.app
+    SUBDIR += mp3blaster
     SUBDIR += mp3encode
     SUBDIR += mp3info
     SUBDIR += mpegaudio
