@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 case "$2" in POST-INSTALL)
 	"$PKG_PREFIX/sbin/cone-sysconftool" "$PKG_PREFIX/etc/cone.dist" ;;
 esac
