@@ -14,7 +14,8 @@ MASTER_SITES=	http://frmas.free.fr/files/
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	Shows which portion of the Earth's surface is illuminated by the Sun
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_XPM=	yes
