@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	jigdo
-PORTVERSION=	0.6.8
+PORTVERSION=	0.7.0
 CATEGORIES=	ftp
 MASTER_SITES=	http://home.in.tum.de/~atterer/jigdo/
 
 MAINTAINER=	bra@fsn.hu
-COMMENT=	An utility used to retrieve very large files over the Internet
+COMMENT=	A utility used to retrieve very large files over the Internet
 
-#BUILD_DEPENDS=	libwww-config:${PORTSDIR}/www/libwww
+BUILD_DEPENDS=	libwww-config:${PORTSDIR}/www/libwww
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 MAN1=		jigdo-file.1 jigdo-lite.1 jigdo-mirror.1
 
 USE_BZIP2=	yes
-#USE_REINPLACE=	yes
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-libdb --disable-nls --without-gui
@@ -36,18 +35,7 @@ pre-fetch:
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
-#post-patch:
-#	@${REINPLACE_CMD} -e "s/gtk-config/${GTK_CONFIG}/g" ${WRKSRC}/configure
-
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
-.if ${OSVERSION} >= 500041
-EXTRA_PATCHES=	${FILESDIR}/extra-glibc-getopt.h
-.endif
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/jigdo-file
