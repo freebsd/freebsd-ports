@@ -18,6 +18,7 @@ MAINTAINER=	alane@FreeBSD.org
 
 BUILD_DEPENDS+=	cdoc:${.CURDIR}/../../devel/cdoc
 BUILD_DEPENDS+=	make+:${.CURDIR}/../../devel/makeplus
+LIB_DEPENDS+=	pcre.0:${.CURDIR}/../../devel/pcre
 
 USE_GMAKE=	yes
 PREFIX?=	${LOCALBASE}
