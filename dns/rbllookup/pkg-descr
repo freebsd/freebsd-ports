@@ -1,17 +1,12 @@
+rbllookup is a small perl script which allow you to check given IP/host
+name.
 
-PRCS's purpose is similar to that of SCCS, RCS, and CVS, but (according
-to its authors, at least), it is much simpler than any of those
-systems.
+In this version you have statically inserted RBL servers, but code is based
+on GPL source, so you can easy add more/replace/delete RBL servers by
+editing rbllookup.pl file.
 
-The current release, version 1.0, and future releases of PRCS can be
-found at ftp://XCF.Berkeley.EDU/pub/prcs.  HTML documentation and
-recent developments are available online at
+Also, author looking for support from programmers for ideas, codefix, new
+features, switch to c/c++, gui version?
 
-WWW: http://www.XCF.Berkeley.EDU/~jmacd/prcs.html
-
-PRCS is released under the GNU public license, see the file COPYING
-for details.
-
-Bug reports can be addressed to the following address:
-
-   prcs-bugs@XCF.Berkeley.EDU
+Author: Marcin Gondek <drixter@e-utp.net>
+WWW:    http://rbllookup.sourceforge.net
