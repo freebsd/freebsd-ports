@@ -1,6 +1,6 @@
+etc/rc.d/sympa.sh
 etc/sympa.conf
 etc/wwsympa.conf
-etc/rc.d/sympa.sh
 sympa/bin/Archive.pm
 sympa/bin/Auth.pm
 sympa/bin/CAS.pm
@@ -78,39 +78,48 @@ sympa/bin/etc/scenari/access_web_archive.private
 sympa/bin/etc/scenari/access_web_archive.public
 sympa/bin/etc/scenari/add.auth
 sympa/bin/etc/scenari/add.closed
+sympa/bin/etc/scenari/add.default
 sympa/bin/etc/scenari/add.owner
 sympa/bin/etc/scenari/add.owner_notify
 sympa/bin/etc/scenari/create_list.intranet
 sympa/bin/etc/scenari/create_list.listmaster
 sympa/bin/etc/scenari/create_list.public_listmaster
+sympa/bin/etc/scenari/d_edit.default
 sympa/bin/etc/scenari/d_edit.owner
 sympa/bin/etc/scenari/d_edit.private
 sympa/bin/etc/scenari/d_edit.public
+sympa/bin/etc/scenari/d_read.default
 sympa/bin/etc/scenari/d_read.owner
 sympa/bin/etc/scenari/d_read.private
 sympa/bin/etc/scenari/d_read.public
 sympa/bin/etc/scenari/del.auth
 sympa/bin/etc/scenari/del.closed
+sympa/bin/etc/scenari/del.default
 sympa/bin/etc/scenari/del.owner
 sympa/bin/etc/scenari/del.owner_notify
 sympa/bin/etc/scenari/edit_list.closed
 sympa/bin/etc/scenari/edit_list.owner
 sympa/bin/etc/scenari/global_remind.listmaster
+sympa/bin/etc/scenari/info.default
 sympa/bin/etc/scenari/info.open
 sympa/bin/etc/scenari/info.private
 sympa/bin/etc/scenari/invite.closed
+sympa/bin/etc/scenari/invite.default
 sympa/bin/etc/scenari/invite.owner
 sympa/bin/etc/scenari/invite.private
 sympa/bin/etc/scenari/invite.public
+sympa/bin/etc/scenari/remind.default
 sympa/bin/etc/scenari/remind.listmaster
 sympa/bin/etc/scenari/remind.owner
 sympa/bin/etc/scenari/review.closed
+sympa/bin/etc/scenari/review.default
 sympa/bin/etc/scenari/review.intranet
 sympa/bin/etc/scenari/review.listmaster
 sympa/bin/etc/scenari/review.owner
 sympa/bin/etc/scenari/review.private
 sympa/bin/etc/scenari/review.public
 sympa/bin/etc/scenari/send.closed
+sympa/bin/etc/scenari/send.default
 sympa/bin/etc/scenari/send.editor
 sympa/bin/etc/scenari/send.editorkey
 sympa/bin/etc/scenari/send.editorkeyonly
@@ -136,6 +145,7 @@ sympa/bin/etc/scenari/subscribe.auth
 sympa/bin/etc/scenari/subscribe.auth_notify
 sympa/bin/etc/scenari/subscribe.auth_owner
 sympa/bin/etc/scenari/subscribe.closed
+sympa/bin/etc/scenari/subscribe.default
 sympa/bin/etc/scenari/subscribe.intranet
 sympa/bin/etc/scenari/subscribe.intranetorowner
 sympa/bin/etc/scenari/subscribe.open
@@ -145,15 +155,18 @@ sympa/bin/etc/scenari/subscribe.owner
 sympa/bin/etc/scenari/subscribe.smime
 sympa/bin/etc/scenari/subscribe.smimeorowner
 sympa/bin/etc/scenari/topics_visibility.conceal
+sympa/bin/etc/scenari/topics_visibility.default
 sympa/bin/etc/scenari/topics_visibility.identified
 sympa/bin/etc/scenari/topics_visibility.noconceal
 sympa/bin/etc/scenari/unsubscribe.auth
 sympa/bin/etc/scenari/unsubscribe.auth_notify
 sympa/bin/etc/scenari/unsubscribe.closed
+sympa/bin/etc/scenari/unsubscribe.default
 sympa/bin/etc/scenari/unsubscribe.open
 sympa/bin/etc/scenari/unsubscribe.open_notify
 sympa/bin/etc/scenari/unsubscribe.owner
 sympa/bin/etc/scenari/visibility.conceal
+sympa/bin/etc/scenari/visibility.default
 sympa/bin/etc/scenari/visibility.intranet
 sympa/bin/etc/scenari/visibility.noconceal
 sympa/bin/etc/scenari/visibility.secret
@@ -183,6 +196,7 @@ sympa/bin/etc/tt2/removed.tt2
 sympa/bin/etc/tt2/review.tt2
 sympa/bin/etc/tt2/sendpasswd.tt2
 sympa/bin/etc/tt2/stats_report.tt2
+sympa/bin/etc/tt2/subscriber_notification.tt2
 sympa/bin/etc/tt2/summary.tt2
 sympa/bin/etc/tt2/welcome.tt2
 sympa/bin/etc/tt2/x509-user-cert-missing.tt2
@@ -276,6 +290,7 @@ sympa/bin/tt2native.pl
 sympa/bin/virtualwrapper
 sympa/bin/wwslib.pm
 sympa/bin/wwsympa.fcgi
+sympa/bin/wwsympa-wrapper
 sympa/doc/contents.png
 sympa/doc/crossref.png
 sympa/doc/img1.old
@@ -358,18 +373,19 @@ sympa/sample/sample-list/config
 sympa/sample/sample-list/info
 sympa/sample/sample-list/message.footer
 sympa/sample/sample-list/welcome.tpl
+sympa/sample/sample-list/welcome.tt2
 sympa/sample/sympa.conf
 sympa/sample/topics.fr.conf
 sympa/sample/topics.hu.conf
 sympa/sample/wwsympa.conf
-@dirrm sympa/spool/msg
-@dirrm sympa/spool/digest
-@dirrm sympa/spool/moderation
-@dirrm sympa/spool/expire
-@dirrm sympa/spool/auth
-@dirrm sympa/spool/outgoing
 @dirrm sympa/spool/tmp
 @dirrm sympa/spool/task
+@dirrm sympa/spool/outgoing
+@dirrm sympa/spool/msg
+@dirrm sympa/spool/moderation
+@dirrm sympa/spool/expire
+@dirrm sympa/spool/digest
+@dirrm sympa/spool/auth
 @dirrm sympa/spool
 @dirrm sympa/sample/sample-list
 @dirrm sympa/sample
@@ -377,11 +393,15 @@ sympa/sample/wwsympa.conf
 @dirrm sympa/nls
 @dirrm sympa/expl
 @dirrm sympa/doc
+@dirrm sympa/bin/etc/wws_templates
 @dirrm sympa/bin/etc/wws.tt2
 @dirrm sympa/bin/etc/tt2
+@dirrm sympa/bin/etc/templates
+@dirrm sympa/bin/etc/task_models
 @dirrm sympa/bin/etc/scenari
 @dirrm sympa/bin/etc/list_task_models
 @dirrm sympa/bin/etc/global_task_models
+@dirrm sympa/bin/etc/general_task_models
 @dirrm sympa/bin/etc/create_list_templates/public_web_forum
 @dirrm sympa/bin/etc/create_list_templates/private_working_group
 @dirrm sympa/bin/etc/create_list_templates/news-letter
@@ -390,13 +410,6 @@ sympa/sample/wwsympa.conf
 @dirrm sympa/bin/etc/create_list_templates/hotline
 @dirrm sympa/bin/etc/create_list_templates/discussion_list
 @dirrm sympa/bin/etc/create_list_templates
-@dirrm sympa/etc/create_list_templates
-@dirrm sympa/etc/templates
-@dirrm sympa/etc/wws_templates
-@dirrm sympa/etc/scenari
-@dirrm sympa/etc/task_models
-@dirrm sympa/etc/general_task_models
-@dirrm sympa/etc
 @dirrm sympa/bin/etc
 @dirrm sympa/bin/Marc
 @dirrm sympa/bin

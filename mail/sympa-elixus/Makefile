@@ -5,8 +5,7 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	10527
-PORTREVISION=	0
+PORTVERSION=	20041024
 MASTER_SITES=	http://p4.elixus.org/hist/
 PKGNAMESUFFIX=	-elixus
 
@@ -20,8 +19,5 @@ MD5_FILE=	${.CURDIR}/distinfo
 PATCHDIR=	${.CURDIR}/files
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
-PKGINSTALL=	${MASTERDIR}/pkg-install
-PKGDEINSTALL=	${MASTERDIR}/pkg-deinstall
-WRKSRC=		${WRKDIR}/sympa
 
 .include "${MASTERDIR}/Makefile"

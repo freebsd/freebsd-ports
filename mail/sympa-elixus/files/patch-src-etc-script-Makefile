@@ -1,0 +1,11 @@
+--- src/etc/script/Makefile.orig	Sat Oct 23 16:44:11 2004
++++ src/etc/script/Makefile	Sat Oct 23 16:44:13 2004
+@@ -23,7 +23,7 @@
+ 
+ SUBSTSRC	=	load_subscribers.pl arc2webarc.pl testldap.pl p12topem.pl init_comment.pl crypt_passwd.pl testlogs.pl mod2html.pl
+ 
+-INITSRC		=	sympa
++INITSRC		=	sympa.sh
+ 
+ #SCRIPTDIR	=	../../../script
+ SCRIPTDIR	=	$(SBINDIR)
