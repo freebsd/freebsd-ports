@@ -1,16 +1,14 @@
 
 $FreeBSD$
 
---- src/soup-core/soup-private.h	2001/05/28 12:03:44	1.1
-+++ src/soup-core/soup-private.h	2001/05/28 12:05:03
-@@ -16,7 +16,10 @@
- #ifndef SOAP_PRIVATE_H
- #define SOAP_PRIVATE_H 1
+--- src/libsoup/soup-private.h.orig	Tue Sep 18 00:56:04 2001
++++ src/libsoup/soup-private.h	Fri Sep 28 12:03:36 2001
+@@ -20,6 +20,8 @@
+ #include <config.h>
+ #endif
  
 +#include <sys/types.h>
-+#include <sys/socket.h>
++
+ #ifdef HAVE_NETINET_IN_H
  #include <netinet/in.h>
-+#include <arpa/inet.h>
- 
- #include "soup-context.h"
- #include "soup-server.h"
+ #endif
