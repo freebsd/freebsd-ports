@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- src/Makefile.in.orig	Thu Feb 13 00:50:42 2003
-+++ src/Makefile.in	Tue Apr 29 07:00:51 2003
+--- src/Makefile.in.orig	Thu Jan  8 07:13:34 2004
++++ src/Makefile.in	Thu Jan  8 12:11:53 2004
 @@ -80,7 +80,7 @@
  am__quote = @am__quote@
  install_sh = @install_sh@
  bin_PROGRAMS = darkice
--CXXFLAGS = -O2 -pedantic -Wall @PTHREAD_CFLAGS@
-+CXXFLAGS = @CXXFLAGS@ @PTHREAD_CFLAGS@
+-CXXFLAGS = -O2 -pedantic -Wall @DEBUG_CXXFLAGS@ @PTHREAD_CFLAGS@
++CXXFLAGS = @CXXFLAGS@ @DEBUG_CXXFLAGS@ @PTHREAD_CFLAGS@
  INCLUDES = @LAME_INCFLAGS@ @VORBIS_INCFLAGS@
  LDADD = @PTHREAD_LIBS@ @LAME_LDFLAGS@ @VORBIS_LDFLAGS@
  
