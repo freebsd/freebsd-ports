@@ -18,7 +18,8 @@ MAINTAINER=	sobomax@FreeBSD.org
 WRKSRC=		${WRKDIR}/XenoStep
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 ALL_TARGET=	# empty
 MAKE_ENV=	MKDIR="${MKDIR}"
 

@@ -22,7 +22,8 @@ EXTRACT_CMD=	${CAT}	# not quite `extract', but who cares? ;)
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
-USE_GNOMELIBS=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomelibs
 INSTALLS_SHLIB=	yes
 MAKE_ENV=	MKDIR="${MKDIR}" \
 		LN="${LN}"

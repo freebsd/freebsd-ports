@@ -17,7 +17,8 @@ MAINTAINER=	sobomax@FreeBSD.org
 LIB_DEPENDS=	gtkscintilla.0:${PORTSDIR}/x11-toolkits/gtkscintilla
 
 USE_PYTHON=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 MAKE_ENV=	PYTHON_INCLUDE="${PYTHON_INCLUDEDIR}"
 
 INST_DIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages

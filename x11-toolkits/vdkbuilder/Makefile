@@ -16,7 +16,7 @@ LIB_DEPENDS=	vdk.3:${PORTSDIR}/x11-toolkits/vdk
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
@@ -25,9 +25,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
 CONFIGURE_ARGS+=--enable-gnome
+PKGNAMESUFFIX=	-gtk
 .else
 CONFIGURE_ARGS+=--enable-gnome=no
 .endif

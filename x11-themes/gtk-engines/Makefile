@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	stable/sources/gtk-engines
 MAINTAINER=	gnome@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 USE_LIBTOOL=	yes
 
 THEMES=		metal notif pixmap raleigh redmond95

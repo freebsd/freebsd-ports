@@ -20,7 +20,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
 MAKEFILE=	makefile
 

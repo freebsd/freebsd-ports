@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	vdkbuilder
 MAINTAINER=	nakai@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
@@ -25,8 +25,9 @@ MAN1=		vdk-config.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME=	gtk12
+PKGNAMESUFFIX=	-gtk
 CONFIGURE_ARGS+=	--enable-gnome
 .endif
 
