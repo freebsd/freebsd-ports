@@ -20,9 +20,6 @@ LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 .if defined(WITH_SRVLOC)
 LIB_DEPENDS+=	slp.1:${PORTSDIR}/net/openslp
 .endif
-.if !exists(/usr/include/tcpd.h)
-LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
-.endif
 
 USE_BZIP2=	yes
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
@@ -38,11 +35,6 @@ PLIST_SUB+=	NETATALKPAM="@comment "
 # Enable Service Location Protocol support.  This allows MacOS X < 10.1 to
 # pickup afpd servers in the network.
 CONFIGURE_ARGS+=	--enable-srvloc=${LOCALBASE}
-.endif
-.if defined(WITH_FLOCK_LOCKS)
-# Disable byte locking, and do full file locking.  This _may_ help with some
-# Quark Express save issues.
-CONFIGURE_ARGS+=	--with-flock-locks
 .endif
 .if !defined(WITHOUT_CNID)
 # Configure old LAST DID support.  By default, the new CNID persistent DID
