@@ -16,33 +16,33 @@ COMMENT=	Files from Gentoo distribution, for Linux compatibility
 
 RESTRICTED=	"binaries licensed under GNU GPL without accompanying source"
 
-ONLY_FOR_MACHINE_ARCHS=	alpha amd64 ia64 i386
+ONLY_FOR_ARCHS=	alpha amd64 ia64 i386
 
 USE_BZIP2=	y
 
 .include <bsd.port.pre.mk>
 
-.if (${MACHINE_ARCH} == "amd64")
+.if (${ARCH} == "amd64")
 LATEST_LINK=	${PORTNAME:C/linux_base/linux32_base/}
-MACHINE_ARCH=	i386
+ARCH=	i386
 .endif
 
-.if (${MACHINE_ARCH} == "alpha")
+.if (${ARCH} == "alpha")
 MASTER_SITES+=	ftp://ftp.uos.ac.kr/pub/Linux/gentoo/gentoo/experimental/alpha/stages/
 MASTER_SITE_SUBDIR=	experimental/alpha/stages
 DISTNAME=	stage1-alpha-20030729
-.elif (${MACHINE_ARCH} == "i386")
+.elif (${ARCH} == "i386")
 MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages/x86 \
 			releases/historical/x86/${PORTVERSION}/stages/x86
 DISTNAME=	stage1-x86-20030910
-.elif (${MACHINE_ARCH} == "ia64")
+.elif (${ARCH} == "ia64")
 MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages/x86 \
 			releases/historical/x86/${PORTVERSION}/stages/x86
 DISTNAME=	stage1-x86-20030910
 .endif
 
 DIST_SUBDIR=	gentoo-linux
-MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
+MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 PLIST=		${WRKDIR}/pkg-plist
 PREFIX=		${LINUXBASE}
 NO_FILTER_SHLIBS=y

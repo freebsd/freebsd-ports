@@ -11,36 +11,36 @@ PORTREVISION=		6
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX} \
 			${MASTER_SITE_REDHAT_LINUX:S/$/:i386/}
-MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS \
+MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${ARCH}/RedHat/RPMS \
 			${PORTVERSION}/${LANG}/os/i386/RedHat/RPMS/:i386
 DISTFILES=		redhat-release-7.1-1.noarch.rpm:i386 \
 			${RPM_SETUP} \
 			filesystem-2.0.7-1.noarch.rpm \
 			basesystem-7.0-2.noarch.rpm \
 			termcap-11.0.1-8.noarch.rpm \
-			db1-1.85-5.${MACHINE_ARCH}.rpm \
-			db3-3.1.17-7.${MACHINE_ARCH}.rpm \
+			db1-1.85-5.${ARCH}.rpm \
+			db3-3.1.17-7.${ARCH}.rpm \
 			${RPM_GDBM} \
-			glib-1.2.9-1.${MACHINE_ARCH}.rpm \
-			libtermcap-2.0.8-26.${MACHINE_ARCH}.rpm \
-			bash-2.04-21.${MACHINE_ARCH}.rpm \
+			glib-1.2.9-1.${ARCH}.rpm \
+			libtermcap-2.0.8-26.${ARCH}.rpm \
+			bash-2.04-21.${ARCH}.rpm \
 			${RPM_BZIP2} \
 			${RPM_LIBSTDCXX} \
 			${RPM_COMPAT_LIBSTDCXX} \
-			ncurses-5.2-8.${MACHINE_ARCH}.rpm \
-			info-4.0-20.${MACHINE_ARCH}.rpm \
-			fileutils-4.0.36-4.${MACHINE_ARCH}.rpm \
-			grep-2.4.2-5.${MACHINE_ARCH}.rpm \
-			popt-1.6.2-8.${MACHINE_ARCH}.rpm \
-			readline-4.1-9.${MACHINE_ARCH}.rpm \
+			ncurses-5.2-8.${ARCH}.rpm \
+			info-4.0-20.${ARCH}.rpm \
+			fileutils-4.0.36-4.${ARCH}.rpm \
+			grep-2.4.2-5.${ARCH}.rpm \
+			popt-1.6.2-8.${ARCH}.rpm \
+			readline-4.1-9.${ARCH}.rpm \
 			${RPM_SETSERIAL} \
-			slang-1.4.2-2.${MACHINE_ARCH}.rpm \
-			sh-utils-2.0-13.${MACHINE_ARCH}.rpm \
-			rpm-4.0.2-8.${MACHINE_ARCH}.rpm \
+			slang-1.4.2-2.${ARCH}.rpm \
+			sh-utils-2.0-13.${ARCH}.rpm \
+			rpm-4.0.2-8.${ARCH}.rpm \
 			${RPM_FREETYPE}
 
 PATCH_SITES=		${MASTER_SITE_REDHAT_LINUX}
-PATCH_SITE_SUBDIR=	updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}
+PATCH_SITE_SUBDIR=	updates/${PORTVERSION}/${LANG}/os/${ARCH}
 PATCHFILES=		${UPDATES}
 
 MAINTAINER=		ports@FreeBSD.org
@@ -50,30 +50,22 @@ BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
 FORBIDDEN=	"X Pixmap parsing bugs--see <URL:https://rhn.redhat.com/errata/RHSA-2004-478.html> and <URL:https://rhn.redhat.com/errata/RHSA-2004-612.html>"
 
-CONFLICTS=	linux_base-6* linux_base-8* linux_base-deb* linux_base-gen* \
-		linux_base-rh* linux_base-suse*
-ONLY_FOR_ARCHS=		alpha i386
+ONLY_FOR_ARCHS=		alpha amd64 i386
+
+CONFLICTS=		linux_base-6* linux_base-8* linux_base-rh* \
+			linux_base-suse* linux_base-debian* linux_base-gentoo*
+
 DIST_SUBDIR=		rpm
 PREFIX=			${LINUXBASE}
 EXTRACT_ONLY=
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
-PLIST=			${PKGDIR}/pkg-plist.${MACHINE_ARCH}
-MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
+PLIST=			${PKGDIR}/pkg-plist.${ARCH}
+MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
 
 # Let's avoid hardcoding 'en' as the language.
 LANG=			en
-
-.if (${MACHINE_ARCH} == "alpha")
-UPD_SET1=		glibc-common-2.2.4-32.1.${MACHINE_ARCH}.rpm \
-			glibc-2.2.4-32.1.${MACHINE_ARCH}.rpm
-.else
-UPD_SET1=		glibc-common-2.2.4-33.${MACHINE_ARCH}.rpm \
-			glibc-2.2.4-33.${MACHINE_ARCH}.rpm
-.endif
-UPD_SET2=		${RPM_XFREE86_LIBS} zlib-1.1.4-8.7x.${MACHINE_ARCH}.rpm
-UPDATES=		${UPD_SET1} ${UPD_SET2}
 
 .ifdef USE_LINUX
 .error You have `USE_LINUX' variable defined either in environment or in make(1) arguments. Please undefine and try again.
@@ -81,12 +73,23 @@ UPDATES=		${UPD_SET1} ${UPD_SET2}
 
 .include <bsd.port.pre.mk>
 
+
+.if (${ARCH} == "alpha")
+UPD_SET1=		glibc-common-2.2.4-32.1.${ARCH}.rpm \
+			glibc-2.2.4-32.1.${ARCH}.rpm
+.else
+UPD_SET1=		glibc-common-2.2.4-33.${ARCH}.rpm \
+			glibc-2.2.4-33.${ARCH}.rpm
+.endif
+UPD_SET2=		${RPM_XFREE86_LIBS} zlib-1.1.4-8.7x.${ARCH}.rpm
+UPDATES=		${UPD_SET1} ${UPD_SET2}
+
 .if (${ARCH} == "amd64")
-LATEST_LINK=		linux32_base
-MACHINE_ARCH=		i386
+LATEST_LINK=		${PORTNAME:C/linux_base/linux32_base/}
+ARCH=			i386
 .endif
 
-.if (${MACHINE_ARCH} == "i386")
+.if (${ARCH} == "i386")
 PORTREVISION=		7
 RPM_BZIP2=		bzip2-1.0.1-3.i386.rpm
 RPM_FREETYPE=		freetype-2.0.1-4.i386.rpm
@@ -97,7 +100,7 @@ RPM_SETSERIAL=		setserial-2.17-2.i386.rpm
 RPM_SETUP=		setup-2.4.7-1.noarch.rpm
 RPM_XFREE86_LIBS=	XFree86-libs-4.1.0-50.i386.rpm
 UPD_SET2+=		libstdc++-2.96-112.7.1.i386.rpm
-.else
+.elif (${ARCH} == "alpha")
 RPM_BZIP2=		bzip2-1.0.1-4.alpha.rpm
 RPM_FREETYPE=		freetype-2.0.1-5.alpha.rpm
 RPM_GDBM=		gdbm-1.8.0-6.alpha.rpm
@@ -107,6 +110,8 @@ RPM_SETSERIAL=		setserial-2.17-3.alpha.rpm
 RPM_SETUP=		setup-2.4.7-2.noarch.rpm
 RPM_XFREE86_LIBS=	XFree86-libs-4.1.0-29.4hp.alpha.rpm
 UPD_SET2+=
+.else
+.error			Unsupported architecture ${ARCH}.
 .endif
 
 DBPATH=			/var/lib/rpm
