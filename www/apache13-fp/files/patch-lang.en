@@ -6,9 +6,9 @@
  
 -<p>You are free to use the image below on an Apache-powered web
 -server. Thanks for using Apache!</p>
-+<p>The Microsoft FrontPage 2000 Extentions has been installed with this
++<p>The Microsoft FrontPage 2002 Extentions has been installed with this
 +Apache Server.  Read the 
-+<A HREF="manual/frontpage/">Microsoft FrontPage 2000 documentation</A>
++<A HREF="manual/frontpage/">Microsoft FrontPage 2002 documentation</A>
 +carefully.</p>
 +
 +<p>Information of the FreeBSD operating system can be found on the
@@ -23,7 +23,7 @@
 +  <A HREF="http://www.freebsd.org">
 +    <IMG SRC="/images/powerlogo.gif" ALT="Site driven by FreeBSD - FreeBSD: The Power to Server!"></A>
 +  <A HREF="http://www.microsoft.com/frontpage/default.htm">
-+    <IMG SRC="/images/fplogo.gif" ALT="Create with Microsoft Frontpage 2000"></A>
++    <IMG SRC="/images/fplogo.gif" ALT="Create with Microsoft Frontpage 2002"></A>
 +</DIV>
  
 -<div align="center"><img src="apache_pb.gif" alt="" /></div>
