@@ -50,6 +50,7 @@ include/wine/mapi.h
 include/wine/mapidefs.h
 include/wine/mciavi.h
 include/wine/mcx.h
+include/wine/minmax.h
 include/wine/mmreg.h
 include/wine/mmsystem.h
 include/wine/msacm.h
