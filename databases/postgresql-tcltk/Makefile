@@ -24,6 +24,9 @@ LIB_DEPENDS=	tcl${TCLVERSION:S/.//}:${PORTSDIR}/lang/tcl${TCLVERSION:S/.//} \
 
 MD5_FILE=	${.CURDIR}/../../${POSTGRESQL_PORT}/distinfo
 
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+
 # you can use "make TCLVERSION=8.4" or similar for your favourite tcl version
 TCLVERSION?=	8.3
 PLIST_SUB+=	TCLVERSION=${TCLVERSION}

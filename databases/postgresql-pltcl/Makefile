@@ -24,6 +24,9 @@ RUN_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}
 
 MD5_FILE=	${.CURDIR}/../../${POSTGRESQL_PORT}/distinfo
 
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+
 # you can use "make TCLVERSION=8.4" or similar for your favourite tcl version
 TCLVERSION?=	8.3
 CONFIGURE_ARGS=	--with-tcl --without-tk \
