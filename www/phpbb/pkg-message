@@ -9,7 +9,7 @@ and ensure that this database may be accessed and changed by the user id
 under which your web server executes.  Further information on these
 installation procedures may be found in:
 
-  %%DOCSDIR%%/INDEX.html
+  %%DOCSDIR%%/README.html
 
 Once these steps have been taken, you may connect to the following URL to
 configure your installation of phpBB2:
