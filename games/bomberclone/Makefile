@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	bomberclone
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz \
-		${PORTNAME}-data-0.5.tgz
+		${PORTNAME}-data-0.6.tgz
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Reimplementation of Atomic Bomber Man
@@ -32,13 +32,17 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CXXFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include"
 
 post-extract:
-	${RM} -r ${WRKDIR}/data/bomberclone.gfx/CVS
+	${RM} -rf ${WRKDIR}/data/tileset/default/.thumbnails
 
 post-patch:
 	${REINPLACE_CMD} -e 's,@@LOCALBASE@@,${LOCALBASE},' \
 		${WRKSRC}/src/configuration.c
 
 post-install:
-	${CP} -R ${WRKDIR}/data/bomberclone.gfx ${PREFIX}/share
+	${MKDIR} ${PREFIX}/share/bomberclone
+	${CP} -R ${WRKDIR}/data/gfx ${PREFIX}/share/bomberclone
+	${CP} -R ${WRKDIR}/data/maps ${PREFIX}/share/bomberclone
+	${CP} -R ${WRKDIR}/data/player ${PREFIX}/share/bomberclone
+	${CP} -R ${WRKDIR}/data/tileset ${PREFIX}/share/bomberclone
 
 .include <bsd.port.mk>
