@@ -9,7 +9,7 @@
 
 DISTNAME=	gnucash-1.3.3
 CATEGORIES=	deskutils
-MASTER_SITES=	ftp://www.gnucash.org/pub/gnucash/gnucash/sources/unstable/1.3.x/1.3.3/
+MASTER_SITES=	ftp://www.gnucash.org/pub/gnucash/gnucash/sources/unstable/1.3.x/
 
 MAINTAINER=     obrien@FreeBSD.org
 
