@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.73 1996/07/10 22:33:44 asami Exp $
+# $Id: Makefile,v 1.74 1996/08/08 09:29:37 asami Exp $
 #
 
     SUBDIR += archie
@@ -27,6 +27,7 @@
     SUBDIR += radius
     SUBDIR += rdist6
     SUBDIR += rmsg
+    SUBDIR += rsync
     SUBDIR += samba
     SUBDIR += scotty
     SUBDIR += slirp
