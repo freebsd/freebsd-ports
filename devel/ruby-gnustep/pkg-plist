@@ -63,14 +63,14 @@
 %%RUBY_SITELIBDIR%%/rigs/NSWindow.rb
 %%RUBY_SITEARCHLIBDIR%%/librigs.so
 @dirrm %%RUBY_SITELIBDIR%%/rigs
-GNUstep/Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/librigs.so.0.2.1
-GNUstep/Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/librigs.so.0
-GNUstep/Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/librigs.so
-@unexec /bin/rmdir %D/GNUstep/Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu 2> /dev/null || true
-@unexec /bin/rmdir %D/GNUstep/Local/Libraries/%%GNU_ARCH%%/%%OPSYS%% 2> /dev/null || true
-@unexec /bin/rmdir %D/GNUstep/Local/Libraries/%%GNU_ARCH%% 2> /dev/null || true
-@unexec /bin/rmdir %D/GNUstep/Local/Libraries 2> /dev/null || true
-@unexec /bin/rmdir %D/GNUstep/Local/Headers 2> /dev/null || true
+GNUstep/%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/librigs.so.0.2.1
+GNUstep/%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/librigs.so.0
+GNUstep/%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/librigs.so
+@unexec /bin/rmdir %D/GNUstep/%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu 2> /dev/null || true
+@unexec /bin/rmdir %D/GNUstep/%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%% 2> /dev/null || true
+@unexec /bin/rmdir %D/GNUstep/%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%% 2> /dev/null || true
+@unexec /bin/rmdir %D/GNUstep/%%LOCALLIBRARY%%/Libraries 2> /dev/null || true
+@unexec /bin/rmdir %D/GNUstep/%%LOCALLIBRARY%%/Headers 2> /dev/null || true
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Base/Simple.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/CurrencyConverter/CurrencyConverter.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/CurrencyConverter/CurrencyConverterIcon.tiff
