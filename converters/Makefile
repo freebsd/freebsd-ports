@@ -7,6 +7,7 @@
     SUBDIR += cn2jp
     SUBDIR += dosunix
     SUBDIR += dumpasn1
+    SUBDIR += enca
     SUBDIR += fconv
     SUBDIR += fribidi
     SUBDIR += gbase
