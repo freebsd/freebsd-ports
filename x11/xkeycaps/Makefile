@@ -7,6 +7,7 @@
 
 PORTNAME=	xkeycaps
 PORTVERSION=	2.46
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xkeycaps/
 EXTRACT_SUFX=	.tar.Z
