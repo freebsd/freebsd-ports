@@ -7,10 +7,16 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	2.01
+PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/xpdf
+
+PATCH_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
+		${MASTER_SITE_TEX_CTAN}
+PATCH_SITE_SUBDIR=	support/xpdf
+PATCHFILES=	xpdf-2.01-patch1
 
 MAINTAINER=	DougB@FreeBSD.org
 
@@ -33,6 +39,8 @@ CONFIGURE_ARGS=	--with-gzip --enable-opi --with-x \
 .if defined(A4)
 CONFIGURE_ARGS+=	--enable-a4-paper
 .endif
+
+PATCH_DIST_ARGS=-d ${PATCH_WRKSRC}/xpdf --forward --quiet -E ${PATCH_DIST_STRIP}
 
 MAN1=		pdffonts.1 \
 		pdfimages.1 \
