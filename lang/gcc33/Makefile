@@ -6,16 +6,16 @@
 # $FreeBSD$
 #
 
-SNAPDATE=
+SNAPDATE=2003-11-03
 
 PORTNAME=	gcc
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.3
 PORTREVISION=	${SNAPDATE:S/-//g}
 CATEGORIES=	lang java
-VERSIONSTRING=	3.3.2
+VERSIONSTRING=	3.3-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://web.inter.NL.net/hcc/Haj.Ten.Brugge/:bc
-MASTER_SITE_SUBDIR=	releases/gcc-${VERSIONSTRING}
+MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 DISTFILES=	\
 		gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
@@ -134,8 +134,16 @@ post-install:
 	do \
 		${STRIP_CMD} $$prog ; \
 	done )
-.for f in gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
-	${STRIP_CMD} ${PREFIX}/bin/${f}
+.for f in gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
+	# gij and jv-convert, for example, are not built on all platforms.
+	if [ -e ${PREFIX}/bin/${f} ]; then \
+	  ${STRIP_CMD} ${PREFIX}/bin/${f}; \
+	else \
+	  ${ECHO_CMD} '#!/bin/sh' > ${PREFIX}/bin/${f}; \
+	  ${ECHO_CMD} 'echo "Not supported by GCC on this platform."' \
+		>> ${PREFIX}/bin/${f} ; \
+	  ${CHMOD} a+x ${PREFIX}/bin/${f}; \
+	fi 
 	${MV} -f ${PREFIX}/bin/${f} ${PREFIX}/bin/${f}33
 	( ${TEST} ! -e ${PREFIX}/man/man1/${f}.1 \
 		|| ${MV} -f ${PREFIX}/man/man1/${f}.1 \
