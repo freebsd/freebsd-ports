@@ -135,6 +135,6 @@ do-install:
 	${FIND} ${PREFIX} -type d -exec ${CHMOD} 755 \{\} \;
 
 post-install:
-	@fmt ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
