@@ -1,52 +1,47 @@
---- configure.orig	Wed Sep  4 19:19:58 2002
-+++ configure	Fri Sep  6 02:28:34 2002
-@@ -8323,6 +8323,7 @@
+--- configure.orig	Wed Nov 13 09:10:52 2002
++++ configure	Wed Nov 13 10:46:27 2002
+@@ -5726,6 +5726,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
++$ac_aux_dir/ltconfig $LIBTOOL_Deps
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -14189,8 +14190,8 @@
+@@ -9392,8 +9393,8 @@
    done
  fi
  
--echo "$as_me:$LINENO: checking for bzCompressInit in -lbz2" >&5
--echo $ECHO_N "checking for bzCompressInit in -lbz2... $ECHO_C" >&6
-+echo "$as_me:$LINENO: checking for BZ2_bzCompressInit in -lbz2" >&5
-+echo $ECHO_N "checking for BZ2_bzCompressInit in -lbz2... $ECHO_C" >&6
- if test "${ac_cv_lib_bz2_bzCompressInit+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-@@ -14206,7 +14207,7 @@
- #endif
+-echo $ac_n "checking for bzCompressInit in -lbz2""... $ac_c" 1>&6
+-echo "configure:9397: checking for bzCompressInit in -lbz2" >&5
++echo $ac_n "checking for BZ2_bzCompressInit in -lbz2""... $ac_c" 1>&6
++echo "configure:9397: checking for BZ2_bzCompressInit in -lbz2" >&5
+ ac_lib_var=`echo bz2'_'bzCompressInit | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -9406,10 +9407,10 @@
+ /* Override any gcc2 internal prototype to avoid an error.  */
  /* We use char because int might match the return type of a gcc2
-    builtin and then its argument prototype would still apply.  */
--char bzCompressInit ();
-+char BZ2_bzCompressInit ();
- #ifdef F77_DUMMY_MAIN
- #  ifdef __cplusplus
-      extern "C"
-@@ -14216,7 +14217,7 @@
- int
- main ()
- {
--bzCompressInit ();
-+BZ2_bzCompressInit ();
-   ;
-   return 0;
- }
-@@ -14763,7 +14764,7 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
+     builtin and then its argument prototype would still apply.  */
+-char bzCompressInit();
++char BZ2_bzCompressInit();
  
+ int main() {
+-bzCompressInit()
++BZ2_bzCompressInit()
+ ; return 0; }
+ EOF
+ if { (eval echo configure:9416: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -9704,7 +9705,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   
 -		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto -ldl"
 +		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcryptofoo -ldl"
- 		cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
+ 		cat > conftest.$ac_ext <<EOF
+ #line 9710 "configure"
  #include "confdefs.h"
-@@ -14820,9 +14821,9 @@
+@@ -9739,9 +9740,9 @@
  
  		msg_openssl="yes"
                  if test x$with_openssl_libs != x/usr/lib; then
@@ -56,14 +51,14 @@
 -                	OPENSSL_LIBS="-lssl -lcrypto"
 +                	OPENSSL_LIBS="-lssl -lcryptofoo"
                  fi
+ 		
  
- 
-@@ -16488,7 +16489,7 @@
- s,@ORBIT_IDL@,$ORBIT_IDL,;t t
- s,@BONOBO_IDLDIR@,$BONOBO_IDLDIR,;t t
- s,@WARN_CFLAGS@,$WARN_CFLAGS,;t t
--s,@PTHREAD_LIB@,$PTHREAD_LIB,;t t
-+s,@PTHREAD_LIB@,$BSD_PTHREAD_LIB,;t t
- s,@GETTEXT_PACKAGE@,$GETTEXT_PACKAGE,;t t
- s,@ALLOCA@,$ALLOCA,;t t
- s,@USE_NLS@,$USE_NLS,;t t
+@@ -10570,7 +10571,7 @@
+ s%@ORBIT_IDL@%$ORBIT_IDL%g
+ s%@BONOBO_IDLDIR@%$BONOBO_IDLDIR%g
+ s%@WARN_CFLAGS@%$WARN_CFLAGS%g
+-s%@PTHREAD_LIB@%$PTHREAD_LIB%g
++s%@PTHREAD_LIB@%$BSD_PTHREAD_LIB%g
+ s%@GETTEXT_PACKAGE@%$GETTEXT_PACKAGE%g
+ s%@ALLOCA@%$ALLOCA%g
+ s%@USE_NLS@%$USE_NLS%g

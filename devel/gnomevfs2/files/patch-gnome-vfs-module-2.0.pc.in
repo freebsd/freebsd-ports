@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- gnome-vfs-module-2.0.pc.in	2002/02/16 13:07:42	1.1
-+++ gnome-vfs-module-2.0.pc.in	2002/02/16 13:07:51
+--- gnome-vfs-module-2.0.pc.in.orig	Wed Jan 30 20:28:20 2002
++++ gnome-vfs-module-2.0.pc.in	Wed Nov 13 10:49:35 2002
 @@ -8,5 +8,5 @@
  Description: The GNOME virtual file-system module include info
  Version: @VERSION@

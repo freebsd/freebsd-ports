@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomevfs2
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.4.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.0
@@ -29,7 +29,7 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-gconf-source=xml::${PREFIX}/etc/gconf/gconf.xml.defaults
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
+		BSD_PTHREAD_LIB=${PTHREAD_LIBS}
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 post-patch:
