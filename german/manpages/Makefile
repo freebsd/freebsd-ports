@@ -29,12 +29,13 @@ do-build:
 	${GZIP_CMD} -r ${WRKSRC}/${manpages}/man* || exit 0
 .endif
 
+pre-install:
+	find ${WRKSRC}/${manpages} -type f -print | \
+		 ${SED} "s%${WRKSRC}/${manpages}%man/${LANG}%" > ${PLIST}
+
 do-install:
 	cd ${WRKSRC}/${manpages}; \
 	${TAR} cf - . | \
 		(cd ${mandir}; ${TAR} xf - )
-	find ${WRKSRC}/${manpages} -type f -print | \
-		 ${SED} "s%${WRKSRC}/${manpages}%man/${LANG}%" > \
-	   ${WRKSRC}/PLIST
 
 .include <bsd.port.mk>

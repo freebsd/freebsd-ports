@@ -1,4 +1,4 @@
-# ex:ts=8	-*-mode: makefile-*-
+# ex:ts=8
 #
 # New ports collection makefile for:	mgp-gallery
 # Date created:		2002-12-28
@@ -30,11 +30,6 @@ USE_X_PREFIX=	yes
 PKGDATA_SUBDIR=		lib/X11/mgp
 PKGDATADIR=		${PREFIX}/${PKGDATA_SUBDIR}
 
-PLIST=	${WRKDIR}/plist
-
-post-extract:
-	${TOUCH} ${PLIST}
-
 do-install:
 	${MKDIR} ${PKGDATADIR}
 .for i in midgard backgrounds solid gradients
@@ -43,11 +38,6 @@ do-install:
 	${INSTALL_DATA} * ${PKGDATADIR}/${i};\
 	${SCRIPTDIR}/fix-gallery "${INSTALL_DATA}" ${PKGDATADIR}/${i} *.mgp
 .endfor # i in midgard backgrounds solid gradient
-	cd ${PREFIX};\
-	${RM} -f ${PLIST};\
-	${FIND} ${PKGDATA_SUBDIR} -type f | sort >>${PLIST};\
-	${FIND} ${PKGDATA_SUBDIR} -type d | sort -r \
-		| ${SED} 's|^|@dirrm |' >>${PLIST}
 
 .include <bsd.port.post.mk>
 

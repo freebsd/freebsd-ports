@@ -19,7 +19,6 @@ RUN_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82 \
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/tik
-PLIST=		${WRKDIR}/PLIST
 
 SORT?=		sort
 
@@ -38,31 +37,23 @@ DOCFILES=	CHANGES CONTRIBUTORS COPYING LICENSE README-LANG \
 # The packing list starts with just bin/tik.  As we install things,
 # build onto the list.
 do-install:
-	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
 .for d in ${SRCDIRS}
 	@${MKDIR} ${PREFIX}/${d}
-	@${ECHO_CMD} @dirrm ${d} >> ${PLIST}.dirrm
 .endfor
 .for f in ${SRCFILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/tik/${f}
-	@${ECHO_CMD} share/tik/${f} >> ${PLIST}
 .endfor
 	@${MKDIR} ${PREFIX}/${EGDIR}
-	@${ECHO_CMD} @dirrm ${EGDIR} >> ${PLIST}.dirrm
 .for f in ${EGFILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${EGDIR}/${f}
-	@${ECHO_CMD} ${EGDIR}/${f} >> ${PLIST}
 .endfor
 	@${SED} 's#@PREFIX@#${PREFIX}#g' < ${FILESDIR}/tik >${WRKDIR}/tik.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/tik.sh ${PREFIX}/bin/tik
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/${DOCDIR}
-	@${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}.dirrm
 .for f in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${DOCDIR}/${f}
-	@${ECHO_CMD} ${DOCDIR}/${f} >> ${PLIST}
 .endfor
 .endif
-	@${SORT} -r ${PLIST}.dirrm >> ${PLIST} && ${RM} ${PLIST}.dirrm
 
 .include <bsd.port.post.mk>
