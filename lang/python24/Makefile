@@ -7,7 +7,7 @@
 
 PORTNAME=	python
 PORTVERSION=	2.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -161,6 +161,7 @@ post-install:
 		${PREFIX}/lib
 	cd ${PREFIX}/lib; ${LN} -sf lib${PYTHON_VERSION}.so.1 \
 		lib${PYTHON_VERSION}.so
+	${LN} -sf ${PREFIX}/lib/lib${PYTHON_VERSION}.so ${PYTHON_LIBDIR}/config
 	${INSTALL_PROGRAM} \
 		${SHARED_WRKSRC}/${PYTHON_VERSION:S/thon/thon-shared/} \
 		${PREFIX}/bin

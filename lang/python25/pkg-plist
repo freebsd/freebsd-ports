@@ -313,6 +313,7 @@ lib/%%PYTHON_VERSION%%/config/config.c
 lib/%%PYTHON_VERSION%%/config/config.c.in
 lib/%%PYTHON_VERSION%%/config/install-sh
 lib/%%PYTHON_VERSION%%/config/lib%%PYTHON_VERSION%%.a
+lib/%%PYTHON_VERSION%%/config/lib%%PYTHON_VERSION%%.so
 lib/%%PYTHON_VERSION%%/config/makesetup
 lib/%%PYTHON_VERSION%%/config/python.o
 lib/%%PYTHON_VERSION%%/copy.py
