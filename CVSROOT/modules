@@ -6559,7 +6559,7 @@ p5-Filter-Simple	ports/textproc/p5-Filter-Simple
 p5-Finance-Currency-Convert	ports/finance/p5-Finance-Currency-Convert
 p5-Finance-Quote	ports/finance/p5-Finance-Quote
 p5-Finance-QuoteHist	ports/finance/p5-Finance-QuoteHist
-p5-Flash-FLAP	ports/www/p5-Flash-FLAP
+p5-AMF-Perl	ports/www/p5-AMF-Perl
 p5-Font-AFM	ports/x11-fonts/p5-Font-AFM
 p5-Font-TTF	ports/x11-fonts/p5-Font-TTF
 p5-FreeBSD-Ports	ports/textproc/p5-FreeBSD-Ports
