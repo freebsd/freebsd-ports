@@ -1,7 +1,4 @@
 bin/gmake
-@unexec install-info --delete %D/info/make.info %D/info/dir
-info/make.info
-@exec install-info %D/info/make.info %D/info/dir
 %%NLS%%share/locale/da/LC_MESSAGES/make.mo
 %%NLS%%share/locale/de/LC_MESSAGES/make.mo
 %%NLS%%share/locale/es/LC_MESSAGES/make.mo
