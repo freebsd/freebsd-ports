@@ -1,25 +1,29 @@
-*** glob.c.orig	Sun May 14 00:49:21 1995
---- glob.c	Thu Oct 31 18:04:28 1996
+*** glob.c.orig	Sat Nov 13 03:40:56 1993
+--- glob.c	Mon Dec 16 03:09:07 1996
 ***************
 *** 139,144 ****
---- 139,161 ----
+--- 139,165 ----
   #define	M_SET		META('[')
   #define	ismeta(c)	(((c)&M_META) != 0)
   
 + int collate_range_cmp (c1, c2)
 + 	int c1, c2;
 + {
++ #if defined(NLS) && defined(LC_COLLATE)
 + 	static char s1[2], s2[2];
 + 	int ret;
++ #endif
 + 
-+ 	c1 &= UCHAR_MAX;
-+ 	c2 &= UCHAR_MAX;
++ 	c1 &= 0xFF;
++ 	c2 &= 0xFF;
++ #if defined(NLS) && defined(LC_COLLATE)
 + 	if (c1 == c2)
 + 		return (0);
 + 	s1[0] = c1;
 + 	s2[0] = c2;
 + 	if ((ret = strcoll(s1, s2)) != 0)
 + 		return (ret);
++ #endif
 + 	return (c1 - c2);
 + }
 + 
@@ -35,7 +39,7 @@
   			ok = 1;
   		    pat += 2;
   		}
---- 663,671 ----
+--- 667,675 ----
   		++pat;
   	    while (((c = *pat++) & M_MASK) != M_END) {
   		if ((*pat & M_MASK) == M_RNG) {
