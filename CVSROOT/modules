@@ -7327,6 +7327,7 @@ phpmyadmin	ports/databases/phpmyadmin
 phpnuke		ports/www/phpnuke
 phppdflib	ports/print/phppdflib
 phppgadmin	ports/databases/phppgadmin
+phpua-engine	ports/games/phpua-engine
 phpwiki		ports/www/phpwiki
 phraze		ports/misc/phraze
 phylip		ports/biology/phylip
