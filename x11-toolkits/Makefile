@@ -145,6 +145,7 @@
     SUBDIR += p5-Tk-Getopt
     SUBDIR += p5-Tk-HistEntry
     SUBDIR += p5-Tk-TableMatrix
+    SUBDIR += p5-qt
     SUBDIR += pango
     SUBDIR += paragui
     SUBDIR += php-gtk
