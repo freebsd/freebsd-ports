@@ -1,5 +1,32 @@
---- configure.orig	Mon Aug 19 13:56:03 2002
-+++ configure	Mon Aug 19 13:56:59 2002
+--- configure.orig	Sat Aug 17 21:58:03 2002
++++ configure	Fri Aug 23 15:34:49 2002
+@@ -6611,7 +6611,7 @@
+ echo $ECHO_N "checking GLIB_LIBS... $ECHO_C" >&6
+             GLIB_LIBS=`$PKG_CONFIG --libs "glib-2.0 >= 2.0.4
+                         gobject-2.0 >= 2.0.4
+-                        gthread-2.0 >= 2.0.4"`
++                        gthread-2.0 >= 2.0.4" | sed -e 's|-Wl,--export-dynamic||g'`
+             echo "$as_me:$LINENO: result: $GLIB_LIBS" >&5
+ echo "${ECHO_T}$GLIB_LIBS" >&6
+         else
+@@ -6718,7 +6718,7 @@
+ 
+             echo "$as_me:$LINENO: checking GTK_LIBS" >&5
+ echo $ECHO_N "checking GTK_LIBS... $ECHO_C" >&6
+-            GTK_LIBS=`$PKG_CONFIG --libs "gtk+-2.0 >= 2.0.5"`
++            GTK_LIBS=`$PKG_CONFIG --libs "gtk+-2.0 >= 2.0.5" | sed -e 's|-Wl,--export-dynamic||g'`
+             echo "$as_me:$LINENO: result: $GTK_LIBS" >&5
+ echo "${ECHO_T}$GTK_LIBS" >&6
+         else
+@@ -6819,7 +6819,7 @@
+ 
+             echo "$as_me:$LINENO: checking XML_LIBS" >&5
+ echo $ECHO_N "checking XML_LIBS... $ECHO_C" >&6
+-            XML_LIBS=`$PKG_CONFIG --libs "libxml-2.0 >= 2.4.22"`
++            XML_LIBS=`$PKG_CONFIG --libs "libxml-2.0 >= 2.4.22" | sed -e 's|-Wl,--export-dynamic||g'`
+             echo "$as_me:$LINENO: result: $XML_LIBS" >&5
+ echo "${ECHO_T}$XML_LIBS" >&6
+         else
 @@ -6915,23 +6915,23 @@
    else
       PKG_CONFIG_MIN_VERSION=0.9.0
@@ -25,7 +52,7 @@
              echo "$as_me:$LINENO: checking GTKSPELL_LIBS" >&5
  echo $ECHO_N "checking GTKSPELL_LIBS... $ECHO_C" >&6
 -            GTKSPELL_LIBS=`$PKG_CONFIG --libs "gtkspell-2.0 = 2.0.0"`
-+            GTKSPELL_LIBS=`$PKG_CONFIG --libs "gtkspell-2.0 >= 2.0.0"`
++            GTKSPELL_LIBS=`$PKG_CONFIG --libs "gtkspell-2.0 >= 2.0.0" | sed -e 's|-Wl,--export-dynamic||g'`
              echo "$as_me:$LINENO: result: $GTKSPELL_LIBS" >&5
  echo "${ECHO_T}$GTKSPELL_LIBS" >&6
          else
