@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sane-backends
-PORTVERSION=	1.0.14
-PORTREVISION=	1
+PORTVERSION=	1.0.15
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://ftp2.sane-project.org/pub/sane/%SUBDIR%/ \
@@ -23,7 +22,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GNOME=	gnometarget lthack
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS} \

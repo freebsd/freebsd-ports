@@ -31,7 +31,6 @@ etc/sane.d/matsushita.conf
 etc/sane.d/microtek.conf
 etc/sane.d/microtek2.conf
 etc/sane.d/mustek.conf
-etc/sane.d/mustek_pp.conf
 etc/sane.d/mustek_usb.conf
 etc/sane.d/nec.conf
 etc/sane.d/net.conf
@@ -150,9 +149,6 @@ lib/sane/libsane-microtek2.so.1
 lib/sane/libsane-mustek.a
 lib/sane/libsane-mustek.so
 lib/sane/libsane-mustek.so.1
-lib/sane/libsane-mustek_pp.a
-lib/sane/libsane-mustek_pp.so
-lib/sane/libsane-mustek_pp.so.1
 lib/sane/libsane-mustek_usb.a
 lib/sane/libsane-mustek_usb.so
 lib/sane/libsane-mustek_usb.so.1
@@ -162,6 +158,9 @@ lib/sane/libsane-nec.so.1
 lib/sane/libsane-net.a
 lib/sane/libsane-net.so
 lib/sane/libsane-net.so.1
+lib/sane/libsane-niash.a
+lib/sane/libsane-niash.so
+lib/sane/libsane-niash.so.1
 lib/sane/libsane-pie.a
 lib/sane/libsane-pie.so
 lib/sane/libsane-pie.so.1
@@ -247,25 +246,23 @@ sbin/saned
 %%PORTDOCS%%%%DOCSDIR%%/canon/canon.changes
 %%PORTDOCS%%%%DOCSDIR%%/canon/canon.install2700F.txt
 %%PORTDOCS%%%%DOCSDIR%%/gt68xx/gt68xx.CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/gt68xx/gt68xx.TODO
 %%PORTDOCS%%%%DOCSDIR%%/leo/leo.txt
 %%PORTDOCS%%%%DOCSDIR%%/matsushita/matsushita.txt
 %%PORTDOCS%%%%DOCSDIR%%/mustek/mustek.CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/mustek_usb/mustek_usb.CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/mustek_usb/mustek_usb.TODO
-%%PORTDOCS%%%%DOCSDIR%%/plustek/BUILD
+%%PORTDOCS%%%%DOCSDIR%%/niash/niash.TODO
 %%PORTDOCS%%%%DOCSDIR%%/plustek/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/plustek/MakeModule.sh
 %%PORTDOCS%%%%DOCSDIR%%/plustek/Makefile.kernel24
 %%PORTDOCS%%%%DOCSDIR%%/plustek/Makefile.kernel26
-%%PORTDOCS%%%%DOCSDIR%%/plustek/Makefile.module
 %%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-PARPORT-TODO.txt
 %%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-PARPORT.changes
 %%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-PARPORT.txt
 %%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-USB-TODO.txt
 %%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-USB.changes
 %%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-USB.txt
-%%PORTDOCS%%%%DOCSDIR%%/plustek/VERSION0
-%%PORTDOCS%%%%DOCSDIR%%/plustek/VERSION1
 %%PORTDOCS%%%%DOCSDIR%%/sane-backends-external.html
 %%PORTDOCS%%%%DOCSDIR%%/sane-backends.html
 %%PORTDOCS%%%%DOCSDIR%%/sane-mfgs-external.html
@@ -308,6 +305,7 @@ sbin/saned
 %%NLS%%share/locale/da/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/de/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/es/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/it/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/sane-backends.mo
@@ -324,6 +322,7 @@ sbin/saned
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/teco
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sceptre
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/plustek
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/niash
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/mustek_usb
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/mustek
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/matsushita
