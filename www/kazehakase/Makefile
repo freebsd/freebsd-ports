@@ -75,7 +75,7 @@ WITH_ESTRAIER=	yes
 .if ${ARCH} == "i386" || ${ARCH} == "sparc64"
 RUN_DEPENDS+=	migemo:${PORTSDIR}/japanese/migemo
 
-CONFIUGURE_ARGS+=	--enable-migemo
+CONFIGURE_ARGS+=	--enable-migemo
 .endif
 .endif
 
