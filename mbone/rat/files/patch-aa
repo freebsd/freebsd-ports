@@ -1,5 +1,57 @@
---- ../../../work-pre-patch/rat-4.2.13/rat/configure.in	Sun Mar  4 12:00:33 2001
-+++ rat/configure.in	Sun Mar  4 13:13:29 2001
+--- rat/configure.in.orig	Fri Mar  2 12:49:10 2001
++++ rat/configure.in	Thu Apr  5 19:13:17 2001
+@@ -280,12 +280,12 @@
+ # We could be dealing with a source installation or a full installation.
+ # Expect a source installation to have headers in TCL8_HOME/generic and libs in
+ # TCL8_HOME/unix.  A full installation should have headers in 
+-# INSTDIR/include/tcl8.0, or INSTDIR/include, and have libraries be in 
++# INSTDIR/include/tcl8.2, or INSTDIR/include, and have libraries be in 
+ # INSTDIR/lib.
+ #------------------------------------------------------------------------------
+ PARENT=`echo $PWD | sed -e 's%/[[^/]]*$%%'`
+-TCL_INC=${PARENT}/tcl-8.0
+-TCL_LIB=${PARENT}/tcl-8.0
++TCL_INC=${PARENT}/tcl-8.2
++TCL_LIB=${PARENT}/tcl-8.2
+ 
+ AC_ARG_WITH(tcl,           
+ 	[  --with-tcl=DIR          specify location of Tcl installation],
+@@ -295,7 +295,7 @@
+ #-----------------------------------------------------------------------------
+ # Depending on config expect tcl.h to be tcl source dir or include path
+ #-----------------------------------------------------------------------------
+-for i in $TCL_INC/generic $TCL_INC/include/tcl8.0 $TCL_INC/include $TCL_INC
++for i in $TCL_INC/generic $TCL_INC/include/tcl8.2 $TCL_INC/include $TCL_INC
+ do
+ 	if test -d $i ; then
+ 		TCL_INC=$i
+@@ -330,7 +330,7 @@
+ SAVED_LIBS=$LIBS
+ LIBS=""
+ FOUND_TCL_LIB=no
+-AC_SEARCH_LIBS(Tcl_Init, tcl8.0 tcl80, 
++AC_SEARCH_LIBS(Tcl_Init, tcl8.2 tcl82, 
+ 	FOUND_TCL_LIB=yes,
+ 	, 
+ 	-L${TCL_LIB} ${SAVED_LIBS} -lm)
+@@ -359,7 +359,7 @@
+ # include tcl.h, Xlib.h, Xutil.h before tk.h.
+ #-----------------------------------------------------------------------------
+ FOUND_TK_INC=0
+-for i in $TK_INC/generic $TK_INC/include/tk8.0 $TK_INC/include $TK_INC
++for i in $TK_INC/generic $TK_INC/include/tk8.2 $TK_INC/include $TK_INC
+ do
+ 	AC_MSG_CHECKING(for $i/tk.h)
+ 	if test -r $i/tk.h ; then
+@@ -391,7 +391,7 @@
+ SAVED_LIBS=$LIBS
+ LIBS=""
+ FOUND_TK_LIB=no
+-AC_SEARCH_LIBS(Tk_Init, tk8.0 tk80,
++AC_SEARCH_LIBS(Tk_Init, tk8.2 tk82,
+ 	FOUND_TK_LIB=yes,
+ 	,
+ 	-L${TK_LIB} ${TCL_LIB} $X_LIBS $X_PRE_LIBS  -lXext -lX11 $X_EXTRA_LIBS ${SAVED_LIBS} -lm)
 @@ -464,20 +464,8 @@
  	COMMON_LIB=${COMMON_LIB}/lib
  fi

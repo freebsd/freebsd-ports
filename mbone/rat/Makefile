@@ -7,7 +7,6 @@
 
 PORTNAME=	rat
 PORTVERSION=	4.2.13
-
 PORTREVISION=	0
 CATEGORIES=	mbone audio ipv6
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/4.2.13/ \
@@ -22,8 +21,6 @@ USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 MAN1=		rat.1
 MANCOMPRESSED=	no
-
-PATCH_DEBUG=	yes
 
 RAT_BUILD_DIRS=	common rat
 
@@ -42,12 +39,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/rat/sdr2.plugin.S02.audio.rtp.*.rat ${LOCALBASE}/etc/sdr/plugins
 
 do-build:
-	for d in ${RAT_BUILD_DIRS}; do \
-		cd ${WRKSRC}/$$d && ${GMAKE}; \
-	done
+.for d in ${RAT_BUILD_DIRS}
+	cd ${WRKSRC}/${d} && ${GMAKE}
+.endfor
 
 do-configure:
-	cd ${WRKSRC}/common && autoconf && ./configure ${ENABLE_IPv6}
-	cd ${WRKSRC}/rat && autoconf && ./configure --with-tcl=${LOCALBASE} --with-tk=${LOCALBASE} ${ENABLE_IPv6}
+	cd ${WRKSRC}/common && autoconf && ./configure ${CONFIGURE_ARGS} ${ENABLE_IPv6}
+	cd ${WRKSRC}/rat && autoconf && ./configure ${CONFIGURE_ARGS} --with-tcl=${LOCALBASE} --with-tk=${LOCALBASE} ${ENABLE_IPv6}
 
 .include "bsd.port.post.mk"
