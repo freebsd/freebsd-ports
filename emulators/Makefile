@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += adamem
     SUBDIR += aftp
     SUBDIR += atari800
     SUBDIR += basiliskII
