@@ -7,6 +7,7 @@
 
 PORTNAME=	mldonkey
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ircnet.de/home/cru/ed2k_urlslave/dist/
 PKGNAMESUFFIX=	-urlslave
@@ -16,7 +17,6 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	GTK+ enabled Perl script for adding ed2k:// links to MLDonkey
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
-RUN_DEPENDS=	ed2k_gui:${PORTSDIR}/net/edonkey-gui-gtk
 
 USE_PERL5=	yes
 NO_BUILD=	yes
