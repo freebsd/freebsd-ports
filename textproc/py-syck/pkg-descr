@@ -1,0 +1,10 @@
+Python binding for Syck, which, according is, according to the web site:
+
+  Syck is an extension for reading and writing YAML swiftly in popular
+  scripting languages. As Syck loads the YAML, it stores the data
+  directly in your language's symbol table. This means speed. This
+  means power. This means Do not disturb Syck because it is so focused
+  on the task at hand that it will slay you mortally if you get in its
+  way.
+
+WWW: http://www.whytheluckystiff.net/syck/
