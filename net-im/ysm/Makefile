@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	ysm
-PORTVERSION=	7.2.8.1
-PORTREVISION=	1
+PORTVERSION=	7.2.9.0
+PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	ftp://vampiro.rootshell.ru/pub/FreeBSD/distfiles/ \
-		http://vampiro.rootshell.ru/ \
-		ftp://ftp.treasury.ru/pub/unix/ \
+MASTER_SITES=	ftp://rusunix.org/pub/FreeBSD/distfiles/ \
+		http://aquatique.rusunix.org/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	ysmv7_2_8_1
+DISTNAME=	ysmv7_2_9_0
 
 MAINTAINER=	vampiro@rusunix.org
 COMMENT=	Command line ICQ client with ICQ2000 and recoding support
@@ -24,9 +23,9 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 USE_BZIP2=      yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		CFLAGS="-DYSM_USE_ICONV ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${PTHREAD_LIBS} -lcipher -L${LOCALBASE}/lib -liconv"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		CFLAGS+="-I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv"
 
 MAN1=		ysm.1
 
