@@ -26,7 +26,6 @@ bin/goblin.%%VERSION%%/editDelete.tk
 bin/goblin.%%VERSION%%/editExtract.tk
 bin/goblin.%%VERSION%%/editIncidences.gif
 bin/goblin.%%VERSION%%/editLabel.gif
-bin/goblin.%%VERSION%%/editMetrics.tk
 bin/goblin.%%VERSION%%/editMove.gif
 bin/goblin.%%VERSION%%/editNewArc.gif
 bin/goblin.%%VERSION%%/editNewNode.gif
@@ -87,8 +86,6 @@ bin/goblin.%%VERSION%%/msgWarn.gif
 bin/goblin.%%VERSION%%/optimizeDataStruct.tk
 bin/goblin.%%VERSION%%/optimizeLevel.tk
 bin/goblin.%%VERSION%%/optimizeMethods.tk
-bin/goblin.%%VERSION%%/placeNodes.tk
-bin/goblin.%%VERSION%%/planarity.tk
 bin/goblin.%%VERSION%%/samples/acyclic.gob
 bin/goblin.%%VERSION%%/samples/adlittle.gob
 bin/goblin.%%VERSION%%/samples/afiro.gob
@@ -96,6 +93,7 @@ bin/goblin.%%VERSION%%/samples/atsp1.gob
 bin/goblin.%%VERSION%%/samples/atsp2.gob
 bin/goblin.%%VERSION%%/samples/balanced1.gob
 bin/goblin.%%VERSION%%/samples/bipartite1.gob
+bin/goblin.%%VERSION%%/samples/birkhoff.gob
 bin/goblin.%%VERSION%%/samples/branch1.gob
 bin/goblin.%%VERSION%%/samples/branch10.gob
 bin/goblin.%%VERSION%%/samples/branch2.gob
@@ -105,6 +103,7 @@ bin/goblin.%%VERSION%%/samples/branch4.gob
 bin/goblin.%%VERSION%%/samples/branch40.gob
 bin/goblin.%%VERSION%%/samples/branchtree.gob
 bin/goblin.%%VERSION%%/samples/canonical.gob
+bin/goblin.%%VERSION%%/samples/clcover.gob
 bin/goblin.%%VERSION%%/samples/colour1.gob
 bin/goblin.%%VERSION%%/samples/colour2.gob
 bin/goblin.%%VERSION%%/samples/colour3.gob
@@ -119,8 +118,15 @@ bin/goblin.%%VERSION%%/samples/connect4.gob
 bin/goblin.%%VERSION%%/samples/connect5.gob
 bin/goblin.%%VERSION%%/samples/connect6.gob
 bin/goblin.%%VERSION%%/samples/connect7.gob
+bin/goblin.%%VERSION%%/samples/dag1.gob
 bin/goblin.%%VERSION%%/samples/dodeka.gob
 bin/goblin.%%VERSION%%/samples/dsearch1.gob
+bin/goblin.%%VERSION%%/samples/dual1.gob
+bin/goblin.%%VERSION%%/samples/dual2.gob
+bin/goblin.%%VERSION%%/samples/dual4.gob
+bin/goblin.%%VERSION%%/samples/euler1.gob
+bin/goblin.%%VERSION%%/samples/euler2.gob
+bin/goblin.%%VERSION%%/samples/euler3.gob
 bin/goblin.%%VERSION%%/samples/europe.gob
 bin/goblin.%%VERSION%%/samples/gedecomp1.gob
 bin/goblin.%%VERSION%%/samples/gedecomp2.gob
@@ -231,12 +237,14 @@ bin/goblin.%%VERSION%%/samples/tile7.gob
 bin/goblin.%%VERSION%%/samples/tjoin1.gob
 bin/goblin.%%VERSION%%/samples/tjoin2.gob
 bin/goblin.%%VERSION%%/samples/tjoin3.gob
+bin/goblin.%%VERSION%%/samples/tjoin4.gob
 bin/goblin.%%VERSION%%/samples/triang4.gob
 bin/goblin.%%VERSION%%/samples/tsp23.gob
 bin/goblin.%%VERSION%%/samples/tsp4.gob
 bin/goblin.%%VERSION%%/samples/tsp41.gob
 bin/goblin.%%VERSION%%/samples/tsp75.gob
 bin/goblin.%%VERSION%%/samples/tsp8.gob
+bin/goblin.%%VERSION%%/samples/tutte.gob
 bin/goblin.%%VERSION%%/stepAuto.gif
 bin/goblin.%%VERSION%%/stepClock.gif
 bin/goblin.%%VERSION%%/stepClock2.gif
@@ -255,7 +263,6 @@ bin/goblin.%%VERSION%%/tclLogo.gif
 bin/goblin.%%VERSION%%/toggleBrowser.gif
 bin/goblin.%%VERSION%%/toggleEditor.gif
 bin/goblin.%%VERSION%%/toggleScript.gif
-bin/goblin.%%VERSION%%/~optimizeMethods.tk
 bin/gosh
 include/goblin.%%VERSION%%/absbal.h
 include/goblin.%%VERSION%%/absbig.h
@@ -275,6 +282,7 @@ include/goblin.%%VERSION%%/bbstable.h
 include/goblin.%%VERSION%%/bbstsp.h
 include/goblin.%%VERSION%%/big2fnw.h
 include/goblin.%%VERSION%%/binheap.h
+include/goblin.%%VERSION%%/branchMaxCut.h
 include/goblin.%%VERSION%%/complement.h
 include/goblin.%%VERSION%%/config.h
 include/goblin.%%VERSION%%/context.h
