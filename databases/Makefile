@@ -9,6 +9,7 @@
     SUBDIR += db
     SUBDIR += db3
     SUBDIR += db4
+    SUBDIR += dbXML
     SUBDIR += dbconnect
     SUBDIR += dbf2mysql
     SUBDIR += dbmetrix
