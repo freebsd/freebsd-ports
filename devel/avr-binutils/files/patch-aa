@@ -1,7 +1,7 @@
---- libiberty/Makefile.in.orig	Sat Dec  9 17:10:41 2000
-+++ libiberty/Makefile.in	Tue May 15 20:58:52 2001
-@@ -152,7 +152,8 @@
- 	$(RANLIB) $(TARGETLIB)
+--- libiberty/Makefile.in.orig	Mon Mar  4 23:01:26 2002
++++ libiberty/Makefile.in	Tue Jun  4 15:57:42 2002
+@@ -253,7 +253,8 @@
+ @MAINT@	echo stamp > stamp-functions
  
  INSTALL_DEST = @INSTALL_DEST@
 -install: install_to_$(INSTALL_DEST) install-subdir
@@ -10,27 +10,39 @@
  
  install_to_libdir: all
  	$(INSTALL_DATA) $(TARGETLIB) $(libdir)$(MULTISUBDIR)/$(TARGETLIB)n
---- bfd/Makefile.in.orig	Mon Jan 22 10:41:40 2001
-+++ bfd/Makefile.in	Tue May 15 21:02:37 2001
-@@ -564,7 +564,8 @@
+--- bfd/Makefile.in.orig	Fri May 31 04:59:46 2002
++++ bfd/Makefile.in	Tue Jun  4 15:58:06 2002
+@@ -1047,7 +1047,8 @@
  
  install-am: all-am
  	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
 -install: install-recursive
 +#install: install-recursive
 +install:
- uninstall-am: uninstall-libLTLIBRARIES
+ uninstall-am: uninstall-bfdlibLTLIBRARIES
  uninstall: uninstall-recursive
  all-am: Makefile $(LIBRARIES) $(LTLIBRARIES) config.h
---- opcodes/Makefile.in.orig	Thu Jan 11 22:20:19 2001
-+++ opcodes/Makefile.in	Tue May 15 21:03:33 2001
-@@ -663,7 +663,8 @@
+--- opcodes/Makefile.in.orig	Tue Jun  4 15:59:05 2002
++++ opcodes/Makefile.in	Tue Jun  4 15:58:47 2002
+@@ -702,7 +702,8 @@
  
  install-am: all-am
  	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
 -install: install-recursive
 +#install: install-recursive
 +install:
- uninstall-am: uninstall-libLTLIBRARIES
+ uninstall-am: uninstall-bfdlibLTLIBRARIES
  uninstall: uninstall-recursive
  all-am: Makefile $(LIBRARIES) $(LTLIBRARIES) config.h
+--- etc/Makefile.in.orig	Sat Jan 26 22:35:45 2002
++++ etc/Makefile.in	Tue Jun  4 16:50:05 2002
+@@ -52,7 +52,8 @@
+ all:
+ 
+ # We want install to imply install-info as per GNU standards.
+-install: install-info
++#install: install-info
++install:
+ 
+ uninstall:
+ 

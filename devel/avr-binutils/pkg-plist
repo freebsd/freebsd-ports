@@ -4,16 +4,36 @@ avr/bin/ld
 avr/bin/nm
 avr/bin/ranlib
 avr/bin/strip
+avr/lib/ldscripts/avr1.x
+avr/lib/ldscripts/avr1.xbn
+avr/lib/ldscripts/avr1.xn
+avr/lib/ldscripts/avr1.xr
+avr/lib/ldscripts/avr1.xu
 avr/lib/ldscripts/avr1200.x
 avr/lib/ldscripts/avr1200.xbn
 avr/lib/ldscripts/avr1200.xn
 avr/lib/ldscripts/avr1200.xr
 avr/lib/ldscripts/avr1200.xu
+avr/lib/ldscripts/avr2.x
+avr/lib/ldscripts/avr2.xbn
+avr/lib/ldscripts/avr2.xn
+avr/lib/ldscripts/avr2.xr
+avr/lib/ldscripts/avr2.xu
 avr/lib/ldscripts/avr23xx.x
 avr/lib/ldscripts/avr23xx.xbn
 avr/lib/ldscripts/avr23xx.xn
 avr/lib/ldscripts/avr23xx.xr
 avr/lib/ldscripts/avr23xx.xu
+avr/lib/ldscripts/avr3.x
+avr/lib/ldscripts/avr3.xbn
+avr/lib/ldscripts/avr3.xn
+avr/lib/ldscripts/avr3.xr
+avr/lib/ldscripts/avr3.xu
+avr/lib/ldscripts/avr4.x
+avr/lib/ldscripts/avr4.xbn
+avr/lib/ldscripts/avr4.xn
+avr/lib/ldscripts/avr4.xr
+avr/lib/ldscripts/avr4.xu
 avr/lib/ldscripts/avr4433.x
 avr/lib/ldscripts/avr4433.xbn
 avr/lib/ldscripts/avr4433.xn
@@ -24,6 +44,11 @@ avr/lib/ldscripts/avr44x4.xbn
 avr/lib/ldscripts/avr44x4.xn
 avr/lib/ldscripts/avr44x4.xr
 avr/lib/ldscripts/avr44x4.xu
+avr/lib/ldscripts/avr5.x
+avr/lib/ldscripts/avr5.xbn
+avr/lib/ldscripts/avr5.xn
+avr/lib/ldscripts/avr5.xr
+avr/lib/ldscripts/avr5.xu
 avr/lib/ldscripts/avr85xx.x
 avr/lib/ldscripts/avr85xx.xbn
 avr/lib/ldscripts/avr85xx.xn
@@ -48,7 +73,6 @@ bin/avr-addr2line
 bin/avr-ar
 bin/avr-as
 bin/avr-c++filt
-bin/avr-gasp
 bin/avr-ld
 bin/avr-nm
 bin/avr-objcopy
@@ -58,7 +82,49 @@ bin/avr-readelf
 bin/avr-size
 bin/avr-strings
 bin/avr-strip
+@unexec install-info --delete %D/info/as.info %D/info/dir
+@unexec install-info --delete %D/info/binutils.info %D/info/dir
+@unexec install-info --delete %D/info/ld.info %D/info/dir
+info/as.info
+info/as.info-1
+info/as.info-10
+info/as.info-11
+info/as.info-2
+info/as.info-3
+info/as.info-4
+info/as.info-5
+info/as.info-6
+info/as.info-7
+info/as.info-8
+info/as.info-9
+info/binutils.info
+info/binutils.info-1
+info/binutils.info-2
+info/binutils.info-3
+info/ld.info
+info/ld.info-1
+info/ld.info-2
+info/ld.info-3
+info/ld.info-4
+info/ld.info-5
+info/ld.info-6
+@exec install-info %D/info/as.info %D/info/dir
+@exec install-info %D/info/binutils.info %D/info/dir
+@exec install-info %D/info/ld.info %D/info/dir
+share/locale/es/LC_MESSAGES/binutils.mo
+share/locale/es/LC_MESSAGES/gas.mo
+share/locale/es/LC_MESSAGES/ld.mo
+share/locale/fr/LC_MESSAGES/binutils.mo
+share/locale/fr/LC_MESSAGES/gas.mo
+share/locale/fr/LC_MESSAGES/ld.mo
+share/locale/ja/LC_MESSAGES/binutils.mo
+share/locale/sv/LC_MESSAGES/binutils.mo
+share/locale/sv/LC_MESSAGES/ld.mo
+share/locale/tr/LC_MESSAGES/binutils.mo
+share/locale/tr/LC_MESSAGES/gas.mo
+share/locale/tr/LC_MESSAGES/ld.mo
 @dirrm avr/lib/ldscripts
 @dirrm avr/lib
 @dirrm avr/bin
+@dirrm avr/include
 @dirrm avr
