@@ -49,9 +49,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/macutil.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>  Installing supplementary documents..."
-	@${MKDIR} ${DOCDIR}
+	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .endif
 
