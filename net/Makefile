@@ -320,6 +320,7 @@
     SUBDIR += mute-net-gui
     SUBDIR += mute-net-text
     SUBDIR += mutella
+    SUBDIR += mDNSResponder
     SUBDIR += naim
     SUBDIR += nakenchat
     SUBDIR += nam
