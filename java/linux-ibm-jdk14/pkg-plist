@@ -616,6 +616,7 @@
 %%T%%/jre/lib/core.jar
 %%T%%/jre/lib/ext/gskikm.jar
 %%T%%/jre/lib/ext/ibmjceprovider.jar
+%%T%%/jre/lib/ext/ibmjcefips.jar
 %%T%%/jre/lib/ext/indicim.jar
 %%T%%/jre/lib/ext/jaccess.jar
 %%T%%/jre/lib/ext/ldapsec.jar
@@ -674,6 +675,7 @@
 %%T%%/jre/lib/fonts/fonts.dir
 %%T%%/jre/lib/fonts/fonts.scale
 %%T%%/jre/lib/graphics.jar
+%%T%%/jre/lib/ibmjssefips.jar
 %%T%%/jre/lib/images/cursors/cursors.properties
 %%T%%/jre/lib/images/cursors/invalid32x32.gif
 %%T%%/jre/lib/images/cursors/motif_CopyDrop32x32.gif
@@ -683,7 +685,7 @@
 %%T%%/jre/lib/images/cursors/motif_MoveDrop32x32.gif
 %%T%%/jre/lib/images/cursors/motif_MoveNoDrop32x32.gif
 %%T%%/jre/lib/javaplugin.jar
-%%T%%/jre/lib/jaxp.properties
+%%T%%/jre/lib/jaxp.properties.sample
 %%T%%/jre/lib/jvm.hprof.txt
 %%T%%/jre/lib/logging.properties
 %%T%%/jre/lib/psfont.properties
