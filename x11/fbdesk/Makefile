@@ -8,7 +8,9 @@
 PORTNAME=	fbdesk
 PORTVERSION=	1.2.1
 CATEGORIES=	x11
-MASTER_SITES=	http://fluxbox.sourceforge.net/download/
+MASTER_SITES=	http://fluxbox.sourceforge.net/download/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	A Fluxbox utility to create and manage icons on the desktop
