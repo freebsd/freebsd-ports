@@ -1,0 +1,17 @@
+--- /dev/null	Sun Sep  1 12:14:31 1996
++++ lib/Makefile	Sun Sep  1 14:33:06 1996
+@@ -0,0 +1,14 @@
++#
++#	Makefile for scripts
++#	essentially the install command
++SCRIPTS = ascii.xcept Bundesbahn.xcept DeutscheBank-Kontoauszug.xcept \
++	  on-off.xcept popup.xcept Sparkasse.xcept \
++          ZDF.xcept client-mode xcept.pl ZDF.pl
++DEST    = /usr/local/lib/xcept
++
++all:
++
++install:
++		mkdir -p $(DEST)
++		install -c -m 0664 $(SCRIPTS) $(DEST)
++		chmod 755 $(DEST)/ZDF.pl $(DEST)/xcept.pl

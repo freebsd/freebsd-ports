@@ -1,0 +1,6 @@
+--- /dev/null	Sun Sep  1 12:14:31 1996
++++ Makefile	Sun Sep  1 14:43:35 1996
+@@ -0,0 +1,3 @@
++SUBDIR=	ceptd xcept lib etc
++
++.include <bsd.subdir.mk>
