@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	3.0a8
+PORTVERSION=	3.0a12
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://samba.anu.edu.au/pub/samba/%SUBDIR%/ \
@@ -34,7 +34,7 @@ SAMPLE_CONFIG=	${SAMBA_CONFDIR}/smb.conf.default
 DOCSDIR=	${PREFIX}/share/doc/samba
 
 NO_LATEST_LINK=	yes
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-sambabook=${PREFIX}/share/swat/using_samba \
