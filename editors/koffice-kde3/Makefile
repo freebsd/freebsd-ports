@@ -25,6 +25,12 @@ INSTALLS_SHLIB=	yes
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 
+post-patch:
+	@${PERL} -pi -e "s@Icon=killustrator@Icon=kontour@g" \
+		${WRKSRC}/templates/Illustration.desktop
+	@${PERL} -pi -e "s@KIllustrator@Kontour@g" \
+		${WRKSRC}/templates/Illustration.desktop
+
 pre-configure:
 	find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
 		"s@LIBPYTHON =@LIBPYTHON= ${PTHREAD_LIBS}@g"
