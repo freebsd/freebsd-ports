@@ -23,17 +23,19 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502102
-FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
-.endif
+pre-patch:
+	${REINPLACE_CMD} -e 's/PTHREAD_LIBS/ ${PTHREAD_LIBS}/g' \
+			${PATCHDIR}/patch-aa
+	${RM} -f ${PATCHDIR}/*.bak
 
 do-build:
-	cd ${WRKSRC} && make
+	cd ${WRKSRC} && $(MAKE)
 
 do-install:
-	cd ${WRKSRC} && make install
+	cd ${WRKSRC} && $(MAKE) install
 
 .include <bsd.port.post.mk>
