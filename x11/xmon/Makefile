@@ -17,7 +17,7 @@ COMMENT=	Raw X11 protocol analyser
 WRKSRC=		${WRKDIR}/xmon.${PORTVERSION}
 USE_IMAKE=	yes
 
-MAN1=		xmon.1
+MAN1=		xmon.1 xmond.1 xmonui.1
 MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
