@@ -8874,6 +8874,10 @@ stalepid	ports/sysutils/stalepid
 stamp		ports/graphics/stamp
 stan		ports/misc/stan
 star		ports/archivers/star
+stardict2	ports/textproc/stardict2
+stardict2-dict-ja	ports/japanese/stardict2-dict-ja
+stardict2-dict-zh_CN	ports/chinese/stardict2-dict-zh_CN
+stardict2-dict-zh_TW	ports/chinese/stardict2-dict-zh_TW
 starlanes	ports/games/starlanes
 starlogo	ports/lang/starlogo
 staroffice5	ports/editors/staroffice5
@@ -10537,7 +10541,6 @@ zh-pyDict	ports/chinese/pyDict
 zh-qe		ports/chinese/qe
 zh-qterm	ports/chinese/qterm
 zh-stardict	ports/chinese/stardict
-zh-stardict2	ports/chinese/stardict2
 zh-tcl		ports/chinese/tcl83
 zh-tcl83	ports/chinese/tcl83
 zh-telnet	ports/chinese/telnet
