@@ -1,0 +1,10 @@
+--- source/main/fitness_matrix.hh.orig	Thu Apr 18 08:54:04 2002
++++ source/main/fitness_matrix.hh	Thu Apr 18 08:54:15 2002
+@@ -7,6 +7,7 @@
+ #include <vector>
+ #include <map>
+ #include <list>
++#include <sys/types.h>
+ #include <sys/timeb.h>
+ 
+ #include "../cpu/cpu.hh"

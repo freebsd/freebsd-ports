@@ -1,0 +1,11 @@
+--- source/support/genesis.orig	Fri Apr 19 20:00:53 2002
++++ source/support/genesis	Fri Apr 19 20:02:24 2002
+@@ -13,7 +13,7 @@
+ RANDOM_SEED 0		# Random number seed. (0 for based on time)
+ 
+ ### Configuration Files ###
+-DEFAULT_DIR ../work/         # Directory in which config files can be found.
++DEFAULT_DIR %%PREFIX%%/share/%%PORTNAME%%/ # Directory in which config files can be found.
+ INST_SET inst_set.28.base    # File containing instruction set.
+ TASK_SET task_set            # File containing task set.
+ RESOURCE_SET resource_set    # File containing resource set.

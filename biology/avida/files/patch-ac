@@ -1,0 +1,11 @@
+--- source/defs.hh.orig	Thu Apr 18 18:42:56 2002
++++ source/defs.hh	Thu Apr 18 18:43:14 2002
+@@ -8,7 +8,7 @@
+ #ifndef DEFS_HH
+ #define DEFS_HH
+ 
+-#define DEFAULT_DIR "../work/"
++#define DEFAULT_DIR "%%PREFIX%%/share/%%PORTNAME%%/"
+ 
+ // -= Remove bugfixes that change execution
+ //#define REMOVE_SIZE_RANGE_FIX      // had only affected upper limit in heads

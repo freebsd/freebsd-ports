@@ -1,0 +1,10 @@
+--- source/event/event_base.hh.orig	Wed Apr 17 21:26:31 2002
++++ source/event/event_base.hh	Wed Apr 17 21:26:41 2002
+@@ -18,6 +18,7 @@
+ 
+ #include "../defs.hh"
+ #include <values.h>
++#include <float.h>
+ //#include "event_defs.hh"
+ 
+ enum eTriggerVariable { UPDATE, GENERATION, IMMEDIATE, UNDEFINED };
