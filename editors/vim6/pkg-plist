@@ -73,6 +73,7 @@ share/vim/syntax/asmh8300.vim
 share/vim/syntax/awk.vim
 share/vim/syntax/bib.vim
 share/vim/syntax/c.vim
+share/vim/syntax/colortest.vim
 share/vim/syntax/cpp.vim
 share/vim/syntax/csh.vim
 share/vim/syntax/cterm.vim
@@ -85,6 +86,7 @@ share/vim/syntax/esqlc.vim
 share/vim/syntax/fortran.vim
 share/vim/syntax/help.vim
 share/vim/syntax/html.vim
+share/vim/syntax/idl.vim
 share/vim/syntax/inform.vim
 share/vim/syntax/java.vim
 share/vim/syntax/javacc.vim
@@ -114,8 +116,8 @@ share/vim/syntax/sm.vim
 share/vim/syntax/sql.vim
 share/vim/syntax/syntax.vim
 share/vim/syntax/tcl.vim
-share/vim/syntax/telixsalt.vim
 share/vim/syntax/tex.vim
+share/vim/syntax/tsalt.vim
 share/vim/syntax/uil.vim
 share/vim/syntax/verilog.vim
 share/vim/syntax/vgrindefs.vim

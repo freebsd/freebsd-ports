@@ -4,10 +4,10 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.13 1997/11/24 16:54:23 obrien Exp $
+# $Id: Makefile,v 1.14 1997/12/08 19:03:51 obrien Exp $
 #
 
-DISTNAME=	vim-5.0s
+DISTNAME=	vim-5.0t
 CATEGORIES=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/beta-test/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/beta-test/unix/ \
