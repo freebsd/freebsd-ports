@@ -11953,6 +11953,7 @@ zope-portaltransforms	ports/www/zope-portaltransforms
 zope-proxyindex	ports/www/zope-proxyindex
 zope-silva	ports/www/zope-silva
 zope-silvaviews	ports/www/zope-silvaviews
+zope-simpleblog	ports/www/zope-simpleblog
 zope-soapmethod	ports/www/zope-soapmethod
 zope-ttwtype	ports/www/zope-ttwtype
 zope-validation	ports/www/zope-validation
