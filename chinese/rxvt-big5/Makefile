@@ -6,20 +6,25 @@
 #
 
 MASTERDIR=      ${.CURDIR}/../../x11/rxvt
+
+.if !defined(NO_MULTIBYTE_CURSOR)
+EXTRA_PATCHES=	${.CURDIR}/files/patch-multibyte_cursor
+.endif
+PKGMESSAGE=	${.CURDIR}/pkg-message
+
 .include "${MASTERDIR}/Makefile"
 
-PORTNAME= rxvt
-PORTVERSION= 2.6.3
+PORTNAME=	rxvt
+PORTVERSION=	2.6.3
+PORTREVISION=	1
 
 #.include <bsd.port.pre.mk>
 PKGNAMEPREFIX:= ${PKGNAMEPREFIX}tw-
 
-
 MAINTAINER=	keichii@iteration.net
 
 
-CONFIGURE_ARGS+= --enable-xim --enable-big5 \
+CONFIGURE_ARGS+= \
+		--enable-xim --enable-big5 \
 		--enable-next-scroll --with-term=xterm-color
-
-
 
