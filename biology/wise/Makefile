@@ -55,18 +55,18 @@ post-configure:
 		-e s'#\tcsh welcome.csh##;' \
 		${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} \
-		-e s'#CFLAGS\) $?#CFLAGS\) -c $?#;' \
+		-e s'#CFLAGS) $?#CFLAGS) -c $?#;' \
 		${WRKSRC}/base/${MAKEFILE}
 	@${REINPLACE_CMD} \
-		-e s'#INCFLAGS\) $?#INCFLAGS\) -c $?#;' \
+		-e s'#INCFLAGS) $?#INCFLAGS) -c $?#;' \
 		${WRKSRC}/dynlibsrc/${MAKEFILE}
 	@${REINPLACE_CMD} \
-		-e s'#INCFLAGS\) $?#INCFLAGS\) -c $?#;' \
-		-e s'#CFLAGS\) estwise.c#CFLAGS\) -c estwise.c#;' \
-		-e s'#CFLAGS\) estwiseb.c#CFLAGS\) -c estwiseb.c#;' \
-		-e s'#CFLAGS\) estwisedb.c#CFLAGS\) -c estwisedb.c#;' \
-		-e s'#CFLAGS\) genewise.c#CFLAGS\) -c genewise.c#;' \
-		-e s'#CFLAGS\) genewisedb.c#CFLAGS\) -c genewisedb.c#;' \
+		-e s'#INCFLAGS) $?#INCFLAGS) -c $?#;' \
+		-e s'#CFLAGS) estwise.c#CFLAGS) -c estwise.c#;' \
+		-e s'#CFLAGS) estwiseb.c#CFLAGS) -c estwiseb.c#;' \
+		-e s'#CFLAGS) estwisedb.c#CFLAGS) -c estwisedb.c#;' \
+		-e s'#CFLAGS) genewise.c#CFLAGS) -c genewise.c#;' \
+		-e s'#CFLAGS) genewisedb.c#CFLAGS) -c genewisedb.c#;' \
 		${WRKSRC}/models/${MAKEFILE}
 
 do-install:
