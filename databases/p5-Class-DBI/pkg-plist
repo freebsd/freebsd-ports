@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/.packlist
 %%SITE_PERL%%/Class/DBI.pm
 %%SITE_PERL%%/Class/DBI/ColumnGrouper.pm
+%%SITE_PERL%%/Class/DBI/Column.pm
 %%SITE_PERL%%/Class/DBI/Iterator.pm
 %%SITE_PERL%%/Class/DBI/Query.pm
 @unexec rmdir %D/%%SITE_PERL%%/Class/DBI 2>/dev/null || true
