@@ -1,0 +1,11 @@
+--- Makefile.orig	Tue Aug 21 12:50:44 2001
++++ Makefile	Tue Aug 21 12:51:13 2001
+@@ -12,7 +12,7 @@
+ CFLAGS= -g -O2 -Wall -Wshadow
+ 
+ 
+-all: grepseq fmtseq idxseq typeseq wcseq examples
++all: grepseq fmtseq idxseq typeseq wcseq
+ 
+ grepseq: grepseq.o seqio.o
+ 	$(CC) $(CFLAGS) -o grepseq grepseq.o seqio.o

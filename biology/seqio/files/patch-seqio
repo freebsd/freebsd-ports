@@ -1,0 +1,18 @@
+--- seqio.c.orig	Sat Aug 18 16:20:53 2001
++++ seqio.c	Sat Aug 18 16:21:23 2001
+@@ -147,7 +147,6 @@
+  * files, and replacement functions for system calls that don't exist on
+  * one or more machines.
+  */
+-extern char *sys_errlist[];
+ 
+ #if defined(__sun) && !defined(FILENAME_MAX)
+ #include <sys/param.h>
+@@ -158,7 +157,6 @@
+ static int ctype_initflag = 0;
+ static char tubuf[384], *tuary;
+ 
+-#define toupper(chr) tuary[(int) (chr)]
+ 
+ static void init_ctype(void)
+ {
