@@ -6,28 +6,41 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.5.23
+PORTVERSION=	2.5.28.j
 CATEGORIES+=	net
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://download.berlios.de/pub/mldonkey/spiralvoice/cvs/
+PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${DOWNLOADVERSION}
 
-PATCH_SITES=	http://www.schraegerpunkt.de/
-PATCHFILES=	mldonkey-${DOWNLOADVERSION}-${PORTVERSION:C/.+\.//}.patch.gz
+PATCH_SITES=	http://download.berlios.de/pub/mldonkey/spiralvoice/patchpacks/
+PATCHFILES=	patch_pack${PORTVERSION:C/^.\..\.(.)/\1/:C/\.//}.gz
 
-MAINTAINER?=	holger@e-gitt.net
+MAINTAINER?=	lioux@FreeBSD.org
 COMMENT?=	A OCAML client for multiple peer-to-peer networks
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		autoconf213:${PORTSDIR}/devel/autoconf213
+BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
-DOWNLOADVERSION=2.5.22
+DOWNLOADVERSION=${PORTVERSION:R}
 
+NO_LATEST_LINK=	yes
+CONFLICTS=	mldonkey-[0-9]* mldonkey-{core,gui}-[0.9]*
+
+USE_BZIP2=	yes
+USE_AUTOCONF_VER=	213
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-pthread --enable-ocamlver=3
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DOWNLOADVERSION}
 USE_GMAKE=	yes
-ALL_TARGET=	depend opt
+ALL_TARGET=	opt
+
+CONFIGURE_ARGS=	--enable-pthread --enable-ocamlver=3
+CONFIGURE_WRKSRC=	${WRKSRC}/config
+MAKE_ENV=	OCAMLRUNPARAM="l=256M"
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DOWNLOADVERSION}
+
+# XXX
+# filetp is known to be broken on version 2.5.28* and prior
+CONFIGURE_ARGS+=	--disable-filetp
 
 .if defined(WITHOUT_GUI)
 .if defined(WITHOUT_CORE)
@@ -36,7 +49,7 @@ ALL_TARGET=	depend opt
 # have no 'without-' flag
 CONFIGURE_ARGS+=--disable-gui
 PLIST_SUB+=	CORE="" GUI="@comment " GUICORE="@comment "
-PKGNAMESUFFIX=	-core
+PKGNAMESUFFIX=	-core-devel
 .else
 PLIST_SUB+=	GUI=""
 BUILD_DEPENDS+=	lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \
@@ -44,7 +57,7 @@ BUILD_DEPENDS+=	lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \
 # we don't need lablgtk as RUN dependency, but we need gtk+glib
 USE_GNOME=	gtk12
 .if defined(WITHOUT_CORE)
-PKGNAMESUFFIX=	-gui
+PKGNAMESUFFIX=	-gui-devel
 PLIST_SUB+=	CORE="@comment " GUICORE="@comment "
 .else
 PLIST_SUB+=	CORE=""	GUICORE=""
@@ -53,6 +66,7 @@ PLIST_SUB+=	CORE=""	GUICORE=""
 
 DOCFILES=	Authors.txt Bugs.txt ChangeLog Developers.txt FAQ.html \
 		Install.txt Readme.txt Todo.txt ed2k_links.txt
+PORTDOCS=	${DOCFILES}
 
 .include <bsd.port.pre.mk>
 
@@ -62,12 +76,12 @@ pre-everything::
 	@${ECHO_MSG} "You can disable the CORE by defining WITHOUT_CORE."
 .endif
 
-pre-configure:
-	@cd ${WRKSRC}/config && ${AUTOCONF}
-
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" ${FILESDIR}/wrapper.sh > \
 		${WRKDIR}/wrapper.sh
+	@${REINPLACE_CMD} -E \
+		-e 's|%%AUTOCONF%%|${AUTOCONF}|' \
+		${BUILD_WRKSRC}/${MAKEFILE}
 
 do-install:
 .ifndef(WITHOUT_CORE)
