@@ -18,5 +18,6 @@ RUN_DEPENDS=		tclsh8.0:${PORTSDIR}/lang/tcl80/
 
 USE_IMAKE=		yes
 USE_BISON=		yes
+MAN1=			gmac.1 tkgate.1
 
 .include <bsd.port.mk>
