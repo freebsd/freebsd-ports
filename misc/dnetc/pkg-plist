@@ -1,7 +1,7 @@
-@unexec if cmp -s %D/distributed.net/dnetc.ini %D/distributed.net/dnetc.ini.default; then rm -f %D/distributed.net/dnetc.ini; fi
 distributed.net/dnetc
-distributed.net/dnetc.sh
 distributed.net/INFO
-distributed.net/dnetc.ini.default
-etc/rc.d/dnetc.sh
-@unexec rmdir %D/distributed.net 2>/dev/null || true
+@unexec if cmp -s %D/distributed.net/dnetc.ini %D/distributed.net/dnetc.ini.sample; then rm -f %D/distributed.net/dnetc.ini; fi
+distributed.net/dnetc.ini.sample
+@exec [ -f %B/dnetc.ini ] || cp %B/%f %B/dnetc.ini
+etc/rc.d/dnetc.sh.sample
+@dirrm distributed.net
