@@ -1,0 +1,7 @@
+Cole is a free C OLE library. Using cole, you can access Microsoft' `Structured
+Storage' files. The most popular Microsoft's programs generate `Structured 
+Storage' files, incluiding the Microsoft' suite for offices. StarDivision'
+suite (StarOffice) generate `Structured Storage' files too. FlashPix file
+format is `Structured Storage' too.
+
+WWW:	http://arturo.directmail.org/filtersweb/

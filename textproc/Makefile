@@ -8,6 +8,7 @@
     SUBDIR += catdoc
     SUBDIR += cocoon
     SUBDIR += code2html
+    SUBDIR += cole
     SUBDIR += dict
     SUBDIR += diffstat
     SUBDIR += docbook
