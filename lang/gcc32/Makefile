@@ -13,8 +13,8 @@ PORTNAME=	gcc
 PORTVERSION=	3.1.1
 PORTREVISION=	${SNAPVER}
 CATEGORIES=	lang java
-MASTER_SITES=	${MASTER_SITE_SOURCEWARE}  \
-		ftp://egcs.cygnus.com/pub/gcc/snapshots/${SNAPDATE}/
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
+		ftp://gcc.gnu.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	gcc/snapshots/${SNAPDATE}
 DISTFILES=	\
 		gcc-core-${SNAPVER}${EXTRACT_SUFX} \
