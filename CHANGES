@@ -10,6 +10,22 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20040404:
+	The glib20 and gtk20 ports were updated to 2.4.0.  This new version
+	is completely source and binary compatible with the previous 2.2.x
+	series.  However, certain API calls have been deprecated.  If your
+	port defines the following macros, they may refuse to build with
+	the new versions of glib20 and gtk20:
+
+GTK_DISABLE_DEPRECATED
+GDK_DISABLE_DEPRECATED
+GLIB_DISABLE_DEPRECATED
+
+	The temporary solution is to either patch your port's Makefiles to,
+	or use an in-place regular expression to remove these macros.  The
+	more permanent solution is to wait until the port's authors update
+	their code to use current API calls.
+
 20040402:
 	There has been a big update to bsd.java.mk.  However, this update
 	is mostly backwards compatible, so it shouldn't affect most java
