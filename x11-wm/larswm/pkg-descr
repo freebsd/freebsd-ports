@@ -2,3 +2,5 @@ Tiling window manager for X, based on David Hogan's 9wm.
 It provides virtual desktops, support for tiled and untiled
 windows, keyboard shortcuts and more, while using very little
 system resources.
+
+WWW: http://www-personal.umich.edu/~larsb/larswm/
