@@ -94,6 +94,7 @@
     SUBDIR += lcdproc
     SUBDIR += lfm
     SUBDIR += libretto-config
+    SUBDIR += linux-acu
     SUBDIR += livecd
     SUBDIR += lmmon
     SUBDIR += log_analysis

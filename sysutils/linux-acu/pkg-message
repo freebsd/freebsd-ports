@@ -1,0 +1,8 @@
+acu installed under ${PREFIX}/bin
+	to allow root access to your X session,
+	run 'xhost localhost' or use sudo.
+	acu will not run with linprocfs since it needs to see:
+		/compact/linux/proc/aironet
+	acu annoyingly creates
+		/compat/linux/etc/eth2.cfg
+	and will use that over the current card's settings.
