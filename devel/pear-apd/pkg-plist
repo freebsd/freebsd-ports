@@ -1,0 +1,6 @@
+bin/pprofp
+%%EXTDIR%%/apd.so
+%%PKGREGDIR%%/package.xml
+%%PORTDOCS%%%%DOCSDIR%%/README
+@dirrm %%PKGREGDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

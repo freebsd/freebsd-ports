@@ -1,0 +1,6 @@
+APD is a full-featured PHP profiler/debugger that is loaded as a
+zend_extension.
+
+It aims to be an analog of C's gprof or Perl's Devel::DProf.
+
+WWW: http://pear.php.net/package/apd
