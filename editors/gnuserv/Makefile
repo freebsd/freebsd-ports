@@ -13,23 +13,27 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+
+BINSUFFIX?=	-emacs
 
 EMACS_PORT_NAME?=emacs21
 
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+# configure --program-suffix doesn't work somehow
+MAKE_ARGS=	binsuffix="${BINSUFFIX}"
 
 PORTDOCDIR=	share/doc/gnuserv-${EMACS_PORT_NAME}
-MAN1=		gnuserv.1
-MLINKS=		gnuserv.1 gnuattach.1 \
-		gnuserv.1 gnuclient.1 \
-		gnuserv.1 gnudoit.1
+MAN1=		gnuserv${BINSUFFIX}.1
+MLINKS=		gnuserv${BINSUFFIX}.1 gnuattach${BINSUFFIX}.1 \
+		gnuserv${BINSUFFIX}.1 gnuclient${BINSUFFIX}.1 \
+		gnuserv${BINSUFFIX}.1 gnudoit${BINSUFFIX}.1
 DOCS=		COPYING ChangeLog INSTALL README README.orig
 SOURCES=	devices.el gnuserv-compat.el gnuserv.el
 ELCS=		${SOURCES:S/.el/.elc/g}
 
 PLIST_SUB=	EMACS_PORT_NAME=${EMACS_PORT_NAME} \
-		EMACS_SITE_LISPDIR=${EMACS_SITE_LISPDIR}
+		EMACS_SITE_LISPDIR=${EMACS_SITE_LISPDIR} \
+		BINSUFFIX=${BINSUFFIX}
 
 lispdir=	${PREFIX}/${EMACS_SITE_LISPDIR}/gnuserv
 post-install:
