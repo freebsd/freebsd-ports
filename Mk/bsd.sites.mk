@@ -213,6 +213,7 @@ MASTER_SITE_SOURCEFORGE+= \
 	http://ftp3.sourceforge.net/%SUBDIR%/ \
 	ftp://ftp1.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
 	http://ftp1.sourceforge.net/%SUBDIR%/ \
+	ftp://prdownload.sourceforge.net/pub/%SUBDIR%/ \
 	ftp://projects.sourceforge.net/pub/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/download.sourceforge.net/pub/sourceforge/%SUBDIR%/
