@@ -103,10 +103,16 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fpic -DPIC"
 ALL_TARGET=	swig runtime
 PLIST_SUB+=	VER="${VER}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not install"
+.endif
+
 post-install:
 # A separate swig13-runtime port might be nice
 	@(cd ${INSTALL_WRKSRC}/Runtime && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 
 	${LN} -f ${PREFIX}/bin/swig ${PREFIX}/bin/swig${VER}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
