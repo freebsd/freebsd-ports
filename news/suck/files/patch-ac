@@ -1,15 +1,15 @@
---- killprg.c.orig	Sat Sep 13 10:13:54 1997
-+++ killprg.c	Sat Sep 13 10:14:10 1997
-@@ -3,6 +3,8 @@
- #include <stdio.h>
- #include <stdlib.h>
+--- killprg.c.orig	Thu Aug 21 10:16:02 1997
++++ killprg.c	Sun Oct  5 14:00:23 1997
+@@ -7,6 +7,8 @@
+ #include <unistd.h>
+ #endif
  
 +#include <sys/types.h>
 +
  #ifdef HAVE_DIRENT_H
  # include <dirent.h>
  #else
-@@ -34,7 +36,6 @@
+@@ -36,7 +38,6 @@
  #endif
  
  #include <string.h>
