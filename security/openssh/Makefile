@@ -94,7 +94,7 @@ post-install:
 	fi
 .if !exists(${PREFIX}/etc/rc.d/sshd.sh)
 	@${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/sshd.sh
-	@${ECHO} "[ -x ${PREFIX}/sbin/sshd ] && exec ${PREFIX}/sbin/sshd" >> ${PREFIX}/etc/rc.d/sshd.sh
+	@${ECHO} "[ -x ${PREFIX}/sbin/sshd ] && ${PREFIX}/sbin/sshd && echo -n ' sshd'" >> ${PREFIX}/etc/rc.d/sshd.sh
 	@${CHMOD} 0555 ${PREFIX}/etc/rc.d/sshd.sh
 .endif
 
