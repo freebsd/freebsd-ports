@@ -1,5 +1,9 @@
 $FreeBSD$
 MD5 (festival/festival-1.4.1.tar.gz) = 1cf585adfd5f8f14a3eed71200c5cbde
+SIZE (festival/festival-1.4.1.tar.gz) = 543335
 MD5 (festival/speech_tools-1.2.1.tar.gz) = 4b77d63f202a410868cc79b5e0640b9b
+SIZE (festival/speech_tools-1.2.1.tar.gz) = 1206616
 MD5 (festival/OGIresLPC-2.0.9.tar.gz) = abd5246049210028a24a5c1a349d21c7
+SIZE (festival/OGIresLPC-2.0.9.tar.gz) = 140306
 MD5 (festival/OGIfestpatch-1.4.1.2.tar.gz) = aae864d857fd6a1a7eec06fcc963268d
+SIZE (festival/OGIfestpatch-1.4.1.2.tar.gz) = 32904
