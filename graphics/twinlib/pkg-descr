@@ -1,7 +1,7 @@
-Paintlib is a small but powerful C++ graphics
+Twinlib is a small but powerful C++ graphics
 library that makes its base on the Qt Image I/O
-extensions offered by Qt 2. It is somewhat useful
-for simple graphics programs.
+extensions, which are found in Qt 1.44 and later.
+It is somewhat useful for simple graphics programs.
 
 WWW: http://rio.xdev.org/
 Author: Nicolas Roard <nroard@e-motive.com>
