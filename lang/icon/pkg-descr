@@ -1,0 +1,20 @@
+   Icon is a high-level programming language with extensive
+facilities for processing strings and structures. Icon has
+several novel features, including expressions that may produce
+sequences of results, goal-directed evaluation that automatically
+searches for a successful result, and string scanning that allows
+operations on strings to be formulated at a high conceptual
+level.
+
+   Icon emphasizes high-level string processing and a design phi-
+losophy that allows ease of programming and short, concise pro-
+grams. Storage allocation and garbage collection are automatic in
+Icon, and there are few restrictions on the sizes of objects.
+Strings, lists, and other structures are created during program
+execution and their size does not need to be known when a program
+is written.  Values are converted to expected types automati-
+cally; for example, numeral strings read in as input can be used
+in numerical computations without explicit conversion.  Icon has
+an expression-based syntax with reserved words; in appearance,
+Icon programs resemble those of Pascal and C.
+
