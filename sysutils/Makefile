@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.30 1998/01/28 11:35:34 cracauer Exp $
+# $Id: Makefile,v 1.31 1998/02/25 16:47:16 steve Exp $
 #
 
     SUBDIR += LPRng
@@ -7,6 +7,7 @@
     SUBDIR += bkpupsd
     SUBDIR += cd-write
     SUBDIR += cdrecord
+    SUBDIR += cfengine
     SUBDIR += contool
     SUBDIR += idled
     SUBDIR += lsof
