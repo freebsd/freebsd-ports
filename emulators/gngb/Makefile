@@ -18,6 +18,7 @@ COMMENT=	GameBoy(tm) emulator
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 USE_XLIB=	yes
@@ -41,13 +42,13 @@ PORT_CFLAGS+=	-DSDL_GL
 .endif
 
 pre-configure:
-	@${PERL} -pi -e 's|sdl-config|sdl11-config|g' ${WRKSRC}/configure
-	@${PERL} -pi -e 's|-lSDL|-lSDL-1.1|g' ${WRKSRC}/configure
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|sdl-config|sdl11-config|g; \
+		s|-lSDL|-lSDL-1.1|g; \
+		s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 post-configure:
 .if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${PERL} -pi -e 's|(CFLAGS =).*|\1 ${PORT_CFLAGS} ${CFLAGS}|' ${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -e 's|\(CFLAGS =\).*|\1 ${PORT_CFLAGS} ${CFLAGS}|' ${WRKSRC}/src/Makefile
 .endif
 
 .include <bsd.port.mk>

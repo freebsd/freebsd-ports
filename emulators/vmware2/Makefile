@@ -39,6 +39,7 @@ FREEBSD_MODULE_SITES=	\
 
 USE_SUBMAKE=	yes
 USE_LINUX=	yes
+USE_PERL5=	yes
 VMDIR=		${PREFIX}/lib/vmware
 SRC_BASE?=	/usr/src
 
