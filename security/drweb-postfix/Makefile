@@ -6,28 +6,28 @@
 #
 
 PORTNAME=	drweb_postfix
-PORTVERSION=	4.29.12f
+PORTVERSION=	4.31
 CATEGORIES=	security mail
 MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/ \
 		ftp://ftp.drweb.ru/pub/unix/archive/ \
-		ftp://ftp.drweb.ru/pub/unix/archive/drweb-clients-4.29.12/
-DISTNAME=	drweb-clients-4.29.12-F-sources
+		ftp://ftp.drweb.ru/pub/unix/archive/drweb-clients-${PORTVERSION}/
+DISTNAME=	drweb-clients-${PORTVERSION}-sources
 
 MAINTAINER=	zaa@ulstu.ru
 COMMENT=	Postfix message filter for virus processing through DrWeb daemon
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
 RUN_DEPENDS=	${LOCALBASE}/drweb/drwebd:${PORTSDIR}/security/drweb
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 INST_PREFIX=	${PREFIX}/${PORTNAME}
-DOC_DIR=	${PREFIX}/share/doc/drweb-postfix
 
 LANGS=en-ru
 CONFS=drweb_postfix users viruses addresses
 TMPLS=archive-admin archive-sender error-admin error-sender skip-sender \
       virus-admin virus-rcpts virus-sender rule-admin
-DOCS=addresses_list.rus.txt addresses_list.txt conf_file.rus.txt \
+PORTDOCS=	FAQ.rus.txt addresses_list.rus.txt addresses_list.txt conf_file.rus.txt \
 	conf_file.txt notify.rus.txt notify.txt readme readme.rus \
 	users_list.rus.txt users_list.txt viruses_list.rus.txt viruses_list.txt
 
@@ -56,7 +56,6 @@ post-configure:
 	} | ./configure
 
 do-install:
-	${MKDIR} ${DOC_DIR}
 .for LANG in ${LANGS}
 	${MKDIR} ${PREFIX}/etc/drweb/templates/${LANG}/postfix
 .endfor
@@ -81,14 +80,17 @@ do-install:
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/drweb-postfix ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/drwebdc ${PREFIX}/sbin/
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc/postfix && \
-		${INSTALL_DATA} ${DOCS} ${DOC_DIR}
+		${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-	@echo
-	@echo "Read documentation about additional Postfix tuning needed"
-	@echo "in ${DOC_DIR}."
-	@echo
+	@${ECHO}
+	@${ECHO} "Read documentation about additional Postfix tuning needed"
+	@${ECHO} "in ${DOCSDIR}."
+	@${ECHO}
 
 .include <bsd.port.mk>
