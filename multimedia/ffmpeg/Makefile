@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.4.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ffmpeg
@@ -78,6 +78,9 @@ WITH_MP3=yes
 .if exists(${LOCALBASE}/lib/libvorbisenc.so.2)
 WITH_VORBIS=yes
 .endif
+.if exists(${LOCALBASE}/lib/libfaad.so.0)
+WITH_FAAD=yes
+.endif
 
 ## support activation
 ##
@@ -129,11 +132,13 @@ CONFIGURE_ARGS+=	--enable-mp3lame
 .ifdef(WITH_OPTIMIZED_CFLAGS)
 CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
 			-I${X11BASE}/include \
-			-ffast-math -fomit-frame-pointer"
+			-ffast-math -fomit-frame-pointer" \
+			--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm"
 .else
 CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
 			-I${X11BASE}/include" \
-			--disable-opts
+			--disable-opts"
+			--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm "
 .endif
 
 ## vhook
@@ -149,6 +154,12 @@ PLIST_SUB+=	VHOOK="@comment "
 LIB_DEPENDS+=		vorbisenc.2:${PORTSDIR}/audio/libvorbis
 
 CONFIGURE_ARGS+=	--enable-vorbis
+.endif
+## faad
+.ifdef(WITH_FAAD)
+LIB_DEPENDS+=		faad.0:${PORTSDIR}/audio/faad
+
+CONFIGURE_ARGS+=	--enable-faad
 .endif
 
 pre-everything::
@@ -183,6 +194,10 @@ pre-everything::
 .endif
 .ifndef(WITH_VORBIS)
 	@${ECHO_MSG} 'Define WITH_VORBIS to enable libvorbisenc VORBIS codec'
+	@${ECHO_MSG}
+.endif
+.ifndef(WITH_FAAD)
+	@${ECHO_MSG} 'Define WITH_FAAD to enable libfaad codec'
 	@${ECHO_MSG}
 .endif
 .if ${ARCH} == "i386"
