@@ -16,6 +16,8 @@ MAINTAINER=	sheldonh@FreeBSD.org
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
+BROKEN=		"bison build error"
+
 MAN1=		xzx.1
 
 .include <bsd.port.mk>
