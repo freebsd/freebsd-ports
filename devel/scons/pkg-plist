@@ -9,6 +9,9 @@ lib/scons/SCons/Builder.pyo
 lib/scons/SCons/Conftest.py
 lib/scons/SCons/Conftest.pyc
 lib/scons/SCons/Conftest.pyo
+lib/scons/SCons/Debug.py
+lib/scons/SCons/Debug.pyc
+lib/scons/SCons/Debug.pyo
 lib/scons/SCons/Defaults.py
 lib/scons/SCons/Defaults.pyc
 lib/scons/SCons/Defaults.pyo
@@ -99,6 +102,9 @@ lib/scons/SCons/SConf.pyo
 lib/scons/SCons/Scanner/C.py
 lib/scons/SCons/Scanner/C.pyc
 lib/scons/SCons/Scanner/C.pyo
+lib/scons/SCons/Scanner/D.py
+lib/scons/SCons/Scanner/D.pyc
+lib/scons/SCons/Scanner/D.pyo
 lib/scons/SCons/Scanner/Fortran.py
 lib/scons/SCons/Scanner/Fortran.pyc
 lib/scons/SCons/Scanner/Fortran.pyo
@@ -177,6 +183,9 @@ lib/scons/SCons/Tool/ar.pyo
 lib/scons/SCons/Tool/as.py
 lib/scons/SCons/Tool/as.pyc
 lib/scons/SCons/Tool/as.pyo
+lib/scons/SCons/Tool/bcc32.py
+lib/scons/SCons/Tool/bcc32.pyc
+lib/scons/SCons/Tool/bcc32.pyo
 lib/scons/SCons/Tool/c++.py
 lib/scons/SCons/Tool/c++.pyc
 lib/scons/SCons/Tool/c++.pyo
@@ -186,6 +195,9 @@ lib/scons/SCons/Tool/cc.pyo
 lib/scons/SCons/Tool/default.py
 lib/scons/SCons/Tool/default.pyc
 lib/scons/SCons/Tool/default.pyo
+lib/scons/SCons/Tool/dmd.py
+lib/scons/SCons/Tool/dmd.pyc
+lib/scons/SCons/Tool/dmd.pyo
 lib/scons/SCons/Tool/dvipdf.py
 lib/scons/SCons/Tool/dvipdf.pyc
 lib/scons/SCons/Tool/dvipdf.pyo
@@ -234,6 +246,9 @@ lib/scons/SCons/Tool/ifl.pyo
 lib/scons/SCons/Tool/ilink.py
 lib/scons/SCons/Tool/ilink.pyc
 lib/scons/SCons/Tool/ilink.pyo
+lib/scons/SCons/Tool/ilink32.py
+lib/scons/SCons/Tool/ilink32.pyc
+lib/scons/SCons/Tool/ilink32.pyo
 lib/scons/SCons/Tool/jar.py
 lib/scons/SCons/Tool/jar.pyc
 lib/scons/SCons/Tool/jar.pyo
@@ -327,6 +342,9 @@ lib/scons/SCons/Tool/tar.pyo
 lib/scons/SCons/Tool/tex.py
 lib/scons/SCons/Tool/tex.pyc
 lib/scons/SCons/Tool/tex.pyo
+lib/scons/SCons/Tool/tlib.py
+lib/scons/SCons/Tool/tlib.pyc
+lib/scons/SCons/Tool/tlib.pyo
 lib/scons/SCons/Tool/yacc.py
 lib/scons/SCons/Tool/yacc.pyc
 lib/scons/SCons/Tool/yacc.pyo
