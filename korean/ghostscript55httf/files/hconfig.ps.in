@@ -1,0 +1,49 @@
+%
+% Hangul Font Configuration File (FreeType)
+%  Jan. 17, Choi, Jun Ho <junker@jazz.snu.ac.kr>
+%  1998/11/26 CHOI Junho <cjh@kr.freebsd.org>
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Example:
+% 	/Batang-Medium		4400000	(fontpath)	FreeTypehangul
+%
+% Descriptions:
+% 	/Batang-Medium
+%		is the name of the Hangul font group to be installed.
+%
+%	4400000
+%		is the offset of the identifiers to be used by the group.
+%		You should specify the offset at intervals of 200,
+%		because each font group uses about 170 identifiers.
+%
+%	(fontpath)
+%		is the path name of the TrueType font(.ttc or .ttf).
+%		Unicode(2.0) encoded or Wansung(pid 3, eid 5) encoded fonts
+%		can be used.
+%
+%	FreeTypehangul
+%		is the operator to install Hangul font groups
+%	        using `FreeType'.
+%       
+%	
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+% Baekmuk Font configuration sample for ko-ghostscript-httf-5.50
+%
+/Batang-Medium         4400000 (%%PREFIX%%/lib/X11/fonts/TrueType/batang.ttf) FreeTypehangul
+/Gulim-Medium          4400400 (%%PREFIX%%/lib/X11/fonts/TrueType/gulim.ttf) FreeTypehangul
+/Dotum-Medium          4400800 (%%PREFIX%%/lib/X11/fonts/TrueType/dotum.ttf) FreeTypehangul
+/Headline-Medium       4401200 (%%PREFIX%%/lib/X11/fonts/TrueType/hline.ttf) FreeTypehangul
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Hangul Font Aliases
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/Batang-Medium		/Baekmuk-Batang-Medium copycomphangulfont
+/Gulim-Medium		/Baekmuk-Gulim-Medium copycomphangulfont
+/Dotum-Medium		/Baekmuk-Dotum-Medium copycomphangulfont
+/Headline-Medium	/Baekmuk-Headline-Medium copycomphangulfont
