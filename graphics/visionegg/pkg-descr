@@ -1,0 +1,15 @@
+The Vision Egg is a very powerful, flexible, and free way to produce stimuli
+for vision research experiments.
+   - Perform experiments using an inexpensive PC and standard consumer
+     graphics card
+   - Perform experiments using a graphics workstation if special features
+     needed
+   - Data acquisition and other realtime hardware control capabilities such
+     as fMRI
+   - Dynamically generated stimuli can be changed in realtime via software
+     or external hardware
+   - Produce traditional stimuli to replace legacy systems
+   - Produce stimuli not possible using other hardware
+   - Demo programs to get you started right away
+
+WWW: http://www.visionegg.org/

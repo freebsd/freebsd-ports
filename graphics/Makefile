@@ -375,6 +375,7 @@
     SUBDIR += vertex
     SUBDIR += vid
     SUBDIR += view3ds
+    SUBDIR += visionegg
     SUBDIR += vlc
     SUBDIR += vp
     SUBDIR += vterrain-apps
