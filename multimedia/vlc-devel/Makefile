@@ -39,7 +39,7 @@ MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/
 PKGNAMESUFFIX?=	${GNOME_SUFFIX}${ESOUND_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	ahze@ahze.net
-COMMENT=	An X11 video streaming client/server solution
+COMMENT=	Multimedia streaming server and player for various audio/video formats
 
 LIB_DEPENDS=	dvdnav.3:${PORTSDIR}/multimedia/libdvdnav \
 		mad.2:${PORTSDIR}/audio/libmad \
