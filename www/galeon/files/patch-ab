@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- src/galeon.orig	Tue Jan 23 15:58:45 2001
-+++ src/galeon	Mon Jan 29 16:45:16 2001
+--- src/galeon.orig	Tue Apr  3 22:06:15 2001
++++ src/galeon	Mon Apr  9 14:27:58 2001
 @@ -1,15 +1,15 @@
  #!/bin/sh
  
@@ -11,11 +11,11 @@ $FreeBSD$
  
  if test -n "$MOZILLA_FIVE_HOME"; then
  	MOZILLA_HOME=$MOZILLA_FIVE_HOME
--elif [ -f /usr/local/mozilla/libgtkembedmoz.so ]; then
+-elif [ -f /usr/local/mozilla/chrome/embed.jar ]; then
 -	MOZILLA_HOME=/usr/local/mozilla
--elif [ -f /usr/lib/mozilla/libgtkembedmoz.so ]; then
+-elif [ -f /usr/lib/mozilla/chrome/embed.jar ]; then
 -	MOZILLA_HOME=/usr/lib/mozilla
--elif [ -f /opt/mozilla/libgtkembedmoz.so ]; then
+-elif [ -f /opt/mozilla/chrome/embed.jar ]; then
 -	MOZILLA_HOME=/opt/mozilla
 +elif [ -f %%LOCALBASE%%/lib/%%MOZILLA%%/libgtkembedmoz.so ]; then
 +	MOZILLA_HOME=%%LOCALBASE%%/lib/%%MOZILLA%%
