@@ -1,6 +1,6 @@
 bin/unzip
 @exec ln -sf %f %B/zipinfo
-@unexec rm %D/bin/zipinfo
+@unexec rm %D/bin/zipinfo 2>&1 >/dev/null || true
 bin/funzip
 bin/unzipsfx
 bin/zipgrep

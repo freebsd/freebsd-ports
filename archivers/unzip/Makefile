@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES?=	archivers
 MASTER_SITES=	ftp://ftp.info-zip.org/pub/infozip/src/ \
 		${MASTER_SITE_TEX_CTAN:S,%SUBDIR%,tools/zip/info-zip/src/,}
-DISTFILES=	${PORTNAME}550.tar.gz
+DISTNAME=	${PORTNAME}550
 
 MAINTAINER?=	ache@FreeBSD.org
 COMMENT?=	List, test and extract compressed files in a ZIP archive
