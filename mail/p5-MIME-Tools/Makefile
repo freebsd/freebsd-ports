@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p5-MIME-Tools
-PORTVERSION=	5.415
+PORTVERSION=	5.416
 PORTEPOCH=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -46,6 +46,21 @@ MAN3=	MIME::Body.3 \
 	MIME::Tools.3 \
 	MIME::WordDecoder.3 \
 	MIME::Words.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	ChangeLog README
+PORTEXAMPLES=	examples/README examples/mimeabuse examples/mimedump examples/mimeencode \
+		examples/mimeexplode examples/mimepostcard examples/mimeprint \
+		examples/mimeref examples/mimesend examples/mimesender examples/mimetour
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
