@@ -28,11 +28,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack pkgconfig
-
-post-patch:
-	${REINPLACE_CMD} 's|xproto x11|xproto|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
