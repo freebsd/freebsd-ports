@@ -74,7 +74,6 @@ bin/opera-devel
 %%DATADIR%%/ini/unix_keyboard.ini
 %%DATADIR%%/java/opera.jar
 %%DATADIR%%/java/opera.policy
-%%DATADIR%%/jsconsole.html
 %%DATADIR%%/lngcode.txt
 %%DATADIR%%/locale/en/default.adr
 %%DATADIR%%/locale/en/lngcode.txt
