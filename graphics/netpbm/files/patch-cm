@@ -1,16 +1,16 @@
---- ppm/ppmchange.c.orig	Mon Jan  8 05:12:30 2001
-+++ ppm/ppmchange.c	Sat Jan 13 00:00:00 2001
-@@ -14,6 +14,7 @@
- */
+--- pnm/giftopnm.c.orig	Wed Jan 10 12:59:44 2001
++++ pnm/giftopnm.c	Sat Jan 13 00:00:00 2001
+@@ -11,6 +11,7 @@
  
- #include "ppm.h"
+ #include <string.h>
+ #include "pnm.h"
 +#include "shhopt.h"
- #define TCOLS 256
- #define SQRT3 1.73205080756887729352
-     /* The square root of 3 */
-@@ -53,9 +54,19 @@
  
-     char * remainder_color;  /* value of -remainder option */
+ #define GIFMAXVAL 255
+ #define MAXCOLORMAPSIZE 256
+@@ -56,11 +57,21 @@
+ 
+     unsigned int option_def_index;
  
 +    /* Create the OptStruct structure describing our options */
 +    #define OPTENTRY(shortvalue,longvalue,typevalue,outputvalue,flagvalue) {\
@@ -22,18 +22,20 @@
 +      option_def_index++; \
 +      }
      option_def_index = 0;   /* incremented by OPTENTRY */
-     OPTENTRY(0,   "closeness",     OPT_INT,    &cmdlineP->closeness,     0);
-     OPTENTRY(0,   "remainder",     OPT_STRING, &remainder_color,         0);
+     OPTENTRY(0,   "verbose",     OPT_FLAG,   &cmdline_p->verbose,         0);
+     OPTENTRY(0,   "comments",    OPT_FLAG,   &cmdline_p->comments,        0);
+     OPTENTRY(0,   "image",       OPT_UINT,   &cmdline_p->image_no,        0);
+     OPTENTRY(0,   "alphaout",   OPT_STRING, &cmdline_p->alpha_filename, 0);
 +    option_def[option_def_index].type = OPT_END;
  
      /* Set the defaults */
-     cmdlineP->closeness = 0;
-@@ -65,7 +76,7 @@
+     cmdline_p->verbose = FALSE;
+@@ -72,7 +83,7 @@
      opt.short_allowed = FALSE;  /* We have no short (old-fashioned) options */
-     opt.allowNegNum = FALSE;  /* We may have parms that are negative numbers */
+     opt.allowNegNum = FALSE;  /* We have no parms that are negative numbers */
  
 -    pm_optParseOptions2(&argc, argv, opt, 0);
 +    optParseOptions2(&argc, argv, opt, 0);
-         /* Uses and sets argc, argv, and some of *cmdlineP and others. */
+         /* Uses and sets argc, argv, and some of *cmdline_p and others. */
  
-     if (remainder_color) {
+     if (argc-1 == 0) 

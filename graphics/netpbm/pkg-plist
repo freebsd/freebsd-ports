@@ -27,6 +27,7 @@ bin/macptopbm
 bin/mdatopbm
 bin/mgrtopbm
 bin/mtvtoppm
+bin/palmtopnm
 bin/pamchannel
 bin/pamcut
 bin/pamfile
@@ -115,6 +116,7 @@ bin/pnminterp-gen
 bin/pnminvert
 bin/pnmmargin
 bin/pnmmerge
+bin/pnmmontage
 bin/pnmnlfilt
 bin/pnmnoraw
 bin/pnmpad
@@ -131,6 +133,7 @@ bin/pnmtoddif
 bin/pnmtofiasco
 bin/pnmtofits
 bin/pnmtojbig
+bin/pnmtopalm
 bin/pnmtoplainpnm
 bin/pnmtopng
 bin/pnmtops
@@ -240,3 +243,8 @@ lib/libpnm.so.1
 lib/libppm.a
 lib/libppm.so
 lib/libppm.so.1
+share/netpbm/palmcolor8.map
+share/netpbm/palmgray1.map
+share/netpbm/palmgray2.map
+share/netpbm/palmgray4.map
+@dirrm share/netpbm

@@ -1,0 +1,47 @@
+--- pnm/pnmmontage.c.orig	Tue Jan  2 04:59:04 2001
++++ pnm/pnmmontage.c	Sat Jan 13 00:00:00 2001
+@@ -11,6 +11,7 @@
+  */
+ 
+ #include "pam.h"
++#include "shhopt.h"
+ #include <limits.h>
+ #include <string.h>
+ 
+@@ -172,8 +173,18 @@
+   int helpflag = 0;
+   optStruct option_def[100];
+   optStruct2 opt;
+-  unsigned option_def_index = 0;
++  unsigned option_def_index;
+ 
++  /* Create the OptStruct structure describing our options */
++  #define OPTENTRY(shortvalue,longvalue,typevalue,outputvalue,flagvalue) {\
++    option_def[option_def_index].shortName = (shortvalue); \
++    option_def[option_def_index].longName = (longvalue); \
++    option_def[option_def_index].type = (typevalue); \
++    option_def[option_def_index].arg = (outputvalue); \
++    option_def[option_def_index].flags = (flagvalue); \
++    option_def_index++; \
++    }
++  option_def_index = 0;   /* incremented by OPTENTRY */
+   OPTENTRY('?', "?",       OPT_FLAG,   &helpflag,  0);
+   OPTENTRY('h', "help",    OPT_FLAG,   &helpflag,  0);
+   OPTENTRY( 0,  "header",  OPT_STRING, &headfname, 0);
+@@ -189,6 +200,7 @@
+   OPTENTRY('7', "7",       OPT_FLAG,   &q[7],      0);
+   OPTENTRY('8', "8",       OPT_FLAG,   &q[8],      0);
+   OPTENTRY('9', "9",       OPT_FLAG,   &q[9],      0);
++  option_def[option_def_index].type = OPT_END;
+ 
+   opt.opt_table = option_def;
+   opt.short_allowed = 0;
+@@ -197,7 +209,7 @@
+   pnm_init(&argc, argv);
+ 
+   /* Check for flags. */
+-  pm_optParseOptions2(&argc, argv, opt, 0);
++  optParseOptions2(&argc, argv, opt, 0);
+ 
+   if (helpflag)
+   {
