@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	POE-Component-Child
-PORTVERSION=	1.31
+PORTVERSION=	1.33
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=     lin-chi@lastamericanempire.com
+MAINTAINER=	lin-chi@lastamericanempire.com
 COMMENT=	POE child management
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
