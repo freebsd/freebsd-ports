@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 
 MAINTAINER=	anders@fix.no
 
-LIB_DEPENDS=	xmms.1:${PORTSDIR}/audio/xmms
+LIB_DEPENDS=	xmms.2:${PORTSDIR}/audio/xmms
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

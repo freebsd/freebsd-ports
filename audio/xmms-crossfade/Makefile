@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.netcologne.de/~nc-eisenlpe2/xmms-crossfade/ \
 
 MAINTAINER=	pat@databits.net
 
-LIB_DEPENDS=	xmms.1:${PORTSDIR}/audio/xmms
+LIB_DEPENDS=	xmms.2:${PORTSDIR}/audio/xmms
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
