@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	Mon Jan 24 13:38:33 2000
-+++ src/Makefile.in	Mon Jan 24 13:38:41 2000
+--- src/Makefile.in.old	Wed Feb 21 11:57:28 2001
++++ src/Makefile.in	Wed Feb 21 11:57:58 2001
 @@ -36,7 +36,7 @@
  exec_prefix = @exec_prefix@
  install_lib_dir = @libdir@
@@ -7,5 +7,14 @@
 -install_doc_dir = $(prefix)/doc/slang
 +install_doc_dir = $(prefix)/share/doc/slang
  DOC_FILES = ../changes.txt ../COPY* ../doc/slangdoc.html ../doc/text/*.txt
+ MODULE_INSTALL_DIR = @libdir@/slang/modules
  #---------------------------------------------------------------------------
- # Misc commands (safe to leave these untouched)
+@@ -138,7 +138,7 @@
+ #---------------------------------------------------------------------------
+ # Intallation rules
+ #---------------------------------------------------------------------------
+-install: install_basic_lib install_docs
++install: install_basic_lib
+ install_basic_lib: $(DEST_LIBDIR) $(DEST_INCDIR) $(OBJDIR_NORMAL_LIB)
+ 	@echo installing $(OBJDIR_NORMAL_LIB) in $(DEST_LIBDIR)
+ 	$(INSTALL_DATA) $(OBJDIR_NORMAL_LIB) $(DEST_LIBDIR)
