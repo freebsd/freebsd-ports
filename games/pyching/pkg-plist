@@ -1,0 +1,32 @@
+bin/pyching
+%%LIB_TARGET%%/pyching_cimages.py
+%%LIB_TARGET%%/pyching_cimages.pyc
+%%LIB_TARGET%%/pyching_engine.py
+%%LIB_TARGET%%/pyching_engine.pyc
+%%LIB_TARGET%%/pyching_hlhtx_data.py
+%%LIB_TARGET%%/pyching_hlhtx_data.pyc
+%%LIB_TARGET%%/pyching_idimage_data.py
+%%LIB_TARGET%%/pyching_idimage_data.pyc
+%%LIB_TARGET%%/pyching_inhtx_data.py
+%%LIB_TARGET%%/pyching_inhtx_data.pyc
+%%LIB_TARGET%%/pyching_interface_tkinter.py
+%%LIB_TARGET%%/pyching_interface_tkinter.pyc
+%%LIB_TARGET%%/smgAbout.py
+%%LIB_TARGET%%/smgAbout.pyc
+%%LIB_TARGET%%/smgAnimate.py
+%%LIB_TARGET%%/smgAnimate.pyc
+%%LIB_TARGET%%/smgDialog.py
+%%LIB_TARGET%%/smgDialog.pyc
+%%LIB_TARGET%%/smgHtmlView.py
+%%LIB_TARGET%%/smgHtmlView.pyc
+%%LIB_TARGET%%/icon.xbm
+@dirrm %%LIB_TARGET%%
+%%PORTDOCS%%%%DOC_TARGET%%/BUGS
+%%PORTDOCS%%%%DOC_TARGET%%/CHANGES
+%%PORTDOCS%%%%DOC_TARGET%%/COPYING
+%%PORTDOCS%%%%DOC_TARGET%%/COPYRIGHT
+%%PORTDOCS%%%%DOC_TARGET%%/CREDITS
+%%PORTDOCS%%%%DOC_TARGET%%/INSTALL
+%%PORTDOCS%%%%DOC_TARGET%%/NEWS
+%%PORTDOCS%%%%DOC_TARGET%%/README
+%%PORTDOCS%%@dirrm %%DOC_TARGET%%

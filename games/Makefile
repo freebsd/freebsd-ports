@@ -182,6 +182,7 @@
     SUBDIR += powerpak
     SUBDIR += pp
     SUBDIR += ptkei
+    SUBDIR += pyching
     SUBDIR += pysol
     SUBDIR += pysol-cardsets
     SUBDIR += pysol-music
