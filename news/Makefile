@@ -60,6 +60,7 @@
     SUBDIR += pgpmoose
     SUBDIR += plor
     SUBDIR += pyne
+    SUBDIR += rawdog
     SUBDIR += rkive
     SUBDIR += slnr
     SUBDIR += slrn
