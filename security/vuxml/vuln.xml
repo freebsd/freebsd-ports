@@ -80,6 +80,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvename>CAN-2003-0744</cvename>
       <url>http://leafnode.sourceforge.net/leafnode-SA-2003-01</url>
       <url>http://sourceforge.net/mailarchive/message.php?msg_id=5975563</url>
       <url>http://article.gmane.org/gmane.network.leafnode.announce/21</url>
