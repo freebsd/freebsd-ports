@@ -1,0 +1,36 @@
+--- lib-src/libnyquist/Makefile.in.orig	Tue Dec  2 19:32:18 2003
++++ lib-src/libnyquist/Makefile.in	Tue Dec  2 19:32:42 2003
+@@ -465,13 +465,13 @@
+ 	cc -c cmt/userio.c -o cmt/userio.o $(CFLAGS)
+ 
+ misc/intgen: misc/intgen.c
+-	cd misc; make intgen
++	cd misc; $(MAKE) intgen
+ 
+ misc/unpacker: misc/unpacker.c misc/convert.c
+-	cd misc; make unpacker
++	cd misc; $(MAKE) unpacker
+ 
+ misc/packer: misc/packer.c misc/convert.c
+-	cd misc; make packer
++	cd misc; $(MAKE) packer
+ 
+ nyqsrc/sndfnintptrs.h: $(NYQHDRS) snd/snd.h misc/intgen
+ 	$(INTGEN) nyqsrc/sndfnint $(NYQHDRS)
+@@ -481,14 +481,14 @@
+ 
+ clean:
+ 	rm -f libnyquist.a
+-	cd misc; make clean
++	cd misc; $(MAKE) clean
+ 	rm -f $(OBJECTS)
+ # Note that these files are machine-generated:
+ 	rm -f nyqsrc/sndfnintptrs.h nyqsrc/sndfnint.c nyqsrc/sndfnintdefs.h
+ 	rm -f nyqsrc/seqfnintptrs.h nyqsrc/seqfnint.c nyqsrc/seqfnintdefs.h
+ 
+ cleaner: clean
+-	cd misc; make cleaner
++	cd misc; $(MAKE) cleaner
+ 	rm -f *.backup */*.backup
+ 	rm -f *~ */*.*~
+ 	rm -f *.save */*.save

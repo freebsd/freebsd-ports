@@ -19,6 +19,7 @@
     SUBDIR += asmixer
     SUBDIR += aube
     SUBDIR += audacity
+    SUBDIR += audacity-devel
     SUBDIR += aumix
     SUBDIR += aureal-kmod
     SUBDIR += autocd
