@@ -1,0 +1,12 @@
+--- kdesktop/kdeeject.orig	Fri Dec  1 15:25:26 2000
++++ kdesktop/kdeeject	Fri Dec  1 15:25:33 2000
+@@ -8,7 +8,8 @@
+ # kmessage, to show a message box in case of error.
+ #
+ if [ $# = 1 -a "$1" != "--help" ]; then
+-  if eject $1; then
++  dev=`echo $1 | sed -E -e 's#/dev/##' -e 's/([0-9])./\1/'`
++  if cdcontrol -f $dev eject; then
+     # Success -> update icon
+     dcop kdesktop default refreshIcons
+     exit 0
