@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		rox-mime-editor
-PORTVERSION=		0.1.2
-PORTREVISION=	1
+PORTVERSION=		0.1.3
 CATEGORIES=		x11-fm
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
@@ -21,6 +20,7 @@ RUN_DEPENDS=		${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
 			${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:${PORTSDIR}/devel/py-roxlib
 
 USE_PYTHON=		yes
+USE_SIZE=		yes
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}

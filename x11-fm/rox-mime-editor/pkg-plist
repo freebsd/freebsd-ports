@@ -4,6 +4,10 @@ apps/MIME-Editor/AppRun
 apps/MIME-Editor/Help/COPYING
 apps/MIME-Editor/Help/Changes
 apps/MIME-Editor/Help/README
+apps/MIME-Editor/Messages/dist
+apps/MIME-Editor/Messages/it.gmo
+apps/MIME-Editor/Messages/it.po
+apps/MIME-Editor/Messages/update-po
 apps/MIME-Editor/editor.py
 apps/MIME-Editor/editor.pyc
 apps/MIME-Editor/editor.pyo
@@ -19,6 +23,7 @@ apps/MIME-Editor/override.pyo
 apps/MIME-Editor/type.py
 apps/MIME-Editor/type.pyc
 apps/MIME-Editor/type.pyo
+@dirrm apps/MIME-Editor/Messages
 @dirrm apps/MIME-Editor/Help
 @dirrm apps/MIME-Editor
 @unexec rmdir %D/apps 2>/dev/null || true
