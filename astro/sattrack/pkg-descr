@@ -1,0 +1,15 @@
+This is a port of SatTrack version 3.1, written by manfred Bester.
+SatTrack is a satellite tracking program.  It provides two different
+live displays, for single or multiple satellites, and two different
+orbit prediction facilities.  Cursor controls used in both live
+displays are compatible with the VT100 standard, which allows the
+program to be run basically from any terminal.  An X Window color
+graphics display with the typical world map tracking chart and a
+number of important features has been added in this version.  The
+orbit prediction can be run either interactively or in a batch
+mode.  In the latter case all necessary parameters are specified
+on the command line.
+
+Port to FreeBSD 2.1 by
+Brent J. Nordquist (nordquist@platinum.com)
+Sat Apr  6 22:29:02  1996
