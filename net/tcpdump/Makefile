@@ -22,7 +22,6 @@ MAN1=		tcpdump.1
 
 GNU_CONFIGURE=	yes
 
-
 .if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
@@ -30,5 +29,21 @@ CONFIGURE_ARGS+=	--enable-ipv6
 .if defined(WITHOUT_CRYPTO)
 CONFIGURE_ARGS+=	--without-crypto
 .endif
+
+LOCALPCAPDIR=	${WRKDIR}/libpcap-0.8.1
+LOCALPCAPFILES= include/pcap.h include/pcap-namedb.h include/pcap-bpf.h \
+		lib/libpcap.a
+
+#
+# When building tcpdump against a particular pcap version, it expects to
+# find a built, untarred source tree in the parent of the work tree.
+# Build a symlink farm to produce the files it wants without requiring
+# pcap to be untarred.
+#
+pre-configure:
+	${MKDIR} ${LOCALPCAPDIR}
+.for i in ${LOCALPCAPFILES}
+	${LN} -s ${LOCALBASE}/$i ${LOCALPCAPDIR}
+.endfor
 
 .include <bsd.port.mk>
