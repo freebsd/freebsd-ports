@@ -12,6 +12,9 @@
 ^src/release/
 ^www/
 
+# Skip all ports files except for Makefiles.
+^ports/.*(?<!\bMakefile)$
+
 ^src/contrib/.*/FREEBSD-Xlist
 ^src/contrib/nvi/catalog
 ^src/etc/motd

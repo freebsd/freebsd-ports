@@ -263,9 +263,6 @@ shift @ARGV;
 $directory =~ s,^$cvsroot[/]+,,;
 
 my $check_id = 0;
-if ($directory =~ /^ports/) {
-	$check_id = 2;
-}
 if ($directory =~ /^src\/contrib/) {
 	$check_id = 3;
 }
@@ -279,7 +276,6 @@ if ($cfg::CHECK_HEADERS) {
 	my $failed = 0;
 	foreach my $arg (@ARGV) {
 		my $hastag = ($cvstag{$arg} ne '');
-		next if ($check_id == 2 && $arg ne "Makefile");
 		next if ($check_id == 3 && $hastag);
 
 		# Ignore the file if it's in the exclude list.
