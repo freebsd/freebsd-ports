@@ -3,15 +3,21 @@
 # Date created:         Mon Oct 31 22:04:12 PST 1994
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.12 1996/11/12 02:18:03 obrien Exp $
+# $Id: Makefile,v 1.13 1996/11/17 06:12:29 obrien Exp $
 #
 
 DISTNAME=       Sather-1.0.5
 PKGNAME=        sather-1.0.5
 CATEGORIES=	lang
-MASTER_SITES=   ftp://ftp.icsi.berkeley.edu/pub/sather/
+MASTER_SITES=   ftp://ftp.icsi.berkeley.edu/pub/sather/  \
+		ftp://ftp.sterling.com/programming/languages/sather/  \
+		ftp://ftp.uni-muenster.de/pub/languages/sather/  \
+		ftp://ftp.nis.co.jp/pub/lang/sather/  \
+		ftp://ftp.th-darmstadt.de/pub/programming/languages/sather/  \
+		ftp://ftp.sra.co.jp/pub/lang/sather/  \
+		ftp://ftp.infomagic.com/pub/mirrors/.mirror14/languages/sather/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/Sather
 ALL_TARGET=	testall
