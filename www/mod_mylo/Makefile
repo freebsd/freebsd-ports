@@ -7,7 +7,7 @@
 PORTNAME=	mod_mylo
 PORTVERSION=	0.2.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.orakel.ntnu.no/~oyving/code/mod_mylo/ \
+MASTER_SITES=	http://www.pvv.org/~oyving/code/mod_mylo/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 EXTRACT_SUFX=	.tgz
 
