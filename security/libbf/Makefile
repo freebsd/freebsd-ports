@@ -16,8 +16,6 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/mirrors/ftp.psy.uq.oz.au/libeay/ \
 MAINTAINER=	jim@corebsd.or.id
 COMMENT=	The Blowfish block cipher Library
 
-RESTRICTED=	"Crypto; export-controlled"
-
 .if ${MACHINE_ARCH} == "i386"
 MAKEFLAGS+=	BF_ENC=asm/bx86-elf.o
 .else
