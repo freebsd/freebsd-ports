@@ -8,7 +8,7 @@
 CATEGORIES=	lang www
 PKGNAMESUFFIX=	-horde
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A default PHP configured for the Horde framework
 
 #-----------------------------------------------------------------------
@@ -29,6 +29,8 @@ COMMENT=	A default PHP configured for the Horde framework
 # - WITHOUT_FTP:	if you don't plan to install Gollem.
 #
 #-----------------------------------------------------------------------
+
+PHP_PORT=	${PORTSDIR}/lang/php${PHP_VER}${PKGNAMESUFFIX}
 
 WITH_DOMXML=	yes
 WITH_GETTEXT=	yes
