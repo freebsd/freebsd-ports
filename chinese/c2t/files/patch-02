@@ -1,0 +1,14 @@
+--- c2t.c.orig	Tue Feb  4 02:10:45 1997
++++ c2t.c	Tue Feb  4 02:08:55 1997
+@@ -22,7 +22,11 @@
+ int argc;
+ char **argv;
+ {
++#ifndef CHINDICT
+   char *DICT="/home/ftp/software/unix/X-Window/cxterm-dictionary/TONEPY.tit";
++#else
++  char *DICT=CHINDICT;
++#endif
+   register int eka=0, toka=0, i=0;
+   register char hz[4], **pipo=0;
+   register char **taulu=0, rivi[82];
