@@ -1,9 +1,29 @@
---- configure.in.orig	Fri Jul 28 11:50:24 2000
-+++ configure.in	Wed Dec  5 12:18:13 2001
-@@ -610,4 +615,6 @@
- AC_SUBST(MUTTLOCALEDIR)
- AC_DEFINE_UNQUOTED(MUTTLOCALEDIR, "$MUTTLOCALEDIR")
+--- configure.in.orig	Fri Jun 21 14:52:03 2002
++++ configure.in	Fri Jun 21 14:54:07 2002
+@@ -515,7 +515,7 @@
+            AC_MSG_ERROR([SSL support is only useful with POP or IMAP support])
+           fi
+ 
+-          if test "$with_ssl" != "yes"
++          if test "$with_ssl" != "yes" && x$withval != x/usr
+           then
+            LDFLAGS="$LDFLAGS -L$withval/lib"
+            CPPFLAGS="$CPPFLAGS -I$withval/include"
+@@ -572,7 +572,7 @@
+         then
+           if test "$with_sasl" != "yes"
+           then
+-            CPPFLAGS="$CPPFLAGS -I$with_sasl/include"
++            CPPFLAGS="$CPPFLAGS -I$with_sasl/include/sasl"
+             LDFLAGS="$LDFLAGS -L$with_sasl/lib"
+           fi
+ 
+@@ -609,6 +609,8 @@
+         [if test $enableval = yes; then
+                 AC_DEFINE(USE_FLOCK,1, [ Define to use flock() to lock mailboxes. ])
+         fi])
 +
 +MUTTLIBS="$MUTTLIBS -lxpg4"
  
- AC_OUTPUT(Makefile intl/Makefile m4/Makefile dnl
+ mutt_cv_fcntl=yes
+ AC_ARG_ENABLE(fcntl, [  --disable-fcntl            Do NOT use fcntl() to lock files ],

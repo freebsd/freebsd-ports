@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	mutt
-PORTVERSION=	1.2.5.1
-PORTREVISION=	1
+PORTVERSION=	1.4
+PORTREVISION=	0
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.uib.no/pub/mutt/ \
@@ -18,16 +18,17 @@ MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/mutt-international/ \
 		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/ \
 		ftp://ftp.iks-jena.de/pub/mitarb/lutz/crypt/software/pgp/mutt/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} charmaps-0.0.tar.gz
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}i${EXTRACT_SUFX}
 
-PATCH_SITES=	http://www.spinnaker.de/mutt/compressed/ \
+PATCH_SITES=	http://www.mutt.org.ua/download/${PKGNAME}/ \
+		http://www.spinnaker.de/mutt/compressed/ \
 		http://www.frmug.org/mutt/mutt/${PKGNAME:S/^mutt-//}/ \
 		http://www.math.fu-berlin.de/~leitner/mutt/${PKGNAME:S/^mutt-//}/ \
 		http://www.efrei.fr/~parmelan/mutt/${PKGNAME:S/^mutt-//}/ \
 		ftp://www.frmug.org/pub/mutt/mutt/${PKGNAME:S/^mutt-//}/ \
 		ftp://riemann.iam.uni-bonn.de/pub/mutt/
-PATCHFILES=	patch-${PORTVERSION}.rr.compressed.1.gz
+PATCHFILES=	patch-${PORTVERSION}.rr.compressed.1.gz \
+		patch-${PORTVERSION}.vvv.initials.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER?=	obrien@FreeBSD.org
@@ -48,24 +49,27 @@ LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .elif defined(WITH_NCURSES_PORT)
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
 .endif
-.if defined(WITH_SSL)
-USE_OPENSSL=	yes
+.if defined(WITH_MUTT_CYRUS_SASL)
+LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
 .if defined(WITH_DOCS)
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 .endif
 
 DIST_SUBDIR=	mutt
+WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOMAKE=	yes	# configure.in is patched by <PATCHFILES>
 AUTOMAKE_ARGS=	--include-deps
 CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-pop --enable-imap --enable-flock --disable-fcntl \
+		--with-ssl=${OPENSSLBASE} --sysconfdir=${PREFIX}/etc \
 		--with-sharedir=${PREFIX}/share/mutt \
 		--with-docdir=${PREFIX}/share/doc/mutt --with-charmaps \
+		--with-libiconv-prefix=${PREFIX} \
 		--enable-compressed
 .if defined(WITH_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
@@ -74,11 +78,11 @@ CONFIGURE_ARGS+=	--enable-locales-fix
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}
 .elif defined(WITH_NCURSES_PORT)
 CONFIGURE_ARGS+=	--with-curses=${PREFIX}
+CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
 .endif
-.if defined(WITH_SSL)
-CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
+.if defined(WITH_MUTT_CYRUS_SASL)
+CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .endif
-WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 MAN1=		mutt.1 mutt_dotlock.1
 MAN5=		muttrc.5
 
@@ -88,6 +92,14 @@ pre-patch:
 pre-configure:
 	cd ${WRKSRC}/charmaps/maps; ${LN} CP1251 WINDOWS-1251
 	cd ${WRKSRC}/charmaps/maps; ${RM} -f *.orig
+
+# XXX
+# this should be done automagically by aclocal but ....
+# for now, this will have to do
+pre-build:
+	@${PERL} -pi -e "s/^(ACLOCAL = ).+/\1${ACLOCAL}/; s/^(AUTOCONF = ).+/\1${AUTOCONF}/; \
+		s/^(AUTOMAKE = ).+/\1${AUTOMAKE}/; s/^(AUTOHEADER = ).+/\1${AUTOHEADER}/" \
+		${BUILD_WRKSRC}/Makefile
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE} keymap_defs.h
