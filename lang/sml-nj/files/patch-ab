@@ -6,12 +6,12 @@
  fi
 +# we need to patch just before build
 +echo "applying source patches"
-+patch_file="${FILESDIR}/patch-global-names"
++patch_file="${FILESDIR}/extra-patch-global-names"
 +if [ -f $patch_file ]; then
 +	$PATCH $PATCH_ARGS < $patch_file
 +fi
 +if grep -w FPE_INTDIV /usr/include/machine/trap.h > /dev/null 2>&1; then
-+	patch_file="${FILESDIR}/patch-signals"
++	patch_file="${FILESDIR}/extra-patch-signals"
 +	if [ -f $patch_file ]; then
 +		$PATCH $PATCH_ARGS < $patch_file
 +	fi
