@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aescrypt
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	security
 MASTER_SITES=	http://aescrypt.sourceforge.net/
 MASTER_SITE_SUBDIR=aescrypt
