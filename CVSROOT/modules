@@ -9579,6 +9579,7 @@ rbldnsd		ports/dns/rbldnsd
 rbllookup	ports/dns/rbllookup
 rboot		ports/net/rboot
 rbot		ports/irc/rbot
+rbscrobbler	ports/audio/rbscrobbler
 rc		ports/shells/rc
 rc5pipe		ports/security/rc5pipe
 rc_subr		ports/sysutils/rc_subr
