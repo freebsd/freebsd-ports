@@ -7,6 +7,7 @@
 
 PORTNAME=	net-geoip
 PORTVERSION=	0.06
+PORTREVISION=	1
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.rubynet.org/modules/net/geoip/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	A Ruby extension that wraps around libGeoIP
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		GeoIP.2:${PORTSDIR}/net/GeoIP
+		GeoIP.3:${PORTSDIR}/net/GeoIP
 
 USE_BZIP2=      yes
 USE_RUBY=	yes
