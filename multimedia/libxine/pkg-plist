@@ -1,4 +1,5 @@
 bin/xine-config
+include/xine/compat.h
 include/xine/attributes.h
 include/xine/audio_out.h
 include/xine/buffer.h
@@ -10,20 +11,23 @@ include/xine/events.h
 include/xine/input_plugin.h
 include/xine/lrb.h
 include/xine/metronom.h
+include/xine/osd.h
 include/xine/resample.h
+include/xine/scratch.h
 include/xine/spu_decoder.h
 include/xine/spu_decoder_api.h
 include/xine/video_out.h
 include/xine/video_out_x11.h
+include/xine/video_overlay.h
 include/xine/xine_internal.h
 include/xine/xineutils.h
 include/xine.h
 lib/libxine.la
 lib/libxine.so
-lib/libxine.so.5
+lib/libxine.so.0
 lib/libxineutils.la
 lib/libxineutils.so
-lib/libxineutils.so.5
+lib/libxineutils.so.0
 %%HAVE_ARTS%%lib/xine/plugins/xineplug_ao_out_arts.la
 %%HAVE_ARTS%%lib/xine/plugins/xineplug_ao_out_arts.so
 lib/xine/plugins/xineplug_ao_out_esd.la
@@ -48,6 +52,8 @@ lib/xine/plugins/xineplug_decode_mpeg2.la
 lib/xine/plugins/xineplug_decode_mpeg2.so
 lib/xine/plugins/xineplug_decode_spu.la
 lib/xine/plugins/xineplug_decode_spu.so
+lib/xine/plugins/xineplug_decode_sputext.la
+lib/xine/plugins/xineplug_decode_sputext.so
 %%HAVE_VORBIS%%lib/xine/plugins/xineplug_decode_vorbis.la
 %%HAVE_VORBIS%%lib/xine/plugins/xineplug_decode_vorbis.so
 lib/xine/plugins/xineplug_decode_w32dll.la
@@ -56,6 +62,8 @@ lib/xine/plugins/xineplug_dmx_asf.la
 lib/xine/plugins/xineplug_dmx_asf.so
 lib/xine/plugins/xineplug_dmx_avi.la
 lib/xine/plugins/xineplug_dmx_avi.so
+lib/xine/plugins/xineplug_dmx_cda.la
+lib/xine/plugins/xineplug_dmx_cda.so
 lib/xine/plugins/xineplug_dmx_mpeg.la
 lib/xine/plugins/xineplug_dmx_mpeg.so
 lib/xine/plugins/xineplug_dmx_mpeg_audio.la
@@ -139,6 +147,22 @@ share/doc/xine/xine-lib-API/html/structxine__t.html
 share/doc/xine/xine-lib-API/html/xine_8h-source.html
 share/doc/xine/xine-lib-API/html/xine_8h.html
 share/doc/xine/xine-lib-API/html/xine_logo.png
+share/xine/fonts/cetus-16.xinefont.gz
+share/xine/fonts/cetus-20.xinefont.gz
+share/xine/fonts/cetus-24.xinefont.gz
+share/xine/fonts/cetus-32.xinefont.gz
+share/xine/fonts/mono-16.xinefont.gz
+share/xine/fonts/mono-20.xinefont.gz
+share/xine/fonts/mono-24.xinefont.gz
+share/xine/fonts/mono-32.xinefont.gz
+share/xine/fonts/sans-16.xinefont.gz
+share/xine/fonts/sans-20.xinefont.gz
+share/xine/fonts/sans-24.xinefont.gz
+share/xine/fonts/sans-32.xinefont.gz
+share/xine/fonts/serif-16.xinefont.gz
+share/xine/fonts/serif-20.xinefont.gz
+share/xine/fonts/serif-24.xinefont.gz
+share/xine/fonts/serif-32.xinefont.gz
 share/xine/skins/xine_logo.png
 @dirrm include/xine
 @dirrm lib/xine/plugins
@@ -146,5 +170,6 @@ share/xine/skins/xine_logo.png
 @dirrm share/doc/xine/xine-lib-API/html
 @dirrm share/doc/xine/xine-lib-API
 @dirrm share/doc/xine
+@dirrm share/xine/fonts
 @dirrm share/xine/skins
 @dirrm share/xine

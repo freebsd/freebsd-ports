@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://xine.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	lib
-DISTFILES=	${PORTNAME}-lib-${PORTVERSION}${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}-lib-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
@@ -71,7 +71,7 @@ PLIST_SUB+=	HAVE_OGG=""
 PLIST_SUB+=	HAVE_OGG="@comment "
 .endif
 
-# DVD input plugin for xine-0.9.5 is not available yet.
+# DVD input plugin for xine-0.9.7 is not available yet.
 .if 0
 .if defined(WITH_CSS)
 # http://members.home.nl/mphm.janssen/linuxvideo/linuxvideo.html
