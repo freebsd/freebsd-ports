@@ -10,6 +10,9 @@ PORTVERSION=	1.07.2
 CATEGORIES=	net comms
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dinoex
+.if defined(WITH_PAM)
+PKGNAMESUFFIX?=	-pam
+.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	FreeBSD-modified Taylor UUCP (unix-to-unix copy program)
@@ -30,6 +33,9 @@ MAKE_ENV+=	CSTD=gnu99
 
 .if defined(WITH_PAM)
 MAKE_ENV+=	WITH_PAM=${WITH_PAM}
+CONFLICTS?=	freebsd-uucp-1.*
+.else
+CONFLICTS?=	freebsd-uucp-pam-1.*
 .endif
 
 post-extract:
