@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.8
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
-		${MASTER_SITE_GNOME} \
-		http://gstreamer.freedesktop.org/src/gstreamer/pre/
+		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${GST_VERSION}
 DIST_SUBDIR=	gnome2
 
@@ -32,6 +31,7 @@ USE_GNOME=	gnomehack \
 		libxml2
 USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--disable-tests \
+		--disable-docs-build \
 		--disable-failing-tests
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
