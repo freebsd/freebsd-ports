@@ -7,7 +7,6 @@
 
 PORTNAME=	ruby-usersguide
 PORTVERSION=	${VERSION}
-PORTREVISION=	1
 CATEGORIES+=	lang ruby
 MASTER_SITES?=	http://www.cs.iastate.edu/~slagell/ruby/
 DISTNAME?=	${SHORTNAME}-${VERSION}
@@ -16,7 +15,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 SHORTNAME=	${PORTNAME:S/usersguide/uguide/}
-VERSION?=	20000917
+VERSION?=	20000927
 
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
