@@ -15,6 +15,8 @@ DIST_SUBDIR=	htex
 
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT?=	Korean pk fonts collection of hLaTeXp(300dpi)
+DEPRECATED=	"has failed to fetch since November 2002"
+EXPIRATION_DATE=	"June 27, 2004"
 
 # it depends hLaTeXp
 RUN_DEPENDS=	hlatex:${PORTSDIR}/korean/hlatexp

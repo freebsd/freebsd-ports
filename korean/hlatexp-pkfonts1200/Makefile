@@ -11,6 +11,8 @@ PKGDIR=		${.CURDIR}
 MD5_FILE=	${.CURDIR}/distinfo
 
 COMMENT=	Korean pk fonts collection of hLaTeXp(1200dpi)
+DEPRECATED=	"has failed to fetch since November 2002"
+EXPIRATION_DATE=	"June 27, 2004"
 
 # pkfonts dpi
 RESOLUTION=	1200
