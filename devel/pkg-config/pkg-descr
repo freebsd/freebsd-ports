@@ -15,5 +15,4 @@ multiple versions simultaneously, it must give each version its own name (for
 example, GTK 1.2 might have the package name "gtk+" while GTK 2.0 has
 "gtk+-2.0").
 
-WWW: http://www.freedesktop.org/software/pkgconfig/
-     http://pkgconfig.sourceforge.net
+WWW: http://www.freedesktop.org/wiki/Software_2fpkgconfig

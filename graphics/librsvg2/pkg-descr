@@ -4,4 +4,4 @@ includes functions that render anti-aliased fonts using freetype, including
 caching of glyphs.  It is used by Nautilus for drawing vector icons and
 anti-aliased text.
 
-WWW: http://www.gnome.org/
+WWW: http://librsvg.sourceforge.net/
