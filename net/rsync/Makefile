@@ -4,10 +4,10 @@
 # Date created:         Sat Aug 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.12 1998/04/21 05:02:58 asami Exp $
+# $Id: Makefile,v 1.13 1998/04/24 07:04:07 obrien Exp $
 #
 
-DISTNAME=	rsync-1.7.4
+DISTNAME=	rsync-2.0.18
 CATEGORIES=	net
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 		ftp://sunsite.auc.dk/pub/unix/rsync/  \
@@ -18,19 +18,15 @@ MAINTAINER=     obrien@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 MAN1=		rsync.1
-
-post-patch:
-	@${CP} ${FILESDIR}/clientserver.c ${WRKSRC}
-	@${CP} ${FILESDIR}/README.daemon ${WRKSRC}
-	@${CP} ${FILESDIR}/rsyncd_trees.eg ${WRKSRC}
+MAN5=		rsyncd.conf.5
 
 post-install:
 	@strip ${PREFIX}/bin/rsync
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/rsync
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/rsync
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/rsync
 	${INSTALL_DATA} ${WRKSRC}/tech_report.tex ${PREFIX}/share/doc/rsync
-	${INSTALL_DATA} ${FILESDIR}/README.daemon ${PREFIX}/share/doc/rsync
-	${INSTALL_DATA} ${FILESDIR}/rsyncd_trees.eg ${PREFIX}/share/doc/rsync
 .endif
 
 .include <bsd.port.mk>
