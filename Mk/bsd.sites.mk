@@ -51,7 +51,6 @@ MASTER_SITE_COMP_SOURCES+=	\
 MASTER_SITE_GNOME+=	\
 	ftp://ftp.yggdrasil.com/mirrors/site/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.sourceforge.net/pub/mirrors/gnome/%SUBDIR%/ \
-	ftp://gnome.eazel.com/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/X11/GNOME/%SUBDIR%/ \
@@ -61,7 +60,8 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.dataplus.se/pub/linux/gnome/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/gnome/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,}
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,} \
+	ftp://gnome.eazel.com/pub/GNOME/%SUBDIR%/
 
 MASTER_SITE_GNU+=	\
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
