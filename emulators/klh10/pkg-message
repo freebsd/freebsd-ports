@@ -1,4 +1,4 @@
+Install notice:
+
 KLH10 contains a setuid that accepts network connections.
 Consider using a firewall to limit access to KLH10.
-See the /home/edwin/ports/local5/share/doc/klh10-ks-its/pubits/adm
-for firewall documentation.
