@@ -24,10 +24,18 @@ include/ClanLib-0.7/ClanLib/Core/Math/rect.h
 include/ClanLib-0.7/ClanLib/Core/Math/size.h
 include/ClanLib-0.7/ClanLib/Core/Math/vector2.h
 include/ClanLib-0.7/ClanLib/Core/Math/vector2.inl
+include/ClanLib-0.7/ClanLib/Core/Math/delauney_triangulator.h
+include/ClanLib-0.7/ClanLib/Core/Math/line_math.h
+include/ClanLib-0.7/ClanLib/Core/Math/matrix4x4.h
+include/ClanLib-0.7/ClanLib/Core/Math/number_pool.h
+include/ClanLib-0.7/ClanLib/Core/Math/outline_triangulator.h
+include/ClanLib-0.7/ClanLib/Core/Math/quad.h
+include/ClanLib-0.7/ClanLib/Core/Math/triangle_math.h
 include/ClanLib-0.7/ClanLib/Core/Resources/resource.h
 include/ClanLib-0.7/ClanLib/Core/Resources/resource_manager.h
 include/ClanLib-0.7/ClanLib/Core/Resources/resourcedata.h
 include/ClanLib-0.7/ClanLib/Core/Resources/resourcetype_boolean.h
+include/ClanLib-0.7/ClanLib/Core/Resources/resourcetype_float.h
 include/ClanLib-0.7/ClanLib/Core/Resources/resourcetype_integer.h
 include/ClanLib-0.7/ClanLib/Core/Resources/resourcetype_raw.h
 include/ClanLib-0.7/ClanLib/Core/Resources/resourcetype_string.h
@@ -46,6 +54,8 @@ include/ClanLib-0.7/ClanLib/Core/System/keep_alive.h
 include/ClanLib-0.7/ClanLib/Core/System/lazycopyptr.h
 include/ClanLib-0.7/ClanLib/Core/System/log.h
 include/ClanLib-0.7/ClanLib/Core/System/mutex.h
+include/ClanLib-0.7/ClanLib/Core/System/mutexsharedptr.h
+include/ClanLib-0.7/ClanLib/Core/System/mutexweakptr.h
 include/ClanLib-0.7/ClanLib/Core/System/owningptr.h
 include/ClanLib-0.7/ClanLib/Core/System/setupcore.h
 include/ClanLib-0.7/ClanLib/Core/System/sharedptr.h
@@ -55,6 +65,7 @@ include/ClanLib-0.7/ClanLib/Core/System/threadfunc_v0.h
 include/ClanLib-0.7/ClanLib/Core/System/threadfunc_v1.h
 include/ClanLib-0.7/ClanLib/Core/System/threadfunc_v2.h
 include/ClanLib-0.7/ClanLib/Core/System/timer.h
+include/ClanLib-0.7/ClanLib/Core/System/weakptr.h
 include/ClanLib-0.7/ClanLib/Core/XML/dom_attr.h
 include/ClanLib-0.7/ClanLib/Core/XML/dom_cdata_section.h
 include/ClanLib-0.7/ClanLib/Core/XML/dom_character_data.h
@@ -76,6 +87,14 @@ include/ClanLib-0.7/ClanLib/Core/XML/dom_text.h
 include/ClanLib-0.7/ClanLib/Core/XML/xml_token.h
 include/ClanLib-0.7/ClanLib/Core/XML/xml_tokenizer.h
 include/ClanLib-0.7/ClanLib/Core/XML/xml_writer.h
+include/ClanLib-0.7/ClanLib/Core/core_iostream.h
+include/ClanLib-0.7/ClanLib/Display/Collision/collision_outline.h
+include/ClanLib-0.7/ClanLib/Display/Collision/contour.h
+include/ClanLib-0.7/ClanLib/Display/Collision/outline_accuracy.h
+include/ClanLib-0.7/ClanLib/Display/Collision/outline_circle.h
+include/ClanLib-0.7/ClanLib/Display/Collision/outline_provider.h
+include/ClanLib-0.7/ClanLib/Display/Collision/outline_provider_bitmap.h
+include/ClanLib-0.7/ClanLib/Display/Collision/outline_provider_file.h
 include/ClanLib-0.7/ClanLib/Display/Providers/dc_buffer.h
 include/ClanLib-0.7/ClanLib/Display/Providers/jpeg_provider.h
 include/ClanLib-0.7/ClanLib/Display/Providers/pcx_provider.h
@@ -85,8 +104,10 @@ include/ClanLib-0.7/ClanLib/Display/Providers/provider_type.h
 include/ClanLib-0.7/ClanLib/Display/Providers/provider_type_register.h
 include/ClanLib-0.7/ClanLib/Display/Providers/targa_provider.h
 include/ClanLib-0.7/ClanLib/Display/blend_func.h
+include/ClanLib-0.7/ClanLib/Display/canvas.h
 include/ClanLib-0.7/ClanLib/Display/color.h
 include/ClanLib-0.7/ClanLib/Display/display.h
+include/ClanLib-0.7/ClanLib/Display/display_iostream.h
 include/ClanLib-0.7/ClanLib/Display/display_mode.h
 include/ClanLib-0.7/ClanLib/Display/display_window.h
 include/ClanLib-0.7/ClanLib/Display/display_window_description.h
@@ -108,17 +129,24 @@ include/ClanLib-0.7/ClanLib/Display/mouse.h
 include/ClanLib-0.7/ClanLib/Display/palette.h
 include/ClanLib-0.7/ClanLib/Display/pixel_buffer.h
 include/ClanLib-0.7/ClanLib/Display/pixel_format.h
+include/ClanLib-0.7/ClanLib/Display/pixel_format_type.h
 include/ClanLib-0.7/ClanLib/Display/rle_surface.h
 include/ClanLib-0.7/ClanLib/Display/setupdisplay.h
 include/ClanLib-0.7/ClanLib/Display/sprite.h
 include/ClanLib-0.7/ClanLib/Display/sprite_description.h
 include/ClanLib-0.7/ClanLib/Display/sprite_packer.h
+include/ClanLib-0.7/ClanLib/Display/stencil_func.h
 include/ClanLib-0.7/ClanLib/Display/surface.h
 include/ClanLib-0.7/ClanLib/Display/text_styler.h
 %%OPENGL%%include/ClanLib-0.7/ClanLib/GL/opengl.h
 %%OPENGL%%include/ClanLib-0.7/ClanLib/GL/opengl_surface.h
 %%OPENGL%%include/ClanLib-0.7/ClanLib/GL/opengl_window.h
 %%OPENGL%%include/ClanLib-0.7/ClanLib/GL/setupgl.h
+%%OPENGL%%include/ClanLib-0.7/ClanLib/GL/light_source.h
+%%OPENGL%%include/ClanLib-0.7/ClanLib/GL/opengl_state.h
+%%OPENGL%%include/ClanLib-0.7/ClanLib/GL/opengl_state_data.h
+%%OPENGL%%include/ClanLib-0.7/ClanLib/GL/opengl_window_description.h
+%%OPENGL%%include/ClanLib-0.7/ClanLib/GL/viewpoint.h
 include/ClanLib-0.7/ClanLib/GUI/button.h
 include/ClanLib-0.7/ClanLib/GUI/checkbox.h
 include/ClanLib-0.7/ClanLib/GUI/component.h
@@ -134,12 +162,13 @@ include/ClanLib-0.7/ClanLib/GUI/image.h
 include/ClanLib-0.7/ClanLib/GUI/inputbox.h
 include/ClanLib-0.7/ClanLib/GUI/inputdialog.h
 include/ClanLib-0.7/ClanLib/GUI/label.h
+include/ClanLib-0.7/ClanLib/GUI/layout.h
 include/ClanLib-0.7/ClanLib/GUI/listbox.h
 include/ClanLib-0.7/ClanLib/GUI/listitem.h
-include/ClanLib-0.7/ClanLib/GUI/menudata.h
-include/ClanLib-0.7/ClanLib/GUI/menunode.h
 include/ClanLib-0.7/ClanLib/GUI/messagebox.h
-include/ClanLib-0.7/ClanLib/GUI/popupmenu.h
+include/ClanLib-0.7/ClanLib/GUI/menu.h
+include/ClanLib-0.7/ClanLib/GUI/menu_item.h
+include/ClanLib-0.7/ClanLib/GUI/menu_node.h
 include/ClanLib-0.7/ClanLib/GUI/progressbar.h
 include/ClanLib-0.7/ClanLib/GUI/radiobutton.h
 include/ClanLib-0.7/ClanLib/GUI/radiogroup.h
@@ -150,18 +179,6 @@ include/ClanLib-0.7/ClanLib/GUI/treeitem.h
 include/ClanLib-0.7/ClanLib/GUI/treenode.h
 include/ClanLib-0.7/ClanLib/GUI/treeview.h
 include/ClanLib-0.7/ClanLib/GUI/window.h
-include/ClanLib-0.7/ClanLib/GUIStyleBoring/button_boring.h
-include/ClanLib-0.7/ClanLib/GUIStyleBoring/checkbox_boring.h
-include/ClanLib-0.7/ClanLib/GUIStyleBoring/frame_boring.h
-include/ClanLib-0.7/ClanLib/GUIStyleBoring/image_boring.h
-include/ClanLib-0.7/ClanLib/GUIStyleBoring/inputbox_boring.h
-include/ClanLib-0.7/ClanLib/GUIStyleBoring/label_boring.h
-include/ClanLib-0.7/ClanLib/GUIStyleBoring/listbox_boring.h
-include/ClanLib-0.7/ClanLib/GUIStyleBoring/progressbar_boring.h
-include/ClanLib-0.7/ClanLib/GUIStyleBoring/radiobutton_boring.h
-include/ClanLib-0.7/ClanLib/GUIStyleBoring/scrollbar_boring.h
-include/ClanLib-0.7/ClanLib/GUIStyleBoring/stylemanager_boring.h
-include/ClanLib-0.7/ClanLib/GUIStyleBoring/window_boring.h
 include/ClanLib-0.7/ClanLib/GUIStyleSilver/button_silver.h
 include/ClanLib-0.7/ClanLib/GUIStyleSilver/checkbox_silver.h
 include/ClanLib-0.7/ClanLib/GUIStyleSilver/frame_silver.h
@@ -169,16 +186,18 @@ include/ClanLib-0.7/ClanLib/GUIStyleSilver/image_silver.h
 include/ClanLib-0.7/ClanLib/GUIStyleSilver/inputbox_silver.h
 include/ClanLib-0.7/ClanLib/GUIStyleSilver/label_silver.h
 include/ClanLib-0.7/ClanLib/GUIStyleSilver/listbox_silver.h
+include/ClanLib-0.7/ClanLib/GUIStyleSilver/menu_item_silver.h
+include/ClanLib-0.7/ClanLib/GUIStyleSilver/menu_node_silver.h
+include/ClanLib-0.7/ClanLib/GUIStyleSilver/menu_silver.h
 include/ClanLib-0.7/ClanLib/GUIStyleSilver/progressbar_silver.h
 include/ClanLib-0.7/ClanLib/GUIStyleSilver/radiobutton_silver.h
 include/ClanLib-0.7/ClanLib/GUIStyleSilver/scrollbar_silver.h
 include/ClanLib-0.7/ClanLib/GUIStyleSilver/stylemanager_silver.h
+include/ClanLib-0.7/ClanLib/GUIStyleSilver/treeitem_silver.h
+include/ClanLib-0.7/ClanLib/GUIStyleSilver/treeview_silver.h
 include/ClanLib-0.7/ClanLib/GUIStyleSilver/window_silver.h
 %%LIBMIKMOD%%include/ClanLib-0.7/ClanLib/MikMod/setupmikmod.h
 %%LIBMIKMOD%%include/ClanLib-0.7/ClanLib/MikMod/soundprovider_mikmod.h
-include/ClanLib-0.7/ClanLib/Network/Browse/browse_client.h
-include/ClanLib-0.7/ClanLib/Network/Browse/browse_master.h
-include/ClanLib-0.7/ClanLib/Network/Browse/browse_server.h
 include/ClanLib-0.7/ClanLib/Network/IRC/dcc_download.h
 include/ClanLib-0.7/ClanLib/Network/IRC/irc_connection.h
 include/ClanLib-0.7/ClanLib/Network/IRC/irc_numerics.h
@@ -201,6 +220,7 @@ include/ClanLib-0.7/ClanLib/Network/Socket/outputsource_socket.h
 include/ClanLib-0.7/ClanLib/Network/Socket/socket.h
 include/ClanLib-0.7/ClanLib/Network/setupnetwork.h
 %%SDL%%include/ClanLib-0.7/ClanLib/SDL/setupsdl.h
+include/ClanLib-0.7/ClanLib/Signals/signal.h
 include/ClanLib-0.7/ClanLib/Signals/signal_v0.h
 include/ClanLib-0.7/ClanLib/Signals/signal_v1.h
 include/ClanLib-0.7/ClanLib/Signals/signal_v2.h
@@ -245,7 +265,6 @@ include/ClanLib-0.7/ClanLib/core.h
 include/ClanLib-0.7/ClanLib/display.h
 %%OPENGL%%include/ClanLib-0.7/ClanLib/gl.h
 include/ClanLib-0.7/ClanLib/gui.h
-include/ClanLib-0.7/ClanLib/guistyleboring.h
 include/ClanLib-0.7/ClanLib/guistylesilver.h
 %%LIBMIKMOD%%include/ClanLib-0.7/ClanLib/mikmod.h
 include/ClanLib-0.7/ClanLib/network.h
@@ -268,9 +287,6 @@ lib/libclanDisplay.so
 lib/libclanGUI-0.7.so.0
 lib/libclanGUI.a
 lib/libclanGUI.so
-lib/libclanGUIStyleBoring-0.7.so.0
-lib/libclanGUIStyleBoring.a
-lib/libclanGUIStyleBoring.so
 lib/libclanGUIStyleSilver-0.7.so.0
 lib/libclanGUIStyleSilver.a
 lib/libclanGUIStyleSilver.so
@@ -297,7 +313,6 @@ libdata/pkgconfig/clanCore-0.7.pc
 libdata/pkgconfig/clanDisplay-0.7.pc
 %%OPENGL%%libdata/pkgconfig/clanGL-0.7.pc
 libdata/pkgconfig/clanGUI-0.7.pc
-libdata/pkgconfig/clanGUIStyleBoring-0.7.pc
 libdata/pkgconfig/clanGUIStyleSilver-0.7.pc
 %%LIBMIKMOD%%libdata/pkgconfig/clanMikMod-0.7.pc
 libdata/pkgconfig/clanNetwork-0.7.pc
@@ -342,13 +357,12 @@ share/doc/clanlib/Tutorial/index.html
 @dirrm include/ClanLib-0.7/ClanLib/Network/NetSession
 @dirrm include/ClanLib-0.7/ClanLib/Network/NetObjects
 @dirrm include/ClanLib-0.7/ClanLib/Network/IRC
-@dirrm include/ClanLib-0.7/ClanLib/Network/Browse
 @dirrm include/ClanLib-0.7/ClanLib/Network
 %%LIBMIKMOD%%@dirrm include/ClanLib-0.7/ClanLib/MikMod
 @dirrm include/ClanLib-0.7/ClanLib/GUIStyleSilver
-@dirrm include/ClanLib-0.7/ClanLib/GUIStyleBoring
 @dirrm include/ClanLib-0.7/ClanLib/GUI
 %%OPENGL%%@dirrm include/ClanLib-0.7/ClanLib/GL
+@dirrm include/ClanLib-0.7/ClanLib/Display/Collision
 @dirrm include/ClanLib-0.7/ClanLib/Display/Providers
 @dirrm include/ClanLib-0.7/ClanLib/Display
 @dirrm include/ClanLib-0.7/ClanLib/Core/XML
