@@ -1,0 +1,15 @@
+$FreeBSD$
+
+--- sun/jdbc/GNUmakefile.orig	Thu Jan 15 13:02:51 2004
++++ sun/jdbc/GNUmakefile	Thu Jan 15 13:03:39 2004
+@@ -44,8 +44,8 @@
+ ODBCDIR = $(_ODBCDIR$(ALT_ODBCDIR))$(ALT_ODBCDIR)
+ 
+ ifeq ($(PLATFORM),bsd)
+-LDFLAGS += -L$(ODBCDIR)/lib -lodbcinst -lodbc
+-CFLAGS  += -I$(ODBCDIR)/include
++OTHER_LDFLAGS += -L$(ODBCDIR)/lib -lodbcinst -lodbc
++OTHER_CPPFLAGS += -I$(ODBCDIR)/include
+ else
+ LDFLAGS += -L$(ODBCDIR)/ISLIodbc/2.11/lib -lodbcinst -lodbc
+ endif
