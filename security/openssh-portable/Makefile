@@ -50,6 +50,7 @@ MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man --localstatedir=/var
 EMPTYDIR=	/var/empty
 ETCSSH=		/etc/ssh
+PLIST_SUB+=	NOTBASE="@comment "
 .else
 .if exists(/var/empty)
 EMPTYDIR=	/var/empty
@@ -57,6 +58,7 @@ EMPTYDIR=	/var/empty
 EMPTYDIR=	${PREFIX}/empty
 .endif
 ETCSSH=		${PREFIX}/etc/ssh
+PLIST_SUB+=	NOTBASE=""
 .endif
 PLIST_SUB+=	EMPTYDIR=${EMPTYDIR}
 CONFIGURE_ARGS+=	--sysconfdir=${ETCSSH}
@@ -108,7 +110,9 @@ pre-install:
 .endfor
 
 post-install:
+.if defined(OPENSSH_OVERWRITE_BASE)
 	${INSTALL_SCRIPT} ${WRKSRC}/sshd.sh ${PREFIX}/etc/rc.d/sshd.sh.sample
+.endif
 	${INSTALL_DATA} -c ${WRKSRC}/ssh_config.out ${ETCSSH}/ssh_config-dist
 	${INSTALL_DATA} -c ${WRKSRC}/sshd_config.out ${ETCSSH}/sshd_config-dist
 	@${CAT} ${PKGMESSAGE}
