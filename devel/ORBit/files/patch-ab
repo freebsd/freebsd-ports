@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Aug  8 23:10:55 1998
-+++ Makefile.in	Sat Aug  8 23:11:08 1998
-@@ -86,7 +86,7 @@
+--- Makefile.in.orig	Wed Dec 16 10:41:29 1998
++++ Makefile.in	Wed Dec 23 17:18:56 1998
+@@ -87,7 +87,7 @@
  VERSION = @VERSION@
  YACC = @YACC@
  
@@ -8,4 +8,4 @@
 +SUBDIRS=libIDL src
  
  bin_SCRIPTS=orbit-config
- 
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

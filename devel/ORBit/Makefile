@@ -1,24 +1,32 @@
 # New ports collection makefile for:   orbit
-# Version required:		0.3.0
+# Version required:		0.3.90
 # Date Created:			16 Aug 1998
 # Whom:				Chia-liang Kao <clkao@CirX.ORG>
 #
-# $Id: Makefile,v 1.6 1998/11/25 00:42:11 asami Exp $
+# $Id: Makefile,v 1.7 1998/11/25 13:16:32 vanilla Exp $
 #
 
-DISTNAME=	ORBit-0.3.0
+DISTNAME=	ORBit-0.3.90
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.gnome.org/pub/ORBit/
+MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
+		ftp://ftp.gnome.org/pub/GNOME/sources/
+#MASTER_SITES=	ftp://ftp.gnome.org/pub/ORBit/
 
 MAINTAINER=	clkao@CirX.ORG
 
-LIB_DEPENDS=	glib11.0:${PORTSDIR}/devel/glib
+LIB_DEPENDS=	glib11d.1:${PORTSDIR}/devel/glib11-devel
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-CONFIGURE_ENV=	INSTALL='$${INSTALL} -c'
+CONFIGURE_ENV=	INSTALL='$${INSTALL} -c' \
+		GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config"
 CONFIGURE_ARGS= --disable-indent
+
+pre-install:
+	@if [ ! -f ${PREFIX}/info/dir ]; then \
+	${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	fi
 
 post-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
