@@ -10,7 +10,7 @@
 PORTNAME=	docbook
 PORTVERSION=	4.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.oasis-open.org/docbook/sgml/4.0/
+MASTER_SITES=	http://www.docbook.org/sgml/4.0/
 DISTNAME=	docbk40
 
 MAINTAINER=	asmodai@FreeBSD.org
