@@ -25,7 +25,7 @@ MLINKS=		gpg.1 gpgm.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 300000
-CONFIGURE_ARGS+=--disable-asm
+USE_GMAKE=	YES
 .endif
 CFLAGS:=	${CFLAGS:S/-pipe//g}
 
