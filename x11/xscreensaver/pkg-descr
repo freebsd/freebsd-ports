@@ -1,0 +1,11 @@
+xscreensaver will run several programs to continuously update the
+screen instead of going blank.  You can specify the programs and their 
+arguments using resources.
+
+It doesn't work very well with on my XF86_S3 with the MIT-SCREEN-SAVER
+extension, so it is disabled in config.h.
+
+This is version 1.25.
+
+-Satoshi
+asami@cs.berkeley.edu
