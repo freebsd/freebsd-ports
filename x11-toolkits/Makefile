@@ -176,6 +176,7 @@
     SUBDIR += ruby-panelapplet
     SUBDIR += ruby-pango
     SUBDIR += ruby-tk
+    SUBDIR += ruby-wx
     SUBDIR += scintilla
     SUBDIR += scx
     SUBDIR += sdl_gui
