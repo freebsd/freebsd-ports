@@ -5,7 +5,7 @@
  if test "${with_motif+set}" = set; then
    withval="$with_motif"
 -  X_TOOLKIT_LIBS="-lXm $X_TOOLKIT_LIBS"; echo $ac_n "checking for XpQueryExtension in -lXp""... $ac_c" 1>&6
-+  X_TOOLKIT_LIBS="${MOTIFLIB} $X_TOOLKIT_LIBS"; echo $ac_n "checking for XpQueryExtension in -lXp""... $ac_c" 1>&6
++  X_TOOLKIT_LIBS="${MOTIFLIB} -lXpm $X_TOOLKIT_LIBS"; echo $ac_n "checking for XpQueryExtension in -lXp""... $ac_c" 1>&6
  echo "configure:4046: checking for XpQueryExtension in -lXp" >&5
  ac_lib_var=`echo Xp'_'XpQueryExtension | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
