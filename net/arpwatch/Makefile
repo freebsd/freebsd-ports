@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arpwatch
-PORTVERSION=	2.1.a4
+PORTVERSION=	2.1a4
 CATEGORIES=	net
 MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
 		ftp://ftp.ee.lbl.gov/ \
