@@ -454,3 +454,34 @@ lib/libUil.a
 lib/libUtil.a
 lib/libVisual.a
 lib/libXm.a
+@dirrm lib/bindings
+@dirrm lib/X11/uid/swedish/uid/swedish/uid
+@dirrm lib/X11/uid/swedish/uid/swedish
+@dirrm lib/X11/uid/swedish/uid
+@dirrm lib/X11/uid/swedish
+@dirrm lib/X11/uid/japanese/uid/japanese/uid
+@dirrm lib/X11/uid/japanese/uid/japanese
+@dirrm lib/X11/uid/japanese/uid
+@dirrm lib/X11/uid/japanese
+@dirrm lib/X11/uid/hebrew/uid/hebrew/uid
+@dirrm lib/X11/uid/hebrew/uid/hebrew
+@dirrm lib/X11/uid/hebrew/uid
+@dirrm lib/X11/uid/hebrew
+@dirrm lib/X11/uid/french/uid/french/uid
+@dirrm lib/X11/uid/french/uid/french
+@dirrm lib/X11/uid/french/uid
+@dirrm lib/X11/uid/french
+@dirrm lib/X11/uid/english/uid/english/uid
+@dirrm lib/X11/uid/english/uid/english
+@dirrm lib/X11/uid/english/uid
+@dirrm lib/X11/uid/english
+@dirrm lib/X11/uid/OpenHLang
+@dirrm lib/X11/uid/C/uid/C/uid
+@dirrm lib/X11/uid/C/uid/C
+@dirrm lib/X11/uid/C/uid
+@dirrm lib/X11/uid/C
+@dirrm lib/X11/uid
+@dirrm include/uil
+@dirrm include/bitmaps
+@dirrm include/Xm
+@dirrm include/Mrm
