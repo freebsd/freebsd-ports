@@ -24,6 +24,7 @@ share/gnome-system-tools/pixmaps/16_ethernet.xpm
 share/gnome-system-tools/pixmaps/16_loopback.xpm
 share/gnome-system-tools/pixmaps/16_plip.xpm
 share/gnome-system-tools/pixmaps/16_ppp.xpm
+share/gnome-system-tools/pixmaps/black_panther.png
 share/gnome-system-tools/pixmaps/boot.png
 share/gnome-system-tools/pixmaps/computer.png
 share/gnome-system-tools/pixmaps/conectiva.png
@@ -68,6 +69,34 @@ share/gnome/applications/network.desktop
 share/gnome/applications/services.desktop
 share/gnome/applications/time.desktop
 share/gnome/applications/users.desktop
+share/gnome/help/boot-admin/C/boot-admin.xml
+share/gnome/help/boot-admin/C/figures/boot-tool.png
+share/gnome/help/boot-admin/C/legal.xml
+share/gnome/help/network-admin/C/figures/network-tool.png
+share/gnome/help/network-admin/C/legal.xml
+share/gnome/help/network-admin/C/network-admin.xml
+share/gnome/help/services-admin/C/figures/service-properties.png
+share/gnome/help/services-admin/C/figures/services-tool.png
+share/gnome/help/services-admin/C/legal.xml
+share/gnome/help/services-admin/C/services-admin.xml
+share/gnome/help/time-admin/C/figures/time-map.png
+share/gnome/help/time-admin/C/figures/time-servers.png
+share/gnome/help/time-admin/C/figures/time-tool.png
+share/gnome/help/time-admin/C/legal.xml
+share/gnome/help/time-admin/C/time-admin.xml
+share/gnome/help/users-admin/C/figures/users-tool.png
+share/gnome/help/users-admin/C/legal.xml
+share/gnome/help/users-admin/C/users-admin.xml
+share/gnome/omf/gnome-system-tools/boot-admin-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-system-tools/boot-admin-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-system-tools/network-admin-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-system-tools/network-admin-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-system-tools/services-admin-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-system-tools/services-admin-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-system-tools/time-admin-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-system-tools/time-admin-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-system-tools/users-admin-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-system-tools/users-admin-C.omf 2>/dev/null || /usr/bin/true
 share/locale/am/LC_MESSAGES/gnome-system-tools.mo
 share/locale/az/LC_MESSAGES/gnome-system-tools.mo
 share/locale/az/LC_MESSAGES/setup-tools-backends.mo
@@ -179,6 +208,27 @@ share/setup-tool-backends/scripts/xml.pl
 @dirrm share/setup-tool-backends/scripts
 @dirrm share/setup-tool-backends/files
 @dirrm share/setup-tool-backends
+@dirrm share/gnome/omf/gnome-system-tools
+@dirrm share/gnome/help/users-admin/C/figures
+@dirrm share/gnome/help/users-admin/C
+@dirrm share/gnome/help/users-admin
+@dirrm share/gnome/help/time-admin/C/figures
+@dirrm share/gnome/help/time-admin/C
+@dirrm share/gnome/help/time-admin
+@dirrm share/gnome/help/services-admin/C/figures
+@dirrm share/gnome/help/services-admin/C
+@dirrm share/gnome/help/services-admin
+@dirrm share/gnome/help/network-admin/C/figures
+@dirrm share/gnome/help/network-admin/C
+@dirrm share/gnome/help/network-admin
+@dirrm share/gnome/help/boot-admin/C/figures
+@dirrm share/gnome/help/boot-admin/C
+@dirrm share/gnome/help/boot-admin
 @dirrm share/gnome-system-tools/pixmaps
 @dirrm share/gnome-system-tools/interfaces
 @dirrm share/gnome-system-tools
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-system-tools/boot-admin-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-system-tools/network-admin-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-system-tools/services-admin-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-system-tools/time-admin-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-system-tools/users-admin-C.omf 2>/dev/null || /usr/bin/true
