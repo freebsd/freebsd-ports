@@ -13,6 +13,7 @@ bin/winebuild
 bin/winecfg
 bin/wineclipsrv
 bin/wineconsole
+bin/winecpp
 bin/winedbg
 bin/winedump
 bin/winefile

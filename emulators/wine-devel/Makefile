@@ -34,10 +34,6 @@ USE_GCC=	3.3
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Broken pkg-plist"
-.endif
-
 .if defined(DEBUG)
 STRIP=
 .else
