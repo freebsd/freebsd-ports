@@ -131,6 +131,7 @@
     SUBDIR += p5-Class-DBI-SAK
     SUBDIR += p5-Class-DBI-SQLite
     SUBDIR += p5-Class-DBI-ToSax
+    SUBDIR += p5-Class-DBI-Untaint
     SUBDIR += p5-Class-DBI-mysql
     SUBDIR += p5-DBD-CSV
     SUBDIR += p5-DBD-Excel

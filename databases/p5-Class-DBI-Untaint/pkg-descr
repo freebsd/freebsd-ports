@@ -1,0 +1,8 @@
+Using this module will plug-in a new constraint type to Class::DBI
+that uses CGI::Untaint.
+
+Any column can then be said to require untainting of a given type
+- i.e. that any value which you attempted to set that column to
+(include at create() time) must pass an untaint as_type() check.
+
+WWW: http://search.cpan.org/dist/Class-DBI-Untaint/
