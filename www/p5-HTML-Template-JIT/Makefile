@@ -7,7 +7,7 @@
 
 PORTNAME=	HTML-Template-JIT
 PORTVERSION=	0.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -22,11 +22,16 @@ BUILD_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+INSTALL_TARGET=	pure_install
 
 MAN3=		HTML::Template::JIT.3 HTML::Template::JIT::Compiler.3 \
 		HTML::Template::JIT::Base.3
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+EXTRA_PATCHES=	${PATCHDIR}/5.005-JIT-Compiler.pm
+.endif
 
 post-patch:
 	@${PERL} -i -pe 's/indent -kr/indent/' \
@@ -36,8 +41,7 @@ post-patch:
 			-e 's/\bour ([^ ;]+)/use vars qw{$$1};$$1/g;' \
 			${WRKSRC}/Makefile.PL ${WRKSRC}/JIT.pm \
 			${WRKSRC}/JIT/Base.pm ${WRKSRC}/JIT/Compiler.pm
-
-EXTRA_PATCHES=	${PATCHDIR}/5.005-JIT-Compiler.pm
 .endif
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 .include <bsd.port.post.mk>
