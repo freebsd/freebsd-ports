@@ -1,0 +1,45 @@
+--- Makefile.orig	Mon Sep 30 02:12:03 2002
++++ Makefile	Mon Sep 30 02:14:19 2002
+@@ -16,31 +16,31 @@ TOP=	.
+ # There are 3 possible performance options, experiment :-)
+ #OPTS= -DBF_PTR  # usr for sparc and MIPS/SGI
+ #OPTS= -DBF_PTR2 # use for pentium
+-OPTS=		 # use for pentium pro, Alpha and HP
++#OPTS=		 # use for pentium pro, Alpha and HP
+ 
+ MAKE=make -f Makefile
+ #CC=cc
+ #CFLAG= -O
+ 
+-CC=gcc
++#CC=gcc
+ #CFLAG= -O4 -funroll-loops -fomit-frame-pointer
+-CFLAG= -O3 -fomit-frame-pointer
++#CFLAG= -O3 -fomit-frame-pointer
+ 
+-CFLAGS=$(OPTS) $(CFLAG)
+-CPP=$(CC) -E
+-AS=as
++#CFLAGS=$(OPTS) $(CFLAG)
++CPP?=$(CC) -E
++AS?=as
+ 
+ # Assember version of bf_encrypt().
+-BF_ENC=bf_enc.o		# normal C version
++BF_ENC?=bf_enc.o		# normal C version
+ #BF_ENC=asm/bx86-elf.o	# elf format x86
+ #BF_ENC=asm/bx86-out.o	# a.out format x86
+ #BF_ENC=asm/bx86-sol.o	# solaris format x86 
+ #BF_ENC=asm/bx86bsdi.o	# bsdi format x86 
+ 
+-LIBDIR=/usr/local/lib
+-BINDIR=/usr/local/bin
+-INCDIR=/usr/local/include
+-MANDIR=/usr/local/man
++LIBDIR=${PREFIX}/lib
++BINDIR=${PREFIX}/bin
++INCDIR=${PREFIX}/include
++MANDIR=${PREFIX}/man
+ MAN1=1
+ MAN3=3
+ SHELL=/bin/sh

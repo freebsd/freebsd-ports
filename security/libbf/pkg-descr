@@ -1,0 +1,14 @@
+The Blowfish Library
+
+Blowfish is a block cipher that operates on 64bit (8 byte) quantities.
+It uses variable size key, but 128bit (16 byte) key would normally be
+considered good.  It can be used in all the modes that DES can be
+used.  This library implements the ecb, cbc, cfb64, ofb64 modes.
+
+Blowfish is quite a bit faster that DES, and much faster than IDEA
+or RC2. It is one of the faster block ciphers.
+
+WWW: http://www.counterpane.com/blowfish.html
+
+ -- Jim Geovedi
+    jim@corebsd.or.id
