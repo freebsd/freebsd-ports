@@ -16,6 +16,7 @@
     SUBDIR += dgen-sdl
     SUBDIR += dlx
     SUBDIR += dosbox
+    SUBDIR += doscmd
     SUBDIR += extract-xiso
     SUBDIR += fceu
     SUBDIR += fmsx
