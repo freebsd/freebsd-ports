@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 USE_GCC=	3.3
 USE_REINPLACE=	yes
 USE_GNOME=	gnomehack libgnomecanvas lthack
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
 
