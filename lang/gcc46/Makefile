@@ -19,7 +19,6 @@ MAINTAINER=	obrien@FreeBSD.org
 EGCS_REV=	egcs-2.92.07
 LIBSTDCPP_REV=	2.9.0
 PLIST_SUB=	EGCS_REV=${EGCS_REV} GNU_HOST=${GNUHOST}
-GNUHOST=	i386-unknown-freebsd
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld ${GNUHOST} \
@@ -68,3 +67,9 @@ post-install:
 .endfor
 
 .include <bsd.port.mk>
+
+.if (${PORTOBJFORMAT} == "elf")
+GNUHOST=	i386-unknown-freebsdelf
+.else
+GNUHOST=	i386-unknown-freebsd
+.endif
