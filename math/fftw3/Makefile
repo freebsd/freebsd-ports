@@ -7,7 +7,7 @@
 
 PORTNAME=	fftw3
 PORTVERSION=	3.0.1
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ 		\
 		http://www.fftw.org/ 			\
@@ -44,7 +44,7 @@ INSTALL_TARGET=	install-pkgconfigDATA install-libLTLIBRARIES install-exec
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable optimized CFLAGS" off \
 		SMP_THREADS "Enable FFTW SMP threads library" off \
-		OPTIMIZED_ATHLON "Enable AMD K7(Athlon) optimizations" off \
+		OPTIMIZED_ATHLON "Enable AMD Athlon/3dNow! optimizations" off \
 		SSE "Enable SSE optimized routines" off
 
 .include <bsd.port.pre.mk>
@@ -109,7 +109,7 @@ post-patch:
 		${WRKSRC}/Makefile.in \
 		${WRKSRC}/api/import-system-wisdom.c \
 		${WRKSRC}/doc/fftw3* \
-		${WRKSRC}/tools/fftw*wisdom.1
+		${WRKSRC}/tools/*
 	@${FIND} ${WRKSRC} -name \*.bak -type f -exec ${RM} -f {} \;
 .if defined(FFTW3_FLAVOR) && ${FFTW3_FLAVOR}!="default"
 	@${REINPLACE_CMD} -e \

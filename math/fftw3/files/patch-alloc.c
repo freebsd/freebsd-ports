@@ -1,21 +1,12 @@
---- kernel/alloc.c.orig	Sun May 30 16:26:22 2004
-+++ kernel/alloc.c	Sun May 30 16:27:34 2004
-@@ -30,6 +30,8 @@
- #  endif
- #endif
+--- kernel/alloc.c.orig	Sat Mar 15 15:29:43 2003
++++ kernel/alloc.c	Thu Dec  9 03:31:56 2004
+@@ -79,6 +79,9 @@
+ #    undef real_free
+ #    define real_free our_free16
  
-+#include <stdlib.h>
 +
- #if defined(HAVE_DECL_POSIX_MEMALIGN) && !HAVE_DECL_POSIX_MEMALIGN
- extern int posix_memalign(void **, size_t, size_t);
- #endif
-@@ -122,9 +124,6 @@
- #    define real_free MPFree
++#  elif defined(__FreeBSD__)
++     p = malloc(n);
+ #  elif defined(HAVE_MEMALIGN)
+      p = memalign(MIN_ALIGNMENT, n);
  
- #  else
--     /* Add your machine here and send a patch to fftw@fftw.org 
--        or (e.g. for Windows) configure --with-our-malloc16 */
--#    error "Don't know how to malloc() aligned memory."
- #  endif
- 
- #else /* !defined(MIN_ALIGMENT) */
