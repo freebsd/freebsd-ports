@@ -19,6 +19,8 @@ COMMENT=	XML utility to create various documents(devel version)
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
+BROKEN=		Incorrect pkg-plist
+
 WRKSRC=		${WRKDIR}/sdoc
 NO_BUILD=	yes
 USE_ZIP=	yes
