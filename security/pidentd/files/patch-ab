@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Jan 22 06:58:54 1997
-+++ Makefile	Sun Mar  2 11:03:42 1997
+--- Makefile.orig	Tue Jul 29 05:01:22 1997
++++ Makefile	Mon May  4 11:59:30 1998
 @@ -16,9 +16,9 @@
  MAKE=make
  
@@ -12,6 +12,15 @@
  
  # set this to '/share' if your man pages are in /usr/share
  #SHARE=/share
+@@ -33,7 +33,7 @@
+ MANSECT=8
+ MANDIR=$(MANROOT)/man$(MANSECT)
+ 
+-INSTALL=aux/install-sh -c
++INSTALL=/usr/bin/install -c
+ 
+ 
+ # NEXTSTEP 3.x Multi-Architecture-Binary (FAT) compiles
 @@ -57,14 +57,14 @@
  # GDEFS=-DINCLUDE_EXTENSIONS -DINCLUDE_PROXY -DINCLUDE_CRYPT \
  #	-DSTRONG_LOG -DALLOW_FORMAT \
@@ -31,7 +40,7 @@
  #LDFLAGS=-L$(DESTROOT)/lib
  
  all:
-@@ -556,18 +556,18 @@
+@@ -573,18 +573,18 @@
  	mv $@-t $@
  	chmod 755 $@
  
@@ -42,13 +51,15 @@
  		rm -f $(MANDIR)/$(PREFIX)identd.$(MANSECT) ; \
  		echo ".so `basename $(MANDIR)`/identd.$(MANSECT)" > $(MANDIR)/$(PREFIX)identd.$(MANSECT) ; \
  	fi
- 	$(INSTALL) -m 755 $(PREFIX)identd $(DESTDIR)
+-	$(INSTALL) -m 755 $(PREFIX)identd $(DESTDIR)
 -	$(INSTALL) -m 755 identconn $(DESTROOT)/bin
++	$(INSTALL) -s -m 755 $(PREFIX)identd $(DESTDIR)
 +#	$(INSTALL) -m 755 identconn $(DESTROOT)/bin
  	$(INSTALL) -m 644 idecrypt.man  $(MANDIR)/idecrypt.$(MANSECT)
- 	$(INSTALL) -m 755 idecrypt $(DESTDIR)/idecrypt
+-	$(INSTALL) -m 755 idecrypt $(DESTDIR)/idecrypt
 -	@echo "The following command will fail it you are not Root."
 -	-$(INSTALL) -o root -g kmem -m 2555 itest $(DESTROOT)/bin
++	$(INSTALL) -s -m 755 idecrypt $(DESTDIR)/idecrypt
 +#	@echo "The following command will fail it you are not Root."
 +#	-$(INSTALL) -o root -g kmem -m 2555 itest $(DESTROOT)/bin
  
