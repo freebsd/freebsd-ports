@@ -1,0 +1,9 @@
+bin/gview
+share/doc/gview/AUTHORS
+share/doc/gview/BUGS
+share/doc/gview/COPYING
+share/doc/gview/ChangeLog
+share/doc/gview/NEWS
+share/doc/gview/README
+share/doc/gview/TODO
+@dirrm share/doc/gview
