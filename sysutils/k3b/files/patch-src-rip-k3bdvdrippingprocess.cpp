@@ -1,5 +1,5 @@
 --- src/rip/k3bdvdrippingprocess.cpp.orig	Wed Jun  2 11:31:41 2004
-+++ src/rip/k3bdvdrippingprocess.cpp	Sun Jul 11 12:24:22 2004
++++ src/rip/k3bdvdrippingprocess.cpp	Sun Aug 22 15:28:36 2004
 @@ -285,10 +285,13 @@
  void K3bDvdRippingProcess::slotPreProcessingDvd() {
      QString video;
