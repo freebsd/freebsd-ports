@@ -45,6 +45,8 @@
     SUBDIR += fftpack
     SUBDIR += fftw
     SUBDIR += fftw3
+    SUBDIR += fftw3-float
+    SUBDIR += fftw3-long
     SUBDIR += freefem
     SUBDIR += freefem++
     SUBDIR += fudgit
