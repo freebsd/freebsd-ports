@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER?=	shige@FreeBSD.org
 
 # distfile version
-PSGML_VER=		1.2.1
+PSGML_VER=		1.2.2
 PSGML_STARTUPEL=	psgml-startup.el
 
 SCRIPTS_ENV=		TARGETS="${PSGML_STARTUPEL}"
