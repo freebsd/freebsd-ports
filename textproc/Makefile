@@ -540,6 +540,7 @@
     SUBDIR += unroff
     SUBDIR += unrtf
     SUBDIR += urlview
+    SUBDIR += wa-aspell
     SUBDIR += wdiff
     SUBDIR += webcpp
     SUBDIR += website
