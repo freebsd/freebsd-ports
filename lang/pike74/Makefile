@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	pike74
-PORTVERSION=	7.4.25
+PORTVERSION=	7.4.28
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
 		http://ftp.oav.net/pkg_freebsd/distfiles/ \
 		ftp://ftp.oav.net/pike/7.4/export/ \
 		http://ftp.oav.net/pike/7.4/export/ \
-		http://grendel.firewall.com/caudium-pkg/
+		http://grendel.firewall.com/caudium-pkg/ \
+		ftp://ftp.caudium.net/pike/official_releases/${PORTVERSION}/
 DISTNAME=	Pike-v${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
