@@ -7,11 +7,8 @@
 
 PORTNAME=	tsc
 PORTVERSION=	0.2.5.3.b
-MASTER_SITES=	http://www.fatalgaming.com/ \
-		http://207.127.210.8/starsoft/forum/ \
-		http://tsc.austin2600.org/ \
-		http://www.mystwalker.de/cs/ \
-		http://www.wbg-clan.de/download/server/
+MASTER_SITES=	http://tsc.austin2600.org/ \
+		http://www.mystwalker.de/cs/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/^0.//:S/.b$/beta/}
 
 MAINTAINER=	lioux@FreeBSD.org

@@ -10,11 +10,10 @@ PORTVERSION=	0.9.3
 CATEGORIES=	devel ipv6 net security
 MASTER_SITES=	http://www.silcnet.org/download/toolkit/sources/ \
 		ftp://ftp.silcnet.org/silc/toolkit/sources/ \
-		http://www.planetmirror.com/pub/silcnet/toolkit/sources/ \
+		http://public.www.planetmirror.com/pub/silcnet/toolkit/sources/ \
 		ftp://ftp.au.silcnet.org/pub/silcnet/toolkit/sources/ \
 		http://www.mirrors.wiretapped.net/security/network-security/silc/toolkit/sources/ \
 		ftp://ftp.mirrors.wiretapped.net/pub/security/network-security/silc/toolkit/sources/ \
-		http://munitions.vipul.net/software/mirrors/silc/ \
 		ftp://ftp.no.silcnet.org/pub/silc/toolkit/sources/
 PKGNAMESUFFIX=	-toolkit
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
