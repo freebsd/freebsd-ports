@@ -1,7 +1,7 @@
 Mah jongg is an ancient chinese game usually played by four players
 with tiles similar to dominos.  This is an X windows version for
 the solitaire game originally seen on the PC and later ported to
-SunView.  It also has a new tournament option.
+SunView, and later on completely rewritten by Eddie Kohler.
 
 THEORY OF PLAY
 The object of the game is to remove all the tiles from the board.
@@ -11,3 +11,5 @@ to this rule is that any open "flower" tile (bamboo, orchid, plum,
 or chrysanthemum) matches any other open "flower" tile and any open
 "season" tile (spring, summer, autumn, or winter) matches any other
 open "season" tile.
+
+WWW: http://www.lcdf.org/xmahjongg/
