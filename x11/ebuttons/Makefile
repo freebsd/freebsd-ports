@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.moodfarm.demon.co.uk/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jhb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple epplet that contains several buttons used to launch programs
 
 LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/epplets
