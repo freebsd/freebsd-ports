@@ -7,6 +7,7 @@
 
 PORTNAME=	neotcl
 PORTVERSION=	8.2.2
+PORTREVISION=	1
 CATEGORIES=	devel tcl83
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=nws
@@ -14,7 +15,7 @@ DISTNAME=	neowebscript-3.3
 
 MAINTAINER=	mi@aldan.algebra.com
 
-LIB_DEPENDS=	tclx82:${PORTSDIR}/lang/tclX82 \
+LIB_DEPENDS=	tclx83:${PORTSDIR}/lang/tclX82 \
 		db2:${PORTSDIR}/databases/db
 
 # Not yet -- openldap used db3, neo used db2 :(
