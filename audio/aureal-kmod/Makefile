@@ -1,6 +1,6 @@
 # Ports collection makefile for:	aureal-kmod
 # Date created:				15 January 2001
-# Whom:					Maxim Sobolev <soobomax@FreeBSD.org>
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #
