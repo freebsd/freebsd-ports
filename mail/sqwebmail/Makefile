@@ -43,6 +43,11 @@ IMAGEURL?=	${WEBDATASUBDIR}
 # set WITH_TIMEOUTSOFT to something other than 1200 seconds (20m)
 # set VCHKPW to the home of the vpopmail user, if necessary
 #
+# The following settings are in bytes:
+# set WITH_MAXMSGSIZE to max size of messages (including attachments)
+# set WITH_MAXARGSIZE to max size of a text message (excluding attachments)
+# set WITH_MAXFORMARGSIZE to max size of attachments
+
 
 CACHEDIR?=	/var/sqwebmail/cache
 CACHEOWNER?=	bin
@@ -126,6 +131,18 @@ CONFIGURE_ARGS+=	--enable-hardtimeout=${WITH_TIMEOUTHARD}
 
 .if defined(WITH_TIMEOUTSOFT)
 CONFIGURE_ARGS+=	--enable-softtimeout=${WITH_TIMEOUTSOFT}
+.endif
+
+.if defined(WITH_MAXMSGSIZE)
+CONFIGURE_ARGS+=	--with-maxmsgsize=${WITH_MAXMSGSIZE}
+.endif
+
+.if defined(WITH_MAXARGSIZE)
+CONFIGURE_ARGS+=	--with-maxargsize=${WITH_MAXARGSIZE}
+.endif
+
+.if defined(WITH_MAXFORMARGSIZE)
+CONFIGURE_ARGS+=	--with-maxformargsize=${WITH_MAXFORMARGSIZE}
 .endif
 
 MANPREFIX=	${PREFIX}/share/sqwebmail
