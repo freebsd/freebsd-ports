@@ -11,7 +11,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		${PORTNAME}-${PORTVERSION:S/.a.1/alpha1b/}-1.src
 
-MAINTAINER=		arved@FreeBSD.org
+MAINTAINER=		brueffer@phoenix-systems.de
 COMMENT=		A graphical FTP client for KDE
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.a.1/alpha1b/}
