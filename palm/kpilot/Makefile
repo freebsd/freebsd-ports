@@ -3,7 +3,7 @@
 # Date created:        09 April 1998
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.14 1998/09/30 02:07:27 jseger Exp $
+# $Id: Makefile,v 1.15 1998/10/02 18:21:28 brian Exp $
 #
 
 DISTNAME=	kpilot-3.0.2
@@ -11,6 +11,8 @@ CATEGORIES=	x11 kde
 MASTER_SITES=	http://www.slac.com/pilone/kpilot_home/download/
 
 MAINTAINER=	dima@freebsd.org
+
+BROKEN_ELF=	library names
 
 LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
