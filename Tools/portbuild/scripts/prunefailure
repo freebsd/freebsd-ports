@@ -51,12 +51,15 @@ while read dir name ver olddate date count; do
 
     if [ -z "$dir" -o -z "$name" -o -z "$ver" -o -z "$olddate" -o -z "$date" -o -z "$count" ]; then
 	echo Malformed entry "$dir|$name|$ver|$olddate|$date|$count"
+	# Clean up the 'latest error log' symlink
+	rm -f ${pb}/${arch}/${branch}/latest/${dir}
 	continue
     fi
 
     entry=$(grep "|/usr/ports/$dir|" $index)
     if [ -z "$entry" ]; then
 	echo $dir not in index
+	rm -f ${pb}/${arch}/${branch}/latest/${dir}
 	continue
     fi
 
@@ -64,11 +67,13 @@ while read dir name ver olddate date count; do
 
     if [ -e "$home/packages/All/$newver${PKGSUFFIX}" ]; then
 	echo "$newver package exists, should not still be here!"
+	rm -f ${pb}/${arch}/${branch}/latest/${dir}
 	continue
     fi
 
     if grep -qxF $newver $home/duds.full; then
 	echo "$newver listed in duds, should not be here"
+	rm -f ${pb}/${arch}/${branch}/latest/${dir}
 	continue
     fi
 
