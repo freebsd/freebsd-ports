@@ -63,11 +63,11 @@ pre-patch:
 .endfor
 
 post-install:
-	${INSTALL} -d -o root -g wheel -m 0775 ${PREFIX}/share/examples/msyslog
+	${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/share/examples/msyslog
 	${INSTALL_DATA} ${WRKSRC}/src/examples/* \
 		${PREFIX}/share/examples/msyslog
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -o root -g wheel -m 0775 ${DOCSDIR}
+	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
