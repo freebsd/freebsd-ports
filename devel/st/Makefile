@@ -14,6 +14,7 @@ MASTER_SITES=	http://telia.dl.sourceforge.net/sourceforge/state-threads/ \
 MAINTAINER=	tobez@FreeBSD.org
 
 INSTALLS_SHLIB=	yes
+ONLY_FOR_ARCHS=	i386 alpha
 
 .include <bsd.port.pre.mk>
 
