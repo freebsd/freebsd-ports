@@ -1,0 +1,7 @@
+The port contains japanese zipcode tables, both 3/5 digits form
+used until Jan 1998, and new 7 digits form which will be used
+from Feb 1998.
+
+The database was provided to the public by Japan Minstry of Posts and
+Telecommunications.
+More information can be found at http://www.postal.mpt.go.jp/ .
