@@ -3,15 +3,15 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.59 1998/07/23 13:15:57 ache Exp $
+# $Id: Makefile,v 1.60 1998/09/20 23:55:38 ache Exp $
 #
 
-DISTNAME=       apache_1.3.1
-PKGNAME=        apache-1.3.1
+DISTNAME=       apache_1.3.2
+PKGNAME=        apache-1.3.2
 CATEGORIES=	www
 MASTER_SITES=   ftp://www.apache.org/apache/dist/
 
-#PATCH_SITES=    ftp://www.apache.org/apache/dist/patches/apply_to_1.3.1/
+#PATCH_SITES=    ftp://www.apache.org/apache/dist/patches/apply_to_1.3.2/
 
 MAINTAINER=     ache@freebsd.org
 
@@ -28,6 +28,7 @@ CONFIGURE_ARGS= \
 		 --datadir=${PREFIX}/www \
 		 --proxycachedir=${PREFIX}/www/proxy \
 		 --libexecdir=${PREFIX}/libexec/apache \
+		 --with-perl=${PERL5} \
 		 --without-confadjust \
 		 --enable-shared=remain \
 		 --enable-module=most \
@@ -39,7 +40,6 @@ OPTIM=-DHARD_SERVER_LIMIT=512 \
 -DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
 
 .if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
-CONFIGURE_ARGS+= --disable-rule=STATUS
 OPTIM+= -DBUFFERED_LOGS
 CFLAGS+= -O6 -fomit-frame-pointer
 .endif
