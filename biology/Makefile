@@ -37,6 +37,7 @@
     SUBDIR += py-biopython
     SUBDIR += rasmol
     SUBDIR += recombine
+    SUBDIR += ruby-bio
     SUBDIR += seaview
     SUBDIR += seqio
     SUBDIR += sim4

@@ -1,0 +1,50 @@
+bin/dbget
+%%RUBY_SITELIBDIR%%/bio.rb
+%%RUBY_SITELIBDIR%%/bio/data/aa.rb
+%%RUBY_SITELIBDIR%%/bio/data/codontable.rb
+%%RUBY_SITELIBDIR%%/bio/data/keggorg.rb
+%%RUBY_SITELIBDIR%%/bio/data/na.rb
+%%RUBY_SITELIBDIR%%/bio/db.rb
+%%RUBY_SITELIBDIR%%/bio/db/aaindex.rb
+%%RUBY_SITELIBDIR%%/bio/db/ddbj.rb
+%%RUBY_SITELIBDIR%%/bio/db/genbank.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/brite.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/cell.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/compound.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/enzyme.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/genes.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/genome.rb
+%%RUBY_SITELIBDIR%%/bio/db/litdb.rb
+%%RUBY_SITELIBDIR%%/bio/db/medline.rb
+%%RUBY_SITELIBDIR%%/bio/db/prosite.rb
+%%RUBY_SITELIBDIR%%/bio/db/refseq.rb
+%%RUBY_SITELIBDIR%%/bio/db/transfac.rb
+%%RUBY_SITELIBDIR%%/bio/io/dbget.rb
+%%RUBY_SITELIBDIR%%/bio/io/pubmed.rb
+%%RUBY_SITELIBDIR%%/bio/location.rb
+%%RUBY_SITELIBDIR%%/bio/matrix.rb
+%%RUBY_SITELIBDIR%%/bio/pathway.rb
+%%RUBY_SITELIBDIR%%/bio/reference.rb
+%%RUBY_SITELIBDIR%%/bio/sequence.rb
+%%RUBY_SITELIBDIR%%/bio/util/fold.rb
+@dirrm %%RUBY_SITELIBDIR%%/bio/data
+@dirrm %%RUBY_SITELIBDIR%%/bio/db/kegg
+@dirrm %%RUBY_SITELIBDIR%%/bio/db
+@dirrm %%RUBY_SITELIBDIR%%/bio/io
+@dirrm %%RUBY_SITELIBDIR%%/bio/util
+@dirrm %%RUBY_SITELIBDIR%%/bio
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/fasta2tab.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/fsplit.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/gb2fasta.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/gb2tab.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/genes2nuc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/genes2pep.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/genes2tab.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/genome2tab.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/gt2fasta.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/ssearch2tab.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/tfastx2tab.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/vs-genes.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bio
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bio/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/bio
