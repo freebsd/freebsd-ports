@@ -1,0 +1,69 @@
+--- inews/clientlib.c.orig	Wed Jan 26 10:17:34 2000
++++ inews/clientlib.c	Wed Jan 26 10:37:27 2000
+@@ -76,7 +76,7 @@
+ {
+ 	register FILE	*fp;
+ 	register char	*cp;
+-	static char	buf[256];
++	static char	buf[MAXHOSTNAMELEN];
+ 	char		*index();
+ 	char		*getenv();
+ 	char		*strcpy();
+@@ -107,6 +107,48 @@
+ 	return (NULL);			 /* No entry */
+ }
+ 
++/*
++ * getdomainbyfile	Get the domain name for posting from a named file.
++ *			Handle blank lines and comments.
++ *
++ *	Parameters:	"file" is the name of the file to read.
++ *
++ *	Returns:	Pointer to static data area containing the
++ *			first non-blank/comment line in the file.
++ *			NULL on error (or lack of entry in file).
++ *
++ *	Side effects:	None.
++ */
++
++char *
++getdomainbyfile(file)
++char	*file;
++{
++	register FILE	*fp;
++	register char	*cp;
++	static char	buf[MAXHOSTNAMELEN];
++	char		*index();
++
++	if (file == NULL)
++		return (NULL);
++
++	fp = fopen(file, "r");
++	if (fp == NULL)
++		return (NULL);
++
++	while (fgets(buf, sizeof (buf), fp) != NULL) {
++		if (*buf == '\n' || *buf == '#')
++			continue;
++		cp = index(buf, '\n');
++		if (cp)
++			*cp = '\0';
++		(void) fclose(fp);
++		return (buf);
++	}
++
++	(void) fclose(fp);
++	return (NULL);
++}
+ 
+ /*
+  * server_init  Get a connection to the remote news server.
+@@ -211,7 +253,7 @@
+                static struct hostent def;
+                static struct in_addr defaddr;
+                static char *alist[1];
+-               static char namebuf[ 256 ];
++               static char namebuf[MAXHOSTNAMELEN];
+                defaddr.s_addr = inet_addr( machine );
+                if( defaddr.s_addr != -1 ) {
+                        strcpy( namebuf, machine );

@@ -1,0 +1,39 @@
+--- inews/inews.c.orig	Tue Jan 25 13:42:08 2000
++++ inews/inews.c	Wed Jan 26 11:16:19 2000
+@@ -32,7 +32,7 @@
+ 
+ extern	FILE	*ser_wr_fp;
+ 
+-char	host_name[256];
++char	host_name[MAXHOSTNAMELEN];
+ 
+ main(argc, argv)
+ int	argc;
+@@ -248,6 +248,8 @@
+ 	char	*cp;
+ 	struct	passwd *passwd;
+ 	char	*index(), *getenv();
++	char	*getdomainbyfile();
++	char	*domain;
+ 
+ 	passwd = getpwuid(getuid());
+ 
+@@ -279,9 +281,15 @@
+ 			DOMAIN);
+ #endif /* HIDDENNET */
+ #else
+-	fprintf(ser_wr_fp, "From: %s@%s (",
+-		passwd->pw_name,
+-		host_name);
++	domain = getdomainbyfile(DOMAIN_FILE);
++	if (domain == NULL)
++		fprintf(ser_wr_fp, "From: %s@%s (",
++			passwd->pw_name,
++			host_name);
++	else
++		fprintf(ser_wr_fp, "From: %s@%s (",
++			passwd->pw_name,
++			domain);
+ #endif
+ 
+ 	for (cp = full_name; *cp != '\0'; ++cp)

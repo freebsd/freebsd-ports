@@ -1,0 +1,27 @@
+--- inews/conf.h.orig	Sat Apr 29 01:34:46 1995
++++ inews/conf.h	Fri Jan 28 15:04:03 2000
+@@ -30,6 +30,7 @@
+ #define	NNINEWSCONF_H
+ 
+ #include	"config.h"
++#include	<sys/param.h>
+ 
+ #ifndef NNTP
+ /* WHY DO YOU WANT TO MAKE MINI-INEWS WHEN YOU DONT USE NNTP */
+@@ -59,7 +60,7 @@
+  *  DOMAIN as defined above).  If you don't want this, comment it out.
+  */
+ 
+-#define	HIDDENNET
++/* #define	HIDDENNET */
+ 
+ /*
+  *  There are a number of ways that inews will try to figure out the
+@@ -92,6 +93,7 @@
+  */
+ 
+ #define	SERVER_FILE	NNTP_SERVER
++#define DOMAIN_FILE	NNTP_DOMAIN
+ 
+ /*
+  *	Reverse engineering (nn got this the other way around)....

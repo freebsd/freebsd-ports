@@ -1,0 +1,10 @@
+--- inews/clientlib.h.orig	Wed Jan 26 10:50:26 2000
++++ inews/clientlib.h	Wed Jan 26 10:50:44 2000
+@@ -5,6 +5,7 @@
+  */
+ 
+ extern	char	*getserverbyfile();
++extern	char	*getdomainbyfile();
+ extern	int	server_init();
+ extern	void	put_server();
+ extern	int	get_server();

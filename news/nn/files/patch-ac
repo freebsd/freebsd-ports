@@ -1,5 +1,5 @@
---- inst.sh.orig	Fri Apr 28 22:34:49 1995
-+++ inst.sh	Fri Apr 16 01:30:09 1999
+--- inst.sh.orig	Thu Jan 27 02:36:07 2000
++++ inst.sh	Thu Jan 27 02:29:51 2000
 @@ -1,8 +1,8 @@
  
  # (Large) prefix inserted above by Make
@@ -20,3 +20,35 @@
  
  (
  if $NNTP
+@@ -89,8 +89,8 @@
+ if [ -s ErrorCheck ]
+ then
+ 	cat ErrorCheck
+-	echo "Hit return to continue"
+-	read X
++#	echo "Hit return to continue"
++#	read X
+ fi
+ rm -f ErrorCheck
+ 
+@@ -188,7 +188,7 @@
+ 	OPT=master
+ 	;;
+ n)
+-	OPT="bin aux help online man"
++	OPT="bin aux help online man inews"
+ 	;;
+ 2|c)
+ 	OPT=bin
+@@ -357,6 +357,11 @@
+ 		fi
+ 	done
+ 	;;
++
++inews)
++	cd inews/ && make install || exit 1
++	;;
++
+ 
+ online)
+ 	./inst mkdir $HELP 755 || exit 1
