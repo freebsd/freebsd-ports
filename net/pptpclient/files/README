@@ -1,0 +1,30 @@
+Quickstart for the PPTP client.
+
+Set up your /etc/ppp/ppp.conf based on the example in this directory.
+Make these substitutions:
+
+    SERVER	IP address of the PPTP server
+
+    LABEL	PPP label to use (must be the same on the command
+		line and in the ppp.conf file)
+
+    USER	Your account name on the server
+
+    PASSWORD	Your password on the server
+
+    Change the "add" commands in ppp.conf to set up the routing
+    appropriately.
+
+Note: your PPP program must be new enough to support MS-CHAP
+authentication.
+
+You must run the program as root.  Use a command like this:
+
+    pptp SERVER LABEL
+
+Kill it with ^C when you're done.
+
+If you want to access the remote system from other hosts on your LAN,
+be sure to turn on IP forwarding on the PPTP client machine.
+
+John Polstra <jdp@freebsd.org>

@@ -1,0 +1,51 @@
+--- Makefile.orig	Wed Feb 18 14:42:14 1998
++++ Makefile	Sat Jun 19 15:06:52 1999
+@@ -1,19 +1,30 @@
+ VERSION = 1.0.2
+ VERSION_DEFINE = '-DPPTP_LINUX_VERSION="${VERSION}"'
+ 
+-CC	= gcc -Wall
+-DEBUG	= -g
++CC	= gcc
++DEBUG	=
+ INCLUDE =
+-CFLAGS  = -O9 $(VERSION_DEFINE) $(DEBUG) $(INCLUDE)
++CFLAGS  = -O $(VERSION_DEFINE) $(DEBUG) $(INCLUDE)
+ LIBS	=
+ LDFLAGS	=
++RM	= rm -f
+ 
+ #################################################################
+-# CHANGE THIS LINE to point to the location of your pppd binary.
++# CHANGE THESE LINES to change where programs are installed.
++#################################################################
++# This is the directory where pptp gets installed:
++PPTP_BINDIR	= ${PREFIX}/sbin
++
++# This is the directory where pptp_callmgr gets installed:
++CALLMGR_BINDIR	= ${PREFIX}/libexec
+ 
+-CFLAGS += '-DPPPD_BINARY="/usr/sbin/pppd"'
++# This is the pathname of your pppd binary:
++#CFLAGS += '-DPPPD_BINARY="/usr/sbin/pppd"'
++CFLAGS += '-DPPPD_BINARY="/usr/sbin/ppp"' -DUSER_PPP
+ #################################################################
+ 
++CFLAGS	+= '-DPPTP_CALLMGR_BINARY="$(CALLMGR_BINDIR)/$(CALLMGR_BIN)"'
++
+ PPTP_BIN = pptp
+ PPTP_OBJS = pptp.o pptp_gre.o ppp_fcs.o pty.o \
+             pptp_ctrl.o dirutil.o vector.o \
+@@ -34,6 +45,12 @@
+ 
+ vector_test: vector_test.o vector.o
+ 	$(CC) -o vector_test vector_test.o vector.o
++
++install: all
++	test -d $(PPTP_BINDIR) || mkdir -p $(PPTP_BINDIR)
++	install -c -s -o root -g wheel -m 755 $(PPTP_BIN) $(PPTP_BINDIR)
++	test -d $(CALLMGR_BINDIR) || mkdir -p $(CALLMGR_BINDIR)
++	install -c -s -o root -g wheel -m 755 $(CALLMGR_BIN) $(CALLMGR_BINDIR)
+ 
+ clean:
+ 	$(RM) *.o *~
