@@ -1,6 +1,7 @@
 bin/opera
 share/doc/opera/LICENSE
 share/doc/opera/help
+share/icons/opera.xpm
 share/opera/bin/m2.so
 share/opera/bin/opera
 share/opera/buttons/DefSmall
@@ -367,6 +368,7 @@ share/opera/ini/standard_mouse.ini
 share/opera/ini/standard_toolbar.ini
 share/opera/java/opera.jar
 share/opera/java/opera.policy
+share/opera/locale/english.lng
 share/opera/opera6.adr
 share/opera/plugins/libnpp.so
 share/opera/plugins/operamotifwrapper
@@ -402,6 +404,7 @@ share/opera/styles/user/showstructure.css
 share/opera/styles/user/textonly.css
 share/opera/styles/user/userstyle.ini
 share/opera/styles/wml.css
+share/pixmaps/opera.xpm
 @dirrm share/opera/styles/user
 @dirrm share/opera/styles
 @dirrm share/opera/skin
@@ -423,15 +426,13 @@ share/opera/styles/wml.css
 @dirrm share/opera
 @dirrm share/doc/opera
 
-@cwd %%X11BASE%%
 %%KDE:%%share/applnk/Internet/opera.desktop
 %%KDE2:%%share/applnk/Networking/WWW/opera.desktop
 %%GNOMELNK:%%share/gnome/apps/Internet/opera.desktop
 %%GNOME:%%share/gnome/pixmaps/opera.xpm
-share/icons/opera.xpm
-share/pixmaps/opera.xpm
 %%KDE2:%%@dirrm share/applnk/Networking/WWW
 
 @cwd /etc/X11
 wmconfig/opera
 %%APPLNK:%%applnk/Internet/opera.desktop
+

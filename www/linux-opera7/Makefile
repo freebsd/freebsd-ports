@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	7.1.0.20030410
+PORTVERSION=	7.11.20030429
 CATEGORIES=	www linux
-MASTER_SITES=	http://public.planetmirror.com/pub/opera/linux/710/beta1/en/i386/static/ \
-		ftp://ftp.hu-berlin.de/pub/www/opera/linux/710/beta1/en/i386/static/ \
-		ftp://ftp.tiscali.nl/pub/mirrors/opera/linux/710/beta1/en/i386/static/ \
-		ftp://opera.online.no/pub/online.no/mirrors/operasoftware/linux/710/beta1/en/i386/static/
+MASTER_SITES=	http://snapshot.opera.com/unix/intel-linux/395-20030429-7.11-TP5/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2/-2/}.1-static-qt.i386
 
@@ -23,6 +20,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linu
 
 USE_BZIP2=	yes
 USE_LINUX=	yes
+USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
 
@@ -62,8 +60,8 @@ PLIST_SUB+=	GNOMELNK:="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%X11PREFIX%%|${X11BASE}|g' \
-		${WRKSRC}/install.sh
+	@${REINPLACE_CMD} -e 's|%%X11PREFIX%%|${X11BASE}|g ; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/install.sh
 
 do-install:
 	(cd ${WRKSRC} && ./install.sh --prefix=${PREFIX})
