@@ -7,7 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	1.5p7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net print
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netatalk
@@ -59,14 +59,14 @@ MAN3=		atalk_aton.3 nbp_name.3
 MAN4=		atalk.4
 MAN5=		AppleVolumes.default.5 afpd.conf.5 atalkd.conf.5 \
 		netatalk.conf.5 papd.conf.5
-MAN8=		afpd.8 atalkd.8 pap.8 papd.8 papstatus.8 psf.8
+MAN8=		afpd.8 atalkd.8 pap.8 papd.8 papstatus.8 psf.8 timelord.8
 
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/netatalk.sh \
 		> ${WRKSRC}/netatalk.sh
 
 post-configure:
-	@${TOUCH} ${WRKSRC}/config/Makefile.in
+	@${TOUCH} -f ${WRKSRC}/config/Makefile.in
 
 post-install:
 	@${RM} -f ${PREFIX}/bin/nu ${PREFIX}/bin/lp2pap.sh \
