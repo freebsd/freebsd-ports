@@ -21,7 +21,7 @@ COMMENT=	A file and string hashing utility
 BROKEN=		"Compile fails: cannot find cryptopp/sapphire.h"
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
-LIB_DEPENDS=	wx_gtk:${PORTSDIR}/x11-toolkits/wxgtk-devel
+LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/Hashish

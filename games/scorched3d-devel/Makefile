@@ -19,7 +19,7 @@ COMMENT=		Scorched is a game based loosely on the classic DOS game
 LIB_DEPENDS=		SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 			SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 			SDL_net.0:${PORTSDIR}/net/sdl_net \
-			wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel
+			wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel
 
 SCORCH_VERSION=		35
 WRKSRC=			${WRKDIR}/scorched

@@ -25,7 +25,7 @@ LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
 		ogg.4:${PORTSDIR}/audio/libogg \
 		FLAC.5:${PORTSDIR}/audio/flac \
 		faad.0:${PORTSDIR}/audio/faad \
-		wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel \
+		wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel \
 		slp.1:${PORTSDIR}/net/openslp
 
 # After libmpeg2 release 0.3.2

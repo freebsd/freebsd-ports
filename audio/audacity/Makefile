@@ -17,7 +17,7 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	"Audacity is a GUI editor for digital audio waveforms"
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel \
+LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel \
 		mad.1:${PORTSDIR}/audio/mad
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
