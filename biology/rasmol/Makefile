@@ -3,17 +3,17 @@
 # Date created:         Dec 4 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/12/15 17:45:31 vanilla Exp $
 #
 
-DISTNAME=       RasMol26
-PKGNAME=        rasmol-2.6b2
+DISTNAME=       RasMol26b2x1
+PKGNAME=        rasmol-2.6b2.1
 CATEGORIES=     biology x11
-MASTER_SITES=   ftp://ftp.dcs.ed.ac.uk/pub/rasmol/v2.6beta/
+MASTER_SITES=   ftp://nexus.roko.goe.net/pub/rasmol/
 
 MAINTAINER=     frankch@waru.life.nthu.edu.tw
 
-WRKSRC=		$(WRKDIR)/RasMol2
+WRKSRC=		$(WRKDIR)/RasMol2.6x1
 USE_IMAKE=	yes
 
 .include <bsd.port.mk>
