@@ -855,13 +855,17 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <mlist msgid="Pine.SOC.4.61.0501041452540.1114@draco.cus.cam.ac.uk">http://www.exim.org/mail-archives/exim-announce/2005/msg00000.html</mlist>
+      <mlist msgid="1CE07882ECEE894CA2D5A89B8DEBC4011CFDE5@porgy.admin.idefense.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110573573800377</mlist>
       <cvename>CAN-2005-0021</cvename>
       <cvename>CAN-2005-0022</cvename>
+      <bid>12185</bid>
+      <bid>12188</bid>
+      <bid>12268</bid>
     </references>
     <dates>
       <discovery>2005-01-05</discovery>
       <entry>2005-01-05</entry>
-      <modified>2005-01-13</modified>
+      <modified>2005-01-18</modified>
     </dates>
   </vuln>
 
