@@ -1,0 +1,28 @@
+--- Makefile.orig	Mon May 20 05:32:43 1996
++++ Makefile	Mon Dec 21 19:31:32 1998
+@@ -2,10 +2,10 @@
+ # your site:
+ #
+ # where dvi2dvi is installed
+-BINAREA=/usr/local/bin
++BINAREA=${PREFIX}/bin
+ #
+ # directory for dvi2dvi: where the auxiliary files are installed
+-DVI2LIB=/usr/local/lib/dvi2dvi
++DVI2LIB=${PREFIX}/lib/dvi2dvi
+ #
+ # name of default fontdesc file in your site
+ FONTDESC=fontdesc
+@@ -15,10 +15,10 @@
+ #
+ CC=cc
+ #
+-CFLAGS = -g
++#CFLAGS = -g
+ #CFLAGS = -O		# SUN etc ...
+ #CFLAGS = -O -traditional -DPOSIX	# 386bsd (gcc 1.X)
+-#CFLAGS = -O -DPOSIX	# Netbsd (gcc 2.X), Linux
++CFLAGS = -O -DPOSIX -m486	# Netbsd (gcc 2.X), Linux
+ #CFLAGS = -O -bsd	# NeXT
+ #CFLAGS = -O -DMSDOS -DPOSIX	# DJGCC (gcc 2.X)
+ #CFLAGS = -O -DSYSV	# SysV

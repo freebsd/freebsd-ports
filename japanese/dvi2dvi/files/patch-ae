@@ -1,0 +1,31 @@
+--- lib/p2n.orig	Mon Jun 26 10:02:01 1995
++++ lib/p2n	Mon Dec 21 19:31:33 1998
+@@ -3,20 +3,21 @@
+ # configuration
+ fontdesc	config
+ # min,goth -> dm,dg
+-font	jvf	* 0	$af/vf-a2n/%f.vf
++font	jvf	* 0	$vf/vf-a2n/%f.vf
+ # tmin,tgoth -> dm,dg + d?jsy in vertical mode
+-font	jvf	* 0	$af/vf-p2pn/%f.vf
++font	jvf	* 0	$vf/vf-p2pn/%f.vf
+ #
+ # tfm used in the above vf (NTT subfont tfm, i.e. dmjsy10.tfm ...)
+-font	tfm	* 0	$nsf/tfm/%f.tfm
++font	tfm	* 0	$nsf/mincho/%f.tfm
++font	tfm	* 0	$nsf/gothic/%f.tfm
+ #
+ # convert fonts in vertical mode to fonts with rotated bitmap
+ # dmjsy.. -> tdmjsy..
+-vfont	vf	* 0	$af/vf-tjsy/%f.vf
++vfont	vf	* 0	$vf/vf-tjsy/%f.vf
+ # cmr.. -> rcmr..
+-define	gen	$f/vf-rot
++define	gen	$vf/vf-rot
+ vfont	vf	* 0	$gen/%f.vf
+ vfont	func	* 0	\
+-	exist($f/tfm/%f.tfm),\
+-	exec(/usr/local/lib/mkrotvf %f r%f $f/tfm/%f.tfm $gen/),\
++	exist($f/%f.tfm),\
++	exec(@PREFIX@/bin/mkrotvf %f r%f $f/%f.tfm $gen/),\
+ 	vf($gen/%f.vf)

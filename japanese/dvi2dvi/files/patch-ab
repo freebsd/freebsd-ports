@@ -1,0 +1,13 @@
+--- lib/a2n.orig	Sun Apr 30 14:54:32 1995
++++ lib/a2n	Mon Dec 21 19:31:33 1998
+@@ -3,7 +3,8 @@
+ # configuration
+ fontdesc	config
+ # min,goth -> dm,dg
+-font	jvf	* 0	$af/vf-a2n/%f.vf
++font	jvf	* 0	$vf/vf-a2n/%f.vf
+ #
+ # tfm used in the above vf (NTT subfont tfm, i.e. dmjsys10.tfm ...)
+-font	tfm	* 0	$nsf/tfm/%f.tfm
++font	tfm	* 0	$nsf/mincho/%f.tfm
++font	tfm	* 0	$nsf/gothic/%f.tfm
