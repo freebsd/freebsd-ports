@@ -7064,6 +7064,7 @@ soltaire	ports/math/solitaire
 songprint	ports/audio/songprint
 sonice		ports/audio/sonice
 sonicmail	ports/mail/sonicmail
+sopwith		ports/games/sopwith
 soribada	ports/audio/soribada
 sort		src/gnu/usr.bin/sort
 soundgrab	ports/audio/soundgrab
