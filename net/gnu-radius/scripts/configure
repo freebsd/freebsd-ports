@@ -38,6 +38,7 @@ Notify		"Enable TTL notification" OFF \
 	esac
 fi
 
+${MKDIR} ${WRKDIRPREFIX}${CURDIR}
 exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 
 INCLUDE_PATH=${LOCALBASE}/include/

@@ -26,7 +26,8 @@ MAN8=		builddbm.8 radctl.8 radiusd.8 radping.8 radzap.8
 MANCOMPRESSED=	no
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-		CURDIR="${.CURDIR}"
+		CURDIR="${.CURDIR}" \
+		MKDIR="${MKDIR}"
 
 STARTUP_FILE=	${PREFIX}/etc/rc.d/gnu-radius.sh
 
