@@ -1,9 +1,9 @@
---- include/ogle_endian.h.orig	Thu Oct  4 00:41:49 2001
-+++ include/ogle_endian.h	Sun Nov 10 17:12:23 2002
-@@ -39,6 +39,13 @@
- #elif defined(HAVE_SYS_ENDIAN_H)
+--- include/ogle_endian.h.orig	Wed Mar  5 23:26:06 2003
++++ include/ogle_endian.h	Wed Mar  5 23:28:37 2003
+@@ -45,6 +45,13 @@
+ #elif defined(HAVE_SYS_ENDIAN_H) && defined(__FreeBSD__) && __FreeBSD_version >= 470000
  #  include <sys/endian.h>
- #  define FROM_BE_32(x) (swap32(x))
+ #  define FROM_BE_32(x) (be32toh(x))
 +#elif defined(__FreeBSD__)
 +#  define _KERNEL
 +#  define I486_CPU     /* Will crash unless 486+ */
