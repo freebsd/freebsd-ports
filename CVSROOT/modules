@@ -403,6 +403,7 @@ atrun		src/libexec/atrun
 aub		ports/news/aub
 auctex		ports/print/auctex
 audacity	ports/audio/audacity
+audio_muse	ports/audio/muse
 audit		ports/security/audit
 august		ports/www/august
 aumix		ports/audio/aumix
