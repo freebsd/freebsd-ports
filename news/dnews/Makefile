@@ -19,12 +19,13 @@ NO_CDROM=	"no answer yet, if we are allowed to put it onto CDROM"
 RESTRICTED=	"only free for non-profit organisations"
 NO_PACKAGE=	"${RESTRICTED}"
 IS_INTERACTIVE=	yes
+USE_REINPLACE=	yes
 
 NO_BUILD=	yes
 
 post-configure:
-	@${PERL} -pi -e "s|df -k|/bin/df -k|" ${WRKSRC}/dnews.conf
-	@${PERL} -pi -e "s|lib/sendmail|sbin/sendmail|" ${WRKSRC}/dnews.conf
+	@${REINPLACE_CMD} -e "s|df -k|/bin/df -k|" ${WRKSRC}/dnews.conf
+	@${REINPLACE_CMD} -e "s|lib/sendmail|sbin/sendmail|" ${WRKSRC}/dnews.conf
 
 do-install:
 	@( cd ${WRKSRC}; ./dnews_setup )
