@@ -217,6 +217,7 @@ newkind*		ports/games/newkind	Reverse-engineered version of
 nntpcache-*		ports/news/nntpcache	Commercial or government use
 						requires licence
 nte-1.*			ports/mbone/nte		Crypto; export-controlled
+ORBacus			ports/devel/ORBacus	non commercial use only.
 openssl-*		ports/security/openssl	Crypto; export/import-controlled
 opera-*			ports/www/opera		No redistribution, commercial
 						software
