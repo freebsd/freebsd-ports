@@ -1,10 +1,11 @@
-@unexec if [ -f %D/etc/ezbounce.conf ] && cmp -s %D/etc/ezbounce.conf %D/etc/ezbounce.conf.default; then rm -f %D/etc/ezbounce.conf; fi
-etc/ezbounce.conf.default
-@exec if [ ! -f %D/etc/ezbounce.conf ] ; then cp -p %D/%F %B/ezbounce.conf; fi
+@unexec if [ -f %D/etc/ezb.conf ] && cmp -s %D/etc/ezb.conf %D/etc/ezb.conf.default; then rm -f %D/etc/ezb.conf; fi
+etc/ezb.conf.default
+@exec if [ ! -f %D/etc/ezb.conf ] ; then cp -p %D/%F %B/ezb.conf; fi
 sbin/ezbounce
-sbin/mdidentd
+%%MDIDENTD%%sbin/mdidentd
 %%PORTDOCS%%share/doc/ezbounce/CHANGES
 %%PORTDOCS%%share/doc/ezbounce/README
 %%PORTDOCS%%share/doc/ezbounce/TODO
-%%PORTDOCS%%share/doc/ezbounce/mdidentd.README
+%%PORTDOCS%%share/doc/ezbounce/worklog
+%%MDIDENTD%%%%PORTDOCS%%share/doc/ezbounce/mdidentd.README
 %%PORTDOCS%%@dirrm share/doc/ezbounce
