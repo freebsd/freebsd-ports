@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		knoda
-PORTVERSION=		0.7
+PORTVERSION=		0.7.1
 CATEGORIES=		databases
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,13 +29,7 @@ CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--with-hk_classes-dir=${LOCALBASE}/lib/hk_classes \
 		--with-hk_classes-incdir=${LOCALBASE}/include/hk_classes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=			"Configure fails on FreeBSD >= 5.x"
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's,-pedantic ,,' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
