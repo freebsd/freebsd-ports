@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 
@@ -21,9 +21,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 	's|^CC = gcc|CC?=cc|g ; \
 	s|^CFLAGS = -O2|CFLAGS+=-O2|g' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e \
-		"s,\/etc\/dnsmasq.conf,${PREFIX}\/etc\/dnsmasq.conf,g" \
-		${WRKSRC}/src/config.h ${WRKSRC}/dnsmasq.8
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dnsmasq ${PREFIX}/sbin
