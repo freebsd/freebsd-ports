@@ -3,7 +3,7 @@
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.12 1998/06/09 15:29:45 tg Exp $
+# $Id: Makefile,v 1.13 1998/06/15 08:58:08 tg Exp $
 
 DISTNAME=	WindowMaker-0.15.1
 PKGNAME=	windowmaker-0.15.1
@@ -28,10 +28,5 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 	--with-nlsdir=${LOCALBASE}/lib/locale \
 	--with-gfx-libs=-L${LOCALBASE}/lib \
 	--with-gfx-incs="-I${LOCALBASE}/include/tiff34 -I${LOCALBASE}/include"
-
-post-patch:
-.for file in wmmacros Defaults/WindowMaker
-	@/usr/bin/perl -pi -e "s|@@PREFIX@@|${PREFIX}|g;" ${WRKSRC}/WindowMaker/${file}
-.endfor
 
 .include <bsd.port.mk>
