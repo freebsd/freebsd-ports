@@ -10,7 +10,7 @@ PORTVERSION=	2.6
 CATEGORIES=	print
 MASTER_SITES=	http://www.cs.uu.nl/~otfried/Hyperlatex/
 
-MAINTAINER=	witr@rwwa.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce HTML and printed documents from LaTeX source
 
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
