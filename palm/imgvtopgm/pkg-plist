@@ -1,0 +1,6 @@
+bin/imgvinfo
+bin/imgvtopnm
+bin/pbmtoimgv
+bin/pgmtoimgv
+bin/imgvview
+bin/ppmimgvquant
