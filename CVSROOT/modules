@@ -2272,6 +2272,7 @@ gtar		ports/archivers/gtar
 gtetrinet	ports/games/gtetrinet
 gtgt		ports/devel/gtgt
 gthumb		ports/graphics/gthumb
+gthumb2		ports/graphics/gthumb2
 gtic		ports/net/gtic
 gtimer		ports/deskutils/gtimer
 gtk+licq	ports/net/gtk+licq
