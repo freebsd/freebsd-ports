@@ -93,6 +93,7 @@
     SUBDIR += libgnomeprint
     SUBDIR += libgnomeprint20
     SUBDIR += libijs
+    SUBDIR += libpaper
     SUBDIR += lilypond
     SUBDIR += lout
     SUBDIR += lprps-a4
