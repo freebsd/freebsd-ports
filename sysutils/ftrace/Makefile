@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ftrace
-PORTVERSION=	0.9a
+PORTVERSION=	0.9b
 CATEGORIES=	sysutils
 MASTER_SITES=	http://software.senko.net/pub/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A file modification/creation watcher
@@ -17,5 +16,6 @@ COMMENT=	A file modification/creation watcher
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
 GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

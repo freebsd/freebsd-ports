@@ -1,13 +1,11 @@
---- ftrace.c.orig	Wed Jan 10 17:38:16 2001
-+++ ftrace.c	Wed Jan 10 17:36:28 2001
-@@ -10,9 +10,10 @@
- #include <errno.h>
- #include <unistd.h>
- #include <string.h>
-+#include <sys/types.h>
+--- ftrace.c.orig	Fri Sep 17 08:53:25 2004
++++ ftrace.c	Sat Feb 19 12:31:16 2005
+@@ -128,7 +128,7 @@
+ 	int ret;
  
- #ifdef LINUX_GLIBC
--typedef __off64_t off64_t;
-+typedef off_t off64_t;
- #define _GNU_SOURCE
- #endif /* LINUX_GLIBC */
+ 	va_start(ap, flags);
+-	mode = va_arg(ap, mode_t);
++	mode = va_arg(ap, int);
+ 	va_end(ap);
+ 	ret = real_open(pathname, flags, mode);
+ 	if (ret == -1) return -1;
