@@ -7,7 +7,7 @@
 
 PORTNAME=	gconf
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/GConf
@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile \
 		oaf.0:${PORTSDIR}/devel/oaf \
-		db3.2:${PORTSDIR}/databases/db3
+		db3.3:${PORTSDIR}/databases/db3
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

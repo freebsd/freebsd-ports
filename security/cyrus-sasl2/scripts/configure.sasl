@@ -73,7 +73,7 @@ echo "PREFIX=	${PREFIX}"
 while [ "$1" ]; do
 	case $1 in
 		\"DB3\")
-			echo "LIB_DEPENDS+=	db3.2:\${PORTSDIR}/databases/db3"
+			echo "LIB_DEPENDS+=	db3.3:\${PORTSDIR}/databases/db3"
 			echo "CONFIGURE_ARGS+=--with-dblib=berkeley"
 			;;
 		\"MySQL\")

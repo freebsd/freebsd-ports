@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix25/scripts/Attic/configure.postfix,v 1.8 2001-06-17 22:19:00 dwcjr Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix25/scripts/Attic/configure.postfix,v 1.9 2001-07-25 15:05:09 knu Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -84,7 +84,7 @@ while [ "$1" ]; do
 			SUB_TLS=""
 			;;
 		\"DB3\")
-			echo "LIB_DEPENDS+=	db3.2:\${PORTSDIR}/databases/db3"
+			echo "LIB_DEPENDS+=	db3.3:\${PORTSDIR}/databases/db3"
 			echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db3"
 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -ldb3"
 			;;
