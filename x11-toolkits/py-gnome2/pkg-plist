@@ -1,24 +1,7 @@
-lib/python1.5/site-packages/GDK.py
-lib/python1.5/site-packages/GDK.pyc
-lib/python1.5/site-packages/GDK.pyo
-lib/python1.5/site-packages/GTK.py
-lib/python1.5/site-packages/GTK.pyc
-lib/python1.5/site-packages/GTK.pyo
-lib/python1.5/site-packages/GdkImlib.py
-lib/python1.5/site-packages/GdkImlib.pyc
-lib/python1.5/site-packages/GdkImlib.pyo
-lib/python1.5/site-packages/GtkExtra.py
-lib/python1.5/site-packages/GtkExtra.pyc
-lib/python1.5/site-packages/GtkExtra.pyo
-lib/python1.5/site-packages/Gtkinter.py
-lib/python1.5/site-packages/Gtkinter.pyc
-lib/python1.5/site-packages/Gtkinter.pyo
 lib/python1.5/site-packages/_appletmodule.so
 lib/python1.5/site-packages/_cappletmodule.so
-lib/python1.5/site-packages/_gdkimlibmodule.so
 lib/python1.5/site-packages/_gnomemodule.so
 lib/python1.5/site-packages/_gnomeuimodule.so
-lib/python1.5/site-packages/_gtkmodule.so
 lib/python1.5/site-packages/_gtkxmhtmlmodule.so
 lib/python1.5/site-packages/_zvtmodule.so
 lib/python1.5/site-packages/gettext.py
@@ -75,20 +58,15 @@ lib/python1.5/site-packages/gnome/xmhtml.pyo
 lib/python1.5/site-packages/gnome/zvt.py
 lib/python1.5/site-packages/gnome/zvt.pyc
 lib/python1.5/site-packages/gnome/zvt.pyo
-lib/python1.5/site-packages/gtk.py
-lib/python1.5/site-packages/gtk.pyc
-lib/python1.5/site-packages/gtk.pyo
-lib/python1.5/site-packages/pyglade/__init__.py
-lib/python1.5/site-packages/pyglade/__init__.pyc
-lib/python1.5/site-packages/pyglade/__init__.pyo
-lib/python1.5/site-packages/pyglade/build.py
-lib/python1.5/site-packages/pyglade/build.pyc
-lib/python1.5/site-packages/pyglade/build.pyo
-lib/python1.5/site-packages/pyglade/style.py
-lib/python1.5/site-packages/pyglade/style.pyc
-lib/python1.5/site-packages/pyglade/style.pyo
-lib/python1.5/site-packages/pyglade/xmlparse.py
-lib/python1.5/site-packages/pyglade/xmlparse.pyc
-lib/python1.5/site-packages/pyglade/xmlparse.pyo
+share/examples/py-gnome/bookmarks-applet.py  
+share/examples/py-gnome/canvas-example.py
+share/examples/py-gnome/canvas.py
+share/examples/py-gnome/clock-applet.py
+share/examples/py-gnome/fifteen.py
+share/examples/py-gnome/html_demo.py
+share/examples/py-gnome/stock_demo.py
+share/examples/py-gnome/ted_demo.py
+share/examples/py-gnome/uiinfo_demo.py
+share/examples/py-gnome/zterm.py
 @dirrm lib/python1.5/site-packages/gnome
-@dirrm lib/python1.5/site-packages/pyglade
+@dirrm share/examples/py-gnome
