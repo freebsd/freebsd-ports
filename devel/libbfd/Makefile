@@ -23,6 +23,10 @@ CONFIGURE_ARGS=	--enable-install-libbfd \
 		--enable-commonbfdlib \
 		--disable-nls \
 		--enable-targets=all
+.if (${MACHINE_ARCH} == "amd64")
+CONFIGURE_ARGS+=	--host=x86_64-portbld-freebsd${OSREL}
+.endif
+
 USE_LIBTOOL=	yes
 
 INFO=		bfd
