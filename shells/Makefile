@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.11 1996/07/30 04:16:59 asami Exp $
+# $Id: Makefile,v 1.12 1997/01/02 07:01:10 asami Exp $
 #
 
     SUBDIR += bash
     SUBDIR += bash2
     SUBDIR += es
+    SUBDIR += scsh
     SUBDIR += pdksh
     SUBDIR += tcsh
     SUBDIR += zsh
