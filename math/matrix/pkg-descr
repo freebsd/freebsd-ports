@@ -1,0 +1,4 @@
+C++ library that lets to manipulate matrices and vectors using the base
+class MATRIX and derived class VECTOR.
+
+WWW:	http://rnoc.urc.ac.ru/~anton/projects/matrix/Matrix.html

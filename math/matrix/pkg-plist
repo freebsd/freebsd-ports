@@ -1,0 +1,6 @@
+include/matrix.h
+lib/libmatrix.a
+lib/libmatrix.so
+lib/libmatrix.so.%%LIBVERSION%%
+share/doc/matrix/Matrix.html
+@dirrm share/doc/matrix
