@@ -15,6 +15,7 @@ share/locale/no_NO/LC_MESSAGES/Xdialog.mo
 %%PORTDOCS%%%%DOCSDIR%%/changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/check.png
 %%PORTDOCS%%%%DOCSDIR%%/checklist.png
+%%PORTDOCS%%%%DOCSDIR%%/colorsel.png
 %%PORTDOCS%%%%DOCSDIR%%/combobox.png
 %%PORTDOCS%%%%DOCSDIR%%/common.html
 %%PORTDOCS%%%%DOCSDIR%%/compatibility.html
@@ -23,6 +24,7 @@ share/locale/no_NO/LC_MESSAGES/Xdialog.mo
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/fill.png
 %%PORTDOCS%%%%DOCSDIR%%/fixedfont.png
+%%PORTDOCS%%%%DOCSDIR%%/fontsel.png
 %%PORTDOCS%%%%DOCSDIR%%/fselect.png
 %%PORTDOCS%%%%DOCSDIR%%/gauge.png
 %%PORTDOCS%%%%DOCSDIR%%/gtk.html
