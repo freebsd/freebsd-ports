@@ -20,7 +20,7 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared=yes
 CONFIGURE_ENV=	PERL=${PERL}
-CFLAGS!=	${ECHO} ${CFLAGS:N-ffast-math}
+CFLAGS:=	${CFLAGS:N-ffast-math}
 
 MAN1=		RRDp.1 RRDs.1 bin_dec_hex.1 rrdcgi.1 rrdcreate.1 rrddump.1 \
 		rrdfetch.1 rrdgraph.1 rrdlast.1 rrdresize.1 rrdrestore.1 \
