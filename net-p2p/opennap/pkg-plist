@@ -1,16 +1,16 @@
-bin/opennap
-bin/mkpass
-bin/metaserver
-bin/setup
+sbin/opennap
+sbin/metaserver
+sbin/setup
 share/opennap/users
 share/opennap/examples/sample.channels
 share/opennap/examples/sample.conf
+share/opennap/examples/sample.filter
 share/opennap/examples/sample.motd
 share/opennap/examples/sample.servers
 share/opennap/examples/sample.users
-@dirrm share/opennap/examples
-@dirrm share/opennap
 share/doc/opennap/README
 share/doc/opennap/napster.txt
+@dirrm share/opennap/examples
+@dirrm share/opennap
 @dirrm share/doc/opennap
 etc/rc.d/opennap.sh
