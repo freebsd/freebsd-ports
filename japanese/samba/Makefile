@@ -7,7 +7,7 @@
 
 PORTNAME=	samba
 PORTVERSION=	${SAMBA_VERSION}.j${SAMBA_JA_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
 		ftp://ftp.iij.ad.jp/pub/SAMBA/samba-jp/%SUBDIR%/ \
