@@ -7,7 +7,7 @@
 
 PORTNAME=	cvs+ipv6
 PORTVERSION=	1.11.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel ipv6
 MASTER_SITES=	http://ftp.cvshome.org/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/cvs/&,}
@@ -29,7 +29,7 @@ MAN5=		cvs.5
 MAN8=		cvsbug.8
 
 CVS_SITE?=	:pserver:anoncvs@anoncvs.FreeBSD.org:/home/ncvs
-CVS_VER?=	v1_11_1p1
+CVS_VER?=	v1_11_2
 
 post-patch:
 	@${CP} ${FILESDIR}/missing ${WRKSRC}
@@ -39,5 +39,22 @@ replace:
 	${MV} /usr/bin/${f} /usr/bin/${f}.orig
 	${CP} -p ${PREFIX}/bin/${f} /usr/bin/
 .endfor
+
+generate-patch:
+	cvs -Rl -d ${CVS_SITE} rdiff -u -r ${CVS_VER} -r HEAD \
+	  src/contrib/cvs \
+	| ${SED} \
+	  -e 's,^\+\+\+ src/contrib/cvs/,+++ ,' \
+	  -e 's,^Index: src/contrib/cvs/,Index: ,' \
+	  -e 's,\$$FreeBSD: ,FreeBSD: ,' \
+	  > ${FILESDIR}/patch-freebsdlocal
+	cvs -Rl -d ${CVS_SITE} rdiff -u -D 1999-12-01 -r HEAD \
+	  gnu/usr.bin/cvs/cvs/prepend_args.c \
+	  gnu/usr.bin/cvs/cvs/prepend_args.h \
+	| ${SED} \
+	  -e 's,^\+\+\+ src/gnu/usr.bin/cvs/cvs/,+++ src/,' \
+	  -e 's,^Index: src/gnu/usr.bin/cvs/cvs/,Index: src/,' \
+	  -e 's,\$$FreeBSD: ,FreeBSD: ,' \
+	  >> ${FILESDIR}/patch-freebsdlocal
 
 .include <bsd.port.mk>
