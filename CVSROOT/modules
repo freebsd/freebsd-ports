@@ -6001,6 +6001,7 @@ ruby-openssl	ports/security/ruby-openssl
 ruby-optparse	ports/devel/ruby-optparse
 ruby-pam	ports/security/ruby-pam
 ruby-panda	ports/print/ruby-panda
+ruby-panel-applet	ports/x11/ruby-panel-applet
 ruby-pcap	ports/net/ruby-pcap
 ruby-pcsc-lite	ports/devel/ruby-pcsc-lite
 ruby-pdflib	ports/print/ruby-pdflib
