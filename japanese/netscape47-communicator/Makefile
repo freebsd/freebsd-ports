@@ -3,8 +3,10 @@
 # Date created:		13 Mar 1998
 # Whom:			sada
 #
-# $Id: Makefile,v 1.4 1998/12/29 21:53:22 sada Exp $
+# $Id: Makefile,v 1.5 1999/05/02 14:11:46 sada Exp $
 #
+
+BROKEN=		REPOSITORY COPIED
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
 

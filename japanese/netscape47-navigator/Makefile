@@ -3,8 +3,10 @@
 # Date created:		29 Dec 1998
 # Whom:			sada@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/29 21:59:13 sada Exp $
+# $Id: Makefile,v 1.2 1999/05/02 14:11:50 sada Exp $
 #
+
+BROKEN=		REPOSITORY COPIED
 
 MAINTAINER=	sada@FreeBSD.ORG
 
