@@ -156,7 +156,7 @@
   	}
   
   	for (i=0; i<MAX_STAT_DEVICES; i++) {
---- 295,366 ----
+--- 295,363 ----
   	long		istat;
   	long		idle;
   
@@ -185,9 +185,6 @@
 ! 		continue;
 ! 	pshift -= 10;
 ! 	psize = getpagesize();
-! 
-! 	if (setgid(getgid()) != 0) exit(1); /* We're sgid kmem. Give up privs. */
-! 	if (setuid(getuid()) != 0) exit(1); /* If we're suid, give that up too. */
 ! 
 ! 	if (kvmd==NULL) kvmd = kvm_openfiles(NULL, NULL, NULL, O_RDONLY, errbuf);
 ! 	if (kvmd==NULL) { fprintf(stderr, "kvm_openfiles: %s\n", errbuf); exit(errno); }
@@ -247,7 +244,7 @@
   
   	stat_online = checksysdevs();
   
---- 374,393 ----
+--- 371,390 ----
   	if (RIGHT_ACTION) right_action = strdup(RIGHT_ACTION);
   	if (MIDDLE_ACTION) middle_action = strdup(MIDDLE_ACTION);
   
@@ -270,7 +267,7 @@
   
 ***************
 *** 484,489 ****
---- 616,626 ----
+--- 613,623 ----
   	st->rt_idle = idle - st->idlelast;
   	st->idlelast = idle;
   
@@ -329,7 +326,7 @@
   /*******************************************************************************\
   |* get_statistics															   *|
   \*******************************************************************************/
---- 636,890 ----
+--- 633,887 ----
   
   void update_stat_mem(stat_dev *st, stat_dev *st2) {
   
@@ -597,7 +594,7 @@
   	long	maxdiskio=0;
   
   	*is = 0;
---- 892,899 ----
+--- 889,896 ----
   void get_statistics(char *devname, long *is, long *ds, long *idle) {
   
   	int	i;
@@ -645,7 +642,7 @@
   		if (*ds > maxdiskio) maxdiskio = *ds;
   	}
   }
---- 901,1105 ----
+--- 898,1102 ----
   	*idle = 0;
   
   	if (!strncmp(devname, "cpu", 3)) {
@@ -862,7 +859,7 @@
   
   	return 3;
   }
---- 1110,1118 ----
+--- 1107,1115 ----
   
   int checksysdevs(void) {
   
@@ -874,7 +871,7 @@
   }
 ***************
 *** 638,643 ****
---- 1151,1157 ----
+--- 1148,1154 ----
   	int     *p;
   	int		d;
   
