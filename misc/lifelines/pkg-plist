@@ -1,4 +1,33 @@
 bin/btedit
 bin/dbverify
+bin/llexec
 bin/llines
-lib/libarch.a
+%%PORTDOCS%%%%DOCSDIR%%/listops.jpg
+%%PORTDOCS%%%%DOCSDIR%%/ll-reportmanual.html
+%%PORTDOCS%%%%DOCSDIR%%/ll-reportmanual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ll-reportmanual.sv.html
+%%PORTDOCS%%%%DOCSDIR%%/ll-reportmanual.txt
+%%PORTDOCS%%%%DOCSDIR%%/ll-reportmanual.xml
+%%PORTDOCS%%%%DOCSDIR%%/ll-userguide.html
+%%PORTDOCS%%%%DOCSDIR%%/ll-userguide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ll-userguide.sv.html
+%%PORTDOCS%%%%DOCSDIR%%/ll-userguide.txt
+%%PORTDOCS%%%%DOCSDIR%%/ll-userguide.xml
+%%DATADIR%%/index.html
+%%DATADIR%%/listops.jpg
+%%DATADIR%%/ll-reportmanual.html
+%%DATADIR%%/ll-reportmanual.pdf
+%%DATADIR%%/ll-reportmanual.sv.html
+%%DATADIR%%/ll-reportmanual.txt
+%%DATADIR%%/ll-userguide.html
+%%DATADIR%%/ll-userguide.pdf
+%%DATADIR%%/ll-userguide.sv.html
+%%DATADIR%%/ll-userguide.txt
+share/locale/da/LC_MESSAGES/lifelines.mo
+share/locale/de/LC_MESSAGES/lifelines.mo
+share/locale/el/LC_MESSAGES/lifelines.mo
+share/locale/fr/LC_MESSAGES/lifelines.mo
+share/locale/it/LC_MESSAGES/lifelines.mo
+share/locale/sv/LC_MESSAGES/lifelines.mo
+@dirrm %%PORTDOCS%%%%DOCSDIR%%
+@dirrm %%DATADIR%%
