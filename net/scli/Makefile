@@ -7,6 +7,7 @@
 
 PORTNAME=	scli
 PORTVERSION=	0.2.12
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/${PORTNAME}/
 
@@ -19,5 +20,6 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	glib12
 
 MAN1=		scli.1
+INFO=		scli
 
 .include <bsd.port.mk>
