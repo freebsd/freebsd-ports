@@ -17,7 +17,6 @@ MASTER_SITES=	${CUPS_MASTER_SITES}
 MAINTAINER=	alane@FreeBSD.org
 
 post-install:
-	${MKDIR} ${PREFIX}/etc/cups/certs/0
 	cd ${PREFIX}/etc/rc.d; ${MV} cups cups.sh.sample
 	${FIND} ${PREFIX}/man/cat* -type l -name '*.0' -delete
 	${FIND} ${PREFIX}/man/fr/cat* -type l -name '*.0' -delete
