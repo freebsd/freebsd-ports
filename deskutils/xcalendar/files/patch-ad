@@ -36,7 +36,7 @@
  	MakeDir($(LIBDIR)/ja_JP.EUC/app-defaults)
  	$(INSTALL) -c $(INSTAPPFLAGS) XCal-uj.ad $(LIBDIR)/ja_JP.EUC/app-defaults/XCalendar
 +	MakeDir($(XCALENDAR_JP_LIBDIR))
-+	$(INSTALL) -c $(INSTAPPFLAGS) $(FILESDIR)/xcalendar.hol $(XCALENDAR_JP_LIBDIR)
++	$(INSTALL) -c $(INSTAPPFLAGS) $(FILESDIR)/xcalendar-uj.hol $(XCALENDAR_JP_LIBDIR)/xcalendar.hol
 +	$(INSTALL) -c $(INSTAPPFLAGS) xcalendar-uj.hlp $(XCALENDAR_JP_LIBDIR)/xcalendar.hlp
 +	$(INSTALL) -c $(INSTMANFLAGS) xcalendar-uj.man \
 +		$(MANPATH)/ja/man1/xcalendar.1
