@@ -213,6 +213,9 @@ lib/%%PYTHON_VERSION%%/site-packages/wxPython/frames.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/frames.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/gdi.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/gdi.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/glcanvas.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/glcanvas.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/glcanvasc.so
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/grid.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/grid.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/gridc.so
