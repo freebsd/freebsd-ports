@@ -81,7 +81,7 @@
 +.c.so:
 +	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
 +
-+all: libgd.a libgd.so.0 $(PROGRAMS)
++all: libgd.a libgd.so.1 $(PROGRAMS)
  
  install: libgd.a $(BIN_PROGRAMS)
 -	sh ./install-item 644 libgd.a $(INSTALL_LIB)/libgd.a
@@ -103,8 +103,8 @@
 -	sh ./install-item 644 gdfontt.h $(INSTALL_INCLUDE)/gdfontt.h
 +	$(INSTALL) -c -m 644 libgd.a $(INSTALL_LIB)/libgd.a
 +	$(INSTALL) -c -m 755 pngtogd $(INSTALL_BIN)/pngtogd
-+	$(INSTALL) -c -m 755 libgd.so.0 $(INSTALL_LIB)/libgd.so.0
-+	ln -sf libgd.so.0 $(INSTALL_LIB)/libgd.so
++	$(INSTALL) -c -m 755 libgd.so.1 $(INSTALL_LIB)/libgd.so.1
++	ln -sf libgd.so.1 $(INSTALL_LIB)/libgd.so
 +	$(INSTALL) -c -m 755 pngtogd2 $(INSTALL_BIN)/pngtogd2
 +	$(INSTALL) -c -m 755 gdtopng $(INSTALL_BIN)/gdtopng
 +	$(INSTALL) -c -m 755 gd2topng $(INSTALL_BIN)/gd2topng
@@ -140,7 +140,7 @@
 +	$(AR) rc libgd.a $(OBJS)
  	-ranlib libgd.a
 +
-+libgd.so.0:   $(INCS) $(OBJS:S/o$/so/g)
-+	$(CC) -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,$@ -o $@ $(OBJS:S/o$/so/g) $(LIBDIRS) $(LIBS)
-+	ln -sf libgd.so.0 libgd.so
++libgd.so.1:   $(INCS) $(OBJS:.o=.so)
++	$(CC) -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,$@ -o $@ $(OBJS:.o=.so) $(LIBDIRS) $(LIBS)
++	ln -sf libgd.so.1 libgd.so
  
