@@ -1,6 +1,5 @@
 bin/itclsh3.0
-@exec /bin/ln -s %D/%F %B/itclsh
-@unexec rm %B/itclsh
+bin/itclsh
 include/itcl3.0/generic/itcl.h
 include/itcl3.0/generic/itclInt.h
 include/itcl3.0/itcl.h
