@@ -31,7 +31,7 @@ XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 CATALOG_PORTS_XML=	${PREFIX}/share/xml/catalog.ports
 
-pre-install:
+pre-su-install:
 	@[ -d ${DOCBOOKDIR}/ent ] || ${MKDIR} ${DOCBOOKDIR}/ent
 
 do-install:
