@@ -266,6 +266,7 @@
     SUBDIR += netris
     SUBDIR += netspades
     SUBDIR += nettoe
+    SUBDIR += neverball
     SUBDIR += newvox
     SUBDIR += nibbles
     SUBDIR += nighthawk

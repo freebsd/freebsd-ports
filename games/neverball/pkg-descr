@@ -1,0 +1,11 @@
+Tilt the floor to roll a ball through an obstacle course within the given time.
+If the ball falls or time expires, a ball is lost. Collect 100 coins to save
+your progress and earn an extra ball. Red coins are worth 5. Blue coins are
+worth 10.
+
+Neverball runs under Linux, Win2K/XP, and hopefully anywhere else SDL is
+supported. Hardware accellerated OpenGL support with multitexture (OpenGL 1.2.1
+or greater) is required. Neverball has been tested on Intel machines as slow as
+1GHz with GeForce2. Minimum system requirements may be lower.
+
+WWW: http://icculus.org/neverball/
