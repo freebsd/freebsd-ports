@@ -21,12 +21,52 @@ libdata/pkgconfig/rhythmbox.pc
 share/gnome/application-registry/rhythmbox.applications
 share/gnome/applications/rhythmbox.desktop
 share/gnome/gnome-2.0/ui/rhythmbox-ui.xml
+share/gnome/help/rhythmbox/C/authors.xml
+share/gnome/help/rhythmbox/C/fdl-appendix.xml
+share/gnome/help/rhythmbox/C/figures/rb-adv.png
+share/gnome/help/rhythmbox/C/figures/rb-asst-finish.png
+share/gnome/help/rhythmbox/C/figures/rb-asst-library.png
+share/gnome/help/rhythmbox/C/figures/rb-asst-start.png
+share/gnome/help/rhythmbox/C/figures/rb-basic.png
+share/gnome/help/rhythmbox/C/figures/rb-browser.png
+share/gnome/help/rhythmbox/C/figures/rb-context-menu.png
+share/gnome/help/rhythmbox/C/figures/rb-empty.png
+share/gnome/help/rhythmbox/C/figures/rb-full-play.png
+share/gnome/help/rhythmbox/C/figures/rb-group-create.png
+share/gnome/help/rhythmbox/C/figures/rb-group.png
+share/gnome/help/rhythmbox/C/figures/rb-imported.png
+share/gnome/help/rhythmbox/C/figures/rb-iradio-add.png
+share/gnome/help/rhythmbox/C/figures/rb-iradio.png
+share/gnome/help/rhythmbox/C/figures/rb-nextprev.png
+share/gnome/help/rhythmbox/C/figures/rb-nobrowse-play.png
+share/gnome/help/rhythmbox/C/figures/rb-notification-area-menu.png
+share/gnome/help/rhythmbox/C/figures/rb-notification-area.png
+share/gnome/help/rhythmbox/C/figures/rb-player.png
+share/gnome/help/rhythmbox/C/figures/rb-prefs.png
+share/gnome/help/rhythmbox/C/figures/rb-repeat.png
+share/gnome/help/rhythmbox/C/figures/rb-search.png
+share/gnome/help/rhythmbox/C/figures/rb-shuffle.png
+share/gnome/help/rhythmbox/C/figures/rb-sidebar.png
+share/gnome/help/rhythmbox/C/figures/rb-stats.png
+share/gnome/help/rhythmbox/C/figures/rb-toolbar-editor.png
+share/gnome/help/rhythmbox/C/figures/rb-toolbar.png
+share/gnome/help/rhythmbox/C/figures/rb-volume-changer.png
+share/gnome/help/rhythmbox/C/figures/rb-volume-mute.png
+share/gnome/help/rhythmbox/C/figures/rb-window.png
+share/gnome/help/rhythmbox/C/figures/rhythmbox-group.png
+share/gnome/help/rhythmbox/C/figures/rhythmbox-tray-icon.png
+share/gnome/help/rhythmbox/C/legal.xml
+share/gnome/help/rhythmbox/C/quick-reference.xml
+share/gnome/help/rhythmbox/C/rhythmbox.xml
+share/gnome/help/rhythmbox/C/user-guide.xml
+share/gnome/idl/Rhythmbox.idl
+share/gnome/omf/rhythmbox/rhythmbox-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/rhythmbox/rhythmbox-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/rhythmbox.png
 share/gnome/rhythmbox/art/about-logo.png
 share/gnome/rhythmbox/art/rhythmbox-album.png
 share/gnome/rhythmbox/art/rhythmbox-audiocd.png
 share/gnome/rhythmbox/art/rhythmbox-dnd.png
-share/gnome/rhythmbox/art/rhythmbox-group.png
 share/gnome/rhythmbox/art/rhythmbox-iradio.png
 share/gnome/rhythmbox/art/rhythmbox-library.png
 share/gnome/rhythmbox/art/rhythmbox-next.png
@@ -68,7 +108,6 @@ share/gnome/rhythmbox/node-views/rb-node-view-genres.xml
 share/gnome/rhythmbox/node-views/rb-node-view-iradio-genres.xml
 share/gnome/rhythmbox/node-views/rb-node-view-iradio-stations.xml
 share/gnome/rhythmbox/node-views/rb-node-view-songs.xml
-share/idl/Rhythmbox.idl
 share/locale/am/LC_MESSAGES/rhythmbox.mo
 share/locale/be/LC_MESSAGES/rhythmbox.mo
 share/locale/cs/LC_MESSAGES/rhythmbox.mo
@@ -95,11 +134,14 @@ share/locale/sv/LC_MESSAGES/rhythmbox.mo
 share/locale/tr/LC_MESSAGES/rhythmbox.mo
 share/locale/vi/LC_MESSAGES/rhythmbox.mo
 share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
-@dirrm share/idl
 @dirrm share/gnome/rhythmbox/node-views
 @dirrm share/gnome/rhythmbox/glade
 @dirrm share/gnome/rhythmbox/art
 @dirrm share/gnome/rhythmbox
+@dirrm share/gnome/omf/rhythmbox
+@dirrm share/gnome/help/rhythmbox/C/figures
+@dirrm share/gnome/help/rhythmbox/C
+@dirrm share/gnome/help/rhythmbox
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/ui/library
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/ui
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/state/load_failure_dialog
@@ -114,3 +156,4 @@ share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/rhythmbox/state/iradio
 @dirrm etc/gconf/gconf.xml.defaults/apps/rhythmbox/state
 @dirrm etc/gconf/gconf.xml.defaults/apps/rhythmbox
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/rhythmbox/rhythmbox-C.omf 2>/dev/null || /usr/bin/true

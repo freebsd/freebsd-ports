@@ -1,0 +1,11 @@
+--- corba/Makefile.in.orig	Wed Aug 27 04:19:40 2003
++++ corba/Makefile.in	Wed Aug 27 04:19:56 2003
+@@ -237,7 +237,7 @@
+ 
+ noinst_HEADERS = Rhythmbox.h
+ 
+-idldir = $(prefix)/share/idl
++idldir = $(datadir)/idl
+ idl_DATA = Rhythmbox.idl
+ 
+ CLEAN_FILES = $(rhythmbox_interface_idl_sources)
