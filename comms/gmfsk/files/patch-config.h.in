@@ -1,0 +1,11 @@
+--- ./config.h.in.orig	Thu May 29 21:48:43 2003
++++ ./config.h.in	Thu May 29 21:48:51 2003
+@@ -20,7 +20,7 @@
+ #undef HAVE_DFFTW_H
+ 
+ /* Define to 1 if you have the <fftw.h> header file. */
+-#undef HAVE_FFTW_H
++#define HAVE_FFTW_H
+ 
+ /* Define if the GNU gettext() function is already present or preinstalled. */
+ #undef HAVE_GETTEXT

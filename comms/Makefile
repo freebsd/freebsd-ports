@@ -16,6 +16,7 @@
     SUBDIR += gfax
     SUBDIR += ghfaxviewer
     SUBDIR += gkermit
+    SUBDIR += gmfsk
     SUBDIR += gnokii
     SUBDIR += gsmlib
     SUBDIR += hamlib
