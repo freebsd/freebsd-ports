@@ -1,14 +1,5 @@
 --- configure.orig	Mon Dec 29 16:07:44 2003
 +++ configure	Mon Dec 29 16:07:56 2003
-@@ -23698,7 +23698,7 @@
- fi;
- 
-     if test "$places" = "search"; then
--      places="std /usr/local/include/db4:/usr/local/lib /usr/local
-+      places="std /usr/local/include/db41:/usr/local/lib /usr/local
-               /usr/local/BerkeleyDB.4.1 /usr/include/db4:/usr/lib
-               /sw/include/db4:/sw/lib"
-     fi
 @@ -23734,7 +23734,7 @@
          ;;
        esac
