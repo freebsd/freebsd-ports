@@ -1,5 +1,8 @@
---- /dev/null	Thu Feb 10 20:03:15 2000
-+++ src/freebsd-sysctl.c	Thu Feb 10 20:03:40 2000
+
+$FreeBSD$
+
+--- src/freebsd-sysctl.c.orig	Thu Aug 29 21:20:05 2002
++++ src/freebsd-sysctl.c	Thu Aug 29 21:24:03 2002
 @@ -0,0 +1,98 @@
 +#include <sys/param.h>
 +#include <sys/types.h>
@@ -20,7 +23,7 @@
 +	     int lport, int *uid) {
 +	struct sockaddr_in sin[2];
 +	struct sockaddr_in6 sin6[2];
-+	struct ucred uc;
++	struct xucred uc;
 +	size_t oldlen = sizeof(uc);
 +	struct sockaddr *sa;
 +	int salen;
@@ -83,7 +86,7 @@
 +int k_getuid(struct in_addr *faddr, int fport, struct in_addr *laddr,
 +	     int lport, int *uid) {
 +	struct sockaddr_in sin[2];
-+	struct ucred uc;
++	struct xucred uc;
 +	size_t oldlen = sizeof(uc);
 +
 +	sin[0].sin_addr.s_addr = laddr->s_addr;

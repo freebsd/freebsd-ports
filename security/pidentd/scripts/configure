@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-#
-
-for i in src/paths.h identd.man idecrypt.man ; do
-	mv ${WRKSRC}/$i ${WRKSRC}/$i.bak
-	sed <${WRKSRC}/$i.bak >${WRKSRC}/$i s+!!PREFIX!!+$PREFIX+g
-done
