@@ -191,6 +191,7 @@
     SUBDIR += p5-Unix-Syslog
     SUBDIR += p5-User
     SUBDIR += paicc
+    SUBDIR += pciutils
     SUBDIR += pdumpfs
     SUBDIR += pear-File
     SUBDIR += pear-Log

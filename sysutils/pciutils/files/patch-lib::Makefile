@@ -1,0 +1,12 @@
+--- lib/Makefile.orig	Thu Dec 26 22:28:33 2002
++++ lib/Makefile	Thu Jun 12 02:46:13 2003
+@@ -28,6 +28,9 @@
+ ifdef HAVE_PM_FBSD_DEVICE
+ OBJS += fbsd-device.o
+ CFLAGS += -I/usr/src/sys
++ifdef FREEBSD_SYS
++CFLAGS += -I${FREEBSD_SYS}
++endif
+ endif
+ 
+ ifdef HAVE_PM_AIX_DEVICE
