@@ -1,17 +1,17 @@
 bin/xkoules
-%%PORTDOCS%%share/doc/xkoules/ANNOUNCE
-%%PORTDOCS%%share/doc/xkoules/BUGS
-%%PORTDOCS%%share/doc/xkoules/Card
-%%PORTDOCS%%share/doc/xkoules/ChangeLog
-%%PORTDOCS%%share/doc/xkoules/Koules.FAQ
-%%PORTDOCS%%share/doc/xkoules/TODO
-%%SNDSRV:%%libexec/koules.sndsrv.freebsd
-%%SNDSRV:%%share/xkoules/colize.raw
-%%SNDSRV:%%share/xkoules/creator1.raw
-%%SNDSRV:%%share/xkoules/creator2.raw
-%%SNDSRV:%%share/xkoules/destroy1.raw
-%%SNDSRV:%%share/xkoules/destroy2.raw
-%%SNDSRV:%%share/xkoules/end.raw
-%%SNDSRV:%%share/xkoules/start.raw
-%%SNDSRV:%%@dirrm share/xkoules
-%%PORTDOCS%%@dirrm share/doc/xkoules
+%%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/Card
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/Koules.FAQ
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+libexec/koules.sndsrv.freebsd
+%%DATADIR%%/colize.raw
+%%DATADIR%%/creator1.raw
+%%DATADIR%%/creator2.raw
+%%DATADIR%%/destroy1.raw
+%%DATADIR%%/destroy2.raw
+%%DATADIR%%/end.raw
+%%DATADIR%%/start.raw
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
