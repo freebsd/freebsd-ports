@@ -90,5 +90,7 @@ PLIST_SUB+=	X11=''
 pre-patch:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$$\(top_builddir\)/ltdl/libltdlc.la|\$$\(LIBLTDL\)|g'
+	${PERL} -pi -e 's|lcms/lcms.h|lcms.h|g' \
+		${WRKSRC}/configure.in ${WRKSRC}/magick/transform.c
 
 .include <bsd.port.mk>
