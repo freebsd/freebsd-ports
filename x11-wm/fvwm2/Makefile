@@ -4,11 +4,11 @@
 # Whom:			Makoto Matsushita <matusita@jp.freebsd.org>,
 #			based on Hidekazu Kuroki's work of 2.0.43.
 #
-# $Id$
+# $Id: Makefile,v 1.5 1997/03/03 11:31:40 asami Exp $
 #
 
 DISTNAME=	fvwm-2.0.45
-CATEGORIES=	japanese x11
+CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/sources/2.0.x/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/fvwm-users-jp/kits/ \
 		ftp://ftp.TokyoNet.AD.JP/pub/X/fvwm/sources/2.0.x/ \
