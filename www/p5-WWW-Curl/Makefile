@@ -17,7 +17,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Perl binding interface for curl
 
-LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl:install
+LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl:install
 
 PERL_CONFIGURE=	yes
 
