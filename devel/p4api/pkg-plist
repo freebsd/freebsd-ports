@@ -12,6 +12,7 @@ include/perforce/errornum.h
 include/perforce/filesys.h
 include/perforce/handler.h
 include/perforce/hostenv.h
+include/perforce/i18napi.h
 include/perforce/ident.h
 include/perforce/keepalive.h
 include/perforce/msgclient.h
