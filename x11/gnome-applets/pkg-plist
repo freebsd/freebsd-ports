@@ -720,6 +720,8 @@ share/gnome/help/modemlights/C/legal.xml
 share/gnome/help/modemlights/C/modemlights.xml
 share/gnome/help/stickynotes_applet/C/legal.xml
 share/gnome/help/stickynotes_applet/C/stickynotes_applet.xml
+share/gnome/help/wireless/C/legal.xml
+share/gnome/help/wireless/C/wireless.xml
 share/gnome/omf/gnome-applets/accessx-status-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/accessx-status-C.omf 2>/dev/null || /usr/bin/true
 %%BATTERY%%share/gnome/omf/gnome-applets/battstat-C.omf
@@ -910,6 +912,8 @@ share/gnome/omf/gnome-applets/modemlights-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/modemlights-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/stickynotes_applet-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/wireless-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/wireless-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/accessx-status-applet/ax-applet.png
 share/gnome/pixmaps/accessx-status-applet/ax-bouncekeys.png
 share/gnome/pixmaps/accessx-status-applet/ax-key-base.png
@@ -1539,3 +1543,4 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/modemlights-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/wireless-C.omf 2>/dev/null || /usr/bin/true
