@@ -1,0 +1,60 @@
+--- doc/gst.texi.orig	Fri Jun 21 22:32:31 2002
++++ doc/gst.texi	Thu Jun 27 04:11:24 2002
+@@ -77,7 +77,6 @@
+      * GNU Smalltalk: (gst).                 The GNU Smalltalk environment.
+ @end direntry
+ 
+-@copying
+ This file documents GNU Smalltalk Version @value{VERSION}.
+ It was last updated on @value{UPDATED}.
+ 
+@@ -93,7 +92,6 @@
+ 
+ There are no Cover Texts and no Invariant Sections; this text, along
+ with its equivalent in the printed manual, constitutes the Title Page.
+-@end copying
+ 
+ @titlepage
+ @title @sc{gnu} Smalltalk User's Guide
+@@ -105,7 +103,19 @@
+ @comment  The following two commands start the copyright page.
+ @page
+ @vskip 0pt plus 1filll
+-@insertcopying
++Copyright @copyright{} 1988-92, 1994-95, 1999-2001 Free Software Foundation, Inc.
++
++This document is released under the terms of the @sc{gnu} Free Documentation
++License as published by the Free Software Foundation; either version 1.1, or
++(at your option) any later version.
++
++You should have received a copy of the @sc{gnu} Free Documentation License
++along with @sc{gnu} Smalltalk; see the file @file{COPYING.DOC}.  If not,
++write to the Free Software Foundation, 59 Temple Place - Suite 330, Boston,
++MA 02111-1307, USA.  
++
++There are no Cover Texts and no Invariant Sections; this text, along with
++its equivalent in the Info documentation, constitutes the Title Page.
+ @end titlepage
+ 
+ @node Top, , , (DIR)
+@@ -115,7 +125,19 @@
+ This document describes installing and operating the @gst{}
+ programming language.
+ 
+-@insertcopying
++Copyright @copyright{} 1988-92, 1994-95, 1999-2001 Free Software Foundation, Inc.
++
++This document is released under the terms of the @sc{gnu} Free Documentation
++License as published by the Free Software Foundation; either version 1.1, or
++(at your option) any later version.
++
++You should have received a copy of the @sc{gnu} Free Documentation License
++along with @sc{gnu} Smalltalk; see the file @file{COPYING.DOC}.  If not,
++write to the Free Software Foundation, 59 Temple Place - Suite 330, Boston,
++MA 02111-1307, USA.  
++
++There are no Cover Texts and no Invariant Sections; this text, along with
++its equivalent in the Info documentation, constitutes the Title Page.
+ 
+ @end ifnottex
+ 

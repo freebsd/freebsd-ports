@@ -3,6 +3,12 @@ bin/gst-config
 bin/gst-package
 include/gst.h
 include/gstpub.h
+@unexec install-info --delete %D/info/gst-base.info %D/info/dir
+info/gst-base.info
+@exec install-info %D/info/gst-base.info %D/info/dir
+@unexec install-info --delete %D/info/gst-libs.info %D/info/dir
+info/gst-libs.info
+@exec install-info %D/info/gst-libs.info %D/info/dir
 @unexec install-info --delete %D/info/gst.info %D/info/dir
 info/gst.info
 @exec install-info %D/info/gst.info %D/info/dir
@@ -10,17 +16,23 @@ lib/libgst.a
 lib/libgst.la
 %%TCLTK%%lib/smalltalk/blox-tk.la
 %%TCLTK%%lib/smalltalk/blox-tk.so
+lib/smalltalk/gdbm.la
+lib/smalltalk/gdbm.so
+lib/smalltalk/i18n.la
+lib/smalltalk/i18n.so
 lib/smalltalk/md5.la
 lib/smalltalk/md5.so
 lib/smalltalk/regex.la
 lib/smalltalk/regex.so
 lib/smalltalk/tcp.la
 lib/smalltalk/tcp.so
+share/aclocal/gst.m4
 share/smalltalk/Load.st
 share/smalltalk/Reload.st
 share/smalltalk/blox/BrowShell.st
 share/smalltalk/blox/BrowserMain.st
 share/smalltalk/blox/ClassBrow.st
+share/smalltalk/blox/ClassHierBrow.st
 share/smalltalk/blox/Colors.txt
 share/smalltalk/blox/CtxtInspect.st
 share/smalltalk/blox/DictInspect.st
@@ -32,6 +44,7 @@ share/smalltalk/blox/Menu.st
 share/smalltalk/blox/MethInspect.st
 share/smalltalk/blox/MethSetBrow.st
 share/smalltalk/blox/ModalDialog.st
+share/smalltalk/blox/NamespBrow.st
 share/smalltalk/blox/Notifier.st
 share/smalltalk/blox/PCode.st
 share/smalltalk/blox/PList.st
@@ -52,6 +65,8 @@ share/smalltalk/compiler/Load.st
 share/smalltalk/compiler/STCompLit.st
 share/smalltalk/compiler/STCompiler.st
 share/smalltalk/compiler/STFormatter.st
+share/smalltalk/compiler/STLoader.st
+share/smalltalk/compiler/STLoaderObjs.st
 share/smalltalk/compiler/STParseNodes.st
 share/smalltalk/compiler/STParser.st
 share/smalltalk/compiler/STSymTable.st
@@ -64,7 +79,6 @@ share/smalltalk/examples/Application.st
 share/smalltalk/examples/Bench.st
 share/smalltalk/examples/Buffers.st
 share/smalltalk/examples/Case.st
-share/smalltalk/examples/CompFileSeg.st
 share/smalltalk/examples/Debugger.st
 share/smalltalk/examples/Dinner.st
 share/smalltalk/examples/EditStream.st
@@ -82,6 +96,7 @@ share/smalltalk/examples/RecursLit.st
 share/smalltalk/examples/RegExp.st
 share/smalltalk/examples/Richards.st
 share/smalltalk/examples/SortCriter.st
+share/smalltalk/examples/StreamFilter.st
 share/smalltalk/examples/Tokenizer.st
 share/smalltalk/examples/blox/Man.st
 share/smalltalk/examples/blox/Tetris.st
@@ -196,9 +211,39 @@ share/smalltalk/kernel/TokenStream.st
 share/smalltalk/kernel/Transcript.st
 share/smalltalk/kernel/True.st
 share/smalltalk/kernel/UndefObject.st
+share/smalltalk/kernel/VFS.st
 share/smalltalk/kernel/ValueAdapt.st
 share/smalltalk/kernel/WeakObjects.st
 share/smalltalk/kernel/WriteStream.st
+share/smalltalk/net/Base.st
+share/smalltalk/net/ContentHandler.st
+share/smalltalk/net/FTP.st
+share/smalltalk/net/HTTP.st
+share/smalltalk/net/IMAP.st
+share/smalltalk/net/Load.st
+share/smalltalk/net/MIME.st
+share/smalltalk/net/NNTP.st
+share/smalltalk/net/NetServer.st
+share/smalltalk/net/POP.st
+share/smalltalk/net/SMTP.st
+share/smalltalk/net/URIResolver.st
+share/smalltalk/net/URL.st
+share/smalltalk/net/httpd/FileServer.st
+share/smalltalk/net/httpd/Haiku.st
+share/smalltalk/net/httpd/Load.st
+share/smalltalk/net/httpd/WebServer.st
+share/smalltalk/net/httpd/WikiServer.st
+share/smalltalk/net/httpd/edit.jpg
+share/smalltalk/net/httpd/find.jpg
+share/smalltalk/net/httpd/head.jpg
+share/smalltalk/net/httpd/help.jpg
+share/smalltalk/net/httpd/history.jpg
+share/smalltalk/net/httpd/next.jpg
+share/smalltalk/net/httpd/prev.jpg
+share/smalltalk/net/httpd/recent.jpg
+share/smalltalk/net/httpd/rename.jpg
+share/smalltalk/net/httpd/test.st
+share/smalltalk/net/httpd/top.jpg
 share/smalltalk/packages
 share/smalltalk/sunit/SUnit.st
 share/smalltalk/sunit/SUnitPreload.st
@@ -215,30 +260,25 @@ share/smalltalk/tcp/Tests.st
 share/smalltalk/tcp/URL.st
 share/smalltalk/tcp/cfuncs.st
 share/smalltalk/tcp/init.st
-share/smalltalk/web/FileServer.st
-share/smalltalk/web/Haiku.st
-share/smalltalk/web/Load.st
-share/smalltalk/web/NetServer.st
-share/smalltalk/web/WebServer.st
-share/smalltalk/web/WikiServer.st
-share/smalltalk/web/edit.jpg
-share/smalltalk/web/find.jpg
-share/smalltalk/web/head.jpg
-share/smalltalk/web/help.jpg
-share/smalltalk/web/history.jpg
-share/smalltalk/web/next.jpg
-share/smalltalk/web/prev.jpg
-share/smalltalk/web/recent.jpg
-share/smalltalk/web/rename.jpg
-share/smalltalk/web/test.st
-share/smalltalk/web/top.jpg
-share/smalltalk/xml/Id-DOM.st
-share/smalltalk/xml/Id-XWalker.st
+share/smalltalk/vfs/deb
+share/smalltalk/vfs/lslR
+share/smalltalk/vfs/mailfs
+share/smalltalk/vfs/patchfs
+share/smalltalk/vfs/uar
+share/smalltalk/vfs/ucpio
+share/smalltalk/vfs/uha
+share/smalltalk/vfs/ulha
+share/smalltalk/vfs/urar
+share/smalltalk/vfs/utar
+share/smalltalk/vfs/uzip
+share/smalltalk/vfs/uzoo
 share/smalltalk/xml/XML.st
 @dirrm share/smalltalk/xml
-@dirrm share/smalltalk/web
+@dirrm share/smalltalk/vfs
 @dirrm share/smalltalk/tcp
 @dirrm share/smalltalk/sunit
+@dirrm share/smalltalk/net/httpd
+@dirrm share/smalltalk/net
 @dirrm share/smalltalk/kernel
 @dirrm share/smalltalk/i18n
 @dirrm share/smalltalk/examples/modules

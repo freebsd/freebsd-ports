@@ -6,19 +6,24 @@
 #
 
 PORTNAME=	smalltalk
-PORTVERSION=	1.95.13.a
+PORTVERSION=	2.0.1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/a/}
 
 MAINTAINER=	ports@FreeBSD.org
+
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
+		gdbm.2:${PORTSDIR}/databases/gdbm
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	MAKEINFO='makeinfo --no-split'
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		MAKEINFO='makeinfo --no-split'
+CONFIGURE_ARGS=	--without-gmp
 
 MAN1=		gst.1
 
@@ -34,10 +39,13 @@ PLIST_SUB+=		TCLTK="@comment "
 
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/gst.info*
+	@${RM} -f ${WRKSRC}/doc/gst-base.info*
+	@${RM} -f ${WRKSRC}/doc/gst-libs.info*
 
 pre-patch:
 	@${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e \
-		's| -release \$$(VERSION)| -avoid-version|g'
-	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/libltdl/ltdl.c
+		's|-release [\$$][(]VERSION[)]|-avoid-version|g'
+	@${REINPLACE_CMD} -e \
+		's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/examples/modules/gdbm.c
 
 .include <bsd.port.mk>
