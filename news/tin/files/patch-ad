@@ -1,0 +1,11 @@
+--- include/tin.h.bak	Sat Nov 17 07:00:13 2001
++++ include/tin.h	Tue Dec 25 01:37:32 2001
+@@ -747,7 +747,7 @@
+ #if defined(HAVE_ICONV) && !defined(LOCAL_CHARSET)
+ #	define CHARSET_CONVERSION 1
+ #	ifdef HAVE_ICONV_H
+-#		include <iconv.h>
++#               include <giconv.h>
+ #	endif /* HAVE_ICONV_H */
+ #endif /* HAVE_ICONV && !LOCAL_CHARSET */
+ 

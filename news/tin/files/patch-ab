@@ -1,18 +1,143 @@
---- configure.orig	Tue Nov 23 02:13:12 1999
-+++ configure	Thu Dec  2 15:17:16 1999
-@@ -3579,6 +3579,7 @@
+--- configure.orig	Sat Nov 17 21:47:38 2001
++++ configure	Tue Dec 25 02:39:17 2001
+@@ -4637,7 +4637,7 @@
+ 
  
  case $host_os in #(vi
- freebsd*)
-+if test "${with_ncurses+set}" = set; then
+-freebsd*)
++XXXfreebsd*)
  	# This is only necessary if you are linking against an obsolete
  	# version of ncurses (but it should do no harm, since it's static).
  	echo $ac_n "checking for tgoto in -lmytinfo""... $ac_c" 1>&6
-@@ -3621,6 +3622,7 @@
-   echo "$ac_t""no" 1>&6
+@@ -5269,7 +5269,7 @@
+ 
+ 
+ case $host_os in #(vi
+-freebsd*)
++XXXfreebsd*)
+ 	# This is only necessary if you are linking against an obsolete
+ 	# version of ncurses (but it should do no harm, since it's static).
+ 	echo $ac_n "checking for tgoto in -lmytinfo""... $ac_c" 1>&6
+@@ -5787,7 +5787,7 @@
+ 
+ if test "$cf_result" = no ; then
+ case $host_os in #(vi
+-freebsd*) #(vi
++XXXfreebsd*) #(vi
+ 	echo $ac_n "checking for tgoto in -lmytinfo""... $ac_c" 1>&6
+ echo "configure:5793: checking for tgoto in -lmytinfo" >&5
+ ac_lib_var=`echo mytinfo'_'tgoto | sed 'y%./+-%__p_%'`
+@@ -6233,104 +6233,7 @@
  fi
  
-+fi
- 	;;
- esac
+ ## iconv
+-echo $ac_n "checking for iconv in -liconv""... $ac_c" 1>&6
+-echo "configure:6238: checking for iconv in -liconv" >&5
+-ac_lib_var=`echo iconv'_'iconv | sed 'y%./+-%__p_%'`
+-if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  ac_save_LIBS="$LIBS"
+-LIBS="-liconv  $LIBS"
+-cat > conftest.$ac_ext <<EOF
+-#line 6246 "configure"
+-#include "confdefs.h"
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char iconv();
+-
+-int main() {
+-iconv()
+-; return 0; }
+-EOF
+-if { (eval echo configure:6257: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=no"
+-fi
+-rm -f conftest*
+-LIBS="$ac_save_LIBS"
+-
+-fi
+-if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-  
+-	cat >> confdefs.h <<\EOF
+-#define HAVE_ICONV 1
+-EOF
+-
+-	LIBS="$LIBS -liconv"
+-else
+-  echo "$ac_t""no" 1>&6
+-
+-	echo $ac_n "checking for iconv""... $ac_c" 1>&6
+-echo "configure:6282: checking for iconv" >&5
+-if eval "test \"`echo '$''{'ac_cv_func_iconv'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  cat > conftest.$ac_ext <<EOF
+-#line 6287 "configure"
+-#include "confdefs.h"
+-/* System header to define __stub macros and hopefully few prototypes,
+-    which can conflict with char iconv(); below.  */
+-#include <assert.h>
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char iconv();
+-
+-int main() {
+-
+-/* The GNU C library defines this for functions which it implements
+-    to always fail with ENOSYS.  Some functions are actually named
+-    something starting with __ and the normal name is an alias.  */
+-#if defined (__stub_iconv) || defined (__stub___iconv)
+-choke me
+-#else
+-iconv();
+-#endif
+-
+-; return 0; }
+-EOF
+-if { (eval echo configure:6310: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+-  rm -rf conftest*
+-  eval "ac_cv_func_iconv=yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_func_iconv=no"
+-fi
+-rm -f conftest*
+-fi
+-
+-if eval "test \"`echo '$ac_cv_func_'iconv`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-  cat >> confdefs.h <<\EOF
+-#define HAVE_ICONV 1
+-EOF
+-
+-else
+-  echo "$ac_t""no" 1>&6
+-fi
+-
+-	
+-fi
+-
++LIBS="-lgiconv  $LIBS"
  
+ ## debugging libraries (do this after other libraries)
+ echo $ac_n "checking if you want dbmalloc library""... $ac_c" 1>&6
+@@ -8632,7 +8535,6 @@
+ 	errno.h \
+ 	fcntl.h \
+ 	getopt.h \
+-	iconv.h \
+ 	ioctl.h \
+ 	libc.h \
+ 	locale.h \

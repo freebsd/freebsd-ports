@@ -8,4 +8,6 @@ etc/tin.defaults.dist
 etc/tin.mime.types.dist
 @exec [ -f %B/mime.types ] || cp %B/%f %B/mime.types
 share/locale/de/LC_MESSAGES/tin.mo
+share/locale/en_GB/LC_MESSAGES/tin.mo
 share/locale/et/LC_MESSAGES/tin.mo
+

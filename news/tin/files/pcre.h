@@ -2,7 +2,7 @@
 *       Perl-Compatible Regular Expressions      *
 *************************************************/
 
-/* Copyright (c) 1997-2000 University of Cambridge */
+/* Copyright (c) 1997-2001 University of Cambridge */
 
 #ifndef _PCRE_H
 #define _PCRE_H
@@ -10,9 +10,9 @@
 /* The file pcre.h is build by "configure". Do not edit it; instead
 make changes to pcre.in. */
 
-#define PCRE_MAJOR 3
-#define PCRE_MINOR 4
-#define PCRE_DATE  22-Aug-2000
+#define PCRE_MAJOR          3
+#define PCRE_MINOR          4
+#define PCRE_DATE           22-Aug-2000
 
 /* Win32 uses DLL by default */
 
@@ -74,8 +74,11 @@ extern "C" {
 
 /* Types */
 
-typedef void pcre;
-typedef void pcre_extra;
+struct real_pcre;        /* declaration; the definition is private  */
+struct real_pcre_extra;  /* declaration; the definition is private */
+
+typedef struct real_pcre pcre;
+typedef struct real_pcre_extra pcre_extra;
 
 /* Store get and free functions. These can be set to alternative malloc/free
 functions if required. Some magic is required for Win32 DLL; it is null on
@@ -99,7 +102,7 @@ extern int  pcre_get_substring(const char *, int *, int, int, const char **);
 extern int  pcre_get_substring_list(const char *, int *, int, const char ***);
 extern int  pcre_info(const pcre *, int *, int *);
 extern int  pcre_fullinfo(const pcre *, const pcre_extra *, int, void *);
-extern unsigned const char *pcre_maketables(void);
+extern const unsigned char *pcre_maketables(void);
 extern pcre_extra *pcre_study(const pcre *, int, const char **);
 extern const char *pcre_version(void);
 

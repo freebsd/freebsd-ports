@@ -1,0 +1,12 @@
+--- include/proto.h.bak	Fri Nov 16 23:17:45 2001
++++ include/proto.h	Mon Dec 24 23:10:00 2001
+@@ -646,7 +646,9 @@
+ extern char *eat_tab (char *s);
+ extern char *my_strdup (const char *str);
+ extern char *str_trim (char *string);
++#ifndef HAVE_STRCASESTR
+ extern const char *strcasestr (const char *haystack, const char *needle);
++#endif
+ extern char *tin_ltoa (long value, int digits);
+ extern int sh_format (char *dst, size_t len, const char *fmt, ...);
+ extern size_t mystrcat (char **t, const char *s);
