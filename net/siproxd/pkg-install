@@ -1,0 +1,17 @@
+#!/bin/sh
+
+SIPROXD_HOME=${PKG_PREFIX}/siproxd
+SIPROXD_USER=nobody
+SIPROXD_GROUP=nobody
+
+case $2 in
+    POST-INSTALL)
+    mkdir ${SIPROXD_HOME} && \
+	chown ${SIPROXD_USER}:${SIPROXD_GROUP} ${SIPROXD_HOME} && \
+	chmod 750 ${SIPROXD_HOME}
+    for i in siproxd.conf.example siproxd_passwd.cfg; do
+	chgrp ${SIPROXD_GROUP} ${PKG_PREFIX}/etc/${i}
+	chmod 640 ${PKG_PREFIX}/etc/${i}
+    done
+    ;;
+esac
