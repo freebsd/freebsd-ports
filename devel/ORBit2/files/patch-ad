@@ -2,7 +2,7 @@
 $FreeBSD$
 
 --- orbit-config.in.orig	Wed Sep 19 20:09:00 2001
-+++ orbit-config.in	Wed Oct  3 14:51:10 2001
++++ orbit-config.in	Tue Jan 22 14:27:19 2002
 @@ -28,8 +28,8 @@
  
  Known values for TARGET are:
@@ -14,7 +14,7 @@ $FreeBSD$
  EOF
  
      exit $1
-@@ -87,8 +87,8 @@
+@@ -87,10 +87,10 @@
         	;;
  
      client|server)
@@ -23,5 +23,8 @@ $FreeBSD$
 +	the_libs="$the_libs -L$libdir -lORBit -lIIOP -lORBitutil `@GLIB_CONFIG@ --libs` @LIBS@ @LIB_WRAP@ -lm"
 +        the_flags="$the_flags `@GLIB_CONFIG@ --cflags` "
          test "x$includedir" = "x/usr/include" \
-           || the_flags="$the_flags -I$includedir "
+-          || the_flags="$the_flags -I$includedir "
++          || the_flags="$the_flags -I$includedir -I@includedir@"
  	;;
+ 
+    --use-service=*)
