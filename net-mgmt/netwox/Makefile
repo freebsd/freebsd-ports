@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netwox
-PORTVERSION=	5.20.0
+PORTVERSION=	5.21.0
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwox/download/v5/ \
 		http://membres.lycos.fr/lauconstantin/common/netw/netwox/download/v5/ \
@@ -16,11 +16,14 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tgz ${PORTNAME}-${PORTVERSION}-doc_htm
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Netwox a network testing toolbox
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/netwib-config:${PORTSDIR}/net/netwib
+BUILD_DEPENDS=	${LOCALBASE}/bin/netwib${SHORTPORTVERSION}-config:${PORTSDIR}/net/netwib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
 USE_REINPLACE=	yes
-MAN1=		netwox.1 netwox520.1
+SHORTPORTVERSION=${PORTVERSION:C/([0-9]*)\.([0-9]*)\.[0-9]*/\1\2/}
+MAN1=		netwox.1 netwox${SHORTPORTVERSION}.1
+
+PLIST_SUB+=	SHORTPORTVERSION=${SHORTPORTVERSION}
 
 do-configure:
 		@${REINPLACE_CMD} \
@@ -29,7 +32,7 @@ do-configure:
 		(cd ${WRKSRC} ; ${SH} ${WRKSRC}/genemake )
 
 post-install:
-		strip ${PREFIX}/bin/${PORTNAME}
+		${STRIP_CMD} ${PREFIX}/bin/${PORTNAME}
 .ifndef(NOPORTDOCS)
 		@${MKDIR} ${DOCSDIR}
 		@${CP} -R ${WRKSRC}/../../${PORTNAME}-${PORTVERSION}-doc_html/* ${DOCSDIR}
