@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jbigkit
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cl.cam.ac.uk/~mgk25/download/
 
@@ -24,7 +24,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/libjbig/jbig.doc ${PREFIX}/share/doc/jbig
 .endif
 
-test: build
+post-build test:
 	cd ${WRKSRC} && env LD_LIBRARY_PATH=${WRKSRC}/libjbig ${MAKE} test
 
 .include <bsd.port.mk>
