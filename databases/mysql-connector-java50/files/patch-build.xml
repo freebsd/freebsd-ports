@@ -1,0 +1,14 @@
+--- build.xml~	Thu Dec 23 19:37:39 2004
++++ build.xml	Wed Jan 12 12:59:16 2005
+@@ -60,6 +60,11 @@
+ 			<include name="**/*.jar"/>
+ 		</fileset>
+ 
++		<fileset dir="/usr/local/share/java/classes">
++			<include name="junit.jar"/>
++			<include name="log4j.jar"/>
++		</fileset>
++
+ 		<pathelement location="${buildDir}/${fullProdName}" />
+ 	</path>
+ 
