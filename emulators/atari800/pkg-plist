@@ -1,0 +1,17 @@
+bin/atari800
+lib/atari/atari800.cfg
+lib/atari/ataribas.rom
+lib/atari/atariosb.rom
+lib/atari/atarixl.rom
+man/man1/atari800.1.gz
+share/doc/atari/BUGS
+share/doc/atari/CHANGES
+share/doc/atari/COPYING
+share/doc/atari/CREDITS
+share/doc/atari/INSTALL
+share/doc/atari/README
+share/doc/atari/TODO
+share/doc/atari/USAGE
+share/doc/atari/README.FreeBSD
+@dirrm lib/atari
+@dirrm share/doc/atari

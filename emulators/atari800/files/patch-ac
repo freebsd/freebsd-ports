@@ -1,0 +1,53 @@
+*** prompts.c.orig	Sun Apr 20 23:32:27 1997
+--- prompts.c	Sun Apr 20 23:34:30 1997
+***************
+*** 10,16 ****
+    char gash[128];
+  
+    printf (message, string);
+!   gets (gash);
+    if (strlen(gash) > 0)
+      strcpy (string, gash);
+  }
+--- 10,16 ----
+    char gash[128];
+  
+    printf (message, string);
+!   fgets (gash,128,stdin);
+    if (strlen(gash) > 0)
+      strcpy (string, gash);
+  }
+***************
+*** 20,26 ****
+    char gash[128];
+  
+    printf (message, *num);
+!   gets (gash);
+    if (strlen(gash) > 0)
+      sscanf (gash,"\n%d", num);
+  }
+--- 20,26 ----
+    char gash[128];
+  
+    printf (message, *num);
+!   fgets (gash,128,stdin);
+    if (strlen(gash) > 0)
+      sscanf (gash,"\n%d", num);
+  }
+***************
+*** 33,39 ****
+    do
+      {
+        printf (message, *yn);
+!       gets (gash);
+  
+        if (strlen(gash) > 0)
+  	t_yn = gash[0];
+--- 33,39 ----
+    do
+      {
+        printf (message, *yn);
+!       fgets (gash,128,stdin);
+  
+        if (strlen(gash) > 0)
+  	t_yn = gash[0];
