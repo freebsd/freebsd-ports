@@ -261,6 +261,7 @@
     SUBDIR += roxen
     SUBDIR += ruboard
     SUBDIR += ruby-http-access
+    SUBDIR += ruby-tmpl
     SUBDIR += screem
     SUBDIR += sitecopy
     SUBDIR += skipstone
