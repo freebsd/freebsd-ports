@@ -19,6 +19,8 @@ COMMENT=	A Ruby extension library for libexif
 
 LIB_DEPENDS=	exif.10:${PORTSDIR}/graphics/libexif
 
+BROKEN=		"Does not compile"
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 

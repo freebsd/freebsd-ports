@@ -20,6 +20,8 @@ COMMENT=	A very simple personal bank account manager for KDE and KOffice
 BUILD_DEPENDS=	korganizer:${PORTSDIR}/deskutils/kdepim3
 LIB_DEPENDS=	kofficecore.2:${PORTSDIR}/editors/koffice-kde3
 
+BROKEN=		"Does not compile"
+
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
