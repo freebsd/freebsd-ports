@@ -1,0 +1,37 @@
+--- configure.orig	Mon Nov 18 06:03:16 2002
++++ configure	Thu Nov 21 22:33:40 2002
+@@ -5515,11 +5515,10 @@
+   if test x$enableval = "xyes"; then
+     echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+-
++  NLS="-DNLS"
+ cat >>confdefs.h <<\_ACEOF
+ #define NLS 1
+ _ACEOF
+-
+   else
+     echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
+@@ -5527,12 +5526,10 @@
+ else
+   echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+-
++  NLS="-DNLS"
+ cat >>confdefs.h <<\_ACEOF
+ #define NLS 1
+ _ACEOF
+-
+-
+ fi;
+ 
+ echo "$as_me:$LINENO: checking for setlocale in -lxpg4" >&5
+@@ -6901,6 +6898,7 @@
+ s,@MULTIBYTE_TRUE@,$MULTIBYTE_TRUE,;t t
+ s,@MULTIBYTE_FALSE@,$MULTIBYTE_FALSE,;t t
+ s,@XINERAMA@,$XINERAMA,;t t
++s,@NLS@,$NLS,;t t
+ CEOF
+ 
+ _ACEOF
