@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Jan 27 18:52:29 2000
++++ Makefile.in	Thu Jan 27 18:53:00 2000
+@@ -40,7 +40,7 @@
+ all:	$(ALL)
+ 
+ .cc.o:
+-	rm -f $@; $(C++) -o $@ -c $(CFLAGS) $*.cc
++	rm -f $@; $(C++) -pedantic -o $@ -c $(CFLAGS) $*.cc
+ 
+ .c.o:
+ 	rm -f $@; $(CC) -o $@ -c $(CFLAGS) $*.c
