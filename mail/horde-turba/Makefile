@@ -7,7 +7,7 @@
 
 PORTNAME=	turba
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/turba/				\
 		ftp://ftp.au.horde.org/pub/horde/turba/			\
@@ -30,7 +30,7 @@ COMMENT=	The Horde contact management application
 .if exists(${LOCALBASE}/lib/libldap.so.1)
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
 .else
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21-client
 .endif
 .endif
 

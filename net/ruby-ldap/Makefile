@@ -7,6 +7,7 @@
 
 PORTNAME=	ldap
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	net ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
@@ -22,7 +23,7 @@ WITH_LDAP?=	openldap2
 .if ${WITH_LDAP} == openldap1
 LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12
 .elif ${WITH_LDAP} == openldap2
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20-client
 .elif ${WITH_LDAP} == ldapsdk
 LIB_DEPENDS=	${LOCALBASE}/mozilla/directory/lib/libldap.so.1:${PORTSDIR}/net/ldapsdk
 .else
