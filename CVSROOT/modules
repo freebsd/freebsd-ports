@@ -3973,6 +3973,7 @@ korelib		ports/devel/korelib
 kover		ports/print/kover
 kp		ports/misc/kp
 kpacman		ports/games/kpacman
+kpicframer	ports/games/kpicframer
 kpictorial	ports/games/kpictorial
 kplayer		ports/multimedia/kplayer
 kpopup		ports/net/kpopup
