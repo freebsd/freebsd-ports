@@ -3,7 +3,7 @@
 # Date created:		30 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.14 1999/03/31 14:26:01 flathill Exp $
+# $Id: Makefile,v 1.15 1999/03/31 15:52:31 steve Exp $
 #
 
 DISTNAME=	xfce-2.4.0
@@ -14,9 +14,6 @@ MAINTAINER=	nacai@iname.com
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		xforms.0:${PORTSDIR}/x11-toolkits/xforms
-
-# depends on xforms
-ONLY_FOR_ARCHS=	i386
 
 USE_IMAKE=	yes
 
