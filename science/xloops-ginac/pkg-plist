@@ -1,0 +1,8 @@
+bin/ginsh-xloops
+include/xloops/oneloop.h
+include/xloops/po_redux.h
+include/xloops/r.h
+include/xloops/twoloop.h
+include/xloops/xloops.h
+@dirrm include/xloops
+lib/libxloops.a

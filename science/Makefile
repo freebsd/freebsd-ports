@@ -16,6 +16,7 @@
     SUBDIR += oases
     SUBDIR += p5-Chemistry-Elements
     SUBDIR += vis5d+
+    SUBDIR += xloops-ginac
     SUBDIR += xmakemol
 
 .include <bsd.port.subdir.mk>
