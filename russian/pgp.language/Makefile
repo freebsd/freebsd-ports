@@ -7,7 +7,7 @@
 
 PORTNAME=	pgp
 PORTVERSION=	2.6.3ia
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES=	russian
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/crypto/pgp/
 DISTNAME=	pgp26ru
@@ -21,7 +21,7 @@ USE_ZIP=	YES
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
 
-PGPLIB=		${PREFIX}/lib/pgp
+PGPLIB=         ${PREFIX}/share/pgp
 OBJS=		language.txt ru.hlp
 
 do-install:
