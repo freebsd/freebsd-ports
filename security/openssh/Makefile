@@ -63,10 +63,13 @@ do-extract:
 	@${CP} ${FILESDIR}/strlcpy.c ${WRKSRC}/lib/
 
 post-patch:
-	@${PERL} -pi.orig -e 's:_PATH_STDPATH:_PATH_STDPATH "${PREFIX}/bin":' \
+	@${PERL} -pi.orig -e 's:(_PATH_STDPATH):$$1 "${PREFIX}/bin":g' \
 		${WRKSRC}/sshd.c
 	@${PERL} -pi.orig -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/ssh.h
 	@${PERL} -pi.orig -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/sshd_config
+	@${PERL} -pi.openssl -e \
+		's:^(\s*#\s*include\s+<)ssl(/\w+\.h>\s*)$$:$$1openssl$$2:g' \
+		${WRKSRC}/*.[ch]
 
 pre-install:
 	@cd ${WRKSRC} && ${MAKE} DESTDIR=${PREFIX} distribution
