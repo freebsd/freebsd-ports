@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.105 1998/04/24 10:04:26 markm Exp $
+# $Id: LEGAL,v 1.106 1998/05/16 03:10:46 dburr Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -32,6 +32,7 @@ contool-*		ports/sysutils/contool	Don't incorporate the source
 						subsequently sold.
 cosmo/*			ports/games/cosmo	Possible copyright infringement
 crack-5.0		ports/security/crack	Crypto; export-controlled
+crafty/*		ports/games/crafty	Licensing terms unknown
 cs-0.3			ports/devel/cs		License required for
 						redistribution on CDROM.
 dc3play-*		ports/graphics/dc3play	No redistribution due to
