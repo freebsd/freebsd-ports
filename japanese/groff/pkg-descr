@@ -5,7 +5,6 @@ Following devices are added by jgroff:
 
     nippon     For typewriter-like devices using the Japanese-EUC
                coded character set.
-    dvi-ascii  For pTeX DVI format.
 
 and following devices are enhanced to handle Japanese-EUC:
 

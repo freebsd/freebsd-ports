@@ -1,0 +1,31 @@
+--- doc/Makefile.sub.bak	Fri Jul 26 22:48:54 2002
++++ doc/Makefile.sub	Thu Mar  6 12:49:07 2003
+@@ -110,7 +110,7 @@
+ 	$(GROFF) -Tps -ms -mwww >$@
+ 
+ 
+-all: groff $(PROCESSEDDOCFILES) prepare_examples \
++all: $(PROCESSEDDOCFILES) prepare_examples \
+      $(PROCESSEDEXAMPLEFILES) $(make_html)
+ 
+ html: $(HTMLDOCFILES) $(HTMLEXAMPLEFILES)
+@@ -133,18 +133,8 @@
+ 
+ distfiles: groff gnu.eps gnu.png
+ 
+-install_data: groff $(DOCFILES) $(PROCESSEDDOCFILES) $(make_install_html) \
++install_data: $(DOCFILES) $(PROCESSEDDOCFILES) $(make_install_html) \
+               $(EXAMPLEFILES) $(PROCESSEDEXAMPLEFILES)
+-	-test -d $(infodir) || $(mkinstalldirs) $(infodir)
+-# Prefer info files in builddir over srcdir; we test for
+-# the existence of `groff'.
+-	d=.; \
+-	  test -f "groff" || d=$(srcdir); \
+-	  for f in $$d/groff $$d/groff-*; do \
+-	    rm -f $(infodir)/`basename $$f`; \
+-	    $(INSTALL_DATA) $$f $(infodir)/`basename $$f`; \
+-	  done
+-	$(INSTALL_INFO) --info-dir=$(infodir) $(infodir)/groff
+ 	-test -d $(docdir) || $(mkinstalldirs) $(docdir)
+ 	for f in $(DOCFILES); do \
+ 	  rm -f $(docdir)/$$f; \

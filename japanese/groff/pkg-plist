@@ -1,30 +1,37 @@
 bin/addftinfo
 bin/afmtodit
+bin/eqn
+bin/eqn2graph
 bin/geqn
-bin/ggrn
-bin/gindxbib
-bin/glookbib
 bin/gneqn
-bin/gnroff
 bin/gpic
-bin/grefer
+bin/grn
 bin/grodvi
 bin/groff
+bin/groffer
 bin/grog
 bin/grolbp
 bin/grolj4
 bin/grops
 bin/grotty
-bin/gsoelim
 bin/gtbl
-bin/gtroff
 bin/hpftodit
+bin/indxbib
 bin/lkbib
+bin/lookbib
 bin/mmroff
+bin/neqn
+bin/nroff
 bin/pfbtops
+bin/pic
+bin/pic2graph
 bin/post-grohtml
 bin/pre-grohtml
+bin/refer
+bin/soelim
+bin/tbl
 bin/tfmtodit
+bin/troff
 %%INFO%%@unexec install-info --delete %D/info/groff %D/info/dir
 %%INFO%%info/groff
 %%INFO%%@exec install-info %D/info/groff %D/info/dir
@@ -114,55 +121,55 @@ share/groff/%%GROFF_VERSION%%/font/devascii/BI
 share/groff/%%GROFF_VERSION%%/font/devascii/DESC
 share/groff/%%GROFF_VERSION%%/font/devascii/I
 share/groff/%%GROFF_VERSION%%/font/devascii/R
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/B
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/BI
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/CW
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/CWI
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/DESC
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/EX
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/G
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/H
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/HB
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/HI
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/I
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/M
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/MI
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/R
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/S
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/SA
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/SB
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/generate/CompileFonts
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/generate/Makefile
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/generate/msam.map
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/generate/msbm.map
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/generate/texb.map
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/generate/texex.map
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/generate/texi.map
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/generate/texmi.map
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/generate/texr.map
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/generate/texsy.map
-share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/generate/textt.map
-share/groff/%%GROFF_VERSION%%/font/devdvi/B
-share/groff/%%GROFF_VERSION%%/font/devdvi/BI
+share/groff/%%GROFF_VERSION%%/font/devascii8/B
+share/groff/%%GROFF_VERSION%%/font/devascii8/BI
+share/groff/%%GROFF_VERSION%%/font/devascii8/DESC
+share/groff/%%GROFF_VERSION%%/font/devascii8/I
+share/groff/%%GROFF_VERSION%%/font/devascii8/R
 share/groff/%%GROFF_VERSION%%/font/devdvi/CW
+share/groff/%%GROFF_VERSION%%/font/devdvi/CWEC
 share/groff/%%GROFF_VERSION%%/font/devdvi/CWI
+share/groff/%%GROFF_VERSION%%/font/devdvi/CWIEC
+share/groff/%%GROFF_VERSION%%/font/devdvi/CWITC
+share/groff/%%GROFF_VERSION%%/font/devdvi/CWTC
 share/groff/%%GROFF_VERSION%%/font/devdvi/DESC
 share/groff/%%GROFF_VERSION%%/font/devdvi/EX
 share/groff/%%GROFF_VERSION%%/font/devdvi/G
-share/groff/%%GROFF_VERSION%%/font/devdvi/H
 share/groff/%%GROFF_VERSION%%/font/devdvi/HB
+share/groff/%%GROFF_VERSION%%/font/devdvi/HBEC
+share/groff/%%GROFF_VERSION%%/font/devdvi/HBI
+share/groff/%%GROFF_VERSION%%/font/devdvi/HBIEC
+share/groff/%%GROFF_VERSION%%/font/devdvi/HBITC
+share/groff/%%GROFF_VERSION%%/font/devdvi/HBTC
 share/groff/%%GROFF_VERSION%%/font/devdvi/HI
-share/groff/%%GROFF_VERSION%%/font/devdvi/I
+share/groff/%%GROFF_VERSION%%/font/devdvi/HIEC
+share/groff/%%GROFF_VERSION%%/font/devdvi/HITC
+share/groff/%%GROFF_VERSION%%/font/devdvi/HR
+share/groff/%%GROFF_VERSION%%/font/devdvi/HREC
+share/groff/%%GROFF_VERSION%%/font/devdvi/HRTC
 share/groff/%%GROFF_VERSION%%/font/devdvi/M
 share/groff/%%GROFF_VERSION%%/font/devdvi/MI
-share/groff/%%GROFF_VERSION%%/font/devdvi/R
 share/groff/%%GROFF_VERSION%%/font/devdvi/S
 share/groff/%%GROFF_VERSION%%/font/devdvi/SA
 share/groff/%%GROFF_VERSION%%/font/devdvi/SB
+share/groff/%%GROFF_VERSION%%/font/devdvi/TB
+share/groff/%%GROFF_VERSION%%/font/devdvi/TBEC
+share/groff/%%GROFF_VERSION%%/font/devdvi/TBI
+share/groff/%%GROFF_VERSION%%/font/devdvi/TBIEC
+share/groff/%%GROFF_VERSION%%/font/devdvi/TBITC
+share/groff/%%GROFF_VERSION%%/font/devdvi/TBTC
+share/groff/%%GROFF_VERSION%%/font/devdvi/TI
+share/groff/%%GROFF_VERSION%%/font/devdvi/TIEC
+share/groff/%%GROFF_VERSION%%/font/devdvi/TITC
+share/groff/%%GROFF_VERSION%%/font/devdvi/TR
+share/groff/%%GROFF_VERSION%%/font/devdvi/TREC
+share/groff/%%GROFF_VERSION%%/font/devdvi/TRTC
 share/groff/%%GROFF_VERSION%%/font/devdvi/generate/CompileFonts
 share/groff/%%GROFF_VERSION%%/font/devdvi/generate/Makefile
+share/groff/%%GROFF_VERSION%%/font/devdvi/generate/ec.map
 share/groff/%%GROFF_VERSION%%/font/devdvi/generate/msam.map
 share/groff/%%GROFF_VERSION%%/font/devdvi/generate/msbm.map
+share/groff/%%GROFF_VERSION%%/font/devdvi/generate/tc.map
 share/groff/%%GROFF_VERSION%%/font/devdvi/generate/texb.map
 share/groff/%%GROFF_VERSION%%/font/devdvi/generate/texex.map
 share/groff/%%GROFF_VERSION%%/font/devdvi/generate/texi.map
@@ -172,9 +179,14 @@ share/groff/%%GROFF_VERSION%%/font/devdvi/generate/texsy.map
 share/groff/%%GROFF_VERSION%%/font/devdvi/generate/textt.map
 share/groff/%%GROFF_VERSION%%/font/devhtml/B
 share/groff/%%GROFF_VERSION%%/font/devhtml/BI
+share/groff/%%GROFF_VERSION%%/font/devhtml/CB
+share/groff/%%GROFF_VERSION%%/font/devhtml/CBI
+share/groff/%%GROFF_VERSION%%/font/devhtml/CI
 share/groff/%%GROFF_VERSION%%/font/devhtml/CR
 share/groff/%%GROFF_VERSION%%/font/devhtml/DESC
+share/groff/%%GROFF_VERSION%%/font/devhtml/G
 share/groff/%%GROFF_VERSION%%/font/devhtml/I
+share/groff/%%GROFF_VERSION%%/font/devhtml/M
 share/groff/%%GROFF_VERSION%%/font/devhtml/R
 share/groff/%%GROFF_VERSION%%/font/devhtml/S
 share/groff/%%GROFF_VERSION%%/font/devlatin1/B
@@ -182,10 +194,20 @@ share/groff/%%GROFF_VERSION%%/font/devlatin1/BI
 share/groff/%%GROFF_VERSION%%/font/devlatin1/DESC
 share/groff/%%GROFF_VERSION%%/font/devlatin1/I
 share/groff/%%GROFF_VERSION%%/font/devlatin1/R
+share/groff/%%GROFF_VERSION%%/font/devlbp/CB
+share/groff/%%GROFF_VERSION%%/font/devlbp/CI
+share/groff/%%GROFF_VERSION%%/font/devlbp/CR
 share/groff/%%GROFF_VERSION%%/font/devlbp/DESC
+share/groff/%%GROFF_VERSION%%/font/devlbp/EB
+share/groff/%%GROFF_VERSION%%/font/devlbp/EI
+share/groff/%%GROFF_VERSION%%/font/devlbp/ER
 share/groff/%%GROFF_VERSION%%/font/devlbp/HB
 share/groff/%%GROFF_VERSION%%/font/devlbp/HBI
 share/groff/%%GROFF_VERSION%%/font/devlbp/HI
+share/groff/%%GROFF_VERSION%%/font/devlbp/HNB
+share/groff/%%GROFF_VERSION%%/font/devlbp/HNBI
+share/groff/%%GROFF_VERSION%%/font/devlbp/HNI
+share/groff/%%GROFF_VERSION%%/font/devlbp/HNR
 share/groff/%%GROFF_VERSION%%/font/devlbp/HR
 share/groff/%%GROFF_VERSION%%/font/devlbp/TB
 share/groff/%%GROFF_VERSION%%/font/devlbp/TBI
@@ -295,7 +317,9 @@ share/groff/%%GROFF_VERSION%%/font/devps/zapfdr.pfa
 share/groff/%%GROFF_VERSION%%/font/devutf8/B
 share/groff/%%GROFF_VERSION%%/font/devutf8/BI
 share/groff/%%GROFF_VERSION%%/font/devutf8/DESC
+share/groff/%%GROFF_VERSION%%/font/devutf8/G
 share/groff/%%GROFF_VERSION%%/font/devutf8/I
+share/groff/%%GROFF_VERSION%%/font/devutf8/M
 share/groff/%%GROFF_VERSION%%/font/devutf8/R
 share/groff/%%GROFF_VERSION%%/tmac/X.tmac
 share/groff/%%GROFF_VERSION%%/tmac/Xps.tmac
@@ -303,14 +327,20 @@ share/groff/%%GROFF_VERSION%%/tmac/a4.tmac
 share/groff/%%GROFF_VERSION%%/tmac/an-old.tmac
 share/groff/%%GROFF_VERSION%%/tmac/an.tmac
 share/groff/%%GROFF_VERSION%%/tmac/andoc.tmac
+share/groff/%%GROFF_VERSION%%/tmac/andocj.tmac
+share/groff/%%GROFF_VERSION%%/tmac/cp1047.tmac
 share/groff/%%GROFF_VERSION%%/tmac/doc-old.tmac
 share/groff/%%GROFF_VERSION%%/tmac/doc.tmac
+share/groff/%%GROFF_VERSION%%/tmac/docj.tmac
 share/groff/%%GROFF_VERSION%%/tmac/dvi.tmac
 share/groff/%%GROFF_VERSION%%/tmac/e.tmac
+share/groff/%%GROFF_VERSION%%/tmac/ec.tmac
 share/groff/%%GROFF_VERSION%%/tmac/eqnrc
+share/groff/%%GROFF_VERSION%%/tmac/euc-jp.tmac
 share/groff/%%GROFF_VERSION%%/tmac/html.tmac
 share/groff/%%GROFF_VERSION%%/tmac/hyphen.us
 share/groff/%%GROFF_VERSION%%/tmac/latin1.tmac
+share/groff/%%GROFF_VERSION%%/tmac/lbp.tmac
 share/groff/%%GROFF_VERSION%%/tmac/lj4.tmac
 share/groff/%%GROFF_VERSION%%/tmac/m.tmac
 share/groff/%%GROFF_VERSION%%/tmac/man.tmac
@@ -320,7 +350,9 @@ share/groff/%%GROFF_VERSION%%/tmac/mdoc/doc-common
 share/groff/%%GROFF_VERSION%%/tmac/mdoc/doc-ditroff
 share/groff/%%GROFF_VERSION%%/tmac/mdoc/doc-nroff
 share/groff/%%GROFF_VERSION%%/tmac/mdoc/doc-syms
-share/groff/%%GROFF_VERSION%%/tmac/mdoc/eucJP
+share/groff/%%GROFF_VERSION%%/tmac/mdoc/docj-ditroff
+share/groff/%%GROFF_VERSION%%/tmac/mdoc/docj-nroff
+share/groff/%%GROFF_VERSION%%/tmac/mdoc/ja.eucJP
 share/groff/%%GROFF_VERSION%%/tmac/me.tmac
 share/groff/%%GROFF_VERSION%%/tmac/mm/0.MT
 share/groff/%%GROFF_VERSION%%/tmac/mm/4.MT
@@ -329,9 +361,12 @@ share/groff/%%GROFF_VERSION%%/tmac/mm/locale
 share/groff/%%GROFF_VERSION%%/tmac/mm/ms.cov
 share/groff/%%GROFF_VERSION%%/tmac/mm/se_locale
 share/groff/%%GROFF_VERSION%%/tmac/mm/se_ms.cov
+share/groff/%%GROFF_VERSION%%/tmac/mm.tmac
+share/groff/%%GROFF_VERSION%%/tmac/mmse.tmac
+share/groff/%%GROFF_VERSION%%/tmac/mom.tmac
 share/groff/%%GROFF_VERSION%%/tmac/ms.tmac
 share/groff/%%GROFF_VERSION%%/tmac/mse.tmac
-share/groff/%%GROFF_VERSION%%/tmac/mwww.tmac
+share/groff/%%GROFF_VERSION%%/tmac/om.tmac
 share/groff/%%GROFF_VERSION%%/tmac/pic.tmac
 share/groff/%%GROFF_VERSION%%/tmac/ps.tmac
 share/groff/%%GROFF_VERSION%%/tmac/psatk.tmac
@@ -349,15 +384,54 @@ share/groff/%%GROFF_VERSION%%/tmac/tty.tmac
 share/groff/%%GROFF_VERSION%%/tmac/www.tmac
 share/groff/site-tmac/man.local
 share/groff/site-tmac/mdoc.local
-%%PORTDOCS%%share/doc/jgroff/ChangeLog.jp
-%%PORTDOCS%%share/doc/jgroff/NEWS
-%%PORTDOCS%%share/doc/jgroff/PROBLEMS
-%%PORTDOCS%%share/doc/jgroff/README
-%%PORTDOCS%%share/doc/jgroff/README.jp
-%%PORTDOCS%%share/doc/jgroff/meintro.me
-%%PORTDOCS%%share/doc/jgroff/meref.me
-%%PORTDOCS%%share/doc/jgroff/pic.ms
-%%PORTDOCS%%@dirrm share/doc/jgroff
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/README.mom
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/elvis_syntax
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/grnexmpl.g
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/grnexmpl.me
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/grnexmpl.ps
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/letter.mom
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/letter.ps
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/macros.mom
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/macros.ps
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/penguin.ps
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/typeset.mom
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/typeset.ps
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/typewrite.mom
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/typewrite.ps
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/webpage.ms
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/webpage.ps
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/appendices.html
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/cover.html
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/definitions.html
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/docelement.html
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/docprocessing.html
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/goodies.html
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/headfootpage.html
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/inlines.html
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/intro.html
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/letters.html
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/rectoverso.html
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/reserved.html
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/toc.html
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/typemacdoc.html
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/typesetting.html
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/using.html
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/meintro.me
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/meintro.ps
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/meref.me
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/meref.ps
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/pic.ms
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/pic.ps
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/ChangeLog.jp
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/NEWS
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/PROBLEMS
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/README
+%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/README.jp
+%%PORTDOCS%%@dirrm share/doc/groff/%%GROFF_VERSION%%/examples
+%%PORTDOCS%%@dirrm share/doc/groff/%%GROFF_VERSION%%/html/momdoc
+%%PORTDOCS%%@dirrm share/doc/groff/%%GROFF_VERSION%%/html
+%%PORTDOCS%%@dirrm share/doc/groff/%%GROFF_VERSION%%
+%%PORTDOCS%%@dirrm share/doc/groff
 @exec mkdir -p %D/lib/groff/site-tmac
 @dirrm lib/groff/site-tmac
 @dirrm lib/groff
@@ -366,10 +440,9 @@ share/groff/site-tmac/mdoc.local
 @dirrm share/groff/%%GROFF_VERSION%%/font/devX75
 @dirrm share/groff/%%GROFF_VERSION%%/font/devX75-12
 @dirrm share/groff/%%GROFF_VERSION%%/font/devascii
+@dirrm share/groff/%%GROFF_VERSION%%/font/devascii8
 @dirrm share/groff/%%GROFF_VERSION%%/font/devdvi/generate
 @dirrm share/groff/%%GROFF_VERSION%%/font/devdvi
-@dirrm share/groff/%%GROFF_VERSION%%/font/devdvi-ascii/generate
-@dirrm share/groff/%%GROFF_VERSION%%/font/devdvi-ascii
 @dirrm share/groff/%%GROFF_VERSION%%/font/devhtml
 @dirrm share/groff/%%GROFF_VERSION%%/font/devlatin1
 @dirrm share/groff/%%GROFF_VERSION%%/font/devlbp
