@@ -42,6 +42,9 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/__init__.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Debugging.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Debugging.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Debugging.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Distutils/__init__.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Distutils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Distutils/__init__.pyo
