@@ -83,7 +83,7 @@
 ***************
 *** 22,27 ****
 --- 22,28 ----
-  static char rcsid[]="$Header: /a/ncvs/ports/cad/magic/patches/patch-aa,v 1.1.1.1 1994/12/18 21:12:09 swallace Exp $";
+  static char rcsid[]="$Header: /a/ncvs/ports/cad/magic/patches/patch-aa,v 1.2 1995/01/22 15:59:54 ats Exp $";
   #endif  not lint
   
 + #include <sys/types.h>
@@ -227,7 +227,7 @@
 ***************
 *** 19,24 ****
 --- 19,25 ----
-  static char rcsid[] = "$Header: /a/ncvs/ports/cad/magic/patches/patch-aa,v 1.1.1.1 1994/12/18 21:12:09 swallace Exp $";
+  static char rcsid[] = "$Header: /a/ncvs/ports/cad/magic/patches/patch-aa,v 1.2 1995/01/22 15:59:54 ats Exp $";
   #endif  not lint
   
 + #include <stdlib.h>
@@ -295,19 +295,6 @@
   main(argc, argv)
       char *argv[];
   {
-*** Makefile.orig	Tue Sep 20 13:55:57 1994
---- Makefile	Sun Dec 18 00:24:12 1994
-***************
-*** 41,46 ****
---- 41,48 ----
-  CADDIR		= `:findcad`
-  CADDIR_SUB	= `../:findcad`
-  
-+ all: everything
-+ 
-  everything: ${MODULES} .config
-  	/bin/csh :makeall installhdrs ${MODULES}
-  	/bin/csh :makeall install ${MODULES}
 *** misc/magic.h.orig	Tue Aug  2 15:18:15 1994
 --- misc/magic.h	Sat Dec 17 15:31:52 1994
 ***************
@@ -359,3 +346,27 @@
   #
   # Configuration for flags and libraries
   #
+*** Makefile.orig	Tue Sep 20 22:55:57 1994
+--- Makefile	Sun Jan 29 18:57:47 1995
+***************
+*** 41,46 ****
+--- 41,48 ----
+  CADDIR		= `:findcad`
+  CADDIR_SUB	= `../:findcad`
+  
++ all: everything
++ 
+  everything: ${MODULES} .config
+  	/bin/csh :makeall installhdrs ${MODULES}
+  	/bin/csh :makeall install ${MODULES}
+***************
+*** 146,149 ****
+  	echo ${MODULES}
+  
+  forceit:
+! 	
+--- 148,151 ----
+  	echo ${MODULES}
+  
+  forceit:
+! 
