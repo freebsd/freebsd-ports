@@ -1,0 +1,10 @@
+--- cnf/bin/afnix-guess.orig	Wed Jan 12 06:05:00 2005
++++ cnf/bin/afnix-guess	Wed Feb 16 19:18:04 2005
+@@ -113,6 +113,7 @@
+     mips)     proc_name=mips;;
+     mipsel)   proc_name=mipsel;;    
+     parisc*)  proc_name=pa64;;
++    amd64)    proc_name=amd64;;
+     ia64)     proc_name=ia64;;
+     s390*)    proc_name=s390;;
+     x86_64)   proc_name=x64;;

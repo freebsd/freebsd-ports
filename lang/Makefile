@@ -7,7 +7,7 @@
     SUBDIR += STk
     SUBDIR += Sather
     SUBDIR += TenDRA
-    SUBDIR += aleph
+    SUBDIR += afnix
     SUBDIR += alisp
     SUBDIR += asn1c
     SUBDIR += atlast
