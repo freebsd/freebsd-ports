@@ -8,11 +8,10 @@
 PORTNAME=       xmon
 PORTVERSION=    1.5.6
 CATEGORIES=     x11
-MASTER_SITES=   ftp://ftp.mxlab.com/unix/x/
+MASTER_SITES=   ftp://ftp.x.org/contrib/devel_tools/
+DISTNAME=	xmon.${PORTVERSION}
 
 MAINTAINER=     bms@spc.org
-
-BROKEN=		"Does not fetch"
 
 WRKSRC=         ${WRKDIR}/xmon.1.5.6
 USE_IMAKE=	yes
