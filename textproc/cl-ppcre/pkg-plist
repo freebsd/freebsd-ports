@@ -1,0 +1,31 @@
+lib/common-lisp/cl-ppcre/api.lisp
+lib/common-lisp/cl-ppcre/closures.lisp
+lib/common-lisp/cl-ppcre/convert.lisp
+lib/common-lisp/cl-ppcre/lexer.lisp
+lib/common-lisp/cl-ppcre/load.lisp
+lib/common-lisp/cl-ppcre/optimize.lisp
+lib/common-lisp/cl-ppcre/packages.lisp
+lib/common-lisp/cl-ppcre/parser.lisp
+lib/common-lisp/cl-ppcre/regex-class.lisp
+lib/common-lisp/cl-ppcre/repetition-closures.lisp
+lib/common-lisp/cl-ppcre/scanner.lisp
+lib/common-lisp/cl-ppcre/specials.lisp
+lib/common-lisp/cl-ppcre/util.lisp
+lib/common-lisp/cl-ppcre/cl-ppcre.asd
+lib/common-lisp/cl-ppcre/cl-ppcre.system
+lib/common-lisp/system-registry/cl-ppcre.asd
+lib/common-lisp/system-registry/cl-ppcre.system
+@dirrm lib/common-lisp/cl-ppcre
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/doc/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/benchmarks.2002-12-22.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/cl-ppcre-test.system
+%%PORTDOCS%%%%EXAMPLESDIR%%/cl-ppcre-test.asd
+%%PORTDOCS%%%%EXAMPLESDIR%%/ppcre-tests.lisp
+%%PORTDOCS%%%%EXAMPLESDIR%%/perltest.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/testdata
+%%PORTDOCS%%%%EXAMPLESDIR%%/testinput
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
