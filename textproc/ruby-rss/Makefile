@@ -7,6 +7,7 @@
 
 PORTNAME=	rss
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.chadfowler.com/ruby/rss/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -15,8 +16,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/xmlparser.rb:${PORTSDIR}/textproc/ruby-xmlparser \
-		${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/xmlparser.rb:${PORTSDIR}/textproc/ruby-xmlparser
 
 USE_RUBY=	yes
 
