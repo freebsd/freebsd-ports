@@ -6,32 +6,38 @@
 #
 
 PORTNAME=	fvwm
-PORTVERSION=	2.2.4
+PORTVERSION=	2.3.8
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
-		http://www.fvwm.org/generated/icon_download/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} fvwm_icons.tgz
+MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		fvwm_icons.tgz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	jcwells@u.washington.edu
+MAINTAINER=	Cy.Schubert@uumail.gov.bc.ca
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-extras --prefix=${PREFIX}
 USE_GMAKE=	yes
+PLIST_SUB=	VER=${PORTVERSION}
 
-MAN1=	FvwmAnimate.1 FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \
-	FvwmButtons.1 FvwmCommand.1 FvwmConfig.1 FvwmConsole.1 \
-	FvwmCpp.1 FvwmDebug.1 FvwmEvent.1 FvwmForm.1 FvwmGoodStuff.1 \
-	FvwmIconBox.1 FvwmIconMan.1 FvwmIdent.1 FvwmM4.1 FvwmPager.1 \
-	FvwmRearrange.1 FvwmSave.1 FvwmSaveDesk.1 FvwmScript.1 FvwmScroll.1 \
-	FvwmTalk.1 FvwmTaskBar.1 FvwmWharf.1 FvwmWinList.1 fvwm2.1 xpmroot.1 \
-	FvwmConsoleC.pl.1
+MAN1=	FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
+	FvwmCpp.1 FvwmEvent.1 FvwmForm.1 FvwmIconMan.1 \
+	FvwmIdent.1 FvwmM4.1 FvwmPager.1 FvwmRearrange.1 \
+	FvwmSave.1 FvwmSaveDesk.1 FvwmScroll.1 \
+	fvwm2.1 xpmroot.1 FvwmAnimate.1 FvwmAuto.1 \
+	FvwmIconBox.1 FvwmWinList.1
+
+post-extract:
+	@if ! (cd ${WRKDIR}/${DISTNAME} && ${MKDIR} icons && cd icons && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/fvwm_icons.tgz ${EXTRACT_AFTER_ARGS}); then \
+		exit 1; \
+	fi
 
 post-install:
-	@${MKDIR} ${PREFIX}/icons
-	${INSTALL_DATA} ${WRKDIR}/*.xpm ${PREFIX}/icons
+	@${MKDIR} ${PREFIX}/lib/X11/fvwm2/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/icons/*.xpm \
+		${PREFIX}/lib/X11/fvwm2/pixmaps
 	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
