@@ -1,0 +1,66 @@
+--- Makefile.orig	Fri Apr 25 04:37:15 2003
++++ Makefile	Fri Apr 25 04:40:57 2003
+@@ -1,54 +1,13 @@
+-# WMBlueClock - a clock dockapp
+-#
+-# Copyright (C) 2003 Draghicioiu Mihai Andrei <misuceldestept@go.ro>
+-#
+-# This program is free software; you can redistribute it and/or modify
+-# it under the terms of the GNU General Public License as published by
+-# the Free Software Foundation; either version 2 of the License, or
+-# (at your option) any later version.
++CC ?=	cc
++LDIR =	-L${X11BASE}/lib
++IDIR =	-I${X11BASE}/include
+ 
+-# This program is distributed in the hope that it will be useful,
+-# but WITHOUT ANY WARRANTY; without even the implied warranty of
+-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-# GNU General Public License for more details.
++LIBS =	-lX11 -lXpm -lXext -lkvm
+ 
+-# You should have received a copy of the GNU General Public License
+-# along with this program; if not, write to the Free Software
+-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
++OBJS =	dockapp.o draw.o options.o timing.o wmblueclock.o
+ 
+-PROG=wmblueclock
+-OBJS=dockapp.o draw.o options.o timing.o wmblueclock.o
++.c.o:
++	${CC} ${CFLAGS} ${IDIR} ${DEFS} -c $< -o $*.o
+ 
+-PREFIX=/usr/local
+-BINDIR=$(PREFIX)/bin
+-MANUALDIR=$(PREFIX)/share/man/man1
+-CC=gcc
+-STRIP=strip
+-FLAGS=-Wall -O2
+-RM=rm -rf
+-INST=install
+-MANUAL=$(PROG).1
+-LIBS=-L/usr/X11R6/lib -lX11 -lXext -lXpm
+-
+-all: $(PROG)
+-
+-$(PROG): $(OBJS)
+-	$(CC) -o $(PROG) $(OBJS) $(LIBS)
+-	$(STRIP) $(PROG)
+-%.o: %.c
+-	$(CC) $(FLAGS) -c $< -o $@
+-clean:
+-	$(RM) $(OBJS) $(PROG) .xvpics xpm/.xvpics
+-install: $(PROG)
+-	$(INST) -m 755 $(PROG) $(BINDIR)
+-	$(INST) -m 644 $(MANUAL) $(MANUALDIR)
+-uninstall:
+-	$(RM) $(BINDIR)/$(PROG)
+-	$(RM) $(MANUALDIR)/$(MANUAL)
+-
+-dockapp.o: dockapp.c wmblueclock.h options.h draw.h timing.h xpm/bg.xpm \
+-  xpm/bignums.xpm xpm/letters.xpm xpm/numbers.xpm xpm/panel.xpm
+-draw.o: draw.c dockapp.h options.h
+-options.o: options.c wmblueclock.h options.h
+-timing.o: timing.c draw.h options.h
+-wmblueclock.o: wmblueclock.c options.h dockapp.h timing.h
++all:	${OBJS}
++	${CC} ${CFLAGS} -o wmblueclock ${OBJS} ${LDIR} ${LIBS}
