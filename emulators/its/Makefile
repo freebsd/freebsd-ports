@@ -11,15 +11,12 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://filbert.tubas.net/~kstailey/ITS/ \
 		http://free.babolo.ru/src/ \
 		http://dl.droso.net/FreeBSD/distfiles/
-
 DISTNAME=	PI-ITS-RP06.0-dbd9
 EXTRACT_SUFX=	.bz2
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	kstailey@yahoo.com
 COMMENT=	Bootable ITS filesystem for KLH-10 PDP-10 emulator
-
-BROKEN=		"Broken pkg-plist"
 
 BUILD_DEPENDS=	kn10-ks:${PORTSDIR}/emulators/klh10
 RUN_DEPENDS=	kn10-ks:${PORTSDIR}/emulators/klh10

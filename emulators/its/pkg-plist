@@ -2,5 +2,12 @@ bin/its
 bin/its-user-install
 %%PORTDOCS%%share/doc/klh10-ks-its/MIT-ITS-papers
 %%PORTDOCS%%share/doc/klh10-ks-its/README.FIRST
-share/klh10-ks-its/klh10-kn-freebsd.ini.in
-@unexec rm -f %%IMAGE_HOME%%/PI-ITS-RP06.0-dbd9.bz2
+@comment There's some hiccups if we try to specify an absolute
+@comment filename here, so we cd first.
+@cwd /
+%%IMAGE_HOME%%/PI-ITS-RP06.0-dbd9.bz2
+%%IMAGE_HOME%%/klh10-kn-freebsd.ini.in
+@comment We specify to delete %%IMAGE_HOME%%.  In most cases, it's the
+@comment same as the klh10 port is using, so it won't be empty (and thus
+@comment not deleted).  This dirrm command is for the exceptions to that.
+@unexec rmdir %D/%%IMAGE_HOME%% 2>/dev/null || true
