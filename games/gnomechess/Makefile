@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomechess
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-chess

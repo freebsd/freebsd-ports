@@ -2,10 +2,32 @@ bin/gnome-chess
 share/gnome/apps/Games/gnome-chess.desktop
 share/gnome/gnome-chess/glade/level.glade
 share/gnome/gnome-chess/glade/login.glade
+share/gnome/gnome-chess/glade/pgn.glade
 share/gnome/gnome-chess/glade/prefs.glade
 share/gnome/gnome-chess/glade/promotion.glade
+share/gnome/help/gnome-chess-manual/C/docbook.css
+share/gnome/help/gnome-chess-manual/C/fdl-appendix.sgml
+share/gnome/help/gnome-chess-manual/C/figures/main.png
+share/gnome/help/gnome-chess-manual/C/figures/prefs.png
+share/gnome/help/gnome-chess-manual/C/gnome-chess-manual.sgml
+share/gnome/help/gnome-chess-manual/C/index.html
+share/gnome/help/gnome-chess-manual/C/prefs.html
+share/gnome/help/gnome-chess-manual/C/stylesheet-images/caution.gif
+share/gnome/help/gnome-chess-manual/C/stylesheet-images/home.gif
+share/gnome/help/gnome-chess-manual/C/stylesheet-images/important.gif
+share/gnome/help/gnome-chess-manual/C/stylesheet-images/next.gif
+share/gnome/help/gnome-chess-manual/C/stylesheet-images/note.gif
+share/gnome/help/gnome-chess-manual/C/stylesheet-images/prev.gif
+share/gnome/help/gnome-chess-manual/C/stylesheet-images/tip.gif
+share/gnome/help/gnome-chess-manual/C/stylesheet-images/toc-blank.gif
+share/gnome/help/gnome-chess-manual/C/stylesheet-images/toc-minus.gif
+share/gnome/help/gnome-chess-manual/C/stylesheet-images/toc-plus.gif
+share/gnome/help/gnome-chess-manual/C/stylesheet-images/up.gif
+share/gnome/help/gnome-chess-manual/C/stylesheet-images/warning.gif
+share/gnome/help/gnome-chess-manual/C/usage.html
 share/gnome/mime-info/gnome-chess.keys
 share/gnome/mime-info/gnome-chess.mime
+share/gnome/omf/gnome-chess/gnome-chess-manual-C.omf
 share/gnome/pixmaps/gnome-chess.png
 share/gnome/pixmaps/gnome-chess/B.png
 share/gnome/pixmaps/gnome-chess/K.png
@@ -36,6 +58,7 @@ share/locale/it/LC_MESSAGES/gnome-chess.mo
 share/locale/ja/LC_MESSAGES/gnome-chess.mo
 share/locale/lt/LC_MESSAGES/gnome-chess.mo
 share/locale/nl/LC_MESSAGES/gnome-chess.mo
+share/locale/nn/LC_MESSAGES/gnome-chess.mo
 share/locale/no/LC_MESSAGES/gnome-chess.mo
 share/locale/pl/LC_MESSAGES/gnome-chess.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-chess.mo
@@ -46,5 +69,10 @@ share/locale/tr/LC_MESSAGES/gnome-chess.mo
 share/locale/uk/LC_MESSAGES/gnome-chess.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gnome-chess.mo
 @dirrm share/gnome/pixmaps/gnome-chess
+@dirrm share/gnome/omf/gnome-chess
+@dirrm share/gnome/help/gnome-chess-manual/C/stylesheet-images
+@dirrm share/gnome/help/gnome-chess-manual/C/figures
+@dirrm share/gnome/help/gnome-chess-manual/C
+@dirrm share/gnome/help/gnome-chess-manual
 @dirrm share/gnome/gnome-chess/glade
 @dirrm share/gnome/gnome-chess
