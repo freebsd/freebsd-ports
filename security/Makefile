@@ -309,6 +309,7 @@
     SUBDIR += pgpin
     SUBDIR += pidentd
     SUBDIR += pinentry
+    SUBDIR += pinentry-gtk
     SUBDIR += pinentry-qt
     SUBDIR += pks
     SUBDIR += pktsuckers
