@@ -1,0 +1,33 @@
+--- coda-src/scripts/vice-setup.in.orig	Tue Oct  5 18:36:16 2004
++++ coda-src/scripts/vice-setup.in	Wed Nov 17 00:40:31 2004
+@@ -318,7 +318,7 @@
+ #
+ # ${vicedir}/hostname 
+ # 
+-hn=`hostname -f`
++hn=`hostname`
+ echo $hn > ${vicedir}/hostname
+ 
+ #
+--- coda-src/scripts/vice-setup-scm.orig	Tue Oct  5 18:36:16 2004
++++ coda-src/scripts/vice-setup-scm	Wed Nov 17 00:40:12 2004
+@@ -53,7 +53,7 @@
+ # making hostname
+ #
+ 
+-hn=`hostname -f`
++hn=`hostname`
+ cd ${vicedir}/db
+ 
+ if [ $numservers -eq 1 ]; then
+--- coda-src/scripts/vice-setup-srvdir.orig	Sat Sep  4 08:03:32 2004
++++ coda-src/scripts/vice-setup-srvdir	Wed Nov 17 11:00:10 2004
+@@ -32,7 +32,7 @@
+ numservers=1
+ . "`codaconfedit server.conf`"
+ 
+-hn=`hostname -f`
++hn=`hostname`
+ 
+ n=1
+ while [ $n -le $numservers ]; do

@@ -9,8 +9,6 @@ PORTVERSION=	${CODA_VERSION}
 
 COMMENT=	Client programs for a replicated high-performance network file system
 
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
-
 MASTERDIR=	${.CURDIR}/../coda6_server
 PKGDIR=		${.CURDIR}
 
