@@ -26,7 +26,8 @@ EXTRACT_ONLY=
 
 MAINTAINER=	mb@imp.ch
 
-RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
+DEPENDS=	${PORTSDIR}/emulators/linux_base
+RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Must be downloaded direct from Sun via www interface'
@@ -53,11 +54,13 @@ pre-fetch:
 	@${FALSE}
 .endif
 .if defined(WITH_CDROM)
+.if !exists(${CD_MOUNTPT}/linux/office52/setup)
 	@${ECHO}
 	@${ECHO} Please mount the Sun StarOffice 5.2 CDROM
 	@${ECHO} onto /cdrom and run make again.
 	@${ECHO}
 	@${FALSE}
+.endif
 .endif
 
 .if defined(WITH_CDROM)
