@@ -3,7 +3,7 @@
 # Date created:         15 July 1998
 # Whom:                 Chuck Robey (chuckr@freebsd.org)
 #
-# $Id: Makefile,v 1.17 1998/07/16 04:48:30 chuckr Exp $
+# $Id: Makefile,v 1.18 1998/07/21 11:13:52 asami Exp $
 #
 
 DISTNAME=	a2ps-4.10.3
@@ -12,8 +12,6 @@ CATEGORIES=	print
 MASTER_SITES=	http://www-inf.enst.fr/~demaille/ftp/a2ps/
 
 MAINTAINER=	chuckr@FreeBSD.org
-
-BROKEN=		manpages
 
 MANUAL_PACKAGE_BUILD=  PAPERSIZE has to be set to Letter A4
 GNU_CONFIGURE=	yes
@@ -48,9 +46,7 @@ pre-configure:
 post-install:
 	${LDCONFIG} -R ${PREFIX}/lib
 	strip ${PREFIX}/bin/a2ps
-	$(INSTALL_DATA) $(WRKSRC)/doc/a2ps.info* $(PREFIX)/info
-	$(INSTALL_MAN) $(WRKSRC)/doc/a2ps.1 $(PREFIX)/man/man1
-	-/usr/bin/install-info --info-dir=$(PREFIX)/info $(WRKSRC)/doc/a2ps.info
+	(cd ${WRKSRC}/doc; ${MAKE} install)
 
 .include <bsd.port.mk>
 
