@@ -84,7 +84,7 @@ include/cln/version.h
 @dirrm include/cln
 lib/libcln.a
 lib/libcln.so
-lib/libcln.so.1
+lib/libcln.so.2
 share/cln/html/cln_1.html
 share/cln/html/cln_10.html
 share/cln/html/cln_11.html
