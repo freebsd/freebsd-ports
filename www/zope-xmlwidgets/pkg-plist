@@ -23,12 +23,14 @@
 %%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/WidgetRegistry.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/helpers.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/homepage.html
 %%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/editorServiceAdd.zpt
 %%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/editorServiceInfoTab.zpt
 %%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/editor_service.gif
 %%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/widgetRegistryAdd.zpt
 %%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/widgetRegistryInfoTab.zpt
+%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/editorServiceEditTab.zpt
 %%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/widget_registry.gif
 %%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/widget_service.gif
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www
