@@ -1,0 +1,5 @@
+Apache::Singleton works the same as Class::Singleton, but with
+various object lifetime adapted for use under Apache.
+
+Author:	Tatsuhiko Miyagawa <miyagawa@bulknews.net>
+WWW:	http://search.cpan.org/~miyagawa/Apache-Singleton/
