@@ -1,6 +1,14 @@
---- decode.c.orig	Fri Oct 25 16:01:13 2002
-+++ decode.c	Fri Oct 25 16:01:31 2002
-@@ -21,7 +21,7 @@
+--- decode.c.orig	Wed Dec  4 22:40:42 2002
++++ decode.c	Sat Dec 14 07:25:35 2002
+@@ -8,7 +8,6 @@
+ #include "mm_accel.h"
+ #include "attributes.h"
+ #include "mmx.h"
+-#include "malloc.h"
+ 
+ extern FILE* log;
+ 
+@@ -21,7 +20,7 @@
  Mpeg2dec::Mpeg2dec(uint32_t mm_accel)
        {
        config.flags = mm_accel;
@@ -9,7 +17,7 @@
        memset(picture, 0, sizeof (picture_t));
        frames       = 0;
        frame_ptr[0] = 0;
-@@ -66,7 +66,7 @@
+@@ -63,7 +62,7 @@
        int size  = width() * height() / 4;
        if (frames)
              free(frames);
