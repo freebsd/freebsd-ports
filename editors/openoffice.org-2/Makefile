@@ -569,7 +569,7 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-sdraw
 	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-setup
 	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-sfax
-	@${LN} -fs ${PREFIX}/bin/openoffice ${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-smath
+	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-smath
 	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-simpress
 	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-spadmin
 	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-sweb
