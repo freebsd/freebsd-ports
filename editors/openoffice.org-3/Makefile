@@ -37,8 +37,9 @@ USE_REINPLACE=	yes
 USE_BZIP2=	yes
 
 .if !defined(WITHOUT_JAVA)
-USE_JAVA=	1.4+
-NO_RUN_DEPENDS_JAVA=	yes
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
+JAVA_BUILD=	jdk
 .endif
 
 .include <bsd.port.pre.mk>
