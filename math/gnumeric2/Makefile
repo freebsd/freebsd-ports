@@ -18,7 +18,7 @@ LIB_DEPENDS=	gnomeprint.13:${PORTSDIR}/print/gnomeprint \
 		guile.9:${PORTSDIR}/lang/guile \
 		gnomeole2.0:${PORTSDIR}/devel/libole2 \
 		gb.0:${PORTSDIR}/lang/gnomebasic \
-		gal.2:${PORTSDIR}/x11-toolkits/gal
+		gal.3:${PORTSDIR}/x11-toolkits/gal
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
