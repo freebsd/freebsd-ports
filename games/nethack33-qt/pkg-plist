@@ -1,9 +1,7 @@
 bin/nethack
-lib/nethackdir/nethack
 @exec mkdir %D/lib/nethackdir/save
 @exec chmod 775 %D/lib/nethackdir/save
 @exec chown games.games %D/lib/nethackdir/save
-@dirrm %D/lib/nethackdir/save
 man/man6/dgn_comp.6.gz
 man/man6/dlb.6.gz
 man/man6/lev_comp.6.gz
@@ -81,26 +79,19 @@ lib/nethackdir/bigrm-2.lev
 lib/nethackdir/bigrm-3.lev
 lib/nethackdir/bigrm-4.lev
 lib/nethackdir/bigrm-5.lev
-lib/nethackdir/blind.ppm
 lib/nethackdir/breath.au
 lib/nethackdir/castle.lev
-lib/nethackdir/cha.ppm
-lib/nethackdir/chaotic.ppm
 lib/nethackdir/clunk.au
 lib/nethackdir/cmdhelp
 lib/nethackdir/coin.au
-lib/nethackdir/con.ppm
-lib/nethackdir/confused.ppm
 lib/nethackdir/data
 lib/nethackdir/death.au
 lib/nethackdir/destroy2.au
-lib/nethackdir/dex.ppm
 lib/nethackdir/doorclos.au
 lib/nethackdir/dooropen2.au
 lib/nethackdir/drop.au
 lib/nethackdir/dungeon
 lib/nethackdir/earth.lev
-lib/nethackdir/ext_encumber.ppm
 lib/nethackdir/fakewiz1.lev
 lib/nethackdir/fakewiz2.lev
 lib/nethackdir/fire.lev
@@ -108,21 +99,16 @@ lib/nethackdir/forcefld.au
 lib/nethackdir/frogs.au
 lib/nethackdir/gong.au
 lib/nethackdir/hallu.au
-lib/nethackdir/hallu.ppm
 lib/nethackdir/help
 lib/nethackdir/hh
 lib/nethackdir/history
 lib/nethackdir/hit2.au
-lib/nethackdir/hungry.ppm
-lib/nethackdir/hvy_encumber.ppm
-lib/nethackdir/int.ppm
 lib/nethackdir/juiblex.lev
 lib/nethackdir/knox.lev
 lib/nethackdir/kops.au
 lib/nethackdir/landmine.au
 lib/nethackdir/latin.au
 lib/nethackdir/latin_short.au
-lib/nethackdir/lawful.ppm
 lib/nethackdir/level_up.au
 lib/nethackdir/license
 lib/nethackdir/logfile
@@ -138,8 +124,7 @@ lib/nethackdir/minetn-1.lev
 lib/nethackdir/minetn-2.lev
 lib/nethackdir/miss2.au
 lib/nethackdir/mock.au
-lib/nethackdir/mod_encumber.ppm
-lib/nethackdir/neutral.ppm
+lib/nethackdir/nethack
 lib/nethackdir/ohdear.au
 lib/nethackdir/opthelp
 lib/nethackdir/options
@@ -147,28 +132,16 @@ lib/nethackdir/oracle.lev
 lib/nethackdir/oracles
 lib/nethackdir/orcus.lev
 lib/nethackdir/ouch2.au
-lib/nethackdir/ovr_encumber.ppm
 lib/nethackdir/perm
-lib/nethackdir/pet_mark.pbm
-lib/nethackdir/pet_mark.ppm
-lib/nethackdir/qt_tiles_0.ppm
-lib/nethackdir/qt_tiles_1.ppm
-lib/nethackdir/qt_tiles_2.ppm
-lib/nethackdir/qt_tiles_3.ppm
 lib/nethackdir/quest.dat
 lib/nethackdir/record
-lib/nethackdir/rip.ppm
+lib/nethackdir/rip.xpm
 lib/nethackdir/rumors
 lib/nethackdir/sanctum.lev
-lib/nethackdir/satiated.ppm
-lib/nethackdir/sick_fp.ppm
-lib/nethackdir/sick_il.ppm
-lib/nethackdir/slt_encumber.ppm
 lib/nethackdir/squeek.au
-lib/nethackdir/str.ppm
-lib/nethackdir/stunned.ppm
 lib/nethackdir/tada.au
 lib/nethackdir/thump.au
+lib/nethackdir/tiles.xpm
 lib/nethackdir/tower1.lev
 lib/nethackdir/tower2.lev
 lib/nethackdir/tower3.lev
@@ -178,9 +151,10 @@ lib/nethackdir/vomit.au
 lib/nethackdir/water.lev
 lib/nethackdir/weak.au
 lib/nethackdir/whistle2.au
-lib/nethackdir/wis.ppm
 lib/nethackdir/wizard1.lev
 lib/nethackdir/wizard2.lev
 lib/nethackdir/wizard3.lev
 lib/nethackdir/wizhelp
 lib/nethackdir/yendor.au
+@dirrm lib/nethackdir/save
+@dirrm lib/nethackdir
