@@ -7,7 +7,7 @@
 
 PORTNAME=	twisted
 PORTVERSION=	0.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twistedmatrix.com/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,14 +16,15 @@ DISTNAME=	Twisted-${PORTVERSION}
 MAINTAINER=	wjv@FreeBSD.org
 
 BUILD_DEPENDS=	${PYDISTUTILS}
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/unittest.py:${PORTSDIR}/devel/py-unit
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/unittest.py:${PORTSDIR}/devel/py-unit \
+		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+		${PYTHON_SITELIBDIR}/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome
 
 USE_PYTHON=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/twisted
-SCRIPTS=	accepttests build-deb cpyrght faucet gnusto im malyon \
-		manhole mapeditor mktap runtests tap2deb twistd \
-		twistd-debug
+SCRIPTS=	accepttests cpyrght faucet gnusto im malyon manhole \
+		mapeditor mktap runtests twistd twistd-debug
 MAN1=		faucet.1 gnusto.1 im.1 manhole.1 mktap.1 tap2deb.1 twistd.1
 
 post-patch:
