@@ -35,6 +35,10 @@ SDL11_FILES=	configure uta/color.h uta/event.h uta/keysym.h uta/mutex.h \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502102
+FORBIDDEN=	"Links against conflicting thread libraries"
+.endif
+
 .if exists(${LOCALBASE}/lib/libSDL_mixer.so.2)
 WITH_SDL_MIXER=	yes
 .endif
