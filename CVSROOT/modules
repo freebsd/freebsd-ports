@@ -6900,6 +6900,7 @@ toolbox		ports/x11-wm/toolbox
 tools		src/tools
 top		src/usr.bin/top
 topaz		ports/math/topaz
+toppler		ports/games/toppler
 tora		ports/databases/tora
 tornado		ports/games/tornado
 tosha		ports/audio/tosha
