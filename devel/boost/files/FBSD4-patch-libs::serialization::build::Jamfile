@@ -1,0 +1,15 @@
+--- libs/serialization/build/Jamfile.orig	Mon Dec 13 18:36:52 2004
++++ libs/serialization/build/Jamfile	Mon Dec 13 18:37:28 2004
+@@ -90,12 +90,10 @@
+ 
+ install serialization lib :
+     <lib>boost_serialization
+-    <lib>boost_wserialization
+ ;
+ 
+ stage stage/lib :
+         <lib>boost_serialization
+-        <lib>boost_wserialization
+     :
+         <locate>$(BOOST_ROOT)
+         common-stage-tag
