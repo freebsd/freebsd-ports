@@ -1,0 +1,24 @@
+bin/diff-hist
+lib/perl5/site_perl/%%PERL_VER%%/VCS.pm
+lib/perl5/site_perl/%%PERL_VER%%/VCS/Cvs.pm
+lib/perl5/site_perl/%%PERL_VER%%/VCS/Cvs/Dir.pm
+lib/perl5/site_perl/%%PERL_VER%%/VCS/Cvs/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/VCS/Cvs/Version.pm
+lib/perl5/site_perl/%%PERL_VER%%/VCS/Dir.pm
+lib/perl5/site_perl/%%PERL_VER%%/VCS/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/VCS/Hms.pm
+lib/perl5/site_perl/%%PERL_VER%%/VCS/Hms/Dir.pm
+lib/perl5/site_perl/%%PERL_VER%%/VCS/Hms/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/VCS/Hms/Version.pm
+lib/perl5/site_perl/%%PERL_VER%%/VCS/Rcs.pm
+lib/perl5/site_perl/%%PERL_VER%%/VCS/Rcs/Dir.pm
+lib/perl5/site_perl/%%PERL_VER%%/VCS/Rcs/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/VCS/Rcs/Version.pm
+lib/perl5/site_perl/%%PERL_VER%%/VCS/Version.pm
+lib/perl5/site_perl/%%PERL_VER%%/VCS_dev.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/VCS/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/VCS/Rcs
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/VCS/Hms
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/VCS/Cvs
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/VCS 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/VCS 2>/dev/null || true
