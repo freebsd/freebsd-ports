@@ -201,88 +201,6 @@ lib/%%PYTHON_VERSION%%/site-packages/Fnorb/parser/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Fnorb/parser/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/bisonmodule.so
 lib/%%PYTHON_VERSION%%/site-packages/cdrmodule.so
-share/doc/fnorb/ANNOUNCE
-share/doc/fnorb/CHANGES
-share/doc/fnorb/Fnorb-Guide.pdf
-share/doc/fnorb/Fnorb-Guide.ps
-share/doc/fnorb/Fnorb-Guide/Fnorb-Guide.css
-share/doc/fnorb/Fnorb-Guide/Fnorb-Guide.html
-share/doc/fnorb/Fnorb-Guide/contents_motif.gif
-share/doc/fnorb/Fnorb-Guide/cross_ref_motif.gif
-share/doc/fnorb/Fnorb-Guide/img1.gif
-share/doc/fnorb/Fnorb-Guide/index.html
-share/doc/fnorb/Fnorb-Guide/next_motif.gif
-share/doc/fnorb/Fnorb-Guide/next_motif_gr.gif
-share/doc/fnorb/Fnorb-Guide/node1.html
-share/doc/fnorb/Fnorb-Guide/node10.html
-share/doc/fnorb/Fnorb-Guide/node11.html
-share/doc/fnorb/Fnorb-Guide/node12.html
-share/doc/fnorb/Fnorb-Guide/node13.html
-share/doc/fnorb/Fnorb-Guide/node14.html
-share/doc/fnorb/Fnorb-Guide/node15.html
-share/doc/fnorb/Fnorb-Guide/node16.html
-share/doc/fnorb/Fnorb-Guide/node17.html
-share/doc/fnorb/Fnorb-Guide/node18.html
-share/doc/fnorb/Fnorb-Guide/node19.html
-share/doc/fnorb/Fnorb-Guide/node2.html
-share/doc/fnorb/Fnorb-Guide/node20.html
-share/doc/fnorb/Fnorb-Guide/node21.html
-share/doc/fnorb/Fnorb-Guide/node22.html
-share/doc/fnorb/Fnorb-Guide/node23.html
-share/doc/fnorb/Fnorb-Guide/node24.html
-share/doc/fnorb/Fnorb-Guide/node25.html
-share/doc/fnorb/Fnorb-Guide/node26.html
-share/doc/fnorb/Fnorb-Guide/node27.html
-share/doc/fnorb/Fnorb-Guide/node28.html
-share/doc/fnorb/Fnorb-Guide/node29.html
-share/doc/fnorb/Fnorb-Guide/node3.html
-share/doc/fnorb/Fnorb-Guide/node30.html
-share/doc/fnorb/Fnorb-Guide/node31.html
-share/doc/fnorb/Fnorb-Guide/node32.html
-share/doc/fnorb/Fnorb-Guide/node33.html
-share/doc/fnorb/Fnorb-Guide/node34.html
-share/doc/fnorb/Fnorb-Guide/node35.html
-share/doc/fnorb/Fnorb-Guide/node36.html
-share/doc/fnorb/Fnorb-Guide/node37.html
-share/doc/fnorb/Fnorb-Guide/node38.html
-share/doc/fnorb/Fnorb-Guide/node39.html
-share/doc/fnorb/Fnorb-Guide/node4.html
-share/doc/fnorb/Fnorb-Guide/node40.html
-share/doc/fnorb/Fnorb-Guide/node41.html
-share/doc/fnorb/Fnorb-Guide/node42.html
-share/doc/fnorb/Fnorb-Guide/node43.html
-share/doc/fnorb/Fnorb-Guide/node44.html
-share/doc/fnorb/Fnorb-Guide/node45.html
-share/doc/fnorb/Fnorb-Guide/node46.html
-share/doc/fnorb/Fnorb-Guide/node47.html
-share/doc/fnorb/Fnorb-Guide/node48.html
-share/doc/fnorb/Fnorb-Guide/node49.html
-share/doc/fnorb/Fnorb-Guide/node5.html
-share/doc/fnorb/Fnorb-Guide/node50.html
-share/doc/fnorb/Fnorb-Guide/node51.html
-share/doc/fnorb/Fnorb-Guide/node52.html
-share/doc/fnorb/Fnorb-Guide/node53.html
-share/doc/fnorb/Fnorb-Guide/node54.html
-share/doc/fnorb/Fnorb-Guide/node55.html
-share/doc/fnorb/Fnorb-Guide/node56.html
-share/doc/fnorb/Fnorb-Guide/node57.html
-share/doc/fnorb/Fnorb-Guide/node58.html
-share/doc/fnorb/Fnorb-Guide/node59.html
-share/doc/fnorb/Fnorb-Guide/node6.html
-share/doc/fnorb/Fnorb-Guide/node60.html
-share/doc/fnorb/Fnorb-Guide/node61.html
-share/doc/fnorb/Fnorb-Guide/node62.html
-share/doc/fnorb/Fnorb-Guide/node63.html
-share/doc/fnorb/Fnorb-Guide/node64.html
-share/doc/fnorb/Fnorb-Guide/node7.html
-share/doc/fnorb/Fnorb-Guide/node8.html
-share/doc/fnorb/Fnorb-Guide/node9.html
-share/doc/fnorb/Fnorb-Guide/previous_motif.gif
-share/doc/fnorb/Fnorb-Guide/previous_motif_gr.gif
-share/doc/fnorb/Fnorb-Guide/up_motif.gif
-share/doc/fnorb/Fnorb-Guide/up_motif_gr.gif
-share/doc/fnorb/LICENSE.HTML
-share/doc/fnorb/README
 share/fnorb/examples/hello-world/HelloWorld.idl
 share/fnorb/examples/hello-world/README
 share/fnorb/examples/hello-world/client.py
@@ -331,8 +249,6 @@ share/fnorb/script/fnping
 @dirrm share/fnorb/examples/hello-world
 @dirrm share/fnorb/examples
 @dirrm share/fnorb
-@dirrm share/doc/fnorb/Fnorb-Guide
-@dirrm share/doc/fnorb
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/parser
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/naming/CosNaming_skel
@@ -344,3 +260,4 @@ share/fnorb/script/fnping
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/compiler
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb
+@unexec rm -rf %D/share/doc/fnorb 2>/dev/null || true
