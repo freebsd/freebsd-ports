@@ -6,51 +6,59 @@
 #
 
 PORTNAME=	fspd
-PORTVERSION=	2.8.1.3
+PORTVERSION=	2.8.1.19
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.netsw.org/net/ip/filetrans/fsp/
-DISTNAME=	fsp.281-B3
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	fsp
+DISTNAME=	fsp-2.8.1b19
 
 MAINTAINER=	trevor@FreeBSD.org
-COMMENT=	FSP daemon
+COMMENT=	FSP daemon, clients and scanner
 
-FORBIDDEN=	"buffer overflow (CAN-2004-0011) and directory traversal (CAN-2003-1022) bugs"
-
-ALL_TARGET=	fspserver
+CLIENTS=	fcatcmd fcdcmd fducmd ffindcmd fgetcmd fgrabcmd fhostcmd \
+		flscmd fmkdir fprocmd fput frmcmd frmdircmd fver fspmerge \
+		fstatcmd
 DOCDIR=		share/doc/${PORTNAME}
-DOCFILES=	BETA.README ChangeLog FILES INFO TODO INSTALL MACHINES
-USE_REINPLACE=	yes
+PORTDOCS=	BETA.README COPYRIGHT ChangeLog FILES INFO INSTALL MACHINES TODO
+MAN1=		fcat.1 fcatcmd.1 fcd.1 fcdcmd.1 fdu.1 fducmd.1 ffind.1 \
+		ffindcmd.1 fget.1 fgetcmd.1 fgrab.1 fgrabcmd.1 fhost.1 \
+		fhostcmd.1 fls.1 flscmd.1 fmkdir.1 fpro.1 fprocmd.1 fput.1 \
+		frm.1 frmcmd.1 frmdir.1 frmdircmd.1 fspd.1 fspscan.1 fver.1 \
+		fstatcmd.1
+MAN5=		fsp_prof.5
+PLIST_FILES=	bin/fspd bin/fspscan etc/fspd.conf.sample
+OPTIONS=	NOCLIENTS "Omit client commands" off
+CONFIGURE_TARGET:=	--build=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
-MAN1=		fspd.1
-PLIST=		${WRKDIR}/pkg-plist
-WRKSRC=		${WRKDIR}/2.8.1
+USE_BZIP2=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
-do-patch:
-	${REINPLACE_CMD} -e "s:/usr/fsp:${LOCALBASE}/etc:g" \
-		${WRKSRC}/include/server_conf.h
+.include <bsd.port.pre.mk>
 
-pre-install:
-	${ECHO_CMD} "sbin/fspd" > ${PLIST}
-.if !defined(NOPORTDOCS)
-.for i in ${DOCFILES}
-	${ECHO_CMD} ${DOCDIR}/${i} >> ${PLIST}
+.if !defined(WITH_NOCLIENTS)
+.for command in ${CLIENTS}
+PLIST_FILES+=	bin/${command}
 .endfor
-	${ECHO_CMD} share/examples/fspd/example.conf >> ${PLIST}
-	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
-	${ECHO_CMD} @dirrm share/examples/fspd >> ${PLIST}
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/server/fspd ${LOCALBASE}/sbin
-.if !defined(NO_INSTALL_MANPAGES)
-	${INSTALL_MAN} ${WRKSRC}/man/man1/fspd.1 ${LOCALBASE}/man/man1/
-.endif
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/fspd ${PREFIX}/${DOCDIR}
-.for i in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${DOCDIR}
+	${MKDIR} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/example.conf ${PREFIX}/share/examples/fspd
 .endif
+.if !defined(WITH_NOCLIENTS)
+.for command in ${CLIENTS}
+	${INSTALL_PROGRAM} ${WRKSRC}/clients/${command} ${PREFIX}/bin
+.endfor
+.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/contrib/fspscan ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/server/fspd ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/fspd.conf ${PREFIX}/etc/fspd.conf.sample
+.for page in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/man/${page} ${PREFIX}/man/man1
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/man/${MAN5} ${PREFIX}/man/man5
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
