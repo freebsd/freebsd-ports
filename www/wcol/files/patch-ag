@@ -1,0 +1,10 @@
+--- ipc.c.orig	Wed Oct  1 23:00:22 1997
++++ ipc.c	Thu Jul 13 14:42:46 2000
+@@ -45,6 +45,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <sys/param.h>
+ #include <sys/types.h>
+ #include <sys/uio.h>
+ #include <sys/socket.h>
