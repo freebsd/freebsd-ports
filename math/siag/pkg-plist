@@ -33,6 +33,7 @@ share/siag/common/bitmaps/icons.xpm
 share/siag/common/bitmaps/info.xpm
 share/siag/common/bitmaps/insert.xpm
 share/siag/common/bitmaps/italic.xpm
+share/siag/common/bitmaps/lline.xpm
 share/siag/common/bitmaps/new.xpm
 share/siag/common/bitmaps/next.xpm
 share/siag/common/bitmaps/none.xpm
@@ -63,6 +64,7 @@ share/siag/common/bitmaps/cancel.xpm
 share/siag/common/bitmaps/home.xpm
 share/siag/common/bitmaps/quit.xpm
 share/siag/common/bitmaps/reload.xpm
+share/siag/common/bitmaps/rline.xpm
 share/siag/common/bitmaps/search.xpm
 share/siag/common/bitmaps/SO3.xpm
 share/siag/common/bitmaps/center.xpm
