@@ -1,5 +1,5 @@
---- configure.orig	Fri Aug 13 18:02:47 1999
-+++ configure	Sat Sep  4 13:15:50 1999
+--- configure.orig	Wed Nov  3 21:37:24 1999
++++ configure	Sun Nov 21 15:34:05 1999
 @@ -4648,7 +4648,7 @@
      EXTRA_CFLAGS=""
      TCL_EXPORT_FILE_SUFFIX=""
@@ -13,7 +13,7 @@
  	    LDFLAGS="-Wl,-Bexport"
  	    LD_SEARCH_FLAGS=""
  	    ;;
--	NetBSD-*|FreeBSD-[12].*|OpenBSD-*)
+-	NetBSD-*|FreeBSD-[1-2].*|OpenBSD-*)
 +	NetBSD-*|FreeBSD-*|OpenBSD-*)
  	    # Not available on all versions:  check for include file.
  	    ac_safe=`echo "dlfcn.h" | sed 'y%./+-%__p_%'`
