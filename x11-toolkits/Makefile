@@ -6,7 +6,7 @@
     SUBDIR += Xaw3d
     SUBDIR += blt
     SUBDIR += fltk
-    SUBDIR += guile-gtk
+    SUBDIR += gob
     SUBDIR += gtk--
     SUBDIR += gtk-engines
     SUBDIR += gtk10
@@ -14,6 +14,7 @@
     SUBDIR += gtkgl
     SUBDIR += gtkglarea
     SUBDIR += gtkstep
+    SUBDIR += guile-gtk
     SUBDIR += itk
     SUBDIR += iwidgets
     SUBDIR += iv
