@@ -180,4 +180,8 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.cpp' | ${XARGS} \
 		${REINPLACE_CMD} -e "s|<malloc.h>|<stdlib.h>|g"
 
+post-configure:
+	@${REINPLACE_CMD} -e "s|CPPFLAGS = -I/usr/local/include|CPPFLAGS = |g" \
+		${WRKSRC}/app/Makefile
+       
 .include <bsd.port.post.mk>

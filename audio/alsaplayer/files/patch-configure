@@ -1,5 +1,5 @@
---- configure.orig	Wed Apr 23 19:21:24 2003
-+++ configure	Mon Jun 30 00:08:58 2003
+--- configure.orig	Tue Jul 15 14:34:50 2003
++++ configure	Tue Jul 15 15:07:57 2003
 @@ -2591,13 +2591,13 @@
    CFLAGS=$ac_save_CFLAGS
  elif test $ac_cv_prog_cc_g = yes; then
@@ -40,21 +40,29 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -14618,7 +14619,7 @@
+@@ -14618,7 +14619,11 @@
  echo "$as_me:$LINENO: checking for gcc optimization flags" >&5
  echo $ECHO_N "checking for gcc optimization flags... $ECHO_C" >&6
  old_cflags=$CFLAGS
 -CFLAGS="$CFLAGS -O2 -fexpensive-optimizations -funroll-loops -finline-functions -ffast-math -Wall"
-+CFLAGS="$CFLAGS -fexpensive-optimizations -funroll-loops -finline-functions -ffast-math -Wall"
++if test "$ARCH_TYPE" = "alpha"; then
++  CFLAGS="$CFLAGS -fexpensive-optimizations -funroll-loops -finline-functions -Wall"
++else
++  CFLAGS="$CFLAGS -fexpensive-optimizations -funroll-loops -finline-functions -ffast-math -Wall"
++fi
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -14647,7 +14648,7 @@
+@@ -14647,7 +14652,11 @@
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
 -   EXTRA_OPT_CFLAGS="-O2 -fexpensive-optimizations -funroll-loops -finline-functions -ffast-math -Wall"
-+   EXTRA_OPT_CFLAGS="-fexpensive-optimizations -funroll-loops -finline-functions -ffast-math -Wall"
++   if test "$ARCH_TYPE" = "alpha"; then
++     EXTRA_OPT_CFLAGS="-fexpensive-optimizations -funroll-loops -finline-functions -Wall"
++   else
++     EXTRA_OPT_CFLAGS="-fexpensive-optimizations -funroll-loops -finline-functions -ffast-math -Wall"
++   fi
  else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
