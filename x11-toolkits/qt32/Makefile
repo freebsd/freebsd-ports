@@ -26,6 +26,7 @@ LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
@@ -34,7 +35,7 @@ CONFIGURE_ARGS=	-system-libpng -system-libjpeg -system-libmng	\
 		-qt-imgfmt-png -qt-imgfmt-jpeg -qt-imgfmt-mng	\
 		-system-zlib -no-nas-sound -sm -qt-gif -thread	\
 		-no-fast ${XINERAMA} -no-g++-exceptions -no-stl	\
-		${CUPS}	-shared -prefix ${PREFIX}
+		${CUPS} -shared -prefix ${PREFIX}
 
 .if defined(DEBUG)
 CONFIGURE_ARGS+= -debug
@@ -75,6 +76,18 @@ BROKEN=	"The QT ${PORTVERSION} port does not support any XFree86 < 4.x"
 BROKEN=	"You have QT2 headers installed!  Installing this port"
 BROKEN+="will result in conflicts between QT3 and QT2!"
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,-O2,${CXXFLAGS},' \
+		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
+	@${REINPLACE_CMD} -e 's,gcc,${CC},' \
+		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
+	@${REINPLACE_CMD} -e 's,g++,${CXX},' \
+		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
+	@${REINPLACE_CMD} -e  's,/usr/local,${LOCALBASE},' \
+		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
+	@${REINPLACE_CMD} -e  's,/usr/X11R6,${X11BASE},' \
+		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 
 post-build:
 .for tool in makeqpf mergetr msg2qm qembed qvfb
