@@ -1,0 +1,18 @@
+--- Abacus.c	Sat Feb 15 02:57:06 1997
++++ /home/andy/tmp/wrk/Abacus.c	Sun May  3 11:33:29 1998
+@@ -184,6 +184,7 @@
+ #endif /* !LESS_THAN_AIX3_2 */
+ #endif /* defined(SYSV) || defined(SVR4) */
+ 
++#ifndef __FreeBSD__
+ static int
+ usleep(long unsigned int usec)
+ {
+@@ -225,6 +226,7 @@
+ #endif
+ 	return 0;
+ }
++#endif
+ #endif
+ 
+ static void
