@@ -1,0 +1,11 @@
+--- ../Tools/compile.py.orig	Thu Mar 12 19:15:10 1998
++++ ../Tools/compile.py	Sun Mar 29 12:53:10 1998
+@@ -632,7 +632,7 @@
+ 
+     compileall.compile_dir(".")
+     os.system("make -f Makefile.pre.in boot")
+-    os.system("make")
++#    os.system("make")
+ 
+ if sys.platform == 'win32':
+ 	swig_found = find_swig()

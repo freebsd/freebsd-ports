@@ -1,0 +1,22 @@
+--- Setup.orig	Fri May  8 19:40:19 1998
++++ Setup	Sat May 30 13:24:50 1998
+@@ -1,15 +1,15 @@
+-*shared* 
++*shared*
+ 
+ #This file is designed for building a dynamic extension.
+ 
+ # Gist module
+ # Change XLIB to the directory where libX11.a is found on your system.
+ # Change YORHOME to the directory (--prefix) where Yorick was installed.
+-XLIB = /usr/X11R6/lib
+-YORHOME = /usr/local
++XLIB = ${X11BASE}/lib
++YORHOME = ${PREFIX}
+ GISTH = $(YORHOME)/lib/yorick/1.4/h
+ GISTL = $(YORHOME)/lib/yorick/1.4/lib
+-gistC Gist/Src/gistCmodule.c -I$(GISTH) -L$(GISTL) -L$(XLIB) -lgist -lX11 -lm
++gistC Gist/Src/gistCmodule.c -I${X11BASE}/include -I$(GISTH) -L$(GISTL) -L$(XLIB) -lgist -lX11 -lm
+ 
+ # Arrayfns module - supports Z. Motteler's 3D additions to pygist
+ arrayfns Arrayfcns/Src/arrayfnsmodule.c
