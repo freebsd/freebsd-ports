@@ -5,99 +5,172 @@
 # $FreeBSD$
 #
 
-PORTNAME=	squeak
-PORTVERSION=	3.5
-PORTREVISION=	2
-CATEGORIES=	lang
-MASTER_SITES=	ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.5/ \
-		http://www-sor.inria.fr/~piumarta/squeak/unix/release/ \
-		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/3.4/unix-linux/ \
-		ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.4/unix-linux/
-DISTNAME=	Squeak-${SQUEAK_VERSION}.src
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SQUEAK_SRC} ${SQUEAK_IMAGE_SRC}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+##################################################
+PORTNAME=		squeak3
+PORTVERSION=		3.6
+CATEGORIES=		lang
+VMVERSION=		3.6-3
+IMAGEVERSION=		3.6
+PATCHNUMBER=		5429
 
-MAINTAINER=	roland.jesse@gmx.net
-COMMENT=	Full Smalltalk 80 with portability to UNIX, Mac, and Windows
+##################################################
+MASTER_SITES=		ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.6/ \
+			ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.6/unix-linux/ \
+			ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/3.6/ \
+			ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/3.6/unix-linux/ \
+			http://www-sor.inria.fr/~piumarta/squeak/unix/release/ \
 
-# Don't set USE_ZIP as this breaks EXTRACT_CMD, EXTRACT_SUFX, and what not.
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+DISTFILES=		Squeak-${VMVERSION}.src.tar.gz \
+			Squeak${IMAGEVERSION}-${PATCHNUMBER}-basic.zip \
+			Squeak${IMAGEVERSION}-${PATCHNUMBER}-full.zip \
+			SqueakV3.sources.gz
 
-SQUEAK_VERSION=	3.4-1
-SQUEAK_IMAGE_VERSION=	3.5
-SQUEAK_PATCHNR=	5180
-SQUEAK_SRC=	SqueakV3.sources.gz
-SQUEAK_IMAGE_SRC=	Squeak${SQUEAK_IMAGE_VERSION}-${SQUEAK_PATCHNR}.zip
-SQUEAK_IMAGE=	Squeak${SQUEAK_IMAGE_VERSION}-${SQUEAK_PATCHNR}.image \
-		Squeak${SQUEAK_IMAGE_VERSION}-${SQUEAK_PATCHNR}.changes
+DIST_SUBDIR=		squeak
+EXTRACT_ONLY=		Squeak-${VMVERSION}.src.tar.gz
 
-WRKSRC=		${WRKDIR}/Squeak-${SQUEAK_VERSION}
-MAN1=		inisqueak.1 squeak.1
-USE_XLIB=	yes
-USE_GMAKE=	yes
-USE_REINPLACE=	yes
-HAS_CONFIGURE=	yes
-LDCONFIG_DIRS=	${PREFIX}/share/squeak/${SQUEAK_VERSION}
+##################################################
+MAINTAINER=		chris@chrisburkert.de
+COMMENT=		Full Smalltalk 80 with portability to UNIX, Mac, and Windows.
+
+##################################################
+ONLY_FOR_ARCHS= 	i386 sparc64
+MAN1=			inisqueak.1 squeak.1
+USE_XLIB=		yes
+USE_GMAKE=		yes
+USE_REINPLACE=		yes
+HAS_CONFIGURE=		yes
+
+# Don't set USE_ZIP as this breaks EXTRACT_CMD.
+BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip
+
+# shared Libaries are to be installed in:
+LDCONFIG_DIRS=		${PREFIX}/share/squeak/${VMVERSION}
+
+FILES_TO_GZIP=		Squeak${IMAGEVERSION}-${PATCHNUMBER}-basic.image \
+			Squeak${IMAGEVERSION}-${PATCHNUMBER}-basic.changes \
+			Squeak${IMAGEVERSION}-${PATCHNUMBER}-full.image \
+			Squeak${IMAGEVERSION}-${PATCHNUMBER}-full.changes
+
+##################################################
+# Configure and Build
+WRKSRC=			${WRKDIR}/Squeak-${VMVERSION}
 CONFIGURE_WRKSRC=	${WRKSRC}/build
-INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
+BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
+INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
 CONFIGURE_SCRIPT=	../platforms/unix/config/configure
-CONFIGURE_ARGS+=	--libdir=${PREFIX}/share
+CONFIGURE_ARGS+=	--libdir=${PREFIX}/share \
+			--without-quartz
 # don't pass "-s" to install to avoid trying to strip a shell script
-CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}"
-BUILD_WRKSRC=	${WRKSRC}/build
-DIST_SUBDIR=	squeak
+CONFIGURE_ENV=
 
-.ifdef (WITHOUT_AUDIO)
-CONFIGURE_ARGS+=	--without-audio
+##################################################
+# Knobs
+.if defined(WITH_RFB) && (${WITH_RFB}=="no")
+CONFIGURE_ARGS+=        --without-rfb
+.endif
+
+.if defined(WITH_NPSQUEAK) && (${WITH_NPSQUEAK}=="no")
+CONFIGURE_ARGS+=        --without-npsqueak
+PLIST_NPSQUEAK=         "@comment feature not wanted - "
 .else
-LIB_DEPENDS+=		audio.2:${PORTSDIR}/audio/nas
-CONFIGURE_ARGS+=	--with-audio=nas
+PLIST_NPSQUEAK=
 .endif
 
-.ifdef (WITH_MMX)
-CONFIGURE_ARGS+=	--enable-mpg-mmx
+.if defined(WITH_X) && (${WITH_X}=="no")
+CONFIGURE_ARGS+=        --without-x
+PLIST_X=		"@comment feature not wanted - "
+.else
+CONFIGURE_ARGS+=        --with-x
+PLIST_X=
 .endif
 
-MAKEFILE=	Makefile
+.if defined(WITH_MPG_MMX) && (${WITH_MPG_MMX}=="yes")
+CONFIGURE_ARGS+=        --enable-mpg-mmx
+.endif
+
 .ifdef (CC)
-MAKE_ARGS+=	CC=${CC}
+MAKE_ARGS+=		CC="${CC}"
 .endif
+
 .ifdef (CFLAGS)
-MAKE_ARGS+=	CCFLAGS="${CFLAGS}"
+MAKE_ARGS+=		CCFLAGS="${CFLAGS}"
 .endif
+
+PLIST_SUB=              IMAGEVERSION=${IMAGEVERSION}\
+			PATCHNUMBER=${PATCHNUMBER}\
+			VMVERSION=${VMVERSION}\
+			PLIST_NPSQUEAK=${PLIST_NPSQUEAK}\
+			PLIST_X=${PLIST_X}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
+##################################################
+pre-everything::
+	@${ECHO_MSG} " "
+	@${ECHO_MSG} " ------------------------- Please note: -------------------------"
+	@${ECHO_MSG} " "
+	@${ECHO_MSG} "  Squeak has the following tunable options:"
+	@${ECHO_MSG} " "
+	@${ECHO_MSG} "    WITH_MPG_MMX=      [yes|no]  MMX support (MPG plugin)"
+	@${ECHO_MSG} "                            ^^   (default: disabled)"
+	@${ECHO_MSG} "    WITH_NPSQUEAK=     [yes|no]  browser plugin support"
+	@${ECHO_MSG} "                        ^^^      (default: enabled)"
+	@${ECHO_MSG} "    WITH_RFB=          [yes|no]  remote frame buffer support"
+	@${ECHO_MSG} "                        ^^^      (default: enabled)"
+	@${ECHO_MSG} "    WITH_X=            [yes|no]  X Windows support"
+	@${ECHO_MSG} "                        ^^^      (default: enabled)"
+	@${ECHO_MSG} " "
+	@${ECHO_MSG} "  additional make arguments"
+	@${ECHO_MSG} "    CC=<aString>"
+	@${ECHO_MSG} "    CFLAGS=<aString>"
+	@${ECHO_MSG} " "
+	@${ECHO_MSG} " ------------------ Thanks for your attention! ------------------"
+	@${ECHO_MSG} " "
 
+##################################################
 pre-configure:
-	@${MKDIR} ${BUILD_WRKSRC}
-	@cd ${WRKSRC}/platforms/unix/npsqueak && ${REINPLACE_CMD} -e 's|include|include -I${X11BASE}/include|g' Makefile
+	@${MKDIR} ${CONFIGURE_WRKSRC}
+	@cd ${WRKSRC}/platforms/unix/npsqueak && \
+		${REINPLACE_CMD} -e 's|include|include -I${X11BASE}/include|g' Makefile
 
+##################################################
 post-configure:
-# PREFIX safeness
 	@${REINPLACE_CMD} -E \
 		-e s'|^(prefix).*$$|\1=${PREFIX}|' \
 		-e s'|^(docdir).*$$|\1=${DOCSDIR}|' \
-		${CONFIGURE_WRKSRC}/${MAKEFILE}
+		${CONFIGURE_WRKSRC}/Makefile
 
+##################################################
 post-install:
-	(cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${SQUEAK_SRC} ${PREFIX}/share/squeak/)
-	(cd ${PREFIX}/share/squeak && ${EXTRACT_CMD} -d ${SQUEAK_SRC})
-	(cd ${PREFIX}/share/squeak && unzip -x ${DISTDIR}/${DIST_SUBDIR}/${SQUEAK_IMAGE_SRC})
-.for file in ${SQUEAK_IMAGE}
-	(cd ${PREFIX}/share/squeak && ${GZIP_CMD} ${file})
+	(cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} SqueakV3.sources.gz ${PREFIX}/share/squeak/)
+	(cd ${PREFIX}/share/squeak && ${EXTRACT_CMD} -d SqueakV3.sources.gz)
+	(cd ${DISTDIR}/${DIST_SUBDIR} && unzip -u Squeak${IMAGEVERSION}-${PATCHNUMBER}-basic.zip -d ${WRKDIR})
+	(cd ${DISTDIR}/${DIST_SUBDIR} && unzip -u Squeak${IMAGEVERSION}-${PATCHNUMBER}-full.zip -d ${WRKDIR})
+	(cd ${WRKDIR} && ${INSTALL_DATA} ReadMe.txt ${PREFIX}/share/squeak/)
+.for file in ${FILES_TO_GZIP}
+	(cd ${WRKDIR} && ${GZIP_CMD} ${file} && ${INSTALL_DATA} ${file}.gz ${PREFIX}/share/squeak/)
 .endfor
-# install inisqueak and change the build in version number on the fly
-	${SED} \
-		-e 's|VERSION=3.4-5170|VERSION=3.5-5180|' \
-		-e 's|IMAGE=squeak|IMAGE=Squeak3.5-5180|' \
-		-e 's|CHANGES=squeak|CHANGES=Squeak3.5-5180|' \
-		${WRKSRC}/build/inisqueak > ${PREFIX}/bin/inisqueak
+	${SED}	-e 's|VERSION=3.5-5180|VERSION=${IMAGEVERSION}-${PATCHNUMBER}|' \
+		-e 's|IMAGE=Squeak3.5-5180|IMAGE=Squeak${IMAGEVERSION}-${PATCHNUMBER}|' \
+		-e 's|CHANGES=Squeak3.5-5180|CHANGES=Squeak${IMAGEVERSION}-${PATCHNUMBER}|' \
+		${WRKSRC}/build/inisqueak > ${WRKSRC}/build/inisqueak.tmp
+	${INSTALL_SCRIPT} ${WRKSRC}/build/inisqueak.tmp ${PREFIX}/bin/inisqueak
 	${CHMOD} 755 ${PREFIX}/bin/inisqueak
-	${STRIP_CMD} ${PREFIX}/share/squeak/${SQUEAK_VERSION}/squeak
-	${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG} " "
+	@${ECHO_MSG} " ------------------------- Please note: -------------------------"
+	@${ECHO_MSG} " "
+	@${ECHO_MSG} "  In order to be able to make use of squeak you need to have an"
+	@${ECHO_MSG} "    image and a changes file in your working directory as well"
+	@${ECHO_MSG} "    as access to a source file. This is easy by using inisqueak."
+	@${ECHO_MSG} "    Please see the inisqueak(1) manpage for details."
+	@${ECHO_MSG} " "
+	@${ECHO_MSG} "  Make sure you have the following values in your environment"
+	@${ECHO_MSG} "    variables:"
+	@${ECHO_MSG} "    PATH:            ${PREFIX}/bin"
+	@${ECHO_MSG} "    LD_LIBRARY_PATH: ${PREFIX}/lib"
+	@${ECHO_MSG} "                     ${PREFIX}/share/squeak/${VMVERSION}"
+	@${ECHO_MSG} " "
+	@${ECHO_MSG} " ------------------ Thanks for your attention! ------------------"
+	@${ECHO_MSG} " "
 
 .include <bsd.port.post.mk>

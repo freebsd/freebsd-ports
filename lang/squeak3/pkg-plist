@@ -1,23 +1,30 @@
 bin/inisqueak
 bin/squeak
-share/doc/squeak/COPYING
-share/doc/squeak/COPYRIGHT
-share/doc/squeak/LICENSE
-share/doc/squeak/README.Contributing
-share/doc/squeak/README.Keyboard
-share/doc/squeak/README.Sound
-share/squeak/3.4-1/B3DAcceleratorPlugin.la
-share/squeak/3.4-1/B3DAcceleratorPlugin.so
-share/squeak/3.4-1/PseudoTTYPlugin.la
-share/squeak/3.4-1/PseudoTTYPlugin.so
-share/squeak/3.4-1/npsqueak.so
-share/squeak/3.4-1/npsqueakrun
-share/squeak/3.4-1/squeak
+share/doc/squeak/COPYING.gz
+share/doc/squeak/COPYRIGHT.gz
+share/doc/squeak/LICENSE.gz
+share/doc/squeak/README.Contributing.gz
+share/doc/squeak/README.Keyboard.gz
+share/doc/squeak/README.Sound.gz
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+%%PLIST_X%%share/squeak/%%VMVERSION%%/B3DAcceleratorPlugin
+share/squeak/%%VMVERSION%%/UnixOSProcessPlugin
+%%PLIST_X%%share/squeak/%%VMVERSION%%/XDisplayControlPlugin
+%%PLIST_NPSQUEAK%%share/squeak/%%VMVERSION%%/npsqueak.so
+%%PLIST_NPSQUEAK%%share/squeak/%%VMVERSION%%/npsqueakrun
+share/squeak/%%VMVERSION%%/squeak
+%%PLIST_X%%share/squeak/%%VMVERSION%%/vm-display-X11
+share/squeak/%%VMVERSION%%/vm-display-null
+share/squeak/%%VMVERSION%%/vm-sound-OSS
+share/squeak/%%VMVERSION%%/vm-sound-null
 share/squeak/ReadMe.txt
-share/squeak/Squeak3.5-5180.changes.gz
-share/squeak/Squeak3.5-5180.image.gz
+share/squeak/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%-basic.changes.gz
+share/squeak/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%-basic.image.gz
+share/squeak/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%-full.changes.gz
+share/squeak/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%-full.image.gz
 share/squeak/SqueakV3.sources
-share/squeak/npsqueakregister
-@dirrm share/squeak/3.4-1
+%%PLIST_NPSQUEAK%%share/squeak/npsqueakregister
+@dirrm share/squeak/%%VMVERSION%%
 @dirrm share/squeak
 @dirrm share/doc/squeak
