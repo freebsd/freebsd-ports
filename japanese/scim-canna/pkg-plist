@@ -1,0 +1,5 @@
+lib/scim-1.0/IMEngine/canna.so
+lib/scim-1.0/SetupUI/canna-imengine-setup.so
+share/locale/ja/LC_MESSAGES/scim-canna.mo
+@unexec rmdir %D/lib/scim-1.0/IMEngine 2>/dev/null || true
+@unexec rmdir %D/lib/scim-1.0/SetupUI 2>/dev/null || true
