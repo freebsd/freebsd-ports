@@ -17,8 +17,6 @@ WRKSRC=		${WRKDIR}/xpx
 USE_IMAKE=	yes
 XMKMF=		xmkmf
 
-NO_INSTALL_MANPAGES=	yes
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ja/xpx
