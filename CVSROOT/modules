@@ -7159,6 +7159,7 @@ ruby-calendar	ports/devel/ruby-calendar
 ruby-cast_256	ports/security/ruby-cast_256
 ruby-cdb	ports/databases/ruby-cdb
 ruby-clibpdf	ports/print/ruby-clibpdf
+ruby-criteria	ports/databases/ruby-criteria
 ruby-csv	ports/textproc/ruby-csv
 ruby-curl	ports/ftp/ruby-curl
 ruby-cvs	ports/devel/ruby-cvs
