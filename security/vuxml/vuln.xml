@@ -276,7 +276,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="65a17a3f-ed6e-11d8-aff1-00061bc2ad93">
-    <topic>Arbitrary code execution via a format string vulnerability</topic>
+    <topic>Arbitrary code execution via a format string vulnerability in jftpgw</topic>
     <affects>
       <package>
         <name>jftpgw</name>
@@ -300,6 +300,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-05-30</discovery>
       <entry>2004-08-13</entry>
+      <modified>2004-08-23</modified>
     </dates>
   </vuln>
 
