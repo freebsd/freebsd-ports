@@ -1,0 +1,13 @@
+Algorithm::Numerical::Shuffle
+=============================
+
+Shuffle is a perl module which performs a one pass, fair shuffle on a
+list. If the list is passed as a reference to an array, the shuffle
+is done in situ.
+
+The running time of the algorithm is linear in the size of the list.
+For an in situ shuffle, the memory overhead is constant; otherwise,
+linear extra memory is used.
+
+The algorithm used is discussed by Knuth [3]. It was first published
+by Fisher and Yates [2], and later by Durstenfeld [1].
