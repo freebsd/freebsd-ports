@@ -1,5 +1,6 @@
 bin/gftp
 share/gftp/COPYING
+share/gftp/bookmarks
 share/gftp/deb.xpm
 share/gftp/diff.xpm
 share/gftp/dir.xpm
@@ -15,9 +16,17 @@ share/gftp/open_dir.xpm
 share/gftp/tar.xpm
 share/gftp/txt.xpm
 share/gnome/apps/Internet/gftp.desktop
+share/locale/br/LC_MESSAGES/gftp.mo
+share/locale/da/LC_MESSAGES/gftp.mo
 share/locale/de/LC_MESSAGES/gftp.mo
+share/locale/es/LC_MESSAGES/gftp.mo
+share/locale/fi/LC_MESSAGES/gftp.mo
 share/locale/fr/LC_MESSAGES/gftp.mo
 share/locale/ja/LC_MESSAGES/gftp.mo
 share/locale/ko/LC_MESSAGES/gftp.mo
+share/locale/nl/LC_MESSAGES/gftp.mo
+share/locale/pl/LC_MESSAGES/gftp.mo
+share/locale/sv/LC_MESSAGES/gftp.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/gftp.mo
 share/pixmaps/gftp.png
 @dirrm share/gftp
