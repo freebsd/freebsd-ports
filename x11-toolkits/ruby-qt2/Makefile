@@ -1,5 +1,5 @@
 # New ports collection makefile for:	Ruby-qt2
-# Date created:		12 Aug 2000
+# Date created:		9 Jan 2001
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
