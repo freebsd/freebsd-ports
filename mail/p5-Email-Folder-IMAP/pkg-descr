@@ -1,0 +1,4 @@
+This software adds IMAP functionality to Email::Folder.  Its interface
+is identical to the other Email::Folder::Reader subclasses.
+
+WWW: http://search.cpan.org/dist/Email-Folder-IMAP
