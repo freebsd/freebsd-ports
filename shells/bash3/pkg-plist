@@ -6,7 +6,7 @@ bin/bashbug
 @unexec install-info --delete %D/info/bash.info %D/info/dir
 info/bash.info
 @exec install-info %D/info/bash.info %D/info/dir
-share/doc/bash/article.ps.bz2
-share/doc/bash/bashref.ps.bz2
-share/doc/bash/article.txt
-@dirrm share/doc/bash
+%%PORTDOCS%%%%DOCSDIR%%/article.ps.bz2
+%%PORTDOCS%%%%DOCSDIR%%/bashref.ps.bz2
+%%PORTDOCS%%%%DOCSDIR%%/article.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
