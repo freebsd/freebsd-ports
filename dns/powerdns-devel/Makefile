@@ -33,7 +33,7 @@ LIBMAP_CONF=	/etc/libmap.conf
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 600000
-BROKEN=	Doesn't compile on FreeBSD 6.0
+BROKEN=	"Does not compile on FreeBSD 6.0"
 .endif
 
 # use user config if possible
