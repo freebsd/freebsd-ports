@@ -28,6 +28,7 @@ MASTERDIR=	${.CURDIR}/../../lang/python
 DESCR=		${.CURDIR}/pkg-descr
 MD5_FILE=	${.CURDIR}/distinfo
 PLIST=		${WRKDIR}/pkg-plist
+BROKEN=		"not ported to Python-2.2.3 yet"
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -exec ${RM} -f {} \;
