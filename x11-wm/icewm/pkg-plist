@@ -24,6 +24,7 @@ bin/icewmtray
 %%PORTDOCS%%%%DOCSDIR%%/icewm-18.html
 %%PORTDOCS%%%%DOCSDIR%%/icewm-19.html
 %%PORTDOCS%%%%DOCSDIR%%/icewm-2.html
+%%PORTDOCS%%%%DOCSDIR%%/icewm-20.html
 %%PORTDOCS%%%%DOCSDIR%%/icewm-3.html
 %%PORTDOCS%%%%DOCSDIR%%/icewm-4.html
 %%PORTDOCS%%%%DOCSDIR%%/icewm-5.html
@@ -352,6 +353,7 @@ bin/icewmtray
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/icewm.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/icewm.mo
