@@ -1,0 +1,38 @@
+@pkgdep xview-lib-3.2.1
+@owner root
+@group sys
+@mode 0555
+bin/imaze
+bin/ninja
+bin/genlab
+bin/imazesrv
+@mode 0444
+man/man6/imaze.6.gz
+man/man6/ninja.6.gz
+man/man6/genlab.6.gz
+man/man6/imazesrv.6.gz
+lib/imaze/labs/10x10.lab
+lib/imaze/labs/12x12.lab
+lib/imaze/labs/15x15.lab
+lib/imaze/labs/20x20.lab
+lib/imaze/labs/25x25.lab
+lib/imaze/labs/april.lab
+lib/imaze/labs/demolab.lab
+lib/imaze/labs/doors.lab
+lib/imaze/labs/longest.lab
+lib/imaze/labs/no1.lab
+lib/imaze/labs/november.lab
+lib/imaze/labs/october.lab
+lib/imaze/sounds/awake.au
+lib/imaze/sounds/dead.au
+lib/imaze/sounds/kill.au
+lib/imaze/sounds/miss.au
+lib/imaze/sounds/pause.au
+lib/imaze/sounds/shoot.au
+lib/imaze/sounds/title.au
+lib/imaze/README
+lib/imaze/Xdefaults.Motif.example
+lib/imaze/Xdefaults.OpenWindows.example
+@dirrm lib/imaze/sounds
+@dirrm lib/imaze/labs
+@dirrm lib/imaze

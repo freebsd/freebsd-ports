@@ -1,0 +1,20 @@
+*** source/Makefile.new	Fri Apr 12 07:10:57 1996
+--- source/Makefile	Thu Feb 22 23:01:18 1996
+***************
+*** 116,122 ****
+  	  GRAFLIBS='$$(XVLIBS)' \
+  	  GRAFINCLUDES='$$(XVINCLUDES)' \
+  	  GRAFOBJS='$$(XVOBJS)' \
+! 	  SYSDEFS='-DDONT_DECLARE_ERRLIST -DSOUND -DJOYSTICK' \
+  	  all
+  
+  irix:
+--- 116,123 ----
+  	  GRAFLIBS='$$(XVLIBS)' \
+  	  GRAFINCLUDES='$$(XVINCLUDES)' \
+  	  GRAFOBJS='$$(XVOBJS)' \
+! 	  SYSDEFS='-DDONT_DECLARE_ERRLIST -DSOUND \
+! 		-DDEFAULT_SOUND_DIR=\"$(SOUNDDIR)\" -DJOYSTICK' \
+  	  all
+  
+  irix:
