@@ -16,5 +16,6 @@ COMMENT=	Library needed by syslog-ng
 GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
+USE_GCC=	3.3+
 
 .include <bsd.port.mk>
