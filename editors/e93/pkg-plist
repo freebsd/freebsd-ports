@@ -1,3 +1,5 @@
 bin/e93
 lib/e93/.e93rc
 share/doc/e93/LICENSE.TXT
+@dirrm lib/e93
+@dirrm share/doc/e93
