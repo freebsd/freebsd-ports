@@ -1,0 +1,28 @@
+--- Makefile.orig	Tue Feb  2 12:11:37 1999
++++ Makefile	Sat Jun 26 01:23:37 1999
+@@ -1,12 +1,12 @@
+-INC	=	-I/usr/X11R6/include
+-LIBS	=	-lXext -lX11 -lm -L/usr/X11R6/lib \
+-		-ltiff  -lXpm -lpng -lz -ljpeg -lungif -lwraster
++INC	=	-I${X11BASE}/include
++LIBS	=	-lXext -lX11 -lm -L${X11BASE}/lib -L${LOCALBASE}/lib \
++		-ltiff  -lXpm -lpng -lz -ljpeg -lgif -lwraster
+ OBJS	=	src/wmglobe.o src/rend.o src/wmgutil.o \
+ 		src/sunpos.o src/myconvert.o src/mycontext.o 
+ 
+ 
+ .c.o :
+-	gcc -c -O2 -Wall $(INC) $< -o $*.o
++	${CC} -c ${CFLAGS} -Wall $(INC) $< -o $*.o
+ 
+ all:  wmglobe
+ 
+@@ -14,7 +14,7 @@
+ 	rm -f src/*.o wmglobe
+ 	
+ wmglobe :	$(OBJS)
+-		gcc -O2 -Wall $(OBJS) -o wmglobe $(LIBS)
++		${CC} ${CFLAGS} -Wall $(OBJS) -o wmglobe $(LIBS)
+ 		strip wmglobe 
+ 
+ install :	
