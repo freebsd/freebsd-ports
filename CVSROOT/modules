@@ -1776,6 +1776,7 @@ faad		ports/audio/faad
 faces		ports/mail/faces
 fakebo		ports/security/fakebo
 fakeident	ports/security/fakeident
+fakeroot	ports/security/fakeroot
 falconseye	ports/games/falconseye
 fam		ports/devel/fam
 fampp		ports/devel/fampp
