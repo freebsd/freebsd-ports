@@ -2,7 +2,7 @@ bin/htpasswd
 bin/makeweb
 bin/syslogtocern
 sbin/thttpd
-www/cgi-bin/nph-redirect
+www/cgi-bin/redirect
 www/cgi-bin/phf
 www/cgi-bin/ssi
 @dirrm www/cgi-bin
