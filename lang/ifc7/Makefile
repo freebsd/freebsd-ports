@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ifc
+PORTNAME=	ifc7
 PORTVERSION=	7.1.038
 CATEGORIES=	lang linux devel
 MASTER_SITES=
