@@ -5,6 +5,7 @@ lib/libao.so.1
 %%ARTS%%lib/ao/libarts.so
 lib/ao/liboss.so
 %%ESOUND%%lib/ao/libesd.so
+share/aclocal/ao.m4
 share/doc/libao-0.6.0/API
 share/doc/libao-0.6.0/DRIVERS
 share/doc/libao-0.6.0/USAGE

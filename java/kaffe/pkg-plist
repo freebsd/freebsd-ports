@@ -10,6 +10,7 @@ bin/jdb
 bin/kaffe
 bin/kaffeh
 bin/kjc
+bin/kopi
 bin/native2ascii
 bin/rmic
 bin/rmiregistry
