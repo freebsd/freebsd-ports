@@ -71,9 +71,9 @@ create_user() {
 
 create_sasldb() {
 	if [ ! -f ${PGK_PREFIX}/etc/sasldb.db ]; then
-		touch ${PGK_PREFIX}/etc/sasldb.db
-		chown cyrus:mail ${PGK_PREFIX}/etc/sasldb.db
-		chmod 640 ${PGK_PREFIX}/etc/sasldb.db
+		touch ${PKG_PREFIX}/etc/sasldb.db
+		chown cyrus:mail ${PKG_PREFIX}/etc/sasldb.db
+		chmod 640 ${PKG_PREFIX}/etc/sasldb.db
 	fi
 }
 

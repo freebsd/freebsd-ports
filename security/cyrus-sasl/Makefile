@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	1.5.24
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		${MASTER_SITE_LOCAL} \
@@ -72,6 +72,8 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=	--enable-gssapi=${KRB5_HOME}
+.elif defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME})
+CONFIGURE_ARGS+=	--enable-gssapi=${HEIMDAL_HOME}
 .else
 CONFIGURE_ARGS+=	--disable-gssapi
 GSSAPI=	"@comment "
