@@ -33,6 +33,7 @@ EXTRACT_ONLY+=	teip3p3x.tar.gz
 MAINTAINER=	ports@henrik-motakef.de
 COMMENT=	TEI's Guidelines for Electronic Text Encoding and Interchange
 
+LATEST_LINK=	tei-guidelines-p3
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 INSTDIR=	${PREFIX}/share/doc/tei/p3
