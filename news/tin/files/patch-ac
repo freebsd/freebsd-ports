@@ -1,0 +1,15 @@
+--- src/header.c.bak	Mon Jan 25 16:49:49 1999
++++ src/header.c	Sat Apr 10 17:30:31 1999
+@@ -338,10 +338,10 @@
+ 	static char sender[8192];
+ 
+ 	sender[0] = '\0';
+-
++#if 0 /* passwd name may contain illegal chars */
+ 	if ((ptr = get_full_name()))
+ 		sprintf(sender, "%s ", ptr);
+-
++#endif
+ 	if ((ptr = get_user_name())) {
+ 		strcat(sender, "<");
+ 		strcat(sender, ptr);
