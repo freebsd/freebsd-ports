@@ -1,25 +1,29 @@
 # New ports collection makefile for:    xloadimage
-# Version required:     3.03
+# Version required:     4.1
 # Date created:         9 January 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.6 1995/04/12 20:32:08 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/18 11:44:23 asami Exp $
 #
 
-DISTNAME=	xloadimage
-PKGNAME=	xloadimage-3.03
+DISTNAME=	xloadimage.4.1
+PKGNAME=	xloadimage-4.1
 CATEGORIES=	x11
-MASTER_SITES=	ftp://gatekeeper.dec.com/pub/X11-contrib/
-DISTFILES=	xloadimage.3.03.tar.Z
+MASTER_SITES=	ftp://ftp.cdrom.com/pub/X11/R5contrib/
 
 MAINTAINER=	jmz@FreeBSD.org
 
-NO_WRKSUBDIR=	yes
-USE_IMAKE=	yes
-MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
-		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults -f
+USE_X11=	yes
 
-pre-install:
-	@mkdir -p ${PREFIX}/lib/X11/app-defaults
+ALL_TARGET=
+
+do-configure:
+	cd ${WRKSRC} && make configure </dev/null
+	cd ${WRKSRC} && ${ECHO} SYSPATHFILE=${X11BASE}/lib/X11/app-defaults/Xloadimage >> Makefile
+
+do-install:
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} xloadimage uufilter ${X11BASE}/bin
+	cd ${WRKSRC} && ${INSTALL_DATA} xloadimage uufilter ${X11BASE}/bin
+	cd ${WRKSRC} && ${GZIP_CMD} < xloadimage.man >${X11BASE}/man/man1/xloadimage.1.gz
 
 .include <bsd.port.mk>

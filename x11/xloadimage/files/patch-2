@@ -1,0 +1,12 @@
+--- config.c~	Thu Oct 28 17:37:46 1993
++++ config.c	Tue Jun  9 01:51:08 1998
+@@ -9,8 +9,8 @@
+  */
+ 
+ #include "copyright.h"
+-#include <ctype.h> /* must here for debugging version under AIX */
+ #include "xloadimage.h"
++#undef X_NOT_STDC_ENV
+ #include <X11/Xos.h>
+ #include <sys/stat.h>
+ #ifndef VMS

@@ -1,0 +1,10 @@
+--- window.c~	Mon Nov  8 22:06:02 1993
++++ window.c	Tue Jun  9 01:51:46 1998
+@@ -9,7 +9,6 @@
+  */
+ 
+ #include "copyright.h"
+-#include <ctype.h>
+ #include "xloadimage.h"
+ #include <X11/cursorfont.h>
+ #include <X11/Xatom.h>

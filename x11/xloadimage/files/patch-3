@@ -1,0 +1,10 @@
+--- image.h~	Thu Oct 28 19:14:56 1993
++++ image.h	Tue Jun  9 01:45:59 1998
+@@ -20,7 +20,6 @@
+ #define _ArgProto(ARGS) ARGS
+ #endif
+ 
+-#include <stdlib.h>
+ 
+ #else /* !__STDC__ */
+ 
