@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jumpnbump
-PORTVERSION=	1.40
+PORTVERSION=	1.41
 CATEGORIES=	games
 MASTER_SITES=	http://www.jumpbump.mine.nu/port/ \
 	http://www.vlaadworld.net/jumpnbump/ \
@@ -20,6 +20,8 @@ LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 
 .if !defined (WITHOUT_TCL)
 RUN_DEPENDS+=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+PLIST_SUB +=	WITH_TCL=""
+.else
 PLIST_SUB +=	WITH_TCL="@comment "
 .endif
 
