@@ -10,7 +10,7 @@ PORTVERSION=    0.98
 CATEGORIES=	mail
 MASTER_SITES=	http://vipul.net/perl/sources/spamcontrol/ricochet/
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=     ache@FreeBSD.org
 COMMENT=	An automated agent for tracing and reporting internet junk mail
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
