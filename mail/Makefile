@@ -100,6 +100,7 @@
     SUBDIR += gotmail
     SUBDIR += grepmail
     SUBDIR += gubby
+    SUBDIR += hashcash
     SUBDIR += hbiff
     SUBDIR += hotwayd
     SUBDIR += ifile

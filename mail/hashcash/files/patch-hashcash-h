@@ -1,0 +1,19 @@
+*** hashcash.h~	Fri Sep 26 02:28:03 2003
+--- hashcash.h	Fri Jan 30 14:13:22 2004
+***************
+*** 130,136 ****
+  /* simple function calling hashcash_parse, hashcash_count for convenience */
+  
+  int hashcash_check( const char* token, const char* resource, time_t now_time, 
+! 		    time_t validity_period, long grace_period, 
+  		    int required_bits );
+  
+  /* return how many tries per second the machine can do */
+--- 130,136 ----
+  /* simple function calling hashcash_parse, hashcash_count for convenience */
+  
+  int hashcash_check( const char* token, const char* resource, time_t now_time, 
+! 		    time_t validity_period, time_t grace_period, 
+  		    int required_bits );
+  
+  /* return how many tries per second the machine can do */
