@@ -11,7 +11,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.catb.org/~esr/%SUBDIR%/ \
 		ftp://ftp.ayamura.org/pub/%SUBDIR%/ \
@@ -26,17 +26,20 @@ COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/APOP/KPOP/ETRN/ODMR
 RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 .endif
 
+.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
+.endif
 .if defined(WITH_X11)
 USE_PYTHON=	yes
 .endif
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-POP2 --enable-SDPS \
-		--enable-nls --with-hesiod=no --enable-fallback=no
+		--with-hesiod=no --enable-fallback=no
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
 MAKE_ENV+=	${CONFIGURE_ENV}
 MAN1=		fetchmail.1
@@ -45,6 +48,14 @@ MLINKS=		fetchmail.1 fetchmailconf.1
 FDOC=		${PREFIX}/share/doc/fetchmail
 DOCS=		FAQ FEATURES NEWS NOTES README \
 		design-notes.html fetchmail-FAQ.html fetchmail-features.html
+
+.if !defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB=		NLS="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
