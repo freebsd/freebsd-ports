@@ -6223,6 +6223,7 @@ share_timedef	src/share/timedef
 sharefonts	ports/x11-fonts/sharefonts
 sharity-light	ports/net/sharity-light
 shc		ports/misc/shc
+shmap		ports/devel/shmap
 shntool		ports/audio/shntool
 shorten		ports/audio/shorten
 shout		ports/audio/shout
