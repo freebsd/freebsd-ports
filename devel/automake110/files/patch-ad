@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- aclocal.in.orig	Sun Jul 15 13:52:18 2001
-+++ aclocal.in	Sat Aug 11 12:28:32 2001
+--- aclocal.in.orig	Sun Sep  9 11:31:39 2001
++++ aclocal.in	Sun Sep  9 11:37:54 2001
 @@ -34,6 +34,8 @@
  # Note that this isn't pkgdatadir, but a separate directory.
  $acdir = "@datadir@/aclocal";
@@ -12,17 +9,17 @@ $FreeBSD$
  # Some globals.
  
  # Exit status.
-@@ -106,6 +108,9 @@
+@@ -115,6 +117,9 @@
  
  
  local (@dirlist) = &parse_arguments (@ARGV);
 +
 +unshift @dirlist, $acdir_x11 if -d "$acdir_x11/.";
 +
- &scan_m4_files ($acdir, @dirlist);
+ &scan_m4_files (@dirlist);
  &scan_configure;
  if (! $exit_status)
-@@ -279,12 +284,13 @@
+@@ -299,11 +304,13 @@
  	$file_contents{'acinclude.m4'} = &scan_file ('acinclude.m4');
      }
  
@@ -31,13 +28,12 @@ $FreeBSD$
      foreach $m4dir (@dirlist)
      {
  	opendir (DIR, $m4dir)
- 	    || die "aclocal: couldn't open directory \`$m4dir': $!\n";
--	local ($file, $fullfile, $expr);
-+	local ($file, $fullfile, $ino, $expr);
+ 	    || die "aclocal: couldn't open directory `$m4dir': $!\n";
++	local ($file, $fullfile, $expr);
+ 	local ($file, $fullfile);
  	foreach $file (sort grep (! /^\./, readdir (DIR)))
  	{
- 	    # Only examine .m4 files.
-@@ -294,6 +300,12 @@
+@@ -314,6 +321,12 @@
  	    next if $file eq 'aclocal.m4';
  
  	    $fullfile = $m4dir . '/' . $file;
@@ -50,12 +46,3 @@ $FreeBSD$
  	    $file_contents{$fullfile} = &scan_file ($fullfile);
  	}
  	closedir (DIR);
-@@ -400,7 +412,7 @@
- 	    elsif ($map{$1} ne 'acinclude.m4' || $file eq 'acinclude.m4')
- 	    {
- 		warn "aclocal: $file: $.: duplicated macro \`$1'\n";
--		$exit_status = 1;
-+		# $exit_status = 1;
- 	    }
- 	    print STDERR "Found macro $1 in $file: $.\n" if $verbosity;
- 	}
