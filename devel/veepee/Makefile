@@ -14,6 +14,8 @@ DISTNAME=	VeePee-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user orientated scripting environment for embedding in applications
+DEPRECATED=	"has distfile problems\; no response from website to inquiries"
+EXPIRATION_DATE=	"April 09, 2004"
 
 BROKEN=		"fails to compile"
 

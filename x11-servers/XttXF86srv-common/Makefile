@@ -20,6 +20,8 @@ PATCHFILES=	fix-01-r128 fix-04-s3trio3d2x fix-05-s3trio3d fix-06-s3trio3d2x\
 
 MAINTAINER?=	taguchi@tohoku.iij.ad.jp
 COMMENT?=	Common files for X True Type Servers
+DEPRECATED=	"fails to fetch\; apparently applies to older version of XFree86"
+EXPIRATION_DATE=	"April 09, 2004"
 
 RUN_DEPENDS+=	mkttfdir:${PORTSDIR}/print/perlftlib
 

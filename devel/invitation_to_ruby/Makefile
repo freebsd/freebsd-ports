@@ -23,6 +23,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A talk given by Jim Weirich, a brief introduction to Ruby
+DEPRECATED=	"no longer available in original form from any website"
+EXPIRATION_DATE=	"April 09, 2004"
 
 NO_BUILD=	yes
 
