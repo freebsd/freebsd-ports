@@ -2147,6 +2147,7 @@ gnetlist	ports/cad/gnetlist
 gnewtellium	ports/net/gnewtellium
 gngb		ports/emulators/gngb
 gniffel		ports/games/gniffel
+gnmm		ports/games/gnmm
 gno3dtet	ports/games/gno3dtet
 gnocatan	ports/games/gnocatan
 gnocl		ports/x11-toolkits/gnocl
