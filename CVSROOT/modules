@@ -7392,6 +7392,7 @@ ports_mbone	ports/mbone
 ports_misc	ports/misc
 ports_multimedia	ports/multimedia
 ports_net	ports/net
+ports_net_mgmt	ports/net-mgmt
 ports_netboot	ports/net/netboot
 ports_news	ports/news
 ports_ntp	ports/net/ntp
