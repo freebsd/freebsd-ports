@@ -4,7 +4,7 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.37 1998/09/03 11:29:35 obrien Exp $
+# $Id: Makefile,v 1.25 1998/09/03 11:35:11 obrien Exp $
 #
 
 DISTNAME=	vim-5.3
@@ -20,11 +20,11 @@ DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-rt${EXTRACT_SUFX}
 MAINTAINER=     obrien@FreeBSD.org
 
 .if defined(BATCH)
-USE_PERL5=	yes
 BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80 \
 		python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	tcl80\\.1\\.2:${PORTSDIR}/lang/tcl80
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+USE_PERL5=	yes
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
@@ -49,8 +49,8 @@ pre-build:
 	@(cd ${WRKSRC}; ${MAKE} distclean)
 
 post-install:
-	[ -e ${PREFIX}/bin/gvim ] || /bin/ln -s ${PREFIX}/bin/vim ${PREFIX}/bin/gvim
+	[ -e ${PREFIX}/bin/gvim ] || ${LN} -s ${PREFIX}/bin/vim ${PREFIX}/bin/gvim
 	@${RM} -f ${PREFIX}/man/man1/etags.1
-	@/bin/ln -sf ${PREFIX}/man/man1/ctags.1.gz ${PREFIX}/man/man1/etags.1.gz
+	@${LN} -sf ${PREFIX}/man/man1/ctags.1.gz ${PREFIX}/man/man1/etags.1.gz
 
 .include <bsd.port.mk>
