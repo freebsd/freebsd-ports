@@ -1,0 +1,12 @@
+lib/mess822.a
+bin/ofmipd
+bin/ofmipname
+bin/iftocc
+bin/new-inject
+bin/822field
+bin/822header
+bin/822date
+bin/822received
+bin/822print
+include/mess822.h
+etc/leapsecs.dat
