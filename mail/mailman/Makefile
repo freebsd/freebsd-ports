@@ -7,6 +7,7 @@
 
 PORTNAME=	mailman
 PORTVERSION=	2.0b5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=   http://download.sourceforge.net/mailman/
 DISTNAME=       mailman-2.0beta5
