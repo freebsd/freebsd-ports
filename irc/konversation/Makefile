@@ -20,7 +20,9 @@ USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
+.include <bsd.port.post.mk>
