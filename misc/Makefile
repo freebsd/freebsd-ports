@@ -63,7 +63,6 @@
     SUBDIR += ewipe
     SUBDIR += explosions
     SUBDIR += ezload
-    SUBDIR += fd
     SUBDIR += felis
     SUBDIR += fep
     SUBDIR += figlet

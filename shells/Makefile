@@ -6,6 +6,7 @@
     SUBDIR += bash2
     SUBDIR += es
     SUBDIR += esh
+    SUBDIR += fd
     SUBDIR += flash
     SUBDIR += ksh93
     SUBDIR += mudsh
