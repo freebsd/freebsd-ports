@@ -25,7 +25,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} ${CPPFLAGS}" LIBS="${LDFLAGS}" \
 MAN1=		ttf2pt1.1 ttf2pt1_convert.1 ttf2pt1_x2gs.1
 
 CPPFLAGS=	`pkg-config --cflags freetype2` \
-		-I${LOCALBASE}/include -DUSE_FREETYPE 
+		-I${LOCALBASE}/include -DUSE_FREETYPE
 LDFLAGS=	`pkg-config --libs freetype2` \
 		-L${LOCALBASE}/lib -lm
 
