@@ -9192,6 +9192,7 @@ skip		ports/security/skip
 skippy		ports/x11-wm/skippy
 skribe		ports/textproc/skribe
 sky2000		ports/astro/sky2000
+skype		ports/net/skype
 skyutils	ports/misc/skyutils
 sl		ports/games/sl
 sl-aspell	ports/textproc/sl-aspell
