@@ -1,0 +1,7 @@
+ Newfile is a tool for creating starter files in various languages. 
+It uses a full-featured preprocessor (like the C preprocessor) to 
+transform templates into customized starter files. It can also generate
+trees of files for a specific purpose, such as a project using automake
+and autoconf, or a FreeBSD port.
+
+WWW: http://newfile.sourceforge.net/

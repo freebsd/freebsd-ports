@@ -1,0 +1,78 @@
+bin/newfile
+%%PORTDOCS%%share/doc/newfile/rdoc/created.rid
+%%PORTDOCS%%share/doc/newfile/rdoc/dot/f_0.dot
+%%PORTDOCS%%share/doc/newfile/rdoc/dot/f_0.png
+%%PORTDOCS%%share/doc/newfile/rdoc/dot/f_1.dot
+%%PORTDOCS%%share/doc/newfile/rdoc/dot/f_1.png
+%%PORTDOCS%%share/doc/newfile/rdoc/dot/f_2.dot
+%%PORTDOCS%%share/doc/newfile/rdoc/dot/f_2.png
+%%PORTDOCS%%share/doc/newfile/rdoc/rdoc-style.css
+%%PORTDOCS%%share/doc/newfile/rdoc/files/fileproc_rb.html
+%%PORTDOCS%%share/doc/newfile/rdoc/files/newfile_rb.html
+%%PORTDOCS%%share/doc/newfile/rdoc/files/sytab_rb.html
+%%PORTDOCS%%share/doc/newfile/rdoc/classes/FileProcessor.html
+%%PORTDOCS%%share/doc/newfile/rdoc/classes/FileFinder.html
+%%PORTDOCS%%share/doc/newfile/rdoc/classes/Cond.html
+%%PORTDOCS%%share/doc/newfile/rdoc/classes/ParseMsg.html
+%%PORTDOCS%%share/doc/newfile/rdoc/classes/SyTab.html
+%%PORTDOCS%%share/doc/newfile/rdoc/classes/Opts.html
+%%PORTDOCS%%share/doc/newfile/rdoc/classes/Installed.html
+%%PORTDOCS%%share/doc/newfile/rdoc/classes/OptionError.html
+%%PORTDOCS%%share/doc/newfile/rdoc/classes/ParseError.html
+%%PORTDOCS%%share/doc/newfile/rdoc/fr_file_index.html
+%%PORTDOCS%%share/doc/newfile/rdoc/fr_class_index.html
+%%PORTDOCS%%share/doc/newfile/rdoc/fr_method_index.html
+%%PORTDOCS%%share/doc/newfile/rdoc/index.html
+share/newfile/fileproc.rb
+share/newfile/sytab.rb
+share/newfile/newfile.rb
+share/newfile/licenses/Artistic@Artistic
+share/newfile/licenses/Artistic@README
+share/newfile/licenses/Artistic@license.inc
+share/newfile/licenses/BSD@LICENSE
+share/newfile/licenses/BSD@README
+share/newfile/licenses/BSD@license.inc
+share/newfile/licenses/GPL@COPYING
+share/newfile/licenses/GPL@README
+share/newfile/licenses/GPL@license.inc
+share/newfile/licenses/minimal@LICENSE
+share/newfile/licenses/minimal@README
+share/newfile/licenses/minimal@license.inc
+share/newfile/licenses/default@license.inc
+share/newfile/licenses/no@license.inc
+share/newfile/projects/auto@Makefile.am
+share/newfile/projects/auto@Makefile.cvs
+share/newfile/projects/auto@acinclude.m4
+share/newfile/projects/auto@configure.ac
+share/newfile/projects/auto@doc!Makefile.am
+share/newfile/projects/auto@doc-src!Makefile.am
+share/newfile/projects/auto@doc-src!alane.pod.mk
+share/newfile/projects/auto@doc-src!alane.tex.mk
+share/newfile/projects/auto@src!Makefile.am
+share/newfile/projects/port@Makefile
+share/newfile/projects/port@distinfo
+share/newfile/projects/port@pkg-comment
+share/newfile/projects/port@pkg-descr
+share/newfile/projects/port@pkg-plist
+share/newfile/templates/%s@c
+share/newfile/templates/%s@c++
+share/newfile/templates/%s@generic
+share/newfile/templates/%s@h
+share/newfile/templates/%s@h++
+share/newfile/templates/%s@mgp
+share/newfile/templates/%s@mk
+share/newfile/templates/%s@pl
+share/newfile/templates/%s@pod
+share/newfile/templates/%s@py
+share/newfile/templates/%s@rb
+share/newfile/templates/%s@sh
+share/newfile/templates/body.inc@sh
+%%PORTDOCS%%@dirrm share/doc/newfile/rdoc/classes
+%%PORTDOCS%%@dirrm share/doc/newfile/rdoc/files
+%%PORTDOCS%%@dirrm share/doc/newfile/rdoc/dot
+%%PORTDOCS%%@dirrm share/doc/newfile/rdoc
+%%PORTDOCS%%@dirrm share/doc/newfile
+@dirrm share/newfile/licenses
+@dirrm share/newfile/templates
+@dirrm share/newfile/projects
+@dirrm share/newfile
