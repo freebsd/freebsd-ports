@@ -1,0 +1,7 @@
+bin/lpe
+lib/lpe/cmode.so
+lib/lpe/cppmode.so
+lib/lpe/htmlmode.so
+lib/lpe/perlmode.so
+lib/lpe/sgmlmode.so
+@dirrm lib/lpe
