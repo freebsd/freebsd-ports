@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	namazu
-PORTVERSION=	2.0.10
-PORTREVISION=	1
+PORTVERSION=	2.0.12
 CATEGORIES+=	databases www textproc
 MASTER_SITES=	http://www.namazu.org/stable/
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	knu@FreeBSD.org
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${DISTNAME}-de.diff
+PATCH_DIST_STRIP=	-p1
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic
