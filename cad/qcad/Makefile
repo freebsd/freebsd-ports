@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qcad
-PORTVERSION=	2.0.3.3.1
+PORTVERSION=	2.0.4.0.1
 PORTREVISION=	1
 
 CATEGORIES=	cad
@@ -47,8 +47,6 @@ do-build:
 
 pre-install:
 	@${ECHO_CMD} bin/qcad > ${PLIST}
-	@${FIND} ${WRKSRC}/qcad/doc/ -type f | \
-		${SED} -e "s:^${WRKSRC}/:%%PORTDOCS%%share/:g" >> ${PLIST}
 	@${FIND} ${WRKSRC}/qcad/examples/ -type f | \
 		${SED} -e "s:^${WRKSRC}/:%%PORTDOCS%%share/:g" >> ${PLIST}
 	@${FIND} ${WRKSRC}/qcad/fonts/ -type f | \
@@ -57,27 +55,21 @@ pre-install:
 		${SED} -e "s:^${WRKSRC}/:share/:g" >> ${PLIST}
 	@${FIND} ${WRKSRC}/qcad/qm/ -type f | \
 		${SED} -e "s:^${WRKSRC}/:share/:g" >> ${PLIST}
-	@${FIND} ${WRKSRC}/qcad/scripts/ -type f | \
-		${SED} -e "s:^${WRKSRC}/:share/:g" >> ${PLIST}
-	@${FIND} -d ${WRKSRC}/qcad/doc -type d | \
-		${SED} -e "s:^${WRKSRC}/:%%PORTDOCS%%@dirrm share/:g" >> ${PLIST}
 	@${ECHO_CMD} '%%PORTDOCS%%@dirrm share/qcad/examples' >> ${PLIST}
 	@${ECHO_CMD} '@dirrm share/qcad/fonts' >> ${PLIST}
 	@${ECHO_CMD} '@dirrm share/qcad/patterns' >> ${PLIST}
 	@${ECHO_CMD} '@dirrm share/qcad/qm' >> ${PLIST}
-	@${ECHO_CMD} '@dirrm share/qcad/scripts/python' >> ${PLIST}
-	@${ECHO_CMD} '@dirrm share/qcad/scripts' >> ${PLIST}
 	@${ECHO_CMD} '@dirrm share/qcad' >> ${PLIST}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qcad/qcad ${PREFIX}/bin/qcad
 	@${MKDIR} ${DATADIR}
-.for dir in fonts patterns qm scripts
+.for dir in fonts patterns qm
 	${TAR} -C ${WRKSRC}/qcad --exclude CVS -cf - ${dir} | \
 		${TAR} -C ${DATADIR} --unlink -xf -
 .endfor
 .if !defined(NOPORTDOCS)
-.for dir in doc examples
+.for dir in examples
 	${TAR} -C ${WRKSRC}/qcad --exclude CVS -cf - ${dir} | \
 		${TAR} -C ${DATADIR} --unlink -xf -
 .endfor
