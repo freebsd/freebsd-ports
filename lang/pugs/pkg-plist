@@ -1,0 +1,14 @@
+bin/kwid
+bin/pugs
+bin/pugscc
+lib/perl6/Kwid.pm
+lib/perl6/perlkwid.kwid
+lib/perl6/Test.pm
+%%SITE_PERL%%/Perl6/Pugs.pm
+%%SITE_PERL%%/Pugs/MakeMaker.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Pugs/.packlist
+@dirrm %%SITE_PERL%%/Pugs
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Pugs
+@unexec rmdir %D/lib/perl6 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Perl6 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6 2>/dev/null || true
