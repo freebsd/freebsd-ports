@@ -6,22 +6,24 @@
 
 PORTNAME=	File-Tail
 PORTVERSION=	0.98
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jeremy@external.org
-COMMENT=	Perl Module to read the end of a file as it's appended to
-
-BUILD_DEPENDS=	${site_perl}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-site_perl=	${SITE_PERL}/${PERL_ARCH}
+COMMENT=	Perl Module to read the end of a file as it\'s appended to
 
 PERL_CONFIGURE=	YES
 
 MAN3=		File::Tail.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS=	${BUILD_DEPENDS}
+.endif
+
+.include <bsd.port.post.mk>
