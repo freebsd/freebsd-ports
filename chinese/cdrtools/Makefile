@@ -11,7 +11,7 @@ PATCH_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/cdrtools/
 PATCHFILES=	cdrtools-1.11-NLS-2byte.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	statue@freebsd.sinica.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../sysutils/cdrtools
 
