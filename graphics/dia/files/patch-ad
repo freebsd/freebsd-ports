@@ -1,6 +1,6 @@
---- configure.orig	Wed Mar 12 19:51:36 2003
-+++ configure	Mon Mar 17 14:05:51 2003
-@@ -7546,6 +7546,7 @@
+--- configure.orig	Sat Nov  1 06:26:01 2003
++++ configure	Fri Mar 19 02:22:25 2004
+@@ -18085,6 +18085,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,7 +8,17 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -9738,7 +9739,7 @@
+@@ -20119,7 +20120,8 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+-#include <freetype/freetype.h>
++#include <ft2build.h>
++#include FT_FREETYPE_H
+ #if (FREETYPE_MAJOR*1000+FREETYPE_MINOR)*1000+FREETYPE_PATCH < 2000009
+ #error Freetype version too low.
+ #endif
+@@ -20301,7 +20303,7 @@
  
  
  cat >>confdefs.h <<_ACEOF
