@@ -1,42 +1,88 @@
-bin/udmsearch/search.cgi
 etc/udmsearch/indexer.conf-dist
 etc/udmsearch/search.htm-dist
-etc/udmsearch/create/msql/create.txt
-etc/udmsearch/create/mssql/create.txt
-etc/udmsearch/create/mysql/alter19-20.txt
-etc/udmsearch/create/mysql/alter20-21.txt
-etc/udmsearch/create/mysql/create.txt
-etc/udmsearch/create/mysql/drop.txt
-etc/udmsearch/create/pgsql/create.txt
-etc/udmsearch/create/odbc-mysql/create.txt
-etc/udmsearch/create/odbc-pgsql/create.txt
-etc/udmsearch/create/solid/README
-etc/udmsearch/create/solid/create.txt
-etc/udmsearch/create/stopwords/stop.cz.txt
-etc/udmsearch/create/stopwords/stop.de.txt
-etc/udmsearch/create/stopwords/stop.en.txt
-etc/udmsearch/create/stopwords/stop.es.txt
-etc/udmsearch/create/stopwords/stop.fr.txt
-etc/udmsearch/create/stopwords/stop.it.txt
-etc/udmsearch/create/stopwords/stop.nl.txt
-etc/udmsearch/create/stopwords/stop.no.txt
-etc/udmsearch/create/stopwords/stop.pt.txt
+etc/udmsearch/create/oracle/create.sql
+etc/udmsearch/create/oracle/multi.sql
+etc/udmsearch/create/sybase/create.sql
+etc/udmsearch/create/sybase/README
+etc/udmsearch/create/stopwords/stop.en.1.txt
 etc/udmsearch/create/stopwords/stop.ru.txt
+etc/udmsearch/create/stopwords/stop.pt.txt
+etc/udmsearch/create/stopwords/stop.no.txt
+etc/udmsearch/create/stopwords/stop.nl.txt
+etc/udmsearch/create/stopwords/stop.fr.txt
+etc/udmsearch/create/stopwords/stop.es.txt
+etc/udmsearch/create/stopwords/stop.en.txt
+etc/udmsearch/create/stopwords/stop.de.txt
+etc/udmsearch/create/stopwords/stop.it.txt
 etc/udmsearch/create/stopwords/stop.ua.txt
+etc/udmsearch/create/stopwords/stop.cz.txt
+etc/udmsearch/create/solid/create.txt
+etc/udmsearch/create/solid/README
+etc/udmsearch/create/solid/multi.txt
+etc/udmsearch/create/pgsql/create.txt
+etc/udmsearch/create/pgsql/crc.txt
+etc/udmsearch/create/pgsql/multi.txt
+etc/udmsearch/create/pgsql/crc-multi.txt
+etc/udmsearch/create/virtuoso/create.txt
+etc/udmsearch/create/virtuoso/multi.txt
+etc/udmsearch/create/virtuoso/crc.txt
+etc/udmsearch/create/mysql/create.txt
+etc/udmsearch/create/mysql/crc.txt
+etc/udmsearch/create/mysql/multi.txt
+etc/udmsearch/create/mysql/crc-multi.txt
+etc/udmsearch/create/mysql/ispell.txt
+etc/udmsearch/create/mssql/create.sql
+etc/udmsearch/create/msql/multi.txt
+etc/udmsearch/create/msql/create.txt
+etc/udmsearch/create/msql/crc.txt
+etc/udmsearch/create/msql/crc-multi.txt
+etc/udmsearch/create/ibase/create.sql
+include/udm_charset.h
+include/udm_common.h
+include/udm_conf.h
+include/udm_config.h
+include/udm_db.h
+include/udm_hrefs.h
+include/udm_indexer.h
+include/udm_log.h
+include/udm_mutex.h
+include/udm_os.h
+include/udm_parseurl.h
+include/udm_spell.h
+include/udm_utils.h
+include/udmsearch.h
+lib/libudmsearch.a
+libexec/udmsearch/search.cgi
+libexec/udmsearch/indexer
+libexec/udmsearch/udm-config
 share/doc/udmsearch/parsers.txt
 share/doc/udmsearch/syslog.txt
 share/doc/udmsearch/templates.txt
 share/doc/udmsearch/usage.txt
-sbin/indexer
-@dirrm bin/udmsearch
+share/doc/udmsearch/HTTP-codes.txt
+share/doc/udmsearch/HTDB.txt
+share/doc/udmsearch/search.txt
+share/doc/udmsearch/ispell.txt
+share/doc/udmsearch/follow.txt
+share/doc/udmsearch/storage.txt
+share/doc/udmsearch/hrefonly.txt
+share/doc/udmsearch/UdmSearch-Oracle8.html
+share/doc/udmsearch/NEWS.html
+share/doc/udmsearch/lib.txt
+share/doc/udmsearch/html.txt
+share/doc/udmsearch/charset.txt
+@dirrm share/doc/udmsearch
+@dirrm libexec/udmsearch
+@dirrm etc/udmsearch/create/ibase
 @dirrm etc/udmsearch/create/msql
 @dirrm etc/udmsearch/create/mssql
 @dirrm etc/udmsearch/create/mysql
+@dirrm etc/udmsearch/create/oracle
 @dirrm etc/udmsearch/create/pgsql
-@dirrm etc/udmsearch/create/odbc-mysql
-@dirrm etc/udmsearch/create/odbc-pgsql
 @dirrm etc/udmsearch/create/solid
 @dirrm etc/udmsearch/create/stopwords
+@dirrm etc/udmsearch/create/sybase
+@dirrm etc/udmsearch/create/virtuoso
 @dirrm etc/udmsearch/create
 @dirrm etc/udmsearch
-@dirrm share/doc/udmsearch
+@dirrm bin/udmsearch

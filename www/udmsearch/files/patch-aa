@@ -1,6 +1,7 @@
---- doc/Makefile.in.orig	Thu Dec  2 22:11:39 1999
-+++ doc/Makefile.in	Thu Dec  2 22:12:27 1999
-@@ -261,9 +261,9 @@
+diff -ru ../udmsearch-3.0.19/doc/Makefile.in ./doc/Makefile.in
+--- ../udmsearch-3.0.19/doc/Makefile.in	Thu Jun 15 10:27:15 2000
++++ ./doc/Makefile.in	Sat Jul  8 15:09:00 2000
+@@ -273,9 +273,9 @@
  
  
  install-data-local:
@@ -11,5 +12,5 @@
 +	echo ${INSTALL_DATA} docs $(DESTDIR)$(prefix)/share/doc/udmsearch
 +	${INSTALL_DATA} ${txt_DOCS} $(DESTDIR)$(prefix)/share/doc/udmsearch
  
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
+ dist-hook:
+ 	cp -rf samples $(distdir)

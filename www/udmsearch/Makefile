@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	udmsearch
-PORTVERSION= 	2.2.1b
+PORTVERSION= 	3.0.19
 CATEGORIES=	www databases
 MASTER_SITES=	http://mysearch.udm.net/Download/	\
 		ftp://ftp.izhcom.ru/pub/unix/UdmSearch/	\
@@ -19,11 +19,15 @@ MAN5=		indexer.conf.5
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--bindir=${PREFIX}/bin/udmsearch \
+CONFIGURE_ARGS=	--enable-charset-guesser \
+		--localstatedir=/var/udmsearch \
+		--sysconfdir=${PREFIX}/etc/udmsearch \
+		--bindir=${PREFIX}/libexec/udmsearch \
+		--sbindir=${PREFIX}/libexec/udmsearch \
 		--sysconfdir=${PREFIX}/etc/udmsearch
 
 .if defined(WITH_POSTGRESQL)
-LIB_DEPENDS=		pq.2:${PORTSDIR}/databases/postgresql
+LIB_DEPENDS=		pq.2:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+=	--with-pgsql
 
 .elif defined(WITH_MSQL)
@@ -55,8 +59,8 @@ pre-install:
 
 post-install:
 	@cp -R ${WRKSRC}/create ${PREFIX}/etc/udmsearch
-	@strip ${PREFIX}/sbin/indexer
-	@strip ${PREFIX}/bin/udmsearch/search.cgi
+	@strip ${PREFIX}/libexec/udmsearch/indexer
+	@strip ${PREFIX}/libexec/udmsearch/search.cgi
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 
