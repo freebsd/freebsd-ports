@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	pysqlite
 PKGNAMEPREFIX=	py-
 DISTNAME=	pysqlite-${PORTVERSION}
 
-MAINTAINER=	gh@ghaering.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DB-API v2 Python library for the SQLite embedded SQL engine
 
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base

@@ -18,7 +18,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	gh@ghaering.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SQL database engine in a C library w/ Tcl wrapper
 
 DOCSDIR=	${PREFIX}/share/doc/sqlite2

@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://rdiff-backup.stanford.edu/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	gh@ghaering.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Local/remote mirroring+incremental backup
 
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	pypgsql
 PKGNAMEPREFIX=	py-
 DISTNAME=	pyPgSQL-${PORTVERSION}
 
-MAINTAINER=	gerhard.haering@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python DB-API 2 compliant library for using PostgreSQL databases
 
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
