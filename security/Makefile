@@ -53,7 +53,6 @@
     SUBDIR += l0phtcrack
     SUBDIR += libident
     SUBDIR += libmcrypt
-    SUBDIR += libmcrypt-nm
     SUBDIR += libparanoia
     SUBDIR += logcheck
     SUBDIR += lsh
