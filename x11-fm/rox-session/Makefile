@@ -6,6 +6,7 @@
 
 PORTNAME=	rox-session
 PORTVERSION=	0.1.19
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
@@ -38,7 +39,7 @@ do-build:
 
 do-install:
 	@${MKDIR} ${PREFIX}/apps/ROX-Session
-	@cd ${WRKSRC}/ROX-Session && ${CP} -r .DirIcon AppInfo.xml AppRun ${BINARIES} Help Login MakeDefault.sh Messages Options.xml Setup SetupPanel Styles WindowMans images ${PREFIX}/apps/ROX-Session
+	@cd ${WRKSRC}/ROX-Session && ${CP} -r .DirIcon AppInfo.xml AppRun ${BINARIES} Help Login MakeDefault.sh Messages Options.xml RunROX Setup SetupPanel Styles WindowMans images ${PREFIX}/apps/ROX-Session
 	@${CAT} ${FILESDIR}/rox-session | ${SED} -e "s|%%PREFIX%%|${PREFIX}|" > ${PREFIX}/bin/rox-session
 	@${CHMOD} 775 ${PREFIX}/bin/rox-session
 
