@@ -1,0 +1,6 @@
+Ruby/GNOME is a set of Ruby bindings for GNOME which includes gnome,
+gtk, gdk_imlib, and gdk_pixbuf modules.  The last three modules are
+provided as separate ports.
+
+Author:	Hiroshi Igarashi <igarashi@ueda.info.waseda.ac.jp>
+WWW:	http://www.ruby-lang.org/gtk/en/

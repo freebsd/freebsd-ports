@@ -58,6 +58,7 @@
     SUBDIR += powershell
     SUBDIR += props
     SUBDIR += qrash
+    SUBDIR += ruby-gnome
     SUBDIR += ruby-kde
     SUBDIR += rxvt
     SUBDIR += rxvt-devel
