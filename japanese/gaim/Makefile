@@ -18,4 +18,6 @@ MD5_FILE=	${.CURDIR}/distinfo
 
 CONFLICTS=	gaim-*
 
+IGNORE=	Needs update to work with Gaim 1.1.0
+
 .include "${MASTERDIR}/Makefile"
