@@ -2110,6 +2110,7 @@ gforge		ports/www/gforge
 gforth		ports/lang/gforth
 gfslicer	ports/sysutils/gfslicer
 gftp		ports/ftp/gftp
+ggiterm		ports/x11/ggiterm
 ggsd		ports/net/ggsd
 ggv2		ports/print/ggv2
 ggz-client-libs	ports/games/ggz-client-libs
