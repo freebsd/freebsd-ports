@@ -13,7 +13,7 @@ MASTER_SITES=	http://us3.samba.org/samba/ftp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. rc old-versions
 #DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
-MAINTAINER=	dwcjr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
 
 CONFLICTS=	ja-samba-2.* samba-3.* sharity-light-1.*
