@@ -1,74 +1,27 @@
-diff -ur xzgv-0.5/Makefile work/xzgv-0.5/Makefile
---- Makefile	Sat May  6 23:49:52 2000
-+++ Makefile	Sun Oct  8 05:56:44 2000
-@@ -24,9 +24,10 @@
+diff -urN ../../xzgv-0.6.orig/Makefile ./Makefile
+--- ../../xzgv-0.6.orig/Makefile	Wed Nov  8 21:52:49 2000
++++ ./Makefile	Sat Nov 11 14:28:52 2000
+@@ -24,9 +24,9 @@
  
  
  
 -all: src man infowarn
-+#all: src man infowarn
-+all: src man info
++all: src man info #infowarn
  
 -src: xzgv src/install-info
 +src: xzgv #src/install-info
  
  # We try this the whole time, as the dependancies are a bit
  # complicated to duplicate here.
-diff -ur xzgv-0.5/config.mk work/xzgv-0.5/config.mk
---- config.mk	Fri Aug  4 20:02:12 2000
-+++ xzgv-0.5/config.mk	Sun Oct  8 05:58:05 2000
-@@ -60,7 +60,7 @@
- #
- # If you don't know what to do, leave it as-is.
- #
--#INFO_DIR_UPDATE=no
-+INFO_DIR_UPDATE=no
+@@ -45,9 +45,9 @@
+ # as I don't want to assume everyone has texinfo's `makeinfo' handy.
+ # So the `infowarn' below is mainly to warn me if the info gets
+ # out of date. :-)
+-info: doc/xzgv.gz
++info: doc/xzgv
  
+-doc/xzgv.gz: doc/xzgv.texi
++doc/xzgv: doc/xzgv.texi
+ 	cd doc && $(MAKE) info
  
- # -------------------- Miscellaneous options -----------------------
-diff -ur xzgv-0.5/src/Makefile work/xzgv-0.5/src/Makefile
---- src/Makefile	Sat Mar 11 02:44:29 2000
-+++ src/Makefile	Sun Oct  8 05:56:44 2000
-@@ -19,7 +19,7 @@
- # compile when you do `make install'. :-)
- # (It would also be weird to have it made by the `doc' Makefile, IMHO.)
- 
--all: xzgv install-info
-+all: xzgv #install-info
- 
- OBJS=	main.o \
- 	filedetails.o gotodir.o updatetn.o confirm.o \
-@@ -43,14 +43,14 @@
- installdirs:
- 	/bin/sh ../mkinstalldirs $(BINDIR)
- 
--install: xzgv installdirs
-+install: xzgv #installdirs
- 	install -m 511 xzgv $(BINDIR)
- 
- uninstall:
- 	$(RM) $(BINDIR)/xzgv
- 
- clean:
--	$(RM) *~ *.o xzgv install-info
-+	$(RM) *~ *.o xzgv #install-info
- 	$(RM) rcfile_opt.h rcfile_var.h rcfile_short.h
- 	$(RM) logodata.h logoconv
- 
-@@ -63,7 +63,7 @@
- getopt.o: getopt.c
- getopt1.o: getopt1.c getopt.h
- gotodir.o: gotodir.c main.h gotodir.h
--install-info.o: install-info.c
-+#install-info.o: install-info.c
- logo.o: logo.c logodata.h
- logoconv.o: logoconv.c
- main.o: main.c readmrf.h readgif.h readjpegtn.h resizepic.h rcfile.h \
---- doc/makeman.awk.orig	Sun Apr 23 02:51:12 2000
-+++ doc/makeman.awk	Thu Oct 19 11:36:45 2000
-@@ -1,4 +1,4 @@
--#!/usr/bin/gawk -f
-+#!/usr/bin/awk -f
- #
- # makeman - make xzgv man page from texinfo file.
- # Public domain by Russell Marks.
+ # Warn if the info is out of date. This *is* automatically done.

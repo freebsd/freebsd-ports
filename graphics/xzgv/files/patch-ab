@@ -1,5 +1,6 @@
---- doc/Makefile.orig	Mon Nov 22 17:23:34 1999
-+++ doc/Makefile	Thu Oct 19 12:58:50 2000
+diff -urN ../../xzgv-0.6.orig/doc/Makefile ./doc/Makefile
+--- ../../xzgv-0.6.orig/doc/Makefile	Wed Nov  8 21:52:49 2000
++++ ./doc/Makefile	Sat Nov 11 14:30:57 2000
 @@ -10,12 +10,11 @@
  
  all: info man
@@ -16,41 +17,67 @@
  
  # `-c' removes the huge number of associated files created by TeX.
  # This saves doing a `make clean' from hell. :-)
-@@ -27,24 +26,25 @@
+@@ -31,7 +30,7 @@
  man: xzgv.1
  xzgv.1: xzgv.texi makeman.awk
  	@echo 'Making man page from xzgv.texi...'
 -	gawk -f makeman.awk <xzgv.texi >xzgv.1
-+	awk -f makeman.awk <xzgv.texi >xzgv.1
++	$(AWK) -f makeman.awk <xzgv.texi >xzgv.1
  
  installdirs:
  	/bin/sh ../mkinstalldirs $(INFODIR) $(MANDIR)
- 
- # I think this one's getting just a tiny bit confusing :-}
+@@ -40,25 +39,26 @@
  ifeq ($(INFO_DIR_UPDATE),no)
--install: installdirs
-+install:
+ install: installdirs
  else
- install: ../src/install-info installdirs
+-install: ../src/install-info installdirs
++install:
  endif
-+	gzip -dc xzgv.gz > xzgv
  	install -m 444 xzgv.1 $(MANDIR)
 -	install -m 444 xzgv.gz xzgv-?.gz $(INFODIR)
 +	install -m 444 xzgv $(INFODIR)
++	install-info $(INFODIR)/xzgv $(INFODIR)/dir
  # Update info `dir' file.
  # Info always uses a dir file in preference to a dir.gz, so we don't use
  # dir.gz unless it's the only game in town.
- ifneq ($(INFO_DIR_UPDATE),no)
+-ifneq ($(INFO_DIR_UPDATE),no)
 -	gzip -d xzgv.gz
-+gzip -dc xzgv.gz > xzgv
- 	if [ -f $(INFODIR)/dir.gz -a ! -f $(INFODIR)/dir ]; then \
- 	  gzip -d $(INFODIR)/dir.gz; \
- 	  ../src/install-info xzgv $(INFODIR)/dir; \
-@@ -53,7 +53,6 @@
- 	  ../src/install-info xzgv $(INFODIR)/dir; \
- 	fi
- 	chmod a+r $(INFODIR)/dir
+-	if [ -f $(INFODIR)/dir.gz -a ! -f $(INFODIR)/dir ]; then \
+-	  gzip -d $(INFODIR)/dir.gz; \
+-	  ../src/install-info xzgv $(INFODIR)/dir; \
+-	  gzip $(INFODIR)/dir; \
+-	else \
+-	  ../src/install-info xzgv $(INFODIR)/dir; \
+-	fi
+-	chmod a+r $(INFODIR)/dir
 -	gzip xzgv
- endif
+-endif
++#ifneq ($(INFO_DIR_UPDATE),no)
++#	gzip -d xzgv.gz
++#	if [ -f $(INFODIR)/dir.gz -a ! -f $(INFODIR)/dir ]; then \
++#	  gzip -d $(INFODIR)/dir.gz; \
++#	  ../src/install-info xzgv $(INFODIR)/dir; \
++#	  gzip $(INFODIR)/dir; \
++#	else \
++#	  ../src/install-info xzgv $(INFODIR)/dir; \
++#	fi
++#	chmod a+r $(INFODIR)/dir
++#	gzip xzgv
++#endif
  
  ../src/install-info: ../src/install-info.c
+ 	cd ../src && $(MAKE) install-info
+@@ -66,10 +66,11 @@
+ # can't easily fix dir :-/, but do remove the files.
+ uninstall:
+ 	$(RM) $(MANDIR)/xzgv.1
+-	$(RM) $(INFODIR)/{xzgv.gz,xzgv-?.gz}
++	install-info --delete $(INFODIR)/xzgv $(INFODIR)/dir
++	$(RM) $(INFODIR)/xzgv
+ 
+ # This *doesn't* remove the Info files, which should stick around to
+ # be included in the distribution. Ditto for the man page, since
+ # building it requires gawk.
+ clean:
+-	$(RM) *~ xzgv.dvi
++	$(RM) *~ xzgv.dvi xzgv

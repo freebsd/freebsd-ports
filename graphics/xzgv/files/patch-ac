@@ -1,0 +1,39 @@
+diff -urN ../../xzgv-0.6.orig/src/Makefile ./src/Makefile
+--- ../../xzgv-0.6.orig/src/Makefile	Wed Nov  8 21:52:49 2000
++++ ./src/Makefile	Sat Nov 11 14:32:17 2000
+@@ -19,7 +19,7 @@
+ # compile when you do `make install'. :-)
+ # (It would also be weird to have it made by the `doc' Makefile, IMHO.)
+ 
+-all: xzgv install-info
++all: xzgv #install-info
+ 
+ OBJS=	main.o \
+ 	filedetails.o gotodir.o updatetn.o confirm.o \
+@@ -43,14 +43,14 @@
+ installdirs:
+ 	/bin/sh ../mkinstalldirs $(BINDIR)
+ 
+-install: xzgv installdirs
+-	install -m 511 xzgv $(BINDIR)
++install: xzgv #installdirs
++	install -s -m 511 xzgv $(BINDIR)
+ 
+ uninstall:
+ 	$(RM) $(BINDIR)/xzgv
+ 
+ clean:
+-	$(RM) *~ *.o xzgv install-info
++	$(RM) *~ *.o xzgv
+ 	$(RM) rcfile_opt.h rcfile_var.h rcfile_short.h
+ 	$(RM) logodata.h logoconv
+ 
+@@ -63,7 +63,7 @@
+ getopt.o: getopt.c
+ getopt1.o: getopt1.c getopt.h
+ gotodir.o: gotodir.c main.h gotodir.h
+-install-info.o: install-info.c getopt.h
++#install-info.o: install-info.c getopt.h
+ logo.o: logo.c logodata.h
+ logoconv.o: logoconv.c
+ main.o: main.c readmrf.h readgif.h readpng.h readjpegtn.h resizepic.h \
