@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	builds/jakarta-tomcat-4.0/release/v${TOMCAT_RELEASE}/src
 DISTNAME=	jakarta-tomcat-connectors-${CONNECTORS_RELEASE}-src
 DIST_SUBDIR=	mod_webapp
 
-MAINTAINER=	asachs@uunet.co.za
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module mounts Tomcat web applications
 
 BUILD_DEPENDS=	${NONEXISTANT}:${PORTSDIR}/devel/apr:configure
