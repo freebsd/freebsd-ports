@@ -1,6 +1,6 @@
---- configure.orig	Tue Apr  2 12:45:16 2002
-+++ configure	Tue Apr  2 12:46:34 2002
-@@ -2663,7 +2663,7 @@
+--- configure-orig	Mon Oct 21 10:42:02 2002
++++ configure	Mon Oct 21 10:42:15 2002
+@@ -2676,7 +2676,7 @@
  $extendedecho "SYSVLOCATION = \${PREFIX}$sysvdir" >>Makefile
  $extendedecho "CGIBINLOCATION = \${PREFIX}$cgidir" >>Makefile
  $extendedecho "MANUALFILES = \${PREFIX}$mandir" >>Makefile

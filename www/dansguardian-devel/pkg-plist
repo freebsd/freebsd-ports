@@ -1,29 +1,76 @@
 @exec mkdir -p etc/dansguardian
+@exec mkdir -p etc/dansguardian/phraselists
+@exec mkdir -p etc/dansguardian/phraselists/chat
+@exec mkdir -p etc/dansguardian/phraselists/drugadvocasy
+@exec mkdir -p etc/dansguardian/phraselists/dutchbadwords
+@exec mkdir -p etc/dansguardian/phraselists/frenchbadwords
+@exec mkdir -p etc/dansguardian/phraselists/gambling
+@exec mkdir -p etc/dansguardian/phraselists/goodphrases
+@exec mkdir -p etc/dansguardian/phraselists/gore
+@exec mkdir -p etc/dansguardian/phraselists/illegaldrugs
+@exec mkdir -p etc/dansguardian/phraselists/intolerance
+@exec mkdir -p etc/dansguardian/phraselists/legaldrugs
+@exec mkdir -p etc/dansguardian/phraselists/personals
+@exec mkdir -p etc/dansguardian/phraselists/pornography
+@exec mkdir -p etc/dansguardian/phraselists/violence
+@exec mkdir -p etc/dansguardian/phraselists/warezhacking
+@exec mkdir -p etc/dansguardian/phraselists/weapons
+sbin/dansguardian
 etc/dansguardian/bannedextensionlist
 etc/dansguardian/bannediplist
-etc/dansguardian/bannedmimetypelist
 etc/dansguardian/bannedphraselist
+etc/dansguardian/bannedmimetypelist
 etc/dansguardian/bannedregexpurllist
 etc/dansguardian/bannedsitelist
 etc/dansguardian/bannedurllist
 etc/dansguardian/banneduserlist
 etc/dansguardian/dansguardian.conf
-etc/dansguardian/exceptioniplist
 etc/dansguardian/exceptionphraselist
-etc/dansguardian/exceptionsitelist
 etc/dansguardian/exceptionurllist
 etc/dansguardian/exceptionuserlist
+etc/dansguardian/exceptionsitelist
+etc/dansguardian/exceptioniplist
+etc/dansguardian/phraselists/chat/weighted
+etc/dansguardian/phraselists/drugadvocasy/weighted
+etc/dansguardian/phraselists/dutchbadwords/weighted
+etc/dansguardian/phraselists/frenchbadwords/weighted
+etc/dansguardian/phraselists/gambling/banned
+etc/dansguardian/phraselists/gambling/weighted
+etc/dansguardian/phraselists/goodphrases/exception
+etc/dansguardian/phraselists/goodphrases/weighted
+etc/dansguardian/phraselists/gore/weighted
+etc/dansguardian/phraselists/illegaldrugs/banned
+etc/dansguardian/phraselists/illegaldrugs/weighted
+etc/dansguardian/phraselists/intolerance/banned
+etc/dansguardian/phraselists/intolerance/weighted
+etc/dansguardian/phraselists/legaldrugs/weighted
+etc/dansguardian/phraselists/personals/weighted
+etc/dansguardian/phraselists/pornography/banned
+etc/dansguardian/phraselists/pornography/weighted
+etc/dansguardian/phraselists/violence/weighted
+etc/dansguardian/phraselists/warezhacking/weighted
+etc/dansguardian/phraselists/weapons/weighted
 etc/dansguardian/pics
 etc/dansguardian/template.html
 etc/dansguardian/weightedphraselist
-etc/dansguardian/weightedphraselist.goodwords
-etc/dansguardian/weightedphraselist.personals
-etc/dansguardian/weightedphraselist.pornsites
-etc/dansguardian/weightedphraselist.pornwords
-etc/dansguardian/weightedphraselist.warez
-etc/rc.d/dansguardian.sh
-sbin/dansguardian
+etc/rc.d/start-dg.sh
 www/cgi-bin/dansguardian.pl
+@dirrm etc/dansguardian/phraselists/chat
+@dirrm etc/dansguardian/phraselists/drugadvocasy
+@dirrm etc/dansguardian/phraselists/dutchbadwords
+@dirrm etc/dansguardian/phraselists/frenchbadwords
+@dirrm etc/dansguardian/phraselists/gambling
+@dirrm etc/dansguardian/phraselists/goodphrases
+@dirrm etc/dansguardian/phraselists/gore
+@dirrm etc/dansguardian/phraselists/illegaldrugs
+@dirrm etc/dansguardian/phraselists/intolerance
+@dirrm etc/dansguardian/phraselists/legaldrugs
+@dirrm etc/dansguardian/phraselists/personals
+@dirrm etc/dansguardian/phraselists/pornography
+@dirrm etc/dansguardian/phraselists/violence
+@dirrm etc/dansguardian/phraselists/warezhacking
+@dirrm etc/dansguardian/phraselists/weapons
+@dirrm etc/dansguardian/phraselists
 @dirrm etc/dansguardian
 @cwd /
 var/log/dansguardian.log
