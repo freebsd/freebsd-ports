@@ -8895,7 +8895,6 @@ xincluder	ports/textproc/xincluder
 xine		ports/graphics/xine
 xine_d4d_plugin	ports/graphics/xine_d4d_plugin
 xine_d5d_plugin	ports/graphics/xine_d5d_plugin
-xine_dvdnav_plugin	ports/graphics/xine_dvdnav_plugin
 xinetd		ports/security/xinetd
 xinfocom	ports/games/xinfocom
 xinstall	src/usr.bin/xinstall
