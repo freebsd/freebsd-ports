@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lzop
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzop/download/
 
@@ -16,8 +16,10 @@ COMMENT=	Fast file compressor similar to gzip, using the LZO library
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
 MAN1=		lzop.1
 
 .include <bsd.port.mk>
