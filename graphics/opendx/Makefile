@@ -20,12 +20,14 @@ LIB_DEPENDS=	Magick.5:${PORTSDIR}/graphics/ImageMagick \
 		netcdf.1:${PORTSDIR}/math/netcdf \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+USE_AUTOMAKE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_MESA=	yes
 USE_MOTIF=	yes
 USE_NEWGCC=	yes
 USE_XLIB=	yes
+AUTOMAKE_ARGS=	-a -i
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-magick
 CONFIGURE_ENV=	ARCH="" \
