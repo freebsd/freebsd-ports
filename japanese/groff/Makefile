@@ -3,7 +3,7 @@
 # Date created:		14 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.2 1995/05/02 09:27:06 asami Exp $
+# $Id: Makefile,v 1.3 1995/05/02 10:36:11 asami Exp $
 #
 
 DISTNAME=	groff-1.09
@@ -18,6 +18,11 @@ PATCHFILES=	jgroff-0.98.diff.gz
 DISTPATCHES=	950414.01.Z 950414.02.Z
 PATCH_DIST_STRIP=	-p1
 
+USE_GMAKE=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS= --prefix=/usr/local
+
+.if !defined(MASTER_SITE_OVERRIDE)
 pre-fetch: 
 	@(cd ${DISTDIR}; \
 	 if [ ! -f ${PATCHFILES} ]; then \
@@ -33,9 +38,6 @@ pre-fetch:
 		sed '/^END -----/,/^BEGIN ----/d' | uudecode; \
 	    rm -f ${DISTPATCHES};\
 	 fi)
-
-USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS= --prefix=/usr/local
+.endif
 
 .include <bsd.port.mk>
