@@ -1,5 +1,6 @@
 bin/lynx
 etc/lynx.cfg
+lib/lynx_help/CHANGES
 lib/lynx_help/COPYHEADER
 lib/lynx_help/COPYING
 lib/lynx_help/Lynx_users_guide.html
@@ -26,6 +27,7 @@ lib/lynx_help/lynx_help_main.html
 lib/lynx_help/lynx_url_support.html
 lib/lynx_help/samples/jumpsUnix.html
 lib/lynx_help/samples/jumpsVMS.html
+lib/lynx_help/samples/lynx-keymaps
 lib/lynx_help/samples/lynx.com
 lib/lynx_help/samples/lynx.lss
 lib/lynx_help/samples/mailcap
@@ -34,13 +36,16 @@ lib/lynx_help/test/ALT88592.html
 lib/lynx_help/test/ISO_LATIN1_test.html
 lib/lynx_help/test/README.txt
 lib/lynx_help/test/TestComment.html
+lib/lynx_help/test/c1.html
 lib/lynx_help/test/iso8859-1.html
 lib/lynx_help/test/iso88592.html
+lib/lynx_help/test/raw8bit.html
 lib/lynx_help/test/sgml.html
+lib/lynx_help/test/spaces.html
 lib/lynx_help/test/tabtest.html
 lib/lynx_help/test/unicode.html
 man/man1/lynx.1.gz
-@dirrm lib/lynx_help/test
-@dirrm lib/lynx_help/samples
-@dirrm lib/lynx_help/keystrokes
 @dirrm lib/lynx_help
+@dirrm lib/lynx_help/keystrokes
+@dirrm lib/lynx_help/samples
+@dirrm lib/lynx_help/test
