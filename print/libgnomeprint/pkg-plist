@@ -4,26 +4,43 @@ include/libgnomeprint-2.0/libgnomeprint/gnome-font-face.h
 include/libgnomeprint-2.0/libgnomeprint/gnome-font.h
 include/libgnomeprint-2.0/libgnomeprint/gnome-glyphlist.h
 include/libgnomeprint-2.0/libgnomeprint/gnome-pgl.h
-include/libgnomeprint-2.0/libgnomeprint/gnome-print-bonobo-client.h
-include/libgnomeprint-2.0/libgnomeprint/gnome-print-bonobo.h
 include/libgnomeprint-2.0/libgnomeprint/gnome-print-config.h
 include/libgnomeprint-2.0/libgnomeprint/gnome-print-master.h
-include/libgnomeprint-2.0/libgnomeprint/gnome-print-meta.h
-include/libgnomeprint-2.0/libgnomeprint/gnome-print-multipage.h
 include/libgnomeprint-2.0/libgnomeprint/gnome-print-paper.h
-include/libgnomeprint-2.0/libgnomeprint/gnome-print-private.h
 include/libgnomeprint-2.0/libgnomeprint/gnome-print-unit.h
 include/libgnomeprint-2.0/libgnomeprint/gnome-print.h
 include/libgnomeprint-2.0/libgnomeprint/gnome-rfont.h
 include/libgnomeprint-2.0/libgnomeprint/gp-gc.h
-include/libgnomeprint-2.0/libgnomeprint/gpa-private.h
+include/libgnomeprint-2.0/libgnomeprint/private/gnome-font-private.h
+include/libgnomeprint-2.0/libgnomeprint/private/gnome-print-private.h
+include/libgnomeprint-2.0/libgnomeprint/private/gp-gc-private.h
+include/libgnomeprint-2.0/libgnomeprint/private/gpa-private.h
 lib/gnome-print-2.0/drivers/libgnomeprint-fax.so
+lib/gnome-print-2.0/transports/libgnomeprint-custom.so
 lib/gnome-print-2.0/transports/libgnomeprint-file.so
 lib/gnome-print-2.0/transports/libgnomeprint-lpr.so
 lib/libgnomeprint-2.a
 lib/libgnomeprint-2.so
 lib/libgnomeprint-2.so.0
 libdata/pkgconfig/libgnomeprint-2.0.pc
+share/doc/libgnomeprint/index.html
+share/doc/libgnomeprint/index.sgml
+share/doc/libgnomeprint/libgnomeprint-building.html
+share/doc/libgnomeprint/libgnomeprint-compiling.html
+share/doc/libgnomeprint/libgnomeprint-gnome-font-face.html
+share/doc/libgnomeprint/libgnomeprint-gnome-font.html
+share/doc/libgnomeprint/libgnomeprint-gnome-glyphlist.html
+share/doc/libgnomeprint/libgnomeprint-gnome-pgl.html
+share/doc/libgnomeprint/libgnomeprint-gnome-print-config.html
+share/doc/libgnomeprint/libgnomeprint-gnome-print-master.html
+share/doc/libgnomeprint/libgnomeprint-gnome-print-paper.html
+share/doc/libgnomeprint/libgnomeprint-gnome-print-unit.html
+share/doc/libgnomeprint/libgnomeprint-gnome-print.html
+share/doc/libgnomeprint/libgnomeprint-gnome-rfont.html
+share/doc/libgnomeprint/libgnomeprint-question-index.html
+share/doc/libgnomeprint/libgnomeprint-resources.html
+share/doc/libgnomeprint/libgnomeprint.html
+share/doc/libgnomeprint/libgnomeprintunsorted.html
 share/gnome/fonts/README.installer
 share/gnome/gnome-print-2.0/media/media.xml
 share/gnome/gnome-print-2.0/models/GNOME-GENERIC-PS.model
@@ -42,6 +59,7 @@ share/locale/et/LC_MESSAGES/libgnomeprint-2.0.mo
 share/locale/fr/LC_MESSAGES/libgnomeprint-2.0.mo
 share/locale/hu/LC_MESSAGES/libgnomeprint-2.0.mo
 share/locale/hi/LC_MESSAGES/libgnomeprint-2.0.mo
+share/locale/it/LC_MESSAGES/libgnomeprint-2.0.mo
 share/locale/ko/LC_MESSAGES/libgnomeprint-2.0.mo
 share/locale/ms/LC_MESSAGES/libgnomeprint-2.0.mo
 share/locale/nl/LC_MESSAGES/libgnomeprint-2.0.mo
@@ -68,8 +86,10 @@ share/locale/zh_TW/LC_MESSAGES/libgnomeprint-2.0.mo
 @dirrm share/gnome/gnome-print-2.0/media
 @dirrm share/gnome/gnome-print-2.0
 @dirrm share/gnome/fonts
+@dirrm share/doc/libgnomeprint
 @dirrm lib/gnome-print-2.0/transports
 @dirrm lib/gnome-print-2.0/drivers
 @dirrm lib/gnome-print-2.0
+@dirrm include/libgnomeprint-2.0/libgnomeprint/private
 @dirrm include/libgnomeprint-2.0/libgnomeprint
 @dirrm include/libgnomeprint-2.0

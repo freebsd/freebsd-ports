@@ -1,6 +1,6 @@
---- configure.orig	Mon May 27 14:03:09 2002
-+++ configure	Mon May 27 14:04:14 2002
-@@ -7224,6 +7224,7 @@
+--- configure.orig	Mon Jun 10 13:08:18 2002
++++ configure	Mon Jun 10 13:09:52 2002
+@@ -7493,6 +7493,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,18 +8,18 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -12140,8 +12141,8 @@
+@@ -12412,8 +12413,8 @@
    done
  fi
  
--echo "$as_me:12143: checking for bzCompressInit in -lbz2" >&5
+-echo "$as_me:12415: checking for bzCompressInit in -lbz2" >&5
 -echo $ECHO_N "checking for bzCompressInit in -lbz2... $ECHO_C" >&6
-+echo "$as_me:12143: checking for BZ2_bzCompressInit in -lbz2" >&5
++echo "$as_me:12415: checking for BZ2_bzCompressInit in -lbz2" >&5
 +echo $ECHO_N "checking for BZ2_bzCompressInit in -lbz2... $ECHO_C" >&6
  if test "${ac_cv_lib_bz2_bzCompressInit+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-@@ -12157,11 +12158,11 @@
+@@ -12429,11 +12430,11 @@
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -33,16 +33,16 @@
    ;
    return 0;
  }
-@@ -12490,7 +12491,7 @@
+@@ -12762,7 +12763,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
  
 -		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto -ldl"
 +		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcryptofoo -ldl"
  		cat >conftest.$ac_ext <<_ACEOF
- #line 12495 "configure"
+ #line 12767 "configure"
  #include "confdefs.h"
-@@ -12541,9 +12542,9 @@
+@@ -12813,9 +12814,9 @@
  
  		msg_openssl="yes"
                  if test x$with_openssl_libs != x/usr/lib; then
@@ -54,7 +54,7 @@
                  fi
  
  if true; then
-@@ -14134,7 +14135,7 @@
+@@ -14018,7 +14019,7 @@
  s,@ORBIT_IDL@,$ORBIT_IDL,;t t
  s,@BONOBO_IDLDIR@,$BONOBO_IDLDIR,;t t
  s,@WARN_CFLAGS@,$WARN_CFLAGS,;t t
