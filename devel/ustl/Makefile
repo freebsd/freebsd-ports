@@ -17,9 +17,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Codespace-frugal STL implementation
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
+USE_GCC=	3.2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	# empty
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|SIZE_MAX|UINT_MAX|" ${WRKSRC}/memblock.h
 
 .include <bsd.port.mk>
