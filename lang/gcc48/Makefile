@@ -5,7 +5,7 @@
 #
 # $FreeBSD$
 #
-SNAPDATE=	2004-03-10
+SNAPDATE=	2004-04-14
 
 PORTNAME=	gcc
 PORTVERSION=	3.4.0
@@ -95,7 +95,10 @@ PLIST_SUB+=	LIBJAVA=""
 .endif
 
 pre-everything::
-	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
+	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
+.if defined(WITHOUT_LIBJAVA)
+	@${ECHO_MSG} "(without libgcj)"
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
