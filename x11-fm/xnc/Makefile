@@ -8,9 +8,7 @@
 PORTNAME=	xnc
 PORTVERSION=	4.4.0
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://www.xnc.dubna.su/src/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	X11/desktop
+MASTER_SITES=	http://www.xnc.dubna.su/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	demon@FreeBSD.org
