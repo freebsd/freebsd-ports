@@ -34,6 +34,7 @@
     SUBDIR += hlatexfonts-ocf
     SUBDIR += hmconv
     SUBDIR += hpscat
+    SUBDIR += iiimf-le-hangul
     SUBDIR += imhangul
     SUBDIR += johabfonts
     SUBDIR += kaistfonts
