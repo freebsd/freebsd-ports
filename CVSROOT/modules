@@ -1164,6 +1164,7 @@ dim		ports/sysutils/dim
 dircproxy	ports/irc/dircproxy
 dirdiff		ports/sysutils/dirdiff
 directfb	ports/devel/directfb
+dirmngr		ports/security/dirmngr
 dirtree		ports/misc/dirtree
 dis		ports/lang/dis
 disc-cover	ports/audio/disc-cover
