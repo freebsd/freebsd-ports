@@ -14,15 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A small vector based drawing program with GNOME libraries
 
-BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/frontline.pc:${PORTSDIR}/graphics/frontline
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/frontline.pc:${PORTSDIR}/graphics/frontline
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade2
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--without-gnome-print
+CONFIGURE_ARGS=	--without-gnome-print \
+		--with-popt
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
