@@ -1,14 +1,5 @@
 --- rw/libpnmrw.c.orig	Wed Oct  4 00:16:52 2000
 +++ rw/libpnmrw.c	Wed Oct  4 00:18:10 2000
-@@ -46,7 +46,7 @@
- 
- void *malloc(int);
- void free(void *);
--#if defined(__EMX__) || defined(__CYGWIN__)
-+#if defined(__EMX__) || defined(__CYGWIN__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
- #include <errno.h>
- #endif
- 
 @@ -131,6 +131,7 @@
  static void
  pm_perror(char *reason)

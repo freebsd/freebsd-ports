@@ -1,6 +1,6 @@
---- Imakefile.orig	Mon Feb 17 06:31:00 2003
-+++ Imakefile	Sat Apr 19 17:24:17 2003
-@@ -89,7 +89,7 @@
+--- Imakefile.orig	Sun Aug 22 00:15:08 2004
++++ Imakefile	Sat Aug 28 02:46:25 2004
+@@ -90,7 +90,7 @@
  #endif
  
  DEPLIBS = always xpaint.man XPaint.ad
@@ -9,3 +9,12 @@
  
  SUBDIRS = rw
  
+@@ -172,7 +172,7 @@
+ 		    XPAINT_PRINT_COMMAND "$(PRINT_COMMAND)" \
+ 		    XPAINT_POSTSCRIPT_VIEWER "$(POSTSCRIPT_VIEWER)" \
+ 		    XPAINT_EXTERN_VIEWER "$(EXTERN_VIEWER)"
+-	cp -p app-defaults/out/XPaint XPaint.ad
++	cp -f app-defaults/out/XPaint XPaint.ad
+ 
+ XPaint.ad.h:	XPaint.ad
+ 	./substads -ad2c $? $@

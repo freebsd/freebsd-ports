@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 bin/xpaint
 lib/X11/app-defaults/XPaint
+lib/X11/app-defaults/XPaint_es
 lib/X11/app-defaults/XPaint_fr
 lib/X11/xpaint/XPaintIcon.xpm
 lib/X11/xpaint/c_scripts/3d_curves/helicoid.c
@@ -23,6 +24,7 @@ lib/X11/xpaint/c_scripts/images/random.c
 lib/X11/xpaint/c_scripts/layers/combine.c
 lib/X11/xpaint/c_scripts/procedures/setmemory.c
 lib/X11/xpaint/help/Help
+lib/X11/xpaint/help/Help_es
 lib/X11/xpaint/help/Help_fr
 lib/X11/xpaint/include/Colormap.h
 lib/X11/xpaint/include/ColormapP.h
@@ -49,6 +51,7 @@ lib/X11/xpaint/include/region.h
 lib/X11/xpaint/include/text.h
 lib/X11/xpaint/include/xpaint.h
 lib/X11/xpaint/messages/Messages
+lib/X11/xpaint/messages/Messages_es
 lib/X11/xpaint/messages/Messages_fr
 @dirrm lib/X11/xpaint/messages
 @dirrm lib/X11/xpaint/help
