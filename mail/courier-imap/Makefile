@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-imap
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.8
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
@@ -27,6 +27,7 @@ USE_REINPLACE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_RC_SUBR=	yes
 
 CONFIGURE_ENV=	CFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
@@ -157,6 +158,8 @@ CONFIGURE_ARGS+=--with-authcram
 
 .include <bsd.port.pre.mk>
 
+RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
 .if defined(WITH_FAM) || exists(${LOCALBASE}/lib/libfam.so)
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS}"
@@ -204,8 +207,10 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/authlib/authtest ${PREFIX}/bin/
 .for i in imapd pop3d
 	${INSTALL_DATA} ${WRKSRC}/imap/${i}.cnf ${CONFDIR}/${i}.cnf.dist
-	${LN} -s ${LIBEXECDIR}/${i}.rc ${RCDIR}/${PORTNAME}-${i}.sh.sample
-	${LN} -s ${LIBEXECDIR}/${i}-ssl.rc ${RCDIR}/${PORTNAME}-${i}-ssl.sh.sample
+.endfor
+.for i in imapd imapd-ssl pop3d pop3d-ssl
+	${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/courier-imap-${i}.sh > ${PREFIX}/etc/rc.d/courier-imap-${i}.sh
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

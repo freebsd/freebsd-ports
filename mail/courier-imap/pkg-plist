@@ -17,10 +17,10 @@ bin/pop3d
 %%CONFDIR%%/pop3d.cnf.dist
 %%CONFDIR%%/pop3d.dist
 %%CONFDIR%%/quotawarnmsg.example
-%%RCDIR%%/courier-imap-imapd.sh.sample
-%%RCDIR%%/courier-imap-imapd-ssl.sh.sample
-%%RCDIR%%/courier-imap-pop3d.sh.sample
-%%RCDIR%%/courier-imap-pop3d-ssl.sh.sample
+%%RCDIR%%/courier-imap-imapd.sh
+%%RCDIR%%/courier-imap-imapd-ssl.sh
+%%RCDIR%%/courier-imap-pop3d.sh
+%%RCDIR%%/courier-imap-pop3d-ssl.sh
 %%LIBEXECDIR%%/authlib/authcustom
 %%AUTHDFLAG%%%%LIBEXECDIR%%/authlib/authdaemon
 %%AUTHDFLAG%%%%LIBEXECDIR%%/authlib/authdaemond
