@@ -1,11 +1,9 @@
-$NetBSD: patch-al,v 1.2 1998/08/07 10:36:24 agc Exp $
-
---- config.site.BAK	Sat Feb 21 19:55:25 1998
-+++ config.site	Sat Feb 21 19:55:55 1998
+--- config.site.orig	Mon Nov  9 08:22:55 1998
++++ config.site	Fri Jun 30 19:52:45 2000
 @@ -1,5 +1,5 @@
  
 -EXTRA_INCLUDES=-I../ -I../include
-+EXTRA_INCLUDES=-I../ -I../include -I${X11BASE}/include
++EXTRA_INCLUDES=-I$(TOP) -I$(TOP)/include -I$(INCROOT)
  
  XCOMM On sgi we need libaudio
  XCOMM OSLIBS=-laudio

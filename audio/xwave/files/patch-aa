@@ -1,0 +1,11 @@
+--- src/Imakefile.orig	Mon Nov  9 08:22:55 1998
++++ src/Imakefile	Fri Jun 30 20:10:38 2000
+@@ -14,7 +14,7 @@
+ 
+ AUDIOLIBS=-L../ccitt -lccitt -L../adpcm2pcm -ladpcm -L../ieee -lieee
+ XLIBS= -L../lib -lfwf -lXaw -lXpm -lXmu -lXt -lX11
+-LIBS=  $(OSLIBS) $(XLIBS) $(AUDIOLIBS) -lm -lc 
++LIBS=  $(OSLIBS) $(XLIBS) $(AUDIOLIBS) -lm
+ 
+ NormalProgramTarget(xwave,$(OBJS),,$(LIBS),)
+ 

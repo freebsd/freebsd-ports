@@ -1,7 +1,7 @@
---- FWF/Imakefile.orig	Mon Nov  9 08:22:54 1998
-+++ FWF/Imakefile	Fri Jun 30 19:53:17 2000
-@@ -9,6 +9,7 @@
- MakeDirectories(all,$(ALLDIRS))
+--- FWF/src/Imakefile.orig	Mon Nov  9 08:22:54 1998
++++ FWF/src/Imakefile	Fri Jun 30 19:53:43 2000
+@@ -34,6 +34,7 @@
+ 
  
  InitSubdirs($(SUBDIRS))
 +DependSubdirs($(SUBDIRS))

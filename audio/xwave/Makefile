@@ -1,35 +1,34 @@
 # New ports collection makefile for:	xwave
 # Date created:				11 June 2000
 # Whom:					Trevor Johnson <trevor@jpj.net>
-# based on the NetBSD port
 #
-# $NetBSD: Makefile,v 1.8 2000/04/24 14:52:33 hubertf Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	xwave
-PORTVERSION=	2
+PORTVERSION=	2.2
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.vex.net/pub/software/
-DISTNAME=	xwave2
+MASTER_SITES=	http://www.funet.fi/~kouhia/waves/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/./v/}
 
 MAINTAINER=	martin.kraft@fal.de
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
+WRKSRC=		${WRKDIR}/${PORTNAME}2-981109
 USE_IMAKE=	yes
 
-DOC_FILES=	README README-XWAVE2 README.v06 COPYING INSTALL
+DOC_FILES=	README README-XWAVE2 README.v06 INSTALL
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xwave ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/src/XWave ${PREFIX}/lib/X11/app-defaults/
-
+	${INSTALL_DATA} ${WRKSRC}/src/XWave ${PREFIX}/lib/X11/app-defaults
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/xwave2
+	@${MKDIR} ${PREFIX}/share/doc/xwave
 .for i in ${DOC_FILES}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${PREFIX}/share/doc/xwave2
+	${INSTALL_MAN} ${WRKSRC}/${i} ${PREFIX}/share/doc/xwave
 .endfor
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
