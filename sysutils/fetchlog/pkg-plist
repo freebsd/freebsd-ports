@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/fetchlog
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/README
