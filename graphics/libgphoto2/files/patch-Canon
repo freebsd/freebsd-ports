@@ -1,6 +1,5 @@
-diff -u -r1.236.2.6 -r1.247
---- camlibs/canon/canon.c	2004/01/15 12:30:11	1.236.2.6
-+++ camlibs/canon/canon.c	2004/08/14 00:24:12	1.247
+--- camlibs/canon/canon.c.orig	Sun Jan 18 20:47:01 2004
++++ camlibs/canon/canon.c	Wed Oct 20 13:25:01 2004
 @@ -15,7 +15,7 @@
   * and usb.c, keeping the common protocols/busses support in this
   * file.
@@ -45,20 +44,21 @@ diff -u -r1.236.2.6 -r1.247
  	{"Canon:Optura 20",		CANON_OPT_20,		0x04A9, 0x307f, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
  	{"Canon:Optura 10",		CANON_OPT_10,		0x04A9, 0x3081, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
  
-@@ -184,6 +187,12 @@
+@@ -184,6 +187,13 @@
  	/* PS G5 uses the same ProductID for PTP and Canon, with protocol autodetection */
  	{"Canon:PowerShot G5 (normal mode)",	CANON_PS_G5,	0x04A9, 0x3085, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
  	{"Canon:PowerShot A80 (normal mode)",CANON_PS_A80,      0x04A9, 0x309A, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
 +	{"Canon:PowerShot S60 (normal mode)", CANON_PS_S60,     0x04A9, 0x30b2, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
 +	{"Canon:Digital IXUS 500 (normal mode)",CANON_PS_S500,  0x04A9, 0x30b4, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
-+	 {"Canon:PowerShot A75",        CANON_PS_A75, 	        0x04A9, 0x30b5, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
++	{"Canon:PowerShot A75",        CANON_PS_A75, 	        0x04A9, 0x30b5, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
++	{"Canon:PowerShot A85",        CANON_PS_A75,            0x04A9, 0x30b9, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
 +	{"Canon:PowerShot A310",        CANON_PS_A310,          0x04A9, 0x30b8, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL}, 
 +	{"Canon:PowerShot S410 (normal mode)",CANON_PS_S410,  0x04A9, 0x30ba, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
 +	{"Canon:Digital IXUS 430 (normal mode)",CANON_PS_S410,  0x04A9, 0x30ba, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
  
  	{NULL}
  	/* *INDENT-ON* */
-@@ -1535,10 +1544,13 @@
+@@ -1535,10 +1545,13 @@
   * @path: gphoto2 path
   * @context: context for error reporting
   *
@@ -74,7 +74,7 @@ diff -u -r1.236.2.6 -r1.247
   *
   */
  const char *
-@@ -1562,13 +1574,14 @@
+@@ -1562,13 +1575,14 @@
  
  	snprintf (tmp, sizeof (tmp), "%s%s", camera->pl->cached_drive, path);
  
@@ -91,7 +91,7 @@ diff -u -r1.236.2.6 -r1.247
  	if ((p > tmp) && (*(p - 1) == '\\'))
  		*(p - 1) = '\0';
  
-@@ -1803,7 +1816,7 @@
+@@ -1803,7 +1817,7 @@
  				 * that is not an error for serial cameras
  				 * (at least the A50 adds five zero bytes at the end)
  				 */
@@ -100,9 +100,8 @@ diff -u -r1.236.2.6 -r1.247
  
  				if (temp_ch == end_of_data) {
  					GP_DEBUG ("canon_int_list_dir: "
-diff -u -r1.87.2.3 -r1.95
---- camlibs/canon/canon.h	2004/01/15 12:29:40	1.87.2.3
-+++ camlibs/canon/canon.h	2004/08/14 00:24:12	1.95
+--- camlibs/canon/canon.h.orig	Sun Jan 18 20:47:01 2004
++++ camlibs/canon/canon.h	Wed Oct 20 13:25:58 2004
 @@ -3,7 +3,7 @@
   *
   * Written 1999 by Wolfgang G. Reissnegger and Werner Almesberger
@@ -112,15 +111,17 @@ diff -u -r1.87.2.3 -r1.95
   *
   */
  
-@@ -68,6 +68,7 @@
+@@ -68,7 +68,9 @@
   * @CANON_PS_A50: PowerShot A50
   * @CANON_PS_A60: PowerShot A60
   * @CANON_PS_A70: PowerShot A70
 + * @CANON_PS_A75: PowerShot A75
   * @CANON_PS_A80: PowerShot A80
++ * @CANON_PS_A85: PowerShot A85
   * @CANON_PS_PRO70: PowerShot Pro70
   * @CANON_PS_S10: PowerShot S10
-@@ -91,11 +92,15 @@
+  * @CANON_PS_S20: PowerShot S20
+@@ -91,11 +93,15 @@
   * @CANON_PS_A300: PowerShot A300
   * @CANON_PS_S200: PowerShot S200, Digital IXUS v2
   * @CANON_PS_S330: Digital IXUS 330
@@ -136,15 +137,17 @@ diff -u -r1.87.2.3 -r1.95
   * @CANON_EOS_10D: EOS 10D
   * @CANON_OPT_10: Optura 10
   * @CANON_OPT_20: Optura 20
-@@ -119,6 +124,7 @@
+@@ -119,7 +125,9 @@
  	CANON_PS_A50,
  	CANON_PS_A60,
  	CANON_PS_A70,
 +	CANON_PS_A75,
  	CANON_PS_A80,
++	CANON_PS_A85,
  	CANON_PS_S10,
  	CANON_PS_S20,
-@@ -141,11 +147,13 @@
+ 	CANON_PS_S30,
+@@ -141,11 +149,13 @@
  	CANON_PS_A100,
  	CANON_PS_A200,
  	CANON_PS_A300,
@@ -158,7 +161,7 @@ diff -u -r1.87.2.3 -r1.95
  	CANON_EOS_10D,
  	CANON_OPT_200,
  	/* In Mac OS Image Capture, but not yet seen in the wild. */
-@@ -156,6 +164,9 @@
+@@ -156,6 +166,9 @@
  	CANON_PS_UNK5,
  	/* other cameras */
  	CANON_PS_S400,
@@ -168,7 +171,7 @@ diff -u -r1.87.2.3 -r1.95
  	CANON_PS_SD100,
  	CANON_EOS_300D,
  	CANON_PS_G5,
-@@ -256,6 +267,7 @@
+@@ -256,6 +269,7 @@
  	unsigned short usb_vendor;
  	unsigned short usb_product;
  	canonCaptureSupport usb_capture_support;
@@ -176,9 +179,8 @@ diff -u -r1.87.2.3 -r1.95
  	unsigned int max_movie_size;
  	unsigned int max_thumbnail_size;
  	unsigned int max_picture_size;
-diff -u -r1.83 -r1.85
---- camlibs/canon/usb.c	2004/01/02 15:42:33	1.83
-+++ camlibs/canon/usb.c	2004/02/03 18:24:39	1.85
+--- camlibs/canon/usb.c.orig	Sun Jan 18 20:47:01 2004
++++ camlibs/canon/usb.c	Wed Oct 20 13:21:24 2004
 @@ -4,7 +4,7 @@
   *
   * USB communication layer.
