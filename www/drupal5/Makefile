@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drupal
-PORTVERSION=	4.4.0
+PORTVERSION=	4.4.1
 CATEGORIES=	www
 MASTER_SITES=	http://drupal.org/drupal/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -15,7 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	esn@x123.info
 COMMENT=	CMS that supports pgsql and mysql
 
+.if exists(/usr/local/lib/libpq.so.3)
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
+.endif
 
 NO_BUILD=	yes
 DRUPDIR=	www/data/drupal
