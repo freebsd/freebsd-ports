@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION= 	0.6.0
+PORTVERSION= 	0.8.0
 CATEGORIES=	mail gnome
 MASTER_SITES=	ftp://ftp.balsa.net/pub/balsa/
 
