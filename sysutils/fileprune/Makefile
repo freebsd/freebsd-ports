@@ -5,16 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=	prune
-PORTVERSION=	1.7
+PORTNAME=	fileprune
+PORTVERSION=	1.8
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.spinellis.gr/sw/unix/prune/ \
-		http://www.dmst.aueb.gr/dds/sw/unix/prune/
+MASTER_SITES=	http://www.spinellis.gr/sw/unix/fileprune/ \
+		http://www.dmst.aueb.gr/dds/sw/unix/fileprune/
 
 MAINTAINER=	dds@FreeBSD.org
 COMMENT=	Prune a file set according to a given age distribution
 
-MAN1=		prune.1
+MAN1=		fileprune.1
 MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
