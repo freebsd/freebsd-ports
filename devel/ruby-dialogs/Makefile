@@ -8,9 +8,8 @@
 PORTNAME=	dialogs
 PORTVERSION=	1.1
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://bluesine.com/archives/software/ruby/rubyDialogs/
+MASTER_SITES=	http://www.ruby-lang.org/~knu/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTFILES=	${PORTNAME}.rb ${PORTNAME}.html
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -18,9 +17,6 @@ MAINTAINER=	knu@FreeBSD.org
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 
-EXTRACT_CMD=	${CP}
-EXTRACT_BEFORE_ARGS=	# none
-EXTRACT_AFTER_ARGS=	${WRKDIR}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
