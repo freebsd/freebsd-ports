@@ -74,11 +74,11 @@ CONFIGURE_ARGS+=	"--with-openssl=${OPENSSLBASE}"
 PLIST_SUB+=	SERVER="@comment "
 PKGNAMESUFFIX=	-client
 PKGMSG=		""
-CONFLICTS=	postgresql-7*
+CONFLICTS=	postgresql-7* postgresql-devel-*
 .else
 PKGMESSAGE=	${FILESDIR}/pkg-message.server
 PKGMSG=		${PKGMESSAGE}
-CONFLICTS=	postgresql-7*client
+CONFLICTS=	postgresql-7*client postgreql-devel-*
 PLIST_SUB+=	SERVER=""
 INSTALL_TARGET+=	install-all-headers
 MAKEFILE=	GNUmakefile
@@ -86,12 +86,12 @@ MAKEFILE=	GNUmakefile
 
 .if defined(WITH_MIT_KRB5)
 KRB5CONF=	${LOCALBASE}/bin/krb5-config
+LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
 WITH_KRB5=	yes
 .endif
 
 .if defined(WITH_HEIMDAL_KRB5)
 KRB5CONF=	/usr/bin/krb5-config
-LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
 WITH_KRB5=	yes
 .endif
 
@@ -178,7 +178,7 @@ pre-everything::
 .if defined(WITH_HEIMDAL_KRB5) && !exists(${KRB5CONF})
 	@${ECHO} "Unable to find krb5-config in the base system.  Undefine"
 	@${ECHO} "WITH_HEIMDAL_KRB5 or add MAKE_KERBEROS5=yes to /etc/make.conf"
-	@${ECHO} "and remake world (or undefine the WITH_HEIMDAL_KRB5 tunable)."
+	@${ECHO} "and remake world."
 	@exit 1
 .endif
 

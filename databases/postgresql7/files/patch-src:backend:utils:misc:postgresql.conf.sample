@@ -1,0 +1,24 @@
+--- src/backend/utils/misc/postgresql.conf.sample~	Wed Oct  8 05:49:38 2003
++++ src/backend/utils/misc/postgresql.conf.sample	Tue Nov 18 05:08:08 2003
+@@ -136,9 +136,9 @@
+ 
+ # - Syslog -
+ 
+-#syslog = 0			# range 0-2; 0=stdout; 1=both; 2=syslog
+-#syslog_facility = 'LOCAL0'
+-#syslog_ident = 'postgres'
++syslog = 2			# range 0-2; 0=stdout; 1=both; 2=syslog
++syslog_facility = 'LOCAL0'
++syslog_ident = 'postgres'
+ 
+ # - When to Log -
+ 
+@@ -162,7 +162,7 @@
+ 				 # milliseconds.  Zero prints all queries.
+ 				 # Minus-one disables.
+ 
+-#silent_mode = false		 # DO NOT USE without Syslog!
++silent_mode = true		 # DO NOT USE without Syslog!
+ 
+ # - What to Log -
+ 
