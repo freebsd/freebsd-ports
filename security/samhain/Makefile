@@ -8,8 +8,7 @@
 # This port recognizes the following tunables:
 #
 # RUNAS_USER:
-#	The username of the account Samhain/Yule will run as.
-#	Usually just "samhain" or "yule".
+#	The username of the account Yule will run as. Usually just "yule".
 #
 # WITH_GPG:
 #	Instructs the port to sign configuration files using the
@@ -36,9 +35,9 @@
 #
 
 PORTNAME=	samhain
-PORTVERSION=	1.7.9
+PORTVERSION=	1.7.10
 CATEGORIES=	security
-MASTER_SITES=	http://samhain.securecirt.org/ \
+MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://cold.darkambient.net/
 DISTFILES=	samhain_signed-${PORTVERSION}.tar.gz
 

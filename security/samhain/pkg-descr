@@ -8,3 +8,5 @@ already reported (unless the file is modified again).
 Samhain can optionally be used as client/server system to provide
 centralized monitoring for multiple host. Logging to a (MySQL or
 PostgreSQL) database is supported.
+
+WWW: http://la-samhna.de/samhain/
