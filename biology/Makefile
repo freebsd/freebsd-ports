@@ -27,6 +27,7 @@
     SUBDIR += ortep3
     SUBDIR += p5-AcePerl
     SUBDIR += p5-bioperl
+    SUBDIR += p5-bioperl-devel
     SUBDIR += paml
     SUBDIR += phylip
     SUBDIR += platon

@@ -1,0 +1,12 @@
+The Bioperl Project is an international association of developers of open
+source Perl tools for bioinformatics, genomics and life science research. 
+
+Bioperl is a collection of object-oriented Perl modules created by the
+Bioperl Project.  It forms the basis of a large number of bioinformatics and
+genomics applications.
+
+This port represents an unstable developer's release of Bioperl.
+
+WWW: http://bioperl.org/
+
+-- Johann Visagie <wjv@FreeBSD.org>
