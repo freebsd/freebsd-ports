@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	4suite
-PORTVERSION=	0.11
+PORTVERSION=	0.11.1
 CATEGORIES=	textproc python
 MASTER_SITES=	ftp://ftp.4suite.org/pub/4Suite/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,19 +29,21 @@ PLIST_SUB+=	PACKAGE_DIR=_xmlplus PYTHON2_ONLY=""
 
 post-patch:
 	@ ${PERL} -pi -e \
-	  's#(copy_to=.)docs#$$1doc/py-${PORTNAME}#; \
-	   s#(copy_to=.)(test_suite|demo)#$$1examples/py-${PORTNAME}/$$2#' \
+	  's#(copy_to=.)docs#$$1doc/${PORTNAME}#; \
+	   s#(copy_to=.)(test_suite|demo)#$$1examples/${PORTNAME}/$$2#' \
 	  ${WRKSRC}/setup.py
 .if defined(NOPORTDOCS)
-	@ ${PERL} -pi -e 's/(data_files=)data_files + /$$1/' \
+	@ ${PERL} -pi -e 's/(data_files=)data_files/$$1/' \
 	  ${WRKSRC}/setup.py
 .endif
 
 do-build:
-	@ cd ${WRKSRC} && ${PYTHON_CMD} setup.py build
+	@ cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
+	  setup.py build
 
 do-install:
-	@ cd ${WRKSRC} && ${PYTHON_CMD} setup.py install -c -O1 \
-	  --prefix=${PREFIX} --install-data=${PREFIX}/share
+	@ cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
+	  setup.py install -c -O1 --prefix=${PREFIX} \
+	  --install-data=${PREFIX}/share
 
 .include <bsd.port.post.mk>
