@@ -8494,6 +8494,7 @@ queso		ports/net/queso
 queue-repair	ports/mail/queue-repair
 quftp		ports/ftp/quftp
 quick-lounge-applet	ports/misc/quick-lounge-applet
+quickml		ports/mail/quickml
 quickpics	ports/graphics/quickpics
 quintuple-agent	ports/security/quintuple-agent
 quirc		ports/irc/quirc
