@@ -22,6 +22,7 @@
     SUBDIR += t3d
     SUBDIR += tclock
     SUBDIR += wmcalclock
+    SUBDIR += wmclock
     SUBDIR += wmdate
     SUBDIR += wmfishtime
     SUBDIR += wmitime
