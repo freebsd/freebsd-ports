@@ -403,7 +403,7 @@ WITH_VORBISIDEC=yes
 
 # xine
 # this plugins is meant to support plugins that gstreamer doesn't have (yet)
-.if exists(${X11BASE}/lib/libxine.so.9)
+.if exists(${X11BASE}/lib/libxine.so.12)
 WITH_XINE=yes
 .endif
 
@@ -951,7 +951,7 @@ CONFIGURE_ARGS+=	--disable-xine
 PLIST_SUB+=	XINE="@comment "
 .else
 CONFIGURE_ARGS+=	--enable-xine
-LIB_DEPENDS+=	xine.9:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.12:${PORTSDIR}/multimedia/libxine
 
 PLIST_SUB+=	XINE=""
 .endif
