@@ -7990,6 +7990,7 @@ xmysql		ports/databases/xmysql
 xmysqladmin	ports/databases/xmysqladmin
 xnap		ports/audio/xnap
 xnc		ports/x11-fm/xnc
+xnee		ports/x11/xnee
 xneko		ports/games/xneko
 xnibbles	ports/games/xnibbles
 xntpd		src/usr.sbin/xntpd
