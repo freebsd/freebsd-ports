@@ -1,0 +1,18 @@
+lib/%%PYTHON_VERSION%%/site-packages/pyRXP.so
+%%PORTDOCS%%share/doc/py-rxp/PyRXP_Documentation.rml
+%%PORTDOCS%%share/doc/py-rxp/replogo.gif
+%%PORTDOCS%%@dirrm share/doc/py-rxp
+%%PORTDOCS%%share/examples/py-rxp/00readme.txt
+%%PORTDOCS%%share/examples/py-rxp/benchmarks.py
+%%PORTDOCS%%share/examples/py-rxp/expattree.py
+%%PORTDOCS%%share/examples/py-rxp/hamlet.xml
+%%PORTDOCS%%share/examples/py-rxp/play.dtd
+%%PORTDOCS%%share/examples/py-rxp/rml_a.dtd
+%%PORTDOCS%%share/examples/py-rxp/rml_a.xml
+%%PORTDOCS%%share/examples/py-rxp/sample1.xml
+%%PORTDOCS%%share/examples/py-rxp/sample2.xml
+%%PORTDOCS%%share/examples/py-rxp/sample3.xml
+%%PORTDOCS%%share/examples/py-rxp/sample4.xml
+%%PORTDOCS%%share/examples/py-rxp/tinydtd.dtd
+%%PORTDOCS%%share/examples/py-rxp/xmlutils.py
+%%PORTDOCS%%@dirrm share/examples/py-rxp

@@ -221,6 +221,7 @@
     SUBDIR += py-expat
     SUBDIR += py-jaxml
     SUBDIR += py-martel
+    SUBDIR += py-rxp
     SUBDIR += py-sgrep
     SUBDIR += py-trex
     SUBDIR += py-wordnet
