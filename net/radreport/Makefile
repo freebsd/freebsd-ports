@@ -22,6 +22,6 @@ do-extract:
 	@for i in $(DISTFILES); do ${CP} ${DISTDIR}/$$i ${WRKDIR}; done
 
 do-install:
-	@${INSTALL_DATA} ${WRKDIR}/radreport ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKDIR}/radreport ${PREFIX}/bin
 
 .include <bsd.port.mk>
