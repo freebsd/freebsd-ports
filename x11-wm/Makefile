@@ -57,6 +57,7 @@
     SUBDIR += jewel
     SUBDIR += kahakai
     SUBDIR += kappdock
+    SUBDIR += kompmgr
     SUBDIR += larswm
     SUBDIR += libdockapp
     SUBDIR += libepplet
