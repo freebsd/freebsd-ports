@@ -1,4 +1,4 @@
-# New ports collection makefile for:	httrack
+ports# New ports collection makefile for:	httrack
 # Date created:		Sun Jun 17 10:28:52 CEST 2001
 # Whom:			Dirk Froemberg <dirk@FreeBSD.org>
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dirk
 DISTNAME=	httrack-3.20-2
 
-MAINTAINER=	dirk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy-to-use offline browser utility and website copier
 
 WRKSRC=		${WRKDIR}/httrack-3.20/src

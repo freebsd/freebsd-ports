@@ -12,7 +12,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.loth.demon.co.uk/people/steved/projects/gmysql/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
-MAINTAINER=	dirk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ frontend for mysql
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
