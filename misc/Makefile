@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.150 1998/07/13 04:27:40 mph Exp $
+# $Id: Makefile,v 1.151 1998/07/26 15:14:01 alex Exp $
 #
 
     SUBDIR += acron
@@ -21,6 +21,7 @@
     SUBDIR += fep
     SUBDIR += figlet
     SUBDIR += git
+    SUBDIR += gnucash
     SUBDIR += gnuls
     SUBDIR += gone
     SUBDIR += gyvescm
