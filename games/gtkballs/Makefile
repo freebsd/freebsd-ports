@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	gtkballs
-PORTVERSION=	2.2.0
+PORTVERSION=	3.0.1
 CATEGORIES=	games
 MASTER_SITES=	http://gtkballs.antex.ru/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
+LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
