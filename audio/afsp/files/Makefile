@@ -73,7 +73,8 @@ HTMLFILES3 =	html/libtsp/AF/AFclose.html \
 		html/libtsp/AF/AFsetNHpar.html \
 		html/libtsp/AF/AFsetSpeaker.html \
 		html/libtsp/AF/AFwriteData.html
-FILTERFILES =	filters/STL_BPF_FIR_16k.cof \
+FILTERFILES =	filters/STL_BPF5k_FIR_16k.cof \
+		filters/STL_BPF_FIR_16k.cof \
 		filters/STL_G712_IIR_16k.cof \
 		filters/STL_G712_IIR_8k.cof \
 		filters/STL_IRS_FIR_16k.cof \
@@ -82,13 +83,15 @@ FILTERFILES =	filters/STL_BPF_FIR_16k.cof \
 		filters/STL_LPx2_FIR.cof \
 		filters/STL_LPx3_FIR.cof \
 		filters/STL_LPx3_IIR.cof \
-		filters/STL_P341_FIR_16k.cof \
-		filters/STL_WB_IIR_48k.cof \
+		filters/STL_MSin_FIR_16k.cof \
+		filters/STL_P341S_FIR_16k.cof \
 		filters/STL_dc_IIR_8k.cof \
 		filters/STL_dsm_FIR_16k.cof \
 		filters/STL_hIRS_FIR_16k.cof \
-		filters/STL_mIRS_FIR_16k.cof \
-		filters/STL_mIRS_FIR_48k.cof \
+		filters/STL_mIRSR_FIR_16k.cof \
+		filters/STL_mIRSR_FIR_8k.cof \
+		filters/STL_mIRSS_FIR_16k.cof \
+		filters/STL_mIRSS_FIR_48k.cof \
 		filters/STL_pso_FIR_8k.cof \
 		filters/TIA_IRS_FIR_8k.cof
 
