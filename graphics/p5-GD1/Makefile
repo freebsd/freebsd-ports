@@ -18,6 +18,9 @@ COMMENT=	A perl5 interface to Gd Graphics Library
 
 LIB_DEPENDS=	gd1.2:${PORTSDIR}/graphics/gd1
 
+DEPRECATED=	ancient, gd2 should be API compatible
+EXPIRATION_DATE=	2004-05-01
+
 PERL_CONFIGURE=	yes
 USE_REINPLACE=	yes
 LATEST_LINK=	p5-GD1

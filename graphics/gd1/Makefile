@@ -21,7 +21,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2
 .if defined(WITH_XPM)
 .if defined(WITHOUT_X11)
-LIB_DEPENDS+=   Xpm:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS+=	Xpm:${PORTSDIR}/graphics/xpm
 CPPFLAGS+=	-I${X11BASE}/include/X11 -I${X11BASE}/include -DHAVE_LIBXPM
 LDFLAGS+=	-L${X11BASE}/lib -lXpm
 .else
@@ -30,6 +30,9 @@ CPPFLAGS+=	-I${X11BASE}/include/X11 -I${X11BASE}/include -DHAVE_LIBXPM
 LDFLAGS+=	-L${X11BASE}/lib -lXpm -lX11
 .endif
 .endif
+
+DEPRECATED=	ancient, gd2 should be API compatible
+EXPIRATION_DATE=	2004-05-01
 
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 

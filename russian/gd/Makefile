@@ -17,6 +17,9 @@ COMMENT=	Graphics library for fast PNG creation (uses fonts in KOI8-R encoding)
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+DEPRECATED=	ancient, gd2 should be API compatible
+EXPIRATION_DATE=	2004-05-01
+
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
