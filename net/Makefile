@@ -616,6 +616,7 @@
     SUBDIR += pygopherd
     SUBDIR += pyslsk
     SUBDIR += qadsl
+    SUBDIR += qtella
     SUBDIR += quagga
     SUBDIR += queso
     SUBDIR += radiator
