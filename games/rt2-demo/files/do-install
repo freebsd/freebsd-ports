@@ -1,0 +1,17 @@
+#!/bin/sh
+
+PATH=/bin:/usr/bin
+PREFIX=$1
+DISTDIR=$2
+BINDIR=${PREFIX}/bin
+LIBDIR=${PREFIX}/lib/rt2_demo
+
+set -e
+
+mkdir -p ${LIBDIR}/
+SKIP=`strings ${DISTDIR}/rt2-demo.run | head -10 | grep ^skip= | cut -d= -f2`
+tail +$SKIP /usr/ports/distfiles/rt2-demo.run | \
+	tar -C ${LIBDIR}/ -xz -f - --exclude rt2_demo --exclude rt2_demo.ppc
+
+brandelf -t Linux ${LIBDIR}/rt2_demo.x86
+ln -sf ${LIBDIR}/rt2_demo.x86 ${BINDIR}/rt2_demo
