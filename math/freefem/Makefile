@@ -8,15 +8,13 @@
 
 DISTNAME=	freefem-3.4
 CATEGORIES=	math cad
-MASTER_SITES=	http://www.asci.fr/~prudhomm/gfem-html/freefem/
+MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Gamma/freefem/
 
-MAINTAINER=     giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-adapt --with-optimization
-
-USE_ZIP=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
