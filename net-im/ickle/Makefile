@@ -19,12 +19,11 @@ COMMENT=	ICQ2000 protocol implementation
 LIB_DEPENDS=	gtkmm:${PORTSDIR}/x11-toolkits/gtk-- \
 		icq2000.5:${PORTSDIR}/net/libicq2000
 
-BROKEN=		"Does not build"
-
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 USE_ICONV=	yes
+USE_LIBTOOL_VER=	13
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
