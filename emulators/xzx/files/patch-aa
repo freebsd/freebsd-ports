@@ -1,39 +1,26 @@
---- xzx.config.orig	Sun Feb  8 22:17:34 1998
-+++ xzx.config	Sat Mar 21 19:02:51 1998
-@@ -37,13 +37,13 @@
- /* #define REGISTERED /**/
+Put documentation in share/doc/xzx instead of lib/xzx:
+
+--- doc/Makefile.in.orig	Fri Oct  9 13:20:18 1998
++++ doc/Makefile.in	Fri Oct  9 13:34:32 1998
+@@ -47,4 +47,5 @@
+ sharedstatedir = @sharedstatedir@
+ localstatedir = @localstatedir@
++docdir = $(datadir)/doc
+ libdir = @libdir@
+ infodir = @infodir@
+@@ -54,4 +55,5 @@
  
- /* Where the configuraion files and ROM images are installed */
--ZXLIBDIR = /usr/local/lib/xzx
-+ZXLIBDIR = /usr/X11R6/lib/X11/xzx
+ pkgdatadir = $(datadir)/@PACKAGE@
++pkgdocdir = $(docdir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+@@ -215,7 +217,7 @@
  
- /* Where the binary files are installed */
--BINDIR   = /usr/local/bin
-+BINDIR   = /usr/X11R6/bin
- 
- /* Where the manual pages are installed */
--MANDIR   = /usr/local/man/man1
-+MANDIR   = /usr/X11R6/man/man1
- 
- 
- /*******************************************************************************
---- src/config.h.orig	Sun Feb  8 22:13:50 1998
-+++ src/config.h	Sat Mar 21 19:03:50 1998
-@@ -30,7 +30,7 @@
- /* $Id: config.h,v 1.2 1998/02/08 13:54:34 erik Rel $ */
- 
- #include <X11/keysym.h>
--#include <endian.h>		/* Comment this out if your system doesn't have it! */
-+/* #include <endian.h>		/* Comment this out if your system doesn't have it! */
- 
- /********************************************************************************
-  * General configuration
-@@ -179,7 +179,7 @@
- /* Byte order of your CPU.  Intel is little-endian, Sparc is big-endian. */
- #if !defined(LITTLE_ENDIAN) &&  !defined(BIG_ENDIAN)
- #if defined(i386) || defined(add_your_machine_here)
--#define LITTLE_ENDIAN
-+/* #define LITTLE_ENDIAN */
- #else
- #define BIG_ENDIAN
- #endif
+ install-data-local: Xzx
+-	$(mkinstalldirs) $(pkglibdir)
++	$(mkinstalldirs) $(pkgdocdir)
+ 	for f in $(DOC_FILES); do \
+-	  $(INSTALL_DATA) $$f $(pkglibdir); \
++	  $(INSTALL_DATA) $$f $(pkgdocdir); \
+ 	done
+ 	$(INSTALL_DATA) Xzx @XAPPLOADDIR@
