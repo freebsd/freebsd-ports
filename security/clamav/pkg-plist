@@ -1,5 +1,7 @@
 @comment $FreeBSD$
-@unexec [ ! -f /var/run/clamav/clamd.pid ] || %%RC_DIR%%/clamd%%RC_SUFX%% stop || true
+@unexec [ ! -f /var/run/clamav/clamd.pid ] || %%RC_DIR%%/clamav-clamd%%RC_SUFX%% stop || true
+@unexec [ ! -f /var/run/clamav/freshclam.pid ] || %%RC_DIR%%/clamav-freshclam%%RC_SUFX%% stop || true
+bin/clamav-config
 bin/clamscan
 bin/clamdscan
 bin/freshclam
@@ -13,6 +15,7 @@ include/clamav.h
 lib/libclamav.so.1
 lib/libclamav.so
 lib/libclamav.a
+libdata/pkgconfig/libclamav.pc
 @unexec if cmp -s %D/etc/clamav.conf %D/etc/clamav.conf.default; then rm -f %D/etc/clamav.conf; fi
 etc/clamav.conf.default
 @exec [ -f %B/clamav.conf ] || cp %B/%f %B/clamav.conf
