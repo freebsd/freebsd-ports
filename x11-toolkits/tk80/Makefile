@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.11 1998/08/07 22:56:46 asami Exp $
+# $Id: Makefile,v 1.12 1998/09/17 22:31:32 steve Exp $
 #
 
 DISTNAME=	tk8.0p2
@@ -15,6 +15,7 @@ MAINTAINER=	jkh@Freebsd.ORG
 
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
 
+USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/tk8.0/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
