@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkyahoo
 
-MAINTAINER=	anders@codefactory.se
+MAINTAINER=	anders@hack.org
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	1.5.5
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ninja.qoop.org/ninja/sources/
 
-MAINTAINER=	anders@codefactory.se
+MAINTAINER=	anders@hack.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
