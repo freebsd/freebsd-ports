@@ -33,21 +33,25 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 		--with-libtiff=sys \
 		--with-zlib=sys \
 		--with-opengl
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} \
-			  -I${WRKSRC}/include \
+CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include \
 			  -I${LOCALBASE}/include \
 			  -I${X11BASE}/include" \
-		LDFLAGS="${PTHREAD_LIBS} \
-			 -L${LOCALBASE}/lib -liconv \
-			 -L${X11BASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -liconv \
+			 -L${X11BASE}/lib" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
+
+.if defined(WITH_GTK2)
+USE_GNOME=	gtk20
+.else
+USE_GNOME=	gtk12
+.endif
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GTK2)
-USE_GNOME=	gtk20
 CONFIGURE_ARGS+=--enable-gtk2 ${MACHINE_ARCH}-portbld-freebsd${OSREL}
 .else
-USE_GNOME=	gtk12
 CONFIGURE_ARGS+=--host=${CONFIGURE_TARGET} --build=${CONFIGURE_TARGET}
 .endif
 
@@ -62,8 +66,6 @@ pre-everything:
 .endif
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's|[$$]THREADS_LINK|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure
 .if defined(WITH_GTK2)
 	@${REINPLACE_CMD} -e 's|lgdk|lgdk-x11-2.0|g' ${WRKSRC}/configure
 .else

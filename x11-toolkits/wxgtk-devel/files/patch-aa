@@ -1,9 +1,18 @@
 
 $FreeBSD$
 
---- configure.in.orig	Sun Jan  5 13:55:00 2003
-+++ configure.in	Tue Jan 14 18:25:25 2003
-@@ -2723,8 +2723,8 @@
+--- configure.in.orig	Sun Sep 21 20:31:30 2003
++++ configure.in	Mon Oct  6 15:02:13 2003
+@@ -1751,7 +1751,7 @@
+         dnl Apple did fix the security problem in it and not using the system
+         dnl library results in a whole bunch of warnings when linking with
+         dnl Carbon framework
+-        if test "$USE_DARWIN" = 1; then
++        if test "$USE_DARWIN" = 1 -o "$USE_FREEBSD" = 1; then
+             system_zlib_h_ok="yes"
+         else
+             dnl we have troubles with ancient zlib versions (e.g. 1.0.4 is
+@@ -2785,8 +2785,8 @@
  
  WX_VERSION_TAG=`echo WX${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}_${WX_RELEASE} | tr "[[a-z]]" "[[A-Z]]"`
  
@@ -14,7 +23,7 @@ $FreeBSD$
  
  if test "$cross_compiling" = "yes"; then
      TOOLCHAIN_NAME="${TOOLCHAIN_NAME}-${host_alias}"
-@@ -2737,14 +2737,12 @@
+@@ -2799,14 +2799,12 @@
  WX_LIBRARY_BASENAME="wx_${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}"
  
  dnl the name of the shared library
@@ -33,16 +42,35 @@ $FreeBSD$
  
  case "${host}" in
      *-*-cygwin* | *-*-mingw32* )
-@@ -3459,7 +3457,7 @@
-           *-*-freebsd*)
-                 dnl look, in order, for the kernel threads, then Linux threads
-                 dnl and finally the userland threads
--                THREAD_OPTS="-kthread lthread $THREAD_OPTS c_r"
-+                THREAD_OPTS="$THREAD_OPTS pthread c_r"
+@@ -3607,7 +3605,7 @@
+         dnl simply linking with libpthread should make the test below work but
+         dnl it's far from certain that the threaded programs compiled without
+         dnl any special switches actually work, so try it after all the others
+-        THREAD_OPTS="$THREAD_OPTS pthread none"
++        THREAD_OPTS=
+ 
+         dnl now test for all possibilities
+         THREADS_OK=no
+@@ -3649,6 +3647,9 @@
+               THREADS_CFLAGS=""
+       done
+ 
++      THREADS_OK=yes
++      THREADS_LINK="$PTHREAD_LIBS"
++
+       if test "x$THREADS_OK" != "xyes"; then
+           wxUSE_THREADS=no
+           AC_MSG_WARN([No thread support on this system... disabled])
+@@ -3672,7 +3673,7 @@
+                 flag="-D_THREAD_SAFE"
                  ;;
-           *-*-darwin* | *-*-cygwin* )
-                 dnl Darwin / Mac OS X just uses -lpthread tested below
-@@ -3817,21 +3815,6 @@
+             *-freebsd*)
+-                flag="-D_THREAD_SAFE"
++                flag="${PTHREAD_CFLAGS}"
+                 ;;
+             *-hp-hpux* )
+                 flag="-D_REENTRANT"
+@@ -3954,21 +3955,6 @@
      esac
  fi
  
@@ -64,7 +92,7 @@ $FreeBSD$
  if test "$WXWIN_COMPATIBILITY_2" = "yes"; then
      AC_DEFINE(WXWIN_COMPATIBILITY_2)
  
-@@ -5288,7 +5271,6 @@
+@@ -5439,7 +5425,6 @@
  AC_SUBST(WX_LIBRARY_IMPORTLIB)
  AC_SUBST(WX_TARGET_LIBRARY)
  AC_SUBST(WX_LIBRARY_LINK1)
@@ -72,7 +100,7 @@ $FreeBSD$
  AC_SUBST(PROGRAM_EXT)
  
  dnl global gl options
-@@ -5296,7 +5278,6 @@
+@@ -5447,7 +5432,6 @@
  AC_SUBST(WX_LIBRARY_NAME_SHARED_GL)
  AC_SUBST(WX_TARGET_LIBRARY_GL)
  AC_SUBST(WX_LIBRARY_LINK1_GL)
