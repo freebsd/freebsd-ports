@@ -112,4 +112,8 @@ while [ "$1" ]; do
 	shift
 done
 
-echo "PLIST_SUB=	SUB_PCRE=\"${SUB_PCRE}\" SUB_SASL=\"${SUB_SASL}\" SUB_TLS=\"${SUB_TLS}\" SUB_LDAP=\"${SUB_LDAP}\" SUB_TEST=\"${SUB_TEST}\""
+echo "PLIST_SUB+=	SUB_PCRE=\"${SUB_PCRE}\""
+echo "PLIST_SUB+=	SUB_SASL=\"${SUB_SASL}\""
+echo "PLIST_SUB+=	SUB_TLS=\"${SUB_TLS}\""
+echo "PLIST_SUB+=	SUB_LDAP=\"${SUB_LDAP}\""
+echo "PLIST_SUB+=	SUB_TEST=\"${SUB_TEST}\""
