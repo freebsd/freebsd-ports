@@ -6120,6 +6120,7 @@ smssend		ports/misc/smssend
 smtpclient	ports/mail/smtpclient
 smtpd		ports/mail/smtpd
 smtpfeed	ports/mail/smtpfeed
+smtpproxy	ports/mail/smtpproxy
 smunge		ports/mail/smunge
 smurflog	ports/security/smurflog
 snack		ports/audio/snack
