@@ -20,10 +20,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Net::Ident.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Broken pkg-plist"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
