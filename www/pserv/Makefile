@@ -21,9 +21,22 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/sources
 USE_REINPLACE=	yes
 
+OPTIONS=	LOG "Enable logging" on \
+		PHP "Enable PHP support" on
+
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g;s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${WRKSRC}/defaults/pserv.conf
+.if defined(WITHOUT_LOG)
+	@${REINPLACE_CMD} "s|define LOG|undef LOG|" \
+		${WRKSRC}/sources/main.h
+.endif
+.if defined(WITHOUT_PHP)
+	@${REINPLACE_CMD} "s|define PHP|undef PHP|" \
+		${WRKSRC}/sources/main.h
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sources/pserv ${PREFIX}/sbin/
@@ -31,4 +44,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/defaults/pserv.conf ${PREFIX}/etc/
 	${INSTALL_SCRIPT} ${FILESDIR}/pserv.sh ${PREFIX}/etc/rc.d/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

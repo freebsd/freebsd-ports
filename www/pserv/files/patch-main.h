@@ -1,12 +1,13 @@
 --- sources/main.h.orig	Sat Dec 20 11:16:21 2003
-+++ sources/main.h	Thu Jan  8 12:31:15 2004
-@@ -27,12 +27,13 @@
++++ sources/main.h	Wed May  5 12:06:07 2004
+@@ -27,12 +27,14 @@
  
  
  /* --- CPP parsing options --- */
 -#define PRINTF_DEBUG          /* enable this to print some debugging messages */
 +#undef PRINTF_DEBUG          /* enable this to print some debugging messages */
  #undef ON_THE_FLY_CONVERSION /* enable this for line ending conversion */
++#define LOG                   /* enable logging to file */
  #define BRAIN_DEAD_CAST       /* if your compiler is brainwashed and does not cast standard types.h structures */
  #define FORKING_SERVER        /* enables to fork for every request */
  #define AUTO_INDEX            /* enables auto-index of directories */
@@ -15,7 +16,7 @@
  
  
  /* --- Configure options --- */
-@@ -44,18 +45,19 @@
+@@ -44,18 +46,19 @@
  #define MIME_TYPE_DEFAULT "application/octet-stream"
  
  /* configuration file location */
@@ -41,7 +42,7 @@
  #define DEFAULT_SERVER_NAME "localhost"
  
  /* amount of connections queued in listening */
-@@ -127,8 +129,10 @@
+@@ -127,8 +130,10 @@
  #define ADDRESS_LEN 16
  #define METHOD_LEN 16
  #define PROTOCOL_LEN 16
@@ -52,7 +53,7 @@
  
  /* the maximum path name of your system should be available in MAXNAMLEN 
     defined in dirent.h. If not, set a reasonable value like 1024 */
-@@ -143,7 +147,9 @@
+@@ -143,7 +148,9 @@
      char protocolVersion[PROTOCOL_LEN+1];
      int keepAlive;
      char userAgent[USER_AGENT_LEN+1];
