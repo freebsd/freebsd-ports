@@ -12,6 +12,7 @@ include/sigc++/handle_system.h
 include/sigc++/marshal.h
 include/sigc++/object.h
 include/sigc++/object_slot.h
+include/sigc++/retbind.h
 include/sigc++/rettype.h
 include/sigc++/scope.h
 include/sigc++/signal_system.h

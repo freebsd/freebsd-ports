@@ -1,24 +1,24 @@
---- configure	Wed Jan 19 15:06:41 2000
-+++ configure	Thu Jan 27 23:33:56 1994
-@@ -2810,14 +2810,14 @@
+--- configure	Sat Apr 15 10:15:19 2000
++++ configure	Tue Apr 18 07:49:32 2000
+@@ -2901,14 +2901,14 @@
  
  if test "x$enable_threads" = "xyes" ; then
  enable_threads="no"
 -echo $ac_n "checking for pthread_self in -lpthread""... $ac_c" 1>&6
--echo "configure:2815: checking for pthread_self in -lpthread" >&5
+-echo "configure:2906: checking for pthread_self in -lpthread" >&5
 +echo $ac_n "checking for pthread_self in -lc_r""... $ac_c" 1>&6
-+echo "configure:2815: checking for pthread_self in -lc_r" >&5
++echo "configure:2906: checking for pthread_self in -lc_r" >&5
  ac_lib_var=`echo pthread'_'pthread_self | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lpthread  $LIBS"
-+LIBS="-pthread -lc_r  $LIBS"
++LIBS="-pthread -lc_r $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 2823 "configure"
+ #line 2914 "configure"
  #include "confdefs.h"
-@@ -2848,7 +2848,7 @@
+@@ -2939,7 +2939,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
