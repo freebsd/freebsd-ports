@@ -1,34 +1,13 @@
-*** Imakefile~	Sat Nov  8 10:13:29 1997
---- Imakefile	Sat Nov  8 10:14:54 1997
-***************
-*** 16,20 ****
-   * Set SOUND_DIR to the directory, where the sounds can be found
-   */
-! EXTRA_DEFINES=-DXBLASTDIR=\"$(XBLASTDIR)\"
-  
-  /*
---- 16,21 ----
-   * Set SOUND_DIR to the directory, where the sounds can be found
-   */
-! EXTRA_DEFINES=-DXBLASTDIR=\"$(DESTDIR)$(XBLASTDIR)\" \
-! 		-DAPPLDEFFILE=\"$(DESTDIR)$(XAPPLOADDIR)/XBlast\"
-  
-  /*
-*** defaults.h~	Thu Oct 16 10:48:26 1997
---- defaults.h	Sat Nov  8 10:10:42 1997
-***************
-*** 30,34 ****
-   * file for setups and defaults
-   */
-! static char *file_appl_def   ="/usr/lib/X11/app-defaults/XBlast";
-  static char *file_setup      ="/.xblast";
-  static char *file_setup_dir  ="/.xblast-setups";
---- 30,37 ----
-   * file for setups and defaults
-   */
-! #ifndef APPLDEFFILE
-! #define APPLDEFFILE "/usr/lib/X11/app-defaults/XBlast"
-! #endif
-! static char *file_appl_def   =APPLDEFFILE;
-  static char *file_setup      ="/.xblast";
-  static char *file_setup_dir  ="/.xblast-setups";
+--- Imakefile.orig	Wed Jul 28 21:36:20 1999
++++ Imakefile	Fri Aug 27 14:42:54 1999
+@@ -25,7 +25,9 @@
+  * If you want to have sound, comment the following line
+  * Set SOUND_DIR to the directory, where the sounds can be found
+  */
+-EXTRA_DEFINES=-DXBLASTDIR=\"$(XBLASTDIR)\" -DXBLAST_SOUND
++EXTRA_DEFINES=-DXBLASTDIR=\"$(DESTDIR)$(XBLASTDIR)\" \
++	      -DAPPLOADDIR=\"$(DESTDIR)$(XAPPLOADDIR)\" \
++	      -DXBLAST_SOUND 
+ 
+ /*
+  * all programs to be build

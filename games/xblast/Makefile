@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	xblast
-PORTVERSION=	2.6b
+PORTVERSION=	2.6.1
 CATEGORIES=	games
-# after end of beta test period:
-# MASTER_SITES= ${MASTER_SITE_XCONTRIB}
-# MASTER_SITE_SUBDIR= games/multiplayer
-# but right now only available from:
-MASTER_SITES=	http://www.ikp.uni-koeln.de/~vogel/archive/
-DISTNAME=       xblast-2.6.beta
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	games/arcade
+DISTNAME=	xblast-2.6.1.sound
 
 MAINTAINER=	se@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/XBlast-2.6.beta
+WRKSRC=		${WRKDIR}/XBlast-2.6-sound
 USE_IMAKE=      yes
-MAN1=		xblast.1
+NO_INSTALL_MANPAGES=	yes
+MANN=		xblast.n
+MANCOMPRESSED=	no
+
+post-install:
+	@${INSTALL_MAN} ${WRKSRC}/xblast.man ${MANNPREFIX}/man/mann/xblast.n
 
 .include <bsd.port.mk>
