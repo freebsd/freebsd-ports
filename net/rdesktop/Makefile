@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	rdesktop
-PORTVERSION=	1.3.1
-PORTREVISION=	3
+PORTVERSION=	1.4.0
+PORTREVISION?=	0
 CATEGORIES=	net comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-
-EXTRA_PATCHES=	${WRKDIR}/extra-patch-localIP
 
 MAINTAINER=	matt@fruitsalad.org
 COMMENT=	RDP client for Windows NT/2000/2003 Terminal Server
@@ -26,10 +24,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 DOCS=		doc/AUTHORS doc/TODO doc/*.txt
 MAN1=		rdesktop.1
 
-pre-patch:
-	${SED} -e 's,rdesktop-1.3.1_localip/,,g' \
-		${FILESDIR}/extra-patch-localIP \
-		> ${WRKDIR}/extra-patch-localIP
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$cc|${CC}|' \
 		${WRKSRC}/configure

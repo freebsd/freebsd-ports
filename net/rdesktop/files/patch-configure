@@ -1,23 +1,5 @@
---- configure.orig	Wed Oct 29 23:49:52 2003
-+++ configure	Thu Oct 30 11:04:20 2003
-@@ -115,7 +115,7 @@
- echo "CC          = $cc" >>Makeconf
- 
- if $cc -v 2>&1 |grep '^gcc' >/dev/null; then
--    cflags="$cflags -Wall -O2"
-+    #cflags="$cflags -Wall -O2"
- else
-     cflags="$cflags -O"
- fi
-@@ -291,9 +291,9 @@
- esac
- 
- 
--echo "CFLAGS      = $cflags" >>Makeconf
--echo "LDFLAGS     = $ldflags" >>Makeconf
-+echo "CFLAGS     += $cflags" >>Makeconf
-+echo "LDFLAGS    += $ldflags" >>Makeconf
- echo "TARGETS     = $targets" >>Makeconf
- 
- echo "configure complete - now run make"
- 
+--- configure.orig	Wed Mar  2 09:35:03 2005
++++ configure	Mon Mar  7 16:54:07 2005
+@@ -1983 +1983 @@
+-    CFLAGS="-g -O2"
++    #CFLAGS="-g -O2"
