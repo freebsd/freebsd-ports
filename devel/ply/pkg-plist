@@ -1,10 +1,13 @@
 lib/%%PYTHON_VERSION%%/site-packages/lex.py
 lib/%%PYTHON_VERSION%%/site-packages/yacc.py
 %%PORTDOCS%%share/doc/ply/ply.html
-%%PORTDOCS%%share/doc/ply/example/ansic/clex.py
-%%PORTDOCS%%share/doc/ply/example/ansic/cparse.py
-%%PORTDOCS%%share/doc/ply/example/calc/calc.py
-%%PORTDOCS%%@dirrm share/doc/ply/example/ansic
-%%PORTDOCS%%@dirrm share/doc/ply/example/calc
-%%PORTDOCS%%@dirrm share/doc/ply/example
+%%PORTDOCS%%share/examples/ply/ansic/README
+%%PORTDOCS%%share/examples/ply/ansic/clex.py
+%%PORTDOCS%%share/examples/ply/ansic/cparse.py
+%%PORTDOCS%%share/examples/ply/calc/calc.py
+%%PORTDOCS%%share/examples/ply/hedit/hedit.py
 %%PORTDOCS%%@dirrm share/doc/ply
+%%PORTDOCS%%@dirrm share/examples/ply/ansic
+%%PORTDOCS%%@dirrm share/examples/ply/calc
+%%PORTDOCS%%@dirrm share/examples/ply/hedit
+%%PORTDOCS%%@dirrm share/examples/ply
