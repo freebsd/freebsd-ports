@@ -1,0 +1,66 @@
+--- configure.in~	Tue Sep  1 17:45:30 1998
++++ configure.in	Mon Sep  7 16:35:05 1998
+@@ -23,6 +23,7 @@
+ AC_CHECK_LIB(gen, regcmp)
+ AC_CHECK_LIB(intl, regcmp)
+ AC_CHECK_LIB(PW, regcmp)
++AC_CHECK_LIB(xpg4, setlocale)
+ 
+ dnl Checks for terminal libraries
+ dnl Solaris has curses & termcap, but they need libucb
+--- configure.orig	Mon Sep  7 16:46:52 1998
++++ configure	Mon Sep  7 16:49:35 1998
+@@ -1224,6 +1224,53 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ 
++echo $ac_n "checking for setlocale in -lxpg4""... $ac_c" 1>&6
++echo "configure:1229: checking for setlocale in -lxpg4" >&5
++ac_lib_var=`echo xpg4'_'setlocale | sed 'y%./+-%__p_%'`
++if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
++  echo $ac_n "(cached) $ac_c" 1>&6
++else
++  ac_save_LIBS="$LIBS"
++LIBS="-lxpg4  $LIBS"
++cat > conftest.$ac_ext <<EOF
++#line 1237 "configure"
++#include "confdefs.h"
++/* Override any gcc2 internal prototype to avoid an error.  */
++/* We use char because int might match the return type of a gcc2
++    builtin and then its argument prototype would still apply.  */
++char setlocale();
++
++int main() {
++setlocale()
++; return 0; }
++EOF
++if { (eval echo configure:1248: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
++  rm -rf conftest*
++  eval "ac_cv_lib_$ac_lib_var=yes"
++else
++  echo "configure: failed program was:" >&5
++  cat conftest.$ac_ext >&5
++  rm -rf conftest*
++  eval "ac_cv_lib_$ac_lib_var=no"
++fi
++rm -f conftest*
++LIBS="$ac_save_LIBS"
++
++fi
++if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
++  echo "$ac_t""yes" 1>&6
++    ac_tr_lib=HAVE_LIB`echo xpg4 | sed -e 's/[^a-zA-Z0-9_]/_/g' \
++    -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
++  cat >> confdefs.h <<EOF
++#define $ac_tr_lib 1
++EOF
++
++  LIBS="-lxpg4 $LIBS"
++
++else
++  echo "$ac_t""no" 1>&6
++fi
++
+ 
+ 
+ echo $ac_n "checking for working terminal libraries""... $ac_c" 1>&6
