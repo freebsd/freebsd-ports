@@ -203,9 +203,9 @@ pre-install: setoptions
 .endif
 
 post-install:
-	${LN} -sf ${PREFIX}/etc/vmware /etc/
-	@if [ ! -e /compat/linux/usr/lib/vmware/bin/vmware ]; then \
-		${LN} -sf ${PREFIX}/lib/vmware /compat/linux/usr/lib/vmware; \
+	${LN} -sf ${PREFIX}/etc/vmware ${LINUXBASE}/etc/
+	@if [ ! -e ${LINUXBASE}/usr/lib/vmware/bin/vmware ]; then \
+		${LN} -sf ${PREFIX}/lib/vmware ${LINUXBASE}/usr/lib/vmware; \
 	fi
 	@${CAT} ${PKGMESSAGE}
 
