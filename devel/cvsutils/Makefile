@@ -6,27 +6,23 @@
 #
 
 PORTNAME=	cvsutils
-PORTVERSION=	2000.06.06
+PORTVERSION=	0.1.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/knu/
 
 MAINTAINER=	knu@FreeBSD.org
 
+USE_AUTOMAKE=	YES
+AUTOMAKE=	./bootstrap
 USE_PERL5=	YES
-NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PROGS=		cvschroot \
-		cvsco \
-		cvsdiff \
-		cvsdiscard \
-		cvspurge \
-		cvsrmadm \
-		cvsu
-
-do-install:
-.for f in ${PROGS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin/
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/cvsutils
+.for f in AUTHORS ChangeLog FAQ NEWS README TODO 
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/cvsutils/
 .endfor
+.endif
 
 .include <bsd.port.mk>
