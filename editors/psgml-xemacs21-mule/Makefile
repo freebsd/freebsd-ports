@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A major mode for editing SGML and XML documents for XEmacs with Mule
 
 # This is a slave port.
