@@ -56,6 +56,7 @@
     SUBDIR += libxpg4-ns
     SUBDIR += linbot
     SUBDIR += linemode
+    SUBDIR += links
     SUBDIR += linux-netscape4
     SUBDIR += linux-netscape46-communicator
     SUBDIR += linux-netscape47-communicator
