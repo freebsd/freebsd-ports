@@ -8,6 +8,7 @@
 
 PORTNAME=	bochs
 PORTVERSION=	2.1
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -33,7 +34,7 @@ CONFIGURE_ARGS=	--disable-split-hd \
 CFLAGS+=	-fno-rtti -fno-exceptions -fomit-frame-pointer
 
 MANCOMPRESSED=	yes
-MAN1=		bochs.1 bxcommit.1 bximage.1
+MAN1=		bochs.1 bochs-dlx.1 bxcommit.1 bximage.1
 MAN5=		bochsrc.5
 
 .include <bsd.port.pre.mk>
