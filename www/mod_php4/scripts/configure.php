@@ -36,7 +36,8 @@ CURL		"CURL support" OFF \
 gettext		"gettext library support" OFF \
 iconv		"iconv support" OFF \
 pspell		"pspell support" OFF \
-japanese	"jstring and mbregex module" OFF \
+mbregex		"multibyte regular expressions module" OFF \
+mbstring	"multibyte string module" OFF \
 YP		"YP/NIS support" OFF \
 BCMath		"BCMath support" OFF \
 Hyperwave	"Hyperwave support" OFF \
@@ -209,24 +210,26 @@ while [ "$1" ]; do
 			echo "LIB_DEPENDS+=	pspell.4:\${PORTSDIR}/textproc/pspell"
 			echo "CONFIGURE_ARGS+=--with-pspell=\${PREFIX}"
 			;;
-		\"japanese\")
+		\"mbregex\")
 			${CAT} << EOF
 MASTER_SITES+=	ftp://night.fminn.nagano.nagano.jp/php4/
-DISTFILES=	\${DISTNAME}\${EXTRACT_SUFX} php4_jstring-1.1.1.tar.gz php4_mbregex-1.2.1.tar.gz
-CONFIGURE_ARGS+=--enable-jstring --enable-mbregex
+DISTFILES=	\${DISTNAME}\${EXTRACT_SUFX} php4_mbregex-1.2.1.tar.gz
+CONFIGURE_ARGS+=--enable-mbregex
 BUILD_DEPENDS+=	automake:\${PORTSDIR}/devel/automake
 BUILD_DEPENDS+=	autoconf:\${PORTSDIR}/devel/autoconf
-POSTEXTRACT+=	post-extract-japanese
+POSTEXTRACT+=	post-extract-mbregex
 
-post-extract-japanese:
-	[ -d \${WRKDIR}/jstring -a \${WRKDIR}/mbregex ] && \\
+post-extract-mbregex:
+	[ -d \${WRKDIR}/mbregex ] && \\
 	(cd \${WRKSRC}; \\
-	 \${MV} ${WRKDIR}/jstring ext; \\
 	 \${MV} ${WRKDIR}/mbregex ext; \\
 	 \${RM} configure; \\
 	 ./buildconf)
 
 EOF
+			;;
+		\"mbstring\")
+			echo "CONFIGURE_ARGS+=--enable-mbstring"
 			;;
 		\"YP\")
 			echo "CONFIGURE_ARGS+=--enable-yp"
