@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	povray31
-PKGNAME=	povray-3.1e
+PKGNAME=	povray-3.1g
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.povray.org/pub/povray/Official/Unix/ \
 		ftp://www.hensa.ac.uk/mirrors/povray/Old-Versions/Official-3.0/Unix/ \
