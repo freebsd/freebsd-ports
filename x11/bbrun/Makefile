@@ -8,7 +8,10 @@
 PORTNAME=	bbrun
 PORTVERSION=	1.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://bbtools.windsofstorm.net/sources/contrib/
+MASTER_SITES=	http://bbtools.windsofstorm.net/sources/contrib/ \
+		ftp://ftp.surfnet.nl/pub/os/Linux/distr/gentoo/distfiles/ \
+		http://www.linuxtux.org/downloads/linux/bb/bbstuff/ \
+		http://www.ibiblio.org/gentoo/distfiles/
 
 MAINTAINER=	monkey@crackula.com
 
