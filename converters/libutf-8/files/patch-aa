@@ -1,0 +1,9 @@
+--- Makefile.orig	Thu Apr  1 01:00:12 1999
++++ Makefile	Fri Apr 16 18:11:12 1999
+@@ -29,5 +29,5 @@
+ all: libutf-8.so.1
+ 
+ libutf-8.so.1: fget.utf-8.o sget.utf-8.o fput.utf-8.o sput.utf-8.o nomacros.o
+-	ld -o libutf-8.so.1 fget.utf-8.o sget.utf-8.o fput.utf-8.o sput.utf-8.o nomacros.o -shared -soname libutf-8.so
++	ld -o $@ fget.utf-8.o sget.utf-8.o fput.utf-8.o sput.utf-8.o nomacros.o -shared -soname $@
+ 
