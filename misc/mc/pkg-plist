@@ -10,6 +10,7 @@ lib/mc/mc.menu
 lib/mc/bin/mcfn_install
 lib/mc/extfs/README
 lib/mc/extfs/a
+lib/mc/extfs/arfs
 lib/mc/extfs/cpio
 lib/mc/extfs/deb
 lib/mc/extfs/extfs.ini
