@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nautilus2
-PORTVERSION=	2.6.0
-PORTREVISION=	1
+PORTVERSION=	2.6.1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
@@ -35,6 +34,7 @@ CONFIGURE_ARGS=	--with-freetype2-lib-place=${LOCALBASE}/lib \
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
 post-install:
+	${MKDIR} ${PREFIX}/lib/nautilus/extensions-1.0
 	@${CHMOD} u+w ${PREFIX}/share/gnome/nautilus/*.desktop
 
 .include <bsd.port.mk>

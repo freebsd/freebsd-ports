@@ -158,6 +158,7 @@ share/gnome/pixmaps/nautilus/tahoe/bluewall.png
 share/gnome/pixmaps/nautilus/tahoe/tahoe.xml
 share/gnome/pixmaps/nautilus/text-selection-frame.png
 share/gnome/pixmaps/nautilus/thumbnail_frame.png
+share/locale/af/LC_MESSAGES/nautilus.mo
 share/locale/am/LC_MESSAGES/nautilus.mo
 share/locale/ar/LC_MESSAGES/nautilus.mo
 share/locale/az/LC_MESSAGES/nautilus.mo
@@ -180,6 +181,7 @@ share/locale/fi/LC_MESSAGES/nautilus.mo
 share/locale/fr/LC_MESSAGES/nautilus.mo
 share/locale/ga/LC_MESSAGES/nautilus.mo
 share/locale/gl/LC_MESSAGES/nautilus.mo
+share/locale/gu/LC_MESSAGES/nautilus.mo
 share/locale/he/LC_MESSAGES/nautilus.mo
 share/locale/hi/LC_MESSAGES/nautilus.mo
 share/locale/hr/LC_MESSAGES/nautilus.mo
@@ -240,5 +242,6 @@ share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/nautilus/icon_view
 @dirrm etc/gconf/gconf.xml.defaults/apps/nautilus/desktop
 @dirrm etc/gconf/gconf.xml.defaults/apps/nautilus
+@exec /bin/mkdir -p %D/lib/nautilus/extensions-1.0
 @unexec /bin/rmdir %D/lib/nautilus/extensions-1.0 2>/dev/null || /usr/bin/true
-@dirrm lib/nautilus
+@unexec /bin/rmdir %D/lib/nautilus 2>/dev/null || /usr/bin/true
