@@ -4633,6 +4633,7 @@ multi-gnome-terminal	ports/x11/multi-gnome-terminal
 multisuck	ports/news/multisuck
 multitail	ports/sysutils/multitail
 multivideo	ports/graphics/multivideo
+mup		ports/print/mup
 mupad		ports/math/mupad
 muse		ports/sysutils/muse
 musicbox	ports/audio/musicbox
