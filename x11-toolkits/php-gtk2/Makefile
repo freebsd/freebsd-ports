@@ -7,7 +7,7 @@
 
 PORTNAME=	php-gtk
 PORTVERSION=	0.5.2
-PORTREVISION= 	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://gtk.php.net/distributions/ \
 		http://document-root.de/mirror/php-gtk/
@@ -27,6 +27,8 @@ RUN_DEPENDS=	php:${PORTSDIR}/lang/php4-cli
 
 # Don't call autoconf directly, ./buildconf does this
 GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	# none
 USE_AUTOCONF=	no
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
@@ -66,7 +68,7 @@ CONFIGURE_ENV=  CPPFLAGS="${ENVSCE}"
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
-PIC2FIX=	acinclude.m4 aclocal.m4 autom4te.cache configure
+PIC2FIX=	acinclude.m4 aclocal.m4 configure
 
 EXAMPLES=	combobutton.php fileselection.php gtk.php hello.php list.php \
 		piemenu.php scribble.php scrollpane.php spaned.php sqpane.php \
@@ -86,7 +88,7 @@ pre-everything::
 pre-configure:
 	@php ${SCRIPTDIR}/memlim.php
 	@${ECHO_MSG} "===>  Building configuration files for ${PKGNAME}"
-	@(cd ${WRKSRC} && ./buildconf)
+	@(cd ${WRKSRC} && ${SETENV} ${SCRIPTS_ENV} ./buildconf)
 .for FILE in ${PIC2FIX}
 	@${REINPLACE_CMD} -e "s|-prefer-pic|${CFLAGS}|g" ${WRKSRC}/${FILE}
 .endfor

@@ -1,0 +1,7 @@
+--- apr-0.9.3/buildconf.orig	Wed May 15 16:47:09 2002
++++ apr-0.9.3/buildconf	Wed Feb 19 23:24:35 2003
+@@ -83,3 +83,3 @@
+ ltpath=`dirname $libtoolize`
+-ltfile=`cd $ltpath/../share/aclocal ; pwd`/libtool.m4
++ltfile=`cd $ltpath/../../share/aclocal ; pwd`/libtool14.m4
+ 

@@ -114,7 +114,7 @@ CONFIGURE_ARGS+= --with-libkwnn=-lkwnn --with-kwnn-libraries="${PREFIX}/lib"
 .endif
 
 post-extract:
-	${CP} ${LOCALBASE}/share/libtool/libltdl/aclocal.m4 ${WRKSRC}
+	${CP} ${LIBTOOL_SHAREDIR}/libltdl/aclocal.m4 ${WRKSRC}
 	${CP} ${AUTOCONF_DIR}/config.sub ${WRKSRC}
 	${CP} ${AUTOCONF_DIR}/config.guess ${WRKSRC}
 

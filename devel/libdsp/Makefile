@@ -16,11 +16,10 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class library of common digital signal processing functions
 
-# dont use "USE_LIBTOOL=yes" because there's no configure script
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
-
 WRKSRC=		${WRKDIR}/libdsp-src/${PORTNAME:S/dsp/DSP/}-${PORTVERSION}
 
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	# none
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" MKDIR="${MKDIR}" \
 		INLINE_VER="${INLINE_VER}"
@@ -28,6 +27,10 @@ MAKEFILE=	Makefile.FreeBSD
 INSTALLS_SHLIB=	yes
 
 INLINE_VER=	1.2.5
+
+# There's no configure script, but we need libtool to build
+do-configure:
+	@${DO_NADA}
 
 .include <bsd.port.pre.mk>
 

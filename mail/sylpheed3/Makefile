@@ -102,7 +102,7 @@ post-patch:
 .endif
 
 pre-build:
-	${LN} -sf ${LOCALBASE}/bin/${LIBTOOL} ${WRKSRC}/libtool
+	${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
 
 post-install:
 .if !defined(NOPORTDOCS)

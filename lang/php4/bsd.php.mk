@@ -87,5 +87,5 @@ configure-message: phpize
 
 phpize:
 	@${ECHO_MSG} "===>  PHPizing for ${DISTNAME}"
-	@(cd ${WRKSRC}; phpize)
+	@(cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ${LOCALBASE}/bin/phpize)
 .endif

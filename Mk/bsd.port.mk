@@ -268,8 +268,27 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- Set to path of GNU autoconf shared directory (default:
 #				  according to USE_AUTOCONF_VER value)
 ##
-# USE_LIBTOOL	- Says that the port uses Libtool.  Implies GNU_CONFIGURE.
-# LIBTOOL		- Set to path of libtool (default: libtool).
+# USE_LIBTOOL_VER (PORT MAY SET THIS VALUE)
+#				- Implies USE_LIBTOOL. 
+#				- Implies WANT_LIBTOOL_VER=(value)
+# USE_LIBTOOL (PORT MAY SET THIS VALUE)
+#				- Says that the port uses Libtool.  
+#				- Implies GNU_CONFIGURE.
+#				- Implies WANT_LIBTOOL_VER?=13
+# LIBTOOL (READ-ONLY)
+#				- Set to path of libtool (default:
+#				  according to USE_LIBTOOL_VER value)
+# LIBTOOLIZE (READ-ONLY)
+#				- Set to path of libtoolize (default:
+#				  according to USE_LIBTOOL_VER value)
+# LIBTOOL_VERSION (READ-ONLY)
+#				- Exported version of USE_LIBTOOL_VER
+# LIBTOOL_SHAREDIR (READ-ONLY)
+#				- Set to path of GNU libtool shared directory (default:
+#				  according to USE_LIBTOOL_VER value)
+# LIBTOOL_LIBEXECDIR (READ-ONLY)
+#				- Set to path of GNU libtool libexec directory (default:
+#				  according to USE_LIBTOOL_VER value)
 # LIBTOOLFILES	- Files to patch for libtool (defaults: "aclocal.m4" if
 #				  USE_AUTOCONF is set, "configure" otherwise).
 # LIBTOOLFLAGS	- Additional flags to pass to ltconfig
@@ -1238,16 +1257,55 @@ AUTOCONF_DIR?=${NONEXISTENT}
 # END AUTOMAKE/AUTOCONF
 ######################################################################
 
+######################################################################
+# LIBTOOL
+
+.if defined(USE_LIBTOOL_VER)
+USE_LIBTOOL?=		yes
+WANT_LIBTOOL_VER?=	${USE_LIBTOOL_VER}
+.endif
+
 .if defined(USE_LIBTOOL)
 GNU_CONFIGURE=	yes
-BUILD_DEPENDS+=		libtool:${PORTSDIR}/devel/libtool
+WANT_LIBTOOL_VER?=	13
+.endif
+
+.if defined(WANT_LIBTOOL_VER)
+LIBTOOL_VERSION=	${WANT_LIBTOOL_VER:L}
+
+.if exists(${PORTSDIR}/devel/libtool${LIBTOOL_VERSION}/Makefile)
+LIBTOOL_SHAREDIR=	${LOCALBASE}/share/libtool${LIBTOOL_VERSION}
+LIBTOOL_LIBEXECDIR=	${LOCALBASE}/libexec/libtool${LIBTOOL_VERSION}
+BUILD_DEPENDS+=		${LIBTOOL_LIBEXECDIR}/libtool:${PORTSDIR}/devel/libtool${LIBTOOL_VERSION}
+.else
+BROKEN="unknown LIBTOOL version: ${USE_LIBTOOL_VER}"
+.endif
+
 .if defined(USE_AUTOCONF)
 LIBTOOLFILES?=		aclocal.m4
 .else
 LIBTOOLFILES?=		configure
 .endif
+
 LIBTOOLFLAGS?=		--disable-ltlibs
 .endif
+
+########## prefix to path, add to env vars
+.if defined(LIBTOOL_LIBEXECDIR)
+MAKE_ENV+=	PATH=${LIBTOOL_LIBEXECDIR}:${PATH}
+CONFIGURE_ENV+=	PATH=${LIBTOOL_LIBEXECDIR}:${PATH}
+SCRIPTS_ENV+=	PATH=${LIBTOOL_LIBEXECDIR}:${PATH}
+AUTOCONF_ENV+=	PATH=${LIBTOOL_LIBEXECDIR}:${PATH}
+AUTOMAKE_ENV+=	PATH=${LIBTOOL_LIBEXECDIR}:${PATH}
+AUTOTOOLS_ENV+=	PATH=${LIBTOOL_LIBEXECDIR}:${PATH}
+.endif # defined(ltpath)
+
+LIBTOOL?=	${LIBTOOL_LIBEXECDIR}/libtool
+LIBTOOLIZE?=	${LIBTOOL_LIBEXECDIR}/libtoolize
+
+# END LIBTOOL
+######################################################################
+
 .if defined(USE_GCC) && ${USE_GCC} == 2.95 && ( ${OSVERSION} < 400012 || ${OSVERSION} > 500034 )
 CC=				gcc295
 CXX=			g++295
@@ -1433,7 +1491,6 @@ NONEXISTENT?=	/nonexistent
 
 # Miscellaneous overridable commands:
 GMAKE?=			gmake
-LIBTOOL?=		libtool
 XMKMF?=			xmkmf -a
 MKHTMLINDEX?=		${X11BASE}/bin/mkhtmlindex
 .if exists(/sbin/md5)
@@ -3205,17 +3262,11 @@ ${stage}-${name}-script:
 .if !target(patch-libtool)
 patch-libtool:
 .if defined(USE_LIBTOOL)
-	@(if ${LIBTOOL} --version | grep -vq "1\.3\.4-freebsd-ports"; then \
-		(${ECHO_CMD} "Your libtool installation is out of date. Please remove"; \
-		 ${ECHO_CMD} "and reinstall ${PORTSDIR}/devel/libtool."; \
-		 exit 1); \
-	  fi; \
-	 LIBTOOLDIR=`${WHICH} ${LIBTOOL} | ${SED} -e 's^/bin//*libtool^/share/libtool^'` || ${LOCALBASE}/share/libtool; \
-	 cd ${PATCH_WRKSRC}; \
+	 @(cd ${PATCH_WRKSRC}; \
 	 for file in ${LIBTOOLFILES}; do \
 		${CP} $$file $$file.tmp; \
-		${SED} -e "s^\$$ac_aux_dir/ltconfig^$${LIBTOOLDIR}/ltconfig^g" \
-			-e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} $${LIBTOOLDIR}/ltmain.sh^g" \
+		${SED} -e "s^\$$ac_aux_dir/ltconfig^${LIBTOOL_SHAREDIR}/ltconfig${LIBTOOL_VERSION}^g" \
+			-e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LIBTOOL_SHAREDIR}/ltmain.sh^g" \
 			$$file.tmp > $$file; \
 	 done);
 .else

@@ -14,7 +14,6 @@ DISTFILES=	apr-${PORTVERSION}.tar.gz apr-util-${PORTVERSION}.tar.gz
 MAINTAINER=	rodrigc@attbi.com
 COMMENT=	The Apache Group's Portability Library
 
-BUILD_DEPENDS+=	libtool:${PORTSDIR}/devel/libtool
 LIB_DEPENDS+=	expat.4:${PORTSDIR}/textproc/expat2 \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
@@ -22,7 +21,8 @@ WANT_AUTOCONF_VER=	253
 
 USE_PERL5=		yes
 USE_GMAKE=		yes
-GNU_CONFIGURE=		yes
+USE_LIBTOOL_VER=	14
+LIBTOOLFILES=		# none
 INSTALLS_SHLIB=		yes
 
 WRKSRC=	${WRKDIR}
@@ -40,8 +40,9 @@ APR_UTIL_CONF_ARGS=	--with-apr=../apr-${PORTVERSION} \
 			--with-iconv=${PREFIX}
 
 pre-configure:
-	cd ${WRKDIR}/apr-${PORTVERSION}; ./buildconf
-	cd ${WRKDIR}/apr-util-${PORTVERSION}; ./buildconf \
+	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${SCRIPTS_ENV} ./buildconf
+	cd ${WRKDIR}/apr-util-${PORTVERSION}; \
+		${SETENV} ${SCRIPTS_ENV} ./buildconf \
 		--with-apr=../apr-${PORTVERSION}
 
 do-configure:

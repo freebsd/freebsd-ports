@@ -58,7 +58,7 @@ post-patch:
 .endif
 
 post-configure:
-	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
+	@${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
 
 post-install:
 .ifndef(NOPORTDOCS)

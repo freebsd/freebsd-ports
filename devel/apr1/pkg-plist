@@ -66,11 +66,9 @@ include/apr-0/apu_version.h
 lib/apr.exp
 lib/aprutil.exp
 lib/libapr-0.a
-lib/libapr-0.la
 lib/libapr-0.so
 lib/libapr-0.so.9
 lib/libaprutil-0.a
-lib/libaprutil-0.la
 lib/libaprutil-0.so
 lib/libaprutil-0.so.9
 @dirrm build

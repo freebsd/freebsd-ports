@@ -28,7 +28,6 @@ MAINTAINER=	housel@acm.org
 COMMENT=	CMU Gwydion project interpreter and compiler for the Dylan language
 
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
-RUN_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
 USE_PERL5=	yes
 USE_GMAKE=	yes

@@ -17,10 +17,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for dealing with Microsoft ITSS/CHM format files
 
-# use libtool, but no configure
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
-
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	#
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+
+do-configure::
+	# nothing (but we need the libtool dependency)
 
 .include <bsd.port.mk>

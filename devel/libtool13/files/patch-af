@@ -1,5 +1,8 @@
---- libltdl/Makefile.in.orig	Tue Dec  7 13:03:38 1999
-+++ libltdl/Makefile.in	Mon Jan 17 16:35:34 2000
+
+$FreeBSD$
+
+--- libltdl/Makefile.in.orig	Tue Dec  7 15:03:38 1999
++++ libltdl/Makefile.in	Mon Jan 14 17:05:36 2002
 @@ -326,17 +326,16 @@
  distdir: $(DISTFILES)
  	-rm -rf $(distdir)
@@ -22,3 +25,24 @@
  info-am:
  info: info-am
  dvi-am:
+@@ -435,15 +434,15 @@
+ 	$(SHELL) ./config.status --recheck
+ 
+ local-install-files: $(DISTFILES)
+-	-rm -rf $(DESTDIR)$(datadir)/libtool/libltdl
+-	$(mkinstalldirs) $(DESTDIR)$(datadir)/libtool/libltdl
++	-rm -rf $(DESTDIR)$(datadir)/libtool13/libltdl
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/libtool13/libltdl
+ 	@for file in $(DISTFILES); do \
+ 	  d=$(srcdir); \
+ 	  if test -d $$d/$$file; then \
+-	    cp -r $$d/$$file $(DESTDIR)$(datadir)/libtool/libltdl/$$file; \
++	    cp -r $$d/$$file $(DESTDIR)$(datadir)/libtool13/libltdl/$$file; \
+ 	  else \
+-	    test -f $(DESTDIR)$(datadir)/libtool/libltdl/$$file \
+-	    || cp $$d/$$file $(DESTDIR)$(datadir)/libtool/libltdl/$$file || :; \
++	    test -f $(DESTDIR)$(datadir)/libtool13/libltdl/$$file \
++	    || cp $$d/$$file $(DESTDIR)$(datadir)/libtool13/libltdl/$$file || :; \
+ 	  fi; \
+ 	done
+ 

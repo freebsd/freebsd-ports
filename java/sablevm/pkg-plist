@@ -1979,6 +1979,9 @@ lib/sablevm/libclasspath.so
 lib/sablevm/libfdlibm-%%PORTVERSION%%.so
 lib/sablevm/libfdlibm.la
 lib/sablevm/libfdlibm.so
+%%GNOME:%%lib/sablevm/libgnu-java-awt-peer-gtk-%%PORTVERSION%%.so
+%%GNOME:%%lib/sablevm/libgnu-java-awt-peer-gtk.la
+%%GNOME:%%lib/sablevm/libgnu-java-awt-peer-gtk.so
 lib/sablevm/libjava-io-%%PORTVERSION%%.so
 lib/sablevm/libjava-io.la
 lib/sablevm/libjava-io.so

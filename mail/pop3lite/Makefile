@@ -23,6 +23,6 @@ MAN5=		pop3lite.conf.5
 MAN8=		pop3lite.8
 
 pre-build:
-	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}/libtool
+	@${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
 
 .include <bsd.port.mk>

@@ -6,7 +6,7 @@
  # Always use our own libtool.
 -LIBTOOL='$(SHELL) $(top_builddir)/libtool'
 +# LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-+LIBTOOL='$(PREFIX)/bin/libtool'
++LIBTOOL='libtool'
  
  # Prevent multiple expansion
  

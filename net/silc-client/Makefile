@@ -84,7 +84,7 @@ post-patch:
 		${WRKSRC}/lib/silccrypt/Makefile.in
 
 post-configure:
-	@${CP} ${LOCALBASE}/bin/libtool ${WRKSRC}
+	@${CP} ${LIBTOOL} ${WRKSRC}
 
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \

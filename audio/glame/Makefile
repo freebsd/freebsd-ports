@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A powerful, fast, stable, and easily extensible sound editor for GNOME
 
-LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
+LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
 
 USE_GNOME=	gnomeprefix gnomehack libglade
 USE_X_PREFIX=	yes

@@ -14,13 +14,11 @@ MASTER_SITES=	http://www.xs4all.nl/~ripley/XmHTML/dist/
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
 COMMENT=	A Motif widget set for displaying HTML 3.2 documents
 
-# BUILD_DEPENDS is used instead of USE_LIBTOOL in order to avoid
-# GNU_CONFIGURE being set.
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-#USE_LIBTOOL=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	# none
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -29,6 +27,9 @@ INSTALLS_SHLIB=	yes
 
 EXMP_DIR=	${PREFIX}/share/examples/${PORTNAME}
 DOCS_DIR=	${PREFIX}/share/doc/${PORTNAME}
+
+do-configure:
+	@${DO_NADA}
 
 post-build:
 	${RM} -rf ${WRKSRC}/examples/.libs ${WRKSRC}/examples/*.lo ${WRKSRC}/examples/*.o

@@ -42,7 +42,7 @@ post-patch:
 		${WRKSRC}/dvdread/dvd_input.c
 
 post-configure:
-	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
+	@${LN} -sf ${LIBTOOL} ${WRKSRC}
 
 post-install:
 .if !defined(NOPORTDOCS)

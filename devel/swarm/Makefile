@@ -26,6 +26,7 @@ USE_JAVA=	1.3+
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-defaultdir=${PREFIX} \
 		--with-tclincludedir=${PREFIX}/include/tcl8.3 \
@@ -33,10 +34,17 @@ CONFIGURE_ARGS=	--with-defaultdir=${PREFIX} \
 		--with-tclscriptdir=${PREFIX}/lib/tcl8.3 \
 		--with-tkscriptdir=${PREFIX}/lib/tk8.3 \
 		--enable-subdirs
+PLIST_SUB=	JAVA="@comment "
 .if defined(WITH_JAVA)
 CONFIGURE_ARGS+=	--with-jdkdir=${JAVA_HOME}
-PLIST=		${PKGDIR}/pkg-plist.withjava
+PLIST_SUB=	JAVA=""
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's|%%LTCONFIG%%|${LIBTOOL_SHAREDIR}/ltconfig${LIBTOOL_VERSION}|g' \
+		-e 's|%%LTMAIN%%|${LIBTOOL_SHAREDIR}/ltmain.sh|g' \
+		${WRKSRC}/configure
 
 pre-everything::
 .if !defined(WITH_JAVA)
@@ -49,6 +57,9 @@ pre-everything::
 	@${ECHO_MSG} "===> To enable HDF5 support, please define WITH_HDF5"
 	@${ECHO_MSG} "===>"
 .endif
+
+post-patch:
+
 
 post-install:
 	${CAT} ${PKGMESSAGE} | ${SED} -e "s:%%PREFIX%%:${PREFIX}:g"

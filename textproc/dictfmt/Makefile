@@ -7,6 +7,7 @@
 
 PORTNAME=	dictfmt
 PORTVERSION=	1.9.9
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dict
@@ -15,7 +16,7 @@ DISTNAME=	dictd-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Formats a DICT protocol dictionary database
 
-LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
+LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
 
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=	253

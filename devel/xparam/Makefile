@@ -15,10 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general-purpose tool for parameter handling in C++
 
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

@@ -37,7 +37,7 @@ APACHE_VER?=	1.3
 PLIST_SUB=	APACHE2=${APACHE2}
 
 post-patch:
-	cd ${WRKSRC}; ${ACLOCAL}; ${LOCALBASE}/bin/libtoolize
+	cd ${WRKSRC}; ${ACLOCAL}; ${LIBTOOLIZE}
 
 do-install:
 	${APXS} -i -A -n jk ${WRKSRC}/apache-${APACHE_VER}/mod_jk.so
