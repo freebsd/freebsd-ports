@@ -7,7 +7,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=nagios
@@ -52,11 +52,19 @@ INCGD=		-I${LOCALBASE}/include
 LIBGD=		-lgd
 .endif
 
-.if defined(WITH_MYSQL)
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-CONFIGURE_ARGS+=--with-mysql-lib=${LOCALBASE}/lib/mysql \
+.if defined(WITH_MYSQL)||defined(WITH_NAGMIN)
+USE_MYSQL=	yes
+CONFIGURE_ARGS+=	--with-mysql-lib=${LOCALBASE}/lib/mysql \
 		--with-mysql-inc=${LOCALBASE}/include/mysql \
 		--with-mysql-xdata
+.endif
+
+.if defined(WITH_NAGMIN)
+RUN_DEPENDS+=	nagmin:${PORTSDIR}/sysutils/nagmin
+CONFIGURE_ARGS+=	--with-myqsl-comments \
+		--with-mysql-downtime \
+		--with-mysql-retention \
+		--with-mysql-status
 .endif
 
 .if defined(NAGIOS_FILE_PERFDATA)
