@@ -1,5 +1,5 @@
---- cdctl.h.orig	Sat Sep  5 11:11:26 1998
-+++ cdctl.h	Thu Nov 25 17:35:34 1999
+--- cdctl.h.orig	Sat Sep  5 10:11:26 1998
++++ cdctl.h	Thu Dec 23 16:31:59 1999
 @@ -30,7 +30,8 @@
  #include <sys/stat.h>
  #include <fcntl.h>
@@ -175,7 +175,7 @@
        for(int i=0;i<=cd_tracks;i++){
           if(i==cd_tracks)
              te.cdte_track=CDROM_LEADOUT;
-@@ -320,10 +346,11 @@
+@@ -320,35 +346,42 @@
           else
              cd_len = this_addr;
        }
@@ -183,13 +183,20 @@
     }
 -   void trackinfo(struct cdrom_subchnl *subchnl){
 +   void trackinfo(struct cd_sub_channel_info *subchnl){
++      int currenttrack = status_track;
++
        if(status_state==ssPlaying || status_state==ssPaused){
 -         status_pos=((subchnl->cdsc_absaddr.msf.minute) * 60 + subchnl->cdsc_absaddr.msf.second) * 75 + subchnl->cdsc_absaddr.msf.frame - CD_MSF_OFFSET;
 +         status_pos=((subchnl->what.position.absaddr.msf.minute) * 60 + subchnl->what.position.absaddr.msf.second) * 75 + subchnl->what.position.absaddr.msf.frame - CD_MSF_OFFSET;
           for(status_track=0;status_track<cd_tracks;status_track++){
-             if(status_pos<cd_trklist[status_track].track_start+cd_trklist[status_track].track_len)
+-            if(status_pos<cd_trklist[status_track].track_start+cd_trklist[status_track].track_len)
++            if(status_pos<cd_trklist[status_track].track_start+cd_trklist[status_track].track_len) {
++               if (status_track != currenttrack) {
++                  status_track = currenttrack;
++               }
                 break;
-@@ -331,24 +358,24 @@
++            }
+          }
        }
     }
     void play(){
@@ -224,7 +231,7 @@
     }
     void select(int trk){
        status_track=trk;
-@@ -357,10 +384,10 @@
+@@ -357,10 +390,10 @@
           if(cd_trklist[status_track].track_data){
  
               #ifdef _CDCTL_HARD_STOP
