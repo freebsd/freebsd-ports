@@ -39,6 +39,11 @@ share/buildtool-0/templates/mk_top
 @dirrm share/buildtool-0/licenses
 @dirrm share/buildtool-0/bt_config
 @dirrm share/buildtool-0
-@unexec install-info --delete %D/info/buildtool.info %D/info/dir
-info/buildtool.info
-@exec install-info %D/info/buildtool.info %D/info/dir
+%%PORTDOCS%%@unexec install-info --delete %D/info/buildtool.info %D/info/dir
+%%PORTDOCS%%info/buildtool.info
+%%PORTDOCS%%@exec install-info %D/info/buildtool.info %D/info/dir
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/PEOPLE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

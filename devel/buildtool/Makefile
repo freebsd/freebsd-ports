@@ -14,10 +14,19 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	jos@catnook.com
 COMMENT=	A set of portable software build utilities
 
-MAN1=		buildtool.1
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	-p ${PREFIX}
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS+=	-n doc
+.endif
 
-do-configure:
-	@cd ${WRKSRC} \
-	&& ./configure -p ${PREFIX}
+MAN1=		buildtool.1
+DOCS=		CHANGES PEOPLE README TODO
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
