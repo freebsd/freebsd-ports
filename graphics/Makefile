@@ -156,6 +156,7 @@
     SUBDIR += gsculpt
     SUBDIR += gthumb2
     SUBDIR += gtkam
+    SUBDIR += gtkcairo
     SUBDIR += gtkdps
     SUBDIR += gtkfig
     SUBDIR += gtkgraph
