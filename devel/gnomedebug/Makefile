@@ -14,6 +14,8 @@ DISTNAME=	gnome-debug-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
 
+BROKEN=		"Fails with new devel/bonobo"
+
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		oaf.0:${PORTSDIR}/devel/oaf \
 		bonobo.2:${PORTSDIR}/devel/bonobo \
