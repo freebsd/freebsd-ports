@@ -11,6 +11,7 @@
     SUBDIR += aim
     SUBDIR += airport
     SUBDIR += amcl
+    SUBDIR += angst
     SUBDIR += archie
     SUBDIR += archie.el
     SUBDIR += argus
