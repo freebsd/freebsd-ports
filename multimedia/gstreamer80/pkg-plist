@@ -18,6 +18,7 @@ bin/gst-xmlinspect
 bin/gst-xmlinspect-%%VERSION%%
 bin/gst-xmllaunch
 bin/gst-xmllaunch-%%VERSION%%
+include/gstreamer-%%VERSION%%/gst/bytestream/adapter.h
 include/gstreamer-%%VERSION%%/gst/bytestream/bytestream.h
 include/gstreamer-%%VERSION%%/gst/control/control.h
 include/gstreamer-%%VERSION%%/gst/control/dparam.h
@@ -26,6 +27,7 @@ include/gstreamer-%%VERSION%%/gst/control/dparamcommon.h
 include/gstreamer-%%VERSION%%/gst/control/dparammanager.h
 include/gstreamer-%%VERSION%%/gst/control/dplinearinterp.h
 include/gstreamer-%%VERSION%%/gst/control/unitconvert.h
+include/gstreamer-%%VERSION%%/gst/dataprotocol/dataprotocol.h
 include/gstreamer-%%VERSION%%/gst/getbits/getbits.h
 include/gstreamer-%%VERSION%%/gst/gst.h
 include/gstreamer-%%VERSION%%/gst/gstatomic.h
@@ -46,7 +48,6 @@ include/gstreamer-%%VERSION%%/gst/gstformat.h
 include/gstreamer-%%VERSION%%/gst/gstindex.h
 include/gstreamer-%%VERSION%%/gst/gstinfo.h
 include/gstreamer-%%VERSION%%/gst/gstinterface.h
-include/gstreamer-%%VERSION%%/gst/gstlog.h
 include/gstreamer-%%VERSION%%/gst/gstmacros.h
 include/gstreamer-%%VERSION%%/gst/gstmarshal.h
 include/gstreamer-%%VERSION%%/gst/gstmemchunk.h
@@ -80,6 +81,7 @@ include/gstreamer-%%VERSION%%/gst/gstxml.h
 lib/gstreamer-%%VERSION%%/libgstbasicgthreadscheduler.so
 lib/gstreamer-%%VERSION%%/libgstbasicomegascheduler.so
 lib/gstreamer-%%VERSION%%/libgstbytestream.so
+lib/gstreamer-%%VERSION%%/libgstdataprotocol.so
 lib/gstreamer-%%VERSION%%/libgstelements.so
 lib/gstreamer-%%VERSION%%/libgstentrygthreadscheduler.so
 lib/gstreamer-%%VERSION%%/libgstentryomegascheduler.so
@@ -97,18 +99,77 @@ lib/libgstreamer-%%VERSION%%.so
 lib/libgstreamer-%%VERSION%%.so.%%SHLIB_VERSION%%
 libdata/pkgconfig/gstreamer-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-control-%%VERSION%%.pc
+share/doc/gstreamer-%%VERSION%%/GstBin.html
+share/doc/gstreamer-%%VERSION%%/GstClock.html
+share/doc/gstreamer-%%VERSION%%/GstElementFactory.html
+share/doc/gstreamer-%%VERSION%%/GstIndexFactory.html
+share/doc/gstreamer-%%VERSION%%/GstObject.html
+share/doc/gstreamer-%%VERSION%%/GstPadTemplate.html
+share/doc/gstreamer-%%VERSION%%/GstPipeline.html
+share/doc/gstreamer-%%VERSION%%/GstPluginFeature.html
+share/doc/gstreamer-%%VERSION%%/GstQueue.html
+share/doc/gstreamer-%%VERSION%%/GstRegistry.html
+share/doc/gstreamer-%%VERSION%%/GstSchedulerFactory.html
+share/doc/gstreamer-%%VERSION%%/GstThread.html
+share/doc/gstreamer-%%VERSION%%/GstTypeFindFactory.html
+share/doc/gstreamer-%%VERSION%%/GstXML.html
+share/doc/gstreamer-%%VERSION%%/ch03.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-%%VERSION%%.devhelp
+share/doc/gstreamer-%%VERSION%%/gstreamer-GstSystemClock.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gst.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gstatomic.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gstbuffer.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gstcaps.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gstconfig.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gstcpu.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gstdata.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gsterror.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gstevent.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gstformat.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gstinfo.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gstinterface.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gstmemchunk.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gstparse.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gstplugin.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gstprobe.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gstquery.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gstregistrypool.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gststructure.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gsttag.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gsttaginterface.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gsturi.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gstutils.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-gstvalue.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-support.html
+share/doc/gstreamer-%%VERSION%%/gstreamer.html
+share/doc/gstreamer-%%VERSION%%/index.html
+share/doc/gstreamer-%%VERSION%%/index.sgml
+share/doc/gstreamer-%%VERSION%%/ix01.html
+share/doc/gstreamer-libs-%%VERSION%%/gstreamer-libs-%%VERSION%%.devhelp
+share/doc/gstreamer-libs-%%VERSION%%/gstreamer-libs-gstcontrol.html
+share/doc/gstreamer-libs-%%VERSION%%/gstreamer-libs-gstdataprotocol.html
+share/doc/gstreamer-libs-%%VERSION%%/gstreamer-libs-gstgetbits.html
+share/doc/gstreamer-libs-%%VERSION%%/gstreamer-libs.html
+share/doc/gstreamer-libs-%%VERSION%%/index.html
+share/doc/gstreamer-libs-%%VERSION%%/index.sgml
 share/aclocal/gst-element-check-%%VERSION%%.m4
 share/locale/af/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+share/locale/en_GB/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/fr/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+share/locale/tr/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+share/locale/uk/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 @unexec rm %D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true
 @dirrm share/gnome/cache/gstreamer-%%VERSION%%
 @unexec rmdir %D/share/gnome/cache 2>/dev/null || true
+@dirrm share/doc/gstreamer-libs-%%VERSION%%
+@dirrm share/doc/gstreamer-%%VERSION%%
 @dirrm lib/gstreamer-%%VERSION%%
 @dirrm include/gstreamer-%%VERSION%%/gst/getbits
+@dirrm include/gstreamer-%%VERSION%%/gst/dataprotocol
 @dirrm include/gstreamer-%%VERSION%%/gst/control
 @dirrm include/gstreamer-%%VERSION%%/gst/bytestream
 @dirrm include/gstreamer-%%VERSION%%/gst
