@@ -1,18 +1,19 @@
 # New ports collection makefile for:    ifmail
-# Version required:     2.10
+# Version required:     2.12
 # Date created:         19 Feb 1997
 # Whom:                 dirk.meyer@dinoex.sub.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/16 04:57:24 fenner Exp $
 #
 
-DISTNAME=       ifmail-2.10
+DISTNAME=       ifmail-2.12
 CATEGORIES=	news
-MASTER_SITES=	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/ \
-		${MASTER_SITE_SUNSITE} \
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/ \
 		ftp://ftp.demos.su/unix/linux/source/fido/ \
-		ftp://net2.dinoex.sub.org/pub/approved/
-MASTER_SITE_SUBDIR=	system/Mail/transport/
+		ftp://ftp.average.org/ifmail/ \
+		ftp://ftp.dinoex.sub.de/pub/approved/
+MASTER_SITE_SUBDIR=	fido/mail/
 
 MAINTAINER=     dirk.meyer@dinoex.sub.org
 

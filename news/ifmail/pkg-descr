@@ -1,73 +1,10 @@
-
-Begin3
-~Title:		ifmail - FidoNet(tm) support package for UN*X platform
-Version:	2.7
-Entered-date:	06NOV94
-Description:	FidoNet(tm) transport and gateway for UN*X platform.
-		Delivers Fidonet mail packets over telephone lines
-		and TCP/IP connections; converts Fidonet net- and
-		echomail to RFC-822/RFC-1036 compliant mail and news
-		and vice versa.  In cooperation with MTA and netnews
-		packages allows to run a FidoNet node (or point) on
-		a UN*X machine.
-Keywords:	fidonet,netmail,echomail,mail,news,gateway
-Author:		crosser@pccross.msk.su (Eugene Crosser)
-Maintained-by:	crosser@pccross.msk.su (Eugene Crosser)
-Primary-site:	tsx-11.mit.edu /pub/linux/sources/usr.bin
-		220Kb ifmail-2.7.tar.gz
-Alternate-site:	sunsite.unc.edu /pub/Linux/system/Mail/transport
-Alternate-site:	ftp.demos.su /unix/linux/source/fido
-Platform:	Linux, *BSD, SunOS, SCO, ISC, some others
-Copying-policy:	Free
-End
-
-Copyright (c) 1993, 1994 by Eugene G. Crosser
-
-This is a README file for ifmail - another Internet/FidoNet gateway and
-transport package.
-
-You may do virtually what you wish with this software, as long as the
-explicit reference to its original author is retained:
-
-Eugene G. Crosser <crosser@pccross.msk.su>, 2:5020/230@FidoNet
-
-THIS SOFTWARE IS PROVIDED AS IS AND COME WITH NO WARRANTY OF ANY KIND,
-EITHER EXPRESSED OR IMPLIED.  IN NO EVENT WILL THE COPYRIGHT HOLDER BE
-LIABLE FOR ANY DAMAGES RESULTING FROM THE USE OF THIS SOFTWARE.
-
-This is freeware.  Except for the modules taken from the other packages,
-(which may be subject to different distributing policy), you may use
-this software for any purpose, commercial or noncommercial, including
-even selling it, without paying anything.  Though, if you are willing to
-support my efforts, your contribution will be appreciated.  Contact me
-by e-mail.
-
-The package consists of two major parts: ifgate (gateway programs,
-analog of FidoNet tosser/packer), and ifcico (transport agent, analog of
-FidoNet mailer), each in its own subdirectory.  Routines common to these
-programs are in the iflib subdirectory.  In the top-level subdirectory
-are: README (this file), CONFIG (your system configuration definition)
-and top-level Makefile.  There is also a "misc" subdirectory with
-examples of configuration, some useful scripts, FAQ list etc.
-
-Each of the subdirectories (ifgate, ifcico, iflib and misc) contains its
-own README file, refer to them for more technical details.
-
-To install the package, edit the CONFIG file to match your configuration
-and run "make" and (if you are satisfied) "make install".
-
-Currently, the package should be considered BETA, use it on your own
-risk.
-
-There is a mailing list for ifmail-related discussions.  To subscribe,
-send mail to: <ifmail-request@fidogate.nuars.nwu.edu> (this is a live
-person, not a listserv program).  It is supposed that it will carry
-latest updates in addition to discussions, so you may wish to subscribe,
-to be on the bleeding edge.  Special thanks to H. Peter Anvin for
-maintaining this list.
-
-Eugene G. Crosser <crosser@pccross.msk.su>; 2:5020/230@fidonet
-Voice: +7 095 212 5274; Moscow, Russia
+FidoNet(tm) transport and gateway for UN*X platform.
+Delivers Fidonet mail packets over telephone lines
+and TCP/IP connections; converts Fidonet net- and
+echomail to RFC-822/RFC-1036 compliant mail and news
+and vice versa.  In cooperation with MTA and netnews
+packages allows to run a FidoNet node (or point) on
+a UN*X machine.
 
 - Dirk Meyer (patches & port)
 dirk.meyer@dinoex.sub.org
