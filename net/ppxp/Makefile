@@ -20,7 +20,7 @@ MASTER_SITES=	http://www.dsl.gr.jp/~manabe/PPxP/packages/	\
 
 MAINTAINER=	nosuzuki@e-mail.ne.jp
 
-LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 .if defined(WITH_TCLJP)
 BUILD_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80 \
 		tclsh8.0jp:${PORTSDIR}/japanese/tcl80

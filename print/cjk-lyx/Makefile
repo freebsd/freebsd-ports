@@ -20,7 +20,7 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 .if defined(WITH_ISPELL)
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
-LIB_DEPENDS=	forms.0:${PORTSDIR}/x11-toolkits/xforms \
+LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
 		intl.2:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes

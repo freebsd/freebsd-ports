@@ -13,7 +13,7 @@ EXTRACT_SUFX=.tgz
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 
-LIB_DEPENDS=	forms.0:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 MAKEFILE=	Makefile.linux
 USE_X_PREFIX=	yes

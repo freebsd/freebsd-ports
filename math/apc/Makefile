@@ -12,7 +12,7 @@ MASTER_SITES= 	http://members.global2000.net/~eagriff/
 
 MAINTAINER=	eagriff@global2000.net
 
-LIB_DEPENDS=	forms.0:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 USE_X_PREFIX=	yes
 MAN1=		apc.1
