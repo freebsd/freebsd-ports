@@ -5400,6 +5400,7 @@ qmls		ports/cad/qmls
 qpage		ports/comms/qpage
 qpopper		ports/mail/qpopper
 qrash		ports/x11/qrash
+qslim		ports/graphics/qslim
 qstat		ports/games/qstat
 qt-designer	ports/devel/qt-designer
 qt145		ports/x11-toolkits/qt145
