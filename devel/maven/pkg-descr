@@ -1,0 +1,12 @@
+Maven is a Java project management and project comprehension tool.  Maven is
+based on the concept of a project object model (POM) in that all the artifacts
+produced by Maven are a result of consulting a well defined model for your
+project.  Builds, documentation, source metrics, and source cross-references
+are all controlled by your POM.
+
+The intent of Maven is to make intra-project development highly manageable in
+the hopes of providing more time for cross-project development.  You might call
+it cross-project pollination or the sharing of project development knowledge,
+this is what Maven attempts to encourage.
+
+WWW: http://maven.apache.org/

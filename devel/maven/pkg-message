@@ -1,0 +1,9 @@
+
+To work with Maven you need to set the following environment variables:
+  * JAVA_HOME
+    Set it to the base directory of your java installation.
+  * MAVEN_HOME
+    Set it to ``/usr/local/share/java/maven''.
+
+Then, you should initialize your repository with:
+  /usr/local/share/java/maven/bin/install_repo.sh ~/.maven/repository
