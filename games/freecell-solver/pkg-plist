@@ -4,11 +4,12 @@ bin/make-gnome-freecell-board
 bin/make-microsoft-freecell-board
 bin/make_pysol_freecell_board.py
 bin/pi-make-microsoft-freecell-board
+include/freecell-solver/fcs_cl.h
 include/freecell-solver/fcs_enums.h
 include/freecell-solver/fcs_move.h
 include/freecell-solver/fcs_user.h
 lib/libfreecell-solver.a
 lib/libfreecell-solver.la
 lib/libfreecell-solver.so
-lib/libfreecell-solver.so.1
+lib/libfreecell-solver.so.2
 @dirrm include/freecell-solver
