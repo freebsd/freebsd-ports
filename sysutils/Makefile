@@ -106,6 +106,7 @@
     SUBDIR += ftrace
     SUBDIR += fvcool
     SUBDIR += ganglia-monitor-core
+    SUBDIR += ganglia-webfrontend
     SUBDIR += gcombust
     SUBDIR += gconf-editor
     SUBDIR += gfslicer
