@@ -17,6 +17,9 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+# To avoid syslogd load, add this parameter.
+#MAKE_ARGS=	NDEBUG=yes
+
 post-patch:
 	cd ${WRKSRC}; ${CP} usogresrc usogresrc.sample
 
