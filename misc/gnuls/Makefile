@@ -19,18 +19,4 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
 MAN1=		gnuls.1 dircolors.1 dir.1 vdir.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500019
-.if defined(WITH_ACL_SUPPORT)
-PATCHFILES+=	gnuls-acl-20010825.patch
-PATCH_SITES+=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR+=	jedgar
-.else
-pre-fetch:
-	@${ECHO} "To build this port with ACL support, define"
-	@${ECHO} "WITH_ACL_SUPPORT (i.e. make -DWITH_ACL_SUPPORT)"
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
