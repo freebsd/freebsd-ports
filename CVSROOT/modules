@@ -5414,6 +5414,7 @@ p5-Crypt-ECB	ports/security/p5-Crypt-ECB
 p5-Crypt-GeneratePassword	ports/security/p5-Crypt-GeneratePassword
 p5-Crypt-HCE_SHA	ports/security/p5-Crypt-HCE_SHA
 p5-Crypt-IDEA	ports/security/p5-Crypt-IDEA
+p5-Crypt-OFB	ports/security/p5-Crypt-OFB
 p5-Crypt-OTP	ports/security/p5-Crypt-OTP
 p5-Crypt-OpenPGP	ports/security/p5-Crypt-OpenPGP
 p5-Crypt-OpenSSL-Bignum	ports/security/p5-Crypt-OpenSSL-Bignum
@@ -5812,6 +5813,7 @@ p5-Mail-FilterXML	ports/mail/p5-Mail-FilterXML
 p5-Mail-Folder	ports/mail/p5-Mail-Folder
 p5-Mail-Freshmeat	ports/mail/p5-Mail-Freshmeat
 p5-Mail-GnuPG		ports/mail/p5-Mail-GnuPG
+p5-Mail-Graph		ports/mail/p5-Mail-Graph
 p5-Mail-IMAPClient	ports/mail/p5-Mail-IMAPClient
 p5-Mail-ListDetector	ports/mail/p5-Mail-ListDetector
 p5-Mail-MailStats	ports/mail/p5-Mail-MailStats
@@ -6165,6 +6167,7 @@ p5-Text-MagicTemplate	ports/textproc/p5-Text-MagicTemplate
 p5-Text-Metaphone	ports/textproc/p5-Text-Metaphone
 p5-Text-Netstring	ports/textproc/p5-Text-Netstring
 p5-Text-PDF	ports/print/p5-Text-PDF
+p5-Text-ParagraphDiff	ports/textproc/p5-Text-ParagraphDiff
 p5-Text-Query	ports/textproc/p5-Text-Query
 p5-Text-Query-SQL	ports/databases/p5-Text-Query-SQL
 p5-Text-Quoted	ports/textproc/p5-Text-Quoted
