@@ -1,0 +1,11 @@
+--- Makefile.am.orig	Fri May  3 11:30:38 2002
++++ Makefile.am	Fri May  3 11:32:30 2002
+@@ -32,7 +32,7 @@
+ 	cd $(top_srcdir) && $(MAKE) -f admin/Makefile.common configure.files
+ 
+ install-data-local:
+-	chmod 755 $(DESTDIR)$(kde_datadir)/bibletime -R
++	chmod -R 755 $(DESTDIR)$(kde_datadir)/bibletime
+ 
+ MAINTAINERCLEANFILES = configure.files subdirs 
+ 

@@ -1,0 +1,13 @@
+BibleTime is a powerful Bible study application for the K Desktop Environment
+running on Unix operating systems.  BibleTime is based on the Sword library
+which provides access to all the different text modules created by the
+Crosswire Bible Society. 
+
+Current features are: toolbar, splitted window with index and MDI interface,
+searching in one or more modules supporting regular expressions, graphical
+search analysis, bookmarks, drag & drop, WYSIWYG html editing for comments,
+printing and an extensive help system.
+
+WWW:  http://www.bibletime.de/
+
+- Willem van Engen <wvengen@stack.nl>
