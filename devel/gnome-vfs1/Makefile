@@ -16,7 +16,8 @@ MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter \
-		gconf.8:${PORTSDIR}/devel/gconf
+		gconf.8:${PORTSDIR}/devel/gconf \
+		bz2.1:${PORTSDIR}/archivers/bzip2
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
