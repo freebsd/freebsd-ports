@@ -3,7 +3,7 @@
 # Date created:				July 7th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1998/05/14 07:52:45 vanilla Exp $
+# $Id: Makefile,v 1.8 1998/06/24 16:00:34 vanilla Exp $
 #
 
 DISTNAME=	Storable-0.6_402
@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Storable
 
 MAINTAINER=	jfitz@FreeBSD.ORG
+
+BROKEN=		fetch
 
 USE_PERL5=	YES
 
