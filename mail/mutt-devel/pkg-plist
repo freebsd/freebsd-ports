@@ -169,6 +169,7 @@ share/locale/es/LC_MESSAGES/mutt.mo
 share/locale/uk/LC_MESSAGES/mutt.mo
 share/locale/fr/LC_MESSAGES/mutt.mo
 share/doc/mutt/manual.txt
+share/doc/mutt/manual.latin1
 share/doc/mutt/PGP-Notes.txt
 share/doc/mutt/sample.muttrc
 share/doc/mutt/Mush.rc
