@@ -3,10 +3,10 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.18 1997/11/25 04:32:03 msmith Exp $
+# $Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp $
 #
 
-DISTNAME=	linux_lib-2.4
+DISTNAME=	linux_lib-2.5
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 
