@@ -44,7 +44,7 @@ do-build:
 	) > ${WRKDIR}/000.${PORTNAME}.sh
 
 do-install:
-	${MKDIR} ${TARGET_DIR}
+	${MKDIR} ${TARGET_DIR} ${PREFIX}/etc/rc.d
 	${INSTALL_DATA} ${WRKSRC}/* ${TARGET_DIR}/
 	if [ ! -e ${TARGET_DIR}/libc_r.so.4.compat4x ]; then \
 		${LN} -sf ${TARGET_DIR}/libc_r.so.4.compat3x ${TARGET_DIR}/libc_r.so.4; \

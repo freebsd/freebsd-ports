@@ -44,7 +44,7 @@ do-build:
 	) > ${WRKDIR}/000.${PORTNAME}.sh
 
 do-install:
-	${MKDIR} ${TARGET_DIR}
+	${MKDIR} ${TARGET_DIR} ${PREFIX}/libexec ${PREFIX}/etc/rc.d
 	${INSTALL_DATA} ${WRKSRC}/* ${TARGET_DIR}/
 	${INSTALL_DATA} ${WRKDIR}/usr/libexec/ld.so ${PREFIX}/libexec/
 	${INSTALL_SCRIPT} ${WRKDIR}/000.${PORTNAME}.sh ${PREFIX}/etc/rc.d/
