@@ -6918,6 +6918,7 @@ p5-Jabber-Connection	ports/net/p5-Jabber-Connection
 p5-Kwiki	ports/www/p5-Kwiki
 p5-Kwiki-Archive-Rcs	ports/www/p5-Kwiki-Archive-Rcs
 p5-Kwiki-Archive-SVK	ports/www/p5-Kwiki-Archive-SVK
+p5-Kwiki-Atom	ports/www/p5-Kwiki-Atom
 p5-Kwiki-GDGraphGenerator	ports/www/p5-Kwiki-GDGraphGenerator
 p5-Kwiki-NewPage	ports/www/p5-Kwiki-NewPage
 p5-Kwiki-RecentChanges	ports/www/p5-Kwiki-RecentChanges
