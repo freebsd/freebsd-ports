@@ -8,3 +8,5 @@ share/example/afio/backup
 share/example/afio/restore
 share/example/afio/x.dot
 share/example/afio/x.home
+@dirrm share/doc/afio
+@dirrm share/example/afio

@@ -5,3 +5,4 @@ share/doc/mei/mospec.txt
 share/doc/mei/msdos.txt
 share/doc/mei/readme.txt
 share/doc/mei/unix.txt
+@dirrm share/doc/mei
