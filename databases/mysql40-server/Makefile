@@ -46,6 +46,10 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--with-comment='FreeBSD port: ${PKGNAME}' \
 		--enable-thread-safe-client
 
+.ifdef USE_MYSQL
+.error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${MACHINE_ARCH} == "i386"
@@ -126,6 +130,7 @@ pre-fetch:
 post-patch:
 	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_server_dirs@ scripts support-files|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|install: install-am|install:|g" ${WRKSRC}/include/Makefile.in
+	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} "s|-pthread|${PTHREAD_LIBS}|g"
 
 .if defined(WITH_OPENSSL) && defined(BUILD_STATIC)
 pre-configure:
@@ -172,6 +177,7 @@ CONFIGURE_ARGS+=--without-server
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_client_dirs@ tests man|g" ${WRKSRC}/Makefile.in
+	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} "s|-pthread|${PTHREAD_LIBS}|g"
 
 post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-client.sh > ${PREFIX}/etc/rc.d/000.mysql-client.sh
