@@ -18,8 +18,6 @@ LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83 \
 		tk83:${PORTSDIR}/x11-toolkits/tk83 \
 		c-client4.8:${PORTSDIR}/mail/cclient
 
-LATEST_LINK=	tkrat2
-
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--with-tcl-config=${PREFIX}/lib/tcl8.3 \
