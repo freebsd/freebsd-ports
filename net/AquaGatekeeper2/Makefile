@@ -7,6 +7,7 @@
 
 PORTNAME=	AquaGatekeeper
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.infinetwireless.com/WirelessEq/tmp/software/docs/agk/ \
 		ftp://www.kuzbass.ru/pub/FreeBSD/ports/distfiles/
@@ -16,6 +17,8 @@ MAINTAINER=	eugen@grosbein.pp.ru
 COMMENT=	Aqua H323 Gatekeeper and proxy
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+CONFLICTS=	AquaGatekeeper-1.*
+LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}2${PKGNAMESUFFIX}
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	amd64 i386
 MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
