@@ -104,6 +104,7 @@ share/doc/libxml2/html/libxml-nanohttp.html
 share/doc/libxml2/html/libxml-notes.html
 share/doc/libxml2/html/libxml-parser.html
 share/doc/libxml2/html/libxml-parserinternals.html
+share/doc/libxml2/html/libxml-relaxng.html
 share/doc/libxml2/html/libxml-sax.html
 share/doc/libxml2/html/libxml-schemasinternals.html
 share/doc/libxml2/html/libxml-threads.html
@@ -115,6 +116,7 @@ share/doc/libxml2/html/libxml-xmlautomata.html
 share/doc/libxml2/html/libxml-xmlerror.html
 share/doc/libxml2/html/libxml-xmlio.html
 share/doc/libxml2/html/libxml-xmlmemory.html
+share/doc/libxml2/html/libxml-xmlreader.html
 share/doc/libxml2/html/libxml-xmlregexp.html
 share/doc/libxml2/html/libxml-xmlschemas.html
 share/doc/libxml2/html/libxml-xmlschemastypes.html
