@@ -75,6 +75,12 @@ pre-extract:
 	esac)
 .endif
 
+pre-install:
+	if [ -f ${X11BASE}/lib/X11/config/host.def ]; then \
+		mv -f ${X11BASE}/lib/X11/config/host.def \
+			${X11BASE}/lib/X11/config/host.def.pre-lesstif; \
+	fi
+
 post-install:
 	${RM} -f ${PREFIX}/lib/libXm.la
 	${RM} -f ${PREFIX}/lib/libMrm.la
