@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Nov  3 18:48:59 1997
-+++ Makefile	Mon Nov 10 09:36:00 1997
+--- Makefile.orig	Tue Nov 18 12:27:35 1997
++++ Makefile	Thu Dec  4 08:01:36 1997
 @@ -1,5 +1,5 @@
 -CHINESE=0
 -TEDDIR=/usr/local/lib/Ted
@@ -8,8 +8,16 @@
  ########## GCC/Linux ......  ############
  CC=gcc
  XINC=-I/usr/X11R6/include
-@@ -34,14 +34,14 @@
- #SUNKBD=-DSUNKBD
+@@ -31,19 +31,19 @@
+ #XINC=-I/usr/openwin/include
+ #LDFLAGS= -L/usr/openwin/lib -lsocket
+ #CC=gcc
+-XINC=-I/usr/X11R6.3/include
+-LDFLAGS= -L/usr/X11R6.3/lib -lsocket
+-SUNKBD=-DSUNKBD
++#XINC=-I/usr/X11R6.3/include
++#LDFLAGS= -L/usr/X11R6.3/lib -lsocket
++#SUNKBD=-DSUNKBD
  ###########################
  
 -CFLAGS = -O -DCHINESE=$(CHINESE) $(XINC) $(SUNKBD) -DTEDDIR=\"$(TEDDIR)\"
@@ -26,7 +34,7 @@
  ted:	$(OBJS)
  	$(CC) $(OBJS) -o $@ $(LDFLAGS) -lX11
  #	$(CC) $(OBJS) -o $@ $(LDFLAGS) -lX11 -lefence
-@@ -56,11 +56,14 @@
+@@ -58,11 +58,14 @@
  	$(CC) $(CFLAGS) ctags.c -o $@
  	strip $@
  install:
