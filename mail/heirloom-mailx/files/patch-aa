@@ -1,0 +1,11 @@
+--- mime.c.orig	Fri Dec 29 14:32:43 2000
++++ mime.c	Fri Dec 29 14:32:57 2000
+@@ -150,7 +150,7 @@
+ 		if ((wl = mbstowcs(w, t, LINESIZE)) == -1)
+ 			return;
+ 		for (p = w, i = 0; *p && i < wl; p++, i++) {
+-			if (!iswprint(*p) && *p != '\n' && *p != '\r'
++			if (!isprint(*p) && *p != '\n' && *p != '\r'
+ 					&& *p != '\b' && *p != '\t')
+ 				*p = '?';
+ 		}
