@@ -1,22 +1,25 @@
 bin/xml-config
+bin/xmllint
 etc/xmlConf.sh
-include/gnome-xml/HTMLparser.h
-include/gnome-xml/HTMLtree.h
-include/gnome-xml/SAX.h
-include/gnome-xml/debugXML.h
-include/gnome-xml/encoding.h
-include/gnome-xml/entities.h
-include/gnome-xml/nanoftp.h
-include/gnome-xml/nanohttp.h
-include/gnome-xml/parser.h
-include/gnome-xml/parserInternals.h
-include/gnome-xml/tree.h
-include/gnome-xml/valid.h
-include/gnome-xml/xlink.h
-include/gnome-xml/xml-error.h
-include/gnome-xml/xmlIO.h
-include/gnome-xml/xmlmemory.h
-include/gnome-xml/xpath.h
+include/libxml/HTMLparser.h
+include/libxml/HTMLtree.h
+include/libxml/SAX.h
+include/libxml/debugXML.h
+include/libxml/encoding.h
+include/libxml/entities.h
+include/libxml/nanoftp.h
+include/libxml/nanohttp.h
+include/libxml/parser.h
+include/libxml/parserInternals.h
+include/libxml/tree.h
+include/libxml/uri.h
+include/libxml/valid.h
+include/libxml/xlink.h
+include/libxml/xml-error.h
+include/libxml/xmlIO.h
+include/libxml/xmlmemory.h
+include/libxml/xmlversion.h
+include/libxml/xpath.h
 lib/libxml.a
 lib/libxml.so
 lib/libxml.so.5
@@ -45,4 +48,4 @@ share/gnome-xml/libxml-notes.html
 share/gnome-xml/structure.gif
 share/gnome-xml/xml.html
 @dirrm share/gnome-xml
-@dirrm include/gnome-xml
+@dirrm include/libxml
