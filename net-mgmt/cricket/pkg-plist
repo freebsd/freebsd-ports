@@ -1,72 +1,17 @@
-cricket/cricket-%%VERSION%%/lib/Common/Options.pm
-cricket/cricket-%%VERSION%%/lib/Common/Log.pm
-cricket/cricket-%%VERSION%%/lib/Common/Map.pm
-cricket/cricket-%%VERSION%%/lib/Common/HandleTarget.pm
-cricket/cricket-%%VERSION%%/lib/Common/Util.pm
-cricket/cricket-%%VERSION%%/lib/Common/Version.pm
-cricket/cricket-%%VERSION%%/lib/Common/global.pm
-cricket/cricket-%%VERSION%%/lib/Bundle/CricketPrereq.pm
-cricket/cricket-%%VERSION%%/lib/RRD/File.pm
-cricket/cricket-%%VERSION%%/lib/RRD/Format.pm
-cricket/cricket-%%VERSION%%/lib/ConfigTree/Cache.pm
-cricket/cricket-%%VERSION%%/lib/ConfigTree/Node.pm
-cricket/cricket-%%VERSION%%/lib/alternate/net-snmp/snmpUtils.pm
-cricket/cricket-%%VERSION%%/lib/Monitor.pm
-cricket/cricket-%%VERSION%%/lib/func.pm
-cricket/cricket-%%VERSION%%/lib/perfmon.pm
-cricket/cricket-%%VERSION%%/lib/snmp.pm
-cricket/cricket-%%VERSION%%/lib/snmpUtils.pm
-cricket/cricket-%%VERSION%%/lib/sql.pm
-cricket/cricket-%%VERSION%%/lib/sqlUtils.pm
-cricket/cricket-%%VERSION%%/lib/wbem.pm
-cricket/cricket-%%VERSION%%/lib/field.pm
-cricket/cricket-%%VERSION%%/lib/exec.pm
-cricket/cricket-%%VERSION%%/lib/RPN.pm
-cricket/cricket-%%VERSION%%/lib/file.pm
-cricket/cricket-%%VERSION%%/images/cricket-sm.gif
-cricket/cricket-%%VERSION%%/images/failed.gif
-cricket/cricket-%%VERSION%%/images/rrdtool.gif
-cricket/cricket-%%VERSION%%/sample-config/routers/Defaults
-cricket/cricket-%%VERSION%%/sample-config/routers/Targets
-cricket/cricket-%%VERSION%%/sample-config/wbem/Defaults
-cricket/cricket-%%VERSION%%/sample-config/wbem/targets
-cricket/cricket-%%VERSION%%/sample-config/http-performance/Defaults
-cricket/cricket-%%VERSION%%/sample-config/http-performance/urls
-cricket/cricket-%%VERSION%%/sample-config/news-server/Defaults
-cricket/cricket-%%VERSION%%/sample-config/news-server/targets
-cricket/cricket-%%VERSION%%/sample-config/perfmon/Defaults
-cricket/cricket-%%VERSION%%/sample-config/perfmon/targets
-cricket/cricket-%%VERSION%%/sample-config/portmasters/Defaults
-cricket/cricket-%%VERSION%%/sample-config/portmasters/portmasters
-cricket/cricket-%%VERSION%%/sample-config/router-interfaces/Defaults
-cricket/cricket-%%VERSION%%/sample-config/router-interfaces/interfaces
-cricket/cricket-%%VERSION%%/sample-config/usr/Defaults
-cricket/cricket-%%VERSION%%/sample-config/usr/targets
-cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/atm-intb-pvc/Defaults
-cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/atm-intb-pvc/interfaces
-cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/atm-rtr-uni/Defaults
-cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/atm-rtr-uni/interfaces
-cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/atm-trunks/Defaults
-cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/atm-trunks/interfaces
-cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/Defaults
-cricket/cricket-%%VERSION%%/sample-config/squid-proxy/Defaults
-cricket/cricket-%%VERSION%%/sample-config/subtree-times/Defaults
-cricket/cricket-%%VERSION%%/sample-config/subtree-times/targets
-cricket/cricket-%%VERSION%%/sample-config/switch-ports/Defaults
-cricket/cricket-%%VERSION%%/sample-config/switch-ports/switches
-cricket/cricket-%%VERSION%%/sample-config/switches/Defaults
-cricket/cricket-%%VERSION%%/sample-config/switches/switches
-cricket/cricket-%%VERSION%%/sample-config/systemperf/Defaults
-cricket/cricket-%%VERSION%%/sample-config/routing/Defaults
-cricket/cricket-%%VERSION%%/sample-config/routing/Targets
-cricket/cricket-%%VERSION%%/sample-config/Defaults
-cricket/cricket-%%VERSION%%/doc/neta-paper/paper.ps.gz
-cricket/cricket-%%VERSION%%/doc/neta-paper/fig2.gif
-cricket/cricket-%%VERSION%%/doc/neta-paper/paper.html
-cricket/cricket-%%VERSION%%/doc/neta-paper/fig1.gif
-cricket/cricket-%%VERSION%%/doc/neta-paper/peer1.gif
-cricket/cricket-%%VERSION%%/doc/neta-paper/peer2.gif
-cricket/cricket-%%VERSION%%/doc/neta-paper/ss.gif
+cricket/cricket
+cricket/cricket-%%VERSION%%/CHANGES
+cricket/cricket-%%VERSION%%/COPYING
+cricket/cricket-%%VERSION%%/DEV-INFO
+cricket/cricket-%%VERSION%%/README
+cricket/cricket-%%VERSION%%/THANKS
+cricket/cricket-%%VERSION%%/TODO
+cricket/cricket-%%VERSION%%/VERSION
+cricket/cricket-%%VERSION%%/collect-subtrees
+cricket/cricket-%%VERSION%%/collector
+cricket/cricket-%%VERSION%%/collector_th
+cricket/cricket-%%VERSION%%/compile
+cricket/cricket-%%VERSION%%/configure
+cricket/cricket-%%VERSION%%/cricket-conf.pl.sample
 cricket/cricket-%%VERSION%%/doc/beginner.html
 cricket/cricket-%%VERSION%%/doc/copytosql.html
 cricket/cricket-%%VERSION%%/doc/cricket.sql
@@ -77,12 +22,85 @@ cricket/cricket-%%VERSION%%/doc/inst-mapping.html
 cricket/cricket-%%VERSION%%/doc/intro.html
 cricket/cricket-%%VERSION%%/doc/modperl.html
 cricket/cricket-%%VERSION%%/doc/monitor-thresholds.html
+cricket/cricket-%%VERSION%%/doc/neta-paper/fig1.gif
+cricket/cricket-%%VERSION%%/doc/neta-paper/fig2.gif
+cricket/cricket-%%VERSION%%/doc/neta-paper/paper.html
+cricket/cricket-%%VERSION%%/doc/neta-paper/paper.ps.gz
+cricket/cricket-%%VERSION%%/doc/neta-paper/peer1.gif
+cricket/cricket-%%VERSION%%/doc/neta-paper/peer2.gif
+cricket/cricket-%%VERSION%%/doc/neta-paper/ss.gif
 cricket/cricket-%%VERSION%%/doc/new-devices.html
 cricket/cricket-%%VERSION%%/doc/perfmon.html
 cricket/cricket-%%VERSION%%/doc/reference.html
 cricket/cricket-%%VERSION%%/doc/tools.html
 cricket/cricket-%%VERSION%%/doc/win2kw1.gif
 cricket/cricket-%%VERSION%%/doc/win2kwmi.html
+cricket/cricket-%%VERSION%%/grapher.cgi
+cricket/cricket-%%VERSION%%/images/cricket-sm.gif
+cricket/cricket-%%VERSION%%/images/failed.gif
+cricket/cricket-%%VERSION%%/images/rrdtool.gif
+cricket/cricket-%%VERSION%%/lib/Bundle/CricketPrereq.pm
+cricket/cricket-%%VERSION%%/lib/Common/HandleTarget.pm
+cricket/cricket-%%VERSION%%/lib/Common/Log.pm
+cricket/cricket-%%VERSION%%/lib/Common/Map.pm
+cricket/cricket-%%VERSION%%/lib/Common/Options.pm
+cricket/cricket-%%VERSION%%/lib/Common/Util.pm
+cricket/cricket-%%VERSION%%/lib/Common/Version.pm
+cricket/cricket-%%VERSION%%/lib/Common/global.pm
+cricket/cricket-%%VERSION%%/lib/ConfigTree/Cache.pm
+cricket/cricket-%%VERSION%%/lib/ConfigTree/Node.pm
+cricket/cricket-%%VERSION%%/lib/Monitor.pm
+cricket/cricket-%%VERSION%%/lib/RPN.pm
+cricket/cricket-%%VERSION%%/lib/RRD/File.pm
+cricket/cricket-%%VERSION%%/lib/RRD/Format.pm
+cricket/cricket-%%VERSION%%/lib/alternate/RRD/File.pm
+cricket/cricket-%%VERSION%%/lib/alternate/net-snmp/snmpUtils.pm
+cricket/cricket-%%VERSION%%/lib/exec.pm
+cricket/cricket-%%VERSION%%/lib/field.pm
+cricket/cricket-%%VERSION%%/lib/file.pm
+cricket/cricket-%%VERSION%%/lib/func.pm
+cricket/cricket-%%VERSION%%/lib/perfmon.pm
+cricket/cricket-%%VERSION%%/lib/snmp.pm
+cricket/cricket-%%VERSION%%/lib/snmpUtils.pm
+cricket/cricket-%%VERSION%%/lib/sql.pm
+cricket/cricket-%%VERSION%%/lib/sqlUtils.pm
+cricket/cricket-%%VERSION%%/lib/wbem.pm
+cricket/cricket-%%VERSION%%/mini-graph.cgi
+cricket/cricket-%%VERSION%%/sample-config/Defaults
+cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/Defaults
+cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/atm-intb-pvc/Defaults
+cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/atm-intb-pvc/interfaces
+cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/atm-rtr-uni/Defaults
+cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/atm-rtr-uni/interfaces
+cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/atm-trunks/Defaults
+cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/atm-trunks/interfaces
+cricket/cricket-%%VERSION%%/sample-config/http-performance/Defaults
+cricket/cricket-%%VERSION%%/sample-config/http-performance/urls
+cricket/cricket-%%VERSION%%/sample-config/news-server/Defaults
+cricket/cricket-%%VERSION%%/sample-config/news-server/targets
+cricket/cricket-%%VERSION%%/sample-config/perfmon/Defaults
+cricket/cricket-%%VERSION%%/sample-config/perfmon/targets
+cricket/cricket-%%VERSION%%/sample-config/portmasters/Defaults
+cricket/cricket-%%VERSION%%/sample-config/portmasters/portmasters
+cricket/cricket-%%VERSION%%/sample-config/router-interfaces/Defaults
+cricket/cricket-%%VERSION%%/sample-config/router-interfaces/interfaces
+cricket/cricket-%%VERSION%%/sample-config/routers/Defaults
+cricket/cricket-%%VERSION%%/sample-config/routers/Targets
+cricket/cricket-%%VERSION%%/sample-config/routing/Defaults
+cricket/cricket-%%VERSION%%/sample-config/routing/Targets
+cricket/cricket-%%VERSION%%/sample-config/squid-proxy/Defaults
+cricket/cricket-%%VERSION%%/sample-config/subtree-times/Defaults
+cricket/cricket-%%VERSION%%/sample-config/subtree-times/targets
+cricket/cricket-%%VERSION%%/sample-config/switch-ports/Defaults
+cricket/cricket-%%VERSION%%/sample-config/switch-ports/switches
+cricket/cricket-%%VERSION%%/sample-config/switches/Defaults
+cricket/cricket-%%VERSION%%/sample-config/switches/switches
+cricket/cricket-%%VERSION%%/sample-config/systemperf/Defaults
+cricket/cricket-%%VERSION%%/sample-config/usr/Defaults
+cricket/cricket-%%VERSION%%/sample-config/usr/targets
+cricket/cricket-%%VERSION%%/sample-config/wbem/Defaults
+cricket/cricket-%%VERSION%%/sample-config/wbem/targets
+cricket/cricket-%%VERSION%%/subtree-sets
 cricket/cricket-%%VERSION%%/util/LeanODBC/LeanODBC.pm
 cricket/cricket-%%VERSION%%/util/LeanODBC/LeanODBC.xs
 cricket/cricket-%%VERSION%%/util/LeanODBC/Makefile.PL
@@ -95,6 +113,7 @@ cricket/cricket-%%VERSION%%/util/convert-named-ds
 cricket/cricket-%%VERSION%%/util/dump-targets
 cricket/cricket-%%VERSION%%/util/generate-statics
 cricket/cricket-%%VERSION%%/util/get-collector-stats
+cricket/cricket-%%VERSION%%/util/getFormat.c
 cricket/cricket-%%VERSION%%/util/listInterfaces
 cricket/cricket-%%VERSION%%/util/newsstats
 cricket/cricket-%%VERSION%%/util/perfInfo.pl
@@ -102,59 +121,45 @@ cricket/cricket-%%VERSION%%/util/pmlines.pl
 cricket/cricket-%%VERSION%%/util/relocate-perl
 cricket/cricket-%%VERSION%%/util/rrd-dump
 cricket/cricket-%%VERSION%%/util/rrd-tune
+cricket/cricket-%%VERSION%%/util/rrdTuneAberrant.cgi
 cricket/cricket-%%VERSION%%/util/run-subtree
+cricket/cricket-%%VERSION%%/util/run-subtree.old
 cricket/cricket-%%VERSION%%/util/systemPerfConf.pl
 cricket/cricket-%%VERSION%%/util/test-url
 cricket/cricket-%%VERSION%%/util/testwbem.pl
-cricket/cricket-%%VERSION%%/util/getFormat.c
 cricket/cricket-%%VERSION%%/util/usrModemUsage
-cricket/cricket-%%VERSION%%/cricket-conf.pl.sample
-cricket/cricket-%%VERSION%%/configure
-cricket/cricket-%%VERSION%%/compile
-cricket/cricket-%%VERSION%%/collector
-cricket/cricket-%%VERSION%%/collect-subtrees
-cricket/cricket-%%VERSION%%/VERSION
-cricket/cricket-%%VERSION%%/TODO
-cricket/cricket-%%VERSION%%/THANKS
-cricket/cricket-%%VERSION%%/README
-cricket/cricket-%%VERSION%%/DEV-INFO
-cricket/cricket-%%VERSION%%/COPYING
-cricket/cricket-%%VERSION%%/CHANGES
-cricket/cricket-%%VERSION%%/subtree-sets
-cricket/cricket-%%VERSION%%/mini-graph.cgi
-cricket/cricket-%%VERSION%%/grapher.cgi
-cricket/cricket
 etc/cricket-conf.pl.dist
-@dirrm cricket/cricket-%%VERSION%%/lib/Common
-@dirrm cricket/cricket-%%VERSION%%/lib/Bundle
-@dirrm cricket/cricket-%%VERSION%%/lib/RRD
-@dirrm cricket/cricket-%%VERSION%%/lib/ConfigTree
-@dirrm cricket/cricket-%%VERSION%%/lib/alternate/net-snmp
-@dirrm cricket/cricket-%%VERSION%%/lib/alternate
-@dirrm cricket/cricket-%%VERSION%%/lib
-@dirrm cricket/cricket-%%VERSION%%/images
-@dirrm cricket/cricket-%%VERSION%%/sample-config/routers
-@dirrm cricket/cricket-%%VERSION%%/sample-config/wbem
-@dirrm cricket/cricket-%%VERSION%%/sample-config/http-performance
-@dirrm cricket/cricket-%%VERSION%%/sample-config/news-server
-@dirrm cricket/cricket-%%VERSION%%/sample-config/perfmon
-@dirrm cricket/cricket-%%VERSION%%/sample-config/portmasters
-@dirrm cricket/cricket-%%VERSION%%/sample-config/router-interfaces
-@dirrm cricket/cricket-%%VERSION%%/sample-config/usr
-@dirrm cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/atm-intb-pvc
-@dirrm cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/atm-rtr-uni
-@dirrm cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/atm-trunks
-@dirrm cricket/cricket-%%VERSION%%/sample-config/atm-interfaces
-@dirrm cricket/cricket-%%VERSION%%/sample-config/squid-proxy
-@dirrm cricket/cricket-%%VERSION%%/sample-config/subtree-times
-@dirrm cricket/cricket-%%VERSION%%/sample-config/switch-ports
-@dirrm cricket/cricket-%%VERSION%%/sample-config/switches
-@dirrm cricket/cricket-%%VERSION%%/sample-config/systemperf
-@dirrm cricket/cricket-%%VERSION%%/sample-config/routing
-@dirrm cricket/cricket-%%VERSION%%/sample-config
-@dirrm cricket/cricket-%%VERSION%%/doc/neta-paper
-@dirrm cricket/cricket-%%VERSION%%/doc
 @dirrm cricket/cricket-%%VERSION%%/util/LeanODBC
 @dirrm cricket/cricket-%%VERSION%%/util
+@dirrm cricket/cricket-%%VERSION%%/sample-config/wbem
+@dirrm cricket/cricket-%%VERSION%%/sample-config/usr
+@dirrm cricket/cricket-%%VERSION%%/sample-config/systemperf
+@dirrm cricket/cricket-%%VERSION%%/sample-config/switches
+@dirrm cricket/cricket-%%VERSION%%/sample-config/switch-ports
+@dirrm cricket/cricket-%%VERSION%%/sample-config/subtree-times
+@dirrm cricket/cricket-%%VERSION%%/sample-config/squid-proxy
+@dirrm cricket/cricket-%%VERSION%%/sample-config/routing
+@dirrm cricket/cricket-%%VERSION%%/sample-config/routers
+@dirrm cricket/cricket-%%VERSION%%/sample-config/router-interfaces
+@dirrm cricket/cricket-%%VERSION%%/sample-config/portmasters
+@dirrm cricket/cricket-%%VERSION%%/sample-config/perfmon
+@dirrm cricket/cricket-%%VERSION%%/sample-config/news-server
+@dirrm cricket/cricket-%%VERSION%%/sample-config/http-performance
+@dirrm cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/atm-trunks
+@dirrm cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/atm-rtr-uni
+@dirrm cricket/cricket-%%VERSION%%/sample-config/atm-interfaces/atm-intb-pvc
+@dirrm cricket/cricket-%%VERSION%%/sample-config/atm-interfaces
+@dirrm cricket/cricket-%%VERSION%%/sample-config
+@dirrm cricket/cricket-%%VERSION%%/lib/alternate/net-snmp
+@dirrm cricket/cricket-%%VERSION%%/lib/alternate/RRD
+@dirrm cricket/cricket-%%VERSION%%/lib/alternate
+@dirrm cricket/cricket-%%VERSION%%/lib/RRD
+@dirrm cricket/cricket-%%VERSION%%/lib/ConfigTree
+@dirrm cricket/cricket-%%VERSION%%/lib/Common
+@dirrm cricket/cricket-%%VERSION%%/lib/Bundle
+@dirrm cricket/cricket-%%VERSION%%/lib
+@dirrm cricket/cricket-%%VERSION%%/images
+@dirrm cricket/cricket-%%VERSION%%/doc/neta-paper
+@dirrm cricket/cricket-%%VERSION%%/doc
 @dirrm cricket/cricket-%%VERSION%%
-@dirrm cricket
+@dirrm cricket/
