@@ -41,7 +41,6 @@ lib/X11/Wingz/SHAREWARE
 lib/X11/Wingz/WngzHelp
 lib/X11/Wingz/.wingz
 @exec chmod 666 %D/%F
-@unexec rm %D/%F
 lib/X11/Wingz/DG
 lib/X11/Wingz/WZScript
 lib/X11/Wingz/printer.info
