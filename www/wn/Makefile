@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.4 1995/12/01 11:40:46 adam Exp $
+# $Id: Makefile,v 1.5 1995/12/07 12:43:23 adam Exp $
 #
 
 DISTNAME=       wn-1.12.2
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/wn/
 IS_INTERACTIVE=
 NO_PACKAGE=	# hostname compiled in
 
-pre-patch: ${PATCH_COOKIE}
+pre-patch:
 	@cp ${WRKSRC}/Makefile.dist ${WRKSRC}/Makefile
 	@cp ${WRKSRC}/config.h.dist ${WRKSRC}/config.h
 
