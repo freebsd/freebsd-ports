@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.83 1999/01/26 03:32:20 steve Exp $
+# $Id: Makefile,v 1.84 1999/03/20 02:00:59 asami Exp $
 #
 
     SUBDIR += a2ps-a4
@@ -43,6 +43,7 @@
     SUBDIR += lprps-a4
     SUBDIR += lprps-letter
     SUBDIR += lyx
+    SUBDIR += magicfilter
     SUBDIR += makeindex
     SUBDIR += mgv
     SUBDIR += mp-a4
