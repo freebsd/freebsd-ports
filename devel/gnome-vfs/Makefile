@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomevfs2
 PORTVERSION=	1.9.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020501
@@ -26,7 +26,10 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
+CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
+		--localstatedir=${PREFIX}/share/gnome \
+		--datadir=${PREFIX}/share/gnome \
+		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
@@ -37,5 +40,7 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g ; \
                  s|\$\(libdir\)/bonobo/servers|\$\(prefix\)/libdata/bonobo/servers|g'
+	@find ${WRKSRC} -name "*info.in" | xargs ${PERL} -pi -e \
+		's|\@datadir\@/gnome|\@datadir\@|g'
 
 .include <bsd.port.mk>
