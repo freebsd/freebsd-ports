@@ -1,11 +1,11 @@
---- autozen.c.orig	Sat Sep 16 14:01:23 2000
-+++ autozen.c	Sat Sep 16 14:07:48 2000
-@@ -199,7 +199,7 @@
+--- autozen.c.orig	Sun Mar  4 16:56:21 2001
++++ autozen.c	Mon Apr  9 23:49:01 2001
+@@ -223,7 +223,7 @@
  	/* Lets set the filename, as if this were a save dialog, and we are giving
  	a default filename */
  	gtk_file_selection_set_filename (GTK_FILE_SELECTION(filew), 
--                                          "*.seq");
-+                                          "X11BASE/share/autozen/*.seq");
+-										"*.seq");
++										"X11BASE/share/autozen/*.seq");
           
+ 	gtk_file_selection_complete( GTK_FILE_SELECTION(filew), "*.seq");
  	gtk_widget_show(filew);
- }

@@ -6,31 +6,46 @@
 #
 
 PORTNAME=	autozen
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.linuxlabs.com/software/download/
 DISTNAME=	AutoZen-${PORTVERSION}
 
 MAINTAINER=	trevor@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.2
+WRKSRC=		${WRKDIR}/AutoZen-${PORTVERSION}
+
+MAKE_ENV+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 
 DOC_FILES=	CHANGES COPYING
-DATA_FILES=	deep-relax.seq relax.seq test.seq test2.seq test3.seq
+DATA_FILES=	deep-relax.seq deep_delta_slide.seq delta_slide.seq \
+		moderate-meditation.seq relax.seq wake-up.seq
+PLIST=		${WRKDIR}/pkg-plist
 
 post-patch:
 	@if [ -f /usr/include/sys/soundcard.h ]; then \
-		${PERL} -pi -e "s=linux/soundcard.h=sys/soundcard.h=g" \
-			${WRKSRC}/autozen.c; \
-	else \
-		${PERL} -pi -e "s=linux/soundcard.h=machine/soundcard.h=g" \
+		${PERL} -pi -e "s=machine/soundcard.h=sys/soundcard.h=g" \
 			${WRKSRC}/autozen.c; \
 	fi
 	@${PERL} -pi -e "s=X11BASE=${X11BASE}=g" ${WRKSRC}/autozen.c
 	cd ${WRKSRC} && ${RM} autozen seq2wav
+
+pre-install:
+	${ECHO} bin/autozen > ${PLIST}
+	${ECHO} bin/seq2wav >> ${PLIST}
+.for i in ${DATA_FILES}
+	${ECHO} share/autozen/${i} >> ${PLIST}
+.endfor
+.if !defined(NOPORTDOCS)
+.for i in ${DOC_FILES}
+	${ECHO} share/doc/autozen/${i} >> ${PLIST}
+.endfor
+	${ECHO} @dirrm share/doc/autozen >> ${PLIST}
+.endif
+	${ECHO} @dirrm share/autozen >> ${PLIST}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/autozen ${PREFIX}/bin
