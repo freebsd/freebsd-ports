@@ -1,0 +1,24 @@
+# $FreeBSD: /tmp/pcvs/ports/net/mpd-netgraph/files/Attic/mpd.mtree,v 1.1 1999-12-09 23:03:10 archie Exp $
+
+/set type=dir uname=root gname=wheel mode=0755
+.
+    sbin
+    ..
+    etc
+	mpd
+	..
+    ..
+    man
+        cat8            uname=man
+        ..
+        man8
+        ..
+    ..
+    share
+        doc
+	    mpd
+	    ..
+        ..
+    ..
+..
+

@@ -96,6 +96,7 @@
     SUBDIR += micq
     SUBDIR += mopd
     SUBDIR += mpd
+    SUBDIR += mpd-netgraph
     SUBDIR += mpich
     SUBDIR += mrt
     SUBDIR += mrtg
