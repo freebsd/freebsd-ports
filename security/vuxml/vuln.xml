@@ -118,6 +118,26 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>xpdf</name>
 	<range><lt>3.00_5</lt></range>
       </package>
+      <package>
+        <name>kpdf</name>
+	<range><lt>3.3.2_1</lt></range>
+      </package>
+      <package>
+	<name>gpdf</name>
+	<range><le>2.8.1</le></range>
+      </package>
+      <package>
+	<name>teTeX-base</name>
+	<range><le>2.0.2_6</le></range>
+      </package>
+      <package>
+        <name>cups-base</name>
+        <range><le>1.1.22.0</le></range>
+      </package>
+      <package>
+	<name>koffice</name>
+	<range><le>1.3.5,1</le></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -139,6 +159,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-11-23</discovery>
       <entry>2004-12-23</entry>
+      <modified>2004-12-24</modified>
     </dates>
   </vuln>
 
