@@ -1,12 +1,12 @@
 # New ports collection makefile for:    xpilot
-# Version required:	3-3-1
+# Version required:	3.6.1
 # Date created:         18 July 1995
 # Whom:                 jmacd
 #
-# $Id: Makefile,v 1.8 1996/12/30 21:33:35 max Exp $
+# $Id: Makefile,v 1.9 1997/01/03 09:37:35 obrien Exp $
 #
 
-DISTNAME=       xpilot-3.5.1
+DISTNAME=       xpilot-3.6.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
 		ftp://ftp.cs.uit.no/pub/games/xpilot/
