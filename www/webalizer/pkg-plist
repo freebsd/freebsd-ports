@@ -1,5 +1,5 @@
 bin/%%PKGNAMEPREFIX%%webalizer
-@exec ln -f %%PKGNAMEPREFIX%%webalizer %B/%%PKGNAMEPREFIX%%webazolver
+@exec ln -f %B/%%PKGNAMEPREFIX%%webalizer %B/%%PKGNAMEPREFIX%%webazolver
 @unexec rm -f %B/%%PKGNAMEPREFIX%%webazolver
 etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%PORTDOCS%%share/doc/%%PKGNAMEPREFIX%%webalizer/CHANGES
