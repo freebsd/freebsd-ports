@@ -46,8 +46,6 @@ exec >/dev/null
 case $1 in
 start)
     kldstat -v | grep vmmon >/dev/null || kldload ${vmware_libdir}/modules/vmmon_${suffix}.ko
-    echo -n > /dev/vmnet1
-    echo -n > /dev/vmnet1
     if [ $networking -eq 1 ]; then
 	kldstat -v | grep if_tap >/dev/null || kldload if_tap.ko
 	if [ ! -e $dev_vmnet1 ]; then
@@ -55,7 +53,8 @@ start)
 		echo "Your VMware installation seems broken.  Please reinstall VMware port." >&2
 		exit 255
 	fi
-	echo -n > $dev_vmnet1
+    	echo -n > /dev/vmnet1 2>&1 || true
+	echo -n > $dev_vmnet1 2>&1
 	ifconfig vmnet1 $host_ip netmask $netmask
 	if [ X$bridged = XYES ]; then
 	    kldstat -v | grep netgraph >/dev/null || kldload netgraph.ko
