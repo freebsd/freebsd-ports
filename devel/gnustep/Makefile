@@ -17,13 +17,21 @@ MAINTAINER=	ports@FreeBSD.ORG
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff34
 
+BROKEN=		"Sets PREFIX in the Makefile"
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 300000
 BROKEN=		"Sorry, this port does not work on FreeBSD-2.2.x"
 .endif
 
-BROKEN=		"Hardcoded freebsd release numbers in PLIST"
+.if ${MACHINE_ARCH} == "i386"
+GNU_ARCH=     ix86
+.else
+GNU_ARCH=     ${MACHINE_ARCH}
+.endif
+GNU_HOST=     freebsd${OSREL}
+PLIST_SUB+=    GNU_ARCH=${GNU_ARCH} GNU_HOST=${GNU_HOST}
 
 WRKSRC=		${WRKDIR}/gstep-0.5.5
 PREFIX=		${LOCALBASE}/GNUstep
@@ -40,15 +48,5 @@ MAKEFILE=
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 NO_MTREE=	yes
 USE_NEWGCC=	yes
-
-GNUSTEPLIBDIR=	${PREFIX}/Libraries/ix86/freebsd3.1/gnu-gnu-gnu-xraw
-
-post-install:
-.for lib in gmodel gnustep-base gnustep-gui gnustep-xraw
-	${LN} -sf ${GNUSTEPLIBDIR}/lib${lib}.so ${LOCALBASE}/lib/lib${lib}.so
-	${LN} -sf ${GNUSTEPLIBDIR}/lib${lib}.so.0.5.5 \
-		${LOCALBASE}/lib/lib${lib}.so.0.5.5
-.endfor
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${LOCALBASE}/lib
 
 .include <bsd.port.post.mk>
