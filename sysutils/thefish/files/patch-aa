@@ -1,0 +1,100 @@
+--- gtk_ui.c.orig	Mon Jan 27 23:14:16 2003
++++ gtk_ui.c	Thu Jan 30 21:53:48 2003
+@@ -24,7 +24,7 @@
+ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+-$Id: //depot/fish/gtk_ui.c#25 $
++$Id: //depot/fish/gtk_ui.c#26 $
+ 
+ */
+ 
+@@ -268,22 +268,22 @@
+ 	gtk_box_pack_start((GtkBox *)h_buttons, about_button, FALSE, FALSE, 0);
+ 	gtk_box_pack_start((GtkBox *) h_buttons, quit_button, FALSE, FALSE, 0);
+ 
+-	g_signal_connect_swapped(GTK_OBJECT(window), "delete_event",\
++	g_signal_connect(GTK_OBJECT(window), "delete_event",\
+ 		      GTK_SIGNAL_FUNC(delete_event), NULL);
+ 
+-	g_signal_connect_swapped(GTK_OBJECT(window), "destroy",\
++	g_signal_connect(GTK_OBJECT(window), "destroy",\
+ 		      GTK_SIGNAL_FUNC(destroy), NULL);
+ 
+-	g_signal_connect_swapped(GTK_OBJECT(commit_button), "clicked",\
++	g_signal_connect(GTK_OBJECT(commit_button), "clicked",\
+ 		      GTK_SIGNAL_FUNC(commit_pressed), NULL);
+ 			  
+-  	g_signal_connect_swapped(GTK_OBJECT(quit_button), "clicked",\
++  	g_signal_connect(GTK_OBJECT(quit_button), "clicked",\
+ 		      GTK_SIGNAL_FUNC(quit_pressed), NULL);
+ 
+-	g_signal_connect_swapped(GTK_OBJECT(about_button), "clicked",\
++	g_signal_connect(GTK_OBJECT(about_button), "clicked",\
+ 		      GTK_SIGNAL_FUNC(about_pressed), NULL);
+ 
+-	g_signal_connect_swapped(GTK_OBJECT(add_button), "clicked",\
++	g_signal_connect(GTK_OBJECT(add_button), "clicked",\
+ 		      GTK_SIGNAL_FUNC(add_pressed), NULL);
+ 			  			  
+ 	mytable1=gtk_table_new(num_knobs*2,3,FALSE);
+@@ -323,10 +323,10 @@
+ 		
+ 		} 
+ 
+-		g_signal_connect_swapped(GTK_OBJECT(radio_yes1[i]), "pressed",\
++		g_signal_connect(GTK_OBJECT(radio_yes1[i]), "pressed",\
+ 		      GTK_SIGNAL_FUNC(radio_yes_pressed), NULL);
+ 
+-		g_signal_connect_swapped(GTK_OBJECT(radio_no1[i]), "pressed",\
++		g_signal_connect(GTK_OBJECT(radio_no1[i]), "pressed",\
+ 		      GTK_SIGNAL_FUNC(radio_no_pressed), NULL);
+ 
+ 
+@@ -424,7 +424,7 @@
+ 
+ 		gtk_entry_set_text((GtkEntry *)str_entry[i],work->value);
+ 		
+-		g_signal_connect_swapped(GTK_OBJECT(str_entry[i]), "changed",\
++		g_signal_connect(GTK_OBJECT(str_entry[i]), "changed",\
+ 						GTK_SIGNAL_FUNC(entry_modified), NULL);
+ 						
+ 		gtk_table_attach((GtkTable *)mytable2, (GtkWidget *) str_label[i]
+@@ -914,13 +914,13 @@
+ 	
+ 	add_yes_button = gtk_button_new_with_label("OK");
+ 	
+-	g_signal_connect_swapped(GTK_OBJECT(add_yes_button), "clicked",\
++	g_signal_connect(GTK_OBJECT(add_yes_button), "clicked",\
+ 		      GTK_SIGNAL_FUNC(add_yes_pressed), NULL);
+ 
+ 
+ 	add_no_button = gtk_button_new_with_label("Cancel");
+ 	
+-	g_signal_connect_swapped(GTK_OBJECT(add_no_button), "clicked",\
++	g_signal_connect(GTK_OBJECT(add_no_button), "clicked",\
+ 		      GTK_SIGNAL_FUNC(add_no_pressed), NULL);
+ 			  
+ 	add_hsep = gtk_hseparator_new ();
+@@ -1062,10 +1062,10 @@
+ 		
+ 			} 
+ 
+-			g_signal_connect_swapped(GTK_OBJECT(radio_yes1[r_num]), "pressed",\
++			g_signal_connect(GTK_OBJECT(radio_yes1[r_num]), "pressed",\
+ 			      GTK_SIGNAL_FUNC(radio_yes_pressed), NULL);
+ 
+-			g_signal_connect_swapped(GTK_OBJECT(radio_no1[r_num]), "pressed",\
++			g_signal_connect(GTK_OBJECT(radio_no1[r_num]), "pressed",\
+ 			      GTK_SIGNAL_FUNC(radio_no_pressed), NULL);
+ 
+ 			knob_label[r_num]=gtk_label_new(r_ptr[r_num].name);
+@@ -1102,7 +1102,7 @@
+ 
+ 			gtk_entry_set_text((GtkEntry *)str_entry[s_num],s_ptr[s_num].value);
+ 		
+-			g_signal_connect_swapped(GTK_OBJECT(str_entry[s_num]), "changed",\
++			g_signal_connect(GTK_OBJECT(str_entry[s_num]), "changed",\
+ 						GTK_SIGNAL_FUNC(entry_modified), NULL);
+ 						
+ 			gtk_table_attach((GtkTable *) mytable2, (GtkWidget *) str_label[s_num], 
