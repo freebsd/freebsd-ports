@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- configure	2002/04/26 14:02:41	1.1
-+++ configure	2002/04/26 14:02:56
-@@ -7222,6 +7222,7 @@
+--- configure.orig	Mon Mar 10 16:54:58 2003
++++ configure	Sun Apr  6 16:11:00 2003
+@@ -7987,6 +7987,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -11,3 +8,12 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -8175,7 +8176,7 @@
+ GNOME_PLATFORM=2
+ GNOME_MINOR=2
+ GNOME_MICRO=1
+-GNOME_VENDOR="Gnome.Org"
++GNOME_VENDOR="FreeBSD GNOME Project"
+ GNOME_DATE="Tuesday, March 11th 2003"
+ 
+ 
