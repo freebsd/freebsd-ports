@@ -43,9 +43,10 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=--without-db
-CONFIGURE_ARGS+=--with-popt-prefix="${LOCALBASE}"
-CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc
+CONFIGURE_ARGS+=--without-db \
+		--with-popt-prefix="${LOCALBASE}" \
+		--sysconfdir=${PREFIX}/etc \
+		--without-javaglue
 
 MAN1=	gendiff.1
 MAN8=	rpm.8 rpm2cpio.8 rpmbuild.8
