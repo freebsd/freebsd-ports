@@ -7,9 +7,6 @@ include/gal-2.0/gal/a11y/e-table/gal-a11y-e-table.h
 include/gal-2.0/gal/a11y/e-text/gal-a11y-e-text-factory.h
 include/gal-2.0/gal/a11y/e-text/gal-a11y-e-text.h
 include/gal-2.0/gal/a11y/gal-a11y-util.h
-include/gal-2.0/gal/e-paned/e-hpaned.h
-include/gal-2.0/gal/e-paned/e-paned.h
-include/gal-2.0/gal/e-paned/e-vpaned.h
 include/gal-2.0/gal/e-table/e-cell-checkbox.h
 include/gal-2.0/gal/e-table/e-cell-combo.h
 include/gal-2.0/gal/e-table/e-cell-date.h
@@ -126,19 +123,16 @@ include/gal-2.0/gal/widgets/e-colors.h
 include/gal-2.0/gal/widgets/e-cursors.h
 include/gal-2.0/gal/widgets/e-file-selection.h
 include/gal-2.0/gal/widgets/e-gui-utils.h
-include/gal-2.0/gal/widgets/e-hscrollbar.h
 include/gal-2.0/gal/widgets/e-hsv-utils.h
 include/gal-2.0/gal/widgets/e-option-menu.h
 include/gal-2.0/gal/widgets/e-popup-menu.h
 include/gal-2.0/gal/widgets/e-printable.h
 include/gal-2.0/gal/widgets/e-reflow-model.h
 include/gal-2.0/gal/widgets/e-reflow.h
-include/gal-2.0/gal/widgets/e-scroll-frame.h
 include/gal-2.0/gal/widgets/e-selection-model-array.h
 include/gal-2.0/gal/widgets/e-selection-model-simple.h
 include/gal-2.0/gal/widgets/e-selection-model.h
 include/gal-2.0/gal/widgets/e-unicode.h
-include/gal-2.0/gal/widgets/e-vscrollbar.h
 include/gal-2.0/gal/widgets/gtk-combo-box.h
 include/gal-2.0/gal/widgets/gtk-combo-stack.h
 include/gal-2.0/gal/widgets/gtk-combo-text.h
@@ -147,7 +141,7 @@ include/gal-2.0/gal/widgets/widget-pixmap-combo.h
 lib/gtk-2.0/modules/libgal-a11y-2.0.so
 lib/libgal-2.0.a
 lib/libgal-2.0.so
-lib/libgal-2.0.so.4
+lib/libgal-2.0.so.5
 libdata/pkgconfig/gal-2.0.pc
 share/doc/gal2/gal-api.html
 share/doc/gal2/gal-api.sgml
@@ -235,7 +229,6 @@ share/locale/zh_TW/LC_MESSAGES/gal-%%VERSION%%.mo
 @dirrm include/gal-2.0/gal/menus
 @dirrm include/gal-2.0/gal/e-text
 @dirrm include/gal-2.0/gal/e-table
-@dirrm include/gal-2.0/gal/e-paned
 @dirrm include/gal-2.0/gal/a11y/e-text
 @dirrm include/gal-2.0/gal/a11y/e-table
 @dirrm include/gal-2.0/gal/a11y
