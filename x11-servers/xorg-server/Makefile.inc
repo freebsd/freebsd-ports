@@ -28,7 +28,9 @@ _XINCLUDE_DIRS=	include ${XBUILD_DIRS} ${XINCLUDE_DIRS}
 
 CF_PATCHES=	${PORTSDIR}/x11-servers/xorg-server/files/patch-FreeBSD.cf \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-Imake.rules \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-Imake.tmpl
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-Imake.tmpl \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-Library.tmpl \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-X11.tmpl
 
 .if !target(do-configure)
 do-configure:

@@ -1,0 +1,21 @@
+--- config/cf/Library.tmpl.orig	Mon Aug 27 10:40:55 2001
++++ config/cf/Library.tmpl	Wed Oct 16 21:53:13 2002
+@@ -300,6 +300,10 @@
+  */
+ 
+ #ifndef MakeStringsDependency
++#if defined(UseInstalled) || defined(UseInstalledPrograms)
++#define MakeStringsDependency						@@\
++MAKESTRS = makestrs
++#else
+ # define MakeStringsDependency						@@\
+ MAKESTRS = $(CONFIGSRC)/util/makestrs					@@\
+ NoCmpScript(HostProgramTargetName($(MAKESTRS)) $(MAKESTRS).Osuf)	@@\
+@@ -308,6 +312,7 @@
+ 	cd $(CONFIGSRC)/util && $(MAKE) HostProgramTargetName(makestrs)	@@\
+ 									@@\
+ includes:: HostProgramTargetName($(MAKESTRS))
++#endif
+ #endif
+ 
+ #ifndef ToolkitMakeStrings
