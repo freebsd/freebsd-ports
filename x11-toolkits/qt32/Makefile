@@ -105,6 +105,8 @@ post-patch:
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 	@${REINPLACE_CMD} -e 's,g++,${CXX},' \
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
+	@${REINPLACE_CMD} -e  's,release,release thread,' \
+		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 
 # Work around qmake generated dependencies
 pre-install:
