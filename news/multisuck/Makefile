@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	multisuck
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-server/conn news suck
 
 GNU_CONFIGURE=	yes
-ALL_TARGET=	msuck
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/msuck ${PREFIX}/bin
