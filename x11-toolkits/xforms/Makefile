@@ -3,7 +3,7 @@
 # Date created:		28 March 1997
 # Whom:			gena
 #
-# $Id: Makefile,v 1.20 1998/11/02 04:35:07 jseger Exp $
+# $Id: Makefile,v 1.21 1998/11/11 05:37:39 asami Exp $
 #
 
 USE_X_PREFIX=	yes
@@ -30,7 +30,21 @@ WRKSRC=		${WRKDIR}/xforms
 MAN1=		fdesign.1 fd2ps.1
 MAN5=		xforms.5
 
+# XXX: ask the author to include the right soname
+.if ${PORTOBJFORMAT} == "elf"
+.if !exists(/usr/bin/perl5)
+pre-fetch:
+	@${ECHO} "Need perl5 to patch soname"
+	@${FALSE}
+.endif
+.endif
+
 post-install:
+# XXX: ask the author to include the right soname
+.if ${PORTOBJFORMAT} == "elf" 
+	/usr/bin/perl5 -pe 's/libforms.so.0.88/libxforms.so.0\000\000/' < ${PREFIX}/lib/libxforms.so.0 > ${PREFIX}/lib/libxforms.so.0.tmp
+	${MV} ${PREFIX}/lib/libxforms.so.0.tmp ${PREFIX}/lib/libxforms.so.0
+.endif
 	${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOMANCOMPRESS)
 	@${RM} ${PREFIX}/man/man5/forms.5
