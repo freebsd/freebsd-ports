@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	multimedia
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-#MASTER_SITE_SUBDIR=	${PORTNAME}
-MASTER_SITES=	http://gstreamer.net/releases/${PORTVERSION}/src/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.6
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Development framework for creating media applications
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_X_PREFIX=	yes
@@ -27,6 +26,7 @@ WANT_GNOME=	yes
 USE_GNOME=	gnomehack \
 		gnomeprefix \
 		glib20 \
+		pkgconfig \
 		libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-tests \

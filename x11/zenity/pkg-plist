@@ -1,3 +1,4 @@
+bin/gdialog
 bin/zenity
 share/gnome/omf/zenity/zenity-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/zenity/zenity-C.omf 2>/dev/null || /usr/bin/true

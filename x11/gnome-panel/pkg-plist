@@ -5,23 +5,30 @@ bin/gnome-panel-screenshot
 bin/panel-test-applets
 etc/gconf/gconf.xml.defaults/apps/gnome_panel_screenshot/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/panel/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/default_setup/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/clock/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/mixer/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/show_desktop_button/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/window_list/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/window_menu/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/workspace_switcher/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/default_setup/general/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects/menu_bar/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects/nautilus_launcher/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects/terminal_launcher/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/bottom_panel/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/top_panel/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/panel/global/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome_panel_screenshot/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet/prefs/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/pager_applet/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/pager_applet/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/panel/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large/panels/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large/panels/00000001/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large/panels/00000002/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/00000001/%gconf.xml
@@ -36,60 +43,67 @@ etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/objects/
 etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/panels/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/panels/00000001/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/panels/00000002/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/small/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/small/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/small/panels/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/small/panels/00000001/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/general/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/panel/global/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/tasklist_applet/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/tasklist_applet/prefs/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/objects/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/toplevels/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/toplevels/background/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/window_list_applet/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/window_list_applet/prefs/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/workspace_switcher_applet/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/workspace_switcher_applet/prefs/%gconf.xml
 etc/gconf/schemas/clock.schemas
 etc/gconf/schemas/fish.schemas
 etc/gconf/schemas/gnome-panel-screenshot.schemas
-etc/gconf/schemas/mailcheck.schemas
-etc/gconf/schemas/pager.schemas
-etc/gconf/schemas/panel-global-config.schemas
-etc/gconf/schemas/panel-per-panel-config.schemas
-etc/gconf/schemas/tasklist.schemas
-etc/sound/events/mailcheck.soundlist
+etc/gconf/schemas/panel-compatibility.schemas
+etc/gconf/schemas/panel-default-setup.entries
+etc/gconf/schemas/panel-general.schemas
+etc/gconf/schemas/panel-global.schemas
+etc/gconf/schemas/panel-object.schemas
+etc/gconf/schemas/panel-toplevel.schemas
+etc/gconf/schemas/window-list.schemas
+etc/gconf/schemas/workspace-switcher.schemas
 include/panel-2.0/GNOME_Panel.h
 include/panel-2.0/panel-applet-gconf.h
 include/panel-2.0/panel-applet.h
-lib/libgen_util_applet-2.so
+lib/libclock-applet-2.so
 lib/libpanel-applet-2.a
 lib/libpanel-applet-2.so
 lib/libpanel-applet-2.so.0
+libdata/bonobo/servers/GNOME_ClockApplet_Factory.server
 libdata/bonobo/servers/GNOME_FishApplet_Factory.server
-libdata/bonobo/servers/GNOME_GenUtilApplet_Factory.server
 libdata/bonobo/servers/GNOME_NotificationAreaApplet.server
 libdata/bonobo/servers/GNOME_Panel.server
+libdata/bonobo/servers/GNOME_Wncklet_Factory.server
 libdata/pkgconfig/libpanelapplet-2.0.pc
 libexec/fish-applet-2
 libexec/notification-area-applet
+libexec/wnck-applet
 share/doc/panel-applet/applet-popups.html
 share/doc/panel-applet/applet-porting.html
 share/doc/panel-applet/applet-writing.html
 share/doc/panel-applet/index.sgml
 share/doc/panel-applet/libpanel-applet.html
 share/doc/panel-applet/multi-applets.html
+share/doc/panel-applet/panel-applet-panel-applet-gconf-utilities.html
 share/doc/panel-applet/panel-applet.html
 share/doc/panel-applet/panel-signals.html
 share/doc/panel-applet/panelapplet.html
 share/doc/panel-applet/server-files.html
 share/doc/panel-applet/session-saving.html
 share/gnome/control-center-2.0/capplets/gnome-panel-preferences.desktop
-share/gnome/fish/fish.glade
-share/gnome/gen_util/pager.glade
-share/gnome/gen_util/tasklist.glade
 share/gnome/gnome-2.0/ui/GNOME_ClockApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_FishApplet.xml
-share/gnome/gnome-2.0/ui/GNOME_MailCheckApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_NotificationAreaApplet.xml
-share/gnome/gnome-2.0/ui/GNOME_PagerApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_Panel_Popup.xml
 share/gnome/gnome-2.0/ui/GNOME_ShowDesktopApplet.xml
-share/gnome/gnome-2.0/ui/GNOME_TasklistApplet.xml
+share/gnome/gnome-2.0/ui/GNOME_WindowListApplet.xml
+share/gnome/gnome-2.0/ui/GNOME_WindowMenuApplet.xml
+share/gnome/gnome-2.0/ui/GNOME_WorkspaceSwitcherApplet.xml
+share/gnome/gnome-panel/glade/fish.glade
 share/gnome/gnome-panel/glade/panel-test-applets.glade
+share/gnome/gnome-panel/glade/window-list.glade
+share/gnome/gnome-panel/glade/workspace-switcher.glade
 share/gnome/gnome-panelrc
 share/gnome/help/clock/C/clock.xml
 share/gnome/help/clock/C/figures/clock_applet.png
@@ -159,63 +173,6 @@ share/gnome/help/fish-applet-2/zh_TW/figures/fish_applet.png
 share/gnome/help/fish-applet-2/zh_TW/figures/fish_settings.png
 share/gnome/help/fish-applet-2/zh_TW/fish-applet-2.xml
 share/gnome/help/fish-applet-2/zh_TW/legal.xml
-share/gnome/help/mailcheck/C/figures/mailcheck_applet.png
-share/gnome/help/mailcheck/C/legal.xml
-share/gnome/help/mailcheck/C/mailcheck.xml
-share/gnome/help/mailcheck/de/figures/mailcheck-applet.png
-share/gnome/help/mailcheck/de/figures/mailcheck-properties-mailbox.png
-share/gnome/help/mailcheck/de/figures/mailcheck-properties-mailcheck.png
-share/gnome/help/mailcheck/de/figures/mailcheck_applet.png
-share/gnome/help/mailcheck/de/legal.xml
-share/gnome/help/mailcheck/de/mailcheck.xml
-share/gnome/help/mailcheck/es/figures/mailcheck-applet.png
-share/gnome/help/mailcheck/es/figures/mailcheck-properties-mailbox.png
-share/gnome/help/mailcheck/es/figures/mailcheck-properties-mailcheck.png
-share/gnome/help/mailcheck/es/figures/mailcheck_applet.png
-share/gnome/help/mailcheck/es/legal.xml
-share/gnome/help/mailcheck/es/mailcheck.xml
-share/gnome/help/mailcheck/fr/figures/mailcheck-applet.png
-share/gnome/help/mailcheck/fr/figures/mailcheck-properties-mailbox.png
-share/gnome/help/mailcheck/fr/figures/mailcheck-properties-mailcheck.png
-share/gnome/help/mailcheck/fr/figures/mailcheck_applet.png
-share/gnome/help/mailcheck/fr/legal.xml
-share/gnome/help/mailcheck/fr/mailcheck.xml
-share/gnome/help/mailcheck/it/figures/mailcheck-applet.png
-share/gnome/help/mailcheck/it/figures/mailcheck-properties-mailbox.png
-share/gnome/help/mailcheck/it/figures/mailcheck-properties-mailcheck.png
-share/gnome/help/mailcheck/it/figures/mailcheck_applet.png
-share/gnome/help/mailcheck/it/legal.xml
-share/gnome/help/mailcheck/it/mailcheck.xml
-share/gnome/help/mailcheck/ja/figures/mailcheck_applet.png
-share/gnome/help/mailcheck/ja/legal.xml
-share/gnome/help/mailcheck/ja/mailcheck.xml
-share/gnome/help/mailcheck/ko/figures/mailcheck-applet.png
-share/gnome/help/mailcheck/ko/figures/mailcheck-properties-mailbox.png
-share/gnome/help/mailcheck/ko/figures/mailcheck-properties-mailcheck.png
-share/gnome/help/mailcheck/ko/figures/mailcheck_applet.png
-share/gnome/help/mailcheck/ko/legal.xml
-share/gnome/help/mailcheck/ko/mailcheck.xml
-share/gnome/help/mailcheck/sv/figures/mailcheck-applet.png
-share/gnome/help/mailcheck/sv/figures/mailcheck-properties-mailbox.png
-share/gnome/help/mailcheck/sv/figures/mailcheck-properties-mailcheck.png
-share/gnome/help/mailcheck/sv/figures/mailcheck_applet.png
-share/gnome/help/mailcheck/sv/legal.xml
-share/gnome/help/mailcheck/sv/mailcheck.xml
-share/gnome/help/mailcheck/zh_CN/figures/mailcheck-applet.png
-share/gnome/help/mailcheck/zh_CN/figures/mailcheck-properties-mailbox.png
-share/gnome/help/mailcheck/zh_CN/figures/mailcheck-properties-mailcheck.png
-share/gnome/help/mailcheck/zh_CN/figures/mailcheck_applet.png
-share/gnome/help/mailcheck/zh_CN/legal.xml
-share/gnome/help/mailcheck/zh_CN/mailcheck.xml
-share/gnome/help/mailcheck/zh_TW/figures/mailcheck-applet.png
-share/gnome/help/mailcheck/zh_TW/figures/mailcheck-properties-mailbox.png
-share/gnome/help/mailcheck/zh_TW/figures/mailcheck-properties-mailcheck.png
-share/gnome/help/mailcheck/zh_TW/figures/mailcheck_applet.png
-share/gnome/help/mailcheck/zh_TW/legal.xml
-share/gnome/help/mailcheck/zh_TW/mailcheck.xml
-share/gnome/help/notification-area/C/figures/notification-area.png
-share/gnome/help/notification-area/C/legal.xml
-share/gnome/help/notification-area/C/notification-area.xml
 share/gnome/help/window-list/C/figures/window_list_applet.png
 share/gnome/help/window-list/C/figures/window_list_group_applet.png
 share/gnome/help/window-list/C/legal.xml
@@ -343,28 +300,6 @@ share/gnome/omf/gnome-panel/fish-applet-2-zh_CN.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/fish-applet-2-zh_TW.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-zh_TW.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/gnome-panel/mailcheck-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-C.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/gnome-panel/mailcheck-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-de.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/gnome-panel/mailcheck-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-es.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/gnome-panel/mailcheck-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-fr.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/gnome-panel/mailcheck-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-it.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/gnome-panel/mailcheck-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-ja.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/gnome-panel/mailcheck-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-ko.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/gnome-panel/mailcheck-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-sv.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/gnome-panel/mailcheck-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-zh_CN.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/gnome-panel/mailcheck-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-zh_TW.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/gnome-panel/notification-area-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/notification-area-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/window-list-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/window-list-de.omf
@@ -407,18 +342,31 @@ share/gnome/omf/gnome-panel/workspace-switcher-zh_TW.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/panel/gnome-panel-preferences.glade
 share/gnome/panel/gnome-panel-screenshot.glade
+share/gnome/panel/panel-properties-dialog.glade
+share/gnome/panel/panel-run-dialog.glade
+share/gnome/pixmaps/cdeappmenu.png
 share/gnome/pixmaps/fish/fishanim.png
 share/gnome/pixmaps/fish/footguy.png
 share/gnome/pixmaps/fish/monkey.png
 share/gnome/pixmaps/fish/oldwanda.png
+share/gnome/pixmaps/gnome-amusements.png
+share/gnome/pixmaps/gnome-clock.png
 share/gnome/pixmaps/gnome-fish.png
+share/gnome/pixmaps/gnome-gegl.png
+share/gnome/pixmaps/gnome-gegl2-2.png
+share/gnome/pixmaps/gnome-gegl2.png
+share/gnome/pixmaps/gnome-main-menu.png
+share/gnome/pixmaps/gnome-panel-type-corner.png
+share/gnome/pixmaps/gnome-panel-type-edge.png
+share/gnome/pixmaps/gnome-panel-type-floating.png
+share/gnome/pixmaps/gnome-panel-type-menu.png
+share/gnome/pixmaps/gnome-panel-type-sliding.png
+share/gnome/pixmaps/gnome-panel.png
+share/gnome/pixmaps/gnome-run.png
+share/gnome/pixmaps/gnome-screenshot.png
 share/gnome/pixmaps/gnome-show-desktop.png
-share/gnome/pixmaps/mailcheck/eclouds.png
-share/gnome/pixmaps/mailcheck/email-e.png
-share/gnome/pixmaps/mailcheck/email-eclouds.png
-share/gnome/pixmaps/mailcheck/email-tiny.png
-share/gnome/pixmaps/mailcheck/email.png
-share/gnome/pixmaps/mailcheck/tux-anim.png
+share/gnome/pixmaps/panel-drawer.png
+share/gnome/pixmaps/panel-force-quit.png
 share/locale/am/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-panel-2.0.mo
@@ -521,30 +469,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/window-list/C/figures
 @dirrm share/gnome/help/window-list/C
 @dirrm share/gnome/help/window-list
-@dirrm share/gnome/help/notification-area/C/figures
-@dirrm share/gnome/help/notification-area/C
-@dirrm share/gnome/help/notification-area
-@dirrm share/gnome/help/mailcheck/zh_TW/figures
-@dirrm share/gnome/help/mailcheck/zh_TW
-@dirrm share/gnome/help/mailcheck/zh_CN/figures
-@dirrm share/gnome/help/mailcheck/zh_CN
-@dirrm share/gnome/help/mailcheck/sv/figures
-@dirrm share/gnome/help/mailcheck/sv
-@dirrm share/gnome/help/mailcheck/ko/figures
-@dirrm share/gnome/help/mailcheck/ko
-@dirrm share/gnome/help/mailcheck/ja/figures
-@dirrm share/gnome/help/mailcheck/ja
-@dirrm share/gnome/help/mailcheck/it/figures
-@dirrm share/gnome/help/mailcheck/it
-@dirrm share/gnome/help/mailcheck/fr/figures
-@dirrm share/gnome/help/mailcheck/fr
-@dirrm share/gnome/help/mailcheck/es/figures
-@dirrm share/gnome/help/mailcheck/es
-@dirrm share/gnome/help/mailcheck/de/figures
-@dirrm share/gnome/help/mailcheck/de
-@dirrm share/gnome/help/mailcheck/C/figures
-@dirrm share/gnome/help/mailcheck/C
-@dirrm share/gnome/help/mailcheck
 @dirrm share/gnome/help/fish-applet-2/zh_TW/figures
 @dirrm share/gnome/help/fish-applet-2/zh_TW
 @dirrm share/gnome/help/fish-applet-2/zh_CN/figures
@@ -589,17 +513,17 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/clock
 @dirrm share/gnome/gnome-panel/glade
 @dirrm share/gnome/gnome-panel
-@dirrm share/gnome/gen_util
-@dirrm share/gnome/fish
 @dirrm share/doc/panel-applet
 @dirrm include/panel-2.0
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/tasklist_applet/prefs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/tasklist_applet
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/workspace_switcher_applet/prefs
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/workspace_switcher_applet
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/window_list_applet/prefs
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/window_list_applet
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/toplevels/background
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/toplevels
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/objects
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/global
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/small/panels/00000001
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/small/panels
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/small/general
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/small
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/general
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/panels/00000002
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/panels/00000001
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/panels
@@ -614,23 +538,30 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/00000001
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large/panels/00000002
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large/panels/00000001
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large/panels
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large/general
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/pager_applet/prefs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/pager_applet
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet/prefs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome_panel_screenshot
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/prefs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/prefs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet
 @dirrm etc/gconf/gconf.xml.defaults/apps/panel/global
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/top_panel
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/bottom_panel
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects/terminal_launcher
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects/nautilus_launcher
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects/menu_bar
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/general
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/workspace_switcher
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/window_menu
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/window_list
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/show_desktop_button
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/mixer
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/clock
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup
 @dirrm etc/gconf/gconf.xml.defaults/apps/panel
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome_panel_screenshot
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-C.omf 2>/dev/null || /usr/bin/true
@@ -653,17 +584,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-sv.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-zh_CN.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/notification-area-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-de.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-es.omf 2>/dev/null || /usr/bin/true

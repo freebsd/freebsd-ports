@@ -1,6 +1,6 @@
---- daemon/gdm.c.orig	Thu May 30 11:02:29 2002
-+++ daemon/gdm.c	Thu May 30 10:59:19 2002
-@@ -36,7 +36,7 @@
+--- daemon/gdm.c.orig	Wed Jun 25 17:04:49 2003
++++ daemon/gdm.c	Sat Jun 28 18:17:44 2003
+@@ -38,7 +38,7 @@
  #include <locale.h>
  
  /* This should be moved to auth.c I suppose */

@@ -1,0 +1,21 @@
+--- utils/bonobo-slay.in.orig	Mon Mar 11 12:16:43 2002
++++ utils/bonobo-slay.in	Tue Apr  2 18:30:30 2002
+@@ -56,15 +56,15 @@
+ 
+ # get Bonobo files
+ #
+-@bonobo_dirs = ( "@prefix@/lib/bonobo/servers" );
++@bonobo_dirs = ( "@prefix@/libdata/bonobo/servers" );
+ foreach $dir (split(':', $ENV{'BONOBO_ACTIVATION_INFO_PATH'})) {
+ 	if (-d $dir) {
+ 		push @bonobo_dirs, $dir;
+ 	}
+ }
+ foreach $dir (split(':', $ENV{'GNOME2_PATH'})) {
+-	if (-d "$dir/lib/bonobo/servers") {
+-		push @bonobo_dirs, "$dir/lib/bonobo/servers";
++	if (-d "$dir/libdata/bonobo/servers") {
++		push @bonobo_dirs, "$dir/libdata/bonobo/servers";
+ 	}
+ }
+ 

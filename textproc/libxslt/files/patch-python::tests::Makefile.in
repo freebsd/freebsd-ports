@@ -1,12 +1,9 @@
-
-$FreeBSD$
-
---- python/tests/Makefile.in.orig	Mon Apr 15 21:07:35 2002
-+++ python/tests/Makefile.in	Thu Apr 18 14:25:35 2002
-@@ -117,7 +117,7 @@
- XSLT_LIBDIR = @XSLT_LIBDIR@
- XSLT_LIBS = @XSLT_LIBS@
- 
+--- python/tests/Makefile.in.orig	Fri Sep 12 15:25:00 2003
++++ python/tests/Makefile.in	Fri Sep 12 15:25:38 2003
+@@ -133,7 +133,7 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ pythondir = @pythondir@
 -EXAMPLE_DIR = $(datadir)/doc/libxslt-python-$(LIBXSLT_VERSION)/examples
 +EXAMPLE_DIR = $(datadir)/doc/libxslt-python/examples
  

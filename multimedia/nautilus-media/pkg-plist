@@ -25,6 +25,7 @@ share/locale/bg/LC_MESSAGES/nautilus-media.mo
 share/locale/bn/LC_MESSAGES/nautilus-media.mo
 share/locale/ca/LC_MESSAGES/nautilus-media.mo
 share/locale/cs/LC_MESSAGES/nautilus-media.mo
+share/locale/cy/LC_MESSAGES/nautilus-media.mo
 share/locale/de/LC_MESSAGES/nautilus-media.mo
 share/locale/da/LC_MESSAGES/nautilus-media.mo
 share/locale/el/LC_MESSAGES/nautilus-media.mo
@@ -35,12 +36,15 @@ share/locale/fi/LC_MESSAGES/nautilus-media.mo
 share/locale/fr/LC_MESSAGES/nautilus-media.mo
 share/locale/ga/LC_MESSAGES/nautilus-media.mo
 share/locale/he/LC_MESSAGES/nautilus-media.mo
+share/locale/hi/LC_MESSAGES/nautilus-media.mo
 share/locale/hu/LC_MESSAGES/nautilus-media.mo
 share/locale/id/LC_MESSAGES/nautilus-media.mo
 share/locale/is/LC_MESSAGES/nautilus-media.mo
 share/locale/it/LC_MESSAGES/nautilus-media.mo
 share/locale/ja/LC_MESSAGES/nautilus-media.mo
 share/locale/ko/LC_MESSAGES/nautilus-media.mo
+share/locale/li/LC_MESSAGES/nautilus-media.mo
+share/locale/lt/LC_MESSAGES/nautilus-media.mo
 share/locale/lv/LC_MESSAGES/nautilus-media.mo
 share/locale/mk/LC_MESSAGES/nautilus-media.mo
 share/locale/ml/LC_MESSAGES/nautilus-media.mo

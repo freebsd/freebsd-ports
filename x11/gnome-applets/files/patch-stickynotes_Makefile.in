@@ -1,0 +1,11 @@
+--- stickynotes/Makefile.in.orig	Thu Aug 28 01:00:09 2003
++++ stickynotes/Makefile.in	Thu Aug 28 01:00:26 2003
+@@ -142,7 +142,7 @@
+ 
+ SUBDIRS = pixmaps docs
+ 
+-CFLAGS = -Wall -g
++CFLAGS += -Wall -g
+ 
+ INCLUDES =  	-I. 	-I$(srcdir) 	$(GNOME_APPLETS_CFLAGS) 	$(LIBGLADE_CFLAGS) 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-DSTICKYNOTES_GLADEDIR=\"$(gladedir)\" 	-DSTICKYNOTES_ICONDIR=\"$(icondir)\"
+ 

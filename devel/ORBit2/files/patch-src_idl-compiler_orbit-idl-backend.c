@@ -4,7 +4,7 @@
  	char **strv;
  	int    i;
  
-+	paths = g_slist_prepend (paths, "/usr/X11R6/lib/orbit-2.0/idl-backends");
++	paths = g_slist_prepend (paths, "%%X11BASE%%/lib/orbit-2.0/idl-backends");
 +
  	if (!(val = getenv ("GNOME2_PATH")))
  		return paths;

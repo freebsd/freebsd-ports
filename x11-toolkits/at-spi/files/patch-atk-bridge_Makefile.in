@@ -1,0 +1,11 @@
+--- atk-bridge/Makefile.in.orig	Sat Apr 12 01:06:28 2003
++++ atk-bridge/Makefile.in	Sat Apr 12 01:06:48 2003
+@@ -147,7 +147,7 @@
+ 
+ LDFLAGS = @LDFLAGS@ -no-undefined -module -avoid-version
+ 
+-libatk_bridge_la_LIBADD = $(ATK_BRIDGE_LIBS) $(top_builddir)/libspi/libspi.la
++libatk_bridge_la_LIBADD = $(ATK_BRIDGE_LIBS) -L$(top_builddir)/libspi/.libs $(top_builddir)/libspi/libspi.la
+ 
+ CFLAGS = @CFLAGS@ $(ATK_BRIDGE_CFLAGS)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

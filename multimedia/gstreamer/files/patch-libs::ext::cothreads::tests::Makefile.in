@@ -1,11 +1,11 @@
---- libs/ext/cothreads/tests/Makefile.in.orig	Sat Sep 28 23:05:55 2002
-+++ libs/ext/cothreads/tests/Makefile.in	Sat Sep 28 23:06:23 2002
-@@ -83,7 +83,7 @@
+--- libs/ext/cothreads/tests/Makefile.in.orig	Sat Aug 30 19:28:04 2003
++++ libs/ext/cothreads/tests/Makefile.in	Sat Aug 30 19:28:39 2003
+@@ -68,7 +68,7 @@
  GLIB_CFLAGS = @GLIB_CFLAGS@
  GLIB_LIBS = @GLIB_LIBS@
  GTHREAD_CFLAGS = @GTHREAD_CFLAGS@
 -GTHREAD_LIBS = @GTHREAD_LIBS@
 +GTHREAD_LIBS = -lc @GTHREAD_LIBS@
- INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
- LIBTOOL = @LIBTOOL@
- LN_S = @LN_S@
+ INSTALL_DATA = @INSTALL_DATA@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@

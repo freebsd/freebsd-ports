@@ -6,42 +6,35 @@ bin/gdmchooser
 bin/gdmflexiserver
 bin/gdmgreeter
 bin/gdmlogin
-bin/gdmmktemp
 bin/gdmphotosetup
 bin/gdmsetup
 bin/gdmthemetester
-@unexec if cmp -s %D/etc/gdm/Init/Default %D/etc/gdm/Init/factory-Default; then rm -f %D/etc/gdm/Init/Default; fi
-etc/gdm/Init/factory-Default
-@exec [ -f %B/Default ] || cp %B/%f %B/Default
-@unexec if cmp -s %D/etc/gdm/PostSession/Default %D/etc/gdm/PostSession/factory-Default; then rm -f %D/etc/gdm/PostSession/Default; fi
-etc/gdm/PostSession/factory-Default
-@exec [ -f %B/Default ] || cp %B/%f %B/Default
-@unexec if cmp -s %D/etc/gdm/PreSession/Default %D/etc/gdm/PreSession/factory-Default; then rm -f %D/etc/gdm/PreSession/Default; fi
-etc/gdm/PreSession/factory-Default
-@exec [ -f %B/Default ] || cp %B/%f %B/Default
-@unexec if cmp -s %D/etc/gdm/Sessions/Gnome %D/etc/gdm/Sessions/factory-Gnome; then rm -f %D/etc/gdm/Sessions/Gnome; fi
-etc/gdm/Sessions/factory-Gnome
-@exec [ -f %B/Gnome ] || cp %B/%f %B/Gnome
-@unexec if cmp -s %D/etc/gdm/Sessions/Xsession %D/etc/gdm/Sessions/factory-Xsession; then rm -f %D/etc/gdm/Sessions/Xsession; fi
-etc/gdm/Sessions/factory-Xsession
-@exec [ -f %B/Xsession ] || cp %B/%f %B/Xsession
-@unexec if cmp -s %D/etc/gdm/XKeepsCrashing %D/etc/gdm/factory-XKeepsCrashing; then rm -f %D/etc/gdm/XKeepsCrashing; fi
-etc/gdm/factory-XKeepsCrashing
-@exec [ -f %B/XKeepsCrashing ] || cp %B/%f %B/XKeepsCrashing
-@unexec if cmp -s %D/etc/gdm/gnomerc %D/etc/gdm/factory-gnomerc; then rm -f %D/etc/gdm/gnomerc; fi
-etc/gdm/factory-gnomerc
-@exec [ -f %B/gnomerc ] || cp %B/%f %B/gnomerc
+etc/dm/Sessions/Default.desktop
+etc/dm/Sessions/gnome.desktop
+etc/gdm/Init/Default
+etc/gdm/PostLogin/Default.sample
+etc/gdm/PostSession/Default
+etc/gdm/PreSession/Default
+etc/gdm/XKeepsCrashing
+etc/gdm/Xsession
 @unexec if cmp -s %D/etc/gdm/gdm.conf %D/etc/gdm/factory-gdm.conf; then rm -f %D/etc/gdm/gdm.conf; fi
 etc/gdm/factory-gdm.conf
 @exec [ -f %B/gdm.conf ] || cp %B/%f %B/gdm.conf
-@unexec if cmp -s %D/etc/gdm/locale.alias %D/etc/gdm/factory-locale.alias; then rm -f %D/etc/gdm/locale.alias; fi
-etc/gdm/factory-locale.alias
-@exec [ -f %B/locale.alias ] || cp %B/%f %B/locale.alias
+etc/gdm/locale.alias
+@unexec if cmp -s %D/etc/gdm/modules/AccessDwellMouseEvents %D/etc/gdm/modules/factory-AccessDwellMouseEvents; then rm -f %D/etc/gdm/modules/AccessDwellMouseEvents; fi
+etc/gdm/modules/factory-AccessDwellMouseEvents
+@exec [ -f %B/AccessDwellMouseEvents ] || cp %B/%f %B/AccessDwellMouseEvents
+@unexec if cmp -s %D/etc/gdm/modules/AccessKeyMouseEvents %D/etc/gdm/modules/factory-AccessKeyMouseEvents; then rm -f %D/etc/gdm/modules/AccessKeyMouseEvents; fi
+etc/gdm/modules/factory-AccessKeyMouseEvents
+@exec [ -f %B/AccessKeyMouseEvents ] || cp %B/%f %B/AccessKeyMouseEvents
 etc/rc.d/gdm.sh.sample
+lib/gtk-2.0/modules/libdwellmouselistener.so
+lib/gtk-2.0/modules/libkeymouselistener.so
+%%PAM_MISC%%libexec/gdmaskpass
+libexec/gdmtranslate
 sbin/gdm-restart
 sbin/gdm-safe-restart
 sbin/gdm-stop
-%%PAM_MISC%%sbin/gdmaskpass
 sbin/gdmconfig
 share/gnome/applications/gdmflexiserver-xnest.desktop
 share/gnome/applications/gdmflexiserver.desktop
@@ -49,6 +42,15 @@ share/gnome/applications/gdmsetup.desktop
 share/gnome/capplets/gdmphotosetup.desktop
 share/gnome/gdm/gdmchooser.glade
 share/gnome/gdm/gdmsetup.glade
+share/gnome/gdm/themes/happygnome-list/GdmGreeterTheme.desktop
+share/gnome/gdm/themes/happygnome-list/background.svg
+share/gnome/gdm/themes/happygnome-list/disconnect.png
+share/gnome/gdm/themes/happygnome-list/gnome-logo.png
+share/gnome/gdm/themes/happygnome-list/happygnome.xml
+share/gnome/gdm/themes/happygnome-list/options.png
+share/gnome/gdm/themes/happygnome-list/screenshot.png
+share/gnome/gdm/themes/happygnome-list/session.png
+share/gnome/gdm/themes/happygnome-list/system.png
 share/gnome/gdm/themes/happygnome/GdmGreeterTheme.desktop
 share/gnome/gdm/themes/happygnome/background.svg
 share/gnome/gdm/themes/happygnome/disconnect.png
@@ -65,6 +67,10 @@ share/gnome/gdm/themes/circles/flower.png
 share/gnome/gdm/themes/circles/help.png
 share/gnome/gdm/themes/circles/options.png
 share/gnome/gdm/themes/circles/screenshot.png
+share/gnome/help/gdm/C/gdm.xml
+share/gnome/help/gdm/C/legal.xml
+share/gnome/omf/gdm/gdm-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gdm/gdm-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gdm-foot-logo.png
 share/gnome/pixmaps/gdm.png
 share/gnome/pixmaps/login-photo.png
@@ -78,6 +84,7 @@ share/locale/bg/LC_MESSAGES/gdm-2.4.mo
 share/locale/bn/LC_MESSAGES/gdm-2.4.mo
 share/locale/ca/LC_MESSAGES/gdm-2.4.mo
 share/locale/cs/LC_MESSAGES/gdm-2.4.mo
+share/locale/cy/LC_MESSAGES/gdm-2.4.mo
 share/locale/da/LC_MESSAGES/gdm-2.4.mo
 share/locale/de/LC_MESSAGES/gdm-2.4.mo
 share/locale/el/LC_MESSAGES/gdm-2.4.mo
@@ -112,6 +119,7 @@ share/locale/ro/LC_MESSAGES/gdm-2.4.mo
 share/locale/ru/LC_MESSAGES/gdm-2.4.mo
 share/locale/sk/LC_MESSAGES/gdm-2.4.mo
 share/locale/sl/LC_MESSAGES/gdm-2.4.mo
+share/locale/sq/LC_MESSAGES/gdm-2.4.mo
 share/locale/sr/LC_MESSAGES/gdm-2.4.mo
 share/locale/sr@Latn/LC_MESSAGES/gdm-2.4.mo
 share/locale/sv/LC_MESSAGES/gdm-2.4.mo
@@ -123,7 +131,13 @@ share/locale/vi/LC_MESSAGES/gdm-2.4.mo
 share/locale/wa/LC_MESSAGES/gdm-2.4.mo
 share/locale/zh_CN/LC_MESSAGES/gdm-2.4.mo
 share/locale/zh_TW/LC_MESSAGES/gdm-2.4.mo
+@dirrm share/gnome/omf/gdm
+@dirrm share/gnome/help/gdm/C
 @dirrm share/gnome/gdm/themes/happygnome
+@dirrm share/gnome/gdm/themes/happygnome-list
 @dirrm share/gnome/gdm/themes/circles
 @dirrm share/gnome/gdm/themes
 @dirrm etc/pam.d
+@dirrm etc/gdm/modules
+@unexec /bin/rmdir %D/etc/dm 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gdm/gdm-C.omf 2>/dev/null || /usr/bin/true

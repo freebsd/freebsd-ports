@@ -1,38 +1,90 @@
 bin/eog
 etc/gconf/gconf.xml.defaults/apps/eog/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/eog/full_screen/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/eog/view/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/eog/window/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/eog/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/eog/full_screen/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/eog/view/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/eog/window/%gconf.xml
 etc/gconf/schemas/eog.schemas
 libdata/bonobo/servers/GNOME_EOG.server
+libdata/bonobo/servers/GNOME_EOG_Collection.server
+libexec/eog-collection-view
 libexec/eog-image-viewer
 share/gnome/applications/eog.desktop
 share/gnome/eog/glade/eog.glade
+share/gnome/eog/gpi-dialog.glade
+share/gnome/gnome-2.0/ui/eog-collection-view-ui.xml
 share/gnome/gnome-2.0/ui/eog-image-view-ctrl-ui.xml
 share/gnome/gnome-2.0/ui/eog-image-view-ui.xml
 share/gnome/gnome-2.0/ui/eog-shell-ui.xml
 share/gnome/help/eog/C/eog.xml
 share/gnome/help/eog/C/figures/eog_start_window.png
 share/gnome/help/eog/C/legal.xml
+share/gnome/help/eog/de/eog.xml
+share/gnome/help/eog/de/figures/eog_start_window.png
+share/gnome/help/eog/de/legal.xml
+share/gnome/help/eog/es/eog.xml
+share/gnome/help/eog/es/figures/eog_start_window.png
+share/gnome/help/eog/es/legal.xml
+share/gnome/help/eog/fr/eog.xml
+share/gnome/help/eog/fr/figures/eog_start_window.png
+share/gnome/help/eog/fr/legal.xml
+share/gnome/help/eog/it/eog.xml
+share/gnome/help/eog/it/figures/eog_start_window.png
+share/gnome/help/eog/it/legal.xml
+share/gnome/help/eog/ja/eog.xml
+share/gnome/help/eog/ja/figures/eog_start_window.png
+share/gnome/help/eog/ja/legal.xml
+share/gnome/help/eog/ko/eog.xml
+share/gnome/help/eog/ko/figures/eog_start_window.png
+share/gnome/help/eog/ko/legal.xml
+share/gnome/help/eog/sv/eog.xml
+share/gnome/help/eog/sv/figures/eog_start_window.png
+share/gnome/help/eog/sv/legal.xml
+share/gnome/help/eog/zh_CN/eog.xml
+share/gnome/help/eog/zh_CN/figures/eog_start_window.png
+share/gnome/help/eog/zh_CN/legal.xml
+share/gnome/help/eog/zh_TW/eog.xml
+share/gnome/help/eog/zh_TW/figures/eog_start_window.png
+share/gnome/help/eog/zh_TW/legal.xml
 share/gnome/idl/Eog.idl
 share/gnome/omf/eog/eog-C.omf
-@exec scrollkeeper-install %D/share/gnome/omf/eog/eog-C.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/eog/eog-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/eog/eog-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/eog/eog-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/eog/eog-it.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-it.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/eog/eog-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-ja.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/eog/eog-ko.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-ko.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/eog/eog-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-sv.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/eog/eog-zh_CN.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-zh_CN.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/eog/eog-zh_TW.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/eog/down-right.png
 share/gnome/pixmaps/eog/orient-horizontal.png
 share/gnome/pixmaps/eog/orient-vertical.png
 share/gnome/pixmaps/eog/right-down.png
+share/gnome/pixmaps/eog/stock-rotate-90-16.png
+share/gnome/pixmaps/eog/stock-rotate-270-16.png
+share/gnome/pixmaps/eog/stock-rotate-180-16.png
 share/gnome/pixmaps/gnome-eog.png
 share/locale/am/LC_MESSAGES/eog.mo
 share/locale/ar/LC_MESSAGES/eog.mo
 share/locale/az/LC_MESSAGES/eog.mo
 share/locale/be/LC_MESSAGES/eog.mo
 share/locale/bg/LC_MESSAGES/eog.mo
+share/locale/bn/LC_MESSAGES/eog.mo
 share/locale/ca/LC_MESSAGES/eog.mo
 share/locale/cs/LC_MESSAGES/eog.mo
+share/locale/cy/LC_MESSAGES/eog.mo
 share/locale/da/LC_MESSAGES/eog.mo
 share/locale/de/LC_MESSAGES/eog.mo
 share/locale/el/LC_MESSAGES/eog.mo
@@ -44,8 +96,10 @@ share/locale/fr/LC_MESSAGES/eog.mo
 share/locale/ga/LC_MESSAGES/eog.mo
 share/locale/gl/LC_MESSAGES/eog.mo
 share/locale/he/LC_MESSAGES/eog.mo
+share/locale/hi/LC_MESSAGES/eog.mo
 share/locale/hu/LC_MESSAGES/eog.mo
 share/locale/id/LC_MESSAGES/eog.mo
+share/locale/is/LC_MESSAGES/eog.mo
 share/locale/it/LC_MESSAGES/eog.mo
 share/locale/ja/LC_MESSAGES/eog.mo
 share/locale/kn/LC_MESSAGES/eog.mo
@@ -53,6 +107,7 @@ share/locale/ko/LC_MESSAGES/eog.mo
 share/locale/lt/LC_MESSAGES/eog.mo
 share/locale/lv/LC_MESSAGES/eog.mo
 share/locale/mk/LC_MESSAGES/eog.mo
+share/locale/ml/LC_MESSAGES/eog.mo
 share/locale/mn/LC_MESSAGES/eog.mo
 share/locale/ms/LC_MESSAGES/eog.mo
 share/locale/nl/LC_MESSAGES/eog.mo
@@ -66,8 +121,11 @@ share/locale/ru/LC_MESSAGES/eog.mo
 share/locale/sk/LC_MESSAGES/eog.mo
 share/locale/sl/LC_MESSAGES/eog.mo
 share/locale/sq/LC_MESSAGES/eog.mo
+share/locale/sr/LC_MESSAGES/eog.mo
+share/locale/sr@Latn/LC_MESSAGES/eog.mo
 share/locale/sv/LC_MESSAGES/eog.mo
 share/locale/ta/LC_MESSAGES/eog.mo
+share/locale/th/LC_MESSAGES/eog.mo
 share/locale/tr/LC_MESSAGES/eog.mo
 share/locale/uk/LC_MESSAGES/eog.mo
 share/locale/vi/LC_MESSAGES/eog.mo
@@ -75,7 +133,40 @@ share/locale/wa/LC_MESSAGES/eog.mo
 share/locale/zh_CN/LC_MESSAGES/eog.mo
 share/locale/zh_TW/LC_MESSAGES/eog.mo
 @dirrm share/gnome/omf/eog
+@dirrm share/gnome/help/eog/zh_TW/figures
+@dirrm share/gnome/help/eog/zh_TW
+@dirrm share/gnome/help/eog/zh_CN/figures
+@dirrm share/gnome/help/eog/zh_CN
+@dirrm share/gnome/help/eog/sv/figures
+@dirrm share/gnome/help/eog/sv
+@dirrm share/gnome/help/eog/ko/figures
+@dirrm share/gnome/help/eog/ko
+@dirrm share/gnome/help/eog/ja/figures
+@dirrm share/gnome/help/eog/ja
+@dirrm share/gnome/help/eog/it/figures
+@dirrm share/gnome/help/eog/it
+@dirrm share/gnome/help/eog/fr/figures
+@dirrm share/gnome/help/eog/fr
+@dirrm share/gnome/help/eog/es/figures
+@dirrm share/gnome/help/eog/es
+@dirrm share/gnome/help/eog/de/figures
+@dirrm share/gnome/help/eog/de
 @dirrm share/gnome/help/eog/C/figures
 @dirrm share/gnome/eog/glade
 @dirrm share/gnome/eog
-@unexec scrollkeeper-uninstall %D/share/gnome/omf/eog/eog-C.omf 2>/dev/null || /usr/bin/true
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/eog/window
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/eog/view
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/eog
+@dirrm etc/gconf/gconf.xml.defaults/apps/eog/window
+@dirrm etc/gconf/gconf.xml.defaults/apps/eog/view
+@dirrm etc/gconf/gconf.xml.defaults/apps/eog
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-de.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-es.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-fr.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-it.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-ja.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-ko.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-sv.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-zh_CN.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-zh_TW.omf 2>/dev/null || /usr/bin/true

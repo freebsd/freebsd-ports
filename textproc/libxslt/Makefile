@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxslt
-PORTVERSION=	1.0.32
+PORTVERSION=	1.0.33
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
@@ -29,6 +29,7 @@ MAN1=		xsltproc.1
 .if !defined(WITHOUT_PYTHON)
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON:=""
+CONFIGURE_ARGS+=	--with-python=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-python
 PLIST_SUB+=	PYTHON:="@comment "

@@ -39,9 +39,6 @@ share/gnome/help/gnome-cd/C/figures/cdplayer_trackeditor_window.png
 share/gnome/help/gnome-cd/C/figures/cdplayer_window.png
 share/gnome/help/gnome-cd/C/figures/eject_button.png
 share/gnome/help/gnome-cd/C/figures/forward_button.png
-share/gnome/help/gnome-cd/C/figures/gnome-cd-prefs.png
-share/gnome/help/gnome-cd/C/figures/gnome-cd-track.png
-share/gnome/help/gnome-cd/C/figures/gnome-cd.png
 share/gnome/help/gnome-cd/C/figures/next_button.png
 share/gnome/help/gnome-cd/C/figures/pause_button.png
 share/gnome/help/gnome-cd/C/figures/play_button.png
@@ -51,6 +48,8 @@ share/gnome/help/gnome-cd/C/figures/rewind_button.png
 share/gnome/help/gnome-cd/C/figures/stop_button.png
 share/gnome/help/gnome-cd/C/gnome-cd.xml
 share/gnome/help/gnome-cd/C/legal.xml
+share/gnome/help/gnome-cd/de/legal.xml
+share/gnome/help/gnome-cd/de/gnome-cd.xml
 share/gnome/help/gnome-cd/de/figures/cdplayer_trackeditor_button.png
 share/gnome/help/gnome-cd/de/figures/cdplayer_trackeditor_window.png
 share/gnome/help/gnome-cd/de/figures/cdplayer_window.png
@@ -66,8 +65,8 @@ share/gnome/help/gnome-cd/de/figures/preferences_button.png
 share/gnome/help/gnome-cd/de/figures/previous_button.png
 share/gnome/help/gnome-cd/de/figures/rewind_button.png
 share/gnome/help/gnome-cd/de/figures/stop_button.png
-share/gnome/help/gnome-cd/de/gnome-cd.xml
-share/gnome/help/gnome-cd/de/legal.xml
+share/gnome/help/gnome-cd/es/legal.xml
+share/gnome/help/gnome-cd/es/gnome-cd.xml
 share/gnome/help/gnome-cd/es/figures/cdplayer_trackeditor_button.png
 share/gnome/help/gnome-cd/es/figures/cdplayer_trackeditor_window.png
 share/gnome/help/gnome-cd/es/figures/cdplayer_window.png
@@ -83,8 +82,8 @@ share/gnome/help/gnome-cd/es/figures/preferences_button.png
 share/gnome/help/gnome-cd/es/figures/previous_button.png
 share/gnome/help/gnome-cd/es/figures/rewind_button.png
 share/gnome/help/gnome-cd/es/figures/stop_button.png
-share/gnome/help/gnome-cd/es/gnome-cd.xml
-share/gnome/help/gnome-cd/es/legal.xml
+share/gnome/help/gnome-cd/fr/legal.xml
+share/gnome/help/gnome-cd/fr/gnome-cd.xml
 share/gnome/help/gnome-cd/fr/figures/cdplayer_trackeditor_button.png
 share/gnome/help/gnome-cd/fr/figures/cdplayer_trackeditor_window.png
 share/gnome/help/gnome-cd/fr/figures/cdplayer_window.png
@@ -100,8 +99,8 @@ share/gnome/help/gnome-cd/fr/figures/preferences_button.png
 share/gnome/help/gnome-cd/fr/figures/previous_button.png
 share/gnome/help/gnome-cd/fr/figures/rewind_button.png
 share/gnome/help/gnome-cd/fr/figures/stop_button.png
-share/gnome/help/gnome-cd/fr/gnome-cd.xml
-share/gnome/help/gnome-cd/fr/legal.xml
+share/gnome/help/gnome-cd/it/legal.xml
+share/gnome/help/gnome-cd/it/gnome-cd.xml
 share/gnome/help/gnome-cd/it/figures/cdplayer_trackeditor_button.png
 share/gnome/help/gnome-cd/it/figures/cdplayer_trackeditor_window.png
 share/gnome/help/gnome-cd/it/figures/cdplayer_window.png
@@ -117,42 +116,8 @@ share/gnome/help/gnome-cd/it/figures/preferences_button.png
 share/gnome/help/gnome-cd/it/figures/previous_button.png
 share/gnome/help/gnome-cd/it/figures/rewind_button.png
 share/gnome/help/gnome-cd/it/figures/stop_button.png
-share/gnome/help/gnome-cd/it/gnome-cd.xml
-share/gnome/help/gnome-cd/it/legal.xml
-share/gnome/help/gnome-cd/ja/figures/cdplayer_trackeditor_button.png
-share/gnome/help/gnome-cd/ja/figures/cdplayer_trackeditor_window.png
-share/gnome/help/gnome-cd/ja/figures/cdplayer_window.png
-share/gnome/help/gnome-cd/ja/figures/eject_button.png
-share/gnome/help/gnome-cd/ja/figures/forward_button.png
-share/gnome/help/gnome-cd/ja/figures/gnome-cd-prefs.png
-share/gnome/help/gnome-cd/ja/figures/gnome-cd-track.png
-share/gnome/help/gnome-cd/ja/figures/gnome-cd.png
-share/gnome/help/gnome-cd/ja/figures/next_button.png
-share/gnome/help/gnome-cd/ja/figures/pause_button.png
-share/gnome/help/gnome-cd/ja/figures/play_button.png
-share/gnome/help/gnome-cd/ja/figures/preferences_button.png
-share/gnome/help/gnome-cd/ja/figures/previous_button.png
-share/gnome/help/gnome-cd/ja/figures/rewind_button.png
-share/gnome/help/gnome-cd/ja/figures/stop_button.png
-share/gnome/help/gnome-cd/ja/gnome-cd.xml
-share/gnome/help/gnome-cd/ja/legal.xml
-share/gnome/help/gnome-cd/ko/figures/cdplayer_trackeditor_button.png
-share/gnome/help/gnome-cd/ko/figures/cdplayer_trackeditor_window.png
-share/gnome/help/gnome-cd/ko/figures/cdplayer_window.png
-share/gnome/help/gnome-cd/ko/figures/eject_button.png
-share/gnome/help/gnome-cd/ko/figures/forward_button.png
-share/gnome/help/gnome-cd/ko/figures/gnome-cd-prefs.png
-share/gnome/help/gnome-cd/ko/figures/gnome-cd-track.png
-share/gnome/help/gnome-cd/ko/figures/gnome-cd.png
-share/gnome/help/gnome-cd/ko/figures/next_button.png
-share/gnome/help/gnome-cd/ko/figures/pause_button.png
-share/gnome/help/gnome-cd/ko/figures/play_button.png
-share/gnome/help/gnome-cd/ko/figures/preferences_button.png
-share/gnome/help/gnome-cd/ko/figures/previous_button.png
-share/gnome/help/gnome-cd/ko/figures/rewind_button.png
-share/gnome/help/gnome-cd/ko/figures/stop_button.png
-share/gnome/help/gnome-cd/ko/gnome-cd.xml
-share/gnome/help/gnome-cd/ko/legal.xml
+share/gnome/help/gnome-cd/sv/legal.xml
+share/gnome/help/gnome-cd/sv/gnome-cd.xml
 share/gnome/help/gnome-cd/sv/figures/cdplayer_trackeditor_button.png
 share/gnome/help/gnome-cd/sv/figures/cdplayer_trackeditor_window.png
 share/gnome/help/gnome-cd/sv/figures/cdplayer_window.png
@@ -168,8 +133,42 @@ share/gnome/help/gnome-cd/sv/figures/preferences_button.png
 share/gnome/help/gnome-cd/sv/figures/previous_button.png
 share/gnome/help/gnome-cd/sv/figures/rewind_button.png
 share/gnome/help/gnome-cd/sv/figures/stop_button.png
-share/gnome/help/gnome-cd/sv/gnome-cd.xml
-share/gnome/help/gnome-cd/sv/legal.xml
+share/gnome/help/gnome-cd/ja/legal.xml
+share/gnome/help/gnome-cd/ja/gnome-cd.xml
+share/gnome/help/gnome-cd/ja/figures/cdplayer_trackeditor_button.png
+share/gnome/help/gnome-cd/ja/figures/cdplayer_trackeditor_window.png
+share/gnome/help/gnome-cd/ja/figures/cdplayer_window.png
+share/gnome/help/gnome-cd/ja/figures/eject_button.png
+share/gnome/help/gnome-cd/ja/figures/forward_button.png
+share/gnome/help/gnome-cd/ja/figures/gnome-cd-prefs.png
+share/gnome/help/gnome-cd/ja/figures/gnome-cd-track.png
+share/gnome/help/gnome-cd/ja/figures/gnome-cd.png
+share/gnome/help/gnome-cd/ja/figures/next_button.png
+share/gnome/help/gnome-cd/ja/figures/pause_button.png
+share/gnome/help/gnome-cd/ja/figures/play_button.png
+share/gnome/help/gnome-cd/ja/figures/preferences_button.png
+share/gnome/help/gnome-cd/ja/figures/previous_button.png
+share/gnome/help/gnome-cd/ja/figures/rewind_button.png
+share/gnome/help/gnome-cd/ja/figures/stop_button.png
+share/gnome/help/gnome-cd/ko/legal.xml
+share/gnome/help/gnome-cd/ko/gnome-cd.xml
+share/gnome/help/gnome-cd/ko/figures/cdplayer_trackeditor_button.png
+share/gnome/help/gnome-cd/ko/figures/cdplayer_trackeditor_window.png
+share/gnome/help/gnome-cd/ko/figures/cdplayer_window.png
+share/gnome/help/gnome-cd/ko/figures/eject_button.png
+share/gnome/help/gnome-cd/ko/figures/forward_button.png
+share/gnome/help/gnome-cd/ko/figures/gnome-cd-prefs.png
+share/gnome/help/gnome-cd/ko/figures/gnome-cd-track.png
+share/gnome/help/gnome-cd/ko/figures/gnome-cd.png
+share/gnome/help/gnome-cd/ko/figures/next_button.png
+share/gnome/help/gnome-cd/ko/figures/pause_button.png
+share/gnome/help/gnome-cd/ko/figures/play_button.png
+share/gnome/help/gnome-cd/ko/figures/preferences_button.png
+share/gnome/help/gnome-cd/ko/figures/previous_button.png
+share/gnome/help/gnome-cd/ko/figures/rewind_button.png
+share/gnome/help/gnome-cd/ko/figures/stop_button.png
+share/gnome/help/gnome-cd/zh_CN/legal.xml
+share/gnome/help/gnome-cd/zh_CN/gnome-cd.xml
 share/gnome/help/gnome-cd/zh_CN/figures/cdplayer_trackeditor_button.png
 share/gnome/help/gnome-cd/zh_CN/figures/cdplayer_trackeditor_window.png
 share/gnome/help/gnome-cd/zh_CN/figures/cdplayer_window.png
@@ -185,8 +184,8 @@ share/gnome/help/gnome-cd/zh_CN/figures/preferences_button.png
 share/gnome/help/gnome-cd/zh_CN/figures/previous_button.png
 share/gnome/help/gnome-cd/zh_CN/figures/rewind_button.png
 share/gnome/help/gnome-cd/zh_CN/figures/stop_button.png
-share/gnome/help/gnome-cd/zh_CN/gnome-cd.xml
-share/gnome/help/gnome-cd/zh_CN/legal.xml
+share/gnome/help/gnome-cd/zh_TW/legal.xml
+share/gnome/help/gnome-cd/zh_TW/gnome-cd.xml
 share/gnome/help/gnome-cd/zh_TW/figures/cdplayer_trackeditor_button.png
 share/gnome/help/gnome-cd/zh_TW/figures/cdplayer_trackeditor_window.png
 share/gnome/help/gnome-cd/zh_TW/figures/cdplayer_window.png
@@ -202,14 +201,6 @@ share/gnome/help/gnome-cd/zh_TW/figures/preferences_button.png
 share/gnome/help/gnome-cd/zh_TW/figures/previous_button.png
 share/gnome/help/gnome-cd/zh_TW/figures/rewind_button.png
 share/gnome/help/gnome-cd/zh_TW/figures/stop_button.png
-share/gnome/help/gnome-cd/zh_TW/gnome-cd.xml
-share/gnome/help/gnome-cd/zh_TW/legal.xml
-share/gnome/help/gnome-sound-recorder/C/figures/grecord-prefs-path.png
-share/gnome/help/gnome-sound-recorder/C/figures/grecord-prefs-play.png
-share/gnome/help/gnome-sound-recorder/C/figures/grecord-prefs-rec.png
-share/gnome/help/gnome-sound-recorder/C/figures/grecord-prefs-sound.png
-share/gnome/help/gnome-sound-recorder/C/figures/grecord-prefs-ui.png
-share/gnome/help/gnome-sound-recorder/C/figures/grecord.png
 share/gnome/help/gnome-sound-recorder/C/figures/grecord_window.png
 share/gnome/help/gnome-sound-recorder/C/gnome-sound-recorder.xml
 share/gnome/help/gnome-sound-recorder/C/legal.xml
@@ -217,6 +208,8 @@ share/gnome/help/gnome-volume-control/C/figures/gmix-prefs.png
 share/gnome/help/gnome-volume-control/C/figures/gmix.png
 share/gnome/help/gnome-volume-control/C/gnome-volume-control.xml
 share/gnome/help/gnome-volume-control/C/legal.xml
+share/gnome/help/grecord/de/legal.xml
+share/gnome/help/grecord/de/grecord.xml
 share/gnome/help/grecord/de/figures/grecord-prefs-path.png
 share/gnome/help/grecord/de/figures/grecord-prefs-play.png
 share/gnome/help/grecord/de/figures/grecord-prefs-rec.png
@@ -224,8 +217,8 @@ share/gnome/help/grecord/de/figures/grecord-prefs-sound.png
 share/gnome/help/grecord/de/figures/grecord-prefs-ui.png
 share/gnome/help/grecord/de/figures/grecord.png
 share/gnome/help/grecord/de/figures/grecord_window.png
-share/gnome/help/grecord/de/grecord.xml
-share/gnome/help/grecord/de/legal.xml
+share/gnome/help/grecord/es/legal.xml
+share/gnome/help/grecord/es/grecord.xml
 share/gnome/help/grecord/es/figures/grecord-prefs-path.png
 share/gnome/help/grecord/es/figures/grecord-prefs-play.png
 share/gnome/help/grecord/es/figures/grecord-prefs-rec.png
@@ -233,8 +226,8 @@ share/gnome/help/grecord/es/figures/grecord-prefs-sound.png
 share/gnome/help/grecord/es/figures/grecord-prefs-ui.png
 share/gnome/help/grecord/es/figures/grecord.png
 share/gnome/help/grecord/es/figures/grecord_window.png
-share/gnome/help/grecord/es/grecord.xml
-share/gnome/help/grecord/es/legal.xml
+share/gnome/help/grecord/fr/legal.xml
+share/gnome/help/grecord/fr/grecord.xml
 share/gnome/help/grecord/fr/figures/grecord-prefs-path.png
 share/gnome/help/grecord/fr/figures/grecord-prefs-play.png
 share/gnome/help/grecord/fr/figures/grecord-prefs-rec.png
@@ -242,8 +235,8 @@ share/gnome/help/grecord/fr/figures/grecord-prefs-sound.png
 share/gnome/help/grecord/fr/figures/grecord-prefs-ui.png
 share/gnome/help/grecord/fr/figures/grecord.png
 share/gnome/help/grecord/fr/figures/grecord_window.png
-share/gnome/help/grecord/fr/grecord.xml
-share/gnome/help/grecord/fr/legal.xml
+share/gnome/help/grecord/it/legal.xml
+share/gnome/help/grecord/it/grecord.xml
 share/gnome/help/grecord/it/figures/grecord-prefs-path.png
 share/gnome/help/grecord/it/figures/grecord-prefs-play.png
 share/gnome/help/grecord/it/figures/grecord-prefs-rec.png
@@ -251,26 +244,8 @@ share/gnome/help/grecord/it/figures/grecord-prefs-sound.png
 share/gnome/help/grecord/it/figures/grecord-prefs-ui.png
 share/gnome/help/grecord/it/figures/grecord.png
 share/gnome/help/grecord/it/figures/grecord_window.png
-share/gnome/help/grecord/it/grecord.xml
-share/gnome/help/grecord/it/legal.xml
-share/gnome/help/grecord/ja/figures/grecord-prefs-path.png
-share/gnome/help/grecord/ja/figures/grecord-prefs-play.png
-share/gnome/help/grecord/ja/figures/grecord-prefs-rec.png
-share/gnome/help/grecord/ja/figures/grecord-prefs-sound.png
-share/gnome/help/grecord/ja/figures/grecord-prefs-ui.png
-share/gnome/help/grecord/ja/figures/grecord.png
-share/gnome/help/grecord/ja/figures/grecord_window.png
-share/gnome/help/grecord/ja/grecord.xml
-share/gnome/help/grecord/ja/legal.xml
-share/gnome/help/grecord/ko/figures/grecord-prefs-path.png
-share/gnome/help/grecord/ko/figures/grecord-prefs-play.png
-share/gnome/help/grecord/ko/figures/grecord-prefs-rec.png
-share/gnome/help/grecord/ko/figures/grecord-prefs-sound.png
-share/gnome/help/grecord/ko/figures/grecord-prefs-ui.png
-share/gnome/help/grecord/ko/figures/grecord.png
-share/gnome/help/grecord/ko/figures/grecord_window.png
-share/gnome/help/grecord/ko/grecord.xml
-share/gnome/help/grecord/ko/legal.xml
+share/gnome/help/grecord/sv/legal.xml
+share/gnome/help/grecord/sv/grecord.xml
 share/gnome/help/grecord/sv/figures/grecord-prefs-path.png
 share/gnome/help/grecord/sv/figures/grecord-prefs-play.png
 share/gnome/help/grecord/sv/figures/grecord-prefs-rec.png
@@ -278,8 +253,26 @@ share/gnome/help/grecord/sv/figures/grecord-prefs-sound.png
 share/gnome/help/grecord/sv/figures/grecord-prefs-ui.png
 share/gnome/help/grecord/sv/figures/grecord.png
 share/gnome/help/grecord/sv/figures/grecord_window.png
-share/gnome/help/grecord/sv/grecord.xml
-share/gnome/help/grecord/sv/legal.xml
+share/gnome/help/grecord/ja/legal.xml
+share/gnome/help/grecord/ja/grecord.xml
+share/gnome/help/grecord/ja/figures/grecord-prefs-path.png
+share/gnome/help/grecord/ja/figures/grecord-prefs-play.png
+share/gnome/help/grecord/ja/figures/grecord-prefs-rec.png
+share/gnome/help/grecord/ja/figures/grecord-prefs-sound.png
+share/gnome/help/grecord/ja/figures/grecord-prefs-ui.png
+share/gnome/help/grecord/ja/figures/grecord.png
+share/gnome/help/grecord/ja/figures/grecord_window.png
+share/gnome/help/grecord/ko/legal.xml
+share/gnome/help/grecord/ko/grecord.xml
+share/gnome/help/grecord/ko/figures/grecord-prefs-path.png
+share/gnome/help/grecord/ko/figures/grecord-prefs-play.png
+share/gnome/help/grecord/ko/figures/grecord-prefs-rec.png
+share/gnome/help/grecord/ko/figures/grecord-prefs-sound.png
+share/gnome/help/grecord/ko/figures/grecord-prefs-ui.png
+share/gnome/help/grecord/ko/figures/grecord.png
+share/gnome/help/grecord/ko/figures/grecord_window.png
+share/gnome/help/grecord/zh_CN/legal.xml
+share/gnome/help/grecord/zh_CN/grecord.xml
 share/gnome/help/grecord/zh_CN/figures/grecord-prefs-path.png
 share/gnome/help/grecord/zh_CN/figures/grecord-prefs-play.png
 share/gnome/help/grecord/zh_CN/figures/grecord-prefs-rec.png
@@ -287,8 +280,8 @@ share/gnome/help/grecord/zh_CN/figures/grecord-prefs-sound.png
 share/gnome/help/grecord/zh_CN/figures/grecord-prefs-ui.png
 share/gnome/help/grecord/zh_CN/figures/grecord.png
 share/gnome/help/grecord/zh_CN/figures/grecord_window.png
-share/gnome/help/grecord/zh_CN/grecord.xml
-share/gnome/help/grecord/zh_CN/legal.xml
+share/gnome/help/grecord/zh_TW/legal.xml
+share/gnome/help/grecord/zh_TW/grecord.xml
 share/gnome/help/grecord/zh_TW/figures/grecord-prefs-path.png
 share/gnome/help/grecord/zh_TW/figures/grecord-prefs-play.png
 share/gnome/help/grecord/zh_TW/figures/grecord-prefs-rec.png
@@ -296,8 +289,6 @@ share/gnome/help/grecord/zh_TW/figures/grecord-prefs-sound.png
 share/gnome/help/grecord/zh_TW/figures/grecord-prefs-ui.png
 share/gnome/help/grecord/zh_TW/figures/grecord.png
 share/gnome/help/grecord/zh_TW/figures/grecord_window.png
-share/gnome/help/grecord/zh_TW/grecord.xml
-share/gnome/help/grecord/zh_TW/legal.xml
 share/gnome/idl/GNOME_Media_CDDBSlave2.idl
 share/gnome/omf/gnome-media/gnome-cd-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-cd-C.omf 2>/dev/null || /usr/bin/true
@@ -309,12 +300,12 @@ share/gnome/omf/gnome-media/gnome-cd-fr.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-cd-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/gnome-cd-it.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-cd-it.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-media/gnome-cd-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-cd-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/gnome-cd-ja.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-cd-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/gnome-cd-ko.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-cd-ko.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/gnome-media/gnome-cd-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-cd-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/gnome-cd-zh_CN.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-cd-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/gnome-cd-zh_TW.omf
@@ -331,12 +322,12 @@ share/gnome/omf/gnome-media/grecord-fr.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/grecord-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/grecord-it.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/grecord-it.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-media/grecord-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/grecord-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/grecord-ja.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/grecord-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/grecord-ko.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/grecord-ko.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/gnome-media/grecord-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/grecord-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/grecord-zh_CN.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/grecord-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/grecord-zh_TW.omf
@@ -355,6 +346,29 @@ share/gnome/pixmaps/gnome-cd/media-rewind.png
 share/gnome/pixmaps/gnome-cd/media-stop.png
 share/gnome/pixmaps/gnome-cd/once.png
 share/gnome/pixmaps/gnome-cd/repeat.png
+share/gnome/pixmaps/gnome-cd/themes/None/None.theme
+share/gnome/pixmaps/gnome-cd/themes/None/a-eject-menu.png
+share/gnome/pixmaps/gnome-cd/themes/None/a-first-menu.png
+share/gnome/pixmaps/gnome-cd/themes/None/a-last-menu.png
+share/gnome/pixmaps/gnome-cd/themes/None/a-play-menu.png
+share/gnome/pixmaps/gnome-cd/themes/None/a-stop-menu.png
+share/gnome/pixmaps/gnome-cd/themes/None/bottom-left.png
+share/gnome/pixmaps/gnome-cd/themes/None/bottom-right.png
+share/gnome/pixmaps/gnome-cd/themes/None/bottom.png
+share/gnome/pixmaps/gnome-cd/themes/None/media-eject.png
+share/gnome/pixmaps/gnome-cd/themes/None/media-fwd.png
+share/gnome/pixmaps/gnome-cd/themes/None/media-next.png
+share/gnome/pixmaps/gnome-cd/themes/None/media-pause.png
+share/gnome/pixmaps/gnome-cd/themes/None/media-play.png
+share/gnome/pixmaps/gnome-cd/themes/None/media-prev.png
+share/gnome/pixmaps/gnome-cd/themes/None/media-rew.png
+share/gnome/pixmaps/gnome-cd/themes/None/media-stop.png
+share/gnome/pixmaps/gnome-cd/themes/None/middle-left.png
+share/gnome/pixmaps/gnome-cd/themes/None/middle-right.png
+share/gnome/pixmaps/gnome-cd/themes/None/middle.png
+share/gnome/pixmaps/gnome-cd/themes/None/top-left.png
+share/gnome/pixmaps/gnome-cd/themes/None/top-right.png
+share/gnome/pixmaps/gnome-cd/themes/None/top.png
 share/gnome/pixmaps/gnome-cd/themes/lcd/bottom-left.png
 share/gnome/pixmaps/gnome-cd/themes/lcd/bottom-right.png
 share/gnome/pixmaps/gnome-cd/themes/lcd/bottom.png
@@ -399,6 +413,7 @@ share/locale/ar/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-media-2.0.mo
+share/locale/bn/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/cy/LC_MESSAGES/gnome-media-2.0.mo
@@ -423,6 +438,7 @@ share/locale/ja/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-media-2.0.mo
+share/locale/mk/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/ml/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/mn/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-media-2.0.mo
@@ -451,19 +467,57 @@ share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
 @dirrm share/gnome/pixmaps/gnome-cd/themes/red-lcd
 @dirrm share/gnome/pixmaps/gnome-cd/themes/media
 @dirrm share/gnome/pixmaps/gnome-cd/themes/lcd
+@dirrm share/gnome/pixmaps/gnome-cd/themes/None
 @dirrm share/gnome/pixmaps/gnome-cd/themes
 @dirrm share/gnome/pixmaps/gnome-cd
-@dirrm share/gnome/gnome-sound-recorder/ui
-@dirrm share/gnome/gnome-sound-recorder
 @dirrm share/gnome/gnome-media-2.0/interfaces
 @dirrm share/gnome/gnome-media-2.0/icons
 @dirrm share/gnome/gnome-media-2.0
+@dirrm share/gnome/gnome-sound-recorder/ui
+@dirrm share/gnome/gnome-sound-recorder
+@dirrm share/gnome/help/grecord/zh_TW/figures
+@dirrm share/gnome/help/grecord/zh_TW
+@dirrm share/gnome/help/grecord/zh_CN/figures
+@dirrm share/gnome/help/grecord/zh_CN
+@dirrm share/gnome/help/grecord/sv/figures
+@dirrm share/gnome/help/grecord/sv
+@dirrm share/gnome/help/grecord/ko/figures
+@dirrm share/gnome/help/grecord/ko
+@dirrm share/gnome/help/grecord/ja/figures
+@dirrm share/gnome/help/grecord/ja
+@dirrm share/gnome/help/grecord/it/figures
+@dirrm share/gnome/help/grecord/it
+@dirrm share/gnome/help/grecord/fr/figures
+@dirrm share/gnome/help/grecord/fr
+@dirrm share/gnome/help/grecord/es/figures
+@dirrm share/gnome/help/grecord/es
+@dirrm share/gnome/help/grecord/de/figures
+@dirrm share/gnome/help/grecord/de
+@dirrm share/gnome/help/grecord
 @dirrm share/gnome/help/gnome-volume-control/C/figures
 @dirrm share/gnome/help/gnome-volume-control/C
 @dirrm share/gnome/help/gnome-volume-control
 @dirrm share/gnome/help/gnome-sound-recorder/C/figures
 @dirrm share/gnome/help/gnome-sound-recorder/C
 @dirrm share/gnome/help/gnome-sound-recorder
+@dirrm share/gnome/help/gnome-cd/zh_TW/figures
+@dirrm share/gnome/help/gnome-cd/zh_TW
+@dirrm share/gnome/help/gnome-cd/zh_CN/figures
+@dirrm share/gnome/help/gnome-cd/zh_CN
+@dirrm share/gnome/help/gnome-cd/sv/figures
+@dirrm share/gnome/help/gnome-cd/sv
+@dirrm share/gnome/help/gnome-cd/ko/figures
+@dirrm share/gnome/help/gnome-cd/ko
+@dirrm share/gnome/help/gnome-cd/ja/figures
+@dirrm share/gnome/help/gnome-cd/ja
+@dirrm share/gnome/help/gnome-cd/it/figures
+@dirrm share/gnome/help/gnome-cd/it
+@dirrm share/gnome/help/gnome-cd/fr/figures
+@dirrm share/gnome/help/gnome-cd/fr
+@dirrm share/gnome/help/gnome-cd/es/figures
+@dirrm share/gnome/help/gnome-cd/es
+@dirrm share/gnome/help/gnome-cd/de/figures
+@dirrm share/gnome/help/gnome-cd/de
 @dirrm share/gnome/help/gnome-cd/C/figures
 @dirrm share/gnome/help/gnome-cd/C
 @dirrm share/gnome/help/gnome-cd
@@ -479,23 +533,23 @@ share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome-cd
 @dirrm etc/gconf/gconf.xml.defaults/apps/CDDB-Slave2
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-zh_TW.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-de.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-es.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-fr.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-it.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-sv.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-ja.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-ko.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-zh_CN.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-volume-control-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-zh_TW.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-de.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-es.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-fr.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-it.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-sv.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-ja.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-ko.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-zh_CN.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-zh_TW.omf 2>/dev/null || /usr/bin/true

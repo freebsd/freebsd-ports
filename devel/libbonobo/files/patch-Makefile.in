@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed May  7 13:42:52 2003
++++ Makefile.in	Wed May  7 13:43:30 2003
+@@ -149,7 +149,7 @@
+ SUBDIRS = \
+ 	idl bonobo-activation bonobo \
+ 	activation-server monikers \
+-	utils samples tests doc po
++	utils samples doc po
+ 
+ 
+ libincludedir = $(includedir)/libbonobo-2.0

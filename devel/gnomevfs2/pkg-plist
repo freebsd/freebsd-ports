@@ -1,7 +1,24 @@
+bin/gnomevfs-cat
+bin/gnomevfs-copy
+bin/gnomevfs-info
+bin/gnomevfs-ls
+bin/gnomevfs-mkdir
+etc/gconf/gconf.xml.defaults/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/applications/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/applications/component_viewer/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/applications/terminal/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/component_viewer/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/terminal/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/system/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/system/http_proxy/%gconf.xml
 etc/gconf/gconf.xml.defaults/system/%gconf.xml
 etc/gconf/gconf.xml.defaults/system/http_proxy/%gconf.xml
+etc/gconf/schemas/desktop_default_applications.schemas
 etc/gconf/schemas/system_http_proxy.schemas
 %%CDPARANOIA%%etc/gnome-vfs-2.0/modules/cdda-module.conf
 etc/gnome-vfs-2.0/modules/default-modules.conf
@@ -66,7 +83,7 @@ lib/gnome-vfs-2.0/modules/libvfs-test.so
 lib/gnome-vfs-2.0/modules/libvfs-translate.so
 lib/libgnomevfs-2.a
 lib/libgnomevfs-2.so
-lib/libgnomevfs-2.so.0
+lib/libgnomevfs-2.so.400
 lib/vfs/2.0/extfs/README
 lib/vfs/2.0/extfs/a
 lib/vfs/2.0/extfs/ar
@@ -89,10 +106,59 @@ libdata/pkgconfig/gnome-vfs-2.0.pc
 libdata/pkgconfig/gnome-vfs-module-2.0.pc
 share/doc/gnome-vfs-2.0/about.html
 share/doc/gnome-vfs-2.0/advanced-operations.html
+share/doc/gnome-vfs-2.0/c9456.html
+share/doc/gnome-vfs-2.0/c9466.html
 share/doc/gnome-vfs-2.0/ch08.html
 share/doc/gnome-vfs-2.0/data-types.html
+share/doc/gnome-vfs-2.0/directory-operations.html
+share/doc/gnome-vfs-2.0/everything-else.html
+share/doc/gnome-vfs-2.0/file-operations.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-application-registry.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-async-ops.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-cancellation.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-context.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-directory-basic-ops.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-directory-find-ops.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-directory-list-ops.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-file-advanced-ops.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-file-basic-ops.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-file-info-ops.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-file-info.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-file-rw-ops.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-file-size.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-file-trunc-ops.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-inet-connection.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-init.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-method.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-mime-database.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-mime-monitor.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-mime.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-module-callback-module-api.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-module-callback.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-module-shared.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-module.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-monitor.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-parse-ls.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-result.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-socket-buffer.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-socket.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-ssl.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-standard-callbacks.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-transform.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-uri.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-utils.html
+share/doc/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-xfer.html
+share/doc/gnome-vfs-2.0/gnome-vfs-application-registry.html
+share/doc/gnome-vfs-2.0/gnome-vfs-asynchronous-operations.html
+share/doc/gnome-vfs-2.0/gnome-vfs-cancellation.html
+share/doc/gnome-vfs-2.0/gnome-vfs-configuration.html
+share/doc/gnome-vfs-2.0/gnome-vfs-context.html
 share/doc/gnome-vfs-2.0/gnome-vfs-directory-operations.html
+share/doc/gnome-vfs-2.0/gnome-vfs-directory.html
+share/doc/gnome-vfs-2.0/gnome-vfs-file-info.html
 share/doc/gnome-vfs-2.0/gnome-vfs-file-operations.html
+share/doc/gnome-vfs-2.0/gnome-vfs-file-size.html
+share/doc/gnome-vfs-2.0/gnome-vfs-finding-special-directories.html
 share/doc/gnome-vfs-2.0/gnome-vfs-first-steps.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-application-registry.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-async-ops.html
@@ -101,6 +167,7 @@ share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-context.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-directory-basic-ops.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-directory-find-ops.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-directory-list-ops.html
+share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-directory.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-file-advanced-ops.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-file-basic-ops.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-file-info-ops.html
@@ -108,6 +175,7 @@ share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-file-info.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-file-rw-ops.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-file-size.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-file-trunc-ops.html
+share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-find-directory.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-inet-connection.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-init.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-method.html
@@ -119,6 +187,7 @@ share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-module-callback.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-module-shared.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-module.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-monitor.html
+share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-ops.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-parse-ls.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-result.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-socket-buffer.html
@@ -129,11 +198,39 @@ share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-transform.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-uri.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-utils.html
 share/doc/gnome-vfs-2.0/gnome-vfs-gnome-vfs-xfer.html
+share/doc/gnome-vfs-2.0/gnome-vfs-gnomevfsmetadata.html
+share/doc/gnome-vfs-2.0/gnome-vfs-gnomevfsmimemonitor.html
+share/doc/gnome-vfs-2.0/gnome-vfs-inet-connection.html
+share/doc/gnome-vfs-2.0/gnome-vfs-initialization.html
+share/doc/gnome-vfs-2.0/gnome-vfs-iobuf.html
+share/doc/gnome-vfs-2.0/gnome-vfs-method.html
+share/doc/gnome-vfs-2.0/gnome-vfs-mime-handlers.html
+share/doc/gnome-vfs-2.0/gnome-vfs-mime-info.html
+share/doc/gnome-vfs-2.0/gnome-vfs-mime-magic.html
+share/doc/gnome-vfs-2.0/gnome-vfs-mime-monitor.html
+share/doc/gnome-vfs-2.0/gnome-vfs-mime-sniff-buffer.html
+share/doc/gnome-vfs-2.0/gnome-vfs-mime.html
+share/doc/gnome-vfs-2.0/gnome-vfs-module-callback-module-api.html
+share/doc/gnome-vfs-2.0/gnome-vfs-module-callbacks.html
+share/doc/gnome-vfs-2.0/gnome-vfs-module-shared.html
+share/doc/gnome-vfs-2.0/gnome-vfs-module.html
+share/doc/gnome-vfs-2.0/gnome-vfs-ops.html
+share/doc/gnome-vfs-2.0/gnome-vfs-parse-ls.html
+share/doc/gnome-vfs-2.0/gnome-vfs-process.html
+share/doc/gnome-vfs-2.0/gnome-vfs-result.html
+share/doc/gnome-vfs-2.0/gnome-vfs-ssl.html
+share/doc/gnome-vfs-2.0/gnome-vfs-standard-callbacks.html
+share/doc/gnome-vfs-2.0/gnome-vfs-types.html
+share/doc/gnome-vfs-2.0/gnome-vfs-uri.html
+share/doc/gnome-vfs-2.0/gnome-vfs-utils.html
 share/doc/gnome-vfs-2.0/gnome-vfs-writing-modules.html
+share/doc/gnome-vfs-2.0/gnome-vfs-xfer.html
 share/doc/gnome-vfs-2.0/index.html
 share/doc/gnome-vfs-2.0/index.sgml
 share/doc/gnome-vfs-2.0/mime-registry.html
 share/doc/gnome-vfs-2.0/modules.html
+share/doc/gnome-vfs-2.0/writing-modules.html
+share/doc/gnome-vfs-2.0/x27.html
 share/locale/am/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-vfs-2.0.mo
@@ -143,6 +240,7 @@ share/locale/bn/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/bs/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/cy/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/da/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/de/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/el/LC_MESSAGES/gnome-vfs-2.0.mo
@@ -163,12 +261,14 @@ share/locale/is/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/li/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ml/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/mn/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/ne/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/no/LC_MESSAGES/gnome-vfs-2.0.mo
@@ -202,3 +302,13 @@ share/locale/zh_TW/LC_MESSAGES/gnome-vfs-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/system
 @dirrm etc/gconf/gconf.xml.defaults/schemas/system/http_proxy
 @dirrm etc/gconf/gconf.xml.defaults/schemas/system
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/terminal
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/component_viewer
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/applications/terminal
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/applications/component_viewer
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/applications
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome
+@dirrm etc/gconf/gconf.xml.defaults/desktop

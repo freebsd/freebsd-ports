@@ -40,7 +40,3 @@ if [ "$2" = "POST-INSTALL" ]; then
 	${CHMOD} 0750 ${PKG_PREFIX}/share/gnome/gdm
 	exit 0
 fi
-
-if [ -z "${BATCH}" ]; then
-	/usr/bin/dialog --yesno "GDM may contain vulnerabilities leading local root compromise, and it is reported widely with various security sites and groups. It is not recommended that this port be installed in public environment. Do you wish to accept the security risk and build GDM anyway?" 10 60 || /usr/bin/false
-fi

@@ -1,3 +1,4 @@
+bin/linc-cleanup-sockets
 bin/orbit-idl-2
 bin/orbit2-config
 @unexec if cmp -s %D/etc/orbit2rc.default %D/etc/orbit2rc; then rm -f %D/etc/orbit2rc; fi
@@ -7,14 +8,6 @@ include/orbit-2.0/ORBitservices/CosNaming.h
 include/orbit-2.0/ORBitservices/CosNaming_impl.h
 include/orbit-2.0/ORBitservices/orbit-imodule.h
 include/orbit-2.0/orbit-idl/orbit-idl-backend.h
-include/orbit-2.0/orbit/GIOP/giop-basics.h
-include/orbit-2.0/orbit/GIOP/giop-connection.h
-include/orbit-2.0/orbit/GIOP/giop-endian.h
-include/orbit-2.0/orbit/GIOP/giop-recv-buffer.h
-include/orbit-2.0/orbit/GIOP/giop-send-buffer.h
-include/orbit-2.0/orbit/GIOP/giop-server.h
-include/orbit-2.0/orbit/GIOP/giop-types.h
-include/orbit-2.0/orbit/GIOP/giop.h
 include/orbit-2.0/orbit/dynamic/dynamic-defs.h
 include/orbit-2.0/orbit/dynamic/dynamic.h
 include/orbit-2.0/orbit/orb-core/allocators.h
@@ -71,14 +64,24 @@ libdata/pkgconfig/ORBit-idl-2.0.pc
 libdata/pkgconfig/ORBit-imodule-2.0.pc
 libdata/pkgconfig/ORBit-CosNaming-2.0.pc
 share/aclocal/ORBit2.m4
+share/doc/ORBit2/ORBit2-orbit2-allocators.html
+share/doc/ORBit2/ORBit2-orbit2-small.html
+share/doc/ORBit2/ORBit2.devhelp
+share/doc/ORBit2/general.html
+share/doc/ORBit2/home.png
+share/doc/ORBit2/index.html
+share/doc/ORBit2/index.sgml
+share/doc/ORBit2/left.png
+share/doc/ORBit2/right.png
+share/doc/ORBit2/up.png
 share/idl/orbit-2.0/CosNaming.idl
 @dirrm share/idl/orbit-2.0
+@dirrm share/doc/ORBit2
 @unexec /bin/rmdir %D/share/idl 2>/dev/null || /usr/bin/true
 @dirrm include/orbit-2.0/orbit/util
 @dirrm include/orbit-2.0/orbit/poa
 @dirrm include/orbit-2.0/orbit/orb-core
 @dirrm include/orbit-2.0/orbit/dynamic
-@dirrm include/orbit-2.0/orbit/GIOP
 @dirrm include/orbit-2.0/orbit
 @dirrm include/orbit-2.0/orbit-idl
 @dirrm include/orbit-2.0/ORBitservices

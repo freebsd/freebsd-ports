@@ -1,0 +1,10 @@
+--- gnome-pty-helper/configure.orig	Mon Jun  2 20:27:32 2003
++++ gnome-pty-helper/configure	Mon Jun  2 20:28:06 2003
+@@ -6318,6 +6318,7 @@
+ s,@ECHO_N@,$ECHO_N,;t t
+ s,@ECHO_T@,$ECHO_T,;t t
+ s,@LIBS@,$LIBS,;t t
++s,@BSD_PTHREAD_LIBS@,$BSD_PTHREAD_LIBS,;t t
+ s,@INSTALL_PROGRAM@,$INSTALL_PROGRAM,;t t
+ s,@INSTALL_SCRIPT@,$INSTALL_SCRIPT,;t t
+ s,@INSTALL_DATA@,$INSTALL_DATA,;t t

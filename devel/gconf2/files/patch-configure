@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- configure.orig	Fri Apr 26 12:18:08 2002
-+++ configure	Fri Apr 26 12:18:36 2002
-@@ -6797,6 +6797,7 @@
+--- configure.orig	Sat May  3 13:11:21 2003
++++ configure	Sun Jun 15 01:22:52 2003
+@@ -8029,6 +8029,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -11,12 +8,3 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -7513,7 +7514,7 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
- 
--	    for db3libs in "-ldb-3.3" "-ldb-3.2" "-ldb-3.1" "-ldb-3"; do
-+	    for db3libs in "-ldb-3.3" "-ldb-3.2" "-ldb-3.1" "-ldb-3" "-ldb3"; do
- 		if test "x${with_db3_libs}" != "x"; then
- 			LIBS="$LIBS -L$with_db3_libs $db3libs"
- 		else

@@ -6,16 +6,11 @@
 #
 
 PORTNAME=	atk
-PORTVERSION=	1.2.4
+PORTVERSION=	1.4.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2
-#MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
-#		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
-#		http://www.ameth.org/gimp/%SUBDIR%/ \
-#		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/gimp/%SUBDIR%,}
-#MASTER_SITE_SUBDIR=	gtk/v1.3
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.4
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

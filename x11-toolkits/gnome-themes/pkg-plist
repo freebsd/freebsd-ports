@@ -2,6 +2,7 @@ lib/gtk-2.0/2.2.0/engines/libcrux-engine.so
 lib/gtk-2.0/2.2.0/engines/libhcengine.so
 lib/gtk-2.0/2.2.0/engines/liblighthouseblue.so
 lib/gtk-2.0/2.2.0/engines/libmist.so
+lib/gtk-2.0/2.2.0/engines/libthinice.so
 share/eazel-engine/arrow_down-spinner.png
 share/eazel-engine/arrow_down.png
 share/eazel-engine/arrow_left.png
@@ -931,6 +932,7 @@ share/locale/bg/LC_MESSAGES/gnome-themes.mo
 share/locale/bn/LC_MESSAGES/gnome-themes.mo
 share/locale/ca/LC_MESSAGES/gnome-themes.mo
 share/locale/cs/LC_MESSAGES/gnome-themes.mo
+share/locale/cy/LC_MESSAGES/gnome-themes.mo
 share/locale/da/LC_MESSAGES/gnome-themes.mo
 share/locale/de/LC_MESSAGES/gnome-themes.mo
 share/locale/el/LC_MESSAGES/gnome-themes.mo
@@ -939,15 +941,20 @@ share/locale/et/LC_MESSAGES/gnome-themes.mo
 share/locale/fa/LC_MESSAGES/gnome-themes.mo
 share/locale/fi/LC_MESSAGES/gnome-themes.mo
 share/locale/fr/LC_MESSAGES/gnome-themes.mo
+share/locale/ga/LC_MESSAGES/gnome-themes.mo
 share/locale/he/LC_MESSAGES/gnome-themes.mo
 share/locale/hi/LC_MESSAGES/gnome-themes.mo
 share/locale/hu/LC_MESSAGES/gnome-themes.mo
 share/locale/id/LC_MESSAGES/gnome-themes.mo
+share/locale/is/LC_MESSAGES/gnome-themes.mo
 share/locale/it/LC_MESSAGES/gnome-themes.mo
 share/locale/ja/LC_MESSAGES/gnome-themes.mo
 share/locale/ko/LC_MESSAGES/gnome-themes.mo
+share/locale/li/LC_MESSAGES/gnome-themes.mo
+share/locale/lt/LC_MESSAGES/gnome-themes.mo
 share/locale/lv/LC_MESSAGES/gnome-themes.mo
 share/locale/mk/LC_MESSAGES/gnome-themes.mo
+share/locale/ml/LC_MESSAGES/gnome-themes.mo
 share/locale/mn/LC_MESSAGES/gnome-themes.mo
 share/locale/ms/LC_MESSAGES/gnome-themes.mo
 share/locale/nl/LC_MESSAGES/gnome-themes.mo
@@ -967,6 +974,7 @@ share/locale/th/LC_MESSAGES/gnome-themes.mo
 share/locale/tr/LC_MESSAGES/gnome-themes.mo
 share/locale/uk/LC_MESSAGES/gnome-themes.mo
 share/locale/vi/LC_MESSAGES/gnome-themes.mo
+share/locale/wa/LC_MESSAGES/gnome-themes.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-themes.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-themes.mo
 share/themes/Crux/gtk-2.0/gtkrc
@@ -1024,6 +1032,7 @@ share/themes/HighContrastLargePrint/pixmaps/media-next.png
 share/themes/HighContrastLargePrint/pixmaps/media-pause.png
 share/themes/HighContrastLargePrint/pixmaps/media-play.png
 share/themes/HighContrastLargePrint/pixmaps/media-prev.png
+share/themes/HighContrastLargePrint/pixmaps/media-record.png
 share/themes/HighContrastLargePrint/pixmaps/media-stop.png
 share/themes/HighContrastLargePrint/pixmaps/printer-broken.png
 share/themes/HighContrastLargePrint/pixmaps/printer-default.png
@@ -1157,6 +1166,7 @@ share/themes/HighContrastLargePrintInverse/pixmaps/media-next.png
 share/themes/HighContrastLargePrintInverse/pixmaps/media-pause.png
 share/themes/HighContrastLargePrintInverse/pixmaps/media-play.png
 share/themes/HighContrastLargePrintInverse/pixmaps/media-prev.png
+share/themes/HighContrastLargePrintInverse/pixmaps/media-record.png
 share/themes/HighContrastLargePrintInverse/pixmaps/media-stop.png
 share/themes/HighContrastLargePrintInverse/pixmaps/printer-broken.png
 share/themes/HighContrastLargePrintInverse/pixmaps/printer-default.png
@@ -1290,6 +1300,7 @@ share/themes/LargePrint/pixmaps/media-next.png
 share/themes/LargePrint/pixmaps/media-pause.png
 share/themes/LargePrint/pixmaps/media-play.png
 share/themes/LargePrint/pixmaps/media-prev.png
+share/themes/LargePrint/pixmaps/media-record.png
 share/themes/LargePrint/pixmaps/media-stop.png
 share/themes/LargePrint/pixmaps/printer-broken.png
 share/themes/LargePrint/pixmaps/printer-default.png
@@ -1426,6 +1437,7 @@ share/themes/LowContrastLargePrint/pixmaps/media-next.png
 share/themes/LowContrastLargePrint/pixmaps/media-pause.png
 share/themes/LowContrastLargePrint/pixmaps/media-play.png
 share/themes/LowContrastLargePrint/pixmaps/media-prev.png
+share/themes/LowContrastLargePrint/pixmaps/media-record.png
 share/themes/LowContrastLargePrint/pixmaps/media-stop.png
 share/themes/LowContrastLargePrint/pixmaps/printer-broken.png
 share/themes/LowContrastLargePrint/pixmaps/printer-default.png
@@ -1575,8 +1587,11 @@ share/themes/Smokey-Blue/gtk-2.0/lines_background_blue.png
 share/themes/Smokey-Blue/gtk-2.0/option1.png
 share/themes/Smokey-Blue/gtk-2.0/option2.png
 share/themes/Smokey-Blue/index.theme
+share/themes/ThinIce/gtk-2.0/gtkrc
 share/themes/Traditional/index.theme
 @dirrm share/themes/Traditional
+@dirrm share/themes/ThinIce/gtk-2.0
+@dirrm share/themes/ThinIce
 @dirrm share/themes/Smokey-Blue/gtk-2.0
 @dirrm share/themes/Smokey-Blue
 @dirrm share/themes/Simple/gtk-2.0

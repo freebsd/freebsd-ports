@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gnomepanel
-PORTVERSION=	2.2.2.2
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-panel/2.2
+MASTER_SITE_SUBDIR=	sources/gnome-panel/2.4
 DISTNAME=	gnome-panel-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -21,7 +20,7 @@ USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier libwnck gnomedesktop
+USE_GNOME=	gnomeprefix gnomehack gnomehier gnomedesktop libwnck
 GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

@@ -18,7 +18,7 @@ share/gnome/applications/ggv.desktop
 share/gnome/gnome-2.0/ui/ggv-control-ui.xml
 share/gnome/gnome-2.0/ui/ggv-postscript-view-ui.xml
 share/gnome/gnome-2.0/ui/ggv-ui.xml
-share/gnome/help/ggv/C/figures/example_screenshot.png
+share/gnome/help/ggv/C/figures/ggv_window.png
 share/gnome/help/ggv/C/ggv.xml
 share/gnome/help/ggv/C/legal.xml
 share/gnome/help/ggv/C/topic.dat
@@ -85,8 +85,10 @@ share/locale/am/LC_MESSAGES/ggv.mo
 share/locale/az/LC_MESSAGES/ggv.mo
 share/locale/be/LC_MESSAGES/ggv.mo
 share/locale/bg/LC_MESSAGES/ggv.mo
+share/locale/bn/LC_MESSAGES/ggv.mo
 share/locale/ca/LC_MESSAGES/ggv.mo
 share/locale/cs/LC_MESSAGES/ggv.mo
+share/locale/cy/LC_MESSAGES/ggv.mo
 share/locale/da/LC_MESSAGES/ggv.mo
 share/locale/de/LC_MESSAGES/ggv.mo
 share/locale/el/LC_MESSAGES/ggv.mo
@@ -125,8 +127,10 @@ share/locale/sk/LC_MESSAGES/ggv.mo
 share/locale/sl/LC_MESSAGES/ggv.mo
 share/locale/sr/LC_MESSAGES/ggv.mo
 share/locale/sr@Latn/LC_MESSAGES/ggv.mo
+share/locale/sq/LC_MESSAGES/ggv.mo
 share/locale/sv/LC_MESSAGES/ggv.mo
 share/locale/ta/LC_MESSAGES/ggv.mo
+share/locale/th/LC_MESSAGES/ggv.mo
 share/locale/tr/LC_MESSAGES/ggv.mo
 share/locale/uk/LC_MESSAGES/ggv.mo
 share/locale/vi/LC_MESSAGES/ggv.mo

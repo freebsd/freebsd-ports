@@ -1,6 +1,6 @@
---- configure.orig	Tue Dec  3 02:15:27 2002
-+++ configure	Wed Dec  4 02:01:09 2002
-@@ -8643,6 +8643,7 @@
+--- configure.orig	Tue May  6 10:14:49 2003
++++ configure	Wed May  7 02:24:01 2003
+@@ -8724,6 +8724,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,3 +8,14 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -13009,10 +13010,6 @@
+ fi
+ rm -f conftest*
+ 
+-
+-cat >>confdefs.h <<\_ACEOF
+-#define _XOPEN_SOURCE_EXTENDED 1
+-_ACEOF
+ 
+ 
+ cat >>confdefs.h <<\_ACEOF

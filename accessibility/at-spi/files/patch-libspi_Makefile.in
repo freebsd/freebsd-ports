@@ -1,0 +1,11 @@
+--- libspi/Makefile.in.orig	Fri May  2 13:36:07 2003
++++ libspi/Makefile.in	Fri May  2 13:36:37 2003
+@@ -539,7 +539,7 @@
+ mostlyclean distclean maintainer-clean
+ 
+ 
+-$(top_srcdir)/libspi/accessible.c $(top_srcdir)/libspi/base.h $(top_srcdir)/libspi/keystrokelistener.h $(top_srcdir)/libspi/libspi.h $(top_srcdir)/libspi/listener.h $(top_srcdir)/libspi/remoteobject.h : Accessibility.h
++accessible.c base.h keystrokelistener.h libspi.h listener.h remoteobject.h : Accessibility.h
+ 
+ $(IDL_OUT) Accessibility-imodule.c : $(IDL_DEPS) $(ORBIT_IDL)
+ 	$(ORBIT_IDL) -D__ACCESSIBILITY_COMPILATION__ $(IDLFLAGS) $(top_srcdir)/idl/Accessibility.idl

@@ -1,32 +1,24 @@
---- src/fr-command-tar.c.orig	Fri Aug  9 09:10:51 2002
-+++ src/fr-command-tar.c	Fri Oct 11 12:14:40 2002
-@@ -117,7 +117,7 @@
- {
- 	int   i;
- 	char *field;
--	int   n = 6;
-+	int   n = 8;
- 
- 	n--;
- 	field = eat_spaces (line);
-@@ -129,6 +129,10 @@
- 	return field;
+--- src/fr-command-tar.c.orig	Mon May 19 14:15:50 2003
++++ src/fr-command-tar.c	Tue May 20 20:43:39 2003
+@@ -83,6 +83,11 @@
+ 	return mktime (&tm);
  }
  
-+static char *months[] = { 
++static char *months[] = {
 +    "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct",
 +    "Nov", "Dec"
 +};
++
  
  static void
  process_line (char     *line, 
-@@ -138,15 +142,30 @@
- 	FRCommand  *comm = FR_COMMAND (data);
- 	char      **fields;
- 	char       *name_field;
-+	int        i;
-+	struct tm  tm = {0, };
-+	char      **time_fields;
+@@ -92,19 +97,34 @@
+ 	FRCommand   *comm = FR_COMMAND (data);
+ 	char       **fields;
+ 	const char  *name_field;
++	int          i;
++	struct tm    tm = {0, };
++	char       **time_fields;
  
  	g_return_if_fail (line != NULL);
  
@@ -53,3 +45,8 @@
  
  	/* Full path */
  
+-	name_field = get_last_field (line, 6);
++	name_field = get_last_field (line, 8);
+ 	fields = g_strsplit (name_field, " -> ", 2);
+ 
+ 	if (fields[1] == NULL) {

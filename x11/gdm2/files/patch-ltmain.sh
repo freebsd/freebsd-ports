@@ -1,5 +1,5 @@
---- ltmain.sh.orig	Tue Jul  1 14:15:27 2003
-+++ ltmain.sh	Fri Aug  1 15:54:24 2003
+--- ltmain.sh.orig	Tue Jun 24 14:39:01 2003
++++ ltmain.sh	Sat Jun 28 18:20:02 2003
 @@ -1280,7 +1280,7 @@
  	  esac
  	elif test "X$arg" = "X-lc_r"; then

@@ -8,9 +8,11 @@ lib/libgailutil.so
 lib/libgailutil.so.17
 libdata/pkgconfig/gail.pc
 share/doc/gail-libgail-util/book1.html
+share/doc/gail-libgail-util/gail-libgail-util-GailMisc.html
+share/doc/gail-libgail-util/gail-libgail-util-GailTextUtil.html
 share/doc/gail-libgail-util/gail-libgail-util-gailmisc.html
 share/doc/gail-libgail-util/gail-libgail-util-gailtextutil.html
-share/doc/gail-libgail-util/index.sgml
+share/doc/gail-libgail-util/index.html
 share/doc/gail-libgail-util/libgail-util-main.html
 @dirrm share/doc/gail-libgail-util
 @dirrm lib/gtk-2.0/modules
