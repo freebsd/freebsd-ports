@@ -58,28 +58,7 @@ configure () {
     echo "#define InstallFSConfig $InstallFSConfig" >> $LOCALDEF
     echo "#define FreeBSDBuildXfs YES" >> $LOCALDEF
 
-    # Check Wraphelp.c
-    WH=$WRKDIR/xc/lib/Xdmcp/Wraphelp.c
-    cpwh=NO
-    if [ -f $WH ] ; then
-	cpwh=SOURCE
-    elif [ -f $DISTDIR/xc/Wraphelp.c ] ; then
-	cpwh=$DISTDIR/xc/Wraphelp.c
-    else
-	echo "==> Warnning: Wraphelp.c not found, DES support NOT enabled."
-    fi
-    if [ X$cpwh != XNO -a X$cpwh != XSOURCE ]; then
-	tr -d '\r' < $cpwh > $WH
-    fi
-
-    # Copy ORIGDEF to DESTDEF
-    rm -f $DESTDEF
-    if [ $cpwh = NO ] ; then
-	grep -v '#define.*HasXdmAuth' $ORIGDEF >> $DESTDEF
-	echo "#define HasXdmAuth NO" >> $DESTDEF
-    else
-	cp -f $ORIGDEF $DESTDEF
-    fi
+    cp -f $ORIGDEF $DESTDEF
 
     # copy generated config to host.def
     cp -f $LOCALDEF $HOSTDEF
