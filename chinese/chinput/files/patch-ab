@@ -1,0 +1,11 @@
+--- src/Imakefile.orig	Tue Sep 12 11:26:03 2000
++++ src/Imakefile	Tue Sep 12 11:26:11 2000
+@@ -37,7 +37,7 @@
+ #CCOPTIONS=-g  -Wall  -Wcast-qual -Wstrict-prototypes
+ #CCOPTIONS=-g  -Wall  -Wstrict-prototypes
+ #CCOPTIONS=-g  -Wall  -Wmissing-prototypes
+-CCOPTIONS=-g  -Wall  
++#CCOPTIONS=-g  -Wall  
+ 
+ all::  $(PROGRAMS)
+ 
