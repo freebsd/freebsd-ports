@@ -1,0 +1,18 @@
+--- Makefile.orig	Wed Feb 24 22:01:06 1999
++++ Makefile	Sun Jan 13 04:27:20 2002
+@@ -6,10 +6,12 @@
+ 
++PREFIX ?= /usr/local
++
+ # tvi 本体の場所(パスが通っていること)
+-TVIBINDIR = /usr/local/bin
++TVIBINDIR ?= ${PREFIX}/bin
+ 
+ # ソース，マニュアルなど一切を置く場所
+-TVILIBDIR = /usr/local/lib/tvi-0.9.3
++TVILIBDIR ?= ${PREFIX}/lib/tvi-0.9.3
+ 
+ # wish の場所
+-WISH = /usr/local/bin/wish4.2jp
++WISH ?= ${PREFIX}/bin/wish4.2jp
+ 
