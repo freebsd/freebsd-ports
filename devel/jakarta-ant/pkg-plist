@@ -1,5 +1,5 @@
 bin/ant
-bin/antRun
+%%T%%/bin/antRun
 %%T%%/lib/ant.jar
 %%T%%/lib/optional.jar
 %%T%%/lib/README
@@ -1005,6 +1005,7 @@ bin/antRun
 %%T%%/docs/problems.html
 %%T%%/docs/projects.html
 %%T%%/docs/resources.html
+@dirrm %%T%%/bin
 @dirrm %%T%%/lib
 @dirrm %%T%%/docs/ant2
 @dirrm %%T%%/docs/images
