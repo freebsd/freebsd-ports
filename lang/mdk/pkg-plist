@@ -14,6 +14,7 @@ share/gnome/mdk/extern.xpm
 share/gnome/mdk/font.xpm
 share/gnome/mdk/fontl.xpm
 share/gnome/mdk/jump.xpm
+share/gnome/mdk/mixal-mode.el
 share/gnome/mdk/mixgtk.glade
 share/gnome/mdk/mixguile-commands.scm
 share/gnome/mdk/mixguile-vm-stat.scm
