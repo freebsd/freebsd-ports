@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	global
-PORTVERSION=	4.3
-PORTREVISION=	1
+PORTVERSION=	4.3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.tamacom.com/global/
 
