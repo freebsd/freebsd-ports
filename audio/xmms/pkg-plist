@@ -1,6 +1,9 @@
 bin/wmxmms
 bin/xmms
 bin/xmms-config
+%%GNOME:%%bin/gnomexmms
+%%GNOME:%%etc/CORBA/servers/gnomexmms.gnorba
+%%GNOME:%%share/gnome/applets/Multimedia/gnomexmms.desktop
 include/xmms/configfile.h
 include/xmms/dga.h
 include/xmms/dirbrowser.h
@@ -22,11 +25,11 @@ lib/xmms/Input/libwav.so
 lib/xmms/Input/libmpg123.so
 lib/xmms/Input/libcdaudio.so
 lib/xmms/Input/libidcin.so
-lib/xmms/Input/libmikmod.so
+%%MIKMODPLUGIN:%%lib/xmms/Input/libmikmod.so
 lib/xmms/Input/libtonegen.so
 lib/xmms/Output/libOSS.so
 lib/xmms/Output/libdisk_writer.so
-lib/xmms/Output/libesdout.so
+%%ESDPLUGIN:%%lib/xmms/Output/libesdout.so
 lib/xmms/Visualization/libbscope.so
 lib/xmms/Visualization/libsanalyzer.so
 share/aclocal/xmms.m4
