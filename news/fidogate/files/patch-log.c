@@ -10,14 +10,3 @@
      extern char *sys_errlist[];
  # endif
  #endif
-@@ -280,8 +280,10 @@
-     
-     BUF_COPY(logprog, name);
- 
-+#if 0 /**NOT NEEDED AND SECURITY RISK**/
-     if( (p = getenv("LOGFILE")) )
-        log_file(p);
-     if( (p = getenv("FIDOGATE_LOGFILE")) )
-        log_file(p);
-+#endif
- }
