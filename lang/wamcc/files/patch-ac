@@ -1,31 +1,67 @@
---- src/Makefile.orig	Wed Jan 29 03:37:54 1997
-+++ src/Makefile	Sat Mar 31 03:01:06 2001
-@@ -19 +19 @@
+--- src/Makefile.orig	Wed Jan 29 12:37:54 1997
++++ src/Makefile	Wed Jun  4 11:02:44 2003
+@@ -10,13 +10,13 @@
+ COMPILER  = wamcc
+ INCPATH   = `pwd`
+ LIBPATH   = `pwd`
+-CC        = gcc
++CC        ?= gcc
+ WCC       = w_$(CC)
+ 
+ 
+ # other local variables
+ 
 -CFLAGS    = -O2
 +#CFLAGS    = -O2
-@@ -52 +52 @@
+ CFLAGINLIN= -finline-functions
+ LFLAGS    =
+ BMF       = bmf_$(COMPILER)
+@@ -49,22 +49,22 @@
+ 
+ 
+ machine.o: machine.h archi.h wam_engine.h machine.c
 -	$(WCC) $(CFLAGS) -c machine.c
 +	./$(WCC) $(CFLAGS) -c machine.c
-@@ -55 +55 @@
+ 
+ wam_engine.o: machine.h archi.h wam_engine.h atom_pred.h wam_engine.c 
 -	$(WCC) $(CFLAGS) -c wam_engine.c
 +	./$(WCC) $(CFLAGS) -c wam_engine.c
-@@ -58 +58 @@
+ 
+ wam_engine_pp.o: machine.h archi.h wam_engine.h atom_pred.h wam_engine.c
 -	$(WCC) $(CFLAGS) -DWAM_PROFILE -c -o wam_engine_pp.o wam_engine.c
 +	./$(WCC) $(CFLAGS) -DWAM_PROFILE -c -o wam_engine_pp.o wam_engine.c
-@@ -61 +61 @@
+ 
+ atom_pred.o: machine.h archi.h wam_engine.h atom_pred.h atom_pred.c
 -	$(WCC) $(CFLAGS) -c atom_pred.c
 +	./$(WCC) $(CFLAGS) -c atom_pred.c
-@@ -64 +64 @@
+ 
+ debugger.o: machine.h archi.h wam_engine.h atom_pred.h debugger.c
 -	$(WCC) $(CFLAGS) -c debugger.c
 +	./$(WCC) $(CFLAGS) -c debugger.c
-@@ -67 +67 @@
+ 
+ hash.o: machine.h hash.c
 -	$(WCC) $(CFLAGS) -c hash.c
 +	./$(WCC) $(CFLAGS) -c hash.c
-@@ -82 +82 @@
+ 
+ 
+ 
+@@ -79,7 +79,7 @@
+ 
+ 
+ $(WCC): configure archi.def
 -	configure
 +	./configure
-@@ -98,2 +98,2 @@
+ 	chmod a+x $(WCC)
+ 
+ $(BMF): bmf.c
+@@ -95,8 +95,8 @@
+ 	$(CC) $(CFLAGS) $(LFLAGS) -o pl2hex pl2hex.c
+ 
+ $(COMPILER):
 -	$(WCC) $(CFLAGS) -c wamcc*.c
 -	$(WCC) $(CFLAGS) $(LFLAGS) -s -o $(COMPILER) wamcc*.o -l$(COMPILER)
 +	./$(WCC) $(CFLAGS) -c wamcc*.c
 +	./$(WCC) $(CFLAGS) $(LFLAGS) -s -o $(COMPILER) wamcc*.o -l$(COMPILER)
+ 
+ 
+ 

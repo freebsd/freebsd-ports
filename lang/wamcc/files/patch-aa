@@ -1,6 +1,6 @@
---- Makefile.orig	Tue Mar  7 03:21:05 1995
-+++ Makefile	Sun Oct 31 13:03:29 1999
-@@ -5,12 +5,16 @@
+--- Makefile.orig	Tue Mar  7 10:21:05 1995
++++ Makefile	Wed Jun  4 11:00:59 2003
+@@ -5,16 +5,20 @@
  # /* Makefile                                                              */
  # /*-----------------------------------------------------------------------*/
  
@@ -21,6 +21,11 @@
 -BINPATH = $(ROOTPATH)/bin
  
  # you can specify the name of the C compiler
+ 
+-CC      = gcc
++CC      ?= gcc
+ 
+ # do not change anything else
  
 @@ -25,24 +29,28 @@
  
