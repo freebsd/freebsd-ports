@@ -1,0 +1,9 @@
+bin/argouml
+%%DATADIR%%/antlrall.jar
+%%DATADIR%%/argouml.jar
+%%DATADIR%%/gef-0.9.6.jar
+%%DATADIR%%/log4j.jar
+%%DATADIR%%/nsuml.jar
+%%DATADIR%%/ocl-argo.jar
+%%DATADIR%%/xerces.jar
+@dirrm %%DATADIR%%
