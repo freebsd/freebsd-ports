@@ -2,42 +2,36 @@ bin/tegclient
 bin/tegrobot
 bin/tegserver
 share/gnome/apps/Games/teg.desktop
-share/gnome/help/teg/C/armies1.html
-share/gnome/help/teg/C/attack.html
-share/gnome/help/teg/C/attack2.html
-share/gnome/help/teg/C/book1.html
 share/gnome/help/teg/C/cbugs.html
 share/gnome/help/teg/C/chistory.html
-share/gnome/help/teg/C/cintro.html
-share/gnome/help/teg/C/commands.html
-share/gnome/help/teg/C/connect.png
 share/gnome/help/teg/C/crisk.html
 share/gnome/help/teg/C/crules.html
-share/gnome/help/teg/C/dices.png
-share/gnome/help/teg/C/docbook.css
+share/gnome/help/teg/C/figures/connect.png
+share/gnome/help/teg/C/figures/dices.png
+share/gnome/help/teg/C/figures/mission.png
+share/gnome/help/teg/C/figures/selectcolor.png
+share/gnome/help/teg/C/figures/server.png
+share/gnome/help/teg/C/figures/toolbar_start.png
 share/gnome/help/teg/C/index.html
-share/gnome/help/teg/C/ln8.html
 share/gnome/help/teg/C/mission.html
-share/gnome/help/teg/C/mission.png
-share/gnome/help/teg/C/newturn.html
-share/gnome/help/teg/C/selectcolor.png
 share/gnome/help/teg/C/server.html
-share/gnome/help/teg/C/server.png
-share/gnome/help/teg/C/starting.html
-share/gnome/help/teg/C/stylesheet-images/caution.gif
-share/gnome/help/teg/C/stylesheet-images/home.gif
-share/gnome/help/teg/C/stylesheet-images/important.gif
-share/gnome/help/teg/C/stylesheet-images/next.gif
-share/gnome/help/teg/C/stylesheet-images/note.gif
-share/gnome/help/teg/C/stylesheet-images/prev.gif
-share/gnome/help/teg/C/stylesheet-images/tip.gif
-share/gnome/help/teg/C/stylesheet-images/toc-blank.gif
-share/gnome/help/teg/C/stylesheet-images/toc-minus.gif
-share/gnome/help/teg/C/stylesheet-images/toc-plus.gif
-share/gnome/help/teg/C/stylesheet-images/up.gif
-share/gnome/help/teg/C/stylesheet-images/warning.gif
-share/gnome/help/teg/C/toolbar_start.png
+share/gnome/help/teg/C/teg.sgml
 share/gnome/help/teg/C/topic.dat
+share/gnome/help/teg/pl/cbugs.html
+share/gnome/help/teg/pl/chistory.html
+share/gnome/help/teg/pl/crisk.html
+share/gnome/help/teg/pl/crules.html
+share/gnome/help/teg/pl/figures/connect.png
+share/gnome/help/teg/pl/figures/dices.png
+share/gnome/help/teg/pl/figures/mission.png
+share/gnome/help/teg/pl/figures/selectcolor.png
+share/gnome/help/teg/pl/figures/server.png
+share/gnome/help/teg/pl/figures/toolbar_start.png
+share/gnome/help/teg/pl/index.html
+share/gnome/help/teg/pl/mission.html
+share/gnome/help/teg/pl/server.html
+share/gnome/help/teg/pl/teg.sgml
+share/gnome/help/teg/pl/topic.dat
 share/gnome/pixmaps/teg_icono.png
 share/gnome/pixmaps/teg_pix/objetivo.png
 share/gnome/pixmaps/teg_pix/soldier_black.png
@@ -182,6 +176,10 @@ share/locale/pl/LC_MESSAGES/teg.mo
 @dirrm share/gnome/pixmaps/teg_pix/themes/modern
 @dirrm share/gnome/pixmaps/teg_pix/themes
 @dirrm share/gnome/pixmaps/teg_pix
+@dirrm share/gnome/help/teg/pl/stylesheet-images
+@dirrm share/gnome/help/teg/pl/figures
+@dirrm share/gnome/help/teg/pl
 @dirrm share/gnome/help/teg/C/stylesheet-images
+@dirrm share/gnome/help/teg/C/figures
 @dirrm share/gnome/help/teg/C
 @dirrm share/gnome/help/teg
