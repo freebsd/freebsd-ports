@@ -2,6 +2,6 @@ AOLserver is a highly-optimized multi-threaded web server. Its main
 features include database connection-pooling and a powerful Tcl API
 for application development.
 
-More information is available at www.aolserver.com.
+WWW: http://www.aolserver.com/
 
 - Matt Braithwaite <mab@red-bean.com>
