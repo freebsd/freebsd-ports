@@ -20,4 +20,13 @@ USE_GMAKE=	yes
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-add-package
 
+MAN1=	c2hs-config.1 c2hs.1
+
+post-build:
+	@(cd ${WRKSRC}/doc/c2hs && ${GMAKE} man1/c2hs-config.1 man1/c2hs.1)
+
+post-install:
+	@(cd ${WRKSRC}/doc/c2hs/man1 && \
+		 ${INSTALL_MAN} c2hs-config.1 c2hs.1 ${MANPREFIX}/man/man1)
+
 .include <bsd.port.mk>
