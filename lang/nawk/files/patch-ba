@@ -1,5 +1,5 @@
---- b.c.orig	Fri Nov 29 06:56:01 2002
-+++ b.c	Wed Dec 11 20:43:35 2002
+--- b.c.orig	Sun Sep 24 17:18:38 2000
++++ b.c	Fri Nov  3 01:59:32 2000
 @@ -27,6 +27,9 @@
  #define	DEBUG
  
@@ -10,19 +10,3 @@
  #include <stdio.h>
  #include <string.h>
  #include <stdlib.h>
-@@ -714,6 +717,7 @@
-  * must be less than twice the size of their full name.
-  */
- 
-+#ifndef __FreeBSD__
- /* and because isblank doesn't show up in any of the header files on any
-  * system i use, it's defined here.  if some other locale has a richer
-  * definition of "blank", sorry about that.
-@@ -723,6 +727,7 @@
- {
- 	return c==' ' || c=='\t';
- }
-+#endif
- 
- struct charclass {
- 	const char *cc_name;
