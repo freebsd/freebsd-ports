@@ -1,0 +1,4 @@
+Lingua::Stem::Snowball::No is a perl port of the norwegian
+stemmer at http://snowball.sourceforge.net.
+
+WWW: http://search.cpan.org/~asksh/Snowball-Norwegian-1.0/No.pm
