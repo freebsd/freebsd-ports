@@ -1,0 +1,6 @@
+bin/awka
+lib/libawka.a
+lib/libdfa.a
+lib/libawka.so
+include/libawka.h
+include/dfa.h
