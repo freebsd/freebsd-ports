@@ -1,2 +1,4 @@
-MD5 (mod_access_referer-1.0.2.tar.gz) = f1726cfe5965eda1bdca90b8db475377
-SIZE (mod_access_referer-1.0.2.tar.gz) = 9745
+MD5 (apache/mod_access_referer-1.0.2.tar.gz) = f1726cfe5965eda1bdca90b8db475377
+SIZE (apache/mod_access_referer-1.0.2.tar.gz) = 9745
+MD5 (apache/mod_access_referer_1.0.2_third_part_patch.txt) = 4a1e4c0c9f39bf522f36b60178256072
+SIZE (apache/mod_access_referer_1.0.2_third_part_patch.txt) = 1122
