@@ -1,0 +1,14 @@
+This package include a C library and some samples program that 
+demonstrate that this library is powerful.
+
+It is a cryptography library, you can crypt any type of data.
+Your key length to crypt is unlimited.
+You can generate password, manage users, hide text in file, etc.
+
+
+ATTENTION !!! IN SOME COUNTRIES THIS SOFTWARE MAY BE ILLEGAL SO DON'T USE
+IT IF YOU ARE NOT ALLOWED...
+
+
+- Stephane Legrand
+stephane@lituus.fr
