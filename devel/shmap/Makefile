@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shared-memory-based hashmaps
 
-LIB_DEPENDS=	mm.12:${PORTSDIR}/devel/mm
+LIB_DEPENDS=	mm.13:${PORTSDIR}/devel/mm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
