@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-base
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	lang devel
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
 		http://archive.progeny.com/gnustep/core/ \
