@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	sftp
-PORTVERSION=	0.7
+PORTVERSION=	0.9.4
 CATEGORIES=	ftp security
 MASTER_SITES=	ftp://ftp.xbill.org/pub/sftp/
 
 MAINTAINER=	Cy.Schubert@uumail.gov.bc.ca
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400014
 RUN_DEPENDS=	ssh:${PORTSDIR}/security/openssh
+.endif
 
 RESTRICTED=	"Calls external cryptographic routines."
 
 GNU_CONFIGURE=	yes
-
-CONFIGURE_ARGS+=	--prefix=${PREFIX} \
-			--enable-remotepath=${PREFIX}/libexec
+CONFIGURE_ARGS=	--enable-remotepath=${PREFIX}/libexec
 
 MAN1=		secftp.1
 
@@ -42,4 +44,4 @@ do-install:
 	fi
 	@sort -u ${PLIST}.unsorted > ${PLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
