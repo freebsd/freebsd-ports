@@ -40,10 +40,6 @@ MIXMASTER_SCRIPTS=	${WRKDIR}/mixmaster-update.pl
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.endif
-
 post-patch:
 	${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
 	@${RM} ${WRKSRC}/../conf/mix.cfg.orig
