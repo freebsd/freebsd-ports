@@ -10,6 +10,7 @@
     SUBDIR += cbb
     SUBDIR += gaddr
     SUBDIR += gcal
+    SUBDIR += gemcal
     SUBDIR += genius
     SUBDIR += gnofin
     SUBDIR += gnomepim

@@ -1,0 +1,23 @@
+bin/gemcal
+share/gemcal/00copyright
+share/gemcal/xpm/close.xpm
+share/gemcal/xpm/delete.xpm
+share/gemcal/xpm/exit.xpm
+share/gemcal/xpm/month.xpm
+share/gemcal/xpm/next.xpm
+share/gemcal/xpm/next2.xpm
+share/gemcal/xpm/next_year.xpm
+share/gemcal/xpm/open.xpm
+share/gemcal/xpm/prev.xpm
+share/gemcal/xpm/prev2.xpm
+share/gemcal/xpm/prev_year.xpm
+share/gemcal/xpm/save.xpm
+share/gemcal/xpm/today.xpm
+%%RUBY_SITELIBDIR%%/mhc-date.rb
+%%RUBY_SITELIBDIR%%/mhc-gtk.rb
+%%RUBY_SITELIBDIR%%/mhc-kconv.rb
+%%RUBY_SITELIBDIR%%/mhc-palm.rb
+%%RUBY_SITELIBDIR%%/mhc-schedule.rb
+%%RUBY_SITELIBDIR%%/mhc-signal.rb
+@dirrm share/gemcal/xpm
+@dirrm share/gemcal
