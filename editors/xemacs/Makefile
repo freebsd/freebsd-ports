@@ -3,7 +3,7 @@
 # Date created:		26 August 1997
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.21 1998/09/17 00:50:47 asami Exp $
+# $Id: Makefile,v 1.22 1998/10/01 19:29:50 gj Exp $
 #
 
 DISTNAME=	xemacs-20.4
@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 STRIP=
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} \
-		--statedir=/var/run \
+		--lockdir=/var/run/emacs/lock \
 		--with-sound=native \
 		--site-includes=${PREFIX}/include \
 		--site-libraries=${PREFIX}/lib \
@@ -70,12 +70,12 @@ post-install:
 	strip ${PREFIX}/bin/${file}
 .endfor
 # ``make install'' does not set the permissions like pkg_add does.
-	chmod 1777 /var/run/xemacs/lock
+	chmod 1777 /var/run/emacs/lock
 	chmod 755 ${PREFIX}/lib/xemacs/site-lisp
 	chmod 755 ${PREFIX}/share/emacs/site-lisp
 	${RM} -f ${PREFIX}/bin/send-pr
-# install xemacs.sh into ${PREFIX}/etc/rc.d
+# install xemacs20.sh into ${PREFIX}/etc/rc.d
 	@if [ ! -d ${PREFIX}/etc/rc.d ]; then mkdir -p ${PREFIX}/etc/rc.d; fi
-	${INSTALL_SCRIPT} ${FILESDIR}/xemacs.sh ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${FILESDIR}/xemacs20.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>
