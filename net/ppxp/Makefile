@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	ppxp
-PORTVERSION=	0.99120923
+PORTVERSION=	2001080415
 .if defined(WITH_TCLJP)
 CATEGORIES+=	net tk80
 .else
@@ -36,9 +36,7 @@ RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
 .endif
 
 USE_XPM=	yes
-WRKSRC=		${WRKDIR}/ppxp
 USE_GMAKE=	yes
-MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
 .if defined(WITH_TCLJP)
 CONFIGURE_ARGS+= --with-tclsh=${PREFIX}/bin/tclsh8.0jp \
@@ -57,6 +55,9 @@ MAN1=		PPxP.1 plast.1
 MAN5=		ppxp-files.5
 MANLANG=	ja
 
+WRKSRC=		${WRKDIR}/ppxp
+MAKEFILE=	makefile
+
 DOC_C=		QuickStart.txt
 DOC_ja_JP=	QuickStart.txt QuickUsage.txt guide-1.html guide-2.html \
 		guide-3.html guide-4.html guide-5.html guide-6.html \
@@ -65,6 +66,7 @@ DOC_ja_JP=	QuickStart.txt QuickUsage.txt guide-1.html guide-2.html \
 
 post-patch:
 	@find ${WRKSRC} -name '*.orig' -exec ${RM} -f '{}' ';'
+	@${PERL} -pi -e 's/^CFLAGS/#$$&/' ${WRKSRC}/configure
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/doc/ja_JP/PPxP.1 ${PREFIX}/man/${MANLANG}/man1
