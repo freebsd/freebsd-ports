@@ -6,34 +6,35 @@
 #
 
 PORTNAME=	rudl
-PORTVERSION=	0.4
-PORTREVISION=	3
+PORTVERSION=	0.7.1
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://froukepc.dhs.org/rudl/download/antiques/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
+DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A high level library to use SDL from Ruby
 
-BROKEN=		"Does not build"
-
-USE_SDL=	image mixer ttf sdl
+USE_SDL=	gfx image mixer ttf sdl
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
+NO_WRKSUBDIR=	yes
 CONFIGURE_ARGS=	--with-sdl-config="sdl11-config"
 INSTALL_TARGET=	site-install
 
-DOCS=		INSTALL.txt LICENSE.txt README.txt WARRANTY.txt
+DOCS=		README.txt WARRANTY.txt docs/*
+EXAMPLES=	samples/*
 
-post-patch:
-	${RUBY} -i -pe 'gsub %r:\.\./:, ""' ${WRKSRC}/samples/*.rb
+post-extract:
+	${RUBY} -i -pe 'sub(/\r$$/, "")' ${WRKSRC}/*.[ch]
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/* ${RUBY_MODEXAMPLESDIR}/
+	${CP} -R ${WRKSRC}/samples/* ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
