@@ -77,6 +77,7 @@
     SUBDIR += eights
     SUBDIR += empire
     SUBDIR += enigma
+    SUBDIR += euchre
     SUBDIR += exult
     SUBDIR += falconseye
     SUBDIR += farblazer
