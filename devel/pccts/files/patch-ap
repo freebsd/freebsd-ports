@@ -1,21 +1,13 @@
-*** testcpp/12/makefile	Sun Sep 24 00:05:31 1995
---- /home/andy/tmp/wrk/testcpp/12/makefile	Tue Jun 24 05:58:27 1997
-***************
-*** 16,23 ****
-  ERR = err
-  HDR_FILE =
-  SCAN = DLGLexer
-! PCCTS = ../..
-! ANTLR_H = $(PCCTS)/h
-  BIN = $(PCCTS)/bin
-  ANTLR = $(BIN)/antlr
-  DLG = $(BIN)/dlg
---- 16,23 ----
-  ERR = err
-  HDR_FILE =
-  SCAN = DLGLexer
-! PCCTS = /usr/local
-! ANTLR_H = $(PCCTS)/include/pccts
-  BIN = $(PCCTS)/bin
-  ANTLR = $(BIN)/antlr
-  DLG = $(BIN)/dlg
+--- testcpp/12/makefile	Wed Mar 25 20:30:32 1998
++++ /home/andy/tmp/wrk/testcpp/12/makefile	Sun Jul  4 15:52:14 1999
+@@ -16,8 +16,8 @@
+ ERR = err
+ HDR_FILE =
+ SCAN = DLGLexer
+-PCCTS = ../..
+-ANTLR_H = $(PCCTS)/h
++PCCTS = /usr/local
++ANTLR_H = $(PCCTS)/include/pccts
+ BIN = $(PCCTS)/bin
+ ANTLR = $(BIN)/antlr
+ DLG = $(BIN)/dlg
