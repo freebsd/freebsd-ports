@@ -37,7 +37,8 @@ CONFIGURE_ARGS+=	--without-lame \
 			--disable-cdparanoia \
 			--enable-audio=oss,esd
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+#.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+.include "/usr/ports/x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MIDI) || defined(WITH_KMIDI)
@@ -58,7 +59,7 @@ DO_NOT_COMPILE+=	kmidi
 WITHOUT_XINE=yes
 
 .if defined(WITHOUT_XINE)
-DO_NOT_COMPILE+=	xine-artsplugin
+DO_NOT_COMPILE+=	xine_artsplugin
 #CONFIGURE_ARGS+=	--disable-xinetest
 #.elif defined(WITH_XINE)
 #PLIST_APPEND+=	plist.xine
