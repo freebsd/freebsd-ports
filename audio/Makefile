@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.90 1999/05/29 04:59:31 steve Exp $
+# $Id: Makefile,v 1.91 1999/06/01 10:49:57 tg Exp $
 #
 
     SUBDIR += amp
@@ -19,6 +19,7 @@
     SUBDIR += gqmpeg
     SUBDIR += gsm
     SUBDIR += icecast
+    SUBDIR += id3ed
     SUBDIR += id3ren
     SUBDIR += juke
     SUBDIR += kdemultimedia11
