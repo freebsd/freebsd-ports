@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.9.36
-PORTREVISION=	0
+PORTVERSION=	1.9.37
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sourceforge/} \
 		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
