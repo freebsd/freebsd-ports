@@ -36,6 +36,7 @@ gettext		"gettext library support" OFF \
 japanese	"jstring and mbregex module" OFF \
 YP		"YP/NIS support" OFF \
 BCMath		"BCMath support" OFF \
+Hyperwave	"Hyperwave support" OFF \
 ming		"ming library support" OFF \
 sockets		"sockets support" OFF \
 sysvsem		"System V semaphore support" OFF \
@@ -205,6 +206,9 @@ EOF
 			;;
 		\"BCMath\")
 			echo "CONFIGURE_ARGS+=--enable-bcmath"
+			;;
+		\"Hyperwave\")
+			echo "CONFIGURE_ARGS+=--with-hyperwave=yes"
 			;;
 		\"ming\")
 			${CAT} << EOF
