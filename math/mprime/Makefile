@@ -7,7 +7,6 @@
 
 PORTNAME=	mprime
 PORTVERSION=	0.0.${SOURCE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	math benchmarks
 MASTER_SITES=	ftp://mersenne.org/gimps/ \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -26,14 +25,14 @@ USE_ZIP=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_SIZE=	yes
-WRKSRC=		${WRKDIR}/linux
+WRKSRC=		${WRKDIR}/source/linux
 MAKEFILE=	makebsd
 ALL_TARGET=	clean mprime
 
 # source code version
-SOURCE_VERSION=	22.12
+SOURCE_VERSION=	23.5
 # document date version
-TEXT_DATE=	2003042900
+TEXT_DATE=	2004022600
 
 post-extract:
 	@cd ${WRKDIR} && ${LOCALBASE}/bin/unzip -qq \
@@ -44,15 +43,19 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|||' \
-		-e 's|^(CC).*$$|\1=${CC}|' \
-		-e 's|^(CFLAGS)[[:space:]]*=|\1+=|' \
-		-e 's|^(CFLAGS.*)-m486|\1|' \
-		-e 's|^(CFLAGS.*)-O2|\1|' \
 		${WRKSRC}/makebsd
 # prepare wrapper
 	@${SED} \
 		-e 's|%%PREFIX%%|${PREFIX}|' ${FILESDIR}/wrapper.sh > \
 		${WRKDIR}/wrapper.sh
+
+do-configure:
+	@${REINPLACE_CMD} -E \
+		-e 's|^(CC).*$$|\1=${CC}|' \
+		-e 's|^(CFLAGS)[[:space:]]*=|\1+=|' \
+		-e 's|^(CFLAGS.*)-m486|\1|' \
+		-e 's|^(CFLAGS.*)-O2|\1|' \
+		${WRKSRC}/makebsd
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mprime ${PREFIX}/bin/mprime-real
