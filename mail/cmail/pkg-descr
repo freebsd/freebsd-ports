@@ -1,5 +1,4 @@
-cmail is a simple mail counting tool written in perl. It reads in a config file
-and returns which mailfiles contain mail, how much mail, and how many new
+cmail is a simple mail counting tool written in perl. It reads in a config fileXand returns which mailfiles contain mail, how much mail, and how many new
 messages. Example of output -
             Personal mail    1 message
                  JLC mail   20 messages (2 new)
@@ -10,10 +9,9 @@ This may be useful if you split your mail into multiple files using something
 like procmail. I'm not sure if the new/old mail determination works with
 anything other than mutt.
 
-WWW: http://www.eboai.org/~chip/scripts.html
+WWW: http://www.chocobo.cx/chip/projects.html
 
 --
-Chip Marshall <chip@eboai.org>
-http://www.eboai.org/~chip/                     InterNIC handle - CLM21
-PGP key available on my web page              On IRC via EFnet as Magus
-PGP Key fingerprint =  6B 35 3B 72 AC 37 90 04  E5 79 EE 71 18 95 4A 84 
+Chip Marshall <chip@chocobo.cx> http://www.chocobo.cx/chip/ Finger for PGP
+GCM/CS d+(-) s+:++ a19>? C++ UB++++$ P+++$ L- E--- W++ N+@ o K- w O M+ V--
+PS PE Y? PGP++ t+@ 5 X R>+ tv+() b++>+++ DI++++ D(-) G++ e>++ h!>++ r-- y-
