@@ -9,6 +9,6 @@ include/rpm/header.h
 lib/librpm.a
 man/man8/rpm.8.gz
 man/man8/rpm2cpio.8.gz
-share/misc/rpmrc
-share/misc/rpmpopt
+share/rpmrc
+share/rpmpopt
 @dirrm include/rpm
