@@ -24,8 +24,14 @@ USE_PYDISTUTILS=yes
 PYSETUP=	${FILESDIR}/setup.py
 MAKE_ENV+=	PORTNAME="${PORTNAME}" PORTVERSION="${PORTVERSION}" COMMENT="${COMMENT}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
+BROKEN=		"Coredump during build on alpha 4.x"
+.endif
+
 pre-build test:
 	# Running the vendor's tests:
 	cd ${WRKSRC}/test && ${SETENV} PYTHONPATH=.. ${PYTHON_CMD} test.py
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
