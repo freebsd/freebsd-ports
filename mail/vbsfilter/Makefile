@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.c
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A vbs-attachment filter for Sendmail
 
 .if !defined(SENDMAIL_MILTER_IN_BASE)

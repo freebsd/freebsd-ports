@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kiltdown
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kiltdown is an UI independant Email Client for UNIX
 
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
