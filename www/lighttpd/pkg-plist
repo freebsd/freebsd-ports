@@ -10,10 +10,12 @@ lib/lighttpd/mod_expire.so
 lib/lighttpd/mod_fastcgi.so
 lib/lighttpd/mod_httptls.so
 lib/lighttpd/mod_maps.so
+lib/lighttpd/mod_proxy.so
 lib/lighttpd/mod_redirect.so
 lib/lighttpd/mod_rewrite.so
 lib/lighttpd/mod_secdownload.so
 lib/lighttpd/mod_simple_vhost.so
+lib/lighttpd/mod_ssi.so
 lib/lighttpd/mod_status.so
 lib/lighttpd/mod_usertrack.so
 sbin/lighttpd

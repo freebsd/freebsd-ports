@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.4
 CATEGORIES=	www
 MASTER_SITES=	http://jan.kneschke.de/projects/lighttpd/download/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=	15
 USE_GNOME=	lthack
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include LIBS=-L${PREFIX}/lib
