@@ -165,6 +165,7 @@
     SUBDIR += skill
     SUBDIR += slay
     SUBDIR += slmon
+    SUBDIR += sloth
     SUBDIR += socket
     SUBDIR += ssync
     SUBDIR += star
