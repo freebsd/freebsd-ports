@@ -8,6 +8,7 @@ bin/sendfax
 bin/sendpage
 etc/rc.d/hylafax.sh.sample
 lib/fax/faxcover.ps
+lib/fax/faxcover_example_sgi.ps
 lib/fax/faxmail.ps
 lib/fax/hfaxd.conf
 lib/fax/pagesizes
@@ -52,6 +53,7 @@ sbin/xferfaxstats
 @dirrm lib/fax
 @cwd /var/spool/hylafax
 COPYRIGHT
+bin/archive
 bin/faxrcvd
 bin/mkcover
 bin/notify
@@ -70,23 +72,32 @@ config/att-dataport-2.0
 config/att-dpexpress-2
 config/cirrus
 config/class1
+config/class1.0
 config/class2
 config/class2.0
+config/class2.1
+config/davicom-2
 config/dsi-scout+
 config/e-tech
+config/eicon
+config/eicon-2
 config/elsa-microlink-56k-basic-2.0
 config/everex-2496d
 config/exar
 config/gvc-288
 config/gvc-288-2
+config/hayes
 config/intel-400e
 config/lucent
 config/lucent-mt-2
+config/lucent-mt-20
+config/lucent-mt-21
 config/moto-288
 config/mt-1432
 config/nuvo-voyager
 config/ppi-pm14400fxmt
 config/ppi-pm14400fxsa
+config/prometheus
 config/rc144ac
 config/rc144ac-1
 config/rc288dpi
@@ -100,6 +111,7 @@ config/skel
 config/telebit-qblazer
 config/telebit-t3000
 config/telebit-wb
+config/topic
 config/tricom2842
 config/uds-fastalk
 config/umc92144

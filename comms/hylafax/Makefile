@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hylafax
-PORTVERSION=	4.1
-PORTREVISION=	1
+PORTVERSION=	4.1.3
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 

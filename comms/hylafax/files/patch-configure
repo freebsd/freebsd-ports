@@ -1,14 +1,7 @@
+$FreeBSD$
+
 --- configure.orig	Wed May 30 19:29:46 2001
 +++ configure	Mon Apr  8 22:28:59 2002
-@@ -440,7 +440,7 @@
- eval `cat $SRCDIR/VERSION | sed 's/\([0-9][0-9]*\)\.\([0-9][0-9]*\)\(.*\)/DIST_MAJOR=\1; DIST_MINOR=\2; DIST_TYPE=\3/'`
- DIST_ALPHA=`awk '{print $3}' $SRCDIR/dist/hylafax.alpha`
- VERSION="${DIST_MAJOR}.${DIST_MINOR}${DIST_TYPE}"
--if [ $DIST_TYPE = beta ]; then
-+if [ "$DIST_TYPE" = beta ]; then
-     VERSION="${VERSION}${DIST_ALPHA}"
- fi
- 
 @@ -2584,7 +2584,7 @@
      }
      CheckFuncDecl unlink 'extern int unlink(const char*);' unistd.h
