@@ -121,6 +121,7 @@ sbin/sendmail
 %%SUB_DOCS%%share/doc/postfix/trivial-rewrite.8.html
 %%SUB_DOCS%%share/doc/postfix/uce.html
 %%SUB_DOCS%%share/doc/postfix/virtual.5.html
+%%SUB_DOCS%%share/doc/postfix/virtual.8.html
 %%SUB_DOCS%%@dirrm share/doc/postfix
 @dirrm libexec/postfix
 @dirrm etc/postfix
