@@ -1,0 +1,11 @@
+Fcron is a scheduler. It aims at replacing Vixie Cron, so it
+implements most of its functionalities. But contrary to Vixie Cron,
+fcron does not need your system to be up 7 days a week, 24 hours a
+day : it also works well with systems which are not running neither
+all the time nor regularly (contrary to anacrontab). To do so, fcron
+allows you to use the standard mode in which you tell it to execute
+one command at a given date and hour and to make it run a command
+according to its time of execution, which is normally the same as
+system up time. 
+
+WWW: http://fcron.free.fr/
