@@ -7,7 +7,7 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -17,8 +17,8 @@ MAINTAINER=	kde@FreeBSD.org
 
 BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
 		automake14:${PORTSDIR}/devel/automake14
-LIB_DEPENDS=	ogg.2:${PORTSDIR}/audio/libogg \
-		vorbis.0:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	ogg.3:${PORTSDIR}/audio/libogg \
+		vorbis.1:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	xanim:${PORTSDIR}/graphics/xanim
 
 USE_KDELIBS_VER=2
