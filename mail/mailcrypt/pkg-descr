@@ -13,9 +13,10 @@ Features :
  *  Support for multiple secret keys 
  *  A flexible interface to anonymous remailers, including Mixmaster
     support 
- *  An automagic interface to the PGP public key servers through HTTP 
+ *  An automagic interface to the PGP public key servers through HTTP or hkp
+ *  Supports GnuPG
 
-WWW: http://cag-www.lcs.mit.edu/mailcrypt/
+WWW: http://mailcrypt.sourceforge.net
 
 - Murray Stokely
-murray@cdrom.com
+murray@FreeBSD.org

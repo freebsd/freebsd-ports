@@ -17,3 +17,4 @@ share/emacs/site-lisp/mc-setversion.el
 share/emacs/site-lisp/mc-setversion.elc
 share/emacs/site-lisp/mc-toplev.el
 share/emacs/site-lisp/mc-toplev.elc
+@unexec /usr/bin/install-info --info-dir=%D/info --delete mailcrypt.info
