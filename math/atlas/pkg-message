@@ -1,0 +1,8 @@
+-------------------------------------------------
+This software determines and detects
+appropreate parameters and hardware setting
+(e.g., SSE/SSE2/3DNow etc) while compilation.
+
+The author of this port *strongly* urge you to
+make atlas by yourself.
+-------------------------------------------------
