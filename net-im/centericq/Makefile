@@ -13,13 +13,13 @@ MASTER_SITES=	http://konst.org.ua/download/
 
 MAINTAINER=	ijliao@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old \
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
 		sigc.1:${PORTSDIR}/devel/libsigc++
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl"
+		LIBS="-L${LOCALBASE}/lib -lintl -liconv"
 CONFIGURE_ARGS=	--without-included-gettext
 
 MAN1=	centericq.1
