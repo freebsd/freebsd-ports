@@ -8,7 +8,10 @@
 PORTNAME=	wmnetmon
 PORTVERSION=	0.2p5
 CATEGORIES=	net windowmaker
-MASTER_SITES=	ftp://neubula.utad.pt/pub/wmnetmon/
+# Master site is MIA for weeks now...
+#MASTER_SITES=	ftp://neubula.utad.pt/pub/wmnetmon/
+MASTER_SITES=	http://avdira.cc.duth.gr/~kkonstan/stuff/software/
+
 
 MAINTAINER=	kkonstan@daemon.gr
 
