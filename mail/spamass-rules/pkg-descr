@@ -1,0 +1,13 @@
+Custom rulesets for SpamAssassin which are not part of the official distro.
+
+Before running these rules please do the following:
+
+1. Read any extra info available with the rules, including the comments
+   in the .cf files.
+2. Check to make sure that the default scores in these rules fit your
+   installation. You might want to modify scores.
+3. Make sure to --lint the rules after loading them.
+4. Test the new rulesets. Keep an eye on hits from the new rules to
+   determine if the scoring is right for you.
+
+WWW: http://wiki.apache.org/spamassassin/CustomRulesets
