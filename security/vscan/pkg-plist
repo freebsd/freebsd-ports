@@ -1,6 +1,8 @@
 bin/uvscan
-lib/mcafee/scan.dat
-lib/mcafee/names.dat
-lib/mcafee/clean.dat
+lib/neta/scan.dat
+lib/neta/names.dat
+lib/neta/clean.dat
 share/doc/vscan/vscan.LICENCE
 share/doc/vscan/Whatsnew.txt
+@dirrm lib/neta
+@dirrm share/doc/vscan
