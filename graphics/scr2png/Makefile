@@ -7,7 +7,7 @@
 
 PORTNAME=	scr2png
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -26,6 +26,7 @@ MANCOMPRESSED=	yes
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|<gd/gd\.h>|<gd.h>|' ${WRKSRC}/scr2png.c
 
 do-install:	
 	@cd ${WRKSRC}; ${MAKE} BINDIR=${PREFIX}/bin SHAREDIR=${PREFIX} install
