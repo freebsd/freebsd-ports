@@ -3,11 +3,11 @@
 # Date created:         7 Mar 1996
 # Whom:                 se
 #
-# $Id: Makefile,v 1.3 1996/08/27 10:23:06 torstenb Exp $
+# $Id: Makefile,v 1.4 1996/11/18 11:35:12 asami Exp $
 #
 
-DISTNAME=       DHCPD-BETA-0
-PKGNAME=	isc-dhcp-b0
+DISTNAME=       DHCPD-BETA-5.14
+PKGNAME=	isc-dhcp-b5.14
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.vix.com/pub/dhcp/
 
