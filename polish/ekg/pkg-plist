@@ -2,9 +2,8 @@ bin/ekg
 include/libgadu-config.h
 include/libgadu.h
 lib/libgadu.so
-lib/libgadu.so.2
+lib/libgadu.so.3
 libdata/pkgconfig/libgadu.pc
-share/ekg/vars.txt
 share/ekg/themes/arim.theme
 share/ekg/themes/dj.theme
 share/ekg/themes/eileen.theme
@@ -20,5 +19,6 @@ share/ekg/themes/matik.theme
 share/ekg/themes/old.theme
 share/ekg/themes/sic.theme
 share/ekg/themes/tohver.theme
+share/ekg/vars.txt
 @dirrm share/ekg/themes
 @dirrm share/ekg
