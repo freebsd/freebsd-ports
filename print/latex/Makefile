@@ -7,6 +7,7 @@
 
 PORTNAME=	latex2e
 PORTVERSION=	2003.12
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jmz
@@ -28,8 +29,8 @@ NO_WRKSUBDIR=	yes
 
 do-build:
 	@${RM} ${WRKSRC}/tfm/dummy.tfm  ${WRKSRC}/mf/cmex9.mf 
-	@(cd ${WRKSRC}/base; tex --ini unpack.ins)
-	@(cd ${WRKSRC}/base; TEXFONTS=${WRKSRC}/tfm:; export TEXFONTS; \
+	@(cd ${WRKSRC}/base; TEXINPUTS=${WRKSRC}/base: export TEXINPUT; tex --ini unpack.ins)
+	@(cd ${WRKSRC}/base; TEXINPUTS=${WRKSRC}/base: TEXFONTS=${WRKSRC}/tfm:; export TEXFONTS TEXINPUT; \
 		tex --ini latex.ltx </dev/null)
 	@(cd ${WRKSRC}/tools; TEXFORMATS=${WRKSRC}/base:; \
 		TEXINPUTS=${WRKSRC}/base: export TEXFORMATS TEXINPUTS;\
