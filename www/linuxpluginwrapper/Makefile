@@ -7,7 +7,7 @@
 
 PORTNAME=	linuxpluginwrapper
 PORTVERSION=	20040822
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	http://people.FreeBSD.org/~nork/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -32,7 +32,7 @@ ONLY_FOR_ARCHS=	i386
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
-.if		defined(WITHOUT_PLUGINS)
+.if		defined(WITHOUT_PLUGINS) || ${OSVERSION} < 500000
 PLIST=		${WRKDIR}/pkg-plist
 .endif
 CONFLICTS=	flashpluginwrapper-*
@@ -81,6 +81,10 @@ post-build:
 		< ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 .if		defined(WITHOUT_PLUGINS)
 	@${SED} -e "/exec/d" ${.CURDIR}/pkg-plist > ${PLIST}
+.else
+.if		${OSVERSION} < 500000
+	@${SED} -e "/nppdf\.so/d" ${.CURDIR}/pkg-plist > ${PLIST}
+.endif
 .endif
 
 pre-install:

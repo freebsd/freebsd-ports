@@ -3,11 +3,12 @@ lib/pluginwrapper/acrobat.so
 lib/pluginwrapper/jai.so
 lib/pluginwrapper/java3d.so
 lib/pluginwrapper/java3d_snd.so
+lib/pluginwrapper/pips.so
 @unexec	/bin/rm -f    %%X11BASE%%/lib/browser_plugins/nppdf.so
 @unexec	/bin/rm -f    %%X11BASE%%/lib/browser_plugins/flashplayer.xpt
 @unexec	/bin/rm -f    %%X11BASE%%/lib/browser_plugins/libflashplayer.so
 @unexec /bin/rmdir    %%X11BASE%%/lib/browser_plugins 2>/dev/null || true
-@unexec /bin/mkdir -p %%X11BASE%%/lib/browser_plugins 2>/dev/null || true
+@exec   /bin/mkdir -p %%X11BASE%%/lib/browser_plugins 2>/dev/null || true
 @exec	/bin/ln -sf %%LOCALBASE%%/Acrobat5/Browsers/intellinux/nppdf.so     %%X11BASE%%/lib/browser_plugins/
 @exec	/bin/ln -sf %%LOCALBASE%%/lib/linux-flashplugin6/flashplayer.xpt    %%X11BASE%%/lib/browser_plugins/
 @exec	/bin/ln -sf %%LOCALBASE%%/lib/linux-flashplugin6/libflashplayer.so  %%X11BASE%%/lib/browser_plugins/
