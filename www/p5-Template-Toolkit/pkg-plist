@@ -2,55 +2,520 @@ bin/tpage
 bin/ttree
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Template/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/Template.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template.pod
 lib/perl5/site_perl/%%PERL_VER%%/Template/Base.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Base.pod
 lib/perl5/site_perl/%%PERL_VER%%/Template/Config.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Config.pod
 lib/perl5/site_perl/%%PERL_VER%%/Template/Constants.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Constants.pod
 lib/perl5/site_perl/%%PERL_VER%%/Template/Context.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Context.pod
 lib/perl5/site_perl/%%PERL_VER%%/Template/Directive.pm
 lib/perl5/site_perl/%%PERL_VER%%/Template/Document.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Document.pod
 lib/perl5/site_perl/%%PERL_VER%%/Template/Exception.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Exception.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/FAQ.pod
 lib/perl5/site_perl/%%PERL_VER%%/Template/Filters.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Filters.pod
 lib/perl5/site_perl/%%PERL_VER%%/Template/Grammar.pm
 lib/perl5/site_perl/%%PERL_VER%%/Template/Iterator.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Iterator.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Library/HTML.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Library/PostScript.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Library/Splash.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Manual.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Config.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Credits.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Directives.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Filters.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Internals.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Intro.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Plugins.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Refs.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Syntax.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Variables.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Views.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Modules.pod
 lib/perl5/site_perl/%%PERL_VER%%/Template/Parser.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Parser.pod
 lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin.pod
 lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Autoformat.pm
 lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/CGI.pm
 lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/DBI.pm
 lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Datafile.pm
 lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Date.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Directory.pm
 lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Dumper.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/File.pm
 lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Format.pm
 lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Iterator.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Pod.pm
 lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Table.pm
 lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/URL.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/View.pm
 lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Wrap.pm
 lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/XML/DOM.pm
 lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/XML/RSS.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/XML/Simple.pm
 lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/XML/XPath.pm
 lib/perl5/site_perl/%%PERL_VER%%/Template/Plugins.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugins.pod
 lib/perl5/site_perl/%%PERL_VER%%/Template/Provider.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Provider.pod
 lib/perl5/site_perl/%%PERL_VER%%/Template/Service.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Service.pod
 lib/perl5/site_perl/%%PERL_VER%%/Template/Stash.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Stash.pod
 lib/perl5/site_perl/%%PERL_VER%%/Template/Test.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Test.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Tools/tpage.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Tools/ttree.pod
 lib/perl5/site_perl/%%PERL_VER%%/Template/Tutorial.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/View.pm
+share/tt2/docs/README
+share/tt2/docs/html/README
+share/tt2/docs/html/index.html
+share/tt2/docs/lib/config
+share/tt2/docs/lib/docset/config
+share/tt2/docs/lib/docset/index
+share/tt2/docs/lib/docset/info
+share/tt2/docs/lib/docset/maker
+share/tt2/docs/lib/docset/meta
+share/tt2/docs/lib/footer
+share/tt2/docs/lib/header
+share/tt2/docs/lib/link
+share/tt2/docs/lib/ndx
+share/tt2/docs/lib/ndxitem
+share/tt2/docs/lib/section
+share/tt2/docs/lib/subsection
+share/tt2/docs/lib/toc
+share/tt2/docs/lib/tocitem
+share/tt2/docs/src/FAQ/FAQ.html
+share/tt2/docs/src/FAQ/index.html
+share/tt2/docs/src/Library/HTML.html
+share/tt2/docs/src/Library/PostScript.html
+share/tt2/docs/src/Library/Splash.html
+share/tt2/docs/src/Library/index.html
+share/tt2/docs/src/Manual/Config.html
+share/tt2/docs/src/Manual/Credits.html
+share/tt2/docs/src/Manual/Directives.html
+share/tt2/docs/src/Manual/Filters.html
+share/tt2/docs/src/Manual/Internals.html
+share/tt2/docs/src/Manual/Intro.html
+share/tt2/docs/src/Manual/Plugins.html
+share/tt2/docs/src/Manual/Refs.html
+share/tt2/docs/src/Manual/Syntax.html
+share/tt2/docs/src/Manual/Variables.html
+share/tt2/docs/src/Manual/Views.html
+share/tt2/docs/src/Manual/index.html
+share/tt2/docs/src/Modules/Template.html
+share/tt2/docs/src/Modules/Template/Base.html
+share/tt2/docs/src/Modules/Template/Config.html
+share/tt2/docs/src/Modules/Template/Constants.html
+share/tt2/docs/src/Modules/Template/Context.html
+share/tt2/docs/src/Modules/Template/Document.html
+share/tt2/docs/src/Modules/Template/Exception.html
+share/tt2/docs/src/Modules/Template/Filters.html
+share/tt2/docs/src/Modules/Template/Iterator.html
+share/tt2/docs/src/Modules/Template/Parser.html
+share/tt2/docs/src/Modules/Template/Plugin.html
+share/tt2/docs/src/Modules/Template/Plugin/Autoformat.html
+share/tt2/docs/src/Modules/Template/Plugin/CGI.html
+share/tt2/docs/src/Modules/Template/Plugin/DBI.html
+share/tt2/docs/src/Modules/Template/Plugin/Datafile.html
+share/tt2/docs/src/Modules/Template/Plugin/Date.html
+share/tt2/docs/src/Modules/Template/Plugin/Directory.html
+share/tt2/docs/src/Modules/Template/Plugin/Dumper.html
+share/tt2/docs/src/Modules/Template/Plugin/File.html
+share/tt2/docs/src/Modules/Template/Plugin/Format.html
+share/tt2/docs/src/Modules/Template/Plugin/Iterator.html
+share/tt2/docs/src/Modules/Template/Plugin/Pod.html
+share/tt2/docs/src/Modules/Template/Plugin/Table.html
+share/tt2/docs/src/Modules/Template/Plugin/URL.html
+share/tt2/docs/src/Modules/Template/Plugin/View.html
+share/tt2/docs/src/Modules/Template/Plugin/Wrap.html
+share/tt2/docs/src/Modules/Template/Plugin/XML/DOM.html
+share/tt2/docs/src/Modules/Template/Plugin/XML/RSS.html
+share/tt2/docs/src/Modules/Template/Plugin/XML/Simple.html
+share/tt2/docs/src/Modules/Template/Plugin/XML/XPath.html
+share/tt2/docs/src/Modules/Template/Plugins.html
+share/tt2/docs/src/Modules/Template/Provider.html
+share/tt2/docs/src/Modules/Template/Service.html
+share/tt2/docs/src/Modules/Template/Stash.html
+share/tt2/docs/src/Modules/Template/Test.html
+share/tt2/docs/src/Modules/index.html
+share/tt2/docs/src/Release/Changes.html
+share/tt2/docs/src/Release/README.html
+share/tt2/docs/src/Release/TODO.html
+share/tt2/docs/src/Release/index.html
+share/tt2/docs/src/Tools/index.html
+share/tt2/docs/src/Tools/tpage.html
+share/tt2/docs/src/Tools/ttree.html
+share/tt2/docs/src/Tutorial/Tutorial.html
+share/tt2/docs/src/Tutorial/index.html
+share/tt2/docs/src/index.html
+share/tt2/docs/style/plain/booktabs
+share/tt2/docs/style/plain/footer
+share/tt2/docs/style/plain/header
+share/tt2/docs/style/plain/navigate
+share/tt2/docs/style/plain/pagemenu
+share/tt2/docs/style/plain/section
+share/tt2/docs/style/splash/booktabs
+share/tt2/docs/style/splash/footer
+share/tt2/docs/style/splash/header
+share/tt2/docs/style/splash/menu
+share/tt2/docs/style/splash/navigate
+share/tt2/docs/style/splash/pagemenu
+share/tt2/docs/style/splash/section
+share/tt2/docs/ttree.cfg
+share/tt2/examples/README
+share/tt2/examples/lib/README
+share/tt2/examples/lib/config
+share/tt2/examples/lib/example/README
+share/tt2/examples/lib/example/break
+share/tt2/examples/lib/example/html
+share/tt2/examples/lib/example/output
+share/tt2/examples/lib/example/source
+share/tt2/examples/lib/example/split2
+share/tt2/examples/lib/example/split2ps
+share/tt2/examples/lib/example/split3
+share/tt2/examples/lib/example/split50
+share/tt2/examples/lib/example/switch50
+share/tt2/examples/lib/example/tbreak
+share/tt2/examples/lib/example/vsplit2
+share/tt2/examples/lib/example/vsplit2s
+share/tt2/examples/lib/example/vsplit3
+share/tt2/examples/lib/example/vsplit50
+share/tt2/examples/lib/examples/README
+share/tt2/examples/lib/examples/html/bars/1
+share/tt2/examples/lib/examples/html/bars/10
+share/tt2/examples/lib/examples/html/bars/11
+share/tt2/examples/lib/examples/html/bars/2
+share/tt2/examples/lib/examples/html/bars/3
+share/tt2/examples/lib/examples/html/bars/4
+share/tt2/examples/lib/examples/html/bars/5
+share/tt2/examples/lib/examples/html/bars/6
+share/tt2/examples/lib/examples/html/bars/7
+share/tt2/examples/lib/examples/html/bars/8
+share/tt2/examples/lib/examples/html/bars/9
+share/tt2/examples/lib/examples/html/headers/1
+share/tt2/examples/lib/examples/html/headers/2
+share/tt2/examples/lib/examples/html/headers/3
+share/tt2/examples/lib/examples/html/headers/4
+share/tt2/examples/lib/examples/html/headers/5
+share/tt2/examples/lib/examples/html/headers/6
+share/tt2/examples/lib/examples/html/headers/7
+share/tt2/examples/lib/examples/html/links/1
+share/tt2/examples/lib/examples/html/links/2
+share/tt2/examples/lib/examples/html/links/3
+share/tt2/examples/lib/examples/html/links/4
+share/tt2/examples/lib/examples/html/links/5
+share/tt2/examples/lib/examples/html/links/6
+share/tt2/examples/lib/examples/html/links/7
+share/tt2/examples/lib/examples/html/lists/1
+share/tt2/examples/lib/examples/html/lists/2
+share/tt2/examples/lib/examples/html/lists/3
+share/tt2/examples/lib/examples/html/lists/4
+share/tt2/examples/lib/examples/html/lists/5
+share/tt2/examples/lib/examples/html/lists/6
+share/tt2/examples/lib/examples/html/lists/7
+share/tt2/examples/lib/examples/html/lists/8
+share/tt2/examples/lib/examples/html/menus/1
+share/tt2/examples/lib/examples/html/menus/2
+share/tt2/examples/lib/examples/html/menus/3
+share/tt2/examples/lib/examples/html/menus/4
+share/tt2/examples/lib/examples/html/menus/5
+share/tt2/examples/lib/examples/html/menus/6
+share/tt2/examples/lib/examples/html/rgb/1
+share/tt2/examples/lib/examples/html/rgb/2
+share/tt2/examples/lib/examples/html/rgb/3
+share/tt2/examples/lib/examples/html/rgb/4
+share/tt2/examples/lib/examples/html/tables/1
+share/tt2/examples/lib/examples/html/tables/2
+share/tt2/examples/lib/examples/html/tables/3
+share/tt2/examples/lib/examples/html/tables/4
+share/tt2/examples/lib/examples/html/tables/5
+share/tt2/examples/lib/examples/ps/marks/1
+share/tt2/examples/lib/examples/ps/marks/10
+share/tt2/examples/lib/examples/ps/marks/2
+share/tt2/examples/lib/examples/ps/marks/3
+share/tt2/examples/lib/examples/ps/marks/4
+share/tt2/examples/lib/examples/ps/marks/5
+share/tt2/examples/lib/examples/ps/marks/6
+share/tt2/examples/lib/examples/ps/marks/7
+share/tt2/examples/lib/examples/ps/marks/8
+share/tt2/examples/lib/examples/ps/marks/9
+share/tt2/examples/lib/examples/splash/buttons/1
+share/tt2/examples/lib/examples/splash/buttons/2
+share/tt2/examples/lib/examples/splash/buttons/3
+share/tt2/examples/lib/examples/splash/buttons/4
+share/tt2/examples/lib/examples/splash/buttons/5
+share/tt2/examples/lib/examples/splash/buttons/6
+share/tt2/examples/lib/examples/splash/buttons/7
+share/tt2/examples/lib/examples/splash/config/1
+share/tt2/examples/lib/examples/splash/dropbox/1
+share/tt2/examples/lib/examples/splash/dropbox/2
+share/tt2/examples/lib/examples/splash/dropbox/3
+share/tt2/examples/lib/examples/splash/dropbox/4
+share/tt2/examples/lib/examples/splash/dropbox/5
+share/tt2/examples/lib/examples/splash/menus/1
+share/tt2/examples/lib/examples/splash/menus/2
+share/tt2/examples/lib/examples/splash/menus/3
+share/tt2/examples/lib/examples/splash/menus/4
+share/tt2/examples/lib/examples/splash/menus/5
+share/tt2/examples/lib/examples/splash/menus/6
+share/tt2/examples/lib/examples/splash/menus/7
+share/tt2/examples/lib/examples/splash/tabs/1
+share/tt2/examples/lib/examples/splash/tabs/2
+share/tt2/examples/lib/examples/splash/tabs/3
+share/tt2/examples/lib/examples/splash/tabs/4
+share/tt2/examples/lib/examples/splash/tabs/5
+share/tt2/examples/lib/examples/splash/tabsets/1
+share/tt2/examples/lib/examples/splash/tabsets/2
+share/tt2/examples/lib/examples/splash/tabsets/3
+share/tt2/examples/lib/examples/splash/tabsets/4
+share/tt2/examples/lib/examples/splash/tabsets/5
+share/tt2/examples/lib/examples/splash/text/1
+share/tt2/examples/lib/examples/splash/text/2
+share/tt2/examples/lib/examples/splash/text/3
+share/tt2/examples/lib/examples/splash/text/4
+share/tt2/examples/lib/menu
+share/tt2/examples/lib/page
+share/tt2/examples/lib/source
+share/tt2/examples/lib/test/README
+share/tt2/examples/lib/test/bar
+share/tt2/examples/lib/test/button
+share/tt2/examples/lib/test/menu
+share/tt2/examples/lib/test/menubar
+share/tt2/examples/lib/test/panel
+share/tt2/examples/lib/test/tab
+share/tt2/examples/lib/test/tabsbox
+share/tt2/examples/lib/test/text
+share/tt2/examples/src/html/bars.html
+share/tt2/examples/src/html/headers.html
+share/tt2/examples/src/html/index.html
+share/tt2/examples/src/html/links.html
+share/tt2/examples/src/html/lists.html
+share/tt2/examples/src/html/menus.html
+share/tt2/examples/src/html/rgb.html
+share/tt2/examples/src/html/tables.html
+share/tt2/examples/src/ps/index.html
+share/tt2/examples/src/ps/marks.html
+share/tt2/examples/src/splash/buttons.html
+share/tt2/examples/src/splash/config.html
+share/tt2/examples/src/splash/dropbox.html
+share/tt2/examples/src/splash/index.html
+share/tt2/examples/src/splash/menus.html
+share/tt2/examples/src/splash/tabs.html
+share/tt2/examples/src/splash/tabsets.html
+share/tt2/examples/src/splash/text.html
+share/tt2/examples/ttree.cfg
+share/tt2/images/splash/aqua/botleft.png
+share/tt2/images/splash/aqua/botright.png
+share/tt2/images/splash/aqua/neg/botleft.png
+share/tt2/images/splash/aqua/neg/botright.png
+share/tt2/images/splash/aqua/neg/topleft.png
+share/tt2/images/splash/aqua/neg/topright.png
+share/tt2/images/splash/aqua/square.png
+share/tt2/images/splash/aqua/topleft.png
+share/tt2/images/splash/aqua/topright.png
+share/tt2/images/splash/bud/botleft.png
+share/tt2/images/splash/bud/botright.png
+share/tt2/images/splash/bud/neg/botleft.png
+share/tt2/images/splash/bud/neg/botright.png
+share/tt2/images/splash/bud/neg/topleft.png
+share/tt2/images/splash/bud/neg/topright.png
+share/tt2/images/splash/bud/square.png
+share/tt2/images/splash/bud/topleft.png
+share/tt2/images/splash/bud/topright.png
+share/tt2/images/splash/leaf/botleft.png
+share/tt2/images/splash/leaf/botright.png
+share/tt2/images/splash/leaf/neg/botleft.png
+share/tt2/images/splash/leaf/neg/botright.png
+share/tt2/images/splash/leaf/neg/topleft.png
+share/tt2/images/splash/leaf/neg/topright.png
+share/tt2/images/splash/leaf/square.png
+share/tt2/images/splash/leaf/topleft.png
+share/tt2/images/splash/leaf/topright.png
+share/tt2/images/splash/lilac/botleft.png
+share/tt2/images/splash/lilac/botright.png
+share/tt2/images/splash/lilac/neg/botleft.png
+share/tt2/images/splash/lilac/neg/botright.png
+share/tt2/images/splash/lilac/neg/topleft.png
+share/tt2/images/splash/lilac/neg/topright.png
+share/tt2/images/splash/lilac/square.png
+share/tt2/images/splash/lilac/topleft.png
+share/tt2/images/splash/lilac/topright.png
+share/tt2/images/splash/marine/botleft.png
+share/tt2/images/splash/marine/botright.png
+share/tt2/images/splash/marine/neg/botleft.png
+share/tt2/images/splash/marine/neg/botright.png
+share/tt2/images/splash/marine/neg/topleft.png
+share/tt2/images/splash/marine/neg/topright.png
+share/tt2/images/splash/marine/square.png
+share/tt2/images/splash/marine/topleft.png
+share/tt2/images/splash/marine/topright.png
+share/tt2/images/splash/mauve/botleft.png
+share/tt2/images/splash/mauve/botright.png
+share/tt2/images/splash/mauve/neg/botleft.png
+share/tt2/images/splash/mauve/neg/botright.png
+share/tt2/images/splash/mauve/neg/topleft.png
+share/tt2/images/splash/mauve/neg/topright.png
+share/tt2/images/splash/mauve/square.png
+share/tt2/images/splash/mauve/topleft.png
+share/tt2/images/splash/mauve/topright.png
+share/tt2/images/splash/mint/botleft.png
+share/tt2/images/splash/mint/botright.png
+share/tt2/images/splash/mint/neg/botleft.png
+share/tt2/images/splash/mint/neg/botright.png
+share/tt2/images/splash/mint/neg/topleft.png
+share/tt2/images/splash/mint/neg/topright.png
+share/tt2/images/splash/mint/square.png
+share/tt2/images/splash/mint/topleft.png
+share/tt2/images/splash/mint/topright.png
+share/tt2/images/splash/sky/botleft.png
+share/tt2/images/splash/sky/botright.png
+share/tt2/images/splash/sky/square.png
+share/tt2/images/splash/sky/topleft.png
+share/tt2/images/splash/sky/topright.png
+share/tt2/images/tt2power.gif
+share/tt2/images/ttdotorg.gif
+share/tt2/templates/README
+share/tt2/templates/html/bar
+share/tt2/templates/html/box
+share/tt2/templates/html/button
+share/tt2/templates/html/cell
+share/tt2/templates/html/edge
+share/tt2/templates/html/edgebar
+share/tt2/templates/html/edgebox
+share/tt2/templates/html/footer
+share/tt2/templates/html/header
+share/tt2/templates/html/indent
+share/tt2/templates/html/item
+share/tt2/templates/html/link
+share/tt2/templates/html/list
+share/tt2/templates/html/menu
+share/tt2/templates/html/menubar
+share/tt2/templates/html/page
+share/tt2/templates/html/rgb
+share/tt2/templates/html/row
+share/tt2/templates/html/table
+share/tt2/templates/pod/html/begin
+share/tt2/templates/pod/html/for
+share/tt2/templates/pod/html/head1
+share/tt2/templates/pod/html/head2
+share/tt2/templates/pod/html/item
+share/tt2/templates/pod/html/over
+share/tt2/templates/pod/html/pod
+share/tt2/templates/pod/html/seq_bold
+share/tt2/templates/pod/html/seq_code
+share/tt2/templates/pod/html/seq_entity
+share/tt2/templates/pod/html/seq_file
+share/tt2/templates/pod/html/seq_italic
+share/tt2/templates/pod/html/seq_link
+share/tt2/templates/pod/html/seq_space
+share/tt2/templates/pod/html/seq_text
+share/tt2/templates/pod/html/text
+share/tt2/templates/pod/html/textblock
+share/tt2/templates/pod/html/verbatim
+share/tt2/templates/ps/border
+share/tt2/templates/ps/box
+share/tt2/templates/ps/circle
+share/tt2/templates/ps/clip
+share/tt2/templates/ps/cross
+share/tt2/templates/ps/crosshair
+share/tt2/templates/ps/dot
+share/tt2/templates/ps/footer
+share/tt2/templates/ps/header
+share/tt2/templates/ps/lines
+share/tt2/templates/ps/mm
+share/tt2/templates/ps/outline
+share/tt2/templates/ps/regmarks
+share/tt2/templates/ps/reset
+share/tt2/templates/ps/ring
+share/tt2/templates/ps/text
+share/tt2/templates/ps/tilemap
+share/tt2/templates/ps/tilepage
+share/tt2/templates/ps/tiles
+share/tt2/templates/splash/bar
+share/tt2/templates/splash/box
+share/tt2/templates/splash/button
+share/tt2/templates/splash/cell
+share/tt2/templates/splash/config
+share/tt2/templates/splash/dropbox
+share/tt2/templates/splash/icon
+share/tt2/templates/splash/menu
+share/tt2/templates/splash/menubar
+share/tt2/templates/splash/pane
+share/tt2/templates/splash/panel
+share/tt2/templates/splash/row
+share/tt2/templates/splash/tab
+share/tt2/templates/splash/tabbox
+share/tt2/templates/splash/table
+share/tt2/templates/splash/tabsbox
+share/tt2/templates/splash/tabset
+share/tt2/templates/splash/tabspanel
+share/tt2/templates/splash/text
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Template
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Template/Tools
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/XML
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Template/Manual
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Template/Library
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Template
+@dirrm share/tt2/templates/splash
+@dirrm share/tt2/templates/ps
+@dirrm share/tt2/templates/pod/html
+@dirrm share/tt2/templates/pod
+@dirrm share/tt2/templates/html
+@dirrm share/tt2/templates
+@dirrm share/tt2/images/splash/sky
+@dirrm share/tt2/images/splash/mint/neg
+@dirrm share/tt2/images/splash/mint
+@dirrm share/tt2/images/splash/mauve/neg
+@dirrm share/tt2/images/splash/mauve
+@dirrm share/tt2/images/splash/marine/neg
+@dirrm share/tt2/images/splash/marine
+@dirrm share/tt2/images/splash/lilac/neg
+@dirrm share/tt2/images/splash/lilac
+@dirrm share/tt2/images/splash/leaf/neg
+@dirrm share/tt2/images/splash/leaf
+@dirrm share/tt2/images/splash/bud/neg
+@dirrm share/tt2/images/splash/bud
+@dirrm share/tt2/images/splash/aqua/neg
+@dirrm share/tt2/images/splash/aqua
+@dirrm share/tt2/images/splash
+@dirrm share/tt2/images
+@dirrm share/tt2/examples/src/splash
+@dirrm share/tt2/examples/src/ps
+@dirrm share/tt2/examples/src/html
+@dirrm share/tt2/examples/src
+@dirrm share/tt2/examples/lib/test
+@dirrm share/tt2/examples/lib/examples/splash/text
+@dirrm share/tt2/examples/lib/examples/splash/tabsets
+@dirrm share/tt2/examples/lib/examples/splash/tabs
+@dirrm share/tt2/examples/lib/examples/splash/menus
+@dirrm share/tt2/examples/lib/examples/splash/dropbox
+@dirrm share/tt2/examples/lib/examples/splash/config
+@dirrm share/tt2/examples/lib/examples/splash/buttons
+@dirrm share/tt2/examples/lib/examples/splash
+@dirrm share/tt2/examples/lib/examples/ps/marks
+@dirrm share/tt2/examples/lib/examples/ps
+@dirrm share/tt2/examples/lib/examples/html/tables
+@dirrm share/tt2/examples/lib/examples/html/rgb
+@dirrm share/tt2/examples/lib/examples/html/menus
+@dirrm share/tt2/examples/lib/examples/html/lists
+@dirrm share/tt2/examples/lib/examples/html/links
+@dirrm share/tt2/examples/lib/examples/html/headers
+@dirrm share/tt2/examples/lib/examples/html/bars
+@dirrm share/tt2/examples/lib/examples/html
+@dirrm share/tt2/examples/lib/examples
+@dirrm share/tt2/examples/lib/example
+@dirrm share/tt2/examples/lib
+@dirrm share/tt2/examples
+@dirrm share/tt2/docs/style/splash
+@dirrm share/tt2/docs/style/plain
+@dirrm share/tt2/docs/style
+@dirrm share/tt2/docs/src/Tutorial
+@dirrm share/tt2/docs/src/Tools
+@dirrm share/tt2/docs/src/Release
+@dirrm share/tt2/docs/src/Modules/Template/Plugin/XML
+@dirrm share/tt2/docs/src/Modules/Template/Plugin
+@dirrm share/tt2/docs/src/Modules/Template
+@dirrm share/tt2/docs/src/Modules
+@dirrm share/tt2/docs/src/Manual
+@dirrm share/tt2/docs/src/Library
+@dirrm share/tt2/docs/src/FAQ
+@dirrm share/tt2/docs/src
+@dirrm share/tt2/docs/lib/docset
+@dirrm share/tt2/docs/lib
+@dirrm share/tt2/docs/html
+@dirrm share/tt2/docs
+@dirrm share/tt2
