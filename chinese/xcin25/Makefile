@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	xcin
-PORTVERSION=	2.5.2.2
-PORTREVISION=	1
+PORTVERSION=	2.5.2.3
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/ \
 		http://chewing.oio.cx/download/
-PKGNAMEPREFIX=	zh-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} chewing-0.0.5.1.tar.gz
 
 MAINTAINER=	keith@FreeBSD.org
@@ -23,7 +21,7 @@ RUN_DEPENDS=	${X11BASE}/lib/X11/locale/zh_TW.Big5/XLC_LOCALE:${PORTSDIR}/x11/XFr
 		${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts \
 		${LOCALBASE}/share/tabe/libtabe-0.1.9:${PORTSDIR}/chinese/libtabe
 
-WRKSRC=		${WRKDIR}/xcin-2.5
+WRKSRC=		${WRKDIR}/xcin
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
