@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	nc6
-PORTVERSION=	0.2.p3
+PORTVERSION=	0.4
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ferrara.linux.it/pub/ipv6/sources/
-DISTNAME=	nc6-${PORTVERSION:S/.p/pre/}
+MASTER_SITES=	ftp://ftp.deepspace6.net/pub/sources/nc6/ \
+		http://ftp.deepspace6.net/pub/sources/nc6/
 
 MAINTAINER=	filippo@widestore.net
 
