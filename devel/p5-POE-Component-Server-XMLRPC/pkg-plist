@@ -1,0 +1,9 @@
+%%SITE_PERL%%/POE/Component/Server/XMLRPC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/XMLRPC/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/XMLRPC
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE/Component/Server 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE/Component 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE 2>/dev/null || true
