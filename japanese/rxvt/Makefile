@@ -27,6 +27,12 @@ CONFIGURE_ARGS=	--enable-xpm-background --enable-transparency \
 DOCDIR=		${PREFIX}/share/doc/ja/rxvt
 RXVTLIB=	${PREFIX}/lib/X11/rxvt
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 pre-install:
 	@${MKDIR} ${DOCDIR}
 	@${INSTALL_DATA} ${FILESDIR}/README.ja ${DOCDIR}
@@ -37,4 +43,4 @@ pre-install:
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/rxvt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -44,8 +44,8 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+.if ${ARCH} == "alpha" || ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on alpha or sparc64"
 .endif
 
 post-patch:
