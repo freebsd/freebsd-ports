@@ -26,8 +26,13 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 
+.include <bsd.port.pre.mk>
+
 pre-patch:
 	@${INSTALL_DATA} ${WRKSRC}/setup/Rules.linux ${WRKSRC}/Rules.make
+.if ${PYTHON_REL} >= 230
+	@${REINPLACE_CMD} -e 's,@DEFS@,,g' ${WRKSRC}/contrib/modules/Makefile.pre.in.src
+.endif
 
 post-patch:
 	@${INSTALL_DATA} ${WRKSRC}/setup/pymol.com.linux-rh7x ${WRKSRC}/setup/pymol.com
@@ -51,4 +56,4 @@ do-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/share/pymol/modules
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/share/pymol/modules
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
