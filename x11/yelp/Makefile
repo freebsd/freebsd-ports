@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yelp
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
@@ -22,7 +22,7 @@ USE_GNOME=	gnomeprefix gnomehack libgnomeui libgtkhtml
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
 post-patch:
