@@ -14,7 +14,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		GL.14:${PORTSDIR}/graphics/Mesa3 \
-		gtkgl.4:${PORTSDIR}/x11-toolkits/gtkglarea
+		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
