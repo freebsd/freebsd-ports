@@ -111,7 +111,7 @@ kde-split:
 		${WRKSRC}/doc/Makefile.in
 
 kde-split-postinstall:
-	${TOUCH} ${SPLITDEP_PREFIX}/${PKGNAME}
+	${TOUCH} ${SPLITDEP_PREFIX}/${PORTNAME}-${PORTVERSION}
 
 .if !defined(KDE_SPLIT_NONSTANDARD)
 pre-configure: kde-split
