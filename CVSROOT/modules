@@ -4638,6 +4638,7 @@ mod_mylo	ports/www/mod_mylo
 mod_mysqluserdir	ports/www/mod_mysqluserdir
 mod_pcgi2	ports/www/mod_pcgi2
 mod_perl	ports/www/mod_perl
+mod_perl2	ports/www/mod_perl2
 mod_php3	ports/www/mod_php3
 mod_php4	ports/www/mod_php4
 mod_proxy_add_forward	ports/www/mod_proxy_add_forward
