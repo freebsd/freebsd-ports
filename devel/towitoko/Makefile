@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	towitoko
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.geocities.com/cprados/files/
 
