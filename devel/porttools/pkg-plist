@@ -1,8 +1,12 @@
 @comment $FreeBSD$
-bin/pr-change
-bin/pr-new
-bin/pr-update
-bin/testport
+bin/port
+%%DATADIR%%/cmd_create
+%%DATADIR%%/cmd_diff
+%%DATADIR%%/cmd_fetch
+%%DATADIR%%/cmd_help
+%%DATADIR%%/cmd_submit
+%%DATADIR%%/cmd_test
+%%DATADIR%%/util_diff
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
