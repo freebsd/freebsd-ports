@@ -5,7 +5,7 @@
  XCFLAGS =
  TCFLAGS =
 -CFLAGS = -g
-+CFLAGS = -pipe -O2
++CFLAGS = -pipe -O
  BOOT_CFLAGS = -O $(CFLAGS)
  # These exists to be overridden by the x-* and t-* files, respectively.
  X_CFLAGS =
