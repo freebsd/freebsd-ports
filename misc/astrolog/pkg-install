@@ -1,5 +1,5 @@
 #!/bin/sh
-# installation script for Wnn4.2
+# installation script for astrolog
 if [ "$2" != "POST-INSTALL" ]; then
   exit 0
 fi
