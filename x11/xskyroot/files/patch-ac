@@ -1,0 +1,8 @@
+--- Imakefile.orig	Sat Oct 14 07:16:08 2000
++++ Imakefile	Sat Oct 14 07:16:45 2000
+@@ -4,4 +4,4 @@
+ SRCS = xskyroot.c draw.c colorname.c astro.c
+ OBJS = xskyroot.o draw.o colorname.o astro.o
+ 
+-ComplexProgramTarget(xskyroot)
++ComplexProgramTargetNoMan(xskyroot)
