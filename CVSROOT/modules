@@ -2628,6 +2628,7 @@ ja-ruby-usersguide	ports/japanese/ruby-usersguide
 ja-rxvt		ports/japanese/rxvt
 ja-ryaku-fpw	ports/japanese/ryaku-fpw
 ja-samba	ports/japanese/samba
+ja-samba20	ports/japanese/samba20
 ja-sdic		ports/japanese/sdic
 ja-sed		ports/japanese/sed
 ja-seizedesktop	ports/japanese/seizedesktop
