@@ -43,7 +43,7 @@ _USE_GNOME_ALL+=glib20 atk pango gtk20 linc libidl orbit2 \
 		libgtkhtml gnomedesktop libwnck vte libzvt librsvg2 eel2 \
 		gnomepanel nautilus2 metacity gal2 gnomecontrolcenter2 libgda2 \
 		libgnomedb gtksourceview libgsf pygtk2 pygnome2 gstreamerplugins \
-		gtkhtml3
+		gtkhtml3 gnomespeech
 
 SCROLLKEEPER_DIR=	/var/db/scrollkeeper
 gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -410,6 +410,10 @@ intlhack_USE_GNOME_IMPL=intltool
 gtkhtml3_LIB_DEPENDS=	gtkhtml-3.0.4:${PORTSDIR}/www/gtkhtml3
 gtkhtml3_DETECT=		${X11BASE}/libdata/pkgconfig/libgtkhtml-3.0.pc
 gtkhtml3_USE_GNOME_IMPL=gal2 gail
+
+gnomespeech_LIB_DEPENDS=gnomespeech.7:${PORTSDIR}/accessibility/gnomespeech
+gnomespeech_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-speech-1.0.pc
+gnomespeech_USE_GNOME_IMPL=libbonobo
 
 # End component definition section
 
