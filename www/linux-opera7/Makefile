@@ -8,7 +8,11 @@
 PORTNAME=	linux-opera
 PORTVERSION=	5.0
 CATEGORIES=	www linux
-MASTER_SITES=	http://opera.online.no/linux/tgz/500/
+MASTER_SITES=	http://opera.online.no/linux/tgz/500/ \
+		ftp://ftp.opera.com/pub/opera/linux/500/ \
+		ftp://gd.tuwien.ac.at/infosys/browsers/opera/linux/500/ \
+		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/500/ \
+		ftp://ftp.planetmirror.com/pub/opera/linux/500/
 DISTNAME=	opera-${PORTVERSION}-static.i386
 
 MAINTAINER=	des@FreeBSD.org
@@ -16,6 +20,8 @@ MAINTAINER=	des@FreeBSD.org
 RUN_DEPENDS=	${LINUXBASE}/lib/ld.so:${PORTSDIR}/emulators/linux_base \
 		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png \
 		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg
+
+ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	yes
 
