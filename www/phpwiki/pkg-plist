@@ -1,0 +1,239 @@
+%%PHPWIKI%%/admin/dumpserial.php
+%%PHPWIKI%%/admin/loadserial.php
+%%PHPWIKI%%/admin/lockpage.php
+%%PHPWIKI%%/admin/shrinkdbm.pl
+%%PHPWIKI%%/admin/translate_mysql.pl
+%%PHPWIKI%%/admin/wiki_dumpHTML.php
+%%PHPWIKI%%/admin/wiki_port1_0.php
+%%PHPWIKI%%/admin/wiki_rebuilddbms.php
+%%PHPWIKI%%/admin/zip.php
+%%PHPWIKI%%/images/png.png
+%%PHPWIKI%%/images/signature.png
+%%PHPWIKI%%/images/wikibase.png
+%%PHPWIKI%%/index.php
+@unexec if cmp -s %B/admin.php %B/admin.php-dist; then rm -f %B/admin.php; fi
+%%PHPWIKI%%/admin.php-dist
+@exec [ -f %B/admin.php ] || cp %B/%f %B/admin.php
+%%PHPWIKI%%/lib/backlinks.php
+@unexec if cmp -s %B/config.php %B/config.php-dist; then rm -f %B/config.php; fi
+%%PHPWIKI%%/lib/config.php-dist
+@exec [ -f %B/config.php ] || cp %B/%f %B/config.php
+%%PHPWIKI%%/lib/db_filesystem.php
+%%PHPWIKI%%/lib/dbalib.php
+%%PHPWIKI%%/lib/dbmlib.php
+%%PHPWIKI%%/lib/diff.php
+%%PHPWIKI%%/lib/display.php
+%%PHPWIKI%%/lib/editlinks.php
+%%PHPWIKI%%/lib/editpage.php
+%%PHPWIKI%%/lib/fullsearch.php
+%%PHPWIKI%%/lib/msql.php
+%%PHPWIKI%%/lib/mssql.php
+%%PHPWIKI%%/lib/mysql.php
+%%PHPWIKI%%/lib/pageinfo.php
+%%PHPWIKI%%/lib/pgsql.php
+%%PHPWIKI%%/lib/savepage.php
+%%PHPWIKI%%/lib/search.php
+%%PHPWIKI%%/lib/setupwiki.php
+%%PHPWIKI%%/lib/stdlib.php
+%%PHPWIKI%%/lib/transform.php
+%%PHPWIKI%%/lib/ziplib.php
+%%PHPWIKI%%/locale/README
+%%PHPWIKI%%/locale/de/LC_MESSAGES/phpwiki.mo
+%%PHPWIKI%%/locale/de/LC_MESSAGES/phpwiki.php
+%%PHPWIKI%%/locale/de/pgsrc/EditiereText
+%%PHPWIKI%%/locale/de/pgsrc/FrischeSeiten
+%%PHPWIKI%%/locale/de/pgsrc/GaesteBuch
+%%PHPWIKI%%/locale/de/pgsrc/GuterStil
+%%PHPWIKI%%/locale/de/pgsrc/KonvertiereLeerzeichenZuTabs
+%%PHPWIKI%%/locale/de/pgsrc/MeistBesucht
+%%PHPWIKI%%/locale/de/pgsrc/PhpWiki
+%%PHPWIKI%%/locale/de/pgsrc/PhpWikiAdministration
+%%PHPWIKI%%/locale/de/pgsrc/SandKiste
+%%PHPWIKI%%/locale/de/pgsrc/SeiteFinden
+%%PHPWIKI%%/locale/de/pgsrc/SeitenErzeugen
+%%PHPWIKI%%/locale/de/pgsrc/StartSeite
+%%PHPWIKI%%/locale/de/pgsrc/TextFormatierungsRegeln
+%%PHPWIKI%%/locale/de/pgsrc/WabiSabi
+%%PHPWIKI%%/locale/de/pgsrc/WieManWikiBenutzt
+%%PHPWIKI%%/locale/de/pgsrc/WikiTechnik
+%%PHPWIKI%%/locale/de/pgsrc/WikiWikiWeb
+%%PHPWIKI%%/locale/de/templates/browse.html
+%%PHPWIKI%%/locale/de/templates/editlinks.html
+%%PHPWIKI%%/locale/de/templates/editpage.html
+%%PHPWIKI%%/locale/de/templates/message.html
+%%PHPWIKI%%/locale/es/LC_MESSAGES/phpwiki.mo
+%%PHPWIKI%%/locale/es/LC_MESSAGES/phpwiki.php
+%%PHPWIKI%%/locale/es/pgsrc/AgregarPaginas
+%%PHPWIKI%%/locale/es/pgsrc/BuenEstilo
+%%PHPWIKI%%/locale/es/pgsrc/BuscarPagina
+%%PHPWIKI%%/locale/es/pgsrc/CajaDeArena
+%%PHPWIKI%%/locale/es/pgsrc/CambiosRecientes
+%%PHPWIKI%%/locale/es/pgsrc/ComoUsarWiki
+%%PHPWIKI%%/locale/es/pgsrc/ConvierteEspaciosEnTabs
+%%PHPWIKI%%/locale/es/pgsrc/EditarElTexto
+%%PHPWIKI%%/locale/es/pgsrc/KBrown
+%%PHPWIKI%%/locale/es/pgsrc/MasAcercadeLaMecanica
+%%PHPWIKI%%/locale/es/pgsrc/MasPopulares
+%%PHPWIKI%%/locale/es/pgsrc/NotasDeLiberacion
+%%PHPWIKI%%/locale/es/pgsrc/PaginaPrincipal
+%%PHPWIKI%%/locale/es/pgsrc/PhpWiki
+%%PHPWIKI%%/locale/es/pgsrc/ReglasDeFormatoDeTexto
+%%PHPWIKI%%/locale/es/pgsrc/VisitantesRecientes
+%%PHPWIKI%%/locale/es/pgsrc/WabiSabi
+%%PHPWIKI%%/locale/es/pgsrc/WikiWikiWeb
+%%PHPWIKI%%/locale/es/templates/browse.html
+%%PHPWIKI%%/locale/es/templates/editlinks.html
+%%PHPWIKI%%/locale/es/templates/editpage.html
+%%PHPWIKI%%/locale/es/templates/message.html
+%%PHPWIKI%%/locale/it/LC_MESSAGES/phpwiki.mo
+%%PHPWIKI%%/locale/it/LC_MESSAGES/phpwiki.php
+%%PHPWIKI%%/locale/it/pgsrc/AggiungerePagine
+%%PHPWIKI%%/locale/it/pgsrc/AmministrazioneDiPhpWiki
+%%PHPWIKI%%/locale/it/pgsrc/BuonStile
+%%PHPWIKI%%/locale/it/pgsrc/CambiamentiRecenti
+%%PHPWIKI%%/locale/it/pgsrc/ComeUsareWiki
+%%PHPWIKI%%/locale/it/pgsrc/ConvertiGliSpaziInTab
+%%PHPWIKI%%/locale/it/pgsrc/ModificaIlTesto
+%%PHPWIKI%%/locale/it/pgsrc/NoteDiRilascio
+%%PHPWIKI%%/locale/it/pgsrc/PaginaDiProva
+%%PHPWIKI%%/locale/it/pgsrc/PaginaPrincipale
+%%PHPWIKI%%/locale/it/pgsrc/PhpWiki
+%%PHPWIKI%%/locale/it/pgsrc/PiuPopolari
+%%PHPWIKI%%/locale/it/pgsrc/RegoleDiFormattazioneDelTesto
+%%PHPWIKI%%/locale/it/pgsrc/ScatolaDiSabbia
+%%PHPWIKI%%/locale/it/pgsrc/SteveWainstead
+%%PHPWIKI%%/locale/it/pgsrc/TrovaPagina
+%%PHPWIKI%%/locale/it/pgsrc/VarieSulFunzionamento
+%%PHPWIKI%%/locale/it/pgsrc/VisitatoriRecenti
+%%PHPWIKI%%/locale/it/pgsrc/WabiSabi
+%%PHPWIKI%%/locale/it/pgsrc/WikiWikiWeb
+%%PHPWIKI%%/locale/it/templates/browse.html
+%%PHPWIKI%%/locale/it/templates/editlinks.html
+%%PHPWIKI%%/locale/it/templates/editpage.html
+%%PHPWIKI%%/locale/it/templates/message.html
+%%PHPWIKI%%/locale/nl/LC_MESSAGES/phpwiki.mo
+%%PHPWIKI%%/locale/nl/LC_MESSAGES/phpwiki.php
+%%PHPWIKI%%/locale/nl/pgsrc/GoedeStijl
+%%PHPWIKI%%/locale/nl/pgsrc/HoeWikiTeGebruiken
+%%PHPWIKI%%/locale/nl/pgsrc/JanNieuwenhuizen
+%%PHPWIKI%%/locale/nl/pgsrc/MeerOverTechnieken
+%%PHPWIKI%%/locale/nl/pgsrc/MeestBezocht
+%%PHPWIKI%%/locale/nl/pgsrc/PaginasToevoegen
+%%PHPWIKI%%/locale/nl/pgsrc/RecenteBezoekers
+%%PHPWIKI%%/locale/nl/pgsrc/RecenteVeranderingen
+%%PHPWIKI%%/locale/nl/pgsrc/TekstFormatteringsRegels
+%%PHPWIKI%%/locale/nl/pgsrc/UitgaveNoten
+%%PHPWIKI%%/locale/nl/pgsrc/VeranderTekst
+%%PHPWIKI%%/locale/nl/pgsrc/VertaalSpatiesNaarTabs
+%%PHPWIKI%%/locale/nl/pgsrc/VoorPagina
+%%PHPWIKI%%/locale/nl/pgsrc/WabiSabi
+%%PHPWIKI%%/locale/nl/pgsrc/WikiWikiWeb
+%%PHPWIKI%%/locale/nl/pgsrc/ZandBak
+%%PHPWIKI%%/locale/nl/pgsrc/ZoekPagina
+%%PHPWIKI%%/locale/nl/templates/browse.html
+%%PHPWIKI%%/locale/nl/templates/editlinks.html
+%%PHPWIKI%%/locale/nl/templates/editpage.html
+%%PHPWIKI%%/locale/nl/templates/message.html
+%%PHPWIKI%%/locale/po/de.po
+%%PHPWIKI%%/locale/po/es.po
+%%PHPWIKI%%/locale/po/it.po
+%%PHPWIKI%%/locale/po/nl.po
+%%PHPWIKI%%/locale/po/phpwiki.pot
+%%PHPWIKI%%/locale/po/sv.po
+%%PHPWIKI%%/locale/sv/LC_MESSAGES/phpwiki.mo
+%%PHPWIKI%%/locale/sv/LC_MESSAGES/phpwiki.php
+%%PHPWIKI%%/locale/sv/pgsrc/BraStil
+%%PHPWIKI%%/locale/sv/pgsrc/Framsida
+%%PHPWIKI%%/locale/sv/pgsrc/G%e4stboken
+%%PHPWIKI%%/locale/sv/pgsrc/HurManAnv%e4nderWiki
+%%PHPWIKI%%/locale/sv/pgsrc/KonverteraMellanslagTillTabbar
+%%PHPWIKI%%/locale/sv/pgsrc/L%e4ggaTillSidor
+%%PHPWIKI%%/locale/sv/pgsrc/MerOmMekanismerna
+%%PHPWIKI%%/locale/sv/pgsrc/MestPopul%e4r
+%%PHPWIKI%%/locale/sv/pgsrc/PhpWiki
+%%PHPWIKI%%/locale/sv/pgsrc/PhpWikiAdministration
+%%PHPWIKI%%/locale/sv/pgsrc/RedigeraText
+%%PHPWIKI%%/locale/sv/pgsrc/S%f6kEfterSida
+%%PHPWIKI%%/locale/sv/pgsrc/Sandl%e5dan
+%%PHPWIKI%%/locale/sv/pgsrc/Senaste%c4ndringar
+%%PHPWIKI%%/locale/sv/pgsrc/Textformateringsregler
+%%PHPWIKI%%/locale/sv/pgsrc/WabiSabi
+%%PHPWIKI%%/locale/sv/pgsrc/WikiWikiWeb
+%%PHPWIKI%%/locale/sv/templates/browse.html
+%%PHPWIKI%%/locale/sv/templates/editlinks.html
+%%PHPWIKI%%/locale/sv/templates/editpage.html
+%%PHPWIKI%%/locale/sv/templates/message.html
+%%PHPWIKI%%/locale/translate.sh
+%%PHPWIKI%%/pgsrc/AddingPages
+%%PHPWIKI%%/pgsrc/ConvertSpacesToTabs
+%%PHPWIKI%%/pgsrc/EditText
+%%PHPWIKI%%/pgsrc/FindPage
+%%PHPWIKI%%/pgsrc/FrontPage
+%%PHPWIKI%%/pgsrc/GoodStyle
+%%PHPWIKI%%/pgsrc/HowToUseWiki
+%%PHPWIKI%%/pgsrc/MoreAboutMechanics
+%%PHPWIKI%%/pgsrc/MostPopular
+%%PHPWIKI%%/pgsrc/PhpWiki
+%%PHPWIKI%%/pgsrc/PhpWikiAdministration
+%%PHPWIKI%%/pgsrc/RecentChanges
+%%PHPWIKI%%/pgsrc/RecentVisitors
+%%PHPWIKI%%/pgsrc/ReleaseNotes
+%%PHPWIKI%%/pgsrc/SandBox
+%%PHPWIKI%%/pgsrc/SteveWainstead
+%%PHPWIKI%%/pgsrc/TestPage
+%%PHPWIKI%%/pgsrc/TextFormattingRules
+%%PHPWIKI%%/pgsrc/WabiSabi
+%%PHPWIKI%%/pgsrc/WikiWikiWeb
+%%PHPWIKI%%/schemas/schema.minisql
+%%PHPWIKI%%/schemas/schema.mysql
+%%PHPWIKI%%/schemas/schema.psql
+%%PHPWIKI%%/schemas/update.mysql.1.2.0-1.2.1
+%%PHPWIKI%%/templates/README
+%%PHPWIKI%%/templates/browse.html
+%%PHPWIKI%%/templates/editlinks.html
+%%PHPWIKI%%/templates/editpage.html
+%%PHPWIKI%%/templates/message.html
+@dirrm %%PHPWIKI%%/admin
+@dirrm %%PHPWIKI%%/images
+@dirrm %%PHPWIKI%%/lib
+@dirrm %%PHPWIKI%%/locale/nl/LC_MESSAGES
+@dirrm %%PHPWIKI%%/locale/nl/pgsrc
+@dirrm %%PHPWIKI%%/locale/nl/templates
+@dirrm %%PHPWIKI%%/locale/nl
+@dirrm %%PHPWIKI%%/locale/po
+@dirrm %%PHPWIKI%%/locale/de/LC_MESSAGES
+@dirrm %%PHPWIKI%%/locale/de/pgsrc
+@dirrm %%PHPWIKI%%/locale/de/templates
+@dirrm %%PHPWIKI%%/locale/de
+@dirrm %%PHPWIKI%%/locale/es/LC_MESSAGES
+@dirrm %%PHPWIKI%%/locale/es/pgsrc
+@dirrm %%PHPWIKI%%/locale/es/templates
+@dirrm %%PHPWIKI%%/locale/es
+@dirrm %%PHPWIKI%%/locale/it/LC_MESSAGES
+@dirrm %%PHPWIKI%%/locale/it/pgsrc
+@dirrm %%PHPWIKI%%/locale/it/templates
+@dirrm %%PHPWIKI%%/locale/it
+@dirrm %%PHPWIKI%%/locale/sv/LC_MESSAGES
+@dirrm %%PHPWIKI%%/locale/sv/pgsrc
+@dirrm %%PHPWIKI%%/locale/sv/templates
+@dirrm %%PHPWIKI%%/locale/sv
+@dirrm %%PHPWIKI%%/locale
+@dirrm %%PHPWIKI%%/pages
+@dirrm %%PHPWIKI%%/pgsrc
+@dirrm %%PHPWIKI%%/schemas
+@dirrm %%PHPWIKI%%/templates
+@dirrm %%PHPWIKI%%
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/DBLIB.txt
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.flatfile
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.mSQL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.mssql
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.mysql
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.pgsql
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING.readme
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

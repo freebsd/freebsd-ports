@@ -1,0 +1,16 @@
+A WikiWikiWeb is a web site where anyone can edit the pages through
+an HTML form. Linking is done automatically on the server side; all
+pages are stored in a database.
+
+This may sound rather simplistic, but a Wiki is a very unique way
+to collaborate on the Web.
+
+The addictive quality of a Wiki is that making pages is as simple
+as making a link to them. If they don't yet exist, the page link
+will be followed by a hyperlinked question mark; follow that link
+and you can define the new page.
+
+With this setup, you can update and create pages from anywhere
+there is a web browser handy.
+
+WWW: http://phpwiki.sourceforge.net/phpwiki/
