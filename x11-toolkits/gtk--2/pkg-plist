@@ -191,7 +191,7 @@ lib/libgdkmm.so
 lib/libgdkmm.so.2
 lib/libgtkmm.a
 lib/libgtkmm.so
-lib/libgtkmm.so.1
+lib/libgtkmm.so.2
 share/aclocal/gtk--.m4
 @dirrm include/gdk--
 @dirrm include/gtk--/private
