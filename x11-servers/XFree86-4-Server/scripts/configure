@@ -86,7 +86,7 @@ cat >> $LOCALDEF <<END
 #elif defined(ia64Architecture)
 # define XF86CardDrivers	mga nv tdfx glint ati vga
 #elif defined(AlphaArchitecture)
-# define XF86CardDrivers	mga glint nv tga s3 s3virge rendition \
+# define XF86CardDrivers	mga glint nv tga s3 s3virge sis rendition \
 				tdfx savage cirrus ati siliconmotion vga
 #elif defined(Sparc64Architecture)
 # define XF86CardDrivers	nv ati sunffb
