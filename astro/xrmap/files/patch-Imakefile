@@ -1,7 +1,7 @@
 $FreeBSD$
 
---- Imakefile.orig	Wed Nov 28 17:05:11 2001
-+++ Imakefile	Tue Dec 25 21:51:11 2001
+--- Imakefile.orig	Thu Feb 28 08:36:28 2002
++++ Imakefile	Fri Jun  7 21:25:06 2002
 @@ -1,14 +1,16 @@
  XCOMM Should install to /usr or /usr/local ??
 -DESTDIR=/usr
@@ -21,30 +21,39 @@ $FreeBSD$
 -SHAREDIR=/share/rmap
 +SHAREDIR=$(PREFIX)/share/rmap
  
- XCOMM
- XCOMM Compile options:
-@@ -17,7 +19,7 @@
+ XCOMM Name of PostScript viewer, image viewer and default print command
+ PS_VIEWER=gv
+@@ -24,7 +26,7 @@
  #ifdef HPArchitecture
  ZLIBDIR=
  
--CCOPTIONS = -Ae -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
-+CCOPTIONS = -Ae -DZLIB -DSHAREDIR=\"$(SHAREDIR)\"
+-CCOPTIONS = -Ae -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\"
++CCOPTIONS = -Ae -DZLIB -DSHAREDIR=\"$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\"
  #else
  # SunOS
  
-@@ -27,7 +29,7 @@
+@@ -34,7 +36,7 @@
  # Solaris, Linux
  #ZLIBDIR=-L/usr/lib
  
--CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
-+CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(SHAREDIR)\"
+-CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\"
++CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\"
  #endif
  
  SRCS=xrmap.c
-@@ -53,7 +55,6 @@
- 	cp -fR i18n $(DESTDIR)$(SHAREDIR)
- 	cp -fR flags $(DESTDIR)$(SHAREDIR)
- 	cp -fR big_flags $(DESTDIR)$(SHAREDIR)
+@@ -51,7 +53,7 @@
+ ComplexProgramTarget(xrmap)
+ 
+ install.man::
+-	if [ -r $(DESTDIR)$(MANDIR)/xrmap.1x.gz ] ; \
++	if [ -r $(MANDIR)/xrmap.1x.gz ] ; \
+ 	   then gzip -f $(DESTDIR)$(MANDIR)/xrmap.1x ; fi
+ 
+ install:: install.man
+@@ -65,7 +67,6 @@
+ 	if [ -d factbook ] ; then cp -fR factbook $(DESTDIR)$(SHAREDIR) ; fi
+ 	if [ -d anthems ] ; then cp -fR anthems $(DESTDIR)$(SHAREDIR) ; fi
+ 	if [ -d hymns ] ; then cp -fR hymns $(DESTDIR)$(SHAREDIR) ; fi
 -	cat WARNING
  
  clean::
