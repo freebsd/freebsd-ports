@@ -7,6 +7,7 @@
 
 PORTNAME=	minisapserver
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	net multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/miniSAPserver/${PORTVERSION}/
 DISTNAME=	miniSAPserver-${PORTVERSION}
@@ -23,6 +24,15 @@ PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 PLIST_FILES=	bin/sapserver etc/sap.cfg-dist etc/rc.d/sapserver.sh
 USE_RC_SUBR=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
+OPTIONS=	SLP "Enable SLP support via openslp" off
+
+.if defined(WITH_SLP)
+LIB_DEPENDS+=	slp.1:${PORTSDIR}/net/openslp
+
+CONFIGURE_ARGS=	--enable-slp
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(prefix)/share/man|${MANPREFIX}/man|; \
