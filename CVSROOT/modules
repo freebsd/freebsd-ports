@@ -3473,6 +3473,7 @@ libchipcard-kde	ports/devel/libchipcard-kde
 libchk		ports/sysutils/libchk
 libcii		ports/devel/libcii
 libcomprex	ports/archivers/libcomprex
+libconnect	ports/net/libconnect
 libcoro		ports/devel/libcoro
 libdbi		ports/databases/libdbi
 libdivxdecore	ports/multimedia/libdivxdecore
