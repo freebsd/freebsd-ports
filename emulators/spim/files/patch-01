@@ -1,7 +1,6 @@
-diff -ru Imakefile.orig Imakefile
---- Imakefile.orig	Fri Sep 20 22:44:50 1996
-+++ Imakefile	Mon Feb  3 11:26:40 1997
-@@ -57,13 +57,13 @@
+--- Imakefile.orig	Sun Jan 14 20:55:15 2001
++++ Imakefile	Sun Feb 11 23:49:11 2001
+@@ -44,13 +44,13 @@
  #
  
  # Full path for directory that will hold the trap handler file:
@@ -18,12 +17,10 @@ diff -ru Imakefile.orig Imakefile
  
  
  # If you have flex, use it instead of lex.  If you use flex, define this
-@@ -291,7 +291,7 @@
+@@ -255,7 +255,7 @@
  	mv -f lex.yy.c.xx lex.yy.c
  
  depend::
 -	makedepend -w10 *.c
 +	makedepend -w10 -I$(X11BASE)/include *.c
  
- #
- # DO NOT DELETE THIS LINE -- make depend depends on it.
