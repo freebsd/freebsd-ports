@@ -37,8 +37,8 @@ post-install:
 	@${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${DOCDIR}
 .if !defined(NOPORTDOCS)
-	cd ${WRKDIR}/${DISTNAME}/Doc; tar cf - . | \
-	    (cd ${DOCDIR}; tar xf -)
+	cd ${WRKDIR}/${DISTNAME}/Doc; tar -c --exclude='*~' -f - . | \
+	    (cd ${DOCDIR}; tar -xf -)
 	@${MKDIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/Examples/* ${EXAMPLEDIR}
 .endif
