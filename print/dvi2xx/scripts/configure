@@ -169,7 +169,7 @@ then
    exit 1
 fi
 
-gftopk -v ./$GFNAME ./$PKNAME
+gftopk -verbose ./$GFNAME ./$PKNAME
 
 # Install the PK file carefully, since others may be doing the same
 # as us simultaneously.
