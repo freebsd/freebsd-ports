@@ -8,6 +8,7 @@
 
 PORTNAME=	netdude
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,6 +30,12 @@ INSTALL_SHLIB=	yes
 
 MAN1=	netdude.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+EXTRA_PATCHES=	${FILESDIR}/protocols-fddi::nd_fddi.h.patch
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|gtk-config|${GTK_CONFIG}|g" \
 		-e "s|glib-config|${GLIB_CONFIG}|g" ${WRKSRC}/configure
@@ -43,4 +50,4 @@ post-patch:
 		-e "s|->un.echo.sequence|->icmp_seq|g" \
 		${WRKSRC}/protocols/icmp/nd_icmp.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
