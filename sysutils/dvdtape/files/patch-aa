@@ -1,5 +1,5 @@
 --- Makefile.orig	Wed Nov 10 00:01:10 1999
-+++ Makefile	Tue Apr  3 19:25:13 2001
++++ Makefile	Sun Jun 10 18:30:24 2001
 @@ -1,8 +1,10 @@
 -prefix=/usr
 -BINDIR=${prefix}/bin
@@ -9,7 +9,7 @@
 +BINDIR=	${PREFIX}/bin
 +MANDIR=	${PREFIX}/man
 +CC	?=gcc
-+CFLAGS=	-O2 -D_FILE_OFFSET_BITS=64 -Wall -I${LOCALBASE}/include
++CFLAGS=	-O -D_FILE_OFFSET_BITS=64 -Wall -I${LOCALBASE}/include
 +LD	=${CC}
 +LDFLAGS=-L${LOCALBASE}/lib
 +LIBS=	-lgnugetopt
