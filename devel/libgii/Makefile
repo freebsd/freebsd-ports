@@ -60,6 +60,12 @@ EXAMPLESDIR=	share/examples/libgii
 EXAMPLES=	demos/demo.c demos/filter.c \
 		demos/mhub.c demos/xsendbut.c
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Broken pkg-plist on !i386"
+.endif
+
 post-configure:
 	@${REINPLACE_CMD} -e 's/\(deplibs\) -lc/\1/;' ${WRKSRC}/libtool
 
@@ -89,4 +95,4 @@ install-documents:
 		${INSTALL_DATA} $${i} ${PREFIX}/${DOCSDIR} ; \
 	done)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
