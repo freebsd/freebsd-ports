@@ -10,7 +10,9 @@ PORTVERSION=	110.0.7
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/release/110.0.7/ \
 		ftp://rodin.stanford.edu/pub/smlnj/release/110.0.7/ \
-		ftp://ftp.ntua.gr//pub/lang/smlnj/release/110.0.7/
+		ftp://ftp.ntua.gr//pub/lang/smlnj/release/110.0.7/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	bin.x86-unix.tar.Z cm.tar.Z cml.tar.Z \
 		config.tar.Z eXene.tar.Z \
 		ml-burg.tar.Z ml-lex.tar.Z \
@@ -18,7 +20,7 @@ DISTFILES=	bin.x86-unix.tar.Z cm.tar.Z cml.tar.Z \
 		smlnj-c.tar.Z smlnj-lib.tar.Z
 EXTRACT_ONLY=	config.tar.Z
 
-MAINTAINER=	jkoshy@freebsd.org
+MAINTAINER=	jkoshy@FreeBSD.org
 COMMENT=	A popular functional language from Bell Labs
 
 # Other mirror sites that generally carry only released versions of SML
