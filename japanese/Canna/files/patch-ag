@@ -1,18 +1,18 @@
---- cmd/catdic/Imakefile.orig	Mon Oct 29 01:41:09 2001
-+++ cmd/catdic/Imakefile	Mon Oct 29 01:42:13 2001
+--- cmd/catdic/Imakefile.orig	Thu Nov  7 23:46:02 2002
++++ cmd/catdic/Imakefile	Mon Dec  2 12:09:42 2002
 @@ -84,7 +84,7 @@
- 	$(RM) $(cannaBinDir)/chmoddic
- 	$(RM) $(cannaBinDir)/addwords
- 	$(RM) $(cannaBinDir)/delwords
--	$(RM) $(cannaBinDir)/cannakill
-+	$(RM) $(cannaSrvDir)/cannakill
- 	$(LN) $(cannaBinDir)/catdic $(cannaBinDir)/cpdic
- 	$(LN) $(cannaBinDir)/catdic $(cannaBinDir)/lsdic
- 	$(LN) $(cannaBinDir)/catdic $(cannaBinDir)/mkdic
-@@ -93,5 +93,5 @@
- 	$(LN) $(cannaBinDir)/catdic $(cannaBinDir)/syncdic
- 	$(LN) $(cannaBinDir)/catdic $(cannaBinDir)/addwords
- 	$(LN) $(cannaBinDir)/catdic $(cannaBinDir)/delwords
--	$(LN) $(cannaBinDir)/catdic $(cannaBinDir)/cannakill
-+	$(LN) $(cannaBinDir)/catdic $(cannaSrvDir)/cannakill
+ 	$(RM) $(DESTDIR)$(cannaBinDir)/chmoddic
+ 	$(RM) $(DESTDIR)$(cannaBinDir)/addwords
+ 	$(RM) $(DESTDIR)$(cannaBinDir)/delwords
+-	$(RM) $(DESTDIR)$(cannaBinDir)/cannakill
++	$(RM) $(DESTDIR)$(cannaSrvDir)/cannakill
+ 	$(LN) $(DESTDIR)$(cannaBinDir)/catdic $(DESTDIR)$(cannaBinDir)/cpdic
+ 	$(LN) $(DESTDIR)$(cannaBinDir)/catdic $(DESTDIR)$(cannaBinDir)/lsdic
+ 	$(LN) $(DESTDIR)$(cannaBinDir)/catdic $(DESTDIR)$(cannaBinDir)/mkdic
+@@ -94,5 +94,5 @@
+ 	$(LN) $(DESTDIR)$(cannaBinDir)/catdic $(DESTDIR)$(cannaBinDir)/chmoddic
+ 	$(LN) $(DESTDIR)$(cannaBinDir)/catdic $(DESTDIR)$(cannaBinDir)/addwords
+ 	$(LN) $(DESTDIR)$(cannaBinDir)/catdic $(DESTDIR)$(cannaBinDir)/delwords
+-	$(LN) $(DESTDIR)$(cannaBinDir)/catdic $(DESTDIR)$(cannaBinDir)/cannakill
++	$(LN) $(DESTDIR)$(cannaBinDir)/catdic $(DESTDIR)$(cannaSrvDir)/cannakill
  #endif
