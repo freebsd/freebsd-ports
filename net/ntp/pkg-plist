@@ -46,6 +46,7 @@ bin/tickadj
 %%PORTDOCS%%share/doc/ntp/driver37.htm
 %%PORTDOCS%%share/doc/ntp/driver38.htm
 %%PORTDOCS%%share/doc/ntp/driver39.htm
+%%PORTDOCS%%share/doc/ntp/driver40.htm
 %%PORTDOCS%%share/doc/ntp/driver4.htm
 %%PORTDOCS%%share/doc/ntp/driver5.htm
 %%PORTDOCS%%share/doc/ntp/driver6.htm
@@ -65,6 +66,7 @@ bin/tickadj
 %%PORTDOCS%%share/doc/ntp/hints/freebsd
 %%PORTDOCS%%share/doc/ntp/hints/hpux
 %%PORTDOCS%%share/doc/ntp/hints/linux
+%%PORTDOCS%%share/doc/ntp/hints/mpeix
 %%PORTDOCS%%share/doc/ntp/hints/notes-xntp-v3
 %%PORTDOCS%%share/doc/ntp/hints/parse
 %%PORTDOCS%%share/doc/ntp/hints/refclocks
