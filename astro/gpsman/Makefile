@@ -18,13 +18,14 @@ MAINTAINER=	david@catwhisker.org
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
+USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 # MAN1=		gpsman.1
 # MANCOMPRESSED=	yes
 
 pre-install:
-	@${PERL} -pi -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/gpsman.tcl
+	@${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/gpsman.tcl
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/gpsman
