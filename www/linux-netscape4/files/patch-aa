@@ -1,5 +1,5 @@
 --- ns-install.orig	Tue Nov  3 22:27:09 1998
-+++ ns-install	Sat Jan  9 15:15:11 1999
++++ ns-install	Wed Jan 27 18:16:33 1999
 @@ -120,6 +120,7 @@
  # Even though the user has already used gzip to extract the file (or
  # we wouldn't be here), make sure we can find it.
@@ -33,6 +33,25 @@
 -		chmod 644 ${HOME}/.netscape/bookmarks.html
 -		echo "${HOME}/.netscape/bookmarks.html" >> ${LOGFILE}
 -	fi
+ fi
+ 
+ echo ""
+@@ -393,18 +386,6 @@
+ then
+ 	echo "ERROR: Installation completed, but unable to update/create the product"
+ 	echo "       version registry."
+-	echo ""
+-	echo "       If you are installing ${PRODUCT} from a platform other than"
+-	echo "       that for which this package is intended, 'vreg' will not be"
+-	echo "       able to run.  If this is the case, you may run 'vreg' manually"
+-	echo "       (to enable ASD) on the appropriate platform using the following"
+-	echo "       commands:"
+-	echo ""
+-	awk '{printf("\techo \"%s\" >>/tmp/infile\n", $0)}' ${REG_INFILE}
+-	echo "	${TARGET}/vreg ${TARGET}/${VREGISTRY} /tmp/infile"
+-	echo ""
+-	/bin/rm -f ns-install ${PACKAGE} ${REG_INFILE} core
+-	exit 3
  fi
  
  echo ""
