@@ -9,7 +9,7 @@
 DISTNAME=	bidwatcher-1.0.3b
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://www.low-fi.com/bw/download/
+		http://people.FreeBSD.org/~mph/distfiles/
 MASTER_SITE_SUBDIR=	apps/misc
 
 MAINTAINER=	andrews@technologist.com
