@@ -55,8 +55,8 @@ $NoId = "
 $NoName = "
 %s - The ID line should contain only \"\$\FreeBSD\$\" for a newly created file.\n";
 
-$DelPath = "
-%s - The old path and version has been deleted from \$\FreeBSD\$.\n";
+#$DelPath = "
+#%s - The old path and version has been deleted from \$\FreeBSD\$.\n";
 
 $BadId = "%s - The \$\FreeBSD\$ is mangled.\n";
 
@@ -120,13 +120,14 @@ sub check_version {
 	return(0);
     }
     if ($bareid) {
-	if ($directory =~ /^ports\//) {
-	    return (0);	# ok for ports
-	}
-	# Don't know whether to allow or trap this.  It means one could
-	# bypass the version spam checks by simply using a bare tag.
-	printf($DelPath, $filename);
-	return(1);
+	return (0);
+#	if ($directory =~ /^ports\//) {
+#	    return (0);	# ok for ports
+#	}
+#	# Don't know whether to allow or trap this.  It means one could
+#	# bypass the version spam checks by simply using a bare tag.
+#	printf($DelPath, $filename);
+#	return(1);
     }
     if ($rname ne "$directory/$filename,v") {
 	# If ports and the pathname is just the basename (eg: somebody sent
