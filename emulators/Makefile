@@ -81,6 +81,7 @@
     SUBDIR += xpinmame
     SUBDIR += xsystem35
     SUBDIR += xzx
+    SUBDIR += yape
     SUBDIR += zsnes
 
 .include <bsd.port.subdir.mk>
