@@ -9,7 +9,7 @@ PORTNAME=	libao
 PORTVERSION=	0.8.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.xiph.org/ogg/vorbis/download/ \
-		http://www.vorbis.com/files/rc2/unix/ \
+		http://www.vorbis.com/files/rc3/unix/ \
 		http://www.oddsock.org/vorbisrc3/files/rc3/unix/
 
 MAINTAINER=	naddy@FreeBSD.org
