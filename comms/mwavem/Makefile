@@ -41,7 +41,7 @@ LTHREADVERSION=	3
 LIB_DEPENDS=	lthread.${LTHREADVERSION}:${PORTSDIR}/devel/linuxthreads
 
 pre-build:
-	${REINPACE_CMD} -e "s@ /modules@ ${PREFIX}/share/mwavem@g" \
+	${REINPLACE_CMD} -e "s@ /modules@ ${PREFIX}/share/mwavem@g" \
 		${WRKSRC}/src/drivers/Makefile
 	${REINPLACE_CMD} -e "s@#include .malloc.h.@@g" \
 		${WRKSRC}/src/mwmbl/mwblapi.c \
