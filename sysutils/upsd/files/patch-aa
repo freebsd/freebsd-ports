@@ -1,0 +1,12 @@
+--- Makefile.orig	Mon Feb 23 17:32:56 1998
++++ Makefile	Mon Feb 23 17:33:50 1998
+@@ -8,8 +8,7 @@
+ 
+ PROG=	upsd
+ 
+-BINDIR=	/usr/local/sbin
+-MANDIR=	/usr/local/share/man
++BINDIR=	${PREFIX}/sbin
+ NOMAN=	noway
+ 
+ #DEBUG=	-g -DDEBUG
