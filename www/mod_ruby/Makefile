@@ -8,7 +8,7 @@
 PORTNAME=	mod_ruby
 PORTVERSION=	${VERSION}
 CATEGORIES=	www ruby
-MASTER_SITES=	http://www.ruby-lang.org/~shugo/mod_ruby/
+MASTER_SITES=	http://www.modruby.net/archive/
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
