@@ -357,6 +357,7 @@
     SUBDIR += kdevelop
     SUBDIR += kimwitu
     SUBDIR += kimwitu++
+    SUBDIR += klassmodeler
     SUBDIR += kodos
     SUBDIR += korelib
     SUBDIR += kprof
