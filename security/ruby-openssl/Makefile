@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.0.8
+PORTVERSION=	0.0.9
 CATEGORIES=	security ruby
 MASTER_SITES=	http://klokan.sh.cvut.cz/~rokosm/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
