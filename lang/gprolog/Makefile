@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	yotta@dougdidit.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free Prolog compiler developed by Daniel Diaz
 
 BROKEN=		"Does not build"
