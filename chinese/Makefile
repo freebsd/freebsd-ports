@@ -34,6 +34,7 @@
     SUBDIR += nvi-euc-tw
     SUBDIR += pine3
     SUBDIR += pine4
+    SUBDIR += pyDict
     SUBDIR += rxvt
     SUBDIR += stardict
     SUBDIR += ted

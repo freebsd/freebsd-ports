@@ -1,0 +1,38 @@
+--- dict.py.orig	Wed Oct  4 14:37:47 2000
++++ dict.py	Wed Oct  4 15:03:58 2000
+@@ -252,7 +252,7 @@
+     def execute(self,word):	# English to Chinese
+ 		# move self.index to top
+ 		self.index = 0
+-		command = g_command + ' --after-context=20 "^' + word + '.*=.*$" ' + dict_path + lower(word[0]) + '.lib' + '|awk "NR < 19 "'
++		command = g_command + ' -A 20 "^' + word + '.*=.*$" ' + dict_path + lower(word[0]) + '.lib' + '|awk "NR < 19 "'
+ 		result_lines = os.popen(command,'r').readlines()
+ 		#if result_lines:
+ 		if result_lines:
+@@ -488,7 +488,7 @@
+ 
+ def console_e_dict(input=None):
+ 	#set up g_command
+-	g_command = '/bin/grep --ignore-case'
++	g_command = '/usr/bin/grep --ignore-case'
+ 	if input == None:
+ 		inp = raw_input('word:')
+ 	else:
+@@ -532,7 +532,7 @@
+ 
+ def console_c_dict(input=None):
+ 	#set up g_command
+-	g_command = '/bin/grep '
++	g_command = '/usr/bin/grep '
+ 	if input == None:
+ 		inp = raw_input('word:')
+ 	else:
+@@ -603,7 +603,7 @@
+ 	print 'type -e to English-Chinese mode'
+ 
+     # set up grep command
+-    g_command = '/bin/grep --ignore-case'
++    g_command = '/usr/bin/grep --ignore-case'
+     dict_path = '/usr/X11R6/lib/X11/pyDict/'
+ 
+     # check if there is an DISPLAY environment variable

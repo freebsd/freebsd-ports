@@ -1,0 +1,36 @@
+bin/pydict
+lib/X11/pyDict/HELP
+lib/X11/pyDict/gtkrc.zh_TW.big5.sample
+lib/X11/pyDict/a.lib
+lib/X11/pyDict/b.lib
+lib/X11/pyDict/c.lib
+lib/X11/pyDict/d.lib
+lib/X11/pyDict/dict.xpm
+lib/X11/pyDict/e.lib
+lib/X11/pyDict/f.lib
+lib/X11/pyDict/g.lib
+lib/X11/pyDict/h.lib
+lib/X11/pyDict/i.lib
+lib/X11/pyDict/j.lib
+lib/X11/pyDict/k.lib
+lib/X11/pyDict/l.lib
+lib/X11/pyDict/m.lib
+lib/X11/pyDict/n.lib
+lib/X11/pyDict/o.lib
+lib/X11/pyDict/p.lib
+lib/X11/pyDict/q.lib
+lib/X11/pyDict/r.lib
+lib/X11/pyDict/s.lib
+lib/X11/pyDict/t.lib
+lib/X11/pyDict/u.lib
+lib/X11/pyDict/v.lib
+lib/X11/pyDict/w.lib
+lib/X11/pyDict/x.lib
+lib/X11/pyDict/y.lib
+lib/X11/pyDict/yaba.xpm
+lib/X11/pyDict/z.lib
+share/doc/pyDict/CHANGELOG
+share/doc/pyDict/COPYING
+share/doc/pyDict/README
+@dirrm lib/X11/pyDict
+@dirrm share/doc/pyDict
