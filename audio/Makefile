@@ -100,6 +100,7 @@
     SUBDIR += gsm
     SUBDIR += holyshout
     SUBDIR += icecast
+    SUBDIR += icecast2
     SUBDIR += id3ed
     SUBDIR += id3el
     SUBDIR += id3lib
@@ -118,6 +119,7 @@
     SUBDIR += libmikmod
     SUBDIR += libogg
     SUBDIR += libshout
+    SUBDIR += libshout2
     SUBDIR += libsidplay
     SUBDIR += libsidplay2
     SUBDIR += libsndfile
