@@ -12,7 +12,9 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://www.voxilla.org/pub/bayonne/
 MASTER_SITE_SUBDIR=	../old-gnu/bayonne
 
-MAINTAINER=	dyfet@gnu.org
+MAINTAINER=	ports@FreeBSD.org
+
+BROKEN=		"Port is outdated and there is no known working Hardware for FreeBSD > 4.4"
 
 LIB_DEPENDS=	ccstd-1.4.0:${PORTSDIR}/devel/commoncpp \
 		ccscript-1.4.0:${PORTSDIR}/lang/ccscript \
