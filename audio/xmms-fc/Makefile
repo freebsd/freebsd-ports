@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xmms-fc
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/mod/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dyeske@yahoo.com
 
