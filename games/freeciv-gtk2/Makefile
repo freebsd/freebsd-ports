@@ -13,12 +13,10 @@ MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable_version/ \
 
 MAINTAINER=	ada@bsd.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		Imlib.4:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+CONFIGURE_ARGS=	--disable-gtktest
 
 .include <bsd.port.mk>
