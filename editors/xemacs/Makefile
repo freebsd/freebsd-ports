@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
 DISTNAME=	xemacs-${XEMACS_VER}
 DIST_SUBDIR=	xemacs
 
-MAINTAINER?=	anray@inet.ua
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	This port tracks the stable version of the XEmacs text editor
 
 NOT_FOR_ARCHS=	sparc64

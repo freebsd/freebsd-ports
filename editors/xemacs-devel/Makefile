@@ -14,7 +14,7 @@ DISTNAME=	xemacs-${XEMACS_VER:S/-b/./}
 #DISTFILES=	${DISTNAME}.11${EXTRACT_SUFX}
 DIST_SUBDIR=	xemacs
 
-MAINTAINER=	anray@inet.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This port tracks the development (GAMMA) version of the XEmacs text editor
 
 NOT_FOR_ARCHS=	sparc64
