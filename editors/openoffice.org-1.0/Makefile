@@ -23,7 +23,7 @@ DISTFILES=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z \
 .if defined(USE_GCC) && ${USE_GCC} == 2.95
 DISTFILES+=	oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc2.95-ports.tar.gz
 .else
-DISTFILES+=	oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc3.1-system.gz
+DISTFILES+=	oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc3.1-system.tar.gz
 .endif
 .else
 .if defined(USE_GCC) && ${USE_GCC} == 3.1
@@ -55,7 +55,7 @@ EXTRACT_CMD_R= ${GZIP_CMD}
 .if defined(USE_GCC) && ${USE_GCC} == 2.95
 EXTRACT_REST=	gpc231.tar.Z oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc2.95-ports.tar.gz
 .else
-EXTRACT_REST=	gpc231.tar.Z oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc3.1-system.gz
+EXTRACT_REST=	gpc231.tar.Z oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc3.1-system.tar.gz
 .endif
 .else
 .if defined(USE_GCC) && ${USE_GCC} == 3.1
