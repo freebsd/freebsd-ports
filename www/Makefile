@@ -323,6 +323,7 @@
     SUBDIR += wwwoffle
     SUBDIR += wwwstat
     SUBDIR += wyvern
+    SUBDIR += xist
     SUBDIR += xitami
     SUBDIR += xswallow
     SUBDIR += znavigator
