@@ -1,0 +1,37 @@
+--- Makefile.orig	Sun Nov 24 04:21:27 2002
++++ Makefile	Sun Nov 24 04:24:30 2002
+@@ -9,17 +9,14 @@
+ # To facilitate packaging- leave blank for normal installation
+ DESTDIR =
+ 
+-# This should point to the GKrellM headers
+-GKRELLM_HDRS = /usr/include
+-
+ CC := gcc
+ GTKFLAGS := $(shell pkg-config gtk+-2.0 --cflags)
+-CFLAGS := $(CFLAGS) -fPIC -Wall $(GTKFLAGS) -I$(GKRELLM_HDRS)
++CFLAGS := $(CFLAGS) -fPIC -Wall $(GTKFLAGS)
+ LDFLAGS := -shared -Wl
+-INST_DIR := $(DESTDIR)/usr/lib/gkrellm2/plugins
++INST_DIR=${PREFIX}/libexec/gkrellm2/plugins
+ USER_INST_DIR := $(DESTDIR)$(HOME)/.gkrellm2/plugins
+ MANPAGES := gkrellkam-list.5
+-MANPAGE_DIR := $(DESTDIR)/usr/share/man/man5
++MANPAGE_DIR=${PREFIX}/man/man5
+ 
+ .PHONY: clean install
+ 
+@@ -32,9 +29,10 @@
+ 	-rm -f $(TARGET).so $(TARGET).o
+ 
+ install:
+-	mkdir -p $(INST_DIR)
+-	cp -f $(TARGET).so $(INST_DIR)
+-	cp -f $(MANPAGES) $(MANPAGE_DIR)
++	${MKDIR} ${INST_DIR}
++	${INSTALL_DATA} ${TARGET}.so ${INST_DIR}
++	${MKDIR} ${MANPAGE_DIR}
++	${INSTALL_DATA} ${MANPAGES} ${MANPAGE_DIR}
+ 
+ userinstall:
+ 	mkdir -p $(USER_INST_DIR)
