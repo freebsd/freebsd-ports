@@ -86,6 +86,7 @@
     SUBDIR += p5-Mail-Bulkmail
     SUBDIR += p5-Mail-CClient
     SUBDIR += p5-Mail-Ezmlm
+    SUBDIR += p5-Mail-FilterXML
     SUBDIR += p5-Mail-Folder
     SUBDIR += p5-Mail-IMAPClient
     SUBDIR += p5-Mail-POP3Client
