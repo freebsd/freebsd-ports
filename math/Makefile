@@ -171,6 +171,7 @@
     SUBDIR += pari
     SUBDIR += pari-devel
     SUBDIR += parmetis
+    SUBDIR += petsc
     SUBDIR += php4-bcmath
     SUBDIR += php4-gmp
     SUBDIR += php5-bcmath

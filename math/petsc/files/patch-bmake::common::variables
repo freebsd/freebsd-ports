@@ -1,0 +1,20 @@
+--- ./bmake/common/variables.orig	Sat Oct  2 09:13:28 2004
++++ ./bmake/common/variables	Thu Oct  7 22:58:14 2004
+@@ -32,7 +32,7 @@
+ #
+ # The following variables define PETSc compile procedures
+ #
+-PETSC_COMPILE         = ${CC} -c ${COPTFLAGS} ${CFLAGS} ${CCPPFLAGS} ${SOURCEC} ${SSOURCE}
++PETSC_COMPILE         = ${CC} -c ${COPTFLAGS} ${CFLAGS} ${CCPPFLAGS} ${CPPFLAGS} ${SOURCEC} ${SSOURCE}
+ PETSC_COMPILE_SINGLE  = ${CC} -c ${COPTFLAGS} ${CFLAGS} ${CCPPFLAGS} 
+ PETSC_COMPILE_LIBTOOL = files="${SOURCEC} ${SSOURCE}"; \
+                         for filename in $$files; do \
+@@ -122,7 +122,7 @@
+                 ${PETSC_HAVE_PNETCDF}     ${PETSC_HAVE_HDF4}       ${PETSC_HAVE_ML}\
+                 ${PETSC_HAVE_CHACO}       ${PETSC_HAVE_JOSTLE}     ${PETSC_HAVE_PARTY}   ${PETSC_HAVE_SCOTCH}
+ 
+-EXTERNAL_LIB  = ${MPE_LIB}                ${BLOCKSOLVE_LIB}        ${PVODE_LIB}          ${PARMETIS_LIB} \
++EXTERNAL_LIB  = ${MPE_LIB}                ${PARMETIS_LIB}          ${PVODE_LIB}          ${BLOCKSOLVE_LIB} \
+                 ${AMS_LIB}                ${SPAI_LIB}              ${X11_LIB}            ${MATLAB_LIB}   \
+                                                                    ${LUSOL_LIB}          ${DSCPACK_LIB} \
+                 ${RAMG_LIB}               ${TAU_LIB}                                     ${ADIFOR_LIB} \
