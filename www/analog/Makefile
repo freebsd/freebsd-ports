@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	analog
-PORTVERSION=	5.01
+PORTVERSION=	5.03
 CATEGORIES=	www
 MASTER_SITES=	http://www.analog.cx/ \
 		http://www.monash.edu.au/mirror/analog/ \
@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.analog.cx/ \
 		http://www.pomfret.net/mirror/analog/ \
 		http://analog.org/loganalysis/ \
 		http://www.skreamsoft.com/analogmirror/ \
+		http://sunsite.org.uk/packages/analog/ \
 
 MAINTAINER=	mharo@FreeBSD.org
 
