@@ -6,32 +6,28 @@
 #
 
 PORTNAME=	jmeter
-PORTVERSION=	1.8
-PORTREVISION=	4
+PORTVERSION=	1.8.1
 CATEGORIES=	www benchmarks java
-MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-jmeter/release/v${PORTVERSION}/ \
-		http://www.metaverse.nl/~ernst/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	znerd
+MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
+MASTER_SITE_SUBDIR=	jakarta-jmeter/release/v${PORTVERSION:C/([1-9]\.[0-9][0-9]*).*/\1/}
 PKGNAMEPREFIX=	jakarta-
-DISTNAME=	ApacheJMeter_${PORTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Functional behaviour load and performance test application
 
-USE_JAVA=	1.2+
+USE_JAVA=	1.3+
 NO_BUILD=	yes
-APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}
+APP_HOME?=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
-WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
-WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 REPLACE_FILES=	${FILESDIR}/jmeter
 
 .include <bsd.port.pre.mk>
 
 post-patch:
 	@${ECHO_CMD} -n ">> Removing unneeded files..."
-	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'`
+	@${FIND} ${WRKSRC} -type f \( -name \*.bat -o -name \*.orig -o -name \*.exe -o -name \*.bak \) -delete
 	@${ECHO_CMD} " [ DONE ]"
 
 .for f in ${REPLACE_FILES}
