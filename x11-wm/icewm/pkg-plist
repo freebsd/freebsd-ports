@@ -5,6 +5,7 @@ bin/icewm
 %%GNOME:%%bin/icewm-menu-gnome1
 bin/icewmbg
 bin/icewmhint
+bin/icewmtray
 %%PORTDOCS%%share/doc/icewm/CHANGES
 %%PORTDOCS%%share/doc/icewm/FAQ
 %%PORTDOCS%%share/doc/icewm/INSTALL
@@ -103,7 +104,6 @@ share/icewm/mailbox/nomail.xpm
 share/icewm/mailbox/unreadmail.xpm
 share/icewm/menu
 share/icewm/preferences
-share/icewm/programs
 share/icewm/taskbar/bsd-daemon.xpm
 share/icewm/taskbar/debian.xpm
 share/icewm/taskbar/icewm.xpm
@@ -328,6 +328,7 @@ share/locale/hr/LC_MESSAGES/icewm.mo
 share/locale/hu/LC_MESSAGES/icewm.mo
 share/locale/it/LC_MESSAGES/icewm.mo
 share/locale/ja/LC_MESSAGES/icewm.mo
+share/locale/ko/LC_MESSAGES/icewm.mo
 share/locale/lt/LC_MESSAGES/icewm.mo
 share/locale/nl/LC_MESSAGES/icewm.mo
 share/locale/no/LC_MESSAGES/icewm.mo
@@ -338,7 +339,7 @@ share/locale/ru/LC_MESSAGES/icewm.mo
 share/locale/sl/LC_MESSAGES/icewm.mo
 share/locale/sv/LC_MESSAGES/icewm.mo
 share/locale/uk/LC_MESSAGES/icewm.mo
-share/locale/zh_CN.gb2312/LC_MESSAGES/icewm.mo
+share/locale/zh_CN/LC_MESSAGES/icewm.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/icewm.mo
 @dirrm share/icewm/themes/win95
 @dirrm share/icewm/themes/warp4

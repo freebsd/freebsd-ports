@@ -6,27 +6,26 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION=	1.2.7
-PORTREVISION=	1
+PORTVERSION=	1.2.8
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Manager designed for speed, usability and consistency
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
+USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=	253
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--disable-xfreetype \
-		--with-cfgdir=${PREFIX}/share/icewm \
-		--with-libdir=${PREFIX}/share/icewm \
+		--with-cfgdir=${DATADIR} \
+		--with-libdir=${DATADIR} \
 		--with-kdedatadir=${LOCALBASE}/share \
 		--with-docdir=${PREFIX}/share/doc \
 		--with-mkfontdir=${NONEXISTENT}
@@ -36,14 +35,14 @@ CONFIGURE_ARGS=	--disable-xfreetype \
 .if ${HAVE_GNOME:Mgnomelibs}!=""
 .undef HAVE_ESOUND
 USE_GNOME+=	gnomelibs
-CONFIGURE_ARGS+=	--with-imlib --without-xpm --with-gnome-menus \
+CONFIGURE_ARGS+=	--with-imlib --without-xpm --enable-menus-gnome1 \
 			--enable-guievents --with-icesound=esound
 INSTALL_TARGET=		install install-gnome
 PLIST_SUB+=	ESOUND=""
 PKGNAMESUFFIX=	-gnome
 .else
 USE_XPM=	yes
-CONFIGURE_ARGS+=	--without-imlib --with-xpm --without-gnome-menus
+CONFIGURE_ARGS+=	--without-imlib --with-xpm
 .if ${HAVE_GNOME:Mesound}!=""
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--enable-guievents --with-icesound=esound
