@@ -14,7 +14,9 @@ DISTFILES=	imaze1.3.tar.Z imaze.tar
 
 MAINTAINER=	kuehn@rz.tu-clausthal.de
 
+.if !defined(HAVE_MOTIF) && !defined(MOTIFLIB)
 LIB_DEPENDS=	xview\\.3\\.2:${PORTSDIR}/x11/xview-lib
+.endif
 
 EXTRACT_ONLY=	imaze1.3.tar.Z
 NO_CONFIGURE=	yes
