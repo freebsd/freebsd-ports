@@ -6,12 +6,12 @@
 #
 
 PORTNAME=		landscape
-PORTVERSION=		0.6
+PORTVERSION=		0.7
 CATEGORIES=		graphics kde
 MASTER_SITES=		http://www.witchspace.com/files/
 
 MAINTAINER=		jon@witchspace.com
-COMMENT=	A program for generating and rendering landscapes
+COMMENT=		A program for generating and rendering fractal landscapes
 
 USE_MESA=		yes
 USE_KDELIBS_VER=	3
