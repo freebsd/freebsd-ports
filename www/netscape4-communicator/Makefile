@@ -23,7 +23,7 @@ NO_FILTER_SHLIBS=	yes
 STRIP=
 WRKSRC?=	${WRKDIR}/${BROWSER}-v408.x86-unknown-freebsd
 PKGDIR=		${.CURDIR}/pkg
-PKGREQ=		${MASTERDIR}/pkg/REQ
+PKGREQ?=	${MASTERDIR}/pkg/REQ
 
 AUTOADMIN?=	autoadmin-v408.x86-unknown-freebsd.tar.gz
 BROWSER?=	communicator

@@ -18,6 +18,9 @@ RUN_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base
 
 WRKSRC=		${WRKDIR}/${BROWSER}-v47.x86-unknown-linux2.0
 
+# use fake shell REQ script, since we don't require X aout libs.
+PKGREQ=		${.CURDIR}/pkg/REQ
+
 MAILCAP=	${.CURDIR}/files/mailcap
 NSUBDIR=	lib/netscape-linux
 
