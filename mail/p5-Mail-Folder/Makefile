@@ -3,7 +3,7 @@
 # Date created:				October 24th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.10 1998/05/07 16:16:53 vanilla Exp $
+# $Id: Makefile,v 1.11 1998/08/23 03:05:11 jseger Exp $
 #
 
 DISTNAME=	MailFolder-0.07
@@ -14,12 +14,12 @@ MASTER_SITE_SUBDIR=	Mail
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${PREFIX}/lib/perl5/site_perl/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${PREFIX}/lib/perl5/site_perl/File/Sync.pm:${PORTSDIR}/devel/p5-File-Sync
-RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${PREFIX}/lib/perl5/site_perl/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${PREFIX}/lib/perl5/site_perl/File/Sync.pm:${PORTSDIR}/devel/p5-File-Sync
+BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
+		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/File/Sync.pm:${PORTSDIR}/devel/p5-File-Sync
+RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
+		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/File/Sync.pm:${PORTSDIR}/devel/p5-File-Sync
 
 USE_PERL5=	YES
 
