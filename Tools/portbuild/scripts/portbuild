@@ -1,11 +1,12 @@
 #!/bin/sh
 
-# usage: $0 BRANCH [-noclean] PKGNAME.tgz DIRNAME [DEPENDENCY.tgz ...]
+# usage: $0 BRANCH [-noclean] [-norestr] [-noplistcheck] [-nodummy] PKGNAME.tgz DIRNAME [DEPENDENCY.tgz ...]
 
 master=bento
 
 export BATCH=t
-export NO_RESTRICTED=t
+export BATCH=t
+#export NO_RESTRICTED=t
 #export FOR_CDROM=t
 export USA_RESIDENT=YES
 #export FORCE_PKG_REGISTER=t
@@ -15,10 +16,13 @@ export PACKAGE_BUILDING=t
 export WRKDIRPREFIX=/tmp
 #export PKG_NOCOMPRESS=t
 # to catch missing dependencies
-export DEPENDS_TARGET=/usr/bin/true
+#export DEPENDS_TARGET=/usr/bin/true
 # don't pass -j, -k etc. to sub-makes
 unset MAKEFLAGS
 unset PORTSDIR
+# to prevent runaway processes -- 256 meg file size limit, one hour CPU limit
+ulimit -f 524288
+ulimit -t 3600
 
 # directories to clean
 cleandirs="/usr/local /usr/X11R6 /compat"
@@ -31,6 +35,7 @@ export HTTP_TIMEOUT=900
 unset DISPLAY
 
 export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/X11R6/bin:.
+#export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/X11R6/bin:/usr/pkg/bin:.
 
 buildroot=/a/asami/portbuild
 
@@ -42,17 +47,42 @@ if [ "x$1" = "x-noclean" ]; then
   noclean=1
   shift
 fi
+norestr=0
+if [ "x$1" = "x-norestr" ]; then
+  norestr=1
+  export NO_RESTRICTED=t
+  shift
+fi
+noplistcheck=0
+if [ "x$1" = "x-noplistcheck" ]; then
+  noplistcheck=1
+  export NOPLISTCHECK=t
+  shift
+fi
+nodummy=0
+if [ "x$1" = "x-nodummy" ]; then
+  nodummy=1
+  export NODUMMY=t
+  export MOTIF_OPEN=t
+  export XFREE86_VERSION=4
+  shift
+fi
 
 case ${branch} in
+  5*)
+    export OSREL=5.0
+    export OSVERSION=500011
+    # export PORTOBJFORMAT=elf
+    ;;
   4*)
-    export OSREL=4.0
-    export OSVERSION=400009
-    export PORTOBJFORMAT=elf
+    # export OSREL=4.0
+    # export OSVERSION=400018
+    # export PORTOBJFORMAT=elf
     ;;
   3*)
-#    export OSREL=3.3
-#    export OSVERSION=330000
-#    export PORTOBJFORMAT=elf
+    export OSREL=3.5
+    export OSVERSION=350001
+    # export PORTOBJFORMAT=elf
     ;;
   *)
     export OSREL=2.2.8
@@ -139,6 +169,7 @@ done
 
 rm -rf ${chroot}/var/db/pkg/*
 
+chroot ${chroot} /sbin/ldconfig -m /usr/lib/compat
 chroot ${chroot} /sbin/ldconfig -R
 chroot ${chroot} /sbin/ldconfig -aout -m /usr/lib/aout
 chroot ${chroot} /sbin/ldconfig -aout -m /usr/lib/compat/aout
@@ -160,20 +191,36 @@ scp -p ${master}:${buildroot}/scripts/buildscript ${chroot}
 
 #mount_procfs procfs ${chroot}/proc
 
-chroot ${chroot} /buildscript ${dirname} 2>&1 | tee -a ${chroot}/tmp/${pkgname}.log
+# phase 1, make checksum
+chroot ${chroot} /buildscript ${dirname} 1 2>&1 | tee -a ${chroot}/tmp/${pkgname}.log
 error=$(cat ${chroot}/tmp/status)
 
-scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/logs/${pkgname}.log
-
 if [ "${error}" = 0 ]; then
-  tar -C ${chroot}/tmp -cf - distfiles | \
-    ssh -a $master tar --unlink -C ${buildroot} -xvf -
-  tar -C ${chroot}/tmp -cf - packages | \
-    ssh -a $master tar --unlink -C ${buildroot}/${branch} -xvf -
-  ssh -a $master touch ${buildroot}/${branch}/packages/All/${pkgname}.tgz
-  ssh $master rm -f ${buildroot}/${branch}/errors/${pkgname}.log
+# make checksum succeeded
+  ssh -a $master mkdir -p ${buildroot}/distfiles/.pbtmp/${pkgname}
+  tar -C ${chroot}/tmp/distfiles -cf - . | \
+    ssh -a $master tar --unlink -C ${buildroot}/distfiles/.pbtmp/${pkgname} -xvf -
+  ssh -a $master touch ${buildroot}/distfiles/.pbtmp/${pkgname}/.done
+
+# phase 2, make package
+  chroot ${chroot} /buildscript ${dirname} 2 > ${chroot}/tmp/${pkgname}.log2 2>&1
+  cat ${chroot}/tmp/${pkgname}.log2 >> ${chroot}/tmp/${pkgname}.log
+  rm ${chroot}/tmp/${pkgname}.log2
+  scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/logs/${pkgname}.log
+  error=$(cat ${chroot}/tmp/status)
+
+  if [ "${error}" = 0 ]; then
+    tar -C ${chroot}/tmp -cf - packages | \
+      ssh -a $master tar --unlink -C ${buildroot}/${branch} -xvf -
+    ssh -a $master [ -f ${buildroot}/${branch}/packages/All/${pkgname}.tgz ] '&&' touch ${buildroot}/${branch}/packages/All/${pkgname}.tgz
+    ssh $master rm -f ${buildroot}/${branch}/errors/${pkgname}.log
+  else
+    scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/errors/${pkgname}.log
+  fi
+
 else
   scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/errors/${pkgname}.log
+  scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/logs/${pkgname}.log
 fi
 
 #umount ${chroot}/proc
