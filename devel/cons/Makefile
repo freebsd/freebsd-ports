@@ -1,6 +1,6 @@
 # New ports collection makefile for:	cons
 # Date created:		11 December 1998
-# Whom:			rv@dsmit.com
+# Whom:			rv@gnu.org
 #
 # $FreeBSD$
 #
