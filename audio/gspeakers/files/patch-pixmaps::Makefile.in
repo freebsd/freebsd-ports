@@ -1,0 +1,11 @@
+--- pixmaps/Makefile.in.orig	Thu Dec 11 21:22:40 2003
++++ pixmaps/Makefile.in	Thu Dec 11 21:23:25 2003
+@@ -130,7 +130,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-pixmapdir = $(datadir)/pixmaps
++pixmapdir = $(datadir)/pixmaps/gspeakers
+ pixmap_DATA = driver_small.png filter_small.png measure_small.png \
+ 			  speaker_small.png stock_menu_about.png \
+ 			  stock_new_driver_16.png stock_new_driver_24.png \

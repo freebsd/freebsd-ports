@@ -1,0 +1,11 @@
+--- xml/Makefile.in.orig	Thu Dec 11 21:22:40 2003
++++ xml/Makefile.in	Thu Dec 11 21:24:11 2003
+@@ -130,7 +130,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-xmldir = $(datadir)/xml
++xmldir = $(datadir)/xml/gspeakers
+ xml_DATA = box1.xml crossover1.xml vifa.xml seasl21rn4xp.frf \
+ 			  seasl14rcyp.frf morelmdt32s.frf seast14rcyph.frf \
+ 			  vifap21wo-20-08.frf vifad27tg-05-06.frf \
