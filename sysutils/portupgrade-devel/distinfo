@@ -2,3 +2,5 @@ MD5 (pkgtools-20040208.tar.bz2) = 7d8ba8b4b23049cb4c2a23b8403932e2
 SIZE (pkgtools-20040208.tar.bz2) = 98338
 MD5 (pkgtools-20040208-20040325.diff.bz2) = 7233aa86593711cbc4a34a5986359ed1
 SIZE (pkgtools-20040208-20040325.diff.bz2) = 2419
+MD5 (pkgtools-20040325-20040529.diff.bz2) = fe36aa00cc31906cbddf9e1f6995fdac
+SIZE (pkgtools-20040325-20040529.diff.bz2) = 3180
