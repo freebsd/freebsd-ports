@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.6 1995/01/03 14:16:51 asami Exp $
+# $Id: Makefile,v 1.9 1995/03/04 10:58:29 asami Exp $
 #
 
 DISTNAME=	mule-2.2.2
@@ -26,7 +26,7 @@ PATCHSITE=	ftp.cs.buffalo.edu:/pub/mule/
 PATCHSITE=	${MASTER_SITE_OVERRIDE}
 .endif
 .if !exists(/usr/X11R6/lib/libwnn.a)
-DEPENDS=	${PORTSDIR}/utils/Wnn
+DEPENDS=	${PORTSDIR}/japanese/Wnn
 .endif
 PREPATCH_COOKIE=	${.CURDIR}/work/.prepatch_done
 PREBUILD_COOKIE=	${.CURDIR}/work/.prebuild_done
