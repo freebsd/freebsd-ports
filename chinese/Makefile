@@ -39,5 +39,6 @@
     SUBDIR += xa+cv
     SUBDIR += xcin
     SUBDIR += xcin25
+    SUBDIR += xemacs
 
 .include <bsd.port.subdir.mk>
