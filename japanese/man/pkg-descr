@@ -1,0 +1,4 @@
+jman formats and displays the on-line japanese manual pages. Original
+man command only displays English, whreas this man command displays
+pages including Japanese code correctry.  And page controlling is more
+intellegent than original one with Japanese less (jless).
