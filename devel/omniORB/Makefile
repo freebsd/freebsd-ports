@@ -13,7 +13,8 @@ MASTER_SITES=	ftp://ftp.orl.co.uk/pub/omniORB/
 
 MAINTAINER=	ejc@bazzle.com
 
-MAN1=		omniidl2.1 nameclt.1 omniNames.1 catior.1 genior.1
+MAN1=		catior.1 genior.1 nameclt.1 obuildtree.1 ols.1 omake.1 \
+		omniNames.1 omniidl2.1 opriv.1 oshadow.1
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
@@ -22,23 +23,22 @@ MAKEFILE=	GNUmakefile
 ALL_TARGET=	export
 
 do-install:
-	@ (cd ${WRKSRC}/../bin/x86_freebsd_3.2; find . |cpio -pdum ${PREFIX}/bin)
-	@ (cd ${WRKSRC}/../lib/x86_freebsd_3.2; find . |cpio -pdum ${PREFIX}/lib)
-	@ ${INSTALL_MAN} ${WRKSRC}/../man/man1/* ${PREFIX}/man/man1
-	@ ${MKDIR} ${PREFIX}/include/omniORB2
-	@ ${MKDIR} ${PREFIX}/include/omnithread
-	@ ${INSTALL_DATA} ${WRKSRC}/../include/omnithread.h ${PREFIX}/include
-	@ ${INSTALL_DATA} ${WRKSRC}/../include/omnithread/* ${PREFIX}/include/omnithread
-	@ ${INSTALL_DATA} ${WRKSRC}/../include/omniORB2/* ${PREFIX}/include/omniORB2
-
+	(cd ${WRKSRC}/../bin/x86_freebsd_3.2; find . |cpio -pdum ${PREFIX}/bin)
+	(cd ${WRKSRC}/../lib/x86_freebsd_3.2; find . |cpio -pdum ${PREFIX}/lib)
+	${INSTALL_MAN} ${WRKSRC}/../man/man1/* ${PREFIX}/man/man1
+	${MKDIR} ${PREFIX}/include/omniORB2
+	${MKDIR} ${PREFIX}/include/omnithread
+	${INSTALL_DATA} ${WRKSRC}/../include/omnithread.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/../include/omnithread/* ${PREFIX}/include/omnithread
+	${INSTALL_DATA} ${WRKSRC}/../include/omniORB2/* ${PREFIX}/include/omniORB2
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/omniORB
-	@ ${INSTALL_DATA} ${WRKSRC}/../README.unix ${PREFIX}/share/doc/omniORB
-	@ ${INSTALL_DATA} ${WRKSRC}/../README.FreeBSD ${PREFIX}/share/doc/omniORB
-	@ ${INSTALL_DATA} ${FILESDIR}/README.FreeBSD.port ${PREFIX}/share/doc/omniORB
-	@ ${INSTALL_DATA} ${WRKSRC}/../ReleaseNote_omniORB_280 ${PREFIX}/share/doc/omniORB
-	@ (cd ${WRKSRC}/../doc; find . |cpio -pdum ${PREFIX}/share/doc/omniORB)
+	${MKDIR} ${PREFIX}/share/doc/omniORB
+	${INSTALL_DATA} ${WRKSRC}/../README.unix ${PREFIX}/share/doc/omniORB
+	${INSTALL_DATA} ${WRKSRC}/../README.FreeBSD ${PREFIX}/share/doc/omniORB
+	${INSTALL_DATA} ${WRKSRC}/../ReleaseNote_omniORB_280 ${PREFIX}/share/doc/omniORB
+	(cd ${WRKSRC}/../doc; find . |cpio -pdum ${PREFIX}/share/doc/omniORB)
 .endif
-	@ ${LDCONFIG} -m $(PREFIX)/lib
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
+

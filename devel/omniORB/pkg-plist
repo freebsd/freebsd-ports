@@ -54,7 +54,6 @@ lib/libtcpwrapGK.so
 lib/libtcpwrapGK.so.1.0
 share/doc/omniORB/README.unix
 share/doc/omniORB/README.FreeBSD
-share/doc/omniORB/README.FreeBSD.port
 share/doc/omniORB/ReleaseNote_omniORB_280
 share/doc/omniORB/lifecycle.pdf
 share/doc/omniORB/lifecycle.ps
