@@ -25,28 +25,29 @@ LIB_DEPENDS=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_QT_VER=	3
-QT_NONSTANDARD=	yes
 CONFIGURE_ARGS+=	--with-qt=${X11BASE}
 
 DOCS=	Changelog.txt README.txt TODO.txt
-
 SHARE_DATA=	error.wav warning.wav syntax.txt
 
 post-patch:
-	${REINPLACE_CMD} -E -e 's@^(QMAKESPEC=\$$QTDIR).*@\1/share/qt/mkspecs/default@' ${WRKSRC}/configure
-	${REINPLACE_CMD} -E -e 's@-pthread -D_THREAD_SAFE@${PTHREAD_CFLAGS}@;s@^(LFLAGS.*)-pthread@\1${PTHREAD_LIBS}@' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -E -e 's@^(QMAKESPEC=\$$QTDIR).*@\1/share/qt/mkspecs/freebsd-g++@' ${WRKSRC}/configure
+	${REINPLACE_CMD} -E -e "s@(QString mydir =) QDir.*@\1 \"${DATADIR}/\";@" ${WRKSRC}/src/CApplication.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mysqlcc ${PREFIX}/bin/
-	${MKDIR} -m 0755 ${DATADIR}
+	${MKDIR} -m 0755 -p ${DATADIR}/translations
 .for f in ${SHARE_DATA}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}/
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/translations/*.qm ${DATADIR}/translations/
+	${INSTALL_DATA} ${WRKSRC}/translations/*.ts ${DATADIR}/translations/
 .if !defined(NOPORTDOCS)
-	${MKDIR} -m 0755 ${DOCSDIR}
+	${MKDIR} -m 0755 -p ${DOCSDIR}/plugins
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
+	(umask 022; ${TAR} -C ${WRKSRC}/plugins -cpf - . | ${TAR} -C ${DOCSDIR}/plugins -xpf -)
 .endif
 
 .include <bsd.port.mk>
