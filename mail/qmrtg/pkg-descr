@@ -1,0 +1,16 @@
+Qmrtg is a free tool to help monitoring the activity of a qmail mailserver.
+It's intended to be used with MRTG.
+
+Qmrtg is modular. Each module carries out a different log analysis. 
+A super-module lets the user easily request any analysis without to
+know anything about the modules themselves.
+Qmrtg has been originally written for qmail, but most of its modules
+work with every software logging with multilog (see 'daemontools').
+
+Qmrtg is an alternative to qmailmrtg7.
+
+
+WWW: http://dev.publicshout.org/qmrtg/
+
+- Mij
+mij@bitchx.it

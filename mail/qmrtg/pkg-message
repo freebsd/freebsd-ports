@@ -1,0 +1,22 @@
+================================================================
+QMRTG has been installed.
+
+1) A "qmrtg/" directory has been added to ${PREFIX}/www/data
+If you don't care publishing qmrtg's reports, just run a polite
+$ rm -rf ${WWWROOTDIR}/qmrtg
+Also remind to remove it if you definitively uninstall qmrtg.
+
+2) to enable qmrtg monitoring:
+a) have a look at the ${PREFIX}/www/data/cfg/mrtg.cfg" file.
+you must at least set the 'WorkDir:' variable and qmail log paths
+(search for '/var/log/supervise/qmail' and adapt to your system)
+b) configure qmrtg.conf. Defaults are fine generally. At least copy
+${PREFIX}/qmrtg.conf.sample to "qmrtg.conf".
+c) make mrtg run automatically. Using cron, put that in "/etc/crontab": 
+
+*/5 * * * *   root /usr/local/bin/mrtg \
+         /usr/local/www/data/qmrtg/cfg/mrtg.cfg 1>/dev/null 2>&1
+
+Note: to skip qmrtg reporting your mx' whole history at the first call,
+run the following before "c)"
+$ qmrtgsync.sh
