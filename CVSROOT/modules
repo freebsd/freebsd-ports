@@ -2187,7 +2187,6 @@ gnustep-guile	ports/lang/gnustep-guile
 gnustep-make	ports/devel/gnustep-make
 gnustep-objc	ports/lang/gnustep-objc
 gnustep-xdps	ports/x11-toolkits/gnustep-xdps
-gnut		ports/net/gnut
 gnutls		ports/security/gnutls
 gob		ports/x11-toolkits/gob
 gob2		ports/devel/gob2
