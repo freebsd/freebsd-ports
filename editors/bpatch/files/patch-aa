@@ -1,6 +1,6 @@
 --- /dev/null	Mon Mar 18 12:50:49 1996
 +++ Makefile	Mon Mar 18 19:30:47 1996
-@@ -0,0 +1,42 @@
+@@ -0,0 +1,39 @@
 +# This may have to change on your system.
 +# You may have to fiddle with various combinations of curses, termcap,
 +# terminfo, etc.  Good luck!
@@ -29,17 +29,14 @@
 +#Microport sysV/AT, large model, for sdb debugger
 +#CFLAGS	= -g -Ml
 +
-+all: bpatch bpatch.1.gz
++all: bpatch
 +
 +clean:
-+	rm -f bpatch bpatch.o bpatch.1.gz *.core
++	rm -f bpatch bpatch.o *.core
 +
 +bpatch:		bpatch.o
 +	$(CC) -o bpatch $(CFLAGS) bpatch.o $(GETOPT) $(LIBS)
 +
-+bpatch.1.gz: bpatch.1
-+	gzip -c < bpatch.1 > bpatch.1.gz
-+
-+install: bpatch bpatch.1.gz
-+	install -c -o bin -g bin -m 555 bpatch ${DESTDIR}${BINDIR}
-+	install -c -o bin -g bin -m 444 bpatch.1.gz ${DESTDIR}${MANDIR}
++install: bpatch bpatch.1
++	$(BSD_INSTALL_PROGRAM) bpatch $(DESTDIR)$(BINDIR)
++	$(BSD_INSTALL_MAN) bpatch.1 $(DESTDIR)$(MANDIR)
