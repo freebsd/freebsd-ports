@@ -1,5 +1,23 @@
---- lib/Makefile.in.orig	Tue Oct  2 20:29:13 2001
-+++ lib/Makefile.in	Tue Oct  2 20:35:28 2001
+--- lib/Makefile.in.orig	Tue Sep 16 06:06:54 2003
++++ lib/Makefile.in	Wed Jul 21 03:48:17 2004
+@@ -70,7 +70,7 @@
+ 
+ HDRS = $(srcdir)/acl.h $(srcdir)/assert.h $(srcdir)/auth.h \
+ 	$(srcdir)/bsearch.h $(srcdir)/charset.h $(srcdir)/glob.h \
+-	$(srcdir)/gmtoff.h $(srcdir)/imclient.h $(srcdir)/imparse.h \
++	$(srcdir)/gmtoff.h $(srcdir)/imparse.h \
+ 	$(srcdir)/lock.h $(srcdir)/map.h $(srcdir)/mkgmtime.h \
+ 	$(srcdir)/nonblock.h $(srcdir)/parseaddr.h $(srcdir)/prot.h \
+ 	$(srcdir)/retry.h $(srcdir)/sysexits.h \
+@@ -87,7 +87,7 @@
+ #	@LIBOBJS@ cyrusdb_db3.o cyrusdb_flat.o
+ 
+ OBJS = acl.o assert.o bsearch.o charset.o glob.o retry.o util.o \
+-	mkgmtime.o prot.o parseaddr.o imclient.o imparse.o xmalloc.o \
++	mkgmtime.o prot.o parseaddr.o imparse.o xmalloc.o \
+ 	chartable.o nonblock_@WITH_NONBLOCK@.o lock_@WITH_LOCK@.o \
+ 	gmtoff_@WITH_GMTOFF@.o hash.o $(ACL) $(AUTH) iptostring.o \
+ 	@LIBOBJS@
 @@ -96,12 +96,12 @@
  
  install:
