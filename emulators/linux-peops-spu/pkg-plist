@@ -1,12 +1,12 @@
-lib/psemupro/plugins/libspuPeopsOSS.so.1.0.7
+lib/psemupro/plugins/libspuPeopsOSS.so.%%MAJOR%%.0.%%MINOR%%
 libexec/psemupro/cfg/cfgPeopsOSS
 share/psemupro/cfg/spuPeopsOSS.cfg
-@dirrm lib/psemupro/plugins
-@dirrm lib/psemupro
-@dirrm libexec/psemupro/cfg
-@dirrm libexec/psemupro
-@dirrm share/psemupro/cfg
-@dirrm share/psemupro
-%%PORTDOCS%%%%DOCSDIR%%/readme_1_7.txt
-%%PORTDOCS%%%%DOCSDIR%%/version_1_7.txt
+@unexec rmdir %D/lib/psemupro/plugins 2>/dev/null || true
+@unexec rmdir %D/lib/psemupro 2>/dev/null || true
+@unexec rmdir %D/libexec/psemupro/cfg 2>/dev/null || true
+@unexec rmdir %D/libexec/psemupro 2>/dev/null || true
+@unexec rmdir %D/share/psemupro/cfg 2>/dev/null || true
+@unexec rmdir %D/share/psemupro 2>/dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/readme_%%MAJOR%%_%%MINOR%%.txt
+%%PORTDOCS%%%%DOCSDIR%%/version_%%MAJOR%%_%%MINOR%%.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
