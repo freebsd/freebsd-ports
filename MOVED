@@ -358,3 +358,9 @@ x11-servers/XttXF98srv-WSNA||2003-05-23|obsoleted by x11-servers/XFree86-4-Serve
 www/phoenix|www/mozilla-firebird|2003-06-02|project changed names
 x11/gswitchit_applet||2003-06-02|replaced by GNOME 2 version in x11/gswitchit
 audio/agsatellite|net/linux-agsatellite|2003-06-02|accurate category and name
+devel/understand_ada|devel/linux-understand_ada|2003-06-02|accurate naming
+devel/understand_c|devel/linux-understand_c|2003-06-02|accurate naming
+misc/edonkey-tool-list|misc/linux-edonkey-tool-list|2003-06-02|accurate naming
+misc/edonkey-tool-recovermet|misc/linux-edonkey-tool-recovermet|2003-06-02|accurate naming
+multimedia/xmovie|multimedia/linux-xmovie|2003-06-02|accurate naming
+net/edonkey-core|net/linux-edonkey-core|2003-06-02|accurate naming
