@@ -3376,6 +3376,7 @@ ifm		ports/games/ifm
 ifmail		ports/news/ifmail
 ifp-line	ports/audio/ifp-line
 ifstat		ports/net/ifstat
+ifstated	ports/net/ifstated
 iftop		ports/net-mgmt/iftop
 igal		ports/www/igal
 iiimecf		ports/editors/iiimecf
