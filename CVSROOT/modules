@@ -4066,6 +4066,7 @@ ja-ptex-base	ports/japanese/ptex-base
 ja-ptex-tetex	ports/japanese/ptex-tetex
 ja-py-kanjilib	ports/japanese/py-kanjilib
 ja-pycodec	ports/japanese/pycodec
+ja-pycodec-zope	ports/japanese/pycodec-zope
 ja-qkc		ports/japanese/qkc
 ja-quit		ports/japanese/quit
 ja-rbnamazu	ports/japanese/rbnamazu
