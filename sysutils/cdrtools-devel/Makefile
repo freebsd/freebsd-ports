@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	cdrtools
-PORTVERSION=	2.01a38
+PORTVERSION=	2.01.01a01
+PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
-		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/ \
-		ftp://ftp.zeist.de/pub/distfiles/
+		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/
 
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	CD/CD-R[W] and ISO-9660 image creation and extraction tools
@@ -51,6 +51,10 @@ PLIST_SUB=	RSCSI="@comment "
 PKGNAMESUFFIX?=	-devel
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501104 && ${OSVERSION} < 502113
+IGNORE=		The mlockall(2) of your FreeBSD 5.x version causes problems when used by cdrecord. Please update FreeBSD to >= 5.3 in order to use this port
+.endif
 
 pre-everything::
 .if !defined(WITH_RSCSI)
