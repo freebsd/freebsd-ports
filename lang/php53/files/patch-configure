@@ -1,5 +1,5 @@
 --- configure.orig	Fri Mar 19 11:01:07 2004
-+++ configure	Fri Mar 19 11:10:11 2004
++++ configure	Mon Mar 29 09:56:02 2004
 @@ -624,6 +624,8 @@
  ac_help="$ac_help
    --enable-gd-jis-conv      GD: Enable JIS-mapped Japanese font support."
@@ -9,10 +9,14 @@
    --with-gettext[=DIR]    Include GNU gettext support."
  ac_help="$ac_help
    --with-gmp[=DIR]        Include GNU MP support"
-@@ -24057,6 +24059,10 @@
+@@ -24057,6 +24059,14 @@
          THIS_PREFIX=$i
          THIS_INCLUDE=$i/db4/db.h
          break
++      elif test -f "$i/include/db42/db.h"; then
++        THIS_PREFIX=$i
++        THIS_INCLUDE=$i/include/db42/db.h
++        break
 +      elif test -f "$i/include/db41/db.h"; then
 +        THIS_PREFIX=$i
 +        THIS_INCLUDE=$i/include/db41/db.h
@@ -20,7 +24,7 @@
        elif test -f "$i/include/db4/db.h"; then
          THIS_PREFIX=$i
          THIS_INCLUDE=$i/include/db4/db.h
-@@ -24076,7 +24082,7 @@
+@@ -24076,7 +24086,7 @@
        fi
      done
      
@@ -29,7 +33,7 @@
      if test -f $THIS_PREFIX/lib/lib$LIB.a -o -f $THIS_PREFIX/lib/lib$LIB.$SHLIB_SUFFIX_NAME; then
        
    old_LDFLAGS=$LDFLAGS
-@@ -30047,6 +30053,31 @@
+@@ -30047,6 +30057,31 @@
  
  
  
@@ -61,7 +65,7 @@
  
  
  
-@@ -30199,7 +30230,7 @@
+@@ -30199,7 +30234,7 @@
                   libgd/gd_io_file.c libgd/gd_ss.c libgd/gd_io_ss.c libgd/gd_png.c libgd/gd_jpeg.c \
                   libgd/gdxpm.c libgd/gdfontt.c libgd/gdfonts.c libgd/gdfontmb.c libgd/gdfontl.c \
                   libgd/gdfontg.c libgd/gdtables.c libgd/gdft.c libgd/gdcache.c libgd/gdkanji.c \
@@ -70,7 +74,7 @@
                   libgd/xbm.c"
  
    for ac_func in fabsf floorf
-@@ -30274,6 +30305,11 @@
+@@ -30274,6 +30309,11 @@
    fi
  
    
@@ -82,7 +86,7 @@
    if test "$PHP_JPEG_DIR" != "no"; then
  
      for i in $PHP_JPEG_DIR /usr/local /usr; do
-@@ -31987,6 +32023,9 @@
+@@ -31987,6 +32027,9 @@
  
    cat >> confdefs.h <<\EOF
  #define HAVE_GD_BUNDLED 1
@@ -92,7 +96,7 @@
  EOF
  
    cat >> confdefs.h <<\EOF
-@@ -32041,6 +32080,14 @@
+@@ -32041,6 +32084,14 @@
      GDLIB_CFLAGS="$GDLIB_CFLAGS -DJISX0208"
    fi
  
@@ -107,7 +111,7 @@
  else
  
   if test "$PHP_GD" != "no"; then
-@@ -36392,6 +36439,137 @@
+@@ -36392,6 +36443,137 @@
      esac
    done
  
@@ -245,7 +249,7 @@
    echo $ac_n "checking for gdCacheCreate in -lgd""... $ac_c" 1>&6
  echo "configure:36397: checking for gdCacheCreate in -lgd" >&5
  ac_lib_var=`echo gd'_'gdCacheCreate | sed 'y%./+-%__p_%'`
-@@ -61441,6 +61619,102 @@
+@@ -61441,6 +61623,102 @@
  	    
  
    if test "$ext_shared" = "yes"; then
@@ -348,7 +352,7 @@
      ORACLE_SHARED_LIBADD="-lnlsrtl3 $ORACLE_SHARED_LIBADD"
      if test -n "$ORACLE_DIR/lib"; then
        
-@@ -82018,29 +82292,6 @@
+@@ -82018,29 +82296,6 @@
    else
      
    
@@ -378,7 +382,7 @@
    case ct in
    c|c_r|pthread*) ;;
    *) 
-@@ -82064,52 +82315,7 @@
+@@ -82064,52 +82319,7 @@
  
      
    
@@ -432,7 +436,7 @@
    
      
    save_old_LDFLAGS=$LDFLAGS
-@@ -82244,38 +82450,6 @@
+@@ -82244,38 +82454,6 @@
    c|c_r|pthread*) ;;
    *) 
        LIBS="-ltcl $LIBS" 
