@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	iris
-PORTVERSION=	0.10
-PORTREVISION=	1
+PORTVERSION=	0.12
 CATEGORIES=	graphics
 MASTER_SITES=	http://cdelfosse.free.fr/xmms-iris/
 PKGNAMEPREFIX=	xmms-
@@ -19,10 +18,12 @@ BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=       --build=${ARCH}-portbld-freebsd${OSREL}
 PLIST_FILES=	lib/xmms/Visualization/libiris.so
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
-USE_MESA=	yes
+USE_LIBTOOL_VER=15
+USE_GL=		yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
