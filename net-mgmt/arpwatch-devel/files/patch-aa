@@ -1,0 +1,18 @@
+*** arpwatch.c.orig	Thu Jan  2 04:57:42 1997
+--- arpwatch.c	Sun Mar 30 13:21:09 1997
+***************
+*** 43,48 ****
+--- 43,55 ----
+  #endif
+  #include <net/if.h>
+  
++ #ifdef __FreeBSD__
++ #include <osreldate.h>
++ #if __FreeBSD_version >= 199702
++ #include <net/if_var.h>
++ #endif
++ #endif
++ 
+  #include <netinet/in.h>
+  #include <netinet/if_ether.h>
+  
