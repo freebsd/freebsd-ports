@@ -1,0 +1,9 @@
+Prelude is a new innovative hybrid Intrusion Detection system designed 
+to be very modular, distributed, rock solid and fast. 
+
+The manager is the central logging point. It receives alerts from 
+sensors and logs them using one or several plugins (the default logging 
+being to a text file, but logging to a database is also possible - and 
+recommended).
+
+WWW: http://www.prelude-ids.org/
