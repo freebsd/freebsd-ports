@@ -3,7 +3,7 @@
 # Date created:				16 October 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/16 14:08:18 tg Exp $
 #
 
 DISTNAME=	le-1.4.2
@@ -11,6 +11,8 @@ CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/util/texteditors/
 
 MAINTAINER=	andy@icc.surw.chel.su
+
+BROKEN=		build
 
 GNU_CONFIGURE=	yes
 MAN1=		le.1
