@@ -9,7 +9,7 @@
 # KEYWORD: FreeBSD shutdown
 
 #
-# Add the following lines to /etc/rc.conf to enable amavisd:
+# Add the following lines to /etc/rc.conf to enable gld:
 #
 #gld_enable="YES"
 #
@@ -25,7 +25,7 @@ required_files=%%PREFIX%%/etc/gld.conf
 
 # set defaults
 
-gld_enable=${amavisd_enable:-"NO"}
+gld_enable=${gld_enable:-"NO"}
 
 load_rc_config $name
 run_rc_command "$1"
