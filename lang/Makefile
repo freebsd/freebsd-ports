@@ -84,7 +84,7 @@
     SUBDIR += perl5
     SUBDIR += pfe-devel
     SUBDIR += pgcc
-    SUBDIR += php
+    SUBDIR += php3
     SUBDIR += php4
     SUBDIR += pike
     SUBDIR += pm3-base
