@@ -18,13 +18,13 @@ USE_X_PREFIX=		yes
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libgnutls.so.13)
+.if exists(${LOCALBASE}/lib/libgnutls.so.12)
 WITH_GNUTLS=		yes
 .endif
 
 .ifdef WITH_GNUTLS
 LIB_DEPENDS+=		gcrypt.12:${PORTSDIR}/security/libgcrypt \
-			gnutls.13:${PORTSDIR}/security/gnutls
+			gnutls.12:${PORTSDIR}/security/gnutls
 .endif
 
 USE_XPM=		yes
