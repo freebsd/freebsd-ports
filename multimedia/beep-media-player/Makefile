@@ -7,7 +7,7 @@
 
 PORTNAME=	beep-media-player
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://linux-media.net/beep/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-pre5
