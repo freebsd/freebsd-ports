@@ -1,6 +1,24 @@
---- Makefile.in	Sat Oct 23 16:49:11 2004
-+++ Makefile.in	Sat Oct 23 16:49:22 2004
-@@ -644,7 +644,7 @@
+--- Makefile.in.orig	Mon Jun 21 14:33:16 2004
++++ Makefile.in	Mon Feb 28 09:53:50 2005
+@@ -561,7 +561,7 @@
+ 	( \
+ 		cd doc/man8 ; \
+ 		PERL=$(PERL); export PERL; \
+-		UMASK=0600; export UMASK; \
++		UMASK=0444; export UMASK; \
+ 		DIR=$(DIR); export DIR; \
+ 		INSTALLDIR=$(MANDIR)/man8; export INSTALLDIR; \
+ 		DESTDIR=$(DESTDIR); export DESTDIR; \
+@@ -575,8 +575,6 @@
+ 		PIDDIR=$(PIDDIR); export PIDDIR; \
+ 		$(PERL) ../../subst.pl $$manfile \
+ 	) ;\
+-	chown $(USER) $(DESTDIR)$(MANDIR)/man8/$$manfile; \
+-	chgrp $(GROUP) $(DESTDIR)$(MANDIR)/man8/$$manfile; \
+ 	done
+ 
+ installscript:
+@@ -644,7 +642,7 @@
  	fi \
  	fi \
  	done; \
