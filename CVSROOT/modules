@@ -2695,6 +2695,7 @@ gnome-jabber	ports/net/gnome-jabber
 gnome-look	ports/x11-themes/gnome-look
 gnome-mud	ports/net/gnome-mud
 gnome-music-quiz	ports/games/gnome-music-quiz
+gnome-osd	ports/misc/gnome-osd
 gnome-password-generator	ports/security/gnome-password-generator
 gnome-pkgview	ports/sysutils/gnome-pkgview
 gnome-ssh-askpass	ports/security/gnome-ssh-askpass
