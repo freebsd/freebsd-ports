@@ -143,7 +143,8 @@ CONFIGURE_ARGS+=--with-authcram
 
 .if defined(WITH_FAM)
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="${LDFLAGS}"
+LDFLAGS+=	-L${LOCALBASE}/lib
 LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
 .endif
 
