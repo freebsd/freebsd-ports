@@ -3,7 +3,7 @@
 # Date created:		28 June 1996
 # Whom:			markm
 #
-# $Id: Makefile,v 1.4 1997/12/04 03:40:06 vanilla Exp $
+# $Id: Makefile,v 1.5 1998/07/11 00:37:00 steve Exp $
 #
 
 DISTNAME=	xinetd-2.2.1
@@ -28,7 +28,7 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/xinetd.sh ]; then \
 		${ECHO} "Install ${PREFIX}/etc/rc.d/xinetd.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/xinetd.sh; \
-		${ECHO} "[ -x ${PREFIX}/sbin/xinetd ] && ${PREFIX}/sbin/xinetd && echo -n' xinetd'" >> ${PREFIX}/etc/rc.d/xinetd.sh; \
+		${ECHO} "[ -x ${PREFIX}/sbin/xinetd ] && ${PREFIX}/sbin/xinetd && echo -n ' xinetd'" >> ${PREFIX}/etc/rc.d/xinetd.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/xinetd.sh; \
 	fi
 
