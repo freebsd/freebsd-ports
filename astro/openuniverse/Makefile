@@ -13,8 +13,6 @@ MASTER_SITES=		http://www.geocities.com/SiliconValley/Station/6492/ \
 
 MAINTAINER=		andy@icc.surw.chel.su
 
-BUILD_DEPENDS=		bison:${PORTSDIR}/devel/bison
-
 LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg \
 			MesaGL.14:${PORTSDIR}/graphics/Mesa3 \
 			MesaGLU.14:${PORTSDIR}/graphics/Mesa3 \
@@ -23,6 +21,7 @@ LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg \
 MAKEFILE=		Makefile.FreeBSD
 FETCH_BEFORE_ARGS=	-b
 USE_X_PREFIX=		yes
+USE_BISON=		yes
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/ssystem ${PREFIX}/bin
