@@ -1,5 +1,5 @@
 --- Makefile.orig	Mon Jan 24 16:15:50 2000
-+++ Makefile	Wed Mar  8 23:24:45 2000
++++ Makefile	Wed Mar 15 02:23:16 2000
 @@ -50,11 +50,6 @@
  UNZIPDEFINES=-DUNZIP_SUPPORT
  endif
@@ -22,16 +22,17 @@
 +CC ?= gcc
  NASM = nasm
  
+-INCLUDES=-I/usr/X11R6/include -I/usr/local/include
 +ifdef THREAD_SOUND
 +CPUDEFINES += -DUSE_THREADS
 +CC += -pthread
 +CCC += -pthread
 +endif
 +
- INCLUDES=-I/usr/X11R6/include -I/usr/local/include
++INCLUDES=-I${X11BASE}/include -I${LOCALBASE}/include
  
 -OPTIMISE=-O6 -mpentium -fomit-frame-pointer -fno-exceptions
-+OPTIMISE= $(CXXFLAGS) -O6 -mpentium -fomit-frame-pointer -fno-exceptions
++OPTIMISE= $(CXXFLAGS)
  
  CCFLAGS = $(OPTIMISE) -DMITSHM \
  -Ii386 \
@@ -52,7 +53,7 @@
  # symbol error when run on a Redhat box.
  
 -LDLIBS = -L/usr/X11R6/lib frame.o
-+LDLIBS = -L/usr/X11R6/lib
++LDLIBS = -L${X11BASE}/lib
  
  ifdef GLIDE
  ifdef NETPLAY
