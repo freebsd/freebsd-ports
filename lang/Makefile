@@ -172,6 +172,7 @@
     SUBDIR += php4-dtc
     SUBDIR += php4-horde
     SUBDIR += php4-nms
+    SUBDIR += php4-overload
     SUBDIR += php5
     SUBDIR += php5-cli
     SUBDIR += php_doc
