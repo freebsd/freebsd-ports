@@ -15,7 +15,7 @@ DISTFILES=	inform621_source.zip inform_library610.zip
 MAINTAINER=	mph@freebsd.org
 
 .if !defined(NOPORTDOCS)
-MASTER_SITES+=	ftp://ftp.gmd.de/if-archive/infocom/compilers/inform6/manuals/
+MASTER_SITES+=	ftp://ftp.gmd.de/if-archive/infocom/compilers/inform6/manuals/old/
 DISTFILES+=	designers_manual_html.zip
 .endif
 
