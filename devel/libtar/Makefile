@@ -10,7 +10,7 @@ PORTVERSION=		1.2
 CATEGORIES=     	devel
 MASTER_SITES=		ftp://ftp-dev.cso.uiuc.edu/pub/libtar/
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=		greid@FreeBSD.org
 
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
