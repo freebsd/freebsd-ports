@@ -527,6 +527,7 @@
     SUBDIR += php-templates
     SUBDIR += php4-cgi
     SUBDIR += php4-mnogosearch
+    SUBDIR += php4-session
     SUBDIR += php5-cgi
     SUBDIR += phpSysInfo
     SUBDIR += phpbb
