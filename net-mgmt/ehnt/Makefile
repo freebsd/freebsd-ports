@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ehnt
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,8 +22,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ehnt ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/ehntserv ${PREFIX}/sbin/
 	${INSTALL_SCRIPT} ${FILESDIR}/ehntserv.sh.sample ${PREFIX}/etc/rc.d/
-	${INSTALL_MAN} ${FILESDIR}/ehnt.1 ${PREFIX}/man/man1/
-	${INSTALL_MAN} ${FILESDIR}/ehntserv.8 ${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/ehnt.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/ehntserv.8 ${PREFIX}/man/man8/
 	${MKDIR} ${PREFIX}/share/ehnt
 	${INSTALL_DATA} ${WRKSRC}/asnc.txt ${PREFIX}/share/ehnt/
 .if !defined(NOPORTDOCS)
