@@ -3,7 +3,7 @@
 # Date created:		30 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.22 1998/08/28 14:38:42 asami Exp $
+# $Id: Makefile,v 1.23 1998/09/14 20:16:03 markm Exp $
 #
 
 DISTNAME=	xv-3.10a
@@ -26,7 +26,7 @@ MAINTAINER=	shige@kuis.kyoto-u.ac.jp
 
 LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff34.1:${PORTSDIR}/graphics/tiff34 \
-		png.2:${PORTSDIR}/graphics/png
+		png.3:${PORTSDIR}/graphics/png
 
 USE_IMAKE=	yes
 
