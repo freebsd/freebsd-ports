@@ -40,6 +40,7 @@
     SUBDIR += gtk-engines-collection
     SUBDIR += gtk-flat-theme
     SUBDIR += gtk-qn-x11-theme
+    SUBDIR += gtk-xfce-engine
     SUBDIR += gtk-zenith-theme
     SUBDIR += gtk12
     SUBDIR += gtk12-apireference
