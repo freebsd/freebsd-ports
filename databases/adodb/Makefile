@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	adodb
-PORTVERSION=	1.20
-PORTREVISION=	2
+PORTVERSION=	1.50
 CATEGORIES=	databases www
 MASTER_SITES=	http://phplens.com/lens/dl/
-DISTNAME=	${PORTNAME}120
+DISTNAME=	${PORTNAME}150
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	abgoeree@wish.net
@@ -28,18 +27,22 @@ PLIST_SUB=	ADODB_DIR=${ADODB_DIR} \
 DOCS=	readme.htm tute.htm readme.txt
 LIBS=	adodb-access.inc.php adodb-ado.inc.php adodb-ado_access.inc.php \
 	adodb-ado_mssql.inc.php adodb-csv.inc.php adodb-db2.inc.php \
+	adodb-errorhandler.inc.php adodb-errorpear.inc.php \
 	adodb-fbsql.inc.php adodb-ibase.inc.php adodb-mssql.inc.php \
 	adodb-mysql.inc.php adodb-mysqlt.inc.php adodb-oci8.inc.php \
-	adodb-odbc.inc.php  adodb-odbc_mssql.inc.php adodb-oracle.inc.php \
-	adodb-postgres.inc.php adodb-postgres7.inc.php adodb-sybase.inc.php \
-	adodb.inc.php adodb-vfp.inc.php tohtml.inc.php
-SAMPLES=server.php adodb-session.php
-TESTS=	benchmark.php client.php test.php test2.php test3.php \
-	testcache.php testdatabases.inc.php
+	adodb-odbc.inc.php adodb-odbc_mssql.inc.php adodb-odbc_oracle.inc.php \
+	adodb-oracle.inc.php adodb-pear.inc.php adodb-postgres.inc.php \
+	adodb-postgres7.inc.php adodb-proxy.inc.php adodb-sybase.inc.php \
+	adodb.inc.php adodb-vfp.inc.php crypt.inc.php tohtml.inc.php
+SAMPLES=adodb-cryptsession.php adodb-session.php server.php
+TESTS=	benchmark.php client.php test.php test2.php test3.php test4.php \
+	test5.php testcache.php testdatabases.inc.php testoci8.php \
+	testpear.php testsessions.php
 
 post-patch:
 .for FILE in adodb-session.php benchmark.php client.php server.php test.php \
-	test2.php test3.php testcache.php
+	test2.php test3.php test4.php test5.php testcache.php testoci8.php \
+	testpear.php testsessions.php
 	${PERL} -pi -e "s#(\./)?(adodb(-session)?|tohtml)+(\.inc)?\.php#${PREFIX}/${ADODB_DIR}/\2\4\.php#" ${WRKSRC}/${FILE}
 .endfor
 

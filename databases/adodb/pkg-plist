@@ -2,8 +2,11 @@
 %%ADODB_DIR%%/adodb-ado.inc.php
 %%ADODB_DIR%%/adodb-ado_access.inc.php
 %%ADODB_DIR%%/adodb-ado_mssql.inc.php
+%%ADODB_DIR%%/adodb-cryptsession.php.sample
 %%ADODB_DIR%%/adodb-csv.inc.php
 %%ADODB_DIR%%/adodb-db2.inc.php
+%%ADODB_DIR%%/adodb-errorhandler.inc.php
+%%ADODB_DIR%%/adodb-errorpear.inc.php
 %%ADODB_DIR%%/adodb-fbsql.inc.php
 %%ADODB_DIR%%/adodb-ibase.inc.php
 %%ADODB_DIR%%/adodb-mssql.inc.php
@@ -12,13 +15,17 @@
 %%ADODB_DIR%%/adodb-oci8.inc.php
 %%ADODB_DIR%%/adodb-odbc.inc.php
 %%ADODB_DIR%%/adodb-odbc_mssql.inc.php
+%%ADODB_DIR%%/adodb-odbc_oracle.inc.php
 %%ADODB_DIR%%/adodb-oracle.inc.php
+%%ADODB_DIR%%/adodb-pear.inc.php
 %%ADODB_DIR%%/adodb-postgres.inc.php
 %%ADODB_DIR%%/adodb-postgres7.inc.php
+%%ADODB_DIR%%/adodb-proxy.inc.php
 %%ADODB_DIR%%/adodb-session.php.sample
 %%ADODB_DIR%%/adodb-sybase.inc.php
 %%ADODB_DIR%%/adodb-vfp.inc.php
 %%ADODB_DIR%%/adodb.inc.php
+%%ADODB_DIR%%/crypt.inc.php
 %%ADODB_DIR%%/server.php.sample
 %%ADODB_DIR%%/tohtml.inc.php
 %%ADODB_TEST%%/benchmark.php
@@ -26,12 +33,16 @@
 %%ADODB_TEST%%/test.php
 %%ADODB_TEST%%/test2.php
 %%ADODB_TEST%%/test3.php
+%%ADODB_TEST%%/test4.php
+%%ADODB_TEST%%/test5.php
 %%ADODB_TEST%%/testcache.php
 %%ADODB_TEST%%/testdatabases.inc.php
-share/doc/adodb/readme.htm
-share/doc/adodb/readme.txt
-share/doc/adodb/tute.htm
-@dirrm share/doc/adodb
+%%ADODB_TEST%%/testoci8.php
+%%ADODB_TEST%%/testpear.php
+%%ADODB_TEST%%/testsessions.php
+%%PORTDOCS%%share/doc/adodb/readme.htm
+%%PORTDOCS%%share/doc/adodb/readme.txt
+%%PORTDOCS%%share/doc/adodb/tute.htm
+%%PORTDOCS%%@dirrm share/doc/adodb
 @dirrm %%ADODB_DIR%%
-@dirrm share/doc/apache/php
 @dirrm %%ADODB_TEST%%
