@@ -15,13 +15,12 @@ DISTNAME=		PyXML-${PORTVERSION}
 
 MAINTAINER=		wjv@FreeBSD.org
 
-BUILD_DEPENDS=		${PYDISTUTILS}
-
 INSTALLS_SHLIB=		yes
 # On a system with more than one version of Python installed, you can force
 # this port to install for a specific version of Python by explicitly setting
 # ${PYTHON_VERSION} during build/installation.
 USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -33,13 +32,6 @@ PLIST_SUB+=		PACKAGE_DIR=xml
 .else
 PLIST_SUB+=		PACKAGE_DIR=_xmlplus
 .endif
-
-do-build:
-	@ cd ${WRKSRC} && ${PYTHON_CMD} setup.py build
-
-do-install:
-	@ cd ${WRKSRC} && ${PYTHON_CMD} setup.py install -c -O1 \
-	  --prefix=${PREFIX}
 
 post-install:
 .if !defined(NOPORTDOCS)

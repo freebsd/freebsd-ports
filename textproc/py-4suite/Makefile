@@ -15,11 +15,13 @@ DISTNAME=	4Suite-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
 
-BUILD_DEPENDS=	${PYDISTUTILS} \
-		${PYXML}
+BUILD_DEPENDS=	${PYXML}
 RUN_DEPENDS=	${PYXML}
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_INSTALLARGS=	-c -O1 --prefix=${PREFIX} \
+		--install-data=${PREFIX}/share
 
 .include <bsd.port.pre.mk>
 .if ${PYTHON_VERSION} == "python1.5" || ${PYTHON_VERSION} == "python1.6"
@@ -37,14 +39,5 @@ post-patch:
 	@ ${PERL} -pi -e 's/(data_files=)data_files/$$1/' \
 	  ${WRKSRC}/setup.py
 .endif
-
-do-build:
-	@ cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
-	  setup.py build
-
-do-install:
-	@ cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
-	  setup.py install -c -O1 --prefix=${PREFIX} \
-	  --install-data=${PREFIX}/share
 
 .include <bsd.port.post.mk>

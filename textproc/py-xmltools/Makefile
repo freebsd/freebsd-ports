@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -27,13 +28,5 @@ XMLDIR=		_xmlplus
 RUN_DEPENDS=	${PYXML} \
 		${PYTHON_SITELIBDIR}/GDK.py:${PORTSDIR}/x11-toolkits/py-gtk \
 		${PYTHON_SITELIBDIR}/${XMLDIR}/xpath/__init__.py:${PORTSDIR}/textproc/py-4suite
-
-SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
-
-do-build:
-	@${SETUP_CMD} build
-
-do-install:
-	@${SETUP_CMD} install
 
 .include <bsd.port.post.mk>

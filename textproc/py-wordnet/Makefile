@@ -18,7 +18,7 @@ MAINTAINER=	perky@fallin.lv
 RUN_DEPENDS=	${WORDNETBASE}/lexnames:${PORTSDIR}/textproc/wordnet
 
 USE_PYTHON=	yes
-SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
+USE_PYDISTUTILS=	yes
 WORDNETBASE?=	${LOCALBASE}/share/wordnet-${WORDNET_VERSION}
 WORDNET_VERSION?=	1.7
 
@@ -27,11 +27,5 @@ post-patch:
 		-e 's|os.path.join(WNHOME.*))|WNHOME)|g' ${WRKSRC}/wordnet.py \
 		> ${WRKSRC}/wordnet.py.tmp && ${CAT} ${WRKSRC}/wordnet.py.tmp \
 		> ${WRKSRC}/wordnet.py
-
-do-build:
-	${SETUP_CMD} build
-
-do-install:
-	${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
 
 .include <bsd.port.mk>

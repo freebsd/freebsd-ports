@@ -16,12 +16,7 @@ DISTNAME=	pysgrep-${PORTVERSION}
 MAINTAINER=	ijliao@freebsd.org
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 GNU_CONFIGURE=	yes
-
-do-build:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py build)
-
-do-install:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py install)
 
 .include <bsd.port.mk>

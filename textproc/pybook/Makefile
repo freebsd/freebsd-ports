@@ -14,17 +14,12 @@ MASTER_SITES=	http://silmarill.org/pybook/
 MAINTAINER=	ports@FreeBSD.org
 
 USE_PYTHON=	yes
-
-SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
+USE_PYDISTUTILS=	yes
 
 post-patch:
 	@${PERL} -pi -e "s,python2,python,g" ${WRKSRC}/pybook.py
 
-do-build:
-	@${SETUP_CMD} build
-
-do-install:
-	@${SETUP_CMD} install
+post-install:
 	@${MV} -f ${PREFIX}/bin/pybook.py ${PREFIX}/bin/pybook
 
 .include <bsd.port.mk>

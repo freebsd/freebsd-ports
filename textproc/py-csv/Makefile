@@ -13,16 +13,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wjv@FreeBSD.org
 
-BUILD_DEPENDS=	${PYDISTUTILS}
-
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PYTHON_SETUP=	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
-
-do-build:
-	@ cd ${WRKSRC} && ${PYTHON_SETUP} build
-
-do-install:
-	@ cd ${WRKSRC} && ${PYTHON_SETUP} install --prefix=${PREFIX}
 
 .include <bsd.port.mk>
