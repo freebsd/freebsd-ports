@@ -1,0 +1,48 @@
+--- configure.in.orig	Fri Jan  5 00:07:39 2001
++++ configure.in	Sat Jan  6 06:53:02 2001
+@@ -97,8 +97,8 @@
+ 	AC_DEFINE(HAVE_READLINE, 1)])
+ AC_SUBST(READLINE)
+ 
+-AC_CHECK_LIB(c, strcasecmp, [AC_DEFINE(HAVE_STRCASECMP, 1)])
+-AC_CHECK_LIB(c, strncasecmp, [AC_DEFINE(HAVE_STRNCASECMP, 1)])
++AC_CHECK_FUNC(c, strcasecmp, [AC_DEFINE(HAVE_STRCASECMP, 1)])
++AC_CHECK_FUNC(c, strncasecmp, [AC_DEFINE(HAVE_STRNCASECMP, 1)])
+ 
+ LIBADD_DL=
+ AC_CHECK_LIB(dl, dlopen, [AC_DEFINE(HAVE_LIBDL, 1) LIBADD_DL="-ldl"],
+@@ -121,25 +121,26 @@
+     AC_DEFINE(HAVE_LIBPTH,1)
+   else
+     AC_CHECK_LIB(pthread, pthread_mutex_lock )
+-    AC_CHECK_LIB(pthread, pthread_mutex_lock, 
++    AC_CHECK_FUNC(c_r, pthread_mutex_lock, 
+     [
+       AC_DEFINE(HAVE_LIBPTHREAD,1)
+       if test "x$ac_cv_prog_gcc"="xyes"; then
+-        CFLAGS="$CFLAGS -pthread"
++        LIBS="$LIBS -pthread"
++        AC_DEFINE(_THREAD_SAFE,1)
+       fi
+     ] )
+ 
+     AC_CHECK_LIB(thread, mutex_lock )
+-    AC_CHECK_LIB(c, localtime_r, [AC_DEFINE(HAVE_LOCALTIME_R, 1)] )
++    AC_CHECK_FUNC(c, localtime_r, [AC_DEFINE(HAVE_LOCALTIME_R, 1)] )
+   fi
+ fi
+ 
+ if test "x$stats" = "xtrue"; then
+-  AC_CHECK_LIB( c, ftok,[],[stats=false] )
+-  AC_CHECK_LIB( c, semget,[],[stats=false] )
+-  AC_CHECK_LIB( c, shmget,[],[stats=false] )
+-  AC_CHECK_LIB( c, semop,[],[stats=false] )
+-  AC_CHECK_LIB( c, snprintf, [AC_DEFINE(HAVE_SNPRINTF)],[stats=false] )
++  AC_CHECK_FUNC( c, ftok,[],[stats=false] )
++  AC_CHECK_FUNC( c, semget,[],[stats=false] )
++  AC_CHECK_FUNC( c, shmget,[],[stats=false] )
++  AC_CHECK_FUNC( c, semop,[],[stats=false] )
++  AC_CHECK_FUNC( c, snprintf, [AC_DEFINE(HAVE_SNPRINTF)],[stats=false] )
+ fi
+ 
+ if test "x$stats" = "xtrue"; then
