@@ -16,7 +16,6 @@ MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/Eterm/ \
 
 MAINTAINER=	taoka@FreeBSD.org
 
-USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
