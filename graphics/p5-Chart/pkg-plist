@@ -1,10 +1,10 @@
-lib/perl5/site_perl/5.005/Chart.pod
-lib/perl5/site_perl/5.005/Chart/Bars.pm
-lib/perl5/site_perl/5.005/Chart/Base.pm
-lib/perl5/site_perl/5.005/Chart/Lines.pm
-lib/perl5/site_perl/5.005/Chart/LinesPoints.pm
-lib/perl5/site_perl/5.005/Chart/Pareto.pm
-lib/perl5/site_perl/5.005/Chart/Pie.pm
-lib/perl5/site_perl/5.005/Chart/Points.pm
-lib/perl5/site_perl/5.005/Chart/StackedBars.pm
-@dirrm lib/perl5/site_perl/5.005/Chart
+lib/perl5/site_perl/%%PERL_VER%%/Chart.pod
+lib/perl5/site_perl/%%PERL_VER%%/Chart/Bars.pm
+lib/perl5/site_perl/%%PERL_VER%%/Chart/Base.pm
+lib/perl5/site_perl/%%PERL_VER%%/Chart/Lines.pm
+lib/perl5/site_perl/%%PERL_VER%%/Chart/LinesPoints.pm
+lib/perl5/site_perl/%%PERL_VER%%/Chart/Pareto.pm
+lib/perl5/site_perl/%%PERL_VER%%/Chart/Pie.pm
+lib/perl5/site_perl/%%PERL_VER%%/Chart/Points.pm
+lib/perl5/site_perl/%%PERL_VER%%/Chart/StackedBars.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Chart
