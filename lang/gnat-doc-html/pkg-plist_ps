@@ -1,9 +1,9 @@
 share/doc/gnat/ps/arm95.ps
 share/doc/gnat/ps/gcc.ps
 share/doc/gnat/ps/gdb.ps
-share/doc/gnat/ps/gdbtk.ps
 share/doc/gnat/ps/gnat_rm.ps
 share/doc/gnat/ps/gnat_ug.ps
+share/doc/gnat/ps/gvd.ps
 share/doc/gnat/ps/refcard.ps
 @dirrm share/doc/gnat/ps
 @unexec rmdir %D/share/doc/gnat 2>/dev/null || true

@@ -1,8 +1,18 @@
 share/doc/gnat/html/arm95.html
+share/doc/gnat/html/assembly.gif
+share/doc/gnat/html/breakpoints.gif
+share/doc/gnat/html/canvas.gif
+share/doc/gnat/html/colors.gif
+share/doc/gnat/html/explorer.gif
 share/doc/gnat/html/gcc.html
 share/doc/gnat/html/gdb.html
-share/doc/gnat/html/gdbtk.html
 share/doc/gnat/html/gnat_rm.html
 share/doc/gnat/html/gnat_ug.html
+share/doc/gnat/html/gvd.html
+share/doc/gnat/html/main-window.gif
+share/doc/gnat/html/memory-view.gif
+share/doc/gnat/html/process.gif
+share/doc/gnat/html/tasks.gif
+share/doc/gnat/html/tooltips.gif
 @dirrm share/doc/gnat/html
 @unexec rmdir %D/share/doc/gnat 2>/dev/null || true
