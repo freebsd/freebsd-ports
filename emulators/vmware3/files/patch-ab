@@ -8,7 +8,7 @@
 +	.d_version =    D_VERSION,
 +	.d_flags =	D_NEEDGIANT,
 +#else
-+	.d_maj =        CDEV_MAJOR
++	.d_maj =        CDEV_MAJOR,
 +#endif
  	.d_open =       FreeBSD_Driver_Open,
  	.d_name =       DEVICE_NAME,
