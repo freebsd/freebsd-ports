@@ -1,0 +1,46 @@
+bin/getdp
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/README.win32
+%%PORTDOCS%%%%DOCSDIR%%/VERSIONS
+%%PORTDOCS%%%%DOCSDIR%%/getdp.1
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/Core.jpg
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/Strip.jpg
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp-full.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp-info.tgz
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp.pdf
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp.ps
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp.txt
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_1.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_10.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_11.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_12.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_13.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_14.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_15.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_16.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_17.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_2.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_3.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_4.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_5.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_6.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_7.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_8.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_9.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_abt.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_fot.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_ovr.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_toc.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/index.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/objects-wrap.jpg
+%%PORTDOCS%%%%EXAMPLESDIR%%/Magnetostatics.pro
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/solver.par
+%%PORTDOCS%%%%EXAMPLESDIR%%/test.geo
+%%PORTDOCS%%%%EXAMPLESDIR%%/test.msh
+%%PORTDOCS%%%%EXAMPLESDIR%%/test.pro
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/texinfo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
