@@ -1,13 +1,13 @@
 # New ports collection makefile for:	DSSSL stylesheets for DocBook
-# Version required:	1.48
+# Version required:	1.49
 # Date created:		16 March 1998
 # Whom:			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	db148
-PKGNAME=	dsssl-docbook-modular-1.48
+DISTNAME=	db149
+PKGNAME=	dsssl-docbook-modular-1.49
 CATEGORIES=	textproc
 MASTER_SITES=	http://nwalsh.com/docbook/dsssl/
 DISTFILES=	${DISTNAME}.zip ${DISTNAME}d.zip
