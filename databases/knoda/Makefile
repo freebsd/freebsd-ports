@@ -5,19 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=		knoda
-PORTVERSION=		0.6.1
-PORTREVISION=		3
+PORTVERSION=		0.6.3
 CATEGORIES=		databases
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	knoda
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		sem@ciam.ru
 COMMENT=		Database frontend for KDE
 
 LIB_DEPENDS=		hk_classes.5:${PORTSDIR}/databases/hk_classes
 
-BROKEN=			"Does not compile"
-
+USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
 USE_PYTHON=		yes
 USE_GMAKE=		yes
