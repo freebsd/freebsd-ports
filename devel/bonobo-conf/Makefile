@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bonobo-conf
-PORTVERSION=	0.7
+PORTVERSION=	0.10
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/bonobo-conf
