@@ -13,6 +13,8 @@ PKGNAMEPREFIX=	jabber-
 MAINTAINER=	martijn@pacno.net
 COMMENT=	Jabber MSN-Transport module
 
+BROKEN=		"Does not build"
+
 BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net/jabber
 
 USE_GMAKE=	yes
