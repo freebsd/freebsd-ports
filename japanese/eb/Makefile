@@ -7,7 +7,7 @@
 
 PORTNAME=	eb
 PORTVERSION=	4.1.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
 DISTFILES=	${EBFILES} \
