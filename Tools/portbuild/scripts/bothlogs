@@ -1,47 +1,62 @@
 #!/bin/sh
 
-# prints out logs that are in dir1 and in dir2
+# prints out logs that are in all directories
 
-if [ $# != 2 ]; then
-  echo "usage: $0 dir1 dir2"
+if [ $# -lt 2 ]; then
+  echo "usage: $0 dir1 dir2 [dir3...]"
   exit 1
 fi
 
 here=$(pwd)
 dir1=$1
-dir2=$2
-fdir1=$here/$dir1
-fdir2=$here/$dir2
 
-of=$here/$dir1+$dir2.html
+concat="$(echo $*)"
+plus="$(echo $* | sed -e 's/ /+/g')"
 
-echo "<html><head><title>Logs that are in both $dir1 and $dir2</title>" >$of
-echo "<h1>Logs that are in both $dir1 and $dir2</h1>" >>$of
+of=$here/$plus.html
+
+echo "<html><head><title>Logs that are in all of \"$concat\"</title>" >$of
+echo "<h1>Logs that are in all of \"$concat\"</h1>" >>$of
 echo "</head><body>" >>$of
 
-cd $fdir1
+cd $here/$1
 
-set *.log
+logs="$(echo *.log)"
 
-if [ $# = 1 -a "x$1" = "x*.log" ]; then
+if [ "x$logs" = "x*.log" ]; then
   echo "No errors" >>$of
 else
-  num=0
-  echo "<table border=1>" >>$of
-  echo "<tr><th>Log</th></tr>" >>$of
+  shift
   while [ $# -gt 0 ]; do
-    if [ -f ${fdir2}/$1 ]; then
+    num=0
+    newlogs=""
+    cd $here/$1
+    for log in *.log; do
+      if echo $logs | grep -Fwq $log; then
+        newlogs="$newlogs $log"
+        num=$(($num + 1))
+      fi
+    done
+    logs=$newlogs
+    shift
+  done
+  if [ $num = 0 ]; then
+    echo "No errors" >>$of
+  else
+    echo "<table border=1>" >>$of
+    echo "<tr><th>Log</th></tr>" >>$of
+    set $newlogs
+    while [ $# -gt 0 ]; do
       echo -n "<tr><td>" >>$of
       echo -n "<a href=\"$dir1/index.html#$1\">" >>$of
       echo -n $(basename $1 .log) >>$of
       echo -n "</a>" >>$of
       echo "</td></tr>" >>$of
-      num=$(($num + 1))
-    fi
-    shift
-  done
-  echo "</table><br>" >> $of
-  echo "$num errors<br>" >> $of
+      shift
+    done
+    echo "</table><br>" >> $of
+    echo "$num errors<br>" >> $of
+  fi
 fi
 
 echo "<hr>" >> $of
