@@ -7,7 +7,7 @@ sbin/checkrad
 sbin/radiusd
 sbin/radwatch
 etc/raddb/clients.sample
-etc/raddb/dictionary.sample
+etc/raddb/dictionary
 etc/raddb/dictionary.ascend
 etc/raddb/dictionary.cisco
 etc/raddb/dictionary.compat
