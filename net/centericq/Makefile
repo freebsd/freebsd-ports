@@ -24,7 +24,7 @@ USE_GNOMENG=	yes
 USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -lstdc++"
 #CONFIGURE_ARGS=	--with-fribidi
 
 MAN1=	centericq.1
