@@ -1,13 +1,12 @@
-# New ports collection makefile for:	sane
+# New ports collection makefile for:	sane-frontends
 # Date created:			Sat Jul 19 16:23:10 MET DST 1997
 # Whom:				gary@hotlava.com
 #
 # $FreeBSD$
 #
 
-PORTNAME=	sane
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTNAME=	sane-frontends
+PORTVERSION=	1.0.4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://ftp.mostang.com/pub/sane/
@@ -15,30 +14,29 @@ MASTER_SITE_SUBDIR=	apps/graphics/capture
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends
 
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
 USE_GTK=	yes
-INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-MAN1=	saned.1 scanimage.1 xcam.1 xscanimage.1
-MAN5=	sane-abaton.5 sane-agfafocus.5 sane-apple.5 sane-artec.5 \
-	sane-avision.5 sane-canon.5 sane-coolscan.5 sane-dc210.5 \
-	sane-dc25.5 sane-dll.5 sane-dmc.5 sane-epson.5 \
-	sane-fujitsu.5 sane-hp.5 sane-microtek.5 sane-microtek2.5 \
-	sane-mustek.5 sane-mustek_pp.5 sane-net.5 sane-pint.5 \
-	sane-plustek.5 sane-pnm.5 sane-qcam.5 sane-ricoh.5 \
-	sane-s9036.5 sane-scsi.5 sane-sharp.5 sane-snapscan.5 \
-	sane-st400.5 sane-tamarack.5 sane-umax.5 sane-v4l.5
+.if defined(WITH_GIMP)
+LIB_DEPENDS+=	gimp.1:${PORTSDIR}/graphics/gimp1
+CONFIGURE_ARGS+=	--enable-gimp
+.else
+CONFIGURE_ARGS+=	--disable-gimp
+.endif
+
+MAN1=	xcam.1 xscanimage.1
 
 pre-configure:
-	@${ECHO} "*** Note: SANE can be built with an X scanner interface"
-	@${ECHO} "*** (xscanimage) as well as a GIMP plug-in.  If you wish"
-	@${ECHO} "*** to do this, hit Ctrl-C right now and build/install"
-	@${ECHO} "*** the GIMP and GTK packages/ports."
+.if !defined(WITH_GIMP)
+	@${ECHO_MSG} "*** Note: xscanimage can be built with a standalone"
+	@${ECHO_MSG} "*** X scanner interface as well as a GIMP plug-in."
+	@${ECHO_MSG} "*** If you wish to do this, hit Ctrl-C now and use"
+	@${ECHO_MSG} "*** \"WITH_GIMP=yes\""
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
