@@ -1017,6 +1017,7 @@
     SUBDIR += p5-Unix-Statgrab
     SUBDIR += p5-VCP
     SUBDIR += p5-VCP-Dest-svk
+    SUBDIR += p5-VCP-Source-cvsbk
     SUBDIR += p5-VCS
     SUBDIR += p5-VCS-CVS
     SUBDIR += p5-Want
