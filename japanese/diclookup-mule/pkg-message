@@ -1,0 +1,8 @@
+To use these Emacs Lisp, startup code is needed.
+Consider to use ${PREFIX}/lib/dserver/setup-diclookup.sh
+(Also note deinstallation is deinstall-diclookup.sh)
+
+Also (or to begin with), Network Dictionary Transfer Protocol 
+server is mandatory.  You can use either:
+dserver:	ports/japanese/dserver, ja-dserver-2.2.2
+ndtpd:		Will be soon come to ports collection.

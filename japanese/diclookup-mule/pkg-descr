@@ -1,0 +1,7 @@
+diclookup-mule is a CDROM dictionary client for mule.
+
+This package requires mule and ndtp server.
+Either dserver (japanese/dserver) or ndtpd (japanese/ndtpd) must be set up.
+
+WOW! This version supports `sound' of EPWING V2 format. Let's install xanim.
+	(Sound in the other format like EB,EBG,EBXA are not supported.)
