@@ -6,6 +6,15 @@ etc/apache/access.conf-dist
 etc/apache/mime.types-dist
 etc/apache/magic-dist
 sbin/httpd
+sbin/apachectl
+sbin/dbmmanage
+sbin/htdigest
+sbin/htpasswd
+sbin/log_server_status
+sbin/logresolve
+sbin/rotatelogs
+man/man1/htpasswd.1.gz
+man/man8/httpd.8.gz
 www/icons/README
 www/icons/a.gif
 www/icons/alert.black.gif

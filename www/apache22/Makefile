@@ -1,13 +1,13 @@
 # New ports collection makefile for:    apache HTTPD
-# Version required:     1.3a1
+# Version required:     1.3b2
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.38 1997/08/13 15:09:53 ache Exp $
+# $Id: Makefile,v 1.39 1997/08/25 23:02:41 ache Exp $
 #
 
-DISTNAME=       apache_1.3a1
-PKGNAME=        apache-1.3a1
+DISTNAME=       apache_1.3b2
+PKGNAME=        apache-1.3b2
 CATEGORIES=	www
 MASTER_SITES=   ftp://www.apache.org/apache/dist/
 
@@ -16,13 +16,59 @@ MAINTAINER=     ache@freebsd.org
 # Set it for local-supplied patch, f.e.
 # VERS_ID = mods-1.0/me
 
-.if defined(VERS_ID)
 post-patch:
+	@cp /usr/include/md5.h ${WRKSRC}/src/main/freebsd_md5.h
+	@cp /usr/include/fnmatch.h ${WRKSRC}/src/main/freebsd_fnmatch.h
+	@cd ${WRKSRC}/conf && \
+	for I in access.conf-dist srm.conf-dist; do \
+	    sed -e "s#@@ServerRoot@@#${PREFIX}/www#g" < $${I} > $${I}.new; \
+	    mv $${I}.new $${I}; \
+	done
+	@cd ${WRKSRC}/conf && \
+	sed -e "s#@@ServerRoot@@#${PREFIX}/etc/apache#g" < \
+		httpd.conf-dist > httpd.conf-dist.new && \
+	mv httpd.conf-dist.new httpd.conf-dist
+	@${RM} -rf ${WRKSRC}/icons/CVS
+.if defined(VERS_ID)
 	@cd ${WRKSRC}/src && \
 	mv Configuration Configuration.old && \
 	sed 's;^#*OPTIM=.*;OPTIM= -DSERVER_SUBVERSION=\\"${VERS_ID}\\";' \
 	< Configuration.old > Configuration
 .endif
+
+CONF_DIR=   ${PREFIX}/etc/apache
+MAN1=   htpasswd.1
+MAN8=   httpd.8
+
+do-install:
+	install -d -m 755 -o bin -g bin ${CONF_DIR} ${PREFIX}/www/data \
+		${PREFIX}/www/icons ${PREFIX}/www/cgi-bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/httpd ${PREFIX}/sbin
+	cd ${WRKSRC}/src/support && \
+		${INSTALL_PROGRAM} htdigest htpasswd logresolve rotatelogs \
+		${PREFIX}/sbin
+	cd ${WRKSRC}/src/support && \
+		${INSTALL_SCRIPT} apachectl dbmmanage log_server_status \
+		${PREFIX}/sbin
+	${INSTALL_DATA} -o nobody ${WRKSRC}/icons/* ${PREFIX}/www/icons
+	${INSTALL_MAN} ${WRKSRC}/src/support/httpd.8 \
+		${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/src/support/htpasswd.1 \
+		${PREFIX}/man/man1
+	cd ${WRKSRC} && \
+	for file in httpd.conf srm.conf access.conf ; do \
+	    if [ ! -f ${CONF_DIR}/$$file ] ; then \
+		${INSTALL_DATA} conf/$$file-dist ${CONF_DIR}/$$file ; \
+	    fi ; \
+	    ${INSTALL_DATA} conf/$$file-dist ${CONF_DIR} ; \
+	done
+	cd ${WRKSRC} && \
+	for file in mime.types magic ; do \
+	    if [ ! -f ${CONF_DIR}/$$file ] ; then \
+		${INSTALL_DATA} conf/$$file ${CONF_DIR} ; \
+	    fi ; \
+	    ${INSTALL_DATA} conf/$$file ${CONF_DIR}/$${file}-dist ; \
+	done
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \

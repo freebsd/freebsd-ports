@@ -1,0 +1,50 @@
+*** src/support/apachectl.orig	Thu Oct 16 22:58:26 1997
+--- src/support/apachectl	Thu Oct 23 03:35:09 1997
+***************
+*** 21,30 ****
+  # --------------------                              --------------------
+  # 
+  # the path to your PID file
+! PIDFILE=/usr/local/etc/httpd/logs/httpd.pid
+  #
+  # the path to your httpd binary
+! HTTPD=/usr/local/etc/httpd/src/httpd
+  #
+  # a command that outputs a formatted text version of the HTML at the
+  # url given on the command line.  Designed for lynx, however other
+--- 21,30 ----
+  # --------------------                              --------------------
+  # 
+  # the path to your PID file
+! PIDFILE=/var/run/httpd.pid
+  #
+  # the path to your httpd binary
+! HTTPD=/usr/local/sbin/httpd
+  #
+  # a command that outputs a formatted text version of the HTML at the
+  # url given on the command line.  Designed for lynx, however other
+***************
+*** 33,42 ****
+  #
+  # the URL to your server's mod_status status page.  If you do not
+  # have one, then status and fullstatus will not work.
+! STATUSURL="http://localhost/server-status"
+  #
+  # --------------------                              --------------------
+  # ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
+  
+  ERROR=0
+  ARGV="$@"
+--- 33,44 ----
+  #
+  # the URL to your server's mod_status status page.  If you do not
+  # have one, then status and fullstatus will not work.
+! STATUSURL="http://localhost/status"
+  #
+  # --------------------                              --------------------
+  # ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
++ 
++ eval `limits -e -C daemon`
+  
+  ERROR=0
+  ARGV="$@"

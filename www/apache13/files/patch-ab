@@ -1,36 +1,51 @@
-*** conf/access.conf-dist.orig	Wed Jul  3 21:18:11 1996
---- conf/access.conf-dist	Fri Jul  5 06:32:54 1996
+*** src/main/fnmatch.h.orig	Thu Oct 16 22:57:01 1997
+--- src/main/fnmatch.h	Wed Oct 22 22:44:12 1997
 ***************
-*** 12,18 ****
+*** 35,40 ****
+--- 35,44 ----
   
-  # This should be changed to whatever you set DocumentRoot to.
+  /* This file has been modified by the Apache Group. */
   
-! <Directory /usr/local/etc/httpd/htdocs>
++ #ifdef __FreeBSD__
++ #include "freebsd_fnmatch.h"
++ extern int is_fnmatch(const char *);
++ #else
+  #ifndef	_FNMATCH_H_
+  #define	_FNMATCH_H_
   
-  # This may also be "None", "All", or any combination of "Indexes",
-  # "Includes", "FollowSymLinks", "ExecCGI", or "MultiViews".
---- 12,18 ----
-  
-  # This should be changed to whatever you set DocumentRoot to.
-  
-! <Directory /usr/local/www/data>
-  
-  # This may also be "None", "All", or any combination of "Indexes",
-  # "Includes", "FollowSymLinks", "ExecCGI", or "MultiViews".
 ***************
-*** 38,44 ****
-  # /usr/local/etc/httpd/cgi-bin should be changed to whatever your ScriptAliased
-  # CGI directory exists, if you have that configured.
+*** 50,52 ****
+--- 54,57 ----
+  extern int is_fnmatch(const char *);
   
-! <Directory /usr/local/etc/httpd/cgi-bin>
-  AllowOverride None
-  Options None
-  </Directory>
---- 38,44 ----
-  # /usr/local/etc/httpd/cgi-bin should be changed to whatever your ScriptAliased
-  # CGI directory exists, if you have that configured.
+  #endif /* !_FNMATCH_H_ */
++ #endif /* !FreeBSD */
+*** src/main/fnmatch.c.orig	Thu Oct 16 22:57:01 1997
+--- src/main/fnmatch.c	Wed Oct 22 22:40:52 1997
+***************
+*** 34,39 ****
+--- 34,40 ----
+   * SUCH DAMAGE.
+   */
   
-! <Directory /usr/local/www/cgi-bin>
-  AllowOverride None
-  Options None
-  </Directory>
++ #ifndef __FreeBSD__
+  #if defined(LIBC_SCCS) && !defined(lint)
+  static char sccsid[] = "@(#)fnmatch.c	8.2 (Berkeley) 4/16/94";
+  #endif /* LIBC_SCCS and not lint */
+***************
+*** 169,175 ****
+      }
+      return (ok == negate ? NULL : pattern);
+  }
+! 
+  
+  /* This function is an Apache addition */
+  /* return non-zero if pattern has any glob chars in it */
+--- 170,176 ----
+      }
+      return (ok == negate ? NULL : pattern);
+  }
+! #endif /* !FreeBSD */
+  
+  /* This function is an Apache addition */
+  /* return non-zero if pattern has any glob chars in it */
