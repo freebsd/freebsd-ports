@@ -1,5 +1,16 @@
---- Makefile.orig	Mon Apr 19 12:38:56 1999
-+++ Makefile	Sat May 27 14:51:57 2000
+--- Makefile.orig	Mon Apr 19 10:38:56 1999
++++ Makefile	Wed Sep  4 19:46:45 2002
+@@ -10,8 +10,8 @@
+ 
+ # Default compilers and linker
+ 
+-CC	= gcc
+-CXX	= g++
++CC	?= cc
++CXX	?= c++
+ LD	= $(CXX)
+ 
+ # OS-dependent definitions (choose one and adjust, if necessary)
 @@ -99,21 +99,21 @@
  
  ## for Linux (glibc2/libc 6):
