@@ -316,3 +316,4 @@ www/orion-devel|www/orion|2003-05-08|stable version caught up with development v
 editors/xemacs21-mule-common||2003-05-09|needless since new xemacs21-mule is 21.4.12
 x11-toolkits/fltk-xunicode|x11-toolkits/fltk|2003-05-011|maintenance discontinued
 www/nautilus-gtkhtml||2003-05-11|maintenance discontinued
+editors/xemacs21-mule-sumo||2003-05-12|needless since merged to xemacs-{mule-}packages
