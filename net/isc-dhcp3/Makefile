@@ -44,7 +44,7 @@ CONF_FILES=	dhclient.conf
 BIN_DIR=	${PREFIX}/sbin
 ETC_DIR=	${PREFIX}/etc
 RCD_DIR=	${PREFIX}/etc/rc.d
-DOC_DIR=	${PREFIX}/share/doc/${PORTNAME}
+DOC_DIR=	${PREFIX}/share/doc/${PKGBASE}
 VARDB_DIR=	/var/db
 
 STRIP?=		strip
