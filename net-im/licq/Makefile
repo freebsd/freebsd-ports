@@ -35,5 +35,6 @@ CONFIGURE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
+.include <bsd.port.pre.mk>
 .include "${.CURDIR}/Makefile.inc"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
