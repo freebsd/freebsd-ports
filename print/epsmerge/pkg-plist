@@ -11,3 +11,4 @@ lib/epsmerge/epsmerge
 bin/epsmerge
 %%PORTDOCS%%%%DOCSDIR%%/epsmerge.txt
 %%PORTDOCS%%%%DOCSDIR%%/epsmerge.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
