@@ -6,26 +6,22 @@
 #
 
 PORTNAME=	glabels
-PORTVERSION=	1.91.1
-PORTREVISION=	1
+PORTVERSION=	1.92.2
 CATEGORIES=	deskutils
-MASTER_SITES=	http://snaught.com/glabels/source/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A programm to create labels and business cards
 
-LIB_DEPENDS=	gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui20
-
-USE_GETOPT_LONG=yes
-USE_GNOME=	gnomehack gnomeprefix gnomelibs libgnomeui
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui libgnomeprintui
+USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CXXFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib -lgnuregex -lcompat"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
