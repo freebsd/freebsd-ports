@@ -31,6 +31,7 @@ bin/einverted
 bin/embossdata
 bin/emma
 bin/emowse
+bin/entret
 bin/equicktandem
 bin/est2genome
 bin/etandem
@@ -181,6 +182,7 @@ share/EMBOSS/acd/embossdata.acd
 share/EMBOSS/acd/emma.acd
 share/EMBOSS/acd/emowse.acd
 share/EMBOSS/acd/entrails.acd
+share/EMBOSS/acd/entret.acd
 share/EMBOSS/acd/equicktandem.acd
 share/EMBOSS/acd/est2genome.acd
 share/EMBOSS/acd/etandem.acd
@@ -648,6 +650,7 @@ share/EMBOSS/test/wormpep/entrynam.idx
 share/EMBOSS/test/wormpep/wormpep
 share/doc/EMBOSS/manuals/admin.sty
 share/doc/EMBOSS/manuals/admin.tex
+share/doc/EMBOSS/manuals/program.ps.gz
 share/doc/EMBOSS/programs/html/SITE-DIRECTED.html
 share/doc/EMBOSS/programs/html/alignment_global_group.html
 share/doc/EMBOSS/programs/html/alignment_group.html
@@ -668,6 +671,7 @@ share/doc/EMBOSS/programs/html/coding_regions_group.html
 share/doc/EMBOSS/programs/html/comparison_group.html
 share/doc/EMBOSS/programs/html/complex.html
 share/doc/EMBOSS/programs/html/compseq.html
+share/doc/EMBOSS/programs/html/cons.html
 share/doc/EMBOSS/programs/html/cpg_islands_group.html
 share/doc/EMBOSS/programs/html/cpgplot.html
 share/doc/EMBOSS/programs/html/cpgplot0.gif
@@ -700,6 +704,7 @@ share/doc/EMBOSS/programs/html/emboss_icon.gif
 share/doc/EMBOSS/programs/html/embossdata.html
 share/doc/EMBOSS/programs/html/emma.html
 share/doc/EMBOSS/programs/html/emowse.html
+share/doc/EMBOSS/programs/html/entret.html
 share/doc/EMBOSS/programs/html/enzyme_kinetics_group.html
 share/doc/EMBOSS/programs/html/equicktandem.html
 share/doc/EMBOSS/programs/html/est2genome.html
@@ -797,6 +802,7 @@ share/doc/EMBOSS/programs/html/seqmatchall.html
 share/doc/EMBOSS/programs/html/seqret.html
 share/doc/EMBOSS/programs/html/seqretall.html
 share/doc/EMBOSS/programs/html/seqretset.html
+share/doc/EMBOSS/programs/html/seqretsplit.html
 share/doc/EMBOSS/programs/html/sequence_comparison_group.html
 share/doc/EMBOSS/programs/html/sequence_composition_group.html
 share/doc/EMBOSS/programs/html/sequence_display_group.html
@@ -850,6 +856,7 @@ share/doc/EMBOSS/programs/text/cirdna.txt
 share/doc/EMBOSS/programs/text/codcmp.txt
 share/doc/EMBOSS/programs/text/complex.txt
 share/doc/EMBOSS/programs/text/compseq.txt
+share/doc/EMBOSS/programs/text/cons.txt
 share/doc/EMBOSS/programs/text/cpgplot.txt
 share/doc/EMBOSS/programs/text/cpgreport.txt
 share/doc/EMBOSS/programs/text/cusp.txt
@@ -870,6 +877,7 @@ share/doc/EMBOSS/programs/text/einverted.txt
 share/doc/EMBOSS/programs/text/embossdata.txt
 share/doc/EMBOSS/programs/text/emma.txt
 share/doc/EMBOSS/programs/text/emowse.txt
+share/doc/EMBOSS/programs/text/entret.txt
 share/doc/EMBOSS/programs/text/equicktandem.txt
 share/doc/EMBOSS/programs/text/est2genome.txt
 share/doc/EMBOSS/programs/text/etandem.txt
@@ -936,6 +944,7 @@ share/doc/EMBOSS/programs/text/seqmatchall.txt
 share/doc/EMBOSS/programs/text/seqret.txt
 share/doc/EMBOSS/programs/text/seqretall.txt
 share/doc/EMBOSS/programs/text/seqretset.txt
+share/doc/EMBOSS/programs/text/seqretsplit.txt
 share/doc/EMBOSS/programs/text/showdb.txt
 share/doc/EMBOSS/programs/text/showfeat.txt
 share/doc/EMBOSS/programs/text/showorf.txt
