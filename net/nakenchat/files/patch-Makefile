@@ -1,0 +1,11 @@
+--- Makefile.orig	Tue Oct  7 22:01:27 2003
++++ Makefile	Tue Oct  7 22:01:41 2003
+@@ -1,6 +1,6 @@
+ 
+-CC=gcc
+-BASEDIR=/usr/local
++CC?=gcc
++BASEDIR=${PREFIX}
+ 
+ all:
+ 	cd src && make
