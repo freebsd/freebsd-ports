@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2004.02.05
+PORTVERSION=	2004.02.09
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
@@ -23,6 +23,7 @@ WRKSRC=		${WRKDIR}/live
 PLIST=		${WRKDIR}/pkg-plist
 
 HAS_CONFIGURE=	YES
+USE_REINPLACE=	YES
 
 CONFIGURE_SCRIPT=	genMakefiles
 CONFIGURE_ARGS=		fixed-${OPSYS:L}
@@ -133,6 +134,7 @@ liveMedia=		\
 		liveMedia/include/SimpleRTPSink.hh \
 		liveMedia/include/SimpleRTPSource.hh \
 		liveMedia/include/VideoRTPSink.hh \
+		liveMedia/include/WAVAudioFileServerMediaSubsession.hh \
 		liveMedia/include/WAVAudioFileSource.hh \
 		liveMedia/include/liveMedia.hh \
 		liveMedia/include/liveMedia_version.hh \
@@ -140,12 +142,13 @@ liveMedia=		\
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
-
 post-extract:
 	@${CP} ${FILESDIR}/config.fixed-${OPSYS:L} ${WRKSRC}/
+
+post-patch:
+	${REINPLACE_CMD} 's/strstream\.h/sstream/' \
+		${WRKSRC}/groupsock/Groupsock.cpp \
+		${WRKSRC}/groupsock/NetInterface.cpp
 
 post-build:
 	@${RM} -f ${PLIST}
