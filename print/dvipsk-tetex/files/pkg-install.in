@@ -3,32 +3,34 @@
 
 PAPERSIZE=%%PAPERSIZE%%
 DVIPSDIR=%%DVIPSDIR%%
-DVIPSVARDIR=%%DVIPSVARDIR%%
+DVIPSCONFDIR=%%DVIPSCONFDIR%%
 MKTEXLSR=%%MKTEXLSR%%
-TEXCONFIG=%%TEXCONFIG%%
+TEXCONFIGBIN=%%TEXCONFIGBIN%%
 PATH=${PATH}:%%LOCALBASE%%/bin
 
 case $2 in
 POST-INSTALL)
-	if [ -f ${DVIPSVARDIR}/config.ps ]; then
-		echo "======"
-		echo "NOTICE: you have to merge "\
-			"${DVIPSVARDIR}/config.ps from ${DVIPSDIR}/config.ps."
-		echo "======"
-	fi
+	${MKTEXLSR}
+
+	# output to a file by default
+	${TEXCONFIGBIN} dvips printcmd -
 	case ${PAPERSIZE} in
 	letter)
-		${TEXCONFIG} dvips paper letter
+		${TEXCONFIGBIN} dvips paper letter
 	;;
 	*)
-		${TEXCONFIG} dvips paper a4
+		${TEXCONFIGBIN} dvips paper a4
 	;;
 	esac
 	${MKTEXLSR}
+	echo "======"
+	echo "NOTICE: Before upgrading, you may want to make " \
+		"a backup of the following file(s):"
+	echo "    ${DVIPSCONFDIR}/config.ps"
+	echo "======"
 ;;
 DEINSTALL)
-	rm -f ${DVIPSVARDIR}/config.ps
-	cp -v ${DVIPSDIR}/config.ps.tetex ${DVIPSDIR}/config.ps
+	# do nothing
 	${MKTEXLSR}
 ;;
 esac
