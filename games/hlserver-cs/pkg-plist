@@ -57,7 +57,6 @@
 %%HLDSDIR%%cstrike/de_vegas.wad
 %%HLDSDIR%%cstrike/decals.wad
 %%HLDSDIR%%cstrike/delta.lst
-%%HLDSDIR%%cstrike/dlls/cs_i386.so
 %%HLDSDIR%%cstrike/events/ak47.sc
 %%HLDSDIR%%cstrike/events/aug.sc
 %%HLDSDIR%%cstrike/events/awp.sc
@@ -823,9 +822,7 @@
 @dirrm %%HLDSDIR%%cstrike/maps
 %%PORTDOCS%%@dirrm %%HLDSDIR%%cstrike/manual
 @dirrm %%HLDSDIR%%cstrike/events
-@dirrm %%HLDSDIR%%cstrike/dlls
 @dirrm %%HLDSDIR%%cstrike/classes
 @dirrm %%HLDSDIR%%cstrike/cl_dlls
 @unexec rmdir %D/%%HLDSDIR%%cstrike/SAVE 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%cstrike/logs 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%cstrike 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%cstrike`` to remove any configuration files and logs left." | fmt

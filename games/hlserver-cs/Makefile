@@ -8,11 +8,9 @@
 PORTNAME?=	cs
 PORTVERSION?=	1.5
 CATEGORIES?=	games linux
-MASTER_SITES?=	http://cstrike.thefusion.cc/ \
-		http://bteg.net/~ms/hl/ \
+MASTER_SITES?=	http://files.redphive.org/ \
 		http://www.jetstreamgames.co.nz/files/pub/halflife/cstrike/ \
-		http://cs.webcabo.com.br/~mosca/cs/ \
-		http://lamas.counter-strike.hu:8080/letolt/extra/cs/
+		http://cs.webcabo.com.br/~mosca/cs/
 PKGNAMEPREFIX=	hlserver-
 .ifndef(DISTFILES)
 DISTNAME?=	${PORTNAME}_${PORTVERSION:S/.//}_full
