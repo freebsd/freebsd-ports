@@ -3,12 +3,13 @@
 # Date created:		29 October 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.17 1998/02/20 18:39:57 steve Exp $
+# $Id: Makefile,v 1.18 1998/10/15 02:03:14 jseger Exp $
 #
 
 DISTNAME=	w3c-httpd-3.0A
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.w3.org/pub/httpd/
+MASTER_SITES=	ftp://ftp.w3.org/pub/httpd/ \
+		ftp://ftp-eu.w3.org/pub/httpd/
 
 MAINTAINER=	giffunip@asme.org
 
