@@ -1,0 +1,41 @@
+--- Makefile.orig	Mon May  7 11:59:32 2001
++++ Makefile	Mon May  7 12:02:13 2001
+@@ -0,0 +1,38 @@
++YFLAGS		= -dv
++CFLAGS		= -g $(LIBFLAGS) $(IFLAGS) -DNDEBUG -DRELATE_INT
++LIBDIR		= /usr/local/lib
++INCDIR		= /usr/local/include
++
++# for FreeBSD
++CC		= cc
++LIBFLAGS	= -L$(LIBDIR) -L/usr/X11R6/lib
++IFLAGS		= -I$(INCDIR)/tk8.2 -I$(INCDIR)/tcl8.2 -I/usr/X11R6/include
++LIBS		= -ltk82 -ltcl82 -lm -lX11
++
++TCL_FILES = \
++	ui_audiotool.tcl \
++	relate.tcl 
++
++# The Make rules.
++INC	= util.h mbus.h mbus_ui.h config.h net_udp.h
++SRC	= tcllibs.c main.c mbus.c mbus_ui.c util.c lbl_confbus.c tcltk.c net_udp.c
++OBJ	= tcllibs.o main.o mbus.o mbus_ui.o util.o lbl_confbus.o tcltk.o net_udp.o
++
++all	:	relate
++
++relate	:	$(OBJ) $(INC)
++	$(CC) $(CFLAGS) $(OBJ) $(LIBS) -o relate
++
++clean	:
++	rm -f *.o tcl2c relate core
++
++tcl2c	:	tcl2c.o
++	$(CC) $(CFLAGS) tcl2c.o $(LIBS) -o tcl2c
++
++# Tcl library files are turned into a single object file.
++tcllibs.o: $(TCL_FILES) tcl2c
++	rm -f $@ tcllibs.c; \
++	./tcl2c 1 $(TCL_FILES) > tcllibs.c ; \
++	$(CC) -c $(CFLAGS) tcllibs.c ; rm -f tcllibs.c
++install:        all
++	install -c -s -m 755 -o bin -g bin relate ${PREFIX}/bin
