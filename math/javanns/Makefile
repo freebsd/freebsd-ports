@@ -28,8 +28,8 @@ USE_REINPLACE=	yes
 
 post-extract:
 	# Permissions in the tar file are whacked
-	find ${WRKSRC} -type d -print | xargs ${CHMOD} 755
-	find ${WRKSRC} -type f -print | xargs ${CHMOD} 644
+	${FIND} ${WRKSRC} -type d -print | ${XARGS} ${CHMOD} 755
+	${FIND} ${WRKSRC} -type f -print | ${XARGS} ${CHMOD} 644
 
 do-configure:
 	${INSTALL_DATA} ${FILESDIR}/javanns.sh ${WRKSRC}

@@ -111,9 +111,9 @@ pre-install:
 	@${CAT} ${FILESDIR}/pkg-milter >>${PLIST}
 .endif
 .if !defined(NOPORTDOCS)
-	@cd ${WRKSRC} && find cf -type f | \
+	@cd ${WRKSRC} && ${FIND} cf -type f | \
 	${AWK} '{print "share/sendmail/" $$1}' >>${PLIST}
-	@cd ${WRKSRC} && find -d cf -type d | \
+	@cd ${WRKSRC} && ${FIND} -d cf -type d | \
 	${AWK} '{print "@dirrm share/sendmail/" $$1}' >>${PLIST}
 	@${ECHO_CMD} "@dirrm share/sendmail" >>${PLIST}
 .for i in ${DOCS}

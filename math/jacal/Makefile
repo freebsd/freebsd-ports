@@ -27,6 +27,6 @@ MAN1=		jacal.1
 
 do-configure:
 	cd ${WRKSRC}; \
-	find . -type f -exec perl -spi -e 's|%%PREFIX%%|${PREFIX}|' {} ';'
+	${FIND} . -type f -exec perl -spi -e 's|%%PREFIX%%|${PREFIX}|' {} ';'
 
 .include <bsd.port.mk>

@@ -42,9 +42,9 @@ post-patch:
 
 do-install:
 	@ ${MKDIR} ${DIPDLDIR}
-	@ cd ${WRKSRC} && find *.html *.css images \
+	@ cd ${WRKSRC} && ${FIND} *.html *.css images \
 	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	@ cd ${WRKDIR}/py && find * \
+	@ cd ${WRKDIR}/py && ${FIND} * \
 	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .for format in html html-flat pdf text word help xml common examples
 	@ ${INSTALL_DATA} \

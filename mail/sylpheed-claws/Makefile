@@ -154,7 +154,7 @@ post-install:
 		tb2sylpheed update-po uudec ${DATADIR}
 .if !defined(WITHOUT_THEMES)
 	@${MKDIR} ${DATADIR}/themes
-	@cd ${WRKDIR}/${THEMEFILE:C/.tar.gz//} && for d in `find .`; do \
+	@cd ${WRKDIR}/${THEMEFILE:C/.tar.gz//} && for d in `${FIND} .`; do \
 		if ${TEST} -d $${d}; then ${MKDIR} ${DATADIR}/themes/$${d}; else \
 		${INSTALL_DATA} $${d} ${DATADIR}/themes/$${d}; fi; \
 	done

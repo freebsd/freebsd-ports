@@ -19,7 +19,7 @@ ALL_TARGET=
 INSTALL_TARGET=setup check
 
 post-patch:
-	@find ${WRKSRC} -type f -exec \
+	@${FIND} ${WRKSRC} -type f -exec \
 		${PERL} -pi -e 's!(djbfft.a)!lib\1!' {} \;
 	@${PERL} -pi -e 's|("include)|\1/${PORTNAME}|' ${WRKSRC}/hier.c
 

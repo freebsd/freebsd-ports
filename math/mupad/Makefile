@@ -40,7 +40,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/mupad/freebsd
 	@${MKDIR} ${PREFIX}/mupad/share
 	@${MKDIR} ${PREFIX}/mupad/packages
-	find ${WRKSRC} -name "*.orig" | xargs ${RM}
+	${FIND} ${WRKSRC} -name "*.orig" | ${XARGS} ${RM}
 	${RM} -rf ${WRKSRC}/packages/scilab/linux
 	${RM} -rf ${WRKSRC}/packages/scilab/solaris
 	${TAR} cf - -C ${WRKSRC}/linux . | ${TAR} xf - -C ${PREFIX}/mupad/freebsd

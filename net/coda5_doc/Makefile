@@ -100,7 +100,7 @@ do-build:
 	@${ECHO} "or two."
 
 do-install:
-	find ${WRKSRC} -type d -exec chmod 755 {} \;
+	${FIND} ${WRKSRC} -type d -exec chmod 755 {} \;
 	cd ${WRKSRC}; tar cf - man | (cd ${PREFIX}; tar xvf -)
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}; tar cf - doc | (cd ${PREFIX}/share; tar xvf -)

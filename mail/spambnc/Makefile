@@ -25,7 +25,7 @@ PLIST=		${WRKDIR}/.pkg-plist
 
 pre-install:
 	@${RM} -f ${PLIST}
-	@(cd ${WRKDIR} && find -s . -type f | ${GREP} -v "^\.\/\." | \
+	@(cd ${WRKDIR} && ${FIND} -s . -type f | ${GREP} -v "^\.\/\." | \
 		${SED} -e 's,.,share/spambnc,1' >> ${PLIST})
 	@echo "%%PORTDOCS%%share/doc/spambnc/documentation.html" >> ${PLIST}
 	@echo "@dirrm share/spambnc" >> ${PLIST}

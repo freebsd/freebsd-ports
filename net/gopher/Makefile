@@ -24,7 +24,7 @@ MAN1=	gopher.1 gophfilt.1
 MAN5=	gopherrc.5
 
 pre-patch:
-	@${FIND} ${WRKSRC} -name '*.[ch]' | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
 		's,<malloc.h>,<stdlib.h>,'
 
 .include <bsd.port.mk>

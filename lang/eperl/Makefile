@@ -35,7 +35,8 @@ test:
 	@(cd ${WRKSRC}; ${MAKE} test)
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f -name "*.[ch]" | xargs ${GREP} -l strnstr | \
+	@${FIND} ${WRKSRC} -type f -name "*.[ch]" | \
+		${XARGS} ${GREP} -l strnstr | \
 		${XARGS} ${PERL} -pi -e 's|strnstr|ePerl_strnstr|g'
 
 do-install:

@@ -65,7 +65,7 @@ do-install:
 	${SED} -e "s,^BIN_DIR=.*\$$,BIN_DIR=${SML_BINDIR}," \
 		< ${WRKDIR}/bin/.run-sml > ${SML_BINDIR}/.run-sml
 	${CHMOD} 755 ${SML_BINDIR}/.run-sml
-	cd ${WRKDIR} && tar -cf - `find . -name x86-unix` | \
+	cd ${WRKDIR} && tar -cf - `${FIND} . -name x86-unix` | \
 		tar -C ${SML_BASE} -xf -
 	cd ${WRKDIR} && tar -cf - `${SCRIPTDIR}/get-cm ${WRKDIR}` | \
 		tar -C ${SML_BASE} -xf -
