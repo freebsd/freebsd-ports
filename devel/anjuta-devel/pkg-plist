@@ -1,4 +1,5 @@
 bin/anjuta
+bin/anjuta_first_run.sh
 bin/anjuta_import.sh
 bin/anjuta_launcher
 lib/anjuta/libanjuta_clsGen.so
@@ -58,6 +59,7 @@ share/gnome/anjuta/gnome2/gnome-pthread-check.m4
 share/gnome/anjuta/gnome2/gnome-x-checks.m4
 share/gnome/anjuta/gnome2/linger.m4
 share/gnome/anjuta/header.c
+share/gnome/anjuta/licence.txt
 share/gnome/anjuta/properties/ada.properties
 share/gnome/anjuta/properties/anjuta.properties
 share/gnome/anjuta/properties/asm.properties
@@ -81,6 +83,7 @@ share/gnome/anjuta/properties/matlab.properties
 share/gnome/anjuta/properties/others.properties
 share/gnome/anjuta/properties/pascal.properties
 share/gnome/anjuta/properties/perl.properties
+share/gnome/anjuta/properties/php.properties
 share/gnome/anjuta/properties/props.properties
 share/gnome/anjuta/properties/python.properties
 share/gnome/anjuta/properties/rc.properties
@@ -246,10 +249,15 @@ share/gnome/help/anjuta/ja/topic.dat
 share/gnome/mime-info/anjuta.mime
 share/gnome/mimelnk/application/x-anjuta-project.desktop
 share/gnome/omf/anjuta/anjuta-faqs-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-faqs-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/anjuta/anjuta-faqs-ja_JP.eucJP.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-faqs-ja_JP.eucJP.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/anjuta/anjuta-manual-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-manual-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/anjuta/anjuta-manual-ja_JP.eucJP.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-manual-ja_JP.eucJP.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/anjuta/anjuta-tutorial-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-tutorial-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/anjuta/add.xpm
 share/gnome/pixmaps/anjuta/an_tag.xpm
 share/gnome/pixmaps/anjuta/anjuta_icon.png
@@ -455,3 +463,8 @@ share/locale/zh_TW/LC_MESSAGES/anjuta.mo
 @dirrm share/gnome/anjuta/gnome
 @dirrm share/gnome/anjuta
 @dirrm lib/anjuta
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-faqs-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-faqs-ja_JP.eucJP.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-manual-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-manual-ja_JP.eucJP.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-tutorial-C.omf 2>/dev/null || /usr/bin/true

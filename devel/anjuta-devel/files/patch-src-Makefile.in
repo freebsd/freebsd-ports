@@ -1,15 +1,15 @@
---- src/Makefile.in.orig	Thu Feb 20 09:05:39 2003
-+++ src/Makefile.in	Thu Feb 20 09:12:13 2003
-@@ -177,7 +177,7 @@
- 	$(GNOME_INCLUDEDIR)\
- 	$(EXTRA_GNOME_CFLAGS)\
+--- src/Makefile.in.orig	Fri Mar 28 09:20:58 2003
++++ src/Makefile.in	Fri Mar 28 09:23:15 2003
+@@ -183,7 +183,7 @@
  	$(EXTRA_ORBIT_CFLAGS)\
+ 	$(PCRE_CFLAGS)\
+ 	$(FREEBSD_BUILD)\
 -	-I$(srcdir)/../scintilla/include \
-+	-I$(prefix)/include/scintilla \
++	-I%%X11BASE%%/include/scintilla \
  	-I$(srcdir)/../tagmanager/include \
  	-I$(srcdir)/../widgets \
  	-I$(srcdir)/../pixmaps \
-@@ -185,31 +185,8 @@
+@@ -191,31 +191,8 @@
  	-I.. -I. -DPACKAGE_BIN_DIR=\"$(bindir)\"
  
  
@@ -43,10 +43,10 @@
  
  bin_PROGRAMS = anjuta
  
-@@ -413,10 +390,10 @@
- 	$(GNOMEUI_LIBS)\
+@@ -423,10 +400,10 @@
  	$(EXTRA_GNOME_LIBS)\
  	$(EXTRA_ORBIT_LIBS)\
+ 	$(PCRE_LIBS)\
 -	$(top_builddir)/scintilla/libscintilla.a\
  	$(top_builddir)/tagmanager/libctags.a\
  	$(top_builddir)/widgets/libwidgets.a\
@@ -55,9 +55,9 @@
  	$(SCILEXERS)
  
  
-@@ -489,22 +466,7 @@
- 	defaults.$(OBJEXT) resources.$(OBJEXT) session.$(OBJEXT) \
- 	widget-registry.$(OBJEXT)
+@@ -500,22 +477,7 @@
+ 	compatibility_0.$(OBJEXT) defaults.$(OBJEXT) \
+ 	resources.$(OBJEXT) session.$(OBJEXT) widget-registry.$(OBJEXT)
  anjuta_OBJECTS = $(am_anjuta_OBJECTS)
 -anjuta_DEPENDENCIES = $(top_builddir)/scintilla/libscintilla.a \
 -	$(top_builddir)/tagmanager/libctags.a \
@@ -75,7 +75,7 @@
 -	../scintilla/LexBaan.o ../scintilla/LexMatlab.o \
 -	../scintilla/LexAsm.o ../scintilla/LexFortran.o \
 -	../scintilla/LexCSS.o
-+anjuta_DEPENDENCIES =
++anjuta_DEPENDENCIES = 
  anjuta_LDFLAGS =
  
  DEFS = @DEFS@
