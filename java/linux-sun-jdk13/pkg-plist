@@ -907,6 +907,7 @@ linux-jdk1.3.0/jre/lib/fonts/LucidaTypewriterBoldOblique.ttf
 linux-jdk1.3.0/jre/lib/fonts/LucidaTypewriterOblique.ttf
 linux-jdk1.3.0/jre/lib/fonts/LucidaTypewriterRegular.ttf
 linux-jdk1.3.0/jre/lib/fonts/fonts.dir
+linux-jdk1.3.0/jre/lib/hotspot
 linux-jdk1.3.0/jre/lib/i18n.jar
 linux-jdk1.3.0/jre/lib/i386/classic/Xusage.txt
 linux-jdk1.3.0/jre/lib/i386/classic/libjvm.so
