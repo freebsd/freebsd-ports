@@ -7,17 +7,17 @@
 #
 
 PORTNAME=	libosip2
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	net
 MASTER_SITES=	http://osip.atosc.org/download/osip/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low layer of SIP implementation
 
+USE_GNOME=	gnometarget lthack
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-debug --disable-trace
 INSTALLS_SHLIB=	yes
 
