@@ -57,17 +57,11 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's|=aclocal|=${TRUE}|g ; \
-		 s|=autoconf|=${TRUE}|g ; \
-		 s|=automake|=${TRUE}|g ; \
-		 s|=autoheader|=${TRUE}|g' ${WRKSRC}/configure
+post-patch:
 	@${REINPLACE_CMD} -e 's|xfplay|internal|g' ${WRKSRC}/other/xfsoundrc.in
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/other/xinitrc.in
 	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG:T}|g' ${WRKSRC}/xfce/setup.c
 	@${REINPLACE_CMD} -e 's|/opt/kde3|${LOCALBASE}|g ; \
 		 s|/opt/gnome|${X11BASE}|g' ${WRKSRC}/xfmenu/xfmenu.c
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/other/xinitrc.in
 
 .include <bsd.port.post.mk>
