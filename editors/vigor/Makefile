@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vigor
-PORTVERSION=	0.014
+PORTVERSION=	0.016
 CATEGORIES=	editors tk82 tcl82
 MASTER_SITES=	http://www.red-bean.com:8080/
 
