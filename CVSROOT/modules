@@ -7898,6 +7898,7 @@ tkscanfax	ports/comms/tkscanfax
 tkseti		ports/astro/tkseti
 tksol		ports/games/tksol
 tkstep80	ports/x11-toolkits/tkstep80
+tktable		ports/x11-toolkits/tktable
 tkxanim		ports/multimedia/tkxanim
 tlb		ports/mail/tlb
 tmake		ports/devel/tmake
