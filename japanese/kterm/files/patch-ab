@@ -1,6 +1,6 @@
---- KTerm.ad.orig	Sun Jun 23 17:00:22 1996
-+++ KTerm.ad	Sat Jun 23 00:08:11 2001
-@@ -51,37 +51,37 @@
+--- KTerm.ad.old	Tue Feb  5 02:02:39 2002
++++ KTerm.ad	Mon Feb  4 21:54:16 2002
+@@ -51,37 +51,43 @@
  
  *fontMenu.Label:  VT Fonts
  *fontMenu*fontdefault*Label:	Default
@@ -10,9 +10,10 @@
 -!*VT100*boldFontList:	-*-fixed-bold-r-normal--14-*,\
 -!			-*-gothic-bold-r-normal--14-*,\
 -!			-*-mincho-bold-r-normal--14-*
-+*VT100*fontList:	-*-fixed-medium-r-normal--14-*-c-*,\
-+			-*-gothic-medium-r-normal--14-*-c-*,\
-+			-*-mincho-medium-r-normal--14-*-c-*
++*VT100*fontList:	-alias-fixed-medium-r-normal--14-*-*-*-c-*-*-*,\
++			-*-fixed-medium-r-normal--14-*-*-*-c-*-*-*,\
++			-*-gothic-medium-r-normal--14-*-*-*-c-*-*-*,\
++			-*-mincho-medium-r-normal--14-*-*-*-c-*-*-*
 +!*VT100*boldFontList:	-*-fixed-bold-r-normal--14-*-c-*,\
 +!			-*-gothic-bold-r-normal--14-*-c-*,\
 +!			-*-mincho-bold-r-normal--14-*-c-*
@@ -29,41 +30,46 @@
 -*VT100*fontList2:	-*-fixed-medium-r-normal--14-*,\
 -			-*-gothic-medium-r-normal--14-*,\
 -			-*-mincho-medium-r-normal--14-*
-+*VT100*fontList2:	-*-fixed-medium-r-normal--14-*-c-*,\
-+			-*-gothic-medium-r-normal--14-*-c-*,\
-+			-*-mincho-medium-r-normal--14-*-c-*
++*VT100*fontList2:	-alias-fixed-medium-r-normal--8-*-*-*-c-*-*-*,\
++			-*-fixed-medium-r-normal--8-*-*-*-c-*-*-*,\
++			-*-gothic-medium-r-normal--8-*-*-*-c-*-*-*,\
++			-*-mincho-medium-r-normal--8-*-*-*-c-*-*-*
  *fontMenu*font3*Label:	Small
 -*VT100*fontList3:	-*-fixed-medium-r-normal--16-*,\
 -			-*-gothic-medium-r-normal--16-*,\
 -			-*-mincho-medium-r-normal--16-*
-+*VT100*fontList3:	-*-fixed-medium-r-normal--16-*-c-*,\
-+			-*-gothic-medium-r-normal--16-*-c-*,\
-+			-*-mincho-medium-r-normal--16-*-c-*
++*VT100*fontList3:	-alias-fixed-medium-r-normal--12-*-*-*-c-*-*-*,\
++			-*-fixed-medium-r-normal--12-*-*-*-c-*-*-*,\
++			-*-gothic-medium-r-normal--12-*-*-*-c-*-*-*,\
++			-*-mincho-medium-r-normal--12-*-*-*-c-*-*-*
  *fontMenu*font4*Label:	Medium
 -*VT100*fontList4:	-*-fixed-medium-r-normal--18-*,\
 -			-*-gothic-medium-r-normal--18-*,\
 -			-*-mincho-medium-r-normal--18-*
-+*VT100*fontList4:	-*-fixed-medium-r-normal--18-*-c-*,\
-+			-*-gothic-medium-r-normal--18-*-c-*,\
-+			-*-mincho-medium-r-normal--18-*-c-*
++*VT100*fontList4:	-alias-fixed-medium-r-normal--16-*-*-*-c-*-*-*,\
++			-*-fixed-medium-r-normal--16-*-*-*-c-*-*-*,\
++			-*-gothic-medium-r-normal--16-*-*-*-c-*-*-*,\
++			-*-mincho-medium-r-normal--16-*-*-*-c-*-*-*
  *fontMenu*font5*Label:	Large
 -*VT100*fontList5:	-*-fixed-medium-r-normal--24-*,\
 -			-*-gothic-medium-r-normal--24-*,\
 -			-*-mincho-medium-r-normal--24-*
-+*VT100*fontList5:	-*-fixed-medium-r-normal--24-*-c-*,\
-+			-*-gothic-medium-r-normal--24-*-c-*,\
-+			-*-mincho-medium-r-normal--24-*-c-*
++*VT100*fontList5:	-alias-fixed-medium-r-normal--20-*-*-*-c-*-*-*,\
++			-*-fixed-medium-r-normal--20-*-*-*-c-*-*-*,\
++			-*-gothic-medium-r-normal--20-*-*-*-c-*-*-*,\
++			-*-mincho-medium-r-normal--20-*-*-*-c-*-*-*
  *fontMenu*font6*Label:	Huge
 -*VT100*fontList6:	-*-fixed-medium-r-normal--26-*,\
 -			-*-gothic-medium-r-normal--26-*,\
 -			-*-mincho-medium-r-normal--26-*
-+*VT100*fontList6:	-*-fixed-medium-r-normal--26-*-c-*,\
-+			-*-gothic-medium-r-normal--26-*-c-*,\
-+			-*-mincho-medium-r-normal--26-*-c-*
++*VT100*fontList6:	-alias-fixed-medium-r-normal--24-*-*-*-c-*-*-*,\
++			-*-fixed-medium-r-normal--24-*-*-*-c-*-*-*,\
++			-*-gothic-medium-r-normal--24-*-*-*-c-*-*-*,\
++			-*-mincho-medium-r-normal--24-*-*-*-c-*-*-*
  *fontMenu*fontescape*Label:	Escape Sequence
  *fontMenu*fontsel*Label:		Selection
  !fontescape and fontsel overridden by application
-@@ -123,3 +123,18 @@
+@@ -123,5 +129,20 @@
  *tek4014*font3: 6x13
  *tek4014*fontSmall: 6x10
  
@@ -82,3 +88,5 @@
 +				<Btn5Down>:	scroll-forw(5,line)
 +*VT100.translations:	#override \
 +	Shift<Key>space: begin-conversion(_JAPANESE_CONVERSION)
+ *VT100*translations: #override  Shift<Key>space: \
+ 	begin-conversion(_JAPANESE_CONVERSION)

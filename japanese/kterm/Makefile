@@ -7,10 +7,10 @@
 
 PORTNAME=	kterm
 PORTVERSION=	6.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11
-MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
-		${MASTER_SITE_PORTS_JP} \
+MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
+		${MASTER_SITE_XCONTRIB} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	applications kterm shige/kterm
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -23,9 +23,14 @@ BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	kterm
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/x11/kterm/ \
-		http://www.asahi-net.or.jp/~hc3j-tkg/kterm/
+		http://www.asahi-net.or.jp/~hc3j-tkg/kterm/ \
+		${MASTER_SITE_PORTS_JP} \
+		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	shige/kterm
 PATCHFILES=	${DISTNAME}.NFS-xauth.patch \
-		${DISTNAME}-wpi.patch.gz
+		${DISTNAME}-wpi.patch.gz \
+		${DISTNAME}-jisx0213.patch.gz \
+		${DISTNAME}-color16.patch.gz
 PATCH_DIST_STRIP= -p1
 
 USE_IMAKE=	yes

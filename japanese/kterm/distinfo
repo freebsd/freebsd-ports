@@ -1,4 +1,6 @@
 MD5 (kterm/kterm-6.2.0.tar.gz) = 9cc72841b50dfba92bce01dbbebf3039
+MD5 (kterm/README.wallpaper.ja) = debae083ddb71e53a958c4ffb4c108e9
 MD5 (kterm/kterm-6.2.0.NFS-xauth.patch) = a2f11334e14929997e987e463f004dd0
 MD5 (kterm/kterm-6.2.0-wpi.patch.gz) = 9b7f06ce63fa06a656e45b752f8f6240
-MD5 (kterm/README.wallpaper.ja) = debae083ddb71e53a958c4ffb4c108e9
+MD5 (kterm/kterm-6.2.0-jisx0213.patch.gz) = c09953e2c8ea1bbb6dbd771ba969cd8b
+MD5 (kterm/kterm-6.2.0-color16.patch.gz) = ecf0d363f2d1a253678b77cf41b392ce
