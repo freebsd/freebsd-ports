@@ -1,0 +1,81 @@
+--- Makefile.std.orig	Mon Jan 15 05:55:16 2001
++++ Makefile.std	Tue Feb 27 21:16:12 2001
+@@ -46,21 +46,21 @@
+ 
+ 
+ # Full path for directory containing X11 include files:
+-X_INCLUDE_DIR=/usr/X11/include
++X_INCLUDE_DIR=${X11BASE}/include
+ 
+ 
+ # Location of X11 root directory.
+-TOPDIR = /usr/X11
++TOPDIR = ${X11BASE}
+ 
+ 
+ # Full path for directory that will hold the trap handler file:
+-TRAP_DIR = .
++TRAP_DIR = ${PREFIX}/share/spim
+ 
+ # Full path for the directory that will hold the executable files:
+-BIN_DIR = /usr/unsup/bin
++BIN_DIR = ${PREFIX}/bin
+ 
+ # Full path for the directory that will hold the man files:
+-MAN_DIR = /usr/unsup/man
++MAN_DIR = ${PREFIX}/man/man1
+ 
+ 
+ # Full path for the trap handler file:
+@@ -93,8 +93,8 @@
+ 
+ DEFINES = $(ENDIAN) $(MEM_SIZES) -DDEFAULT_TRAP_HANDLER=$(TRAP_PATH) -DSPIM_VERSION="\"`cat VERSION`\""
+ 
+-CC = cc
+-CFLAGS = $(DEFINES)
++CC ?= cc
++CFLAGS += $(DEFINES) $(IFLAGS)
+ IFLAGS = -I$(X_INCLUDE_DIR)
+ YFLAGS = -d
+ YCFLAGS =
+@@ -120,18 +120,18 @@
+ 
+ spim:   force
+ 	@touch .spim-made
+-	make -f Makefile.std spim2
++	$(MAKE) -f Makefile.std spim2
+ 
+ spim2:	$(OBJS) spim.o
+-	$(CC) -g $(OBJS) spim.o $(LDFLAGS) -o spim -lm
++	$(CC) $(OBJS) spim.o $(LDFLAGS) -o spim -lm
+ 
+ 
+ xspim:  force
+ 	@touch .spim-made
+-	make -f Makefile.std xspim2
++	$(MAKE) -f Makefile.std xspim2
+ 
+ xspim2:	$(OBJS) $(XOBJS) xspim.o
+-	$(CC) -g $(OBJS) $(XOBJS) xspim.o $(LDFLAGS) $(XLDFLAGS) -o xspim -lm
++	$(CC) $(OBJS) $(XOBJS) xspim.o $(LDFLAGS) $(XLDFLAGS) -o xspim -lm
+ 
+ force:	configuration
+ 
+@@ -200,11 +200,12 @@
+ 	  spim.tar.* spim.aux spim.log spim.dvi spim.shar*
+ 
+ install: spim xspim
+-	install -c -s  spim $(BIN_DIR)
+-	install -c -s  xspim $(BIN_DIR)
+-	install -c -m 0444 trap.handler $(TRAP_DIR)
+-	install -c -m 0444 spim.man $(MAN_DIR)
+-	install -c -m 0444 xspim.man $(MAN_DIR)
++	-mkdir -p $(BIN_DIR) $(TRAP_DIR) $(MAN_DIR)
++	${BSD_INSTALL_PROGRAM} spim $(BIN_DIR)
++	${BSD_INSTALL_PROGRAM} xspim $(BIN_DIR)
++	${BSD_INSTALL_DATA} trap.handler $(TRAP_DIR)
++	${BSD_INSTALL_MAN} spim.man $(MAN_DIR)/spim.1
++	${BSD_INSTALL_MAN} xspim.man $(MAN_DIR)/xspim.1
+ 
+ very-clean: clean
+ 	rm -f y.tab.h y.tab.c lex.yy.c spim.tar* Documentation/spim.ps
