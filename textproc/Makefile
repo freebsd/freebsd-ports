@@ -274,6 +274,7 @@
     SUBDIR += py-HyperText
     SUBDIR += py-asv
     SUBDIR += py-csv
+    SUBDIR += py-docutils
     SUBDIR += py-dsv
     SUBDIR += py-expat
     SUBDIR += py-jaxml
