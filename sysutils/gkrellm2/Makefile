@@ -69,9 +69,9 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 
 pre-everything::
 .if !defined(GKRELLM_SERVER_ONLY)
-	@${ECHO} ""
-	@${ECHO} "You may use GKRELLM_SERVER_ONLY=yes to build gkrellmd only."
-	@${ECHO} ""
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "You may use GKRELLM_SERVER_ONLY=yes to build gkrellmd only."
+	@${ECHO_CMD} ""
 .endif
 
 post-install:
