@@ -14,18 +14,18 @@ MASTER_SITES=	ftp://mm-ftp.cs.berkeley.edu/pub/rtpmon/
 MAINTAINER=	fenner@FreeBSD.org
 COMMENT=	A program to montior loss in multicast sessions
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 MAN1=		rtpmon.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
 
 pre-configure:
 	@cd ${WRKSRC}; ${CHMOD} +w configure; autoconf

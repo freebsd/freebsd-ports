@@ -15,16 +15,16 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	fenner@FreeBSD.org
 COMMENT=	Internet Image(or other data) Multicaster (and receiver)
 
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+
+WRKSRC=		${WRKDIR}/mnm
+USE_X_PREFIX=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 501000
 BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
 .endif
-
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
-
-WRKSRC=		${WRKDIR}/mnm
-USE_X_PREFIX=	yes
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/freebsd
