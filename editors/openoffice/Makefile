@@ -7,13 +7,15 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	editors
 MASTER_SITES+=	http://sf1.mirror.openoffice.org/${PORTVERSION}/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
-		http://people.freebsd.org/~mbr/distfiles/ \
-		http://dict.progbits.com/
+		http://sf1.mirror.openoffice.org/miscellaneous/helpcontent/
 DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z
+.if defined(L10NHELP)
+DISTFILES+=	${L10NHELP}
+.endif
 
 SORT?=	/usr/bin/sort
 CUT?=	/usr/bin/cut
@@ -268,9 +270,17 @@ post-extract:
 	done
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/../external/gpc/
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/../external/gpc/
+	@${MAKE} extract-mozilla
 	@${RM} ${WRKSRC}/../moz/zipped/*.zip
+.if defined(L10NHELP)
+	@${ECHO_MSG} "===>  Extracting L10NHELP sub project"
+	@${MKDIR} ${WRKDIR}/L10NHELP
+	@cd ${WRKDIR}/L10NHELP && \
+	    ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${L10NHELP}
+.endif
 
 post-patch:
+	@${MAKE} patch-mozilla
 .if defined(WITH_TTF_BYTECODE_ENABLED)
 	@if [ "`echo ${PATCHDIR}/optpatch-*`" != "${PATCHDIR}/optpatch-*" ]; then \
 		${ECHO_MSG} "===>  Applying additional TTF bytecode patches for ${PKGNAME}" ; \
@@ -311,10 +321,9 @@ post-patch:
 	@${FIND} ${WRKSRC}/.. | ${EGREP} "\.(cxx|h|c)$$" | ${XARGS} \
 		${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g"
 
-mozilla:
-.if ! exists(${WRKDIR}/FREEBSDGCCIinc.zip)
+extract-mozilla:
 .if ! exists(${WRKDIR}/mozilla/Makefile)
-	@${ECHO_MSG} "===>  Building mozilla sub project"
+	@${ECHO_MSG} "===>  Extracting mozilla sub project"
 	@${MKDIR} ${WRKDIR}/mozilla
 	@${CP} -r ${PORTSDIR}/www/mozilla/files ${WRKDIR}/mozilla
 	@${CP} ${PORTSDIR}/www/mozilla/Makefile ${WRKDIR}/mozilla
@@ -323,6 +332,14 @@ mozilla:
 	@${CP} ${PORTSDIR}/www/mozilla/pkg-descr ${WRKDIR}/mozilla
 	@${CP} ${PORTSDIR}/www/mozilla/pkg-plist ${WRKDIR}/mozilla
 .endif
+	@cd ${WRKDIR}/mozilla && ${MAKE} extract
+
+patch-mozilla:
+	@cd ${WRKDIR}/mozilla && ${MAKE} patch
+
+build-mozilla:
+.if ! exists(${WRKDIR}/FREEBSDGCCIinc.zip)
+	@${ECHO_MSG} "===>  Building mozilla sub project"
 .if defined(WITH_DEBUG)
 	@${CP} ${WRKDIR}/mozilla/Makefile ${WRKDIR}/mozilla/Makefile.new
 	@${SED} -e 's|--disable-debug||' \
@@ -332,12 +349,12 @@ mozilla:
 .endif
 .if defined(USE_GCC)
 .if ${USE_GCC} == 3.1
-	cd ${WRKDIR}/mozilla && ${MAKE} CXX=${CXX} CC=${CC} CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build
+	@cd ${WRKDIR}/mozilla && ${MAKE} CXX=${CXX} CC=${CC} CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build
 .else
-	cd ${WRKDIR}/mozilla && ${MAKE} CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build
+	@cd ${WRKDIR}/mozilla && ${MAKE} CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build
 .endif
 .else
-	cd ${WRKDIR}/mozilla && ${MAKE} CFLAGS="${CFLAGS}" build
+	@cd ${WRKDIR}/mozilla && ${MAKE} CFLAGS="${CFLAGS}" build
 .endif
 	@${CP} ${FILESDIR}/zipmoz.sh ${WRKDIR}
 	@${CHMOD} 755 ${WRKDIR}/zipmoz.sh
@@ -346,6 +363,11 @@ mozilla:
 	@${CP} ${WRKDIR}/FREEBSDGCCIlib.zip ${WRKSRC}/../moz/zipped/
 	@${CP} ${WRKDIR}/FREEBSDGCCIruntime.zip ${WRKSRC}/../moz/zipped/
 .endif
+
+mozilla:
+	@${MAKE} extract-mozilla
+	@${MAKE} patch-mozilla
+	@${MAKE} build-mozilla
 
 do-build:
 	@${MAKE} mozilla
@@ -361,6 +383,10 @@ do-build:
 	@sleep 5
 .endif
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
+.if defined(L10NHELP)
+	@${MKDIR} ${WRKSRC}/../solver/641/unxfbsd.pro/pck 
+	@${MV} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/../solver/641/unxfbsd.pro/pck
+.endif
 .if !defined(DISPLAY)
 	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAYHACK} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
 		tcsh -c 'source FreeBSDEnv.Set && unsetenv TOP && ${DMAKE}'
@@ -378,8 +404,6 @@ do-build:
 pre-install:
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' < ${FILESDIR}/oo_setup.resp \
 	   > ${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/oo_setup.resp
-	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' < ${FILESDIR}/openoffice-wrapper \
-	   > ${WRKSRC}/openoffice
 
 do-install:
 .if !defined(DISPLAY)
@@ -405,7 +429,9 @@ install-user:
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
-	@${INSTALL_SCRIPT} ${WRKSRC}/openoffice ${PREFIX}/bin/openoffice
+	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' < ${FILESDIR}/openoffice-wrapper \
+	   > ${WRKDIR}/openoffice
+	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice ${PREFIX}/bin/openoffice
 	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sagenda
 	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-scalc
 	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sdraw
