@@ -8,7 +8,9 @@
 PORTNAME=	rawdog
 PORTVERSION=	1.14
 CATEGORIES=	news python
-MASTER_SITES=	http://offog.org/files/
+MASTER_SITES=	http://offog.org/files/ \
+		ftp://ftp.i-scream.org/pub/offog.org/files/ \
+		http://ftp.i-scream.org/pub/offog.org/files/
 
 MAINTAINER=	tim@bishnet.net
 COMMENT=	A simple RSS aggregator
