@@ -1,0 +1,13 @@
+--- src/tools.c.orig	Sun Jun 20 18:09:07 1999
++++ src/tools.c	Sun Jun 20 18:09:42 1999
+@@ -13,10 +13,6 @@
+ 
+ #include <stdarg.h>
+ 
+-#ifdef __FreeBSD__
+-#include <machine/joystick.h>
+-#endif
+-
+ #include "tools.h"
+ #include "game.h"
+ #include "events.h"

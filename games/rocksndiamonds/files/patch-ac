@@ -1,0 +1,12 @@
+--- src/joystick.h.orig	Sun Jun 20 18:06:28 1999
++++ src/joystick.h	Sun Jun 20 18:07:24 1999
+@@ -20,7 +20,9 @@
+ #define JOYSTICK_OFF		0
+ #define	JOYSTICK_AVAILABLE	1
+ #ifdef __FreeBSD__
++#if !defined(NO_JOYSTICK)
+ #include <machine/joystick.h>
++#endif
+ #define DEV_JOYSTICK_0		"/dev/joy0"
+ #define DEV_JOYSTICK_1		"/dev/joy1"
+ #define DEV_JOYSTICK_2		"/dev/joy2"

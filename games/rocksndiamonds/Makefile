@@ -3,7 +3,7 @@
 # Date created:		27 May 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/27 13:53:02 tg Exp $
 #
 
 DISTNAME=	rocksndiamonds-1.2.0
@@ -15,7 +15,10 @@ MAINTAINER=	ports@FreeBSD.ORG
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	GAME_DIR=${GAME_DIR} X11_PATH=${X11BASE} OPTIONS="${CFLAGS}"
+MAKE_ENV+=	GAME_DIR=${GAME_DIR} X11_PATH=${X11BASE} OPTIONS="${CFLAGS}"
+.if ${MACHINE_ARCH} == "alpha"
+MAKE_ENV+=	SOUNDS="-DNO_SOUNDS" JOYSTICK="-DNO_JOYSTICK"
+.endif
 
 GAME_DIR=${PREFIX}/share/rocksndiamonds
 DOC_DIR=${PREFIX}/share/doc/rocksndiamonds

@@ -1,0 +1,31 @@
+--- src/joystick.c.orig	Sun Jun 20 18:15:41 1999
++++ src/joystick.c	Sun Jun 20 18:16:24 1999
+@@ -11,10 +11,6 @@
+ *  joystick.c                                              *
+ ***********************************************************/
+ 
+-#ifdef __FreeBSD__
+-#include <machine/joystick.h>
+-#endif
+-
+ #include "joystick.h"
+ #include "misc.h"
+ 
+@@ -67,7 +63,7 @@
+ #ifndef MSDOS
+ int Joystick(int player_nr)
+ {
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && !defined(NO_JOYSTICK)
+   struct joystick joy_ctrl;
+ #else
+   struct joystick_control
+@@ -103,7 +99,7 @@
+   js_x  = joy_ctrl.x;
+   js_y  = joy_ctrl.y;
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && !defined(NO_JOYSTICK)
+   js_b1 = joy_ctrl.b1;
+   js_b2 = joy_ctrl.b2;
+ #else
