@@ -1,0 +1,5 @@
+bin/xpath2rss
+%%PYTHON_SITELIBDIR%%/HtmlDom.py
+%%PYTHON_SITELIBDIR%%/RSS.py
+%%PORTDOCS%%share/doc/xpath2rss/README
+%%PORTDOCS%%@dirrm share/doc/xpath2rss
