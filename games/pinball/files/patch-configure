@@ -1,7 +1,7 @@
---- configure.orig	Thu May 29 06:47:26 2003
-+++ configure	Thu Jun  5 22:11:02 2003
-@@ -419,7 +419,7 @@
- PACKAGE_STRING='pinball 0.3.0'
+--- configure.orig	Wed Dec 10 12:34:54 2003
++++ configure	Thu Dec 11 20:59:05 2003
+@@ -431,7 +431,7 @@
+ PACKAGE_STRING='pinball 0.3.1'
  PACKAGE_BUGREPORT='henqvist@users.sourceforge.net'
  
 -ac_subdirs_all="$ac_subdirs_all libltdl"
@@ -9,7 +9,7 @@
  # Factoring default headers for most tests.
  ac_includes_default="\
  #include <stdio.h>
-@@ -1879,12 +1879,12 @@
+@@ -1954,12 +1954,12 @@
  
  
  
@@ -25,7 +25,7 @@
  
  
  ac_ext=c
-@@ -3258,16 +3258,6 @@
+@@ -3439,18 +3439,6 @@
  test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
  
  
@@ -37,12 +37,14 @@
 -      ac_configure_args="$ac_configure_args --enable-ltdl-convenience" ;;
 -  esac
 -  LIBLTDL='${top_builddir}/''libltdl'/libltdlc.la
--  INCLTDL='-I${top_srcdir}/''libltdl'
+-  LTDLINCL='-I${top_srcdir}/''libltdl'
+-  # For backwards non-gettext consistent compatibility...
+-  INCLTDL="$LTDLINCL"
 -
  # Check whether --enable-shared or --disable-shared was given.
  if test "${enable_shared+set}" = set; then
    enableval="$enable_shared"
-@@ -7866,7 +7856,8 @@
+@@ -8303,7 +8291,8 @@
  
  
  # This can be used to rebuild libtool when needed
@@ -52,25 +54,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -7963,7 +7954,7 @@
-   use_allegro="no"
- fi;
- 
--if test x"$use_allegro" == "xno"; then
-+if test x"$use_allegro" = "xno"; then
- 
- 
- cat >>confdefs.h <<\_ACEOF
-@@ -9996,7 +9987,7 @@
-   use_unittest="no"
- fi;
- 
--if test x"$use_unittest" == "xyes"; then
-+if test x"$use_unittest" = "xyes"; then
- 
- 
- 
-@@ -10517,14 +10508,14 @@
+@@ -11061,7 +11050,7 @@
  
  
  # Check whether --with-debug or --without-debug was given.
@@ -79,17 +63,9 @@
    withval="$with_debug"
    use_debug="yes"
  else
-   use_debug="no"
- fi;
- 
--if test x"$use_debug" == "xyes"; then
-+if test x"$use_debug" = "xyes"; then
- 
- cat >>confdefs.h <<\_ACEOF
- #define EM_DEBUG 1
-@@ -11187,8 +11178,8 @@
- s,@ac_ct_RANLIB@,$ac_ct_RANLIB,;t t
+@@ -11788,8 +11777,8 @@
  s,@CPP@,$CPP,;t t
+ s,@EGREP@,$EGREP,;t t
  s,@LIBTOOL@,$LIBTOOL,;t t
 -s,@INCLTDL@,$INCLTDL,;t t
 -s,@LIBLTDL@,$LIBLTDL,;t t

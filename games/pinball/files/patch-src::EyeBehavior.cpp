@@ -1,15 +1,15 @@
---- ./src/EyeBehavior.cpp.orig	Mon May 26 08:38:02 2003
-+++ ./src/EyeBehavior.cpp	Sun Jun  8 22:14:17 2003
-@@ -55,6 +55,7 @@
+--- src/EyeBehavior.cpp.orig	Thu Nov 20 17:46:17 2003
++++ src/EyeBehavior.cpp	Thu Dec 11 21:02:38 2003
+@@ -56,6 +56,7 @@
    EmAssert(table->getBall(2) != NULL, "Ball3 group NULL");
    EmAssert(this->getParent() != NULL, "Parent group NULL");
  
 +#if EM_USE_SDL
-   // short cuts for changing view F1, F2, F2, F4
-   if (Keyboard::isKeyDown(SDLK_F1)) {
-     Config::getInstance()->setView(0);
-@@ -65,6 +66,7 @@
-   } else if (Keyboard::isKeyDown(SDLK_F4)) {
+   // shortcuts for changing view F1, F2, F2, F4 // now F5 F6 F7 F8
+   // I changed to F5 F6 F7 F8 to use the Alt+F4 quit shortcut //!rzr
+   if (Keyboard::isKeyDown(SDLK_F5)) {
+@@ -67,6 +68,7 @@
+   } else if (Keyboard::isKeyDown(SDLK_F8)) {
      Config::getInstance()->setView(3);
    }
 +#endif
