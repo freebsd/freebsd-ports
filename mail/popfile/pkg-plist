@@ -10,6 +10,7 @@ sbin/popfile.sh
 %%DATADIR%%/POPFile/Logger.pm
 %%DATADIR%%/POPFile/MQ.pm
 %%DATADIR%%/POPFile/Module.pm
+%%DATADIR%%/POPFile/Mutex.pm
 %%DATADIR%%/POPFile/popfile_version
 %%DATADIR%%/Proxy/NNTP.pm
 %%DATADIR%%/Proxy/POP3.pm
@@ -25,7 +26,9 @@ sbin/popfile.sh
 %%DATADIR%%/insert.pl
 %%DATADIR%%/languages/Arabic.msg
 %%DATADIR%%/languages/Bulgarian.msg
+%%DATADIR%%/languages/Chinese-Simplified-GB2312.msg
 %%DATADIR%%/languages/Chinese-Simplified.msg
+%%DATADIR%%/languages/Chinese-Traditional-BIG5.msg
 %%DATADIR%%/languages/Chinese-Traditional.msg
 %%DATADIR%%/languages/Czech.msg
 %%DATADIR%%/languages/Dansk.msg
@@ -98,6 +101,7 @@ sbin/popfile.sh
 %%DATADIR%%/otto.png
 %%DATADIR%%/pipe.pl
 %%DATADIR%%/pix.gif
+%%DATADIR%%/popfile.pck
 %%DATADIR%%/popfile.pl
 %%DATADIR%%/skins/blue/style.css
 %%DATADIR%%/skins/coolblue/style.css
@@ -106,6 +110,7 @@ sbin/popfile.sh
 %%DATADIR%%/skins/coolorange/style.css
 %%DATADIR%%/skins/coolyellow/style.css
 %%DATADIR%%/skins/default/advanced-page.thtml
+%%DATADIR%%/skins/default/bar-chart-widget.thtml
 %%DATADIR%%/skins/default/bucket-page.thtml
 %%DATADIR%%/skins/default/common-bottom.thtml
 %%DATADIR%%/skins/default/common-middle.thtml
