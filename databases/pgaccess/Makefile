@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	pgaccess
-PORTVERSION=	0.98.8.20030520
-PORTREVISION=	1
-CATEGORIES=	databases tcl83 tk83
+PORTVERSION=	0.99.0.20040219
+CATEGORIES=	databases tcl${TCLVERSION:S/.//} tk${TCLVERSION:S/.//}
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pgaccess
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	A powerful GUI PostgreSQL database administration tool and toolkit
@@ -19,9 +20,9 @@ LIB_DEPENDS=	pgtcl:${PORTSDIR}/databases/postgresql-tcltk
 
 USE_REINPLACE=	yes
 
-TCL_VERSION?=	8.3
-PGACCESSDOCDIR=	${PREFIX}/share/doc/postgresql/pgaccess
-PGACCESSDIR=	${PREFIX}/share/postgresql/pgaccess
+TCLVERSION?=	8.4
+DOCSDIR=	${PREFIX}/share/doc/postgresql/${PORTNAME}
+PGACCESSDIR=	${PREFIX}/share/postgresql/${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/bin,${PREFIX}/bin,g ; " ${WRKSRC}/lib/mainlib.tcl
@@ -30,7 +31,7 @@ post-patch:
 do-build:
 .for targetfile in pgaccess.tcl pgmonitor
 	@ ${SED} -e "s,%%LOCALBASE%%,${LOCALBASE},g; \
-		     s,%%TCL_VERSION%%,${TCL_VERSION},g; \
+		     s,%%TCL_VERSION%%,${TCLVERSION},g; \
 		     s,%%PREFIX%%,${PREFIX},g; \
 		     s,%%PROGRAM%%,${targetfile},g" \
 		< ${FILESDIR}/run-tcl-file > ${WRKDIR}/${targetfile:R}.sh
@@ -46,11 +47,11 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${targetfile}.sh ${PREFIX}/bin/${targetfile}
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PGACCESSDOCDIR} ; \
+	@${MKDIR} ${DOCSDIR} ; \
 	 cd ${WRKSRC}/doc/html ;\
 	 ${TAR} cf - * | \
-	 ( cd ${PGACCESSDOCDIR}; ${TAR} xf - ) ; \
-	 ${CHOWN} -R 0:0 ${PGACCESSDOCDIR}
+	 ( cd ${DOCSDIR}; ${TAR} xf - ) ; \
+	 ${CHOWN} -R 0:0 ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
