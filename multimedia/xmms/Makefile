@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	audio
 MASTER_SITES=	ftp://ftp.xmms.org/xmms/1.2.x/ \
 		http://www.xmms.org/files/1.2.x/ \
