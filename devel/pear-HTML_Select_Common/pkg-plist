@@ -1,0 +1,9 @@
+%%PEARDIR%%/HTML/Select.php
+%%PEARDIR%%/HTML/Select/Country.php
+%%PEARDIR%%/HTML/Select/UKCounty.php
+%%PEARDIR%%/HTML/Select/USState.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/Country.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/UKCounty.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/USState.php
+@dirrm %%PEARDIR%%/HTML/Select
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
