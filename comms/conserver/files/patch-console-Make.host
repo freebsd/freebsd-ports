@@ -1,0 +1,10 @@
+--- etc/console/Make.host.orig	Sat Nov 22 20:19:33 1997
++++ etc/console/Make.host	Tue Nov 21 18:12:28 2000
+@@ -18,2 +18,2 @@
+-ETC=	${DESTDIR}/usr/'ifdef(`NEW',`new',`local')`/etc
+-DOC=	${DESTDIR}/usr/local/man
++ETC=	${DESTDIR}/${PREFIX}/bin
++DOC=	${DESTDIR}/${PREFIX}/man
+@@ -34 +34 @@
+-HOSTTYPE,`EPIX',` -systype bsd43')` -DHOST=\"${SERVER}\"
++HOSTTYPE,`EPIX',` -systype bsd43')` -DHOST=\"${DEFAULTHOST}\" -DPORT=${DEFAULTPORT}

@@ -1,0 +1,11 @@
+--- etc/autologin/Make.host.orig	Sat Nov 22 20:19:33 1997
++++ etc/autologin/Make.host	Tue Nov 21 18:07:15 2000
+@@ -11,7 +11,7 @@
+ HOSTTYPE,`PARAGON',`
+ BINDIR=	${DESTDIR}/etc
+ ',`
+-BINDIR=	${DESTDIR}/usr/local/etc
++BINDIR=	${PREFIX}/sbin
+ ')`
+ 
+ INCLUDE=

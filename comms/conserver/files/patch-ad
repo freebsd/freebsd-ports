@@ -1,19 +1,6 @@
---- conserver/consent.c.orig	Thu Feb 17 19:50:41 2000
-+++ conserver/consent.c	Thu Feb 17 19:50:42 2000
-@@ -78,6 +78,12 @@
- 
- 
- BAUD baud [] = {
-+#if defined(B115200)
-+	{ "115200", B115200 },
-+#endif
-+#if defined(B57600)
-+	{ "57600", B57600 },
-+#endif
- #if defined(B38400)
- 	{ "38400", B38400 },
- #endif
-@@ -197,7 +203,7 @@
+--- etc/conserver/consent.c.orig	Wed Nov 17 18:10:14 1999
++++ etc/conserver/consent.c	Wed Nov 17 18:12:57 1999
+@@ -295,7 +295,7 @@
  	 */
  	termp.c_iflag = IXON|IXOFF|BRKINT;
  	termp.c_oflag = 0;
@@ -22,7 +9,7 @@
  	termp.c_cflag |= pCE->pparity->iset;
  	termp.c_lflag = 0;
  	/*
-@@ -205,7 +211,7 @@
+@@ -303,7 +303,7 @@
  	 * Set the VTIME == 1 (0.1 sec)
  	 * Don't bother with the control characters as they are not used
  	 */
@@ -31,32 +18,17 @@
  	termp.c_cc[VTIME] = 1;
  
  	if (-1 == cfsetospeed(&termp,pCE->pbaud->irate)) {
-@@ -424,15 +430,15 @@
+@@ -563,11 +563,10 @@
+ 		exit(1);
+ 	}
  #endif
- 
- #if USE_TERMIOS
--	if (0 != ioctl(0, TCGETS, & n_tio)) {
-+	if (0 != tcgetattr(0, & n_tio)) {
- 		fprintf(stderr, "%s: iotcl: getsw: %s\n", progname, strerror(errno));
- 		exit(1);
- 	}
--	n_tio.c_iflag &= ~(IGNCR|IUCLC);
-+
-+	n_tio.c_iflag &= ~(IGNCR);
- 	n_tio.c_iflag |= ICRNL|IXON|IXANY;
--	n_tio.c_oflag &= ~(OLCUC|ONOCR|ONLRET|OFILL|NLDLY|CRDLY|TABDLY|BSDLY);
- 	n_tio.c_oflag |= OPOST|ONLCR;
--	n_tio.c_lflag &= ~(XCASE|NOFLSH|ECHOK|ECHONL);
-+	n_tio.c_lflag &= ~(NOFLSH|ECHOK|ECHONL);
- 	n_tio.c_lflag |= ISIG|ICANON|ECHO;
- 	n_tio.c_cc[VEOF] = '\004';
- 	n_tio.c_cc[VEOL] = '\000';
-@@ -444,7 +450,7 @@
- 	n_tio.c_cc[VSTART] = '\021';
- 	n_tio.c_cc[VSTOP] = '\023';
- 	n_tio.c_cc[VSUSP] = '\032';
--	if (0 != ioctl(0, TCSETS, & n_tio)) {
-+	if (0 != tcsetattr(0, TCSANOW, & n_tio)) {
- 		fprintf(stderr, "%s: getarrt: %s\n", progname, strerror(errno));
- 		exit(1);
- 	}
+-	n_tios.c_iflag &= ~(IGNCR|IUCLC);
++	n_tios.c_iflag &= ~(IGNCR);
+ 	n_tios.c_iflag |= ICRNL|IXON|IXANY;
+-	n_tios.c_oflag &= ~(OLCUC|ONOCR|ONLRET|OFILL|NLDLY|CRDLY|TABDLY|BSDLY);
+ 	n_tios.c_oflag |= OPOST|ONLCR;
+-	n_tios.c_lflag &= ~(XCASE|NOFLSH|ECHOK|ECHONL);
++	n_tios.c_lflag &= ~(NOFLSH|ECHOK|ECHONL);
+ 	n_tios.c_lflag |= ISIG|ICANON|ECHO;
+ 	n_tios.c_cc[VEOF] = '\004';
+ 	n_tios.c_cc[VEOL] = '\000';
