@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	GeoIP
-PORTVERSION=	1.0.8
-CATEGORIES=	misc
+PORTVERSION=	1.0.9
+CATEGORIES=	net
 MASTER_SITES=	http://maxmind.com/download/geoip/api/c/
 
 MAINTAINER=	seanc@FreeBSD.org
