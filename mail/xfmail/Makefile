@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}/source/
 
 MAINTAINER=	mikeh@FreeBSD.org
 
+BROKEN=		"Does not find autoconf"
+
 LIB_DEPENDS=	forms.0:${PORTSDIR}/x11-toolkits/xforms \
 		gdbm.2:${PORTSDIR}/databases/gdbm
 
