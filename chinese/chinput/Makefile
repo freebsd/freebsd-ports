@@ -8,13 +8,12 @@
 
 PORTNAME=	chinput
 PORTVERSION=	2.1
+PORTREVERSON=	1
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://ftp.cn.freebsd.org/pub/ported/
 DISTNAME=	zh-chinput-2.1
 
 MAINTAINER=	phj@cn.FreeBSD.org
-
-BROKEN=		"Patch fails"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
