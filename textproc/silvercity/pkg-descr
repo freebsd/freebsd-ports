@@ -1,0 +1,6 @@
+SilverCity is a lexing package, based on Scintilla, that can provide lexical
+analysis for over 20 programming and markup langauges.
+
+Scripting language bindings currently exist for Python.
+
+WWW: http://silvercity.sourceforge.net/

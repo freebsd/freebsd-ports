@@ -460,6 +460,7 @@
     SUBDIR += sgmltools-lite
     SUBDIR += sgrep
     SUBDIR += sgrep2
+    SUBDIR += silvercity
     SUBDIR += sk-aspell
     SUBDIR += smartdoc
     SUBDIR += smartdoc-devel
