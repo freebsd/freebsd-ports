@@ -12,8 +12,6 @@ PORTREVISION=	4
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
 		ftp://ftp.chg.ru/pub/X11/applications/Xdownloader/ \
-		http://www.scutty.co.uk/downloader/software/ \
-		ftp://ftp.uni-klu.ac.at/pub/linux/internet/downloader/
 DISTNAME=	d4x-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
