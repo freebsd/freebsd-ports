@@ -1,0 +1,44 @@
+--- configure.orig	Tue Sep 23 15:43:13 2003
++++ configure	Tue Oct 28 16:44:31 2003
+@@ -95,8 +95,8 @@
+ 		exit
+ 	fi
+ elif test "$OS" = FreeBSD || test "$OS" = OpenBSD || test "$OS" = NetBSD; then
+-	echo -n "testing /usr/local/include/libnet.h..."
+-	if(test -f /usr/local/include/libnet.h); then
++	echo -n "testing ${LOCALBASE}/include/libnet.h..."
++	if(test -f ${LOCALBASE}/include/libnet.h); then
+ 		echo "ok"
+ 	else
+ 		exit
+@@ -109,8 +109,8 @@
+ 
+ 
+ if test "$OS" = FreeBSD || test "$OS" = OpenBSD || test "$OS" = NetBSD; then
+-	echo -n "testing /usr/local/lib/libnet.a..."
+-	if(test -f /usr/local/lib/libnet.a); then
++	echo -n "testing ${LOCALBASE}/lib/libnet.a..."
++	if(test -f ${LOCALBASE}/lib/libnet.a); then
+ 		echo "ok"
+ 	else
+ 		echo "can't find required libnet.a static library"
+@@ -152,7 +152,7 @@
+ echo " " >> Makefile
+ echo " " >> Makefile
+ echo "all: kn_arp.c kn_main.c kn_defs.h" >> Makefile
+-echo "	gcc -Wall -c kn_main.c" >> Makefile
++echo "	gcc ${CFLAGS} -c kn_main.c" >> Makefile
+ 
+ if test "$OS" = Linux; then
+ 	echo "	gcc -Wall \$(LIBNETDEFS) -c kn_arp.c" >> Makefile
+@@ -164,8 +164,8 @@
+ 	echo "	/bin/chown root.root /usr/sbin/knowlan" >> Makefile
+ 	echo "	/bin/chmod 755 /usr/sbin/knowlan" >> Makefile
+ elif test "$OS" = FreeBSD || test "$OS" = OpenBSD || test "$OS" = NetBSD; then
+-	echo "	gcc -Wall -D__BSD__=1 -D__GLIBC__=1 -I/usr/local/include/ \$(LIBNETDEFS) -c kn_arp.c" >> Makefile
+-	echo "	gcc -o knowlan kn_main.o kn_arp.o /usr/local/lib/libnet.a -lpcap" >> Makefile
++	echo "	gcc ${CFLAGS} -D__BSD__=1 -D__GLIBC__=1 -I${LOCALBASE}/include/ \$(LIBNETDEFS) -c kn_arp.c" >> Makefile
++	echo "	gcc -o knowlan kn_main.o kn_arp.o ${LOCALBASE}/lib/libnet.a -lpcap" >> Makefile
+ 	echo " " >> Makefile
+         echo " " >> Makefile
+         echo "install: knowlan" >> Makefile

@@ -1,0 +1,8 @@
+Knowlan is ARP-based Local Area Network IP and MAC Address Extractor.
+It sends ARP REQUEST packets to the LAN and waits for ARP REPLY packets 
+from network nodes that are up, producing a table of currently 
+active IP and MAC addresses. 
+Knowlan uses libpcap and libnet libraries for easy source code review
+and maintenance. 
+
+WWW:	http://www.enderunix.org/knowlan

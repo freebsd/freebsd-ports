@@ -253,6 +253,7 @@
     SUBDIR += kmerlin
     SUBDIR += kmess
     SUBDIR += kmldonkey
+    SUBDIR += knowlan
     SUBDIR += konverse
     SUBDIR += kopete
     SUBDIR += kpopup
