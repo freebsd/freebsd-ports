@@ -30,6 +30,7 @@ PKGMESSAGE=	${WRKDIR}/message
 
 post-configure:
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|g' <${FILESDIR}/message >${PKGMESSAGE}
+	${TOUCH} ${WRKSRC}/GemPC410/dep_stamp ${WRKSRC}/common/dep_stamp
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
