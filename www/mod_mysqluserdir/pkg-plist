@@ -1,0 +1,5 @@
+libexec/apache/mod_mysqluserdir.so
+@exec %D/sbin/apxs -e -A -n userdir %D/%F
+@unexec %D/sbin/apxs -e -A -n userdir %D/%F
+%%PORTDOCS%%share/doc/mod_mysqluserdir/README
+%%PORTDOCS%%@dirrm share/doc/mod_mysqluserdir

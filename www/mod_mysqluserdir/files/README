@@ -1,0 +1,45 @@
+Notes from the author:
+======================
+
+Modified by Jaanus Toomsalu for using MYSQL userdirs 
+03. Sept. 2001 
+Configuration options
+   MyUserDirHost	 localhost	- Mysql database host
+   MyUserDirSock       /var/run/mysql/mysql.sock  - Mysql Unix filesocket
+	if not present then database host option will be used
+   MyUserDirUser       user		- DB User
+   MyUserDirPass       pass		- DB User password
+   MyUserDirDB         database	_ DB name
+   MyUserDirTable      table		- DB table name
+   MyUserDirDirCol     directory	- directory column name
+   MyUserDirUserCol    login		- login column name
+   #MyUserDirLeftJoinCol 		- if needed
+   MyUserDirWhereCol   "and enabled=1"
+
+Notes from Anders:
+==================
+
+The module is successfully tested with this configuration:
+
+MyUserDirSock  /tmp/mysql.sock
+MyUserDirUser  sqluserdir
+MyUserDirPass  foo
+MyUserDirDB    sqlusers
+MyUserDirTable sqlusers
+MyUserDirDirCol        directory
+MyUserDirUserCol       user
+
+I had to disable the LoadModule and AddModule commands for the default Apache
+mod_userdir to make mod_mysqluserdir work.
+
+And a MySQL table crated like this:
+
+CREATE TABLE sqlusers (
+  id int(13) NOT NULL auto_increment,
+  user varchar(50) NOT NULL default '',
+  directory varchar(50) NOT NULL default '',
+  enabled tinyint(3) NOT NULL default '1',
+  PRIMARY KEY  (id)
+);
+
+INSERT INTO sqlusers VALUES (1,'anders','/home/anders',1);

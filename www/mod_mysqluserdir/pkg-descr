@@ -1,0 +1,6 @@
+mod_mysqluserdir is a configurable Apache module for fetching
+http://server/~username type info from a MySQL database.
+
+WWW: http://freshmeat.net/projects/mod_mysqluserdir/
+
+- Anders Nordby <anders@FreeBSD.org>

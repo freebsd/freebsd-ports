@@ -1,0 +1,19 @@
+************************************************************
+You've installed mod_mysqluserdir, an Apache module to make
+Apache get userdirs from MySQL.
+
+Edit your apache.conf or httpd.conf to enable and setup this
+module. Have a look at the files in
+${PREFIX}/share/doc/mod_mysqluserdir for information on how
+to configure it etc.
+
+You need to disable the LoadModule and AddModule commands
+for the default Apache mod_userdir module to make
+mod_mysqluserdir work.
+
+Then do this to make it work effective:
+
+# apachectl configtest (see if there are any config errors)
+# apachectl restart
+
+************************************************************
