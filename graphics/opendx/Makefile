@@ -37,14 +37,18 @@ CONFIGURE_ENV=	ARCH="" \
 NO_MTREE=	yes
 PLIST_SUB=	ARCH=${OPSYS:L}
 
-# XXX the -lcompat below is an ugly kludge. opendx's code
-#     should be fixed to use the modern POSIX style regcomp(3)
-#     instead of the old V8 style one.
 post-patch:
 	@find ${WRKSRC} -name Makefile.am | \
-	  xargs ${PERL} -pi -e "s;-lXm ;-lcompat ${MOTIFLIB} ;g"
+	  xargs ${PERL} -pi -e "s;-lXm ;${MOTIFLIB} ;g"
 
 pre-configure:
-	@cd ${WRKSRC} && aclocal
+	@cd ${WRKSRC} && aclocal && ${SETENV} ${CONFIGURE_ENV} autoheader
+
+post-install:
+	@${ECHO_MSG} "===>   Fixing path in the docs (/usr/lpp -> ${PREFIX})"
+.for dir in doc help html man
+	@find ${PREFIX}/dx/${dir} -type f | \
+	  xargs ${PERL} -pi -e "s;/usr/lpp;${PREFIX};g"
+.endfor
 
 .include <bsd.port.mk>
