@@ -1,0 +1,3 @@
+sbin/unix2tcp
+%%PORTDOCS%%share/doc/unix2tcp/README
+%%PORTDOCS%%@dirrm /share/doc/unix2tcp
