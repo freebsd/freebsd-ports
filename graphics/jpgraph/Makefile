@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jpgraph
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.aditus.nu/jpgraph/downloads/
 
@@ -28,10 +28,13 @@ BROKEN=	"PHP have to build with GD support"
 
 do-install:
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/src/*.php ${DATADIR}
+	${CP} ${WRKSRC}/src/*.php ${DATADIR}
+	${CP} ${WRKSRC}/src/*.inc ${DATADIR}
 .if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/docs/ ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/Examples/* ${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/src/examples/ ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
