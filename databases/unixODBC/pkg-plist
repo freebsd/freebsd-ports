@@ -25,6 +25,9 @@ lib/libesoobS.so.1
 lib/libgtrtst.a
 lib/libgtrtst.so
 lib/libgtrtst.so.1
+lib/libmimerS.a
+lib/libmimerS.so
+lib/libmimerS.so.1
 lib/libnn.a
 lib/libnn.so
 lib/libnn.so.1

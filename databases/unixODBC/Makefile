@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	unixODBC
-PORTVERSION=	2.2.7
-PORTREVISION=	1
+PORTVERSION=	2.2.8
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ODBC library suite for Unix
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 CONFLICTS=	libiodbc-*
 
-USE_REINPLACE=	yes
+USE_GNOME=	gnomehack gnometarget lthack
+USE_ICONV=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-static --enable-shared \
 		--with-libiconv-prefix=${LOCALBASE}
 INSTALLS_SHLIB=	yes
@@ -45,9 +42,6 @@ CONFIGURE_ARGS+=	--enable-threads=yes
 .else
 CONFIGURE_ARGS+=	--enable-threads=no
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
