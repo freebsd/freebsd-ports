@@ -12,22 +12,22 @@ MASTER_SITES=	ftp://samurai.ruin.org/pub/All/
 
 MAINTAINER=	jmrobins@samurai.ruin.org
 
-USE_PERL5=	YES
+USE_PERL5=	yes
+NO_BUILD=	yes
 
-DIST=		bacon.pl
-
-do-build:
-		@cd ${WRKSRC}; ${MV} ${DIST} ${DIST}.orig; \
-		${SED} -e 's;^#! */usr/local/bin/perl *;#!${PERL5};' \
-			${DIST}.orig > ${DIST}
+pre-patch:
+	@${PERL} -pi.orig -e 's|${LOCALBASE}/bin/perl|${PERL}|' \
+		${WRKSRC}/bacon.pl
 
 do-install:
 	${MKDIR} ${PREFIX}/www/cgi-bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bacon.pl ${PREFIX}/www/cgi-bin/bacon.pl
 
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/bacon/
-	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/bacon/INSTALL
-	@${CAT} ${PKGMESSAGE}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
+.endif
+	@${SED} -e "s|INSTALL|${DOCSDIR}/INSTALL|" ${PKGMESSAGE}
 
 .include <bsd.port.mk>
