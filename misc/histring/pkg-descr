@@ -1,0 +1,12 @@
+From the histring README:
+
+This program simply highlights strings using ANSI terminal escape codes. It
+started out as sample code for using regular expressions but it turned out that
+I used it so much that I thought it warrented a release.
+
+One of the most common things I use the program for is helping me parse the
+output of grep and diff. I think that this programs functionality should be
+folded in to those programs but until then histring does the job nicely.
+
+Author:		Angus Mackay <amackay@gusnet.cx>
+WWW:		http://www.gusnet.cx/proj/histring/
