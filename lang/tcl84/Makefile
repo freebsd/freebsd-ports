@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tcl
-PORTVERSION=	8.4a4
-PORTREVISION=	1
+PORTVERSION=	8.4b2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -64,7 +63,7 @@ MANN=	Tcl.n after.n append.n array.n bgerror.n binary.n break.n case.n \
 	tclvars.n tell.n time.n trace.n unknown.n unset.n update.n uplevel.n \
 	upvar.n variable.n vwait.n while.n
 
-# MLINKS generated via  awk '/ln/ {print "\t" $2,$3,"\\"}' unix/mkLinks
+# MLINKS generated via  awk '/ln/ {print "\t" $3,$4,"\\"}' unix/mkLinks
 MLINKS=	Access.3 Tcl_Access.3 \
 	Access.3 Tcl_Stat.3 \
 	AddErrInfo.3 Tcl_AddObjErrorInfo.3 \
@@ -129,6 +128,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	CrtChannel.3 Tcl_ChannelInputProc.3 \
 	CrtChannel.3 Tcl_ChannelOutputProc.3 \
 	CrtChannel.3 Tcl_ChannelSeekProc.3 \
+	CrtChannel.3 Tcl_ChannelWideSeekProc.3 \
 	CrtChannel.3 Tcl_ChannelSetOptionProc.3 \
 	CrtChannel.3 Tcl_ChannelGetOptionProc.3 \
 	CrtChannel.3 Tcl_ChannelWatchProc.3 \
@@ -164,6 +164,8 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	CrtObjCmd.3 Tcl_SetCommandInfo.3 \
 	CrtObjCmd.3 Tcl_SetCommandInfoFromToken.3 \
 	CrtObjCmd.3 Tcl_GetCommandName.3 \
+	CrtObjCmd.3 Tcl_GetCommandFullName.3 \
+	CrtObjCmd.3 Tcl_GetCommandFromObj.3 \
 	CrtSlave.3 Tcl_IsSafe.3 \
 	CrtSlave.3 Tcl_MakeSafe.3 \
 	CrtSlave.3 Tcl_CreateSlave.3 \
@@ -488,6 +490,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	StringObj.3 Tcl_SetUnicodeObj.3 \
 	StringObj.3 Tcl_GetStringFromObj.3 \
 	StringObj.3 Tcl_GetString.3 \
+	StringObj.3 Tcl_GetUnicodeFromObj.3 \
 	StringObj.3 Tcl_GetUnicode.3 \
 	StringObj.3 Tcl_GetUniChar.3 \
 	StringObj.3 Tcl_GetCharLength.3 \
@@ -517,6 +520,9 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	ToUpper.3 Tcl_UtfToUpper.3 \
 	ToUpper.3 Tcl_UtfToLower.3 \
 	ToUpper.3 Tcl_UtfToTitle.3 \
+	TraceCmd.3 Tcl_CommandTraceInfo.3 \
+	TraceCmd.3 Tcl_TraceCommand.3 \
+	TraceCmd.3 Tcl_UntraceCommand.3 \
 	TraceVar.3 Tcl_TraceVar.3 \
 	TraceVar.3 Tcl_TraceVar2.3 \
 	TraceVar.3 Tcl_UntraceVar.3 \
@@ -556,7 +562,6 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	Utf.3 Tcl_UtfAtIndex.3 \
 	Utf.3 Tcl_UtfBackslash.3 \
 	WrongNumArgs.3 Tcl_WrongNumArgs.3 \
-	http.n Http.n \
 	library.n auto_execok.n \
 	library.n auto_import.n \
 	library.n auto_load.n \
@@ -581,8 +586,6 @@ post-install:
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif
-	${INSTALL_DATA} ${FILESDIR}/koi8-u.enc \
-		${PREFIX}/lib/tcl${TCL_VER}/encoding/
 
 test:
 	cd ${WRKSRC} && ${MAKE} test
