@@ -588,6 +588,7 @@
     SUBDIR += sniffit
     SUBDIR += sntop
     SUBDIR += socat
+    SUBDIR += socketbind
     SUBDIR += socks5
     SUBDIR += spread
     SUBDIR += ssldump
