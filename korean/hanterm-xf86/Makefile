@@ -3,7 +3,7 @@
 # Date created:		22 Mar 1997
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.7 1998/08/05 09:31:21 asami Exp $
+# $Id: Makefile,v 1.8 1998/08/09 00:46:16 steve Exp $
 #
 
 DISTNAME=	hanterm-xf-p14
@@ -12,6 +12,8 @@ CATEGORIES=	korean x11
 MASTER_SITES=	http://pseudo.snu.ac.kr/~hwang/
 
 MAINTAINER=	junker@jazz.snu.ac.kr
+
+BROKEN_ELF=	yes
 
 RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/misc/johabm16.pcf.gz:${PORTSDIR}/korean/johabfonts
 

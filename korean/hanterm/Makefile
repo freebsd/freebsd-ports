@@ -3,7 +3,7 @@
 # Date created:		12 Mar 1997
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.3 1998/03/16 07:17:40 steve Exp $
+# $Id: Makefile,v 1.4 1998/05/03 20:44:50 steve Exp $
 #
 
 DISTNAME=	hanterm304beta7
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/incoming/hantermbeta7/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/terminal/hanterm/hanterm304beta/
 
 MAINTAINER=	junker@jazz.snu.ac.kr
+
+BROKEN_ELF=	yes
 
 RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/misc/johabm16.pcf.gz:${PORTSDIR}/korean/johabfonts
 
