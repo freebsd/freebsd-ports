@@ -1,0 +1,17 @@
+A IIIMF language engine which ported from a popular traditional chinese
+input method, xcin, which was written using XIM protocol. It is now
+includes following input methods:
+    CangJie
+    Simplex
+    Phone
+    PinYin
+    NoTonePinYin
+    Cantonese PinYin
+    Array
+    EZ
+    Telecode
+
+WWW:	http://tciiimf.sourceforge.net/
+
+- Kuang-che Wu
+  kcwu@csie.org

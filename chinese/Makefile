@@ -55,6 +55,7 @@
     SUBDIR += iiimf-le-chewing
     SUBDIR += iiimf-le-newpy
     SUBDIR += iiimf-le-ude
+    SUBDIR += iiimf-le-xcin
     SUBDIR += irssi
     SUBDIR += jis2gb
     SUBDIR += joe
