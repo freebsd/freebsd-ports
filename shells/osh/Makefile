@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	osh
-PORTVERSION=	031112
+PORTVERSION=	040216
 CATEGORIES=	shells
 MASTER_SITES=	http://jneitzel.sdf1.org/osh/src/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An implementation of the UNIX 6th Edition shell.
+COMMENT=	An implementation of the UNIX 6th Edition shell
 
 MAN1=		goto.1 if.1 osh.1
 
 post-install:
-	@${ECHO} "updating /etc/shells"
+	@${ECHO_MSG} "updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
 	@(${GREP} -v ${PREFIX}/bin/osh /etc/shells.bak; \
 	 ${ECHO_CMD} ${PREFIX}/bin/osh) > /etc/shells
