@@ -1,0 +1,20 @@
+--- admin/ltconfig.orig	Mon Feb  1 19:00:27 1999
++++ admin/ltconfig	Mon Feb  1 19:00:54 1999
+@@ -1201,7 +1201,7 @@
+     ;;
+ 
+   # FreeBSD 3, at last, uses gcc -shared to do shared libraries.
+-  freebsd3*)
++  freebsd[34]*)
+     archive_cmds='$CC -shared -o $lib$libobjs$deplibs'
+     hardcode_libdir_flag_spec='-R$libdir'
+     hardcode_direct=yes
+@@ -1606,7 +1606,7 @@
+   shlibpath_var=PATH
+   ;;
+ 
+-freebsd2* | freebsd3*)
++freebsd*)
+   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+   version_type=freebsd-$objformat
+   library_names_spec='${libname}${release}.so$versuffix $libname.so'
