@@ -7716,6 +7716,7 @@ pecl-fileinfo	ports/sysutils/pecl-fileinfo
 pecl-fribidi	ports/converters/pecl-fribidi
 pecl-imagick	ports/graphics/pecl-imagick
 pecl-mailparse	ports/mail/pecl-mailparse
+pecl-memcache	ports/databases/pecl-memcache
 pecl-panda	ports/print/pecl-panda
 pecl-pdflib	ports/print/pecl-pdflib
 pecl-yaz	ports/net/pecl-yaz
