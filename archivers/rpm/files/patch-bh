@@ -1,0 +1,11 @@
+--- rpm2cpio.c.orig	Wed Oct 25 19:26:40 2000
++++ rpm2cpio.c	Wed Oct 25 19:26:59 2000
+@@ -55,7 +55,7 @@
+     }
+ 
+     gzdi = Fdopen(fdi, rpmio_flags);	/* XXX gzdi == fdi */
+-    if (gzdi == NULL || Ferror(gzdi)) {
++    if (gzdi == NULL) {
+ 	fprintf(stderr, _("cannot re-open payload: %s\n"), Fstrerror(gzdi));
+ 	exit(EXIT_FAILURE);
+     }
