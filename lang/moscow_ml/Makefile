@@ -1,9 +1,9 @@
 # New ports collection makefile for:    moscow-ml
-# Version required:     1.4
-# Date created:         26 July 1996
+# Version required:     1.43
+# Date created:         2 August 1998
 # Whom:                 chuckr
 #
-# $Id: Makefile,v 1.7 1996/11/21 09:32:45 asami Exp $
+# $Id: Makefile,v 1.8 1997/12/02 04:46:09 asami Exp $
 #
 
 DISTNAME=       mos14src
@@ -15,23 +15,32 @@ MASTER_SITES=	ftp://ftp.dina.kvl.dk/pub/mosml/ \
 
 MAINTAINER=	chuckr@freefall.FreeBSD.org
 
-BROKEN=		install
-ALL_TARGET=	world
+#BROKEN=		install
+ALL_TARGET=	world MOSMLHOME=$(PREFIX)/moscow_ml
+INSTALL_TARGET=	install MOSMLHOME=$(PREFIX)/moscow_ml
 WRKSRC=		${WRKDIR}/mosml/src
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/moscow_ml/doc
+	${MKDIR} ${PREFIX}/moscow_ml/doc/mosmllib
 	${MKDIR} ${PREFIX}/moscow_ml/examples
 	for file in ${WRKDIR}/mosml/doc/*;do \
-	${INSTALL_DATA} $${file} ${PREFIX}/moscow_ml/doc;done
+	if [ -f $${file} ]; then\
+	${INSTALL_DATA} $${file} ${PREFIX}/moscow_ml/doc;fi;done
+	for file in ${WRKDIR}/mosml/doc/mosmllib/*;do \
+	${INSTALL_DATA} $${file} ${PREFIX}/moscow_ml/doc/mosmllib;done
 	(cd ${WRKDIR}/mosml/examples; \
 	${INSTALL_DATA} README ${PREFIX}/moscow_ml/examples; \
 	for sdirs in manual mls helpsigs calc pretty lexyacc;do \
 	${MKDIR} ${PREFIX}/moscow_ml/examples/$${sdirs}; \
 	for file in $${sdirs}/*;do \
-	${INSTALL_DATA} $${file} ${PREFIX}/moscow_ml/examples/$${sdirs}; \
+	if [ -f $${file} ]; then\
+	${INSTALL_DATA} $${file} ${PREFIX}/moscow_ml/examples/$${sdirs}; fi; \
 	done; done;)
 .endif
+	for file in $(PREFIX)/moscow_ml/bin/*;do \
+	if [ -f $${file} ]; then\
+	$(LN) -s $${file} $(PREFIX)/bin;fi;done
 
 .include <bsd.port.mk>

@@ -1,14 +1,25 @@
 moscow_ml/bin/camlrunm
+@exec /bin/ln -s %D/%F %D/bin
+@unexec /bin/rm %D/bin/camlrunm
 moscow_ml/bin/mosml
+@exec /bin/ln -s %D/%F %D/bin
+@unexec /bin/rm %D/bin/mosml
 moscow_ml/bin/mosmlc
+@exec /bin/ln -s %D/%F %D/bin
+@unexec /bin/rm %D/bin/mosmlc
 moscow_ml/bin/mosmlyac
+@exec /bin/ln -s %D/%F %D/bin
+@unexec /bin/rm %D/bin/mosmlyac
 moscow_ml/bin/mosmllex
+@exec /bin/ln -s %D/%F %D/bin
+@unexec /bin/rm %D/bin/mosmllex
 moscow_ml/lib/header
 moscow_ml/lib/README
 moscow_ml/lib/Array.ui
 moscow_ml/lib/Word8Array.ui
 moscow_ml/lib/Word8.ui
 moscow_ml/lib/Word.ui
+moscow_ml/lib/Weak.ui
 moscow_ml/lib/Vector.ui
 moscow_ml/lib/Timer.ui
 moscow_ml/lib/Time.ui
@@ -21,21 +32,25 @@ moscow_ml/lib/Strbase.ui
 moscow_ml/lib/Splaytree.ui
 moscow_ml/lib/Splayset.ui
 moscow_ml/lib/Splaymap.ui
+moscow_ml/lib/SML90.ui
 moscow_ml/lib/Real.ui
 moscow_ml/lib/Random.ui
 moscow_ml/lib/Process.ui
 moscow_ml/lib/Polyhash.ui
+moscow_ml/lib/Polygdbm.ui
 moscow_ml/lib/Path.ui
 moscow_ml/lib/Parsing.ui
 moscow_ml/lib/PP.ui
-moscow_ml/lib/Old.ui
+moscow_ml/lib/Option.ui
 moscow_ml/lib/Obj.ui
 moscow_ml/lib/OS.ui
 moscow_ml/lib/Nonstdio.ui
 moscow_ml/lib/NJ93.ui
+moscow_ml/lib/Mosmlcgi.ui
 moscow_ml/lib/Mosml.ui
 moscow_ml/lib/Misc.ui
 moscow_ml/lib/Math.ui
+moscow_ml/lib/Location.ui
 moscow_ml/lib/Listsort.ui
 moscow_ml/lib/ListPair.ui
 moscow_ml/lib/List.ui
@@ -44,12 +59,15 @@ moscow_ml/lib/Intset.ui
 moscow_ml/lib/Intmap.ui
 moscow_ml/lib/Int.ui
 moscow_ml/lib/Help.ui
+moscow_ml/lib/Gdbm.ui
 moscow_ml/lib/FileSys.ui
+moscow_ml/lib/Dynlib.ui
 moscow_ml/lib/Dynarray.ui
 moscow_ml/lib/Date.ui
+moscow_ml/lib/CommandLine.ui
+moscow_ml/lib/Char.ui
 moscow_ml/lib/CharVector.ui
 moscow_ml/lib/CharArray.ui
-moscow_ml/lib/Char.ui
 moscow_ml/lib/Byte.ui
 moscow_ml/lib/Bool.ui
 moscow_ml/lib/Binaryset.ui
@@ -63,6 +81,7 @@ moscow_ml/lib/Array.uo
 moscow_ml/lib/Word8Array.uo
 moscow_ml/lib/Word8.uo
 moscow_ml/lib/Word.uo
+moscow_ml/lib/Weak.uo
 moscow_ml/lib/Vector.uo
 moscow_ml/lib/Timer.uo
 moscow_ml/lib/Time.uo
@@ -75,21 +94,25 @@ moscow_ml/lib/Strbase.uo
 moscow_ml/lib/Splaytree.uo
 moscow_ml/lib/Splayset.uo
 moscow_ml/lib/Splaymap.uo
+moscow_ml/lib/SML90.uo
 moscow_ml/lib/Real.uo
 moscow_ml/lib/Random.uo
 moscow_ml/lib/Process.uo
 moscow_ml/lib/Polyhash.uo
+moscow_ml/lib/Polygdbm.uo
 moscow_ml/lib/Path.uo
 moscow_ml/lib/Parsing.uo
 moscow_ml/lib/PP.uo
-moscow_ml/lib/Old.uo
+moscow_ml/lib/Option.uo
 moscow_ml/lib/Obj.uo
 moscow_ml/lib/OS.uo
 moscow_ml/lib/Nonstdio.uo
 moscow_ml/lib/NJ93.uo
+moscow_ml/lib/Mosmlcgi.uo
 moscow_ml/lib/Mosml.uo
 moscow_ml/lib/Misc.uo
 moscow_ml/lib/Math.uo
+moscow_ml/lib/Location.uo
 moscow_ml/lib/Listsort.uo
 moscow_ml/lib/ListPair.uo
 moscow_ml/lib/List.uo
@@ -98,16 +121,18 @@ moscow_ml/lib/Intset.uo
 moscow_ml/lib/Intmap.uo
 moscow_ml/lib/Int.uo
 moscow_ml/lib/Help.uo
+moscow_ml/lib/Gdbm.uo
 moscow_ml/lib/FileSys.uo
+moscow_ml/lib/Dynlib.uo
 moscow_ml/lib/Dynarray.uo
 moscow_ml/lib/Date.uo
+moscow_ml/lib/CommandLine.uo
 moscow_ml/lib/CharVector.uo
 moscow_ml/lib/CharArray.uo
 moscow_ml/lib/Char.uo
 moscow_ml/lib/Byte.uo
 moscow_ml/lib/Bool.uo
 moscow_ml/lib/Binaryset.uo
-moscow_ml/lib/PP.sig
 moscow_ml/lib/Binarymap.uo
 moscow_ml/lib/BinIO.uo
 moscow_ml/lib/BasicIO.uo
@@ -118,6 +143,7 @@ moscow_ml/lib/Array.sig
 moscow_ml/lib/Word8Array.sig
 moscow_ml/lib/Word8.sig
 moscow_ml/lib/Word.sig
+moscow_ml/lib/Weak.sig
 moscow_ml/lib/Vector.sig
 moscow_ml/lib/Timer.sig
 moscow_ml/lib/Time.sig
@@ -130,18 +156,23 @@ moscow_ml/lib/Strbase.sig
 moscow_ml/lib/Splaytree.sig
 moscow_ml/lib/Splayset.sig
 moscow_ml/lib/Splaymap.sig
+moscow_ml/lib/SML90.sig
 moscow_ml/lib/Real.sig
-moscow_ml/lib/Old.sig
 moscow_ml/lib/Random.sig
 moscow_ml/lib/Process.sig
 moscow_ml/lib/Polyhash.sig
+moscow_ml/lib/Polygdbm.sig
 moscow_ml/lib/Path.sig
 moscow_ml/lib/Parsing.sig
+moscow_ml/lib/PP.sig
+moscow_ml/lib/Option.sig
 moscow_ml/lib/Nonstdio.sig
 moscow_ml/lib/NJ93.sig
+moscow_ml/lib/Mosmlcgi.sig
 moscow_ml/lib/Mosml.sig
 moscow_ml/lib/Misc.sig
 moscow_ml/lib/Math.sig
+moscow_ml/lib/Location.sig
 moscow_ml/lib/Listsort.sig
 moscow_ml/lib/ListPair.sig
 moscow_ml/lib/List.sig
@@ -150,9 +181,12 @@ moscow_ml/lib/Intset.sig
 moscow_ml/lib/Intmap.sig
 moscow_ml/lib/Int.sig
 moscow_ml/lib/Help.sig
+moscow_ml/lib/Gdbm.sig
 moscow_ml/lib/FileSys.sig
+moscow_ml/lib/Dynlib.sig
 moscow_ml/lib/Dynarray.sig
 moscow_ml/lib/Date.sig
+moscow_ml/lib/CommandLine.sig
 moscow_ml/lib/CharVector.sig
 moscow_ml/lib/CharArray.sig
 moscow_ml/lib/Char.sig
@@ -167,14 +201,81 @@ moscow_ml/lib/Array2.sig
 moscow_ml/lib/Word8Vector.sig
 moscow_ml/lib/General.sig
 moscow_ml/lib/Meta.sig
+moscow_ml/lib/OS.sig
+moscow_ml/lib/helpsigs.val
 moscow_ml/lib/mosmlcmp
 moscow_ml/lib/mosmllnk
 moscow_ml/lib/mosmltop
 moscow_ml/tools/mosmldep
+moscow_ml/tools/cutdeps
+moscow_ml/doc/mosmllib/Array.html
+moscow_ml/doc/mosmllib/Array2.html
+moscow_ml/doc/mosmllib/Arraysort.html
+moscow_ml/doc/mosmllib/BasicIO.html
+moscow_ml/doc/mosmllib/BinIO.html
+moscow_ml/doc/mosmllib/Binarymap.html
+moscow_ml/doc/mosmllib/Binaryset.html
+moscow_ml/doc/mosmllib/Bool.html
+moscow_ml/doc/mosmllib/Byte.html
+moscow_ml/doc/mosmllib/Char.html
+moscow_ml/doc/mosmllib/CharArray.html
+moscow_ml/doc/mosmllib/CharVector.html
+moscow_ml/doc/mosmllib/CommandLine.html
+moscow_ml/doc/mosmllib/Date.html
+moscow_ml/doc/mosmllib/Dynarray.html
+moscow_ml/doc/mosmllib/Dynlib.html
+moscow_ml/doc/mosmllib/FileSys.html
+moscow_ml/doc/mosmllib/Gdbm.html
+moscow_ml/doc/mosmllib/General.html
+moscow_ml/doc/mosmllib/Help.html
+moscow_ml/doc/mosmllib/Int.html
+moscow_ml/doc/mosmllib/Intmap.html
+moscow_ml/doc/mosmllib/Intset.html
+moscow_ml/doc/mosmllib/Lexing.html
+moscow_ml/doc/mosmllib/List.html
+moscow_ml/doc/mosmllib/ListPair.html
+moscow_ml/doc/mosmllib/Listsort.html
+moscow_ml/doc/mosmllib/Location.html
+moscow_ml/doc/mosmllib/Math.html
+moscow_ml/doc/mosmllib/Meta.html
+moscow_ml/doc/mosmllib/Mosml.html
+moscow_ml/doc/mosmllib/Mosmlcgi.html
+moscow_ml/doc/mosmllib/NJ93.html
+moscow_ml/doc/mosmllib/Nonstdio.html
+moscow_ml/doc/mosmllib/OS.html
+moscow_ml/doc/mosmllib/Option.html
+moscow_ml/doc/mosmllib/PP.html
+moscow_ml/doc/mosmllib/Parsing.html
+moscow_ml/doc/mosmllib/Path.html
+moscow_ml/doc/mosmllib/Polygdbm.html
+moscow_ml/doc/mosmllib/Polyhash.html
+moscow_ml/doc/mosmllib/Process.html
+moscow_ml/doc/mosmllib/Random.html
+moscow_ml/doc/mosmllib/Real.html
+moscow_ml/doc/mosmllib/SML90.html
+moscow_ml/doc/mosmllib/Splaymap.html
+moscow_ml/doc/mosmllib/Splayset.html
+moscow_ml/doc/mosmllib/Splaytree.html
+moscow_ml/doc/mosmllib/String.html
+moscow_ml/doc/mosmllib/StringCvt.html
+moscow_ml/doc/mosmllib/Substring.html
+moscow_ml/doc/mosmllib/Susp.html
+moscow_ml/doc/mosmllib/TextIO.html
+moscow_ml/doc/mosmllib/Time.html
+moscow_ml/doc/mosmllib/Timer.html
+moscow_ml/doc/mosmllib/Vector.html
+moscow_ml/doc/mosmllib/Weak.html
+moscow_ml/doc/mosmllib/Word.html
+moscow_ml/doc/mosmllib/Word8.html
+moscow_ml/doc/mosmllib/Word8Array.html
+moscow_ml/doc/mosmllib/Word8Vector.html
+moscow_ml/doc/mosmllib/idIndex.html
+moscow_ml/doc/mosmllib/index.html
 moscow_ml/doc/bugs
 moscow_ml/doc/manual.dvi
 moscow_ml/doc/mosmlref.dvi
 moscow_ml/doc/recomp
+moscow_ml/doc/releases.txt
 moscow_ml/examples/README
 moscow_ml/examples/manual/Evaluate.sig
 moscow_ml/examples/manual/Evaluate.sml
@@ -185,14 +286,22 @@ moscow_ml/examples/manual/Reduce.sml
 moscow_ml/examples/manual/load
 moscow_ml/examples/mls/Makefile
 moscow_ml/examples/mls/mls.sml
+moscow_ml/examples/helpsigs/Asynt.sml
 moscow_ml/examples/helpsigs/Database.sig
 moscow_ml/examples/helpsigs/Database.sml
+moscow_ml/examples/helpsigs/Hasht.sig
+moscow_ml/examples/helpsigs/Hasht.sml
+moscow_ml/examples/helpsigs/Htmlsigs.sig
+moscow_ml/examples/helpsigs/Htmlsigs.sml
 moscow_ml/examples/helpsigs/Lexer.lex
 moscow_ml/examples/helpsigs/Makefile
 moscow_ml/examples/helpsigs/Parser.grm
+moscow_ml/examples/helpsigs/Parser.output
 moscow_ml/examples/helpsigs/Parsspec.sml
 moscow_ml/examples/helpsigs/Printbase.sml
 moscow_ml/examples/helpsigs/README
+moscow_ml/examples/helpsigs/Stack.sig
+moscow_ml/examples/helpsigs/Stack.sml
 moscow_ml/examples/helpsigs/makebase.sml
 moscow_ml/examples/calc/Lexer.lex
 moscow_ml/examples/calc/Makefile
@@ -202,7 +311,21 @@ moscow_ml/examples/pretty/Makefile
 moscow_ml/examples/pretty/ppexpr.sml
 moscow_ml/examples/lexyacc/Data.sml
 moscow_ml/examples/lexyacc/Lexer.lex
-moscow_ml/examples/lexyacc/Lexer.sml
+moscow_ml/examples/lexyacc/Main.sml
 moscow_ml/examples/lexyacc/Makefile
 moscow_ml/examples/lexyacc/Parser.grm
 moscow_ml/examples/lexyacc/README
+moscow_ml/examples/lexyacc/load
+@dirrm moscow_ml/lib
+@dirrm moscow_ml/tools
+@dirrm moscow_ml/bin
+@dirrm moscow_ml/doc/mosmllib
+@dirrm moscow_ml/doc
+@dirrm moscow_ml/examples/manual
+@dirrm moscow_ml/examples/mls
+@dirrm moscow_ml/examples/helpsigs
+@dirrm moscow_ml/examples/calc
+@dirrm moscow_ml/examples/pretty
+@dirrm moscow_ml/examples/lexyacc
+@dirrm moscow_ml/examples
+@dirrm moscow_ml
