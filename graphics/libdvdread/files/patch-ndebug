@@ -1,0 +1,35 @@
+--- dvdread/nav_read.c.orig	Sun Apr  7 14:51:39 2002
++++ dvdread/nav_read.c	Tue Nov  5 11:47:57 2002
+@@ -27,7 +27,7 @@
+ #include "nav_read.h"
+ 
+ void navRead_PCI(pci_t *pci, unsigned char *buffer) {
+-  int i, j, k;
++  int i, j;
+ 
+   assert(sizeof(pci_t) == PCI_BYTES - 1); // -1 for substream id
+   
+@@ -71,6 +71,7 @@
+ #endif
+ 
+ 
++#ifndef NDEBUG /* { */
+   /* Asserts */
+ 
+   /* pci pci gi */ 
+@@ -112,6 +113,7 @@
+ 	assert(pci->hli.btnit[n].right <= pci->hli.hl_gi.btn_ns);
+ 	//vmcmd_verify(pci->hli.btnit[n].cmd);
+       } else {
++	int k;
+ 	assert(pci->hli.btnit[n].btn_coln == 0);
+ 	assert(pci->hli.btnit[n].auto_action_mode == 0);
+ 	assert(pci->hli.btnit[n].x_start == 0);
+@@ -127,6 +129,7 @@
+       }
+     }
+   }
++#endif /* !NDEBUG } */
+ }
+ 
+ void navRead_DSI(dsi_t *dsi, unsigned char *buffer) {
