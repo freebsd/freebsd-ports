@@ -137,6 +137,7 @@
     SUBDIR += p5-Lingua-EN-Numbers
     SUBDIR += p5-Lingua-EN-Numbers-Ordinate
     SUBDIR += p5-Lingua-EN-Sentence
+    SUBDIR += p5-Lingua-EN-Squeeze
     SUBDIR += p5-Lingua-Ispell
     SUBDIR += p5-Lingua-Preferred
     SUBDIR += p5-MARC

@@ -1,0 +1,8 @@
+Squeeze English text to most compact format possibly so that it is
+barely readable. You should convert all text to lowercase for maximum
+compression, because optimizations have been designed mostly for
+uncapitalised letters.
+
+WWW: http://search.cpan.org/search?dist=Lingua-EN-Squeeze
+
+Seamus Venasse <svenasse@polaris.ca>
