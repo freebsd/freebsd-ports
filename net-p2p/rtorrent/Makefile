@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rtorrent
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.4
 CATEGORIES=	net
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl		\
 USE_GCC=	3.4
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=		--disable-debug
+CONFIGURE_ARGS=	--disable-debug
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_INC_LIBTOOL_VER=	13
 
