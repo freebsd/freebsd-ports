@@ -18,18 +18,16 @@ COMMENT=	A web-based news publishing and discussion product for Zope
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
 
 USE_PYTHON=	yes
+USE_ZOPE=	yes
 
 # You can change this in the environment if you like.
 SZOPEBASEDIR?=	www/Zope
 
 # Don't change these
-ZOPEBASEDIR=		${PREFIX}/${SZOPEBASEDIR}
 ZOPEPRODUCTNAME=	Squishdot
 ZOPEPRODUCTDIR=		lib/python/Products
 
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
-
-PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC} 2>/dev/null
