@@ -1,7 +1,7 @@
 *** Makefile.old	Sat Jul 16 13:28:40 1994
 --- Makefile	Thu Aug 25 10:20:32 1994
 ***************
-*** 1,13 ****
+*** 1,14 ****
   #
   # Makefile for DGD, Dworkin's Game Driver
   #
@@ -12,10 +12,11 @@
   CFLAGS=	-I. -Icomp -Ilex -Ied -Ikfun $(CCFLAGS)
 ! LDFLAGS=
 ! LIBS=
-  CC=	gcc
+! CC=	gcc
   LD=	$(CC)
   DMAKE=	make
---- 1,15 ----
+  BIN=		../bin
+--- 1,16 ----
   #
   # Makefile for DGD, Dworkin's Game Driver
   #
@@ -28,20 +29,27 @@
 ! LDFLAGS= -s
 ! #LDFLAGS=
 ! LIBS= -lcrypt
-  CC=	gcc
+! CC=	cc
   LD=	$(CC)
   DMAKE=	make
+  BIN=		../bin
 ***************
-*** 20,25 ****
---- 22,29 ----
+*** 20,26 ****
   COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o data.o \
   	interpret.o config.o
   
-+ all: a.out
-+ 
-  a.out:	$(OBJ)
+! a.out:	$(OBJ) always
   	cd comp; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
   	cd lex; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
+  	cd ed; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
+--- 20,26 ----
+  COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o data.o \
+  	interpret.o config.o
+  
+! a.out all:	$(OBJ) always
+  	cd comp; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
+  	cd lex; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
+  	cd ed; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
 ***************
 *** 50,56 ****
   
