@@ -48,40 +48,42 @@ lib/IM/Ssh.pm
 lib/IM/Stdio.pm
 lib/IM/TcpTransaction.pm
 lib/IM/Util.pm
-share/doc/im/00changes
-share/doc/im/00copyright
-share/doc/im/00copyright.jis
-share/doc/im/00perl
-share/doc/im/00readme
-share/doc/im/00usage
-share/doc/im/man/00readme
-share/doc/im/man/imali.jis
-share/doc/im/man/imcat.jis
-share/doc/im/man/imcd.jis
-share/doc/im/man/imclean.jis
-share/doc/im/man/imget.jis
-share/doc/im/man/imhist.jis
-share/doc/im/man/imjoin.jis
-share/doc/im/man/immv.jis
-share/doc/im/man/impack.jis
-share/doc/im/man/imput
-share/doc/im/man/imput.jis
-share/doc/im/man/imrm.jis
-share/doc/im/man/imsetup.jis
-share/doc/im/man/imsort.jis
-share/doc/im/man/imstore.jis
-share/doc/im/man/imtar.jis
-share/examples/im/Config
-share/examples/im/Petnames
-share/examples/im/get.sbr
-share/examples/im/getchk.sbr
-share/examples/im/getchk.sbr.postpet
-share/examples/im/password
-share/examples/im/scan.sbr
-share/examples/im/scan.sbr.sample1
-share/examples/im/scan.sbr.sample2
-@dirrm share/examples/im
-@dirrm share/doc/im/man
-@dirrm share/doc/im
+%%DOCSDIR%%/00changes
+%%DOCSDIR%%/00copyright
+%%DOCSDIR%%/00copyright.jis
+%%DOCSDIR%%/00perl
+%%DOCSDIR%%/00readme
+%%DOCSDIR%%/00usage
+%%DOCSDIR%%/man/00readme
+%%DOCSDIR%%/man/imali.jis
+%%DOCSDIR%%/man/imcat.jis
+%%DOCSDIR%%/man/imcd.jis
+%%DOCSDIR%%/man/imclean.jis
+%%DOCSDIR%%/man/imget.jis
+%%DOCSDIR%%/man/imhist.jis
+%%DOCSDIR%%/man/imjoin.jis
+%%DOCSDIR%%/man/immv.jis
+%%DOCSDIR%%/man/impack.jis
+%%DOCSDIR%%/man/imput
+%%DOCSDIR%%/man/imput.jis
+%%DOCSDIR%%/man/imrm.jis
+%%DOCSDIR%%/man/imsetup.jis
+%%DOCSDIR%%/man/imsort.jis
+%%DOCSDIR%%/man/imstore.jis
+%%DOCSDIR%%/man/imtar.jis
+%%EXAMPLESDIR%%/Config
+%%EXAMPLESDIR%%/Petnames
+%%EXAMPLESDIR%%/get.sbr
+%%EXAMPLESDIR%%/getchk.sbr
+%%EXAMPLESDIR%%/getchk.sbr.postpet
+%%EXAMPLESDIR%%/password
+%%EXAMPLESDIR%%/scan.sbr
+%%EXAMPLESDIR%%/scan.sbr.sample1
+%%EXAMPLESDIR%%/scan.sbr.sample2
+@dirrm %%EXAMPLESDIR%%
+@dirrm share/examples
+@dirrm %%DOCSDIR%%/man
+@dirrm %%DOCSDIR%%
+@dirrm share/doc
 @dirrm lib/IM
 @dirrm etc/im
