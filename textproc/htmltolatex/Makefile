@@ -8,6 +8,7 @@
 
 PORTNAME=	htmltolatex
 PORTVERSION=	1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.ukc.mirror.ac.uk/sites/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
 		http://people.FreeBSD.org/~foxfair/distfiles/
@@ -16,7 +17,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML to LaTeX to PDF Converter
 
-LIB_DEPENDS=	Magick.5:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	Magick.6:${PORTSDIR}/graphics/ImageMagick
 
 USE_BISON=	yes
 USE_GMAKE=	yes

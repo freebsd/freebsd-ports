@@ -7,6 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	0.6.9
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.zebra.fh-weingarten.de/~transcode/pre/
 
@@ -106,7 +107,7 @@ WITH_DIVX5=	yes
 .endif
 
 .if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	Magick.5:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	Magick.6:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	WITH_IMAGEMAGICK=""
 .else
 CONFIGURE_ARGS+=	--with-magick-mods=no
