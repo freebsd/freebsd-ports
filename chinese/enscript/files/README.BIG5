@@ -1,0 +1,13 @@
+Sept. 9 2000:
+
+This version of enscript is patched by Chen-Shan Chin
+(cschin@u.washington.edu) to support BIG5 and UniCNS-UTF8
+encoded text file.  Two new encoding name "big5" and 
+"UniCNS-UTF8" are added.  Since there is no easy way to
+get AFM for CJK CID-font, I simply assign the width for
+the same for all character.
+
+You need to have a CID-font for these encoding to use 
+this function.
+
+Chen-Shan Chin

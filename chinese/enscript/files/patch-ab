@@ -1,0 +1,11 @@
+--- lib/enscript.cfg.in.orig	Mon Nov 27 22:26:17 2000
++++ lib/enscript.cfg.in	Mon Nov 27 22:39:04 2000
+@@ -42,7 +42,7 @@
+ Clean7Bit: 1
+ 
+ # Default input encoding.
+-DefaultEncoding: latin1
++DefaultEncoding: big5
+ 
+ # Default fancy header.
+ DefaultFancyHeader: enscript

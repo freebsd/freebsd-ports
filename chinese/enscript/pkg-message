@@ -1,0 +1,7 @@
+========================================================================
+For BIG5 users, use commands like this to generate PS documents:
+
+enscript -X big5 -f DefaultMingB5-Regular-B5pc-H@12 -o [output.ps] [file]
+
+Make sure to use those fonts having "B5pc" in their names.
+========================================================================
