@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	nvidia-driver
-PORTVERSION=	1.0.4365
+PORTVERSION=	1.0.${NVVERSION}
 PORTREVISION?=	0
 CATEGORIES=	x11
-MASTER_SITES=	http://download.nvidia.com/freebsd/1.0-4365/ \
-		ftp://download.nvidia.com/freebsd/1.0-4365/ \
-		http://download1.nvidia.com/freebsd/1.0-4365/ \
-		ftp://download1.nvidia.com/freebsd/1.0-4365/
+MASTER_SITES=	http://download.nvidia.com/freebsd/1.0-${NVVERSION}/ \
+		ftp://download.nvidia.com/freebsd/1.0-${NVVERSION}/ \
+		http://download1.nvidia.com/freebsd/1.0-${NVVERSION}/ \
+		ftp://download1.nvidia.com/freebsd/1.0-${NVVERSION}/
 DISTNAME=	NVIDIA-FreeBSD-x86-${PORTVERSION:S/0./0-/}
 
 MAINTAINER=	danfe@regency.nsu.ru
@@ -20,6 +20,9 @@ COMMENT=	NVidia graphics card binary drivers for hardware OpenGL rendering
 
 USE_X_PREFIX=	yes
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
+INSTALLS_SHLIB=	yes
+
+NVVERSION=	4365
 
 .include <bsd.port.pre.mk>
 
@@ -29,7 +32,7 @@ XSERVVERSION!=	/usr/sbin/pkg_info -O x11-servers/XFree86-4-Server 2>/dev/null | 
 XLIBVERSION!=	/usr/sbin/pkg_info -O x11/XFree86-4-libraries 2>/dev/null | ${GREP} libraries- || true
 
 PLIST_SUB=	XSERVVERSION=${XSERVVERSION} XLIBVERSION=${XLIBVERSION} \
-		LINUXBASE=${LINUXBASE} NVVERSION=4365
+		LINUXBASE=${LINUXBASE} NVVERSION=${NVVERSION}
 
 .if !defined(WITHOUT_LINUX)
 USE_LINUX=	yes
@@ -81,9 +84,11 @@ pre-install:
 post-install:
 .if ${OSVERSION} < 500000
 .for dev in 0 1 2 3
+	@rm -f /dev/nvidia${dev}
 	@mknod /dev/nvidia${dev} c 180 ${dev}
 	@${CHMOD} 0666 /dev/nvidia${dev}
 .endfor
+	@rm -f /dev/nvidiactl
 	@mknod /dev/nvidiactl c 180 255
 	@${CHMOD} 0666 /dev/nvidiactl
 .endif
