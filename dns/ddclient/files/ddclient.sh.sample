@@ -7,7 +7,7 @@ case "$1" in
 		fi
 		;;
 	stop)
-		/usr/bin/killall ddclient
+		/bin/kill `cat /var/run/ddclient.pid`
 		echo -n ' ddclient'
 		;;
 	*)
