@@ -1,5 +1,5 @@
---- etc/drweb_smf.conf.orig	Fri Jul 26 17:03:59 2002
-+++ etc/drweb_smf.conf	Sun Aug 25 06:48:32 2002
+--- etc/drweb_smf.conf.orig	Mon Oct 28 15:05:35 2002
++++ etc/drweb_smf.conf	Thu Oct 31 03:40:19 2002
 @@ -14,14 +14,14 @@
  #   Address = inet:3000@localhost
  #   Address = local:/usr/local/drweb/run/drwebd.skt
@@ -30,27 +30,14 @@
  
  # Permissions for created spool files
  SpoolFilesMode = 0600
-@@ -136,7 +136,7 @@
- #        reject - reject messages
- #        quarantine - move message to quarantine and discard it
- #        tempfail - says that we temporary unavailable
--ScanningErrors = reject
-+ScanningErrors = tempfail
- 
- # ProcessingErrors - errors in proxy-client: no memory`,' misconfigured`,' timeout
- #                    on communication with daemon and etc. 
-@@ -144,19 +144,19 @@
- #        pass - accept messages
- #        reject - reject messages
- #        tempfail - says that we temporary unavailable
--ProcessingErrors = reject
-+ProcessingErrors = tempfail
+@@ -147,16 +147,16 @@
+ ProcessingErrors = reject
  
  # Admin mail address (may be unix-local address)
 -AdminMail = av-admin@example.com
 +AdminMail = postmaster
  
- # Filter address`,' that be used in From:
+ # Filter address, that be used in From:
 -FilterMail = DrWeb-DAEMON@example.com
 +FilterMail = DrWeb-DAEMON@%HOSTNAME%
  

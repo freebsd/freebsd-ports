@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drweb_sendmail
-PORTVERSION=    4.28.11
+PORTVERSION=    4.29
 CATEGORIES=	security mail
 MASTER_SITES=   ftp://ftp.drweb.ru/pub/unix/
 DISTNAME=       drweb-clients-${PORTVERSION}-sources
