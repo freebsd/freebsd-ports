@@ -13,8 +13,8 @@ include/pygtk-2.0/pygtk/pygtk.h
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/dsextras.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/dsextras.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/dsextras.pyo
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/glade.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gl.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/glade.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/keysyms.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/keysyms.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/keysyms.pyo
@@ -63,7 +63,7 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%PORTDOCS%%share/examples/py-gtk/neil/notebook.py
 %%PORTDOCS%%share/examples/py-gtk/neil/question.xpm
 %%PORTDOCS%%share/examples/py-gtk/pango/utf8-demo.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/__init__.py                  
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/__init__.py
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/appwindow.py
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/buttonbox.py
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/colorsel.py
