@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvpn
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,6 +34,7 @@ post-install:
 	@${MKDIR} ${DOCSDIR}/${dirs}
 	@${INSTALL_DATA} ${WRKSRC}/${dirs}/* ${DOCSDIR}/${dirs}
 .endfor
+	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.mk>
