@@ -8,9 +8,7 @@
 PORTNAME=	volnorm
 PORTVERSION=	0.8.1
 CATEGORIES=	audio
-MASTER_SITES=	http://volnorm.sourceforge.net/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://volnorm.sourceforge.net/
 PKGNAMEPREFIX=	xmms-
 
 MAINTAINER=	pat@FreeBSD.org
