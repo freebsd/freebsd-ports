@@ -42,7 +42,7 @@ CONFIGURE_ENV+=		LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
 CONFIGURE_ARGS+=	--disable-thread
 .endif
 
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+.if !defined(PACKAGE_BUILDING)
 pre-build:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
