@@ -19,14 +19,12 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	mhash:${PORTSDIR}/security/mhash
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_BUILDARGS=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
-SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
-
 do-build:
-	@${SETUP_CMD} build_ext -L${LOCALBASE}/lib
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} build_ext ${PYDISTUTILS_BUILDARGS})
 
-do-install:
-	@${SETUP_CMD} install
 
 .include <bsd.port.mk>
