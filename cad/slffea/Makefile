@@ -17,6 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	San Le's Free Finite Element Analysis
 
+CONFLICTS=	ploticus-* swi-pl-*
 USE_REINPLACE=	yes
 USE_MESA=	yes
 CFLAGS+=	-I${X11BASE}/include ${PTHREAD_CFLAGS}
