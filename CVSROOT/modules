@@ -1484,6 +1484,7 @@ fortran-utils	ports/devel/fortran-utils
 fortune		src/games/fortune
 fortuneit	ports/misc/fortuneit
 fortunelock	ports/sysutils/fortunelock
+fortunetw	ports/chinese/fortunetw
 fox		ports/x11-toolkits/fox
 fox-xunicode	ports/x11-toolkits/fox-xunicode
 fping		ports/net/fping
