@@ -25,17 +25,17 @@ USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if !defined(WITHOUT_SSL)
-LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=--enable-ssl=gnutls
-.else
+#.if !defined(WITHOUT_SSL)
+#LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
+#CONFIGURE_ARGS+=--enable-ssl=gnutls
+#.else
 CONFIGURE_ARGS+=--enable-ssl=no
-.endif
+#.endif
 
 pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "libgnetwork has the following configurable option(s):"
-	@${ECHO_MSG} "	WITHOUT_SSL	Disable GnuTLS SSL support"
-	@${ECHO_MSG} ""
+#	@${ECHO_MSG} ""
+#	@${ECHO_MSG} "libgnetwork has the following configurable option(s):"
+#	@${ECHO_MSG} "	WITHOUT_SSL	Disable GnuTLS SSL support"
+#	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
