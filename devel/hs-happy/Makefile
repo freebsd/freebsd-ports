@@ -16,7 +16,7 @@ COMMENT=	An LALR(1) parser generator for the functional language Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook-xsl \
+BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
 .endif
 
