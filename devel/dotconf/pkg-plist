@@ -10,6 +10,7 @@ share/aclocal/dotconf.m4
 %%PORTDOCS%%share/dotconf/dotconf-features.txt
 share/dotconf/examples/README
 share/dotconf/examples/caseinsensitive/Makefile
+share/dotconf/examples/caseinsensitive/caseinsensitive
 share/dotconf/examples/caseinsensitive/caseinsensitive.c
 share/dotconf/examples/caseinsensitive/caseinsensitive.conf
 share/dotconf/examples/context/Makefile
