@@ -3,7 +3,7 @@
 # Date created:		31 Jul 1996
 # Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.2 1996/11/26 07:33:30 asami Exp $
+# $Id: Makefile,v 1.3 1997/10/26 23:57:17 fenner Exp $
 #
 
 DISTNAME=	xtar-1.4
@@ -15,5 +15,6 @@ MAINTAINER=	shanee@augusta.de
 
 REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes
+MAN1=		xtar.1
 
 .include <bsd.port.mk>

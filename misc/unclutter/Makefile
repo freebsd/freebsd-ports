@@ -3,7 +3,7 @@
 # Date created:		03 Aug 1996
 # Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.5 1997/04/03 00:49:23 fenner Exp $
+# $Id: Makefile,v 1.6 1997/10/26 23:57:06 fenner Exp $
 #
 
 DISTNAME=	unclutter-8
@@ -16,5 +16,6 @@ MAINTAINER=	shanee@augusta.de
 
 WRKSRC=		$(WRKDIR)/unclutter
 USE_IMAKE=	yes
+MAN1=		unclutter.1
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		23 December 1996
 # Whom:			Conrad Sabatier <conrads@neosoft.com>
 #
-# $Id: Makefile,v 1.1.1.1 1996/12/28 03:07:50 obrien Exp $
+# $Id: Makefile,v 1.2 1996/12/29 00:51:27 obrien Exp $
 #
       
 DISTNAME=	xless-1.7
@@ -15,5 +15,6 @@ MASTER_SITE_SUBDIR=     applications
 MAINTAINER=	conrads@neosoft.com
       
 USE_IMAKE=	yes
+MAN1=		xless.1
       
 .include <bsd.port.mk>

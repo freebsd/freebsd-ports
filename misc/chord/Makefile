@@ -3,7 +3,7 @@
 # Date created:		24 April 1995
 # Whom:			Satoshi Asami
 #
-# $Id: Makefile,v 1.4 1997/04/30 03:18:06 asami Exp $
+# $Id: Makefile,v 1.5 1997/12/25 22:29:44 asami Exp $
 #
 
 DISTNAME=	chord
@@ -12,5 +12,8 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 MAINTAINER=	ports@FreeBSD.ORG
+
+MAN1=		a2crd.1 chord.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>

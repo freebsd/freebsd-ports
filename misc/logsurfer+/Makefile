@@ -3,7 +3,7 @@
 # Date created:		28 Jul 1996
 # Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.2 1997/10/26 23:56:58 fenner Exp $
+# $Id: Makefile,v 1.3 1998/02/06 19:07:05 fenner Exp $
 #
 
 DISTNAME=	logsurfer-1.41
@@ -15,5 +15,8 @@ MASTER_SITES=	ftp://ftp.fh-rosenheim.de/pub/mirror/cert.dfn/tools/audit/logsurfe
 MAINTAINER=	shanee@augusta.de
 
 GNU_CONFIGURE=	YES
+MAN1=		logsurfer.1
+MAN4=		logsurfer.conf.4
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
