@@ -254,6 +254,7 @@
     SUBDIR += speyes
     SUBDIR += spider
     SUBDIR += starlanes
+    SUBDIR += stvef-server
     SUBDIR += sxsame
     SUBDIR += tank
     SUBDIR += teg
