@@ -1,0 +1,11 @@
+--- smoke/qt/Makefile.in.orig	Thu Aug 19 15:29:48 2004
++++ smoke/qt/Makefile.in	Fri Aug 20 16:15:03 2004
+@@ -55,7 +55,7 @@
+ CXX = @CXX@
+ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+-CXXFLAGS = @CXXFLAGS@
++CXXFLAGS = @CXXFLAGS@ -fPIC
+ CYGPATH_W = @CYGPATH_W@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
