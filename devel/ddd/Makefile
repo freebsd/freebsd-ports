@@ -26,9 +26,9 @@ MAN1=		ddd.1
 
 .if defined(MOTIFLIB)
 .if defined(MOTIF_STATIC)
-LIBXMDIR!=	${ECHO} ${MOTIFLIB} | ${SED} -e 's/\/libXm\.a//g' | ${AWK} '{print $$1}'
+LIBXMDIR!=	${ECHO} ${MOTIFLIB} | sed -e 's/\/libXm\.a//g' | awk '{print $$1}'
 .else
-LIBXMDIR!=	${ECHO} ${MOTIFLIB} | ${SED} -e 's/-L//g' | ${AWK} '{print $$1}'
+LIBXMDIR!=	${ECHO} ${MOTIFLIB} | sed -e 's/-L//g' | awk '{print $$1}'
 .endif
 .else
 LIBXMDIR=	${X11BASE}
