@@ -12,7 +12,8 @@ MASTER_SITES=	http://www-masuda.is.s.u-tokyo.ac.jp/~kourai/qvwm/program/
 
 MAINTAINER=	nacai@iname.com
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
+		Imlib.4:${PORTSDIR}/graphics/imlib
 
 USE_IMAKE=	yes
 MAN1=		qvwm.1
