@@ -13,29 +13,62 @@ MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/sources/ \
 
 MAINTAINER=	jdp@FreeBSD.org
 
-BUILD_DEPENDS=	m3build-6:${PORTSDIR}/lang/modula-3
-LIB_DEPENDS=	m3.6:${PORTSDIR}/lang/modula-3-lib
-
-MAN1=		cvpasswd.1 cvsup.1
-MAN8=		cvsupd.8
-NOT_FOR_ARCHS=	alpha
-
-# Support building on systems with or without X11 installed.
 .ifdef NO_X11
 M3FLAGS+=	-DNOGUI
+BUILD_DEPENDS=	${L1}libm3tcp${L2}:${PORTSDIR}/lang/pm3-net
+RUN_DEPENDS=	${L1}libm3tcp${L2}:${PORTSDIR}/lang/pm3-net
 .else
-pre-fetch:
-	@${ECHO_MSG} -n "To build this port without X11 (and without the GUI),"
-	@${ECHO_MSG} " define \"NO_X11\"."
-
+BUILD_DEPENDS=	${L1}libm3formsvbt${L2}:${PORTSDIR}/lang/pm3-forms
+RUN_DEPENDS=	${L1}libm3formsvbt${L2}:${PORTSDIR}/lang/pm3-forms
 .endif
 
-# Build options.  Uncomment the desired ones.
+MAKE_ARGS+=	PREFIX=${PREFIX} M3FLAGS="${M3FLAGS}"
+MAN1=		cvpasswd.1 cvsup.1
+MAN8=		cvsupd.8
+
+L1=		${PREFIX}/lib/m3/${TARGET}/
+SOVERSION=	7
+
 # To link the programs statically:
 #M3FLAGS+=	-DSTATIC
-# To link just the Modula-3 libraries statically:
-#M3FLAGS+=	-DM3STATIC
 
-MAKE_ARGS+=	PREFIX=${PREFIX} M3FLAGS="${M3FLAGS}"
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PORTOBJFORMAT} == "aout"
+L2=		.so.${SOVERSION}.0
+TARGET=		FreeBSD2
+TARGETDIR=	freebsd-2
+WORDSIZE=	32
+.elif ${ARCH} == "i386"
+L2=		.so.${SOVERSION}
+.if ${OSVERSION} < 400011
+TARGET=		FreeBSD3
+TARGETDIR=	freebsd-3
+.else
+TARGET=		FreeBSD4
+TARGETDIR=	freebsd-4
+.endif
+WORDSIZE=	32
+.elif ${ARCH} == "alpha"
+.if ${OSVERSION} < 400011
+BROKEN=		Not supported on older versions of FreeBSD/Alpha
+.endif
+CFLAGS+=	-mieee
+L2=		.so.${SOVERSION}
+TARGET=		FBSD_ALPHA
+TARGETDIR=	fbsd-alpha
+WORDSIZE=	64
+.endif
+
+pre-fetch:
+.if empty(TARGET)
+	@${ECHO_MSG} "Cannot determine M3 target for this architecture"
+	@${FALSE}
+.endif
+.ifndef NO_X11
+	@${ECHO_MSG} -n "To build this port without X11 (and without the GUI),"
+	@${ECHO_MSG} " define \"NO_X11\"."
+.endif
+	@${TRUE}
+
+.include <bsd.port.post.mk>
