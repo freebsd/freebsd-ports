@@ -8,7 +8,9 @@
 PORTNAME=	seahaven
 PORTVERSION=	1.41
 CATEGORIES=	games
-MASTER_SITES=	http://www.cinenet.net/users/spitzak/seahaven/
+MASTER_SITES=	http://seahaven.sourceforge.net/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	imp@FreeBSD.org
