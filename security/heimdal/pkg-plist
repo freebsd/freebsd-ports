@@ -1,4 +1,3 @@
-bin/des
 bin/ftp
 bin/kauth
 bin/kdestroy
@@ -64,9 +63,6 @@ info/heimdal.info
 lib/libasn1.a
 lib/libasn1.so
 lib/libasn1.so.3
-lib/libdes.a
-lib/libdes.so
-lib/libdes.so.2
 lib/libeditline.a
 lib/libgssapi.a
 lib/libgssapi.so

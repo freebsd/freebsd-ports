@@ -1,5 +1,5 @@
---- configure.in.orig	Wed Aug 30 07:17:26 2000
-+++ configure.in	Wed Aug 30 07:18:03 2000
+--- configure.in.orig	Sun Dec 10 21:19:36 2000
++++ configure.in	Thu Jan  4 08:49:14 2001
 @@ -83,6 +83,10 @@
  	LIB_openldap="-rpath $openldap_libdir $LIB_openldap"
  fi
@@ -11,3 +11,17 @@
  AC_TEST_PACKAGE_NEW(krb4,[#include <krb.h>],-lkrb,-ldes,/usr/athena, KRB4)
  
  LIB_kdb=
+@@ -561,7 +565,12 @@
+ \( "$ac_cv_func_SHA1Init" = "yes" -o "$ac_cv_func_SHA1_Init" = "yes" \) -a \
+ "$ac_cv_func_RC4" = "yes"; then
+   DIR_des=''
+-  LIB_des="-rpath $krb4_libdir -L$krb4_libdir $ac_cv_funclib_MD4Init"
++  LIB_des="-rpath $krb4_libdir -L$krb4_libdir"
++  if test "$ac_cv_func_MD4Init" = "yes"; then
++    LIB_des="$LIB_des $ac_cv_funclib_MD4Init"
++  else
++    LIB_des="$LIB_des $ac_cv_funclib_MD4_Init"
++  fi
+ else
+   DIR_des='des'
+   LIB_des='$(top_builddir)/lib/des/libdes.la'
