@@ -23,5 +23,4 @@ CONFIGURE_ENV=	KDEDIR="${KDEDIR}"
 
 MAKE_ENV=	KDEDIR="${KDEDIR}"
 
-
 .include <bsd.port.mk>
