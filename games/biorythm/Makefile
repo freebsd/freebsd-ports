@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	biorythm
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	games
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martin@raq.cx
 
 LIB_DEPENDS=	shhmsg.1:${PORTSDIR}/devel/libshhmsg \
 		shhopt.1:${PORTSDIR}/devel/libshhopt
@@ -21,9 +21,9 @@ MAN6=		biorythm.6
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/biorythm
+	@${MKDIR} ${DOCSDIR}
 .for file in CREDITS ChangeLog README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/biorythm
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 

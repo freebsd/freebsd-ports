@@ -1,0 +1,12 @@
+--- biorythm.c.orig	Sat Mar  2 21:31:53 2002
++++ biorythm.c	Wed May  8 21:52:41 2002
+@@ -148,8 +148,7 @@
+ version(void)
+ {
+     printf(
+-      "biorythm " VERSION ", by Sverre H. Huseby "
+-      "(compiled " COMPILED_DATE " by " COMPILED_BY ")\n"
++      "biorythm " VERSION ", by Sverre H. Huseby\n"
+     );
+     exit(0);
+ }
