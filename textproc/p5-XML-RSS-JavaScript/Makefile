@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-RSS-JavaScript
-PORTVERSION=	0.3
+PORTVERSION=	0.41
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -25,7 +25,9 @@ MAN3=		XML::RSS::JavaScript.3
 
 .if ${PERL_LEVEL} < 500600
 post-patch:
-	@${PERL} -pi -e 's/^our (\S+)/use vars qw{$$1};$$1/g' ${WRKSRC}/lib/XML/RSS/JavaScript.pm
+	@${PERL} -pi -e 's/^our (\S+)/use vars qw{$$1};$$1/g;' \
+		     -e 's/\r//g;' \
+		${WRKSRC}/lib/XML/RSS/JavaScript.pm
 .endif
 
 .include <bsd.port.post.mk>
