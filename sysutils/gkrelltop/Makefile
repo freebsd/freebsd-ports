@@ -8,7 +8,7 @@
 PORTNAME=	gkrelltop
 PORTVERSION=	2.2.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://psychology.rutgers.edu/~zaimi/
+MASTER_SITES=	http://psychology.rutgers.edu/~zaimi/html/gkrelltop/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
