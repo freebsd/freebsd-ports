@@ -1,0 +1,6 @@
+libNSS-MySQL allows you to authenticate UNIX groups and users using a MySQL 
+database. It uses the NSS API which provides an abstraction layer between 
+the UNIX authentication API and the related data. NSS-MySQL currently supports 
+the passwd and groups services. 
+
+WWW: http://libnss-mysql.sourceforge.net/
