@@ -10,6 +10,7 @@
     SUBDIR += ap-utils
     SUBDIR += argus
     SUBDIR += arpwatch
+    SUBDIR += arpwatch-devel
     SUBDIR += arts++
     SUBDIR += aspathtree
     SUBDIR += bandwidthd
