@@ -199,6 +199,7 @@ share/locale/uk/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 @dirrm include/gstreamer-%%VERSION%%/gst/xoverlay
 @dirrm include/gstreamer-%%VERSION%%/gst/video
 @dirrm include/gstreamer-%%VERSION%%/gst/tuner
+@dirrm include/gstreamer-%%VERSION%%/gst/tag
 @dirrm include/gstreamer-%%VERSION%%/gst/riff
 @dirrm include/gstreamer-%%VERSION%%/gst/resample
 @dirrm include/gstreamer-%%VERSION%%/gst/propertyprobe
