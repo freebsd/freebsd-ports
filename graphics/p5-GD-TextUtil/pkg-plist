@@ -1,7 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/GD/Text.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Text/Wrap.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Text/Align.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/Text/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/GD/Text
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/GD 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/Text 2>/dev/null || true
+%%SITE_PERL%%/GD/Text.pm
+%%SITE_PERL%%/GD/Text/Wrap.pm
+%%SITE_PERL%%/GD/Text/Align.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Text/.packlist
+@dirrm %%SITE_PERL%%/GD/Text
+@unexec rmdir %D/%%SITE_PERL%%/GD 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Text 2>/dev/null || true
