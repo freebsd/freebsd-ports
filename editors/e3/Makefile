@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	e3
-PORTVERSION=	1.4
+PORTVERSION=	1.61
 CATEGORIES=	editors
 MASTER_SITES=	http://www.sax.de/~adlibit/
 
