@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.63 1998/12/30 23:19:06 vanilla Exp $
+# $Id: Makefile,v 1.64 1998/12/31 12:13:15 luigi Exp $
 #
 
     SUBDIR += 8hz-mp3
@@ -9,6 +9,7 @@
     SUBDIR += cddbd
     SUBDIR += cdplay
     SUBDIR += dap
+    SUBDIR += dagrab
     SUBDIR += esound
     SUBDIR += gmod
     SUBDIR += gnomeaudio
