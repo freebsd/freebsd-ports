@@ -10,6 +10,7 @@ ICAClient/Npica.ad
 ICAClient/PDCRYPT1.DLL
 ICAClient/PDCRYPT2.DLL
 ICAClient/SSL.DLL
+ICAClient/VDSCARD.DLL
 ICAClient/Wfcmgr
 ICAClient/Wfcmgr.ad
 ICAClient/Wfica
@@ -73,6 +74,7 @@ ICAClient/keyboard/sngr.kbd
 ICAClient/keyboard/sparc3.kbd
 ICAClient/keyboard/sparc4.kbd
 ICAClient/keyboard/sparc5.kbd
+ICAClient/keyboard/sparc6usb.kbd
 ICAClient/keyboard/sparcfr4.kbd
 ICAClient/keyboard/sparcfr5.kbd
 ICAClient/keyboard/sparcgr4.kbd

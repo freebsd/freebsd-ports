@@ -74,6 +74,7 @@ ICAClient/keyboard/sngr.kbd
 ICAClient/keyboard/sparc3.kbd
 ICAClient/keyboard/sparc4.kbd
 ICAClient/keyboard/sparc5.kbd
+ICAClient/keyboard/sparc6usb.kbd
 ICAClient/keyboard/sparcfr4.kbd
 ICAClient/keyboard/sparcfr5.kbd
 ICAClient/keyboard/sparcgr4.kbd
@@ -83,7 +84,6 @@ ICAClient/keyboard/sparcuk5.kbd
 ICAClient/keyboard/sparcus3.kbd
 ICAClient/keyboard/sparcus4.kbd
 ICAClient/keyboard/sparcus5.kbd
-ICAClient/keyboard/sparc6usb.kbd
 ICAClient/keyboard/trimodal.kbd
 ICAClient/keystore/cacerts/BTCTRoot.crt
 ICAClient/keystore/cacerts/Class3PCA_G2_v2.crt
