@@ -10,7 +10,7 @@ fi
 
 echo "Check directory for pkfonts (resolution:$1) and ASCII jTeX's tfm files."
 echo
-echo "Default is .:/usr/local/share/fonts/pk$1:/usr/local/share/tex/jfonts/jfms:\\"
+echo "Default is .:/usr/local/lib/fonts/pk$1:/usr/local/share/tex/jfonts/jfms:\\"
 echo "		:/usr/local/lib/texmf/fonts/public/ptex/tfm"
 echo "If you use jlatex of ports collection, it should be OK."
 echo
