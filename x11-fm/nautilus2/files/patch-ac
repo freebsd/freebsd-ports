@@ -1,10 +1,10 @@
 
 $FreeBSD$
 
---- libnautilus-extensions/nautilus-volume-monitor.c.orig	Sat Feb 24 01:54:34 2001
-+++ libnautilus-extensions/nautilus-volume-monitor.c	Sun Mar 11 15:46:11 2001
-@@ -68,6 +68,12 @@
- #include <mntent.h>
+--- libnautilus-private/nautilus-volume-monitor.c.orig	Fri Apr 27 04:19:07 2001
++++ libnautilus-private/nautilus-volume-monitor.c	Mon May 14 18:36:00 2001
+@@ -67,6 +67,12 @@
+ #define MOUNT_TABLE_PATH _PATH_MNTTAB
  #endif
  
 +#ifdef __FreeBSD__
@@ -16,29 +16,25 @@ $FreeBSD$
  #ifdef HAVE_SYS_MNTTAB_H
  #define SOLARIS_MNT 1
  #include <sys/mnttab.h>
-@@ -327,6 +333,12 @@
- has_removable_mntent_options (struct mnttab *ent)
- {
+@@ -119,6 +125,8 @@
  
-+#elif defined(__FreeBSD__)
-+
-+static gboolean
-+has_removable_mntent_options (struct fstab *ent)
-+{
-+
+ #ifdef HAVE_SYS_MNTTAB_H
+ typedef struct mnttab MountTableEntry;
++#elif defined __FreeBSD__
++typedef struct fstab MountTableEntry;
  #else
- 
+ typedef struct mntent MountTableEntry;
+ #endif
+@@ -349,12 +357,18 @@
  static gboolean
-@@ -335,12 +347,18 @@
- 
- #endif /* HAVE_SYS_MNTTAB_H */
- 
+ has_removable_mntent_options (MountTableEntry *ent)
+ {
 +#ifndef __FreeBSD__
  	/* Use "owner" or "user" or "users" as our way of determining a removable volume */
  	if (hasmntopt (ent, "user") != NULL
  	    || hasmntopt (ent, "users") != NULL
  	    || hasmntopt (ent, "owner") != NULL) {
- 	    return TRUE;
+ 		return TRUE;
  	}
 +#else
 +	if (strstr (ent->fs_mntops, "noauto") != NULL) {
@@ -46,31 +42,22 @@ $FreeBSD$
 +	}
 +#endif
  
- #if SOLARIS_MNT && HAVE_VOL
-        if (strstr (ent->mnt_special, "/vol/") == ent->mnt_special) {
-@@ -360,23 +378,32 @@
- static GList *
- get_removable_volumes (void)
+ #ifdef SOLARIS_MNT
+ 	if (eel_str_has_prefix (ent->mnt_special, "/vol/")) {
+@@ -377,6 +391,7 @@
  {
-+#ifndef __FreeBSD__
  	FILE *file;
--	GList *volumes;
- #if HAVE_SYS_MNTTAB_H
-         struct mnttab dummy_ent;
-         struct mnttab *ent = &dummy_ent;
- #else
- 	struct mntent *ent;
- #endif /* HAVE_SYS_MNTTAB_H */
-+#else  /* __FreeBSD__ */
-+struct fstab *ent;
-+#endif /* __FreeBSD__ */
-+	GList *volumes;
+ 	GList *volumes;
++
+ 	MountTableEntry *ent;
  	NautilusVolume *volume;
+ #ifdef HAVE_SYS_MNTTAB_H
+@@ -385,11 +400,16 @@
  	
  	volumes = NULL;
  	
 +#ifndef __FreeBSD__
- 	file = setmntent (PATH_MOUNT_TABLE, "r");
+ 	file = setmntent (MOUNT_TABLE_PATH, "r");
  	if (file == NULL) {
  		return NULL;
  	}
@@ -79,132 +66,115 @@ $FreeBSD$
 +#endif /* __FreeBSD__ */
  	
 +#ifndef __FreeBSD__
- #if HAVE_SYS_MNTTAB_H
+ #ifdef HAVE_SYS_MNTTAB_H
+         ent = &ent_storage;
  	while (! getmntent (file, ent)) {
- 		/* On Solaris look for /vol/ for determining a removable volume */
-@@ -396,12 +423,27 @@
- 			volume->filesystem = g_strdup (ent->mnt_type);
- 
+@@ -409,8 +429,20 @@
+ 		}
+ 	}
  #endif /* HAVE_SYS_MNTTAB_H */
-+#else  /* __FreeBSD__ */
+-			
++
+ 	fclose (file);
++			
++#else	/* __FreeBSD__ */
 +	while ((ent = getfsent ()) != NULL) {
 +		/* Use noauto as our way of determining a removable volume */
 +		if (strstr (ent->fs_mntops, "noauto") != NULL) {
-+			volume = g_new0 (NautilusVolume, 1);
-+			volume->device_path = g_strdup (ent->fs_spec);
-+			volume->mount_path = g_strdup (ent->fs_file);
-+			volume->filesystem = g_strdup (ent->fs_vfstype);
-+			volume->is_removable = TRUE;
-+			volume->is_read_only = (strstr (ent->fs_type, FSTAB_RO) !=NULL);
-+#endif /* __FreeBSD__ */
- 
- 			volumes = mount_volume_add_filesystem (volume, volumes);
- 		}	
- 	}
- 			
-+#ifndef __FreeBSD__
- 	fclose (file);
-+#else
++			volume = create_volume (ent->fs_spec, ent->fs_file, ent->fs_vfstype);
++			volumes = mount_volume_add_filesystem (volume, volumes);
++		}
++	}
++
 +	endfsent();
-+#endif
++#endif /* __FreeBSD__ */
  	
- #ifdef MOUNT_AUDIO_CD
- 	volume = g_new0 (NautilusVolume, 1);
-@@ -419,6 +461,7 @@
+ #ifdef HAVE_CDDA
+ 	volume = create_volume (CD_AUDIO_PATH, CD_AUDIO_PATH, CDDA_SCHEME);
+@@ -427,18 +459,27 @@
  static gboolean
  volume_is_removable (const NautilusVolume *volume)
  {
-+#ifndef __FreeBSD__
++#ifndef	__FreeBSD__
  	FILE *file;
- #if HAVE_SYS_MNTTAB_H
- 	struct mnttab dummy_ent;
-@@ -426,13 +469,21 @@
- #else
-      	struct mntent *ent;
- #endif /* HAVE_SYS_MNTTAB_H */
-+#else  /* __FreeBSD__ */
+      	MountTableEntry *ent;
+ #ifdef HAVE_SYS_MNTTAB_H
+ 	MountTableEntry ent_storage;
+ #endif
++#else	/* __FreeBSD__ */
 +	struct fstab *ent;
-+#endif /* __FreeBSD__ */
- 	
++#endif	/* __FreeBSD__ */
+ 
 +#ifndef __FreeBSD__
- 	file = setmntent (PATH_MOUNT_TABLE, "r");
+ 	file = setmntent (MOUNT_TABLE_PATH, "r");
  	if (file == NULL) {
  		return FALSE;
  	}
 +#else
 +	setfsent();
-+#endif /* __FreeBSD__ */
++#endif	/* __FreeBSD__ */
  	
  	/* Search for our device in the fstab */
 +#ifndef __FreeBSD__
- #if HAVE_SYS_MNTTAB_H
+ #ifdef HAVE_SYS_MNTTAB_H
+ 	MountTableEntry *ent = &ent_storage;
  	while (!getmntent (file, ent)) {
- 		if (strcmp (volume->device_path, ent->mnt_special) == 0) {
-@@ -455,8 +506,23 @@
+@@ -460,8 +501,22 @@
+ 		}	
  	}
- 
  #endif /* HAVE_SYS_MNTTAB_H */
--	
 +#else  /* __FreeBSD__ */
 +	while ((ent = getfsent ()) != NULL) {
 +		/* Use noauto as our way of determining a removable volume */
 +		if (strcmp (volume->device_path, ent->fs_spec) == 0
 +		    && has_removable_mntent_options (ent)) {
-+		    	endfsent();
-+		    	return TRUE;
++			endfsent();
++			return TRUE;
 +		}
 +	}
-+#endif /* __FreeBSD__ */
-+			
 +
-+#ifndef __FreeBSD__	
- 	fclose (file);
-+#else
 +	endfsent();
++#endif	/* __FreeBSD__ */
+ 	
++#ifndef __FreeBSD__
+ 	fclose (file);
 +#endif
  	return FALSE;
  }
  
-@@ -484,14 +550,23 @@
+@@ -490,12 +545,17 @@
   		}
   	}
  #else
 +#ifndef __FreeBSD__
- 	struct mntent *ent;
--	
-+#else
-+	struct fstab *ent;
-+#endif
-+
-+#ifndef __FreeBSD__
- 	file = setmntent (PATH_MOUNT_TABLE, "r");
+ 	file = setmntent (MOUNT_TABLE_PATH, "r");
  	if (file == NULL) {
  		return FALSE;
  	}
--		
 +#else
 +	setfsent();
-+#endif /* __FreeBSD__ */
-+
++#endif	/* __FreeBSD__ */
+ 		
  	/* Search for our device in the fstab */
 +#ifndef __FreeBSD__
  	while ((ent = getmntent (file)) != NULL) {
  		if (strcmp (volume->device_path, ent->mnt_fsname) == 0) {
  			if (strstr (ent->mnt_opts, MNTOPT_RO) != NULL) {
-@@ -500,9 +575,21 @@
+@@ -504,9 +564,22 @@
  			}
          	 }
  	}
-+#else  /* __FreeBSD__ */
++#else	/* __FreeBSD__ */
 +	while ((ent = getfsent ()) != NULL) {
 +		if (strcmp (volume->device_path, ent->fs_spec) == 0
 +		    && strstr (ent->fs_type, FSTAB_RO) != NULL) {
-+		    	endfsent();
-+		    	return TRUE;
++			endfsent();
++			return TRUE;
 +		}
 +	}
++
 +	endfsent();
-+#endif
++#endif	/* __FreeBSD__ */
  #endif
  				
 +#ifndef __FreeBSD__
@@ -213,37 +183,47 @@ $FreeBSD$
  	return FALSE;
  }
  
-@@ -975,14 +1062,26 @@
-         
-        
+@@ -948,13 +1021,20 @@
+ 		}
+ 	}
  #else
 +#ifndef __FreeBSD__
+ 	const char *file_name;
+ 	const char *separator;
  	char line[PATH_MAX * 3];
  	char device_name[sizeof (line)];
- 	NautilusStringList *list;
-+#else  /* __FreeBSD__ */
+ 	EelStringList *list;
+ 	char *device_path, *mount_path, *filesystem;
++#else	/* __FreeBSD__ */
 +	struct statfs *mounted;
 +	int mounted_num;
 +	int i;
-+#endif /* __FreeBSD__ */
++#endif	/* __FreeBSD__ */
  
 +#ifndef __FreeBSD__
- 	/* Open /proc/mounts */
- 	fh = fopen (PATH_PROC_MOUNTS, "r");
- 	g_return_val_if_fail (fh != NULL, NULL);
-+#else   /* __FreeBSD__ */
+ 	if (mnttab_exists) { 
+ 		file_name = "/etc/mnttab";
+ 		separator = "\t";
+@@ -967,7 +1047,15 @@
+ 		g_warning ("Unable to open %s: %s", file_name, strerror (errno));
+ 		return NULL;
+ 	}
++#else	/* __FreeBSD__ */
 +	mounted_num = getmntinfo(&mounted, MNT_WAIT);
-+	g_return_val_if_fail (mounted_num > 0, NULL);
-+#endif  /* __FreeBSD__ */
++	if (mounted_num < 1) {
++		g_warning ("Unable to get info about mounted fs: %s", strerror (errno));
++		return NULL;
++	}
++#endif	/* __FreeBSD__ */
  
 +#ifndef __FreeBSD__
  	while (fgets (line, sizeof(line), fh)) {
  		if (sscanf (line, "%s", device_name) == 1) {
- 			list = nautilus_string_list_new_from_tokens (line, PROC_MOUNTS_SEPARATOR, FALSE);			
-@@ -995,11 +1094,20 @@
- 					volume->device_path = nautilus_string_list_nth (list, 0);
- 					volume->mount_path = nautilus_string_list_nth (list, 1);
- 					volume->filesystem = nautilus_string_list_nth (list, 2);
+ 			list = eel_string_list_new_from_tokens (line, separator, FALSE);
+@@ -983,17 +1071,28 @@
+ 					g_free (device_path);
+ 					g_free (mount_path);
+ 					g_free (filesystem);
 +#else /* __FreeBSD__ */
 +	for (i = 0; i < mounted_num; i++) {
 +		volume = g_new0 (NautilusVolume, 1);
@@ -254,44 +234,27 @@ $FreeBSD$
  					current_mounts = mount_volume_add_filesystem (volume, current_mounts);
 +#ifndef __FreeBSD__
  				}				
- 				nautilus_string_list_free (list);
+ 				eel_string_list_free (list);
  			}			
  		}
 +#endif /* __FreeBSD__ */
    	}
- 
  #endif /* SOLARIS_MNT */
-@@ -1019,7 +1127,9 @@
- 	}
- #endif
  
 +#ifndef __FreeBSD__
- 	fclose (fh);
+ 	if (fh != NULL) {
+ 		fclose (fh);
+ 	}
 +#endif
  	
- 	return current_mounts;
- 
-@@ -1375,6 +1485,14 @@
- 			break;
- 		}
- 	}
-+#ifdef __FreeBSD__
-+	struct fstab *ent;
-+
-+	setfsent ();
-+	while ((ent = getfsent ())) 
-+		fstab_add_mount_volume (monitor, ent);
-+	endfsent ();
-+#endif	/* __FreeBSD__ */
- }
- #endif
- 
-@@ -1869,7 +1987,7 @@
- 	}
- 	
- 	if (mounted) {
--#ifndef SOLARIS_MNT			
+ #ifdef HAVE_CDDA
+ 	/* CD Audio tricks */
+@@ -1888,7 +1987,7 @@
+ 	for (element = volume_list; element != NULL; element = element->next) {
+ 		volume = element->data;
+ 		
+-#ifndef SOLARIS_MNT
 +#if !defined(SOLARIS_MNT) && !defined(__FreeBSD__)
+ 		/* These are set up by get_current_mount_list for Solaris. */
  		volume->is_removable = volume_is_removable (volume);
  		volume->is_read_only = volume_is_read_only (volume);
- #endif /* SOLARIS_MNT */
