@@ -1,0 +1,18 @@
+--- rawio.c.orig	Sat Jul 24 19:45:14 1999
++++ rawio.c	Sat Nov 13 10:47:50 1999
+@@ -493,10 +493,14 @@
+ void dochild (int test, int proc)
+ {
+   sigset_t allsigs;
+-  struct sigaction ignore = {sigcatch, allsigs, 0};
++  struct sigaction ignore;
+   int mycount;
+   int i;
+   int maxrecs;
++
++  ignore.sa_handler = sigcatch;
++  ignore.sa_flags = 0;
++  ignore.sa_mask = allsigs;
+ 
+   /* first, calculate the number of records to transfer.
+    * If we're one of the first <remainder> processes,
