@@ -1,0 +1,22 @@
+sbin/adsl-connect
+sbin/adsl-init
+sbin/adsl-setup
+sbin/adsl-start
+sbin/adsl-status
+sbin/adsl-stop
+sbin/pppoe
+sbin/pppoe-server
+sbin/pppoe-sniff
+%%PORTDOCS%%share/doc/rp-pppoe/CHANGES
+%%PORTDOCS%%share/doc/rp-pppoe/HOW-TO-CONNECT
+%%PORTDOCS%%share/doc/rp-pppoe/KERNEL-MODE-PPPOE
+%%PORTDOCS%%share/doc/rp-pppoe/LICENSE
+%%PORTDOCS%%share/doc/rp-pppoe/PROBLEMS
+%%PORTDOCS%%@dirrm share/doc/rp-pppoe
+etc/ppp/firewall-masq.sample
+etc/ppp/firewall-standalone.sample
+etc/ppp/pap-secrets.sample
+etc/ppp/pppoe-server-options.sample
+etc/ppp/pppoe.conf.sample
+@unexec rmdir %D/etc/ppp 2>/dev/null || true
+@unexec echo "If you are permanently removing pppoe, you should also ``rm -Rf ${PKG_PREFIX}/etc/ppp'' removing any configuration and password files left." | /usr/bin/fmt
