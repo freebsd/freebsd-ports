@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libesmtp
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
 		http://www.theochem.kth.se/~pawsa/balsa/ \
@@ -24,8 +24,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
-# the following is required for Balsa-1.1.7
-CONFIGURE_ARGS=	--enable-require-all-recipients
+# require-all-recipients is required for Balsa-1.1.7
+CONFIGURE_ARGS=	--enable-require-all-recipients --enable-starttls
 
 post-install:
 .ifndef(NOPORTDOCS)
