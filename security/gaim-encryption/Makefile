@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gaim-encryption
+PORTNAME=	encryption
 PORTVERSION=	2.25
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMEPREFIX=	gaim-
 
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	Provides transparent RSA encryption as a Gaim plugin
