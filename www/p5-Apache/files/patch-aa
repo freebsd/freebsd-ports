@@ -13,10 +13,10 @@
 -$APACHE_SRC_DEFAULT = $@ ? 
 -    '../apache_x.x/src'  :
 -    $Apache::MyConfig::Setup{Apache_Src} ; 
-+opendir( WRKDIR, "$ENV{PORTSDIR}/www/apache12/work" ) || die( "Can't open $ENV{PORTSDIR}/www/apache/work: $!\n" );
++opendir( WRKDIR, "$ENV{APACHEDIR}" ) || die( "Can't open $ENV{APACHEDIR}: $!\n" );
 +( $srcdir ) = grep( /^apache/, readdir( WRKDIR ) );
 +closedir( WRKDIR );
-+$APACHE_SRC_DEFAULT = "$ENV{PORTSDIR}/www/apache12/work/" . $srcdir . "/src";
++$APACHE_SRC_DEFAULT = "$ENV{APACHEDIR}" . $srcdir . "/src";
  
  my $PWD = cwd;
  my %SSL = (
