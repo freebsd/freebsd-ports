@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gkrellmfmonitor
-PORTVERSION=	2.0.2
-PORTREVISION=	3
+PORTVERSION=	2.0.4
 CATEGORIES=	misc
 MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~makovick/gkrellm/
 DISTNAME=	gkrellm-fmonitor-${PORTVERSION}
@@ -22,10 +21,14 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 LATEST_LINK=	gkrellmfmonitor2
 
-PLIST_FILES=	libexec/gkrellm2/plugins/fmonitor.so
 USE_X_PREFIX=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+ALL_TARGET=	fmonitor.so
 
-MAKE_ENV+=	MKDIR="${MKDIR}" \
-		INSTALL_DATA="${INSTALL_DATA}"
+PLIST_FILES=	libexec/gkrellm2/plugins/fmonitor.so
+
+do-install:
+	@${MKDIR} ${PREFIX}/libexec/gkrellm2/plugins
+	${INSTALL_DATA} ${WRKSRC}/fmonitor.so ${PREFIX}/libexec/gkrellm2/plugins
 
 .include <bsd.port.mk>
