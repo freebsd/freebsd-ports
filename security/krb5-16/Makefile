@@ -19,6 +19,8 @@ EXTRACT_SUFX=		.tar
 
 MAINTAINER=		cy@FreeBSD.org
 
+PORTCOMMENT=		An authentication system developed at MIT, successor to Kerberos IV
+
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
 KERBEROSV_URL=		http://web.mit.edu/network/kerberos-form.html

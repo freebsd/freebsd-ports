@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.cs.tut.fi/~rammer/ \
 
 MAINTAINER=	cy@FreeBSD.org
 
+PORTCOMMENT=	A replacement and extension for Tripwire
+
 LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash
 
 USE_BISON=	yes
