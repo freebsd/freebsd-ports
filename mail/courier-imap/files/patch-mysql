@@ -1,5 +1,5 @@
---- authlib/configure.orig	Wed Sep 10 00:51:36 2003
-+++ authlib/configure	Wed Sep 10 01:04:27 2003
+--- authlib/configure.orig	Thu Oct 30 21:36:15 2003
++++ authlib/configure	Thu Oct 30 21:43:26 2003
 @@ -6766,9 +6766,9 @@
  if test "$doauthmysql" = ""
  then
@@ -143,6 +143,6 @@
 +echo "$as_me:$LINENO: result: $ac_cv_func_mysql_real_connect" >&5
 +echo "${ECHO_T}$ac_cv_func_mysql_real_connect" >&6
 +if test $ac_cv_func_mysql_real_connect = yes; then
-   AUTHMYSQL="authmysql"
+   AUTHMYSQL="authmysql${EXEEXT}"
  		HAVE_AUTHMYSQL=1
  else
