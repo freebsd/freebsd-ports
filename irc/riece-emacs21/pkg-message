@@ -1,0 +1,6 @@
+**********************************************************************
+To use riece, you should add the following line to your .emacs file:
+
+(autoload 'riece "riece" "Start Riece" t)
+
+**********************************************************************
