@@ -8,7 +8,7 @@ PORTNAME=	wordplay
 PORTVERSION=	7.22
 CATEGORIES=	games
 MASTER_SITES= 	http://www.itsc.uah.edu/~criswell/wordplay/
-DISTNAME=	${PORTNAME}{PORTVERSION:S/.//}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
