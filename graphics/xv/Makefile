@@ -7,7 +7,7 @@
 
 PORTNAME=	xv
 PORTVERSION=	3.10a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	graphics
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
 		${MASTER_SITE_LOCAL} \
@@ -41,7 +41,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_IMAKE=	yes
 .if !defined(NOMAN)
-MAN1=		bggen.1 vdcomp.1 xcmap.1 xv.1 xvpictoppm.1
+MAN1=		bggen.1 vdcomp.1 xcmap.1 xv.1 xvp2p.1
 .endif
 
 XVDIST=		${DISTDIR}/${DIST_SUBDIR}
@@ -59,6 +59,10 @@ post-patch:
 	@${MV} ${WRKSRC}/config.h ${WRKSRC}/config.h.in
 	@${CAT} ${WRKSRC}/config.h.in | \
 		${SED} -e "s@%%LOCALBASE%%@${LOCALBASE}@" > ${WRKSRC}/config.h
+.for i in ${MAN1}
+	@${CP} ${WRKSRC}/docs/${i:R}.man ${WRKSRC}
+.endfor
+
 
 post-install:
 .if !defined(NOPORTDOCS)
