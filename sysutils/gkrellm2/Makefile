@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.4
 #PORTREVISION=	0
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
@@ -84,9 +84,9 @@ post-install:
 			${PREFIX}/etc/gkrellmd.conf; \
 	fi
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/gkrellm
+	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gkrellm
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
