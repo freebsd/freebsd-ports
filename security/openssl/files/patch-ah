@@ -1,6 +1,6 @@
---- config.orig	Mon Aug  9 12:16:51 1999
-+++ config	Mon Aug  9 20:30:08 1999
-@@ -297,40 +297,6 @@
+--- config.orig	Tue Mar 14 00:52:44 2000
++++ config	Sat Apr 15 14:18:03 2000
+@@ -311,50 +311,6 @@
  esac
  done
  
@@ -18,7 +18,7 @@
 -fi
 -
 -if [ "$SYSTEM" = "SunOS" ]; then
--  # assume output is "blah-blah C x.x"
+-  # check for WorkShop C, expected output is "cc: blah-blah C x.x"
 -  CCVER=`(cc -V 2>&1) 2>/dev/null | \
 -  	egrep -e '^cc: .* C [0-9]\.[0-9]' | \
 -	sed 's/.* C \([0-9]\)\.\([0-9]\).*/\1\2/'`
@@ -35,31 +35,19 @@
 -  fi
 -fi
 -
--GCCVER=${GCCVER:-0}
--CCVER=${CCVER:-0}
--
- # read the output of the embedded GuessOS 
- read GUESSOS
- 
-@@ -423,21 +389,6 @@
-   # *-dgux) OUT="dgux" ;;
-   *) OUT=`echo $GUESSOS | awk -F- '{print $3}'`;;
- esac
--
--# gcc < 2.8 does not support -mcpu=ultrasparc
--if [ "$OUT" = solaris-sparcv9-gcc -a $GCCVER -lt 28 ]
--then
--  echo "WARNING! Do consider upgrading to gcc-2.8 or later."
--  sleep 5
--  OUT=solaris-sparcv9-gcc27
+-if [ "${SYSTEM}-${MACHINE}" = "Linux-alpha" ]; then
+-  # check for Compaq C, expected output is "blah-blah C Vx.x"
+-  CCCVER=`(ccc -V 2>&1) 2>/dev/null | \
+-	egrep -e '.* C V[0-9]\.[0-9]' | \
+-	sed 's/.* C V\([0-9]\)\.\([0-9]\).*/\1\2/'`
+-  CCCVER=${CCCVER:-0}
+-  if [ $CCCVER -gt 60 ]; then
+-    CC=ccc	# overrides gcc!!! well, ccc outperforms inoticeably
+-		# only on hash routines and des, otherwise gcc (2.95)
+-		# keeps along rather tight...
+-  fi
 -fi
--if [ "$OUT" = "linux-sparcv9" -a $GCCVER -lt 28 ]
--then
--  echo "WARNING! Falling down to 'linux-sparcv8'."
--  echo "         Upgrade to gcc-2.8 or later."
--  sleep 5
--  OUT=linux-sparcv8
--fi
+-
+ GCCVER=${GCCVER:-0}
+ CCVER=${CCVER:-0}
  
- case "$GUESSOS" in
-   i386-*) options="$options 386" ;;

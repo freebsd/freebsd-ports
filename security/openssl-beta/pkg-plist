@@ -65,18 +65,15 @@ openssl/misc/c_issuer
 openssl/misc/c_name
 openssl/misc/der_chop
 openssl/openssl.cnf.sample
-share/doc/openssl/README
-share/doc/openssl/c-indentation.el
-share/doc/openssl/crypto.pod
-share/doc/openssl/openssl.pod
 share/doc/openssl/openssl.txt
-share/doc/openssl/openssl_button.gif
-share/doc/openssl/openssl_button.html
-share/doc/openssl/ssl.pod
-share/doc/openssl/ssleay.txt
 @dirrm include/openssl
 @dirrm openssl/certs
 @dirrm openssl/lib
+@dirrm openssl/man/man1
+@dirrm openssl/man/man3
+@dirrm openssl/man/man5
+@dirrm openssl/man/man7
+@dirrm openssl/man
 @dirrm openssl/misc
 @dirrm openssl/private
 @dirrm openssl

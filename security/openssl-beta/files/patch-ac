@@ -1,31 +1,22 @@
---- Configure.orig	Sun Aug  8 13:56:29 1999
-+++ Configure	Mon Aug  9 20:25:48 1999
-@@ -193,7 +193,7 @@
- "alpha-gcc","gcc:-O3::(unknown)::SIXTY_FOUR_BIT_LONG DES_UNROLL DES_RISC1:::",
- "alpha-cc", "cc:-std1 -tune host -O4 -readonly_strings::(unknown)::SIXTY_FOUR_BIT_LONG:::",
- "alpha164-cc", "cc:-std1 -tune host -fast -readonly_strings::(unknown)::SIXTY_FOUR_BIT_LONG:::",
--"FreeBSD-alpha","gcc:-DTERMIOS -O3 -fomit-frame-pointer::(unknown)::SIXTY_FOUR_BIT_LONG DES_INT DES_PTR DES_RISC2:::",
-+"FreeBSD-alpha","$ENV{CC}:-DTERMIOS $ENV{CFLAGS}::(unknown)::SIXTY_FOUR_BIT_LONG DES_INT DES_PTR DES_RISC2:::",
+--- Configure.orig	Mon Mar 27 23:28:10 2000
++++ Configure	Sat Apr 15 13:30:38 2000
+@@ -243,7 +243,7 @@
+ "alpha-gcc","gcc:-O3::(unknown)::SIXTY_FOUR_BIT_LONG RC4_CHUNK DES_UNROLL DES_RISC1:asm/alpha.o::",
+ "alpha-cc", "cc:-std1 -tune host -O4 -readonly_strings::(unknown)::SIXTY_FOUR_BIT_LONG RC4_CHUNK:asm/alpha.o::",
+ "alpha164-cc", "cc:-std1 -tune host -fast -readonly_strings::(unknown)::SIXTY_FOUR_BIT_LONG RC4_CHUNK:asm/alpha.o::",
+-"FreeBSD-alpha","gcc:-DTERMIOS -O3 -fomit-frame-pointer::(unknown)::SIXTY_FOUR_BIT_LONG RC4_CHUNK DES_INT DES_PTR DES_RISC2:::",
++"FreeBSD-alpha","$ENV{CC}:-DTERMIOS $ENV{CFLAGS}::(unknown)::SIXTY_FOUR_BIT_LONG RC4_CHUNK DES_INT DES_PTR DES_RISC2:::",
  
- # assembler versions -- currently defunct:
- ##"alpha-gcc","gcc:-O3::(unknown)::SIXTY_FOUR_BIT_LONG DES_UNROLL DES_RISC1:asm/alpha.o::",
-@@ -211,8 +211,8 @@
+ #### Alpha Linux with GNU C and Compaq C setups
+ # Special notes:
+@@ -277,8 +277,8 @@
  "NetBSD-sparc",	"gcc:-DTERMIOS -O3 -fomit-frame-pointer -mv8 -Wall -DB_ENDIAN::(unknown)::BN_LLONG MD2_CHAR RC4_INDEX DES_UNROLL:::",
  "NetBSD-m68",	"gcc:-DTERMIOS -O3 -fomit-frame-pointer -Wall -DB_ENDIAN::(unknown)::BN_LLONG MD2_CHAR RC4_INDEX DES_UNROLL:::",
- "NetBSD-x86",	"gcc:-DTERMIOS -O3 -fomit-frame-pointer -m486 -Wall::(unknown)::BN_LLONG $x86_gcc_des $x86_gcc_opts:",
--"FreeBSD-elf",  "gcc:-DTERMIOS -DL_ENDIAN -fomit-frame-pointer -O3 -m486 -Wall::(unknown)::BN_LLONG $x86_gcc_des $x86_gcc_opts:$x86_elf_asm",
--"FreeBSD",      "gcc:-DTERMIOS -DL_ENDIAN -fomit-frame-pointer -O3 -m486 -Wall::(unknown)::BN_LLONG $x86_gcc_des $x86_gcc_opts:$x86_out_asm",
-+"FreeBSD-elf",  "$ENV{CC}:-DTERMIOS -DL_ENDIAN $ENV{CFLAGS}::(unknown)::BN_LLONG $x86_gcc_des $x86_gcc_opts:$x86_elf_asm",
-+"FreeBSD",      "$ENV{CC}:-DTERMIOS -DL_ENDIAN $ENV{CFLAGS}::(unknown)::BN_LLONG $x86_gcc_des $x86_gcc_opts:$x86_out_asm",
- "bsdi-gcc",     "gcc:-O3 -ffast-math -DL_ENDIAN -DPERL5 -m486::(unknown)::RSA_LLONG $x86_gcc_des $x86_gcc_opts:$x86_bsdi_asm",
- "bsdi-elf-gcc",     "gcc:-DPERL5 -DL_ENDIAN -fomit-frame-pointer -O3 -m486 -Wall::(unknown)::BN_LLONG $x86_gcc_des $x86_gcc_opts:$x86_elf_asm",
- "nextstep",	"cc:-O -Wall:<libc.h>:(unknown)::BN_LLONG $x86_gcc_des ${x86_gcc_opts}:::",
-@@ -337,7 +337,7 @@
- my $perl;
- 
- $ranlib=&which("ranlib") or $ranlib="true";
--$perl=&which("perl5") or $perl=&which("perl") or $perl="perl";
-+$perl=$ENV{PERL};
- 
- &usage if ($#ARGV < 0);
- 
+ "NetBSD-x86",	"gcc:-DTERMIOS -O3 -fomit-frame-pointer -m486 -Wall::(unknown)::BN_LLONG ${x86_gcc_des} ${x86_gcc_opts}:",
+-"FreeBSD-elf",  "gcc:-DTERMIOS -DL_ENDIAN -fomit-frame-pointer -O3 -m486 -Wall::(unknown)::BN_LLONG ${x86_gcc_des} ${x86_gcc_opts}:${x86_elf_asm}",
+-"FreeBSD",      "gcc:-DTERMIOS -DL_ENDIAN -fomit-frame-pointer -O3 -m486 -Wall::(unknown)::BN_LLONG ${x86_gcc_des} ${x86_gcc_opts}:${x86_out_asm}",
++"FreeBSD-elf",  "$ENV{CC}:-DTERMIOS -DL_ENDIAN $ENV{CFLAGS}::(unknown)::BN_LLONG ${x86_gcc_des} ${x86_gcc_opts}:${x86_elf_asm}",
++"FreeBSD",      "$ENV{CC}:-DTERMIOS -DL_ENDIAN $ENV{CFLAGS}::(unknown)::BN_LLONG ${x86_gcc_des} ${x86_gcc_opts}:${x86_out_asm}",
+ "bsdi-gcc",     "gcc:-O3 -ffast-math -DL_ENDIAN -DPERL5 -m486::(unknown)::RSA_LLONG ${x86_gcc_des} ${x86_gcc_opts}:${x86_bsdi_asm}",
+ "bsdi-elf-gcc",     "gcc:-DPERL5 -DL_ENDIAN -fomit-frame-pointer -O3 -m486 -Wall::(unknown)::BN_LLONG ${x86_gcc_des} ${x86_gcc_opts}:${x86_elf_asm}",
+ "nextstep",	"cc:-O -Wall:<libc.h>:(unknown)::BN_LLONG ${x86_gcc_des} ${x86_gcc_opts}:::",
