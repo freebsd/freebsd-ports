@@ -20,6 +20,7 @@ ONLY_FOR_ARCHS=	i386
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_XPM=	yes
 
 .ifndef(NOPORTDOCS)
 post-install:
