@@ -411,7 +411,7 @@ share/understand_c/compilers/sunos.cfg
 share/understand_c/configs/c.cfg
 share/understand_c/fonts/cetus.ttf
 @exec %%MKDIR%% %D/share/understand_c/license
-@unexec %%RMDIR%% %D/share/understand_c/license 2>/dev/null || %%TRUE%%
+@unexec %%RMDIR%% %D/share/understand_c/license 2>/dev/null || %%ECHO%% "If you are permanently removing Understand_c, you should also \`\`rm -Rf ${PKG_PREFIX}/share/understand_c/license''. This dir holds your license files if you installed any." | %%FMT%%
 @dirrm share/understand_c/fonts
 @dirrm share/understand_c/configs
 @dirrm share/understand_c/compilers
@@ -441,4 +441,3 @@ usr/lib/libudb_api.so
 @exec %%LINUXBASE%%/sbin/ldconfig
 @unexec %%LINUXBASE%%/sbin/ldconfig
 @exec %%ECHO%% "If you are installing Understand_c for the first time, you should place your license file at \`\`%D/share/understand_c/license''. Do backup your license file to prevent accidents." | %%FMT%%
-@unexec %%ECHO%% "If you are permanently removing Understand_c, you should also \`\`rm -Rf ${PKG_PREFIX}/share/understand_c/license''. This dir holds your license files if you installed any." | %%FMT%%
