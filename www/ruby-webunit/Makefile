@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	webunit
-PORTVERSION=	20010919
+PORTVERSION=	20010922
 CATEGORIES=	www textproc ruby
 MASTER_SITES=	http://www.jbt.co.jp/user/yuichi/ruby/webunit/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
