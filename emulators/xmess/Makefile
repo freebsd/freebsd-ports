@@ -12,7 +12,6 @@ MAINTAINER=	stijn@win.tue.nl
 COMMENT=	X11 emulator for game consoles
 
 MASTERDIR=	${.CURDIR}/../xmame
-COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
 MAMEMESS=	mess
