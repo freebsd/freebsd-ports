@@ -1,0 +1,37 @@
+--- bbkeysconf-1.2/Makefile.orig	Wed May 17 00:33:45 2000
++++ bbkeysconf-1.2/Makefile	Sat Jun 17 17:56:39 2000
+@@ -1,11 +1,11 @@
+-CXX=		/usr/bin/g++
+-QTDIR =		/usr/lib/qt2
+-MOC =		/usr/bin/moc
+-LIBS =		-L$(QTDIR)/lib -L/usr/lib -lqt
+-CXXFLAGS =	-g -I/usr/include -I$(QTDIR)/include -I/usr/X11R6/include
++CXX ?=		/usr/bin/g++
++QTDIR =		/usr/X11R6
++MOC =		/usr/X11R6/bin/moc2
++LIBS =		-L$(QTDIR)/lib -lqt2
++CXXFLAGS +=	-I$(QTDIR)/include -I$(QTDIR)/include/qt2
+ 
+ TARGET =	bbkeysconf
+-PREFIX = /usr/local/bin
++PREFIX ?=	/usr/local
+ OBJECTS =	gui.o main.o myapplication.o
+ SOURCES = 	gui.cc main.cc myapplication.cc
+ MOCSRC = 	gui.hh
+@@ -37,13 +37,13 @@
+     if ! test -x $(TARGET) ; then \
+        exit; \
+     fi; \
+-	echo "Checking existance of $(PREFIX)...."; \
++	echo "Checking existance of $(PREFIX)/bin...."; \
+     if ! test -d $(PREFIX) ; then \
+-       echo "Heyyyyy.  $(PREFIX) doesn't exist. Creating it...."; \
+-       /usr/bin/install -d $(PREFIX); \
++       echo "Heyyyyy.  $(PREFIX)/bin doesn't exist. Creating it...."; \
++       /usr/bin/install -d $(PREFIX)/bin; \
+     fi ; \
+-	echo "Installing $(TARGET) in $(PREFIX)..."; \
+-    /usr/bin/install -s $(TARGET) $(PREFIX)/$(TARGET)
++	echo "Installing $(TARGET) in $(PREFIX)/bin..."; \
++    /usr/bin/install -s $(TARGET) $(PREFIX)/bin/$(TARGET)
+

@@ -1,0 +1,7 @@
+bin/bbkeys
+bin/bbkeysConfigC
+bin/bbkeysconf
+share/bbtools/bbkeys.bb
+share/bbtools/bbkeys.nobb
+share/bbtools/README.bbkeys
+@dirrm share/bbtools
