@@ -5671,6 +5671,7 @@ ruby-application.rb	ports/sysutils/ruby-application.rb
 ruby-audiofile	ports/audio/ruby-audiofile
 ruby-avl	ports/devel/ruby-avl
 ruby-bdb	ports/databases/ruby-bdb
+ruby-bdb1	ports/databases/ruby-bdb1
 ruby-bigfloat	ports/math/ruby-bigfloat
 ruby-bio	ports/biology/ruby-bio
 ruby-bitvector	ports/math/ruby-bitvector
