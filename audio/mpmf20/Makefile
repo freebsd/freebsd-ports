@@ -10,7 +10,7 @@ DISTNAME=	mpmf20
 PKGNAME=	mpmf20-1.01
 CATEGORIES=	audio
 MASTER_SITES=	http://www.world.co.uk/sba/ \
-		http://www.acc.umu.se/~saska/
+		http://www.acc.umu.se/~markush/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
