@@ -1,5 +1,5 @@
---- configure.orig	Thu Mar  7 07:34:52 2002
-+++ configure	Thu Mar  7 07:35:03 2002
+--- configure.orig	Wed Mar  6 09:51:50 2002
++++ configure	Sun Mar 17 14:49:04 2002
 @@ -2482,22 +2482,23 @@
  	FreeBSD-*)
  	    # FreeBSD 3.* and greater have ELF.
@@ -28,3 +28,11 @@
  	    	TCL_LIB_VERSIONS_OK=nodots
  		;;
  	    esac
+@@ -3030,6 +3031,7 @@
+ 	echo "$ac_t""no" 1>&6
+     fi
+ 
++TCL_SRC_DIR=${prefix}/include/tcl${TCL_VERSION}
+ 
+ LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
+ 
