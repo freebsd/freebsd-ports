@@ -30,7 +30,10 @@ pre-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ubh ${PREFIX}/bin
-	${CP} -R ${WRKSRC}/doc ${PREFIX}/share/doc/ubh
 	${CP} -R ${WRKSRC}/examples ${PREFIX}/share/ubh
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/ubh
+	${INSTALL_DATA} ${WRKSRC}/doc/ubh.html ${PREFIX}/share/doc/ubh
+.endif
 
 .include <bsd.port.mk>
