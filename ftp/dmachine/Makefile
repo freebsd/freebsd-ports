@@ -16,15 +16,16 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A non interactive, non graphical, batch download manager
 
-USE_JAVA=	1.1+
-NEED_JAVAC=	yes
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+
+USE_JAVA=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 ALL_TARGET=	dmachine
-MAKE_ARGS=	JAVAC=${JAVAC}
+MAKE_ARGS=	JAVAC="${JAVAC}"
+SUB_FILES=	dmachine.sh
 
 do-install:
-	@${SED} 's|%%DATADIR%%|${DATADIR}|' ${FILESDIR}/dmachine > ${WRKSRC}/dmachine
-	${INSTALL_SCRIPT} ${WRKSRC}/dmachine ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/dmachine.sh ${PREFIX}/bin/dmachine
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.class ${DATADIR}
 .if !defined(NOPORTDOCS)
