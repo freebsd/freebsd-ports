@@ -1,0 +1,10 @@
+bin/ksubeditor
+share/applnk/Applications/ksubeditor.desktop
+share/apps/ksubeditor/ksubeditorui.rc
+share/doc/HTML/en/ksubeditor/common
+share/doc/HTML/en/ksubeditor/index.cache.bz2
+share/doc/HTML/en/ksubeditor/index.docbook
+share/icons/locolor/16x16/apps/ksubeditor.png
+share/icons/locolor/32x32/apps/ksubeditor.png
+@dirrm share/doc/HTML/en/ksubeditor
+@dirrm share/apps/ksubeditor
