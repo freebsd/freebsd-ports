@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	py-gtk
-PORTVERSION=	0.6.9
+PORTVERSION=	0.6.10
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-python	
-DISTNAME=	gnome-python-1.4.2
+DISTNAME=	gnome-python-1.4.4
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
@@ -20,6 +21,7 @@ RUN_DEPENDS=	${PYNUMERIC}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/pygtk
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs gdkpixbuf libglade
