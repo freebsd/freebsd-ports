@@ -851,3 +851,4 @@ share/neowebscript/unknown.tcl
 %%PORTDOCS%%@dirrm share/doc/neowebscript/neowebscript/commands/gd
 %%PORTDOCS%%@dirrm share/doc/neowebscript/neowebscript/commands
 %%PORTDOCS%%@dirrm share/doc/neowebscript/neowebscript
+%%PORTDOCS%%@dirrm share/doc/neowebscript
