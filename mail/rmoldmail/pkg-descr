@@ -1,0 +1,9 @@
+rmoldmail is a Perl script which removes all mail messages older
+than a configurable number of months from a mailbox file. It is
+possible to use rmoldmail on a running mailserver; it shouldn't
+confuse your MTA or IMAP- or POP3-server.
+
+WWW: http://probiers.net/projects/rmoldmail/
+
+- Pete
+petef@databits.net
