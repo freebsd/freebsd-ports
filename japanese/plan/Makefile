@@ -20,7 +20,7 @@ PLIST=	${WRKDIR}/PLIST
 EXTRA_PATCHES=  ${.CURDIR}/files/patch-*
 
 post-build:
-	${ECHO} share/doc/plan/plan_calEUC.ps > ${WRKDIR}/PLIST
+	${ECHO_CMD} share/doc/plan/plan_calEUC.ps > ${WRKDIR}/PLIST
 	${CAT} ${MASTERDIR}/pkg-plist >> ${WRKDIR}/PLIST
 
 post-install:

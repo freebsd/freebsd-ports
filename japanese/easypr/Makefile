@@ -19,7 +19,7 @@ RUN_DEPENDS=	e2ps:${PORTSDIR}/japanese/e2ps \
 		giftopnm:${PORTSDIR}/graphics/netpbm
 
 do-build:
-	${ECHO} '#!${PREFIX}/bin/wish8.0jp' > ${WRKSRC}/easypr
+	${ECHO_CMD} '#!${PREFIX}/bin/wish8.0jp' > ${WRKSRC}/easypr
 	${CAT} ${WRKSRC}/easypr.in >> ${WRKSRC}/easypr
 	cd ${WRKSRC}; ${CC} -o setcap setcap.c
 

@@ -39,21 +39,21 @@ post-build:
 	if [ -d ${WRKSRC}/man$${sec} ]; then \
 		cd ${WRKSRC}/man$${sec}; \
 		list=`${MAKE} pages-list`; \
-		set `${ECHO} $$list " "|${SED} 's/\.\([0-9]\) /.\1 \1 /g'`; \
+		set `${ECHO_CMD} $$list " "|${SED} 's/\.\([0-9]\) /.\1 \1 /g'`; \
 		while : ; do \
 			case $$# in \
 				0) break;; \
-				[1]) ${ECHO} "can not happen"; break;; \
+				[1]) ${ECHO_CMD} "can not happen"; break;; \
 			esac; \
-			${ECHO} man/ja/man$$2/$$1.gz; shift 2; \
+			${ECHO_CMD} man/ja/man$$2/$$1.gz; shift 2; \
 		done; \
 	fi; \
 	done|sort|uniq >>${PLIST}
-	@${ECHO} "@exec ${LN} -sf %D/man/ja %D/man/ja_JP.EUC" >>${PLIST}
-	@${ECHO} "@unexec ${RM} -f %D/man/ja_JP.EUC" >>${PLIST}
-	@${ECHO} "share/doc/xjman/COPYRIGHT" >>${PLIST}
-	@${ECHO} "share/doc/xjman/COPYRIGHT.XJDP" >>${PLIST}
-	@${ECHO} "@dirrm share/doc/xjman" >>${PLIST}
+	@${ECHO_CMD} "@exec ${LN} -sf %D/man/ja %D/man/ja_JP.EUC" >>${PLIST}
+	@${ECHO_CMD} "@unexec ${RM} -f %D/man/ja_JP.EUC" >>${PLIST}
+	@${ECHO_CMD} "share/doc/xjman/COPYRIGHT" >>${PLIST}
+	@${ECHO_CMD} "share/doc/xjman/COPYRIGHT.XJDP" >>${PLIST}
+	@${ECHO_CMD} "@dirrm share/doc/xjman" >>${PLIST}
 
 pre-install:
 .for sec in ${MANSECS}

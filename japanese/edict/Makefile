@@ -124,23 +124,23 @@ do-install:
 	#
 	# Only 9 dictionaries can be enabled
 	#
-	@${ECHO} dicdir ${DATADIR} > ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile edict >> ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile enamdict >> ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile compdic >> ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile ediclsd3 >> ${DATADIR}/.xjdicrc
-	# @${ECHO} dicfile jddict.v02 >> ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile j_places >> ${DATADIR}/.xjdicrc
-	# @${ECHO} dicfile lawgledt >> ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile geodic >> ${DATADIR}/.xjdicrc
-	# @${ECHO} dicfile pandpdic >> ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile aviation >> ${DATADIR}/.xjdicrc
-	# @${ECHO} dicfile findic >> ${DATADIR}/.xjdicrc
-	# @${ECHO} dicfile mktdic >> ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile compverb >> ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile 4jwords >> ${DATADIR}/.xjdicrc
-	# @${ECHO} dicfile concrete.doc >> ${DATADIR}/.xjdicrc
-	# @${ECHO} dicfile lingdic >> ${DATADIR}/.xjdicrc
+	@${ECHO_CMD} dicdir ${DATADIR} > ${DATADIR}/.xjdicrc
+	@${ECHO_CMD} dicfile edict >> ${DATADIR}/.xjdicrc
+	@${ECHO_CMD} dicfile enamdict >> ${DATADIR}/.xjdicrc
+	@${ECHO_CMD} dicfile compdic >> ${DATADIR}/.xjdicrc
+	@${ECHO_CMD} dicfile ediclsd3 >> ${DATADIR}/.xjdicrc
+	# @${ECHO_CMD} dicfile jddict.v02 >> ${DATADIR}/.xjdicrc
+	@${ECHO_CMD} dicfile j_places >> ${DATADIR}/.xjdicrc
+	# @${ECHO_CMD} dicfile lawgledt >> ${DATADIR}/.xjdicrc
+	@${ECHO_CMD} dicfile geodic >> ${DATADIR}/.xjdicrc
+	# @${ECHO_CMD} dicfile pandpdic >> ${DATADIR}/.xjdicrc
+	@${ECHO_CMD} dicfile aviation >> ${DATADIR}/.xjdicrc
+	# @${ECHO_CMD} dicfile findic >> ${DATADIR}/.xjdicrc
+	# @${ECHO_CMD} dicfile mktdic >> ${DATADIR}/.xjdicrc
+	@${ECHO_CMD} dicfile compverb >> ${DATADIR}/.xjdicrc
+	@${ECHO_CMD} dicfile 4jwords >> ${DATADIR}/.xjdicrc
+	# @${ECHO_CMD} dicfile concrete.doc >> ${DATADIR}/.xjdicrc
+	# @${ECHO_CMD} dicfile lingdic >> ${DATADIR}/.xjdicrc
 	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${DATADIR}/.xjdicrc
 	@${CHMOD} ${SHAREMODE} ${DATADIR}/.xjdicrc
 	${INSTALL_MAN} ${WRKSRC}/xjdic.1 ${PREFIX}/man/man1
@@ -151,7 +151,7 @@ do-install:
 	fi
 	${INSTALL_MAN} ${WRKSRC}/xjdic23.inf ${DOCDIR}
 	@for docfile in ${DOCFILES} ; do \
-		${ECHO} InstalLing  ${DOCDIR}/$$docfile ; \
+		${ECHO_CMD} Installing  ${DOCDIR}/$$docfile ; \
 		${INSTALL_MAN}  ${_DISTDIR}/$$docfile ${DOCDIR} ; \
 	done
 .endif

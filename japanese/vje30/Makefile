@@ -103,10 +103,10 @@ do-install:
 	@${CHMOD} a+w ${PREFIX}/vje30/dic/vjed95m.dic
 	@[ X${PREFIX} = X"/usr/local" ] || (${LN} -s ${PREFIX}/vje30 /usr/local/; ${LN} -s ${PREFIX}/etc/vje30 /usr/local/etc/)
 	@${CP} ${WRKDIR}/vjed.bin /tmp/
-	@${ECHO} '' | ${WRKDIR}/vjesetup
+	@${ECHO_CMD} '' | ${WRKDIR}/vjesetup
 	@${RM} /tmp/vjed.bin
 	@${CP} -Pp /etc/services /etc/services.bak
-	@${GREP} -qw '^vjed' /etc/services || ${ECHO} "vjed		11493/tcp		# VJE-Delta Server" >> /etc/services
+	@${GREP} -qw '^vjed' /etc/services || ${ECHO_CMD} "vjed		11493/tcp		# VJE-Delta Server" >> /etc/services
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

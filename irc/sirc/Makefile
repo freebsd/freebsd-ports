@@ -71,7 +71,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/ssfe.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/sirc.1 ${PREFIX}/man/man1
 .if defined(SOCKS_SERVER)
-	${ECHO} '&load("socks.pl");' >> ${PREFIX}/libexec/sirc/sircrc.pl
+	${ECHO_CMD} '&load("socks.pl");' >> ${PREFIX}/libexec/sirc/sircrc.pl
 .endif
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/libexec/sirc

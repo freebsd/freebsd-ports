@@ -38,10 +38,10 @@ MANPAGES_OTHERS= \
 .include <bsd.port.pre.mk>
 
 DISTFILES_GNU!=\
-	${ECHO} ${MANPAGES_GNU} \
+	${ECHO_CMD} ${MANPAGES_GNU} \
 	| ${SED} 's/[^ ]*/man-pages-ja-GNU_&-${DATESPEC}.tar.gz/g'
 DISTFILES_OTHERS!=\
-	${ECHO} ${MANPAGES_OTHERS} \
+	${ECHO_CMD} ${MANPAGES_OTHERS} \
 	| ${SED} 's/[^ ]*/man-pages-ja-&-${DATESPEC}.tar.gz/g'
 
 post-extract:
@@ -55,27 +55,27 @@ post-extract:
 .endfor
 
 post-build:
-	@${ECHO} -n "" > ${PLIST}
+	@${ECHO_CMD} -n "" > ${PLIST}
 	@for sec in ${MANSECS}; do \
 	if [ -d ${WRKSRC}/man$${sec} ]; then \
 		cd ${WRKSRC}/man$${sec}; \
 		list=`${MAKE} pages-list`; \
-		set `${ECHO} $$list " "|${SED} 's/\.\([0-9]\) /.\1 \1 /g'`; \
+		set `${ECHO_CMD} $$list " "|${SED} 's/\.\([0-9]\) /.\1 \1 /g'`; \
 		while : ; do \
 			case $$# in \
 				0) break;; \
-				[1]) ${ECHO} "can not happen" >/dev/tty; \
+				[1]) ${ECHO_CMD} "can not happen" >/dev/tty; \
 					exit 1;; \
 			esac; \
-			${ECHO} man/ja/man$$2/$$1.gz; shift 2; \
+			${ECHO_CMD} man/ja/man$$2/$$1.gz; shift 2; \
 		done; \
 	fi; \
 	done|sort|uniq >>${PLIST}
 .for sec in ${MANSECS}
-	@${ECHO} '@unexec rmdir %D/man/ja/man'${sec}' 2>/dev/null || true' \
+	@${ECHO_CMD} '@unexec rmdir %D/man/ja/man'${sec}' 2>/dev/null || true' \
 	 >>${PLIST}
 .endfor
-	@${ECHO} '@unexec rmdir %D/man/ja 2>/dev/null || true' >>${PLIST}
+	@${ECHO_CMD} '@unexec rmdir %D/man/ja 2>/dev/null || true' >>${PLIST}
 
 pre-install:
 .for sec in ${MANSECS}

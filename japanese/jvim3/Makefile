@@ -82,8 +82,8 @@ FEPLIBS+=	-L${LOCALBASE}/lib -ljd -lcrypt
 #
 .if defined(INPUT_METHOD)
 # Make a value of INPUT_METHOD
-## 'echo' and 'sed' in the next line cannot replace by '${ECHO}' and '${SED}'
-INPUT_METHOD!=	echo ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
+## 'sed' in the next line cannot be replaced with '${SED}'
+INPUT_METHOD!=	${ECHO_CMD} ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
 FEPOPT+=	-DFEPCTRL
 .if !defined(DIRECT_CANNA)
 # For ONEW library
@@ -91,8 +91,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libonew${INPUT_METHOD}.a:${PORTSDIR}/japanese/o
 FEPOPT+=	-DONEW
 # If we use ONEW libray, then -lonew-* needs appear
 # before the other libraries in ${FEPLIBS}.
-### 'sed' and 'echo' in the next line cannot replace by '${SED}' and ${ECHO}
-FEPLIBS!=	echo ${FEPLIBS} | sed 's%^%-lonew${INPUT_METHOD} %'
+$## 'sed' in the next line cannot be replaced with '${SED}'
+FEPLIBS!=	${ECHO_CMD} ${FEPLIBS} | sed 's%^%-lonew${INPUT_METHOD} %'
 FEPOBJS=	feponew.o
 ###
 .endif
@@ -123,9 +123,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/grep/grep ${PREFIX}/bin/jgrep
 .if defined(INPUT_METHOD)
 .if defined(DIRECT_CANNA)
-	${ECHO} "set fepctrl" > ${PREFIX}/etc/jvim3rc
+	${ECHO_CMD} "set fepctrl" > ${PREFIX}/etc/jvim3rc
 .else
-	${ECHO} "set fepctrl onewredraw" > ${PREFIX}/etc/jvim3rc
+	${ECHO_CMD} "set fepctrl onewredraw" > ${PREFIX}/etc/jvim3rc
 .endif
 .endif
 .if !defined(NOPORTDOCS)

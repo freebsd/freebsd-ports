@@ -18,7 +18,7 @@ MAINTAINER=	nakai@FreeBSD.org
 PLIST=		${WRKDIR}/pkg-plist
 
 post-extract:
-	${ECHO} bin/gnome-libs-jp > ${PLIST}
+	${ECHO_CMD} bin/gnome-libs-jp > ${PLIST}
 	${CAT} ${MASTERDIR}/pkg-plist >> ${PLIST}
 
 post-install:

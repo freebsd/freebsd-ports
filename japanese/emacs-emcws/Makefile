@@ -164,13 +164,13 @@ do-install:
 	@test -d ${PREFIX}/share/emacs/${EMACS_VER}-emcws/site-lisp || \
 		${MKDIR} ${PREFIX}/share/emacs/${EMACS_VER}-emcws/site-lisp
 	@if [ ! -f ${PREFIX}/share/emacs/${EMACS_VER}-emcws/site-lisp/subdirs.el ]; then \
-	  (${ECHO} "(if (fboundp 'normal-top-level-add-subdirs-to-load-path)"; \
-	   ${ECHO} "    (normal-top-level-add-subdirs-to-load-path))") \
+	  (${ECHO_CMD} "(if (fboundp 'normal-top-level-add-subdirs-to-load-path)"; \
+	   ${ECHO_CMD} "    (normal-top-level-add-subdirs-to-load-path))") \
 	  > ${PREFIX}/share/emacs/${EMACS_VER}-emcws/site-lisp/subdirs.el ; \
 	fi
 	@if [ ! -f ${PREFIX}/share/emacs/${EMACS_VER}-emcws/lisp/subdirs.el ]; then \
-	  (${ECHO} "(if (fboundp 'normal-top-level-add-subdirs-to-load-path)"; \
-	   ${ECHO} "    (normal-top-level-add-subdirs-to-load-path))") \
+	  (${ECHO_CMD} "(if (fboundp 'normal-top-level-add-subdirs-to-load-path)"; \
+	   ${ECHO_CMD} "    (normal-top-level-add-subdirs-to-load-path))") \
 	  > ${PREFIX}/share/emacs/${EMACS_VER}-emcws/lisp/subdirs.el ; \
 	fi
 

@@ -51,7 +51,7 @@ JPLIB+=		-ljd -lcrypt
 #
 # Make a value of INPUT_METHOD
 .if defined(INPUT_METHOD)
-INPUT_METHOD!=	${ECHO} ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
+INPUT_METHOD!=	${ECHO_CMD} ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
 .endif
 #
 # For ONEW library
@@ -60,7 +60,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libonew${INPUT_METHOD}.a:${PORTSDIR}/japanese/o
 JPDEF+=		-DONEW
 # If we use ONEW libray, then -lonew*.a should appear
 # before the other libraries.
-JPLIB!=		echo ${JPLIB} | sed 's%^%-lonew${INPUT_METHOD} %'
+JPLIB!=		${ECHO_CMD} ${JPLIB} | sed 's%^%-lonew${INPUT_METHOD} %'
 .endif
 
 pre-build:
