@@ -7,6 +7,6 @@
 # based on japanese/netscape4-*
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
-BROWSER=	navigator
+BROWSER_NAME=	navigator
 
 .include "${MASTERDIR}/Makefile"

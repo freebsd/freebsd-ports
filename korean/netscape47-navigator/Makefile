@@ -6,6 +6,6 @@
 #
 
 MASTERDIR=	${.CURDIR}/../netscape47-communicator
-BROWSER=	navigator
+BROWSER_NAME=	navigator
 
 .include	"${MASTERDIR}/Makefile"

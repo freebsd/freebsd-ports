@@ -16,7 +16,7 @@ DISTNAME=	${KOREAN_KIT}
 MAINTAINER?=	cjh@FreeBSD.org
 
 # ?= for ports that include this Makefile
-RUN_DEPENDS?=	${LOCALBASE}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape${BROWSER_VER}-${BROWSER}
+RUN_DEPENDS?=	${LOCALBASE}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape${BROWSER_VER}-${BROWSER_NAME}
 RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 
 NO_BUILD=	yes
@@ -27,8 +27,8 @@ NDIR=		${PREFIX}/${NSUBDIR}
 NSUBDIR?=	lib/netscape
 
 # should be changed by versions
-BROWSER?=       communicator
-BROWSER_ARC?=	${BROWSER}
+BROWSER_NAME?=       communicator
+BROWSER_ARC?=	${BROWSER_NAME}
 BROWSER_BIN?=   ${BROWSER_ARC}-${BROWSER_VERSION}.bin
 BROWSER_CMD?=   ko-${BROWSER_ARC}-${BROWSER_VER}
 BROWSER_VER?=	4
@@ -69,7 +69,7 @@ do-configure:
 		> ${WRKSRC}/Netscape
 	${MAKESCRIPT} ${FILESDIR}/INSTALL >${PKGINSTALL}
 	# make navigator resource
-.if defined(BROWSER) && ${BROWSER} == navigator
+.if defined(BROWSER_NAME) && ${BROWSER_NAME} == navigator
 	${SED} -e "s;Communicator;Navigator;g" \
 		${WRKSRC}/about > ${WRKDIR}/about
 	${SED} -e "s;Communicator;Navigator;g" \

@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-RUN_DEPENDS=	${PREFIX}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/linux-netscape47-${BROWSER}
+RUN_DEPENDS=	${PREFIX}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/linux-netscape47-${BROWSER_NAME}
 RUN_DEPENDS+=	/compat/linux/usr/share/locale/ja_JP:${PORTSDIR}/japanese/linux_locale
 
-BROWSER_ARC=	${BROWSER}-linux
+BROWSER_ARC=	${BROWSER_NAME}-linux
 BROWSER_VERSION=	4.78
 MASTERDIR_LINUX= ${.CURDIR}/../linux-netscape47-communicator
 NSUBDIR=	lib/netscape-linux
