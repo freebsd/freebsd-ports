@@ -1,0 +1,6 @@
+Quick Image Viewer (qiv) is a very small and pretty fast GDK/Imlib image
+viewer. It has such nifty features as: zoom, maxpect, scaledown,
+screensaver, flip, delete, brightness / contrast / gamma correction, and
+can also be used to set your X11 background. All from a commandline.
+
+http://www.klografx.de/index.html
