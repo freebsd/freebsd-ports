@@ -20,6 +20,8 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=		The base set of CLE packages needed in Linux mode, support both GB & Big5
 
 BROKEN=			"Install fails when linprocfs is mounted"
+DEPRECATED=		http://vuxml.freebsd.org/ef253f8b-0727-11d9-b45d-000c41e2cdad.html (security)
+EXPIRATION_DATE=	November 21, 2004
 
 RUN_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
