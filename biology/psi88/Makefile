@@ -8,15 +8,12 @@
 PORTNAME=	psi88
 PORTVERSION=	1.0
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.ccl.net/pub/chemistry/software/SOURCES/FORTRAN/psi88/ \
-		ftp://ftp.orgchm.bas.bg/pub/mirror/ftp.CCL.net/pub/chemistry/software/SOURCES/FORTRAN/psi88/
+MASTER_SITES=	http://www.ccl.net/cca/software/SOURCES/FORTRAN/psi88/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 COMMENT=	Plotting wavefunctions (molecular orbitals) in 3D
-
-BROKEN=		"Does not fetch"
 
 pre-patch:
 	${MV} ${WRKSRC}/src/makefile ${WRKSRC}/src/Makefile
