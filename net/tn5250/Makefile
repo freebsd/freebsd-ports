@@ -7,6 +7,7 @@
 
 PORTNAME=	tn5250
 PORTVERSION=	0.16.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +19,8 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-os-dir=no
 INSTALLS_SHLIB=	yes
 
-MAN1=		scs2ascii.1 scs2pdf.1 tn5250.1 lp5250d.1
+MAN1=		lp5250d.1 scs2ascii.1 scs2pdf.1 scs2ps.1 tn5250.1
+MAN5=		tn5250rc.5
 
 .if defined(WITH_SLANG)
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
@@ -39,7 +41,7 @@ pre-everything::
 .endif
 
 post-patch:
-	@find ${WRKSRC}/src -name '*.[ch]' | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC}/src -name '*.[ch]' | ${XARGS} ${PERL} -pi -e \
 		's|<malloc.h>|<stdlib.h>|g'
 
 post-install:
