@@ -1,0 +1,47 @@
+#
+# $Id$
+#
+
+MACHINE	= FreeBSD
+SRCDIR	= ${.CURDIR}
+X11	= /usr/X11R6
+
+SIS	= $(SRCDIR)/sis
+CAD	= $(SRCDIR)/cad
+LIBDIR	= $(PREFIX)/lib/sis
+
+CC	= cc
+
+all:
+	cd sis; make -f Makefile.nooct SIS=$(SIS) LIBDIR=$(LIBDIR) CAD=$(CAD) CC=$(CC); cd ..
+	cd utility; make CAD=$(CAD) CC=$(CC) libutility.a; \
+	mv libutility.a $(CAD)/lib; cd ..
+	cd options; make CAD=$(CAD) CC=$(CC) liboptions.a; \
+	mv liboptions.a $(CAD)/lib; cd ..
+	cd jedi; make CAD=$(CAD) CC=$(CC); cd ..
+	cd espresso; make CAD=$(CAD) CC=$(CC); cd ..
+	cd nova; make CAD=$(CAD) SIS=$(SIS) CC=$(CC); cd ..
+	cd sred; make SIS=$(SIS) CC=$(CC); cd ..
+	cd stamina; make MACHINE=$(MACHINE) CC=$(CC) SIS=$(SIS); cd ..
+	cd vst2blif; make MACHINE=$(MACHINE) CC=$(CC); cd ..
+	cd blif2vst; make MACHINE=$(MACHINE) CC=$(CC); cd ..
+	cd xsis; make SIS=$(SIS) MACHINE=$(MACHINE) X11=$(X11) CC=$(CC); cd ..
+
+clean:
+	cd sis; make SIS=$(SIS) CAD=$(CAD) clean; cd ..
+	cd utility; make clean; cd ..
+	-rm $(CAD)/lib/libutility.a
+	cd options; make clean; cd ..
+	-rm $(CAD)/lib/liboptions.a
+	cd jedi; make clean; cd ..
+	cd stamina; make clean; cd ..
+	cd sred; make clean; cd ..
+	cd nova; make clean; cd ..
+	cd espresso; make clean; cd ..
+	cd vst2blif; make clean; cd ..
+	cd blif2vst; make clean; cd ..
+	cd xsis; make clean; cd ..
+	cd stamina; make cleanall; cd ..
+	cd sis; make strip_depend; rm -rf lib/*; cd ..
+	-rm -rf make.out Makefile
+

@@ -1,0 +1,26 @@
+sis is an interactive program for the synthesis of both synchronous
+and asynchronous sequential circuits.  The input can be given in state
+table format or as logical equations (for synchronous circuits), or
+as a signal transition graph (for asynchronous circuits); a target
+technology library is given in genlib format.  The output is a netlist
+of gates in the target technology.
+
+The system includes various capabilities that are controlled interactively
+by the user.  These include state minimization, state assignment,
+optimization for area and delay using retiming, optimization using
+standard algebraic and Boolean combinational techniques from MISII,
+performance optimization using restructuring, and technology mapping
+for optimal area and delay.  Redundancy removal and 100% testability
+are provided for combinational and scan-path circuits.  Formal verification
+is available for both combinational and sequential circuits, even for
+circuits with different state encodings.
+
+This distribution contains sis, nova (state assignment), jedi (state
+assignment), stamina (state minimization, from June Rho at University of
+Colorado, Boulder), sred (state minimization), espresso, blif2vst (mapped
+BLIF to structural VHDL translator), vst2blif (structural VHDL to BLIF
+translator), xsis (a front-end graphical interface to sis) and several stripped
+down packages from the OctTools (options, port, and utility) that are needed
+for some of the programs listed above.
+
+Frank Volf, volf@oasis.IAEhv.nl
