@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	2003.03.18
+PORTVERSION=	2003.04.08
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -49,12 +49,6 @@ pre-extract:
 	@${ECHO} "use this flag, the resulting wine won't use more VM or anything like"
 	@${ECHO} "that when running, only when it has to enter the debugger...)"
 .endif
-
-post-patch:
-.for D in ../library ../unicode
-	@${REINPLACE_CMD} -e 's/SOVERSION = 1.0/SOVERSION = 1/g' \
-		${WRKSRC}/dlls/${D}/Makefile.in
-.endfor
 
 post-configure:
 	cd ${WRKSRC} && make depend
