@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qiv
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.klografx.de/software/files/
 EXTRACT_SUFX=	.tgz
