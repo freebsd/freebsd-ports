@@ -3,24 +3,24 @@
 # Date created:		28 March 1995
 # Whom:			Akito FUJITA <fujita@zoo.ncl.omron.co.jp>
 #
-# $Id: Makefile,v 1.10 1997/12/25 22:29:39 asami Exp $
+# $Id: Makefile,v 1.11 1998/05/27 12:58:23 itojun Exp $
 #
 
 DISTNAME=	mh-6.8.3
 PKGNAME=	ja-mh-6.8.4
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.ics.uci.edu/pub/mh/tar/
-EXTRACT_SUFX=	.tar.Z
-
-PATCH_SITES=	ftp://ftp.ics.uci.edu/pub/mh/updates/ \
+MASTER_SITES=	ftp://ftp.ics.uci.edu/pub/mh/tar/ \
+		ftp://ftp.ics.uci.edu/pub/mh/updates/ \
 		ftp://jaz.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
-PATCHFILES=	MH.6.8.4.Z \
+DISTFILES=	mh-6.8.3.tar.Z MH.6.8.4.Z \
 		mh-6.8.4-JP-3.00.patch.gz
 
-MAINTAINER=	sanpei@yy.cs.keio.ac.jp
+MAINTAINER=	motoyuki@freebsd.org
 
 BUILD_DEPENDS=	jless:${PORTSDIR}/japanese/less
 RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less
+
+EXTRACT_ONLY=   mh-6.8.3.tar.Z
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-batchmode \
@@ -34,7 +34,7 @@ MAN1=	ali.1 anno.1 bbc.1 burst.1 comp.1 dist.1 folder.1 forw.1 inc.1 mark.1 \
 MAN5=	mh-alias.5 mh-format.5 mh-mail.5 mh-profile.5 mh-sequence.5 mh-tailor.5
 MAN8=	ap.8 conflict.8 dp.8 fmtdump.8 install-mh.8 popauth.8 post.8
 
-do-patch:
+pre-patch:
 	@${GZCAT} ${_DISTDIR}/MH.6.8.4.Z | \
 		${PATCH} -d ${WRKSRC} --forward --quiet -p0
 	@${GZCAT} ${_DISTDIR}/mh-6.8.4-JP-3.00.patch.gz | \
