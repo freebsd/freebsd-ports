@@ -3,6 +3,13 @@ lib/libtcl80.a
 lib/libtcl80.so.1.0
 @exec /sbin/ldconfig -m %B
 include/tcl8.0/tcl.h
+include/tcl8.0/unix/tclUnixPort.h
+include/tcl8.0/generic/tcl.h
+include/tcl8.0/generic/tclCompile.h
+include/tcl8.0/generic/tclInt.h
+include/tcl8.0/generic/tclMath.h
+include/tcl8.0/generic/tclPort.h
+include/tcl8.0/generic/tclRegexp.h
 lib/tcl8.0/history.tcl
 lib/tcl8.0/init.tcl
 lib/tcl8.0/ldAout.tcl
@@ -178,6 +185,8 @@ man/mann/upvar.n.gz
 man/mann/variable.n.gz
 man/mann/vwait.n.gz
 man/mann/while.n.gz
+@dirrm include/tcl8.0/generic
+@dirrm include/tcl8.0/unix
 @dirrm include/tcl8.0
 @dirrm lib/tcl8.0/http2.0
 @dirrm lib/tcl8.0/http1.0

@@ -1,15 +1,17 @@
---- Makefile.in.orig	Fri Aug 15 16:17:28 1997
-+++ Makefile.in	Sun Aug 31 19:47:11 1997
-@@ -55,7 +55,7 @@
+--- Makefile.in.orig	Fri Aug 15 22:17:28 1997
++++ Makefile.in	Wed Oct  1 09:51:59 1997
+@@ -55,7 +55,9 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
  
  # Directory in which to install the include file tcl.h:
 -INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include
 +INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)
++GENERIC_INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)/generic
++UNIX_INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)/unix
  
  # Top-level directory in which to install manual entries:
  MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
-@@ -138,7 +138,7 @@
+@@ -138,7 +140,7 @@
  # "install" around;  better to use the install-sh script that comes
  # with the distribution, which is slower but guaranteed to work.
  
@@ -18,7 +20,7 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -315,7 +315,7 @@
+@@ -315,7 +317,7 @@
  
  SRCS = $(GENERIC_SRCS) $(UNIX_SRCS)
  
@@ -27,7 +29,7 @@
  
  # The following target is configured by autoconf to generate either
  # a shared library or non-shared library for Tcl.
-@@ -324,6 +324,11 @@
+@@ -324,6 +326,11 @@
  	@MAKE_LIB@
  	$(RANLIB) ${TCL_LIB_FILE}
  
@@ -39,7 +41,7 @@
  # Make target which outputs the list of the .o contained in the Tcl lib
  # usefull to build a single big shared library containing Tcl and other
  # extensions.  used for the Tcl Plugin.  -- dl
-@@ -415,7 +420,7 @@
+@@ -415,7 +422,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -48,7 +50,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -429,10 +434,15 @@
+@@ -429,14 +436,19 @@
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
@@ -64,8 +66,32 @@
 +	@$(INSTALL_DATA) tclConfig.sh $(SCRIPT_INSTALL_DIR)/tclConfig.sh
  
  install-libraries:
- 	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
-@@ -483,28 +493,28 @@
+-	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
+-		$(SCRIPT_INSTALL_DIR); \
++	@for i in $(INSTALL_ROOT)$(prefix)/lib $(GENERIC_INCLUDE_INSTALL_DIR) \
++		$(UNIX_INCLUDE_INSTALL_DIR) $(SCRIPT_INSTALL_DIR); \
+ 	    do \
+ 	    if [ ! -d $$i ] ; then \
+ 		echo "Making directory $$i"; \
+@@ -454,8 +466,15 @@
+ 		else true; \
+ 		fi; \
+ 	    done;
+-	@echo "Installing tcl.h"
+-	@$(INSTALL_DATA) $(GENERIC_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
++	@echo "Installing libraries, tcl.h and other headers"
++	@for i in $(GENERIC_DIR)/*.h ; \
++	    do \
++	    echo "Installing $$i"; \
++	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
++	    done;
++	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
++	@echo "Installing $(TOP_DIR)unix/tclUnixPort.h"
++	@$(INSTALL_DATA) $(TOP_DIR)/unix/tclUnixPort.h $(UNIX_INCLUDE_INSTALL_DIR)
+ 	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
+ 	    do \
+ 	    echo "Installing $$i"; \
+@@ -483,30 +502,37 @@
  	@cd $(TOP_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
@@ -102,4 +128,13 @@
 +	    chmod 444 $(MANN_INSTALL_DIR)/$$i.gz; \
  	    done;
  	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
++	@echo "**********"
++	@echo "IMPORTANT:"
++	@echo "**********"
++	@echo "tclConfig.sh in $(SCRIPT_INSTALL_DIR)/tclConfig.sh"
++	@echo "tcl.h        in $(INCLUDE_INSTALL_DIR)/tcl.h"
++	@echo "There are NOT default place, but good place to avoid"
++	@echo "conflicting with another version of Tcl/Tks."
  
+ Makefile: $(UNIX_DIR)/Makefile.in
+ 	$(SHELL) config.status
