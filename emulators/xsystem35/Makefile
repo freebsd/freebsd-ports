@@ -6,30 +6,34 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xsystem35-1.2.4
+DISTNAME=	xsystem35-1.2.5-1
+PKGNAME=	xsystem35-1.2.5.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.aist-nara.ac.jp/~masaki-c/private/unitbase/xsys35/down/
 
 MAINTAINER=	k5@cheerful.com
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-.if defined(WITH_ESOUND)
-LIB_DEPENDS+=	esd.2:${PORTSDIR}/audio/esound
-.endif
 
 USE_IMAKE=	YES
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PKGMESSAGE=	${WRKSRC}/MESSAGE
 
 DOC_FILES=	BUGS ChangeLog FAQ GRFMT.TXT INSTALL MISCGAME.TXT README \
-		README.color README.miko README.music README.pastel THANKS \
-		TODO
+		README.color README.joystick README.miko README.music \
+		README.pastel THANKS TODO
 EXAMPLES=	README.TXT ambi.inf atlach.inf dalk.inf darcrows.inf \
 		diabo.inf drstop.inf hushaby.inf katsumi.inf kichiku.inf \
 		mamatoto.inf mamori.inf miko.inf mugen.inf ningen.inf \
 		oudou.inf panyo.inf pascha.inf progood.inf rance1.inf \
 		rance2.inf rance3.inf rance4.inf toushin.inf toushin2.inf \
 		zero.inf
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_ESOUND)
+LIB_DEPENDS+=	esd.2:${PORTSDIR}/audio/esound
+.endif
 
 pre-configure:
 .if defined(WITH_ESOUND)
@@ -54,4 +58,4 @@ post-install:
 	@${CAT} ${WRKSRC}/MESSAGE
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
