@@ -18,3 +18,5 @@ Major changes from fvwm are:
   applications; they are more of pop-up service lists on the root window.
 - NEXTSTEP style icons. These styles are hard-coded in the program, which is
   good for the consistent look of the NEXTSTEP interface.
+
+WWW: http://www.afterstep.org/
