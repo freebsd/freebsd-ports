@@ -1,7 +1,0 @@
-Driver for the SpeedTouch ADSL USB adapter.
-
-It uses a closed source kernel provided by Alcatel, surrounded
-by some glue code to make it work on Linux, FreeBSD, NetBSD and
-OpenBSD.
-
-WWW: http://www.xsproject.org/speedtouch/index.html
