@@ -1,0 +1,12 @@
+--- src/zabbix_sucker/Makefile.in.orig	Wed Jun 18 16:53:26 2003
++++ src/zabbix_sucker/Makefile.in	Sun Dec  8 17:34:48 2002
+@@ -1,7 +1,7 @@
+ # Build rules
+ 
+-INCLUDE = @MYSQL_INCLUDE@ @PGSQL_INCLUDE@
+-LIBS    = @LIBS@ @MYSQL_LFLAGS@ @PGSQL_LFLAGS@
++INCLUDE = @MYSQL_INCLUDE@ @PGSQL_INCLUDE@ -I/usr/local/include
++LIBS    = @LIBS@ @MYSQL_LFLAGS@ @PGSQL_LFLAGS@ -L/usr/local/lib -lsnmp
+ 
+ all:
+ 

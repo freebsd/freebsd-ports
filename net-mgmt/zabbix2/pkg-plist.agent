@@ -1,0 +1,9 @@
+bin/zabbix_agent
+bin/zabbix_agentd
+bin/zabbix_sender
+etc/zabbix/zabbix_agent.conf.sample
+etc/zabbix/zabbix_agentd.conf.sample
+etc/rc.d/zabbix-agent.sh.sample
+@dirrm /etc/zabbix
+@exec ln -sf %D/etc/zabbix /etc/zabbix
+@unexec rm /etc/zabbix

@@ -1,0 +1,81 @@
+etc/zabbix/zabbix_agent.conf.sample
+etc/zabbix/zabbix_agentd.conf.sample
+etc/zabbix/zabbix_suckerd.conf.sample
+etc/zabbix/zabbix_trapper.conf.sample
+etc/zabbix/zabbix_trapperd.conf.sample
+etc/rc.d/zabbix.sh.sample
+etc/rc.d/zabbix-agent.sh.sample
+bin/zabbix_agent
+bin/zabbix_agentd
+bin/zabbix_sender
+bin/zabbix_suckerd
+bin/zabbix_trapper
+bin/zabbix_trapperd
+@dirrm etc/zabbix
+share/zabbix/php/audio/warning_off.wav
+share/zabbix/php/audio/warning_on.wav
+share/zabbix/php/about.php
+share/zabbix/php/actions.php
+share/zabbix/php/alarms.php
+share/zabbix/php/alerts.php
+share/zabbix/php/chart.php
+share/zabbix/php/chart2.php
+share/zabbix/php/chart3.php
+share/zabbix/php/chart4.php
+share/zabbix/php/chart5.php
+share/zabbix/php/chart_diff.php
+share/zabbix/php/charts.php
+share/zabbix/php/compare.php
+share/zabbix/php/config.php
+share/zabbix/php/css.css
+share/zabbix/php/graph.php
+share/zabbix/php/graphs.php
+share/zabbix/php/helpdesk.php
+share/zabbix/php/history.php
+share/zabbix/php/hosts.php
+share/zabbix/php/index.php
+share/zabbix/php/items.php
+share/zabbix/php/latest.php
+share/zabbix/php/latestalarms.php
+share/zabbix/php/map.php
+share/zabbix/php/maps.php
+share/zabbix/php/media.php
+share/zabbix/php/queue.php
+share/zabbix/php/report1.php
+share/zabbix/php/report2.php
+share/zabbix/php/services.php
+share/zabbix/php/srv_status.php
+share/zabbix/php/sysmap.php
+share/zabbix/php/sysmaps.php
+share/zabbix/php/tr_comments.php
+share/zabbix/php/tr_status.php
+share/zabbix/php/trend.php
+share/zabbix/php/trends.php
+share/zabbix/php/triggers.php
+share/zabbix/php/users.php
+share/zabbix/php/images/sysmaps/Notebook.png
+share/zabbix/php/images/sysmaps/Hub.png
+share/zabbix/php/images/sysmaps/Printer.png
+share/zabbix/php/images/sysmaps/Router.png
+share/zabbix/php/images/sysmaps/Server.png
+share/zabbix/php/images/sysmaps/Workstation.png
+share/zabbix/php/include/.htaccess
+share/zabbix/php/include/config.inc.php
+share/zabbix/php/include/db.inc.php
+share/zabbix/php/include/defines.inc.php
+share/zabbix/create/data/data.sql
+share/zabbix/create/mysql/schema.sql
+share/zabbix/create/postgresql/schema.sql
+share/zabbix/create/dbsetup.sh
+@dirrm share/zabbix/php/audio
+@dirrm share/zabbix/php/images/sysmaps
+@dirrm share/zabbix/php/images
+@dirrm share/zabbix/php/include
+@dirrm share/zabbix/php
+@dirrm share/zabbix/create/data
+@dirrm share/zabbix/create/mysql
+@dirrm share/zabbix/create/postgresql
+@dirrm share/zabbix/create
+@dirrm share/zabbix
+@exec ln -sf %D/etc/zabbix /etc/zabbix
+@unexec rm /etc/zabbix

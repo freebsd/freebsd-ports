@@ -1,0 +1,14 @@
+#!/bin/sh
+
+case "${1}" in
+	start)
+		echo -n "zabbix-agent "
+		zabbix_agentd
+		;;
+	stop)
+		killall zabbix_agentd
+		;;
+	*)
+		echo Usage: `basename ${0}` "{start|stop}"
+		;;
+esac
