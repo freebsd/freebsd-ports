@@ -7,16 +7,17 @@
 #
 
 PORTNAME=	lr
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	misc
 MASTER_SITES=	http://www.seekrut.com/rk/
 
 MAINTAINER=	mich@freebsdcluster.org
 
-ALL_TARGET=	lr
+do-build:
+	cd ${WRKSRC}; ${CC} ${CFLAGS} -o lr lr.c -lncurses
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/lr ${PREFIX}/bin
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
