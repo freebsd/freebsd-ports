@@ -12,6 +12,7 @@ etc/mararc.sample
 %%PORTDOCS%%share/doc/maradns/handling.compression
 %%PORTDOCS%%share/doc/maradns/mararc.format
 %%PORTDOCS%%share/doc/maradns/multiple.qdcount
+%%PORTDOCS%%share/doc/maradns/recursive-case-insensitive
 %%PORTDOCS%%share/doc/maradns/recursive.algorithm
 %%PORTDOCS%%share/doc/maradns/resolution.algorithm
 %%PORTDOCS%%share/doc/maradns/rfc2044.txt
