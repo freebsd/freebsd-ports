@@ -16,13 +16,13 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for the display of layout elements
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-BUILD_DEPENDS+=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-BUILD_DEPENDS+=	tex:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
-PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR}
-PLIST_SUB+=	CLASSDIR=${CLASSDIR}
+PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \
+		CLASSDIR=${CLASSDIR}
 
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
@@ -32,13 +32,9 @@ YES_CMD=	/usr/bin/yes
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
-CLASS_FILES=	layouts.dtx
-CLASS_FILES+=	layouts.ins
-CLASS_FILES+=	layouts.sty
+CLASS_FILES=	layouts.dtx layouts.ins layouts.sty
 
-DOC_FILES=	README
-DOC_FILES+=	layman.pdf
-DOC_FILES+=	layman.tex
+DOC_FILES=	README layman.pdf layman.tex
 
 do-extract:
 	${MKDIR} ${WRKSRC}

@@ -15,13 +15,13 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package that enables subnumbering of different floats
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-BUILD_DEPENDS+=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
-PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR}
-PLIST_SUB+=	CLASSDIR=${CLASSDIR}
+PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \
+		CLASSDIR=${CLASSDIR}
 
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
@@ -30,14 +30,9 @@ TEX_BIN=	${LOCALBASE}/bin/tex
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
-CLASS_FILES=	subfloat.dtx
-CLASS_FILES+=	subfloat.sty
-CLASS_FILES+=	subfloat.ins
+CLASS_FILES=	subfloat.dtx subfloat.sty subfloat.ins
 
-DOC_FILES=	README
-DOC_FILES+=	ChangeLog
-DOC_FILES+=	subfloat.dvi
-DOC_FILES+=	subfloat.xml
+DOC_FILES=	README ChangeLog subfloat.dvi subfloat.xml
 
 do-extract:
 	${MKDIR} ${WRKSRC}

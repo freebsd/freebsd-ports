@@ -16,10 +16,10 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package allows several bibliographies in a document
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		latex:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
 PLIST=		${WRKDIR}/pkg-plist
 

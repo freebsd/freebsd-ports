@@ -14,16 +14,18 @@ DISTNAME=	subfig.11
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package that supports small "sub" figures/tables
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-BUILD_DEPENDS+=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-BUILD_DEPENDS+=	${STY_CAPTION}:${PORTSDIR}/print/latex-caption
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
+		${STY_CAPTION}:${PORTSDIR}/print/latex-caption
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
+		${STY_CAPTION}:${PORTSDIR}/print/latex-caption
 
-PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR}
-PLIST_SUB+=	CLASSDIR=${CLASSDIR}
-
+PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \
+		CLASSDIR=${CLASSDIR}
 USE_GMAKE=	YES
 ALL_TARGET=	sty
+
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 STY_CAPTION=	${LOCALBASE}/${TEXMFLOCAL}/tex/latex/caption/caption.sty
@@ -31,18 +33,10 @@ MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
-CLASS_FILES=	subfig.dtx
-CLASS_FILES+=	subfig.ins
-CLASS_FILES+=	subfig.sty
-CLASS_FILES+=	subfig.cfg
+CLASS_FILES=	subfig.dtx subfig.ins subfig.sty subfig.cfg
 
-DOC_FILES=	README
-DOC_FILES+=	test1.tex
-DOC_FILES+=	test2.tex
-DOC_FILES+=	test3.tex
-DOC_FILES+=	test4.tex
-DOC_FILES+=	test5.tex
-DOC_FILES+=	test6.tex
+DOC_FILES=	README test1.tex test2.tex test3.tex \
+		test4.tex test5.tex test6.tex
 
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}

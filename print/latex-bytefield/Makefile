@@ -16,15 +16,15 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package that utilization diagram of data fields
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-BUILD_DEPENDS+=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-BUILD_DEPENDS+=	tex:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
-PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR}
-PLIST_SUB+=	CLASSDIR=${CLASSDIR}
-
+PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \
+		CLASSDIR=${CLASSDIR}
 USE_GMAKE=	YES
+
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
@@ -32,14 +32,8 @@ TEX_BIN=	${LOCALBASE}/bin/tex
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
-CLASS_FILES=	bytefield.dtx
-CLASS_FILES+=	bytefield.sty
-CLASS_FILES+=	bytefield.ins
-
-DOC_FILES=	README
-DOC_FILES+=	bytefield.pdf
-DOC_FILES+=	example.pdf
-DOC_FILES+=	example.tex
+CLASS_FILES=	bytefield.dtx bytefield.sty bytefield.ins
+DOC_FILES=	README bytefield.pdf example.pdf example.tex
 
 do-extract:
 	${MKDIR} ${WRKSRC}

@@ -13,104 +13,46 @@ DISTFILES=	mathabx${EXTRACT_SUFX} abxtype1${EXTRACT_SUFX}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Math series, aka mathabx MetaFont fontset for TeX/LaTeX
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
 USE_ZIP=	YES
 NO_BUILD=	YES
-PLIST_SUB=	TEXMF=${TEXMF} MKTEXLSR=${MKTEXLSR}
-PLIST_SUB+=	CLASSDIR=${CLASSDIR} MFDIR=${MFDIR}
-PLIST_SUB+=	TYPE1DIR=${TYPE1DIR} DVIPSDIR=${DVIPSDIR}
+PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \
+		CLASSDIR=${CLASSDIR} MFDIR=${MFDIR} \
+		TYPE1DIR=${TYPE1DIR} DVIPSDIR=${DVIPSDIR}
 
 TEXMF=		share/texmf
+TEXMFLOCAL=	share/texmf-local
+TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-CLASSDIR=	${TEXMF}/tex/latex/${PORTNAME:S/^latex-//}
-MFDIR=		${TEXMF}/fonts/source/public/${PORTNAME:S/^latex-//}
-TYPE1DIR=	${TEXMF}/fonts/type1/${PORTNAME:S/^latex-//}
-DVIPSDIR=	${TEXMF}/dvips/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
-CLASS_FILES=	mathabx.dcl
-CLASS_FILES+=	mathabx.sty
-CLASS_FILES+=	mathabx.tex
-CLASS_FILES+=	testmac.tex
+CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
+CLASS_FILES=	mathabx.dcl mathabx.sty mathabx.tex testmac.tex
 
-MF_FILES=	matha10.mf
-MF_FILES+=	matha12.mf
-MF_FILES+=	matha5.mf
-MF_FILES+=	matha6.mf
-MF_FILES+=	matha7.mf
-MF_FILES+=	matha8.mf
-MF_FILES+=	matha9.mf
-MF_FILES+=	mathacnt.mf
-MF_FILES+=	mathadrv.mf
-MF_FILES+=	matharrw.mf
-MF_FILES+=	mathastr.mf
-MF_FILES+=	mathasym.mf
-MF_FILES+=	mathb10.mf
-MF_FILES+=	mathb12.mf
-MF_FILES+=	mathb5.mf
-MF_FILES+=	mathb6.mf
-MF_FILES+=	mathb7.mf
-MF_FILES+=	mathb8.mf
-MF_FILES+=	mathb9.mf
-MF_FILES+=	mathbase.mf
-MF_FILES+=	mathbdel.mf
-MF_FILES+=	mathbdrv.mf
-MF_FILES+=	mathbigs.mf
-MF_FILES+=	mathbsym.mf
-MF_FILES+=	mathcall.mf
-MF_FILES+=	mathextr.mf
-MF_FILES+=	mathfine.mf
-MF_FILES+=	mathgrey.mf
-MF_FILES+=	mathhbrw.mf
-MF_FILES+=	mathineq.mf
-MF_FILES+=	mathltlk.mf
-MF_FILES+=	mathmbcb.mf
-MF_FILES+=	mathprmt.mf
-MF_FILES+=	mathsmsy.mf
-MF_FILES+=	mathsubs.mf
-MF_FILES+=	mathsymb.mf
-MF_FILES+=	matht10.mf
-MF_FILES+=	mathu10.mf
-MF_FILES+=	mathudrv.mf
-MF_FILES+=	mathusym.mf
-MF_FILES+=	mathux10.mf
-MF_FILES+=	mathuxdrv.mf
-MF_FILES+=	mathx10.mf
-MF_FILES+=	mathx12.mf
-MF_FILES+=	mathx5.mf
-MF_FILES+=	mathx6.mf
-MF_FILES+=	mathx7.mf
-MF_FILES+=	mathx8.mf
-MF_FILES+=	mathx9.mf
-MF_FILES+=	mathxdrv.mf
-MF_FILES+=	maydigit.mf
+MFDIR=		${TEXMFLOCAL}/fonts/source/public/${PORTNAME:S/^latex-//}
+MF_FILES=	matha10.mf matha12.mf matha5.mf matha6.mf matha7.mf \
+		matha8.mf matha9.mf mathacnt.mf mathadrv.mf matharrw.mf \
+		mathastr.mf mathasym.mf mathb10.mf mathb12.mf mathb5.mf \
+		mathb6.mf mathb7.mf mathb8.mf mathb9.mf mathbase.mf \
+		mathbdel.mf mathbdrv.mf mathbigs.mf mathbsym.mf mathcall.mf \
+		mathextr.mf mathfine.mf mathgrey.mf mathhbrw.mf mathineq.mf \
+		mathltlk.mf mathmbcb.mf mathprmt.mf mathsmsy.mf mathsubs.mf \
+		mathsymb.mf matht10.mf mathu10.mf mathudrv.mf mathusym.mf \
+		mathux10.mf mathuxdrv.mf mathx10.mf mathx12.mf mathx5.mf \
+		mathx6.mf mathx7.mf mathx8.mf mathx9.mf mathxdrv.mf maydigit.mf
 
-TYPE1_FILES=	matha10.pfb
-TYPE1_FILES+=	matha12.pfb
-TYPE1_FILES+=	matha5.pfb
-TYPE1_FILES+=	matha6.pfb
-TYPE1_FILES+=	matha7.pfb
-TYPE1_FILES+=	matha8.pfb
-TYPE1_FILES+=	matha9.pfb
-TYPE1_FILES+=	mathb10.pfb
-TYPE1_FILES+=	mathb12.pfb
-TYPE1_FILES+=	mathb5.pfb
-TYPE1_FILES+=	mathb6.pfb
-TYPE1_FILES+=	mathb7.pfb
-TYPE1_FILES+=	mathb8.pfb
-TYPE1_FILES+=	mathb9.pfb
-TYPE1_FILES+=	mathu10.pfb
-TYPE1_FILES+=	mathux10.pfb
-TYPE1_FILES+=	mathx10.pfb
-TYPE1_FILES+=	mathx12.pfb
-TYPE1_FILES+=	mathx5.pfb
-TYPE1_FILES+=	mathx6.pfb
-TYPE1_FILES+=	mathx7.pfb
-TYPE1_FILES+=	mathx8.pfb
-TYPE1_FILES+=	mathx9.pfb
+TYPE1DIR=	${TEXMFLOCAL}/fonts/type1/${PORTNAME:S/^latex-//}
+TYPE1_FILES=	matha10.pfb matha12.pfb matha5.pfb matha6.pfb matha7.pfb \
+		matha8.pfb matha9.pfb mathb10.pfb mathb12.pfb mathb5.pfb \
+		mathb6.pfb mathb7.pfb mathb8.pfb mathb9.pfb mathu10.pfb \
+		mathux10.pfb mathx10.pfb mathx12.pfb mathx5.pfb mathx6.pfb \
+		mathx7.pfb mathx8.pfb mathx9.pfb
 
+DVIPSDIR=	${TEXMFLOCAL}/dvips/${PORTNAME:S/^latex-//}
 DVIPS_FILES=	mathabx.map
 
 do-install:

@@ -18,13 +18,13 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for drawing of Feynman diagrams
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-BUILD_DEPENDS+=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-BUILD_DEPENDS+=	tex:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
-PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR}
-PLIST_SUB+=	CLASSDIR=${CLASSDIR} FONTDIR=${FONTDIR} MPDIR=${MPDIR}
+PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \
+		CLASSDIR=${CLASSDIR} FONTDIR=${FONTDIR} MPDIR=${MPDIR}
 
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
@@ -34,22 +34,16 @@ CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 FONTDIR=	${TEXMFLOCAL}/fonts/source/public/${PORTNAME:S/^latex-//}
 MPDIR=		${TEXMFLOCAL}/metapost/${PORTNAME:S/^latex-//}
 
-DOC_FILES=	Announce
-DOC_FILES+=	COPYING
-DOC_FILES+=	Feynman.Diagrams
-DOC_FILES+=	README
-DOC_FILES+=	Tutorial
-DOC_FILES+=	manual.ps.gz
-DOC_FILES+=	template.tex
+DOC_FILES=	Announce COPYING Feynman.Diagrams README \
+		Tutorial manual.ps.gz template.tex
 
-CLASS_FILES=	feynmf.dtx
-CLASS_FILES+=	feynmf.ins feynmf209.ins
-CLASS_FILES+=	feynmf.sty feynmp.sty
+CLASS_FILES=	feynmf.dtx feynmf.ins feynmf209.ins \
+		feynmf.sty feynmp.sty
 
 SCRIPT_FILES=	feynmf.pl
 
 FONT_FILES=	feynmf.mf
-MP_FILES+=	feynmp.mp manpics.mp manpics.1 manpics.2 manpics.3
+MP_FILES=	feynmp.mp manpics.mp manpics.1 manpics.2 manpics.3
 
 do-extract:
 	${MKDIR} ${WRKSRC}

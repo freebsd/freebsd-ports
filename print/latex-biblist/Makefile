@@ -16,9 +16,10 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for printing all of a BibTeX database entries
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
 NO_BUILD=	YES
 PLIST=		${WRKDIR}/pkg-plist
