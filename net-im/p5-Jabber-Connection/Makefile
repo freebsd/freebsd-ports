@@ -13,7 +13,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	http://www.pipetree.com/jabber/jabberconnection/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	larse@isi.edu
+MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Jabber Perl library for client/component connectivity
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser

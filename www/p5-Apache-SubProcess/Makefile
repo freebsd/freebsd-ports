@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	larse@isi.edu
+MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Forking and executing subprocesses from mod_perl
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/src.pm:${PORTSDIR}/www/mod_perl

@@ -12,7 +12,7 @@ CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.deepspace6.net/pub/ds6/sources/privoxy/
 DISTNAME=	privoxy_CVS_${PORTVERSION}_ipv6_5
 
-MAINTAINER=	larse@isi.edu
+MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Privoxy is a web proxy with advanced filtering capabilities
 
 WRKSRC=		${WRKDIR}/privoxy

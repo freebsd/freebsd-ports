@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 # The mmpython folks keep changing their release naming scheme.
 #DISTNAME=	mmpython_${PORTVERSION:C/\./-/}
 
-MAINTAINER=	larse@isi.edu
+MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Retrieves metadata from mp3, ogg, avi, jpg and other formats
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread

@@ -10,7 +10,7 @@ PORTVERSION=	2.3
 CATEGORIES=	audio
 MASTER_SITES=	http://web.wt.net/~billw/gkrellmss/
 
-MAINTAINER=	larse@isi.edu
+MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	A plugin for GKrellM with a VU meter showing left/right channel audio
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
