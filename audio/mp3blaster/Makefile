@@ -63,5 +63,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/local/share/mp3blaster/win2koi.tbl|${DATADIR}/charmap/win2koi.tbl|' \
+				${WRKSRC}/doc/sample.mp3blasterrc
 
 .include <bsd.port.post.mk>
