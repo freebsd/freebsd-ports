@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	apache_fp
-PORTVERSION=	1.3.17
+PORTVERSION=	1.3.19
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.microsoft.com/products/frontpage/ \
+		ftp://www.westbend.net/Mirrors/ftp.microsoft.com/Products/frontpage/ \
 		http://www.freebsd.org/gifs/ \
 		http://officeupdate.microsoft.com/frontpage/wpp/serk/ \
-		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.microsoft.com/Products/frontpage/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
 		ftp://ftp.rge.com/pub/infosystems/apache/dist/ \
 		ftp://apache.compuex.com/pub/apache/dist/ \
@@ -36,7 +36,29 @@ MAINTAINER=	hetzels@westbend.net
 #PATCHFILES=
 
 APACHE=		${DISTNAME}${EXTRACT_SUFX}
+
+
+.if !defined(ARCH)
+ARCH!=  /usr/bin/uname -m
+.endif
+
+.if ${ARCH} == i386
+.ifdef WANT_FREEBSD_EXT
+FRONTPAGE=	fp40.freebsd.tar.z
+PKGMESSAGE=	pkg-message.freebsd
+.else
 FRONTPAGE=	fp40.bsdi.tar.z
+EXTRA_PATCHES=	${FILESDIR}/change_server.bsdi ${FILESDIR}/fp_install.bsdi
+PKGMESSAGE=	pkg-message.bsdi
+.endif
+.elif ${ARCH} == alpha
+FRONTPAGE=	fp40.alpha.tar.z
+EXTRA_PATCHES=	${FILESDIR}/change_server.alpha ${FILESDIR}/fp_install.alpha
+.else
+.BEGIN:
+	@${ECHO} "Unsupported system ${ARCH}"
+	@${FALSE}
+.endif
 
 EXTRACT_ONLY=	${APACHE}
 
@@ -130,6 +152,15 @@ pre-extract:
 	   ${ECHO} ; \
 	   ${FALSE} ; \
 	fi
+.if defined(WANT_FREEBSD_EXT) && ${ARCH} == i386
+	@if ! ${LDCONFIG} -r | ${GREP} -q -e "libc.so.3"; then \
+	   ${ECHO} ; \
+	   ${ECHO} "WARNING: MS FrontPage Extentions requires the COMPAT3X Libraries"; \
+	   ${ECHO} "  Install the COMPAT3X Libraries, then build apache-fp"; \
+	   ${ECHO} ; \
+	   ${FALSE} ; \
+	fi
+.endif
 
 post-extract:
 	@${ECHO} "===>  Extracting FrontPage install scripts"
@@ -180,5 +211,8 @@ post-install:
 	@${INSTALL_FILE} ${WRKSRC}/${CHANGESERVER} ${PREFIX}/${CHANGESERVER}-dist
 	@${INSTALL_FILE} ${WRKSRC}/${FPSETPERM} ${PREFIX}/${FPSETPERM}
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.if ${ARCH} == i386
+	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>

@@ -128,9 +128,11 @@ share/doc/apache/manual/LICENSE
 share/doc/apache/manual/bind.html
 share/doc/apache/manual/cgi_path.html
 share/doc/apache/manual/configuring.html.en
+share/doc/apache/manual/configuring.html.html
 share/doc/apache/manual/configuring.html.ja.jis
 share/doc/apache/manual/content-negotiation.html
 share/doc/apache/manual/custom-error.html.en
+share/doc/apache/manual/custom-error.html.html
 share/doc/apache/manual/custom-error.html.ja.jis
 share/doc/apache/manual/dns-caveats.html
 share/doc/apache/manual/dso.html
@@ -138,13 +140,17 @@ share/doc/apache/manual/ebcdic.html
 share/doc/apache/manual/env.html
 share/doc/apache/manual/footer.html
 share/doc/apache/manual/handler.html.en
+share/doc/apache/manual/handler.html.html
 share/doc/apache/manual/handler.html.ja.jis
 share/doc/apache/manual/header.html
 share/doc/apache/manual/howto/cgi.html.en
+share/doc/apache/manual/howto/cgi.html.html
 share/doc/apache/manual/howto/cgi.html.ja.jis
 share/doc/apache/manual/howto/footer.html
 share/doc/apache/manual/howto/header.html
-share/doc/apache/manual/howto/ssi.html
+share/doc/apache/manual/howto/ssi.html.en
+share/doc/apache/manual/howto/ssi.html.html
+share/doc/apache/manual/howto/ssi.html.ja.jis
 share/doc/apache/manual/images/apache_header.gif
 share/doc/apache/manual/images/apache_pb.gif
 share/doc/apache/manual/images/custom_errordocs.gif
@@ -159,11 +165,16 @@ share/doc/apache/manual/images/pixel.gif
 share/doc/apache/manual/images/powerlogo.gif
 share/doc/apache/manual/images/sub.gif
 share/doc/apache/manual/index.html.en
+share/doc/apache/manual/index.html.fr
+share/doc/apache/manual/index.html.html
 share/doc/apache/manual/index.html.ja.jis
 share/doc/apache/manual/install-tpf.html
 share/doc/apache/manual/install.html.en
+share/doc/apache/manual/install.html.fr
+share/doc/apache/manual/install.html.html
 share/doc/apache/manual/install.html.ja.jis
 share/doc/apache/manual/invoking.html
+share/doc/apache/manual/invoking.html.fr
 share/doc/apache/manual/keepalive.html
 share/doc/apache/manual/location.html
 share/doc/apache/manual/man-template.html
@@ -193,6 +204,7 @@ share/doc/apache/manual/misc/vif-info.html
 share/doc/apache/manual/misc/windoz_keepalive.html
 share/doc/apache/manual/mod/core.html
 share/doc/apache/manual/mod/directive-dict.html.en
+share/doc/apache/manual/mod/directive-dict.html.html
 share/doc/apache/manual/mod/directive-dict.html.ja.jis
 share/doc/apache/manual/mod/directives.html
 share/doc/apache/manual/mod/footer.html
@@ -235,6 +247,7 @@ share/doc/apache/manual/mod/mod_mime.html
 share/doc/apache/manual/mod/mod_mime_magic.html
 share/doc/apache/manual/mod/mod_mmap_static.html
 share/doc/apache/manual/mod/mod_negotiation.html.en
+share/doc/apache/manual/mod/mod_negotiation.html.html                                
 share/doc/apache/manual/mod/mod_negotiation.html.ja.jis
 share/doc/apache/manual/mod/mod_proxy.html
 share/doc/apache/manual/mod/mod_rewrite.html
@@ -247,6 +260,7 @@ share/doc/apache/manual/mod/mod_userdir.html
 share/doc/apache/manual/mod/mod_usertrack.html
 share/doc/apache/manual/mod/mod_vhost_alias.html
 share/doc/apache/manual/mod/module-dict.html.en
+share/doc/apache/manual/mod/module-dict.html.html
 share/doc/apache/manual/mod/module-dict.html.ja.jis
 share/doc/apache/manual/mpeix.html
 share/doc/apache/manual/multilogs.html
@@ -255,6 +269,7 @@ share/doc/apache/manual/new_features_1_0.html
 share/doc/apache/manual/new_features_1_1.html
 share/doc/apache/manual/new_features_1_2.html
 share/doc/apache/manual/new_features_1_3.html.en
+share/doc/apache/manual/new_features_1_3.html.html
 share/doc/apache/manual/new_features_1_3.html.ja.jis
 share/doc/apache/manual/new_features_2_0.html
 share/doc/apache/manual/process-model.html
@@ -276,6 +291,8 @@ share/doc/apache/manual/readme-tpf.html
 share/doc/apache/manual/search/manual-index.cgi
 share/doc/apache/manual/sections.html
 share/doc/apache/manual/server-wide.html.en
+share/doc/apache/manual/server-wide.html.fr
+share/doc/apache/manual/server-wide.html.html
 share/doc/apache/manual/server-wide.html.ja.jis
 share/doc/apache/manual/sourcereorg.html
 share/doc/apache/manual/stopping.html
@@ -283,6 +300,7 @@ share/doc/apache/manual/suexec.html
 share/doc/apache/manual/suexec_1_2.html
 share/doc/apache/manual/unixware.html
 share/doc/apache/manual/upgrading_to_1_3.html
+share/doc/apache/manual/urlmapping.html
 share/doc/apache/manual/vhosts/details.html
 share/doc/apache/manual/vhosts/details_1_2.html
 share/doc/apache/manual/vhosts/examples.html
@@ -291,6 +309,7 @@ share/doc/apache/manual/vhosts/footer.html
 share/doc/apache/manual/vhosts/header.html
 share/doc/apache/manual/vhosts/host.html
 share/doc/apache/manual/vhosts/index.html.en
+share/doc/apache/manual/vhosts/index.html.html
 share/doc/apache/manual/vhosts/index.html.ja.jis
 share/doc/apache/manual/vhosts/ip-based.html
 share/doc/apache/manual/vhosts/mass.html
