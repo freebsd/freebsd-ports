@@ -8,10 +8,9 @@
 
 DISTNAME=	smurflog-2.1
 CATEGORIES=	net security
-MASTER_SITES=	ftp://ftp.uni-klu.ac.at/.disk2/mirrors/internet/bitchx/files/ \
-		ftp://ftp.bitchx.org/pub/misc/                          \
+MASTER_SITES=	ftp://ftp.bitchx.org/pub/misc/                          \
 		ftp://ftp.plur.net/pub/software/bitchx/files/           \
-		http://www.nectar.cc/distfiles/
+		http://www.nectar.com/distfiles/
 
 MAINTAINER=	nectar@FreeBSD.org
 
