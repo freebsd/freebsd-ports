@@ -1,0 +1,249 @@
+%%CLI%%bin/pear
+%%CLI%%bin/php
+bin/php-config
+bin/phpextdist
+bin/phpize
+etc/php.ini-dist
+etc/php.ini-recommended
+include/php/TSRM/TSRM.h
+include/php/TSRM/acconfig.h
+include/php/TSRM/readdir.h
+include/php/TSRM/tsrm_config.h
+include/php/TSRM/tsrm_config.nw.h
+include/php/TSRM/tsrm_config.w32.h
+include/php/TSRM/tsrm_config_common.h
+include/php/TSRM/tsrm_nw.h
+include/php/TSRM/tsrm_strtok_r.h
+include/php/TSRM/tsrm_virtual_cwd.h
+include/php/TSRM/tsrm_win32.h
+include/php/Zend/FlexLexer.h
+include/php/Zend/acconfig.h
+include/php/Zend/zend.h
+include/php/Zend/zend_API.h
+include/php/Zend/zend_alloc.h
+include/php/Zend/zend_builtin_functions.h
+include/php/Zend/zend_compile.h
+include/php/Zend/zend_config.h
+include/php/Zend/zend_config.w32.h
+include/php/Zend/zend_constants.h
+include/php/Zend/zend_dynamic_array.h
+include/php/Zend/zend_errors.h
+include/php/Zend/zend_execute.h
+include/php/Zend/zend_execute_globals.h
+include/php/Zend/zend_execute_locks.h
+include/php/Zend/zend_extensions.h
+include/php/Zend/zend_fast_cache.h
+include/php/Zend/zend_globals.h
+include/php/Zend/zend_globals_macros.h
+include/php/Zend/zend_hash.h
+include/php/Zend/zend_highlight.h
+include/php/Zend/zend_indent.h
+include/php/Zend/zend_ini.h
+include/php/Zend/zend_ini_parser.h
+include/php/Zend/zend_ini_scanner.h
+include/php/Zend/zend_istdiostream.h
+include/php/Zend/zend_language_parser.h
+include/php/Zend/zend_language_scanner.h
+include/php/Zend/zend_list.h
+include/php/Zend/zend_llist.h
+include/php/Zend/zend_modules.h
+include/php/Zend/zend_multibyte.h
+include/php/Zend/zend_multiply.h
+include/php/Zend/zend_operators.h
+include/php/Zend/zend_ptr_stack.h
+include/php/Zend/zend_qsort.h
+include/php/Zend/zend_stack.h
+include/php/Zend/zend_static_allocator.h
+include/php/Zend/zend_types.h
+include/php/Zend/zend_variables.h
+include/php/acconfig.h
+include/php/ext/mbstring/cp932_table.h
+include/php/ext/mbstring/mbfilter.h
+include/php/ext/mbstring/mbfilter_cn.h
+include/php/ext/mbstring/mbfilter_ja.h
+include/php/ext/mbstring/mbfilter_kr.h
+include/php/ext/mbstring/mbfilter_ru.h
+include/php/ext/mbstring/mbfilter_tw.h
+include/php/ext/mbstring/mbregex.h
+include/php/ext/mbstring/mbstring.h
+include/php/ext/mbstring/php_mbregex.h
+include/php/ext/mbstring/php_unicode.h
+include/php/ext/mbstring/unicode_data.h
+include/php/ext/mbstring/unicode_table.h
+include/php/ext/mbstring/unicode_table_cn.h
+include/php/ext/mbstring/unicode_table_ja.h
+include/php/ext/mbstring/unicode_table_kr.h
+include/php/ext/mbstring/unicode_table_ru.h
+include/php/ext/mbstring/unicode_table_tw.h
+include/php/ext/pgsql/php_pgsql.h
+include/php/ext/session/mod_files.h
+include/php/ext/session/mod_mm.h
+include/php/ext/session/mod_user.h
+include/php/ext/session/php_session.h
+include/php/ext/standard/aggregation.h
+include/php/ext/standard/base64.h
+include/php/ext/standard/basic_functions.h
+include/php/ext/standard/crc32.h
+include/php/ext/standard/credits.h
+include/php/ext/standard/credits_ext.h
+include/php/ext/standard/credits_sapi.h
+include/php/ext/standard/css.h
+include/php/ext/standard/cyr_convert.h
+include/php/ext/standard/datetime.h
+include/php/ext/standard/dl.h
+include/php/ext/standard/dns.h
+include/php/ext/standard/exec.h
+include/php/ext/standard/file.h
+include/php/ext/standard/flock_compat.h
+include/php/ext/standard/fsock.h
+include/php/ext/standard/head.h
+include/php/ext/standard/html.h
+include/php/ext/standard/info.h
+include/php/ext/standard/md5.h
+include/php/ext/standard/microtime.h
+include/php/ext/standard/pack.h
+include/php/ext/standard/pageinfo.h
+include/php/ext/standard/parsedate.h
+include/php/ext/standard/php_array.h
+include/php/ext/standard/php_assert.h
+include/php/ext/standard/php_browscap.h
+include/php/ext/standard/php_crypt.h
+include/php/ext/standard/php_dir.h
+include/php/ext/standard/php_ext_syslog.h
+include/php/ext/standard/php_filestat.h
+include/php/ext/standard/php_fopen_wrappers.h
+include/php/ext/standard/php_ftok.h
+include/php/ext/standard/php_image.h
+include/php/ext/standard/php_incomplete_class.h
+include/php/ext/standard/php_iptc.h
+include/php/ext/standard/php_lcg.h
+include/php/ext/standard/php_link.h
+include/php/ext/standard/php_mail.h
+include/php/ext/standard/php_math.h
+include/php/ext/standard/php_metaphone.h
+include/php/ext/standard/php_parsedate.h
+include/php/ext/standard/php_rand.h
+include/php/ext/standard/php_smart_str.h
+include/php/ext/standard/php_smart_str_public.h
+include/php/ext/standard/php_standard.h
+include/php/ext/standard/php_string.h
+include/php/ext/standard/php_type.h
+include/php/ext/standard/php_var.h
+include/php/ext/standard/php_versioning.h
+include/php/ext/standard/quot_print.h
+include/php/ext/standard/reg.h
+include/php/ext/standard/scanf.h
+include/php/ext/standard/sha1.h
+include/php/ext/standard/uniqid.h
+include/php/ext/standard/url.h
+include/php/ext/standard/url_scanner.h
+include/php/ext/standard/url_scanner_ex.h
+include/php/ext/xml/expat/ascii.h
+include/php/ext/xml/expat/asciitab.h
+include/php/ext/xml/expat/expat.h
+include/php/ext/xml/expat/iasciitab.h
+include/php/ext/xml/expat/latin1tab.h
+include/php/ext/xml/expat/nametab.h
+include/php/ext/xml/expat/utf8tab.h
+include/php/ext/xml/expat/winconfig.h
+include/php/ext/xml/expat/xmlrole.h
+include/php/ext/xml/expat/xmltok.h
+include/php/ext/xml/expat/xmltok_impl.h
+include/php/ext/xml/php_xml.h
+include/php/main/SAPI.h
+include/php/main/build-defs.h
+include/php/main/config.nw.h
+include/php/main/config.w32.h
+include/php/main/fopen_wrappers.h
+include/php/main/internal_functions_registry.h
+include/php/main/logos.h
+include/php/main/php.h
+include/php/main/php3_compat.h
+include/php/main/php_compat.h
+include/php/main/php_config.h
+include/php/main/php_content_types.h
+include/php/main/php_embed.h
+include/php/main/php_globals.h
+include/php/main/php_ini.h
+include/php/main/php_logos.h
+include/php/main/php_main.h
+include/php/main/php_memory_streams.h
+include/php/main/php_network.h
+include/php/main/php_open_temporary_file.h
+include/php/main/php_output.h
+include/php/main/php_reentrancy.h
+include/php/main/php_regex.h
+include/php/main/php_scandir.h
+include/php/main/php_streams.h
+include/php/main/php_syslog.h
+include/php/main/php_ticks.h
+include/php/main/php_variables.h
+include/php/main/php_version.h
+include/php/main/rfc1867.h
+include/php/main/safe_mode.h
+include/php/main/snprintf.h
+include/php/main/spprintf.h
+include/php/main/win95nt.h
+include/php/regex/cclass.h
+include/php/regex/cname.h
+include/php/regex/regex.h
+include/php/regex/regex2.h
+include/php/regex/regex_extra.h
+include/php/regex/utils.h
+lib/php/%%EXT_DIR%%/.php
+lib/php/build/Makefile.global
+lib/php/build/acinclude.m4
+lib/php/build/mkdep.awk
+lib/php/build/phpize.m4
+lib/php/build/scan_makefile_in.awk
+lib/php/build/shtool
+%%APACHE%%%%SAPI_FILE%%
+%%APACHE%%@exec %D/sbin/apxs -e -a -n php4 %f
+%%APACHE%%@unexec %D/sbin/apxs -e -A -n php4 %f
+%%CLI%%share/pear/bootstrap/Archive/Tar.php
+%%CLI%%share/pear/bootstrap/PEAR.php
+%%CLI%%share/pear/bootstrap/System.php
+%%CLI%%share/pear/bootstrap/Console/Getopt.php
+%%CLI%%share/pear/bootstrap/OS/Guess.php
+%%CLI%%share/pear/bootstrap/PEAR/Command/Auth.php
+%%CLI%%share/pear/bootstrap/PEAR/Command/Build.php
+%%CLI%%share/pear/bootstrap/PEAR/Command/Common.php
+%%CLI%%share/pear/bootstrap/PEAR/Command/Config.php
+%%CLI%%share/pear/bootstrap/PEAR/Command/Install.php
+%%CLI%%share/pear/bootstrap/PEAR/Command/Package.php
+%%CLI%%share/pear/bootstrap/PEAR/Command/Registry.php
+%%CLI%%share/pear/bootstrap/PEAR/Command/Remote.php
+%%CLI%%share/pear/bootstrap/PEAR/Autoloader.php
+%%CLI%%share/pear/bootstrap/PEAR/Builder.php
+%%CLI%%share/pear/bootstrap/PEAR/Command.php
+%%CLI%%share/pear/bootstrap/PEAR/Common.php
+%%CLI%%share/pear/bootstrap/PEAR/Config.php
+%%CLI%%share/pear/bootstrap/PEAR/Dependency.php
+%%CLI%%share/pear/bootstrap/PEAR/Installer.php
+%%CLI%%share/pear/bootstrap/PEAR/Packager.php
+%%CLI%%share/pear/bootstrap/PEAR/Registry.php
+%%CLI%%share/pear/bootstrap/PEAR/Remote.php
+%%CLI%%share/pear/bootstrap/PEAR/Frontend/CLI.php
+@dirrm include/php/TSRM
+@dirrm include/php/Zend
+@dirrm include/php/ext/mbstring
+@dirrm include/php/ext/pgsql
+@dirrm include/php/ext/session
+@dirrm include/php/ext/standard
+@dirrm include/php/ext/xml/expat
+@dirrm include/php/ext/xml
+@dirrm include/php/ext
+@dirrm include/php/main
+@dirrm include/php/regex
+@dirrm include/php/
+@unexec rmdir %D/lib/php/%%EXT_DIR%% 2> /dev/null || true
+@dirrm lib/php/build
+@unexec rmdir %D/lib/php 2> /dev/null || true
+%%CLI%%@dirrm share/pear/bootstrap/Archive
+%%CLI%%@dirrm share/pear/bootstrap/Console
+%%CLI%%@dirrm share/pear/bootstrap/OS
+%%CLI%%@dirrm share/pear/bootstrap/PEAR/Command
+%%CLI%%@dirrm share/pear/bootstrap/PEAR/Frontend
+%%CLI%%@dirrm share/pear/bootstrap/PEAR
+%%CLI%%@dirrm share/pear/bootstrap
+%%CLI%%@unexec rmdir %D/share/pear 2> /dev/null || true
