@@ -1,6 +1,6 @@
---- src/coms/NetBuffer.h.orig	Wed Jul 30 17:41:28 2003
-+++ src/coms/NetBuffer.h	Sun Aug  3 09:07:12 2003
-@@ -23,8 +23,8 @@
+--- ./src/coms/NetBuffer.h.orig	Fri Jan 23 17:59:08 2004
++++ ./src/coms/NetBuffer.h	Fri Jan 23 18:02:09 2004
+@@ -22,8 +22,8 @@
  #define _NETBUFFER_H_
  
  #include <string>
@@ -9,5 +9,5 @@
 +#include <SDL11/SDL.h>
 +#include <SDL11/SDL_net.h>
  
- typedef TCPsocket NetPlayerID;
- 
+ class NetBuffer
+ {

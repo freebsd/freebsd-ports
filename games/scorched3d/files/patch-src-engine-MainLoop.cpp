@@ -1,11 +1,11 @@
---- src/engine/MainLoop.cpp.orig	Wed Jul 30 17:41:26 2003
-+++ src/engine/MainLoop.cpp	Sun Aug  3 09:07:12 2003
-@@ -28,7 +28,7 @@
+--- ./src/engine/MainLoop.cpp.orig	Fri Jan 23 17:59:09 2004
++++ ./src/engine/MainLoop.cpp	Fri Jan 23 18:02:17 2004
+@@ -22,7 +22,7 @@
+ #include <common/OptionsDisplay.h>
  #include <common/Defines.h>
- #include <common/Timer.h>
  #include <GLEXT/GLState.h>
 -#include <SDL/SDL.h>
 +#include <SDL11/SDL.h>
  
- //////////////////////////////////////////////////////////////////////
- // Construction/Destruction
+ MainLoop::MainLoop() :  exitLoop_(false), lastDrawTime_(0.0f)
+ {

@@ -1,5 +1,5 @@
---- Makefile.am.orig	Sun Aug  3 20:12:01 2003
-+++ Makefile.am	Sun Aug  3 20:11:43 2003
+--- Makefile.am.orig	Sat Jan 31 00:53:31 2004
++++ Makefile.am	Sat Jan 31 00:53:58 2004
 @@ -1,6 +1,6 @@
  ## Process with automake to produce Makefile.in
  

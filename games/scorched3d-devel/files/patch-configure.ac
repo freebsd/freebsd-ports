@@ -1,47 +1,28 @@
---- configure.ac.orig	Wed Jul 30 17:44:18 2003
-+++ configure.ac	Sun Aug  3 10:15:54 2003
-@@ -13,6 +13,9 @@
- AC_PROG_INSTALL
- AC_PROG_RANLIB
- 
-+CFLAGS="$CFLAGS -I/usr/X11R6/include"
-+LIBS="$LIBS -L/usr/X11R6/lib"
-+
- dnl Check for SDL
- SDL_VERSION=1.0.1
- AM_PATH_SDL($SDL_VERSION,
-@@ -28,8 +31,8 @@
+--- configure.ac.orig	Wed Jan 14 12:08:10 2004
++++ configure.ac	Sat Jan 31 18:10:28 2004
+@@ -34,8 +34,8 @@
+ dnl Check for SDL_mixer lib
  have_SDLmixer=no
- have_opengl=no  
  AC_TRY_COMPILE([
 -   	#include <SDL/SDL.h>
 -	#include <SDL/SDL_mixer.h>
 +   	#include <SDL11/SDL.h>
 +	#include <SDL11/SDL_mixer.h>
- ],[
- ],[
- have_SDLmixer=yes
-@@ -44,8 +47,8 @@
+ 
+ int main(int argc, char *argv[])
+ { return 0; }
+@@ -54,8 +54,8 @@
+ dnl Check for SDL_net lib
  have_SDLnet=no
- have_opengl=no  
  AC_TRY_COMPILE([
 -   	#include <SDL/SDL.h>
 -	#include <SDL/SDL_net.h>
 +   	#include <SDL11/SDL.h>
 +	#include <SDL11/SDL_net.h>
- ],[
- ],[
- have_SDLnet=yes
-@@ -72,7 +75,7 @@
-     AC_MSG_ERROR([*** Can't find the OpenGL library Try: http://www.opengl.org])
- fi
  
--OPENGL_LIBS="-lGL -lGLU -lpthread"
-+OPENGL_LIBS="-lGL -lGLU"
- LIBS="$LIBS $OPENGL_LIBS"
- 
- dnl Check for wxwindows
-@@ -97,9 +100,9 @@
+ int main(int argc, char *argv[])
+ { return 0; }
+@@ -144,9 +144,9 @@
  
  dnl Define install prefix 
  if test x$prefix = xNONE; then
@@ -52,4 +33,4 @@
 +AC_DEFINE_UNQUOTED(PKGDIR, "$prefix/games/$PACKAGE/", [install directory])
  
  # extra fixed flags
- CFLAGS="$CFLAGS -DdDOUBLE -D_NO_SERVER_ASE_"
+ CFLAGS="$CFLAGS -DdDOUBLE"

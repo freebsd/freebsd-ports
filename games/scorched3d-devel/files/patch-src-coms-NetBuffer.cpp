@@ -1,5 +1,5 @@
---- src/coms/NetBuffer.cpp.orig	Wed Jul 30 17:41:25 2003
-+++ src/coms/NetBuffer.cpp	Sun Aug  3 09:07:12 2003
+--- ./src/coms/NetBuffer.cpp.orig	Fri Jan 23 17:59:07 2004
++++ ./src/coms/NetBuffer.cpp	Fri Jan 23 18:02:08 2004
 @@ -20,7 +20,7 @@
  
  

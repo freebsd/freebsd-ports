@@ -1,7 +1,7 @@
---- src/common/Display.h.orig	Wed Jul 30 17:41:28 2003
-+++ src/common/Display.h	Sun Aug  3 09:07:11 2003
-@@ -27,7 +27,7 @@
- //////////////////////////////////////////////////////////////////////
+--- ./src/common/Display.h.orig	Fri Jan 23 17:59:03 2004
++++ ./src/common/Display.h	Fri Jan 23 18:01:55 2004
+@@ -23,7 +23,7 @@
+ #define _DISPLAY_H_
  
  #include <stdlib.h>
 -#include <SDL/SDL.h>

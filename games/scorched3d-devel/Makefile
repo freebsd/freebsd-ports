@@ -7,7 +7,6 @@
 
 PORTNAME=		scorched3d
 PORTVERSION=		0.${SCORCH_VERSION}
-PORTREVISION=	2
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scorched3d
@@ -18,20 +17,28 @@ COMMENT=		Scorched is a game based loosely on the classic DOS game
 
 LIB_DEPENDS=		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 
+.if defined(WITH_MYSQL)
+USE_MYSQL=		yes
+.endif
+
 USE_SDL=		mixer net sdl
-SCORCH_VERSION=		35
+SCORCH_VERSION=		36.2
 WRKSRC=			${WRKDIR}/scorched
-GNU_CONFIGURE= 		yes
+GNU_CONFIGURE=		yes
 USE_GL=			yes
 USE_GMAKE=		yes
 USE_AUTOMAKE_VER=	15
-USE_AUTOCONF_VER=	253
+USE_AUTOCONF_VER=	257
 
 AUTOMAKE_ARGS=		--foreign
 CONFIGURE_ARGS=		--with-wx-config=${X11BASE}/bin/wxgtk2-2.4-config
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_ARGS=		ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" \
 			AUTOMAKE="${TRUE}" AUTOHEADER="${TRUE}"
+
+.if defined(WITH_MYSQL)
+CONFIGURE_ARGS+=	--with-mysql
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -48,5 +55,10 @@ pre-install:
 
 post-install:
 	@ln -fs ${PREFIX}/games/scorched3d/scorched3d ${PREFIX}/bin/scorched3d
+	@chmod ugo+rw ${PREFIX}/games/scorched3d/data/display.xml
+	@chmod ugo+rw ${PREFIX}/games/scorched3d/data/server.xml
+.if defined(WITH_MYSQL)
+	@chmod ugo+rw ${PREFIX}/games/scorched3d/data/mysql.xml
+.endif
 
 .include <bsd.port.post.mk>
