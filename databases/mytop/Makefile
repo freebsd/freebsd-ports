@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mytop
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	databases
 MASTER_SITES=	http://public.yahoo.com/~jzawodn/mytop/
-DISTNAME=	mytop
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	leeym@cae.ce.ntu.edu.tw
@@ -28,11 +27,11 @@ POD2MAN?=	/usr/bin/pod2man
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	@${GUNZIP_CMD} -c ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/${DISTNAME}
-	@${POD2MAN} ${WRKDIR}/${DISTNAME} > ${WRKDIR}/${DISTNAME}.1
+	@${GUNZIP_CMD} -c ${DISTDIR}/${DISTFILES} > ${WRKDIR}/${PORTNAME}
+	@${POD2MAN} ${WRKDIR}/${PORTNAME} > ${WRKDIR}/${PORTNAME}.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}.1 ${PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKDIR}/${PORTNAME}.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
