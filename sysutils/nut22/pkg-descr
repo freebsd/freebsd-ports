@@ -5,3 +5,6 @@ special "sharing hardware" on the UPS itself. CGI scripts provided
 to monitor UPS status via WEB browser.
 
 WWW: http://www.exploits.org/nut/
+
+- Doug Barton
+DougB@FreeBSD.org
