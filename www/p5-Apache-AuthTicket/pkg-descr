@@ -1,0 +1,6 @@
+Apache::AuthTicket* modules implement a cookie-based authentication system
+similar to the ticket access system describde in the mod_perl eagle book.
+
+Author: Michael Schout
+
+--will
