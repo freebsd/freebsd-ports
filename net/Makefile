@@ -401,6 +401,7 @@
     SUBDIR += nettest
     SUBDIR += netwib
     SUBDIR += newsbot
+    SUBDIR += nfsshell
     SUBDIR += ng_daphne
     SUBDIR += ng_netflow
     SUBDIR += ngrep
