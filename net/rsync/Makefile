@@ -8,7 +8,7 @@
 
 PORTNAME=	rsync
 PORTVERSION=	2.5.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 		ftp://sunsite.auc.dk/pub/unix/rsync/  \
@@ -32,9 +32,9 @@ EXTRA_PATCHES=	${FILESDIR}/ssh-patch-*
 .endif
 
 .if ${OSVERSION} >= 400014
-CONFIGURE_ARGS=	--enable-ipv6
+CONFIGURE_ARGS=	--disable-debug --enable-ipv6
 .else
-CONFIGURE_ARGS=	--disable-ipv6
+CONFIGURE_ARGS=	--disable-debug --disable-ipv6
 .endif
 MAN1=		rsync.1
 MAN5=		rsyncd.conf.5
