@@ -1,5 +1,5 @@
---- Makefile.freebsd.orig	Fri Aug 30 04:41:24 1996
-+++ Makefile.freebsd	Fri Sep 25 02:51:25 1998
+--- Makefile.FreeBSD.orig	Fri Aug 30 04:41:24 1996
++++ Makefile.FreeBSD	Fri Sep 25 02:51:25 1998
 @@ -71,12 +71,12 @@
  
  CFILES=		cwish.c files.c movement.c commandline.c rcinit.c \
