@@ -26,6 +26,46 @@ share/apsfilter/driver/cdjmono
 share/apsfilter/driver/cjet
 share/apsfilter/driver/cljet5
 share/apsfilter/driver/deskjet
+share/apsfilter/driver/gimp/bjc-1000
+share/apsfilter/driver/gimp/bjc-2000
+share/apsfilter/driver/gimp/bjc-210
+share/apsfilter/driver/gimp/bjc-30
+share/apsfilter/driver/gimp/bjc-3000
+share/apsfilter/driver/gimp/bjc-4400
+share/apsfilter/driver/gimp/bjc-7000
+share/apsfilter/driver/gimp/bjc-8200
+share/apsfilter/driver/gimp/escp2
+share/apsfilter/driver/gimp/escp2-10000
+share/apsfilter/driver/gimp/escp2-1160
+share/apsfilter/driver/gimp/escp2-1200
+share/apsfilter/driver/gimp/escp2-1280
+share/apsfilter/driver/gimp/escp2-1500
+share/apsfilter/driver/gimp/escp2-1520
+share/apsfilter/driver/gimp/escp2-400
+share/apsfilter/driver/gimp/escp2-440
+share/apsfilter/driver/gimp/escp2-480
+share/apsfilter/driver/gimp/escp2-600
+share/apsfilter/driver/gimp/escp2-660
+share/apsfilter/driver/gimp/escp2-670
+share/apsfilter/driver/gimp/escp2-680
+share/apsfilter/driver/gimp/escp2-700
+share/apsfilter/driver/gimp/escp2-720
+share/apsfilter/driver/gimp/escp2-900
+share/apsfilter/driver/gimp/escp2-c70
+share/apsfilter/driver/gimp/escp2-photo
+share/apsfilter/driver/gimp/escp2-pro
+share/apsfilter/driver/gimp/lexmark-4076
+share/apsfilter/driver/gimp/lexmark-z52
+share/apsfilter/driver/gimp/pcl-1100
+share/apsfilter/driver/gimp/pcl-1200
+share/apsfilter/driver/gimp/pcl-1220
+share/apsfilter/driver/gimp/pcl-2
+share/apsfilter/driver/gimp/pcl-4
+share/apsfilter/driver/gimp/pcl-500
+share/apsfilter/driver/gimp/pcl-600
+share/apsfilter/driver/gimp/pcl-690
+share/apsfilter/driver/gimp/pcl-750
+share/apsfilter/driver/gimp/pcl-810
 share/apsfilter/driver/hl1240
 share/apsfilter/driver/hl1250
 share/apsfilter/driver/hl7x0
@@ -254,6 +294,7 @@ share/apsfilter/setup/printer-6.50
 share/apsfilter/setup/printer-7.00
 share/apsfilter/setup/printer-cdj
 share/apsfilter/setup/printer-epson
+share/apsfilter/setup/printer-gimp
 share/apsfilter/setup/printer-hpdj
 share/apsfilter/setup/printer-hpijs
 share/apsfilter/setup/printer-ijs
@@ -277,6 +318,7 @@ share/doc/apsfilter/handbook.html
 share/doc/apsfilter/paper
 @dirrm etc/apsfilter
 @dirrm share/apsfilter/bin
+@dirrm share/apsfilter/driver/gimp
 @dirrm share/apsfilter/driver/hpdj
 @dirrm share/apsfilter/driver/hpijs
 @dirrm share/apsfilter/driver/ijs

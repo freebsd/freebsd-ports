@@ -135,7 +135,9 @@ while [ "$1" ]; do
 		echo RUN_DEPENDS+=smbclient:${PORTSDIR}/net/samba
 		;;
 	\"BZIP2\")
-		echo RUN_DEPENDS+=bunzip2:${PORTSDIR}/archivers/bzip2
+		if [ ! -x /usr/bin/bzip2 ]; then
+			echo RUN_DEPENDS+=bunzip2:${PORTSDIR}/archivers/bzip2
+		fi
 		;;
 	\"FREEZE\")
 		echo RUN_DEPENDS+=melt:${PORTSDIR}/archivers/freeze
