@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	dsssl-docbook-modular
-PORTVERSION=	1.52
+PORTVERSION=	1.54
 CATEGORIES=	textproc
 MASTER_SITES=	http://nwalsh.com/docbook/dsssl/
-DISTNAME=	db152
+DISTNAME=	db154
 DISTFILES=	${DISTNAME}.zip ${DISTNAME}d.zip
 
 MAINTAINER=	kuriyama@FreeBSD.org
