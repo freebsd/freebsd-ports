@@ -17,12 +17,13 @@ COMMENT?=	A pager/text-based WWW browser
 
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
-W3M_VERSION=	0.5
+W3M_VERSION=	0.5.1
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="${LIBS} ${PTHREAD_LIBS}"
 
 MAN1=		w3m.1 w3mman.1
 MANLANG=	"" ja
