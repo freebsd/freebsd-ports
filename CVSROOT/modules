@@ -713,6 +713,7 @@ cdiff		ports/textproc/cdiff
 cdk		ports/devel/cdk
 cdlabelgen	ports/print/cdlabelgen
 cdoc		ports/devel/cdoc
+cdonkey		ports/net/cdonkey
 cdparanoia	ports/audio/cdparanoia
 cdpd		ports/net/cdpd
 cdplayer.app	ports/audio/cdplayer.app
