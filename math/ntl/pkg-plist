@@ -9,7 +9,6 @@ include/NTL/GF2X.h
 include/NTL/GF2XFactoring.h
 include/NTL/GF2XVec.h
 include/NTL/HNF.h
-include/NTL/IsFinite.h
 include/NTL/LLL.h
 include/NTL/RR.h
 include/NTL/WordVector.h
@@ -25,6 +24,7 @@ include/NTL/ZZ_pX.h
 include/NTL/ZZ_pXFactoring.h
 include/NTL/c_lip.h
 include/NTL/config.h
+include/NTL/ctools.h
 include/NTL/def_config.h
 include/NTL/fileio.h
 include/NTL/g_lip.h
