@@ -1,0 +1,7 @@
+Spin is an efficient on-the-fly verification system
+(a `model checker') for asynchronous concurrent systems,
+such as data communication protocols, distributed operating
+systems, database systems, etc.
+It can be used to prove both safety and liveness properties,
+including all correctness requirements expressible in linear
+time temporal logic.

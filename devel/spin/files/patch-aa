@@ -1,0 +1,8 @@
+--- ../Xspin3.2/xspin323.tcl.orig	Wed Dec 17 10:11:57 1997
++++ ../Xspin3.2/xspin323.tcl	Sun Dec 21 13:20:41 1997
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/wish -f
++#!/usr/local/bin/wish8.0 -f
+ #	Installation Notes (see also the README file):
+ # 1. On Unix systems: change the 1st above line to point to the wish
+ #    executable you want to use (e.g., wish4.2 or /usr/local/bin/wish8.0)
