@@ -34,7 +34,6 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-cyrus-group=${CYRUS_GROUP} \
 		--with-sasl=${LOCALBASE} \
 		--with-bdb-libdir=${LOCALBASE}/lib \
-		--with-auth=unix \
 		--with-com_err \
 		--with-openssl=${OPENSSLBASE} \
 		--with-perl=${PERL5}
@@ -130,6 +129,15 @@ BROKEN=		"WITH_SNMP_VER must be 4 or 5"
 CONFIGURE_ARGS+=--with-snmp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-snmp=no
+.endif
+
+.if defined(WITH_LDAP_PTLOADER)
+USE_OPENLDAP=	yes
+CONFIGURE_ARGS+=--with-auth=pts --with-pts=ldap --with-ldap=${LOCALBASE}
+PLIST_SUB+=	LDAP_PTLOADER=""
+.else
+CONFIGURE_ARGS+=--with-auth=unix
+PLIST_SUB+=	LDAP_PTLOADER="@comment "
 .endif
 
 CYRUS_USER?=	cyrus
