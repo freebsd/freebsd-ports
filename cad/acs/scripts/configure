@@ -22,8 +22,7 @@ install:
 	(cd src/FreeBSD; ${BSD_INSTALL_PROGRAM} acs ${PREFIX}/bin)
 	${BSD_INSTALL_DATA} acs.rc ${PREFIX}/share/acs
 	(cd doc; \
-		${BSD_INSTALL_DATA} acs.hlp ${PREFIX}/share/acs; \
-		${BSD_INSTALL_DATA} [b-z]* ${PREFIX}/share/doc/acs)
+		${BSD_INSTALL_DATA} [a-z]* ${PREFIX}/share/doc/acs)
 	(cd examples; ${BSD_INSTALL_DATA} *.ckt *.doc ${PREFIX}/share/examples/acs)
 
 EOF
