@@ -5,14 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	pike75
-PORTVERSION=	7.5.21
+PORTNAME=	pike76
+PORTVERSION=	7.6.3
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
-		ftp://ftp.oav.net/pike/7.5/export/ \
-		http://grendel.firewall.com/caudium-pkg/ \
+		ftp://ftp.oav.net/pike/7.6/ \
 		ftp://ftp.caudium.net/pike/official_releases/${PORTVERSION}/
-DISTNAME=	Pike-v${PORTVERSION}
+DISTNAME=	pike-${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	A dynamic programming language with a syntax similar to C++
@@ -28,11 +27,19 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 OPTIONS=	TTF "Add FreeType 1 support" on \
 		FREETYPE "Add FreeType 2 support" on \
 		OPT_CFLAGS "Enable additional compiliation optimizations" on \
-		MYSQL "Add MySQL support" on
+		MYSQL "Add MySQL support" on \
+		FFMPEG "Add FFmpeg support" off \
+		POSTGRESQL "Add Postgres SQL support" off \
+		UNIXODBC "Add UnixODBC support (incompatible with IODBC)" off \
+		IODBC "Add iODBC support (incompatible with UnixODBC)" off \
+		SANE "Add SANE support" off \
+		PDF "Add PDF support" off \
+		SVG2 "Add SVG2 support" off \
+		TDS "Add FreeTDS (Sybase and MSSQL) support" off
 
 MAN1=		pike.1
 
-WRKSRC=		${WRKDIR}/Pike-v${PORTVERSION}/src/
+WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 
 WANT_MESA=	yes
 
@@ -72,10 +79,6 @@ USE_BISON=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not build on !i386 (errors running pike binary during build)"
-.endif
-
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 # FreeBSD 5.0 Needs to have libgmp port to support gmp.
@@ -89,74 +92,6 @@ CONFIGURE_ARGS+=	--with-perl
 USE_PERL5=	YES
 .else
 CONFIGURE_ARGS+=	--without-perl
-.endif
-
-.if exists(${LOCALBASE}/lib/libavcodec.so.0)
-WITH_FFMPEG=	yes
-OPTIONS+=	FFMPEG "Add FFmpeg support" on
-.else
-OPTIONS+=	FFMPEG "Add FFmpeg support" off
-.endif
-
-.if exists(${LOCALBASE}/lib/libttf.so.4)
-WITH_TTF=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libfreetype.so.9)
-WITH_FREETYPE=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libpq.so.3)
-WITH_POSTGRES=	yes
-OPTIONS+=	POSTGRES "Add Postgres SQL support" on
-.else
-OPTIONS+=	POSTGRES "Add Postgres SQL support" off
-.endif
-
-.if exists(${LOCALBASE}/lib/libodbc.so.1)
-WITH_UNIXODBC=	yes
-OPTIONS+=	UNIXODBC "Add UnixODBC support (incompatible with IODBC)" on
-.else
-OPTIONS+=	UNIXODBC "Add UnixODBC support (incompatible with IODBC)" off
-.endif
-
-.if exists(${LOCALBASE}/lib/libiodbc.so.2)
-WITH_IODBC=	yes
-OPTIONS+=	IODBC "Add iODBC support (incompatible with UnixODBC)" on
-.else
-OPTIONS+=	IODBC "Add iODBC support (incompatible with UnixODBC)" off
-.endif
-
-.if exists(${LOCALBASE}/lib/libsane.so.1)
-WITH_SANE=	yes
-OPTIONS+=	SANE "Add SANE support" on
-.else
-OPTIONS+=	SANE "Add SANE support" off
-.endif
-
-.if exists(${LOCALBASE}/lib/libgtkgl.so.5)
-WITH_MESA=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libpdf.so.6) || exists(${LOCALBASE}/lib/libpanda.so.0)
-WITH_PDF=	yes
-OPTIONS+=	PDF "Add PDF support" on
-.else
-OPTIONS+=	PDF "Add PDF support" off
-.endif
-
-.if exists(${LOCALBASE}/lib/librsvg-2.so.2)
-WITH_SVG2=	yes
-OPTIONS+=	SVG2 "Add SVG2 support" on
-.else
-OPTIONS+=	SVG2 "Add SVG2 support" off
-.endif
-
-.if exists(${LOCALBASE}/lib/libct.so.1)
-WITH_TDS=	yes
-OPTIONS+=	TDS "Add FreeTDS (Sybase and MSSQL) support" on
-.else
-OPTIONS+=	TDS "Add FreeTDS (Sybase and MSSQL) support" off
 .endif
 
 .if defined(WITHOUT_RELOCATABLE_DUMPED_MODULES)

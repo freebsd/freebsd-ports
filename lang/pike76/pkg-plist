@@ -1,5 +1,4 @@
 bin/pike
-bin/pike12
 bin/hilfe
 pike/%%PORTVERSION%%/bin/pike
 pike/%%PORTVERSION%%/bin/pike.syms
@@ -31,9 +30,6 @@ pike/%%PORTVERSION%%/lib/modules/Yp.pmod
 pike/%%PORTVERSION%%/lib/modules/___Yp.so
 pike/%%PORTVERSION%%/lib/modules/_Charset.pmod
 pike/%%PORTVERSION%%/lib/modules/____Charset.so
-pike/%%PORTVERSION%%/lib/modules/_math.pmod
-pike/%%PORTVERSION%%/lib/modules/files.pmod
-pike/%%PORTVERSION%%/lib/modules/sprintf.pmod
 %%SYBASE:%%pike/%%PORTVERSION%%/lib/modules/sybase.so
 pike/%%PORTVERSION%%/lib/modules/Colors.pmod
 pike/%%PORTVERSION%%/lib/modules/Array.pmod
@@ -202,7 +198,6 @@ pike/%%PORTVERSION%%/lib/modules/Remote.pmod/Client.pike
 pike/%%PORTVERSION%%/lib/modules/Remote.pmod/Server.pike
 pike/%%PORTVERSION%%/lib/modules/Remote.pmod/remote.h
 pike/%%PORTVERSION%%/lib/modules/SSL.pmod/connection.pike
-pike/%%PORTVERSION%%/lib/modules/SSL.pmod/TODO
 pike/%%PORTVERSION%%/lib/modules/SSL.pmod/alert.pike
 pike/%%PORTVERSION%%/lib/modules/SSL.pmod/client.pike
 pike/%%PORTVERSION%%/lib/modules/SSL.pmod/context.pike
@@ -398,7 +393,6 @@ pike/%%PORTVERSION%%/include/pike/preprocessor.h
 pike/%%PORTVERSION%%/include/pike/program.h
 pike/%%PORTVERSION%%/include/pike/program_id.h
 pike/%%PORTVERSION%%/include/pike/queue.h
-pike/%%PORTVERSION%%/include/pike/security.h
 pike/%%PORTVERSION%%/include/pike/time_stuff.h
 pike/%%PORTVERSION%%/include/pike/stralloc.h
 pike/%%PORTVERSION%%/include/pike/stuff.h
@@ -432,5 +426,6 @@ pike/%%PORTVERSION%%/include/pike/aclocal.m4
 @dirrm pike/%%PORTVERSION%%/include
 @dirrm pike/%%PORTVERSION%%/bin
 @dirrm pike/%%PORTVERSION%%/lib
+@unexec rm -rf %D/pike/%%PORTVERSION%%/doc 2>&1 >/dev/null || true
 @dirrm pike/%%PORTVERSION%%
 @dirrm pike
