@@ -1,23 +1,29 @@
 # New ports collection makefile for:	uf-view
-# Date created:        			5 December 1994
-# Whom:				Jonathan McGee <mcgee@mcgee.student.umd.edu>
+# Date created:        			30 May 2001
+# Whom:				Jonathan McGee <mcgee@wam.umd.edu>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	uf-view
-PORTVERSION=	1.6.1
+PORTVERSION=	2.0
 CATEGORIES=	misc
-MASTER_SITES=	http://hadess.net/files/
+MASTER_SITES=	http://www.hadess.net/files/software/uf-view/
 
 MAINTAINER=	mcgee@wam.umd.edu
 
+LIB_DEPENDS=    gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2 \
+		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20 \
+		gnome-desktop-2.0:${PORTSDIR}/x11/gnomedesktop
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=      yes
+USE_GNOMENG=    yes
+USE_GNOME=      gnomeprefix gnomehack gnomehier
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=       --target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
