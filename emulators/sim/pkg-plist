@@ -1,15 +1,27 @@
-bin/altair
-bin/eclipse
-bin/h316
-bin/nova
 bin/pdp1
-bin/pdp10
-bin/pdp11
-bin/pdp15
 bin/pdp4
 bin/pdp7
 bin/pdp8
 bin/pdp9
+bin/pdp15
+bin/pdp11
+bin/pdp10
+bin/vax
+bin/nova
+bin/eclipse
+bin/h316
+bin/hp2100
+bin/i1401
+bin/i1620
 bin/s3
+bin/altair
+bin/altairz80
+bin/gri
+bin/ibm1130
+share/doc/sim/0readme_210.txt
+share/doc/sim/0readme_ethernet.txt
 share/doc/sim/simh_doc.txt
+share/doc/sim/simh_swre.txt
+share/sim/ka655.bin
 @dirrm share/doc/sim
+@dirrm share/sim

@@ -1,0 +1,188 @@
+--- makefile.orig	Tue Nov 12 20:30:36 2002
++++ makefile	Thu Nov 28 21:12:59 2002
+@@ -3,7 +3,7 @@
+ # Note: -O2 is sometimes broken in GCC when setjump/longjump is being
+ # used. Try -O2 only with released simulators.
+ #
+-CC = gcc -O2 -lm -I .
++CFLAGS+= -lm -I .
+ #CC = gcc -O2 -g -lm -I .
+ 
+ 
+@@ -138,25 +138,6 @@
+ IBM1130_OPT = -I ${IBM1130D}
+ 
+ 
+-
+-ID16D = Interdata/
+-ID16 = ${ID16D}id16_cpu.c ${ID16D}id16_sys.c ${ID16D}id_dp.c \
+-	${ID16D}id_fd.c ${ID16D}id_fp.c ${ID16D}id_idc.c ${ID16D}id_io.c \
+-	${ID16D}id_lp.c ${ID16D}id_mt.c ${ID16D}id_pas.c ${ID16D}id_pt.c \
+-	${ID16D}id_tt.c ${ID16D}id_uvc.c
+-ID16_OPT = -I ${ID16D}
+-
+-
+-
+-ID32D = Interdata/
+-ID32 = ${ID32D}id32_cpu.c ${ID32D}id32_sys.c ${ID32D}id_dp.c \
+-	${ID32D}id_fd.c ${ID32D}id_fp.c ${ID32D}id_idc.c ${ID32D}id_io.c \
+-	${ID32D}id_lp.c ${ID32D}id_mt.c ${ID32D}id_pas.c ${ID32D}id_pt.c \
+-	${ID32D}id_tt.c ${ID32D}id_uvc.c
+-ID32_OPT = -I ${ID32D}
+-
+-
+-
+ S3D = S3/
+ S3 = ${S3D}s3_cd.c ${S3D}s3_cpu.c ${S3D}s3_disk.c ${S3D}s3_lp.c \
+ 	${S3D}s3_pkb.c ${S3D}s3_sys.c
+@@ -185,13 +166,6 @@
+ 
+ 
+ 
+-SDSD = SDS/
+-SDS = ${SDSD}sds_cpu.c ${SDSD}sds_drm.c ${SDSD}sds_dsk.c ${SDSD}sds_io.c \
+-	${SDSD}sds_lp.c ${SDSD}sds_mt.c ${SDSD}sds_mux.c ${SDSD}sds_rad.c \
+-	${SDSD}sds_stddev.c ${SDSD}sds_sys.c
+-SDS_OPT = -I ${SDSD}
+-
+-
+ 
+ #
+ # Build everything
+@@ -199,8 +173,7 @@
+ all : ${BIN}pdp1 ${BIN}pdp4 ${BIN}pdp7 ${BIN}pdp8 ${BIN}pdp9 ${BIN}pdp15 \
+ 	${BIN}pdp11 ${BIN}pdp10 ${BIN}vax ${BIN}nova ${BIN}eclipse ${BIN}h316 \
+ 	${BIN}hp2100 ${BIN}i1401 ${BIN}i1620 ${BIN}s3 ${BIN}altair \
+-	${BIN}altairz80 ${BIN}gri ${BIN}i1620 ${BIN}ibm1130 \
+-	${BIN}id16 ${BIN}id32 ${BIN}sds
++	${BIN}altairz80 ${BIN}gri ${BIN}i1620 ${BIN}ibm1130
+ 
+ 
+ 
+@@ -208,106 +181,98 @@
+ # Individual builds
+ #
+ ${BIN}pdp1 : ${PDP1} ${SIM}
+-	${CC} ${PDP1} ${SIM} ${PDP1_OPT} -o $@
++	${CC} ${CFLAGS} ${PDP1} ${SIM} ${PDP1_OPT} -o $@
+ 
+ 
+ 
+ ${BIN}pdp4 : ${PDP18B} ${SIM}
+-	${CC} ${PDP18B} ${SIM} ${PDP4_OPT} -o $@
++	${CC} ${CFLAGS} ${PDP18B} ${SIM} ${PDP4_OPT} -o $@
+ 
+ 
+ 
+ ${BIN}pdp7 : ${PDP18B} ${SIM}
+-	${CC} ${PDP18B} ${SIM} ${PDP7_OPT} -o $@
++	${CC} ${CFLAGS} ${PDP18B} ${SIM} ${PDP7_OPT} -o $@
+ 
+ 
+ 
+ ${BIN}pdp8 : ${PDP8} ${SIM}
+-	${CC} ${PDP8} ${SIM} ${PDP8_OPT} -o $@
++	${CC} ${CFLAGS} ${PDP8} ${SIM} ${PDP8_OPT} -o $@
+ 
+ 
+ 
+ ${BIN}pdp9 : ${PDP18B} ${SIM}
+-	${CC} ${PDP18B} ${SIM} ${PDP9_OPT} -o $@
++	${CC} ${CFLAGS} ${PDP18B} ${SIM} ${PDP9_OPT} -o $@
+ 
+ 
+ 
+ ${BIN}pdp15 : ${PDP18B} ${SIM}
+-	${CC} ${PDP18B} ${SIM} ${PDP15_OPT} -o $@
++	${CC} ${CFLAGS} ${PDP18B} ${SIM} ${PDP15_OPT} -o $@
+ 
+ 
+ 
+ ${BIN}pdp10 : ${PDP10} ${SIM}
+-	${CC} ${PDP10} ${SIM} ${PDP10_OPT} -o $@
++	${CC} ${CFLAGS} ${PDP10} ${SIM} ${PDP10_OPT} -o $@
+ 
+ 
+ 
+ ${BIN}pdp11 : ${PDP11} ${SIM}
+-	${CC} ${PDP11} ${SIM} ${PDP11_OPT} -o $@
++	${CC} ${CFLAGS} ${PDP11} ${SIM} ${PDP11_OPT} -o $@
+ 
+ 
+ 
+ ${BIN}vax : ${VAX} ${SIM}
+-	${CC} ${VAX} ${SIM} ${VAX_OPT} -o $@
++	${CC} ${CFLAGS} ${VAX} ${SIM} ${VAX_OPT} -o $@
+ 
+ 
+ 
+ ${BIN}nova : ${NOVA} ${SIM}
+-	${CC} ${NOVA} ${SIM} ${NOVA_OPT} -o $@
++	${CC} ${CFLAGS} ${NOVA} ${SIM} ${NOVA_OPT} -o $@
+ 
+ 
+ 
+ ${BIN}eclipse : ${ECLIPSE} ${SIM}
+-	${CC} ${ECLIPSE} ${SIM} ${ECLIPSE_OPT} -o $@
++	${CC} ${CFLAGS} ${ECLIPSE} ${SIM} ${ECLIPSE_OPT} -o $@
+ 
+ 
+ 
+ ${BIN}h316 : ${H316} ${SIM}
+-	${CC} ${H316} ${SIM} ${H316_OPT} -o $@
++	${CC} ${CFLAGS} ${H316} ${SIM} ${H316_OPT} -o $@
+ 
+ 
+ 
+ ${BIN}hp2100 : ${HP2100} ${SIM}
+-	${CC} ${HP2100} ${SIM} ${HP2100_OPT} -o $@
++	${CC} ${CFLAGS} ${HP2100} ${SIM} ${HP2100_OPT} -o $@
+ 
+ 
+ 
+ ${BIN}i1401 : ${I1401} ${SIM}
+-	${CC} ${I1401} ${SIM} ${I1401_OPT} -o $@
++	${CC} ${CFLAGS} ${I1401} ${SIM} ${I1401_OPT} -o $@
+ 
+ 
+ 
+ ${BIN}i1620 : ${I1620} ${SIM}
+-	${CC} ${I1620} ${SIM} ${I1620_OPT} -o $@
++	${CC} ${CFLAGS} ${I1620} ${SIM} ${I1620_OPT} -o $@
+ 
+ 
+ ${BIN}ibm1130 : ${IBM1130}
+-	${CC} ${IBM1130} ${SIM} ${IBM1130_OPT} -o $@
++	${CC} ${CFLAGS} ${IBM1130} ${SIM} ${IBM1130_OPT} -o $@
+ 
+ 
+ ${BIN}s3 : ${S3} ${SIM}
+-	${CC} ${S3} ${SIM} ${S3_OPT} -o $@
++	${CC} ${CFLAGS} ${S3} ${SIM} ${S3_OPT} -o $@
+ 
+ 
+ ${BIN}altair : ${ALTAIR} ${SIM}
+-	${CC} ${ALTAIR} ${SIM} ${ALTAIR_OPT} -o $@
++	${CC} ${CFLAGS} ${ALTAIR} ${SIM} ${ALTAIR_OPT} -o $@
+ 
+ 
+ ${BIN}altairz80 : ${ALTAIRZ80} ${SIM} ${ALTAIRZ80D}altairZ80_defs.h
+-	${CC} ${ALTAIRZ80_OPT} ${ALTAIRZ80} ${SIM} -o $@
++	${CC} ${CFLAGS} ${ALTAIRZ80_OPT} ${ALTAIRZ80} ${SIM} -o $@
+ ${ALTAIRZ80D}altairZ80_defs.h : ${ALTAIRZ80D}altairz80_defs.h
+ 	cp ${ALTAIRZ80D}altairz80_defs.h ${ALTAIRZ80D}altairZ80_defs.h
+ 
+ ${BIN}gri : ${GRI} ${SIM}
+-	${CC} ${GRI} ${SIM} ${GRI_OPT} -o $@
+-
+-${BIN}id16 : ${ID16} ${SIM}
+-	${CC} ${ID16} ${SIM} ${ID16_OPT} -o $@
+-
+-${BIN}id32 : ${ID32} ${SIM}
+-	${CC} ${ID32} ${SIM} ${ID32_OPT} -o $@
++	${CC} ${CFLAGS} ${GRI} ${SIM} ${GRI_OPT} -o $@
+ 
+-${BIN}sds : ${SDS} ${SIM}
+-	${CC} ${SDS} ${SIM} ${SDS_OPT} -o $@
+ 
+ 
