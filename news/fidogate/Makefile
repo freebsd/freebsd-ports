@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fidogate
-PORTVERSION=	4.4.4
+PORTVERSION=	4.4.5
 CATEGORIES=	news mail
 MASTER_SITES=	ftp://ftp.fidogate.org/pub/fidogate/ \
 		ftp://ftp.fu-berlin.de/unix/news/fidogate/ \
