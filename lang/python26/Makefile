@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.5 1996/05/11 23:34:13 jkh Exp $
+# $Id: Makefile,v 1.6 1996/08/17 15:39:33 chuckr Exp $
 #
 
 DISTNAME=       python1.3
@@ -14,8 +14,7 @@ MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 
 MAINTAINER=	jkh@FreeBSD.org
 
-LIB_DEPENDS=	tcl75\\.1\\.:${PORTSDIR}/lang/tcl75 \
-		tk41\\.1\\.:${PORTSDIR}/x11/tk41
+LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 
 WRKSRC=		${WRKDIR}/Python-1.3
 HAS_CONFIGURE=	yes
