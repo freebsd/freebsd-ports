@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ "$2" != "POST-INSTALL" ]; then
+	exit 0
+fi
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/X11R6}
+
+XINITCONFDIR=${PKG_PREFIX}/lib/X11/fs
+if [ ! -f ${XINITCONFDIR}/config ]; then
+	cp ${XINITCONFDIR}/config.default ${XINITCONFDIR}/config
+fi
