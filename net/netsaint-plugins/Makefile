@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-1.2.9-4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugins for netsaint
 
+DEPRECATED=	Projects renamed to nagios. Use net/nagios-plugins instead.
+EXPIRATION_DATE=	2004-03-20
+
 USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
