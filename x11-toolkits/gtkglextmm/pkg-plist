@@ -62,12 +62,15 @@ share/doc/gtkglextmm-1.0/html/classGdk_1_1GL_1_1Font-members.html
 share/doc/gtkglextmm-1.0/html/classGdk_1_1GL_1_1Font.html
 share/doc/gtkglextmm-1.0/html/classGdk_1_1GL_1_1Pixmap-members.html
 share/doc/gtkglextmm-1.0/html/classGdk_1_1GL_1_1Pixmap.html
+share/doc/gtkglextmm-1.0/html/classGdk_1_1GL_1_1Pixmap__coll__graph.png
 share/doc/gtkglextmm-1.0/html/classGdk_1_1GL_1_1Pixmap__inherit__graph.png
 share/doc/gtkglextmm-1.0/html/classGdk_1_1GL_1_1Window-members.html
 share/doc/gtkglextmm-1.0/html/classGdk_1_1GL_1_1Window.html
+share/doc/gtkglextmm-1.0/html/classGdk_1_1GL_1_1Window__coll__graph.png
 share/doc/gtkglextmm-1.0/html/classGdk_1_1GL_1_1Window__inherit__graph.png
 share/doc/gtkglextmm-1.0/html/classGtk_1_1GL_1_1DrawingArea-members.html
 share/doc/gtkglextmm-1.0/html/classGtk_1_1GL_1_1DrawingArea.html
+share/doc/gtkglextmm-1.0/html/classGtk_1_1GL_1_1DrawingArea__coll__graph.png
 share/doc/gtkglextmm-1.0/html/classGtk_1_1GL_1_1DrawingArea__inherit__graph.png
 share/doc/gtkglextmm-1.0/html/classGtk_1_1GL_1_1Widget-members.html
 share/doc/gtkglextmm-1.0/html/classGtk_1_1GL_1_1Widget.html
@@ -99,6 +102,8 @@ share/doc/gtkglextmm-1.0/html/font_8h.html
 share/doc/gtkglextmm-1.0/html/font_8h__dep__incl.png
 share/doc/gtkglextmm-1.0/html/font_8h__incl.png
 share/doc/gtkglextmm-1.0/html/functions.html
+share/doc/gtkglextmm-1.0/html/functions_func.html
+share/doc/gtkglextmm-1.0/html/functions_rela.html
 share/doc/gtkglextmm-1.0/html/gdkglext_2gdkmm_2gl_2defs_8h-source.html
 share/doc/gtkglextmm-1.0/html/gdkglext_2gdkmm_2gl_2defs_8h.html
 share/doc/gtkglextmm-1.0/html/gdkglext_2gdkmm_2gl_2defs_8h__dep__incl.png
@@ -116,6 +121,8 @@ share/doc/gtkglextmm-1.0/html/gdkglmm_8h__dep__incl.png
 share/doc/gtkglextmm-1.0/html/gdkglmm_8h__incl.png
 share/doc/gtkglextmm-1.0/html/gears_8cc-example.html
 share/doc/gtkglextmm-1.0/html/globals.html
+share/doc/gtkglextmm-1.0/html/globals_defs.html
+share/doc/gtkglextmm-1.0/html/globals_vars.html
 share/doc/gtkglextmm-1.0/html/graph_legend.dot
 share/doc/gtkglextmm-1.0/html/graph_legend.html
 share/doc/gtkglextmm-1.0/html/graph_legend.png
@@ -152,6 +159,10 @@ share/doc/gtkglextmm-1.0/html/namespaceGlib.html
 share/doc/gtkglextmm-1.0/html/namespaceGtk.html
 share/doc/gtkglextmm-1.0/html/namespaceGtk_1_1GL.html
 share/doc/gtkglextmm-1.0/html/namespacemembers.html
+share/doc/gtkglextmm-1.0/html/namespacemembers_enum.html
+share/doc/gtkglextmm-1.0/html/namespacemembers_eval.html
+share/doc/gtkglextmm-1.0/html/namespacemembers_func.html
+share/doc/gtkglextmm-1.0/html/namespacemembers_vars.html
 share/doc/gtkglextmm-1.0/html/namespaces.html
 share/doc/gtkglextmm-1.0/html/pixmap-mixed_8cc-example.html
 share/doc/gtkglextmm-1.0/html/pixmap_8cc-example.html
