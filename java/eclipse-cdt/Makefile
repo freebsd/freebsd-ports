@@ -6,36 +6,27 @@
 #
 
 PORTNAME=	cdt
-PORTVERSION=	2.0
+PORTVERSION=	2.0.2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/tools/cdt/releases/new/zips/
 PKGNAMEPREFIX=	eclipse-
-DISTNAME=	org.eclipse.cdt-${PORTVERSION}-linux.${ECLIPSE_WS}.${ECLIPSE_ARCH}
+DISTNAME=	org.eclipse.cdt-${PORTVERSION}-linux.${ECLIPSE_ARCH}
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	java@freebsd.org
 COMMENT=	C/C++ IDE for Eclipse
 
-RUN_DEPENDS=	${LOCALBASE}/eclipse/plugins/org.eclipse.swt.${ECLIPSE_WS}_3.0.0/ws/${ECLIPSE_WS}/swt.jar:${ECLIPSE_TARGET}
+RUN_DEPENDS=	${LOCALBASE}/eclipse:${PORTSDIR}/java/eclipse
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
+JAVA_OS=	native
+PLIST_SUB=	RELEASEVERSION=${PORTVERSION}
 
-ECLIPSE_ARCH=x86
-ECLIPSE_TARGET=	${PORTSDIR}/java/eclipse
-
-.if defined(WITH_MOTIF)
-ECLIPSE_WS=	motif
-USE_MOTIF=	yes
-PLIST_SUB=	WITH_GTK="@comment "
-.else
-ECLIPSE_WS=	gtk
-USE_GTK=	yes
-PLIST_SUB=	WITH_GTK=""
-.endif
+ECLIPSE_ARCH=	x86
 
 do-install:
 		@${MKDIR} ${PREFIX}/eclipse
