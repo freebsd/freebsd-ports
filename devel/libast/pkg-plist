@@ -1,0 +1,6 @@
+bin/libast-config
+bin/libast-test
+include/libast.h
+lib/libast.a
+lib/libast.so
+lib/libast.so.1

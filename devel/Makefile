@@ -202,6 +202,7 @@
     SUBDIR += leoarg
     SUBDIR += libPropList
     SUBDIR += libU77
+    SUBDIR += libast
     SUBDIR += libavl
     SUBDIR += libcache
     SUBDIR += libcii
