@@ -22,7 +22,8 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Dprivlib=${PREFIX}/lib/perl5/${PERL_VER} \
 	-Dman3dir=${PREFIX}/lib/perl5/${PERL_VER}/man/man3 \
 	-Dsitearch=${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH} \
-	-Dsitelib=${PREFIX}/lib/perl5/site_perl/${PERL_VER}
+	-Dsitelib=${PREFIX}/lib/perl5/site_perl/${PERL_VER} \
+	-Ui_gdbm
 INSTALLS_SHLIB=	yes
 
 INCLUDEDIR=	/usr/include
@@ -81,7 +82,7 @@ MAN3=	AnyDBM_File.3 AutoLoader.3 AutoSplit.3 B.3 B::Asmdata.3 \
 	File::Spec::Functions.3 File::Spec::Mac.3 File::Spec::OS2.3 \
 	File::Spec::Unix.3 File::Spec::VMS.3 File::Spec::Win32.3 \
 	File::Temp.3 File::stat.3 FileCache.3 FileHandle.3 FindBin.3 \
-	GDBM_File.3 Getopt::Long.3 Getopt::Std.3 I18N::Collate.3 \
+	Getopt::Long.3 Getopt::Std.3 I18N::Collate.3 \
 	IO.3 IO::Dir.3 IO::File.3 IO::Handle.3 IO::Pipe.3 IO::Poll.3 \
 	IO::Seekable.3 IO::Select.3 IO::Socket.3 IO::Socket::INET.3 \
 	IO::Socket::UNIX.3 IPC::Msg.3 IPC::Open2.3 IPC::Open3.3 \

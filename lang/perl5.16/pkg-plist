@@ -282,7 +282,6 @@ lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/DynaLoader.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Errno.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Fcntl.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Glob.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/GDBM_File.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/Dir.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO/File.pm
@@ -331,9 +330,6 @@ lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Fcntl/Fcntl.so
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Glob/Glob.bs
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Glob/Glob.so
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Glob/autosplit.ix
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.bs
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/autosplit.ix
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/IO.bs
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/IO.so
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/SysV/SysV.bs
