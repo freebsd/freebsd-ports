@@ -3,12 +3,12 @@
 # Date created:				10 December 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/27 10:51:22 tg Exp $
+# $Id: Makefile,v 1.2 1998/03/28 19:37:51 asami Exp $
 #
 
 DISTNAME=		ptoc
 PKGNAME=		ptoc-2.01
-CATEGORIES=		devel converters x11
+CATEGORIES=		lang
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/pascal
 EXTRACT_SUFX=		.tgz
