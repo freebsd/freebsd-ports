@@ -1,0 +1,10 @@
+GNUMail.app is a clone of NeXT's excellent Mail.app application.
+It uses the GNUstep development framework, which is based on the
+OpenStep specification provided by NeXT, Inc.. GNUMail.app is
+licensed under the GPL, and the full sources of the application
+are available.
+
+GNUMail.app was written mostly from scratch though it does use some
+code from elm and mpack/munpack.
+
+WWW: http://www.collaboration-world.com/gnumail/

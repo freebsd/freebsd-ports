@@ -1,0 +1,29 @@
+Local/Apps/GNUMail.app/GNUMail
+Local/Apps/GNUMail.app/Resources/GNUMail.tiff
+Local/Apps/GNUMail.app/Resources/Info-gnustep.plist
+Local/Apps/GNUMail.app/Resources/Magnifier.tiff
+Local/Apps/GNUMail.app/Resources/MailIcon_addresses.tiff
+Local/Apps/GNUMail.app/Resources/MailIcon_attach.tiff
+Local/Apps/GNUMail.app/Resources/MailIcon_box_add.tiff
+Local/Apps/GNUMail.app/Resources/MailIcon_box_delete.tiff
+Local/Apps/GNUMail.app/Resources/MailIcon_box_open.tiff
+Local/Apps/GNUMail.app/Resources/MailIcon_box_transfer.tiff
+Local/Apps/GNUMail.app/Resources/MailIcon_create.tiff
+Local/Apps/GNUMail.app/Resources/MailIcon_delete.tiff
+Local/Apps/GNUMail.app/Resources/MailIcon_forward.tiff
+Local/Apps/GNUMail.app/Resources/MailIcon_mailboxes.tiff
+Local/Apps/GNUMail.app/Resources/MailIcon_prefs_quote.tiff
+Local/Apps/GNUMail.app/Resources/MailIcon_reply.tiff
+Local/Apps/GNUMail.app/Resources/MailIcon_retrieve.tiff
+Local/Apps/GNUMail.app/Resources/MailIcon_send.tiff
+Local/Apps/GNUMail.app/Resources/down.tiff
+Local/Apps/GNUMail.app/Resources/pgp-mail.tiff
+Local/Apps/GNUMail.app/Resources/up.tiff
+Local/Apps/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/GNUMail
+Local/Apps/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+@dirrm Local/Apps/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm Local/Apps/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm Local/Apps/GNUMail.app/%%GNU_ARCH%%
+@dirrm Local/Apps/GNUMail.app/Resources
+@dirrm Local/Apps/GNUMail.app
+@dirrm Local/Apps
