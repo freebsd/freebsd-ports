@@ -1,0 +1,8 @@
+--- Imakefile.org	Thu Mar  6 22:54:29 1997
++++ Imakefile	Wed Oct 25 02:08:11 2000
+@@ -13,4 +13,4 @@
+ INSTALLFLAGS=-c -m 2755
+ #endif
+ 
+-ComplexProgramTarget(xbatt)
++ComplexProgramTargetNoMan(xbatt)
