@@ -1,17 +1,14 @@
 
 $FreeBSD$
 
---- doc/Makefile.in.orig	Wed Jul  3 23:01:49 2002
-+++ doc/Makefile.in	Sat Jul  6 17:10:19 2002
-@@ -126,9 +126,9 @@
+--- doc/Makefile.in.orig	Sat Oct  5 01:22:15 2002
++++ doc/Makefile.in	Sat Oct  5 01:23:02 2002
+@@ -135,7 +135,7 @@
  
- AUTOMAKE_OPTIONS = foreign
- 
--SUBDIRS = . images ru
-+SUBDIRS = . images
+ SUBDIRS = . html
  
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
 +docdir = $(datadir)/doc/$(PACKAGE)
  
  doc_DATA = \
- 	comparison.html \
+ 	FLAC.tag

@@ -1,0 +1,22 @@
+
+$FreeBSD$
+
+--- src/Makefile.in.orig	Sat Oct  5 02:34:48 2002
++++ src/Makefile.in	Sat Oct  5 02:35:21 2002
+@@ -131,7 +131,7 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+-@FLaC__HAS_XMMS_TRUE@XMMS_DIRS = plugin_xmms
++@FLaC__HAS_XMMS_TRUE@XMMS_DIRS = plugin_common plugin_xmms
+ 
+ @FLaC__HAS_OGG_TRUE@OGGFLAC_DIRS = libOggFLAC libOggFLAC++
+ @FLaC__HAS_OGG_TRUE@OGGFLAC_TEST_DIRS = test_libOggFLAC test_libOggFLAC++
+@@ -144,7 +144,6 @@
+ 	flac \
+ 	metaflac \
+ 	monkeys_audio_utilities \
+-	plugin_common \
+ 	$(XMMS_DIRS) \
+ 	plugin_winamp2 \
+ 	plugin_winamp3 \

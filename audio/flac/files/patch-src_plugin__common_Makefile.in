@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/plugin_common/Makefile.in.orig	Sat Oct  5 02:24:40 2002
++++ src/plugin_common/Makefile.in	Sat Oct  5 02:27:47 2002
+@@ -169,7 +169,7 @@
+ @AMDEP_TRUE@	./$(DEPDIR)/id3v1.Po ./$(DEPDIR)/id3v2.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/vorbiscomment.Po
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+-	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
++	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -fPIC
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
+ 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
