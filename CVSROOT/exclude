@@ -2,6 +2,7 @@
 # $FreeBSD$
 #
 ^src/contrib/.*/FREEBSD-Xlist
+^src/contrib/nvi/catalogs
 ^src/etc/motd
 ^src/lib/libc_r/test/.*\.exp
 ^src/share/examples/cvsup/refuse
