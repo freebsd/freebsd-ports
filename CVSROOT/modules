@@ -2527,6 +2527,7 @@ gnomegames2	ports/games/gnomegames2
 gnomehier	ports/misc/gnomehier
 gnomeiconedit	ports/graphics/gnomeiconedit
 gnomeicu2	ports/net/gnomeicu2
+gnomekeyring	ports/security/gnomekeyring
 gnomekiss	ports/games/gnomekiss
 gnomelibs	ports/x11/gnomelibs
 gnomemag	ports/accessibility/gnomemag
