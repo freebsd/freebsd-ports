@@ -18,7 +18,7 @@ COMMENT=	OpenGL hardware acceleration drivers for the DRI
 
 EXTRA_PATCHES+=		${CF_PATCHES}
 
-ONLY_FOR_ARCHS=		i386 alpha
+ONLY_FOR_ARCHS=		i386 alpha amd64
 
 XBUILD_DIRS=		lib/GL
 XINSTALL_DIRS=		lib/GL/mesa/src/drv
