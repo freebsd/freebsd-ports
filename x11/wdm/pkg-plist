@@ -11,7 +11,7 @@ lib/X11/wdm/Xservers.fs
 lib/X11/wdm/Xservers.ws
 lib/X11/wdm/Xsession
 lib/X11/wdm/Xsession.XFree86
-lib/X11/wdm/Xsession.in
+lib/X11/wdm/Xsession.orig
 @unexec if cmp -s %D/lib/X11/wdm/Xsetup_0.dist %D/lib/X11/wdm/Xsetup_0; then rm -f %D/lib/X11/wdm/Xsetup_0; fi
 lib/X11/wdm/Xsetup_0.dist
 @exec [ -f %D/lib/X11/wdm/Xsetup_0 ] || (cp %D/lib/X11/wdm/Xsetup_0.dist %D/lib/X11/wdm/Xsetup_0)
@@ -19,7 +19,6 @@ lib/X11/wdm/pixmaps/Eagle.xpm
 lib/X11/wdm/pixmaps/Earth.jpg
 lib/X11/wdm/pixmaps/Earth200x130.xpm
 lib/X11/wdm/pixmaps/GnuLinux-logo.jpg
-lib/X11/wdm/pixmaps/README
 lib/X11/wdm/pixmaps/Stars.jpg
 lib/X11/wdm/pixmaps/StarsLogo.jpg
 lib/X11/wdm/pixmaps/beastie.xpm
@@ -30,6 +29,9 @@ lib/X11/wdm/wdm-config.dist
 @exec [ -f %D/lib/X11/wdm/wdm-config ] || (cp %D/lib/X11/wdm/wdm-config.dist %D/lib/X11/wdm/wdm-config)
 lib/X11/wdm/wdm-config.in
 lib/X11/wdm/wdmReconfig
+share/locale/de/LC_MESSAGES/wdm.mo
+share/locale/ja/LC_MESSAGES/wdm.mo
+share/locale/ru/LC_MESSAGES/wdm.mo
 @unexec rmdir %D/lib/X11/wdm/pixmaps 2>/dev/null || true
 @exec mkdir -p %D/lib/X11/wdm/authdir
 @unexec rmdir %D/lib/X11/wdm/authdir/authfiles 2>/dev/null || true
