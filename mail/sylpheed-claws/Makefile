@@ -7,6 +7,7 @@
 
 PORTNAME=	sylpheed-claws
 PORTVERSION=	0.9.13
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -198,6 +199,11 @@ post-install:
 		maildir2sylpheed.pl multiwebsearch.conf multiwebsearch.pl \
 		nautilus2sylpheed.sh outlook2sylpheed.pl tb2sylpheed\
 		textviewer.sh update-po uudec vcard2xml.py ${DATADIR}
+
+.if ${HAVE_GNOME:Mgnomehier} != ""
+	@${INSTALL_DATA} ${WRKSRC}/sylpheed.desktop ${PREFIX}/share/gnome/apps/Internet/sylpheed-claws.desktop
+.endif
+
 .if !defined(WITHOUT_THEMES)
 	@${MKDIR} ${DATADIR}/themes
 	@cd ${WRKDIR}/${THEMEFILE:C/.tar.gz//} && ${FIND} . -print | \
