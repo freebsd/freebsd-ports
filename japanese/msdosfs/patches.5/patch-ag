@@ -1,6 +1,15 @@
 --- msdosfs_vnops.c.orig	Mon Apr 10 04:32:37 2000
-+++ msdosfs_vnops.c	Wed Oct  4 00:50:29 2000
-@@ -59,6 +59,7 @@
++++ msdosfs_vnops.c	Mon Oct  9 23:15:12 2000
+@@ -50,15 +50,13 @@
+ 
+ #include "opt_msdosfs.h"
+ 
+-/*
+- * System include files.
+- */
+ #include <sys/param.h>
+ #include <sys/systm.h>
+ #include <sys/namei.h>
  #include <sys/resourcevar.h>	/* defines plimit structure in proc struct */
  #include <sys/kernel.h>
  #include <sys/stat.h>
@@ -8,15 +17,37 @@
  #include <sys/buf.h>
  #include <sys/proc.h>
  #include <sys/mount.h>
-@@ -70,7 +71,6 @@
+@@ -70,12 +68,10 @@
  
  #include <vm/vm.h>
  #include <vm/vm_extern.h>
 -#include <vm/vm_zone.h>
  #include <vm/vnode_pager.h>
  
- /*
-@@ -260,10 +260,7 @@
+-/*
+- * MSDOSFS include files.
+- */
++#include <machine/mutex.h>
++
+ #include <msdosfs/bpb.h>
+ #include <msdosfs/direntry.h>
+ #include <msdosfs/denode.h>
+@@ -239,12 +235,12 @@
+ 	struct denode *dep = VTODE(vp);
+ 	struct timespec ts;
+ 
+-	simple_lock(&vp->v_interlock);
++	mtx_enter(&vp->v_interlock, MTX_DEF);
+ 	if (vp->v_usecount > 1) {
+ 		getnanotime(&ts);
+ 		DETIMES(dep, &ts, &ts, &ts);
+ 	}
+-	simple_unlock(&vp->v_interlock);
++	mtx_exit(&vp->v_interlock, MTX_DEF);
+ 	return 0;
+ }
+ 
+@@ -260,10 +256,7 @@
  	struct vnode *vp = ap->a_vp;
  	struct denode *dep = VTODE(ap->a_vp);
  	struct msdosfsmount *pmp = dep->de_pmp;
@@ -28,7 +59,7 @@
  
  	file_mode = (S_IXUSR|S_IXGRP|S_IXOTH) | (S_IRUSR|S_IRGRP|S_IROTH) |
  	    ((dep->de_Attributes & ATTR_READONLY) ? 0 : (S_IWUSR|S_IWGRP|S_IWOTH));
-@@ -287,43 +284,8 @@
+@@ -287,43 +280,8 @@
  		}
  	}
  
@@ -74,7 +105,7 @@
  }
  
  static int
-@@ -974,11 +936,6 @@
+@@ -974,11 +932,6 @@
   *
   * On exit:
   *	all denodes should be released
@@ -86,7 +117,7 @@
   */
  static int
  msdosfs_rename(ap)
-@@ -1108,7 +1065,6 @@
+@@ -1108,7 +1061,6 @@
  	VOP_UNLOCK(fvp, 0, p);
  	if (VTODE(fdvp)->de_StartCluster != VTODE(tdvp)->de_StartCluster)
  		newparent = 1;
@@ -94,7 +125,7 @@
  	if (doingdirectory && newparent) {
  		if (error)	/* write access check above */
  			goto bad;
-@@ -1176,7 +1132,8 @@
+@@ -1176,7 +1128,8 @@
  		panic("msdosfs_rename: lost from startdir");
  	if (!newparent)
  		VOP_UNLOCK(tdvp, 0, p);
@@ -104,7 +135,7 @@
  	if (fvp == NULL) {
  		/*
  		 * From name has disappeared.
-@@ -1856,15 +1813,15 @@
+@@ -1856,15 +1809,15 @@
  		error = pcbmap(dep, bp->b_lblkno, &bp->b_blkno, 0, 0);
  		if (error) {
  			bp->b_error = error;
