@@ -27,5 +27,10 @@ post-patch:
 .if ${OSVERSION} < 500028
 	${ECHO_CMD} "#include <sys/types.h>" > ${WRKSRC}/src/stdint.h
 .endif
+.if defined(WITH_LAYOUT_390)
+	${REINPLACE_CMD} -e 's,2qwerty,39qwerty,g' ${WRKSRC}/src/ui.c
+.elif defined(WITH_LAYOUT_3FINAL)
+	${REINPLACE_CMD} -e 's,2qwerty,3fqwerty,g' ${WRKSRC}/src/ui.c
+.endif
 
 .include <bsd.port.post.mk>
