@@ -56,6 +56,7 @@
     SUBDIR += tRNAscan-SE
     SUBDIR += t_coffee
     SUBDIR += tinker
+    SUBDIR += treepuzzle
     SUBDIR += treeviewx
     SUBDIR += wise
     SUBDIR += xdrawchem
