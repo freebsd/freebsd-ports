@@ -9,7 +9,7 @@ PORTNAME=	icecast
 PORTVERSION=	1.3.12
 PORTREVISION=	2
 CATEGORIES=	audio net
-MASTER_SITES=	http://www.icecast.org/files/
+MASTER_SITES=	http://downloads.xiph.org/releases/icecast/
 
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	A streaming mp3 audio server
