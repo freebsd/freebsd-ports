@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2001/07/24 11:40:27	1.1
++++ Makefile.in	2001/07/24 11:40:57
+@@ -148,7 +148,7 @@
+ 
+ SUBDIRS = po intl src idl
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = gnome_buildConf.sh
+ 
+ bin_SCRIPTS = gnome-build-clean.sh
