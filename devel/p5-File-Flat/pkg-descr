@@ -7,6 +7,3 @@ and such, as you never need to worry about the existance of directories,
 just write to a file, no matter where it is.
 
 WWW: http://search.cpan.org/dist/File-Flat/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
