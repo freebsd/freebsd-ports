@@ -95,6 +95,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/irb/completion.rb
 %%RUBY_LIBDIR%%/net/ftp.rb
 %%RUBY_LIBDIR%%/net/http.rb
+%%RUBY_LIBDIR%%/net/imap.rb
 %%RUBY_LIBDIR%%/net/pop.rb
 %%RUBY_LIBDIR%%/net/protocol.rb
 %%RUBY_LIBDIR%%/net/smtp.rb
