@@ -7,7 +7,7 @@
 
 PORTNAME=	heroes
 PORTVERSION=	0.21
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -43,16 +43,24 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE} --without-gii --without-ggi
 
+.if defined(WITH_OPTIMIZED_CFLAGS)
+CONFIGURE_ARGS+=--enable-optimizations
+.else
+CONFIGURE_ARGS+=--disable-optimizations
+.endif
+
 MAN6=		heroes.6 heroeslvl.6
 INFO=		heroes
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -lsmpeg ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
-BROKEN=		"Does not compile on alpha >=5.x"
+pre-everything::
+.ifndef(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_MSG} '>>>'
+	@${ECHO_MSG} '>>> You can enable extra optimizations by defining WITH_OPTIMIZED_CFLAGS'
+	@${ECHO_MSG} ">>> For example, 'make WITH_OPTIMIZED_CFLAGS=yes'"
+	@${ECHO_MSG} '>>>'
 .endif
 
 post-patch:
@@ -72,4 +80,4 @@ post-install:
 	${MKDIR} ${DATADIR}/mod
 	${INSTALL_DATA} ${MUSICSRC}/*.xm ${MUSICSRC}/sound.conf ${DATADIR}/mod
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
