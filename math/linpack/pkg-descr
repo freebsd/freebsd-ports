@@ -2,3 +2,5 @@ Developed by Jack Dongarra, Jim Bunch, Cleve Moler and Pete Stewart.
  1 Feb 84
 Used as part of Matlab, and often used to benchmark machines.
 Otherwise it is a very good linear algebra package.
+
+WWW: http://www.netlib.org/linpack/

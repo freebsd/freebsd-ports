@@ -1,7 +1,7 @@
-# New ports collection makefile for:    linpack
-# Version required:     ?
-# Date created:         31 October 1994
-# Whom:                 ljo
+# New ports collection makefile for:	linpack
+# Version required:	?
+# Date created:		31 October 1994
+# Whom:			ljo
 #
 # $FreeBSD$
 #
@@ -9,17 +9,15 @@
 DISTNAME=	linpack
 PKGNAME=	linpack-1.0
 CATEGORIES=	math
-MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/linpack/
+MASTER_SITES=	ftp://ftp.netlib.org/linpack/ \
+		ftp://netlib.bell-labs.com/netlib/linpack/ \
+		ftp://www.hensa.ac.uk/mirrors/netlib/linpack/
 
-DIST_SUBDIR=	${DISTNAME}
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=    blas.1:${PORTSDIR}/math/blas
 
-EXTRACT_CMD=	${SH} ${SCRIPTDIR}/uncomp
-EXTRACT_SUFX=	.gz
-EXTRACT_BEFORE_ARGS=	${WRKDIR}
-EXTRACT_AFTER_ARGS=	# empty
-
+DIST_SUBDIR=	${DISTNAME}
 NO_WRKSUBDIR=	yes
 
 SRCS =	cchdc.f cchdd.f cchex.f cchud.f cgbco.f cgbdi.f cgbfa.f cgbsl.f \
@@ -50,11 +48,17 @@ DISTFILES=	${SRCS:.f=.f.gz}
 
 .include <bsd.port.pre.mk>
 
+do-extract:
+	@${MKDIR} ${WRKDIR}
+.for file in ${SRCS}
+	@${GZCAT} ${_DISTDIR}/${file:.f=.f.gz} > ${WRKSRC}/${file}
+.endfor
+
 pre-build:
-	${CP} ${FILESDIR}/Makefile.lib ${WRKDIR}/Makefile
+	${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf liblinpack.so.1.0 ${PREFIX}/lib/liblinpack.so
 .endif
