@@ -31,6 +31,11 @@ PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${MACHINE_ARCH}--freebsd \
 DOCDIR=		share/doc/emacs20-dl-wnn6
 EMACS_VER=	20.4
 EMACSDL_DIR=	${.CURDIR}/../../editors/emacs20-dl
+# hack to allow parallel build to work
+.if defined(PARALLEL_PACKAGE_BUILD)
+BUILD_DEPENDS+=	gmake:${PORTSDIR}/devel/gmake \
+		autoconf:${PORTSDIR}/devel/autoconf
+.endif
 
 post-install:
 	@${LN} -sf ${PREFIX}/share/emacs/site-lisp/egg/eggrc-wnn \

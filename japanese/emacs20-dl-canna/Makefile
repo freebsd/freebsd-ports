@@ -37,6 +37,11 @@ APEL_DEPENDS=	${PREFIX}/share/emacs/${EMACS_VER}/site-lisp/emu/emu.el
 LISPDIR=	share/emacs/site-lisp
 DOCDIR=		share/doc/emacs20-dl-canna
 DLCANNA_VER=	1.2
+# hack to allow parallel build to work
+.if defined(PARALLEL_PACKAGE_BUILD)
+BUILD_DEPENDS+=	gmake:${PORTSDIR}/devel/gmake \
+		autoconf:${PORTSDIR}/devel/autoconf
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
