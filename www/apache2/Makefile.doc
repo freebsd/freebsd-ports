@@ -27,7 +27,7 @@
 ##      WITH_THREADS:             Enable threads support !! USE IT WITH CARE !!
 ##           WITH_CUSTOM_THREADS: Let you choose which threaded modules you want
 ##      WITH_DBM:                 Choose your DBM: bdb (Berkeley DB), gdbm or ndbm (default)
-##          WITH_BERKELEYDB:      Choose your BerkeleyDB version: db2, db3, db4, db41 or FreeBSD (1.85)(default)
+##          WITH_BERKELEYDB:      Choose your BerkeleyDB version: db2, db3, db4, db41, db42 or FreeBSD (1.85)(default)
 ##      WITH_STATIC_SUPPORT:      Build statically linked support binaries
 ##      WITH_STATIC_APACHE:       Build a static version of httpd (implies WITH_STATIC_MODULES)
 ##      WITH_ALL_STATIC_MODULES:  All modules will be statically linked.

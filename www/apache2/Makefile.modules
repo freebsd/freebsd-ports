@@ -76,7 +76,8 @@ CONFIGURE_ARGS+=	--with-dbm=db41 \
 			--with-berkeley-db=${LOCALBASE}
 .       elif ${WITH_BERKELEYDB} == "db42"
 LIB_DEPENDS+=		db-4.2:${PORTSDIR}/databases/db42
-CONFIGURE_ARGS+=	--with-dbm=db42
+CONFIGURE_ARGS+=	--with-dbm=db42 \
+			--with-berkeley-db=${LOCALBASE}/include:${LOCALBASE}/lib/db42
 .       else
 BROKEN=		"Unknown Berkeley DB version"
 .       endif
@@ -98,7 +99,7 @@ EXPERIMENTAL_MODULES=	bucketeer case_filter case_filter_in ext_filter charset_li
 			optional_fn_import optional_fn_export
 LDAP_MODULES=		ldap auth_ldap
 MISC_MODULES=		actions alias asis autoindex cache cern_meta \
-			cgi cgid charset_lite  deflate dir disk_cache env expires \
+			cgi cgid charset_lite deflate dir disk_cache env expires \
 			file_cache headers imap include info log_config logio mime \
 			mime_magic negotiation rewrite setenvif speling status \
 			unique_id userdir usertrack vhost_alias
@@ -182,9 +183,6 @@ _APACHE_MODULES+=	${WITH_CUSTOM_THREADS}
 _APACHE_MODULES+=	${SSL_MODULE}
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 RC_SUB+=		-e 's,@@SSL@@,ssl,g'
-.    if ${OPENSSLBASE} == /usr && ${OSVERSION} < 500000
-CFLAGS+=	-DSSL_EXPERIMENTAL_ENGINE
-.    endif
 .else
 RC_SUB+=		-e 's,@@SSL@@,,g'
 .endif
@@ -198,13 +196,13 @@ SUEXEC_GIDMIN?=			1000
 SUEXEC_CALLER?=			${WWWOWN}
 _APACHE_MODULES+=		${SUEXEC_MODULES}
 CONFIGURE_ARGS+=		--with-suexec-caller=${SUEXEC_CALLER} \
-						--with-suexec-uidmin=${SUEXEC_UIDMIN} \
-						--with-suexec-gidmin=${SUEXEC_GIDMIN} \
-						--with-suexec-userdir="${SUEXEC_USERDIR}" \
-						--with-suexec-docroot="${SUEXEC_DOCROOT}" \
-						--with-suexec-safepath="${SUEXEC_SAFEPATH}" \
-						--with-suexec-logfile="/var/log/httpd-suexec.log" \
-						--with-suexec-bin="${PREFIX_RELDEST}/sbin/suexec"
+				--with-suexec-uidmin=${SUEXEC_UIDMIN} \
+				--with-suexec-gidmin=${SUEXEC_GIDMIN} \
+				--with-suexec-userdir="${SUEXEC_USERDIR}" \
+				--with-suexec-docroot="${SUEXEC_DOCROOT}" \
+				--with-suexec-safepath="${SUEXEC_SAFEPATH}" \
+				--with-suexec-logfile="/var/log/httpd-suexec.log" \
+				--with-suexec-bin="${PREFIX_RELDEST}/sbin/suexec"
 .   if defined(WITH_SUEXEC_UMASK)
 CONFIGURE_ARGS+=			--with-suexec-umask=${WITH_SUEXEC_UMASK}
 .   endif
