@@ -17,14 +17,16 @@ LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 USE_XLIB=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--with-x --with-xpm --with-xaw3d
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
+post-patch:
+	${REINPLACE_CMD} -e "s,#ifndef _POSIX_SOURCE,#if 0," \
+		${WRKSRC}/connect.c ${WRKSRC}/relay.c ${WRKSRC}/relog.c \
+		${WRKSRC}/rport.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/relay ${PREFIX}/bin
