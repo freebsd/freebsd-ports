@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	iroffer
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2b28
 CATEGORIES=	irc
-MASTER_SITES=	http://iroffer.org/archive/v1.1/
+MASTER_SITES=	http://iroffer.org/archive/v1.2/
 DISTNAME=	iroffer${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -19,12 +19,15 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${PREFIX}/bin
-		${MKDIR} ${PREFIX}/share/doc/iroffer
-		${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/iroffer
-		${INSTALL_DATA} ${WRKSRC}/WHATSNEW ${PREFIX}/share/doc/iroffer
-		${INSTALL_DATA} ${WRKSRC}/iroffer.cron ${PREFIX}/share/doc/iroffer
-		${INSTALL_DATA} ${WRKSRC}/sample.config ${PREFIX}/share/doc/iroffer
-		@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/WHATSNEW ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/dynip.sh ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/iroffer.cron ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/sample.config ${EXAMPLESDIR}/
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 =========================================================================
 
 Sample configuration and crontab files have been placed in
-${PREFIX}/share/doc/iroffer.
+${PREFIX}/share/examples/iroffer.
 
 These should be copied to a location of your own choosing, and edited to
 suit your needs.
@@ -11,10 +11,10 @@ To run iroffer, just run:
 iroffer <name of config file>
 
 You may also set up iroffer to be run automatically from crontab.
-See the file ${PREFIX}/share/doc/iroffer/iroffer.cron for a sample.
+See the file ${PREFIX}/share/examples/iroffer/iroffer.cron for a sample.
 
 For more details on how to use the program see the comments in
-${PREFIX}/share/doc/iroffer/sample.config, as well as the README
+${PREFIX}/share/examples/iroffer/sample.config, as well as the README
 files ${PREFIX}/share/doc/iroffer/README and
 ${PREFIX}/share/doc/iroffer/WHATSNEW.
 
