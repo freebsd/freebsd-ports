@@ -3,7 +3,7 @@
 # Date created:		15 April 1997
 # Whom:			Kiriyama Kazuhiko<kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.7 1998/08/07 23:56:46 asami Exp $
+# $Id: Makefile,v 1.8 1998/08/24 01:06:26 steve Exp $
 #
 
 DISTNAME=	GP-2.5p2
@@ -26,7 +26,7 @@ LANGUAGE?=	English
 
 .if (${LANGUAGE} == "English")
 ALL_TARGET=	filters
-LIB_DEPENDS=	tcl76\\.1\\.:${PORTSDIR}/lang/tcl76
+LIB_DEPENDS=	tcl76.1:${PORTSDIR}/lang/tcl76
 RUN_DEPENDS+=	${PREFIX}/bin/wish4.2:${PORTSDIR}/x11-toolkits/tk42
 LANGEXT=	en
 DOCDIRNAME=	Doc

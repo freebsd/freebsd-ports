@@ -3,7 +3,7 @@
 # Date created:			14 September, 1997
 # Whom:				kline
 #
-# $Id: Makefile,v 1.6 1998/08/08 00:20:19 asami Exp $
+# $Id: Makefile,v 1.7 1998/09/15 21:31:59 asami Exp $
 #
 
 DISTNAME=	cbb-0.73
@@ -16,7 +16,7 @@ MAINTAINER=	kline@thought.org
 #	extern.conf could easily be patched to use `plan' over `ical'
 RUN_DEPENDS=	wish4.2:${PORTSDIR}/x11-toolkits/tk42 \
 		ical:${PORTSDIR}/deskutils/ical
-LIB_DEPENDS=    tk42\\.1\\.:${PORTSDIR}/x11-toolkits/tk42
+LIB_DEPENDS=    tk42.1:${PORTSDIR}/x11-toolkits/tk42
 
 NO_BUILD=       yes
 USE_PERL5=	yes

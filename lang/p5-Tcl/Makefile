@@ -3,7 +3,7 @@
 # Date created:				June 15th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1998/08/30 15:52:48 steve Exp $
+# $Id: Makefile,v 1.6 1998/09/15 21:31:46 asami Exp $
 #
 
 DISTNAME=	Tcl-b2
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	Tcl
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-LIB_DEPENDS=	tcl76\\.1:${PORTSDIR}/lang/tcl76
+LIB_DEPENDS=	tcl76.1:${PORTSDIR}/lang/tcl76
 
 USE_PERL5=	YES
 
