@@ -38,6 +38,10 @@ MAN7=		docstrip.7t sl_crypt.7t sl_files.7t sl_fpmath.7t sl_int64.7t \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 600000
+BROKEN=		"Coredump during build on FreeBSD >= 6.x"
+.endif
+
 .if ${OSVERSION} < 400010
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
