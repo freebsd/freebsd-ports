@@ -7,6 +7,7 @@
 
 PORTNAME=	Log-Dispatch-Config
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	devel sysutils perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Log
@@ -25,11 +26,13 @@ PM_DEPENDS+=	${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy
 
 PERL_CONFIGURE=	yes
 
-#MAN3=		Log::Dispatch::Config.3 \
-#		Log::Dispatch::Configurator.3 \
-#		Log::Dispatch::Configurator::AppConfig.3
-
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} > 500800
+MAN3=		Log::Dispatch::Config.3 \
+		Log::Dispatch::Configurator.3 \
+		Log::Dispatch::Configurator::AppConfig.3
+.endif
 
 .if ${PERL_LEVEL} < 500800
 PM_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
