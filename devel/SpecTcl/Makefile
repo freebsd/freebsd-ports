@@ -7,21 +7,26 @@
 
 PORTNAME=	SpecTcl
 PORTVERSION=	1.1
-PORTREVISION=	1
-CATEGORIES=	devel tk80
-MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/guitools/
+PORTREVISION=	2
+CATEGORIES=	devel tk83
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME:L}
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
+USE_REINPLACE=	yes
+
+WISH=		${LOCALBASE}/bin/wish8.3
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/bin/specJava
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/bin/specTcl
+.for file in specJava specTcl
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
+		 s|%%WISH%%|${WISH}|g' ${WRKSRC}/bin/${file}
+.endfor
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/specJava ${PREFIX}/bin

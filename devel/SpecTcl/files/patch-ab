@@ -9,7 +9,7 @@
  
  # Change WISH to the pathname of your tk4.1a2 (or >) wish binary
 -WISH=`which wish`
-+WISH=wish8.0
++WISH=%%WISH%%
  
  env SPECTCL_DIR=$DIR $WISH $DIR/main.tk -java $@ &
  echo "Starting SpecTcl 1.0"
