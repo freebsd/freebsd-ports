@@ -8,6 +8,7 @@ is currently being built.
 sends a notification to the user by email when finished.
 
 - upgrade is a wrapper for buildit, whereintheworld, cvsup and make
-buildworld.
+buildworld. It is a convenient series of shell commands that will
+upgrade your FreeBSD system.
 
 See the README file for more details.
