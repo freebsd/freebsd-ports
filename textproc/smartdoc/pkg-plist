@@ -1,11 +1,9 @@
 bin/sdoc
 share/java/classes/SmartDoc.jar
 share/java/sdoc-%%PORTVERSION%%/COPYING.txt
-share/java/sdoc-%%PORTVERSION%%/PerlToolsLicense.html
+share/java/sdoc-%%PORTVERSION%%/OroLICENSE.txt
 share/java/sdoc-%%PORTVERSION%%/README
 share/java/sdoc-%%PORTVERSION%%/README.sdoc
-share/java/sdoc-%%PORTVERSION%%/README_en.html
-share/java/sdoc-%%PORTVERSION%%/README_ja.html
 share/java/sdoc-%%PORTVERSION%%/SmartDoc.jar
 share/java/sdoc-%%PORTVERSION%%/XalanLICENSE.txt
 share/java/sdoc-%%PORTVERSION%%/XercesLICENSE.txt
@@ -129,6 +127,7 @@ share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/Indexdef.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/Italic.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/Journal.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/Li.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/Macro.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/MacroAttribute.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/MacroContent.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/Native.java
@@ -195,6 +194,7 @@ share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/adapter/Abstr
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/adapter/AutoImageAdapter.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/adapter/BeanAdapter.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/adapter/CSVAdapter.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/adapter/MacroAdapter.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/adapter/SDocAdapter.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/adapter/SmartTableAdapter.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/adapter/SpaceAdapter.java
@@ -233,11 +233,13 @@ share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/LaTeX
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/LaTeX2eConfig.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/LaTeX2eConsoleHandler.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/LaTeX2eGenerator.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/LaTeX2eImageFloatHandler.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/LaTeX2eImageHandler.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/LaTeX2ePackage.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/LaTeX2eProgramHandler.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/LaTeX2eRefHandler.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/LaTeX2eRubyHandler.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/LaTeX2eTableFloatHandler.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/LaTeX2eTableHandler.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/Symbols.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/ULaTeX2e.java
@@ -251,12 +253,16 @@ share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/handl
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/handler/HyperRefLaTeX2eRefHandler.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/handler/NRubyLaTeX2eRubyHandler.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/handler/PlainLaTeX2eBoxHandler.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/handler/PlainLaTeX2eImageFloatHandler.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/handler/PlainLaTeX2eRefHandler.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/handler/PlainLaTeX2eRubyHandler.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/handler/PlainLaTeX2eTableFloatHandler.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/handler/PlainLaTeX2eTableHandler.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/handler/PsboxitLaTeX2eBoxHandler.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/handler/VerbatimLaTeX2eConsoleHandler.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/handler/VerbatimLaTeX2eProgramHandler.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/handler/WrapfigLaTeX2eImageFloatHandler.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/latex2e/handler/WrapfigLaTeX2eTableFloatHandler.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/mathml/Math.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/normalizer/AbstractNormalizer.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/normalizer/AbstractTBodyNormalizer.java
@@ -281,6 +287,7 @@ share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/normalizer/Sp
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/normalizer/TabTBodyNormalizer.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/normalizer/TabTrNormalizer.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/normalizer/TagNormalizer.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/normalizer/TeX2MathMLNormalizer.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/normalizer/XMLSourceNormalizer.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/packager/CDFPackager.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/packager/SmartDocDirectoryJarPackager.java
@@ -300,8 +307,10 @@ share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/plain/THr.jav
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/plain/TItem.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/plain/TList.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/plain/TNode.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/plain/TNoteList.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/plain/TOList.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/plain/TParagraph.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/plain/TPlainList.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/plain/TPre.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/plain/TTable.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/SmartDoc/plain/TText.java
@@ -440,6 +449,16 @@ share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/awt/property/StringPro
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/beans/UBean.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/ctype/ClassCType.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/ctype/ICType.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/datatype/AbstractDatatype.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/datatype/IDatatype.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/datatype/IJavaDatatype.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/datatype/ISQLDatatype.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/datatype/IXMLDatatype.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/datatype/SimpleDatatype.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/datatype/UDatatype.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/datatype/java/JavaDatatype.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/datatype/sql/SQLDatatype.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/datatype/xml/XMLDatatype.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/dombus/AbstractComponentSlot.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/dombus/AbstractDOMBusComponent.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/dombus/AppDOMBusParameter.java
@@ -620,6 +639,7 @@ share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/text/cui/CFrameBox.jav
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/text/cui/CGap.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/text/cui/CHeading.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/text/cui/CHr.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/text/cui/CList.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/text/cui/CNode.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/text/cui/CPanel.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/text/cui/CParagraph.java
@@ -658,12 +678,18 @@ share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/TSchema.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/TTable.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/TTypeBIGINT.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/TTypeBIT.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/TTypeBLOB.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/TTypeCHAR.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/TTypeCLOB.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/TTypeDATE.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/TTypeDECIMAL.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/TTypeFLOAT.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/TTypeFactory.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/TTypeINTEGER.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/TTypeREAL.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/TTypeSMALLINT.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/TTypeTIME.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/TTypeTIMESTAMP.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/TTypeTINYINT.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/TTypeVARCHAR.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/tmodel/UTModel.java
@@ -776,7 +802,6 @@ share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/UTransform.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/UXML.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/UXSL.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/XMLTreeModel.java
-share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/XMLTreeNode.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/XSLTBeans.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/converter/AbstractConverter.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/converter/HRefConverter.java
@@ -784,14 +809,59 @@ share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/converter/TextConv
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/converter/UConverter.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DBinary.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DBoolean.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DByte.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DCDATA.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DCentury.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DDate.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DDateTime.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DDecimal.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DDouble.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DENTITIES.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DENTITY.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DEmptyString.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DFloat.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DGDay.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DGMonth.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DGMonthDay.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DGYear.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DGYearMonth.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DID.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DIDREF.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DIDREFS.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DInt.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DInteger.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DLanguage.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DLong.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DMonth.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DNCName.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DNMTOKEN.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DNMTOKENS.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DNOTATION.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DName.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DNegativeInteger.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DNonNegativeInteger.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DNonPositiveInteger.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DNone.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DNormalizedString.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DNumber.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DPositiveInteger.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DQName.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DRecurringDate.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DRecurringDay.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DRecurringDuration.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DShort.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DString.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DTime.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DTimeDuration.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DTimeInstant.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DTimePeriod.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DToken.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DUnsignedByte.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DUnsignedInt.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DUnsignedLong.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DUnsignedShort.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DUriReference.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DYear.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/Datatype.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/DatatypeFactory.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/datatype/Facet.java
@@ -1010,6 +1080,8 @@ share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/RELAXEntityR
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/URelax.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/CAnonymousContentRule.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/CAnonymousElementRule.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/CAnyOtherAttribute.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/CAnyOtherElement.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/CAttListPattern.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/CAttribute.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/CChoice.java
@@ -1044,6 +1116,7 @@ share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/CRule
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/CSequence.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/CSequenceContentRule.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/CSequenceElementRule.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/CSimpleType.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/CSyntaxErrorException.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/CTagPattern.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/CTypeElementRule.java
@@ -1051,6 +1124,8 @@ share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/ICCon
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/ICParticle.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/ICPatternContent.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/cooked/UCRelax.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/EAnyOtherAttributeNode.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/EAnyOtherElementNode.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/EAppinfo.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/EAttributeSlot.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/EChoiceNode.java
@@ -1060,21 +1135,34 @@ share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/EEl
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/EElementRefNode.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/EElementSlot.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/EElementSlotNode.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/EExternalContentRefNode.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/EExternalRefNode.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/EExternalRoleRefNode.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/EGrammar.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/EMixedNode.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/EModule.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/ENode.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/ENoneNode.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/EOptimizer.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/EOptimizerMT.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/ERelax.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/ERuleNode.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/ESequenceNode.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/ESlotNode.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/ESyntaxErrorException.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/ETempNode.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/EVisitorBase.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/IEOccurs.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/IEVisitor.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/IOptimizerThread.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/OptimizerController.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/OptimizerThread.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/OptimizerThread1.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/OptimizerThreadGroup.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/SyncCounter.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/expanded/UERule.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/RAnyOtherAttribute.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/RAnyOtherElement.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/RAttListPattern.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/RAttribute.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/RChoice.java
@@ -1087,6 +1175,7 @@ share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/REmpty.j
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/REnumeration.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/RGrammar.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/RImportedLabelRef.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/RInclude.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/RLiteral.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/RMixed.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/RModule.java
@@ -1097,6 +1186,7 @@ share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/RRef.jav
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/RRelax.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/RRule.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/RSequence.java
+share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/RSimpleType.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/RSyntaxErrorException.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/RTagPattern.java
 share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw/URRelax.java
@@ -1152,9 +1242,9 @@ share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/schema/UsergenName
 share/xml/smartdoc/PureSmartDoc.dtd
 share/xml/smartdoc/PureSmartDoc.rlx
 share/xml/smartdoc/article.css
+@unexec %%MKCATALOG%% -c %D/share/xml/catalog -q deinstall smartdoc
 share/xml/smartdoc/catalog
-@unexec env LANG=C perl -ni -e 'print if !m|smartdoc/catalog|;' %D/share/xml/catalog;if [ ! -s %D/share/xml/catalog ]; then rm -f %D/share/xml/catalog; fi
-@exec if [ ! -f %D/share/xml/catalog ]; then echo "CATALOG \"smartdoc/catalog\"" > %D/share/xml/catalog; else env LANG=C perl -ni -e 'print if !m|smartdoc/catalog|;print "CATALOG \"smartdoc/catalog\"\n" if eof;' %D/share/xml/catalog; fi
+@exec %%MKCATALOG%% -c %D/share/xml/catalog -q install smartdoc
 @dirrm share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/schema
 @dirrm share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/sax
 @dirrm share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/xml/relax/raw
@@ -1204,6 +1294,10 @@ share/xml/smartdoc/catalog
 @dirrm share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/dombus/configRelaxer
 @dirrm share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/dombus/config
 @dirrm share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/dombus
+@dirrm share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/datatype/xml
+@dirrm share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/datatype/sql
+@dirrm share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/datatype/java
+@dirrm share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/datatype
 @dirrm share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/ctype
 @dirrm share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/beans
 @dirrm share/java/sdoc-%%PORTVERSION%%/src/jp/gr/java_conf/jaba2/awt/property
