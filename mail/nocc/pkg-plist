@@ -3,7 +3,9 @@ www/nocc/check.php
 www/nocc/check_lang.php
 www/nocc/class_send.php
 www/nocc/class_smtp.php
-www/nocc/conf.php
+@unexec if cmp -s %D/www/nocc/conf.php %D/www/nocc/conf.php.dist; then rm -f %D/www/nocc/conf.php; fi
+www/nocc/conf.php.dist
+@exec [ -f %B/conf.php ] || cp %B/%f %B/conf.php
 www/nocc/conf_lang.php
 www/nocc/delete.php
 www/nocc/download.php
