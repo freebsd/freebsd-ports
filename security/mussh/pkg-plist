@@ -1,4 +1,5 @@
 bin/mussh
+%%PORTDOCS%%share/doc/mussh/BUGS
 %%PORTDOCS%%share/doc/mussh/CHANGES
 %%PORTDOCS%%share/doc/mussh/EXAMPLES
 %%PORTDOCS%%share/doc/mussh/README
