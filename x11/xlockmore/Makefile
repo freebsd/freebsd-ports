@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.01
+PORTVERSION=	5.02
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/ \
 		${MASTER_SITE_XCONTRIB}
@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	tg@FreeBSD.org
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --without-gl --without-motif --without-sx \
 		--without-editres --without-dtsaver --without-rplay \
