@@ -122,7 +122,6 @@ PLIST_SUB=	IF_SQLITE=${IF_SQLITE} \
 #  --with-db2-prefix             Location of DB2
 
 post-extract:
-	${RM} -rf ${WRKSRC}/src/api/perl/*/blib
 	${MKDIR} ${WRKDIR}/prefixes/libxml
 	${LN} -s ${LOCALBASE}/include/libxml2 ${WRKDIR}/prefixes/libxml/include
 	${LN} -s ${LOCALBASE}/lib ${WRKDIR}/prefixes/libxml/lib
