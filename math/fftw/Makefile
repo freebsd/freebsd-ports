@@ -3,10 +3,10 @@
 # Date created:		Dec 28 1998
 # Whom:			Lars Koeller <lkoeller@cc.fh-lippe.de>
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/18 08:38:33 taoka Exp $
+# $Id: Makefile,v 1.2 1999/04/03 00:56:02 steve Exp $
 #
 
-DISTNAME=	fftw-2.1.1
+DISTNAME=	fftw-2.1.2
 CATEGORIES=	math
 MASTER_SITES=	ftp://theory.lcs.mit.edu/pub/fftw/	\
 		ftp://pm.cse.rmit.edu.au/pub/dsp/fftw/
