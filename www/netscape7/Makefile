@@ -59,7 +59,6 @@ DISTFILES?=	browser.xpi \
 		langenus.xpi \
 		mail.xpi \
 		psm.xpi \
-		regca.xpi \
 		regus.xpi \
 		spellchecker.xpi \
 		talkback.xpi \
