@@ -5,7 +5,7 @@
  # Step1: Define the location of the History file(s)
  #HISTORYF=/var/news/etc/history
 -HISTORYF=/usr/lib/news/history
-+HISTORYF=/usr/local/news/history
++HISTORYF=/usr/local/news/lib/history
  
  # Step 2: Define ONE of the CHKHISTORY 
  CHKHISTORY=chkhistory.o	# use flat file history routine
