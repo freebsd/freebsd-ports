@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gal
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gal
@@ -27,6 +27,8 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
