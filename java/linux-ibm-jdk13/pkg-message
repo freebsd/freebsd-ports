@@ -1,8 +1,8 @@
-=============================================================
+======================================================================
 This Java VM will attempt to detect the number of processors by taking
 cpuinfo from linux's procfs. You may want to install the Linux
 emulation procfs filesystem. You may do so by adding the following
 line to your /etc/fstab file:
 
  linprocfs   /compat/linux/proc   linprocfs   rw   0  0
-=============================================================
+======================================================================
