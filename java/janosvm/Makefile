@@ -15,12 +15,6 @@ MASTER_SITES=	http://www.cs.utah.edu/flux/janos/${DISTNAME}/
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	A virtual machine for executing Java bytecodes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Fails to link"
-.endif
-
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-x
@@ -28,6 +22,12 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=	janosvm.1 jsihey.1 jsiregister.1 jsiunregister.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Fails to link"
+.endif
 
 .if !defined(NOPORTDOCS)
 post-install:

@@ -19,14 +19,14 @@ COMMENT=	A nifty editor based on Tcl/Tk
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
 		tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_X_PREFIX=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile"
 .endif
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_X_PREFIX=	yes
 
 do-install:
 	${MKDIR} ${PREFIX}/share/doc/e93 ${PREFIX}/lib/e93lib/images \

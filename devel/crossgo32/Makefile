@@ -19,12 +19,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} dosrel-1.0${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross Development Environment for 32-bit DOS
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${TARGET}
 USE_GMAKE=	yes
@@ -38,6 +32,12 @@ MAN1=	i386-go32-ar.1 i386-go32-nm.1 i386-go32-objdump.1\
 
 DOCDIR=		${PREFIX}/share/doc/crossgo32
 GO32DIR=	${PREFIX}/share/crossgo32
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
 
 post-extract:
 	${MV} ${WRKDIR}/dosrel-1.0/ ${WRKSRC}

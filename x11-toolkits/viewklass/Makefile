@@ -18,16 +18,16 @@ COMMENT=	C++ Framework for Motif
 
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake
 
+USE_X_PREFIX=	yes
+USE_MOTIF=	yes
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile (bad C++ code)"
 .endif
-
-USE_X_PREFIX=	yes
-USE_MOTIF=	yes
-USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/^CFLAGS=/CFLAGS+=/g ; \

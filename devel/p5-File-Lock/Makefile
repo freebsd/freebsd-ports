@@ -15,12 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl5 module for file locking (flock,fcntl)
 
+PERL_CONFIGURE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile"
 .endif
-
-PERL_CONFIGURE=	yes
 
 .include <bsd.port.post.mk>

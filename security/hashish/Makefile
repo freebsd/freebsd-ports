@@ -20,16 +20,16 @@ COMMENT=	A file and string hashing utility
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
 LIB_DEPENDS=	wx_gtk:${PORTSDIR}/x11-toolkits/wxgtk-devel
 
+USE_REINPLACE=	yes
+WRKSRC=		${WRKDIR}/Hashish
+CFLAGS+=	-I${LOCALBASE}/include
+USE_GMAKE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile (bad C++ code)"
 .endif
-
-USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/Hashish
-CFLAGS+=	-I${LOCALBASE}/include
-USE_GMAKE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,^CXXFLAGS =,CXXFLAGS+=${PTHREAD_CFLAGS},g ; \

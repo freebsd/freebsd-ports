@@ -17,12 +17,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.p/pre/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Multibody Dynamic Simulation Library
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 USE_MESA=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	OPENGLINCDIR="${X11BASE}/include" \
@@ -30,6 +24,12 @@ MAKE_ENV=	OPENGLINCDIR="${X11BASE}/include" \
 		CXXFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
 ALL_TARGET=	freebsd
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 do-configure:
 	@${CP} -f ${FILESDIR}/make.platform.freebsd ${WRKSRC}/make

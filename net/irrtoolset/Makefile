@@ -16,12 +16,6 @@ COMMENT=	A suite of routing policy tools to interact with the IRR
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_GCC=	2.95
@@ -35,6 +29,12 @@ CONFIGURE_ENV=	TCL_TK_INCLUDE_DIR="${PREFIX}/include/tcl8.3:${PREFIX}/include/tk
 MAN1=		CIDRAdvisor.1 aoe.1 prpath.1 RtConfig.1 peval.1 \
 		roe.1 rpslcheck.1 prtraceroute.1
 MAN3=		librpsl.3
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 post-patch:
 	@${SED} -i.orig -e 's|#include <malloc.h>|/* #include <malloc.h> */|' \

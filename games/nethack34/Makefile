@@ -33,8 +33,6 @@ HACKNAME?=	nethack
 HACKDIR?=	lib/${HACKNAME}
 HACKDOCSDIR?=	share/doc/${HACKNAME}
 
-.include <bsd.port.pre.mk>
-
 .if defined(WITH_GNOME_GRAPHICS)
 CATEGORIES=	games gnome
 PKGNAMESUFFIX=	-gnome
@@ -43,9 +41,6 @@ USE_GNOME=	gnomelibs
 MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 GRAPHICS=	GNOME_GRAPHICS
 .elif defined(WITH_QT_GRAPHICS)
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
 PKGNAMESUFFIX=	-qt
 USE_QT_VER=	3
 MAKE_ENV+=	QTCPPFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
@@ -57,6 +52,12 @@ PKGNAMESUFFIX=	-nox11
 .else
 USE_XPM=	yes
 GRAPHICS=	X11_GRAPHICS
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_QT_GRAPHICS) && ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
 .endif
 
 pre-everything::

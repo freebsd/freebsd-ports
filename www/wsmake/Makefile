@@ -20,18 +20,18 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	jkoshy@freebsd.org
 COMMENT=	Software for production and maintenance of web sites
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 USE_BZIP2=	YES
 GNU_CONFIGURE=	YES
 
 WSMAKE_MASTER_SITE=	http://www.wsmake.org
 WSMAKE_DOCDIR=	${PREFIX}/share/doc/wsmake
 WSMAKE_EXDIR=	${PREFIX}/share/examples/wsmake
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 # Install examples and optional documentation.
 post-install:

@@ -16,16 +16,16 @@ COMMENT=	A customizable program to run programs, with tab-completion
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomeprefix gnomehack gtk12 glib12
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile (bad C++ code)"
 .endif
-
-USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk12 glib12
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure

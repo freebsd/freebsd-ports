@@ -15,12 +15,6 @@ COMMENT=	A set of UNIX utilities written in assembly language
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
@@ -37,6 +31,12 @@ BINARIES=	asmutils basename cat chmod chown chroot cp cpuinfo date \
 
 DOCFILES=	Asmutils-HOWTO acknowledgements endorsements history \
 		index s-contrib s-debug s-include s-layout s-optimize
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
 
 post-patch:
 	@(${SED} -e 's,%%KERNEL%%,${OSREL:S/.//g},g' ${WRKSRC}/MCONFIG > ${WRKDIR}/foo \

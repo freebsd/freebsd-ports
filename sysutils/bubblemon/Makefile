@@ -17,12 +17,6 @@ COMMENT=	Bubblemon is a system CPU and memory load monitor for the GNOME panel
 
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gnomehack libpanel
@@ -33,6 +27,12 @@ MAN1=	bubblemon-gnome1.1
 MANLANG=	"" hu sv
 
 DOCS=	AUTHORS COPYING ChangeLog FAQ PROFILING TRANSLATIONS NEWS README TODO
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ;' ${WRKSRC}/configure

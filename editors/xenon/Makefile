@@ -14,12 +14,6 @@ MASTER_SITES=	http://sydney.proximity.com.au/~ben/xenon/dist/ \
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	Simple X-based text editor
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
@@ -30,6 +24,12 @@ MAN1=		xe.1
 
 FIX_FILES=	Xe.h XeApp.h XeFontTable.C XeFontTable.h XeKeyTable.C \
 		XeKeyTable.h XeObjectTable.h
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 do-configure:
 .for file in ${FIX_FILES}

@@ -18,16 +18,16 @@ DISTNAME=	cl74unix
 MAINTAINER=	jkoshy@freebsd.org
 COMMENT=	A strongly typed functional language belonging to the ML family
 
+USE_XLIB=	yes
+WRKSRC=		${WRKDIR}/cl74
+ALL_TARGET=	configure world bootstrap
+MAN1=	camlc.1 camllex.1 camllibr.1 camllight.1 camlmktop.1 camlrun.1 camlyacc.1 mletags.1 camllorder.1 camlsearch.1
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile"
 .endif
-
-USE_XLIB=	yes
-WRKSRC=		${WRKDIR}/cl74
-ALL_TARGET=	configure world bootstrap
-MAN1=	camlc.1 camllex.1 camllibr.1 camllight.1 camlmktop.1 camlrun.1 camlyacc.1 mletags.1 camllorder.1 camlsearch.1
 
 do-build:
 	cd ${WRKSRC}/src; ${MAKE} ${ALL_TARGET} PREFIX=${PREFIX} \

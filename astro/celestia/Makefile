@@ -19,12 +19,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 GNU_CONFIGURE=	yes
 PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
@@ -38,6 +32,12 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 CONFIGURE_ENV=	\
 LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm ${PTHREAD_LIBS}"
 CPPFLAGS="-I${X11BASE}/include -I${X11BASE}/include/GL -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 pre-patch:
 	${PERL} -pi -e \

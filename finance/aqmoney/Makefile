@@ -15,14 +15,14 @@ COMMENT=	AqMoney uses openhbci to manage your credit institute accounts
 
 LIB_DEPENDS=		openhbci.7:${PORTSDIR}/finance/openhbci
 
+GNU_CONFIGURE=		yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+MAN1=			aqmoney.1
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Configure fails"
 .endif
-
-GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-MAN1=			aqmoney.1
 
 .include <bsd.port.post.mk>

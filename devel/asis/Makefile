@@ -19,16 +19,16 @@ COMMENT=	GNAT implementation of the Ada Semantic Interface Specification
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 
+USE_GMAKE=	yes
+MAKEFILE=	"${FILESDIR}/Makefile.bsd"
+MAKE_ARGS=	GMAKE=${GMAKE} PORTVERSION=${PORTVERSION} \
+		LN=${LN}
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile"
 .endif
-
-USE_GMAKE=	yes
-MAKEFILE=	"${FILESDIR}/Makefile.bsd"
-MAKE_ARGS=	GMAKE=${GMAKE} PORTVERSION=${PORTVERSION} \
-		LN=${LN}
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/asis

@@ -22,12 +22,6 @@ WRKSRC=		${WRKDIR}/afbackup-3.3.5
 PLIST=		${WRKSRC}/pkg-plist
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 .if ! defined(NO_DES)
 USE_OPENSSL=	yes
 CONFIG_WITH_DES=	--with-des --with-des-header=openssl/des.h \
@@ -137,6 +131,12 @@ AFBACKUP_DOCS=		CONFIG \
 PKGINSTALL_ENV=		"NONINTERACTIVE=YES"
 .else
 PKGINSTALL_ENV=
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
 .endif
 
 .if !defined(WITHOUT_SERVER) && !defined(WITHOUT_CLIENT) \

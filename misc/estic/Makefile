@@ -14,12 +14,6 @@ DISTNAME=		estic-${PORTVERSION}-sources
 MAINTAINER=		jhs@FreeBSD.org
 COMMENT=	Controller for ISDN TK-Anlage (PBX) made by Istec
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 USE_XLIB=		yes
 USE_ZIP=		yes
 NO_WRKSUBDIR=		yes
@@ -37,6 +31,12 @@ PBX_BIN=${PREFIX}/bin
 PBX_DOC=${PREFIX}/share/doc/estic
 ESTIC=${WRKSRC}/estic
 MAKE_E= make X11BASE=${X11BASE} -f make/freebsd${X_OR_NOT}.mak
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 do-configure:
 	@cd ${WRKSRC}/spunk ; ${MAKE_E} dep

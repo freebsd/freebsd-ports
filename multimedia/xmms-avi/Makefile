@@ -20,12 +20,6 @@ BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 ONLY_FOR_ARCHS=	i386
@@ -35,6 +29,12 @@ USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-win32-path=${LOCALBASE}/lib/win32
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 pre-patch:
 	@${REINPLACE_CMD} -e "s|SDL/SDL.h|SDL11/SDL.h|g" ${WRKSRC}/src/ctrackbar.cpp

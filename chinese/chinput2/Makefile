@@ -18,15 +18,15 @@ COMMENT=	Another Chinese GB2312 and Big5 X11 input server
 BUILD_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client
 RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client
 
+USE_XLIB=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not build"
 .endif
-
-USE_XLIB=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-extract:
 	find ${WRKSRC} -name CVS | xargs ${RM} -rf

@@ -14,15 +14,15 @@ MASTER_SITE_SUBDIR=	word2x
 MAINTAINER=	billf@FreeBSD.org
 COMMENT=	Converter from MS Word to text, HTML or LaTeX
 
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+
+MAN1=	word2x.1
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile (bad C++ code)"
 .endif
-
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-
-MAN1=	word2x.1
 
 .include <bsd.port.post.mk>

@@ -24,12 +24,6 @@ COMMENT=	A low memory usage xterm replacement that supports color
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
@@ -100,6 +94,12 @@ CONFIGURE_ARGS+=	--enable-xim
 .if defined(WITH_XTERM_SCROLLBAR)
 CONFIGURE_ARGS+=	--enable-xterm-scroll
 .endif # WITH_XTERM_SCROLLBAR
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
 
 pre-everything::
 	@${ECHO_MSG}

@@ -19,12 +19,6 @@ BROKEN=		"Does not compile"
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 USE_REINPLACE=	yes
 USE_AUTOCONF_VER=213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -40,6 +34,12 @@ CONFIGURE_ARGS+=	--with-motif
 .else
 USE_XLIB=	yes
 CONFIGURE_ARGS+=	--without-motif
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
 .endif
 
 pre-everything::

@@ -13,16 +13,16 @@ MASTER_SITES=	http://www.nickle.org/release/
 MAINTAINER=	chrise@scardini.com
 COMMENT=	A desk calculator language
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=	nickle.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
 
 .include <bsd.port.post.mk>

@@ -14,13 +14,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	huntting@glarp.com
 COMMENT=	A quantum computer simulator
 
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile (bad C++ code)"
 .endif
-
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 post-install:
 	strip ${PREFIX}/bin/qcl

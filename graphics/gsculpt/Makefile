@@ -16,16 +16,16 @@ DISTNAME=	gSculpt-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Opensource 3D modelling application
 
+WRKSRC=		${WRKDIR}/gSculpt-${PORTVERSION}
+USE_REINPLACE=	yes
+USE_GNOME=	gtk12
+USE_GMAKE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile (bad C++ code)"
 .endif
-
-WRKSRC=		${WRKDIR}/gSculpt-${PORTVERSION}
-USE_REINPLACE=	yes
-USE_GNOME=	gtk12
-USE_GMAKE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,-O3 -Wall -Werror,${CXXFLAGS},g ; \

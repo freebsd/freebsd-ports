@@ -19,18 +19,18 @@ LIB_DEPENDS=	mpeg2:${PORTSDIR}/multimedia/libmpeg2 \
 		aviplay.0:${PORTSDIR}/multimedia/avifile \
 		popt:${PORTSDIR}/devel/popt
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 USE_BZIP2=	yes
 AVIFILE_CONFIG?=	${LOCALBASE}/bin/avifile-config
 CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
 		`${AVIFILE_CONFIG} --cflags`
 LIBS+=		-L${LOCALBASE}/lib -lm -lmpeg2 ${PTHREAD_LIBS} \
 		`${AVIFILE_CONFIG} --libs` -lpopt
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 
 do-build:
 	@(cd ${WRKSRC} ; \
