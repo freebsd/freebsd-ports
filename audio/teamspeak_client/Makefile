@@ -8,7 +8,7 @@
 PORTNAME=	teamspeak_client
 PORTVERSION=	2.0.29.47
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.teamspeak.org/releases/ \
+MASTER_SITES=	ftp://ftp.ngz-network.de/pub/11/4/releases/ \
 		http://www.gsoft.com.au/~doconnor/ \
 		ftp://teamspeak.krawall.de/releases/
 DISTNAME=	ts2_client_rc2_2029
