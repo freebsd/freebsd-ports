@@ -1,29 +1,20 @@
 # New ports collection Makefile for:    exmh2
-# Version required:		2.0zeta
+# Version required:		2.0
 # Date released:		1 Jan 97
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.17 1997/10/06 06:49:45 peter Exp $
+# $Id: Makefile,v 1.18 1997/11/22 19:50:03 jseger Exp $
 #
 
-DISTNAME=	exmh-2.0zeta
-PKGNAME=	exmh-2.0z
+DISTNAME=	exmh-2.0
+PKGNAME=	exmh-2.0
 CATEGORIES=	mail tk80
 MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
 
-PATCH_SITES=	http://www.sunlabs.com/~bwelch/exmh/patches/2.0zeta/
-PATCHFILES=	ispell.patch koir.patch mime.patch seditMime.patch scan.patch \
-		addr.patch html.patch html_dpackage.patch pgpExec.patch
-
-.if defined(PATCH_DEBUG)
-PATCH_DIST_ARGS= -d ${WRKSRC}/lib -E ${PATCH_DIST_STRIP}
-.else
-PATCH_DIST_ARGS= -d ${WRKSRC}/lib --forward --quiet -E ${PATCH_DIST_STRIP}
-.endif
-
 MAINTAINER=	peter@FreeBSD.org
 
+# There are likely to be distributed patches again.
 DIST_SUBDIR=	${PKGNAME}
 
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
