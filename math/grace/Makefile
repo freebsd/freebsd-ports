@@ -47,6 +47,12 @@ CONFIGURE_ARGS=	-prefix=${X11BASE} \
 ALL_TARGET=
 INSTALL_TARGET=	install links
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s%-lXm %${MOTIFLIB} %" ${WRKSRC}/configure
 
@@ -57,4 +63,4 @@ post-install:
 	fi
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
