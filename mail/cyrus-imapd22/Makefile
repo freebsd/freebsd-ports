@@ -14,17 +14,17 @@ DISTNAME=	${PORTNAME}-imapd-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-Y2K=		http://asg.web.cmu.edu/cyrus/imapd/y2k.html
-
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
 		${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
 
+Y2K=            http://asg.web.cmu.edu/cyrus/imapd/y2k.html
+
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-cyrus-group=cyrus \
-		--with-sasldir=/usr/local \
-		--with-tclsh=${PREFIX}/bin/tclsh8.2 \
+		--with-sasldir=${LOCALBASE} \
+		--with-tclsh=${LOCALBASE}/bin/tclsh8.2 \
 		--with-auth=unix \
 		--with-com-err
 
@@ -76,19 +76,19 @@ post-install:
 			${PREFIX}/etc/imap/msg
 		${TOUCH} ${PREFIX}/etc/imap/mailboxes
 		${CHMOD} 640 ${PREFIX}/etc/imap/mailboxes
-		chown cyrus:cyrus ${PREFIX}/etc/imap/mailboxes
-		@${ECHO} "@exec mkdir %D/etc/imap" >>${TMPPLIST}
+		${CHOWN} cyrus:cyrus ${PREFIX}/etc/imap/mailboxes
+		@${ECHO} "@exec ${MKDIR} %D/etc/imap" >>${TMPPLIST}
 .for dir in user quota proc log msg
-		@${ECHO} "@exec mkdir %D/etc/imap/${dir}" >>${TMPPLIST}
+		@${ECHO} "@exec ${MKDIR} %D/etc/imap/${dir}" >>${TMPPLIST}
 		@${ECHO} "@dirrm etc/imap/${dir}" >>${TMPPLIST}
 .endfor
-		@${ECHO} "@exec cp /dev/null %D/etc/imap/mailboxes" >>${TMPPLIST}
-		@${ECHO} "@exec chown -R cyrus:cyrus %D/etc/imap" >>${TMPPLIST}
-		@${ECHO} "@exec chmod -R g-w,o= %D/etc/imap" >>${TMPPLIST}
+		@${ECHO} "@exec ${CP} /dev/null %D/etc/imap/mailboxes" >>${TMPPLIST}
+		@${ECHO} "@exec ${CHOWN} -R cyrus:cyrus %D/etc/imap" >>${TMPPLIST}
+		@${ECHO} "@exec ${CHMOD} -R g-w,o= %D/etc/imap" >>${TMPPLIST}
 		@${ECHO} "@mode u=rwx,go=" >>${TMPPLIST}
-		@${ECHO} "@exec mkdir /var/spool/imap" >>${TMPPLIST}
-		@${ECHO} "@exec chown cyrus:cyrus /var/spool/imap" >>${TMPPLIST}
-		@${ECHO} "@exec chmod g-w,o= /var/spool/imap" >>${TMPPLIST}
+		@${ECHO} "@exec ${MKDIR} /var/spool/imap" >>${TMPPLIST}
+		@${ECHO} "@exec ${CHOWN} cyrus:cyrus /var/spool/imap" >>${TMPPLIST}
+		@${ECHO} "@exec ${CHMOD} g-w,o= /var/spool/imap" >>${TMPPLIST}
 		@${ECHO} "@cwd /var" >>${TMPPLIST}
 		@${ECHO} "@dirrm spool/imap" >>${TMPPLIST}
 		@PKG_PREFIX=${PREFIX} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
