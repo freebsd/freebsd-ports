@@ -1,0 +1,5 @@
+#! /bin/sh
+#
+# $FreeBSD$
+
+JAVA_VERSION="1.4+" JAVA_OS="native" "%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/jxm.jar" "$@"
