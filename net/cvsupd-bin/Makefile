@@ -3,25 +3,26 @@
 # Date created:		17 August 1998
 # Whom:			Sheldon Hearn <axl@iafrica.com>
 #
-# $Id: Makefile,v 1.5 1999/03/06 22:40:25 wosch Exp $
+# $Id: Makefile,v 1.6 1999/07/04 20:50:37 steve Exp $
 #
 
 DISTNAME=	cvsupd-bin-16.0
 CATEGORIES=	devel net
-MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/
-DISTFILES=	cvsupd-bin-16.0.tar.gz
+MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/binaries/
 
 MAINTAINER=	jdp@freebsd.org
 
-ONLY_FOR_ARCHS=	i386
+.if ${MACHINE_ARCH} == "i386"
+DISTFILES=	cvsupd-freebsd-ix86-aout-16.0${EXTRACT_SUFX}
+.else
+DISTFILES=	cvsupd-freebsd-${MACHINE_ARCH}-16.0${EXTRACT_SUFX}
+.endif
 
 NO_BUILD=	yes
 
 MAN8=	cvsupd.8
+MANCOMPRESSED=	yes
 STRIP=
-
-do-configure:
-	cd ${WRKSRC}; gunzip cvsupd.8.gz
 
 do-install:
 	cd ${WRKSRC}; \
