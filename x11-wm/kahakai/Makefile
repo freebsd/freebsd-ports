@@ -11,6 +11,8 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
+DEPRECATED=	"Development ceased"
+
 MAINTAINER=	xcas@cox.net
 COMMENT=	Kahakai window manager
 
