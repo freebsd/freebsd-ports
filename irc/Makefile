@@ -78,6 +78,7 @@
     SUBDIR += tkirc
     SUBDIR += tr-ircd
     SUBDIR += trickyirc
+    SUBDIR += weechat
     SUBDIR += xaric
     SUBDIR += xchat
     SUBDIR += xchat-systray-plugin
