@@ -661,6 +661,7 @@
     SUBDIR += tethereal
     SUBDIR += tethereal-lite
     SUBDIR += thcrut
+    SUBDIR += throttled
     SUBDIR += tightvnc
     SUBDIR += tik
     SUBDIR += tintin++

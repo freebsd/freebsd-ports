@@ -1,0 +1,11 @@
+throttled is a bandwidth shaping application for FreeBSD which allows you
+to cap your upstream bandwidth, prioritize ACK packets, and keep your
+download speeds high even when your server is sending out at full speed.
+It uses almost no cpu, and has a tiny footprint. Enjoy.
+
+For more information you can read the comments in throttled-startup
+
+WWW: http://www.intrarts.com/throttled.html
+
+- quest
+quest@mac.com
