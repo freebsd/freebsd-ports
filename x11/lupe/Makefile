@@ -3,13 +3,13 @@
 # Date created:		4 February 1998
 # Whom:			FURUSAWA,Kazuhisa <kazu@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.6 1998/11/17 16:45:06 flathill Exp $
+# $Id: Makefile,v 1.7 1998/11/17 16:49:38 flathill Exp $
 #
 
 DISTNAME=	lupe008
 PKGNAME=	lupe-0.08
 CATEGORIES=	x11
-MASTER_SITES=	http://www2s.biglobe.ne.jp/~yav/soft/
+MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/
 
 MAINTAINER=	kazu@jp.freebsd.org
 
