@@ -1,25 +1,24 @@
 # New ports collection makefile for:	tkgoodstuff
-# Version required:	4.2b1-8
+# Version required:	8.0-final
 # Date created:		7 Oct 1996
 # Whom:			pst
 #
 # $Id: Makefile,v 1.7 1997/07/07 06:30:30 pst Exp $
 #
 
-DISTNAME=	tkgoodstuff4.2
-PKGNAME=	tkgoodstuff-4.2b1.8
+DISTNAME=	tkgoodstuff8.0-final
+PKGNAME=	tkgoodstuff-8.0
 CATEGORIES=	x11
 MASTER_SITES=	http://www-personal.umich.edu/~markcrim/tkgoodstuff/dists/
 
 MAINTAINER=	pst@FreeBSD.org
 
 RUN_DEPENDS=	fvwm2:${PORTSDIR}/x11/fvwm2
-LIB_DEPENDS=	tk42\\.1:${PORTSDIR}/x11/tk42
+LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
 
-WRKSRC=		${WRKDIR}/tkgoodstuff4.2b1-8
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	TCLCONFIGSH=${PREFIX}/lib/tcl7.6/tclConfig.sh \
-		TKCONFIGSH=${PREFIX}/lib/tk4.2/tkConfig.sh
+CONFIGURE_ENV=	TCLCONFIGSH=${PREFIX}/lib/tcl8.0/tclConfig.sh \
+		TKCONFIGSH=${PREFIX}/lib/tk8.0/tkConfig.sh
 CONFIGURE_ARGS=	--enable-libs
 STRIP=
 
