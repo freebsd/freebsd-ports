@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	metacity
-PORTVERSION=	2.4.34
+PORTVERSION=	2.4.55
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.4
@@ -25,7 +25,7 @@ USE_LIBTOOL=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier gconf2 libglade2
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
 post-patch:
