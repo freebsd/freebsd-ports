@@ -15,6 +15,8 @@ MAINTAINER=	kzentner@u.washington.edu
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
+USE_GNOME=	gtk12
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
@@ -22,18 +24,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""
-USE_GNOME=	gtk12 esound
+USE_GNOME=	gnomelibs esound gnomeprefix gnomehack
 CONFIGURE_ARGS+=--enable-gnome
 PKGNAMESUFFIX=	-gnome
 .else
 CONFIGURE_ARGS+=--disable-gnome
 .endif
 
-pre-patch:
-	@${PERL} -pi -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
+post-patch:
+	@${REINPLACE_CMD} -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.post.mk>
