@@ -61,10 +61,7 @@ lib/mozilla-embedded/components/libmozbrwsr.so
 lib/mozilla-embedded/components/libnecko.so
 lib/mozilla-embedded/components/libnecko2.so
 lib/mozilla-embedded/components/libnsappshell.so
-lib/mozilla-embedded/components/libnsgif.so
-lib/mozilla-embedded/components/libnsjpg.so
 lib/mozilla-embedded/components/libnslocale.so
-lib/mozilla-embedded/components/libnspng.so
 lib/mozilla-embedded/components/libpipnss.so
 lib/mozilla-embedded/components/libpippki.so
 lib/mozilla-embedded/components/libpref.so
@@ -78,6 +75,7 @@ lib/mozilla-embedded/components/libuconv.so
 lib/mozilla-embedded/components/libucvlatin.so
 lib/mozilla-embedded/components/libunicharutil.so
 lib/mozilla-embedded/components/liburiloader.so
+lib/mozilla-embedded/components/libwallet.so
 lib/mozilla-embedded/components/libwebbrwsr.so
 lib/mozilla-embedded/components/libwidget_gtk.so
 lib/mozilla-embedded/components/libxpconnect.so
@@ -102,6 +100,7 @@ lib/mozilla-embedded/components/txtsvc.xpt
 lib/mozilla-embedded/components/uconv.xpt
 lib/mozilla-embedded/components/unicharutil.xpt
 lib/mozilla-embedded/components/uriloader.xpt
+lib/mozilla-embedded/components/wallet.xpt
 lib/mozilla-embedded/components/webBrowser_core.xpt
 lib/mozilla-embedded/components/widget.xpt
 lib/mozilla-embedded/components/windowwatcher.xpt
@@ -128,6 +127,7 @@ lib/mozilla-embedded/libplc4.so
 lib/mozilla-embedded/libplds4.so
 lib/mozilla-embedded/libxpcom.so
 lib/mozilla-embedded/res/acceptlanguage.properties
+lib/mozilla-embedded/res/arrow.gif
 lib/mozilla-embedded/res/builtin/htmlBindings.xml
 lib/mozilla-embedded/res/builtin/platformHTMLBindings.xml
 lib/mozilla-embedded/res/builtin/xbl-forms.css

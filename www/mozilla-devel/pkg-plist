@@ -192,11 +192,7 @@ lib/mozilla/components/libnecko2.so
 lib/mozilla/components/libnkcache.so
 lib/mozilla/components/libnpsimple.so
 lib/mozilla/components/libnsappshell.so
-lib/mozilla/components/libnsgif.so
-lib/mozilla/components/libnsjpg.so
 lib/mozilla/components/libnslocale.so
-lib/mozilla/components/libnsmng.so
-lib/mozilla/components/libnspng.so
 lib/mozilla/components/libnsprefm.so
 lib/mozilla/components/liboji.so
 lib/mozilla/components/libpipnss.so
@@ -373,6 +369,7 @@ lib/mozilla/libnssckbi.so
 lib/mozilla/libnullplugin.so
 lib/mozilla/libplc4.so
 lib/mozilla/libplds4.so
+lib/mozilla/libxlibrgb.so
 lib/mozilla/libxpcom.so
 lib/mozilla/libxpistub.so
 lib/mozilla/lots
@@ -430,6 +427,7 @@ lib/mozilla/res/html/gopher-unknown.gif
 lib/mozilla/res/langGroups.properties
 lib/mozilla/res/language.properties
 lib/mozilla/res/mathml.css
+lib/mozilla/res/nssifail.txt
 lib/mozilla/res/quirk.css
 lib/mozilla/res/rdf/article.gif
 lib/mozilla/res/rdf/document.gif

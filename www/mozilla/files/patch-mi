@@ -1,18 +1,21 @@
---- nsprpub/config/FreeBSD.mk.orig	Wed Oct 20 14:19:53 1999
-+++ nsprpub/config/FreeBSD.mk	Thu Dec 21 01:16:34 2000
-@@ -21,24 +21,26 @@
+
+$FreeBSD$
+
+--- nsprpub/config/FreeBSD.mk.orig	Sat Jul 29 03:50:35 2000
++++ nsprpub/config/FreeBSD.mk	Mon Sep 17 10:47:08 2001
+@@ -37,19 +37,21 @@
  
  include $(MOD_DEPTH)/config/UNIX.mk
  
 -CC			= gcc
 -CCC			= g++
++CCC			= $(CXX)
  RANLIB			= ranlib
-+CCC				= ${CXX}
-+
+ 
 +# During FreeBSD port build, CFLAGS contains all of the optimizations
 +# flags desired...
 +OPTIMIZER		= $(MOZ_OPTIMIZE_FLAGS)
- 
++
  ifeq ($(OS_TEST),alpha)
  CPU_ARCH		= alpha
  else
@@ -24,12 +27,16 @@
 -OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -ansi -Wall -pipe $(THREAD_FLAG) -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
 +OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -ansi -Wall -pipe -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
  
- ifeq ($(USE_PTHREADS),1)
+ #
+ # The default implementation strategy for FreeBSD is pthreads.
+@@ -60,8 +62,8 @@
+ else
+ USE_PTHREADS		= 1
  IMPL_STRATEGY		= _PTH
 -DEFINES			+= -D_THREAD_SAFE
 -THREAD_FLAG		+= -pthread
 +DEFINES			+= -D_THREAD_SAFE -D_REENTRANT
 +DSO_LDOPTS		+= -pthread
- else
- IMPL_STRATEGY		= _EMU
- DEFINES			+= -D_PR_LOCAL_THREADS_ONLY
+ endif
+ 
+ ARCH			= freebsd
