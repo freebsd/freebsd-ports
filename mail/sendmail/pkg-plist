@@ -1,10 +1,10 @@
-@comment $FreeBSD: /tmp/pcvs/ports/mail/sendmail/pkg-plist,v 1.6 2001-10-07 06:51:44 dinoex Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/mail/sendmail/pkg-plist,v 1.7 2001-10-09 19:20:15 dinoex Exp $
 @exec if ! pw groupshow smmsp 2>/dev/null; then pw groupadd smmsp -g 90; fi
 @exec if ! pw usershow smmsp 2>/dev/null; then pw useradd smmsp -g smmsp -u 90 -h - -d /nonexistent -s /nonexistent -c "Sendmail Queue"; fi
 @exec mkdir -p /var/spool/clientmqueue
 @exec chown smmsp:smmsp /var/spool/clientmqueue
 @exec chmod 770 /var/spool/clientmqueue
-@unexec pw userdel smmsp
+@unexec if pw usershow smmsp | grep -q 90:90; then pw userdel smmsp; fi
 @comment (removed by userdel) pw groupdel smmsp
 bin/hoststat
 bin/mailq
@@ -26,4 +26,3 @@ sbin/sendmail
 %%PORTDOCS%%share/doc/sendmail/SENDMAIL
 %%PORTDOCS%%share/doc/sendmail/MAIL.LOCAL
 %%PORTDOCS%%share/doc/sendmail/SMRSH
-%%PORTDOCS%%@dirrm share/doc/sendmail
