@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.3.16
+PORTVERSION=	5.3.20
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/devel/
 
@@ -17,6 +17,13 @@ BUILD_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 		${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 		${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
+
+.if defined(WITH_VPOPMAIL_SQWEBMAIL_CREATION)
+PATCHFILES=	vpopmail-sqwebmail-config-${PORTVERSION}.patch
+PATCH_SITES=	${MASTER_SITE_LOCAL} \
+		http://people.FreeBSD.org/~roam/ports/patches/mail/vpopmail/
+PATCH_SITE_SUBDIR=	roam
+.endif
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
