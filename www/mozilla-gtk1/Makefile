@@ -13,7 +13,7 @@ CATEGORIES=	www
 MASTERDIR=	${.CURDIR}/../mozilla
 DESCR=		${PKGDIR}/pkg-descr.gtk1
 
-WITH_GTK2=	yes
+WITH_GTK1=	yes
 MOZILLA=	mozilla-gtk1
 
 .include "${MASTERDIR}/Makefile"
