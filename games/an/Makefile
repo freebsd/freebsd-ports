@@ -9,8 +9,7 @@ PORTNAME=	an
 PORTVERSION=	0.93
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	ftp://suburbia.net/pub/rmj/ \
-		ftp://ftp.suburbia.net/pub/rmj/
+MASTER_SITES=	http://www.gtoal.com/wordgames/anagrams/${DISTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -23,7 +22,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^CC=|CC?=|g ; \
 		 s|^CFLAGS=-O|CFLAGS+=|g ; \
-		 s| make| \$$\(MAKE\)|g' ${WRKSRC}/Makefile
+		 s| make| \$$\(MAKE\)|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/an ${PREFIX}/bin
