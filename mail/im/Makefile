@@ -3,12 +3,12 @@
 # Date created:		13 November 1997
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/30 10:34:47 max Exp $
 #
 
 DISTNAME=	im-76
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.aist-nara.ac.jp/pub/elisp/Mew/ \
+MASTER_SITES=	ftp://ftp.mew.org/pub/Mew/ \
 		ftp://ftp.kyushu-u.ac.jp/pub/Misc/mew/ \
 		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
 
