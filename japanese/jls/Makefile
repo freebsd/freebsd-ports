@@ -15,7 +15,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	j${PORTNAME}-${PORTVERSION}.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER=	kazami@angels.vg
 COMMENT=	Japanized ls
 
 MAN1=		jls.1
