@@ -78,6 +78,7 @@
     SUBDIR += http_load
     SUBDIR += httperf
     SUBDIR += httptunnel
+    SUBDIR += httrack
     SUBDIR += hypermail
     SUBDIR += indexme
     SUBDIR += jakarta-tomcat
