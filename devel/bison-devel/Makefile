@@ -7,7 +7,7 @@
 
 PORTNAME=	bison
 PORTVERSION=	1.875
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,5 +36,8 @@ MAN1=		bison.1
 
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/bison.info*
+
+post-install:
+	${LN} -sf ${LOCALBASE}/bin/bison ${LOCALBASE}/bin/bison1875
 
 .include <bsd.port.mk>
