@@ -1,0 +1,13 @@
+This module makes it easy to build classes using array based objects.
+It's main goal is to allow one to create less memory hungry programs,
+notably in memory-sensitive contexts such as mod_perl.
+
+This module is little more than a cute way of defining constant subs in
+your own package.  Constant subs are very useful when dealing with array
+based objects because they allow one to access array slots by name
+instead of by index.
+
+WWW: http://search.cpan.org/search?dist=Class-ArrayObjects
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
