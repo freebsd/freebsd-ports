@@ -432,6 +432,7 @@ battlestar	src/games/battlestar
 battstat-applet ports/sysutils/battstat-applet
 bayonne		ports/comms/bayonne
 bb		ports/net/bb
+bbapm		ports/x11-wm/bbapm
 bbbike		ports/german/BBBike
 bbconf		ports/x11-wm/bbconf
 bbdate		ports/x11-clocks/bbdate
