@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	libutf
-PORTVERSION=	8.1.0
+PORTNAME=	libutf-8
+PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	converters
 MASTER_SITES=	http://www.whizkidtech.redprince.net/i18n/ \
 		ftp://ftp.whizkidtech.redprince.net/unix/ \
 		http://www.whizkidtech.net/ISO-8859-2/
-DISTNAME=	libutf-8-1.0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unicode conversion routines between UCS-4 and UTF-8
