@@ -1,14 +1,17 @@
---- rblcheck.c.orig	Thu Aug 20 00:47:03 1998
-+++ rblcheck.c	Mon Feb 26 18:28:46 2001
-@@ -79,6 +79,7 @@
+--- rblcheck.c	Tue May 22 18:49:03 2001
++++ rblcheck.c	Tue May 22 18:49:47 2001
+@@ -79,8 +79,10 @@
  #include <sys/types.h>
  #include <netinet/in.h>
  #include <arpa/nameser.h>
 +#include <arpa/inet.h>
  #include <resolv.h>
  #include <netdb.h>
++#include <unistd.h>
  
-@@ -203,7 +204,7 @@
+ #define VERSION "1.4"
+ 
+@@ -203,7 +205,7 @@
   * domain. If "txt" is non-zero, we perform a TXT record lookup. We
   * return the text returned from a TXT match, or an empty string, on
   * a successful match, or NULL on an unsuccessful match. */
@@ -17,7 +20,7 @@
  {
  	char * domain;
  	char * result = NULL;
-@@ -214,12 +215,15 @@
+@@ -214,12 +216,15 @@
  	const u_char * cend;
  	const u_char * rend;
  	int len;
@@ -34,7 +37,7 @@
  
  	/* Make our DNS query. */
  	res_init();
-@@ -261,8 +265,8 @@
+@@ -261,8 +266,8 @@
  	cp = answer + sizeof( HEADER );
  	while( *cp != '\0' )
  	{
@@ -45,7 +48,7 @@
  			cp++;
  	}
  
-@@ -277,8 +281,8 @@
+@@ -277,8 +282,8 @@
  	cp += ( NS_INT16SZ * 2 ) + NS_INT32SZ;
  
  	/* Get the length and end of the buffer. */
@@ -56,7 +59,7 @@
  
  	/* Iterate over any multiple answers we might have. In
  	   this context, it's unlikely, but anyway. */
-@@ -286,10 +290,10 @@
+@@ -286,10 +291,10 @@
  	rend = result + RESULT_SIZE - 1;
  	while( cp < cend && rp < rend )
  	{
@@ -71,7 +74,7 @@
  			{
  				if( *cp == '\n' || *cp == '"' ||
  				  *cp == '\\' )
-@@ -308,23 +312,40 @@
+@@ -308,23 +313,40 @@
  	char **argv;
  {
  	extern int optind;
@@ -117,7 +120,7 @@
  		{
  			case 'q':
  				/* Quiet */
-@@ -372,10 +393,20 @@
+@@ -372,10 +394,23 @@
  		return -1;
  	}
  
@@ -126,13 +129,16 @@
 -	  d < 0 || d > 255 )
 -	{
 +	fail = 0;
-+	if (ent = gethostbyname(argv[optind])) {
++	if ((ent = gethostbyname(argv[optind])) != NULL) {
 +		memcpy(&a, ent->h_addr_list[0], sizeof(a));
 +		if (ent->h_addr_list[1]) {
-+			fprintf(stderr, "%s resolved to mutiple addresses: ",
-+				argv[optind]);
++			if (!quiet)
++				fprintf(stderr,
++				    "%s resolved to mutiple addresses: ",
++				    argv[optind]);
 +		}
-+		fprintf(stderr, "checking %s\n", inet_ntoa(a));
++		if (!quiet)
++			fprintf(stderr, "checking %s\n", inet_ntoa(a));
 +	} else {
 +		if (!inet_aton(argv[optind], &a))
 +			fail++;
@@ -142,7 +148,7 @@
  		fprintf( stderr, "%s: invalid IP address\n", progname );
  		usage();	
  		return -1;
-@@ -383,7 +414,7 @@
+@@ -383,7 +418,7 @@
  
  	for( ptr = rblsites; ptr != NULL; ptr = ptr->next )
  	{
