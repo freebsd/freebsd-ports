@@ -1,14 +1,14 @@
 bin/dbfdump
 bin/indexdump
-lib/perl5/site_perl/%%PERL_VER%%/DBD/XBase.pm
-lib/perl5/site_perl/%%PERL_VER%%/XBase.pm
-lib/perl5/site_perl/%%PERL_VER%%/XBase/Base.pm
-lib/perl5/site_perl/%%PERL_VER%%/XBase/FAQ.pod
-lib/perl5/site_perl/%%PERL_VER%%/XBase/Index.pm
-lib/perl5/site_perl/%%PERL_VER%%/XBase/Memo.pm
-lib/perl5/site_perl/%%PERL_VER%%/XBase/SQL.pm
-lib/perl5/site_perl/%%PERL_VER%%/XBase/SDBM.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XBase/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XBase
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/XBase
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/DBD 2>/dev/null || true
+%%SITE_PERL%%/DBD/XBase.pm
+%%SITE_PERL%%/XBase.pm
+%%SITE_PERL%%/XBase/Base.pm
+%%SITE_PERL%%/XBase/FAQ.pod
+%%SITE_PERL%%/XBase/Index.pm
+%%SITE_PERL%%/XBase/Memo.pm
+%%SITE_PERL%%/XBase/SDBM.pm
+%%SITE_PERL%%/XBase/SQL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XBase/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XBase
+@dirrm %%SITE_PERL%%/XBase
+@unexec rmdir %D/%%SITE_PERL%%/DBD 2>/dev/null || true
