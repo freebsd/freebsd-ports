@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.4
 CATEGORIES=	chinese
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/
 

@@ -1,17 +1,21 @@
 bin/gcin
 lib/menu/gcin
 lib/menu/gcin-setup
-share/gcin/table/pho.tab
+share/gcin/table/ar30.gtab
+share/gcin/table/cj.gtab
 share/gcin/table/et.kbm
-share/gcin/table/zo.kbm
+share/gcin/table/gtab.list
+share/gcin/table/phrase.table
+share/gcin/table/pho.tab
+share/gcin/table/symbol-table
 share/gcin/table/tsin
 share/gcin/table/tsin.idx
-share/gcin/table/symbol-table
+share/gcin/table/zo.kbm
 share/icons/gcin.png
 share/icons/gcin/pin-fixed24.png
 share/icons/gcin/pin-float16.png
 @dirrm lib/menu
 @dirrm share/icons/gcin
-@dirrm share/icons
+@unexec rmdir %D/share/icons 2>/dev/null || true
 @dirrm share/gcin/table
 @dirrm share/gcin
