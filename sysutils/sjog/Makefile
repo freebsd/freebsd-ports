@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	alan@clegg.com
+MAINTAINER=	roberto@FreeBSD.org
 COMMENT=	Userland daemon for Sony Vaio Jog Dial
 
 ONLY_FOR_ARCHS=	i386

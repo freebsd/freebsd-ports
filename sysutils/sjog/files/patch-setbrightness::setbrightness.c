@@ -1,6 +1,10 @@
---- setbrightness/setbrightness.c.orig	Fri Nov 15 12:59:59 2002
-+++ setbrightness/setbrightness.c	Fri Nov 15 13:02:36 2002
-@@ -4,41 +4,52 @@
+--- setbrightness/setbrightness.c.orig	Sat Jul 28 19:16:22 2001
++++ setbrightness/setbrightness.c	Sun Mar  9 16:19:26 2003
+@@ -1,44 +1,56 @@
+ #define _XOPEN_SOURCE 500
++#define __BSD_VISIBLE 1
+ #include <stdio.h>
+ #include <stdlib.h>
  #include <unistd.h>
  #include <fcntl.h>
  #include <errno.h>
@@ -59,7 +63,7 @@
  	while (inw(CST_REG) & 2) usleep(1);
  	return (inw(DATA_REG)&255);
  }
-@@ -52,14 +63,17 @@
+@@ -52,14 +64,17 @@
  int main(int argc, char *argv[])
  {
  
