@@ -13,6 +13,7 @@
     SUBDIR += aview
     SUBDIR += backfract
     SUBDIR += camediaplay
+    SUBDIR += camserv
     SUBDIR += chbg
     SUBDIR += cqcam
     SUBDIR += dc20ctrl
