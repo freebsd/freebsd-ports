@@ -1,5 +1,6 @@
 bin/playmidi
-lib/midi/std.o3
-lib/midi/std.sb
-lib/midi/drums.o3
-lib/midi/drums.sb
+libdata/midi/drums.o3
+libdata/midi/drums.sb
+libdata/midi/std.o3
+libdata/midi/std.sb
+@dirrm libdata/midi
