@@ -88,7 +88,6 @@
     SUBDIR += gauche-kakasi
     SUBDIR += gawk
     SUBDIR += gd
-    SUBDIR += gd1
     SUBDIR += ghostscript-gnu-jpnfont
     SUBDIR += gicq
     SUBDIR += gn-gnspool

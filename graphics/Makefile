@@ -88,7 +88,6 @@
     SUBDIR += gauche-gl
     SUBDIR += gcolor
     SUBDIR += gd
-    SUBDIR += gd1
     SUBDIR += gdal
     SUBDIR += gdchart
     SUBDIR += gdk-pixbuf
@@ -277,7 +276,6 @@
     SUBDIR += p5-GD-Graph
     SUBDIR += p5-GD-Graph3d
     SUBDIR += p5-GD-TextUtil
-    SUBDIR += p5-GD1
     SUBDIR += p5-GraphViz
     SUBDIR += p5-GraphViz-Data-Structure
     SUBDIR += p5-Graphics-ColorNames
