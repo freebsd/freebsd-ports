@@ -18,6 +18,7 @@
     SUBDIR += ezbounce
     SUBDIR += gruftistats
     SUBDIR += hybserv
+    SUBDIR += icbirc
     SUBDIR += iip
     SUBDIR += infobot
     SUBDIR += insub
