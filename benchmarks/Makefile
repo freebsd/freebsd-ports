@@ -7,6 +7,7 @@
     SUBDIR += bytebench
     SUBDIR += dbench
     SUBDIR += dbs
+    SUBDIR += forkbomb
     SUBDIR += iozone
     SUBDIR += iozone21
     SUBDIR += lmbench

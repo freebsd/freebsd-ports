@@ -1,0 +1,20 @@
+# New ports collection makefile for:	forkbomb
+# Date created:		21 Jan 2004
+# Whom:			Radim Kolar
+#
+# $FreeBSD$
+#
+
+PORTNAME=	forkbomb
+PORTVERSION=	1.0
+CATEGORIES=	benchmarks
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	system/benchmark
+
+MAINTAINER=	hsn@netmag.cz
+COMMENT=	System stress testing tool
+
+USE_GETOPT_LONG=yes
+MAN8=		forkbomb.8
+
+.include <bsd.port.mk>
