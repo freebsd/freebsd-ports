@@ -1,0 +1,9 @@
+Lphoto is a complete desktop solution for digital photo management that 
+resembles iPhoto on Macintosh. It features convenient tools to import, re-touch,
+manage, and share digital photos quickly and easily.
+
+Lphoto supports every camera that is supported in gphoto2 (ie. all PTP cameras).
+See http://gphoto.sourceforge.net/proj/libgphoto2/support.php for a list of
+supported cameras.
+
+WWW:	http://info.linspire.com/lphoto/
