@@ -1,0 +1,6 @@
+lib/libslang.a
+@exec ranlib %D/%F
+lib/libslang.so.99.33
+@exec /sbin/ldconfig -m %B
+include/slcurses.h
+include/slang.h
