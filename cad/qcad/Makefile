@@ -25,7 +25,7 @@ USE_QT_VER=	3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	QTDIR="${QTDIR}" MAKE="${GMAKE}" \
-		QMAKESPEC="${X11BASE}/share/qt/mkspecs/freebsd-g++"
+		QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"
 
 .include <bsd.port.pre.mk>
 
