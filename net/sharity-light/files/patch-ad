@@ -1,0 +1,46 @@
+--- Makefile.orig	Mon Feb 10 13:30:00 1997
++++ Makefile	Tue Jul 15 15:54:21 1997
+@@ -17,16 +17,21 @@
+ ##############################################################################
+ 
+ # For NEXTSTEP/OPENSTEP:
+-CFLAGS = -Wall -O2 -traditional-cpp -g
+-INCLUDES = -I$(MYINCL) -I$(INCL)
++#CFLAGS = -Wall -O2 -traditional-cpp -g
++#INCLUDES = -I$(MYINCL) -I$(INCL)
+ # put your architecture here:
+-ARCH = -arch i386
+-THE_CC = cc
++#ARCH = -arch i386
++#THE_CC = cc
+ 
+ # For Linux:
+ #CFLAGS = -Wall -O2 -g
+ #INCLUDES = -I$(INCL)
+ 
++# For FreeBSD
++CFLAGS = -Wall -O2
++INCLUDES = -I$(MYINCL) -I$(INCL)
++THE_CC = cc
++
+ ##############################################################################
+ ######################## End of system specific part #########################
+ ##############################################################################
+@@ -38,7 +43,7 @@
+ OFILES = proc.o sock.o rumba.o psinode.o kernel.o smb_abstraction.o fo_nfs.o
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) $(ARCH) -c -o $*.o $<
++	$(CC) $(CFLAGS) -c -o $*.o $<
+ 
+ all: $(NAME)
+ 
+@@ -46,7 +51,7 @@
+ 	$(MAKE) -C nfs
+ 
+ $(NAME): $(OFILES) nfs_dir
+-	$(CC) $(ARCH) -o $(NAME) $(OFILES) nfs/nfs.o
++	$(CC) -o $(NAME) $(OFILES) nfs/nfs.o
+ 
+ clean:
+ 	rm -f $(OFILES)
