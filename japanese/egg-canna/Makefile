@@ -16,7 +16,8 @@ EXTRACT_SUFX=	# empty
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Canna Conversion Facility in Egg Input Method Architecture
 
-RUN_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/egg/egg-sim.el:${PORTSDIR}/editors/tamago${EMACS_SUFFIX}
+BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/egg/egg-sim.el:${PORTSDIR}/editors/tamago${EMACS_SUFFIX}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 EMACS_PORT_NAME?=	emacs21
 
