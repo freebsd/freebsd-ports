@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pydance
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.icculus.org/pyddr/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${SONGS}
@@ -37,7 +37,7 @@ PKGMESSAGE=	${WRKDIR}/.pkg-message
 MAN1=		findbpm.1
 MAN6=		pydance.6
 
-DOCFILES=	BUGS CREDITS ChangeLog HACKING INSTALL LICENSE README TODO docs/dance-spec.txt docs/dwi-hall-of-shame.txt docs/ksf-format.txt
+DOCFILES=	BUGS CREDITS ChangeLog HACKING INSTALL LICENSE README TODO docs/dance-spec.txt docs/dwi-hall-of-shame.txt docs/ksf-format.txt docs/manual.html
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/etc,${LOCALBASE}/etc," ${WRKSRC}/constants.py
@@ -64,7 +64,9 @@ pre-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/images
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} docs/images/* ${DOCSDIR}/images
 .endif
 	@${CAT} ${PKGMESSAGE}
 
