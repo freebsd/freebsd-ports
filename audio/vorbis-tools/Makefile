@@ -20,6 +20,7 @@ LIB_DEPENDS=	ao.0:${PORTSDIR}/audio/libao \
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+USE_AUTOMAKE=	yes
 WRKSRC=		${WRKDIR}/vorbis-tools
 ACLOCAL?=	${LOCALBASE}/bin/aclocal
 AUTOHEADER?=	${LOCALBASE}/bin/autoheader
