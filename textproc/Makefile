@@ -56,6 +56,7 @@
     SUBDIR += nfbtrans
     SUBDIR += nicetext
     SUBDIR += no-ispell
+    SUBDIR += openjade
     SUBDIR += p5-Text-CSV_XS
     SUBDIR += p5-Text-Template
     SUBDIR += p5-XML-DOM
