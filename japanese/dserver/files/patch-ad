@@ -1,0 +1,15 @@
+*** server2.2-pl2/compress/defs.h.orig	Thu May  1 13:03:28 1997
+--- server2.2-pl2/compress/defs.h	Thu May  1 13:04:28 1997
+***************
+*** 24,31 ****
+--- 24,33 ----
+  
+  typedef	unsigned char	uchar;
+  #ifndef LINUX
++ #ifndef __FreeBSD__
+  typedef	unsigned short	ushort;
+  typedef	unsigned int	uint;
++ #endif /*__FreeBSD__*/
+  typedef	unsigned long	ulong;
+  #endif /* LINUX */
+  
