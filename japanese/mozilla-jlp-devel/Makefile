@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.3b
+PORTVERSION=	1.4b
 PORTREVISION?=	0
 #PORTEPOCH=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://plaza25.mbn.or.jp/~snip/jlp/
 #MASTER_SITE_SUBDIR=	jlpmoz
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	${PORTNAME}${PORTVERSION}-jajppack-tm0.2
+DISTNAME=	${PORTNAME}${PORTVERSION}-jajppack-tm0.1
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	yatt@luna2.org
@@ -50,6 +50,7 @@ post-extract:
 
 do-build:
 	${SED} -e "s^%%PREFIX%%^${PREFIX}^g" \
+	       -e "s^%%LOCALBASE%%^${LOCALBASE}^g" \
 	       -e "s^%%LOCALENAME%%^${LOCALENAME}^g" \
 	       -e "s^%%LIBXPG4%%^${LIBXPG4}^g" \
 	       -e "s^%%MOZILLA%%^${MOZILLA}^g" \
