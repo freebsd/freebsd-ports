@@ -1,4 +1,6 @@
 bin/mal-conduit-control-applet
 lib/gnome-pilot/conduits/libmal_conduit.so
-share/gnome/control-center/Peripherals/PalmPilot/Conduits/mal-conduit-control-applet.desktop
+share/gnome/apps/Settings/Peripherals/Conduits/mal-conduit-control-applet.desktop
+share/gnome/control-center/Peripherals/Conduits/mal-conduit-control-applet.desktop
 share/gnome/gnome-pilot/conduits/mal.conduit
+share/gnome/pixmaps/avantgo.png
