@@ -5,4 +5,4 @@ and Korean encodings. And, supports the following features:
  * Reentrant-safe encoder and decoder
  * Stateful/context-aware StreamReader and StreamWriter
 
-WWW: http://sourceforge.net/projects/koco/
+WWW: http://cjkpython.berlios.de/#CJKCodecs
