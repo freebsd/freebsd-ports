@@ -57,7 +57,7 @@ pre-extract:
 	@${ECHO} "        it under the directory VMware Workstation installed."
 	@${ECHO} "     *) Press \"OK\" button."
 	@${ECHO} ""
-	@${ECHO} "Don\'t forget to restore the configuration after installing this port."
+	@${ECHO} "Don't forget to restore the configuration after installing this port."
 	@${ECHO} ""
 	@${ECHO} "========================================================================"
 	@${ECHO} ""
