@@ -378,6 +378,7 @@
     SUBDIR += xml4j
     SUBDIR += xmlada
     SUBDIR += xmlcharent
+    SUBDIR += xmlenc
     SUBDIR += xmlpp
     SUBDIR += xmlppm
     SUBDIR += xp
