@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-big5
 
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	ports@freebsd.org
 
 COMMENT=	${.CURDIR}/pkg-comment
 CONFIGURE_ARGS+=	--enable-multibyte=big5 --program-prefix=n

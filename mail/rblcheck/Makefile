@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.xnet.com/%7Eemarshal/rblcheck/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	ports@freebsd.org
 HOMEPAGE=	http://rblcheck.sourceforge.net/
 
 DOCS=		BUGS CHANGES CREDITS INSTALL PLATFORMS TODO

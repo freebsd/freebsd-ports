@@ -10,7 +10,7 @@ PORTVERSION=	0.94
 CATEGORIES=	graphics
 MASTER_SITES=   http://www.asahi-net.or.jp/~xg2k-hys/
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	ports@freebsd.org
 
 RESTRICTED=	"Redistribution prohibited since it is in beta test period"
 

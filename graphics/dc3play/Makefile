@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=   ftp://ftp.itojun.org/pub/digi-cam/DC-3/unix/ \
 		ftp://ftp.digipri.co.jp/pub/free-software/Ricoh/DC-3/unix/
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	ports@freebsd.org
 
 WRKSRC=		${WRKDIR}/dc3play/build
 HAS_CONFIGURE=	yes

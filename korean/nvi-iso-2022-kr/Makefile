@@ -14,6 +14,6 @@ COMMENT=	${.CURDIR}/pkg-comment
 
 CATEGORIES=	korean editors
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	ports@freebsd.org
 
 CONFIGURE_ARGS+=	--enable-multibyte=iso-2022-kr --program-prefix=n

@@ -16,7 +16,7 @@ DISTNAME=	nvi-1.79
 PATCH_SITES=	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
 PATCHFILES=	nvi-1.79.m17n-19991117.diff.gz
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	ports@freebsd.org
 
 #LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 
