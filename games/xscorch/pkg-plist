@@ -1,0 +1,16 @@
+bin/xscorch
+share/xscorch/sounds/stamp
+share/xscorch/images/texture-mars.png
+share/xscorch/images/texture-mars.xpm
+share/xscorch/images/xscorch-0.0.2.xpm
+share/xscorch/images/xscorch-0.0.3.xpm
+share/xscorch/images/xscorch-0.1.1.xpm
+share/xscorch/images/xscorch-0.1.1a.xpm
+share/xscorch/images/xscorch-0.1.1b.xpm
+share/xscorch/images/xscorch-icon.xpm
+share/xscorch/images/xscorch-logo.xpm
+share/xscorch/copying.txt
+share/xscorch/xscorch.txt
+@dirrm share/xscorch/sounds
+@dirrm share/xscorch/images
+@dirrm share/xscorch
