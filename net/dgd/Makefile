@@ -15,6 +15,9 @@ CATEGORIES=	networking languages
 
 MAINTAINER=	adam@veda.is
 
+DGD_USER?=	dgd
+DGD_GROUP?=	dgd
+
 .if ${PATCHFILES} != ""
 PATCH_PRFX=	${DISTNAME}/
 PATCHLEVEL!=	echo ${PATCHFILES} | sed 's/^.*\.\(.*\)\.gz$$/\1/'
@@ -36,13 +39,15 @@ post-build:
 	@cd ${WRKSRC}; ${MAKE} install
 
 do-install:
-	@chown -R mud.mud ${WRKDIR}/dgd
+	@chown -R ${DGD_USER}.${DGD_GROUP} ${WRKDIR}/dgd
 	@tar -C ${WRKDIR} -cf - `grep '^dgd/' pkg/PLIST` \
 		| tar -C ${PREFIX} -xpf -
 
 .if !defined(DO_PACKAGE)
 package:
-	@${MAKE} ${.MAKEFLAGS} 'PKG_CMD= WRKDIR=${WRKDIR} ${PKG_CMD}' \
+	@sed '/^@srcdir/s|\.|${WRKDIR}/\.|' <${PKGDIR}/PLIST >${WRKDIR}/PLIST
+#	@${MAKE} ${.MAKEFLAGS} 'PKG_CMD= cd ${WRKDIR}; ${PKG_CMD}' \
+	@${MAKE} ${.MAKEFLAGS} 'PKG_ARGS= ${PKG_ARGS} -f ${WRKDIR}/PLIST' \
 	    NO_INSTALL= DO_PACKAGE= package
 .endif
 
