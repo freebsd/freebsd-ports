@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.11 1999/05/03 04:41:28 steve Exp $
+# $Id: Makefile,v 1.12 1999/05/06 14:30:03 taoka Exp $
 #
 
     SUBDIR += abacus
@@ -10,6 +10,7 @@
     SUBDIR += gtimer
     SUBDIR += ical
     SUBDIR += korganizer
+    SUBDIR += korganizer11-i18n
     SUBDIR += kproject
     SUBDIR += offix-trash
     SUBDIR += plan

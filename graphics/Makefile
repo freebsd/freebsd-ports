@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.132 1999/06/16 13:46:04 taoka Exp $
+# $Id: Makefile,v 1.133 1999/06/19 17:41:06 cpiazza Exp $
 #
 
     SUBDIR += 4va
@@ -58,6 +58,7 @@
     SUBDIR += jgv
     SUBDIR += jpeg
     SUBDIR += kdegraphics11
+    SUBDIR += kdegraphics11-i18n
     SUBDIR += killustrator
     SUBDIR += lfview
     SUBDIR += libimg
