@@ -12,15 +12,15 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl5 data debugging tool for the XS programmer
 
 PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile"
+.if ${PERL_LEVEL} >= 500600
+IGNORE=		"Version included in perl distribution is newer"
 .endif
 
 MAN3=		Devel::Peek.3
