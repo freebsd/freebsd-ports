@@ -7,5 +7,6 @@ share/gnome/help/stockticker_applet/C/ln14.html
 share/gnome/help/stockticker_applet/C/stockticker.html
 share/gnome/help/stockticker_applet/C/topic.dat
 share/gnome/pixmaps/stockticker.png
+@dirrm share/gnome/help/stockticker_applet/C/images
 @dirrm share/gnome/help/stockticker_applet/C
 @dirrm share/gnome/help/stockticker_applet
