@@ -7,47 +7,34 @@
 #
 
 PORTNAME=	netdude
-PORTVERSION=	0.3.3
-PORTREVISION=	3
+PORTVERSION=	0.4.5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yb@sainte-barbe.org
 COMMENT=	NETwork DUmp data Displayer and Editor for tcpdump tracefiles
 
-LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl \
+		netdude.0:${PORTSDIR}/net/libnetdude
 
-USE_GETTEXT=	yes
 USE_ICONV=	yes
-USE_REINPLACE=	yes
-USE_GNOME=	glib12 gtk12
-USE_LIBTOOL_VER=13
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lltdl"
+USE_GETTEXT=	yes
+USE_LIBTOOL_VER=	13
+CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lltdl"
 USE_GMAKE=	yes
+USE_GNOME=	glib12 gtk12
 INSTALL_SHLIB=	yes
+USE_REINPLACE=	yes
 
 MAN1=	netdude.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-EXTRA_PATCHES=	${FILESDIR}/protocols-fddi::nd_fddi.h.patch
+post-patch:
+	@${REINPLACE_CMD} -e 's|DOC_MODULE = netdude|DOC_MODULE =|' \
+	${WRKSRC}/doc/netdude-manual/Makefile.in
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's|doc||' ${WRKSRC}/Makefile.in
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|gtk-config|${GTK_CONFIG}|g" \
-		-e "s|glib-config|${GLIB_CONFIG}|g" ${WRKSRC}/configure
-.for file in nd_icmp.c nd_icmp.h nd_icmp_callbacks.c
-	@${REINPLACE_CMD} -e "s|struct icmphdr|struct icmp|g" \
-		${WRKSRC}/protocols/icmp/${file}
-.endfor
-	@${REINPLACE_CMD} -e "s|->type|->icmp_type|g" \
-		-e "s|->code|->icmp_code|g" \
-		-e "s|->checksum|->icmp_cksum|g" \
-		-e "s|->un.echo.id|->icmp_id|g" \
-		-e "s|->un.echo.sequence|->icmp_seq|g" \
-		${WRKSRC}/protocols/icmp/nd_icmp.c
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
