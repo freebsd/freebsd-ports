@@ -1,0 +1,20 @@
+--- frontend/Makefile.in.orig	Fri Mar  3 06:05:00 2000
++++ frontend/Makefile.in	Tue May 11 03:54:34 2004
+@@ -37,7 +37,7 @@
+ RANLIB = @RANLIB@
+ 
+ DEFS = @DEFS@ @LOCALDEFS@
+-CPPFLAGS = -I. -I$(srcdir) -I$(srcdir)/../lib
++CPPFLAGS = -I/usr/local/include -I$(srcdir) -I$(srcdir)/../lib
+ DEPLIBS = ../lib/libcyrus.a @DEPLIBS@
+ LIBS = @LIBS@ $(DEPLIBS) @LIB_SASL@
+ 
+@@ -46,7 +46,7 @@
+ 
+ prefix = /usr/local
+ exec_prefix = ${prefix}
+-cyrus_prefix = /usr/cyrus
++cyrus_prefix = ${prefix}/cyrus
+ 
+ SHELL = /bin/sh
+ MAKEDEPEND = @MAKEDEPEND@

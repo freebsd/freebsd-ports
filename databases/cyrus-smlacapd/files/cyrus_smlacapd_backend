@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/databases/cyrus-smlacapd/files/Attic/cyrus_smlacapd_backend,v 1.1 2005-01-20 15:11:08 pav Exp $
+#
+
+# PROVIDE: cyrus_smlacapd_backend
+# REQUIRE: DAEMON cyrus_pwcheck
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable cyrus_smlacapd_backend:
+# cyrus_smlacapd_backend_enable="YES"
+#
+. /etc/rc.subr
+
+name="cyrus_smlacapd_backend"
+rcvar=`set_rcvar`
+
+[ -z "$cyrus_smlacapd_backend_enable" ]	&& cyrus_smlacapd_backend_enable="NO"
+[ -z "$cyrus_smlacapd_backend_runtime" ]	&& cyrus_smlacapd_backend_runtime="/usr/local/cyrus/bin/run.x86-freebsd"
+[ -z "$cyrus_smlacapd_backend_heap" ]	&& cyrus_smlacapd_backend_heap="/usr/local/cyrus/bin/backend.x86-bsd"
+
+required_dirs="/var/acap /var/spool/acap"
+pidfile=/var/run/cyrus_smlacapd_backend.pid
+procname=$cyrus_smlacapd_backend_runtime
+start_precmd="cyrus_smlacapd_backend_precmd"
+start_postcmd="cyrus_smlacapd_backend_postcmd"
+command=/usr/sbin/daemon
+command_args="-f $cyrus_smlacapd_backend_runtime @SMLload=$cyrus_smlacapd_backend_heap"
+
+cyrus_smlacapd_backend_precmd()
+{
+	SOCKET=/var/acap/socke
+	if [ -e ${SOCKET} ]
+	then
+		rm ${SOCKET}
+        fi
+}
+
+cyrus_smlacapd_backend_postcmd()
+{
+	sleep 1
+	pid=`ps -o pid,command -axww | \
+	     awk '$2 == "'$cyrus_smlacapd_backend_runtime'" && $3 == "@SMLload='$cyrus_smlacapd_backend_heap'" { print $1 }'`
+	if [ -n "$pid" ]
+	then
+		echo "$pid" > $pidfile
+        fi
+}
+
+load_rc_config $name
+
+run_rc_command "$1"

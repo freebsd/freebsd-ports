@@ -1,0 +1,15 @@
+To enable the acap server, add this line to /etc/inetd.conf :
+
+acap stream tcp nowait root /usr/local/cyrus/bin/frontend frontend
+
+You also need the configuration file /etc/acapd.conf.  A
+sample can be found in %%PREFIX%%/share/doc/acapd
+
+The configuration file contains the path names for the
+directories where the ACAP daemon stores it's data files,
+you should create them e.g. by
+
+mkdir /var/acap
+mkdir /var/spool/acap
+mkdir /var/spool/log
+
