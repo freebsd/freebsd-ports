@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2003.01.17
+PORTVERSION=	2003.01.28
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -21,20 +21,20 @@ WRKSRC=		${WRKDIR}/live
 
 USE_REINPLACE=	YES
 
-BasicUsageEnvironment= \
+BasicUsageEnvironment=	\
 		BasicUsageEnvironment/include/BasicHashTable.hh \
 		BasicUsageEnvironment/include/BasicUsageEnvironment.hh \
 		BasicUsageEnvironment/include/BasicUsageEnvironment_version.hh \
 		BasicUsageEnvironment/include/DelayQueue.hh \
 		BasicUsageEnvironment/include/Lock.hh
 
-UsageEnvironment= \
+UsageEnvironment=	\
 		UsageEnvironment/include/Boolean.hh \
 		UsageEnvironment/include/HashTable.hh \
 		UsageEnvironment/include/UsageEnvironment.hh \
 		UsageEnvironment/include/UsageEnvironment_version.hh
 
-groupsock= \
+groupsock=		\
 		groupsock/include/GroupEId.hh \
 		groupsock/include/Groupsock.hh \
 		groupsock/include/GroupsockHelper.hh \
@@ -44,7 +44,7 @@ groupsock= \
 		groupsock/include/TunnelEncaps.hh \
 		groupsock/include/groupsock_version.hh
 
-liveMedia= \
+liveMedia=		\
 		liveMedia/include/BasicUDPSource.hh \
 		liveMedia/include/ByteStreamFileSource.hh \
 		liveMedia/include/ByteStreamMultiFileSource.hh \
@@ -94,6 +94,7 @@ liveMedia= \
 		liveMedia/include/RTPSource.hh \
 		liveMedia/include/RTSPClient.hh \
 		liveMedia/include/RTSPServer.hh \
+		liveMedia/include/SIPClient.hh \
 		liveMedia/include/ServerMediaSession.hh \
 		liveMedia/include/SimpleRTPSink.hh \
 		liveMedia/include/SimpleRTPSource.hh \
@@ -108,6 +109,7 @@ do-configure:
 
 do-install::
 	@${INSTALL_PROGRAM} ${WRKSRC}/testProgs/openRTSP ${PREFIX}/bin/
+	@${INSTALL_PROGRAM} ${WRKSRC}/testProgs/playSIP ${PREFIX}/bin/
 	@${INSTALL_PROGRAM} ${WRKSRC}/testProgs/sapWatch ${PREFIX}/bin/
 
 do-install::

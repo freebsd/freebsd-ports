@@ -1,4 +1,5 @@
 bin/openRTSP
+bin/playSIP
 bin/sapWatch
 live/BasicUsageEnvironment/libBasicUsageEnvironment.a
 live/BasicUsageEnvironment/include/BasicHashTable.hh
@@ -70,6 +71,7 @@ live/liveMedia/include/RTPSink.hh
 live/liveMedia/include/RTPSource.hh
 live/liveMedia/include/RTSPClient.hh
 live/liveMedia/include/RTSPServer.hh
+live/liveMedia/include/SIPClient.hh
 live/liveMedia/include/ServerMediaSession.hh
 live/liveMedia/include/SimpleRTPSink.hh
 live/liveMedia/include/SimpleRTPSource.hh
