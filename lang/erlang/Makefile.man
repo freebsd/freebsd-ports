@@ -10,6 +10,7 @@ MAN1=	epmd.1 \
 	run_erl.1 \
 	start.1 \
 	start_erl.1 \
+	start_webtool.1 \
 	werl.1
 
 MAN3=	CORBA_Environment_alloc.3 \
@@ -103,6 +104,7 @@ MAN3=	CORBA_Environment_alloc.3 \
 	cover.3 \
 	cprof.3 \
 	cpu_sup.3 \
+	crashdump.3 \
 	crypto.3 \
 	dbg.3 \
 	debugger.3 \
@@ -134,9 +136,12 @@ MAN3=	CORBA_Environment_alloc.3 \
 	erl_prim_loader.3 \
 	erl_scan.3 \
 	erl_set_memory_block.3 \
+	erl_tar.3 \
 	erlang.3 \
+	erlang_mode.3 \
 	error_handler.3 \
 	error_logger.3 \
+	erts_alloc.3 \
 	et.3 \
 	et_collector.3 \
 	et_selector.3 \
@@ -151,6 +156,7 @@ MAN3=	CORBA_Environment_alloc.3 \
 	eva_sup.3 \
 	file.3 \
 	file_sorter.3 \
+	filelib.3 \
 	filename.3 \
 	fixed.3 \
 	fprof.3 \
@@ -234,6 +240,7 @@ MAN3=	CORBA_Environment_alloc.3 \
 	os.3 \
 	os_mon.3 \
 	os_sup.3 \
+	otp_mib.3 \
 	overload.3 \
 	pg.3 \
 	pg2.3 \
@@ -252,7 +259,6 @@ MAN3=	CORBA_Environment_alloc.3 \
 	sets.3 \
 	shell.3 \
 	shell_default.3 \
-	sl_alloc.3 \
 	slave.3 \
 	snmp.3 \
 	snmp_community_mib.3 \
@@ -274,7 +280,7 @@ MAN3=	CORBA_Environment_alloc.3 \
 	snmp_view_based_acm_mib.3 \
 	sofs.3 \
 	ssl.3 \
-	ssl_socket.3 \
+	ssl_pkix.3 \
 	string.3 \
 	supervisor.3 \
 	supervisor_bridge.3 \
