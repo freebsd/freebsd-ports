@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldap
-PORTVERSION=	0.3
+PORTVERSION=	0.3.2
 CATEGORIES=	net ruby
 MASTER_SITES=	http://kt-www.jaist.ac.jp:8000/~ttate/ftp/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -49,18 +49,25 @@ CONFIGURE_ARGS?=	--with-netscape \
 			--with-ldap-dir="${LOCALBASE}/mozilla/directory"
 .endif
 
+WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 INSTALL_TARGET=	site-install
 
 DOCS_EN=	README		README.html
-EXAMPLES_EN=	test1.rb	test2.rb	test3.rb	test4.rb	\
-		test5.rb	test6.rb	test7.rb
+
+post-extract:
+	find ${WRKSRC} -name CVS -type d | xargs ${RM} -r
+	${CHMOD} 644 ${WRKSRC}/test/*.rb
+
+post-patch:
+	${RM} ${WRKSRC}/test/test.sh.orig
+	${RUBY} -i -pe 'gsub /!!PREFIX!!/, "${PREFIX}"' \
+		-e 'gsub /!!RUBY!!/, "${RUBY}"' ${WRKSRC}/test/test.sh
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/ldap
-.for f in ${EXAMPLES_EN}
-	${INSTALL_DATA} ${WRKSRC}/test/${f} ${RUBY_EXAMPLESDIR}/ldap/
-.endfor
+	${CP} -R ${WRKSRC}/test/* ${RUBY_EXAMPLESDIR}/ldap/
+	${LN} -s . ${RUBY_EXAMPLESDIR}/ldap/test
 	${MKDIR} ${RUBY_DOCDIR}/ldap
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/ldap/
