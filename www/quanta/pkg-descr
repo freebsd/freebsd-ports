@@ -3,6 +3,10 @@ interface appears to be related to kdevelop's; this
 allows for unity among the various kde development
 applications.
 
+This version of quanta will appear in KDE 3.1, and this
+port will be removed shortly thereafter.
+
 WWW: http://quanta.sourceforge.net/
 
-- Will <andrews@technologist.com>
+- AlanE <alane@FreeBSD.org>
+
