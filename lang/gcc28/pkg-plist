@@ -1,11 +1,9 @@
 @comment $FreeBSD$
-bin/g++
 bin/g++28
+bin/gcov28
+bin/gcc28
 bin/protoize
 bin/unprotoize
-bin/gcov
-bin/gcc
-bin/gcc28
 bin/%%GNUHOST%%-gcc
 @unexec install-info --delete %D/info/cpp.info %D/info/dir
 @unexec install-info --delete %D/info/gcc.info %D/info/dir
@@ -44,7 +42,6 @@ info/gcc.info-8
 info/gcc.info-9
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
-lib/gcc-lib/%%GNUHOST%%/2.8.1/include/float.h
 lib/gcc-lib/%%GNUHOST%%/2.8.1/include/math.h
 lib/gcc-lib/%%GNUHOST%%/2.8.1/include/syslimits.h
 lib/gcc-lib/%%GNUHOST%%/2.8.1/include/typeinfo
