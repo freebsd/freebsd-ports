@@ -1,0 +1,34 @@
+share/python1.4/NumPy/ArrayPrinter.py
+share/python1.4/NumPy/ArrayPrinter.pyc
+share/python1.4/NumPy/FFT.py
+share/python1.4/NumPy/FFT.pyc
+share/python1.4/NumPy/LinearAlgebra.py
+share/python1.4/NumPy/LinearAlgebra.pyc
+share/python1.4/NumPy/MLab.py
+share/python1.4/NumPy/MLab.pyc
+share/python1.4/NumPy/Matrix.py
+share/python1.4/NumPy/Matrix.pyc
+share/python1.4/NumPy/Numeric.py
+share/python1.4/NumPy/Numeric.pyc
+share/python1.4/NumPy/Precision.py
+share/python1.4/NumPy/Precision.pyc
+share/python1.4/NumPy/RandomArray.py
+share/python1.4/NumPy/RandomArray.pyc
+share/python1.4/NumPy/UserArray.py
+share/python1.4/NumPy/UserArray.pyc
+share/python1.4/NumPy/fast_umathmodule.so
+share/python1.4/NumPy/fftpackmodule.so
+share/python1.4/NumPy/lapack_litemodule.so
+share/python1.4/NumPy/multiarraymodule.so
+share/python1.4/NumPy/ranlibmodule.so
+share/python1.4/NumPy/umathmodule.so
+@dirrm share/python1.4/NumPy
+share/doc/NumPy/contributions.html
+share/doc/NumPy/doc.html
+share/doc/NumPy/download.html
+share/doc/NumPy/download1.html
+share/doc/NumPy/extensions.html
+share/doc/NumPy/home.html
+share/doc/NumPy/numpy.html
+share/doc/NumPy/paper.html
+@dirrm share/doc/NumPy
