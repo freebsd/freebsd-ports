@@ -3,7 +3,7 @@
 # Date created:		22 December 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.2 1997/01/02 07:12:33 tg Exp $
+# $Id: Makefile,v 1.3 1997/01/07 08:17:11 tg Exp $
 #
 
 DISTNAME=	Tix4.1b2
@@ -18,7 +18,7 @@ LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tk40 --enable-tk41 --enable-tk41-shared \
 		--with-tcl75_src_dir=/usr/include/tcl \
-		--with-tk41_src_dir="${PREFIX}/include/tk" \
+		--with-tk41_src_dir="${PREFIX}/include/tk4.1" \
 		--with-extra_ldflags="-L${PREFIX}/lib"
 # this should probably be added to bsd.port.mk
 CONFIGURE_ENV=	PREFIX=${PREFIX}
