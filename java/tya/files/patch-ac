@@ -1,0 +1,14 @@
+--- README	2000/09/23 21:49:52	1.1
++++ README	2000/09/23 21:52:34
+@@ -138,7 +138,10 @@
+ 
+ You may either specify the compiler to the JVM on the command line, or
+ you may set an environment variable that will let the JVM find the
+-compiler.
++compiler. In both cases you should set LD_LIBRARY_PATH enviropment
++variable as follows:
++
++      export LD_LIBRARY_PATH=%%PREFIX%%/lib/tya
+ 
+ For the command line option, run Java using option "-Djava.compiler=",
+ like this example: 

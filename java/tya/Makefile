@@ -26,6 +26,9 @@ CONFIGURE_ARGS+=	--with-jdk=${JAVADIR}
 JAVADIR=	${LOCALBASE}/jdk1.1.8
 JAVALIBDIR=	${PREFIX}/lib/tya
 
+post-configure:
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/README
+
 do-install:
 	@${MKDIR} ${JAVALIBDIR}
 	@${INSTALL_PROGRAM} ${WRKSRC}/libtya.so ${JAVALIBDIR}
