@@ -9,8 +9,7 @@ PORTNAME=	ifmail
 PORTVERSION=	2.15
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		ftp://ftp.average.org/ifmail/ \
-		ftp://ftp.lan-ks.de/pub/approved/
+		ftp://ftp.average.org/ifmail/
 MASTER_SITE_SUBDIR=	system/fido
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
