@@ -1,4 +1,0 @@
-*static*
-
-# Christian Tismer's continuation module (part of Stackless Python)
-continuation continuationmodule.c
