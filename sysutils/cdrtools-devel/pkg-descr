@@ -14,7 +14,7 @@ This package contains the following software:
 
 	-	isodump dump a device or file based on ISO-9660
 
-	-	isoinfo analyze or list an IDO-9660 image
+	-	isoinfo analyze or list an ISO-9660 image
 
 	-	isovrfy verify an ISO-9660 image
 
