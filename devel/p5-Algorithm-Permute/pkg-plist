@@ -1,0 +1,6 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Algorithm/Permute.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Algorithm/Permute/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Algorithm/Permute/Permute.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Algorithm/Permute/Permute.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Algorithm/Permute/autosplit.ix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Algorithm/Permute

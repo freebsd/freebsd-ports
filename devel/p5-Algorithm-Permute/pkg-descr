@@ -1,0 +1,7 @@
+Algorithm::Permute provides a handy and fast permutation with an OO interface,
+although its algorithm is perhaps not the fastest available.  Currently it only
+supports permutation n of n objects.
+
+Author: Edwin Pratomo <ed.pratomo@computer.org>
+
+--will
