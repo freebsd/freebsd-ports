@@ -3,7 +3,7 @@
 # Date created:         So  27 Okt 1996 12:25:55 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.19 1997/10/13 20:31:28 andreas Exp $
+# $Id: Makefile,v 1.20 1998/05/08 13:51:26 andreas Exp $
 #
 
 DISTNAME=	crossfire-${MAJ}.${MIN}.${PL}
@@ -76,5 +76,7 @@ post-install:
 	@chmod 6555 ${PREFIX}/bin/crossfire
 	${ECHO} "Note: to start crossfire in clientmode"
 	${ECHO} "	crossfire -xpm"
+	${ECHO} "Note: don't forget to update ${PREFIX}/etc/rplay.conf"
+	${ECHO} "	with new sounds in ${CFDIR}/sounds"
 
 .include <bsd.port.mk>
