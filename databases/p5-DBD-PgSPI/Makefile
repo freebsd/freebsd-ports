@@ -28,6 +28,7 @@ MAN3=		DBD::PgSPI.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
+.endif
 
 POSTGRESQL_PORT?=	databases/postgresql${PGSQL_VER}-server
 PGSQL_PORTDIR?=		${PORTSDIR}/${POSTGRESQL_PORT}
@@ -60,6 +61,7 @@ post-patch:
 post-clean:
 	@cd ${PGSQL_PORTDIR} && ${MAKE} clean
 
+.if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
