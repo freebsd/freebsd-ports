@@ -4,13 +4,16 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.52 1998/10/09 10:05:51 asami Exp $
+# $Id: Makefile,v 1.53 1998/12/13 01:31:06 obrien Exp $
 
-DISTNAME=	mutt-0.95i
-PKGNAME=	mutt-0.95
+DISTNAME=	mutt-0.95.1i
+PKGNAME=	mutt-0.95.1
 CATEGORIES=	mail
-MASTER_SITES=	ftp://riemann.iam.uni-bonn.de/pub/mutt/  \
+MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/  \
+		ftp://ftp.uib.no/pub/mutt/  \
+		ftp://pgp.rasip.fer.hr/pub/mutt/international/  \
 		ftp://ftp.gbnet.net/pub/mutt-international/  \
+		ftp://riemann.iam.uni-bonn.de/pub/mutt/  \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/mutt-international/ \
 		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/  \
 		ftp://ftp.iks-jena.de/pub/mitarb/lutz/crypt/software/pgp/mutt/
