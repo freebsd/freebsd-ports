@@ -63,6 +63,7 @@
     SUBDIR += fpm
     SUBDIR += fragroute
     SUBDIR += fragrouter
+    SUBDIR += freebsd-update
     SUBDIR += fressh
     SUBDIR += fsh
     SUBDIR += ftimes

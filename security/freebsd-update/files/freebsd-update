@@ -1,0 +1,23 @@
+#!/bin/sh
+
+case "$1" in
+fetch)
+	cd %%PREFIX%%/freebsd-update && make fetch-update;;
+install)
+	cd %%PREFIX%%/freebsd-update && make install-update;;
+rollback)
+	cd %%PREFIX%%/freebsd-update && make rollback-update;;
+cron)
+	cd %%PREFIX%%/freebsd-update && make MAILTO=root QUIET=YES daily;;
+*)
+	echo "Usage: freebsd-update {fetch|install|rollback|cron}" >&2
+	echo "  freebsd-update fetch:    Fetches updates" >&2
+	echo "  freebsd-update install:  Installs fetched updates" >&2
+	echo "  freebsd-update rollback: Rolls back installed updates" >&2
+	echo "  freebsd-update cron:     Suitable for use in cron(8)," >&2
+	echo "                           fetches updates and sends an" >&2
+	echo "                           email to root if any exist." >&2
+	;;
+esac
+
+exit 0
