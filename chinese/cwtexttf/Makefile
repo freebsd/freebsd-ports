@@ -15,42 +15,18 @@ DISTNAME=	cwtex-ttf
 MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 COMMENT=	Five Chinese Big5 TrueType fonts made by cwTeX
 
-RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm
-
-USE_ZIP=	YES
+USE_ZIP=	yes
 NO_BUILD=	yes
-SHAREMODE=	644
 WRKSRC=		${WRKDIR}/texmf/fonts/truetype/cwTeX
-USE_XLIB=	yes
-FONTDIR=	${PREFIX}/share/fonts/TrueType
-XFONTDIR=	${X11BASE}/lib/X11/fonts/TrueType
-INSTALL_ENV=	PKG_PREFIX=${PREFIX} \
-		WANT_GS=${WANT_GS} WITHOUT_X=${WITHOUT_X}
 
-.include <bsd.port.pre.mk>
-
-pre-fetch:
-.if defined(WANT_GS)
-	@${ECHO} "Ghostscript support will be added."
-.endif
-.if defined(WITHOUT_X)
-	@${ECHO} "X Window support will NOT be added."
-.endif
-.if !defined(WANT_GS) && !defined(WITHOUT_X)
-	@${ECHO} --
-	@${ECHO} "Type \"make WANT_GS=yes\" if you want Ghostscript support."
-	@${ECHO} "Type \"make WITHOUT_X=yes\" if you DONT want X Window support."
-	@${ECHO} "You can use them in combinations."
-	@${ECHO} --
-.endif
+TTF=		bbttf.ttf fttf.ttf kttf.ttf mttf.ttf rttf.ttf
 
 do-install:
-.if !exists(${FONTDIR})
-	@${MKDIR} ${FONTDIR}
-.endif
-.for i in bbttf.ttf fttf.ttf kttf.ttf mttf.ttf rttf.ttf
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${FONTDIR}
+	@${MKDIR} ${FONTSDIR}
+.for i in ${TTF}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${FONTSDIR}
 .endfor
-	@${SETENV} ${INSTALL_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
 .include <bsd.port.post.mk>

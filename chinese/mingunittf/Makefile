@@ -15,30 +15,18 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 COMMENT=	Chinese Big5HKSCS TrueType fonts
 
-BUILD_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm \
-		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm \
-		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-
 EXTRACT_CMD=	${GZIP_CMD}
 EXTRACT_BEFORE_ARGS=	-dc
-EXTRACT_AFTER_ARGS=	> ${WRKSRC}/minguni.ttf
+EXTRACT_AFTER_ARGS=	> ${WRKSRC}/${TTF}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-SHAREMODE=	644
-USE_XLIB=	yes
-FONTDIR=	${PREFIX}/share/fonts/TrueType
-XFONTDIR=	${X11BASE}/lib/X11/fonts/TrueType
-INSTALL_ENV=	PKG_PREFIX=${PREFIX}
 
-.include <bsd.port.pre.mk>
+TTF=		minguni.ttf
 
 do-install:
-	@${MKDIR} ${FONTDIR}
-	@${INSTALL_DATA} ${WRKSRC}/minguni.ttf ${FONTDIR}
-	@${ECHO_MSG} "===> Running ttfm.sh"
-	-@${PREFIX}/bin/ttfm.sh --add xttfm minguni.ttf
-	@${ECHO_MSG} "===> Running fc-cache"
-	-@${X11BASE}/bin/fc-cache -f -v ${XFONTDIR}
+	@${MKDIR} ${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${TTF} ${FONTSDIR}
 
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
 .include <bsd.port.post.mk>

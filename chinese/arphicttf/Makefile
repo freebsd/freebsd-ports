@@ -15,47 +15,20 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 COMMENT=	Four Chinese Big5/GB TrueType fonts made by Arphic Technology
 
-RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm
-
 NO_BUILD=	yes
-SHAREMODE=	644
 WRKSRC=		${WRKDIR}/arphic
-USE_XLIB=	yes
-FONTDIR=	${PREFIX}/share/fonts/TrueType
-XFONTDIR=	${X11BASE}/lib/X11/fonts/TrueType
-INSTALL_ENV=	PKG_PREFIX=${PREFIX} WANT_GS=${WANT_GS} WITHOUT_X=${WITHOUT_X}
 
-.include <bsd.port.pre.mk>
-
-.if defined(WANT_GS)
-RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
-.endif
-
-pre-fetch:
-.if defined(WANT_GS)
-	@${ECHO} "Ghostscript support will be added."
-.endif
-.if defined(WITHOUT_X)
-	@${ECHO} "X Window support will NOT be added."
-.endif
-.if !defined(WANT_GS) && !defined(WITHOUT_X)
-	@${ECHO} --
-	@${ECHO} "Type \"make WANT_GS=yes\" if you want Ghostscript support."
-	@${ECHO} "Type \"make WITHOUT_X=yes\" if you DONT want X Window support."
-	@${ECHO} "You can use them in combinations."
-	@${ECHO} --
-.endif
+TTF=		bkai00mp.ttf bsmi00lp.ttf gbsn00lp.ttf gkai00mp.ttf
 
 do-install:
-	@${MKDIR} ${FONTDIR}
-	@${INSTALL_DATA} ${WRKSRC}/font/bkai00mp.ttf ${FONTDIR}
-	@${INSTALL_DATA} ${WRKSRC}/font/bsmi00lp.ttf ${FONTDIR}
-	@${INSTALL_DATA} ${WRKSRC}/font/gbsn00lp.ttf ${FONTDIR}
-	@${INSTALL_DATA} ${WRKSRC}/font/gkai00mp.ttf ${FONTDIR}
-	@${RM} -fr ${FONTDIR}/arphic
-	@${MKDIR} ${FONTDIR}/arphic
-	@${CP} -fr ${WRKSRC}/license ${FONTDIR}/arphic
-	@${CP} -f ${WRKSRC}/logo.gif ${WRKSRC}/release.txt ${FONTDIR}/arphic
-	@${SETENV} ${INSTALL_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${MKDIR} ${FONTSDIR}
+.for ttf in ${TTF}
+	${INSTALL_DATA} ${WRKSRC}/font/${ttf} ${FONTSDIR}
+.endfor
+	@${MKDIR} ${DATADIR}
+	${CP} -fr ${WRKSRC}/license ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/logo.gif ${WRKSRC}/release.txt ${DATADIR}
 
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
 .include <bsd.port.post.mk>

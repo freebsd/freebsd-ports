@@ -16,14 +16,15 @@ COMMENT=	A Big5/GB enhanced TrueType Font Manager
 RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
-FONTSDIR=	${PREFIX}/share/fonts/TrueType/
+PORTDOCS=	README USAGE
+MAN1=		ttfm.sh.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ttfinfo ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/ttfm.sh ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in README USAGE
+.for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
@@ -32,8 +33,5 @@ do-install:
 .for module in gscjk.ttfm xttfm.ttfm
 	${INSTALL_SCRIPT} ${WRKSRC}/modules/${module} ${DATADIR}
 .endfor
-	@${MKDIR} ${FONTSDIR}
-
-MAN1=	ttfm.sh.1
 
 .include <bsd.port.mk>

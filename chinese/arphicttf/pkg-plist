@@ -1,19 +1,13 @@
-share/fonts/TrueType/bkai00mp.ttf
-share/fonts/TrueType/bsmi00lp.ttf
-share/fonts/TrueType/gbsn00lp.ttf
-share/fonts/TrueType/gkai00mp.ttf
-share/fonts/TrueType/arphic/license/BIG5/ARPHICPL.DOC
-share/fonts/TrueType/arphic/license/BIG5/ARPHICPL.TXT
-share/fonts/TrueType/arphic/license/ENGLISH/ARPHICPL.DOC
-share/fonts/TrueType/arphic/license/ENGLISH/ARPHICPL.TXT
-share/fonts/TrueType/arphic/license/GB/ARPHICPL.DOC
-share/fonts/TrueType/arphic/license/GB/ARPHICPL.TXT
-share/fonts/TrueType/arphic/logo.gif
-share/fonts/TrueType/arphic/release.txt
-@dirrm share/fonts/TrueType/arphic/license/BIG5
-@dirrm share/fonts/TrueType/arphic/license/ENGLISH
-@dirrm share/fonts/TrueType/arphic/license/GB
-@dirrm share/fonts/TrueType/arphic/license
-@dirrm share/fonts/TrueType/arphic
-@unexec rmdir %D/share/fonts/TrueType 2>/dev/null || true
-@unexec rmdir %D/share/fonts 2>/dev/null || true
+%%DATADIR%%/license/BIG5/ARPHICPL.DOC
+%%DATADIR%%/license/BIG5/ARPHICPL.TXT
+%%DATADIR%%/license/ENGLISH/ARPHICPL.DOC
+%%DATADIR%%/license/ENGLISH/ARPHICPL.TXT
+%%DATADIR%%/license/GB/ARPHICPL.DOC
+%%DATADIR%%/license/GB/ARPHICPL.TXT
+%%DATADIR%%/logo.gif
+%%DATADIR%%/release.txt
+@dirrm %%DATADIR%%/license/BIG5
+@dirrm %%DATADIR%%/license/ENGLISH
+@dirrm %%DATADIR%%/license/GB
+@dirrm %%DATADIR%%/license
+@dirrm %%DATADIR%%
