@@ -1,15 +1,17 @@
 bin/xdelta
 bin/xdelta-config
-include/serializeio.h
+bin/edsio-comp
 include/xdelta.h
-include/xdser.h
+include/xd_edsio.h
+include/edsio.h
+include/edsio_edsio.h
+lib/libxdelta.so.2
+lib/libxdelta.so
+lib/libxdelta.a
+lib/libedsio.so.0
+lib/libedsio.so
+lib/libedsio.a
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+share/aclocal/xdelta.m4
 @unexec install-info --delete %D/info/xdelta.info %D/info/dir
 info/xdelta.info
-@exec install-info %D/info/xdelta.info %D/info/dir
-lib/libxdelta.a
-lib/libxdelta.so
-lib/libxdelta.so.1
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-share/aclocal/xdelta.m4
-@unexec rmdir %D/share/aclocal 2>/dev/null || true
