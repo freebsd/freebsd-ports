@@ -7,6 +7,7 @@
 
 PORTNAME=	gnokii
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.gnokii.org/pub/gnokii/ \
@@ -42,6 +43,15 @@ MAN1+=	xgnokii.1
 MAN8=	gnokiid.8 mgnokiidev.8
 
 INSTALL_TARGET=	install-suid
+
+FIXPREFIX=	common/cfgreader.c ChangeLog Docs/man/gnokiid.8 \
+		Docs/DataCalls-QuickStart Docs/README po/et.po po/pl.po
+
+post-patch:
+.for f in ${FIXPREFIX}
+	${PERL} -pi -e "s@/etc/gnokiirc@${PREFIX}/etc/gnokiirc@g" \
+	${WRKSRC}/${f}
+.endfor
 
 pre-install:
 	@${SH} ${SCRIPTDIR}/creategroup
