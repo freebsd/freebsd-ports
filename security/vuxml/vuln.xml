@@ -32,6 +32,46 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fffacc93-16cb-11d9-bc4a-000c41e2cdad">
+    <topic>xv -- exploitable buffer overflows</topic>
+    <affects>
+      <package>
+	<name>xv</name>
+	<name>xv-m17n</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>In a Bugtraq posting, infamous41md(at)hotpop.com reported:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109302498125092">
+          <p>there are at least 5 exploitable buffer and heap
+            overflows in the image handling code. this allows someone
+            to craft a malicious image, trick a user into viewing the
+            file in xv, and upon viewing that image execute arbitrary
+            code under privileges of the user viewing image. note
+            the AT LEAST part of the above sentence. there is such a
+            plethora of bad code that I just stopped reading after
+            a while. there are at least 100 calls to sprintf() and
+            strcpy() with no regards for bounds of buffers. 95% of
+            these deal with program arguments or filenames, so they
+            are of no interest to exploit. however I just got sick of
+            reading this code after not too long. so im sure there are
+            still other overflows in the image handling code for other
+            image types.</p>
+	</blockquote>
+	<p>The posting also included an exploit.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109302498125092</url>
+    </references>
+    <dates>
+      <discovery>2004-08-20</discovery>
+      <entry>2004-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8c33b299-163b-11d9-ac1b-000d614f7fad">
     <topic>getmail -- symlink vulnerability during maildir delivery</topic>
       <affects>
