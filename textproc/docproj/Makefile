@@ -44,12 +44,12 @@ JADETEX?=
 
 .if empty(JADETEX) && (make(build) || make(install))
 .BEGIN:
-	@${CAT} files/JADETEX
+	@${CAT} ${FILESDIR}/JADETEX
 	@${FALSE}
 .endif
 
 .if ${JADETEX} == yes
-RUN_DEPENDS+= ${PREFIX}/share/texmf/web2c/jadetex.fmt:${PORTSDIR}/print/jadetex
+RUN_DEPENDS+= `kpsewhich -expand-var '$$TEXMFMAIN'`/web2c/jadetex.fmt:${PORTSDIR}/print/jadetex
 .endif
 
 EXTRACT_ONLY=	# empty
