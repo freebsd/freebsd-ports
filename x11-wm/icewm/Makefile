@@ -1,12 +1,12 @@
 # New ports collection makefile for:	icewm
-# Version required:	0.9.38
+# Version required:	0.9.39
 # Date created:		10 August 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.34 1999/03/28 19:42:21 dirk Exp $
+# $Id: Makefile,v 1.35 1999/05/09 16:32:13 steve Exp $
 #
 
-DISTNAME=	icewm-0.9.38
+DISTNAME=	icewm-0.9.39
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.kiss.uni-lj.si/~k4fr0235/icewm/devel/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/icewm/
