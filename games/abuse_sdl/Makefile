@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SDL port of the Abuse game engine
 
 USE_BZIP2=	yes
-USE_MESA=	yes
+USE_GL=		yes
 USE_SDL=	sdl
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
