@@ -6,6 +6,8 @@ include/tidy/fileio.h
 include/tidy/platform.h
 include/tidy/tidy.h
 include/tidy/tidyenum.h
+%%SHLIB%%lib/libtidy-0.99.so.0
+%%SHLIB%%lib/libtidy.so
 lib/libtidy.a
 %%PORTDOCS%%share/doc/tidy/Overview.html
 %%PORTDOCS%%share/doc/tidy/faq.html

@@ -1,0 +1,11 @@
+--- build/gnuauto/src/Makefile.am.orig	Sun Feb 16 20:33:04 2003
++++ build/gnuauto/src/Makefile.am	Thu Feb 20 23:13:11 2003
+@@ -68,7 +68,7 @@
+ 	tidylib.c
+ 
+ libtidy_la_LDFLAGS = \
+-	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_LITE_AGE) \
++	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
+ 	-release $(LT_RELEASE) -no-undefined -export-dynamic
+ 
+ HFILES = \
