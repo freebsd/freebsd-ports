@@ -4051,6 +4051,7 @@ libmorph	ports/graphics/libmorph
 libmovtar	ports/multimedia/libmovtar
 libmp		src/gnu/lib/libmp
 libmpeg2	ports/multimedia/libmpeg2
+libmrproject	ports/deskutils/libmrproject
 libmytinfo	src/lib/libmytinfo
 libncp		src/lib/libncp
 libncurses	src/lib/libncurses
