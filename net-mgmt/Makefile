@@ -150,6 +150,7 @@
     SUBDIR += sysmon
     SUBDIR += tas
     SUBDIR += tcpreplay
+    SUBDIR += tcptrack
     SUBDIR += trafd
     SUBDIR += whatmask
     SUBDIR += wide-dhcp
