@@ -1,0 +1,93 @@
+drweb/CHANGES
+drweb/README
+drweb/README.RUS
+drweb/clients/demo/drwebdc-demo.c
+drweb/clients/demo/drwebdc-demo.h
+drweb/clients/demo/drwebdc-demo.pl
+drweb/clients/demo/drwebdc-ex1.c
+drweb/clients/demo/drwebdc-ex2.c
+drweb/clients/demo/drwebdc-ex3.c
+drweb/clients/demo/drwebdc-lib.pl
+drweb/clients/demo/drwebdc-tools.c
+drweb/clients/demo/eicar.txt
+drweb/clients/demo/make-all.sh
+drweb/clients/drwebdc/ChangeLog
+drweb/clients/drwebdc/Makefile.unix.tmpl
+drweb/clients/drwebdc/Makefile.unix.tmpl2
+drweb/clients/drwebdc/Makefile.win
+drweb/clients/drwebdc/README
+drweb/clients/drwebdc/clean.bat
+drweb/clients/drwebdc/configure
+drweb/clients/drwebdc/drwebdc.c
+drweb/clients/drwebdc/dw_filter.c
+drweb/clients/drwebdc/dw_filter.h
+drweb/clients/drwebdc/dwf_main.c
+drweb/clients/drwebdc/eicar.com
+drweb/clients/drwebdc/make.bat
+drweb/clients/drwebdc/src/Makefile.unix.tmpl
+drweb/clients/drwebdc/src/Makefile.unix.tmpl2
+drweb/clients/drwebdc/src/Makefile.win
+drweb/clients/drwebdc/src/bsd_queue.h
+drweb/clients/drwebdc/src/clean.bat
+drweb/clients/drwebdc/src/dwc_err.h
+drweb/clients/drwebdc/src/dwc_ipc.c
+drweb/clients/drwebdc/src/dwc_ipc.h
+drweb/clients/drwebdc/src/dwc_lib.c
+drweb/clients/drwebdc/src/dwc_lib.h
+drweb/clients/drwebdc/src/dwc_log.c
+drweb/clients/drwebdc/src/dwc_log.h
+drweb/clients/drwebdc/src/dwc_macro.h
+drweb/clients/drwebdc/src/dwc_scan.h
+drweb/clients/drwebdc/src/dwc_tcp.c
+drweb/clients/drwebdc/src/dwc_tcp.h
+drweb/clients/drwebdc/src/dwc_timo.c
+drweb/clients/drwebdc/src/dwc_timo.h
+drweb/clients/drwebdc/src/dwc_type.h
+drweb/clients/drwebdc/src/dwc_unix.c
+drweb/clients/drwebdc/src/dwc_unix.h
+drweb/clients/drwebdc/src/make.bat
+drweb/clients/exim/readme.exim
+drweb/clients/exim/readme.exim.rus
+drweb/clients/postfix/drweb_postfix.pl
+drweb/clients/postfix/drweb_postfix.sh
+drweb/clients/postfix/readme.postfix
+drweb/clients/postfix/readme.postfix.rus
+drweb/clients/qmail/drweb_qmail.pl
+drweb/clients/qmail/qmail-scanner-0.96.patch
+drweb/clients/qmail/readme.qmail
+drweb/clients/qmail/readme.qmail.rus
+drweb/clients/sendmail/README
+drweb/clients/sendmail/example.sh
+drweb/clients/sendmail/listener.patch
+drweb/clients/sendmail/readme.sendmail
+drweb/clients/sendmail/readme.sendmail.rus
+drweb/doc/drweb-ini
+drweb/doc/drweb-ini.rus
+drweb/doc/drwebd-api
+drweb/doc/drwebd-api.rus
+drweb/drweb
+drweb/drweb.key
+drweb/drweb32.dll
+drweb/drweb32.ini.sample
+drweb/drwebase.vdb
+drweb/drwebd
+drweb/drwebd.key
+drweb/russian.dwl
+drweb/update/readme.update
+drweb/update/readme.update.rus
+drweb/update/update.pl
+etc/rc.d/drwebd.sh
+@dirrm drweb/clients/demo
+@dirrm drweb/clients/drwebdc/include
+@dirrm drweb/clients/drwebdc/lib
+@dirrm drweb/clients/drwebdc/src
+@dirrm drweb/clients/drwebdc
+@dirrm drweb/clients/exim
+@dirrm drweb/clients/postfix
+@dirrm drweb/clients/qmail
+@dirrm drweb/clients/sendmail
+@dirrm drweb/clients
+@dirrm drweb/doc
+@dirrm drweb/infected.!!!
+@dirrm drweb/update
+@dirrm drweb
