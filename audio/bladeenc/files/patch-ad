@@ -1,10 +1,10 @@
---- main.c.orig	Thu Jul 22 23:08:10 1999
-+++ main.c	Fri Jul 23 23:59:34 1999
+--- bladeenc/main.c.orig	Wed Dec  8 21:32:19 1999
++++ bladeenc/main.c	Thu Dec  9 22:46:26 1999
 @@ -19,6 +19,7 @@
  #include    <stdlib.h>
  #include    <string.h>
  #include    <time.h>
 +#include    <sys/types.h>
  #include    "system.h"
- #include		"codec.h"
+ #include	"codec.h"
  #include    "samplein.h"

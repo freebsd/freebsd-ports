@@ -1,18 +1,11 @@
---- system.h.orig	Thu Jul 22 23:08:10 1999
-+++ system.h	Sat Jul 24 00:16:20 1999
-@@ -181,14 +181,5 @@
- #define         FALSE           0
- #define         TRUE            1
+--- bladeenc/system.h.orig	Tue Nov 23 11:46:19 1999
++++ bladeenc/system.h	Thu Dec  9 22:43:35 1999
+@@ -39,7 +39,7 @@
+ #define			BEOS_PPC				18
  
--typedef		unsigned	char 	uchar;
--
--#ifndef				_SYS_TYPES_H
--typedef         unsigned        short   ushort;
-+typedef         unsigned        char    uchar;
- typedef         unsigned        long    ulong;
--typedef         unsigned        int     uint;
--#endif
--
--
--
--
+ #ifndef	SYSTEM
+-#	define		SYSTEM		LINUX_I386		/* Set current system here, select */
++#	define		SYSTEM		NETBSD		/* Set current system here, select */
+ #endif										/* from list above. */
+ 
+ 
