@@ -22,7 +22,7 @@
 
 require 5.003;		# might work with older perl5
 
-use strict;
+###use strict;
 use Sys::Hostname;	# get hostname() function
 
 ############################################################
