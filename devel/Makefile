@@ -622,6 +622,7 @@
     SUBDIR += p5-B-Deobfuscate
     SUBDIR += p5-B-Graph
     SUBDIR += p5-B-Keywords
+    SUBDIR += p5-B-Size
     SUBDIR += p5-BFD
     SUBDIR += p5-BSD-Resource
     SUBDIR += p5-BSD-stat

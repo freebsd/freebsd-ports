@@ -1,0 +1,4 @@
+B::Size  Measure size of Perl OPs and SVs
+B::TerseSize  Printing info about ops and their (estimated) size
+
+WWW: http://search.cpan.org/dist/B-Size/
