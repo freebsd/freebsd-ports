@@ -1,0 +1,13 @@
+--- ripenc.orig        Sun Jul  7 19:13:33 2002
++++ ripenc     Sun Jul  7 19:15:08 2002
+@@ -51,8 +51,8 @@
+      SAVETO=${HOME}
+      TEMPSAVETO=${SAVETO}
+      ENCODER=bladeenc
+-     RIPPER=cdparanoia
+-     METHOD=wget
++     RIPPER=tosha
++     METHOD=manual
+      XMCDLIB=/var/X11R6/lib/xmcd
+      NCONVENT=artist-name_of_song.mp3
+      select=1
