@@ -2,3 +2,5 @@ This module implements the W3C's XSLT specification. The goal
 is full implementation of this spec, but it isn't yet. However,
 it already works well. Below is given the set of working xslt
 commands.
+
+WWW: http://xmlxslt.sourceforge.net/
