@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [ "${BATCH}" ]; then
+	${TOUCH} ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+	exit
+fi
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
 fi
