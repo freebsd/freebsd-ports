@@ -1,0 +1,19 @@
+*** lsp/makefile.0	Wed Feb 15 20:41:21 1995
+--- lsp/makefile	Wed Feb 15 23:36:39 1995
+***************
+*** 12,18 ****
+  
+  
+  COMPILE_FILE=$(PORTDIR)/saved_gcl $(PORTDIR) -system-p -no-o -compile
+! CFLAGS	= -c -O -I../h
+  
+  .lsp.c: 
+  	@ ../xbin/if-exists $(PORTDIR)/saved_gcl \
+--- 12,18 ----
+  
+  
+  COMPILE_FILE=$(PORTDIR)/saved_gcl $(PORTDIR) -system-p -no-o -compile
+! CFLAGS	= -c -I../h
+  
+  .lsp.c: 
+  	@ ../xbin/if-exists $(PORTDIR)/saved_gcl \
