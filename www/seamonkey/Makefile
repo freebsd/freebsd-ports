@@ -44,6 +44,11 @@ LIB_DEPENDS+=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
 USE_GNOME=	gtk12
 .endif
 
+.if defined(WITH_CALENDAR)
+DISTFILES+=	${PORTNAME}-calendar-${PORTVERSION}${EXTRACT_SUFX}:local
+LIB_DEPENDS+=	ical.0:${PORTSDIR}/devel/libical
+.endif
+
 LATEST_LINK=	mozilla-devel
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 			--exclude */macbuild/*\
@@ -103,6 +108,11 @@ CONFIGURE_ARGS+=	--enable-extensions=default,xmlterm
 .endif
 CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1
 
+.if defined(WITH_CALENDAR)
+CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--enable-calendar
+.endif
+
 .if defined(WITHOUT_COMPOSER)
 CONFIGURE_ARGS+=	--disable-composer
 .endif
@@ -134,6 +144,13 @@ BROKEN=	"core dumps on alpha during post-build"
 
 .if exists(${LOCALBASE}/include/freetype/freetype.h)
 BROKEN="You must upgrade your freetype port to 1.3.1_2 or higher before installing Mozilla.  If you have 1.3.1_2 installed, please remove ${LOCALBASE}/include/freetype, then build Mozilla"
+.endif
+
+pre-everything::
+.if defined(WITH_CALENDAR)
+	@${ECHO_MSG} "Calendar is still beta software."
+	@${ECHO_MSG} "Use at your own risk."
+	@${ECHO_MSG} "http://mozilla.org/projects/calendar/"
 .endif
 
 post-patch:
