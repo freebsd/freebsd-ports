@@ -1,0 +1,23 @@
+bin/bk2site
+etc/bk2site/dot.bk2siterc
+etc/bk2site/searchbase.html
+etc/bk2site/otherbase.html
+etc/bk2site/newbase.html
+etc/bk2site/indexbase.html
+etc/bk2site/bk2site.html
+share/bk2site/dot.bk2siterc
+share/bk2site/smiley.gif
+share/bk2site/question.gif
+share/bk2site/note.gif
+share/bk2site/news.gif
+share/bk2site/new.gif
+share/bk2site/mana_red.gif
+share/bk2site/mailto.gif
+share/bk2site/ltbulb.gif
+share/bk2site/earth.gif
+share/bk2site/disk.gif
+share/bk2site/cool2.gif
+share/bk2site/cool.gif
+share/bk2site/closeup.gif
+share/bk2site/thumbs_down.gif
+@dirrm share/bk2site

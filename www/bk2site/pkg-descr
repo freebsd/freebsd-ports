@@ -1,0 +1,22 @@
+bk2site will transform your Netscape bookmarks file into a yahoo-like website
+with slashdot-like news. Its goal is to enable the user to establish zero-
+maintenance high-value (small) websites. 
+
+* Includes hit-counter and display feature (see which URLs are popular). 
+* Includes integrated cgi-bin search.pl program. 
+* Nice-looking output. 
+* Powerful customization. 
+* Inserts navigation information into the top of each page. 
+* Puts a "new" icon next to new entries. 
+* Supports any other icon(s) (e.g., cool.gif, hot.gif) you might want to show. 
+* Puts New Additions on the front page. 
+* Puts News Items on the front page. 
+* Supports URL and directory aliases. 
+* Use PRIVATE keyword to keep some URLs/folders from appearing. 
+* You can use it to automatically generate almost any sort of structured text
+  file, such as a My.Netscape channel
+* (see mynetscapebase.rdf), an email newsletter, etc. 
+* It can also download (http) other people's channels (RSS files) and display
+  their contents in the generated web pages.
+
+WWW: http://bk2site.sourceforge.net/
