@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTVERSION=	0.10.2
 CATEGORIES=	audio ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +24,9 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 OPTIONS=	FLAC "Support for FLAC Audio" on \
 		VORBIS "Support for OGG Vorbis Audio" on \
 		WAV "Support for WAV Audio" on \
-		ICONV "Support for international characters" on
+		AAC "Support for MP4/AAC Audio" off \
+		ICONV "Support for international characters" on \
+		IPV6 "Support for IPV6" on
 
 .include <bsd.port.pre.mk>
 
@@ -36,6 +37,10 @@ RC_SUFX=
 USE_RC_SUBR=	yes
 RC_SUFX=	.sh
 .endif
+
+#.if ${OSVERSION} < 500000
+#EXTRA_PATCHES+=	${PATCHDIR}/src-mp4ff::mp4ff_int_types.h.patch
+#.endif
 
 .ifdef(WITHOUT_FLAC)
 CONFIGURE_ARGS+=--disable-flac
@@ -55,10 +60,20 @@ CONFIGURE_ARGS+=--disable-audiofile
 LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libaudiofile
 .endif
 
+.ifdef(WITH_AAC)
+LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
+.else
+CONFIGURE_ARGS+=--disable-aac
+.endif
+
 .ifdef(WITHOUT_ICONV)
 CONFIGURE_ARGS+=--disable-iconv
 .else
 LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
+.endif
+
+.ifdef(WITHOUT_IPV6)
+CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
