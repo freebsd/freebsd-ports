@@ -7,6 +7,7 @@
 
 PORTNAME=	penv
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/sysutils/penv/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
@@ -27,9 +28,16 @@ MAKE_ENV+=	RELEASE=yes
 
 DBDIR?=		/var/db/${PORTNAME}
 
+PLIST_SUB+=	DBDIR=${DBDIR}
+
 post-install:
 		${MKDIR} ${PREFIX}/etc
+		${MKDIR} ${DBDIR}
 		${INSTALL_DATA} ${WRKSRC}/penv.conf.default ${PREFIX}/etc
+		if [ ! -e ${PREFIX}/etc/penv.conf ]; then \
+			${INSTALL_DATA} ${WRKSRC}/penv.conf.default \
+				${PREFIX}/etc/penv.conf; \
+		fi
 .if !defined(NOPORTDOCS)
 		${MKDIR} ${DOCSDIR}/html
 		${INSTALL_DATA} ${WRKSRC}/doc/html/* ${DOCSDIR}/html
