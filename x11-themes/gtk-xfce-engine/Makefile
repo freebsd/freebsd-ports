@@ -8,16 +8,17 @@
 PORTNAME=	gtk-xfce-engine
 PORTVERSION=	2.1.6
 CATEGORIES=	x11-toolkits xfce
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/4.0.0/ \
+		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/4.0.0/xfce-4.0.0/src/ \
+		http://linux.imp.mx/xfce4/xfce_4.0.0/src/ \
+		http://www.efd.lth.se/~c03bk/xfce4/mirror/tarballs/4.0.0/ \
+		http://changux.homelinux.org/xfce_4.0.0/archive/xfce-4.0.0/src/ \
 		http://www.xfce.org/archive/xfce-4.0.0/src/
-MASTER_SITE_SUBDIR=	xfce
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	An XFCE engine for GTK 2.0
 
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
-
-WRKSRC=		${WRKDIR}/gtk-xfce-engine-${PORTVERSION}
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
