@@ -15,6 +15,7 @@
     SUBDIR += grn
     SUBDIR += gup
     SUBDIR += ifmail
+    SUBDIR += ija
     SUBDIR += inn
     SUBDIR += inn-stable
     SUBDIR += knews
