@@ -3,7 +3,7 @@
 # Date Created:		9 Feb 1997
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.8 1997/11/21 05:10:13 hoek Exp $
+# $Id: Makefile,v 1.9 1997/11/26 23:24:31 jseger Exp $
 #
 
 DISTNAME=	uudeview-0.5.13
@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-tcl="${PREFIX}" --enable-tk="${PREFIX}"
 # Season to taste --- anything over tcl7.5
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include/tcl8.0 -I${PREFIX}/include/tk8.0"
-FETCH_BEFORE_ARGS=	-t
 
 ALL_TARGET=	xdeview
 INSTALL_TARGET=	install-tcl

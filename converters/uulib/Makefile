@@ -3,7 +3,7 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.12 1997/11/14 09:46:21 hoek Exp $
+# $Id: Makefile,v 1.13 1997/12/07 08:50:26 hoek Exp $
 #
 
 DISTNAME=       uudeview-0.5.13
@@ -15,7 +15,6 @@ MASTER_SITES=	http://www.uni-frankfurt.de/~fp/uudeview/Apps/frank/  \
 MAINTAINER=	hoek@FreeBSD.ORG
 
 GNU_CONFIGURE=		yes
-FETCH_BEFORE_ARGS=	-t
 
 MAN3=		uulib.3
 
