@@ -1,0 +1,11 @@
+--- driver/Makefile.in.orig	Sun Apr  3 21:14:26 2005
++++ driver/Makefile.in	Sun Apr  3 21:14:39 2005
+@@ -253,7 +253,7 @@
+ tests: $(TEST_EXES)
+ 
+ install:   install-program   install-ad    install-scripts \
+-	   install-gnome     install-man   install-xml install-pam
++	   install-gnome     install-man   install-xml
+ uninstall: uninstall-program uninstall-ad  \
+ 	   uninstall-gnome   uninstall-man uninstall-xml  
+ 
