@@ -8198,6 +8198,8 @@ ruby-dbd_proxy	ports/databases/ruby-dbd_proxy
 ruby-dbd_sqlite	ports/databases/ruby-dbd_sqlite
 ruby-dbd_sqlrelay	ports/databases/ruby-dbd_sqlrelay
 ruby-dbi	ports/databases/ruby-dbi
+ruby-dcl	ports/science/ruby-dcl
+ruby-dcl-gtk	ports/science/ruby-dcl-gtk
 ruby-dialogs	ports/devel/ruby-dialogs
 ruby-dict	ports/net/ruby-dict
 ruby-diff	ports/textproc/ruby-diff
