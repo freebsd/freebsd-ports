@@ -19,6 +19,8 @@ EXTRACT_ONLY=
 
 DIST_SUBDIR=	koi8r-ps
 
+.include <bsd.port.pre.mk>
+
 .if !defined(FONTMAP)
 FONTMAP!=	if which gs > /dev/null 2>&1 ; then \
 			d=`gs -h  | awk '/^Search path:$$/ { nl=1; next } \
@@ -88,4 +90,4 @@ do-install:
 	${LN} -s fonts.dir ${CPS_DIR}/fonts.scale
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
