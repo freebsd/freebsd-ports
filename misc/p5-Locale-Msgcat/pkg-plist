@@ -1,8 +1,7 @@
-lib/perl5/site_perl/%%PERL_VERSION%%/mach/auto/Locale/Msgcat/Msgcat.so
-lib/perl5/site_perl/%%PERL_VERSION%%/mach/auto/Locale/Msgcat/Msgcat.bs
-lib/perl5/site_perl/%%PERL_VERSION%%/mach/auto/Locale/Msgcat/.packlist
-lib/perl5/site_perl/%%PERL_VERSION%%/mach/Locale/Msgcat.pm
-lib/perl5/%%PERL_VERSION%%/man/man3/Locale::Msgcat.3
-@dirrm lib/perl5/site_perl/%%PERL_VERSION%%/mach/auto/Locale/Msgcat
-@dirrm lib/perl5/site_perl/%%PERL_VERSION%%/mach/auto/Locale
-@dirrm lib/perl5/site_perl/%%PERL_VERSION%%/mach/Locale
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Msgcat/Msgcat.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Msgcat/Msgcat.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Msgcat/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/Locale/Msgcat.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Msgcat
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Locale
