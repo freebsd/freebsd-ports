@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $Id: wrap,v 1.1 1996/02/07 14:35:44 peter Exp $
+# $FreeBSD$
 #
 #	wrap - Combine a directory into a single tar package.
 

@@ -1,5 +1,5 @@
 #
-# $Id$
+# $FreeBSD$
 #
 # The "notify" file controls where notifications from watches set by
 # "cvs watch add" or "cvs edit" are sent.  The first entry on a line is

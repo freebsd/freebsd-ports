@@ -1,5 +1,5 @@
 #
-# $Id: avail,v 1.102 1999/08/06 23:05:52 eivind Exp $
+# $FreeBSD$
 #
 # This can be used to implement finer grain access controls beyond
 # being in access.  For now, everybody who has access can commit anywhere.

@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# $Id: commit_prep.pl,v 1.4 1997/05/15 19:53:32 peter Exp $
+# $FreeBSD$
 #
 #
 # Perl filter to handle pre-commit checking of files.  This program

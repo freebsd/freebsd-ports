@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $Id: commitcheck,v 1.9 1999/01/25 01:28:13 peter Exp $
+# $FreeBSD$
 
 #
 # BEWARE:  If you are "borrowing" this code for use on another cvs

@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 #
-# $Id: cvsedit,v 1.11 1997/04/13 11:18:55 bde Exp $
+# $FreeBSD$
 # 
 # This crude hack is to sanitise the results of what the user may have
 # "done" while editing the commit log message.. :-)   Peter Wemm.

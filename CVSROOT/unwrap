@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $Id: unwrap,v 1.1 1996/02/07 14:35:43 peter Exp $
+# $FreeBSD$
 #
 #	unwrap - extract the combined package (created with wrap)
 

@@ -1,5 +1,5 @@
 #
-# $Id$
+# $FreeBSD$
 #
 # The "loginfo" file is used to control where "cvs commit" log information
 # is sent.  The first entry on a line is a regular expression which is tested

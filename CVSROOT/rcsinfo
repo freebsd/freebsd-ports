@@ -1,5 +1,5 @@
 #
-# $Id$
+# $FreeBSD$
 #
 # The "rcsinfo" file is used to control templates with which the editor
 # is invoked on commit and import.

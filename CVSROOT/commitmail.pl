@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 #
-# $Id$
+# $FreeBSD$
 
 $access = "/home/ncvs/CVSROOT/access";
 @names = ();

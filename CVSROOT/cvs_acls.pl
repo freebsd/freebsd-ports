@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# $Id$
+# $FreeBSD$
 #
 # Access control lists for CVS.  dgg@ksr.com (David G. Grubbs)
 #

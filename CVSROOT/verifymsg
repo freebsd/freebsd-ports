@@ -1,5 +1,5 @@
 #
-# $Id: verifymsg,v 1.1 1997/06/08 02:02:54 peter Exp $
+# $FreeBSD$
 #
 # The "verifymsg" file is used to allow verification of logging
 # information.  It works best when a template (as specified in the
