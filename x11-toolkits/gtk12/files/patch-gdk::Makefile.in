@@ -1,0 +1,11 @@
+--- gdk/Makefile.in.orig	Tue Mar  6 10:45:09 2001
++++ gdk/Makefile.in	Tue Mar  6 10:45:21 2001
+@@ -134,7 +134,7 @@
+ lib_LTLIBRARIES = libgdk.la
+ 
+ # libtool stuff: set version and export symbols for resolving
+-libgdkincludedir = $(includedir)/gtk-1.2/gdk
++libgdkincludedir = $(includedir)/gdk
+ libgdk_la_LDFLAGS = @STRIP_BEGIN@ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE) 	-export-dynamic 	@GLIB_DEPLIBS@		@x_ldflags@		@x_libs@		-lm		@STRIP_END@
+ 
+ 
