@@ -1,6 +1,8 @@
 bin/ggv
 etc/CORBA/servers/application-ps.gnorba
 share/gnome/apps/Graphics/ggv.desktop
+share/gnome/help/ggv/C/topic.dat
+share/gnome/help/ggv/it/topic.dat
 share/gnome/pixmaps/ggv-splash.png
 share/gnome/pixmaps/gnome-ghostview.png
 share/locale/ca/LC_MESSAGES/ggv.mo
@@ -28,3 +30,6 @@ share/locale/sl/LC_MESSAGES/ggv.mo
 share/locale/sv/LC_MESSAGES/ggv.mo
 share/locale/tr/LC_MESSAGES/ggv.mo
 share/locale/uk/LC_MESSAGES/ggv.mo
+@dirrm share/gnome/help/ggv/it
+@dirrm share/gnome/help/ggv/C
+@dirrm share/gnome/help/ggv

@@ -1,67 +1,14 @@
 --- cddbslave/Makefile.in.orig	Wed May 24 14:53:10 2000
 +++ cddbslave/Makefile.in	Tue May 30 15:13:02 2000
-@@ -125,3 +125,3 @@
- 
--INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR)         -DGNOMELOCALEDIR=\""$(datadir)/locale"\"
-+INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR)         -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"
- 
 @@ -139,3 +139,3 @@
  
 -gnomedatadir = $(datadir)/gnome
 +gnomedatadir = $(datadir)
  
---- gmix/Makefile.in.orig	Wed May 24 14:53:13 2000
-+++ gmix/Makefile.in	Tue May 30 15:11:42 2000
-@@ -125,3 +125,3 @@
- 
--Audiodir = $(datadir)/gnome/apps/Multimedia
-+Audiodir = $(datadir)/apps/Multimedia
- pixmapdir = $(datadir)/pixmaps
-@@ -131,3 +131,3 @@
- 
--INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		$(GNOME_INCLUDEDIR) 					-DGNOME_ICONDIR=\""$(pixmapdir)"\"
-+INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		$(GNOME_INCLUDEDIR) 					-DGNOME_ICONDIR=\""$(pixmapdir)"\"
-
---- grecord/Makefile.in.orig	Wed May 24 14:53:19 2000
-+++ grecord/Makefile.in	Tue May 30 15:39:21 2000
-@@ -130,3 +130,3 @@
- 
--Applicationsdir = $(datadir)/gnome/apps/Multimedia
-+Applicationsdir = $(datadir)/apps/Multimedia
- Applications_DATA = Soundrecorder.desktop
---- grecord/src/Makefile.in.orig	Wed May 24 14:53:21 2000
-+++ grecord/src/Makefile.in	Tue May 30 15:39:42 2000
-@@ -125,3 +125,3 @@
- 
--INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(top_srcdir)/intl 	$(GNOME_INCLUDEDIR)		-DGNOME_ICONDIR=\""$(datadir)/pixmaps"\"
-+INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-I$(top_srcdir)/intl 	$(GNOME_INCLUDEDIR)		-DGNOME_ICONDIR=\""$(datadir)/pixmaps"\"
- 
 --- tcd/Makefile.in.orig	Wed May 24 14:53:16 2000
 +++ tcd/Makefile.in	Tue May 30 15:12:38 2000
-@@ -125,3 +125,3 @@
- 
--Audiodir = $(datadir)/gnome/apps/Multimedia
-+Audiodir = $(datadir)/apps/Multimedia
- Pixmapdir = $(datadir)/pixmaps
 @@ -147,3 +147,3 @@
  
 -tcd_LDADD = $(GNOME_LIBDIR) -lglib -lm $(CURSES_LIBS) $(INTLLIBS)
 +tcd_LDADD = `$(GLIB_CONFIG) --libs` -lm $(CURSES_LIBS) $(INTLLIBS)
- 
-@@ -151,3 +151,3 @@
- 
--INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR) $(CURSES_INCLUDEDIR) 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" $(USE_CD_CHANGER)		-DGNOME_ICONDIR=\""$(Pixmapdir)"\"
-+INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR) $(CURSES_INCLUDEDIR) 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" $(USE_CD_CHANGER)		-DGNOME_ICONDIR=\""$(Pixmapdir)"\"
- 
---- vu-meter/Makefile.in.orig	Wed May 24 14:53:11 2000
-+++ vu-meter/Makefile.in	Tue May 30 15:11:23 2000
-@@ -125,3 +125,3 @@
- 
--Audiodir = $(datadir)/gnome/apps/Multimedia
-+Audiodir = $(datadir)/apps/Multimedia
- 
-@@ -129,3 +129,3 @@
- 
--INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	$(GNOME_INCLUDEDIR)				-DGNOME_ICONDIR=\""$(pixmapdir)"\"
-+INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	$(GNOME_INCLUDEDIR)				-DGNOME_ICONDIR=\""$(pixmapdir)"\"
  

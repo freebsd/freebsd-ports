@@ -6,7 +6,7 @@
  	static char *shells [] = {
 -		"/bin/bash", "/bin/zsh", "/bin/tcsh", "/bin/ksh",
 -		"/bin/csh", "/bin/sh", 0
-+		"/bin/csh", "/bin/sh", "/usr/local/bin/tcsh",
++		"/bin/csh", "/bin/sh", "/bin/tcsh", "/usr/local/bin/tcsh",
 +		"/usr/local/bin/bash", "/usr/local/bin/ksh",
 +		"/usr/local/bin/zsh", "/usr/local/sbin/scsh", 0
  	};

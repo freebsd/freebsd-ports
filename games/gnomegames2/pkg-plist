@@ -150,6 +150,46 @@ share/gnome/gturing/examples/bin2dec.tur
 share/gnome/gturing/examples/dashnumbers.tur
 share/gnome/gturing/examples/dec2bin.tur
 share/gnome/gturing/examples/subst.tur
+share/gnome/help/aisleriot/C/auld-lang-syne.html
+share/gnome/help/aisleriot/C/beleaguered-castle.html
+share/gnome/help/aisleriot/C/bristol.html
+share/gnome/help/aisleriot/C/camelot-goal.gif
+share/gnome/help/aisleriot/C/camelot.html
+share/gnome/help/aisleriot/C/canfield.html
+share/gnome/help/aisleriot/C/clock-rules.gif
+share/gnome/help/aisleriot/C/clock.html
+share/gnome/help/aisleriot/C/docbook.css
+share/gnome/help/aisleriot/C/doublets.html
+share/gnome/help/aisleriot/C/eagle-wing.html
+share/gnome/help/aisleriot/C/elevator.html
+share/gnome/help/aisleriot/C/first-law.html
+share/gnome/help/aisleriot/C/fortunes.html
+share/gnome/help/aisleriot/C/fourteen.html
+share/gnome/help/aisleriot/C/freecell.html
+share/gnome/help/aisleriot/C/glossary.html
+share/gnome/help/aisleriot/C/gpl.html
+share/gnome/help/aisleriot/C/hopscotch.html
+share/gnome/help/aisleriot/C/index.html
+share/gnome/help/aisleriot/C/intro.html
+share/gnome/help/aisleriot/C/kansas.html
+share/gnome/help/aisleriot/C/klondike.html
+share/gnome/help/aisleriot/C/lady-jane.html
+share/gnome/help/aisleriot/C/neighbor.html
+share/gnome/help/aisleriot/C/odessa.html
+share/gnome/help/aisleriot/C/osmosis.html
+share/gnome/help/aisleriot/C/pileon.html
+share/gnome/help/aisleriot/C/royal-east.html
+share/gnome/help/aisleriot/C/scorpion.html
+share/gnome/help/aisleriot/C/spider.html
+share/gnome/help/aisleriot/C/straight-up.html
+share/gnome/help/aisleriot/C/thieves.html
+share/gnome/help/aisleriot/C/thirteen.html
+share/gnome/help/aisleriot/C/thumb-and-pouch.html
+share/gnome/help/aisleriot/C/topic.dat
+share/gnome/help/aisleriot/C/union-square.html
+share/gnome/help/aisleriot/C/westhaven.html
+share/gnome/help/aisleriot/C/yukon.html
+share/gnome/help/aisleriot/C/zebra.html
 share/gnome/help/gnobots2/C/index.html
 share/gnome/help/gnobots2/C/topic.dat
 share/gnome/help/gnobots2/da/index.html
@@ -162,6 +202,8 @@ share/gnome/help/gtali/C/index.html
 share/gnome/help/gtali/C/topic.dat
 share/gnome/help/gtali/da/index.html
 share/gnome/help/gtali/da/topic.dat
+share/gnome/help/gturing/C/topic.dat
+share/gnome/help/gturing/it/topic.dat
 share/gnome/help/iagno/C/ANIMATION.png
 share/gnome/help/iagno/C/BLOCK.png
 share/gnome/help/iagno/C/FIRST.png
@@ -503,6 +545,9 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/help/iagno/C/stylesheet-images
 @dirrm share/gnome/help/iagno/C
 @dirrm share/gnome/help/iagno
+@dirrm share/gnome/help/gturing/it
+@dirrm share/gnome/help/gturing/C
+@dirrm share/gnome/help/gturing
 @dirrm share/gnome/help/gtali/da
 @dirrm share/gnome/help/gtali/C
 @dirrm share/gnome/help/gtali
@@ -511,6 +556,8 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/help/gnobots2/da
 @dirrm share/gnome/help/gnobots2/C
 @dirrm share/gnome/help/gnobots2
+@dirrm share/gnome/help/aisleriot/C
+@dirrm share/gnome/help/aisleriot
 @dirrm share/gnome/gturing/examples
 @dirrm share/gnome/gturing
 @dirrm share/gnome/gnome-stones/objects

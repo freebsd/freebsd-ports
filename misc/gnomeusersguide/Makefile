@@ -21,7 +21,13 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
-		--with-gnome=${X11BASE}
+		--datadir=${PREFIX}/share/gnome
+
+post-extract:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>

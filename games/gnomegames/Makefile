@@ -15,7 +15,7 @@ DISTNAME=	gnome-games-${PORTVERSION}
 MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore \
-		guile.6:${PORTSDIR}/lang/guile
+		guile.9:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
@@ -29,5 +29,12 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
+
+post-extract:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>

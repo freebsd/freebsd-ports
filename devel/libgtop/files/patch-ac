@@ -13,12 +13,3 @@
  LT_VERSION_INFO='-version-info ${LT_CURRENT}:${LT_REVISION}:${LT_AGE}'
  
  
-@@ -8005,7 +8005,7 @@
-   cat conftest.$ac_ext >&5
-   rm -rf conftest*
-   CATOBJEXT=.mo
--		   DATADIRNAME=lib
-+		   DATADIRNAME=share
- fi
- rm -f conftest*
- 		INSTOBJEXT=.mo

@@ -1,0 +1,20 @@
+--- fifteen/fifteen.c.orig	Thu May  4 07:23:57 2000
++++ fifteen/fifteen.c	Wed Aug  2 09:18:24 2000
+@@ -225,7 +225,7 @@
+ 	int dir;
+ 	int x, y;
+ 
+-	srand (time (NULL));
++	srandom (time (NULL));
+ 
+ 	canvas = gtk_object_get_user_data (data);
+ 	board = gtk_object_get_user_data (GTK_OBJECT (canvas));
+@@ -241,7 +241,7 @@
+ 	for (i = 0; i < SCRAMBLE_MOVES; i++) {
+ /* retry_scramble: */
+ /* Yuck ;) --Tom. */
+-		dir = rand () % 4;
++		dir = random () % 4;
+ 
+ 		x = y = 0;
+ 
