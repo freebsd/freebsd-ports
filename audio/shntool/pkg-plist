@@ -1,5 +1,6 @@
 bin/shncat
 bin/shncmp
+bin/shnconv
 bin/shnfix
 bin/shninfo
 bin/shnjoin
