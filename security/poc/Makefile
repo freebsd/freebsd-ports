@@ -16,6 +16,7 @@ MAINTAINER=	king@v2project.com
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		towitoko.2:${PORTSDIR}/devel/towitoko
 
+USE_GMAKE=	yes
 USE_AUTOMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
