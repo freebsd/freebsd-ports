@@ -31,11 +31,11 @@ PLIST=		${WRKDIR}/.PLIST.more
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--localstatedir=/var --disable-linux-caps
 WRKSRC=		${WRKDIR}/bind-${ISCVERSION}
-USE_REINPLACE=	yes
 
 DIR=		${WRKSRC}/bin/
 DLZVERSION=	0.2.1
 EXTRA_DOCSDIR=	share/doc/bind9-dlz
+EXTRA_FIX=	${WRKSRC}/bin/named/Makefile.in
 DOCS=		README.txt bind_dlz.txt changelog.txt dlz_interface.txt \
 		dlz_postgres_driver.txt dlz_stub_driver.txt \
 		sdlz_helper.txt sdlz_interface.txt
@@ -80,19 +80,22 @@ MAN8=	dnssec-keygen.8 dnssec-makekeyset.8 dnssec-signkey.8 dnssec-signzone.8 \
 	rndc-confgen.8 rndc.8
 
 pre-patch:
-	${REINPLACE_CMD} -e "s=bind-9.2.1/==" ${EXTRA_PATCHES}
+.for FILE in dlz.patch
+	@ ${MV} ${WRKDIR}/${FILE} ${WRKDIR}/${FILE}.sed
+	${SED} -e "s=bind-9.2.1/==" ${WRKDIR}/${FILE}.sed > ${WRKDIR}/${FILE}
+.endfor
 
 post-patch:
-	${REINPLACE_CMD} -e "s=/usr/local/pgsql/include=${LOCALBASE}/include=" \
-		${WRKSRC}/bin/named/Makefile.in
-	${REINPLACE_CMD} -e "s=/usr/local/pgsql/lib=${LOCALBASE}/lib=" \
-		${WRKSRC}/bin/named/Makefile.in
+	@ ${MV} ${EXTRA_FIX} ${EXTRA_FIX}.sed
+	${SED} -e "s=/usr/local/pgsql/include=${LOCALBASE}/include=" \
+		-e "s=/usr/local/pgsql/lib=${LOCALBASE}/lib=" \
+		${EXTRA_FIX}.sed > ${EXTRA_FIX}
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.8 \
 	rndc/rndc.8
-	@ ${MV} ${DIR}/${FILE} ${DIR}/${FILE}.Dist
-	@ ${SED} -e 's#/etc/named.conf#${PREFIX}/etc/named.conf#g' \
+	@ ${MV} ${DIR}/${FILE} ${DIR}/${FILE}.sed
+	${SED} -e 's#/etc/named.conf#${PREFIX}/etc/named.conf#g' \
 		-e 's#/etc/rndc.conf#${PREFIX}/etc/rndc.conf#g' \
-		${DIR}/${FILE}.Dist > ${DIR}/${FILE}
+		${DIR}/${FILE}.sed > ${DIR}/${FILE}
 .endfor
 
 pre-configure:
