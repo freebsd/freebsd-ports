@@ -1,0 +1,7 @@
+BB is an high quality audio-visual demonstration for your text
+terminal. It is portable demo, so you can run it on plenty of operating
+systems and DOS.
+
+Supports: dos (VGA + MDA), stdio, curses, slang, X11, gpm, linux-console
+Sound:  OSS, Sun audio, SGI, DEC Aplha, AIX, HP-UX, DOS (GUS CLASSIC, GUS
+        CLASSIC, GUS MAX, GUS ACE, GUS PNP, SB, ESS, PC-buzzer

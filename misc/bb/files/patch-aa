@@ -1,0 +1,11 @@
+--- unix.c	Tue Mar 10 22:42:39 1998
++++ /home/andy/tmp/wrk/unix.c	Mon Jun 22 14:26:36 1998
+@@ -86,7 +86,7 @@
+     pid = fork();
+     if (pid == (pid_t) 0) {	/* This is the child process.  */
+ 	char str[256];
+-	sprintf(str, "bb_snd_server %i %i %i bb.s3m bb2.s3m bb3.s3m", freq, stereo, _16bit);
++	sprintf(str, "bb_snd_server %i %i %i /usr/local/share/bb/bb.s3m /usr/local/share/bb/bb2.s3m /usr/local/share/bb/bb3.s3m", freq, stereo, _16bit);
+ 	close(mypipe[0]);
+ 	close(mypipe2[1]);
+ 	close(1);
