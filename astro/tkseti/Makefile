@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.cuug.ab.ca/~macdonal/tkseti/
 MAINTAINER=	petef@FreeBSD.org
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
-		setiathome:${PORTSDIR}/astro/setiathome
+		${LOCALBASE}/sbin/setiathome:${PORTSDIR}/astro/setiathome
 
 NO_BUILD=	yes
 
