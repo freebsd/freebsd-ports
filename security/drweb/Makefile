@@ -7,6 +7,7 @@
 
 PORTNAME=	drweb
 PORTVERSION=	4.32.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/FreeBSD/49/ \
 		ftp://ftp.drweb.ru/pub/unix/FreeBSD/53/
@@ -18,8 +19,6 @@ ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
-
-BROKEN=		Size mismatch
 
 .include <bsd.port.pre.mk>
 
