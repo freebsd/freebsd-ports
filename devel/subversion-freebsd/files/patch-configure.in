@@ -1,0 +1,13 @@
+--- configure.in.orig	Fri Dec 20 03:56:09 2002
++++ configure.in	Fri Dec 20 03:56:32 2002
+@@ -81,8 +81,8 @@
+ 
+ dnl verify apr version and set apr flags
+ changequote(<<, >>)
+-APR_VER_REGEX="0\.9\.[2-9]"
+-APU_VER_REGEX="0\.9\.[2-9]"
++APR_VER_REGEX="0\.9\.[1-9]"
++APU_VER_REGEX="0\.9\.[1-9]"
+ changequote([, ])
+ 
+ SVN_LIB_APR($APR_VER_REGEX)
