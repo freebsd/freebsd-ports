@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tinker
-PORTVERSION=	3.8
-PORTREVISION=	1
+PORTVERSION=	3.9
 CATEGORIES=	biology
 MASTER_SITES=	ftp://dasher.wustl.edu/pub/
 DISTNAME=	${PORTNAME}
@@ -23,6 +22,11 @@ ALL_TARGET=	all listing
 INSTALL_TARGET=	rename
 
 RESTRICTED=	author requests no distribution except from his FTP site
+
+pre-fetch:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} If you get a CHECKSUM mismatch, try doing a \'make distclean\' first.
+	@${ECHO_MSG} ""
 
 .if defined(WANT_VIEWER)
 .if ${XFREE86_VERSION} == 3
@@ -65,7 +69,11 @@ ${PREFIX}/share/doc/tinker
 ${PREFIX}/share/doc/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.txt \
 ${PREFIX}/share/doc/tinker
+	${INSTALL_DATA} ${WRKDIR}/tinker/doc/release* \
+${PREFIX}/share/doc/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/example/README \
+${PREFIX}/share/examples/tinker
+	${INSTALL_SCRIPT} ${WRKDIR}/tinker/example/clean.make \
 ${PREFIX}/share/examples/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/example/*.1st \
 ${PREFIX}/share/examples/tinker
@@ -87,21 +95,21 @@ ${PREFIX}/share/examples/tinker
 ${PREFIX}/share/examples/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/example/*.xyz \
 ${PREFIX}/share/examples/tinker
-	${INSTALL_SCRIPT} ${WRKDIR}/tinker/example/clean.make \
-${PREFIX}/share/examples/tinker
 	${INSTALL_SCRIPT} ${WRKDIR}/tinker/example/*.run \
 ${PREFIX}/share/examples/tinker
+	${INSTALL_DATA} ${WRKDIR}/tinker/bench/README \
+${PREFIX}/share/tinker/bench
 	${INSTALL_DATA} ${WRKDIR}/tinker/bench/*.dyn0 \
 ${PREFIX}/share/tinker/bench
 	${INSTALL_DATA} ${WRKDIR}/tinker/bench/*.log \
 ${PREFIX}/share/tinker/bench
 	${INSTALL_DATA} ${WRKDIR}/tinker/bench/*.key \
 ${PREFIX}/share/tinker/bench
+	${INSTALL_SCRIPT} ${WRKDIR}/tinker/bench/*.run \
+${PREFIX}/share/tinker/bench
 	${INSTALL_DATA} ${WRKDIR}/tinker/bench/*.xyz \
 ${PREFIX}/share/tinker/bench
 	${INSTALL_DATA} ${WRKDIR}/tinker/bench/results* \
-${PREFIX}/share/tinker/bench
-	${INSTALL_SCRIPT} ${WRKDIR}/tinker/bench/*.run \
 ${PREFIX}/share/tinker/bench
 	${INSTALL_DATA} ${WRKDIR}/tinker/test/* ${PREFIX}/share/tinker/test
 .endif
@@ -109,7 +117,9 @@ ${PREFIX}/share/tinker/bench
 .if defined(WANT_VIEWER)
 	${MKDIR} ${PREFIX}/share/tinker/rasmol
 	${INSTALL_PROGRAM} ${WRKDIR}/tinker/rasmol/tview-* ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKDIR}/tinker/rasmol/rasmol.hlp ${PREFIX}/share/tinker/rasmol
+	${INSTALL_SCRIPT} ${FILESDIR}/tview ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKDIR}/tinker/rasmol/rasmol.hlp \
+		${PREFIX}/share/tinker/rasmol
 
 .endif
 
