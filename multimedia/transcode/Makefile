@@ -7,6 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	0.6.12
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.zebra.fh-weingarten.de/~transcode/pre/
 
@@ -183,7 +184,8 @@ PLIST_SUB+=	WITH_FAME="@comment "
 .endif
 
 .if defined(WITH_XVID)
-LIB_DEPENDS+=	xvidcore.2:${PORTSDIR}/multimedia/xvid
+LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
+RUN_DEPENDS+=	xvid4conf:${PORTSDIR}/multimedia/xvid4conf
 PLIST_SUB+=	WITH_XVID=""
 WITH_NASM=	YES
 .else
@@ -361,8 +363,8 @@ post-install:
 .if defined(WITH_XVID)
 	@${LN} -sf ${LOCALBASE}/lib/libxvidcore.so \
 		${PREFIX}/lib/transcode/libxvidcore.so
-	@${LN} -sf ${LOCALBASE}/lib/libxvidcore.so.2 \
-		${PREFIX}/lib/transcode/libxvidcore.so.2
+	@${LN} -sf ${LOCALBASE}/lib/libxvidcore.so.4 \
+		${PREFIX}/lib/transcode/libxvidcore.so.4
 .endif
 
 .if defined(WITH_SUBRIP)

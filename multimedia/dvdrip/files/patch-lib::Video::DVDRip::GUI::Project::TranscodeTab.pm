@@ -14,7 +14,7 @@
  				->set_popdown_strings(
 -					"divx4","divx5","xvid","xvid2","xvid3",
 -					"xvid4","ffmpeg","fame","af6"
-+					"xvid2",
++					"xvid4",
 +					"ffmpeg","fame","af6"
  				);
  		}

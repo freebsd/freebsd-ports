@@ -144,11 +144,11 @@ WITH_SPEEX=	yes
 WITH_SVGALIB=	yes
 .endif
 
-.if exists(${LOCALBASE}/libxosd.so.4) && !defined(WITHOUT_XOSD)
+.if exists(${LOCALBASE}/lib/libxosd.so.4) && !defined(WITHOUT_XOSD)
 WITH_XOSD=	yes
 .endif
 
-.if exists(${LOCALBASE}/libxvidcore.so.2) && !defined(WITHOUT_XVID)
+.if exists(${LOCALBASE}/lib/libxvidcore.so.4) && !defined(WITHOUT_XVID)
 WITH_XVID=	yes
 .endif
 
@@ -290,7 +290,7 @@ CONFIGURE_ARGS+=--enable-xosd
 .endif
 
 .if defined(WITH_XVID) && !defined(WITHOUT_XVID)
-LIB_DEPENDS+=	xvidcore.2:${PORTSDIR}/multimedia/xvid
+LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
 CONFIGURE_ARGS+=--enable-xvideo
 PLIST_FILES+=	lib/vlc/video_output/libxvideo_plugin.so
 .else

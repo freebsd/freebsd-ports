@@ -39,12 +39,12 @@
  		label => "Default video codec",
  		type  => 'string',
 -		value => 'divx4',
-+		value => 'xvid2',
++		value => 'xvid4',
  		presets => [
  			"SVCD","VCD","XSVCD","XVCD","CVD",
 -			"divx4","divx5",
 -			"xvid","xvidcvs","xvid2","xvid3","xvid4",
-+			"xvid2",
++			"xvid4",
  			"ffmpeg","fame","af6"
  		],
  	},
