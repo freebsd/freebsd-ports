@@ -1,34 +1,32 @@
---- ../product/util/makefile.mk.orig	Tue Jun 11 17:09:39 2002
-+++ ../product/util/makefile.mk	Mon Jul 15 15:54:13 2002
-@@ -137,13 +137,6 @@
+--- ../product/util/makefile.mk.orig	Sat Jan 18 13:31:50 2003
++++ ../product/util/makefile.mk	Sat Jan 18 13:30:54 2003
+@@ -131,13 +131,6 @@
  DESTDIRDLL=$(DESTDIRLIB)
  STLPORTLIBNAME=libstlport_gcc.so
  BINDINGDLL=$(COMNAME)_uno
 -.IF "$(COMID)"=="gcc3"
 -ADDITIONAL_DLLS= \
--	$(DESTDIRDLL)$/libgcc_s.so.1 		\
--	$(DESTDIRDLL)$/libgcc_s.so 		\
--	$(DESTDIRDLL)$/libstdc++.so.3 		\
--	$(DESTDIRDLL)$/libstdc++.so.3.0.1
+-       $(DESTDIRDLL)$/libgcc_s.so.1            \
+-       $(DESTDIRDLL)$/libgcc_s.so              \
+-       $(DESTDIRDLL)$/libstdc++.so.$(SHORTSTDCPP3)           \
+-       $(DESTDIRDLL)$/libstdc++.so.$(LIBSTDCPP3)
 -.ENDIF
  
  .ELIF "$(OS)"=="NETBSD"
  ###########
-@@ -498,6 +491,7 @@
- #---------------------------------------------------------
- # special targets for linux gcc3
+@@ -491,6 +484,7 @@
+ # special targets for linux gcc3 
+ .IF "$(COMID)"=="gcc3"
  
-+.IF "$(OS)"=="LINUX"
- .IF "$(CCNUMVER)">="000300010000"
++.IF "$(OS)"!="FREEBSD"
+ $(DLLOUT)$/libstdc++.so.$(LIBSTDCPP3) :
+        $(GCCINSTLIB) libstdc++.so.$(LIBSTDCPP3) $(DLLOUT)
  
- $(DESTDIRDLL)$/libstdc++.so.4.0.0 : $(DLLOUT)$/libstdc++.so.4.0.0 $(DIRLIST)
-@@ -526,6 +520,9 @@
+@@ -514,6 +508,7 @@
  $(DESTDIRDLL)$/libgcc_s.so : $(DESTDIRDLL)$/libgcc_s.so.1 $(DIRLIST)
  	-rm -f $@
  	+ln -s libgcc_s.so.1 $@
-+
 +.ENDIF
-+
  #-------------------------------------------------------------
  
  $(DESTDIRJAR)$/%.jar : $(BINOUT)$/%.jar $(DIRLIST)

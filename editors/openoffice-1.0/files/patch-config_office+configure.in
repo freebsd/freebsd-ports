@@ -1,187 +1,46 @@
---- configure.in.orig	Sat Jun  8 02:49:26 2002
-+++ configure.in	Mon Jul 15 13:36:23 2002
-@@ -28,6 +28,11 @@
- 
-                           Usage: --enable-gcc3
- ],,)
-+AC_ARG_ENABLE(debug,
-+[  --enable-debug          if you like to build with debug symbols
-+
-+                          Usage: --enable-debug
-+],,)
- AC_ARG_WITH(stlport4-home,
- [  --with-stlport4-home    The location that STLport4 is installed in. The STL
-                           header files are assumed to be in stlport4-home/stlport
-@@ -103,6 +108,12 @@
- 
-                           Usage: --with-asm-home=<path to ml.exe directory>
- ],,)
-+AC_ARG_WITH(os-version,
-+[  --with-os-version       For FreeBSD users, use this option option to build OpenOffice
-+                          with the correct OSVERSION.
-+
-+                          Usage: --with-os-version=<OSVERSION>
-+],,)
- AC_ARG_WITH(unzip-home,
- [  --with-unzip-home         For Windows users, please supply the path for 
-                           unzip.exe.
-@@ -241,7 +252,7 @@
- if test "$_os" != "WINNT" && test -z "$with_gcc_home"; then
-    AC_PROG_CC
- fi
--if test "$_os" = "Linux" -o "$_os" = "FreeBSD" -o "$_os" = "NetBSD" -o \( \( "$_os" = "IRIX" -o "$_os" = "IRIX64" \) -a "$CC" = "gcc" \) ; then
-+if test "$_os" = "Linux" -o "$_os" = "NetBSD" -o \( \( "$_os" = "IRIX" -o "$_os" = "IRIX64" \) -a "$CC" = "gcc" \) ; then
-    dnl ******************************************
-    dnl Testing for GNU compiler and version...
-    dnl ******************************************
-@@ -366,8 +377,9 @@
-                      _gcc_include_path="NO_GCC_INCLUDE"
-                   fi
-                else
--		if test "$_os" = "FreeBSD" -o "$_os" = "NetBSD" ; then
--                  _gcc_include_path="/usr/include/g++"
-+		if test "$_os" = "NetBSD" ; then
-+                  _gcc_include_path="/usr"
-+                  _gxx_include_path="/usr/include/g++"
- 		else
-                   AC_MSG_WARN([could not find 2.95.2/include directory of the gcc compiler])
-                   AC_MSG_WARN([could not find 2.95.2/include directory of the gcc compiler]) >> warn
-@@ -408,6 +420,71 @@
-       fi
+--- configure.in.orig	Thu Jan 16 13:42:46 2003
++++ configure.in	Tue Jan 21 23:09:35 2003
+@@ -352,10 +352,7 @@
+    if test "$COMPATH" != "NO_GCC"; then
+       AC_MSG_RESULT([checked (gcc $_gcc_version)])
     fi
- fi
-+if test "$_os" = "FreeBSD"; then
-+       dnl ******************************************
-+       dnl Testing for GNU compiler and version...
-+       dnl Adapted to the FreeBSD ports system
-+       dnl ******************************************
-+       dnl parametrise the various gcc pathnames so we can reuse for gcc2.95 and gcc3
-+       if test -n "$enable_gcc3"; then
-+               _gccincname1="g++-v3"
-+       else
-+               _gccincname1="g++-3"
-+       fi
-+       if test -z "$CC"; then
-+               CC="cc";
-+       fi
-+       if test -z "$CXX"; then
-+               CXX="c++";
-+       fi
-+       if which $CC; then
-+               _gcc_releasetype=`echo $CC | $SED -e 's|[[:digit:]]\{1,\}||'`
-+               _gcc_version=`$CC -dumpversion`
-+               _gcc_major=`$CC -dumpversion | $AWK -F"." '{ print \$1 }'`
-+               _gcc_machine=`$CC -dumpmachine`
-+       else
-+               COMPATH="NO_GCC"
-+       fi
-+       if test -n "$enable_gcc3"; then
-+               if test "$_gcc_major" != "3"; then
-+                       AC_MSG_ERROR([found version "$_gcc_version", but use of gcc 3.x requested])
-+                       COMPATH="NO_GCC"
-+               fi
-+       else
-+               if test "$_gcc_major" != "2"; then
-+                       AC_MSG_WARN([found version "$_gcc_version", use version 2.95.2+ of the gcc compiler])
-+                       AC_MSG_WARN([found version "$_gcc_version", use version 2.95.2+ of the gcc compiler]) >> warn
-+                      COMPATH="NO_GCC"
-+               else
-+                       _gcc_middle=`$CC --version | $AWK -F. '{ if ($2 != 95) print "false"; else print "true" }'`
-+                       if test "$_gcc_middle" = "false"; then
-+                               AC_MSG_WARN([found version "$_gcc_version", use version 2.95.2+ of the gcc compiler])
-+                               AC_MSG_WARN([found version "$_gcc_version", use version 2.95.2+ of the gcc compiler]) >> warn
-+                               COMPATH="NO_GCC"
-+                       else
-+                               _gcc_minor=`$CC --version | $AWK -F. '{ if ($3 < 2) print "false"; else print "true" }'`
-+                               if test "$_gcc_minor" = "false"; then
-+                                       AC_MSG_WARN([found version "$_gcc_version", use version 2.95.2+ of the gcc compiler])
-+                                       AC_MSG_WARN([found version "$_gcc_version", use version 2.95.2+ of the gcc compiler]) >> warn
-+                                       COMPATH="NO_GCC"
-+                               fi
-+                       fi
-+               fi
-+       fi
-+       if test "$COMPATH" != "NO_GCC"; then
-+               if test $CC != "gcc" -o $CC != "cc"; then
-+                       _gcc_include_path="$PREFIX/lib/gcc-lib/$_gcc_machine/$_gcc_version/include"
-+                       _gxx_include_path="$_gcc_include_path/g++"
-+               else
-+                       _gcc_include_path="$PREFIX"
-+                       _gxx_include_path="$_gcc_include_path/g++"
-+               fi
-+       else
-+               AC_MSG_WARN([no gcc compiler found])
-+               AC_MSG_WARN([no gcc compiler found]) >> warn
-+       fi
+-
+-dnl Set the include paths
+-   _gcc_include_path=`$CC -print-search-dirs | grep instal |$AWK '{ print \$2 }'`/include 
+-fi  
 +fi
-+
- if test "$_os" = "Darwin"; then
-    if test "$CC" = "cc"; then
-       AC_PATH_PROGS(_cc, cc)
-@@ -589,6 +666,26 @@
-    fi
+ 
+ dnl ===================================================================
+ dnl Search all the common names for GNU make
+@@ -553,14 +550,27 @@
  fi
  
-+dnl *************************************************************
-+dnl Testing for exception handling - dwarf2 or sjlj exceptions...
-+dnl *************************************************************
-+AC_MSG_CHECKING([try to compile exception code])
-+AC_LANG_SAVE
-+AC_LANG_CPLUSPLUS
-+AC_CACHE_VAL(exceptions_type, [AC_TRY_LINK(
-+	[#include <iostream>
-+
-+extern "C" void __sjthrow(void) __attribute__ ((__noreturn__));
-+
-+	],
-+	[__sjthrow() ],
-+	[exceptions_type="sjlj"],
-+	[exceptions_type="dwarf2"])
-+])
-+
-+AC_MSG_RESULT(Exceptions type: $exceptions_type)
-+AC_LANG_RESTORE
-+
- dnl **************************************************************
- dnl Testing for required  Solaris and workshop compiler patches...
- dnl **************************************************************
-@@ -815,6 +912,10 @@
-    fi
-    if test "$_os" = "NetBSD"; then
-       _jdk_middle=`echo $_jdk | $AWK -F. '{ if ($2 != 2) print "false"; else print "true" }'`
-+      _jdk_middle3=`echo $_jdk | $AWK -F. '{ if ($2 != 3) print "false"; else print "true" }'`
-+      if test "$_jdk_middle" = "false" -a "$_jdk_middle3" = "true"; then
-+         _jdk_minor="true"
-+      fi
-    fi
-    if test "$_os" = "Linux" -a "$_machine_type" = "sparc"; then
-       _jdk_middle=`echo $_jdk | $AWK -F. '{ if ($2 != 2) print "false"; else print "true" }'`
-@@ -1170,6 +1271,12 @@
-    USE_GCC3="FALSE"
- fi
- 
-+if test -n "$enable_debug"; then
-+   ENABLE_DEBUG="TRUE"
+ dnl ===================================================================
+-dnl Set the gxx include directories
++dnl Set the gcc/gxx include directories
+ dnl ===================================================================
++if test "$_os" = "FreeBSD" && test "$CC" != "cc"; then
+ if test "$GXX" = "yes"; then
+-   _gxx_include_path=`echo "#include <cstring>" | $CXX -E -xc++ - | $SED -n '/.*1*"\(.*\)\/cstring".*/s//\1/p' | head -1`
++	if test -n "$enable_gcc3"; then
++		_gccincname1="g++-v3"
++	else
++		_gccincname1="g++-3"
++	fi
++	_gcc_include_path=".."
++	_gxx_include_path="$_gcc_include_path/$_gccincname1"
++fi
 +else
-+   ENABLE_DEBUG="FALSE"
++if test "$GXX" = "yes"; then
++   _gcc_include_path=`$CC -print-search-dirs | grep instal |$AWK '{ print \$2 }'`/include
++   _gxx_include_path=`echo "#include <cstring>" | $CXX -E -xc++ - \
++	| $SED -n '/.*1*"\(.*\)\/cstring".*/s//\1/p' | head -1`
+ dnl This is the original code...
+-dnl _gxx_include_path=`$CXX -print-search-dirs | grep instal |$AWK '{ print \$2 }'`/include 
++dnl _gxx_include_path=`$CXX -print-search-dirs | grep instal |$AWK '{ print \$2 }'`/include
 +fi
-+
- # Print args passed to set_soenv.
- if test 1 = 1; then
- echo
-@@ -1197,12 +1304,14 @@
- echo "\$MINGWIN32="$WITH_MINGWIN
- echo "\$with_use_shell="$with_use_shell
- echo "\$USE_GCC3="$USE_GCC3
-+echo "\$EXCEPTIONS="$exceptions_type
-+echo "\$ENABLE_DEBUG="$ENABLE_DEBUG
- echo
  fi
+-
  
- # Executing the set_soenv script to setup the environment variables.
- if test -z "$enable_check_only"; then
--   './set_soenv' $COMPATH $_gcc_include_path $_gxx_include_path $JAVA_HOME $TCSH $PERL $x_libraries $x_includes $_LOCAL_SOLENV $_LOCAL_SOLVER $upd $CYGWIN $STLPORT4 $enable_xprint $with_lang $with_asm_home $with_unzip_home $WITH_MINGWIN $with_use_shell $USE_GCC3
-+   './set_soenv' $COMPATH $_gcc_include_path $_gxx_include_path $JAVA_HOME $TCSH $PERL $x_libraries $x_includes $_LOCAL_SOLENV $_LOCAL_SOLVER $upd $CYGWIN $STLPORT4 $enable_xprint $with_lang $with_asm_home $with_unzip_home $WITH_MINGWIN $with_use_shell $USE_GCC3 $with_os_version $PTHREAD_CFLAGS $PTHREAD_LIBS $CC $CXX $exceptions_type $ENABLE_DEBUG
- else
-    echo
-    echo Test Complete
+ dnl ===================================================================
+ dnl Extra checking for the SUN OS compiler

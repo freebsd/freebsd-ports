@@ -1,5 +1,5 @@
---- ../solenv/inc/unxfbsdi.mk.orig	Wed Oct 24 19:21:47 2001
-+++ ../solenv/inc/unxfbsdi.mk	Sun Jun  2 11:20:10 2002
+--- ../solenv/inc/unxfbsdi.mk.orig	Tue Jan  7 16:22:18 2003
++++ ../solenv/inc/unxfbsdi.mk	Sat Jan 18 13:04:17 2003
 @@ -1,84 +1,139 @@
 -
  # mak file fuer unxfbsdi
@@ -56,8 +56,8 @@
 +# environment with graphical user interface
 +CFLAGSOBJGUIMT=-fPIC
  
--cc=				gcc
--CC=				g++
+-CC=				gcc
+-CXX=				g++
 -CDEFS+=			-D_USE_NAMESPACE=1 -DX86 -DNEW_SOLAR -DSTLPORT_VERSION=400
 -CDEFS+=			-D_REENTRANT -D_PTHREADS -D_THREAD_SAFE
 -CFLAGS+= -w -c $(INCLUDE)

@@ -1,11 +1,41 @@
---- ../nas/nas-1.4.1.patch.orig	Thu Nov  1 17:27:31 2001
-+++ ../nas/nas-1.4.1.patch	Thu Oct 31 10:17:40 2002
-@@ -120,26 +120,157 @@
+--- ../nas/nas-1.4.1.patch.orig	Wed Jan  8 02:52:13 2003
++++ ../nas/nas-1.4.1.patch	Sat Jan 18 17:55:19 2003
+@@ -1,5 +1,5 @@
+-*** misc/nas-1.4.1/config/NetAudio.tmpl	Sat Mar  4 21:40:50 2000
+---- misc/build/nas-1.4.1/config/NetAudio.tmpl	Tue Jan  7 19:30:41 2003
++*** misc/nas-1.4.1/config/NetAudio.tmpl	Sun Mar  5 03:40:50 2000
++--- misc/build/nas-1.4.1/config/NetAudio.tmpl	Thu Nov  1 13:08:21 2001
+ ***************
+ *** 166,171 ****
+ --- 166,177 ----
+@@ -15,8 +15,8 @@
+       INCLUDESRC = $(TOP)/include
+           INCDIR = $(INCROOT)/audio
+       WIDGET_DIR = $(TOP)/clients/audio/widgets
+-*** misc/nas-1.4.1/lib/audio/Alibint.c	Sun Oct 24 13:45:21 1999
+---- misc/build/nas-1.4.1/lib/audio/Alibint.c	Tue Jan  7 19:30:41 2003
++*** misc/nas-1.4.1/lib/audio/Alibint.c	Sun Oct 24 19:45:21 1999
++--- misc/build/nas-1.4.1/lib/audio/Alibint.c	Thu Nov  1 13:11:51 2001
+ ***************
+ *** 1336,1348 ****
+   static char *_SysErrorMsg (n)
+@@ -40,8 +40,8 @@
+   }
+   
+   #endif 	/* USL sharedlibs in don't define for AUD3.2 */
+-*** misc/nas-1.4.1/lib/audio/Astreams.c	Sat May  8 21:10:05 1999
+---- misc/build/nas-1.4.1/lib/audio/Astreams.c	Tue Jan  7 19:30:41 2003
++*** misc/nas-1.4.1/lib/audio/Astreams.c	Sun May  9 03:10:05 1999
++--- misc/build/nas-1.4.1/lib/audio/Astreams.c	Thu Nov  1 13:05:48 2001
+ ***************
+ *** 51,59 ****
+   #include <errno.h>
+@@ -120,59 +120,157 @@
    	    return(-1);
    	}
    
--*** misc/nas-1.4.1/lib/audio/Imakefile	Sat Jan  1 10:28:13 2000
----- misc/build/nas-1.4.1/lib/audio/Imakefile	Thu Nov  1 13:12:56 2001
+-*** misc/nas-1.4.1/lib/audio/Imakefile	Sat Jan  1 04:28:13 2000
+---- misc/build/nas-1.4.1/lib/audio/Imakefile	Tue Jan  7 19:30:41 2003
 -***************
 -*** 25,30 ****
 ---- 25,32 ----
@@ -27,6 +57,39 @@
 -  InstallMultiple($(HEADERS),$(INCDIR))
 -  #if ProjectX >= 5
 -  InstallNonExecFile(AuErrorDB,$(LIBDIR))
+-*** misc/nas-1.4.1/server/dia/gram.y	Sat Jan  1 22:35:49 2000
+---- misc/build/nas-1.4.1/server/dia/gram.y	Tue Jan  7 19:42:40 2003
+-***************
+-*** 119,132 ****
+-  			}
+-  		| MAXRATE number
+-  			{ ddaSetConfig(MAXRATE, (void *)$2); }
+-! 		| MINRATE number
+-! 			{ ddaSetConfig(MINRATE, (void *)$2); }
+-  
+-  string		: STRING		{ ptr = (char *)malloc(strlen($1)+1);
+-  					  strcpy(ptr, $1);
+-  					  RemoveDQuote(ptr);
+-  					  $$ = ptr;
+-! 					}
+-  number		: NUMBER		{ $$ = $1; }
+-  		;
+-  
+---- 119,132 ----
+-  			}
+-  		| MAXRATE number
+-  			{ ddaSetConfig(MAXRATE, (void *)$2); }
+-! 		| MINRATE number 
+-!                         { ddaSetConfig(MINRATE, (void *)$2); } ;
+-  
+-  string		: STRING		{ ptr = (char *)malloc(strlen($1)+1);
+-  					  strcpy(ptr, $1);
+-  					  RemoveDQuote(ptr);
+-  					  $$ = ptr;
+-!                                         };
+-  number		: NUMBER		{ $$ = $1; }
+-  		;
+-  
 +--- misc/nas-1.4.1/Imakefile.orig	Wed Mar  6 02:20:01 2002
 ++++ misc/build/nas-1.4.1/Imakefile	Wed Mar  6 02:20:07 2002
 +@@ -42,6 +42,8 @@

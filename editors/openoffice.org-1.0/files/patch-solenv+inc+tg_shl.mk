@@ -1,14 +1,11 @@
---- ../solenv/inc/tg_shl.mk.orig	Wed Mar 13 20:40:10 2002
-+++ ../solenv/inc/tg_shl.mk	Wed Mar 13 20:41:10 2002
-@@ -319,9 +319,9 @@
+--- ../solenv/inc/tg_shl.mk.orig	Tue Jan  7 16:22:13 2003
++++ ../solenv/inc/tg_shl.mk	Sat Jan 18 12:51:58 2003
+@@ -319,7 +319,7 @@
  .IF "$(GUI)" == "WNT"
  .IF "$(UPDATER)"=="YES"
  .IF "$(COM)"=="GCC"
--			gcc -c -o$(SLO)$/{$(subst,$(UPD)$(DLLPOSTFIX),_dflt $(SHL$(TNR)TARGET))}_version.obj -DWNT $(ENVCDEFS) -I$(INCCOM) $(SOLARENV)$/src$/version.cxx
-+			$(CC) -c -o$(SLO)$/{$(subst,$(UPD)$(DLLPOSTFIX),_dflt $(SHL$(TNR)TARGET))}_version.obj -DWNT $(ENVCDEFS) -I$(INCCOM) $(SOLARENV)$/src$/version.cxx
+-			gcc -c -o$(SLO)$/{$(subst,$(UPD)$(DLLPOSTFIX),_dflt $(SHL$(TNR)TARGET))}_version.obj -DWNT $(ENVCDEFS) -I$(INCCOM) $(SOLARENV)$/src$/version.c
++			${CC} -c -o$(SLO)$/{$(subst,$(UPD)$(DLLPOSTFIX),_dflt $(SHL$(TNR)TARGET))}_version.obj -DWNT $(ENVCDEFS) -I$(INCCOM) $(SOLARENV)$/src$/version.c
  .ELSE
--			cl -c -Fo$(SLO)$/{$(subst,$(UPD)$(DLLPOSTFIX),_dflt $(SHL$(TNR)TARGET))}_version.obj -DWNT $(ENVCDEFS) -I$(INCCOM) $(SOLARENV)$/src$/version.cxx
-+			$(CC) -c -Fo$(SLO)$/{$(subst,$(UPD)$(DLLPOSTFIX),_dflt $(SHL$(TNR)TARGET))}_version.obj -DWNT $(ENVCDEFS) -I$(INCCOM) $(SOLARENV)$/src$/version.cxx
+ 			$(CXX) -c -Fo$(SLO)$/{$(subst,$(UPD)$(DLLPOSTFIX),_dflt $(SHL$(TNR)TARGET))}_version.obj -DWNT $(ENVCDEFS) -I$(INCCOM) $(SOLARENV)$/src$/version.c
  .ENDIF			# "$(COM)"=="GCC"
- .ENDIF			# "$(UPDATER)"=="YES"
- .IF "$(SHL$(TNR)DEFAULTRES)"!=""
