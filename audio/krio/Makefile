@@ -23,6 +23,7 @@ USE_QT=		yes
 WRKSRC=		${WRKDIR}/Krio
 
 do-install:
+		${MKDIR} ${PREFIX}/share/icons/mini ${PREFIX}/share/applnk/Utilities
 		${INSTALL_PROGRAM} ${WRKSRC}/krio ${PREFIX}/bin/krio
 		${INSTALL_DATA} ${WRKSRC}/icons/krio.xpm ${PREFIX}/share/icons/krio.xpm
 		${INSTALL_DATA} ${WRKSRC}/icons/mini/mini-krio.xpm ${PREFIX}/share/icons/mini/krio.xpm
