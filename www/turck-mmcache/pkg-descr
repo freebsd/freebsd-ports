@@ -11,7 +11,7 @@ can be run on any site which runs PHP with Turck MMCache. The sources
 of encoded script can't be restored because they are stored in a compiled
 form and the encoded version doesn't contain the source. 
 
-WWW: http://www.turcksoft.com/en/e_mmc.htm
+WWW: http://turck-mmcache.sourceforge.net/
 
 - Alex Dupre
 ale@FreeBSD.org
