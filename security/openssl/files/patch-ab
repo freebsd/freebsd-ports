@@ -22,7 +22,7 @@
 +	${MAKE} CC='${CC}' PLATFORM='${PLATFORM}' CFLAG='-fPIC ${CFLAG}' SDIRS='${SDIRS}' INSTALLTOP='${INSTALLTOP}' PEX_LIBS='${PEX_LIBS}' EX_LIBS='${EX_LIBS}' BN_ASM='${BN_ASM}' DES_ENC='${DES_ENC}' BF_ENC='${BF_ENC}' CAST_ENC='${CAST_ENC}' RC4_ENC='${RC4_ENC}' RC5_ENC='${RC5_ENC}' SHA1_ASM_OBJ='${SHA1_ASM_OBJ}' MD5_ASM_OBJ='${MD5_ASM_OBJ}' RMD160_ASM_OBJ='${RMD160_ASM_OBJ}' AR='${AR}' DIRS=$$i clean all || exit 1; \
 +	( set -x; ${CC}  -shared -o lib$$i.so.${SHLIBVER} \
 +		-Wl,-S,-soname=lib$$i.so.${SHLIBVER} \
-+		-Wl,--whole-archive lib$$i.a ) || exit 1; \
++		-Wl,${WHOLE_ARCHIVE_FLAG} lib$$i.a ) || exit 1; \
 +	rm -f lib$$i.a; (cd $$i ; ${MAKE} clean) || exit 1 ;\
 +	done;
 +	@set -x; \
