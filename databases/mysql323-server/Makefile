@@ -7,19 +7,10 @@
 
 PORTNAME?=	mysql
 PORTVERSION=	3.23.58
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	databases
-MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-3.23/ \
-		http://www.softagency.co.jp/MySQL/Downloads/MySQL-3.23/ \
-		ftp://sunsite.dk/mirrors/mysql/Downloads/MySQL-3.23/ \
-		http://mysql.mediatraffic.fi/Downloads/MySQL-3.23/ \
-		ftp://filepile.tiscali.de/mirror/mysql/Downloads/MySQL-3.23/ \
-		http://mirrors.tilian.co.uk/mysql.com/Downloads/MySQL-3.23/ \
-		ftp://ftp.rtfm.no/pub/mysql/Downloads/MySQL-3.23/ \
-		http://www.mysql.cz/Downloads/MySQL-3.23/ \
-		ftp://ftp.u-paris10.fr/mysql.com/Downloads/MySQL-3.23/ \
-		http://mysql.proserve.nl/Downloads/MySQL-3.23/ \
-		ftp://ftp.free.fr/pub/MySQL/Downloads/MySQL-3.23/
+MASTER_SITES=	${MASTER_SITE_MYSQL}
+MASTER_SITE_SUBDIR=	MySQL-3.23
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	ale@FreeBSD.org
@@ -39,7 +30,6 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--with-libwrap \
 		--with-low-memory \
 		--with-comment='FreeBSD port: ${PKGNAME}' \
-		--with-innodb \
 		--enable-thread-safe-client
 
 .ifdef USE_MYSQL
@@ -55,6 +45,9 @@ CONFIGURE_ARGS+=--with-extra-charsets=${WITH_XCHARSET}
 .if defined(BUILD_STATIC)
 CONFIGURE_ARGS+=--with-mysqld-ldflags=-all-static
 .endif
+.if !defined(WITHOUT_INNODB)
+CONFIGURE_ARGS+=--with-innodb
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -67,10 +60,10 @@ CONFIGURE_ARGS+=-D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
 CFLAGS+=	-D__USE_UNIX98 -D_REENTRANT -D_THREAD_SAFE
 CFLAGS+=	-I${LOCALBASE}/include/pthread/linuxthreads
 .if ${OSVERSION} > 500000
-LIB_DEPENDS+=	lthread.3:${PORTSDIR}/devel/linuxthreads
+LIB_DEPENDS+=	lthread.[35]:${PORTSDIR}/devel/linuxthreads
 CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r -llstdc++ -llsupc++'
 .else
-LIB_DEPENDS+=	lthread.2:${PORTSDIR}/devel/linuxthreads
+LIB_DEPENDS+=	lthread.[24]:${PORTSDIR}/devel/linuxthreads
 CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r'
 .endif
 .else
@@ -120,14 +113,15 @@ pre-fetch:
 	@${ECHO} "	WITH_OPENSSL=yes	Enable secure connections."
 	@${ECHO} "	DB_DIR=directory	Set alternate directory for database files"
 	@${ECHO} "				(default is /var/db/mysql)."
+	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
 	@${ECHO} "	WITH_PROC_SCOPE_PTH=yes	Use process scope threads"
 	@${ECHO} "				(try it if you use libpthread)."
-	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
 	@${ECHO} "	OVERWRITE_DB=yes	Re-initialize default databases."
 	@${ECHO} "	BUILD_OPTIMIZED=yes	Enable compiler optimizations"
 	@${ECHO} "				(use it if you need speed)."
 	@${ECHO} "	BUILD_STATIC=yes	Build a static version of mysqld."
 	@${ECHO} "				(use it if you need even more speed)."
+	@${ECHO} "	WITHOUT_INNODB=yes	Disable support for InnoDB table handler."
 	@${ECHO} ""
 
 post-patch:
@@ -212,5 +206,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 .endif
 .endif
+# Common part
+post-extract:
+	@${CP} /usr/include/tcpd.h ${WRKSRC}/sql/mytcpd.h
 
 .include <bsd.port.post.mk>
