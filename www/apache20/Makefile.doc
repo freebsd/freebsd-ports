@@ -91,7 +91,7 @@
 ##      make WITH_MODULES="include rewrite auth"
 ##
 
-DOCSDIR=	share/doc/apache2
+DOCSDIR=	${PREFIX}/share/doc/apache2
 
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	NOPORTDOCS=yes
@@ -148,3 +148,4 @@ PLIST_SUB+=	ERROR="@comment "
 PLIST_SUB+=	ERROR=""
 .endif
 
+PORTDOCS=	#don't blame me ;-)

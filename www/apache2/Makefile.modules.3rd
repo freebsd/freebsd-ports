@@ -116,6 +116,11 @@ do-install:
 
 .else # PORT_IS_SERVER
 
+# For slave ports:
+.if defined(SLAVE_DESIGNED_FOR) && ${PORTVERSION} != ${SLAVE_DESIGNED_FOR}
+IGNORE=	"Sorry, ${SLAVENAME} and ${PORTNAME} versions are out of sync"
+.endif
+
 # Module selection
 .for category in ${DEFAULT_MODULES_CATEGORIES}
 DEFAULT_MODULES+=	${${category}_MODULES}
@@ -150,10 +155,13 @@ _APACHE_MODULES+=	${WITH_MODULES}
 .    if defined (WITH_CUSTOM_${category})
 _APACHE_MODULES+=	${WITH_CUSTOM_${category}}
 .    endif
-.elif defined(WITH_${category}_MODULES) || defined(WITH_${category})
+.elif defined(WITH_${category}_MODULES)
 _APACHE_MODULES+=	${${category}_MODULES}
 .endif
 .endfor
+.    if defined(WITH_EXTRA_MODULES)
+_APACHE_MODULES+=	${WITH_EXTRA_MODULES}
+.    endif
 .endif
 
 

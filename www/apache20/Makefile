@@ -8,11 +8,10 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	2.0.50
-PORTREVISION=	3
+PORTVERSION=	2.0.52
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
-		http://sheepkiller.nerim.net/ports/${PORTNAME}/:powerlogo
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/clement/}:powerlogo
 DISTNAME=	httpd-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz powerlogo.gif:powerlogo
 DIST_SUBDIR=	apache2
@@ -37,8 +36,7 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 EXTRA_PATCHES+=		${FILESDIR}/exp-windowsupdate.patch
 .endif
 .if defined(WITH_EXPERIMENTAL_PATCHES)
-EXTRA_PATCHES+=		${FILESDIR}/exp-apr-kqueue.patch \
-			${FILESDIR}/exp-http-ready.patch
+EXTRA_PATCHES+=		${FILESDIR}/exp-apr-kqueue.patch
 .endif
 
 SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
@@ -188,12 +186,13 @@ pre-everything::
 	@${ECHO_MSG}	" To disable a module category: WITHOUT_<CATEGORY>_MODULES"
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	" Per default categories are:"
-	@${ECHO_MSG}	"  ${DEFAULT_MODULES_CATEGORIES}"
+	@${ECHO_MSG}	"  ${DEFAULT_MODULES_CATEGORIES:C/SLAVE_PORT//}"
 	@${ECHO_MSG}	" Categories available:"
 	@${ECHO_MSG}	"  ${ALL_MODULES_CATEGORIES:C/SLAVE_PORT//}"
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	"  To see all available knobs, type make show-options"
-	@${ECHO_MSG}    "  You can check your modules configuration by using show-modules"
+	@${ECHO_MSG}	"  To see all modules in different categories, type make show-categories"
+	@${ECHO_MSG}    "  You can check your modules configuration by using make show-modules"
 	@${ECHO_MSG}	""
 
 post-extract:
@@ -215,6 +214,8 @@ post-patch:
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
 			${WRKSRC}/server/core.c
+	@${REINPLACE_CMD} -e 's,freebsd\[2345\],freebsd\[23456\],' \
+			${WRKSRC}/srclib/apr/build/apr_hints.m4
 	@${INSTALL_DATA} ${WRKSRC}/NOTICE ${WRKSRC}/docs/manual
 
 pre-configure:
@@ -231,10 +232,10 @@ pre-install:
 post-install:
 	@${MKDIR} ${PREFIX}/etc/apache2/Includes
 .if !defined(WITH_APR_FROM_PORTS)
-	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/000.apache2libs.sh startup file."
+	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/000.apache2libs.sh startup script."
 	@${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2libs.sh ${PREFIX}/etc/rc.d/000.apache2libs.sh
 .endif
-	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/apache2.sh startup file."
+	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/apache2.sh startup script."
 	@${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2.sh ${PREFIX}/etc/rc.d/apache2.sh
 	@@${CAT} ${PKGMESSAGE}
 
