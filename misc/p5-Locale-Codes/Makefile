@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Locale-Codes
-PORTVERSION=	1.02
+PORTVERSION=	1.06
 CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Locale
@@ -17,7 +17,7 @@ MAINTAINER=	demon@FreeBSD.org
 PERL_CONFIGURE=	YES
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		Locale::Country.3 \
+MAN3=		Locale::Country.3 Locale::Constants.3 Locale::Currency.3 \
 		Locale::Language.3
 
 .include <bsd.port.mk>
