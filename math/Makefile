@@ -63,6 +63,7 @@
     SUBDIR += p5-Bit-ShiftReg
     SUBDIR += p5-Bit-Vector
     SUBIDR += p5-Date-Handler
+    SUBDIR += p5-Math-Base85
     SUBDIR += p5-Math-Bezier
     SUBDIR += p5-Math-BigIntFast
     SUBDIR += p5-Math-Currency

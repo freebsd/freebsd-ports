@@ -1,0 +1,14 @@
+RFC 1924 describes a compact, fixed-size representation of IPv6
+addresses which uses a base 85 number system. This module handles some
+of the uglier details of it.
+
+The base 85 numbers (from 0 to 84) are as follows:
+
+    0..9 A..Z a..z ! # $ % & ( ) * + - ; < = > ? @ ^ _ ` { | } ~
+
+At the moment, there's not much in this module. But it should be
+sufficient for the purposes of RFC 1924.
+
+WWW: http://search.cpan.org/search?dist=Math::Base85
+
+-Anton
