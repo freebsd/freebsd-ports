@@ -32,7 +32,7 @@ stop)
 
 restart)
     [ -x ${PGBIN}/pg_ctl ] && {
-	exec su -l pgsql -c "exec ${PREFIX}/bin/pg_ctl restart -s -m fast"
+	exec su -l pgsql -c "exec ${PREFIX}/bin/pg_ctl restart -s -m fast -l ${logfile}"
     }
     ;;
 
