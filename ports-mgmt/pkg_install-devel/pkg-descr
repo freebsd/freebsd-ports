@@ -4,11 +4,10 @@ This version fixes some bugs of the -CURRENT tools. You should
 only install it it you have problems with the current version
 or want to test the new features.
 
-*** CAUTION ***: This packages replaces your base system tools.
-If you do not want this, install the port with
+If you want to replace the base system tools, install via:
   make install PREFIX=/usr/local
-
-You can revert to the tools from the base system by doing
+You can revert to the normal tools simply by uninstalling the
+port or restoring them with:
   cd /usr/src/usr.sbin/pkg_install; make install
 if you have the sources installed.
 

@@ -7,23 +7,28 @@
 
 PORTNAME=		pkg_install
 PORTVERSION=		20040125
+PORTREVISION=		1
 CATEGORIES=		sysutils
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
-			${MASTER_SITE_LOCAL:S/$/:FreeBSD/} \
-			ftp://ftp.fillmore-labs.com/pub/%SUBDIR%/:fml
-MASTER_SITE_SUBDIR=	portaudit/:sf eik/:FreeBSD FreeBSD/distfiles/:fml
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	eik
 PKGNAMESUFFIX=		-devel
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX}:sf,FreeBSD,fml
 
 MAINTAINER=		eik@FreeBSD.org
 COMMENT=		Development version of the FreeBSD 5.x package tools
+
+CONFLICTS=		pkg_install-[0-9]*
 
 MANCOMPRESSED=		yes
 
 MAN1=			pkg_add.1 pkg_create.1 pkg_delete.1 \
 			pkg_info.1 pkg_version.1
 
-PREFIX?=		/usr
+.if defined(PREFIX)
+.if ${PREFIX} == "/usr"
+PKGNAMESUFFIX=		-base-devel
+.endif
+.endif
+
 BACKUPDIR?=		/var/backups
 
 .if !defined(NOCRYPT) && !defined(NO_OPENSSL)
@@ -45,6 +50,13 @@ PLIST_SUB+=		OPENSSL="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+pre-everything::
+	@${ECHO} "======================================================================================="
+	@${ECHO}
+	@${ECHO} "Build ${PKGNAME} with PREFIX=/usr to replace the base package tools"
+	@${ECHO}
+	@${ECHO} "======================================================================================="
 
 .if ${OSVERSION} < 460102
 check-already-installed:
