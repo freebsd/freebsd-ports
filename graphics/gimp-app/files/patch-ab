@@ -1,23 +1,8 @@
---- /a/gimp-0.99.6/gtk+/configure	Mon Mar 10 04:44:20 1997
-+++ gtk+/configure	Wed Mar 12 21:29:11 1997
-@@ -570,6 +570,7 @@
- # SVR4 /usr/ucb/install, which tries to use the nonexistent group "staff"
- # ./install, which can be erroneously created by make from ./install.sh.
- echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
-+INSTALL="/usr/bin/install -c"
- echo "configure:574: checking for a BSD compatible install" >&5
- if test -z "$INSTALL"; then
- if eval "test \"`echo '$''{'ac_cv_path_install'+set}'`\" = set"; then
---- /a/gimp-0.99.6/gtk+/glib/configure	Mon Mar 10 04:44:57 1997
-+++ gtk+/glib/configure	Wed Mar 12 21:29:39 1997
-@@ -560,6 +560,7 @@
- # SVR4 /usr/ucb/install, which tries to use the nonexistent group "staff"
- # ./install, which can be erroneously created by make from ./install.sh.
- echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
-+INSTALL="/usr/bin/install -c"
- echo "configure:564: checking for a BSD compatible install" >&5
- if test -z "$INSTALL"; then
- if eval "test \"`echo '$''{'ac_cv_path_install'+set}'`\" = set"; then
+
+*****
+***** patches for plug-ins
+*****
+
 --- /a/gimp-0.99.6/plug-ins/url.c	Mon Mar 10 04:57:12 1997
 +++ plug-ins/url.c	Wed Mar 12 21:56:39 1997
 @@ -146,8 +146,8 @@
@@ -31,3 +16,14 @@
        _exit(127);
      }
    else
+--- plug-ins/nova.c~	Tue Apr  8 10:34:29 1997
++++ plug-ins/nova.c	Tue Apr  8 10:34:36 1997
+@@ -1010,7 +1010,7 @@
+ 	      l = sqrt( u*u + v*v );
+ 
+ 	      /* This algorithm is still under construction. */
+-	      c = (atan2(u,v)/(2*PI)+0.51) * pvals.nspoke;
++	      c = (atan2(u,v)/(2*M_PI)+0.51) * pvals.nspoke;
+ 	      i=(int)floor(c); c-=i; i%=pvals.nspoke;
+ 	      w1=spoke[i]*(1-c)+spoke[(i+1)%pvals.nspoke]*c;
+ 	      w1*=w1;
