@@ -3,7 +3,7 @@
 # Date created:		01 July 1995
 # Whom:			thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.4 1996/08/27 14:12:18 adam Exp $
+# $Id: Makefile,v 1.5 1996/11/11 05:06:55 obrien Exp $
 #
 
 DISTNAME=	beav-140-6
@@ -16,6 +16,9 @@ MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
 
 WRKSRC=		${WRKDIR}/beav-140
 PATCH_STRIP=	-p1
+
+pre-install:
+	@${MKDIR} ${PREFIX}/share/doc
 
 .include <bsd.port.mk>
 
