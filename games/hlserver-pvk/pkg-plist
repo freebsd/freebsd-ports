@@ -1,0 +1,430 @@
+%%HLDSDIR%%pvk/buffer.dat
+%%HLDSDIR%%pvk/cached.wad
+%%HLDSDIR%%pvk/cl_dlls/client.dll
+%%HLDSDIR%%pvk/custom.hpk
+%%HLDSDIR%%pvk/delta.lst
+%%HLDSDIR%%pvk/dlls/pvk_i386.so
+%%HLDSDIR%%pvk/gfx.wad
+%%HLDSDIR%%pvk/lanserver.cfg
+%%HLDSDIR%%pvk/liblist.gam
+%%HLDSDIR%%pvk/mapcycle.txt
+%%HLDSDIR%%pvk/maps/pvk_castle.brf
+%%HLDSDIR%%pvk/maps/pvk_castle.bsp
+%%HLDSDIR%%pvk/maps/pvk_colosseum.brf
+%%HLDSDIR%%pvk/maps/pvk_colosseum.bsp
+%%HLDSDIR%%pvk/maps/pvk_colossus.brf
+%%HLDSDIR%%pvk/maps/pvk_colossus.bsp
+%%HLDSDIR%%pvk/maps/pvk_desertruin.brf
+%%HLDSDIR%%pvk/maps/pvk_desertruin.bsp
+%%HLDSDIR%%pvk/maps/pvk_finalbattle.brf
+%%HLDSDIR%%pvk/maps/pvk_finalbattle.bsp
+%%HLDSDIR%%pvk/maps/pvk_freeze.bsp
+%%HLDSDIR%%pvk/maps/pvk_harbor.brf
+%%HLDSDIR%%pvk/maps/pvk_harbor.bsp
+%%HLDSDIR%%pvk/maps/pvk_hellawaits.brf
+%%HLDSDIR%%pvk/maps/pvk_hellawaits.bsp
+%%HLDSDIR%%pvk/maps/pvk_highground.brf
+%%HLDSDIR%%pvk/maps/pvk_highground.bsp
+%%HLDSDIR%%pvk/maps/pvk_island.brf
+%%HLDSDIR%%pvk/maps/pvk_island.bsp
+%%HLDSDIR%%pvk/maps/pvk_lighthouse.brf
+%%HLDSDIR%%pvk/maps/pvk_lighthouse.bsp
+%%HLDSDIR%%pvk/maps/pvk_pinegrove.brf
+%%HLDSDIR%%pvk/maps/pvk_pinegrove.bsp
+%%HLDSDIR%%pvk/maps/pvk_shores.brf
+%%HLDSDIR%%pvk/maps/pvk_shores.bsp
+%%HLDSDIR%%pvk/maps/pvk_skull.brf
+%%HLDSDIR%%pvk/maps/pvk_skull.bsp
+%%HLDSDIR%%pvk/maps/pvk_temple.brf
+%%HLDSDIR%%pvk/maps/pvk_temple.bsp
+%%HLDSDIR%%pvk/maps/pvk_tourney.bsp
+%%HLDSDIR%%pvk/models/bats.mdl
+%%HLDSDIR%%pvk/models/chicken.mdl
+%%HLDSDIR%%pvk/models/chicken1.mdl
+%%HLDSDIR%%pvk/models/cow.mdl
+%%HLDSDIR%%pvk/models/cow2.mdl
+%%HLDSDIR%%pvk/models/feather.mdl
+%%HLDSDIR%%pvk/models/p_axes.mdl
+%%HLDSDIR%%pvk/models/p_bigaxe.mdl
+%%HLDSDIR%%pvk/models/p_bow.mdl
+%%HLDSDIR%%pvk/models/p_chest.mdl
+%%HLDSDIR%%pvk/models/p_crossbow.mdl
+%%HLDSDIR%%pvk/models/p_cutlass.mdl
+%%HLDSDIR%%pvk/models/p_dagger.mdl
+%%HLDSDIR%%pvk/models/p_flail.mdl
+%%HLDSDIR%%pvk/models/p_flintlock.mdl
+%%HLDSDIR%%pvk/models/p_hammer.mdl
+%%HLDSDIR%%pvk/models/p_javelin.mdl
+%%HLDSDIR%%pvk/models/p_mace.mdl
+%%HLDSDIR%%pvk/models/p_mace_spin.mdl
+%%HLDSDIR%%pvk/models/p_markmusket.mdl
+%%HLDSDIR%%pvk/models/p_musketoon.mdl
+%%HLDSDIR%%pvk/models/p_null.mdl
+%%HLDSDIR%%pvk/models/p_parrot.mdl
+%%HLDSDIR%%pvk/models/p_powderkeg.mdl
+%%HLDSDIR%%pvk/models/p_spear.mdl
+%%HLDSDIR%%pvk/models/p_sword.mdl
+%%HLDSDIR%%pvk/models/p_sword_shield.mdl
+%%HLDSDIR%%pvk/models/p_throwingaxe.mdl
+%%HLDSDIR%%pvk/models/p_twosword.mdl
+%%HLDSDIR%%pvk/models/p_viksword.mdl
+%%HLDSDIR%%pvk/models/parrot.mdl
+%%HLDSDIR%%pvk/models/piratemarker.mdl
+%%HLDSDIR%%pvk/models/player.mdl
+%%HLDSDIR%%pvk/models/player/axevik/axevik.mdl
+%%HLDSDIR%%pvk/models/player/bowman/bowman.mdl
+%%HLDSDIR%%pvk/models/player/knight/knight.mdl
+%%HLDSDIR%%pvk/models/player/manatarms/manatarms.mdl
+%%HLDSDIR%%pvk/models/player/pcaptain/pcaptain.mdl
+%%HLDSDIR%%pvk/models/player/skirmishp/skirmishp.mdl
+%%HLDSDIR%%pvk/models/player/sniperp/sniperp.mdl
+%%HLDSDIR%%pvk/models/player/spearvik/spearvik.mdl
+%%HLDSDIR%%pvk/models/player/zerker/zerker.mdl
+%%HLDSDIR%%pvk/models/rocks.mdl
+%%HLDSDIR%%pvk/models/rooster1.mdl
+%%HLDSDIR%%pvk/models/tofuplayer.mdl
+%%HLDSDIR%%pvk/models/v_axes.mdl
+%%HLDSDIR%%pvk/models/v_bigaxe.mdl
+%%HLDSDIR%%pvk/models/v_bow.mdl
+%%HLDSDIR%%pvk/models/v_chest.mdl
+%%HLDSDIR%%pvk/models/v_crossbow.mdl
+%%HLDSDIR%%pvk/models/v_cutlass.mdl
+%%HLDSDIR%%pvk/models/v_dagger.mdl
+%%HLDSDIR%%pvk/models/v_fists.mdl
+%%HLDSDIR%%pvk/models/v_flail.mdl
+%%HLDSDIR%%pvk/models/v_flintlock.mdl
+%%HLDSDIR%%pvk/models/v_hammer.mdl
+%%HLDSDIR%%pvk/models/v_javelin.mdl
+%%HLDSDIR%%pvk/models/v_mace.mdl
+%%HLDSDIR%%pvk/models/v_markmusket.mdl
+%%HLDSDIR%%pvk/models/v_musketoon.mdl
+%%HLDSDIR%%pvk/models/v_parrot.mdl
+%%HLDSDIR%%pvk/models/v_powderkeg.mdl
+%%HLDSDIR%%pvk/models/v_spear.mdl
+%%HLDSDIR%%pvk/models/v_sword.mdl
+%%HLDSDIR%%pvk/models/v_throwingaxe.mdl
+%%HLDSDIR%%pvk/models/v_twosword.mdl
+%%HLDSDIR%%pvk/models/v_twosword_cow.mdl
+%%HLDSDIR%%pvk/models/v_viksword.mdl
+%%HLDSDIR%%pvk/models/vikingmarker.mdl
+%%HLDSDIR%%pvk/models/w_arrow.mdl
+%%HLDSDIR%%pvk/models/w_chest.mdl
+%%HLDSDIR%%pvk/models/w_flintlock.mdl
+%%HLDSDIR%%pvk/models/w_flintlockbelt.mdl
+%%HLDSDIR%%pvk/models/w_harmor.mdl
+%%HLDSDIR%%pvk/models/w_health1.mdl
+%%HLDSDIR%%pvk/models/w_health2.mdl
+%%HLDSDIR%%pvk/models/w_hubbjubb.mdl
+%%HLDSDIR%%pvk/models/w_javelin.mdl
+%%HLDSDIR%%pvk/models/w_javelinammo.mdl
+%%HLDSDIR%%pvk/models/w_larmor.mdl
+%%HLDSDIR%%pvk/models/w_marmor.mdl
+%%HLDSDIR%%pvk/models/w_parrot.mdl
+%%HLDSDIR%%pvk/models/w_powderhorn.mdl
+%%HLDSDIR%%pvk/models/w_powderkeg.mdl
+%%HLDSDIR%%pvk/models/w_quarrel.mdl
+%%HLDSDIR%%pvk/models/w_quaver.mdl
+%%HLDSDIR%%pvk/models/w_quiver.mdl
+%%HLDSDIR%%pvk/models/w_throwaxeammo.mdl
+%%HLDSDIR%%pvk/models/w_throwingaxe.mdl
+%%HLDSDIR%%pvk/models/w_twosword.mdl
+%%HLDSDIR%%pvk/models/woodgibs.mdl
+%%HLDSDIR%%pvk/motd.txt
+%%HLDSDIR%%pvk/pldecal.wad
+%%HLDSDIR%%pvk/pvk.wad
+%%HLDSDIR%%pvk/pvk_castle.cfg
+%%HLDSDIR%%pvk/pvk_finalbattle.cfg
+%%HLDSDIR%%pvk/pvk_hellawaits.cfg
+%%HLDSDIR%%pvk/pvk_lighthouse.cfg
+%%HLDSDIR%%pvk/pvk_skull.cfg
+%%HLDSDIR%%pvk/pvk_temple.cfg
+%%HLDSDIR%%pvk/readme.txt
+%%HLDSDIR%%pvk/sentences.txt
+%%HLDSDIR%%pvk/server.cfg
+%%HLDSDIR%%pvk/sound/ambient/Readme.txt
+%%HLDSDIR%%pvk/sound/ambient/animals/Bird1.wav
+%%HLDSDIR%%pvk/sound/ambient/animals/Bird2.wav
+%%HLDSDIR%%pvk/sound/ambient/animals/Bird3.wav
+%%HLDSDIR%%pvk/sound/ambient/animals/Bird4.wav
+%%HLDSDIR%%pvk/sound/ambient/animals/Bird5.wav
+%%HLDSDIR%%pvk/sound/ambient/animals/Bird6.wav
+%%HLDSDIR%%pvk/sound/ambient/animals/Die.wav
+%%HLDSDIR%%pvk/sound/ambient/animals/Moo1.wav
+%%HLDSDIR%%pvk/sound/ambient/animals/Moo2.wav
+%%HLDSDIR%%pvk/sound/ambient/animals/chick.wav
+%%HLDSDIR%%pvk/sound/ambient/animals/chick2.wav
+%%HLDSDIR%%pvk/sound/ambient/cowmoo.wav
+%%HLDSDIR%%pvk/sound/ambient/explosions/Big.wav
+%%HLDSDIR%%pvk/sound/ambient/explosions/Exp1.wav
+%%HLDSDIR%%pvk/sound/ambient/explosions/Exp2.wav
+%%HLDSDIR%%pvk/sound/ambient/explosions/Exp3.wav
+%%HLDSDIR%%pvk/sound/ambient/explosions/Med.wav
+%%HLDSDIR%%pvk/sound/ambient/explosions/Small.wav
+%%HLDSDIR%%pvk/sound/ambient/fire/firebig1.wav
+%%HLDSDIR%%pvk/sound/ambient/fire/firesmall1.wav
+%%HLDSDIR%%pvk/sound/ambient/forest1.wav
+%%HLDSDIR%%pvk/sound/ambient/idleboat.wav
+%%HLDSDIR%%pvk/sound/ambient/insects/Fly1.wav
+%%HLDSDIR%%pvk/sound/ambient/insects/Fly2.wav
+%%HLDSDIR%%pvk/sound/ambient/insects/cricket.wav
+%%HLDSDIR%%pvk/sound/ambient/night1.wav
+%%HLDSDIR%%pvk/sound/ambient/outside/JungAmb.wav
+%%HLDSDIR%%pvk/sound/ambient/outside/WndSnow.wav
+%%HLDSDIR%%pvk/sound/ambient/outside/cave.wav
+%%HLDSDIR%%pvk/sound/ambient/outside/desert.wav
+%%HLDSDIR%%pvk/sound/ambient/outside/wind2.wav
+%%HLDSDIR%%pvk/sound/ambient/pcloop1.wav
+%%HLDSDIR%%pvk/sound/ambient/pirateboatdock.wav
+%%HLDSDIR%%pvk/sound/ambient/rainpuddle.wav
+%%HLDSDIR%%pvk/sound/ambient/rocks/bigrock.wav
+%%HLDSDIR%%pvk/sound/ambient/rocks/impact1.wav
+%%HLDSDIR%%pvk/sound/ambient/rocks/impact2.wav
+%%HLDSDIR%%pvk/sound/ambient/rocks/rcksld2.wav
+%%HLDSDIR%%pvk/sound/ambient/rocks/rollrock.wav
+%%HLDSDIR%%pvk/sound/ambient/rocks/small2.wav
+%%HLDSDIR%%pvk/sound/ambient/streamwater.wav
+%%HLDSDIR%%pvk/sound/ambient/tavern.wav
+%%HLDSDIR%%pvk/sound/ambient/water/Thnder1.wav
+%%HLDSDIR%%pvk/sound/ambient/water/canals2.wav
+%%HLDSDIR%%pvk/sound/ambient/water/rain2.wav
+%%HLDSDIR%%pvk/sound/ambient/water/runhard.wav
+%%HLDSDIR%%pvk/sound/ambient/water/waterfall.wav
+%%HLDSDIR%%pvk/sound/bodyfall1.wav
+%%HLDSDIR%%pvk/sound/bodyfall2.wav
+%%HLDSDIR%%pvk/sound/boing.wav
+%%HLDSDIR%%pvk/sound/cowdie.wav
+%%HLDSDIR%%pvk/sound/footstepswater.wav
+%%HLDSDIR%%pvk/sound/gateopenclose.wav
+%%HLDSDIR%%pvk/sound/hardhits/hitbody.wav
+%%HLDSDIR%%pvk/sound/hardhits/hitcrete.wav
+%%HLDSDIR%%pvk/sound/hardhits/hitcrete1.wav
+%%HLDSDIR%%pvk/sound/hardhits/hitcrete2.wav
+%%HLDSDIR%%pvk/sound/hardhits/hitgrnd.wav
+%%HLDSDIR%%pvk/sound/hardhits/hitmetal.wav
+%%HLDSDIR%%pvk/sound/hardhits/hitwood.wav
+%%HLDSDIR%%pvk/sound/hardhits/swing.wav
+%%HLDSDIR%%pvk/sound/jumpinwater.wav
+%%HLDSDIR%%pvk/sound/killchicken.wav
+%%HLDSDIR%%pvk/sound/knights/Big sword/swing.wav
+%%HLDSDIR%%pvk/sound/knights/bowhit.wav
+%%HLDSDIR%%pvk/sound/knights/crossbow/drawback.wav
+%%HLDSDIR%%pvk/sound/knights/crossbow/fire.wav
+%%HLDSDIR%%pvk/sound/knights/longbow/drawback.wav
+%%HLDSDIR%%pvk/sound/knights/longbow/fire.wav
+%%HLDSDIR%%pvk/sound/materials.txt
+%%HLDSDIR%%pvk/sound/media/launch_deny1.wav
+%%HLDSDIR%%pvk/sound/media/launch_deny2.wav
+%%HLDSDIR%%pvk/sound/media/launch_dnmenu1.wav
+%%HLDSDIR%%pvk/sound/media/launch_glow1.wav
+%%HLDSDIR%%pvk/sound/media/launch_select1.wav
+%%HLDSDIR%%pvk/sound/media/launch_select2.wav
+%%HLDSDIR%%pvk/sound/media/launch_upmenu1.wav
+%%HLDSDIR%%pvk/sound/mediumhits/Stab1.wav
+%%HLDSDIR%%pvk/sound/mediumhits/chainswing.wav
+%%HLDSDIR%%pvk/sound/mediumhits/hitcrete.wav
+%%HLDSDIR%%pvk/sound/mediumhits/hitgrnd.wav
+%%HLDSDIR%%pvk/sound/mediumhits/hitmetal.wav
+%%HLDSDIR%%pvk/sound/mediumhits/hitwood.wav
+%%HLDSDIR%%pvk/sound/mediumhits/pullout.wav
+%%HLDSDIR%%pvk/sound/mediumhits/stab2.wav
+%%HLDSDIR%%pvk/sound/mediumhits/swing.wav
+%%HLDSDIR%%pvk/sound/pirates/bullets/hitarmor.wav
+%%HLDSDIR%%pvk/sound/pirates/bullets/hitbod.wav
+%%HLDSDIR%%pvk/sound/pirates/bullets/hitbod1.wav
+%%HLDSDIR%%pvk/sound/pirates/bullets/hitbod2.wav
+%%HLDSDIR%%pvk/sound/pirates/bullets/hitcrete.wav
+%%HLDSDIR%%pvk/sound/pirates/bullets/hitcrete2.wav
+%%HLDSDIR%%pvk/sound/pirates/bullets/hitwood.wav
+%%HLDSDIR%%pvk/sound/pirates/bullets/hitwood2.wav
+%%HLDSDIR%%pvk/sound/pirates/bullets/ric1.wav
+%%HLDSDIR%%pvk/sound/pirates/bullets/ric2.wav
+%%HLDSDIR%%pvk/sound/pirates/bullets/ric3.wav
+%%HLDSDIR%%pvk/sound/pirates/keg/boom.wav
+%%HLDSDIR%%pvk/sound/pirates/keg/drop.wav
+%%HLDSDIR%%pvk/sound/pirates/keg/fuse.wav
+%%HLDSDIR%%pvk/sound/pirates/keg/strike.wav
+%%HLDSDIR%%pvk/sound/pirates/parrot/callback.wav
+%%HLDSDIR%%pvk/sound/pirates/parrot/fly.wav
+%%HLDSDIR%%pvk/sound/pirates/parrot/hit1.wav
+%%HLDSDIR%%pvk/sound/pirates/parrot/hit2.wav
+%%HLDSDIR%%pvk/sound/pirates/parrot/hit3.wav
+%%HLDSDIR%%pvk/sound/pirates/parrot/parrotdie.wav
+%%HLDSDIR%%pvk/sound/pirates/parrot/squawk1.wav
+%%HLDSDIR%%pvk/sound/pirates/parrot/squawk2.wav
+%%HLDSDIR%%pvk/sound/pirates/parrot/squawkloud1.wav
+%%HLDSDIR%%pvk/sound/pirates/parrot/squawkloud2.wav
+%%HLDSDIR%%pvk/sound/player/Armor/puton.wav
+%%HLDSDIR%%pvk/sound/player/JDeath1.wav
+%%HLDSDIR%%pvk/sound/player/Jdeath2.wav
+%%HLDSDIR%%pvk/sound/player/Jdeath3.wav
+%%HLDSDIR%%pvk/sound/player/Jdeath4.wav
+%%HLDSDIR%%pvk/sound/player/Jdeath5.wav
+%%HLDSDIR%%pvk/sound/player/Jdeath6.wav
+%%HLDSDIR%%pvk/sound/player/Jdeath7.wav
+%%HLDSDIR%%pvk/sound/player/Jdeath8.wav
+%%HLDSDIR%%pvk/sound/player/Jdeath9.wav
+%%HLDSDIR%%pvk/sound/player/bodyfall.wav
+%%HLDSDIR%%pvk/sound/player/bodyfall2.wav
+%%HLDSDIR%%pvk/sound/player/burp.wav
+%%HLDSDIR%%pvk/sound/player/chest/chestdrop.wav
+%%HLDSDIR%%pvk/sound/player/chest/pickup.wav
+%%HLDSDIR%%pvk/sound/player/death.wav
+%%HLDSDIR%%pvk/sound/player/death2.wav
+%%HLDSDIR%%pvk/sound/player/footsteps/crete.wav
+%%HLDSDIR%%pvk/sound/player/footsteps/crete2.wav
+%%HLDSDIR%%pvk/sound/player/footsteps/dirt.wav
+%%HLDSDIR%%pvk/sound/player/footsteps/dirt2.wav
+%%HLDSDIR%%pvk/sound/player/footsteps/metal.wav
+%%HLDSDIR%%pvk/sound/player/footsteps/metal2.wav
+%%HLDSDIR%%pvk/sound/player/footsteps/wade1.wav
+%%HLDSDIR%%pvk/sound/player/footsteps/wade2.wav
+%%HLDSDIR%%pvk/sound/player/footsteps/wade3.wav
+%%HLDSDIR%%pvk/sound/player/footsteps/wood.wav
+%%HLDSDIR%%pvk/sound/player/footsteps/wood2.wav
+%%HLDSDIR%%pvk/sound/player/game/chest-in-zone.wav
+%%HLDSDIR%%pvk/sound/player/game/knight spawn.WAV
+%%HLDSDIR%%pvk/sound/player/game/knight spawn.pk
+%%HLDSDIR%%pvk/sound/player/game/knightspawn.WAV
+%%HLDSDIR%%pvk/sound/player/game/pirate spawn.wav
+%%HLDSDIR%%pvk/sound/player/game/piratespawn.wav
+%%HLDSDIR%%pvk/sound/player/game/win game.wav
+%%HLDSDIR%%pvk/sound/player/game/wingame.wav
+%%HLDSDIR%%pvk/sound/player/personsquished.wav
+%%HLDSDIR%%pvk/sound/player/splash.wav
+%%HLDSDIR%%pvk/sound/player/waterfootsteps.wav
+%%HLDSDIR%%pvk/sound/sentences.txt
+%%HLDSDIR%%pvk/sound/smallhits/hitcrete.wav
+%%HLDSDIR%%pvk/sound/smallhits/hitgrnd.wav
+%%HLDSDIR%%pvk/sound/smallhits/hitmtl.wav
+%%HLDSDIR%%pvk/sound/smallhits/hitwood.wav
+%%HLDSDIR%%pvk/sound/smallhits/swing.wav
+%%HLDSDIR%%pvk/sound/vikings/Hammer/swing.wav
+%%HLDSDIR%%pvk/sound/vikings/big axe/swing.wav
+%%HLDSDIR%%pvk/sound/vikings/javelin/throw.wav
+%%HLDSDIR%%pvk/sound/vikings/javelin/throw2.wav
+%%HLDSDIR%%pvk/sound/vikings/spear/hit.wav
+%%HLDSDIR%%pvk/sound/vikings/spear/thrust.wav
+%%HLDSDIR%%pvk/sound/vikings/throwingaxe/throw.sfk
+%%HLDSDIR%%pvk/sound/vikings/throwingaxe/throw.wav
+%%HLDSDIR%%pvk/sound/weapons/bigswordswing1.wav
+%%HLDSDIR%%pvk/sound/weapons/bigswordswing2.wav
+%%HLDSDIR%%pvk/sound/weapons/crossbowshot.wav
+%%HLDSDIR%%pvk/sound/weapons/daggerswing.wav
+%%HLDSDIR%%pvk/sound/weapons/daggerswing2.wav
+%%HLDSDIR%%pvk/sound/weapons/flinklocksniper.wav
+%%HLDSDIR%%pvk/sound/weapons/gunreload1.wav
+%%HLDSDIR%%pvk/sound/weapons/match.wav
+%%HLDSDIR%%pvk/sound/weapons/musketshot2.wav
+%%HLDSDIR%%pvk/sound/weapons/pistolshot.wav
+%%HLDSDIR%%pvk/sound/weapons/pullingswordout.wav
+%%HLDSDIR%%pvk/sound/weapons/shottygun.wav
+%%HLDSDIR%%pvk/sound/weapons/smallgunload1.wav
+%%HLDSDIR%%pvk/sound/weapons/smallswordswing1.wav
+%%HLDSDIR%%pvk/sound/weapons/smallswordswing2.wav
+%%HLDSDIR%%pvk/sound/weapons/smallswordswing3.wav
+%%HLDSDIR%%pvk/sound/weapons/stab1.wav
+%%HLDSDIR%%pvk/sound/weapons/stab2.wav
+%%HLDSDIR%%pvk/sound/weapons/swordhit1.wav
+%%HLDSDIR%%pvk/sound/weapons/swordhit2.wav
+%%HLDSDIR%%pvk/sound/weapons/swordhit3.wav
+%%HLDSDIR%%pvk/sound/weapons/swordhit4.wav
+%%HLDSDIR%%pvk/sound/weapons/swordhit5.wav
+%%HLDSDIR%%pvk/sound/weapons/swordpullout2.wav
+%%HLDSDIR%%pvk/sound/weapons/swordswing2.wav
+%%HLDSDIR%%pvk/sound/weapons/swordswing3.wav
+%%HLDSDIR%%pvk/spraypaint.wad
+%%HLDSDIR%%pvk/sprites/320hud_weapons.spr
+%%HLDSDIR%%pvk/sprites/320hud_weapons2.spr
+%%HLDSDIR%%pvk/sprites/640hud_weapons1.spr
+%%HLDSDIR%%pvk/sprites/640hud_weapons2.spr
+%%HLDSDIR%%pvk/sprites/640hud_weapons3.spr
+%%HLDSDIR%%pvk/sprites/640hud_weapons4.spr
+%%HLDSDIR%%pvk/sprites/640hud_weapons5.spr
+%%HLDSDIR%%pvk/sprites/640hud_weapons6.spr
+%%HLDSDIR%%pvk/sprites/640hud_weapons7.spr
+%%HLDSDIR%%pvk/sprites/640hud_weapons8.spr
+%%HLDSDIR%%pvk/sprites/640hud_weapons9.spr
+%%HLDSDIR%%pvk/sprites/640hud_weaps10.spr
+%%HLDSDIR%%pvk/sprites/640hud_weaps11.spr
+%%HLDSDIR%%pvk/sprites/ammo640.spr
+%%HLDSDIR%%pvk/sprites/campfire.spr
+%%HLDSDIR%%pvk/sprites/crosshairs.spr
+%%HLDSDIR%%pvk/sprites/ground_fl.spr
+%%HLDSDIR%%pvk/sprites/gunsmoke.spr
+%%HLDSDIR%%pvk/sprites/hud.txt
+%%HLDSDIR%%pvk/sprites/kegexp.spr
+%%HLDSDIR%%pvk/sprites/killicons.spr
+%%HLDSDIR%%pvk/sprites/torch_fl.spr
+%%HLDSDIR%%pvk/sprites/weapon_axes.txt
+%%HLDSDIR%%pvk/sprites/weapon_bigaxe.txt
+%%HLDSDIR%%pvk/sprites/weapon_crossbow.txt
+%%HLDSDIR%%pvk/sprites/weapon_cutlass.txt
+%%HLDSDIR%%pvk/sprites/weapon_dagger.txt
+%%HLDSDIR%%pvk/sprites/weapon_flail.txt
+%%HLDSDIR%%pvk/sprites/weapon_flintlock.txt
+%%HLDSDIR%%pvk/sprites/weapon_hammer.txt
+%%HLDSDIR%%pvk/sprites/weapon_javelin.txt
+%%HLDSDIR%%pvk/sprites/weapon_longbow.txt
+%%HLDSDIR%%pvk/sprites/weapon_mace.txt
+%%HLDSDIR%%pvk/sprites/weapon_markmusket.txt
+%%HLDSDIR%%pvk/sprites/weapon_musketoon.txt
+%%HLDSDIR%%pvk/sprites/weapon_parrot.txt
+%%HLDSDIR%%pvk/sprites/weapon_powderkeg.txt
+%%HLDSDIR%%pvk/sprites/weapon_spear.txt
+%%HLDSDIR%%pvk/sprites/weapon_sword.txt
+%%HLDSDIR%%pvk/sprites/weapon_throwaxe.txt
+%%HLDSDIR%%pvk/sprites/weapon_treasure.txt
+%%HLDSDIR%%pvk/sprites/weapon_twosword.txt
+%%HLDSDIR%%pvk/sprites/weapon_viksword.txt
+%%HLDSDIR%%pvk/titles.txt
+@dirrm %%HLDSDIR%%pvk/sprites
+@dirrm %%HLDSDIR%%pvk/sound/weapons
+@dirrm %%HLDSDIR%%pvk/sound/vikings/throwingaxe
+@dirrm %%HLDSDIR%%pvk/sound/vikings/spear
+@dirrm %%HLDSDIR%%pvk/sound/vikings/javelin
+@dirrm %%HLDSDIR%%pvk/sound/vikings/big axe
+@dirrm %%HLDSDIR%%pvk/sound/vikings/Hammer
+@dirrm %%HLDSDIR%%pvk/sound/vikings
+@dirrm %%HLDSDIR%%pvk/sound/smallhits
+@dirrm %%HLDSDIR%%pvk/sound/player/game
+@dirrm %%HLDSDIR%%pvk/sound/player/footsteps
+@dirrm %%HLDSDIR%%pvk/sound/player/chest
+@dirrm %%HLDSDIR%%pvk/sound/player/Armor
+@dirrm %%HLDSDIR%%pvk/sound/player
+@dirrm %%HLDSDIR%%pvk/sound/pirates/parrot
+@dirrm %%HLDSDIR%%pvk/sound/pirates/keg
+@dirrm %%HLDSDIR%%pvk/sound/pirates/bullets
+@unexec rmdir %D/%%HLDSDIR%%pvk/sound/pirates/Reload 2>/dev/null || true
+@dirrm %%HLDSDIR%%pvk/sound/pirates
+@dirrm %%HLDSDIR%%pvk/sound/mediumhits
+@dirrm %%HLDSDIR%%pvk/sound/media
+@dirrm %%HLDSDIR%%pvk/sound/knights/longbow
+@dirrm %%HLDSDIR%%pvk/sound/knights/crossbow
+@dirrm %%HLDSDIR%%pvk/sound/knights/Big sword
+@dirrm %%HLDSDIR%%pvk/sound/knights
+@dirrm %%HLDSDIR%%pvk/sound/hardhits
+@dirrm %%HLDSDIR%%pvk/sound/ambient/water
+@dirrm %%HLDSDIR%%pvk/sound/ambient/rocks
+@dirrm %%HLDSDIR%%pvk/sound/ambient/outside
+@dirrm %%HLDSDIR%%pvk/sound/ambient/insects
+@dirrm %%HLDSDIR%%pvk/sound/ambient/fire
+@dirrm %%HLDSDIR%%pvk/sound/ambient/explosions
+@dirrm %%HLDSDIR%%pvk/sound/ambient/animals
+@dirrm %%HLDSDIR%%pvk/sound/ambient
+@dirrm %%HLDSDIR%%pvk/sound
+@dirrm %%HLDSDIR%%pvk/models/player/zerker
+@dirrm %%HLDSDIR%%pvk/models/player/spearvik
+@dirrm %%HLDSDIR%%pvk/models/player/sniperp
+@dirrm %%HLDSDIR%%pvk/models/player/skirmishp
+@dirrm %%HLDSDIR%%pvk/models/player/pcaptain
+@dirrm %%HLDSDIR%%pvk/models/player/manatarms
+@dirrm %%HLDSDIR%%pvk/models/player/knight
+@dirrm %%HLDSDIR%%pvk/models/player/bowman
+@dirrm %%HLDSDIR%%pvk/models/player/axevik
+@dirrm %%HLDSDIR%%pvk/models/player
+@dirrm %%HLDSDIR%%pvk/models
+@dirrm %%HLDSDIR%%pvk/maps
+@unexec rmdir %D/%%HLDSDIR%%pvk/logs 2>/dev/null || true
+@dirrm %%HLDSDIR%%pvk/dlls
+@dirrm %%HLDSDIR%%pvk/cl_dlls
+@unexec rmdir %D/%%HLDSDIR%%pvk 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%pvk`` to remove any configuration files and logs left." | fmt

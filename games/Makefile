@@ -129,6 +129,7 @@
     SUBDIR += hlserver-heroes
     SUBDIR += hlserver-opfor
     SUBDIR += hlserver-oz
+    SUBDIR += hlserver-pvk
     SUBDIR += hlserver-si
     SUBDIR += hlserver-svencoop
     SUBDIR += hlserver-vs
