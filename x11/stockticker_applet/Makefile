@@ -17,6 +17,8 @@ MAINTAINER=	sobomax@FreeBSD.org
 USE_GNOME=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
+		LDFLAGS=-L${LOCALBASE}/lib
 
 pre-patch:
 	@${PERL} -pi -e 's|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
