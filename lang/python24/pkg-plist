@@ -253,7 +253,6 @@ lib/python1.5/lib-dynload/fpectlmodule.so
 lib/python1.5/lib-dynload/fpetestmodule.so
 lib/python1.5/lib-dynload/imageop.so
 lib/python1.5/lib-dynload/md5module.so
-lib/python1.5/lib-dynload/mpzmodule.so
 lib/python1.5/lib-dynload/nismodule.so
 lib/python1.5/lib-dynload/resource.so
 lib/python1.5/lib-dynload/rgbimgmodule.so
@@ -900,6 +899,8 @@ lib/python1.5/xmllib.pyo
 lib/python1.5/zmod.py
 lib/python1.5/zmod.pyc
 lib/python1.5/zmod.pyo
+share/doc/python/COPYRIGHT
+@dirrm share/doc/python
 @dirrm lib/python1.5/test/output
 @dirrm lib/python1.5/test
 @dirrm lib/python1.5/plat-freebsd2
