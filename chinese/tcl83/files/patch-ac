@@ -1,0 +1,15 @@
+--- configure.in.orig	Thu Feb 10 11:09:57 2000
++++ configure.in	Wed Feb 21 20:48:23 2001
+@@ -37,6 +37,12 @@
+ 
+ SC_ENABLE_THREADS
+ 
++#------------------------------------------------------------------------
++# i18n improvement
++#------------------------------------------------------------------------
++
++SC_ENABLE_I18N_IMPROVE
++
+ #------------------------------------------------------------------------------
+ # If we're using GCC, see if the compiler understands -pipe.  If so, use it.
+ # It makes compiling go faster.  (This is only a performance feature.)

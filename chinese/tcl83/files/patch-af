@@ -1,0 +1,69 @@
+--- tclUnixInit.c.orig	Wed Oct 13 00:32:49 1999
++++ tclUnixInit.c	Wed Feb 21 21:14:45 2001
+@@ -369,7 +369,9 @@
+     int i;
+     Tcl_Obj *pathPtr;
+     char *langEnv;
++#ifndef I18N_IMPROVE
+     Tcl_DString ds;
++#endif /* !I18N_IMPROVE */
+ 
+     /*
+      * Determine the current encoding from the LC_* or LANG environment
+@@ -432,6 +434,7 @@
+ 
+     Tcl_SetSystemEncoding(NULL, encoding);
+ 
++#ifndef I18N_IMPROVE
+     /*
+      * Initialize the C library's locale subsystem.  This is required
+      * for input methods to work properly on X11. Note that we need to
+@@ -445,6 +448,48 @@
+     setlocale(LC_ALL, "");
+     setlocale(LC_ALL, Tcl_DStringValue(&ds));
+     Tcl_DStringFree(&ds);
++#else
++    /*
++     *
++     * If setlocale(LC_ALL, "") are once called, NOT reset to "C"
++     * BECAUSE OF X11 uses locale sensitive libc routines such as:
++     * 
++     *		mblen()
++     *		mbstowcs()
++     *		wcstombs()
++     *
++     * Calling setlocale() with proper locale is of course needed,
++     * futhermore, keeping the proper locale setting is ALSO needed
++     * for proper XIM operation. If not, in the worst case, Tk dumps
++     * core.
++     *
++     * And here's another story:
++     *
++     * X11[56]'s internationalization depends on "locale model"
++     * supported by C language (runtime). But unfortunately, on some
++     * (many) systems, setlocale(3) supports only "C" locale. For such
++     * a system, X11 library has _Xsetlocale() (and some locale
++     * sensitive C runtime function like the mblen(), even If these
++     * function are not well-implemented, sigh). If on such a system,
++     * we should't call:
++     *
++     *		setlocale(LC_ALL)
++     *			or
++     *		setlocale(LC_CTYPE)
++     *
++     * at here because Tcl won't be linked with X11 libraries and
++     * nobody want to use the Tcl library that needs X11 libraries at
++     * execution/linkage time. Instead, call setlocale() (expanded to
++     * _Xsetlocale() with C preprocessor macro in <X11/Xlocale.h> if
++     * X_LOCLAE C preprocessor macro is defined, normaly done in Imake
++     * environment) at the initializing of Tk. So, at here, I just
++     * call only setlocale(LC_NUMERIC) since X11's internationalize
++     * implementation only depends on LC_CTYPE categoly (of cource
++     * LC_ALL includes this), This must be harmless and might let the
++     * Tcl and the Tk with XIM be both happy :)
++     *
++     */
++#endif /* !I18N_IMPROVE */
+ 
+     /*
+      * In case the initial locale is not "C", ensure that the numeric
