@@ -26,6 +26,7 @@ CONFIGURE_ARGS+=	--enable-debug \
 			--enable-confdir=${PREFIX}/etc \
 			--disable-threadsafe
 PKGMESSAGE=	${WRKDIR}/pkg-message
+MAN1=		bundleTool.1
 MAN8=		pcscd.8
 
 post-install:

@@ -1,3 +1,4 @@
+bin/bundleTool
 bin/formaticc
 bin/installifd
 %%PORTDOCS%%share/doc/pcsc-lite/README.DAEMON
