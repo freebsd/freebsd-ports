@@ -1,0 +1,17 @@
+--- Makefile	Mon Nov 17 02:32:09 1997
++++ Makefile.new	Fri Dec 14 21:08:26 2001
+@@ -19,11 +19,10 @@
+ #          
+ 
+ PLUGIN_SDK_PATH = ./PluginSDK30b5
+-PLUGIN_DEFINES= -DXP_UNIX -I$(PLUGIN_SDK_PATH)/include
++PLUGIN_DEFINES= -DXP_UNIX -I$(PLUGIN_SDK_PATH)/include -I$(X11BASE)/include
+ 
+-CC         = gcc
+-OPTIMIZER  = -O
+-CFLAGS     =  $(OPTIMIZER) $(PLUGIN_DEFINES)
++CC         ?= gcc
++CFLAGS     +=  $(PLUGIN_DEFINES)
+ 
+ SRC= sidplug.c npunix.c 
+ OBJ= sidplug.o npunix.o

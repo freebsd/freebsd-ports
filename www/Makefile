@@ -297,6 +297,7 @@
     SUBDIR += ruby-tmpl
     SUBDIR += ruby-webunit
     SUBDIR += screem
+    SUBDIR += sidplug
     SUBDIR += sitecopy
     SUBDIR += skipstone
     SUBDIR += smb2www
