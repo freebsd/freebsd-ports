@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	bluefish
-PORTVERSION=	0.9.20030223
+PORTVERSION=	0.9.20030308
 CATEGORIES=	www editors
 MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/${DOWNLOAD}/ \
 		ftp://bluefish.advancecreations.com/pub/bluefish/${DOWNLOAD}/ \
 		http://bluefish.mrball.net/${DOWNLOAD}/ \
 		ftp://ftp.ratisbona.com/pub/bluefish/${DOWNLOAD}/ \
 		http://bluefish.shellhung.org/${DOWNLOAD}/
-DISTNAME=	${PORTNAME}-gtk2port-2003-02-23
+DISTNAME=	${PORTNAME}-gtk2port-2003-03-08
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	einekoai@chello.nl
@@ -37,7 +37,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gnome2-menu=/${PREFIX}/share/gnome/apps/Applications
+CONFIGURE_ARGS=	--with-gnome2-menu=${PREFIX}/share/gnome/apps/Applications
 
 .include <bsd.port.pre.mk>
 
