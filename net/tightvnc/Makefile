@@ -1,17 +1,17 @@
 # ex:ts=8
-# New ports collection makefile for:	vnc-tight
+# New ports collection makefile for:	tightvnc
 # Date created:			Nov 24, 2001
 # Whom:				ijliao
 #
 # $FreeBSD$
 #
 
-PORTNAME=	vnc-tight
+PORTNAME=	tightvnc
 PORTVERSION=	1.2.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	tightvnc-${PORTVERSION}_unixsrc
+DISTNAME=	${PORTNAME}-${PORTVERSION}_unixsrc
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -22,6 +22,10 @@ WRKSRC=		${WRKDIR}/vnc_unixsrc
 USE_IMAKE=	yes
 ALL_TARGET=	World
 NO_INSTALL_MANPAGES=	yes
+
+.if exists(${X11BASE}/bin/Xvnc)
+IGNORE=		"vnc has already been installed, please uninstall it first."
+.endif
 
 post-patch:
 .for file in vncviewer/Imakefile Xvnc/config/cf/vnclibs.def
