@@ -34,6 +34,7 @@ CONFIGURE_ARGS+=--disable-ltdl-install		\
 		--without-ldap			\
 		--disable-closure		\
 		${XINERAMA}			\
+		--without-java			\
 		--with-qt-dir=${X11BASE}	\
 		--with-xdmdir=${X11BASE}/lib/X11/xdm
 
@@ -69,15 +70,14 @@ WITH_FONTCONFIG=yes
 LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 .endif
 
-.if defined(WITH_XINERAMA)
-XINERAMA=	-with-xinerama
-PKGNAMESUFFIX=	-xinerama
+.if defined(WITHOUT_XINERAMA)
+XINERAMA=	--without-xinerama
 .else
-XINERAMA=	-without-xinerama
+XINERAMA=	--with-xinerama
 pre-extract::
 	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to compile with Xinerama support,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_XINERAMA=yes\""
+	@${ECHO_MSG} "If you don't want to compile with Xinerama support,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITHOUT_XINERAMA=yes\""
 	@${ECHO_MSG}
 .endif # defined(WITH_XINERAMA)
 
