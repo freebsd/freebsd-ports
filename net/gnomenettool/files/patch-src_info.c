@@ -1,5 +1,5 @@
 --- src/info.c.orig	Fri Jun 11 07:14:17 2004
-+++ src/info.c	Mon Jul  5 15:25:09 2004
++++ src/info.c	Tue Jul  6 01:19:20 2004
 @@ -37,6 +37,9 @@
  #include <sys/ioctl.h>
  #include <stdlib.h>
@@ -132,7 +132,7 @@
  		    compressed, multicast, 
  		    tx_bytes, tx_pkt, tx_error, tx_drop, tx_fifo, collissions);
 +#elif defined(__FreeBSD__)
-+		tokens = (gchar **) g_malloc0 ((sizeof (char)) * (strlen (line) + 2));
++		tokens = (gchar **) g_malloc0 (sizeof (gchar *) * 12);
 +		p = strtok (line, " \t\n");
 +		/* We only care about 11 fields for now */
 +		for (i = 0; i < 11 && p; i++, p = strtok (NULL, " \t\n")) {
