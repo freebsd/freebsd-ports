@@ -1,5 +1,5 @@
---- modules/mod_auth.c.orig	Fri Oct 22 22:18:49 1999
-+++ modules/mod_auth.c	Sun Dec  5 11:22:46 1999
+--- modules/mod_auth.c.orig	Mon Jan  3 13:28:39 2000
++++ modules/mod_auth.c	Thu Jan 27 23:17:19 2000
 @@ -70,7 +70,7 @@
  		      "closing control connection.",
                        TimeoutLogin);
@@ -9,7 +9,7 @@
  	    (void*) 0, NULL);
    
  /* should never be reached */
-@@ -541,7 +541,7 @@
+@@ -559,7 +559,7 @@
    c = _auth_resolve_user(p,&user,&ourname,&anonname);
  
    if(!user) {
@@ -18,7 +18,7 @@
  	    origuser);
      goto auth_failure;
    }
-@@ -550,7 +550,7 @@
+@@ -568,7 +568,7 @@
    aclp = login_check_limits(main_server->conf,FALSE,TRUE,&i);
  
    if((pw = auth_getpwnam(p,user)) == NULL) {
@@ -27,7 +27,7 @@
      goto auth_failure;
    }
  
-@@ -607,14 +607,14 @@
+@@ -629,14 +629,14 @@
      }
  
      if(!login_check_limits(c->subset,FALSE,TRUE,&i) || (!aclp && !i) ){
@@ -44,7 +44,7 @@
  	     origuser);
      goto auth_failure;
    }
-@@ -628,7 +628,7 @@
+@@ -650,7 +650,7 @@
      /* if 'AuthUsingAlias' set and logging in under an alias then auth using that alias */
      if (origuser && strcasecmp(user,origuser) && get_param_int(c->subset,"AuthUsingAlias",FALSE) == 1) {
        user_name = origuser;
@@ -53,7 +53,7 @@
      }
  
      if(c)
-@@ -655,22 +655,22 @@
+@@ -677,22 +677,22 @@
  
      switch(authcode) {
      case AUTH_NOPWD:
@@ -80,7 +80,7 @@
  	       user);
        goto auth_failure;
  
-@@ -693,12 +693,12 @@
+@@ -715,12 +715,12 @@
    auth_setgrent(p);
  
    if(!_auth_check_shell((c ? c->subset : main_server->conf),pw->pw_shell)) {
@@ -90,12 +90,12 @@
    }
  
    if(!_auth_check_ftpusers((c ? c->subset : main_server->conf),pw->pw_name)) {
--    log_auth(LOG_NOTICE, "USER %s (Login failed): User in %s.", FTPUSERS_PATH);
-+    log_auth(LOG_INFO, "USER %s (Login failed): User in %s.", FTPUSERS_PATH);
+-    log_auth(LOG_NOTICE, "USER %s (Login failed): User in %s.",
++    log_auth(LOG_INFO, "USER %s (Login failed): User in %s.",
+ 	     user, FTPUSERS_PATH);
      goto auth_failure;
    }
- 
-@@ -769,7 +769,7 @@
+@@ -792,7 +792,7 @@
  
    if(!login_check_limits((c ? c->subset : main_server->conf),FALSE,TRUE,&i))
    {
@@ -104,7 +104,7 @@
  	     origuser);
      goto auth_failure;
    }
-@@ -784,9 +784,9 @@
+@@ -807,9 +807,9 @@
      resolve_anonymous_dirs(c->subset);
  
    if(c)
@@ -116,7 +116,7 @@
  
    /* Write the login to wtmp.  This must be done here because we won't
     * have access after we give up root.  This can result in falsified
-@@ -1050,7 +1050,7 @@
+@@ -1073,7 +1073,7 @@
  
    if(failnopwprompt) {
      if(!user) {
@@ -125,7 +125,7 @@
  	      origuser);
        send_response(R_530,"Login incorrect.");
        end_login(0);
-@@ -1067,7 +1067,7 @@
+@@ -1090,7 +1090,7 @@
  
      if(c) {
        if(!login_check_limits(c->subset,FALSE,TRUE,&i) || (!aclp && !i) ) {
@@ -134,7 +134,7 @@
  		 origuser);
  	send_response(R_530,"Login incorrect.");
  	end_login(0);
-@@ -1075,7 +1075,7 @@
+@@ -1098,7 +1098,7 @@
      }
      
      if(!c && !aclp) {
@@ -143,7 +143,7 @@
        send_response(R_530,"Login incorrect.");
        end_login(0);
      }
-@@ -1146,7 +1146,7 @@
+@@ -1169,7 +1169,7 @@
  			"Too many users in your class, "
  			"please try again later.");
  	
@@ -152,7 +152,7 @@
  		 session.class->name);
  	
  	end_login(0);
-@@ -1179,7 +1179,7 @@
+@@ -1202,7 +1202,7 @@
        send_response(R_530,"%s",
                      sreplace(cmd->tmp_pool,maxstr,"%m",maxn,NULL));
  
@@ -161,7 +161,7 @@
  	       max);
        
        end_login(0);
-@@ -1203,7 +1203,7 @@
+@@ -1226,7 +1226,7 @@
      if(cur >= max) {
        send_response(R_530, "%s",
  		    sreplace(cmd->tmp_pool, maxstr, "%m", maxn, NULL));
@@ -170,7 +170,7 @@
        end_login(0);
      }
  
-@@ -1283,7 +1283,7 @@
+@@ -1301,7 +1301,7 @@
  
      if(++auth_tries >= max) {
        send_response(R_530,"Login incorrect");
