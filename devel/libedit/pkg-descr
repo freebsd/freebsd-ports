@@ -1,0 +1,3 @@
+libedit provides command line editing functionality.  Both emacs and vi key
+bindings are supported.  Note that the base system also includes libedit, but
+this port is generally more current.
