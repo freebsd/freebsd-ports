@@ -2043,6 +2043,7 @@ festdoc		ports/audio/festdoc
 festival	ports/audio/festival
 festival+OGI	ports/audio/festival+OGI
 festlex-cmu	ports/audio/festlex-cmu
+festlex-ifd	ports/audio/festlex-ifd
 festlex-oald	ports/audio/festlex-oald
 festlex-ogi	ports/audio/festlex-ogi
 festlex-poslex	ports/audio/festlex-poslex
