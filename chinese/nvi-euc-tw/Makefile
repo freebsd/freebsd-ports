@@ -5,15 +5,14 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	chinese editors
 PKGNAMESUFFIX=	-euctw
+
+MAINTAINER=	itojun@itojun.org
+
+CONFIGURE_ARGS+=	--enable-multibyte=euc-tw --program-prefix=n
 
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
 COMMENT=	${.CURDIR}/pkg/COMMENT
 
 .include "${MASTERDIR}/Makefile"
-
-CATEGORIES=	chinese editors
-
-MAINTAINER=	itojun@itojun.org
-
-CONFIGURE_ARGS+=	--enable-multibyte=euc-tw --program-prefix=n
