@@ -3,13 +3,13 @@
 # Date created:			09-Sep-1997
 # Whom:				Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/09/09 19:52:10 rse Exp $
+# $Id: Makefile,v 1.2 1997/09/16 09:37:47 rse Exp $
 #
 
 DISTNAME=	gfont-1.0.2
 CATEGORIES=	graphics print www
 MASTER_SITES=	http://www.engelschall.com/sw/gfont/distrib/ \
-		ftp://ftp.engelschall.com/sw/
+		ftp://ftp.engelschall.com/sw/gfont/
 
 MAINTAINER=	rse@engelschall.com
 
