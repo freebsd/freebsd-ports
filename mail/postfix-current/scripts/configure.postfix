@@ -68,6 +68,10 @@ while [ "$1" ]; do
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libsasl.a:\${PORTSDIR}/security/cyrus-sasl"
 			echo "POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I\${LOCALBASE}/include"
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libsasl.a -lpam -lcrypt"
+			if [ `strings ${PREFIX}/lib/libsasl.a | grep mysql_verify_password` = "mysql_verify_password" ]; then
+				echo "POSTFIX_CCARGS+=  -DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
+				echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
+			fi
 			echo ".if exists(/usr/lib/libkrb.a)"
 			echo "POSTFIX_AUXLIBS+=	-lkrb -ldes -lcom_err"
 			echo ".endif"
