@@ -1,6 +1,6 @@
 # New ports collection makefile for:		proxytunnel
 # Date created:			Sun Nov 25 15:16:44 BRST 2001
-# Whom:			Hammurabi Mendes <hmendes_br@yahoo.com>
+# Whom:			Hammurabi Mendes <hmendes@brturbo.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	hmendes_br@yahoo.com
+MAINTAINER=	hmendes@brturbo.com
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	${PORTNAME}

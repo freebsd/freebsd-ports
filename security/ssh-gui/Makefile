@@ -1,6 +1,6 @@
 # New ports collection makefile for:	ssh-gui
 # Date created:	Fri Nov 30 22:14:14 BRST 2001
-# Whom:         Hammurabi Mendes <hmendes_br@yahoo.com>
+# Whom:         Hammurabi Mendes <hmendes@brturbo.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	hmendes_br@yahoo.com
+MAINTAINER=	hmendes@brturbo.com
 
 RUN_DEPENDS=	ssh:${PORTSDIR}/security/openssh
 
