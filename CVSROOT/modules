@@ -6317,6 +6317,7 @@ redir		ports/net/redir
 redland		ports/textproc/redland
 reed		ports/misc/reed
 regexx		ports/devel/regexx
+regexxer	ports/devel/regexxer
 regm		ports/mail/regm
 relate		ports/mbone/relate
 relay		ports/net/relay
