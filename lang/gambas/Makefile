@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		gambas
-PORTVERSION=		0.92
-PORTREVISION=		1
+PORTVERSION=		0.92a
 CATEGORIES=		lang
 MASTER_SITES=		http://gambas.sourceforge.net/
 
@@ -16,6 +15,8 @@ COMMENT=		Gambas Almost Means BASic
 LIB_DEPENDS=		curl.2:${PORTSDIR}/ftp/curl			\
 			ltdl.4:${PORTSDIR}/devel/libltdl
 RUN_DEPENDS=		pgrep:${PORTSDIR}/sysutils/pkill
+
+WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 
 USE_KDELIBS_VER=	3
 USE_GETTEXT=		yes
@@ -86,9 +87,6 @@ CONFIGURE_ARGS+=	--without-sqlite-includes				\
 			--without-sqlite-libraries
 PLIST_SUB+=		SQLITE="@comment "
 .endif
-
-post-extract:
-	@${CHMOD} go+x ${WRKSRC}/examples/WebBrowser
 
 post-patch:
 .for src in ${SRC2FIX1}
