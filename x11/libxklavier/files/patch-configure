@@ -1,0 +1,31 @@
+
+$FreeBSD$
+
+--- configure.orig	Wed May 29 22:09:41 2002
++++ configure	Fri May 31 13:28:42 2002
+@@ -5464,6 +5464,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -5577,7 +5578,7 @@
+ 
+ #include <stdlib.h>
+ #include <stdio.h>
+-#include <xmlversion.h>
++#include <libxml/xmlversion.h>
+ 
+ int 
+ main()
+@@ -5688,7 +5689,7 @@
+ #line 5689 "configure"
+ #include "confdefs.h"
+ 
+-#include <xmlversion.h>
++#include <libxml/xmlversion.h>
+ #include <stdio.h>
+ 
+ int main() {
