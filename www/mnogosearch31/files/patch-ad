@@ -4,7 +4,7 @@
  fi
  rm -f confcache
  
-+lt_aux_dir=${prefix}/share/libtool13
++lt_aux_dir=${LOCALBASE}/share/libtool13
  # Actually configure libtool.  ac_aux_dir is where install-sh is found.
  CC="$CC" CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" \
  LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
