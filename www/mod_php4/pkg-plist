@@ -46,12 +46,26 @@ include/php/Zend/zend_llist.h
 include/php/Zend/zend_modules.h
 include/php/Zend/zend_operators.h
 include/php/Zend/zend_ptr_stack.h
+include/php/Zend/zend_qsort.h
 include/php/Zend/zend_stack.h
 include/php/Zend/zend_static_allocator.h
 include/php/Zend/zend_variables.h
 include/php/acconfig.h
+include/php/ext/mbstring/cp932_table.h
+include/php/ext/mbstring/mbfilter.h
+include/php/ext/mbstring/mbfilter_ja.h
+include/php/ext/mbstring/mbregex.h
+include/php/ext/mbstring/mbstring.h
+include/php/ext/mbstring/unicode_table.h
+include/php/ext/mbstring/unicode_table_ja.h
+include/php/ext/session/mod_files.h
+include/php/ext/session/mod_mm.h
+include/php/ext/session/mod_user.h
+include/php/ext/session/php_session.h
+include/php/ext/standard/aggregation.h
 include/php/ext/standard/base64.h
 include/php/ext/standard/basic_functions.h
+include/php/ext/standard/crc32.h
 include/php/ext/standard/credits.h
 include/php/ext/standard/credits_ext.h
 include/php/ext/standard/credits_sapi.h
@@ -78,6 +92,7 @@ include/php/ext/standard/php_dir.h
 include/php/ext/standard/php_ext_syslog.h
 include/php/ext/standard/php_filestat.h
 include/php/ext/standard/php_fopen_wrappers.h
+include/php/ext/standard/php_ftok.h
 include/php/ext/standard/php_image.h
 include/php/ext/standard/php_incomplete_class.h
 include/php/ext/standard/php_iptc.h
@@ -92,16 +107,27 @@ include/php/ext/standard/php_smart_str.h
 include/php/ext/standard/php_smart_str_public.h
 include/php/ext/standard/php_standard.h
 include/php/ext/standard/php_string.h
+include/php/ext/standard/php_type.h
 include/php/ext/standard/php_var.h
 include/php/ext/standard/php_versioning.h
 include/php/ext/standard/quot_print.h
 include/php/ext/standard/reg.h
 include/php/ext/standard/scanf.h
-include/php/ext/standard/type.h
 include/php/ext/standard/uniqid.h
 include/php/ext/standard/url.h
 include/php/ext/standard/url_scanner.h
 include/php/ext/standard/url_scanner_ex.h
+include/php/ext/xml/expat/ascii.h
+include/php/ext/xml/expat/asciitab.h
+include/php/ext/xml/expat/expat.h
+include/php/ext/xml/expat/iasciitab.h
+include/php/ext/xml/expat/latin1tab.h
+include/php/ext/xml/expat/nametab.h
+include/php/ext/xml/expat/utf8tab.h
+include/php/ext/xml/expat/winconfig.h
+include/php/ext/xml/expat/xmlrole.h
+include/php/ext/xml/expat/xmltok.h
+include/php/ext/xml/expat/xmltok_impl.h
 include/php/ext/xml/php_xml.h
 include/php/main/SAPI.h
 include/php/main/build-defs.h
@@ -140,21 +166,6 @@ include/php/regex/regex2.h
 include/php/regex/regex_extra.h
 include/php/regex/utils.h
 lib/php/Archive/Tar.php
-lib/php/Benchmark/Iterate.php
-lib/php/Benchmark/Timer.php
-lib/php/Cache.php
-lib/php/Cache/Container.php
-lib/php/Cache/Container/db.php
-lib/php/Cache/Container/dbx.php
-lib/php/Cache/Container/file.php
-lib/php/Cache/Container/phplib.php
-lib/php/Cache/Container/shm.php
-lib/php/Cache/DB.php
-lib/php/Cache/Error.php
-lib/php/Cache/Function.php
-lib/php/Cache/Graphics.php
-lib/php/Cache/Output.php
-lib/php/Cache/OutputCompression.php
 lib/php/Console/Getopt.php
 lib/php/Crypt/CBC.php
 lib/php/Crypt/HCEMD5.php
@@ -187,35 +198,31 @@ lib/php/HTML/Select.php
 lib/php/HTML/Table.php
 lib/php/HTTP.php
 lib/php/HTTP/Compress.php
-lib/php/Image/Remote.php
-lib/php/Log.php
-lib/php/Log/Observer.php
-lib/php/Log/composite.php
-lib/php/Log/file.php
-lib/php/Log/mcal.php
-lib/php/Log/sql.php
-lib/php/Log/syslog.php
 lib/php/Mail.php
 lib/php/Mail/RFC822.php
-lib/php/Mail/mime.php
 lib/php/Mail/sendmail.php
 lib/php/Mail/smtp.php
-lib/php/Math/Fraction.php
-lib/php/Math/Util.php
 lib/php/Net/Curl.php
 lib/php/Net/Dig.php
 lib/php/Net/SMTP.php
-lib/php/Net/Socket.php
-lib/php/Numbers/Roman.php
 lib/php/PEAR.php
+lib/php/PEAR/Autoloader.php
+lib/php/PEAR/Command.php
+lib/php/PEAR/Command/Auth.php
+lib/php/PEAR/Command/Common.php
+lib/php/PEAR/Command/Config.php
+lib/php/PEAR/Command/Install.php
+lib/php/PEAR/Command/Package.php
+lib/php/PEAR/Command/Registry.php
+lib/php/PEAR/Command/Remote.php
 lib/php/PEAR/Common.php
 lib/php/PEAR/Config.php
+lib/php/PEAR/Dependency.php
+lib/php/PEAR/Frontend/CLI.php
 lib/php/PEAR/Installer.php
 lib/php/PEAR/Packager.php
 lib/php/PEAR/Registry.php
 lib/php/PEAR/Remote.php
-lib/php/PEAR/Uploader.php
-lib/php/Payment/Verisign.php
 lib/php/Schedule/At.php
 lib/php/System.php
 lib/php/XML/Parser.php
@@ -235,38 +242,34 @@ lib/php/build/shtool
 libexec/apache/libphp4.so
 @exec %D/sbin/apxs -e -a -n php4 %f
 @unexec %D/sbin/apxs -e -A -n php4 %f
-@dirrm include/php/Zend
 @dirrm include/php/TSRM
+@dirrm include/php/Zend
+@dirrm include/php/ext/mbstring
+@dirrm include/php/ext/session
 @dirrm include/php/ext/standard
-@dirrm include/php/ext/xml/expat/xmlparse
-@dirrm include/php/ext/xml/expat/xmltok
 @dirrm include/php/ext/xml/expat
 @dirrm include/php/ext/xml
 @dirrm include/php/ext
 @dirrm include/php/main
 @dirrm include/php/regex
 @dirrm include/php
-@dirrm lib/php/20010901
 @dirrm lib/php/Archive
-@dirrm lib/php/Benchmark
-@dirrm lib/php/Cache/Container
-@dirrm lib/php/Cache
 @dirrm lib/php/Console
 @dirrm lib/php/Crypt
-@dirrm lib/php/Date
 @dirrm lib/php/DB
+@dirrm lib/php/Date
 @dirrm lib/php/File
 @dirrm lib/php/HTML
 @dirrm lib/php/HTTP
 @dirrm lib/php/Image
-@dirrm lib/php/Log
 @dirrm lib/php/Mail
-@dirrm lib/php/Math
 @dirrm lib/php/Net
-@dirrm lib/php/Numbers
-@dirrm lib/php/Payment
+@dirrm lib/php/PEAR/Command
+@dirrm lib/php/PEAR/Frontend
 @dirrm lib/php/PEAR
 @dirrm lib/php/Schedule
 @dirrm lib/php/XML
 @dirrm lib/php/build
+@dirrm lib/php/extensions/no-debug-non-zts-20010901
+@dirrm lib/php/extensions
 @dirrm lib/php
