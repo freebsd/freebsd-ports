@@ -14,6 +14,7 @@
     SUBDIR += irsim
     SUBDIR += iverilog
     SUBDIR += kaskade
+    SUBDIR += leocad
     SUBDIR += libgeda
     SUBDIR += linux-eagle
     SUBDIR += magic
