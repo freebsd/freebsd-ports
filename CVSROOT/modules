@@ -718,6 +718,7 @@ chpass		src/usr.bin/chpass
 chpp		ports/textproc/chpp
 chroot		src/usr.sbin/chroot
 chrootuid	ports/security/chrootuid
+chtml		ports/www/chtml
 cider		ports/cad/cider
 cidr		ports/net/cidr
 cim		ports/lang/cim
