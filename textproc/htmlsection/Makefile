@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	htmlsection
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	textproc www
-MASTER_SITES=	http://www.seki.ee.kagu.tus.ac.jp/~sakai/myfreesoft/ \
-		http://hp.vector.co.jp/authors/VA014157/myfreesoft/ \
-		http://www.people.or.jp/~hsakai/myfreesoft/
+MASTER_SITES=	http://web.ffn.ne.jp/~hsakai/myfreesoft/
 
-MAINTAINER=	sakai@seki.ee.kagu.tus.ac.jp
+MAINTAINER=	hsakai@m8.ffn.ne.jp
 COMMENT=	Insert section numbers in HTML and make a table of contents
 
 MAN1=		htmlsection.1
@@ -30,6 +28,10 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 .for file in INSTALL README htmlsection_orig.html htmlsection.html
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+	@${MKDIR} ${PREFIX}/share/doc/ja/htmlsection
+.for file in INSTALL-j README-j htmlsection-j_orig.html htmlsection-j.html
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/ja/htmlsection
 .endfor
 .endif
 

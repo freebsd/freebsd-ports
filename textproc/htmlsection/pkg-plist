@@ -3,4 +3,9 @@ bin/htmlsection
 %%PORTDOCS%%share/doc/htmlsection/README
 %%PORTDOCS%%share/doc/htmlsection/htmlsection_orig.html
 %%PORTDOCS%%share/doc/htmlsection/htmlsection.html
+%%PORTDOCS%%share/doc/ja/htmlsection/INSTALL-j
+%%PORTDOCS%%share/doc/ja/htmlsection/README-j
+%%PORTDOCS%%share/doc/ja/htmlsection/htmlsection-j_orig.html
+%%PORTDOCS%%share/doc/ja/htmlsection/htmlsection-j.html
 %%PORTDOCS%%@dirrm share/doc/htmlsection
+%%PORTDOCS%%@dirrm share/doc/ja/htmlsection
