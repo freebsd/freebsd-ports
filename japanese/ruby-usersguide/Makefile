@@ -7,7 +7,9 @@
 
 MASTERDIR=	${.CURDIR}/../../lang/ruby-usersguide
 
-MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/doc/
+MASTER_SITES=	${MASTER_SITE_RUBY}
+MASTER_SITE_SUBDIR=	doc
+DISTNAME=	${SHORTNAME}-${VERSION}
 
 CATEGORIES=	japanese
 
@@ -19,8 +21,5 @@ FILESDIR=	${.CURDIR}/files
 PKGDIR=		${.CURDIR}/pkg
 
 LANGSUFFIX=	-jp
-
-pre-install:
-	${LN} -sf uguide00.html ${WRKSRC}/index.html
 
 .include "${MASTERDIR}/Makefile"
