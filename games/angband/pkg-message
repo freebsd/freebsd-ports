@@ -1,7 +1,7 @@
 
  ============================================================
- For a list of changes in Angband 2.8.2, please read the
- article in /usr/X11R6/lib/X11/angband/CHANGES-2.8.2.  It
- includes a way to limit the number of terminal windows
- the game opens at startup.
+ To reduce the number of term windows opened, use -n:
+   angband -- -n2
+ To use graphical tiles, use -g:
+   angband -g
  ============================================================
