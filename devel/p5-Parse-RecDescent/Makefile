@@ -3,7 +3,7 @@
 # Date created:				July 9th 1999
 # Whom:	      				Jerry Hicks <wghicks@bellsouth.net>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	Parse-RecDescent-1.66
