@@ -159,7 +159,7 @@ post-install:
 	cd ${WRKDIR} ; ex < ex.script
 
 cklatest:
-.for SITE in ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/	ftp://sources.redhat.com/pub/gcc/snapshots/
+.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/	
 	@-ncftpls ${SITE} | grep LATEST
 .endfor
 
