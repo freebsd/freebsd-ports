@@ -7,6 +7,7 @@
 
 PORTNAME=	sitescooper
 PORTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	palm
 MASTER_SITES=	http://sitescooper.org/released/
 
@@ -25,6 +26,7 @@ SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 MAN1=		rss-to-site.1 sitescooper.1 subs-to-site.1
 
 post-patch:
+	${RM} ${WRKSRC}/lib/Sitescooper/Main.pm.orig
 	${PERL} -pi -e "s|^#!.+|#!${PERL}|; \
 		s|/usr/local/etc/sitescooper.cf|${PREFIX}/etc/sitescooper.cf|g; \
 		s|/usr/local/etc/sitescooper/sitescooper.cf|${PREFIX}/etc/sitescooper.cf.sample|g;" ${WRKSRC}/*.pl
