@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	hello
-PORTVERSION=	1.3.1
+PORTVERSION=	2.1.1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	hello
-DISTNAME=	hello-1.3
 
 MAINTAINER=	shipley@dis.org
-COMMENT=	A utility for saying hello to the world and read email
+COMMENT=	A utility for saying hello to the world and reading email
 
-WRKSRC=		${WRKDIR}/hello-1.3
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	YES
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
-post-install:
-	@install-info --dir-file=${PREFIX}/info/dir \
-	    --entry="* Hello: (hello).		Hello Reference Manual." \
-	    ${PREFIX}/info/hello.info
+MAN1=		hello.1
 
 .include <bsd.port.mk>
