@@ -321,6 +321,7 @@ share/vim/%%VIM_VER%%/syntax/nastran.vim
 share/vim/%%VIM_VER%%/syntax/ncf.vim
 share/vim/%%VIM_VER%%/syntax/nosyntax.vim
 share/vim/%%VIM_VER%%/syntax/nroff.vim
+share/vim/%%VIM_VER%%/syntax/nqc.vim
 share/vim/%%VIM_VER%%/syntax/objc.vim
 share/vim/%%VIM_VER%%/syntax/ocaml.vim
 share/vim/%%VIM_VER%%/syntax/omnimark.vim
@@ -400,6 +401,7 @@ share/vim/%%VIM_VER%%/syntax/squid.vim
 share/vim/%%VIM_VER%%/syntax/st.vim
 share/vim/%%VIM_VER%%/syntax/stp.vim
 share/vim/%%VIM_VER%%/syntax/strace.vim
+share/vim/%%VIM_VER%%/syntax/syncolor.vim
 share/vim/%%VIM_VER%%/syntax/synload.vim
 share/vim/%%VIM_VER%%/syntax/syntax.vim
 share/vim/%%VIM_VER%%/syntax/tads.vim
@@ -465,6 +467,7 @@ share/vim/%%VIM_VER%%/tools/vimspell.sh
 share/vim/%%VIM_VER%%/tools/vimspell.txt
 share/vim/%%VIM_VER%%/tutor/README.txt
 share/vim/%%VIM_VER%%/tutor/tutor
+share/vim/%%VIM_VER%%/tutor/tutor.vim
 share/vim/%%VIM_VER%%/vimrc_example.vim
 @exec mkdir %D/share/vim/%%VIM_VER%%/lang
 @dirrm share/vim/%%VIM_VER%%/doc
