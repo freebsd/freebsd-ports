@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cyrus-imspd
-PORTVERSION=	1.6a3
-PORTREVISION=	2
+PORTVERSION=	1.6a5
 CATEGORIES=	databases mail
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
@@ -16,15 +15,18 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The cyrus IMSP (Internet Message Support Protocol) server
 
-FORBIDDEN=	"potentially exploitable heap overflow, see <http://asg.web.cmu.edu/archive/message.php?mailbox=archive.cyrus-announce&msg=25>"
-
 LIB_DEPENDS=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 BUILD_DEPENDS=	${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
 
+USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-sasldir=${LOCALBASE} \
 		--with-auth=unix
+
+pre-configure:
+		${REINPLACE_CMD} -e "s|<sasl.h>|<sasl1/sasl.h>|" \
+			${WRKSRC}/configure
 
 post-install:
 		${INSTALL_SCRIPT} ${FILESDIR}/imspd.sh \
