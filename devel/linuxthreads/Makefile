@@ -7,7 +7,7 @@
 
 PORTNAME=	linuxthreads
 PORTVERSION=	2.2.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glibc
@@ -22,6 +22,10 @@ ONLY_FOR_ARCHS=	i386
 
 .if ${OSVERSION} < 400015
 BROKEN="Requires FreeBSD 4.0 or newer"
+.endif
+.if ${OSVERSION} >= 500035
+USING_GCC3=true
+MAKE_ENV+= USING_GCC3=true
 .endif
 
 threads_files := README.FreeBSD clone.S clone.h freebsd-compat.h getgr_r.c \
@@ -41,26 +45,68 @@ pre-fetch:
 	@${ECHO} WITH_CONDWAIT_PATCH
 	@${ECHO}
 .endif
-	@if test -f /usr/src/gnu/lib/libgcc/Makefile; then \
+	@if ${TEST} -f /usr/src/gnu/lib/libgcc/Makefile; then \
           : ; \
         else \
           ${ECHO_MSG} ">>The linuxthreads port needs source code for libgcc"; \
           ${ECHO_MSG} ">>Please install FreeBSD source code in /usr/src"; \
 	  false; \
 	fi
+.if defined(USING_GCC3)
+	@if ${TEST} -f /usr/src/gnu/lib/libstdc++/Makefile; then \
+          : ; \
+        else \
+          ${ECHO_MSG} ">>The linuxthreads port needs source code for libstdc++"; \
+          ${ECHO_MSG} ">>Please install FreeBSD source code in /usr/src"; \
+	  false; \
+	fi
+	@if ${TEST} -f /usr/src/gnu/lib/libsupc++/Makefile; then \
+          : ; \
+        else \
+          ${ECHO_MSG} ">>The linuxthreads port needs source code for libsupc++"; \
+          ${ECHO_MSG} ">>Please install FreeBSD source code in /usr/src"; \
+	  false; \
+	fi
+.endif
 
 post-extract:
-	@mv ${WRKDIR}/linuxthreads ${WRKSRC}
-	@mv ${WRKDIR}/linuxthreads_db ${WRKSRC}
+	@${MV} ${WRKDIR}/linuxthreads ${WRKSRC}
+	@${MV} ${WRKDIR}/linuxthreads_db ${WRKSRC}
 .for src in lockfile.c no-tsd.c oldsemaphore.c weaks.c \
 	sysdeps/pthread/semaphore.h
-	@mv ${WRKSRC}/$(src) ${WRKSRC}/$(src).unused
+	@${MV} ${WRKSRC}/$(src) ${WRKSRC}/$(src).unused
 .endfor
 	@cd ${FILESDIR} ; \
 		${CP} -p ${threads_files} ${WRKSRC}/.
 	@${MKDIR} -p ${WRKSRC}/libgcc_r
-	@test -f ${WRKSRC}/libgcc_r/Makefile || \
+	@${TEST} -f ${WRKSRC}/libgcc_r/Makefile || \
 	${LN} -s ${FILESDIR}/Makefile.libgcc_r ${WRKSRC}/libgcc_r/Makefile
+	@${SED} -e 's/^LIB=[ 	]*gcc$$/LIB=	lgcc_r/;' \
+	     -e 's=$${.CURDIR}=/usr/src/gnu/lib/libgcc=g' \
+	  /usr/src/gnu/lib/libgcc/Makefile \
+	  > ${WRKSRC}/libgcc_r/Makefile.inc.tmp && \
+	${MV} ${WRKSRC}/libgcc_r/Makefile.inc.tmp \
+	   ${WRKSRC}/libgcc_r/Makefile.inc
+.if defined(USING_GCC3)
+	@${MKDIR} -p ${WRKSRC}/libstdc++
+	@${TEST} -f ${WRKSRC}/libstdc++/Makefile || \
+	${LN} -s ${FILESDIR}/Makefile.libstdc++ ${WRKSRC}/libstdc++/Makefile
+	@${SED} -e 's/^LIB=[ 	]*stdc\+\+$$/LIB=	lstdc++/;' \
+	     -e 's=$${.CURDIR}=/usr/src/gnu/lib/libstdc++=g' \
+	  /usr/src/gnu/lib/libstdc++/Makefile \
+	  > ${WRKSRC}/libstdc++/Makefile.inc.tmp && \
+	${MV} ${WRKSRC}/libstdc++/Makefile.inc.tmp \
+	   ${WRKSRC}/libstdc++/Makefile.inc
+	@${MKDIR} -p ${WRKSRC}/libsupc++
+	@${TEST} -f ${WRKSRC}/libsupc++/Makefile || \
+	${LN} -s ${FILESDIR}/Makefile.libsupc++ ${WRKSRC}/libsupc++/Makefile
+	@${SED} -e 's/^LIB=[ 	]*supc\+\+$$/LIB=	lsupc++/;' \
+	     -e 's=$${.CURDIR}=/usr/src/gnu/lib/libsupc++=g' \
+	  /usr/src/gnu/lib/libsupc++/Makefile \
+	  > ${WRKSRC}/libsupc++/Makefile.inc.tmp && \
+	${MV} ${WRKSRC}/libsupc++/Makefile.inc.tmp \
+	   ${WRKSRC}/libsupc++/Makefile.inc
+.endif
 
 .if defined(WITH_CONDWAIT_PATCH)
 post-patch:
@@ -75,11 +121,23 @@ post-patch:
 
 pre-build:
 	@cd ${WRKSRC}/libgcc_r ; \
-		${MAKE}
+		${SETENV} ${MAKE_ENV} ${MAKE}
+.if defined(USING_GCC3)
+	cd ${WRKSRC}/libstdc++ ; \
+		${SETENV} ${MAKE_ENV} ${MAKE}
+	@cd ${WRKSRC}/libsupc++ ; \
+		${SETENV} ${MAKE_ENV} ${MAKE}
+.endif
 
 pre-install:
 	@cd ${WRKSRC}/libgcc_r ; \
-		${MAKE} install
+		${SETENV} ${MAKE_ENV} ${MAKE} install
+.if defined(USING_GCC3)
+	@cd ${WRKSRC}/libstdc++ ; \
+		${SETENV} ${MAKE_ENV} ${MAKE} install
+	@cd ${WRKSRC}/libsupc++ ; \
+		${SETENV} ${MAKE_ENV} ${MAKE} install
+.endif
 
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
@@ -87,5 +145,24 @@ post-install:
 	${CAT} ${PKGMESSAGE}
 
 #	@sh ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+.if defined(NOPROFILE)
+PLIST_SUB=	PROFILE:="@comment "
+.else
+PLIST_SUB=	PROFILE:=""
+.endif
+.if defined(NOPIC)
+PLIST_SUB+=	PIC:="@comment "
+.else
+PLIST_SUB+=	PIC:=""
+.endif
+.if defined(USING_GCC3)
+PLIST_SUB+=	GCC3ONLY:=""
+PLIST_SUB+=	LTHREADSHMAJOR:="3"
+.else
+PLIST_SUB+=	GCC3ONLY:="@comment "
+PLIST_SUB+=	LTHREADSHMAJOR:="2"
+.endif
+
 
 .include <bsd.port.post.mk>

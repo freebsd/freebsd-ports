@@ -72,9 +72,21 @@ set at 20 + 16 * MAXUSERS.
 
 4) Be aware of the following libgcc issue:
 
+   FreeBSD 4.* (gcc 2.*):
+
    __register_frame_info() and __get_eh_info() from libgcc.a are linked
    into shared libraries that use exceptions, e.g. libstdc++.  Those
    functions are not compatible with linuxthreads due to pthread_mutex_t
    and pthread_once_t having different sizes and static initializers.
    Linking the shared linuxthreads library before any such library causes
    the liblgcc_r.a version of those functions to be used.
+
+   FreeBSD 5.* (gcc 3.*):
+
+   __register_frame_info() and __frame_state_for() from libgcc.a are
+   linked into shared libraries that use exceptions, e.g. libstdc++.
+   Those functions are not compatible with linuxthreads due to
+   pthread_mutex_t and pthread_once_t having different sizes and static
+   initializers.  Linking the shared linuxthreads library before any such
+   library causes the liblgcc_r.a version of those functions to be used.
+   Use liblstdc++ and liblsupc++.
