@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jargon
-PORTVERSION=	4.4.5
+PORTVERSION=	4.4.6
 CATEGORIES=	misc
 MASTER_SITES=	http://www.catb.org/~esr/jargon/
 
@@ -19,7 +19,9 @@ USE_REINPLACE=	yes
 DATADIR=	${PREFIX}/share/jargon
 
 post-extract:
-	(cd ${WRKSRC}; ${RM} -rf html/graphics/.xvpics graphics/.xvpics)
+	(cd ${WRKSRC}; \
+	 ${RM} -rf html/graphics/.xvpics graphics/.xvpics \
+		html/letters.html~ html/online-preface.html~)
 
 do-install:
 	${MKDIR} ${DATADIR}

@@ -49,6 +49,9 @@ share/jargon/graphics/eat-flaming-death.png
 share/jargon/graphics/eiaward.png
 share/jargon/graphics/fortran.png
 share/jargon/graphics/gefingerpoken.jpg
+share/jargon/graphics/glider-small.png
+share/jargon/graphics/glider.pic
+share/jargon/graphics/glider.png
 share/jargon/graphics/home.png
 share/jargon/graphics/len_std.jpg
 share/jargon/graphics/licenseplate.jpg
@@ -1353,6 +1356,7 @@ share/jargon/html/M/mailing-list.html
 share/jargon/html/M/main-loop.html
 share/jargon/html/M/mainframe.html
 share/jargon/html/M/mainsleaze.html
+share/jargon/html/M/malware.html
 share/jargon/html/M/man-page.html
 share/jargon/html/M/management.html
 share/jargon/html/M/mandelbug.html
@@ -2192,6 +2196,7 @@ share/jargon/html/T/twink.html
 share/jargon/html/T/twirling-baton.html
 share/jargon/html/T/two-pi.html
 share/jargon/html/T/two-to-the-N.html
+share/jargon/html/T/tyop.html
 share/jargon/html/U-frame.html
 share/jargon/html/U.html
 share/jargon/html/U/UBD.html
@@ -2238,6 +2243,7 @@ share/jargon/html/V/VMS.html
 share/jargon/html/V/VR.html
 share/jargon/html/V/Venus-flytrap.html
 share/jargon/html/V/Version-7.html
+share/jargon/html/V/Visual-Fred.html
 share/jargon/html/V/Vulcan-nerve-pinch.html
 share/jargon/html/V/vadding.html
 share/jargon/html/V/vanilla.html
@@ -2497,6 +2503,7 @@ share/jargon/html/graphics/eat-flaming-death.png
 share/jargon/html/graphics/eiaward.png
 share/jargon/html/graphics/fortran.png
 share/jargon/html/graphics/gefingerpoken.jpg
+share/jargon/html/graphics/glidergun.png
 share/jargon/html/graphics/home.png
 share/jargon/html/graphics/len_std.jpg
 share/jargon/html/graphics/licenseplate.jpg
