@@ -4,6 +4,5 @@ include/SDL_gfxPrimitives_font.h
 include/SDL_imageFilter.h
 include/SDL_rotozoom.h
 lib/libSDL_gfx.a
-lib/libSDL_gfx.la
 lib/libSDL_gfx.so
 lib/libSDL_gfx.so.0
