@@ -138,7 +138,7 @@ while [ "$1" ]; do
 		echo RUN_DEPENDS+=bunzip2:${PORTSDIR}/archivers/bzip2
 		;;
 	\"FREEZE\")
-		echo RUN_DEPENDS+=smbclient:${PORTSDIR}/archivers/freeze
+		echo RUN_DEPENDS+=melt:${PORTSDIR}/archivers/freeze
 		;;
     esac
     shift
