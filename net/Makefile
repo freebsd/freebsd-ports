@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.104 1997/05/30 20:13:39 jfitz Exp $
+# $Id: Makefile,v 1.105 1997/06/07 04:12:11 jfitz Exp $
 #
 
     SUBDIR += archie
@@ -45,6 +45,7 @@
     SUBDIR += radius
     SUBDIR += ratoolset
     SUBDIR += rdist6
+    SUBDIR += ripetools
     SUBDIR += rmsg
     SUBDIR += rsync
     SUBDIR += rwhois
