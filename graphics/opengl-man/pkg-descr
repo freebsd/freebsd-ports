@@ -1,13 +1,13 @@
-This port installs section 3 manpages for the OpenGL 3d graphics API
-so that they are directly accessable from the man(1)
-command. Especially useful for the graphics/Mesa port/package.
+This port installs section 3 manpages for the OpenGL 3d graphics API so
+that they are directly accessable from the man(1) command. Especially
+useful for the graphics/Mesa port/package.
 
 Included OpenGL related libraries: gl, glx, glu, gle, glut.
 
 gl, glx and glu are taken from ftp.sgi.com. They carried no version
 information. Stored in the same directory at the time I grabbed them
 was the OpenGL spec 1.2.1, which may or may not indicate the state of
-the manpages :-/
+the manpages. :-/
 
 The gl, glx and glu manpages are unusable when just unpacking them. I
 repackaged them so that
@@ -18,6 +18,6 @@ repackaged them so that
   functions in a manpage, not just the first one.
 
 gle and glut are taken from the glut-3.7 distribution (where the
-Webpage sais it is beta, but the distfile name does not). These are
+Webpage says it is beta, but the distfile name does not). These are
 unchanged, but there are currently no hardlinks to secondary functions
 names.
