@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	exiftags
-PORTVERSION=	0.98
+PORTVERSION=	0.99
 CATEGORIES=	graphics
 MASTER_SITES=	http://johnst.org/sw/exiftags/
 
@@ -16,17 +16,20 @@ COMMENT=	Parses a specified JPEG file for a JPEG APP1 section containing Exif da
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}"
 
-MAN1=	exifcom.1 exiftags.1
+MAN1=		exifcom.1 exiftags.1 exiftime.1
+PORTDOCS=	CHANGES README
+PLIST_FILES=	bin/exifcom bin/exiftags bin/exiftime
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/exifcom ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/exiftags ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/exifcom.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/exiftags.1 ${MANPREFIX}/man/man1
+.for i in exifcom exiftags exiftime
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${i}.1 ${MANPREFIX}/man/man1
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.for i in CHANGES README
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
