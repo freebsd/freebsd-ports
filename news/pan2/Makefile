@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	pan
-PORTVERSION=	0.7.6
+PORTVERSION=	0.8.0
 CATEGORIES=	news gnome
-MASTER_SITES=	ftp://source.rebelbase.com/pub/pan/${PORTVERSION}/ \
-		ftp://source.rebelbase.com/pub/pan/obsolete/
+MASTER_SITES=	ftp://source.rebelbase.com/pub/pan/${PORTVERSION}/
 
-MAINTAINER=	jedgar@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs
 
@@ -20,21 +19,12 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-x
-CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
+		--datadir=${PREFIX}/share/gnome
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 300000
-pre-fetch:
-	@${ECHO}
-	@${ECHO} "Must have FreeBSD-3.0 or greater due to"
-	@${ECHO} "the use of the pthread library."
-	@${ECHO}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon May  1 22:44:54 2000
++++ Makefile.in	Wed May  3 14:44:53 2000
+@@ -110,7 +110,7 @@
+ 
+ EXTRA_DIST = autogen.sh CREDITS ChangeLog pan.desktop pan.spec pan.png
+ 
+-Productivitydir = $(datadir)/gnome/apps/Internet
++Productivitydir = $(datadir)/apps/Internet
+ Productivity_DATA = pan.desktop
+ 
+ icon_DATA = pan.png
