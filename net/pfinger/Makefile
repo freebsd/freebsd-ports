@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	pfinger
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.10
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.xelia.ch/pub/unix/ \
 		http://www.xelia.ch/unix/pfinger/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
