@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	scheme48
-PORTVERSION=	0.57
+PORTVERSION=	1.1
 CATEGORIES=	lang scheme
-MASTER_SITES=	http://s48.org/0.57/
+MASTER_SITES=	http://s48.org/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -26,5 +26,8 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	enough
 STRIP=
 MAN1=		scheme48.1
+
+test:
+	cd ${WRKSRC}; ${MAKE} check
 
 .include <bsd.port.post.mk>
