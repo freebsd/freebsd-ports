@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	foobillard
-PORTVERSION=	2.4
+PORTVERSION=	2.6
 CATEGORIES=	games
 MASTER_SITES=	http://foobillard.sunsite.dk/dnl/
 
@@ -22,12 +22,10 @@ SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 USE_MESA=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--enable-SDL --prefix=${PREFIX} \
-		--includedir="${X11BASE}/include"
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lgnugetopt"
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lgnugetopt"
 
 .if !defined(WITH_NVIDIA_BUMPREF)
 CONFIGURE_ARGS+=	--disable-bumpref
@@ -35,12 +33,6 @@ CONFIGURE_ARGS+=	--disable-bumpref
 
 MAN6=		foobillard.6
 MANCOMPRESSED=	no
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
-		${WRKSRC}/src/Makefile.in
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/foobillard.6 ${PREFIX}/man/man6/foobillard.6
