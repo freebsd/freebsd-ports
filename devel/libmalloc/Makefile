@@ -3,13 +3,15 @@
 # Date created:		11 January 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.9 1997/04/21 00:06:26 obrien Exp $
+# $Id: Makefile,v 1.10 1997/04/28 14:49:38 obrien Exp $
 #
 
 DISTNAME=	malloc-1.18
 PKGNAME=	libmalloc-1.18
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/moraes/
+
+MAINTAINER=	obrien@FreeBSD.org
 
 post-install:
 	/sbin/ldconfig -m ${PREFIX}/lib
