@@ -3,7 +3,7 @@
 # Date created:		7 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.2 1996/08/19 10:31:03 asami Exp $
+# $Id: Makefile,v 1.3 1996/08/23 20:51:19 jdp Exp $
 #
 
 DISTNAME=	cvsup-13.3
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://freefall.freebsd.org/pub/CVSup/
 
 MAINTAINER=	jdp@FreeBSD.org
 
-LIB_DEPENDS=	m3\\.353\\.:${PORTSDIR}/lang/modula-3
+LIB_DEPENDS=	m3\\.354\\.:${PORTSDIR}/lang/modula-3
 
 MAKE_ENV=	M3FLAGS=-DDYNAMIC
 
