@@ -70,14 +70,17 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/htmldocs/PAM-Authentication-And-Samba.html
 %%PORTDOCS%%share/doc/samba/htmldocs/Samba-HOWTO-Collection.html
 %%PORTDOCS%%share/doc/samba/htmldocs/Samba-PDC-HOWTO.html
+%%PORTDOCS%%share/doc/samba/htmldocs/Samba-LDAP-HOWTO.html
 %%PORTDOCS%%share/doc/samba/htmldocs/UNIX_INSTALL.html
 %%PORTDOCS%%share/doc/samba/htmldocs/findsmb.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/lmhosts.5.html
 %%PORTDOCS%%share/doc/samba/htmldocs/make_smbcodepage.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/make_unicodemap.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/msdfs_setup.html
+%%PORTDOCS%%share/doc/samba/htmldocs/net.8.html
 %%PORTDOCS%%share/doc/samba/htmldocs/nmbd.8.html
 %%PORTDOCS%%share/doc/samba/htmldocs/nmblookup.1.html
+%%PORTDOCS%%share/doc/samba/htmldocs/pdbedit.8.html
 %%PORTDOCS%%share/doc/samba/htmldocs/printer_driver2.html
 %%PORTDOCS%%share/doc/samba/htmldocs/rpcclient.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/samba.7.html
@@ -86,6 +89,7 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/htmldocs/smbclient.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbcontrol.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbd.8.html
+%%PORTDOCS%%share/doc/samba/htmldocs/smbgroupedit.8.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbmnt.8.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbmount.8.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbpasswd.5.html
@@ -152,6 +156,14 @@ share/examples/samba/VFS/block/samba-block.conf
 share/examples/samba/VFS/block/smb.conf
 share/examples/samba/VFS/audit.c
 share/examples/samba/VFS/skel.c
+share/examples/samba/LDAP/README
+share/examples/samba/LDAP/export2_smbpasswd.pl
+share/examples/samba/LDAP/export_smbpasswd.pl
+share/examples/samba/LDAP/import2_smbpasswd.pl
+share/examples/samba/LDAP/import_smbpasswd.pl
+share/examples/samba/LDAP/ldapchpasswd
+share/examples/samba/LDAP/ldapsync.pl
+share/examples/samba/LDAP/samba.schema
 share/examples/samba/appliance/Makefile
 share/examples/samba/appliance/README
 share/examples/samba/appliance/appliance.spec
@@ -207,16 +219,20 @@ share/swat/help/lmhosts.5.html
 share/swat/help/make_smbcodepage.1.html
 share/swat/help/make_unicodemap.1.html
 share/swat/help/msdfs_setup.html
+share/swat/help/net.8.html
 share/swat/help/nmbd.8.html
 share/swat/help/nmblookup.1.html
+share/swat/help/pdbedit.8.html
 share/swat/help/printer_driver2.html
 share/swat/help/rpcclient.1.html
+share/swat/help/Samba-LDAP-HOWTO.html
 share/swat/help/samba.7.html
 share/swat/help/smb.conf.5.html
 share/swat/help/smbcacls.1.html
 share/swat/help/smbclient.1.html
 share/swat/help/smbcontrol.1.html
 share/swat/help/smbd.8.html
+share/swat/help/smbgroupedit.8.html
 share/swat/help/smbmnt.8.html
 share/swat/help/smbmount.8.html
 share/swat/help/smbpasswd.5.html
@@ -441,6 +457,7 @@ share/swat/using_samba/this_edition.html
 @dirrm share/swat/lang/tr
 @dirrm share/swat/lang
 @dirrm share/swat
+@dirrm share/examples/samba/LDAP
 @dirrm share/examples/samba/validchars
 @dirrm share/examples/samba/tridge
 @dirrm share/examples/samba/thoralf
