@@ -1,0 +1,20 @@
+--- SPDBV/bin/spdbv-orig.sh.orig	Thu Dec 20 10:11:25 2001
++++ SPDBV/bin/spdbv-orig.sh	Thu Dec 20 10:26:00 2001
+@@ -1,6 +1,8 @@
+ ARCH=`uname -s`
+ if [ $ARCH = IRIX64 ]; then
+ 	ARCH=IRIX
++elif [ $ARCH = FreeBSD ]; then
++	ARCH=Linux
+ fi
+ SPDBV_TEMP=$HOME/SPDBV/temp
+ SPDBV_DOWNLOAD=$HOME/SPDBV/download
+@@ -38,7 +40,5 @@
+ #xrdb -override $SPDBV_BASE/app-defaults/Spdbv
+ 
+ #start the SPDBV, reroute stderr to nirvana
+-{
+-   $SPDBV_BASE/bin/$SPDBV_RELEASE.$ARCH $*
+-} 2> /dev/null
++$SPDBV_BASE/bin/$SPDBV_RELEASE.$ARCH $*
+ #done.
