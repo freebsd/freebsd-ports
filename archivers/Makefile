@@ -35,6 +35,7 @@
     SUBDIR += parchive
     SUBDIR += pkzip
     SUBDIR += ppunpack
+    SUBDIR += py-bzip2
     SUBDIR += rar
     SUBDIR += rpm
     SUBDIR += rpm2cpio
