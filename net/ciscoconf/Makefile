@@ -8,8 +8,8 @@
 PORTNAME=	ciscoconf
 PORTVERSION=	1.1
 CATEGORIES=	net
-MASTER_SITES=	http://buffoon.automagic.org/dist/ \
-		http://maggie.automagic.org/dist/
+MASTER_SITES=	ftp://ftp.isc.org/isc/ciscoconf/ \
+		http://software.automagic.org/ciscoconf/
 
 MAINTAINER=	jabley@automagic.org
 COMMENT=	Fetches configuration from Cisco routers and stores them under RCS
