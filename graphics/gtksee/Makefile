@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtksee
-PORTVERSION=	0.5.5.1
-PORTREVISION=	1
+PORTVERSION=	0.5.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.berlios.de/gtksee/
 
@@ -32,6 +31,14 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
 MAN1=		gtksee.1
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
