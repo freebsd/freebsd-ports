@@ -24,6 +24,7 @@
     SUBDIR += notebook
     SUBDIR += offix-trash
     SUBDIR += phpgroupware
+    SUBDIR += phpgw_inventory
     SUBDIR += plan
     SUBDIR += sliderule
     SUBDIR += teapot
