@@ -6,7 +6,7 @@
 
 PORTNAME=	ksh93
 PORTVERSION=	${VERSION:S/-//g}
-VERSION=	2002-03-17
+VERSION=	2002-06-14
 CATEGORIES=	shells
 MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
 DISTNAME=	${PORTNAME}-${VERSION}
@@ -18,15 +18,15 @@ MAINTAINER=	naddy@FreeBSD.org
 RESTRICTED=	"Source recipient must acknowledge license"
 
 NO_WRKSUBDIR=	yes
-MAKE_ARGS=	CC='${CC}' CCFLAGS='${CFLAGS}' SHELL='${SH}'
+MAKE_ENV=	CCFLAGS="${CFLAGS}" SHELL="${SH}"
 .if defined(WANT_STATIC)
-MAKE_ARGS+=	LDFLAGS=-static
+MAKE_ENV+=	LDFLAGS=-static
 .endif
 
 MAN1=		ksh93.1
 
 do-build:
-	@cd ${WRKSRC}; ./bin/package make ${MAKE_ARGS}
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./bin/package make
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arch/freebsd.${ARCH}/bin/ksh \
