@@ -1,0 +1,13 @@
+*** xio.c.orig	Thu Oct  7 23:24:38 1999
+--- xio.c	Tue Aug  1 15:57:33 2000
+*************** xio_open_dpy(char *dpy, int argc, char *
+*** 170,175 ****
+--- 170,177 ----
+      if (not(xio = malloc(sizeof(*xio))))
+  	goto fail1;
+  
++     bzero(xio, sizeof *xio);
++ 
+      if (not(xio->dpy = XOpenDisplay(dpy)))
+  	goto fail2;
+  
