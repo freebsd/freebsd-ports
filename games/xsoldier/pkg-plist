@@ -1,4 +1,5 @@
 bin/xsoldier
+lib/X11/xsoldier/.scorefile
 lib/X11/xsoldier/Boss1.xpm
 lib/X11/xsoldier/Boss2.xpm
 lib/X11/xsoldier/Boss3.xpm
@@ -28,5 +29,3 @@ lib/X11/xsoldier/PlayerShot3.xpm
 lib/X11/xsoldier/Star1.xpm
 lib/X11/xsoldier/Star2.xpm
 lib/X11/xsoldier/Title.xpm
-lib/X11/xsoldier/.scorefile
-@dirrm lib/X11/xsoldier
