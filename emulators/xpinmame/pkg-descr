@@ -1,0 +1,9 @@
+xpinmame is the X11 port of PinMAME, the Pinball Console emulator.
+
+It runs pinball roms from Williams/Bally games, from 1977 onwards to
+the new WPC system, around 1998. It also runs some Data East games.
+
+It includes simulators to artificially press the 'switches' on the table,
+however it does not simulate any game play, nor a real pinball table.
+
+WWW: http://pinmame.emuviews.com/
