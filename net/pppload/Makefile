@@ -3,7 +3,7 @@
 # Date created:        30 January 1998
 # Whom:                Sean Cole <scole@aracnet.com>
 #
-# $Id: Makefile,v 1.3 1998/02/19 09:51:47 obrien Exp $
+# $Id: Makefile,v 1.4 1998/02/19 12:42:50 asami Exp $
 #
 
 DISTNAME=	pppload-1.0
@@ -12,8 +12,8 @@ MASTER_SITES=	http://sunsite.unc.edu/pub/Linux/system/network/serial/ppp/
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt
-LIB_DEPENDS=	qt:${PORTSDIR}/x11/qt
+BUILD_DEPENDS=	moc:${PORTSDIR}/x11-toolkits/qt
+LIB_DEPENDS=	qt:${PORTSDIR}/x11-toolkits/qt
 
 MAN1=		pppload.1
 

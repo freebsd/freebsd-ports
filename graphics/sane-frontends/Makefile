@@ -4,7 +4,7 @@
 # Whom:                 gary@hotlava.com
 #			obrien@FreeBSD.org
 #
-# $Id: Makefile,v 1.4 1998/05/26 08:17:56 dburr Exp $
+# $Id: Makefile,v 1.5 1998/07/12 22:31:09 steve Exp $
 #
 
 DISTNAME=       sane-0.73
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/ \
 
 MAINTAINER=	gary@hotlava.com
 
-LIB_DEPENDS=	gtk\\.1\\.:${PORTSDIR}/x11/gtk
+LIB_DEPENDS=	gtk\\.1\\.:${PORTSDIR}/x11-toolkits/gtk
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -3,7 +3,7 @@
 # Date created:		01 Jul 1998
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id: Makefile,v 1.8 1998/07/31 15:39:37 jseger Exp $
+# $Id: Makefile,v 1.9 1998/08/05 09:30:49 asami Exp $
 #
 
 DISTNAME=	GXedit1.07
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=     dom@myrddin.demon.co.uk
 
-LIB_DEPENDS=	gtk\\.1\\.4:${PORTSDIR}/x11/gtk
+LIB_DEPENDS=	gtk\\.1\\.4:${PORTSDIR}/x11-toolkits/gtk
 
 EXTRACT_BEFORE_ARGS= -xf
 USE_X_PREFIX=	yes

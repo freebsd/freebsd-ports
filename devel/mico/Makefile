@@ -3,7 +3,7 @@
 # Date created:        31 March 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/04 20:41:51 steve Exp $
 #
 
 DISTNAME=	mico-2.0.6
@@ -12,8 +12,8 @@ MASTER_SITES=	http://diamant-atm.vsb.cs.uni-frankfurt.de/~mico/
 
 MAINTAINER=	Nakai@technologist.com
 
-BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt
-LIB_DEPENDS=	gtk\\.1\\.0:${PORTSDIR}/x11/gtk
+BUILD_DEPENDS=	moc:${PORTSDIR}/x11-toolkits/qt
+LIB_DEPENDS=	gtk\\.1\\.0:${PORTSDIR}/x11-toolkits/gtk
 
 WRKSRC=		${WRKDIR}/mico
 

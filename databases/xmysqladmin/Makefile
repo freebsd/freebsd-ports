@@ -3,7 +3,7 @@
 # Date created:			Di   2 Sep 1997 16:29:27 CEST
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.5 1998/03/02 18:42:21 andreas Exp $
+# $Id: Makefile,v 1.6 1998/08/05 09:30:47 asami Exp $
 #
 
 DISTNAME=	xmysqladmin-0.4.4
@@ -17,7 +17,7 @@ MAINTAINER=	andreas@FreeBSD.ORG
 
 BUILD_DEPENDS=	mysql:${PORTSDIR}/databases/mysql
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
-		xforms\\.0\\.:${PORTSDIR}/x11/xforms
+		xforms\\.0\\.:${PORTSDIR}/x11-toolkits/xforms
 
 WRKSRC=		${WRKDIR}/xmysqladmin
 USE_X_PREFIX=	yes

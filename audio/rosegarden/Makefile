@@ -3,7 +3,7 @@
 # Date created:		04 Aug 1996
 # Whom:			shanee
 #
-# $Id: Makefile,v 1.3 1996/08/18 13:49:33 chuckr Exp $
+# $Id: Makefile,v 1.4 1997/09/08 12:25:15 tg Exp $
 #
 
 DISTNAME=	rosegarden-2.0.1
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	-sources.tgz
 
 MAINTAINER=	shanee@augusta.de
 
-LIB_DEPENDS=	Xaw3d\\.6\\.:$(PORTSDIR)/x11/Xaw3d
+LIB_DEPENDS=	Xaw3d\\.6\\.:$(PORTSDIR)/x11-toolkits/Xaw3d
 RUN_DEPENDS=	playmidi:${PORTSDIR}/audio/playmidi
 
 ALL_TARGET=	all ROSEGARDEN=$(WRKSRC) SYSLIBS="\"-lXaw3d -lXext -lXmu -lXt -lX11\"" SYSEXTRALIBS=""

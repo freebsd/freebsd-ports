@@ -3,7 +3,7 @@
 # Date created:         Jan 15 1998
 # Whom:                 brianfeldman@hotmail.com
 #
-# $Id: Makefile,v 1.4 1998/03/07 15:38:45 hoek Exp $
+# $Id: Makefile,v 1.5 1998/04/14 09:27:21 jkh Exp $
 #
 
 DISTNAME=	tkirc1.202
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.informatik.uni-oldenburg.de/pub/tkirc/
 MAINTAINER=	brianfeldman@hotmail.com
 
 RUN_DEPENDS=	irc:${PORTSDIR}/net/ircII \
-		wish8.0:${PORTSDIR}/x11/tk80
+		wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 WRKSRC=		${WRKDIR}/tkirc
 NO_BUILD=	yes

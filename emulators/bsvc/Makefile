@@ -3,7 +3,7 @@
 # Date created:		03-Mar-1997
 # Whom:			tenser
 #
-# $Id: Makefile,v 1.5 1998/04/04 13:14:19 jseger Exp $
+# $Id: Makefile,v 1.6 1998/04/05 07:30:56 asami Exp $
 #
 
 DISTNAME=	bsvc-2.0
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	-src.tar.z
 
 MAINTAINER=	tenser@spitfire.ecsel.psu.edu
 
-RUN_DEPENDS=	wish4.1:${PORTSDIR}/x11/tk41
+RUN_DEPENDS=	wish4.1:${PORTSDIR}/x11-toolkits/tk41
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 

@@ -3,7 +3,7 @@
 # Date created:				25 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/08/05 09:31:40 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/07 22:33:11 asami Exp $
 #
 
 DISTNAME=	dfm-0.9.8
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www-c.informatik.uni-hannover.de/~kaiser/dfm/
 MAINTAINER=	andy@icc.surw.chel.su
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
-		xforms\\.0\\.:${PORTSDIR}/x11/xforms
+		xforms\\.0\\.:${PORTSDIR}/x11-toolkits/xforms
 
 USE_X_PREFIX=	yes
 

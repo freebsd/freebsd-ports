@@ -3,7 +3,7 @@
 # Date created:			14 September, 1997
 # Whom:				kline
 #
-# $Id: Makefile,v 1.3 1998/02/21 22:37:53 fenner Exp $
+# $Id: Makefile,v 1.4 1998/08/07 22:17:52 asami Exp $
 #
 
 DISTNAME=	cbb-0.73
@@ -14,9 +14,9 @@ MASTER_SITES=	ftp://ftp.me.umn.edu/pub/finance/ \
 MAINTAINER=	kline@thought.org
 
 #	extern.conf could easily be patched to use `plan' over `ical'
-RUN_DEPENDS=	wish4.2:${PORTSDIR}/x11/tk42 \
+RUN_DEPENDS=	wish4.2:${PORTSDIR}/x11-toolkits/tk42 \
 		ical:${PORTSDIR}/misc/ical
-LIB_DEPENDS=    tk42\\.1\\.:${PORTSDIR}/x11/tk42
+LIB_DEPENDS=    tk42\\.1\\.:${PORTSDIR}/x11-toolkits/tk42
 
 NO_BUILD=       yes
 USE_PERL5=	yes

@@ -3,7 +3,7 @@
 # Date created:         22 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.18 1997/10/08 13:10:20 jmz Exp $
+# $Id: Makefile,v 1.20 1998/03/20 14:35:25 tg Exp $
 #
 
 DISTNAME=	xcd-1.6
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
 
 MAINTAINER=	jmz@FreeBSD.org
 
-RUN_DEPENDS=    wish8.0:${PORTSDIR}/x11/tk80
+RUN_DEPENDS=    wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 WRKSRC=		${WRKDIR}/xcd
 MAN1=		cdplayer.1 xcd.1

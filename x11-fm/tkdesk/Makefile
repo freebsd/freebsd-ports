@@ -3,7 +3,7 @@
 # Date created:         30 Jul 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
-# $Id: Makefile,v 1.7 1998/05/03 15:12:36 jseger Exp $
+# $Id: Makefile,v 1.8 1998/08/07 22:33:12 asami Exp $
 #
 
 DISTNAME=	tkdesk-1.0
@@ -12,7 +12,7 @@ MASTER_SITES=	http://people.mainz.netsurf.de/~bolik/tkdesk/
 
 MAINTAINER=	dmlb@ragnet.demon.co.uk
 
-LIB_DEPENDS=	tk42\\.1\\.:${PORTSDIR}/x11/tk42
+LIB_DEPENDS=	tk42\\.1\\.:${PORTSDIR}/x11-toolkits/tk42
 
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES

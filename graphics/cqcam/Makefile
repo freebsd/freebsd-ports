@@ -3,7 +3,7 @@
 # Date created:		29 Oct 1997
 # Whom:			Kensaku Masuda <greg@greg.rim.or.jp>
 #
-# $Id: Makefile,v 1.2 1998/02/21 22:37:54 fenner Exp $
+# $Id: Makefile,v 1.4 1998/03/20 14:35:11 tg Exp $
 #
 
 DISTNAME=	cqcam-0.45a
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11-toolkits/tk80
 
 MAN1=		cqcam.1
 

@@ -3,7 +3,7 @@
 # Date created:		15 April 1997
 # Whom:			Kiriyama Kazuhiko<kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.5 1998/04/18 12:54:18 itojun Exp $
+# $Id: Makefile,v 1.6 1998/06/04 18:28:10 itojun Exp $
 #
 
 DISTNAME=	GP-2.5
@@ -47,7 +47,7 @@ WITH_RUN=	${PREFIX}/bin/wish4.2jp:${PORTSDIR}/japanese/tk42 \
 DOCDIRNAME=	Doc
 DOCEXT=
 WITH_LIB=	tcl76\\.1\\.:${PORTSDIR}/lang/tcl76
-WITH_RUN=	${PREFIX}/bin/wish4.2:${PORTSDIR}/x11/tk42 \
+WITH_RUN=	${PREFIX}/bin/wish4.2:${PORTSDIR}/x11-toolkits/tk42 \
 		${PREFIX}/bin/a2ps:${PORTSDIR}/print/a2ps \
 		${X11BASE}/bin/xdvi:${PORTSDIR}/print/xdvi \
 		${PREFIX}/bin/dvips:${PORTSDIR}/print/dvips

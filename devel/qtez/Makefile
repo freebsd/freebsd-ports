@@ -3,7 +3,7 @@
 # Date created:				14 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.6 1998/07/02 05:56:47 tg Exp $
+# $Id: Makefile,v 1.7 1998/08/05 09:30:48 asami Exp $
 #
 
 DISTNAME=	QTEZ-v0.62a
@@ -15,8 +15,8 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt
-LIB_DEPENDS=	qt\\.1\\.:${PORTSDIR}/x11/qt
+BUILD_DEPENDS=	moc:${PORTSDIR}/x11-toolkits/qt
+LIB_DEPENDS=	qt\\.1\\.:${PORTSDIR}/x11-toolkits/qt
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

@@ -3,7 +3,7 @@
 # Date created:				21 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/07/27 23:25:33 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/05 09:31:03 asami Exp $
 #
 
 DISTNAME=	xvmahjongg2.1
@@ -15,8 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	xview\\.3\\.2:${PORTSDIR}/x11/xview-lib \
-		olgx\\.3\\.2:${PORTSDIR}/x11/xview-lib
+LIB_DEPENDS=	xview\\.3\\.2:${PORTSDIR}/x11-toolkits/xview-lib \
+		olgx\\.3\\.2:${PORTSDIR}/x11-toolkits/xview-lib
 
 ALL_TARGET=	mahjongg.swap
 USE_X_PREFIX=	yes

@@ -3,7 +3,7 @@
 # Date Created:		9 Feb 1997
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.12 1998/03/20 14:35:27 tg Exp $
+# $Id: Makefile,v 1.13 1998/06/14 17:50:49 hoek Exp $
 #
 
 DISTNAME=	uudeview-0.5.13
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/ \
 
 MAINTAINER=	hoek@FreeBSD.ORG
 
-LIB_DEPENDS=    tk80\\.1\\.:${PORTSDIR}/x11/tk80 \
+LIB_DEPENDS=    tk80\\.1\\.:${PORTSDIR}/x11-toolkits/tk80 \
 		uu\\.1\\.:${PORTSDIR}/converters/uulib
 
 GNU_CONFIGURE=	yes

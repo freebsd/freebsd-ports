@@ -3,7 +3,7 @@
 # Date created:				18 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/12 23:53:06 steve Exp $
+# $Id: Makefile,v 1.2 1998/08/05 09:30:52 asami Exp $
 #
 
 DISTNAME=		bogged-1.0.0
@@ -14,7 +14,7 @@ EXTRACT_SUFX=		.gz
 
 MAINTAINER=		andy@icc.surw.chel.su
 
-RUN_DEPENDS=		wish8.0:${PORTSDIR}/x11/tk80
+RUN_DEPENDS=		wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 EXTRACT_CMD=		${CP}
 EXTRACT_BEFORE_ARGS=

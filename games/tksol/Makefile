@@ -3,7 +3,7 @@
 # Date created:         26 June 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.9 1997/11/22 20:48:34 jseger Exp $
+# $Id: Makefile,v 1.11 1998/03/20 14:35:22 tg Exp $
 #
 
 DISTNAME=       tksol-1.0
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	tg@freebsd.org
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/release

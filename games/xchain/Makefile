@@ -3,7 +3,7 @@
 # Date created:				13 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/07/27 23:24:51 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/05 09:30:58 asami Exp $
 #
 
 DISTNAME=	xchain_1.0-2
@@ -13,7 +13,7 @@ MASTER_SITES=	http://thor.cam.ac.uk/~ac212/xchain/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/xchain-1.0

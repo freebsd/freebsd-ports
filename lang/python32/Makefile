@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.36 1998/07/23 07:49:12 tg Exp $
+# $Id: Makefile,v 1.37 1998/07/28 06:59:45 tg Exp $
 #
 
 DISTNAME=       pyth151
@@ -46,7 +46,7 @@ SETUP_FILE=	Setup
 #
 WITH_TK?=	yes
 .if defined(WITH_TK) && $(WITH_TK) == yes
-TK_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11/tk80
+TK_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11-toolkits/tk80
 SETUP_LOCAL=	Setup.tk
 .endif
 

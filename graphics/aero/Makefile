@@ -3,7 +3,7 @@
 # Date created:         Mon Aug 28 13:35:31 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.8 1998/05/11 03:16:04 steve Exp $
+# $Id: Makefile,v 1.9 1998/08/05 09:31:07 asami Exp $
 #
 
 DISTNAME=	aero_1.7.0_src
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.ee.uwa.edu.au/users/braunl/aero/
 
 MAINTAINER=	erich@FreeBSD.org
 
-BUILD_DEPENDS=	${X11BASE}/lib/libfwf.a:${PORTSDIR}/x11/FWF
+BUILD_DEPENDS=	${X11BASE}/lib/libfwf.a:${PORTSDIR}/x11-toolkits/FWF
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
 LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 

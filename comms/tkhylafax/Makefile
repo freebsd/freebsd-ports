@@ -3,7 +3,7 @@
 # Date created:		Sun Jun  8 11:51:21 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.4 1997/10/09 21:04:47 andreas Exp $
+# $Id: Makefile,v 1.5 1998/02/21 22:38:07 fenner Exp $
 #
 
 DISTNAME=	tkhylafax-3.0b2
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.NeoSoft.com/tcl/ftparchive/sorted/comm/tkhylafax-3.0b2/
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
-RUN_DEPENDS=	wish4.2:${PORTSDIR}/x11/tk42 \
+RUN_DEPENDS=	wish4.2:${PORTSDIR}/x11-toolkits/tk42 \
 		sendfax:${PORTSDIR}/comms/hylafax \
 		gs:${PORTSDIR}/print/ghostscript4 \
 		gv:${PORTSDIR}/print/gv

@@ -3,7 +3,7 @@
 # Date created:		11 July 1998
 # Whom:			Adrian Wontroba <aw1@stade.co.uk>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/12 22:49:03 steve Exp $
+# $Id: Makefile,v 1.2 1998/08/05 09:31:38 asami Exp $
 #
 
 DISTNAME=	xlogmaster-1.2.2
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	aw1@stade.co.uk
 
-LIB_DEPENDS=	gtk\\.1\\.:${PORTSDIR}/x11/gtk
+LIB_DEPENDS=	gtk\\.1\\.:${PORTSDIR}/x11-toolkits/gtk
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

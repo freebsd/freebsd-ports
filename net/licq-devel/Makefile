@@ -3,7 +3,7 @@
 # Date created:                         2 July 1998
 # Whom:                                 Brian Feldman
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/02 03:22:36 eivind Exp $
+# $Id: Makefile,v 1.1.1.1 1998/07/09 16:01:50 eivind Exp $
 #
 
 DISTNAME=	licq-0.32-a
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	brianfeldman@hotmail.com
 
-LIB_DEPENDS=	qt\\.1\\.33:${PORTSDIR}/x11/qt133
+LIB_DEPENDS=	qt\\.1\\.33:${PORTSDIR}/x11-toolkits/qt133
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

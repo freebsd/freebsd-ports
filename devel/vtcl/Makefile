@@ -3,7 +3,7 @@
 # Date Created:		29 May 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.8 1998/03/20 14:35:24 tg Exp $
+# $Id: Makefile,v 1.9 1998/07/27 23:24:12 asami Exp $
 #
 
 DISTNAME=	vt-1.11
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.neuron.com/stewart/vtcl/dload/ \
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 WRKSRC=		${WRKDIR}/vtcl
 NO_BUILD=	yes

@@ -3,7 +3,7 @@
 # Date created:		May 1 1997
 # Whom:			Eric A. Griff <eagriff@global2000.net>
 #
-# $Id: Makefile,v 1.2 1997/10/15 22:46:03 max Exp $
+# $Id: Makefile,v 1.3 1998/08/05 09:31:23 asami Exp $
 #
 
 DISTNAME=	apc-1.0
@@ -12,7 +12,7 @@ MASTER_SITES= 	http://members.global2000.net/~eagriff/
 
 MAINTAINER= 	eagriff@global2000.net
 
-LIB_DEPENDS=	xforms\\.0\\.86:${PORTSDIR}/x11/xforms
+LIB_DEPENDS=	xforms\\.0\\.86:${PORTSDIR}/x11-toolkits/xforms
 
 USE_X_PREFIX=	YES
 MAN1=		apc.1

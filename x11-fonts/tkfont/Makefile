@@ -3,7 +3,7 @@
 # Date created:		11 May 1998
 # Whom:			Brett Taylor
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/17 04:44:51 mph Exp $
+# $Id: Makefile,v 1.2 1998/08/07 22:43:09 asami Exp $
 #
 
 DISTNAME=	tkfont-1.1
@@ -12,7 +12,7 @@ MASTER_SITES=	http://cdrom.com/pub/linux/tsx-11/sources/usr.bin.X11/
 
 MAINTAINER=     brett@peloton.physics.montana.edu
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 NO_BUILD=	yes
 

@@ -3,7 +3,7 @@
 # Date created:         02 Aug 1996
 # Whom:                 shanee@augusta.de
 #
-# $Id: Makefile,v 1.11 1997/10/31 08:30:45 tg Exp $
+# $Id: Makefile,v 1.13 1998/03/20 14:35:16 tg Exp $
 #
 
 DISTNAME=	tkcvs-6.0
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/sorted/apps/tkcvs-6.0/ \
 
 MAINTAINER=	shanee@augusta.de
 
-LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11-toolkits/tk80
 
 NO_BUILD=	yes
 MAN1=		tkcvs.1 tkdiff.1

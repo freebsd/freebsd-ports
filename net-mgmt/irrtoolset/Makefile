@@ -3,7 +3,7 @@
 # Date created:				May 4th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1998/02/08 03:01:22 hoek Exp $
+# $Id: Makefile,v 1.5 1998/02/12 15:47:38 hoek Exp $
 #
 
 DISTNAME=	RAToolSet-3.5.2
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.isi.edu/ra/RAToolSet/
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
+LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11-toolkits/tk41
 
 GNU_CONFIGURE=	Yes
 CONFIGURE_ENV=	TCL_TK_INCLUDE_DIR="${PREFIX}/include/tcl7.5: \

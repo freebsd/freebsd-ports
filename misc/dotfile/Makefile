@@ -3,7 +3,7 @@
 # Date created:      11/12/96
 # Whom:              oly@world.std.com
 #
-# $Id: Makefile,v 1.9 1998/02/25 16:14:31 steve Exp $
+# $Id: Makefile,v 1.10 1998/02/26 03:29:53 steve Exp $
 #
 
 DISTNAME=	dotfile-2.2
@@ -12,8 +12,8 @@ MASTER_SITES=	ftp://ftp.imada.ou.dk/pub/dotfile/
 
 MAINTAINER=	oly@world.std.com
 
-LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11-toolkits/tk80
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 GNU_CONFIGURE=	yes
 MAN1=		dotfile.1

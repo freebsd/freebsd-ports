@@ -3,7 +3,7 @@
 # Date created:		30 May 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.7 1998/08/07 19:20:19 asami Exp $
+# $Id: Makefile,v 1.8 1998/08/07 22:56:38 asami Exp $
 #
 
 DISTNAME=	pygtk-0.4.5
@@ -19,7 +19,7 @@ MAINTAINER=	ports@FreeBSD.ORG
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
-LIB_DEPENDS=	gtk\\.1\\.:${PORTSDIR}/x11/gtk
+LIB_DEPENDS=	gtk\\.1\\.:${PORTSDIR}/x11-toolkits/gtk
 
 BROKEN=		glib.h
 
