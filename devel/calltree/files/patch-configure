@@ -1,0 +1,19 @@
+--- configure.orig	Sat Jul 31 20:09:02 2004
++++ configure	Sat Jul 31 20:09:18 2004
+@@ -3212,16 +3212,9 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
+-int
+-main ()
+-{
+-
+ #include "vg_skin.h"
+ int main() { return 0 ; }
+ 
+-  ;
+-  return 0;
+-}
+ _ACEOF
+ rm -f conftest.$ac_objext
+ if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
