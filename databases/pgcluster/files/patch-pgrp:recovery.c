@@ -1,5 +1,5 @@
---- src/pgcluster/pgrp/recovery.c	16 Apr 2004 10:17:45 -0000	1.1.1.4
-+++ src/pgcluster/pgrp/recovery.c	16 Apr 2004 10:21:06 -0000	1.5
+--- src/pgcluster/pgrp/recovery.c.orig	Thu Jun 24 22:08:25 2004
++++ src/pgcluster/pgrp/recovery.c	Thu Jun 24 22:08:25 2004
 @@ -121,7 +121,7 @@
  	int packet_size = 0;
  
@@ -86,7 +86,7 @@
  		PGRset_recovery_packet_no(packet, RECOVERY_ERROR_CONNECTION);
  		status = send_packet(Target, packet);
  		reset_recovery_prepare();
-@@ -387,14 +387,14 @@
+@@ -387,18 +387,18 @@
  	Master->sock = -1;
  	Master->port = master->port;
  	Master->recoveryPort = master->recoveryPort;
@@ -102,17 +102,13 @@
 +		show_error("connection error , master may be down");
  		PGRset_host_status(master,DB_TBL_ERROR);
  		goto retry_connect_master ;
- 		/*
-@@ -405,7 +405,7 @@
- 		return loop_end;
- 		*/
  	}
 -	
 +
  	/*
  	 * start prepare of recovery
  	 *     set recovery status to "prepare start"
-@@ -415,10 +415,10 @@
+@@ -408,10 +408,10 @@
  	/*
  	 * wait answer from master server 
  	 */
@@ -125,7 +121,7 @@
  	if (ntohs(packet->packet_no) == RECOVERY_PGDATA_ANS)
  	{
  		/*
-@@ -461,7 +461,7 @@
+@@ -454,7 +454,7 @@
  	status = PGRwait_transaction_count_clear();
  	if (status != STATUS_OK)
  	{
@@ -134,7 +130,7 @@
  		PGRset_recovery_packet_no(packet, RECOVERY_ERROR_CONNECTION);
  		status = send_packet(Target,packet);
  		status = send_packet(Master,packet);
-@@ -479,7 +479,7 @@
+@@ -472,7 +472,7 @@
  		/*
  		 * connection error , master may be down
  		 */
@@ -143,7 +139,7 @@
  		PGRset_recovery_packet_no(packet, RECOVERY_ERROR_CONNECTION);
  		status = send_packet(Target,packet);
  		status = send_packet(Master,packet);
-@@ -508,7 +508,7 @@
+@@ -501,7 +501,7 @@
  	}
  	else
  	{
@@ -152,7 +148,7 @@
  		PGRset_recovery_packet_no(packet, RECOVERY_ERROR_CONNECTION);
  		status = send_packet(Target,packet);
  		status = send_packet(Master,packet);
-@@ -538,23 +538,23 @@
+@@ -531,23 +531,23 @@
  
  	if (master == (RecoveryTbl *)NULL)
  	{
@@ -181,7 +177,7 @@
  			return STATUS_ERROR;
  		}
  	}
-@@ -621,7 +621,7 @@
+@@ -617,7 +617,7 @@
  	{
  		free(msg_header);
  	}
@@ -190,7 +186,7 @@
  	return status;
  }
  
-@@ -642,7 +642,7 @@
+@@ -638,7 +638,7 @@
  	set_function("pgrecovery_loop");
  
  	count = 0;
@@ -199,7 +195,7 @@
  	while ((status = PGR_Create_Acception(fd,&sock,"",Recovery_Port_Number)) != STATUS_OK)
  	{
  		show_error("PGR_Create_Acception failed");
-@@ -682,7 +682,7 @@
+@@ -678,7 +678,7 @@
  			continue;
  		}
  
@@ -208,7 +204,7 @@
  
  		switch (ntohs(packet.packet_no))
  		{
-@@ -739,7 +739,7 @@
+@@ -736,7 +736,7 @@
  					status = send_packet(&Target,&packet);
  				}
  				/*
@@ -217,7 +213,7 @@
  				 */
  				finish_recovery();
  				loop_end = true;
-@@ -752,7 +752,7 @@
+@@ -749,7 +749,7 @@
  				memset((char *)&MasterPacketData,0,sizeof(RecoveryPacket));
  				break;
  			case RECOVERY_ERROR_ANS : 
@@ -226,12 +222,3 @@
  				status = PGRsend_queue(&Master,NULL);
  				memset(&packet,0,sizeof(RecoveryPacket));
  				PGRset_recovery_packet_no(&packet, RECOVERY_ERROR_ANS);
-@@ -807,7 +807,7 @@
- 		 */
- 		FD_ZERO(&rmask);
- 		FD_SET(fd,&rmask);
--		show_debug("wait recovery\n");
-+		show_debug("wait recovery");
- 		rtn = select(fd+1, &rmask, (fd_set *)NULL, (fd_set *)NULL, &timeout);
- 		if (rtn && FD_ISSET(fd, &rmask))
- 		{
