@@ -34,6 +34,10 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not build on alpha"
+.endif
+
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/tutorial/ginac.info*
 

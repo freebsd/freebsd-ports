@@ -34,8 +34,8 @@ CFLAGS+=	-DRL_NO_COMPAT -DKGDB
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		"Does not build on ia64 or sparc64"
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64" || ${ARCH} == "alpha"
+BROKEN=		"Does not build on ia64, sparc64 or alpha"
 .endif
 
 .if ${OSVERSION} < 500000

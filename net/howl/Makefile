@@ -24,9 +24,15 @@ MAN8=		mDNSResponder.8
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread||g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
 		-E -e '/^library_includedir[[:space:]]*=/s^\$$[(]includedir[)]/howl^$$(includedir)/howl-${PORTVERSION}^g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
