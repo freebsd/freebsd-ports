@@ -6274,6 +6274,7 @@ py-gtk		ports/x11-toolkits/py-gtk
 py-gtkscintilla	ports/x11-toolkits/py-gtkscintilla
 py-htmlkit	ports/devel/py-htmlkit
 py-iconv	ports/converters/py-iconv
+py-id3		ports/audio/py-id3
 py-imaging	ports/graphics/py-imaging
 py-imaging-handbook	ports/graphics/py-imaging-handbook
 py-ipy		ports/net/py-ipy
