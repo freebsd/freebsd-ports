@@ -2421,6 +2421,7 @@ gj		ports/java/gj
 gj-jdk11	ports/java/gj-jdk11
 gkermit		ports/comms/gkermit
 gkleds2		ports/sysutils/gkleds2
+gkrellfire	ports/sysutils/gkrellfire
 gkrellflynn	ports/sysutils/gkrellflynn
 gkrellkam	ports/graphics/gkrellkam
 gkrellkam2	ports/graphics/gkrellkam2
