@@ -1,0 +1,11 @@
+--- src/Makefile.orig	Sun May 30 12:04:56 1999
++++ src/Makefile	Sun May 30 12:05:12 1999
+@@ -7,7 +7,7 @@
+ 
+ INCDIR = -I/usr/X11R6/include -I.
+ LIBDIR = -L/usr/X11R6/lib
+-CFLAGS = -O2 -m486 -s -fomit-frame-pointer -Wall
++CFLAGS+= -s -fomit-frame-pointer -Wall
+ LIBS = -lXpm -lXext -lX11 -lm
+ 
+ ###############################################################################
