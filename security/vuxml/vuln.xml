@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+   <vuln vid="a5742055-300a-11d9-a9e7-0001020eed82">
+    <topic>p5-Archive-Zip -- virus detection evasion</topic>
+    <affects>
+      <package>
+	<name>p5-Archive-Zip</name>
+	<range><lt>1.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An AMaViS Security Announcement reports that a
+	  vulnerability exist in the Archive::Zip Perl module which
+	  may lead to bypass of malicious code in anti-virus programs
+	  by creating specially crafted ZIP files.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.idefense.com/application/poi/display?id=153&amp;type=vulnerabilities</url>
+      <url>http://www.amavis.org/security/asa-2004-6.txt</url>
+      <url>http://rt.cpan.org/NoAuth/Bug.html?id=8077</url>
+    </references>
+    <dates>
+      <discovery>2004-10-18</discovery>
+      <entry>2004-11-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6e6a6b8a-2fde-11d9-b3a2-0050fc56d258">
     <topic>apache mod_include buffer overflow vulnerability</topic>
     <affects>
