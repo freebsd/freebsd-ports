@@ -275,6 +275,7 @@
     SUBDIR += nibbles
     SUBDIR += nighthawk
     SUBDIR += nil
+    SUBDIR += njam
     SUBDIR += nonsense
     SUBDIR += nwnusers
     SUBDIR += oilwar
