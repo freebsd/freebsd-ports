@@ -7,20 +7,17 @@
 #
 
 PORTNAME=	spinner
-PORTVERSION=	1.1
+PORTVERSION=	1.2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.laffeycomputer.com/current_builds/spinner/
 
 MAINTAINER=	mich@freebsdcluster.org
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2 ||g ; \
-		s|gcc |\$$\(CC\) |g' ${WRKSRC}/Makefile
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/spinner ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/spinner ${PREFIX}/sbin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
