@@ -1,18 +1,18 @@
 # New ports collection makefile for:	knapster
-# Version required:			0.3
+# Version required:			0.5
 # Date created:				06 January 2000
 # Whom:					Chris D. Faulhaber <jedgar@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	knapster-0.3
+DISTNAME=	knapster-0.5
 CATEGORIES=	audio kde
-MASTER_SITES=	http://www.chariot.net.au/~donoghue/
+MASTER_SITES=	http://knapster.netpedia.net/packages/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/aclocal:${PORTSDIR}/devel/automake
+#BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11
 RUN_DEPENDS=	${LOCALBASE}/bin/kdehelp:${PORTSDIR}/x11/kdebase11
 
