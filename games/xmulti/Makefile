@@ -3,18 +3,18 @@
 # Date created:        4 Jun 1998
 # Whom:                Toru YANO <toru@s-fine.co.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/23 02:52:44 flathill Exp $
+# $Id: Makefile,v 1.1.1.1 1998/11/24 09:14:07 flathill Exp $
 #
 
 DISTNAME=	xmul200b4
 PKGNAME=	xmulti-2.00b4
 CATEGORIES=	games
-MASTER_SITES=	http://cclub.cc.tut.ac.jp/~go/xmulti/
+MASTER_SITES=	http://www.denpa.org/~go/xmulti/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	toru@s-fine.co.jp
+MAINTAINER=	toru@tenchi.ne.jp
 
-WRKSRC=        ${WRKDIR}/xmulti200beta4
+WRKSRC=		${WRKDIR}/xmulti200beta4
 
 USE_IMAKE=	yes
 
