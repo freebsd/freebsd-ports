@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Finance-QuoteHist
-PORTVERSION=	0.25
+PORTVERSION=	0.28
 CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Finance
@@ -24,9 +24,8 @@ PERL_CONFIGURE=		yes
 
 MAN3=		Finance::QuoteHist::Yahoo.3 \
 		Finance::QuoteHist.3 \
-		Finance::QuoteHist::MotleyFool.3 \
+		Finance::QuoteHist::WallStreetCity.3 \
 		Finance::QuoteHist::SiliconInvestor.3 \
-		Finance::QuoteHist::FinancialWeb.3 \
 		Finance::QuoteHist::Generic.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
