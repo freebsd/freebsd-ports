@@ -1,51 +1,67 @@
 bin/blackbox
 bin/bsetroot
 bin/bsetbg
-share/Blackbox/menu
-share/Blackbox/nls/C/blackbox.cat
-share/Blackbox/nls/da_DK/blackbox.cat
-share/Blackbox/nls/es_ES/blackbox.cat
-share/Blackbox/nls/et_EE/blackbox.cat
-share/Blackbox/nls/fr_FR/blackbox.cat
-share/Blackbox/nls/pt_BR/blackbox.cat
-share/Blackbox/nls/ru_RU/blackbox.cat
-share/Blackbox/nls/sv_SE/blackbox.cat
-share/Blackbox/nls/tr_TR/blackbox.cat
-share/Blackbox/styles/Artwiz
-share/Blackbox/styles/Cthulhain
-share/Blackbox/styles/Flux
-share/Blackbox/styles/Minimal
-share/Blackbox/styles/Nyz
-share/Blackbox/styles/Operation
-share/Blackbox/styles/Outcomes
-share/Blackbox/styles/Rampage
-share/Blackbox/styles/Rancor
-share/Blackbox/styles/Results
-share/Blackbox/styles/Shade
-share/Blackbox/styles/Spiff
-share/Blackbox/styles/TDF
-share/Blackbox/styles/Twice
-@dirrm share/Blackbox/nls/C
-@dirrm share/Blackbox/nls/da_DK
-@dirrm share/Blackbox/nls/es_ES
-@dirrm share/Blackbox/nls/et_EE
-@dirrm share/Blackbox/nls/fr_FR
-@dirrm share/Blackbox/nls/pt_BR
-@dirrm share/Blackbox/nls/ru_RU
-@dirrm share/Blackbox/nls/sv_SE
-@dirrm share/Blackbox/nls/tr_TR
-@exec ln -s C %D/share/Blackbox/nls/POSIX
-@unexec rm %D/share/Blackbox/nls/POSIX
-@exec ln -s C %D/share/Blackbox/nls/US_ASCII
-@unexec rm %D/share/Blackbox/nls/US_ASCII
-@exec ln -s C %D/share/Blackbox/nls/en
-@unexec rm %D/share/Blackbox/nls/en
-@exec ln -s C %D/share/Blackbox/nls/en_US
-@unexec rm %D/share/Blackbox/nls/en_US
-@exec ln -s es_ES %D/share/Blackbox/nls/es
-@unexec rm %D/share/Blackbox/nls/es
-@exec ln -s fr_FR %D/share/Blackbox/nls/fr
-@unexec rm %D/share/Blackbox/nls/fr
-@dirrm share/Blackbox/nls
-@dirrm share/Blackbox/styles
-@dirrm share/Blackbox
+share/blackbox/menu
+share/blackbox/nls/C/blackbox.cat
+share/blackbox/nls/da_DK/blackbox.cat
+share/blackbox/nls/de_DE/blackbox.cat
+share/blackbox/nls/es_ES/blackbox.cat
+share/blackbox/nls/et_EE/blackbox.cat
+share/blackbox/nls/fr_FR/blackbox.cat
+share/blackbox/nls/it_IT/blackbox.cat
+share/blackbox/nls/ja_JP/blackbox.cat
+share/blackbox/nls/nl_NL/blackbox.cat
+share/blackbox/nls/pt_BR/blackbox.cat
+share/blackbox/nls/ru_RU/blackbox.cat
+share/blackbox/nls/sl_SI/blackbox.cat
+share/blackbox/nls/sv_SE/blackbox.cat
+share/blackbox/nls/tr_TR/blackbox.cat
+share/blackbox/styles/Artwiz
+share/blackbox/styles/Cthulhain
+share/blackbox/styles/Flux
+share/blackbox/styles/Minimal
+share/blackbox/styles/Nyz
+share/blackbox/styles/Operation
+share/blackbox/styles/Outcomes
+share/blackbox/styles/Rampage
+share/blackbox/styles/Rancor
+share/blackbox/styles/Results
+share/blackbox/styles/Shade
+share/blackbox/styles/Spiff
+share/blackbox/styles/TDF
+share/blackbox/styles/Twice
+@dirrm share/blackbox/nls/C
+@dirrm share/blackbox/nls/da_DK
+@dirrm share/blackbox/nls/de_DE
+@dirrm share/blackbox/nls/es_ES
+@dirrm share/blackbox/nls/et_EE
+@dirrm share/blackbox/nls/fr_FR
+@dirrm share/blackbox/nls/it_IT
+@dirrm share/blackbox/nls/ja_JP
+@dirrm share/blackbox/nls/nl_NL
+@dirrm share/blackbox/nls/pt_BR
+@dirrm share/blackbox/nls/ru_RU
+@dirrm share/blackbox/nls/sl_SI
+@dirrm share/blackbox/nls/sv_SE
+@dirrm share/blackbox/nls/tr_TR
+@exec ln -s C %D/share/blackbox/nls/POSIX
+@unexec rm %D/share/blackbox/nls/POSIX
+@exec ln -s C %D/share/blackbox/nls/US_ASCII
+@unexec rm %D/share/blackbox/nls/US_ASCII
+@exec ln -s de_DE %D/share/blackbox/nls/de
+@unexec rm %D/share/blackbox/nls/de
+@exec ln -s C %D/share/blackbox/nls/en
+@unexec rm %D/share/blackbox/nls/en
+@exec ln -s C %D/share/blackbox/nls/en_US
+@unexec rm %D/share/blackbox/nls/en_US
+@exec ln -s es_ES %D/share/blackbox/nls/es
+@unexec rm %D/share/blackbox/nls/es
+@exec ln -s fr_FR %D/share/blackbox/nls/fr
+@unexec rm %D/share/blackbox/nls/fr
+@exec ln -s it_IT %D/share/blackbox/nls/it
+@unexec rm %D/share/blackbox/nls/it
+@exec ln -s nl_NL %D/share/blackbox/nls/nl
+@unexec rm %D/share/blackbox/nls/nl
+@dirrm share/blackbox/nls
+@dirrm share/blackbox/styles
+@dirrm share/blackbox
