@@ -7,6 +7,7 @@
 
 PORTNAME=	eb
 PORTVERSION=	3.3.3
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/net/ndtp/eb/
@@ -54,6 +55,7 @@ APPENDIXFILES=	appendix/cencro-1.0.tar.gz \
 		appendix/plus-2.0.tar.gz \
 		appendix/readers-2.2.tar.gz \
 		appendix/readers2-2.0.tar.gz \
+		appendix/ruigigo-1.0.tar.gz \
 		appendix/superdic98-1.0.tar.gz
 
 DIST_SUBDIR=	eb
