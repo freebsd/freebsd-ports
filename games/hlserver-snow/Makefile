@@ -18,7 +18,7 @@ MAINTAINER=	lioux@FreeBSD.org
 USE_ZIP=	yes
 
 slaveport-post-extract:
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/hl_i386.so ${WRKSRC}/dlls
+	@${CP} ${WRKDIR}/hl_i386.so ${WRKSRC}/dlls
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
