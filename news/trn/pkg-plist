@@ -14,3 +14,4 @@ lib/trn/makedir
 lib/trn/mbox.saver
 lib/trn/newsnews
 lib/trn/norm.saver
+@dirrm lib/trn
