@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.124 1997/12/25 10:56:18 itojun Exp $
+# $Id: Makefile,v 1.125 1997/12/30 23:36:12 wosch Exp $
 #
 
     SUBDIR += acron
@@ -46,6 +46,8 @@
     SUBDIR += tkcron
     SUBDIR += tkinfo
     SUBDIR += tkman
+    SUBDIR += uk-phone
+    SUBDIR += uk-postcodes
     SUBDIR += unclutter
     SUBDIR += viz
     SUBDIR += xcalendar
