@@ -7,17 +7,18 @@
 
 PORTNAME=	ttt
 PORTVERSION=	1.8
-CATEGORIES=	net tk83 ipv6
+PORTREVISION=	1
+CATEGORIES=	net tk84 ipv6
 MASTER_SITES=	ftp://ftp.csl.sony.co.jp/pub/kjc/
 
 MAINTAINER=	kjc@csl.sony.co.jp
 COMMENT=	Tele Traffic Tapper, a network traffic monitoring tool
 
-LIB_DEPENDS=	BLT24.2:${PORTSDIR}/x11-toolkits/blt
+LIB_DEPENDS=	BLT24.3:${PORTSDIR}/x11-toolkits/blt
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.3 \
-		--with-tk=${LOCALBASE}/lib/tk8.3
+CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
+		--with-tk=${LOCALBASE}/lib/tk8.4
 INSTALL_TARGET=	install install-man
 MAN1=		ttt.1 tttprobe.1 tttview.1
 

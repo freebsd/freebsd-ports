@@ -7,7 +7,7 @@
 
 PORTNAME=	swarm
 PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.santafe.edu/pub/swarm/src/swarm/
 
@@ -16,7 +16,7 @@ COMMENT=	The Swarm Simulation System
 
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		BLT24.2:${PORTSDIR}/x11-toolkits/blt
+		BLT24.3:${PORTSDIR}/x11-toolkits/blt
 .if defined(WITH_HDF5)
 LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/graphics/hdf5
 BROKEN=		undefined references in hdf5, please deinstall hdf5 package \
@@ -32,10 +32,10 @@ USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-defaultdir=${PREFIX} \
-		--with-tclincludedir=${PREFIX}/include/tcl8.3 \
-		--with-tkincludedir=${PREFIX}/include/tk8.3 \
-		--with-tclscriptdir=${PREFIX}/lib/tcl8.3 \
-		--with-tkscriptdir=${PREFIX}/lib/tk8.3 \
+		--with-tclincludedir=${PREFIX}/include/tcl8.4 \
+		--with-tkincludedir=${PREFIX}/include/tk8.4 \
+		--with-tclscriptdir=${PREFIX}/lib/tcl8.4 \
+		--with-tkscriptdir=${PREFIX}/lib/tk8.4 \
 		--enable-subdirs
 PLIST_SUB=	JAVA="@comment "
 .if defined(WITH_JAVA)
