@@ -1,0 +1,13 @@
+--- ./dia2code/dia2code.h.orig	Sat Mar 30 21:36:07 2002
++++ ./dia2code/dia2code.h	Sat Mar 30 21:36:30 2002
+@@ -25,8 +25,8 @@
+ #include <stdlib.h>
+ 
+ /* libxml[2] headers */
+-#include <parser.h>
+-#include <tree.h>
++#include <libxml2/libxml/parser.h>
++#include <libxml2/libxml/tree.h>
+ 
+ #define VERSION "0.8.1"
+ 
