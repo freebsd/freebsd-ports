@@ -57,7 +57,7 @@ WITH_PAM=	yes
 .endif
 
 .if defined(WITH_PAM)
-CONFIGURE_ARGS+=	--enable-pam
+CONFIGURE_ARGS+=	--enable-pam --with-pamdir=${LOCALBASE}/etc/pam.d/
 LIBPAM=		-lpam
 PLIST_SUB+=	PAM=""
 .else
