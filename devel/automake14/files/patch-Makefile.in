@@ -1,8 +1,6 @@
---- Makefile.in.orig	Sun Jul 15 13:23:30 2001
-+++ Makefile.in	Sun Oct 13 08:44:55 2002
-@@ -34,9 +34,9 @@
- 
- DESTDIR =
+--- Makefile.in.orig	Sat Jul 27 14:09:40 2002
++++ Makefile.in	Thu May 13 13:44:45 2004
+@@ -36,5 +36,5 @@
  
 -pkgdatadir = $(datadir)/@PACKAGE@
 -pkglibdir = $(libdir)/@PACKAGE@
@@ -11,20 +9,12 @@
 +pkglibdir = $(libdir)/@PACKAGE@14
 +pkgincludedir = $(includedir)/@PACKAGE@14
  
- top_builddir = .
- 
-@@ -69,7 +69,7 @@
- SUBDIRS = . m4 tests
- 
+@@ -74,3 +74,3 @@
  bin_SCRIPTS = automake aclocal
 -info_TEXINFOS = automake.texi
 +info_TEXINFOS = automake14.texi
  
- amfiles = clean-hdr.am clean-kr.am clean.am comp-vars.am compile.am data-clean.am data.am dejagnu.am depend.am depend2.am dist-vars.am footer.am header-vars.am header.am java-clean.am java.am kr-extra.am library.am libs-clean.am libs.am libtool.am lisp-clean.am lisp.am ltlib-clean.am ltlib.am ltlibrary.am mans-vars.am mans.am multilib.am program.am progs-clean.am progs.am remake-hdr.am remake.am scripts.am subdirs.am tags-clean.am tags.am texi-vers.am texinfos.am
- 
-@@ -90,9 +90,9 @@
- SCRIPTS =  $(bin_SCRIPTS)
- 
+@@ -97,5 +97,5 @@
  TEXI2DVI = texi2dvi
 -INFO_DEPS = automake.info
 -DVIS = automake.dvi
@@ -32,46 +22,33 @@
 +INFO_DEPS = automake14.info
 +DVIS = automake14.dvi
 +TEXINFOS = automake14.texi
- DATA =  $(pkgdata_DATA) $(script_DATA)
- 
- DIST_COMMON =  README AUTHORS COPYING ChangeLog INSTALL Makefile.am \
-@@ -149,8 +149,8 @@
- $(srcdir)/version.texi: stamp-vti
- 	@:
+ DATA =  $(pkgvdata_DATA) $(script_DATA)
+@@ -156,4 +156,4 @@
  
 -$(srcdir)/stamp-vti: automake.texi $(top_srcdir)/configure.in
 -	@echo "@set UPDATED `$(SHELL) $(srcdir)/mdate-sh $(srcdir)/automake.texi`" > vti.tmp
 +$(srcdir)/stamp-vti: automake14.texi $(top_srcdir)/configure.in
 +	@echo "@set UPDATED `$(SHELL) $(srcdir)/mdate-sh $(srcdir)/automake14.texi`" > vti.tmp
  	@echo "@set EDITION $(VERSION)" >> vti.tmp
- 	@echo "@set VERSION $(VERSION)" >> vti.tmp
- 	@cmp -s vti.tmp $(srcdir)/version.texi \
-@@ -169,8 +169,8 @@
- maintainer-clean-vti:
- 	-rm -f $(srcdir)/stamp-vti $(srcdir)/version.texi
+@@ -176,4 +176,4 @@
  
 -automake.info: automake.texi version.texi
 -automake.dvi: automake.texi version.texi
 +automake14.info: automake14.texi version.texi
 +automake14.dvi: automake14.texi version.texi
  
- 
- DVIPS = dvips
-@@ -178,7 +178,7 @@
- .texi.info:
- 	@cd $(srcdir) && rm -f $@ $@-[0-9] $@-[0-9][0-9]
+@@ -185,3 +185,3 @@
  	cd $(srcdir) \
 -	  && $(MAKEINFO) `echo $< | sed 's,.*/,,'`
 +	  && $(MAKEINFO) --no-split `echo $< | sed 's,.*/,,'`
  
- .texi.dvi:
- 	TEXINPUTS=.:$$TEXINPUTS \
-@@ -269,7 +269,7 @@
- 	done
- 
+@@ -276,3 +276,3 @@
  mostlyclean-aminfo:
 -	-rm -f automake.aux automake.cp automake.cps automake.dvi automake.fn \
 +	-rm -f automake.aux automake.cp automake.cps automake14.dvi automake.fn \
  	  automake.fns automake.ky automake.kys automake.ps \
- 	  automake.log automake.pg automake.toc automake.tp \
- 	  automake.tps automake.vr automake.vrs automake.op automake.tr \
+@@ -490,3 +490,3 @@
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
++	$(MAKE) $(AM_MAKEFLAGS)
+ install-exec: install-exec-recursive
