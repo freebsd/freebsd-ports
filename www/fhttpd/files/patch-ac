@@ -1,5 +1,5 @@
---- Makefile	Mon Apr 19 13:38:56 1999
-+++ Makefile.new	Fri Dec 24 00:14:18 1999
+--- Makefile.orig	Mon Apr 19 12:38:56 1999
++++ Makefile	Sat May 27 14:51:57 2000
 @@ -99,21 +99,21 @@
  
  ## for Linux (glibc2/libc 6):
@@ -25,7 +25,7 @@
 -#	 -DSIGARGS="int sig" -DSIGACTARGS="int sig"\
 -#	 -DTM_GMTOFF_PRESENT -DERRNO_DEFINED # -DFLOCK
 -#LFLAGS = -lcrypt
-+COPTS   = -O2 -fno-strength-reduce -DLS_OPTIONS_IGNORE\
++COPTS   = -fno-strength-reduce -DLS_OPTIONS_IGNORE\
 +	 -D__s32=int -DMMAPPAGESIZE=65536\
 +	 -DPSEUDOPOLL -DCMSG_DATA_IS_A_MACRO\
 +	 -DSIGARGS="int sig" -DSIGACTARGS="int sig"\
@@ -34,3 +34,14 @@
  
  # End of OS-dependent definitions
  
+@@ -126,8 +126,8 @@
+ # Don't modify anything below
+ 
+ CXXOPTS	= $(COPTS)
+-CXXFLAGS = $(CXXOPTS) $(DEBUG)
+-CFLAGS = $(COPTS) $(DEBUG)
++CXXFLAGS += $(CXXOPTS) $(DEBUG)
++CFLAGS += $(COPTS) $(DEBUG)
+ 
+ FHTTPD_OFILES	= pseudopoll.o lists.o wildmat.o util.o configfile.o users.o \
+ 	 process.o log.o loadedfile.o sockobj.o configargs.o fhttpd.o
