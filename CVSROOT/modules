@@ -5149,6 +5149,7 @@ linux-realplayer	ports/multimedia/linux-realplayer
 linux-relview	ports/math/linux-relview
 linux-runrev	ports/devel/linux-runrev
 linux-sdl12	ports/devel/linux-sdl12
+linux-sdl_image	ports/graphics/linux-sdl_image
 linux-setiathome	ports/astro/linux-setiathome
 linux-steam	ports/games/linux-steam
 linux-sun-jdk12	ports/java/linux-sun-jdk12
