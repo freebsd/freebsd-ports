@@ -70,3 +70,4 @@ kdebase<=3.2.3|http://www.kde.org/info/security/advisory-20040811-3.txt http://c
 kdelibs<=3.2.3_3|http://www.kde.org/info/security/advisory-20040811-1.txt|DCOPServer Temporary Filename Vulnerability|608ceab8-eca3-11d8-afa6-ed04757064bb
 rsync<2.6.2_2|http://lists.samba.org/archive/rsync-announce/2004/000017.html|security hole in non-chroot rsync daemon|2689f4cb-ec4c-11d8-9440-000347a4fa7d
 kdelibs<=3.2.3_3|http://www.kde.org/info/security/advisory-20040811-1.txt|DCOPServer Temporary Filename Vulnerability|608ceab8-eca3-11d8-afa6-ed04757064bb
+kdelibs<=3.2.3_4|http://www.kde.org/info/security/advisory-20040811-1.txt|Temporary Filename Vulnerability|cd95b452-eca6-11d8-afa6-ed04757064bb
