@@ -3,7 +3,7 @@
 # Date created:			17 Nov 1998
 # Whom:				Jim Mock <jim@phrantic.phear.net>
 #
-# $Id: Makefile,v 1.17 1999/07/17 03:56:06 cpiazza Exp $
+# $Id: Makefile,v 1.18 1999/07/19 03:59:57 cpiazza Exp $
 #
 
 DISTNAME=	xchat-1.1.3
@@ -22,7 +22,19 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-gnome --disable-panel --disable-nls
+CONFIGURE_ARGS=	--disable-nls
+
+.if defined(USE_GNOME)
+CONFIGURE_ARGS+= --enable-gnome
+.if defined(USE_PANEL)
+CONFIGURE_ARGS+= --enable-panel
+.else
+CONFIGURE_ARGS+= --disable-panel
+.endif
+.else
+CONFIGURE_ARGS+= --disable-gnome
+.endif
+
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 post-install:
