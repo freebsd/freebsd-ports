@@ -1,7 +1,7 @@
---- lib/Makefile.in.orig	Mon Apr 21 23:24:57 2003
-+++ lib/Makefile.in	Sun May  4 03:12:41 2003
-@@ -16,6 +16,11 @@
- GMP_LIBS = @GMP_LIBS@
+--- lib/Makefile.in.orig	Sun May 25 04:04:32 2003
++++ lib/Makefile.in	Tue May 27 09:33:13 2003
+@@ -17,6 +17,11 @@
+ FLIB = @FLIB@
  have_gtk = @have_gtk@
  
 +datadir = @datadir@
@@ -12,7 +12,7 @@
  ifeq ($(INSTALL_PROGRAM),)
    INSTALL_PROGRAM = $(INSTALL) -m 755
  endif
-@@ -30,7 +35,7 @@
+@@ -31,7 +36,7 @@
  libdir = $(prefix)/lib
  includedir = $(prefix)/include/gretl
  aclocaldir = $(prefix)/share/aclocal
@@ -21,16 +21,16 @@
  
  INSTALLDIRS = $(libdir) $(includedir) $(aclocaldir)
  
-@@ -44,7 +49,7 @@
-   INSTALL_CFG = install-cfg-old
- endif
+@@ -47,7 +52,7 @@
+ 
+ # The LIBS line may need FLIB (-lf2c or equivalent)  at some point
  
 -LIBS = -lm -ldl -L/usr/local/lib -lz $(XML_LIBS) $(GLIB_LIBS) $(GMP_LIBS)
 +LIBS = -lm -lz $(XML_LIBS) $(GLIB_LIBS) $(GMP_LIBS) $(INTL_LIBS)
  
  #### End of system configuration section. ####
  
-@@ -79,7 +84,7 @@
+@@ -83,7 +88,7 @@
  
  LIBTOOL = ../libtool
  
@@ -39,12 +39,12 @@
  
  COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS)
  
-@@ -89,7 +94,7 @@
+@@ -93,7 +98,7 @@
  
- $(LIBGRETL): $(OBJS) $(LOBJS) $(CEPHES_OBJ) $(CEPHES_LOBJ)
- 	$(LIBTOOL) --mode=link $(CC) -o $@ $(LOBJS) $(CEPHES_LOBJ) \
--	-rpath $(prefix)/lib $(LIBS) -version-info 0:7:0
-+	-rpath $(prefix)/lib $(LIBS) -version-info 0:7:0 $(LDFLAGS)
+ $(LIBGRETL): $(OBJS) $(LOBJS) $(AUX_OBJ) $(AUX_LOBJ)
+ 	$(LIBTOOL) --mode=link $(CC) -o $@ $(LOBJS) $(AUX_LOBJ) \
+-	-rpath $(prefix)/lib $(LIBS) -version-info 0:8:0
++	-rpath $(prefix)/lib $(LIBS) -version-info 0:8:0 $(LDFLAGS)
  
  -include $(OBJS:.o=.d)
  

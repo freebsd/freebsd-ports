@@ -23,6 +23,7 @@ include/gretl/libgretl.h
 include/gretl/libprob.h
 include/gretl/modelprint.h
 include/gretl/monte_carlo.h
+include/gretl/nls.h
 include/gretl/nonparam.h
 include/gretl/printout.h
 include/gretl/pvalues.h
@@ -153,6 +154,7 @@ libdata/pkgconfig/gretl.pc
 %%GRETLDATADIR%%/gretl/data/greene/greene18_1.gdt
 %%GRETLDATADIR%%/gretl/data/greene/greene18_2.gdt
 %%GRETLDATADIR%%/gretl/data/greene/greene19_1.gdt
+%%GRETLDATADIR%%/gretl/data/greene/greene5_1.gdt
 %%GRETLDATADIR%%/gretl/data/greene/greene7_8.gdt
 %%GRETLDATADIR%%/gretl/data/greene/greene8_3.gdt
 %%GRETLDATADIR%%/gretl/data/greene/greene9_1.gdt
@@ -175,6 +177,7 @@ libdata/pkgconfig/gretl.pc
 %%GRETLDATADIR%%/gretl/scripts/greene7_8.inp
 %%GRETLDATADIR%%/gretl/scripts/greene8_3.inp
 %%GRETLDATADIR%%/gretl/scripts/greene9_1.inp
+%%GRETLDATADIR%%/gretl/scripts/greene9_3.inp
 %%GRETLDATADIR%%/gretl/scripts/ps10-1.inp
 %%GRETLDATADIR%%/gretl/scripts/ps10-10.inp
 %%GRETLDATADIR%%/gretl/scripts/ps10-11.inp
@@ -262,6 +265,7 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/chapters/looping.xml
 %%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/chapters/modes.xml
 %%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/chapters/native.xml
+%%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/chapters/nls.xml
 %%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/chapters/optarg.xml
 %%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/chapters/panel.xml
 %%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/chapters/starting.xml
@@ -276,11 +280,14 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/figures/greeneC.png
 %%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/figures/gretl-logo.png
 %%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/figures/important.png
+%%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/figures/influence.png
 %%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/figures/ldx.png
 %%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/figures/ldy.png
 %%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/figures/mainwin.png
 %%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/figures/menubar.png
+%%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/figures/model_table.png
 %%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/figures/modelwin.png
+%%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/figures/nls_window.png
 %%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/figures/note.png
 %%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/figures/plot_control.png
 %%GNOME:%%%%GRETLDATADIR%%/help/gretl/C/figures/scriptwin.png
