@@ -6,39 +6,59 @@
 #
 
 PORTNAME=	login.app
-PORTVERSION=	2.0.0.a7
-PORTREVISION=	1
+PORTVERSION=	2.1.1
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://wm.current.nu/files/Login.app/ \
-		http://wm.current.nu/files/Login.app/Themes/
-MASTER_SITE_SUBDIR=	sobomax
-DISTFILES=	Login.app-${PORTVERSION:S/.a/-Alpha-/}${EXTRACT_SUFX} \
-		Drone${EXTRACT_SUFX}
+MASTER_SITES=	http://largo.windowmaker.org/files/Login.app/ \
+		http://depot.fsck.ch/mirror/distfiles/
+DISTNAME=	Login.app-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Nice looking login interface to your favorite X-Server
+MAINTAINER=	ports@fsck.ch
+COMMENT=	Graphical login interface for X that is themable
 
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker \
 		PropList.2:${PORTSDIR}/devel/libPropList
 
 WRKSRC=		${WRKDIR}/Login.app-${PORTVERSION:S/.a/-Alpha-/}
 
-USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
-USE_XPM=	yes
-MAKE_ENV=	MKDIR="${MKDIR}"
+HAS_CONFIGURE=  yes
+CONFIGURE_ARGS= --prefix=${PREFIX}
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
-ALL_TARGET=	Login
+MAN1=		Login.app.1x
+
+pre-configure:
+	@${REINPLACE_CMD} -e \
+		's|GNUstep/Applications|GNUstep/Apps|' \
+		${WRKSRC}/Makefile.am \
+		${WRKSRC}/Makefile.in \
+		${WRKSRC}/Scripts/Makefile.am \
+		${WRKSRC}/Scripts/Makefile.in \
+		${WRKSRC}/Themes/Linux/Makefile.am \
+		${WRKSRC}/Themes/Linux/Makefile.in \
+		${WRKSRC}/Themes/GNUstep/Makefile.am \
+		${WRKSRC}/Themes/GNUstep/Makefile.in \
+		${WRKSRC}/Themes/Drone/Makefile.in \
+		${WRKSRC}/Themes/Drone/Makefile.am \
+		${WRKSRC}/src/Makefile.in \
+		${WRKSRC}/src/Makefile.am
 
 post-configure:
-	@cd ${WRKSRC} && ${PERL} -pi -e 's|%%X11BASE%%|${X11BASE}|g ; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g' preferences.h Scripts/Login.user \
-		Scripts/Login.root Scripts/Logout.root Scripts/Startup \
-		Preferences config.h
+	@${REINPLACE_CMD} -e \
+		's|%%X11BASE%%|${X11BASE}|; \
+		s|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/Scripts/Login.user \
+		${WRKSRC}/Scripts/Login.root \
+		${WRKSRC}/Scripts/Logout.root \
+		${WRKSRC}/Scripts/Startup \
+		${WRKSRC}/Preferences \
+		${WRKSRC}/src/config.h \
+		${WRKSRC}/src/preferences.h
 
 post-install:
-	@(cd ${WRKDIR} && ${TAR} --exclude "*.orig" -c -f - Drone) \
-		| (cd ${PREFIX}/GNUstep/Apps/Login.app/Themes && ${TAR} --unlink -x -f -)
+	@${SED} 's|%%X11BASE%%|${PREFIX}|' \
+		${FILESDIR}/loginapp.sh > ${PREFIX}/etc/rc.d/loginapp.sh
+	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/loginapp.sh
 
 .include <bsd.port.mk>

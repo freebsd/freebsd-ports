@@ -1,5 +1,5 @@
---- Scripts/Logout.root.orig	Sat Nov 11 10:49:57 2000
-+++ Scripts/Logout.root	Thu Dec 14 10:38:58 2000
+--- Scripts/Logout.root.orig	Sat Jan  8 20:48:25 2005
++++ Scripts/Logout.root	Sat Jan  8 20:47:48 2005
 @@ -1,23 +1,23 @@
  #!/bin/sh
  
@@ -17,15 +17,15 @@
  #
  # Remove user from utmp/wtmp.
  #
--sessreg -d $USER
-+%%X11BASE%%/bin/sessreg -d $USER
+-sessreg -d -w /var/log/wtmp -u /var/run/utmp -l "$DISPLAY" $USER
++%%X11BASE%%/bin/sessreg -d -w /var/log/wtmp -u /var/run/utmp -l "$DISPLAY" $USER
  
  #
  # Make root the owner of /dev/console. 
  #
--chmod 622 /dev/console
--chown root /dev/console
-+/bin/chmod 622 /dev/console
-+/usr/sbin/chown root /dev/console
+-#chmod 622 /dev/console
+-#chown root /dev/console
++#/bin/chmod 622 /dev/console
++#/usr/sbin/chown root /dev/console
  
  # End of file

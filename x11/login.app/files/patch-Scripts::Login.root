@@ -1,0 +1,21 @@
+--- Scripts/Login.root.orig	Sat Jan  8 20:48:19 2005
++++ Scripts/Login.root	Sat Jan  8 20:47:48 2005
+@@ -1,15 +1,15 @@
+ #!/bin/sh
+ 
+-PATH="/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin"
++PATH="/sbin:/usr/sbin:/bin:/usr/bin:%%LOCALBASE%%/bin:%%X11BASE%%/bin"
+ 
+ #
+ # Make user the owner of /dev/console.
+ #
+-#chown $USER /dev/console
++#/usr/sbin/chown $USER /dev/console
+ 
+ #
+ # Add user to utmp/wtmp.
+ #
+-sessreg -a -w /var/log/wtmp -u /var/run/utmp -l "$DISPLAY" $USER
++%%X11BASE%%/bin/sessreg -a -w /var/log/wtmp -u /var/run/utmp -l "$DISPLAY" $USER
+ 
+ # End of file

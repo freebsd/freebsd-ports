@@ -1,0 +1,22 @@
+--- Scripts/Suspend.orig	Sat Jan  8 18:57:32 2005
++++ Scripts/Suspend	Sat Jan  8 20:45:56 2005
+@@ -4,8 +4,17 @@
+ # Suspend the system, can be handy if you are
+ # using a laptop computer.
+ #
+-if [ apm_available -a -x /usr/bin/apm ]; then
+-    /usr/bin/apm --suspend
++
++apm_out=` /usr/sbin/apm -s 2> /dev/null `
++sysctl_out=` /sbin/sysctl hw.acpi.suspend_state 2> /dev/null `
++suspend_state=` expr "//$sysctl_out" : '.*hw.acpi.suspend_state:.*\(S.*\)' `
++
++if [ -n "$suspend_state" ] ; then
++        /usr/sbin/acpiconf -s $suspend_state
++elif [ -e "/dev/apm" -a -n "$apm_out" ] ; then
++        if [ $apm_out -eq 1 ] ; then
++                /usr/sbin/apm -z
++        fi
+ fi
+ 
+ # End of file

@@ -1,0 +1,15 @@
+--- Scripts/Startup.orig	Sat Jan  8 18:46:15 2005
++++ Scripts/Startup	Sat Jan  8 18:47:45 2005
+@@ -1,10 +1,10 @@
+ #!/bin/sh
+ 
+-PATH="/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin"
++PATH="/bin:/usr/bin:%%LOCALBASE%%/bin:%%X11BASE%%/bin"
+ 
+ #
+ # Set cursor for the root window.
+ #
+-xsetroot -solid "#000000" -cursor_name left_ptr
++%%X11BASE%%/bin/xsetroot -solid "#000000" -cursor_name left_ptr
+ 
+ # End of file
