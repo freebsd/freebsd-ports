@@ -213,6 +213,7 @@
     SUBDIR += qvplay
     SUBDIR += rayshade
     SUBDIR += ruby-gd
+    SUBDIR += ruby-gdchart
     SUBDIR += ruby-gdk_imlib
     SUBDIR += ruby-gdk_pixbuf
     SUBDIR += ruby-gimp
