@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	vm
-PORTVERSION=	7.07
+PORTVERSION=	7.08
 CATEGORIES=	mail elisp
 MASTER_SITES=	ftp://ftp.uni-mainz.de/pub/software/gnu/vm/ \
 		ftp://tug.org/vm/ \
 		ftp://psg.com/pub/vm/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/vm/ \
-		http://www.interhack.net/projects/vm/ \
 		ftp://ftp.uu.net/networking/mail/vm/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/VM/ \
 		http://www.rge.com/pub/mail/vm/ \
 		http://ftp.lip6.fr/pub/unix/mail/vm/ \
 		ftp://ftp.surfnet.nl/pub/mail/vm/ \
-		http://ftp.dmz.digex.net/pub/packages/mail/vm/
+		http://ftp.dmz.digex.net/pub/packages/mail/vm/ \
+		http://ftp.algx.net/pub/packages/mail/vm/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	olive@oban.frmug.org
-
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+COMMENT=	A mail reader running inside Emacs or XEmacs
 
 EMACS_PORT_NAME?=	emacs21
 MAKE_ARGS=	prefix=${PREFIX} \
