@@ -85,7 +85,9 @@ pre-configure:
 	${REINPLACE_CMD} -e '/union semun/,/;$$/s/.*//g' \
 		${WRKSRC}/oggvorbis_artsplugin/oggPlayObject_impl.h
 .endif
-	${REINPLACE_CMD} -e 's/-lc_r/${PTHREAD_LIBS}/g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's/-lc_r/${PTHREAD_LIBS}/g' \
+		-e 's/-lxine.*$$LIBS/-lxine $$LIBS ${PTHREAD_LIBS}/g' \
+			${WRKSRC}/configure
 
 post-configure:
 	${REINPLACE_CMD} -e '/^XINE_CFLAGS/s/-D_THREAD_SAFE//g' \
