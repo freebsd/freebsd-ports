@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sat Jan 15 02:34:43 2005
++++ src/Makefile.in	Sat Jan 15 02:35:29 2005
+@@ -86,7 +86,7 @@
+ 	$(PACKAGE_CFLAGS)		\
+ 	$(EXR_CFLAGS)			\
+ 	$(GNET_CFLAGS)			\
+-	'-DFYRE_DATADIR="data"'
++	'-DFYRE_DATADIR="${PREFIX}/share/fyre/"'
+ 
+ 
+ fyre_LDADD = \
