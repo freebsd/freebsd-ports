@@ -2917,6 +2917,7 @@ iftop		ports/net/iftop
 igal		ports/www/igal
 iiimecf		ports/editors/iiimecf
 iiimf-client-lib	ports/textproc/iiimf-client-lib
+iiimf-csconv	ports/textproc/iiimf-csconv
 iiimf-gtk	ports/textproc/iiimf-gtk
 iiimf-headers	ports/textproc/iiimf-headers
 iiimf-le-unit	ports/textproc/iiimf-le-unit
@@ -4665,6 +4666,7 @@ mindguard	ports/games/mindguard
 mindterm-binary	ports/security/mindterm-binary
 ming		ports/graphics/ming
 mingplot	ports/graphics/mingplot
+mingunittf	ports/chinese/mingunittf
 mingw		ports/devel/mingw
 mingw-bin-msvcrt	ports/devel/mingw-bin-msvcrt
 mingw-binutils	ports/devel/mingw-binutils
