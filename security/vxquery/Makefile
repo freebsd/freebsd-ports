@@ -21,7 +21,7 @@ GNU_CONFIGURE=	YES
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 501111
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 .endif
 
 do-install:
