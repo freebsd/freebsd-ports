@@ -1,0 +1,56 @@
+TQSLLIB=../tqsllib
+TQSLINC=../tqsllib
+OPENSSL=/usr
+LIBS=-lz -lexpat -lcrypto
+INCDIR = -I$(TQSLINC)
+BUILD=unofficial
+WXFLAGS=`wx-config --cflags`
+WXLIBS=`wx-config --libs`
+CXXFLAGS +=  $(INCDIR)  -DHAVE_LIBCRYPTO=1 -DSTDC_HEADERS=1 -DHAVE_MKDIR=1 -DHAVE_STRERROR=1  $(WXFLAGS)
+LDLIBS = -L$(OPENSSL)/lib -L$(TQSLLIB) -ltqsllib $(LIBS)  $(WXLIBS)
+TQSLLIBFILE=$(TQSLLIB)/libtqsllib.a
+
+BINDIR=${PREFIX}/bin
+DOCDIR=${PREFIX}/share/doc
+ETCDIR=${PREFIX}/etc
+
+TARGETS = tqslcert tqsl
+
+all: $(TARGETS)
+
+TQSLCERT_OBJ = tqslcert.o crqwiz.o dxcc.o certtree.o tqslcert_prefs.o \
+	getpassword.o extwizard.o loadcertwiz.o wxutil.o
+
+TQSL_OBJ = tqsl.o extwizard.o tqslwiz.o dxcc.o stationdial.o qsodatadialog.o \
+	tqslvalidator.o tqsl_prefs.o wxutil.o
+
+tqslcert: $(TQSLCERT_OBJ) $(TQSLLIBFILE)
+	$(CC) $(CXXFLAGS) $(LDFLAGS) -o $@ $(TQSLCERT_OBJ) $(LDLIBS) -lstdc++
+
+tqsl: $(TQSL_OBJ) $(TQSLLIBFILE)
+	$(CC) $(CXXFLAGS) $(LDFLAGS) -o $@ $(TQSL_OBJ) $(LDLIBS) -lstdc++
+
+include apps.depends
+
+tqslcertbuild.h: buildskel.h
+	cp buildskel.h tqslcertbuild.h
+
+tqslcert.o:
+	${CXX} $(CXXFLAGS) -c -o $@ $*.cpp
+	
+tqslbuild.h: buildskel.h
+	cp buildskel.h tqslbuild.h
+
+tqsl.o:
+	${CXX} $(CXXFLAGS) -c -o $@ $*.cpp
+	
+%.o: %.cpp
+	${CXX} $(CXXFLAGS) -c -o $@ $*.cpp
+
+clean:
+	rm -f $(TARGETS) *.o *.a *~ xxx.*
+
+install:
+	${INSTALL} -d $(BINDIR) $(ETCDIR)/tqsl
+	${INSTALL} -C $(TARGETS) $(BINDIR)
+	${INSTALL} -C ../tqsllib/config.xml $(ETCDIR)/tqsl
