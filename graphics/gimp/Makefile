@@ -3,13 +3,14 @@
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.8 1997/04/18 21:26:28 erich Exp $
+# $Id: Makefile,v 1.9 1997/05/01 18:25:44 erich Exp $
 #
 
-VERSION=	0.99.9
+VERSION=	0.99.10
+DATA_VERSION=	0.99.9
 DISTNAME=       gimp-${VERSION}
-DISTFILES=	${DISTNAME}.tar.gz gimp-data-${VERSION}.tar.gz
-
+DISTFILES=	${DISTNAME}.tar.gz
+DISTFILES+=	gimp-data-${DATA_VERSION}.tar.gz
 CATEGORIES=     graphics
 MASTER_SITES=   ftp://ftp.xcf.berkeley.edu/pub/gimp/developers/
 
@@ -28,7 +29,7 @@ USE_GMAKE=	yes
 DATASTUFF=  brushes palettes gradients patterns
 
 post-install:
-	cd ${WRKDIR}/gimp-data-${VERSION}; \
+	cd ${WRKDIR}/gimp-data-${DATA_VERSION}; \
 	tar -cf - --exclude '*Makefile*' ${DATASTUFF} |\
 	(cd ${PREFIX}/share/gimp/${VERSION}; tar -xvf -)
 

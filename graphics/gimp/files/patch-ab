@@ -17,97 +17,6 @@
      }
    else
 
-The patches for displace
-------------------------
-*** plug-ins/displace.c.ots	Tue Apr  8 09:07:34 1997
---- plug-ins/displace.c	Tue Apr  8 09:53:32 1997
-***************
-*** 222,231 ****
-  	  dvals.amount_x = param[3].data.d_float;
-  	  dvals.amount_y = param[4].data.d_float;
-  	  dvals.do_x = param[5].data.d_int32;
-! 	  dvals.do_x = param[6].data.d_int32;
-  	  dvals.displace_map_x = param[7].data.d_int32;
-  	  dvals.displace_map_y = param[8].data.d_int32;
-  	  dvals.displace_type = param[9].data.d_int32;
-  	}
-        break;
-  
---- 222,238 ----
-  	  dvals.amount_x = param[3].data.d_float;
-  	  dvals.amount_y = param[4].data.d_float;
-  	  dvals.do_x = param[5].data.d_int32;
-! 	  dvals.do_y = param[6].data.d_int32;
-  	  dvals.displace_map_x = param[7].data.d_int32;
-  	  dvals.displace_map_y = param[8].data.d_int32;
-  	  dvals.displace_type = param[9].data.d_int32;
-+ 
-+ 	  if (dvals.do_x && 
-+ 	      gimp_drawable_type(dvals.displace_map_x) != GRAY_IMAGE)
-+ 	    status = STATUS_CALLING_ERROR;
-+ 	  if (dvals.do_y && 
-+ 	      gimp_drawable_type(dvals.displace_map_y) != GRAY_IMAGE)
-+ 	    status = STATUS_CALLING_ERROR;
-  	}
-        break;
-  
-***************
-*** 566,592 ****
-  	      if (dvals.displace_type == WRAP)
-  		{
-  		  if (xi < 0)
-! 		    xi = width - (-xi % width);
-  		  else
-! 		    xi %= width;
-  
-  		  if (yi < 0)
-! 		    yi = height - (-yi % height);
-  		  else
-! 		    yi %= height;
-  		}
-  	      /* Smear out the edges of the image by repeating pixels. */
-  	      else if (dvals.displace_type == SMEAR)
-  		{
-  		  if (xi < 0)
-  		    xi = 0;
-! 		  else if (xi > width - 1)
-! 		    xi = width - 1;
-  
-  		  if (yi < 0)
-  		    yi = 0;
-! 		  else if (yi > height - 1)
-! 		    yi = height - 1;
-  		}
-  
-  	      tile = displace_pixel (drawable, tile, x1, y1, x2, y2, xi, yi, &row, &col, pixel[0]);
---- 573,599 ----
-  	      if (dvals.displace_type == WRAP)
-  		{
-  		  if (xi < 0)
-! 		    xi = (width-1) - (-xi % (width-1));
-  		  else
-! 		    xi %= (width-1);
-  
-  		  if (yi < 0)
-! 		    yi = (height-1) - (-yi % (height-1));
-  		  else
-! 		    yi %= (height-1);
-  		}
-  	      /* Smear out the edges of the image by repeating pixels. */
-  	      else if (dvals.displace_type == SMEAR)
-  		{
-  		  if (xi < 0)
-  		    xi = 0;
-! 		  else if (xi > width - 2)
-! 		    xi = width - 2;
-  
-  		  if (yi < 0)
-  		    yi = 0;
-! 		  else if (yi > height - 2)
-! 		    yi = height - 2;
-  		}
-  
-  	      tile = displace_pixel (drawable, tile, x1, y1, x2, y2, xi, yi, &row, &col, pixel[0]);
 
 --- plug-ins/script-fu/interp_regex.c~	Fri Apr 18 14:00:00 1997
 +++ plug-ins/script-fu/interp_regex.c	Fri Apr 18 14:00:45 1997
@@ -119,16 +28,6 @@ The patches for displace
 
 --- plug-ins/dgimp/dgimp.c.orig	Wed Apr 30 11:39:18 1997
 +++ plug-ins/dgimp/dgimp.c	Wed Apr 30 11:38:42 1997
-@@ -15,6 +15,7 @@
-  * along with this program; if not, write to the Free Software
-  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-  */
-+#include <sys/types.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <string.h>
---- plug-ins/dgimp/lgp.c.orig	Wed Apr 30 11:39:18 1997
-+++ plug-ins/dgimp/lgp.c	Wed Apr 30 11:39:00 1997
 @@ -15,6 +15,7 @@
   * along with this program; if not, write to the Free Software
   * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.

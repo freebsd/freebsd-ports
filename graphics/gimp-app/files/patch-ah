@@ -1,337 +1,4544 @@
-Date: Mon, 28 Apr 1997 13:14:20 -0500
-Message-Id: <199704281814.NAA31815@nuclecu.unam.mx>
-From: Federico Mena <federico@nuclecu.unam.mx>
-To: gimp-developer@scam.xcf.berkeley.edu
-Subject:  PATCH: repeat functions added to blend.c
-Reply-to: federico@nuclecu.unam.mx
-
-Hello, everyone
-
-This patch makes the necessary changes to blend.c so that the blend
-tool lets you select among three different repeat functions:
-
-- None: this is the default, and it is the way the blend tool always
-has worked.  On either side of the direction vector, the gradient will
-use 0 and 1 values, respectively.
-
-- Sawtooth wave: the gradient will repeat 01->01->01->etc.
-
-- Triangular wave: the gradient will repeat 01->10->01->10->etc.
-
-I have thus added the constants REPEAT-NONE, REPEAT-SAWTOOTH and
-REPEAT-TRIANGULAR to Script-fu.
-
-My next patch to blend.c will be to add adaptive supersampling.
-
-  Quartic
-
---- app/blend.dist.c	Mon Apr 28 09:06:57 1997
-+++ app/blend.c	Mon Apr 28 12:51:22 1997
-@@ -65,6 +65,15 @@
-   CUSTOM_MODE
- } BlendMode;
+diff -u -d plug-ins-0.99.10/CML_explorer.c plug-ins/CML_explorer.c
+--- plug-ins-0.99.10/CML_explorer.c	Fri Jun  6 16:03:50 1997
++++ plug-ins/CML_explorer.c	Sun Jun  8 22:21:15 1997
+@@ -1,9 +1,10 @@
+-/* CML_explorer.c -- This is a plug-in for the GIMP 1.0
+- * Author: Shuji Narazaki <narazaki@InetQ.or.jp>
+- * Time-stamp: <1997/05/26 22:20:29 narazaki@InetQ.or.jp>
+- * Version: 1.0.2
++/* The GIMP -- an image manipulation program
++ * Copyright (C) 1995 Spencer Kimball and Peter Mattis
+  *
++ * CML_explorer.c -- This is a plug-in for the GIMP 1.0
++ * Time-stamp: <1997/06/08 21:15:58 narazaki@InetQ.or.jp>
+  * Copyright (C) 1997 Shuji Narazaki <narazaki@InetQ.or.jp>
++ * Version: 1.0.6
+  *
+  * This program is free software; you can redistribute it and/or modify
+  * it under the terms of the GNU General Public License as published by
+@@ -21,7 +22,7 @@
+  *
+  * Comment:
+  *  CML is the abbreviation of Coupled-Map Lattice that is a model of
+- *  complex systems, proposed by a physicist.
++ *  complex systems, proposed by a physicist[1,2].
+  *
+  *  Similar models are summaried as follows:
+  *
+@@ -34,7 +35,14 @@
+  *  Thus time is rather continuous than discrete.
+  *  Yes, this change to model changes the output completely.)
+  *
+- *  Web search engines tell you more details:)
++ *  References:
++ *  1. Kunihiko Kaneko, Period-doubling of kind-antikink patterns,
++ *     quasi-periodicity in antiferro-like structures and spatial
++ *     intermittency in coupled map lattices -- Toward a prelude to a
++ *     "field theory of chaos", Prog. Theor. Phys. 72 (1984) 480.
++ *
++ *  2. Kunihiko Kaneko ed., Theory and Applications of Coupled Map
++ *     Lattices (Wiley, 1993).
+  *
+  *  About Parameter File:
+  *  I assume that the possible longest line in CMP parameter file is 1023.
+@@ -56,11 +64,14 @@
+  *  This version contains patches from:
+  *    Tim Mooney <mooney@dogbert.cc.ndsu.NoDak.edu>
+  *    Sean P Cier <scier@andrew.cmu.edu>
++ *    David Mosberger-Tang <davidm@azstarnet.com>
++ *    Michael Sweet <mike@easysw.com>
+  *
+  */
  
-+typedef enum
-+{
-+  REPEAT_NONE,
-+  REPEAT_SAWTOOTH,
-+  REPEAT_TRIANGULAR,
-+} RepeatMode;
-+
-+typedef double (*RepeatFunc)(double);
-+
- typedef struct _BlendTool BlendTool;
- struct _BlendTool
- {
-@@ -85,7 +94,7 @@
-   BlendMode    blend_mode;
-   int          paint_mode;
-   GradientType gradient_type;
--  int          repeat;
-+  RepeatMode   repeat;
+ #include "gtk/gtk.h"
+ #include "libgimp/gimp.h"
++#include <errno.h>
+ #include <math.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -463,8 +474,7 @@
+ 
+   gimp_install_procedure (PLUG_IN_NAME,
+ 			  "Make an image of Coupled-Map Lattice",
+-			  "Make an image of Coupled-Map Lattice (CML). CML is a kind of Cellula Automata on continuous (value) domain.
+-In RUN_NONINTERACTIVE, the name of a prameter file is passed as the 4th arg. You can control CML_explorer via parameter file.",
++			  "Make an image of Coupled-Map Lattice (CML). CML is a kind of Cellula Automata on continuous (value) domain. In RUN_NONINTERACTIVE, the name of a prameter file is passed as the 4th arg. You can control CML_explorer via parameter file.",
+ 			  /*  Or do you want to call me with over 50 args? */
+ 			  "Shuji Narazaki (narazaki@InetQ.or.jp)",
+ 			  "Shuji Narazaki",
+@@ -1292,7 +1302,8 @@
+   argv = g_new (gchar *, 1);
+   argv[0] = g_strdup (PLUG_IN_NAME);
+   gtk_init (&argc, &argv);
+-
++  gtk_rc_parse (gimp_gtkrc ());
++  
+   dlg = gtkW_dialog_new ("Coupled-Map-Lattice Explorer",
+ 			 (GtkSignalFunc) OK_CALLBACK,
+ 			 (GtkSignalFunc) gtkW_close_callback);
+@@ -2708,6 +2719,7 @@
+       argv = g_new (gchar *, 1);
+       argv[0] = g_strdup (PLUG_IN_NAME);
+       gtk_init (&argc, &argv);
++      gtk_rc_parse (gimp_gtkrc ());
+     }
+ 
+   dlg = gtkW_message_dialog_new (PLUG_IN_NAME);
+GET http://www.isc.tamu.edu/~lewing/gimp/diffs/0.99.10/alpha.diff HTTP/1.0
+User-Agent: GET/0.5 libwww-perl/0.40
+From: scott@poverty.bloomington.in.us
+
+HTTP/1.0 200 Document follows
+Date: Sun, 08 Jun 1997 07:26:16 GMT
+Server: NCSA/1.5.1
+Last-modified: Sun, 08 Jun 1997 07:21:34 GMT
+Content-type: text/plain
+Content-length: 12643
+
+--- gimp-0.99.10-dist/app/curves.c	Tue Jun  3 20:33:57 1997
++++ app/curves.c	Sun Jun  8 00:02:56 1997
+@@ -92,8 +92,8 @@
+   int            leftmost;
+   int            rightmost;
+   int            curve_type;
+-  int            points[4][17][2];
+-  unsigned char  curve[4][256];
++  int            points[5][17][2];
++  unsigned char  curve[5][256];
  };
  
- /*  local function prototypes  */
-@@ -93,7 +102,7 @@
- static void   gradient_type_callback (GtkWidget *, gpointer);
- static void   blend_mode_callback    (GtkWidget *, gpointer);
- static void   paint_mode_callback    (GtkWidget *, gpointer);
--static void   repeat_toggle_update   (GtkWidget *widget, int *value);
-+static void   repeat_type_callback   (GtkWidget *, gpointer);
+ typedef double CRMatrix[4][4];
+@@ -115,6 +115,7 @@
+ static void            curves_red_callback            (GtkWidget *, gpointer);
+ static void            curves_green_callback          (GtkWidget *, gpointer);
+ static void            curves_blue_callback           (GtkWidget *, gpointer);
++static void            curves_alpha_callback           (GtkWidget *, gpointer);
+ static void            curves_smooth_callback         (GtkWidget *, gpointer);
+ static void            curves_free_callback           (GtkWidget *, gpointer);
+ static void            curves_reset_callback          (GtkWidget *, gpointer);
+@@ -184,8 +185,10 @@
+ 	  else
+ 	    d[GRAY_PIX] = cd->curve[HISTOGRAM_VALUE][s[GRAY_PIX]];
  
- static void   blend_button_press            (Tool *, GdkEventButton *, gpointer);
- static void   blend_button_release          (Tool *, GdkEventButton *, gpointer);
-@@ -105,7 +114,7 @@
- 					     BlendMode blend_mode, int paint_mode,
- 					     GradientType gradient_type,
- 					     double opacity, double offset,
--					     int repeat,
-+					     RepeatMode repeat,
- 					     double startx, double starty,
- 					     double endx, double endy);
+-	  if (has_alpha)
+-	    d[alpha] = s[alpha];
++	  if (has_alpha) {
++	    d[alpha] = cd->curve[HISTOGRAM_ALPHA][s[alpha]];
++	    /* d[alpha] = s[alpha]; */
++	  }
  
-@@ -125,10 +134,14 @@
- static double gradient_calc_shapeburst_spherical_factor  (double x, double y);
- static double gradient_calc_shapeburst_dimpled_factor    (double x, double y);
+ 	  s += srcPR->bytes;
+ 	  d += destPR->bytes;
+@@ -298,6 +301,31 @@
+   g_free (_curves);
+ }
  
-+static double gradient_repeat_none(double val);
-+static double gradient_repeat_sawtooth(double val);
-+static double gradient_repeat_triangular(double val);
-+
- static void   gradient_precalc_shapeburst   (GImage *gimage, int, PixelRegion *PR, double dist);
- static void   gradient_fill_region          (GImage *gimage, int, PixelRegion *PR,
- 					     BlendMode blend_mode, GradientType gradient_type,
--					     double offset, int repeat, int sx, int sy, int ex, int ey);
-+					     double offset, RepeatMode repeat, int sx, int sy, int ex, int ey);
- 
- static BlendOptions *create_blend_options   (void);
- static Argument *blend_invoker              (Argument *);
-@@ -173,6 +186,16 @@
- /*  blend options  */
- static BlendOptions *blend_options = NULL;
- 
-+/* repeat menu items */
-+
-+static MenuItem repeat_option_items[] =
++/*  the action area structure  */
++static ActionAreaItem action_items[] =
 +{
-+  { "None", 0, 0, repeat_type_callback, (gpointer) REPEAT_NONE, NULL, NULL },
-+  { "Sawtooth wave", 0, 0, repeat_type_callback, (gpointer) REPEAT_SAWTOOTH, NULL, NULL },
-+  { "Triangular wave", 0, 0, repeat_type_callback, (gpointer) REPEAT_TRIANGULAR, NULL, NULL },
++  { "Reset", curves_reset_callback, NULL, NULL },
++  { "OK", curves_ok_callback, NULL, NULL },
++  { "Cancel", curves_cancel_callback, NULL, NULL }
++};
++
++static MenuItem channel_items[] =
++{
++  { "Value", 0, 0, curves_value_callback, NULL, NULL, NULL },
++  { "Red", 0, 0, curves_red_callback, NULL, NULL, NULL },
++  { "Green", 0, 0, curves_green_callback, NULL, NULL, NULL },
++  { "Blue", 0, 0, curves_blue_callback, NULL, NULL, NULL },
++  { "Alpha", 0, 0, curves_alpha_callback, NULL, NULL, NULL },
 +  { NULL, 0, 0, NULL, NULL, NULL, NULL }
 +};
 +
- 
- static void
- blend_scale_update (GtkAdjustment *adjustment,
-@@ -203,13 +226,10 @@
- }
- 
- static void
--repeat_toggle_update(GtkWidget *widget,
--		     int       *value)
-+repeat_type_callback(GtkWidget *widget,
-+		     gpointer   client_data)
++static MenuItem curve_type_items[] =
++{
++  { "Smooth", 0, 0, curves_smooth_callback, NULL, NULL, NULL },
++  { "Free", 0, 0, curves_free_callback, NULL, NULL, NULL },
++  { NULL, 0, 0, NULL, NULL, NULL, NULL }
++};
++
+ void
+ curves_initialize (void *gdisp_ptr)
  {
--  if (GTK_TOGGLE_BUTTON(widget)->active)
--    *value = TRUE;
--  else
--    *value = FALSE;
-+  blend_options->repeat = (RepeatMode) client_data;
- }
+@@ -320,12 +348,12 @@
  
- static BlendOptions *
-@@ -225,7 +245,8 @@
-   GtkWidget *pm_menu;
-   GtkWidget *gt_option_menu;
-   GtkWidget *gt_menu;
--  GtkWidget *button;
-+  GtkWidget *rt_option_menu;
-+  GtkWidget *rt_menu;
-   GtkWidget *opacity_scale;
-   GtkWidget *table;
-   GtkWidget *offset_scale;
-@@ -239,7 +260,7 @@
-   options->blend_mode 	 = FG_BG_RGB_MODE;
-   options->paint_mode 	 = NORMAL;
-   options->gradient_type = Linear;
--  options->repeat        = FALSE;
-+  options->repeat        = REPEAT_NONE;
+   /*  Initialize the values  */
+   curves_dialog->channel = HISTOGRAM_VALUE;
+-  for (i = 0; i < 4; i++)
++  for (i = 0; i < 5; i++)
+     for (j = 0; j < 256; j++)
+       curves_dialog->curve[i][j] = j;
  
-   /*  the main vbox  */
-   vbox = gtk_vbox_new (FALSE, 5);
-@@ -257,7 +278,7 @@
-   gtk_widget_show(frame);
+   curves_dialog->grab_point = -1;
+-  for (i = 0; i < 4; i++)
++  for (i = 0; i < 5; i++)
+     {
+       for (j = 0; j < 17; j++)
+ 	{
+@@ -342,11 +370,19 @@
+   curves_dialog->color = drawable_color (curves_dialog->drawable_id);
+   curves_dialog->image_map = image_map_create (gdisp_ptr, curves_dialog->drawable_id);
  
-   /*  the table  */
--  table = gtk_table_new (5, 2, FALSE);
-+  table = gtk_table_new (6, 2, FALSE);
-   gtk_container_border_width (GTK_CONTAINER (table), 5);
-   gtk_container_add(GTK_CONTAINER(frame), table);
- 
-@@ -336,16 +357,22 @@
-   gtk_widget_show (label);
-   gtk_widget_show (gt_option_menu);
- 
--  gtk_widget_show (table);
--
-   /* the repeat option */
- 
--  button = gtk_check_button_new_with_label("Repeat gradient");
--  gtk_box_pack_start(GTK_BOX(vbox), button, TRUE, TRUE, 0);
--  gtk_signal_connect(GTK_OBJECT(button), "toggled",
--		     (GtkSignalFunc) repeat_toggle_update,
--		     &options->repeat);
--  gtk_widget_show(button);
-+  label = gtk_label_new("Repeat:");
-+  gtk_misc_set_alignment(GTK_MISC(label), 0.0, 0.5);
-+  gtk_table_attach(GTK_TABLE(table), label, 0, 1, 5, 6,
-+		   GTK_SHRINK | GTK_FILL, GTK_SHRINK, 0, 2);
-+  rt_menu = build_menu(repeat_option_items, NULL);
-+  rt_option_menu = gtk_option_menu_new();
-+  gtk_table_attach(GTK_TABLE(table), rt_option_menu, 1, 2, 5, 6,
-+		   GTK_EXPAND | GTK_SHRINK | GTK_FILL, GTK_SHRINK, 4, 2);
-+  gtk_widget_show(label);
-+  gtk_widget_show(rt_option_menu);
++  /* check for alpha channel */
++  if (drawable_has_alpha (curves_dialog->drawable_id))
++    gtk_widget_set_sensitive( channel_items[4].widget, TRUE);
++  else 
++    gtk_widget_set_sensitive( channel_items[4].widget, FALSE);
 +  
-+  /* show the whole table */
-+
-+  gtk_widget_show (table);
+   /*  hide or show the channel menu based on image type  */
+   if (curves_dialog->color)
+-    gtk_widget_show (curves_dialog->channel_menu);
+-  else
+-    gtk_widget_hide (curves_dialog->channel_menu);
++    for (i = 0; i < 4; i++) 
++       gtk_widget_set_sensitive( channel_items[i].widget, TRUE);
++  else 
++    for (i = 1; i < 4; i++) 
++       gtk_widget_set_sensitive( channel_items[i].widget, FALSE);
  
-   /*  Register this selection options widget with the main tools options dialog  */
-   tools_register_options (BLEND, vbox);
-@@ -354,6 +381,7 @@
-   gtk_option_menu_set_menu (GTK_OPTION_MENU (bm_option_menu), bm_menu);
-   gtk_option_menu_set_menu (GTK_OPTION_MENU (gt_option_menu), gt_menu);
-   gtk_option_menu_set_menu (GTK_OPTION_MENU (pm_option_menu), pm_menu);
-+  gtk_option_menu_set_menu (GTK_OPTION_MENU (rt_option_menu), rt_menu);
- 
-   return options;
+   curves_update (curves_dialog, GRAPH | DRAW);
  }
-@@ -561,7 +589,7 @@
-        GradientType  gradient_type,
-        double        opacity,
-        double        offset,
--       int           repeat,
-+       RepeatMode    repeat,
-        double        startx,
-        double        starty,
-        double        endx,
-@@ -865,6 +893,36 @@
-   return value;
+@@ -371,30 +407,6 @@
+ /*  Select Curves dialog  */
+ /**************************/
+ 
+-/*  the action area structure  */
+-static ActionAreaItem action_items[] =
+-{
+-  { "Reset", curves_reset_callback, NULL, NULL },
+-  { "OK", curves_ok_callback, NULL, NULL },
+-  { "Cancel", curves_cancel_callback, NULL, NULL }
+-};
+-
+-static MenuItem channel_items[] =
+-{
+-  { "Value", 0, 0, curves_value_callback, NULL, NULL, NULL },
+-  { "Red", 0, 0, curves_red_callback, NULL, NULL, NULL },
+-  { "Green", 0, 0, curves_green_callback, NULL, NULL, NULL },
+-  { "Blue", 0, 0, curves_blue_callback, NULL, NULL, NULL },
+-  { NULL, 0, 0, NULL, NULL, NULL, NULL }
+-};
+-
+-static MenuItem curve_type_items[] =
+-{
+-  { "Smooth", 0, 0, curves_smooth_callback, NULL, NULL, NULL },
+-  { "Free", 0, 0, curves_free_callback, NULL, NULL, NULL },
+-  { NULL, 0, 0, NULL, NULL, NULL, NULL }
+-};
+-
+ CurvesDialog *
+ curves_new_dialog ()
+ {
+@@ -414,7 +426,7 @@
+   cd->curve_type = SMOOTH;
+   cd->pixmap = NULL;
+ 
+-  for (i = 0; i < 4; i++)
++  for (i = 0; i < 5; i++)
+     channel_items [i].user_data = (gpointer) cd;
+   for (i = 0; i < 2; i++)
+     curve_type_items [i].user_data = (gpointer) cd;
+@@ -844,6 +856,21 @@
  }
  
-+static double
-+gradient_repeat_none(double val)
-+{
-+  return BOUNDS(val, 0.0, 1.0);
-+}
-+
-+static double
-+gradient_repeat_sawtooth(double val)
-+{
-+  if (val >= 0.0)
-+    return fmod(val, 1.0);
-+  else
-+    return 1.0 - fmod(-val, 1.0);
-+}
-+
-+static double
-+gradient_repeat_triangular(double val)
-+{
-+  int ival;
-+
-+  if (val < 0.0)
-+    val = -val;
-+
-+  ival = (int) val;
-+
-+  if (ival & 1)
-+    return 1.0 - fmod(val, 1.0);
-+  else
-+    return fmod(val, 1.0);
-+}
- 
- /*****/
  static void
-@@ -956,7 +1014,7 @@
- 		      BlendMode     blend_mode,
- 		      GradientType  gradient_type,
- 		      double        offset,
--		      int           repeat,
-+		      RepeatMode    repeat,
- 		      int           sx,
- 		      int           sy,
- 		      int           ex,
-@@ -973,6 +1031,7 @@
-   double         factor;
-   unsigned char *data;
-   void *         pr;
-+  RepeatFunc     repeat_func;
- 
-   /* Get foreground and background colors */
-   palette_get_foreground(&rf, &gf, &bf);
-@@ -1058,6 +1117,26 @@
-       break;
-     } /* switch */
- 
-+  /* Set repeat function */
++curves_alpha_callback (GtkWidget *w,
++		      gpointer   client_data)
++{
++  CurvesDialog *cd;
 +
-+  switch (repeat)
++  cd = (CurvesDialog *) client_data;
++
++  if (cd->channel != HISTOGRAM_ALPHA)
 +    {
-+    case REPEAT_NONE:
-+      repeat_func = gradient_repeat_none;
-+      break;
++      cd->channel = HISTOGRAM_ALPHA;
++      curves_update (cd, GRAPH | DRAW);
++    }
++}
 +
-+    case REPEAT_SAWTOOTH:
-+      repeat_func = gradient_repeat_sawtooth;
-+      break;
-+
-+    case REPEAT_TRIANGULAR:
-+      repeat_func = gradient_repeat_triangular;
-+      break;
-+
-+    default:
-+      fatal_error("gradient_fill_region(): unknown repeat mode %d", (int) repeat);
-+      break;
-+    } /* switch */
- 
-   /*  Cycle through the affected tiles and fill  */
-   for (pr = pixel_regions_register (1, PR); pr != NULL; pr = pixel_regions_process (pr))
-@@ -1116,10 +1195,7 @@
- 
- 	    /* Adjust for repeat */
- 
--	    if (repeat)
--	      factor = fmod(factor, 1.0);
--	    else
--	      factor = BOUNDS(factor, 0.0, 1.0);
-+	    factor = (*repeat_func)(factor);
- 
- 	    /* Blend the colors */
- 
-@@ -1250,7 +1326,7 @@
++static void
+ curves_smooth_callback (GtkWidget *w,
+ 			gpointer   client_data)
+ {
+@@ -1230,7 +1257,7 @@
    },
    { PDB_INT32,
-     "repeat",
--    "Repeat the gradient indefinitely along the direction vector"
-+    "Repeat mode: { NONE (0), REPEAT_SAWTOOTH (1), REPEAT_TRIANGULAR (2) }"
+     "channel",
+-    "the channel to modify: { VALUE (0), RED (1), GREEN (2), BLUE (3), GRAY (0) }"
++    "the channel to modify: { VALUE (0), RED (1), GREEN (2), BLUE (3), ALPHA (4), GRAY (0) }"
    },
-   { PDB_FLOAT,
-     "x1",
-@@ -1303,7 +1379,7 @@
-   GradientType gradient_type;
-   double opacity;
-   double offset;
--  int    repeat;
-+  RepeatMode repeat;
-   double x1, y1;
-   double x2, y2;
-   int int_value;
-@@ -1387,7 +1463,13 @@
+   { PDB_INT32,
+     "num_points",
+@@ -1329,11 +1356,11 @@
+   /*  arrange to modify the curves  */
    if (success)
      {
-       int_value = args[7].value.pdb_int;
--      repeat = (int_value ? TRUE : FALSE);
-+      switch (int_value)
+-      for (i = 0; i < 4; i++)
++      for (i = 0; i < 5; i++)
+ 	for (j = 0; j < 256; j++)
+ 	  cd.curve[i][j] = j;
+ 
+-      for (i = 0; i < 4; i++)
++      for (i = 0; i < 5; i++)
+ 	for (j = 0; j < 17; j++)
+ 	  {
+ 	    cd.points[i][j][0] = -1;
+@@ -1479,7 +1506,7 @@
+   /*  arrange to modify the curves  */
+   if (success)
+     {
+-      for (i = 0; i < 4; i++)
++      for (i = 0; i < 5; i++)
+ 	for (j = 0; j < 256; j++)
+ 	  cd.curve[i][j] = j;
+ 
+@@ -1504,3 +1531,5 @@
+ 
+   return procedural_db_return_args (&curves_explicit_proc, success);
+ }
++
++
+--- gimp-0.99.10-dist/app/histogram.h	Fri May  9 04:47:26 1997
++++ app/histogram.h	Sat Jun  7 20:39:34 1997
+@@ -24,6 +24,7 @@
+ #define HISTOGRAM_RED    1
+ #define HISTOGRAM_GREEN  2
+ #define HISTOGRAM_BLUE   3
++#define HISTOGRAM_ALPHA  4
+ 
+ /*  Histogram information function  */
+ typedef struct _Histogram Histogram;
+@@ -38,7 +39,7 @@
+ };
+ 
+ typedef double  Values[256];
+-typedef Values  HistogramValues[4];
++typedef Values  HistogramValues[5];
+ 
+ typedef void (* HistogramInfoFunc)  (PixelRegion *, PixelRegion *, HistogramValues, void *);
+ typedef void (* HistogramRangeCallback)  (int, int, HistogramValues, void *);
+@@ -53,3 +54,7 @@
+ HistogramValues *histogram_values  (Histogram *);
+ 
+ #endif /* __HISTOGRAM_H__ */
++
++
++
++
+--- gimp-0.99.10-dist/app/levels.c	Tue Jun  3 20:33:56 1997
++++ app/levels.c	Sun Jun  8 01:26:33 1997
+@@ -83,18 +83,18 @@
+   ImageMap       image_map;
+   int            color;
+   int            channel;
+-  int            low_input[4];
+-  double         gamma[4];
+-  int            high_input[4];
+-  int            low_output[4];
+-  int            high_output[4];
++  int            low_input[5];
++  double         gamma[5];
++  int            high_input[5];
++  int            low_output[5];
++  int            high_output[5];
+   gint           preview;
+ 
+   int            active_slider;
+   int            slider_pos[5];  /*  positions for the five sliders  */
+ 
+-  unsigned char  input[4][256];
+-  unsigned char  output[4][256];
++  unsigned char  input[5][256];
++  unsigned char  output[5][256];
+ 
+ };
+ 
+@@ -114,6 +114,7 @@
+ static void            levels_red_callback            (GtkWidget *, gpointer);
+ static void            levels_green_callback          (GtkWidget *, gpointer);
+ static void            levels_blue_callback           (GtkWidget *, gpointer);
++static void            levels_alpha_callback          (GtkWidget *, gpointer);
+ static void            levels_auto_levels_callback    (GtkWidget *, gpointer);
+ static void            levels_ok_callback             (GtkWidget *, gpointer);
+ static void            levels_cancel_callback         (GtkWidget *, gpointer);
+@@ -178,7 +179,8 @@
+ 	    d[GRAY_PIX] = ld->output[HISTOGRAM_VALUE][ld->input[HISTOGRAM_VALUE][s[GRAY_PIX]]];;
+ 
+ 	  if (has_alpha)
+-	    d[alpha] = s[alpha];
++	      d[alpha] = ld->output[HISTOGRAM_ALPHA][ld->input[HISTOGRAM_ALPHA][s[alpha]]];
++	  /*d[alpha] = s[alpha];*/
+ 
+ 	  s += srcPR->bytes;
+ 	  d += destPR->bytes;
+@@ -200,11 +202,14 @@
+   unsigned char *mask, *m;
+   int w, h;
+   int value, red, green, blue;
++  int has_alpha, alpha;
+ 
+   ld = (LevelsDialog *) user_data;
+ 
+   h = srcPR->h;
+   src = srcPR->data;
++  has_alpha = (srcPR->bytes == 2 || srcPR->bytes == 4);
++  alpha = has_alpha ? srcPR->bytes - 1 : srcPR->bytes;
+ 
+   if (maskPR)
+     mask = maskPR->data;
+@@ -226,7 +231,7 @@
+ 	      red = s[RED_PIX];
+ 	      green = s[GREEN_PIX];
+ 	      blue = s[BLUE_PIX];
+-
++	      alpha = s[ALPHA_PIX];
+ 	      if (maskPR)
+ 		{
+ 		  values[HISTOGRAM_VALUE][value] += (double) *m / 255.0;
+@@ -251,6 +256,14 @@
+ 		values[HISTOGRAM_VALUE][value] += 1.0;
+ 	    }
+ 
++	  if (has_alpha)
++	    {
++	      if (maskPR)
++		values[HISTOGRAM_ALPHA][s[alpha]] += (double) *m / 255.0;
++	      else
++		values[HISTOGRAM_ALPHA][s[alpha]] += 1.0;
++	    }
++
+ 	  s += srcPR->bytes;
+ 
+ 	  if (maskPR)
+@@ -379,6 +392,16 @@
+   g_free (_levels);
+ }
+ 
++static MenuItem color_option_items[] =
++{
++  { "Value", 0, 0, levels_value_callback, NULL, NULL, NULL },
++  { "Red", 0, 0, levels_red_callback, NULL, NULL, NULL },
++  { "Green", 0, 0, levels_green_callback, NULL, NULL, NULL },
++  { "Blue", 0, 0, levels_blue_callback, NULL, NULL, NULL },
++  { "Alpha", 0, 0, levels_alpha_callback, NULL, NULL, NULL },
++  { NULL, 0, 0, NULL, NULL, NULL, NULL }
++};
++
+ void
+ levels_initialize (void *gdisp_ptr)
+ {
+@@ -402,7 +425,7 @@
+ 
+   /*  Initialize the values  */
+   levels_dialog->channel = HISTOGRAM_VALUE;
+-  for (i = 0; i < 4; i++)
++  for (i = 0; i < 5; i++)
+     {
+       levels_dialog->low_input[i] = 0;
+       levels_dialog->gamma[i] = 1.0;
+@@ -415,11 +438,23 @@
+   levels_dialog->color = drawable_color (levels_dialog->drawable_id);
+   levels_dialog->image_map = image_map_create (gdisp_ptr, levels_dialog->drawable_id);
+ 
++  /* check for alpha channel */
++  if (drawable_has_alpha (levels_dialog->drawable_id))
++    gtk_widget_set_sensitive( color_option_items[4].widget, TRUE);
++  else 
++    gtk_widget_set_sensitive( color_option_items[4].widget, FALSE);
++  
+   /*  hide or show the channel menu based on image type  */
+   if (levels_dialog->color)
+-    gtk_widget_show (levels_dialog->channel_menu);
+-  else
+-    gtk_widget_hide (levels_dialog->channel_menu);
++    for (i = 0; i < 4; i++) 
++       gtk_widget_set_sensitive( color_option_items[i].widget, TRUE);
++  else 
++    for (i = 1; i < 4; i++) 
++       gtk_widget_set_sensitive( color_option_items[i].widget, FALSE);
++
++  
++
++
+ 
+   levels_update (levels_dialog, LOW_INPUT | GAMMA | HIGH_INPUT | LOW_OUTPUT | HIGH_OUTPUT | DRAW);
+   levels_update (levels_dialog, INPUT_LEVELS | OUTPUT_LEVELS);
+@@ -457,15 +492,6 @@
+   { "Cancel", levels_cancel_callback, NULL, NULL }
+ };
+ 
+-static MenuItem color_option_items[] =
+-{
+-  { "Value", 0, 0, levels_value_callback, NULL, NULL, NULL },
+-  { "Red", 0, 0, levels_red_callback, NULL, NULL, NULL },
+-  { "Green", 0, 0, levels_green_callback, NULL, NULL, NULL },
+-  { "Blue", 0, 0, levels_blue_callback, NULL, NULL, NULL },
+-  { NULL, 0, 0, NULL, NULL, NULL, NULL }
+-};
+-
+ LevelsDialog *
+ levels_new_dialog ()
+ {
+@@ -483,7 +509,7 @@
+   ld = g_malloc (sizeof (LevelsDialog));
+   ld->preview = TRUE;
+ 
+-  for (i = 0; i < 4; i++)
++  for (i = 0; i < 5; i++)
+     color_option_items [i].user_data = (gpointer) ld;
+ 
+   /*  The shell and main vbox  */
+@@ -717,7 +743,7 @@
+   int i, j;
+ 
+   /*  Recalculate the levels arrays  */
+-  for (j = 0; j < 4; j++)
++  for (j = 0; j < 5; j++)
+     {
+       for (i = 0; i < 256; i++)
+ 	{
+@@ -927,6 +953,22 @@
+ }
+ 
+ static void
++levels_alpha_callback (GtkWidget *w,
++		      gpointer   client_data)
++{
++  LevelsDialog *ld;
++
++  ld = (LevelsDialog *) client_data;
++
++  if (ld->channel != HISTOGRAM_ALPHA)
++    {
++      ld->channel = HISTOGRAM_ALPHA;
++      histogram_channel (ld->histogram, ld->channel);
++      levels_update (ld, ALL);
++    }
++}
++
++static void
+ levels_adjust_channel (LevelsDialog    *ld,
+ 		       HistogramValues *values,
+ 		       int              channel)
+@@ -1525,7 +1567,7 @@
+   /*  arrange to modify the levels  */
+   if (success)
+     {
+-      for (i = 0; i < 4; i++)
++      for (i = 0; i < 5; i++)
+ 	{
+ 	  ld.low_input[i] = 0;
+ 	  ld.gamma[i] = 1.0;
+From scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com  Mon Jun 30 22:00:14 1997
+Return-Path: scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id WAA17628 for scott; Mon, 30 Jun 1997 22:00:13 -0500
+Received: from scam.XCF.Berkeley.EDU by gilroy.rmp.com id aa13732;
+          30 Jun 97 19:38 PDT
+Received: (qmail 16438 invoked by uid 27258); 30 Jun 1997 20:58:07 -0000
+Delivered-To: gimp-developer-outgoing@xcf.berkeley.edu
+Received: (qmail 16434 invoked by uid 27258); 30 Jun 1997 20:58:06 -0000
+Delivered-To: gimp-developer@scam.XCF.Berkeley.EDU
+Received: (qmail 16428 invoked by uid 0); 30 Jun 1997 20:58:04 -0000
+Received: from jens.metrix.de (jens@194.123.88.124)
+  by scam.xcf.berkeley.edu with SMTP; 30 Jun 1997 20:58:04 -0000
+Received: (from jens@localhost) by jens.metrix.de (8.7.6/8.7.3) id XAA03620; Mon, 30 Jun 1997 23:05:10 +0200
+To: gimp-developer@scam.XCF.Berkeley.EDU
+Subject: [gimp-devel] [patch] blur.c
+X-Face: Z[@OB)("ZvE?ev~1b+b!0ZUB.$%rh.9qE>dVf>q}Q/V?%d`J3gd!LR\aAZ8<Hwi]xTA(:*c;i3,?K?+rCy*^b$)a,}E?eo},}x2]5LlJysyoUOK"o[>K)'\Ulb7y-7*.If^;rHl['oa)n_M7E6w+LDKMs"G8_`c)uOS1^}.1|8Ill]7X68X-paeUOpBhz<F`B0?~^2Et~GYfw~/0]H]nx4~C_E/_mp#^7Ixc:
+Mime-Version: 1.0 (generated by tm-edit 7.108)
+Content-Type: multipart/mixed;
+ boundary="Multipart_Mon_Jun_30_23:05:08_1997-1"
+Content-Transfer-Encoding: 7bit
+From: Jens Lautenbacher <jens@metrix.de>
+Date: 30 Jun 1997 23:05:08 +0200
+Message-ID: <m3radjyf7f.fsf@jens.metrix.de>
+Lines: 105
+X-Mailer: Gnus v5.4.60/XEmacs 20.3(beta10) - "Athens"
+
+--Multipart_Mon_Jun_30_23:05:08_1997-1
+Content-Type: text/plain; charset=US-ASCII
+
+
+This patch to blur.c fixes the nasty "halo" effect when blurring e.g. a
+white object on a transparent background (a transparent background
+with color at black, that is) by correctly considering the alpha
+channel. Thanks to Nether for finding the last(?) bug! This IRC thing
+seems to be useful sometimes...
+
+The same nasty bug still remains in all other convolution tools
+(e.g. the gaussian blurs), the transformation tool and the scaleing of
+layers (at least). Volunteers to fix these are welcome....
+
+
+Regards,
+
+	jtl
+
+
+--Multipart_Mon_Jun_30_23:05:08_1997-1
+Content-Type: application/octet-stream; type=patch
+Content-Disposition: attachment; filename="blur.diff"
+Content-Transfer-Encoding: 7bit
+
+--- plug-ins/blur.c.orig	Mon Jun 30 22:54:19 1997
++++ plug-ins/blur.c	Mon Jun 30 22:43:33 1997
+@@ -151,7 +151,9 @@
+   guchar *tmp;
+   gint row, col;
+   gint x1, y1, x2, y2;
+-
++  gint has_alpha, ind;
++  
++    
+   /* Get the input area. This is the bounding box of the selection in
+    *  the image (or the entire image if there is no selection). Only
+    *  operating on the input area is simply an optimization. It doesn't
+@@ -166,7 +168,8 @@
+   width = drawable->width;
+   height = drawable->height;
+   bytes = drawable->bpp;
+-
++  has_alpha = gimp_drawable_has_alpha(drawable->id);
++  
+   /*  allocate row buffers  */
+   prev_row = (guchar *) malloc ((x2 - x1 + 2) * bytes);
+   cur_row = (guchar *) malloc ((x2 - x1 + 2) * bytes);
+@@ -191,11 +194,41 @@
+       blur_prepare_row (&srcPR, nr, x1, row + 1, (x2 - x1));
+ 
+       d = dest;
++      ind = 0;
+       for (col = 0; col < (x2 - x1) * bytes; col++)
+-	*d++ = ((gint) pr[col - bytes] + (gint) pr[col] + (gint) pr[col + bytes] +
+-		(gint) cr[col - bytes] + (gint) cr[col] + (gint) cr[col + bytes] +
+-		(gint) nr[col - bytes] + (gint) nr[col] + (gint) nr[col + bytes]) / 9;
+-
++	  {
++	      ind++;
++	      
++	      if (ind==bytes || !(has_alpha))
++		  {  /* we always do the alpha channel, 
++			or if there's none we have no problem
++			so the algorithm stays the same */
++		  *d++ = ((gint) pr[col - bytes] + (gint) pr[col] + (gint) pr[col + bytes] +
++			  (gint) cr[col - bytes] + (gint) cr[col] + (gint) cr[col + bytes] +
++			  (gint) nr[col - bytes] + (gint) nr[col] + (gint) nr[col + bytes]) / 9;
++		  ind=0;
++	      }
++	      else { /* we have an alpha channel picture, and do the color part here */
++		      *d++ = ((gint) (((gdouble) (pr[col - bytes] * pr[col - ind]) 
++				       + (gdouble) (pr[col]         * pr[col + bytes - ind])
++				       + (gdouble) (pr[col + bytes] * pr[col + 2*bytes - ind])
++				       + (gdouble) (cr[col - bytes] * cr[col - ind])
++				       + (gdouble) (cr[col]         * cr[col + bytes - ind]) 
++				       + (gdouble) (cr[col + bytes] * cr[col + 2*bytes - ind])
++				       + (gdouble) (nr[col - bytes] * nr[col - ind])
++				       + (gdouble) (nr[col]         * nr[col + bytes - ind])
++				       + (gdouble) (nr[col + bytes] * nr[col + 2*bytes - ind]))
++				      / ((gdouble) pr[col - ind]
++					 + (gdouble) pr[col + bytes - ind]
++					 + (gdouble) pr[col + 2*bytes - ind]
++					 + (gdouble) cr[col - ind]
++					 + (gdouble) cr[col + bytes - ind]
++					 + (gdouble) cr[col + 2*bytes - ind]
++					 + (gdouble) nr[col - ind]
++					 + (gdouble) nr[col + bytes - ind]
++					 + (gdouble) nr[col + 2*bytes - ind])));
++	      }
++	  }
+       /*  store the dest  */
+       gimp_pixel_rgn_set_row (&destPR, dest, x1, row, (x2 - x1));
+ 
+
+--Multipart_Mon_Jun_30_23:05:08_1997-1
+Content-Type: text/plain; charset=US-ASCII
+
+
+
+
+
+
+
+--Multipart_Mon_Jun_30_23:05:08_1997-1--
+
+From scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com  Tue Jun 17 05:30:18 1997
+Return-Path: scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id FAA12382 for scott; Tue, 17 Jun 1997 05:30:16 -0500
+Received: from scam.XCF.Berkeley.EDU by gilroy.rmp.com id aa09559;
+          17 Jun 97 3:05 PDT
+Received: (qmail 11134 invoked by uid 27258); 10 Jun 1997 14:41:45 -0000
+Delivered-To: gimp-developer-outgoing@xcf.berkeley.edu
+Received: (qmail 11131 invoked by uid 27258); 10 Jun 1997 14:41:43 -0000
+Delivered-To: gimp-developer@scam.XCF.Berkeley.EDU
+Received: (qmail 11121 invoked from network); 10 Jun 1997 14:41:37 -0000
+Received: from ppp00.inetq.or.jp (HELO sonic.InetQ.or.jp) (root@202.220.34.130)
+  by scam.xcf.berkeley.edu with SMTP; 10 Jun 1997 14:41:37 -0000
+Received: (from narazaki@localhost) by sonic.InetQ.or.jp (8.8.0/8.8.0) id XAA00660; Tue, 10 Jun 1997 23:03:35 +0900
+Date: Tue, 10 Jun 1997 23:03:35 +0900
+Message-Id: <199706101403.XAA00660@sonic.InetQ.or.jp>
+From: Shuji Narazaki <narazaki@InetQ.or.jp>
+Gcc: nnfolder+archive:mail
+To: gimp-developer@scam.XCF.Berkeley.EDU
+Subject: [gimp-devel] [PATCH] set_paint_mode, CML_explorer and circle-logo
+
+Hi,
+
+Result of gimp-brushes-set-paint-mode is undeterministic, because
+`success' is not initialized in its invoker. Here's a patch to fix it:
+
+--- app/brushes.c.original	Sat Jun  7 05:05:33 1997
++++ app/brushes.c	Sun Jun  8 14:15:21 1997
+@@ -835,11 +835,8 @@
+ {
+   int paint_mode;
+ 
+-  int_value = args[0].value.pdb_int;
+-  if (int_value >= NORMAL_MODE && int_value <= VALUE_MODE)
+-    paint_mode = int_value;
+-  else
+-    success = FALSE;
++  paint_mode = args[0].value.pdb_int;
++  success = (paint_mode >= NORMAL_MODE && paint_mode <= VALUE_MODE);
+ 
+   if (success)
+     set_brush_paint_mode (paint_mode);
+------END-OF-PATCH
+
+BTW, some scripts in 0.99.10 (by S&P?) use `else' in cond clause. 
+But it is not implemented in script-fu. Is this a feature? A deviation
+from R4RS? 
+
+
+diff -u -d scripts-0.99.10/circle-logo.scm scripts/circle-logo.scm
+--- plug-ins/script-fu/scripts-0.99.10/circle-logo.scm	Wed Jun  4 06:11:36 1997
++++ plug-ins/script-fu/scripts/circle-logo.scm	Mon Jun  9 22:16:24 1997
+@@ -1,29 +1,63 @@
+-;; text-circle a script for The GIMP
+-;; Shuji Narazaki (narazaki@InetQ.or.jp)
+-;; Time-stamp: <97/03/01 09:49:10 narazaki@InetQ.or.jp>
++;; circle-logo -- a script for The GIMP 1.0
++;; Author: Shuji Narazaki (narazaki@InetQ.or.jp)
++;; Time-stamp: <1997/06/09 22:16:20 narazaki@InetQ.or.jp>
++;; Version 1.3
+ 
+-(define (script-fu-circle-logo text radius font font-size slant antialias)
+-  (let* ((width (* radius 2.5))
+-	 (height (* radius 2.5))
+-	 (img (car (gimp-image-new width height RGB)))
+-	 (drawable (car (gimp-layer-new img width height RGBA_IMAGE
+-					"text-circle" 100 NORMAL)))
++(define modulo fmod)			; in R4RS way
++
++(define (script-fu-circle-logo text radius start-angle fill-angle
++			       font font-size slant antialias)
++  (let* ((drawable-size (* 2.0 (+ radius (* 2 font-size))))
++	 (img (car (gimp-image-new drawable-size drawable-size RGB)))
++	 (BG-layer (car (gimp-layer-new img drawable-size drawable-size
++					RGBA_IMAGE "background" 100 NORMAL)))
++	 (merged-layer #f)
+ 	 (char-num (string-length text))
+-	 (radians (/ (* 2 *pi*) char-num))
++	 (radian-step 0)
+ 	 (rad-90 (/ *pi* 2))
+-	 (center-x (/ width 2))
+-	 (center-y (/ height 2))
+-	 (fixed-pole "]")
++	 (center-x (/ drawable-size 2))
++	 (center-y center-x)
++	 (fixed-pole " ]Ag")		; some fonts have no "]" "g" has desc.
+ 	 (font-infos (gimp-text-get-extents fixed-pole font-size PIXELS
+ 					    "*" font "*" slant "*" "*"))
+-	 (extra (max 0 (- (nth 0 font-infos) 5))) ; why 4? See text_tool.c.
++	 (extra (max 0 (- (nth 0 font-infos) 5))) ; why 5? See text_tool.c.
+ 	 (desc (nth 3 font-infos))
++	 (angle-list #f)
+ 	 (letter "")
+ 	 (new-layer #f)
+ 	 (index 0))
+     (gimp-image-disable-undo img)
+-    (gimp-image-add-layer img drawable 0)
+-    (gimp-edit-fill img drawable)
++    (gimp-image-add-layer img BG-layer 0)
++    (gimp-edit-fill img BG-layer)
++    ;; change units
++    (set! start-angle (* (/ (modulo start-angle 360) 360) 2 *pi*))
++    (set! fill-angle (* (/ fill-angle 360) 2 *pi*))
++    (set! radian-step (/ fill-angle char-num))
++    ;; make width-list
++    (let ((temp-list '())
++	  (temp-str #f)
++	  (scale 0)
++	  (temp #f))
++      (set! index 0)
++      (while (< index char-num)
++	(set! temp-str (substring text index (+ index 1)))
++	(if (equal? " " temp-str)
++	    (set! temp-str "]"))
++	(set! temp (gimp-text-get-extents temp-str font-size PIXELS
++					  "*" font "*" slant "*" "*"))
++	(set! temp-list (cons (nth 0 temp) temp-list))
++	(set! index (+ index 1)))
++      (set! angle-list (nreverse temp-list))
++      (set! temp 0)
++      (set! angle-list
++	    (mapcar (lambda (angle) 
++		      (let ((tmp temp))
++			(set! temp (+ angle temp))
++			(+ tmp (/ angle 2))))
++		    angle-list))
++      (set! scale (/ fill-angle temp))
++      (set! angle-list (mapcar (lambda (angle) (* scale angle)) angle-list)))
++    (set! index 0)
+     (while (< index char-num)
+       (set! letter (substring text index (+ index 1)))
+       (if (not (equal? " " letter))
+@@ -36,24 +70,35 @@
+ 		 (width (car (gimp-drawable-width new-layer)))
+ 		 (height (car (gimp-drawable-height new-layer)))
+ 		 (rotate-radius (- (/ height 2) desc))
+-		 (rad1 (- (* index radians) rad-90))
+-		 (rad2 (* index radians)))
++		 (angle (+ start-angle (- (nth index angle-list) rad-90))))
++	    ;; delete fixed-pole
+ 	    (gimp-layer-resize new-layer (- width extra 1) height 0 0)
+-	    '(gimp-layer-translate new-layer (* index 34) 10)
++	    (set! width (car (gimp-drawable-width new-layer)))
+ 	    (gimp-layer-translate new-layer
+ 				  (+ center-x
+-				     (* radius (cos rad1))
+-				     (- (* rotate-radius (sin rad2)))
++				     (* radius (cos angle))
++				     (* rotate-radius
++					(cos (if (< 0 fill-angle)
++						 angle
++						 (+ angle *pi*))))
+ 				     (- (/ width 2)))
+ 				  (+ center-y
+-				     (* radius (sin rad1))
+-				     (- (* rotate-radius (cos rad2)))
++				     (* radius (sin angle))
++				     (* rotate-radius
++					(sin (if (< 0 fill-angle) 
++						 angle
++						 (+ angle *pi*))))
+ 				     (- (/ height 2))))
+-	    (gimp-rotate img new-layer 1 rad2)))
++	    (gimp-rotate img new-layer 1 
++			 ((if (< 0 fill-angle) + -) angle rad-90))))
+       (set! index (+ index 1)))
+-    (gimp-image-merge-visible-layers img CLIP-TO-IMAGE)
++    (gimp-layer-set-visible BG-layer 0)
++    (set! merged-layer (car (gimp-image-merge-visible-layers img CLIP-TO-IMAGE)))
++    (gimp-layer-set-name merged-layer "text circle")
++    (gimp-layer-set-visible BG-layer 1)
+     (gimp-image-enable-undo img)
+-    (gimp-display-new img)))
++    (gimp-display-new img)
++    (gimp-displays-flush)))
+ 
+ (script-fu-register "script-fu-circle-logo"
+ 		    "<Toolbox>/Xtns/Script-Fu/Logos/Text Circle"
+@@ -62,13 +107,14 @@
+ 		    "Shuji Narazaki"
+ 		    "1997"
+ 		    ""
+-		    SF-VALUE "Text" "\"Ring Ring Ring, Tiger! Tiger! Tiger! \""
++		    SF-VALUE "Text" "\"Ring World again! Tiger! Tiger! Tiger! \""
+ 		    SF-VALUE "Radius" "80"
++		    SF-VALUE "Start-angle" "0"
++		    SF-VALUE "Fill-angle" "360"
+ 		    SF-VALUE "Family" "\"helvetica\""
+-		    SF-VALUE "Font Size" "18"
++		    SF-VALUE "Font Size (pixel)" "18"
+ 		    SF-VALUE "Slant" "\"r\""
+-		    SF-VALUE "Antialias(0,1)" "1"
++		    SF-TOGGLE "Antialias" TRUE
+ )
+ 
+-;(text-circle "This is a sample string. " "Bodoni" 24 80)
+-;; end of text-circle.scm
++;; circle-logo.scm ends here
+From scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com  Sat Jun  7 15:00:25 1997
+Return-Path: scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id PAA24458 for scott; Sat, 7 Jun 1997 15:00:23 -0500
+Received: from scam.XCF.Berkeley.EDU by gilroy.rmp.com id aa00532;
+          7 Jun 97 12:30 PDT
+Received: (qmail 15471 invoked by uid 27258); 7 Jun 1997 19:20:22 -0000
+Delivered-To: gimp-developer-outgoing@xcf.berkeley.edu
+Received: (qmail 15468 invoked by uid 27258); 7 Jun 1997 19:20:20 -0000
+Delivered-To: gimp-developer@scam.XCF.Berkeley.EDU
+Received: (qmail 15441 invoked from network); 7 Jun 1997 19:19:54 -0000
+Received: from jens.metrix.de (jens@194.123.88.124)
+  by scam.xcf.berkeley.edu with SMTP; 7 Jun 1997 19:19:54 -0000
+Received: (from jens@localhost) by jens.metrix.de (8.7.6/8.7.3) id VAA00843; Sat, 7 Jun 1997 21:26:28 +0200
+To: gimp-developer@scam.XCF.Berkeley.EDU
+Subject: [gimp-devel] displace update.
+X-Face: Z[@OB)("ZvE?ev~1b+b!0ZUB.$%rh.9qE>dVf>q}Q/V?%d`J3gd!LR\aAZ8<Hwi]xTA(:*c;i3,?K?+rCy*^b$)a,}E?eo},}x2]5LlJysyoUOK"o[>K)'\Ulb7y-7*.If^;rHl['oa)n_M7E6w+LDKMs"G8_`c)uOS1^}.1|8Ill]7X68X-paeUOpBhz<F`B0?~^2Et~GYfw~/0]H]nx4~C_E/_mp#^7Ixc:
+Reply-To: jens@lemming0.lem.uni-karlsruhe.de
+Mime-Version: 1.0 (generated by tm-edit 7.106)
+Content-Type: multipart/mixed;
+ boundary="Multipart_Sat_Jun__7_21:26:26_1997-1"
+Content-Transfer-Encoding: 7bit
+From: Jens Lautenbacher <jens@metrix.de>
+Date: 07 Jun 1997 21:26:27 +0200
+Message-ID: <m3pvty5i58.fsf@jens.metrix.de>
+Lines: 294
+X-Mailer: Gnus v5.4.55/XEmacs 20.3(beta3)
+
+--Multipart_Sat_Jun__7_21:26:26_1997-1
+Content-Type: text/plain; charset=US-ASCII
+
+
+This is a little update for the displace plugin as distributed in
+0.99.10. It fixes some embarresing stupid C code of mine and also adds 
+some small fixes from Quartic. 
+
+     jtl
+
+
+--Multipart_Sat_Jun__7_21:26:26_1997-1
+Content-Type: application/octet-stream
+Content-Disposition: attachment; filename="displace-patch"
+Content-Transfer-Encoding: 7bit
+
+--- plug-ins/displace.c	Wed Jun  4 05:02:17 1997
++++ plug-ins/displace.c	Sat Jun  7 20:25:08 1997
+@@ -22,14 +22,14 @@
+  *
+  * Extensive modifications to the dialog box, parameters, and some
+  * legibility stuff in displace() by Federico Mena Quintero ---
+- * quartic@polloux.fciencias.unam.mx.  If there are any bugs in these
++ * federico@nuclecu.unam.mx.  If there are any bugs in these
+  * changes, they are my fault and not Stephen's.
+  *
+  * JTL: May 29th 1997
+  * Added (part of) the patch from Eiichi Takamori -- the part which removes the border artefacts
+  * (http://ha1.seikyou.ne.jp/home/taka/gimp/displace/displace.html)
+  * Added ability to use transparency as the identity transformation
+- * (Full transparency is treated as if it was grey 128)
++ * (Full transparency is treated as if it was grey 0.5)
+  * and the possibility to use RGB/RGBA pictures where the intensity of the pixel is taken into account
+  *
+  */
+@@ -40,6 +40,8 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <math.h>
++#include <unistd.h>
++#include <signal.h>
+ #include "gtk/gtk.h"
+ #include "libgimp/gimp.h"
+ #include "libgimp/gimpui.h"
+@@ -299,8 +301,9 @@
+   argv = g_new (gchar *, 1);
+   argv[0] = g_strdup ("displace");
+ 
++  printf("displace: pid = %d\n", getpid());
++
+   gtk_init (&argc, &argv);
+-  gtk_rc_parse (gimp_gtkrc ());
+ 
+   dlg = gtk_dialog_new ();
+   gtk_window_set_title (GTK_WINDOW (dlg), "Displace");
+@@ -488,11 +491,11 @@
+   gint k;
+ 
+   gdouble xm_val, ym_val;
+-  gint    xm_alpha=0;
+-  gint    ym_alpha=0;
+-  gint    xm_bytes=1;
+-  gint    ym_bytes=1;
+-
++  gint    xm_alpha = 0;
++  gint    ym_alpha = 0;
++  gint    xm_bytes = 1;
++  gint    ym_bytes = 1;
++  
+   /* Get selection area */
+   gimp_drawable_mask_bounds (drawable->id, &x1, &y1, &x2, &y2);
+ 
+@@ -513,7 +516,8 @@
+     {
+       map_x = gimp_drawable_get (dvals.displace_map_x);
+       gimp_pixel_rgn_init (&map_x_rgn, map_x, x1, y1, (x2 - x1), (y2 - y1), FALSE, FALSE);
+-      if (gimp_drawable_has_alpha(map_x->id)) xm_alpha = 1;
++      if (gimp_drawable_has_alpha(map_x->id))
++	xm_alpha = 1;
+       xm_bytes = gimp_drawable_bpp(map_x->id);
+     }
+   else
+@@ -523,7 +527,8 @@
+     {
+       map_y = gimp_drawable_get (dvals.displace_map_y);
+       gimp_pixel_rgn_init (&map_y_rgn, map_y, x1, y1, (x2 - x1), (y2 - y1), FALSE, FALSE);
+-      if (gimp_drawable_has_alpha(map_y->id)) ym_alpha = 1;
++      if (gimp_drawable_has_alpha(map_y->id))
++	ym_alpha = 1;
+       ym_bytes = gimp_drawable_bpp(map_y->id);
+     }
+   else
+@@ -531,7 +536,6 @@
+ 
+   gimp_pixel_rgn_init (&dest_rgn, drawable, x1, y1, (x2 - x1), (y2 - y1), TRUE, TRUE);
+ 
+-
+   /*  Register the pixel regions  */
+   if (dvals.do_x && dvals.do_y)
+     pr = gimp_pixel_rgns_register (3, &dest_rgn, &map_x_rgn, &map_y_rgn);
+@@ -542,7 +546,6 @@
+   else
+     pr = NULL;
+ 
+-
+   for (pr = pr; pr != NULL; pr = gimp_pixel_rgns_process (pr))
+     {
+       destrow = dest_rgn.data;
+@@ -550,52 +553,58 @@
+ 	mxrow = map_x_rgn.data;
+       if (dvals.do_y)
+ 	myrow = map_y_rgn.data;
+-
++      
+       for (y = dest_rgn.y; y < (dest_rgn.y + dest_rgn.h); y++)
+ 	{
+ 	  dest = destrow;
+ 	  mx = mxrow;
+ 	  my = myrow;
+-
++	  
+ 	  /*
+ 	   * We could move the displacement image address calculation out of here,
+ 	   * but when we can have different sized displacement and destination
+ 	   * images we'd have to move it back anyway.
+ 	   */
+-
++	  
+ 	  for (x = dest_rgn.x; x < (dest_rgn.x + dest_rgn.w); x++)
+ 	    {
+ 	      if (dvals.do_x)
+ 		{
+-		    xm_val = displace_map_give_value(mx, xm_alpha, xm_bytes);
+-		    amnt = dvals.amount_x * ((((double) xm_val) - 128.0)
+-					     / 128.0);
+-		    needx = x + amnt;
+-		    mx += xm_bytes * sizeof(guchar);
++		  xm_val = displace_map_give_value(mx, xm_alpha, xm_bytes); 
++		  amnt = dvals.amount_x * (xm_val - 127.5) / 127.5;
++		  needx = x + amnt;
++		  mx += xm_bytes;
+ 		}
+ 	      else
+ 		needx = x;
+-
++	      
+ 	      if (dvals.do_y)
+ 		{
+-		    ym_val = displace_map_give_value(my, ym_alpha, ym_bytes);
+-		    amnt = dvals.amount_y * ((((double) ym_val) - 128.0)
+-					   / 128.0);
+-		    needy = y + amnt;
+-		    my += ym_bytes * sizeof(guchar);		}
++		  ym_val = displace_map_give_value(my, ym_alpha, ym_bytes);
++		  amnt = dvals.amount_y * (ym_val - 127.5) / 127.5;
++		  needy = y + amnt;
++		  my += ym_bytes;
++		}
+ 	      else
+ 		needy = y;
+-
++	      
+ 	      /* Calculations complete; now copy the proper pixel */
++	      
++	      if (needx >= 0.0)
++		      xi = (int) needx;
++	      else
++		      xi = -((int) -needx + 1);
+ 
+-	      xi = needx;
+-	      yi = needy;
+-
++	      if (needy >= 0.0)
++		      yi = (int) needy;
++	      else
++		      yi = -((int) -needy + 1);
++	      
+ 	      tile = displace_pixel (drawable, tile, width, height, x1, y1, x2, y2, xi, yi, &row, &col, pixel[0]);
+ 	      tile = displace_pixel (drawable, tile, width, height, x1, y1, x2, y2, xi + 1, yi, &row, &col, pixel[1]);
+ 	      tile = displace_pixel (drawable, tile, width, height, x1, y1, x2, y2, xi, yi + 1, &row, &col, pixel[2]);
+ 	      tile = displace_pixel (drawable, tile, width, height, x1, y1, x2, y2, xi + 1, yi + 1, &row, &col, pixel[3]);
+-
++	      
+ 	      for (k = 0; k < bytes; k++)
+ 		{
+ 		  values[0] = pixel[0][k];
+@@ -603,19 +612,19 @@
+ 		  values[2] = pixel[2][k];
+ 		  values[3] = pixel[3][k];
+ 		  val = bilinear(needx, needy, values);
+-
++		  
+ 		  *dest++ = val;
+ 		} /* for */
+ 	    }
+-
++	  
+ 	  destrow += dest_rgn.rowstride;
+-
++	  
+ 	  if (dvals.do_x)
+ 	    mxrow += map_x_rgn.rowstride;
+ 	  if (dvals.do_y)
+ 	    myrow += map_y_rgn.rowstride;
+ 	}
+-
++      
+       progress += dest_rgn.w * dest_rgn.h;
+       gimp_progress_update ((double) progress / (double) max_progress);
+     } /* for */
+@@ -633,29 +642,28 @@
+   gimp_drawable_flush (drawable);
+   gimp_drawable_merge_shadow (drawable->id, TRUE);
+   gimp_drawable_update (drawable->id, x1, y1, (x2 - x1), (y2 - y1));
+-
+ } /* displace */
+ 
+ 
+ static gdouble
+ displace_map_give_value(guchar *pt, gint alpha, gint bytes)
+ {
+-    gdouble ret, val_alpha;
++  gdouble ret, val_alpha;
++  
++  if (bytes >= 3)
++    ret =  0.30 * pt[0] + 0.59 * pt[1] + 0.11 * pt[2];
++  else
+     ret = (gdouble) *pt;
+-
+-    if (bytes >= 3)
+-	ret =  0.3  * (gdouble) *pt
+-	    +  0.59 * (gdouble) *(pt + sizeof(guchar))
+-	    +  0.11 * (gdouble) *(pt + 2*sizeof(guchar));
+-    if (alpha)
+-	{
+-	    val_alpha = *(pt + (bytes - 1)*sizeof(guchar));
+-	    ret = ( (ret - 127.5) * val_alpha / 255 ) + 127.5;
+-	};
+-
+-    return (ret);
++  
++  if (alpha)
++    {
++      val_alpha = pt[bytes - 1];
++      ret = ((ret - 127.5) * val_alpha / 255.0) + 127.5;
++    };
++  
++  return (ret);
+ }
+-/*****/
++
+ 
+ static GTile *
+ displace_pixel (GDrawable * drawable,
+@@ -726,6 +734,7 @@
+   return tile;
+ }
+ 
++
+ static guchar
+ bilinear (gdouble x, gdouble y, guchar *v)
+ {
+@@ -739,10 +748,10 @@
+   if (y < 0)
+     y += 1.0;
+ 
+-  m0 = (1.0 - x) * v[0] + x * v[1];
+-  m1 = (1.0 - x) * v[2] + x * v[3];
++  m0 = (gdouble) v[0] + x * ((gdouble) v[1] - v[0]);
++  m1 = (gdouble) v[2] + x * ((gdouble) v[3] - v[2]);
+ 
+-  return (guchar) ((1.0 - y) * m0 + y * m1);
++  return (guchar) (m0 + y * (m1 - m0));
+ } /* bilinear */
+ 
+ 
+@@ -761,9 +770,7 @@
+     return TRUE;
+ 
+   if (gimp_drawable_width (drawable_id) == drawable->width &&
+-      gimp_drawable_height (drawable_id) == drawable->height
+-      /* && gimp_drawable_gray (drawable_id) */
+-      )
++      gimp_drawable_height (drawable_id) == drawable->height)
+     return TRUE;
+   else
+     return FALSE;
+
+--Multipart_Sat_Jun__7_21:26:26_1997-1
+Content-Type: text/plain; charset=US-ASCII
+
+ 
+
+--Multipart_Sat_Jun__7_21:26:26_1997-1--
+
+From scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com  Mon Jun 23 03:01:11 1997
+Return-Path: scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id DAA09608 for scott; Mon, 23 Jun 1997 03:01:10 -0500
+Received: from scam.XCF.Berkeley.EDU by gilroy.rmp.com id aa07477;
+          23 Jun 97 0:41 PDT
+Received: (qmail 13682 invoked by uid 27258); 23 Jun 1997 07:05:45 -0000
+Delivered-To: gimp-developer-outgoing@xcf.berkeley.edu
+Received: (qmail 13678 invoked by uid 27258); 23 Jun 1997 07:05:44 -0000
+Delivered-To: gimp-developer@scam.XCF.Berkeley.EDU
+Received: (qmail 13672 invoked by uid 0); 23 Jun 1997 07:05:43 -0000
+Received: from ns1.netads.com (HELO wildride.netads.com) (206.81.38.2)
+  by scam.xcf.berkeley.edu with SMTP; 23 Jun 1997 07:05:43 -0000
+Received: (from meo@localhost) by wildride.netads.com (8.6.11/8.6.11) id CAA17895 for gimp-developer@scam.XCF.Berkeley.EDU; Mon, 23 Jun 1997 02:15:08 -0500
+Message-Id: <199706230715.CAA17895@wildride.netads.com>
+Subject: [gimp-devel] [patch] file open dialog trailing slash bug fix
+To: gimp-developer@scam.XCF.Berkeley.EDU (GIMP Developer)
+Date: Mon, 23 Jun 1997 02:15:07 -0500 (CDT)
+From: meo@netads.com (Miles O'Neal)
+Sender: meo@netads.com (Miles O'Neal)
+Reply-To: meo@netads.com (Miles O'Neal)
+Organization: RRU
+X-WWW-URL: http://www.netads.com/~meo/
+X-Mailer: ELM [version 2.4 PL24]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+
+In 0.99.10 (and I believe earlier versions, though
+I haven't checked), if you enter a directory path
+in the file open dialog text widget, and the path
+has a trailing slash, the result is a filename of
+"/", and no images,
+
+The problem is a result of the fact that directories
+always have a slash appended.  The enclosed patch
+may not be the best solution, but it solves the
+problem.
+
+-Miles
+
+------------------------snip snip ----------------------
+
+--- app/fileops.c  Mon Jun 23 01:44:40 1997
++++ app/fileops.c   Mon Jun 23 01:52:29 1997
+@@ -817,7 +817,10 @@
+   if (err == 0 && (buf.st_mode & S_IFDIR))
+     {
+       GString *s = g_string_new (filename);
+-      g_string_append_c (s, '/');
++      if (s->str[s->len - 1] != '/')
++        {
++          g_string_append_c (s, '/');
++        }
+       gtk_file_selection_set_filename (fs, s->str);
+       g_string_free (s, TRUE);
+       return;
+
+From scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com  Sat Jun  7 17:00:35 1997
+Return-Path: scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id RAA27371 for scott; Sat, 7 Jun 1997 17:00:35 -0500
+Received: from scam.XCF.Berkeley.EDU by gilroy.rmp.com id aa03071;
+          7 Jun 97 14:57 PDT
+Received: (qmail 25581 invoked by uid 27258); 7 Jun 1997 21:48:25 -0000
+Delivered-To: gimp-developer-outgoing@xcf.berkeley.edu
+Received: (qmail 25578 invoked by uid 27258); 7 Jun 1997 21:48:23 -0000
+Delivered-To: gimp-developer@scam.xcf.berkeley.edu
+Received: (qmail 25572 invoked from network); 7 Jun 1997 21:48:23 -0000
+Received: from emout20.mx.aol.com (HELO emout20.mail.aol.com) (198.81.11.46)
+  by scam.xcf.berkeley.edu with SMTP; 7 Jun 1997 21:48:23 -0000
+Received: (from root@localhost)
+	  by emout20.mail.aol.com (8.7.6/8.7.3/AOL-2.0.0)
+	  id RAA06999 for gimp-developer@scam.xcf.berkeley.edu;
+	  Sat, 7 Jun 1997 17:56:19 -0400 (EDT)
+Date: Sat, 7 Jun 1997 17:56:19 -0400 (EDT)
+From: Pkirchg@aol.com
+Message-ID: <970607175619_321138612@emout20.mail.aol.com>
+To: gimp-developer@scam.xcf.berkeley.edu
+Subject: [gimp-devel] [patch] Bug in automatic filetype detection
+
+High!
+
+The new automatic filetype detection in GIMP 0.99.10 does not work
+when a file is loaded through the file selection box from a different
+directory. Here is a patch to app/fileops.c that fixes this.
+
+Sincerely
+
+Peter
+
+
+--- app/fileops.c.orig      Sat Jun  7 23:27:11 1997
++++ app/fileops.c   Sat Jun  7 23:34:46 1997
+@@ -698,7 +698,7 @@
+ 
+   file_proc = load_file_proc;
+   if (!file_proc)
+-    file_proc = file_proc_find (load_procs, raw_filename);
++    file_proc = file_proc_find (load_procs, filename);
+ 
+   if (!file_proc)
+     {
+
+From scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com  Sun Jun  8 21:30:34 1997
+Return-Path: scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id VAA26318 for scott; Sun, 8 Jun 1997 21:30:34 -0500
+Received: from scam.XCF.Berkeley.EDU by gilroy.rmp.com id aa11008;
+          8 Jun 97 19:09 PDT
+Received: (qmail 24567 invoked by uid 27258); 8 Jun 1997 20:11:55 -0000
+Delivered-To: gimp-developer-outgoing@xcf.berkeley.edu
+Received: (qmail 24559 invoked by uid 27258); 8 Jun 1997 20:11:52 -0000
+Delivered-To: gimp-developer@scam.xcf.berkeley.edu
+Received: (qmail 24550 invoked from network); 8 Jun 1997 20:11:50 -0000
+Received: from emout08.mx.aol.com (HELO emout08.mail.aol.com) (198.81.11.23)
+  by scam.xcf.berkeley.edu with SMTP; 8 Jun 1997 20:11:50 -0000
+Received: (from root@localhost)
+	  by emout08.mail.aol.com (8.7.6/8.7.3/AOL-2.0.0)
+	  id NAA05287;
+	  Sun, 8 Jun 1997 13:53:45 -0400 (EDT)
+Date: Sun, 8 Jun 1997 13:53:45 -0400 (EDT)
+From: Pkirchg@aol.com
+Message-ID: <970608135344_-562142130@emout08.mail.aol.com>
+To: gimp-developer@scam.xcf.berkeley.edu
+cc: gimp-announce@scam.xcf.berkeley.edu
+Subject: [gimp-devel] [patch] FITS plugin
+
+Hello,
+
+here is a patch that fixes a bug for the FITS-plug-in,
+when writing GRAY-images (fits dumps core).
+The complete sources are available at
+
+ ftp://members.aol.com/pkirchg/pub/gimp/fits.tgz
+
+Bye
+Peter K.
+
+
+--- plug-ins/fits.c.orig	Fri Jun  6 09:04:53 1997
++++ plug-ins/fits.c	Sun Jun  8 18:42:45 1997
+@@ -23,8 +23,9 @@
+ /* Event history:
+  * V 1.00, PK, 05-May-97: Creation
+  * V 1.01, PK, 19-May-97: Problem with compilation on Irix fixed
++ * V 1.02, PK, 08-Jun-97: Bug with saving gray images fixed
+  */
+-static char ident[] = "@(#) GIMP FITS file-plugin v1.01  19-May-97";
++static char ident[] = "@(#) GIMP FITS file-plugin v1.02  08-Jun-97";
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -668,7 +669,9 @@
+  int print_ctype3 = 0;   /* The CTYPE3-card may not be FITS-conforming */
+  static char *ctype3_card[] = {
+    NULL, NULL, NULL,  /* bpp = 0: no additional card */
+-   NULL, NULL, NULL,  /* GRAY-image: no additional card */
++   "COMMENT Image type within GIMP: GRAY_IMAGE",
++   NULL,
++   NULL,
+    "COMMENT Image type within GIMP: GRAYA_IMAGE (gray with alpha channel)",
+    "COMMENT Sequence for NAXIS3   : GRAY, ALPHA",
+    "CTYPE3  = 'GRAYA   '           / GRAY IMAGE WITH ALPHA CHANNEL",
+@@ -710,8 +713,9 @@
+   "COMMENT For sources see ftp://members.aol.com/pkirchg/pub/gimp");
+  fits_add_card (hdulist, "");
+  fits_add_card (hdulist, ctype3_card[bpp*3]);
+- fits_add_card (hdulist, ctype3_card[bpp*3+1]);
+- if (print_ctype3 && (ctype3_card[bpp] != NULL))
++ if (ctype3_card[bpp*3+1] != NULL)
++   fits_add_card (hdulist, ctype3_card[bpp*3+1]);
++ if (print_ctype3 && (ctype3_card[bpp*3+2] != NULL))
+    fits_add_card (hdulist, ctype3_card[bpp*3+2]);
+  fits_add_card (hdulist, "");
+ 
+
+Return-Path: dal56.dhc.net!wopr.sac!seth@gilroy.rmp.com 
+Return-Path: dal56.dhc.net!wopr.sac!seth@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id UAA21297 for scott; Wed, 2 Jul 1997 20:00:31 -0500
+Received: from dal56.dhc.net by gilroy.rmp.com id aa24747; 2 Jul 97 17:36 PDT
+Received: (from root@localhost) by wopr.sac (8.7.6/8.7.3) id TAA29211 for scott@poverty.bloomington.in.us; Wed, 2 Jul 1997 19:34:08 -0400
+From: Seth Burgess <seth@wopr.sac>
+Message-Id: <199707022334.TAA29211@wopr.sac>
+Subject: Plug-in patch
+To: scott@poverty.bloomington.in.us
+Date: Wed, 2 Jul 1997 19:34:07 -0400 (EDT)
+Reply-To: sjburges@ou.edu
+X-Mailer: ELM [version 2.4ME+ PL28 (25)]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+
+This patches gbr.c to actually use all 7 paramters passed to it by a plug-in
+when saving.  Its basically for my Make Brush script-fu.  (see jen's page)
+
+seth
+sjburges@ou.edu
+
+--- gimp-0.99.10.orig/plug-ins/gbr.c	Fri Jun  6 03:03:49 1997
++++ plug-ins/gbr.c	Mon Jun 30 21:04:13 1997
+@@ -28,8 +28,8 @@
+ 	unsigned int spacing;
+ } t_info;
+ 
+-t_info info = {
+-	"GIMP Brush",
++t_info info = {   /* Initialize to this, change if non-interactive later */
++	"GIMP Brush",     
+ 	10
+ };
+ 
+@@ -159,9 +159,15 @@
+ 				if (!save_dialog())
+ 					return;
+ 				break;
+-			case RUN_NONINTERACTIVE:
++			case RUN_NONINTERACTIVE:  /* FIXME - need a real RUN_NONINTERACTIVE */
+ 				if (nparams != 7)
+ 					status = STATUS_CALLING_ERROR;
++				if (status == STATUS_SUCCESS)
++					{
++					info.spacing = (param[5].data.d_int32);
++				    strncpy (info.description, param[6].data.d_string, 256);	
++					}
++			    break;
+ 			case RUN_WITH_LAST_VALS:
+ 				gimp_get_data ("file_gbr_save", &info);
+ 				break;
+@@ -275,6 +281,7 @@
+ 
+ 	fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0644);
+ 	if (fd == -1) {
++		printf("Unable to open %s\n", filename);
+ 		return 0;
+ 	}
+ 
+*** plug-ins/gif.c.0.99.10	Sun Jun  8 18:27:24 1997
+--- plug-ins/gif.c		Sun Jul  6 20:33:56 1997
+***************
+*** 1,14 ****
+  /* GIF loading and saving file filter for the Gimp version 0.99+
+!  *  -Peter Mattis & Spencer Kimball
+!  *
+!  * version 1.99.3 - 97/05/18
+!  *
+!  * Additional transparent/animated GIF stuff is by Adam D. Moss,
+!  * adam@foxbox.org - still in progress, 97/05/18
+   *
+   *
+   * This filter uses code taken from the "giftopnm" and "ppmtogif" programs
+!  *  which are part of the "netpbm" package.
+   */
+  
+  
+--- 1,11 ----
+  /* GIF loading and saving file filter for the Gimp version 0.99+
+!  *    -Peter Mattis & Spencer Kimball
+   *
++  * Version 1.99.10 - 97/07/06 - Adam D. Moss, adam@foxbox.org
++  *    Advanced features still in progress.
+   *
+   * This filter uses code taken from the "giftopnm" and "ppmtogif" programs
+!  *    which are part of the "netpbm" package.
+   */
+  
+  
+***************
+*** 16,32 ****
+   *  "The Graphics Interchange Format(c) is the Copyright property of
+   *  CompuServe Incorporated.  GIF(sm) is a Service Mark property of
+   *  CompuServe Incorporated." 
+-  *
+   */
+  
+  
+  /*
+   * REVISION HISTORY
+   *
+   * 97/05/18
+   * 1.99.3  - Fixed the problem with GIFs getting loop extensions even
+   *           if they only had one frame (thanks to Zach for noticing -
+!  *           git!  :) )
+   *
+   * 97/05/17
+   * 1.99.2  - Can now save animated GIFs.  Correctly handles saving of
+--- 13,74 ----
+   *  "The Graphics Interchange Format(c) is the Copyright property of
+   *  CompuServe Incorporated.  GIF(sm) is a Service Mark property of
+   *  CompuServe Incorporated." 
+   */
+  
+  
+  /*
+   * REVISION HISTORY
+   *
++  * 97/07/06
++  * 1.99.10 - New 'save' dialog, now most of the default behaviour of
++  *           animated GIF saving is user-settable (looping, default
++  *           time between frames, etc.)
++  *           PDB entry for saving is no longer compatible.  Fortunately
++  *           I don't think that anyone is using file_gif_save in
++  *           scripts.  [Adam]
++  *
++  * 97/07/05
++  * 1.99.9  - More animated GIF work: now loads and saves frame disposal
++  *           information.  This is neat and will also allow some delta
++  *           stuff in the future.
++  *           The disposal-method is kept in the layer name, like the timing
++  *           info.
++  *           (replace) - this frame replaces whatever else has been shown
++  *                       so far.
++  *           (combine) - this frame builds apon the previous frame.
++  *           If a disposal method is not specified, it is assumed to mean
++  *           "don't care."  [Adam]
++  *
++  * 97/07/04
++  * 1.99.8  - Can save per-frame timing information too, now.  The time
++  *           for which a frame is visible is specified within the layer name
++  *           as i,e. (250ms).  If a frame doesn't have this timing value
++  *           it defaults to lasting 100ms. [Adam]
++  *
++  * 97/07/02
++  * 1.99.7  - For animated GIFs, fixed the saving of timing information for
++  *           frames which couldn't be made transparent.
++  *           Added the loading of timing information into the layer
++  *           names.  Adjusted GIMP's GIF magic number very slightly. [Adam]
++  *
++  * 97/06/30
++  * 1.99.6  - Now saves GRAY and GRAYA images, albeit not always
++  *           optimally (yet). [Adam]
++  *
++  * 97/06/25
++  * 1.99.5  - Good, the transparancy-on-big-architectures bug is
++  *           fixed.  Cleaned up some stuff.
++  *           (Adam D. Moss, adam@foxbox.org)
++  *
++  * 97/06/23
++  * 1.99.4  - Trying to fix some endianness/word-size problems with
++  *           transparent gif-saving on some architectures... does
++  *           this help?  (Adam D. Moss, adam@foxbox.org)
++  *
+   * 97/05/18
+   * 1.99.3  - Fixed the problem with GIFs getting loop extensions even
+   *           if they only had one frame (thanks to Zach for noticing -
+!  *           git!  :) )  (Adam D. Moss, adam@foxbox.org)
+   *
+   * 97/05/17
+   * 1.99.2  - Can now save animated GIFs.  Correctly handles saving of
+***************
+*** 37,43 ****
+   * 97/05/16
+   * 1.99.1  - Implemented image offsets in animated GIF loading.  Requires
+   *           a fix to gimp_layer_translate in libgimp/gimplayer.c if used
+!  *           with GIMP versions <= 0.99.9.  Started work on saving animated
+   *           GIFs.  Started TODO list.  (Adam D. Moss, adam@foxbox.org)
+   *
+   * 97/05/15
+--- 79,85 ----
+   * 97/05/16
+   * 1.99.1  - Implemented image offsets in animated GIF loading.  Requires
+   *           a fix to gimp_layer_translate in libgimp/gimplayer.c if used
+!  *           with GIMP versions <= 0.99.10.  Started work on saving animated
+   *           GIFs.  Started TODO list.  (Adam D. Moss, adam@foxbox.org)
+   *
+   * 97/05/15
+***************
+*** 53,77 ****
+  
+  
+  /*
+!  * TODO
+   *
+   * - animated GIF optimization routines (seperate plugin)
+   *
+   * - 'requantize' option for INDEXEDA images which really have 256 colours
+   *   in them
+   *
+   * - Be a bit smarter about finding unused/superfluous colour indices for
+   *   lossless colour crunching of INDEXEDA images.  (Specifically, look
+   *   for multiple indices which correspond to the same physical colour.)
+   *
+   * - Tidy up parameters for the GIFEncode routines
+   *
+-  * - Finish sane handling of transparency in animated GIF saving - dispose?
+-  *
+-  * - ** Make timing stuff in animated GIF saving user-settable
+-  *
+-  * - Make animated GIF looping more flexible
+-  *
+   * - *** Add 'extents' code for correct logical screen sizing in animated
+   *   GIF saving (without this we can save images which don't quite conform
+   *   to GIF rules :-( )  COPE WITH NEGATIVE OFFSETS
+--- 95,115 ----
+  
+  
+  /*
+!  * TODO (more *'s means more important!)
+   *
+   * - animated GIF optimization routines (seperate plugin)
+   *
+   * - 'requantize' option for INDEXEDA images which really have 256 colours
+   *   in them
+   *
++  * - * Write an animation playback plugin.
++  *
+   * - Be a bit smarter about finding unused/superfluous colour indices for
+   *   lossless colour crunching of INDEXEDA images.  (Specifically, look
+   *   for multiple indices which correspond to the same physical colour.)
+   *
+   * - Tidy up parameters for the GIFEncode routines
+   *
+   * - *** Add 'extents' code for correct logical screen sizing in animated
+   *   GIF saving (without this we can save images which don't quite conform
+   *   to GIF rules :-( )  COPE WITH NEGATIVE OFFSETS
+***************
+*** 79,96 ****
+   * - When loading animated GIFs, properly deal with evil changes of
+   *   colourmap from frame to frame.  (Will have to convert to RGB :~( )
+   *
+!  * - When loading animated GIFs, properly deal with the dispose methods.
+!  *
+!  * - *** Save GRAYSCALE* images.
+   *
+   * - All the warning messages etc. which the plugin prints to STDOUT should
+   *   pop up in windows.
+   *
+-  * - Verify that transparent GIF saving works on 64-bit/big-endian machines
+-  *   (had one report that it doesn't work on a sun Ultra).
+-  *
+-  * - *** Remind S&P to fix gimp_layer_translate if they haven't already. :^)
+-  *
+   */
+  
+  
+--- 117,127 ----
+   * - When loading animated GIFs, properly deal with evil changes of
+   *   colourmap from frame to frame.  (Will have to convert to RGB :~( )
+   *
+!  * - Remove unused colourmap entries for GRAYSCALE images.
+   *
+   * - All the warning messages etc. which the plugin prints to STDOUT should
+   *   pop up in windows.
+   *
+   */
+  
+  
+***************
+*** 110,121 ****
+  #include <stdio.h>
+  #include <stdlib.h>
+  #include <string.h>
+  #include "gtk/gtk.h"
+  #include "libgimp/gimp.h"
+  
+  typedef struct
+  {
+!   int  interlace;
+  } GIFSaveVals;
+  
+  typedef struct
+--- 141,158 ----
+  #include <stdio.h>
+  #include <stdlib.h>
+  #include <string.h>
++ #include <ctype.h>
+  #include "gtk/gtk.h"
+  #include "libgimp/gimp.h"
+  
++ 
++ 
+  typedef struct
+  {
+!   int interlace;
+!   int loop;
+!   int default_delay;
+!   int default_dispose;
+  } GIFSaveVals;
+  
+  typedef struct
+***************
+*** 123,128 ****
+--- 160,167 ----
+    gint run;
+  } GIFSaveInterface;
+  
++ 
++ 
+  /* Declare some local functions.
+   */
+  static void   query      (void);
+***************
+*** 136,142 ****
+  			  gint32  image_ID,
+  			  gint32  drawable_ID);
+  
+! static gint   save_dialog ();
+  
+  static void   save_close_callback  (GtkWidget *widget,
+  				    gpointer   data);
+--- 175,181 ----
+  			  gint32  image_ID,
+  			  gint32  drawable_ID);
+  
+! static gint   save_dialog ( gint32 image_ID );
+  
+  static void   save_close_callback  (GtkWidget *widget,
+  				    gpointer   data);
+***************
+*** 144,149 ****
+--- 183,194 ----
+  				    gpointer   data);
+  static void   save_toggle_update   (GtkWidget *widget,
+  				    gpointer   data);
++ static void   save_entry_callback  (GtkWidget *widget,
++                                     gpointer   data);
++ 
++ 
++ 
++ static gint radio_pressed[3];
+  
+  
+  
+***************
+*** 157,163 ****
+  
+  static GIFSaveVals gsvals =
+  {
+!   FALSE  /*  interlace  */
+  };
+  
+  static GIFSaveInterface gsint =
+--- 202,211 ----
+  
+  static GIFSaveVals gsvals =
+  {
+!   FALSE,   /* interlace */
+!   TRUE,    /* loop infinitely */
+!   100,     /* default_delay between frames (100ms) */
+!   0        /* default_dispose = "don't care" */
+  };
+  
+  static GIFSaveInterface gsint =
+***************
+*** 166,171 ****
+--- 214,220 ----
+  };
+  
+  
++ 
+  MAIN ();
+  
+  static void
+***************
+*** 191,197 ****
+      { PARAM_DRAWABLE, "drawable", "Drawable to save" },
+      { PARAM_STRING, "filename", "The name of the file to save the image in" },
+      { PARAM_STRING, "raw_filename", "The name entered" },
+!     { PARAM_INT32, "interlace", "Save with interlacing option enabled" }
+    };
+    static int nsave_args = sizeof (save_args) / sizeof (save_args[0]);
+  
+--- 240,249 ----
+      { PARAM_DRAWABLE, "drawable", "Drawable to save" },
+      { PARAM_STRING, "filename", "The name of the file to save the image in" },
+      { PARAM_STRING, "raw_filename", "The name entered" },
+!     { PARAM_INT32, "interlace", "Save as interlaced" },
+!     { PARAM_INT32, "loop", "(animated gif) loop infinitely" },
+!     { PARAM_INT32, "default_delay", "(animated gif) Default delay between framese in milliseconds" },
+!     { PARAM_INT32, "default_dispose", "(animated gif) Default disposal type (0=`don't care`, 1=combine, 2=replace)" }
+    };
+    static int nsave_args = sizeof (save_args) / sizeof (save_args[0]);
+  
+***************
+*** 219,225 ****
+                            nsave_args, 0,
+                            save_args, NULL);
+  
+!   gimp_register_magic_load_handler ("file_gif_load", "gif", "", "0,string,GIF");
+    gimp_register_save_handler ("file_gif_save", "gif", "");
+  }
+  
+--- 271,277 ----
+                            nsave_args, 0,
+                            save_args, NULL);
+  
+!   gimp_register_magic_load_handler ("file_gif_load", "gif", "", "0,string,GIF8");
+    gimp_register_save_handler ("file_gif_save", "gif", "");
+  }
+  
+***************
+*** 244,250 ****
+  
+    if (strcmp (name, "file_gif_load") == 0)
+      {
+-       g_debug ("fuck");
+        image_ID = load_image (param[1].data.d_string);
+  
+        if (image_ID != -1)
+--- 296,301 ----
+***************
+*** 264,284 ****
+        switch (run_mode)
+  	{
+  	case RUN_INTERACTIVE:
+! 	  /*  Possibly retrieve data  */
+! 	  gimp_get_data ("file_gif_save", &gsvals);
+! 
+! 	  /*  First acquire information with a dialog  */
+! 	  if (! save_dialog ())
+! 	    return;
+  	  break;
+  
+  	case RUN_NONINTERACTIVE:
+  	  /*  Make sure all the arguments are there!  */
+! 	  if (nparams != 6)
+  	    status = STATUS_CALLING_ERROR;
+  	  if (status == STATUS_SUCCESS)
+  	    {
+  	      gsvals.interlace = (param[5].data.d_int32) ? TRUE : FALSE;
+  	    }
+  	  break;
+  
+--- 315,347 ----
+        switch (run_mode)
+  	{
+  	case RUN_INTERACTIVE:
+! 	  {
+! 	    /*  Possibly retrieve data  */
+! 	    gimp_get_data ("file_gif_save", &gsvals);
+! 	    
+! 	    /*  First acquire information with a dialog  */
+! 	    radio_pressed[0] = radio_pressed[1] = radio_pressed[2] = FALSE;
+! 	    radio_pressed[gsvals.default_dispose] = TRUE;
+! 	    if (! save_dialog (param[1].data.d_int32))
+! 	      return;
+! 	    if (radio_pressed[0]) gsvals.default_dispose = 0x00;
+! 	    else
+! 	      if (radio_pressed[1]) gsvals.default_dispose = 0x01;
+! 	      else
+! 		if (radio_pressed[2]) gsvals.default_dispose = 0x02;
+! 	  }
+  	  break;
+  
+  	case RUN_NONINTERACTIVE:
+  	  /*  Make sure all the arguments are there!  */
+! 	  if (nparams != 9)
+  	    status = STATUS_CALLING_ERROR;
+  	  if (status == STATUS_SUCCESS)
+  	    {
+  	      gsvals.interlace = (param[5].data.d_int32) ? TRUE : FALSE;
++ 	      gsvals.loop = (param[6].data.d_int32) ? TRUE : FALSE;
++ 	      gsvals.default_delay = param[7].data.d_int32;
++ 	      gsvals.default_dispose = param[8].data.d_int32;
+  	    }
+  	  break;
+  
+***************
+*** 292,298 ****
+  	}
+  
+        *nreturn_vals = 1;
+!       if (save_image (param[3].data.d_string, param[1].data.d_int32, param[2].data.d_int32))
+  	{
+  	  /*  Store psvals data  */
+  	  gimp_set_data ("file_gif_save", &gsvals, sizeof (GIFSaveVals));
+--- 355,363 ----
+  	}
+  
+        *nreturn_vals = 1;
+!       if (save_image (param[3].data.d_string,
+! 		      param[1].data.d_int32,
+! 		      param[2].data.d_int32))
+  	{
+  	  /*  Store psvals data  */
+  	  gimp_set_data ("file_gif_save", &gsvals, sizeof (GIFSaveVals));
+***************
+*** 455,461 ****
+  	}
+  
+        if (c == '!')
+! 	{			/* Extension */
+  	  if (!ReadOK (fd, &c, 1))
+  	    {
+  	      printf ("GIF: OF / read error on extention function code\n");
+--- 520,527 ----
+  	}
+  
+        if (c == '!')
+! 	{
+! 	  /* Extension */
+  	  if (!ReadOK (fd, &c, 1))
+  	    {
+  	      printf ("GIF: OF / read error on extention function code\n");
+***************
+*** 854,860 ****
+    gint cur_progress, max_progress;
+    gint v;
+    gint i, j;
+!   gchar framename[20];
+    gboolean alpha_frame = FALSE;
+  
+    /*
+--- 920,926 ----
+    gint cur_progress, max_progress;
+    gint v;
+    gint i, j;
+!   gchar framename[200]; /* FIXME */
+    gboolean alpha_frame = FALSE;
+  
+    /*
+***************
+*** 877,891 ****
+        image_ID = gimp_image_new (len, height, INDEXED);
+        gimp_image_set_filename (image_ID, filename);
+  
+        if (Gif89.transparent == -1)
+  	{
+! 	  layer_ID = gimp_layer_new (image_ID, "Background",
+  				     len, height,
+  				     INDEXED_IMAGE, 100, NORMAL_MODE);
+  	}
+        else
+  	{
+! 	  layer_ID = gimp_layer_new (image_ID, "Background",
+  				     len, height,
+  				     INDEXEDA_IMAGE, 100, NORMAL_MODE);
+  	  alpha_frame=TRUE;
+--- 943,976 ----
+        image_ID = gimp_image_new (len, height, INDEXED);
+        gimp_image_set_filename (image_ID, filename);
+  
++       if (Gif89.delayTime < 0)
++ 	strcpy(framename, "Background");
++       else
++ 	sprintf(framename, "Background (%dms)", 10*Gif89.delayTime);
++ 
++       switch (Gif89.disposal)
++ 	{
++ 	case 0x00: break; /* 'don't care' */
++ 	case 0x01: strcat(framename," (combine)"); break;
++ 	case 0x02: strcat(framename," (replace)"); break;
++ 	case 0x03: strcat(framename," (combine)"); break;
++ 	case 0x04:
++ 	case 0x05:
++ 	case 0x06:
++ 	case 0x07: printf("GIF: Hmm... please forward this GIF to the "
++ 			  "GIF plugin author!\n  (adam@foxbox.org)\n"); break;
++ 	default: printf("GIF: Something got corrupted.\n"); break;
++ 	}
++   
+        if (Gif89.transparent == -1)
+  	{
+! 	  layer_ID = gimp_layer_new (image_ID, framename,
+  				     len, height,
+  				     INDEXED_IMAGE, 100, NORMAL_MODE);
+  	}
+        else
+  	{
+! 	  layer_ID = gimp_layer_new (image_ID, framename,
+  				     len, height,
+  				     INDEXEDA_IMAGE, 100, NORMAL_MODE);
+  	  alpha_frame=TRUE;
+***************
+*** 893,899 ****
+      }
+    else
+      {
+!       sprintf(framename, "Frame %d", frame_number);
+        layer_ID = gimp_layer_new (image_ID, framename,
+  				 len, height,
+  				 INDEXEDA_IMAGE, 100, NORMAL_MODE);
+--- 978,1003 ----
+      }
+    else
+      {
+!       if (Gif89.delayTime < 0)
+! 	sprintf(framename, "Frame %d", frame_number);
+!       else
+! 	sprintf(framename, "Frame %d (%dms)",
+! 		frame_number, 10*Gif89.delayTime);
+! 
+!       switch (Gif89.disposal)
+! 	{
+! 	case 0x00: break; /* 'don't care' */
+! 	case 0x01: strcat(framename," (combine)"); break;
+! 	case 0x02: strcat(framename," (replace)"); break;
+! 	case 0x03: strcat(framename," (combine)"); break;
+! 	case 0x04:
+! 	case 0x05:
+! 	case 0x06:
+! 	case 0x07: printf("GIF: Hmm... please forward this GIF to the "
+! 			  "GIF plugin author!\n  (adam@foxbox.org)\n"); break;
+! 	default: printf("GIF: Something got corrupted.\n"); break;
+! 	}
+! 
+        layer_ID = gimp_layer_new (image_ID, framename,
+  				 len, height,
+  				 INDEXEDA_IMAGE, 100, NORMAL_MODE);
+***************
+*** 978,984 ****
+  	    }
+  
+  	  cur_progress++;
+! 	  if ((cur_progress % 10) == 0)
+  	    gimp_progress_update ((double) cur_progress / (double) max_progress);
+  	}
+        if (ypos >= height)
+--- 1082,1088 ----
+  	    }
+  
+  	  cur_progress++;
+! 	  if ((cur_progress % 16) == 0)
+  	    gimp_progress_update ((double) cur_progress / (double) max_progress);
+  	}
+        if (ypos >= height)
+***************
+*** 1005,1019 ****
+    gimp_drawable_flush (drawable);
+    gimp_drawable_detach (drawable);
+  
+-   /*  if (alpha_frame)
+-     gimp_layer_add_alpha (layer_ID);
+- 
+-     if (Gif89.transparent != -1)
+-     {
+-       mask_ID = gimp_layer_create_mask (layer_ID, 0);
+-       gimp_image_add_layer_mask (image_ID, layer_ID, mask_ID);
+-     }*/
+- 
+    return image_ID;
+  }
+  
+--- 1109,1114 ----
+***************
+*** 1077,1083 ****
+  static void GIFEncodeHeader (FILE *, int, int, int, int, int, int,
+  			     int *, int *, int *, ifunptr);
+  static void GIFEncodeGraphicControlExt (FILE *, int, int, int, int, int, int,
+! 					int *, int *, int *, ifunptr);
+  static void GIFEncodeImageData (FILE *, int, int, int, int, int, int,
+  				int *, int *, int *, ifunptr, gint, gint);
+  static void GIFEncodeClose (FILE *, int, int, int, int, int, int,
+--- 1172,1179 ----
+  static void GIFEncodeHeader (FILE *, int, int, int, int, int, int,
+  			     int *, int *, int *, ifunptr);
+  static void GIFEncodeGraphicControlExt (FILE *, int, int, int, int, int, int,
+! 					int, int, int, int *, int *, int *,
+! 					ifunptr);
+  static void GIFEncodeImageData (FILE *, int, int, int, int, int, int,
+  				int *, int *, int *, ifunptr, gint, gint);
+  static void GIFEncodeClose (FILE *, int, int, int, int, int, int,
+***************
+*** 1105,1124 ****
+  static int find_unused_ia_colour (guchar *pixels,
+  				  int numpixels)
+  {
+!   guint32 i;
+    gboolean ix_used[256];
+  
+  
+    fprintf(stderr,"GIF: Image has >=256 colors - attempting to reduce...\n");
+  
+    for (i=0;i<256;i++)
+!     ix_used[i] = FALSE;
+  
+    for (i=0;i<numpixels;i++)
+!     if (pixels[i*2+1]) ix_used[pixels[i*2]] = TRUE;
+    
+    for (i=0;i<256;i++)
+!     if (ix_used[i] == FALSE)
+        {
+  	fprintf(stderr,"GIF: Found unused colour index %d.\n",(int)i);
+  	return i;
+--- 1201,1220 ----
+  static int find_unused_ia_colour (guchar *pixels,
+  				  int numpixels)
+  {
+!   int i;
+    gboolean ix_used[256];
+  
+  
+    fprintf(stderr,"GIF: Image has >=256 colors - attempting to reduce...\n");
+  
+    for (i=0;i<256;i++)
+!     ix_used[i] = (gboolean)FALSE;
+  
+    for (i=0;i<numpixels;i++)
+!     if (pixels[i*2+1]) ix_used[pixels[i*2]] = (gboolean)TRUE;
+    
+    for (i=0;i<256;i++)
+!     if (ix_used[i] == (gboolean)FALSE)
+        {
+  	fprintf(stderr,"GIF: Found unused colour index %d.\n",(int)i);
+  	return i;
+***************
+*** 1135,1141 ****
+  			       int *colors,
+  			       int numpixels)
+  {
+!   int i;
+  
+    if ((*colors) < 256)
+      *transparent = *colors;
+--- 1231,1237 ----
+  			       int *colors,
+  			       int numpixels)
+  {
+!   guint32 i;
+  
+    if ((*colors) < 256)
+      *transparent = *colors;
+***************
+*** 1152,1160 ****
+      {
+        for (i=0; i<numpixels; i++)
+  	{
+! 	  if (pixels[i*2+1] == 0)
+  	    {
+! 	      pixels[i] = *((guchar *)transparent);
+  	    }
+  	  else
+  	    {
+--- 1248,1256 ----
+      {
+        for (i=0; i<numpixels; i++)
+  	{
+! 	  if (!(pixels[i*2+1] & 128))
+  	    {
+! 	      pixels[i] = (guchar)(*transparent);
+  	    }
+  	  else
+  	    {
+***************
+*** 1171,1176 ****
+--- 1267,1329 ----
+  }
+  
+  
++ int
++ parse_ms_tag (char *str)
++ {
++   gint sum = 0;
++   gint offset = 0;
++   gint length;
++ 
++   length = strlen(str);
++ 
++   while ((offset<length) && (str[offset]!='('))
++     offset++;
++   
++   if (offset>=length)
++     return(-1);
++ 
++   if (!isdigit(str[++offset]))
++     return(-2);
++ 
++   do
++     {
++       sum *= 10;
++       sum += str[offset] - '0';
++       offset++;
++     }
++   while ((offset<length) && (isdigit(str[offset])));  
++ 
++   if (length-offset <= 2)
++     return(-3);
++ 
++   if ((toupper(str[offset]) != 'M') || (toupper(str[offset+1]) != 'S'))
++     return(-4);
++ 
++   return (sum);
++ }
++ 
++ 
++ int
++ parse_disposal_tag (char *str)
++ {
++   gint offset = 0;
++   gint length;
++ 
++   length = strlen(str);
++ 
++   while ((offset+9)<=length)
++     {
++       if (strncmp(&str[offset],"(combine)",9)==0) 
++ 	return(0x01);
++       if (strncmp(&str[offset],"(replace)",9)==0) 
++ 	return(0x02);
++       offset++;
++     }
++ 
++   return (gsvals.default_dispose);
++ }
++ 
++ 
+  gint
+  save_image (char   *filename,
+  	    gint32  image_ID,
+***************
+*** 1195,1200 ****
+--- 1348,1356 ----
+    gint32 *layers;   
+    int nlayers;  
+  
++   int Delay89;
++   int Disposal;
++   char *layer_name;
+  
+  
+    drawable_type = gimp_drawable_type (drawable_ID);
+***************
+*** 1218,1226 ****
+  	  Blue[i] = 255;
+  	}
+        break;
+  
+      default:
+!       fprintf (stderr, "GIF: GIMP let through an inappropriate image - sorry, can't save this as a GIF.\n");
+        return FALSE;
+        break;
+      }
+--- 1374,1392 ----
+  	  Blue[i] = 255;
+  	}
+        break;
++     case GRAYA_IMAGE:
++     case GRAY_IMAGE:
++       colors = 256;
++       for ( i = 0;  i < 256; i++)
++ 	{
++ 	  Red[i] = Green[i] = Blue[i] = i;
++ 	}
++       break;
+  
+      default:
+!       /* FIXME: should be a popup (or, of course, ideally GIMP shouldn't
+! 	 let RGB images through in the first place :) ) */
+!       fprintf (stderr, "GIF: Sorry, can't save RGB images as GIFs - convert to INDEXED\nor GRAY first.\n");
+        return FALSE;
+        break;
+      }
+***************
+*** 1244,1250 ****
+  
+  
+  
+!   /* get the extents of the image - WRITE ME */
+  
+  
+  
+--- 1410,1416 ----
+  
+  
+  
+!   /* FIXME: get the extents of the image - WRITE ME */
+  
+  
+  
+***************
+*** 1265,1271 ****
+  
+    /* If the image has multiple layers it'll be made into an
+       animated GIF, so write out the infinite-looping extension */
+!   if (nlayers > 1)
+      GIFEncodeLoopExt (outfile, cols, rows, gsvals.interlace, 0, transparent,
+  		      BitsPerPixel, Red, Green, Blue, GetPixel, 0);
+  
+--- 1431,1437 ----
+  
+    /* If the image has multiple layers it'll be made into an
+       animated GIF, so write out the infinite-looping extension */
+!   if ((nlayers > 1) && (gsvals.loop))
+      GIFEncodeLoopExt (outfile, cols, rows, gsvals.interlace, 0, transparent,
+  		      BitsPerPixel, Red, Green, Blue, GetPixel, 0);
+  
+***************
+*** 1292,1304 ****
+        
+        pixels = (guchar *) g_malloc (drawable->width *
+  				    drawable->height *
+! 				    (drawable_type == INDEXEDA_IMAGE ? 2 : 1) );
+        
+        gimp_pixel_rgn_get_rect (&pixel_rgn, pixels, 0, 0, drawable->width, drawable->height);
+  
+  
+        /* sort out whether we need to do transparency jiggery-pokery */
+!       if (drawable_type == INDEXEDA_IMAGE)
+  	{
+  	  /* If there appear to be no entries left in the colourmap in
+  	     which to put the transparent index, try to find an entry which
+--- 1458,1471 ----
+        
+        pixels = (guchar *) g_malloc (drawable->width *
+  				    drawable->height *
+! 				    (((drawable_type == INDEXEDA_IMAGE)||
+! 				      (drawable_type == GRAYA_IMAGE)) ? 2:1) );
+        
+        gimp_pixel_rgn_get_rect (&pixel_rgn, pixels, 0, 0, drawable->width, drawable->height);
+  
+  
+        /* sort out whether we need to do transparency jiggery-pokery */
+!       if ((drawable_type == INDEXEDA_IMAGE)||(drawable_type == GRAYA_IMAGE))
+  	{
+  	  /* If there appear to be no entries left in the colourmap in
+  	     which to put the transparent index, try to find an entry which
+***************
+*** 1320,1327 ****
+        BitsPerPixel = colorstobpp (colors);
+        /*  BitsPerPixel = 8;*/
+        
+!       GIFEncodeGraphicControlExt (outfile, cols, rows, gsvals.interlace, 0,
+! 				  transparent,
+  				  BitsPerPixel, Red, Green, Blue, GetPixel);
+  
+        GIFEncodeImageData (outfile, cols, rows, gsvals.interlace, 0,
+--- 1487,1506 ----
+        BitsPerPixel = colorstobpp (colors);
+        /*  BitsPerPixel = 8;*/
+        
+!       layer_name = gimp_layer_get_name(layers[i]);
+! 
+!       Disposal = parse_disposal_tag(layer_name);
+!       Delay89 = parse_ms_tag(layer_name);
+! 
+!       g_free(layer_name);
+! 
+!       if (Delay89 < 0)
+! 	Delay89 = gsvals.default_delay/10;
+!       else
+! 	Delay89 /= 10;
+! 
+!       GIFEncodeGraphicControlExt (outfile, Disposal, Delay89, nlayers, cols,
+! 				  rows, gsvals.interlace, 0, transparent,
+  				  BitsPerPixel, Red, Green, Blue, GetPixel);
+  
+        GIFEncodeImageData (outfile, cols, rows, gsvals.interlace, 0,
+***************
+*** 1346,1360 ****
+  }
+  
+  static gint
+! save_dialog ()
+  {
+    GtkWidget *dlg;
+    GtkWidget *button;
+    GtkWidget *toggle;
+    GtkWidget *frame;
+    GtkWidget *vbox;
+    gchar **argv;
+    gint argc;
+  
+    argc = 1;
+    argv = g_new (gchar *, 1);
+--- 1525,1551 ----
+  }
+  
+  static gint
+! save_dialog ( gint32 image_ID )
+  {
+    GtkWidget *dlg;
+    GtkWidget *button;
+    GtkWidget *toggle;
++   GtkWidget *label;
++   GtkWidget *entry;
+    GtkWidget *frame;
+    GtkWidget *vbox;
++   GtkWidget *hbox;
++   GtkWidget *innerframe;
++   GtkWidget *innervbox;
++   GSList *group = NULL;
+    gchar **argv;
+    gint argc;
++   gchar buffer[10];
++   int nlayers;
++ 
++ 
++   gimp_image_get_layers (image_ID, &nlayers);
++ 
+  
+    argc = 1;
+    argv = g_new (gchar *, 1);
+***************
+*** 1387,1394 ****
+    gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->action_area), button, TRUE, TRUE, 0);
+    gtk_widget_show (button);
+  
+!   /*  parameter settings  */
+!   frame = gtk_frame_new ("Save Options");
+    gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_ETCHED_IN);
+    gtk_container_border_width (GTK_CONTAINER (frame), 10);
+    gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), frame, TRUE, TRUE, 0);
+--- 1578,1586 ----
+    gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->action_area), button, TRUE, TRUE, 0);
+    gtk_widget_show (button);
+  
+! 
+!   /*  regular gif parameter settings  */
+!   frame = gtk_frame_new ("GIF Options");
+    gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_ETCHED_IN);
+    gtk_container_border_width (GTK_CONTAINER (frame), 10);
+    gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), frame, TRUE, TRUE, 0);
+***************
+*** 1406,1411 ****
+--- 1598,1699 ----
+  
+    gtk_widget_show (vbox);
+    gtk_widget_show (frame);
++ 
++ 
++   /*  additional animated gif parameter settings  */
++   frame = gtk_frame_new ("Animated GIF Options");
++   gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_ETCHED_IN);
++   gtk_container_border_width (GTK_CONTAINER (frame), 10);
++   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), frame, TRUE, TRUE, 0);
++   vbox = gtk_vbox_new (FALSE, 5);
++   gtk_container_border_width (GTK_CONTAINER (vbox), 5);
++   gtk_container_add (GTK_CONTAINER (frame), vbox);
++ 
++   toggle = gtk_check_button_new_with_label ("Loop");
++   gtk_box_pack_start (GTK_BOX (vbox), toggle, TRUE, TRUE, 0);
++   gtk_signal_connect (GTK_OBJECT (toggle), "toggled",
++ 		      (GtkSignalFunc) save_toggle_update,
++ 		      &gsvals.loop);
++   gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (toggle), gsvals.loop);
++   gtk_widget_show (toggle);
++ 
++ 
++   /* default_delay entry field */
++   hbox = gtk_hbox_new (FALSE, 5);
++   gtk_box_pack_start (GTK_BOX (vbox), hbox, TRUE, FALSE, 0);
++ 
++   label = gtk_label_new ("Default delay between frames where unspecified: ");
++   gtk_box_pack_start (GTK_BOX (hbox), label, TRUE, FALSE, 0);
++   gtk_widget_show (label);
++ 
++   entry = gtk_entry_new ();
++   gtk_box_pack_start (GTK_BOX (hbox), entry, TRUE, TRUE, 0);
++   gtk_widget_set_usize (entry, 80, 0);
++   sprintf (buffer, "%d", gsvals.default_delay);
++   gtk_entry_set_text (GTK_ENTRY (entry), buffer);
++   gtk_signal_connect (GTK_OBJECT (entry), "changed",
++                       (GtkSignalFunc) save_entry_callback,
++                       NULL);
++   gtk_widget_show (entry);
++ 
++   label = gtk_label_new (" milliseconds");
++   gtk_box_pack_start (GTK_BOX (hbox), label, TRUE, FALSE, 0);
++   gtk_widget_show (label);
++ 
++   gtk_widget_show (hbox);
++ 
++ 
++   /* Disposal selector */
++   innerframe = gtk_frame_new ("Default disposal where unspecified");
++   gtk_frame_set_shadow_type (GTK_FRAME (innerframe), GTK_SHADOW_IN);
++   gtk_container_border_width (GTK_CONTAINER (innerframe), 10);
++   gtk_box_pack_start (GTK_BOX (vbox), innerframe, TRUE, TRUE, 0);
++   innervbox = gtk_vbox_new (FALSE, 5);
++   gtk_container_border_width (GTK_CONTAINER (innervbox), 5);
++   gtk_container_add (GTK_CONTAINER (innerframe), innervbox);
++ 
++   toggle = gtk_radio_button_new_with_label (group,"Don't care");
++   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));
++   gtk_box_pack_start (GTK_BOX (innervbox), toggle, TRUE, TRUE, 0);
++   gtk_signal_connect (GTK_OBJECT (toggle), "toggled",
++                       (GtkSignalFunc) save_toggle_update,
++                       &radio_pressed[0]);
++   gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (toggle), radio_pressed[0]);
++   gtk_widget_show (toggle);
++ 
++   toggle = gtk_radio_button_new_with_label (group,"One frame per layer (replace)");
++   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));
++   gtk_box_pack_start (GTK_BOX (innervbox), toggle, TRUE, TRUE, 0);
++   gtk_signal_connect (GTK_OBJECT (toggle), "toggled",
++                       (GtkSignalFunc) save_toggle_update,
++                       &radio_pressed[2]);
++   gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (toggle), radio_pressed[2]);
++   gtk_widget_show (toggle);
++ 
++   toggle = gtk_radio_button_new_with_label (group,"Make frame from cumulative layers (combine)");
++   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));
++   gtk_box_pack_start (GTK_BOX (innervbox), toggle, TRUE, TRUE, 0);
++   gtk_signal_connect (GTK_OBJECT (toggle), "toggled",
++                       (GtkSignalFunc) save_toggle_update,
++                       &radio_pressed[1]);
++   gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (toggle), radio_pressed[1]);
++   gtk_widget_show (toggle);
++   
++   gtk_widget_show (innervbox);
++   gtk_widget_show (innerframe);
++ 
++ 
++ 
++   gtk_widget_show (vbox);
++ 
++   /* If the image has only one layer it can't be animated, so
++      desensitize the animation options. */
++   if (nlayers == 1) gtk_widget_set_sensitive (frame, FALSE);
++ 
++   gtk_widget_show (frame);
++ 
++ 
++ 
+    gtk_widget_show (dlg);
+  
+    gtk_main ();
+***************
+*** 1490,1496 ****
+    if (curx == Width)
+      {
+        cur_progress++;
+!       if ((cur_progress % 10) == 0)
+  	gimp_progress_update ((double) cur_progress / (double) max_progress);
+  
+        curx = 0;
+--- 1778,1784 ----
+    if (curx == Width)
+      {
+        cur_progress++;
+!       if ((cur_progress % 16) == 0)
+  	gimp_progress_update ((double) cur_progress / (double) max_progress);
+  
+        curx = 0;
+***************
+*** 1668,1673 ****
+--- 1956,1964 ----
+  
+  static void
+  GIFEncodeGraphicControlExt (FILE    *fp,
++ 			    int      Disposal,
++ 			    int      Delay89,
++ 			    int      NumFramesInImage,
+  			    int      GWidth,
+  			    int      GHeight,
+  			    int      GInterlace,
+***************
+*** 1721,1734 ****
+    /*
+     * Write out extension for transparent colour index, if necessary.
+     */
+!   if (Transparent >= 0)
+      {
+        fputc ('!', fp);
+        fputc (0xf9, fp);
+        fputc (4, fp);
+!       fputc (0x01 | 0x08, fp); /* DISPOSAL TYPE HARDWIRED FOR NOW */
+!       fputc (10, fp);
+!       fputc (0, fp); /* FRAME RATE HARDWIRED TO 10fps FOR NOW */
+        fputc (Transparent, fp);
+        fputc (0, fp);
+      }
+--- 2012,2041 ----
+    /*
+     * Write out extension for transparent colour index, if necessary.
+     */
+!   if ( (Transparent >= 0) || (NumFramesInImage > 1) )
+      {
++       /* Extension Introducer - fixed. */
+        fputc ('!', fp);
++       /* Graphic Control Label - fixed. */
+        fputc (0xf9, fp);
++       /* Block Size - fixed. */
+        fputc (4, fp);
+!       
+!       /* Packed Fields - XXXdddut (d=disposal, u=userInput, t=transFlag) */
+!       /*                    s8421                                        */
+!       fputc ( ((Transparent >= 0) ? 0x01 : 0x00) /* TRANSPARENCY */
+! 
+! 	      /* DISPOSAL */
+! 	      | ((NumFramesInImage > 1) ? (Disposal << 2) : 0x00 ),
+! 	      /* 0x03 or 0x01 build frames cumulatively */
+! 	      /* 0x02 clears frame before drawing */
+! 	      /* 0x00 'don't care' */
+! 
+! 	      fp);
+!       
+!       fputc (Delay89 & 255, fp);
+!       fputc ((Delay89>>8) & 255, fp);
+! 
+        fputc (Transparent, fp);
+        fputc (0, fp);
+      }
+***************
+*** 2115,2143 ****
+    free_ent = ClearCode + 2;
+  
+  
+! 
+!   /*
+!    * I had to insert this or else the second image through this
+!    * routine would be garbled.  I think that this is because otherwise
+!    * it would cheerfully carry on compressing this image with the code
+!    * tables from the previous image (from the GIF specs this looks like
+!    * quite valid behaviour, but decoders don't agree); in that case this
+!    * code should ideally be going at the end of the compression routine,
+!    * but _that_ doesn't work.  Ho hum.  (--Adam)
+!    */
+!   /*  cl_block();*/
+!   /*
+!    * This is the culprit - but I really don't understand why.
+!    * What I *do* know is that there are far too many global variables
+!    * in this code!  :^)
+!    *
+!    * Update: I found the problem (I hope) - more globals were lurking
+!    * around with values from the old run (cur_bits, cur_accum).  Sigh.
+!    *
+!    * So the above line is commented out.  If you have further problems
+!    * with corrupt animated GIFs being saved, please try uncommenting
+!    * the above line any let me know if it helps.  (--Adam)
+!    */
+    n_bits = g_init_bits;
+    maxcode = MAXCODE (n_bits);
+  
+--- 2422,2428 ----
+    free_ent = ClearCode + 2;
+  
+  
+!   /* Had some problems here... should be okay now.  --Adam */
+    n_bits = g_init_bits;
+    maxcode = MAXCODE (n_bits);
+  
+***************
+*** 2447,2452 ****
+--- 2732,2750 ----
+      *toggle_val = TRUE;
+    else
+      *toggle_val = FALSE;
++ }
++ 
++ static void
++ save_entry_callback (GtkWidget *widget,
++ 		     gpointer   data)
++ {
++   gsvals.default_delay = atoi (gtk_entry_get_text (GTK_ENTRY (widget)));
++ 
++   if (gsvals.default_delay < 0)
++     gsvals.default_delay = 0;
++ 
++   if (gsvals.default_delay > 65000)
++     gsvals.default_delay = 65000;
+  }
+  
+  /* The End */
+From scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com  Tue Jun 10 10:30:23 1997
+Return-Path: scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com
+Received: from gilroy.UUCP (scott@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id KAA07481 for scott; Tue, 10 Jun 1997 10:30:16 -0500
+X-Authentication-Warning: poverty.bloomington.in.us: scott set sender to gilroy!scam.xcf.berkeley.edu!gimp-developer-owner using -f
+Received: from scam.XCF.Berkeley.EDU by gilroy.rmp.com id aa21078;
+          10 Jun 97 7:45 PDT
+Received: (qmail 28982 invoked by uid 27258); 9 Jun 1997 14:14:42 -0000
+Delivered-To: gimp-developer-outgoing@xcf.berkeley.edu
+Received: (qmail 28979 invoked by uid 27258); 9 Jun 1997 14:14:40 -0000
+Delivered-To: gimp-developer@scam.xcf.berkeley.edu
+Received: (qmail 28971 invoked from network); 9 Jun 1997 14:14:37 -0000
+Received: from sierra.sci-park.uunet.pipex.com (194.130.1.24)
+  by scam.xcf.berkeley.edu with SMTP; 9 Jun 1997 14:14:37 -0000
+Received: (from adam@localhost) by sierra.sci-park.uunet.pipex.com (8.6.11/8.6.9) id OAA02080; Mon, 9 Jun 1997 14:55:30 GMT
+Date: Mon, 9 Jun 1997 14:55:30 GMT
+Message-Id: <199706091455.OAA02080@sierra.sci-park.uunet.pipex.com>
+From: "Adam D. Moss" <adam@uunet.pipex.com>
+To: gimp-developer@scam.xcf.berkeley.edu
+Subject: [gimp-devel] [patch] convert.c minor stuff
+X-Face: %'EXt;w3g|JblL?5#_=D+{Srq!]L{+`>D_?Sm(g`06*`,'sfcv(y+2|Dp7u27UW&dZ@K0qf
+	8Y-cDh'b~85i4^r[,%[&d+Rg5k7kj#(7DysZz>J$!$C}=8VI(1Y&t*sLr59ag,a$B5-MUtMrPG\*\=
+	&1_gx>0owf/#C[WrC5P$~*br|};PF_?7Ge*5fC3o-6k!>h~}Vw)rvxyAt3z+5*h*4LvXm=vcp^*)G%
+	S}6&.lN]'xDAXxf%<B!z(\Y}'8Wd2{p,[4`j9oFFQYYP
+
+
+
+Hiya.
+
+Anyone have good/bad/ugly experiences with 0.99.10 when converting
+from GRAYSCALE to INDEXED?
+
+The reason I ask is that my last convert.c patch to 0.99.9, which is
+now in 0.99.10, was accidentally left with code to present the
+quantization options dialog when converting from GRAYSCALE->INDEXED,
+whereas it was only designed for use with RGB->INDEXED.
+
+The gods of serendipity smiled down, however, and the bizarre thing is
+that those options do seem to do what you'd expect them to do with
+GRAYSCALE images on 0.99.10.
+
+But I don't trust this...
+
+So here's a patch against 0.99.10 which at least removes the
+'WWW-optimized palette' option from the GRAYSCALE->INDEXED dialog,
+since that has a weird sort of off-by-one artifact on tile
+boundaries.  This is probably a symptom of the larger problem, which
+is that it is very likely not at all sane to do all the same
+quantization crap with GRAYSCALE images as with RGB images.
+
+I expect that the next patch will remove the whole GRAYSCALE->INDEXED
+dialog and revert to the behaviour I had intended.
+
+This patch also makes the pop-up alpha warning only pop up the first
+time.
+
+--Adam
+
+
+
+*** app/convert.c.0.99.10	Sun Jun  8 18:32:51 1997
+--- app/convert.c	Sun Jun  8 19:01:42 1997
+***************
+*** 220,225 ****
+--- 220,226 ----
+    GtkWidget *frame;
+    GtkWidget *toggle;
+    GSList *group = NULL;
++   static gboolean shown_message_already = False;
+  
+    gimage = (GImage *) gimage_ptr;
+    dialog = (IndexedDialog *) g_malloc (sizeof (IndexedDialog));
+***************
+*** 240,247 ****
+        )
+      {
+        dialog->num_cols = 255;
+!       message_box ("Note:  You are attempting to convert an RGB image\nwith alpha/layers.  It is recommended that you quantize\nto no more than 255 colors if you wish to make\na transparent or animated GIF from it.",
+! 		   NULL, NULL);
+      }
+    dialog->makepal_flag = TRUE;
+    dialog->webpal_flag = FALSE;
+--- 241,252 ----
+        )
+      {
+        dialog->num_cols = 255;
+!       if (!shown_message_already)
+! 	{
+! 	  message_box ("Note:  You are attempting to convert an image\nwith alpha/layers.  It is recommended that you quantize\nto no more than 255 colors if you wish to make\na transparent or animated GIF from it.\n\nYou won't get this message again\nuntil the next time you run GIMP.\nHave a nice day!",
+! 		       NULL, NULL);
+! 	  shown_message_already = True;
+! 	}
+      }
+    dialog->makepal_flag = TRUE;
+    dialog->webpal_flag = FALSE;
+***************
+*** 262,268 ****
+    gtk_container_add (GTK_CONTAINER (frame), vbox);
+    gtk_widget_show(vbox);
+  
+!   /*  'general palette'  */
+    hbox = gtk_hbox_new (FALSE, 1);
+    gtk_container_border_width (GTK_CONTAINER (vbox), 2);
+    gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
+--- 267,273 ----
+    gtk_container_add (GTK_CONTAINER (frame), vbox);
+    gtk_widget_show(vbox);
+  
+!   /*  'generate palette'  */
+    hbox = gtk_hbox_new (FALSE, 1);
+    gtk_container_border_width (GTK_CONTAINER (vbox), 2);
+    gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
+***************
+*** 300,318 ****
+    gtk_widget_show (text);
+    gtk_widget_show (hbox);
+  
+!   /*  'web palette'  */
+!   hbox = gtk_hbox_new (FALSE, 1);
+!   gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
+!   toggle =
+!     gtk_radio_button_new_with_label (group, "Use WWW-optimised palette");
+!   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));
+!   gtk_box_pack_start (GTK_BOX (hbox), toggle, TRUE, TRUE, 0);
+!   gtk_signal_connect (GTK_OBJECT (toggle), "toggled",
+! 		      (GtkSignalFunc) indexed_radio_update,
+! 		      &(dialog->webpal_flag));
+!   gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (toggle), dialog->webpal_flag);
+!   gtk_widget_show (toggle);
+!   gtk_widget_show (hbox);
+    /*  'mono palette'  */
+    hbox = gtk_hbox_new (FALSE, 1);
+    gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
+--- 305,327 ----
+    gtk_widget_show (text);
+    gtk_widget_show (hbox);
+  
+!   if (gimage->base_type == RGB)
+!     {
+!       /*  'web palette'  */
+!       hbox = gtk_hbox_new (FALSE, 1);
+!       gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
+!       toggle =
+! 	gtk_radio_button_new_with_label (group, "Use WWW-optimised palette");
+!       group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));
+!       gtk_box_pack_start (GTK_BOX (hbox), toggle, TRUE, TRUE, 0);
+!       gtk_signal_connect (GTK_OBJECT (toggle), "toggled",
+! 			  (GtkSignalFunc) indexed_radio_update,
+! 			  &(dialog->webpal_flag));
+!       gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (toggle), dialog->webpal_flag);
+!       gtk_widget_show (toggle);
+!       gtk_widget_show (hbox);
+!     }
+! 
+    /*  'mono palette'  */
+    hbox = gtk_hbox_new (FALSE, 1);
+    gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
+***************
+*** 326,331 ****
+--- 335,341 ----
+    gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (toggle), dialog->monopal_flag);
+    gtk_widget_show (toggle);
+    gtk_widget_show (hbox);
++ 
+    frame = gtk_frame_new ("Dither Options");
+    gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_ETCHED_IN);
+    gtk_container_border_width (GTK_CONTAINER (frame), 2);
+
+From scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com  Sun Jun  8 20:00:20 1997
+Return-Path: scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id UAA26104 for scott; Sun, 8 Jun 1997 20:00:20 -0500
+Received: from scam.XCF.Berkeley.EDU by gilroy.rmp.com id aa10622;
+          8 Jun 97 17:47 PDT
+Received: (qmail 23630 invoked by uid 27258); 8 Jun 1997 19:34:29 -0000
+Delivered-To: gimp-developer-outgoing@xcf.berkeley.edu
+Received: (qmail 23626 invoked by uid 27258); 8 Jun 1997 19:34:28 -0000
+Delivered-To: gimp-developer@scam.xcf.berkeley.edu
+Received: (qmail 23620 invoked from network); 8 Jun 1997 19:34:26 -0000
+Received: from emout11.mx.aol.com (HELO emout11.mail.aol.com) (198.81.11.26)
+  by scam.xcf.berkeley.edu with SMTP; 8 Jun 1997 19:34:26 -0000
+Received: (from root@localhost)
+	  by emout11.mail.aol.com (8.7.6/8.7.3/AOL-2.0.0)
+	  id PAA14407 for gimp-developer@scam.xcf.berkeley.edu;
+	  Sun, 8 Jun 1997 15:42:22 -0400 (EDT)
+Date: Sun, 8 Jun 1997 15:42:22 -0400 (EDT)
+From: Pkirchg@aol.com
+Message-ID: <970608154222_406597090@emout11.mail.aol.com>
+To: gimp-developer@scam.xcf.berkeley.edu
+Subject: [gimp-devel] [patch] Use files size for automatic filetype detection
+MIME-Version: 1.0
+Content-type: multipart/mixed;
+	boundary="PART.BOUNDARY.0.21961.emout11.mail.aol.com.865798942"
+
+
+--PART.BOUNDARY.0.21961.emout11.mail.aol.com.865798942
+Content-ID: <0_21961_865798942@emout11.mail.aol.com.4151>
+Content-type: text/plain
+
+High,
+
+now we have the automatic filetype detection in GIMP 0.99.10.
+Developers of file-plug-ins should notice the change of the plug-ins
+in the distribution. New plug-ins should use the
+   gimp_register_magic_load_handler() 
+instead of the
+   gimp_register_load_handler() 
+
+The new function accepts an additional argument for specifying
+magic information about the files that the plug-in can load. Please
+see the attached documentation for specifying the magics.
+
+Albert Cahalan wanted to have a magic information that gives the files
+size to be used with the HRZ plug-in. The enclosed patches to fileops.c
+and hrz.c will do that. The size information will only be used, if no
+other plug-in is found for the file. I.E., a TIFF-file with the size
+of a HRZ-file is opened as a TIFF-file. 
+I think this should make no problems.
+
+Bye
+
+Peter K.
+
+Here is the diff for hrz.c:
+
+
+--- plug-ins/hrz.c.orig	Sun Jun  8 10:12:25 1997
++++ plug-ins/hrz.c	Sun Jun  8 10:13:22 1997
+@@ -154,7 +154,7 @@
+                           nsave_args, 0,
+                           save_args, NULL);
+ 
+-  gimp_register_load_handler ("file_hrz_load", "hrz", "");
++  gimp_register_magic_load_handler ("file_hrz_load", "hrz", "", "0,size,184320");
+   gimp_register_save_handler ("file_hrz_save", "hrz", "");
+ }
+ 
+
+Here is the diff for fileops.c:
+
+
+--- app/fileops.c.orig	Sat Jun  7 23:27:11 1997
++++ app/fileops.c	Sun Jun  8 10:13:41 1997
+@@ -1032,14 +1032,15 @@
+ file_proc_find (GSList *procs,
+ 		char   *filename)
+ {
+-  PlugInProcDef *file_proc;
++  PlugInProcDef *file_proc, *size_matched_proc;
+   GSList *all_procs = procs;
+   GSList *extensions;
+   GSList *prefixes;
+   char *extension;
+   char *p1, *p2;
+   FILE *ifp = NULL;
+-  int head_size = -2;
++  int head_size = -2, size_match_count = 0;
++  int match_val;
+   unsigned char head[256];
+ 
+   extension = strrchr (filename, '.');
+@@ -1060,15 +1061,25 @@
+               if ((ifp = fopen (filename, "rb")) != NULL)
+                 head_size = fread ((char *)head, 1, sizeof (head), ifp);
+             }
+-          if ((head_size >= 4) && file_check_magic_list (file_proc->magics_list,
+-                                                         head_size, head, ifp))
++          if (head_size >= 4)
+             {
+-              fclose (ifp);
+-              return (file_proc);
++              match_val = file_check_magic_list (file_proc->magics_list,
++                                                 head_size, head, ifp);
++              if (match_val == 2)  /* size match ? */
++                { /* Use it only if no other magic matches */
++                  size_match_count++;
++                  size_matched_proc = file_proc;
++                }
++              else if (match_val)
++                {
++                  fclose (ifp);
++                  return (file_proc);
++                }
+             }
+         }
+     }
+   if (ifp) fclose (ifp);
++  if (size_match_count == 1) return (size_matched_proc);
+ 
+   procs = all_procs;
+   while (procs)
+@@ -1164,7 +1175,7 @@
+                          unsigned char *file_head,
+                          FILE *ifp)
+ 
+-{
++{ /* Return values are 0: no match, 1: magic match, 2: size match */
+   long offs;
+   unsigned long num_testval, num_operatorval;
+   unsigned long fileval;
+@@ -1195,6 +1206,10 @@
+       numbytes = 4;
+       num_operator_ptr = type+4;
+     }
++  else if (strncmp (type, "size", 4) == 0)
++    {
++      numbytes = 5;
++    }
+   else if (strcmp (type, "string") == 0)
+     {
+       numbytes = 0;
+@@ -1234,7 +1249,13 @@
+         sscanf (value+1, "%lo", &num_testval);
+     
+       fileval = 0;
+-      if (offs + numbytes <= headsize)  /* We have it in memory ? */
++      if (numbytes == 5)    /* Check for file size ? */
++        {struct stat buf;
++
++          if (fstat (fileno (ifp), &buf) < 0) return (0);
++          fileval = buf.st_size;
++        }
++      else if (offs + numbytes <= headsize)  /* We have it in memory ? */
+         {
+           for (k = 0; k < numbytes; k++)
+           fileval = (fileval << 8) | (long)file_head[offs+k];
+@@ -1255,6 +1276,8 @@
+         found = (fileval > num_testval);
+       else
+         found = (fileval == num_testval);
++
++      if (found && (numbytes == 5)) found = 2;
+     }
+   else if (numbytes == 0) /* String test */
+     {
+@@ -1285,10 +1308,11 @@
+                                   int headsize,
+                                   unsigned char *head,
+                                   FILE *ifp)
+-{
++
++{ /* Return values are 0: no match, 1: magic match, 2: size match */
+   char *offset, *type, *value;
+   int and = 0;
+-  int found = 0;
++  int found = 0, match_val;
+ 
+   while (magics_list)
+     {
+@@ -1299,14 +1323,15 @@
+       if ((value = (char *)magics_list->data) == NULL) break;
+       magics_list = magics_list->next; 
+ 
++      match_val = file_check_single_magic (offset, type, value,
++                                           headsize, head, ifp);
+       if (and)
+-          found = found && file_check_single_magic (offset, type, value,
+-                                                    headsize, head, ifp);
++          found = found && match_val;
+       else
+-          found = file_check_single_magic (offset, type, value,
+-                                           headsize, head, ifp);
++          found = match_val;
++
+       and = (strchr (offset, '&') != NULL);
+-      if ((!and) && found) return (1);
++      if ((!and) && found) return (match_val);
+     }
+   return (0);
+ }
+
+
+--PART.BOUNDARY.0.21961.emout11.mail.aol.com.865798942
+Content-ID: <0_21961_865798942@emout11.mail.aol.com.4152>
+Content-type: text/plain;
+	name="MAGIC.DOC"
+Content-Transfer-Encoding: quoted-printable
+
+The new gimp_register_magic_load_handler accepts specifications for
+magic information about the type of files, the plug-in can read.
+The information is kept in a comma separated list. Each magic information=
+
+consists of an offset, the type of checking and the value to check:
+=0D
+<offset>,<type>,<value>[,<offset>,<type>,<value>]
+=0D
+<offset> =3D <offset_value>[&]
+<type>   =3D   byte[&<and_value>] | short[&<and_value>] | long[&<and_valu=
+e>]
+           | size | string
+<value> =3D [ < | > | =3D ]<test_value>
+=0D
+<offset_value> =3D <decimal integer>
+<and_value>,<test_value> =3D   <decimal integer> | <octal integer>
+                           | <hexadecimal integer>
+=0D
+<offset> is the decimal offset into the file where to perform the check
+<type> specifies the type of checking: byte =3D 1 byte, short =3D 2 bytes=
+,
+       long =3D 4 bytes, size =3D file size, string =3D variable number o=
+f bytes.
+       Numerical values read from the file are interpreted
+       with most significant byte first.
+<value> is the numerical or string value to check against.
+       The string value can be specified with C-notation ('\\n', '\\033')=
+,
+       but the backslash must remain in the string
+       ("0,string,II*\0,0,string,MM\0*" would result in "0,string,II*").
+       Blanks within the string should be used with "\\040")
+=0D
+If &<and_value> is specified for numerical test, the value read from the
+file is first AND-ed with <and_value>, before the test is performed.
+if '<', '>' or '=3D' is specified infront of <test_value> (only numerical=
+
+tests for byte, short, long), the test <filevalue> OP <test_value>
+is performed with the specified OPeration. '=3D' is the default operation=
+=2E
+If <offset_value> is specified (without trailing '&'), the magic informat=
+ion
+applies if the test is TRUE.
+If <offset_value>& is specified, the magic information applies if this te=
+st
+and the test of the next set of magic information is TRUE.
+ A file plug-in that matches the "magic" information about a files size
+is only used, if no other plug-in is found to match.
+=0D
+Example for TIFF:
+=0D
+  "0,string,II*\\0,0,string,MM\\0*"
+=0D
+  The magic information applies if either the first or second is found
+  to be true.
+=0D
+Example for PCX:
+=0D
+  "0&,byte,10,2&,byte,1,3&,byte,>0,3,byte,<9"
+=0D
+  The first byte must be 10 and the third byte must be 1 and the fourth b=
+yte
+  must be larger than 0 and less than 9.
+=0D
+Example for HRZ:
+  "0,size,184320":
+=0D
+  Offset is ignored, only the size of the file is checked. If a TIFF-
+  file has the same size, it will be opened as a TIFF file, because
+  the TIFF-plugin will also match the file and will not use the size-
+  information.
+
+--PART.BOUNDARY.0.21961.emout11.mail.aol.com.865798942--
+
+From scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com  Mon Jun 30 21:30:24 1997
+Return-Path: scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id VAA17603 for scott; Mon, 30 Jun 1997 21:30:24 -0500
+Received: from scam.XCF.Berkeley.EDU by gilroy.rmp.com id aa13660;
+          30 Jun 97 19:21 PDT
+Received: (qmail 15455 invoked by uid 27258); 30 Jun 1997 20:45:42 -0000
+Delivered-To: gimp-developer-outgoing@xcf.berkeley.edu
+Received: (qmail 15452 invoked by uid 27258); 30 Jun 1997 20:45:41 -0000
+Delivered-To: gimp-developer@scam.xcf.berkeley.edu
+Received: (qmail 15446 invoked by uid 0); 30 Jun 1997 20:45:40 -0000
+Received: from emout03.mx.aol.com (HELO emout03.mail.aol.com) (198.81.11.94)
+  by scam.xcf.berkeley.edu with SMTP; 30 Jun 1997 20:45:40 -0000
+Received: (from root@localhost)
+	  by emout03.mail.aol.com (8.7.6/8.7.3/AOL-2.0.0)
+	  id QAA00662 for gimp-developer@scam.xcf.berkeley.edu;
+	  Mon, 30 Jun 1997 16:53:41 -0400 (EDT)
+Date: Mon, 30 Jun 1997 16:53:41 -0400 (EDT)
+From: Pkirchg@aol.com
+Message-ID: <970630165334_-1025362134@emout03.mail.aol.com>
+To: gimp-developer@scam.xcf.berkeley.edu
+Subject: [gimp-devel] [patch] gimp_image_menu_new()
+
+Hello,
+
+the gimp_image_menu_new() does not set the active_image
+correctly, when a constraint-function is used. The following
+patch fixes the problem:
+
+Peter K.
+
+--- libgimp/gimpmenu.c.orig	Tue Jul  8 21:59:00 1997
++++ libgimp/gimpmenu.c	Tue Jul  8 22:01:02 1997
+@@ -47,7 +47,7 @@
+ 	g_free (label);
+ 
+ 	if (images[i] == active_image)
+-	  gtk_menu_set_active (GTK_MENU (menu), i);
++	  gtk_menu_set_active (GTK_MENU (menu), k);
+ 
+ 	k += 1;
+       }
+From scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com  Fri Jun 27 19:30:35 1997
+Return-Path: scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id TAA09465 for scott; Fri, 27 Jun 1997 19:30:33 -0500
+Received: from scam.XCF.Berkeley.EDU by gilroy.rmp.com id aa24536;
+          27 Jun 97 17:08 PDT
+Received: (qmail 6347 invoked by uid 27258); 27 Jun 1997 14:41:52 -0000
+Delivered-To: gimp-developer-outgoing@xcf.berkeley.edu
+Received: (qmail 6320 invoked by uid 27258); 27 Jun 1997 14:41:48 -0000
+Delivered-To: gimp-developer@scam.xcf.berkeley.edu
+Received: (qmail 6286 invoked by uid 0); 27 Jun 1997 14:41:44 -0000
+Received: from hermes.hrz.uni-bielefeld.de (129.70.4.55)
+  by scam.xcf.berkeley.edu with SMTP; 27 Jun 1997 14:41:44 -0000
+Received: from titan.cfl.de (pppasc29.hrz.uni-bielefeld.de) by hermes.hrz.uni-bielefeld.de with ESMTP
+	(1.37.109.17/16.2) id AA018933118; Fri, 27 Jun 1997 16:51:58 +0200
+Received: (from dnehring@localhost)
+	by titan.cfl.de (8.8.5/8.8.5) id QAA12452;
+	Fri, 27 Jun 1997 16:49:58 +0200
+From: Dirk Nehring <dnehring@hrz.Uni-Bielefeld.DE>
+Message-Id: <199706271449.QAA12452@titan.cfl.de>
+Subject: [gimp-devel] Patch for jpeg.c, gimp-0.99.10
+To: spencer@xcf.berkeley.edu, petm@xcf.berkeley.edu,
+        gimp-developer@scam.xcf.berkeley.edu
+Date: Fri, 27 Jun 1997 16:49:58 +0200 (MET DST)
+Cc: dnehring@hermes.hrz.uni-bielefeld.de
+X-Mailer: ELM [version 2.4ME+ PL31 (25)]
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+
+Hi Peter, hi Spencer,
+
+I have written a small patch for the plugin 'jpeg' in order to use to
+'optimize' feature from libjpeg.so. The table for the entropy encoder
+(currently only Huffman encoder) will be optimized and the output file we be
+smaller. Can this be included in gimp 1.0?
+
+Regards,
+
+Dirk Nehring
+
+--
+Hal 9000 - "Put down those Windows disks Dave....  Dave?  DAVE!!"
+
+Dirk Nehring,             | Student of Natural Scientific Computer Science
+dnehring@uni-bielefeld.de | Computing Center, University of Bielefeld, Germany
+                          | <http://www.uni-bielefeld.de/~dnehring/>
+
+-------------------8<------------------8<----------------8<------------
+--- plug-ins/jpeg.c.orig	Fri Jun 27 16:12:06 1997
++++ plug-ins/jpeg.c	Fri Jun 27 16:33:28 1997
+@@ -38,6 +38,7 @@
+ {
+   gdouble quality;
+   gdouble smoothing;
++  gint optimize;
+ } JpegSaveVals;
+
+ typedef struct
+@@ -66,6 +67,8 @@
+ 				    gpointer   data);
+ static void   save_scale_update    (GtkAdjustment *adjustment,
+ 				    double        *scale_val);
++static void   save_optimize_update (GtkWidget *widget,
++				    gpointer   data);
+
+
+ GPlugInInfo PLUG_IN_INFO =
+@@ -79,7 +82,8 @@
+ static JpegSaveVals jsvals =
+ {
+   0.75,  /*  quality  */
+-  0.0    /*  smoothing  */
++  0.0,   /*  smoothing  */
++  1      /*  optimize  */
+ };
+
+ static JpegSaveInterface jsint =
+@@ -115,6 +119,7 @@
+     { PARAM_STRING, "raw_filename", "The name of the file to save the image in" },
+     { PARAM_FLOAT, "quality", "Quality of saved image (0 <= quality <= 1)" },
+     { PARAM_FLOAT, "smoothing", "Smoothing factor for saved image (0 <= smoothing <= 1)" },
++    { PARAM_INT32, "optimize", "Optimization of entropy encoding parameters" },
+   };
+   static int nsave_args = sizeof (save_args) / sizeof (save_args[0]);
+
+@@ -196,12 +201,13 @@
+
+ 	case RUN_NONINTERACTIVE:
+ 	  /*  Make sure all the arguments are there!  */
+-	  if (nparams != 6)
++	  if (nparams != 7)
+ 	    status = STATUS_CALLING_ERROR;
+ 	  if (status == STATUS_SUCCESS)
+ 	    {
+ 	      jsvals.quality = param[5].data.d_float;
+ 	      jsvals.smoothing = param[6].data.d_float;
++	      jsvals.optimize = param[7].data.d_int32;
+ 	    }
+ 	  if (status == STATUS_SUCCESS &&
+ 	      (jsvals.quality < 0.0 || jsvals.quality > 1.0))
+@@ -556,6 +562,7 @@
+    */
+   jpeg_set_quality (&cinfo, (int) (jsvals.quality * 100), TRUE /* limit to baseline-JPEG values */);
+   cinfo.smoothing_factor = (int) (jsvals.smoothing * 100);
++  cinfo.optimize_coding = jsvals.optimize;
+
+   /* Step 4: Start compressor */
+
+@@ -637,6 +644,7 @@
+   GtkWidget *scale;
+   GtkWidget *frame;
+   GtkWidget *table;
++  GtkWidget *toggle;
+   GtkObject *scale_data;
+   gchar **argv;
+   gint argc;
+@@ -678,7 +686,7 @@
+   gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_ETCHED_IN);
+   gtk_container_border_width (GTK_CONTAINER (frame), 10);
+   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), frame, TRUE, TRUE, 0);
+-  table = gtk_table_new (2, 2, FALSE);
++  table = gtk_table_new (3, 2, FALSE);
+   gtk_container_border_width (GTK_CONTAINER (table), 10);
+   gtk_container_add (GTK_CONTAINER (frame), table);
+
+@@ -714,6 +722,13 @@
+   gtk_widget_show (label);
+   gtk_widget_show (scale);
+
++  toggle = gtk_check_button_new_with_label("Optimize");
++  gtk_table_attach(GTK_TABLE(table), toggle, 0, 2, 2, 3, GTK_FILL, 0, 0, 0);
++  gtk_signal_connect(GTK_OBJECT(toggle), "toggled",
++                     (GtkSignalFunc)save_optimize_update, NULL);
++  gtk_toggle_button_set_state(GTK_TOGGLE_BUTTON(toggle), jsvals.optimize);
++  gtk_widget_show(toggle);
++
+   gtk_widget_show (frame);
+   gtk_widget_show (table);
+   gtk_widget_show (dlg);
+@@ -747,4 +762,11 @@
+ 		   double        *scale_val)
+ {
+   *scale_val = adjustment->value;
++}
++
++static void
++save_optimize_update(GtkWidget *widget,
++		     gpointer  data)
++{
++  jsvals.optimize = GTK_TOGGLE_BUTTON(widget)->active;
+ }
+
+--- gimp-0.99.10-dist/app/layers_dialog.c	Tue Jun  3 18:08:47 1997
++++ app/layers_dialog.c	Mon Jun  9 18:56:33 1997
+@@ -1041,6 +1041,8 @@
+     {
+       layersD->image_width = (int) (layersD->ratio * gimage->width);
+       layersD->image_height = (int) (layersD->ratio * gimage->height);
++      if (layersD->image_width < 1) layersD->image_width = 1;
++      if (layersD->image_height < 1) layersD->image_height = 1;
+     }
+   else
+     {
+@@ -2310,6 +2312,8 @@
+       /*  determine width and height  */
+       layer_widget->width = (int) (layersD->ratio * layer_widget->layer->width);
+       layer_widget->height = (int) (layersD->ratio * layer_widget->layer->height);
++      if (layer_widget->width < 1) layer_widget->width = 1;
++      if (layer_widget->height < 1) layer_widget->height = 1;
+       offx = (int) (layersD->ratio * layer_widget->layer->offset_x);
+       offy = (int) (layersD->ratio * layer_widget->layer->offset_y);
+ 
+From scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com  Wed Jul  2 04:00:16 1997
+Return-Path: scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id EAA20172 for scott; Wed, 2 Jul 1997 04:00:15 -0500
+Received: from scam.XCF.Berkeley.EDU by gilroy.rmp.com id aa12828;
+          2 Jul 97 1:40 PDT
+Received: (qmail 6547 invoked by uid 27258); 2 Jul 1997 05:45:33 -0000
+Delivered-To: gimp-developer-outgoing@xcf.berkeley.edu
+Received: (qmail 6544 invoked by uid 27258); 2 Jul 1997 05:45:32 -0000
+Delivered-To: gimp-developer@scam.xcf.berkeley.edu
+Received: (qmail 6538 invoked by uid 0); 2 Jul 1997 05:45:30 -0000
+Received: from dal62.dhc.net (HELO wopr.sac) (root@207.55.174.62)
+  by scam.xcf.berkeley.edu with SMTP; 2 Jul 1997 05:45:30 -0000
+Received: (from root@localhost) by wopr.sac (8.7.6/8.7.3) id AAA26101 for gimp-developer@scam.xcf.berkeley.edu; Wed, 2 Jul 1997 00:52:09 -0400
+From: Seth Burgess (unpriviliged) <seth@wopr.sac>
+Message-Id: <199707020452.AAA26101@wopr.sac>
+Subject: [gimp-devel] [patch] Documentation bug
+To: gimp-developer@scam.xcf.berkeley.edu
+Date: Wed, 2 Jul 1997 00:52:09 -0400 (EDT)
+X-Mailer: ELM [version 2.4ME+ PL28 (25)]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+
+It might not look like much, but this one caused me quite a headache.
+
+-seth
+
+
+--- gimp-0.99.10.orig/app/layer_cmds.c	Thu May 29 20:16:06 1997
++++ app/layer_cmds.c	Wed Jul  2 00:40:48 1997
+@@ -115,7 +115,7 @@
+   },
+   { PDB_INT32,
+     "type",
+-    "the layer type: { RGB (0), RGBA (1), GRAY (2), GRAYA (3), INDEXED (4), INDEXEDA (5) }"
++    "the layer type: { RGB_IMAGE (0), RGBA_IMAGE (1), GRAY_IMAGE (2), GRAYA_IMAGE (3), INDEXED_IMAGE (4), INDEXEDA_IMAGE (5) }"
+   },
+   { PDB_STRING,
+     "name",
+
+From scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com  Tue Jun 10 08:30:19 1997
+Return-Path: scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id IAA02899 for scott; Tue, 10 Jun 1997 08:30:16 -0500
+Received: from scam.XCF.Berkeley.EDU by gilroy.rmp.com id aa19695;
+          10 Jun 97 6:12 PDT
+Received: (qmail 25192 invoked by uid 27258); 9 Jun 1997 12:55:40 -0000
+Delivered-To: gimp-developer-outgoing@xcf.berkeley.edu
+Received: (qmail 25189 invoked by uid 27258); 9 Jun 1997 12:55:39 -0000
+Delivered-To: gimp-developer@scam.XCF.Berkeley.EDU
+Received: (qmail 25181 invoked from network); 9 Jun 1997 12:55:37 -0000
+Received: from sierra.sci-park.uunet.pipex.com (194.130.1.24)
+  by scam.xcf.berkeley.edu with SMTP; 9 Jun 1997 12:55:37 -0000
+Received: (from adam@localhost) by sierra.sci-park.uunet.pipex.com (8.6.11/8.6.9) id MAA01471; Mon, 9 Jun 1997 12:09:29 GMT
+Date: Mon, 9 Jun 1997 12:09:29 GMT
+Message-Id: <199706091209.MAA01471@sierra.sci-park.uunet.pipex.com>
+From: "Adam D. Moss" <adam@uunet.pipex.com>
+To: gimp-developer@scam.XCF.Berkeley.EDU
+Subject: Re: [gimp-devel] gif loads fail
+In-Reply-To: <"bath.mail..870:07.06.97.20.38.08"@pipex.net>
+References: <199706072032.PAA27231@poverty.bloomington.in.us>
+	<"bath.mail..870:07.06.97.20.38.08"@pipex.net>
+X-Face: %'EXt;w3g|JblL?5#_=D+{Srq!]L{+`>D_?Sm(g`06*`,'sfcv(y+2|Dp7u27UW&dZ@K0qf
+	8Y-cDh'b~85i4^r[,%[&d+Rg5k7kj#(7DysZz>J$!$C}=8VI(1Y&t*sLr59ag,a$B5-MUtMrPG\*\=
+	&1_gx>0owf/#C[WrC5P$~*br|};PF_?7Ge*5fC3o-6k!>h~}Vw)rvxyAt3z+5*h*4LvXm=vcp^*)G%
+	S}6&.lN]'xDAXxf%<B!z(\Y}'8Wd2{p,[4`j9oFFQYYP
+
+
+
+Aha.
+
+Peter Mattis writes:
+ > A small fix to libgimp is needed to fix the
+ > warning. See the comments in the gif plug-in source for
+ > details.
+
+Here's an explicit patch:
+
+*** libgimp/gimplayer.c.0.99.10	Mon Jun  9 07:40:37 1997
+--- libgimp/gimplayer.c	Sun Jun  8 18:17:37 1997
+***************
+*** 179,185 ****
+    GParam *return_vals;
+    int nreturn_vals;
+  
+!   return_vals = gimp_run_procedure ("gimp_layer_scale",
+  				    &nreturn_vals,
+  				    PARAM_LAYER, layer_ID,
+  				    PARAM_INT32, offset_x,
+--- 179,185 ----
+    GParam *return_vals;
+    int nreturn_vals;
+  
+!   return_vals = gimp_run_procedure ("gimp_layer_translate",
+  				    &nreturn_vals,
+  				    PARAM_LAYER, layer_ID,
+  				    PARAM_INT32, offset_x,
+
+--- gimp-0.99.10-dist/ltconfig	Fri Jun  6 17:43:28 1997
++++ ltconfig	Sun Jun  8 02:21:33 1997
+@@ -260,9 +260,9 @@
+ *-*-linux*) host=`echo $host | sed 's/^\(.*-.*-linux\)\(.*\)$/\1-gnu\2/'`
+ esac
+ 
+-host_cpu=`echo $host | sed 's/^\(.*\)-\(.*\)-\(.*\)$/\1/'`
+-host_vendor=`echo $host | sed 's/^\(.*\)-\(.*\)-\(.*\)$/\2/'`
+-host_os=`echo $host | sed 's/^\(.*\)-\(.*\)-\(.*\)$/\3/'`
++host_cpu=`echo $host | sed 's/^\([^-]*\)-\([^-]*\)-\(.*\)$/\1/'`
++host_vendor=`echo $host | sed 's/^\([^-]*\)-\([^-]*\)-\(.*\)$/\2/'`
++host_os=`echo $host | sed 's/^\([^-]*\)-\([^-]*\)-\(.*\)$/\3/'`
+ 
+ # Determine commands to create old-style static archives.
+ old_archive_cmds='$AR cru $oldlib$oldobjs'
+--- gimp-0.99.10-dist/gtk+/ltconfig	Fri Jun  6 17:43:28 1997
++++ gtk+/ltconfig	Sun Jun  8 02:21:33 1997
+@@ -260,9 +260,9 @@
+ *-*-linux*) host=`echo $host | sed 's/^\(.*-.*-linux\)\(.*\)$/\1-gnu\2/'`
+ esac
+ 
+-host_cpu=`echo $host | sed 's/^\(.*\)-\(.*\)-\(.*\)$/\1/'`
+-host_vendor=`echo $host | sed 's/^\(.*\)-\(.*\)-\(.*\)$/\2/'`
+-host_os=`echo $host | sed 's/^\(.*\)-\(.*\)-\(.*\)$/\3/'`
++host_cpu=`echo $host | sed 's/^\([^-]*\)-\([^-]*\)-\(.*\)$/\1/'`
++host_vendor=`echo $host | sed 's/^\([^-]*\)-\([^-]*\)-\(.*\)$/\2/'`
++host_os=`echo $host | sed 's/^\([^-]*\)-\([^-]*\)-\(.*\)$/\3/'`
+ 
+ # Determine commands to create old-style static archives.
+ old_archive_cmds='$AR cru $oldlib$oldobjs'
+--- gimp-0.99.10-dist/gtk+/glib/ltconfig	Fri Jun  6 17:43:28 1997
++++ gtk+/glib/ltconfig	Sun Jun  8 02:21:33 1997
+@@ -260,9 +260,9 @@
+ *-*-linux*) host=`echo $host | sed 's/^\(.*-.*-linux\)\(.*\)$/\1-gnu\2/'`
+ esac
+ 
+-host_cpu=`echo $host | sed 's/^\(.*\)-\(.*\)-\(.*\)$/\1/'`
+-host_vendor=`echo $host | sed 's/^\(.*\)-\(.*\)-\(.*\)$/\2/'`
+-host_os=`echo $host | sed 's/^\(.*\)-\(.*\)-\(.*\)$/\3/'`
++host_cpu=`echo $host | sed 's/^\([^-]*\)-\([^-]*\)-\(.*\)$/\1/'`
++host_vendor=`echo $host | sed 's/^\([^-]*\)-\([^-]*\)-\(.*\)$/\2/'`
++host_os=`echo $host | sed 's/^\([^-]*\)-\([^-]*\)-\(.*\)$/\3/'`
+ 
+ # Determine commands to create old-style static archives.
+ old_archive_cmds='$AR cru $oldlib$oldobjs'
+From scam.xcf.berkeley.edu!xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com  Mon Jun  9 22:30:28 1997
+Return-Path: scam.xcf.berkeley.edu!xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id WAA01912 for scott; Mon, 9 Jun 1997 22:30:25 -0500
+Received: from scam.XCF.Berkeley.EDU by gilroy.rmp.com id aa16458;
+          9 Jun 97 20:25 PDT
+Received: (qmail 12437 invoked by uid 27258); 9 Jun 1997 07:03:03 -0000
+Delivered-To: gimp-developer-outgoing@xcf.berkeley.edu
+Received: (qmail 12434 invoked by uid 27258); 9 Jun 1997 07:03:02 -0000
+Delivered-To: gimp-developer@XCF.Berkeley.EDU
+Received: (qmail 12428 invoked from network); 9 Jun 1997 07:03:00 -0000
+Received: from mail0.iij.ad.jp (202.232.2.113)
+  by scam.xcf.berkeley.edu with SMTP; 9 Jun 1997 07:03:00 -0000
+Received: from uucp3.iij.ad.jp (uucp3.iij.ad.jp [202.232.2.203]) by mail0.iij.ad.jp (8.8.5+2.7Wbeta5/3.5Wpl4-MAIL) with SMTP id QAA01816 for <gimp-developer@XCF.Berkeley.EDU>; Mon, 9 Jun 1997 16:11:25 +0900 (JST)
+Received: from hcore.UUCP (uucp@localhost) by uucp3.iij.ad.jp (8.6.12+2.4W/3.3W9-UUCP) with UUCP id QAA23682 for XCF.Berkeley.EDU!gimp-developer; Mon, 9 Jun 1997 16:11:24 +0900
+Received: (from localhost) by lilia.hypercore.co.jp (smail 3.2) id m0wayWl-0007SfC; Mon, 9 Jun 1997 16:06:07 +0900 (JST)
+To: gimp-developer@XCF.Berkeley.EDU
+Subject: [gimp-devel] [patch 0.99.10] BadAccess error with colormap-cycling
+X-Attribution: Kaz
+Mime-Version: 1.0 (generated by tm-edit 7.105)
+Content-Type: text/plain; charset=US-ASCII
+From: Kazuhiro Sasayama <kaz@hypercore.co.jp>
+Date: 09 Jun 1997 16:06:01 +0900
+Message-ID: <2mu3j8l0h1.fsf@lilia.hypercore.co.jp>
+Lines: 25
+X-Mailer: Gnus v5.3/Emacs 19.34
+
+I found gimp 0.99.10 stops with a BadAccess error at startup
+if colormap-cycling is enabled.  This patch will fix it if
+I'm right.
+
+*** app/colormaps.c	1997-06-09 15:46:53+09	1.1
+--- app/colormaps.c	1997-06-09 15:47:37+09
+***************
+*** 102,106 ****
+      for (i = 0; i < 8; i++)
+        {
+! 	marching_ants_pixels[i] = reserved_pixels[i + reserved_entries];
+  	if (i < 4)
+  	  store_color (&marching_ants_pixels[i], 0, 0, 0);
+--- 102,106 ----
+      for (i = 0; i < 8; i++)
+        {
+! 	marching_ants_pixels[i] = reserved_pixels[i + reserved_entries - 8];
+  	if (i < 4)
+  	  store_color (&marching_ants_pixels[i], 0, 0, 0);
+
+-- 
+Kaz Sasayama <kaz@hypercore.co.jp>
+Linux consultant and the designer of Hyperplay, working at
+Hypercore Software Design, Ltd. <URL:http://www.spice.or.jp/%7Ehypercor/>.
+PGP key fingerprint = 53 71 54 56 FB 3D 76 0B  92 5D 32 40 C5 34 38 00
+
+Return-Path: cc00ms.unity.ncsu.edu!eos.ncsu.edu!aklikins@gilroy.rmp.com 
+Return-Path: cc00ms.unity.ncsu.edu!eos.ncsu.edu!aklikins@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id QAA03189 for scott; Sat, 14 Jun 1997 16:30:30 -0500
+Received: from cc00ms.unity.ncsu.edu by gilroy.rmp.com id aa21400;
+          14 Jun 97 14:11 PDT
+Received: from sloth (slip166-72-89-164.nc.us.ibm.net [166.72.89.164])
+          by cc00ms.unity.ncsu.edu (8.8.4/US19Dec96) with SMTP
+	  id RAA11613 for <scott@poverty.bloomington.in.us>; Sat, 14 Jun 1997 17:11:21 -0400 (EDT)
+Sender: aklikins@unity.ncsu.edu
+Message-ID: <33A308D6.37BE76BF@eos.ncsu.edu>
+Date: Sat, 14 Jun 1997 17:10:46 -0400
+From: Adrian Likins <aklikins@eos.ncsu.edu>
+X-Mailer: Mozilla 3.01 (X11; I; Linux 2.0.30 i586)
+MIME-Version: 1.0
+To: scott@poverty.bloomington.in.us
+Subject: [patch] menus.c
+Content-Type: multipart/mixed; boundary="------------4AE3CC25D6572AE7848F08B"
+
+This is a multi-part message in MIME format.
+
+--------------4AE3CC25D6572AE7848F08B
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+This is a small patch to emnus.c to add the abilty to open gimp dialogs
+from the file menu on the toolbar. T&his is particular convient when
+using script-fu as you dont need to open an image to get to the gradient
+editor or the like. Also added a call to open the layer/channels dialog
+from the image->layers menu. 
+	I incorporate a small patches of Quartics too that added a menu option
+on the filters menu to open the dialog of the last used filter. 
+	Nothing spectacular but useful. I original had made this patch for
+.99.9, but I dont think I ever got around to posting it. 
+
+-- 
+********************************************************************************
+       This is my sig. There are many like it, but this one is mine.
+Adrian Likins
+aklikins@eos.ncsu.edu
+http://www4.ncsu.edu/eos/users/a/aklikins/pub/adrian.html
+
+--------------4AE3CC25D6572AE7848F08B
+Content-Type: text/plain; charset=us-ascii; name="menus.diff"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline; filename="menus.diff"
+
+--- app/menus.c.orig	Sat Jun 14 16:21:39 1997
++++ app/menus.c	Sat Jun 14 16:58:42 1997
+@@ -51,7 +51,17 @@
+   { "<Toolbox>/File/About...", NULL, about_dialog_cmd_callback, NULL },
+   { "<Toolbox>/File/Preferences...", NULL, file_pref_cmd_callback, NULL },
+   { "<Toolbox>/File/<separator>", NULL, NULL, NULL },
+-  { "<Toolbox>/File/Quit", "<control>Q", file_quit_cmd_callback, NULL },
++  { "<Toolbox>/File/Dialogs/Brushes...", "<control><shift>B", dialogs_brushes_cmd_callback, NULL },
++  { "<Toolbox>/File/Dialogs/Patterns...", "<control><shift>P", dialogs_patterns_cmd_callback, NULL },
++  { "<Toolbox>/File/Dialogs/Palette...", "<control>P", dialogs_palette_cmd_callback, NULL },
++  { "<Toolbox>/File/Dialogs/Gradient Editor...", "<control>G", dialogs_gradient_editor_cmd_callback, NULL },
++  { "<Toolbox>/File/Dialogs/Tool Options...", "<control><shift>T", dialogs_tools_options_cmd_callback, NULL },
++  
++  {"<Toolbox>/File/<separator>",NULL,NULL,NULL},
++
++
++
++ { "<Toolbox>/File/Quit", "<control>Q", file_quit_cmd_callback, NULL },
+ 
+   { "<Image>/File/New", "<control>N", file_new_cmd_callback, (gpointer) 1 },
+   { "<Image>/File/Open", "<control>O", file_open_cmd_callback, NULL },
+@@ -59,6 +69,11 @@
+   { "<Image>/File/Save as", NULL, file_save_as_cmd_callback, NULL },
+   { "<Image>/File/Preferences...", NULL, file_pref_cmd_callback, NULL },
+   { "<Image>/File/<separator>", NULL, NULL, NULL },
++
++
++
++
++
+   { "<Image>/File/Close", "<control>W", file_close_cmd_callback, NULL },
+   { "<Image>/File/Quit", "<control>Q", file_quit_cmd_callback, NULL },
+ 
+@@ -131,6 +146,7 @@
+   { "<Image>/Image/<separator>", NULL, NULL, NULL },
+   { "<Image>/Image/Histogram", NULL, image_histogram_cmd_callback, NULL },
+ 
++  { "<Image>/Layers/Layers & Channels...", "<control>L", dialogs_lc_cmd_callback, NULL },
+   { "<Image>/Layers/Raise Layer", "<control>F", layers_raise_cmd_callback, NULL },
+   { "<Image>/Layers/Lower Layer", "<control>B", layers_lower_cmd_callback, NULL },
+   { "<Image>/Layers/Anchor Layer", "<control>H", layers_anchor_cmd_callback, NULL },
+@@ -162,8 +178,10 @@
+   { "<Image>/Tools/Convolve", "V", tools_select_cmd_callback, (gpointer) CONVOLVE },
+ 
+   { "<Image>/Filters/", NULL, NULL, NULL },
+-  { "<Image>/Filters/Repeat", "<alt>F", filters_repeat_cmd_callback, (gpointer) 0x0 },
+-  { "<Image>/Filters/<nothing>", "<alt><shift>F", filters_repeat_cmd_callback, (gpointer) 0x1 },
++  { "<Image>/Filters/Repeat last", "<alt>F", filters_repeat_cmd_callback, (gpointer) 0x0 },
++  { "<Image>/Filters/Re-show last", "<alt><shift>F", filters_repeat_cmd_callback, (gpointer)
++    0x1 },
++  { "<Image>/Filters/<separator>", NULL, NULL, NULL },
+ 
+   { "<Image>/Dialogs/Brushes...", "<control><shift>B", dialogs_brushes_cmd_callback, NULL },
+   { "<Image>/Dialogs/Patterns...", "<control><shift>P", dialogs_patterns_cmd_callback, NULL },
+
+--------------4AE3CC25D6572AE7848F08B--
+From scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com  Tue Jun 24 05:30:25 1997
+Return-Path: scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id FAA11895 for scott; Tue, 24 Jun 1997 05:30:25 -0500
+Received: from scam.XCF.Berkeley.EDU by gilroy.rmp.com id aa04769;
+          24 Jun 97 3:11 PDT
+Received: (qmail 3779 invoked by uid 27258); 24 Jun 1997 09:02:35 -0000
+Delivered-To: gimp-developer-outgoing@xcf.berkeley.edu
+Received: (qmail 3776 invoked by uid 27258); 24 Jun 1997 09:02:34 -0000
+Delivered-To: gimp-developer@scam.xcf.berkeley.edu
+Received: (qmail 3770 invoked by uid 0); 24 Jun 1997 09:02:33 -0000
+Received: from relay-13.mail.demon.net (HELO punt-2.mail.demon.net) (194.217.242.21)
+  by scam.xcf.berkeley.edu with SMTP; 24 Jun 1997 09:02:33 -0000
+Received: from primag.demon.co.uk ([158.152.57.99]) by punt-2.mail.demon.net
+           id aa0622467; 24 Jun 97 10:09 BST
+Received: from hp747.primag.primag.co.uk by beryl.primag.co.uk (4.1/SMI-4.1)
+	id AA23730; Tue, 24 Jun 97 10:05:32 BST
+Received: by hp747.primag
+	(1.38.193.4/16.2) id AA04226; Tue, 24 Jun 1997 10:05:31 +0100
+Message-Id: <XFMail.970624100530.medp@primag.co.uk>
+X-Mailer: XFMail 1.1 [p0] on HPUX
+Sender: medp@primag.co.uk
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 8bit
+Mime-Version: 1.0
+Resent-Date: Tue, 10 Jun 1997 17:21:41 +0100 (BST)
+Resent-Message-Id: <XFMail.970611171852.medp@primag.co.uk>
+Resent-From: Mark Powell <medp@primag.co.uk>
+Resent-To: gimp-developer@scam.xcf.berkeley.edu
+Date: Tue, 24 Jun 1997 10:03:06 +0100 (BST)
+Organization: Primagraphics Ltd.
+From: Mark Powell <medp@primag.co.uk>
+To: gimp-developer@scam.xcf.berkeley.edu
+Subject: [gimp-devel] [patch] no tool icons on Sparc
+
+Other post from before the mailing list crash....
+
+gimp-0.99.10, Solaris 2.5, X11R6.1
+
+When I ran gimp-0.99.10 on our Sparc/Solaris 2.5 machines there were no
+icons in the tool buttons.
+
+The problem is in creating a mask pixmap for the buttons. The original
+code used the value of WhitePixel assuming it to be 1. In fact, this
+could be any number, and is actually 0 on our Suns (1 is black).
+
+When creating masks you need to use 0 and 1 explicitly. This one-liner
+patch to app/interface.c fixes it.
+
+
+
+--- app/interface.c.ORIG    Fri Jun  6 08:01:28 1997
++++ app/interface.c Wed Jun 11 17:10:25 1997
+@@ -401,7 +401,7 @@
+       gc = gdk_gc_new (*mask);
+       gdk_draw_rectangle (*mask, gc, TRUE, 0, 0, -1, -1);
+ 
+-      gdk_color_white (cmap, &tmp_color);
++      tmp_color.pixel = 1;
+       gdk_gc_set_foreground (gc, &tmp_color);
+     }
+
+
+
+
+---
+Mark Powell, Senior Software Engineer, Primagraphics Limited
+New Cambridge House, Litlington, nr.Royston, Herts, SG8 0SS, UK
+Tel. +44 1763 852222, Fax. 853324, medp@primag.co.uk, http://www.primag.co.uk
+
+From peyote-asesino.nuclecu.unam.mx!nuclecu.unam.mx!federico@gilroy.rmp.com  Tue Jun 10 21:30:15 1997
+Return-Path: peyote-asesino.nuclecu.unam.mx!nuclecu.unam.mx!federico@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id VAA12139 for scott; Tue, 10 Jun 1997 21:30:15 -0500
+Received: from peyote-asesino.nuclecu.unam.mx by gilroy.rmp.com id aa11798;
+          10 Jun 97 19:15 PDT
+Received: (qmail 12017 invoked by uid 1179); 11 Jun 1997 01:22:42 -0000
+Date: 11 Jun 1997 01:22:42 -0000
+Message-ID: <19970611012242.12016.qmail@peyote-asesino.nuclecu.unam.mx>
+From: Federico Mena <federico@peyote-asesino.nuclecu.unam.mx>
+To: gimp-developer@scam.xcf.berkeley.edu
+CC: Scott Goehring <scott@poverty.bloomington.in.us>
+Subject: PATCH: one-too-many option in rect_select
+Reply-to: federico@nuclecu.unam.mx
+
+Hello,
+
+This patch removes the "Antialiasing" check button from the
+rectangular selection tool options dialog.  Rect-select does not even
+have antialiasing :-)
+
+  Quartic
+
+--- app/rect_select.c.orig	Tue Jun 10 18:20:02 1997
++++ app/rect_select.c	Tue Jun 10 18:30:44 1997
+@@ -30,7 +30,7 @@
+ extern SelectionOptions *ellipse_options;
+ static SelectionOptions *rect_options = NULL;
+ 
+-static void rect_select (GImage *, int, int, int, int, int, int, int, double);
++static void rect_select (GImage *, int, int, int, int, int, int, double);
+ extern void ellipse_select (GImage *, int, int, int, int, int, int, int, double);
+ 
+ static Argument *rect_select_invoker (Argument *);
+@@ -136,12 +136,15 @@
+     }
+ 
+   /*  the antialias toggle button  */
+-  antialias_toggle = gtk_check_button_new_with_label ("Antialiasing");
+-  gtk_box_pack_start (GTK_BOX (vbox), antialias_toggle, FALSE, FALSE, 0);
+-  gtk_signal_connect (GTK_OBJECT (antialias_toggle), "toggled",
+-		      (GtkSignalFunc) selection_toggle_update,
+-		      &options->antialias);
+-  gtk_widget_show (antialias_toggle);
++  if (tool_type != RECT_SELECT)
++    {
++      antialias_toggle = gtk_check_button_new_with_label ("Antialiasing");
++      gtk_box_pack_start (GTK_BOX (vbox), antialias_toggle, FALSE, FALSE, 0);
++      gtk_signal_connect (GTK_OBJECT (antialias_toggle), "toggled",
++			  (GtkSignalFunc) selection_toggle_update,
++			  &options->antialias);
++      gtk_widget_show (antialias_toggle);
++    }
+ 
+   /*  the feather toggle button  */
+   feather_toggle = gtk_check_button_new_with_label ("Feather");
+@@ -188,7 +191,6 @@
+ 	     int     w,
+ 	     int     h,
+ 	     int     op,
+-	     int     antialias,
+ 	     int     feather,
+ 	     double  feather_radius)
+ {
+@@ -323,7 +325,6 @@
+ 	  rect_select (gdisp->gimage,
+ 		       x1, y1, (x2 - x1), (y2 - y1),
+ 		       rect_sel->op,
+-		       rect_options->antialias,
+ 		       rect_options->feather,
+ 		       rect_options->feather_radius);
+ 	  break;
+@@ -657,7 +658,7 @@
+   /*  call the rect_select procedure  */
+   if (success)
+     rect_select (gimage, (int) x, (int) y, (int) w, (int) h,
+-		 op, TRUE, feather, feather_radius);
++		 op, feather, feather_radius);
+ 
+   return procedural_db_return_args (&rect_select_proc, success);
+ }
+
+Return-Path: dal56.dhc.net!wopr.sac!seth@gilroy.rmp.com 
+Return-Path: dal56.dhc.net!wopr.sac!seth@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id UAA21293 for scott; Wed, 2 Jul 1997 20:00:27 -0500
+Received: from dal56.dhc.net by gilroy.rmp.com id aa24738; 2 Jul 97 17:34 PDT
+Received: (from root@localhost) by wopr.sac (8.7.6/8.7.3) id TAA29199 for scott@poverty.bloomington.in.us; Wed, 2 Jul 1997 19:31:59 -0400
+From: Seth Burgess <seth@wopr.sac>
+Message-Id: <199707022331.TAA29199@wopr.sac>
+Subject: New Secondary Patches
+To: scott@poverty.bloomington.in.us
+Date: Wed, 2 Jul 1997 19:31:59 -0400 (EDT)
+Reply-To: sjburges@ou.edu
+X-Mailer: ELM [version 2.4ME+ PL28 (25)]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+
+This patch registers a refresh-brushes in the PDB.  This is to accomodate my script-fu. (see Jen's page)
+
+seth
+sjburges@ou.edu
+
+
+--- gimp-0.99.10.orig/app/brushes.c	Fri Jun  6 16:05:33 1997
++++ app/brushes.c	Wed Jul  2 07:43:04 1997
+@@ -486,6 +486,24 @@
+   return return_args;
+ }
+ 
++static Argument *
++brushes_refresh_brush_invoker (Argument *args)
++{
++
++  /* FIXME: I've hardcoded success to be 1, because brushes_init() is a 
++   *        void function right now.  It'd be nice if it returned a value at 
++   *        some future date, so we could tell if things blew up when reparsing
++   *        the list (for whatever reason). 
++   *                       - Seth "Yes, this is a kludge" Burgess
++   *                         <sjburges@ou.edu>
++   */
++
++  success = TRUE ;
++  brushes_init();
++  return procedural_db_return_args (&brushes_refresh_brush_proc, success);
++}
++
++
+ /*  The procedure definition  */
+ ProcArg brushes_get_brush_out_args[] =
+ {
+@@ -529,6 +547,32 @@
+   { { brushes_get_brush_invoker } },
+ };
+ 
++/* =========================================================== */
++/* REFRESH BRUSHES                                             */
++/* =========================================================== */
++
++ProcRecord brushes_refresh_brush_proc =
++{
++  "gimp_brushes_refresh",
++  "Refresh current brushes",
++  "This procedure retrieves all brushes currently in the user's brush path 
++and updates the brush dialog accordingly.", 
++  "Seth Burgess<sjburges@ou.edu>",
++  "Seth Burgess",
++  "1997",
++  PDB_INTERNAL,
++
++  /*  Input arguments  */
++  0,
++  NULL,
++
++  /*  Output arguments  */
++  0,
++  NULL,
++
++  /*  Exec method  */
++  { { brushes_refresh_brush_invoker } },
++};
+ 
+ /***********************/
+ /*  BRUSHES_SET_BRUSH  */
+--- app/brushes.h	Wed May 28 15:48:09 1997
++++ gimp-0.99.10.new/app/brushes.h	Sat Jun 28 16:31:24 1997
+@@ -68,5 +68,6 @@
+ extern ProcRecord brushes_get_paint_mode_proc;
+ extern ProcRecord brushes_set_paint_mode_proc;
+ extern ProcRecord brushes_list_proc;
++extern ProcRecord brushes_refresh_brush_proc;
+ 
+ #endif  /*  __BRUSHES_H__  */
+--- app/internal_procs.c	Mon Jun  2 22:07:37 1997
++++ gimp-0.99.10.new/app/internal_procs.c	Sun Jun 29 10:38:27 1997
+@@ -258,6 +258,7 @@
+ 
+   /*  Interface procs  */
+   procedural_db_register (&brushes_get_brush_proc);
++  procedural_db_register (&brushes_refresh_brush_proc);
+   procedural_db_register (&brushes_set_brush_proc);
+   procedural_db_register (&brushes_get_opacity_proc);
+   procedural_db_register (&brushes_set_opacity_proc);
+
+From peyote-asesino.nuclecu.unam.mx!nuclecu.unam.mx!federico@gilroy.rmp.com  Tue Jun 10 17:02:06 1997
+Return-Path: peyote-asesino.nuclecu.unam.mx!nuclecu.unam.mx!federico@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id RAA11581 for scott; Tue, 10 Jun 1997 17:02:06 -0500
+Received: from peyote-asesino.nuclecu.unam.mx by gilroy.rmp.com id aa01277;
+          10 Jun 97 14:43 PDT
+Received: (qmail 10612 invoked by uid 1179); 10 Jun 1997 20:41:58 -0000
+Date: 10 Jun 1997 20:41:57 -0000
+Message-ID: <19970610204157.10611.qmail@peyote-asesino.nuclecu.unam.mx>
+From: Federico Mena <federico@peyote-asesino.nuclecu.unam.mx>
+To: gimp-developer@scam.xcf.berkeley.edu
+CC: scott@poverty.bloomington.in.us
+Subject: PATCH: cancel button on script-fu color selectors
+Reply-to: federico@nuclecu.unam.mx
+
+Hello, all
+
+This patch fixes the non-working Cancel button on Script-fu's color
+selectors.  You may get a small offset on the patch if you have not
+applied the preview visuals patch that I sent yesterday.
+
+  Quartic
+
+--- plug-ins/script-fu/script-fu-scripts.c.orig	Mon Jun  9 19:51:53 1997
++++ plug-ins/script-fu/script-fu-scripts.c	Tue Jun 10 16:15:08 1997
+@@ -37,6 +37,7 @@
+   GtkWidget *preview;
+   GtkWidget *dialog;
+   gdouble    color[3];
++  gdouble    old_color[3];
+ } SFColor;
+ 
+ typedef union
+@@ -107,6 +108,8 @@
+ 					      gpointer   data);
+ static void       script_fu_preview_changed  (GtkWidget *widget,
+ 					      gpointer   data);
++static void       script_fu_preview_cancel   (GtkWidget *widget,
++					      gpointer   data);
+ 
+ /*
+  *  Local variables
+@@ -1046,6 +1049,10 @@
+   color = (SFColor *) data;
+   if (!color->dialog)
+     {
++      color->old_color[0] = color->color[0];
++      color->old_color[1] = color->color[1];
++      color->old_color[2] = color->color[2];
++      
+       color->dialog = gtk_color_selection_dialog_new ("Script-Fu Color Picker");
+       csd = GTK_COLOR_SELECTION_DIALOG (color->dialog);
+ 
+@@ -1054,10 +1061,10 @@
+       gtk_signal_connect_object (GTK_OBJECT (csd->ok_button), "clicked",
+ 				 (GtkSignalFunc) gtk_widget_hide,
+ 				 GTK_OBJECT (color->dialog));
+-      gtk_signal_connect_object (GTK_OBJECT (csd->cancel_button), "clicked",
+-				 (GtkSignalFunc) gtk_widget_hide,
+-				 GTK_OBJECT (color->dialog));
+-      gtk_signal_connect (GTK_OBJECT(csd->colorsel), "color_changed",
++      gtk_signal_connect (GTK_OBJECT (csd->cancel_button), "clicked",
++			  (GtkSignalFunc) script_fu_preview_cancel,
++			  color);
++      gtk_signal_connect (GTK_OBJECT (csd->colorsel), "color_changed",
+ 			  (GtkSignalFunc) script_fu_preview_changed,
+ 			  color);
+ 
+@@ -1084,5 +1091,22 @@
+   color = (SFColor *) data;
+   gtk_color_selection_get_color (GTK_COLOR_SELECTION (GTK_COLOR_SELECTION_DIALOG (color->dialog)->colorsel),
+ 				 color->color);
++  script_fu_color_preview (color->preview, color->color);
++}
++
++static void
++script_fu_preview_cancel (GtkWidget *widget,
++			  gpointer data)
++{
++  SFColor *color;
++
++  color = (SFColor *) data;
++
++  gtk_widget_hide(color->dialog);
++
++  color->color[0] = color->old_color[0];
++  color->color[1] = color->old_color[1];
++  color->color[2] = color->old_color[2];
++
+   script_fu_color_preview (color->preview, color->color);
+ }
+
+From sphinx.nuclecu.unam.mx!nuclecu.unam.mx!federico@gilroy.rmp.com  Mon Jun 16 18:08:37 1997
+Return-Path: sphinx.nuclecu.unam.mx!nuclecu.unam.mx!federico@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id SAA08400 for scott; Mon, 16 Jun 1997 18:08:37 -0500
+Received: from sphinx.nuclecu.unam.mx by gilroy.rmp.com id aa27013;
+          16 Jun 97 16:02 PDT
+Received: (from federico@localhost) by sphinx.nuclecu.unam.mx (8.6.12/8.6.11) id RAA05114; Mon, 16 Jun 1997 17:40:52 -0500
+Date: Mon, 16 Jun 1997 17:40:52 -0500
+Message-Id: <199706162240.RAA05114@sphinx.nuclecu.unam.mx>
+From: Federico Mena <federico@nuclecu.unam.mx>
+To: gimp-developer@scam.xcf.berkeley.edu
+CC: Scott Goehring <scott@poverty.bloomington.in.us>
+Subject: PATCH: color pickers in script-fu
+Reply-to: federico@nuclecu.unam.mx
+
+Hello, all
+
+I guess you have already noticed that if you invoke a script-fu script
+dialog and use a color picker, then close the dialog and later invoke
+it again, the color pickers won't work.  This patch fixes this.
+
+  Quartic
+
+
+--- plug-ins/script-fu/script-fu-scripts.c.orig	Wed Jun 11 20:29:19 1997
++++ plug-ins/script-fu/script-fu-scripts.c	Mon Jun 16 17:33:20 1997
+@@ -96,6 +96,7 @@
+ static void       script_fu_interface        (SFScript *script);
+ static void       script_fu_color_preview    (GtkWidget *preview,
+ 					      gdouble   *color);
++static void       script_fu_cleanup_widgets  (SFScript *script);
+ static void       script_fu_ok_callback      (GtkWidget *widget,
+ 					      gpointer   data);
+ static void       script_fu_close_callback   (GtkWidget *widget,
+@@ -919,6 +920,26 @@
+ }
+ 
+ static void
++script_fu_cleanup_widgets (SFScript *script)
++{
++  int i;
++
++  for (i = 0; i < script->num_args; i++)
++    switch (script->arg_types[i])
++      {
++      case SF_COLOR:
++	if (script->arg_values[i].sfa_color.dialog != NULL)
++	  {
++	    gtk_widget_destroy (script->arg_values[i].sfa_color.dialog);
++	    script->arg_values[i].sfa_color.dialog = NULL;
++	  }
++	break;
++      default:
++	break;
++      }
++}
++
++static void
+ script_fu_ok_callback (GtkWidget *widget,
+ 		       gpointer   data)
+ {
+@@ -1006,6 +1027,9 @@
+   /*  disable the current command field  */
+   script_fu_disable_cc (err_msg);
+ 
++  /* Clean up flying widgets before terminating Gtk */
++  script_fu_cleanup_widgets(script);
++
+   gtk_main_quit ();
+ 
+   g_free (command);
+@@ -1015,6 +1039,9 @@
+ script_fu_close_callback (GtkWidget *widget,
+ 			  gpointer   data)
+ {
++  if (sf_interface.script != NULL)
++    script_fu_cleanup_widgets(sf_interface.script);
++
+   gtk_main_quit ();
+ }
+ 
+
+From scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com  Mon Jun 30 23:00:53 1997
+Return-Path: scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id XAA17819 for scott; Mon, 30 Jun 1997 23:00:53 -0500
+Received: from scam.XCF.Berkeley.EDU by gilroy.rmp.com id aa14204;
+          30 Jun 97 20:50 PDT
+Received: (qmail 27951 invoked by uid 27258); 30 Jun 1997 23:33:26 -0000
+Delivered-To: gimp-developer-outgoing@xcf.berkeley.edu
+Received: (qmail 27948 invoked by uid 27258); 30 Jun 1997 23:33:25 -0000
+Delivered-To: gimp-developer@scam.XCF.Berkeley.EDU
+Received: (qmail 27941 invoked by uid 0); 30 Jun 1997 23:33:24 -0000
+Received: from kalypso.cybercom.net (209.21.136.5)
+  by scam.xcf.berkeley.edu with SMTP; 30 Jun 1997 23:33:24 -0000
+Received: from cybercom.net (chris@mfd-dial1-11.cybercom.net [209.21.137.11]) by kalypso.cybercom.net (8.8.5/8.8.5) with ESMTP id TAA02129 for <gimp-developer@scam.XCF.Berkeley.EDU>; Mon, 30 Jun 1997 19:31:54 -0400 (EDT)
+Message-Id: <199706302331.TAA02129@kalypso.cybercom.net>
+Date: Mon, 30 Jun 1997 19:40:50 -0400 (EDT)
+From: Chris Laas <chrisl@cybercom.net>
+Sender: Chris Laas <chris@cybercom.net>
+Reply-To: chrisl@cybercom.net
+Subject: [gimp-devel] (patch) A bit more helpful Script-Fu PDB error message.
+To: gimp-developer@scam.XCF.Berkeley.EDU
+MIME-Version: 1.0
+Content-Type: MULTIPART/mixed; BOUNDARY="65792-269167349-867714056=:5253"
+
+--65792-269167349-867714056=:5253
+Content-Type: TEXT/plain; CHARSET=US-ASCII
+
+To try to solve some of the Script-Fu problems on my system, I patched
+it to print out the failed command along with the exquisitely unhelpful
+"Procedural database execution failed" message.  It doesn't solve the
+font problem (BTW, I'm all for an SF-FONT type) and probably won't be
+any use to end-users, but might be helpful to developers debugging
+their scripts.
+
+Patch is attached.  It was made from the root of the gimp tree, but only
+modifies plug-ins/script-fu/script-fu.c .
+
+--Chris
+
+-- 
+*No one* lived a completely blameless life.  It might just be
+possible, by lying very still in a cellar somewhere, to get through a
+day without committing a crime.  But only just.  And even then, you
+were probably guilty of loitering.
+	-- Terry Pratchett, "Feet of Clay"
+______________________________________________________________________
+Chris Laas:  out-of-work programmer  / mailto:chrisl@cybercom.net
+< Unix, C/C++, Java, Perl, Tcl/Tk > / http://www.cybercom.net/~chrisl/
+
+--65792-269167349-867714056=:5253
+Content-Type: TEXT/plain; CHARSET=US-ASCII
+Content-Description: gimp.script-fu.errmsg.patch
+
+--- gimp-0.99.10.orig/plug-ins/script-fu/script-fu.c	Fri Jun  6 03:20:40 1997
++++ plug-ins/script-fu/script-fu.c	Mon Jun 30 16:38:18 1997
+@@ -57,6 +57,9 @@
+ static void      init_constants   (void);
+ static void      convert_string   (char * str);
+ 
++static int       sputs_fcn (char *st, void *dest);
++static LISP      lprin1s   (LISP exp, char *dest);
++
+ static LISP      marshall_proc_db_call    (LISP a);
+ static LISP      script_fu_register_call  (LISP a);
+ static LISP      script_fu_quit_call      (LISP a);
+@@ -450,6 +453,25 @@
+     }
+ }
+ 
++static int
++sputs_fcn (char *st, void *dest)
++{
++  strcpy (*((char**)dest), st);
++  *((char**)dest) += strlen(st);
++  return (1);
++}
++
++static LISP
++lprin1s (LISP exp, char *dest)
++{
++  struct gen_printio s;
++  s.putc_fcn = NULL;
++  s.puts_fcn = sputs_fcn;
++  s.cb_argument = &dest;
++  lprin1g (exp, &s);
++  return (NIL);
++}
++
+ static LISP
+ marshall_proc_db_call (LISP a)
+ {
+@@ -475,6 +497,10 @@
+   LISP return_val;
+   char *string;
+   int string_len;
++  LISP a_saved;
++
++  /* Save a in case it is needed for an error message. */
++  a_saved = a;
+ 
+   /*  Make sure there are arguments  */
+   if (a == NIL)
+@@ -718,14 +744,22 @@
+ 
+   /*  Check the return status  */
+   if (! values)
+-    return err ("Procedural database execution did not return a status!", NIL);
 +	{
-+	case 0: repeat = REPEAT_NONE; break;
-+	case 1: repeat = REPEAT_SAWTOOTH; break;
-+	case 2: repeat = REPEAT_TRIANGULAR; break;
-+	default: success = FALSE;
++	  strcpy (error_str, "Procedural database execution did not return a status:\n    ");
++	  lprin1s (a_saved, error_str + strlen(error_str));
++      return err (error_str, NIL);
++	}
+   switch (values[0].data.d_status)
+     {
+     case STATUS_EXECUTION_ERROR:
+-      return err ("Procedural database execution failed", NIL);
++	  strcpy (error_str, "Procedural database execution failed:\n    ");
++	  lprin1s (a_saved, error_str + strlen(error_str));
++      return err (error_str, NIL);
+       break;
+     case STATUS_CALLING_ERROR:
+-      return err ("Procedural database execution failed on invalid input arguments", NIL);
++	  strcpy (error_str, "Procedural database execution failed on invalid input arguments:\n    ");
++	  lprin1s (a_saved, error_str + strlen(error_str));
++      return err (error_str, NIL);
+       break;
+     case STATUS_SUCCESS:
+       return_val = NIL;
+
+--65792-269167349-867714056=:5253--
+
+Return-Path: peyote-asesino.nuclecu.unam.mx!nuclecu.unam.mx!federico@gilroy.rmp.com 
+Return-Path: peyote-asesino.nuclecu.unam.mx!nuclecu.unam.mx!federico@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id SAA11651 for scott; Tue, 10 Jun 1997 18:00:27 -0500
+Received: from peyote-asesino.nuclecu.unam.mx by gilroy.rmp.com id aa02043;
+          10 Jun 97 15:08 PDT
+Received: (qmail 10802 invoked by uid 1179); 10 Jun 1997 21:14:43 -0000
+Date: 10 Jun 1997 21:14:43 -0000
+Message-ID: <19970610211443.10801.qmail@peyote-asesino.nuclecu.unam.mx>
+From: Federico Mena <federico@peyote-asesino.nuclecu.unam.mx>
+To: Scott Goehring <scott@poverty.bloomington.in.us>
+Subject: PATCH: script-fu on remote displays
+Reply-to: federico@nuclecu.unam.mx
+
+Hello, all
+
+This patch fixes a problem with script-fu not initializing the visual
+for preview widgets.  This should help people who run the GIMP via
+remote display (like me).
+
+  Quartic
+
+--- plug-ins/script-fu/script-fu-scripts.c.orig	Mon Jun  9 18:15:01 1997
++++ plug-ins/script-fu/script-fu-scripts.c	Mon Jun  9 18:15:50 1997
+@@ -724,6 +724,7 @@
+   gint argc;
+   int start_args;
+   int i;
++  guchar *color_cube;
+ 
+   argc = 1;
+   argv = g_new (gchar *, 1);
+@@ -731,6 +732,16 @@
+ 
+   gtk_init (&argc, &argv);
+   gtk_rc_parse (gimp_gtkrc ());
++  
++  gdk_set_use_xshm(gimp_use_xshm());
++  
++  gtk_preview_set_gamma(gimp_gamma());
++  gtk_preview_set_install_cmap(gimp_install_cmap());
++  color_cube = gimp_color_cube();
++  gtk_preview_set_color_cube(color_cube[0], color_cube[1], color_cube[2], color_cube[3]);
++  
++  gtk_widget_set_default_visual(gtk_preview_get_visual());
++  gtk_widget_set_default_colormap(gtk_preview_get_cmap());
+ 
+   sf_interface.script = script;
+ 
+--- plug-ins/script-fu/script-fu-console.c.orig	Mon Jun  9 18:20:57 1997
++++ plug-ins/script-fu/script-fu-console.c	Mon Jun  9 18:20:29 1997
+@@ -154,6 +154,7 @@
+   GtkWidget *table;
+   gchar **argv;
+   gint argc;
++  guchar *color_cube;
+ 
+   argc = 1;
+   argv = g_new (gchar *, 1);
+@@ -161,6 +162,16 @@
+ 
+   gtk_init (&argc, &argv);
+   gtk_rc_parse (gimp_gtkrc ());
++
++  gdk_set_use_xshm(gimp_use_xshm());
++  
++  gtk_preview_set_gamma(gimp_gamma());
++  gtk_preview_set_install_cmap(gimp_install_cmap());
++  color_cube = gimp_color_cube();
++  gtk_preview_set_color_cube(color_cube[0], color_cube[1], color_cube[2], color_cube[3]);
++  
++  gtk_widget_set_default_visual(gtk_preview_get_visual());
++  gtk_widget_set_default_colormap(gtk_preview_get_cmap());
+ 
+   dlg = gtk_dialog_new ();
+   gtk_window_set_title (GTK_WINDOW (dlg), "Script-Fu Console");
+From peyote-asesino.nuclecu.unam.mx!nuclecu.unam.mx!federico@gilroy.rmp.com  Wed Jun 11 20:02:38 1997
+Return-Path: peyote-asesino.nuclecu.unam.mx!nuclecu.unam.mx!federico@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id UAA14477 for scott; Wed, 11 Jun 1997 20:02:37 -0500
+Received: from peyote-asesino.nuclecu.unam.mx by gilroy.rmp.com id aa00528;
+          11 Jun 97 17:06 PDT
+Received: (qmail 18916 invoked by uid 1179); 11 Jun 1997 23:12:16 -0000
+Date: 11 Jun 1997 23:12:16 -0000
+Message-ID: <19970611231216.18915.qmail@peyote-asesino.nuclecu.unam.mx>
+From: Federico Mena <federico@peyote-asesino.nuclecu.unam.mx>
+To: gimp-developer@scam.xcf.berkeley.edu
+CC: Scott Goehring <scott@poverty.bloomington.in.us>
+Subject: PATCH: inconsistent toggle buttons in selection options
+Reply-to: federico@nuclecu.unam.mx
+
+Hello, all
+
+This patch fixes the toggle buttons in the selection tools' option
+dialogs so that they will be consistent with the actual settings.
+That is, they *will* show antialiasing as on when antialiasing is on :-)
+
+  Quartic
+
+--- app/rect_select.c.orig	Wed Jun 11 18:50:51 1997
++++ app/rect_select.c	Wed Jun 11 18:53:38 1997
+@@ -73,7 +73,7 @@
+ 
+   /*  the new options structure  */
+   options = (SelectionOptions *) g_malloc (sizeof (SelectionOptions));
+-  options->antialias = 1;
++  options->antialias = TRUE;
+   options->feather = FALSE;
+   options->feather_radius = 10.0;
+   options->sample_merged = FALSE;
+@@ -128,7 +128,7 @@
+       gtk_signal_connect (GTK_OBJECT (sample_merged_toggle), "toggled",
+ 			  (GtkSignalFunc) selection_toggle_update,
+ 			  &options->sample_merged);
+-      gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (sample_merged_toggle), FALSE);
++      gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (sample_merged_toggle), options->sample_merged);
+       gtk_widget_show (sample_merged_toggle);
+       break;
+     default:
+@@ -143,6 +143,7 @@
+       gtk_signal_connect (GTK_OBJECT (antialias_toggle), "toggled",
+ 			  (GtkSignalFunc) selection_toggle_update,
+ 			  &options->antialias);
++      gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (antialias_toggle), options->antialias);
+       gtk_widget_show (antialias_toggle);
+     }
+ 
+@@ -152,7 +153,7 @@
+   gtk_signal_connect (GTK_OBJECT (feather_toggle), "toggled",
+ 		      (GtkSignalFunc) selection_toggle_update,
+ 		      &options->feather);
+-  gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (feather_toggle), FALSE);
++  gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (feather_toggle), options->feather);
+   gtk_widget_show (feather_toggle);
+ 
+   /*  the feather radius scale  */
+@@ -163,7 +164,7 @@
+   gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);
+   gtk_widget_show (label);
+ 
+-  feather_scale_data = gtk_adjustment_new (10.0, 0.0, 100.0, 1.0, 1.0, 0.0);
++  feather_scale_data = gtk_adjustment_new (options->feather_radius, 0.0, 100.0, 1.0, 1.0, 0.0);
+   feather_scale = gtk_hscale_new (GTK_ADJUSTMENT (feather_scale_data));
+   gtk_box_pack_start (GTK_BOX (hbox), feather_scale, TRUE, TRUE, 0);
+   gtk_scale_set_value_pos (GTK_SCALE (feather_scale), GTK_POS_TOP);
+
+From scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com  Mon Jun  9 17:02:24 1997
+Return-Path: scam.xcf.berkeley.edu!gimp-developer-owner@gilroy.rmp.com
+Received: from gilroy.UUCP (root@localhost) by poverty.bloomington.in.us (8.7.3/8.7.3/poverty) with UUCP id RAA28042 for scott; Mon, 9 Jun 1997 17:02:24 -0500
+Received: from scam.XCF.Berkeley.EDU by gilroy.rmp.com id aa06361;
+          9 Jun 97 15:00 PDT
+Received: (qmail 7372 invoked by uid 27258); 9 Jun 1997 04:10:34 -0000
+Delivered-To: gimp-developer-outgoing@xcf.berkeley.edu
+Received: (qmail 7368 invoked by uid 27258); 9 Jun 1997 04:10:33 -0000
+Delivered-To: gimp-developer@scam.XCF.Berkeley.EDU
+Received: (qmail 7361 invoked from network); 9 Jun 1997 04:10:31 -0000
+Received: from kyoto-109.seikyou.ne.jp (HELO lira.izumi.or.jp) (takamori@202.211.150.109)
+  by softdnserror with SMTP; 9 Jun 1997 04:10:31 -0000
+Received: from lira.izumi.or.jp (takamori@localhost [127.0.0.1]) by lira.izumi.or.jp (8.7.5+2.6Wbeta6/3.4W3) with ESMTP id NAA31965 for <gimp-developer@scam.XCF.Berkeley.EDU>; Mon, 9 Jun 1997 13:12:16 +0900
+Message-Id: <199706090412.NAA31965@lira.izumi.or.jp>
+To: gimp-developer@scam.XCF.Berkeley.EDU
+Subject: [gimp-devel] Updated nova, gradmap, ..., and patch to scm
+From: Eiichi Takamori <taka@ma1.seikyou.ne.jp>
+X-Mailer: Mew version 1.06 on Emacs 19.28.1, Mule 2.3
+Mime-Version: 1.0
+Content-Type: Text/Plain; charset=us-ascii
+Date: Mon, 09 Jun 1997 13:12:16 +0900
+Sender: takamori@lira.izumi.or.jp
+
+  Hi!
+
+  I updated nova, gradmap, edge, pixelize plug-ins. Minor bug fixes &
+modified UI a little. And gradmap didn't work, now it works.
+
+  You can get them from Plug-in Registry, or:
+
+  http://ha1.seikyou.ne.jp/home/taka/gimp/plug-ins/docs/plug-ins.html
+
+  To compile: simply cd plug-ins/ and replace *.c and
+make; make install will do it.
+
+  And, if you get nova, whose parameters have been changed, patch to
+starburst.scm and starscape.scm is needed.
+
+  % cd plug-ins/script-fu/scripts/
+  % patch < THIS_MAIL
+  % make install
+
+will do it.
+
+  Have fun!
+
+--taka
+ \|/  Eiichi Takamori, who is guu-tara, a lazy and poor boy.
+ -@-  http://ha1.seikyou.ne.jp/home/taka/gimp/
+ /|\  mailto:taka@ma1.seikyou.ne.jp
+
+
+*** plug-ins/script-fu/scripts/starburst-logo.scm.orig	Wed Jun  4 06:22:58 1997
+--- plug-ins/script-fu/scripts/starburst-logo.scm	Sun Jun  8 22:52:28 1997
+***************
+*** 44,51 ****
+      (gimp-palette-set-background '(255 255 255))
+      (gimp-edit-fill img layer-mask)
+      (gimp-selection-none img)
+!     (plug-in-nova 1 img burst-layer (car burst-coords) (cdr burst-coords) (car burst-color)
+! 		  (cadr burst-color) (caddr burst-color) burstradius)
+  
+      (gimp-selection-layer-alpha img text-layer)
+      (gimp-palette-set-background '(0 0 0))
+--- 44,51 ----
+      (gimp-palette-set-background '(255 255 255))
+      (gimp-edit-fill img layer-mask)
+      (gimp-selection-none img)
+!     (plug-in-nova 1 img burst-layer (car burst-coords) (cdr burst-coords)
+! 		  burst-color burstradius 100)
+  
+      (gimp-selection-layer-alpha img text-layer)
+      (gimp-palette-set-background '(0 0 0))
+*** plug-ins/script-fu/scripts/starscape-logo.scm.orig	Sat Jun  7 10:47:13 1997
+--- plug-ins/script-fu/scripts/starscape-logo.scm	Sun Jun  8 22:51:58 1997
+***************
+*** 88,95 ****
+      (gimp-palette-set-foreground '(255 255 255))
+      (gimp-blend img text-layer FG-BG-RGB NORMAL BILINEAR 100 0 REPEAT-NONE FALSE 0 0 cx cy bx by)
+  
+!     (plug-in-nova 1 img glow-layer novax novay (car glow-color)
+! 		  (cadr glow-color) (caddr glow-color) novaradius)
+  
+      (gimp-selection-all img)
+      (gimp-patterns-set-pattern "Stone")
+--- 88,94 ----
+      (gimp-palette-set-foreground '(255 255 255))
+      (gimp-blend img text-layer FG-BG-RGB NORMAL BILINEAR 100 0 REPEAT-NONE FALSE 0 0 cx cy bx by)
+  
+!     (plug-in-nova 1 img glow-layer novax novay glow-color novaradius 100)
+  
+      (gimp-selection-all img)
+      (gimp-patterns-set-pattern "Stone")
+
+--- gimp-0.99.10-dist/app/commands.c	Tue Jun  3 19:31:10 1997
++++ app/commands.c	Mon Jun  9 20:16:38 1997
+@@ -163,16 +163,18 @@
+   layer = layer_new (gimage->ID, gimage->width, gimage->height,
+ 		     type, "Background", OPAQUE, NORMAL);
+ 
+-  /*  add the new layer to the gimage  */
+-  gimage_disable_undo (gimage);
+-  gimage_add_layer (gimage, layer, 0);
+-  gimage_enable_undo (gimage);
+-
+-  drawable_fill (layer->ID, vals->fill_type);
+-
+-  /*  gimage_clean_all (gimage); */
+-
+-  gdisplay = gdisplay_new (gimage, 0x0101);
++  if (layer) {
++    /*  add the new layer to the gimage  */
++    gimage_disable_undo (gimage);
++    gimage_add_layer (gimage, layer, 0);
++    gimage_enable_undo (gimage);
++    
++    drawable_fill (layer->ID, vals->fill_type);
++    
++    /*  gimage_clean_all (gimage); */
++    
++    gdisplay = gdisplay_new (gimage, 0x0101);
++  }
+ 
+   g_free (vals);
+ }
+--- gimp-0.99.10-dist/app/layer.c	Thu May 29 19:16:06 1997
++++ app/layer.c	Mon Jun  9 20:16:38 1997
+@@ -119,6 +119,11 @@
+ {
+   Layer * layer;
+ 
++  if (width == 0 || height == 0) {
++    warning ("Zero width or height layers not allowed.");
++    return NULL;
++  }
++
+   layer = (Layer *) g_malloc (sizeof (Layer));
+ 
+   if (!name)
+@@ -232,6 +237,11 @@
+   /*  allocate a new layer object  */
+   new_layer = layer_new (layer->gimage_ID, layer->width, layer->height,
+ 			 new_type, layer_name, layer->opacity, layer->mode);
++  if (!new_layer) {
++    warning("layer_copy: could not allocate new layer");
++    goto cleanup;
++  }
++
+   new_layer->offset_x = layer->offset_x;
+   new_layer->offset_y = layer->offset_y;
+   new_layer->visible = layer->visible;
+@@ -261,6 +271,7 @@
+       new_layer->show_mask = layer->show_mask;
+     }
+ 
++ cleanup:
+   /*  free up the layer_name memory  */
+   g_free (layer_name);
+ 
+@@ -298,6 +309,11 @@
+   /*  Create the new layer  */
+   new_layer = layer_new (0, tiles->levels[0].width, tiles->levels[0].height,
+ 			 layer_type, name, opacity, mode);
++
++  if (!new_layer) {
++    warning("layer_from_tiles: could not allocate new layer");
++    return NULL;
++  }
+ 
+   /*  Configure the pixel regions  */
+   pixel_region_init (&layerPR, new_layer->tiles, 0, 0, new_layer->width, new_layer->height, TRUE);
+--- gimp-0.99.10-dist/app/layers_dialog.c	Tue Jun  3 18:08:47 1997
++++ app/layers_dialog.c	Mon Jun  9 20:17:01 1997
+@@ -2798,15 +2798,22 @@
+       layer = layer_new (gimage->ID, options->xsize, options->ysize,
+ 			 gimage_base_type_with_alpha (gimage),
+ 			 layer_name, OPAQUE, NORMAL_MODE);
+-      drawable_fill (layer->ID, fill_type);
+-      gimage_add_layer (gimage, layer, -1);
+-
+-      /*  end the group undo  */
+-      undo_push_group_end (gimage);
+-
+-      gdisplays_flush ();
++      if (layer) 
++	{
++	  drawable_fill (layer->ID, fill_type);
++	  gimage_add_layer (gimage, layer, -1);
++	  
++	  /*  end the group undo  */
++	  undo_push_group_end (gimage);
++	  
++	  gdisplays_flush ();
++	} 
++      else 
++	{
++	  warning("new_layer_query_ok_callback: could not allocate new layer");
 +	}
      }
-   /*  x1, y1, x2, y2  */
-   if (success)
---- plug-ins/script-fu/script-fu.c~	Sun Apr 27 00:31:00 1997
-+++ plug-ins/script-fu/script-fu.c	Mon Apr 28 12:58:19 1997
-@@ -493,6 +493,10 @@
-   setvar (cintern ("SHAPEBURST-SPHERICAL"), flocons (7), NIL);
-   setvar (cintern ("SHAPEBURST-DIMPLED"), flocons (8), NIL);
+-
++  
+   gtk_widget_destroy (options->query_box);
+   g_free (options);
+ }
+--- gimp-0.99.10-dist/app/gimage.c	Tue Jun  3 20:29:19 1997
++++ app/gimage.c	Mon Jun  9 20:16:38 1997
+@@ -1794,6 +1794,11 @@
+       merge_layer = layer_new (gimage->ID, gimage->width, gimage->height,
+ 			       type, layer->name, OPAQUE, NORMAL_MODE);
  
-+  setvar (cintern ("REPEAT-NONE"), flocons(0), NIL);
-+  setvar (cintern ("REPEAT-SAWTOOTH"), flocons(1), NIL);
-+  setvar (cintern ("REPEAT-TRIANGULAR"), flocons(2), NIL);
++      if (!merge_layer) {
++	warning("gimage_merge_layers: could not allocate merge layer");
++	return NULL;
++      }
 +
-   setvar (cintern ("FG-BUCKET-FILL"), flocons (0), NIL);
-   setvar (cintern ("BG-BUCKET-FILL"), flocons (1), NIL);
-   setvar (cintern ("PATTERN-BUCKET-FILL"), flocons (2), NIL);
+       /*  get the background for compositing  */
+       gimage_get_background (gimage, merge_layer->ID, bg);
+ 
+@@ -1814,6 +1819,11 @@
+       merge_layer = layer_new (gimage->ID, (x2 - x1), (y2 - y1),
+ 			       drawable_type_with_alpha (layer->ID), layer->name,
+ 			       OPAQUE, NORMAL_MODE);
++
++      if (!merge_layer) {
++	warning("gimage_merge_layers: could not allocate merge layer");
++	return NULL;
++      }
+ 
+       merge_layer->offset_x = x1;
+       merge_layer->offset_y = y1;
+--- gimp-0.99.10-dist/app/text_tool.c	Fri Jun  6 03:09:09 1997
++++ app/text_tool.c	Mon Jun  9 20:16:38 1997
+@@ -1612,12 +1612,11 @@
+   if (newmask != mask)
+     tile_manager_destroy (mask);
+ 
+-  if (newmask)
+-    {
+-      layer = layer_new (gimage->ID, newmask->levels[0].width,
++  if (newmask && 
++      (layer = layer_new (gimage->ID, newmask->levels[0].width,
+ 			 newmask->levels[0].height, layer_type,
+-			 "Text Layer", OPAQUE, NORMAL_MODE);
+-
++			 "Text Layer", OPAQUE, NORMAL_MODE)))
++    {
+       /*  color the layer buffer  */
+       gimage_get_foreground (gimage, drawable_id, color);
+       color[layer->bytes - 1] = OPAQUE;
+@@ -1655,8 +1654,12 @@
+ 
+       tile_manager_destroy (newmask);
+     }
+-  else
+-    layer = NULL;
++  else 
++    {
++      if (newmask) 
++	warning("text_render: could not allocate image");
++      layer = NULL;
++    }
+ 
+   /* free the pixmap */
+   gdk_pixmap_destroy (pixmap);
