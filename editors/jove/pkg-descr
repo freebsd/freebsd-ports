@@ -1,0 +1,15 @@
+###########################################################################
+# This program is Copyright (C) 1986, 1987, 1988 by Jonathan Payne.  JOVE #
+# is provided to you without charge, and with no warranty.  You may give  #
+# away copies of JOVE, including sources, provided that this notice is    #
+# included in all the files.                                              #
+###########################################################################
+
+Jove is a simple text editor in the spirit of GNU emacs, but somewhat
+smaller and faster to start up.
+
+There are man pages for jove and teachjove.  Teachjove is for people who
+have never used EMACS style editors.  It is an interactive tutorial, THE
+tutorial written by Stallman for the original EMACS, only slightly
+modified for JOVE in the appropriate places.  The man pages are
+completely up to date, thanks to me.
