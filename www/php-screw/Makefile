@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php-screw
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +25,7 @@ USE_PHPIZE=	yes
 CONFIGURE_ARGS+=--enable-php_screw=shared
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
+.include "${PORTSDIR}/lang/php4/bsd.php.mk"
 
 pre-everything::
 	@${ECHO} ""
