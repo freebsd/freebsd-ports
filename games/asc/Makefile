@@ -37,10 +37,6 @@ MAN6=		asc.6 asc_demount.6 asc_mount.6 asc_mapedit.6 asc_makegfx.6 asc_weapongui
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 .if defined(WITH_MUSIC)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} frontiers.mp3 time_to_strike.mp3 machine_wars.mp3
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
