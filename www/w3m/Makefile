@@ -61,9 +61,6 @@ DISTNAME=	${PORTNAME}-${M17N_BASE_W3M_VERSION}-m17n-${M17N_VERSION}
 CONFIGURE_ARGS+=	--suffix=""
 
 PLIST_SUB+=	M17N_ONLY="" NO_M17N="@comment "
-
-# Disable inline image support for w3m-m17n.
-.undef INLINE_IMAGE
 .else
 PLIST_SUB+=	M17N_ONLY="@comment " NO_M17N=""
 .endif
@@ -91,11 +88,12 @@ MAKE_FLAGS+=	DEFS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 .endif
 
 .if defined(INLINE_IMAGE)
+.if !defined(M17N)
 PORTVERSION:=	${PORTVERSION}+${IMG_VERSION}
 PATCH_SITES=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
 PATCHFILES=	${PORTNAME}-${IMG_BASE_W3M_VERSION}+cvs-${IMG_BASE_W3M_CVS_REVISION}-img-${IMG_VERSION}.patch.gz
 PATCH_DIST_STRIP=	-p1
-
+.endif
 USE_IMLIB=	yes
 
 DOCS+=		README.img
@@ -110,19 +108,27 @@ PLIST_SUB+=	INLINE_IMAGE_ONLY="@comment "
 PKGMESSAGE=	${NONEXISTENT}
 .endif
 
+pre-everything::
+.if defined(M17N)
+	@${ECHO_MSG} "====>"
+	@${ECHO_MSG} "====> To enable Japanese message and migemo support, define JAPANESE"
+	@${ECHO_MSG} "====> To enable inline image support, define INLINE_IMAGE"
+	@${ECHO_MSG} "====>"
+.endif
+
 pre-extract:
 .if !defined(WITHOUT_SSL)
 	@${ECHO_MSG} "You can disable support for SSL by defining WITHOUT_SSL."
 .endif
 
 post-extract:
-.if defined(INLINE_IMAGE)
+.if defined(INLINE_IMAGE) && !defined(M17N)
 	${SED} -e "s,w3m/0.2.5,w3m/0.2.4+cvs," < ${WRKSRC}/version.c.in > ${WRKSRC}/version.c.in.tmp
 	${MV} ${WRKSRC}/version.c.in.tmp ${WRKSRC}/version.c.in
 .endif
 
 post-patch:
-.if defined(INLINE_IMAGE)
+.if defined(INLINE_IMAGE) && !defined(M17N)
 	${SED} -e "s,w3m/0.2.4+cvs-img-2.2,w3m/0.2.5-img-2.2," < ${WRKSRC}/version.c.in > ${WRKSRC}/version.c.in.tmp
 	${MV} ${WRKSRC}/version.c.in.tmp ${WRKSRC}/version.c.in
 .endif
