@@ -10,7 +10,7 @@ PORTVERSION=	0.5.2
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://www.dynaplex.net/opensource/software/
 
-MAINTAINER=	netman@dynaplex.net
+MAINTAINER=	ports@FreeBSD.Org
 
 BUILD_DEPENDS=	cvsup:${PORTSDIR}/net/cvsup
 RUN_DEPENDS=	cvsup:${PORTSDIR}/net/cvsup
