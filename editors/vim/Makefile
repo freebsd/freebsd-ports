@@ -97,7 +97,7 @@ MAKE_ARGS+=	CONF_OPT_RUBY="--enable-rubyinterp"
 .if !defined(WITHOUT_X11)
 #	for now default the GUI to the GTK+ one
 #	will be reviewed when the GTK+ 1.{3,4} behemoth is released
-.if !defined(WITH_ATHENA) && !defined(WITH_GTK) && !defined(WITH_MOTIF)
+.if !defined(WITH_ATHENA) && !defined(WITH_GTK) && !defined(WITH_MOTIF) && !defined(WITH_GNOME)
 WITH_GTK=	yes
 .endif
 
