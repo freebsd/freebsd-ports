@@ -2,7 +2,6 @@ bin/authtest
 %%OPENSSLFLAG%%bin/couriertls
 bin/deliverquota
 bin/imapd
-bin/maildirkw
 bin/maildirmake
 bin/pop3d
 %%AUTHDFLAG%%%%CONFDIR%%/authdaemonrc.dist

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-imap
-PORTVERSION=	2.1.0
+PORTVERSION=	2.0.0
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -146,7 +146,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
 .endif
 
-MAN1=		couriertcpd.1 maildirkw.1 maildirmake.1
+MAN1=		couriertcpd.1 maildirmake.1
 MAN7=		authlib.7
 MAN8=		makeuserdb.8 userdb.8 userdbpw.8 \
 		deliverquota.8 imapd.8 mkimapdcert.8 mkpop3dcert.8
