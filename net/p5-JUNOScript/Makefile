@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		JUNOScript
-PORTVERSION=		5.2R1.4
+PORTVERSION=		5.2R2.3
 CATEGORIES=		net perl5
 MASTER_SITES=		https://download.juniper.net/public/junoscript/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
