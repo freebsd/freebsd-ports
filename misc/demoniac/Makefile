@@ -13,13 +13,14 @@ MASTER_SITES=	http://www.calodox.org/demoniac/files/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea
+LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
 USE_MESA=	yes
 USE_GTK=	yes
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
+		LDFLAGS="${PTHREAD_LIBS}"
 
 post-patch:
 	@${PERL} -pi -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
