@@ -11,9 +11,8 @@ MAINTAINER=	makoto@pinpott.spnet.ne.jp
 
 MASTERDIR=	${.CURDIR}/../../games/zangband
 
-PKGDIR=		${MASTERDIR}/pkg
-COMMENT=	${.CURDIR}/pkg/COMMENT
-DESCR=		${.CURDIR}/pkg/DESCR
+COMMENT=	${.CURDIR}/pkg-comment
+DESCR=		${.CURDIR}/pkg-descr
 
 JAPANESE=	yes
 JA_MASTER_SITE=	http://www.geocities.co.jp/SiliconValley-SanJose/9606/zg/
