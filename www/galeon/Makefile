@@ -24,6 +24,8 @@ LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade \
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio \
 		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
+BROKEN=		"b0rken with Mozilla-0.9.1"
+
 .if !defined(WITH_FULL_MOZILLA)
 MOZILLA=	mozilla-embedded
 .else
