@@ -1,0 +1,12 @@
+bin/autob5
+bin/autogb
+share/autoconvert/ChangeLog
+share/autoconvert/LICENSE
+share/autoconvert/Readme
+share/autoconvert/TODO
+share/autoconvert/Version
+share/autoconvert/big5.txt
+share/autoconvert/gb.txt
+share/autoconvert/hz.txt
+share/autoconvert/procmailrc.example
+@dirrm share/autoconvert
