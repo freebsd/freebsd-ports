@@ -14,9 +14,9 @@ MASTER_SITES=	http://download.berlios.de/kompose/
 MAINTAINER=	lauri@kde.org
 COMMENT=	Full-screen task manager similar to Exposé(tm)
 
-EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
-
 LIB_DEPENDS=	Imlib2:${PORTSDIR}/graphics/imlib2
+
+EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

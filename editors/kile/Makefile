@@ -7,6 +7,7 @@
 
 PORTNAME=	kile
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +16,8 @@ MAINTAINER=	markus@FreeBSD.org
 COMMENT=	A LaTeX source editor for KDE
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+
+EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
 
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
