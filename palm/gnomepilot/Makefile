@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomepilot
-PORTVERSION=	0.1.52
-PORTREVISION=	1
+PORTVERSION=	0.1.63
 CATEGORIES=	palm comms gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITES=	http://www.eskil.org/gnome-pilot/download/tarballs/ \
+		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gnome-pilot
 DISTNAME=	gnome-pilot-${PORTVERSION}
 
