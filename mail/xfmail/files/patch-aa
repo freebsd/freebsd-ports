@@ -1,0 +1,9 @@
+--- src/ui/dialogs.auto.orig	Tue Jul  2 02:31:16 2002
++++ src/ui/dialogs.auto	Tue Jul  2 02:31:29 2002
+@@ -1,6 +1,5 @@
+ /* Form definition file generated with fdesign. */
+ 
+-#include "forms.h"
+ #include <stdlib.h>
+ #include "dialogs.h"
+ 
