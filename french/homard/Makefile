@@ -8,8 +8,8 @@
 PORTNAME=	homard
 PORTVERSION=	6.2
 CATEGORIES=	french cad linux python
-MASTER_SITES=	http://www.code-aster.org/FICHIERS/homard/
-DISTNAME=	${PORTNAME:U}_V${PORTVERSION}.Linux
+MASTER_SITES=	http://www.code-aster.org/FICHIERS/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1.${ARCH}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A refinement and de-refinement mesh tool
@@ -30,6 +30,8 @@ USE_PYTHON=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 NO_BUILD=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME:U}_V${PORTVERSION}.Linux
 
 LHOMARDDIR?=	apps/${PORTNAME}
 ASTER_VER=	7.2

@@ -8,8 +8,8 @@
 PORTNAME=	med
 PORTVERSION=	2.1.5
 CATEGORIES=	french cad converters
-MASTER_SITES=	http://www.code-aster.org/FICHIERS/med/
-DISTNAME=	${PORTNAME}${PORTVERSION}_hdf5-1_src
+MASTER_SITES=	http://www.code-aster.org/FICHIERS/
+DISTNAME=	${PORTNAME}hdf-src-${PORTVERSION}-1.noarch
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org

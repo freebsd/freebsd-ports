@@ -8,13 +8,13 @@
 PORTNAME=	astk
 PORTVERSION=	1.0.21
 CATEGORIES=	cad tk84
-MASTER_SITES=	http://www.code-aster.org/FICHIERS/code_aster/
+MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 .if !defined(CLIENT_SEUL)
 PKGNAMESUFFIX=	-serveur
 .else
 PKGNAMESUFFIX=	-client
 .endif
-DISTNAME=	aster-${ASTER_VER}.src
+DISTNAME=	aster-src-${ASTER_VER}
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
@@ -47,7 +47,7 @@ NO_BUILD=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
-EXTDIR=		${WRKDIR}/${DISTNAME}
+EXTDIR=		${WRKDIR}/aster-${ASTER_VER}.src
 .if !defined(CLIENT_SEUL)
 WRKSRC=		${EXTDIR}/ASTK_SERV
 PATCHDIR=	${MASTERDIR}/files

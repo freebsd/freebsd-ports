@@ -8,8 +8,8 @@
 PORTNAME=	aster
 PORTVERSION=	7.2.0
 CATEGORIES=	french cad python tk84
-MASTER_SITES=	http://www.code-aster.org/FICHIERS/code_aster/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-2.src
+MASTER_SITES=	http://www.code-aster.org/FICHIERS/
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}-2
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
@@ -52,7 +52,8 @@ USE_PYTHON=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/${vaster}
+EXTDIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-2.src
+WRKSRC=		${EXTDIR}/${vaster}
 PLIST_SUB=	ASTERDIR=${PORTNAME}/${vaster}
 .if defined(WITHOUT_ASTK) || defined(WITHOUT_ASTK_CLI)
 PKGMESSAGE=	${PKGDIR}/pkg-message.sans-astk
@@ -157,8 +158,8 @@ LASTKDIR?=	ASTK/ASTK_CLIENT
 ASTKDIR=	${LOCALBASE}/${LASTKDIR}
 
 post-extract:
-	@(cd ${WRKDIR}/${DISTNAME} && \
-	${TAR} xfz ${WRKDIR}/${DISTNAME}/${PORTNAME}.tar.gz)
+	@(cd ${EXTDIR} && \
+	${TAR} xfz ${EXTDIR}/${PORTNAME}.tar.gz)
 
 post-patch:
 .for mk_file in ${MK_FILES}

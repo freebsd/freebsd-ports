@@ -8,8 +8,8 @@
 PORTNAME=	gibi
 PORTVERSION=	2000
 CATEGORIES=	french cad linux
-MASTER_SITES=	# http://www.code-aster.org/FICHIERS/gibi/
-DISTNAME=	PACK_${PORTNAME}${ARCHI}${PORTVERSION}
+MASTER_SITES=	http://www.code-aster.org/FICHIERS/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1.${ARCH}
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
@@ -77,23 +77,9 @@ PLIST_SUB=	GIBIDIR=${LGIBIDIR} ASTER_TOOLS=${ASTER_TOOLS}
 
 BRANDELF?=	/usr/bin/brandelf -t Linux
 
-do-fetch:
-	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
-		${ECHO_MSG} "Because of licensing restrictions, you must fetch the binary"; \
-		${ECHO_MSG} "distribution manually.  Please access"; \
-		${ECHO_MSG} "<http://www.code-aster.org/telechargement/read_license_outils.php?prod=Gibi>"; \
-		${ECHO_MSG} "with a web browser, read the license carefully (in french),"; \
-		${ECHO_MSG} "check the box \"J'accepte les termes de la présente licence\""; \
-		${ECHO_MSG} "and click on the button \"Envoyer\"."; \
-		${ECHO_MSG} "On the second page, select Linux x86, Executable and 2000,"; \
-		${ECHO_MSG} "then click on the arrow to download the tarball"; \
-		${ECHO_MSG} "${DISTFILES}."; \
-		${ECHO_MSG} "Please place this file in ${DISTDIR}."; \
-	fi
-
 post-extract:
 	@(cd ${WRKDIR} && \
-		${TAR} xfz ${WRKDIR}/${DISTNAME:S/PACK/CASTEM/}.tar.gz)
+		${TAR} xfz ${WRKDIR}/CASTEM_${PORTNAME}PC_Linux_${PORTVERSION}.tar.gz)
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|DIR='repertoire_install'|DIR='${GIBIDIR}'|"	\

@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	Eficas
-PORTVERSION=	1.5
+PORTNAME=	eficas
+PORTVERSION=	1.5.3
 CATEGORIES=	french cad python
-MASTER_SITES=	http://www.code-aster.org/FICHIERS/eficas/
-DISTNAME=	${PORTNAME}V${PORTVERSION:C/\./_/}b3AsterSTA7
+MASTER_SITES=	http://www.code-aster.org/FICHIERS/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASter Command FIle Editor
@@ -26,6 +26,8 @@ USE_PYTHON=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 NO_BUILD=	yes
+
+WRKSRC=		${WRKDIR}/EficasV1_5b3AsterSTA7
 
 LEFICASDIR?=	apps/${PORTNAME}
 EFICASDIR=	${PREFIX}/${LEFICASDIR}
