@@ -8,7 +8,7 @@
 
 DISTNAME=	tirc-1.2
 CATEGORIES=	irc
-MASTER_SITES=	http://www.domix.de/fbsd/ports/distfiles/
+MASTER_SITES=	ftp://ftp.mayn.de/pub/unix/software/Network/Irc/tirc/
 
 MAINTAINER=	dr@domix.de
 
