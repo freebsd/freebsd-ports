@@ -14,15 +14,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME applet to warn about task terminations
 
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
+USE_GNOME=	gnomelibs gnomeprefix libpanel
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
 		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
