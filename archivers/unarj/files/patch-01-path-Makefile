@@ -1,0 +1,13 @@
+--- Makefile.orig	Mon Nov 29 16:47:24 2004
++++ Makefile	Mon Nov 29 22:46:56 2004
+@@ -9,7 +9,9 @@
+ 
+ decode.o:   decode.c  unarj.h
+ 
+-OBJS = unarj.o decode.o environ.o
++sanitize.o: sanitize.c unarj.h
++
++OBJS = unarj.o decode.o environ.o sanitize.o
+ 
+ unarj: $(OBJS)
+ 	$(CC) $(LDFLAGS) $(OBJS) -o unarj
