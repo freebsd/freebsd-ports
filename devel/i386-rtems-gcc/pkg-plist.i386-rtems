@@ -1,3 +1,4 @@
+bin/i386-rtems-c++filt
 bin/i386-rtems-c++
 bin/i386-rtems-g++
 bin/cpp
@@ -233,6 +234,10 @@ lib/gcc-lib/i386-rtems/2.95.2/specs
 lib/gcc-lib/i386-rtems/2.95.2/cpp
 lib/gcc-lib/i386-rtems/2.95.2/libgcc.a
 lib/gcc-lib/i386-rtems/2.95.2/cc1plus
+lib/gcc-lib/i386-rtems/2.95.2/soft-float/libstdc++.a
+lib/gcc-lib/i386-rtems/2.95.2/soft-float/libgcc.a
+lib/gcc-lib/i386-rtems/2.95.2/soft-float/crtbegin.o
+lib/gcc-lib/i386-rtems/2.95.2/soft-float/crtend.o
 i386-rtems/bin/gcc
 i386-rtems/lib/libm.a
 i386-rtems/lib/libc.a
@@ -240,6 +245,12 @@ i386-rtems/lib/crt0.o
 i386-rtems/lib/libg.a
 i386-rtems/lib/libiberty.a
 i386-rtems/lib/libstdc++.a.2.10.0
+i386-rtems/lib/soft-float/libm.a
+i386-rtems/lib/soft-float/libstdc++.a.2.10.0
+i386-rtems/lib/soft-float/libc.a
+i386-rtems/lib/soft-float/crt0.o
+i386-rtems/lib/soft-float/libg.a
+i386-rtems/lib/soft-float/libiberty.a
 i386-rtems/include/_ansi.h
 i386-rtems/include/_syslist.h
 i386-rtems/include/ar.h
@@ -302,11 +313,13 @@ i386-rtems/include/sys/siginfo.h
 i386-rtems/include/pthread.h
 i386-rtems/include/_G_config.h
 @dirrm lib/gcc-lib/i386-rtems/2.95.2/include
+@dirrm lib/gcc-lib/i386-rtems/2.95.2/soft-float
 @dirrm lib/gcc-lib/i386-rtems/2.95.2
 @dirrm lib/gcc-lib/i386-rtems
 @dirrm lib/gcc-lib
 @dirrm i386-rtems/include/machine
 @dirrm i386-rtems/include/sys
 @dirrm i386-rtems/include
+@dirrm i386-rtems/lib/soft-float
 @dirrm include/g++-3/std
 @dirrm include/g++-3

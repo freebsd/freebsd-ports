@@ -1,3 +1,4 @@
+bin/sparc-rtems-c++filt
 bin/cpp
 bin/sparc-rtems-gcc
 bin/sparc-rtems-c++
@@ -232,6 +233,8 @@ lib/gcc-lib/sparc-rtems/2.95.2/specs
 lib/gcc-lib/sparc-rtems/2.95.2/cpp
 lib/gcc-lib/sparc-rtems/2.95.2/libgcc.a
 lib/gcc-lib/sparc-rtems/2.95.2/soft/libgcc.a
+lib/gcc-lib/sparc-rtems/2.95.2/soft/crtbegin.o
+lib/gcc-lib/sparc-rtems/2.95.2/soft/crtend.o
 lib/gcc-lib/sparc-rtems/2.95.2/cc1plus
 lib/gcc-lib/sparc-rtems/2.95.2/soft/libstdc++.a
 lib/gcc-lib/sparc-rtems/2.95.2/libstdc++.a

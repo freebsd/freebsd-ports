@@ -1,3 +1,4 @@
+bin/i960-rtems-c++filt
 bin/cpp
 bin/i960-rtems-gcc
 bin/i960-rtems-c++

@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Tue Jun 22 18:44:42 1999
++++ Makefile.in	Tue Aug 29 17:54:58 2000
+@@ -689,7 +689,6 @@
+ 	install-itcl \
+ 	install-ld \
+ 	install-libgui \
+-	install-libiberty \
+ 	install-libtool \
+ 	install-m4 \
+ 	install-make \

@@ -1,3 +1,4 @@
+bin/sh-rtems-c++filt
 bin/cpp
 bin/sh-rtems-gcc
 bin/sh-rtems-c++

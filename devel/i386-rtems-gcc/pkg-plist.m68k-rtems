@@ -1,3 +1,4 @@
+bin/m68k-rtems-c++filt
 bin/m68k-rtems-c++
 bin/m68k-rtems-g++
 bin/cpp
