@@ -3,7 +3,7 @@
 # Date created:		11 February 1999
 # Whom:			Alex Le Heux
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/06 17:49:44 steve Exp $
 #
 
 DISTNAME=	sslproxy.1998_Jun_14
@@ -16,7 +16,17 @@ MAINTAINER=	alexlh@funk.org
 BUILD_DEPENDS=	${PREFIX}/include/openssl/ssl.h:${PORTSDIR}/security/openssl
 RUN_DEPENDS=	${PREFIX}/lib/libssl.a:${PORTSDIR}/security/openssl
 
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+LIB_DEPENDS=	rsaref.2:${PORTSDIR}/security/rsaref
+MAKE_ENV+=	EXTRA_SSL_LIBS="-lRSAglue -lrsaref"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sslproxy ${PREFIX}/bin/sslproxy
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/sslproxy
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${WRKSRC}/dummyCert.pem \
+			${PREFIX}/share/doc/sslproxy
+.endif
 
 .include <bsd.port.mk>

@@ -1,1 +1,4 @@
 bin/sslproxy
+share/doc/sslproxy/README.txt
+share/doc/sslproxy/dummyCert.pem
+@dirrm share/doc/sslproxy
