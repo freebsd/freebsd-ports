@@ -1,0 +1,10 @@
+--- libnautilus-extensions/nautilus-sound.c.orig	Fri Oct  6 14:47:41 2000
++++ libnautilus-extensions/nautilus-sound.c	Fri Jan 12 10:39:00 2001
+@@ -28,3 +28,7 @@
+ #include <signal.h>
++#ifdef __FreeBSD__
++#include <sys/wait.h>
++#else
+ #include <wait.h>
++#endif
+ #include <esd.h>

@@ -1,0 +1,9 @@
+--- helper-scripts/Makefile.in.orig	Fri Jan 12 12:04:47 2001
++++ helper-scripts/Makefile.in	Fri Jan 12 12:24:05 2001
+@@ -267,4 +267,4 @@
+ 	  if test -f $(srcdir)/$$p; then \
+-	    echo "  $(INSTALL_PROGRAM) $(srcdir)/$$p $(DESTDIR)/$(prefix)/bin/$$p"; \
+-	    $(INSTALL_PROGRAM) $(srcdir)/$$p $(DESTDIR)/$(prefix)/bin/$$p; \
++	    echo "  $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)/$(prefix)/bin/$$p"; \
++	    $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)/$(prefix)/bin/$$p; \
+ 	  else :; fi; \

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nautilus
-PORTVERSION=	0.1.0
-PORTREVISION=	2
+PORTVERSION=	0.5
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/nautilus
@@ -18,9 +17,8 @@ BUILD_DEPENDS=	rpm:${PORTSDIR}/misc/rpm
 LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 		gtkhtml.6:${PORTSDIR}/www/gtkhtml \
 		ghttp.1:${PORTSDIR}/www/libghttp \
-		bz2.1:${PORTSDIR}/archivers/bzip2
-
-BROKEN=		"Build failures with new bonobo"
+		bz2.1:${PORTSDIR}/archivers/bzip2 \
+		freetype.6:${PORTSDIR}/print/freetype2
 
 .if defined(WITH_MOZILLA)
 MOZILLA=	mozilla-embedded
@@ -35,6 +33,8 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-pthread -L${LOCALBASE}/lib" \
 		LIBPNG="-L${LOCALBASE}/lib -lpng -lz ${MOZILLA_LIBS}"
+CONFIGURE_ARGS=	--with-freetype2-lib-place=${LOCALBASE}/lib \
+		--with-freetype2-include-place=${LOCALBASE}/include/freetype2
 
 .if defined(WITH_MOZILLA)
 CONFIGURE_ARGS+= --with-mozilla-lib-place=${X11BASE}/lib/${MOZILLA} \
@@ -42,6 +42,7 @@ CONFIGURE_ARGS+= --with-mozilla-lib-place=${X11BASE}/lib/${MOZILLA} \
 MOZILLA_LIBS=	"-L${X11BASE}/lib/${MOZILLA}"
 PLIST_SUB+=	MOZILLA:=""
 .else
+CONFIGURE_ARGS+= --disable-mozilla-component
 MOZILLA_LIBS=	""
 PLIST_SUB+=	MOZILLA:="@comment "
 .endif
