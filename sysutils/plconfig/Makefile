@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	plconfig
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://matt.peterson.org/FreeBSD/ports/ \
-		http://www.neon1.net/prog/ \
+MASTER_SITES=	http://www.neon1.net/prog/ \
+		http://matt.peterson.org/FreeBSD/ports/
 
 MAINTAINER=	matt@peterson.org
 COMMENT=	Tool for configuring HomePlug powerline bridges
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+#WRKSRC=		${WRKDIR}/${PORTNAME}
 
 ALL_TARGET=	plconfig
 
