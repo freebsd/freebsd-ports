@@ -1,0 +1,24 @@
+--- Makefile	Tue Jun 16 03:13:11 1992
++++ /home/andy/tmp/wrk/Makefile	Tue Aug  4 17:02:23 1998
+@@ -1,17 +1,17 @@
+ #makefile for BUGS I - SRN 7/12/91 
+ # modified for Linux on 6/15/92 Ken Corey
+ 
+-CC= gcc
+-CFLAGS= -O3
++#CC= gcc
++#CFLAGS= -O3
+ OBJS= main.o startup.o loop.o meat.o
+ 
+ #bugs : &  $(OBJS)
+ bugs :  $(OBJS)   
+ #use above line if parallel processing is not supported
+-	${CC} ${CFLAGS} -o bugs $(OBJS) -lcurses -ltermcap 
++	${CC} ${CFLAGS} -o bugs $(OBJS) -lcurses
+ 
+ main.o: main.c info.h
+-	${CC} ${CFLAGS} -DLINUX -o main.o main.c
++	${CC} ${CFLAGS} -o main.o -c main.c
+ 
+ $(OBJS):  info.h	
+ 
