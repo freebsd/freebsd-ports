@@ -6,29 +6,29 @@
 #
 
 PORTNAME=	smlnj
-PORTVERSION=	110.34
+PORTVERSION=	110.37
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/working/${PORTVERSION}/ \
 		ftp://flint.cs.yale.edu/pub/smlnj/working/${PORTVERSION}/ \
 		ftp://sunsite.doc.ic.ac.uk/computing/programming/languages/ml/smlnj/working/${PORTVERSION}/ \
 		ftp://ftp.diku.dk/pub/smlnj/working/${PORTVERSION}/
+DISTFILES=	config.tgz runtime.tgz
 .if (${MACHINE_ARCH} == "i386")
-DISTFILES=	boot.x86-unix.tgz
+DISTFILES+=	boot.x86-unix.tgz
 .elif (${MACHINE_ARCH} == "alpha")
-DISTFILES=	boot.alpha32-unix.tgz
+DISTFILES+=	boot.alpha32-unix.tgz
 .endif
-DISTFILES+=	config.tgz runtime.tgz cm.tgz ckit.tgz \
-		ml-burg.tgz ml-lex.tgz \
+DISTFILES+=	ckit.tgz ml-burg.tgz ml-lex.tgz \
 		ml-nlffi-lib.tgz ml-nlffigen.tgz \
 		ml-yacc.tgz smlnj-lib.tgz
-.if defined(WITH_SRC) || defined(WITH_RECOMPILE) || defined(WITH_FLINT)
-DISTFILES+=	compiler.tgz system.tgz MLRISC.tgz
-.endif
 .if defined(WITH_CML) || defined(WITH_EXENE)
 DISTFILES+=	cml.tgz
 .endif
 .if defined(WITH_EXENE)
 DISTFILES+=	eXene.tgz
+.endif
+.if defined(WITH_SRC) || defined(WITH_RECOMPILE) || defined(WITH_FLINT)
+DISTFILES+=	MLRISC.tgz cm.tgz compiler.tgz system.tgz
 .endif
 EXTRACT_ONLY=	config.tgz
 
@@ -39,7 +39,7 @@ MLARCH=		x86
 .elif (${MACHINE_ARCH} == "alpha")
 MLARCH=		alpha32
 .else
-BROKEN=		not ported to ${MLARCH}
+BROKEN=		not ported to ${MACHINE_ARCH}
 .endif
 
 MLTARGETS=	ml-burg ckit ml-nlffi-lib ml-nlffigen
@@ -161,6 +161,8 @@ MLSRCEXCLUDES=
 MLSRCEXCLUDES+=	--exclude "${excl}"
 .endfor
 .endif
+
+PLIST_SUB=	MLARCH=${MLARCH}
 
 do-install:
 	${MKDIR} "${PREFIX}/smlnj"

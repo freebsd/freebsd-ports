@@ -1,4 +1,4 @@
-smlnj/lib/eXene.cm/CM/x86-unix/eXene.cm
-@dirrm smlnj/lib/eXene.cm/CM/x86-unix
+smlnj/lib/eXene.cm/CM/%%MLARCH%%-unix/eXene.cm
+@dirrm smlnj/lib/eXene.cm/CM/%%MLARCH%%-unix
 @dirrm smlnj/lib/eXene.cm/CM
 @dirrm smlnj/lib/eXene.cm
