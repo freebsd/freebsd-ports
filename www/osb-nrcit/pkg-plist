@@ -1,0 +1,7 @@
+include/osb/gtk-khtml.h
+include/osb/osb.h
+lib/libnrcit.a
+lib/libnrcit.so
+lib/libnrcit.so.0
+libdata/pkgconfig/osb-nrcit.pc
+@dirrm include/osb
