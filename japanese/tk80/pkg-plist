@@ -126,7 +126,7 @@ share/doc/tk8.0jp/changes
 share/doc/tk8.0jp/README.JP
 share/doc/tk8.0jp/changes.JP
 share/doc/tk8.0jp/Incompat80jp
-share/doc/tk8.0jp/README.FreeBSD
+share/doc/tk8.0jp/README.FreeBSD.JP
 @dirrm include/tk8.0jp/generic
 @dirrm include/tk8.0jp/unix
 @dirrm include/tk8.0jp

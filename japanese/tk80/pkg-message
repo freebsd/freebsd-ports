@@ -3,10 +3,9 @@ INPORTANT:
 **********
 1. ja-tk-8.0 does NOT install online manual pages.
 if you need them, please install package "tk-8.0".
+Or type "make install-man", if you are using the ports
+rather than packages.
 
-2. This version is still BETA.  BUG reports and/or comments are
-welcome. see "/usr/local/share/doc/tk8.0jp/README.JP".
-
-3. For more informations, see "/usr/local/share/doc/tk8.0jp/"
+2. For more informations, see "/usr/local/share/doc/tk8.0jp/"
 
 Thanks.
