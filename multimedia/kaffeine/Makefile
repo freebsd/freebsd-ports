@@ -18,7 +18,14 @@ LIB_DEPENDS=	xine.8:${PORTSDIR}/multimedia/libxine
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
+CONFIGURE_ENV=		CXXFLAGS="${CFLAGS} -fPIC"
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_ARCH} == "amd64"
+BROKEN=	"crashes on start"
+.endif
+
+.include <bsd.port.post.mk>
