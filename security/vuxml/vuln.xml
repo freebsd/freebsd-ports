@@ -32,6 +32,57 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="c551ae17-7f00-11d8-868e-000347dd607f">
+    <topic>multiple vulnerabilities in phpBB</topic>
+    <affects>
+      <package>
+	<name>phpbb</name>
+	<range><lt>2.0.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Users with admin rights can severly damage an phpBB installation,
+          potentially triggered by viewing a page with a malicious link sent
+          by an attacker.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.gulftech.org/03202004.php</url>
+      <url>http://www.phpbb.com/phpBB/viewtopic.php?t=183982</url>
+    </references>
+    <dates>
+      <discovery>2004-03-20</discovery>
+      <entry>2004-03-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c480eb5e-7f00-11d8-868e-000347dd607f">
+    <topic>ezbounce remote format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>ezbounce</name>
+	<range><lt>1.04.a_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A security hole exists that can be used to crash the proxy and
+          execute arbitrary code. An exploit is circulating that takes
+          advantage of this, and in some cases succeeds in obtaining a login
+          shell on the machine.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0510</cvename>
+      <url>http://ezbounce.dc-team.com/</url>
+    </references>
+    <dates>
+      <discovery>2003-07-01</discovery>
+      <entry>2004-03-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="739bb51d-7e82-11d8-9645-0020ed76ef5a">
     <topic>racoon security association deletion vulnerability</topic>
     <affects>
