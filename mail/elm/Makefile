@@ -8,7 +8,8 @@
 PORTNAME=	elm
 PORTVERSION=	2.5.6
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.virginia.edu/pub/elm/
+MASTER_SITES=	ftp://ftp.virginia.edu/pub/elm/ \
+		http://www.dragondata.com/software/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	toasty@dragondata.com
