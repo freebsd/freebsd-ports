@@ -3580,6 +3580,7 @@ ko-openoffice	ports/korean/openoffice
 ko-pgp.language	ports/korean/pgp.language
 ko-pinetreefonts	ports/korean/pinetreefonts
 ko-texinfo	ports/korean/texinfo
+ko-unfonts-ttf	ports/korean/unfonts-ttf
 ko-uniksc	ports/korean/uniksc
 ko-unzip	ports/korean/unzip
 kobodeluxe	ports/games/kobodeluxe
