@@ -1,0 +1,6 @@
+ngIRCd is an Open-Source server for the Internet Relay Chat (IRC), which is
+developed and published under the terms of the GNU General Public Licence.
+ngIRCd means "next generation IRC daemon", it's written from scratch and not
+deduced from the "grandfather of IRC daemons", the daemon of the IRCNet.
+
+WWW: http://arthur.ath.cx/~alex/ngircd

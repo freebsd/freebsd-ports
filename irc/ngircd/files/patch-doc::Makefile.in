@@ -1,0 +1,36 @@
+--- doc/Makefile.in.orig	Thu May  1 18:16:09 2003
++++ doc/Makefile.in	Sun May  4 05:30:12 2003
+@@ -65,7 +65,6 @@
+ install_sh_PROGRAM = $(install_sh) -c
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_HEADER = $(INSTALL_DATA)
+-transform = @program_transform_name@
+ NORMAL_INSTALL = :
+ PRE_INSTALL = :
+ POST_INSTALL = :
+@@ -92,14 +91,11 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+-EXTRA_DIST = CVS.txt FAQ.txt Protocol.txt Platforms.txt \
+-	README-AUX.txt README-BeOS.txt RFC.txt sample-ngircd.conf
+-
++EXTRA_DIST =
+ 
+ docdir = $(datadir)/doc/$(PACKAGE)
+ 
+-documents = $(EXTRA_DIST) ../AUTHORS ../COPYING ../ChangeLog ../INSTALL \
+-	../NEWS ../README
++documents = $(EXTRA_DIST)
+ 
+ subdir = doc
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -232,7 +228,7 @@
+ install-data-hook:
+ 	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
+ 	if [ ! -f $(DESTDIR)$(sysconfdir)/ngircd.conf ]; then \
+-	  $(INSTALL) -m 600 -c $(srcdir)/sample-ngircd.conf $(DESTDIR)$(sysconfdir)/ngircd.conf; \
++	  $(INSTALL) -m 600 -c $(srcdir)/sample-ngircd.conf $(DESTDIR)$(sysconfdir)/ngircd.conf.sample; \
+ 	 fi
+ 	$(mkinstalldirs) $(DESTDIR)$(docdir)
+ 	for f in $(documents); do \
