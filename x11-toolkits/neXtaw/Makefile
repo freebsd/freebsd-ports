@@ -3,13 +3,13 @@
 # Date created:		16 January 1997
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/01/20 07:15:18 tg Exp $
 #
 
 DISTNAME=	neXtaw-0.5
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	Incoming
+MASTER_SITE_SUBDIR=	libs/X
 
 MAINTAINER=	tg@FreeBSD.ORG
 
