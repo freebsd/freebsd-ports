@@ -1,5 +1,5 @@
---- videoplugin/PHOTO_JPEG/Makefile.in.orig	Mon Sep 24 16:14:46 2001
-+++ videoplugin/PHOTO_JPEG/Makefile.in	Mon Sep 24 16:15:16 2001
+--- videoplugin/PHOTO_JPEG/Makefile.in.orig	Fri Jul 27 09:53:17 2001
++++ videoplugin/PHOTO_JPEG/Makefile.in	Mon Sep 24 19:59:54 2001
 @@ -42,7 +42,7 @@
  # implicit rules
  
@@ -9,3 +9,12 @@
  
  
  all: quicktime_codec_jpeg.so
+@@ -56,7 +56,7 @@
+ 
+ 
+ install: all
+-	-cp -f  quicktime_codec_jpeg.so $(libdir)
++	-$(BSD_INSTALL_DATA) quicktime_codec_jpeg.so $(libdir)
+ 
+ 
+ quicktime_codec_jpeg.so: $(OBJS)
