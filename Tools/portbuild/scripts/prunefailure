@@ -67,7 +67,7 @@ while read dir name ver olddate date count; do
 	continue
     fi
 
-    if grep -q $newver $home/duds.orig; then
+    if grep -qxF $newver $home/duds.full; then
 	echo "$newver listed in duds, should not be here"
 	continue
     fi
