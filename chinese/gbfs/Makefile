@@ -47,9 +47,9 @@ IGNORE= "You need to extract kernel source tree before you build this package"
 
 do-extract:
 	@${MKDIR} ${WRKSRC}/msdos ${WRKSRC}/cd9660 ${WRKSRC}/ntfs
-	@${CP} ${MSDOSFSDIR}/* ${MSDOSFSKODIR}/Makefile ${WRKSRC}/msdos
-	@${CP} ${SYSDIR}/isofs/cd9660/* ${SYSDIR}/modules/cd9660/Makefile ${WRKSRC}/cd9660
-	@${CP} ${NTFSDIR}/* ${SYSDIR}/modules/ntfs/Makefile ${WRKSRC}/ntfs
+	@${CP} -r ${MSDOSFSDIR}/* ${MSDOSFSKODIR}/Makefile ${WRKSRC}/msdos
+	@${CP} -r ${SYSDIR}/isofs/cd9660/* ${SYSDIR}/modules/cd9660/Makefile ${WRKSRC}/cd9660
+	@${CP} -r ${NTFSDIR}/* ${SYSDIR}/modules/ntfs/Makefile ${WRKSRC}/ntfs
 	@(cd ${WRKSRC}; ${TAR} xzf ${DISTDIR}/${DISTFILES} )
 	@${REINPLACE_CMD} -e "/^\.PATH/d" ${WRKSRC}/*/Makefile
 
