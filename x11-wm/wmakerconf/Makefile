@@ -19,7 +19,7 @@ RUN_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		png.4:${PORTSDIR}/graphics/png \
+		png.5:${PORTSDIR}/graphics/png \
 		wraster.4:${PORTSDIR}/x11-wm/windowmaker
 
 USE_BZIP2=	yes

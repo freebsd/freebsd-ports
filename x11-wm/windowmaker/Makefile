@@ -17,7 +17,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext-devel
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
-		png.4:${PORTSDIR}/graphics/png \
+		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		PropList.2:${PORTSDIR}/devel/libPropList \
 		intl.1:${PORTSDIR}/devel/gettext \
