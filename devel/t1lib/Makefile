@@ -17,6 +17,8 @@ WRKSRC=		${WRKDIR}/T1-0.9.2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+USE_XLIB=	yes
 ALL_TARGET=	without_doc
 
 .include <bsd.port.mk>
