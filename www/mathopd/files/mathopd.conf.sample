@@ -1,0 +1,123 @@
+Umask 026
+
+Tuning {
+	NumConnections 120
+	BufSize 12288
+}
+
+User daemon
+StayRoot On
+
+PIDFile /tmp/mathopd/pid
+Log /tmp/mathopd/log.%Y%m%d
+ErrorLog /tmp/mathopd/errors.%Y%m
+
+Control {
+	Symlinks On
+	Types {
+		text/plain { * }
+		text/css { css }
+		application/octet-stream { zip gz tgz exe class }
+		application/futuresplash { spl }
+		model/vrml { wrl }
+		application/pdf { pdf }
+		text/html { html htm }
+		image/gif { gif }
+		image/jpeg { jpg }
+	}
+	Specials {
+		Imagemap { map }
+		CGI { cgi }
+		Redirect { url }
+	}
+	External {
+		/usr/bin/perl { pl }
+	}
+	IndexNames { home.html index.htm index.html redirect.url }
+}
+
+DefaultName localtoast
+
+Server {
+	Port 8080
+
+	Virtual {
+		Control {
+			Alias /
+			Location /home/www/oldclients
+		}
+	}
+
+	Virtual {
+		Host localhost
+		Control {
+			Alias /
+			Location /home/www/localhost
+		}
+		Control {
+			Alias /protected
+			Location /home/www/localhost/protected
+			Realm "Protected Area"
+			UserFile /home/www/htpasswd
+		}
+	}
+
+	Virtual {
+		Host www.domain.com
+		Control {
+			Alias /
+			Location /home/w/www/www.domain.com
+		}
+		Control {
+			Alias /~
+			Location http://www2.domain.com/~
+		}
+	}
+
+	Virtual {
+		Host www3.domain.com
+		Control {
+			Alias /
+			Location /home/www/www3.domain.com
+		}
+	}
+
+	Virtual {
+		Host www4.domain.com
+		Control {
+			Alias /
+			Location /home/www/www4.domain.com
+		}
+		Control {
+			Alias /cgi-bin
+			Location /home/www/www4.domain.com/cgi-bin
+			Specials {
+				CGI { * }
+			}
+		}
+	}
+
+	Virtual {
+		Host www5.domain.com
+		Control {
+			Alias /
+			Location /home/www/www5.domain.com/silly.html
+			PathArgs On
+		}
+		Control {
+			Alias /private
+			Location /home/www/www5.domain.com/private
+			Access {
+				Deny 0/0
+				Allow 127.0.0.1/32
+				Allow 192.168.57.0/24
+			}
+		}
+		Control {
+			Alias /funky
+			Location /home/www/www5.domain.com/funky
+			Refresh 300
+		}
+	}
+
+}

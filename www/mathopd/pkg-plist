@@ -1,0 +1,7 @@
+etc/mathopd.conf.sample
+etc/rc.d/mathopd.sh
+sbin/mathopd
+share/doc/mathopd/CHANGES
+share/doc/mathopd/COPYING
+share/doc/mathopd/README
+@dirrm share/doc/mathopd
