@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sun Apr  8 17:17:01 2001
-+++ Makefile.in	Sun Apr  8 17:40:11 2001
-@@ -60,7 +60,7 @@
+--- Makefile.in.orig	Thu Oct 11 21:49:45 2001
++++ Makefile.in	Sat Nov 24 13:45:09 2001
+@@ -57,7 +57,7 @@
  # Pathname of directory to install the man page
  MANDEST = @mandir@
  # Pathname of directory to install the docs
@@ -9,7 +9,7 @@
  
  # VPATH
  srcdir = @srcdir@
-@@ -127,15 +127,6 @@
+@@ -124,15 +124,6 @@
  	[ -d $(DESTDIR)/argus/archive ] || \
  		(mkdir -p $(DESTDIR)/argus/archive; chmod 755 $(DESTDIR)/argus/archive)
  
@@ -25,7 +25,7 @@
  	[ -d /var/log/argus ] || \
  		(mkdir -p /var/log/argus; chmod 755 /var/log/argus)
  
-@@ -148,17 +139,9 @@
+@@ -145,17 +136,9 @@
  		fi; \
  	done
  
@@ -36,10 +36,11 @@
 -
  	$(INSTALL) -m 0644 $(srcdir)/README $(DESTDIR)/argus
 -	$(INSTALL) -m 0644 $(srcdir)/README $(DOCDIR)
- 	$(INSTALL) -m 0644 $(srcdir)/LICENSE $(DESTDIR)/argus
+-	$(INSTALL) -m 0644 $(srcdir)/LICENSE $(DESTDIR)/argus
 -	$(INSTALL) -m 0644 $(srcdir)/LICENSE $(DOCDIR)
++	$(INSTALL) -m 0644 $(srcdir)/COPYING $(DESTDIR)/argus
  	$(INSTALL) -m 0644 $(srcdir)/COPYRIGHT $(DESTDIR)/argus
 -	$(INSTALL) -m 0644 $(srcdir)/COPYRIGHT $(DOCDIR)
  
  	$(INSTALL) -m 0755 $(srcdir)/bin/argusbug $(BINDIR)/argusbug
- 	$(INSTALL) -m 0755 $(srcdir)/support/Archive/argusarchive $(BINDIR)/argusarchive
+ 
