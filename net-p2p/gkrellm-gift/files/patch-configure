@@ -1,0 +1,27 @@
+--- configure.orig	Mon May  3 08:53:37 2004
++++ configure	Mon May  3 08:56:01 2004
+@@ -18994,10 +18994,11 @@
+ echo "${ECHO_T}no" >&6
+ fi
+ 
+-
+-cat >>confdefs.h <<\_ACEOF
+-#define GTK_DISABLE_DEPRECATED 1
+-_ACEOF
++# restore gtk 2.4 compatibility
++# author promised to fix this in the next version
++#cat >>confdefs.h <<\_ACEOF
++##define GTK_DISABLE_DEPRECATED 1
++#_ACEOF
+ 
+ 
+ if test x$prefix = xNONE; then
+@@ -19005,7 +19006,7 @@
+ 
+ fi
+ 
+-plugindir=${prefix}/lib/gkrellm2/plugins
++plugindir=${prefix}/libexec/gkrellm2/plugins
+ 
+ 
+                               ac_config_files="$ac_config_files Makefile pixmaps/Makefile src/Makefile"

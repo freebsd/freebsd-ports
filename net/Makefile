@@ -146,6 +146,7 @@
     SUBDIR += giftoxic
     SUBDIR += gini
     SUBDIR += ginsu
+    SUBDIR += gkrellm-gift
     SUBDIR += gkrellm_snmp
     SUBDIR += gkrellmmultiping2
     SUBDIR += gkrellmqst
