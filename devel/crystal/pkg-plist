@@ -17,6 +17,7 @@ crystal/data/config/map2cs.cfg
 crystal/data/config/soft3d.cfg
 crystal/install.log
 crystal/lib/aws.so
+crystal/lib/cspython.so
 crystal/lib/gl3d.so
 crystal/lib/null3d.so
 crystal/lib/line3d.so
