@@ -7,6 +7,7 @@
 
 PORTNAME=	bdf-fonts
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 DISTFILES=	# empty
 
