@@ -1,15 +1,16 @@
-@cd /usr/local
 bin/faxspool
 bin/faxq
 bin/faxrm
 bin/faxrunq 
 bin/g3cat
-bin/g3topbm
+bin/g32pbm
 bin/kvg
 bin/newslock
 bin/mg.echo
-bin/pbmtog3
+bin/pbm2g3
 etc/mgetty+sendfax/dialin.config
+etc/mgetty+sendfax/login.config
+etc/mgetty+sendfax/faxrunq.config
 info/mgetty.info
 info/mgetty.info-1
 info/mgetty.info-2
@@ -24,8 +25,8 @@ man/man1/faxrm.1.gz
 man/man1/faxrunq.1.gz
 man/man1/faxspool.1.gz
 man/man1/g3cat.1.gz
-man/man1/g3topbm.1.gz
-man/man1/pbmtog3.1.gz
+man/man1/g32pbm.1.gz
+man/man1/pbm2g3.1.gz
 man/man4/mgettydefs.4.gz
 man/man5/faxqueue.5.gz
 man/man8/sendfax.8.gz

@@ -1,5 +1,5 @@
-*** Makefile~	Sat Jul 13 12:46:57 1996
---- Makefile	Fri Sep 13 03:15:16 1996
+*** Makefile.orig	Sat Apr  5 02:51:49 1997
+--- Makefile	Sat Apr  5 02:56:32 1997
 ***************
 *** 4,11 ****
   #
@@ -49,12 +49,12 @@
   # For FreeBSD, add "-lutil" if the linker complains about
   # 	"utmp.o: unresolved symbod _login"
   #
-! LDFLAGS=-lutil
+! LDFLAGS= -lutil
   #LDFLAGS=-lprot -lsocket
   #LDFLAGS=-s -shlib
   #LDFLAGS=-lsocket
 ***************
-*** 251,259 ****
+*** 252,260 ****
   # please use the "mg.echo" program provided in the compat/ subdirectory.
   # Set ECHO="mg.echo" and INSTALL_MECHO to mg.echo
   #
@@ -64,7 +64,7 @@
   
   #
   # for mgetty, that's it. If you want to use the voice
---- 251,259 ----
+--- 252,260 ----
   # please use the "mg.echo" program provided in the compat/ subdirectory.
   # Set ECHO="mg.echo" and INSTALL_MECHO to mg.echo
   #
@@ -75,7 +75,7 @@
   #
   # for mgetty, that's it. If you want to use the voice
 ***************
-*** 530,536 ****
+*** 536,542 ****
   install: install.bin install.doc
   
   install.bin: mgetty sendfax kvg newslock \
@@ -83,7 +83,7 @@
   #
   # binaries
   #
---- 530,536 ----
+--- 536,542 ----
   install: install.bin install.doc
   
   install.bin: mgetty sendfax kvg newslock \
@@ -92,7 +92,7 @@
   # binaries
   #
 ***************
-*** 548,562 ****
+*** 554,568 ****
   # data files + directories
   #
   	test -d $(LIBDIR)  || \
@@ -107,8 +107,8 @@
 ! 		$(INSTALL) -o root -m 600 sendfax.config $(CONFDIR)/
   	test -f $(CONFDIR)/dialin.config || \
   		$(INSTALL) -o root -m 600 dialin.config $(CONFDIR)/
-  #
---- 548,562 ----
+  	test -f $(CONFDIR)/faxrunq.config || \
+--- 554,568 ----
   # data files + directories
   #
   	test -d $(LIBDIR)  || \
@@ -123,4 +123,4 @@
 ! #		$(INSTALL) -o root -m 600 sendfax.config $(CONFDIR)/
   	test -f $(CONFDIR)/dialin.config || \
   		$(INSTALL) -o root -m 600 dialin.config $(CONFDIR)/
-  #
+  	test -f $(CONFDIR)/faxrunq.config || \

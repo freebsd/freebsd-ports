@@ -1,25 +1,26 @@
-*** fax/faxspool.in~	Wed Aug 30 12:41:17 1995
---- fax/faxspool.in	Mon Mar 11 04:43:21 1996
+*** fax/faxspool.in.orig	Sat Apr  5 02:58:15 1997
+--- fax/faxspool.in	Sat Apr  5 02:59:21 1997
 ***************
-*** 287,297 ****
+*** 299,309 ****
   # user name (for authentification)
   ##########
   
 ! if user=`logname 2>/dev/null`
 ! then :
   else
-!     id=`id`
+      id=`id`
 !     user=`expr "$id" : "[^( ]*(\([^)]*\)"`
   fi
   test -z "$user" && user=$LOGNAME
   test -z "$user" && user=$USER
---- 287,296 ----
+--- 299,309 ----
   # user name (for authentification)
   ##########
   
 ! if [ `id -u` = 0 ]; then
 !     user=root
   else
+      id=`id`
 !     user=`logname`
   fi
   test -z "$user" && user=$LOGNAME
