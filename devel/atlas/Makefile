@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	Atlas
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.4
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ecs.soton.ac.uk/pub/worldforge/acorn/0.3/src/ \
-		http://kafka.i-site.com/~novalis/mirrors/acorn/0.3/src/ \
+MASTER_SITES=	ftp://victor.worldforge.org/pub/worldforge/libs/Atlas-C++/ \
+		ftp://ftp.ecs.soton.ac.uk/pub/worldforge/libs/Atlas-C++/
+DISTNAME=	${PORTNAME}-C++-${PORTVERSION}
 
 MAINTAINER=	lehmann@ans-netz.de
 
-LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++ \
-		SDL-1.1.4:${PORTSDIR}/devel/sdl12
-
-USE_NEWGCC=	YES
 USE_LIBTOOL=	YES
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+GNU_CONFIGURE=	YES
 
 .include <bsd.port.mk>
