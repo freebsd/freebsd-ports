@@ -1,0 +1,4 @@
+The Digest::MD4 module allows you to use the RSA Data Security Inc. MD4
+Message Digest algorithm from within Perl programs.
+
+WWW: http://search.cpan.org/search?dist=Digest-MD4
