@@ -5,7 +5,10 @@ cd $WRKDIR || exit 1
 find . -name \*.gz |xargs gunzip -f
 
 cd $WRKSRC || exit 1;
-
+cat >> Makefile <<'EOF'
+default all: do-kpathsea
+	cd web2c && $(MAKE) $(makeargs) $@
+EOF
 ./configure --prefix=$PREFIX
 
 cd web2c
