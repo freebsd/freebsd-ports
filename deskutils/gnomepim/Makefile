@@ -21,6 +21,7 @@ RUN_DEPENDS=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}
 .endif
 
 USE_X_PREFIX=	yes
+USE_BISON=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
@@ -30,6 +31,7 @@ LIBS=		-L${LOCALBASE}/lib
 .if defined(WITHOUT_PILOT)
 CONFIGURE_ARGS=	--without-pisock --disable-pilotlinktest
 .else
+CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}/pilot
 CPPFLAGS+=	-I${LOCALBASE}/pilot/include
 LIBS+=		-L${LOCALBASE}/pilot/lib
 .endif
