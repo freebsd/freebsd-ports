@@ -3902,8 +3902,8 @@ ltrace		ports/sysutils/ltrace
 ltris		ports/games/ltris
 ltxml		ports/textproc/ltxml
 lua		ports/lang/lua
-lukemftp	ports/ftp/lukemftp
-lukemftpd	ports/ftp/lukemftpd
+lukemftp	src/contrib/lukemftp
+lukemftpd	src/contrib/lukemftpd
 luna		ports/astro/luna
 lupe		ports/x11/lupe
 lv		ports/misc/lv
@@ -5767,6 +5767,8 @@ ports_java	ports/java
 ports_korean	ports/korean
 ports_lam	ports/net/lam
 ports_lang	ports/lang
+ports_lukemftp	ports/ftp/lukemftp
+ports_lukemftpd	ports/ftp/lukemftpd
 ports_mail	ports/mail
 ports_math	ports/math
 ports_mbone	ports/mbone
