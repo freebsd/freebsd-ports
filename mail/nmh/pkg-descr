@@ -1,0 +1,10 @@
+-----------
+what is it?
+-----------
+nmh (new MH) is an electronic mail handling system.  It was
+originally based on the package MH-6.8.3, and is intended to be
+a (mostly) compatible drop-in replacement for MH.
+
+nmh is currently in BETA testing/development.  It seems to be
+generally stable, but things may break from release to release
+as changes are made.
