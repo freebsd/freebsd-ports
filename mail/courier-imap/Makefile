@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-imap
-PORTVERSION=	0.26
+PORTVERSION=	0.32
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/courierimap/
 
@@ -19,6 +19,7 @@ CONFIGURE_ARGS=	--without-authldap --with-authldaprc=filename \
 		--without-authpam --without-authshadow \
 		--without-authvchkpw --without-authcram
 
+MAN1=		maildirmake.1
 MAN8=		authlib.8 makeuserdb.8 userdb.8 userdbpw.8 couriertcpd.8 \
 		deliverquota.8 imapd.8
 
