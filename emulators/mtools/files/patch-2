@@ -1,25 +1,27 @@
-*** mtools.conf~	Wed Jan 31 22:02:11 1996
---- mtools.conf	Mon May 27 05:03:09 1996
-***************
-*** 2,11 ****
-  drive b: file="/dev/fd1" exclusive
-  
-  # First SCSI hard disk partition
-! drive c: file="/dev/sda1"
-  
-  # First IDE hard disk partition
-! #drive c: file="/dev/hda1"
-  
-  #dosemu floppy image
-  drive m: file="/var/lib/dosemu/diskimage"
---- 2,11 ----
-  drive b: file="/dev/fd1" exclusive
-  
-  # First SCSI hard disk partition
-! drive c: file="/dev/sd0s1"
-  
-  # First IDE hard disk partition
-! #drive c: file="/dev/wd0s1"
-  
-  #dosemu floppy image
-  drive m: file="/var/lib/dosemu/diskimage"
+--- mtools.conf.orig	Tue Apr 29 19:08:20 1997
++++ mtools.conf	Fri Aug 22 23:31:49 1997
+@@ -1,17 +1,20 @@
+-drive a: file="/dev/fd0" exclusive
+-drive b: file="/dev/fd1" exclusive
++drive a: file="/dev/rfd0"
++drive b: file="/dev/rfd1"
+ 
+ # First SCSI hard disk partition
+-drive c: file="/dev/sda1"
++drive c: file="/dev/rsd0s1"
+ 
+ # First IDE hard disk partition
+-#drive c: file="/dev/hda1"
++#drive c: file="/dev/rwd0s1"
+ 
+ #dosemu floppy image
+ drive m: file="/var/lib/dosemu/diskimage"
+ 
+ #dosemu hdimage
+ drive n: file="/var/lib/dosemu/diskimage" offset=3840
++
++#720 KB floppy in drive 0
++drive d: file="/dev/rfd0.720" exclusive
+ 
+ # # Atari ramdisk image
+ # drive o: file="/tmp/atari_rd" offset=136
