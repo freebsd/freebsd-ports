@@ -1,7 +1,7 @@
-*** galaxis.c	Wed Sep 20 17:16:33 1995
---- /home/andy/tmp/wrk/galaxis.c	Tue Jul  1 06:54:10 1997
+*** galaxis.c.orig	Sun Apr 21 10:54:51 2002
+--- galaxis.c	Sat Jan 25 06:40:30 2003
 ***************
-*** 8,14 ****
+*** 9,15 ****
   
   #include <stdio.h>
   #include <termios.h>
@@ -9,7 +9,7 @@
   #include <signal.h>
   #include <ctype.h>
   #include <assert.h>
---- 8,14 ----
+--- 9,15 ----
   
   #include <stdio.h>
   #include <termios.h>
@@ -18,7 +18,7 @@
   #include <ctype.h>
   #include <assert.h>
 ***************
-*** 131,137 ****
+*** 132,138 ****
   
       (void) signal(SIGINT,outro);
       (void) signal(SIGINT,outro);
@@ -26,7 +26,7 @@
       if(signal(SIGQUIT,SIG_IGN) != SIG_IGN)
   	(void)signal(SIGQUIT,outro);
   
---- 131,137 ----
+--- 132,138 ----
   
       (void) signal(SIGINT,outro);
       (void) signal(SIGINT,outro);
@@ -34,41 +34,3 @@
       if(signal(SIGQUIT,SIG_IGN) != SIG_IGN)
   	(void)signal(SIGQUIT,outro);
   
-***************
-*** 540,555 ****
-  {
-      if (board[cury][curx] & S_LIFEBOAT)
-      {
-! 	board[cury][curx] |= S_BOATSEEN;
-! 	prompt("You found a lifeboat!");
-! 	beep();
-! 	turn++;
-! 	boatsfound++;
-!     }
-!     else if (board[cury][curx] & S_BOATSEEN)
-!     {
-! 	prompt("This lifeboat is already visible.");
-! 	beep();
-      }
-      else
-      {
---- 540,558 ----
-  {
-      if (board[cury][curx] & S_LIFEBOAT)
-      {
-!        if (board[cury][curx] & S_BOATSEEN)
-!        {
-!           prompt("This lifeboat is already visible.");
-!           beep();
-!        }
-!        else
-!        {
-!           board[cury][curx] |= S_BOATSEEN;
-! 	  prompt("You found a lifeboat!");
-! 	  beep();
-! 	  turn++;
-! 	  boatsfound++;
-!        }
-      }
-      else
-      {
