@@ -34,6 +34,12 @@ PORTDOCS=	Asmutils-HOWTO.html acknowledgements.html endorsements.html \
 		history.html index.html s-contrib.html s-debug.html \
 		s-include.html s-layout.html s-optimize.html
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502119
+BROKEN=		"Does not install on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@(${SED} -e 's,%%KERNEL%%,${OSREL:S/.//g},g' ${WRKSRC}/MCONFIG > ${WRKDIR}/foo \
 		&& ${MV} ${WRKDIR}/foo ${WRKSRC}/MCONFIG)
@@ -62,4 +68,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
