@@ -9,7 +9,6 @@ PORTNAME=	proxy-suite
 PORTVERSION=	1.9.2.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.suse.com/pub/projects/proxy-suite/src/ \
-		ftp://ftp.crc.ca/pub/systems/linux/suse/projects/proxy-suite/src/ \
 		ftp://ftp.gwdg.de/pub/linux/suse/ftp.suse.com/projects/proxy-suite/src/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.gwdg.de/pub/linux/suse/ftp.suse.com/projects/proxy-suite/src/
 
