@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier
-PORTVERSION=	0.45.3
+PORTVERSION=	0.45.4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -307,17 +307,15 @@ pre-everything::
 	@${ECHO_MSG} "===> -------------------------------------------"
 
 post-patch:
-	@${PERL} -pi -e 's:\@datadir\@:\@sysconfdir\@:g;' \
+	@${REINPLACE_CMD} -e 's:@datadir@:@sysconfdir@:g' \
 		${WRKSRC}/*/mk*cert.* \
 		${WRKSRC}/*/*/mk*cert.*
-	@${PERL} -pi -e 's:^(TLS_CERTFILE=)\@datadir\@:$$1\@sysconfdir\@:g;' \
+	@${REINPLACE_CMD} -e 's:^TLS_CERTFILE=@datadir@:TLS_CERTFILE=@sysconfdir@:g' \
 		${WRKSRC}/*/*.dist.in \
 		${WRKSRC}/*/*/*.dist.in
-	@${PERL} -pi -e 's:^(RANDFILE = )\@datadir\@\S+:$$1\@sysconfdir\@/random.tmp:g;' \
+	@${REINPLACE_CMD} -e 's:^RANDFILE = @datadir@[^[:space:]]*:RANDFILE = @sysconfdir@/random.tmp:g' \
 		${WRKSRC}/*/*.cnf.in \
 		${WRKSRC}/*/*/*.cnf.in
-	@${PERL} -pi -e 's:^	sharedindexsplit sharedindexinstall::g;' \
-		${WRKSRC}/courier/Makefile.in
 	@${REINPLACE_CMD} -e 's:"\\$${SHELL} \\$$(install_sh) -c -s":"\\$${BSD_INSTALL_PROGRAM}":' \
 		${WRKSRC}/configure \
 		${WRKSRC}/*/configure \
@@ -356,8 +354,6 @@ post-install:
 	@${INSTALL_DATA} /dev/null ${SYSCONFDIR}/locallowercase
 	@${INSTALL_DATA} ${WRKDIR}/crontab ${PREFIX}/etc/courier/
 	@${INSTALL_SCRIPT} ${WRKDIR}/courier.sh ${PREFIX}/etc/rc.d/
-	@${INSTALL_SCRIPT} ${WRKSRC}/maildir/sharedindexsplit ${PREFIX}/sbin/
-	@${INSTALL_SCRIPT} ${WRKSRC}/maildir/sharedindexinstall ${PREFIX}/sbin/
 .for file in ${OWNER0}
 	@-${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/${file}
 .endfor
