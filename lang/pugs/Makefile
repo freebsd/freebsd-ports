@@ -31,6 +31,10 @@ post-configure:
 		-e '/^INSTALLARCHLIB/s,${PREFIX}/lib,${PREFIX}/lib/perl6/mach,' \
 		${WRKSRC}/Makefile
 
+post-patch:
+	@${REINPLACE_CMD} -e '/-isrc$$/s,-isrc,-isrc -L${PREFIX}/lib,' \
+		${WRKSRC}/Makefile.PL
+
 .if !defined(NOPORTDOCS)
 EXDIR=		${WRKSRC}/examples
 post-install:
