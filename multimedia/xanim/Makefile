@@ -3,25 +3,26 @@
 # Date created:         Sat Nov 5 11:43:03 PST 1994
 # Whom:                 piero
 #
-# $Id: Makefile,v 1.5 1995/09/22 19:05:21 ache Exp $
+# $Id: Makefile,v 1.6 1996/03/08 14:37:19 erich Exp $
 #
 
 DISTNAME=       xanim2703
 PKGNAME=        xanim-2.70.3
 CATEGORIES+=	graphics x11
-MASTER_SITES=	ftp://ftp.portal.com/pub/podlipec/
-MASTER_SITES+=	ftp://ftp.portal.com/pub/podlipec/cinepak/
-MASTER_SITES+=	ftp://ftp.portal.com/pub/podlipec/indeo/
+MASTER_SITES=	ftp://ftp.portal.com/pub/podlipec/ \
+		ftp://ftp.portal.com/pub/podlipec/cinepak/ \
+		ftp://ftp.portal.com/pub/podlipec/indeo/
 EXTRACT_ONLY=	xanim2703.tar.gz
-DISTFILES=	${EXTRACT_ONLY} xa2.0_cvid_netbsd386.o.Z
-DISTFILES+=	xa2.0_iv32_netbsd386.o.Z
-USE_IMAKE=	is_set
+EXTRA_FILES=	xa2.0_cvid_netbsd386.o.Z xa2.0_iv32_netbsd386.o.Z
+DISTFILES=	${EXTRACT_ONLY} ${EXTRA_FILES}
+
+USE_IMAKE=	yes
 
 post-extract:
-	@cp ${DISTDIR}/xa2.0_cvid_netbsd386.o.Z ${WRKSRC}
-	@uncompress ${WRKSRC}/xa2.0_cvid_netbsd386.o.Z
-	@cp ${DISTDIR}/xa2.0_iv32_netbsd386.o.Z ${WRKSRC}
-	@uncompress ${WRKSRC}/xa2.0_iv32_netbsd386.o.Z
+	@for file in ${EXTRA_FILES}; do \
+	  cp ${DISTDIR}/$$file ${WRKSRC}; \
+	  uncompress ${WRKSRC}/$$file; \
+	done
 
 .include <bsd.port.mk>
 
