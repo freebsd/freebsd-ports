@@ -26,7 +26,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib"
 WRKSRC=	${WRKDIR}/${DISTNAME}/Xft
 
+.include <bsd.port.pre.mk>
+
+# TODO Add a check to make sure we're not using XFree86 4.3.x which will
+# have Xft2 included by default.
+.if ${XFREE86_VERSION} == 3
+BROKEN=	Xft2 requires XFree86 4.x to build.
+.endif
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's|[(]LIBDIR[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
