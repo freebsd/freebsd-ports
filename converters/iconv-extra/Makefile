@@ -8,7 +8,7 @@
 PORTNAME=	iconv-extra
 PORTVERSION=	2.0
 CATEGORIES=	converters
-MASTER_SITES=	http://www.dante.net/staff/konstantin/FreeBSD/iconv/
+MASTER_SITES=	http://archive.dante.net/staff/konstantin/FreeBSD/iconv/
 
 MAINTAINER=	Konstantin.Chuguev@dante.org.uk
 COMMENT=	Additional charsets for the iconv library (those from the Unicode site)
