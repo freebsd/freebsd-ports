@@ -1,9 +1,9 @@
---- Makefile.in.orig	Fri Aug  2 21:34:21 2002
-+++ Makefile.in	Mon Aug  5 13:10:16 2002
-@@ -91,18 +91,6 @@ install-lib:: $(INSTALLLIBSUBDIRS:%=%/__
- install-dev:: $(INSTALLDEVSUBDIRS:%=%/__install__) install-aclocal
+--- Makefile.in.orig	Thu Dec 12 23:03:14 2002
++++ Makefile.in	Wed Dec 25 17:08:41 2002
+@@ -88,18 +88,6 @@ install-lib:: $(INSTALLLIBSUBDIRS:%=%/__
+ install-dev:: $(INSTALLDEVSUBDIRS:%=%/__install__) $(INSTALLBOTHSUBDIRS:%=%/__install-dev__) install-aclocal
  
- install:: install-aclocal
+ install:: install-lib install-dev install-aclocal
 -	-$(LDCONFIG)
 -	@if test -n "`LANG=C $(LDD) $(bindir)/wine|grep not.found`";	\
 -	then								\
@@ -17,5 +17,5 @@
 -		echo "*************************************************" ; \
 -	fi
  
- uninstall::
+ uninstall:: $(INSTALLBOTHSUBDIRS:%=%/__uninstall__)
  	$(RM) $(datadir)/aclocal/wine.m4
