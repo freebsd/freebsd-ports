@@ -7,12 +7,12 @@
 
 PORTNAME=	xlockmore
 PORTVERSION=	5.10
-CATEGORIES=	x11
+CATEGORIES?=	x11
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/ \
 		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Like XLock session locker/screen saver, but just more
 
 USE_BZIP2=	yes
