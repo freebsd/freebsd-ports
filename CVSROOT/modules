@@ -818,6 +818,7 @@ cl-asdf-clisp	ports/devel/cl-asdf-clisp
 cl-lml		ports/www/cl-lml
 cl-lml-clisp	ports/www/cl-lml-clisp
 clamav		ports/security/clamav
+clamav-devel	ports/security/clamav-devel
 clanbomber	ports/games/clanbomber
 clanlib		ports/devel/clanlib
 claraocr	ports/graphics/claraocr
