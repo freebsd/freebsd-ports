@@ -6,7 +6,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Adjuster.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Adjuster.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/After.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/After.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Animation.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Animation.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Balloon.pm
@@ -30,6 +29,9 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/ColorEdit.xpm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/ColorEditor.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/ColorEditor.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Common.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Compound.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Compound.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/ConfigSpecs.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Configure.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Credits
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/DItem.pod
@@ -44,16 +46,26 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/DirTree.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Dirlist.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/DragDrop.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/DragDrop/Common.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/DragDrop/KDEDrop.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/DragDrop/KDESite.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/DragDrop/LocalDrop.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/DragDrop/Rect.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/DragDrop/SunConst.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/DragDrop/SunDrop.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/DragDrop/SunSite.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/DragDrop/XDNDDrop.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/DragDrop/XDNDSite.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/DropSite.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/DropSite.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/English.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Entry.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Entry.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Event.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Event/IO.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Eventloop.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Error.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/ErrorDialog.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/FBox.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/FileSelect.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/FileSelect.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/FloatEntry.pm
@@ -65,6 +77,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/HList.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/HList.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/IO.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/IO.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/IconList.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Image.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Image.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/InputO.pm
@@ -93,7 +106,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Menubutton.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Menubutton.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Message.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Message.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/MsgBox.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Mwm.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Mwm.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/NBFrame.pm
@@ -101,15 +113,22 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/NoteBook.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/NoteBook.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Optionmenu.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Optionmenu.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Pane.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Photo.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Photo.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Pixmap.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Pixmap.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Pretty.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/ProgressBar.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/README.Adjust
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/ROText.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/ROText.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Radiobutton.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Radiobutton.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Region.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Reindex.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/ReindexedROText.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/ReindexedText.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Scale.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Scale.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Scrollbar.pm
@@ -127,6 +146,8 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Tcl-perl.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Text.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Text.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Text/Tag.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/TextEdit.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/TextList.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/TextUndo.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/TextUndo.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Tiler.pm
@@ -134,6 +155,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Tiler.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/TixGrid.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/TixGrid.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Tk.xbm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Tk.xpm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Toplevel.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Toplevel.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Tree.pm
@@ -142,16 +164,20 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/UserGuide.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Widget.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Widget.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/WidgetDemo.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/WinPhoto.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Wm.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Wm.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/X.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/X.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/X11Font.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/X11Font.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Xcamel.gif
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Xlib.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Xrm.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Xrm.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/act_folder.xbm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/act_folder.xpm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/after.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/anim.gif
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/balArrow.xbm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/bind.pod
@@ -160,7 +186,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/callbacks.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/cbxarrow.xbm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/chooseColor.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/composite.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/configspec.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/LabEnLabRad.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/images/QuitPB.xpm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/images/QuitPBa.xpm
@@ -201,6 +226,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widget_lib/dialog1.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widget_lib/dialog2.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widget_lib/entry1.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widget_lib/entry2.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widget_lib/filebox.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widget_lib/floor.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widget_lib/form.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widget_lib/hscale.pl
@@ -250,9 +276,12 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widget_lib/showVars.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widget_lib/states.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widget_lib/style.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widget_lib/texts.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widget_lib/transtile.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widget_lib/twind.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widget_lib/vscale.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widtrib/Gedi.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widtrib/HList.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widtrib/HList2.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widtrib/TEMPLATE.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widtrib/Tiler.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widtrib/balloon.pl
@@ -265,6 +294,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widtrib/lib/npuz/Xcamel.
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widtrib/notebook.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widtrib/npuz.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widtrib/plop.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/widtrib/progress.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/event.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/exit.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/file.xbm
@@ -289,10 +319,19 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/option.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/options.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/overview.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/Tcl-pTk
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/img.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/imgPmap.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/mkVFunc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/tkEvent.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/tkEvent.m
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/tkEvent.t
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/tkEvent_f.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pack.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/palette.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/place.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/prolog.ps
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/reindex.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/selection.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/send.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/srcfile.xpm
@@ -304,11 +343,8 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/typemap
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/widgets.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/widgets.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/win.xbm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Adjuster/Restore.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Adjuster/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Adjuster/dHeight.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Adjuster/dWidth.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Button/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/winfolder.xpm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/wintext.xpm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/CancelRepeat.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Clipboard.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Clipboard/getSelected.al
@@ -382,35 +418,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Table/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Table/see.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Table/totalColumns.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Table/totalRows.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/AutoScan.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/Backspace.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/Button1.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/Button2.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/ClassInit.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/Contents.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/Delete.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/Destroy.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/Insert.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/KeySelect.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/Motion2.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/NextPara.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/PRINT.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/PRINTF.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/PrevPara.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/ResetAnchor.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/ScrollPages.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/SelectTo.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/SetCursor.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/TIEHANDLE.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/Tag.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/Tags.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/Transpose.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/UpDownLine.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/bindRdOnly.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TextUndo/Load.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TextUndo/Save.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TextUndo/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Toplevel/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TraverseToMenu.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Widget/autosplit.ix
@@ -425,8 +432,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/X/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Wm/FullScreen.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/break.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/catch.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/exit.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/findINC.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/focusFollowsMouse.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/focusNext.al
@@ -438,7 +443,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/tabFocus.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/updateWidgets.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Config.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/TkXSUB.def
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/leak_util.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/Lang.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/Lang.m
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/Lang.t
@@ -476,7 +480,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/tixInt.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/tixInt.m
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/tixInt.t
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/tixInt_f.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/tixItcl.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/tixPort.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/tixTList.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/tixUnixInt.h
@@ -533,14 +536,22 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Bitmap/Bitmap.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Bitmap/Bitmap.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Canvas/Canvas.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Canvas/Canvas.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Compound/Compound.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Compound/Compound.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Entry/Entry.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Entry/Entry.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Event/Event.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Event/Event.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/HList/HList.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/HList/HList.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/IO/IO.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/IO/IO.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/InputO/InputO.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/InputO/InputO.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Listbox/ButtonRelease_1.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Listbox/Cntrl_End.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Listbox/Cntrl_Home.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Listbox/Cntrl_backslash.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Listbox/Listbox.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Listbox/Listbox.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Menubutton/Menubutton.bs
@@ -557,16 +568,26 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Scale/Scale.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Scale/Scale.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Scrollbar/Scrollbar.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Scrollbar/Scrollbar.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TextUndo/FileName.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TextUndo/numberChanges.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TList/TList.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TList/TList.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/Text.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/Text.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TextEdit/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TextUndo/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TixGrid/TixGrid.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TixGrid/TixGrid.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Tk.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Tk.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Toplevel/FG_BindIn.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Toplevel/FG_BindOut.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Toplevel/FG_Create.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Toplevel/FG_Destroy.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Toplevel/FG_In.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Toplevel/FG_Out.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Widget/ASkludge.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/WinPhoto/WinPhoto.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/WinPhoto/WinPhoto.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/X/X.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/X/X.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Xlib/Xlib.bs
@@ -574,6 +595,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Xlib/Xlib.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/pTk/extralibs.ld
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/DragDrop
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Event
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Menu
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Text
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/demos/images
@@ -585,12 +607,12 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk/compat
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/pTk
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Adjuster
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Bitmap
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Button
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Canvas
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Clipboard
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Compound
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Entry
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Event
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Frame
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/HList
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/IO
@@ -606,10 +628,12 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TList
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Table
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Text
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TextEdit
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TextUndo
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/TixGrid
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Toplevel
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Widget
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/WinPhoto
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Wm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/X
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Xlib

@@ -5,26 +5,33 @@
 # $FreeBSD$
 #
 
-PORTNAME=	Mail-Tools
-PORTVERSION= 	1.12
+PORTNAME=	p5-Mail-Tools
+PORTVERSION= 	1.1401
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
-PKGNAMEPREFIX=	p5-
 DISTNAME=	MailTools-${PORTVERSION}
 
 MAINTAINER=	jfitz@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
 
 USE_PERL5=	YES
 
-MAN3=		Mail::Address.3 Mail::Cap.3 Mail::Field.3 Mail::Header.3 \
-		Mail::Internet.3 Mail::Alias.3 Mail::Mailer.3 Mail::Send.3 \
-		Mail::Util.3 Mail::Field::AddrList.3 Mail::Filter.3
+MAN3=		Mail::Address.3 \
+		Mail::Alias.3 \
+		Mail::Cap.3 \
+		Mail::Field.3 \
+		Mail::Field::AddrList.3 \
+		Mail::Filter.3 \
+		Mail::Header.3 \
+		Mail::Internet.3 \
+		Mail::Mailer.3 \
+		Mail::Send.3 \
+		Mail::Util.3
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 

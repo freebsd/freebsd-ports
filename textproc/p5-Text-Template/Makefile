@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-Text-Template
-PORTVERSION= 	1.20
+PORTNAME=	Text-Template
+PORTVERSION= 	1.23
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://www.plover.com/~mjd/perl/Template/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
-DISTNAME=	Text-Template-1.20
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
