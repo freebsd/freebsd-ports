@@ -47,12 +47,6 @@ DEMOFILES=	Makefile demo.c
 DEMOFILES+=	demo.bin demo.hex demo.pdf demo.srec
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		Broken pkg-plist
-.endif
-
 do-build:
 		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./domake MAKE=${GMAKE})
 
@@ -83,4 +77,4 @@ do-install:
 				${PREFIX}/share/doc/avr-libc/examples/twitest; \
 		done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
