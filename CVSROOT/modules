@@ -5841,6 +5841,7 @@ share_monetdef	src/share/monetdef
 share_msgdef	src/share/msgdef
 share_numericdef	src/share/numericdef
 share_sgml	src/share/sgml
+share_syscons	src/share/syscons
 share_tabset	src/share/tabset
 share_timedef	src/share/timedef
 sharefonts	ports/x11-fonts/sharefonts
