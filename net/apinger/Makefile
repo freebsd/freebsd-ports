@@ -15,17 +15,15 @@ MASTER_SITES=	http://www.bnet.pl/~jajcus/apinger/
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	An IP device monitoring tool
 
-USE_REINPLACE=	yes
-
 GNU_CONFIGURE=	yes
 
 post-extract:
-	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${FILESDIR}/apinger.sh
+	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${FILESDIR}/apinger.sh \
+		> ${WRKSRC}/apinger.sh
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/apinger.conf ${PREFIX}/etc/apinger.conf.sample
-	${INSTALL_SCRIPT} ${FILESDIR}/apinger.sh \
-	${PREFIX}/etc/rc.d/apinger.sh.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/apinger.sh ${PREFIX}/etc/rc.d/apinger.sh.sample
 .if !defined(BATCH)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "###############################################################################"
