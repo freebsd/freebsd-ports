@@ -43,7 +43,15 @@ WITH_SGML_DOCS?=yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
+USE_ICONV=	yes
+.if defined(WITHOUT_MUTT_ICONV)
+.error the WITHOUT_MUTT_ICONV knob of the mutt port only works if \
+	WITHOUT_NLS is also given
 .endif
+.elif !defined(WITHOUT_MUTT_ICONV)
+USE_ICONV=	yes
+.endif
+
 .if defined(WITH_SLANG)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .elif defined(WITH_NCURSES_PORT)
@@ -73,7 +81,6 @@ CONFIGURE_ARGS=	--enable-pop --enable-imap --enable-flock --disable-fcntl \
 		--with-ssl=${OPENSSLBASE} --sysconfdir=${PREFIX}/etc \
 		--with-sharedir=${PREFIX}/share/mutt \
 		--with-docdir=${DOCSDIR} --with-charmaps \
-		--with-libiconv-prefix=${PREFIX} \
 		--enable-compressed
 .if defined(MUTT_CONFIGURE_ARGS)
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
@@ -86,6 +93,11 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
 PLIST_SUB+=	NLS=""
+.endif
+.if defined(WITHOUT_MUTT_ICONV) && defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-iconv
+.else
+CONFIGURE_ARGS+=	--with-libiconv-prefix=${PREFIX}
 .endif
 .if defined(WITH_SLANG)
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}
