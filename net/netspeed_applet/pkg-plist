@@ -43,9 +43,11 @@ share/locale/et/LC_MESSAGES/netspeed_applet.mo
 share/locale/fr/LC_MESSAGES/netspeed_applet.mo
 share/locale/hu/LC_MESSAGES/netspeed_applet.mo
 share/locale/it/LC_MESSAGES/netspeed_applet.mo
+share/locale/ja/LC_MESSAGES/netspeed_applet.mo
 share/locale/ms/LC_MESSAGES/netspeed_applet.mo
 share/locale/nl/LC_MESSAGES/netspeed_applet.mo
 share/locale/ru/LC_MESSAGES/netspeed_applet.mo
+share/locale/tr/LC_MESSAGES/netspeed_applet.mo
 share/locale/zh_CN/LC_MESSAGES/netspeed_applet.mo
 @dirrm share/gnome/omf/netspeed_applet
 @dirrm share/gnome/help/netspeed_applet/de/figures

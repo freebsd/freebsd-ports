@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netspeed_applet
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	net gnome
 MASTER_SITES=	http://mfcn.ilo.de/netspeed_applet/
 
@@ -21,6 +21,6 @@ USE_REINPLACE=	yes
 USE_GNOME=	gnomehier gnomeprefix gnomehack gnomepanel
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
