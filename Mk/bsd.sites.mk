@@ -815,7 +815,6 @@ MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.chg.ru/pub/X11/windowmanagers/windowmaker/%SUBDIR%/
 
 MASTER_SITE_XCONTRIB+=	\
-	ftp://crl.dec.com/pub/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.net.ohio-state.edu/pub/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.duke.edu/pub/X11/contrib/%SUBDIR%/ \
