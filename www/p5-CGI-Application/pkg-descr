@@ -1,0 +1,6 @@
+CGI::Application is a perl module intended to make it easier to create
+sophisticated, reusable web-based applications.  This module implements
+a methodology which, if followed, will make your web software easier to
+design, easier to document, easier to write, and easier to solve.
+
+--will

@@ -146,6 +146,7 @@
     SUBDIR += p5-Apache-Session
     SUBDIR += p5-CGI
     SUBDIR += p5-CGI_Lite
+    SUBDIR += p5-CGI-Application
     SUBDIR += p5-CGI-FastTemplate
     SUBDIR += p5-CGI-Minimal
     SUBDIR += p5-FastCGI
