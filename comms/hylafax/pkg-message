@@ -16,5 +16,6 @@ Setting up: (for impatients)
 >cuaa1	"/usr/local/sbin/faxgetty"	dialup	on secure
 
 Documentation:
-	On Line Manuals: 	man hylafax.
+	On Line Manuals: 	man hylafax-client
+				man hylafax-server
 	World Wide Web site:	http://www.hylafax.org/
