@@ -3,7 +3,7 @@
 # Date created:        16 April 1999
 # Whom:                Doug Ambrisko <ambrisko@whistle.com>
 #
-# $Id: Makefile,v 1.2 1999/04/18 13:43:01 erich Exp $
+# $Id: Makefile,v 1.3 1999/05/06 21:49:25 billf Exp $
 #
 
 DISTNAME=	etherboot-4.1pre9
@@ -15,10 +15,9 @@ MAINTAINER=	ambrisko@whistle.com
 
 BUILD_DEPENDS=	as86:${PORTSDIR}/devel/bcc
 
-BROKEN=		"4.2 has been released, this port is no longer fetchable"
-
+NO_PACKAGE=	yes	# lots of configuration necessary
 USE_BZIP2=	yes
 USE_GMAKE=1	# note uses is from emulation package
-WRKSRC=		${WRKDIR}/${DISTNAME}/src-32
+WRKSRC=		${WRKDIR}/etherboot-4.1/src-32
 
 .include <bsd.port.mk>
