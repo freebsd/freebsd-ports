@@ -6,39 +6,25 @@
 #
 
 PORTNAME=	postgresql-jdbc
-PORTVERSION=	7.2
 CATEGORIES=	databases java
 
 MAINTAINER=	girgen@partitur.se
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/jakarta-ant
-# Since we cannot distribute JVMs in binary format yet, don't set this
-# to allow bento to build something useful
-#RUN_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/jdk13
 
 POSTGRESQL_SUBPORT=YES
 .include <${.CURDIR}/../postgresql7/Makefile>
 
 CONFIGURE_ARGS=	--with-java
 
-# Honour JAVA_HOME if it is set
-JAVA_HOME?=	${LOCALBASE}/jdk1.3.1
+USE_JAVA=	1.2+
 
 CONFIGURE_ENV=	JAVA_HOME="${JAVA_HOME}"
 MAKE_ENV+=	JAVA_HOME="${JAVA_HOME}"
 MAKE_ARGS+=	-C src/interfaces/jdbc
 
-pre-everything::
-	@ ${ECHO} ;\
-	  ${ECHO} "Building PostgreSQL JDBC using the JVM in ${JAVA_HOME}." ;\
-	  ${ECHO} "You can instruct this port to use your favourite JVM by typing:" ;\
-	  ${ECHO} "      make JAVA_HOME=${LOCALBASE}/jdk1.1.8" ;\
-	  ${ECHO} "or similar." ;\
-	  ${ECHO}
-
 post-build:
-# will fail for java 1.1, so ignore errors
-	-@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C contrib/retep
+	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C contrib/retep
 
 post-install:
 	@ ${MKDIR} -m 0555 ${PREFIX}/share/java/classes ;\

@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	postgresql-plperl
-PORTVERSION=	7.2
 CATEGORIES=	databases perl5
 PKGNAMEPREFIX=	p5-
 

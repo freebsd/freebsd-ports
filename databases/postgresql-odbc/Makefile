@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	postgresql-odbc
-PORTVERSION=	7.2
 CATEGORIES=	databases
 
 MAINTAINER=	girgen@partitur.se
