@@ -8,7 +8,7 @@
 PORTNAME=	xerces_c
 PORTVERSION=	1.7.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://xml.apache.org/dist/xerces-c/stable/ \
+MASTER_SITES=	http://xml.apache.org/dist/xerces-c/stable/archives/Xerces-C_${PORTVERSION:S/./_/g}/ \
 		http://document-root.de/xerces-c-mirror/
 DISTNAME=	xerces-c-src${PORTVERSION:S/./_/g}
 
