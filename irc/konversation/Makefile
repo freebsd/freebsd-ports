@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	konversation
-PORTVERSION=	0.15
+PORTVERSION=	0.15.1
 CATEGORIES=	irc kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://download.berlios.de/${PORTNAME}/
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	A user friendly IRC client for KDE
