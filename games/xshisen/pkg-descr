@@ -1,0 +1,100 @@
+xshisen - Shisen-sho puzzle game for X11
+
+
+       xshisen  is  a puzzle game for X11.  Similar to the famous
+       "Shang-hai", your objective is to remove all the pieces on
+       the board.  
+
+       The game will over when you remove all the pieces  on  the
+       board.   The  pieces  can be removed only when both of the
+       following conditions are true.
+
+
+       (1) The 2 pieces have the same picture
+
+       (2) The 2 pieces can be connected with up to 3 lines which
+           do not go over other pieces.
+
+       It may seem difficult rule, but is easier than describing
+       in
+       words.  "Auto-demo" mode must be very useful  for  you  to
+       understand the rule.
+
+OPTIONS
+       The following command line options are available.
+
+       standard Xt options
+               xshisen  accepts  standard  toolkit  options  like
+               -display, or -iconic.
+
+       -demo   Auto-demo  mode.   You  cannot play game with this
+               mode, but the game will proceed by computer  auto-
+               mated  algorithm.   This  mode is quite useful for
+               you to understand rules.
+
+       -score  Just displays the best score dialog and exits.
+       -mag number
+               Magnify main window by number times.  The standard
+               window  will be 640x400.  Number may be a decimal,
+               but the range is limited from 0.5 to  the  display
+               size.
+
+       -fn fontlist
+               Use fontlist for menubar and times.
+
+       -large  Play  double sized game.  Game size can be changed
+               with menubar after you started xshisen.  Each game
+               size has independent best time records.
+
+       -huge   Play  quadruple  sized  game.   Game  size  can be
+               changed with menubar after  you  started  xshisen.
+               Each  game size has independent best time records.
+
+       -trial  Play as "Click Trial" mode.  You can measure  your
+               mouse operation speed with this feature.
+
+       -gravity
+               Enable  gravity  effect.  All the pieces above the
+               removed pieces will fall down.
+
+MENU BAR AND KEYBOARD
+       Start (Control + D)
+               Starts new game. The pieces are located at  random
+               position.
+
+       Restart (Control + R)
+               Restarts  the  current game. The time of restarted
+               game will not be recorded as the best score.
+
+       Pause (Control + P)
+               Pauses the game. The time count will  be  stopped,
+               but  also  the pieces picture will be hidden.  You
+               can resume your game to do "Pause" again.
+
+       Exit    Exits the Shisen-sho.
+
+       Search (F1)
+               Teaches the pair you can remove now.  You can  use
+               "Search"   anytime,  but  the  time  will  not  be
+               recorded as the best score  if  you  use  "Search"
+               even once.
+
+
+       Back (F5)
+               Backs  one step.  The time will not be recorded if
+               you use "Back".
+
+
+MOUSE CONTROL
+       The following mouse control is available.  You can  change
+       mouse  button  bindings  with XShisen*drawing.translations
+       resource.
+
+       Button 1
+               Specifies the piece to remove.  You can cencel the
+               selection when you click the selected piece again.
+
+       Button 3
+               Cancels the selected piece.  You can use button  3
+               after "Search", which cancels the search result.
+

@@ -1,0 +1,51 @@
+*** Makefile.in.orig	Tue Jan 23 08:35:21 1996
+--- Makefile.in	Fri Oct 11 08:19:53 1996
+***************
+*** 39,52 ****
+  SCF   = xshisen-scores
+  
+  LIBS      = @LIBS@ 
+! CODECONV  = ./$(exec_name) -KCONV jis
+  
+  all: $(PROGS)
+  
+  $(exec_name): $(OBJS)
+  	$(CXX) $(LDFLAGS) $(OBJS) $(LIBS) -o $(exec_name)
+  
+! install: $(PROGS) $(AD) $(ADJ)
+  	@echo "XShisen executable directory is " $(bindir)
+  	@$(MKDIR) $(bindir)
+  	@chmod 755 $(bindir)
+--- 39,52 ----
+  SCF   = xshisen-scores
+  
+  LIBS      = @LIBS@ 
+! CODECONV  = ./$(exec_name) -KCONV euc
+  
+  all: $(PROGS)
+  
+  $(exec_name): $(OBJS)
+  	$(CXX) $(LDFLAGS) $(OBJS) $(LIBS) -o $(exec_name)
+  
+! install: $(PROGS) $(AD) $(ADJ) install.man
+  	@echo "XShisen executable directory is " $(bindir)
+  	@$(MKDIR) $(bindir)
+  	@chmod 755 $(bindir)
+***************
+*** 63,73 ****
+--- 63,77 ----
+  	for file in pixmaps/*.xpm; do \
+  		$(INSTALLD) $$file $(XSHISENLIB)/`basename $$file`; \
+  	done
++ 	@$(MKDIR) $(XAD_DIR)/$(class_name)
++ 	@$(MKDIR) $(JXAD_DIR)/$(class_name)
+  	$(INSTALLD) $(AD) $(XAD_DIR)/$(class_name)
+  	$(INSTALLD) $(ADJ) $(JXAD_DIR)/$(class_name)
+  
+  install.man: $(exec_name).jman $(exec_name).man
++ 	mkdir -p $(MANDIR)/man6
+  	$(INSTALLD) $(exec_name).man $(MANDIR)/man6/$(exec_name).6
++ 	mkdir -p $(MANDIR)/$(JAPANESE)/man6
+  	$(INSTALLD) $(exec_name).jman $(MANDIR)/$(JAPANESE)/man6/$(exec_name).6
+  
+  clean:
