@@ -1,0 +1,19 @@
+*** book/Makefile.org	Wed Dec 23 04:58:46 1998
+--- book/Makefile	Sat Aug  5 18:08:51 2000
+***************
+*** 12,18 ****
+  
+  # The library
+  XMHTMLINC= -I../lib
+! XMHTMLLIB= -L../lib -lXmHTML
+  LINKLIBS = $(XMHTMLLIB) $(LOADLIBES) $(DMALLOCLIB)
+  
+  # rule to create .o files from .c files 
+--- 12,18 ----
+  
+  # The library
+  XMHTMLINC= -I../lib
+! XMHTMLLIB= ../lib/libXmHTML.la
+  LINKLIBS = $(XMHTMLLIB) $(LOADLIBES) $(DMALLOCLIB)
+  
+  # rule to create .o files from .c files 
