@@ -24,6 +24,10 @@ MAN1=		pgrep.1 pkill.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502110
+IGNORE=		"is included in the base system"
+.endif
+
 .if ${OSVERSION} >= 500000
 DISTNAME=	${PORTNAME}-current-${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-current
