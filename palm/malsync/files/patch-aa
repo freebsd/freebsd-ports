@@ -1,0 +1,50 @@
+--- Makefile.orig	Wed Sep 22 01:48:40 1999
++++ Makefile	Tue Feb 22 21:13:18 2000
+@@ -1,4 +1,3 @@
+-CC = gcc
+ TARGET = malsync
+ 
+ PLAT := $(shell uname)
+@@ -6,9 +5,14 @@
+ 
+ 
+ TREETOP = ../../..
+-PILOT_LINK_DIR = $(TREETOP)/vendor/pilot/pilot-link.0.9.3
++PILOT_LINK_DIR = $(PREFIX)/pilot
+ 
+ DEFINES = -DMALSYNC
++
++ifeq ($(PLAT),FreeBSD)
++LINKFLAGS = -Wl,--rpath -Wl,$(PILOT_LINK_DIR)/lib
++endif
++
+ ifeq ($(PLAT),Linux)
+ DEFINES += -DHAVE_GETOPTLONG
+ LINKFLAGS = -rdynamic
+@@ -21,7 +25,7 @@
+ 
+ endif
+ 
+-CFLAGS = -Wall -g $(DEFINES) -I$(TREETOP)/mal/common \
++CFLAGS += $(DEFINES) -I$(TREETOP)/mal/common \
+   -I$(TREETOP)/mal/client/common -I$(PILOT_LINK_DIR)/include -I.
+ 
+ 
+@@ -63,14 +67,13 @@
+ OBJS = $(SRC:.c=.o)
+ 
+ 
++all: $(TARGET)
++
+ $(TARGET): $(OBJS)
+-	$(CC) $(CFLAGS) -o $@ $(OBJS) -L${PILOT_LINK_DIR}/libsock -lpisock $(LINKLIBS)
++	$(CC) $(CFLAGS) -o $@ $(OBJS) -L${PILOT_LINK_DIR}/lib -lpisock $(LINKLIBS) $(LINKFLAGS)
+ 
+ clean:
+ 	rm -f $(OBJS) $(TARGET)
+-
+-.c.o:
+-	gcc $(CFLAGS) -c -o $@ $<
+ 
+ 
+ 
