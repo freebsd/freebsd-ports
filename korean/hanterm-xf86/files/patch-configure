@@ -1,6 +1,6 @@
---- configure.orig	Tue Aug 28 14:36:15 2001
-+++ configure	Tue Sep 11 18:52:18 2001
-@@ -5956,11 +5956,11 @@
+--- configure.orig	Mon Dec 30 11:21:21 2002
++++ configure	Tue Feb 18 18:50:55 2003
+@@ -6077,11 +6077,11 @@
  
  int main (int argc, char **argv)
  {
@@ -16,12 +16,12 @@
  	size_t utf8_real_len = strlen (utf8);
  
  #ifdef HAVE_GNU_GET_LIBC_VERSION
-@@ -5969,7 +5969,7 @@
+@@ -6090,7 +6090,7 @@
  		exit (1);
  #endif
  
 -	cd = iconv_open ("UTF-8", "ISO-2022-JP");
 +	cd = iconv_open ("UTF-8", "EUC-KR");
- 	if (!cd)
- 		exit (1);
- 	if (iconv (cd, &jp, &jp_len, &trans, &utf8_len) == -1 || jp_len != 0)
+ 	if (cd == (iconv_t) -1) {
+ 		/* ÇÑ±Û solaris */
+ 		cd = iconv_open ("ko_KR-UTF-8", "ko_KR-euc");

@@ -1,11 +1,11 @@
---- Makefile.in.orig	Tue Sep 11 19:00:32 2001
-+++ Makefile.in	Tue Sep 11 19:00:48 2001
-@@ -151,7 +151,7 @@
- install-full :: $(BINNAME)$x resize$x
+--- Makefile.in.orig	Tue Feb 18 18:56:34 2003
++++ Makefile.in	Tue Feb 18 18:56:45 2003
+@@ -180,7 +180,7 @@
  	$(SHELL) $(srcdir)/sinstall.sh "$(INSTALL_PROGRAM)" $(BINNAME)$x  @XTERM_PATH@ $(BINDIR)/$(binary_xterm)
  	$(INSTALL_PROGRAM) -s -m  755 resize$x $(BINDIR)/$(binary_resize)
--	$(INSTALL_PROGRAM) -m 444 keyboard/*.kbd $(prefix)/share/hangul_keyboard
-+	$(INSTALL_DATA) -m 444 keyboard/*.kbd $(prefix)/share/hangul_keyboard
+ 	$(INSTALL_DATA) -m 444 $(srcdir)/keyboard/*.kbd $(srcdir)/keyboard/*.map $(KEYBDIR)
+-	$(INSTALL_PROGRAM) -m  755 $(srcdir)/uxterm $(BINDIR)/$(binary_uxterm)
++	$(INSTALL_SCRIPT) -m  755 $(srcdir)/uxterm $(BINDIR)/$(binary_uxterm)
  
  install \
  install-man \
