@@ -3877,6 +3877,7 @@ libtecla	ports/devel/libtecla
 libtelnet	src/lib/libtelnet
 libtermcap	src/lib/libtermcap
 libtool		ports/devel/libtool
+libtre		ports/textproc/libtre
 libudbc		ports/databases/libudbc
 libufs		src/lib/libufs
 libungif	ports/graphics/libungif
