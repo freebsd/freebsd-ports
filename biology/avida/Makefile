@@ -6,42 +6,50 @@
 #
 
 PORTNAME=	avida
-PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTVERSION=	2.0b7
 CATEGORIES=	biology
-MASTER_SITES=	http://dllab.caltech.edu/avida/files/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Avida is an auto-adaptive genetic system designed for ALife research
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.[[:alnum:]]+$//}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-viewer --enable-standard-prefix --prefix=${PREFIX} --datadir=${PREFIX}/share/${PORTNAME}
+CONFIGURE_ARGS=	--enable-standard-prefix --datadir=${DATADIR} --enable-viewer
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_PERL5_BUILD=	yes
+USE_REINPLACE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile (bad C++ code)"
+.if !defined(WITHOUT_QT)
+USE_QT_VER=		3
+CONFIGURE_ARGS+=	--enable-qt-viewer
+CONFIGURE_ENV+=	QTDIR="${LOCALBASE}"
+MAKE_ENV+=	QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"		\
+		QTDIR="${X11BASE}"
+PLIST_SUB=	QT=""
+.else
+PLIST_SUB=	QT="@comment "
 .endif
 
-post-patch:
-	# Change source/defs.hh prefix and port name.
-	@ ${MV} ${WRKSRC}/source/defs.hh ${WRKSRC}/source/defs.hh.presed
-	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${WRKSRC}/source/defs.hh.presed \
-	| ${SED} -e 's#%%PORTNAME%%#${PORTNAME}#g' \
-	> ${WRKSRC}/source/defs.hh
+DIR2FIX=	source/main/functional_testsuites/default.md5sum/genesis	\
+		source/main/functional_testsuites/default.tail/genesis		\
+		source/main/functional_testsuites/tedious.tail/genesis		\
+		source/qt-viewer/setup_genesis.cc source/support/genesis	\
+		source/support/genesis.4stack source/main/config.cc source/defs.hh
 
-	# Change source/support/genesis prefix and port name.
-	@ ${MV} ${WRKSRC}/source/support/genesis ${WRKSRC}/source/support/genesis.presed
-	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${WRKSRC}/source/support/genesis.presed \
-	| ${SED} -e 's#%%PORTNAME%%#${PORTNAME}#g' \
-	> ${WRKSRC}/source/support/genesis
+pre-configure:
+.for src in ${DIR2FIX}
+	@${REINPLACE_CMD} -e "s|../work/|${DATADIR}/|" ${WRKSRC}/${src}
+.endfor
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e "s|SUBDIRS = source doc|SUBDIRS = source|"		\
+		${WRKSRC}/Makefile.in
+.endif
 
-	# Change source/support/genesis.heads prefix and port name.
-	@ ${MV} ${WRKSRC}/source/support/genesis.heads ${WRKSRC}/source/support/genesis.heads.presed
-	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${WRKSRC}/source/support/genesis.heads.presed \
-	| ${SED} -e 's#%%PORTNAME%%#${PORTNAME}#g' \
-	> ${WRKSRC}/source/support/genesis.heads
+.if !defined(WITHOUT_QT)
+post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/work/qt-viewer ${PREFIX}/bin
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
