@@ -132,6 +132,7 @@
     SUBDIR += help2man
     SUBDIR += heyu
     SUBDIR += histring
+    SUBDIR += hotkeys
     SUBDIR += hulgalugha
     SUBDIR += instant-server
     SUBDIR += instant-workstation

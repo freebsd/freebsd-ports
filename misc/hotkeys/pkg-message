@@ -1,0 +1,16 @@
+
+=======================================================================
+ At this current stage CDROM & APM support has been disabled.
+ I will need to remap the linux CDROM cdrom.h code to work with 
+ FreeBSD's cdio.h library
+=======================================================================
+
+Rename ${PREFIX}/etc/hotkeys.conf.default to ${PREFIX}/etc/hotkeys.conf
+and edit to setup your keyboard settings
+
+ -- OR --
+
+Copy to ~/.hotkeys/hotkeys.conf and edit config there
+
+=======================================================================
+
