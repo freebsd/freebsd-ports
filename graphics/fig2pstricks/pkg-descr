@@ -1,0 +1,7 @@
+fig2pstricks is a command-line driven application to convert a fig (or xfig)
+version 3.2 file to PSTricks codes. It is especially useful to convert
+graphics created by R's xfig() device, but it can be used with any fig files.
+When used together with LaTeX, dvips, ps2pdf, and Prosper, it can also create
+a PDF slide show with great ease.
+
+WWW: http://www.vuw.ac.nz/staff/chirok_han/fig2pstricks/

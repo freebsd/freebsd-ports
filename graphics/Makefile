@@ -90,6 +90,7 @@
     SUBDIR += exiv2
     SUBDIR += fbm
     SUBDIR += feh
+    SUBDIR += fig2pstricks
     SUBDIR += figurine
     SUBDIR += flashplayer
     SUBDIR += flasm
