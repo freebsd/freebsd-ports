@@ -13,6 +13,8 @@ DISTNAME=	Mosaic-src-2.7b5
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A World Wide Web browser
+DEPRECATED=	"does not build on FreeBSD-current\; mostly of historical interest"
+EXPIRATION_DATE=	"April 09, 2004"
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png

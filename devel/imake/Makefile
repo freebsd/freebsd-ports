@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Imake and other utilities from XFree86
+DEPRECATED=	"no longer needed by any FreeBSD port"
+EXPIRATION_DATE=	"March 09, 2004"
 
 MANUAL_PACKAGE_BUILD=	installs/removes files also in the XFree86 port
 

@@ -16,6 +16,8 @@ DISTNAME=	orbit-python-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	Python bindings for ORBit, a CORBA 2.2-compliant ORB
+DEPRECATED=	"fails to fetch\; use py-orbit2 instead"
+EXPIRATION_DATE=	"April 09, 2004"
 
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit
 

@@ -19,6 +19,8 @@ EXTRACT_ONLY=	cv97r${PORTVERSION:S/.//g}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A development library of VRML97/2.0 applications
+DEPRECATED=	"current version no longer available from mastersite\; port is very old"
+EXPIRATION_DATE=	"April 09, 2004"
 
 DIST_SUBDIR=	${PORTNAME}
 USE_MESA=	yes

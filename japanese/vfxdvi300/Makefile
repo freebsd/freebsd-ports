@@ -26,6 +26,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	mita@FreeBSD.org
 COMMENT=	DVI Previewer for X. + Japanese patch + vector font support
+DEPRECATED=	"has fetch problems\; does not build\; see PR ports/62074"
+EXPIRATION_DATE=	"April 09, 2004"
 
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 RUN_DEPENDS=	${LOCALBASE}/lib/fonts/pk${RESOLUTION}:${PORTSDIR}/print/pkfonts${RESOLUTION}

@@ -17,6 +17,9 @@ MASTER_SITE_SUBDIR=	kris
 
 MAINTAINER=	lo_gafet@users.sourceforge.net
 COMMENT=	Open Application Builder (code generator) for the GTK and/or GNOME
+DEPRECATED=	"mastersite has disappeared\; maintainer has not responded to queries"
+EXPIRATION_DATE=	"April 09, 2004"
+
 
 PLIST_FILES=	bin/glg
 USE_REINPLACE=	yes

@@ -13,6 +13,8 @@ DISTNAME=	inflex-0.1.5c
 
 MAINTAINER=	jus@security.za.net
 COMMENT=	Inbound/outbound antivirus e-mail scanner for sendmail servers
+DEPRECATED=	"no longer available in original form\; maintainer says to deprecate"
+EXPIRATION_DATE=	"April 09, 2004"
 
 RUN_DEPENDS=	${LOCALBASE}/bin/metamail:${PORTSDIR}/mail/metamail \
 		${LOCALBASE}/bin/formail:${PORTSDIR}/mail/procmail
