@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- scintilla-control/Makefile.in	2002/08/04 21:44:30	1.1
++++ scintilla-control/Makefile.in	2002/08/04 21:45:56
+@@ -198,7 +198,7 @@
+ test_scintilla_LDFLAGS = 
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+-CCLD = $(CC)
++CCLD = $(CXX)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
+ DATA =  $(oaf_DATA) $(ui_DATA)
+ 

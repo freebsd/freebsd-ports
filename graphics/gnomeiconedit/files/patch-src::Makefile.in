@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- src/Makefile.in	2001/12/19 10:47:52	1.1
-+++ src/Makefile.in	2001/12/19 10:54:53
+--- src/Makefile.in.orig	Mon Aug  5 00:12:19 2002
++++ src/Makefile.in	Mon Aug  5 00:13:01 2002
 @@ -118,7 +118,7 @@
  
  bin_PROGRAMS = gnome-iconedit $(COMPONENT)
  
 -INCLUDES =   -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"  -DGNOMEDATADIR=\""$(datadir)"\"  -I$(includedir)  -I$(top_srcdir)  -I$(top_srcdir)/src/widgets  $(GNOME_INCLUDEDIR)
-+INCLUDES =   $(GDK_PIXBUF_CFLAGS)	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"  -DGNOMEDATADIR=\""$(datadir)"\"  -I$(includedir)  -I$(top_srcdir)  -I$(top_srcdir)/src/widgets  $(GNOME_INCLUDEDIR)
++INCLUDES =   $(GDK_PIXBUF_CFLAGS) -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"  -DGNOMEDATADIR=\""$(datadir)"\"  -I$(includedir)  -I$(top_srcdir)  -I$(top_srcdir)/src/widgets  $(GNOME_INCLUDEDIR)
  
  
  CORBA_GENERATED =  	Iconedit.h			Iconedit-stubs.c		Iconedit-skels.c		Iconedit-common.c	
