@@ -3,7 +3,7 @@
 # Date Created:		29 May 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.12 1998/10/20 03:35:03 asami Exp $
+# $Id: Makefile,v 1.13 1998/12/09 10:43:09 vanilla Exp $
 #
 
 DISTNAME=	current
@@ -16,9 +16,9 @@ MAINTAINER=	vanilla@FreeBSD.ORG
 
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
-WRKSRC=		${WRKDIR}/vtcl-1.2.0
+WRKSRC=		${WRKDIR}/${PKGNAME}
 NO_BUILD=	yes
-DIST_SUBDIR=	vtcl
+DIST_SUBDIR=	${PKGNAME}
 
 do-install:
 	@ ${MKDIR} ${PREFIX}/lib/vtcl/images
