@@ -8077,6 +8077,7 @@ worker		ports/x11-fm/worker
 workman		ports/audio/workman
 workplace	ports/x11-fm/workplace
 wots		ports/sysutils/wots
+wping		ports/net/wping
 wprint		ports/print/wprint
 wrapper		ports/x11/wrapper
 wscan		ports/x11/wscan
