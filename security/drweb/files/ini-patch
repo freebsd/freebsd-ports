@@ -1,5 +1,5 @@
---- drweb32.ini-tmpl.orig	Mon Oct 15 19:26:56 2001
-+++ drweb32.ini-tmpl	Mon Oct 15 19:30:53 2001
+--- drweb32.ini-tmpl.orig	Fri Jan  4 09:31:39 2002
++++ drweb32.ini-tmpl	Fri Jan  4 09:32:40 2002
 @@ -5,7 +5,7 @@
  
  [BSD]
@@ -9,26 +9,28 @@
  RenameFilesTo = #??
  FilesTypes = EXE,COM,SYS,OV?,BAT,BIN,DRV,PRG,BOO,SCR,CMD,VXD,386,DLL,FON,DO?
  FilesTypes = XL?,WIZ,RTF,CL*,HT*,VB*,JS*,INF,AR?,ZIP,R??,PP?,OBJ,LIB,HLP,MD?
-@@ -37,7 +37,7 @@
+@@ -30,7 +30,7 @@
+ ScanSubDirectories = Yes
  PromptOnAction = No
- PromptFloppy = No
  LimitLog = No
 -MaxLogSize = 512
 +;MaxLogSize = 512
- OutputMode = Color
+ OutputMode = Terminal
  FollowLinks = No
  
-@@ -48,21 +48,23 @@
- FilesTypes = INI,MBR,IMG,CSC,CPL,MBP,SHS,SHB,PIF
+@@ -38,22 +38,24 @@
+ Key = "__INSTALL_DIR__/drwebd.key"
  LogTime = Yes
  LogFileName = "syslog"
 +PidFile = "__INSTALL_DIR__/run/drwebd.pid"
  ;BusyFile = "/var/run/drwebd.bsy"
 -SocketMode = TCP
 -;SocketMode = Unix
+-;SocketAccess 0666
 +;SocketMode = TCP
 +SocketMode = Unix
 +SocketFile = "__INSTALL_DIR__/run/drwebd.sock"
++SocketAccess 0660
  DaemonPort = 3000
  SocketTimeout = 40
  SocketReuseAddr = Yes
@@ -46,3 +48,11 @@
  ;UserID = 
  ;GroupID = 
  ScanFiles = All
+@@ -63,5 +65,5 @@
+ SyslogPriority = "Alert"
+ 
+ FilterRule X-Mailer ".*Mass.*Sender.*" Reject
+-FilterRule To ".*undisclosed.*recipient.*" Reject
+-FilterRule Subject ".*free.*xxx.*" Reject
++;FilterRule To ".*undisclosed.*recipient.*" Reject
++;FilterRule Subject ".*free.*xxx.*" Reject

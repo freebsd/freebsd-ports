@@ -6,32 +6,38 @@
 #
 
 PORTNAME=	drweb
-PORTVERSION=    4.26c
-PORTREVISION=	2
+PORTVERSION=    4.27
 CATEGORIES=	security
-MASTER_SITES=	http://www.drweb.ru/ftp/web_pub/
-DISTNAME=	${PORTNAME}d-${PORTVERSION}-freebsd4
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=   http://www.drweb.ru/ftp/web_pub/ \
+		http://www.drweb.ru/ftp/update_free/freebsd4/
+DISTFILES=      ${MAIN_NAME}.tgz \
+		drwebd_4.27_freebsd4_update.tgz
+EXTRACT_ONLY=   ${MAIN_NAME}.tgz
 
 MAINTAINER=	anton@urc.ac.ru
 
 NO_BUILD=	YES
 
+WRKSRC=         ${WRKDIR}/${MAIN_NAME}
+
 # Needed for update.pl
 RUN_DEPENDS=    ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/String/CRC32.pm:${PORTSDIR}/devel/p5-String-CRC32
 
+MAIN_NAME=      ${PORTNAME}d-${PORTVERSION}-freebsd4
 DRWEB_PREFIX=	${PREFIX}/${PORTNAME}
 
 do-install:
 	-@install -dv -o ${BINOWN} -g ${BINGRP} ${DRWEB_PREFIX}
 	@cd ${DRWEB_PREFIX}; ${RM} -f drw*.txt drw*.vdb drweb drwebd
-	${TAR} -xzf ${WRKSRC}/${DISTNAME}.tar.gz -C ${DRWEB_PREFIX} \
+	${TAR} -xzf ${WRKSRC}/${MAIN_NAME}.tar.gz -C ${DRWEB_PREFIX} \
 		--exclude *.ini --exclude *.key
-	${TAR} -xzOf ${WRKSRC}/${DISTNAME}.tar.gz drweb32.ini \
+	${TAR} -xzf ${DISTDIR}/drwebd_4.27_freebsd4_update.tgz -C ${DRWEB_PREFIX} \
+		--exclude README
+	${TAR} -xzOf ${WRKSRC}/${MAIN_NAME}.tar.gz drweb32.ini \
 		> ${DRWEB_PREFIX}/drweb32.ini-tmpl
-	${TAR} -xzOf ${WRKSRC}/${DISTNAME}.tar.gz drweb.key \
+	${TAR} -xzOf ${WRKSRC}/${MAIN_NAME}.tar.gz drweb.key \
 		> ${DRWEB_PREFIX}/drweb.key-dist
-	${TAR} -xzOf ${WRKSRC}/${DISTNAME}.tar.gz drwebd.key \
+	${TAR} -xzOf ${WRKSRC}/${MAIN_NAME}.tar.gz drwebd.key \
 		> ${DRWEB_PREFIX}/drwebd.key-dist
 	cd ${DRWEB_PREFIX}; \
 		${PATCH} -s < ${FILESDIR}/ini-patch && \
@@ -52,8 +58,6 @@ do-install:
 		${CP} ${DRWEB_PREFIX}/drwebd.key-dist \
 		      ${DRWEB_PREFIX}/drwebd.key; \
 	fi
-	cd ${DRWEB_PREFIX}/update; \
-		${PATCH} -s < ${FILESDIR}/update-patch && ${RM} update.pl.orig
 
 post-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} POST-INSTALL

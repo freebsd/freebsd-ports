@@ -1,19 +1,15 @@
 drweb/CHANGES
 drweb/README
 drweb/README.RUS
-drweb/clients/Changes
 drweb/clients/cgp/README
 drweb/clients/cgp/readme.cgp
 drweb/clients/cgp/readme.cgp.rus
 drweb/clients/demo/drwebdc-demo.c
 drweb/clients/demo/drwebdc-demo.h
-drweb/clients/demo/drwebdc-demo.pl
 drweb/clients/demo/drwebdc-ex1.c
 drweb/clients/demo/drwebdc-ex2.c
 drweb/clients/demo/drwebdc-ex3.c
-drweb/clients/demo/drwebdc-lib.pl
 drweb/clients/demo/drwebdc-tools.c
-drweb/clients/demo/eicar.txt
 drweb/clients/demo/make-all.sh
 drweb/clients/drwebdc/ChangeLog
 drweb/clients/drwebdc/Makefile.aix
@@ -92,6 +88,8 @@ drweb/doc/drweb-ini
 drweb/doc/drweb-ini.rus
 drweb/doc/drwebd-api
 drweb/doc/drwebd-api.rus
+drweb/doc/history.txt
+drweb/doc/readme.eicar
 drweb/drweb
 @unexec if [ -f %D/drweb/drweb.key ] && cmp -s %D/drweb/drweb.key %D/drweb/drweb.key-dist; then rm -f %D/drweb/drweb.key; fi
 drweb/drweb.key-dist
@@ -125,7 +123,7 @@ drweb/update/update.pl
 @dirrm drweb/clients/sendmail
 @dirrm drweb/clients
 @dirrm drweb/doc
-@dirrm drweb/infected.!!!
+@dirrm drweb/infected
 @dirrm drweb/run
 @dirrm drweb/update
 @dirrm drweb
