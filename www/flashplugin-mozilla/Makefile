@@ -16,10 +16,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	llwang@infor.org
 COMMENT=	A GPL standalone Flash (TM) plugin for Mozilla web browser
 
-BROKEN=		"Broken pkg-plist"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-17
-
 LIB_DEPENDS=	flash.0:${PORTSDIR}/graphics/libflash
 RUN_DEPENDS?=	mozilla:${PORTSDIR}/www/mozilla
 
@@ -30,6 +26,7 @@ PLUGIN_DIR?=	lib/browser_plugins
 PLIST_SUB+=	PLUGIN_DIR=${PLUGIN_DIR}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/npflash.so ${X11BASE}/${PLUGIN_DIR}
+	@${MKDIR} ${PREFIX}/${PLUGIN_DIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/npflash.so ${PREFIX}/${PLUGIN_DIR}
 
 .include <bsd.port.mk>
