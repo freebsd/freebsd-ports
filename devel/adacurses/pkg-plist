@@ -93,6 +93,18 @@ lib/adacurses/terminal_interface-curses-text_io.ali
 lib/adacurses/terminal_interface-curses.adb
 lib/adacurses/terminal_interface-curses.ads
 lib/adacurses/terminal_interface-curses.ali
+lib/adacurses/terminal_interface-curses-trace.ads
+lib/adacurses/terminal_interface-curses-terminfo.ads
+lib/adacurses/terminal_interface-curses-termcap.ads
+lib/adacurses/terminal_interface-curses-putwin.ads
+lib/adacurses/terminal_interface-curses-trace.ali
+lib/adacurses/terminal_interface-curses-terminfo.ali
+lib/adacurses/terminal_interface-curses-termcap.ali
+lib/adacurses/terminal_interface-curses-putwin.ali
+lib/adacurses/terminal_interface-curses-trace.adb
+lib/adacurses/terminal_interface-curses-terminfo.adb
+lib/adacurses/terminal_interface-curses-termcap.adb
+lib/adacurses/terminal_interface-curses-putwin.adb
 lib/adacurses/terminal_interface.ads
 lib/adacurses/terminal_interface.ali
 @dirrm lib/adacurses
