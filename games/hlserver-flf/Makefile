@@ -6,15 +6,19 @@
 #
 
 PORTNAME=	flf
-PORTVERSION=	1.6
-MASTER_SITES=	http://www.flfmod.net/site/info/files/ \
-		http://flf.spies.com/files/cur_release/ \
+PORTVERSION=	1.7a
+MASTER_SITES=	http://www.flfmod.com/download/ \
+		http://www.bannie.net/bannie/downloads/mods/flfmod/ \
 		http://mirror.nuclearfallout.net:113/ \
-		http://nephilim.net/files/
-DISTNAME=	frontline${PORTVERSION:S/.//}_linux
+		http://nephilim.net/files/ \
+		ftp://www.fragland.net/halflife/mods/flf/ \
+		ftp://ftp.daddeln.de/pub/hostings/gw.de/other/
+DISTFILES=	frontline17_linux${EXTRACT_SUFX} \
+		frontline17a_up_linux${EXTRACT_SUFX}
 
 WRKSRC=		${WRKDIR}/frontline
 USE_ZIP=	yes
+EXTRACT_BEFORE_ARGS=	-o -qq
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
