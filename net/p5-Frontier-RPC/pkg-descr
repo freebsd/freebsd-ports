@@ -1,0 +1,16 @@
+Frontier::RPC implements UserLand Software's XML RPC (Remote Procedure
+Calls using Extensible Markup Language).  Frontier::RPC includes both a
+client module for making requests to a server and a daemon module for
+implementing servers.  Frontier::RPC uses RPC2 format messages.
+
+RPC client connections are made by creating instances of Frontier::Client
+objects that record the server name, and then issuing `call' requests that
+send a method name and parameters to the server.
+
+RPC daemons are mini-HTTP servers (using HTTP::Daemon from the `libwww'
+Perl module).  Daemons are created by first defining the procedures you
+want to make available to RPC and then passing a list of those procedures
+as you create the Frontier::Daemon object.
+
+The Frontier::RPC2 module implements the encoding and decoding of XML RPC
+requests using the XML::Parser Perl module.
