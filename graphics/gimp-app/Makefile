@@ -7,6 +7,7 @@
 
 PORTNAME=	gimp
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -144,6 +145,7 @@ PLIST_SUB+=		GNOMEPANEL:=""
 GNOME_ENABLED=		yes
 .else
 PLIST_SUB+=		GNOMEPANEL:="@comment "
+CONFIGURE_ENV+=		GIMP_THREAD_LIBS=${PTHREAD_LIBS}
 .endif
 
 .if ${HAVE_GNOME:Mlibgtkhtml}!="" || defined(WITH_HTML_HELP_BROWSER)
