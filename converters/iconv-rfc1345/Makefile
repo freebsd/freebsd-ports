@@ -8,7 +8,7 @@
 PORTNAME=	iconv-rfc1345
 PORTVERSION=	2.0
 CATEGORIES=	converters
-MASTER_SITES=	http://www.dante.net/staff/konstantin/FreeBSD/iconv/
+MASTER_SITES=	http://archive.dante.net/staff/konstantin/FreeBSD/iconv/
 
 MAINTAINER=	Konstantin.Chuguev@dante.org.uk
 COMMENT=	Additional charset modules for the iconv library (from RFC1345)
