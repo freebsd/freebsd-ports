@@ -76,6 +76,9 @@
 %%RUBY_DOCDIR%%/programmingruby/html/visible_space.gif
 %%RUBY_DOCDIR%%/programmingruby/html/web.html
 %%RUBY_DOCDIR%%/programmingruby/html/win32.html
+%%RUBY_DOCDIR%%/programmingruby/index.html
+%%RUBY_DOCDIR%%/programmingruby/pr_idx.html
+%%RUBY_DOCDIR%%/programmingruby/pr_toc.html
 %%RUBY_DOCDIR%%/programmingruby/xml/builtins.xml
 %%RUBY_DOCDIR%%/programmingruby/xml/classes.xml
 %%RUBY_DOCDIR%%/programmingruby/xml/ext_ruby.xml

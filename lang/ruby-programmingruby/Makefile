@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	programmingruby
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	lang ruby
-MASTER_SITES=	http://www.rubycentral.com/downloads/files/
+MASTER_SITES=	http://dev.rubycentral.com/downloads/files/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ProgrammingRuby-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
