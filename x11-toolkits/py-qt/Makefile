@@ -8,7 +8,9 @@ PORTNAME=	qt
 PORTVERSION=	3.13
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyQt/
+MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyQt/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=lofi
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
 
