@@ -29,6 +29,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype1/freetype \
 CONFIGURE_ARGS=	--with-fontdir="${LOCALBASE}/share/ghostscript/fonts" \
 		--with-libungif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|CXXFLAGS="-O2"|CXXFLAGS="$$CXXFLAGS"|g ; \
 		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
@@ -37,4 +43,4 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-I/usr/include/freetype||g' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
