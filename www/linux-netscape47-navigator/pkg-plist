@@ -138,7 +138,9 @@ bin/%%BROWSER%%-%%BROWSER_VER%%
 %%NSUBDIR%%/nethelp/picsfail.htm
 %%NSUBDIR%%/nethelp/picsfail.jar
 %%NSUBDIR%%/netscape-dynMotif
+%%NSUBDIR%%/plugins/ShockwaveFlash.class
 %%NSUBDIR%%/plugins/cpPack1.jar
+%%NSUBDIR%%/plugins/libflashplayer.so
 %%NSUBDIR%%/plugins/libnullplugin.so
 %%NSUBDIR%%/registry
 %%NSUBDIR%%/vreg

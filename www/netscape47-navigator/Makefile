@@ -6,6 +6,6 @@
 #
 
 BROWSER=	navigator
-INFILE_HEAD=	'Navigator,4.75.0.20000814'
+INFILE_HEAD=	'Navigator,4.76.0.20001006'
 
 .include "${.CURDIR}/../netscape47-communicator/Makefile"
