@@ -1,0 +1,11 @@
+--- tab/Makefile.in.orig	Sun Dec 23 14:36:49 2001
++++ tab/Makefile.in	Sun Dec 23 14:40:13 2001
+@@ -73,7 +73,7 @@
+ YAZVERSION = @YAZVERSION@
+ yazconfig = @yazconfig@
+ 
+-tabdatadir = $(pkgdatadir)/tab
++tabdatadir = $(datadir)/@PACKAGE@/tab
+ 
+ tabdata_DATA = default.idx hci.flt mail.flt news.flt  numeric.chr nwi.flt refer.flt scan.chr sgml.flt soif.flt  string.chr urx.chr usmarc.flt
+ 
