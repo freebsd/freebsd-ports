@@ -1,38 +1,10 @@
---- manage.c.orig	Sun Feb 16 11:23:59 1997
-+++ manage.c	Sun Feb 16 11:25:13 1997
-@@ -8,7 +8,11 @@
+--- manage.c.orig	Mon Jun  9 19:41:29 1997
++++ manage.c	Mon Jun  9 19:41:41 1997
+@@ -9,7 +9,6 @@
  
  #include <stdio.h>
  #include <stdlib.h>
-+
-+#ifndef __FreeBSD__
- #include <malloc.h>
-+#endif
-+
+-#include <malloc.h>
  #include <X11/Xlib.h>
  #include <X11/Xutil.h>
  
---- key.h.orig	Sun Feb 16 12:55:09 1997
-+++ key.h	Sun Feb 16 12:55:22 1997
-@@ -14,8 +14,8 @@
- #define LeftKey  XK_Left
- #define RightKey XK_Right
- 
--/*#define ShotKey  XK_Shift_L*/
--#define ShotKey  XK_z
-+#define ShotKey  XK_Shift_L
-+/*#define ShotKey  XK_z*/
- 
- #define SpeedUPKey   XK_a
- #define SpeedDOWNKey XK_s
---- scorefile.txt.orig	Sun Feb 16 13:20:15 1997
-+++ scorefile.txt	Sun Feb 16 13:20:41 1997
-@@ -4,7 +4,7 @@
- 80000 1 7 ryu
- 70000 1 6 zuno
- 60000 1 6 draemon
-+57600 1 3 andreas
- 50000 1 3 hoge
- 40000 1 5 yoko
- 30000 1 5 tsuyoshi
--20000 1 4 tama
