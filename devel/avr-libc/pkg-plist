@@ -9,6 +9,8 @@ avr/include/avr/io2313.h
 avr/include/avr/io2323.h
 avr/include/avr/io2333.h
 avr/include/avr/io2343.h
+avr/include/avr/io43u32x.h
+avr/include/avr/io43u35x.h
 avr/include/avr/io4414.h
 avr/include/avr/io4433.h
 avr/include/avr/io4434.h
@@ -16,6 +18,7 @@ avr/include/avr/io76c711.h
 avr/include/avr/io8515.h
 avr/include/avr/io8534.h
 avr/include/avr/io8535.h
+avr/include/avr/io86r401.h
 avr/include/avr/ioat94k.h
 avr/include/avr/iom103.h
 avr/include/avr/iom128.h
@@ -62,6 +65,9 @@ avr/include/string.h
 avr/include/timer.h
 avr/include/twi.h
 avr/include/wdt.h
+avr/lib/avr3/crt43320.o
+avr/lib/avr3/crt43355.o
+avr/lib/avr3/crt76711.o
 avr/lib/avr3/crtm103.o
 avr/lib/avr3/libc.a
 avr/lib/avr3/libm.a
@@ -94,6 +100,7 @@ avr/lib/avr5/libprintf_flt.a
 avr/lib/avr5/libprintf_min.a
 avr/lib/avr5/libscanf_flt.a
 avr/lib/avr5/libscanf_min.a
+avr/lib/crt86401.o
 avr/lib/crtc8534.o
 avr/lib/crts1200.o
 avr/lib/crts2313.o
