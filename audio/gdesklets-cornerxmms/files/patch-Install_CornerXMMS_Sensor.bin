@@ -1,0 +1,19 @@
+--- Install_CornerXMMS_Sensor.bin.orig	Mon Dec 22 20:12:09 2003
++++ Install_CornerXMMS_Sensor.bin	Mon Dec 22 20:13:06 2003
+@@ -75,15 +75,9 @@
+     else:
+         cmd = "mkdir -p %(destination)s; cd %(destination)s; " \
+               "LANG=C tar -xzvf %(tmp)s 2>&1"
+-    fail, out = commands.getstatusoutput(cmd % vars())
++    commands.getstatusoutput(cmd % vars())
+     os.unlink(tmp)
+     
+-    if (fail):
+-        if (no_message): print ERROR_TAR + out
+-        else: message(ERROR_TAR + out, "error")
+-        sys.exit(1)
+-
+-    print out
+     if (not list_only):
+         if (no_message): print SUCCESS
+         else: message(SUCCESS, "info")
