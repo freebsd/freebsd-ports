@@ -1,0 +1,75 @@
+--- doc/es/mc.1.in.orig	Wed Feb  5 21:54:31 2003
++++ doc/es/mc.1.in	Tue Jun 15 03:15:09 2004
+@@ -1361,8 +1361,10 @@
+ 	od -c %f
+ 
+ B	Edita un informe de errores y lo envía al superusuario
+-	vi /tmp/mail.$$
+-	mail -s "Error Midnight Commander" root < /tmp/mail.$$
++	I=`mktemp ${MC_TMPDIR:-/tmp}/mail.XXXXXX` || exit 1
++	vi $I
++	mail -s "Error Midnight Commander" root < $I
++	rm -f $I
+ 
+ M	Lee al correo
+ 	emacs -f rmail
+--- doc/hu/mc.1.in.orig	Thu Jan 16 16:30:55 2003
++++ doc/hu/mc.1.in	Tue Jun 15 03:15:09 2004
+@@ -1381,8 +1381,10 @@
+         od -c %f
+ 
+ B       A hiba leírás szerkesztése és elküldése a root-nak
+-        vi /tmp/mail.$$
+-        mail -s "Midnight Commander bug" root < /tmp/mail.$$
++	I=`mktemp ${MC_TMPDIR:-/tmp}/mail.XXXXXX` || exit 1
++        vi $I
++        mail -s "Midnight Commander bug" root < $I
++	rm -f $I
+ 
+ M       Levél olvasás
+         emacs -f rmail
+--- doc/it/mc.1.in.orig	Sun Jan 19 23:11:06 2003
++++ doc/it/mc.1.in	Tue Jun 15 03:15:09 2004
+@@ -1379,8 +1379,10 @@
+ 	od -c %f
+ 
+ B	Modifica un rapporto bachi e lo spedisce a root
+-	vi /tmp/mail.$$
+-	mail -s "Midnight Commander bug" root < /tmp/mail.$$
++	I=`mktemp ${MC_TMPDIR:-/tmp}/mail.XXXXXX` || exit 1
++	vi $I
++	mail -s "Midnight Commander bug" root < $I
++	rm -f $I
+ 
+ M	Legge la posta
+ 	emacs -f rmail
+--- doc/mc.1.in.orig	Wed Feb  5 21:54:31 2003
++++ doc/mc.1.in	Tue Jun 15 03:15:09 2004
+@@ -1385,8 +1385,10 @@
+ 	od -c %f
+ 
+ B	Edit a bug report and send it to root
+-	vi /tmp/mail.$$
+-	mail -s "Midnight Commander bug" root < /tmp/mail.$$
++	I=`mktemp ${MC_TMPDIR:-/tmp}/mail.XXXXXX` || exit 1
++	vi $I
++	mail -s "Midnight Commander bug" root < $I
++	rm -f $I
+ 
+ M	Read mail
+ 	emacs -f rmail
+--- doc/ru/mc.1.in.orig	Tue Feb  4 03:59:14 2003
++++ doc/ru/mc.1.in	Tue Jun 15 03:15:09 2004
+@@ -1557,8 +1557,10 @@
+ 	od -c %f
+ 
+ B	Edit a bug report and send it to root
+-	vi /tmp/mail.$$
+-	mail -s "Midnight Commander bug" root < /tmp/mail.$$
++	I=`mktemp ${MC_TMPDIR:-/tmp}/mail.XXXXXX` || exit 1
++	vi $I
++	mail -s "Midnight Commander bug" root < $I
++	rm -f $I
+ 
+ M	Read mail
+ 	emacs -f rmail
