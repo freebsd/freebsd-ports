@@ -1,11 +1,132 @@
---- configure.orig	Wed May 29 22:40:42 2002
-+++ configure	Sun Jun  2 22:34:17 2002
-@@ -2505,7 +2505,7 @@
+--- configure	Sat Jun 15 18:55:57 2002
++++ configure	Sat Jun 15 19:02:10 2002
+@@ -2172,80 +2172,6 @@
+   echo "$ac_t""no" 1>&6
+ fi
  
- cat >> $CONFIG_STATUS <<EOF
+-SMPATH=`echo ../sendmail-*/obj.*/libsmutil`
+-# Extract the first word of "libsmutil.a", so it can be a program name with args.
+-set dummy libsmutil.a; ac_word=$2
+-echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+-echo "configure:2180: checking for $ac_word" >&5
+-if eval "test \"`echo '$''{'ac_cv_path_LIBSMUTIL'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  case "$LIBSMUTIL" in
+-  /*)
+-  ac_cv_path_LIBSMUTIL="$LIBSMUTIL" # Let the user override the test with a path.
+-  ;;
+-  ?:/*)			 
+-  ac_cv_path_LIBSMUTIL="$LIBSMUTIL" # Let the user override the test with a dos path.
+-  ;;
+-  *)
+-  IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS=":"
+-  ac_dummy="$MILTERLIB:$SMPATH:/usr/local/lib:/lib:/usr/lib:/usr/lib/libsmutil:/usr/lib/libmilter"
+-  for ac_dir in $ac_dummy; do 
+-    test -z "$ac_dir" && ac_dir=.
+-    if test -f $ac_dir/$ac_word; then
+-      ac_cv_path_LIBSMUTIL="$ac_dir/$ac_word"
+-      break
+-    fi
+-  done
+-  IFS="$ac_save_ifs"
+-  test -z "$ac_cv_path_LIBSMUTIL" && ac_cv_path_LIBSMUTIL="no"
+-  ;;
+-esac
+-fi
+-LIBSMUTIL="$ac_cv_path_LIBSMUTIL"
+-if test -n "$LIBSMUTIL"; then
+-  echo "$ac_t""$LIBSMUTIL" 1>&6
+-else
+-  echo "$ac_t""no" 1>&6
+-fi
+-
+-SMPATH=`echo ../sendmail-*/obj.*/libsm`
+-# Extract the first word of "libsm.a", so it can be a program name with args.
+-set dummy libsm.a; ac_word=$2
+-echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+-echo "configure:2217: checking for $ac_word" >&5
+-if eval "test \"`echo '$''{'ac_cv_path_LIBSM'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  case "$LIBSM" in
+-  /*)
+-  ac_cv_path_LIBSM="$LIBSM" # Let the user override the test with a path.
+-  ;;
+-  ?:/*)			 
+-  ac_cv_path_LIBSM="$LIBSM" # Let the user override the test with a dos path.
+-  ;;
+-  *)
+-  IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS=":"
+-  ac_dummy="$MILTERLIB:$SMPATH:/usr/local/lib:/lib:/usr/lib:/usr/lib/libsm:/usr/lib/libmilter"
+-  for ac_dir in $ac_dummy; do 
+-    test -z "$ac_dir" && ac_dir=.
+-    if test -f $ac_dir/$ac_word; then
+-      ac_cv_path_LIBSM="$ac_dir/$ac_word"
+-      break
+-    fi
+-  done
+-  IFS="$ac_save_ifs"
+-  test -z "$ac_cv_path_LIBSM" && ac_cv_path_LIBSM="no"
+-  ;;
+-esac
+-fi
+-LIBSM="$ac_cv_path_LIBSM"
+-if test -n "$LIBSM"; then
+-  echo "$ac_t""$LIBSM" 1>&6
+-else
+-  echo "$ac_t""no" 1>&6
+-fi
+-
+ # Extract the first word of "mail", so it can be a program name with args.
+ set dummy mail; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+@@ -2369,12 +2295,6 @@
  
--CONFIG_FILES=\${CONFIG_FILES-"Makefile mimedefang.pl examples/init-script"}
-+CONFIG_FILES=\${CONFIG_FILES-"Makefile mimedefang.pl examples/init-script mimedefang-filter.5 mimedefang-multiplexor.8 mimedefang.8 mimedefang.pl.8"}
- EOF
- cat >> $CONFIG_STATUS <<\EOF
- for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
+ echo ""
+ 
+-if test "$LIBSMUTIL" = "no" ; then
+-    echo "Oops.. I couldn't find libsmutil.a.  Please install Sendmail 8.11"
+-    echo "and its libraries."
+-    PROBLEM=1
+-fi
+-
+ if test "$LIBMILTER" = "no" ; then
+     echo "Oops.. I couldn't find libmilter.a.  Please install Sendmail 8.11"
+     echo "and its libraries."
+@@ -2389,35 +2309,6 @@
+     else
+ 	echo "$ac_t""yes" 1>&6
+ 	LIBS="$LIBS -lsfio"
+-    fi
+-
+-    
+-    echo $ac_n "checking whether libmilter requires -lsm""... $ac_c" 1>&6
+-echo "configure:2397: checking whether libmilter requires -lsm" >&5
+-    RESULT=`$NM $LIBMILTER | grep sm_strlcpy`
+-    if test -z "$RESULT" ; then
+-	echo "$ac_t""no" 1>&6
+-	LIBSM=""
+-    else
+-	echo "$ac_t""yes" 1>&6
+-	LIBS="$LIBS"
+-	if test "$LIBSM" = "no" ; then
+-	    echo "Oops.. I couldn't find libsm.a.  Please install Sendmail 8.12"
+-	    echo "and its libraries."
+-	    PROBLEM=1
+-	else
+-	    
+-    echo $ac_n "checking whether libsm requires -lldap""... $ac_c" 1>&6
+-echo "configure:2412: checking whether libsm requires -lldap" >&5
+-    RESULT=`$NM $LIBSM | grep ldap_`
+-    if test -z "$RESULT" ; then
+-	echo "$ac_t""no" 1>&6
+-    else
+-	echo "$ac_t""yes" 1>&6
+-	LIBS="$LIBS -lldap -llber"
+-    fi
+-
+-	fi
+     fi
+ 
+ fi
