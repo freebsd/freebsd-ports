@@ -1,14 +1,13 @@
---- ../../bjorb-0.5.3p1/doc/sample/bjorb.conf.sample	Thu May 21 10:16:37 1998
-+++ doc/sample/bjorb.conf.sample	Wed Jun  3 02:29:29 1998
-@@ -55,8 +55,9 @@
- spare_servers   2
+--- ../doc/sample/bjorb.conf.sample.orig	Tue Jul  7 22:39:16 1998
++++ ../doc/sample/bjorb.conf.sample	Tue Aug 25 14:17:58 1998
+@@ -5,8 +5,8 @@
+ error_log	/var/log/bjorb-err.log
  do_fork	        true
  deny_wait       0
 -CA_cert_file    /usr/local/etc/bjorb.pem
 -CA_cert_path    /usr/local/etc/CA
-+#CA_cert_file    /usr/local/certs/bjorb.pem
-+#CA_cert_path    /usr/local/etc/CA
-+CA_make		"FreeBSD Bjorb", 365, 1024
++CA_cert_file    /usr/local/certs/bjorb.pem
++CA_cert_path    /usr/local/certs/CA
+ max_connection  100
+ spare_servers   1
  
- # TAG: accept [<interface>:]<port> [with <options>]
- #      options := SSL, VERIFY
