@@ -1,0 +1,2 @@
+log(struct ship *s);
+

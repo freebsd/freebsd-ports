@@ -53,6 +53,7 @@ post-extract:
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} extract)
 
 post-patch:
+	@${CP} ${FILESDIR}/misc.h ${WRKSRC}/sail
 	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' -or -name '*.6' -or \
 		-name 'index' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|share/games|local/share/games|g' \
