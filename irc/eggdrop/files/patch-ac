@@ -1,20 +1,20 @@
---- src/Makefile.in.orig	Mon Jun  2 11:23:55 2003
-+++ src/Makefile.in	Mon Jun  2 11:24:24 2003
-@@ -16,7 +16,7 @@
- LD = @CC@
+--- eggdrop1.6.15/src/Makefile.in.orig	Mon Feb  9 22:42:35 2004
++++ eggdrop1.6.15/src/Makefile.in	Mon Feb  9 22:43:23 2004
+@@ -17,7 +17,7 @@
  STRIP = @STRIP@
- CFLAGS = @CFLAGS@ -I.. -I$(top_srcdir) @DEFS@ $(CFLGS)
+ #CFLAGS = @CFLAGS@ -I.. -I$(top_srcdir) @DEFS@ $(CFLGS)
+ CFLAGS = @CFLAGS@ -I$(XSSL_INCLUDE) -I.. -I$(top_srcdir) @DEFS@ $(CFLGS)
 -CPPFLAGS = @CPPFLAGS@
-+CPPFLAGS = @CPPFLAGS@ '-D__PREFIX__="@prefix@"'
++CPPFLAGS = @CPPFLAGS@ '-D__PREFIX__="@prefix@"' 
  
  eggdrop_objs = bg.o botcmd.o botmsg.o botnet.o chanprog.o cmds.o dcc.o \
  dccutil.o dns.o flags.o language.o match.o main.o mem.o misc.o misc_file.o \
-@@ -37,7 +37,7 @@
- 	@echo "Linking eggdrop... $(EGGBUILD)"
+@@ -39,7 +39,7 @@
  	@echo ""
  	@touch mod/mod.xlibs
--	$(LD) -o ../$(EGGEXEC) $(eggdrop_objs) $(MODOBJS) $(XLIBS) md5/md5c.o compat/*.o `cat mod/mod.xlibs`
-+	$(LD) -o ../$(EGGEXEC) $(eggdrop_objs) $(MODOBJS) $(XLDFLAGS) $(XLIBS) md5/md5c.o compat/*.o `cat mod/mod.xlibs`
+ #	$(LD) -o ../$(EGGEXEC) $(eggdrop_objs) $(MODOBJS) $(XLIBS) md5/md5c.o compat/*.o `cat mod/mod.xlibs`
+-	$(LD) -o ../$(EGGEXEC) $(eggdrop_objs) $(XSSL_LIBS) $(MODOBJS) $(XLIBS) md5/md5c.o compat/*.o `cat mod/mod.xlibs`
++	$(LD) -o ../$(EGGEXEC) $(eggdrop_objs) $(XSSL_LIBS) $(MODOBJS) $(XLDFLAGS) $(XLIBS) md5/md5c.o compat/*.o `cat mod/mod.xlibs`
  	$(STRIP) ../$(EGGEXEC)
  	@echo "Successful compile: $(EGGEXEC)"
  	@echo ""

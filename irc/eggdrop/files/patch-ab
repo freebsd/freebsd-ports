@@ -1,5 +1,5 @@
---- src/main.c.orig	Mon May  5 06:05:32 2003
-+++ src/main.c	Mon Jun  2 11:16:57 2003
+--- eggdrop1.6.15/src/main.c.orig	Mon May  5 06:05:32 2003
++++ eggdrop1.6.15/src/main.c	Mon Jun  2 11:16:57 2003
 @@ -70,7 +70,7 @@
  #define _POSIX_SOURCE 1
  #endif
@@ -14,7 +14,7 @@
  int term_z = 0;                 /* Foreground: use the terminal as a party
                                   * line? */
 -char configfile[121] = "eggdrop.conf";  /* Name of the config file */
-+char configfile[121] = __PREFIX__ "eggdrop.conf";  /* Name of the config file */
++char configfile[121] = __PREFIX__ "/etc/eggdrop.conf";  /* Name of the config file */
  char helpdir[121] = "help/";    /* Directory of help files (if used) */
  char textdir[121] = "text/";    /* Directory for text files that get dumped */
  int keep_all_logs = 0;          /* Never erase logfiles, no matter how old

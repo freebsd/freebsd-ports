@@ -7,21 +7,34 @@
 
 PORTNAME=	eggdrop
 PORTVERSION=	1.6.15
-PORTREVISION=	3
-CATEGORIES=	irc tcl84
+PORTREVISION=	4
+CATEGORIES=	irc tcl84 ipv6
 MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/
 DISTNAME=	${PORTNAME:S/-//}${PORTVERSION}
+
+PATCHFILES=	eggdrop1.6.15-ssl.fixed.diff.gz
+PATCH_SITES=	http://www.egghelp.org/files/patches/
+PATCH_WRKSRC=	${WRKDIR}
 
 MAINTAINER=	q@uni.de
 COMMENT=	The most popular open source Internet Relay Chat bot
 
-.include <bsd.port.pre.mk>
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if !defined(WITHOUT_TCL)
 LIB_DEPENDS+=		tcl84.1:${PORTSDIR}/lang/tcl84
 CONFIGURE_ARGS+=	--with-tcllib=${LOCALBASE}/lib/libtcl84.so \
 			--with-tclinc=${LOCALBASE}/include/tcl8.4/tcl.h
 .endif
+
+.if defined(WITH_SSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	--with-ssl
+.else
+CONFIGURE_ARGS+=	--without-ssl
+.endif
+
+.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014 && defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
@@ -31,7 +44,6 @@ PLIST_SUB+=		IPV6=""
 .endif
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=		eggdrop.1
@@ -40,19 +52,21 @@ pre-everything::
 .if ${OSVERSION} >= 400014 && !defined(WITH_IPV6)
 	@${ECHO_MSG} 'Define WITH_IPV6 to enable IPv6 support'
 .endif
-
-post-patch:
-	@(cd ${WRKSRC} && ${REINPLACE_CMD} \
-		-e 's,modules/,${PREFIX}/lib/eggdrop/,' \
-		-e 's,#! /path/to/executable/,#!${PREFIX}/bin/,' eggdrop.conf)
+.if !defined(WITH_SSL)
+	@${ECHO_MSG} 'Define WITH_SSL to enable SSL support'
+.endif
 
 post-configure:
-	@(cd ${BUILD_WRKSRC}; ${MAKE} config)
+	@(cd ${WRKSRC}; ${MAKE} config)
+	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${WRKSRC}/eggdrop.conf \
+		> ${WRKSRC}/eggdrop.conf.sample
+	# Workaround broken relative path in SSL-patch
+	@(cd ${WRKSRC}/src && ${LN} -s ../config.h)
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/eggdrop ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/doc/man1/eggdrop.1 ${PREFIX}/man/man1
-	@${INSTALL_DATA} ${WRKSRC}/eggdrop.conf ${PREFIX}/etc/eggdrop.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/eggdrop.conf.sample ${PREFIX}/etc
 	@${MKDIR} ${DATADIR}/help/set ${DATADIR}/help/msg ${DATADIR}/scripts \
 		${DATADIR}/language ${DATADIR}/text ${PREFIX}/lib/eggdrop
 	@${INSTALL_DATA} ${WRKSRC}/language/core.*.lang ${DATADIR}/language
@@ -101,6 +115,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e 's#$${PREFIX}#${PREFIX}#g' ${PKGMESSAGE}
+	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

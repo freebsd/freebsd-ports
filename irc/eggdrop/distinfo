@@ -1,2 +1,4 @@
 MD5 (eggdrop1.6.15.tar.gz) = f1f0c3e8b914d626c06a567560f737dd
 SIZE (eggdrop1.6.15.tar.gz) = 961868
+MD5 (eggdrop1.6.15-ssl.fixed.diff.gz) = ac2a146dc1ec2c4e28bf8e77178fae74
+SIZE (eggdrop1.6.15-ssl.fixed.diff.gz) = 20318
