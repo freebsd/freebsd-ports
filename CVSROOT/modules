@@ -5491,6 +5491,7 @@ p5-XML-Twig	ports/textproc/p5-XML-Twig
 p5-XML-Writer	ports/textproc/p5-XML-Writer
 p5-XML-XPath	ports/textproc/p5-XML-XPath
 p5-XML-XSLT	ports/textproc/p5-XML-XSLT
+p5-XML-XUpdate-LibXML	ports/textproc/p5-XML-XUpdate-LibXML
 p5-XPC		ports/net/p5-XPC
 p5-Xmms		ports/audio/p5-Xmms
 p5-bioperl	ports/biology/p5-bioperl
