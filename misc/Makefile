@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.210 1999/05/20 20:48:37 asami Exp $
+# $Id: Makefile,v 1.211 1999/05/29 05:00:53 steve Exp $
 #
 
     SUBDIR += 221upgrade
@@ -88,6 +88,7 @@
     SUBDIR += uk-postcodes
     SUBDIR += unclutter
     SUBDIR += us-zipcodes
+    SUBDIR += vbidecode
     SUBDIR += vera
     SUBDIR += viz
     SUBDIR += wmcp
