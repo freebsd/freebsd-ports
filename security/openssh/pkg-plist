@@ -35,4 +35,4 @@ libdata/ssh/Ssh.bin
 @exec if [ ! -f %D/etc/ssh/ssh_host_dsa_key ]; then echo ">> Generating a secret DSA host key."; %D/bin/ssh-keygen -t dsa -N "" -f %D/etc/ssh/ssh_host_dsa_key; fi
 @dirrm empty
 @exec if ! pw groupshow sshd 2>/dev/null; then pw groupadd sshd -g 22; fi
-@exec if ! pw usershow sshd 2>/dev/null; then pw useradd sshd -g smmsp -u 22 -h - -d %D/empty -s /nonexistent -c "sshd privilege separation"; fi
+@exec if ! pw usershow sshd 2>/dev/null; then pw useradd sshd -g sshd -u 22 -h - -d %D/empty -s /nonexistent -c "sshd privilege separation"; fi
