@@ -1,4 +1,5 @@
 bin/xplot
+bin/tcpdump2xplot
 bin/tcpdump2xplot.pl
 share/doc/xplot/README
 share/doc/xplot/README.tcp_plots
