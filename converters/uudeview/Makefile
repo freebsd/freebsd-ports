@@ -21,18 +21,16 @@ CONFIGURE_ARGS=	--enable-inews=${PREFIX}/news/lib/inews \
 
 MAN1=		uudeview.1 uuenview.1
 
-PORTDOCDIR?=	share/doc/uudeview
-
 post-install:
 	@/usr/bin/strip ${PREFIX}/bin/uudeview
 	@/usr/bin/strip ${PREFIX}/bin/uuenview
 .if !defined(NOPORTDOCS)
-	@${ECHO_MSG} "===>  Copying documents to ${PREFIX}/${PORTDOCDIR}"
-	@${MKDIR} ${PREFIX}/${PORTDOCDIR}
-	@${INSTALL_MAN} ${WRKSRC}/HOWTO ${PREFIX}/${PORTDOCDIR}
-	@${INSTALL_MAN} ${FILESDIR}/porting.notes ${PREFIX}/${PORTDOCDIR}
+	@${ECHO_MSG} "===>  Installing documents to ${DOCSDIR}"
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/HOWTO ${DOCSDIR}
+	@${INSTALL_DATA} ${FILESDIR}/porting.notes ${DOCSDIR}
 .else
-	@${ECHO_MSG} "===>  Not copying available documents"
+	@${ECHO_MSG} "===>  Not installing available documents"
 .endif
 
 .include <bsd.port.mk>

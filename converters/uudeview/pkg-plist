@@ -1,5 +1,5 @@
-share/doc/uudeview/HOWTO
-share/doc/uudeview/porting.notes
 bin/uudeview
 bin/uuenview
-@dirrm share/doc/uudeview
+%%PORTDOCS%%share/doc/uudeview/HOWTO
+%%PORTDOCS%%share/doc/uudeview/porting.notes
+%%PORTDOCS%%@dirrm share/doc/uudeview
