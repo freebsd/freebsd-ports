@@ -1,12 +1,12 @@
 # New ports collection makefile for:	qextmdi
 # Date created:				29 April 2002
-# Whom:					jesse@cs.uni-magdeburg.de
+# Whom:					roland.jesse@gmx.net
 #
 # $FreeBSD$
 
 PORTNAME=	qextmdi
 PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.geocities.com/gigafalk/qextmdi/
 EXTRACT_SUFX=	.tgz
@@ -17,6 +17,7 @@ COMMENT=	Qt extension for creating SDI/MDI user interfaces
 
 .if defined(WITH_KDE)
 USE_KDELIBS_VER=	3
+PKGNAMESUFFIX=	-kde
 .else
 USE_QT_VER=	3
 .endif
