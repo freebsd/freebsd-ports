@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	leafnode+
-PORTVERSION=	2.10
+PORTVERSION=	2.11
 CATEGORIES=	news
 MASTER_SITES=	http://www.io.com/~kazushi/leafnode+/
 
