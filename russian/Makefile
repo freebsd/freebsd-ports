@@ -9,6 +9,7 @@
     SUBDIR += d1489
     SUBDIR += elm.language
     SUBDIR += gd
+    SUBDIR += kde2-i18n
     SUBDIR += koi8r-ps
     SUBDIR += messarge
     SUBDIR += netscape4.language
