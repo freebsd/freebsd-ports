@@ -16,6 +16,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Personal Information Management tools for KDE
 
+CONFLICTS=	kdenetwork-3.1*
+
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 
