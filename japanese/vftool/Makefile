@@ -35,6 +35,12 @@ JFMDIR=		${WRKDIR}/share/texmf/fonts/tfm/ptex
 PORTSDOCDIR=	${PREFIX}/share/doc/vftool
 TARGETDIRS=	vf-n2a vf-a2n vf-a2bk vf-p2pn
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Coredump during build on ia64"
+.endif
+
 post-extract:
 	(cd ${WRKDIR}; \
 		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/plib13-euc.tar.gz \
@@ -63,4 +69,4 @@ do-install:
 	)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
