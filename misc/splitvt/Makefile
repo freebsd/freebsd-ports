@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	utils/console
 
 MAINTAINER=	obrien@FreeBSD.org
 
+FORBIDDEN=	"Doesn't change permissions on pty, leaving it mode 666. Making it setuid isn't a solution because there's a buffer overflow."
+
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
 ALL_TARGET=
