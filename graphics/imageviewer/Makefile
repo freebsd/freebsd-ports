@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imageviewer
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.nice.ch/~phip/ \
 		${MASTER_SITE_GNUSTEP}
