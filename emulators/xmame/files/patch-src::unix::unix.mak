@@ -1,50 +1,40 @@
---- src/unix/unix.mak.orig	Fri May  3 04:53:53 2002
-+++ src/unix/unix.mak	Mon May  6 14:04:08 2002
-@@ -50,20 +50,20 @@
- 
- # svga and ggi also use $(X11LIB) since that's where zlib often is
- LIBS.x11        = $(X11LIB) $(JOY_X11_LIBS) $(XINPUT_DEVICES_LIBS) -lX11 -lXext
--LIBS.svgalib    = $(X11LIB) -lvga -lvgagl
-+LIBS.svgalib    = -L$(LOCALBASE)/lib -lvga -lvgagl
- LIBS.ggi        = $(X11LIB) -lggi
--LIBS.xgl        = $(X11LIB) $(JOY_X11_LIBS) -lX11 -lXext $(GLLIBS) -ljpeg
-+LIBS.xgl        = $(X11LIB) $(JOY_X11_LIBS) -lX11 -lXext $(GLLIBS) -L$(LOCALBASE)/lib -ljpeg
+--- src/unix/unix.mak.orig	Fri May  3 02:53:53 2002
++++ src/unix/unix.mak	Thu Oct 31 13:15:25 2002
+@@ -56,14 +56,14 @@
  LIBS.xfx        = $(X11LIB) $(JOY_X11_LIBS) -lX11 -lXext -lglide2x
  LIBS.svgafx     = $(X11LIB) -lvga -lvgagl -lglide2x
  LIBS.openstep	= -framework AppKit
 -LIBS.SDL	= `sdl-config --libs`
-+LIBS.SDL	= `$(SDL_CONFIG) --libs`
++LIBS.SDL	= $(X11LIB) `$(SDL_CONFIG) --libs`
  LIBS.photon2	= -L/usr/lib -lph -lphrender
  
  CFLAGS.x11      = $(X11INC) $(JOY_X11_CFLAGS) $(XINPUT_DEVICES_CFLAGS)
--CFLAGS.xgl      = $(X11INC) $(JOY_X11_CFLAGS) $(GLCFLAGS)
-+CFLAGS.xgl      = -DGLU_VERSION_1_2 $(X11INC) $(JOY_X11_CFLAGS) $(GLCFLAGS) -I$(LOCALBASE)/include $(PTHREAD_CFLAGS)
+ CFLAGS.xgl      = $(X11INC) $(JOY_X11_CFLAGS) $(GLCFLAGS)
  CFLAGS.xfx      = $(X11INC) $(JOY_X11_CFLAGS) -I/usr/include/glide
  CFLAGS.svgafx   = -I/usr/include/glide
 -CFLAGS.SDL      = -D_REENTRANT
-+CFLAGS.SDL      = $(X11INC) `$(SDL_CONFIG) --cflags`
++CFLAGS.SDL      = $(X11INC) `$(SDL_CONFIG) --cflags` -D_REENTRANT
  CFLAGS.photon2	=
  
  INST.x11        = doinstall
-@@ -235,9 +235,18 @@
+@@ -235,8 +235,17 @@
  MY_LIBS += -lusb
  endif
  else
 +ifeq ($(ARCH), freebsd)
-+ifeq ($(shell test -f /usr/include/usbhid.h && echo have_usbhid), have_usbhid)
++ifeq ($(shell test -f /usr/include/libusbhid.h && echo have_usbhid), have_usbhid)
 +CONFIG += -DHAVE_USBHID_H
 +MY_LIBS += -lusbhid
 +else
-+MY_LIBS += /usr/lib/libusb.a
-+endif
-+else
  MY_LIBS += -lusb
  endif
- endif
++else
++MY_LIBS += -lusb
 +endif
++endif
+ endif
  
  ifdef EFENCE
- MY_LIBS += -lefence
 @@ -366,7 +375,7 @@
  	
  doc/x$(TARGET)rc.dist: all src/unix/xmamerc-keybinding-notes.txt

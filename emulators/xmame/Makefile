@@ -57,7 +57,6 @@ GENERALDOCS=	changes.unix \
 		xmame-doc-5.html \
 		xmame-doc-6.html \
 		xmame-doc-7.html \
-		xmame-doc-8.html \
 		xmame-doc.html \
 		xmame-gdoc-1.html \
 		xmame-gdoc-2.html \
@@ -66,23 +65,28 @@ GENERALDOCS=	changes.unix \
 		xmame-gdoc-5.html \
 		xmame-gdoc-6.html \
 		xmame-gdoc-7.html \
-		xmame-gdoc-8.html \
 		xmame-gdoc.html \
-		xmame.css \
 		xmame-doc.lyx \
-		xmame-doc.txt \
-		ctrlr.txt \
-		dga2.txt
+		xmame-doc.txt
 XMAMEDOCS=	changes.mame \
+		ctrlr.txt \
 		gamelist.mame \
-		readme.mame
+		readme.mame \
+		xmame-doc-8.html \
+		xmame-gdoc-8.html \
+		xmame.css \
+		dga2.txt
 XMESSDOCS=	changes.mess \
 		credits.mess \
 		gamelist.mess \
 		readme.mess \
 		messroms.txt \
 		imgtool.txt \
-		messroms.txt
+		messroms.txt \
+		xmame-doc-8.html \
+		xmame-gdoc-8.html \
+		xmame.css \
+		dga2.txt
 PINMAMEDOCS=	pinmame/simulation.txt \
 		pinmame/whatsnew.txt \
 		pinmame/pinmame.txt \
@@ -189,7 +193,6 @@ pre-everything::
 .endif
 LIB_DEPENDS=    SDL-1.1.4:${PORTSDIR}/devel/sdl12
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-MAKE_ENV+=	SDL_CONFIG=${SDL_CONFIG}
 DISPLAY_METHOD=	SDL
 .endif
 .endif
@@ -225,16 +228,6 @@ NETWORK=
 .else
 NETWORK=\#\ 
 .endif
-.endif
-
-# USB joysticks are only enabled on -STABLE because of conflicting USB
-# prototypes in -STABLE & -CURRENT.
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-JOYUSBCOMMENT=\#\ 
-.else
-JOYUSBCOMMENT=
 .endif
 
 #
@@ -275,12 +268,14 @@ do-configure:
 		-e "s@-g bin@-g wheel@g" \
 		-e "s@^ARCH  = linux@ARCH  = freebsd@g" \
 		-e "s@# X11_DGA@X11_DGA@g" \
-		-e "s@# JOY_USB@${JOYUSBCOMMENT}JOY_USB@g" \
 		-e "s@= x11@= ${DISPLAY_METHOD}@g" \
 		-e "s@= mame@= ${MAMEMESS}@g" \
 		-e "s@# X86_ASM@${ASM_COMMENT}X86_ASM@g" \
 		-e "s@# SOUND_ESOUND@${ESOUNDCOMMENT}SOUND_ESOUND@g" \
 		-e "s@# MAME_NET@${NETWORK}MAME_NET@g" \
+		-e "s@# LIBS.*@LIBS = -L${LOCALBASE}/lib@g" \
+		-e "s@sdl-config@${SDL_CONFIG}@g" \
+		-e "s@# JOY_USB@JOY_USB@g" \
 		-e "s@GLLIBS=.-ldl@GLLIBS= ${PTHREAD_LIBS}@g" \
 			${WRKSRC}/makefile.unix > ${WRKSRC}/Makefile
 
@@ -324,4 +319,4 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/cheat.dat ${PREFIX}/share/xmame
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
