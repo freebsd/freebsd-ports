@@ -1,0 +1,4 @@
+include/maitretarot.h
+lib/libmaitretarot.a
+lib/libmaitretarot.so
+lib/libmaitretarot.so.0

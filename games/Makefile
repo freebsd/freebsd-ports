@@ -242,6 +242,7 @@
     SUBDIR += lgeneral
     SUBDIR += lgeneral-data
     SUBDIR += libggz
+    SUBDIR += libmaitretarot
     SUBDIR += libshhcards
     SUBDIR += lincity
     SUBDIR += linux-enemyterritory
