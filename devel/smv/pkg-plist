@@ -1,0 +1,20 @@
+bin/smv
+share/smv/smv-mode.el
+%%PORTDOCS%%%%DOCSDIR%%/NEW
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/smvmanual.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/counter.smv
+%%PORTDOCS%%%%EXAMPLESDIR%%/dme1.smv
+%%PORTDOCS%%%%EXAMPLESDIR%%/dme2.smv
+%%PORTDOCS%%%%EXAMPLESDIR%%/featuring.smv
+%%PORTDOCS%%%%EXAMPLESDIR%%/gigamax.smv
+%%PORTDOCS%%%%EXAMPLESDIR%%/mutex.smv
+%%PORTDOCS%%%%EXAMPLESDIR%%/mutex1.smv
+%%PORTDOCS%%%%EXAMPLESDIR%%/periodic.smv
+%%PORTDOCS%%%%EXAMPLESDIR%%/ring.smv
+%%PORTDOCS%%%%EXAMPLESDIR%%/semaphore.smv
+%%PORTDOCS%%%%EXAMPLESDIR%%/short.smv
+%%PORTDOCS%%%%EXAMPLESDIR%%/syncarb5.smv
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm share/smv

@@ -1061,6 +1061,7 @@
     SUBDIR += simulavr
     SUBDIR += sip
     SUBDIR += skalibs
+    SUBDIR += smv
     SUBDIR += soup
     SUBDIR += sourcenav
     SUBDIR += sparc-rtems-binutils
