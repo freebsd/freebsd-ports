@@ -313,6 +313,7 @@
     SUBDIR += p5-LockFile-Simple
     SUBDIR += p5-Mac-FileSpec-Unixish
     SUBDIR += p5-Make
+    SUBDIR += p5-OLE-Storage_Lite
     SUBDIR += p5-ORBit
     SUBDIR += p5-POE
     SUBDIR += p5-PV
