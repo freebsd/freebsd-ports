@@ -1,0 +1,23 @@
+This is the ixj driver for Quicknet Internet LineJack and PhoneJack
+hardware, ported from Linux.
+Hardware can be found at http://www.quicknet.com
+Note there is a Linux page where hardware can be purchased
+without the Windows drivers at a reduced rate. You can then
+use these FreeBSD ixj drivers.
+
+The driver is used by the OpenH323 applications
+(ohphone, openam and possibly GnomeMeeting in a future release).
+
+It allows a standard telephone to be plugged into a FreeBSD machine
+and used for Voice over IP or Video Conferencing.
+When making a call, simply lift the handset and dial.
+When receiving a call, your normal telephone actually rings.
+
+In addition the cards support G.723.1 audio compression which
+means you can communicate with a wider range of H.323 applications
+such as NetMeeting, when using a modem to connect to the internet.
+
+The port was originally made by Devin Butterfield <dbutter@wireless.net>
+and is now being maintained by Roger Hardiman <roger@freebsd.org>
+
+WWW: http://www.openh323.org
