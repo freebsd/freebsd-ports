@@ -1,11 +1,11 @@
-    LHa for UNIX version 1.14c Mar. 7 1996 by Tsugio Okamoto
+     LHa for UNIX
 
      This unofficial version of lha is based on Version 1.00.  This
 version supports extraction & archiving using -lh5- as well as
 extraction using -lh6- algorithm.
 
      All the bug reports on this version should be directed to Tsuguo
-Okamoto <GBA02146@NIFTYSERVE.OR.JP>.
+Okamoto <tsugio@muc.biglobe.ne.jp>.
 
 
      If this software is included in a medium that may be obtained by
@@ -14,3 +14,5 @@ advance.  Redistribution over networks is not restricted.
 
      According to Masafumi NAKANE <max@wide.ad.jp> the author gives
 permission to distribute this software on FreeBSD CDROM.
+
+WWW: http://www2m.biglobe.ne.jp/~dolphin/lha/lha.htm
