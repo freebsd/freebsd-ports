@@ -28,6 +28,10 @@ PLIST_FILES=	bin/ht
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not build on FreeBSD >= 5.x"
+.endif
+
 .if ${OSVERSION} < 400000
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
