@@ -1,0 +1,6 @@
+Encore [excerpt from OpenDivX Project Mayo site]
+
+"Encore" is our encoder core - that part of the codec that encodes
+video from uncompressed RGB bitmaps into a DivX video bitstream.
+
+WWW: http://www.projectmayo.com/
