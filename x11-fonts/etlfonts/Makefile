@@ -20,7 +20,7 @@ EXTRACT_AFTER_ARGS=	# empty
 USE_X_PREFIX=	yes
 
 post-extract:
-	@${GUNZIP} ${WRKSRC}/*.gz
+	@${GUNZIP_CMD} ${WRKSRC}/*.gz
 
 post-install:
 	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
