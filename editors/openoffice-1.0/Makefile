@@ -114,13 +114,14 @@ MAINTAINER=	openoffice@FreeBSD.org
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/jakarta-ant
-BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
 BUILD_DEPENDS+= ${X11BASE}/lib/libX11.so:${PORTSDIR}/x11/XFree86-4-libraries
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
 .endif
 .if !defined(WITH_BSD_JDK)
-USE_LINUX=	yes
+BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/linux-sun-jdk13
+.else
+BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
 .endif
 
 USE_PERL5=	yes
