@@ -1,12 +1,12 @@
 # New ports collection makefile for:	glade
-# Version required:     0.5.6
+# Version required:     0.5.7
 # Date created:		29 June 1998
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	glade-0.5.6
+DISTNAME=	glade-0.5.7
 CATEGORIES=	devel
 MASTER_SITES=   http://glade.pn.org/
 
