@@ -1,3 +1,4 @@
+etc/rc.d/hybserv.sh
 hybserv/hybserv
 hybserv/cleandb
 hybserv/encryptconf

@@ -19,18 +19,8 @@ GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/hybserv
 
-.if !defined(PACKAGE_BUILDING) && !defined(BATCH)
-IS_INTERACTIVE= yes
-.endif
-
-BROKEN=		"Does not install"
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${BROKEN}
-
 pre-install:
-.if !defined(PACKAGE_BUILDING) && !defined(BATCH)
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-.endif
 
 post-install:
 	@${SED} -e "s#%PREFIX%#${PREFIX}#" ${FILESDIR}/hybserv.sh \
