@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	diveintopython
-PORTVERSION=	3.9.1
-PORTREVISION=	1
+PORTVERSION=	4.0.1
 CATEGORIES=	lang python
 MASTER_SITES=	http://diveintopython.org/download/
 DISTNAME=	${PORTNAME}
@@ -32,7 +31,7 @@ PLIST_SUB+=	VERSION=${VERSIONSTR}
 post-patch:
 	@ ${PERL} -pi.orig -e \
 	  's#<div class="selfad"(.(?!</div>))*.</div>##; \
-	   s#<tr[^>]*>(.(?!<tr[^>]*>))*(Microsoft|Windows)(.(?!</tr>))*.</tr>##g; \
+	   s#<li[^>]*>(.(?!<li[^>]*>))*(Microsoft|Windows)(.(?!</li>))*.</li>##g; \
 	   s#<td>(.(?!<td>))*/(cn/|(es|fr)/[^"]|kr/)(.(?!</td>))*.</td>##g' \
 	   ${WRKSRC}/index.html
 	@ ${PERL} -pi -e \
