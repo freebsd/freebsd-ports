@@ -3,6 +3,7 @@
 
     COMMENT = Editors
 
+    SUBDIR += 2bsd-vi
     SUBDIR += AbiWord2
     SUBDIR += MathPlanner
     SUBDIR += aee
