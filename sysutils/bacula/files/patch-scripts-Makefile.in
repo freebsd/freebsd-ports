@@ -1,25 +1,27 @@
---- scripts/Makefile.in.orig	Mon Feb 24 13:44:14 2003
-+++ scripts/Makefile.in	Mon Feb 24 13:54:57 2003
-@@ -31,14 +31,14 @@
- 	$(MKDIR) $(DESTDIR)$(sbindir)
+--- scripts/Makefile.in~	Thu May  8 07:27:37 2003
++++ scripts/Makefile.in	Thu May  8 07:34:21 2003
+@@ -32,15 +32,15 @@
+ 	$(MKDIR) $(DESTDIR)$(scriptdir)
  
  install: installdirs
--	$(INSTALL_SCRIPT) startmysql $(DESTDIR)$(sysconfdir)/startmysql
--	$(INSTALL_SCRIPT) stopmysql $(DESTDIR)$(sysconfdir)/stopmysql
--	$(INSTALL_SCRIPT) console $(DESTDIR)$(sysconfdir)/console
--	$(INSTALL_SCRIPT) bacula $(DESTDIR)$(sysconfdir)/bacula
--	$(INSTALL_SCRIPT) fd $(DESTDIR)$(sysconfdir)/fd
--	$(INSTALL_SCRIPT) mtx-changer $(DESTDIR)$(sysconfdir)/mtx-changer
+-	$(INSTALL_SCRIPT) startmysql $(DESTDIR)$(scriptdir)/startmysql
+-	$(INSTALL_SCRIPT) stopmysql $(DESTDIR)$(scriptdir)/stopmysql
+-	$(INSTALL_SCRIPT) console $(DESTDIR)$(scriptdir)/console
+-	$(INSTALL_SCRIPT) gconsole $(DESTDIR)$(scriptdir)/gconsole
+-	$(INSTALL_SCRIPT) bacula $(DESTDIR)$(scriptdir)/bacula
+-	$(INSTALL_SCRIPT) fd $(DESTDIR)$(scriptdir)/fd
+-	$(INSTALL_SCRIPT) mtx-changer $(DESTDIR)$(scriptdir)/mtx-changer
 -	$(INSTALL_SCRIPT) btraceback $(DESTDIR)$(sbindir)/btraceback
 -	$(INSTALL_DATA)   btraceback.gdb $(DESTDIR)$(sbindir)/btraceback.gdb
 +#	$(INSTALL_SCRIPT) startmysql $(DESTDIR)$(sysconfdir)/startmysql
-+#	$(INSTALL_SCRIPT) stopmysql $(DESTDIR)$(sysconfdir)/stopmysql
-+#	$(INSTALL_SCRIPT) console $(DESTDIR)$(sysconfdir)/console
++#	$(INSTALL_SCRIPT) stopmysql $(DESTDIR)$(syscondir)/stopmysql
++#	$(INSTALL_SCRIPT) console $(DESTDIR)$(syscondir)/console
++#	$(INSTALL_SCRIPT) gconsole $(DESTDIR)$(syscondir)/gconsole
 +	$(INSTALL_SCRIPT) bacula $(DESTDIR)$(sysconfdir)/rc.d/bacula.sh.sample
 +	$(INSTALL_SCRIPT) fd $(DESTDIR)$(sysconfdir)/rc.d/fd.sh.sample
-+#	$(INSTALL_SCRIPT) mtx-changer $(DESTDIR)$(sysconfdir)/mtx-changer
++#	$(INSTALL_SCRIPT) mtx-changer $(DESTDIR)$(scriptdir)/mtx-changer
 +#	$(INSTALL_SCRIPT) btraceback $(DESTDIR)$(sbindir)/btraceback
 +#	$(INSTALL_DATA)   btraceback.gdb $(DESTDIR)$(sbindir)/btraceback.gdb
  
  uninstall:
- 	(cd $(DESTDIR)$(sysconfdir); $(RMF) startmysql)
+ 	(cd $(DESTDIR)$(scriptdir); $(RMF) startmysql)

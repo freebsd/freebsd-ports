@@ -61,6 +61,8 @@ share/bacula/make_catalog_backup
 %%PORTDOCS%%share/doc/bacula/html-manual/dirdconf.wml
 %%PORTDOCS%%share/doc/bacula/html-manual/director.html
 %%PORTDOCS%%share/doc/bacula/html-manual/director.wml
+%%PORTDOCS%%share/doc/bacula/html-manual/disk.html
+%%PORTDOCS%%share/doc/bacula/html-manual/disk.wml
 %%PORTDOCS%%share/doc/bacula/html-manual/error.gif
 %%PORTDOCS%%share/doc/bacula/html-manual/faq.html
 %%PORTDOCS%%share/doc/bacula/html-manual/faq.wml
@@ -105,8 +107,6 @@ share/bacula/make_catalog_backup
 %%PORTDOCS%%share/doc/bacula/html-manual/netprotocol.html
 %%PORTDOCS%%share/doc/bacula/html-manual/netprotocol.wml
 %%PORTDOCS%%share/doc/bacula/html-manual/next.gif
-%%PORTDOCS%%share/doc/bacula/html-manual/openissues.html
-%%PORTDOCS%%share/doc/bacula/html-manual/openissues.wml
 %%PORTDOCS%%share/doc/bacula/html-manual/philosophical-gnu-sm.jpg
 %%PORTDOCS%%share/doc/bacula/html-manual/porting.html
 %%PORTDOCS%%share/doc/bacula/html-manual/porting.wml
@@ -139,6 +139,8 @@ share/bacula/make_catalog_backup
 %%PORTDOCS%%share/doc/bacula/html-manual/storage.wml
 %%PORTDOCS%%share/doc/bacula/html-manual/storedconf.html
 %%PORTDOCS%%share/doc/bacula/html-manual/storedconf.wml
+%%PORTDOCS%%share/doc/bacula/html-manual/tapetesting.html
+%%PORTDOCS%%share/doc/bacula/html-manual/tapetesting.wml
 %%PORTDOCS%%share/doc/bacula/html-manual/thanks.gif
 %%PORTDOCS%%share/doc/bacula/html-manual/thanks.html
 %%PORTDOCS%%share/doc/bacula/html-manual/thanks.wml
