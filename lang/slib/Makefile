@@ -7,7 +7,7 @@
 
 PORTNAME=	slib
 PORTVERSION=	2d1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
 DISTNAME=	slib2d1
@@ -24,7 +24,7 @@ NO_BUILD=	yes
 do-install:
 	${MKDIR} ${PREFIX}/share/slib
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${PREFIX}/share/slib
-	${LN} -shf ${PREFIX}/share/slib ${LOCALBASE}/share/guile/slib
+	${LN} -sf ${PREFIX}/share/slib ${LOCALBASE}/share/guile/slib
 	${LOCALBASE}/bin/guile -c \
 		"(use-modules (ice-9 slib)) (require 'new-catalog)"
 
