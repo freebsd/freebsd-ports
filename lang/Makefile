@@ -144,6 +144,7 @@
     SUBDIR += python-doc-postscript-letter
     SUBDIR += python15
     SUBDIR += python20
+    SUBDIR += python21
     SUBDIR += ratfor
     SUBDIR += rexx-imc
     SUBDIR += rotfl
