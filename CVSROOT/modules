@@ -4142,6 +4142,7 @@ mdnsd		ports/net/mdnsd
 mdw		ports/www/mdw
 medusa		ports/sysutils/medusa
 meld		ports/textproc/meld
+memcached	ports/databases/memcached
 memcheck	ports/devel/memcheck
 memgrep		ports/sysutils/memgrep
 memtest		ports/sysutils/memtest
