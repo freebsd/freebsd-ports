@@ -1,0 +1,5 @@
+Bbrb is a gtk-based background manager for Blackbox.  It includes
+support for background lists, thumbnails, and configuring the scaling
+and tiling properties for each background individually.
+
+WWW: http://bbrb.sourceforge.net/

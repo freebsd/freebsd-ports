@@ -1,0 +1,24 @@
+# New ports collection makefile for:	bbrb
+# Date created:				19 February 2002
+# Whom:					Dan Peck <peckdani@msu.edu>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	bbrb
+PORTVERSION=	0.2.2
+CATEGORIES=	graphics
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	ports@FreeBSD.org
+
+RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv \
+		blackbox:${PORTSDIR}/x11-wm/blackbox
+
+USE_X_PREFIX=	yes
+USE_GTK=	yes
+USE_IMLIB=	yes
+GNU_CONFIGURE=	yes
+
+.include <bsd.port.mk>
