@@ -36,37 +36,30 @@ bin/%%BINUTILS_TARG%%-strip
 bin/%%BINUTILS_TARG%%-size
 bin/%%BINUTILS_TARG%%-strings
 bin/%%BINUTILS_TARG%%-windres
+@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/as.info %D/%%BINUTILS_TARG%%/info/dir
 @unexec install-info --delete %D/%%BINUTILS_TARG%%/info/bfd.info %D/%%BINUTILS_TARG%%/info/dir
 @unexec install-info --delete %D/%%BINUTILS_TARG%%/info/binutils.info %D/%%BINUTILS_TARG%%/info/dir
-@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/standards.info %D/%%BINUTILS_TARG%%/info/dir 2> /dev/null
 @unexec install-info --delete %D/%%BINUTILS_TARG%%/info/configure.info %D/%%BINUTILS_TARG%%/info/dir 2> /dev/null
-@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/as.info %D/%%BINUTILS_TARG%%/info/dir
 @unexec install-info --delete %D/%%BINUTILS_TARG%%/info/ld.info %D/%%BINUTILS_TARG%%/info/dir
+@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/standards.info %D/%%BINUTILS_TARG%%/info/dir 2> /dev/null
 @unexec rm -f %D/%%BINUTILS_TARG%%/info/dir
+%%BINUTILS_TARG%%/info/as.info
+%%BINUTILS_TARG%%/info/as.info-1
 %%BINUTILS_TARG%%/info/bfd.info
 %%BINUTILS_TARG%%/info/bfd.info-1
-%%BINUTILS_TARG%%/info/bfd.info-2
-%%BINUTILS_TARG%%/info/bfd.info-3
-%%BINUTILS_TARG%%/info/bfd.info-4
-%%BINUTILS_TARG%%/info/bfd.info-5
-%%BINUTILS_TARG%%/info/bfd.info-6
-%%BINUTILS_TARG%%/info/bfd.info-7
-%%BINUTILS_TARG%%/info/bfd.info-8
-%%BINUTILS_TARG%%/info/bfd.info-9
 %%BINUTILS_TARG%%/info/binutils.info
-%%BINUTILS_TARG%%/info/standards.info
+%%BINUTILS_TARG%%/info/binutils.info-1
 %%BINUTILS_TARG%%/info/configure.info
 %%BINUTILS_TARG%%/info/configure.info-1
-%%BINUTILS_TARG%%/info/configure.info-2
-%%BINUTILS_TARG%%/info/configure.info-3
-%%BINUTILS_TARG%%/info/as.info
 %%BINUTILS_TARG%%/info/ld.info
+%%BINUTILS_TARG%%/info/ld.info-1
+%%BINUTILS_TARG%%/info/standards.info
+@exec   install-info          %D/%%BINUTILS_TARG%%/info/as.info %D/info/dir
 @exec   install-info          %D/%%BINUTILS_TARG%%/info/bfd.info %D/%%BINUTILS_TARG%%/info/dir
 @exec   install-info          %D/%%BINUTILS_TARG%%/info/binutils.info %D/%%BINUTILS_TARG%%/info/dir
-@exec   install-info          %D/%%BINUTILS_TARG%%/info/standards.info %D/%%BINUTILS_TARG%%/info/dir
 @exec   install-info          %D/%%BINUTILS_TARG%%/info/configure.info %D/%%BINUTILS_TARG%%/info/dir
-@exec   install-info          %D/%%BINUTILS_TARG%%/info/as.info %D/info/dir
 @exec   install-info          %D/%%BINUTILS_TARG%%/info/ld.info %D/%%BINUTILS_TARG%%/info/dir
+@exec   install-info          %D/%%BINUTILS_TARG%%/info/standards.info %D/%%BINUTILS_TARG%%/info/dir
 @dirrm %%BINUTILS_TARG%%/bin
 @dirrm %%BINUTILS_TARG%%/lib/ldscripts
 @dirrm %%BINUTILS_TARG%%/lib

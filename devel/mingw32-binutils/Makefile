@@ -9,26 +9,28 @@ PORTNAME=	binutils
 PORTVERSION=	${BINUTILVERSION}.${PATCHVERSION}
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	binutils/releases
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}  	# ${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=	mingw			# binutils/releases
 PKGNAMEPREFIX=	mingw32-
-DISTNAME=	${PORTNAME}-${BINUTILVERSION}
+DISTNAME=	${PORTNAME}-${BINUTILVERSION}.${PATCHVERSION:S/./-/g}-src
+DIST_SUBDIR=	mingw
 
-PATCH_SITES=	${MASTER_SITE_SOURCEFORGE}
-## Special hack: I don't use SITE_SUBDIR & DIST_SUBDIR, and only pathces
-##               will be placed to subdirectory
-##               It allows to use main binutils sources from other ports.
-PATCHFILES=	mingw/${PORTNAME}-${BINUTILVERSION}.${PATCHVERSION:S/./-/g}-src.diff
+# No patches for this release
+#PATCH_SITES=	${MASTER_SITE_SOURCEFORGE}
+# Special hack: I don't use SITE_SUBDIR & DIST_SUBDIR, and only pathces
+#               will be placed to subdirectory
+#               It allows to use main binutils sources from other ports.
+#PATCHFILES=	mingw/${PORTNAME}-${BINUTILVERSION}.${PATCHVERSION:S/./-/g}-src.diff
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	FSF binutils-2.14 for Windows cross-development
 
-BINUTILVERSION=	2.14
-PATCHVERSION=	90.20040120.1
+BINUTILVERSION=	2.15
+PATCHVERSION=	90.20040222.1
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${BINUTILVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
