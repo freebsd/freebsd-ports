@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnome-themes-extras
-PORTVERSION=	0.7
+PORTVERSION=	0.8.0
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.7
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -20,7 +20,7 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack libgnomeui
+USE_GNOME=	gnomehack libgnomeui intlhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
