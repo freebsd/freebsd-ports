@@ -1,0 +1,7 @@
+This module is just a helper for Crypt::CBC to make simple and usual jobs just
+one-liners.
+
+WWW: http://search.cpan.org/dist/Crypt-CBCeasy/
+
+--
+mat
