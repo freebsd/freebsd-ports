@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ftpsearch
-# Version required:	1.0
 # Date created:		07 Dec 1996
 # Whom:			Tor.Egge@idi.ntnu.no
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ftpsearch-1.0
+PORTNAME=	ftpsearch
+PORTVERSION=	1.0
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftpsearch.ntnu.no/pub/ftpsearch/
 

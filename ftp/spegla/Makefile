@@ -1,13 +1,13 @@
 # ex:ts=8
 # New ports collection makefile for:    spegla
-# Version required:     1.04p1
 # Date created:         Sun Apr 19 16:17:25 PDT 1998
 # Whom:                 Jordan Hubbard <jkh@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	spegla-1.04p1
+PORTNAME=	spegla
+PORTVERSION=	1.04p1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.luth.se/pub/unix/mirror/ \
 		ftp://subzero.campus.luth.se/pub/spegla/

@@ -1,12 +1,12 @@
 # Ports collection Makefile for:	gtm
-# Version required:			0.3.1
 # Date created:				05/28/1999
 # Whom:					nectar@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=		gtm-0.3.1
+PORTNAME=		gtm
+PORTVERSION=		0.3.1
 CATEGORIES=		ftp gnome
 MASTER_SITES=		http://www.rnl.ist.utl.pt/~bapm/gtm/files/     \
 			http://www.nectar.cc/distfiles/

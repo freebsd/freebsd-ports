@@ -1,13 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  wget
-# Version required: 0.0
 # Date created:			  31 December 1996
 # Whom:				  Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wget-1.5.3
+PORTNAME=	wget
+PORTVERSION=	1.5.3
 CATEGORIES=	ftp www
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.dl.ac.uk/ccp14/ftp-mirror/wget/pub/unix/util/wget/ \

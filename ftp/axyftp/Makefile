@@ -1,17 +1,17 @@
 # New ports collection makefile for: wxftp
-# Version required: 		0.4.4
 # Date created: 		22 October 1998
 # Whom: 			Antti Kaipila <anttik@iki.fi>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wxftp-0.4.4.src
-PKGNAME=	wxftp-0.4.4
+PORTNAME=	wxftp
+PORTVERSION=	0.4.4
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.wxftp.seul.org/pub/wxftp/0.4.4/ \
 		ftp://ftp.sunsite.auc.dk/disk2/linuxberg.com/files/x11/network/ \
 		ftp://ftp.bitcon.no/.10/linux/linuxberg/files/x11/network/
+DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	kris@FreeBSD.org
 
