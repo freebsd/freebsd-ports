@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	twisted
-PORTVERSION=	0.15.0
+PORTVERSION=	0.17.4
 CATEGORIES=	devel net python
-MASTER_SITES=	http://twistedmatrix.com/downloads/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Twisted-${PORTVERSION}
 
@@ -18,13 +19,15 @@ BUILD_DEPENDS=	${PYDISTUTILS}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/unittest.py:${PORTSDIR}/devel/py-unit \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 
+USE_BZIP2=	yes
 USE_PYTHON=	yes
 PYTHON_SETUP=	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
-MAN1=		faucet.1 gnusto.1 im.1 manhole.1 mktap.1 twistd.1
+CPIO=		cpio --quiet -pdum -R
+MAN1=		coil.1 im.1 manhole.1 mktap.1 t-im.1 twistd.1
 
 post-patch:
 	@ ${PERL} -pi -e 's/from pyunit import/import/g' \
-	  ${WRKSRC}/bin/runtests ${WRKSRC}/twisted/test/*.py
+	  ${WRKSRC}/admin/runtests ${WRKSRC}/twisted/test/*.py
 
 do-build:
 	@ cd ${WRKSRC} && ${PYTHON_SETUP} build
@@ -32,20 +35,28 @@ do-build:
 do-install:
 	@ cd ${WRKSRC} && ${PYTHON_SETUP} install -c -O1 \
 	  --prefix=${PREFIX}
+	@ ${MKDIR} ${DATADIR}/admin
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/admin/accepttests \
+	  ${WRKSRC}/admin/runtests ${DATADIR}/admin
 .for manpage in ${MAN1}
 	@ ${INSTALL_MAN} ${WRKSRC}/doc/man/${manpage} ${MANPREFIX}/man/man1
 .endfor
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}/img
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/img/*.bmp ${DOCSDIR}/img
+	@ ${MKDIR} ${DOCSDIR}/api
+	@ cd ${WRKSRC}/doc/api && find * \
+	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/api
+.for docsubdir in howto img
+	@ ${MKDIR} ${DOCSDIR}/${docsubdir}
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/${docsubdir}/* ${DOCSDIR}/${docsubdir}
+.endfor
 .for docfile in CREDITS ERRATA README TODO
 	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
-	@ ${MKDIR} ${EXAMPLESDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/examples/* ${EXAMPLESDIR}
+	@ ${MKDIR} ${EXAMPLESDIR}/scripts ${EXAMPLESDIR}/static
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/examples/* ${EXAMPLESDIR}/scripts
+	@ ${INSTALL_DATA} ${WRKSRC}/static/* ${EXAMPLESDIR}/static
 .endif
 
 .include <bsd.port.mk>
