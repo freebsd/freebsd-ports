@@ -1,4 +1,4 @@
-lib/tcl%%TCLV%%/memchan/libmemchan%%TCLVND%%.so.1
+lib/libmemchan.so.1
 lib/tcl%%TCLV%%/memchan/pkgIndex.tcl
 @dirrm lib/tcl%%TCLV%%/memchan
 share/doc/memchan/img/up.gif
