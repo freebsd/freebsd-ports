@@ -1,0 +1,6 @@
+@cwd /usr/X11R6
+@mode 755
+bin/gxditview
+@mode 444
+lib/X11/app-defaults/GXditview
+man/man1/gxditview.1.gz
