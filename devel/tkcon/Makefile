@@ -6,24 +6,26 @@
 #
 
 PORTNAME=	tkcon
-PORTVERSION=	1.6
-CATEGORIES=	devel tk82
-MASTER_SITES=	ftp://ftp.neosoft.com/languages/tcl/sorted/packages-8.0/devel/
+PORTVERSION=	2.1
+CATEGORIES=	devel tk83
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=${PORTNAME}
 
 MAINTAINER=	gehicks@cisco.com
 
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
+RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
 NO_BUILD=	yes
 
 post-patch:
-	@${PERL} -pi -e 's:/usr/local:${PREFIX}:' ${WRKSRC}/tkcon.tcl
+	@${PERL} -pi \
+		-e 's,docs\s+"([^"]+)",docs	"file:${PREFIX}/share/doc/tkcon/index.html\\n\1",' ${WRKSRC}/tkcon.tcl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tkcon.tcl ${PREFIX}/bin/tkcon
 
-post-install:
 .if !defined(NOPORTDOCS)
+post-install:
 	${MKDIR} ${PREFIX}/share/doc/tkcon
 	${INSTALL_DATA} ${WRKSRC}/README.txt $(PREFIX)/share/doc/tkcon/README.tkcon
 	${INSTALL_DATA} ${WRKSRC}/docs/* $(PREFIX)/share/doc/tkcon
