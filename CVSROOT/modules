@@ -7577,6 +7577,7 @@ wmdate		ports/x11-clocks/wmdate
 wmessage	ports/misc/wmessage
 wmeyes		ports/games/wmeyes
 wmfire		ports/sysutils/wmfire
+wmfirew		ports/misc/wmfirew
 wmfishtime	ports/x11-clocks/wmfishtime
 wmflame		ports/sysutils/wmflame
 wmfortune	ports/games/wmfortune
