@@ -320,7 +320,7 @@ archie.el	ports/net/archie.el
 arena		ports/www/arena
 argparse	ports/misc/argparse
 argus		ports/net/argus
-ari-yahoo	ports/misc/ari-yahoo
+ari-yahoo	ports/net/ari-yahoo
 aria		ports/www/aria
 arirang		ports/security/arirang
 arithmetic	src/games/arithmetic
