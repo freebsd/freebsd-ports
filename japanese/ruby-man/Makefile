@@ -11,7 +11,7 @@ CATEGORIES=	japanese
 
 MAINTAINER=	knu@FreeBSD.org
 
-FILESDIR=	${.CURDIR}/files
+MD5_FILE=	${.CURDIR}/distinfo
 PKGDIR=		${.CURDIR}
 
 LANGSUFFIX=	-jp
