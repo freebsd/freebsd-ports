@@ -3,12 +3,13 @@
 # Date created:         3 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.3 1995/04/11 01:18:47 asami Exp $
+# $Id: Makefile,v 1.4 1995/04/11 01:59:57 jmz Exp $
 #
 
 DISTNAME=	calc-2.9.3t6
 PKGNAME=	calc-2.9.3
 MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/misc/4.4BSD-Lite/contrib/
+
 MAINTAINER=	jmz@FreeBSD.org
 
 pre-install:
