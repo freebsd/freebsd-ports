@@ -7,7 +7,7 @@
 
 PORTNAME=	mailman
 PORTVERSION=	2.0.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
@@ -24,38 +24,24 @@ CONFIGURE_ARGS=	--prefix=${MAILMANDIR} \
 		--with-python=${PYTHON_CMD} \
 		--with-mail-gid=${MAIL_GID} --with-cgi-gid=${CGI_GID}
 USE_PYTHON=	yes
+PKGOPTS=	${FILESDIR}/pkg-opts
 
 .include <bsd.port.pre.mk>
 
-# These variables may be tweaked if required.  However, it is recommended
-# that the USERID and GROUPID not be changed.
+# The Mailman port supports a number of variables that may be tweaked at
+# build time.  Getting the values of some of them right is crucial!
+# Perform a "make options" to see more information on these variables.
 #
 USERNAME?=	mailman
 USERID?=	91
 GROUPNAME?=	${USERNAME}
 GROUPID?=	${USERID}
 MMDIR?=		mailman
-
-# Getting the value of MAIL_GID right is crucial to getting Mailman to work
-# with your MTA.  By default, this port works with sendmail.  If you're using
-# an alternative MTA installed from ports, you should set MAIL_GID at build
-# time according to the following table.  (Please contact this port's
-# maintainer if you can fill in the blanks, or to report mistakes!)
-#
-# MTA     | MAIL_GID | Submitted by
-# Exim    | 6        | <wjv>
-# Postfix | 65534    | <shamrock@cypherpunks.to>
-# Qmail   | ???      |
-#
 .if ${OSVERSION} >= 450000
 MAIL_GID?=	26
 .else
 MAIL_GID?=	1
 .endif
-
-# By default, this port works with the current port of Apache.  If your WWW
-# server executes CGI scripts under a different GID, you'll have to set this
-# at build time.
 CGI_GID?=	80
 
 MAILMANDIR=	${PREFIX}/${MMDIR}
@@ -64,11 +50,25 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PLIST_SUB=	MMDIR=${MMDIR} MMGRP=${GROUPNAME}
 
+options:
+	@ ${ECHO_MSG} "===>  Build options for ${PKGNAME}:"
+	@ ${PERL} -ne '/^#/ || /^\s/ && print || \
+	  print sprintf "* %s [%s]\n  %s", split(/\|/)' ${PKGOPTS}
+
+post-extract:
+.if !defined(BATCH)
+	@ ${TEST} -r ${PKGOPTS} && \
+	  (${ECHO_MSG} '-------------------------------------------------------------------------'; \
+	   ${ECHO_MSG} 'Perform a "make options" to see a list of available installation options.'; \
+	   ${ECHO_MSG} '-------------------------------------------------------------------------')
+.endif
+
 pre-configure:
 	@ ${SED} -e 's#%%USER%%#${USERNAME}#g' -e 's#%%UID%%#${USERID}#g' \
 	  -e 's#%%GROUP%%#${GROUPNAME}#g' -e 's#%%GID%%#${GROUPID}#g' \
 	  -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' pkg-install > \
 	  ${PKGINSTALL}
+# Mailman's configure script needs the "mailman" user/group to exist.
 	@ ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-configure:
@@ -79,29 +79,21 @@ post-configure:
 	@ ${SED} -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' \
 	  -e 's#%%DOCSDIR%%#${DOCSDIR}#g' pkg-message > ${PKGMESSAGE}
 
-pre-build:
-.if !defined(BATCH)
-	@ ${ECHO_MSG} "-------------------------------------------------------"
-	@ ${ECHO_MSG} "  If you're using an alternative MTA (not Sendmail)"
-	@ ${ECHO_MSG} "  OR an older version of Sendmail, you may have to"
-	@ ${ECHO_MSG} "  set MAIL_GID to the gid under which your MTA is"
-	@ ${ECHO_MSG} "  executing.  See the comments in the port's"
-	@ ${ECHO_MSG} "  Makefile for further information."
-	@ ${ECHO_MSG} "-------------------------------------------------------"
-.endif
+pre-install:
+	@ ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 .for dir in cron scripts
 	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${MAILMANDIR}/${dir}
 .endfor
 	@ ${CHGRP} -R ${GROUPNAME} ${MAILMANDIR}
-	@ ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
 .for docfile in BUGS FAQ INSTALL NEWS README* UPGRADING
 	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif
+	@ ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(BATCH)
 	@ ${CAT} ${PKGMESSAGE}
 .endif
