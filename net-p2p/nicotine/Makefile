@@ -22,12 +22,35 @@ USE_PYDISTUTILS=	yes
 
 .include <bsd.port.pre.mk>
 
+.if exists(${PYTHON_SITELIBDIR}/GeoIP.so) || defined(WITH_GEOIP)
+WITH_GEOIP=	yes
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/GeoIP.so:${PORTSDIR}/net/py-GeoIP
+.endif
+
+.if exists(${PYTHON_SITELIBDIR}/psyco/_psyco.so) || defined(WITH_PSYCO)
+WITH_PSYCO=	yes
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
+.endif
+
 .if exists(${PYTHON_SITELIBDIR}/ogg/vorbis.so) || defined(WITH_VORBIS)
+WITH_VORBIS=	yes
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis
-.else
+.endif
+
+.if !defined(WITH_VORBIS) || !defined(WITH_PSYCO) || !defined(WITH_GEOIP)
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define WITH_VORBIS=yes to enable OGG/Vorbis support"
+	@${ECHO_MSG} "You can define the following for additional features:"
+	@${ECHO_MSG} ""
+.if !defined(WITH_GEOIP)
+	@${ECHO_MSG} "WITH_GEOIP  - enable the GeoIP based country code blocker"
+.endif
+.if !defined(WITH_PSYCO)
+	@${ECHO_MSG} "WITH_PSYCO  - enable the psyco optimizing compiler"
+.endif
+.if !defined(WITH_VORBIS)
+	@${ECHO_MSG} "WITH_VORBIS - enable OGG/Vorbis support"
+.endif
 	@${ECHO_MSG} ""
 .endif
 
