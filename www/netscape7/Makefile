@@ -15,7 +15,7 @@ DISTFILES=	netscape-v600pr1.x86-unknown-linux2.2.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${LINUX_BASE}/lib/ld.so:${PORTSDIR}/emulators/linux_base \
-		${LINUX_BASE}/usr/lib/libgdk-1.2.so.0.5.0:${PORTSDIR}/x11-toolkits/linux-gtk \
+		${LINUX_BASE}/usr/lib/libgtk-1.2.so.0.5.0:${PORTSDIR}/x11-toolkits/linux-gtk \
 		${LINUX_BASE}/usr/lib/libjpeg.so.62.0.0:${PORTSDIR}/graphics/linux-jpeg
 
 LINUX_BASE=	/compat/linux
