@@ -7,6 +7,8 @@ ICMP, etc.). You just can't do all this with one scanning mode.  Thus nmap
 incorporats virtually every scanning technique known of.
 
 See the nmap homepage at http://www.insecure.org/nmap/index.html
+And the Phrack Magazine article (Volume 7, Issue 51 September 01, 1997,
+article 11 of 17) http://www.insecure.org/nmap/p51-11.txt
 
 -- David
    obrien@cs.ucdavis.edu

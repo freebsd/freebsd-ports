@@ -1,11 +1,17 @@
---- Makefile.in.orig	Mon May 25 06:11:27 1998
-+++ Makefile.in	Thu Aug 20 15:04:19 1998
-@@ -9,7 +9,7 @@
+--- Makefile.in.orig	Wed Oct  7 19:59:00 1998
++++ Makefile.in	Thu Oct  8 03:57:23 1998
+@@ -10,4 +10,4 @@
  CC = @CC@
  CCOPT = 
  LIBPCAPDIR = @libpcapdir@
 -INCLS = -I. -I$(LIBPCAPDIR)
-+INCLS = -I.
- DEFS = @DEFS@
- CFLAGS = @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
- LDFLAGS = @LDFLAGS@
++INCLS = -I. # -I$(LIBPCAPDIR)
+@@ -30,7 +30,7 @@
+ 
+ all: $(TARGET)
+ 
+-$(TARGET): $(DEPS) @PCAP_DEPENDS@ $(OBJS)
++$(TARGET): $(DEPS) $(OBJS) # @PCAP_DEPENDS@
+ 	@echo Compiling nmap
+ 	rm -f $@
+ 	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
