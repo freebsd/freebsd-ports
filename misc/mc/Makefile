@@ -3,7 +3,7 @@
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.20 1998/05/02 21:19:48 vanilla Exp $
+# $Id: Makefile,v 1.21 1998/06/01 23:31:36 vanilla Exp $
 #
 
 DISTNAME=	mc-4.1.35
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	utils/file/managers/mc
 MAINTAINER=	ports@FreeBSD.ORG
 
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--with-ncurses --without-edit --without-subshell --disable-nls
+CONFIGURE_ARGS=	--with-ncurses --without-edit --with-dusum --disable-nls
 CONFIGURE_ENV=	INSTALL="$${INSTALL} -c"
 MAKE_ENV=	CCOPTS="$(CFLAGS)"
 MAN1=		midc.1

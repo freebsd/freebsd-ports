@@ -1,6 +1,6 @@
 --- vfs/Makefile.in.orig	Mon May 25 18:16:04 1998
-+++ vfs/Makefile.in	Tue Jun  2 06:29:12 1998
-@@ -91,25 +91,25 @@
++++ vfs/Makefile.in	Wed Jun  3 23:28:09 1998
+@@ -91,25 +91,24 @@
  
  install: @mcserv@ install.extfs
  	-(if test x@mcserv@ != x; then \
@@ -9,17 +9,13 @@
  	fi)
  
  install.extfs:
- 	$(INSTALL_DATA) $(srcdir)/extfs/README $(DESTDIR)$(libdir)/extfs/README
- 	$(INSTALL_DATA) $(srcdir)/extfs/extfs.ini $(DESTDIR)$(libdir)/extfs/extfs.ini
+-	$(INSTALL_DATA) $(srcdir)/extfs/README $(DESTDIR)$(libdir)/extfs/README
+-	$(INSTALL_DATA) $(srcdir)/extfs/extfs.ini $(DESTDIR)$(libdir)/extfs/extfs.ini
 -	$(INSTALL_PROGRAM) $(srcdir)/extfs/a $(DESTDIR)$(libdir)/extfs/a
 -	$(INSTALL_PROGRAM) $(srcdir)/extfs/arfs $(DESTDIR)$(libdir)/extfs/arfs
 -	$(INSTALL_PROGRAM) $(srcdir)/extfs/rpm  $(DESTDIR)$(libdir)/extfs/rpm
 -	$(INSTALL_PROGRAM) $(srcdir)/extfs/hp48  $(DESTDIR)$(libdir)/extfs/hp48
-+	$(INSTALL_DATA) $(srcdir)/extfs/a $(DESTDIR)$(libdir)/extfs/a
-+	$(INSTALL_DATA) $(srcdir)/extfs/arfs $(DESTDIR)$(libdir)/extfs/arfs
-+	$(INSTALL_DATA) $(srcdir)/extfs/rpm  $(DESTDIR)$(libdir)/extfs/rpm
-+	$(INSTALL_DATA) $(srcdir)/extfs/hp48  $(DESTDIR)$(libdir)/extfs/hp48
- 	
+-	
 -	$(INSTALL_PROGRAM) extfs/cpio $(DESTDIR)$(libdir)/extfs/cpio
 -	$(INSTALL_PROGRAM) extfs/deb  $(DESTDIR)$(libdir)/extfs/deb
 -	$(INSTALL_PROGRAM) extfs/ftplist $(DESTDIR)$(libdir)/extfs/ftplist
@@ -28,14 +24,20 @@
 -	$(INSTALL_PROGRAM) extfs/rar $(DESTDIR)$(libdir)/extfs/rar
 -	$(INSTALL_PROGRAM) extfs/zip $(DESTDIR)$(libdir)/extfs/zip
 -	$(INSTALL_PROGRAM) extfs/zoo $(DESTDIR)$(libdir)/extfs/zoo
-+	$(INSTALL_DATA) extfs/cpio $(DESTDIR)$(libdir)/extfs/cpio
-+	$(INSTALL_DATA) extfs/deb  $(DESTDIR)$(libdir)/extfs/deb
-+	$(INSTALL_DATA) extfs/ftplist $(DESTDIR)$(libdir)/extfs/ftplist
-+	$(INSTALL_DATA) extfs/lslR $(DESTDIR)$(libdir)/extfs/lslR
-+	$(INSTALL_DATA) extfs/lha $(DESTDIR)$(libdir)/extfs/lha
-+	$(INSTALL_DATA) extfs/rar $(DESTDIR)$(libdir)/extfs/rar
-+	$(INSTALL_DATA) extfs/zip $(DESTDIR)$(libdir)/extfs/zip
-+	$(INSTALL_DATA) extfs/zoo $(DESTDIR)$(libdir)/extfs/zoo
++	$(INSTALL_DATA) extfs/README $(DESTDIR)$(libdir)/extfs/README
++	$(INSTALL_DATA) extfs/extfs.ini $(DESTDIR)$(libdir)/extfs/extfs.ini
++	$(INSTALL_DATA) -m 555 extfs/a $(DESTDIR)$(libdir)/extfs/a
++	$(INSTALL_DATA) -m 555 extfs/arfs $(DESTDIR)$(libdir)/extfs/arfs
++	$(INSTALL_DATA) -m 555 extfs/rpm  $(DESTDIR)$(libdir)/extfs/rpm
++	$(INSTALL_DATA) -m 555 extfs/hp48  $(DESTDIR)$(libdir)/extfs/hp48
++	$(INSTALL_DATA) -m 555 extfs/cpio $(DESTDIR)$(libdir)/extfs/cpio
++	$(INSTALL_DATA) -m 555 extfs/deb  $(DESTDIR)$(libdir)/extfs/deb
++	$(INSTALL_DATA) -m 555 extfs/ftplist $(DESTDIR)$(libdir)/extfs/ftplist
++	$(INSTALL_DATA) -m 555 extfs/lslR $(DESTDIR)$(libdir)/extfs/lslR
++	$(INSTALL_DATA) -m 555 extfs/lha $(DESTDIR)$(libdir)/extfs/lha
++	$(INSTALL_DATA) -m 555 extfs/rar $(DESTDIR)$(libdir)/extfs/rar
++	$(INSTALL_DATA) -m 555 extfs/zip $(DESTDIR)$(libdir)/extfs/zip
++	$(INSTALL_DATA) -m 555 extfs/zoo $(DESTDIR)$(libdir)/extfs/zoo
  
  uninstall:
  	-$(RMF) $(DESTDIR)$(libdir)/extfs/rpm

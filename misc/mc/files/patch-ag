@@ -1,0 +1,148 @@
+--- lib/mc.ext.in.orig	Mon May 25 18:16:05 1998
++++ lib/mc.ext.in	Thu Jun  4 10:06:34 1998
+@@ -105,20 +105,20 @@
+ 
+ regex/\.t([gp]?z|ar\.g?[zZ])$
+ 	Open=%cd tar:%d/%p/
+-	View=%view{ascii} gzip -dc %f 2>/dev/null | tar tvvf -
+-	Extract=gzip -dc %f 2>/dev/null | tar xf -
++	View=%view{ascii} gzip -dc '%d/%p' | tar tvvf -
++	Extract=gzip -dc '%d/%p' | tar xf -
+ 	Icon=compressed.xpm
+ 
+ regex/\.tar\.bz$
+ #	Open=%cd tar:%d/%p/
+-	View=%view{ascii} bzip -dc %f 2>/dev/null | tar tvvf -
+-	Extract=bzip -dc %f 2>/dev/null | tar xf -
++	View=%view{ascii} bzip -dc '%d/%p' | tar tvvf -
++	Extract=bzip -dc '%d/%p' | tar xf -
+ 	Icon=compressed.xpm
+ 
+ regex/\.tar\.bz2$
+ 	Open=%cd tar:%d/%p/
+-	View=%view{ascii} bzip2 -dc %f 2>/dev/null | tar tvvf -
+-	Extract=bzip2 -dc %f 2>/dev/null | tar xf -
++	View=%view{ascii} bzip2 -dc '%d/%p' | tar tvvf -
++	Extract=bzip2 -dc '%d/%p' | tar xf -
+ 	Icon=compressed.xpm
+ 
+ # .tar
+@@ -130,17 +130,17 @@
+ 
+ # bzipped
+ regex/\.bz$
+-	Open=bzip -dc %f | %var{PAGER:more}
+-	View=%view{ascii} bzip -dc %f 2>/dev/null
+-	Edit=I=`date +%%s`; export I; bzip -cd %f >/tmp/bzed.$I && %var{EDITOR:vi} /tmp/bzed.$I && bzip -c /tmp/bzed.$I > %f; rm -f /tmp/bzed.$I
+-	Uncompress=bunzip %f
++	Open=bzip -dc '%d/%p' | %var{PAGER:more}
++	View=%view{ascii} bzip -dc '%d/%p'
++	Edit=I=`date +%%s`; export I; bzip -dc '%d/%p' >/tmp/bzed.$I && %var{EDITOR:vi} /tmp/bzed.$I && bzip -c /tmp/bzed.$I > '%d/%p'; rm -f /tmp/bzed.$I
++	Uncompress=bunzip '%d/%p'
+ 	Icon=compressed.xpm
+ 
+ regex/\.bz2$
+-	Open=bzip2 -dc %f | %var{PAGER:more}
+-	View=%view{ascii} bzip2 -dc %f 2>/dev/null
+-	Edit=I=`date +%%s`; export I; bzip2 -cd %f >/tmp/bzed.$I && %var{EDITOR:vi} /tmp/bzed.$I && bzip2 -c /tmp/bzed.$I > %f; rm -f /tmp/bzed.$I
+-	Uncompress=bunzip2 %f
++	Open=bzip2 -dc '%d/%p' | %var{PAGER:more}
++	View=%view{ascii} bzip2 -dc '%d/%p'
++	Edit=I=`date +%%s`; export I; bzip2 -dc '%d/%p' >/tmp/bzed.$I && %var{EDITOR:vi} /tmp/bzed.$I && bzip2 -c /tmp/bzed.$I > '%d/%p'; rm -f /tmp/bzed.$I
++	Uncompress=bunzip2 '%d/%p'
+ 	Icon=compressed.xpm
+ 
+ # Programs
+@@ -213,7 +213,7 @@
+ 	Icon=plain_dir.xpm
+ regex/^ls-?lR\.(g?z|Z)$
+ 	Open=%cd lslR:%d/%p/
+-	View=%view{ascii} gunzip -c %f
++	View=%view{ascii} gzip -c '%d/%p'
+ 	Icon=plain_dir.xpm
+ 
+ # ftplist
+@@ -236,7 +236,7 @@
+ 	Open=%cd zip:%d/%p/
+ 	View=%view{ascii} unzip -v %f
+ 	Icon=zip.xpm
+-	Extract=unzip %f
++	Extract=unzip '%d/%p'
+ 	Extract (with flags)=I=%{Enter any Unzip flags:}; if test -n "$I"; then unzip $I %f; fi
+ 	Unzip=unzip %f '*'
+ 
+@@ -266,7 +266,7 @@
+ # ar library
+ regex/\.s?a$
+ 	Open=%cd arfs:%d/%p/
+-	View=%view{ascii} nm %f
++	View=%view{ascii} nm '%d/%p'
+ 
+ # C
+ shell/.c
+@@ -357,8 +357,8 @@
+ 
+ # Manual page - compressed
+ regex/([^0-9]|^[^\.]*)\.([1-9][a-z]?|n)\.g?[Zz]$
+-	Open=gunzip -dc %f | nroff @TROFFASCII@ @MANDOC@ | %var{PAGER:more}
+-	View=%view{ascii,nroff} gunzip -dc %f | nroff @TROFFASCII@ @MANDOC@
++	Open=gzip -dc '%d/%p' | nroff @TROFFASCII@ @MANDOC@ | %var{PAGER:more}
++	View=%view{ascii,nroff} gzip -dc '%d/%p' | nroff @TROFFASCII@ @MANDOC@
+ 	Icon=man.xpm
+ 
+ regex/(read\.?me$)|(README)
+@@ -455,16 +455,16 @@
+ 
+ # gzipped
+ type/gzip
+-	Open=gzip -dc %f | %var{PAGER:more}
+-	View=%view{ascii} gzip -dc %f 2>/dev/null
+-	Edit=I=`date +%%s`; export I; gzip -cd %f >/tmp/gzed.$I && %var{EDITOR:vi} /tmp/gzed.$I && gzip -c /tmp/gzed.$I > %f; rm -f /tmp/gzed.$I
+-	Uncompress=gunzip %f
++	Open=gzip -dc '%d/%p' | %var{PAGER:more}
++	View=%view{ascii} gzip -dc '%d/%p'
++	Edit=I=`date +%%s`; export I; gzip -dc '%d/%p' >/tmp/gzed.$I && %var{EDITOR:vi} /tmp/gzed.$I && gzip -c /tmp/gzed.$I > '%d/%p'; rm -f /tmp/gzed.$I
++	Uncompress=gzip '%d/%p'
+ 	Icon=compressed.xpm
+ 
+ type/compress
+ 	Open=gzip -dc %f | %var{PAGER:more}
+-	View=%view{ascii} gzip -dc %f 2>/dev/null
+-	Edit=I=`date +%%s`; export I; gzip -cd %f >/tmp/gzed.$I && %var{EDITOR:vi} /tmp/gzed.$I && gzip -c /tmp/gzed.$I > %f; rm -f /tmp/gzed.$I
++	View=%view{ascii} gzip -dc '%d/%p'
++	Edit=I=`date +%%s`; export I; gzip -dc '%d/%p' >/tmp/gzed.$I && %var{EDITOR:vi} /tmp/gzed.$I && gzip -c /tmp/gzed.$I > '%d/%p'; rm -f /tmp/gzed.$I
+ 	Icon=compressed.xpm
+ 
+ # Makefile
+@@ -532,14 +532,14 @@
+        Icon=rexx.xpm
+ 
+ # Microsoft Word Document
+-regex/\.(doc|DOC)$
++#regex/\.(doc|DOC)$
+ #       View=%view{ascii} catdoc -w %f
+-       View=%view{ascii} word2x -f text %f -
+-       Icon=word.xpm
+-type/Microsoft Word Document
++#       View=%view{ascii} word2x -f text %f -
++#       Icon=word.xpm
++#type/Microsoft Word Document
+ #       View=%view{ascii} catdoc -w %f
+-       View=%view{ascii} word2x -f text %f -
+-       Icon=word.xpm
++#       View=%view{ascii} word2x -f text %f -
++#       Icon=word.xpm
+  
+ # cpio rules
+ 
+@@ -551,8 +551,8 @@
+ 
+ shell/.cpio.gz
+ 	Open=%cd cpio:%d/%p/
+-	View=%view{ascii} gzip -dc '%f' | cpio -ictv
+-	Extract=gzip -dc '%f' | cpio -ic
++	View=%view{ascii} gzip -dc '%d/%p' | cpio -ictv
++	Extract=gzip -dc '%d/%p' | cpio -ic
+ 	Icon=compressed.xpm
+ 
+ shell/.cpio
