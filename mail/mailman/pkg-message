@@ -1,26 +1,21 @@
 ----------------------------------------------------------------------------
-Mailman has been installed, but is not quite ready to be used yet!
-You need to configure both Mailman and your MTA to integrate with each
-other.  At the very least, you'll need to create these aliases:
+Mailman has been installed, but requires further configuration before use!
 
-  mailman: you@your.domain.com
-  mailman-owner: mailman
+You will have to configure both your MTA (mail server) and web server to
+integrate with Mailman.  If the port's documentation has been installed,
+extensive post-installation instructions may be found in:
 
-You will also find README files with MTA-specific hints in
-%%DOCSDIR%%.
+  %%DOCSDIR%%/FreeBSD-post-install-notes
 
-You'll need to add at least the following to Apache's httpd.conf to
-activate Mailman's web interface:
+Note (1):  If you use an alternate (non-Sendmail) MTA, you MUST be sure
+that the correct value of MAIL_GID was used when this port or package
+was built.  Performing a "make options" in the Mailman port directory
+will list required values for various mail servers.
 
-  ScriptAlias /mailman "%%MAILMANDIR%%/cgi-bin"
-  Alias /pipermail "%%MAILMANDIR%%/archives/public"
+Note (2):  The entire Mailman installation resides under %%MAILMANDIR%%
+The command-line scripts necessary to administer Mailman have been
+installed in %%MAILMANDIR%%/bin
 
-Remember to reload your mail aliases if required, and to restart your httpd!
-
-See INSTALL and UPGRADING in %%DOCSDIR%% for further
-post-installation instructions.
-
-Note:  The entire Mailman installation resides under %%MAILMANDIR%%.
-The command-line scripts necessary to administer Mailman have been installed
-in %%MAILMANDIR%%/bin.
+Note (3):  As of version 2.1, Mailman's queue runner runs as a daemon and
+is started by a script in %%LOCALBASE%%/etc/rc.d
 ----------------------------------------------------------------------------
