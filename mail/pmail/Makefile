@@ -20,5 +20,6 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	yes
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
