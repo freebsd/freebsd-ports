@@ -33,7 +33,6 @@
 @dirrm share/doc/HTML/en/KRegExpEditor
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
-@dirrm share/doc
 @dirrm share/config
 @dirrm share/apps/ksim/themes/ksim/net
 @dirrm share/apps/ksim/themes/ksim/mail

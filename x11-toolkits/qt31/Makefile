@@ -36,7 +36,7 @@ NO_FILTER_SHLIBS=yes
 CONFIGURE_ARGS=	-system-libpng -system-libjpeg -system-libmng	\
 		-qt-imgfmt-png -qt-imgfmt-jpeg -qt-imgfmt-mng	\
 		-system-zlib -no-nas-sound -sm -qt-gif -thread	\
-		-no-fast ${XINERAMA} -no-g++-exceptions -no-stl	\
+		-no-fast -xinerama -no-g++-exceptions -no-stl	\
 		${CUPS} -shared -prefix ${PREFIX} -datadir ${DATADIR} \
 		-docdir ${DOCSDIR} -plugindir ${PREFIX}/lib/plugins
 
@@ -49,13 +49,6 @@ USE_MESA=	yes
 .else
 CONFIGURE_ARGS+=-disable-opengl
 .endif # WITHOUT_OPENGL
-
-.if defined(WITH_XINERAMA)
-XINERAMA=	-xinerama
-PKGNAMESUFFIX=	-xinerama
-.else
-XINERAMA=	-no-xinerama
-.endif # defined(WITH_XINERAMA)
 
 .if !defined(WITHOUT_CUPS)
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base

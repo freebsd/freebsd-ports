@@ -167,6 +167,7 @@ share/doc/HTML/pt_BR/kcontrol/useragent/index.docbook
 share/doc/HTML/pt_BR/kcontrol/windowmanagement/common
 share/doc/HTML/pt_BR/kcontrol/windowmanagement/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/windowmanagement/index.docbook
+share/doc/HTML/pt_BR/kdeprint/getting-started.docbook
 share/doc/HTML/pt_BR/keduca/common
 share/doc/HTML/pt_BR/keduca/index.cache.bz2
 share/doc/HTML/pt_BR/keduca/index.docbook
@@ -746,6 +747,7 @@ share/locale/pt_BR/flag.png
 @dirrm share/doc/HTML/pt_BR/khelpcenter
 @dirrm share/doc/HTML/pt_BR/kgeo
 @dirrm share/doc/HTML/pt_BR/keduca
+@dirrm share/doc/HTML/pt_BR/kdeprint
 @dirrm share/doc/HTML/pt_BR/kcontrol/windowmanagement
 @dirrm share/doc/HTML/pt_BR/kcontrol/useragent
 @dirrm share/doc/HTML/pt_BR/kcontrol/spellchecking

@@ -135,6 +135,9 @@ share/doc/HTML/sk/kcalc/index.docbook
 share/doc/HTML/sk/kcharselect/common
 share/doc/HTML/sk/kcharselect/index.cache.bz2
 share/doc/HTML/sk/kcharselect/index.docbook
+share/doc/HTML/sk/kcoloredit/common
+share/doc/HTML/sk/kcoloredit/index.cache.bz2
+share/doc/HTML/sk/kcoloredit/index.docbook
 share/doc/HTML/sk/kcontrol/arts/common
 share/doc/HTML/sk/kcontrol/arts/index.cache.bz2
 share/doc/HTML/sk/kcontrol/arts/index.docbook
@@ -569,6 +572,7 @@ share/doc/HTML/sk/klines/index.docbook
 share/doc/HTML/sk/klipper/common
 share/doc/HTML/sk/klipper/index.cache.bz2
 share/doc/HTML/sk/klipper/index.docbook
+share/doc/HTML/sk/kmail/credits-and-licenses.docbook
 share/doc/HTML/sk/kmathtool/common
 share/doc/HTML/sk/kmathtool/index.cache.bz2
 share/doc/HTML/sk/kmathtool/index.docbook
@@ -597,6 +601,9 @@ share/doc/HTML/sk/kmplot/install.docbook
 share/doc/HTML/sk/kmplot/introduction.docbook
 share/doc/HTML/sk/kmplot/menu.docbook
 share/doc/HTML/sk/kmplot/using.docbook
+share/doc/HTML/sk/knode/credits.docbook
+share/doc/HTML/sk/knode/install.docbook
+share/doc/HTML/sk/knode/introduction.docbook
 share/doc/HTML/sk/kodo/common
 share/doc/HTML/sk/kodo/index.cache.bz2
 share/doc/HTML/sk/kodo/index.docbook
@@ -636,9 +643,6 @@ share/doc/HTML/sk/konqueror/sidebar.docbook
 share/doc/HTML/sk/konquest/common
 share/doc/HTML/sk/konquest/index.cache.bz2
 share/doc/HTML/sk/konquest/index.docbook
-share/doc/HTML/sk/konsole/common
-share/doc/HTML/sk/konsole/index.cache.bz2
-share/doc/HTML/sk/konsole/index.docbook
 share/doc/HTML/sk/konsole/konsole.png
 share/doc/HTML/sk/kooka/common
 share/doc/HTML/sk/kooka/index.cache.bz2
@@ -754,9 +758,6 @@ share/doc/HTML/sk/kwin4/index.docbook
 share/doc/HTML/sk/kworldclock/common
 share/doc/HTML/sk/kworldclock/index.cache.bz2
 share/doc/HTML/sk/kworldclock/index.docbook
-share/doc/HTML/sk/kwrite/common
-share/doc/HTML/sk/kwrite/index.cache.bz2
-share/doc/HTML/sk/kwrite/index.docbook
 share/doc/HTML/sk/lskat/common
 share/doc/HTML/sk/lskat/index.cache.bz2
 share/doc/HTML/sk/lskat/index.docbook
@@ -1193,7 +1194,6 @@ share/locale/sk/flag.png
 @dirrm share/doc/HTML/sk/noatun
 @dirrm share/doc/HTML/sk/megami
 @dirrm share/doc/HTML/sk/lskat
-@dirrm share/doc/HTML/sk/kwrite
 @dirrm share/doc/HTML/sk/kworldclock
 @dirrm share/doc/HTML/sk/kwin4
 @dirrm share/doc/HTML/sk/kweather
@@ -1231,6 +1231,7 @@ share/locale/sk/flag.png
 @dirrm share/doc/HTML/sk/kompare
 @dirrm share/doc/HTML/sk/kolf
 @dirrm share/doc/HTML/sk/kodo
+@dirrm share/doc/HTML/sk/knode
 @dirrm share/doc/HTML/sk/kmplot
 @dirrm share/doc/HTML/sk/kmoon
 @dirrm share/doc/HTML/sk/kmix
@@ -1238,6 +1239,7 @@ share/locale/sk/flag.png
 @dirrm share/doc/HTML/sk/kmessedwords
 @dirrm share/doc/HTML/sk/kmenuedit
 @dirrm share/doc/HTML/sk/kmathtool
+@dirrm share/doc/HTML/sk/kmail
 @dirrm share/doc/HTML/sk/klipper
 @dirrm share/doc/HTML/sk/klines
 @dirrm share/doc/HTML/sk/klickety
@@ -1339,6 +1341,7 @@ share/locale/sk/flag.png
 @dirrm share/doc/HTML/sk/kcontrol/background
 @dirrm share/doc/HTML/sk/kcontrol/arts
 @dirrm share/doc/HTML/sk/kcontrol
+@dirrm share/doc/HTML/sk/kcoloredit
 @dirrm share/doc/HTML/sk/kcharselect
 @dirrm share/doc/HTML/sk/kcalc
 @dirrm share/doc/HTML/sk/kbugbuster

@@ -3,4 +3,3 @@ bin/nspluginviewer
 lib/libnsplugin.la
 lib/libnsplugin.so
 lib/libnsplugin.so.1
-share/applnk/Settings/WebBrowsing/nsplugin.desktop

@@ -237,7 +237,6 @@
 @dirrm share/doc/HTML/en/kate
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
-@dirrm share/doc
 @dirrm share/config/kdm
 @dirrm share/config
 @dirrm share/autostart
@@ -453,4 +452,3 @@
 @dirrm include/kwin
 @dirrm include/ksgrd
 @dirrm include/kate
-@dirrm etc

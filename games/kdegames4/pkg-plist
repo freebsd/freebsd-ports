@@ -2124,7 +2124,6 @@ share/services/atlantik.protocol
 @dirrm share/doc/HTML/en/atlantik
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
-@dirrm share/doc
 @dirrm share/config/magic
 @dirrm share/config
 @dirrm share/apps/megami

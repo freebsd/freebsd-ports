@@ -1,7 +1,6 @@
 bin/kcron
 bin/kpackage
 bin/kuser
-bin/kwuftpd
 bin/kxconfig
 bin/secpolicy
 lib/kde3/kfile_deb.la
@@ -9,11 +8,9 @@ lib/kde3/kfile_deb.so
 lib/kde3/kfile_rpm.la
 lib/kde3/kfile_rpm.so
 share/applnk/Settings/Peripherals/kxconfig.desktop
-share/applnk/System/More/kwuftpd.desktop
 share/applnk/System/kcron.desktop
 share/applnk/System/kpackage.desktop
 share/applnk/System/kuser.desktop
-share/applnk/System/kwuftpd.desktop
 share/apps/kpackage/kpackageui.rc
 share/apps/kpackage/pics/bnew.png
 share/apps/kpackage/pics/bsd.png
@@ -150,7 +147,6 @@ share/services/kfile_rpm.desktop
 @dirrm share/doc/HTML/en/kcron
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
-@dirrm share/doc
 @dirrm share/apps/kxconfig/pics
 @dirrm share/apps/kxconfig/hwdata
 @dirrm share/apps/kxconfig
@@ -164,7 +160,6 @@ share/services/kfile_rpm.desktop
 @dirrm share/apps/kpackage/pics
 @dirrm share/apps/kpackage
 @dirrm share/apps
-@dirrm share/applnk/System/More
 @dirrm share/applnk/System
 @dirrm share/applnk/Settings/Peripherals
 @dirrm share/applnk/Settings

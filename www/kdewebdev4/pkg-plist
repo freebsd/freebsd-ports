@@ -196,6 +196,7 @@ share/apps/quanta/tags/php/zlib.tag
 share/apps/quanta/tags/tagxml/attr.tag
 share/apps/quanta/tags/tagxml/description.rc
 share/apps/quanta/tags/tagxml/location.tag
+share/apps/quanta/tags/tagxml/nonparams.tag
 share/apps/quanta/tags/tagxml/spacer.tag
 share/apps/quanta/tags/tagxml/tag.tag
 share/apps/quanta/tags/tagxslt/apply-imports.tag
@@ -256,6 +257,41 @@ share/apps/quanta/tags/wml-1-2/table.tag
 share/apps/quanta/tags/wml-1-2/template.tag
 share/apps/quanta/tags/wml-1-2/timer.tag
 share/apps/quanta/tags/wml-1-2/wml.tag
+share/apps/quanta/tags/xhtml-strict/a.tag
+share/apps/quanta/tags/xhtml-strict/area.tag
+share/apps/quanta/tags/xhtml-strict/base.tag
+share/apps/quanta/tags/xhtml-strict/blockquote.tag
+share/apps/quanta/tags/xhtml-strict/body.tag
+share/apps/quanta/tags/xhtml-strict/br.tag
+share/apps/quanta/tags/xhtml-strict/col.tag
+share/apps/quanta/tags/xhtml-strict/colgroup.tag
+share/apps/quanta/tags/xhtml-strict/description.rc
+share/apps/quanta/tags/xhtml-strict/div.tag
+share/apps/quanta/tags/xhtml-strict/empty.tag
+share/apps/quanta/tags/xhtml-strict/form.tag
+share/apps/quanta/tags/xhtml-strict/head.tag
+share/apps/quanta/tags/xhtml-strict/headings.tag
+share/apps/quanta/tags/xhtml-strict/hr.tag
+share/apps/quanta/tags/xhtml-strict/html.tag
+share/apps/quanta/tags/xhtml-strict/input.tag
+share/apps/quanta/tags/xhtml-strict/li.tag
+share/apps/quanta/tags/xhtml-strict/link.tag
+share/apps/quanta/tags/xhtml-strict/meta.tag
+share/apps/quanta/tags/xhtml-strict/ol.tag
+share/apps/quanta/tags/xhtml-strict/option.tag
+share/apps/quanta/tags/xhtml-strict/p.tag
+share/apps/quanta/tags/xhtml-strict/script.tag
+share/apps/quanta/tags/xhtml-strict/select.tag
+share/apps/quanta/tags/xhtml-strict/style.tag
+share/apps/quanta/tags/xhtml-strict/table.tag
+share/apps/quanta/tags/xhtml-strict/tbody.tag
+share/apps/quanta/tags/xhtml-strict/td.tag
+share/apps/quanta/tags/xhtml-strict/textarea.tag
+share/apps/quanta/tags/xhtml-strict/tfoot.tag
+share/apps/quanta/tags/xhtml-strict/th.tag
+share/apps/quanta/tags/xhtml-strict/thead.tag
+share/apps/quanta/tags/xhtml-strict/tr.tag
+share/apps/quanta/tags/xhtml-strict/ul.tag
 share/apps/quanta/tags/xhtml/a.tag
 share/apps/quanta/tags/xhtml/area.tag
 share/apps/quanta/tags/xhtml/base.tag
@@ -446,6 +482,7 @@ share/apps/quanta/toolbars/html/other.toolbar.tgz
 share/apps/quanta/toolbars/html/standard.toolbar.tgz
 share/apps/quanta/toolbars/html/tables.toolbar.tgz
 share/apps/quanta/toolbars/kde_docbook.toolbar.tgz
+share/apps/quanta/toolbars/tagxml/tagxml.toolbar.tgz
 share/apps/quanta/toolbars/wml-1-2/deck.toolbar.tgz
 share/apps/quanta/toolbars/wml-1-2/forms.toolbar.tgz
 share/apps/quanta/toolbars/wml-1-2/misc.toolbar.tgz
@@ -524,9 +561,9 @@ share/icons/locolor/32x32/apps/kmdr/executor.png
 @dirrm share/doc/HTML/en/quanta
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
-@dirrm share/doc
 @dirrm share/apps/quanta/toolbars/xml
 @dirrm share/apps/quanta/toolbars/wml-1-2
+@dirrm share/apps/quanta/toolbars/tagxml
 @dirrm share/apps/quanta/toolbars/html
 @dirrm share/apps/quanta/toolbars
 @dirrm share/apps/quanta/toolbar
@@ -548,6 +585,7 @@ share/icons/locolor/32x32/apps/kmdr/executor.png
 @dirrm share/apps/quanta/templates/binaries/images
 @dirrm share/apps/quanta/templates/binaries
 @dirrm share/apps/quanta/templates
+@dirrm share/apps/quanta/tags/xhtml-strict
 @dirrm share/apps/quanta/tags/xhtml
 @dirrm share/apps/quanta/tags/wml-1-2
 @dirrm share/apps/quanta/tags/tagxslt

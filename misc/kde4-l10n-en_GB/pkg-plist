@@ -251,6 +251,13 @@ share/doc/HTML/en_GB/klipper/index.docbook
 share/doc/HTML/en_GB/kmenuedit/common
 share/doc/HTML/en_GB/kmenuedit/index.cache.bz2
 share/doc/HTML/en_GB/kmenuedit/index.docbook
+share/doc/HTML/en_GB/konqueror/bookmarks.docbook
+share/doc/HTML/en_GB/konqueror/commands.docbook
+share/doc/HTML/en_GB/konqueror/credits.docbook
+share/doc/HTML/en_GB/konqueror/faq.docbook
+share/doc/HTML/en_GB/konqueror/introduction.docbook
+share/doc/HTML/en_GB/konqueror/path-complete.docbook
+share/doc/HTML/en_GB/konqueror/save-settings.docbook
 share/doc/HTML/en_GB/konsole/common
 share/doc/HTML/en_GB/konsole/index.cache.bz2
 share/doc/HTML/en_GB/konsole/index.docbook
@@ -694,6 +701,7 @@ share/locale/en_GB/flag.png
 @dirrm share/doc/HTML/en_GB/kspell
 @dirrm share/doc/HTML/en_GB/kpager
 @dirrm share/doc/HTML/en_GB/konsole
+@dirrm share/doc/HTML/en_GB/konqueror
 @dirrm share/doc/HTML/en_GB/kmenuedit
 @dirrm share/doc/HTML/en_GB/klipper
 @dirrm share/doc/HTML/en_GB/kioslave

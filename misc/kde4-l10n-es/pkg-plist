@@ -154,6 +154,17 @@ share/doc/HTML/es/kate/regular-expressions.docbook
 share/doc/HTML/es/katomic/common
 share/doc/HTML/es/katomic/index.cache.bz2
 share/doc/HTML/es/katomic/index.docbook
+share/doc/HTML/es/kbabel/catman.docbook
+share/doc/HTML/es/kbabel/common
+share/doc/HTML/es/kbabel/dictionaries.docbook
+share/doc/HTML/es/kbabel/faq.docbook
+share/doc/HTML/es/kbabel/glossary.docbook
+share/doc/HTML/es/kbabel/index.cache.bz2
+share/doc/HTML/es/kbabel/index.docbook
+share/doc/HTML/es/kbabel/kbabeldict.docbook
+share/doc/HTML/es/kbabel/menu.docbook
+share/doc/HTML/es/kbabel/preferences.docbook
+share/doc/HTML/es/kbabel/using.docbook
 share/doc/HTML/es/kbackgammon/common
 share/doc/HTML/es/kbackgammon/index.cache.bz2
 share/doc/HTML/es/kbackgammon/index.docbook
@@ -1541,6 +1552,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/kblackbox
 @dirrm share/doc/HTML/es/kbattleship
 @dirrm share/doc/HTML/es/kbackgammon
+@dirrm share/doc/HTML/es/kbabel
 @dirrm share/doc/HTML/es/katomic
 @dirrm share/doc/HTML/es/kate-plugins
 @dirrm share/doc/HTML/es/kate

@@ -16,7 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Multimedia utilities for the KDE integrated X11 desktop
 
-RUN_DEPENDS+=	xanim:${PORTSDIR}/multimedia/xanim
+RUN_DEPENDS+=	xanim:${PORTSDIR}/graphics/xanim
 LIB_DEPENDS+=	ogg.4:${PORTSDIR}/audio/libogg \
 		vorbis.2:${PORTSDIR}/audio/libvorbis
 
@@ -33,9 +33,8 @@ GNU_CONFIGURE=	yes
 MAKE_ENV=	${CONFIGURE_ENV}
 
 CONFIGURE_ARGS+=	--without-lame \
-			--with-vorbis=${LOCALBASE} \
+			--with-vorbis="${LOCALBASE}" \
 			--disable-cdparanoia \
-			--with-xine-prefix=${NONEXISTENT} \
 			--enable-audio=oss,esd
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
@@ -50,25 +49,23 @@ post-patch::
 .endif # ${MACHINE_ARCH} == "alpha"
 .else
 DO_NOT_COMPILE+=	kmidi
-.endif # defined(WITHOUT_MIDI)
+.endif #  defined(WITH_MIDI) || defined(WITH_KMIDI)
 
+#.if exists(${X11BASE}/bin/xine-config)
+#WITH_XINE=	yes
+#.endif # exists(${LOCALBASE}/bin/xine-config)
+
+WITHOUT_XINE=yes
+
+.if defined(WITHOUT_XINE)
 DO_NOT_COMPILE+=	xine-artsplugin
-
-.if exists(${X11BASE}/bin/xine-config)
-WITH_XINE=	yes
-.endif # exists(${LOCALBASE}/bin/xine-config)
-
-.if defined(WITH_XINE)
-post-patch::
-	${ECHO_MSG} Cannot use libxine at this time. The library was
-	${ECHO_MSG} broken at the time this package was prepared.
-.endif # defined(WITH_XINE)
-
-#.if defined(WITH_XINE)
+#CONFIGURE_ARGS+=	--disable-xinetest
+#.elif defined(WITH_XINE)
 #PLIST_APPEND+=	plist.xine
 #LIB_DEPENDS+=	xine.4:${PORTSDIR}/multimedia/libxine
 #BUILD_DEPENDS+=	xine-config:${PORTSDIR}/multimedia/libxine
-#.endif # defined(WITH_XINE)
+#CONFIGURE_ARGS+=--with-xine-prefix=${X11BASE}
+.endif # defined(WITHOUT_XINE)
 
 .if defined(DO_NOT_COMPILE)
 CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"

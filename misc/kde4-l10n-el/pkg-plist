@@ -242,6 +242,7 @@ share/locale/el/LC_MESSAGES/kppplogview.mo
 share/locale/el/LC_MESSAGES/kprinter.mo
 share/locale/el/LC_MESSAGES/krdb.mo
 share/locale/el/LC_MESSAGES/kreadconfig.mo
+share/locale/el/LC_MESSAGES/krec.mo
 share/locale/el/LC_MESSAGES/kreversi.mo
 share/locale/el/LC_MESSAGES/kruler.mo
 share/locale/el/LC_MESSAGES/krunapplet.mo
@@ -270,6 +271,7 @@ share/locale/el/LC_MESSAGES/ktux.mo
 share/locale/el/LC_MESSAGES/kuick_plugin.mo
 share/locale/el/LC_MESSAGES/kview.mo
 share/locale/el/LC_MESSAGES/kview_scale.mo
+share/locale/el/LC_MESSAGES/kviewbrowserplugin.mo
 share/locale/el/LC_MESSAGES/kviewpresenterplugin.mo
 share/locale/el/LC_MESSAGES/kviewscannerplugin.mo
 share/locale/el/LC_MESSAGES/kviewtemplateplugin.mo

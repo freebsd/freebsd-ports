@@ -345,6 +345,7 @@ share/apps/kbabel/kbabelui.rc
 share/apps/kbabel/pics/broken.png
 share/apps/kbabel/pics/missing.png
 share/apps/kbabel/pics/needwork.png
+share/apps/kbabel/pics/noflag.png
 share/apps/kbabel/pics/ok.png
 share/apps/kbabel/pics/pref_identity.png
 share/apps/kbabel/pics/splash.png

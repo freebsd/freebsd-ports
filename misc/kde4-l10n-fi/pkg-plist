@@ -52,6 +52,7 @@ share/locale/fi/LC_MESSAGES/appletproxy.mo
 share/locale/fi/LC_MESSAGES/ark.mo
 share/locale/fi/LC_MESSAGES/artsbuilder.mo
 share/locale/fi/LC_MESSAGES/artscontrol.mo
+share/locale/fi/LC_MESSAGES/atlantik.mo
 share/locale/fi/LC_MESSAGES/babelfish.mo
 share/locale/fi/LC_MESSAGES/childpanelextension.mo
 share/locale/fi/LC_MESSAGES/clockapplet.mo
@@ -85,6 +86,7 @@ share/locale/fi/LC_MESSAGES/kabc_ldap.mo
 share/locale/fi/LC_MESSAGES/kabc_net.mo
 share/locale/fi/LC_MESSAGES/kabc_sql.mo
 share/locale/fi/LC_MESSAGES/kabcformat_binary.mo
+share/locale/fi/LC_MESSAGES/kaboodle.mo
 share/locale/fi/LC_MESSAGES/kaccess.mo
 share/locale/fi/LC_MESSAGES/kaddressbook.mo
 share/locale/fi/LC_MESSAGES/kandy.mo
@@ -202,6 +204,7 @@ share/locale/fi/LC_MESSAGES/kfloppy.mo
 share/locale/fi/LC_MESSAGES/kfmclient.mo
 share/locale/fi/LC_MESSAGES/kfmexec.mo
 share/locale/fi/LC_MESSAGES/kfontviewpart.mo
+share/locale/fi/LC_MESSAGES/kfouleggs.mo
 share/locale/fi/LC_MESSAGES/kghostview.mo
 share/locale/fi/LC_MESSAGES/khelpcenter.mo
 share/locale/fi/LC_MESSAGES/khexedit.mo
@@ -233,6 +236,7 @@ share/locale/fi/LC_MESSAGES/kjumpingcube.mo
 share/locale/fi/LC_MESSAGES/klaptopdaemon.mo
 share/locale/fi/LC_MESSAGES/klegacyimport.mo
 share/locale/fi/LC_MESSAGES/kless.mo
+share/locale/fi/LC_MESSAGES/klickety.mo
 share/locale/fi/LC_MESSAGES/klines.mo
 share/locale/fi/LC_MESSAGES/klipper.mo
 share/locale/fi/LC_MESSAGES/klock.mo
@@ -252,6 +256,7 @@ share/locale/fi/LC_MESSAGES/knode.mo
 share/locale/fi/LC_MESSAGES/knotes.mo
 share/locale/fi/LC_MESSAGES/knotify.mo
 share/locale/fi/LC_MESSAGES/kodo.mo
+share/locale/fi/LC_MESSAGES/kolf.mo
 share/locale/fi/LC_MESSAGES/kolourpicker.mo
 share/locale/fi/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/fi/LC_MESSAGES/konqueror.mo
@@ -276,6 +281,7 @@ share/locale/fi/LC_MESSAGES/kppplogview.mo
 share/locale/fi/LC_MESSAGES/kprinter.mo
 share/locale/fi/LC_MESSAGES/krdb.mo
 share/locale/fi/LC_MESSAGES/kreadconfig.mo
+share/locale/fi/LC_MESSAGES/krec.mo
 share/locale/fi/LC_MESSAGES/kregexpeditor.mo
 share/locale/fi/LC_MESSAGES/kreversi.mo
 share/locale/fi/LC_MESSAGES/kruler.mo
@@ -343,10 +349,12 @@ share/locale/fi/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/fi/LC_MESSAGES/libkonq.mo
 share/locale/fi/LC_MESSAGES/libkscan.mo
 share/locale/fi/LC_MESSAGES/libkscreensaver.mo
+share/locale/fi/LC_MESSAGES/libksirtet.mo
 share/locale/fi/LC_MESSAGES/libtaskbar.mo
 share/locale/fi/LC_MESSAGES/libtaskmanager.mo
 share/locale/fi/LC_MESSAGES/lockout.mo
 share/locale/fi/LC_MESSAGES/lskat.mo
+share/locale/fi/LC_MESSAGES/megami.mo
 share/locale/fi/LC_MESSAGES/multiplayers.mo
 share/locale/fi/LC_MESSAGES/naughtyapplet.mo
 share/locale/fi/LC_MESSAGES/noatun.mo

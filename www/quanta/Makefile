@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	quanta
-PORTVERSION= 	3.1
-PORTREVISION=	1
-PORTEPOCH=	2	# dammit! I hate this kludge.
+PORTVERSION= 	${KDE_VERSION}
+PORTREVISION=	0
+PORTEPOCH=	2
 CATEGORIES=	www kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@freebsd.org
-COMMENT=	GUI HTML editor that bears resemblence to kdevelop
+COMMENT=	Comprehensive html/website development environment.
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 

@@ -8,7 +8,7 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
@@ -16,6 +16,8 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	This package provides the basic applications for the KDE system
+
+BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
@@ -34,7 +36,6 @@ CONFIGURE_ENV+=	RUN_KAPPFINDER=no
 CONFIGURE_ARGS+=--disable-ltdl-install		\
 		--without-ldap			\
 		--disable-closure		\
-		${XINERAMA}			\
 		--without-java			\
 		--with-qt-dir=${X11BASE}	\
 		--with-xdmdir=${X11BASE}/lib/X11/xdm
@@ -42,13 +43,14 @@ CONFIGURE_ARGS+=--disable-ltdl-install		\
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/bin/mkfontdir)
-PLIST_APPEND+=	plist.mkfontdir
-.endif # exists(${X11BASE}/bin/mkfontdir)
-
 .if exists(${X11BASE}/include/Xm/Xm.h)
 WITH_MOTIF=	yes
 .endif # exists(${X11BASE}/include/Xm/Xm.h)
+
+.if defined(WITHOUT_MOTIF)
+.undef WITH_MOTIF
+CONFIGURE_ARGS+=	--without-motif
+.endif # defined(WITHOUT_MOTIF)
 
 .if defined(WITH_MOTIF)
 USE_MOTIF=	yes
@@ -62,25 +64,6 @@ pre-extract::
 	@${ECHO_MSG} "Motif is used for Netscape plugin compatibility."
 	@${ECHO_MSG}
 .endif # defined(WITH_MOTIF)
-
-.if exists(${X11BASE}/lib/libfontconfig.so.1)
-WITH_FONTCONFIG=yes
-.endif
-
-.if defined(WITH_FONTCONFIG)
-LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
-.endif
-
-.if defined(WITHOUT_XINERAMA)
-XINERAMA=	--without-xinerama
-.else
-XINERAMA=	--with-xinerama
-pre-extract::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you don't want to compile with Xinerama support,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITHOUT_XINERAMA=yes\""
-	@${ECHO_MSG}
-.endif # defined(WITH_XINERAMA)
 
 post-extract:
 	@${ECHO} "#!/bin/sh" > ${WRKSRC}/mkpamserv

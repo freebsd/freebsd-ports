@@ -59,6 +59,7 @@ share/locale/lt/LC_MESSAGES/kateinsertcommand.mo
 share/locale/lt/LC_MESSAGES/kateopenheader.mo
 share/locale/lt/LC_MESSAGES/katepart.mo
 share/locale/lt/LC_MESSAGES/kateprojectmanager.mo
+share/locale/lt/LC_MESSAGES/katespell.mo
 share/locale/lt/LC_MESSAGES/katetextfilter.mo
 share/locale/lt/LC_MESSAGES/katexmltools.mo
 share/locale/lt/LC_MESSAGES/kbabel.mo
@@ -149,6 +150,7 @@ share/locale/lt/LC_MESSAGES/kdmgreet.mo
 share/locale/lt/LC_MESSAGES/kedit.mo
 share/locale/lt/LC_MESSAGES/keduca.mo
 share/locale/lt/LC_MESSAGES/kfax.mo
+share/locale/lt/LC_MESSAGES/kfile_avi.mo
 share/locale/lt/LC_MESSAGES/kfile_deb.mo
 share/locale/lt/LC_MESSAGES/kfile_font.mo
 share/locale/lt/LC_MESSAGES/kfile_m3u.mo
