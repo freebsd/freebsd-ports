@@ -291,6 +291,7 @@
     SUBDIR += smtpclient
     SUBDIR += smtpd
     SUBDIR += smtpfeed
+    SUBDIR += smtpmail
     SUBDIR += smtpproxy
     SUBDIR += smtprc
     SUBDIR += smunge
