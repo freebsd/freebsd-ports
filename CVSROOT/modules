@@ -4457,6 +4457,7 @@ majordomo	ports/mail/majordomo
 make++		ports/devel/make++
 makedepend	ports/devel/makedepend
 makefaq		ports/textproc/makefaq
+makefs		ports/sysutils/makefs
 makeindex	ports/print/makeindex
 makepasswd	ports/security/makepasswd
 makepatch	ports/textproc/makepatch
