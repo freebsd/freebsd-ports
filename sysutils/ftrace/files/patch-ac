@@ -1,0 +1,32 @@
+--- Makefile.in.orig	Wed Jan 10 09:10:45 2001
++++ Makefile.in	Mon Jan 29 13:18:13 2001
+@@ -1,12 +1,12 @@
+ BINDIR = @prefix@/bin
+ LIBDIR = @prefix@/lib
+-DOCDIR = @prefix@/doc/ftrace
++DOCDIR = @prefix@/share/doc/ftrace
+ 
+ CC = @CC@
+ LD = @LD@
+ INSTALL = @INSTALL@
+-CFLAGS = -Wall -O2 -DPIC -fPIC -D_REENTRANT -I.
+-LDFLAGS = @LDSHARED@ -ldl
++CFLAGS += -Wall -DPIC -fPIC -D_REENTRANT -I.
++LDFLAGS = @LDSHARED@
+ OBJS = ftrace.o
+ 
+ .PHONY:	all clean install distclean
+@@ -20,10 +20,10 @@
+ 	$(CC) $(CFLAGS) -c $< -o $@
+ 
+ install:	libftrace.so
+-		$(INSTALL) -m 755 ftrace $(BINDIR)
+-		$(INSTALL) -m 755 libftrace.so $(LIBDIR)
++		$(INSTALL) -m 555 ftrace $(BINDIR)
++		$(INSTALL) -m 555 libftrace.so $(LIBDIR)
+ 		$(INSTALL) -d $(DOCDIR)
+-		$(INSTALL) COPYING README TODO ChangeLog $(DOCDIR)
++		$(INSTALL) -m 444 COPYING README TODO ChangeLog $(DOCDIR)
+ 
+ clean:
+ 	rm -f *.o *.so *.bak *~
