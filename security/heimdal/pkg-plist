@@ -60,18 +60,30 @@ include/ss/ss.h
 info/dir
 info/heimdal.info
 lib/libasn1.a
+lib/libasn1.so.1
 lib/libcom_err.a
+lib/libcom_err.so.1
 lib/libdes.a
+lib/libdes.so.0
 lib/libeditline.a
 lib/libgssapi.a
+lib/libgssapi.so.0
 lib/libhdb.a
+lib/libhdb.so.4
 lib/libkadm5clnt.a
+lib/libkadm5clnt.so.3
 lib/libkadm5srv.a
+lib/libkadm5srv.so.4
 lib/libkrb5.a
+lib/libkrb5.so.5
 lib/libotp.a
+lib/libotp.so.0
 lib/libroken.a
+lib/libroken.so.3
 lib/libsl.a
+lib/libsl.so.0
 lib/libss.a
+lib/libss.so.0
 libexec/ftpd
 libexec/hprop
 libexec/hpropd
@@ -85,28 +97,6 @@ libexec/popper
 libexec/push
 libexec/rshd
 libexec/telnetd
-man/man1/kdestroy.1
-man/man1/kgetcred.1
-man/man1/kinit.1
-man/man1/klist.1
-man/man1/kpasswd.1
-man/man3/editline.3
-man/man3/krb5_425_conv_principal.3
-man/man3/krb5_build_principal.3
-man/man3/krb5_free_principal.3
-man/man3/krb5_openlog.3
-man/man3/krb5_parse_name.3
-man/man3/krb5_sname_to_principal.3
-man/man3/krb5_unparse_name.3
-man/man3/krb5_warn.3
-man/man5/krb5.conf.5
-man/man8/hprop.8
-man/man8/hpropd.8
-man/man8/kdc.8
-man/man8/kpasswdd.8
-man/man8/kstash.8
-man/man8/ktutil.8
-man/man8/push.8
 sbin/dump_log
 sbin/kadmin
 sbin/kstash
@@ -114,3 +104,5 @@ sbin/ktutil
 sbin/replay_log
 @dirrm include/kadm5
 @dirrm include/ss
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
