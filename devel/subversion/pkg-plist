@@ -112,4 +112,13 @@ lib/libsvn_wc-1.so.0
 %%PORTDOCS%%share/doc/subversion/book/book.ps
 %%PORTDOCS%%share/doc/subversion/book/styles.css
 %%PORTDOCS%%@dirrm share/doc/subversion/book
+%%PORTDOCS%%share/doc/subversion/BUGS
+%%PORTDOCS%%share/doc/subversion/CHANGES
+%%PORTDOCS%%share/doc/subversion/COMMITTERS
+%%PORTDOCS%%share/doc/subversion/COPYING
+%%PORTDOCS%%share/doc/subversion/HACKING
+%%PORTDOCS%%share/doc/subversion/IDEAS
+%%PORTDOCS%%share/doc/subversion/INSTALL
+%%PORTDOCS%%share/doc/subversion/PORTING
+%%PORTDOCS%%share/doc/subversion/README
 %%PORTDOCS%%@dirrm share/doc/subversion

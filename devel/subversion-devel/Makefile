@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	0.23.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/files/documents/15/4218/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -21,7 +21,6 @@ LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
 		apr-0.9:${PORTSDIR}/devel/apr
 
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL=	yes
 
 WRKSRC=	${WRKDIR}/subversion-${PORTVERSION}
 GNU_CONFIGURE=	yes
@@ -31,7 +30,8 @@ CONFIGURE_ARGS=	--with-ssl \
 		--with-neon=${LOCALBASE} \
 		--with-berkeley-db=${LOCALBASE}/include/db4:${LOCALBASE}/lib \
 		--with-apr=${LOCALBASE} \
-		--with-apr-util=${LOCALBASE}
+		--with-apr-util=${LOCALBASE} \
+		--with-swig=no
 
 MAN1=	svn.1 svnadmin.1
 MANCOMPRESSED=	no
@@ -63,10 +63,6 @@ post-extract:
 	@${RM} -r ${WRKSRC}/apr
 	@${RM} -r ${WRKSRC}/apr-util
 
-post-configure:
-	@${REINPLACE_CMD} 's/install-swig-py-lib//g' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} 's/swig-py-lib//g' ${WRKSRC}/Makefile
-
 .if defined(WITH_MOD_DAV_SVN)
 pre-install:
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/libexec/apache2 -a -n dav libexec/apache2/mod_dav.so
@@ -78,6 +74,9 @@ post-install:
 	cd ${WRKSRC}/doc/book; \
 	${MAKE} INSTALL_DIR=${DOCSDIR} \
 		install-book-html install-book-pdf install-book-ps
+	for f in BUGS CHANGES COMMITTERS COPYING HACKING IDEAS INSTALL PORTING README; do \
+		${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
+	done
 .endif
 
 post-deinstall:
