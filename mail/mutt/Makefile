@@ -24,7 +24,7 @@ PATCH_SITES=	http://www.spinnaker.de/mutt/compressed/:spinnaker \
 		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${PORTVERSION}/:vvv \
 		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${PORTVERSION}/:vvv
 PATCHFILES=	patch-${PORTVERSION}.rr.compressed.1.gz:spinnaker \
-		patch-${PORTVERSION:C/\.[0-9]*$//}.vvv.initials.gz:vvv
+		patch-${PORTVERSION}.vvv.initials.gz:vvv
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER?=	udo.schweigert@siemens.com
@@ -72,6 +72,9 @@ CONFIGURE_ARGS=	--enable-pop --enable-imap --enable-flock --disable-fcntl \
 		--with-docdir=${PREFIX}/share/doc/mutt --with-charmaps \
 		--with-libiconv-prefix=${PREFIX} \
 		--enable-compressed
+.if defined(MUTT_CONFIGURE_ARGS)
+CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
+.endif
 .if defined(WITH_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
@@ -87,8 +90,12 @@ CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 MAN1=		flea.1 mutt.1 mutt_dotlock.1 muttbug.1
 MAN5=		mbox.5 muttrc.5
 
+post-patch::
+	@${REINPLACE_CMD} -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
+		${WRKSRC}/contrib/gpg.rc
+
 .if defined(WITH_MUTT_XFACE)
-post-patch:
+post-patch::
 	@${ECHO} "===>  Applying XFACE patch"
 	slrnface_dir=`${FIND} ${PORTSDIR}/news/slrnface/work -type d \
 			-name slrnface-\*`; \
