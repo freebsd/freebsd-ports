@@ -9,7 +9,9 @@ PORTNAME=	dmake
 PORTVERSION=	4.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://plg.uwaterloo.ca/pub/dmake/ \
-		http://dmake.wticorp.com/SourceDistribution/
+		http://dmake.wticorp.com/SourceDistribution/ \
+		ftp://ftp.isc.org/FreeBSD/ports/distfiles/ \
+		ftp://ftp.internat.freebsd.org/pub/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-src-export.all-unknown-all
 
 MAINTAINER=	ports@FreeBSD.org
