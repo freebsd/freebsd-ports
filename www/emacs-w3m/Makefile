@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emacs-w3m
-PORTVERSION=	0.2.126
+PORTVERSION=	0.2.150
 CATEGORIES=	www elisp
 MASTER_SITES=	http://namazu.org/~tsuchiya/emacs-w3m/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -15,28 +15,39 @@ DISTNAME=	w3m_el-${PORTVERSION}
 MAINTAINER=	nobutaka@nobutaka.com
 
 EMACS_PORT_NAME?=	emacs20
-.if (${EMACS_PORT_NAME} == "emacs20")
-CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD}
-.endif
-.if (${EMACS_PORT_NAME} == "xemacs21-mule")
-CONFIGURE_ARGS=	--with-xemacs=${EMACS_CMD}
-EMACS_PACKAGESDIR=	lib/xemacs/site-packages
-MANIFEST=		MANIFEST.w3m
-INSTALL_TARGET=		install-package
-.endif
+
+CONFIGURE_ARGS?=	--with-emacs=${EMACS_CMD}
+LISPDIR?=	${EMACS_LIBDIR}/site-lisp/w3m
+ETCDIR?=	share/w3m
+PKGINFODIR?=	"@comment "
 
 USE_AUTOCONF=	yes
 ALL_TARGET=	default
 
-PLIST_SUB+=	EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR}
+PLIST_SUB+=	EMACS_NAME=${EMACS_NAME} \
+		XEMACS_ONLY=${XEMACS_ONLY} \
+		EMACS_ONLY=${EMACS_ONLY} \
+		LISPDIR=${LISPDIR} \
+		ETCDIR=${ETCDIR} \
+		PKGINFODIR=${PKGINFODIR}
 
 DOCS=		README
 DOCS_JA=	README.ja TIPS.ja
 
-DOCSDIR=	${PREFIX}/share/doc/emacs-w3m
-DOCSDIR_JA=	${PREFIX}/share/doc/ja/emacs-w3m
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
+DOCSDIR_JA=	${PREFIX}/share/doc/ja/${PORTNAME}
 
-pre-build:
+.include <bsd.port.pre.mk>
+
+.if ${EMACS_NAME} == xemacs
+XEMACS_ONLY?=		""
+EMACS_ONLY?=		"@comment "
+.else
+XEMACS_ONLY?=		"@comment "
+EMACS_ONLY?=		""
+.endif
+
+post-extract:
 .if defined(EMACS_PACKAGESDIR)
 	@${CP} ${FILESDIR}/_pkg.el ${WRKSRC}
 .endif
@@ -54,4 +65,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
