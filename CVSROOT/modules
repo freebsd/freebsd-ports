@@ -441,6 +441,7 @@ bcc		ports/devel/bcc
 bcd		src/games/bcd
 bchunk		ports/sysutils/bchunk
 bclock		ports/x11-clocks/bclock
+bcpp		ports/devel/bcpp
 bcwipe		ports/security/bcwipe
 bdes		src/secure/usr.bin/bdes
 bdfresize	ports/x11-fonts/bdfresize
