@@ -1,0 +1,12 @@
+Note:
+ * Be sure your kernel is built with "options SYSVMSG" and "options SYSVSHM".
+   Cdrdao requires kernel with these options. 
+ * If you want to use POSIX scheduling control for better scheduling,
+   include 
+    
+        options             "P1003_1B"
+        options             "_KPOSIX_PRIORITY_SCHEDULING"
+        options             "_KPOSIX_VERSION=199309L"
+
+   your kernel configuration. It provides rtprio based soft real-time   
+   scheduling control.

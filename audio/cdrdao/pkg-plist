@@ -1,0 +1,7 @@
+bin/cdrdao
+share/doc/cdrdao/COPYING 
+share/doc/cdrdao/INSTALL 
+share/doc/cdrdao/README 
+share/doc/cdrdao/README.FreeBSD 
+share/doc/cdrdao/README.PlexDAE 
+@dirrm share/doc/cdrdao
