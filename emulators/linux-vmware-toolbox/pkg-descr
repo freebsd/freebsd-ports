@@ -1,0 +1,15 @@
+This is the full-featured Linux version VMware toolbox for FreeBSD
+_Guest_ OS.  Beware, this port is _not_ for FreeBSD _Host_ OS.
+
+As VMware toolbox included in VMware tools for FreeBSD is not as good
+as that for Linux, it lacks some useful features such as time
+synchronization between the virtual machine and the Host OS.  That is
+why this port is provided.
+
+
+Before installing this port, make sure you have a `linux.flp' file
+that comes with VMware:
+
+	Windows NT/2000: C:\Program Files\VMware\Programs\linux.flp
+	Linux: /usr/lib/vmware/lib/floppies/linux.flp
+	FreeBSD (via ports): ${PREFIX}/lib/vmware/lib/floppies/linux.flp
