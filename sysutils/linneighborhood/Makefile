@@ -1,5 +1,4 @@
 # New ports collection makefile for:    LinNeighborhood
-# Please read files/porters-note!
 # Date created:                         2003/04/06
 # Whom:                                 Heiner <h.eichmann@gmx.de>
 #
@@ -21,14 +20,13 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"\
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"\
+		CC="${CC} -I${LOCALBASE}/include"
+#                             ^
+# this was done intentionaly in order to make `configure' pick up libintl.h
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502102
-FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
-.endif
 
 post-patch:
 	${CP} ${FILESDIR}/mntent* ${WRKSRC}/src
