@@ -1,10 +1,13 @@
---- html/javascript.js.orig	Fri Jan 31 00:35:27 2003
-+++ html/javascript.js	Fri Jan 31 15:29:08 2003
-@@ -1,6 +1,6 @@
- //variable globale de connection
- //donnez à adr avec la valeur du ScriptAlias du Facturier
--var adr = "/scriptalias";
+--- html/javascript.js.orig	Fri Sep 26 11:47:51 2003
++++ html/javascript.js	Mon Oct 13 22:45:34 2003
+@@ -1,8 +1,8 @@
+-//variable globale de connection
++//variable globale de connexion
+ //donnez à la variable "adr" la même valeur qu'à la variable $CGIADR
+ //du fichier Conf.pm. Si cette valeur est "/fact", aors remplacer
+ //ScriptAlias par fact.
+-var adr = "/ScriptAlias";
 +var adr = "/fact";
  
+ 
  //replacer les car sep par +
- function remplacer(chaine){

@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	facturier
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.1
 CATEGORIES=	french finance
 MASTER_SITES=	http://ignu.ungi.org/download/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thierry@pompo.net
 COMMENT=	Logiciel de facturation pour P.M.I. & P.M.E.
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT}
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT}					\
-		${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql323-server	\
 		${LOCALBASE}/bin/htmldoc:${PORTSDIR}/textproc/htmldoc			\
 		${PBASE}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql		\
 		${PBASE}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash
@@ -24,6 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
+USE_MYSQL=	yes
 USE_REINPLACE=	yes
 
 APACHE_PORT?=	${PORTSDIR}/www/apache13
@@ -33,6 +34,7 @@ PBASE=		${SITE_PERL}
 
 DBOWN?=		PROP_BD
 DBPWD?=		MDP_BD
+DBSERV?=	localhost
 
 LFACT_REP?=	www/${PORTNAME}
 FACT_REP=	${PREFIX}/${LFACT_REP}
@@ -48,10 +50,18 @@ DOCS=		COPYING README.txt todo.txt
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Vous pouvez définir deux variables :"
+	@${ECHO_MSG} "Vous pouvez définir trois variables :"
 	@${ECHO_MSG} "	DBOWN pour le propriétaire de la base MySQL"
-	@${ECHO_MSG} "et	DBPWD pour son mot de passe."
+	@${ECHO_MSG} "et	DBPWD pour son mot de passe,"
+	@${ECHO_MSG} "et	DBSERV pour le nom d'hôte du serveur MySQL"
+	@${ECHO_MSG} "		(localhost par défaut)."
 	@${ECHO_MSG} ""
+
+post-extract:
+	@(cd ${WRKDIR} &&			\
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS}	\
+		${PORTNAME}-version${PORTVERSION}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS})
+	@${RM} ${WRKDIR}/${PORTNAME}-version${PORTVERSION}${EXTRACT_SUFX}
 
 post-patch:
 # perl PREFIX safeness
@@ -64,8 +74,9 @@ do-install:
 .for REP in ${SS_REPS}
 	@${CP} -Rp ${WRKSRC}/${REP} ${FACT_REP}
 .endfor
-	@${REINPLACE_CMD} -e "s:%%FACT_REP%%:${FACT_REP}:;s:%%PREFIX%%:${PREFIX}:; \
-		s:%%DBOWN%%:${DBOWN}:;s:%%DBPWD%%:${DBPWD}:" ${FACT_CNF}
+	@${REINPLACE_CMD} -e "s:%%FACT_REP%%:${FACT_REP}:;s:%%PREFIX%%:${PREFIX}:;	\
+		s:%%DBOWN%%:${DBOWN}:;s:%%DBPWD%%:${DBPWD}:;s:%%DBSERV%%:${DBSERV}:"	\
+		${FACT_CNF}
 	@${RM} ${FACT_CNF}.beforeFacturier
 	@${CP} -p ${FACT_CNF} ${FACT_CNF}.dist
 # Set perms
@@ -97,8 +108,10 @@ do-install:
 post-install:
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE} | \
-		${SED} -e "s:%%FACT_REP%%:${FACT_REP}:;s:%%DOCSDIR%%:${DOCSDIR}:; \
-			s:%%DBOWN%%:${DBOWN}:;s:%%DBPWD%%:${DBPWD}:"
+		${SED} -e "s:/usr/local/www/facturier:${FACT_REP}:"		\
+			-e "s:/usr/local/share/doc/facturier:${DOCSDIR}:"	\
+			-e "s:%%DBOWN%%:${DBOWN}:;s:%%DBPWD%%:${DBPWD}:"	\
+			-e "s:%%DBSERV%%:${DBSERV}:"
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>
