@@ -1,18 +1,19 @@
 # New ports collection Makefile for:   newscache
 # Date created:                23 February 2002
-# Whom:                        Tilman Linneweh <freebsdports@arved.de>
+# Whom:                        Tilman Linneweh <arved@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	newscache
 PORTVERSION=	0.99.22
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://members.aon.at/hstraub/linux/newscache/ \
 		http://www.infosys.tuwien.ac.at/NewsCache/download/
 DISTNAME=	NewsCache-${PORTVERSION}
 
-MAINTAINER=	freebsdports@arved.de
+MAINTAINER=	arved@FreeBSD.org
 COMMENT=	NewsCache is a free cache server for USENET News
 
 WRKSRC=		${WRKDIR}/NewsCache
