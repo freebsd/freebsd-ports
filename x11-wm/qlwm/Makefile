@@ -8,9 +8,9 @@
 #
 
 PORTNAME=	qlwm
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.netcologne.de/~nc-lindenal/qlwm/
+MASTER_SITES=	http://www.alinden.mynetcologne.de/qlwm/
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Qt-based window manager
@@ -27,12 +27,6 @@ REINPLACE_ARGS=	-i'' -E
 
 MAKE_ENV=	DEST="${PREFIX}/${LIBDIR}" INCPATH="${QTCPPFLAGS}" \
 		LIBS="${QTCFGLIBS} -lqt-mt -pthread" LINK="${CXX}" MOC="${MOC}"
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Fails to link"
-.endif
 
 post-patch:
 	${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} \
@@ -79,4 +73,4 @@ do-install:
 	${SED} -e s,%PREFIX%,${PREFIX},g <${FILESDIR}/qlwm >${WRKSRC}/qlwm
 	${INSTALL_SCRIPT} ${WRKSRC}/qlwm ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
