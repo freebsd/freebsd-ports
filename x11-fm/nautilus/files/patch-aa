@@ -1,41 +1,61 @@
---- configure.orig	Tue Nov  7 08:28:46 2000
-+++ configure	Fri Jan 12 10:20:32 2001
-@@ -39,5 +39,5 @@
+
+$FreeBSD$
+
+--- configure.orig	Wed Jan 31 17:42:11 2001
++++ configure	Wed Jan 31 17:52:50 2001
+@@ -41,9 +41,9 @@
  ac_help="$ac_help
--  --with-freetype2-lib-prefix=PREFIX		freetype2 library path"
+   --enable-eazel-services	Enable support for Eazel services (default is no)"
+ ac_help="$ac_help
+-  --with-freetype2-libraries=PATH		freetype2 library path"
 +  --with-freetype2-lib-place=PREFIX		freetype2 library path"
  ac_help="$ac_help
--  --with-freetype2-include-prefix=PREFIX	freetype2 include path"
+-  --with-freetype2-includes=PATH	freetype2 include path"
 +  --with-freetype2-include-place=PREFIX	freetype2 include path"
  ac_help="$ac_help
-@@ -2545,5 +2545,4 @@
+   --with-freetype2-prefix=PATH		freetype2 installation prefix"
+ ac_help="$ac_help
+@@ -2789,15 +2789,15 @@
+ _found_freetype2="no"
  
--# Check whether --with-freetype2 or --without-freetype2 was given.
--if test "${with_freetype2+set}" = set; then
--  withval="$with_freetype2"
+ # Check whether --with-freetype2-libraries or --without-freetype2-libraries was given.
+-if test "${with_freetype2_libraries+set}" = set; then
+-  withval="$with_freetype2_libraries"
 +if test "${with_freetype2_lib_place+set}" = set; then
 +  withval="$with_freetype2_lib_place"
    freetype2_lib_prefix=$withval
-@@ -2553,6 +2552,4 @@
+ fi
  
--
--# Check whether --with-freetype2 or --without-freetype2 was given.
--if test "${with_freetype2+set}" = set; then
--  withval="$with_freetype2"
+ 
+ # Check whether --with-freetype2-includes or --without-freetype2-includes was given.
+-if test "${with_freetype2_includes+set}" = set; then
+-  withval="$with_freetype2_includes"
 +if test "${with_freetype2_include_place+set}" = set; then
 +  withval="$with_freetype2_include_place"
    freetype2_include_prefix=$withval
-@@ -2670,3 +2667,3 @@
+ fi
+ 
+@@ -2927,7 +2927,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
    ac_save_LIBS="$LIBS"
 -LIBS="-lpam -ldl $LIBS"
 +LIBS="-lpam $LIBS"
  cat > conftest.$ac_ext <<EOF
-@@ -2710,3 +2707,3 @@
+ #line 2933 "configure"
+ #include "confdefs.h"
+@@ -2967,7 +2967,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
    ac_save_LIBS="$LIBS"
 -LIBS="-lpam_misc -ldl -lpam $LIBS"
 +LIBS="-lpam_misc -lpam $LIBS"
  cat > conftest.$ac_ext <<EOF
-@@ -2738,6 +2735,6 @@
+ #line 2973 "configure"
+ #include "confdefs.h"
+@@ -2995,10 +2995,10 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
 -  PAM_LIBS="-ldl -lpam -lpam_misc"
 +  PAM_LIBS="-lpam -lpam_misc"
@@ -44,13 +64,23 @@
 -PAM_LIBS="-ldl -lpam"
 +PAM_LIBS="-lpam"
  fi
-@@ -2978,3 +2975,3 @@
+  
+ else
+@@ -3235,7 +3235,7 @@
+ 
+ CC="$_save_cc"
  
 -LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lgtksuperwin"
 +LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lstdc++ -lgtksuperwin"
  echo $ac_n "checking for gdk_superwin_get_type in -lgtksuperwin""... $ac_c" 1>&6
-@@ -3337,3 +3334,3 @@
+ echo "configure:3241: checking for gdk_superwin_get_type in -lgtksuperwin" >&5
+ ac_lib_var=`echo gtksuperwin'_'gdk_superwin_get_type | sed 'y%./+-%__p_%'`
+@@ -3598,7 +3598,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
 -  rpm_libs=-lbz2
 +  rpm_libs="-lrpm -lbz2"
  else
+   echo "$ac_t""no" 1>&6
+ fi

@@ -1,0 +1,11 @@
+
+$FreeBSD$
+
+--- xml-i18n-extract	2001/01/31 17:44:52	1.1
++++ xml-i18n-extract	2001/01/31 17:45:08
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl -w 
++#!/usr/bin/perl -w 
+ # -*- Mode: perl; indent-tabs-mode: nil; c-basic-offset: 2  -*-
+ 
+ #

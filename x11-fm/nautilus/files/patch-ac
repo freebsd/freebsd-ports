@@ -1,17 +1,147 @@
---- libnautilus-extensions/nautilus-volume-monitor.c.orig	Thu Oct 19 16:51:16 2000
-+++ libnautilus-extensions/nautilus-volume-monitor.c	Fri Jan 12 11:05:57 2001
-@@ -60,4 +60,9 @@
- #else
+
+$FreeBSD$
+
+--- libnautilus-extensions/nautilus-volume-monitor.c.orig	Tue Jan 16 03:31:56 2001
++++ libnautilus-extensions/nautilus-volume-monitor.c	Wed Jan 31 21:29:21 2001
+@@ -60,7 +60,13 @@
+ #include <fstab.h>
+ #endif
+ 
 +#ifdef __FreeBSD__
 +#include <sys/param.h>
++#include <sys/ucred.h>
 +#include <sys/mount.h>
 +#else
  #include <mntent.h>
- #endif
 +#endif
  
-@@ -935,2 +940,40 @@
+ #ifdef MOUNT_AUDIO_CD
  
+@@ -264,16 +270,25 @@
+ GList *
+ nautilus_volume_monitor_get_removable_volumes (NautilusVolumeMonitor *monitor)
+ {
++#ifndef __FreeBSD__
+ 	FILE *file;
+-	GList *volumes;
+ 	struct mntent *ent;
++#else
++	struct fstab *ent;
++#endif
++	GList *volumes;
+ 	NautilusVolume *volume;
+ 	
+ 	volumes = NULL;
+ 	
++#ifndef __FreeBSD__
+ 	file = setmntent (_PATH_MNTTAB, "r");
+ 	g_return_val_if_fail (file != NULL, NULL);
++#else
++	setfsent();
++#endif
+ 	
++#ifndef __FreeBSD__
+ 	while ((ent = getmntent (file)) != NULL) {
+ 		/* Use noauto as our way of determining a removable volume */
+ 		if (strstr (ent->mnt_opts, MNTOPT_NOAUTO) != NULL) {
+@@ -281,6 +296,15 @@
+ 			volume->device_path = g_strdup (ent->mnt_fsname);
+ 			volume->mount_path = g_strdup (ent->mnt_dir);
+ 			volume->filesystem = g_strdup (ent->mnt_type);
++#else /* FreeBSD, probably ;) */
++	while ((ent = getfsent ()) != NULL) {
++		/* Use noauto as our way of determining a removable volume */
++		if (strstr (ent->fs_mntops, "noauto") != NULL) {
++			volume = g_new0 (NautilusVolume, 1);
++			volume->device_path = g_strdup (ent->fs_spec);
++			volume->mount_path = g_strdup (ent->fs_file);
++			volume->filesystem = g_strdup (ent->fs_vfstype);
++#endif
+ 			if (mount_volume_add_filesystem (volume)) {
+ 				mount_volume_get_name (volume);
+ 				volumes = g_list_append (volumes, volume);
+@@ -290,7 +314,11 @@
+ 		}	
+ 	}
+ 			
++#ifndef __FreeBSD__
+ 	fclose (file);
++#else
++	endfsent();
++#endif
+ 	
+ #ifdef MOUNT_AUDIO_CD
+ 	volume = g_new0 (NautilusVolume, 1);
+@@ -682,15 +710,27 @@
+ {
+ 	GList *current_mounts = NULL;
+ 	NautilusVolume *volume = NULL;
++#ifndef __FreeBSD__
+ 	FILE *fh;
+ 	char line[PATH_MAX * 3];
+ 	char device_name[sizeof (line)];
+ 	NautilusStringList *list;
++#else
++	struct statfs *mounted;
++	int mounted_num;
++	int i;
++#endif
+ 
++#ifndef __FreeBSD__
+ 	/* Open /proc/mounts */
+ 	fh = fopen (PATH_PROC_MOUNTS, "r");
+ 	g_return_val_if_fail (fh != NULL, NULL);
++#else
++	mounted_num = getmntinfo(&mounted, MNT_WAIT);
++	g_return_val_if_fail (mounted_num > 0, NULL);
++#endif
+ 
++#ifndef __FreeBSD__
+ 	while (fgets (line, sizeof(line), fh)) {
+ 		if (sscanf (line, "%s", device_name) == 1) {
+ 				list = nautilus_string_list_new_from_tokens (line, " ", FALSE);
+@@ -702,17 +742,25 @@
+ 					volume->device_path = nautilus_string_list_nth (list, 0);
+ 					volume->mount_path = nautilus_string_list_nth (list, 1);
+ 					volume->filesystem = nautilus_string_list_nth (list, 2);
+-
++#else
++	for (i = 0; i < mounted_num; i++) {
++		volume = g_new0 (NautilusVolume, 1);
++		volume->device_path = g_strdup(mounted[i].f_mntfromname);
++		volume->mount_path = g_strdup(mounted[i].f_mntonname);
++		volume->filesystem = g_strdup(mounted[i].f_fstypename);
++#endif /* __FreeBSD__ */
+ 					if (mount_volume_add_filesystem (volume)) {
+ 						mount_volume_get_name (volume);
+ 						current_mounts = g_list_append (current_mounts, volume);
+ 					} else {
+ 						nautilus_volume_monitor_free_volume (volume);
+ 					}					
++#ifndef __FreeBSD__
+ 				}				
+ 				nautilus_string_list_free (list);
+ 			}			
+ 		}
++#endif
+   	}
+ 
+ #ifdef MOUNT_AUDIO_CD
+@@ -728,7 +776,9 @@
+ 	}
+ #endif
+ 
++#ifndef __FreeBSD__
+ 	fclose (fh);
++#endif
+ 	
+ 	return current_mounts;
+ 
+@@ -889,6 +939,45 @@
+ 	return TRUE;
+ }
+ 
++#ifdef 0
 +#ifdef __FreeBSD__
 +static void
 +fstab_add_mount_volume (NautilusVolumeMonitor *monitor, struct fstab *ent)
@@ -20,7 +150,7 @@
 +	gboolean mounted;
 +
 +	volume = g_new0 (NautilusVolume, 1);
-+	volume->fsname = g_strdup(ent->fs_spec);
++	volume->device_path = g_strdup(ent->fs_spec);
 +	volume->mount_path = g_strdup(ent->fs_file);
 +
 +	mounted = FALSE;
@@ -40,28 +170,23 @@
 +	if (mounted) {
 +		volume->is_read_only = strstr (ent->fs_type, FSTAB_RO) != NULL;
 +		monitor->details->volumes = g_list_append (monitor->details->volumes, volume);
-+		mount_volume_add_aliases (monitor, volume->fsname, volume);
++		mount_volume_add_aliases (monitor, volume->device_path, volume);
 +	} else {
-+		g_free (volume->fsname);
++		g_free (volume->device_path);
 +		g_free (volume->mount_path);
 +		g_free (volume);
 +	}
 +}
-+
-+#else
++#endif
++#endif
 +
  static void
-@@ -946,3 +989,3 @@
- 	mounted = FALSE;
--	
-+
- 	if (nautilus_str_has_prefix (ent->mnt_fsname, FLOPPY_DEVICE_PATH_PREFIX)) {		
-@@ -993,2 +1036,3 @@
- }
-+#endif /* __FreeBSD__ */
- #endif /* HAVE_SYS_MNTTAB_H */
-@@ -1021,2 +1065,11 @@
+ cdrom_ioctl_get_info (int fd)
  {
+@@ -1025,6 +1114,14 @@
+ 			break;
+ 		}
+ 	}
 +#ifdef __FreeBSD__
 +	struct fstab *ent;
 +
@@ -69,11 +194,7 @@
 +	while ((ent = getfsent ())) 
 +		fstab_add_mount_volume (monitor, ent);
 +	endfsent ();
-+#else
-+
- 	FILE *mef;
-@@ -1055,2 +1108,4 @@
- #endif
-+
 +#endif	/* __FreeBSD__ */
+ }
+ #endif
  
