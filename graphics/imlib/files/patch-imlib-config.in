@@ -5,7 +5,7 @@
  #
  
 -gx_libs="@SUPPORT_LIBS@"
-+gx_libs="-L%%LOCALBASE%% @SUPPORT_LIBS@"
++gx_libs="-L%%LOCALBASE%%/lib @SUPPORT_LIBS@"
  gdk_gx_libs=" @GDK_SUPPORT_LIBS@"
  gdk_libs="@LIBS@"
  
