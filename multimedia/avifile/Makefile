@@ -64,6 +64,10 @@ PLIST_SUB+=	QT="@comment "
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 600000
+WITH_OPTIMIZED_CFLAGS=	yes
+.endif
+
 .if (${ARCH} != "i386") && (${ARCH} != "amd64")
 WITHOUT_A52=yes
 BROKEN=		"Does not compile on !i386"
