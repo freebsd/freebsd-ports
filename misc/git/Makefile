@@ -3,7 +3,7 @@
 # Date created:		12 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.2 1995/11/26 10:47:34 asami Exp $
+# $Id: Makefile,v 1.3 1996/06/17 08:33:34 asami Exp $
 #
 
 DISTNAME=	git-4.3.11
@@ -17,9 +17,9 @@ pre-install:
 		${WRKSRC}/term/.gitrc.cons25
 	(cd ${WRKSRC}/term ; patch --quiet -p0 <${FILESDIR}/gitrc.cons25.patch )
 
-post_install:
+post-install:
 .if !defined(NOMANCOMPRESS)
-	@gzip -9nf ${PREFIX}/man/man1/git.1 ${PREFIX}/man/man1/gitmatch.1 \
+	@gzip -9nf ${PREFIX}/man/man1/git.1 \
 		${PREFIX}/man/man1/gitaction.1 ${PREFIX}/man/man1/gitmount.1 \
 		${PREFIX}/man/man1/gitcmp.1 ${PREFIX}/man/man1/gitkeys.1 \
 		${PREFIX}/man/man1/gitredir.1 ${PREFIX}/man/man1/gitrgrep.1 \
