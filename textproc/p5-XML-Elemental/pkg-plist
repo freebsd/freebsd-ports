@@ -5,5 +5,7 @@
 %%SITE_PERL%%/XML/Elemental/Characters.pm
 %%SITE_PERL%%/XML/Elemental/Document.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Elemental/.packlist
+@dirrm %%SITE_PERL%%/XML/Parser/Style
+@dirrm %%SITE_PERL%%/XML/Parser
 @dirrm %%SITE_PERL%%/XML/Elemental
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Elemental
