@@ -1395,13 +1395,13 @@ usr/share/locale/sv_SE/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/sv_SE/LC_MONETARY
 usr/share/locale/sv_SE/LC_NUMERIC
 usr/share/locale/sv_SE/LC_TIME
-usr/share/locale/tr/LC_MESSAGES/rpm.mo
 usr/share/locale/th_TH/LC_COLLATE
 usr/share/locale/th_TH/LC_CTYPE
 usr/share/locale/th_TH/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/th_TH/LC_MONETARY
 usr/share/locale/th_TH/LC_NUMERIC
 usr/share/locale/th_TH/LC_TIME
+usr/share/locale/tr/LC_MESSAGES/rpm.mo
 usr/share/locale/tr_TR/LC_COLLATE
 usr/share/locale/tr_TR/LC_CTYPE
 usr/share/locale/tr_TR/LC_MESSAGES/SYS_LC_MESSAGES
