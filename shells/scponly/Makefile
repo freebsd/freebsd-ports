@@ -84,7 +84,9 @@ CONFIGURE_ARGS+=--enable-winscp-compat
 CONFIGURE_ARGS+=--disable-winscp-compat
 .endif
 
-.if defined(WITH_SCPONLY_RSYNC) && exists(${LOCALBASE}/bin/rsync)
+.if defined(WITH_SCPONLY_RSYNC)
+BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+RUN_DEPENDS=	${BUILD_DEPENDS}
 CONFIGURE_ARGS+=--enable-rsync-compat
 .else
 CONFIGURE_ARGS+=--disable-rsync-compat
