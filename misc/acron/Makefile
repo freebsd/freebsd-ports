@@ -3,7 +3,7 @@
 # Date created:         13 Dec 1997
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1997/12/15 08:44:23 tg Exp $
+# $Id: Makefile,v 1.2 1998/06/27 05:19:16 asami Exp $
 #
 
 DISTNAME=       acron
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.ORG
 NO_BUILD=	yes
 
 post-patch:
-	@/usr/bin/perl -pi -e "s|@@PREFIX@@|${PREFIX}|g;" ${WRKSRC}/whats
+	@/usr/bin/perl -pi -e "s|\@\@PREFIX\@\@|${PREFIX}|g;" ${WRKSRC}/whats
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/whats ${PREFIX}/bin
