@@ -1,6 +1,6 @@
---- configure.orig	Sat Nov 17 21:47:38 2001
-+++ configure	Tue Dec 25 02:39:17 2001
-@@ -4637,7 +4637,7 @@
+--- configure.orig	Wed Dec 15 18:56:37 2004
++++ configure	Fri Mar 11 18:11:35 2005
+@@ -5463,7 +5463,7 @@
  
  
  case $host_os in #(vi
@@ -9,7 +9,25 @@
  	# This is only necessary if you are linking against an obsolete
  	# version of ncurses (but it should do no harm, since it's static).
  	echo $ac_n "checking for tgoto in -lmytinfo""... $ac_c" 1>&6
-@@ -5269,7 +5269,7 @@
+@@ -5799,7 +5799,7 @@
+       mbstowcs(wcb, icb, 5);
+       iswprint((wint_t) wcb[0]);
+       wcslen(wcb);
+-      wcsnlen(wcb, 4);
++      //wcsnlen(wcb, 4);
+       wcwidth((wint_t) wcb[0]);
+       wcswidth(wcb, 5);
+       wcstombs(ocb, wcb, 5);
+@@ -5835,7 +5835,7 @@
+         mbstowcs(wcb, icb, 5);
+         iswprint((wint_t) wcb[0]);
+         wcslen(wcb);
+-        wcsnlen(wcb, 4);
++	//wcsnlen(wcb, 4);
+         wcwidth((wint_t) wcb[0]);
+         wcswidth(wcb, 5);
+         wcstombs(ocb, wcb, 5);
+@@ -6386,7 +6386,7 @@
  
  
  case $host_os in #(vi
@@ -18,12 +36,30 @@
  	# This is only necessary if you are linking against an obsolete
  	# version of ncurses (but it should do no harm, since it's static).
  	echo $ac_n "checking for tgoto in -lmytinfo""... $ac_c" 1>&6
-@@ -5787,7 +5787,7 @@
+@@ -6924,7 +6924,7 @@
  
  if test "$cf_result" = no ; then
  case $host_os in #(vi
 -freebsd*) #(vi
 +XXXfreebsd*) #(vi
  	echo $ac_n "checking for tgoto in -lmytinfo""... $ac_c" 1>&6
- echo "configure:5793: checking for tgoto in -lmytinfo" >&5
+ echo "configure:6930: checking for tgoto in -lmytinfo" >&5
  ac_lib_var=`echo mytinfo'_'tgoto | sed 'y%./+-%__p_%'`
+@@ -11904,7 +11904,7 @@
+       mbstowcs(wcb, icb, 5);
+       iswprint((wint_t) wcb[0]);
+       wcslen(wcb);
+-      wcsnlen(wcb, 4);
++      //wcsnlen(wcb, 4);
+       wcwidth((wint_t) wcb[0]);
+       wcswidth(wcb, 5);
+       wcstombs(ocb, wcb, 5);
+@@ -11940,7 +11940,7 @@
+         mbstowcs(wcb, icb, 5);
+         iswprint((wint_t) wcb[0]);
+         wcslen(wcb);
+-        wcsnlen(wcb, 4);
++	//wcsnlen(wcb, 4);
+         wcwidth((wint_t) wcb[0]);
+         wcswidth(wcb, 5);
+         wcstombs(ocb, wcb, 5);
