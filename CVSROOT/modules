@@ -589,6 +589,7 @@ bkmrkconv	ports/www/bkmrkconv
 bkpupsd		ports/sysutils/bkpupsd
 blackbox	ports/x11-wm/blackbox
 blackened	ports/irc/blackened
+blackjack	ports/games/blackjack
 bladeenc	ports/audio/bladeenc
 blas		ports/math/blas
 blast		ports/x11/blast
