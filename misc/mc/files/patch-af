@@ -83,3 +83,14 @@
  	for I in $(TIFILES); \
  	do $(INSTALL_DATA) $(srcdir)/$$I $(DESTDIR)$(tidir)/$$I; done
  	$(MKINSTALLDIRS) $(DESTDIR)$(confdir)
+--- edit/Makefile.in.orig	Wed Jan  5 23:49:36 2000
++++ edit/Makefile.in	Wed Jan  5 23:49:58 2000
+@@ -58,7 +58,7 @@
+ 
+ mcedit:
+ 	-$(RMF) $(DESTDIR)$(bindir)/$(binprefix)mcedit
+-	$(LN_S) mc $(DESTDIR)$(bindir)/$(binprefix)mcedit
++	$(LN_S) midc $(DESTDIR)$(bindir)/$(binprefix)mcedit
+ 
+ showlibdep:
+ 	@echo 'OBJS="$(EDITOBJS)"'

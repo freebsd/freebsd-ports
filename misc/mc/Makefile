@@ -17,13 +17,21 @@ LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
 		intl.1:${PORTSDIR}/devel/gettext
 .if defined(USE_NCURSES_PORT)
 LIB_DEPENDS+=	ncurses.4:${PORTSDIR}/devel/ncurses
+.elif defined(WITH_SLANG)
+LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+.if defined(WITH_SLANG)
+CONFIGURE_ARGS=	--with-slang --without-gnome --with-edit
+.else
 CONFIGURE_ARGS=	--with-ncurses --without-gnome --without-edit
+.endif
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		MAKE="gmake" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
@@ -32,7 +40,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		midc.1
 MAN8=		mcserv.8
 
-post-patch:
-	${PERL} -i -p -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/vfs/extfs/uzip.in
+.if defined(WITH_SLANG)
+PLIST=		${WRKDIR}/PLIST
+pre-install:
+	@${CAT} ${PKGDIR}/PLIST > ${PLIST}
+	@${ECHO} bin/mcedit >> ${PLIST}
+.endif
 
 .include <bsd.port.mk>
