@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mod_security
-PORTVERSION=	1.8.6
+PORTVERSION=	1.8.7
 CATEGORIES=	www security
-MASTER_SITES=	http://www.modsecurity.org/download/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
+MASTER_SITES=	http://www.modsecurity.org/download/
+DISTNAME=	${PORTNAME:S/_//}-${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An intrusion detection and prevention engine
