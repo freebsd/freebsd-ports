@@ -17,6 +17,8 @@ LIB_DEPENDS=	qt2.2:${PORTSDIR}/x11-toolkits/qt201
 USE_NEWGCC=	yes
 USE_X_PREFIX=	yes
 
+MAKE_ENV=	CXX="${CXX}" CC="${CC}"
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/toolbox ${PREFIX}/bin/toolbox
 
