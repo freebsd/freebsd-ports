@@ -1,0 +1,41 @@
+Release notes for version 0.6.7-epsilon
+=======================================
+
+This version is the "almost-there" version of STonX 0.6.7 (which is going
+to be the last "release" version before the major changes in the current
+development versions are released.
+
+The Xlib-VDI driver is still disabled (sorry) and may or may not be 
+re-integrated before the final 0.6.7 release. This depends mostly on
+how much work it is to get it to work again after all the latest changes.
+
+Please notify me of any bugs or installation problems as soon as possible
+(mail me at nino@complang.tuwien.ac.at), even if you have reported a bug
+previously and I haven't had time or forgot to fix it.
+
+-nino
+
+Some information about the problems with different TOS versions and STonX:
+==========================================================================
+
+(1) Can't run programs from the Unix filesystem interface
+(2) not thoroughly tested or tested by someone else
+(3) untested
+(4) set TOS_1 to 1 in options.h before compiling
+(5) A: and B: can't be used because they're implicitly considered Floppy disk 
+    drives and always accessed using the FDC
+
+TOS 1.00:  (1)(2)(4)(5)
+TOS 1.02:  (1)(2)(4)(5)
+TOS 1.04:  (2)(4)
+TOS 1.06:  (3)
+TOS 1.62:  (3)
+TOS 2.05:  tested, should be OK
+TOS 2.06:  tested, should be OK
+
+Please notify me of problems not mentioned here!
+
+
+Author of STonX:
+
+	Marinos Yannikos (nino@complang.tuwien.ac.at)
