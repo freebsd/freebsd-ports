@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.5.6
-PORTREVISION=   3
+PORTVERSION=	5.5.7.11
+PORTREVISION=   0
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://imagemagick.sourceforge.net/http/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
-		ftp://ftp.sunet.se/pub/multimedia/graphics/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/ImageMagick,} \
 		ftp://ftp.crc.ca/pub/packages/graphics/imagemagick/ \
 		ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
@@ -26,9 +24,12 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.fifi.org/pub/%SUBDIR%/ \
 		ftp://ftp.simplesystems.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME:L} ${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image processing tools (interactive optional--misc/display conflict)
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_PERL5=	yes
 USE_BZIP2=	yes
@@ -50,10 +51,12 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 .if !defined(WITHOUT_IMAGEMAGICK_PERL)
 CONFIGURE_ARGS+=	--with-perl=${PERL5}
-MAN3=				Image::Magick.3
-MAN3PREFIX=			${PREFIX}/lib/perl5/${PERL_VERSION}
+PLIST_SUB+=		WITH_PERL=''
+MAN3=			Image::Magick.3
+MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 .else
 CONFIGURE_ARGS+=	--without-perl
+PLIST_SUB+=		WITH_PERL='@comment '
 .endif
 
 # PerlMagick not works with threads, if perl is not threaded, and vice versa
@@ -70,6 +73,11 @@ CONFIGURE_ARGS+=	--without-threads
 # Faster, but poor quality
 .if defined(WITHOUT_IMAGEMAGICK_16BIT_PIXEL)
 CONFIGURE_ARGS+=	--with-quantum-depth=8
+PLIST_SUB+=		Q8=''
+PLIST_SUB+=		Q16='@comment '
+.else
+PLIST_SUB+=		Q8='@comment '
+PLIST_SUB+=		Q16=''
 .endif
 
 # Produce standard (small) GIFs
@@ -165,8 +173,10 @@ CONFIGURE_ARGS+=	--without-wmf
 .if !defined(WITHOUT_IMAGEMAGICK_SVG) || !defined(WITHOUT_IMAGEMAGICK_MSL)
 LIB_DEPENDS+=		xml2.5:${PORTSDIR}/textproc/libxml2
 MAN1+=			conjure.1
+PLIST_SUB+=		WITH_CONJURE=''
 .else
 CONFIGURE_ARGS+=	--without-xml
+PLIST_SUB+=		WITH_CONJURE='@comment '
 .endif
 
 # DPS (Display PostScript) support
@@ -236,13 +246,4 @@ post-patch:
 	@${PERL} -pi -e 's|timestamp: %ld|timestamp: %d|g' \
 		${WRKSRC}/magick/xwindow.c
 
-post-install:
-.if defined(WITHOUT_IMAGEMAGICK_SVG) && defined(WITHOUT_IMAGEMAGICK_MSL)
-	${GREP} -v "^bin/conjure" ${TMPPLIST} > ${TMPPLIST}.tmp
-	${MV} -f ${TMPPLIST}.tmp ${TMPPLIST}
-.endif
-.if defined(WITHOUT_IMAGEMAGICK_PERL)
-	${GREP} -v "lib/perl5/site_perl" ${TMPPLIST} > ${TMPPLIST}.tmp
-	${MV} -f ${TMPPLIST}.tmp ${TMPPLIST}
-.endif
 .include <bsd.port.mk>
