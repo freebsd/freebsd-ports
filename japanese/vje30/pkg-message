@@ -1,7 +1,12 @@
-************************************************************
+****************************************************************
+To start vjed automatically on boot, please add the following
+line to /etc/rc.conf:
+
+	vjed_start=YES
+
 To use extra GUI accessories, you need to install JDK and
-JFC from ports (supplied as java/jdk and java/jfc) and set
-the following environment variables:
+JFC from ports (java/jdk11 and java/jfc) and set the following
+environment variables:
 
 B-shells)
 	export JAVA_HOME=${PREFIX}/jdk1.1.8
@@ -11,4 +16,4 @@ C-shells)
 	setenv JAVA_HOME ${PREFIX}/jdk1.1.8
 	setenv SWING_HOME ${PREFIX}/share/java/classes/jfc-1.1.1
 
-************************************************************
+****************************************************************

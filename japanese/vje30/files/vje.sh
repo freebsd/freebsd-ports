@@ -2,26 +2,21 @@
 #
 # $FreeBSD$
 
-vjed="/usr/local/vje30/bin/vjed"
+# PROVIDE: vjed
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
 
-case "$1" in
-start)
-	if [ -x $vjed ] ; then
-		echo -n ' vje30:'
-		$vjed &
-	fi
-	;;
-stop)
-	if killall vjed 2>/dev/null; then
-		echo -n ' vje30'
-	else
-		echo -n ' vje30: not running'
- 	fi
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	exit 64
-	;;
-esac
+. %%RC_SUBR%%
 
-exit 0
+name=vjed
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/vje30/bin/vjed
+
+required_files=%%PREFIX%%/etc/vje30/vje.cfg
+
+[ -z "$vjed_enable" ] && vjed_enable=NO
+
+load_rc_config $name
+run_rc_command "$1"
