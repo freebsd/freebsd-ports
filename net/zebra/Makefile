@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zebra
-PORTVERSION=	0.90a
-PORTREVISION=	3
+PORTVERSION=	0.91a
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 
@@ -42,6 +41,7 @@ CONFIGURE_ARGS+=--disable-ospf6d --disable-ripngd
 .endif
 
 post-install:
+	@( cd ${WRKSRC}/doc; rm -f zebra*info*; ${MAKE} zebra.info install )
 	@${ECHO} "===>     installing zebra startup file..."
 	@${SED} -e "s=!!PREFIX!!=${PREFIX}=" \
 		< ${FILESDIR}/zebractl.sh  \

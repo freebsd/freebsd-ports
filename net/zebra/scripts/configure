@@ -17,6 +17,7 @@ Select compile time options for zebra port:" -1 -1 8	\
 LIBPAM		"enable PAM authentication for vtysh"	OFF \
 OSPF_NSSA	"turn on undergoing NSSA feature"	OFF \
 SNMP		"enable SNMP support"			OFF \
+TCP-ZEBRA	"enable TCP/IP socket connection"	OFF \
 2> /tmp/zebra-checklist.$$
 
 retval=$?
@@ -49,6 +50,9 @@ while [ "$1" ]; do
 		;;
 	\"SNMP\")
 		echo CONFIGURE_ARGS+=--enable-snmp
+		;;
+	\"TCP-ZEBRA\")
+		echo CONFIGURE_ARGS+=--enable-tcp-zebra
 		;;
     esac
     shift
