@@ -5,10 +5,6 @@ LessTif/COPYING.LIB
 LessTif/CREDITS
 LessTif/FAQ
 LessTif/KNOWN_BUGS
-LessTif/NEWS
-LessTif/README
-LessTif/RELEASE-POLICY
-LessTif/release-notes.txt
 LessTif/Motif1.2/include/Mrm/MrmAppl.h
 LessTif/Motif1.2/include/Mrm/MrmDecls.h
 LessTif/Motif1.2/include/Mrm/MrmPrivate.h
@@ -133,11 +129,9 @@ LessTif/Motif1.2/include/Xm/XmP.h
 LessTif/Motif1.2/include/Xm/XmStrDefs.h
 LessTif/Motif1.2/include/Xm/XmosP.h
 LessTif/Motif1.2/lib/libMrm.a
-LessTif/Motif1.2/lib/libMrm.la
 LessTif/Motif1.2/lib/libMrm.so
 LessTif/Motif1.2/lib/libMrm.so.1
 LessTif/Motif1.2/lib/libXm.a
-LessTif/Motif1.2/lib/libXm.la
 LessTif/Motif1.2/lib/libXm.so
 LessTif/Motif1.2/lib/libXm.so.1
 LessTif/Motif2.0/include/Mrm/MrmAppl.h
@@ -155,6 +149,7 @@ LessTif/Motif2.0/include/Xm/BaseClassP.h
 LessTif/Motif2.0/include/Xm/BulletinB.h
 LessTif/Motif2.0/include/Xm/BulletinBP.h
 LessTif/Motif2.0/include/Xm/CSText.h
+LessTif/Motif2.0/include/Xm/CSTextP.h
 LessTif/Motif2.0/include/Xm/CacheP.h
 LessTif/Motif2.0/include/Xm/CareVisualT.h
 LessTif/Motif2.0/include/Xm/CascadeB.h
@@ -292,45 +287,46 @@ LessTif/Motif2.0/include/Xm/XmAll.h
 LessTif/Motif2.0/include/Xm/XmP.h
 LessTif/Motif2.0/include/Xm/XmStrDefs.h
 LessTif/Motif2.0/include/Xm/XmosP.h
+LessTif/Motif2.0/include/Xm/Xpm.h
+LessTif/Motif2.0/include/Xm/XpmP.h
 LessTif/Motif2.0/lib/libMrm.a
-LessTif/Motif2.0/lib/libMrm.la
 LessTif/Motif2.0/lib/libMrm.so
 LessTif/Motif2.0/lib/libMrm.so.2
 LessTif/Motif2.0/lib/libXm.a
-LessTif/Motif2.0/lib/libXm.la
 LessTif/Motif2.0/lib/libXm.so
 LessTif/Motif2.0/lib/libXm.so.2
-@dirrm LessTif/Motif1.2/include/Mrm
-@dirrm LessTif/Motif1.2/include/Xm
-@dirrm LessTif/Motif1.2/include
-@dirrm LessTif/Motif1.2/lib
-@dirrm LessTif/Motif1.2
-@dirrm LessTif/Motif2.0/include/Mrm
-@dirrm LessTif/Motif2.0/include/Xm
-@dirrm LessTif/Motif2.0/include
-@dirrm LessTif/Motif2.0/lib
-@dirrm LessTif/Motif2.0
-@dirrm LessTif
+LessTif/NEWS
+LessTif/README
+LessTif/RELEASE-POLICY
+LessTif/release-notes.txt
 bin/mwm
-bin/uil
 bin/mxmkmf
+bin/uil
 bin/xmbind
-include/Mrm
-include/Xm
-lib/libXm.a
-lib/libXm.so
-lib/libXm.so.1
-lib/libXm.la
-lib/libMrm.a
-lib/libMrm.so
-lib/libMrm.so.1
-lib/libMrm.la
 lib/X11/app-defaults/Mwm
-@comment lib/X11/config/Imake.tmpl <-- needs additional consideration, as it
-@comment tends to broke Imake included with XFree4.0!!!
-lib/X11/config/Motif.rules
-lib/X11/config/Motif.tmpl
+lib/X11/config/LessTif.rules
+lib/X11/config/LessTif.tmpl
+lib/X11/config/host.def
 lib/X11/mwm/README
 lib/X11/mwm/alt.map
 lib/X11/mwm/system.mwmrc
+lib/libMrm.a
+lib/libMrm.so
+lib/libMrm.so.1
+lib/libXm.a
+lib/libXm.so
+lib/libXm.so.1
 @dirrm lib/X11/mwm
+@dirrm LessTif/Motif2.0/lib
+@dirrm LessTif/Motif2.0/include/Xm
+@dirrm LessTif/Motif2.0/include/Mrm
+@dirrm LessTif/Motif2.0/include
+@dirrm LessTif/Motif2.0
+@dirrm LessTif/Motif1.2/lib
+@dirrm LessTif/Motif1.2/include/Xm
+@dirrm LessTif/Motif1.2/include/Mrm
+@dirrm LessTif/Motif1.2/include
+@dirrm LessTif/Motif1.2
+@dirrm LessTif
+include/Mrm
+include/Xm
