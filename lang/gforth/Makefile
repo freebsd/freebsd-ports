@@ -13,17 +13,90 @@ MASTER_SITE_SUBDIR=	gforth
 
 MAINTAINER=	clefevre@poboxes.com
 
-CFLAGS=		#none
+#
+# Global variables
+#
+
 STRIP=		#none
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+ALL_TARGET=	all info
+
+.if make(do-install)
+# DESTDIR isn't honored. fake it w/ prefix.
+MAKE_ARGS=	prefix=${PREFIX}
+.endif
 
 MAN1=		gforth.1
 
-post-install:
-	@install-info ${PREFIX}/info/gforth.info ${PREFIX}/info/dir
-.if !exists(${PREFIX}/share/emacs/site-lisp/gforth.el)
-	@${INSTALL_DATA} ${WRKSRC}/gforth.el ${PREFIX}/share/emacs/site-lisp
-.endif
+#
+# Local variables
+#
+
+INSTALL_INFO?=	install-info
+
+INFO_FILES=	${PORTNAME}.info
+INFO_DIR=	${PREFIX}/info
+
+EMACS_FILES=	gforth.el
+EMACS_DIR=	${PREFIX}/share/emacs/site-lisp
+
+SHARE_DIR=	${PREFIX}/share/${PORTNAME}
+
+EMPTY_FILES=	siteinit.fs
+FORTH_DIR=	${SHARE_DIR}/site-forth
+
+EMPTY_DIRS=	4stack 6502 8086 avr c165 generic h8 \
+		hppa ia64 m68k misc power shboom sparc
+ARCH_DIR=	${SHARE_DIR}/${PORTVERSION}/arch
+
+#
+# Post-extract
+#
+
+post-extract: remove-info-files
+
+remove-info-files:
+.for file in ${INFO_FILES}
+	@${RM} -f ${WRKSRC}/doc/${file}*
+.endfor
+
+#
+# Post-patch
+#
+
+post-patch: patch-makefiles
+
+patch-makefiles:
+	@${PERL} -pi.fbsd -e 's|makeinfo|makeinfo --no-split|g' \
+		${WRKSRC}/Makefile.in
+
+#
+# Post-install
+#
+
+post-install: install-info install-el \
+	      remove-empty-files remove-empty-dirs
+
+install-info:
+.for file in ${INFO_FILES}
+	@${INSTALL_INFO} ${INFO_DIR}/${file} ${INFO_DIR}/dir
+.endfor
+
+install-el:
+.for file in ${EMACS_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${EMACS_DIR}/${file}
+.endfor
+
+remove-empty-files:
+.for file in ${EMPTY_FILES}
+	@${RM} -f ${FORTH_DIR}/${file}
+.endfor
+
+remove-empty-dirs:
+.for dir in ${EMPTY_DIRS}
+	@${RMDIR} ${ARCH_DIR}/${dir}
+.endfor
 
 .include <bsd.port.mk>
