@@ -19,7 +19,7 @@ COMMENT?=	Server programs for a replicated high-performance network file system
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		lwp.2:${PORTSDIR}/devel/lwp \
 		rpc2.6:${PORTSDIR}/devel/rpc2 \
-		rvm.2:${PORTSDIR}/devel/rvm
+		rvm.3:${PORTSDIR}/devel/rvm
 
 ALL_TARGET=	coda
 INSTALL_TARGET=	${CODA_SUITE}-install
