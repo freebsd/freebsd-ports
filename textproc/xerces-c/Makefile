@@ -42,6 +42,10 @@ PLIST_SUB+=	XERCESC_VER=${PORTVERSION:S/./_/g} \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64"
+.endif
+
 pre-configure:
 	${CHMOD} 700 ${CONFIGURE_WRKSRC}/runConfigure
 	${CHMOD} 700 ${CONFIGURE_WRKSRC}/configure

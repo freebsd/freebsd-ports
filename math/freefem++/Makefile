@@ -49,6 +49,10 @@ BADSAMPLES=	load/myfunction.o tutorial/Makefile.in.orig
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build"
+.endif
+
 .if ${ARCH} == "sparc64"
 CONFIGURE_ARGS+=	--disable-optim
 .endif
