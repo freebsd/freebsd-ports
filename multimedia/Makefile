@@ -19,6 +19,7 @@
     SUBDIR += ffmpeg
     SUBDIR += ffmpeg045
     SUBDIR += fxtv
+    SUBDIR += gmencoder
     SUBDIR += goggles
     SUBDIR += gopchop
     SUBDIR += gstreamer

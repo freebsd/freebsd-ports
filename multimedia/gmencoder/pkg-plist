@@ -1,0 +1,6 @@
+bin/gmencoder
+share/gnome/pixmaps/gmencoder/media-pause.png
+share/gnome/pixmaps/gmencoder/media-play.png
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/gnome/pixmaps/gmencoder
