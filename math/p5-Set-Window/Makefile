@@ -18,7 +18,6 @@ COMMENT=	Perl module to manage an interval on the integer line
 PERL_CONFIGURE=	yes
 
 MAN3=		Set::Window.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-patch:
 	${PERL} -pi -e '$$_="" if /use 5/;' ${WRKSRC}/Window.pm

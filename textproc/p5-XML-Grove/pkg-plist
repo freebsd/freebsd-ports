@@ -1,17 +1,17 @@
-lib/perl5/site_perl/%%PERL_VER%%/XML/DOM-ecmascript.pod
-lib/perl5/site_perl/%%PERL_VER%%/XML/Grove.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Grove/AsCanonXML.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Grove/AsString.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Grove/Builder.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Grove/Factory.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Grove/IDs.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Grove/Path.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Grove/PerlSAX.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Grove/Sub.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Grove/Subst.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Grove/XPointer.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Grove/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Grove
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/Grove
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
+%%SITE_PERL%%/XML/DOM-ecmascript.pod
+%%SITE_PERL%%/XML/Grove.pm
+%%SITE_PERL%%/XML/Grove/AsCanonXML.pm
+%%SITE_PERL%%/XML/Grove/AsString.pm
+%%SITE_PERL%%/XML/Grove/Builder.pm
+%%SITE_PERL%%/XML/Grove/Factory.pm
+%%SITE_PERL%%/XML/Grove/IDs.pm
+%%SITE_PERL%%/XML/Grove/Path.pm
+%%SITE_PERL%%/XML/Grove/PerlSAX.pm
+%%SITE_PERL%%/XML/Grove/Sub.pm
+%%SITE_PERL%%/XML/Grove/Subst.pm
+%%SITE_PERL%%/XML/Grove/XPointer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Grove/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Grove
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@dirrm %%SITE_PERL%%/XML/Grove
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true

@@ -19,7 +19,7 @@ RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/LockFile/Simple.pm:${PORTSDIR}/devel/p5-LockFile-Simple
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 USE_PERL5=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_GMAKE=	yes
@@ -27,7 +27,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=			\
 		--prefix=${PREFIX}/rancid
 
-MANPREFIX=	${PREFIX}/rancid
 
 MAN1=		lg_intro.1 par.1 do-diffs.1 alogin.1 blogin.1 clogin.1 \
 		control_rancid.1 create_cvs.1 rancid.1 rancid_intro.1 \

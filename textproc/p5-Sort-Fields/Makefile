@@ -18,6 +18,5 @@ COMMENT=	Perl module to sort lines containing delimited fields
 PERL_CONFIGURE=	yes
 
 MAN3=		Sort::Fields.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.visi.com/~barr/dnswalk/
 MAINTAINER=	mph@freebsd.org
 COMMENT=	DNS debugger - requests a zone transfer and analyzes the result
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
+RUN_DEPENDS=	${SITE_PERL}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES

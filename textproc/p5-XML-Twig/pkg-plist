@@ -1,4 +1,4 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Twig/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/XML/Twig.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Twig
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Twig/.packlist
+%%SITE_PERL%%/XML/Twig.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Twig
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true

@@ -17,7 +17,6 @@ COMMENT=	Perl5 routines that present a simple interface to parse syslog files
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Parse::Syslog.3
 
 .include <bsd.port.mk>

@@ -28,7 +28,6 @@ PERL_CONFIGURE=	yes
 BROKEN=	"This port requires perl 5.6 or newer"
 .endif
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Coro.3 \
 		Coro::Channel.3 \
 		Coro::Cont.3 \

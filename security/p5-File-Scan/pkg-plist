@@ -1,6 +1,6 @@
 @comment $FreeBSD$
-lib/perl5/site_perl/%%PERL_VER%%/File/Scan.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Scan/.packlist
+%%SITE_PERL%%/File/Scan.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Scan/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/Changes
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -15,6 +15,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Scan/.packlist
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Scan
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/File 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Scan
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/File 2>/dev/null || true

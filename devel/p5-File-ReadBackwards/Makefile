@@ -22,6 +22,5 @@ SITE_PERL=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 PERL_CONFIGURE=	yes
 
 MAN3=		File::ReadBackwards.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -17,7 +17,6 @@ COMMENT=	A perl5 module providing access to System errno constants
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Errno.3
 
 .include <bsd.port.mk>

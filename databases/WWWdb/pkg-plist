@@ -1,37 +1,37 @@
-lib/perl5/site_perl/%%PERL_VER%%/INSTALL.pl
-lib/perl5/site_perl/%%PERL_VER%%/Apache/WWWdb_TransUri.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/WWWdb.conf
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/ConfigFile.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/DbSession.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/DbSession.html
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/DbSession_en.po
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/Monitor.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/List.html
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/HTML.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/ConfigFile_en.po
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/Session.html
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/ConfigPool.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/ConfigFile.html
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/Hash.html
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/DbSession_de.po
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/ConfigFile_de.po
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/Plugin.html
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/Session.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/List.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/Hash.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/Plugin_en.po
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/Base.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/Base.html
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/Plugin.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/HTML.html
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/Plugin_de.po
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/DbSession/Oracle.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/DbSession/Pg.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/DbSession/mysql.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/DbSession/ODBC.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWWdb/DbSession/InterBase.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWWdb/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWWdb/DbSession
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWWdb
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWWdb
+%%SITE_PERL%%/INSTALL.pl
+%%SITE_PERL%%/Apache/WWWdb_TransUri.pm
+%%SITE_PERL%%/Apache/WWWdb.conf
+%%SITE_PERL%%/WWWdb/ConfigFile.pm
+%%SITE_PERL%%/WWWdb/DbSession.pm
+%%SITE_PERL%%/WWWdb/DbSession.html
+%%SITE_PERL%%/WWWdb/DbSession_en.po
+%%SITE_PERL%%/WWWdb/Monitor.pm
+%%SITE_PERL%%/WWWdb/List.html
+%%SITE_PERL%%/WWWdb/HTML.pm
+%%SITE_PERL%%/WWWdb/ConfigFile_en.po
+%%SITE_PERL%%/WWWdb/Session.html
+%%SITE_PERL%%/WWWdb/ConfigPool.pm
+%%SITE_PERL%%/WWWdb/ConfigFile.html
+%%SITE_PERL%%/WWWdb/Hash.html
+%%SITE_PERL%%/WWWdb/DbSession_de.po
+%%SITE_PERL%%/WWWdb/ConfigFile_de.po
+%%SITE_PERL%%/WWWdb/Plugin.html
+%%SITE_PERL%%/WWWdb/Session.pm
+%%SITE_PERL%%/WWWdb/List.pm
+%%SITE_PERL%%/WWWdb/Hash.pm
+%%SITE_PERL%%/WWWdb/Plugin_en.po
+%%SITE_PERL%%/WWWdb/Base.pm
+%%SITE_PERL%%/WWWdb/Base.html
+%%SITE_PERL%%/WWWdb/Plugin.pm
+%%SITE_PERL%%/WWWdb/HTML.html
+%%SITE_PERL%%/WWWdb/Plugin_de.po
+%%SITE_PERL%%/WWWdb/DbSession/Oracle.pm
+%%SITE_PERL%%/WWWdb/DbSession/Pg.pm
+%%SITE_PERL%%/WWWdb/DbSession/mysql.pm
+%%SITE_PERL%%/WWWdb/DbSession/ODBC.pm
+%%SITE_PERL%%/WWWdb/DbSession/InterBase.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWWdb/.packlist
+@dirrm %%SITE_PERL%%/WWWdb/DbSession
+@dirrm %%SITE_PERL%%/WWWdb
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWWdb
 

@@ -24,7 +24,7 @@ RUN_DEPENDS=	${SITE_PERL}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk \
 WRKSRC=		${WRKDIR}/ucd-snmp-${PORTVERSION}
 NO_BUILD=	yes
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
+SITE_PERL=	${SITE_PERL}/${PERL_ARCH}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/local/tkmib ${PREFIX}/bin

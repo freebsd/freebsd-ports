@@ -17,7 +17,6 @@ COMMENT=	Perl extension to access RBL-style host verification services
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Mail::RBL.3
 
 FILES=		Makefile.PL test.pl RBL.pm

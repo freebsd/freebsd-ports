@@ -17,7 +17,6 @@ COMMENT=	Provides a tied interface to the /etc/services file
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::Services.3
 
 .include <bsd.port.mk>

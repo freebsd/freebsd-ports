@@ -20,16 +20,16 @@ COMMENT=	A collection of Perl modules for bioinformatics
 
 # These are all run-time dependencies, but listing them in ${BUILD_DEPENDS}
 # prevents a flood of build-time warnings.
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Ace.pm:${PORTSDIR}/biology/p5-AcePerl \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTTP/Request/Common.pm:${PORTSDIR}/www/p5-libwww \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/Node.pm:${PORTSDIR}/textproc/p5-XML-Node \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/Parser/PerlSAX.pm:${PORTSDIR}/textproc/p5-libxml \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Ace.pm:${PORTSDIR}/biology/p5-AcePerl \
+		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
+		${SITE_PERL}/HTTP/Request/Common.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
+		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
+		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/XML/Node.pm:${PORTSDIR}/textproc/p5-XML-Node \
+		${SITE_PERL}/XML/Parser/PerlSAX.pm:${PORTSDIR}/textproc/p5-libxml \
+		${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
@@ -47,12 +47,12 @@ DISTFILES+=	bioperl-ext-${EXT_VERSION}${EXTRACT_SUFX}
 EXT_WRKSRC=	${WRKDIR}/bioperl-ext-06/Bio/Ext/Align
 
 .if defined(WITH_CORBA_CLIENT)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/CORBA/ORBit.pm:${PORTSDIR}/devel/p5-ORBit
-RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/CORBA/ORBit.pm:${PORTSDIR}/devel/p5-ORBit
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/CORBA/ORBit.pm:${PORTSDIR}/devel/p5-ORBit
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/CORBA/ORBit.pm:${PORTSDIR}/devel/p5-ORBit
 .endif
 .if defined(WITH_CORBA_SERVER)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/CORBA/ORBit.pm:${PORTSDIR}/devel/p5-ORBit
-RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/CORBA/ORBit.pm:${PORTSDIR}/devel/p5-ORBit
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/CORBA/ORBit.pm:${PORTSDIR}/devel/p5-ORBit
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/CORBA/ORBit.pm:${PORTSDIR}/devel/p5-ORBit
 .endif
 .if defined(WITH_GUI)
 RUN_DEPENDS+=	ptksh:${PORTSDIR}/x11-toolkits/p5-Tk
@@ -171,7 +171,6 @@ MAN3+=		Bio::CorbaServer::BioEnv.3 Bio::CorbaServer::AnonymousSeq.3 \
 .if defined(WITH_GUI)
 MAN3+=		Bio::Tk::HitDisplay.3 Bio::Tk::SeqCanvas.3
 .endif
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-fetch:
 .if !defined(BATCH) && (!defined(WITH_CORBA_CLIENT) || \

@@ -22,7 +22,7 @@ MAN3=		Crypt::CBC.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 .endif
 
 .include <bsd.port.post.mk>

@@ -18,6 +18,5 @@ COMMENT=	A simple and fast HTML syntax checking package for perl 4 and perl 5
 PERL_CONFIGURE=	yes
 
 MAN3=		HTML::QuickCheck.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 bin/altget
 bin/altwalk
-lib/perl5/site_perl/%%PERL_VER%%/Altoids.pm
-lib/perl5/site_perl/%%PERL_VER%%/altoids.pl
+%%SITE_PERL%%/Altoids.pm
+%%SITE_PERL%%/altoids.pl
 share/altoids/CISCO-ATM-IF-MIB.oid
 share/altoids/CISCO-LECS-MIB.oid
 share/altoids/CISCO-LES-MIB.oid

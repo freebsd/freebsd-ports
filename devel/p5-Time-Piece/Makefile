@@ -18,6 +18,5 @@ COMMENT=	Time::Piece - Object Oriented time objects
 PERL_CONFIGURE=	yes
 
 MAN3=		Time::Piece.3 Time::Seconds.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

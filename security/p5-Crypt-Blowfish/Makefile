@@ -19,6 +19,5 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::Blowfish.3
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

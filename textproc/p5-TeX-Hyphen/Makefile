@@ -17,7 +17,6 @@ COMMENT=	Hyphenate words using TeX's patterns
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		TeX::Hyphen.3 TeX::Hyphen::czech.3 TeX::Hyphen::german.3
 
 .include <bsd.port.mk>

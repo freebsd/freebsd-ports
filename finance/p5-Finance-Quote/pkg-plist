@@ -1,24 +1,24 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Finance/Quote/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/AEX.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/ASX.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Cdnfundlibrary.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/DWS.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Fidelity.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Fool.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Tdwaterhouse.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Tiaacref.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Troweprice.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Trustnet.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/UserAgent.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/VWD.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Yahoo/Asia.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Yahoo/Australia.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Yahoo/Base.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Yahoo/Europe.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Yahoo/USA.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Yahoo
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Finance/Quote
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Finance 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Finance 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Quote/.packlist
+%%SITE_PERL%%/Finance/Quote.pm
+%%SITE_PERL%%/Finance/Quote/AEX.pm
+%%SITE_PERL%%/Finance/Quote/ASX.pm
+%%SITE_PERL%%/Finance/Quote/Cdnfundlibrary.pm
+%%SITE_PERL%%/Finance/Quote/DWS.pm
+%%SITE_PERL%%/Finance/Quote/Fidelity.pm
+%%SITE_PERL%%/Finance/Quote/Fool.pm
+%%SITE_PERL%%/Finance/Quote/Tdwaterhouse.pm
+%%SITE_PERL%%/Finance/Quote/Tiaacref.pm
+%%SITE_PERL%%/Finance/Quote/Troweprice.pm
+%%SITE_PERL%%/Finance/Quote/Trustnet.pm
+%%SITE_PERL%%/Finance/Quote/UserAgent.pm
+%%SITE_PERL%%/Finance/Quote/VWD.pm
+%%SITE_PERL%%/Finance/Quote/Yahoo/Asia.pm
+%%SITE_PERL%%/Finance/Quote/Yahoo/Australia.pm
+%%SITE_PERL%%/Finance/Quote/Yahoo/Base.pm
+%%SITE_PERL%%/Finance/Quote/Yahoo/Europe.pm
+%%SITE_PERL%%/Finance/Quote/Yahoo/USA.pm
+@dirrm %%SITE_PERL%%/Finance/Quote/Yahoo
+@dirrm %%SITE_PERL%%/Finance/Quote
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Quote
+@unexec rmdir %D/%%SITE_PERL%%/Finance 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance 2>/dev/null || true

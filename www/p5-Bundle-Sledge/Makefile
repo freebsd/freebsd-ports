@@ -45,12 +45,11 @@ PM_DEPENDS+=	${SITE_PERL}/Data/Properties.pm:${PORTSDIR}/devel/p5-Data-Propertie
 PM_DEPENDS+=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
 PM_DEPENDS+=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Bundle::Sledge.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 

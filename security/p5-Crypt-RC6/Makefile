@@ -21,7 +21,6 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::RC6.3
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-patch:
 	${REINPLACE_CMD} -e 's///' ${WRKSRC}/RC6.pm

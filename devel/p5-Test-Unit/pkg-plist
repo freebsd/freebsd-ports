@@ -1,38 +1,38 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Test/Unit/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Test/TestLister.pl
-lib/perl5/site_perl/%%PERL_VER%%/Test/TestRunner.pl
-lib/perl5/site_perl/%%PERL_VER%%/Test/TkTestRunner.pl
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Assert.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Assertion.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Assertion/Boolean.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Assertion/CodeRef.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Assertion/Exception.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Assertion/Regexp.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Debug.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Decorator.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Error.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Exception.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Failure.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/HarnessUnit.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Listener.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Loader.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Procedural.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Result.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Runner.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Runner/Terminal.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Setup.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Test.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/TestCase.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/TestRunner.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/TestSuite.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/TkTestRunner.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Tutorial.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/UnitHarness.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Warning.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Assertion
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Runner
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Test/Unit
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Test/Unit
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Test 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Test 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Unit/.packlist
+%%SITE_PERL%%/Test/TestLister.pl
+%%SITE_PERL%%/Test/TestRunner.pl
+%%SITE_PERL%%/Test/TkTestRunner.pl
+%%SITE_PERL%%/Test/Unit.pm
+%%SITE_PERL%%/Test/Unit/Assert.pm
+%%SITE_PERL%%/Test/Unit/Assertion.pm
+%%SITE_PERL%%/Test/Unit/Assertion/Boolean.pm
+%%SITE_PERL%%/Test/Unit/Assertion/CodeRef.pm
+%%SITE_PERL%%/Test/Unit/Assertion/Exception.pm
+%%SITE_PERL%%/Test/Unit/Assertion/Regexp.pm
+%%SITE_PERL%%/Test/Unit/Debug.pm
+%%SITE_PERL%%/Test/Unit/Decorator.pm
+%%SITE_PERL%%/Test/Unit/Error.pm
+%%SITE_PERL%%/Test/Unit/Exception.pm
+%%SITE_PERL%%/Test/Unit/Failure.pm
+%%SITE_PERL%%/Test/Unit/HarnessUnit.pm
+%%SITE_PERL%%/Test/Unit/Listener.pm
+%%SITE_PERL%%/Test/Unit/Loader.pm
+%%SITE_PERL%%/Test/Unit/Procedural.pm
+%%SITE_PERL%%/Test/Unit/Result.pm
+%%SITE_PERL%%/Test/Unit/Runner.pm
+%%SITE_PERL%%/Test/Unit/Runner/Terminal.pm
+%%SITE_PERL%%/Test/Unit/Setup.pm
+%%SITE_PERL%%/Test/Unit/Test.pm
+%%SITE_PERL%%/Test/Unit/TestCase.pm
+%%SITE_PERL%%/Test/Unit/TestRunner.pm
+%%SITE_PERL%%/Test/Unit/TestSuite.pm
+%%SITE_PERL%%/Test/Unit/TkTestRunner.pm
+%%SITE_PERL%%/Test/Unit/Tutorial.pm
+%%SITE_PERL%%/Test/Unit/UnitHarness.pm
+%%SITE_PERL%%/Test/Unit/Warning.pm
+@dirrm %%SITE_PERL%%/Test/Unit/Assertion
+@dirrm %%SITE_PERL%%/Test/Unit/Runner
+@dirrm %%SITE_PERL%%/Test/Unit
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Unit
+@unexec rmdir %D/%%SITE_PERL%%/Test 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test 2>/dev/null || true

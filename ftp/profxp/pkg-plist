@@ -1,6 +1,6 @@
 bin/profxp
-lib/perl5/site_perl/%%PERL_VER%%/profxp/command.pm
-lib/perl5/site_perl/%%PERL_VER%%/profxp/config.pm
-lib/perl5/site_perl/%%PERL_VER%%/profxp/screen.pm
-lib/perl5/site_perl/%%PERL_VER%%/profxp/tcp.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/profxp
+%%SITE_PERL%%/profxp/command.pm
+%%SITE_PERL%%/profxp/config.pm
+%%SITE_PERL%%/profxp/screen.pm
+%%SITE_PERL%%/profxp/tcp.pm
+@dirrm %%SITE_PERL%%/profxp

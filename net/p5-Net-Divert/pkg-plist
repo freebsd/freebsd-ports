@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/Net/Divert.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/Divert/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Divert/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Divert
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Net/Divert
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Net 2>/dev/null || true
+%%SITE_PERL%%/Net/Divert.pm
+%%SITE_PERL%%/auto/Net/Divert/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Divert/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Divert
+@dirrm %%SITE_PERL%%/auto/Net/Divert
+@unexec rmdir %D/%%SITE_PERL%%/auto/Net 2>/dev/null || true

@@ -18,6 +18,5 @@ COMMENT=	System2 - like system(), but with STDERR available as well
 PERL_CONFIGURE=	yes
 
 MAN3=		System2.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

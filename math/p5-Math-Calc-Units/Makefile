@@ -18,6 +18,5 @@ COMMENT=	Human-readable unit-aware calculator
 PERL_CONFIGURE=	yes
 
 MAN3=		Math::Calc::Units.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

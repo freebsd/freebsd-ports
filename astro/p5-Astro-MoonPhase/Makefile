@@ -17,7 +17,6 @@ COMMENT=	Perl interface to calculate information about the phase of the moon
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Astro::MoonPhase.3
 
 .include <bsd.port.mk>

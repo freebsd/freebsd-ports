@@ -12,7 +12,7 @@ MASTER_SITES=	http://home.arcor.de/kaffeetisch/downloads/
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Simple telephone book
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 
 NO_BUILD=	yes
 

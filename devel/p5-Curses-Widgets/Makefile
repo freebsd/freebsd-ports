@@ -21,7 +21,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Curses::Widgets::Label.3 \
 	Curses::Widgets.3 \
 	Curses::Widgets::TextMemo.3 \

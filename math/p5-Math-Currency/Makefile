@@ -26,7 +26,6 @@ IGNORE=		"Needs Perl 5.6.0 for Math::BigFloat"
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Math::Currency.3
 
 .include <bsd.port.post.mk>

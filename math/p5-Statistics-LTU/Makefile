@@ -18,6 +18,5 @@ COMMENT=	Perl implementation of Linear Threshold Units
 PERL_CONFIGURE=	yes
 
 MAN3=		Statistics::LTU.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

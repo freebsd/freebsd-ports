@@ -1,14 +1,14 @@
-lib/perl5/site_perl/%%PERL_VER%%/HTML/AsSubs.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTML/Element.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTML/Parse.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTML/TreeBuilder.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTML/Element/traverse.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTML/Tree.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTML/Tree/AboutObjects.pod
-lib/perl5/site_perl/%%PERL_VER%%/HTML/Tree/AboutTrees.pod
-lib/perl5/site_perl/%%PERL_VER%%/HTML/Tree/Scanning.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML-Tree/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML-Tree
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML/Element
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML/Tree
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/HTML 2>/dev/null || true
+%%SITE_PERL%%/HTML/AsSubs.pm
+%%SITE_PERL%%/HTML/Element.pm
+%%SITE_PERL%%/HTML/Parse.pm
+%%SITE_PERL%%/HTML/TreeBuilder.pm
+%%SITE_PERL%%/HTML/Element/traverse.pm
+%%SITE_PERL%%/HTML/Tree.pm
+%%SITE_PERL%%/HTML/Tree/AboutObjects.pod
+%%SITE_PERL%%/HTML/Tree/AboutTrees.pod
+%%SITE_PERL%%/HTML/Tree/Scanning.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML-Tree/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML-Tree
+@dirrm %%SITE_PERL%%/HTML/Element
+@dirrm %%SITE_PERL%%/HTML/Tree
+@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true

@@ -17,7 +17,6 @@ COMMENT=	Implements an HTML widget with multiple layers
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		HTML::Widgets::SelectLayers.3
 
 .include <bsd.port.mk>

@@ -18,6 +18,5 @@ COMMENT=	Perl extension for International Standard Serial Numbers
 PERL_CONFIGURE=		yes
 
 MAN3=			Business::ISSN.3
-MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

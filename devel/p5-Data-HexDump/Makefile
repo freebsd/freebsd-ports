@@ -17,7 +17,6 @@ COMMENT=	A simple hexadecimal dumper
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Data::HexDump.3
 
 .include <bsd.port.mk>

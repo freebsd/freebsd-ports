@@ -18,6 +18,5 @@ COMMENT=	Convert Perl lists into linguistic conjunctions
 PERL_CONFIGURE=	yes
 
 MAN3=	Lingua::Conjunction.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

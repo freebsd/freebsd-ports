@@ -1,4 +1,4 @@
-lib/perl5/site_perl/%%PERL_VER%%/File/Temp.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Temp/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Temp
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/File 2>/dev/null || true
+%%SITE_PERL%%/File/Temp.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Temp/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Temp
+@unexec rmdir %D/%%SITE_PERL%%/File 2>/dev/null || true

@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Handler/YAWriter/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/YAWriter/.packlist
 bin/xmlpretty
-lib/perl5/site_perl/%%PERL_VER%%/XML/Handler/YAWriter.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Handler/YAWriter
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML/Handler 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Handler 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+%%SITE_PERL%%/XML/Handler/YAWriter.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/YAWriter
+@unexec rmdir %D/%%SITE_PERL%%/XML/Handler 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true

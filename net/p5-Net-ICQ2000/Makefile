@@ -16,7 +16,6 @@ COMMENT=	A perl5 module for ICQv7 protocol realisation
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::ICQ2000.3
 
 .include <bsd.port.mk>

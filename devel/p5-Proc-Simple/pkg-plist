@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/Proc/Simple.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Proc/Simple/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/Simple/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Proc/Simple
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/Simple
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Proc
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Proc
+%%SITE_PERL%%/Proc/Simple.pm
+%%SITE_PERL%%/auto/Proc/Simple/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Simple/.packlist
+@dirrm %%SITE_PERL%%/auto/Proc/Simple
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Simple
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc
+@dirrm %%SITE_PERL%%/auto/Proc
+@dirrm %%SITE_PERL%%/Proc

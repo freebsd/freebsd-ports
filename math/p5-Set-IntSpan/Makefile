@@ -18,6 +18,5 @@ COMMENT=	Manages sets of integers
 PERL_CONFIGURE=	yes
 
 MAN3=		Set::IntSpan.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

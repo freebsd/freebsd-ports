@@ -1,14 +1,14 @@
-lib/perl5/site_perl/%%PERL_VER%%/Apache/PageKit/View.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/PageKit/Content.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/PageKit/Model.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/PageKit/Param.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/PageKit/Session.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/PageKit/Config.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/PageKit/Edit.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/setup_eg.pl
-lib/perl5/site_perl/%%PERL_VER%%/Apache/PageKit.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/ErrorReport.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/PageKit/.packlist
+%%SITE_PERL%%/Apache/PageKit/View.pm
+%%SITE_PERL%%/Apache/PageKit/Content.pm
+%%SITE_PERL%%/Apache/PageKit/Model.pm
+%%SITE_PERL%%/Apache/PageKit/Param.pm
+%%SITE_PERL%%/Apache/PageKit/Session.pm
+%%SITE_PERL%%/Apache/PageKit/Config.pm
+%%SITE_PERL%%/Apache/PageKit/Edit.pm
+%%SITE_PERL%%/Apache/setup_eg.pl
+%%SITE_PERL%%/Apache/PageKit.pm
+%%SITE_PERL%%/Apache/ErrorReport.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/PageKit/.packlist
 %%PORTDOCS%%share/doc/Apache-PageKit/README
 %%PORTDOCS%%share/doc/Apache-PageKit/features.xml
 %%PORTDOCS%%share/doc/Apache-PageKit/manual.xml
@@ -80,8 +80,8 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/PageKit/.packlist
 %%PORTDOCS%%@dirrm share/examples/Apache-PageKit/Content
 %%PORTDOCS%%@dirrm share/examples/Apache-PageKit/Config
 %%PORTDOCS%%@dirrm share/examples/Apache-PageKit
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/PageKit
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Apache/PageKit 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Apache 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/PageKit
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Apache/PageKit 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true

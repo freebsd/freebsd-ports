@@ -17,7 +17,6 @@ COMMENT=	Perform domain lookups on 2-letter and 3-letter TLDs
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::DLookup.3
 
 .include <bsd.port.mk>

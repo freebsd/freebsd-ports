@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Text/Wrap.pm
-lib/perl5/site_perl/%%PERL_VER%%/Text/Tabs.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Text 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/.packlist
+%%SITE_PERL%%/Text/Wrap.pm
+%%SITE_PERL%%/Text/Tabs.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true

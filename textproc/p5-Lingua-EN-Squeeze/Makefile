@@ -19,6 +19,5 @@ COMMENT=	Shorten text to minimum syllables by using hash table
 PERL_CONFIGURE=	yes
 
 MAN3=	Lingua::EN::Squeeze.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

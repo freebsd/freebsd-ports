@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mac/FileSpec/Unixish/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Mac/FileSpec/Unixish.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mac/FileSpec/unixish_guts_test.pl
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mac/FileSpec/Unixish
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mac/FileSpec 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mac 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Mac/FileSpec 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Mac 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac/FileSpec/Unixish/.packlist
+%%SITE_PERL%%/Mac/FileSpec/Unixish.pm
+%%SITE_PERL%%/Mac/FileSpec/unixish_guts_test.pl
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac/FileSpec/Unixish
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac/FileSpec 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Mac/FileSpec 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Mac 2>/dev/null || true

@@ -19,6 +19,5 @@ COMMENT=	A perl module that contains code to deal with time periods
 PERL_CONFIGURE=	YES
 
 MAN3=		Time::Period.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Patricia/Patricia.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Patricia/Patricia.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Patricia/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/Patricia.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Patricia
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Patricia/Patricia.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Patricia/Patricia.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Patricia/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Patricia.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Patricia
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Net 2>/dev/null || true

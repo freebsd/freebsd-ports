@@ -59,29 +59,29 @@ lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::IMAP::Admin.3
 lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::IMAP.3
 lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::SIEVE::acap.3
 lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::SIEVE::managesieve.3
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/IMAP/Admin.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/IMAP/IMSP.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/IMAP/Shell.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/IMAP.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/SIEVE/acap.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/SIEVE/managesieve.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/IMAP/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/IMAP/IMAP.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/IMAP/IMAP.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/acap/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/acap/acap.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/acap/acap.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve/managesieve.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve/managesieve.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/IMAP/Admin.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/IMAP/IMSP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/IMAP/Shell.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/IMAP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/SIEVE/acap.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/SIEVE/managesieve.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/IMAP/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/IMAP/IMAP.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/IMAP/IMAP.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/acap/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/acap/acap.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/acap/acap.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve/managesieve.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve/managesieve.so
 @dirrm cyrus/bin
 @dirrm cyrus
 @dirrm include/cyrus
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/IMAP
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/SIEVE
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/IMAP
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/acap
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cyrus
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/IMAP
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/SIEVE
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Cyrus
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/IMAP
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/acap
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE/managesieve
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus/SIEVE
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cyrus

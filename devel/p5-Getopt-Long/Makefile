@@ -18,7 +18,6 @@ COMMENT=	Perl module for extended processing of command line options
 PERL_CONFIGURE=	yes
 
 MAN3=		Getopt::Long.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-configure:
 	${PERL} -pi -e 'm.INSTALLDIRS.&&s,.,,sg' ${WRKSRC}/Makefile.PL

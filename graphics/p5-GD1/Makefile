@@ -21,7 +21,6 @@ LIB_DEPENDS=	gd1.2:${PORTSDIR}/graphics/gd1
 PERL_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		GD.3
 
 post-patch:

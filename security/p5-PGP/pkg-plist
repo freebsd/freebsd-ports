@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/PGP/Pipe.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGP/Pipe/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGP/Pipe
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGP
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/PGP
+%%SITE_PERL%%/PGP/Pipe.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PGP/Pipe/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PGP/Pipe
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PGP
+@dirrm %%SITE_PERL%%/PGP

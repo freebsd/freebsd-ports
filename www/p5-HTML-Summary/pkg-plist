@@ -1,11 +1,11 @@
-lib/perl5/site_perl/%%PERL_VER%%/HTML/Summary.pm
-lib/perl5/site_perl/%%PERL_VER%%/Text/Sentence.pm
-lib/perl5/site_perl/%%PERL_VER%%/Lingua/JA/Jcode.pm
-lib/perl5/site_perl/%%PERL_VER%%/Lingua/JA/Jtruncate.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Summary/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Summary
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Lingua/JA
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Lingua
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Text 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/HTML 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true
+%%SITE_PERL%%/HTML/Summary.pm
+%%SITE_PERL%%/Text/Sentence.pm
+%%SITE_PERL%%/Lingua/JA/Jcode.pm
+%%SITE_PERL%%/Lingua/JA/Jtruncate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Summary/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Summary
+@dirrm %%SITE_PERL%%/Lingua/JA
+@dirrm %%SITE_PERL%%/Lingua
+@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true

@@ -18,7 +18,6 @@ COMMENT=	A clone of the classic Eliza program
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Chatbot::Eliza.3
 
 .include <bsd.port.mk>

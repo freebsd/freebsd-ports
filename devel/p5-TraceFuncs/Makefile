@@ -18,7 +18,6 @@ COMMENT=	A perl5 module to trace function calls as they happen
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Devel::TraceFuncs.3
 
 .include <bsd.port.mk>

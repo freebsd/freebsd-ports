@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mharo@FreeBSD.org
 COMMENT=	Read/write access to ASN.1-encoded PEM files with optional encryption
 
-PERLBASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+PERLBASE=	${SITE_PERL}
 BUILD_DEPENDS=	${PERLBASE}/Convert/ASN1.pm:${PORTSDIR}/converters/p5-Convert-ASN1 \
 		${PERLBASE}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES \
 		${PERLBASE}/Crypt/DES_EDE3.pm:${PORTSDIR}/security/p5-Crypt-DES_EDE3 \

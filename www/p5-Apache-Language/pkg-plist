@@ -1,10 +1,10 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Language.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Language.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Language/Constants.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Language/DBI.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Language/PlainFile.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Language/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Language/Language.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Language/Language.so
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Language
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Language
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/Language.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/Language.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/Language/Constants.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/Language/DBI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/Language/PlainFile.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Language/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Language/Language.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Language/Language.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Language
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache/Language

@@ -18,6 +18,5 @@ COMMENT=	Convert numbers between various bases
 PERL_CONFIGURE=	yes
 
 MAN3=		Math::BaseCalc.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

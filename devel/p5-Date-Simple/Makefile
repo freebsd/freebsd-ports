@@ -18,7 +18,6 @@ COMMENT=		A simple date object
 PERL_CONFIGURE=		yes
 
 MAN3=			Date::Simple.3 Date::Simple::NoXS.3
-SITE_PERL=		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
-MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
+SITE_PERL=		${SITE_PERL}
 
 .include <bsd.port.mk>

@@ -3,25 +3,25 @@ lib/libidpapp.so.1
 bin/saferpay
 share/examples/saferpay/settings.template
 @dirrm share/examples/saferpay
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/ConfigurationSetup/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/ConfigurationSetup/ConfigurationSetup.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/ConfigurationSetup/ConfigurationSetup.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/soplex/saferpay/ConfigurationSetup.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageFactory/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/ConfigurationSetup/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageFactory/MessageFactory.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageFactory/MessageFactory.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/soplex/saferpay/MessageFactory.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageFactory/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageObject/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageObject/MessageObject.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageObject/MessageObject.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/soplex/saferpay/MessageObject.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageObject/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/soplex/saferpay/ConfigurationSetup/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/soplex/saferpay/ConfigurationSetup/ConfigurationSetup.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/soplex/saferpay/ConfigurationSetup/ConfigurationSetup.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/soplex/saferpay/ConfigurationSetup.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageFactory/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/soplex/saferpay/ConfigurationSetup/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageFactory/MessageFactory.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageFactory/MessageFactory.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/soplex/saferpay/MessageFactory.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageFactory/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageObject/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageObject/MessageObject.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageObject/MessageObject.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/soplex/saferpay/MessageObject.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageObject/autosplit.ix
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/../man/man3/soplex::saferpay::MessageFactory.3.gz
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/../man/man3/soplex::saferpay::MessageObject.3.gz
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/ConfigurationSetup
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageObject
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageFactory
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/soplex/saferpay/ConfigurationSetup
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageObject
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageFactory
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/soplex/saferpay
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/soplex

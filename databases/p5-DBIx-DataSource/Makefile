@@ -19,7 +19,6 @@ PERL_CONFIGURE=	yes
 
 MAN3=	DBIx::DataSource.3 DBIx::DataSource::Driver.3 \
 	DBIx::DataSource::mysql.3 DBIx::DataSource::Pg.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 

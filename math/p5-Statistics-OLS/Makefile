@@ -18,6 +18,5 @@ COMMENT=	Perl module to perform ordinary least squares and other bivariate stati
 PERL_CONFIGURE=	yes
 
 MAN3=		Statistics::OLS.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

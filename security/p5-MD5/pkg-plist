@@ -1,3 +1,3 @@
-lib/perl5/site_perl/%%PERL_VER%%/MD5.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MD5/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MD5
+%%SITE_PERL%%/MD5.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MD5/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MD5

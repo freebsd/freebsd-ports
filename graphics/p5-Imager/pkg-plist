@@ -1,31 +1,31 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Color/Float.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Expr/Assem.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Font/FreeType2.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Font/Type1.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Font/Win32.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Font/Truetype.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Color.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Draw.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Engines.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Expr.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Files.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Fill.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Filters.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Font.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Fountain.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/ImageTypes.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Matrix2d.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Regops.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Transform.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Transformations.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/interface.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/regmach.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Imager/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Imager/Imager.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Imager/Imager.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Imager
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Color
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Expr
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Font
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color/Float.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Expr/Assem.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/FreeType2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Type1.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Win32.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Truetype.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Draw.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Engines.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Expr.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Files.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Fill.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Filters.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Fountain.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/ImageTypes.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Matrix2d.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Regops.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Transform.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Transformations.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/interface.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/regmach.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Imager.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Imager.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Expr
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Imager

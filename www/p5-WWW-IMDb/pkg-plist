@@ -1,7 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/IMDb/Title.pm
-lib/perl5/site_perl/%%PERL_VER%%/IMDb/Generique.pm
-lib/perl5/site_perl/%%PERL_VER%%/IMDb/People.pm
-lib/perl5/site_perl/%%PERL_VER%%/IMDb.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IMDb/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IMDb
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/IMDb
+%%SITE_PERL%%/IMDb/Title.pm
+%%SITE_PERL%%/IMDb/Generique.pm
+%%SITE_PERL%%/IMDb/People.pm
+%%SITE_PERL%%/IMDb.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IMDb/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IMDb
+@dirrm %%SITE_PERL%%/IMDb

@@ -1,47 +1,47 @@
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/BluePrint.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/PostgreSQL.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/Tutorial.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/CookBook.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/Serialize/FreezeThaw.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/Serialize/Default.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/Serialize/Storable.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/Serialize
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/ID/Incr.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/ID/MD5.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/ID/SHA1.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/ID
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/DB_File.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/Example.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/MySQL.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/File.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Session.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/remote_addr.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/errstr.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/expire.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/_time_alias.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/name.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/header.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/sync_param.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/close.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/expires.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/ctime.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/atime.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/param_hashref.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/save_param.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/load_param.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/clear.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/error.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/delete.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/is_new.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/version.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/dump.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/Session/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/CGI/Session
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/CGI 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/CGI 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/Session
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/mach/auto/CGI 2>/dev/null || true
+%%SITE_PERL%%/CGI/Session/BluePrint.pm
+%%SITE_PERL%%/CGI/Session/PostgreSQL.pm
+%%SITE_PERL%%/CGI/Session/Tutorial.pm
+%%SITE_PERL%%/CGI/Session/CookBook.pm
+%%SITE_PERL%%/CGI/Session/Serialize/FreezeThaw.pm
+%%SITE_PERL%%/CGI/Session/Serialize/Default.pm
+%%SITE_PERL%%/CGI/Session/Serialize/Storable.pm
+@dirrm %%SITE_PERL%%/CGI/Session/Serialize
+%%SITE_PERL%%/CGI/Session/ID/Incr.pm
+%%SITE_PERL%%/CGI/Session/ID/MD5.pm
+%%SITE_PERL%%/CGI/Session/ID/SHA1.pm
+@dirrm %%SITE_PERL%%/CGI/Session/ID
+%%SITE_PERL%%/CGI/Session/DB_File.pm
+%%SITE_PERL%%/CGI/Session/Example.pm
+%%SITE_PERL%%/CGI/Session/MySQL.pm
+%%SITE_PERL%%/CGI/Session/File.pm
+%%SITE_PERL%%/CGI/Session.pm
+%%SITE_PERL%%/auto/CGI/Session/remote_addr.al
+%%SITE_PERL%%/auto/CGI/Session/errstr.al
+%%SITE_PERL%%/auto/CGI/Session/expire.al
+%%SITE_PERL%%/auto/CGI/Session/_time_alias.al
+%%SITE_PERL%%/auto/CGI/Session/name.al
+%%SITE_PERL%%/auto/CGI/Session/header.al
+%%SITE_PERL%%/auto/CGI/Session/sync_param.al
+%%SITE_PERL%%/auto/CGI/Session/close.al
+%%SITE_PERL%%/auto/CGI/Session/expires.al
+%%SITE_PERL%%/auto/CGI/Session/ctime.al
+%%SITE_PERL%%/auto/CGI/Session/atime.al
+%%SITE_PERL%%/auto/CGI/Session/param_hashref.al
+%%SITE_PERL%%/auto/CGI/Session/save_param.al
+%%SITE_PERL%%/auto/CGI/Session/load_param.al
+%%SITE_PERL%%/auto/CGI/Session/clear.al
+%%SITE_PERL%%/auto/CGI/Session/error.al
+%%SITE_PERL%%/auto/CGI/Session/delete.al
+%%SITE_PERL%%/auto/CGI/Session/is_new.al
+%%SITE_PERL%%/auto/CGI/Session/version.al
+%%SITE_PERL%%/auto/CGI/Session/dump.al
+%%SITE_PERL%%/auto/CGI/Session/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Session/.packlist
+@dirrm %%SITE_PERL%%/CGI/Session
+@unexec rmdir %D/%%SITE_PERL%%/CGI 2>/dev/null || true
+@dirrm %%SITE_PERL%%/auto/CGI/Session
+@unexec rmdir %D/%%SITE_PERL%%/auto/CGI/Session 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/CGI 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Session
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/mach/auto/CGI 2>/dev/null || true

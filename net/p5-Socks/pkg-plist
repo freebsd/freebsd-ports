@@ -1,25 +1,25 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SOCKS/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Net/SOCKS.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/accept.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/bind.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/close.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/connect.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/new.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/param.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_connect.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_get_resp5.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_get_response.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_import_args.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_method_request5.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_method_response5.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_request5.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_request.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_user_request5.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_user_response5.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS/_validate.al
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Net/SOCKS
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SOCKS
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Net 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SOCKS/.packlist
+%%SITE_PERL%%/Net/SOCKS.pm
+%%SITE_PERL%%/auto/Net/SOCKS/accept.al
+%%SITE_PERL%%/auto/Net/SOCKS/autosplit.ix
+%%SITE_PERL%%/auto/Net/SOCKS/bind.al
+%%SITE_PERL%%/auto/Net/SOCKS/close.al
+%%SITE_PERL%%/auto/Net/SOCKS/connect.al
+%%SITE_PERL%%/auto/Net/SOCKS/new.al
+%%SITE_PERL%%/auto/Net/SOCKS/param.al
+%%SITE_PERL%%/auto/Net/SOCKS/_connect.al
+%%SITE_PERL%%/auto/Net/SOCKS/_get_resp5.al
+%%SITE_PERL%%/auto/Net/SOCKS/_get_response.al
+%%SITE_PERL%%/auto/Net/SOCKS/_import_args.al
+%%SITE_PERL%%/auto/Net/SOCKS/_method_request5.al
+%%SITE_PERL%%/auto/Net/SOCKS/_method_response5.al
+%%SITE_PERL%%/auto/Net/SOCKS/_request5.al
+%%SITE_PERL%%/auto/Net/SOCKS/_request.al
+%%SITE_PERL%%/auto/Net/SOCKS/_user_request5.al
+%%SITE_PERL%%/auto/Net/SOCKS/_user_response5.al
+%%SITE_PERL%%/auto/Net/SOCKS/_validate.al
+@dirrm %%SITE_PERL%%/auto/Net/SOCKS
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SOCKS
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true

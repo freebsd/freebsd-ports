@@ -18,7 +18,6 @@ COMMENT=	Perl module for accessing Network UPS Tools' upsd
 PERL_CONFIGURE=	yes
 
 MAN3=		UPS::Nut.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-configure:
 	${PERL} -pi -e 'm.INSTALLDIRS.&&s,.,,sg' ${WRKSRC}/Makefile.PL

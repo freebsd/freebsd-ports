@@ -1,12 +1,12 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/Tty/Tty.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/Tty/Tty.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/Tty/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Pty.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Tty.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Tty/Constant.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/Tty
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Tty 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%% 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tty/Tty.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tty/Tty.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tty/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/IO/Pty.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IO/Tty.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IO/Tty/Constant.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tty
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/IO/Tty 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/IO 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%% 2>/dev/null || true

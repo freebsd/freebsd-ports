@@ -17,7 +17,6 @@ COMMENT=	Perl module for parsing mathematical expressions into a tree structure
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Math::Expr.3 Math::Expr::FormulaDB.3 \
 		Math::Expr::MatchSet.3 Math::Expr::Node.3 \
 		Math::Expr::Num.3 Math::Expr::Opp.3 \

@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/NetAddr/IP/Count/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/NetAddr/IP/sample.pl
-lib/perl5/site_perl/%%PERL_VER%%/NetAddr/IP/Count.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/NetAddr/IP/Count
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/NetAddr/IP 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Count/.packlist
+%%SITE_PERL%%/NetAddr/IP/sample.pl
+%%SITE_PERL%%/NetAddr/IP/Count.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Count
+@unexec rmdir %D/%%SITE_PERL%%/NetAddr/IP 2>/dev/null || true

@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embeds a Perl interpreter in the Apache server
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT} \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/www/p5-libwww
+		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PERL5=	YES
@@ -35,7 +35,6 @@ MAN3=		Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
 		Apache::PerlSections.3 cgi_to_mod_perl.3 \
 		mod_perl_cvs.3 mod_perl_method_handlers.3 mod_perl_traps.3 \
 		mod_perl_tuning.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 PERLSITEDIR=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 APACHE_PORT?=	${PORTSDIR}/www/apache13
 

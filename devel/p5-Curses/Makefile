@@ -18,7 +18,6 @@ COMMENT=	Perl5 module for terminal screen handling and optimization
 PERL_CONFIGURE=	yes
 
 MAN3=		Curses.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-configure:
 		@${LN} -s ${WRKSRC}/hints/c-freebsd.ncurses.h \

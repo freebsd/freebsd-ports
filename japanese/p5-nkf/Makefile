@@ -18,6 +18,5 @@ COMMENT=	A perl extension module to use NKF
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/NKF.mod
 MAN3=		NKF.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -15,15 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Create constructors, accessor, update methods for objects from Tangram
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Set/Object.pm:${PORTSDIR}/devel/p5-Set-Object \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Pod/Constants.pm:${PORTSDIR}/textproc/p5-Pod-Constants \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Tangram.pm:${PORTSDIR}/databases/p5-Tangram
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Set/Object.pm:${PORTSDIR}/devel/p5-Set-Object \
+		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
+		${SITE_PERL}/Pod/Constants.pm:${PORTSDIR}/textproc/p5-Pod-Constants \
+		${SITE_PERL}/Tangram.pm:${PORTSDIR}/databases/p5-Tangram
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Class::Tangram.3
 
 .include <bsd.port.mk>

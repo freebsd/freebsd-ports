@@ -1,34 +1,34 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/BSD/Resource.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/Resource.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/Resource.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/_g.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/get_rlimits.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/getpriority.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/getrlimit.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/getrusage.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/hard.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/idrss.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/inblock.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/isrss.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/ixrss.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/majflt.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/maxrss.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/minflt.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/msgrcv.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/msgsnd.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/nivcsw.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/nsignals.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/nswap.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/nvcsw.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/oublock.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/setpriority.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/setrlimit.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/soft.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/stime.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/times.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/utime.al
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/BSD 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/BSD/Resource.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/Resource.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/Resource.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/_g.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/get_rlimits.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/getpriority.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/getrlimit.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/getrusage.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/hard.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/idrss.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/inblock.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/isrss.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/ixrss.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/majflt.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/maxrss.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/minflt.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/msgrcv.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/msgsnd.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/nivcsw.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/nsignals.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/nswap.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/nvcsw.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/oublock.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/setpriority.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/setrlimit.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/soft.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/stime.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/times.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/utime.al
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/BSD 2>/dev/null || true

@@ -22,6 +22,5 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser/Expat.pm:${PORTSDIR}/textpro
 PERL_CONFIGURE=	yes
 
 MAN3=		XML::RSS.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
 bin/vicq
-lib/perl5/site_perl/%%PERL_VER%%/Net/vICQ.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/vICQ/.packlist
+%%SITE_PERL%%/Net/vICQ.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/vICQ/.packlist
 share/examples/vicq/vicqrc.example
 @dirrm share/examples/vicq
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/vICQ
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2> /dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2> /dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/vICQ
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2> /dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Net 2> /dev/null || true

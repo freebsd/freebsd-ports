@@ -1,11 +1,11 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Chipcard/PCSC/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Chipcard/PCSC/PCSC.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Chipcard/PCSC/PCSC.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Chipcard/PCSC/Card.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Chipcard/PCSC/Card.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Chipcard/PCSC.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Chipcard/PCSC.pm
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Chipcard/PCSC 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Chipcard 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Chipcard/PCSC 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Chipcard 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chipcard/PCSC/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chipcard/PCSC/PCSC.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chipcard/PCSC/PCSC.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/Chipcard/PCSC/Card.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Chipcard/PCSC/Card.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Chipcard/PCSC.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Chipcard/PCSC.pm
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chipcard/PCSC 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chipcard 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Chipcard/PCSC 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Chipcard 2>/dev/null || true

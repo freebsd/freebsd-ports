@@ -17,7 +17,6 @@ COMMENT=	Perl module that provides a method to daemonify a Perl script
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Proc::Daemon.3
 
 .include <bsd.port.mk>

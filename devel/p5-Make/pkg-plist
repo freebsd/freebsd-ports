@@ -1,4 +1,4 @@
 bin/perlmake
-lib/perl5/site_perl/%%PERL_VER%%/Make.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Make/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Make
+%%SITE_PERL%%/Make.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Make/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Make

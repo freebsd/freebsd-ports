@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/UNIVERSAL/exports.pm
-lib/perl5/site_perl/%%PERL_VER%%/UNIVERSAL/require.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/UNIVERSAL/exports/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/UNIVERSAL/exports
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/UNIVERSAL
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/UNIVERSAL 2>/dev/null || true
+%%SITE_PERL%%/UNIVERSAL/exports.pm
+%%SITE_PERL%%/UNIVERSAL/require.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/exports/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/exports
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL
+@unexec rmdir %D/%%SITE_PERL%%/UNIVERSAL 2>/dev/null || true

@@ -19,6 +19,5 @@ PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN3=		Net::AOLIM.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

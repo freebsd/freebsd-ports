@@ -47,6 +47,5 @@ MAN3=		XML::GDOME.3 \
 		XML::GDOME::XPath::Result.3 \
 		XML::GDOME::ProcessingInstruction.3
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

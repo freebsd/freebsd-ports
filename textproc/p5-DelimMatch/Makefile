@@ -17,6 +17,5 @@ COMMENT=	Perl extension to find regexp delimited strings with proper nesting
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::DelimMatch.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/AI/Perceptron.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AI/Perceptron/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AI/Perceptron
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AI 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/AI 2>/dev/null || true
+%%SITE_PERL%%/AI/Perceptron.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/Perceptron/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/Perceptron
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/AI 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/AI 2>/dev/null || true

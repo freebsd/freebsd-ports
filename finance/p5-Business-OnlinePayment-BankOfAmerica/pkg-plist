@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment/BankOfAmerica.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/BankOfAmerica/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/BankOfAmerica/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/BankOfAmerica
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/BankOfAmerica
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment 2>/dev/null || true
+%%SITE_PERL%%/Business/OnlinePayment/BankOfAmerica.pm
+%%SITE_PERL%%/auto/Business/OnlinePayment/BankOfAmerica/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/BankOfAmerica/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/BankOfAmerica
+@dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/BankOfAmerica
+@unexec rmdir %D/%%SITE_PERL%%/Business/OnlinePayment 2>/dev/null || true

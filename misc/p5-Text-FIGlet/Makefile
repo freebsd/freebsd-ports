@@ -18,7 +18,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/figlet:${PORTSDIR}/misc/figlet
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 MAN3=		Text::FIGlet.3 \
 		Text::charmap.3 \

@@ -21,7 +21,6 @@ RUN_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		HTML::Template::Associate.3 \
 		HTML::Template::Associate::FormValidator.3
 

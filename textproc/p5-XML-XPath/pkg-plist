@@ -1,28 +1,28 @@
 bin/xpath
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/XPath/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Node/Namespace.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Node/Comment.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Node/Attribute.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Node/PI.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Node/Text.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Node/Element.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Root.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Variable.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Node.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/LocationPath.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Function.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Builder.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Number.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Literal.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Parser.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/NodeSet.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Step.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/XMLParser.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Expr.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/PerlSAX.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Boolean.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XPath.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Node
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/XPath 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML/XPath 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XPath/.packlist
+%%SITE_PERL%%/XML/XPath/Node/Namespace.pm
+%%SITE_PERL%%/XML/XPath/Node/Comment.pm
+%%SITE_PERL%%/XML/XPath/Node/Attribute.pm
+%%SITE_PERL%%/XML/XPath/Node/PI.pm
+%%SITE_PERL%%/XML/XPath/Node/Text.pm
+%%SITE_PERL%%/XML/XPath/Node/Element.pm
+%%SITE_PERL%%/XML/XPath/Root.pm
+%%SITE_PERL%%/XML/XPath/Variable.pm
+%%SITE_PERL%%/XML/XPath/Node.pm
+%%SITE_PERL%%/XML/XPath/LocationPath.pm
+%%SITE_PERL%%/XML/XPath/Function.pm
+%%SITE_PERL%%/XML/XPath/Builder.pm
+%%SITE_PERL%%/XML/XPath/Number.pm
+%%SITE_PERL%%/XML/XPath/Literal.pm
+%%SITE_PERL%%/XML/XPath/Parser.pm
+%%SITE_PERL%%/XML/XPath/NodeSet.pm
+%%SITE_PERL%%/XML/XPath/Step.pm
+%%SITE_PERL%%/XML/XPath/XMLParser.pm
+%%SITE_PERL%%/XML/XPath/Expr.pm
+%%SITE_PERL%%/XML/XPath/PerlSAX.pm
+%%SITE_PERL%%/XML/XPath/Boolean.pm
+%%SITE_PERL%%/XML/XPath.pm
+@dirrm %%SITE_PERL%%/XML/XPath/Node
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XPath 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML/XPath 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true

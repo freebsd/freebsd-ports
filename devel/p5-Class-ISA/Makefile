@@ -17,7 +17,6 @@ COMMENT=	Report the search path for a class's ISA tree
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Class::ISA.3
 
 .include <bsd.port.mk>

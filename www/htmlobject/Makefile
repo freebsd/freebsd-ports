@@ -18,7 +18,6 @@ COMMENT=	HTML Document Object
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	HTMLObject::Base.3 HTMLObject::FrameSet.3 HTMLObject::GetCookie.3 \
 	HTMLObject::Normal.3 HTMLObject::ReadCookie.3
 

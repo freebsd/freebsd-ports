@@ -21,10 +21,9 @@ BUILD_DEPENDS=	${SITE_PERL}/Lingua/EN/NameParse.pm:${PORTSDIR}/textproc/p5-Lingu
 		${SITE_PERL}/${PERL_ARCH}/Text/Metaphone.pm:${PORTSDIR}/textproc/p5-Text-Metaphone
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
 MAN3=	Lingua::EN::MatchNames.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

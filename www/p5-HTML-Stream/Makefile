@@ -17,7 +17,6 @@ COMMENT=	Perl5 HTML output stream class, and some markup utilities
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		HTML::Stream.3
 
 .include <bsd.port.mk>

@@ -15,14 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mharo@FreeBSD.org
 COMMENT=	Cryptographically Secure, True Random Number Generator
 
-PERLBASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+PERLBASE=	${SITE_PERL}
 
 BUILD_DEPENDS=	${PERLBASE}/${PERL_ARCH}/Math/Pari.pm:${PORTSDIR}/math/p5-Math-Pari \
 		${PERLBASE}/Class/Loader.pm:${PORTSDIR}/devel/p5-Class-Loader
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Crypt::Random.3
 
 .include <bsd.port.mk>

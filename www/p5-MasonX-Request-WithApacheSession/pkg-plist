@@ -5,4 +5,4 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MasonX
 @dirrm %%SITE_PERL%%/MasonX/Request
 @dirrm %%SITE_PERL%%/MasonX
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/MasonX 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/MasonX 2>/dev/null || true

@@ -1,15 +1,15 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/SOAP/Lite/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/SOAP/Lite/Call.pod
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/SOAP/Lite/Call.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource/SOAP/Lite.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory/SOAP/Lite.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory/SOAP/Lite.pod
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/SOAP/Lite
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/SOAP
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/ResourcePool/Resource 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/SOAP/Lite
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/SOAP
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource/SOAP
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory/SOAP
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/SOAP/Lite/.packlist
+%%SITE_PERL%%/ResourcePool/Command/SOAP/Lite/Call.pod
+%%SITE_PERL%%/ResourcePool/Command/SOAP/Lite/Call.pm
+%%SITE_PERL%%/ResourcePool/Resource/SOAP/Lite.pm
+%%SITE_PERL%%/ResourcePool/Factory/SOAP/Lite.pm
+%%SITE_PERL%%/ResourcePool/Factory/SOAP/Lite.pod
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/SOAP/Lite
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/SOAP
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource 2>/dev/null || true
+@dirrm %%SITE_PERL%%/ResourcePool/Command/SOAP/Lite
+@dirrm %%SITE_PERL%%/ResourcePool/Command/SOAP
+@dirrm %%SITE_PERL%%/ResourcePool/Resource/SOAP
+@unexec rmdir %D/%%SITE_PERL%%/ResourcePool/Resource 2>/dev/null || true
+@dirrm %%SITE_PERL%%/ResourcePool/Factory/SOAP
+@unexec rmdir %D/%%SITE_PERL%%/ResourcePool/Factory 2>/dev/null || true

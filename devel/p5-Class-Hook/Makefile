@@ -22,9 +22,8 @@ BUILD_DEPENDS=		${ARCH_PERL}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 PERL_CONFIGURE=		yes
 
 MAN3=			Class::Hook.3
-MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 
-ARCH_PERL=		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
-SITE_PERL=		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+ARCH_PERL=		${SITE_PERL}/${PERL_ARCH}
+SITE_PERL=		${SITE_PERL}
 
 .include <bsd.port.mk>

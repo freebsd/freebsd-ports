@@ -1,7 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Application.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Application/Mailform.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/Application/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/Application
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/CGI/Application
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/CGI 2>/dev/null || true
+%%SITE_PERL%%/CGI/Application.pm
+%%SITE_PERL%%/CGI/Application/Mailform.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
+@dirrm %%SITE_PERL%%/CGI/Application
+@unexec rmdir %D/%%SITE_PERL%%/CGI 2>/dev/null || true

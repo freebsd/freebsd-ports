@@ -24,7 +24,6 @@ CHASEN_VERSION=	2.3.0
 WRKSRC=		${WRKDIR}/chasen-${CHASEN_VERSION}/perl
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	PREFIX="${PREFIX}"
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Text::ChaSen.3
 
 .include <bsd.port.pre.mk>

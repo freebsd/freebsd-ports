@@ -18,6 +18,5 @@ COMMENT=	Line wrapping to form simple paragraphs
 PERL_CONFIGURE=	YES
 
 MAN3=		Text::Wrap.3 Text::Tabs.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

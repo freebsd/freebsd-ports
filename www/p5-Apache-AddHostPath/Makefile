@@ -17,7 +17,6 @@ COMMENT=	Perl interface for transforming a requested URI based on host/port
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Apache::AddHostPath.3
 
 .include <bsd.port.mk>

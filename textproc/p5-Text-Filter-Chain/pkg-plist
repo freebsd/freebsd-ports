@@ -1,4 +1,4 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Filter/Chain/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Text/Filter/Chain.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Filter/Chain
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Text/Filter 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Filter/Chain/.packlist
+%%SITE_PERL%%/Text/Filter/Chain.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Filter/Chain
+@unexec rmdir %D/%%SITE_PERL%%/Text/Filter 2>/dev/null || true

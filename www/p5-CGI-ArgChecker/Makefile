@@ -18,10 +18,9 @@ COMMENT=	Perl module implementing a cgi interface to String::Checker
 BUILD_DEPENDS=	${SITE_PERL}/String/Checker.pm:${PORTSDIR}/devel/p5-String-Checker
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		CGI::ArgChecker.3
 
 .include <bsd.port.mk>

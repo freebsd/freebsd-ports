@@ -18,6 +18,5 @@ COMMENT=	Perl extension to collect module use information
 PERL_CONFIGURE=	yes
 
 MAN3=		Devel::Modlist.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

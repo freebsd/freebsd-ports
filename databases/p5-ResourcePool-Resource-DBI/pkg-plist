@@ -1,17 +1,17 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/DBI/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/DBI/Execute.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/DBI/SelectRow.pod
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/DBI/Select.pod
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/DBI/Select.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/DBI/SelectRow.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/DBI/Execute.pod
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/DBI/Common.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource/DBI.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource/DBI.pod
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory/DBI.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory/DBI.pod
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/DBI
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/DBI
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/ResourcePool/Resource 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/DBI/.packlist
+%%SITE_PERL%%/ResourcePool/Command/DBI/Execute.pm
+%%SITE_PERL%%/ResourcePool/Command/DBI/SelectRow.pod
+%%SITE_PERL%%/ResourcePool/Command/DBI/Select.pod
+%%SITE_PERL%%/ResourcePool/Command/DBI/Select.pm
+%%SITE_PERL%%/ResourcePool/Command/DBI/SelectRow.pm
+%%SITE_PERL%%/ResourcePool/Command/DBI/Execute.pod
+%%SITE_PERL%%/ResourcePool/Command/DBI/Common.pm
+%%SITE_PERL%%/ResourcePool/Resource/DBI.pm
+%%SITE_PERL%%/ResourcePool/Resource/DBI.pod
+%%SITE_PERL%%/ResourcePool/Factory/DBI.pm
+%%SITE_PERL%%/ResourcePool/Factory/DBI.pod
+@dirrm %%SITE_PERL%%/ResourcePool/Command/DBI
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/DBI
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/ResourcePool/Resource 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/ResourcePool/Factory 2>/dev/null || true

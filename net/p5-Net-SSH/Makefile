@@ -18,6 +18,5 @@ COMMENT=	Perl5 module to access and use ssh protocol
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::SSH.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

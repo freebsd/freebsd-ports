@@ -1,16 +1,16 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML/Types.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/Files.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/GXHTypes.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/GtkXmHTMLDefs.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/GtkXmHTMLTypemap
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/PerlGtkXmHTMLInt.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/pkg.typemap
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/XmHTML/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/XmHTML/XmHTML.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/XmHTML/XmHTML.so
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML/Install
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/XmHTML
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/XmHTML
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/XmHTML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/XmHTML/Types.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/GXHTypes.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/GtkXmHTMLDefs.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/GtkXmHTMLTypemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/PerlGtkXmHTMLInt.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/XmHTML/Install/pkg.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/XmHTML/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/XmHTML/XmHTML.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/XmHTML/XmHTML.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk/XmHTML/Install
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk/XmHTML
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gtk 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/XmHTML
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk 2>/dev/null || true

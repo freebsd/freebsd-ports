@@ -3,108 +3,108 @@ bin/dr_progress
 bin/dr_splitpipe
 bin/dvdrip
 bin/dvdrip-master
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Audio.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Base.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/BitrateCalc.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/CPAN/Scanf.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job/AddAudioMerge.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job/BitrateCalc.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job/MergePSUs.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job/MergeVideoAudio.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job/RemoveVOBs.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job/Split.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job/TranscodeAudio.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job/TranscodeVideo.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Master.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Node.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/PSU.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Pipe.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Project.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Title.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Webserver.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Config.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Content.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Convert.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Depend.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/FilterList.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/FilterSettings.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Base.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/BitrateCalc.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/CheckedEntry.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Cluster/Control.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Cluster/Node.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Cluster/Title.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Component.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Config.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Depend.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/ExecuteJobs.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Filters.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/ImageClip.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Logger.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Main.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/MinSizeGroup.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Pipe.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Preview.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Progress.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Project.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Project/BurnTab.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Project/ClipZoomTab.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Project/LoggingTab.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Project/StorageTab.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Project/SubtitleTab.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Project/TitleTab.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Project/TranscodeTab.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Project/TranscodeTabAudio.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Setting.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Setting/Checkbox.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Setting/Text.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/VisualFrameRange.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Window.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/ZoomCalculator.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/InfoFile.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job/BurnCD.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job/CountFramesInFile.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job/CreateCDImage.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job/CreateVobsub.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job/CreateWav.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job/ExtractPS1.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job/GrabPreviewFrame.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job/GrabSubtitleImages.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job/MergeAudio.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job/Mplex.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job/Probe.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job/ProbeTitleCount.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job/Rip.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job/ScanVolume.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job/Split.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job/TranscodeAudio.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job/TranscodeVideo.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/PSU.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Preset.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Probe.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Project.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/RPC/Client.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/RPC/Message.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/RPC/Server.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Subtitle.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Title.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/TranscodeRC.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/icon.xpm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/splash.png
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Video/DVDRip/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Video/DVDRip
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Video 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/RPC
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Job
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Setting
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Project
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Cluster
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/CPAN
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Video 2>/dev/null || true
+%%SITE_PERL%%/Video/DVDRip.pm
+%%SITE_PERL%%/Video/DVDRip/Audio.pm
+%%SITE_PERL%%/Video/DVDRip/Base.pm
+%%SITE_PERL%%/Video/DVDRip/BitrateCalc.pm
+%%SITE_PERL%%/Video/DVDRip/CPAN/Scanf.pm
+%%SITE_PERL%%/Video/DVDRip/Cluster/Job.pm
+%%SITE_PERL%%/Video/DVDRip/Cluster/Job/AddAudioMerge.pm
+%%SITE_PERL%%/Video/DVDRip/Cluster/Job/BitrateCalc.pm
+%%SITE_PERL%%/Video/DVDRip/Cluster/Job/MergePSUs.pm
+%%SITE_PERL%%/Video/DVDRip/Cluster/Job/MergeVideoAudio.pm
+%%SITE_PERL%%/Video/DVDRip/Cluster/Job/RemoveVOBs.pm
+%%SITE_PERL%%/Video/DVDRip/Cluster/Job/Split.pm
+%%SITE_PERL%%/Video/DVDRip/Cluster/Job/TranscodeAudio.pm
+%%SITE_PERL%%/Video/DVDRip/Cluster/Job/TranscodeVideo.pm
+%%SITE_PERL%%/Video/DVDRip/Cluster/Master.pm
+%%SITE_PERL%%/Video/DVDRip/Cluster/Node.pm
+%%SITE_PERL%%/Video/DVDRip/Cluster/PSU.pm
+%%SITE_PERL%%/Video/DVDRip/Cluster/Pipe.pm
+%%SITE_PERL%%/Video/DVDRip/Cluster/Project.pm
+%%SITE_PERL%%/Video/DVDRip/Cluster/Title.pm
+%%SITE_PERL%%/Video/DVDRip/Cluster/Webserver.pm
+%%SITE_PERL%%/Video/DVDRip/Config.pm
+%%SITE_PERL%%/Video/DVDRip/Content.pm
+%%SITE_PERL%%/Video/DVDRip/Convert.pm
+%%SITE_PERL%%/Video/DVDRip/Depend.pm
+%%SITE_PERL%%/Video/DVDRip/FilterList.pm
+%%SITE_PERL%%/Video/DVDRip/FilterSettings.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Base.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/BitrateCalc.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/CheckedEntry.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Cluster/Control.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Cluster/Node.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Cluster/Title.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Component.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Config.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Depend.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/ExecuteJobs.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Filters.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/ImageClip.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Logger.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Main.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/MinSizeGroup.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Pipe.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Preview.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Progress.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Project.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Project/BurnTab.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Project/ClipZoomTab.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Project/LoggingTab.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Project/StorageTab.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Project/SubtitleTab.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Project/TitleTab.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Project/TranscodeTab.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Project/TranscodeTabAudio.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Setting.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Setting/Checkbox.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Setting/Text.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/VisualFrameRange.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/Window.pm
+%%SITE_PERL%%/Video/DVDRip/GUI/ZoomCalculator.pm
+%%SITE_PERL%%/Video/DVDRip/InfoFile.pm
+%%SITE_PERL%%/Video/DVDRip/Job.pm
+%%SITE_PERL%%/Video/DVDRip/Job/BurnCD.pm
+%%SITE_PERL%%/Video/DVDRip/Job/CountFramesInFile.pm
+%%SITE_PERL%%/Video/DVDRip/Job/CreateCDImage.pm
+%%SITE_PERL%%/Video/DVDRip/Job/CreateVobsub.pm
+%%SITE_PERL%%/Video/DVDRip/Job/CreateWav.pm
+%%SITE_PERL%%/Video/DVDRip/Job/ExtractPS1.pm
+%%SITE_PERL%%/Video/DVDRip/Job/GrabPreviewFrame.pm
+%%SITE_PERL%%/Video/DVDRip/Job/GrabSubtitleImages.pm
+%%SITE_PERL%%/Video/DVDRip/Job/MergeAudio.pm
+%%SITE_PERL%%/Video/DVDRip/Job/Mplex.pm
+%%SITE_PERL%%/Video/DVDRip/Job/Probe.pm
+%%SITE_PERL%%/Video/DVDRip/Job/ProbeTitleCount.pm
+%%SITE_PERL%%/Video/DVDRip/Job/Rip.pm
+%%SITE_PERL%%/Video/DVDRip/Job/ScanVolume.pm
+%%SITE_PERL%%/Video/DVDRip/Job/Split.pm
+%%SITE_PERL%%/Video/DVDRip/Job/TranscodeAudio.pm
+%%SITE_PERL%%/Video/DVDRip/Job/TranscodeVideo.pm
+%%SITE_PERL%%/Video/DVDRip/PSU.pm
+%%SITE_PERL%%/Video/DVDRip/Preset.pm
+%%SITE_PERL%%/Video/DVDRip/Probe.pm
+%%SITE_PERL%%/Video/DVDRip/Project.pm
+%%SITE_PERL%%/Video/DVDRip/RPC/Client.pm
+%%SITE_PERL%%/Video/DVDRip/RPC/Message.pm
+%%SITE_PERL%%/Video/DVDRip/RPC/Server.pm
+%%SITE_PERL%%/Video/DVDRip/Subtitle.pm
+%%SITE_PERL%%/Video/DVDRip/Title.pm
+%%SITE_PERL%%/Video/DVDRip/TranscodeRC.pm
+%%SITE_PERL%%/Video/DVDRip/icon.xpm
+%%SITE_PERL%%/Video/DVDRip/splash.png
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Video/DVDRip/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Video/DVDRip
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Video 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Video/DVDRip/RPC
+@dirrm %%SITE_PERL%%/Video/DVDRip/Job
+@dirrm %%SITE_PERL%%/Video/DVDRip/GUI/Setting
+@dirrm %%SITE_PERL%%/Video/DVDRip/GUI/Project
+@dirrm %%SITE_PERL%%/Video/DVDRip/GUI/Cluster
+@dirrm %%SITE_PERL%%/Video/DVDRip/GUI
+@dirrm %%SITE_PERL%%/Video/DVDRip/Cluster/Job
+@dirrm %%SITE_PERL%%/Video/DVDRip/Cluster
+@dirrm %%SITE_PERL%%/Video/DVDRip/CPAN
+@dirrm %%SITE_PERL%%/Video/DVDRip
+@unexec rmdir %D/%%SITE_PERL%%/Video 2>/dev/null || true

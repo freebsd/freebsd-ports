@@ -17,7 +17,6 @@ COMMENT=	Perl module implementing ordered in-memory associative arrays
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Tie::IxHash.3
 
 .include <bsd.port.mk>

@@ -1,21 +1,21 @@
-lib/perl5/site_perl/%%PERL_VER%%/Net/Server.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Server/Daemonize.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Server/Fork.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Server/INET.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Server/MultiType.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Server/Multiplex.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Server/PreFork.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Server/PreForkSimple.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Server/Proto.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Server/Proto/SSL.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Server/Proto/TCP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Server/Proto/UDP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Server/Proto/UNIX.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Server/SIG.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Server/Single.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Server/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Server
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Server/Proto
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Server
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
+%%SITE_PERL%%/Net/Server.pm
+%%SITE_PERL%%/Net/Server/Daemonize.pm
+%%SITE_PERL%%/Net/Server/Fork.pm
+%%SITE_PERL%%/Net/Server/INET.pm
+%%SITE_PERL%%/Net/Server/MultiType.pm
+%%SITE_PERL%%/Net/Server/Multiplex.pm
+%%SITE_PERL%%/Net/Server/PreFork.pm
+%%SITE_PERL%%/Net/Server/PreForkSimple.pm
+%%SITE_PERL%%/Net/Server/Proto.pm
+%%SITE_PERL%%/Net/Server/Proto/SSL.pm
+%%SITE_PERL%%/Net/Server/Proto/TCP.pm
+%%SITE_PERL%%/Net/Server/Proto/UDP.pm
+%%SITE_PERL%%/Net/Server/Proto/UNIX.pm
+%%SITE_PERL%%/Net/Server/SIG.pm
+%%SITE_PERL%%/Net/Server/Single.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Server/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Server
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Net/Server/Proto
+@dirrm %%SITE_PERL%%/Net/Server
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true

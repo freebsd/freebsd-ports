@@ -15,10 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	PerlUnit testing framework
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Error.pm:${PORTSDIR}/lang/p5-Error \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Class/Inner.pm:${PORTSDIR}/devel/p5-Class-Inner \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/base.pm:${PORTSDIR}/devel/p5-Class-Fields
+BUILD_DEPENDS=	${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
+		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
+		${SITE_PERL}/Class/Inner.pm:${PORTSDIR}/devel/p5-Class-Inner \
+		${SITE_PERL}/base.pm:${PORTSDIR}/devel/p5-Class-Fields
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

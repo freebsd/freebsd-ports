@@ -1,10 +1,10 @@
 bin/countmail
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Stats.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Stats/Config.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Stats/Parser.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Stats/Record.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Stats/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Stats
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Stats
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Mail 2>/dev/null || true
+%%SITE_PERL%%/Mail/Stats.pm
+%%SITE_PERL%%/Mail/Stats/Config.pm
+%%SITE_PERL%%/Mail/Stats/Parser.pm
+%%SITE_PERL%%/Mail/Stats/Record.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Stats/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Stats
+@dirrm %%SITE_PERL%%/Mail/Stats
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true

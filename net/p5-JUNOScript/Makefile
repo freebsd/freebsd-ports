@@ -18,7 +18,7 @@ DISTNAME=		junoscript-perl-${PORTVERSION}-domestic
 MAINTAINER=		jesper@FreeBSD.org
 COMMENT=	API to exchange information with Juniper Networks routers
 
-PERL_BASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+PERL_BASE=	${SITE_PERL}
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		xslt:${PORTSDIR}/textproc/libxslt
@@ -69,7 +69,6 @@ PERL_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/junoscript-perl-${PORTVERSION}
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		JUNOS::Access.3 \
 		JUNOS::Access::stubs.3 \
 		JUNOS::Access::ssl.3 \

@@ -15,12 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Simple representation of mathematical variables
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/fields.pm:${PORTSDIR}/devel/p5-Class-Fields
+BUILD_DEPENDS=	${SITE_PERL}/fields.pm:${PORTSDIR}/devel/p5-Class-Fields
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Math::SimpleVariable.3
 
 pre-patch:

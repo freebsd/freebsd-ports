@@ -1,14 +1,14 @@
 bin/makerandom
-lib/perl5/site_perl/%%PERL_VER%%/Crypt/Random/Provider/rand.pm
-lib/perl5/site_perl/%%PERL_VER%%/Crypt/Random/Provider/devurandom.pm
-lib/perl5/site_perl/%%PERL_VER%%/Crypt/Random/Provider/egd.pm
-lib/perl5/site_perl/%%PERL_VER%%/Crypt/Random/Provider/devrandom.pm
-lib/perl5/site_perl/%%PERL_VER%%/Crypt/Random/Provider/File.pm
-lib/perl5/site_perl/%%PERL_VER%%/Crypt/Random/Generator.pm
-lib/perl5/site_perl/%%PERL_VER%%/Crypt/Random.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Random/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Crypt/Random/Provider
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Crypt/Random
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Random
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Crypt 2>/dev/null || true
+%%SITE_PERL%%/Crypt/Random/Provider/rand.pm
+%%SITE_PERL%%/Crypt/Random/Provider/devurandom.pm
+%%SITE_PERL%%/Crypt/Random/Provider/egd.pm
+%%SITE_PERL%%/Crypt/Random/Provider/devrandom.pm
+%%SITE_PERL%%/Crypt/Random/Provider/File.pm
+%%SITE_PERL%%/Crypt/Random/Generator.pm
+%%SITE_PERL%%/Crypt/Random.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Random/.packlist
+@dirrm %%SITE_PERL%%/Crypt/Random/Provider
+@dirrm %%SITE_PERL%%/Crypt/Random
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Random
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Crypt 2>/dev/null || true

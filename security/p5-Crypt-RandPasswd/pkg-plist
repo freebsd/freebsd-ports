@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/Crypt/RandPasswd.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/RandPasswd/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/RandPasswd
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Crypt
+%%SITE_PERL%%/Crypt/RandPasswd.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RandPasswd/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RandPasswd
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
+@dirrm %%SITE_PERL%%/Crypt

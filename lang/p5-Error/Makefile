@@ -18,6 +18,5 @@ COMMENT=	Perl module to provide Error/exception support for perl: Error
 PERL_CONFIGURE=	YES
 
 MAN3=		Error.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

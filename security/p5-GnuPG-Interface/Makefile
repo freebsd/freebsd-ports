@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Perl module for interfacing with GnuPG
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker
+BUILD_DEPENDS=	${SITE_PERL}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		${BUILD_DEPENDS}
 
@@ -33,6 +33,5 @@ MAN3=	GnuPG::Fingerprint.3 \
 	GnuPG::Signature.3 \
 	GnuPG::SubKey.3 \
 	GnuPG::UserId.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

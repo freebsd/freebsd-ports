@@ -18,6 +18,5 @@ COMMENT=	Perl5 interface to the UNIX syslog(3) calls
 PERL_CONFIGURE=	yes
 
 MAN3=		Unix::Syslog.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

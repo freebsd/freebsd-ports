@@ -1,11 +1,11 @@
-lib/perl5/site_perl/%%PERL_VER%%/Bundle/PlRPC.pm
-lib/perl5/site_perl/%%PERL_VER%%/RPC/PlClient.pm
-lib/perl5/site_perl/%%PERL_VER%%/RPC/PlServer.pm
-lib/perl5/site_perl/%%PERL_VER%%/RPC/PlServer/Comm.pm
-lib/perl5/site_perl/%%PERL_VER%%/RPC/PlServer/Test.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RPC/PlServer/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/RPC/PlServer
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RPC/PlServer
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Bundle 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/RPC 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RPC 2>/dev/null || true
+%%SITE_PERL%%/Bundle/PlRPC.pm
+%%SITE_PERL%%/RPC/PlClient.pm
+%%SITE_PERL%%/RPC/PlServer.pm
+%%SITE_PERL%%/RPC/PlServer/Comm.pm
+%%SITE_PERL%%/RPC/PlServer/Test.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/PlServer/.packlist
+@dirrm %%SITE_PERL%%/RPC/PlServer
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/PlServer
+@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/RPC 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC 2>/dev/null || true

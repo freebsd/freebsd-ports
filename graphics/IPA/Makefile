@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.prima.eu.org/IPA/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image Processing Algorithms
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Prima.pm:${PORTSDIR}/x11-toolkits/p5-Prima
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Prima.pm:${PORTSDIR}/x11-toolkits/p5-Prima
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

@@ -17,7 +17,6 @@ COMMENT=	Perl module to manipulate IPv4/IPv6 netblocks in CIDR notation
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::CIDR.3
 
 .include <bsd.port.mk>

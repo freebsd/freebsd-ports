@@ -1,15 +1,15 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Install/Files.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Install/GnomeDefs.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Install/GnomeTypemap
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Install/GnomeTypes.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Install/PerlGnomeInt.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Install/pkg.typemap
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Types.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/TypesLazy.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/Gnome.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/Gnome.so
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Install
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome/Install/GnomeDefs.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome/Install/GnomeTypemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome/Install/GnomeTypes.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome/Install/PerlGnomeInt.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome/Install/pkg.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome/Types.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome/TypesLazy.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome/Gnome.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome/Gnome.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome/Install
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome

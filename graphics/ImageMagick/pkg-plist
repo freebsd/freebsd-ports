@@ -441,11 +441,11 @@ lib/libMagick.so
 lib/libMagick.so.6
 libdata/pkgconfig/ImageMagick++.pc
 libdata/pkgconfig/ImageMagick.pc
-%%WITH_PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Image/Magick.pm
-%%WITH_PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick/.packlist
-%%WITH_PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.bs
-%%WITH_PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.so
-%%WITH_PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick/autosplit.ix
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Image/Magick.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/autosplit.ix
 share/ImageMagick-5.5.7/Copyright.txt
 share/ImageMagick-5.5.7/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/images/background.gif
@@ -640,9 +640,9 @@ share/ImageMagick-5.5.7/QuickStart.txt
 %%PORTDOCS%%@dirrm share/doc/ImageMagick
 @dirrm share/ImageMagick-5.5.7
 @dirrm share/ImageMagick
-%%WITH_PERL%%@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick
-%%WITH_PERL%%@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image
-%%WITH_PERL%%@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Image
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Image
 %%Q8%%@dirrm lib/ImageMagick/modules-Q8/filters
 %%Q8%%@dirrm lib/ImageMagick/modules-Q8/coders
 %%Q8%%@dirrm lib/ImageMagick/modules-Q8

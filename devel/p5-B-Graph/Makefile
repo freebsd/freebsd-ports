@@ -17,6 +17,5 @@ COMMENT=	Perl Compiler backend to diagram OP trees
 
 PERL_CONFIGURE=	yes
 MAN3=		B::Graph.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

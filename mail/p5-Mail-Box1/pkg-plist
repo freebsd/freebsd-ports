@@ -1,26 +1,26 @@
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Box.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Index.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Locker.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Locker/DotLock.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Locker/File.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Locker/NFS.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/MH.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/MH/Message.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Manager.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Mbox.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Mbox/Message.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Message.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Threads.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Tie.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Tie/ARRAY.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Tie/HASH.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Message.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Box/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Box
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Locker
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Mbox
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/MH
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Tie
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Box
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Mail 2>/dev/null || true
+%%SITE_PERL%%/Mail/Box.pm
+%%SITE_PERL%%/Mail/Box/Index.pm
+%%SITE_PERL%%/Mail/Box/Locker.pm
+%%SITE_PERL%%/Mail/Box/Locker/DotLock.pm
+%%SITE_PERL%%/Mail/Box/Locker/File.pm
+%%SITE_PERL%%/Mail/Box/Locker/NFS.pm
+%%SITE_PERL%%/Mail/Box/MH.pm
+%%SITE_PERL%%/Mail/Box/MH/Message.pm
+%%SITE_PERL%%/Mail/Box/Manager.pm
+%%SITE_PERL%%/Mail/Box/Mbox.pm
+%%SITE_PERL%%/Mail/Box/Mbox/Message.pm
+%%SITE_PERL%%/Mail/Box/Message.pm
+%%SITE_PERL%%/Mail/Box/Threads.pm
+%%SITE_PERL%%/Mail/Box/Tie.pm
+%%SITE_PERL%%/Mail/Box/Tie/ARRAY.pm
+%%SITE_PERL%%/Mail/Box/Tie/HASH.pm
+%%SITE_PERL%%/Mail/Message.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Mail/Box/Locker
+@dirrm %%SITE_PERL%%/Mail/Box/Mbox
+@dirrm %%SITE_PERL%%/Mail/Box/MH
+@dirrm %%SITE_PERL%%/Mail/Box/Tie
+@dirrm %%SITE_PERL%%/Mail/Box
+@unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true

@@ -94,7 +94,7 @@ CONFIGURE_ENV+=	CXX="${CC}"
 # MySQL-Server part
 .if !defined(CLIENT_ONLY)
 RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql
+		${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql
 
 PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
 

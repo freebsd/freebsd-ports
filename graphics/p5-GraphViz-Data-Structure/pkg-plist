@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/GraphViz/Data/Structure.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GraphViz/Data/Structure/.packlist
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/GraphViz/Data 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GraphViz/Data/Structure
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GraphViz/Data 2>/dev/null || true
+%%SITE_PERL%%/GraphViz/Data/Structure.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz/Data/Structure/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/GraphViz/Data 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz/Data/Structure
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz/Data 2>/dev/null || true

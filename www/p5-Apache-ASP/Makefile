@@ -15,18 +15,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Active Server Pages for Apache with mod_perl
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Apache/Filter.pm:${PORTSDIR}/www/p5-Apache-Filter \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Apache/SSI.pm:${PORTSDIR}/www/p5-Apache-SSI \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTML/Clean.pm:${PORTSDIR}/www/p5-HTML-Clean \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTML/FillInForm.pm:${PORTSDIR}/www/p5-HTML-FillInForm \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTTP/Date.pm:${PORTSDIR}/www/p5-libwww \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MLDBM/Sync.pm:${PORTSDIR}/databases/p5-MLDBM-Sync \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Tie/Cache.pm:${PORTSDIR}/devel/p5-Tie-Cache \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/XSLT.pm:${PORTSDIR}/textproc/p5-XML-XSLT \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Sablotron.pm:${PORTSDIR}/textproc/p5-XML-Sablotron
+BUILD_DEPENDS=	${SITE_PERL}/Apache/Filter.pm:${PORTSDIR}/www/p5-Apache-Filter \
+		${SITE_PERL}/Apache/SSI.pm:${PORTSDIR}/www/p5-Apache-SSI \
+		${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
+		${SITE_PERL}/HTML/Clean.pm:${PORTSDIR}/www/p5-HTML-Clean \
+		${SITE_PERL}/HTML/FillInForm.pm:${PORTSDIR}/www/p5-HTML-FillInForm \
+		${SITE_PERL}/HTTP/Date.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/MLDBM/Sync.pm:${PORTSDIR}/databases/p5-MLDBM-Sync \
+		${SITE_PERL}/Tie/Cache.pm:${PORTSDIR}/devel/p5-Tie-Cache \
+		${SITE_PERL}/XML/XSLT.pm:${PORTSDIR}/textproc/p5-XML-XSLT \
+		${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
+		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
+		${SITE_PERL}/${PERL_ARCH}/XML/Sablotron.pm:${PORTSDIR}/textproc/p5-XML-Sablotron
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -40,10 +40,10 @@ MAN3=		Apache::ASP.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 .endif
 
 .include <bsd.port.post.mk>

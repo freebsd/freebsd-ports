@@ -17,7 +17,6 @@ COMMENT=	Perl5 module to retrieve CPU load averages
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Sys::CpuLoad.3
 
 .include <bsd.port.mk>

@@ -15,7 +15,7 @@ MASTER_SITES=	http://jimsun.LinxNet.com/downloads/ \
 MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Postfix Log Entry Summarizer
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
 
 NO_BUILD=	yes
 USE_PERL5=	yes

@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/Crypt/PPDES.pm
-lib/perl5/site_perl/%%PERL_VER%%/Crypt/TripleDES.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/TripleDES/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/TripleDES
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Crypt 2>/dev/null || true
+%%SITE_PERL%%/Crypt/PPDES.pm
+%%SITE_PERL%%/Crypt/TripleDES.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/TripleDES/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/TripleDES
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Crypt 2>/dev/null || true

@@ -24,7 +24,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv \
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-PERL_ARCHLIB=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
+PERL_ARCHLIB=	${SITE_PERL}/${PERL_ARCH}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_ARGS=	--with-perl-enc-map=${PERL_ARCHLIB}/XML/Parser/Encodings

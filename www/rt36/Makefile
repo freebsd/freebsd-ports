@@ -103,7 +103,7 @@ DB_TYPE=	mysql
 BUILD_DEPENDS+=	${LOCALBASE}/bin/mysql_config:${PORTSDIR}/databases/mysql40-server
 .endif
 
-SITE_PERL:=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL:=	${SITE_PERL}
 ARCH_PERL=	${SITE_PERL}/${PERL_ARCH}/
 USE_PERL5=	yes
 RT_PATH?=	${PREFIX}/rt3

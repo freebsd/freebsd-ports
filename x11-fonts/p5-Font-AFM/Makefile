@@ -17,7 +17,6 @@ COMMENT=	An interface to Adobe font metrics files
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Font::AFM.3
 
 .include <bsd.port.mk>

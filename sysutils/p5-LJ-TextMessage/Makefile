@@ -16,7 +16,6 @@ COMMENT=	Perl5 interface to send text messages to phones/pagers
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		LJ::TextMessage.3
 
 .include <bsd.port.mk>

@@ -17,7 +17,6 @@ COMMENT=	A Perl5 module to handle window size changes.
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Term::Size.3
 
 .include <bsd.port.mk>

@@ -1,14 +1,14 @@
 bin/xql.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/XQL/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/XML/XQL.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XQL/DOM.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XQL/Date.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XQL/Debug.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XQL/DirXQL.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XQL/Parser.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XQL/Plus.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XQL/Query.pod
-lib/perl5/site_perl/%%PERL_VER%%/XML/XQL/Strict.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/XQL/Tutorial.pod
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/XQL
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/XQL
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XQL/.packlist
+%%SITE_PERL%%/XML/XQL.pm
+%%SITE_PERL%%/XML/XQL/DOM.pm
+%%SITE_PERL%%/XML/XQL/Date.pm
+%%SITE_PERL%%/XML/XQL/Debug.pm
+%%SITE_PERL%%/XML/XQL/DirXQL.pm
+%%SITE_PERL%%/XML/XQL/Parser.pm
+%%SITE_PERL%%/XML/XQL/Plus.pm
+%%SITE_PERL%%/XML/XQL/Query.pod
+%%SITE_PERL%%/XML/XQL/Strict.pm
+%%SITE_PERL%%/XML/XQL/Tutorial.pod
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XQL
+@dirrm %%SITE_PERL%%/XML/XQL

@@ -18,7 +18,6 @@ COMMENT=	Extract information from the URLs of Search-Engines
 PERL_CONFIGURE=	yes
 
 MAN3=		URI::Sequin.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .ifndef (NOPORTDOCS)
 post-install:

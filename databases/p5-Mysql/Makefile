@@ -16,7 +16,7 @@ DISTNAME=	Msql-Mysql-modules-${PORTVERSION}
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	Perl5 modules for accessing MySQL databases
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable
+BUILD_DEPENDS=	${SITE_PERL}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .include <bsd.port.pre.mk>

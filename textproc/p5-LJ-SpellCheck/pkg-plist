@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/LJ/SpellCheck.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LJ/SpellCheck/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LJ/SpellCheck
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LJ 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/LJ 2>/dev/null || true
+%%SITE_PERL%%/LJ/SpellCheck.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/LJ/SpellCheck/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LJ/SpellCheck
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/LJ 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/LJ 2>/dev/null || true

@@ -19,7 +19,6 @@ PERL_CONFIGURE=	yes
 
 INSTALL_TARGET=	pure_site_install
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Mail::RFC822::Address.3
 
 .include <bsd.port.mk>

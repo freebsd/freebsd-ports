@@ -35,9 +35,8 @@ MAN3=		XML::DOM.3 XML::DOM::AttDef.3 XML::DOM::AttlistDecl.3 \
 		XML::DOM::Parser.3 XML::DOM::PerlSAX.3 \
 		XML::DOM::ProcessingInstruction.3 XML::DOM::Text.3 \
 		XML::DOM::XMLDecl.3 XML::Handler::BuildDOM.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-PBASE=		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+PBASE=		${SITE_PERL}
 
 .include <bsd.port.pre.mk>
 

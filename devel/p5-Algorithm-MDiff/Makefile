@@ -17,7 +17,6 @@ COMMENT=	Perl interface to calculate m-difference between two objects
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Algorithm::MDiff.3
 
 .include <bsd.port.mk>

@@ -18,6 +18,5 @@ COMMENT=	Go from cardinal number (3) to ordinal ("3rd")
 PERL_CONFIGURE=		yes
 
 MAN3=			Lingua::EN::Numbers::Ordinate.3
-MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

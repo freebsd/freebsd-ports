@@ -1,9 +1,9 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Object/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/POE/Component/IRC/Object.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Object
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component/IRC 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component  2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Object/.packlist
+%%SITE_PERL%%/POE/Component/IRC/Object.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Object
+@unexec rmdir %D/%%SITE_PERL%%/POE/Component/IRC 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE/Component  2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
 %%PORTDOCS%%%%EXAMPLESDIR%%/elizabot.pl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

@@ -18,6 +18,5 @@ COMMENT=	Perl module to translate constants back to their named symbols
 PERL_CONFIGURE=	yes
 
 MAN3=		Devel::Constants.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -1,34 +1,34 @@
 bin/iterm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA/CORE/IPAsupp.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA/CORE/generic/Geometry.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA/CORE/generic/Global.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA/CORE/generic/IPA.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA/CORE/generic/Local.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA/CORE/generic/Misc.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA/CORE/generic/Morphology.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA/CORE/generic/Point.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA/Geometry.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA/Global.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA/Local.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA/Misc.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA/Morphology.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA/Point.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA/Region.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA/CORE/generic
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA/CORE
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPA
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPA/Geometry/Geometry.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPA/Global/Global.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPA/IPA.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPA/Local/Local.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPA/Misc/Misc.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPA/Morphology/Morphology.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPA/Point/Point.so
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPA/Geometry
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPA/Global
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPA/Local
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPA/Misc
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPA/Morphology
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPA/Point
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPA
+%%SITE_PERL%%/%%PERL_ARCH%%/IPA.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IPA/CORE/IPAsupp.h
+%%SITE_PERL%%/%%PERL_ARCH%%/IPA/CORE/generic/Geometry.h
+%%SITE_PERL%%/%%PERL_ARCH%%/IPA/CORE/generic/Global.h
+%%SITE_PERL%%/%%PERL_ARCH%%/IPA/CORE/generic/IPA.h
+%%SITE_PERL%%/%%PERL_ARCH%%/IPA/CORE/generic/Local.h
+%%SITE_PERL%%/%%PERL_ARCH%%/IPA/CORE/generic/Misc.h
+%%SITE_PERL%%/%%PERL_ARCH%%/IPA/CORE/generic/Morphology.h
+%%SITE_PERL%%/%%PERL_ARCH%%/IPA/CORE/generic/Point.h
+%%SITE_PERL%%/%%PERL_ARCH%%/IPA/Geometry.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IPA/Global.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IPA/Local.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IPA/Misc.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IPA/Morphology.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IPA/Point.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/IPA/Region.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/IPA/CORE/generic
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/IPA/CORE
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/IPA
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA/Geometry/Geometry.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA/Global/Global.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA/IPA.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA/Local/Local.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA/Misc/Misc.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA/Morphology/Morphology.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA/Point/Point.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA/Geometry
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA/Global
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA/Local
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA/Misc
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA/Morphology
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA/Point
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPA

@@ -17,7 +17,6 @@ COMMENT=	Extendable perl5 module for parsing whois information
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::ParseWhois.3
 
 .include <bsd.port.mk>

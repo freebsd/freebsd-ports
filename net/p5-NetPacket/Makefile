@@ -17,7 +17,6 @@ COMMENT=	Modules to assemble/disassemble network packets at the protocol level
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	NetPacket::LACP.3 NetPacket::IGMP.3 NetPacket::IP.3 \
 	NetPacket::SpanningTree.3 NetPacket::LLC.3 NetPacket::ARP.3 \
 	NetPacket.3 NetPacket::UDP.3 NetPacket::Ethernet.3 \

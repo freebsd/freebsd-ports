@@ -1,23 +1,23 @@
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/ByGroup.pm
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/Delivery.pm
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/DeliveryIterator.pm
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/FilterUser.pm
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/Group.pm
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/In_identdLine.pm
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/ParseDate.pm
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/SendmailLine.pm
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/SendmailLineClone.pm
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/SendmailLineFrom.pm
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/SendmailLineTo.pm
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/SendmailLineTrans.pm
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/SendmailUtil.pm
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/Summary.pm
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/SyslogEntry.pm
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/UnsupportedEntry.pm
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/Usage.pm
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/Volume.pm
-lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/WhereIs.pm
-lib/perl5/site_perl/%%PERL_VER%%/read_mail_log.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SyslogScan/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SyslogScan
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/SyslogScan
+%%SITE_PERL%%/SyslogScan/ByGroup.pm
+%%SITE_PERL%%/SyslogScan/Delivery.pm
+%%SITE_PERL%%/SyslogScan/DeliveryIterator.pm
+%%SITE_PERL%%/SyslogScan/FilterUser.pm
+%%SITE_PERL%%/SyslogScan/Group.pm
+%%SITE_PERL%%/SyslogScan/In_identdLine.pm
+%%SITE_PERL%%/SyslogScan/ParseDate.pm
+%%SITE_PERL%%/SyslogScan/SendmailLine.pm
+%%SITE_PERL%%/SyslogScan/SendmailLineClone.pm
+%%SITE_PERL%%/SyslogScan/SendmailLineFrom.pm
+%%SITE_PERL%%/SyslogScan/SendmailLineTo.pm
+%%SITE_PERL%%/SyslogScan/SendmailLineTrans.pm
+%%SITE_PERL%%/SyslogScan/SendmailUtil.pm
+%%SITE_PERL%%/SyslogScan/Summary.pm
+%%SITE_PERL%%/SyslogScan/SyslogEntry.pm
+%%SITE_PERL%%/SyslogScan/UnsupportedEntry.pm
+%%SITE_PERL%%/SyslogScan/Usage.pm
+%%SITE_PERL%%/SyslogScan/Volume.pm
+%%SITE_PERL%%/SyslogScan/WhereIs.pm
+%%SITE_PERL%%/read_mail_log.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SyslogScan/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SyslogScan
+@dirrm %%SITE_PERL%%/SyslogScan

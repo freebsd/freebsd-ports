@@ -18,6 +18,5 @@ COMMENT=	Perl equivalent of statfs(2)
 PERL_CONFIGURE=	yes
 
 MAN3=		Filesys::DiskSpace.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -35,7 +35,7 @@ USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 # perlbase
-PBASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+PBASE=	${SITE_PERL}
 
 # additional scripts
 BINS_SCRIPTS=	bins_txt2xml

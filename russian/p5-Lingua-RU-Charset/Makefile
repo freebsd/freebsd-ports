@@ -18,6 +18,5 @@ COMMENT=	Perl extension for detecting and converting various russian character s
 PERL_CONFIGURE=	YES
 
 MAN3=		Lingua::RU::Charset.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

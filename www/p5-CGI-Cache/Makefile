@@ -27,10 +27,9 @@ BUILD_DEPENDS+=	${SITE_PERL}/File/Spec/Functions.pm:${PORTSDIR}/devel/p5-File-Sp
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL?=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL?=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		CGI::Cache.3
 
 .include <bsd.port.post.mk>

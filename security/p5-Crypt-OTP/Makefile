@@ -18,6 +18,5 @@ COMMENT=	Perl implementation of the One Time Pad (hence, OTP) encryption method
 PERL_CONFIGURE=		yes
 
 MAN3=			Crypt::OTP.3
-MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

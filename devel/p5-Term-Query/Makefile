@@ -15,11 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive question-response user interface module
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Array/PrintCols.pm:${PORTSDIR}/misc/p5-Array-PrintCols
+RUN_DEPENDS=	${SITE_PERL}/Array/PrintCols.pm:${PORTSDIR}/misc/p5-Array-PrintCols
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Term::Query.3
 
 .include <bsd.port.mk>

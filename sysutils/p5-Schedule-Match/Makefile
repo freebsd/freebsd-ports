@@ -18,6 +18,5 @@ COMMENT=	Handles and detects clash between pattern-based schedules
 PERL_CONFIGURE=	yes
 
 MAN3=		Schedule::Match.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

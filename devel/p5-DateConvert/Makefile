@@ -18,6 +18,5 @@ COMMENT=	Perl5 module to convert dates between any two calendrical formats
 PERL_CONFIGURE=	YES
 
 MAN3=		Date::Convert.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

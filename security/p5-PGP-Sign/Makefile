@@ -19,7 +19,6 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	PGPS=${PGPS} PGPV=${PGPV} PGPSTYLE=${PGPSTYLE}
 
 MAN3=		PGP::Sign.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 # If DEFAULTPGP isn't defined, it gets set to PGP2.  If you don't like
 # the values that this process assigns to PGP (or PGPV and PGPS) and

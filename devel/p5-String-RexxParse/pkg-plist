@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/String/RexxParse.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/RexxParse/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/RexxParse
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/String 2>/dev/null || true
+%%SITE_PERL%%/String/RexxParse.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/RexxParse/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/RexxParse
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/String 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/String 2>/dev/null || true

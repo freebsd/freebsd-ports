@@ -15,17 +15,17 @@ lib/libtspread.a
 lib/libtspread.so
 lib/libtspread.so.1
 lib/perl5/%%PERL_VERSION%%/man/man3/Spread.3.gz
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Spread.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spread/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spread/Spread.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spread/Spread.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spread/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/Spread.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread/Spread.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread/Spread.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread/autosplit.ix
 sbin/spread
 %%PORTDOCS%%share/doc/spread/perl/README
 %%PORTDOCS%%share/doc/spread/perl/test.pl
 %%PORTDOCS%%share/doc/spread/LICENSE
 %%PORTDOCS%%share/doc/spread/Readme.txt
 @unexec rmdir /var/run/spread 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spread 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread 2>/dev/null || true
 %%PORTDOCS%%@dirrm share/doc/spread/perl
 %%PORTDOCS%%@dirrm share/doc/spread

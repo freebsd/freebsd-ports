@@ -23,10 +23,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		XML::XQL.3 XML::XQL::DOM.3 XML::XQL::Date.3 \
 		XML::XQL::Query.3 XML::XQL::Tutorial.3
 
-PBASE=		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+PBASE=		${SITE_PERL}
 
 .include <bsd.port.mk>

@@ -15,11 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Chains multiple Text::Filter objects and runs them in sequence
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/Filter.pm:${PORTSDIR}/textproc/p5-Text-Filter
+BUILD_DEPENDS=	${SITE_PERL}/Text/Filter.pm:${PORTSDIR}/textproc/p5-Text-Filter
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::Filter::Chain.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -1,16 +1,16 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GPS/Garmin/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/GPS/Garmin.pm
-lib/perl5/site_perl/%%PERL_VER%%/GPS/Garmin/Constant.pm
-lib/perl5/site_perl/%%PERL_VER%%/GPS/Garmin/Handler.pm
-lib/perl5/site_perl/%%PERL_VER%%/GPS/Serial.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/GPS/Garmin/Handler/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/auto/GPS/Garmin/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/auto/GPS/Serial/autosplit.ix
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/GPS/Garmin
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/GPS/Garmin/Handler
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/GPS/Garmin
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/GPS/Serial
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GPS/Garmin
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GPS 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/GPS 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/GPS 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GPS/Garmin/.packlist
+%%SITE_PERL%%/GPS/Garmin.pm
+%%SITE_PERL%%/GPS/Garmin/Constant.pm
+%%SITE_PERL%%/GPS/Garmin/Handler.pm
+%%SITE_PERL%%/GPS/Serial.pm
+%%SITE_PERL%%/auto/GPS/Garmin/Handler/autosplit.ix
+%%SITE_PERL%%/auto/GPS/Garmin/autosplit.ix
+%%SITE_PERL%%/auto/GPS/Serial/autosplit.ix
+@dirrm %%SITE_PERL%%/GPS/Garmin
+@dirrm %%SITE_PERL%%/auto/GPS/Garmin/Handler
+@dirrm %%SITE_PERL%%/auto/GPS/Garmin
+@dirrm %%SITE_PERL%%/auto/GPS/Serial
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GPS/Garmin
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/GPS 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/GPS 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/GPS 2>/dev/null || true

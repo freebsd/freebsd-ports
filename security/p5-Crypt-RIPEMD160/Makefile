@@ -17,7 +17,6 @@ COMMENT=	RIPEMD-160 message digest algorithm
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Crypt::RIPEMD160::MAC.3 Crypt::RIPEMD160.3
 
 .include <bsd.port.mk>

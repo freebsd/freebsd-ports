@@ -20,6 +20,5 @@ PERL_CONFIGURE=	yes
 INSTALL_TARGET=	pure_install
 
 MAN3=		Tie::Cache.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

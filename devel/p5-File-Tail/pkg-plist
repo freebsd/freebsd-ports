@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/File/Tail.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/File/Tail/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Tail/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Tail
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/File/Tail
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/File 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/File 2>/dev/null || true
+%%SITE_PERL%%/File/Tail.pm
+%%SITE_PERL%%/auto/File/Tail/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Tail/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Tail
+@dirrm %%SITE_PERL%%/auto/File/Tail
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/File 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/File 2>/dev/null || true

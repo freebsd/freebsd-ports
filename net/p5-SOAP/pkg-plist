@@ -1,27 +1,27 @@
-lib/perl5/site_perl/%%PERL_VER%%/SOAP.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Defs.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Envelope.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/EnvelopeMaker.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/GenericHashSerializer.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/GenericInputStream.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/GenericScalarSerializer.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/OutputStream.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Packager.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Parser.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Serializer.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/SimpleTypeWrapper.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Struct.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/StructSerializer.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/HTTP/Apache.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/HTTP/CGI.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/HTTP/Client.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/HTTP/Server.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/TypeMapper.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/TypedPrimitive.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/TypedPrimitiveSerializer.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SOAP/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SOAP
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/HTTP
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/SOAP 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SOAP 2>/dev/null || true
+%%SITE_PERL%%/SOAP.pm
+%%SITE_PERL%%/SOAP/Defs.pm
+%%SITE_PERL%%/SOAP/Envelope.pm
+%%SITE_PERL%%/SOAP/EnvelopeMaker.pm
+%%SITE_PERL%%/SOAP/GenericHashSerializer.pm
+%%SITE_PERL%%/SOAP/GenericInputStream.pm
+%%SITE_PERL%%/SOAP/GenericScalarSerializer.pm
+%%SITE_PERL%%/SOAP/OutputStream.pm
+%%SITE_PERL%%/SOAP/Packager.pm
+%%SITE_PERL%%/SOAP/Parser.pm
+%%SITE_PERL%%/SOAP/Serializer.pm
+%%SITE_PERL%%/SOAP/SimpleTypeWrapper.pm
+%%SITE_PERL%%/SOAP/Struct.pm
+%%SITE_PERL%%/SOAP/StructSerializer.pm
+%%SITE_PERL%%/SOAP/Transport/HTTP/Apache.pm
+%%SITE_PERL%%/SOAP/Transport/HTTP/CGI.pm
+%%SITE_PERL%%/SOAP/Transport/HTTP/Client.pm
+%%SITE_PERL%%/SOAP/Transport/HTTP/Server.pm
+%%SITE_PERL%%/SOAP/TypeMapper.pm
+%%SITE_PERL%%/SOAP/TypedPrimitive.pm
+%%SITE_PERL%%/SOAP/TypedPrimitiveSerializer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP
+@dirrm %%SITE_PERL%%/SOAP/Transport/HTTP
+@dirrm %%SITE_PERL%%/SOAP/Transport
+@unexec rmdir %D/%%SITE_PERL%%/SOAP 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP 2>/dev/null || true

@@ -17,7 +17,6 @@ COMMENT=	HTML::SimpleParse - a bare-bones HTML parser
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		HTML::SimpleParse.3
 
 .include <bsd.port.mk>

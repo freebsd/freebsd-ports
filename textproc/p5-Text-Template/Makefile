@@ -18,7 +18,6 @@ COMMENT=	Expand template text with embedded Perl
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Text::Template.3 Text::Template::Preprocess.3
 
 .include <bsd.port.mk>

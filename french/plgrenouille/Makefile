@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	cyrille.lefevre@laposte.net
 COMMENT=	Un client pour determiner votre bande passante a un raccordement large bande
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes

@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/Test/Builder.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/More.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Simple.pm
-lib/perl5/site_perl/%%PERL_VER%%/Test/Tutorial.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Test/Simple/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Test/Simple
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Test 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Test 2>/dev/null || true
+%%SITE_PERL%%/Test/Builder.pm
+%%SITE_PERL%%/Test/More.pm
+%%SITE_PERL%%/Test/Simple.pm
+%%SITE_PERL%%/Test/Tutorial.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Simple/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Simple
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Test 2>/dev/null || true

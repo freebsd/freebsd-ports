@@ -17,7 +17,6 @@ COMMENT=	Perl5 routines to parse system logs
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		SyslogScan::ByGroup.3 SyslogScan::Delivery.3 \
 		SyslogScan::DeliveryIterator.3 \
 		SyslogScan::SendmailLine.3 SyslogScan::SendmailLineFrom.3 \

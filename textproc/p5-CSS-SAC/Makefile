@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	SAC CSS (Simple API for CSS) parser
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Class/ArrayObjects.pm:${PORTSDIR}/devel/p5-Class-ArrayObjects
+BUILD_DEPENDS=	${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced \
+		${SITE_PERL}/Class/ArrayObjects.pm:${PORTSDIR}/devel/p5-Class-ArrayObjects
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

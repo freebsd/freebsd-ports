@@ -25,7 +25,6 @@ EZMLM_DIR?=	${LOCALBASE}
 USE_PERL5=	YES
 MAN3=		Mail::Ezmlm.3
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 # For this version, since it is a bugfix
 WRKSRC=		${WRKDIR}/Ezmlm-0.03

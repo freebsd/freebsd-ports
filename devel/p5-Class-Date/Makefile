@@ -17,7 +17,6 @@ COMMENT=	A Perl class for easy date and time manipulation
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Class::Date.3
 
 .include <bsd.port.mk>

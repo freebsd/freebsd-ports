@@ -21,7 +21,6 @@ LIB_DEPENDS=	fcgi.0:${PORTSDIR}/www/fcgi
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--use-installed=${LOCALBASE}
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		FCGI.3
 
 .include <bsd.port.mk>

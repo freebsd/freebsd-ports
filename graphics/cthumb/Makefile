@@ -18,8 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/pnmscale:${PORTSDIR}/graphics/netpbm \
 		${SITE_PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
-SITE_PERL_ARCH=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
+SITE_PERL=	${SITE_PERL}
+SITE_PERL_ARCH=	${SITE_PERL}/${PERL_ARCH}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-themedir=${PREFIX}/share/${PORTNAME}

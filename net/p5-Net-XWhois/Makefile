@@ -18,7 +18,6 @@ COMMENT=	Whois Client Interface for Perl5
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::XWhois.3
 
 post-patch:

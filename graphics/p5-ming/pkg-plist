@@ -1,23 +1,23 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SWF.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SWF/Action.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SWF/Bitmap.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SWF/Button.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SWF/DisplayItem.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SWF/Fill.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SWF/Font.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SWF/Gradient.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SWF/Morph.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SWF/Movie.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SWF/Shape.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SWF/Sound.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SWF/Sprite.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SWF/Text.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SWF/TextField.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SWF
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SWF/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SWF/SWF.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SWF/SWF.so
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SWF
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Action.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Bitmap.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Button.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/DisplayItem.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Fill.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Font.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Gradient.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Morph.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Movie.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Shape.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Sound.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Sprite.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Text.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/TextField.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SWF
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/SWF.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/SWF.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF
 %%PORTDOCS%%share/examples/perl5/ming/animation.cgi
 %%PORTDOCS%%share/examples/perl5/ming/jpegfill.cgi
 %%PORTDOCS%%share/examples/perl5/ming/morph.cgi

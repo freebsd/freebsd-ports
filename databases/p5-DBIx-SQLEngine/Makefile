@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/DBIx/AnyDBD.pm:${PORTSDIR}/databases/p5-DBIx-AnyDBD 
 		${SITE_PERL}/Class/MakeMethods/Template.pm:${PORTSDIR}/devel/p5-Class-MakeMethods
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
 MAN3=	DBIx::SQLEngine::Criteria::StringEquality.3\
@@ -38,6 +38,5 @@ MAN3=	DBIx::SQLEngine::Criteria::StringEquality.3\
 		DBIx::SQLEngine::Mixin::SeqTable.3\
 		DBIx::SQLEngine.3
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -17,8 +17,8 @@ EXTRACT_SUFX=	.tar.bz2
 MAINTAINER=	klaus.goger@reflex.at
 COMMENT=	Throw colourful bubbles to build groups and destroy the groups
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/SDL_perl.pm:${PORTSDIR}/devel/p5-SDL
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/SDL_perl.pm:${PORTSDIR}/devel/p5-SDL
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SDL_perl.pm:${PORTSDIR}/devel/p5-SDL
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SDL_perl.pm:${PORTSDIR}/devel/p5-SDL
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image

@@ -17,7 +17,6 @@ COMMENT=	Flexible I/O Perl5 module that allows manipulation of pseudo-TTYs
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		IO::Pty.3 \
 		IO::Tty.3 \
 		IO::Tty::Constant.3

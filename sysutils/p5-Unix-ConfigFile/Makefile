@@ -17,7 +17,6 @@ COMMENT=	Perl modules that provides a simple interface to reading /etc files
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Unix::GroupFile.3 Unix::AliasFile.3 \
 		Unix::PasswdFile.3 Unix::AutomountFile.3
 

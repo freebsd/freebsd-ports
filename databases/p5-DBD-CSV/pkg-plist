@@ -1,9 +1,9 @@
-lib/perl5/site_perl/%%PERL_VER%%/DBD/File.pm
-lib/perl5/site_perl/%%PERL_VER%%/DBD/CSV.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bundle/DBD/CSV.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/CSV/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/CSV
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bundle/DBD
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Bundle 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/DBD 2>/dev/null || true
+%%SITE_PERL%%/DBD/File.pm
+%%SITE_PERL%%/DBD/CSV.pm
+%%SITE_PERL%%/Bundle/DBD/CSV.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/CSV/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/CSV
+@dirrm %%SITE_PERL%%/Bundle/DBD
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/DBD 2>/dev/null || true

@@ -1,11 +1,11 @@
-lib/perl5/site_perl/%%PERL_VER%%/GD/Graph3d.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/axestype3d.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/bars3d.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/cylinder3d.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/cylinder.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/lines3d.pm
-lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/pie3d.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/Graph3d/.packlist
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/GD/Graph 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/GD 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/Graph3d 2>/dev/null || true
+%%SITE_PERL%%/GD/Graph3d.pm
+%%SITE_PERL%%/GD/Graph/axestype3d.pm
+%%SITE_PERL%%/GD/Graph/bars3d.pm
+%%SITE_PERL%%/GD/Graph/cylinder3d.pm
+%%SITE_PERL%%/GD/Graph/cylinder.pm
+%%SITE_PERL%%/GD/Graph/lines3d.pm
+%%SITE_PERL%%/GD/Graph/pie3d.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph3d/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/GD/Graph 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/GD 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph3d 2>/dev/null || true

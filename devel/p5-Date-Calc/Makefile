@@ -22,7 +22,6 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Date::Calc.3 Date::Calc::Object.3 Date::Calendar.3 \
 		Date::Calendar::Profiles.3 Date::Calendar::Year.3
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+SITE_PERL=	${SITE_PERL}
 
 .include <bsd.port.mk>

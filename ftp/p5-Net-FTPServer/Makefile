@@ -28,10 +28,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_REINPLACE=	yes
 MAKE_ENV+=	NOCONF=1
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Net::FTPServer.3 \
 	Net::FTPServer::DBeg1::DirHandle.3 \
 	Net::FTPServer::DBeg1::FileHandle.3 \

@@ -1,9 +1,9 @@
 bin/timed-process
-lib/perl5/site_perl/%%PERL_VER%%/Proc/Background.pm
-lib/perl5/site_perl/%%PERL_VER%%/Proc/Background/Unix.pm
-lib/perl5/site_perl/%%PERL_VER%%/Proc/Background/Win32.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/Background/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/Background
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Proc/Background
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Proc 2>/dev/null || true
+%%SITE_PERL%%/Proc/Background.pm
+%%SITE_PERL%%/Proc/Background/Unix.pm
+%%SITE_PERL%%/Proc/Background/Win32.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Background/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Background
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Proc/Background
+@unexec rmdir %D/%%SITE_PERL%%/Proc 2>/dev/null || true

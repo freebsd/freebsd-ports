@@ -17,6 +17,5 @@ COMMENT=	A powerful template handling logic with advanced features
 PERL_CONFIGURE=	yes
 
 MAN3=		dTemplate.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-lib/perl5/site_perl/%%PERL_VER%%/BER.pm
-lib/perl5/site_perl/%%PERL_VER%%/SNMP_Session.pm
-lib/perl5/site_perl/%%PERL_VER%%/SNMP_util.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SNMP_Session/.packlist
+%%SITE_PERL%%/BER.pm
+%%SITE_PERL%%/SNMP_Session.pm
+%%SITE_PERL%%/SNMP_util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP_Session/.packlist
 %%PORTDOCS%%share/doc/SNMP_Session/README
 %%PORTDOCS%%share/doc/SNMP_Session/README.SNMP_util
 %%PORTDOCS%%share/doc/SNMP_Session/index.html
 %%PORTDOCS%%@dirrm share/doc/SNMP_Session
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SNMP_Session
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP_Session

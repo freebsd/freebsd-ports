@@ -1,7 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/Convert/PEM/CBC.pm
-lib/perl5/site_perl/%%PERL_VER%%/Convert/PEM.pm
-lib/perl5/site_perl/%%PERL_VER%%/Crypt/DES_EDE3.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert/PEM/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Convert/PEM
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert/PEM
+%%SITE_PERL%%/Convert/PEM/CBC.pm
+%%SITE_PERL%%/Convert/PEM.pm
+%%SITE_PERL%%/Crypt/DES_EDE3.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/PEM/.packlist
+@dirrm %%SITE_PERL%%/Convert/PEM
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/PEM
 @unexec rmdir %D/lib/perl5/site_perl/5.005/Crypt || true

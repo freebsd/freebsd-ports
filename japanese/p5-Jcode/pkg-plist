@@ -1,17 +1,17 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode/Constants.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode/H2Z.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode/Tr.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode/Unicode.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode/Unicode/Constants.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode/Unicode/NoXS.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode/_test.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Jcode/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Jcode/Unicode/Unicode.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Jcode/Unicode/Unicode.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/mac_install.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/win_install.pl
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode/Unicode
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode/
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Jcode/Unicode
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Jcode
+%%SITE_PERL%%/%%PERL_ARCH%%/Jcode.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Jcode/Constants.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Jcode/H2Z.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Jcode/Tr.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Jcode/Unicode.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Jcode/Unicode/Constants.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Jcode/Unicode/NoXS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Jcode/_test.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jcode/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jcode/Unicode/Unicode.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jcode/Unicode/Unicode.so
+%%SITE_PERL%%/%%PERL_ARCH%%/mac_install.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/win_install.pl
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Jcode/Unicode
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Jcode/
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jcode/Unicode
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jcode

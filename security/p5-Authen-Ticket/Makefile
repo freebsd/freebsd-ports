@@ -17,6 +17,5 @@ COMMENT=	Perl module providing the framework for implementing a ticketing system
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

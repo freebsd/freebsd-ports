@@ -18,6 +18,5 @@ COMMENT=	Validates user input (usually from an HTML form) based
 PERL_CONFIGURE=		yes
 
 MAN3=			Data::FormValidator.3
-MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -17,7 +17,6 @@ COMMENT=	Perl5 interface to DES block cipher
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Crypt::DES.3
 
 .include <bsd.port.mk>

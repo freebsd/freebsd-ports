@@ -17,7 +17,6 @@ COMMENT=	Perl module implementing Tie hash to a DBI handle
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Tie::RDBM.3 Tie::DBI.3
 
 .include <bsd.port.mk>

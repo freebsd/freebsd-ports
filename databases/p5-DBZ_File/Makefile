@@ -27,7 +27,6 @@ CONFIGURE_ARGS+=	POLLUTE=1
 
 WRKSRC=		${WRKDIR}/DBZ_File
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		DBZ_File.3
 
 .include <bsd.port.post.mk>

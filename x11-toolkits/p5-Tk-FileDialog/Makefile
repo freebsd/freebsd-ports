@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Tk
 MAINTAINER=	minter@lunenburg.org
 COMMENT=	Tk::FileDialog - A file selector dialog for perl/Tk
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 
 PERL_CONFIGURE=	yes
 MAN3PREFIX=	${LOCALBASE}/lib/perl5/${PERL_VERSION}

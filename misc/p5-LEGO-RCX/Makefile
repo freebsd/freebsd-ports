@@ -18,6 +18,5 @@ COMMENT=	Perl module for communicating with the Lego RCX brick via the IR tower
 PERL_CONFIGURE=	yes
 
 MAN3=		LEGO::RCX.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -18,6 +18,5 @@ COMMENT=	Perl extension for comparing arrays
 PERL_CONFIGURE=		yes
 
 MAN3=			Array::Compare.3
-MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

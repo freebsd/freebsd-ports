@@ -18,7 +18,6 @@ COMMENT=	Allows you to create a global password file for DB passwords
 PERL_CONFIGURE=	yes
 
 MAN3=		DBIx::Password.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 

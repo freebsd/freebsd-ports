@@ -1,10 +1,10 @@
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Base.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/BasePlus.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Carp.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Form.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/MiniSvr.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Request.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/test.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/CGI
+%%SITE_PERL%%/CGI/Base.pm
+%%SITE_PERL%%/CGI/BasePlus.pm
+%%SITE_PERL%%/CGI/Carp.pm
+%%SITE_PERL%%/CGI/Form.pm
+%%SITE_PERL%%/CGI/MiniSvr.pm
+%%SITE_PERL%%/CGI/Request.pm
+%%SITE_PERL%%/CGI/test.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
+@dirrm %%SITE_PERL%%/CGI

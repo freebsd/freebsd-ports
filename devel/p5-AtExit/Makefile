@@ -18,7 +18,6 @@ COMMENT=	AtExit - Perform exit processing for a program or object
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INSTALLDIRS=site
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		AtExit.3
 
 .include <bsd.port.mk>

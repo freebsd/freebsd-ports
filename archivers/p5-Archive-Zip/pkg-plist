@@ -1,13 +1,13 @@
 bin/crc32
-lib/perl5/site_perl/%%PERL_VER%%/Archive/Zip.pm
-lib/perl5/site_perl/%%PERL_VER%%/Archive/Zip.pod
-lib/perl5/site_perl/%%PERL_VER%%/Archive/Zip/FAQ.pod
-lib/perl5/site_perl/%%PERL_VER%%/Archive/Zip/BufferedFileHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/Archive/Zip/MemberRead.pm
-lib/perl5/site_perl/%%PERL_VER%%/Archive/Zip/MockFileHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/Archive/Zip/Tree.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Archive/Zip/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Archive/Zip
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Archive 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Archive/Zip
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Archive 2>/dev/null || true
+%%SITE_PERL%%/Archive/Zip.pm
+%%SITE_PERL%%/Archive/Zip.pod
+%%SITE_PERL%%/Archive/Zip/FAQ.pod
+%%SITE_PERL%%/Archive/Zip/BufferedFileHandle.pm
+%%SITE_PERL%%/Archive/Zip/MemberRead.pm
+%%SITE_PERL%%/Archive/Zip/MockFileHandle.pm
+%%SITE_PERL%%/Archive/Zip/Tree.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Zip/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Zip
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Archive/Zip
+@unexec rmdir %D/%%SITE_PERL%%/Archive 2>/dev/null || true

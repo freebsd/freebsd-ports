@@ -18,11 +18,10 @@ COMMENT=	Perl Module to read the end of a file as it's appended to
 BUILD_DEPENDS=	${site_perl}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-site_perl=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
+site_perl=	${SITE_PERL}/${PERL_ARCH}
 
 PERL_CONFIGURE=	YES
 
 MAN3=		File::Tail.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -17,7 +17,6 @@ COMMENT=	Perl module providing an interface to Fast Fourier Transform routines
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Math::FFT.3
 
 .include <bsd.port.mk>

@@ -17,7 +17,6 @@ COMMENT=	Perl5 extension for portable daemons
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::Daemon.3 \
 		Net::Daemon::Log.3 \
 		Net::Daemon::Test.3

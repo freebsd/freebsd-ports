@@ -18,6 +18,5 @@ COMMENT=	Perl5 module handling application defaults in Perl
 PERL_CONFIGURE=	YES
 
 MAN3=		Resources.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

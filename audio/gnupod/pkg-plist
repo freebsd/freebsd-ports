@@ -8,7 +8,7 @@ bin/gnupod_renumber.pl
 bin/gnupod_search.pl
 bin/mktunes.pl
 bin/tunes2pod.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/iPod.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/iPod.pm
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/gnutunesdb.example
 %%PORTDOCS%%%%DOCSDIR%%/gnupod.html

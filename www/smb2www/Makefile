@@ -22,7 +22,7 @@ COMMENT=	Windows Network client that is accessible through a web browser
 
 RUN_DEPENDS=	httpd:${PORTSDIR}/www/apache13 \
 		smbclient:${PORTSDIR}/net/samba \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 IS_INTERACTIVE=	yes
 NO_BUILD=	yes

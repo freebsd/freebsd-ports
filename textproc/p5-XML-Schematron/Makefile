@@ -18,13 +18,12 @@ COMMENT=	Perl implementation of the Schematron
 BUILD_DEPENDS=	${SITE_PERL}/XML/Parser/PerlSAX.pm:${PORTSDIR}/textproc/p5-libxml
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
 MAN3=		XML::Schematron::Sablotron.3 \
 		XML::Schematron::XPath.3 \
 		XML::Schematron::LibXSLT.3 \
 		XML::Schematron.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

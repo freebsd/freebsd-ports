@@ -15,7 +15,7 @@ MAINTAINER=	billf@FreeBSD.org
 COMMENT=	JUNIper router snmp POLLer for firewall filter counters
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Altoids.pm:${PORTSDIR}/net/p5-Altoids
+		${SITE_PERL}/Altoids.pm:${PORTSDIR}/net/p5-Altoids
 
 PERL_CONFIGURE=	yes
 

@@ -1,15 +1,15 @@
-lib/perl5/site_perl/%%PERL_VER%%/Chart/PNGgraph.pm
-lib/perl5/site_perl/%%PERL_VER%%/Chart/PNGgraph/Convert.pm
-lib/perl5/site_perl/%%PERL_VER%%/Chart/PNGgraph/area.pm
-lib/perl5/site_perl/%%PERL_VER%%/Chart/PNGgraph/axestype.pm
-lib/perl5/site_perl/%%PERL_VER%%/Chart/PNGgraph/bars.pm
-lib/perl5/site_perl/%%PERL_VER%%/Chart/PNGgraph/lines.pm
-lib/perl5/site_perl/%%PERL_VER%%/Chart/PNGgraph/linespoints.pm
-lib/perl5/site_perl/%%PERL_VER%%/Chart/PNGgraph/mixed.pm
-lib/perl5/site_perl/%%PERL_VER%%/Chart/PNGgraph/pie.pm
-lib/perl5/site_perl/%%PERL_VER%%/Chart/PNGgraph/points.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Chart/PNGgraph/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Chart/PNGgraph
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Chart/PNGgraph
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Chart > /dev/null 2>&1 || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Chart > /dev/null 2>&1 || true
+%%SITE_PERL%%/Chart/PNGgraph.pm
+%%SITE_PERL%%/Chart/PNGgraph/Convert.pm
+%%SITE_PERL%%/Chart/PNGgraph/area.pm
+%%SITE_PERL%%/Chart/PNGgraph/axestype.pm
+%%SITE_PERL%%/Chart/PNGgraph/bars.pm
+%%SITE_PERL%%/Chart/PNGgraph/lines.pm
+%%SITE_PERL%%/Chart/PNGgraph/linespoints.pm
+%%SITE_PERL%%/Chart/PNGgraph/mixed.pm
+%%SITE_PERL%%/Chart/PNGgraph/pie.pm
+%%SITE_PERL%%/Chart/PNGgraph/points.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart/PNGgraph/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart/PNGgraph
+@dirrm %%SITE_PERL%%/Chart/PNGgraph
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart > /dev/null 2>&1 || true
+@unexec rmdir %D/%%SITE_PERL%%/Chart > /dev/null 2>&1 || true

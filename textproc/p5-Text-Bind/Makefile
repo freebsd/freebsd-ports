@@ -18,6 +18,5 @@ COMMENT=	Bind Perl structures to text files
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::Bind.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

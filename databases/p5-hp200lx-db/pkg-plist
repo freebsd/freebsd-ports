@@ -1,16 +1,16 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HP200LX/DB/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/HP200LX/DB.pm
-lib/perl5/site_perl/%%PERL_VER%%/HP200LX/DB/adb.pm
-lib/perl5/site_perl/%%PERL_VER%%/HP200LX/DB/recurrence.pm
-lib/perl5/site_perl/%%PERL_VER%%/HP200LX/DB/tools.pm
-lib/perl5/site_perl/%%PERL_VER%%/HP200LX/DB/vpt.pm
-lib/perl5/site_perl/%%PERL_VER%%/HP200LX/DB/diag.pm
-lib/perl5/site_perl/%%PERL_VER%%/HP200LX/DBgui.pm
-lib/perl5/site_perl/%%PERL_VER%%/HP200LX/DBgui/card.pm
-lib/perl5/site_perl/%%PERL_VER%%/HP200LX/DBgui/list.pm
-lib/perl5/site_perl/%%PERL_VER%%/HP200LX/DBgui/vpt.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HP200LX/DB
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HP200LX
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/HP200LX/DB
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/HP200LX/DBgui
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/HP200LX
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HP200LX/DB/.packlist
+%%SITE_PERL%%/HP200LX/DB.pm
+%%SITE_PERL%%/HP200LX/DB/adb.pm
+%%SITE_PERL%%/HP200LX/DB/recurrence.pm
+%%SITE_PERL%%/HP200LX/DB/tools.pm
+%%SITE_PERL%%/HP200LX/DB/vpt.pm
+%%SITE_PERL%%/HP200LX/DB/diag.pm
+%%SITE_PERL%%/HP200LX/DBgui.pm
+%%SITE_PERL%%/HP200LX/DBgui/card.pm
+%%SITE_PERL%%/HP200LX/DBgui/list.pm
+%%SITE_PERL%%/HP200LX/DBgui/vpt.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HP200LX/DB
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HP200LX
+@dirrm %%SITE_PERL%%/HP200LX/DB
+@dirrm %%SITE_PERL%%/HP200LX/DBgui
+@dirrm %%SITE_PERL%%/HP200LX

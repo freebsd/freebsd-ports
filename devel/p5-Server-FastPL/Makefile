@@ -19,6 +19,5 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Server::FastPL.3 Server::FastPL::Client.3 \
 		Server::FastPL::Server.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -15,12 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Orthogonal Object Persistence in Relational Databases
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Set/Object.pm:${PORTSDIR}/devel/p5-Set-Object
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Set/Object.pm:${PORTSDIR}/devel/p5-Set-Object
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Tangram.3 Tangram::Array.3 Tangram::Core.3 Tangram::Cursor.3 \
 		Tangram::DateTime.3 Tangram::Deploy.3 Tangram::Dialect.3 \
 		Tangram::Expr.3 Tangram::FlatArray.3 Tangram::FlatHash.3 \

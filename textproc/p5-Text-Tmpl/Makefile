@@ -18,7 +18,6 @@ COMMENT=	Templating system perl library
 PERL_CONFIGURE=	yes
 
 MAN3=		template_syntax.3 Text::Tmpl.3 template_extend.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-patch:
 	@${PERL} -pi -e '/OPTIMIZE|libtmpl.pod/ and $$_=""' \

@@ -20,7 +20,6 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	"/usr"
 USE_OPENSSL=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::SSLeay.3 Net::SSLeay::Handle.3
 
 PLDIR=		${PREFIX}/share/examples/p5-Net-SSLeay

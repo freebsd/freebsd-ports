@@ -18,6 +18,5 @@ COMMENT=	Perl module for grouped data eg ACL's, city/state/country etc
 PERL_CONFIGURE=	yes
 
 MAN3=		Set::NestedGroups.3 Set::NestedGroups::Member.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

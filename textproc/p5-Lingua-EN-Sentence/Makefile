@@ -17,7 +17,6 @@ COMMENT=	Module for splitting text into sentences
 PERL_CONFIGURE=		yes
 
 MAN3=			Lingua::EN::Sentence.3
-MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-extract:
 	@${RM} -f ${WRKSRC}/lib/Lingua/EN/Sentence.pm~

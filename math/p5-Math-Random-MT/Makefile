@@ -18,6 +18,5 @@ COMMENT=	The Mersenne Twister PRNG
 PERL_CONFIGURE=	yes
 
 MAN3=		Math::Random::MT.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

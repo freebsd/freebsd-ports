@@ -1,38 +1,38 @@
 bin/SOAPsh.pl
 bin/XMLRPCsh.pl
 bin/stubmaker.pl
-lib/perl5/site_perl/%%PERL_VER%%/Apache/SOAP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/XMLRPC/Lite.pm
-lib/perl5/site_perl/%%PERL_VER%%/IO/SessionData.pm
-lib/perl5/site_perl/%%PERL_VER%%/IO/SessionSet.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Lite.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Test.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/FTP.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/HTTP.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/IO.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/JABBER.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/LOCAL.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/MAILTO.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/MQ.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/POP3.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/TCP.pm
-lib/perl5/site_perl/%%PERL_VER%%/UDDI/Lite.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Parser/Lite.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLRPC/Lite.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLRPC/Test.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLRPC/Transport/HTTP.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLRPC/Transport/POP3.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLRPC/Transport/TCP.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SOAP/Lite/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SOAP/Lite
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SOAP 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/XMLRPC
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/UDDI
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/XMLRPC/Transport
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/XMLRPC
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Apache 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/IO 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/SOAP 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML/Parser 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
+%%SITE_PERL%%/Apache/SOAP.pm
+%%SITE_PERL%%/Apache/XMLRPC/Lite.pm
+%%SITE_PERL%%/IO/SessionData.pm
+%%SITE_PERL%%/IO/SessionSet.pm
+%%SITE_PERL%%/SOAP/Lite.pm
+%%SITE_PERL%%/SOAP/Test.pm
+%%SITE_PERL%%/SOAP/Transport/FTP.pm
+%%SITE_PERL%%/SOAP/Transport/HTTP.pm
+%%SITE_PERL%%/SOAP/Transport/IO.pm
+%%SITE_PERL%%/SOAP/Transport/JABBER.pm
+%%SITE_PERL%%/SOAP/Transport/LOCAL.pm
+%%SITE_PERL%%/SOAP/Transport/MAILTO.pm
+%%SITE_PERL%%/SOAP/Transport/MQ.pm
+%%SITE_PERL%%/SOAP/Transport/POP3.pm
+%%SITE_PERL%%/SOAP/Transport/TCP.pm
+%%SITE_PERL%%/UDDI/Lite.pm
+%%SITE_PERL%%/XML/Parser/Lite.pm
+%%SITE_PERL%%/XMLRPC/Lite.pm
+%%SITE_PERL%%/XMLRPC/Test.pm
+%%SITE_PERL%%/XMLRPC/Transport/HTTP.pm
+%%SITE_PERL%%/XMLRPC/Transport/POP3.pm
+%%SITE_PERL%%/XMLRPC/Transport/TCP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Lite/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Lite
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Apache/XMLRPC
+@dirrm %%SITE_PERL%%/SOAP/Transport
+@dirrm %%SITE_PERL%%/UDDI
+@dirrm %%SITE_PERL%%/XMLRPC/Transport
+@dirrm %%SITE_PERL%%/XMLRPC
+@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/IO 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/SOAP 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML/Parser 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true

@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${PORTNAME}
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Convert a MySQL dump to a PostgreSQL dump
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 
 PATCH_WRKSRC=	${WRKDIR}
 USE_PERL5=	yes

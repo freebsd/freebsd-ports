@@ -18,6 +18,5 @@ COMMENT=	Yet another Perl module for template processing
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::SimpleTemplate.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

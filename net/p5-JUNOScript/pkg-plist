@@ -1,21 +1,21 @@
-lib/perl5/site_perl/%%PERL_VER%%/JUNOS/Access/stubs.pm
-lib/perl5/site_perl/%%PERL_VER%%/JUNOS/Access/ssl.pm
-lib/perl5/site_perl/%%PERL_VER%%/JUNOS/Access/xnm.pm
-lib/perl5/site_perl/%%PERL_VER%%/JUNOS/Access/clear_text.pm
-lib/perl5/site_perl/%%PERL_VER%%/JUNOS/Access/telnet.pm
-lib/perl5/site_perl/%%PERL_VER%%/JUNOS/Access/rsh.pm
-lib/perl5/site_perl/%%PERL_VER%%/JUNOS/Access/ssh.pm
-lib/perl5/site_perl/%%PERL_VER%%/JUNOS/Access.pm
-lib/perl5/site_perl/%%PERL_VER%%/JUNOS/5.3R2/jroute_methods.pl
-lib/perl5/site_perl/%%PERL_VER%%/JUNOS/5.3R2/jcrypto_methods.pl
-lib/perl5/site_perl/%%PERL_VER%%/JUNOS/5.3R2/jkernel_methods.pl
-lib/perl5/site_perl/%%PERL_VER%%/JUNOS/Methods.pm
-lib/perl5/site_perl/%%PERL_VER%%/JUNOS/DOM/Parser.pm
-lib/perl5/site_perl/%%PERL_VER%%/JUNOS/version.pm
-lib/perl5/site_perl/%%PERL_VER%%/JUNOS/Response.pm
-lib/perl5/site_perl/%%PERL_VER%%/JUNOS/Trace.pm
-lib/perl5/site_perl/%%PERL_VER%%/JUNOS/Device.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/JUNOS/5.3R2
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/JUNOS/Access
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/JUNOS/DOM
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/JUNOS
+%%SITE_PERL%%/JUNOS/Access/stubs.pm
+%%SITE_PERL%%/JUNOS/Access/ssl.pm
+%%SITE_PERL%%/JUNOS/Access/xnm.pm
+%%SITE_PERL%%/JUNOS/Access/clear_text.pm
+%%SITE_PERL%%/JUNOS/Access/telnet.pm
+%%SITE_PERL%%/JUNOS/Access/rsh.pm
+%%SITE_PERL%%/JUNOS/Access/ssh.pm
+%%SITE_PERL%%/JUNOS/Access.pm
+%%SITE_PERL%%/JUNOS/5.3R2/jroute_methods.pl
+%%SITE_PERL%%/JUNOS/5.3R2/jcrypto_methods.pl
+%%SITE_PERL%%/JUNOS/5.3R2/jkernel_methods.pl
+%%SITE_PERL%%/JUNOS/Methods.pm
+%%SITE_PERL%%/JUNOS/DOM/Parser.pm
+%%SITE_PERL%%/JUNOS/version.pm
+%%SITE_PERL%%/JUNOS/Response.pm
+%%SITE_PERL%%/JUNOS/Trace.pm
+%%SITE_PERL%%/JUNOS/Device.pm
+@dirrm %%SITE_PERL%%/JUNOS/5.3R2
+@dirrm %%SITE_PERL%%/JUNOS/Access
+@dirrm %%SITE_PERL%%/JUNOS/DOM
+@dirrm %%SITE_PERL%%/JUNOS

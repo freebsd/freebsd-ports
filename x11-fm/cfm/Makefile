@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.rpi.edu/~mullr/cfm/dist/
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Quick Perl/Tk file manager with support for regular expressions
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 
 NO_BUILD=	yes
 USE_PERL5=	yes

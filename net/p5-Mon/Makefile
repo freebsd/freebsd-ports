@@ -18,7 +18,6 @@ COMMENT=	A perl module that supports mon, a network and system monitoring daemon
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Mon::SNMP.3 \
 		Mon::Client.3 \
 		Mon::Protocol.3

@@ -24,7 +24,6 @@ MAN3=		Text::Query.3 Text::Query::Build.3 \
 		Text::Query::ParseSimple.3 Text::Query::Solve.3 \
 		Text::Query::SolveAdvancedString.3 \
 		Text::Query::SolveSimpleString.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-patch:
 	@${PERL} -pi -e 's/factor\(\$$self\)/\&factor(\$$self)/' \

@@ -1,47 +1,47 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Atoms.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/CListModel.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/ColorSelectButton.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Keysyms.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/Files.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/GdkTypes.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/GtkDefs.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/GtkTypemap
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/GtkTypes.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/MiscTypes.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/PerlGtkExt.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/PerlGtkInt.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/gendefs.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/gendoc.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/genext.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/gpdoc2pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/gtk-0.99.defs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/gtk-0.99.typemap
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/gtk-1.0.defs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/gtk-1.1.1.defs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/gtk-1.1.3.defs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/gtk-1.1.4.defs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/gtk-1.1.6.defs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/gtk-1.1.defs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/gtk-1.2.defs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/gtk-1.2.typemap
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/ppport.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/LWP.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/LWP/http.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/LogHandler.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Types.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/TypesLazy.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/io.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/lazy.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gtk.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gtk.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/base/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/LWP
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/base
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Atoms.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/CListModel.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/ColorSelectButton.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Gdk.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Keysyms.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/GdkTypes.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/GtkDefs.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/GtkTypemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/GtkTypes.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/MiscTypes.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/PerlGtkExt.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/PerlGtkInt.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/gendefs.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/gendoc.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/genext.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/gpdoc2pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/gtk-0.99.defs
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/gtk-0.99.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/gtk-1.0.defs
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/gtk-1.1.1.defs
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/gtk-1.1.3.defs
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/gtk-1.1.4.defs
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/gtk-1.1.6.defs
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/gtk-1.1.defs
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/gtk-1.2.defs
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/gtk-1.2.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install/ppport.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/LWP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/LWP/http.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/LogHandler.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Types.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/TypesLazy.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/io.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/lazy.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/Gdk/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/Gtk.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/Gtk.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/base/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk/LWP
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/base
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/Gdk
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk

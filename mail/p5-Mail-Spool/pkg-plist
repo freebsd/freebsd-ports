@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Spool.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Spool/Handle.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Spool/Node.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Spool/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Spool
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Spool
+%%SITE_PERL%%/Mail/Spool.pm
+%%SITE_PERL%%/Mail/Spool/Handle.pm
+%%SITE_PERL%%/Mail/Spool/Node.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Spool/.packlist
+@dirrm %%SITE_PERL%%/Mail/Spool
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Spool

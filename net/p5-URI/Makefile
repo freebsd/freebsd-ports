@@ -17,7 +17,6 @@ COMMENT=	Perl5 interface to Uniform Resource Identifier (URI) references
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		URI.3 \
 		URI::Escape.3 \
 		URI::Heuristic.3 \

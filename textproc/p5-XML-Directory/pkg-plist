@@ -1,11 +1,11 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Directory/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/XML/Directory.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Directory.pod
-lib/perl5/site_perl/%%PERL_VER%%/XML/Directory/Apache.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Directory/Exception.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Directory/SAX.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Directory/String.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/Directory
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Directory
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Directory/.packlist
+%%SITE_PERL%%/XML/Directory.pm
+%%SITE_PERL%%/XML/Directory.pod
+%%SITE_PERL%%/XML/Directory/Apache.pm
+%%SITE_PERL%%/XML/Directory/Exception.pm
+%%SITE_PERL%%/XML/Directory/SAX.pm
+%%SITE_PERL%%/XML/Directory/String.pm
+@dirrm %%SITE_PERL%%/XML/Directory
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Directory
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true

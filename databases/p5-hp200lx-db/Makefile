@@ -18,6 +18,5 @@ COMMENT=	Perl5 module to handle HP 200LX palmtop computer databases
 PERL_CONFIGURE=	yes
 
 MAN3=		HP200LX::DB.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

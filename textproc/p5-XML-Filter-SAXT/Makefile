@@ -18,6 +18,5 @@ COMMENT=	Replicates SAX events to several SAX event handlers
 PERL_CONFIGURE=	yes
 
 MAN3=		XML::Filter::SAXT.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

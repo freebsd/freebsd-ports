@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment/PaymentsGateway.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/PaymentsGateway/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/PaymentsGateway/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/PaymentsGateway
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/PaymentsGateway
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment 2>/dev/null || true
+%%SITE_PERL%%/Business/OnlinePayment/PaymentsGateway.pm
+%%SITE_PERL%%/auto/Business/OnlinePayment/PaymentsGateway/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/PaymentsGateway/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/PaymentsGateway
+@dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/PaymentsGateway
+@unexec rmdir %D/%%SITE_PERL%%/Business/OnlinePayment 2>/dev/null || true

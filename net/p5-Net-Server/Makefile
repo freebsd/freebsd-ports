@@ -18,7 +18,6 @@ COMMENT=	A configurable base class for writing internet servers in Perl
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::Server.3 \
 		Net::Server::Daemonize.3\
 		Net::Server::Fork.3 \

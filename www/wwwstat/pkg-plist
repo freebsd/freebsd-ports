@@ -3,6 +3,6 @@ bin/oldlog2new
 bin/splitlog
 bin/wwwerrs
 bin/wwwstat
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/domains.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/splitlog.rc
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/wwwstat.rc
+%%SITE_PERL%%/%%PERL_ARCH%%/domains.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/splitlog.rc
+%%SITE_PERL%%/%%PERL_ARCH%%/wwwstat.rc

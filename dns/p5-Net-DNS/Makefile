@@ -21,7 +21,6 @@ RUN_DEPENDS=	${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=--pm
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::Question.3 Net::DNS::RR.3 Net::DNS::RR::A.3 \

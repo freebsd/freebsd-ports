@@ -1,31 +1,31 @@
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool.pod
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/BigPicture.pod
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command.pod
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/Exception.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/Exception.pod
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/Execute.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/Execute.pod
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/NoFailoverException.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/NoFailoverException.pod
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/ExtensionGuide.pod
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory.pod
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer.pod
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer/FailOver.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer/FailBack.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer/FallBack.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer/LeastUsage.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer/RoundRobin.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource.pod
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Singleton.pm
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Singleton.pod
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/UML.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/ResourcePool/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/ResourcePool
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool
+%%SITE_PERL%%/ResourcePool.pm
+%%SITE_PERL%%/ResourcePool.pod
+%%SITE_PERL%%/ResourcePool/BigPicture.pod
+%%SITE_PERL%%/ResourcePool/Command.pm
+%%SITE_PERL%%/ResourcePool/Command.pod
+%%SITE_PERL%%/ResourcePool/Command/Exception.pm
+%%SITE_PERL%%/ResourcePool/Command/Exception.pod
+%%SITE_PERL%%/ResourcePool/Command/Execute.pm
+%%SITE_PERL%%/ResourcePool/Command/Execute.pod
+%%SITE_PERL%%/ResourcePool/Command/NoFailoverException.pm
+%%SITE_PERL%%/ResourcePool/Command/NoFailoverException.pod
+%%SITE_PERL%%/ResourcePool/ExtensionGuide.pod
+%%SITE_PERL%%/ResourcePool/Factory.pm
+%%SITE_PERL%%/ResourcePool/Factory.pod
+%%SITE_PERL%%/ResourcePool/LoadBalancer.pm
+%%SITE_PERL%%/ResourcePool/LoadBalancer.pod
+%%SITE_PERL%%/ResourcePool/LoadBalancer/FailOver.pm
+%%SITE_PERL%%/ResourcePool/LoadBalancer/FailBack.pm
+%%SITE_PERL%%/ResourcePool/LoadBalancer/FallBack.pm
+%%SITE_PERL%%/ResourcePool/LoadBalancer/LeastUsage.pm
+%%SITE_PERL%%/ResourcePool/LoadBalancer/RoundRobin.pm
+%%SITE_PERL%%/ResourcePool/Resource.pm
+%%SITE_PERL%%/ResourcePool/Resource.pod
+%%SITE_PERL%%/ResourcePool/Singleton.pm
+%%SITE_PERL%%/ResourcePool/Singleton.pod
+%%SITE_PERL%%/ResourcePool/UML.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool
+@dirrm %%SITE_PERL%%/ResourcePool/LoadBalancer
+@dirrm %%SITE_PERL%%/ResourcePool/Command
+@dirrm %%SITE_PERL%%/ResourcePool

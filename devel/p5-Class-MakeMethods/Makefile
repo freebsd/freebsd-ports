@@ -65,6 +65,5 @@ MAN3=		Class::MakeMethods.3 \
 		Class::MakeMethods::Utility::ArraySplicer.3 \
 		Class::MakeMethods::Utility::Inheritable.3 \
 		Class::MakeMethods::Utility::Ref.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

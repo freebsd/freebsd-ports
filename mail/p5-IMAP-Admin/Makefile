@@ -17,7 +17,6 @@ COMMENT=	Perl module for basic IMAP server administration
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		IMAP::Admin.3
 
 post-install:

@@ -16,7 +16,7 @@ DISTNAME=	libxml-perl-${PORTVERSION}
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	Collection of Perl5 modules for working with XML
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
@@ -29,6 +29,5 @@ MAN3=		Data::Grove.3 Data::Grove::Parent.3 Data::Grove::Visitor.3 \
 		XML::PatAct::MatchName.3 XML::PatAct::PatternTempl.3 \
 		XML::PatAct::ToObjects.3 XML::Perl2SAX.3 XML::SAX2Perl.3
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

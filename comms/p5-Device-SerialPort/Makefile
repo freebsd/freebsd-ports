@@ -18,7 +18,6 @@ COMMENT=	A perl5 module for simple serial port control
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Device::SerialPort.3
 
 .include <bsd.port.pre.mk>

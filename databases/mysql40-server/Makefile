@@ -100,7 +100,7 @@ CXXFLAGS+=	-fno-exceptions
 USE_PERL5_RUN=	yes
 
 RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql40-client \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+		${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 
 PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
 

@@ -18,7 +18,6 @@ COMMENT=	Design-by-Contract OO in Perl
 PERL_CONFIGURE=	yes
 PLIST_SUB+=	EXAMPLESDIR="share/examples/${PORTNAME}"
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Class::Contract.3 Class::Contract::Production.3
 
 post-patch:
