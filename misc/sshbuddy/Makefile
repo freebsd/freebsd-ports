@@ -6,10 +6,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	sshbuddy1.02
-PKGNAME=	sshbuddy-1.02
+DISTNAME=	sshbuddy1.05
+PKGNAME=	sshbuddy-1.05
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.sundilla.net/pub/linux/apps/sshbuddy/beta1.02/
+MASTER_SITES=	ftp://ftp.sundilla.net/pub/linux/apps/sshbuddy/beta1.05/
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	dan@freebsd.org
@@ -17,7 +17,7 @@ MAINTAINER=	dan@freebsd.org
 RUN_DEPENDS=	expectk:${PORTSDIR}/lang/expect
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/beta1.02
+WRKSRC=		${WRKDIR}/beta1.05
 
 do-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/sshbuddy.expk ${PREFIX}/bin/sshbuddy
