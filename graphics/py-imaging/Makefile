@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.pythonware.com/downloads/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Imaging-${PORTVERSION}
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	mainland@apeiron.net
 COMMENT=	The Python Imaging Library
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
