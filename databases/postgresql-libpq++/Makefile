@@ -9,6 +9,7 @@ PORTNAME=	libpq++
 PORTVERSION=	4.0
 CATEGORIES=	databases
 MASTER_SITES=	ftp://gborg.postgresql.org/pub/libpqpp/stable/
+PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	postgresql
 
 MAINTAINER=	girgen@pingpong.net
