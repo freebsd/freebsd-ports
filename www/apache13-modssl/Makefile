@@ -51,8 +51,6 @@ MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/mod_ssl/source,}
 MODSSL_FILE=	mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}
 MODSNMP_FILE=	mod_snmp_${VERSION_MODSNMP}${EXTRACT_SUFX}
-MODACCEL_FILE=	mod_accel-${VERSION_MODACCEL}${EXTRACT_SUFX}
-MODDEFLATE_FILE=	mod_deflate-${VERSION_MODDEFLATE}${EXTRACT_SUFX}
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 .if !defined(WITHOUT_RC_SUBR)
@@ -190,6 +188,7 @@ CONFLICTS+=	apache+mod_snmp*-1.*
 .endif
 
 .if defined(APACHE_WITH_MODACCEL) || make(makesum) || defined(FETCH_ALL)
+MODACCEL_FILE=	mod_accel-${VERSION_MODACCEL}${EXTRACT_SUFX}
 MODACCEL_DISTFILE=	${MODACCEL_FILE}:mod_accel
 .endif
 .if defined(APACHE_WITH_MODACCEL)
@@ -219,6 +218,7 @@ CONFLICTS+=	apache+mod_accel*-1.*
 .endif
 
 .if defined(APACHE_WITH_MODDEFLATE) || make(makesum) || defined(FETCH_ALL)
+MODDEFLATE_FILE=	mod_deflate-${VERSION_MODDEFLATE}${EXTRACT_SUFX}
 MODDEFLATE_DISTFILE=	${MODDEFLATE_FILE}:mod_deflate
 .endif
 .if defined(APACHE_WITH_MODDEFLATE)
