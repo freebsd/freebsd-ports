@@ -5376,6 +5376,7 @@ p5-Mysql	ports/databases/p5-Mysql
 p5-NNTPClient	ports/news/p5-NNTPClient
 p5-Net		ports/net/p5-Net
 p5-Net-AOLIM	ports/net/p5-Net-AOLIM
+p5-Net-BGP4	ports/net/p5-Net-BGP4
 p5-Net-CIDR	ports/net/p5-Net-CIDR
 p5-Net-DLookup	ports/net/p5-Net-DLookup
 p5-Net-DNS	ports/net/p5-Net-DNS
