@@ -20,6 +20,8 @@ COMMENT=	I18N Gnus using SEMI, which provides MIME capabilities
 BUILD_DEPENDS=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MIMEUI_PORT_NAME}
 RUN_DEPENDS=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MIMEUI_PORT_NAME}
 
+BROKEN=		Removes files installed by another port
+
 USE_AUTOCONF_VER=	213
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
