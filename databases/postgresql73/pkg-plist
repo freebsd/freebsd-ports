@@ -11,7 +11,6 @@ pgsql/bin/pg_dumpall
 pgsql/bin/pg_id
 pgsql/bin/pg_version
 pgsql/bin/postgres
-pgsql/bin/postmaster
 pgsql/bin/psql
 pgsql/data/PG_VERSION
 pgsql/data/base/template1/PG_VERSION
@@ -75,7 +74,6 @@ pgsql/include/utils/geo_decls.h
 pgsql/include/utils/palloc.h
 pgsql/lib/global1.bki.source
 pgsql/lib/libpq.a
-pgsql/lib/libpq.so
 pgsql/lib/libpq.so.1.0
 pgsql/lib/local1_template1.bki.source
 pgsql/lib/pg_geqo.sample
