@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	dadadodo
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.jwz.org/dadadodo/
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	Text processor which analyses text and generates random sentences
 
 USE_REINPLACE=	yes
 
 pre-patch:
-	${REINPLACE_CMD} -e "s/^(CC|CFLAGS).+//" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -E "s/^(CC|CFLAGS).+//" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dadadodo ${PREFIX}/bin
