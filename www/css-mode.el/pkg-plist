@@ -1,0 +1,4 @@
+%%ELISP_SUBDIR%%/css-mode.el
+%%XELISP_SUBDIR%%/css-mode.el
+%%CSSMODE_DOCDIR%%/css-mode-doc.html
+@dirrm %%CSSMODE_DOCDIR%%
