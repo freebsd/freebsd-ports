@@ -10,12 +10,16 @@ DISTNAME=	jade-1.2.1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/
 
+PATCH_SITES=	http://ftp.debian.org/debian/dists/unstable/main/source/text/
+PATCHFILES=	jade_1.2.1-13.diff.gz
+
 MAINTAINER=	jfieber@FreeBSD.org
 
 .if ${MACHINE_ARCH} == "alpha"
 BROKEN=		nsgmls coredumps in static constructors
 .endif
 
+PATCH_DIST_STRIP?=	-p1
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
 
