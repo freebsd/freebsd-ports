@@ -23,6 +23,7 @@
     SUBDIR += enjoympeg
     SUBDIR += ffmpeg
     SUBDIR += fxtv
+    SUBDIR += gaim-xmms-remote
     SUBDIR += gavl
     SUBDIR += gmencoder
     SUBDIR += goggles
