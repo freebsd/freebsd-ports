@@ -14,6 +14,8 @@ MASTER_SITES=	http://download.yahoo.com/dl/unix/
 DISTNAME=	fbsd4.${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
+BROKEN=		"Dumps core immediately when invoked on 5.x"
+
 MAINTAINER=	sethk@meowfishies.com
 COMMENT=	Yahoo! Messenger - Instant messaging client
 
