@@ -4,8 +4,8 @@ Mule (MULtilingual Emacs), and Demacs (DOS version of Emacs18/NEmacs).
 
 Check <URL:http://skk.kuis.kyoto-u.ac.jp/skk/> also, Home Page of SKK.
 
-When you select 'skkserv' as a conversion server, add
-
-	skkserv		1178/tcp
-
-to your /etc/services (or 'services' NIS database).
+This package does not contain anything by itself -- it is a "meta-port"
+that depends on other SKK packages (skkserv, skk-elisp, skk-jisyo,
+and skk-tools). Its sole purpose is to require dependencies so users can
+install this package only and have all the SKK stuff pulled in by the
+port/package dependency mechanism.

@@ -3,43 +3,32 @@
 # Date created:		04 Mar 1997
 # Whom:			Makoto Matsushita <matusita@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.9 1997/09/14 21:36:00 max Exp $
+# $Id: Makefile,v 1.10 1998/11/15 12:21:55 kuriyama Exp $
 #
 
 DISTNAME=	skk9.6
 PKGNAME=	ja-skk-9.6
 CATEGORIES=	japanese elisp
-MASTER_SITES=	ftp://skk.kuis.kyoto-u.ac.jp/skk/9.6/
+MASTER_SITES=	# empty
+DISTFILES=	# empty
 
 MAINTAINER=	matusita@jp.freebsd.org
 
-# Don't RUN_DEPENDS on mule because we don't know which version the
-# user would want.  We can't omit the BUILD_DEPENDS because it needs
-# to byte-compile .el files.
-BUILD_DEPENDS=	mule:${PORTSDIR}/editors/mule
+SKKJISYO_SIZE?=	L
+SKKJISYO?=	SKK-JISYO.${SKKJISYO_SIZE}
+PORT_SKK_JISYO=	${.CURDIR}/../../japanese/skk-jisyo
+PORT_SKK_TOOLS=	${.CURDIR}/../../japanese/skk-tools
+PORT_SKK_ELISP=	${.CURDIR}/../../japanese/skk-elisp
+PORT_SKK_SERV=	${.CURDIR}/../../japanese/skkserv
 
-WRKSRC=		${WRKDIR}/skk-9.6
-GNU_CONFIGURE=	yes
+RUN_DEPENDS=	${PREFIX}/share/skk/${SKKJISYO}:${PORT_SKK_JISYO} \
+		${PREFIX}/bin/skkdic-count:${PORT_SKK_TOOLS} \
+		${PREFIX}/share/mule/site-lisp/skk/skk.el:${PORT_SKK_ELISP} \
+		${PREFIX}/sbin/skkserv:${PORT_SKK_SERV}
 
-MAKE_FLAGS+=	EMACS=mule
+EXTRACT_ONLY=	# empty
+NO_BUILD=	yes
 
-STARTUP_SCRIPT= ${PREFIX}/etc/rc.d/skkserv.sh
-
-post-install:
-	@if [ ! -f ${STARTUP_SCRIPT} ]; then \
-		echo "Installing ${STARTUP_SCRIPT} file."; \
-		echo "#!/bin/sh" > ${STARTUP_SCRIPT}; \
-		echo "if [ -f ${PREFIX}/libexec/skkserv ]; then" >> \
-			${STARTUP_SCRIPT}; \
-		echo "  echo -n ' skkserv'; ${PREFIX}/libexec/skkserv" >> \
-			${STARTUP_SCRIPT}; \
-		echo "fi" >> ${STARTUP_SCRIPT}; \
-		chmod 755 ${STARTUP_SCRIPT}; \
-	fi
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-	  sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
-# Our makeinfo can't handle files with Japanese characters. :<
-	install-info --section="The Emacs editor and associated tools" --entry="* Skk: (skk.info).		Yet another Japanese Inputting Method. (Japanese)" ${PREFIX}/info/skk.info ${PREFIX}/info/dir
+do-install:	# empty
 
 .include <bsd.port.mk>
