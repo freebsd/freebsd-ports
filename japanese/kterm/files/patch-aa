@@ -1,11 +1,29 @@
---- ./Imakefile.org	Thu Jul 11 22:01:04 1996
-+++ ./Imakefile	Fri Nov  1 05:32:20 1996
-@@ -80,7 +80,7 @@
+--- Imakefile.orig	Sun Dec 13 16:59:08 1998
++++ Imakefile	Sun Dec 13 17:37:16 1998
+@@ -13,6 +13,17 @@
+       XPOLL_DEF = -DNO_XPOLL_H
+ #endif
+ 
++#ifdef USE_XAW3DLIB
++#undef XawClientLibs
++#define XawClientLibs	-lXaw3d $(XMULIB) $(XTOOLLIB) $(XLIB)
++#endif
++
++#ifdef USE_NEXTAWLIB
++#undef XawClientLibs
++#define XawClientLibs	-lneXtaw $(XMULIB) $(XTOOLLIB) $(XLIB)
++#endif
++
++
+ /*
+  * add -DWTMP and -DLASTLOG if you want them.
+  */
+@@ -81,7 +90,7 @@
  SpecialCObjectRule(charproc,$(_NOOP_),$(MISC_DEFINES))
  
  #if InstallXtermSetUID
--SetUIDProgramTarget(kterm,$(OBJS1),$(DEPLIBS1),XkbClientLibs XawClientLibs,$(TERMCAPLIB) $(PTYLIB))
-+SetUIDProgramTarget(kterm,$(OBJS1),$(DEPLIBS1),XkbClientLibs XawClientLibs,$(TERMCAPLIB) $(PTYLIB) -lxpg4)
+-SetUIDProgramTarget(kterm,$(OBJS1),$(DEPLIBS1),XkbClientLibs XawClientLibs,$(XPMLIB) $(TERMCAPLIB) $(PTYLIB))
++SetUIDProgramTarget(kterm,$(OBJS1),$(DEPLIBS1),XkbClientLibs XawClientLibs,$(XPMLIB) $(TERMCAPLIB) $(PTYLIB) -lxpg4)
  #else
- NormalProgramTarget(kterm,$(OBJS1),$(DEPLIBS1),XkbClientLibs XawClientLibs,$(TERMCAPLIB) $(PTYLIB))
+ NormalProgramTarget(kterm,$(OBJS1),$(DEPLIBS1),XkbClientLibs XawClientLibs,$(XPMLIB) $(TERMCAPLIB) $(PTYLIB))
  #endif

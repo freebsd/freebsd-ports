@@ -1,3 +1,6 @@
 bin/kterm
 lib/X11/app-defaults/KTerm
-man/man1/kterm.1.gz
+man/ja/man1/kterm.1.gz
+share/doc/kterm/README.kt
+share/doc/kterm/README.wallpaper.ja
+@dirrm share/doc/kterm
