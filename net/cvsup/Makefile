@@ -3,7 +3,7 @@
 # Date created:		7 August 1996
 # Whom:			asami
 #
-# $Id: Makefile,v 1.26 1998/07/07 03:22:18 jdp Exp $
+# $Id: Makefile,v 1.27 1998/09/18 01:01:55 jdp Exp $
 #
 
 DISTNAME=	cvsup-15.4.2
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/CVSup/ \
 		ftp://ftp.polstra.com/pub/FreeBSD/CVSup/
 
 MAINTAINER=	jdp@FreeBSD.org
+
+BROKEN_ELF=	depends on mulda-3
 
 BUILD_DEPENDS=	m3build-6:${PORTSDIR}/lang/modula-3
 LIB_DEPENDS=	m3.6:${PORTSDIR}/lang/modula-3-lib
