@@ -8,7 +8,7 @@
 +#if __FreeBSD__ >= 2
 +#include <osreldate.h>
 +#endif
-+#if __FreeBSD_version >= 199702
++#if __FreeBSD_version >= 300000
 +#include <net/if_var.h>
 +#endif
 +#endif /*__FreeBSD__*/
