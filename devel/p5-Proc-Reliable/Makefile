@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Proc-Reliable
-PORTVERSION=	1.10
+PORTVERSION=	1.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Proc
@@ -18,6 +18,5 @@ COMMENT=	Run external processes reliably with many options
 PERL_CONFIGURE=	yes
 
 MAN3=		Proc::Reliable.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
