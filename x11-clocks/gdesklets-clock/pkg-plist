@@ -11,7 +11,6 @@ share/gnome/gdesklets/Displays/Clock/osXclock.display
 share/gnome/gdesklets/Displays/Clock/plainclock.display
 share/gnome/gdesklets/Displays/Clock/pocket-watch.display
 share/gnome/gdesklets/Displays/Clock/rafclock.display
-share/gnome/gdesklets/Sensors/Clock/ChangeLog
 share/gnome/gdesklets/Sensors/Clock/README
 share/gnome/gdesklets/Sensors/Clock/__init__.py
 share/gnome/gdesklets/Sensors/Clock/locale/de/LC_MESSAGES/gdesklets.mo
