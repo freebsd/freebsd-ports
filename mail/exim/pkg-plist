@@ -27,6 +27,7 @@ sbin/exiqsumm
 %%PORTDOCS%%share/doc/exim/pcre.txt
 %%PORTDOCS%%share/doc/exim/pcretest.txt
 %%PORTDOCS%%share/doc/exim/spec.txt
+%%PORTDOCS%%%%EXISCAN%%share/doc/exim/exiscan-readme.txt
 @unexec install-info --delete %D/info/exim.info %D/info/dir
 @unexec install-info --delete %D/info/exim_filter.info %D/info/dir
 @exec install-info --section="Exim" --entry "* Exim Specification: (exim).       Exim manual" %D/info/exim.info %D/info/dir

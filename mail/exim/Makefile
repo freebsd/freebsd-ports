@@ -7,27 +7,35 @@
 
 PORTNAME=	exim
 PORTVERSION=	${EXIM_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim4/ \
 		http://www.exim.org/ftp/exim4/ \
 		ftp://ftp.is.co.za/networking/mail/transport/exim/exim4/
+.if !defined(WITHOUT_EXISCAN)
+MASTER_SITES+=	http://duncanthrax.net/exiscan/
+.endif
 DISTFILES=	exim-${EXIM_VERSION}.tar.bz2 \
 		exim-texinfo-${EXIM_DOCVERSION}.tar.bz2
+.if !defined(WITHOUT_EXISCAN)
+DISTFILES+=	exiscan-${EXISCAN_VERSION}.tar.gz
+EXTRACT_ONLY=	exim-${EXIM_VERSION}.tar.bz2 \
+		exim-texinfo-${EXIM_DOCVERSION}.tar.bz2
+.endif
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
 USE_BZIP2=	yes
-
 MAN8=		exim.8
 
 EXIM_VERSION=	4.10
 EXIM_DOCVERSION=	4.10
+EXISCAN_VERSION=	4.10-15
 
 PLIST_SUB+=     EXIM_VERSION="${EXIM_VERSION}"
 
 .if defined(NOPORTDOCS)
-PKGMESSAGE=	${FILESDIR}/POST-INSTALL-NOTES
+PKGMESSAGE=	${WRKDIR}/POST-INSTALL-NOTES
 .endif
 
 MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
@@ -36,6 +44,10 @@ MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 # will be made a dependency.  Note that using WITH_EXIMON will cause
 # XFree86 to be installed if it is not present.
 #WITH_EXIMON=	yes
+
+# If WITHOUT_EXISCAN is defined, exim will be built without exiscan
+# email content scanner support.
+#WITHOUT_EXISCAN=	yes
 
 # Define WITH_TCP_WRAPPERS, WITH_LDAP, WITH_MYSQL, and WITH_PGSQL to
 # link against libwrap, an LDAP library (see below), liblibmysqlclient
@@ -101,8 +113,14 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/eximon:${PORTSDIR}/mail/exim-monitor
 .include <bsd.port.pre.mk>
 
 PORTDOC_FILES=	Exim3.upgrade Exim4.upgrade OptionLists.txt README \
-		dbm.discuss.txt exim.8 filter.txt pcre.txt pcretest.txt \
+		dbm.discuss.txt filter.txt pcre.txt pcretest.txt \
 		spec.txt
+.if !defined(WITHOUT_EXISCAN)
+PORTDOC_FILES+=	exiscan-readme.txt
+PLIST_SUB+=             EXISCAN=""
+.else
+PLIST_SUB+=             EXISCAN="@comment "
+.endif
 
 .if ${OSVERSION} < 400014
 WITHOUT_IPV6=	yes
@@ -166,7 +184,7 @@ SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
 .if defined(WITH_PWCHECK)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
 SEDLIST+=	-e 's,^\# SUPPORT_CYRUS_PWCHECK=,SUPPORT_CYRUS_PWCHECK=,' \
-		-e 's,^\# CYRUS_PWCHECK_SOCKET=,CYRUS_PWCHECK_SOCKET=,' 
+		-e 's,^\# CYRUS_PWCHECK_SOCKET=,CYRUS_PWCHECK_SOCKET=,'
 .endif
 
 .if !defined(WITHOUT_PAM)
@@ -223,6 +241,22 @@ SEDLIST+=	-e 's,^\# LOOKUP_CDB=,LOOKUP_CDB=,'
 SEDLIST+=	-e 's,^\# TRANSPORT_LMTP=,TRANSPORT_LMTP=,'
 .endif
 
+post-extract:
+.if !defined(WITHOUT_EXISCAN)
+	cd ${WRKDIR} && ${TAR} -xzf ${DISTDIR}/exiscan-${EXISCAN_VERSION}.tar.gz
+.endif
+
+post-patch:
+.if !defined(WITHOUT_EXISCAN)
+	cd ${WRKSRC} && ${PATCH} -p1 \
+	    < ../exiscan-${EXISCAN_VERSION}/exiscan-${EXISCAN_VERSION}.patch \
+	    > ${WRKDIR}/patch-exiscan.log 2>&1
+	@${CAT} ${FILESDIR}/POST-INSTALL-NOTES.exiscan \
+	    ${FILESDIR}/POST-INSTALL-NOTES > ${WRKDIR}/POST-INSTALL-NOTES
+.else
+	@${CAT} ${FILESDIR}/POST-INSTALL-NOTES > ${WRKDIR}/POST-INSTALL-NOTES
+.endif
+
 do-configure:
 	${MKDIR} ${WRKSRC}/Local
 	${SED} ${SEDLIST} < ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
@@ -238,7 +272,7 @@ post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/exim.sh ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/exim
-	${INSTALL_DATA} ${FILESDIR}/POST-INSTALL-NOTES ${PREFIX}/share/doc/exim
+	${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES ${PREFIX}/share/doc/exim
 .for file in ${PORTDOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/exim
 .endfor
