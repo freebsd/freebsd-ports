@@ -228,6 +228,7 @@
     SUBDIR += libgksuui
     SUBDIR += libretto-config
     SUBDIR += libutempter
+    SUBDIR += lineak_defaultplugin
     SUBDIR += lineakd
     SUBDIR += linneighborhood
     SUBDIR += linux-acu
