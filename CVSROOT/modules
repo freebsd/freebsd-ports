@@ -6126,6 +6126,7 @@ p5-HTTP-BrowserDetect	ports/www/p5-HTTP-BrowserDetect
 p5-HTTP-DAV	ports/www/p5-HTTP-DAV
 p5-HTTP-GHTTP	ports/www/p5-HTTP-GHTTP
 p5-HTTP-Lite	ports/www/p5-HTTP-Lite
+p5-HTTP-MHTTP	ports/www/p5-HTTP-MHTTP
 p5-HTTP-MobileAgent	ports/www/p5-HTTP-MobileAgent
 p5-HTTP-WebTest	ports/www/p5-HTTP-WebTest
 p5-HTTPD-Log-Filter	ports/www/p5-HTTPD-Log-Filter
