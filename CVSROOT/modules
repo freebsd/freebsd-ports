@@ -4825,6 +4825,7 @@ p5-WWW-Search	ports/www/p5-WWW-Search
 p5-WWW-Search-AltaVista	ports/www/p5-WWW-Search-AltaVista
 p5-WWW-Search-Google	ports/www/p5-WWW-Search-Google
 p5-X11-Protocol	ports/x11/p5-X11-Protocol
+p5-XML-Catalog	ports/textproc/p5-XML-Catalog
 p5-XML-DOM	ports/textproc/p5-XML-DOM
 p5-XML-DT	ports/textproc/p5-XML-DT
 p5-XML-Directory	ports/textproc/p5-XML-Directory
