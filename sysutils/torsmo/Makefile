@@ -26,10 +26,6 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not build, use statvfs interface which is only present on FreeBSD 5.0 or newer
-.endif
-
 post-extract:
 	@${CP} ${FILESDIR}/freebsd.c ${WRKSRC}
 
