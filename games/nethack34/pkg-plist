@@ -1,9 +1,9 @@
 bin/nethack
 lib/nethackdir/nethack
 @exec mkdir %D/lib/nethackdir/save
-@exec chmod 775 %D/lib/nethackdir/save
+@exec chmod -R 775 %D/lib/nethackdir
 @exec chown games.games %D/lib/nethackdir/save
-@unexec rmdir %D/lib/nethackdir/save
+@unexec rm -rf %D/lib/nethackdir/save
 man/man6/dgn_comp.6.gz
 man/man6/dlb.6.gz
 man/man6/lev_comp.6.gz
@@ -92,7 +92,6 @@ lib/nethackdir/history
 lib/nethackdir/juiblex.lev
 lib/nethackdir/knox.lev
 lib/nethackdir/license
-lib/nethackdir/logfile
 lib/nethackdir/medusa-1.lev
 lib/nethackdir/medusa-2.lev
 lib/nethackdir/minefill.lev
@@ -105,9 +104,7 @@ lib/nethackdir/options
 lib/nethackdir/oracle.lev
 lib/nethackdir/oracles
 lib/nethackdir/orcus.lev
-lib/nethackdir/perm
 lib/nethackdir/quest.dat
-lib/nethackdir/record
 lib/nethackdir/rumors
 lib/nethackdir/sanctum.lev
 lib/nethackdir/tower1.lev
@@ -119,3 +116,8 @@ lib/nethackdir/wizard1.lev
 lib/nethackdir/wizard2.lev
 lib/nethackdir/wizard3.lev
 lib/nethackdir/wizhelp
+@mode 664
+lib/nethackdir/logfile
+lib/nethackdir/record
+lib/nethackdir/perm
+@dirrm lib/nethackdir
