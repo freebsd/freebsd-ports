@@ -3,7 +3,7 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.9 1997/09/14 02:55:16 jfitz Exp $
+#   $Id: Makefile,v 1.10 1997/09/18 02:47:42 jfitz Exp $
 #
 
 DISTNAME=	PGP-0.3a
@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	PGP
 MAINTAINER=	jfitz@FreeBSD.ORG
 
 BUILD_DEPENDS= 	pgp:${PORTSDIR}/security/pgp
+
+BROKEN=		perl5 upgrade
 
 USE_PERL5=	YES
 

@@ -3,7 +3,7 @@
 # Date created:				April 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.8 1998/01/25 16:33:23 steve Exp $
+#   $Id: Makefile,v 1.9 1998/06/27 01:30:25 steve Exp $
 #
 
 DISTNAME=	mod_perl-1.07
@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	Apache
 MAINTAINER=	jfitz@FreeBSD.ORG
 
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/www/apache12:patch
+
+BROKEN=		perl5 upgrade
 
 USE_PERL5=	YES
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} INSTALL_PROGRAM="${INSTALL_PROGRAM}"
