@@ -288,6 +288,7 @@
     SUBDIR += ocamlweb
     SUBDIR += omniORB
     SUBDIR += p4.el
+    SUBDIR += p4db
     SUBDIR += p5-Agent
     SUBDIR += p5-Algorithm-Diff
     SUBDIR += p5-Algorithm-MDiff

@@ -1,0 +1,75 @@
+@unexec if cmp -s %D/perforce/p4db/P4DB.conf %D/perforce/p4db/P4DB.conf.sample; then rm -f %D/perforce/p4db/P4DB.conf; fi
+perforce/p4db/P4DB.conf.sample
+@exec [ ! -f %B/P4DB.conf ] && cp -p %B/%f %B/P4DB.conf || true
+@unexec if cmp -s %D/perforce/p4db/P4DB.shortcuts.txt %D/perforce/p4db/P4DB.shortcuts.txt.sample; then rm -f %D/perforce/p4db/P4DB.shortcuts.txt; fi
+perforce/p4db/P4DB.shortcuts.txt.sample
+@exec [ ! -f %B/P4DB.shortcuts.txt ] && cp -p %B/%f %B/P4DB.shortcuts.txt || true
+@unexec if cmp -s %D/perforce/p4db/P4DB.shortcuts2.txt %D/perforce/p4db/P4DB.shortcuts2.txt.sample; then rm -f %D/perforce/p4db/P4DB.shortcuts2.txt; fi
+perforce/p4db/P4DB.shortcuts2.txt.sample
+@exec [ ! -f %B/P4DB.shortcuts2.txt ] && cp -p %B/%f %B/P4DB.shortcuts2.txt || true
+perforce/p4db/www/P4CGI.pm
+perforce/p4db/www/P4DB_Help.html
+perforce/p4db/www/README.html
+perforce/p4db/www/SetPreferences.cgi
+perforce/p4db/www/branchList.cgi
+perforce/p4db/www/branchView.cgi
+perforce/p4db/www/changeByUsers.cgi
+perforce/p4db/www/changeList.cgi
+perforce/p4db/www/changeView.cgi
+perforce/p4db/www/clientList.cgi
+perforce/p4db/www/clientView.cgi
+perforce/p4db/www/colorC.pl
+perforce/p4db/www/colorHtml.pl
+perforce/p4db/www/colorPerl.pl
+perforce/p4db/www/colorView.pm
+perforce/p4db/www/depotStats.cgi
+perforce/p4db/www/depotTreeBrowser.cgi
+perforce/p4db/www/fileDiffView.cgi
+perforce/p4db/www/fileDownLoad.cgi
+perforce/p4db/www/fileLogView.cgi
+perforce/p4db/www/fileOpen.cgi
+perforce/p4db/www/fileSearch.cgi
+perforce/p4db/www/fileViewer.cgi
+perforce/p4db/www/filesChangedSince.cgi
+perforce/p4db/www/groupView.cgi
+perforce/p4db/www/htmlFileView.cgi
+perforce/p4db/www/icons/back.gif
+perforce/p4db/www/index.cgi
+perforce/p4db/www/javaDataView.cgi
+perforce/p4db/www/jobList.cgi
+perforce/p4db/www/jobView.cgi
+perforce/p4db/www/labelDiffView.cgi
+perforce/p4db/www/labelList.cgi
+perforce/p4db/www/labelView.cgi
+perforce/p4db/www/p4jdb/P4DirTree$1.class
+perforce/p4db/www/p4jdb/P4DirTree$2.class
+perforce/p4db/www/p4jdb/P4DirTree$3.class
+perforce/p4db/www/p4jdb/P4DirTree$Manager.class
+perforce/p4db/www/p4jdb/P4DirTree.class
+perforce/p4db/www/p4jdb/P4DirTreeApplet$1.class
+perforce/p4db/www/p4jdb/P4DirTreeApplet.class
+perforce/p4db/www/p4jdb/P4File$1.class
+perforce/p4db/www/p4jdb/P4File.class
+perforce/p4db/www/p4jdb/P4Folder$1.class
+perforce/p4db/www/p4jdb/P4Folder.class
+perforce/p4db/www/p4jdb/TreeDisplay$1.class
+perforce/p4db/www/p4jdb/TreeDisplay$Data.class
+perforce/p4db/www/p4jdb/TreeDisplay$DataManager.class
+perforce/p4db/www/p4jdb/TreeDisplay$LineData.class
+perforce/p4db/www/p4jdb/TreeDisplay$MyPanel.class
+perforce/p4db/www/p4jdb/TreeDisplay.class
+perforce/p4db/www/p4pr.perl
+perforce/p4db/www/p4race.cgi
+perforce/p4db/www/searchPattern.cgi
+perforce/p4db/www/specialFileView.cgi
+perforce/p4db/www/userList.cgi
+perforce/p4db/www/userView.cgi
+perforce/p4db/www/viewConfig.pm
+@dirrm perforce/p4db/www/p4jdb
+@dirrm perforce/p4db/www/icons
+@dirrm perforce/p4db/www
+%%PORTDOCS%%perforce/p4db/doc/P4CGI.html
+%%PORTDOCS%%perforce/p4db/doc/README.html
+%%PORTDOCS%%@dirrm perforce/p4db/doc
+@dirrm perforce/p4db
+@unexec /bin/rmdir %D/perforce 2>/dev/null || true
