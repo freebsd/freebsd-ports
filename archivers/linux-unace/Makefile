@@ -20,6 +20,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Extract, view & test ACE 2 archives
 
+IGNORE=		is ignored: Segfaults on startup
+
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
