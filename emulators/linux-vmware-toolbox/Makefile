@@ -14,9 +14,8 @@ DISTNAME=	vmware-linux-tools
 
 MAINTAINER=	matusita@jp.FreeBSD.org
 
-RUN_DEPENDS=	${LINUX_DIR}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
-
 ONLY_FOR_ARCHS=	i386
+USE_LINUX=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
@@ -25,7 +24,6 @@ RESTRICTED=	"Not sure if we can redistribute this."
 .include <bsd.port.pre.mk>
 
 LINUX_FLP?=	${DISTDIR}/linux.flp
-LINUX_DIR?=	/compat/linux
 MOUNT_PT?=	${WRKDIR}/mnt
 .if exists(${LINUX_FLP})
 MOUNT_DEV?=	vn0
