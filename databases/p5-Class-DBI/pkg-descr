@@ -1,0 +1,15 @@
+Although the difficulties in serialising objects to a relational
+database are well documented, we often find outselves using such a
+database to store the data that will make up the objects in our system.
+
+Thus we end up writing many classes, each mapping to a table in our
+database, and each containing accessor and mutator methods for each of
+the columns.  We then write simple constructors, search methods and the
+like for each these classes.
+
+Class::DBI is here to make this task trivial.
+
+WWW: http://search.cpan.org/search?dist=Class-DBI
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
