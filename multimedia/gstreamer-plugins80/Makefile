@@ -706,7 +706,7 @@ CONFIGURE_ARGS+=	--disable-sdl \
 			--disable-sdltest
 PLIST_SUB+=	SDL="@comment "
 .else
-LIB_DEPENDS+=	SDL-1.1.7:${PORTSDIR}/devel/sdl12
+USE_SDL=	sdl
 
 CONFIGURE_ARGS+=	--with-sdl-prefix=${LOCALBASE}  \
 			--with-sdl-exec-prefix=${LOCALBASE}
