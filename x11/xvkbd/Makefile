@@ -24,6 +24,7 @@ WITH_I18N=	yes
 BUILD_DEPENDS=	${X11BASE}/lib/libXaw3d.a:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 
+USE_REINPLACE=	yes
 USE_IMAKE=	yes
 
 pre-fetch:
@@ -45,7 +46,7 @@ XK_DEFSUBST +=	-e 's/XCOMM define I18N/\#define I18N/;'
 
 .if	defined(XK_DEFSUBST)
 post-patch:
-		${PERL} -pi.fbsd ${XK_DEFSUBST} ${WRKSRC}/Imakefile
+		${REINPLACE_CMD} ${XK_DEFSUBST} ${WRKSRC}/Imakefile
 .endif
 
 .include <bsd.port.mk>

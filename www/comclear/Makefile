@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.neuro-tech.net/files/
 
 MAINTAINER=	roam@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_GMAKE=	yes
@@ -27,7 +28,7 @@ PKGNAMESUFFIX=	-gtk
 
 # Do not install docs by default, see the ifdef'd post-install below.
 post-configure:
-		${PERL} -pi.fbsd -e 's/^install-data-am:.*/install-data-am:/' ${WRKSRC}/Makefile
+		${REINPLACE_CMD} 's/^install-data-am:.*/install-data-am:/' ${WRKSRC}/Makefile
 
 .if		!defined(NOPORTDOCS)
 post-install:
