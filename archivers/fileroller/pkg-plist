@@ -55,6 +55,7 @@ share/locale/de/LC_MESSAGES/file-roller.mo
 share/locale/el/LC_MESSAGES/file-roller.mo
 share/locale/es/LC_MESSAGES/file-roller.mo
 share/locale/et/LC_MESSAGES/file-roller.mo
+share/locale/eu/LC_MESSAGES/file-roller.mo
 share/locale/fa/LC_MESSAGES/file-roller.mo
 share/locale/fi/LC_MESSAGES/file-roller.mo
 share/locale/fr/LC_MESSAGES/file-roller.mo
@@ -68,6 +69,7 @@ share/locale/it/LC_MESSAGES/file-roller.mo
 share/locale/ja/LC_MESSAGES/file-roller.mo
 share/locale/kn/LC_MESSAGES/file-roller.mo
 share/locale/ko/LC_MESSAGES/file-roller.mo
+share/locale/lt/LC_MESSAGES/file-roller.mo
 share/locale/lv/LC_MESSAGES/file-roller.mo
 share/locale/mk/LC_MESSAGES/file-roller.mo
 share/locale/ml/LC_MESSAGES/file-roller.mo
@@ -75,6 +77,7 @@ share/locale/mn/LC_MESSAGES/file-roller.mo
 share/locale/ms/LC_MESSAGES/file-roller.mo
 share/locale/nl/LC_MESSAGES/file-roller.mo
 share/locale/no/LC_MESSAGES/file-roller.mo
+share/locale/nn/LC_MESSAGES/file-roller.mo
 share/locale/pl/LC_MESSAGES/file-roller.mo
 share/locale/pt/LC_MESSAGES/file-roller.mo
 share/locale/pt_BR/LC_MESSAGES/file-roller.mo
@@ -86,6 +89,7 @@ share/locale/sq/LC_MESSAGES/file-roller.mo
 share/locale/sr/LC_MESSAGES/file-roller.mo
 share/locale/sr@Latn/LC_MESSAGES/file-roller.mo
 share/locale/sv/LC_MESSAGES/file-roller.mo
+share/locale/ta/LC_MESSAGES/file-roller.mo
 share/locale/th/LC_MESSAGES/file-roller.mo
 share/locale/tr/LC_MESSAGES/file-roller.mo
 share/locale/uk/LC_MESSAGES/file-roller.mo
