@@ -18,7 +18,8 @@ start)
 
 stop)
     [ -x ${PGBIN}/pg_ctl ] && {
-	exec su -l pgsql -c 'exec %%PREFIX%%/%%PG_PREFIX%%bin/pg_ctl stop -m fast'
+	su -l pgsql -c 'exec %%PREFIX%%/%%PG_PREFIX%%bin/pg_ctl stop -s -m fast'
+	echo -n ' pgsql'
     }
     ;;
 
