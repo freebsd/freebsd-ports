@@ -20,8 +20,7 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	5.0.0.a1
-PORTREVISION=	2
+PORTVERSION=	5.0.0.a2
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/ \
 		http://it.php.net/distributions/ \
@@ -123,13 +122,13 @@ PLIST_SUB+=	CLI=""
 SAPI_FILE=	"bin/php"
 .endif
 
-ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DBASE DBX DOM EXIF \
-		FILEPRO FTP GD GDBM GETTEXT GMP ICONV IMAP INTERBASE INIFILE \
-		MBSTRING MCAL MCVE MCRYPT MHASH MIME MING MYSQL NCURSES \
-		OPENLDAP OPENSSL ORACLE PCNTL PCRE PDFLIB POSIX POSTGRESQL \
-		PSPELL READLINE RECODE SESSION SHMOP SIMPLEXML SNMP SOCKETS \
-		SQLITE SYBASEDB SYBASECT SYSVSEM SYSVSHM TOKENIZER UNIXODBC \
-		WDDX XML XMLRPC XSL YAZ YP ZLIB
+ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DB4 DBASE DBX DOM \
+		EXIF FILEPRO FTP GD GDBM GETTEXT GMP ICONV IMAP INTERBASE \
+		INIFILE MBSTRING MCAL MCVE MCRYPT MHASH MIME MING MYSQL \
+		NCURSES OPENLDAP OPENSSL ORACLE PCNTL PCRE PDFLIB POSIX \
+		POSTGRESQL PSPELL READLINE RECODE SESSION SHMOP SIMPLEXML SNMP \
+		SOCKETS SQLITE SYBASEDB SYBASECT SYSVSEM SYSVSHM TOKENIZER \
+		UNIXODBC WDDX XML XMLRPC XSL YAZ YP ZLIB
 
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt}) || defined(WITHOUT_${opt})
@@ -206,7 +205,7 @@ WITH_XML=	yes
 .include "${WRKDIR}/Makefile.inc"
 .endif
 
-.if defined(WITH_CDB) || defined(WITH_GDBM) || defined(WITH_INIFILE)
+.if defined(WITH_CDB) || defined(WITH_DB4) || defined(WITH_GDBM) || defined(WITH_INIFILE)
 WITH_DBA=	yes
 .endif
 
@@ -218,7 +217,7 @@ WITH_DOM=	yes
 WITH_ICONV_DEP=	yes
 .endif
 
-.if defined(WITH_SNMP)
+.if defined(WITH_MCVE) || defined(WITH_SNMP)
 WITH_OPENSSL_DEP=	yes
 .endif
 
@@ -265,6 +264,11 @@ CONFIGURE_ARGS+=--enable-ctype
 .if defined(WITH_CURL)
 LIB_DEPENDS+=	curl.2:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-curl=${LOCALBASE}
+.endif
+
+.if defined(WITH_DB4)
+LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
+CONFIGURE_ARGS+=--with-db4=${LOCALBASE}
 .endif
 
 .if defined(WITH_DBA)
@@ -398,15 +402,7 @@ CONFIGURE_ARGS+=--with-ming=${LOCALBASE}
 .endif
 
 .if defined(WITH_MYSQL)
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.10)
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-.else
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.14)
-LIB_DEPENDS+=	mysqlclient.14:${PORTSDIR}/databases/mysql41-client
-.else
-LIB_DEPENDS+=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
-.endif
-.endif
+USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}
 .endif
 
@@ -421,21 +417,13 @@ CONFIGURE_ARGS+=--with-ncurses=${NCURSESBASE}
 .endif
 
 .if defined(WITH_OPENLDAP)
-.if exists(${LOCALBASE}/lib/libldap.so.1)
-LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
-.else
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21-client
-.endif
+USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 .endif
 
 .if defined(WITH_OPENSSL) || defined(WITH_OPENSSL_DEP)
-.if exists(${LOCALBASE}/lib/libcrypto.so.3)
-OPENSSLBASE=	${LOCALBASE}
-LIB_DEPENDS+=	crypto.3:${PORTSDIR}/security/openssl
-.else
-OPENSSLBASE=	/usr
-.endif
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-openssl-dir=${OPENSSLBASE}
 .endif
 
 .if defined(WITH_OPENSSL)
@@ -502,7 +490,7 @@ LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net/net-snmp4
 .else
 LIB_DEPENDS+=	netsnmp.5:${PORTSDIR}/net/net-snmp
 .endif
-CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} --with-openssl-dir=${OPENSSLBASE} --enable-ucd-snmp-hack
+CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} --enable-ucd-snmp-hack
 .endif
 
 .if defined(WITH_SOCKETS)
