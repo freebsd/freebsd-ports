@@ -1,0 +1,20 @@
+--- aclocal.m4.orig	Mon Dec 11 06:02:45 2000
++++ aclocal.m4	Sat Feb 17 05:30:40 2001
+@@ -1474,7 +1474,7 @@
+ deplibs_check_method="$deplibs_check_method" \
+ file_magic_cmd="$file_magic_cmd" \
+ ${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig -o libtool $libtool_flags \
+---build="$build" --add-tag=CXX $ac_aux_dir/ltcf-cxx.sh $host \
++--build="$build" $ac_aux_dir/ltmain.sh $host \
+ || AC_MSG_ERROR([libtool tag configuration failed])
+ CC="$lt_save_CC"
+ CFLAGS="$lt_save_CFLAGS"
+@@ -1508,7 +1508,7 @@
+ deplibs_check_method="$deplibs_check_method" \
+ file_magic_cmd="$file_magic_cmd" \
+ ${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig -o libtool $libtool_flags \
+---build="$build" --add-tag=GCJ $ac_aux_dir/ltcf-gcj.sh $host \
++--build="$build" $ac_aux_dir/ltmain.sh $host \
+ || AC_MSG_ERROR([libtool tag configuration failed])
+ CC="$lt_save_CC"
+ CFLAGS="$lt_save_CFLAGS"
