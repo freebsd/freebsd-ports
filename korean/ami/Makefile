@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ami
-PORTVERSION=	1.0.7.1
+PORTVERSION=	1.0.8
 #PORTREVISION=	1
 CATEGORIES=	korean x11
 MASTER_SITES=	http://www.kr.freebsd.org/~hwang/ami/ \
@@ -24,9 +24,6 @@ USE_GTK=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-hangul-keyboard=2
-
-# temporary
-WRKSRC=		${WRKDIR}/ami-1.0.7
 
 .include <bsd.port.pre.mk>
 
