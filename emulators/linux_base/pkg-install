@@ -4,17 +4,6 @@
 
 case "$2" in
 PRE-INSTALL)
-	if [ "`uname -m`" = alpha ]; then
-		if [ -z "`kldstat -v | grep osf1`" ]; then
-			echo 'OSF1 mode is not enabled.'
-			echo 'Trying to load osf1 kernel module now...'
-			if ! kldload osf1; then
-				echo 'The osf1 kernel module could not be'
-				echo 'loaded; please fix this and retry.'
-				exit 1
-			fi
-		fi
-	fi
 	if [ -z "`kldstat -v | grep linux`" ]; then
 		echo 'Linux mode is not enabled.'
 		echo 'Loading linux kernel module now...'
