@@ -1305,6 +1305,7 @@ ecb-emacs20	ports/devel/ecb-emacs20
 ecg2png		ports/graphics/ecg2png
 ecgi		ports/devel/ecgi
 echo		src/bin/echo
+echolot		ports/net/echolot
 echoping	ports/net/echoping
 ecore		ports/x11/ecore
 ecu		ports/comms/ecu
