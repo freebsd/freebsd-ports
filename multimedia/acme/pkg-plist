@@ -49,6 +49,8 @@ share/locale/ru/LC_MESSAGES/acme.mo
 share/locale/sk/LC_MESSAGES/acme.mo
 share/locale/sl/LC_MESSAGES/acme.mo
 share/locale/sq/LC_MESSAGES/acme.mo
+share/locale/sr/LC_MESSAGES/acme.mo
+share/locale/sr@Latn/LC_MESSAGES/acme.mo
 share/locale/sv/LC_MESSAGES/acme.mo
 share/locale/tr/LC_MESSAGES/acme.mo
 share/locale/uk/LC_MESSAGES/acme.mo
