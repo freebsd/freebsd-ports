@@ -28,8 +28,8 @@ CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}	\
 
 .include <bsd.port.pre.mk>
 
-.if ( ${ARCH} == "alpha" && ${OSVERSION} >= 502102 ) || ${ARCH} == "amd64"
-BROKEN=			"Does not compile on alpha >= 5.x or amd64"
+.if ( ${OSVERSION} >= 502102 )
+BROKEN=			"Does not compile on FreeBSD >= 5.x"
 .endif
 
 .include <bsd.port.post.mk>
