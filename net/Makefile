@@ -174,6 +174,7 @@
     SUBDIR += ldapsdk
     SUBDIR += libfreenet
     SUBDIR += libicq
+    SUBDIR += libkmsn
     SUBDIR += libnet
     SUBDIR += libnids
     SUBDIR += librsync
