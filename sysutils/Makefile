@@ -47,6 +47,7 @@
     SUBDIR += cfengine2
     SUBDIR += checkservice
     SUBDIR += chgrep
+    SUBDIR += clean_
     SUBDIR += clockspeed
     SUBDIR += cmdwatch
     SUBDIR += colorize

@@ -4,11 +4,12 @@
 #
 # $FreeBSD$
 
-PORTNAME= 	clean
+PORTNAME= 	clean_
 PORTVERSION=	3.2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= ${PORTNAME}
+DISTNAME=	clean-${PORTVERSION}
 
 MAINTAINER=	chuck@pkix.net
 COMMENT=	Automatically remove unwanted files
