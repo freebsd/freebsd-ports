@@ -3,7 +3,7 @@
 # Date created:		18 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.20 1998/11/14 09:43:29 asami Exp $
+# $Id: Makefile,v 1.21 1999/01/05 06:55:19 asami Exp $
 #
 
 DISTNAME=	Xaw3d-1.5
@@ -21,6 +21,13 @@ USE_IMAKE=	yes
 post-extract:
 	${MKDIR} ${WRKSRC}/X11/Xaw3d
 	cd ${WRKSRC}/X11/Xaw3d; ln -sf ../../*.h .
+
+# Workaround a bug in egcs on FreeBSD/Alpha.
+.if ${MACHINE_ARCH} == "alpha"
+post-configure:
+	@(cd ${WRKSRC}; ${MV} Makefile Makefile.orig; ${SED} -e \
+	  's/CDEBUGFLAGS = -O/CDEBUGFLAGS =/g' Makefile.orig > Makefile)
+.endif
 
 post-install:
 .if ${PORTOBJFORMAT} == "aout"
