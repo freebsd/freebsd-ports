@@ -1,0 +1,19 @@
+The Parma Polyhedra Library (PPL) is a modern C++ library for the manipulation
+of convex polyhedra. To be more precise, the PPL can handle all the convex
+polyhedra that can be defined as the intersection of a finite number of closed
+hyperspaces, each described by an equality or a non-strict inequality with
+rational coefficients. (More details are available on the PPL's internal
+mechanisms.) The Parma Polyhedra Library is:
+
+   - user friendly: you write x + 2*y + 5*z <= 7 when you mean it;
+   - fully dynamic: available virtual memory is the only limitation to the
+     dimension of anything;
+   - written in standard C++: meant to be portable;
+   - exception-safe: never leaks resources or leaves invalid object fragments
+     around;
+   - rather efficient: and we hope to make it even more so;
+   - thoroughly documented: perhaps not literate programming but close enough;
+   - free software: distributed under the terms of the GNU General Public
+     License.
+
+WWW: http://www.cs.unipr.it/ppl/
