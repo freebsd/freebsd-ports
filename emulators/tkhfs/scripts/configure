@@ -6,7 +6,7 @@ cat >> Makefile << END || exit 1;
 
 BINDIR = $PREFIX/bin
 HFSBIN = \$(BINDIR)/hfs
-WISH   = \$(BINDIR)/wish
+WISH   = \$(BINDIR)/wish4.1
 END
 
 exit 0;
