@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dsh@vlink.ru
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Attribute/Handlers.pm:${PORTSDIR}/devel/p5-Attribute-Handlers
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 PERL_CONFIGURE=	yes
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
