@@ -32,7 +32,7 @@ HAVE_VORBIS=	yes
 
 post-extract:
 	@${RM} ${WRKSRC}/config.sub ${WRKSRC}/config.guess ;\
-	${LN} -s ${LOCALBASE}/share/autoconf/config.* ${WRKSRC}/ ;\
+	${LN} -s ${AUTOCONF_DIR}/config.* ${WRKSRC}/ ;\
 	${PERL} -pi -e 's/-ldl//g' ${WRKSRC}/examples/Makefile.*
 
 .include <bsd.port.mk>
