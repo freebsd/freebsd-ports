@@ -19,9 +19,18 @@ MAINTAINER=		desmo@bandwidth.org
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
+CONFIGURE_ARGS=		--cc '${CC}' --copt '${CFLAGS}'
 MAN1=			netris.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400014
+CONFIGURE_ARGS+=	--enable-ipv6
+.else
+CONFIGURE_ARGS+=	--disable-ipv6
+.endif
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/netris.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
