@@ -1,9 +1,9 @@
 bin/gmziq
 bin/jukebox
 bin/mziq
-%%PORTDOCS%%share/doc/mziq/README
-%%PORTDOCS%%share/doc/mziq/TODO
-%%PORTDOCS%%share/doc/mziq/default.mz
-%%PORTDOCS%%share/doc/mziq/example.mz
-%%PORTDOCS%%share/doc/mziq/rcfile
-%%PORTDOCS%%@dirrm share/doc/mziq
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/default.mz
+%%PORTDOCS%%%%DOCSDIR%%/example.mz
+%%PORTDOCS%%%%DOCSDIR%%/rcfile
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

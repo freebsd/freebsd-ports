@@ -1,6 +1,6 @@
 bin/mp3info
 %%WITH_GTK%%bin/gmp3info
-%%PORTDOCS%%share/doc/mp3info/ChangeLog
-%%PORTDOCS%%share/doc/mp3info/README
-%%PORTDOCS%%share/doc/mp3info/mp3info.txt
-%%PORTDOCS%%@dirrm share/doc/mp3info
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/mp3info.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

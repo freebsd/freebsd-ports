@@ -1,4 +1,4 @@
 bin/ecawave
-%%PORTDOCS%%share/doc/ecawave/ecawave_manpage.html
-%%PORTDOCS%%share/doc/ecawave/users_guide.html
-%%PORTDOCS%%@dirrm share/doc/ecawave
+%%PORTDOCS%%%%DOCSDIR%%/ecawave_manpage.html
+%%PORTDOCS%%%%DOCSDIR%%/users_guide.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,5 +1,5 @@
 bin/cdda2mp3.gogo
 bin/gogo
-%%PORTDOCS%%share/doc/gogo/cdda2mp3.gogo.en
-%%PORTDOCS%%share/doc/gogo/cdda2mp3.gogo.ja
-%%PORTDOCS%%@dirrm share/doc/gogo
+%%PORTDOCS%%%%DOCSDIR%%/cdda2mp3.gogo.en
+%%PORTDOCS%%%%DOCSDIR%%/cdda2mp3.gogo.ja
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

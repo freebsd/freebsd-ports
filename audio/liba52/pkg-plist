@@ -9,6 +9,6 @@ lib/liba52.so.0
 lib/liba52.so
 lib/liba52.la
 lib/liba52.a
-%%PORTDOCS%%share/doc/liba52/liba52.txt
-%%PORTDOCS%%@dirrm share/doc/liba52
+%%PORTDOCS%%%%DOCSDIR%%/liba52.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/a52dec

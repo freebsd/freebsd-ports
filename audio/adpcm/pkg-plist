@@ -2,6 +2,6 @@ include/adpcm.h
 lib/libadpcm.a
 lib/libadpcm.so.1
 lib/libadpcm.so
-share/doc/adpcm/README
-share/doc/adpcm/hello.adpcm
-@dirrm share/doc/adpcm
+%%DOCSDIR%%/README
+%%DOCSDIR%%/hello.adpcm
+@dirrm %%DOCSDIR%%

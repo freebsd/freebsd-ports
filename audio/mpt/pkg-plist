@@ -1,6 +1,6 @@
 bin/mpt
-%%PORTDOCS%%share/doc/mpt/AUTHORS
-%%PORTDOCS%%share/doc/mpt/COPYING
-%%PORTDOCS%%share/doc/mpt/README
-%%PORTDOCS%%share/doc/mpt/config.txt
-%%PORTDOCS%%@dirrm share/doc/mpt
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/config.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

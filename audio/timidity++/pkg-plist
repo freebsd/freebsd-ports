@@ -1,8 +1,8 @@
 bin/timidity
-%%PORTDOCS%%share/doc/timidity++/README.dl
-%%PORTDOCS%%share/doc/timidity++/README.sf
+%%PORTDOCS%%%%DOCSDIR%%/README.dl
+%%PORTDOCS%%%%DOCSDIR%%/README.sf
 %%PORTDOCS%%share/doc/ja/timidity++/README.dl
 %%PORTDOCS%%share/doc/ja/timidity++/README.sf
 @dirrm lib/timidity
 %%PORTDOCS%%@dirrm share/doc/ja/timidity++
-%%PORTDOCS%%@dirrm share/doc/timidity++
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

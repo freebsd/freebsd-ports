@@ -8,8 +8,8 @@ lib/libsongprintfile.a
 lib/libsongprintfile.la
 lib/libsongprintfile.so
 lib/libsongprintfile.so.0
-%%PORTDOCS%%share/doc/songprint/AUTHORS
-%%PORTDOCS%%share/doc/songprint/COPYING
-%%PORTDOCS%%share/doc/songprint/NEWS
-%%PORTDOCS%%share/doc/songprint/README
-%%PORTDOCS%%@dirrm share/doc/songprint
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -16,6 +16,6 @@ lib/timidity/misc.tcl
 lib/timidity/tclIndex
 lib/timidity/tkmidity.tcl
 lib/timidity/tkpanel.tcl
-%%PORTDOCS%%share/doc/timidity++/README.tk
-%%PORTDOCS%%share/doc/ja/timidity++/README.tk
+%%PORTDOCS%%%%DOCSDIR%%timidity++/README.tk
+%%PORTDOCS%%%%DOCSDIR%%ja/timidity++/README.tk
 @dirrm lib/timidity/bitmaps

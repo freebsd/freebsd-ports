@@ -1,3 +1,3 @@
 lib/xmms/Output/libcrossfade.so
-%%PORTDOCS%%share/doc/xmms-crossfade/README
-%%PORTDOCS%%@dirrm share/doc/xmms-crossfade
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

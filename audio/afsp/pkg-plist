@@ -54,31 +54,31 @@ share/afsp/filters/STL_mIRSS_FIR_16k.cof
 share/afsp/filters/STL_mIRSS_FIR_48k.cof
 share/afsp/filters/STL_pso_FIR_8k.cof
 share/afsp/filters/TIA_IRS_FIR_8k.cof
-share/doc/afsp/audio/AFsp.html
-share/doc/afsp/audio/CompAudio.html
-share/doc/afsp/audio/CopyAudio.html
-share/doc/afsp/audio/FiltAudio.html
-share/doc/afsp/audio/GenNoise.html
-share/doc/afsp/audio/GenTone.html
-share/doc/afsp/audio/InfoAudio.html
-share/doc/afsp/audio/LPanal.html
-share/doc/afsp/audio/LPsyn.html
-share/doc/afsp/audio/ResampAudio.html
-share/doc/afsp/libtsp/AF/AFclose.html
-share/doc/afsp/libtsp/AF/AFdReadData.html
-share/doc/afsp/libtsp/AF/AFdWriteData.html
-share/doc/afsp/libtsp/AF/AFfReadData.html
-share/doc/afsp/libtsp/AF/AFfWriteData.html
-share/doc/afsp/libtsp/AF/AFopnRead.html
-share/doc/afsp/libtsp/AF/AFopnWrite.html
-share/doc/afsp/libtsp/AF/AFsetFileType.html
-share/doc/afsp/libtsp/AF/AFsetHinfo.html
-share/doc/afsp/libtsp/AF/AFsetNHpar.html
-share/doc/afsp/libtsp/AF/AFsetSpeaker.html
+%%DOCSDIR%%/audio/AFsp.html
+%%DOCSDIR%%/audio/CompAudio.html
+%%DOCSDIR%%/audio/CopyAudio.html
+%%DOCSDIR%%/audio/FiltAudio.html
+%%DOCSDIR%%/audio/GenNoise.html
+%%DOCSDIR%%/audio/GenTone.html
+%%DOCSDIR%%/audio/InfoAudio.html
+%%DOCSDIR%%/audio/LPanal.html
+%%DOCSDIR%%/audio/LPsyn.html
+%%DOCSDIR%%/audio/ResampAudio.html
+%%DOCSDIR%%/libtsp/AF/AFclose.html
+%%DOCSDIR%%/libtsp/AF/AFdReadData.html
+%%DOCSDIR%%/libtsp/AF/AFdWriteData.html
+%%DOCSDIR%%/libtsp/AF/AFfReadData.html
+%%DOCSDIR%%/libtsp/AF/AFfWriteData.html
+%%DOCSDIR%%/libtsp/AF/AFopnRead.html
+%%DOCSDIR%%/libtsp/AF/AFopnWrite.html
+%%DOCSDIR%%/libtsp/AF/AFsetFileType.html
+%%DOCSDIR%%/libtsp/AF/AFsetHinfo.html
+%%DOCSDIR%%/libtsp/AF/AFsetNHpar.html
+%%DOCSDIR%%/libtsp/AF/AFsetSpeaker.html
 @dirrm include/libtsp
-@dirrm share/doc/afsp/audio
-@dirrm share/doc/afsp/libtsp/AF
-@dirrm share/doc/afsp/libtsp
-@dirrm share/doc/afsp
+@dirrm %%DOCSDIR%%/audio
+@dirrm %%DOCSDIR%%/libtsp/AF
+@dirrm %%DOCSDIR%%/libtsp
+@dirrm %%DOCSDIR%%
 @dirrm share/afsp/filters
 @dirrm share/afsp

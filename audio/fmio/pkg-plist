@@ -1,7 +1,7 @@
 bin/fmio
 etc/rc.d/bktrctl.sh
-share/doc/fmio/Changelog
-share/doc/fmio/FAQ
-share/doc/fmio/FAQ.ru
-share/doc/fmio/README
-@dirrm share/doc/fmio
+%%DOCSDIR%%/Changelog
+%%DOCSDIR%%/FAQ
+%%DOCSDIR%%/FAQ.ru
+%%DOCSDIR%%/README
+@dirrm %%DOCSDIR%%

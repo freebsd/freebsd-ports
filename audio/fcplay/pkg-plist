@@ -1,4 +1,4 @@
 bin/fcplay
-%%PORTDOCS%%share/doc/fcplay/ABOUT
-%%PORTDOCS%%share/doc/fcplay/POINTER
-%%PORTDOCS%%@dirrm share/doc/fcplay
+%%PORTDOCS%%%%DOCSDIR%%/ABOUT
+%%PORTDOCS%%%%DOCSDIR%%/POINTER
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

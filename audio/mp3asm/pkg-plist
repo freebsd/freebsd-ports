@@ -1,4 +1,4 @@
 bin/mp3asm
-%%PORTDOCS%%share/doc/mp3asm/Changelog
-%%PORTDOCS%%share/doc/mp3asm/README
-%%PORTDOCS%%@dirrm share/doc/mp3asm
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

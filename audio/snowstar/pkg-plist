@@ -1,6 +1,6 @@
 bin/snowstar
-%%PORTDOCS%%share/doc/snowstar/README_Snowstar
-%%PORTDOCS%%share/doc/snowstar/TODO
-%%PORTDOCS%%share/doc/snowstar/LICENSE
-%%PORTDOCS%%share/doc/snowstar/CHANGES
-%%PORTDOCS%%@dirrm share/doc/snowstar
+%%PORTDOCS%%%%DOCSDIR%%/README_Snowstar
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
