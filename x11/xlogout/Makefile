@@ -18,4 +18,7 @@ WRKSRC=		${WRKDIR}/xlogout
 USE_IMAKE=	yes
 MAN1=		xlogout.1
 
+PLIST_FILES=	bin/xlogout \
+		lib/X11/app-defaults/XLogout
+
 .include <bsd.port.mk>
