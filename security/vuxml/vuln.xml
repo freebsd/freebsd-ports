@@ -32,6 +32,48 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b2d248ad-88f6-11d9-aa18-0001020eed82">
+    <topic>cyrus-imapd -- multiple buffer overflow vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cyrus-imapd</name>
+	<range><lt>2.1.18</lt></range>
+	<range><gt>2.2.*</gt><lt>2.2.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Cyrus IMAP Server ChangeLog states:</p>
+	<blockquote cite="http://asg.web.cmu.edu/cyrus/download/imapd/changes.html">
+	  <ul>
+	    <li>Fix possible single byte overflow in mailbox handling
+	      code.</li>
+	    <li>Fix possible single byte overflows in the imapd
+	      annotate extension.</li>
+	    <li>Fix stack buffer overflows in fetchnews (exploitable
+	      by peer news server), backend (exploitable by admin),
+	      and in imapd (exploitable by users though only on
+	      platforms where a filename may be larger than a mailbox
+	      name).</li>
+	  </ul>
+	</blockquote>
+	<p>The 2.1.X series are reportedly only affected by the second
+	  issue.</p>
+	<p>These issues may lead to execution of arbitrary code with
+	  the permissions of the user running the Cyrus IMAP
+	  Server.</p>
+      </body>
+    </description>
+    <references>
+      <bid>12636</bid>
+      <url>http://asg.web.cmu.edu/cyrus/download/imapd/changes.html</url>
+    </references>
+    <dates>
+      <discovery>2005-02-14</discovery>
+      <entry>2005-02-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2c5757f4-88bf-11d9-8720-0007e900f87b">
     <topic>sup -- format string vulnerability</topic>
     <affects>
@@ -55,9 +97,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <bid>10571</bid>
       <cvename>CAN-2004-0451</cvename>
       <url>http://www.securityfocus.com/advisories/6874</url>
-      <url>http://www.securityfocus.com/bid/10571</url>
     </references>
     <dates>
       <discovery>2004-06-19</discovery>
