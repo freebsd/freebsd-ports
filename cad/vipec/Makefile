@@ -7,31 +7,41 @@
 #
 
 PORTNAME=	vipec
-PORTVERSION=	3.1.2b3
+PORTVERSION=	3.2.0
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	ViPEC-${PORTVERSION}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyze high frequency, linear electrical networks
 
-BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-USE_REINPLACE=	yes
-USE_QT_VER=	2
+USE_QT_VER=	3
 USE_GMAKE=	yes
-MAKE_ENV+=	TMAKEPATH="${LOCALBASE}/share/tmake/freebsd-g++" \
-		QTDIR="${X11BASE}" MOC="${X11BASE}/bin/moc2" \
-		SUBLIBS=${PTHREAD_LIBS}
+MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,/opt,,g" ${WRKSRC}/Makefile
+	@${SED} -e 's:@PREFIX@:${PREFIX}:g' \
+		${FILESDIR}/vipec.sh.in > ${WRKSRC}/../vipec.sh
 
-pre-install:
-	@${RM} -rf ${WRKSRC}/help/models/CVS
-	@${RM} -rf ${WRKSRC}/help/CVS
-	@${RM} -rf ${WRKSRC}/ckt/CVS
-	@${RM} -rf ${WRKSRC}/messages/CVS
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
+		-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ vipec.pro
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/../vipec.sh ${PREFIX}/bin/vipec
+	${INSTALL_PROGRAM} ${WRKSRC}/../vipec ${PREFIX}/bin/vipec.exec
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/../vipec.cfg ${DATADIR}
+	@${MKDIR} ${DATADIR}/ckt
+	${INSTALL_DATA} ${WRKSRC}/../ckt/*.* ${DATADIR}/ckt
+	@${MKDIR} ${DATADIR}/help
+	${INSTALL_DATA} ${WRKSRC}/../help/*.* ${DATADIR}/help
+	@${MKDIR} ${DATADIR}/help/models
+	${INSTALL_DATA} ${WRKSRC}/../help/models/*.* ${DATADIR}/help/models
+	@${MKDIR} ${DATADIR}/messages
+	${INSTALL_DATA} ${WRKSRC}/../messages/*.qm ${DATADIR}/messages
 
 .include <bsd.port.mk>
