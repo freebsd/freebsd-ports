@@ -1,11 +1,19 @@
---- etc/web2ldap/web2ldapcnf/standalone.py.orig	Fri Mar 22 12:58:51 2002
-+++ etc/web2ldap/web2ldapcnf/standalone.py	Fri Mar 22 12:59:10 2002
-@@ -11,7 +11,7 @@
- import os,web2ldapcnf
- 
- # User account name to setuid after being started as root
--run_username = 'wwwrun'
-+run_username = 'nobody'
- 
- # Contact mail address of the server admin when running stand-alone
- server_admin = 'admin@web2ldap.de'
+*** etc/web2ldap/web2ldapcnf/standalone.py.orig	Thu Feb 24 20:11:25 2005
+--- etc/web2ldap/web2ldapcnf/standalone.py	Thu Feb 24 20:12:36 2005
+***************
+*** 22,28 ****
+  access_allowed = ['127.0.0.0/255.0.0.0']
+  
+  # User account name to setuid after being started as root
+! run_username = 'web2ldap'
+  
+  # Contact mail address of the server admin when running stand-alone
+  server_admin = 'admin@web2ldap.de'
+--- 22,28 ----
+  access_allowed = ['127.0.0.0/255.0.0.0']
+  
+  # User account name to setuid after being started as root
+! run_username = 'nobody'
+  
+  # Contact mail address of the server admin when running stand-alone
+  server_admin = 'admin@web2ldap.de'

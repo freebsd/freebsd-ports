@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	web2ldap
-PORTVERSION=	0.10.4
+PORTVERSION=	0.15.9
 CATEGORIES=	www
 MASTER_SITES=	http://www.web2ldap.de/download/ \
 		http://www.tricknology.org/ports/
 
-MAINTAINER=	oddbjorn@tricknology.org
+MAINTAINER=	bsam@ipt.ru
 COMMENT=	Python-based WWW gateway to LDAP servers
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_ldap.so:${PORTSDIR}/net/py-ldap2
@@ -21,10 +21,8 @@ USE_PYTHON=	yes
 
 do-install:
 	@${MKDIR} ${PREFIX}/${PORTNAME}
-	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/contrib/occonf2ldapoc-esj.py.orig
 	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/fcgi/web2ldap.py.orig
-	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/sbin/occonf2ldapoc.py.orig
-	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/sbin/pickleasn1cfg.py.orig
+	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/scgi/web2ldap.py.orig
 	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/etc/web2ldap/web2ldapcnf/standalone.py.orig
 	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/etc/mime.types.orig
 	@${RM} -f ${WRKDIR}/${PORTNAME}-${PORTVERSION}/sbin/compile.py.orig

@@ -1,19 +1,15 @@
-*** etc/web2ldap/web2ldapcnf/standalone.py.orig	Wed Mar 20 16:02:37 2002
---- etc/web2ldap/web2ldapcnf/standalone.py	Wed Mar 20 16:03:08 2002
+*** etc/web2ldap/web2ldapcnf/standalone.py.orig	Sat Jun  5 12:03:35 2004
+--- etc/web2ldap/web2ldapcnf/standalone.py	Thu Feb 24 19:57:00 2005
 ***************
-*** 48,54 ****
+*** 65,69 ****
   document_root = os.path.join(web2ldapcnf.web2ldap_dir,'htdocs')
   
   # Path name of mime.types file
 ! mime_types = '/etc/mime.types'
   
-  # Listing of directory content (0=disabled, 1=enabled)
-  dir_listing_allowed = 0
---- 48,54 ----
+--- 65,69 ----
   document_root = os.path.join(web2ldapcnf.web2ldap_dir,'htdocs')
   
   # Path name of mime.types file
 ! mime_types = '/usr/local/web2ldap/etc/mime.types'
   
-  # Listing of directory content (0=disabled, 1=enabled)
-  dir_listing_allowed = 0

@@ -2,12 +2,12 @@
 --- sbin/web2ldap.py	Wed Mar 20 16:00:47 2002
 ***************
 *** 1,4 ****
-! #!/usr/bin/python
+! #!/usr/bin/python -OO
   
   """
   sbin/web2ldap.py - startscript for running as stand-alone HTTP server
 --- 1,4 ----
-! #!/usr/local/bin/python
+! #!/usr/local/bin/python -OO
   
   """
   sbin/web2ldap.py - startscript for running as stand-alone HTTP server
