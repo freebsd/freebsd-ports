@@ -1,0 +1,16 @@
+--- scrn.c.old	Thu Oct  6 02:10:07 1994
++++ scrn.c	Thu Sep 11 11:45:47 1997
+@@ -288,6 +288,12 @@
+ if(!(t->uc=jgetstr(t->cap,"uc"))) if(t->ul) t->uc="_";
+ if(t->uc) t->avattr|=UNDERLINE;
+ 
++/* If we don't have underline, but we do have bold, print underline as bold */
++if (!(t->avattr & UNDERLINE) && t->md != NULL)
++ {
++ t->us = t->md ; t->ue = t->me ; t->avattr |= UNDERLINE;
++ }
++
+ t->ms=getflag(t->cap,"ms");
+ 
+ t->da=getflag(t->cap,"da");
+
