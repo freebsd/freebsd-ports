@@ -1,0 +1,10 @@
+A window manager that attempts to combine the best features of Ion,
+LarsWM, TrsWM, evilwm, and ratpoison.  Utilizing a combination of
+standard window manager concepts and tabbing window manager concepts WMI
+attempts to fuse the best of both worlds.
+
+WWW: http://wmi.berlios.de/
+
+-- WXS
+Wesley Shields
+wxs@csh.rit.edu
