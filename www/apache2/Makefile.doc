@@ -35,7 +35,7 @@
 ##                                (They must be already enabled (i.e. WITH_MODULES or with default configuration
 ##                                use 'make show-modules', to check if they are enabled)
 ##      WITH_EXPERIMENTAL:        Build and install experimental modules
-##      WITH_EXTRA_MODULES:       To add addtionnal modules
+##      WITH_EXTRA_MODULES:       Use this to support additional modules (plist entry is NOT currently supported)
 ##      WITH_MODULES:             List of your own modules
 ##      WITHOUT_MODULES:          Disable listed modules
 ##      WITH_SUEXEC:              Enable suExec support

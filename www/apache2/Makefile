@@ -37,6 +37,10 @@ PATCH_DIST_STRIP+=	-p1:clement
 .if defined (WITH_LDAPFIX)
 PATCHFILES+=		httpd-2.0.48-ldap-fix.patch:clement
 .endif
+.if defined (WITH_WINDOWSUPDATEFIX)
+PATCHFILES+=		httpd-2.0.48-windowsupdate.patch:clement
+.endif
+
 SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
 			LIBTOOL_VERSION=${LIBTOOL_VERSION}
 
