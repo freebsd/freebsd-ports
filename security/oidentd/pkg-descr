@@ -1,21 +1,18 @@
 from the README:
 
-Oidentd is an RFC 1413-compliant ident daemon which runs on
-GNU/Linux, FreeBSD and OpenBSD.  Oidentd supports most features of
-pidentd as well as a number of features absent in pidentd.  Most
-notably, oidentd allows users, given the proper permission, to
-specify the identd response that the server will output when a
-successful lookup is completed.  Oidentd also allows for pseudo-random
-strings (either a prefix, such as "user," followed by a number
-between 0 and 99999, or 10 pseudo-random characters of the set
-0-9A-Za-z) to be returned upon the completion of a successful lookup
-instead of a username or a UID.  The IP masquerading support only
-exists on Linux right now.
+oidentd is an ident (rfc1413 compliant) daemon that runs on Linux,
+FreeBSD, OpenBSD and Solaris.  oidentd can handle IP masqueraded/NAT connections
+on Linux, FreeBSD and OpenBSD.  oidentd has a flexible mechanism for specifying
+ident responses.  Users can be granted permission to specify their own ident
+responses.  Responses can be specified according to host and port pairs.
 
 FreeBSD's inetd has a built-in ident service which can also generate
 bogus responses.
 
+Porter's note: Masquerading only works with ipf at the moment. Hopefully ipfw
+will be supported in a later version of oidentd.
+
 WWW: http://ojnk.sourceforge.net/
 
-Trevor Johnson
-trevor@jpj.net
+Mark Laws
+mdl@60hz.org
