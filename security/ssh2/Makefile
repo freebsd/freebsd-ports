@@ -3,7 +3,7 @@
 # Date created:		5 Oct 1998
 # Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.75 1998/12/01 11:10:33 obrien Exp $
+# $Id: Makefile,v 1.76 1999/02/05 06:11:31 ache Exp $
 #
 # Maximal ssh2 package requires YES values for
 # USE_SSH1, USE_TCPWRAP
@@ -92,9 +92,6 @@ post-install:
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/sshd.sh; \
 		${ECHO} "[ -x ${PREFIX}/sbin/sshd ] && ${PREFIX}/sbin/sshd && ${ECHO} -n ' sshd'" >> ${PREFIX}/etc/rc.d/sshd.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/sshd.sh; \
-	fi
-	@if [ -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
-		chmod -x ${PREFIX}/etc/rc.d/sshd.sh; \
 	fi
 
 .include <bsd.port.mk>
