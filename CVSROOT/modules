@@ -7729,6 +7729,7 @@ py-MySQLdb	ports/databases/py-MySQLdb
 py-PyGreSQL	ports/databases/py-PyGreSQL
 py-PySQLite	ports/databases/py-PySQLite
 py-SQLDict	ports/databases/py-SQLDict
+py-SciParam	ports/x11-toolkits/py-SciParam
 py-adns		ports/dns/py-adns
 py-albatross	ports/www/py-albatross
 py-anonfunc	ports/devel/py-anonfunc
