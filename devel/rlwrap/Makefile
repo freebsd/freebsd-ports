@@ -24,7 +24,13 @@ MAN1=	rlwrap.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500018
-IGNORE=		"Requires readline 4.2 or newer, only available in recent versions of FreeBSD 5.x"
+# This port requires readline 4.2 or newer, which is only available
+# in the base system in FreeBSD 5.x.
+BUILD_DEPENDS+=		${PREFIX}/lib/libreadline.so.4:${PORTSDIR}/devel/readline
+RUN_DEPENDS+=		${BUILD_DEPENDS}
+# Make sure the dynamic linker does not pick up
+# the older libreadline library from the base system.
+LDFLAGS+=		-rpath ${PREFIX}/lib
 .endif
 
 .include <bsd.port.post.mk>
