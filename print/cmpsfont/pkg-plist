@@ -1,3 +1,4 @@
+lib/afm/cmb10.afm
 lib/afm/cmbsy10.afm
 lib/afm/cmbx10.afm
 lib/afm/cmbx12.afm
@@ -6,6 +7,7 @@ lib/afm/cmbx6.afm
 lib/afm/cmbx7.afm
 lib/afm/cmbx8.afm
 lib/afm/cmbx9.afm
+lib/afm/cmbxsl10.afm
 lib/afm/cmbxti10.afm
 lib/afm/cmcsc10.afm
 lib/afm/cmdunh10.afm
@@ -90,15 +92,8 @@ lib/afm/logo8.afm
 lib/afm/logo9.afm
 lib/afm/logobf10.afm
 lib/afm/logosl10.afm
-lib/afm/cmb10.afm
-lib/afm/cmbxsl10.afm
-share/texmf/dvips/mapfiles/psfonts.cm
-share/texmf/dvips/mapfiles/psfonts.cmx
-share/texmf/dvips/mapfiles/psfonts.cmz
-share/texmf/dvips/mapfiles/readme.txt
+%%PORTDOCS%%share/doc/cmpsfont/README
 share/texmf/fonts/type1/Fontmap
-share/texmf/fonts/type1/fonts.dir
-share/texmf/fonts/type1/fonts.scale
 share/texmf/fonts/type1/cmb10.pfb
 share/texmf/fonts/type1/cmbsy10.pfb
 share/texmf/fonts/type1/cmbx10.pfb
@@ -174,6 +169,8 @@ share/texmf/fonts/type1/cmtt8.pfb
 share/texmf/fonts/type1/cmtt9.pfb
 share/texmf/fonts/type1/cmu10.pfb
 share/texmf/fonts/type1/cmvtt10.pfb
+share/texmf/fonts/type1/fonts.dir
+share/texmf/fonts/type1/fonts.scale
 share/texmf/fonts/type1/lasy10.pfb
 share/texmf/fonts/type1/lasy5.pfb
 share/texmf/fonts/type1/lasy6.pfb
@@ -193,8 +190,6 @@ share/texmf/fonts/type1/logo8.pfb
 share/texmf/fonts/type1/logo9.pfb
 share/texmf/fonts/type1/logobf10.pfb
 share/texmf/fonts/type1/logosl10.pfb
-share/doc/cmpsfont/READ.ME
-@dirrm share/texmf/dvips/mapfiles
 @dirrm lib/afm
-@dirrm share/texmf/fonts/type1
-@dirrm share/doc/cmpsfont
+%%PORTDOCS%%@dirrm share/doc/cmpsfont
+@unexec rmdir share/texmf/fonts/type1 2>/dev/null || true
