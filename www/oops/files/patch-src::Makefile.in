@@ -1,11 +1,20 @@
---- src/Makefile.in.orig	Fri Mar 21 19:42:58 2003
-+++ src/Makefile.in	Fri Mar 21 19:43:33 2003
+--- src/Makefile.in.orig	Tue Aug 19 15:56:34 2003
++++ src/Makefile.in	Tue Aug 19 15:58:11 2003
+@@ -29,7 +29,7 @@
+ 
+ #CFLAGS = -Wall -ggdb -D_REENTRANT -D_POSIX_PTHREADS_SEMANTICS
+ 
+-CFLAGS = @CFLAGS@ @DEFS@
++CFLAGS = @CFLAGS@ @DEFS@ ${PTHREAD_CFLAGS}
+ 
+ VER=@VER@
+ OOPSPATH=@prefix@/oops
 @@ -45,7 +45,7 @@
  	cd modules; $(MAKE)
  
  oops:	${OBJS}
 -	${CC} ${CFLAGS} ${OBJS} ${EXTLDFLAGS} ${LDFLAGS} ${LIBGB_PATH} ${LIBGB_NAME} ${OOPS_LIBS} ${LIBZ_NAME} ${OOPS_RPATH} -o oops
-+	${CXX} ${CFLAGS} ${OBJS} ${EXTLDFLAGS} ${LDFLAGS} ${LIBGB_PATH} ${LIBGB_NAME} ${OOPS_LIBS} ${LIBZ_NAME} ${OOPS_RPATH} -o oops
++	${CXX} ${CFLAGS} ${OBJS} ${EXTLDFLAGS} ${LDFLAGS} ${LIBGB_PATH} ${LIBGB_NAME} ${OOPS_LIBS} ${PTHREAD_LIBS} ${LIBZ_NAME} ${OOPS_RPATH} -o oops
  
  mkinstalldirs:
  	../mkinstalldirs ${OOPSPATH} \
