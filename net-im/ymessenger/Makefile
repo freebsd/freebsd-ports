@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	ymessenger
-PORTVERSION=	0.99.19.1
+PORTVERSION=	1.0.4
 PORTEPOCH=	20020902
 CATEGORIES=	net
-MASTER_SITES=	http://download.yahoo.com/dl/unix/fbsd45/
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.+)\.(.+)$/.\1-\2/g}
+MASTER_SITES=	http://download.yahoo.com/dl/unix/
+DISTNAME=	fbsd4.${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sethk@meowfishies.com
@@ -43,14 +43,10 @@ do-install:
 		    ${PREFIX}/libexec/ymessenger; \
 	    done)
 	${MKDIR} ${PREFIX}/lib/ymessenger
-	${INSTALL_DATA} ${WRKDIR}/lib/libgtkhtml.so.21 \
+	${INSTALL_DATA} ${WRKDIR}/lib/libgtkhtml.so.0 \
 		${PREFIX}/lib/ymessenger/
 
 post-patch:
 	${REINPLACE_CMD} -e 's:%%PREFIX%%:${PREFIX}:g' ${WRKDIR}/bin/ymessenger
-	${ECHO} 4 | dd bs=1 count=1 conv=notrunc seek=35437 \
-		of=${WRKDIR}/bin/ymessenger.bin
-	${ECHO} 4 | dd bs=1 count=1 conv=notrunc seek=62665 \
-		of=${WRKDIR}/lib/libgtkhtml.so.21
 
 .include <bsd.port.post.mk>
