@@ -161,7 +161,7 @@
 -      # end /opt/gnome share
 -
 -    elif test -d /usr/share/gnome/; then
-+    if test -d %%X11PREFIX%%/share/gnome/; then
++    if test -d %%X11BASE%%/share/gnome/; then
  
 -        # /usr/share/gnome icon
 -        if test ! -d /usr/share/gnome/pixmaps/; then
@@ -169,7 +169,7 @@
 -	    mkdir $mkdirv $mkdirp /usr/share/gnome/pixmaps/
 -	    chmod $chmodv 755 /usr/share/gnome/pixmaps
 -	    cp $cpv $share_dir/images/opera.xpm /usr/share/gnome/pixmaps/opera.xpm
-+        # %%X11PREFIX%%/share/gnome icon
++        # %%X11BASE%%/share/gnome icon
 +        if test ! -d %%X11BASE%%/share/gnome/pixmaps/; then
 +	  if test -w %%X11BASE%%/share/gnome; then
 +	    mkdir $mkdirv $mkdirp %%X11BASE%%/share/gnome/pixmaps/
@@ -180,7 +180,7 @@
 +	elif test -w %%X11BASE%%/share/gnome/pixmaps; then cp $cpv $share_dir/images/opera.xpm %%X11BASE%%/share/gnome/pixmaps/opera.xpm
  	fi
 -	# end /usr/share/gnome icon
-+	# end %%X11PREFIX%%/share/gnome icon
++	# end %%X11BASE%%/share/gnome icon
  
 -	# /usr/share/gnome link
 -	if test -d /usr/share/gnome/apps/; then
