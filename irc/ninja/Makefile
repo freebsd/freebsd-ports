@@ -7,6 +7,7 @@
 
 PORTNAME=	ninja
 PORTVERSION=	1.5.8
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ninja.qoop.org/ninja/sources/
 
