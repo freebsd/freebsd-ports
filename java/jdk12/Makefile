@@ -86,7 +86,7 @@ with a web browser and follow the second \"Download\" link for the\n\
 but you can create an account on this page.  After registration and\n\
 accepting the Sun Community Source License, select \"JDK-${JDK_VERSION}\" and\n\
 download the file \"${SRCFILE}\".  Please place this file in\n\
-/usr/ports/distfiles.\n
+${DISTDIR}.\n
 .endif
 
 # Check for patchset
@@ -97,13 +97,12 @@ The source distribution exists on your system, but due to\n\
 licensing restrictions you still need to download the\n\
 patchset, ${PATCHSETFILE}, from\n\
 http://www.eyesbeyond.com/freebsddom/java/jdk.html.\n\
-Please place the patchset in /usr/ports/distfiles.\n
+Please place the patchset in ${DISTDIR}.\n
 .endif
-
 
 pre-patch:
 	@${MKDIR} ${WRKSRC}
-.for dir in build src ext/i18n/build ext/i18n/src ext/iiimp/build 
+.for dir in build src ext/i18n/build ext/i18n/src ext/iiimp/build
 	@cd ${WRKDIR}/${dir} && ${RM} -rf bsd && ${CP} -R solaris bsd
 .endfor
 	@cd ${WRKSRC}		&& ${PATCH_CMD} ${WRKDIR}/build.patches && \
@@ -118,7 +117,7 @@ pre-patch:
 pre-build:
 	@if [ "$${WRKDIRPREFIX}" -a \
 	     -L "/compat/linux/$${WRKDIRPREFIX}" -a \
-	     x`ls -ld "/compat/linux/$${WRKDIRPREFIX}" 2>/dev/null | awk '/->/{print $$NF;exit 0}END{exit 1}'` = x"$${WRKDIRPREFIX}" ]; \
+	     x`ls -ld "/compat/linux/$${WRKDIRPREFIX}" 2>/dev/null | ${AWK} '/->/{print $$NF;exit 0}END{exit 1}'` = x"$${WRKDIRPREFIX}" ]; \
 	then \
 		${ECHO_MSG} "Please set WRKDIRPREFIX to something which doesn't"; \
 		${ECHO_MSG} "have a matching symbolic link in /compat/linux."; \
