@@ -161,6 +161,7 @@
     SUBDIR += p5-Math-SimpleVariable
     SUBDIR += p5-Math-Spline
     SUBDIR += p5-Math-TrulyRandom
+    SUBDIR += p5-Math-VecStat
     SUBDIR += p5-MatrixReal
     SUBDIR += p5-NetCDF
     SUBDIR += p5-Number-Compare
