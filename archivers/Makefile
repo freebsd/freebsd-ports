@@ -10,6 +10,7 @@
     SUBDIR += dact
     SUBDIR += deepforest
     SUBDIR += fastjar
+    SUBDIR += fileroller
     SUBDIR += freeze
     SUBDIR += gshar+gunshar
     SUBDIR += gtar
