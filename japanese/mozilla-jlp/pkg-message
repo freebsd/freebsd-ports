@@ -1,5 +1,5 @@
 ********************************
-If your XIM wouldn't work propery, try to make a file
+If your XIM wouldn't work properly, try to make a file
 
 "${HOME}/.mozilla/${USER}/*.slt/user.js"
 
