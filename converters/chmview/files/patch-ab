@@ -1,0 +1,95 @@
+diff -r -u ../src/chmview.c ./chmview.c
+--- ../src/chmview.c	Fri Mar 28 20:59:31 2003
++++ ./chmview.c	Fri Mar 28 19:01:39 2003
+@@ -3,9 +3,7 @@
+ #include <limits.h>
+ #include <errno.h>
+ #include <string.h>
+-#include <dir.h>
+ #include "chmlib.h"
+-#define PATH_MAX 512
+ 
+ static char *pointtoname(char *path)
+ {
+@@ -15,6 +13,7 @@
+   return p;
+ }
+ 
++#if 0
+ static int makedir(char *path)
+ {
+   char *end;
+@@ -47,6 +46,38 @@
+   }
+   return 1;
+ }
++#else
++static int makedir(char *path)
++{
++  char *slash;
++  int  was_error, done, err;
++
++  slash = path;
++  done = 0;
++  was_error = 0;
++
++  do {
++    slash = index(slash + 1, '/');
++    if (slash)
++    {
++      *slash = 0;
++      if (mkdir(path, MODE) == -1 && EEXIST != errno)
++        was_error = 1;
++      *slash = '/';
++    }
++    else
++       done = 1;
++  } while (! done && ! was_error);
++
++  if (was_error)
++  {
++    perror("mkdir");
++    return 0;
++  }
++
++  return 1;
++}
++#endif
+ 
+ static int savetofile(chmfile *c, char *target, int extractwithoutpath)
+ {
+@@ -55,18 +86,25 @@
+   char *rtarget;
+   char *p;
+   FILE *f;
+-  char path[PATH_MAX];
+-  char fullpath[PATH_MAX];
++  char fullpath[PATH_MAX + 1];
++  size_t pathlen;
+ 
+   if (chm_getfile(c, target, &length, &outbuf) != 0)
+     return 1;
+-  getcurdir(0,path);
+-  fullpath[0]=getdisk()+'A'; fullpath[1]=':'; fullpath[2]='/'; fullpath[3]='\0';
+-  strcat(fullpath,path);
+-  while ((p = strstr(fullpath,"\\")) != NULL)
+-    *p = '/';
+-  if (fullpath[strlen(fullpath)-1] != '/')
+-    strcat(fullpath,"/");
++
++  getcwd(fullpath,PATH_MAX-1);
++  pathlen = strlen(fullpath);
++  if (pathlen == 0)
++	return -1;	/* impossible but... defensive programming */
++  if (fullpath[pathlen - 1] != '/')
++  {
++    if (pathlen == PATH_MAX)
++	return -1;
++    else
++	fullpath[pathlen] = '/';
++	fullpath[pathlen+1] = 0;
++  }
++
+   strcat(fullpath,extractwithoutpath?pointtoname(target):target+1);
+   if (!extractwithoutpath)
+     if (!makedir(fullpath))
