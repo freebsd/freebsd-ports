@@ -3,10 +3,10 @@ bin/pl-bite
 bin/plrc
 bin/plld
 include/SWI-Prolog.h
-lib/%%DISTNAME%%/bin/i386-freebsd/pl
-lib/%%DISTNAME%%/bin/i386-freebsd/pl-bite
-lib/%%DISTNAME%%/bin/i386-freebsd/plld
-lib/%%DISTNAME%%/bin/i386-freebsd/plrc
+lib/%%DISTNAME%%/bin/%%PERL_ARCH%%/pl
+lib/%%DISTNAME%%/bin/%%PERL_ARCH%%/pl-bite
+lib/%%DISTNAME%%/bin/%%PERL_ARCH%%/plld
+lib/%%DISTNAME%%/bin/%%PERL_ARCH%%/plrc
 lib/%%DISTNAME%%/bin/swipl
 lib/%%DISTNAME%%/man/pl.1
 lib/%%DISTNAME%%/man/plrc.1
@@ -70,7 +70,7 @@ lib/%%DISTNAME%%/include/SWI-Prolog.h
 lib/%%DISTNAME%%/include/SWI-Exports
 lib/%%DISTNAME%%/include/SWI-Stream.h
 lib/%%DISTNAME%%/include/stub.c
-lib/%%DISTNAME%%/runtime/i386-freebsd/libpl.a
+lib/%%DISTNAME%%/runtime/%%PERL_ARCH%%/libpl.a
 lib/%%DISTNAME%%/boot.prc
 lib/%%DISTNAME%%/swipl
 lib/%%DISTNAME%%/README.bin

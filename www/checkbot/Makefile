@@ -3,7 +3,7 @@
 # Date created:				2. Feb 1998
 # Whom:	      				wosch@FreeBSD.org
 #
-# $Id: Makefile,v 1.8 1999/03/07 18:58:30 wosch Exp $
+# $Id: Makefile,v 1.9 1999/04/17 18:13:36 wosch Exp $
 #
 
 DISTNAME=	checkbot-1.54
@@ -15,7 +15,7 @@ MAINTAINER=	wosch@FreeBSD.ORG
 
 site_perl=${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 BUILD_DEPENDS=  \
-		${site_perl}/${ARCH}-freebsd/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
+		${site_perl}/${PERL_ARCH}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
 		${site_perl}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${site_perl}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
