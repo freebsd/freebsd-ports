@@ -30,6 +30,7 @@
     SUBDIR += muni
     SUBDIR += mutt
     SUBDIR += netscape47-communicator
+    SUBDIR += netscape47-navigator
     SUBDIR += nvi-big5
     SUBDIR += nvi-euc-cn
     SUBDIR += nvi-euc-tw
