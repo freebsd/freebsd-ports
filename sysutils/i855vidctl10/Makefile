@@ -14,4 +14,6 @@ DISTNAME=	${PORTNAME}10
 MAINTAINER=	oliver.bantke@t-g-p.org
 COMMENT=	Reesolution Tool for Centrino based Laptops
 
+ONLY_FOR_ARCHS=	i386
+
 .include <bsd.port.mk>
