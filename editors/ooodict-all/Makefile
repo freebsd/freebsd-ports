@@ -1,0 +1,130 @@
+# New ports collection makefile for: OpenOffice Spell Checking Dictionaries
+# Date created:         Tue Aug 10 24:00:00 UTC 2002
+# Whom:         Martin Blapp <mbr@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ooodict
+PORTVERSION=	1.0
+CATEGORIES+=	editors
+MASTER_SITES+=	http://dict.progbits.com/
+DISTFILES+=	${LANGDIST}
+
+.if !defined(LANGDIST)
+DICTMETAPORT=	yes
+.endif
+.if !defined(LANGDIST)
+LANGDIST+=	bg_BG.zip ca_ES.zip hr_HR.zip cs_CZ.zip \
+		da_DK.zip nl_NL.zip en_CA.zip en_GB.zip \
+		en_US.zip fr_FR.zip de_DE.zip de_CH.zip \
+		hu_HU.zip it_IT.zip pl_PL.zip pt_PT.zip \
+		pt_BR.zip es_ES.zip sk_SK.zip sv_SE.zip \
+		el_GR-enhanced.zip
+.endif
+
+SORT?=	/usr/bin/sort
+CUT?=	/usr/bin/cut
+
+.include <bsd.port.pre.mk>
+
+INSTALLATION_BASEDIR=	OpenOffice.org1.0
+DIST_SUBDIR=		openoffice
+DICT_DIR=		${INSTALLATION_BASEDIR}/share/dict/ooo
+
+.if defined(LANGPREFIX)
+PKGNAMEPREFIX=	${LANGPREFIX}-
+.endif
+.if defined(LANGSUFFIX)
+PKGNAMESUFFIX=	-${LANGSUFFIX}
+.endif
+
+.if exists(${.CURDIR}/pkg-comment)
+COMMENT=	${.CURDIR}/pkg-comment
+.endif
+
+.if exists(${.CURDIR}/pkg-descr)
+DESCR=		${.CURDIR}/pkg-descr
+.endif
+
+EXTRACT_ONLY=
+WRKSRC=		${WRKDIR}
+NO_BUILD=	yes
+
+MAINTAINER=     openoffice@FreeBSD.org
+
+.if defined(RDEP)
+BUILD_DEPENDS=	${PREFIX}/${DICT_DIR}/dictionary.lst:${RDEP}
+RUN_DEPENDS=	${PREFIX}/${DICT_DIR}/dictionary.lst:${RDEP}
+.else
+BUILD_DEPENDS=	${PREFIX}/${DICT_DIR}/dictionary.lst:${PORTSDIR}/editors/openoffice
+RUN_DEPENDS=	${PREFIX}/${DICT_DIR}/dictionary.lst:${PORTSDIR}/editors/openoffice
+.endif
+
+EXTRACT_CMD_L?=		unzip
+EXTRACT_BEFORE_ARGS_L?=	-q -o
+EXTRACT_AFTER_ARGS_L?=	-d ${PREFIX}/${DICT_DIR}
+
+pre-install:
+.if ! exists(${WRKDIR}/../pkg-plist)
+	@${TOUCH} ${WRKDIR}/../pkg-plist
+.endif
+
+do-install:
+
+post-install:
+	@for file in ${LANGDIST}; do \
+		ABRV=`${ECHO_CMD} $${file} | ${SED} -e 's|\.zip||'`; \
+		LANGUAGE=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|_.*||'`; \
+		COUNTRY=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|.*_||' | ${CUT} -c 1,2`; \
+		if ! (cd ${PREFIX}/${DICT_DIR}/ && ${EXTRACT_CMD_L} \
+			${EXTRACT_BEFORE_ARGS_L} \
+			${_DISTDIR}/$${file} '*.aff' '*.dic' ${EXTRACT_AFTER_ARGS_L}) ; \
+		then \
+			${ECHO} "Extracting of $${file} failed"; \
+			exit 1; \
+		fi ; \
+		${ECHO_MSG} "===>   Register spelling dictionary $${LANGUAGE}_$${COUNTRY}"; \
+		${ECHO} "@exec ${ECHO} \"DICT $${LANGUAGE} $${COUNTRY} $${ABRV}\" \
+		    >> ${PREFIX}/${DICT_DIR}/dictionary.lst" \
+		    >> ${TMPPLIST} ; \
+		${ECHO_CMD} "DICT $${LANGUAGE} $${COUNTRY} $${ABRV}" >> \
+		    ${PREFIX}/${DICT_DIR}/dictionary.lst ; \
+		cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
+		    ${GREP} $${LANGUAGE}_$${COUNTRY} >> ${TMPPLIST} ; \
+		${ECHO} "@unexec ${CP} ${PREFIX}/${DICT_DIR}/dictionary.lst \
+		    ${PREFIX}/${DICT_DIR}/dictionary.lst.$${LANGUAGE}_$${COUNTRY}" \
+		    >> ${TMPPLIST} ; \
+		${ECHO} "@unexec \
+		    if ! ( ${CAT} ${PREFIX}/${DICT_DIR}/dictionary.lst.$${LANGUAGE}_$${COUNTRY} | \
+			${GREP} -v -e '^DICT.*$${LANGUAGE}_$${COUNTRY}' > ${PREFIX}/${DICT_DIR}/dictionary.lst ) ;  then \
+				${ECHO_MSG} '===>   Notice: ${PREFIX}/${DICT_DIR}/dictionary.lst is empty' ; \
+		    fi" >> ${TMPPLIST} ; \
+		${ECHO} "@unexec ${RM} ${PREFIX}/${DICT_DIR}/dictionary.lst.$${LANGUAGE}_$${COUNTRY}" \
+		    >> ${TMPPLIST} ; \
+		case $${ABRV} in \
+		de_DE) \
+			${ECHO_MSG} "===>   Cross-register spelling dictionary $${ABRV} to $${LANGUAGE}_AT"; \
+			${CP} ${PREFIX}/${DICT_DIR}/de_DE.aff ${PREFIX}/${DICT_DIR}/de_AT.aff; \
+			${ECHO} "@exec ${ECHO} \"DICT $${LANGUAGE} AT de_AT\" \
+			    >> ${PREFIX}/${DICT_DIR}/dictionary.lst" \
+			    >> ${TMPPLIST} ; \
+			${ECHO_CMD} "DICT $$LANGUAGE AT $${ABRV}" >> \
+			    ${PREFIX}/${DICT_DIR}/dictionary.lst ; \
+			cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
+			    ${GREP} $${LANGUAGE}_AT >> ${TMPPLIST} ; \
+			${ECHO} "@unexec ${CP} ${PREFIX}/${DICT_DIR}/dictionary.lst \
+			    ${PREFIX}/${DICT_DIR}/dictionary.lst.$${LANGUAGE}_AT" \
+			    >> ${TMPPLIST} ; \
+			${ECHO} "@unexec \
+			    if ! ( ${CAT} ${PREFIX}/${DICT_DIR}/dictionary.lst.$${LANGUAGE}_AT | \
+				${GREP} -v -e '^DICT.*$${LANGUAGE}_AT' > ${PREFIX}/${DICT_DIR}/dictionary.lst ) ;  then \
+					${ECHO_MSG} '===>   Notice: ${PREFIX}/${DICT_DIR}/dictionary.lst is empty' ; \
+			    fi" >> ${TMPPLIST} ; \
+			${ECHO} "@unexec ${RM} ${PREFIX}/${DICT_DIR}/dictionary.lst.$${LANGUAGE}_AT" \
+			    >> ${TMPPLIST} ; \
+			;; \
+		esac \
+	done
+
+.include <bsd.port.post.mk>

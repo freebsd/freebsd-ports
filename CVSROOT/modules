@@ -500,6 +500,7 @@ bestfit		ports/misc/bestfit
 bfbtester	ports/security/bfbtester
 bfe		ports/emulators/bfe
 bftpd		ports/ftp/bftpd
+bg-ooodict-BG	ports/editors/ooodict-bg_BG
 bgpq		ports/net/bgpq
 bgrab		ports/news/bgrab
 bgrot		ports/x11/bgrot
@@ -662,6 +663,7 @@ c4		ports/devel/c4
 c89		src/usr.bin/c89
 c_c++_reference	ports/devel/c_c++_reference
 c_parser	ports/devel/c_parser
+ca-ooodict-ES	ports/editors/ooodict-ca_ES
 ca-roots	ports/security/ca-roots
 cabextract	ports/archivers/cabextract
 cadaver		ports/www/cadaver
@@ -1004,6 +1006,7 @@ crypto_telnet	src/crypto/telnet
 cryptopp	ports/security/cryptopp
 cryptoslam	ports/games/cryptoslam
 crystal		ports/devel/crystal
+cs-ooodict-CZ	ports/editors/ooodict-cs_CZ
 cs		ports/devel/cs
 cscope		ports/devel/cscope
 csh		src/bin/csh
@@ -1073,6 +1076,7 @@ cyrus-sasl	ports/security/cyrus-sasl
 cyrus-sasl2	ports/security/cyrus-sasl2
 cvs+ipv6		ports/devel/cvs+ipv6
 d1489		ports/russian/d1489
+da-ooodict-DK	ports/editors/ooodict-da_DK
 dact		ports/archivers/dact
 dadadodo	ports/textproc/dadadodo
 daemon		src/usr.sbin/daemon
@@ -1138,6 +1142,8 @@ de-kde3-i18n	ports/german/kde3-i18n
 de-koffice-i18n	ports/german/koffice-i18n
 de-linux-netscape6	ports/german/linux-netscape6
 de-manpages	ports/german/manpages
+de-ooodict-CH	ports/german/ooodict-de_CH
+de-ooodict-DE	ports/german/ooodict-de_DE
 de-openoffice	ports/german/openoffice
 de-phone	ports/german/phone
 de-staroffice52	ports/german/staroffice52
@@ -1384,6 +1390,7 @@ eiffel		ports/lang/eiffel
 eights		ports/games/eights
 eispack		ports/math/eispack
 eject		ports/sysutils/eject
+el-ooodict-GR	ports/editors/ooodict-el_GR
 electric	ports/cad/electric
 electriceyes	ports/graphics/electriceyes
 electricfence	ports/devel/ElectricFence
@@ -1427,6 +1434,9 @@ en-FAQ		doc/en_US.ISO8859-1/books/faq
 en-developers-handbook	doc/en_US.ISO8859-1/books/developers-handbook
 en-fdp-primer	doc/en_US.ISO8859-1/books/fdp-primer
 en-handbook	doc/en_US.ISO8859-1/books/handbook
+en-ooodict-CA	ports/editors/ooodict-en_CA
+en-ooodict-GB	ports/editors/ooodict-en_GB
+en-ooodict-US	ports/editors/ooodict-en_US
 en-porters-handbook	doc/en_US.ISO8859-1/books/porters-handbook
 encompass	ports/www/encompass
 endeavour	ports/x11-fm/endeavour
@@ -1460,6 +1470,7 @@ error		ports/devel/error
 eruby		ports/textproc/eruby
 erun		ports/x11/erun
 erwn		ports/www/erwn
+es-ooodict-ES	ports/editors/ooodict-es_ES
 es-openoffice	ports/editors/openoffice-es
 es		ports/shells/es
 esh		ports/shells/esh
@@ -1710,6 +1721,7 @@ fr-kde2-i18n	ports/french/kde2-i18n
 fr-kde3-i18n	ports/french/kde3-i18n
 fr-koffice-i18n	ports/french/koffice-i18n
 fr-linux-netscape6	ports/french/linux-netscape6
+fr-ooodict-FR	ports/french/ooodict-fr_FR
 fr-openoffice	ports/french/openoffice
 fr-staroffice52	ports/french/staroffice52
 fr-xtel		ports/french/xtel
@@ -2415,6 +2427,7 @@ hpack.non-usa.only	ports/archivers/hpack.non-usa.only
 hpijs		ports/print/hpijs
 hping		ports/security/hping
 hppsmtools	ports/graphics/hppsmtools
+hr-ooodict-HR	ports/editors/ooodict-hr_HR
 hsftp		ports/ftp/hsftp
 htdig		ports/textproc/htdig
 htdump		ports/www/htdump
@@ -2438,6 +2451,7 @@ httpgrabber	ports/www/httpgrabber
 httplog		ports/sysutils/httplog
 httptunnel	ports/www/httptunnel
 httrack		ports/www/httrack
+hu-ooodict-HU	ports/editors/ooodict-hu_HU
 hugelatex	ports/print/hugelatex
 hugs		ports/lang/hugs
 hx		ports/net/hx
@@ -2613,6 +2627,7 @@ isoqlog		ports/mail/isoqlog
 ispell		ports/textproc/ispell
 isreal		ports/graphics/isreal
 isync		ports/mail/isync
+it-ooodict-IT	ports/editors/ooodict-it_IT
 it-openoffice	ports/editors/openoffice-it
 itcl		ports/lang/itcl
 ithought	ports/deskutils/ithought
@@ -4640,6 +4655,7 @@ ninja		ports/irc/ninja
 njs		ports/lang/njs
 nl		src/usr.bin/nl
 nl-ispell	ports/textproc/nl-ispell
+nl-ooodict-NL	ports/editors/ooodict-nl_NL
 nl-openoffice	ports/editors/openoffice-nl
 nload		ports/net/nload
 nm		src/usr.bin/nm
@@ -4747,6 +4763,7 @@ oneko-sakura	ports/games/oneko-sakura
 onyx		ports/lang/onyx
 oo2c		ports/lang/oo2c
 oonsoo		ports/games/oonsoo
+ooodict-all	ports/editors/ooodict-all
 oooqs		ports/x11/oooqs
 oops		ports/www/oops
 op		ports/security/op
@@ -5808,6 +5825,7 @@ pks		ports/security/pks
 pktrace		ports/print/pktrace
 pktsuckers	ports/security/pktsuckers
 pkzip		ports/archivers/pkzip
+pl-ooodict-PL	ports/editors/ooodict-pl_PL
 pl-openoffice	ports/editors/openoffice-pl
 pl-sms		ports/misc/pl-sms
 plan		ports/deskutils/plan
@@ -6050,6 +6068,8 @@ pstotext	ports/print/pstotext
 pstree		ports/sysutils/pstree
 psutils-a4	ports/print/psutils-a4
 psutils-letter	ports/print/psutils-letter
+pt-ooodict-BR	ports/editors/ooodict-pt_BR
+pt-ooodict-PT	ports/editors/ooodict-pt_PT
 pt-openoffice	ports/editors/openoffice-pt
 pt-staroffice52	ports/editors/staroffice52-pt
 pth		ports/devel/pth
@@ -6993,6 +7013,7 @@ sitecopy	ports/www/sitecopy
 sitescooper	ports/palm/sitescooper
 sixpack		ports/databases/sixpack
 size		src/usr.bin/size
+sk-ooodict-SK	ports/editors/ooodict-sk_SK
 skel		src/share/skel
 sketch		ports/graphics/sketch
 ski		ports/emulators/ski
@@ -7238,6 +7259,7 @@ super		ports/security/super
 superlu		ports/math/superlu
 surf		ports/math/surf
 surfraw		ports/www/surfraw
+sv-ooodict-SE	ports/editors/ooodict-sv_SE
 svg2swf		ports/graphics/svg2swf
 svgalib		ports/graphics/svgalib
 svnc		ports/net/svnc

@@ -1,0 +1,7 @@
+Now, start up OpenOffice.org, and go to:
+
+Tools->Options->LanguageSettings->WritingAids
+
+Hit "Edit" and use the pull down menu to select your locale
+and then make sure to check the MySpell Spell Checker for
+that locale.
