@@ -18,6 +18,7 @@ COMMENT=	A 3D positional spatialized sound library
 WRKSRC=		${WRKDIR}/${DISTNAME}fbsd/linux
 GNU_CONFIGURE=  yes
 USE_GMAKE=	yes
+INSTALLS_SHLIB=	yes
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/openal.info ${PREFIX}/info
