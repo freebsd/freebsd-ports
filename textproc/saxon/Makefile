@@ -24,8 +24,10 @@ JAVA_VERSION=	1.1+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+CONFLICTS=	saxon-devel-8.*
+
 JARFILES=	saxon-jdom.jar saxon.jar
-PLIST_FILES+=	${JARFILES:S,^,${JAVAJARDIR:S,^${PREFIX}/,,}/,} bin/saxon
+PLIST_FILES+=	${JARFILES:S,^,%%JAVAJARDIR%%/,} bin/saxon
 .if !defined(NOPORTDOCS)
 PORTDOCS=	api api-guide.html changes.html changes5.html conditions.html conformance.html dtdgen.html expressions.html extensibility.html extensions.html history.html index.html instant.html patterns.html samples.html saxon-style.css using-xsl.html xsl-elements.html
 .endif
