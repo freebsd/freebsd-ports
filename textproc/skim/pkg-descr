@@ -3,4 +3,4 @@ provides a GUI panel (named scim-panel-kde), a KConfig config module and
 SetupUIs for itself and scim-lib. It also has its own plugin system which
 supports on-demand loadable actions.
 
-WWW: http://scim.freedesktop.org/
+WWW: http://scim.freedesktop.org/Software/ScimKDE
