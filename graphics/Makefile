@@ -33,6 +33,7 @@
     SUBDIR += bugle
     SUBDIR += cadubi
     SUBDIR += camediaplay
+    SUBDIR += cbview
     SUBDIR += chbg
     SUBDIR += cinepaint
     SUBDIR += claraocr
