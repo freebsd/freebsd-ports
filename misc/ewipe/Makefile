@@ -1,31 +1,39 @@
 # New ports collection makefile for:	ewipe
-# Version required:	0.7.0
+# Version required:	1.0.0
 # Date created:		17 October 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.10 1998/02/17 12:58:50 itojun Exp $
+# $Id: Makefile,v 1.11 1998/02/21 22:37:55 fenner Exp $
 #
 
-DISTNAME=	ewipe0.7.0
-PKGNAME?=	ewipe-0.7.0
+DISTNAME=	ewipe-1.0.0
 CATEGORIES=	misc tk42
-MASTER_SITES=	http://al.ei.tuat.ac.jp/~sekisita/ewipe/
+MASTER_SITES=	http://www.jnet-jp.to/~sekisita/ewipe/
 
 MAINTAINER=	itojun@itojun.org
 
-RUN_DEPENDS=	wish4.2:${PORTSDIR}/x11/tk42
+#RUN_DEPENDS=	wish4.2:${PORTSDIR}/x11/tk42
 
-NO_BUILD=	yes
 NO_CONFIGURE=	yes
 
+TCLLIBS=	definefont.tcl edittable.tcl setpointer.tcl viewer.tcl tclIndex
 DOCS=		README Changes dot.ewipe
-SAMPLES=	a1.gif a2.gif a3.gif a4.gif blue1.gif sample.ewp \
-		sample2.ewp sample3.ewp tutorial.ewp
+SAMPLES=	a1.gif a2.gif a3.gif a4.gif blue1.gif sample.ewp test.ewp \
+		tutorial.ewp
+
+KANJI?=		no
+
+do-build:
+.if ${KANJI} != yes
+	for i in edittable.tcl ewipe viewer.tcl; do\
+		ed ${WRKSRC}/$$i < ${SCRIPTDIR}/nokanji.ed;\
+	done
+.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/ewipe
 	${INSTALL_SCRIPT} ${WRKSRC}/ewipe ${PREFIX}/bin
-	for i in edittable.tcl setpointer.tcl viewer.tcl tclIndex; do\
+	for i in ${TCLLIBS}; do\
 		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/lib/ewipe;\
 	done
 .if !defined(NOPORTDOCS)

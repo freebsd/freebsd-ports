@@ -1,5 +1,5 @@
---- ewipe.orig	Fri Feb 13 10:57:57 1998
-+++ ewipe	Wed Mar  4 15:04:20 1998
+--- ewipe.orig	Sun Apr 12 10:59:29 1998
++++ ewipe	Sun Apr 12 10:59:57 1998
 @@ -1,6 +1,6 @@
  #!/bin/sh
  # the next line restarts using wish \
@@ -8,69 +8,13 @@
  
  #                                                 #
  #     EWIPE : Extended WIPE (Editor for WIPE)     #
-@@ -20,7 +20,7 @@
+@@ -20,7 +20,8 @@
  #     set PATH /usr/local/lib/ewipe               #
  #                                                 #
  
 -set PATH .
++#set PATH .
 +set PATH /usr/local/lib/ewipe
  
  ###################################################
  
-@@ -1935,24 +1935,43 @@
- 	    set str1 [string trim $str1 { }]
- 	    set n [string length $str1]
- 	    set l [expr $n / ($width + 1) + 1]
--	    label .c.lb1($lnum) -width 10 -text $str0 \
--		    -anchor w -bg RoyalBlue4 -fg white \
--		    -font $ewfont(a) -kanjifont $ewfont(k)
--	    label .c.lb2($lnum) -relief raised -width $width -heigh $l \
--		    -wraplength $wlen -text $str1 -justify left -anchor w \
--		    -bg RoyalBlue4 -fg $color \
--		    -font $ewfont(a) -kanjifont $ewfont(k)
-+	    if {$Option(lang) == "jpn"} {
-+		label .c.lb1($lnum) -width 10 -text $str0 \
-+			-anchor w -bg RoyalBlue4 -fg white \
-+			-font $ewfont(a) -kanjifont $ewfont(k)
-+		label .c.lb2($lnum) -relief raised -width $width -heigh $l \
-+			-wraplength $wlen -text $str1 -justify left -anchor w \
-+			-bg RoyalBlue4 -fg $color \
-+			-font $ewfont(a) -kanjifont $ewfont(k)
-+	    } else {
-+		label .c.lb1($lnum) -width 10 -text $str0 \
-+			-anchor w -bg RoyalBlue4 -fg white \
-+			-font $ewfont(a)
-+		label .c.lb2($lnum) -relief raised -width $width -heigh $l \
-+			-wraplength $wlen -text $str1 -justify left -anchor w \
-+			-bg RoyalBlue4 -fg $color \
-+			-font $ewfont(a)
-+	    }
- 	    .c create window 10 $scrY($lnum) -window .c.lb1($lnum) -anchor nw
- 	    .c create window 100 $scrY($lnum) -window .c.lb2($lnum) -anchor nw
- 	    set dy [expr 30 + ($l-1) * 15]
- 	} else {
- 	    set str [string range $line 0 [expr $width - 1]]
--	    label .c.lb1($lnum) -width 10 -text "   " \
--		    -anchor w  -bg RoyalBlue4 -fg white \
--		    -font $ewfont(a) -kanjifont $ewfont(k) 
--	    label .c.lb2($lnum) -relief raised -width $width -height 1 \
--		    -text $str -anchor nw -justify left -bg RoyalBlue4 \
--		    -fg white -font $ewfont(a) -kanjifont $ewfont(k)
-+	    if {$Option(lang) == "jpn"} {
-+		label .c.lb1($lnum) -width 10 -text "   " \
-+			-anchor w  -bg RoyalBlue4 -fg white \
-+			-font $ewfont(a) -kanjifont $ewfont(k) 
-+		label .c.lb2($lnum) -relief raised -width $width -height 1 \
-+			-text $str -anchor nw -justify left -bg RoyalBlue4 \
-+			-fg white -font $ewfont(a) -kanjifont $ewfont(k)
-+	    } else {
-+		label .c.lb1($lnum) -width 10 -text "   " \
-+			-anchor w  -bg RoyalBlue4 -fg white \
-+			-font $ewfont(a)
-+		label .c.lb2($lnum) -relief raised -width $width -height 1 \
-+			-text $str -anchor nw -justify left -bg RoyalBlue4 \
-+			-fg white -font $ewfont(a)
-+	    }
- 	    .c create window 10 $scrY($lnum) -window .c.lb1($lnum) -anchor nw
- 	    .c create window 100 $scrY($lnum) -window .c.lb2($lnum) -anchor nw
- 	    set dy 30
