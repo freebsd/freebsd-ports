@@ -1,0 +1,11 @@
+--- src/libdes/Makefile.orig	Thu Dec 19 01:29:21 1996
++++ src/libdes/Makefile	Fri Jan 31 11:14:52 1997
+@@ -10,7 +10,7 @@
+ # If you are on a DEC Alpha, edit des.h and change the DES_LONG
+ # define to 'unsigned int'.  I have seen this give a %20 speedup.
+ 
+-OPTS0= -DRAND -DTERMIO #-DNOCONST
++OPTS0= -DRAND -DTERMIOS #-DNOCONST
+ 
+ # Version 1.94 has changed the strings_to_key function so that it is
+ # now compatible with MITs when the string is longer than 8 characters.
