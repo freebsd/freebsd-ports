@@ -11,23 +11,30 @@ bin/nuweb2noweb
 bin/cpif
 bin/sl2h
 share/emacs/site-lisp/noweb-mode.el
+share/noweb/autodefs.asdl
 share/noweb/autodefs.c
 share/noweb/autodefs.icon
 share/noweb/autodefs.lrtl
+share/noweb/autodefs.mmix
 share/noweb/autodefs.pascal
 share/noweb/autodefs.promela
 share/noweb/autodefs.sml
 share/noweb/autodefs.tex
 share/noweb/autodefs.yacc
+share/noweb/btdefn
 share/noweb/disambiguate
+share/noweb/docs2comments
 share/noweb/elide
 share/noweb/emptydefn
 share/noweb/finduses
+share/noweb/h2a
 share/noweb/l2h
 share/noweb/markup
 share/noweb/mnt
 share/noweb/noidx
 share/noweb/nt
+share/noweb/nwmtime
+share/noweb/pipedocs
 share/noweb/tmac.w
 share/noweb/toascii
 share/noweb/tohtml
@@ -36,5 +43,6 @@ share/noweb/toroff
 share/noweb/unmarkup
 share/noweb/tex/noweb.sty
 share/noweb/tex/nwmac.tex
+share/noweb/xchunks
 @dirrm share/noweb/tex
 @dirrm share/noweb
