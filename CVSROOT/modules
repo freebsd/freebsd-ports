@@ -7894,6 +7894,7 @@ unexpand	src/usr.bin/unexpand
 unicode-uhoai	ports/vietnamese/unicode-uhoai
 unifdef		src/usr.bin/unifdef
 union		src/sys/miscfs/union
+unionfs		src/sys/fs/unionfs
 uniq		src/usr.bin/uniq
 unison		ports/net/unison
 units		src/usr.bin/units
