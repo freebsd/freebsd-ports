@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xfce4-datetime-plugin
-PORTVERSION=	0.2
+PORTVERSION=	0.3.0
 CATEGORIES=	x11-clocks xfce
-MASTER_SITES=	http://download.berlios.de/datetime/ 
+MASTER_SITES=	http://download.berlios.de/xfce-goodies/ 
 
 MAINTAINER=	matt@rimasec.net
 COMMENT=	XFce 4 additional clock module which also shows date
