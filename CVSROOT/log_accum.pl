@@ -1,6 +1,6 @@
 #!/usr/local/bin/perl
 #
-# $Id: log_accum.pl,v 1.23 1997/05/15 23:45:01 peter Exp $
+# $Id: log_accum.pl,v 1.24 1997/05/17 05:21:44 peter Exp $
 #
 # Perl filter to handle the log messages from the checkin of files in
 # a directory.  This script will group the lists of files by log
@@ -273,6 +273,7 @@ sub mlist_map {
     return 'cvs-CVSROOT'      if($dir =~ /^CVSROOT\//);
     return 'cvs-ports'        if($dir =~ /^ports\//);
     return 'cvs-www'          if($dir =~ /^www\//);
+    return 'cvs-doc'          if($dir =~ /^doc\//);
     return 'cvs-distrib'      if($dir =~ /^distrib\//);
 
     return 'cvs-other'        unless($dir =~ /^src\//);
