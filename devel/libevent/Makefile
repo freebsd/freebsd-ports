@@ -6,24 +6,28 @@
 #
 
 PORTNAME=	libevent
-PORTVERSION=	0.4
+PORTVERSION=	0.6
 CATEGORIES=	devel
-MASTER_SITES=	http://www.monkey.org/~provos/
+MASTER_SITES=	http://monkey.org/~provos/
 
 MAINTAINER=	petef@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 GNU_CONFIGURE=	yes
+USE_AUTOMAKE=	yes
 
 MAN3=	event.3
 MLINKS=	event.3 event_init.3 event.3 event_dispatch.3 event.3 event_set.3 \
 	event.3 event_add.3 event.3 event_del.3 event.3 event_pending.3 \
-	event.3 event_initalized.3 event.3 timeout_set.3 event.3 timeout_add.3 \
-	event.3 timeout_del.3 event.3 timeout_pending.3 event.3 \
-	timeout_initalized.3
+	event.3 event_loop.3 event.3 event_initalized.3 \
+	event.3 evtimer_set.3 event.3 evtimer_add.3 event.3 evtimer_del.3 \
+	event.3 evtimer_pending.3 event.3 evtimer_initialized.3 \
+	event.3 signal_set.3 event.3 signal_add.3 event.3 signal_del.3 \
+	event.3 signal_pending.3 event.3 signal_initialized.3
 
-post-patch:
-	@${PERL} -pi -e 's!\*\.h!event.h!' ${WRKSRC}/Makefile.in
+# install target strangely broken
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/event.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/libevent.a ${PREFIX}/lib
+	${INSTALL_MAN} ${WRKSRC}/event.3 ${PREFIX}/man/man3
 
 .include <bsd.port.mk>
