@@ -1,0 +1,22 @@
+%%PYTHON_SITELIBDIR%%/xdg/BaseDirectory.py
+%%PYTHON_SITELIBDIR%%/xdg/BaseDirectory.pyc
+%%PYTHON_SITELIBDIR%%/xdg/BaseDirectory.pyo
+%%PYTHON_SITELIBDIR%%/xdg/DesktopEntry.py
+%%PYTHON_SITELIBDIR%%/xdg/DesktopEntry.pyc
+%%PYTHON_SITELIBDIR%%/xdg/DesktopEntry.pyo
+%%PYTHON_SITELIBDIR%%/xdg/Exceptions.py
+%%PYTHON_SITELIBDIR%%/xdg/Exceptions.pyc
+%%PYTHON_SITELIBDIR%%/xdg/Exceptions.pyo
+%%PYTHON_SITELIBDIR%%/xdg/IconTheme.py
+%%PYTHON_SITELIBDIR%%/xdg/IconTheme.pyc
+%%PYTHON_SITELIBDIR%%/xdg/IconTheme.pyo
+%%PYTHON_SITELIBDIR%%/xdg/IniFile.py
+%%PYTHON_SITELIBDIR%%/xdg/IniFile.pyc
+%%PYTHON_SITELIBDIR%%/xdg/IniFile.pyo
+%%PYTHON_SITELIBDIR%%/xdg/Menu.py
+%%PYTHON_SITELIBDIR%%/xdg/Menu.pyc
+%%PYTHON_SITELIBDIR%%/xdg/Menu.pyo
+%%PYTHON_SITELIBDIR%%/xdg/__init__.py
+%%PYTHON_SITELIBDIR%%/xdg/__init__.pyc
+%%PYTHON_SITELIBDIR%%/xdg/__init__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/xdg
