@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	glbsp
-PORTVERSION=	2.05
-PORTREVISION=	1
+PORTVERSION=	2.10c
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +22,7 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/[[:alpha:]]//}
 
 .if !defined (WITH_GUI_VERSION)
 PLIST_SUB=	GUI_VERSION="@comment "
@@ -39,23 +38,20 @@ pre-everything::
 .endif
 
 .ifdef (WITH_GUI_VERSION)
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%FLTK_CONFIG%%|${X11BASE}\/bin\/fltk-config|g' \
-		${WRKSRC}/fltk/makefile.unx
-.endif
-
-do-build:
-	${SETENV} CC=${CC} "CFLAGS=${CFLAGS}" \
-		${GMAKE} -C ${WRKSRC}/cmdline -f makefile.unx all
-.ifdef (WITH_GUI_VERSION)
-	${SETENV} CC=${CC} CXX=${CXX} "CFLAGS=${CFLAGS}" "CXXFLAGS=${CXXFLAGS}" \
-		${GMAKE} -C ${WRKSRC}/fltk -f makefile.unx all
+post-build:
+	${SETENV} CC=${CC} \
+		  CXX=${CXX} \
+		  CFLAGS="${CFLAGS}" \
+		  CXXFLAGS="${CXXFLAGS}" \
+		  X11BASE=${X11BASE} \
+		  LOCALBASE=${LOCALBASE} \
+		${GMAKE} -C ${WRKSRC} -f GUI.mak all
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cmdline/glbsp ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/glbsp ${PREFIX}/bin
 .ifdef (WITH_GUI_VERSION)
-	${INSTALL_PROGRAM} ${WRKSRC}/fltk/glBSPX ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/glBSPX ${PREFIX}/bin
 .endif
 
 .ifndef (NOPORTDOCS)
