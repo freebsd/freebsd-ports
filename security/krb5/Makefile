@@ -3,7 +3,7 @@
 # Date created:				6/5/1998
 # Whom:					n@nectar.com
 #
-# $Id: Makefile,v 1.2 1998/07/06 23:35:59 nectar Exp $
+# $Id: Makefile,v 1.3 1998/07/27 22:45:10 dima Exp $
 #
 
 DISTNAME=		krb5-1.0.5
@@ -27,6 +27,11 @@ KRB5_KRB4_COMPAT?=	YES
 .if !defined(KRB5_KRB4_COMPAT) || ${KRB5_KRB4_COMPAT} == "NO"
 CONFIGURE_ARGS+=	--without-krb4
 .endif
+
+.if defined(KRB5_HOME)
+PREFIX=			${KRB5_HOME}
+.endif
+
 
 RESTRICTED=		"Crypto; export-controlled"
 # Set USA_RESIDENT appropriately in /etc/make.conf if you like
