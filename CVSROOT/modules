@@ -7754,6 +7754,7 @@ pwgen		ports/sysutils/pwgen
 pwlib		ports/devel/pwlib
 pwm		ports/x11-wm/pwm
 pwman		ports/security/pwman
+pwsafe		ports/security/pwsafe
 pxe		ports/net/pxe
 pxfonts		ports/print/pxfonts
 pxtools		ports/databases/pxtools
