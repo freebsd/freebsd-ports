@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	kdegames
-PORTVERSION=	20000829A
+PORTVERSION=	1.94
 CATEGORIES=	games kde
-MASTER_SITES=	http://www.physics.purdue.edu/~will/
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	unstable/distribution/2.0Beta5/tar/src
 
 MAINTAINER=	will@FreeBSD.org
 
@@ -27,8 +28,5 @@ CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-lqt2" LIBQTFILE="libqt2" \
 		LIBS="-Wl,-export-dynamic -L${X11BASE}/lib -lqt2 -L${LOCALBASE}/lib -ljpeg -lgcc -lstdc++" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 USE_GMAKE=	yes
-
-pre-install:
-	@(find ${WRKSRC} -name CVS | xargs rm -rf)
 
 .include <bsd.port.mk>

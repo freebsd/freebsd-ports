@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	kdetoys
-PORTVERSION=	20000829A
+PORTVERSION=	1.94
 CATEGORIES=	x11-clocks kde
-MASTER_SITES=	http://www.physics.purdue.edu/~will/
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	unstable/distribution/2.0Beta5/tar/src
 
 MAINTAINER=	will@FreeBSD.org
 
@@ -27,8 +28,5 @@ CONFIGURE_ENV+= LIBQT="-lqt2" MOC="${MOC}" DO_NOT_COMPILE=mouse LIBQTFILE="libqt
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib -lqt2 -ljpeg -lgcc -lstdc++"
 USE_GMAKE=	yes
-
-pre-install:
-	@(find ${WRKSRC} -name CVS | xargs rm -rf)
 
 .include <bsd.port.mk>

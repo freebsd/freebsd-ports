@@ -22,7 +22,6 @@ bin/kmailservice
 bin/knotify
 bin/lnusertemp
 bin/mcopidl
-bin/mkusertemp
 bin/settheme
 include/addressbook.h
 include/arts/anyref.h
@@ -161,6 +160,7 @@ include/kdesu/defaults.h
 include/kdesu/kcookie.h
 include/kdesu/kdesu_pty.h
 include/kdesu/process.h
+include/kdesu/pty.h
 include/kdesu/ssh.h
 include/kdesu/stub.h
 include/kdesu/su.h
@@ -217,6 +217,8 @@ include/kio/observer.h
 include/kio/passdlg.h
 include/kio/paste.h
 include/kio/progressbase.h
+include/kio/renamedlg.h
+include/kio/skipdlg.h
 include/kio/slavebase.h
 include/kio/slaveinterface.h
 include/kio/statusbarprogress.h
@@ -301,6 +303,15 @@ include/ksimpleconfig.h
 include/ksock.h
 include/kspell.h
 include/kspelldlg.h
+include/kssl.h
+include/ksslcertificate.h
+include/ksslcertificatefactory.h
+include/ksslcertificatehome.h
+include/ksslconnectioninfo.h
+include/ksslinfodlg.h
+include/ksslpeerinfo.h
+include/ksslsettings.h
+include/ksslx509map.h
 include/kstaticdeleter.h
 include/kstatusbar.h
 include/kstdaccel.h
@@ -432,58 +443,83 @@ lib/kstephighcolor.so
 lib/kstepstyle.la
 lib/kstepstyle.so
 lib/libDCOP.la
+lib/libDCOP.so
 lib/libDCOP.so.4
-lib/libDCOPC.la
-lib/libDCOPC.so.4
 lib/libartsc.la
+lib/libartsc.so
 lib/libartsc.so.0
 lib/libartscbackend.la
+lib/libartscbackend.so
 lib/libartscbackend.so.0
 lib/libartsdsp.la
+lib/libartsdsp.so
 lib/libartsdsp.so.0
 lib/libartsflow.la
+lib/libartsflow.so
 lib/libartsflow.so.0
 lib/libartsflow_idl.la
+lib/libartsflow_idl.so
 lib/libartsflow_idl.so.0
 lib/libkab.la
+lib/libkab.so
 lib/libkab.so.4
 lib/libkdecore.la
+lib/libkdecore.so
 lib/libkdecore.so.4
 lib/libkdesu.la
+lib/libkdesu.so
 lib/libkdesu.so.4
 lib/libkdeui.la
+lib/libkdeui.so
 lib/libkdeui.so.4
 lib/libkfile.la
+lib/libkfile.so
 lib/libkfile.so.4
+lib/libkformula.so
 lib/libkhtml.la
+lib/libkhtml.so
 lib/libkhtml.so.4
 lib/libkio.la
+lib/libkio.so
 lib/libkio.so.4
 lib/libkjava.la
+lib/libkjava.so
 lib/libkjava.so.4
 lib/libkjs.la
+lib/libkjs.so
 lib/libkjs.so.4
-lib/libkmapnotify.la
-lib/libkmapnotify.so.4
 lib/libkmedia2_idl.la
+lib/libkmedia2_idl.so
 lib/libkmedia2_idl.so.0
 lib/libkmid.la
+lib/libkmid.so
 lib/libkmid.so.0
 lib/libkparts.la
+lib/libkparts.so
 lib/libkparts.so.4
 lib/libkspell.la
+lib/libkspell.so
 lib/libkspell.so.4
+lib/libkssl.la
+lib/libkssl.so
+lib/libkssl.so.2
 lib/libksycoca.la
+lib/libksycoca.so
 lib/libksycoca.so.4
 lib/libktexteditor.la
+lib/libktexteditor.so
 lib/libktexteditor.so.0
 lib/libmcop.la
+lib/libmcop.so
 lib/libmcop.so.0
 lib/libqtmcop.la
+lib/libqtmcop.so
 lib/libqtmcop.so.0
 lib/libsoundserver_idl.la
+lib/libsoundserver_idl.so
 lib/libsoundserver_idl.so.0
 lib/libx11globalcomm.la
+lib/libx11globalcomm.so
 lib/libx11globalcomm.so.0
 share/apps/LICENSES/ARTISTIC
 share/apps/LICENSES/BSD
@@ -546,6 +582,8 @@ share/apps/ksgmltools/stylesheets/kde-l1fi.dsl
 share/apps/ksgmltools/stylesheets/kde-l1fi.ent
 share/apps/ksgmltools/stylesheets/kde-l1fr.dsl
 share/apps/ksgmltools/stylesheets/kde-l1fr.ent
+share/apps/ksgmltools/stylesheets/kde-l1hu.dsl
+share/apps/ksgmltools/stylesheets/kde-l1hu.ent
 share/apps/ksgmltools/stylesheets/kde-l1it.dsl
 share/apps/ksgmltools/stylesheets/kde-l1it.ent
 share/apps/ksgmltools/stylesheets/kde-l1ja.dsl
@@ -661,6 +699,7 @@ share/config/kde-config
 share/config/kdebug.areas
 share/config/kdebugrc
 share/config/ui/ui_standards.rc
+share/doc/HTML/default
 share/doc/HTML/en/common/artistic-licence.html
 share/doc/HTML/en/common/bsd-licence.html
 share/doc/HTML/en/common/caution.png
@@ -692,13 +731,8 @@ share/doc/HTML/en/common/up.png
 share/doc/HTML/en/common/warning.png
 share/doc/HTML/en/common/x11-licence.html
 share/doc/HTML/en/common/xml.dcl
-share/doc/HTML/en/kdebug/.anchors
-share/doc/HTML/en/kdebug/how-to-use.html
-share/doc/HTML/en/kdebug/index.docbook
-share/doc/HTML/en/kdebug/index.html
-share/doc/HTML/en/kdebug/using-areas.html
-share/doc/HTML/en/kdebug/what-is-kdebug.html
 share/doc/HTML/en/kspell/.anchors
+share/doc/HTML/en/kspell/common
 share/doc/HTML/en/kspell/configuration-dialog-.html
 share/doc/HTML/en/kspell/contact-information.html
 share/doc/HTML/en/kspell/encodings.html
@@ -1116,6 +1150,7 @@ share/icons/hicolor/48x48/filesystems/trashcan_empty.png
 share/icons/hicolor/48x48/filesystems/trashcan_full.png
 share/icons/hicolor/48x48/filesystems/www.png
 share/icons/hicolor/48x48/filesystems/zip.png
+share/icons/hicolor/48x48/mimetypes/applix.png
 share/icons/hicolor/48x48/mimetypes/binary.png
 share/icons/hicolor/48x48/mimetypes/binary2.png
 share/icons/hicolor/48x48/mimetypes/blockdevice.png
@@ -1542,7 +1577,7 @@ share/servicetypes/krwp.desktop
 share/servicetypes/ktexteditor.desktop
 share/servicetypes/kurifilterplugin.desktop
 @dirrm share/doc/HTML/en/kspell
-@dirrm share/doc/HTML/en/kdebug
+@dirrm share/doc/HTML/en/common
 @dirrm share/apps/kstyle/themes
 @dirrm share/apps/kstyle/pixmaps
 @dirrm share/apps/ksgmltools/stylesheets
@@ -1553,7 +1588,6 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/apps/khtml/css
 @dirrm share/apps/khtml
 @dirrm share/apps/kdeui/pics
-@dirrm share/apps/kab/pics
 @dirrm share/apps/kab
 @dirrm share/apps/LICENSES
 @dirrm lib/Arts

@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	kdesupport
-PORTVERSION=	20000829A
+PORTVERSION=	1.94
 CATEGORIES=	converters kde
-MASTER_SITES=	http://www.physics.purdue.edu/~will/
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	unstable/distribution/2.0Beta5/tar/src
 
 MAINTAINER=	will@FreeBSD.org
 
+BUILD_DEPENDS=	jade:${PORTSDIR}/textproc/jade \
+		${PREFIX}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc
 LIB_DEPENDS=	qt2.4:${PORTSDIR}/x11-toolkits/qt22
 
 MOC=		${X11BASE}/bin/moc2
@@ -37,8 +40,5 @@ PLIST_SUB+=	LIBVER="${SOMAJOR}"
 pre-configure:
 	${PERL} -pi -e "s@TOPSUBDIRS libaps@TOPSUBDIRS@g" ${WRKSRC}/configure
 	${PERL} -pi -e "s@odbc libaps@odbc@g" ${WRKSRC}/configure
-
-pre-install:
-	@(find ${WRKSRC} -name CVS | xargs rm -rf)
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@ bin/kmoon
 bin/kteatime
 bin/kworldwatch
 lib/libkeyesapplet.la
+lib/libkeyesapplet.so
 lib/libkeyesapplet.so.1
 share/applnk/Toys/amor.desktop
 share/applnk/Toys/kmoon.desktop
@@ -303,6 +304,7 @@ share/apps/amor/pingu/walk_r6.xpm
 share/apps/amor/pingu/walk_r7.xpm
 share/apps/amor/pingu/walk_r8.xpm
 share/apps/amor/pingurc
+share/apps/amor/tips-default
 share/apps/amor/tips-en
 share/apps/amor/worm/w-a1.xpm
 share/apps/amor/worm/w-a2.xpm
@@ -380,16 +382,17 @@ share/apps/kworldwatch/pics/flag-red.xpm
 share/apps/kworldwatch/pics/flag-yellow.xpm
 share/apps/kworldwatch/pics/photo_400.png
 share/apps/kworldwatch/pics/world2.png
-share/doc/HTML/en/mouse/.anchors
-share/doc/HTML/en/mouse/compilationandinstallation.html
-share/doc/HTML/en/mouse/guide.png
-share/doc/HTML/en/mouse/howitworks.html
-share/doc/HTML/en/mouse/index.cvlog
-share/doc/HTML/en/mouse/index.docbook
-share/doc/HTML/en/mouse/index.html
-share/doc/HTML/en/mouse/installation.html
-share/doc/HTML/en/mouse/introduction.html
-share/doc/HTML/en/mouse/onscreenoperation.html
+share/doc/HTML/en/kodo/.anchors
+share/doc/HTML/en/kodo/common
+share/doc/HTML/en/kodo/compilationandinstallation.html
+share/doc/HTML/en/kodo/guide.png
+share/doc/HTML/en/kodo/howitworks.html
+share/doc/HTML/en/kodo/index.cvlog
+share/doc/HTML/en/kodo/index.docbook
+share/doc/HTML/en/kodo/index.html
+share/doc/HTML/en/kodo/installation.html
+share/doc/HTML/en/kodo/introduction.html
+share/doc/HTML/en/kodo/onscreenoperation.html
 share/icons/hicolor/32x32/apps/amor.png
 share/icons/hicolor/32x32/apps/kmoon.png
 share/icons/hicolor/32x32/apps/kworldwatch.png
@@ -401,11 +404,7 @@ share/icons/locolor/16x16/apps/kteatime.png
 share/icons/locolor/16x16/apps/kworldwatch.png
 share/icons/locolor/32x32/apps/kmoon.png
 share/icons/locolor/32x32/apps/kworldwatch.png
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/doc/HTML/en/mouse
+@dirrm share/doc/HTML/en/kodo
 @dirrm share/apps/kworldwatch/pics
 @dirrm share/apps/kworldwatch
 @dirrm share/apps/kmoon/pics
