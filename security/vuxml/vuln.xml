@@ -32,6 +32,31 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1f8dea68-3436-11d9-952f-000c6e8f12ef">
+    <topic>bnc -- buffer-overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>bnc</name>
+	<range><le>2.8.9</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The function getnickuserhost() suffers from a buffer-overflow.
+	  It is called when BNC processes a response from IRC server.
+	  An attacking server can use this vulnerability to gain shell
+	  access, on the BNC running machine.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="20041110131046.GA21604@cecilija.zesoi.fer.hr>">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110011817627839</mlist>
+    </references>
+    <dates>
+      <discovery>2004-10-11</discovery>
+      <entry>2004-10-11</entry>
+    </dates>
+  </vuln>
+	   
   <vuln vid="027380b7-3404-11d9-ac1b-000d614f7fad">
     <topic>hafiye -- lack of terminal escape sequence filtering</topic>
     <affects>
