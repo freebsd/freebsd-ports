@@ -60,6 +60,7 @@ lib/xine/plugins/xineplug_inp_rtp.so
 lib/xine/plugins/xineplug_inp_stdin_fifo.so
 lib/xine/plugins/xineplug_inp_vcd.so
 lib/xine/plugins/xineplug_vo_out_aa.so
+lib/xine/plugins/xineplug_vo_out_opengl.so
 lib/xine/plugins/xineplug_vo_out_syncfb.so
 lib/xine/plugins/xineplug_vo_out_xshm.so
 %%HAVE_LIBXV%%lib/xine/plugins/xineplug_vo_out_xv.so

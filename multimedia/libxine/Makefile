@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://xine.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -16,7 +17,8 @@ DISTNAME=	${PORTNAME}-lib-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libavcodec.a:${PORTSDIR}/graphics/ffmpeg
+BUILD_DEPENDS=	${LOCALBASE}/lib/libavcodec.a:${PORTSDIR}/graphics/ffmpeg \
+		${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
 LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		intl.2:${PORTSDIR}/devel/gettext \
@@ -29,10 +31,12 @@ USE_ESOUND=	yes
 USE_IMLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+USE_MESA=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		THREAD_LIBS="${PTHREAD_LIBS}"
+		THREAD_LIBS="${PTHREAD_LIBS}" \
+		X_EXTRA_LIBS="-lGL -lGLU -lXext -lX11 -lm"
 CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32
 INSTALLS_SHLIB=	yes
 
