@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memchan
-PORTVERSION=	2.1p2
+PORTVERSION=	2.1p3
 CATEGORIES=	devel tcl83
 MASTER_SITES=	http://www.oche.de/~akupries/soft/memchan/download/
 PKGNAMEPREFIX=	tcl-
