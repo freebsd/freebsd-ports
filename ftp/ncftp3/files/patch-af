@@ -5,7 +5,7 @@
  $(LIBSO): $(SOBJS)
  	/bin/rm -f $(LIBSO)
 -	gcc -shared -Wl,-soname,$(LIBSO) -o $(LIBSO) $(SOBJS)
-+	gcc -shared -Wl,-x -o $(LIBSO) `lorder $(SOBJS) | tsort -q`
++	$(CC) -shared -Wl,-x -o $(LIBSO) `lorder $(SOBJS) | tsort -q`
  	/bin/ln -s $(LIBSO) $(LIBSOS)
  	-@/bin/ls -l $(LIBSOS) $(LIBSO)
  
