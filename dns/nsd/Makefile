@@ -7,6 +7,7 @@
 
 PORTNAME=	nsd
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/
 
