@@ -23,11 +23,7 @@ USE_RUBY=	yes
 USE_RUBY_AMSTD=	yes
 USE_RUBY_SETUP=	yes
 
-post-patch:
-	${RUBY} -i -ne '/\btmail\b/ and print' \
-		${WRKSRC}/ext/PATHCONV ${WRKSRC}/lib/PATHCONV
-	for d in cparse cscan; do ${RM} -rf ${WRKSRC}/ext/$$d; done
-	for d in amstd raccrt strscan; do ${RM} -rf ${WRKSRC}/lib/$$d; done
+CONFIGURE_ARGS=	--with=ext/mails,lib/tmail
 
 do-install:
 .if !defined(NOPORTDOCS)
