@@ -7,12 +7,13 @@
 #
 
 PORTNAME=	linux_rar
-PORTVERSION=	2.60
+PORTVERSION=	2.70
 CATEGORIES=	archivers linux
-MASTER_SITES=	ftp://rarsoft.ti.sk/pub/rar/ \
-		ftp://ftp.cdrom.com/pub/cheats/dlh/rar/ \
-		ftp://ftp.cdrom.com/pub/sac/pack/
-DISTNAME=	rarlnx26
+MASTER_SITES=	ftp://ftp.netlab.sk/public/rarsoft/rar/ \
+		ftp://ftp.elf.stuba.sk/pub/pack/ \
+		ftp://ftp.cs.tu-berlin.de/pub/msdos/mirrors/stuba/pc/pack/ \
+		ftp://rarsoft.ti.sk/pub/rar/
+DISTNAME=	rarlnx27
 EXTRACT_SUFX=	.sfx
 
 MAINTAINER=	k5@cheerful.com
@@ -28,7 +29,7 @@ NO_PACKAGE=	Only unmodified original package can be distributed
 EXTRACT_CMD=		# empty
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty
-STRIP=			# empty: do not touch linux binary!
+STRIP=			# empty: do not strip linux binary during INSTALL_PROGRAM
 WRKSRC=		${WRKDIR}/rar
 PLIST=		${WRKSRC}/PLIST
 
@@ -46,6 +47,12 @@ pre-configure:
 do-install:
 	@${MKDIR} ${PREFIX}/share/doc/rar ${PREFIX}/share/rar
 	@${INSTALL_PROGRAM} ${WRKSRC}/rar ${PREFIX}/bin
+	brandelf -t Linux ${PREFIX}/bin/rar
+.if defined(WITH_UNRAR)
+	@${INSTALL_PROGRAM} ${WRKSRC}/unrar ${PREFIX}/bin
+	brandelf -t Linux ${PREFIX}/bin/unrar
+	@${ECHO} bin/unrar >> ${WRKSRC}/PLIST
+.endif
 .for i in ${RARDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/rar
 .endfor
@@ -61,17 +68,11 @@ do-install:
 .else
 	@${ECHO} man/cat1/rar.1 >> ${WRKSRC}/PLIST
 .endif
-.if defined(WITH_UNRAR)
-	@${INSTALL_PROGRAM} ${WRKSRC}/unrar ${PREFIX}/bin
-	@${ECHO} bin/unrar >> ${WRKSRC}/PLIST
-.endif
 
 post-install:
-	@/usr/bin/brandelf -t Linux ${PREFIX}/bin/rar
 	@${ECHO_MSG} "This is 40 days trial version of commercial software."
 	@${ECHO_MSG} "Read texts in ${PREFIX}/share/doc/rar before use."
 .if defined(WITH_UNRAR)
-	@/usr/bin/brandelf -t Linux ${PREFIX}/bin/unrar
 	@${ECHO_MSG} "However, unrar can be used for free."
 .endif
 
