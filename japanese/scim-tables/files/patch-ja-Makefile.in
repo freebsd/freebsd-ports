@@ -1,0 +1,11 @@
+--- ja/Makefile.in.orig	Sun Feb 27 14:54:18 2005
++++ ja/Makefile.in	Sun Mar  6 15:45:55 2005
+@@ -223,7 +223,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SCIM_MAKE_TABLE = $(top_builddir)/src/scim-make-table
++SCIM_MAKE_TABLE = scim-make-table
+ scim_tables_source = HIRAGANA.txt.in KATAKANA.txt.in Nippon.txt.in
+ scim_tables = HIRAGANA.txt KATAKANA.txt Nippon.txt
+ scim_tables_bindir = $(SCIM_TABLEDIR)

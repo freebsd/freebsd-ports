@@ -1,29 +1,36 @@
---- icons/Makefile.in.orig	Sun Jun 20 20:50:51 2004
-+++ icons/Makefile.in	Fri Jul  2 06:03:56 2004
-@@ -109,25 +109,9 @@
+--- icons/Makefile.in.orig	Tue Mar  1 15:10:44 2005
++++ icons/Makefile.in	Tue Mar  1 15:11:49 2005
+@@ -222,32 +222,9 @@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  MAINTAINERCLEANFILES = Makefile.in
--INST_ICONS = Amharic.png   \
+-INST_ICONS = table.png	\
+-			  Amharic.png   \
+-			  Arabic.png    \
 -			  Array30.png   \
 -			  CangJie.png   \
+-			  CangJie3.png   \
 -			  Cantonese.png \
+-			  CantonHK.png \
+-			  Quick.png \
+-			  Stroke5.png \
 -			  Dayi.png      \
 -			  Erbi.png      \
 -			  Erbi-QS.png   \
 -			  EZ.png        \
--			  Jyutping.png  \
--			  Simplex.png   \
--			  Wubi.png      \
--			  Ziranma.png   \
--			  ZhuYin.png    \
--			  HIRAGANA.png  \
-+INST_ICONS = HIRAGANA.png  \
- 			  KATAKANA.png  \
--			  Nippon.png    \
 -			  Hangul.png    \
 -			  Hanja.png     \
--			  Yawerty.png
+-			  HIRAGANA.png  \
+-			  Jyutping.png  \
++INST_ICONS = 		  HIRAGANA.png  \
+ 			  KATAKANA.png  \
+-			  Nippon.png    \
+-			  Simplex.png   \
+-			  Viqr.png      \
+-			  Wubi.png      \
+-			  Yawerty.png   \
+-			  ZhuYin.png    \
+-			  Ziranma.png
 +			  Nippon.png
  
  EXTRA_DIST = $(INST_ICONS)
