@@ -2687,6 +2687,7 @@ intercal	ports/lang/intercal
 interchange	ports/www/interchange
 intlfonts	ports/x11-fonts/intlfonts
 intltool	ports/textproc/intltool
+inventor	ports/graphics/inventor
 invitation_to_ruby	ports/devel/invitation_to_ruby
 iog		ports/net/iog
 ion		ports/x11-wm/ion
