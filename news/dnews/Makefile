@@ -3,7 +3,7 @@
 # Date created:		Thu May 29 17:16:36 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.7 1998/01/31 15:52:32 andreas Exp $
+# $Id: Makefile,v 1.8 1998/07/18 15:36:05 andreas Exp $
 #
 
 DISTNAME=	dnews
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.netwinsite.com/pub/netwinsite/dnews/
 DISTFILES=	dnews46n_freebsd.tar.Z
 
 MAINTAINER=	andreas@FreeBSD.ORG
+
+BROKEN='fetch, distfile not avail. (version 4.7k is the latest)'
 
 NO_CDROM=	"no answer yet, if we are allowed to put it onto CDROM"
 RESTRICTED=	"only free for non-profit organisations"
