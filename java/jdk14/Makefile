@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk14.html
@@ -99,24 +99,40 @@ http://www.eyesbeyond.com/freebsddom/java/jdk14.html.\n\
 Please place the patchset in ${DISTDIR}.\n
 .endif
 
+# JDK 1.4.1 require recent version of FreeBSD due to recent libc_r updates.
+# Make check for reqiuired primities as early as possible
+
+TESTPROG=testos
+
 .if ${OSVERSION} > 500000
 LINKIT=	-lc_r
 .else
 LINKIT=	-pthread
 .endif
 
-# JDK 1.4.1 require recent version of FreeBSD due to recent libc_r updates.
 check-os:
 .if !defined(SKIP_OS_TEST)
-	@mkdir -p ${WRKDIR} ; \
-	gcc ${LINKIT} -o ${WRKDIR}/testos ${FILESDIR}/testos.c > /dev/null 2>&1 ; \
-	${WRKDIR}/testos 2>/dev/null
+	-@mkdir -p ${WRKDIR} ; \
+	rm -f ${WRKDIR}/${TESTPROG} ; \
+	gcc ${LINKIT} -o ${WRKDIR}/${TESTPROG} \
+		${FILESDIR}/${TESTPROG}.c > /dev/null 2>&1
+	@if [ ! -f ${WRKDIR}/${TESTPROG} ] ; \
+	then \
+	/usr/bin/printf "\n\
+You must have a version of FreeBSD later than 4.7-STABLE\n\
+February 2003 or 5-CURRENT February 2003 to compile and\n\
+use JDK 1.4.1.\n\n" ; \
+	exit 1 ; \
+	fi
+	@${WRKDIR}/${TESTPROG} 2>/dev/null
 .endif
 
 pre-fetch:	check-os
 	@${ECHO_MSG}
+	@${ECHO_MSG} "NOTICES:"
+	@${ECHO_MSG}
 	@${ECHO_MSG} "To build JDK 1.4.1 port, you should have at least"
-	@${ECHO_MSG} "1.5Gb of disk space!"
+	@${ECHO_MSG} "1.5Gb of free disk space in build area!"
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Please use \`make -DNODEBUG' if you don't want to"
 	@${ECHO_MSG} "install libraries and binaries with debugging support."
