@@ -1,0 +1,7 @@
+This library is primary used to access audio files on disk.  It differs from
+other audio processing libraries in that ccaudio will automatically frame
+align, merge, and fill audio frames for direct delivery to a DSP audio
+resource.
+
+- David Sugar
+dyfet@gnu.org
