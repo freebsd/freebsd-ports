@@ -24,7 +24,4 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 NO_MTREE=	yes
 
-post-install:
-	@${SED} 's,%%PREFIX%%,${PREFIX},' < ${PKGMESSAGE}
-
 .include <bsd.port.mk>
