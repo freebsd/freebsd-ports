@@ -1,0 +1,5 @@
+@exec mkdir -p %D/share/texmf/fonts/pk/%%USEPK_MODE%%
+@exec ln -sf %D/lib/fonts/pk%%RESOLUTION%% %D/share/texmf/fonts/pk/%%USEPK_MODE%%/
+@unexec rm -f %D/share/texmf/fonts/pk/%%USEPK_MODE%%/pk%%RESOLUTION%%
+@unexec rmdir %D/share/texmf/fonts/pk/%%USEPK_MODE%%
+@unexec rmdir %D/share/texmf/fonts/pk 2>&1 || true
