@@ -18,14 +18,10 @@ COMMENT=	A reindenter and reformatter of C++, C and Java source code
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-q -aa
 EXTRACT_AFTER_ARGS=	-d ${DISTNAME}
-
+CFLAGS+=	"-fpermissive"
 ALL_TARGET=	astyle
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=         "Does not compile with gcc 3.4.2"
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/astyle ${PREFIX}/bin
