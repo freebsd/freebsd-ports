@@ -3094,6 +3094,7 @@ kzip		src/usr.bin/kzip
 kzipboot	src/sys/i386/boot/kzipboot
 l0pht-watch	ports/security/l0pht-watch
 l0phtcrack	ports/security/l0phtcrack
+labrea		ports/security/labrea
 ladder		ports/games/ladder
 lam		src/usr.bin/lam
 lamarc		ports/biology/lamarc
