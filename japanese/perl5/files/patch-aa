@@ -9,17 +9,6 @@
  cf_email=''
  cf_by=''
  cf_time=''
-@@ -818,7 +818,9 @@
- 
- i_whoami=''
- : change the next line if compiling for Xenix/286 on Xenix/386
--xlibpth='/usr/lib/386 /lib/386'
-+xlibpth="/usr/lib/386 /lib/386"
-+: change the next line if compiling for FreeBSD 3.0
-+xlibpth="/usr/lib/aout $xlibpath"
- 
- : Possible local library directories to search.
- loclibpth="/usr/local/lib /opt/local/lib /usr/gnu/lib"
 @@ -862,7 +864,7 @@
  : If anyone needs -lnet, put it in a hint file.
  libswanted='sfio socket inet nsl nm ndbm gdbm dbm db malloc dl'
