@@ -37,7 +37,17 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>jdk</name>
-	<range><ge>1.4.0</ge><le>1.4.2_6</le></range>
+	<range><ge>1.4.0</ge><le>1.4.2p6_6</le></range>
+	<range><ge>1.3.0</ge><le>1.3.1p9_4</le></range>
+      </package>
+      <package>
+	<name>linux-sun-jdk</name>
+	<range><ge>1.4.0</ge><le>1.4.2.05</le></range>
+	<range><ge>1.3.0</ge><le>1.3.1.12</le></range>
+      </package>
+      <package>
+	<name>linux-blackdown-jdk</name>
+	<range><ge>1.3.0</ge><le>1.4.2</le></range>
       </package>
     </affects>
     <description>
@@ -60,6 +70,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-11-24</discovery>
       <entry>2004-11-25</entry>
+      <modified>2004-11-25</modified>
     </dates>
   </vuln>
 
