@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	tkscanfax
-PORTVERSION=	1.02
-CATEGORIES=	comms
-MASTER_SITES=	http://shino.pos.to/linux/
+PORTVERSION=	1.1.4
+CATEGORIES=	comms tk83
+MASTER_SITES=	http://shino.pos.to/linux/tkscanfax/
 
 MAINTAINER=	mita@FreeBSD.org
 COMMENT=	Tcl/Tk frontend for fax scan/receive/send program (command is tkfax)
 
-RUN_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80
+RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
+WRKSRC=	${WRKDIR}/${PORTNAME}1
 NO_BUILD=	YES
 
 post-extract:
@@ -24,10 +24,10 @@ post-extract:
 do-install:
 	(\
 	cd ${WRKDIR}; \
-	${TAR} '--exclude=*.orig' -cf - tkscanfax | \
+	${TAR} '--exclude=*.orig' -cf - tkscanfax1 | \
 	${TAR} -C ${PREFIX}/lib -xf - ; \
-	${LN} -sf ${PREFIX}/lib/tkscanfax/tkscan ${PREFIX}/bin ; \
-	${LN} -sf ${PREFIX}/lib/tkscanfax/tkfax ${PREFIX}/bin \
+	${LN} -sf ${PREFIX}/lib/tkscanfax1/tkscan ${PREFIX}/bin ; \
+	${LN} -sf ${PREFIX}/lib/tkscanfax1/tkfax ${PREFIX}/bin \
 	)
 
 .include <bsd.port.mk>
