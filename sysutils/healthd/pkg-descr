@@ -1,8 +1,12 @@
-This is a deamon the uses the LM78/79 or WINBond hardware monitor chips
-to warn the operator when something is out of range.  The software is
-capable of monitoring up to 3 tempuratures, 3 fan speeds and 7 voltages. 
-The configuration file specifies which functions are active and their
-acceptable ranges.
+This is a deamon the uses the LM78/79, WINBond 83781/83782/83783 or the
+ASUS 991227 hardware monitor chips to warn the operator when something
+is out of range.  The software is capable of monitoring up to 3 tempuratures,
+3 fan speeds and 7 voltages. The configuration file specifies which
+functions are active and their acceptable ranges.
+
+With the healthdc companion program the status can be read from any
+networked computer.  The healthd deamon's network connection is protected
+by libwrap and /etc/hosts.allow.
 
 WWW: http://healthd.thehousleys.net/
 
