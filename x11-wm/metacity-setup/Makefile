@@ -8,7 +8,10 @@
 PORTNAME=	metacity-setup
 PORTVERSION=	0.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://plastercast.tzo.com/~plastercast/Projects/
+MASTER_SITES=	http://plastercast.tzo.com/~plastercast/Projects/ \
+		http://www.marcuscom.com/downloads/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	marcus
 DISTNAME=	Metacity-setup-${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
