@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	neon.17:${PORTSDIR}/www/neon
+LIB_DEPENDS=	neon.18:${PORTSDIR}/www/neon
 
 USE_GNOME=	yes
 USE_X_PREFIX=	yes
