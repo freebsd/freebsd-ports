@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	freebsd-ports@FreeBSD.org
 COMMENT=	An object-based web application platform with DB access, WebDAV, & more
 
 USE_PYTHON=	yes
