@@ -1,5 +1,5 @@
 *** Makefile.orig	Mon Jan 30 21:51:43 1995
---- Makefile	Thu Jan 25 05:46:39 1996
+--- Makefile	Thu Jan 25 06:51:54 1996
 ***************
 *** 46,52 ****
   #REAL_DAEMON_DIR=/usr/sbin
@@ -142,16 +142,17 @@
   # Protection against weird shells or weird make programs.
   
   SHELL	= /bin/sh
-- .c.o:;	$(CC) $(CFLAGS) -c $*.c
+! .c.o:;	$(CC) $(CFLAGS) -c $*.c
   
 ! CFLAGS	= -O -DFACILITY=$(FACILITY) $(ACCESS) $(PARANOID) $(NETGROUP) \
   	$(BUGS) $(SYSTYPE) $(AUTH) $(UMASK) \
   	-DREAL_DAEMON_DIR=\"$(REAL_DAEMON_DIR)\" $(STYLE) $(KILL_OPT) \
   	-DSEVERITY=$(SEVERITY) -DRFC931_TIMEOUT=$(RFC931_TIMEOUT) \
---- 576,588 ----
+--- 576,589 ----
   # Protection against weird shells or weird make programs.
   
   SHELL	= /bin/sh
+! PREFIX  = /usr/local
   
 ! .SUFFIXES: .c .so .o
 !   
@@ -173,7 +174,7 @@
   
   # Invalidate all object files when the compiler options (CFLAGS) have changed.
   
---- 607,636 ----
+--- 608,637 ----
   	refuse.c tcpdchk.8 setenv.c inetcf.c inetcf.h scaffold.c \
   	scaffold.h tcpdmatch.8 README.NIS
   
@@ -233,13 +234,13 @@
   
   shar:	$(KIT)
   	@shar $(KIT)
---- 647,677 ----
+--- 648,678 ----
   	ar $(ARFLAGS) $(LIB) $(LIB_OBJ)
   	-$(RANLIB) $(LIB)
   
-! $(SLIB): $(LIB_OBJ:S/o$/so/g)
+! $(SLIB): $(LIB_OBJ:S/o$/so/g) shdata.so
 ! 	rm -f $(SLIB)
-! 	ld -Bshareable -o $(SLIB) $(LIB_OBJ:S/o$/so/g)
+! 	ld -Bshareable -o $(SLIB) $(LIB_OBJ:S/o$/so/g) shdata.so
 ! 
 ! tcpd:   tcpd.o $(SLIB)
 ! 	$(CC) $(CFLAGS) -o $@ tcpd.o -L. -lwrap $(LIBS)
@@ -265,3 +266,10 @@
   
   shar:	$(KIT)
   	@shar $(KIT)
+*** /dev/null	Thu Jan 25 06:52:04 1996
+--- shdata.c	Thu Jan 25 06:54:34 1996
+***************
+*** 0 ****
+--- 1,2 ----
++ int allow_severity;
++ int deny_severity;
