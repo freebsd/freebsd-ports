@@ -1,4 +1,7 @@
 ======================================================================
+0.4_10:
+Backdown with makefile mods left in place.
+
 0.5.20021209:
 Phoenix 0.5 snap on 20021209. Most of the files are PHOENIX_0_5_RELEASE,
 but they didn't tag the browser and toolkit dirs, so those are from this
@@ -19,6 +22,8 @@ html page until the distfiles dir gets mirrored in 24-48 hours.
 
 I had to disable Xinerama since no port ever finds it and it was breaking
 the build.
+
+This version is broken. Backed down to 0.4_10
 
 -- AlanE <phoenix@freebsd.org>
 
