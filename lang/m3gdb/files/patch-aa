@@ -1,7 +1,6 @@
 --- Makefile.orig	Wed Feb 17 09:55:20 1999
 +++ Makefile	Wed Sep  8 09:35:39 1999
-@@ -1,23 +1,25 @@
- #	$Id: Makefile,v 1.38 1998/10/15 14:15:09 bde Exp $
+@@ -2,22 +2,24 @@
  
 -PROG = m3gdb
 +PROG= 		m3gdb
