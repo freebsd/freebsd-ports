@@ -1,12 +1,14 @@
+
 $FreeBSD$
---- doc/Makefile.in.orig	Wed Mar 21 16:33:36 2001
-+++ doc/Makefile.in	Wed Mar 21 16:33:44 2001
-@@ -87,7 +87,7 @@ AUTOMAKE_OPTIONS = foreign
- 
+
+--- doc/Makefile.in.orig	Fri Sep 24 00:35:47 2004
++++ doc/Makefile.in	Fri Sep 24 00:36:02 2004
+@@ -169,7 +169,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
  SUBDIRS = ogg
- 
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
 +docdir = $(datadir)/doc/$(PACKAGE)
- 
- doc_DATA = index.html framing.html oggstream.html white-xifish.png stream.png white-ogg.png
- 
+ doc_DATA = framing.html index.html oggstream.html rfc3533.txt rfc3534.txt stream.png vorbisword2.png white-ogg.png white-xifish.png
+ EXTRA_DIST = $(doc_DATA)
+ all: all-recursive
