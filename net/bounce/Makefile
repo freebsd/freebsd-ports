@@ -10,7 +10,7 @@ PORTNAME=	bounce
 PORTVERSION=	1.0
 CATEGORIES=	net security
 MASTER_SITES=	http://www.eleves.ens.fr:8080/home/espel/  \
-		ftp://ftp.freebsd.org/pub/FreeBSD/local-distfiles/obrien/
+		ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/obrien/
 DISTNAME=	bounce
 EXTRACT_SUFX=	.c
 

@@ -9,7 +9,7 @@
 PORTNAME=	tcpshow
 PORTVERSION=	1.74
 CATEGORIES=	net security
-MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/local-distfiles/obrien/
+MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/obrien/
 #		http://www.cs.berkeley.edu/~daw/mike/
 DISTFILES=	tcpshow.c tcpshow.1
 

@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://wuarchive.wustl.edu/graphics/graphics/misc/figlet/program/unix/ \
 		ftp://ftp.funet.fi/pub/unix/tools/figlet/program/unix/ \
 		ftp://ftp.internexus.net/pub/figlet/program/unix/ \
-		ftp://ftp.freebsd.org/pub/FreeBSD/local-distfiles/obrien/ \
+		ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/obrien/ \
 		ftp://nuxi.ucdavis.edu/pub/misc/
 DISTNAME=	figlet22
 
