@@ -1,34 +1,52 @@
---- gnome-config.in.orig	Thu Dec 24 03:42:13 1998
-+++ gnome-config.in	Thu Dec 24 03:43:19 1998
-@@ -46,7 +46,7 @@
+--- gnome-config.in.orig	Wed Jan 13 07:42:48 1999
++++ gnome-config.in	Fri Jan 15 00:02:56 1999
+@@ -41,18 +41,18 @@
+ 
+ Known values for LIBRARY are:
+ 
+-    glib	(calls glib-config)
++    glib11d	(calls glib11d-config)
+     idl         (to be used with orbit-idl)
      gnome
      gnomeui
      gnorba
 -    gtk		(calls gtk-config)
-+    gtk11		(calls gtk11-config)
++    gtk11d		(calls gtk11d-config)
      gtkxmhtml	(only --libs)
      zvt		(only --libs)
  
-@@ -117,30 +117,30 @@
- 	the_libs="$the_libs `glib-config --libs`"
- 	the_flags="$the_flags `glib-config --cflags`"
+ If LIBRARY is none of these,
+     
+-    ${libdir}/<LIBRARY>Conf.sh
++    ${datadir}/<LIBRARY>Conf.sh
+ 
+ is looked in for the necessary information. 
+ EOF
+@@ -114,33 +114,33 @@
+ 	usage 1
+ 	;;
+     glib)
+-	the_libs="$the_libs `glib-config --libs`"
+-	the_flags="$the_flags `glib-config --cflags`"
++	the_libs="$the_libs `glib11d-config --libs`"
++	the_flags="$the_flags `glib11d-config --cflags`"
  	;;
 -    gtk)
 -	the_libs="$the_libs `gtk-config --libs`"
 -	the_flags="$the_flags `gtk-config --cflags`"
 +    gtk11)
-+	the_libs="$the_libs `gtk11-config --libs`"
-+	the_flags="$the_flags `gtk11-config --cflags`"
++	the_libs="$the_libs `gtk11d-config --libs`"
++	the_flags="$the_flags `gtk11d-config --cflags`"
  	;;
      gnome)
-        	the_libs="$the_libs @GNOME_LIBDIR@ @GNOME_LIBS@"
--  	the_flags="$the_flags @GNOME_INCLUDEDIR@ @GTK_CFLAGS@"
-+  	the_flags="$the_flags @GNOME_INCLUDEDIR@ @GTK_CFLAGS@ -lintl"
+-       	the_libs="$the_libs @GNOME_LIBDIR@ @GNOME_LIBS@"
++       	the_libs="$the_libs @GNOME_LIBDIR@ @GNOME_LIBS@ -lintl"
+   	the_flags="$the_flags @GNOME_INCLUDEDIR@ @GTK_CFLAGS@"
  	;;
      gnomeui)
- 	the_libs="$the_libs @GNOME_LIBDIR@ @GNOMEUI_LIBS@"
--	the_flags="$the_flags @GNOME_INCLUDEDIR@ @GTK_CFLAGS@"
-+	the_flags="$the_flags @GNOME_INCLUDEDIR@ @GTK_CFLAGS@ -lintl"
+-	the_libs="$the_libs @GNOME_LIBDIR@ @GNOMEUI_LIBS@"
++	the_libs="$the_libs @GNOME_LIBDIR@ -lXpm -ljpeg -lpng -lz -ltiff -lgif @GNOMEUI_LIBS@ -lintl"
+ 	the_flags="$the_flags @GNOME_INCLUDEDIR@ @GTK_CFLAGS@"
  	;;
      gtkxmhtml)
 -	the_libs="$the_libs @GNOME_LIBDIR@ @GTKXMHTML_LIBS@"
