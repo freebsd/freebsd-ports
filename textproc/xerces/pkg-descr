@@ -1,0 +1,12 @@
+The Xerces Java Parser supports XML 1.0 recommendation and
+contains advanced parser functionality, such as XML Schema, DOM
+Level 2 version 1.0, and SAX Version 2, in addition to supporting
+the industry-standard DOM Level 1 and SAX version 1 APIs.
+
+This is the Apache Software Foundation project.
+
+WWW: http://xml.apache.org/xerces-j/
+
+--
+Marcin Cieslak
+saper@system.pl
