@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Apr 12 04:44:41 2001
++++ Makefile.in	Sun Aug 19 13:03:39 2001
+@@ -94,7 +94,7 @@
+ 
+ SUBDIRS = intl po libmad winamp
+ 
+-bin_PROGRAMS = madplay
++bin_PROGRAMS = madplay madtime
+ bin_SCRIPTS = abxtest
+ EXTRA_PROGRAMS = madtime minimad madmix mad123
+ 

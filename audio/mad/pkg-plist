@@ -1,9 +1,14 @@
 bin/abxtest
 bin/madplay
+bin/madtime
+include/id3tag.h
 include/mad.h
 lib/libmad.a
 lib/libmad.so
 lib/libmad.so.0
+lib/libid3tag.a
+lib/libid3tag.so
+lib/libid3tag.so.0
 share/locale/en/LC_MESSAGES/mad.mo
 share/locale/es/LC_MESSAGES/mad.mo
 share/locale/fr/LC_MESSAGES/mad.mo
