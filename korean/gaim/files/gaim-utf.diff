@@ -13,7 +13,7 @@
  extern time_t get_time(int, int, int, int, int, int);
 --- gaim-0.54.orig/src/util.c
 +++ src/util.c
-@@ -33,9 +33,15 @@
+@@ -33,10 +33,16 @@
  #include <sys/wait.h>
  #include <ctype.h>
  #include <math.h>
@@ -22,6 +22,7 @@
 +#include <limits.h>
  #include "gaim.h"
  #include "prpl.h"
+ #include "gtkspell.h"
  
 +static int get_charset_internal (char **);
 +static int get_charset (char **);
