@@ -1,0 +1,22 @@
+bin/filcon
+bin/rp2gen
+include/rpc2/errors.h
+include/rpc2/errorsdefs.h
+include/rpc2/fail.h
+include/rpc2/fcon.h
+include/rpc2/multi.h
+include/rpc2/rpc2.h
+include/rpc2/se.h
+include/rpc2/sftp.h
+lib/libfail.a
+lib/libfail.so
+lib/libfail.so.1
+lib/librpc2.a
+lib/librpc2.so
+lib/librpc2.so.2
+lib/libse.a
+lib/libse.so
+lib/libse.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@dirrm include/rpc2
