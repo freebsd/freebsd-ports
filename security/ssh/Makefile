@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.18 1996/03/21 14:44:48 ache Exp $
+# $Id: Makefile,v 1.19 1996/03/23 23:36:32 ache Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_WISH, USE_TCPWRAP
@@ -89,7 +89,9 @@ post-install:
 
 # Following stuff must be after <bsd.port.mk> to expand exists() properly
 
-.if defined(USE_WISH) && ${USE_WISH} == YES
+.if defined(USE_WISH) && ${USE_WISH} == YES || \
+    (exists(${PREFIX}/bin/wish4.0) || exists(${PREFIX}/bin/wish)) && \
+    (!defined(USE_WISH) || ${USE_WISH} != NO)
 .if exists(${PREFIX}/bin/wish4.0)
 BUILD_DEPENDS+= wish4.0:${PORTSDIR}/x11/tk4
 CONFIGURE_ENV+= WISH=${PREFIX}/bin/wish4.0
@@ -101,7 +103,9 @@ CONFIGURE_ENV+= WISH=${PREFIX}/bin/wish
 CONFIGURE_ENV+= WISH=/replace_it_with_WISH_path
 .endif
 
-.if defined(USE_PERL) && ${USE_PERL} == YES
+.if defined(USE_PERL) && ${USE_PERL} == YES || \
+    exists(${PREFIX}/bin/perl5.002) && \
+    (!defined(USE_PERL) || ${USE_PERL} != NO)
 BUILD_DEPENDS+= perl5.002:${PORTSDIR}/lang/perl5
 CONFIGURE_ENV+= PERL=${PREFIX}/bin/perl5.002
 .else
