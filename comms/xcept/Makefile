@@ -3,7 +3,7 @@
 # Date created:         Sep 1, 1996
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.1.1.1 1996/09/01 14:14:14 joerg Exp $
+# $Id: Makefile,v 1.2 1996/11/06 13:07:35 asami Exp $
 #
 
 DISTNAME=       xcept-2.1.2
@@ -12,8 +12,6 @@ MASTER_SITES=   ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/
 
 MAINTAINER=     joerg@FreeBSD.ORG
 
-USE_X11=	yes
-PREFIX=		${LOCALBASE}
 WRKSRC=		${WRKDIR}/XCept-2.1.2
 
 .include <bsd.port.mk>
