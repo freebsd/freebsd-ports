@@ -1,14 +1,20 @@
---- ./Imakefile.org	Mon Mar 20 05:01:34 1995
-+++ ./Imakefile	Wed Mar 22 05:31:31 1995
-@@ -1,5 +1,4 @@
+--- ./Imakefile.org	Thu Mar 23 03:12:46 1995
++++ ./Imakefile	Tue Mar 28 00:55:44 1995
+@@ -1,11 +1,7 @@
 -BIN_DIR=          /usr/local/bin
 -HIGH_SCORE_DIR=   /usr/local/lib
 +HIGH_SCORE_DIR=   ${LIBDIR}
  
  /*---------------------------------------------------------------------*/
  
-@@ -7,7 +6,6 @@
- # define GLLIB -lgl_s
+-/* CC=gcc */
+-CDEBUGFLAGS=-g
+-
+ #ifdef SunOSPlatform
+ #if SunOSPlatform
+ #if OSMajorVersion == 4
+@@ -15,7 +11,6 @@
+ #endif
  #endif
  
 -BINDIR=$(BIN_DIR)
