@@ -3,7 +3,7 @@
 # Date created:				11 February 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.5 1998/08/07 23:56:22 asami Exp $
+# $Id: Makefile,v 1.6 1998/08/12 06:29:28 asami Exp $
 #
 
 DISTNAME=	xlines
@@ -24,6 +24,8 @@ do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/xlines ${PREFIX}/bin
 	@ ${MKDIR} ${PREFIX}/share/xlines
 	@ ${INSTALL_DATA} ${WRKSRC}/trolltech.gif ${PREFIX}/share/xlines
+
+post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/xlines
 	@ ${INSTALL_DATA} ${WRKSRC}/readme.lines ${PREFIX}/share/doc/xlines
