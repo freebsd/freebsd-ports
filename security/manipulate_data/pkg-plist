@@ -1,0 +1,7 @@
+sbin/read_data
+sbin/replace_data
+sbin/search_data
+sbin/write_data
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
