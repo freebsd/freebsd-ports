@@ -1,7 +1,6 @@
 # $FreeBSD$
 #
 
-    SUBDIR += FWF
     SUBDIR += Motif-dummy
     SUBDIR += Xaw3d
     SUBDIR += bakery
