@@ -1,0 +1,77 @@
+--- xdvik-22.40w/texk/kpathsea/texmf.in.orig	Sat Feb 22 05:55:05 2003
++++ xdvik-22.40w/texk/kpathsea/texmf.in	Sat Jun 12 12:34:24 2004
+@@ -1,4 +1,4 @@
+-% original texmf.cnf -- runtime path configuration file for kpathsea.
++% ptex-tetex texmf.cnf -- runtime path configuration file for kpathsea.
+ % (If you change or delete `original' on the previous line, the
+ % distribution won't install its version over yours.)
+ % Public domain.
+@@ -62,7 +62,7 @@
+ 
+ % If defined, teTeX's texconfig stores modifications here (instead of the
+ % TEXMFMAIN tree).
+-%   VARTEXMF = @texmf@-var
++VARTEXMF = @texmf@-var
+ 
+ % User texmf trees can be catered for like this...
+ HOMETEXMF = $HOME/texmf
+@@ -74,7 +74,7 @@
+ %   - list $VARTEXMF in the TEXMF definition;
+ %   - make sure that $VARTEXMF precedes $TEXMFMAIN in the TEXMF definition.
+ % TEXMF = $TEXMFMAIN
+-TEXMF = {$HOMETEXMF,!!$TEXMFLOCAL,!!$TEXMFMAIN}
++TEXMF = {$HOMETEXMF,!!$VARTEXMF,!!$TEXMFLOCAL,!!$TEXMFMAIN}
+ 
+ % The system trees.  These are the trees that are shared by all the users.
+ SYSTEXMF = $TEXMF
+@@ -144,6 +144,13 @@
+ TEXINPUTS.latex = .;$TEXMF/tex/{latex,generic,}//
+ TEXINPUTS.latex209 = .;$TEXMF/tex/{latex209,generic,latex,}//
+ 
++% TeXfamily
++TEXINPUTS.jtex = .:$TEXMF/{jtex,tex}/{plain,generic,}//
++TEXINPUTS.jlatex = .:$TEXMF/{jtex,tex}/{latex,generic,}//
++TEXINPUTS.jlatex209 = .:$TEXMF/{jtex,tex}/{latex209,generic,latex,}//
++TEXINPUTS.multex = .:$TEXMF/{multex,jtex,tex}/{plain,generic,}//
++TEXINPUTS.mullatex = .:$TEXMF/{multex,jtex,tex}/{latex,generic,}//
++
+ % Fontinst needs to read afm files.
+ TEXINPUTS.fontinst = .;$TEXMF/tex//;$TEXMF/fonts/afm//
+ 
+@@ -201,12 +208,12 @@
+ % and string pools (.pool) for ini{tex,mf,mp}.  It is silly that we have six
+ % paths and directories here (they all resolve to a single place by default),
+ % but historically ...
+-TEXFORMATS = .;$TEXMF/web2c
+-MFBASES = .;$TEXMF/web2c
+-MPMEMS = .;$TEXMF/web2c
+-TEXPOOL = .;$TEXMF/web2c
+-MFPOOL = .;$TEXMF/web2c
+-MPPOOL = .;$TEXMF/web2c
++TEXFORMATS = .;$TEXMF/web2c-ptex;$TEXMF/web2c
++MFBASES = .;$TEXMF/web2c-ptex;$TEXMF/web2c
++MPMEMS = .;$TEXMF/web2c-ptex;$TEXMF/web2c
++TEXPOOL = .;$TEXMF/web2c-ptex;$TEXMF/web2c
++MFPOOL = .;$TEXMF/web2c-ptex;$TEXMF/web2c
++MPPOOL = .;$TEXMF/web2c-ptex;$TEXMF/web2c
+ 
+ % Device-independent font metric files.
+ VFFONTS = .;$TEXMF/fonts/vf//
+@@ -318,7 +325,7 @@
+ %
+ % For security reasons, it is better not to have . part of the path.
+ % 
+-TEXMFCNF = {$SELFAUTOLOC,$SELFAUTODIR,$SELFAUTOPARENT}{,{/share,}/texmf{-local,}/web2c};$TETEXDIR;$TEXMF/web2c;@web2c@
++TEXMFCNF = {$SELFAUTOLOC,$SELFAUTODIR,$SELFAUTOPARENT}{,{/share,}/texmf{-local,}/{web2c-ptex,web2c}};$TETEXDIR;@web2c@;$TEXMF/web2c
+ 
+ 
+ 
+@@ -483,3 +490,8 @@
+ error_line = 79
+ half_error_line = 50
+ max_print_line = 79
++
++% default file code of JTeX and MuLTeX
++% These override the code specified by TeX command in dumping (making format).
++jtex_filetype = euc
++%ml_input_code = junet
