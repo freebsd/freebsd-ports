@@ -206,6 +206,7 @@
     SUBDIR += songprint
     SUBDIR += sonice
     SUBDIR += soribada
+    SUBDIR += soundgrab
     SUBDIR += soundtracker
     SUBDIR += sox
     SUBDIR += sphinx

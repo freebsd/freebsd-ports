@@ -1,0 +1,14 @@
+soundgrab is designed to help you slice up a big long raw audio file
+(by default 44.1 kHz 2 channel signed sixteen bit little endian) and
+save your favorite sections to other files. It does this by providing
+you with a cassette player like command line interface. Commands like
+ff <secs>, rw <secs>, jump <offset_from_start> can be used while the
+volume is being played or while it is stopped to move the player head
+around. The commands mark and name allow you to give names to sections
+between the mark and the current position of the player head (like
+emacs mark and point concept), and the export command exports the
+named sections to other files in wav, cdr (CD mastering), or raw
+format (or ogg or flac format if the appropriate encoder binaries are
+found on your system).
+
+WWW: http://rawrec.sourceforge.net/soundgrab/
