@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	icmp
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.notwork.org/~gotoyuzo/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
