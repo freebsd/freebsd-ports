@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	3.3.2002.09.01
+PORTVERSION=	3.3.2002.10.01
 CATEGORIES=	devel
 #MASTER_SITES=	${MASTER_SITE_GNU}
 #MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -18,8 +18,6 @@ DISTFILES=	gcc-core+g++-${PORTVERSION}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	gcc-core+g++-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	joerg@freebsd.org
-
-BROKEN=		"pkg-plist is incorrect"
 
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
@@ -39,9 +37,11 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--target=avr
 
-MAN_AUX=	gcc-man.2002.09.01.gz
+MAN_AUX=	gcc-man.2002.10.01.gz
 
 MAKE_FLAGS=	LANGUAGES="c c++"
+# get rid of that silly -mcpu=pentiumpro -current is so fond of. :-(
+MAKE_ENV=	MACHINE_ARCH=avr
 
 MAN1=		cpp.1 avr-gcc.1 avr-g++.1 gcov.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7

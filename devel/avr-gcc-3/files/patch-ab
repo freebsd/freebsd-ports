@@ -1,15 +1,6 @@
---- Makefile.in.orig	Mon Aug 12 15:13:39 2002
-+++ Makefile.in	Mon Aug 12 15:31:13 2002
-@@ -186,7 +186,7 @@
- 
- # This is set by the configure script to the list of directories which
- # should be built using the target tools.
--TARGET_CONFIGDIRS = libiberty libgloss $(SPECIAL_LIBS) newlib winsup opcodes libf2c libobjc
-+TARGET_CONFIGDIRS = libgloss $(SPECIAL_LIBS) newlib winsup opcodes
- 
- # Target libraries are put under this directory:
- # Changed by configure to $(target_alias) if cross.
-@@ -755,74 +755,19 @@
+--- Makefile.in.orig	Tue Oct  1 21:56:45 2002
++++ Makefile.in	Wed Oct  2 13:19:05 2002
+@@ -753,74 +753,19 @@
  
  # This is a list of the targets for all of the modules which are compiled
  # using $(TARGET_FLAGS_TO_PASS).
@@ -28,7 +19,7 @@
 -	all-target-libjava \
 -	all-target-zlib \
 -	all-target-boehm-gc \
--	all-target-qthreads
+-	all-target-qthreads 
 +ALL_TARGET_MODULES =
  
  # This is a list of the configure targets for all of the modules which
@@ -48,7 +39,7 @@
 -	configure-target-libjava \
 -	configure-target-zlib \
 -	configure-target-boehm-gc \
--	configure-target-qthreads
+-	configure-target-qthreads 
 +CONFIGURE_TARGET_MODULES =
  
  # This is a list of the check targets for all of the modules which are
@@ -60,12 +51,12 @@
 -	check-target-libobjc \
 -	check-target-winsup \
 -	check-target-libiberty \
+-	check-target-gperf \
 -	check-target-libffi \
 -	check-target-libjava \
 -	check-target-zlib \
 -	check-target-boehm-gc \
--	check-target-qthreads \
--	check-target-gperf
+-	check-target-qthreads 
 +CHECK_TARGET_MODULES =
  
  # This is a list of the install targets for all of the modules which are
@@ -79,11 +70,11 @@
 -	install-target-winsup \
 -	install-target-libgloss \
 -	install-target-libiberty \
+-	install-target-gperf \
 -	install-target-libjava \
 -	install-target-zlib \
 -	install-target-boehm-gc \
--	install-target-qthreads \
--	install-target-gperf
+-	install-target-qthreads 
 +INSTALL_TARGET_MODULES =
  
  # This is a list of the targets for which we can do a clean-{target}.
