@@ -2698,6 +2698,7 @@ ja-devil-fpw	ports/japanese/devil-fpw
 ja-diclookup-emacs20	ports/japanese/diclookup-emacs20
 ja-diclookup-mule	ports/japanese/diclookup-mule
 ja-doc		doc/ja_JP.eucJP
+ja-drpl		ports/japanese/drpl
 ja-dserver	ports/japanese/dserver
 ja-dvi2dvi	ports/japanese/dvi2dvi
 ja-dvi2ps	ports/japanese/dvi2ps
