@@ -1,12 +1,12 @@
 # New ports collection makefile for:	nmh
-# Version required:     0.14
-# Date created:		20 May 1997
+# Version required:     0.17
+# Date created:		26 July 1997
 # Whom:			Scott Blachowicz <Scott.Blachowicz@seaslug.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/04 04:39:25 asami Exp $
 #
 
-DISTNAME=	nmh-0.14
+DISTNAME=	nmh-0.17
 CATEGORIES=	mail
 MASTER_SITES=   ftp://ftp.math.gatech.edu/pub/nmh/
 
@@ -26,5 +26,13 @@ MAN5= mh-alias.5 mh-draft.5 mh-format.5 mh-mail.5 mh-profile.5 \
       mh-sequence.5 mh-tailor.5
 
 MAN8= ap.8 conflict.8 dp.8 fmtdump.8 install-mh.8 mh-mts.8 post.8
+
+# Since we patch the autoconf files as well as their outputs, avoid attempt
+# to regenerate header input files with 'autoheader' by Makefile.
+post-patch:
+	${ECHO} > ${WRKSRC}/stamp-h.in
+
+post-install:
+	@PKG_PREFIX='${PREFIX}' ./pkg/INSTALL
 
 .include <bsd.port.mk>

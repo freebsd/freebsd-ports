@@ -1,0 +1,15 @@
+#! /bin/sh
+
+case "$2" in
+  ""|POST-INSTALL) cat <<EOF
+=============================================================
+
+Some files you might need to customize include the following:
+
+    ${PKG_PREFIX}/etc/nmh/mhn.defaults
+    ${PKG_PREFIX}/etc/nmh/mts.conf
+
+=============================================================
+EOF
+  ;;
+esac

@@ -1,23 +1,6 @@
-diff -ur configure.in-dist configure.in
---- configure.in-dist	Fri May  2 12:31:29 1997
-+++ configure.in	Mon May 12 21:01:07 1997
-@@ -119,9 +119,12 @@
-   AC_SUBST(TSORT)dnl
- fi
- 
--AC_PATH_PROG(sendmailpath, sendmail, no, /usr/lib:/usr/sbin:/usr/etc:/usr/ucblib:/usr/bin)
--AC_PATH_PROG(morepath, more, no, /usr/bin:/usr/ucb:/usr/local/bin)
--AC_PATH_PROG(vipath, vi, no, /usr/bin:/usr/ucb:/usr/local/bin)
-+pathtmp=/usr/lib:/usr/sbin:/usr/etc:/usr/ucblib:/usr/bin
-+AC_PATH_PROG(sendmailpath, sendmail, no, [$pathtmp])
-+pathtmp=/usr/bin:/usr/ucb:/usr/local/bin
-+AC_PATH_PROG(morepath, more, no, [$pathtmp])
-+pathtmp=/usr/bin:/usr/ucb:/usr/local/bin
-+AC_PATH_PROG(vipath, vi, no, [$pathtmp])
- 
- dnl Check for broken vi
- AC_CACHE_CHECK(for broken vi, nmh_cv_attvibug,
-@@ -416,8 +419,8 @@
+--- configure.in-dist	Wed Jun  4 19:39:43 1997
++++ configure.in	Sat Jun 21 10:13:11 1997
+@@ -424,8 +424,8 @@
            [test -z "$CONFIG_HEADERS" || echo > stamp-h])
  
  eval "nmhbin=${bindir}"; eval "nmhbin2=${nmhbin}"
