@@ -7,14 +7,13 @@
 
 # "+=" and "?=" lines are for sharing this Makefile with japanese/exmh2.
 PORTNAME=	exmh
-PORTVERSION=	2.6.3
-PORTREVISION=	3
+PORTVERSION=	2.7.0
 CATEGORIES+=	mail tk84
 MASTER_SITES=	ftp://ftp.tcl.tk/pub/tcl/%SUBDIR%/
 MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER?=	bmah@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	X11/TK based mail reader front end to MH
 
 .if defined(JAPANESE_EXMH)
