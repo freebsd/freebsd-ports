@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Sat Nov 15 23:40:13 2003
++++ Makefile.in	Thu Dec 25 00:33:26 2003
+@@ -14,7 +14,7 @@
+ 
+ CC= @CC@
+ OPTIMIZER= -g
+-CFLAGS= @CFLAGS@ -DXP_UNIX -Iinclude -fPIC
++CFLAGS= @CFLAGS@ @CPPFLAGS@ -DXP_UNIX -Iinclude -fPIC
+ LDFLAGS= @LIBS@
+ OBJ= mplayerplug-in.o support.o stubs.o ui.o
+ INSTALL = @INSTALL@ -d
+@@ -23,7 +23,7 @@
+ default all: $(SHAREDTARGET)
+ 
+ $(SHAREDTARGET): $(OBJ)
+-	$(CC) -shared -o $(SHAREDTARGET) $(OBJ) $(LDFLAGS)
++	$(CC) -shared -lXt -o $(SHAREDTARGET) $(OBJ) $(LDFLAGS) @LDFLAGS@
+ 
+ mplayerplug-in.o: Source/mplayerplug-in.c Source/mplayerplug-in.h config.h
+ 	$(CC) -c $(CFLAGS) Source/mplayerplug-in.c
