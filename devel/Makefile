@@ -858,6 +858,7 @@
     SUBDIR += p5-Hook-LexWrap
     SUBDIR += p5-IO
     SUBDIR += p5-IO-All
+    SUBDIR += p5-IO-CaptureOutput
     SUBDIR += p5-IO-Digest
     SUBDIR += p5-IO-Multiplex
     SUBDIR += p5-IO-String
