@@ -1,0 +1,10 @@
+--- cfg.h.~1~	Wed Mar  3 04:35:14 1999
++++ cfg.h	Tue Apr 27 14:00:26 1999
+@@ -19,6 +19,7 @@
+ #define _cfg_
+ 
+ #include <stdio.h>
++#include <sys/types.h>
+ #include <regex.h>
+ 
+ #define MAX_LINE_LENGTH 200

@@ -1,0 +1,3 @@
+bin/colortail
+share/colortail/CONFIG.example
+@dirrm share/colortail
