@@ -25,7 +25,7 @@ MAKE_FLAGS=	TMPDIR=${WRKDIR} -f
 ALL_TARGET=
 
 BUILDHASH=	${WRKSRC}/buildhash
-UNSQ=		${WRKSRC}/unsq
+UNSQ?=		${WRKSRC}/unsq
 MUNCHLIST=	${WRKSRC}/munchlist
 DATADIR=	${PREFIX}/share/ispell
 
