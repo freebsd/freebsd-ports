@@ -7937,6 +7937,7 @@ qmail-mysql	ports/mail/qmail-mysql
 qmail-notify	ports/mail/qmail-notify
 qmail-remove	ports/mail/qmail-remove
 qmail-scanner	ports/mail/qmail-scanner
+qmail-smtp_auth+tls	ports/mail/qmail-smtp_auth+tls
 qmail-tls	ports/mail/qmail-tls
 qmailadmin	ports/mail/qmailadmin
 qmailadmin-devel	ports/mail/qmailadmin-devel
