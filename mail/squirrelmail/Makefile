@@ -25,7 +25,7 @@ NO_BUILD=	yes
 
 pre-install:
 	@${ECHO} "Your umask should be lax while installing this. Like, 022 or something."
-	@${SH} pkg-install ${PKGNAME} PRE-INSTALL
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	${MKDIR} ${PREFIX}/squirrelmail
