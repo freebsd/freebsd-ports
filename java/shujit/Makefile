@@ -10,7 +10,7 @@ PORTVERSION=	0.5.2
 CATEGORIES=	java
 MASTER_SITES=	http://www.shudo.net/jit/dist/
 
-MAINTAINER=	jake@FreeBSD.org
+MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ruby:${PORTSDIR}/lang/ruby \
 		${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk

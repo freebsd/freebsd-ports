@@ -12,7 +12,7 @@ MASTER_SITES=	http://sax.sax.de/~adlibit/
 DISTNAME=	tya17v2
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jburkhol@home.com
+MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/${JAVADIR}/bin/java:${PORTSDIR}/java/jdk
 
