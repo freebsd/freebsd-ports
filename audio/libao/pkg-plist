@@ -7,10 +7,10 @@ lib/libao.so.1
 lib/ao/liboss.so
 %%ESOUND%%lib/ao/libesd.so
 share/aclocal/ao.m4
-%%NOPORTDOCS%%share/doc/libao/API
-%%NOPORTDOCS%%share/doc/libao/DRIVERS
-%%NOPORTDOCS%%share/doc/libao/USAGE
-%%NOPORTDOCS%%share/doc/libao/WANTED
+%%PORTDOCS%%share/doc/libao/API
+%%PORTDOCS%%share/doc/libao/DRIVERS
+%%PORTDOCS%%share/doc/libao/USAGE
+%%PORTDOCS%%share/doc/libao/WANTED
 @dirrm include/ao
 @dirrm lib/ao
-%%NOPORTDOCS%%@dirrm share/doc/libao
+%%PORTDOCS%%@dirrm share/doc/libao
