@@ -7,7 +7,7 @@
 
 PORTNAME=	ORBit
 PORTVERSION=	0.5.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/ORBit
@@ -25,6 +25,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-indent
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${TOUCH} ${WRKSRC}/configure
 
 post-install:
 	@${ECHO} "ORBIIOPIPv4=0" > ${PREFIX}/etc/orbitrc.default
