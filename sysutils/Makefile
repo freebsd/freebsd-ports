@@ -148,6 +148,7 @@
     SUBDIR += safecat
     SUBDIR += samefile
     SUBDIR += sarah
+    SUBDIR += sbniconfig
     SUBDIR += sdd
     SUBDIR += service-config
     SUBDIR += setcdboot
