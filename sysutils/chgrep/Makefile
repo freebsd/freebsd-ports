@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chgrep
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bmk.bicom.pl/chgrep/
 EXTRACT_SUFX=	.tgz
