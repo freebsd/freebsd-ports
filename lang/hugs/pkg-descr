@@ -1,14 +1,17 @@
-This is a port of OGI's new release of Hugs, a Haskell interpreter and
-programming environment for developing Haskell programs.
+Hugs 98 is a functional programming system based on Haskell 98, the
+de facto standard for non-strict functional programming languages.
 
-This release is largely conformant with Haskell 98, including monad
-and record syntax, newtypes, strictness annotations, and modules.  In
-addition, it comes packaged with almost all libraries defined in the
-most recent version of the Haskell 98 Library Report.
+Hugs 98 provides an almost complete implementation of Haskell 98,
+including monad and record syntax, newtypes, strictness annotations,
+and modules. In addition, it comes packaged with almost all libraries
+defined in the most recent version of the Haskell 98 Library Report.
 
-More online information is available from http://www.haskell.org/
+Hugs 98 also supports a number of advanced and experimental extensions
+including multi-parameter classes, extensible records, rank-2
+polymorphism, existentials, scoped type variables, and restricted
+type synonyms.
 
-WWW: http://www.haskell.org/
+WWW: http://www.haskell.org/hugs/
 
--- Teggy
-teggy@teggy.org
+-- Oliver Braun
+obraun@informatik.unibw-muenchen.de
