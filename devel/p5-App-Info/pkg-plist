@@ -1,0 +1,20 @@
+%%SITE_PERL%%/App/Info/HTTPD.pm
+%%SITE_PERL%%/App/Info/HTTPD/Apache.pm
+%%SITE_PERL%%/App/Info/Lib/Iconv.pm
+%%SITE_PERL%%/App/Info/Lib/Expat.pm
+%%SITE_PERL%%/App/Info/Lib.pm
+%%SITE_PERL%%/App/Info/RDBMS.pm
+%%SITE_PERL%%/App/Info/Request.pm
+%%SITE_PERL%%/App/Info/Handler/Print.pm
+%%SITE_PERL%%/App/Info/Handler/Prompt.pm
+%%SITE_PERL%%/App/Info/Handler/Carp.pm
+%%SITE_PERL%%/App/Info/RDBMS/PostgreSQL.pm
+%%SITE_PERL%%/App/Info/Handler.pm
+%%SITE_PERL%%/App/Info/Util.pm
+%%SITE_PERL%%/App/Info.pm
+@dirrm %%SITE_PERL%%/App/Info/Lib
+@dirrm %%SITE_PERL%%/App/Info/Handler
+@dirrm %%SITE_PERL%%/App/Info/RDBMS
+@dirrm %%SITE_PERL%%/App/Info/HTTPD
+@dirrm %%SITE_PERL%%/App/Info
+@dirrm %%SITE_PERL%%/App
