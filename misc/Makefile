@@ -59,6 +59,7 @@
     SUBDIR += dog
     SUBDIR += dotfile
     SUBDIR += dvorak7min
+    SUBDIR += dvorakng
     SUBDIR += earthview
     SUBDIR += edonkey-tool-hash
     SUBDIR += edonkey-tool-list
