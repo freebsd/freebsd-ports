@@ -24,6 +24,7 @@ lib/%%MOZILLA%%/defaults/profile/JP/bookmarks.html
 lib/%%MOZILLA%%/defaults/profile/JP/localstore.rdf
 lib/%%MOZILLA%%/defaults/profile/JP/mimeTypes.rdf
 lib/%%MOZILLA%%/defaults/profile/JP/panels.rdf
+lib/%%MOZILLA%%/defaults/profile/JP/prefs.js
 lib/%%MOZILLA%%/defaults/profile/JP/search.rdf
 lib/%%MOZILLA%%/searchplugins/AllAboutJapan.png
 lib/%%MOZILLA%%/searchplugins/AllAboutJapan.src
