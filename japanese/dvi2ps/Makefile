@@ -12,20 +12,16 @@ CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/
 DISTNAME=	${PORTNAME}-${PORTVERSION}j
 
-MAINTAINER=	mita@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	DVI to PostScript converter Japanese version
 
-BUILD_DEPENDS=	${PREFIX}/lib/libkpathsea.a:${PORTSDIR}/japanese/ptex-base
+BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/japanese/ptex-base
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
 MAN1=		dvi2ps.1
 MANLANG=	"" ja
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
 
 post-patch:
 	@(cd ${WRKSRC}; make newlib)
