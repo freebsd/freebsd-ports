@@ -17,16 +17,13 @@ DIST_SUBDIR=	erlang
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A library for accessing SDL and OpenGL through Erlang
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_MESA=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+USE_SDL=	yes
 ALL_TARGET=	target
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
