@@ -4579,6 +4579,7 @@ opmixer		ports/audio/opmixer
 oproute		ports/net/oproute
 oqtencoder	ports/graphics/oqtencoder
 oqtplayer	ports/graphics/oqtplayer
+oracle7-client	ports/databases/oracle7-client
 orbitcpp	ports/devel/orbitcpp
 orchard-c	ports/textproc/orchard-c
 oregano		ports/cad/oregano
