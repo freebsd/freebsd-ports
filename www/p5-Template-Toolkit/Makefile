@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	Template-Toolkit
-PORTVERSION=	2.07
+PORTVERSION=	2.08
 CATEGORIES=	www textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Template
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobez@FreeBSD.org
 
-BUILD_DEPENDS=	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig
+BUILD_DEPENDS=	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
+		${SITE_PERL}/File/Spec/Functions.pm:${PORTSDIR}/devel/p5-File-Spec \
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
@@ -39,7 +41,9 @@ MAN3=	Template.3 Template::Base.3 Template::Constants.3 \
 	Template::Manual::Internals.3 Template::Manual::Intro.3 \
 	Template::Manual::Plugins.3 Template::Manual::Refs.3 \
 	Template::Manual::Syntax.3 Template::Manual::Variables.3 \
-	Template::Manual::Views.3 Template::Modules.3 Template::Parser.3 \
+	Template::Manual::Views.3 Template::Manual::VMethods.3 \
+	Template::Modules.3 Template::Namespace::Constants.3 \
+	Template::Parser.3 \
 	Template::Plugin.3 Template::Plugin::Autoformat.3 \
 	Template::Plugin::CGI.3 Template::Plugin::DBI.3 \
 	Template::Plugin::Datafile.3 Template::Plugin::Date.3 \
