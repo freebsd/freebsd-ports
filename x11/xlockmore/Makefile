@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xlockmore
-PORTVERSION= 	4.17.1
+PORTVERSION= 	4.17.2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/ \
 		${MASTER_SITE_XCONTRIB}
@@ -42,10 +42,7 @@ USE_MESA=	yes
 CONFIGURE_ARGS+=	--without-mesagl
 .endif
 
-XFREE86VERSION!= /usr/bin/awk '/\#.*define XFree86Version/ {print $$NF}' \
-				${X11BASE}/lib/X11/config/xfree86.cf
-
-.if ${XFREE86VERSION} >= 4000
+.if ${XFREE86_VERSION} >= 4
 post-configure:
 	${PERL} -pi -e 's/-lXdpms//g' ${WRKSRC}/modes/Makefile
 .endif
