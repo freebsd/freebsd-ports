@@ -1,0 +1,6 @@
+*************************************************************************
+* WARNING: the database format has changed in version 1.5,		*
+* so upgrades from earlier versions REQUIRE an export			*
+* with (relaydb -vO >text), deletion of the database			*
+* and re-import with the (relaydb -i text).				*
+*************************************************************************

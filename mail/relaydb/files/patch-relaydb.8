@@ -1,0 +1,24 @@
+--- relaydb.8.orig	Fri Nov 21 00:41:34 2003
++++ relaydb.8	Sun Dec 14 17:13:01 2003
+@@ -30,7 +30,7 @@
+ .Nd spam relay database
+ .Sh SYNOPSIS
+ .Nm relaydb
+-.Op Fl 46bdlnrvw
++.Op Fl 46bdlnOrvw
+ .Op Fl B Ar [+-]num
+ .Op Fl W Ar [+-]num
+ .Op Fl m Ar [+-]days
+@@ -118,6 +118,12 @@
+ establish a new whitelist entry for a new host, then send spam from the
+ same address, faking further Received: headers, to cause relaydb to blacklist
+ those addresses, causing a denial of service for these addresses.
++.It Fl O
++List (just as
++.Fl l
++does) the IP addresses of a database in pre-1.5 format, necessary
++for upgrading from earlier versions of
++.Nm . 
+ .It Fl r
+ Revert a previously made decision.
+ For instance, if a mail has been run through
