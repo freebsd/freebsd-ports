@@ -1,0 +1,21 @@
+--- Makefile.orig	Sat Jul  3 22:34:59 2004
++++ Makefile	Thu Aug 12 16:48:48 2004
+@@ -1,13 +1,13 @@
+ DEFINES	=	-D__LINUX__ -DX86_ASM
+-CXX	=	g++
+-CXXFLAGS =	-I. $(DEFINES) `sdl-config --cflags` `gtk-config --cflags gtk gthread` \
++#CXX	=	g++
++#CXXFLAGS =	-I. $(DEFINES) `sdl-config --cflags` `gtk-config --cflags gtk gthread` \
+ 		`glib-config --cflags` -finline-functions -funroll-loops \
+ 		-ffast-math -fomit-frame-pointer -mcpu=`uname -m` -O3
+ #CXXFLAGS =	-I. $(DEFINES) `sdl-config --cflags` `gtk-config --cflags gtk gthread` \
+ #		 `glib-config --cflags` -g3 #-DDEBUG
+-LD	=	g++
+-LDFLAGS	=	-shared -Wl,-Bsymbolic
+-LIBS	=	`sdl-config --libs` `gtk-config --libs gtk gthread` `glib-config --libs` -lGL -lGLU
++#LD	=	g++
++#LDFLAGS	=	-shared -Wl,-Bsymbolic
++#LIBS	=	`sdl-config --libs` `gtk-config --libs gtk gthread` `glib-config --libs` -lGL -lGLU
+ TARGET	=	glN64-0.4.1.so
+ OBJECTS	=	2xSAI.o \
+ 		CRC.o \

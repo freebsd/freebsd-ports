@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+If you have installed/upgraded any new plugins or are upgrading from a previous
+version of Mupen64, please note that in order for these changes to take effect,
+you -must- backup and then remove ~/.mupen64 first. After you have removed the
+directory, run 'mupen64' to re-create it. Then, manually copy back your save 
+files/other data you need from the backup if necessary.
+
+Enjoy!
+-------------------------------------------------------------------------------
