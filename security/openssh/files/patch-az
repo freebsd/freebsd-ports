@@ -1,0 +1,11 @@
+--- /home/bright/ssh/ssh/deattack.c	Fri Aug 18 19:17:12 2000
++++ deattack.c	Fri Feb  9 10:58:54 2001
+@@ -84,7 +84,7 @@
+ detect_attack(unsigned char *buf, u_int32_t len, unsigned char *IV)
+ {
+ 	static u_int16_t *h = (u_int16_t *) NULL;
+-	static u_int16_t n = HASH_MINSIZE / HASH_ENTRYSIZE;
++	static u_int32_t n = HASH_MINSIZE / HASH_ENTRYSIZE;
+ 	register u_int32_t i, j;
+ 	u_int32_t l;
+ 	register unsigned char *c;
