@@ -1,22 +1,6 @@
---- modules/Config/scim_gconf_config.cpp.orig	Wed Aug  4 19:42:16 2004
-+++ modules/Config/scim_gconf_config.cpp	Wed Aug  4 19:49:22 2004
-@@ -496,11 +498,11 @@
-     std::vector <String> strs;
-     if (scim_split_string_list (strs, str, ':') == 2) {
-         time_t sec = (time_t) strtol (strs [0].c_str (), 0, 10);
--        suseconds_t usec = (suseconds_t) strtol (strs [1].c_str (), 0, 10);
-+        long usec = (long) strtol (strs [1].c_str (), 0, 10);
-         // The config file is newer, so load it.
-         if (m_update_timestamp.tv_sec < sec || (m_update_timestamp.tv_sec == sec && m_update_timestamp.tv_usec < usec)) {
-             m_update_timestamp.tv_sec = (time_t) sec;
--            m_update_timestamp.tv_usec = (suseconds_t) usec;
-+            m_update_timestamp.tv_usec = (long) usec;
-             m_need_reload = true;
-         }
-     }
---- modules/Config/scim_simple_config.cpp.orig	Wed Aug  4 19:50:05 2004
-+++ modules/Config/scim_simple_config.cpp	Wed Aug  4 19:50:46 2004
-@@ -596,13 +596,13 @@
+--- modules/Config/scim_simple_config.cpp.orig	Mon Jan 10 17:30:45 2005
++++ modules/Config/scim_simple_config.cpp	Wed Mar  2 01:41:40 2005
+@@ -595,13 +595,13 @@
          std::vector <String> strs;
          if (scim_split_string_list (strs, it->second, ':') == 2) {
              time_t sec = (time_t) strtol (strs [0].c_str (), 0, 10);
@@ -32,9 +16,11 @@
                  return true;
              }
          }
---- modules/Config/scim_socket_config.cpp.orig	Wed Aug  4 19:51:15 2004
-+++ modules/Config/scim_socket_config.cpp	Wed Aug  4 19:51:44 2004
-@@ -581,7 +581,7 @@
+Index: modules/Config/scim_socket_config.cpp
+diff -u modules/Config/scim_socket_config.cpp.orig modules/Config/scim_socket_config.cpp
+--- modules/Config/scim_socket_config.cpp.orig	Mon Jan 10 17:30:45 2005
++++ modules/Config/scim_socket_config.cpp	Wed Mar  2 01:41:40 2005
+@@ -582,7 +582,7 @@
                      std::vector <String> strs;
                      if (scim_split_string_list (strs, str, ':') == 2) {
                          time_t sec = (time_t) strtol (strs [0].c_str (), 0, 10);
@@ -43,15 +29,3 @@
   
                          // The config file is newer, so load it.
                          if (m_update_timestamp.tv_sec < sec ||
---- modules/IMEngine/Makefile.in.orig	Thu Dec 30 05:53:21 2004
-+++ modules/IMEngine/Makefile.in	Mon Jan 24 14:35:28 2005
-@@ -88,8 +88,7 @@
- table_la_OBJECTS = $(am_table_la_OBJECTS)
- @SCIM_BUILD_IMENGINE_TABLE_TRUE@am_table_la_rpath = -rpath \
- @SCIM_BUILD_IMENGINE_TABLE_TRUE@	$(moduledir)
--@SCIM_BUILD_IMENGINE_TABLE_TRUE@am__EXEEXT_1 =  \
--@SCIM_BUILD_IMENGINE_TABLE_TRUE@	scim-make-table$(EXEEXT)
-+@SCIM_BUILD_IMENGINE_TABLE_TRUE@am__EXEEXT_1 =
- binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
- PROGRAMS = $(bin_PROGRAMS)
- am_scim_make_table_OBJECTS = scim_make_table.$(OBJEXT)
