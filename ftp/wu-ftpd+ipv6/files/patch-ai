@@ -1,15 +1,29 @@
-*** config.h.orig	Fri Sep 12 19:44:00 1997
---- config.h	Mon Sep 15 09:27:39 1997
-***************
-*** 72,76 ****
-   * See FIXES-2.4-HOBBIT for more information on this option.
-   */
-  
-! #undef SKEY
-  
---- 72,76 ----
-   * See FIXES-2.4-HOBBIT for more information on this option.
-   */
-  
-! /* #undef SKEY */
-  
+--- config.h.orig	Thu Mar  4 09:45:57 1999
++++ config.h	Tue Mar  9 16:33:39 1999
+@@ -74,7 +74,7 @@
+  * See FIXES-2.4-HOBBIT for more information on this option.
+  */
+ 
+-#undef SKEY
++/* #undef SKEY */
+ 
+ /*
+  * OPIE
+@@ -203,7 +203,7 @@
+  * Undefine this to let NOOP reset the idle timeout.
+  */
+ 
+-#define IGNORE_NOOP
++#undef IGNORE_NOOP
+ 
+ /*
+  * XFERLOG_REALPATH
+@@ -257,7 +257,7 @@
+  * the risk of PASV port race stealing the connection.  It also is non-RFC
+  * compliant, so it may cause problems for some client sites.
+  */
+-#define FIGHT_PASV_PORT_RACE
++#undef FIGHT_PASV_PORT_RACE
+ 
+ /*
+  * Define this to completely disable anonymous FTP access.
