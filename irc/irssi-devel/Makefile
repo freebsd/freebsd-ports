@@ -8,11 +8,11 @@
 PORTNAME=	irssi
 PORTVERSION=	0.8.9
 PORTREVISION?=	0
-CATEGORIES=	irc
+CATEGORIES?=	irc
 MASTER_SITES=	http://irssi.org/files/
 
-MAINTAINER=	vanilla@FreeBSD.org
-COMMENT=	A modular IRC client with many features
+MAINTAINER?=	vanilla@FreeBSD.org
+COMMENT?=	A modular IRC client with many features
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
