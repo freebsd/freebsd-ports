@@ -8,8 +8,7 @@
 PORTNAME=	xsmbrowser
 PORTVERSION=	3.3.0
 CATEGORIES=	net
-MASTER_SITES=	http://www2.iastate.edu/~chadspen/ \
-		http://www.ibiblio.org/pub/Linux/system/network/samba/
+MASTER_SITES=	http://www2.iastate.edu/~chadspen/
 
 MAINTAINER=	roman@xpert.com
 COMMENT=	Tcl/Tk port of Windows' Network Neighborhood
