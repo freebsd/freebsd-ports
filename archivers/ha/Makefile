@@ -18,9 +18,10 @@ NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile.nix
 ALL_TARGET=	ha
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/c/hsc.c ${WRKSRC}/c/cpy.c \
 		${WRKSRC}/c/asc.c
 
