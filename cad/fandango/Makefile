@@ -18,11 +18,11 @@ COMMENT=	A python scripted 3D CAD application
 
 LIB_DEPENDS=	python2.3.1:${PORTSDIR}/lang/python23
 
-BROKEN=		Broken dependency after python 2.4 update
-
 USE_GL=		yes
 USE_GNOME=	gnometarget
 USE_KDEBASE_VER=	3
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-lGL
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.mk>
