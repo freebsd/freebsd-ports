@@ -1,0 +1,19 @@
+*** Makefile.orig	Thu May 28 15:12:56 1998
+--- Makefile	Thu May 28 15:13:31 1998
+***************
+*** 251,257 ****
+  	@ $(MAKE) BINNAME=mpg123m mpg123
+  
+  mpg123-make:
+! 	@ $(MAKE) BINNAME=mpg123 mpg123
+  
+  mpg123: mpg123.o common.o $(OBJECTS) decode_2to1.o decode_4to1.o \
+  		tabinit.o audio.o layer1.o layer2.o layer3.o buffer.o \
+--- 251,257 ----
+  	@ $(MAKE) BINNAME=mpg123m mpg123
+  
+  mpg123-make:
+! 	@ $(MAKE) CFLAGS="$(CFLAGS)" BINNAME=mpg123 mpg123
+  
+  mpg123: mpg123.o common.o $(OBJECTS) decode_2to1.o decode_4to1.o \
+  		tabinit.o audio.o layer1.o layer2.o layer3.o buffer.o \
