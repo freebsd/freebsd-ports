@@ -12,10 +12,9 @@ PORTNAME=	ssh
 PORTVERSION=	1.2.27 # Note, 1.2.30 is under a more restrictive license
 PORTREVISION=	3
 CATEGORIES=	security ipv6
-MASTER_SITES=	ftp://ftp.cs.engr.uky.edu/cs/software/ \
-		ftp://ftp.cs.umn.edu/dept/users/rybski/ \
+MASTER_SITES=	ftp://ftp.cs.umn.edu/dept/users/rybski/ \
 		ftp://ftp.net.ohio-state.edu/disk/d/security/ssh/ \
-		ftp://ftp.cronyx.ru/.w2/mirror/ssh/old/ \
+		ftp://ftp.cronyx.ru/mirror/ssh/old/ \
 		ftp://ftp.nsysu.edu.tw/Unix/Security/ssh/old/ \
 		ftp://ftp.tokyonet.ad.jp/.da0/security/ssh/old/ \
 		ftp://ftp.comp.hkbu.edu.hk/.6/unix/ \
