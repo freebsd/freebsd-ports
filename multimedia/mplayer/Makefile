@@ -385,7 +385,7 @@ CONFIGURE_ARGS+=	--disable-css
 
 .if defined(WITH_LIBUNGIF)
 LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
-CONFIGURE_ARGS+=	--enable-gif
+#CONFIGURE_ARGS+=	--enable-gif
 .else
 CONFIGURE_ARGS+=	--disable-gif
 .endif
