@@ -8,7 +8,8 @@
 PORTNAME=	p5-Msql-modules
 PORTVERSION=	1.1811
 CATEGORIES=	databases perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
+		ftp://ftp.redline.ru/pub/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	Msql
 DISTNAME=	Msql-modules-${PORTVERSION}
 
