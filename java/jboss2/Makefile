@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	${APP_TITLE:L}
-PORTVERSION= 	2.4.10
-PORTREVISION=	1
+PORTVERSION= 	2.4.11
 CATEGORIES=	java
 MASTER_SITES=  ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -53,6 +52,7 @@ post-patch:
 	@${ECHO_CMD} -n ">> Deleting the symbol CR (carriage return) in some files and removing unneeded files..."
 	@${FIND} ${WRKSRC} -type f \
 	-iname '*.mf' -or \
+	-iname '*.css' -or \
 	-iname '*.dtd' -or \
 	-iname '*.txt' -or \
 	-iname '*.xml' -or \
@@ -62,7 +62,10 @@ post-patch:
 	-iname '*.policy' -or \
 	-iname '*.properties' | \
 	${XARGS} -n 10 -x ${SED} -i .orig -e "s|"`printf '\015'`"||g"
-	@cd ${WRKSRC} && ${FIND} . -type f -name "*.orig" -print -or -iname "*.bat" -print -or -iname "*.exe" -print | ${XARGS} ${RM} -f
+	@cd ${WRKSRC} && ${FIND} . -type f -name "*.orig" -or -iname "*.bat" -or -iname "*.exe" | ${XARGS} -n 10 -x ${RM} -f
+	@${RM} -Rd ${WRKSRC}/tmp/deploy
+	@${RM} -f ${WRKSRC}/db/hypersonic/default.*
+	@${RM} -f ${WRKSRC}/db/jbossmq/*.dat0
 	@${ECHO_CMD} " [ DONE ]"
 
 .for f in ${REPLACE_FILES}
