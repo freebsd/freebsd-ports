@@ -3,14 +3,14 @@
 # Date created: January 2, 1998
 # Whom: Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.3 1998/09/15 21:31:51 asami Exp $
+# $Id: Makefile,v 1.4 1998/12/02 19:55:31 billf Exp $
 #
 
 DISTNAME=	News-Article-1.21
 PKGNAME=	p5-News-Article-1.21
 CATEGORIES=	news perl5
-MASTER_SITES=	http://www.erlenstar.demon.co.uk/perl/
-#		http://www.freebsd.org/~mph/distfiles/
+MASTER_SITES=	http://www.erlenstar.demon.co.uk/perl/ \
+		http://www.infonex.com/~dacroyle/freebsd/
 
 MAINTAINER=	croyle@gelemna.ft-wayne.in.us
 
