@@ -2,6 +2,7 @@ bin/mboxtest
 include/mail.h
 include/rfc822.h
 include/linkage.h
+lib/lib%%SHLIBBASE%%.a
 lib/%%SHLIBNAME%%
 lib/lib%%SHLIBBASE%%.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
