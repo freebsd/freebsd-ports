@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- configure.in-v2.13.orig	Wed Jul 18 01:38:22 2001
++++ configure.in-v2.13	Mon Aug 13 14:47:43 2001
+@@ -252,10 +252,10 @@
+ 
+ if test "$PLATFORM" = "unix"; then
+ 	if test "$gnome" = "true"; then
+-		PLATFORM_CFLAGS="$GNOME_CFLAGS $GMODULE_CFLAGS $GTK_CFLAGS"
++		PLATFORM_CFLAGS="$CFLAGS $GNOME_CFLAGS $GMODULE_CFLAGS $GTK_CFLAGS"
+ 		PLATFORM_LIBS=
+ 	else
+-		PLATFORM_CFLAGS="$GMODULE_CFLAGS $GTK_CFLAGS"
++		PLATFORM_CFLAGS="$CFLAGS $GMODULE_CFLAGS $GTK_CFLAGS"
+ 		PLATFORM_LIBS=
+ 	fi
+ fi

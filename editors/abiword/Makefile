@@ -37,7 +37,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAKEFILE=	GNUmakefile
 
 FIXME=		find ${WRKSRC} -name GNUmakefile.in | xargs ${PERL} -pi -e \
-		    's|\$$\(libdir\)/\@PACKAGE\@|\$$\(datadir\)/\@PACKAGE\@|g'
+		    's|\$$\(libdir\)/\@PACKAGE\@|\$$\(datadir\)/\@PACKAGE\@|g ; \
+		     s|\@DEFS\@|-I${WRKSRC}/../libiconv/include \@DEFS\@|g'
 
 pre-configure:
 	@cd ${WRKSRC} && ${TOUCH} NEWS README AUTHORS ChangeLog
