@@ -7,6 +7,7 @@
 
 PORTNAME=	frozenbubble
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://zarb.org/~gc/fb//
 DISTNAME=	frozen-bubble-${PORTVERSION}
@@ -63,7 +64,7 @@ do-install:
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/snd/*.wav  ${PREFIX}/share/frozen-bubble/snd/
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/snd/*.xm  ${PREFIX}/share/frozen-bubble/snd/
 
-	@printf '#!/bin/sh\nLD_PRELOAD=/usr/lib/libc_r.so perl ${PREFIX}/bin/frozen-bubble.pl $@' > ${WRKSRC}/frozen-bubble
+	@printf '#!/bin/sh\nLD_PRELOAD=/usr/lib/libc_r.so perl ${PREFIX}/bin/frozen-bubble.pl $$\@\n' > ${WRKSRC}/frozen-bubble
 	@${INSTALL_SCRIPT} ${WRKSRC}/frozen-bubble ${PREFIX}/bin
 
 .include <bsd.port.mk>
