@@ -1,22 +1,50 @@
---- ./Common.tmpl.dist.org	Sat Apr  1 19:20:24 1995
-+++ ./Common.tmpl.dist	Tue Apr  4 07:51:01 1995
-@@ -80,7 +80,7 @@
- #define NEED_STRCASECMP 0
- 
- CEXTRA_DEFINES = -DHAVE_MKTIME -DHAVE_STDLIB_H -DHAVE_STRING_H \
--                 -DHAVE_UNISTD_H -DHAVE_MALLOC_H
-+                 -DHAVE_UNISTD_H
- 
- /*
-  * OSF1 needs -D_BSD
---- ./compat/Imakefile.org	Mon Mar 13 19:48:00 1995
-+++ ./compat/Imakefile	Wed Jun 11 12:42:13 1997
-@@ -31,7 +31,7 @@
- 
- DependTarget()
- #else
--all:
-+all::
- 
- depend::
- #endif
+*** Imakefile.orig	Sun Aug 17 23:18:18 1997
+--- Imakefile	Mon Nov 24 10:34:00 1997
+***************
+*** 4,10 ****
+  
+  #if HasGcc
+  #ifdef CDebugging
+! #define PassCDebugFlags "CDEBUGFLAGS=-g -Wall"
+  #else
+  #define PassCDebugFlags "CDEBUGFLAGS=-O -Wall"
+  #endif
+--- 4,10 ----
+  
+  #if HasGcc
+  #ifdef CDebugging
+! #define PassCDebugFlags "CDEBUGFLAGS=-g -Wall ${CFLAGS}"
+  #else
+  #define PassCDebugFlags "CDEBUGFLAGS=-O -Wall"
+  #endif
+***************
+*** 19,32 ****
+  SUBDIRS = port common image html plain proto mxw chimera
+  
+  MakeSubdirs($(SUBDIRS))
+! InstallSubdirs($(SUBDIRS))
+  DependSubdirs($(SUBDIRS))
+  CleanSubdirs($(SUBDIRS))
+  MakefileSubdirs($(SUBDIRS))
+! InstallManSubdirs($(SUBDIRS))
+  
+  myclean: clean
+  	$(RM) Common.tmpl Makefile Makefile.bak make.err make.out .depend
+! 	for i in $(SUBDIRS); do \
+  		$(RM) $$i/Makefile $$i/Makefile.bak $$i/.depend; \
+  	done
+--- 19,32 ----
+  SUBDIRS = port common image html plain proto mxw chimera
+  
+  MakeSubdirs($(SUBDIRS))
+! InstallSubdirs(main)
+  DependSubdirs($(SUBDIRS))
+  CleanSubdirs($(SUBDIRS))
+  MakefileSubdirs($(SUBDIRS))
+! InstallManSubdirs(main)
+  
+  myclean: clean
+  	$(RM) Common.tmpl Makefile Makefile.bak make.err make.out .depend
+! 	for i in $(SUBDIRS) $(SOSUBDIRS); do \
+  		$(RM) $$i/Makefile $$i/Makefile.bak $$i/.depend; \
+  	done

@@ -1,0 +1,12 @@
+--- chimera/Imakefile.orig	Sun Aug 17 07:10:31 1997
++++ chimera/Imakefile	Tue Nov 25 09:23:32 1997
+@@ -19,7 +19,7 @@
+ 
+ NormalProgramTarget(chimera, $(OBJS), $(CHIMERA_DEPLIBS), MyNull, MyNull)
+ 
+-InstallProgram(chimera,$(CHIMERA_BINDIR))
+-InstallManPage(chimera,$(CHIMERA_MANDIR))
++InstallProgram(chimera,$(BINDIR))
++InstallManPage(chimera,$(MANDIR))
+ 
+ DependTarget()
