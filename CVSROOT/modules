@@ -759,6 +759,7 @@ cdboot		src/sys/i386/boot/cdboot
 cdcontrol	src/usr.sbin/cdcontrol
 cdd		ports/audio/cdd
 cdecl		ports/devel/cdecl
+cdialog		ports/devel/cdialog
 cdif		ports/textproc/cdif
 cdiff		ports/textproc/cdiff
 cdk		ports/devel/cdk
