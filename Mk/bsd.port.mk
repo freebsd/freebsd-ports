@@ -133,9 +133,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  compression.
 # USE_ZIP		- Says that the port distfile uses zip, not tar w/[bg]zip
 #				  for compression.
-# USE_GCC295	- Says that the port requirest this version of gcc, either in
+# USE_GCC295	- Says that the port requires this version of gcc, either in
 #				  the system or installed from a port.
-# USE_GCC30		- Says that the port requirest this version of gcc, either in
+# USE_GCC30		- Says that the port requires this version of gcc, either in
 #				  the system or installed from a port.
 # USE_GMAKE		- Says that the port uses gmake.
 # GMAKE			- Set to path of GNU make if not in $PATH (default: gmake).
