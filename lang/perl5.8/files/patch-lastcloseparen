@@ -1,0 +1,31 @@
+--- pp_hot.c.orig	Mon Jul 14 10:20:29 2003
++++ pp_hot.c	Mon Jul 14 10:21:31 2003
+@@ -1406,7 +1406,7 @@ yup:					/* Confirmed by INTUIT */
+ 	rx->startp[0] = s - truebase;
+ 	rx->endp[0] = s - truebase + rx->minlen;
+     }
+-    rx->nparens = rx->lastparen = 0;	/* used by @- and @+ */
++    rx->nparens = rx->lastparen = rx->lastcloseparen = 0;	/* used by @-, @+, and $^N */
+     LEAVE_SCOPE(oldsave);
+     RETPUSHYES;
+ 
+--- sv.c.orig	Mon Jul 14 10:21:49 2003
++++ sv.c	Mon Jul 14 10:22:35 2003
+@@ -11474,6 +11474,7 @@ perl_clone_using(PerlInterpreter *proto_
+     PL_regstartp	= (I32*)NULL;
+     PL_regendp		= (I32*)NULL;
+     PL_reglastparen	= (U32*)NULL;
++    PL_reglastcloseparen	= (U32*)NULL;
+     PL_regtill		= Nullch;
+     PL_reg_start_tmp	= (char**)NULL;
+     PL_reg_start_tmpl	= 0;
+--- regexec.c.orig	Mon Jul 14 10:37:02 2003
++++ regexec.c	Mon Jul 14 10:37:34 2003
+@@ -2107,6 +2107,7 @@ S_regtry(pTHX_ regexp *prog, char *start
+     PL_reglastparen = &prog->lastparen;
+     PL_reglastcloseparen = &prog->lastcloseparen;
+     prog->lastparen = 0;
++    prog->lastcloseparen = 0;
+     PL_regsize = 0;
+     DEBUG_r(PL_reg_starttry = startpos);
+     if (PL_reg_start_tmpl <= prog->nparens) {
