@@ -3,7 +3,7 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.2 1995/10/28 20:34:39 erich Exp $
+# $Id: Makefile,v 1.3 1996/11/12 02:19:38 obrien Exp $
 #
 
 DISTNAME=       rc-1.5betadev-1
@@ -14,5 +14,7 @@ MASTER_SITES=   ftp://ftp.sys.toronto.edu/pub/rc/
 MAINTAINER=	erich@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
+MAN1=		history.1 rc.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>

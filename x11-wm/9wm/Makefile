@@ -3,7 +3,7 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.3 1996/11/12 02:19:35 obrien Exp $
+# $Id: Makefile,v 1.4 1997/05/28 06:18:20 fenner Exp $
 #
 
 DISTNAME=	9wm-1.1
@@ -18,5 +18,6 @@ EXTRACT_CMD=		zcat
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh
 USE_IMAKE=	yes
+MAN1=		9wm.1
 
 .include <bsd.port.mk>
