@@ -113,6 +113,7 @@
     SUBDIR += icmpinfo
     SUBDIR += icmpquery
     SUBDIR += icqlib
+    SUBDIR += icqlib0
     SUBDIR += icqnix
     SUBDIR += ip-tun
     SUBDIR += ipfm
