@@ -14,7 +14,7 @@
 # Maxim Sobolev
 # ----------------------------------------------------------------------------
 #
-# $FreeBSD: /tmp/pcvs/ports/Tools/scripts/distclean.sh,v 1.12 2002-05-07 14:04:05 sobomax Exp $
+# $FreeBSD: /tmp/pcvs/ports/Tools/scripts/distclean.sh,v 1.13 2002-05-10 09:14:40 sobomax Exp $
 #
 # MAINTAINER= sobomax@FreeBSD.org
 
@@ -34,8 +34,11 @@ if [ ! -d ${PORTSDIR} ]; then
 	exit 1
 fi
 
-DISTDIR=`(cd ${PORTSDIR} && make -V DISTDIR) 2>/dev/null`
+DISTDIR=`(make -V DISTDIR -f ${PORTSDIR}/Mk/bsd.port.mk) 2>/dev/null`
 DISTDIR=${DISTDIR:-/usr/ports/distfiles}
+
+PORTSDIR="${PORTSDIR}/"
+DISTDIR="${DISTDIR}/"
 
 echo "Assumes that your ports are in ${PORTSDIR} and distfiles in ${DISTDIR}."
 echo ""
