@@ -4458,6 +4458,7 @@ open-motif	ports/x11-toolkits/open-motif
 open-motif-devel	ports/x11-toolkits/open-motif-devel
 openal		ports/audio/openal
 openam		ports/net/openam
+openbox		ports/x11-wm/openbox
 opencl		ports/security/opencl
 opendis		ports/graphics/opendis
 opendx		ports/graphics/opendx

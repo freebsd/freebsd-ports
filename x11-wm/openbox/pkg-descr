@@ -1,6 +1,5 @@
-Blackbox is Yet Another Window Manager for X11R6 that arose primarily
-out of the curiosity of the authors.  It's small, fast, has built-in
-rendering code, does image dithering at 8, 15 and 16 bits per pixel
-and colour icon support.  Blackbox is [mostly] ICCCM compliant.
+Openbox is based on, and similar to, blackbox.  In this port/package,
+bsetbg and bsetroot are renamed to osetbg and osetroot in order to
+avoid conflict with blackbox.
 
-WWW: http://blackbox.alug.org/
+WWW: http://openbox.sunsite.dk/
