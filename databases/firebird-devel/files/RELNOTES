@@ -1,6 +1,6 @@
-Firebird 0.9_4 FreeBSD Release Notes                       13-Jan-2001
-------------------------------------
-FB-T0.9.4.34 Firebird Test1
+Firebird 1.0-RC1 FreeBSD Release Notes                     06-Dec-2001
+--------------------------------------
+FB-T6.2.567 Firebird Release Candidate 1
 
 Welcome to the FreeBSD Firebird port!  Users should note that there
 was a package called `firebird-1.0.tgz' released in mid-August
@@ -75,5 +75,5 @@ and InterBase can be found at the following:
 	http://www.interbase2000.org/
 	http://www.firebirdsql.org/
 
-Geoff Speicher
-<geoff@sea-incorporated.com>
+Chris Knight
+<chris@aims.com.au>

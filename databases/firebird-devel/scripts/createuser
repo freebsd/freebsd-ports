@@ -8,7 +8,7 @@ if 0;
 if( $> ) {
 	print "\nYou must be root to run this step!\n\n";
 	exit 1;
-} 
+}
 
 if( getpwnam( "firebird" ) ) {
 	( $null, $null, $fbUID ) = getpwnam( "firebird" );
