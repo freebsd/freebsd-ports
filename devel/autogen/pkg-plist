@@ -4,7 +4,6 @@ bin/columns
 bin/getdefs
 bin/xml2ag
 include/options.h
-include/snprintfv
 @unexec install-info --delete %D/info/autogen.info %D/info/dir
 info/autogen.info
 @exec install-info %D/info/autogen.info %D/info/dir
@@ -30,7 +29,7 @@ share/autogen/conftest.tpl
 share/autogen/fsm-macro.tpl
 share/autogen/fsm-trans.tpl
 share/autogen/fsm.tpl
-share/autogen/libopts-18.1.9.tar.gz
+share/autogen/libopts-18.3.9.tar.gz
 share/autogen/optcode.tpl
 share/autogen/opthead.tpl
 share/autogen/options.tpl
@@ -40,3 +39,5 @@ share/autogen/optmain.tpl
 share/autogen/schemedef.scm
 share/autogen/stdoptions.def
 @dirrm share/autogen
+@exec mkdir -p %D/include/snprintfv
+@unexec rmdir %D/include/snprintfv 2>/dev/null || true
