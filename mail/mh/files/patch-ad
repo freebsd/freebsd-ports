@@ -1,0 +1,196 @@
+The following patch adds shared library support for FreeBSD to MH
+
+*** ../mh-6.8.3.orig/conf/FreeBSD	Tue Dec 27 20:36:52 1994
+--- conf/FreeBSD	Tue Dec 27 19:10:35 1994
+***************
+*** 10,15 ****
+--- 10,17 ----
+  cc	cc
+  signal	void
+  remove	rm -f
++ sharedlib fbsd
++ slflags	-fpic
+  
+  # Good options for all MH installations (personal preferences)
+  options	ATHENA DUMB FOLDPROT='"0700"' MHE MHRC RPATHS SBACKUP='"\\043"'
+*** ../mh-6.8.3.orig/conf/makefiles/sbr	Wed Dec  1 06:00:23 1993
+--- conf/makefiles/sbr	Tue Dec 27 19:01:07 1994
+***************
+*** 123,128 ****
+--- 123,131 ----
+  @BEGIN: SYS5SHLIB
+  		(cd shared; ld -G -o ../$@ -h $@.$(SLIBVER) $(OFILES))
+  @END: SYS5SHLIB
++ @BEGIN: FBSDSHLIB
++ 		(cd shared; ld -Bshareable -o ../$@ $(OFILES))
++ @END: FBSDSHLIB
+  		-@rm -f $@.$(SLIBVER)
+  		ln $@ $@.$(SLIBVER)
+  		-@ls -l $@*
+*** ../mh-6.8.3.orig/conf/makefiles/uip	Wed Dec  1 06:00:23 1993
+--- conf/makefiles/uip	Tue Dec 27 19:30:22 1994
+***************
+*** 138,147 ****
+  SLIBVER	=	.@(SLIBVER)
+  @END: SUN4SHLIB
+  @BEGIN: SHAREDLIB
+! LIBES	=	../config/config.o ../sbr/libmh.so ../mts/libmts.a \
+! 		../zotnet/libzot.a
+  LDLIBES	=	../config/config.o -Bdynamic @(SLDFLAG) -lmh$(SLIBVER) \
+  		../mts/libmts.a  ../zotnet/libzot.a
+  LDLIBS	=	$(LDLIBES) ../config/version.o $(LDOPTLIB)
+  @END: SHAREDLIB
+  LINT	=	lint
+--- 138,157 ----
+  SLIBVER	=	.@(SLIBVER)
+  @END: SUN4SHLIB
+  @BEGIN: SHAREDLIB
+! @BEGIN: SUN4SHLIB
+! LDLIBES	=	../config/config.o -Bdynamic @(SLDFLAG) -lmh$(SLIBVER) \
+! 		../mts/libmts.a  ../zotnet/libzot.a
+! @END: SUN4SHLIB
+! @BEGIN: SYS5SHLIB
+  LDLIBES	=	../config/config.o -Bdynamic @(SLDFLAG) -lmh$(SLIBVER) \
+  		../mts/libmts.a  ../zotnet/libzot.a
++ @END: SYS5SHLIB
++ @BEGIN: FBSDSHLIB
++ LDLIBES	=	../config/config.o @(SLDFLAG) -L../sbr -lmh$(SLIBVER) \
++ 		../mts/libmts.a  ../zotnet/libzot.a
++ @END: FBSDSHLIB
++ LIBES	=	../config/config.o ../sbr/libmh.so ../mts/libmts.a \
++ 		../zotnet/libzot.a
+  LDLIBS	=	$(LDLIBES) ../config/version.o $(LDOPTLIB)
+  @END: SHAREDLIB
+  LINT	=	lint
+*** ../mh-6.8.3.orig/conf/makefiles/support/pop.orig	Thu Feb 22 13:05:50 1996
+--- conf/makefiles/support/pop	Thu Feb 22 13:10:18 1996
+***************
+*** 59,67 ****
+  @BEGIN: SHAREDLIB
+  LIBES2	=	../../config/config.o ../../sbr/libmh.so $(LIBES1)
+  LDLIBS1	=	$(LIBES1) $(LDOPTLIB)
+  LDLIBS2	=	../../config/config.o ../../config/version.o \
+  		-Bdynamic @(SLDFLAG) -lmh$(SLIBVER) $(LIBES1) $(LDOPTLIB)
+! @END: SHAREDLIB
+  
+  LINT	=	lint
+  LFLAGS	=	-bhu $(OPTIONS)
+--- 59,77 ----
+  @BEGIN: SHAREDLIB
+  LIBES2	=	../../config/config.o ../../sbr/libmh.so $(LIBES1)
+  LDLIBS1	=	$(LIBES1) $(LDOPTLIB)
++ @END: SHAREDLIB
++ @BEGIN: SUN4SHLIB
+  LDLIBS2	=	../../config/config.o ../../config/version.o \
+  		-Bdynamic @(SLDFLAG) -lmh$(SLIBVER) $(LIBES1) $(LDOPTLIB)
+! @END: SUN4SHLIB
+! @BEGIN: SYS5SHLIB
+! LDLIBS2	=	../../config/config.o ../../config/version.o \
+! 		-Bdynamic @(SLDFLAG) -lmh$(SLIBVER) $(LIBES1) $(LDOPTLIB)
+! @END: SYS5SHLIB
+! @BEGIN: FBSDSHLIB
+! LDLIBS2	=	../../config/config.o ../../config/version.o \
+! 		@(SLDFLAG) -L../../sbr -lmh$(SLIBVER) $(LIBES1) $(LDOPTLIB)
+! @END: FBSDSHLIB
+  
+  LINT	=	lint
+  LFLAGS	=	-bhu $(OPTIONS)
+*** ../mh-6.8.3.orig/conf/mhconfig.c	Wed Dec  1 06:00:24 1993
+--- conf/mhconfig.c	Tue Dec 27 19:08:40 1994
+***************
+*** 32,38 ****
+  #define	MHRELEASE	"6.8.3"		/* for version: "Maj.min.pat" */
+  #define	MHCENTERFOOT	"MH.6.8"	/* for nroff page footers */
+  #define	MHLEFTFOOT	"[mh.6]"	/* [mh.6]    MH.6.6   page# */
+! #define	MHSLIBVER	"3.2"		/* SunOS4 shared library version */
+  
+  #define	NOTOK	(-1)
+  
+--- 32,38 ----
+  #define	MHRELEASE	"6.8.3"		/* for version: "Maj.min.pat" */
+  #define	MHCENTERFOOT	"MH.6.8"	/* for nroff page footers */
+  #define	MHLEFTFOOT	"[mh.6]"	/* [mh.6]    MH.6.6   page# */
+! #define	MHSLIBVER	"3.2"		/* Shared library version */
+  
+  #define	NOTOK	(-1)
+  
+***************
+*** 456,461 ****
+--- 456,465 ----
+  	fprintf (fp, "/^@BEGIN: SYS5SHLIB$/d\n/^@END: SYS5SHLIB$/d\n");
+      else
+  	fprintf (fp, "/^@BEGIN: SYS5SHLIB$/,/^@END: SYS5SHLIB$/d\n");
++     if (strcmp (sharedlib, "fbsd") == 0)
++ 	fprintf (fp, "/^@BEGIN: FBSDSHLIB$/d\n/^@END: FBSDSHLIB$/d\n");
++     else
++ 	fprintf (fp, "/^@BEGIN: FBSDSHLIB$/,/^@END: FBSDSHLIB$/d\n");
+  
+  /*  */
+  
+***************
+*** 774,782 ****
+  
+      if (strcmp (sharedlib, "on") && strcmp (sharedlib, "off")
+  	    && strcmp (sharedlib, "sun4") && strcmp (sharedlib, "sys5")
+! 	    && strcmp (sharedlib, "secure"))
+  	adios (NULLCP,
+! 	    "sharedlib should be either \"sun4\", \"sys5\", or \"off\", not %s",
+  	    sharedlib);
+  
+      (void) sprintf(buffer, "TYPESIG=%s", signl);
+--- 778,786 ----
+  
+      if (strcmp (sharedlib, "on") && strcmp (sharedlib, "off")
+  	    && strcmp (sharedlib, "sun4") && strcmp (sharedlib, "sys5")
+! 	    && strcmp (sharedlib, "fbsd") && strcmp (sharedlib, "secure"))
+  	adios (NULLCP,
+! 	    "sharedlib should be either \"sun4\", \"sys5\", \"fbsd\" or \"off\", not %s",
+  	    sharedlib);
+  
+      (void) sprintf(buffer, "TYPESIG=%s", signl);
+*** ../mh-6.8.3.orig/support/bboards/mmdfII/bboards/lock.c	Wed Dec  1 06:01:30 1993
+--- support/bboards/mmdfII/bboards/lock.c	Tue Dec 27 19:58:05 1994
+***************
+*** 47,52 ****
+--- 47,56 ----
+  #include <sys/file.h>
+  #endif
+  
++ #ifdef __FreeBSD__
++ #include <fcntl.h>
++ #endif
++ 
+  #ifdef	SYS5
+  #define	u_short	ushort
+  #define u_long  ulong
+*** ../mh-6.8.3.orig/support/pop/mmdfII/pop/lock.c	Wed Dec  1 06:01:30 1993
+--- support/pop/mmdfII/pop/lock.c	Tue Dec 27 19:58:05 1994
+***************
+*** 47,52 ****
+--- 47,56 ----
+  #include <sys/file.h>
+  #endif
+  
++ #ifdef __FreeBSD__
++ #include <fcntl.h>
++ #endif
++ 
+  #ifdef	SYS5
+  #define	u_short	ushort
+  #define u_long  ulong
+diff -cdr ../mh-6.8.3.orig/zotnet/mts/lock.c ./zotnet/mts/lock.c
+*** ../mh-6.8.3.orig/zotnet/mts/lock.c	Wed Dec  1 06:01:30 1993
+--- zotnet/mts/lock.c	Tue Dec 27 19:58:05 1994
+***************
+*** 47,52 ****
+--- 47,56 ----
+  #include <sys/file.h>
+  #endif
+  
++ #ifdef __FreeBSD__
++ #include <fcntl.h>
++ #endif
++ 
+  #ifdef	SYS5
+  #define	u_short	ushort
+  #define u_long  ulong

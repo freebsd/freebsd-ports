@@ -3,7 +3,7 @@
 # Date created:		Oct 4, 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.7 1996/04/25 11:45:58 peter Exp $
+# $Id: Makefile,v 1.8 1996/04/26 08:42:49 asami Exp $
 #
 
 DISTNAME=	mh-6.8.3
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 PATCH_SITES=	ftp://ftp.ics.uci.edu/pub/mh/updates/
 PATCHFILES=	MH.6.8.4.Z
 
-MAINTAINER=	markm@FreeBSD.ORG
+MAINTAINER=	pst@FreeBSD.ORG
 
 MHMAN=	man1/ali.1 man1/anno.1 man1/burst.1 man1/comp.1 man1/dist.1 \
 	man1/folder.1 man1/forw.1 man1/inc.1 man1/mark.1 man1/mh-chart.1 \

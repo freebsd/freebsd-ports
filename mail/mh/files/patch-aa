@@ -1,119 +1,33 @@
-diff -udNr mh-6.8.3.ORG/conf/FreeBSD mh-6.8.3/conf/FreeBSD
---- mh-6.8.3.ORG/conf/FreeBSD	Thu Jan  1 02:00:00 1970
-+++ conf/FreeBSD	Thu Feb 15 18:38:09 1996
-@@ -0,0 +1,41 @@
-+# @(#)$Id$
-+# FreeBSD running sendmail
-+
-+bin	/usr/local/bin
-+etc	/usr/local/etc/mh
-+mandir	/usr/local/man
-+mail	/var/mail
-+chown	/usr/sbin/chown
-+remove rm -f
-+cc	cc
-+mts	sendmail/smtp
-+signal	void
-+sharedlib fbsd
-+slflags -fpic
-+
-+# Good options for all MH installations (personal preferences)
-+options	ATHENA DUMB FOLDPROT='"0700"' MHE MHRC RPATHS SBACKUP='"\\043"'
-+
-+# FreeBSD specific options (for FreeBSD-1.x, remove BSD44)
-+options	BSD42 BSD43 BSD44 WAITINT UNISTD VSPRINTF MORE='"/usr/bin/more"'
-+options	NORUSERPASS DBMPWD POSIX NTOHLSWAP SYS5DIR OVERHEAD
-+options	BIND MIME SENDMTS SMTP WHATNOW ZONEINFO GCOS_HACK
-+options	RENAME LOCALE
-+
-+# If you want POP support, this will help you get started,  but feel
-+# free to customize it.
-+#
-+# POP
-+#
-+#pop	on
-+#popdir	/usr/local/libexec
-+#options APOP='"/usr/local/etc/pop.auth"'
-+#options DPOP
-+#options MPOP
-+#options POP2
-+#options RPOP
-+#options POPSERVICE='"pop3"'
-+#
-+#
-+#bboards	nntp
-+#bbdelivery	off
-diff -udNr mh-6.8.3.ORG/conf/makefiles/sbr mh-6.8.3/conf/makefiles/sbr
---- mh-6.8.3.ORG/conf/makefiles/sbr	Wed Dec  1 06:00:23 1993
-+++ conf/makefiles/sbr	Thu Feb 15 18:43:29 1996
-@@ -123,6 +123,9 @@
- @BEGIN: SYS5SHLIB
- 		(cd shared; ld -G -o ../$@ -h $@.$(SLIBVER) $(OFILES))
- @END: SYS5SHLIB
-+@BEGIN: FBSDSHLIB
-+		(cd shared; ld -Bshareable -o ../$@ $(OFILES))
-+@END: FBSDSHLIB
- 		-@rm -f $@.$(SLIBVER)
- 		ln $@ $@.$(SLIBVER)
- 		-@ls -l $@*
-diff -udNr mh-6.8.3.ORG/conf/makefiles/uip mh-6.8.3/conf/makefiles/uip
---- mh-6.8.3.ORG/conf/makefiles/uip	Wed Dec  1 06:00:23 1993
-+++ conf/makefiles/uip	Thu Feb 15 18:43:29 1996
-@@ -138,10 +138,20 @@
- SLIBVER	=	.@(SLIBVER)
- @END: SUN4SHLIB
- @BEGIN: SHAREDLIB
--LIBES	=	../config/config.o ../sbr/libmh.so ../mts/libmts.a \
--		../zotnet/libzot.a
-+@BEGIN: SUN4SHLIB
-+LDLIBES	=	../config/config.o -Bdynamic @(SLDFLAG) -lmh$(SLIBVER) \
-+		../mts/libmts.a  ../zotnet/libzot.a
-+@END: SUN4SHLIB
-+@BEGIN: SYS5SHLIB
- LDLIBES	=	../config/config.o -Bdynamic @(SLDFLAG) -lmh$(SLIBVER) \
- 		../mts/libmts.a  ../zotnet/libzot.a
-+@END: SYS5SHLIB
-+@BEGIN: FBSDSHLIB
-+LDLIBES	=	../config/config.o @(SLDFLAG) -lmh$(SLIBVER) \
-+		../mts/libmts.a  ../zotnet/libzot.a
-+@END: FBSDSHLIB
-+LIBES	=	../config/config.o ../sbr/libmh.so ../mts/libmts.a \
-+		../zotnet/libzot.a
- LDLIBS	=	$(LDLIBES) ../config/version.o $(LDOPTLIB)
- @END: SHAREDLIB
- LINT	=	lint
-diff -udNr mh-6.8.3.ORG/conf/mhconfig.c mh-6.8.3/conf/mhconfig.c
---- mh-6.8.3.ORG/conf/mhconfig.c	Thu Feb 15 18:22:57 1996
-+++ conf/mhconfig.c	Thu Feb 15 18:43:29 1996
-@@ -32,7 +32,7 @@
- #define	MHRELEASE	"6.8.4"		/* for version: "Maj.min.pat" */
- #define	MHCENTERFOOT	"MH.6.8"	/* for nroff page footers */
- #define	MHLEFTFOOT	"[mh.6]"	/* [mh.6]    MH.6.6   page# */
--#define	MHSLIBVER	"3.2"		/* SunOS4 shared library version */
-+#define	MHSLIBVER	"3.2"		/* Shared library version */
- 
- #define	NOTOK	(-1)
- 
-@@ -457,6 +457,10 @@
- 	fprintf (fp, "/^@BEGIN: SYS5SHLIB$/d\n/^@END: SYS5SHLIB$/d\n");
-     else
- 	fprintf (fp, "/^@BEGIN: SYS5SHLIB$/,/^@END: SYS5SHLIB$/d\n");
-+    if (strcmp (sharedlib, "fbsd") == 0)
-+	fprintf (fp, "/^@BEGIN: FBSDSHLIB$/d\n/^@END: FBSDSHLIB$/d\n");
-+    else
-+	fprintf (fp, "/^@BEGIN: FBSDSHLIB$/,/^@END: FBSDSHLIB$/d\n");
- 
- /*  */
- 
-@@ -775,9 +779,9 @@
- 
-     if (strcmp (sharedlib, "on") && strcmp (sharedlib, "off")
- 	    && strcmp (sharedlib, "sun4") && strcmp (sharedlib, "sys5")
--	    && strcmp (sharedlib, "secure"))
-+	    && strcmp (sharedlib, "fbsd") && strcmp (sharedlib, "secure"))
- 	adios (NULLCP,
--	    "sharedlib should be either \"sun4\", \"sys5\", or \"off\", not %s",
-+	    "sharedlib should be either \"sun4\", \"sys5\", \"fbsd\" or \"off\", not %s",
- 	    sharedlib);
- 
-     (void) sprintf(buffer, "TYPESIG=%s", signl);
+*** /dev/null	Sat Apr 27 10:54:01 1996
+--- conf/FreeBSD	Sat Apr 27 11:12:47 1996
+***************
+*** 0 ****
+--- 1,28 ----
++ # @(#)$Id: patch-aa,v 1.3 1996/02/23 01:25:08 pst Exp $
++ # FreeBSD running sendmail
++ 
++ bin	/usr/local/bin
++ etc	/usr/local/lib/mh
++ mandir	/usr/local/man
++ mail	/var/mail
++ chown	/usr/sbin/chown
++ mts	sendmail/smtp
++ cc	cc
++ signal	void
++ remove	rm -f
++ 
++ # Good options for all MH installations (personal preferences)
++ options	ATHENA DUMB FOLDPROT='"0700"' MHE MHRC RPATHS SBACKUP='"\\043"'
++ 
++ # FreeBSD specific options (for FreeBSD-1.x, remove BSD44)
++ options	BSD42 BSD43 BSD44 WAITINT UNISTD VSPRINTF MORE='"/usr/bin/more"'
++ options	NORUSERPASS DBMPWD POSIX NTOHLSWAP SYS5DIR OVERHEAD MSGID FCNTL
++ options	BIND MIME SENDMTS SMTP WHATNOW ZONEINFO
++ options GCOS_HACK RENAME LOCALE
++ 
++ # If you want POP support, this will help you get started,  but feel
++ # free to customize it.
++ pop		on
++ popdir		/usr/local/libexec
++ options		RPOP APOP='"/usr/local/etc/pop.auth"' POPSERVICE='"pop3"'
++ ldoptlibs	-lcrypt
