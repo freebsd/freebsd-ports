@@ -16,11 +16,11 @@ etc/mimedefang/spamassassin/sa-mimedefang.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/README.SECURITY
 %%PORTDOCS%%%%DOCSDIR%%/README.TRU64
 %%PORTDOCS%%%%DOCSDIR%%/README.IRIX
-%%PORTDOCS%%%%EXAMPLESSDIR%%/suggested-minimum-filter-for-windows-clients
-%%PORTDOCS%%%%EXAMPLESSDIR%%/stream-by-domain-filter
-%%PORTDOCS%%%%EXAMPLESSDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/suggested-minimum-filter-for-windows-clients
+%%PORTDOCS%%%%EXAMPLESDIR%%/stream-by-domain-filter
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm etc/mimedefang/spamassassin
 @dirrm etc/mimedefang
 @cwd /var/spool
