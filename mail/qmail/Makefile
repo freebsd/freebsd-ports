@@ -81,7 +81,6 @@ MASTER_SITE_QMAIL+= \
 	http://complanet.ath.cx/qmail/%SUBDIR%/ \
 	http://ice.dammit.lt/qmail/%SUBDIR%/ \
 	http://qmail.mirrors.emu.lt/%SUBDIR%/ \
-	http://ds9a.nl/qmail/%SUBDIR%/ \
 	http://mirrors.dataloss.nl/www.qmail.org/%SUBDIR%/ \
 	http://qmail.basefreak.nl/%SUBDIR%/ \
 	http://www.math.ntnu.no/mirror/www.qmail.org/%SUBDIR%/ \
