@@ -3,7 +3,7 @@
 # Date created:		1 May 1998
 # Whom:			Brett Taylor
 #
-# $Id: Makefile,v 1.24 1998/08/07 23:01:37 asami Exp $
+# $Id: Makefile,v 1.28 1998/12/23 01:41:18 steve Exp $
 #
 
 DISTNAME=	AfterStep-1.6.0
@@ -15,6 +15,8 @@ MAINTAINER=	ports@freebsd.org
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		png.2:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
+
+BROKEN=		upgrade
 
 INSTALL_TARGET=	install install.man
 MAN1=	Animate.1x Audio.1x Auto.1x Banner.1x Cascade.1x Clean.1x \
