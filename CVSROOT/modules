@@ -262,6 +262,7 @@ aleph		ports/lang/aleph
 alephone	ports/games/alephone
 alephone-data	ports/games/alephone-data
 alevt		ports/misc/alevt
+alf		ports/devel/alf
 align		ports/textproc/align
 allegro		ports/devel/allegro
 alloywm		ports/x11-wm/alloywm
