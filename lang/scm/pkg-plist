@@ -47,6 +47,7 @@ lib/scm/slib/colorspc.scm
 lib/scm/slib/comlist.scm
 lib/scm/slib/comparse.scm
 lib/scm/slib/cring.scm
+lib/scm/slib/cvs.scm
 lib/scm/slib/daylight.scm
 lib/scm/slib/db2html.scm
 lib/scm/slib/dbcom.scm
