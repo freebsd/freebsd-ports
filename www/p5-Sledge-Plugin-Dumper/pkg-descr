@@ -1,0 +1,4 @@
+Sledge::Plugin::Dumper is a Sledge plug-in that automatically calls
+Data::Dumper.
+
+WWW:	http://sl.edge.jp/
