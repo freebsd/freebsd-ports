@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
-
 GST_PLUGIN=	theora
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
