@@ -19,6 +19,8 @@ DIST_SUBDIR=	wdm
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WINGs Display Manager; an xdm replacement
 
+BROKEN=		Broken pkg-plist
+
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 
 NOT_FOR_ARCHS=	sparc64
