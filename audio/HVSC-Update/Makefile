@@ -26,6 +26,12 @@ GNU_CONFIGURE=	yes
 
 DOCS=	HVSC_Update.txt SID_file_format.txt
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/Update ${PREFIX}/bin/HVSC-Update
 .if !defined(NOPORTDOCS)
@@ -35,4 +41,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
