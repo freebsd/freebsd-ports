@@ -4136,6 +4136,7 @@ kwappen		ports/games/kwappen
 kwatch		ports/misc/kwatch
 kwebget		ports/ftp/kwebget
 kwin_flatcurve	ports/x11-wm/kwin_flatcurve
+kwirc		ports/irc/kwirc
 kwordquiz	ports/misc/kwordquiz
 kxl		ports/games/kxl
 kxmleditor	ports/editors/kxmleditor
