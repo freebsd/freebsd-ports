@@ -1,4 +1,4 @@
-# New ports collection makefile for:    Microsoft FrontPage Extentions
+# New ports collection makefile for:    Microsoft FrontPage Extensions
 # Date created:         Sat Oct 24 16:30:00 CDT 2001
 # Whom:                 hetzels@westbend.net
 #
@@ -72,7 +72,7 @@ pre-extract:
 .if ${OSVERSION} < 430001 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500014 )
 	@if ! ${LDCONFIG} -r | ${GREP} -q -e "-ldescrypt"; then \
 	   ${ECHO} ; \
-	   ${ECHO} "WARNING: MS FrontPage Extentions requires the libdescrypt library"; \
+	   ${ECHO} "WARNING: MS FrontPage Extensions requires the libdescrypt library"; \
 	   ${ECHO} "  Install the libdescrypt Library, then build apache-fp"; \
 	   ${ECHO} ; \
 	   ${ECHO} "  FreeBSD Handbook - Security (chapter 6)"; \
@@ -85,7 +85,7 @@ pre-extract:
 .else
 .if ${CRYPT_DES} == 1
 	@${ECHO} 
-	@${ECHO} "WARNING: MS FrontPage Extentions requires crypt_des in"
+	@${ECHO} "WARNING: MS FrontPage Extensions requires crypt_des in"
 	@${ECHO} "   the /usr/lib/libcrypt library.  You will need to"
 	@${ECHO} "   rebuild the libcrypt library with DES support."
 .if defined(NOSECURE) || defined(NOCRYPT)
@@ -113,7 +113,7 @@ post-patch:
 .endif
 
 do-install:
-	@${ECHO_MSG} "===> Untaring FrontPage Extentions to ${PREFIX}"
+	@${ECHO_MSG} "===> Untaring FrontPage Extensions to ${PREFIX}"
 	@(cd ${PREFIX} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${FRONTPAGE} ${EXTRACT_AFTER_ARGS})
 	@${PERL} -pi -e 's:IMAGESDIR:../images/:g' ${PREFIX}/${FPCSS}
 	@${RM} ${PREFIX}/${FPHTTPD}/httpd
