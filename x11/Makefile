@@ -69,6 +69,7 @@
     SUBDIR += libgnome
     SUBDIR += libhelp
     SUBDIR += libsx
+    SUBDIR += libxklavier
     SUBDIR += linux-gnomelibs
     SUBDIR += linux-xalf
     SUBDIR += login.app

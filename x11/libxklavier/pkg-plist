@@ -1,0 +1,40 @@
+include/libxklavier/xklavier.h
+include/libxklavier/xklavier_config.h
+lib/libxklavier.a
+lib/libxklavier.so
+lib/libxklavier.so.0
+share/doc/libxklavier/html/annotated.html
+share/doc/libxklavier/html/doxygen.css
+share/doc/libxklavier/html/doxygen.gif
+share/doc/libxklavier/html/files.html
+share/doc/libxklavier/html/functions.html
+share/doc/libxklavier/html/globals.html
+share/doc/libxklavier/html/group__Lookup.html
+share/doc/libxklavier/html/group__activation.html
+share/doc/libxklavier/html/group__callbacks.html
+share/doc/libxklavier/html/group__currents.html
+share/doc/libxklavier/html/group__debug.html
+share/doc/libxklavier/html/group__debugerr.html
+share/doc/libxklavier/html/group__enum.html
+share/doc/libxklavier/html/group__initterm.html
+share/doc/libxklavier/html/group__lookup.html
+share/doc/libxklavier/html/group__settings.html
+share/doc/libxklavier/html/group__wininfo.html
+share/doc/libxklavier/html/group__winstate.html
+share/doc/libxklavier/html/group__xkbevents.html
+share/doc/libxklavier/html/group__xkbgroup.html
+share/doc/libxklavier/html/group__xkbinfo.html
+share/doc/libxklavier/html/index.html
+share/doc/libxklavier/html/modules.html
+share/doc/libxklavier/html/structXklState-members.html
+share/doc/libxklavier/html/structXklState.html
+share/doc/libxklavier/html/struct__XklConfigItem-members.html
+share/doc/libxklavier/html/struct__XklConfigItem.html
+share/doc/libxklavier/html/xklavier_8h-source.html
+share/doc/libxklavier/html/xklavier_8h.html
+share/doc/libxklavier/html/xklavier__config_8h-source.html
+share/doc/libxklavier/html/xklavier__config_8h.html
+share/doc/libxklavier/html/xklavier__private_8h-source.html
+@dirrm share/doc/libxklavier/html
+@dirrm share/doc/libxklavier
+@dirrm include/libxklavier
