@@ -7,15 +7,17 @@
 
 PORTNAME=	wmhm
 PORTVERSION=	1.45
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	ftp://muir.yi.org/pub/wmhm/ \
 		http://www.es.co.nz/~mmuir/
 
-MAINTAINER=	mmuir@es.co.nz
+MAINTAINER=    mmuir@cwnet.com
+
+LIB_DEPENDS=   Xpm.4:${PORTSDIR}/graphics/xpm
 
 WRKSRC=		${WRKDIR}/wmhm/wmhm
 
-USE_XPM=	yes
 GNU_CONFIGURE=	yes
 MAN8=		wmhm.8
 MANCOMPRESSED=	yes
