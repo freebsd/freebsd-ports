@@ -26,6 +26,7 @@ MAN3=	libsp.3 SP_connect.3 SP_disconnect.3 SP_equal_group_ids.3 SP_error.3 \
 
 .if defined(WITH_JAVA_LIB)
 USE_JAVA=	1.2+
+NEED_JAVAC=	YES
 .endif
 USE_PERL5=	yes
 INSTALLS_SHLIB=	yes

@@ -16,6 +16,7 @@ MAINTAINER=	lioux@FreeBSD.org
 BROKEN=		'Does not currently work'
 
 USE_JAVA=	1.2+
+NEED_JAVAC=	YES
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/classes
