@@ -7,6 +7,7 @@
 
 PORTNAME=	Judy
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://judy.sourceforge.net/downloads/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -59,6 +60,9 @@ MLINKS=	Judy1.3x J1T.3x Judy1.3x J1S.3x Judy1.3x J1U.3x Judy1.3x J1F.3x \
 	JudySL_funcs.3x JudySLNext.3x JudySL_funcs.3x JudySLLast.3x \
 	JudySL_funcs.3x JudySLPrev.3x JudySL_funcs.3x JudySLFreeArray.3x
 
+SHLIB_MAJOR=	0
+PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
+
 DLVDIR=		${WRKSRC}/src/bsd_ia32/product/deliver/usr
 
 LIST_DOCS=	COPYRIGHT README *.htm
@@ -70,7 +74,10 @@ post-patch:
 
 do-install:
 	${INSTALL_DATA} ${DLVDIR}/include/Judy.h ${PREFIX}/include
-	${INSTALL_DATA} ${DLVDIR}/lib/libJudy.* ${PREFIX}/lib
+	${INSTALL_DATA} ${DLVDIR}/lib/libJudy.a ${PREFIX}/lib
+	${INSTALL_DATA} ${DLVDIR}/lib/libJudy.so \
+		${PREFIX}/lib/libJudy.so.${SHLIB_MAJOR}
+	${LN} -sf libJudy.so.${SHLIB_MAJOR} ${PREFIX}/lib/libJudy.so
 	${INSTALL_MAN} ${DLVDIR}/share/man/man3/*.3x ${MANPREFIX}/man/man3
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
