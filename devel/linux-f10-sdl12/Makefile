@@ -1,6 +1,6 @@
 # New ports collection makefile for:	linux-sdl
 # Date created:				8 October 2001
-# Whom:                         Martin Matuska <matuska@wu-wien.ac.at>
+# Whom:                         Martin Matuska <martin@tradex.sk>
 # Based on:		emulators/linux_base by marcel@FreeBSD.org
 #
 # $FreeBSD$
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION:S/.1$/-1/}.${MACHINE_ARCH}
 EXTRACT_SUFX=	.rpm
 EXTRACT_ONLY=
 
-MAINTAINER=	matuska@wu-wien.ac.at
+MAINTAINER=	martin@tradex.sk
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 

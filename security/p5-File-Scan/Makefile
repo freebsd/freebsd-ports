@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-File-Scan
 # Date created:				May 24 2002
-# Whom:	      				Martin Matuska <matuska@wu-wien.ac.at>
+# Whom:	      				Martin Matuska <martin@tradex.sk>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File/HDIAS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	matuska@wu-wien.ac.at
+MAINTAINER=	martin@tradex.sk
 
 PERL_CONFIGURE=	yes
 
