@@ -32,6 +32,7 @@
     SUBDIR += brs
     SUBDIR += bsdiff
     SUBDIR += buffer
+    SUBDIR += c-hey
     SUBDIR += cave
     SUBDIR += cfe
     SUBDIR += cheatah
