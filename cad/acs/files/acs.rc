@@ -48,7 +48,6 @@ Initializing system-wide startup configuration...
 .set diodeflags		0
 .set dtmin		1e-12
 .set dtratio		1e9
-.set floor		1e-20
 .set foooo		0
 .set gmin		1e-12
 .set harmonics		9
