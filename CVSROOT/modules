@@ -8212,6 +8212,7 @@ xdtm		ports/x11/xdtm
 xdu		ports/sysutils/xdu
 xdvi		ports/print/xdvi
 xdvik		ports/print/xdvik
+xdvshow		ports/multimedia/xdvshow
 xearth		ports/astro/xearth
 xed		ports/editors/xed
 xeji		ports/games/xeji
