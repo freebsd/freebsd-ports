@@ -23,10 +23,10 @@ MAN8=		apple_driver.8 isoinfo.8 mkhybrid.8 mkisofs.8
 USE_GMAKE=	yes
 MAKE_ENV=	COPTX="-DBSD_SCSI_SENSE_BUG"
 
-.if ${MACHINE_ARCH} == "alpha"
+.if ${MACHINE_ARCH} != "i386"
 post-extract:
 	${LN} -s ${WRKSRC}/RULES/i386-freebsd-cc.rul \
-		${WRKSRC}/RULES/alpha-freebsd-cc.rul
+		${WRKSRC}/RULES/${MACHINE_ARCH}-freebsd-cc.rul
 .endif
 
 post-build:
