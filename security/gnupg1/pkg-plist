@@ -1,9 +1,7 @@
 bin/gpg
-bin/gpgm
 lib/gnupg/rndegd
 lib/gnupg/rndunix
 lib/gnupg/tiger
-lib/gnupg/twofish
 @dirrm lib/gnupg
 share/gnupg/options.skel
 @dirrm share/gnupg
