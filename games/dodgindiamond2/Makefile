@@ -7,6 +7,7 @@
 
 PORTNAME=		dodgindiamond2
 PORTVERSION=		0.2.1
+PORTREVISION=		1
 CATEGORIES=		games
 MASTER_SITES=		http://www.usebox.net/jjm/dd2/releases/
 DISTNAME=		dd2-${PORTVERSION}
@@ -32,11 +33,8 @@ post-install:
 .if !exists(${PREFIX}/etc/dd2.cfg)
 	${INSTALL_DATA} ${WRKSRC}/src/data/dd2.cfg ${PREFIX}/etc
 .endif
-.if !exists(/var/games/dd2-hiscore)
-	${MKDIR} /var/games
-	${INSTALL} -g games -m 664 ${WRKSRC}/src/data/dd2-hiscore /var/games
-.endif
 	${CHGRP} games ${PREFIX}/bin/dd2
 	${CHMOD} g+s ${PREFIX}/bin/dd2
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
