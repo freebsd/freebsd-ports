@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/${PORTVERSION}/ \
 		http://sf1.mirror.openoffice.org/${PORTVERSION}/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
 		http://people.freebsd.org/~mbr/distfiles/
-DISTFILES=	oo_${PORTVERSION}_src.tar.bz2 gpc231.tar.Z oo_moz_641.tar.gz
+DISTFILES=	oo_${PORTVERSION}_src.tar.bz2 gpc231.tar.Z oo_moz095_i386_FreeBSD-4.tar.gz
 EXTRACT_ONLY=	oo_${PORTVERSION}_src.tar.bz2
 
 MAINTAINER=	mbr@FreeBSD.org
@@ -32,7 +32,7 @@ USE_GMAKE=	yes
 EXTRACT_BEFORE_ARGS_R= -dc
 EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -
 EXTRACT_CMD_R= ${GZIP_CMD}
-EXTRACT_REST=	gpc231.tar.Z oo_moz_641.tar.gz
+EXTRACT_REST=	gpc231.tar.Z oo_moz095_i386_FreeBSD-4.tar.gz
 
 GCC_VERSION!=	${CC} --version
 JDK13DIR?=      ${LOCALBASE}/jdk1.3.1
