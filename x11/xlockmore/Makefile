@@ -32,11 +32,11 @@ MAN1=		xlock.1
 
 WITH_MESAGL?=	yes
 .if ${WITH_MESAGL} == yes
-CONFIGURE_ARGS+=	--with-mesagl
+CONFIGURE_ARGS+=	--with-mesa
 MESALIB=	${PTHREAD_LIBS}
 USE_MESA=	yes
 .else
-CONFIGURE_ARGS+=	--without-mesagl --without-opengl
+CONFIGURE_ARGS+=	--without-mesa --without-opengl
 .endif
 CONFIGURE_ENV+=		XLOCKLIBS="${KRB5LIB} ${MESALIB}"
 
