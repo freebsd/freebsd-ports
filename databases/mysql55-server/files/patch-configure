@@ -1,14 +1,14 @@
 --- configure.orig	Sun Dec 21 19:03:09 2003
 +++ configure	Wed Dec 24 10:40:53 2003
-@@ -9069,7 +9070,7 @@
-   ;;
- esac
- fi
--HOSTNAME=$ac_cv_path_HOSTNAME
-+HOSTNAME="$ac_cv_path_HOSTNAME -s"
- 
- if test -n "$HOSTNAME"; then
-   echo "$as_me:$LINENO: result: $HOSTNAME" >&5
+@@ -8128,8 +8128,6 @@
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"; $ac_aux_dir/ltconfig $LIBTOOL_DEPS;
+
+-# Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+
+ # Prevent multiple expansion
+
 @@ -9261,43 +9262,8 @@
  echo "$as_me:$LINENO: checking \"how to check if pid exists\"" >&5
  echo $ECHO_N "checking \"how to check if pid exists\"... $ECHO_C" >&6
