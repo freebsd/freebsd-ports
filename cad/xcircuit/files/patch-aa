@@ -1,5 +1,5 @@
-*** Imakefile.orig	Tue Dec 19 06:19:13 2000
---- Imakefile	Wed Dec 20 02:58:57 2000
+*** Imakefile.orig	Wed Feb 14 04:52:30 2001
+--- Imakefile	Wed Feb 14 05:17:11 2001
 ***************
 *** 28,46 ****
   #CCOPTIONS = -O2
@@ -59,3 +59,20 @@
   
   #------------------------------------------------------------------------
   # Window manager bug workaround---If you don't like xcircuit grabbing kbd
+***************
+*** 85,91 ****
+  #------------------------------------------------------------------------
+  # Support for embedded Python interpreter (requires libpython2.0.a)
+  #
+! #define HAVE_PYTHON
+  
+  #------------------------------------------------------------------------
+  #
+--- 86,92 ----
+  #------------------------------------------------------------------------
+  # Support for embedded Python interpreter (requires libpython2.0.a)
+  #
+! /* #define HAVE_PYTHON */
+  
+  #------------------------------------------------------------------------
+  #

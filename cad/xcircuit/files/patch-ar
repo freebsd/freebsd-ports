@@ -1,0 +1,19 @@
+*** menus.h.orig	Wed Feb 14 05:24:42 2001
+--- menus.h	Wed Feb 14 05:45:01 2001
+***************
+*** 297,303 ****
+  
+  menustruct EditMenu[] = {
+  	{"Delete (d)", action(startdelete, NULL)},
+! 	{"Undelete (u)", action(undelete, Number(DRAW))},
+  	{"Copy (c)", action(startcopy, NULL)},
+  	{"Edit (e)", action(startedit, NULL)},
+  	{"Rotate/Flip", submenu(RotateMenu)},
+--- 297,303 ----
+  
+  menustruct EditMenu[] = {
+  	{"Delete (d)", action(startdelete, NULL)},
+! 	{"Undelete (u)", action(startundelete, Number(DRAW))},
+  	{"Copy (c)", action(startcopy, NULL)},
+  	{"Edit (e)", action(startedit, NULL)},
+  	{"Rotate/Flip", submenu(RotateMenu)},

@@ -1,0 +1,19 @@
+*** prototypes.h.orig	Wed Feb 14 05:24:51 2001
+--- prototypes.h	Wed Feb 14 05:33:28 2001
+***************
+*** 94,100 ****
+  extern void reviseselect(short *);
+  extern void objectdelete(short);
+  extern void deletebutton(XButtonEvent *);
+! extern short undelete(Widget, u_int, XButtonEvent *);
+  extern void printname(objectptr);
+  extern void checkname(objectptr);
+  extern objectptr finddot();
+--- 94,100 ----
+  extern void reviseselect(short *);
+  extern void objectdelete(short);
+  extern void deletebutton(XButtonEvent *);
+! extern short startundelete(Widget, u_int, XButtonEvent *);
+  extern void printname(objectptr);
+  extern void checkname(objectptr);
+  extern objectptr finddot();
