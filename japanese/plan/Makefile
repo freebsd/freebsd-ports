@@ -3,10 +3,11 @@
 # Date created:         Sat Jan 31, 1998
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/01/31 21:59:32 obrien Exp $
 #
 
 #BROKEN=		"need JIS libraries in print.c that I do not have"
+BROKEN=		"doesn't build properly from version 1.7.1"
 
 MAKE_ENV+=	JAPANESE=yes
 
