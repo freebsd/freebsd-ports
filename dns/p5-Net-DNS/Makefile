@@ -3,7 +3,7 @@
 # Date created:				April 5th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.8 1997/07/07 13:04:38 jfitz Exp $
+#   $Id: Makefile,v 1.9 1997/11/10 14:46:18 jfitz Exp $
 #
 
 DISTNAME=	Net-DNS-0.12
@@ -28,7 +28,7 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::RR::NSAP.3 Net::DNS::RR::NULL.3 Net::DNS::RR::PX.3 \
 		Net::DNS::Update.3
 
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
