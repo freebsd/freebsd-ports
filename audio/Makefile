@@ -10,6 +10,7 @@
     SUBDIR += aureal-kmod
     SUBDIR += autozen
     SUBDIR += bladeenc
+    SUBDIR += bonk
     SUBDIR += btc
     SUBDIR += cam
     SUBDIR += ccaudio

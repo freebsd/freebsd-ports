@@ -1,0 +1,15 @@
+--- Makefile.orig	Sat Jun  2 01:44:11 2001
++++ Makefile	Sat Jun  2 01:44:46 2001
+@@ -2,10 +2,10 @@
+ all : bonk
+ 
+ bonk : bonk.cc utility.h wav.h
+-	g++ -O3 -funroll-loops -o bonk bonk.cc
++	${CXX} ${CXXFLAGS} -o bonk bonk.cc
+ 
+ install : bonk
+-	install bonk /usr/bin
++	%%INSTALL_PROGRAM%% bonk ${PREFIX}/bin
+ 
+ clean :
+ 	rm -f core bonk
