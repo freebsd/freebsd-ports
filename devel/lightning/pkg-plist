@@ -1,0 +1,17 @@
+include/lightning.h
+include/lightning/asm-common.h
+include/lightning/asm.h
+include/lightning/core-common.h
+include/lightning/core.h
+include/lightning/fp-common.h
+include/lightning/fp.h
+include/lightning/funcs-common.h
+include/lightning/funcs.h
+@dirrm include/lightning
+@unexec install-info --delete %D/info/lightning.info %D/info/dir
+info/lightning.info
+info/lightning.info-1
+info/lightning.info-2
+info/lightning.info-3
+@exec install-info %D/info/lightning.info %D/info/dir
+share/aclocal/lightning.m4

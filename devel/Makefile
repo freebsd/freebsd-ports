@@ -281,6 +281,7 @@
     SUBDIR += libvanessa_logger
     SUBDIR += libvanessa_socket
     SUBDIR += libxalloc
+    SUBDIR += lightning
     SUBDIR += lincvs
     SUBDIR += linguist
     SUBDIR += linux-libglade
