@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fetchyahoo
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.5
 CATEGORIES=	mail
 MASTER_SITES=	http://fetchyahoo.sourceforge.net/
 
@@ -29,7 +29,6 @@ MAN1=		fetchyahoo.1
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/pkg-plist
 USE_PERL5=	yes
-WRKSRC=		${WRKDIR}/fetchyahoo-2.5
 
 .include <bsd.port.pre.mk>
 
