@@ -19,6 +19,7 @@
     SUBDIR += pilot-link
     SUBDIR += pilot_makedoc
     SUBDIR += pilrc
+    SUBDIR += plucker
     SUBDIR += pose
     SUBDIR += ppmtoTbmp
     SUBDIR += prc-tools

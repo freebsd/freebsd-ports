@@ -1,0 +1,77 @@
+# New ports collection makefile for:    plucker
+# Date created:         30th May 2001
+# Whom:                 Jose Marques <noway@nohow.demon.co.uk>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	plucker
+PORTVERSION=	1.1.13
+CATEGORIES=	palm www
+MASTER_SITES=	http://plkr.org/download/plucker-1.1/
+DISTNAME=	${PORTNAME}_bin-${PORTVERSION}
+
+MAINTAINER=	noway@nohow.demon.co.uk
+
+BUILD_DEPENDS=	ppmtoTbmp:${PORTSDIR}/palm/ppmtoTbmp \
+		convert:${PORTSDIR}/graphics/ImageMagick \
+		ppmtogif:${PORTSDIR}/graphics/netpbm \
+		cjpeg:${PORTSDIR}/graphics/jpeg \
+		${LOCALBASE}/pilot/bin/pilot-xfer:${PORTSDIR}/palm/pilot-link
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_PYTHON=	yes
+USE_BZIP=	yes
+PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+INSTALL_TARGET=	install-prc-files install-data install-pyplucker
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR}
+MAN1=		pluck-comics.1 plucker-build.1 plucker-decode.1 \
+		plucker-dump.1 plucker-setup.1
+FIND?=		find
+
+post-build:
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		${WRKSRC}/parser/python/PyPlucker
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		${WRKSRC}/parser/python/PyPlucker
+
+do-install:
+	${MKDIR} ${PYTHON_SITELIBDIR}/PyPlucker/helper
+	cd ${WRKSRC}/parser/python ; ${FIND} PyPlucker \
+		\( -name "*.py" -or -name "*.py?" \) \
+		-exec ${INSTALL_DATA} {} ${PYTHON_SITELIBDIR}/{} \;
+.for F in Spider.py PluckerDocs.py Decode.py
+	${INSTALL_SCRIPT} ${WRKSRC}/parser/python/PyPlucker/${F} \
+		${PYTHON_SITELIBDIR}/PyPlucker
+.endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/unix/setup.py ${PREFIX}/bin/plucker-setup
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/pluck-comics/pluck-comics.py \
+		${PREFIX}/bin/pluck-comics
+	${LN} -sf ${PYTHON_SITELIBDIR}/PyPlucker/Spider.py \
+		${PREFIX}/bin/plucker-build
+	${LN} -sf ${PYTHON_SITELIBDIR}/PyPlucker/PluckerDocs.py \
+		${PREFIX}/bin/plucker-decode
+	${LN} -sf ${PYTHON_SITELIBDIR}/PyPlucker/Decode.py \
+		${PREFIX}/bin/plucker-dump
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/PluckerUserGuide.pdb \
+		${WRKSRC}/viewer/*.prc ${WRKSRC}/viewer/ZLib/*.prc ${DATADIR}
+	${MKDIR} ${PREFIX}/etc/plucker
+	${INSTALL_DATA} ${WRKSRC}/parser/defaults/exclusionlist.txt \
+		${PREFIX}/etc/plucker/exclusionlist.txt.sample
+	${INSTALL_DATA} ${WRKSRC}/parser/defaults/home.html \
+		${PREFIX}/etc/plucker/home.html.sample
+	${INSTALL_DATA} ${WRKSRC}/parser/defaults/pluckerrc.sample \
+		${PREFIX}/etc/plucker
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/manual
+.for F in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/docs/${F} ${MAN1PREFIX}/man/man1
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/FAQ ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/Plucker_Doc/* ${DOCSDIR}/manual
+.endif
+
+.include <bsd.port.mk>
