@@ -18,7 +18,6 @@ NO_WRKSUBDIR=	yes
 DONT_USE_ZIP=	yes
 DO_USE_WRKSUBDIR=	yes
 EXECUTABLES=	pl
-GZIP=		9
 
 post-extract:
 	@${GZIP_CMD} -c ${FILESDIR}/ucc.init > ${WRKSRC}/ASU/ucc.init.gz
