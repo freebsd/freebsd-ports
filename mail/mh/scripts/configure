@@ -2,8 +2,7 @@
 #
 # Configure MH
 #
-top=$3
-cd $top/conf
+cd $WRKSRC/conf
 make
 ./mhconfig FreeBSD
 cd ..
