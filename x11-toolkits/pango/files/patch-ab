@@ -1,6 +1,9 @@
---- pango/Makefile.in.orig	Fri Nov 17 23:44:42 2000
-+++ pango/Makefile.in	Mon Nov 20 12:43:20 2000
-@@ -106,10 +106,10 @@
+
+$FreeBSD$
+
+--- pango/Makefile.in.orig	Sun Apr 29 14:22:28 2001
++++ pango/Makefile.in	Sun Apr 29 14:24:26 2001
+@@ -136,22 +136,22 @@
  # down at which point we'll either use the GTK+ versioning
  # scheme or the standard libtool scheme.
  #
@@ -10,6 +13,20 @@
  
 -libpangox_la_LDFLAGS = -release $(VERSION)
 +libpangox_la_LDFLAGS = -version-info $(VERSION:S/./:/)
- libpangox_la_LIBADD = $(INCLUDED_MODULES)
+ libpangox_la_LIBADD = $(X_LIBS) $(INCLUDED_X_MODULES)
+ libpangoxft_la_SOURCES =  	pangoxft-font.c			pangoxft-fontmap.c      	pangoxft-private.h		module-defs-xft.c
  
- pangoincludedir = $(includedir)/pango
+ 
+ libpangoxft_la_LIBADD = $(INCLUDED_XFT_MODULES) $(XFT_LIBS) opentype/libpango-ot.la
+-libpangoxft_la_LDFLAGS = -release $(VERSION)
++libpangoxft_la_LDFLAGS = -version-info $(VERSION:S/./:/)
+ 
+ libpangoft2_la_SOURCES =  	pangoft2.h			pangoft2.c			pangoft2-private.h		pangoft2-fontcache.c		pangoft2-fontmap.c		module-defs-ft2.c
+ 
+ 
+ libpangoft2_la_LIBADD = $(INCLUDED_FT2_MODULES) $(FREETYPE_LIBS)
+-libpangoft2_la_LDFLAGS = -release $(VERSION)
++libpangoft2_la_LDFLAGS = -version-info $(VERSION:S/./:/)
+ 
+ pangoincludedir = $(includedir)/pango-1.0/pango
+ 
