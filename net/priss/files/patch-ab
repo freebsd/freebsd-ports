@@ -1,0 +1,37 @@
+--- RhapServer/QTSS.conf	Sat Jul 31 14:45:07 1999
++++ RhapServer/QTSS.conf	Wed Sep  8 00:06:04 1999
+@@ -13,7 +13,7 @@
+ maximum_connections			1000
+ 
+ # Path to the root folder for movies.  [UI in Admin]
+-movie_folder				/Local/Library/QuickTimeStreaming/Movies
++movie_folder				/usr/local/movies
+ 
+ # Path to the folder for movies in a user's home directory
+ users_movie_folder                      /public_movies/
+@@ -23,10 +23,10 @@
+ request_logging				disabled
+ 
+ # Name of the access log file.
+-request_logfile_name		QTStreamingServer
++request_logfile_name		qtss-access
+ 
+ # Path to directory where access logs are stored
+-request_logfile_dir			/Local/Library/QuickTimeStreaming/Logs/
++request_logfile_dir			/var/log/
+ 
+ # Maximum allowed size in bytes for the access log. A 
+ # value of 0 means unlimited.
+@@ -41,10 +41,10 @@
+ error_logging				enabled
+ 
+ # Name of the error log file.
+-error_logfile_name			Error
++error_logfile_name			qtss-err
+ 
+ # Path to directory where error logs are stored
+-error_logfile_dir			/Local/Library/QuickTimeStreaming/Logs/
++error_logfile_dir			/var/log
+ 
+ # Maximum allowed size in bytes for the error log. A 
+ # value of 0 means unlimited.
