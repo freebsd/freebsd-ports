@@ -361,30 +361,30 @@ lib/m3/pkg/m3core/src/time/Common/FmtTime.i3
 lib/m3/pkg/m3core/src/time/Common/Tick.i3
 lib/m3/pkg/m3core/src/time/Common/Time.i3
 lib/m3/pkg/m3core/src/time/POSIX/TimePosix.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Udir.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uerror.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uexec.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Ugrp.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uin.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uipc.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Umman.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Umsg.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Unetdb.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Unix.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uprocess.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Upwd.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uresource.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Usem.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Ushm.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Usignal.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Usocket.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Ustat.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Usyslog.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Utime.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Utypes.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uugid.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uuio.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uutmp.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Udir.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Uerror.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Uexec.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Ugrp.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Uin.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Uipc.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.%%ARCH%%/Umman.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Umsg.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Unetdb.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.%%ARCH%%/Unix.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Uprocess.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Upwd.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Uresource.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Usem.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Ushm.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.%%ARCH%%/Usignal.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Usocket.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.%%ARCH%%/Ustat.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Usyslog.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Utime.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.%%ARCH%%/Utypes.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Uugid.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Uuio.i3
+lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Uutmp.i3
 lib/m3/pkg/m3core/src/weakref/WeakRef.i3
 lib/m3/pkg/m3core/src/word/Word.i3
 lib/m3/pkg/m3doc/%%TARGET%%/.M3EXPORTS
@@ -954,7 +954,8 @@ share/ezm3/COPYRIGHT
 @dirrm lib/m3/pkg/m3core/src/time/POSIX
 @dirrm lib/m3/pkg/m3core/src/time
 @dirrm lib/m3/pkg/m3core/src/weakref
-@dirrm lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%
+@dirrm lib/m3/pkg/m3core/src/unix/freebsd-4.generic
+@dirrm lib/m3/pkg/m3core/src/unix/freebsd-4.%%ARCH%%
 @dirrm lib/m3/pkg/m3core/src/unix
 @dirrm lib/m3/pkg/m3core/src/fingerprint
 @dirrm lib/m3/pkg/m3core/src/thread/Common
