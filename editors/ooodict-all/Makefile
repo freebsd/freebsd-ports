@@ -16,7 +16,10 @@ DISTFILES+=	${HYPHDIST}
 MAINTAINER=     openoffice@FreeBSD.org
 COMMENT?=	MySpell dictionaries for OpenOffice.org
 
+USE_ZIP=	yes
 EXTRACT_ONLY=
+
+BROKEN=		"Checksum mismatch"
 
 .if !defined(LANGDIST)
 DICTMETAPORT=	yes
