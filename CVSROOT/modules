@@ -6692,6 +6692,7 @@ vi-vntex	ports/vietnamese/vntex
 vi-vnxfonts	ports/vietnamese/vnxfonts
 vic		ports/mbone/vic
 vice		ports/emulators/vice
+vicq		ports/net/vicq
 vid		ports/graphics/vid
 vidcontrol	src/usr.sbin/vidcontrol
 vide		ports/x11-fm/vide
