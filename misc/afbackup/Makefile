@@ -135,10 +135,6 @@ PKGINSTALL_ENV=
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 .if !defined(WITHOUT_SERVER) && !defined(WITHOUT_CLIENT) \
     && !defined(WITHOUT_REXECLINKS) && !defined(NO_GUI) \
     && !defined(NO_DES) && !defined(NO_AUTOKEY)
