@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${EXAMPLESDIR} --with-drivers="freebsd_sysctl" \
 		--program-transform-name=""
 
+INFO=		gpl
 MAN1=		wmnd.1
 
 post-install:
