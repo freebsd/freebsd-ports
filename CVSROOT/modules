@@ -8255,6 +8255,7 @@ tree		ports/sysutils/tree
 treecc		ports/lang/treecc
 treepuzzle	ports/biology/treepuzzle
 treeviewx	ports/biology/treeviewx
+trf		ports/polish/trf
 trickle		ports/net/trickle
 trickyirc	ports/irc/trickyirc
 tridiavnc	ports/net/tridiavnc
