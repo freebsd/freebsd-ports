@@ -8,7 +8,7 @@
 PORTNAME=	mbrolavox
 PORTVERSION=	3.0.1
 CATEGORIES=	audio accessibility
-MASTER_SITES=	# filled in later after the configure script has run
+MASTER_SITES=
 DIST_SUBDIR=	mbrolavox
 
 MAINTAINER=	trevor@FreeBSD.org
