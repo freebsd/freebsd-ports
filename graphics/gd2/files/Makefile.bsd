@@ -18,21 +18,6 @@ INCS=	gd.h gd_io.h gdcache.h gdfontg.h gdfontl.h gdfontmb.h \
 SHLIB_NAME!=	${MAKE} -V SHLIB_NAME LIB=${LIB} \
 	SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} -f ${MAKEDIR}/bsd.lib.mk
 
-CFLAGS+=-I${.CURDIR} -I${LOCALBASE}/include/freetype2/freetype \
-	-I${LOCALBASE}/include/freetype2 -I${LOCALBASE}/include \
-	-DHAVE_LIBPNG -DHAVE_LIBJPEG -DHAVE_LIBFREETYPE -DHAVE_LIBZ
-LDADD=	-L${LOCALBASE}/lib -lpng -lz -ljpeg -lfreetype -lm
-
-.ifndef WITHOUT_XPM
-CFLAGS+=-I${X11BASE}/include/X11 -I${X11BASE}/include -DHAVE_XPM
-LDADD+=	-L${X11BASE}/lib -lXpm
-.ifdef WITHOUT_X11
-CFLAGS+=-DXPM_NOX
-.else
-LDADD+=	-lX11
-.endif
-.endif
-
 # The package comes with tests, but without any sort of test-harness,
 # to run them all automaticly. So building tests is disabled here.	-mi
 all: lib${LIB}.a ${SHLIB_NAME} ${PROGS} # ${TESTS}
