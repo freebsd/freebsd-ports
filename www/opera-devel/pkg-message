@@ -1,0 +1,6 @@
+
+If you are upgrading from version 6, it is recommended to backup your personal
+"~/.opera" directory and remove it before starting the upgraded Opera for the
+first time. This can be done from the command line using 
+"cp -Rp ~/.opera ~/.opera-mybackup" and "rm -rf ~/.opera".
+
