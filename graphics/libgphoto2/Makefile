@@ -14,17 +14,15 @@ MASTER_SITE_SUBDIR=	gphoto
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A universal digital camera picture control tool
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		usb-0.1.7:${PORTSDIR}/devel/libusb \
 		exif.9:${PORTSDIR}/graphics/libexif
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
+USE_GNOME=	gnometarget pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
@@ -35,7 +33,7 @@ post-patch:
 .for file in configure libgphoto2_port/configure
 	@${REINPLACE_CMD} -e \
 		's|[{]libdir[}]/pkgconfig|{prefix}/libdata/pkgconfig|g ; \
-		 s|-g -Wall||g' ${WRKSRC}/${file}
+		 s|-g ||g' ${WRKSRC}/${file}
 .endfor
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|po packaging doc|po doc|g ; \
