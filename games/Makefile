@@ -86,6 +86,7 @@
     SUBDIR += easysok
     SUBDIR += eboard
     SUBDIR += editss
+    SUBDIR += egoboo
     SUBDIR += eights
     SUBDIR += empire
     SUBDIR += enigma
