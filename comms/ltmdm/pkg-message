@@ -1,9 +1,7 @@
+
 *******************************************************************************
 * This port contains a prebuilt kernel module. Due to the ever changing       *
 * nature of FreeBSD it may be necessary to rebuild the module after a kernel  *
-* source update.  To do this execute the following commands :-                *
-* cd $PREFIX/src/sys/modules/ltmdm                                            *
-* make                                                                        *
-* cp ltmdm.ko $PREFIX/share/ltmdm                                             *
+* source update.  To do this reinstall the port.                              *
 *******************************************************************************
 

@@ -1,7 +1,10 @@
 This port contains a driver for several Winmodems based on the Lucent LT
 chipset. It consists of a shim for the Linux binary only object file.
 
-The shim code was written Watanabe Kiyoshi <aab10490@pop16.odn.net.jp>, see
-http://www.geocities.com/wtnbkysh/
+I have tested this code on a Dell Inspiron 8000. Mr Watanabe has tested it on
+a ThinkPad i1124.
 
-WWW: http://www.heby.de/ltmodem
+The shim code was written Watanabe Kiyoshi <aab10490@pop16.odn.net.jp>, see
+WWW: http://www.geocities.com/wtnbkysh/
+
+Home page of the Linux driver :- http://www.heby.de/ltmodem
