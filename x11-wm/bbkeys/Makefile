@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	A.J.Caines@halplant.com
 COMMENT=	A keygrabber for the Blackbox window manager
 
+BUILD_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
+
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
