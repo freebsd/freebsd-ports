@@ -83,6 +83,7 @@
     SUBDIR += matrix
     SUBDIR += maxima
     SUBDIR += metis
+    SUBDIR += metis-edf
     SUBDIR += mpexpr
     SUBDIR += mprime
     SUBDIR += mtl
