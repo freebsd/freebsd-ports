@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	si
-PORTVERSION=	0.96c
-MASTER_SITES=	http://ftp2.gamespy.com/pub/cdrom/planethalflife/si/ \
-		ftp://fileplanet.ngi.it/fileplanet2/planethalflife/si/
-DISTNAME=	${PORTNAME}${PORTVERSION}-linux
+PORTVERSION=	0.97
+MASTER_SITES=	http://www.lysator.liu.se/amiga/si/ \
+		ftp://212.177.107.155/halflifeitalia/mod/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-linux
 
 MAINTAINER=	lioux@FreeBSD.org
 
