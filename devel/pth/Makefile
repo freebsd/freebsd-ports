@@ -24,10 +24,15 @@ CONFIGURE_ARGS=	--enable-pthread \
 		--enable-batch \
 		--includedir="${PREFIX}/include/pth" \
 		--libdir="${PREFIX}/lib/pth"
+USE_REINPLACE=	yes
 
 MAN1=		pth-config.1 pthread-config.1
 MAN3=		pth.3 pthread.3
 
+post-patch:
+	${REINPLACE_CMD} -e \
+		"s,-funroll-loops -fstrength-reduce -fomit-frame-pointer -ffast-math,${CFLAGS}," \
+		${WRKSRC}/configure	
 post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
 
