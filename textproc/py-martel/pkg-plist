@@ -4,6 +4,9 @@ lib/%%PYTHON_VERSION%%/site-packages/Martel/Expression.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Martel/Generate.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/Generate.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/Generate.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Martel/Iterator.py
+lib/%%PYTHON_VERSION%%/site-packages/Martel/Iterator.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Martel/Iterator.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Martel/Parser.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/Parser.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/Parser.pyo
@@ -41,6 +44,9 @@ lib/%%PYTHON_VERSION%%/site-packages/Martel/formats/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Martel/formats/blastall_2_0_10.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/formats/blastall_2_0_10.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/formats/blastall_2_0_10.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Martel/formats/prosite16.py
+lib/%%PYTHON_VERSION%%/site-packages/Martel/formats/prosite16.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Martel/formats/prosite16.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Martel/formats/swissprot38.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/formats/swissprot38.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/formats/swissprot38.pyo
@@ -65,6 +71,9 @@ lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_Expression.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_Generate.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_Generate.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_Generate.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_Iterator.py
+lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_Iterator.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_Iterator.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_MDL_10_1996.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_MDL_10_1996.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_MDL_10_1996.pyo
@@ -77,6 +86,9 @@ lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_PIR_3_0.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_ParseRecords.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_ParseRecords.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_ParseRecords.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_Parser.py
+lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_Parser.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_Parser.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_RecordReader.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_RecordReader.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_RecordReader.pyo
@@ -89,13 +101,12 @@ lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_convert_re.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_optimize.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_optimize.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_optimize.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_prosite16.py
+lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_prosite16.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_prosite16.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_swissprot38.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_swissprot38.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_swissprot38.pyo
-share/doc/martel/HISTORY
-share/doc/martel/README
-share/doc/martel/tech_description.txt
-share/doc/martel/writing_a_format.txt
 share/examples/martel/README
 share/examples/martel/pdb1plm.ent
 share/examples/martel/sample.swissprot
@@ -103,8 +114,8 @@ share/examples/martel/swissprot2html.py
 share/examples/martel/test.mol
 share/examples/martel/toxml.py
 @dirrm share/examples/martel
-@dirrm share/doc/martel
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Martel/test
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Martel/formats
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Martel/examples
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Martel
+@unexec rm -rf %D/share/doc/martel 2>/dev/null || true
