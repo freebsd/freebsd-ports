@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	px
-PORTVERSION=	0.6.8
+PORTVERSION=	0.7.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://starship.python.net/~tmick/downloads/px/${PORTVERSION}/linux/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
