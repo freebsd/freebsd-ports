@@ -1,14 +1,24 @@
---- epplets/Makefile.in.orig	Thu Nov  6 07:09:42 2003
-+++ epplets/Makefile.in	Mon Dec  8 04:09:40 2003
-@@ -107,7 +107,7 @@
+--- epplets/Makefile.in.orig	Wed Nov  5 17:09:42 2003
++++ epplets/Makefile.in	Fri Feb  6 23:32:36 2004
+@@ -106,13 +106,13 @@
+ bindir = $(EBIN)
  edatadir = $(EROOT)
  
- bin_PROGRAMS = E-Load.epplet E-Clock.epplet E-Time.epplet E-Net.epplet \
+-bin_PROGRAMS = E-Load.epplet E-Clock.epplet E-Time.epplet E-Net.epplet \
 -E-Cpu.epplet E-Biff.epplet E-Power.epplet @TEST_PROGS@ @MIXER_PROGS@ \
-+E-Cpu.epplet E-Biff.epplet @APM_PROGS@ @TEST_PROGS@ @MIXER_PROGS@ \
- @GL_PROGS@ E-MemWatch.epplet E-Disk.epplet E-Areas.epplet E-Magic.epplet \
- E-Toolbox.epplet E-NetFlame.epplet E-Sys.epplet E-ScreenShoot.epplet \
+-@GL_PROGS@ E-MemWatch.epplet E-Disk.epplet E-Areas.epplet E-Magic.epplet \
+-E-Toolbox.epplet E-NetFlame.epplet E-Sys.epplet E-ScreenShoot.epplet \
++bin_PROGRAMS = E-Clock.epplet E-Time.epplet \
++E-Biff.epplet E-Power.epplet @TEST_PROGS@ @MIXER_PROGS@ \
++@GL_PROGS@ E-Disk.epplet E-Areas.epplet E-Magic.epplet \
++E-Toolbox.epplet E-NetFlame.epplet E-ScreenShoot.epplet \
  E-Slides.epplet E-Xss.epplet E-Mountbox.epplet E-Exec.epplet @ESD_PROGS@ \
+ @PLAYCD_PROGS@ E-ScreenSave.epplet E-NetGraph.epplet E-MoonClock.epplet \
+-E-UrlWatch.epplet E-LoadMeter.epplet E-GtkRc.epplet E-Pinger.epplet \
++E-UrlWatch.epplet E-GtkRc.epplet E-Pinger.epplet \
+ E-Pants.epplet E-Bandwidth.epplet E-Wireless.epplet
+ 
+ 
 @@ -123,166 +123,130 @@
  
  ################ Conditional Builds ################
@@ -191,12 +201,3 @@
  
  # You can use the following command to generate this line:
  # ABOUT_DOCS = `(cd epplets && ls -1d *.ABOUT/* 2>/dev/null | grep -v CVS)`
-@@ -407,7 +371,7 @@
- CONFIG_HEADER = ../config.h
- CONFIG_CLEAN_FILES = 
- bin_PROGRAMS =  E-Load.epplet E-Clock.epplet E-Time.epplet E-Net.epplet \
--E-Cpu.epplet E-Biff.epplet E-Power.epplet @TEST_PROGS@ @MIXER_PROGS@ \
-+E-Cpu.epplet E-Biff.epplet @APM_PROGS@ @TEST_PROGS@ @MIXER_PROGS@ \
- @GL_PROGS@ E-MemWatch.epplet E-Disk.epplet E-Areas.epplet \
- E-Magic.epplet E-Toolbox.epplet E-NetFlame.epplet E-Sys.epplet \
- E-ScreenShoot.epplet E-Slides.epplet E-Xss.epplet E-Mountbox.epplet \

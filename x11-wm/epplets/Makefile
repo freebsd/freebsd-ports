@@ -7,7 +7,7 @@
 
 PORTNAME=	epplets
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
@@ -17,7 +17,6 @@ COMMENT=	A collection of Enlightenment dock applications
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio \
-		gtop.1:${PORTSDIR}/devel/libgtop \
 		epplet.1:${PORTSDIR}/x11-wm/libepplet
 RUN_DEPENDS=	import:${PORTSDIR}/graphics/ImageMagick \
 		enlightenment:${PORTSDIR}/x11-wm/enlightenment
