@@ -47,6 +47,7 @@
     SUBDIR += ewipe
     SUBDIR += ezload
     SUBDIR += fd
+    SUBDIR += felis
     SUBDIR += fep
     SUBDIR += figlet
     SUBDIR += findutils
