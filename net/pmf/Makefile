@@ -12,7 +12,6 @@ MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/clients/pmf/
 
 MAINTAINER=	ports@freebsd.org
 
-BROKEN_ELF=	cc: c_packages/libc_packs.a: No such file or directory
 WRKSRC=		${WRKDIR}/pmfdir/src
 
 pre-install:

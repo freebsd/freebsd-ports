@@ -22,8 +22,6 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 MAINTAINER=	nkazushi@highway.or.jp
 
-BROKEN_ELF=	yes
-
 WRKSRC=	${WRKDIR}
 USE_X_PREFIX=	yes
 
