@@ -19,7 +19,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
 		${JDK11DIR}/bin/javac:${PORTSDIR}/java/jdk \
 		${JDK12DIR}/bin/javac:${PORTSDIR}/java/linux-jdk \
-		${X11BASE}/lib/libMrm.a:${PORTSDIR}/x11-toolkits/open-motif-devel \
+		${X11BASE}/lib/libMrm.a:${PORTSDIR}/x11-toolkits/open-motif \
 		${NONEXISTENT}:${PORTSDIR}/java/jfc:extract
 LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts \
