@@ -68,3 +68,6 @@ share/doc/w3/W3.ad
 share/examples/w3/dot.emacs
 share/examples/w3/dot.mosaic-hotlist-default
 share/examples/w3/user-install
+@dirrm lib/mule/site-lisp/w3
+@dirrm share/doc/w3
+@dirrm share/examples/w3
