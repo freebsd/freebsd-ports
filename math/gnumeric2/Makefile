@@ -7,6 +7,7 @@
 
 PORTNAME=	gnumeric2
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.2
@@ -38,6 +39,8 @@ PLIST_SUB=	VERSION=${PORTVERSION}-bonobo
 post-patch:
 	@${FIND} ${WRKSRC}/plugins -name "plugin.xml.in" | ${XARGS} \
 		${REINPLACE_CMD} -e 's|\.la|.so|g'
+	@${FIND} ${WRKSRC}/src/cut-n-paste-code/goffice/graph/plugins -name \
+		"plugin.xml.in" | ${XARGS} ${REINPLACE_CMD} -e 's|\.la|.so|g'
 	@${RM} -f ${WRKSRC}/GNOME_Gnumeric.server.in
 
 post-install:
