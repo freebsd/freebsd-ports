@@ -1,0 +1,4 @@
+lib/perl5/site_perl/%%PERL_VER%%/Tie/RDBM.pm
+lib/perl5/site_perl/%%PERL_VER%%/Tie/DBI.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/DBI/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/DBI
