@@ -1,7 +1,7 @@
-*** ./ada/gnatcmd.adb.orig	Wed Jul 29 21:01:07 1998
---- ./ada/gnatcmd.adb	Tue Sep  1 00:25:06 1998
+*** ./ada/gnatcmd.adb.orig	Fri Sep 24 08:41:33 1999
+--- ./ada/gnatcmd.adb	Tue Nov  2 02:44:41 1999
 ***************
-*** 988,994 ****
+*** 1173,1179 ****
   
         (Cname    => new S'("COMPILE"),
          Usage    => new S'("GNAT COMPILE filespec[,...] /qualifiers"),
@@ -9,7 +9,7 @@
          Switches => GCC_Switches'Access,
          Params   => new Parameter_Array'(1 => FILES_OR_WILDCARD),
          Defext   => "   "),
---- 988,994 ----
+--- 1173,1179 ----
   
         (Cname    => new S'("COMPILE"),
          Usage    => new S'("GNAT COMPILE filespec[,...] /qualifiers"),

@@ -1,0 +1,19 @@
+*** ./ada/gnatchop.adb.orig	Fri Sep 24 08:42:44 1999
+--- ./ada/gnatchop.adb	Tue Nov  2 02:43:44 1999
+***************
+*** 1575,1581 ****
+  begin
+     --  Check presence of required executables
+  
+!    Gnat_Cmd := Locate_Executable ("gcc");
+  
+     if Gnat_Cmd = null then
+        goto No_Files_Written;
+--- 1575,1581 ----
+  begin
+     --  Check presence of required executables
+  
+!    Gnat_Cmd := Locate_Executable ("adagcc");
+  
+     if Gnat_Cmd = null then
+        goto No_Files_Written;

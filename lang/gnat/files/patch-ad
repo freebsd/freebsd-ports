@@ -1,7 +1,7 @@
-*** ./ada/make.adb.orig	Wed Jul 29 21:01:09 1998
---- ./ada/make.adb	Tue Sep  1 00:24:06 1998
+*** ./ada/make.adb.orig	Fri Sep 24 08:41:53 1999
+--- ./ada/make.adb	Tue Nov  2 02:46:10 1999
 ***************
-*** 202,208 ****
+*** 238,244 ****
      -- Compiler, Binder & Linker Data and Subprograms --
      ----------------------------------------------------
   
@@ -9,7 +9,7 @@
      Gnatbind        : String_Access := Program_Name ("gnatbind");
      Gnatlink        : String_Access := Program_Name ("gnatlink");
      --  Default compiler, binder, linker programs
---- 202,208 ----
+--- 238,244 ----
      -- Compiler, Binder & Linker Data and Subprograms --
      ----------------------------------------------------
   

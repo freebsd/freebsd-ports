@@ -1,0 +1,34 @@
+*** ada/i-cstrea.adb	Fri Sep 24 08:42:42 1999
+--- ada/i-cstrea.adb	Sat Nov  6 18:33:57 1999
+***************
+*** 108,111 ****
+--- 108,136 ----
+        return C_setvbuf (stream, buffer, mode, size);
+     end setvbuf;
+  
++    procedure strcpy (dst : chars; src : chars);
++    pragma Import (C, strcpy);
++ 
++    function C_mktemp (template : chars) return chars;
++    pragma Import (C, C_mktemp, "mktemp");
++ 
++    procedure tmpnam (tname : chars) is
++       use type System.Address;
++       Template : string (1 .. 18) := "/var/tmp/tmp.XXXX" & Ascii.Nul;
++       Name     : chars;
++    begin
++       Name := C_mktemp (Template'Address);
++       if Name /= System.Null_Address then
++          strcpy (tname'Address, Name);
++       end if;
++    end tmpnam;
++ 
++    function tmpfile return FILEs is
++       Name : string (1 .. L_tmpnam) := (others => Ascii.Nul);
++       Mode : string (1 .. 3) := "w+" & Ascii.Nul;
++    begin
++       tmpnam (Name'Address);
++       return (fopen (Name'Address, Mode'Address));
++    end tmpfile;
++ 
+  end Interfaces.C_Streams;

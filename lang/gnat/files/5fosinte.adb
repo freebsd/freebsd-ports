@@ -91,86 +91,10 @@ package body System.OS_Interface is
       return (0);
    end Get_Stack_Base;
 
-   function pthread_getschedparam
-     (thread : pthread_t;
-      policy : access int;
-      param  : access struct_sched_param) return int is
-
-      function pthread_getprio (thread : pthread_t) return int;
-      pragma Import (C, pthread_getprio, "pthread_getprio");
-
-      Result : int;
-   begin
-      Result := pthread_getprio (thread);
-      if Result >= 0 then
-         --  Only set sched_param if we succeeded.  Also ensure
-         --  we return a successful status to the caller.
-         param.sched_priority := Result;
-         Result := 0;
-      end if;
-      return (Result);
-   end pthread_getschedparam;
-
-   function pthread_setschedparam
-     (thread : pthread_t;
-      policy : int;
-      param  : access struct_sched_param) return int is
-
-      function pthread_setprio (thread : pthread_t; prio : int) return int;
-      pragma Import (C, pthread_setprio, "pthread_setprio");
-
-   begin
-      return (pthread_setprio (thread, param.sched_priority));
-   end pthread_setschedparam;
-
-   function pthread_attr_setschedpolicy
-     (attr   : access pthread_attr_t;
-      policy : int) return int is
-   begin
-      return (0);
-   end pthread_attr_setschedpolicy;
-
-   function pthread_attr_getschedpolicy
-     (attr   : access pthread_attr_t;
-      policy : access int) return int is
-   begin
-      return (0);
-   end pthread_attr_getschedpolicy;
-
    procedure pthread_init is
    begin
       null;
    end pthread_init;
-
-   function pthread_sigmask_set
-     (how  : int;
-      set  : access sigset_t)
-     return int
-   is
-      function sigmask_set
-        (how  : int;
-         set  : access sigset_t;
-         oset : sigset_t_ptr)
-        return int;
-      pragma Import (C, sigmask_set, "pthread_sigmask");
-   begin
-      return sigmask_set (how, set, null);
-   end pthread_sigmask_set;
-
-   function pthread_sigmask_oset
-     (how  : int;
-      oset : access sigset_t)
-     return int
-   is
-      function sigmask_oset
-        (how  : int;
-         set  : sigset_t_ptr;
-         oset : access sigset_t)
-        return int;
-      pragma Import (C, sigmask_oset, "pthread_sigmask");
-   begin
-      return sigmask_oset (how, null, oset);
-   end pthread_sigmask_oset;
 
    -----------------
    -- To_Duration --

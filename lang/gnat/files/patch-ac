@@ -1,8 +1,8 @@
-*** ./ada/Makefile.in.orig	Wed Jul 29 21:00:07 1998
---- ./ada/Makefile.in	Mon Aug 31 09:16:59 1998
+*** ./ada/Makefile.in.orig	Fri Sep 24 08:41:35 1999
+--- ./ada/Makefile.in	Tue Nov  2 10:53:14 1999
 ***************
-*** 779,784 ****
---- 779,797 ----
+*** 909,914 ****
+--- 909,927 ----
     endif
   endif
   
@@ -20,5 +20,5 @@
 + endif
 + 
   ifeq ($(strip $(filter-out mips sgi irix%,$(targ))),)
-    LIBGNAT_TARGET_PAIRS = \
-    a-emstop.adb<4gemstop.adb \
+  
+    threadsletter=A

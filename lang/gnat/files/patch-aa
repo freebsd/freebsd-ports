@@ -1,5 +1,5 @@
-*** ./Makefile.in.orig	Wed Jun 23 02:34:31 1999
---- ./Makefile.in	Wed Jun 23 02:35:29 1999
+*** ./Makefile.in.orig	Fri Nov  5 19:52:38 1999
+--- ./Makefile.in	Sat Nov  6 10:07:16 1999
 ***************
 *** 152,158 ****
   ENQUIRE_LDFLAGS = $(LDFLAGS)
@@ -34,3 +34,24 @@
   
   # Do nothing while making gcc with a cross-compiler. The person who
   # makes gcc for the target machine has to know how to put a complete
+***************
+*** 2241,2249 ****
+  # Install gcov if it was compiled.
+  	-if [ -f gcov$(exeext) ]; \
+  	then \
+! 	    rm -f $(bindir)/gcov$(exeext); \
+! 	    $(INSTALL_PROGRAM) gcov$(exeext) $(bindir)/gcov$(exeext); \
+! 	    chmod a+x $(bindir)/gcov$(exeext); \
+  	fi
+  
+  # Install the driver program as $(target_alias)-gcc
+--- 2241,2249 ----
+  # Install gcov if it was compiled.
+  	-if [ -f gcov$(exeext) ]; \
+  	then \
+! 	    rm -f $(bindir)/adagcov$(exeext); \
+! 	    $(INSTALL_PROGRAM) gcov$(exeext) $(bindir)/adagcov$(exeext); \
+! 	    chmod a+x $(bindir)/adagcov$(exeext); \
+  	fi
+  
+  # Install the driver program as $(target_alias)-gcc

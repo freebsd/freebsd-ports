@@ -1,17 +1,17 @@
-*** ./ada/gnatlink.adb.orig	Wed Jul 29 21:01:08 1998
---- ./ada/gnatlink.adb	Tue Sep  1 00:26:17 1998
+*** ./ada/gnatlink.adb.orig	Fri Sep 24 08:41:46 1999
+--- ./ada/gnatlink.adb	Tue Nov  2 02:46:20 1999
 ***************
-*** 73,79 ****
-       Table_Increment      => 100,
-       Table_Name           => "Gnatlink.Binder_Options");
+*** 97,103 ****
+     --  This table collects the arguments to be passed to compile the binder
+     --  generated file.
   
 !    Gcc : String_Access := Program_Name ("gcc");
   
      Read_Mode  : constant String := "r" & Ascii.Nul;
   
---- 73,79 ----
-       Table_Increment      => 100,
-       Table_Name           => "Gnatlink.Binder_Options");
+--- 97,103 ----
+     --  This table collects the arguments to be passed to compile the binder
+     --  generated file.
   
 !    Gcc : String_Access := Program_Name ("adagcc");
   

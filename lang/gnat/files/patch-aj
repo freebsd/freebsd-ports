@@ -1,0 +1,54 @@
+*** ./ada/a-sysdep.c.orig	Fri Sep 24 08:42:39 1999
+--- ./ada/a-sysdep.c	Sat Nov  6 16:27:43 1999
+***************
+*** 235,241 ****
+  #endif
+  
+  #if defined (linux) || defined (sun) || defined (sgi) || defined (__EMX__) \
+!   || (defined (__osf__) && ! defined (__alpha_vxworks)) || defined (WINNT)
+  #include <termios.h>
+  #include <fcntl.h>
+  #elif defined (VMS)
+--- 235,242 ----
+  #endif
+  
+  #if defined (linux) || defined (sun) || defined (sgi) || defined (__EMX__) \
+!   || (defined (__osf__) && ! defined (__alpha_vxworks)) || defined (WINNT) \
+!   || defined (__FreeBSD__)
+  #include <termios.h>
+  #include <fcntl.h>
+  #elif defined (VMS)
+***************
+*** 285,291 ****
+  {
+  #if defined (linux) || defined (sun) || defined (sgi) || defined (__EMX__) \
+      || (defined (__osf__) && ! defined (__alpha_vxworks)) \
+!     || defined (__CYGWIN32__)
+    char c;
+    int nread;
+    int good_one = 0;
+--- 286,292 ----
+  {
+  #if defined (linux) || defined (sun) || defined (sgi) || defined (__EMX__) \
+      || (defined (__osf__) && ! defined (__alpha_vxworks)) \
+!     || defined (__CYGWIN32__) || defined (__FreeBSD__)
+    char c;
+    int nread;
+    int good_one = 0;
+***************
+*** 302,308 ****
+            /* Set RAW mode */
+            termios_rec.c_lflag = termios_rec.c_lflag & ~ICANON;
+  #if defined(sgi) || defined (sun) || defined (__EMX__) || defined (__osf__) \
+!       || defined (linux)
+            eof_ch = termios_rec.c_cc[VEOF];
+  
+            /* If waiting (i.e. Get_Immediate (Char)), set MIN = 1 and wait for
+--- 303,309 ----
+            /* Set RAW mode */
+            termios_rec.c_lflag = termios_rec.c_lflag & ~ICANON;
+  #if defined(sgi) || defined (sun) || defined (__EMX__) || defined (__osf__) \
+!       || defined (linux) || defined (__FreeBSD__)
+            eof_ch = termios_rec.c_cc[VEOF];
+  
+            /* If waiting (i.e. Get_Immediate (Char)), set MIN = 1 and wait for
