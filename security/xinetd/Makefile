@@ -3,7 +3,7 @@
 # Date created:		28 June 1996
 # Whom:			markm
 #
-# $Id: Makefile,v 1.3 1996/11/18 14:13:43 asami Exp $
+# $Id: Makefile,v 1.4 1997/12/04 03:40:06 vanilla Exp $
 #
 
 DISTNAME=	xinetd-2.2.1
@@ -19,8 +19,10 @@ do-build:
 	cd ${WRKSRC} ; ./compile-src -os freebsd2
 
 do-install:
-	cd ${WRKSRC}/xinetd ; make install
-	cd ${WRKSRC}/xinetd ; make install.man
+	${INSTALL_PROGRAM} ${WRKSRC}/xinetd/xinetd ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/xinetd/xinetd.man ${PREFIX}/man/man1/xinetd.1
+	${INSTALL_MAN} ${WRKSRC}/xinetd/xinetd.conf.man ${PREFIX}/man/man5/xinetd.conf.5
+	${INSTALL_MAN} ${WRKSRC}/xinetd/xinetd.log.man ${PREFIX}/man/man5/xinetd.log.5
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/xinetd.sh ]; then \
@@ -29,4 +31,5 @@ post-install:
 		${ECHO} "[ -x ${PREFIX}/sbin/xinetd ] && ${PREFIX}/sbin/xinetd && echo -n' xinetd'" >> ${PREFIX}/etc/rc.d/xinetd.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/xinetd.sh; \
 	fi
+
 .include <bsd.port.mk>
