@@ -19,7 +19,7 @@ LIB_DPEENDS=
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 .endif
 .if !defined(WITHOUT_PDF)
-LIB_DEPENDS+=	pdf.4:${PORTSDIR}/print/pdflib
+LIB_DEPENDS+=	pdf.4:${PORTSDIR}/print/pdflib4
 .endif
 
 .if !defined(WITHOUT_X11)
