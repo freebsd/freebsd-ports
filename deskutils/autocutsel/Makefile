@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	autocutsel
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.lepton.fr/tools/autocutsel/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	autocutsel
 
 MAINTAINER=	john@jnielsen.net
 COMMENT=	Synchronizes the two copy/paste buffers used by X applications
