@@ -5,7 +5,4 @@ efficient, and fast, as well as providing a well-designed platform for
 doing research into different algorithms for bytecode interpretation,
 garbage collection, memory management, etc.
 
-SableVM uses a modified version of the GNU Classpath Java classes;
-these classes are installed by the "sablepath" port.
-
 WWW: http://www.sablevm.org/

@@ -1,6 +1,0 @@
-SableVM implements the Java virtual machine specification, second edition.
-
-This port builds and installs a version of the GNU Classpath Java class
-and native libraries package that has been customized to work with SableVM.
-
-WWW: http://www.sablevm.org/
