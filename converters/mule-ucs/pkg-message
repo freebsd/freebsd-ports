@@ -27,6 +27,3 @@ If you want to use JIS X 0213 support, add the following line:
 
 to your .emacs.  See PREFIX/share/doc/mule-ucs/README.jisx0213
 (written in Japanese) for details.
-
-Mule-UCS is installed under the following directory:
-	PREFIX/share/emacs/20.x/site-lisp/mule-ucs/	--- Mule-UCS
