@@ -3,14 +3,13 @@
 # Date created:				29 June 1998
 # Whom:					scrappy
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1998/06/29 18:39:26 scrappy Exp $
 #
 
 DISTNAME=	xicq-062398-snapshot
 PKGNAME=	xicq-062398
 CATEGORIES=	net
 MASTER_SITES=	http://www.xtrophy.dk/xicq/
-EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	scrappy@freebsd.org
 
