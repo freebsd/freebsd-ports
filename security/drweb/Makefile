@@ -20,7 +20,7 @@ NO_BUILD=	YES
 # Needed for update.pl
 RUN_DEPENDS=    ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/String/CRC32.pm:${PORTSDIR}/devel/p5-String-CRC32
 
-SCRIPTS_ENV+=   BINOWN=${BINOWN}
+SCRIPTS_ENV+=   BINOWN=${BINOWN} BINGRP=${BINGRP}
 
 DRWEB_PREFIX=	${PREFIX}/${PORTNAME}
 
