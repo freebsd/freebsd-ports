@@ -2870,6 +2870,7 @@ ja-jhd		ports/japanese/jhd
 ja-jisx0213-fonts	ports/japanese/jisx0213-fonts
 ja-jls		ports/japanese/jls
 ja-jmode	ports/japanese/jmode
+ja-jmode-skk	ports/japanese/jmode-skk
 ja-jpilot	ports/japanese/jpilot
 ja-jvim		ports/japanese/jvim
 ja-jvim-canna	ports/japanese/jvim-canna
