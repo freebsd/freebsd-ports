@@ -1,24 +1,14 @@
-This package contains emacs lisp files, info pages, and so on (except
-executables) for mule-2.3, a multilingual editor based on emacs-19.34.
+This is port of coco.
 
-You must install one of packages, mule-2.3, ja-mule-*-2.3 
-(ja-mule-canna-2.3, ja-mule-canna+sj3-2.3, etc.), zh-mule-freewnn-2.3
-and ko-mule-freewnn-2.3, each of which contains only the executables
-for mule-2.3.
+coco runs as a filter for code conversion among
+any coding-systems which Mule can handle.
 
-This package and the above package of the executables *will* clobber
-any existing emacs installation.  In particular, the executables and
-man pages of etags/ctags are installed, and the info pages that come
-with the original emacs get installed too.
+m2ps converts *internal* code, which Mule
+handles, to Postscript by using bdf files.
 
-Although this shouldn't cause any problems to run both mule and emacs,
-it may cause some confusion when one of them is pkg_delete'd.  If
-someone has a solution to this, please tell me.
+coco and m2ps are one of commands in Mule2.3.
+But this port just install coco and m2ps,
+not all of Mule2.3.
 
-A "dir" file is supplied in the ${PORTSDIR}/editors/mule-common/files/
-subdirectory of the ports package.  Copy it into your /usr/local/info
-to read mule info pages, but also make sure you also add everything
-that may have been added to that file!
-
-- S. Taoka
-taoka@FreeBSD.org
+- Teruaki Ata
+PFA03027@nifty.ne.jp

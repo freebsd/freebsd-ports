@@ -1,0 +1,114 @@
+diff -rBbc configure configure
+*** configure	Tue Aug 18 14:48:19 1998
+--- configure	Sat Dec 29 03:49:52 2001
+***************
+*** 38,43 ****
+--- 38,47 ----
+  ac_help="$ac_help
+    --with-wnn6             Use Wnn6 library to input Japanese or Chinese"
+  ac_help="$ac_help
++   --with-cwnn4            Use Wnn4 library to input Chinese"
++ ac_help="$ac_help
++   --with-kwnn4            Use Wnn4 library to input Korean"
++ ac_help="$ac_help
+    --with-wnn-includes=DIR Search for WNN header files in DIR"
+  ac_help="$ac_help
+    --with-wnn-libraries=DIR Search for WNN libraries in DIR"
+***************
+*** 92,97 ****
+--- 96,102 ----
+  infodir='${prefix}/info'
+  mandir='${prefix}/man'
+  
++ wnnlib='-lwnn'
+  # Initialize some other variables.
+  subdirs=
+  MFLAGS= MAKEFLAGS=
+***************
+*** 564,574 ****
+  emacs_prefix=emacs
+  lispdir='${datadir}/${emacs_prefix}/${version}/lisp'
+  locallisppath='${datadir}/${emacs_prefix}/${version}/site-lisp:'\
+! '${datadir}/${emacs_prefix}/site-lisp'
+  lisppath='${locallisppath}:${lispdir}'
+! etcdir='${datadir}/${emacs_prefix}/${version}/etc'
+  # share lockdir with emacs and mule.
+! lockdir='${sharedstatedir}/emacs/lock'
+  archlibdir='${libexecdir}/${emacs_prefix}/${version}/${configuration}'
+  docdir='${datadir}/${emacs_prefix}/${version}/etc'
+  
+--- 569,579 ----
+  emacs_prefix=emacs
+  lispdir='${datadir}/${emacs_prefix}/${version}/lisp'
+  locallisppath='${datadir}/${emacs_prefix}/${version}/site-lisp:'\
+! '${datadir}/${emacs_prefix}/site-lisp:${datadir}/emacs/site-lisp'
+  lisppath='${locallisppath}:${lispdir}'
+! etcdir='${datadir}/coco'
+  # share lockdir with emacs and mule.
+! lockdir='/var/run/emacs/lock'
+  archlibdir='${libexecdir}/${emacs_prefix}/${version}/${configuration}'
+  docdir='${datadir}/${emacs_prefix}/${version}/etc'
+  
+***************
+*** 671,679 ****
+--- 676,695 ----
+  
+  fi
+  
++ if test "${with_cwnn4+set}" = set; then
++     wnnlib=-lcwnn
++ elif test "${with_kwnn4+set}" = set; then
++     wnnlib=-lkwnn
++ fi
++ 
+  # Check whether --with-wnn6 or --without-wnn6 was given.
+  if test "${with_wnn6+set}" = set; then
+    withval="$with_wnn6"
++ if test "${with_wnn6}" = yes; then
++    wnnlib=-lwnn6
++ else
++    wnnlib=$with_wnn6
++ fi
+    with_wnn=${withval}; cat >> confdefs.h <<\EOF
+  #define WNN6 1
+  EOF
+***************
+*** 932,937 ****
+--- 948,957 ----
+      machine=alpha opsys=gnu-linux
+    ;;
+  
++   alpha-*-freebsd* )
++     machine=alpha opsys=freebsd
++   ;;
++ 
+    ## Altos 3068
+    m68*-altos-sysv* )
+      machine=altos opsys=usg5-2
+***************
+*** 3100,3111 ****
+    if test -n "${with_wnn_libraries}" ; then
+      if test -d ${with_wnn_libraries} ; then
+        LD_SWITCH_WNN="-L${with_wnn_libraries}"
+!       LIBS_MULE="${LIBS_MULE} -lwnn"
+      else
+        LIBS_MULE="${LIBS_MULE} ${with_wnn_libraries}"
+      fi
+    else
+!     LIBS_MULE="${LIBS_MULE} -lwnn"
+    fi
+  fi
+  
+--- 3120,3131 ----
+    if test -n "${with_wnn_libraries}" ; then
+      if test -d ${with_wnn_libraries} ; then
+        LD_SWITCH_WNN="-L${with_wnn_libraries}"
+!       LIBS_MULE="${LIBS_MULE} ${wnnlib}"
+      else
+        LIBS_MULE="${LIBS_MULE} ${with_wnn_libraries}"
+      fi
+    else
+!     LIBS_MULE="${LIBS_MULE} ${wnnlib}"
+    fi
+  fi
+  
