@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	libtlen
-PORTVERSION=	20040212
+PORTVERSION=	20041113
 CATEGORIES=	polish net
-MASTER_SITES=	http://www.libtlen.eu.org/snapshots/archive/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	smyru@heron.pl
 COMMENT=	Backend for interoperability with Tlen.pl, Polish IM network
@@ -17,8 +18,8 @@ COMMENT=	Backend for interoperability with Tlen.pl, Polish IM network
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-post-install:
 .if !defined(NOPORTDOCS)
+post-install:
 	@${MKDIR} ${DOCSDIR}
 .for f in libtlen.html libtlen.css AUTHORS TODO
 	@${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
