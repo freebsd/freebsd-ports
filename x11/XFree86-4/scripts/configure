@@ -208,27 +208,22 @@ else
 fi
 
 yesno YES "Build PEX?"
-if [ $answ = NO ]; then
-  echo "#define BuildPexExt		NO" >> $F
-fi
+echo "#define BuildPexExt		$answ" >> $F
+
 yesno YES "Build Xinerama?"
 echo "#define BuildXinerama  $answ" >> $F
 
 yesno YES "Build XIE?"
-if [ $answ = NO ]; then
-  echo "#define BuildXIE		NO" >> $F
-fi
+echo "#define BuildXIE		$answ" >> $F
 echo
 
 # XXX We may not want to default this to 'YES' if there are any app-default
 # files installed
 yesno YES "Install application defaults files?"
-if [ $answ = NO ]; then
-  echo "#define InstallAppDefFiles      NO" >> $F
-fi
+echo "#define InstallAppDefFiles      $answ" >> $F
 
 yesno YES "Build static libraries in addition to shared libraries?"
-echo "#define ForceNormalLib		YES" >> $F
+echo "#define ForceNormalLib		$answ" >> $F
 
 if [ ${OSVERSION} -ge 300000 ]; then
 cat <<'END'
@@ -240,7 +235,7 @@ cat <<'END'
 
 END
 yesno YES "Build with Secure RPC?"
-echo "#define HasSecureRPC		YES" >> $F
+echo "#define HasSecureRPC		$answ" >> $F
 fi
 cat <<'END'
 
@@ -287,9 +282,8 @@ if [ $cpwh != NO ]; then
 fi
 
 echo
-# no PAM support in XFree86-4 !
-#yesno YES "Do you want to compile with PAM support?"
-#echo "#define	HasPam			$answ"	>> $F
+yesno YES "Do you want to compile with PAM support?"
+echo "#define	HasPam			$answ"	>> $F
 
 echo
 echo
