@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	1.1.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/Skin/ \
 		http://ftp.lug.udel.edu/MPlayer/Skin/ \
@@ -40,7 +40,7 @@ NO_BUILD=	yes
 ABYSS_FILE=		Abyss-1.1.tar.bz2
 ALIENMIND_FILE=		AlienMind-1.2.tar.bz2
 AVIFILE_FILE=		avifile-1.6.tar.bz2
-BLUECURVE_FILE=		bluecurve-1.1.tar.bz2
+BLUECURVE_FILE=		bluecurve-1.3.tar.bz2
 BLUEHEART_FILE=		BlueHeart-1.5.tar.bz2
 CANARY_FILE=		Canary-1.2.tar.bz2
 CORELIAN_FILE=		Corelian-1.1.tar.bz2
