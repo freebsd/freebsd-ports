@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rubrica
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.11
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://digilander.libero.it/nfragale/download/rubrica/
 
