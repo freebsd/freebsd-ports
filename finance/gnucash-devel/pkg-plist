@@ -24,6 +24,7 @@ include/gnucash/SchedXaction.h
 include/gnucash/Scrub.h
 include/gnucash/TransLog.h
 include/gnucash/Transaction.h
+include/gnucash/account-quickfill.h
 include/gnucash/basiccell.h
 include/gnucash/cell-factory.h
 include/gnucash/cellblock.h
@@ -60,6 +61,7 @@ include/gnucash/gnc-component-manager.h
 include/gnucash/gnc-currency-edit.h
 include/gnucash/gnc-date-delta.h
 include/gnucash/gnc-date-edit.h
+include/gnucash/gnc-date-format.h
 include/gnucash/gnc-dense-cal.h
 include/gnucash/gnc-engine-util.h
 include/gnucash/gnc-engine.h
@@ -88,6 +90,7 @@ include/gnucash/gnc-module-api.h
 include/gnucash/gnc-module.h
 include/gnucash/gnc-numeric.h
 include/gnucash/gnc-pricedb.h
+include/gnucash/gnc-query-list.h
 include/gnucash/gnc-report.h
 include/gnucash/gnc-session-scm.h
 include/gnucash/gnc-session.h
@@ -103,8 +106,6 @@ include/gnucash/i18n.h
 include/gnucash/import-match-map.h
 include/gnucash/kvp-scm.h
 include/gnucash/kvp_frame.h
-include/gnucash/gnc-date-format.h
-include/gnucash/gnc-query-list.h
 include/gnucash/messages.h
 include/gnucash/numcell.h
 include/gnucash/option-util.h
@@ -326,6 +327,7 @@ share/gnome/gnucash/accounts/es_ES/acctchrt_retiremt.gnucash-xea
 share/gnome/gnucash/accounts/es_ES/acctchrt_spouseinc.gnucash-xea
 share/gnome/gnucash/accounts/es_ES/acctchrt_spouseretire.gnucash-xea
 share/gnome/gnucash/accounts/fr_FR/acctchrt_brokerage.gnucash-xea
+share/gnome/gnucash/accounts/fr_FR/acctchrt_business.gnucash-xea
 share/gnome/gnucash/accounts/fr_FR/acctchrt_carloan.gnucash-xea
 share/gnome/gnucash/accounts/fr_FR/acctchrt_cdmoneymkt.gnucash-xea
 share/gnome/gnucash/accounts/fr_FR/acctchrt_childcare.gnucash-xea
@@ -460,10 +462,11 @@ share/gnome/gnucash/doc/examples/xfer.xac
 share/gnome/gnucash/doc/guile-hackers.txt
 share/gnome/gnucash/doc/html/Account_8h.html
 share/gnome/gnucash/doc/html/SchedXaction_8h.html
-share/gnome/gnucash/doc/html/Transaction_8h.html
 share/gnome/gnucash/doc/html/TransLog_8h.html
+share/gnome/gnucash/doc/html/Transaction_8h.html
 share/gnome/gnucash/doc/html/annotated.html
 share/gnome/gnucash/doc/html/classes.html
+share/gnome/gnucash/doc/html/combocell_8h.html
 share/gnome/gnucash/doc/html/date_8h.html
 share/gnome/gnucash/doc/html/doxygen.css
 share/gnome/gnucash/doc/html/doxygen.gif
@@ -475,6 +478,7 @@ share/gnome/gnucash/doc/html/gnc-log-replay_8h.html
 share/gnome/gnucash/doc/html/gnc-ofx-import_8h.html
 share/gnome/gnucash/doc/html/gnc-pricedb_8h.html
 share/gnome/gnucash/doc/html/gnc-ui-util_8h.html
+share/gnome/gnucash/doc/html/group__Account__Quickfill.html
 share/gnome/gnucash/doc/html/group__Date.html
 share/gnome/gnucash/doc/html/group__Engine.html
 share/gnome/gnucash/doc/html/group__Import__Export.html
@@ -595,6 +599,7 @@ share/gnome/gnucash/guile-modules/gnucash/report/fancy-invoice.scm
 share/gnome/gnucash/guile-modules/gnucash/report/hello-world.scm
 share/gnome/gnucash/guile-modules/gnucash/report/iframe-url.scm
 share/gnome/gnucash/guile-modules/gnucash/report/invoice.scm
+share/gnome/gnucash/guile-modules/gnucash/report/locale-specific/de_DE.scm
 share/gnome/gnucash/guile-modules/gnucash/report/locale-specific/us.scm
 share/gnome/gnucash/guile-modules/gnucash/report/net-barchart.scm
 share/gnome/gnucash/guile-modules/gnucash/report/owner-report.scm
@@ -610,11 +615,13 @@ share/gnome/gnucash/guile-modules/gnucash/report/standard-reports.scm
 share/gnome/gnucash/guile-modules/gnucash/report/stylesheet-fancy.scm
 share/gnome/gnucash/guile-modules/gnucash/report/stylesheet-plain.scm
 share/gnome/gnucash/guile-modules/gnucash/report/stylesheets.scm
+share/gnome/gnucash/guile-modules/gnucash/report/taxtxf-de_DE.scm
 share/gnome/gnucash/guile-modules/gnucash/report/taxtxf.scm
 share/gnome/gnucash/guile-modules/gnucash/report/transaction.scm
 share/gnome/gnucash/guile-modules/gnucash/report/utility-reports.scm
 share/gnome/gnucash/guile-modules/gnucash/report/view-column.scm
 share/gnome/gnucash/guile-modules/gnucash/report/welcome-to-gnucash.scm
+share/gnome/gnucash/guile-modules/gnucash/tax/de_DE.scm
 share/gnome/gnucash/guile-modules/gnucash/tax/us.scm
 share/gnome/gnucash/guile-modules/www/cgi.scm
 share/gnome/gnucash/guile-modules/www/http.scm
@@ -674,6 +681,8 @@ share/gnome/gnucash/scm/simple-obj.scm
 share/gnome/gnucash/scm/substring-search.scm
 share/gnome/gnucash/scm/tip-list.scm
 share/gnome/gnucash/scm/tip-of-the-day.scm
+share/gnome/gnucash/scm/txf-de_DE.scm
+share/gnome/gnucash/scm/txf-help-de_DE.scm
 share/gnome/gnucash/scm/txf-help.scm
 share/gnome/gnucash/scm/txf.scm
 share/gnome/gnucash/scm/xml-generator.scm
