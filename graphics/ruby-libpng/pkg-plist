@@ -1,0 +1,23 @@
+%%RUBY_SITEARCHLIBDIR%%/libpng.so
+%%RUBY_EXAMPLESDIR%%/libpng/es.png
+%%RUBY_EXAMPLESDIR%%/libpng/png.rb
+%%RUBY_EXAMPLESDIR%%/libpng/pngtest.rb
+%%RUBY_EXAMPLESDIR%%/libpng/pngtest.sh
+%%RUBY_EXAMPLESDIR%%/libpng/test.rb
+%%RUBY_EXAMPLESDIR%%/libpng/0.png
+%%RUBY_EXAMPLESDIR%%/libpng/1.png
+%%RUBY_EXAMPLESDIR%%/libpng/2.png
+%%RUBY_EXAMPLESDIR%%/libpng/3.png
+%%RUBY_EXAMPLESDIR%%/libpng/4.png
+%%RUBY_EXAMPLESDIR%%/libpng/5.png
+%%RUBY_EXAMPLESDIR%%/libpng/6.png
+%%RUBY_EXAMPLESDIR%%/libpng/7.png
+%%RUBY_EXAMPLESDIR%%/libpng/8.png
+%%RUBY_EXAMPLESDIR%%/libpng/9.png
+%%RUBY_EXAMPLESDIR%%/libpng/pngcat.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/libpng
+%%RUBY_DOCDIR%%/libpng/ja/readme.ja.html
+%%RUBY_DOCDIR%%/libpng/ja/readme.ja.rd
+%%RUBY_DOCDIR%%/libpng/ja/readme.ja.txt
+@dirrm %%RUBY_DOCDIR%%/libpng/ja
+@dirrm %%RUBY_DOCDIR%%/libpng
