@@ -47,7 +47,7 @@ etc/sms/services/tim
 etc/sms/services/ucp_tcp
 etc/sms/services/vodacom
 etc/sms/services/vodafone
-etc/sms/services/vodafone_autralia
+etc/sms/services/vodafone_australia
 etc/sms/services/vodafone_tap
 etc/sms/services/vodapage_block
 etc/sms/services/vstream
@@ -59,7 +59,7 @@ etc/sms/sms_services
 @dirrm var/spool/sms/services/vstream
 @dirrm var/spool/sms/services/vodapage_block
 @dirrm var/spool/sms/services/vodafone_tap
-@dirrm var/spool/sms/services/vodafone_autralia
+@dirrm var/spool/sms/services/vodafone_australia
 @dirrm var/spool/sms/services/vodafone
 @dirrm var/spool/sms/services/vodacom
 @dirrm var/spool/sms/services/ucp_tcp
@@ -113,7 +113,7 @@ etc/sms/sms_services
 @dirrm var/spool/sms/errors/vstream
 @dirrm var/spool/sms/errors/vodapage_block
 @dirrm var/spool/sms/errors/vodafone_tap
-@dirrm var/spool/sms/errors/vodafone_autralia
+@dirrm var/spool/sms/errors/vodafone_australia
 @dirrm var/spool/sms/errors/vodafone
 @dirrm var/spool/sms/errors/vodacom
 @dirrm var/spool/sms/errors/ucp_tcp
@@ -162,6 +162,8 @@ etc/sms/sms_services
 @dirrm var/spool/sms/errors/a1
 @dirrm var/spool/sms/errors
 @dirrm var/spool/sms
+@unexec rmdir %D/var/spool 2>/dev/null || true
+@unexec rmdir %D/var 2>/dev/null || true
 @dirrm etc/sms/services
 @dirrm etc/sms/scripts
 @dirrm etc/sms
