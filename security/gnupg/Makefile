@@ -18,7 +18,11 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	The GNU Privacy Guard
 
 USE_BZIP2=	YES
-USE_GETTEXT=	yes
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	YES
+.endif
+
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_TARGET=	--build ${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -26,6 +30,12 @@ CONFIGURE_TARGET=	--build ${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MACHINE_ARCH=	i586
 .endif
 CFLAGS:=	${CFLAGS:S/-pipe//g}
+.if !defined(WITHOUT_NLS)
+PLIST_SUB=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB=	NLS="@comment "
+.endif
 MAN1=		gpg.1 gpgv.1
 MAN7=		gnupg.7
 
