@@ -3,7 +3,7 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.27 1998/09/15 21:31:31 asami Exp $
+# $Id: Makefile,v 1.28 1998/10/01 11:29:51 jseger Exp $
 #
 
 DISTNAME=	mysql-3.22.6-alpha
@@ -17,6 +17,7 @@ MAINTAINER=	ibex@physik.TU-Berlin.DE
 
 BROKEN_ELF=	build
 
+MANUAL_PACKAGE_BUILD=	incompatible with mysql321
 NO_LATEST_LINK=	yes
 MAN1=		mysql.1
 
