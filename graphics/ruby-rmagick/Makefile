@@ -22,6 +22,8 @@ COMMENT=	A Ruby binding for ImageMagick
 
 LIB_DEPENDS=	Magick.6:${PORTSDIR}/graphics/ImageMagick
 
+BROKEN=		"Does not compile"
+
 USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
