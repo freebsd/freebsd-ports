@@ -14,6 +14,7 @@ lib/ROX-Lib2/Help/python/rox.basedir.html
 lib/ROX-Lib2/Help/python/rox.choices.html
 lib/ROX-Lib2/Help/python/rox.debug.html
 lib/ROX-Lib2/Help/python/rox.filer.html
+lib/ROX-Lib2/Help/python/rox.fileutils.html
 lib/ROX-Lib2/Help/python/rox.html
 lib/ROX-Lib2/Help/python/rox.i18n.html
 lib/ROX-Lib2/Help/python/rox.loading.html
@@ -51,6 +52,9 @@ lib/ROX-Lib2/python/rox/debug.pyo
 lib/ROX-Lib2/python/rox/filer.py
 lib/ROX-Lib2/python/rox/filer.pyc
 lib/ROX-Lib2/python/rox/filer.pyo
+lib/ROX-Lib2/python/rox/fileutils.py
+lib/ROX-Lib2/python/rox/fileutils.pyc
+lib/ROX-Lib2/python/rox/fileutils.pyo
 lib/ROX-Lib2/python/rox/i18n.py
 lib/ROX-Lib2/python/rox/i18n.pyc
 lib/ROX-Lib2/python/rox/i18n.pyo
