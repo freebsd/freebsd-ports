@@ -30,9 +30,13 @@ pre-fetch:
 	@${FALSE}
 .endif
 
+post-extract:
+	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/noattach.sh \
+		> ${WRKSRC}/noattach.sh
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/noattach ${PREFIX}/libexec/noattach
-	${INSTALL_SCRIPT} ${FILESDIR}/noattach.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/noattach.sh \
 		${PREFIX}/etc/rc.d/noattach.sh.sample
 	${INSTALL_DATA} ${WRKSRC}/examples/noattach.patterns \
 		 ${PREFIX}/etc/noattach.patterns-dist
