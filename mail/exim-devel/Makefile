@@ -37,11 +37,11 @@ MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 #WITH_PGSQL=	yes
 
 # Link against OpenSSL in the base system for STARTTLS support.
-#WITH_TLS=	yes
+WITH_TLS?=	yes
 
 # Enable the embedded Perl interpreter, allowing Perl subroutines to be
 # called during string expansion.
-WITH_PERL=	yes
+WITH_PERL?=	yes
 
 # If WITH_PAM is defined then one or more of PAM_CRAM_MD5 and PAM_PLAINTEXT
 # must be left uncommented.
@@ -66,14 +66,14 @@ SEDLIST=	-e 's,XX_PREFIX_XX,${PREFIX},' \
 SEDLIST+=	-e 's,^EXIM_MONITOR,\#EXIM_MONITOR,'
 .endif
 
-.if defined(WITH_TLS)
+.if defined(WITH_TLS) && ${WITH_TLS} == "yes"
 SEDLIST+=	-e 's,XX_TLS_LIBS_XX,-lssl -lcrypto,' \
 		-e 's,^\# SUPPORT_TLS,SUPPORT_TLS,'
 .else
 SEDLIST+=	-e 's,^TLS_LIBS,\#TLS_LIBS,'
 .endif
 
-.if !defined(WITH_PERL)
+.if !defined(WITH_PERL) && ${WITH_PERL} == "yes"
 SEDLIST+=	-e 's,^EXIM_PERL,\#EXIM_PERL,'
 .endif
 
