@@ -8,7 +8,7 @@
 PORTNAME=	xfrisk
 PORTVERSION=	1.2
 CATEGORIES=	games
-MASTER_SITES=	http://cvs.morphy.iki.fi/xfrisk/
+MASTER_SITES=	http://cvs.morphy.iki.fi/xfrisk/files/
 DISTNAME=	XFrisk-${PORTVERSION}
 
 MAINTAINER=	mph@freebsd.org
