@@ -126,56 +126,6 @@
 +	buf->nice     = pinfo [0].XXX_P_NICE;
 +	buf->priority = pinfo [0].XXX_P_PRIORITY;
  
---- sysdeps/freebsd/proctime.c.orig	Fri Sep 17 06:08:07 1999
-+++ sysdeps/freebsd/proctime.c	Thu Feb 15 01:15:11 2001
-@@ -68,5 +68,2 @@
- 	u_quad_t u, st, ut, it, tot;
--#if (__FreeBSD_version < 300003)
--        long sec, usec;
--#endif
-         struct timeval tv;
-@@ -83,8 +80,3 @@
- 
--#if (defined __FreeBSD__) && (__FreeBSD_version >= 300003)
--
--	/* This was changed from a `struct timeval' into a `u_int64_t'
--	 * on FreeBSD 3.0 and renamed p_rtime -> p_runtime.
--	 */
--
-+#if (defined __FreeBSD__)
- 	totusec = (u_quad_t) p->p_runtime;
-@@ -159,6 +151,6 @@
- 
--#if (defined __FreeBSD__) && (__FreeBSD_version >= 300003)
--	buf->rtime = pinfo [0].kp_proc.p_runtime;
-+#if (defined __FreeBSD__) && (__FreeBSD_version >= 500013)
-+	buf->rtime = pinfo [0].ki_runtime;
- #else
--	buf->rtime = tv2sec (pinfo [0].kp_proc.p_rtime);
-+	buf->rtime = pinfo [0].kp_proc.p_runtime;
- #endif
-@@ -194,2 +186,17 @@
- #else
-+#if __FreeBSD_version >= 500013
-+#if __FreeBSD_version >= 500016
-+	if ((pinfo [0].ki_flag & PS_INMEM)) {
-+#else
-+	if ((pinfo [0].ki_flag & P_INMEM)) {
-+#endif
-+	    buf->utime = pinfo [0].ki_runtime;
-+	    buf->stime = 0; /* XXX */
-+	    buf->cutime = tv2sec (pinfo [0].ki_childtime);
-+	    buf->cstime = 0; /* XXX */
-+	    buf->start_time = tv2sec (pinfo [0].ki_start);
-+	    buf->flags = _glibtop_sysdeps_proc_time_user;
-+	}
-+
-+#else
- 	glibtop_suid_enter (server);
-@@ -224,2 +231,3 @@
- 		}
-+#endif
- 
 --- sysdeps/freebsd/procmem.c.orig	Thu May 27 13:56:49 1999
 +++ sysdeps/freebsd/procmem.c	Wed Dec 27 10:16:26 2000
 @@ -139,2 +139,18 @@
