@@ -31,6 +31,7 @@ bin/smime_keys
 @unexec if cmp -s %D/etc/Muttrc.dist %D/etc/Muttrc; then rm -f %D/etc/Muttrc; fi
 etc/Muttrc.dist
 etc/mime.types
+share/locale/bg/LC_MESSAGES/mutt.mo
 share/locale/ca/LC_MESSAGES/mutt.mo
 share/locale/cs/LC_MESSAGES/mutt.mo
 share/locale/da/LC_MESSAGES/mutt.mo
@@ -84,6 +85,8 @@ if [ "$MUTT_PORTDOCS" = "yes" ]; then
 %%EXAMPLESDIR%%/Pine.rc
 %%EXAMPLESDIR%%/Tin.rc
 %%EXAMPLESDIR%%/ca-bundle.crt
+%%EXAMPLESDIR%%/colors.default
+%%EXAMPLESDIR%%/colors.linux
 %%EXAMPLESDIR%%/gpg.rc
 %%EXAMPLESDIR%%/pgp2.rc
 %%EXAMPLESDIR%%/pgp5.rc
@@ -122,7 +125,7 @@ EOF
   fi
 
   if [ "$MUTT_HTML" = "yes" ]; then
-    html=367
+    html=370
     if [ "$MUTT_COMPRESSED_FOLDERS" = "yes" ]; then
       html=$(($html + 5))
     fi
@@ -142,7 +145,7 @@ EOF
       html=$(($html + 1))
     fi
     if [ "$MUTT_PGP_PATCH" = "yes" ]; then
-      html=$(($html + 2))
+      html=$(($html + 1))
     fi
     echo "%%DOCSDIR%%/html/manual.html" >> $tmp_first
     echo "%%DOCSDIR%%/html/manual_toc.html" >> $tmp_first 
