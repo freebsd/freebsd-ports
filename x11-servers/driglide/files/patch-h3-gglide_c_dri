@@ -1,0 +1,110 @@
+diff -ru ../Glide3.orig/h3/glide3/src/gglide.c.dri ./h3/glide3/src/gglide.c.dri
+--- ../Glide3.orig/h3/glide3/src/gglide.c.dri	Fri Nov 24 10:38:46 2000
++++ ./h3/glide3/src/gglide.c.dri	Sun Jan 13 17:32:04 2002
+@@ -448,7 +448,7 @@
+ #include "fxcmd.h"
+ #include "fxinline.h"
+ 
+-#ifdef __linux__
++#ifdef DRI_BUILD
+ #include <lindri.h>
+ #endif
+ 
+@@ -483,12 +483,12 @@
+ 
+   alphamode = gc->state.shadow.alphaMode;
+   if (alpha_sf != GR_BLEND_ONE && alpha_sf != GR_BLEND_ZERO) {
+-    GR_CHECK_W(myName, 1, "unsupported alpha source blend function");
++    /*GR_CHECK_W(myName, 1, "unsupported alpha source blend function");*/
+     alpha_sf = GR_BLEND_ONE;
+   }
+ 
+   if (alpha_df != GR_BLEND_ONE && alpha_df != GR_BLEND_ZERO) {
+-    GR_CHECK_W(myName, 1, "unsupported alpha destination blend function");
++    /*GR_CHECK_W(myName, 1, "unsupported alpha destination blend function");*/
+     alpha_df = GR_BLEND_ZERO;
+   }
+ 
+@@ -917,7 +917,7 @@
+           
+           REG_GROUP_BEGIN(BROADCAST_ID, colBufferAddr, 2, 0x3);
+           REG_GROUP_SET(hw, colBufferAddr,gc->buffers[gc->grColBuf]);
+-#ifdef __linux__
++#ifdef DRI_BUILD
+           REG_GROUP_SET(hw, colBufferStride, (!gc->curBuffer)? driInfo.stride :
+ 			gc->state.shadow.auxBufferStride);
+ #else
+@@ -951,7 +951,7 @@
+         REG_GROUP_BEGIN(BROADCAST_ID, colBufferAddr, 2, 0x3);
+         REG_GROUP_SET(hw, colBufferAddr, gc->buffers[gc->windowed ? 0 : gc->curBuffer]);
+ 
+-#ifdef __linux__
++#ifdef DRI_BUILD
+         REG_GROUP_SET(hw, colBufferStride, (!gc->curBuffer) ? driInfo.stride :
+ 		      gc->state.shadow.colBufferStride);
+ #else
+@@ -1923,7 +1923,7 @@
+ ** grStippleMode
+ */
+ 
+-#ifdef __linux__
++#ifdef DRI_BUILD
+ GR_STATE_ENTRY(grStippleMode, void, (GrStippleMode_t mode))
+ {
+ #define FN_NAME "_grStippleMode"
+@@ -1957,7 +1957,7 @@
+ #endif /* !GLIDE3 */
+ #undef FN_NAME
+ } /* grStippleMode */
+-#endif /* __linux__ */
++#endif /* DRI_BUILD */
+ 
+ /*---------------------------------------------------------------------------
+ ** grDitherMode
+@@ -2325,7 +2325,7 @@
+ **  and the only drawbuffer modes supported by the fbzMode register are 0
+ **  (back) and 1 (front)
+ */
+-#ifndef __linux__
++#ifndef DRI_BUILD
+ GR_STATE_ENTRY(grRenderBuffer, void, (GrBuffer_t buffer))
+ {
+ #define FN_NAME "_grRenderBuffer"
+@@ -2352,7 +2352,7 @@
+   GR_END();
+ #undef FN_NAME
+ } /* grRenderBuffer */
+-#else /* __linux__ */
++#else /* DRI_BUILD */
+ GR_STATE_ENTRY(grRenderBuffer, void, (GrBuffer_t buffer))
+ {
+ #define FN_NAME "_grRenderBuffer"
+diff -ru ../Glide3.orig/h3/glide3/src/glfb.c.dri ./h3/glide3/src/glfb.c.dri
+--- ../Glide3.orig/h3/glide3/src/glfb.c.dri	Wed Aug 30 01:47:03 2000
++++ ./h3/glide3/src/glfb.c.dri	Sun Jan 13 17:35:08 2002
+@@ -217,7 +217,7 @@
+ #include "fxglide.h"
+ #include "fxcmd.h"
+ 
+-#ifdef __linux__
++#ifdef DRI_BUILD
+ #include <lindri.h>
+ #endif
+ 
+@@ -456,7 +456,7 @@
+       }
+ 
+       if (rv) {
+-#ifdef __linux__
++#ifdef DRI_BUILD
+ 	if (!colBufferIndex) 
+ 	  info->strideInBytes = driInfo.stride;
+ 	else
+@@ -487,7 +487,7 @@
+           GR_CHECK_SIZE();
+ 
+           info->lfbPtr          = (void *)gc->lfb_ptr;
+-#ifdef __linux__
++#ifdef DRI_BUILD
+ 	  info->strideInBytes   = 0x1000;
+ #endif

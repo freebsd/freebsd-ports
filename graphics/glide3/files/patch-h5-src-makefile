@@ -1,0 +1,67 @@
+--- h5/glide3/src/makefile.autoconf.am.orig	Sat Nov 18 08:00:26 2000
++++ h5/glide3/src/makefile.autoconf.am	Fri May 10 20:10:23 2002
+@@ -152,46 +152,40 @@
+ #
+ # Special rules for assembly files.
+ #
+-PREPROCESSOR=/lib/cpp -$$ -I.
++PREPROCESSOR=/usr/libexec/cpp0 -$$ -I.
+ xdraw2_def.o xdraw2_def.lo: xdraw2.s xdraw2.inc.s fxgasm.h
+ 	$(PREPROCESSOR) $< > $*.tmp.s
+-	$(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
+-	$(CP) $*.o $*.lo
++	libtool --mode=compile $(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
+ 	$(RM) -f $*.tmp.s
+ 
+ xdraw2_3dnow.o xdraw2_3dnow.lo: xdraw2.s xdraw2.inc.s fxgasm.h
+ 	$(PREPROCESSOR) -DGL_AMD3D -DUSE_PACKET_FIFO=1 $< > $*.tmp.s
+-	$(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
+-	$(CP) $*.o $*.lo
++	libtool --mode=compile $(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
+ 	$(RM) -f $*.tmp.s
+ 
+ xdraw3_def.o xdraw3_def.lo: xdraw3.s fxgasm.h
+ 	$(PREPROCESSOR) $< > $*.tmp.s
+-	$(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
+-	$(CP) $*.o $*.lo
++	libtool --mode=compile $(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
+ 	$(RM) -f $*.tmp.s
+ 
+ xdraw3_3dnow.o xdraw3_3dnow.lo: xdraw3.s fxgasm.h
+ 	$(PREPROCESSOR) -DGL_AMD3D -DUSE_PACKET_FIFO=1 $< > $*.tmp.s
+-	$(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
+-	$(CP) $*.o $*.lo
++	libtool --mode=compile $(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
+ 	$(RM) -f $*.tmp.s
+ 
+ xtexdl_3dnow.o xtexdl_3dnow.lo: xtexdl.s fxgasm.h 
+ 	$(PREPROCESSOR) -DGL_AMD3D -DUSE_PACKET_FIFO=1 $< > $*.tmp.s
+-	$(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
+-	$(CP) $*.o $*.lo
++	libtool --mode=compile $(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
+ 	$(RM) -f $*.tmp.s
+ 
+ if FX_GLIDE_C_CPU_DETECT
+ CPUSOURCES = cpudtect.c
+ else
+-CPUSOURCES = cpudtect.s 
++CPUSOURCES = cpudtect_asm.s 
+ 
+-cpudtect.o cpudtect.lo: cpudtect.s
++cpudtect_asm.o cpudtect_asm.lo: cpudtect.s
+ 	$(PREPROCESSOR) -DUSE_PACKET_FIFO=1 $< > $*.tmp.s
+-	$(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
+-	$(CP) $*.o $*.lo
++	libtool --mode=compile $(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
+ 	$(RM) -f $*.tmp.s
+ endif
+ 
+@@ -202,7 +196,7 @@
+ FX_GLIDE_CTRISETUP_SRC = gxdraw.c
+ else
+ if GL_AMD3D
+-FX_GLIDE_CTRISETUP_SRC = xdraw2_3dnow.s xdraw3_3dnow.s
++FX_GLIDE_CTRISETUP_SRC = xdraw2_3dnow.s xdraw3_3dnow.s xtexdl_3dnow.s xdraw2_def.s xdraw3_def.s
+ else
+ FX_GLIDE_CTRISETUP_SRC = xdraw2_def.s xdraw3_def.s
+ endif

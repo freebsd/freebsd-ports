@@ -1,0 +1,21 @@
+diff -ru ../Glide3.orig/h5/minihwc/gdebug.c ./h5/minihwc/gdebug.c
+--- ../Glide3.orig/h5/minihwc/gdebug.c	Sat Nov 18 08:00:35 2000
++++ ./h5/minihwc/gdebug.c	Sun Jan 13 17:36:02 2002
+@@ -86,7 +86,7 @@
+  * and one for the dynamic dfn.  For linux they are different.
+  * For Windows they are the same.
+  */
+-#ifdef	__linux__
++#if defined(__linux__) || defined(__FreeBSD__)
+ #define	INITIAL_STATIC_GDBG_MSGFILE	NULL
+ #define INITIAL_GDBG_MSGFILE            stderr
+ #else
+@@ -189,7 +189,7 @@
+         SIOUXSettings.asktosaveonclose  = false;
+ #endif      
+     
+-#ifdef __linux__
++#if defined(__linux__) || defined(__FreeBSD__)
+     gdbg_msgfile = INITIAL_GDBG_MSGFILE;
+ #endif
+ 

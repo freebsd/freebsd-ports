@@ -1,0 +1,12 @@
+diff -ru ../Glide3.orig/h5/glide3/src/xdraw2.inc.s ./h5/glide3/src/xdraw2.inc.s
+--- ../Glide3.orig/h5/glide3/src/xdraw2.inc.s	Sat Nov 18 08:00:27 2000
++++ ./h5/glide3/src/xdraw2.inc.s	Sun Jan 13 15:00:14 2002
+@@ -288,7 +288,7 @@
+ 	push %edi	/*  save caller's register variable */
+ 	push %esi	/*  save caller's register variable  */
+ 
+-	mov %edx , gc	/*  gc in edx from caller */
++	mov _gc-8(%esp) , gc    /*  gc on stack (NOT!!! in edx) from caller */
+ 	push %ebx	/*  save caller's register variable */
+ 
+ 	push %ebp	/*  save frame pointer */

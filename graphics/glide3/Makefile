@@ -1,46 +1,47 @@
-# New ports collection makefile for:	Glide
+# New ports collection makefile for:	glide3
 # Date created:				31 Mar 2001
 # Whom:					Nick Sayer <nsayer@freebsd.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	Glide3-64Bit
-PORTVERSION=	20010331
+PORTNAME=	glide3
+PORTVERSION=	20020113
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.teleport.com/~anholt/devel/dri/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	nsayer
-DISTFILES=	${PORTNAME}-20010331.tgz \
-		${PORTNAME:S/G/g/}-2001-01-06.tar.gz
-EXTRACT_ONLY=	${PORTNAME}-20010331.tgz
+MASTER_SITES=	http://gladstone.uoregon.edu/~eanholt/dri/
+.ifdef WITH_VOODOO3
+PKGNAMESUFFIX=	-v3
+.else
+PKGNAMESUFFIX=	-v5
+.endif
+DISTNAME=	Glide3-FreeBSD-${PORTVERSION}
+EXTRACT_SUFX=	.tar.bz2
+#The distfile is CVS Glide3-FreeBSD branch with */glide3/tests/* removed
 
-PATCH_SITES=	http://www.teleport.com/~anholt/devel/dri/
-PATCHFILES=	${PORTNAME:S/G/g/}-2001-01-06.diff
+MAINTAINER=	eanholt@gladstone.uoregon.edu
 
-MAINTAINER=	ports@FreeBSD.org
+USE_BZIP2=		yes
+WRKSRC=			${WRKDIR}/Glide3
+USE_X_PREFIX=		yes
+XFREE86_VERSION=	4
+INSTALLS_SHLIB=		yes
+USE_LIBTOOL=		yes
+USE_AUTOMAKE_VER=	14
+AUTOMAKE_ARGS=		-a
+USE_GMAKE=		yes
+MAKEFILE=		makefile.autoconf
 
-BROKEN=		"Does not build"
-
-WRKSRC=		${WRKDIR}/Glide3
-USE_X_PREFIX=	yes
-INSTALLS_SHLIB=	yes
-USE_LIBTOOL=	yes
-USE_AUTOMAKE_VER=	15
-MAKEFILE=	makefile.autoconf
-USE_GMAKE=	yes
+#Glide3 DOES NOT work with CFLAGS greater than -O2
+CFLAGS+= -O
 
 .ifdef WITH_VOODOO3
 CONFIGURE_ARGS+=	--enable-fx-glide-hw=h3
-.elifdef WITH_VOODOO2
-CONFIGURE_ARGS+=	--enable-fx-glide-hw=cvg
+.else
+pre-everything::
+	@${ECHO_MSG} "Use make -DWITH_VOODOO3 if you have a Voodoo3 or Banshee card"
 .endif
 
 post-extract:
-		( cd ${WRKSRC}; ${TAR} xfpz \
-			${DISTDIR}/${PORTNAME:S/G/g/}-2001-01-06.tar.gz )
-
-post-patch:
-		( cd ${WRKSRC} ; aclocal )
+	cd $(WRKSRC) && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal
 
 .include <bsd.port.mk>

@@ -1,0 +1,70 @@
+--- h3/glide3/src/makefile.autoconf.am.orig	Fri Oct 27 04:20:00 2000
++++ h3/glide3/src/makefile.autoconf.am	Fri May 10 19:53:18 2002
+@@ -101,7 +101,7 @@
+ endif
+ 
+ if GL_AMD3D
+-GL_AMD3D_SRC = xtexdl_3dnow.S xdraw2_3dnow.S xdraw3_3dnow.S
++GL_AMD3D_SRC = xtexdl_3dnow.S xdraw2_3dnow.S xdraw3_3dnow.S xdraw2_def.S xdraw3_def.S
+ endif
+ 
+ VDEFS = $(FX_CHRIS_DENIS_ANTHONY_HACK_VDEFS) \
+@@ -138,41 +138,40 @@
+ #
+ # Special rules for assembly files.
+ #
+-PREPROCESSOR=/lib/cpp -$$ -I.
+-xdraw2.o : xdraw2.S xdraw2.inc.S fxgasm.h
+-	$(CC) $(AFLAGS) -c -o $@ xdraw2.S
++PREPROCESSOR=/usr/libexec/cpp0 -$$ -I.
++xdraw2.lo : xdraw2.S xdraw2.inc.S fxgasm.h
++	libtool --mode=compile $(CC) $(AFLAGS) -c -o $@ xdraw2.S
+ 
+-xdraw3.o : xdraw3.S fxgasm.h
+-	$(CC) $(AFLAGS) -c -o $@ xdraw3.S
++xdraw3.lo : xdraw3.S fxgasm.h
++	libtool --mode=compile $(CC) $(AFLAGS) -c -o $@ xdraw3.S
+ 
+ # 3DNow!(tm) dependencies
+ # XXX_def.obj targets are the default targets
+ 
+ if GL_AMD3D
+-else
+-xdraw2_def.o: xdraw2.S xdraw2.inc.S fxgasm.h
+-	$(CC) $(AFLAGS) -c -o $@ xdraw2.S
++xdraw2_def.lo: xdraw2.S xdraw2.inc.S fxgasm.h
++	libtool --mode=compile $(CC) $(AFLAGS) -c -o $@ xdraw2.S
+ 
+-xdraw2_3dnow.o: xdraw2.S xdraw2.inc.S fxgasm.h
+-	$(CC) $(AFLAGS) -DGL_AMD3D -DUSE_PACKET_FIFO=1 -c -o $@ xdraw2.S
++xdraw2_3dnow.lo: xdraw2.S xdraw2.inc.S fxgasm.h
++	libtool --mode=compile $(CC) $(AFLAGS) -DGL_AMD3D -DUSE_PACKET_FIFO=1 -c -o $@ xdraw2.S
+ 
+-xdraw3_def.o: xdraw3.S fxgasm.h
+-	$(CC) $(AFLAGS) -c -o $@ xdraw3.S
++xdraw3_def.lo: xdraw3.S fxgasm.h
++	libtool --mode=compile $(CC) $(AFLAGS) -c -o $@ xdraw3.S
+ 
+-xdraw3_3dnow.o: xdraw3.S fxgasm.h
+-	$(CC) $(AFLAGS) -DGL_AMD3D -DUSE_PACKET_FIFO=1 -c -o $@ xdraw3.S
++xdraw3_3dnow.lo: xdraw3.S fxgasm.h
++	libtool --mode=compile $(CC) $(AFLAGS) -DGL_AMD3D -DUSE_PACKET_FIFO=1 -c -o $@ xdraw3.S
+ 
+-xtexdl_3dnow.o: xtexdl.S fxgasm.h 
+-	$(CC) $(AFLAGS) -DGL_AMD3D -DUSE_PACKET_FIFO=1 -c -o $@ xtexdl.S
++xtexdl_3dnow.lo: xtexdl.S fxgasm.h 
++	libtool --mode=compile $(CC) $(AFLAGS) -DGL_AMD3D -DUSE_PACKET_FIFO=1 -c -o $@ xtexdl.S
+ 
+ endif
+ 
+ if FX_GLIDE_C_CPU_DETECT
+ CPUSOURCES = cpudtect.c
+ else
+-CPUSOURCES = cpudtect.S
++CPUSOURCES = cpudtect_asm.S
+ 
+-cpudtect.o cpudtect.lo: cpudtect.S
++cpudtect_asm.o cpudtect_asm.lo: cpudtect.S
+ 	$(PREPROCESSOR) -DUSE_PACKET_FIFO=1 $< > $*.tmp.s
+ 	$(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
+ 	$(CP) $*.o $*.lo

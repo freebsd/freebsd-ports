@@ -1,0 +1,40 @@
+diff -ru ../Glide3.orig/h5/glide3/src/glide.h ./h5/glide3/src/glide.h
+--- ../Glide3.orig/h5/glide3/src/glide.h	Thu May 31 12:05:52 2001
++++ ./h5/glide3/src/glide.h	Sun Jan 13 14:44:34 2002
+@@ -53,9 +53,7 @@
+ typedef FxU32 GrColor_t;
+ typedef FxU8  GrAlpha_t;
+ typedef FxU32 GrMipMapId_t;
+-#ifdef DRI_BUILD
+ typedef FxU32 GrStipplePattern_t;
+-#endif /* DRI_BUILD */
+ typedef FxU8  GrFog_t;
+ typedef AnyPtr GrContext_t;
+ typedef int (FX_CALL *GrProc)();
+@@ -244,12 +242,10 @@
+ #define GR_DITHER_2x2           0x1
+ #define GR_DITHER_4x4           0x2
+ 
+-#ifdef DRI_BUILD
+ typedef FxI32 GrStippleMode_t;
+ #define GR_STIPPLE_DISABLE	0x0
+ #define GR_STIPPLE_PATTERN	0x1
+ #define GR_STIPPLE_ROTATE	0x2
+-#endif /* DRI_BUILD */
+ 
+ typedef FxI32 GrFogMode_t;
+ #define GR_FOG_DISABLE                     0x0
+@@ -745,13 +741,11 @@
+ FX_ENTRY void FX_CALL 
+ grDepthRange( FxFloat n, FxFloat f );
+ 
+-#ifdef  DRI_BUILD
+ FX_ENTRY void FX_CALL 
+ grStippleMode( GrStippleMode_t mode );
+ 
+ FX_ENTRY void FX_CALL 
+ grStipplePattern( GrStipplePattern_t mode );
+-#endif /* DRI_BUILD */
+ 
+ FX_ENTRY void FX_CALL 
+ grViewport( FxI32 x, FxI32 y, FxI32 width, FxI32 height );
