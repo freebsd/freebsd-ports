@@ -3,7 +3,7 @@
 # Date created:		4 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.6 1997/03/30 02:57:16 max Exp $
+# $Id: Makefile,v 1.7 1997/03/30 12:40:11 asami Exp $
 #
 
 DISTNAME=	jp-man-1.1
@@ -34,44 +34,31 @@ JMANELDIR=	${PREFIX}/lib/mule/site-lisp/jman
 # See a make rule of target pre-patch for details.
 # 
 XPG4LIBPATH?=		/usr/lib
-XPG4PATCHFILEORG=	patch-xpg4_org
-NOXPG4PATCHFILEORG=	patch-noxpg4_org
-XPG4PATCHFILE=		patch-xpg4
-XPG4PATCHSUFX=		xpg4
 
 pre-patch:
 	@${MKDIR} ${PATCHDIR}
-	@rm -f ${PATCHDIR}/patch-${XPG4PATCHSUFX}
+	@${RM} -f ${PATCHDIR}/patch-aa
 .if !defined(NOUSE_XPG4LIB)
-	@${SED} -e "s,%xpg4_lib_path%,${XPG4LIBPATH},g" < ${FILESDIR}/${XPG4PATCHFILEORG} > ${FILESDIR}/${XPG4PATCHFILE}
-.if defined(PATCH_DEBUG)
+	@${SED} -e "s,%XPG4LIBPATH%,${XPG4LIBPATH},g" \
+		< ${FILESDIR}/patch-xpg4.tmpl > ${FILESDIR}/patch-xpg4
 	@(for libfile in ${XPG4LIBPATH}/libxpg4*; do \
 		if [ ! "$$libfile" = "" ]; then \
-			${ECHO_MSG} "===>  Finding the xpg4 library in /usr/lib"; \
-			ln -sf ${FILESDIR}/${XPG4PATCHFILE} ${PATCHDIR}/patch-${XPG4PATCHSUFX}; \
-			${ECHO_MSG} "===>  Adding on a patch for to use the xpg4 libray when linking"; \
+			ln -sf ${FILESDIR}/patch-xpg4 \
+				${PATCHDIR}/patch-aa; \
 			break 1; \
 		fi; \
 	done)
 .else
-	@(for libfile in ${XPG4LIBPATH}/libxpg4*; do \
-		if [ ! "$$libfile" = "" ]; then \
-			ln -sf ${FILESDIR}/${XPG4PATCHFILE} ${PATCHDIR}/patch-${XPG4PATCHSUFX}; \
-			break 1; \
-		fi; \
-	done)
-.endif
-.else
-	@${CP} ${FILESDIR}/${NOXPG4PATCHFILEORG} ${FILESDIR}/${XPG4PATCHFILE}
-	@ln -sf ${FILESDIR}/${XPG4PATCHFILE} ${PATCHDIR}/patch-${XPG4PATCHSUFX}
+	@ln -sf ${FILESDIR}/patch-noxpg4 ${PATCHDIR}/patch-aa
 .endif
 
 post-install:
 	@${MKDIR} ${JMANELDIR}
 	@${INSTALL_DATA} ${FILESDIR}/jman.el ${JMANELDIR}
-	@${SETENV} CP=${CP} PKG_PREFIX=${PREFIX} /bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${SETENV} CP=${CP} PKG_PREFIX=${PREFIX} \
+		/bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 pre-clean:
-	@rm -f ${FILESDIR}/${XPG4PATCHFILE} ${PATCHDIR}/patch-${XPG4PATCHSUFX}
+	@${RM} -f ${PATCHDIR}/patch-aa ${FILESDIR}/patch-xpg4
 
 .include <bsd.port.mk>
