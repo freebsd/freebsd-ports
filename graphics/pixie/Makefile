@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pixie
-PORTVERSION=	1.3.25
+PORTVERSION=	1.3.26
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,6 +38,12 @@ PIXIE_EXES=	precomp rndr sdrc sdrinfo show texmake
 PIXIE_SHLIBS=	file framebuffer rgbe
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+NOT_FOR_ARCHS=	alpha
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|malloc\.h|stdlib\.h|g' \
@@ -106,4 +112,4 @@ post-install:
 	@(${SED} -e 's|%%PREFIX%%|${PREFIX}|; s|%%PORTNAME%%|${PORTNAME}|' \
 		<pkg-message >${PKGMESSAGE} && ${CAT} ${PKGMESSAGE})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
