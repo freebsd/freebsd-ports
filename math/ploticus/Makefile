@@ -20,6 +20,7 @@ LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		freetype:${PORTSDIR}/print/freetype2
 
 USE_XLIB=	yes
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 ALL_TARGET=	# empty
 MAKE_ENV=	LIBS="-L${LOCALBASE}/lib"

@@ -27,6 +27,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 USE_GTK=	yes
+USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--program-suffix="-claws" --enable-ipv6
 

@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 ONLY_FOR_ARCHS=	alpha i386
 
 USE_ZIP=	yes
+USE_REINPLACE=	yes
 EXTRACT_BEFORE_ARGS=	-q -aa
 
 pre-patch:

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	system/mail/pop
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 .if defined(WITH_IPVIRTUAL)

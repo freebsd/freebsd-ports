@@ -30,6 +30,7 @@ HTTP_PORT?=	80
 
 HAS_CONFIGURE=	yes
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--enable-layout=FreeBSD \
 		--with-perl=${PERL5} \

@@ -16,6 +16,7 @@ DISTNAME=	pyrt-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 
 USE_PYTHON=	yes
+USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 DOCSDIR=	${PREFIX}/share/doc/py-rt

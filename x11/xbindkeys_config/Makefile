@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.netchampagne.com/xbindkeys_config/
 MAINTAINER=	obraun@informatik.unibw-muenchen.de
 
 USE_GTK=	yes
+USE_REINPLACE=	yes
 MAKE_ENV=	CC="${CC} ${CFLAGS}"
 
 post-patch:

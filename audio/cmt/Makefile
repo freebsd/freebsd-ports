@@ -17,6 +17,7 @@ MAINTAINER=	freebsdports@arved.de
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	makefile
 ALL_TARGET=	targets

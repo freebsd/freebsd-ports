@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://suburbia.net/pub/rmj/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 MAKE_ENV+=	DEFS=-DDEFDICT=\\\"/usr/share/dict/words\\\"
 ALL_TARGET=	with-getopt
 MAN6=		an.6

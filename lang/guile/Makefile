@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	guile
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFILES=	configure guile-readline/configure

@@ -16,6 +16,7 @@ MAINTAINER=	gslin@ccca.nctu.edu.tw
 
 RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
 
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 
 MAN1=		zssh.1 ztelnet.1

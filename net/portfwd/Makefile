@@ -15,6 +15,7 @@ MAINTAINER=	sysadmin@alexdupre.com
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 MAN5=	portfwd.cfg.5
 MAN8=	portfwd.8

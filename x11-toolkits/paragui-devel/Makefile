@@ -21,6 +21,7 @@ LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \

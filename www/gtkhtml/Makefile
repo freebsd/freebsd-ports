@@ -25,6 +25,7 @@ USE_GMAKE=	yes
 USE_GNOMECTRL=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-gconf=yes \
 		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

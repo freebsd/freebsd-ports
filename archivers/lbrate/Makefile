@@ -14,6 +14,8 @@ MAINTAINER=	gslin@ccca.nctu.edu.tw
 
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
+USE_REINPLACE=	yes
+
 MAN1=		lbrate.1
 
 post-patch:

@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BISON=	yes
 USE_GNOME=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 MAKEFILE=	GNUmakefile
 
 post-patch:

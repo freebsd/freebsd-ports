@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	obraun@informatik.unibw-muenchen.de
 
 USE_GTK=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		gentoo.1

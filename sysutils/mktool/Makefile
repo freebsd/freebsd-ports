@@ -15,6 +15,7 @@ MAINTAINER=	jos@catnook.com
 WRKSRC=		${WRKDIR}/mktool
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 post-extract:
 	@${REINPLACE_CMD} -e ' \
