@@ -7,29 +7,23 @@
 #
 
 PORTNAME=	libmba
-PORTVERSION=	0.3.6
+PORTVERSION=	0.4.5
 CATEGORIES=	devel
-MASTER_SITES=	http://users.erols.com/mballen/libmba/src/
+MASTER_SITES=	http://www.eskimo.com/~miallen/libmba/dl/
 
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
-SHLIB_MAJOR=	0
-
-USE_REINPLACE=	yes
-CFLAGS=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
-MAKE_ENV=	SHLIB_MAJOR="${SHLIB_MAJOR}" INSTDIR=${PREFIX}
-ALL_TARGET=	# empty
+USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
+SHLIB_MAJOR=	0
+MAKE_ENV=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
+MAN3=		cfg.3m domnode.3m mbs.3m msgno.3m hashmap.3m hexdump.3m \
+		linkedlist.3m stack.3m
 MANCOMPRESSED=	yes
-MAN3=	domnode.3m hexdump.3m msgno.3m hashmap.3m linkedlist.3m stack.3m
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|/usr|${PREFIX}|g" \
-		-e "s|gcc|${CC}|g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
