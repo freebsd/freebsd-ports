@@ -1,0 +1,14 @@
+# FreeBSD port Makefile for devel/st
+
+PREFIX?=	/usr/local
+LIBDIR=		${PREFIX}/lib
+
+SHLIB_MAJOR=	1
+SHLIB_MINOR=	1
+LIB=		st
+NOPROFILE=	yes
+
+SRCS=		io.c key.c sched.c stk.c sync.c
+CFLAGS+=	-DFREEBSD
+
+.include <bsd.lib.mk>

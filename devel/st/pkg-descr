@@ -1,0 +1,17 @@
+The State Threads is a small application library which provides a
+foundation for writing fast and highly scalable Internet applications
+(such as web servers, proxy servers, mail transfer agents, and so on) on
+UNIX-like platforms. It combines the simplicity of the multithreaded
+programming paradigm, in which one thread supports each simultaneous
+connection, with the performance and scalability of an event-driven
+state machine architecture. In other words, this library offers a
+threading API for structuring an Internet application as a state
+machine.
+
+The State Threads library is a derivative of the Netscape Portable
+Runtime library (NSPR).
+
+WWW: http://oss.sgi.com/projects/state-threads/
+
+- Anton
+tobez@tobez.org

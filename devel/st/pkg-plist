@@ -1,0 +1,17 @@
+include/st.h
+lib/libst.a
+lib/libst.so.1
+lib/libst.so
+share/doc/st/fig.gif
+share/doc/st/notes.html
+share/doc/st/reference.html
+share/doc/st/st.html
+share/examples/st/Makefile
+share/examples/st/README
+share/examples/st/error.c
+share/examples/st/lookupdns.c
+share/examples/st/proxy.c
+share/examples/st/res.c
+share/examples/st/server.c
+@dirrm share/doc/st
+@dirrm share/examples/st
