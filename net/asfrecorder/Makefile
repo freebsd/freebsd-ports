@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	asfrecorder
-PORTVERSION=	1.1
+PORTVERSION=	1.1.20001218
 CATEGORIES=	net audio
-MASTER_SITES=	http://www.linuxberg.com/files/console/media/ \
-		http://diddl.firehead.org/censor/asf_recorder/
+MASTER_SITES=	http://diddl.firehead.org/censor/asf_recorder/
 DISTNAME=	ASFRecorder
 
 MAINTAINER=	roman@xpert.com
