@@ -299,15 +299,12 @@ lib/ImageMagick/modules-%%QBIT%%/filters/.keep
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/filters/analyze.la
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/filters/analyze.so
 lib/libMagick++.a
-lib/libMagick++.la
 lib/libMagick++.so
 lib/libMagick++.so.6
 lib/libMagick.a
-lib/libMagick.la
 lib/libMagick.so
 lib/libMagick.so.6
 lib/libWand.a
-lib/libWand.la
 lib/libWand.so
 lib/libWand.so.6
 libdata/pkgconfig/ImageMagick++.pc
