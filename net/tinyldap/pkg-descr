@@ -1,0 +1,5 @@
+tinyldap is an attempt to write a very small and very fast LDAP server.
+openldap is the reference when it comes to LDAP servers, and it performs
+very poorly despite using techniques such as thread pools.
+
+WWW: http://www.fefe.de/tinyldap/
