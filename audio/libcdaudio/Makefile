@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libcdaudio
-PORTVERSION=	0.99.4
+PORTVERSION=	0.99.6
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://cdcd.undergrid.net/libcdaudio/source_archive/
-MASTER_SITE_SUBDIR=	distributions/gentoo/gentoo-sources/ .
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
