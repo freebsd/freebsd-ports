@@ -20,12 +20,6 @@ LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		aa.1:${PORTSDIR}/graphics/aalib
 
-.if ${OSVERSION} < 500000
-ONLY_FOR_ARCHS=	i386
-.else
-ONLY_FOR_ARCHS=	alpha i386 ia64
-.endif
-
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
@@ -46,6 +40,12 @@ MAN5=		xawtvrc.5
 MAN8=		v4l-conf.8
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+ONLY_FOR_ARCHS= i386
+.else
+ONLY_FOR_ARCHS= alpha i386 ia64
+.endif
 
 .if defined(WITH_LIBDV)
 LIB_DEPENDS+=	dv.3:${PORTSDIR}/multimedia/libdv
