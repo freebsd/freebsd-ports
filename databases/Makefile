@@ -35,6 +35,7 @@
     SUBDIR += postgresql7
     SUBDIR += pxtools
     SUBDIR += py-MySQL
+    SUBDIR += py-MySQLdb
     SUBDIR += py-PyGreSQL
     SUBDIR += rdb
     SUBDIR += ruby-postgres
