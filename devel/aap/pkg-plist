@@ -83,7 +83,6 @@ lib/aap/Exec-%%PORTVERSION%%/aap.pyc
 lib/aap/Exec-%%PORTVERSION%%/aapnetrc.py
 lib/aap/Exec-%%PORTVERSION%%/aapnetrc.pyc
 lib/aap/Exec-%%PORTVERSION%%/aapre.py
-lib/aap/Exec-%%PORTVERSION%%/aapre.pyc
 lib/aap/Exec-%%PORTVERSION%%/default.aap
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/exec.pdf
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/appendix.html
@@ -158,7 +157,7 @@ lib/aap/Exec-%%PORTVERSION%%/tools/mingw.py
 lib/aap/Exec-%%PORTVERSION%%/tools/mingw.pyc
 lib/aap/Exec-%%PORTVERSION%%/tools/msvc.py
 lib/aap/Exec-%%PORTVERSION%%/tools/msvc.pyc
-%%PORTDOCS%%share/doc/aap
+%%PORTDOCS%%%%DOCSDIR%%
 @dirrm lib/aap/Exec-%%PORTVERSION%%/tools
 @dirrm lib/aap/Exec-%%PORTVERSION%%/modules
 %%PORTDOCS%%@dirrm lib/aap/Exec-%%PORTVERSION%%/doc/html

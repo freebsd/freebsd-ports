@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	aap
-PORTVERSION=	1.069
+PORTVERSION=	1.072
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	a-a-p
 
 MAINTAINER=	rui@ruilopes.com
 COMMENT=	A build tool alternative to make with internet access and CVS support
-
-BROKEN=		Broken pkg-plist after python 2.4 update
 
 MAN1=		aap.1
 
