@@ -6,20 +6,25 @@
 #
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.0.45
+PORTVERSION=	1.0.47
 CATEGORIES=	net
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Round Robin Database Tools
 
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+
 USE_PERL5=	yes
 MAKE_ENV+=	PERL=${PERL}
 
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--enable-shared=yes
+CONFIGURE_ARGS=	--enable-shared --enable-local-zlib --enable-local-libpng \
+		--program-transform-name=''
 CONFIGURE_ENV=	PERL=${PERL}
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS:=	${CFLAGS:N-ffast-math}
 
 MAN1=		RRDp.1 RRDs.1 bin_dec_hex.1 rrdcgi.1 rrdcreate.1 rrddump.1 \

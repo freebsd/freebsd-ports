@@ -3,6 +3,7 @@ bin/rrdcgi
 bin/trytime
 bin/rrdupdate
 lib/librrd.a
+lib/librrd.la
 lib/librrd.so.0
 lib/librrd.so
 include/rrd.h

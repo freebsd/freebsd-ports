@@ -1,8 +1,8 @@
---- contrib/trytime/Makefile.in.orig	Sun Apr 14 11:51:10 2002
-+++ contrib/trytime/Makefile.in	Wed May  1 16:09:23 2002
-@@ -89,7 +89,7 @@
- 
- INCLUDES = -I$(top_srcdir)/src -I$(top_srcdir)/gd1.3
+--- contrib/trytime/Makefile.in.orig	Mon Apr  5 02:03:53 2004
++++ contrib/trytime/Makefile.in	Tue Apr  6 11:17:12 2004
+@@ -162,7 +162,7 @@
+ target_vendor = @target_vendor@
+ AM_CPPFLAGS = -I$(top_srcdir)/src -I$(top_srcdir)/gd1.3
  EXTRA_DIST = trytime.c
 -contribdir = $(prefix)/contrib/trytime
 +contribdir = $(prefix)/share/examples/rrdtool/trytime
