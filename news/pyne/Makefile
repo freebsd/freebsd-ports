@@ -15,16 +15,13 @@ MASTER_SITES=	http://www.soul-less.pwp.blueyonder.co.uk/pyne/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 offline Newsreader/Emailer
 
-BROKEN=		"Does not compile"
-
 BUILD_DEPENDS=	pygtk-codegen-2.0:${PORTSDIR}/x11-toolkits/py-gtk2
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-# ugly hack imported from openoffice.
-.if !defined(DISPLAY)
+.if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
-DISPLAYHACK=	localhost:1001
 .endif
+
+BROKEN=		"Broken pkg-plist"
 
 USE_REINPLACE=		yes
 USE_PYTHON=		yes
@@ -37,24 +34,7 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s@[(]PREFIX[)]\/lib@(PYTHON_SITELIBDIR)@g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s@pybins=\(.*\)@pybins=\${PYTHON_VERSION}@" ${WRKSRC}/configure
 
-pre-install:
-.if !defined(DISPLAY)
-.if exists(${WRKDIR}/.Xvfb.pid)
-	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
-	@${RM} -f ${WRKDIR}/.Xvfb.pid
-.endif
-
-	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO_CMD} $$! > \
-		${WRKDIR}/.Xvfb.pid
-	@${REINPLACE_CMD} -e "s@--compile@--compile --display ${DISPLAYHACK}@" \
-		${WRKSRC}/Makefile
-.endif
-
 post-install:
-.if !defined(DISPLAY)
-	@${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
-	@${RM} ${WRKDIR}/.Xvfb.pid
-.endif
 	@${STRIP_CMD} ${PREFIX}/bin/yencdec
 
 .include <bsd.port.mk>
