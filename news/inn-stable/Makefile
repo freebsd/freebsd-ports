@@ -7,13 +7,14 @@
 
 PORTNAME=	inn
 PORTVERSION=	${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	news ipv6
 MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
 		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
 PKGNAMESUFFIX=	-${BRANCH}
 DISTNAME=	${PORTNAME}-${BRANCH:U}-${SNAPSHOT}
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
 
 BRANCH=		stable
