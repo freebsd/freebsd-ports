@@ -1,0 +1,9 @@
+Tclmidi is language designed for creating and editing standard
+MIDI files.  With the proper device interface it will also play
+and record MIDI files.  Since tclmidi is a language supporting
+function calls, recursion and conditionals, you can use these
+features for editing, sequencing and writing complex scripts.
+The brave might even want to try their hand at algorithmic
+composition.
+
+WWW: http://jagger.me.berkeley.edu/~greg/tclmidi/

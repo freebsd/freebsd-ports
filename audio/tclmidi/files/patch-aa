@@ -1,0 +1,29 @@
+--- Makefile.in.orig	Mon Nov  9 18:00:54 1998
++++ Makefile.in	Mon Nov  9 17:47:11 1998
+@@ -11,7 +11,7 @@
+ 
+ # The directory containing the Tcl library archive file appropriate
+ # for this version of Tk:
+-TCL_BIN_DIR = @TCL_BIN_DIR@
++TCL_BIN_DIR = ${LOCALBASE}/lib/tcl8.0
+ 
+ #----------------------------------------------------------------
+ # The information below is modified by the configure script when
+@@ -35,7 +35,7 @@
+ VPATH = @srcdir@
+ 
+ CFLAGS = @CFLAGS@ @DEFS@
+-CC_SWITCHES = @CFLAGS@ @DEFS@ ${SHLIB_CFLAGS} \
++CC_SWITCHES = @CFLAGS@ @DEFS@ ${SHLIB_CFLAGS} -I${TCL_GENERIC_DIR} \
+     -Idevice -Ievents -Irb -Ipatch -Ismf -Isong -I.
+ 
+ TCLMFILES = tclmCmd.o tclmUtil.o tclmEvnt.o tclmPlay.o tclmPtch.o TclmIntp.o
+@@ -101,7 +101,7 @@
+ 
+ install: $(PROJ_LIB_NAME) $(SCRIPTS)
+ 	-mkdir -p $(prefix)$(libdir)/tclmidi
+-	@INSTALL_DATA@ $(PROJ_LIB_NAME) $(prefix)$(libdir)/tclmidi
++	@INSTALL_DATA@ -s $(PROJ_LIB_NAME) $(prefix)$(libdir)/tclmidi
+ 	echo 'pkg_mkIndex $(prefix)$(libdir)/tclmidi \
+ 	    $(PROJECT)*${SHLIB_SUFFIX}' | @TCLSH_PATH@
+ 	cd man; $(MAKE) install
