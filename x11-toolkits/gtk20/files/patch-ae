@@ -1,6 +1,21 @@
---- configure.orig	Thu Feb 25 13:02:28 1999
-+++ configure	Tue Mar  2 11:11:14 1999
-@@ -3977,7 +3977,7 @@
+--- configure.orig	Tue May 11 05:42:09 1999
++++ configure	Mon May 17 22:59:13 1999
+@@ -606,10 +606,10 @@
+ 
+ 
+ # libtool versioning
+-LT_RELEASE=$GTK_MAJOR_VERSION.$GTK_MINOR_VERSION
+-LT_CURRENT=`expr $GTK_MICRO_VERSION - $GTK_INTERFACE_AGE`
+-LT_REVISION=$GTK_INTERFACE_AGE
+-LT_AGE=`expr $GTK_BINARY_AGE - $GTK_INTERFACE_AGE`
++LT_RELEASE=12
++LT_CURRENT=2
++LT_REVISION=0
++LT_AGE=0
+ 
+ 
+ 
+@@ -3689,7 +3689,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -9,3 +24,20 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
+@@ -3699,7 +3699,7 @@
+ 	    # Added by Martin Baulig 12/15/98 for libc5 systems
+ 	    if test "$gt_cv_func_dgettext_libc" != "yes" \
+ 	       && test "$gt_cv_func_dgettext_libintl" = "yes"; then
+-	       INTLLIBS=-lintl
++	       INTLLIBS="-lintl -lxpg4"
+ 	       LIBS=`echo $LIBS | sed -e 's/-lintl//'`
+ 	    fi
+ 	
+@@ -4446,6 +4446,7 @@
+   glib_thread_cflags="$GLIB_CFLAGS"
+   glib_libs=`$GLIB_CONFIG glib gmodule --libs`
+   glib_thread_libs="$GLIB_LIBS"
++  GLIB_CFLAGS="$glib_cflags"
+   GLIB_LIBS="$glib_libs"
+   GLIB_DEPLIBS="$glib_libs"
+ else
