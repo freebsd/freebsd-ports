@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmlrpc
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.8
 CATEGORIES=	net python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	py-${PORTNAME}
@@ -18,20 +18,17 @@ MAINTAINER=	perky@fallin.lv
 BUILD_DEPENDS=	${PYDISTUTILS}
 
 USE_PYTHON=	yes
-
-PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g} \
-		SHARE_SUBDIR=${SHARE_SUBDIR}
-SHARE_SUBDIR=   ${PKGNAMEPREFIX}${PORTNAME}
 SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
+EXAMPLESDIR=	${PREFIX}/share/examples/py-xmlrpc
 
 do-build:
 	${SETUP_CMD} build
 
 do-install:
-	${SETUP_CMD} install
+	${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/${SHARE_SUBDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} doc/example/* ${PREFIX}/share/examples/${SHARE_SUBDIR}
+	${MKDIR} ${EXAMPLESDIR}
+	${TAR} -C ${WRKSRC}/examples -cf- . | ${TAR} -C ${EXAMPLESDIR} -xpf-
 .endif
 
 .include <bsd.port.mk>
