@@ -1,0 +1,39 @@
+
+$FreeBSD$
+
+--- Makefile.install.UNIX.orig	Fri Feb  9 02:18:25 2001
++++ Makefile.install.UNIX	Fri Feb  9 15:42:27 2001
+@@ -28,27 +28,27 @@
+ 
+ 
+ BIN_DIR   = $(PREFIX)/bin
+-ICONS_DIR = $(PREFIX)/share/icons
++ICONS_DIR = $(PREFIX)/share/$(BIN)/icons
+ DATA_DIR  = $(PREFIX)/share/$(BIN)
+ MAN_DIR   = $(PREFIX)/man/man1
+ 
+ install:
+ 	$(MKDIR) $(MKDIRFLAGS) $(BIN_DIR)
+-	$(INSTALL) $(INSTBINFLAGS) $(BIN) $(BIN_DIR)
++	$(BSD_INSTALL_PROGRAM) $(BIN) $(BIN_DIR)
+ 
+ 	$(MKDIR) $(MKDIRFLAGS) $(DATA_DIR)
+ 	$(MKDIR) $(MKDIRFLAGS) $(DATA_DIR)/help
+-	$(COPY) $(COPYFLAGS) help/* $(DATA_DIR)/help
++	$(BSD_INSTALL_DATA) help/* $(DATA_DIR)/help
+ 
+ 	$(MKDIR) $(MKDIRFLAGS) $(DATA_DIR)
+ 	$(MKDIR) $(MKDIRFLAGS) $(DATA_DIR)/templates
+-	$(COPY) $(COPYFLAGS) templates/* $(DATA_DIR)/templates
++	$(BSD_INSTALL_DATA) templates/* $(DATA_DIR)/templates
+ 
+ 	$(MKDIR) $(MKDIRFLAGS) $(MAN_DIR)
+-	$(INSTALL) $(INSTMANFLAGS) $(BIN).1 $(MAN_DIR)
++	$(BSD_INSTALL_MAN) $(BIN).1.out $(MAN_DIR)/$(BIN).1
+ 
+ 	$(MKDIR) $(MKDIRFLAGS) $(ICONS_DIR)
+-	$(INSTALL) $(INSTDATFLAGS) $(BIN).xpm $(ICONS_DIR)
++	$(BSD_INSTALL_DATA) $(BIN).xpm $(ICONS_DIR)
+ 
+ 	@echo "-------------------------------------------------------------------------"
+ 	@echo "Program $(BIN) installed in:"

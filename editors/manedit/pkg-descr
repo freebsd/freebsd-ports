@@ -1,0 +1,6 @@
+ManEdit is a UNIX manual page editor and viewer. It can be used as a direct
+editor for UNIX manual pages (with no manual conversion steps involved) or
+a viewer/browser. ManEdit uses the GTK+ widget set and requires the X Window
+Systems.
+
+WWW: http://wolfpack.twu.net/ManEdit
