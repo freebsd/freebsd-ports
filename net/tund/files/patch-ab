@@ -1,0 +1,86 @@
+--- cipher.c.orig	Sat Feb  5 21:35:24 2000
++++ cipher.c	Sat Feb  5 21:38:51 2000
+@@ -1,7 +1,9 @@
+ #include <stdlib.h>
+ #include "tund.h"
+ #include <openssl/blowfish.h>
++#ifndef NO_IDEA
+ #include <openssl/idea.h>
++#endif
+ #include <openssl/rc5.h>
+ 
+ 
+@@ -27,7 +29,9 @@
+  {
+   Tunnel *tun;
+   BF_KEY *bf_key;
++#ifndef NO_IDEA
+   IDEA_KEY_SCHEDULE *idea_key1,*idea_key2;
++#endif
+   RC5_32_KEY *rc5_key;
+   void *key;
+   unsigned char *data;
+@@ -56,6 +60,7 @@
+ 			BF_set_key(bf_key,16,data);
+ 			key=bf_key;
+ 			break;
++#ifndef NO_IDEA
+     case TUN_CIPHER_IDEA: idea_key1=must_malloc(sizeof(IDEA_KEY_SCHEDULE));
+ 			idea_set_encrypt_key(data,idea_key1);
+ 			if(remote)
+@@ -67,6 +72,7 @@
+ 			 }
+ 			key=idea_key1;
+ 			break;
++#endif
+     case TUN_CIPHER_RC5:rc5_key=must_malloc(sizeof(RC5_32_KEY));
+ 			RC5_32_set_key(rc5_key,16,data,RC5_8_ROUNDS);
+ 			key=rc5_key;
+@@ -93,7 +99,9 @@
+   Tunnel *tun=(Tunnel*)stun->buf[tun_ind];
+   int cipher;
+   BF_KEY *bf_key;
++#ifndef NO_IDEA
+   IDEA_KEY_SCHEDULE *idea_key;
++#endif
+   RC5_32_KEY *rc5_key;
+   int length;
+ 
+@@ -106,11 +114,13 @@
+ 			bcopy(ivec_ini,iv_buf,8);
+ 			BF_cbc_encrypt(in,out,length,bf_key,iv_buf,BF_ENCRYPT);
+ 			return length;
++#ifndef NO_IDEA
+     case TUN_CIPHER_IDEA:idea_key=tun->localCipherKey;
+ 			bcopy(ivec_ini,iv_buf,8);
+ 			idea_cbc_encrypt(in,out,length,idea_key,
+                                          iv_buf,IDEA_ENCRYPT);
+ 			return length;
++#endif
+     case TUN_CIPHER_RC5:rc5_key=tun->localCipherKey;
+ 			bcopy(ivec_ini,iv_buf,8);
+ 			RC5_32_cbc_encrypt(in,out,length,rc5_key,
+@@ -129,7 +139,9 @@
+   Tunnel *tun=(Tunnel*)stun->buf[tun_ind];
+   int cipher;
+   BF_KEY *bf_key;
++#ifndef NO_IDEA
+   IDEA_KEY_SCHEDULE *idea_key;
++#endif
+   RC5_32_KEY *rc5_key;
+   int length;
+ 
+@@ -142,11 +154,13 @@
+ 			bcopy(ivec_ini,iv_buf,8);
+ 			BF_cbc_encrypt(in,out,length,bf_key,iv_buf,BF_DECRYPT);
+ 			break;
++#ifndef NO_IDEA
+     case TUN_CIPHER_IDEA:idea_key=tun->remoteCipherKey;
+ 			bcopy(ivec_ini,iv_buf,8);
+ 			idea_cbc_encrypt(in,out,length,idea_key,
+                                          iv_buf,IDEA_DECRYPT);
+ 			break;
++#endif
+     case TUN_CIPHER_RC5:rc5_key=tun->remoteCipherKey;
+ 			bcopy(ivec_ini,iv_buf,8);
+ 			RC5_32_cbc_encrypt(in,out,length,rc5_key,
