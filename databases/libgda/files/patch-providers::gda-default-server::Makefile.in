@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- providers/gda-default-server/Makefile.in	2001/11/21 08:39:45	1.1
++++ providers/gda-default-server/Makefile.in	2001/11/21 08:40:35
+@@ -461,7 +461,7 @@
+ 	../../lib/gda-server/gda-server-recordset.h \
+ 	../../lib/gda-server/gda-server-field.h \
+ 	../../lib/gda-server/gda-server-error.h \
+-	../../lib/gda-server/gda-server-command.h sqlite.h
++	../../lib/gda-server/gda-server-command.h sqlite/sqlite.h
+ 
+ info-am:
+ info: info-recursive
