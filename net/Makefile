@@ -115,6 +115,7 @@
     SUBDIR += gated
     SUBDIR += gatekeeper
     SUBDIR += generic-nqs
+    SUBDIR += geta
     SUBDIR += geotrace
     SUBDIR += ggsd
     SUBDIR += ghtool

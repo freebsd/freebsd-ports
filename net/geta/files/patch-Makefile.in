@@ -1,0 +1,11 @@
+--- geta/Makefile.in-	Mon Nov  5 20:54:25 2001
++++ geta/Makefile.in	Mon Nov  5 20:54:45 2001
+@@ -1,6 +1,6 @@
+ CC = cc
+-CFLAGS = -O -L/usr/local/v6/lib -Wall
+-LIBS = -linet6
++CFLAGS += -O -Wall
++#LIBS = -linet6
+ 
+ INSTALL = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
