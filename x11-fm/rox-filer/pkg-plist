@@ -1,4 +1,5 @@
 apps/ROX-Filer/%%BINARIES%%/ROX-Filer
+apps/ROX-Filer/%%BINARIES%%/ROX-Filer.dbg
 apps/ROX-Filer/.DirIcon
 apps/ROX-Filer/AppInfo.xml
 apps/ROX-Filer/AppRun
@@ -15,6 +16,7 @@ apps/ROX-Filer/Messages/cs.gmo
 apps/ROX-Filer/Messages/da.gmo
 apps/ROX-Filer/Messages/de.gmo
 apps/ROX-Filer/Messages/es.gmo
+apps/ROX-Filer/Messages/fi.gmo
 apps/ROX-Filer/Messages/fr.gmo
 apps/ROX-Filer/Messages/hu.gmo
 apps/ROX-Filer/Messages/it.gmo
