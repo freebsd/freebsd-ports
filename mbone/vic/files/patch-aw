@@ -1,0 +1,20 @@
+--- jpeg/jpeg.cc.orig	Sun Nov 28 19:23:29 1999
++++ jpeg/jpeg.cc	Sun Nov 28 19:23:52 1999
+@@ -139,7 +139,7 @@
+ 	dct_unbias_ = 1;
+ 
+ 	short *sp = (short *)frm_;
+-	for (register i = 0; i < n / (BMB * 64) ; i++) {
++	for (register int i = 0; i < n / (BMB * 64) ; i++) {
+ 		*sp = DCT_GRAY;
+ 		sp += 64;
+ 		*sp = DCT_GRAY;
+@@ -173,7 +173,7 @@
+ 	dct_unbias_ = 1;
+ 
+ 	short *sp = (short*)frm_;
+-	for (register i = 0; i < n / (BMB * 64) ; i++) {
++	for (register int i = 0; i < n / (BMB * 64) ; i++) {
+ 		*sp = DCT_GRAY;
+ 		sp += 64;
+ 		*sp = DCT_GRAY;

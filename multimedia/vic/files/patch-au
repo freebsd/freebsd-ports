@@ -1,0 +1,11 @@
+--- color-gray.cc.orig	Sun Nov 28 19:21:35 1999
++++ color-gray.cc	Sun Nov 28 19:21:47 1999
+@@ -82,7 +82,7 @@
+ 	}
+ protected:
+ 	virtual void update();
+-	virtual void disable() { method_ = PseudoWindowRenderer::dither_null; }
++	virtual void disable() { method_ = &PseudoWindowRenderer::dither_null; }
+ 	GrayMethod method_;
+ };
+ 

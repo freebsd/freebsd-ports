@@ -1,0 +1,11 @@
+--- color-quant.cc.orig	Sun Nov 28 19:19:44 1999
++++ color-quant.cc	Sun Nov 28 19:20:01 1999
+@@ -92,7 +92,7 @@
+ protected:
+ 	QuantColorModel& cm_;
+ 	virtual void update();
+-	virtual void disable() { method_ = PseudoWindowRenderer::dither_null; }
++	virtual void disable() { method_ = &PseudoWindowRenderer::dither_null; }
+ 	QuantMethod method_;
+ 	void map_422(const u_char* frm, u_int off, u_int x,
+ 		     u_int width, u_int height) const;

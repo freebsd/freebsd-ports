@@ -1,0 +1,20 @@
+--- color-mono.cc.orig	Sun Nov 28 19:22:19 1999
++++ color-mono.cc	Sun Nov 28 19:22:51 1999
+@@ -200,7 +200,7 @@
+ 	~MonoColorModel();
+ 	virtual int alloc_grays();
+ 	virtual int command(int argc, const char*const* argv);
+-	inline white(void) { return (white_); }
++	inline int white(void) { return (white_); }
+ private:
+ 	int white_;
+ };
+@@ -250,7 +250,7 @@
+ protected:
+ 	MonoColorModel& cm_;
+ 	virtual void update();
+-	virtual void disable() { method_ = WindowDitherer::dither_null; }
++	virtual void disable() { method_ = &WindowDitherer::dither_null; }
+ 	MonoMethod method_;
+ 	void dither(const u_char* frm, u_int off, u_int x,
+ 		    u_int width, u_int height) const;

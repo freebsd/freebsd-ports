@@ -1,0 +1,11 @@
+--- transcoder-jpeg.cc.orig	Sun Nov 28 19:15:40 1999
++++ transcoder-jpeg.cc	Sun Nov 28 19:15:57 1999
+@@ -138,7 +138,7 @@
+ 	rval = target_->consume(df);
+ 
+ 	// update CR vec
+-	register blkno;
++	register int blkno;
+ 	int s;
+ 	for (blkno = 0; blkno < crvlen_; blkno++) {
+ 		s = CR_STATE(crvec_[blkno]);
