@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.python.org/ftp/python/2.0/ \
 		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/2.0/
 DISTFILES=	${PYTHON_DISTFILE}
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER?=	tg@FreeBSD.org
 
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}
