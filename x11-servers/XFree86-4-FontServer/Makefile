@@ -19,6 +19,8 @@ DISTFILES=	X430src-1.tgz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 font server
 
+CONFLICTS=	xorg-fontserver-*
+
 MAN1=			xfs.1
 XBUILD_DIRS=		programs/xfs
 XINCLUDE_DIRS=		lib/xtrans programs/Xserver
