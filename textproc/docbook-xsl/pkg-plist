@@ -3,7 +3,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/ch01s02.html
 %%PORTDOCS%%%%DOCSDIR%%/ch01s03.html
 %%PORTDOCS%%%%DOCSDIR%%/ch01s04.html
-%%PORTDOCS%%%%DOCSDIR%%/ch02s02.html
 %%PORTDOCS%%%%DOCSDIR%%/ch03.html
 %%PORTDOCS%%%%DOCSDIR%%/ch04.html
 %%PORTDOCS%%%%DOCSDIR%%/ch05.html
@@ -52,10 +51,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/column.count.back.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/column.count.body.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/column.count.front.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/column.count.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/column.count.index.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/column.count.lot.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/column.count.of.index.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/column.count.titlepage.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/column.gap.back.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/column.gap.body.html
@@ -92,24 +89,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/formal.procedures.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/formal.title.placement.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/formal.title.properties.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/format.variablelist.as.list.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/funcsynopsis.decoration.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/funcsynopsis.style.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/function.parens.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/generate.book.equation.lot.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/generate.book.example.lot.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/generate.book.figure.lot.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/generate.book.table.lot.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/generate.book.toc.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/generate.component.toc.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/generate.division.equation.lot.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/generate.division.example.lot.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/generate.division.figure.lot.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/generate.division.table.lot.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/generate.division.toc.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/generate.index.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/generate.section.toc.level.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/generate.set.toc.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/generate.toc.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/glossary.as.blocks.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/glossary.collection.html
@@ -123,8 +107,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/header.content.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/header.rule.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/headers.on.blank.pages.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/html.stylesheet.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/html.stylesheet.type.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/hyphenate.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/ignore.image.scaling.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/index.html
@@ -135,26 +117,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/l10n.gentext.language.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/l10n.gentext.use.xref.language.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/label.from.part.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e2069.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e2118.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e2140.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e2180.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e2204.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e2238.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e2450.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e2499.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e2576.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e2614.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e2764.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e2907.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3037.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3121.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3137.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3176.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3194.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3195.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3278.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3300.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/line-height.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/linenumbering.everyNth.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/linenumbering.extension.html
@@ -275,19 +237,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/shade.verbatim.style.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/show.comments.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/sidebar.properties.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/stylesheet.result.type.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/subscript.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/superscript.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/symbol.font.family.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/table.border.color.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/table.border.padding.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/table.border.style.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/table.border.thickness.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/table.cell.border.color.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/table.cell.border.style.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/table.cell.border.thickness.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/table.cell.padding.html
-%%PORTDOCS%%%%DOCSDIR%%/fo/table.entry.padding.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/table.footnote.number.format.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/table.footnote.number.symbols.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/table.frame.border.color.html
@@ -352,7 +308,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/callout.unicode.start.character.html
 %%PORTDOCS%%%%DOCSDIR%%/html/callouts.extension.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chapter.autolabel.html
-%%PORTDOCS%%%%DOCSDIR%%/html/chunk.datafile.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chunk.first.sections.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chunk.quietly.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chunk.section.depth.html
@@ -371,7 +326,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/collect.xref.targets.html
 %%PORTDOCS%%%%DOCSDIR%%/html/css.decoration.html
 %%PORTDOCS%%%%DOCSDIR%%/html/current.docid.html
-%%PORTDOCS%%%%DOCSDIR%%/html/default.encoding.html
 %%PORTDOCS%%%%DOCSDIR%%/html/default.float.class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/default.image.width.html
 %%PORTDOCS%%%%DOCSDIR%%/html/default.table.width.html
@@ -397,25 +351,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/funcsynopsis.style.html
 %%PORTDOCS%%%%DOCSDIR%%/html/funcsynopsis.tabular.threshold.html
 %%PORTDOCS%%%%DOCSDIR%%/html/function.parens.html
-%%PORTDOCS%%%%DOCSDIR%%/html/generate.appendix.toc.html
-%%PORTDOCS%%%%DOCSDIR%%/html/generate.article.toc.html
-%%PORTDOCS%%%%DOCSDIR%%/html/generate.book.toc.html
-%%PORTDOCS%%%%DOCSDIR%%/html/generate.chapter.toc.html
-%%PORTDOCS%%%%DOCSDIR%%/html/generate.component.toc.html
-%%PORTDOCS%%%%DOCSDIR%%/html/generate.division.toc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/generate.id.attributes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/generate.index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/generate.legalnotice.link.html
 %%PORTDOCS%%%%DOCSDIR%%/html/generate.manifest.html
 %%PORTDOCS%%%%DOCSDIR%%/html/generate.meta.abstract.html
-%%PORTDOCS%%%%DOCSDIR%%/html/generate.part.toc.html
-%%PORTDOCS%%%%DOCSDIR%%/html/generate.preface.toc.html
-%%PORTDOCS%%%%DOCSDIR%%/html/generate.qandadiv.toc.html
-%%PORTDOCS%%%%DOCSDIR%%/html/generate.qandaset.toc.html
-%%PORTDOCS%%%%DOCSDIR%%/html/generate.reference.toc.html
-%%PORTDOCS%%%%DOCSDIR%%/html/generate.section.toc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/generate.section.toc.level.html
-%%PORTDOCS%%%%DOCSDIR%%/html/generate.set.toc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/generate.toc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/glossary.collection.html
 %%PORTDOCS%%%%DOCSDIR%%/html/glossentry.show.acronym.html
@@ -471,14 +412,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.hhp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.hhp.tail.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.hhp.window.html
-%%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.hhp.windows'.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.map.file.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.only.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.remember.window.position.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.show.advanced.search.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.show.favorities.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.show.menu.html
-%%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.show.toolbar.text'.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.title.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.use.hhk.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.window.geometry.html
@@ -518,7 +457,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/olink.pubid.html
 %%PORTDOCS%%%%DOCSDIR%%/html/olink.resolver.html
 %%PORTDOCS%%%%DOCSDIR%%/html/olink.sysid.html
-%%PORTDOCS%%%%DOCSDIR%%/html/output.method.html
 %%PORTDOCS%%%%DOCSDIR%%/html/para.propagates.style.html
 %%PORTDOCS%%%%DOCSDIR%%/html/part.autolabel.html
 %%PORTDOCS%%%%DOCSDIR%%/html/phrase.propagates.style.html
@@ -586,13 +524,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/show.comments.html
 %%PORTDOCS%%%%DOCSDIR%%/html/show.revisionflag.html
 %%PORTDOCS%%%%DOCSDIR%%/html/spacing.paras.html
-%%PORTDOCS%%%%DOCSDIR%%/html/stylesheet.result.type.html
 %%PORTDOCS%%%%DOCSDIR%%/html/suppress.footer.navigation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/suppress.header.navigation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/suppress.navigation.html
-%%PORTDOCS%%%%DOCSDIR%%/html/table.border.color.html
-%%PORTDOCS%%%%DOCSDIR%%/html/table.border.style.html
-%%PORTDOCS%%%%DOCSDIR%%/html/table.border.thickness.html
 %%PORTDOCS%%%%DOCSDIR%%/html/table.borders.with.css.html
 %%PORTDOCS%%%%DOCSDIR%%/html/table.cell.border.color.html
 %%PORTDOCS%%%%DOCSDIR%%/html/table.cell.border.style.html
@@ -620,7 +554,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/use.role.as.xrefstyle.html
 %%PORTDOCS%%%%DOCSDIR%%/html/use.role.for.mediaobject.html
 %%PORTDOCS%%%%DOCSDIR%%/html/use.svg.html
-%%PORTDOCS%%%%DOCSDIR%%/html/using.chunker.html
 %%PORTDOCS%%%%DOCSDIR%%/html/variablelist.as.table.html
 %%PORTDOCS%%%%DOCSDIR%%/html/xref.label-page.separator.html
 %%PORTDOCS%%%%DOCSDIR%%/html/xref.label-title.separator.html
@@ -651,8 +584,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/tools/profile-chain.png
 %%PORTDOCS%%%%DOCSDIR%%/tools/profiling.html
 %%PORTDOCS%%%%DOCSDIR%%/warranty.html
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 share/xsl/docbook/VERSION
 share/xsl/docbook/catalog
 share/xsl/docbook/common/ChangeLog
@@ -661,6 +592,7 @@ share/xsl/docbook/common/ar.xml
 share/xsl/docbook/common/autoidx-ng.xsl
 share/xsl/docbook/common/bg.xml
 share/xsl/docbook/common/bn.xml
+share/xsl/docbook/common/bs.xml
 share/xsl/docbook/common/ca.xml
 share/xsl/docbook/common/common.xsl
 share/xsl/docbook/common/cs.xml
@@ -715,45 +647,6 @@ share/xsl/docbook/common/zh_cn.xml
 share/xsl/docbook/common/zh_tw.xml
 share/xsl/docbook/extensions/ChangeLog
 share/xsl/docbook/extensions/build.xml
-share/xsl/docbook/extensions/doc/saxon5/com/nwalsh/saxon/CVS.html
-share/xsl/docbook/extensions/doc/saxon5/com/nwalsh/saxon/Callout.html
-share/xsl/docbook/extensions/doc/saxon5/com/nwalsh/saxon/Driver.html
-share/xsl/docbook/extensions/doc/saxon5/com/nwalsh/saxon/Text.html
-share/xsl/docbook/extensions/doc/saxon5/com/nwalsh/saxon/TextFactory.html
-share/xsl/docbook/extensions/doc/saxon5/com/nwalsh/saxon/Verbatim.html
-share/xsl/docbook/extensions/doc/saxon5/com/nwalsh/saxon/package-frame.html
-share/xsl/docbook/extensions/doc/saxon5/com/nwalsh/saxon/package-summary.html
-share/xsl/docbook/extensions/doc/saxon5/com/nwalsh/saxon/package-tree.html
-share/xsl/docbook/extensions/doc/saxon5/deprecated-list.html
-share/xsl/docbook/extensions/doc/saxon5/help-doc.html
-share/xsl/docbook/extensions/doc/saxon5/index-all.html
-share/xsl/docbook/extensions/doc/saxon5/index.html
-share/xsl/docbook/extensions/doc/saxon5/overview-tree.html
-share/xsl/docbook/extensions/doc/saxon5/package-list
-share/xsl/docbook/extensions/doc/saxon5/packages.html
-share/xsl/docbook/extensions/doc/saxon5/serialized-form.html
-share/xsl/docbook/extensions/doc/saxon5/stylesheet.css
-share/xsl/docbook/extensions/doc/saxon6/com/nwalsh/saxon6/CVS.html
-share/xsl/docbook/extensions/doc/saxon6/com/nwalsh/saxon6/CalloutEmitter.html
-share/xsl/docbook/extensions/doc/saxon6/com/nwalsh/saxon6/CopyEmitter.html
-share/xsl/docbook/extensions/doc/saxon6/com/nwalsh/saxon6/LineCountEmitter.html
-share/xsl/docbook/extensions/doc/saxon6/com/nwalsh/saxon6/NumberLinesEmitter.html
-share/xsl/docbook/extensions/doc/saxon6/com/nwalsh/saxon6/Table.html
-share/xsl/docbook/extensions/doc/saxon6/com/nwalsh/saxon6/Text.html
-share/xsl/docbook/extensions/doc/saxon6/com/nwalsh/saxon6/TextFactory.html
-share/xsl/docbook/extensions/doc/saxon6/com/nwalsh/saxon6/Verbatim.html
-share/xsl/docbook/extensions/doc/saxon6/com/nwalsh/saxon6/package-frame.html
-share/xsl/docbook/extensions/doc/saxon6/com/nwalsh/saxon6/package-summary.html
-share/xsl/docbook/extensions/doc/saxon6/com/nwalsh/saxon6/package-tree.html
-share/xsl/docbook/extensions/doc/saxon6/deprecated-list.html
-share/xsl/docbook/extensions/doc/saxon6/help-doc.html
-share/xsl/docbook/extensions/doc/saxon6/index-all.html
-share/xsl/docbook/extensions/doc/saxon6/index.html
-share/xsl/docbook/extensions/doc/saxon6/overview-tree.html
-share/xsl/docbook/extensions/doc/saxon6/package-list
-share/xsl/docbook/extensions/doc/saxon6/packages.html
-share/xsl/docbook/extensions/doc/saxon6/serialized-form.html
-share/xsl/docbook/extensions/doc/saxon6/stylesheet.css
 share/xsl/docbook/extensions/prj.el
 share/xsl/docbook/extensions/saxon643.jar
 share/xsl/docbook/extensions/saxon643/ChangeLog
@@ -782,7 +675,6 @@ share/xsl/docbook/extensions/saxon643/prj.el
 share/xsl/docbook/extensions/saxon644.jar
 share/xsl/docbook/extensions/saxon65.jar
 share/xsl/docbook/extensions/saxon651.jar
-share/xsl/docbook/extensions/xalan2.jar
 share/xsl/docbook/extensions/xalan2/ChangeLog
 share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/CVS.java
 share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/Callout.java
@@ -802,10 +694,7 @@ share/xsl/docbook/extensions/xalan2/com/nwalsh/xalan/package.html
 share/xsl/docbook/extensions/xalan25.jar
 share/xsl/docbook/extensions/xsltproc/python/ChangeLog
 share/xsl/docbook/extensions/xsltproc/python/README
-share/xsl/docbook/extensions/xsltproc/python/cwtest.xml
-share/xsl/docbook/extensions/xsltproc/python/cwtest.xsl
 share/xsl/docbook/extensions/xsltproc/python/docbook.py
-share/xsl/docbook/extensions/xsltproc/python/docbook.pyc
 share/xsl/docbook/extensions/xsltproc/python/xslt.py
 share/xsl/docbook/fo/ChangeLog
 share/xsl/docbook/fo/admon.xsl
@@ -1438,7 +1327,6 @@ share/xsl/docbook/xhtml/xref.xsl
 @unexec rm -f %D/share/xsl/docbook/catalog 2>&1 >/dev/null || true
 @dirrm share/xsl/docbook/xhtml
 @dirrm share/xsl/docbook/template
-@dirrm share/xsl/docbook/params
 @dirrm share/xsl/docbook/manpages
 @dirrm share/xsl/docbook/lib
 @dirrm share/xsl/docbook/javahelp
@@ -1457,24 +1345,9 @@ share/xsl/docbook/xhtml/xref.xsl
 @dirrm share/xsl/docbook/extensions/saxon643/com/nwalsh
 @dirrm share/xsl/docbook/extensions/saxon643/com
 @dirrm share/xsl/docbook/extensions/saxon643
-@dirrm share/xsl/docbook/extensions/doc/saxon6/com/nwalsh/saxon6
-@dirrm share/xsl/docbook/extensions/doc/saxon6/com/nwalsh
-@dirrm share/xsl/docbook/extensions/doc/saxon6/com
-@dirrm share/xsl/docbook/extensions/doc/saxon6
-@dirrm share/xsl/docbook/extensions/doc/saxon5/com/nwalsh/saxon
-@dirrm share/xsl/docbook/extensions/doc/saxon5/com/nwalsh
-@dirrm share/xsl/docbook/extensions/doc/saxon5/com
-@dirrm share/xsl/docbook/extensions/doc/saxon5
-@dirrm share/xsl/docbook/extensions/doc
 @dirrm share/xsl/docbook/extensions
-@dirrm share/xsl/docbook/common
-@dirrm share/xsl/docbook
-@dirrm share/xsl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tools
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/template
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pi
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/lib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/common
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
