@@ -19,6 +19,8 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 
+FORBIDDEN=	"doubt about changed checksum of p4"
+
 NO_PACKAGE=	Restricted distribution
 NO_CDROM=	Restricted distribution
 MAN1=		p4.1 p4d.1
