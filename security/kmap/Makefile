@@ -7,9 +7,9 @@
 # $FreeBSD$
 #
 
-DISTNAME=	kmap-0.4
+DISTNAME=	kmap-0.7.1
 CATEGORIES=	security net
-MASTER_SITES=	http://www.islc.net/~icszepp/kmap/
+MASTER_SITES=	http://www.islc.net/~icszepp/downloads/
 
 MAINTAINER=     obrien@FreeBSD.org
 
