@@ -456,6 +456,7 @@ avida		ports/biology/avida
 avidemux	ports/graphics/avidemux
 aview		ports/graphics/aview
 avifile		ports/multimedia/avifile
+avinfo		ports/graphics/avinfo
 avltree		ports/devel/avltree
 avr-binutils	ports/devel/avr-binutils
 avr-gcc		ports/devel/avr-gcc
