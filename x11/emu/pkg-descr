@@ -1,0 +1,11 @@
+The emu program is a terminal emulator for the X Window System.
+It provides DEC VT200 as its basis emulation, including features like:
+
+	Full support of DEC's international character set.
+	Compose character processing.
+	Blinking cursor and blinking text.
+	Color.
+	Double height / double width characters.
+
+It is also fully programmable, allowing you to define new terminal emulations
+on the fly.
