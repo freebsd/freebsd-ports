@@ -10763,6 +10763,7 @@ z80-asm		ports/devel/z80-asm
 zabbix		ports/net-mgmt/zabbix
 zabbix-agent	ports/net/zabbix-agent
 zangband	ports/games/zangband
+zaptel		ports/misc/zaptel
 zebedee		ports/security/zebedee
 zebra		ports/net/zebra
 zebra-devel	ports/net/zebra-devel
