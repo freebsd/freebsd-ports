@@ -89,8 +89,13 @@ PLIST_SUB+=	GNUSTEP_DEVEL="@comment "
 PLIST_SUB+=	GNUSTEP_STABLE=""
 .endif
 .if !defined(GNUSTEP_WITH_BASE_GCC)
+.if defined(GNUSTEP_WITH_GCC32)
 CC=		gcc32
 CXX=		g++32
+.else
+CC=		gcc33
+CXX=		g++33
+.endif
 .endif
 
 # ---------------------------------------------------------------------------
