@@ -212,6 +212,7 @@
     SUBDIR += php4-interbase
     SUBDIR += php4-mssql
     SUBDIR += php4-mysql
+    SUBDIR += php4-odbc
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
     SUBDIR += postgis
