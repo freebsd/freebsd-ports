@@ -1,30 +1,22 @@
---- main.cxx.orig	Fri Sep 29 02:07:38 2000
-+++ main.cxx	Sun Oct 22 19:13:43 2000
-@@ -1221,7 +1221,9 @@
-     if (callerIdCallWaitingEnable) {
-       PString callerId = ((MyH323Connection &)connection).GetCallerIdString();
-       cout << "Sending caller ID " << callerId << endl;
-+#ifdef HAS_IXJ
-       xJack.SetCallerID(OpalIxJDevice::POTSLine, callerId);
-+#endif
-     }
-     return FALSE;
-   }
-@@ -2042,8 +2044,6 @@
-   }
- }
- 
--#endif
--
- unsigned MyH323EndPoint::VolumeToIXJ(int vol)
- {
-   int hw;
-@@ -2084,6 +2084,8 @@
- 
-   return vol;
- }
-+
-+#endif
- 
- void MyH323EndPoint::HandleUserInterface()
- {
+*** main.h.orig	Wed Jan  3 14:34:28 2001
+--- main.h	Wed Jan  3 14:34:38 2001
+*************** class MyH323EndPoint : public H323EndPoi
+*** 351,358 ****
+  
+      int IXJToVolume(unsigned hardware);
+      unsigned VolumeToIXJ(int vol);
+-     void SendDTMF(const char * tone);
+  #endif
+  
+      void StartCall(const PString & str);
+      void NewSpeedDial(const PString & str);
+--- 351,359 ----
+  
+      int IXJToVolume(unsigned hardware);
+      unsigned VolumeToIXJ(int vol);
+  #endif
++ 
++     void SendDTMF(const char * tone);
+  
+      void StartCall(const PString & str);
+      void NewSpeedDial(const PString & str);
