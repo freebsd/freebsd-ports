@@ -32,5 +32,17 @@ post-patch:
 	${REINPLACE_CMD} -e 's|install-data-am\: install-docDATA||' \
 		${WRKSRC}/Makefile.in
 .endif
+.for i in msg.h arg.h cvrstgfile.h error.h jpegjfifapp0.h
+	${REINPLACE_CMD} -e 's/#include <string>//' ${WRKSRC}/src/${i}
+	${REINPLACE_CMD} -e 's/string/std::string/g' ${WRKSRC}/src/${i}
+.endfor
+.for i in hash.cc bufmanag.cc wavfile.cc
+	${REINPLACE_CMD} -e 's/string.h/string/' ${WRKSRC}/src/${i}
+.endfor
+.for i in jpeghufftable.h jpegbase.h jpegentropycoded.h jpegscan.h \
+		jpegframe.h bmpfile.h aufile.h jpegunusedseg.h
+	${REINPLACE_CMD} -e 's/#include <vector>//' ${WRKSRC}/src/${i}
+	${REINPLACE_CMD} -e 's/vector/std::vector/g' ${WRKSRC}/src/${i}
+.endfor
 
 .include <bsd.port.mk>
