@@ -137,11 +137,9 @@ mpich/lib/freebsd/ch_p4/c++/topology_inln.h
 mpich/lib/freebsd/ch_p4/chkserv
 mpich/lib/freebsd/ch_p4/chp4_servs
 mpich/lib/freebsd/ch_p4/config.status
-mpich/lib/freebsd/ch_p4/libampi.a
 mpich/lib/freebsd/ch_p4/libfmpich.a
 mpich/lib/freebsd/ch_p4/liblmpi.a
 mpich/lib/freebsd/ch_p4/libmpe.a
-mpich/lib/freebsd/ch_p4/libmpe_nompi.a
 mpich/lib/freebsd/ch_p4/libmpich.a
 mpich/lib/freebsd/ch_p4/libmpich++.a
 mpich/lib/freebsd/ch_p4/libpmpich.a
