@@ -19,28 +19,28 @@ LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
 		speex.2:${PORTSDIR}/audio/speex \
 		osip.9:${PORTSDIR}/net/libosip
 
+USE_GNOME=	gnomehack gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--disable-ipv6
-.ifdef WITHOUT_GNOME
-CONFIGURE_ARGS+=--enable-gnome-ui=no \
-		--with-html-dir=${DOCSDIR}
+INSTALLS_SHLIB=	yes
+
+MAN1=		linphone.1 linphonec.1 sipomatic.1
+
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=	--enable-gnome_ui=no --with-html-dir=${DOCSDIR}
 PLIST_SUB+=	GNOME="@comment " \
 		GNOME_PATH="" \
 		HTMLDOCSDIR="${DOCSDIR:S,^${PREFIX}/,,}"
 .else
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gnomepanel
+USE_GNOME+=	gnomepanel gnomeprefix
 DOCSDIR=	${GNOME_HTML_DIR}
-CONFIGURE_ARGS=	--enable-gnome-ui=yes
 PLIST_SUB+=	GNOME="" \
 		GNOME_PATH="gnome/" \
 		HTMLDOCSDIR="${GNOME_HTML_DIR:S,^${PREFIX}/,,}"
 .endif
-INSTALLS_SHLIB=	yes
-
-MAN1=		linphone.1 linphonec.1 sipomatic.1
 
 .include <bsd.port.mk>
