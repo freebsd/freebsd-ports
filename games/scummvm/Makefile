@@ -7,6 +7,7 @@
 
 PORTNAME=	scummvm
 PORTVERSION=	0.3.0b
+PORTREVISION=	1
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}-src
 MAINTAINER=	flynn@energyhq.homeip.net
 COMMENT=	Free implementation of LucasArts S.C.U.M.M. interpreter
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
+		mad.1:${PORTSDIR}/audio/mad
 
 USE_GMAKE=	yes
 WRKSRC=         ${WRKDIR}/${PORTNAME}-0.3.0
@@ -32,8 +34,7 @@ pre-patch:
 		${WRKSRC}/backends/sdl/build.rules
 
 post-configure:
-	@${REINPLACE_CMD} -e 's@-lmad@@g; \
-			s@:= -g -O@+= ${CFLAGS}@' \
+	@${REINPLACE_CMD} -e 's@:= -g -O@+= ${CFLAGS}@' \
 		${WRKSRC}/Makefile
 
 do-install:
