@@ -17,6 +17,7 @@
     SUBDIR += angband
     SUBDIR += antipolix
     SUBDIR += asc
+    SUBDIR += atlas
     SUBDIR += atomix
     SUBDIR += awele
     SUBDIR += baduki
