@@ -277,6 +277,7 @@
     SUBDIR += wmtimebomb
     SUBDIR += wolfpack
     SUBDIR += wordplay
+    SUBDIR += wtf
     SUBDIR += x3eyes
     SUBDIR += xabacus
     SUBDIR += xasteroids
