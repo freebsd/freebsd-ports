@@ -1,0 +1,10 @@
+bin/cons
+share/doc/cons-%%CONS_VER%%/CHANGES
+share/doc/cons-%%CONS_VER%%/COPYRIGHT
+share/doc/cons-%%CONS_VER%%/INSTALL
+share/doc/cons-%%CONS_VER%%/MANIFEST
+share/doc/cons-%%CONS_VER%%/README
+share/doc/cons-%%CONS_VER%%/RELEASE
+share/doc/cons-%%CONS_VER%%/cons.html
+share/doc/cons-%%CONS_VER%%/cons.pod
+@dirrm share/doc/cons-%%CONS_VER%%
