@@ -93,7 +93,7 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mail User Agents (part Elm, Pine, Mush, mh, etc.)
 
-DIST_SUBDIR=    mutt
+DIST_SUBDIR=	mutt
 DOCSDIR?=	${PREFIX}/share/doc/mutt
 EXAMPLESDIR?=	${PREFIX}/share/examples/mutt
 DATADIR?=	${PREFIX}/share/mutt

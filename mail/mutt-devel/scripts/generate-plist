@@ -122,7 +122,7 @@ EOF
   fi
 
   if [ "$MUTT_HTML" = "yes" ]; then
-    html=366
+    html=367
     if [ "$MUTT_COMPRESSED_FOLDERS" = "yes" ]; then
       html=$(($html + 5))
     fi
