@@ -20,4 +20,10 @@ USE_GNOME=	gtk12
 USE_BISON=	yes
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>
