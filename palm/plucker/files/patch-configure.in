@@ -1,11 +1,11 @@
---- configure.in.orig	Sat Oct 27 22:06:03 2001
-+++ configure.in	Sun Sep 15 00:22:44 2002
-@@ -202,7 +202,7 @@
+--- configure.in.orig	Thu Oct 17 00:59:24 2002
++++ configure.in	Thu Oct 31 11:38:03 2002
+@@ -229,7 +229,7 @@
  
  if test "$BUILD_MANUAL" = "yes"; then
      AC_PATH_PROGS(SED, gsed sed)
--    [$SED --version 2>&1 | grep GNU >/dev/null 2>&1]
-+dnl [$SED --version 2>&1 | grep GNU >/dev/null 2>&1]
+-    [$SED --version 2>&1 < /dev/null | grep GNU >/dev/null 2>&1]
++dnl [$SED --version 2>&1 < /dev/null | grep GNU >/dev/null 2>&1]
      if test "$?" != "0" ; then
      	AC_MSG_WARN("Version of sed on path must be GNU sed to build manual")
      	BUILD_MANUAL=no

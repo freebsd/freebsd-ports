@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	plucker
-PORTVERSION=	1.1.14
+PORTVERSION=	1.2
 CATEGORIES=	palm www
-MASTER_SITES=	http://plkr.org/download/plucker-1.1/
+MASTER_SITES=	http://downloads.plkr.org/1.2/
 DISTNAME=	${PORTNAME}_bin-${PORTVERSION}
 
 MAINTAINER=	mt@primats.org.ua
@@ -22,12 +22,15 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALL_TARGET=	install-prc-files install-data install-pyplucker
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-docdir=${DOCSDIR} \
-		--disable-docbuild \
+		--disable-desktopbuild \
+		--disable-unpluck \
+		--disable-explode \
 		--disable-palmosbuild
 MAN1=		pluck-comics.1 plucker-build.1 plucker-decode.1 \
 		plucker-dump.1 plucker-setup.1
