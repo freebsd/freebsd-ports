@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freedt
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	sysutils
 MASTER_SITES=	http://offog.org/files/ \
 		ftp://ftp.i-scream.org/pub/offog.org/files/ \
