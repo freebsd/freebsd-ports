@@ -90,15 +90,22 @@ Option "XkbRules" "xfree86"
   the command "php -m".
 
 20040717:
-  AFFECTS: users of net/openldap2[12]{,-sasl}-client
+  AFFECTS: users of net/openldap21{,-sasl}-client
+  AUTHOR: eik@FreeBSD.org
 
   OpenLDAP version 2.2 is now the default. To upgrade all ports do
     portupgrade -rfo net/openldap22-client openldap-client
   (or a similar command for the SASL variant). If you do not want to
   upgrade, add the line `WANT_OPENLDAP_VER?=21' to /etc/make.conf
 
+  Note that when you want to upgrade openldap21{,sasl}-server, you have
+  to use slapcat/slapadd to migrate the database, since the internal
+  format is not binary compatible. Simply upgrading the server without
+  doing a slapcat first can corrupt your database.
+
 20040717:
   AFFECTS: users of mail/exim on FreeBSD 5.x
+  AUTHOR: eik@FreeBSD.org
 
   The default location of the startup script has been changed to
   ${PREFIX}/etc/rc.d. When you depend on the previous behaviour,
