@@ -93,6 +93,7 @@
     SUBDIR += easysoap
     SUBDIR += echoping
     SUBDIR += edonkey-core
+    SUBDIR += edonkey-gui-java
     SUBDIR += ehnt
     SUBDIR += etherape
     SUBDIR += etherboot
