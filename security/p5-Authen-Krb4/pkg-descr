@@ -1,0 +1,8 @@
+Authen::Krb4 is an object-oriented extension to Perl 5 which
+implements several user-level Kerberos 4 functions.  With this module,
+you can create Kerberized clients and servers written in Perl.  It is
+compatible with both AFS and MIT Kerberos.
+
+WWW:	http://search.cpan.org/search?module=Authen::Krb4
+
+FreeBSD port by Andrew J. Korty <ajk@iu.edu>
