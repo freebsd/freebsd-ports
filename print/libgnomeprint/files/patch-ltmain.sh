@@ -1,9 +1,24 @@
 
 $FreeBSD$
 
---- ltmain.sh	2001/08/27 09:51:26	1.1
-+++ ltmain.sh	2001/08/27 09:51:42
-@@ -2408,6 +2408,9 @@
+--- ltmain.sh.orig	Sat Jan 26 02:53:27 2002
++++ ltmain.sh	Tue Jan 29 09:13:29 2002
+@@ -1037,8 +1037,14 @@
+ 	continue
+ 	;;
+ 
++      -pthread)
++	compiler_flags="$compiler_flags -pthread"
++	continue
++	;;
++
+       -module)
+ 	module=yes
++	build_old_libs=no
+ 	continue
+ 	;;
+ 
+@@ -2416,6 +2422,9 @@
  	  *-*-netbsd*)
  	    # Don't link with libc until the a.out ld.so is fixed.
  	    ;;
@@ -12,8 +27,8 @@ $FreeBSD$
 +	    ;;
  	  *)
  	    # Add libc to deplibs on all other systems if necessary.
- 	    if test "$build_libtool_need_lc" = "yes"; then
-@@ -4175,10 +4178,12 @@
+ 	    if test $build_libtool_need_lc = "yes"; then
+@@ -4183,10 +4192,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
