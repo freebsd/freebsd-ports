@@ -11,7 +11,8 @@ CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTFILES=	m3-fbsd-src-3.6.tar.gz \
 		m3-fbsd-m3cc-3.6.tar.gz \
-		m3-fbsd-m3ccelf-3.6.tar.gz
+		m3-fbsd-m3ccelf-3.6.tar.gz \
+		m3-fbsd-gcc-3.6.tar.gz
 # Note: Depending on what is already installed on the system, the code
 # below may add some more DISTFILES.
 
@@ -43,12 +44,6 @@ have_boot!=	/bin/sh scripts/check_files files/T.boot installed /usr/local
 .endif
 .if empty(have_boot)
 DISTFILES+=	m3-fbsd-boot-3.6.tar.gz
-.endif
-
-# For gcc-2.7.2.1, we look in /usr/src/contrib.
-have_gcc!=	/bin/sh scripts/check_files files/T.gcc m3cc /usr/src/contrib
-.if empty(have_gcc)
-DISTFILES+=	m3-fbsd-gcc-3.6.tar.gz
 .endif
 
 # Startup script, run at boot time
@@ -83,11 +78,6 @@ post-extract:
 	@${ECHO_MSG} "Copying bootstrap modula-3 compiler from ${have_boot}"
 	@${SH} ${SCRIPTDIR}/copy_files ${FILESDIR}/T.boot installed \
 	    ${have_boot} ${WRKSRC}
-.endif
-.if !empty(have_gcc)
-	@${ECHO_MSG} "Copying gcc sources from ${have_gcc}"
-	@${SH} ${SCRIPTDIR}/copy_files ${FILESDIR}/T.gcc m3cc \
-	    ${have_gcc} ${WRKSRC}
 .endif
 	@cd ${WRKSRC}/m3cc/gcc; \
 	    ${CHMOD} +x config.sub configure move-if-change
