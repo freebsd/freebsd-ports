@@ -19,16 +19,8 @@ DISTFILES=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z \
 
 .include <bsd.port.pre.mk>
 
-#
-# The OO build is broken with system gcc at the moment.
-# You can override this.
-#
-.if !defined(USE_GCC)
-USE_GCC=3.1
-.endif
-
 .if ${OSVERSION} > 500000
-.if ${USE_GCC} == 3.1
+.if defined(USE_GCC) && ${USE_GCC} == 3.1
 #
 # We depend on the port. System g++ is broken at the moment.
 #
@@ -164,7 +156,7 @@ pre-fetch:
 	@${ECHO} stable as it should.
 	@${ECHO}
 	@${ECHO} KERNEL CONFIGURATION:
-.if ${USE_GCC} == 2.95
+.if defined(USE_GCC) && ${USE_GCC} == 2.95
 	@${ECHO}
 	@${ECHO} Openoffice needs a larger stack- and
 	@${ECHO} datasize to build. Check your limit
