@@ -1,16 +1,28 @@
 bin/dopewars
-share/doc/%%DOPEWARS%%/aiplayer.html
-share/doc/%%DOPEWARS%%/clientplay.html
-share/doc/%%DOPEWARS%%/commandline.html
-share/doc/%%DOPEWARS%%/configfile.html
-share/doc/%%DOPEWARS%%/credits.html
-share/doc/%%DOPEWARS%%/developer.html
-share/doc/%%DOPEWARS%%/i18n.html
-share/doc/%%DOPEWARS%%/index.html
-share/doc/%%DOPEWARS%%/installation.html
-share/doc/%%DOPEWARS%%/metaserver.html
-share/doc/%%DOPEWARS%%/server.html
-share/doc/%%DOPEWARS%%/servercommands.html
-share/doc/%%DOPEWARS%%/windows.html
-share/dopewars.sco
-@dirrm share/doc/%%DOPEWARS%%
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/aiplayer.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/clientplay.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/commandline.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/configfile.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/credits.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/developer.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/i18n.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/index.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/installation.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/metaserver.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/server.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/servercommands.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/windows.html
+share/dopewars/dopewars.sco
+share/dopewars/pixmaps/dopewars-pill.png
+share/dopewars/pixmaps/dopewars-shot.png
+share/dopewars/pixmaps/dopewars-weed.png
+share/locale/de/LC_MESSAGES/dopewars.mo
+share/locale/pl/LC_MESSAGES/dopewars.mo
+share/locale/pt_BR/LC_MESSAGES/dopewars.mo
+share/gnome/apps/Games/dopewars.desktop
+@unexec rmdir share/gnome/apps/Games 2>/dev/null || true
+@unexec rmdir share/gnome/apps 2>/dev/null || true
+@unexec rmdir share/gnome 2>/dev/null || true
+@dirrm share/dopewars/pixmaps
+@dirrm share/dopewars
+%%PORTDOCS%%@dirrm share/doc/%%DOPEWARS%%
