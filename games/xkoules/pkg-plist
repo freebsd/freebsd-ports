@@ -1,0 +1,19 @@
+bin/xkoules
+man/man6/xkoules.6.gz
+share/doc/xkoules/ANNOUNCE
+share/doc/xkoules/BUGS
+share/doc/xkoules/COPYING
+share/doc/xkoules/Card
+share/doc/xkoules/ChangeLog
+share/doc/xkoules/Koules.FAQ
+share/doc/xkoules/TODO
+share/xkoules/koules.sndsrv.freebsd
+share/xkoules/colize.raw
+share/xkoules/creator1.raw
+share/xkoules/creator2.raw
+share/xkoules/destroy1.raw
+share/xkoules/destroy2.raw
+share/xkoules/end.raw
+share/xkoules/start.raw
+@dirrm share/doc/xkoules
+@dirrm share/xkoules
