@@ -1,0 +1,208 @@
+--- src/reply.c.tempnam	Thu Apr  6 16:19:37 2000
++++ src/reply.c	Mon Jun 11 15:00:46 2001
+@@ -43,6 +43,9 @@
+ #include "elm_defs.h"
+ #include "elm_globals.h"
+ #include "s_elm.h"
++#include <stdlib.h>
++#include <stdio.h>
++#include <string.h>
+ 
+ /** Note that this routine generates automatic header information
+     for the subject and (obviously) to lines, but that these can
+@@ -569,9 +572,10 @@
+     FILE *mailfd;
+     char entered[VERY_LONG_STRING], expanded[VERY_LONG_STRING];
+     char *filename, buffer[VERY_LONG_STRING], *msg;
+-    int  err;
+-
++    int  err,tmpfd;
++    char tempfilename[255],*tmpdir;
+     filename = NULL;
++    
+     entered[0] = '\0';
+ 
+     if (!get_to(entered, expanded, SM_ORIGINAL))
+@@ -588,14 +592,21 @@
+         return TRUE;
+     }
+ 
+-    if((filename = tempnam(temp_dir, "snd.")) == NULL) {
++    tmpdir=getenv("TMPDIR");
++    if(tmpdir!=NULL){
++        snprintf(tempfilename,255,"%s/snd.XXXXXX",tmpdir);
++    }
++    else{
++        strncpy(tempfilename,"/tmp/snd.XXXXXX",254);
++    }
++
++    if((tmpfd = mkstemp(tempfilename)) == -1) {
+ 	dprint(1, (debugfile, "couldn't make temp file nam! (remail)\n"));
+ 	set_error(catgets(elm_msg_cat, ElmSet, ElmCouldntMakeTempFileName,
+ 		    "Sorry - couldn't make file temp file name."));
+ 	return TRUE;
+     }
+-
+-    if ((mailfd = file_open(filename, "w")) == NULL)
++    if ((mailfd = fdopen(tmpfd, "w")) == NULL)
+ 	goto failed;
+     (void) elm_chown(filename, userid, groupid);
+ #ifdef MMDF
+--- src/sndpart_io.c.tempnam	Thu Apr  6 16:01:21 2000
++++ src/sndpart_io.c	Mon Jun 11 15:00:46 2001
+@@ -28,6 +28,9 @@
+ #include "sndparts.h"
+ #include "s_elm.h"
+ #include <assert.h>
++#include <string.h>
++#include <stdlib.h>
++#include <stdio.h>
+ 
+ static int multipart_seqnum;
+ 
+@@ -517,14 +520,24 @@
+     char *fname_tmp, *fname_sel, cmd_buf[SLEN], *s;
+     int rc, i;
+     FILE *fp_src;
+-
++    char *tmpdir;
++    
+     rc = -1;
+     fp_src = NULL;
+ 
++    tmpdir=getenv("TMPDIR");
++    if(!tmpdir){
++        tmpdir=alloca(25);
++        strcpy(tmpdir,"/tmp");
++    }
++        
++    fname_tmp=(char*)calloc(300,sizeof(char));
++    snprintf(fname_tmp,299,"%s/emm.XXXXXX",tmpdir);
+     switch (mime_encoding_type(part->content_header[BP_CONT_ENCODING])) {
++        
+ 
+     case ENCODING_QUOTED:
+-	if ((fname_tmp = tempnam(temp_dir, "emm.")) == NULL) {
++        if((mkstemp(fname_tmp))==-1){
+ 	    error("Cannot make temp file name.");
+ 	    return -1;
+ 	}
+@@ -532,7 +545,7 @@
+ 	break;
+ 
+     case ENCODING_BASE64:
+-	if ((fname_tmp = tempnam(temp_dir, "emm.")) == NULL) {
++        if((mkstemp(fname_tmp))==-1){
+ 	    error("Cannot make temp file name.");
+ 	    return -1;
+ 	}
+@@ -540,7 +553,7 @@
+ 	break;
+ 
+     case ENCODING_UUENCODE:
+-	if ((fname_tmp = tempnam(temp_dir, "emm.")) == NULL) {
++        if((mkstemp(fname_tmp))==-1){
+ 	    error("Cannot make temp file name.");
+ 	    return -1;
+ 	}
+@@ -549,6 +562,7 @@
+ 
+     default:
+ 	/* encoding not needed */
++        free(fname_tmp);
+ 	fname_tmp = NULL;
+ 	break;
+     }
+--- src/sndmsg.c.tempnam	Thu Apr  6 16:19:55 2000
++++ src/sndmsg.c	Mon Jun 11 15:00:46 2001
+@@ -40,6 +40,9 @@
+ #include "sndparts.h"
+ #include "s_elm.h"
+ #include <assert.h>
++#include <string.h>
++#include <stdio.h>
++#include <stdlib.h>
+ 
+ extern char *bounce_off_remote();
+ extern char *strip_commas();
+@@ -80,8 +83,8 @@
+     char bigbuf[VERY_LONG_STRING];
+     char *s;
+     int i;
+-
+-    /* is there a cancelled message laying around from last time? */
++    char *tmpdir;
++/* is there a cancelled message laying around from last time? */
+     static int cancelled_msg = FALSE;
+     static int saved_want_sig = FALSE;
+ 
+@@ -98,6 +101,12 @@
+     send_attempts = 0;
+     rc = -1;
+ 
++    tmpdir=getenv("TMPDIR");
++    if(!tmpdir){
++        tmpdir=alloca(6);
++        strcpy(tmpdir,"/tmp");
++    }
++    
+     assert(mssgtype == SM_ORIGINAL || OPMODE_IS_READMODE(opmode));
+     switch (mssgtype) {
+     case SM_ORIGINAL:
+@@ -359,7 +368,12 @@
+     remove_hostbang(shdr->expanded_bcc);
+ 
+     /* create temp file in which to build entire message */
+-    if ((fname_fullmssg = tempnam(temp_dir, "xmt.")) == NULL) {
++    if(fname_fullmssg)
++        free(fname_fullmssg);
++    fname_fullmssg=calloc(300,sizeof(char));
++    snprintf(fname_fullmssg,299,"%s/xmt.XXXXXX",tmpdir);
++
++    if (mkstemp(fname_fullmssg)==-1){
+ 	dprint(1, (debugfile, "couldn't make temp file nam! (mail)\n"));
+ 	error(catgets(elm_msg_cat, ElmSet, ElmCouldNotMakeTemp,
+ 		"Sorry - couldn't make temp file name."));
+--- src/sndpart_lib.c.tempnam	Thu Mar 14 12:29:56 1996
++++ src/sndpart_lib.c	Mon Jun 11 15:00:56 2001
+@@ -4,7 +4,9 @@
+ #include "sndparts.h"
+ #include "s_elm.h"
+ #include <assert.h>
+-
++#include <string.h>
++#include <stdio.h>
++#include <stdlib.h>
+ 
+ /*******************/
+ /* Part is parts!! */
+@@ -239,6 +241,14 @@
+     int len;
+     FILE *fp;
+     float p;
++    char *tmpdir;
++    
++
++    tmpdir=getenv("TMPDIR");
++    if(!tmpdir){
++        tmpdir=alloca(6);
++        strcpy(tmpdir,"/tmp");
++    }
+ 
+     assert(sel >= 0 && sel < BP_NUM_CONT_HEADERS);
+     bodypart_integrity_check(part);
+@@ -289,8 +299,12 @@
+ 
+     case BP_CONT_DESCRIPTION:
+ 	value = NULL;
+-	if ((fname_tmp = tempnam(temp_dir, "fil.")) != NULL) {
+-	    MIME_FILE_CMD(buf, part->fname, fname_tmp);
++        if(fname_tmp)
++            free(fname_tmp);
++        fname_tmp=calloc(300,sizeof(char));
++        snprintf(fname_tmp,299,"%s/file.XXXXXX",tmpdir);
++        if(mkstemp(fname_tmp)!=-1){
++    	    MIME_FILE_CMD(buf, part->fname, fname_tmp);
+ 	    if (system_call(buf, 0) == 0) {
+ 		if ((fp = fopen(fname_tmp, "r")) != NULL) {
+ 		    if (fgets(buf, sizeof(buf), fp) != NULL) {
