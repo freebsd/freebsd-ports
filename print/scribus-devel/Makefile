@@ -7,23 +7,32 @@
 #
 
 PORTNAME=	scribus
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.1.6
 CATEGORIES=	print editors
 MASTER_SITES=	http://web2.altmuehlnet.de/fschmid/ \
-		http://scribus.planetmirror.com/
+		http://scribus.planetmirror.com/ \
+		http://mirrors.ntua.gr/Scribus/ \
+		http://ftp.ntua.gr/pub/gnu/scribus/ \
+		ftp://ftp.ntua.gr/pub/gnu/scribus/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehensive desktop publishing program
 
-USE_GHOSTSCRIPT_RUN=	yes
+LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
+		lcms:${PORTSDIR}/graphics/lcms \
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		cups.2:${PORTSDIR}/print/cups-base \
+		freetype.9:${PORTSDIR}/print/freetype2
 
-LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+
+USE_GHOSTSCRIPT_RUN=	yes
 
 USE_QT_VER=	3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_PYTHON=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/scribus/libs \
@@ -40,6 +49,7 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g; \
+		s|-O2||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
