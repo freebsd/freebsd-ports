@@ -1,0 +1,26 @@
+%%RUBY_SITEARCHLIBDIR%%/bdb.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/basic.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/cursor.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/func.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/join.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/queue.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/recno.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/txn.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/wordlist
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb/tmp
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/Changes
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/README.en
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/access.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/access.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/bdb.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/bdb.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/cursor.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/cursor.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/env.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/env.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/lock.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/lock.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/transaction.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/transaction.rd
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/bdb
