@@ -5,7 +5,6 @@ bin/nameclt
 bin/omkdepend
 bin/omniMapper
 bin/omniNames
-bin/omniNames-daemon
 bin/omnicpp
 bin/omniidl
 bin/omniidlrun.py
@@ -173,25 +172,30 @@ include/omnithread/solaris.h
 %%STATIC%%lib/libomnithread.a
 lib/libCOS4.so
 lib/libCOS4.so.0
-lib/libCOS4.so.0.2
+lib/libCOS4.so.0.3
 lib/libCOSDynamic4.so
 lib/libCOSDynamic4.so.0
-lib/libCOSDynamic4.so.0.2
+lib/libCOSDynamic4.so.0.3
 lib/libomniCodeSets4.so
 lib/libomniCodeSets4.so.0
-lib/libomniCodeSets4.so.0.2
+lib/libomniCodeSets4.so.0.3
 lib/libomniDynamic4.so
 lib/libomniDynamic4.so.0
-lib/libomniDynamic4.so.0.2
+lib/libomniDynamic4.so.0.3
 lib/libomniORB4.so
 lib/libomniORB4.so.0
-lib/libomniORB4.so.0.2
+lib/libomniORB4.so.0.3
 lib/libomnisslTP.so
 lib/libomnisslTP.so.4
 lib/libomnisslTP.so.4.0
 lib/libomnithread.so
 lib/libomnithread.so.3
 lib/libomnithread.so.3.0
+lib/pkgconfig/omniCOS4.pc
+lib/pkgconfig/omniCOSDynamic4.pc
+lib/pkgconfig/omniDynamic4.pc
+lib/pkgconfig/omniORB4.pc
+lib/pkgconfig/omnithread3.pc
 %%PYTHON_SITELIBDIR%%/_omniidlmodule.so
 %%PYTHON_SITELIBDIR%%/_omniidlmodule.so.1
 %%PYTHON_SITELIBDIR%%/_omniidlmodule.so.1.0
@@ -290,7 +294,7 @@ lib/libomnithread.so.3.0
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README.FIRST
 %%PORTDOCS%%%%DOCSDIR%%/README.unix
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes_4.0.2.txt
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes_4.0.3.txt
 %%PORTDOCS%%%%DOCSDIR%%/omniNames.html
 %%PORTDOCS%%%%DOCSDIR%%/omniNames.pdf
 %%PORTDOCS%%%%DOCSDIR%%/omniNames.ps
@@ -398,6 +402,7 @@ share/omniORB/idl/poa_include.idl
 @dirrm share/omniORB/idl/COS
 @dirrm share/omniORB/idl
 @dirrm share/omniORB
+@dirrm lib/pkgconfig
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tex
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/omniORB
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
