@@ -1,0 +1,11 @@
+--- src/bin/ibuild/ibvarviews.c.org	Sat Apr 25 05:15:01 1992
++++ src/bin/ibuild/ibvarviews.c	Wed Jan  5 22:50:51 2000
+@@ -1399,7 +1399,7 @@
+                 GetConflictCmd sconflict(firewallCmd.GetFirewall(),subclass);
+                 sconflict.Execute();
+                 cl = sconflict.GetConflict();
+-                for(i = cl->First(); i != cl->End(); i = i->Next()) {
++                for(UList* i = cl->First(); i != cl->End(); i = i->Next()) {
+                     StateVar* state = (StateVar*) (*i)();
+                     if (
+                         !state->IsA(INSTANCENAME_VAR) && 

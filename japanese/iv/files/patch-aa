@@ -242,18 +242,22 @@
 --- src/bin/ibuild/ibcmds.c	Sat Sep 11 09:52:51 1999
 ***************
 *** 86,92 ****
---- 86,94 ----
+--- 86,98 ----
   #undef FileChooser
   #define FileChooser _lib_iv(FileChooser)
   
 + #if __FreeBSD_cc_version < 400002
   #include <osfcn.h>
 + #endif
++ #if __FreeBSD_cc_version >= 400003
++ #include <unistd.h>
++ #endif
++ 
   #include <stdio.h>
   #include <stdlib.h>
   #include <stream.h>
 ***************
-*** 2407,2415 ****
+*** 2407,2421 ****
   	EditorInfo* installed = (EditorInfo*) toolsdialog.Installed();
           EditorInfo* removed = (EditorInfo*) toolsdialog.Removed();
   
@@ -263,7 +267,13 @@
   	    ToolPanel* itoolpanel = iEd->GetToolPanel();
   
               for (int i = 0; i < installed->Count(); i++) {
---- 2409,2417 ----
+                  itoolpanel->Install(installed->GetName(i));
+              }
+!             for (i = 0; i < removed->Count(); i++) {
+                  itoolpanel->Uninstall(removed->GetName(i));
+              }
+              itoolpanel->Change();
+--- 2413,2427 ----
   	EditorInfo* installed = (EditorInfo*) toolsdialog.Installed();
           EditorInfo* removed = (EditorInfo*) toolsdialog.Removed();
   
@@ -273,3 +283,9 @@
   	    ToolPanel* itoolpanel = iEd->GetToolPanel();
   
               for (int i = 0; i < installed->Count(); i++) {
+                  itoolpanel->Install(installed->GetName(i));
+              }
+!             for (int i = 0; i < removed->Count(); i++) {
+                  itoolpanel->Uninstall(removed->GetName(i));
+              }
+              itoolpanel->Change();

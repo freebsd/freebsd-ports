@@ -1,0 +1,42 @@
+--- src/bin/doc/DialogMgr.c.org	Sat Apr 11 14:28:48 1992
++++ src/bin/doc/DialogMgr.c	Mon Jan  3 14:34:49 2000
+@@ -108,7 +108,8 @@
+     Window* window, const char* prompt, const char* filter
+ ) {
+     long count = _chooser->count();
+-    for (long i = 0; i < count; ++i) {
++    long i;
++    for (i = 0; i < count; ++i) {
+         ChooserInfo& info = _chooser->item_ref(i);
+         if (strcmp(info._prompt, prompt) == 0) {
+             break;
+@@ -128,7 +129,8 @@
+     Window* window, const char* prompt, const char* initial
+ ) {
+     long count = _asker->count();
+-    for (long i = 0; i < count; ++i) {
++    long i;
++    for (i = 0; i < count; ++i) {
+         AskerInfo& info = _asker->item_ref(i);
+         if (strcmp(info._prompt, prompt) == 0) {
+             break;
+@@ -146,7 +148,8 @@
+ 
+ int DialogManager::confirm (Window* window, const char* prompt) {
+     long count = _confirmer->count();
+-    for (long i = 0; i < count; ++i) {
++    long i;
++    for (i = 0; i < count; ++i) {
+         ConfirmerInfo& info = _confirmer->item_ref(i);
+         if (strcmp(info._prompt, prompt) == 0) {
+             break;
+@@ -164,7 +167,8 @@
+ 
+ void DialogManager::report (Window* window, const char* prompt) {
+     long count = _reporter->count();
+-    for (long i = 0; i < count; ++i) {
++    long i;
++    for (i = 0; i < count; ++i) {
+         ReporterInfo& info = _reporter->item_ref(i);
+         if (strcmp(info._prompt, prompt) == 0) {
+             break;

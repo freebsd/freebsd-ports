@@ -1,0 +1,19 @@
+--- src/bin/doc/Keymap.c.org	Sat Apr 11 14:29:37 1992
++++ src/bin/doc/Keymap.c	Mon Jan  3 14:45:40 2000
+@@ -103,6 +103,7 @@
+         _viewer != nil
+         && e.type() == Event::key && e.mapkey(s, sizeof(s)) > 0
+     ) {
++	long i;
+         _viewer->ref();
+         ItemView* view = _viewer->focus();
+         long count = _info->count();
+@@ -110,7 +111,7 @@
+         if (key < 0) {
+             key += 256;
+         }
+-        for (long i = 0; i < count; ++i) {
++        for (i = 0; i < count; ++i) {
+             DocKeymapInfo& info = _info->item_ref(i);
+             if (info._key == key) {
+                 boolean pending_repair;

@@ -1,0 +1,63 @@
+diff -Ncr src/lib/IV-X11/xjivfunc.c src/lib/IV-X11/xjivfunc.c
+*** src/lib/IV-X11/xjivfunc.c	Sat Feb  6 19:11:35 1999
+--- src/lib/IV-X11/xjivfunc.c	Sat Feb  6 19:05:50 1999
+***************
+*** 110,115 ****
+--- 110,116 ----
+  	    rb += c.rbearing;
+  	}
+      }
++     delete[] ss;
+      return rb;
+  }
+  
+***************
+*** 175,180 ****
+--- 176,182 ----
+  	    w += c.width;
+  	}
+      }
++     delete[] ss;
+      return w;
+  }
+  
+***************
+*** 248,253 ****
+--- 250,256 ----
+  	    }
+  	}
+      }
++     delete[] ss;
+      return a;
+  }
+  
+***************
+*** 321,326 ****
+--- 324,330 ----
+  	    }
+  	}
+      }
++     delete[] ss;
+      return d;
+  }
+  
+***************
+*** 404,409 ****
+--- 408,414 ----
+  	    XDrawString(dpy, d, gc, x, y, (const char*)ss, sl);
+  	}
+      }
++     delete[] ss;
+  }
+  
+  void JIVDrawImageString(XDisplay *dpy, XDrawable d, GC gc, const Font* f,
+***************
+*** 487,492 ****
+--- 492,498 ----
+  	    XDrawImageString(dpy, d, gc, x, y, (const char*)ss, sl);
+  	}
+      }
++     delete[] ss;
+  }
+  
+  #endif /* JIV */

@@ -1,12 +1,55 @@
---- src/bin/ibuild/ibcode.c.orig	Thu May 27 21:37:28 1999
-+++ src/bin/ibuild/ibcode.c	Thu May 27 21:38:01 1999
-@@ -41,7 +41,9 @@
+--- src/bin/ibuild/ibcode.c.orig	Tue Oct 20 02:58:01 1992
++++ src/bin/ibuild/ibcode.c	Wed Jan  5 22:35:36 2000
+@@ -41,7 +41,12 @@
  #include <Unidraw/Graphic/pspaint.h>
  #include <InterViews/shape.h>
  #include <InterViews/transformer.h>
 +#if __FreeBSD_cc_version < 400002
  #include <osfcn.h>
 +#endif
++#if __FreeBSD_cc_version >= 400003
++#include <stdio.h>
++#endif
  #include <stdlib.h>
  #include <stream.h>
  #include <string.h>
+@@ -362,7 +367,7 @@
+ 	ButtonStateVar* bsVar = intcomp->GetButtonStateVar();
+ 	const char* bsname = bsVar->GetName();
+ 	const char* proc = bsVar->GetFuncName();
+-        boolean export = bsVar->GetExport();
++        boolean getexport = bsVar->GetExport();
+         const char* subclass = bsVar->GetSubclassName();
+ 
+         if (!bsVar->IsSubclass() && !_emitMain) {
+@@ -375,7 +380,7 @@
+ 	if (!_bsinitslist->Search(bsname)) {
+ 	    _bsinitslist->Append(bsname);
+ 
+-            if (export && !_emitMain) {
++            if (getexport && !_emitMain) {
+                 out << "    " << bsname;
+             } else {
+                 out << "    " << ButtonClass << "* " << bsname;
+@@ -384,7 +389,7 @@
+             out << bsVar->GetInitial() << ");\n";
+ 
+             if (!_emitMain && proc != nil && *proc != '\0') {
+-                if (!export || bsVar->IsSubclass()) {
++                if (!getexport || bsVar->IsSubclass()) {
+                     out << "    " << bsname << "->SetCoreClass(this);\n";
+                     out <<"    "<< bsname<<"->SetCoreFunc("<< "&" << coreclass;
+                     out << "::" << proc << ");\n";
+@@ -1598,10 +1603,10 @@
+ void CodeView::BeginInstantiate (ostream& out) {
+     InteractorComp* icomp = GetIntComp();
+     const char* mname = icomp->GetMemberNameVar()->GetName();
+-    boolean export = icomp->GetMemberNameVar()->GetExport();
++    boolean getexport = icomp->GetMemberNameVar()->GetExport();
+     const char* classname = icomp->GetClassNameVar()->GetName();
+ 
+-    if (export && !_emitMain) {
++    if (getexport && !_emitMain) {
+         out << "    " << mname << " = new ";
+     } else {
+         out << "    " << classname << "* ";

@@ -1,0 +1,11 @@
+--- src/bin/dclock/segment.c.org	Tue Mar  5 02:56:58 1991
++++ src/bin/dclock/segment.c	Mon Jan  3 14:19:39 2000
+@@ -51,7 +51,7 @@
+ 	Row[i] |= Row[i]<<16;
+ 	seed >>= 4;
+     }
+-    for (i = 0; i < 16; i++) {
++    for (int i = 0; i < 16; i++) {
+ 	dat[i] = Row[i%4];
+     }
+     pat = new Pattern(dat);

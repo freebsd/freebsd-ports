@@ -1,0 +1,14 @@
+--- src/lib/Unidraw/text.c.org	Wed Mar 25 10:18:22 1992
++++ src/lib/Unidraw/text.c	Mon Jan  3 15:32:12 2000
+@@ -560,9 +560,10 @@
+ // errors in a Postscript string.
+ 
+ const char* PSText::Filter (const char* string, int len) {
++    int dot;
+     TextBuffer stext(sbuf, 0, SBUFSIZE);
+ 
+-    for (int dot = 0; len--; string++) {
++    for (dot = 0; len--; string++) {
+ 	char c = *string;
+ 
+ 	if (!isascii(c) || iscntrl(c)) {

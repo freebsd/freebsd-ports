@@ -1,0 +1,12 @@
+--- src/bin/idraw/idcatalog.c.org	Mon Jan  3 14:37:37 2000
++++ src/bin/idraw/idcatalog.c	Mon Jan  3 14:36:51 2000
+@@ -662,7 +662,8 @@
+ 		graylevel = CalcGrayLevel(data[0]);
+ 	    }
+ 	} else if (graylevel == -1) {
+-	    for (int i = 0; in >> _buf && i < patternHeight; i++) {
++	    int i;
++	    for (i = 0; in >> _buf && i < patternHeight; i++) {
+ 		if (_buf[0] == '>' || sscanf(_buf, "%x", &data[i]) != 1) {
+ 		    break;
+ 		}

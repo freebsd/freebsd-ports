@@ -1,0 +1,13 @@
+diff -Ncr src/bin/idraw/idarrowhead.h src/bin/idraw/idarrowhead.h
+*** src/bin/idraw/idarrowhead.h	Thu Dec 12 08:49:19 1991
+--- src/bin/idraw/idarrowhead.h	Sat Feb  6 19:05:49 1999
+***************
+*** 37,42 ****
+--- 37,43 ----
+  
+      virtual Graphic* Copy();
+      virtual Graphic& operator = (Graphic&);
++     virtual Arrowhead& operator = (Arrowhead&);
+  protected:
+      Arrowhead(Coord*, Coord*, Graphic*);
+  

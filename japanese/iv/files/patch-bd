@@ -1,5 +1,5 @@
---- src/lib/Unidraw/catalog.c.orig	Thu May 27 20:04:40 1999
-+++ src/lib/Unidraw/catalog.c	Thu May 27 20:06:39 1999
+--- src/lib/Unidraw/catalog.c.orig	Sat Dec 12 13:27:55 1992
++++ src/lib/Unidraw/catalog.c	Mon Jan  3 15:13:19 2000
 @@ -57,7 +57,9 @@
  #include <IV-2_6/_enter.h>
  
@@ -10,3 +10,33 @@
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
+@@ -65,6 +67,8 @@
+ #include <strstream.h>
+ #ifdef SYSV
+ #include <OS/types.h>
++#endif
++#if defined(SYSV) || __FreeBSD_cc_version >= 400003 
+ #include <unistd.h>
+ #endif
+ #include <sys/file.h>
+@@ -1502,7 +1506,8 @@
+             in >> graylevel;
+ 
+         } else if (graylevel == nograylevel) {
+-            for (int i = 0; in >> buf && i < patternHeight; i++) {
++	    int i;
++            for (i = 0; in >> buf && i < patternHeight; i++) {
+                 if (buf[0] == '>' || sscanf(buf, "%x", &data[i]) != 1) {
+                     break;
+                 }
+@@ -1610,8 +1615,9 @@
+ 	} else {
+ 	    istrstream in(definition, strlen(definition) + 1);
+             int data[patternHeight];
++	    int i;
+ 
+-	    for (int i = 0; in >> buf && i < patternHeight; i++) {
++	    for (i = 0; in >> buf && i < patternHeight; i++) {
+ 		if (sscanf(buf, "%x", &data[i]) != 1) {
+ 		    break;
+ 		}

@@ -1,0 +1,11 @@
+--- src/bin/dclock/data.c.org	Sat Jul 20 04:13:49 1991
++++ src/bin/dclock/data.c	Mon Jan  3 14:07:07 2000
+@@ -156,7 +156,7 @@
+ 	ColonData[1].x[i] = Colon.x[i]+COLx+ColonData[1].y[i]*Slant/width;
+     }
+ 
+-    for ( i=0; i<12; i++ ) {			// shift, scale, slant A, P, M
++    for ( int i=0; i<12; i++ ) {			// shift, scale, slant A, P, M
+ 	AData.y[i] = (AData.y[i]+0.7)/height + ALLy;
+ 	AData.x[i] = (AData.x[i])/width+HTx+AData.y[i]*Slant/width-0.15/width;
+ 	PData.y[i] = (PData.y[i]+0.7)/height + ALLy;
