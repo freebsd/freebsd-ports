@@ -1,0 +1,11 @@
+--- Makefile.in-	Fri Apr 17 13:37:28 1998
++++ Makefile.in	Wed Apr 22 13:14:28 1998
+@@ -15,7 +15,7 @@
+ LDFLAGS = @LDFLAGS@
+ O=o
+ 
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lxpg4
+ 
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
