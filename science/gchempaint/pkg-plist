@@ -51,6 +51,11 @@ share/gnome/pixmaps/gchempaint.png
 share/gnome/pixmaps/gchempaint_logo.png
 @exec scrollkeeper-install -q %D/share/gnome/omf/gchempaint/gchempaint-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/ui/gchempaint.xml
+share/locale/de/LC_MESSAGES/gchempaint.mo
+share/locale/fr/LC_MESSAGES/gchempaint.mo
+share/locale/it/LC_MESSAGES/gchempaint.mo
+share/locale/pl/LC_MESSAGES/gchempaint.mo
+share/locale/zh_CN/LC_MESSAGES/gchempaint.mo
 @dirrm share/gnome/gchempaint/glade
 @dirrm share/gnome/gchempaint
 @dirrm share/gnome/help/gchempaint/C/figures
