@@ -103,9 +103,7 @@ static struct cdevsw rtc_cdevsw = {
 	.d_poll =	rtc_poll,
 	.d_read =	rtc_read,
 	.d_name =	DEVICE_NAME,
-#if __FreeBSD_version < 502104
 	.d_maj =	CDEV_MAJOR,
-#endif
 #else
 	/* open */	rtc_open,
 	/* close */	rtc_close,
