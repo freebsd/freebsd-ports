@@ -213,6 +213,7 @@
     SUBDIR += kenny
     SUBDIR += kfile-plugins
     SUBDIR += kicker-applets
+    SUBDIR += kile-i18n
     SUBDIR += knewsticker-scripts
     SUBDIR += koffice-i18n
     SUBDIR += koffice-i18n-af
