@@ -16,6 +16,7 @@ COMMENT=	Network API translation layer for X applications and libraries
 
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
+MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes

@@ -24,6 +24,7 @@ CONFLICTS=	XFree86-libraries-*
 
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
+MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
