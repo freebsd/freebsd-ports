@@ -46,9 +46,7 @@ CONFIGURE_ARGS+=	--enable-threads
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 503000
-IGNORE=		crashes at runtime on FreeBSD >= 5.x
-.endif
+IGNORE=		crashes at runtime
 
 .if !exists(${JAVABINDIR}/java)
 WITHOUT_JAVA=	yes
