@@ -26,6 +26,9 @@ bin/decompyle
 %%PYTHON_SITELIBDIR%%/decompyle/dis_22.py
 %%PYTHON_SITELIBDIR%%/decompyle/dis_22.pyc
 %%PYTHON_SITELIBDIR%%/decompyle/dis_22.pyo
+%%PYTHON_SITELIBDIR%%/decompyle/dis_23.py
+%%PYTHON_SITELIBDIR%%/decompyle/dis_23.pyc
+%%PYTHON_SITELIBDIR%%/decompyle/dis_23.pyo
 %%PYTHON_SITELIBDIR%%/decompyle/dis_files.py
 %%PYTHON_SITELIBDIR%%/decompyle/dis_files.pyc
 %%PYTHON_SITELIBDIR%%/decompyle/dis_files.pyo
