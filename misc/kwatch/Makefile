@@ -1,17 +1,17 @@
 # New ports collection makefile for:   kwatch
 # Version required:    Beta4
 # Date created:        23 May 1998
-# Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
+# Whom:                Hans Petter Bieker <zerium@webindex.no>
 #
-# $Id: Makefile,v 1.3 1998/08/12 06:29:31 asami Exp $
+# $Id: Makefile,v 1.4 1998/08/25 10:04:57 asami Exp $
 #
 
 DISTNAME=	kwatch-0.3
 CATEGORIES=	misc x11 kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= /stable/Beta4/apps/utils
+MASTER_SITE_SUBDIR= stable/1.0/apps/utils
 
-MAINTAINER=	hanspb@persbraten.vgs.no
+MAINTAINER=	zerium@webindex.no
 
 LIB_DEPENDS=	jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
 		kdecore\\.1\\.:${PORTSDIR}/x11/kdelibs \
