@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	wmnd
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.7
 CATEGORIES=	net
-MASTER_SITES=	http://www.yuv.info/wmnd/releases/
+MASTER_SITES=	ftp://ftp.yuv.info/pub/wmnd/releases/
 
 MAINTAINER=	flag@gufi.org
 COMMENT=	Improved network monitoring dock app (with tons of features)
