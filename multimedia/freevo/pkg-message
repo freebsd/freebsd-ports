@@ -1,0 +1,23 @@
+***********************************************************************
+
+  Freevo is now installed.  It might be a good idea to read the docs
+  in %%PREFIX%%/share/doc/freevo-1.5-rc4
+
+  By default Freevo is configured with a single VFS in /var/db/cache.
+  You can use this by adding users to the freevo group.
+
+  To get up and running quickly try: freevo setup && freevo --help
+
+  Freevo can be configured to start on boot by using the sample
+  startup script in %%PREFIX%%/etc/rc.d/freevo.sh.sample
+
+***********************************************************************
+
+  IMPORTANT: Freevo requires procfs to be mounted on /proc. You can
+  do this by adding the following entry to your /etc/fstab:
+
+    proc	/proc	procfs	rw	1 1
+
+  WITHOUT THIS FREEVO WILL NOT SHUT DOWN CORRECTLY!
+
+***********************************************************************

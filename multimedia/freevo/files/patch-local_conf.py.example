@@ -1,0 +1,61 @@
+--- local_conf.py.example.orig	Tue Nov 23 22:21:52 2004
++++ local_conf.py.example	Tue Nov 23 22:23:43 2004
+@@ -92,6 +92,15 @@
+ # ENABLE_SHUTDOWN_SYS = 0
+ 
+ #
++# FreeBSD shutdown-specific options.
++#
++# SHUTDOWN_SYS_CMD = '/sbin/shutdown -p now'
++# RESTART_SYS_CMD  = '/sbin/shutdown -r now'
++#
++# You might consider installing sudo and having:
++# SHUTDOWN_SYS_CMD = '/usr/local/bin/sudo /sbin/...'
++
++#
+ # You can add more keybindings by adding them to the correct hash. 
+ # e.g. If you want to send 'contrast -100' to mplayer by pressing the '1' key, 
+ # just add the following line: 
+@@ -126,6 +135,7 @@
+ # Freevo can write to.
+ #
+ # OVERLAY_DIR = os.path.join(FREEVO_CACHEDIR, 'vfs')
++OVERLAY_DIR = os.path.join(FREEVO_CACHEDIR, 'vfs')
+ 
+ #
+ # Umask setting for all files.
+@@ -133,6 +143,7 @@
+ # installation with different users, set this to 002
+ #
+ # UMASK = 022
++UMASK = 002
+ 
+ #
+ # Suffix for playlist files
+@@ -195,6 +206,18 @@
+ # Enable this for joystick support:
+ # plugin.activate('joy')
+ 
++#
++# Extra FreeBSD default plugins (all detailed on the Freevo Wiki's
++# PluginInfo page):
++plugin.activate('idlebar')
++#plugin.activate('idlebar.mail')
++plugin.activate('idlebar.tv')
++#plugin.activate('idlebar.weather', level=30, args=('CODE'))
++plugin.activate('idlebar.clock')
++plugin.activate('idlebar.cdstatus')
++plugin.activate('idlebar.holidays')
++plugin.activate('idlebar.sensors')
++
+ # ======================================================================
+ # Freevo directory settings:
+ # ======================================================================
+@@ -231,6 +254,7 @@
+ # Smart sorting ignores the word "The" in item names.
+ #
+ # DIRECTORY_SMART_SORT = 0
++DIRECTORY_SMART_SORT = 1
+ 
+ #
+ # Should Freevo autoplay an item if only one item is in the directory?

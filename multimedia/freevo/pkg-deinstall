@@ -1,0 +1,64 @@
+#!/bin/sh
+# Stolen from mail/nullmailer
+
+user=freevo
+group=freevo
+home=/var/db/freevo
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+        read -p "${question} [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+        answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local dflt question answer
+
+    question=$1
+    dflt=$2
+    while :; do
+	answer=$(ask "${question}" "${dflt}")
+	case "${answer}" in
+	[Yy]*)		return 0;;
+	[Nn]*)		return 1;;
+	esac
+	echo "Please answer yes or no."
+    done
+}
+
+delete_account() {
+    local u g home
+
+    u=$1
+    g=$2
+    if yesno "Do you want me to remove group \"${g}\"" y; then
+	pw groupdel -n ${g}
+	echo "Done."
+    fi
+    if yesno "Do you want me to remove user \"${u}\"" y; then
+	pw userdel -n ${u}
+	echo "Done."
+    fi
+}
+
+delete_home() {
+    if [ -d ${home} ]; then
+	if yesno "Do you want me to remove your Freevo cache \"${home}\"" n; then
+	    rm -rf ${home}
+	    echo "Done."
+	fi
+    fi
+}
+
+if [ x"$2" = xPOST-DEINSTALL ]; then
+    delete_account ${user} ${group};
+    delete_home;
+fi
