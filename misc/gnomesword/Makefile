@@ -6,14 +6,13 @@
 #
 
 PORTNAME=		gnomesword
-PORTVERSION=		0.7.5
-PORTREVISION=		1
+PORTVERSION=		0.7.8
 CATEGORIES=		misc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		shoemaker@softhome.net
-COMMENT=	A bible interface utilizing the sword framework
+MAINTAINER=		ports@freebsd.org
+COMMENT=		A bible interface utilizing the sword framework
 
 LIB_DEPENDS=		sword.1:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=		aspell:${PORTSDIR}/textproc/aspell
@@ -25,9 +24,6 @@ USE_GMAKE=      	yes
 GNU_CONFIGURE=		yes
 
 DOC_FILES=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
-
-post-configure:
-	${ECHO} "#define PACKAGE_PIXMAPS_DIR \"${PREFIX}/share/gnome/pixmaps/gnomesword\"">> ${WRKSRC}/config.h
 
 post-install:
 .ifndef(NOPORTDOCS)
