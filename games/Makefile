@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.158 1998/07/31 19:34:14 nectar Exp $
+# $Id: Makefile,v 1.159 1998/08/01 05:01:51 nectar Exp $
 #
 
     SUBDIR += 3dc
@@ -64,6 +64,7 @@
     SUBDIR += spider
     SUBDIR += starlanes
     SUBDIR += tank
+    SUBDIR += tinymux
     SUBDIR += tksol
     SUBDIR += tvp
     SUBDIR += xabacus
