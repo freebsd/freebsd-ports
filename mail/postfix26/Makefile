@@ -7,10 +7,12 @@
 
 # To pre-select options in batch mode, run make like this:
 #
-#  make -DBATCH POSTFIX_OPTIONS="DB3 PCRE"
+#  make -DBATCH POSTFIX_OPTIONS="DB3 IPv6TLS"
 #
 # the options are the same names as in the scripts/configure.postfix file.
 # POSTFIX_OPTIONS can be set in /etc/make.conf also.
+
+# NOTE: PCRE is enabled by default unless you specifically disable it.
 
 PORTNAME=	postfix
 PORTVERSION=	2.0.4
@@ -69,6 +71,15 @@ pre-fetch:
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
+
+.if defined(WITHOUT_PCRE)
+POSTFIX_CCARGS+=	-DNO_PCRE
+.else
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
+.endif
+
 
 post-patch:
 	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \

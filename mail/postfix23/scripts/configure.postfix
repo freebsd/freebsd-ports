@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix23/scripts/Attic/configure.postfix,v 1.30 2003-03-03 12:56:05 nectar Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix23/scripts/Attic/configure.postfix,v 1.31 2003-03-04 07:31:25 leeym Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -9,8 +9,6 @@ tempfile=`mktemp -t checklist`
 
 if [ "${POSTFIX_OPTIONS}" ]; then
 	set ${POSTFIX_OPTIONS}
-else
-	set PCRE
 fi
 
 for i; do
@@ -21,7 +19,7 @@ if [ -z "${BATCH}" ]; then
 	/usr/bin/dialog --title "Postfix configuration options" --clear \
 		--checklist "\n\
 Please select desired options:" -1 -1 16 \
-PCRE		"Perl Compatible Regular Expressions" "$status_PCRE" \
+NOPCRE		"DISABLE Perl Compatible Regular Expressions" "$status_NOPCRE" \
 SASL		"Cyrus SASLv1 (Simple Authentication and Security Layer)" "$status_SASL" \
 SASL2		"Cyrus SASLv2 (Simple Authentication and Security Layer)" "$status_SASL2" \
 TLS		"SSL and TLS" "$status_TLS" \
@@ -64,12 +62,10 @@ SUB_TEST="@comment "
 
 while [ "$1" ]; do
 	case $1 in
-		PCRE)
-			echo "LIB_DEPENDS+=	pcre.0:\${PORTSDIR}/devel/pcre"
-			echo "POSTFIX_CCARGS+=	-DHAS_PCRE -I\${LOCALBASE}/include"
-			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lpcre"
-			echo "PCRE_SUFFIX=	+pcre"
-			SUB_PCRE=""
+		NOPCRE)
+			echo "WITHOUT_PCRE=	yes"
+			echo "NOPCRE_SUFFIX=	+nopcre"
+			SUB_NOPCRE=""
 			;;
                 SASL)
                         echo "LIB_DEPENDS+=     sasl.8:\${PORTSDIR}/security/cyrus-sasl"
@@ -230,4 +226,4 @@ echo "PLIST_SUB+=	SUB_TEST=\"${SUB_TEST}\""
 # we ask the configure questions) doesn't pick up the extensions, but
 # any subsequent build will.  so "make; make install" will build twice.
 # don't do this for now.
-#echo "PKGNAMESUFFIX=	\${PCRE_SUFFIX}\${SASL_SUFFIX}\${DB_SUFFIX}\${MYSQL_SUFFIX}\${PGSQL_SUFFIX}\${OPENLDAP_SUFFIX}\${TLS_SUFFIX}\${IPv6_SUFFIX}"
+#echo "PKGNAMESUFFIX=	\${NOPCRE_SUFFIX}\${SASL_SUFFIX}\${DB_SUFFIX}\${MYSQL_SUFFIX}\${PGSQL_SUFFIX}\${OPENLDAP_SUFFIX}\${TLS_SUFFIX}\${IPv6_SUFFIX}"
