@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	vs@FreeBSD.org
 COMMENT=	"HP OfficeJet Linux driver; printing, scanning, and photo-card access"
 
+NOT_FOR_ARCHS=	sparc64 ia64
+
 LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends \
 		usb:${PORTSDIR}/devel/libusb
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
