@@ -7,6 +7,7 @@
 
 PORTNAME=	intltool
 PORTVERSION=	0.27.2
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.27
@@ -16,6 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Xml internationalization support for GNOME, and others
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
