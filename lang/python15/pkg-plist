@@ -411,6 +411,7 @@ include/python1.4/classobject.h
 include/python1.4/cobject.h
 include/python1.4/compile.h
 include/python1.4/complexobject.h
+include/python1.4/config.h
 include/python1.4/dictobject.h
 include/python1.4/errcode.h
 include/python1.4/eval.h
