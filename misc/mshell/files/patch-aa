@@ -1,5 +1,5 @@
-*** Makefile.orig	Sat Sep 24 02:37:56 1994
---- Makefile	Sat Sep 24 02:39:11 1994
+*** Makefile.orig	Wed Oct  5 18:31:35 1994
+--- Makefile	Wed Oct  5 18:35:39 1994
 ***************
 *** 8,21 ****
   #
@@ -20,9 +20,9 @@
   #
   # Check mshell.h for other options, e.g., max menu sizes.
   
-! CFLAGS =  -O -DBSD -DMENUDIR='"/usr/local/lib/menus"' -DMAILDIR='"/var/mail/"' \
-! 	-DGLOBAL_MACRO_FILE='"/usr/local/lib/menus/macros"' \
-! 	-DCOMMAND_LIST='"/usr/local/lib/menus/commands"'
+! CFLAGS =  -O -DBSD -DMENUDIR=\"${PREFIX}/lib/menus\" -DMAILDIR='"/var/mail/"' \
+! 	-DGLOBAL_MACRO_FILE=\"${PREFIX}/lib/menus/macros\" \
+! 	-DCOMMAND_LIST=\"${PREFIX}/lib/menus/commands\"
   OBJS =	mshell.o main.o string.o functions1.o functions2.o chdir.o mail.o \
   	settatr.o setenv.o xsystem.o dl.o macro.o
   
@@ -37,12 +37,12 @@
 ! 	rm -f *.o mshell
 ! 
 ! install: mshell
-! 	mkdir -p /usr/local/bin 
-! 	install -c -o bin mshell /usr/local/bin
-! 	mkdir -p /usr/local/lib/menus
-! 	sed -e s/dldir/HOME/g < sample.men > /usr/local/lib/menus/sample.men
-! 	install -c -m 644 menulogin /usr/local/lib/menus
-! 	mkdir -p /usr/local/man/man1
+! 	mkdir -p ${PREFIX}/bin 
+! 	install -c -o bin mshell ${PREFIX}/bin
+! 	mkdir -p ${PREFIX}/lib/menus
+! 	sed -e s/dldir/HOME/g < sample.men > ${PREFIX}/lib/menus/sample.men
+! 	install -c -m 644 menulogin ${PREFIX}/lib/menus
+! 	mkdir -p ${PREFIX}/man/man1
 ! 	echo .Dd `/bin/date` > mshell.1
 ! 	echo .Dt MSHELL 1 >> mshell.1
 ! 	echo .Sh NAME >> mshell.1
@@ -59,4 +59,4 @@
 ! 	echo >>mshell.1
 ! 	echo .Sh AUTHOR >>mshell.1
 ! 	echo Andrew Burt, aburt@du.edu >>mshell.1
-! 	install -m 644  mshell.1 /usr/local/man/man1
+! 	install -m 644  mshell.1 ${PREFIX}/man/man1
