@@ -18,7 +18,8 @@ COMMENT=	Alex is a tool for generating lexical analysers in Haskell
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	jade:${PORTSDIR}/textproc/jade \
-		jadetex:${PORTSDIR}/print/jadetex
+		jadetex:${PORTSDIR}/print/jadetex \
+		${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular
 .endif
 
 USE_BZIP2=	yes
