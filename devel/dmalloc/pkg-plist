@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/dmalloc
 include/dmalloc.h
 @unexec install-info --delete %D/info/dmalloc.info %D/info/dir
@@ -6,12 +7,15 @@ info/dmalloc.info
 lib/libdmalloc.a
 lib/libdmalloc.so
 lib/libdmalloc.so.1
-lib/libdmalloclp.a
 lib/libdmallocth.a
 lib/libdmallocth.so
 lib/libdmallocth.so.1
 lib/libdmallocthcxx.a
 lib/libdmallocthcxx.so
 lib/libdmallocthcxx.so.1
+lib/libdmallocxx.a
+lib/libdmallocxx.so
+lib/libdmallocxx.so.1
 share/doc/dmalloc/dmalloc.html
+share/doc/dmalloc/dmalloc.texi
 @dirrm share/doc/dmalloc
