@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.87 1997/11/20 05:26:32 asami Exp $
+# $Id: Makefile,v 1.88 1997/11/24 00:10:48 fenner Exp $
 #
 
     SUBDIR += Gofer
@@ -59,5 +59,6 @@
     SUBDIR += tclX75
     SUBDIR += tclplugin
     SUBDIR += xpl
+    SUBDIR += yorick
 
 .include <bsd.port.subdir.mk>
