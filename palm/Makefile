@@ -37,5 +37,6 @@
     SUBDIR += synce-trayicon
     SUBDIR += syncmal
     SUBDIR += txt2pdbdoc
+    SUBDIR += uppc-kmod
 
 .include <bsd.port.subdir.mk>
