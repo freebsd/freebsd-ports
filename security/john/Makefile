@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	john
-PORTVERSION=	1.6.32
+PORTVERSION=	1.6.33
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/ \
 		ftp://ftp.ca.openwall.com/pub/projects/john/ \
