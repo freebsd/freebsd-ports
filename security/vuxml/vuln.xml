@@ -2623,7 +2623,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>agenda-snow-libs</name>
-	<name>linux-openmotif</name>
 	<name>linux_base</name>
 	<name>open-motif</name>
 	<name>open-motif-devel</name>
@@ -2650,6 +2649,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
 	<name>xpm</name>
 	<range><lt>3.4k_1</lt></range>
+      </package>
+      <package>
+	<name>linux-openmotif</name>
+	<range><lt>2.2.4</lt></range>
       </package>
     </affects>
     <description>
