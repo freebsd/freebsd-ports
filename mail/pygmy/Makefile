@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pygmy
-PORTVERSION=	0.5.7
-PORTREVISION=	1
+PORTVERSION=	0.5.8
 CATEGORIES=	mail python gnome
 MASTER_SITES=	http://pygmy.sourceforge.net/
 
