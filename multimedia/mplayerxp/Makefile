@@ -59,7 +59,6 @@ CONFIGURE_ARGS+= --with-extralibdir=${LOCALBASE}/lib \
 		--prefix=${PREFIX} \
 		--confdir=${PREFIX}/etc/${PORTNAME} \
 		--datadir=${LOCALBASE}/share/mplayer \
-		--disable-cdparanoia \
 		--disable-fbdev \
 		--disable-lirc \
 		--disable-rtc \
@@ -79,6 +78,10 @@ WITH_ARTS=yes
 .if exists(${LOCALBASE}/lib/libdvdnav.so)
 WITH_DVD=yes
 WITH_LIBDVDNAV=yes
+.endif
+# cdparanoia (cdda support)
+.if exists(${LOCALBASE}/lib/libcdda_paranoia.so)
+WITH_CDPARANOIA=yes
 .endif
 # ogle's libdvdread (dvd support)
 .if exists(${LOCALBASE}/lib/libdvdread.a)
@@ -120,6 +123,12 @@ CONFIGURE_ARGS+=	--enable-sse --enable-sse2
 # KDE aRts
 .ifdef(WITH_ARTS)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+.endif
+# cdda support
+.ifdef(WITH_CDPARANOIA)
+LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
+.else
+CONFIGURE_ARGS+=	--disable-cdparanoia
 .endif
 # dvd support
 .ifdef(WITH_DVD)
@@ -191,6 +200,10 @@ pre-everything::
 .ifndef(WITH_ARTS)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> You can enable KDE ARTS support by defining WITH_ARTS.'
+.endif
+.ifndef(WITH_CDPARANOIA)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> You can enable cdda support by defining WITH_CDPARANOIA.'
 .endif
 .ifndef(WITH_DVD)
 	@${ECHO_MSG} '===>'
