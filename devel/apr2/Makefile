@@ -40,9 +40,6 @@ APR_UTIL_CONF_ARGS=	--with-apr=../apr-${INTERNALPORTVERSION} \
 			--with-expat=${PREFIX} \
 			--with-iconv=${PREFIX}
 
-pre-fetch:
-	${SH} pkg-install apr PRE-INSTALL
-
 pre-configure:
 	cd ${WRKDIR}/apr-${INTERNALPORTVERSION}; ./buildconf
 	cd ${WRKDIR}/apr-util-${INTERNALPORTVERSION}; ./buildconf \
