@@ -267,3 +267,4 @@ devel/linux_devtools|linux/linux_devtools-6|2003-04-17|finished repocopy
 emulators/linux-vmware-toolbox|emulators/linux-vmware-toolbox2|2003-04-19|port renamed
 emulators/vmware-guestd|emulators/vmware-guestd3|2003-04-19|port renamed
 archivers/ruby-zlib||2003-04-19|integrated into ruby16-shim-ruby18
+math/ruby-bigfloat||2003-04-19|integrated into ruby16-shim-ruby18
