@@ -74,7 +74,7 @@ APACHE_SUEXEC_USERDIR?=public_html
 SUEXEC_CONF=\
 	 --enable-suexec \
 	 --suexec-docroot=${APACHE_SUEXEC_DOCROOT} \
-s	 --suexec-caller=www \
+	 --suexec-caller=www \
 	 --suexec-uidmin=1000 \
 	 --suexec-gidmin=1000 \
 	 --suexec-logfile=${APACHE_SUEXEC_LOG} \
