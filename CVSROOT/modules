@@ -2200,6 +2200,7 @@ geta		ports/dns/geta
 getbdf		ports/x11-fonts/getbdf
 getmail		ports/mail/getmail
 gettext		ports/devel/gettext
+gettext-old	ports/devel/gettext-old
 getxml		ports/devel/getxml
 gevas		ports/x11-toolkits/gevas
 gexpr		ports/math/gexpr
