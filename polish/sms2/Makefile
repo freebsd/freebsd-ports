@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	sms
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	polish
-MASTER_SITES=	http://ceti.pl/~miki/komputery/download/sms/
+MASTER_SITES=	http://ceti.pl/~miki/komputery/download/sms/ \
+		http://radioemiter.pl/~mjd/slackware/sms2/ \
+		http://pyzmen.kam.pl/sms/
 
 MAINTAINER=	pyzmen@kam.pl
 COMMENT=	Send SMS to cellular phones in Poland (Idea, ERA, Plus)
