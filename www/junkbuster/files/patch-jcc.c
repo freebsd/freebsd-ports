@@ -1,6 +1,6 @@
---- jcc.c.orig	Fri Oct 30 22:58:48 1998
-+++ jcc.c	Sat Mar 11 11:42:32 2000
-@@ -96,9 +96,27 @@
+--- jcc.c.orig	Sun Sep 23 10:38:37 2001
++++ jcc.c	Sun Sep 23 10:39:23 2001
+@@ -100,9 +100,27 @@
  
  char DEFAULT_USER_AGENT[] ="User-Agent: Mozilla/3.01Gold (Macintosh; I; 68K)";
  
@@ -26,19 +26,19 @@
  int hideConsole     = 0;
 +int tinygif         = 0;
  
- #ifdef _WIN32
- #define sleep(N)	Sleep(((N) * 1000))
-@@ -198,6 +216,9 @@
- 	struct cookie_spec *cs;
- 	struct gateway *gw;
+ char *logfile = NULL;
+ FILE *logfp;
+@@ -351,6 +369,9 @@
  	struct http_request *http;
-+	char *my_image_regexp = ".*(\\.gif|\\.jpe?g|\\gif$|\\jpe?g$)";
-+	regex_t my_regexp;
-+	int errcode;
+ 	char *iob_buf;
+ 	int iob_len;
++ 	char *my_image_regexp = ".*(\\.gif|\\.jpe?g|\\gif$|\\jpe?g$)";
++ 	regex_t my_regexp;
++ 	int errcode;
+ 
  
  	http = csp->http;
- 
-@@ -328,7 +349,21 @@
+@@ -493,7 +514,21 @@
  				prog, http->hostport, http->path);
  		}
  
@@ -61,7 +61,7 @@
  
  		if(DEBUG(LOG)) fwrite(p, strlen(p), 1, logfp);
  
-@@ -704,6 +739,11 @@
+@@ -926,6 +961,11 @@
  
  			if(strcmp(cmd, "debug") == 0) {
  				debug |= atoi(arg);
