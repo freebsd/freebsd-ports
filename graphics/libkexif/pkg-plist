@@ -1,0 +1,27 @@
+include/libkexif/kexif.h
+include/libkexif/kexifdata.h
+include/libkexif/kexifentry.h
+include/libkexif/kexifutils.h
+lib/libkexif.la
+lib/libkexif.so
+lib/libkexif.so.0
+libdata/pkgconfig/libkexif.pc
+share/locale/br/LC_MESSAGES/libkexif.mo
+share/locale/ca/LC_MESSAGES/libkexif.mo
+share/locale/cy/LC_MESSAGES/libkexif.mo
+share/locale/da/LC_MESSAGES/libkexif.mo
+share/locale/de/LC_MESSAGES/libkexif.mo
+share/locale/en_GB/LC_MESSAGES/libkexif.mo
+share/locale/es/LC_MESSAGES/libkexif.mo
+share/locale/et/LC_MESSAGES/libkexif.mo
+share/locale/fr/LC_MESSAGES/libkexif.mo
+share/locale/ga/LC_MESSAGES/libkexif.mo
+share/locale/it/LC_MESSAGES/libkexif.mo
+share/locale/nl/LC_MESSAGES/libkexif.mo
+share/locale/pt/LC_MESSAGES/libkexif.mo
+share/locale/pt_BR/LC_MESSAGES/libkexif.mo
+share/locale/sr/LC_MESSAGES/libkexif.mo
+share/locale/sv/LC_MESSAGES/libkexif.mo
+share/locale/ta/LC_MESSAGES/libkexif.mo
+share/locale/tr/LC_MESSAGES/libkexif.mo
+@dirrm include/libkexif
