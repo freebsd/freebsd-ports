@@ -1,22 +1,19 @@
 @comment $FreeBSD$
 sbin/anubis
 etc/rc.d/anubis.sh.sample
-@unexec install-info --delete %D/info/anubis.info %D/info/dir
-info/anubis.info
-@exec install-info %D/info/anubis.info %D/info/dir
-%%PORTDOCS%%share/doc/anubis/AUTHORS
-%%PORTDOCS%%share/doc/anubis/INSTALL
-%%PORTDOCS%%share/doc/anubis/NEWS
-%%PORTDOCS%%share/doc/anubis/README
-%%PORTDOCS%%share/doc/anubis/THANKS
-%%PORTDOCS%%share/doc/anubis/TODO
-%%PORTDOCS%%@dirrm share/doc/anubis
-share/examples/anubis/1anubisrc
-share/examples/anubis/2anubisrc
-%%PAM%%share/examples/anubis/pam/anubis
-%%PAM%%share/examples/anubis/pam/anubis.allow
-%%PAM%%share/examples/anubis/pam/anubis.deny
-%%PAM%%@dirrm share/examples/anubis/pam
-@dirrm share/examples/anubis
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/1anubisrc
+%%EXAMPLESDIR%%/2anubisrc
+%%PAM%%%%EXAMPLESDIR%%/pam/anubis
+%%PAM%%%%EXAMPLESDIR%%/pam/anubis.allow
+%%PAM%%%%EXAMPLESDIR%%/pam/anubis.deny
+%%PAM%%@dirrm %%EXAMPLESDIR%%/pam
+@dirrm %%EXAMPLESDIR%%
 share/locale/fr/LC_MESSAGES/anubis.mo
 share/locale/tr/LC_MESSAGES/anubis.mo

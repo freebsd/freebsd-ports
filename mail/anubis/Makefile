@@ -73,6 +73,7 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers
 .endif
 
 MAN1=	anubis.1
+INFO=	anubis
 DOCS=	AUTHORS INSTALL NEWS README THANKS TODO
 
 pre-configure:
