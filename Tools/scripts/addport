@@ -153,7 +153,9 @@ if ($addlchk && -f $portlint) {
 		chdir $tmpdir;
 		print "Checking out Mk directory to ensure portlint correctness.\n";
 		system("$cvs co ports/Mk") && errx(1, "Could not checkout Mk directory");
+		system("$cvs co ports/Templates") && errx(1, "Could not checkout Templates directory");
 		system("mv ports/Mk Mk") && errx(1, "Could not set up Mk directory");
+		system("mv ports/Templates Templates") && errx(1, "Could not set up Templates directory");
 		chdir $currentdir;
 	}
 }
