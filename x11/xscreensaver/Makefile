@@ -1,12 +1,12 @@
 # New ports collection makefile for:    xscreensaver
-# Version required:     2.17
+# Version required:     2.24
 # Date created:         10 July 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.10 1998/06/08 01:54:54 jseger Exp $
+# $Id: Makefile,v 1.11 1998/06/08 08:58:13 asami Exp $
 #
 
-DISTNAME=	xscreensaver-2.17
+DISTNAME=	xscreensaver-2.24
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
@@ -16,16 +16,10 @@ MAINTAINER=	jseger@FreeBSD.ORG
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-shadow --without-motif
-# kerberos support doesn't work for 2.2-stable
-OSVERSION!=	sysctl -n kern.osreldate
-.if ${OSVERSION} < 300000
-CONFIGURE_ARGS+= --without-kerberos
-.endif
 USE_X11=	yes
 MAN1=		attraction.1 blitspin.1 bouboule.1 braid.1 bubbles.1 \
-		decayscreen.1 deco.1 drift.1 flag.1 flame.1 forest.1 \
-		galaxy.1 goop.1 grav.1 greynetic.1 halo.1 helix.1 \
+		decayscreen.1 deco.1 drift.1 epicycle.1 flag.1 flame.1 \
+		forest.1 galaxy.1 goop.1 grav.1 greynetic.1 halo.1 helix.1 \
 		hopalong.1 hypercube.1 ifs.1 imsmap.1 jigsaw.1 julia.1  \
 		kaleidescope.1 laser.1 lightning.1 lisa.1 lmorph.1 maze.1 \
 		moire.1 munch.1 noseguy.1 pedal.1 penrose.1 pyro.1 qix.1 \
