@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.mjr.dsl.pipex.com/comp/
 
 MAINTAINER=	trevor@FreeBSD.org
 
+BROKEN=		"Does not fetch"
+
 ALL_TARGET=	aewm++
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		Changelog Changelog.DLR Changelog.jewel INSTALL LICENSE README
