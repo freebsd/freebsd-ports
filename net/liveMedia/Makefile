@@ -106,7 +106,7 @@ liveMedia=		\
 		liveMedia/include/MPEG4GenericRTPSink.hh \
 		liveMedia/include/MPEG4GenericRTPSource.hh \
 		liveMedia/include/MPEG4LATMAudioRTPSource.hh \
-		liveMedia/include/MPEG4VideoFileServerMediaSubsession.hh \\
+		liveMedia/include/MPEG4VideoFileServerMediaSubsession.hh \
 		liveMedia/include/MPEG4VideoStreamFramer.hh \
 		liveMedia/include/MPEGVideoStreamFramer.hh \
 		liveMedia/include/Media.hh \
