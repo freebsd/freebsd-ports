@@ -3,10 +3,10 @@
 # Date created:        4 November 1997
 # Whom:                Satoshi Asami <asami@freebsd.org>
 #
-# $Id: Makefile,v 1.6 1998/02/26 03:32:35 asami Exp $
+# $Id: Makefile,v 1.7 1998/03/04 23:25:30 se Exp $
 #
 
-DISTNAME=	kde-2.1b
+DISTNAME=	kde-3.1b
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# empty
