@@ -37,9 +37,7 @@ do-install:
 .endfor
 
 post-install:
-.for i in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/webalizer.1 ${PREFIX}/man/man1/${i}
-.endfor
+	${INSTALL_MAN} ${WRKSRC}/webalizer.1 ${PREFIX}/man/man1/de-webalizer.1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/de-webalizer
 .for i in ${DOC1}
