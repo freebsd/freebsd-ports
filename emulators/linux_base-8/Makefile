@@ -3,12 +3,12 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.5 1995/11/14 13:03:13 asami Exp $
+# $Id: Makefile,v 1.6 1995/11/17 17:10:16 asami Exp $
 #
 
 DISTNAME=	linux_lib
 PKGNAME=	linux_lib-1.0
-CATEGORIES=	emulation
+CATEGORIES=	emulators
 
 MAINTAINER=	erich@FreeBSD.org
 

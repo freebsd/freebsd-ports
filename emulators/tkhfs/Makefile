@@ -3,12 +3,12 @@
 # Date created:         17 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.8 1995/09/23 20:26:37 jmz Exp $
+# $Id: Makefile,v 1.9 1995/10/05 14:13:37 jmz Exp $
 #
 
 DISTNAME=	tkhfs
 PKGNAME=	tkhfs-2.4
-CATEGORIES+=	x11
+CATEGORIES+=	emulation x11
 MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
 
 MAINTAINER=	jmz@FreeBSD.org
