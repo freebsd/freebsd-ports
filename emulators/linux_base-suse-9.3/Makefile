@@ -16,6 +16,10 @@ DISTFILES=		redhat-release-8.0-8.noarch.rpm \
 			${RPM_SETUP} \
 			filesystem-2.1.6-5.noarch.rpm \
 			basesystem-8.0-1.noarch.rpm \
+			libattr-2.0.8-3.${MACHINE_ARCH}.rpm \
+			libacl-2.0.11-2.${MACHINE_ARCH}.rpm \
+			libelf-0.8.2-2.${MACHINE_ARCH}.rpm \
+			bzip2-libs-1.0.2-5.${MACHINE_ARCH}.rpm \
 			termcap-11.0.1-13.noarch.rpm \
 			compat-db-3.3.11-2.${MACHINE_ARCH}.rpm \
 			db4-4.0.14-14.${MACHINE_ARCH}.rpm \
@@ -36,8 +40,6 @@ DISTFILES=		redhat-release-8.0-8.noarch.rpm \
 			libstdc++-3.2-7.i386.rpm \
 			slang-1.4.5-11.${MACHINE_ARCH}.rpm \
 			sh-utils-2.0.12-3.${MACHINE_ARCH}.rpm \
-			librpm404-4.0.4-8x.27.${MACHINE_ARCH}.rpm \
-			rpm404-python-4.0.4-8x.27.${MACHINE_ARCH}.rpm \
 			rpm-4.1-1.06.${MACHINE_ARCH}.rpm \
 			libgcc-3.2-7.${MACHINE_ARCH}.rpm \
 			${RPM_FREETYPE}
@@ -49,7 +51,7 @@ PATCHFILES=		${UPDATES}
 MAINTAINER=		trevor@FreeBSD.org
 COMMENT=	Base set of packages needed in Linux mode (only for i386)
 
-BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
+EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
 RESTRICTED=		"binaries under GNU GPL without accompanying source"
 CONFLICTS=		linux_base-*
