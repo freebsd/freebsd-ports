@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Jan  5 04:38:27 2001
-+++ Makefile	Sun Jan 21 18:52:58 2001
+--- Makefile.orig	Sat Dec  8 08:00:11 2001
++++ Makefile	Tue Jan 22 16:15:27 2002
 @@ -1,18 +1,18 @@
  #								Csound Makefile
  # edit the following definitions according to need:
@@ -34,34 +34,35 @@
  # choose any of -
  #	-DSYS5	    invoke System 5 headers (e.g. 'string.h' for 'strings.h')
  #	-DWINDOWS   include window system calls (X11, SGI, or FG graphics)
-@@ -52,7 +53,7 @@
+@@ -52,7 +53,8 @@
  # Be sure to include 'LINUXaudio.o' under 'AUDOBJ' below as well.
  #                                  --  Jonathan Mohr  1995 Oct 17
  
--CFLAGS = -O2 $(RPM_OPT_FLAGS) $(DEFINES)
-+CFLAGS += -g $(CPPFLAGS) $(DEFINES) $(LDFLAGS)
+-CFLAGS = -O2 -march=i686 -malign-loops=4 -malign-jumps=4 -DWITHx87 $(RPM_OPT_FLAGS) $(DEFINES)
++CFLAGS = $(CPPFLAGS) $(LDFLAGS) $(DEFINES)
++
  #	-O		Simple optimisation
  #	-O2		to be more specific about the optimization level
  #	-f		compile single-precision floats (4.3,VAX,DEC-RISC)
-@@ -73,7 +74,7 @@
+@@ -76,7 +78,7 @@
  #	-I/usr/openwin/include		Solaris openwin interface
  #	-I/usr/demo/SOUND/include	Solaris sound interface
  
--LIBS =	-L /usr/X11R6/lib -lX11 -lbsd -ltcl -ltk -lm 
-+LIBS =	-L$(X11BASE)/lib -L$(LOCALBASE)/lib -lX11 -ltcl83 -ltk83 -lm 
+-LIBS =	-L /usr/X11R6/lib -lX11 -ltcl -ltk -lm 
++LIBS =	-L$(X11BASE)/lib -L$(LOCALBASE)/lib -lX11 -ltcl83 -ltk83 -lm
  #	-lefence
  #	-lm		    		required
  #	-lX11				for X window calls
-@@ -236,7 +237,7 @@
+@@ -242,7 +244,7 @@
  all:		$(PROGS) $(SUBDIRS)            	#must be run in this order
  
- csound:		$(COBJS) $(CSUM) $(CDEP) csound.txt
+ csound:		$(COBJS) $(CSUM) $(CDEP) csound.xmg
 -		$(CC) $(CFLAGS) -o csound $(COBJS) $(LIBS)
 +		$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o csound $(COBJS) $(LIBS)
  
  TAGS:	$(CSRCS) $(HDRS)
  		etags $(CSRCS) $(HDRS)
-@@ -335,15 +336,15 @@
+@@ -341,13 +343,13 @@
  		cd midifils; rm -f *.bak *~
  		cd cscofils; rm -f *.bak *~
  
@@ -70,18 +71,15 @@
 -	/usr/local/bin/scsort /usr/local/bin/extract /usr/local/bin/sndinfo \
 -	/usr/local/bin/scale /usr/local/bin/mixer /usr/local/bin/extractor \
 -	/usr/local/bin/envext /usr/local/bin/pvlook /usr/local/bin/sdif2ad \
--	/usr/local/bin/dnoise /usr/local/bin/srconv /usr/local/lib/csound.txt
+-	/usr/local/bin/dnoise /usr/local/bin/srconv
 -	(cd /usr/local/bin; tar cvzf ~/csound/CSLinux.bin.tgz csound \
-+CSLinux.bin.tgz: $(PREFIX)/bin/csound $(PREFIX)/bin/hetro \
-+	$(PREFIX)/bin/lpanal $(PREFIX)/bin/pvanal $(PREFIX)/bin/scot \
-+	$(PREFIX)/bin/scsort $(PREFIX)/bin/extract $(PREFIX)/bin/sndinfo \
-+	$(PREFIX)/bin/scale $(PREFIX)/bin/mixer $(PREFIX)/bin/extractor \
-+	$(PREFIX)/bin/envext $(PREFIX)/bin/pvlook $(PREFIX)/bin/sdif2ad \
-+	$(PREFIX)/bin/dnoise $(PREFIX)/lib/csound.txt
-+	(cd $(PREFIX)/bin; tar cvzf ~/csound/CSLinux.bin.tgz csound \
++CSLinux.bin.tgz: ${PREFIX}/bin/csound ${PREFIX}/bin/hetro \
++	${PREFIX}/bin/lpanal ${PREFIX}/bin/pvanal ${PREFIX}/bin/scot \
++	${PREFIX}/bin/scsort ${PREFIX}/bin/extract ${PREFIX}/bin/sndinfo \
++	${PREFIX}/bin/scale ${PREFIX}/bin/mixer ${PREFIX}/bin/extractor \
++	${PREFIX}/bin/envext ${PREFIX}/bin/pvlook ${PREFIX}/bin/sdif2ad \
++	${PREFIX}/bin/dnoise ${PREFIX}/bin/srconv
++	(cd ${PREFIX}/bin; tar cvzf ~/csound/CSLinux.bin.tgz csound \
  	hetro lpanal pvanal scot scsort extract sndinfo scale mixer \
--	extractor envext pvlook sdif2ad dnoise srconv -C /usr/local/lib csound.txt)
-+	extractor envext pvlook sdif2ad dnoise -C $(PREFIX)/lib csound.txt)
+ 	extractor envext pvlook sdif2ad dnoise srconv)
  
- Csound.tar.gz:  all_files \
- 	$(CSRCS) $(HDRS) \

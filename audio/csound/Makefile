@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	csound
-PORTVERSION=	4.13
+PORTVERSION=	4.16
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.maths.bath.ac.uk/pub/dream/newest/
-DISTFILES=	Csound${PORTVERSION}.tar.gz
+DISTNAME=	Csound${PORTVERSION}
 DIST_SUBDIR=	csound
-EXTRACT_ONLY=	Csound${PORTVERSION}.tar.gz
 
 MAINTAINER=	trevor@FreeBSD.org
 
-BROKEN=		"distfile was overwritten"
 LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83 \
 		tk83:${PORTSDIR}/x11-toolkits/tk83
 
@@ -24,6 +22,7 @@ RESTRICTED=	"no redistribution; no commercial use except to make music (see http
 MAKE_ENV=	CPPFLAGS="-I${PREFIX}/include" \
 		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib"
 NO_WRKSUBDIR=	yes
+PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 USE_X_PREFIX=	yes
 
@@ -32,21 +31,22 @@ pre-build:
 
 post-build:
 	${RM} -f ${PLIST}
-	@for i in `find ${WRKDIR} -type f -perm 755`; do \
+	for i in `find ${WRKDIR} -type f -perm 755`; do \
 		${ECHO} bin/`${BASENAME} $${i}` >> ${PLIST}; \
 	done
-	${ECHO} share/csound/csound.dat >> ${PLIST}
+	${ECHO} share/csound/csound.xmg >> ${PLIST}
 	${ECHO} "@dirrm share/csound" >> ${PLIST}
+	${ECHO} "*** WARNING ***" > ${PKGMESSAGE}
+	${ECHO} "The sources for the csound package have not been" >> ${PKGMESSAGE}
+	${ECHO} "thoroughly reviewed by the FreeBSD maintainer." >> ${PKGMESSAGE}
 
 post-patch:
-	${PERL} -pi -e "s:/usr/local/lib:${PREFIX}/share/csound:g" ${WRKSRC}/getstring.c
-	${PERL} -pi -e "s:csound.txt:csound.dat:g" ${WRKSRC}/getstring.c
+	${PERL} -pi -e "s:/usr/local/lib:${DATADIR}:g" ${WRKSRC}/getstring.c
 
 do-install:
 	${MKDIR} ${PREFIX}/share/csound
-	${INSTALL_DATA} ${WRKSRC}/csound.txt ${PREFIX}/share/csound/csound.dat
-	for i in `find ${WRKDIR} -type f -perm 755`; do \
-		${INSTALL_PROGRAM} $${i} ${PREFIX}/bin ; \
-	done
+	${INSTALL_DATA} ${WRKSRC}/csound.xmg ${DATADIR}/csound.xmg
+	${FIND} ${WRKDIR} -type f -perm 755 \
+		-exec ${INSTALL_PROGRAM} {} ${PREFIX}/bin \;
 
 .include <bsd.port.mk>
