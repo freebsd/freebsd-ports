@@ -1,23 +1,28 @@
-# New ports collection makefile for:	gThumb
-# Date created:				03 Nov 2001
-# Whom:					Harald Schmalzbauer <H@Schmalzbauer.de>
+# New ports collection makefile for:	gThumb2
+# Date created:				17 Aug 2002
+# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gthumb
-PORTVERSION=	0.13
+PORTNAME=	gthumb2
+PORTVERSION=	1.103
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gthumb
+DISTNAME=	gthumb-${PORTVERSION}
 
-MAINTAINER=	H@Schmalzbauer.de
+MAINTAINER=	verbophobe@hotmail.com
+
+LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
+		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack libglade gnomevfs
+USE_GNOME=	gnomeprefix gnomehack
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
