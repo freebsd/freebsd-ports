@@ -150,6 +150,7 @@
     SUBDIR += rpc
     SUBDIR += ruby-algebra
     SUBDIR += ruby-bitvector
+    SUBDIR += ruby-gmp
     SUBDIR += ruby-gnuplot
     SUBDIR += ruby-gsl
     SUBDIR += ruby-math3d
