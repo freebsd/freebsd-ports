@@ -1,0 +1,8 @@
+--- src/uschedule_intro.7.in.orig	Sat Oct 20 10:46:48 2001
++++ src/uschedule_intro.7.in	Mon Nov 25 10:03:02 2002
+@@ -1,4 +1,4 @@
+-.TH uschedule_intro 1 \*(VE \*(PA      
++.TH uschedule_intro 7 \*(VE \*(PA      
+ .hy 0
+ .URL "Uwe Ohse" ../uwe.html
+ .br

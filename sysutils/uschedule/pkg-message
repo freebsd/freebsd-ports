@@ -1,0 +1,12 @@
+
+Post-installation information:
+
+Please read uschedule_intro(7) and visit http://www.ohse.de/uwe/uschedule.html
+for further and maybe more up-to-date information.
+
+To stop cron(8) from being started at system boot, specify
+
+cron_enable=NO
+
+in /etc/rc.conf. See rc.conf(5) and /etc/defaults/rc.conf for further
+information.
