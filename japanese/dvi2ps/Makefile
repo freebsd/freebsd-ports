@@ -16,7 +16,8 @@ MAINTAINER=	mita@FreeBSD.org
 BUILD_DEPENDS=	${PREFIX}/lib/libkpathsea.a:${PORTSDIR}/japanese/ptex-common
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
-MAN1=		dvi2ps.1 ../ja/man1/dvi2ps.1
+MAN1=		dvi2ps.1
+MANLANG=	"" ja
 
 post-patch:
 	@(cd ${WRKSRC}; make newlib)

@@ -20,7 +20,8 @@ EXTRACT_BEFORE_ARGS=	# Empty
 EXTRACT_AFTER_ARGS=	> /dev/null
 
 NO_WRKSUBDIR=	yes
-MAN1=		nkf.1 ../ja/man1/nkf.1
+MAN1=		nkf.1
+MANLANG=	"" ja
 ALL_TARGET=	nkf
 
 do-extract:
