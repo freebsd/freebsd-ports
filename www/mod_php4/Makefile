@@ -77,10 +77,6 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		PHP4_OPTIONS="${PHP4_OPTIONS}" \
 		REALCURDIR="${.CURDIR}"
 
-AP_LIBEXEC=	${PREFIX}/libexec/apache
-
-PLIST_SUB=	AP_LIBEXEC=${AP_LIBEXEC:S/^${PREFIX}\///}
-
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
 .if !defined(STANDALONE) && !defined(WITH_APACHE2)
