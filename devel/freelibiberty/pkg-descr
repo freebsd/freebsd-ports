@@ -1,0 +1,5 @@
+This is my freely-redistributable libiberty clone.  I wrote this because I
+needed getopt_long().  Anything else is in here because I got bored and
+added it.  None of it is guarenteed to work.
+
+James Howard <howardjp@wam.umd.edu>

@@ -1,0 +1,29 @@
+# New ports collection makefile for: free-libiberty
+# Version required:	0.1
+# Date created: 	30 October 1999
+# Whom:			James Howard <howardjp@wam.umd.edu>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	libiberty-0.1
+PKGNAME=	freelibiberty-0.1
+CATEGORIES=	devel
+MASTER_SITES=	ftp://ftp.wam.umd.edu/pub/howardjp/software/libiberty/ \
+		http://www.wam.umd.edu/~howardjp/software/libiberty/ \
+		ftp://dragon.ham.muohio.edu/pub/howardjp/software/libiberty/
+
+MAINTAINER=	howardjp@wam.umd.edu
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/libiberty.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libiberty_p.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libiberty.so.1 ${PREFIX}/lib
+	${LN} -sf ${PREFIX}/lib/libiberty.so.1 ${PREFIX}/lib/libiberty.so
+	${INSTALL_DATA} ${WRKSRC}/libiberty.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/getopt.h ${PREFIX}/include
+
+post-install:
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+
+.include <bsd.port.mk>
