@@ -16,6 +16,8 @@ COMMENT=	Amateur Radio SSTV/FAX reception program for unix
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png
 
+BROKEN=		Unfetchable
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

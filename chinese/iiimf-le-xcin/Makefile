@@ -17,6 +17,8 @@ COMMENT=	IIIMF xcin language engine, a traditional Chinese input method
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 RUN_DEPENDS=	${LOCALBASE}/lib/im/htt:${PORTSDIR}/textproc/iiimf-server
 
+BROKEN=		Unfetchable
+
 WRKSRC=		${WRKDIR}/iiimf-xcin
 USE_BZIP2=	yes
 USE_XLIB=	yes
