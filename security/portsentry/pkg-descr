@@ -1,0 +1,5 @@
+Sentry is part of the Abacus Project suite of security tools.
+It is a program designed to detect and respond to port scans
+against a target host in real-time. There are other port scan
+detectors that peform similar detection of scans,but the Sentry
+has some unique features that may make it worth looking into.

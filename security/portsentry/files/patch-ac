@@ -1,0 +1,11 @@
+--- sentry_config.h.orig	Sat Dec 19 11:05:40 1998
++++ sentry_config.h	Sat Dec 19 11:05:52 1998
+@@ -32,7 +32,7 @@
+ 
+ /* These are probably ok. Be sure you change the Makefile if you */
+ /* change the path */
+-#define CONFIG_FILE "/usr/local/abacus/sentry.conf"
++#define CONFIG_FILE "/usr/local/etc/sentry.conf"
+ 
+ /* The location of Wietse Venema's TCP Wrapper hosts.deny file */
+ #define WRAPPER_HOSTS_DENY "/etc/hosts.deny"
