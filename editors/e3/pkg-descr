@@ -1,0 +1,6 @@
+e3 is a full featured text editor written in NASM assembler.  It is highly
+optimized for size. For the command syntax you can choice between the
+families of Wordstar(TM), EMACS, Pico or vi editors. The executable's size is
+below 10000 byte, so you won't waste your disk space ;-)
+
+WWW: http://www.sax.de/~adlibit/
