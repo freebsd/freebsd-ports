@@ -3,13 +3,13 @@
 # Date created:		20 Oct 1996
 # Whom:			Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/17 11:10:21 asami Exp $
+# $Id: Makefile,v 1.2 1997/08/25 14:32:30 itojun Exp $
 #
 
 DISTNAME=	txtmerge101
 PKGNAME=	txtmerge-1.01
-CATEGORIES=graphics
-MASTER_SITES=ftp://ftp.cs.uni-magdeburg.de/pub/www/xanime/ \
+CATEGORIES=	graphics
+MASTER_SITES=	ftp://ftp.cs.uni-magdeburg.de/pub/www/xanime/ \
 		ftp://ftp.doc.ic.ac.uk/computing/information-systems/WWW/xanime/
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
