@@ -1,26 +1,26 @@
---- Makefile.in.orig	Tue Mar  7 00:08:23 1995
-+++ Makefile.in	Tue Mar  7 00:07:44 1995
+--- Makefile.in-orig	Wed Apr 19 18:36:52 1995
++++ Makefile.in	Wed Apr 19 18:38:09 1995
 @@ -22,14 +22,14 @@
  
  # Where the installed binary goes.
- bindir = $(exec_prefix)/bin
+ bindir = ${exec_prefix}/bin
 -binprefix = 
 +binprefix = j
  
  # Where the help file goes.
- datadir = $(prefix)/lib
+ datadir = ${prefix}/share
  
- mandir = $(prefix)/man/man$(manext)
+ mandir = ${prefix}/man/man${manext}
  manext = 1
 -manprefix = 
 +manprefix = j
  
  #### End of system configuration section. ####
  
-@@ -70,12 +70,12 @@
- $(OBJ): less.h defines.h funcs.h
+@@ -72,12 +72,12 @@
+ ${OBJ}: less.h defines.h funcs.h
  
- filename.$(O): filename.c
+ filename.${O}: filename.c
 -	${CC} -c -DHELPFILE=\"${datadir}/less.hlp\" -I. ${CPPFLAGS} ${CFLAGS} ${srcdir}/filename.c
 +	${CC} -c -DHELPFILE=\"${datadir}/jless.hlp\" -I. ${CPPFLAGS} ${CFLAGS} ${srcdir}/filename.c
  
@@ -32,7 +32,7 @@
  	${INSTALL_DATA} ${srcdir}/less.nro ${mandir}/${manprefix}less.${manext}
  	${INSTALL_DATA} ${srcdir}/lesskey.nro ${mandir}/${manprefix}lesskey.${manext}
  	rm -f ${mandir}/${manprefix}less.${manext}.gz ${mandir}/${manprefix}lesskey.${manext}.gz
-@@ -86,7 +86,7 @@
+@@ -88,7 +88,7 @@
  
  uninstall:
  	rm -f ${bindir}/${binprefix}less ${bindir}/${binprefix}lesskey
