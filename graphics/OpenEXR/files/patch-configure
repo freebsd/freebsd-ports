@@ -1,6 +1,6 @@
---- configure.orig	Tue Jan 21 17:47:43 2003
-+++ configure	Mon Jan 27 15:03:50 2003
-@@ -1559,10 +1559,12 @@
+--- configure.orig	Wed Jun  9 16:49:46 2004
++++ configure	Wed Jun  9 16:52:42 2004
+@@ -1610,10 +1610,12 @@
  
  # The aliases save the names the user supplied, while $host etc.
  # will get canonicalized.
@@ -12,8 +12,8 @@
 +fi
  
  OPENEXR_MAJOR_VERSION=1
- OPENEXR_MINOR_VERSION=0
-@@ -8302,6 +8304,7 @@
+ OPENEXR_MINOR_VERSION=2
+@@ -19068,6 +19070,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -21,11 +21,12 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -10533,7 +10536,6 @@
+@@ -20326,7 +20329,7 @@
  echo "$as_me:$LINENO: checking for gcc optimization flags" >&5
  echo $ECHO_N "checking for gcc optimization flags... $ECHO_C" >&6
  old_cflags=$CFLAGS
--CFLAGS="$CFLAGS -O2 -funroll-loops -pipe"
+-CFLAGS="$CFLAGS -pipe"
++#CFLAGS="$CFLAGS -pipe"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
+ _ACEOF

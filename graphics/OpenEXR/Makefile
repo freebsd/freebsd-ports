@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	OpenEXR
-PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTVERSION=	1.2.1
+PORTREVISION=	0
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://www.openexr.com/downloads/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	openexr
 
 MAINTAINER=	nork@FreeBSD.org
-COMMENT=	OpenEXR, a high dynamic-range (HDR) image file format developed by ILM
+COMMENT=	A high dynamic-range (HDR) image file format
 
 USE_LIBTOOL_VER=13
 GNU_CONFIGURE=	YES
+USE_GMAKE=	yes
 INSTALLS_SHLIB=	YES
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}-${PORTVERSION}
