@@ -18,6 +18,8 @@ COMMENT=	Network backup client to NetWorker servers
 
 NO_BUILD=	yes
 
+ONLY_FOR_ARCHS=	i386 alpha
+
 post-patch:
 	@sed -e "s,^ROOTDIR.*$$,ROOTDIR=${PREFIX}," ${WRKSRC}/networker.sh >\
 		${WRKDIR}/NWCTMP && chmod +w ${WRKSRC}/networker.sh && \
