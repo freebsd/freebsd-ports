@@ -3708,6 +3708,7 @@ lire		ports/sysutils/lire
 listmanager	ports/mail/listmanager
 liveMedia	ports/net/liveMedia
 livecd		ports/sysutils/livecd
+ljcharm		ports/deskutils/ljcharm
 lla		ports/net/lla
 llnlxdir	ports/ftp/llnlxdir
 llnlxftp	ports/ftp/llnlxftp
