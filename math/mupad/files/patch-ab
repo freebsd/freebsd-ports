@@ -1,0 +1,15 @@
+--- share/bin/sysinfo.orig	Mon Feb 26 21:16:44 2001
++++ share/bin/sysinfo	Sun Apr 29 08:21:39 2001
+@@ -10,7 +10,11 @@
+ 
+ PATH=/bin:/usr/bin:/usr/ucb:/usr/bsd
+ 
+-ARCH=UNKNOWN
++ARCH=freebsd
++
++echo $ARCH
++
++exit
+ 
+ if [ -x /usr/bin/hostinfo ] ; then
+     if [ "`hostinfo | grep NeXT`" != "" ] ; then

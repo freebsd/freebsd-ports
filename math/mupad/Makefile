@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mupad
-PORTVERSION=	1.4.2
+PORTVERSION=	2.0.0
 CATEGORIES=	math linux
-MASTER_SITES=	ftp://ftp.mupad.de/MuPAD/distrib/unix/%SUBDIR%/ \
-		ftp://archives.cs.ehime-u.ac.jp/pub/MuPAD/distrib/unix/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. XVIEW
-DISTFILES=	bin_linux_142.tgz share_142.tgz xview_linux.tgz
+MASTER_SITES=	ftp://ftp.mupad.de/MuPAD/distrib/unix/ \
+		ftp://archives.cs.ehime-u.ac.jp/pub/MuPAD/distrib/unix/ \
+		ftp://ftp.uni-paderborn.de/pub/MuPAD/distrib/unix/
+DISTFILES=	bin_linux_200.tgz share_200.tgz
 DIST_SUBDIR=	mupad
 
 MAINTAINER=	chat95@mbox.kyoto-inet.or.jp
@@ -26,23 +26,21 @@ NO_FILTER_SHLIBS=	yes
 NO_WRKSUBDIR=		yes
 NO_BUILD=		yes
 
-MAN1=		mmg.1 mupad.1 xmupad.1
-MANN=		xrastool.n xview.n
-
-post-extract:
-	@${RM} -f ${WRKSRC}/share/doc/man/man1/.#mmg.1.1.6
+MAN1=		mmg.1 mmgd.1 mupad.1 xmupad.1
 
 do-install:
-	@${MKDIR} ${PREFIX}/mupad/freebsd/xview ${PREFIX}/mupad/share
+	@${MKDIR} ${PREFIX}/mupad/freebsd
+	@${MKDIR} ${PREFIX}/mupad/share
 	find ${WRKSRC} -name "*.orig" | xargs ${RM}
-	${TAR} cf - -C ${WRKSRC}/xview . | ${TAR} xf - -C ${PREFIX}/mupad/freebsd/xview
 	${TAR} cf - -C ${WRKSRC}/linux . | ${TAR} xf - -C ${PREFIX}/mupad/freebsd
-	${TAR} --exclude man1 --exclude mann -cf - -C ${WRKSRC}/share . | ${TAR} xf - -C ${PREFIX}/mupad/share
+	${TAR} --exclude man1 -cf - -C ${WRKSRC}/share . | ${TAR} xf - -C ${PREFIX}/mupad/share
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/mupad
-.for d in COPYRIGHT INSTALL LICENSE LIC_EDU TroubleShooting
-	${INSTALL_DATA} ${WRKSRC}/$d ${PREFIX}/mupad
+	${LN} -s ${PREFIX}/mupad/share/unix/locale/C/License.help ${PREFIX}/mupad/LICENSE
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/mupad
+.for d in mupad mmg
+	brandelf -t Linux ${PREFIX}/mupad/freebsd/bin/$d
 .endfor
-.for section in 1 n
+.for section in 1
 .for d in ${MAN${section:U}}
 	${INSTALL_MAN} ${WRKSRC}/share/doc/man/man${section}/$d ${PREFIX}/man/man${section}
 .endfor
