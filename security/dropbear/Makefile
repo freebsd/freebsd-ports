@@ -8,7 +8,7 @@
 PORTNAME=	dropbear
 PORTVERSION=	0.37
 CATEGORIES=	security ipv6
-MASTER_SITES=	http://matt.ucc.asn.au/dropbear/
+MASTER_SITES=	http://matt.ucc.asn.au/dropbear/releases/
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	An SSH 2 server, designed to be usable in small memory environments
