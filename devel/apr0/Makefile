@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 # Tunables:
+# APR_UTIL_WITHOUT_THREADS:	disable threads support
 # APR_UTIL_WITH_GDBM:		force dependency on the GNU dbm
 # APR_UTIL_WITHOUT_GDBM:	unconditionally disable the use of GNU dbm
 # APR_UTIL_WITH_BERKELEY_DB:	force dependency on Sleepycat's Berkeley DB 4
@@ -14,7 +15,7 @@
 
 PORTNAME=	apr
 PORTVERSION=	0.9.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 #MASTER_SITES=	http://www.apache.org/dist/apr/
 #DISTFILES=	apr-${PORTVERSION}.tar.gz apr-util-${PORTVERSION}.tar.gz
@@ -53,10 +54,19 @@ APR_UTIL_CONF_ARGS=	--with-apr=../apr-${PORTVERSION} \
 
 .include <bsd.port.pre.mk>
 
+.if defined(APR_UTIL_WITHOUT_THREADS)
+CONFIGURE_ARGS+=	--disable-threads
+APR_UTIL_CONF_ARGS+=	--disable-threads
+.if defined(PKGNAMESUFFIX)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nothr
+.else
+PKGNAMESUFFIX=	-nothr
+.endif
+.endif
+
 .if defined(APR_UTIL_WITHOUT_GDBM)
 APR_UTIL_CONF_ARGS+=	--without-gdbm
-.else
-.if defined(APR_UTIL_WITH_GDBM) || exists(${LOCALBASE}/lib/libgdbm.so.3)
+.elif defined(APR_UTIL_WITH_GDBM) || exists(${LOCALBASE}/lib/libgdbm.so.3)
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gdbm
@@ -64,12 +74,10 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gdbm
 PKGNAMESUFFIX=	-gdbm
 .endif
 .endif
-.endif
 
 .if defined(APR_UTIL_WITHOUT_BERKELEY_DB)
 APR_UTIL_CONF_ARGS+=	--without-berkeley-db
-.else
-.if defined(APR_UTIL_WITH_BERKELEY_DB) || exists(${LOCALBASE}/lib/libdb4.so.0)
+.elif defined(APR_UTIL_WITH_BERKELEY_DB) || exists(${LOCALBASE}/lib/libdb4.so.0)
 LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-db4
@@ -77,7 +85,41 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-db4
 PKGNAMESUFFIX=	-db4
 .endif
 .endif
+
+pre-extract:
+	@${ECHO_MSG} ""
+.if defined(APR_UTIL_WITHOUT_THREADS)
+	@${ECHO_MSG} "apr library will be built without threads support."
+.else
+	@${ECHO_MSG} "apr library will be built with threads support."
+	@${ECHO_MSG} "All programs which use apr must be linked with threads too."
+	@${ECHO_MSG} "You can disable threads by defining APR_UTIL_WITHOUT_THREADS."
 .endif
+	@${ECHO_MSG} ""
+.if defined(APR_UTIL_WITHOUT_GDBM)
+	@${ECHO_MSG} "GDBM support is disabled."
+.elif defined(APR_UTIL_WITH_GDBM)
+	@${ECHO_MSG} "GDBM support is forced."
+.elif exists(${LOCALBASE}/lib/libgdbm.so.3)
+	@${ECHO_MSG} "GDBM support is enabled."
+	@${ECHO_MSG} "You can disable GDBM support by defining APR_UTIL_WITHOUT_GDBM."
+.else
+	@${ECHO_MSG} "GDBM was not found."
+	@${ECHO_MSG} "You can force GDBM support by defining APR_UTIL_WITH_GDBM."
+.endif
+	@${ECHO_MSG} ""
+.if defined(APR_UTIL_WITHOUT_BERKELEY_DB)
+	@${ECHO_MSG} "Berkeley db4 support is disabled."
+.elif defined(APR_UTIL_WITH_BERKELEY_DB)
+	@${ECHO_MSG} "Berkeley db4 support forced."
+.elif exists(${LOCALBASE}/lib/libdb4.so.0)
+	@${ECHO_MSG} "Berkeley db4 support is enabled."
+	@${ECHO_MSG} "You can disable Berkeley db4 support by defining APR_UTIL_WITHOUT_BERKELEY_DB."
+.else
+	@${ECHO_MSG} "Berkeley db4 was not found."
+	@${ECHO_MSG} "You can force Berkeley db4 support by defining APR_UTIL_WITH_BERKELEY_DB."
+.endif
+	@${ECHO_MSG} ""
 
 post-extract:
 	cd ${WRKDIR}; \
