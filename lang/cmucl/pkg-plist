@@ -1,6 +1,6 @@
 bin/lisp
 share/doc/cmucl/README
-share/doc/cmucl/release-18d.txt
+share/doc/cmucl/release-18e.txt
 lib/cmucl/sample-wrapper
 lib/cmucl/internals.h
 lib/cmucl/lisp.nm

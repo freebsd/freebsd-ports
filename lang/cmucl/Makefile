@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	cmucl
-PORTVERSION=	18d
+PORTVERSION=	18e
 CATEGORIES=	lang
 MASTER_SITES=	http://www2.cons.org/freebsd-distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	cracauer
-DISTNAME=	cmucl-18d-x86-FreeBSD
+DISTNAME=	cmucl-18e-x86-freebsd
 
 MAINTAINER=	cracauer@cons.org
 COMMENT=	The CMU implementation of Common Lisp
@@ -25,6 +25,7 @@ MAN1=		lisp.1 cmucl.1
 
 .include <bsd.port.pre.mk>
 
+# portlint wants this earlier but this doesn't work because weneed OSVERSION
 .if ${OSVERSION} >= 500000
 LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
 .endif
