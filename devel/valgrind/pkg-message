@@ -7,3 +7,13 @@ Note: This version of valgrind does not support some older processors,
 
       As a workaround you can use the devel/valgrind-snapshot port, which is
       based on a more recent snapshot.
+
+Note 2: A sample suppression file might have been installed to \
+      %%PREFIX%%/etc/freebsd-default.supp. It makes Valgrind hide warnings
+      caused by flawed code sequences - if any - in your system libraries,
+      so that you can concentrate on the warnings issued for your own code.
+
+      To use these suppressions, either pass
+      --suppressions=%%PREFIX%%/etc/freebsd-default.supp
+      to Valgrind on the commandline, or add that line to your
+      ~/.valgrindrc file, which is the recommended way.

@@ -13,12 +13,13 @@ lib/valgrind/glibc-2.1.supp
 lib/valgrind/glibc-2.2.supp
 lib/valgrind/glibc-2.3.supp
 lib/valgrind/hp2ps
-lib/valgrind/libc_r.so.5
-lib/valgrind/libkse.so.1
+%%RELENG_4%%lib/valgrind/libc_r.so.4
+%%RELENG_5%%lib/valgrind/libc_r.so.5
+%%RELENG_5%%lib/valgrind/libkse.so.1
 lib/valgrind/libpthread.so
 lib/valgrind/libpthread.so.0
-lib/valgrind/libpthread.so.1
-lib/valgrind/libthr.so.1
+%%RELENG_5%%lib/valgrind/libpthread.so.1
+%%RELENG_5%%lib/valgrind/libthr.so.1
 lib/valgrind/stage2
 lib/valgrind/valgrind
 lib/valgrind/vg_inject.so
@@ -37,6 +38,7 @@ lib/valgrind/vgskin_memcheck.so
 lib/valgrind/vgskin_none.so
 lib/valgrind/xfree-3.supp
 lib/valgrind/xfree-4.supp
+%%VALGRIND_SUPPFILE%%lib/valgrind/freebsd-default.supp
 libdata/pkgconfig/valgrind.pc
 %%PORTDOCS%%%%DOCSDIR%%/ac_main.html
 %%PORTDOCS%%%%DOCSDIR%%/cc_main.html

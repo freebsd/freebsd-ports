@@ -36,6 +36,7 @@ lib/valgrind/vgskin_none.so
 lib/valgrind/xfree-3.supp
 lib/valgrind/xfree-4.supp
 libdata/pkgconfig/valgrind.pc
+%%VALGRIND_SUPPFILE%%etc/freebsd-default.supp
 %%PORTDOCS%%%%DOCSDIR%%/ac_main.html
 %%PORTDOCS%%%%DOCSDIR%%/cc_main.html
 %%PORTDOCS%%%%DOCSDIR%%/cg_main.html
