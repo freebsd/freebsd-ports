@@ -13,29 +13,32 @@ MASTER_SITES=	http://www.geocities.com/gfslicer/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext-old
+BUILD_DEPENDS=	${LOCALBASE}/share/automake14/automake/install-sh:${PORTSDIR}/devel/automake14
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
 USE_GNOME=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
+MAN1=		gfslicer.1
 MANCOMPRESSED=	yes
-MAN1=	gfslicer.1
 
 post-extract:
 .for file in install-sh missing mkinstalldirs
-	@${LN} -sf ${LOCALBASE}/share/automake/${file} ${WRKSRC}
+	@${LN} -sf ${LOCALBASE}/share/automake14/automake/${file} ${WRKSRC}
 .endfor
 	@${RM} -f ${WRKSRC}/config.cache
 
 post-patch:
-	@${PERL} -pi -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
+		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
+		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
+		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
+		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
 
 post-install:
-	@${CP} ${WRKSRC}/${MAN1}.gz ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${MAN1}.gz ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
