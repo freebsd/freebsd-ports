@@ -36,6 +36,10 @@ MOZILLADIST=	oo_moz1.0RC3_${ARCH}_FreeBSD-4-gcc2.95-system.tar.gz
 EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
 MAINTAINER=	mbr@FreeBSD.org
+
+# OO needs DISPLAY to be set and working
+RESTRICTED=     "No automated build possible"
+
 .if ${OSVERSION} < 500000 && !defined(USE_GCC)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 .endif
