@@ -1,9 +1,9 @@
-# New ports collection makefile for:	apache HTTPD / php 2.0.1
-# Version required:	1.2.5 / 2.0.1
+# New ports collection makefile for:	apache HTTPD / php
+# Version required:	1.2.6 / 3.0
 # Date created:		Wed Sep  3 18:28:20 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id$
+# $Id: Makefile,v 1.45 1998/06/14 09:57:32 andreas Exp $
 #
 
 DISTNAME=	apache_1.2.6
@@ -37,11 +37,11 @@ PHP3_CONF_ARGS=	--prefix=${PREFIX} \
 		--with-system-regex --with-apache=${WRKSRC} \
 		--with-config-file-path=${PREFIX}/lib --disable-debug
 
-.if !defined(PHP3_DBTYPE) || ${PHP3_DBTYPE} != msql && ${PHP3_DBTYPE} != mysql && ${PHP3_DBTYPE} != pgsql
+.if !defined(PHP3_DBTYPE) || ${PHP3_DBTYPE} != msql && ${PHP3_DBTYPE} != mysql && ${PHP3_DBTYPE} != pgsql && ${PHP3_DBTYPE} != dbase
 pre-fetch:
 	@ ${ECHO}
 	@ ${ECHO} "You must set variable PHP3_DBTYPE to msql, mysql or pgsql by typing"
-	@ ${ECHO} "make PHP3_DBTYPE=[ msql | mysql | pgsql ]"
+	@ ${ECHO} "make PHP3_DBTYPE=[ dbase | msql | mysql | pgsql ]"
 	@ ${FALSE}
 .elif defined(PHP3_DBTYPE)
 .if ${PHP3_DBTYPE} == msql
@@ -53,6 +53,8 @@ PHP3_CONF_ARGS+=	--with-mysql=${PREFIX}
 .elif ${PHP3_DBTYPE} == pgsql
 BUILD_DEPENDS+=		${PREFIX}/pgsql/bin/psql:${PORTSDIR}/databases/postgresql
 PHP3_CONF_ARGS+=	--with-pgsql=${PREFIX}/pgsql
+.elif ${PHP3_DBTYPE} == dbase
+PHP3_CONF_ARGS+=	--with-dbase
 .endif
 .endif
 
@@ -75,6 +77,8 @@ pre-configure:
 	${ECHO} "EXTRA_LIBS=-lmd libphp3.a -L${PREFIX}/lib/mysql -lmysqlclient -L${PREFIX}/lib -lgd -lm"  >> ${WRKSRC}/src/Configuration
 .elif defined(PHP3_DBTYPE) && ${PHP3_DBTYPE} == pgsql
 	${ECHO} "EXTRA_LIBS=-lmd libphp3.a -L${PREFIX}/pgsql/lib -lpq -L${PREFIX}/lib -lgd -lm" >> ${WRKSRC}/src/Configuration
+.elif defined(PHP3_DBTYPE) && ${PHP3_DBTYPE} == dbase
+	${ECHO} "EXTRA_LIBS=-lmd libphp3.a libdbf.a -L${PREFIX}/lib -lgd -lm" >> ${WRKSRC}/src/Configuration
 .endif
 
 post-install:
