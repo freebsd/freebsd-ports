@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.javasoft.com/docs/ \
 DISTNAME=	tutorial
 
 MAINTAINER=	znerd@FreeBSD.org
-COMMENT=	Sun's Java Developers Kit tutorial
+COMMENT=	Official Java 2 SDK tutorial
 
 NO_WRKSUBDIR=	yes
 RESTRICTED=	"This software is under license and export control."
