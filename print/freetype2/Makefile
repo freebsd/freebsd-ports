@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freetype2
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	print
 MASTER_SITES=	ftp://freetype.sourceforge.net/pub/freetype/%SUBDIR%/ \
 		${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \

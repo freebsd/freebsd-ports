@@ -1,11 +1,11 @@
---- builds/unix/detect.mk	2000/11/09 14:14:15	1.1
-+++ builds/unix/detect.mk	2000/11/09 14:14:22
-@@ -62,7 +62,7 @@
-     setup: std_setup
+--- builds/unix/detect.mk.orig	Sun Mar  4 17:10:36 2001
++++ builds/unix/detect.mk	Sun Apr  8 01:13:41 2001
+@@ -71,7 +71,7 @@
+   setup: std_setup
  
-     unix-def.mk: $(TOP)/builds/unix/unix-def.in
--	    cd builds/unix; $(USE_CFLAGS) ./configure $(CFG)
-+#	    cd builds/unix; $(USE_CFLAGS) ./configure $(CFG)
+   unix-def.mk: $(TOP)/builds/unix/unix-def.in
+-	  cd builds/unix; ./configure $(CFG)
++#	  cd builds/unix; ./configure $(CFG)
  
-   endif # test Unix
- endif   # test PLATFORM
+ endif   # test PLATFORM unix
+ 
