@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.116 1997/07/29 09:23:58 tg Exp $
+# $Id: Makefile,v 1.117 1997/08/16 03:11:52 gpalmer Exp $
 #
 
     SUBDIR += archie
@@ -32,9 +32,9 @@
     SUBDIR += ldap
     SUBDIR += libsocket++
     SUBDIR += mirror
+    SUBDIR += moxftp
     SUBDIR += mpd
     SUBDIR += mrtg
-    SUBDIR += moxftp
     SUBDIR += ncftp
     SUBDIR += ncftp2
     SUBDIR += netatalk
@@ -70,14 +70,14 @@
     SUBDIR += trafshow
     SUBDIR += ucd-snmp
     SUBDIR += wais
-    SUBDIR += wide-dhcp
     SUBDIR += wget
+    SUBDIR += wide-dhcp
     SUBDIR += wu-ftpd
     SUBDIR += xarchie
     SUBDIR += xipmsg
     SUBDIR += yale-tftpd
     SUBDIR += ytalk
-    SUBDIR += zircon
     SUBDIR += zephyr
+    SUBDIR += zircon
 
 .include <bsd.port.subdir.mk>
