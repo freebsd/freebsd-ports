@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lfm
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.terra.es/personal7/inigoserna/lfm/
 
