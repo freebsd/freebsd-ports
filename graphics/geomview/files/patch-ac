@@ -1,0 +1,19 @@
+--- src/bin/geomview/x11/O.x11/Makefile.orig	Wed Oct 30 17:50:16 1996
++++ src/bin/geomview/x11/O.x11/Makefile	Sun Dec 15 10:34:46 1996
+@@ -5,6 +5,16 @@
+ include ../Makedefs
+ include ../../common/Makedefs.common
+ 
++gvcamui-x11.o:
++	rm -f $@ ${@:.o=.c}
++	${LNSRC} ../gvcamui.c gvcamui-x11.c
++	${CC} -I.. -DMGX11 ${CFLAGS}  -c ${@:.o=.c}
++
++gvcamui-mesa.o:
++	rm -f $@ ${@:.o=.c}
++	${LNSRC} ../gvcamui.c gvcamui-mesa.c
++	${CC} -I.. -DMGOPENGL ${CFLAGS}  -c ${@:.o=.c}
++
+ include ${GEOM}/makefiles/Makerules.obj
+ include ${MKDEPFILE}
+ 

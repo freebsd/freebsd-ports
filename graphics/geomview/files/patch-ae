@@ -1,0 +1,17 @@
+--- src/bin/geomview/x11/Makefile.orig	Mon Nov  4 12:10:47 1996
++++ src/bin/geomview/x11/Makefile	Sun Dec 15 10:34:47 1996
+@@ -25,9 +25,12 @@
+ 		-e 's/^MACHTYPE=.*/MACHTYPE=${MACHTYPE}/' < geomview-x11 > $@
+ 	chmod +x $@
+ 
+-install_script: demand_GEOMROOT geomview
++install_script: demand_GEOMROOT
+ 	sed -e 's|^GEOMROOT=.*$$|GEOMROOT=${GEOMROOT}|' \
+-		-e 's/^MACHTYPE=.*/MACHTYPE=${MACHTYPE}/' < geomview-x11 > geomview
++		-e 's/^MACHTYPE=.*/MACHTYPE=${MACHTYPE}/' \
++		-e '/_GVX/s|$${GEOMROOT}|${PREFIX}/libexec/geomview|' \
++		-e '/_EMODULE/s|$${GEOMROOT}|${PREFIX}/libexec/geomview|' \
++			< geomview-x11 > geomview
+ 	${INSTALL} -m 775 -O -v -F ${BINDIR} geomview
+ 
+ clang:	_always

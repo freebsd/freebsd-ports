@@ -1,0 +1,14 @@
+Geomview and OOGL are part of an ongoing effort at the Geometry Center
+to provide interactive 3D graphics software which is particularly
+appropriate for displaying the kinds of objects and doing the kinds of
+operations of interest in mathematics research and education.  You can
+compute an OOGL data file of a mathematical object that would be
+difficult or impossible to build a model of in the real world.  In
+geomview, besides examining an object in ordinary Euclidean 3-space,
+you can look at objects in hyperbolic 3-space and Euclidean 4-space.
+The hyperbolic model is the projective one, where geodesics are
+straight lines and isometries are represented as 4x4 projective
+matrices.  While geomview is tailored for mathematical visualization,
+it is written to be extensible and can serve as a general-purpose
+tool. Its functionality can be extended in an almost unlimited fashion
+by external modules.

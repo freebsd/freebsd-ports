@@ -1,0 +1,56 @@
+--- makefiles/mk.FreeBSD.orig	Tue Dec 10 16:39:02 1996
++++ makefiles/mk.FreeBSD	Thu Dec 19 11:34:22 1996
+@@ -6,7 +6,7 @@
+ # A machine-specific makefile is included by all other makefiles.
+ #
+ 
+-#CPU = FreeBSD
++CPU = FreeBSD
+ MACHTYPE = x11
+ RANLIB = ranlib
+ CC = gcc
+@@ -17,22 +17,24 @@
+ 
+ # Add the location of the Motif (Xm/*.h) include files to the path.
+ # (Or, add a /usr/include/Xm sym-link and remove this -I option.)
+-SYSCOPTS = -pipe -DBSD -Dalloca=alloca -I/usr/include/X11
++SYSCOPTS = -pipe -DBSD -Dalloca=alloca -I${X11BASE}/include
+ 
+-SYSXLIBDIR = /usr/X11R6/lib
+-SYSMOTIFLIBS = -L${SYSXLIBDIR} -lXm
++SYSXLIBDIR = ${X11BASE}/lib
++SYSMOTIFLIBS = ${MOTIFLIB}
+ SYSXLIBS = -L${SYSXLIBDIR} -lXt -lXext -lX11
+ 
+ # If you have the FORMS library, uncomment these lines and edit:
+ #  set FORMSLIBS to the list of all libs needed
+ #  and FORMSINC to the relevant -I options:
+-# FORMSLIBS = -L/usr/local/lib -lforms -L${SYSXLIBDIR} -lX11
+-# FORMSINC = -I/u/share/include/XForms
++#
++# XForms is available from /usr/ports/x11/xforms.
++FORMSLIBS = -L${X11BASE}/lib -lxforms -lX11
++FORMSINC = -I${X11BASE}/include
+ 
+ # If you have Tcl/Tk libraries (tk 4.0 or later), uncomment and edit:
+ # indicate cc options to find tk-related libraries and include-files.
+-# TKLIBS = -L/usr/local/lib -ltk -ltcl -L${SYSXLIBDIR} -lX11
+-# TKINC = -I/u/share/include
++TKLIBS = -L${LOCALBASE}/lib -ltk41 -ltcl -L${SYSXLIBDIR} -lX11
++TKINC = -I${LOCALBASE}/include
+ 
+ 
+ # Choose or adapt one of the following sets of definitions.
+@@ -43,6 +45,9 @@
+ # MGLIBS =
+ 
+ # for OpenGL using Mesa libraries:
+-MGTYPE = -DMGOPENGL
+-MGLIBS = -lMesaGL -lMesaGLU
+-MGINC = # -IMesa-include-file directory
++#
++# Mesa is available from /usr/ports/graphics/Mesa.
++#MGTYPE = -DMGOPENGL
++# The port auto-builds both types.
++MGLIBS = -L${X11BASE}/lib -lMesaGL -lMesaGLU
++MGINC = -I${X11BASE}/include/Mesa
