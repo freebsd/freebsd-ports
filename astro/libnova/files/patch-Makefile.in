@@ -1,0 +1,9 @@
+--- src/Makefile.in.orig	Wed Oct 23 16:40:39 2002
++++ src/Makefile.in	Wed Oct 23 16:43:50 2002
+@@ -92,5 +92,5 @@
+ 
+ 
+-libnova_la_LDFLAGS =  	-version-info $(LT_VERSION) 	-release $(LT_RELEASE) 
++#libnova_la_LDFLAGS =  	-version-info $(LT_VERSION) 	-release $(LT_RELEASE) 
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

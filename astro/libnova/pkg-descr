@@ -1,0 +1,5 @@
+libnova is a general purpose, double precision, astronomical calculation
+library. The intended audience of libnova is C / C++ programmers, astronomers
+and anyone else interested in calculating positions of astronomical objects.
+
+WWW: http://libnova.sourceforge.net/
