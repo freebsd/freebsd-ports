@@ -7,15 +7,19 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	1.6.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.iu.hioslo.no/pub/cfengine/ \
+MASTER_SITES=	ftp://ftp.iu.hio.no/pub/cfengine/ \
+		ftp://sunsite.utk.edu/pub/cfengine/cfengine-ftp/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gordont@gnf.org
 
+.if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+.endif
+
 LIB_DEPENDS=	db3:${PORTSDIR}/databases/db3
 .if defined(PACKAGE_BUILDING) && !exists(/usr/include/tcpd.h)
 LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
