@@ -38,7 +38,6 @@ lib/perl5/%%PERL_VERSION%%/man/man3/Spread.3.gz
 %%JAVALIB_DOCS%%share/doc/spread/java/html/help-doc.html
 %%JAVALIB_DOCS%%share/doc/spread/java/html/index-all.html
 %%JAVALIB_DOCS%%share/doc/spread/java/html/index.html
-%%JAVALIB_DOCS%%share/doc/spread/java/html/java.html
 %%JAVALIB_DOCS%%share/doc/spread/java/html/overview-tree.html
 %%JAVALIB_DOCS%%share/doc/spread/java/html/packages.html
 %%JAVALIB_DOCS%%share/doc/spread/java/html/serialized-form.html
