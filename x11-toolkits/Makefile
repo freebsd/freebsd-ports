@@ -17,7 +17,6 @@
     SUBDIR += engradient
     SUBDIR += fl_editor
     SUBDIR += fltk
-    SUBDIR += fltk-xunicode
     SUBDIR += flvw
     SUBDIR += fox
     SUBDIR += fox-devel
