@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Jun 11 01:16:36 2003
-+++ Makefile	Thu Nov 13 01:33:20 2003
-@@ -1,6 +1,6 @@
+--- Makefile.orig	Thu Apr  8 21:39:25 2004
++++ Makefile	Thu Apr  8 21:40:02 2004
+@@ -1,8 +1,7 @@
 -GCC = cc
 -PREFIX=/usr/local
 -CFLAGS = -O2 -Wall $(shell pkg-config --cflags gtk+-2.0)
@@ -8,5 +8,7 @@
 +PREFIX?=/usr/local
 +CFLAGS += -Wall $(shell pkg-config --cflags gtk+-2.0)
  LIBS = $(shell pkg-config --libs gtk+-2.0)
- CFLAGS += -DGTK_DISABLE_BROKEN -DGTK_DISABLE_DEPRECATED
+-CFLAGS += -DGTK_DISABLE_BROKEN -DGTK_DISABLE_DEPRECATED
  
+ VERSION = 2.0.0rc2
+ all: switch
