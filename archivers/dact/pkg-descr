@@ -1,0 +1,4 @@
+Take file, compress each block with 1 of 256 algorithms (including no
+compression) and use algorithm on a per block basis.
+
+WWW: http://www.rkeene.org/devel/dact/
