@@ -1,0 +1,9 @@
+GAA simplifies the life of the programmer: you don't have to
+worry about the arguments given to it! A short text written in GAA
+language generates C-code which analyses the arguments and creates your
+program's help.
+
+http://gaa.netpedia.net/
+
+--Dima
+dima@chg.ru

@@ -1,0 +1,15 @@
+bin/gaa
+share/gaa/gaa.skel
+share/gaa/doc/GAAref.html
+share/gaa/doc/GAAtut.html
+share/gaa/doc/BACK.JPG
+share/gaa/doc/index.html
+share/gaa/doc/TOTORO2.GIF
+share/gaa/sample/sample.gaa
+share/gaa/sample/smain.c
+share/gaa/sample/sample2.gaa
+share/gaa/sample/smain2.c
+share/gaa/sample/config
+@dirrm share/gaa/sample
+@dirrm share/gaa/doc
+@dirrm share/gaa
