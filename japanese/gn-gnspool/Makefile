@@ -19,8 +19,6 @@ COMMENT=	Simple Japanese Newsreader with Local Spool Support
 IS_INTERACTIVE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-BROKEN=		"Does not compile"
-
 pre-configure:
 	@${CP} ${WRKDIR}/${DISTNAME}/mkfiles/unix/common ${WRKSRC}/Makefile
 	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/Makefile.patch
