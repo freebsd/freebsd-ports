@@ -1,4 +1,18 @@
 @comment $FreeBSD$
 bin/dillo
-bin/bm_srv12
+bin/dpid
+bin/dpidc
 etc/dillorc.sample
+etc/dpidrc
+lib/dillo/dpi/bookmarks/bookmarks.dpi
+lib/dillo/dpi/downloads/downloads.dpi
+lib/dillo/dpi/ftp/ftp.filter.dpi
+lib/dillo/dpi/hello/hello.filter.dpi
+lib/dillo/dpi/https/https.filter.dpi
+@dirrm lib/dillo/dpi/https
+@dirrm lib/dillo/dpi/hello
+@dirrm lib/dillo/dpi/ftp
+@dirrm lib/dillo/dpi/downloads
+@dirrm lib/dillo/dpi/bookmarks
+@dirrm lib/dillo/dpi
+@dirrm lib/dillo

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dillo
-PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.dillo.org/download/
 
@@ -24,6 +23,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-ipv6
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
