@@ -33,7 +33,7 @@ CONFIGURE_SCRIPT=	runConfigure
 CONFIGURE_ENV+=	XERCESCROOT=${WRKSRC} TRANSCODER="IconvFBSD" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
-CONFIGURE_ARGS=	-p freebsd -n socket -P ${PREFIX}
+CONFIGURE_ARGS=	-p freebsd -n socket -P ${PREFIX} -c ${CC} -x ${CXX}
 .if defined(NO_THREADS)
 CONFIGURE_ARGS+=	-r none
 .endif
@@ -41,10 +41,6 @@ CONFIGURE_ARGS+=	-r none
 PLIST_SUB+=	XERCESC_VER=${PORTVERSION:S/./_/g} \
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64"
-.endif
 
 pre-configure:
 	${CHMOD} 700 ${CONFIGURE_WRKSRC}/runConfigure
