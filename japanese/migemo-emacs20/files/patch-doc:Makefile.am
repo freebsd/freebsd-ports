@@ -1,0 +1,10 @@
+--- doc/Makefile.am.orig	Mon Feb 19 05:32:43 2001
++++ doc/Makefile.am	Mon Feb 19 05:33:49 2001
+@@ -24,6 +24,6 @@
+ 	     english-5.png \
+ 	     english-6.png 
+ 
+-docdir = $(pkgdatadir)/doc
++docdir = $(datadir)/doc/migemo
+ 
+ EXTRA_DIST = $(doc_DATA)

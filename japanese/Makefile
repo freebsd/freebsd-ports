@@ -165,6 +165,7 @@
     SUBDIR += mh
     SUBDIR += mhonarc
     SUBDIR += micq
+    SUBDIR += migemo-emacs20
     SUBDIR += mimekit
     SUBDIR += mnews
     SUBDIR += mnews-gnspool

@@ -1,0 +1,7 @@
+********************************************************
+* Before using Migemo, you must set following elisp to *
+* your own .emacs file.                                *
+*                                                      *
+* (load-library "migemo")                              *
+*                                                      *
+********************************************************
