@@ -1,0 +1,12 @@
+[ excerpt from developers' README ]
+
+libdvdplay is an attempt to make a library from ogle dvd navigation
+code so that a simple API provides access to both DVD Video data
+and DVD information to a reader application.
+
+libdvdplay is a layer over libdvdread. As a consequence it provides
+read, seek for DVD media. But it also provides the client application
+with a set of access functions needed to create an interface for
+the DVD reader (audio, subtitles, titles ...).
+
+WWW: http://developers.videolan.org/libdvdplay/
