@@ -162,6 +162,7 @@
     SUBDIR += gift-openft
     SUBDIR += giftcurs
     SUBDIR += gini
+    SUBDIR += ginsu
     SUBDIR += gift
     SUBDIR += gkrellm_snmp
     SUBDIR += gkrellmmultiping2
