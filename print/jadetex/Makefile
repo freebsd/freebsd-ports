@@ -7,6 +7,7 @@
 
 PORTNAME=		jadetex
 PORTVERSION=		2.20
+PORTREVISION=		1
 CATEGORIES=		print
 MASTER_SITES=		http://www.tug.org/applications/jadetex/
 
