@@ -46,6 +46,10 @@ CONFIGURE_ARGS+=	--enable-gnome
 CONFIGURE_ARGS+=	--enable-kde
 .endif
 
+.if defined(USE_SINGLE_ICON)
+CONFIGURE_ARGS+=	--enable-single-icon
+.endif
+
 .SILENT:
 
 .if !defined(USE_KDE) && !defined(USE_GNOME)
