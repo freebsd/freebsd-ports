@@ -135,13 +135,13 @@ done
 exec > /dev/stderr
 
 # if multibyte, determine charset
-echo "# Multibyte"
+echo "# Multibyte" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 
 if [ ! "${MULTIBYTE}" ]; then
 	echo "WITHOUT_MULTIBYTE=YES" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 else
 	if [ "${BATCH}" ]; then
-		set \"nothing\"
+		set "nothing"
 	else
 		/usr/bin/dialog --title "configuration options" --clear \
 						--radiolist "\n\
