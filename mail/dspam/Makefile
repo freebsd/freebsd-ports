@@ -7,7 +7,7 @@
 
 PORTNAME=	dspam
 PORTVERSION=	3.2.3${SNAP_DATE}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/dspam/sources/
 DISTFILES=	dspam.3.2.3.cvs.stable${SNAP_DATE}.tar.gz
@@ -93,6 +93,8 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PKGMESSAGE=	${WRKSRC}/README.FreeBSD
+
+UPD_LINE_NO=	3
 
 CONFLICTS=	dspam-2* dspam-devel-[0-9]*
 
@@ -341,6 +343,7 @@ DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 .endif
 
 .if ${DBDRV_TOTAL_COUNT}==${DBDRV_COUNT} || defined(WITH_SQLITE2)
+WITH_SQLITE2=	on
 LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--with-storage-driver=sqlite_drv \
 	--with-sqlite-includes=${LOCALBASE}/include \
@@ -496,12 +499,15 @@ DOCS=	CHANGELOG LICENSE README README.FreeBSD README.courier README.exim \
 	README.pop3filter README.postfix README.qmail README.sendmail \
 	RELEASE.NOTES
 
-pre-extract:
+pre-everything::
 	@${ECHO_CMD} ""
-	@${ECHO_CMD} "******************************************************************"
-	@${ECHO_CMD} "Warning: If upgrading please proceed as stated in"
-	@${ECHO_CMD} "${FILESDIR}/UPDATING"
-	@${ECHO_CMD} "******************************************************************"
+	@${ECHO_CMD} "Last ${FILESDIR}/UPDATING entry:"
+	@${GREP} -B 1 -A ${UPD_LINE_NO} ${PKGNAME} ${FILESDIR}/UPDATING
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "#############################################################################"
+	@${ECHO_CMD} ""
+
+pre-extract:
 	@${ECHO_CMD} ""
 .if defined(WITH_EXIM_LDA) && defined(WITH_POSTGRESQL73)
 	@${ECHO_CMD} "******************************************************************"
@@ -537,7 +543,7 @@ pre-extract:
 .for old_opt in MAILDROP PROCMAIL TRAD_BAYES ALT_BAYES WITH_SPAM_SUBJ \
 	USER_LOGGING SYSTEM_LOGGING WEBMAIL OPT_IN SAT PARSE_TO_HEADERS \
 	BROKEN_MTA BROKEN_ERR_CODES SIGNATURE_HEADERS SIGNATURE_ATACH \
-	HOMEDIR_DOT SIGNATURE_LIFE
+	HOMEDIR_DOT SIGNATURE_LIFE SQLITE
 .	if defined(WITH_${old_opt}) || defined(WITHOUT_${old_opt})
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "******************************************************************"
