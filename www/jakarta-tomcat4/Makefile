@@ -17,6 +17,7 @@ COMMENT=	Open-source Java web server by Apache, stable 4.0.x branch
 
 USE_JAVA=	1.2+
 NO_BUILD=	YES
+LATEST_LINK=	jakarta-tomcat4
 
 MAJOR_VER=	${PORTVERSION:R:R}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
