@@ -8,7 +8,7 @@
 PORTNAME=	Shout
 PORTVERSION=	2.0.1
 CATEGORIES=	audio perl5
-MASTER_SITES=	http://www.icecast.org/files/libshout/
+MASTER_SITES=	http://www.icecast.org/releases/libshout/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mat@FreeBSD.org
