@@ -1,108 +1,96 @@
---- Makefile.orig	Sun Apr 29 13:28:12 2001
-+++ Makefile	Thu May  3 03:34:11 2001
-@@ -305,6 +305,7 @@
- # of make, will buid Vim.
- 
+--- Makefile.orig	Sun Jul 22 10:49:39 2001
++++ Makefile	Sat Jul 28 21:52:21 2001
+@@ -280,2 +280,3 @@
  # CONFIGURE - configure arguments {{{1
 +CONF_ARGS = --prefix=$(PREFIX)
  # You can give a lot of options to configure.
- # Change this to your desire and do 'make config' afterwards
+@@ -1679,36 +1680,36 @@
+ $(DEST_BIN)/$(EXTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(EXTARGET)
++	#cd $(DEST_BIN); ln -sf $(VIMTARGET) $(EXTARGET)
  
-@@ -1657,40 +1658,40 @@
- installvimdiff: $(BINDIR)/$(VIMDIFFTARGET) $(BINDIR)/$(GVIMDIFFTARGET)
+ $(DEST_BIN)/$(VIEWTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(VIEWTARGET)
++	#cd $(DEST_BIN); ln -sf $(VIMTARGET) $(VIEWTARGET)
  
- $(BINDIR)/$(EXTARGET):
--	cd $(BINDIR); ln -s $(VIMTARGET) $(EXTARGET)
-+	#cd $(BINDIR); ln -s $(VIMTARGET) $(EXTARGET)
+ $(DEST_BIN)/$(GVIMTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(GVIMTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(GVIMTARGET)
  
- $(BINDIR)/$(VIEWTARGET):
--	cd $(BINDIR); ln -s $(VIMTARGET) $(VIEWTARGET)
-+	#cd $(BINDIR); ln -s $(VIMTARGET) $(VIEWTARGET)
+ $(DEST_BIN)/$(GVIEWTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(GVIEWTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(GVIEWTARGET)
  
- $(BINDIR)/$(GVIMTARGET):
--	cd $(BINDIR); ln -s $(VIMTARGET) $(GVIMTARGET)
-+	cd $(BINDIR); ln -sf $(VIMTARGET) $(GVIMTARGET)
+ $(DEST_BIN)/$(RVIMTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(RVIMTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(RVIMTARGET)
  
- $(BINDIR)/$(GVIEWTARGET):
--	cd $(BINDIR); ln -s $(VIMTARGET) $(GVIEWTARGET)
-+	cd $(BINDIR); ln -sf $(VIMTARGET) $(GVIEWTARGET)
+ $(DEST_BIN)/$(RVIEWTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(RVIEWTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(RVIEWTARGET)
  
- $(BINDIR)/$(RVIMTARGET):
--	cd $(BINDIR); ln -s $(VIMTARGET) $(RVIMTARGET)
-+	cd $(BINDIR); ln -sf $(VIMTARGET) $(RVIMTARGET)
+ $(DEST_BIN)/$(RGVIMTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(RGVIMTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(RGVIMTARGET)
  
- $(BINDIR)/$(RVIEWTARGET):
--	cd $(BINDIR); ln -s $(VIMTARGET) $(RVIEWTARGET)
-+	cd $(BINDIR); ln -sf $(VIMTARGET) $(RVIEWTARGET)
+ $(DEST_BIN)/$(RGVIEWTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(RGVIEWTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(RGVIEWTARGET)
  
- $(BINDIR)/$(RGVIMTARGET):
--	cd $(BINDIR); ln -s $(VIMTARGET) $(RGVIMTARGET)
-+	cd $(BINDIR); ln -sf $(VIMTARGET) $(RGVIMTARGET)
+ $(DEST_BIN)/$(VIMDIFFTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(VIMDIFFTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(VIMDIFFTARGET)
  
- $(BINDIR)/$(RGVIEWTARGET):
--	cd $(BINDIR); ln -s $(VIMTARGET) $(RGVIEWTARGET)
-+	cd $(BINDIR); ln -sf $(VIMTARGET) $(RGVIEWTARGET)
+ $(DEST_BIN)/$(GVIMDIFFTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(GVIMDIFFTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(GVIMDIFFTARGET)
  
- $(BINDIR)/$(VIMDIFFTARGET):
--	cd $(BINDIR); ln -s $(VIMTARGET) $(VIMDIFFTARGET)
-+	cd $(BINDIR); ln -sf $(VIMTARGET) $(VIMDIFFTARGET)
+ $(DEST_BIN)/$(EVIMTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(EVIMTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(EVIMTARGET)
  
- $(BINDIR)/$(GVIMDIFFTARGET):
--	cd $(BINDIR); ln -s $(VIMTARGET) $(GVIMDIFFTARGET)
-+	cd $(BINDIR); ln -sf $(VIMTARGET) $(GVIMDIFFTARGET)
+ $(DEST_BIN)/$(EVIEWTARGET):
+-	cd $(DEST_BIN); ln -s $(VIMTARGET) $(EVIEWTARGET)
++	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(EVIEWTARGET)
  
- $(BINDIR)/$(EVIMTARGET):
--	cd $(BINDIR); ln -s $(VIMTARGET) $(EVIMTARGET)
-+	cd $(BINDIR); ln -sf $(VIMTARGET) $(EVIMTARGET)
+@@ -1730,30 +1731,30 @@
+ $(DEST_MAN)/$(EXNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(EXNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(EXNAME).1
  
- $(BINDIR)/$(EVIEWTARGET):
--	cd $(BINDIR); ln -s $(VIMTARGET) $(EVIEWTARGET)
-+	cd $(BINDIR); ln -sf $(VIMTARGET) $(EVIEWTARGET)
+ $(DEST_MAN)/$(VIEWNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(VIEWNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(VIEWNAME).1
  
- # create links for the manual pages with various names to vim.	This is only
- # done when the links (or manpages with the same name) don't exist yet.
-@@ -1708,34 +1709,34 @@
- 			$(MANSUBDIR)/$(EVIEWNAME).1
+ $(DEST_MAN)/$(GVIMNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(GVIMNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(GVIMNAME).1
  
- $(MANSUBDIR)/$(EXNAME).1:
--	cd $(MANSUBDIR); ln -s $(VIMNAME).1 $(EXNAME).1
-+	#cd $(MANSUBDIR); ln -sf $(VIMNAME).1 $(EXNAME).1
+ $(DEST_MAN)/$(GVIEWNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(GVIEWNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(GVIEWNAME).1
  
- $(MANSUBDIR)/$(VIEWNAME).1:
--	cd $(MANSUBDIR); ln -s $(VIMNAME).1 $(VIEWNAME).1
-+	#cd $(MANSUBDIR); ln -sf $(VIMNAME).1 $(VIEWNAME).1
+ $(DEST_MAN)/$(RVIMNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(RVIMNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(RVIMNAME).1
  
- $(MANSUBDIR)/$(GVIMNAME).1:
--	cd $(MANSUBDIR); ln -s $(VIMNAME).1 $(GVIMNAME).1
-+	cd $(MANSUBDIR); ln -sf $(VIMNAME).1 $(GVIMNAME).1
+ $(DEST_MAN)/$(RVIEWNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(RVIEWNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(RVIEWNAME).1
  
- $(MANSUBDIR)/$(GVIEWNAME).1:
--	cd $(MANSUBDIR); ln -s $(VIMNAME).1 $(GVIEWNAME).1
-+	cd $(MANSUBDIR); ln -sf $(VIMNAME).1 $(GVIEWNAME).1
+ $(DEST_MAN)/$(RGVIMNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(RGVIMNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(RGVIMNAME).1
  
- $(MANSUBDIR)/$(RVIMNAME).1:
--	cd $(MANSUBDIR); ln -s $(VIMNAME).1 $(RVIMNAME).1
-+	cd $(MANSUBDIR); ln -sf $(VIMNAME).1 $(RVIMNAME).1
+ $(DEST_MAN)/$(RGVIEWNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(RGVIEWNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(RGVIEWNAME).1
  
- $(MANSUBDIR)/$(RVIEWNAME).1:
--	cd $(MANSUBDIR); ln -s $(VIMNAME).1 $(RVIEWNAME).1
-+	cd $(MANSUBDIR); ln -sf $(VIMNAME).1 $(RVIEWNAME).1
+ $(DEST_MAN)/$(GVIMDIFFNAME).1:
+-	cd $(DEST_MAN); ln -s $(VIMDIFFNAME).1 $(GVIMDIFFNAME).1
++	cd $(DEST_MAN); ln -sf $(VIMDIFFNAME).1 $(GVIMDIFFNAME).1
  
- $(MANSUBDIR)/$(RGVIMNAME).1:
--	cd $(MANSUBDIR); ln -s $(VIMNAME).1 $(RGVIMNAME).1
-+	cd $(MANSUBDIR); ln -sf $(VIMNAME).1 $(RGVIMNAME).1
+ $(DEST_MAN)/$(EVIEWNAME).1:
+-	cd $(DEST_MAN); ln -s $(EVIMNAME).1 $(EVIEWNAME).1
++	cd $(DEST_MAN); ln -sf $(EVIMNAME).1 $(EVIEWNAME).1
  
- $(MANSUBDIR)/$(RGVIEWNAME).1:
--	cd $(MANSUBDIR); ln -s $(VIMNAME).1 $(RGVIEWNAME).1
-+	cd $(MANSUBDIR); ln -sf $(VIMNAME).1 $(RGVIEWNAME).1
- 
- $(MANSUBDIR)/$(GVIMDIFFNAME).1:
--	cd $(MANSUBDIR); ln -s $(VIMDIFFNAME).1 $(GVIMDIFFNAME).1
-+	cd $(MANSUBDIR); ln -sf $(VIMDIFFNAME).1 $(GVIMDIFFNAME).1
- 
- $(MANSUBDIR)/$(EVIEWNAME).1:
--	cd $(MANSUBDIR); ln -s $(EVIMNAME).1 $(EVIEWNAME).1
-+	cd $(MANSUBDIR); ln -sf $(EVIMNAME).1 $(EVIEWNAME).1
- 
- uninstall: uninstall_runtime
- 	-rm -f $(BINDIR)/$(VIMTARGET)
