@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat Oct 20 02:24:15 2001
-+++ Makefile.in	Sat Oct 20 11:21:50 2001
+--- ../unix/Makefile.in.orig	Tue Aug  7 05:06:23 2001
++++ ../unix/Makefile.in	Sat Nov 10 16:22:33 2001
 @@ -53,7 +53,9 @@
  SCRIPT_INSTALL_DIR	= $(INSTALL_ROOT)$(TCL_LIBRARY)
  
@@ -20,7 +20,7 @@
  
  # Flags to pass to the linker
  LDFLAGS_DEBUG		= @LDFLAGS_DEBUG@
-@@ -407,7 +409,8 @@
+@@ -404,7 +406,8 @@
  
  all: binaries libraries doc
  
@@ -30,14 +30,12 @@
  
  libraries:
  
-@@ -418,10 +421,16 @@
+@@ -415,8 +418,14 @@
  ${TCL_LIB_FILE}: ${OBJS} ${STUB_LIB_FILE}
  	rm -f ${TCL_LIB_FILE}
  	@MAKE_LIB@
 +	@ln -sf $(TCL_LIB_FILE) ./libtcl${SHORT_TCL_VER}.so
- 	if test "x@DL_OBJS@" = "xtclLoadAout.o"; then \
- 		$(RANLIB) ${TCL_LIB_FILE}; \
- 	fi
+ 	$(RANLIB) ${TCL_LIB_FILE}
  
 +libtcl${SHORT_TCL_VER}.a: ${OBJS}
 +	rm -f libtcl${SHORT_TCL_VER}.a
@@ -47,25 +45,23 @@
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f ${STUB_LIB_FILE}
  	@MAKE_STUB_LIB@
-@@ -539,10 +548,16 @@
+@@ -542,6 +551,7 @@
  	    fi
  	@echo "Installing $(TCL_LIB_FILE) to $(LIB_INSTALL_DIR)/"
- 	@$(INSTALL_LIBRARY) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
+ 	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
 +	@ln -sf $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/libtcl${SHORT_TCL_VER}.so
- 	@if test "x@DL_OBJS@" = "xtclLoadAout.o"; then \
- 	    (cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE)); \
- 	    fi
+ 	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
+ 	@if test "$(TCL_BUILD_EXP_FILE)" != ""; then \
+@@ -549,10 +559,16 @@
+ 	    $(INSTALL_DATA) $(TCL_BUILD_EXP_FILE) \
+ 			$(LIB_INSTALL_DIR)/$(TCL_EXP_FILE); \
+ 	    fi
 +	@echo "Installing libtcl${SHORT_TCL_VER}.a"
 +	@$(INSTALL_DATA) libtcl${SHORT_TCL_VER}.a \
 +		$(LIB_INSTALL_DIR)/libtcl${SHORT_TCL_VER}.a
 +	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtcl${SHORT_TCL_VER}.a)
 +	@chmod 555 $(LIB_INSTALL_DIR)/libtcl${SHORT_TCL_VER}.a
- 	@if test "$(TCL_BUILD_EXP_FILE)" != ""; then \
- 	    echo "Installing $(TCL_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
- 	    $(INSTALL_DATA) $(TCL_BUILD_EXP_FILE) \
-@@ -550,8 +565,9 @@
- 	    fi
  	@echo "Installing tclsh as $(BIN_INSTALL_DIR)/tclsh$(VERSION)"
  	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
 -	@echo "Installing tclConfig.sh to $(LIB_INSTALL_DIR)/"
@@ -75,8 +71,8 @@
 +	@$(INSTALL_DATA) tclConfig.sh $(SCRIPT_INSTALL_DIR)/tclConfig.sh
  	@if test "$(TCL_STUB_LIB_FILE)" != "" ; then \
  	    echo "Installing $(TCL_STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
- 	    $(INSTALL_LIBRARY) $(STUB_LIB_FILE) \
-@@ -559,7 +575,8 @@
+ 	    $(INSTALL_DATA) $(STUB_LIB_FILE) \
+@@ -560,7 +576,8 @@
  	    fi
  
  install-libraries: libraries
@@ -86,7 +82,7 @@
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
-@@ -581,11 +598,16 @@
+@@ -582,12 +599,18 @@
  	    chmod +x $(SRC_DIR)/install-sh; \
  	    fi
  	@echo "Installing header files";
@@ -104,9 +100,11 @@
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tclDecls.h $(INCLUDE_INSTALL_DIR)/tclDecls.h
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
++	
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
-@@ -643,7 +665,6 @@
+ 	    $(INSTALL_DATA) $$i $(SCRIPT_INSTALL_DIR); \
+@@ -644,7 +667,6 @@
  	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking top-level (.1) docs";
@@ -114,7 +112,7 @@
  	@echo "Installing C API (.3) docs";
  	@cd $(TOP_DIR)/doc; for i in *.3; \
  	    do \
-@@ -653,7 +674,6 @@
+@@ -654,7 +676,6 @@
  	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking C API (.3) docs";
@@ -122,7 +120,7 @@
  	@echo "Installing command (.n) docs";
  	@cd $(TOP_DIR)/doc; for i in *.n; \
  	    do \
-@@ -663,7 +683,14 @@
+@@ -664,7 +685,14 @@
  	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking command (.n) docs";

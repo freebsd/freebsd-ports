@@ -124,6 +124,7 @@ lib/tk%%TK_VER%%/prolog.ps
 lib/tk%%TK_VER%%/safetk.tcl
 lib/tk%%TK_VER%%/scale.tcl
 lib/tk%%TK_VER%%/scrlbar.tcl
+lib/tk%%TK_VER%%/spinbox.tcl
 lib/tk%%TK_VER%%/tclIndex
 lib/tk%%TK_VER%%/tearoff.tcl
 lib/tk%%TK_VER%%/text.tcl
@@ -131,6 +132,7 @@ lib/tk%%TK_VER%%/tk.tcl
 lib/tk%%TK_VER%%/tkAppInit.c
 lib/tk%%TK_VER%%/tkConfig.sh
 lib/tk%%TK_VER%%/tkfbox.tcl
+lib/tk%%TK_VER%%/unsupported.tcl
 lib/tk%%TK_VER%%/xmfbox.tcl
 @dirrm lib/tk%%TK_VER%%/demos/images
 @dirrm lib/tk%%TK_VER%%/demos

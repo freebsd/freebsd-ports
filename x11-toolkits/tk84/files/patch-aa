@@ -1,10 +1,19 @@
---- configure.orig	Sat Oct 20 02:24:40 2001
-+++ configure	Sat Nov 10 21:53:28 2001
-@@ -2351,21 +2351,22 @@
+--- configure.orig	Tue Aug  7 05:12:23 2001
++++ configure	Tue Nov 13 08:20:01 2001
+@@ -1513,7 +1513,7 @@
+     EXTRA_CFLAGS=""
+     TCL_EXPORT_FILE_SUFFIX=""
+     UNSHARED_LIB_SUFFIX=""
+-    TCL_TRIM_DOTS='`echo ${VERSION} | tr -d .`'
++    TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
+     ECHO_VERSION='`echo ${VERSION}`'
+     TCL_LIB_VERSIONS_OK=ok
+     CFLAGS_DEBUG=-g
+@@ -2039,18 +2039,23 @@
  	    # FreeBSD doesn't handle version numbers with dots.
  
  	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
-+	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1'
++	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
  	    TCL_LIB_VERSIONS_OK=nodots
  	    ;;
  	FreeBSD-*)
@@ -20,14 +29,14 @@
 -	    LDFLAGS="-export-dynamic"
 +	    LDFLAGS=""
  	    LD_SEARCH_FLAGS=""
- 	    # FreeBSD doesn't handle version numbers with dots.
- 	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
--	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so'
++	    # FreeBSD doesn't handle version numbers with dots.
++	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
 +	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1'
- 	    TCL_LIB_VERSIONS_OK=nodots
++	    TCL_LIB_VERSIONS_OK=nodots
  	    ;;
- 	Rhapsody-*|Darwin-*)
-@@ -2882,6 +2883,7 @@
+ 	NEXTSTEP-*)
+ 	    SHLIB_CFLAGS=""
+@@ -2538,6 +2543,7 @@
  	echo "$ac_t""no" 1>&6
      fi
  
@@ -35,3 +44,20 @@
  
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
+@@ -4270,6 +4276,7 @@
+     else
+ 	eval TK_LIB_FLAG="-ltk`echo ${VERSION} | tr -d .`\${TK_DBGX}"
+     fi
++    TK_LIB_FLAG="-ltk${TCL_TRIM_DOTS}\${TK_DBGX}"
+     TK_BUILD_LIB_SPEC="-L`pwd` ${TK_LIB_FLAG}"
+     TK_LIB_SPEC="-L${exec_prefix}/lib ${TK_LIB_FLAG}"
+     TK_BUILD_EXP_FILE=""
+@@ -4301,7 +4308,7 @@
+ if test "${TCL_LIB_VERSIONS_OK}" = "ok"; then
+     eval TK_STUB_LIB_FLAG="-ltkstub${TK_VERSION}\${TK_DBGX}"
+ else
+-    eval TK_STUB_LIB_FLAG="-ltkstub`echo ${TK_VERSION} | tr -d .`\${TK_DBGX}"
++    eval TK_STUB_LIB_FLAG="-ltkstub${TCL_TRIM_DOTS}\${TK_DBGX}"
+ fi
+ 
+ TK_BUILD_STUB_LIB_SPEC="-L`pwd` ${TK_STUB_LIB_FLAG}"
