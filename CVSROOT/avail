@@ -1,8 +1,13 @@
 # $FreeBSD$
 #
 # This can be used to implement finer grain access controls beyond
-# being in access.
+# being in access.  Look in cvs_acls.pl for details on this file's
+# syntax.
 #
+
+group|meisters|peter,jdp,markm,joe
+group|updating_committers|imp,bmah
+
 unavail
 avail||CVSROOT
 avail||distrib
@@ -16,4 +21,4 @@ unavail||src/contrib/libio
 unavail||src/contrib/libstdc\+\+
 unavail||src/contrib/libobjc
 unavail||src/UPDATING
-avail|imp,bmah|src/UPDATING
+avail|:updating_committers|src/UPDATING
