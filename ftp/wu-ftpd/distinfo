@@ -1,1 +1,3 @@
 MD5 (wu-ftpd-2.6.2.tar.gz) = b3c271f02aadf663b8811d1bff9da3f6
+MD5 (connect-dos.patch) = 28baacb281dfb8f784b68a7db88f12cb
+MD5 (realpath.patch) = ec7f87e527efdb5bcc0d2edcb29800c4

@@ -1,19 +1,21 @@
-*** doc/examples/ftpconversions.orig	Wed Jan 25 22:11:02 1995
---- doc/examples/ftpconversions	Wed Jan 25 22:11:49 1995
-***************
-*** 1,7 ****
-!  :.Z:  :  :/bin/compress -d -c %s:T_REG|T_ASCII:O_UNCOMPRESS:UNCOMPRESS
-   :   : :.Z:/bin/compress -c %s:T_REG:O_COMPRESS:COMPRESS
-   :.gz: :  :/bin/gzip -cd %s:T_REG|T_ASCII:O_UNCOMPRESS:GUNZIP
-   :   : :.gz:/bin/gzip -9 -c %s:T_REG:O_COMPRESS:GZIP
-   :   : :.tar:/bin/tar -c -f - %s:T_REG|T_DIR:O_TAR:TAR
-   :   : :.tar.Z:/bin/tar -c -Z -f - %s:T_REG|T_DIR:O_COMPRESS|O_TAR:TAR+COMPRESS
-!  :   : :.tar.gz:/bin/tar -c -z -f - %s:T_REG|T_DIR:O_COMPRESS|O_TAR:TAR+GZIP
---- 1,7 ----
-!  :.Z:  :  :/bin/gzip -d -c %s:T_REG|T_ASCII:O_UNCOMPRESS:UNCOMPRESS
-   :   : :.Z:/bin/compress -c %s:T_REG:O_COMPRESS:COMPRESS
-   :.gz: :  :/bin/gzip -cd %s:T_REG|T_ASCII:O_UNCOMPRESS:GUNZIP
-   :   : :.gz:/bin/gzip -9 -c %s:T_REG:O_COMPRESS:GZIP
-   :   : :.tar:/bin/tar -c -f - %s:T_REG|T_DIR:O_TAR:TAR
-   :   : :.tar.Z:/bin/tar -c -Z -f - %s:T_REG|T_DIR:O_COMPRESS|O_TAR:TAR+COMPRESS
-!  :   : :.tar.gz:/bin/tar -c -z -f - %s:T_REG|T_DIR:O_COMPRESS|O_TAR:TAR+GZIP
+--- doc/examples/ftpconversions.orig	Thu Mar  4 07:39:21 1999
++++ doc/examples/ftpconversions	Tue Sep 23 17:27:47 2003
+@@ -1,9 +1,9 @@
+- :.Z:  :  :/bin/compress -d -c %s:T_REG|T_ASCII:O_UNCOMPRESS:UNCOMPRESS
+- :   : :.Z:/bin/compress -c %s:T_REG:O_COMPRESS:COMPRESS
+- :.gz: :  :/bin/gzip -cd %s:T_REG|T_ASCII:O_UNCOMPRESS:GUNZIP
+- :   : :.gz:/bin/gzip -9 -c %s:T_REG:O_COMPRESS:GZIP
+- :   : :.tar:/bin/tar -c -f - %s:T_REG|T_DIR:O_TAR:TAR
+- :   : :.tar.Z:/bin/tar -c -Z -f - %s:T_REG|T_DIR:O_COMPRESS|O_TAR:TAR+COMPRESS
+- :   : :.tar.gz:/bin/tar -c -z -f - %s:T_REG|T_DIR:O_COMPRESS|O_TAR:TAR+GZIP
+- :   : :.crc:/bin/cksum %s:T_REG::CKSUM
+- :   : :.md5:/bin/md5sum %s:T_REG::MD5SUM
++ :.Z:  :  :/usr/bin/gzip -cd %s:T_REG|T_ASCII:O_UNCOMPRESS:UNCOMPRESS
++ :   : :.Z:/usr/bin/compress -c %s:T_REG:O_COMPRESS:COMPRESS
++ :.gz: :  :/usr/bin/gzip -cd %s:T_REG|T_ASCII:O_UNCOMPRESS:GUNZIP
++ :   : :.gz:/usr/bin/gzip -9 -c %s:T_REG:O_COMPRESS:GZIP
++ :   : :.tar:/usr/bin/tar -c -f - -- %s:T_REG|T_DIR:O_TAR:TAR
++ :   : :.tar.Z:/usr/bin/tar -c -Z -f - -- %s:T_REG|T_DIR:O_COMPRESS|O_TAR:TAR+COMPRESS
++ :   : :.tar.gz:/usr/bin/tar -c -z -f - -- %s:T_REG|T_DIR:O_COMPRESS|O_TAR:TAR+GZIP
++ :   : :.crc:/usr/bin/cksum %s:T_REG::CKSUM
++ :   : :.md5:/sbin/md5 %s:T_REG::MD5SUM
