@@ -2,6 +2,7 @@ bin/jnethack
 lib/jnethackdir/jnethack
 @exec mkdir %D/lib/jnethackdir/save
 @exec chmod -R 775 %D/lib/jnethackdir
+@exec chmod 2755 %D/lib/jnethackdir/jnethack
 @exec chown games.games %D/lib/jnethackdir/save
 @unexec rm -rf %D/lib/jnethackdir/save
 lib/jnethackdir/A-filla.lev
@@ -133,6 +134,10 @@ share/examples/ja/nethack/nethack.rc
 share/examples/ja/nethack/JNetHack.ad
 share/examples/ja/nethack/nh10.pcf.gz
 share/examples/ja/nethack/ibm.pcf.gz
+@mode 664
+lib/jnethackdir/logfile
+lib/jnethackdir/record
+lib/jnethackdir/perm
 @dirrm share/doc/ja/nethack
 @dirrm share/examples/ja/nethack
 @dirrm lib/jnethackdir
