@@ -22,6 +22,9 @@ PLIST=		${WRKDIR}/.PLIST.more
 .if defined(SENDMAIL_WITH_TSL)
 USE_OPENSSL=	yes
 .endif
+.if defined(SENDMAIL_WITH_SASL)
+BUILD_DEPENDS=	${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
+.endif
 
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
 pre-configure:
@@ -29,6 +32,10 @@ pre-configure:
 		${FILESDIR}/site.config.m4 > ${WCONF}/site.config.m4
 .if defined(SENDMAIL_WITH_TSL)
 	${CAT} ${FILESDIR}/site.config.m4.tls >> ${WCONF}/site.config.m4
+.endif
+.if defined(SENDMAIL_WITH_SASL)
+	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
+		${FILESDIR}/site.config.m4.sasl >>${WCONF}/site.config.m4
 .endif
 .else
 pre-configure:
