@@ -1,0 +1,19 @@
+*** intltool-merge.in.orig	Fri Dec  7 10:13:04 2001
+--- intltool-merge.in	Fri Dec  7 09:46:41 2001
+*************** sub create_translation_database
+*** 237,243 ****
+  
+          if ($UTF8_ARG) {
+              my $encoding = get_po_encoding($po_file);
+!             open PO_FILE, "iconv -f $encoding -t UTF-8 $po_file|";	
+          } else {
+              open PO_FILE, "<$po_file";	
+          }
+--- 237,243 ----
+  
+          if ($UTF8_ARG) {
+              my $encoding = get_po_encoding($po_file);
+!             open PO_FILE, "giconv -f $encoding -t UTF-8 $po_file|";	
+          } else {
+              open PO_FILE, "<$po_file";	
+          }
