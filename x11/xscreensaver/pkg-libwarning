@@ -1,7 +1,9 @@
-#!/bin/sh
+There is currently a conflict between configure for this port,
+and pkgconfig. If your build fails, do the following:
 
-if [ "$2" = "POST-INSTALL" -o -n "${PACKAGE_BUILDING}" ]; then
-  exit 0
-fi
+make clean
+pkg_delete -f pkgconfig*
+make install
 
-/usr/bin/dialog --msgbox "There is currently a conflict between configure for this port, and pkgconfig. If your build fails, do the following: 'make clean ; pkg_delete -f pkgconfig*'. The conflict is being worked on, but until it's fixed this is your best chance of success." 12 70 || /usr/bin/false
+The conflict is being worked on, but until it's fixed this is your
+best chance of success.
