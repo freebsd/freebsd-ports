@@ -1,7 +1,6 @@
 --- pam_get_pass.c.orig	Mon Jan 14 17:45:55 2002
-+++ pam_get_pass.c	Tue Aug 13 18:31:56 2002
-@@ -33,70 +33,7 @@
- /* $Id: pam_get_pass.c,v 1.2 2000/06/25 09:39:28 ljb Exp $ */
++++ pam_get_pass.c	Sat Nov 23 20:26:10 2002
+@@ -34,68 +34,5 @@
  #include <stdlib.h>
  #include <security/pam_modules.h>
 -#include "pam_mod_misc.h"
@@ -71,3 +70,17 @@
 +#include <security/pam_mod_misc.h>
  
  int
+@@ -125,8 +62,11 @@
+         return retval;
+ 
++#ifdef PAM_AUTHTOK_RECOVER_ERR
++#define PAM_AUTHTOK_RECOVERY_ERR PAM_AUTHTOK_RECOVER_ERR
++#endif
+     if(!resp)
+-        return PAM_AUTHTOK_RECOVER_ERR;
++        return PAM_AUTHTOK_RECOVERY_ERR;
+     if(strcmp(resp[0].resp, resp[1].resp) != 0)
+-        return PAM_AUTHTOK_RECOVER_ERR;
++        return PAM_AUTHTOK_RECOVERY_ERR;
+ 
+     retval = pam_set_item(pamh, PAM_AUTHTOK, resp[0].resp);
