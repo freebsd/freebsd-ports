@@ -1,15 +1,20 @@
---- configure.orig	Sat Apr 10 10:42:35 2004
-+++ configure	Sat Apr 10 10:43:38 2004
-@@ -19195,13 +19195,6 @@
+--- configure.orig	Sun Aug  1 22:33:54 2004
++++ configure	Sun Aug  1 22:34:13 2004
+@@ -19203,18 +19203,6 @@
  echo "$as_me: error: perl 5.x required for intltool" >&2;}
     { (exit 1); exit 1; }; }
  fi
--if `perl -e "require XML::Parser" 2>/dev/null`; then
--:
--else
--   { { echo "$as_me:$LINENO: error: XML::Parser perl module is required for intltool" >&5
+-if test "x" != "xno-xml"; then
+-   echo "$as_me:$LINENO: checking for XML::Parser" >&5
+-echo $ECHO_N "checking for XML::Parser... $ECHO_C" >&6
+-   if `$INTLTOOL_PERL -e "require XML::Parser" 2>/dev/null`; then
+-       echo "$as_me:$LINENO: result: ok" >&5
+-echo "${ECHO_T}ok" >&6
+-   else
+-       { { echo "$as_me:$LINENO: error: XML::Parser perl module is required for intltool" >&5
 -echo "$as_me: error: XML::Parser perl module is required for intltool" >&2;}
 -   { (exit 1); exit 1; }; }
+-   fi
 -fi
  
  # Remove file type tags (using []) from po/POTFILES.
