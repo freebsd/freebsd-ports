@@ -169,3 +169,7 @@ share/texmf/fonts/ams/tfm/wncyss9.tfm
 @dirrm lib/afm
 @dirrm share/texmf/fonts/ams/tfm
 @dirrm share/texmf/fonts/ams/type1
+@dirrm share/texmf/fonts/ams
+@unexec rmdir %D/share/texmf/fonts 2>/dev/null || true
+@unexec rmdir %D/share/texmf/dvips 2>/dev/null || true
+@unexec rmdir %D/share/texmf 2>/dev/null || true
