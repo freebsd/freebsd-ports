@@ -2,6 +2,7 @@ GNU Emacs is a self-documenting, customizable, extensible real-time
 display editor (emacs binary only).
 
 This package's emacs has a dynamic loading module function.
+And XIM function which emacs already has is fixed.
 
 Emacs binary is:
     ${PREFIX}/bin/emacs-dl-20.7
@@ -20,4 +21,4 @@ at the "${PORTSDIR}/editors/emacs20-dl" directory to re-make this package.
 
 WWW: http://www.m17n.org/mule/dynamic-loading/
 
---- Porting by shige@FreeBSD.ORG
+--- Ported by shige@FreeBSD.ORG

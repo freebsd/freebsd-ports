@@ -1,4 +1,4 @@
-# New ports collection makefile for:	GNU emacs with dl
+# New ports collection makefile for:	GNU emacs with dynamic loading function
 # Date created:		10 October 1998
 # Whom:			shige
 #
@@ -6,11 +6,15 @@
 #
 
 PORTNAME=	emacs-dl
-PORTVERSION=	20.7
+PORTVERSION=	${EMACS_VER}
+PORTREVISION=	1
 CATEGORIES=	editors ipv6
-MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES=	${MASTER_SITE_GNU} \
+		http://www.ainet.or.jp/~inoue/software/emacs-xim/
 MASTER_SITE_SUBDIR=	emacs
-DISTNAME=	emacs-${PORTVERSION}
+DISTNAME=	emacs-${EMACS_VER}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${XIM_PATCH}${EXTRACT_SUFX}
 
 PATCH_SITES=	ftp://ftp.m17n.org/pub/mule/dynamic-loading/ \
 		http://www.etl.go.jp/~tomo/comp/emacsen/
@@ -35,6 +39,8 @@ USE_XLIB=	yes
 CONFIGURE_ARGS=	--with-x=no --with-pop
 .endif
 
+# for XIM extension
+XIM_PATCH=	emacs20-xim-20000713
 .if defined(WITHOUT_XIM) && (${WITHOUT_XIM} == "yes")
 MAKE_FLAGS=	MYCPPFLAG="-DX_I18N_INHIBITED"
 .endif
@@ -56,6 +62,11 @@ CONFIGURE_ARGS+=	--with-xpg4
 .endif
 .endif
 
+pre-patch:
+	@(cd ${WRKSRC} ; \
+	  ${PATCH} ${PATCH_ARGS} -p1 < ../${XIM_PATCH}/${XIM_PATCH}.diff ;\
+	)
+
 pre-build:
 	@${RM} -rf ${WRKSRC}/info/*
 	@${LN} -sf DOC ${WRKSRC}/etc/${DOC_FILE}
@@ -63,5 +74,8 @@ pre-build:
 do-install:
 	@${INSTALL} -c -s -m 555 -o root -g wheel ${WRKSRC}/src/emacs ${PREFIX}/bin/emacs-dl-${EMACS_VER}
 	@${INSTALL_DATA} ${WRKSRC}/etc/DOC ${PREFIX}/share/emacs/${EMACS_VER}/etc/${DOC_FILE}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
