@@ -25,8 +25,11 @@ USE_GMAKE=	yes
 ALL_TARGET=	opt
 MAKE_ENV=	PWLIBDIR=${WRKDIR}/pwlib \
 		OPENH323DIR=${WRKDIR}/openh323
+THE_MACHTYPE=	${ARCH:S/i386/x86/}
+MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${THE_MACHTYPE} OSRELEASE=${OSVERSION}
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/test/obj_FreeBSD_x86_r/voxilla ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/test/obj_${OPSYS}_${THE_MACHTYPE}_r/voxilla ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/test/voxilla.1 ${PREFIX}/man/man1/voxilla.1
 
 MAN1=		voxilla.1
