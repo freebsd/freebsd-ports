@@ -14,12 +14,6 @@ MASTER_SITES=	http://www.xanadunet.net/ksmp3play/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An curses-based MP3 player
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not configure on FreeBSD ${OSVERSION}"
-.endif
-
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 
 USE_SDL=	yes
@@ -44,4 +38,4 @@ post-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

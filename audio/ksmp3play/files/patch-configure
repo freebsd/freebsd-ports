@@ -1,0 +1,23 @@
+--- configure.orig	Mon Aug 20 04:22:22 2001
++++ configure	Thu Oct 23 12:10:52 2003
+@@ -1258,15 +1258,15 @@
+     }
+   else
+     {
+-      printf("\n*** 'sdl-config --version' returned %d.%d.%d, but the
+-minimum version\n", $sdl_major_version, $sdl_minor_version,
++      printf("\n*** 'sdl-config --version' returned %d.%d.%d, but the \
++minimum version\n", $sdl_major_version, $sdl_minor_version, \
+ $sdl_micro_version);
+-      printf("*** of SDL required is %d.%d.%d. If sdl-config is correct,
++      printf("*** of SDL required is %d.%d.%d. If sdl-config is correct, \
+ then it is\n", major, minor, micro);
+       printf("*** best to upgrade to the required version.\n");
+-      printf("*** If sdl-config was wrong, set the environment variable
++      printf("*** If sdl-config was wrong, set the environment variable \
+ SDL_CONFIG\n");
+-      printf("*** to point to the correct copy of sdl-config, and remove
++      printf("*** to point to the correct copy of sdl-config, and remove \
+ the file\n");
+       printf("*** config.cache before re-running configure\n");
+       return 1;
