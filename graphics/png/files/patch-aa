@@ -1,5 +1,5 @@
---- scripts/makefile.std.orig	Thu Dec  9 01:44:40 1999
-+++ scripts/makefile.std	Wed Jul 26 10:00:14 2000
+--- scripts/makefile.std.orig	Sat Jan  6 03:25:50 2001
++++ scripts/makefile.std	Tue Sep 11 05:44:27 2001
 @@ -2,18 +2,30 @@
  # Copyright (C) 1995 Guy Eric Schalnat, Group 42, Inc.
  # For conditions of distribution and use, see copyright notice in png.h
@@ -42,8 +42,8 @@
  	pngwtran.o pngmem.o pngerror.o pngpread.o
  
 -all: libpng.a pngtest
-+.if defined(USE_MMX)
-+CFLAGS+=-DPNG_USE_PNGGCCRD -funroll-loops -fomit-frame-pointer
++.if (${ARCH} == "i386")
++CFLAGS+=-DPNG_USE_PNGGCCRD
 +OBJS+=pnggccrd.o
 +.endif
 +
@@ -60,9 +60,9 @@
  
 +libpng.so.${PNGVER}: $(OBJS:S/o$/so/g)
 +.if (${PORTOBJFORMAT} == "elf")
-+	${CC} -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,$@ -o $@ $(OBJS:S/o$/so/g) -lz -lm
++	${CC} -shared -Wl,-x,-soname,$@ -o $@ $(OBJS:S/o$/so/g) -lz -lm
 +.else
-+	${CC} -shared -Wl,-x -Wl,-assert -Wl,pure-text -o $@ $(OBJS:S/o$/so/g) -lz -lm
++	${CC} -shared -Wl,-x -o $@ $(OBJS:S/o$/so/g) -lz -lm
 +.endif
 +
  pngtest: pngtest.o libpng.a
@@ -81,7 +81,7 @@
 +	${BSD_INSTALL_DATA} png.h pngconf.h $(prefix)/include
 +	${BSD_INSTALL_DATA} libpng.a libpng.so.${PNGVER} $(prefix)/lib
 +	ln -sf libpng.so.${PNGVER} $(prefix)/lib/libpng.so
-+	ranlib $(prefix)/lib/libpng.a
++	$(RANLIB) $(prefix)/lib/libpng.a
 +	${BSD_INSTALL_MAN} libpng.3 libpngpf.3 $(prefix)/man/man3
 +	${BSD_INSTALL_MAN} png.5 $(prefix)/man/man5
  
