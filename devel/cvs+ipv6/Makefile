@@ -21,6 +21,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	IPv6 enabled cvs.  You can use IPv6 connection when using pserver
 
+FORBIDDEN=	http://vuxml.freebsd.org/0792e7a7-8e37-11d8-90d1-0020ed76ef5a.html
+
 GNU_CONFIGURE=	yes
 #USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-ipv6 --without-gssapi \
