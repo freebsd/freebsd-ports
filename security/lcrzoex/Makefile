@@ -8,9 +8,8 @@
 PORTNAME=	lcrzoex
 PORTVERSION=	4.17.0
 CATEGORIES=	security
-MASTER_SITES=	http://www.laurentconstantin.com/common/lcrzoex/download/v4/ \
-		http://www.mirrors.wiretapped.net/security/packet-construction/lcrzoex/ \
-		ftp://ftp.mirrors.wiretapped.net/sd3a/security/packet-construction/lcrzoex/
+MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwib/download/v4/ \
+		http://fresh.t-systems-sfr.com/unix/src/privat2/
 EXTRACT_SUFX=	-src.tgz
 
 MAINTAINER=	king@v2project.com
