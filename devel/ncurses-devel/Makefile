@@ -52,9 +52,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 		--disable-termcap --includedir=${PREFIX}/include/ncurses \
 		--with-profile --with-shared
-CONFIGURE_ENV=		gnat_exists="no" ac_cv_path_LDCONFIG="${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib"
-
-.include <bsd.port.pre.mk>
+CONFIGURE_ENV=		gnat_exists="no" ac_cv_path_LDCONFIG="${LDCONFIG} -m ${PREFIX}/lib"
 
 post-extract:
 	@ ${RM} ${WRKSRC}/misc/terminfo.src
@@ -62,12 +60,6 @@ post-extract:
 	@ ${GUNZIP_CMD} ${WRKSRC}/misc/terminfo.src.gz
 
 post-install:
-.if ${PORTOBJFORMAT} == "aout"
-	@ ${LN} -sf ${PREFIX}/lib/libform.so.4.2 ${PREFIX}/lib/libform.so
-	@ ${LN} -sf ${PREFIX}/lib/libmenu.so.4.2 ${PREFIX}/lib/libmenu.so
-	@ ${LN} -sf ${PREFIX}/lib/libncurses.so.4.2 ${PREFIX}/lib/libncurses.so
-	@ ${LN} -sf ${PREFIX}/lib/libpanel.so.4.2 ${PREFIX}/lib/libpanel.so
-.endif
 	@ ${MKDIR} ${PREFIX}/share/doc/ncurses
 .for file in ANNOUNCE INSTALL NEWS README TO-DO announce.html misc/hackguide.doc misc/hackguide.html misc/ncurses-intro.doc misc/ncurses-intro.html
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/ncurses
@@ -85,4 +77,4 @@ post-install:
 .endfor
 	@ ${INSTALL_DATA} ${FILESDIR}/Makefile.c++ ${PREFIX}/share/examples/ncurses/c++/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
