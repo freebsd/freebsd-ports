@@ -1,0 +1,8 @@
+perl module that provides SNMP get/walk functionality with built-in name
+to OID translation alternatively by using .oid files. It is implemented
+as a derived class based upon p5-SNMP_Session.
+
+WWW: http://dave.plonka.us/Altoids/
+
+- Bill Fumerola
+billf@FreeBSD.org
