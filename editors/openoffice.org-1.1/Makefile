@@ -44,6 +44,7 @@ FRELEASE_NR=		1.1.1
 INSTALLATION_BASEDIR=	OpenOffice.org${FRELEASE_NR}
 DIST_SUBDIR=		openoffice1.1
 DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
+SIMPLEOSVER!=		${UNAME} -r | sed -e 's/\.//' | sed -e 's/\..*//'
 
 #
 # configuration for language specific slave ports
@@ -154,7 +155,7 @@ DISPLAYHACK=localhost:1001
 
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --enable-mozilla=no --with-jdk-home=${JDKDIR}
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --enable-mozilla=no
 
 .if defined(WITH_DEBUG)
 .if ${WITH_DEBUG} == 2
@@ -533,12 +534,23 @@ post-install:
 package-rename:
 	@${ECHO_MSG} "===>   Rename package for OO.org mirror upload";
 .if defined(LANG_SUFFIX)
-	@${MV} ${WRKDIR}/../${PKGNAMEPREFIX}openoffice-${LANG_SUFFIX}-${PORTVERSION}_${PORTREVISION}.tbz \
-	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}Intel_install_${LANG_PKGNAME}-${LANG_SUFFIX}.tbz
+	@${MV} ${PKGFILE} \
+	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_install_${LANG_PKGNAME}-${LANG_SUFFIX}${PKG_SUFX}
+.elif defined(LANG_PKGNAME)
+	@${MV} ${PKGFILE} \
+	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_install_${LANG_PKGNAME}${PKG_SUFX}
 .else
-	@${MV} ${WRKDIR}/../${PKGNAMEPREFIX}openoffice-${PORTVERSION}_${PORTREVISION}.tbz \
-	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}Intel_install_${LANG_PKGNAME}.tbz
+	@${MV} ${PKGFILE} \
+	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_install${PKG_SUFX}
 .endif
+
+sdk:
+	@${ECHO_MSG} "===>   Make SDK of OpenOffice.org"
+	@(cd ${WRKSRC}/../odk/unxfbsd.pro/bin ; \
+	${CP} -r odk${BUILD_NR} OpenOffice.org${RELEASE_NR}_SDK ;\
+	${TAR} cfz OOo_${FRELEASE_NR}_${OPSYS}${SIMPLEOSVER}Intel_sdk.tar.gz OpenOffice.org${RELEASE_NR}_SDK ;\
+	${RM} -r OpenOffice.org${RELEASE_NR}_SDK ;\
+	${MV} OOo_${FRELEASE_NR}_${OPSYS}${SIMPLEOSVER}Intel_sdk.tar.gz ${WRKDIR}/..)
 
 update:
 	@${MAKE} fetch
