@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	glimpse
-PORTVERSION=	4.12.6
+PORTVERSION=	4.13.1
 CATEGORIES=	textproc databases
 MASTER_SITES=	ftp://ftp.polito.it/pub/tools/unix/harvest/
 
@@ -20,7 +20,6 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -DISO_CHAR_SET=1 -D__STRICT_ANSI__"
 MAN1=		glimpse.1 glimpseindex.1 glimpseserver.1 agrep.1
 
 pre-configure:
-	${RM} ${WRKSRC}/config.cache
 	${CHMOD} ugo+x ${WRKSRC}/configure
 
 post-install:
