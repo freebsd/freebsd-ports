@@ -42,6 +42,7 @@ avr/include/avr/iotn26.h
 avr/include/avr/iotn28.h
 avr/include/avr/parity.h
 avr/include/avr/pgmspace.h
+avr/include/avr/portpins.h
 avr/include/avr/sfr_defs.h
 avr/include/avr/signal.h
 avr/include/avr/sleep.h
@@ -152,6 +153,7 @@ share/doc/avr-libc/avr-libc-user-manual/ftv2plastnode.png
 share/doc/avr-libc/avr-libc-user-manual/ftv2pnode.png
 share/doc/avr-libc/avr-libc-user-manual/ftv2vertline.png
 share/doc/avr-libc/avr-libc-user-manual/group__avr__boot.html
+share/doc/avr-libc/avr-libc-user-manual/group__avr__crc.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__eeprom.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__errno.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__interrupts.html
