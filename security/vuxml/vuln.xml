@@ -30,6 +30,92 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8338a20f-9573-11d8-9366-0020ed76ef5a">
+    <topic>xchat remotely exploitable buffer overflow (Socks5)</topic>
+    <affects>
+      <package>
+	<name>xchat</name>
+	<range><ge>1.8</ge><lt>2.0.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A straightforward stack buffer overflow exists in XChat's
+	  Socks5 proxy support.</p>
+	<p>The XChat developers report that `tsifra' discovered this
+	  issue.</p>
+	<p>NOTE: XChat Socks5 support is disabled by support in the
+	  FreeBSD Ports Collection.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0409</cvename>
+      <url>http://xchat.org/files/source/2.0/patches/xc208-fixsocks5.diff</url>
+      <url>http://marc.theaimsgroup.com/?l=xchat-announce&amp;m=108114935507357</url>
+      <!-- <mlist msgid="20040405171305.04f19c44.zed@xchat.org">http://marc.theaimsgroup.com/?l=xchat-announce&amp;m=108114935507357</mlist> -->
+    </references>
+    <dates>
+      <discovery>2004-04-05</discovery>
+      <entry>2004-04-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cfe17ca6-6858-4805-ba1d-a60a61ec9b4d">
+    <topic>phpBB IP address spoofing</topic>
+    <affects>
+      <package>
+	<name>phpbb</name>
+	<range><le>2.0.8_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The common.php script always trusts the `X-Forwarded-For'
+        header in the client's HTTP request.  A remote user could
+	forge this header in order to bypass any IP address access
+	control lists (ACLs).</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108239864203144</url>
+      <!--
+      <mlist msgid="20040419000129.28917.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108239864203144</mlist>
+      -->
+    </references>
+    <dates>
+      <discovery>2004-04-18</discovery>
+      <entry>2004-04-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c7705712-92e6-11d8-8b29-0020ed76ef5a">
+    <topic>TCP denial-of-service attacks against long lived connections</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>0</ge></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p><a href="http://www.niscc.gov.uk/">NISCC</a> /
+	  <a href="http://www.uniras.gov.uk/">UNIRAS</a> has published
+	  an advisory that re-visits the long discussed spoofed TCP RST
+	  denial-of-service vulnerability.  This new look emphasizes
+	  the fact that for some applications such attacks are
+	  practically feasible.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0230</cvename>
+      <url>http://www.uniras.gov.uk/vuls/2004/236929/index.htm</url>
+    </references>
+    <dates>
+      <discovery>1995-06-01</discovery>
+      <entry>2004-04-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2e129846-8fbb-11d8-8b29-0020ed76ef5a">
     <topic>MySQL insecure temporary file creation (mysqlbug)</topic>
     <affects>
@@ -78,11 +164,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-0408</cvename>
       <url>http://cvsweb.freebsd.org/ports/security/ident2/files/patch-common.c</url>
     </references>
     <dates>
       <discovery>2004-04-15</discovery>
-      <entry>2004-04-16</entry>
+      <entry>2004-04-23</entry>
     </dates>
   </vuln>
 
