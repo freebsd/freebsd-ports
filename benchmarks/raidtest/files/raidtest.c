@@ -27,6 +27,7 @@
 #include <sys/cdefs.h>
 __FBSDID("$FreeBSD$");
 
+#include <sys/param.h>
 #include <sys/types.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -43,6 +44,12 @@ __FBSDID("$FreeBSD$");
 #include <sys/time.h>
 #include <sys/wait.h>
 
+#if __FreeBSD_version < 500028
+#warning FreeBSD 4.x
+typedef	u_quad_t	uintmax_t;
+typedef	quad_t		intmax_t;
+#define	strtoumax	strtouq
+#endif
 
 #define	DEFAULT_DATA_FILE	"raidtest.data"
 #define	MAX_IO_LENGTH		131072
