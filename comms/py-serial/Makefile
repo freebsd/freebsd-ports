@@ -18,13 +18,7 @@ MAINTAINER=	perky@fallin.lv
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-a
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g}
-SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
-
-do-build:
-	${SETUP_CMD} build
-
-do-install:
-	${SETUP_CMD} install
 
 .include <bsd.port.mk>
