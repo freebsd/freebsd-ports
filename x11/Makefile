@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.141 1997/06/17 06:48:56 tg Exp $
+# $Id: Makefile,v 1.142 1997/07/01 22:08:36 max Exp $
 #
 
     SUBDIR += FWF
@@ -61,6 +61,7 @@
     SUBDIR += xbuffy
     SUBDIR += xcb
     SUBDIR += xco
+    SUBDIR += xcoloredit
     SUBDIR += xcolors
     SUBDIR += xdaliclock
     SUBDIR += xdtm
