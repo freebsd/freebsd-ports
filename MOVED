@@ -1276,3 +1276,4 @@ audio/net-rhythmbox|audio/rhythmbox|2004-10-20|broken and audio/rhythmbox has mo
 audio/ruby-musicbrainz||2004-10-22|distfile did not keep up with libmusicbrainz
 devel/ruby-flex_rb||2004-10-22|did not compile
 devel/ruby-gconf|devel/ruby-gconf2|2004-10-22|did not install
+devel/whups||2004-10-22|not compatible with latest version of Horde
