@@ -1,31 +1,76 @@
---- configure.orig	Mon Aug 16 11:29:43 2004
-+++ configure	Mon Aug 16 11:30:57 2004
-@@ -10269,7 +10269,8 @@
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- $ac_includes_default
--#include <$ac_header>
-+#include <ft2build.h>
-+#include FT_FREETYPE_H
- _ACEOF
- rm -f conftest.$ac_objext
- if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
-@@ -10313,7 +10314,8 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
--#include <$ac_header>
-+#include <ft2build.h>
-+#include FT_FREETYPE_H
- _ACEOF
- if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
-   (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
-@@ -10413,6 +10415,8 @@
+--- configure.orig	Sat Aug 21 03:34:59 2004
++++ configure	Sat Aug 21 12:46:50 2004
+@@ -10247,7 +10247,7 @@
+ fi
+ 
+ 
+-for ac_header in freetype/freetype.h
++for ac_header in ft2build.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
+@@ -10413,45 +10413,26 @@
  echo $ECHO_N "checking whether we can compile the freetype test program... $ECHO_C" >&6
  
      cat > conftest.c << EOF
+-#include <freetype/freetype.h>
+-#include <freetype/ftglyph.h>
+-#include <freetype/ftsnames.h>
+-#include <freetype/ttnameid.h>
+-#include <freetype/ftoutln.h>
+-
+-int main()
+-{
+-    FT_Library ftlibrary;
+-    FT_Face face;
+-    FT_Error error;
+-    FT_ULong charcode;
+-    FT_UInt gindex;
+-    FT_Glyph glyph;
+-    FT_BBox bbox;
+-    FT_Matrix matrix;
+-    FT_UInt i;
+-    char* name = 0;
+-    char italic, bold;
+-
+-    FT_Init_FreeType(&ftlibrary);
+-    FT_New_Face(ftlibrary, "filename", 0, &face);
+-    i = face->num_glyphs - 1;
+-    italic = face->style_flags&FT_STYLE_FLAG_ITALIC;
+-    bold = face->style_flags&FT_STYLE_FLAG_BOLD;
+-    FT_Get_Postscript_Name(face);
+-    FT_Get_Char_Index(face, 33);
+-    FT_Get_First_Char(face, &i);
+-    FT_Get_Next_Char(face, 33, &i);
+-    if(FT_HAS_GLYPH_NAMES(face)) {
+-	FT_Get_Glyph_Name(face, 33, name, 127);
+-    }
+-    FT_Load_Glyph(face, 33, FT_LOAD_NO_BITMAP|FT_LOAD_NO_SCALE);
+-    FT_Get_Glyph(face->glyph, &glyph);
+-    FT_Glyph_Get_CBox(glyph, ft_glyph_bbox_unscaled, &bbox);
+-    FT_Done_Glyph(glyph);
+-    FT_Done_Face(face);
+-    FT_Done_FreeType(ftlibrary);
 +#include <ft2build.h>
 +#include FT_FREETYPE_H
- #include <freetype/freetype.h>
- #include <freetype/ftglyph.h>
- #include <freetype/ftsnames.h>
++#include <stdio.h>
++#include <stdlib.h>
++
++int
++main()
++{
++  FT_Library library;
++  FT_Error  error;
++
++  error = FT_Init_FreeType(&library);
++
++  if (error)
++    return 1;
++  else
++  {
++    FT_Done_FreeType(library);
+     return 0;
++  }
+ }
+ EOF
+ 
