@@ -203,6 +203,7 @@
     SUBDIR += tex-texmflocal
     SUBDIR += texpower
     SUBDIR += tgif2tex
+    SUBDIR += tipa
     SUBDIR += tipograf
     SUBDIR += tr2latex
     SUBDIR += transfig
