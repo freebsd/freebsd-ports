@@ -1,0 +1,4 @@
+%%SITE_PERL%%/DateTime/Format/Bork.pm
+%%SITE_PERL%%/DateTime/Format/Bork.pod
+@unexec rmdir %D/%%SITE_PERL%%/DateTime/Format 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/DateTime 2>/dev/null || true

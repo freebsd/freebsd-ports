@@ -555,6 +555,7 @@
     SUBDIR += p5-DateTime-Event-Recurrence
     SUBDIR += p5-DateTime-Event-Sunrise
     SUBDIR += p5-DateTime-Format-Baby
+    SUBDIR += p5-DateTime-Format-Bork
     SUBDIR += p5-DateTime-Format-Builder
     SUBDIR += p5-DateTime-Format-Strptime
     SUBDIR += p5-DateTime-LeapSecond
