@@ -6,19 +6,23 @@
 #
 
 PORTNAME=	HTML_Form
-PORTVERSION=	1.1.3
-CATEGORIES=	devel www pear
+PORTVERSION=	1.2.0
+CATEGORIES=	devel pear
 
 MAINTAINER=	antonio@php.net
-COMMENT=	Simple HTML form package
+COMMENT=	PEAR simple HTML form package
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_REINPLACE=	yes
 
-FILES=		HTML/Form.php
+CATEGORY=	HTML
+FILES=		Form.php
 TESTS=		form.phpt
+
+post-extract:
+	@${MV} ${WRKSRC}/HTML/* ${WRKSRC}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
