@@ -6,8 +6,8 @@ Thanks to Mike Meyer <mwm@mired.org>, Brad Chapman <chapmanb@arches.uga.edu>.
 -- Johann <johann@egenetics.com>
 
 
---- ../orb/IIOPConnection.py.orig	Mon Apr  3 16:08:34 2000
-+++ ../orb/IIOPConnection.py	Mon Nov  6 11:12:49 2000
+--- orb/IIOPConnection.py.orig	Mon Apr  3 16:08:34 2000
++++ orb/IIOPConnection.py	Mon Nov  6 11:12:49 2000
 @@ -88,7 +88,7 @@
  	# Create a socket and connect to the remote object.
  	try:
@@ -17,8 +17,8 @@ Thanks to Mike Meyer <mwm@mired.org>, Brad Chapman <chapmanb@arches.uga.edu>.
  
  	    # Set the socket by default to NON-blocking mode.
  	    self.__socket.setblocking(0)
---- ../orb/IIOPAcceptor.py.orig	Mon Apr  3 16:08:34 2000
-+++ ../orb/IIOPAcceptor.py	Wed Nov  8 15:06:29 2000
+--- orb/IIOPAcceptor.py.orig	Mon Apr  3 16:08:34 2000
++++ orb/IIOPAcceptor.py	Wed Nov  8 15:06:29 2000
 @@ -65,7 +65,7 @@
  	try:
  	    # Create a socket on which to listen for connection requests.
@@ -28,8 +28,8 @@ Thanks to Mike Meyer <mwm@mired.org>, Brad Chapman <chapmanb@arches.uga.edu>.
  	    self.__socket.listen(5)
  
  	    # Get the host name, the IP address and the port number of the
---- ../orb/Nudger.py.orig	Mon Apr  3 16:08:34 2000
-+++ ../orb/Nudger.py	Wed Nov  8 15:06:50 2000
+--- orb/Nudger.py.orig	Mon Apr  3 16:08:34 2000
++++ orb/Nudger.py	Wed Nov  8 15:06:50 2000
 @@ -54,7 +54,7 @@
  	try:
  	    # Create a socket on which to listen for connection requests.
