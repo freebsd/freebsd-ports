@@ -7,6 +7,7 @@
 
 PORTNAME=	dia
 PORTVERSION=	0.93
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -21,9 +22,9 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 gnomehack gnomeprefix libxslt libartlgpl2 lthack
+USE_GNOME=	gtk20 gnomehack gnomeprefix libxslt libartlgpl2
 WANT_GNOME=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl" \
 		LOCALBASE="${LOCALBASE}"
@@ -54,5 +55,8 @@ post-patch:
 		's,\(^GTK_LIBS.*\),\1 ${PTHREAD_LIBS}, ; \
 		 s,\(^GTK_CFLAGS = \),\1 ${PTHREAD_CFLAGS} ,'
 .endif
+
+post-install:
+	@${INSTALL_DATA} ${WRKSRC}/dia.xpm ${PREFIX}/share/gnome/dia/
 
 .include <bsd.port.post.mk>
