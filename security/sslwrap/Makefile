@@ -13,13 +13,7 @@ MASTER_SITES=	http://www.rickk.com/sslwrap/
 
 MAINTAINER=	ZGabor@CoDe.HU
 
-LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
-		ssl.1:${PORTSDIR}/security/openssl
-
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-LIB_DEPENDS=	rsaref.2:${PORTSDIR}/security/rsaref
-MAKE_ENV+=	EXTRA_SSL_LIBS="-lRSAglue -lrsaref"
-.endif
+USE_OPENSSL=	RSA
 
 WRKSRC=		${WRKDIR}/sslwrap205
 

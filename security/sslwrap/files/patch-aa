@@ -1,13 +1,26 @@
---- Makefile.orig	Tue Sep 28 07:49:54 1999
-+++ Makefile	Sun Dec 26 10:22:14 1999
-@@ -14,8 +14,8 @@
+--- Makefile.orig	Tue Sep 28 05:49:54 1999
++++ Makefile	Thu Jan 27 23:09:09 2000
+@@ -6,16 +6,19 @@
+ 
+ # Debug/Optimizations
+ #OPT = -g
+-OPT = -O2
++CFLAGS?=-O2
++OPT = ${CFLAGS}
++
++CC?=	gcc
+ 
+ # Define 
+ OPENSSL="\"openssl/\""
+ #OPENSSL=""
  
  all :
- 	gcc -o sslwrap ${SRC} ${OPT} -DFLAT_INC -DOPENSSL=${OPENSSL} \
+-	gcc -o sslwrap ${SRC} ${OPT} -DFLAT_INC -DOPENSSL=${OPENSSL} \
 -		-L/usr/local/ssl/lib -lssl -lcrypto \
 -		-I/usr/local/ssl/include \
-+		-L${PREFIX}/lib -lssl -lcrypto ${EXTRA_SSL_LIBS} \
-+		-I${PREFIX}/include \
++	${CC} -o sslwrap ${SRC} ${OPT} -DFLAT_INC -DOPENSSL=${OPENSSL} \
++		-L${OPENSSLLIB} -lssl -lcrypto ${EXTRA_SSL_LIBS} \
++		-I${OPENSSLINC} \
  		${EXTLIBS}
  
  clean:
