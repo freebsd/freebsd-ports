@@ -1,21 +1,29 @@
 bin/worker
-bin/xliwrapper_worker
 share/worker/catalogs/deutsch.catalog
 share/worker/catalogs/deutsch.catalog.coms
 share/worker/catalogs/deutsch.catalog.flags
 share/worker/catalogs/francais.catalog
 share/worker/catalogs/francais.catalog.coms
 share/worker/catalogs/francais.catalog.flags
+share/worker/catalogs/italiano.catalog
+share/worker/catalogs/italiano.catalog.coms
+share/worker/catalogs/italiano.catalog.flags
 share/worker/catalogs/polski.catalog
 share/worker/catalogs/polski.catalog.coms
 share/worker/catalogs/polski.catalog.flags
+share/worker/catalogs/russian.catalog
+share/worker/catalogs/russian.catalog.coms
+share/worker/catalogs/russian.catalog.flags
 share/worker/config-deutsch
 share/worker/config-english
-share/worker/config-francais
+share/worker/scripts/xliwrapper_worker
+share/worker/scripts/displaywrapper_worker
+share/worker/scripts/aa.pattern_rename.sh
 share/pixmaps/WorkerIcon.xpm
 share/pixmaps/WorkerIcon16.xpm
 share/pixmaps/WorkerIcon32.xpm
 share/pixmaps/WorkerIcon48.xpm
 @unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @dirrm share/worker/catalogs
+@dirrm share/worker/scripts
 @dirrm share/worker
