@@ -44,7 +44,7 @@ do-install:
 .for f in Squeak1.31.changes Squeak1.31.image
 	(cd ${WRKSRC}/image && ${INSTALL_DATA} $f ${PREFIX}/share/squeak/$f)
 .endfor
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/image/${SQUEAK_SRC} \
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${SQUEAK_SRC} \
 		${PREFIX}/share/squeak/${SQUEAK_SRC}
 
 .include <bsd.port.mk>
