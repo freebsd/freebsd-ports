@@ -211,7 +211,7 @@ while [ "$1" ]; do
 			XML=1
 			;;
 		\"XSLT\")
-			echo "LIB_DEPENDS+=	sablot.70:\${PORTSDIR}/textproc/sablotron"
+			echo "LIB_DEPENDS+=	sablot.66:\${PORTSDIR}/textproc/sablotron"
 			echo "CONFIGURE_ARGS+=--with-sablot=\${LOCALBASE}"
 			echo "CONFIGURE_ARGS+=--with-expat-dir=\${LOCALBASE}"
 			if [ -z "$XML" ]; then
