@@ -8,7 +8,7 @@
 PORTNAME=	wmcp
 PORTVERSION=	1.2.8
 CATEGORIES=	misc windowmaker
-MASTER_SITES=	http://users.linuxave.net/~bac/src/wmcp/
+MASTER_SITES=	http://soupnazi.org/FreeBSD/ports/distfiles/
 
 MAINTAINER=	jim@FreeBSD.org
 
