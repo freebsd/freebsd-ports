@@ -1,13 +1,13 @@
 # New ports collection makefile for: tclcl
-# Version required:	1.0b8
+# Version required:	1.0b9
 # Date created:		23 April 1999
 # Whom:			obonilla
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tclcl-src-1.0b8
-PKGNAME=	tclcl-1.0b8
+DISTNAME=	tclcl-src-1.0b9
+PKGNAME=	tclcl-1.0b9
 CATEGORIES=	devel
 MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/
 
