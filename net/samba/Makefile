@@ -9,9 +9,7 @@ PORTNAME=	samba
 PORTVERSION=	2.2.5
 PORTREVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
-		ftp://samba.anu.edu.au/pub/samba/ \
-		ftp://de.samba.org/pub/mirror/samba/
+MASTER_SITES=	http://us4.samba.org/samba/ftp/
 
 MAINTAINER=	dwcjr@FreeBSD.org
 
