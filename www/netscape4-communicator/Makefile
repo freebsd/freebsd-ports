@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.35 1999/05/19 21:23:34 sada Exp $
+# $Id: Makefile,v 1.36 1999/05/21 06:29:13 asami Exp $
 #
 
 DISTNAME?=	netscape-${BROWSER}-${BROWSER_VER}
@@ -89,8 +89,7 @@ do-install:
 .if (${BROWSER} == "communicator") && !defined(NO_AUTOADMIN)
 	tar zxf ${DISTDIR}/${AUTOADMIN} -C ${NDIR}
 .endif
-.if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO \
- && !defined(NO_FORTIFY)
+.if defined(USE_128BIT) && !defined(NO_FORTIFY)
 	cd ${WRKDIR}/${FORTIFY} && \
 		(${ECHO} yes ; ${ECHO} no ; ${ECHO} no) \
 		| ./Fortify.sh ${NDIR}/${BROWSER}-${BROWSER_VER}.bin
