@@ -11,7 +11,7 @@ CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME 2 desktop weblog aggregator written in Python
 
 USE_BZIP2=	yes
