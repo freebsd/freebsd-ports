@@ -3,6 +3,6 @@ include/mm.h
 lib/libmm.a
 lib/libmm.la
 lib/libmm.so
-lib/libmm.so.10
+lib/libmm.so.11
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
