@@ -1,29 +1,20 @@
 bin/gdbio
 bin/gide
+include/gtkeditor.h
+include/gtkhint.h
 include/gtksctext.h
-include/gtkeditor/gtkeditor.h
-include/gtkeditor/gtkhint.h
-include/regex.h
-lib/libgtkeditor.a
-lib/libgtkeditor.so
-lib/libgtkeditor.so.0
-lib/libgtksctext.a
-lib/libgtksctext.so
-lib/libgtksctext.so.0
-lib/libregex.a
-lib/libregex.so
-lib/libregex.so.0
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/gnome/gIDE/extra/README
 share/gnome/gIDE/extra/compile_sets
 share/gnome/gIDE/extra/functions.highlight
 share/gnome/gIDE/extra/functions.ignore
+share/gnome/gIDE/extra/gide.conf
 share/gnome/gIDE/extra/gide.scm
 share/gnome/gIDE/extra/glob
 share/gnome/gIDE/extra/glob.scm
 share/gnome/gIDE/extra/patterns
 share/gnome/gIDE/extra/patterns.scm
+share/locale/fr/LC_MESSAGES/gIDE.mo
 @dirrm share/gnome/gIDE/extra
 @dirrm share/gnome/gIDE
-@dirrm include/gtkeditor
