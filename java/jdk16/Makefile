@@ -14,7 +14,7 @@ MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 DISTFILES=	j2sdk-${JDK_VERSION:S/./_/g}-src${EXTRACT_SUFX} \
 		bsd-jdk131-patches-${JDK_PATCHSET_VERSION}.tar.gz
 
-MAINTAINER=	java@FreeBSD.org
+MAINTAINER=	glewis@FreeBSD.org
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
