@@ -9,7 +9,6 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/DebugFlags.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/DebugFlags.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Errors.py
-%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Errors.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Errors.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/ExprNodes.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/ExprNodes.pyc
@@ -27,6 +26,9 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Nodes.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Nodes.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Nodes.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Options.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Options.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Options.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Parsing.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Parsing.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Parsing.pyo
@@ -102,7 +104,6 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Plex/Regexps.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Plex/Regexps.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Plex/Regexps.pyo
-%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Scanners.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Plex/Scanners.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Plex/Scanners.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Plex/Timing.py
@@ -131,40 +132,39 @@ bin/pyrexc
 @dirrm %%PYTHON_SITELIBDIR%%/Pyrex/Distutils
 @dirrm %%PYTHON_SITELIBDIR%%/Pyrex/Compiler
 @dirrm %%PYTHON_SITELIBDIR%%/Pyrex
-%%PORTDOCS%%share/doc/pyrex/About.html
-%%PORTDOCS%%share/doc/pyrex/FAQ.html
-%%PORTDOCS%%share/doc/pyrex/extension_types.html
-%%PORTDOCS%%share/doc/pyrex/index.html
-%%PORTDOCS%%share/doc/pyrex/overview.html
-%%PORTDOCS%%share/doc/pyrex/primes.c
-%%PORTDOCS%%share/doc/pyrex/sharing.html
-%%PORTDOCS%%share/doc/pyrex/special_methods.html
-%%PORTDOCS%%share/examples/pyrex/Makefile
-%%PORTDOCS%%share/examples/pyrex/Makefile.nodistutils
-%%PORTDOCS%%share/examples/pyrex/Setup.py
-%%PORTDOCS%%share/examples/pyrex/callback/Makefile
-%%PORTDOCS%%share/examples/pyrex/callback/Makefile.nodistutils
-%%PORTDOCS%%share/examples/pyrex/callback/README.txt
-%%PORTDOCS%%share/examples/pyrex/callback/Setup.py
-%%PORTDOCS%%share/examples/pyrex/callback/cheese.pyx
-%%PORTDOCS%%share/examples/pyrex/callback/cheesefinder.c
-%%PORTDOCS%%share/examples/pyrex/callback/cheesefinder.h
-%%PORTDOCS%%share/examples/pyrex/callback/run_cheese.py
-%%PORTDOCS%%share/examples/pyrex/embed/Makefile
-%%PORTDOCS%%share/examples/pyrex/embed/Makefile.msc
-%%PORTDOCS%%share/examples/pyrex/embed/Makefile.msc.static
-%%PORTDOCS%%share/examples/pyrex/embed/Makefile.unix
-%%PORTDOCS%%share/examples/pyrex/embed/README
-%%PORTDOCS%%share/examples/pyrex/embed/embedded.pyx
-%%PORTDOCS%%share/examples/pyrex/embed/main.c
-%%PORTDOCS%%share/examples/pyrex/numeric_demo.pyx
-%%PORTDOCS%%share/examples/pyrex/primes.pyx
-%%PORTDOCS%%share/examples/pyrex/pyprimes.py
-%%PORTDOCS%%share/examples/pyrex/run_numeric_demo.py
-%%PORTDOCS%%share/examples/pyrex/run_primes.py
-%%PORTDOCS%%share/examples/pyrex/run_spam.py
-%%PORTDOCS%%share/examples/pyrex/spam.pyx
-%%PORTDOCS%%@dirrm share/examples/pyrex/embed
-%%PORTDOCS%%@dirrm share/examples/pyrex/callback
-%%PORTDOCS%%@dirrm share/examples/pyrex
-%%PORTDOCS%%@dirrm share/doc/pyrex
+%%PORTDOCS%%%%DOCSDIR%%/About.html
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/extension_types.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/primes.c
+%%PORTDOCS%%%%DOCSDIR%%/sharing.html
+%%PORTDOCS%%%%DOCSDIR%%/special_methods.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile.nodistutils
+%%PORTDOCS%%%%EXAMPLESDIR%%/Setup.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/Makefile.nodistutils
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/README.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/Setup.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/cheese.pyx
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/cheesefinder.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/cheesefinder.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/run_cheese.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/embed/Makefile.msc
+%%PORTDOCS%%%%EXAMPLESDIR%%/embed/Makefile.msc.static
+%%PORTDOCS%%%%EXAMPLESDIR%%/embed/Makefile.unix
+%%PORTDOCS%%%%EXAMPLESDIR%%/embed/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/embed/embedded.pyx
+%%PORTDOCS%%%%EXAMPLESDIR%%/embed/main.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/numeric_demo.pyx
+%%PORTDOCS%%%%EXAMPLESDIR%%/primes.pyx
+%%PORTDOCS%%%%EXAMPLESDIR%%/pyprimes.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/run_numeric_demo.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/run_primes.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/run_spam.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/spam.pyx
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/embed
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/callback
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
