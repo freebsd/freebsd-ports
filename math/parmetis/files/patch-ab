@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Jun  8 02:31:34 1999
-+++ Makefile.in	Tue Jun  8 02:32:10 1999
+--- Makefile.in.orig	Mon Jun 10 15:07:32 2002
++++ Makefile.in	Mon Jun 10 15:08:55 2002
 @@ -1,6 +1,6 @@
  
  # Which compiler to use

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ParMetis
-PORTVERSION=	2.0
+PORTVERSION=	3.0
 CATEGORIES=	math
 MASTER_SITES=	http://www-users.cs.umn.edu/~karypis/metis/parmetis/files/
 
@@ -25,7 +25,8 @@ do-install:
 	$(INSTALL_DATA) $(WRKSRC)/parmetis.h    $(PREFIX)/include/parmetis
 .if !defined(NOPORTDOCS)
 	${MKDIR} $(PREFIX)/share/doc/ParMETIS
-	$(INSTALL_DATA) ${WRKSRC}/Doc/manual.ps $(PREFIX)/share/doc/ParMETIS
+	$(INSTALL_DATA) ${WRKSRC}/Manual/manual.ps $(PREFIX)/share/doc/ParMETIS
+	$(INSTALL_DATA) ${WRKSRC}/Manual/manual.pdf $(PREFIX)/share/doc/ParMETIS
 .endif
 
 .include <bsd.port.mk>
