@@ -1,0 +1,10 @@
+--- spager.c.orig	Sun Apr  1 20:13:09 2001
++++ spager.c	Sun Apr  1 20:13:13 2001
+@@ -20,7 +20,6 @@
+  *  the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+  */
+ 
+-#include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
+ #include <unistd.h>
