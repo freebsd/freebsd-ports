@@ -7,17 +7,27 @@
 
 PORTNAME=	slib
 PORTVERSION=	3a1
+PORTREVISION=	1
 CATEGORIES=	lang scheme
-MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
-DISTNAME=	slib${PORTVERSION}
+MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/ \
+		http://swissnet.ai.mit.edu/ftpdir/scm/OLD/:old
+DISTFILES=	slib2d5${EXTRACT_SUFX}:old \
+		slib${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	fuyuki@nigredo.org
 COMMENT=	A portable scheme library
 
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/slib
 USE_GMAKE=	yes
 ALL_TARGET=	slib.info
 INFO=		slib
+
+post-extract:
+	${RM} ${WRKSRC}/formatst.scm ${WRKSRC}/report.scm
+
+post-patch:
+	${REINPLACE_CMD} -e 's/;;(format/(format/' ${WRKSRC}/mklibcat.scm
 
 do-install:
 	${MKDIR} ${DATADIR}

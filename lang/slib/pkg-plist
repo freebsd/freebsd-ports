@@ -49,6 +49,7 @@
 %%DATADIR%%/factor.scm
 %%DATADIR%%/fft.scm
 %%DATADIR%%/fluidlet.scm
+%%DATADIR%%/format.scm
 %%DATADIR%%/gambit.init
 %%DATADIR%%/genwrite.scm
 %%DATADIR%%/getopt.scm
