@@ -1,0 +1,22 @@
+%%RUBY_SITELIBDIR%%/XmlScriptError.rb
+%%RUBY_SITELIBDIR%%/xml/script.rb
+%%RUBY_SITELIBDIR%%/xml/script/base.rb
+%%RUBY_SITELIBDIR%%/xml/script/javascript/compiler.rb
+%%RUBY_SITELIBDIR%%/xml/script/lua/compiler.rb
+%%RUBY_SITELIBDIR%%/xml/script/ruby/compiler.rb
+@dirrm %%RUBY_SITELIBDIR%%/xml/script/ruby
+@dirrm %%RUBY_SITELIBDIR%%/xml/script/lua
+@dirrm %%RUBY_SITELIBDIR%%/xml/script/javascript
+@dirrm %%RUBY_SITELIBDIR%%/xml/script
+@dirrm %%RUBY_SITELIBDIR%%/xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/javascript-test.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/languages.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/lua-test.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/raise.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ruby-error.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ruby-test.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

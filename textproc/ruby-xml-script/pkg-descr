@@ -1,0 +1,7 @@
+Ruby/XML/Script allows you to script a XML stream using an ASP-like
+notation <% ... %>.
+
+Supported scripting languages are JavaScript, Lua and Ruby.
+
+Author:	Gregoire Lejeune <greg@webtime-project.net>
+WWW:	http://gregoire.lejeune.free.fr/

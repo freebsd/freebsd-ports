@@ -572,6 +572,7 @@
     SUBDIR += ruby-spreadsheet-excel
     SUBDIR += ruby-tempura
     SUBDIR += ruby-text-format
+    SUBDIR += ruby-xml-script
     SUBDIR += ruby-xmlconfigfile
     SUBDIR += ruby-xmlparser
     SUBDIR += ruby-xmlscan
