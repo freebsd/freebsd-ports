@@ -1,0 +1,20 @@
+--- configure.orig	Wed Apr 10 18:50:20 2002
++++ configure	Tue Aug  6 05:36:56 2002
+@@ -2113,7 +2113,7 @@
+   fi
+ fi
+ 
+-opt_readline="no"
++opt_readline="unset"
+ 
+ if test "$opt_readline" = "unset"; then
+ 	if test -f "$withval/include/readline/readline.h"; then
+@@ -3118,7 +3118,7 @@
+ 
+ fi
+ 
+-for ac_hdr in fcntl.h sys/time.h unistd.h sys/soundcard.h machine/soundcard.h pthread.h assert.h sys/resource.h math.h signal.h sys/signal.h mcheck.h malloc.h history.h Python.h
++for ac_hdr in fcntl.h sys/time.h unistd.h sys/soundcard.h machine/soundcard.h pthread.h assert.h sys/resource.h math.h signal.h sys/signal.h mcheck.h malloc.h readline/history.h Python.h
+ do
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6

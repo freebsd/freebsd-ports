@@ -7,6 +7,7 @@
 
 PORTNAME=	icecast
 PORTVERSION=	1.3.12
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.icecast.org/releases/
 
@@ -14,6 +15,14 @@ MAINTAINER=	zach@pabst.bendnet.com
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libwrap
+USE_REINPLACE=	yes
+
+pre-patch:
+	@${REINPLACE_CMD} -e 's|<history.h>|<readline/history.h>|' \
+		-e 's|<readline.h>|<readline/readline.h>|' \
+		${WRKSRC}/src/admin.c
+	@${REINPLACE_CMD} -e 's|#undef HAVE_HISTORY_H|#undef HAVE_READLINE_HISTORY_H|g' \
+		${WRKSRC}/config.h.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/icecast ${PREFIX}/sbin
