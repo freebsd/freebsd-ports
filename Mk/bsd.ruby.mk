@@ -38,8 +38,18 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # USE_RUBY_RDOC		- Says that the port uses rdoc to generate documents.
 # USE_RUBY_FEATURES	- Says that the port requires some of the following features
 #			  for building and/or running (default: none):
+#				benchmark	bigdecimal	devel-logger
+#				dl		drb		erb
+#				fileutils	gserver		iconv
+#				ipaddr		open-uri	openssl
+#				optparse	pp		racc-runtime
+#				rdoc		rexml		ruby18
+#				runit		set		soap
+#				stringio	strscan		testunit
+#				tsort		webrick		xmlrpc
+#				yaml		zlib
 #			    benchmark dl fileutil optparse pp racc-runtime
-#			    ruby18 set stringio strscan tsort
+#			    rexml ruby18 set stringio strscan tsort yaml
 # RUBY_REQUIRE		- Set to a Ruby expression to evaluate before building the port.  The constant "Ruby" is set to the integer version number of ruby, and the result of the expression will be set to RUBY_PROVIDED, which is left undefined if the result is nil, false or a zero-length string.  Implies USE_RUBY.
 # RUBY_SHEBANG_FILES	- Specify the files which shebang lines you want to fix.
 # RUBY_RD_FILES		- Specify the RD files which you want to generate HTML documents from.
@@ -77,6 +87,7 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_AMSTD_PORT	- Port path of ruby-amstd without PORTSDIR.
 # RUBY_RDTOOL_PORT	- Port path of rdtool without PORTSDIR.
 # RUBY_RDOC_PORT	- Port path of rdoc without PORTSDIR.
+# RUBY_ICONV_PORT	- Port path of ruby-iconv without PORTSDIR.
 #
 # DEPEND_LIBRUBY	- LIB_DEPENDS entry for libruby.
 # DEPEND_RUBY		- BUILD_DEPENDS/RUN_DEPENDS entry for ruby.
@@ -84,6 +95,7 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # DEPEND_RUBY_AMSTD	- BUILD_DEPENDS/RUN_DEPENDS entry for ruby-amstd.
 # DEPEND_RUBY_RDTOOL	- BUILD_DEPENDS entry for rdtool.
 # DEPEND_RUBY_RDOC	- BUILD_DEPENDS entry for rdoc.
+# DEPEND_RUBY_ICONV	- BUILD_DEPENDS/RUN_DEPENDS entry for ruby-iconv.
 #
 # RUBY_LIBDIR		- Installation path for architecture independent libraries.
 # RUBY_ARCHLIBDIR	- Installation path for architecture dependent libraries.
@@ -203,6 +215,7 @@ RUBY_SHIM18_PORT?=	lang/ruby16-shim-ruby18
 RUBY_AMSTD_PORT?=	devel/ruby-amstd
 RUBY_RDTOOL_PORT?=	textproc/ruby-rdtool
 RUBY_RDOC_PORT?=	textproc/ruby-rdoc
+RUBY_ICONV_PORT?=	converters/ruby-iconv
 
 # Depends
 DEPEND_LIBRUBY?=	${RUBY_NAME}.${RUBY_SHLIBVER}:${PORTSDIR}/${RUBY_PORT}
@@ -210,6 +223,11 @@ DEPEND_RUBY?=		${RUBY}:${PORTSDIR}/${RUBY_PORT}
 DEPEND_RUBY_SHIM18?=	${RUBY_SITEARCHLIBDIR}/features/ruby18/file_ruby18.so:${PORTSDIR}/${RUBY_SHIM18_PORT}
 DEPEND_RUBY_AMSTD?=	${RUBY_SITELIBDIR}/amstd/version.rb:${PORTSDIR}/${RUBY_AMSTD_PORT}
 DEPEND_RUBY_RDTOOL?=	${RUBY_RD2}:${PORTSDIR}/${RUBY_RDTOOL_PORT}
+.if ${RUBY_VER} <= 1.6
+DEPEND_RUBY_ICONV=	${RUBY_SITEARCHLIBDIR}/iconv.so:${PORTSDIR}/${RUBY_ICONV_PORT}
+.else
+DEPEND_RUBY_ICONV=	${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/${RUBY_ICONV_PORT}
+.endif
 
 # Directories
 RUBY_LIBDIR?=		${_RUBY_SYSLIBDIR}/ruby/${RUBY_VER}
@@ -386,7 +404,7 @@ USE_RUBY_FEATURES+=	rdoc
 .endif
 
 .if defined(USE_RUBY_FEATURES)
-shim=	${USE_RUBY_FEATURES:Mbenchmark} \
+_use=	${USE_RUBY_FEATURES:Mbenchmark} \
 	${USE_RUBY_FEATURES:Mbigdecimal} \
 	${USE_RUBY_FEATURES:Mdevel-logger} \
 	${USE_RUBY_FEATURES:Mdl} \
@@ -414,10 +432,18 @@ shim=	${USE_RUBY_FEATURES:Mbenchmark} \
 	${USE_RUBY_FEATURES:Mxmlrpc} \
 	${USE_RUBY_FEATURES:Myaml} \
 	${USE_RUBY_FEATURES:Mzlib}
-.if !empty(shim) && ${RUBY_VER} <= 1.6
+.if !empty(_use) && ${RUBY_VER} <= 1.6
 BUILD_DEPENDS+=		${DEPEND_RUBY_SHIM18}
 RUN_DEPENDS+=		${DEPEND_RUBY_SHIM18}
 .endif
+
+_use=	${USE_RUBY_FEATURES:Miconv}
+.if !empty(_use)
+BUILD_DEPENDS+=		${DEPEND_RUBY_ICONV}
+RUN_DEPENDS+=		${DEPEND_RUBY_ICONV}
+.endif
+
+.undef _use
 .endif
 
 .if defined(USE_RUBY_AMSTD)
