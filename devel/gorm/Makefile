@@ -6,7 +6,11 @@
 #
 
 PORTNAME=	gorm
+.if defined(WITH_GNUSTEP_DEVEL)
+PORTVERSION=	0.3.1
+.else
 PORTVERSION=	0.3.0
+.endif
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
