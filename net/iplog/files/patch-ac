@@ -5,7 +5,7 @@
  
  Upon execution and upon being restarted, iplog reads a list of configuration rules from its configuration file.  The default location of this file is
 -.B /etc/iplog.conf.
-+.B /usr/local/etc/iplog.conf.
++.B %%PREFIX%%/etc/iplog.conf.
  
  .SH NOTATION
  Throughout this document, required parameters will be denoted by enclosing the parameter in angle brackets <like this>.

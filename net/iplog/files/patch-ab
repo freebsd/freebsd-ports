@@ -5,7 +5,7 @@
  .SH FILES
  .TP
 -.B /etc/iplog.conf
-+.B /usr/local/etc/iplog.conf
++.B %%PREFIX%%/etc/iplog.conf
  The
  .B iplog
  configuration file.
