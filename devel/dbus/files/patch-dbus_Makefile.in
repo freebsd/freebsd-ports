@@ -1,0 +1,11 @@
+--- dbus/Makefile.in.orig	Tue Jun 22 14:58:47 2004
++++ dbus/Makefile.in	Tue Jun 22 14:58:56 2004
+@@ -232,7 +232,7 @@
+ INCLUDES = -I$(top_srcdir) $(DBUS_CLIENT_CFLAGS) -DDBUS_COMPILATION
+ 
+ dbusincludedir = $(includedir)/dbus-1.0/dbus
+-dbusarchincludedir = $(libdir)/dbus-1.0/include/dbus
++dbusarchincludedir = $(includedir)/dbus-1.0/include/dbus
+ 
+ lib_LTLIBRARIES = libdbus-1.la
+ 

@@ -183,6 +183,7 @@
     SUBDIR += darcs
     SUBDIR += darts
     SUBDIR += datadesigner
+    SUBDIR += dbus
     SUBDIR += ddd
     SUBDIR += decompyle
     SUBDIR += desktop-file-utils

@@ -1,0 +1,44 @@
+bin/dbus-cleanup-sockets
+bin/dbus-daemon-1
+bin/dbus-glib-tool
+bin/dbus-launch
+bin/dbus-monitor
+bin/dbus-send
+bin/dbus-viewer
+etc/dbus-1/session.conf
+etc/dbus-1/system.conf
+etc/rc.d/dbus.sh
+include/dbus-%%VERSION%%/dbus/dbus-address.h
+include/dbus-%%VERSION%%/dbus/dbus-bus.h
+include/dbus-%%VERSION%%/dbus/dbus-connection.h
+include/dbus-%%VERSION%%/dbus/dbus-errors.h
+include/dbus-%%VERSION%%/dbus/dbus-glib.h
+include/dbus-%%VERSION%%/dbus/dbus-macros.h
+include/dbus-%%VERSION%%/dbus/dbus-memory.h
+include/dbus-%%VERSION%%/dbus/dbus-message.h
+include/dbus-%%VERSION%%/dbus/dbus-pending-call.h
+include/dbus-%%VERSION%%/dbus/dbus-protocol.h
+include/dbus-%%VERSION%%/dbus/dbus-server.h
+include/dbus-%%VERSION%%/dbus/dbus-threads.h
+include/dbus-%%VERSION%%/dbus/dbus-types.h
+include/dbus-%%VERSION%%/dbus/dbus.h
+include/dbus-%%VERSION%%/include/dbus/dbus-arch-deps.h
+lib/libdbus-1.a
+lib/libdbus-1.so
+lib/libdbus-1.so.0
+lib/libdbus-glib-1.a
+lib/libdbus-glib-1.so
+lib/libdbus-glib-1.so.0
+%%QT%%lib/libdbus-qt-1.a
+%%QT%%lib/libdbus-qt-1.so
+%%QT%%lib/libdbus-qt-1.so.0
+libdata/pkgconfig/dbus-1.pc
+libdata/pkgconfig/dbus-glib-1.pc
+@dirrm lib/dbus-%%VERSION%%/services
+@dirrm lib/dbus-%%VERSION%%
+@dirrm include/dbus-%%VERSION%%/include/dbus
+@dirrm include/dbus-%%VERSION%%/include
+@dirrm include/dbus-%%VERSION%%/dbus
+@dirrm include/dbus-%%VERSION%%
+@dirrm etc/dbus-1/system.d
+@dirrm etc/dbus-1

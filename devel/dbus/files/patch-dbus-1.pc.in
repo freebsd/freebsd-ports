@@ -1,0 +1,9 @@
+--- dbus-1.pc.in.orig	Tue Jun 22 14:50:57 2004
++++ dbus-1.pc.in	Tue Jun 22 14:54:24 2004
+@@ -7,5 +7,5 @@
+ Description: Free desktop message bus
+ Version: @VERSION@
+ Libs: -L${libdir} -ldbus-1
+-Cflags: -I${includedir}/dbus-1.0 -I${libdir}/dbus-1.0/include
++Cflags: -I${includedir}/dbus-1.0 -I${includedir}/dbus-1.0/include
+ 
