@@ -15,4 +15,6 @@ Note:  there are both English and German language version of the manpages,
 and helpfiles.  The German language version will be installed if 
 "GERMAN_LANG" is set during ``make install'' of the port.
 
+WWW: http://www.identicalsoftware.com/xwpe/
+
 -- David	(obrien@FreeBSD.org)

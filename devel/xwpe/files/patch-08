@@ -1,10 +1,13 @@
---- configure.orig	Mon Nov  9 14:58:06 1998
-+++ configure	Mon Nov  9 14:57:44 1998
-@@ -2459,6 +2459,7 @@
+--- configure.orig	Mon Dec 27 08:11:38 1999
++++ configure	Sat Feb 26 07:49:41 2000
+@@ -2604,6 +2604,10 @@
  s%@X_PRE_LIBS@%$X_PRE_LIBS%g
  s%@X_LIBS@%$X_LIBS%g
  s%@X_EXTRA_LIBS@%$X_EXTRA_LIBS%g
 +s%@X_INC@%$x_includes%g
++s%@INSTALL@%$INSTALL%g
++s%@INSTALL_PROGRAM@%$INSTALL_PROGRAM%g
++s%@INSTALL_DATA@%$INSTALL_DATA%g
  
  CEOF
  EOF
