@@ -1,5 +1,5 @@
---- makefile.orig	Sun Mar 28 22:41:06 2004
-+++ makefile	Sun Mar 28 22:45:57 2004
+--- makefile.orig	Tue Nov 30 11:33:21 2004
++++ makefile	Tue Nov 30 11:38:44 2004
 @@ -33,11 +33,11 @@
  SUFF=
  else
@@ -43,13 +43,16 @@
  
  AR = ar
  ARFLAGS = -cru
-@@ -320,14 +320,13 @@
+@@ -326,16 +326,14 @@
  
- install: subsql installlib
+ install: subsql cleanupsem installlib
  	mkdir -p $(BINSPATH)
 -	cp subsql $(BINSPATH)
 -	strip $(BINSPATH)/subsql
+-	cp cleanupsem $(BINSPATH)
+-	strip $(BINSPATH)/cleanupsem
 +	${BSD_INSTALL_PROGRAM} subsql $(BINSPATH)
++	${BSD_INSTALL_PROGRAM} cleanupsem $(BINSPATH)
  
  installlib: $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED)
  	mkdir -p $(INCSPATH)
