@@ -3,13 +3,16 @@
 # $FreeBSD$
 #
 
+BASH="${PKG_PREFIX-/usr/local}/bin/bash"
+SHELLS="${PKG_DESTDIR-}/etc/shells"
+
 case $2 in
 POST-INSTALL)
-  if ! grep -qs "^${PKG_PREFIX-/usr/local}/bin/bash\$" /etc/shells; then
+  if [ -d "${SHELLS%/*}" ] && ! grep -qs "^$BASH\$" "$SHELLS"; then
     if [ `id -u` -eq 0 ]; then
-      echo "${PKG_PREFIX-/usr/local}/bin/bash" >> /etc/shells
+      echo "$BASH" >> "$SHELLS"
     else
-      echo "Not root, please add ${PKG_PREFIX-/usr/local}/bin/bash to /etc/shells manually"
+      echo "Not root, please add $BASH to $SHELLS manually"
     fi
   fi
   ;;

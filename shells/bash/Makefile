@@ -6,21 +6,22 @@
 #
 
 PORTNAME=		bash
-PORTVERSION=		3.0
-PORTREVISION=		5
+PORTVERSION=		3.0.13
+PORTREVISION=		0
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
 			http://cnswww.cns.cwru.edu/~chet/%SUBDIR%/:faq \
 			ftp://ftp.cwru.edu/pub/%SUBDIR%/:bash,faq
 MASTER_SITE_SUBDIR=	${PORTNAME}/:bash,faq
+DISTNAME=		${PORTNAME}-${PORTVERSION:R}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}:bash
 DIST_SUBDIR=		${PORTNAME}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=		ftp://ftp.cwru.edu/pub/%SUBDIR%/:bash
-PATCH_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-${PORTVERSION}-patches/:bash
+PATCH_SITE_SUBDIR=	${PORTNAME}/${DISTNAME}-patches/:bash
 .for patch in		01 02 03 04 05 06 07 08 09 10 11 12 13
-PATCHFILES+=		${PORTNAME}${PORTVERSION:S/.//g}-0${patch}:bash
+PATCHFILES+=		${PORTNAME}${PORTVERSION:R:S/.//g}-0${patch}:bash
 .endfor
 
 MAINTAINER=		eik@FreeBSD.org
@@ -30,7 +31,11 @@ IGNOREFILES=		FAQ
 CONFLICTS=		bash-[0-24-9].*
 
 .if !defined(WITHOUT_IMPLICITCD)
-EXTRA_PATCHES=		${PATCHDIR}/xpatch-implicitcd
+EXTRA_PATCHES+=		${PATCHDIR}/xpatch-implicitcd
+.endif
+
+.if !defined(WITHOUT_COLONBREAKSWORDS)
+EXTRA_PATCHES+=		${PATCHDIR}/xpatch-colonbreakswords
 .endif
 
 MAN1=			bash.1 bashbug.1
@@ -40,8 +45,10 @@ USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
 
 .if !defined(NOPORTDOCS)
+.if !defined(WITH_INCLUDED_FAQ)
 DISTFILES+=		FAQ:faq
-PORTDOCS=		FAQ CHANGES COMPAT NEWS POSIX RBASH
+.endif
+PORTDOCS=		FAQ INTRO CHANGES COMPAT NEWS POSIX RBASH
 .endif
 
 CONFIGURE_ARGS=		--without-bash-malloc \
@@ -76,22 +83,34 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
 
 post-patch:
-	@${REINPLACE_CMD} -e "s| /bin| ${PREFIX}/bin|g" ${WRKSRC}/doc/bash.1
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/bash.1
+
+post-configure:
+	@${FIND} ${WRKSRC} -name Makefile -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e "s|^DESTDIR *=|& ${DESTDIR}|"
 
 pre-build:
 	@${ECHO_CMD} $$((${PORTREVISION}-1)) > ${WRKSRC}/.build
 
 pre-install:
-	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL; \
+	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" \
+		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/FAQ ${DESTDIR}${DOCSDIR}
-	@for d in ${PORTDOCS:NFAQ}; do \
+	@${MKDIR} ${DESTDIR}${DOCSDIR}
+.if !defined(WITH_INCLUDED_FAQ)
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/FAQ \
+		${WRKSRC}/doc/INTRO ${DESTDIR}${DOCSDIR}
+.else
+	@${INSTALL_DATA} ${WRKSRC}/doc/FAQ \
+		${WRKSRC}/doc/INTRO ${DESTDIR}${DOCSDIR}
+.endif
+	@for d in ${PORTDOCS:NFAQ:NINTRO}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${d} ${DESTDIR}${DOCSDIR}; \
 	done
 .endif
-	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL; \
+	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" \
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
