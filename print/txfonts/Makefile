@@ -30,7 +30,7 @@ USE_ZIP=	yes
 EXTRACT_AFTER_ARGS=	-d ${TXPATCHDIR}
 NO_BUILD=	yes
 
-BROKEN=		"txfonts already included in the teTeX distribution"
+IGNORE=		is already included in the teTeX distribution
 
 TEXFONTSDIR=	${PREFIX}/share/texmf/fonts
 LATEXMACRODIR=	${PREFIX}/share/texmf/tex/latex
