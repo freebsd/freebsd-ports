@@ -217,6 +217,7 @@
     SUBDIR += libelysium
     SUBDIR += libh
     SUBDIR += libmcal
+    SUBDIR += libutf
     SUBDIR += lifelines
     SUBDIR += lile
     SUBDIR += lingoteach

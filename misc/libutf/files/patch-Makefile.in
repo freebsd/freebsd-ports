@@ -1,0 +1,24 @@
+--- Makefile.in.old	Sat May 10 00:38:36 2003
++++ Makefile.in	Sat May 10 00:52:03 2003
+@@ -9,6 +9,7 @@
+ INCDIR= $(prefix)/include
+ MANDIR= $(prefix)/man
+ ETCDIR= $(prefix)/etc
++EGDIR= $(prefix)/share/examples/libutf
+ 
+ # SVR4, I hate you. What ****idiot**** dreamed this up????
+ # Yeah, like all csh or rc users need this crap...
+@@ -32,11 +33,11 @@
+ 	ci -l ure.c ure.h urelang.c utf.c utf.h
+ 	
+ install: $(LIBS)
+-	$(srcdir)/mkinstalldirs $(LIBDIR) $(INCDIR) $(ETCDIR) $(MANDIR)/man3
++	$(srcdir)/mkinstalldirs $(LIBDIR) $(INCDIR) $(EGDIR) $(MANDIR)/man3
+ 	$(INSTALL_DATA) $(LIBS) $(LIBDIR) ; $(RANLIB) $(LIBDIR)/$(LIBS)
+ 	$(INSTALL_DATA) $(srcdir)/ure.h $(INCDIR)
+ 	$(INSTALL_DATA) $(srcdir)/utf.h $(INCDIR)
+-	$(INSTALL_DATA) $(srcdir)/langcoll.utf $(ETCDIR)
++	$(INSTALL_DATA) $(srcdir)/langcoll.utf $(EGDIR)
+ 	$(INSTALL_DATA) $(srcdir)/utf.3 $(MANDIR)/man3
+ 	$(INSTALL_DATA) $(srcdir)/ure.3 $(MANDIR)/man3
+ 
