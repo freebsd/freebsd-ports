@@ -7,6 +7,7 @@
 
 PORTNAME=	premail
 PORTVERSION=	0.46
+PORTREVISION=   1
 CATEGORIES=	mail security
 MASTER_SITES=	ftp://ftp.jpunix.com/pub/remailer-tools/ \
 		ftp://ftp.kiarchive.ru/pub/unix/crypto/
