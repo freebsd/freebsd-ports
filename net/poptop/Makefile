@@ -13,8 +13,6 @@ DISTNAME=	pptpd-${PORTVERSION}
 
 MAINTAINER=	nsayer@freebsd.org
 
-FORBIDDEN=	"This port is deprecated in favor of ports/net/mpd-netgraph's pptp functionality"
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bsdppp
 
