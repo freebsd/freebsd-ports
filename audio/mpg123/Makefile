@@ -7,7 +7,7 @@
 
 PORTNAME=	mpg123
 PORTVERSION=	0.59r
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.mpg123.de/mpg123/ \
 		http://www-ti.informatik.uni-tuebingen.de/~hippm/mpg123/ \
@@ -57,22 +57,24 @@ pre-fetch:
 	@${ECHO_MSG}
 .endif
 .if ${MACHINE_ARCH} == "i386"
+.if ${OSVERSION} >= 500018
+.if ${MACHINE_CPU:Mk6}
+OPT_ARCH=	3dnow
+.elif ${MACHINE_CPU:Mi586}
+OPT_ARCH=	i586
+.elif ${MACHINE_CPU:Mi486}
+OPT_ARCH=	i486
+.endif
+.else
 .if !defined(OPT_ARCH) || ((${OPT_ARCH} != "i486") && (${OPT_ARCH} != "i586") \
     && (${OPT_ARCH} != "3dnow"))
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Note: you can set OPT_ARCH to optimize for your hardware"
+	@${ECHO_MSG} "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+	@${ECHO_MSG} "Note: you can set OPT_ARCH to optimize for your hardware.
 	@${ECHO_MSG} "(e.g. make OPT_ARCH=i486)."
-.if ${PORTOBJFORMAT} == "elf"
 	@${ECHO_MSG} "Valid values are: i486, i586, 3dnow"
-.else
-	@${ECHO_MSG} "Valid values are: i486"
-.endif
-	@${ECHO_MSG}
-.endif
-.if ${PORTOBJFORMAT} == "elf"
+	@${ECHO_MSG} "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 OPT_ARCH?=	i586
-.else
-OPT_ARCH?=	i486
+.endif
 .endif
 .endif
 

@@ -1,0 +1,11 @@
+--- control_generic.c.orig	Fri Mar  2 16:10:49 2001
++++ control_generic.c	Fri Mar  2 16:10:51 2001
+@@ -26,6 +26,8 @@
+ extern int buffer_pid;
+ extern int tabsel_123[2][3][16];
+ 
++void generic_sendmsg (char *, ...) __printflike(1,2);
++
+ void generic_sendmsg (char *fmt, ...)
+ {
+ 	va_list ap;
