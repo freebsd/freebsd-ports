@@ -1,13 +1,13 @@
 # New ports collection makefile for: YaTeX
-# Version required:	1.65.6
-# Date created:		Oct 9 1998
+# Version required:	1.66
+# Date created:		98/11/17
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.3 1998/11/11 14:33:01 kuriyama Exp $
+# $Id: Makefile,v 1.4 1998/11/15 12:21:56 kuriyama Exp $
 #
 
-DISTNAME=	yatex9805062331
-PKGNAME?=	yatex-1.65.6
+DISTNAME=	yatex1.66
+PKGNAME?=	yatex-1.66
 CATEGORIES?=	print elisp
 MASTER_SITES=	http://www.comp.ae.keio.ac.jp/~yuuji/yatex/ \
 		http://www.comp.ae.keio.ac.jp/~yuuji/tmp/
@@ -25,18 +25,20 @@ BUILD_DEPENDS=	xemacs:${PORTSDIR}/editors/xemacs-mule \
 		bash:${PORTSDIR}/shells/bash2
 .endif
 
-VERSION=	1.65.6
+VERSION=	1.66
 TARGETNAME=	YaTeX
 DIRSECTION=	The Emacs editor and associated tools
+ADDSITESTART=
+SITESTARTDIR=
 # Note that 'INFODIR' is defined in bsd.info.mk
 .if !defined(XEMACS-MULE)
 INFODIR=	${PREFIX}/info
 .endif
+.if defined(MULE)
 # The value of ADDSITESTART should follow a format of printf(1)
 ADDSITESTART=	(setq load-path (append (list \\n\
 		\\t\\"${ELISPDIR}/yatex\\"\\n\
 		\\t) load-path))\\n
-.if defined(MULE)
 EMACSDIR=	${PREFIX}/share/mule
 SITESTARTDIR=	${EMACSDIR}/19.34/site-lisp
 .endif
@@ -45,8 +47,6 @@ EMACS=		xemacs
 EMACSDIR=	${PREFIX}/lib/xemacs
 #
 INFODIR=	${EMACSDIR}/info
-ADDSITESTART=
-SITESTARTDIR=
 .endif
 .if defined(MULE) || defined(XEMACS-MULE)
 NEW=		yatex.new

@@ -1,12 +1,12 @@
 # New ports collection makefile for: YaTeX
-# Version required:	1.65.6
-# Date created:		18 Feb. 1998
+# Version required:	1.66
+# Date created:		98/11/17
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/08/17 16:33:44 kuriyama Exp $
+# $Id: Makefile,v 1.3 1998/11/15 12:21:56 kuriyama Exp $
 #
 
-PKGNAME=	ja-yatex-xemacs-1.65.6
+PKGNAME=	ja-yatex-xemacs-1.66
 CATEGORIES=	japanese print elisp
 
 XEMACS-MULE=	yes

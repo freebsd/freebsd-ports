@@ -21,7 +21,8 @@ if [ "X$2" = X"DEINSTALL" ]; then
 	for file in `echo  ${infofiles} | ${SED} "s,:, ,g"`; do
 		install-info --delete ${infodir}/${file} ${infodir}/dir
 	done
-	if  [ "`grep \"^${OptionStart}\"  ${sitestartdir}/site-start.el`" ]; then 
+	if [ X"${sitestartdir}" != X ] && \
+		    [ "`grep \"^${OptionStart}\"  ${sitestartdir}/site-start.el`" ]; then 
 		${ECHO} "Deleting entry for \"${pkgname}\" from ${sitestartdir}/site-start.el"
 		${SED} -e "/^${OptionStart}/,/^${OptionEnd}/d" \
 		    ${sitestartdir}/site-start.el > ${sitestartdir}/site-start.el.bak
