@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- ../../j2se/make/common/Defs-bsd.gmk.orig	Fri Mar  7 01:38:41 2003
 +++ ../../j2se/make/common/Defs-bsd.gmk	Fri Mar  7 01:38:01 2003
 @@ -155,7 +155,7 @@
@@ -9,3 +11,13 @@
  # Allow the user to override the default value...
  ifdef ALT_DEVTOOLS_PATH
  DEVTOOLS_PATH = $(subst //,/,$(ALT_DEVTOOLS_PATH)/)
+@@ -194,7 +194,8 @@
+ endif # PLATFORM_SRC
+ 
+ # platform specific include files
+-PLATFORM_INCLUDE  = $(INCLUDEDIR)/$(PLATFORM)
++TRUE_PLATFORM_INCLUDE := $(shell $(ECHO) $(TRUE_PLATFORM) | $(TR) "[:upper:]" "[:lower:]")
++PLATFORM_INCLUDE  = $(INCLUDEDIR)/$(TRUE_PLATFORM_INCLUDE)
+ 
+ #
+ # Default BOOTDIR
