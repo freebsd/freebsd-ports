@@ -7,6 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.2.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/vpopmail/
 PKGNAMESUFFIX=	-stable
@@ -180,25 +181,25 @@ pre-configure:
 	@PKG_PREFIX=${PREFIX}/vpopmail ${PERL5} ${PKGINSTALL}
 .if defined(WITH_MYSQL)
 .if defined(WITH_MYSQL_UPDATE_SERVER)
-	${REINPLACE_CMD} "s/(#define MYSQL_UPDATE_SERVER.*)localhost(.*)/\$$1${WITH_MYSQL_UPDATE_SERVER}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} -E "s/(#define MYSQL_UPDATE_SERVER.*)localhost(.*)/\1${WITH_MYSQL_UPDATE_SERVER}\2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_READ_SERVER)
-	${REINPLACE_CMD} "s/(#define MYSQL_READ_SERVER.*)localhost(.*)/\$$1${WITH_MYSQL_READ_SERVER}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} -E "s/(#define MYSQL_READ_SERVER.*)localhost(.*)/\1${WITH_MYSQL_READ_SERVER}\2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_UPDATE_USER)
-	${REINPLACE_CMD} "s/(#define MYSQL_UPDATE_USER.*)root(.*)/\$$1${WITH_MYSQL_UPDATE_USER}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} -E "s/(#define MYSQL_UPDATE_USER.*)root(.*)/\1${WITH_MYSQL_UPDATE_USER}\2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_READ_USER)
-	${REINPLACE_CMD} "s/(#define MYSQL_READ_USER.*)root(.*)/\$$1${WITH_MYSQL_READ_USER}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} -E "s/(#define MYSQL_READ_USER.*)root(.*)/\1${WITH_MYSQL_READ_USER}\2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_UPDATE_PASSWD)
-	${REINPLACE_CMD} "s/(#define MYSQL_UPDATE_PASSWD.*)secret(.*)/\$$1${WITH_MYSQL_UPDATE_PASSWD}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} -E "s/(#define MYSQL_UPDATE_PASSWD.*)secret(.*)/\1${WITH_MYSQL_UPDATE_PASSWD}\2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_READ_PASSWD)
-	${REINPLACE_CMD} "s/(#define MYSQL_READ_PASSWD.*)secret(.*)/\$$1${WITH_MYSQL_READ_PASSWD}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} -E "s/(#define MYSQL_READ_PASSWD.*)secret(.*)/\1${WITH_MYSQL_READ_PASSWD}\2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_DB)
-	${REINPLACE_CMD} "s/(#define MYSQL_DATABASE.*)vpopmail(.*)/\$$1${WITH_MYSQL_DB}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} -E "s/(#define MYSQL_DATABASE.*)vpopmail(.*)/\1${WITH_MYSQL_DB}\2/" ${WRKSRC}/vmysql.h
 .endif
 .endif
 	${MKDIR} ${VCFGDIR}
