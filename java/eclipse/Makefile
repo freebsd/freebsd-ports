@@ -17,6 +17,8 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	java@FreeBSD.ORG
 COMMENT=	An open extensible IDE for anything and nothing in particular
 
+BROKEN=		"Broken pkg-plist"
+
 LIB_DEPENDS=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		pkg-config:${PORTSDIR}/devel/pkgconfig

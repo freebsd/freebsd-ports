@@ -48,6 +48,8 @@ pre-configure:
 		${WRKSRC}/Makefile.in
 .endif
 
+BROKEN=		Broken pkg-plist
+
 .if !defined(WITHOUT_QT)
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/work/qt-viewer ${PREFIX}/bin
