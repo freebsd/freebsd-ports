@@ -27,7 +27,7 @@ My suggestion is to use these scripts instead of the usual FreeBSD MTA startup
 process. This of course means that you will have to disable MTA startup 
 in rc.conf completely. Put this in your rc.conf:
 
-sendmail_enable="NO"
+sendmail_enable="NONE"
 
 Then adjust sendmail.sh or exim.sh to your configuration. Have a look at the
 MailScanner manpage for MTA setup hints.
