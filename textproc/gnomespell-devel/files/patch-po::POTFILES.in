@@ -1,0 +1,11 @@
+
+$FreeBSD$
+
+--- po/POTFILES.in	2001/12/29 21:18:06	1.1
++++ po/POTFILES.in	2001/12/29 21:18:42
+@@ -1,5 +1,4 @@
+ gnome-spell/control.c
+-gnome-spell/dictionary-factory.c
+ gnome-spell/spell-factory.c
+ gnome-spell/test-spell.c
+ gnome-spell/spell-checker.glade

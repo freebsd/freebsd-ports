@@ -1,0 +1,14 @@
+bin/gnome-spell-component
+share/gnome/gnome-spell/spell-checker.glade
+share/gnome/idl/Spell.idl
+share/gnome/oaf/GNOME_Spell.oafinfo
+share/locale/cs/LC_MESSAGES/gnome-spell.mo
+share/locale/es/LC_MESSAGES/gnome-spell.mo
+share/locale/fr/LC_MESSAGES/gnome-spell.mo
+share/locale/lt/LC_MESSAGES/gnome-spell.mo
+share/locale/no/LC_MESSAGES/gnome-spell.mo
+share/locale/pl/LC_MESSAGES/gnome-spell.mo
+share/locale/sk/LC_MESSAGES/gnome-spell.mo
+share/locale/sv/LC_MESSAGES/gnome-spell.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-spell.mo
+@dirrm share/gnome/gnome-spell
