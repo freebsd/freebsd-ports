@@ -32,6 +32,38 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1d3a2737-7eb7-11d9-acf7-000854d03344">
+    <topic>unace -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>unace</name>
+	<range><lt>unace-1.2b_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ulf H&auml;rnhammar reports multiple security vulnerabilities
+	  in unace-1.2b:</p>
+	<ul>
+	  <li>There are buffer overflows when extracting, testing or
+	    listing specially prepared ACE archives.</li>
+	  <li>There are directory traversal bugs when extracting ACE
+	    archives.</li>
+	  <li>There are also buffer overflows when dealing with long
+	    (>17000 characters) command line arguments.</li>
+	</ul>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0160</cvename>
+      <cvename>CAN-2005-0161</cvename>
+    </references>
+    <dates>
+      <discovery>2005-02-14</discovery>
+      <entry>2005-02-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a413ed94-836e-11d9-a9e7-0001020eed82">
     <topic>putty -- pscp/psftp heap corruption vulnerabilities</topic>
     <affects>
