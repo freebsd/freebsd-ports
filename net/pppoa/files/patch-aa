@@ -1,0 +1,11 @@
+--- configure.in.orig	Mon Dec 27 22:22:11 2004
++++ configure.in	Mon Dec 27 22:21:45 2004
+@@ -98,7 +98,7 @@
+ 		PUSB_SOURCE="pusb-bsd.c"
+ 		AC_DEFINE(FREEBSD)
+ 		;;
+-	*-freebsd5*)
++	*-freebsd[56]*)
+ 		st_compile="modem_run pppoa2 pppoa3"
+ 		THREAD_LIBS="-lkse"
+ 		AC_CHECK_HEADER(semaphore.h, , [AC_MSG_WARN([Missing header file, pppoa3 won't be compiled]); st_compile="modem_run pppoa2"])

@@ -1,0 +1,11 @@
+--- configure.orig	Mon Dec 27 22:23:03 2004
++++ configure	Mon Dec 27 22:25:22 2004
+@@ -4419,7 +4419,7 @@
+ _ACEOF
+ 
+ 		;;
+-	*-freebsd5*)
++	*-freebsd[56]*)
+ 		st_compile="modem_run pppoa2 pppoa3"
+ 		THREAD_LIBS="-pthread"
+ 		if test "${ac_cv_header_semaphore_h+set}" = set; then
