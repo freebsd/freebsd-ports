@@ -11,7 +11,7 @@ CATEGORIES=	palm databases linux
 MASTER_SITES=	ftp://ftp.SilberSoft.com/pub/Software/Database/HanDBase/
 DISTNAME=	handbase_desktop_${PORTVERSION:S/./_/}.i386-any-linux2.0
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LINUXBASE}/usr/bin/strip:${PORTSDIR}/devel/linux_devtools-7
 
