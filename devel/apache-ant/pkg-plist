@@ -1,7 +1,4 @@
 bin/ant
-%%T%%/bin/ant
-%%T%%/bin/antRun
-%%T%%/bin/runant.pl
 %%T%%/lib/ant.jar
 %%T%%/lib/optional.jar
 %%T%%/lib/README
@@ -1009,7 +1006,6 @@ bin/ant
 %%T%%/docs/problems.html
 %%T%%/docs/projects.html
 %%T%%/docs/resources.html
-@dirrm %%T%%/bin
 @dirrm %%T%%/lib
 @dirrm %%T%%/docs/ant2
 @dirrm %%T%%/docs/images

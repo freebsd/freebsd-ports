@@ -7,7 +7,7 @@
 
 PORTNAME=	jakarta-ant
 PORTVERSION=	1.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel java
 MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${ANT_VERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -27,7 +27,6 @@ PORTDESTDIR=	${PREFIX}/${PORTNAME}-${PORTVERSION}
 PLIST_SUB+=	T=${PORTDESTDIR:S/^${PREFIX}\///}
 
 READMES=	LICENSE README WHATSNEW
-SCRIPTS=	bin/ant bin/antRun bin/runant.pl
 ANT_VERSION=	${PORTVERSION}
 
 DATADIRS=	lib
@@ -56,13 +55,12 @@ post-patch:
 
 do-install:
 	@${ECHO_CMD} -n ">> Creating destination directory..."
-	@${MKDIR} ${PORTDESTDIR}/bin ${PORTDESTDIR}/lib
+	@${MKDIR} ${PORTDESTDIR}/lib
 	@${ECHO_CMD} " [ DONE ]"
 
-	@${ECHO_CMD} -n ">> Installing scripts..."
+	@${ECHO_CMD} -n ">> Installing script..."
 	@cd ${INSTALL_WRKSRC}; \
-		${INSTALL_SCRIPT} ${SCRIPTS} ${PORTDESTDIR}/bin;
-	@${LN} -sf ${PORTDESTDIR}/bin/ant ${PREFIX}/bin
+		${INSTALL_SCRIPT} ${WRKSRC}/bin/ant ${PREFIX}/bin;
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Installing readme files..."
