@@ -371,6 +371,7 @@
     SUBDIR += java-util-concurrent
     SUBDIR += jclassinfo
     SUBDIR += jrtplib
+    SUBDIR += jsap
     SUBDIR += jude-community
     SUBDIR += judy
     SUBDIR += kaptain
