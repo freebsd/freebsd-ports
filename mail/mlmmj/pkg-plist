@@ -10,6 +10,8 @@ share/mlmmj/listtexts/access
 share/mlmmj/listtexts/bounce-probe
 share/mlmmj/listtexts/listhelp
 share/mlmmj/listtexts/moderation
+share/mlmmj/listtexts/notifysub
+share/mlmmj/listtexts/notifyunsub
 share/mlmmj/listtexts/notintocc
 share/mlmmj/listtexts/sub-confirm
 share/mlmmj/listtexts/sub-ok
