@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysql-connector-java
-PORTVERSION=	3.0.12
+PORTVERSION=	3.0.13
 CATEGORIES=	databases java
 MASTER_SITES=	ftp://mysql.secsup.org/pub/software/mysql/Downloads/Connector-J/ \
 		http://mysql.tzone.it/Downloads/Connector-J/ \
