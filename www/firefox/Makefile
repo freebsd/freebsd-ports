@@ -188,6 +188,8 @@ pre-install:
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm include/${FIREFOX}/|' >> ${PLIST}
 	${ECHO_CMD} @dirrm include/${FIREFOX} >> ${PLIST}
+	${ECHO_CMD} lib/browser_plugins/.${PORTNAME}.keep >> ${PLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/browser_plugins 2>/dev/null || ${TRUE}" >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/${FIREFOX}
@@ -197,6 +199,7 @@ do-install:
 	if [ ! -d ${PREFIX}/lib/browser_plugins ]; then \
 		${MKDIR} ${PREFIX}/lib/browser_plugins ; \
 	fi
+	${TOUCH} -f ${PREFIX}/lib/browser_plugins/.${PORTNAME}.keep
 	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
 		for jpi in ${JPI_LIST}; do \
 			if [ -f $${jpi} ]; then \

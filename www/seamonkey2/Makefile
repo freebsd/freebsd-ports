@@ -7,7 +7,7 @@
 
 PORTNAME?=	mozilla
 PORTVERSION=	1.8.a5
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -293,8 +293,9 @@ pre-install:
 				break; \
 			fi; \
 		done; \
-		${ECHO_CMD} @dirrm lib/browser_plugins >> ${PLIST} ; \
 	fi
+	${ECHO_CMD} lib/browser_plugins/.${PORTNAME}.keep >> ${PLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/browser_plugins 2>/dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} lib/${MOZILLA}/mozilla >> ${PLIST}
 	${ECHO_CMD} lib/${MOZILLA}/mozilla-config >> ${PLIST}
 .if !defined(WITHOUT_MAILNEWS)
@@ -328,6 +329,7 @@ do-install:
 	if [ ! -d ${PREFIX}/lib/browser_plugins ]; then \
 		${MKDIR} ${PREFIX}/lib/browser_plugins ; \
 	fi
+	${TOUCH} -f ${PREFIX}/lib/browser_plugins/.${PORTNAME}.keep
 	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
 		for jpi in ${JPI_LIST}; do \
 			if [ -f $${jpi} ]; then \
