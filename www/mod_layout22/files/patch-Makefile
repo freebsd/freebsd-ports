@@ -1,0 +1,63 @@
+--- Makefile.orig	Mon Oct 21 19:38:28 2002
++++ Makefile	Sat Nov 16 16:10:44 2002
+@@ -1,17 +1,17 @@
+ ##
+ ##  Makefile -- Build procedure for mod_layout Apache module
+ ##
+-builddir=$(shell pwd)
+-top_srcdir=/usr/local/apache2
+-top_builddir=/usr/local/apache2
+-include /usr/local/apache2/build/special.mk
++#builddir=${WRKSRC}
++top_srcdir=${LOCALBASE}/share/apache2
++top_builddir=${LOCALBASE}/share/apache2
++include ${LOCALBASE}/share/apache2/build/special.mk
+ 
+ #   the used tools
+-APXS=/usr/local/apache2/bin/apxs
++APXS=${LOCALBASE}/sbin/apxs
+ APACHECTL=apachectl
+ CC=`$(APXS) -q CC`
+ INC=-I`$(APXS) -q INCLUDEDIR` `$(APXS) -q CFLAGS`  #-DLAYOUT_FILEOWNER_NAME
+-LD_SHLIB=`apxs -q LDFLAGS_SHLIB`
++LD_SHLIB=`apxs -q LDFLAGS_SHLIB` -lapr -L${LOCALBASE}/apache2
+ VERSION = 4.0.1a
+ DISTNAME = mod_layout
+ DISTVNAME = $(DISTNAME)-$(VERSION)
+@@ -36,7 +36,7 @@
+ # Apache itself won't compile with it this strict
+ #DEF = -Wall -DDEBUG -Wtraditional -Wshadow -Wid-clash-len -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings-Wconversion -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wlong-long -Winline -Werror
+ #DEF = -Wall -DDEBUG 
+-
++DEF= -L${LOCALBASE}/lib/apache2 -lapr
+ #   the default target
+ all: mod_layout.so
+ 
+@@ -44,8 +44,6 @@
+ #mod_layout.so: $(OBJ)  Makefile
+ mod_layout.so: $(OBJ)
+ 	$(APXS) -o liblayout.la -c $(SOBJ)
+-	#$(APXS) -c -o liblayout $(SOBJ)
+-	#$(APXS) -i -a mod_layout.la
+ 
+ mod_layout.o : mod_layout.c
+ 	$(APXS) -c mod_layout.c 
+@@ -63,17 +61,7 @@
+ 	$(APXS) -c header.c
+ #   install the shared object file into Apache 
+ install: 
+-	$(APXS) -i -n liblayout.so -e liblayout.la
+-	@echo "+--------------------------------------------------------+"; \
+-	echo "| All done.                                              |"; \
+-	echo "|                                                        |"; \
+-	echo "| You will need to add the directive:                    |"; \
+-	echo "| LoadModule layout_module modules/liblayout.so          |"; \
+-	echo "|                                                        |"; \
+-	echo "| So that you can begin to use mod_layout.               |"; \
+-	echo "|                                                        |"; \
+-	echo "| Thanks for installing mod_layout.                      |"; \
+-	echo "+--------------------------------------------------------+"; \
++	$(APXS) -a -i -n liblayout.so -e liblayout.la
+ 
+ rpm: #all dist
+ 	cp $(DISTVNAME).tar$(SUFFIX) /usr/src/redhat/SOURCES
