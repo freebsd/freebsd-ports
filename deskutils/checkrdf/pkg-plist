@@ -1,0 +1,7 @@
+bin/checkrdf
+bin/checkrdf.bin
+etc/checkrdf.rc
+%%PORTDOCS%%share/doc/checkrdf/README
+%%PORTDOCS%%share/doc/checkrdf/bluegreek.css
+%%PORTDOCS%%share/doc/checkrdf/myrdf.css
+%%PORTDOCS%%@dirrm share/doc/checkrdf

@@ -7,6 +7,7 @@
     SUBDIR += bulb
     SUBDIR += cal
     SUBDIR += cbb
+    SUBDIR += checkrdf
     SUBDIR += dailystrips
     SUBDIR += gaddr
     SUBDIR += gcal
