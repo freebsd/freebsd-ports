@@ -1,0 +1,10 @@
+libneural is an extremely tiny library for creating a software
+three layer backpropagation neural network. This is useful for
+a very wide variety of pattern recognition and classification
+problems. It is written in C++, based on the standard algorithm
+with NO fancy features like bias terms or momentum.
+
+WWW: http://ieee.uow.edu.au/~daniel/software/libneural/
+Author: Daniel Franklin <d.franklin@computer.org>
+
+- Will <andrews@technologist.com>

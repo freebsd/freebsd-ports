@@ -28,6 +28,7 @@
     SUBDIR += gsl
     SUBDIR += hexcalc
     SUBDIR += lapack
+    SUBDIR += libneural
     SUBDIR += libranlib
     SUBDIR += linalg
     SUBDIR += linpack
