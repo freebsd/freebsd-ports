@@ -1,7 +1,7 @@
 lib/libdvdread.a
 lib/libdvdread.la
 lib/libdvdread.so
-lib/libdvdread.so.2
+lib/libdvdread.so.3
 include/dvdread/dvd_reader.h
 include/dvdread/ifo_types.h
 include/dvdread/ifo_read.h
