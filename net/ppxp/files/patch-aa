@@ -1,0 +1,13 @@
+--- configure.in.old	Mon Nov  4 20:26:54 2002
++++ configure.in	Mon Nov  4 20:27:53 2002
+@@ -231,8 +231,8 @@
+     then
+ 	AC_DEFINE(HAVE_X11_FORMS)
+     fi
+-    AC_CHECK_LIB(forms, fl_bgn_form, LIBFORMS="-lforms",\
+-	LIBFORMS="-lxforms", $X_CFLAGS $X_LIBS -lX11 -lm)
++    AC_CHECK_LIB(forms, fl_bgn_form, LIBFORMS="-lforms -lXpm",\
++	LIBFORMS="-lxforms", $X_CFLAGS $X_LIBS -lXpm -lX11 -lm)
+     AC_SUBST(LIBFORMS)
+ fi
+ 
