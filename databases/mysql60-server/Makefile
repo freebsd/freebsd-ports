@@ -62,6 +62,9 @@ CONFIGURE_ARGS+=--without-innodb
 .if defined(WITH_NDB)
 CONFIGURE_ARGS+=--with-ndbcluster
 .endif
+.if defined(WITH_COLLATION) && ${WITH_COLLATION} != ""
+CONFIGURE_ARGS+=--with-collation=${WITH_COLLATION}
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -131,6 +134,7 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "	WITH_CHARSET=charset	Define the primary built-in charset (latin1)."
 	@${ECHO} "	WITH_XCHARSET=list	Define other built-in charsets (may be 'all')."
+	@${ECHO} "	WITH_COLLATION=collate	Define default collation (latin1_swedish_ci)."
 	@${ECHO} "	WITH_OPENSSL=yes	Enable secure connections."
 	@${ECHO} "	DB_DIR=directory	Set alternate directory for database files"
 	@${ECHO} "				(default is /var/db/mysql)."
