@@ -3,7 +3,7 @@
 # Date created:		1 April 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.16 1997/10/07 20:37:15 ache Exp $
+# $Id: Makefile,v 1.17 1997/10/07 20:55:49 ache Exp $
 #
 
 DISTNAME=       qpopper2.4b2
@@ -18,8 +18,6 @@ MAINTAINER=	pst@freebsd.org
 # If APOP_ONLY variable present in the environment, popper builds
 # with APOP authentification only
 #
-
-NO_PACKAGE=	"Needs POP UID"
 
 O_DEFS=         -DSETPROCTITLE -DKEEP_TEMP_DROP -DBSD44_DBM -DBIND43 \
 		-DAPOP='\"'${PREFIX}'/etc/popper/pop.auth\"' \
