@@ -7,6 +7,7 @@ share/doc/xmlenc/org/znerd/xmlenc/sax/SAXEventReceiver.html
 share/doc/xmlenc/org/znerd/xmlenc/sax/SAXOutputter.html
 share/doc/xmlenc/org/znerd/xmlenc/sax/package-tree.html
 share/doc/xmlenc/org/znerd/xmlenc/class-use/XMLEncoder.html
+share/doc/xmlenc/org/znerd/xmlenc/class-use/InvalidXMLException.html
 share/doc/xmlenc/org/znerd/xmlenc/class-use/Library.html
 share/doc/xmlenc/org/znerd/xmlenc/class-use/XMLOutputter.html
 share/doc/xmlenc/org/znerd/xmlenc/class-use/XMLEventListener.html
@@ -22,6 +23,7 @@ share/doc/xmlenc/org/znerd/xmlenc/StatefulXMLEventListener.html
 share/doc/xmlenc/org/znerd/xmlenc/XMLEventListener.html
 share/doc/xmlenc/org/znerd/xmlenc/XMLEventListenerStates.html
 share/doc/xmlenc/org/znerd/xmlenc/XMLOutputterStates.html
+share/doc/xmlenc/org/znerd/xmlenc/InvalidXMLException.html
 share/doc/xmlenc/org/znerd/xmlenc/Library.html
 share/doc/xmlenc/org/znerd/xmlenc/LineBreak.html
 share/doc/xmlenc/org/znerd/xmlenc/XMLEncoder.html
