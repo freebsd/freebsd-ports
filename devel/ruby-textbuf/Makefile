@@ -24,15 +24,15 @@ DOCS_JA=	README.ja
 
 do-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/textbuf/ja
-	${INSTALL_DATA} ${WRKSRC}/stest.rb ${RUBY_EXAMPLESDIR}/textbuf/
-	${INSTALL_DATA} ${WRKSRC}/test.rb ${RUBY_EXAMPLESDIR}/textbuf/ja/
-	${MKDIR} ${RUBY_DOCDIR}/textbuf/ja
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}/ja
+	${INSTALL_DATA} ${WRKSRC}/stest.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/test.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/ja/
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/textbuf/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/textbuf/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/ja/
 .endfor
 .endif
 
