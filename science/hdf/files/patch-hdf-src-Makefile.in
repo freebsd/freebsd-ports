@@ -1,0 +1,272 @@
+--- hdf/src/Makefile.in.orig	Wed Dec 10 14:13:16 2003
++++ hdf/src/Makefile.in	Tue Mar 15 16:30:15 2005
+@@ -82,6 +82,7 @@
+ LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
+ LIBOBJS = @LIBOBJS@
+ LIBS = @LIBS@
++LIBTOOL = %%LOCALBASE%%/bin/libtool15
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+@@ -89,7 +90,7 @@
+ MAINTAINER_MODE_TRUE = @MAINTAINER_MODE_TRUE@
+ MAKEINFO = @MAKEINFO@
+ NEQN = @NEQN@
+-OBJEXT = @OBJEXT@
++OBJEXT = lo
+ PACKAGE = @PACKAGE@
+ PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
+ PACKAGE_NAME = @PACKAGE_NAME@
+@@ -104,6 +105,7 @@
+ TBL = @TBL@
+ VERSION = @VERSION@
+ YACC = @YACC@
++ac_ct_AR = @ac_ct_AR@
+ ac_ct_CC = @ac_ct_CC@
+ ac_ct_CXX = @ac_ct_CXX@
+ ac_ct_F77 = @ac_ct_F77@
+@@ -144,11 +146,11 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ 
+-lib_LIBRARIES = libdf.a
++lib_LTLIBRARIES = libdf.la
+ 
+ FSOURCES = df24ff.f dfanf.c dfanff.f dff.c dfff.f dfpf.c dfpff.f dfr8f.c    \
+            dfr8ff.f dfsdf.c dfsdff.f dfufp2if.f dfutilf.c herrf.c hfilef.c  \
+-           hfileff.f mfanf.c mfgrf.c mfgrff.f vattrf.c vattrff.f vgf.c vgff.f 
++           hfileff.f mfanf.c mfgrf.c mfgrff.f vattrf.c vattrff.f vgf.c vgff.f
+ 
+ CSOURCES = atom.c bitvect.c cdeflate.c cnbit.c cnone.c crle.c cskphuff.c    \
+            cszip.c df24.c df24f.c dfan.c dfcomp.c dfconv.c dfgr.c dfgroup.c \
+@@ -170,8 +172,9 @@
+ 
+ FHEADERS = dffunc.f90 hdf.f90 dffunc.inc hdf.inc
+ 
+-@HDF_BUILD_FORTRAN_TRUE@libdf_a_SOURCES = $(CSOURCES) $(FSOURCES)
+-@HDF_BUILD_FORTRAN_FALSE@libdf_a_SOURCES = $(CSOURCES)
++@HDF_BUILD_FORTRAN_TRUE@libdf_la_SOURCES = $(CSOURCES) $(FSOURCES)
++@HDF_BUILD_FORTRAN_FALSE@libdf_la_SOURCES = $(CSOURCES)
++libdf_la_LDFLAGS = -version-info 1:0:0
+ @HDF_BUILD_FORTRAN_TRUE@include_HEADERS = $(CHEADERS) $(FHEADERS)
+ @HDF_BUILD_FORTRAN_FALSE@include_HEADERS = $(CHEADERS)
+ 
+@@ -186,11 +189,11 @@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/bin/mkinstalldirs
+ CONFIG_HEADER = h4config.h
+ CONFIG_CLEAN_FILES =
+-LIBRARIES = $(lib_LIBRARIES)
++LTLIBRARIES = $(lib_LTLIBRARIES)
+ 
+-libdf_a_AR = $(AR) cru
+-libdf_a_LIBADD =
+-am__libdf_a_SOURCES_DIST = atom.c bitvect.c cdeflate.c cnbit.c cnone.c \
++libdf_la_AR = $(AR) cru
++libdf_la_LIBADD =
++am__libdf_la_SOURCES_DIST = atom.c bitvect.c cdeflate.c cnbit.c cnone.c \
+ 	crle.c cskphuff.c cszip.c df24.c df24f.c dfan.c dfcomp.c \
+ 	dfconv.c dfgr.c dfgroup.c dfimcomp.c dfjpeg.c dfkconv.c \
+ 	dfkcray.c dfkfuji.c dfknat.c dfkswap.c dfkvms.c dfp.c dfr8.c \
+@@ -229,10 +232,10 @@
+ 	herrf.$(OBJEXT) hfilef.$(OBJEXT) hfileff.$(OBJEXT) \
+ 	mfanf.$(OBJEXT) mfgrf.$(OBJEXT) mfgrff.$(OBJEXT) \
+ 	vattrf.$(OBJEXT) vattrff.$(OBJEXT) vgf.$(OBJEXT) vgff.$(OBJEXT)
+-@HDF_BUILD_FORTRAN_TRUE@am_libdf_a_OBJECTS = $(am__objects_1) \
++@HDF_BUILD_FORTRAN_TRUE@am_libdf_la_OBJECTS = $(am__objects_1) \
+ @HDF_BUILD_FORTRAN_TRUE@	$(am__objects_2)
+-@HDF_BUILD_FORTRAN_FALSE@am_libdf_a_OBJECTS = $(am__objects_1)
+-libdf_a_OBJECTS = $(am_libdf_a_OBJECTS)
++@HDF_BUILD_FORTRAN_FALSE@am_libdf_la_OBJECTS = $(am__objects_1)
++libdf_la_OBJECTS = $(am_libdf_la_OBJECTS)
+ 
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I.
+ depcomp = $(SHELL) $(top_srcdir)/bin/depcomp
+@@ -275,23 +278,28 @@
+ @AMDEP_TRUE@	./$(DEPDIR)/vrw.Po ./$(DEPDIR)/vsfld.Po
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
++LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
++	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+-LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
++LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
++	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ F77COMPILE = $(F77) $(AM_FFLAGS) $(FFLAGS)
++LTF77COMPILE = $(LIBTOOL) --mode=compile $(F77) $(AM_FFLAGS) $(FFLAGS)
+ F77LD = $(F77)
+-F77LINK = $(F77LD) $(AM_FFLAGS) $(FFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+-DIST_SOURCES = $(am__libdf_a_SOURCES_DIST)
++F77LINK = $(LIBTOOL) --mode=link $(F77LD) $(AM_FFLAGS) $(FFLAGS) \
++	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++DIST_SOURCES = $(am__libdf_la_SOURCES_DIST)
+ HEADERS = $(include_HEADERS)
+ 
+ DIST_COMMON = $(include_HEADERS) $(srcdir)/Makefile.in INSTALL \
+ 	Makefile.am h4config.h.in
+-SOURCES = $(libdf_a_SOURCES)
++SOURCES = $(libdf_la_SOURCES)
+ 
+ all: h4config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am
+ 
+ .SUFFIXES:
+-.SUFFIXES: .inc .f90 .c .f .o .obj
++.SUFFIXES: .inc .f90 .c .f .lo .o .obj
+ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ Makefile.am  $(top_srcdir)/configure.ac $(ACLOCAL_M4)
+ 	cd $(top_srcdir) && \
+ 	  $(AUTOMAKE) --foreign  hdf/src/Makefile
+@@ -314,40 +322,37 @@
+ 
+ distclean-hdr:
+ 	-rm -f h4config.h stamp-h1
+-libLIBRARIES_INSTALL = $(INSTALL_DATA)
+-install-libLIBRARIES: $(lib_LIBRARIES)
++libLTLIBRARIES_INSTALL = $(INSTALL)
++install-libLTLIBRARIES: $(lib_LTLIBRARIES)
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(libdir)
+-	@list='$(lib_LIBRARIES)'; for p in $$list; do \
++	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+ 	    f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	    echo " $(libLIBRARIES_INSTALL) $$p $(DESTDIR)$(libdir)/$$f"; \
+-	    $(libLIBRARIES_INSTALL) $$p $(DESTDIR)$(libdir)/$$f; \
+-	  else :; fi; \
+-	done
+-	@$(POST_INSTALL)
+-	@list='$(lib_LIBRARIES)'; for p in $$list; do \
+-	  if test -f $$p; then \
+-	    p="`echo $$p | sed -e 's|^.*/||'`"; \
+-	    echo " $(RANLIB) $(DESTDIR)$(libdir)/$$p"; \
+-	    $(RANLIB) $(DESTDIR)$(libdir)/$$p; \
++	    echo " $(LIBTOOL) --mode=install $(libLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(libdir)/$$f"; \
++	    $(LIBTOOL) --mode=install $(libLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(libdir)/$$f; \
+ 	  else :; fi; \
+ 	done
+ 
+-uninstall-libLIBRARIES:
++uninstall-libLTLIBRARIES:
+ 	@$(NORMAL_UNINSTALL)
+-	@list='$(lib_LIBRARIES)'; for p in $$list; do \
++	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
+ 	  p="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " rm -f $(DESTDIR)$(libdir)/$$p"; \
+-	  rm -f $(DESTDIR)$(libdir)/$$p; \
++	  echo " $(LIBTOOL) --mode=uninstall rm -f $(DESTDIR)$(libdir)/$$p"; \
++	  $(LIBTOOL) --mode=uninstall rm -f $(DESTDIR)$(libdir)/$$p; \
+ 	done
+ 
+-clean-libLIBRARIES:
++clean-libLTLIBRARIES:
+ 	-test -z "$(lib_LIBRARIES)" || rm -f $(lib_LIBRARIES)
+-libdf.a: $(libdf_a_OBJECTS) $(libdf_a_DEPENDENCIES) 
+-	-rm -f libdf.a
+-	$(libdf_a_AR) libdf.a $(libdf_a_OBJECTS) $(libdf_a_LIBADD)
+-	$(RANLIB) libdf.a
++	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
++	  dir="`echo $$p | sed -e 's|/[^/]*$$||'`"; \
++	  test "$$dir" = "$$p" && dir=.; \
++	  echo "rm -f \"$${dir}/so_locations\""; \
++	  rm -f "$${dir}/so_locations"; \
++	done
++libdf.la: $(libdf_la_OBJECTS) $(libdf_la_DEPENDENCIES)
++	$(LINK) -rpath $(libdir) $(libdf_la_LDFLAGS) $(libdf_la_OBJECTS) $(libdf_la_LIBADD) $(LIBS)
++	$(LN_S) .libs/libdf.a libdf.a
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core
+@@ -450,11 +455,32 @@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(COMPILE) -c `if test -f '$<'; then $(CYGPATH_W) '$<'; else $(CYGPATH_W) '$(srcdir)/$<'; fi`
+ 
++.c.lo:
++@am__fastdepCC_TRUE@	if $(LTCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" \
++@am__fastdepCC_TRUE@	  -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<; \
++@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Plo"; \
++@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; \
++@am__fastdepCC_TRUE@	fi
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/$*.Plo' tmpdepfile='$(DEPDIR)/$*.TPlo' @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<
++
+ .f.o:
+ 	$(F77COMPILE) -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<
+ 
+ .f.obj:
+ 	$(F77COMPILE) -c -o $@ `if test -f '$<'; then $(CYGPATH_W) '$<'; else $(CYGPATH_W) '$(srcdir)/$<'; fi`
++
++.f.lo:
++	$(LTF77COMPILE) -c -o $@ `if test -f '$<'; then $(CYGPATH_W) '$<'; else $(CYGPATH_W) '$(srcdir)/$<'; fi`
++
++mostlyclean-libtool:
++	-rm -f *.lo
++
++clean-libtool:
++	-rm -rf .libs _libs
++
+ uninstall-info-am:
+ includeHEADERS_INSTALL = $(INSTALL_HEADER)
+ install-includeHEADERS: $(include_HEADERS)
+@@ -562,7 +588,7 @@
+ 	done
+ check-am: all-am
+ check: check-am
+-all-am: Makefile $(LIBRARIES) $(HEADERS) h4config.h
++all-am: Makefile $(LTLIBRARIES) $(HEADERS) h4config.h
+ 
+ installdirs:
+ 	$(mkinstalldirs) $(DESTDIR)$(libdir) $(DESTDIR)$(includedir)
+@@ -593,7 +619,7 @@
+ 	@echo "it deletes files that may require special tools to rebuild."
+ clean: clean-am
+ 
+-clean-am: clean-generic clean-libLIBRARIES mostlyclean-am
++clean-am: clean-generic clean-libLTLIBRARIES clean-libtool mostlyclean-am
+ 
+ distclean: distclean-am
+ 	-rm -rf ./$(DEPDIR)
+@@ -612,7 +638,7 @@
+ 
+ install-data-am: install-includeHEADERS
+ 
+-install-exec-am: install-libLIBRARIES
++install-exec-am: install-libLTLIBRARIES
+ 
+ install-info: install-info-am
+ 
+@@ -628,7 +654,7 @@
+ 
+ mostlyclean: mostlyclean-am
+ 
+-mostlyclean-am: mostlyclean-compile mostlyclean-generic
++mostlyclean-am: mostlyclean-compile mostlyclean-generic mostlyclean-libtool
+ 
+ pdf: pdf-am
+ 
+@@ -639,20 +665,20 @@
+ ps-am:
+ 
+ uninstall-am: uninstall-includeHEADERS uninstall-info-am \
+-	uninstall-libLIBRARIES
++	uninstall-libLTLIBRARIES
+ 
+ .PHONY: CTAGS GTAGS all all-am check check-am clean clean-generic \
+-	clean-libLIBRARIES ctags distclean distclean-compile \
++	clean-libLTLIBRARIES clean-libtool ctags distclean distclean-compile \
+ 	distclean-generic distclean-hdr distclean-tags distdir dvi \
+ 	dvi-am info info-am install install-am install-data \
+ 	install-data-am install-exec install-exec-am \
+ 	install-includeHEADERS install-info install-info-am \
+-	install-libLIBRARIES install-man install-strip installcheck \
++	install-libLTLIBRARIES install-man install-strip installcheck \
+ 	installcheck-am installdirs maintainer-clean \
+ 	maintainer-clean-generic mostlyclean mostlyclean-compile \
+-	mostlyclean-generic pdf pdf-am ps ps-am tags uninstall \
++	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am tags uninstall \
+ 	uninstall-am uninstall-includeHEADERS uninstall-info-am \
+-	uninstall-libLIBRARIES
++	uninstall-libLTLIBRARIES
+ 
+ .inc.f90:
+ 	if test -f $<; then                                             \
