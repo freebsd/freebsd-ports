@@ -199,6 +199,7 @@
     SUBDIR += nettoe
     SUBDIR += newkind
     SUBDIR += newvox
+    SUBDIR += nibbles
     SUBDIR += nighthawk
     SUBDIR += nil
     SUBDIR += nonsense
