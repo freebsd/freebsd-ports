@@ -1,0 +1,68 @@
+#!/bin/sh
+
+
+if [ $# != 3 ]; then exit 1; fi
+
+SRCDIR=$3
+
+# paper size, default is no nor A4
+A4=n
+#default font cache directory: must be world writable
+CACHE=/tmp
+
+
+if [ ! -f $SRCDIR/MakeTeXPK.orig ]; then
+  mv $SRCDIR/MakeTeXPK $SRCDIR/MakeTeXPK.orig || exit 1
+fi
+#find the resolutions
+RES=`awk '{if(/test $BDPI/) printf "%s ",$5}' < $SRCDIR/MakeTeXPK.orig`
+# and the corresponding modes
+MODES=`awk -F= '{if(/MODE=[a-zA-Z]/) print $2}' < $SRCDIR/MakeTeXPK.orig`
+set $MODES
+echo "I need to set the mode of our printing/output device for the resolutions"
+echo "$RES dpi. (the mode must be in your modes.mf file)"
+SUBST=
+for i in $RES; do
+  echo -n "mode for $i dpi [$1]: ";
+  read answ; if [ "$answ" = "" ]; then answ=$1; fi
+  SUBST="$SUBST -e s/MODE=$1/MODE=$answ/"
+  shift
+done
+
+echo "Choose a font cache directory for automatic font generation"
+echo -n "(this directory must be world writable) [$CACHE]: "
+read answ; if [ "$answ" != "" ]; then CACHE=$answ; fi
+  
+sed -e s:/usr/lib/tex:/usr/local/lib/texmf: \
+    -e s:/LocalLibrary/Fonts/TeXFonts:$CACHE: \
+     $SUBST <$SRCDIR/MakeTeXPK.orig >$SRCDIR/MakeTeXPK
+
+#configure config.ps
+if [ ! -f $SRCDIR/config.ps.orig ]; then
+  mv $SRCDIR/config.ps $SRCDIR/config.ps.orig || exit 1
+fi
+RES=`awk '{if (/^D /) print $2}' <$SRCDIR/config.ps.orig`
+echo -n "what is the resolution of your printer (in dpi) [$RES]: ";
+read res; if [ "$res" = "" ]; then res=$RES; fi
+echo -n "do you want to use A4 paper? [$A4]: "
+read answ; if [ "$answ" = "" ]; then answ=$A4; fi
+
+if [ $answ = y ]; then
+  sed  -e 's/\(^\*\)\(.*A4\)/\2/' -e  's/^@ letterSize/*@ letterSize/' \
+	-e "s/^D $RES/D $res/" <$SRCDIR/config.ps.orig > $SRCDIR/config.ps
+else
+  sed -e "s/^D $RES/D $res/" <$SRCDIR/config.ps.orig > $SRCDIR/config.ps
+fi
+
+#makefile
+echo "TEXDIR=/usr/local/lib/texmf" >> $SRCDIR/Makefile || exit 1;
+echo "LOCALDIR=$CACHE" >> $SRCDIR/Makefile
+echo "TEXMACRODIR=\$(TEXDIR)/tex" >> $SRCDIR/Makefile
+echo "FIGPATH = .:..:\$(TEXDIR)/tex" >> $SRCDIR/Makefile
+echo "MANDIR=/usr/local/man/man1" >> $SRCDIR/Makefile
+echo "DEFS= -DTPIC -DDEBUG -DDEFRES=$res"  >> $SRCDIR/Makefile
+echo "OPT = -O2 -funsigned-char"  >> $SRCDIR/Makefile
+echo "BINDIR=/usr/local/bin"  >> $SRCDIR/Makefile
+echo "FLIBS=-lm" >> $SRCDIR/Makefile
+
+exit 0;
