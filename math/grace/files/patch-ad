@@ -1,0 +1,19 @@
+*** auxiliary/Makefile.org	Mon Jul 20 23:51:55 1998
+--- auxiliary/Makefile	Wed Dec 23 19:12:15 1998
+***************
+*** 22,28 ****
+  install : $(AUXILIARIES) fdf2fit
+  	$(MKINSTALLDIRS) $(GRACE_HOME)/auxiliary
+  	for i in $(AUXILIARIES); do $(INSTALL_DATA) $$i $(GRACE_HOME)/auxiliary; done
+! 	$(INSTALL_PROGRAM) fdf2fit $(GRACE_HOME)/auxiliary
+  
+  tests : dummy
+  
+--- 22,28 ----
+  install : $(AUXILIARIES) fdf2fit
+  	$(MKINSTALLDIRS) $(GRACE_HOME)/auxiliary
+  	for i in $(AUXILIARIES); do $(INSTALL_DATA) $$i $(GRACE_HOME)/auxiliary; done
+! 	$(INSTALL) -c -o root -g wheel -m 555 fdf2fit $(GRACE_HOME)/auxiliary
+  
+  tests : dummy
+  

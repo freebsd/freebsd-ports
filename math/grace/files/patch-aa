@@ -1,0 +1,53 @@
+*** configure.orig	Tue Sep 15 14:51:57 1998
+--- configure	Wed Dec 23 16:46:57 1998
+***************
+*** 660,665 ****
+--- 660,666 ----
+    case "${host}" in
+      i?86-*-linux-*) CONF_FILE="ix86-linux";;
+      *-*-linux-*) CONF_FILE="linux";;
++     *-*-freebsd*) CONF_FILE="freebsd";;
+      i?86-*-sco-*) CONF_FILE="ix86-sco";;
+      i?86-*-cygwin32) CONF_FILE="ix86-cygwin32";;
+      alpha*-dec-osf4.*) CONF_FILE="alpha-osf4";;
+***************
+*** 4729,4735 ****
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+    ac_save_LIBS="$LIBS"
+! LIBS="-ldf  $LIBS"
+  cat > conftest.$ac_ext <<EOF
+  #line 4735 "configure"
+  #include "confdefs.h"
+--- 4730,4736 ----
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+    ac_save_LIBS="$LIBS"
+! LIBS="-lmfhdf -ldf -lz $LIBS"
+  cat > conftest.$ac_ext <<EOF
+  #line 4735 "configure"
+  #include "confdefs.h"
+***************
+*** 4753,4759 ****
+  fi
+  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+    echo "$ac_t""yes" 1>&6
+!   NETCDF_LIBS="$NETCDF_LIBS -ldf"; cat >> confdefs.h <<\EOF
+  #define HAVE_MFHDF 1
+  EOF
+  
+--- 4754,4760 ----
+  fi
+  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+    echo "$ac_t""yes" 1>&6
+!   NETCDF_LIBS="$NETCDF_LIBS -lmfhdf -ldf -lz"; cat >> confdefs.h <<\EOF
+  #define HAVE_MFHDF 1
+  EOF
+  
+***************
+*** 6858,6861 ****
+  chmod +x $CONFIG_STATUS
+  rm -fr confdefs* $ac_clean_files
+  test "$no_create" = yes || ${CONFIG_SHELL-/bin/sh} $CONFIG_STATUS || exit 1
+- 
+--- 6859,6861 ----
