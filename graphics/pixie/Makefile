@@ -42,6 +42,12 @@ PIXIE_SHLIBS=	file framebuffer rgbe
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502112
+BROKEN=		"Does not install on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|malloc\.h|stdlib\.h|g' \
 		`${FIND} -E ${WRKSRC} -iregex '.*\.(cpp|h)'`
@@ -101,4 +107,4 @@ post-install:
 	@(${SED} -e 's|%%PREFIX%%|${PREFIX}|; s|%%PORTNAME%%|${PORTNAME}|' \
 		<pkg-message >${PKGMESSAGE} && ${CAT} ${PKGMESSAGE})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
