@@ -7,7 +7,6 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_REVISION}
-PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-
@@ -36,7 +35,7 @@ PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 NO_BUILD=	yes
 USE_LINUX=	yes
 JDK_VERSION=	1.3.1
-JDK_REVISION=	02
+JDK_REVISION=	03
 ONLY_FOR_ARCHS=	i386
 TARGET_DIR?=	${PREFIX}/${PKGBASE}${JDK_VERSION}
 DOWNLOAD_URL?=	http://java.sun.com/j2se/1.3/download-linux.html
@@ -45,9 +44,9 @@ DOWNLOAD_URL?=	http://java.sun.com/j2se/1.3/download-linux.html
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=	You must manually fetch the Java 2 Development Kit ${PORTVERSION} \
-	for Linux archive (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, \
-	choose the "GUNZIP Tar shell script" one and place it in ${DISTDIR} \
-	and then run make again
+	archive (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, \
+	download the "Linux GNUZIP Tar shell script" into ${DISTDIR} and \
+	then run make again
 .endif
 
 post-fetch:
