@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pimp
 # Date created:				23 February 2000
-# Whom:					rbt
+# Whom:					rbt@zort.on.ca
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.5.7
 CATEGORIES=	audio
 MASTER_SITES=	ftp://pimp3.sourceforge.net/pub/pimp3/
 
-MAINTAINER=	rbt@zort.on.ca
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
