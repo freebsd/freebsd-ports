@@ -1,0 +1,25 @@
+bin/kwebwatch
+share/applnk/Internet/kwebwatch.kdelnk
+share/apps/kwebwatch/pics/kww_eye.xpm
+share/apps/kwebwatch/pics/kww_eye_new.xpm
+share/apps/kwebwatch/pics/kww_green-bullet.xpm
+share/apps/kwebwatch/pics/kww_grey-bullet.xpm
+share/apps/kwebwatch/pics/kww_new.xpm
+share/apps/kwebwatch/pics/kww_red-bullet.xpm
+share/doc/HTML/en/kwebwatch/index.html
+share/doc/HTML/en/kwebwatch/kwebwatch-1.html
+share/doc/HTML/en/kwebwatch/kwebwatch-10.html
+share/doc/HTML/en/kwebwatch/kwebwatch-2.html
+share/doc/HTML/en/kwebwatch/kwebwatch-3.html
+share/doc/HTML/en/kwebwatch/kwebwatch-4.html
+share/doc/HTML/en/kwebwatch/kwebwatch-5.html
+share/doc/HTML/en/kwebwatch/kwebwatch-6.html
+share/doc/HTML/en/kwebwatch/kwebwatch-7.html
+share/doc/HTML/en/kwebwatch/kwebwatch-8.html
+share/doc/HTML/en/kwebwatch/kwebwatch-9.html
+share/doc/HTML/en/kwebwatch/logotp3.gif
+share/icons/kwebwatch.xpm
+share/icons/mini/kwebwatch.xpm
+@dirrm share/apps/kwebwatch/pics
+@dirrm share/apps/kwebwatch
+@dirrm share/doc/HTML/en/kwebwatch
