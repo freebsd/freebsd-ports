@@ -1,0 +1,4 @@
+bin/grep
+bin/egrep
+bin/fgrep
+bin/zgrep
