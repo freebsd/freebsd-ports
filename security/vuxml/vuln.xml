@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="af747389-42ba-11d9-bd37-00065be4b5b6">
+    <topic>mod_access_referer -- NULL pointer dereference vulnerability</topic>
+    <affects>
+      <package>
+	<name>mod_access_referer</name>
+	<range><lt>1.0.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A malformed <q>Referer</q> header field causes the Apache
+	  ap_parse_uri_components function to discard it with the
+	  result that a pointer is not initialized.  The
+	  mod_acesses_referer module does not take this into account
+	  with the result that it may use such a pointer.</p>
+	<p>The NULL pointer vulnerability may possibly be used in a
+	  remote denial of service attack against affected Apache
+	  servers.</p>
+      </body>
+    </description>
+    <references>
+      <bid>7375</bid>
+      <url>http://secunia.com/product/1477/</url>
+      <mlist>http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=105053485515811</mlist>
+    </references>
+    <dates>
+      <discovery>2003-04-16</discovery>
+      <entry>2004-12-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f0db930b-496b-11d9-bf86-0050569f0001">
     <topic>squid -- possible information disclosure</topic>
       <affects>
