@@ -1,0 +1,3 @@
+bin/gf2pbm
+bin/pktrace
+lib/%%PYTHON_VERSION%%/site-packages/tfm.py
