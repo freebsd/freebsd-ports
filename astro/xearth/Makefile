@@ -3,12 +3,13 @@
 # Date created:         29 October 1995
 # Whom:                 piero
 #
-# $Id: Makefile,v 1.11 1998/12/10 17:24:33 vanilla Exp $
+# $Id: Makefile,v 1.12 1999/06/22 22:56:55 mharo Exp $
 #
 
 DISTNAME=	xearth-1.0
 CATEGORIES=	astro x11
 MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/ \
+		ftp://ftp.cs.colorado.edu/users/tuna/ \
 		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= applications
 
