@@ -1,14 +1,17 @@
 bin/webalizer
+@exec ln -sf %f %B/webazolver
+@unexec rm -f %B/webazolver
 etc/webalizer.conf-dist
 share/doc/webalizer/CHANGES
 share/doc/webalizer/COPYING
 share/doc/webalizer/Copyright
 share/doc/webalizer/INSTALL
+share/doc/webalizer/DNS.README
 share/doc/webalizer/README
+share/doc/webalizer/README.FIRST
 share/doc/webalizer/country-codes.txt
-share/doc/webalizer/webalizer.LSM
 @dirrm share/doc/webalizer
-share/examples/webalizer/msfree.gif
+share/examples/webalizer/msfree.png
 share/examples/webalizer/sample.conf
-share/examples/webalizer/webalizer.gif
+share/examples/webalizer/webalizer.png
 @dirrm share/examples/webalizer
