@@ -609,6 +609,7 @@
     SUBDIR += rvi
     SUBDIR += rvm
     SUBDIR += scandoc
+    SUBDIR += scons
     SUBDIR += sdcc
     SUBDIR += sdl10
     SUBDIR += sdl12
