@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	usrinfo
-PORTVERSION=	.02
-PORTREVISION=	1
+PORTVERSION=	.03
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.snaphat.com/pub/software/
+MASTER_SITES=	http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER?=	aaron@snaphat.com
