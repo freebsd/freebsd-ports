@@ -56,7 +56,7 @@ sbin/pwcheck
 %%NOPORTDOCS%%@dirrm share/doc/SASL/html
 %%NOPORTDOCS%%@dirrm share/doc/SASL
 @dirrm lib/sasl
-@mode u=rwx,g=rw,o=
+@mode ug=rwx,o=
 @cwd /var
 @exec mkdir pwcheck
 @exec chown cyrus:cyrus pwcheck
