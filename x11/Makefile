@@ -94,6 +94,7 @@
     SUBDIR += ruby-panel-applet
     SUBDIR += rxvt
     SUBDIR += rxvt-devel
+    SUBDIR += startup-notification
     SUBDIR += stockticker_applet
     SUBDIR += sxpc
     SUBDIR += temperature.app
