@@ -3,16 +3,16 @@
 # Date created:			  Wed Sep 24, 1997
 # Whom:				  Ada T Lim <ada@not-enough.bandwidth.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/10/07 07:03:41 obrien Exp $
 #
 
 DISTNAME=	hztty-2.0
 PKGNAME=	zh-hztty-2.0
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/convert/  \
-		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/convert/ \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/convert/  \
-		ftp://ftp.mpi-sb.mpg.de/pub/chinese/mirror/ftp.ifcss.org/software/convert/
+MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
+		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/ \
+		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/convert/  \
+		ftp://ftp.mpi-sb.mpg.de/pub/chinese/mirror/ftp.ifcss.org/software/unix/convert/
 
 MAINTAINER=     ada@bsd.org
 
