@@ -15,8 +15,8 @@ DISTNAME=	2865-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	flynn@energyhq.homeip.net
 COMMENT=	A lightweight native KWin style for KDE3
 
-BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
-		autoconf:${PORTSDIR}/devel/autoconf
+BROKEN=		'Does not build since KDE 3.2'
+IGNORE=	${BROKEN}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
