@@ -3,7 +3,7 @@
 # Date created:        03 July 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.2 1999/01/05 12:59:32 vanilla Exp $
+# $Id: Makefile,v 1.3 1999/01/12 16:50:40 vanilla Exp $
 #
 
 DISTNAME=	gnome-utils-0.99.1
@@ -14,8 +14,9 @@ MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 
 MAINTAINER=	nacai@iname.com
 
+RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 LIB_DEPENDS=	gnome.1:${PORTSDIR}/x11/gnomelibs \
-		gtop.0:${PORTSDIR}/devel/libgtop
+		gtop.1:${PORTSDIR}/devel/libgtop
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
