@@ -7,40 +7,37 @@
 %%PORTDOCS%%%%HLDSDIR%%/frontline/512_textscheme.txt
 %%PORTDOCS%%%%HLDSDIR%%/frontline/640_textscheme.txt
 %%PORTDOCS%%%%HLDSDIR%%/frontline/800_textscheme.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/FLF.ico
-%%PORTDOCS%%%%HLDSDIR%%/frontline/FLF2.ico
-%%PORTDOCS%%%%HLDSDIR%%/frontline/FLF3.ico
 %%HLDSDIR%%/frontline/cached.wad
 %%HLDSDIR%%/frontline/cl_dlls/client.dll
 %%PORTDOCS%%%%HLDSDIR%%/frontline/commandmenu.txt
 %%HLDSDIR%%/frontline/config.cfg
 %%HLDSDIR%%/frontline/delta.lst
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/classes/commandosassault.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/classes/commandosrecon.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/classes/commandossupport.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/classes/natoassault.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/classes/natorecon.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/classes/natosupport.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/heavyweapons.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/heavyweapons/hk21.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/pistols/beretta.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/pistols/beretta92f.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/pistols/hkpistol.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/pistols/mk23.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/rifles.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/rifles/ak5.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/rifles/famas.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/rifles/m4.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/rifles/msg90.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/rifles/sako.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/shotguns.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/shotguns/rs202m2.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/shotguns/spas12.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/submachines.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/submachines/mac10.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/submachines/mp5a2.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/submachines/mp5sd.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/submachines/ump45.txt
+%%HLDSDIR%%/frontline/descriptions/classes/commandosassault.txt
+%%HLDSDIR%%/frontline/descriptions/classes/commandosrecon.txt
+%%HLDSDIR%%/frontline/descriptions/classes/commandossupport.txt
+%%HLDSDIR%%/frontline/descriptions/classes/natoassault.txt
+%%HLDSDIR%%/frontline/descriptions/classes/natorecon.txt
+%%HLDSDIR%%/frontline/descriptions/classes/natosupport.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/heavyweapons.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/heavyweapons/hk21.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/pistols/beretta.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/pistols/beretta92f.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/pistols/hkpistol.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/pistols/mk23.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/rifles.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/rifles/ak5.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/rifles/famas.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/rifles/m4.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/rifles/msg90.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/rifles/sako.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/shotguns.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/shotguns/rs202m2.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/shotguns/spas12.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/submachines.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/submachines/mac10.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/submachines/mp5a2.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/submachines/mp5sd.txt
+%%HLDSDIR%%/frontline/descriptions/weapons/submachines/ump45.txt
 %%HLDSDIR%%/frontline/dlls/front_i386.so
 %%HLDSDIR%%/frontline/events/ak5.sc
 %%HLDSDIR%%/frontline/events/ammocount.sc
@@ -70,7 +67,9 @@
 %%HLDSDIR%%/frontline/events/showcps.sc
 %%HLDSDIR%%/frontline/events/spas12.sc
 %%HLDSDIR%%/frontline/events/ump45.sc
-%%HLDSDIR%%/frontline/gfx/env/Morning Dew.nfo
+%%PORTDOCS%%%%HLDSDIR%%/frontline/flf.ico
+%%PORTDOCS%%%%HLDSDIR%%/frontline/flf2.ico
+%%PORTDOCS%%%%HLDSDIR%%/frontline/flf3.ico
 %%HLDSDIR%%/frontline/gfx/env/Twilitbk.tga
 %%HLDSDIR%%/frontline/gfx/env/Twilitdn.tga
 %%HLDSDIR%%/frontline/gfx/env/Twilitft.tga
@@ -101,18 +100,6 @@
 %%HLDSDIR%%/frontline/gfx/env/desnoonlf.tga
 %%HLDSDIR%%/frontline/gfx/env/desnoonrt.tga
 %%HLDSDIR%%/frontline/gfx/env/desnoonup.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky1bk.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky1bk.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky1dn.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky1dn.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky1ft.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky1ft.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky1lf.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky1lf.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky1rt.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky1rt.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky1up.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky1up.tga
 %%HLDSDIR%%/frontline/gfx/env/flfsky2bk.bmp
 %%HLDSDIR%%/frontline/gfx/env/flfsky2bk.tga
 %%HLDSDIR%%/frontline/gfx/env/flfsky2dn.bmp
@@ -125,30 +112,6 @@
 %%HLDSDIR%%/frontline/gfx/env/flfsky2rt.tga
 %%HLDSDIR%%/frontline/gfx/env/flfsky2up.bmp
 %%HLDSDIR%%/frontline/gfx/env/flfsky2up.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky3bk.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky3bk.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky3dn.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky3dn.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky3ft.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky3ft.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky3lf.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky3lf.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky3rt.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky3rt.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky3up.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky3up.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky4bk.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky4bk.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky4dn.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky4dn.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky4ft.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky4ft.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky4lf.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky4lf.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky4rt.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky4rt.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky4up.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky4up.tga
 %%HLDSDIR%%/frontline/gfx/env/flfsky5bk.bmp
 %%HLDSDIR%%/frontline/gfx/env/flfsky5bk.tga
 %%HLDSDIR%%/frontline/gfx/env/flfsky5dn.bmp
@@ -161,42 +124,6 @@
 %%HLDSDIR%%/frontline/gfx/env/flfsky5rt.tga
 %%HLDSDIR%%/frontline/gfx/env/flfsky5up.bmp
 %%HLDSDIR%%/frontline/gfx/env/flfsky5up.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky6bk.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky6bk.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky6dn.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky6dn.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky6ft.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky6ft.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky6lf.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky6lf.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky6rt.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky6rt.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky6up.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky6up.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky7bk.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky7bk.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky7dn.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky7dn.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky7ft.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky7ft.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky7lf.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky7lf.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky7rt.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky7rt.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky7up.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky7up.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky8bk.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky8bk.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky8dn.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky8dn.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky8ft.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky8ft.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky8lf.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky8lf.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky8rt.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky8rt.tga
-%%HLDSDIR%%/frontline/gfx/env/flfsky8up.bmp
-%%HLDSDIR%%/frontline/gfx/env/flfsky8up.tga
 %%HLDSDIR%%/frontline/gfx/env/flfsky9bk.bmp
 %%HLDSDIR%%/frontline/gfx/env/flfsky9bk.tga
 %%HLDSDIR%%/frontline/gfx/env/flfsky9dn.bmp
@@ -209,6 +136,18 @@
 %%HLDSDIR%%/frontline/gfx/env/flfsky9rt.tga
 %%HLDSDIR%%/frontline/gfx/env/flfsky9up.bmp
 %%HLDSDIR%%/frontline/gfx/env/flfsky9up.tga
+%%HLDSDIR%%/frontline/gfx/env/fullmoonbk.pcx
+%%HLDSDIR%%/frontline/gfx/env/fullmoonbk.tga
+%%HLDSDIR%%/frontline/gfx/env/fullmoondn.pcx
+%%HLDSDIR%%/frontline/gfx/env/fullmoondn.tga
+%%HLDSDIR%%/frontline/gfx/env/fullmoonft.pcx
+%%HLDSDIR%%/frontline/gfx/env/fullmoonft.tga
+%%HLDSDIR%%/frontline/gfx/env/fullmoonlf.pcx
+%%HLDSDIR%%/frontline/gfx/env/fullmoonlf.tga
+%%HLDSDIR%%/frontline/gfx/env/fullmoonrt.pcx
+%%HLDSDIR%%/frontline/gfx/env/fullmoonrt.tga
+%%HLDSDIR%%/frontline/gfx/env/fullmoonup.pcx
+%%HLDSDIR%%/frontline/gfx/env/fullmoonup.tga
 %%HLDSDIR%%/frontline/gfx/env/gravebk.bmp
 %%HLDSDIR%%/frontline/gfx/env/gravebk.pcx
 %%HLDSDIR%%/frontline/gfx/env/gravebk.tga
@@ -227,24 +166,6 @@
 %%HLDSDIR%%/frontline/gfx/env/graveup.bmp
 %%HLDSDIR%%/frontline/gfx/env/graveup.pcx
 %%HLDSDIR%%/frontline/gfx/env/graveup.tga
-%%HLDSDIR%%/frontline/gfx/env/morningdew_bk.bmp
-%%HLDSDIR%%/frontline/gfx/env/morningdew_bk.pcx
-%%HLDSDIR%%/frontline/gfx/env/morningdew_bk.tga
-%%HLDSDIR%%/frontline/gfx/env/morningdew_dn.bmp
-%%HLDSDIR%%/frontline/gfx/env/morningdew_dn.pcx
-%%HLDSDIR%%/frontline/gfx/env/morningdew_dn.tga
-%%HLDSDIR%%/frontline/gfx/env/morningdew_ft.bmp
-%%HLDSDIR%%/frontline/gfx/env/morningdew_ft.pcx
-%%HLDSDIR%%/frontline/gfx/env/morningdew_ft.tga
-%%HLDSDIR%%/frontline/gfx/env/morningdew_lf.bmp
-%%HLDSDIR%%/frontline/gfx/env/morningdew_lf.pcx
-%%HLDSDIR%%/frontline/gfx/env/morningdew_lf.tga
-%%HLDSDIR%%/frontline/gfx/env/morningdew_rt.bmp
-%%HLDSDIR%%/frontline/gfx/env/morningdew_rt.pcx
-%%HLDSDIR%%/frontline/gfx/env/morningdew_rt.tga
-%%HLDSDIR%%/frontline/gfx/env/morningdew_up.bmp
-%%HLDSDIR%%/frontline/gfx/env/morningdew_up.pcx
-%%HLDSDIR%%/frontline/gfx/env/morningdew_up.tga
 %%HLDSDIR%%/frontline/gfx/env/sb-frozen256_bk.pcx
 %%HLDSDIR%%/frontline/gfx/env/sb-frozen256_dn.pcx
 %%HLDSDIR%%/frontline/gfx/env/sb-frozen256_ft.pcx
@@ -275,12 +196,6 @@
 %%HLDSDIR%%/frontline/gfx/env/snow2rt.tga
 %%HLDSDIR%%/frontline/gfx/env/snow2up.pcx
 %%HLDSDIR%%/frontline/gfx/env/snow2up.tga
-%%HLDSDIR%%/frontline/gfx/env/tropicalbk.tga
-%%HLDSDIR%%/frontline/gfx/env/tropicaldn.tga
-%%HLDSDIR%%/frontline/gfx/env/tropicalft.tga
-%%HLDSDIR%%/frontline/gfx/env/tropicallf.tga
-%%HLDSDIR%%/frontline/gfx/env/tropicalrt.tga
-%%HLDSDIR%%/frontline/gfx/env/tropicalup.tga
 %%HLDSDIR%%/frontline/gfx/shell/btns_main.bmp
 %%HLDSDIR%%/frontline/gfx/shell/cls_d.bmp
 %%HLDSDIR%%/frontline/gfx/shell/cls_f.bmp
@@ -380,7 +295,7 @@
 %%HLDSDIR%%/frontline/gfx/vgui/640_rebelssupport.tga
 %%HLDSDIR%%/frontline/gfx/vgui/640_rifles.tga
 %%HLDSDIR%%/frontline/gfx/vgui/640_rs202m2.tga
-%%HLDSDIR%%/frontline/gfx/vgui/640_sako.TGA
+%%HLDSDIR%%/frontline/gfx/vgui/640_sako.tga
 %%HLDSDIR%%/frontline/gfx/vgui/640_shotguns.tga
 %%HLDSDIR%%/frontline/gfx/vgui/640_spas12.tga
 %%HLDSDIR%%/frontline/gfx/vgui/640_submachines.tga
@@ -407,28 +322,9 @@
 %%HLDSDIR%%/frontline/maps/flf_bier.bsp
 %%HLDSDIR%%/frontline/maps/flf_bier.loc
 %%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_bier.txt
-%%HLDSDIR%%/frontline/maps/flf_bridge.bsp
-%%HLDSDIR%%/frontline/maps/flf_bridge.loc
-%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_bridge.txt
 %%HLDSDIR%%/frontline/maps/flf_chion.bsp
 %%HLDSDIR%%/frontline/maps/flf_chion.loc
 %%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_chion.txt
-%%HLDSDIR%%/frontline/maps/flf_deep6.bsp
-%%HLDSDIR%%/frontline/maps/flf_deep6.loc
-%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_deep6.txt
-%%HLDSDIR%%/frontline/maps/flf_dlord.bsp
-%%HLDSDIR%%/frontline/maps/flf_dlord.loc
-%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_dlord.txt
-%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_dlordREADME.txt
-%%HLDSDIR%%/frontline/maps/flf_fox.bsp
-%%HLDSDIR%%/frontline/maps/flf_fox.loc
-%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_fox.txt
-%%HLDSDIR%%/frontline/maps/flf_heatwave.bsp
-%%HLDSDIR%%/frontline/maps/flf_heatwave.loc
-%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_heatwave.txt
-%%HLDSDIR%%/frontline/maps/flf_hill.bsp
-%%HLDSDIR%%/frontline/maps/flf_hill.loc
-%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_hill.txt
 %%HLDSDIR%%/frontline/maps/flf_icehammer.bsp
 %%HLDSDIR%%/frontline/maps/flf_icehammer.loc
 %%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_icehammer.txt
@@ -441,15 +337,15 @@
 %%HLDSDIR%%/frontline/maps/flf_lombardi.bsp
 %%HLDSDIR%%/frontline/maps/flf_lombardi.loc
 %%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_lombardi.txt
+%%HLDSDIR%%/frontline/maps/flf_pano.bsp
+%%HLDSDIR%%/frontline/maps/flf_pano.loc
+%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_pano.txt
 %%HLDSDIR%%/frontline/maps/flf_rage.bsp
 %%HLDSDIR%%/frontline/maps/flf_rage.loc
 %%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_rage.txt
 %%HLDSDIR%%/frontline/maps/flf_risu.bsp
 %%HLDSDIR%%/frontline/maps/flf_risu.loc
 %%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_risu.txt
-%%HLDSDIR%%/frontline/maps/flf_snow.bsp
-%%HLDSDIR%%/frontline/maps/flf_snow.loc
-%%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_snow.txt
 %%HLDSDIR%%/frontline/maps/flf_village.bsp
 %%HLDSDIR%%/frontline/maps/flf_village.loc
 %%PORTDOCS%%%%HLDSDIR%%/frontline/maps/flf_village.txt
@@ -471,7 +367,6 @@
 %%HLDSDIR%%/frontline/models/antena2.mdl
 %%HLDSDIR%%/frontline/models/astro.mdl
 %%HLDSDIR%%/frontline/models/astroT.mdl
-%%HLDSDIR%%/frontline/models/bookrack.mdl
 %%HLDSDIR%%/frontline/models/cactus_medium.mdl
 %%HLDSDIR%%/frontline/models/cactus_small.mdl
 %%HLDSDIR%%/frontline/models/clip_ak5.mdl
@@ -492,13 +387,11 @@
 %%HLDSDIR%%/frontline/models/clip_mp5T.mdl
 %%HLDSDIR%%/frontline/models/clip_ump.mdl
 %%HLDSDIR%%/frontline/models/clip_umpT.mdl
-%%HLDSDIR%%/frontline/models/dogfish.mdl
 %%HLDSDIR%%/frontline/models/gamecfg.wc
 %%HLDSDIR%%/frontline/models/gib_cemento.mdl
 %%HLDSDIR%%/frontline/models/gib_dirt.mdl
 %%HLDSDIR%%/frontline/models/gib_glass.mdl
 %%HLDSDIR%%/frontline/models/gib_wood.mdl
-%%HLDSDIR%%/frontline/models/jellyfish.mdl
 %%HLDSDIR%%/frontline/models/mainframe.mdl
 %%HLDSDIR%%/frontline/models/map/arbol2.mdl
 %%HLDSDIR%%/frontline/models/map/banco.mdl
@@ -528,7 +421,6 @@
 %%HLDSDIR%%/frontline/models/p_sako.mdl
 %%HLDSDIR%%/frontline/models/p_spas12.mdl
 %%HLDSDIR%%/frontline/models/p_ump45.mdl
-%%HLDSDIR%%/frontline/models/pistolrack.mdl
 %%HLDSDIR%%/frontline/models/player.mdl
 %%HLDSDIR%%/frontline/models/player/axisassault/axisassault.mdl
 %%HLDSDIR%%/frontline/models/player/axisrecon/axisrecon.mdl
@@ -537,7 +429,6 @@
 %%HLDSDIR%%/frontline/models/player/natorecon/natorecon.mdl
 %%HLDSDIR%%/frontline/models/player/natosupport/natosupport.mdl
 %%HLDSDIR%%/frontline/models/pshell.mdl
-%%HLDSDIR%%/frontline/models/riflerack.mdl
 %%HLDSDIR%%/frontline/models/rshell.mdl
 %%HLDSDIR%%/frontline/models/v_ak5.mdl
 %%HLDSDIR%%/frontline/models/v_beretta92f.mdl
@@ -599,28 +490,40 @@
 %%HLDSDIR%%/frontline/sound/ambience/barmusic.wav
 %%HLDSDIR%%/frontline/sound/ambience/begins.wav
 %%HLDSDIR%%/frontline/sound/ambience/birds.wav
-%%HLDSDIR%%/frontline/sound/ambience/bridgeoveride.wav
-%%HLDSDIR%%/frontline/sound/ambience/bubbles.wav
 %%HLDSDIR%%/frontline/sound/ambience/c2.wav
 %%HLDSDIR%%/frontline/sound/ambience/crickets.wav
 %%HLDSDIR%%/frontline/sound/ambience/destruct.wav
-%%HLDSDIR%%/frontline/sound/ambience/drross1.wav
 %%HLDSDIR%%/frontline/sound/ambience/fallscream.wav
-%%HLDSDIR%%/frontline/sound/ambience/fireoveride.wav
+%%HLDSDIR%%/frontline/sound/ambience/fvox1.wav
+%%HLDSDIR%%/frontline/sound/ambience/fvox2.wav
+%%HLDSDIR%%/frontline/sound/ambience/fvox3.wav
 %%HLDSDIR%%/frontline/sound/ambience/hallelujiah.wav
 %%HLDSDIR%%/frontline/sound/ambience/klaxon.wav
 %%HLDSDIR%%/frontline/sound/ambience/klaxon2.wav
 %%HLDSDIR%%/frontline/sound/ambience/launch.wav
 %%HLDSDIR%%/frontline/sound/ambience/mexico.wav
 %%HLDSDIR%%/frontline/sound/ambience/neon.wav
+%%HLDSDIR%%/frontline/sound/ambience/nuke.wav
+%%HLDSDIR%%/frontline/sound/ambience/ocean.wav
 %%HLDSDIR%%/frontline/sound/ambience/osprey_rotors.wav
 %%HLDSDIR%%/frontline/sound/ambience/pacend.wav
 %%HLDSDIR%%/frontline/sound/ambience/pacstart.wav
 %%HLDSDIR%%/frontline/sound/ambience/thunder1.wav
 %%HLDSDIR%%/frontline/sound/ambience/thunder2.wav
 %%HLDSDIR%%/frontline/sound/ambience/thunder3.wav
-%%HLDSDIR%%/frontline/sound/ambience/waves.wav
-%%PORTDOCS%%%%HLDSDIR%%/frontline/sound/materials.txt
+%%HLDSDIR%%/frontline/sound/impact/r_generic1.wav
+%%HLDSDIR%%/frontline/sound/impact/r_generic2.wav
+%%HLDSDIR%%/frontline/sound/impact/r_generic3.wav
+%%HLDSDIR%%/frontline/sound/impact/r_generic4.wav
+%%HLDSDIR%%/frontline/sound/impact/r_metal1.wav
+%%HLDSDIR%%/frontline/sound/impact/r_metal2.wav
+%%HLDSDIR%%/frontline/sound/impact/r_metal3.wav
+%%HLDSDIR%%/frontline/sound/impact/r_metal4.wav
+%%HLDSDIR%%/frontline/sound/impact/r_water1.wav
+%%HLDSDIR%%/frontline/sound/impact/r_water2.wav
+%%HLDSDIR%%/frontline/sound/impact/r_water3.wav
+%%HLDSDIR%%/frontline/sound/impact/r_water4.wav
+%%HLDSDIR%%/frontline/sound/materials.txt
 %%HLDSDIR%%/frontline/sound/misc/captured.wav
 %%HLDSDIR%%/frontline/sound/misc/he_ambience.wav
 %%HLDSDIR%%/frontline/sound/misc/mouseover.wav
@@ -685,7 +588,7 @@
 %%HLDSDIR%%/frontline/sound/radio/waitc.wav
 %%HLDSDIR%%/frontline/sound/radio/waitcv.wav
 %%HLDSDIR%%/frontline/sound/radio/warm_auto1.wav
-%%PORTDOCS%%%%HLDSDIR%%/frontline/sound/sentences.txt
+%%HLDSDIR%%/frontline/sound/sentences.txt
 %%HLDSDIR%%/frontline/sound/sfx/sbullet.wav
 %%HLDSDIR%%/frontline/sound/sfx/sbullet1.wav
 %%HLDSDIR%%/frontline/sound/sfx/sbullet2.wav
@@ -711,6 +614,7 @@
 %%HLDSDIR%%/frontline/sound/weapons/famasreload.wav
 %%HLDSDIR%%/frontline/sound/weapons/flashbang.wav
 %%HLDSDIR%%/frontline/sound/weapons/glockreload.wav
+%%HLDSDIR%%/frontline/sound/weapons/gren_explo.wav
 %%HLDSDIR%%/frontline/sound/weapons/grflsh.wav
 %%HLDSDIR%%/frontline/sound/weapons/grfrag.wav
 %%HLDSDIR%%/frontline/sound/weapons/hk21_fire.wav
@@ -752,6 +656,7 @@
 %%HLDSDIR%%/frontline/sound/weapons/pinpull.wav
 %%HLDSDIR%%/frontline/sound/weapons/ric_metal1.wav
 %%HLDSDIR%%/frontline/sound/weapons/ric_metal2.wav
+%%HLDSDIR%%/frontline/sound/weapons/rifle_empty.wav
 %%HLDSDIR%%/frontline/sound/weapons/rs202m2_fire.wav
 %%HLDSDIR%%/frontline/sound/weapons/sako_bolt_in.wav
 %%HLDSDIR%%/frontline/sound/weapons/sako_bolt_out.wav
@@ -829,6 +734,7 @@
 %%HLDSDIR%%/frontline/sprites/muzzleflash1.spr
 %%HLDSDIR%%/frontline/sprites/muzzleflash2.spr
 %%HLDSDIR%%/frontline/sprites/muzzleflash3.spr
+%%HLDSDIR%%/frontline/sprites/spark_particle.spr
 %%HLDSDIR%%/frontline/sprites/sprite_abovespot.spr
 %%HLDSDIR%%/frontline/sprites/sprite_bellowspot.spr
 %%HLDSDIR%%/frontline/sprites/sprite_cpspot.spr
@@ -902,7 +808,7 @@
 %%HLDSDIR%%/frontline/sprites/weapon_ump45.txt
 %%HLDSDIR%%/frontline/sprites/weapon_ump45_low.spr
 %%HLDSDIR%%/frontline/sprites/woodpuff.spr
-%%PORTDOCS%%%%HLDSDIR%%/frontline/titles.txt
+%%HLDSDIR%%/frontline/titles.txt
 %%HLDSDIR%%/frontline/user.scr
 %%PORTDOCS%%%%HLDSDIR%%/frontline/version_info.txt
 @dirrm %%HLDSDIR%%/frontline/sprites
@@ -911,6 +817,7 @@
 @dirrm %%HLDSDIR%%/frontline/sound/radio
 @dirrm %%HLDSDIR%%/frontline/sound/player
 @dirrm %%HLDSDIR%%/frontline/sound/misc
+@dirrm %%HLDSDIR%%/frontline/sound/impact
 @dirrm %%HLDSDIR%%/frontline/sound/ambience
 @dirrm %%HLDSDIR%%/frontline/sound
 @dirrm %%HLDSDIR%%/frontline/models/player/natosupport
@@ -933,14 +840,14 @@
 @dirrm %%HLDSDIR%%/frontline/gfx
 @dirrm %%HLDSDIR%%/frontline/events
 @dirrm %%HLDSDIR%%/frontline/dlls
-%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/submachines
-%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/shotguns
-%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/rifles
-%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/pistols
-%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/heavyweapons
-%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/descriptions/weapons
-%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/descriptions/classes
-%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/descriptions
+@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/submachines
+@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/shotguns
+@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/rifles
+@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/pistols
+@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/heavyweapons
+@dirrm %%HLDSDIR%%/frontline/descriptions/weapons
+@dirrm %%HLDSDIR%%/frontline/descriptions/classes
+@dirrm %%HLDSDIR%%/frontline/descriptions
 @dirrm %%HLDSDIR%%/frontline/cl_dlls
 @unexec rmdir %D/%%HLDSDIR%%frontline/SAVE 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%frontline/logs 2>/dev/null || true
