@@ -14,7 +14,7 @@ lib/gaim/libyahoo.so
 lib/gaim/libzephyr.so
 lib/gaim/notify.so
 lib/gaim/spellchk.so
-%%DATADIR%%/pixmaps/gaim.xpm
+%%NOGNOME:%%%%DATADIR%%/pixmaps/gaim.xpm
 %%GNOME:%%share/gnome/applets/Network/gaim_applet.desktop
 %%GNOME:%%share/gnome/apps/Internet/gaim.desktop
 %%GNOME:%%share/gnome/pixmaps/gaim.xpm
@@ -33,5 +33,6 @@ share/locale/pl/LC_MESSAGES/gaim.mo
 share/locale/ru/LC_MESSAGES/gaim.mo
 share/locale/sv/LC_MESSAGES/gaim.mo
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
-@dirrm %%DATADIR%%/pixmaps
+%%GNOME:%%@dirrm share/gnome/pixmaps/gaim
+%%NOGNOME:%%@dirrm %%DATADIR%%/pixmaps
 @dirrm lib/gaim
