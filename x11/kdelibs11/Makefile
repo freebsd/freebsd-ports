@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.18 1998/09/19 01:33:48 steve Exp $
+# $Id: Makefile,v 1.19 1998/09/30 01:57:21 jseger Exp $
 #
 
 DISTNAME=	kdelibs-1.0
@@ -16,13 +16,14 @@ MAINTAINER=	se@freebsd.org
 LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-BROKEN_ELF=	this hasn't been converted to ELF yet
-
 USE_QT=		yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
 		"--x-inc=$(X11BASE)/include" \
 		"--x-lib=$(X11BASE)/lib"
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)"
+
+post-install:
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
