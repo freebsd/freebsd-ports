@@ -1,0 +1,14 @@
+EtherPEG was a program that sniffed for JPEGs passing by on the AirPort
+networks at MacHack, and showed them on the huge screen to shame people
+into a) turning the 802.11 encryption on, or b) reducing amount of pr0n
+they download at weirdo Mac conventions. DRIFTNET can do the same for
+*your* office, and make an attractive desktop accessory to boot. The
+program promiscuously sniffs and decodes any JPEG downloaded by anyone
+on your LAN, displaying it in an attractive, ever changing mosaic of
+fluffy kittens, oversized navigation buttons, and blurred images of Big
+Brother Elizabeth fiddling. It's UNIX only. Your sysadmin is undoubtedly
+running it already. So stop that. Now.
+
+WWW: http://www.ex-parrot.com/~chris/driftnet/
+
+- Simon 'corecode' Schubert
