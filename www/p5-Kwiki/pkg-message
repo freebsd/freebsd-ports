@@ -1,0 +1,9 @@
+/* ================================================================= */
+Note: 
+	Kwiki software installed! Now you can install 
+	your kwiki web directory by yourself:
+
+$ kwiki -new cgi-bin/my-kwiki
+
+	Finally remember to point your browser at this location.
+/* ================================================================= */
