@@ -1,0 +1,22 @@
+--- libecasound/eca-session.cpp.orig	Mon Dec  4 22:22:22 2000
++++ libecasound/eca-session.cpp	Wed Dec 20 01:21:51 2000
+@@ -389,14 +389,18 @@
+       int prio = ::atoi(get_argument_number(1, argu).c_str());
+       if (prio != 0) 
+ 	schedpriority_rep = prio;
+-      ecadebug->msg("(eca-session) Raised-priority mode enabled. Locking memory. (prio:" + 
++      ecadebug->msg("(eca-session) Raised-priority mode enabled (prio:" + 
+ 		    kvu_numtostr(schedpriority_rep) + ")");
+       raisepriority_rep = true;
++#ifdef HAVE_MLOCKALL
+       if (::mlockall (MCL_CURRENT|MCL_FUTURE)) {
+ 	ecadebug->msg("(eca-session) Warning! Couldn't lock all memory!");
+       }
+       else 
+ 	ecadebug->msg(ECA_DEBUG::system_objects, "(eca-session) Memory locked!");
++#else
++      ecadebug->msg("(eca-session) Memory locking not available.");
++#endif
+       break;
+     }
+     

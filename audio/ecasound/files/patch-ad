@@ -1,0 +1,10 @@
+--- libecasound/eca-object-map.cpp/orig	Thu Nov 16 20:03:48 2000
++++ libecasound/eca-object-map.cpp	Mon Dec 18 19:04:48 2000
+@@ -20,6 +20,7 @@
+ #include <vector>
+ #include <string>
+ #include <map>
++#include <sys/types.h>
+ #include <regex.h>
+ 
+ #include "eca-object-map.h"

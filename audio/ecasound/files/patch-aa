@@ -1,0 +1,12 @@
+--- config.h.in.orig	Wed Nov 22 12:41:03 2000
++++ config.h.in	Fri Dec 22 13:45:14 2000
+@@ -52,6 +52,9 @@
+ /* Define if you have the getpagesize function.  */
+ #undef HAVE_GETPAGESIZE
+ 
++/* Define if you have the mlockall function.  */
++#undef HAVE_MLOCKALL
++
+ /* Define if you have the <asm/atomic.h> header file.  */
+ #undef HAVE_ASM_ATOMIC_H
+ 

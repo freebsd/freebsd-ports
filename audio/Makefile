@@ -22,6 +22,7 @@
     SUBDIR += csound-manual
     SUBDIR += dagrab
     SUBDIR += dap
+    SUBDIR += ecasound
     SUBDIR += esound
     SUBDIR += extace
     SUBDIR += fcplay

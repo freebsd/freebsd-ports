@@ -1,0 +1,51 @@
+--- configure.in.orig	Thu Dec  7 00:50:49 2000
++++ configure.in	Fri Dec 22 13:45:14 2000
+@@ -38,6 +38,7 @@
+ 
+ dnl --
+ dnl Libtool
++AM_PROG_LIBTOOL
+ AC_PATH_PROG(LIBTOOL,libtool,none)
+ if test x$LIBTOOL = xnone; then
+  AC_MSG_ERROR([** Libtool package not installed! **])
+@@ -46,7 +47,6 @@
+ if test x$GNUM4 = xnone; then
+  AC_MSG_ERROR([** GNU m4 not installed! **])
+ fi
+-AM_PROG_LIBTOOL
+ 
+ ACLOCAL=aclocal
+ AUTOMAKE=automake
+@@ -106,7 +106,7 @@
+ include_debug=yes)
+ AM_CONDITIONAL(INCLUDE_DEBUG, test x$include_debug = xyes)
+ if test x$include_debug = xyes; then
+-CXXFLAGS="-D_REENTRANT -DENABLE_DBC -g -Wall -Wstrict-prototypes -ffast-math"
++CXXFLAGS="$CXXFLAGS -D_REENTRANT -DENABLE_DBC -g -Wall -Wstrict-prototypes -ffast-math"
+ dnl LDFLAGS="-pg -pedantic -funroll-loops"
+ fi                                     
+ 
+@@ -123,6 +123,7 @@
+ dnl Checks for functions.
+ dnl ---
+ AC_FUNC_MMAP
++AC_CHECK_FUNCS(mlockall)
+ 
+ dnl ---
+ dnl Checks for libraries.
+@@ -152,15 +153,6 @@
+         )
+ 	AC_DEFINE(USE_NCURSES)
+ fi
+-
+-dnl ------------------------------------------------------------------
+-
+-dnl ---
+-dnl POSIX.4 threads
+-dnl ---
+-AC_CHECK_LIB(pthread,pthread_create, [],
+-	AC_CHECK_LIB(c_r,pthread_create, [],
+-		AC_MSG_ERROR([** POSIX.4 threads not installed or broken **])))
+ 
+ dnl ------------------------------------------------------------------
+ 
