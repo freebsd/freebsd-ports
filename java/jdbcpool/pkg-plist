@@ -1,47 +1,10 @@
-share/java/classes/jdbcpool.jar
-%%T%%/CHANGES
-%%T%%/LICENSE
-%%T%%/README
-%%T%%/examples/PoolTest.class
-%%T%%/examples/PoolTest.java
-%%T%%/examples/gsp/JDBCApplication.class
-%%T%%/examples/gsp/JDBCApplication.java
-%%T%%/examples/gsp/README
-%%T%%/examples/gsp/monitor_pool.gsp
-%%T%%/examples/gsp/query.gsp
-%%T%%/javadoc/allclasses-frame.html
-%%T%%/javadoc/com/bitmechanic/sql/ConnectionPool.html
-%%T%%/javadoc/com/bitmechanic/sql/ConnectionPoolManager.html
-%%T%%/javadoc/com/bitmechanic/sql/PooledCallableStatement.html
-%%T%%/javadoc/com/bitmechanic/sql/PooledConnection.html
-%%T%%/javadoc/com/bitmechanic/sql/PooledPreparedStatement.html
-%%T%%/javadoc/com/bitmechanic/sql/PooledStatement.html
-%%T%%/javadoc/com/bitmechanic/sql/SQLUtil.html
-%%T%%/javadoc/com/bitmechanic/sql/package-frame.html
-%%T%%/javadoc/com/bitmechanic/sql/package-summary.html
-%%T%%/javadoc/com/bitmechanic/sql/package-tree.html
-%%T%%/javadoc/com/bitmechanic/util/JavaAlarm.html
-%%T%%/javadoc/com/bitmechanic/util/Queue.html
-%%T%%/javadoc/com/bitmechanic/util/TimeoutException.html
-%%T%%/javadoc/com/bitmechanic/util/package-frame.html
-%%T%%/javadoc/com/bitmechanic/util/package-summary.html
-%%T%%/javadoc/com/bitmechanic/util/package-tree.html
-%%T%%/javadoc/deprecated-list.html
-%%T%%/javadoc/help-doc.html
-%%T%%/javadoc/index-all.html
-%%T%%/javadoc/index.html
-%%T%%/javadoc/overview-frame.html
-%%T%%/javadoc/overview-summary.html
-%%T%%/javadoc/overview-tree.html
-%%T%%/javadoc/package-list
-%%T%%/javadoc/packages.html
-%%T%%/javadoc/serialized-form.html
-%%T%%/javadoc/stylesheet.css
-@dirrm %%T%%/examples/gsp
-@dirrm %%T%%/examples
-@dirrm %%T%%/javadoc/com/bitmechanic/sql
-@dirrm %%T%%/javadoc/com/bitmechanic/util
-@dirrm %%T%%/javadoc/com/bitmechanic
-@dirrm %%T%%/javadoc/com
-@dirrm %%T%%/javadoc
-@dirrm %%T%%
+%%JAVAJARDIR%%/jdbcpool.jar
+%%EXAMPLESDIR%%/PoolTest.class
+%%EXAMPLESDIR%%/PoolTest.java
+%%EXAMPLESDIR%%/gsp/JDBCApplication.class
+%%EXAMPLESDIR%%/gsp/JDBCApplication.java
+%%EXAMPLESDIR%%/gsp/README
+%%EXAMPLESDIR%%/gsp/monitor_pool.gsp
+%%EXAMPLESDIR%%/gsp/query.gsp
+@dirrm %%EXAMPLESDIR%%/gsp
+@dirrm %%EXAMPLESDIR%%
