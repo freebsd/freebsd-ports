@@ -9,7 +9,7 @@ PORTNAME=	cbedic
 PORTVERSION=	1.2
 CATEGORIES=	textproc
 
-MAINTAINER=	todorov_bg@gmx.net
+MAINTAINER=	todorov@freebsd-bg.org
 
 MASTERDIR=	${.CURDIR}/../kbedic
 
