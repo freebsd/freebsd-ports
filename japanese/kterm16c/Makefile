@@ -1,18 +1,24 @@
 # New ports collection makefile for:	kterm
-# Version required:	6.1
+# Version required:	6.2
 # Date created:		18 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.9 1996/06/03 02:17:23 asami Exp $
+# $Id: Makefile,v 1.10 1996/09/19 04:38:22 asami Exp $
 #
 
-DISTNAME=	kterm-6.1.0
-PKGNAME=	jp-kterm-6.1.0
+DISTNAME=	kterm-6.2.0
+PKGNAME=	jp-kterm-6.2.0
 CATEGORIES+=	japanese x11
-MASTER_SITES=	ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
+MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
 
 MAINTAINER=	asami@FreeBSD.ORG
 
 USE_IMAKE=	yes
+
+.if exists(/usr/X11R6/lib/libXaw3d.a) && !defined(PACKAGE_BUILDING)
+post-patch:
+	@${ECHO_MSG}  "===>  Applying Xaw3d scrollbar patch"
+	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-0
+.endif
 
 .include <bsd.port.mk>
