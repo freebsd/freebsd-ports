@@ -1439,6 +1439,7 @@ share/locale/zh_CN/LC_MESSAGES/evolution.mo
 @dirrm share/gnome/evolution
 @dirrm share/doc/evolution-cal-util
 @dirrm share/doc/evolution-cal-client
+@dirrm sbin
 @dirrm lib/evolution/1.2/evolution-mail-importers
 @dirrm lib/evolution/1.2/camel-providers
 @dirrm lib/evolution/1.2
