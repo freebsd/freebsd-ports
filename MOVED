@@ -718,3 +718,5 @@ devel/mips-rtems-gcj|devel/mips-rtems-gcc|2003-11-18|Now included in the gcc por
 devel/powerpc-rtems-gcj|devel/powerpc-rtems-gcc|2003-11-18|Now included in the gcc port
 devel/sh-rtems-gcj|devel/sh-rtems-gcc|2003-11-18|Now included in the gcc port
 devel/sparc-rtems-gcj|devel/sparc-rtems-gcc|2003-11-18|Now included in the gcc port
+www/netraider||2003-11-20|Mastersite gone for 2 years, was listed as alpha quality
+security/whisker|security/nikto|2003-11-20|Discontinued by author, who recommends nikto
