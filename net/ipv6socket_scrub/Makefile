@@ -11,7 +11,7 @@ MASTER_SITES=	#http://www.sun.com/solaris/ipv6
 DISTNAME=	IPv6socket_scrub
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Checks IPv6 portability of C source code
 
 MAN1=		ipv6socket_scrub.1
