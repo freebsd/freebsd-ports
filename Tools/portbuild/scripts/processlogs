@@ -25,6 +25,7 @@ set *.log
 if [ $# != 1 -o "x$1" != "x*.log" ]; then
   while [ ! -z "$1" ]; do
     filename=$1
+
     portname=$(basename $filename .log)
     affected=$(($(grep -cF $portname < INDEX) -1))
     logsize=$(/bin/ls -sk $filename | awk '{print $1}')
@@ -34,6 +35,12 @@ if [ $# != 1 -o "x$1" != "x*.log" ]; then
     datetime=$(grep 'build started at' $filename | \
 		sed -e 's/build started at ...//' | tr ' ' '_' )
 
+    # throw out totally bogus files (e.g., blank file, error 404, etc.)
+    if [ -z "$dir" -a -z "$maintainer" -a -z "$datetime" ]; then
+       shift
+       continue
+    fi
+
     if grep -q 'list of extra files and directories' $1; then
       reason="mtree"; tag="mtree"
     elif grep -q "See <URL:http://www.gnu.org/software/gcc/bugs.html> for instructions." $1; then
@@ -42,12 +49,24 @@ if [ $# != 1 -o "x$1" != "x*.log" ]; then
       reason="checksum"; tag="checksum"
     elif grep -qE '/usr/local/bin/(perl|perl5.6.1):.*(not found|No such file or directory)' $1; then
       reason="perl"; tag="perl"
-    elif grep -q 'perl: Perl is not installed, try .pkg_add -r perl.' $1; then
+    elif grep -qE 'perl(.*): Perl is not installed, try .pkg_add -r perl.' $1; then
       reason="perl"; tag="perl"
+    elif grep -q 'cannot find -lc_r' $1; then
+      reason="threads"; tag="threads"
+    elif grep -q "checking for.*lc_r\.\.\. no" $1; then
+      reason="threads"; tag="threads"
     elif grep -qE '(No checksum recorded for|(Maybe|Either) .* is out of date, or)' $1; then
       reason="distinfo_update"; tag="distinfo"
+    elif grep -q "checking whether apxs works.*apxs: not found" $1; then
+      reason="apxs"; tag="apxs"
     elif grep -qE '(configure: error:|script.*failed: here are the contents of)' $1; then
-      reason="configure_error"; tag="configure"
+      if grep -qE "configure: error: (This program requires STL to compile|One or more.*STL headers are missing)" $1; then
+        reason="stl"; tag="stl"
+      elif grep -qE "configure: error: [Pp]erl (5.* required|version too old)" $1; then
+        reason="perl"; tag="perl"
+      else
+        reason="configure_error"; tag="configure"
+      fi
     elif grep -qE '(bison:.*(No such file|not found)|multiple definition of `yy)' $1; then
       reason="bison"; tag="bison"
     elif grep -q "Couldn't fetch it - please try" $1; then
@@ -88,6 +107,8 @@ if [ $# != 1 -o "x$1" != "x*.log" ]; then
       fi
     elif grep -q "pnohang: killing make checksum" $1; then
       reason="fetch_timeout"; tag="fetch-timeout"
+    elif grep -q "USER   PID  PPID  PGID JOBC STAT  TT       TIME COMMAND" $1; then
+      reason="runaway_process"; tag="runaway"
     elif grep -q "pnohang: killing make package" $1; then
       reason="runaway_process"; tag="runaway"
     elif grep -q "cd: can't cd to" $1; then
@@ -105,12 +126,16 @@ if [ $# != 1 -o "x$1" != "x*.log" ]; then
     elif grep -qE 'chown:.*invalid argument' $1; then
       reason="chown"; tag="chown"
     elif grep -q 'install: .*: No such file' $1; then
-      reason="install_error"; tag="install"
+      if grep -q 'install: /usr/local/www/cgi-bin.*No such file or directory' $1; then
+        reason="cgi-bin"; tag="cgi-bin"
+      else
+        reason="install_error"; tag="install"
+      fi
     elif grep -q "/usr/.*/man/.*: No such file or directory" $1; then
       reason="manpage"; tag="manpage"
     elif grep -q "pkg_create: make_dist: tar command failed with code" $1; then
       reason="PLIST"; tag="plist"
-    elif grep -q "Can't open display" $1; then
+    elif grep -qE "(Can't|unable to) open display" $1; then
       reason="DISPLAY"; tag="display"
     elif grep -q " is already installed - perhaps an older version" $1; then
       reason="depend_object"; tag="dependobj"
@@ -128,9 +153,157 @@ if [ $# != 1 -o "x$1" != "x*.log" ]; then
       reason="stdio"; tag="stdio"
     elif grep -q "structure has no member named" $1; then
       reason="struct_changes"; tag="struct"
+    elif grep -q "Error: alignment not a power of 2" $1; then
+      reason="alignment"; tag="alignment"
+    elif grep -qE "bin.apxs:(.)(not found|No such file or directory)" $1; then
+      reason="apxs"; tag="apxs"
+    elif grep -qE "failed to exec .*bin/apxs" $1; then
+      reason="apxs"; tag="apxs"
+    elif grep -q ".s: Assembler messages:" $1; then
+      reason="arch"; tag="arch"
+    elif grep -qE "Cannot (determine .* target|find the byte order) for this architecture" $1; then
+      reason="arch"; tag="arch"
+    elif grep -q "cast from pointer to integer of different size" $1; then
+      reason="arch"; tag="arch"
+    elif grep -qE "^cc1: bad value.*for -mcpu.*switch" $1; then
+      reason="arch"; tag="arch"
+    elif grep -qE "^cc1: invalid option " $1; then
+      reason="arch"; tag="arch"
+    elif grep -qE "Configuration .* not supported" $1; then
+      reason="arch"; tag="arch"
+    elif grep -q "could not read symbols: File in wrong format" $1; then
+      reason="arch"; tag="arch"
+    elif grep -qE "[Ee]rror: [Uu]nknown opcode" $1; then
+      reason="arch"; tag="arch"
+    elif grep -qE "error.*Unsupported architecture" $1; then
+      reason="arch"; tag="arch"
+    elif grep -q "ENDIAN must be defined 0 or 1" $1; then
+      reason="arch"; tag="arch"
+    elif grep -q "failed to merge target-specific data" $1; then
+      reason="arch"; tag="arch"
+    elif grep -qE "(file not recognized|failed to set dynamic section sizes): File format not recognized" $1; then
+      reason="arch"; tag="arch"
+    elif grep -q "impossible register constraint" $1; then
+      reason="arch"; tag="arch"
+    elif grep -qE "inconsistent operand constraints in an .asm" $1;  then
+      reason="arch"; tag="arch"
+    elif grep -q "invalid lvalue in asm statement" $1;  then
+      reason="arch"; tag="arch"
+    elif grep -qE "is only for.*, and you are running" $1;  then
+      reason="arch"; tag="arch"
+    elif grep -q "relocation truncated to fit: " $1;  then
+      reason="arch"; tag="arch"
+    elif grep -q "This architecture seems to be neither big endian nor little endian" $1;  then
+      reason="arch"; tag="arch"
+    elif grep -q "unknown register name" $1;  then
+      reason="arch"; tag="arch"
+    elif grep -q "Unable to correct byte order" $1;  then
+      reason="arch"; tag="arch"
+    elif grep -q "Unsupported platform, sorry" $1;  then
+      reason="arch"; tag="arch"
+    elif grep -q "won't run on this architecture" $1;  then
+      reason="arch"; tag="arch"
+    elif grep -qE "#error .Cannot compile:" $1; then
+      reason="assert"; tag="assert"
+    elif grep -qE "autoconf(.*): not found" $1; then
+      reason="autoconf"; tag="autoconf"
+    elif grep -qE "autoconf(.*): No such file or directory" $1; then
+      reason="autoconf"; tag="autoconf"
+    elif grep -q "autoheader: not found" $1; then
+      reason="autoheader"; tag="autoheader"
+    elif grep -qE "automake(.*): not found" $1; then
+      reason="automake"; tag="automake"
+    elif grep -q "awk: empty regular expression" $1; then
+      reason="awk"; tag="awk"
+    elif grep -qE "(mv:|mv: rename|cannot open) y.tab.c(.*): No such file or directory" $1; then
+      reason="bison"; tag="bison"
+    elif grep -q "sorry, cannot determine the header file bison generates" $1; then
+      reason="bison"; tag="bison"
+    elif grep -q "usage: yacc" $1; then
+      reason="bison"; tag="bison"
+    elif grep -q "/usr/local/www/cgi-bin does not exist" $1; then
+      reason="cgi-bin"; tag="cgi-bin"
+    elif grep -qE "chown: .*\..*: Invalid argument" $1; then
+      reason="chown"; tag="chown"
+    elif grep -q "Cannot stat: " $1; then
+      reason="configure_error"; tag="configure"
+    elif grep -qE "Script.*configure.*failed unexpectedly" $1; then
+      reason="configure_error"; tag="configure"
+    elif grep -q "Cannot open /dev/tty for read" $1; then
+      reason="DISPLAY"; tag="display"
+    elif grep -q "RuntimeError: cannot open display" $1; then
+      reason="DISPLAY"; tag="display"
+    elif grep -q "You must run this program under the X-Window System" $1; then
+      reason="DISPLAY"; tag="display"
+    elif grep -q "ld: unrecognised emulation mode: elf_i386" $1; then
+      reason="ELF"; tag="elf"
+    elif grep -qE "Member name contains .\.\." $1; then
+      reason="fetch"; tag="fetch"
+    elif grep -q "fetch: transfer timed out" $1; then
+      reason="fetch_timeout"; tag="fetch-timeout"
+    elif grep -q "fetch: transfer timed out" $1; then
+      reason="fetch_timeout"; tag="fetch-timeout"
+    elif grep -q "strings.h:.* previous declaration of .int ffs" $1; then
+      reason="ffs_conflict"; tag="ffs_conflict"
+    elif grep -q "is forbidden: FreeBSD-SA-" $1; then
+      reason="forbidden"; tag="forbidden"
+    elif grep -qE "previous declaration.*int getopt" $1; then
+      reason="getopt.h"; tag="getopt.h"
+    elif grep -q 'Run-time system build failed for some reason' $1; then
+      reason="install_error"; tag="install"
+    elif grep -q "/usr/bin/ld: cannot find -lc_r" $1; then
+      reason="lc_r"; tag="lc_r"
+    elif grep -q "cc: .*libintl.*: No such file or directory" $1; then
+      reason="linker_error"; tag="ld"
+    elif grep -qE "cc: ndbm\.so: No such file or directory" $1; then
+      reason="linker_error"; tag="ld"
+    elif grep -q "error: The X11 shared library could not be loaded" $1; then
+      reason="linker_error"; tag="ld"
+    elif grep -q "relocation against dynamic symbol" $1; then
+      reason="linker_error"; tag="ld"
+    elif grep -qE "make.*(don.t know how to make|fatal errors encountered|No rule to make target|built-in)" $1; then
+      reason="makefile"; tag="makefile"
+    elif grep -q "Error: mtree file ./etc/mtree/BSD.local.dist. is missing" $1; then
+      reason="mtree"; tag="mtree"
+    elif grep -qE "cp:.*site_perl: No such file or directory" $1; then
+      reason="perl"; tag="perl"
+    elif grep -q "Perl .* required--this is only version" $1; then
+      reason="perl"; tag="perl"
+    elif grep -q "pod2man: not found" $1; then
+      reason="pod2man"; tag="pod2man"
+    elif grep -q "Syntax error: .(. unexpected (expecting .fi.)" $1; then
+      reason="portcomment"; tag="portcomment"
+    elif grep -q "Abort trap" $1; then
+      reason="process_failed"; tag="process"
+    elif grep -q "Bus error" $1; then
+      reason="process_failed"; tag="process"
+    elif grep -q "Signal 11" $1; then
+      reason="process_failed"; tag="process"
+    elif grep -q "USER   PID  PPID  PGID JOBC STAT  TT       TIME COMMAND" $1; then
+      reason="process_failed"; tag="process"
+    elif grep -q "python: not found" $1; then
+      reason="python"; tag="python"
+    elif grep -qE "sed: illegal option" $1; then
+      reason="sed"; tag="sed"
+    elif grep -qE "sed: [0-9]*:.*(RE error:|not defined in the RE|bad flag in substitute command|unescaped newline inside substitute pattern|invalid command code)" $1; then
+      reason="sed"; tag="sed"
+    elif grep -q "Your STL string implementation is unusable" $1; then
+      reason="stl"; tag="stl"
+    elif grep -q "Error: pthreads are required to build this package" $1; then
+      reason="threads"; tag="threads"
+    elif grep -q "Please install/update your POSIX threads (pthreads) library" $1; then
+      reason="threads"; tag="threads"
+    elif grep -qE "requires.*thread support" $1; then
+      reason="threads"; tag="threads"
+    elif grep -q "/usr/bin/ld: cannot find -lpthread" $1; then
+      reason="threads"; tag="threads"
+    elif grep -q "/usr/bin/ld: cannot find -lXThrStub" $1; then
+      reason="threads"; tag="threads"
+
     else
       reason="???"; tag="unknown"
     fi
+
     broken="no"
     if grep -q "Trying build of .* even though it is marked BROKEN" $1; then
        broken="broken"
