@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	sources/ttf-${PORTNAME}/1.10
 DISTNAME=	ttf-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	gnome@freebsd.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Bitstream Vera TrueType font collection
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
