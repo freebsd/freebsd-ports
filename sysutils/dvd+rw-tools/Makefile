@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	dvd+rw-tools
-PORTVERSION=	5.8.4.4.4
+PORTVERSION=	5.9.4.4.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://fy.chalmers.se/~appro/linux/DVD+RW/tools/
+MASTER_SITES=	http://www.pkix.net/mirror/fy.chalmers.se/ \
+		http://fy.chalmers.se/~appro/linux/DVD+RW/tools/
 
 MAINTAINER=	chuck@pkix.net
 COMMENT=	DVD+RW burning software
