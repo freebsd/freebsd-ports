@@ -3,7 +3,7 @@
 # Date created:		24 October 1997
 # Whom:			Bruce Gingery <bgingery@gtcs.com>
 #
-# $Id: Makefile,v 1.14 1998/11/26 05:37:10 asami Exp $
+# $Id: Makefile,v 1.15 1999/03/15 01:29:18 nectar Exp $
 #
 
 DISTNAME=	tkrat-1.2
@@ -16,7 +16,7 @@ MAINTAINER=	appleseed@his.com
 BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 \
 		tk80.1:${PORTSDIR}/x11-toolkits/tk80 \
-		c-client4.4:${PORTSDIR}/mail/imap-uw
+		c-client4.5:${PORTSDIR}/mail/imap-uw
 
 GNU_CONFIGURE=	yes
 
