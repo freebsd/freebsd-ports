@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ipsumdump
-PORTVERSION=	1.33
-PORTREVISION=	1
+PORTVERSION=	1.34
 CATEGORIES=	net
 MASTER_SITES=	http://www.icir.org/kohler/ipsumdump/
 
