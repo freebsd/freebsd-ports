@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	par2cmdline
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	parchive
@@ -17,12 +17,19 @@ COMMENT=	Tools for using Parity v2 Archive files
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
+PORTDOCS=	README
+PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify
+
+post-patch:
+	@${REINPLACE_CMD} -e 's| -lstdc++||g' ${WRKSRC}/Makefile.in
+
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
