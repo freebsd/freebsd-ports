@@ -321,7 +321,7 @@ post-extract:
 	@${ECHO_MSG} "===>  Extracting L10NHELP sub project"
 	@${MKDIR} ${WRKDIR}/L10NHELP
 	@cd ${WRKDIR}/L10NHELP && \
-	    ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${L10NHELP}
+		${CAT} ${DISTDIR}/${DIST_SUBDIR}/${L10NHELP} | ${GZIP_CMD} -d | ${TAR} xf - 
 .endif
 
 post-patch:
