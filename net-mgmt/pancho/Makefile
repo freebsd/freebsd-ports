@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pancho
-PORTVERSION=	9.3.5
+PORTVERSION=	9.3.7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.pancho.org/archives/pancho/ \
 		http://ipv42.net/distfiles/pancho/
