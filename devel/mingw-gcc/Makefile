@@ -7,7 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	2.95.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mingw
@@ -16,9 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-20010828-src
 DIST_SUBDIR=	mingw
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	FSF gcc-2.95.2 for Windows cross-development
-
-BROKEN=		Broken pkg-plist
+COMMENT=	FSF gcc-2.95.3 for Windows cross-development
 
 BUILD_DEPENDS=	${LOCALBASE}/i386-mingw32msvc/bin/as:${PORTSDIR}/devel/mingw-binutils \
 		${LOCALBASE}/bin/mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt \
@@ -40,6 +38,7 @@ MAN1=	cccp.1                 \
 	i386-mingw32msvc-g++.1 \
 	i386-mingw32msvc-g77.1 \
 	i386-mingw32msvc-gcc.1
+INFO=	cpp g77 gcc
 
 post-patch:
 	${REINPLACE_CMD} -e 's/install-libiberty//' ${WRKSRC}/Makefile.in
