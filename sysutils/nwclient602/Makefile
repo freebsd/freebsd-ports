@@ -13,7 +13,7 @@ ARCH!=		uname -m
 DISTNAME=	nwclient-${PORTVERSION}-freebsd-${ARCH}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	networker-bugs@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_BUILD=	yes
 
