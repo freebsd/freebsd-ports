@@ -1,0 +1,7 @@
+The Multi-Backgrounds-Daemon is a little daemon (~designed~ for Gnome 2) 
+that see that you've just changed to other workspace (a X workspace), 
+and that change the background
+
+WWW: http://jk24.free.fr/multi-backgrounds-daemon/
+
+Juan Salaverria -- <rael@vectorstar.net>

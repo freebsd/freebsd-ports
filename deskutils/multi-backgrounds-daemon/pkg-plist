@@ -1,0 +1,8 @@
+bin/multi-backgrounds-daemon
+%%PORTDOCS%%share/doc/multi-backgrounds-daemon/AUTHORS
+%%PORTDOCS%%share/doc/multi-backgrounds-daemon/COPYING
+%%PORTDOCS%%share/doc/multi-backgrounds-daemon/ChangeLog
+%%PORTDOCS%%share/doc/multi-backgrounds-daemon/INSTALL
+%%PORTDOCS%%share/doc/multi-backgrounds-daemon/NEWS
+%%PORTDOCS%%share/doc/multi-backgrounds-daemon/README
+%%PORTDOCS%%@dirrm share/doc/multi-backgrounds-daemon

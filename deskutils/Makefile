@@ -54,6 +54,7 @@
     SUBDIR += mnemo
     SUBDIR += moneydance
     SUBDIR += mrproject
+    SUBDIR += multi-backgrounds-daemon
     SUBDIR += nag
     SUBDIR += narval
     SUBDIR += notebook
