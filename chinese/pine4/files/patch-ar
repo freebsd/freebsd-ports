@@ -1,0 +1,8 @@
+--- pico/estruct.h.orig	Sat Dec 28 02:40:35 1996
++++ pico/estruct.h	Sat Dec 28 02:41:45 1996
+@@ -114,6 +114,6 @@
+ #define	LOBIT_CHAR(C)	((C) > 0x1f && (C) < 0x7f)
+ #define	HIBIT_CHAR(C)	((C) > 0x7f && (C) <= 0xff)
+ #define	HIBIT_OK(C)	(!(gmode & MDHBTIGN))
+-#define	VALID_KEY(C)	(LOBIT_CHAR(C) || (HIBIT_OK(C) && HIBIT_CHAR(C)))
++#define	VALID_KEY(ch)  (((ch) & 0x80) ? 1 : LOBIT_CHAR(ch))

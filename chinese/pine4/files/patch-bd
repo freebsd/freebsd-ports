@@ -1,0 +1,180 @@
+--- pine/mailview.c.orig	Fri Jul 12 06:49:32 1996
++++ pine/mailview.c	Sat Jan 17 21:07:22 1998
+@@ -1955,12 +1955,12 @@
+  * is stored with each entry and it could be different for each.
+  */
+ static struct key help_keys[] =
+-       {{"M","Main Menu",KS_MAINMENU},	{NULL,NULL,KS_NONE},
+-	{"E","Exit Help",KS_EXITMODE},	{NULL,NULL,KS_NONE},
++       {{"M","主選單",KS_MAINMENU},	{NULL,NULL,KS_NONE},
++	{"E","離開",KS_EXITMODE},	{NULL,NULL,KS_NONE},
+ 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
+-	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
+-	{"Y","prYnt",KS_PRINT},		{"Z","Print All",KS_NONE},
+-	{"B","Report Bug",KS_NONE},	{"W","WhereIs",KS_WHEREIS}};
++	{"-","上一頁",KS_PREVPAGE},	{"Spc","下一頁",KS_NEXTPAGE},
++	{"Y","列印",KS_PRINT},		{"Z","Print All",KS_NONE},
++	{"B","錯誤回報",KS_NONE},	{"W","搜尋",KS_WHEREIS}};
+ INST_KEY_MENU(help_keymenu, help_keys);
+ #define	HLP_MAIN_KEY	0
+ #define	HLP_ALL_KEY	9
+@@ -1968,34 +1968,34 @@
+ 
+ static struct key review_keys[] =
+        {{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
+-	{"E","Exit",KS_EXITMODE},	{NULL,NULL,KS_NONE},
++	{"E","離開",KS_EXITMODE},	{NULL,NULL,KS_NONE},
+ 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
+-	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
+-	{"Y","prYnt",KS_PRINT},		{NULL,NULL,KS_NONE},
+-	{NULL,NULL,KS_NONE},		{"W","WhereIs",KS_WHEREIS}};
++	{"-","上一頁",KS_PREVPAGE},	{"Spc","下一頁",KS_NEXTPAGE},
++	{"Y","列印",KS_PRINT},		{NULL,NULL,KS_NONE},
++	{NULL,NULL,KS_NONE},		{"W","搜尋",KS_WHEREIS}};
+ INST_KEY_MENU(review_keymenu, review_keys);
+ 
+ static struct key view_keys[] = 
+-       {{"?","Help",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
+-	{"M","Main Menu",KS_MAINMENU},	{"V","ViewAttch",KS_VIEW},
+-	{"P","PrevMsg",KS_PREVMSG},	{"N","NextMsg",KS_NEXTMSG},
+-	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
+-	{"D","Delete",KS_DELETE},	{"U","Undelete",KS_UNDELETE},
+-	{"R","Reply",KS_REPLY},		{"F","Forward",KS_FORWARD},
+-
+-	{"?","Help",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
+-	{"Q","Quit",KS_EXIT},		{"C","Compose",KS_COMPOSER},
+-	{"L","ListFldrs",KS_FLDRLIST},	{"G","GotoFldr",KS_GOTOFLDR},
+-	{"I","Index",KS_FLDRINDEX},	{"W","WhereIs",KS_WHEREIS},
+-	{"Y","prYnt",KS_PRINT},		{"T","TakeAddr",KS_TAKEADDR},
+-	{"S","Save",KS_SAVE},		{"E","Export",KS_EXPORT},
++       {{"?","輔助說明",KS_SCREENHELP},	{"O","其它命令",KS_NONE},
++	{"M","主選單",KS_MAINMENU},	{"V","檢視附件",KS_VIEW},
++	{"P","前一個",KS_PREVMSG},	{"N","後一個",KS_NEXTMSG},
++	{"-","上一頁",KS_PREVPAGE},	{"Spc","下一頁",KS_NEXTPAGE},
++	{"D","刪除",KS_DELETE},		{"U","救回刪除",KS_UNDELETE},
++	{"R","回信",KS_REPLY},		{"F","轉寄",KS_FORWARD},
++
++	{"?","輔助說明",KS_SCREENHELP},	{"O","其它命令",KS_NONE},
++	{"Q","離開",KS_EXIT},		{"C","編輯",KS_COMPOSER},
++	{"L","列出信件夾",KS_FLDRLIST},	{"G","進入信件夾",KS_GOTOFLDR},
++	{"I","索引",KS_FLDRINDEX},	{"W","搜尋",KS_WHEREIS},
++	{"Y","列印",KS_PRINT},		{"T","取得地址",KS_TAKEADDR},
++	{"S","儲存",KS_SAVE},		{"E","匯出",KS_EXPORT},
+ 
+-	{"?","Help",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
++	{"?","輔助說明",KS_SCREENHELP},	{"O","其它命令",KS_NONE},
+ 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
+ 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
+-	{"J","Jump",KS_JUMPTOMSG},	{"TAB","NextNew",KS_NONE},
+-	{"H","HdrMode",KS_HDRMODE},	{"B","Bounce",KS_BOUNCE},
+-	{"*","Flag",KS_FLAG},		{"|","Pipe",KS_NONE}};
++	{"J","跳至",KS_JUMPTOMSG},	{"TAB","下一個",KS_NONE},
++	{"H","標頭模式",KS_HDRMODE},	{"B","Bounce",KS_BOUNCE},
++	{"*","旗標",KS_FLAG},		{"|","Pipe",KS_NONE}};
+ INST_KEY_MENU(view_keymenu, view_keys);
+ #define VIEW_FULL_HEADERS_KEY 32
+ #define BOUNCE_KEY 33
+@@ -2003,49 +2003,49 @@
+ #define VIEW_PIPE_KEY 35
+ 
+ static struct key nr_anon_view_keys[] = 
+-       {{"?","Help",KS_SCREENHELP},	{"W","WhereIs",KS_WHEREIS},
+-	{"Q", "Quit",KS_EXIT},		{NULL,NULL,KS_NONE},
+-	{"P","PrevMsg",KS_PREVMSG},	{"N","NextMsg",KS_NEXTMSG},
+-	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
+-	{"F","Fwd Email",KS_FORWARD},	{"J","Jump",KS_JUMPTOMSG},
+-	{"I", "Index",KS_FLDRINDEX},	{NULL, NULL,KS_NONE}};
++       {{"?","輔助說明",KS_SCREENHELP},	{"W","搜尋",KS_WHEREIS},
++	{"Q", "離開",KS_EXIT},		{NULL,NULL,KS_NONE},
++	{"P","前一個",KS_PREVMSG},	{"N","後一個",KS_NEXTMSG},
++	{"-","上一頁",KS_PREVPAGE},	{"Spc","下一頁",KS_NEXTPAGE},
++	{"F","轉寄",KS_FORWARD},	{"J","跳至",KS_JUMPTOMSG},
++	{"I", "索引",KS_FLDRINDEX},	{NULL, NULL,KS_NONE}};
+ INST_KEY_MENU(nr_anon_view_keymenu, nr_anon_view_keys);
+ 
+ static struct key nr_view_keys[] = 
+-       {{"?","Help",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
+-	{"Q","Quit",KS_EXIT},		{NULL,NULL,KS_NONE},
+-	{"P","PrevMsg",KS_PREVMSG},	{"N","NextMsg",KS_NEXTMSG},
+-	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
+-	{"F","Fwd Email",KS_FORWARD},	{"J","Jump",KS_JUMPTOMSG},
+-	{"Y","prYnt",KS_PRINT},		{"S","Save",KS_SAVE},
++       {{"?","輔助說明",KS_SCREENHELP},	{"O","其它命令",KS_NONE},
++	{"Q","離開",KS_EXIT},		{NULL,NULL,KS_NONE},
++	{"P","前一個",KS_PREVMSG},	{"N","後一個",KS_NEXTMSG},
++	{"-","上一頁",KS_PREVPAGE},	{"Spc","下一頁",KS_NEXTPAGE},
++	{"F","轉寄",KS_FORWARD},	{"J","跳至",KS_JUMPTOMSG},
++	{"Y","列印",KS_PRINT},		{"S","儲存",KS_SAVE},
+ 
+-	{"?","Help",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
+-	{"E","Export",KS_EXPORT},	{"C","Compose",KS_COMPOSER},
++	{"?","輔助說明",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
++	{"E","匯出",KS_EXPORT},		{"C","編輯",KS_COMPOSER},
+ 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
+-	{"I","Index",KS_FLDRINDEX},	{"W","WhereIs",KS_WHEREIS},
++	{"I","索引",KS_FLDRINDEX},	{"W","搜尋",KS_WHEREIS},
+ 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
+ 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE}};
+ INST_KEY_MENU(nr_view_keymenu, nr_view_keys);
+ 
+ static struct key text_att_view_keys[] =
+-       {{"?","Help",KS_SCREENHELP},	{NULL,NULL,KS_NONE},
+-	{"E","Exit Viewer",KS_EXITMODE},	{NULL,NULL,KS_NONE},
++       {{"?","輔助說明",KS_SCREENHELP},	{NULL,NULL,KS_NONE},
++	{"E","離開",KS_EXITMODE},	{NULL,NULL,KS_NONE},
+ 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
+-	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
+-	{"Y","prYnt",KS_PRINT},		{"S","Save",KS_SAVE},
+-	{"|","Pipe",KS_NONE},		{"W", "WhereIs",KS_WHEREIS}};
++	{"-","上一頁",KS_PREVPAGE},	{"Spc","下一頁",KS_NEXTPAGE},
++	{"Y","列印",KS_PRINT},		{"S","儲存",KS_SAVE},
++	{"|","Pipe",KS_NONE},		{"W", "搜尋",KS_WHEREIS}};
+ INST_KEY_MENU(text_att_view_keymenu, text_att_view_keys);
+ #define ATT_SAVE_KEY 9
+ #define ATT_PIPE_KEY 10
+ 
+ 
+ static struct key simple_view_keys[] =
+-       {{"?","Help",KS_SCREENHELP},	{NULL,NULL,KS_NONE},
+-	{"Q","Quit Viewer",KS_NONE},	{NULL,NULL,KS_NONE},
++       {{"?","輔助說明",KS_SCREENHELP},	{NULL,NULL,KS_NONE},
++	{"Q","離開",KS_NONE},	{NULL,NULL,KS_NONE},
+ 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
+-	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
+-	{"F","Fwd Email",KS_FORWARD},	{"S","Save",KS_SAVE},
+-	{NULL,NULL,KS_NONE},		{"W","WhereIs",KS_WHEREIS}};
++	{"-","上一頁",KS_PREVPAGE},	{"Spc","下一頁",KS_NEXTPAGE},
++	{"F","轉寄",KS_FORWARD},	{"S","儲存",KS_SAVE},
++	{NULL,NULL,KS_NONE},		{"W","搜尋",KS_WHEREIS}};
+ INST_KEY_MENU(simple_view_keymenu, simple_view_keys);
+ #define SAVE_KEY 9
+ 
+@@ -2342,7 +2342,7 @@
+ 	    }
+             if(style == HelpText || style == MainHelpText
+ 	       || style == ComposerHelpText) {
+-                q_status_message(SM_ORDER, 0, 5, "Already in Help");
++                q_status_message(SM_ORDER, 0, 5, "已經在輔助選單中");
+ 		break;
+ 	    }
+ 
+@@ -2722,7 +2722,7 @@
+ 		}
+ 		else if((ch == 'z' || ch == PF10) && style == MainHelpText){
+ 		    print_all_help();
+-    	        }else if(!ps_global->nr_mode && (ch == PF3 || ch == 'e')) {
++    	        }else if(!ps_global->nr_mode && (ch == PF3 || ch == 'e' || ch == KEY_LEFT)) {
+     	            /*----------- Done -----------*/
+                     done = 1;
+                 }else if((ch == 'y' && !ps_global->anonymous) ||
+@@ -2843,8 +2843,8 @@
+     int         rc;
+     static char search_string[MAX_SEARCH+1] = { '\0' };
+     static ESCKEY_S word_search_key[] = { { 0, 0, "", "" },
+-					 {ctrl('Y'), 10, "^Y", "First Line"},
+-					 {ctrl('V'), 11, "^V", "Last Line"},
++					 {ctrl('Y'), 10, "^Y", "第一行"},
++					 {ctrl('V'), 11, "^V", "最後一行"},
+ 					 {-1, 0, NULL, NULL}
+ 					};
+ 

@@ -1,0 +1,151 @@
+--- pine/folder.c.orig	Wed May 15 09:25:19 1996
++++ pine/folder.c	Sat Jan 17 21:04:13 1998
+@@ -159,18 +159,18 @@
+ 
+ 
+ static struct key folder_keys[] =
+-       {{"?","Help",KS_SCREENHELP},  	{"O","OTHER CMDS",KS_NONE},
++       {{"?","輔助說明",KS_SCREENHELP},  	{"O","其它命令",KS_NONE},
+ 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
+-	{"P","PrevFldr",KS_NONE},	{"N","NextFldr",KS_NONE},
+-	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
+-	{"D","Delete",KS_NONE},		{"A","Add",KS_NONE},
+-	{"R","Rename",KS_NONE},		{"W","WhereIs",KS_NONE},
+-
+-	{"?","Help",KS_NONE},		{"O","OTHER CMDS",KS_NONE},
+-	{"Q","Quit",KS_EXIT},		{"C","Compose",KS_COMPOSER},
+-	{NULL,NULL,KS_NONE},		{"G","GotoFldr",KS_GOTOFLDR},
+-	{"I","CurIndex",KS_FLDRINDEX},	{"W","WhereIs",KS_WHEREIS},
+-	{"Y","prYnt",KS_PRINT},		{NULL,NULL,KS_NONE},
++	{"P","前一信夾",KS_NONE},	{"N","後一信夾",KS_NONE},
++	{"-","上一頁",KS_PREVPAGE},	{"Spc","下一頁",KS_NEXTPAGE},
++	{"D","刪除",KS_NONE},		{"A","加入",KS_NONE},
++	{"R","更名",KS_NONE},		{"W","搜尋",KS_NONE},
++
++	{"?","輔助說明",KS_NONE},	{"O","其它命令",KS_NONE},
++	{"Q","離開",KS_EXIT},		{"C","寫信",KS_COMPOSER},
++	{NULL,NULL,KS_NONE},		{"G","進入信件夾",KS_GOTOFLDR},
++	{"I","目前索引",KS_FLDRINDEX},	{"W","搜尋",KS_WHEREIS},
++	{"Y","列印",KS_PRINT},		{NULL,NULL,KS_NONE},
+ 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE}};
+ INST_KEY_MENU(folder_keymenu, folder_keys);
+ #define	MAIN_KEY  	2  /* Sometimes Main, sometimes Exit */
+@@ -438,24 +438,24 @@
+             folder_keys[DELETE_KEY].name = "D";
+             folder_keys[ADD_KEY].name = "A";
+             folder_keys[RENAME_KEY].name = "R";
+-	    folder_keys[RENAME_KEY].label = "Rename";
++	    folder_keys[RENAME_KEY].label = "更名";
+             if(fs->context->type & FTYPE_BBOARD) {
+-                folder_keys[ADD_KEY].label = "Subscribe";
+-                folder_keys[DELETE_KEY].label = "UnSbscrbe";
++                folder_keys[ADD_KEY].label = "訂閱\";
++                folder_keys[DELETE_KEY].label = "不訂閱\";
+ 		KS_OSDATASET(&folder_keys[DELETE_KEY], KS_NONE);
+             } else {
+-                folder_keys[ADD_KEY].label = "Add";
+-                folder_keys[DELETE_KEY].label = "Delete";
++                folder_keys[ADD_KEY].label = "增加";
++                folder_keys[DELETE_KEY].label = "刪除";
+ 		KS_OSDATASET(&folder_keys[DELETE_KEY], KS_NONE);
+             }
+ 	    if(do_what == FolderMaint){
+ 	      km->how_many = 2;
+ 	      folder_keys[MAIN_KEY].name = "M";
+-	      folder_keys[MAIN_KEY].label = "Main Menu";
++	      folder_keys[MAIN_KEY].label = "主選單";
+ 	      KS_OSDATASET(&folder_keys[MAIN_KEY], KS_MAINMENU);
+ 	      folder_keys[SELECT_KEY].name = "V";
+ 	      folder_keys[SELECT_KEY].label = 
+-		   (fs->context->use & CNTXT_PSEUDO) ? "[Select]":"[ViewFldr]";
++		   (fs->context->use & CNTXT_PSEUDO) ? "[選擇]":"[檢視信件夾]";
+ 	      KS_OSDATASET(&folder_keys[SELECT_KEY], KS_NONE);
+ 	      clrbitn(WHEREIS_KEY, bitmap); /* the one in the 1st menu */
+ 	    }
+@@ -463,23 +463,23 @@
+ 	      km->how_many = 1;
+ 	      folder_keys[MAIN_KEY].name = "E";
+ 	      folder_keys[MAIN_KEY].label = do_what != Subscribe ? 
+-                                               "ExitSelect" : "ExitSubscb";
++                                               "離開選擇" : "ExitSubsc";
+ 
+ 	      folder_keys[SELECT_KEY].name = "S";
+ 	      folder_keys[SELECT_KEY].label = do_what != Subscribe ?
+-                                               "[Select]" : "[Subscribe]";
++                                               "[選擇]" : "[訂閱\]";
+ 	      KS_OSDATASET(&folder_keys[SELECT_KEY], KS_NONE);
+ 	      clrbitn(OTHER_KEY, bitmap);
+ 	      clrbitn(RENAME_KEY, bitmap);
+ 	      if(do_what == Subscribe){
+ 		  if(doing_listmode){
+ 		      folder_keys[DELETE_KEY].name = "X";
+-		      folder_keys[DELETE_KEY].label = "[Set/Unset]";
+-		      folder_keys[SELECT_KEY].label = "Subscribe";
++		      folder_keys[DELETE_KEY].label = "[設定/取消設定]";
++		      folder_keys[SELECT_KEY].label = "訂閱\";
+ 		  }
+ 		  else{
+ 		      folder_keys[DELETE_KEY].name = "L";
+-		      folder_keys[DELETE_KEY].label = "ListMode";
++		      folder_keys[DELETE_KEY].label = "列表模式";
+ 		  }
+ 	      }
+ 	      else
+@@ -610,8 +610,8 @@
+ 
+ 
+             /*---------------------- Key left --------------*/
++          case KEY_LEFT:
+ 	  case ctrl('B'):
+-	  case KEY_LEFT:
+ 	  case PF5:
+ 	  case 'p':
+ 	    if(fs->folder_index > 0 && ALL_FOUND(fs->context)){
+@@ -628,7 +628,18 @@
+ 		  fs->folder_index = 0;
+ 	    }
+ 	    else
+-	      q_status_message(SM_ORDER,0,1,"Already on first folder.");
++		{
++			/* GaryLee :3
++				q_status_message(0,0,1,"\007已經在第一個信件夾了.");
++			*/
++			if((do_what != FolderMaint && ch == 'm')
++				|| (do_what == FolderMaint && ch == 'e'))
++				goto bleep;
++			ps_global->redrawer = (void (*)())NULL;
++			for(tc = fs->context_list; tc ; tc = tc->next)
++				free_folders_in_context(tc);
++			return(0);
++		}
+ 
+ 	    break;
+  
+@@ -996,8 +1007,7 @@
+                 /*-- save message, subscribe or post --- */
+                 if((do_what == GetFcc || do_what == SaveMessage)
+ 		   && (fs->context->type & FTYPE_BBOARD)) {
+-                    q_status_message(SM_ORDER | SM_DING, 3, 4,
+-		     "Can't save messages to bulletin boards or news groups!");
++                    q_status_message(SM_ORDER | SM_DING, 3, 4, "無法將訊息存至電子佈告欄或新聞組群上!");
+                     break;
+                 }
+ 
+@@ -2407,7 +2417,7 @@
+     folder  = new_f->name;
+     ren_cur = strcmp(folder, ps_global->cur_folder) == 0;
+ 
+-    prompt = "Rename folder to : ";
++    prompt = "將信件匣更名為: ";
+     help   = NO_HELP;
+     strcpy(new_foldername, folder);
+     while(1) {
+@@ -2608,7 +2618,7 @@
+ 	    && strcmp(folder, ps_global->cur_folder) == 0)
+       close_opened++;
+ 
+-    sprintf(ques_buf, "Really delete \"%s\"%s", folder, 
++    sprintf(ques_buf, "確定刪除 \"%s\"%s", folder, 
+ 	    close_opened ? " (the currently open folder)" : "");
+ 
+     if((ret=want_to(ques_buf, 'n', 'x', NO_HELP, 0, 0)) != 'y'){

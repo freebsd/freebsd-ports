@@ -1,0 +1,11 @@
+--- pine/screen.c.orig	Wed May  8 09:05:40 1996
++++ pine/screen.c	Sat Jan 17 21:09:32 1998
+@@ -380,7 +380,7 @@
+ 
+ 
+ static struct key cancel_keys[] = 
+-     {{NULL,NULL,KS_NONE},            {"^C","Cancel",KS_NONE},
++     {{NULL,NULL,KS_NONE},            {"^C","¨ú®ø",KS_NONE},
+       {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},
+       {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},
+       {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},

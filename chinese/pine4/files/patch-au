@@ -1,0 +1,48 @@
+--- pico/composer.c.orig	Sat Jan 17 20:06:00 1998
++++ pico/composer.c	Sat Jan 17 20:09:52 1998
+@@ -164,12 +164,12 @@
+ 
+ 
+ static KEYMENU menu_header[] = {
+-    {"^G", "Get Help", KS_SCREENHELP},	{"^X", "Send", KS_SEND},
+-    {"^R", "Rich Hdr", KS_RICHHDR},	{"^Y", "PrvPg/Top", KS_PREVPAGE},
+-    {"^K", "Cut Line", KS_CURPOSITION},	{"^O", "Postpone", KS_POSTPONE},
+-    {"^C", "Cancel", KS_CANCEL},	{"^D", "Del Char", KS_NONE},
+-    {"^J", "Attach", KS_ATTACH},	{"^V", "NxtPg/End", KS_NEXTPAGE},
+-    {"^U", "UnDel Line", KS_NONE},	{NULL, NULL}
++    {"^G", "輔助說明", KS_SCREENHELP},  {"^X", "送出", KS_SEND},
++    {"^R", "完整標頭", KS_RICHHDR},     {"^Y", "上一頁", KS_PREVPAGE},
++    {"^K", "剪下一行", KS_CURPOSITION}, {"^O", "暫緩寫信", KS_POSTPONE},
++    {"^C", "取消", KS_CANCEL},  {"^D", "刪除字元", KS_NONE},
++    {"^J", "夾附件", KS_ATTACH},        {"^V", "下一頁", KS_NEXTPAGE},
++    {"^U", "恢復刪除", KS_NONE},        {NULL, NULL}
+ };
+ #define	SEND_KEY	1
+ #define	RICH_KEY	2
+@@ -3110,22 +3110,22 @@
+ 	menu_header[DEL_KEY].name  = NULL;
+ 	menu_header[UDEL_KEY].name = NULL;
+ 	menu_header[SEND_KEY].label =  (gmode & MDHDRONLY)
+-					 ? "eXit/Save" : "eXit";
++					 ? "離開/儲存" : "離開";
+     }
+     else{
+ 	menu_header[CUT_KEY].name  = "^K";
+ 	menu_header[DEL_KEY].name  = "^D";
+ 	menu_header[UDEL_KEY].name = "^U";
+-	menu_header[SEND_KEY].label = "Send";
++	menu_header[SEND_KEY].label = "送出";
+     }
+ 
+     if(gmode & MDHDRONLY){
+-	menu_header[RICH_KEY].label = "RichView";
++	menu_header[RICH_KEY].label = "完整標頭";
+ 	menu_header[PONE_KEY].name  = NULL;
+ 	menu_header[ATT_KEY].name   = NULL;
+     }
+     else{
+-	menu_header[RICH_KEY].label = "Rich Hdr";
++	menu_header[RICH_KEY].label = "完整標頭";
+ 	menu_header[PONE_KEY].name  = "^O";
+ 	menu_header[ATT_KEY].name   = "^J";
+     }

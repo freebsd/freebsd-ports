@@ -1,0 +1,173 @@
+--- pine/mailcmd.c.orig	Tue Feb 25 05:57:22 1997
++++ pine/mailcmd.c	Sat Jan 17 21:05:19 1998
+@@ -128,14 +128,14 @@
+ 
+ static char *sel_pmt3 = "APPLY command : ";
+ static ESCKEY_S sel_opts3[] = {
+-    {'d', 'd',  "D", "Del"},
+-    {'u', 'u',  "U", "Undel"},
+-    {'r', 'r',  "R", "Reply"},
+-    {'f', 'f',  "F", "Forward"},
+-    {'y', 'y',  "Y", "prYnt"},
++    {'d', 'd',  "D", "刪除"},
++    {'u', 'u',  "U", "救回刪除"},
++    {'r', 'r',  "R", "回信"},
++    {'f', 'f',  "F", "轉寄"},
++    {'y', 'y',  "Y", "列印"},
+     {'t', 't',  "T", "TakeAddr"},
+-    {'s', 's',  "S", "Save"},
+-    {'e', 'e',  "E", "Export"},
++    {'s', 's',  "S", "存檔"},
++    {'e', 'e',  "E", "匯出"},
+     { -1,   0, NULL, NULL},
+     { -1,   0, NULL, NULL},
+     { -1,   0, NULL, NULL},
+@@ -203,6 +203,9 @@
+     int		 command, in_index, orig_command;
+     int		*force_mailchk;
+ {
++/*  GaryLee :3 */
++    static char		WhereFrom = 0 ;
++    static char		current_cmd_status ;
+     int           question_line, a_changed, is_unread, we_cancel;
+     long          new_msgno, del_count, old_msgno, cur_msgno, i,
+ 		  hide_count, exld_count, select_count, old_max_msgno;
+@@ -225,6 +228,12 @@
+     a_changed             = 0;
+     *force_mailchk        = 0;
+ 
++/* GaryLee:3 */
++	if(state->prev_screen == main_menu_screen )
++		WhereFrom = 'm' ;
++	else if( state->prev_screen == folder_screen )	
++		WhereFrom = 'l' ;
++
+     switch (command)
+       {
+           /*------------- Help --------*/
+@@ -253,6 +262,16 @@
+ 
+ 
+           /*--------- Return to main menu ------------*/
++        case KEY_LEFT:
++	if(current_cmd_status)
++		goto do_index ;
++        /* GaryLee :3 */
++        if (WhereFrom == 'l')
++        {
++		state->next_screen = folder_screen;
++		break;
++        }
++
+         case PF3: 
+         case 'm':
+           if(state->nr_mode && command == 'm')
+@@ -269,6 +288,7 @@
+ 
+           /*------- View mail or attachment --------*/
+         case ctrl('M'):
++        case KEY_RIGHT:
+         case ctrl('J'):
+ 	  if(!in_index){
+ 	      q_status_message(SM_ORDER | SM_DING, 0, 3,
+@@ -278,6 +298,7 @@
+ 
+         case PF4:
+         case 'v':
++          current_cmd_status = 1 ;
+ 	  if(in_index) {
+ 	      if(any_messages(msgmap, NULL, "to View")){
+ 		  state->next_screen = mail_view_screen;
+@@ -489,6 +510,7 @@
+         case OPF7:
+         case 'i':
+ do_index:
++	current_cmd_status = 0 ;
+           if(!in_index) {
+ #if	defined(DOS) && !defined(WIN32)
+ 	      flush_index_cache();		/* save room on PC */
+@@ -1871,7 +1893,7 @@
+     ekey[rc].ch      = ctrl('T');
+     ekey[rc].rval    = 2;
+     ekey[rc].name    = "^T";
+-    ekey[rc++].label = "To Fldrs";
++    ekey[rc++].label = "信夾列表";
+ 
+     if(saveable_count > 1){
+ 	ekey[rc].ch      = ctrl('P');
+@@ -1889,7 +1911,7 @@
+ 	ekey[rc].ch      = TAB;
+ 	ekey[rc].rval    = 12;
+ 	ekey[rc].name    = "TAB";
+-	ekey[rc++].label = "Complete";
++	ekey[rc++].label = "完成";
+     }
+ 
+     if(saveable_count > 1){
+@@ -2753,7 +2775,7 @@
+     STORE_S  *store;
+     struct variable *vars = ps_global->vars;
+     static ESCKEY_S export_opts[] = {
+-	{ctrl('T'), 10, "^T", "To Files"},
++	{ctrl('T'), 10, "^T", "檔案列表"},
+ 	{-1, 0, NULL, NULL},
+ 	{-1, 0, NULL, NULL},
+ 	{-1, 0, NULL, NULL}};
+@@ -2774,7 +2796,7 @@
+ 	export_opts[++i].ch  = ctrl('V');
+ 	export_opts[i].rval  = 12;
+ 	export_opts[i].name  = "^V";
+-	export_opts[i].label = "Downld Msg";
++	export_opts[i].label = "下載";
+     }
+ #endif	/* !(DOS || MAC) */
+ 
+@@ -2782,7 +2804,7 @@
+ 	export_opts[++i].ch  =  ctrl('I');
+ 	export_opts[i].rval  = 11;
+ 	export_opts[i].name  = "TAB";
+-	export_opts[i].label = "Complete";
++	export_opts[i].label = "完成";
+     }
+ 
+     export_opts[++i].ch = -1;
+@@ -2888,7 +2910,7 @@
+ 		     || !format_message(mn_m2raw(msgmap, mn_get_cur(msgmap)),
+ 					env, b, FM_NEW_MESS|FM_DO_PRINT, pc)){
+ 		      q_status_message(SM_ORDER | SM_DING, 3, 3,
+-			       errstr = "Error writing tempfile for download");
++			       errstr = "寫入下載暫存檔時發生錯誤");
+ 		      break;
+ 		  }
+ 
+@@ -2900,18 +2922,18 @@
+ 		      (void) close_system_pipe(&syspipe);
+ 		    else
+ 		      q_status_message(SM_ORDER | SM_DING, 3, 3,
+-				    errstr = "Error running download command");
++				    errstr = "執行下載命令時發生錯誤");
+ 		}
+ 
+ 		unlink(tfp);
+ 	    }
+ 	    else
+ 	      q_status_message(SM_ORDER | SM_DING, 3, 3,
+-			     errstr = "Error building temp file for download");
++			     errstr = "無法建立下載用的暫存檔");
+ 
+ 	    fs_give((void **)&tfp);
+ 	    if(!errstr)
+-	      q_status_message(SM_ORDER, 0, 3, "Download Command Completed");
++	      q_status_message(SM_ORDER, 0, 3, "下載命令完成");
+ 
+ 	    goto fini;
+ 	}
+@@ -3354,7 +3376,7 @@
+ 	ekey[rc].ch      = TAB;
+ 	ekey[rc].rval    = 12;
+ 	ekey[rc].name    = "TAB";
+-	ekey[rc++].label = "Complete";
++	ekey[rc++].label = "完成";
+     }
+ 
+     if(ps_global->context_list->next){
