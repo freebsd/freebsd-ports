@@ -1,10 +1,12 @@
-lib/libgdchart.a
-include/gdchart.h
 include/gdc.h
+include/gdchart.h
 include/gdcpie.h
 include/gifencode.h
-%%PORTDOCS%%share/doc/gdchart/gdc_samp1.c
-%%PORTDOCS%%share/doc/gdchart/gdc_samp2.c
-%%PORTDOCS%%share/doc/gdchart/gdc_pie_samp.c
+lib/libgdc.a
 %%PORTDOCS%%share/doc/gdchart/README
 %%PORTDOCS%%@dirrm share/doc/gdchart
+%%PORTDOCS%%share/examples/gdchart/ft_samp.c
+%%PORTDOCS%%share/examples/gdchart/gdc_samp1.c
+%%PORTDOCS%%share/examples/gdchart/gdc_samp2.c
+%%PORTDOCS%%share/examples/gdchart/gdc_pie_samp.c
+%%PORTDOCS%%@dirrm share/examples/gdchart
