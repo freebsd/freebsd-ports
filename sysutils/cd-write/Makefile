@@ -3,7 +3,7 @@
 # Date created:         1 May 1997
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.5 1997/06/02 21:28:46 jmz Exp $
+# $Id: Makefile,v 1.6 1997/09/25 02:06:19 jmz Exp $
 #
 
 DISTNAME=       cd-write-1.4
@@ -12,7 +12,7 @@ MASTER_SITES=   ftp://ftp.obs-besancon.fr/pub/outgoing/
 
 MAINTAINER=     jmz@FreeBSD.org
 
-LIB_DEPENDS=	tixsam4176\\.1\\.:${PORTSDIR}/x11/tix
+LIB_DEPENDS=	tixsam4180\\.1\\.:${PORTSDIR}/x11/tix
 
 WRKSRC=		${WRKDIR}/cd-write
 
