@@ -1,0 +1,11 @@
+--- wx-config.in.orig	Mon May 31 18:11:50 2004
++++ wx-config.in	Sun Jun 27 20:08:21 2004
+@@ -230,7 +230,7 @@
+         includes=" -I${includedir}"
+     fi
+ 
+-    includes="-I${libdir}/wx/include/${TOOLCHAIN_NAME}$includes"
++    includes="-I${includedir}/wx/include/${TOOLCHAIN_NAME}$includes"
+ 
+     # in inplace case we need to also add path to contrib headers -- do it
+     # unconditionally as they might be used and we have no way of knowing if

@@ -1,0 +1,11 @@
+--- contrib/src/deprecated/Makefile.in.orig	Sun Jun 27 21:38:26 2004
++++ contrib/src/deprecated/Makefile.in	Sun Jun 27 21:38:52 2004
+@@ -199,6 +199,8 @@
+ all: $(__deprecateddll___depname) $(__deprecatedlib___depname)
+ 
+ install: all $(__install_deprecateddll___depname) $(__install_deprecatedlib___depname)
++
++install-common:
+ 	$(INSTALL_DIR) $(DESTDIR)$(includedir)
+ 	for f in wx/deprecated/expr.h wx/deprecated/prop.h wx/deprecated/propform.h wx/deprecated/proplist.h wx/deprecated/resource.h wx/deprecated/setup.h wx/deprecated/tbarsmpl.h wx/deprecated/treelay.h wx/deprecated/wxexpr.h; do \
+ 	if test ! -d $(DESTDIR)$(includedir)/`dirname $$f` ; then \
