@@ -8,7 +8,7 @@
 PORTNAME=	abcmidi
 PORTVERSION=	36
 CATEGORIES=	audio
-MASTER_SITES=	http://abc.sourceforge.net/abcMIDI/
+MASTER_SITES=	http://ifdo.pugmarks.com/~seymour/runabc/
 DISTNAME=	abcMIDI
 
 MAINTAINER=	ports@FreeBSD.org
