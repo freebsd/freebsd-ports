@@ -9,7 +9,7 @@ DISTNAME=	qmailanalog-0.70
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.qmail.org/pub/software/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	nbm@FreeBSD.org
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 
