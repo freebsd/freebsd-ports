@@ -13,6 +13,7 @@ lib/libicmpPlugin.so
 lib/liblastSeenPlugin-%%SHLIB%%.so
 lib/liblastSeenPlugin.a
 lib/liblastSeenPlugin.so
+lib/libmyrrd.so
 lib/libmyrrd-%%SHLIB%%.so
 lib/libmyrrd.a
 lib/libnetflowPlugin-%%SHLIB%%.so
@@ -33,6 +34,7 @@ lib/librrdPlugin.so
 lib/libsflowPlugin-%%SHLIB%%.so
 lib/libsflowPlugin.a
 lib/libsflowPlugin.so
+lib/libsnmpPlugin.so
 lib/libsnmpPlugin-%%SHLIB%%.so
 lib/libsnmpPlugin.a
 lib/libxmldumpPlugin-%%SHLIB%%.so
