@@ -1,11 +1,13 @@
 @cwd /etc/ppp
 ip-down
 ip-up
+
 @exec mkdir -p %D/peers
 peers/xisp_cuaa0
 peers/xisp_cuaa1
 peers/xisp_cuaa2
 peers/xisp_cuaa3
+peers/xisp_umodem
 peers/xisp_dialer
 
 @cwd /usr/X11R6
