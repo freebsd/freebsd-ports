@@ -1,0 +1,15 @@
+--- Makefile.orig	Wed Jan 15 20:58:11 2003
++++ Makefile	Wed Jan 15 20:58:53 2003
+@@ -26,9 +26,9 @@
+ 	@rm -f *.o cmdwatch
+ 
+ install : all
+-	@install cmdwatch /usr/local/bin/
+-	@install -m 444 cmdwatch.1 /usr/local/man/man1/
++	@install cmdwatch ${PREFIX}/bin/
++	@install -m 444 cmdwatch.1 ${PREFIX}/man/man1/
+ 	@echo "Installing cmdwatch"
+ 
+ uninstall :
+-	@rm /usr/local/bin/cmdwatch
++	@rm ${PREFX}/bin/cmdwatch
