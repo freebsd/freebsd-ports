@@ -25,6 +25,8 @@ CONFIGURE_ARGS=	--quiet
 INSTALL_TARGET=	install install-man
 MAN8=		arpwatch.8 arpsnmp.8
 
+MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
+
 post-install:
 	if [ ! -d ${PREFIX}/arpwatch ]; then				\
 		${MKDIR} ${PREFIX}/arpwatch;				\
