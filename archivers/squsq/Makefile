@@ -18,6 +18,8 @@ COMMENT=	Compressor/decompressor for CP/M "Squeeze" compressed files
 WRKSRC=		${WRKDIR}/t20-squsq
 MAKEFILE=	${FILESDIR}/Makefile
 
+PLIST_FILES=	bin/sq bin/usq
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sq ${WRKSRC}/usq ${PREFIX}/bin
 
