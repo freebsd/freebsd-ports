@@ -1,0 +1,78 @@
+/*
+ * freebsd.c -- lcc driver definitions for FreeBSD-2.2.x.
+ *
+ */
+
+#include <string.h>
+
+static char rcsid[] = "$Id$";
+
+#ifndef LCCDIR
+#define LCCDIR "%%PREFIX%%/%%LCCDESTDIR%%/"
+#endif
+
+/* char *stock_cpp[] = {  */
+char *cpp[] = { 
+	"/usr/libexec/cpp",
+	"-undef", "-nostdinc", "-lang-c", "-U__GNUC__",
+	"-D_POSIX_SOURCE", "-D__STDC__", "-D__STRICT_ANSI__",
+	"-Dunix", "-Di386", "-DFreeBSD",
+	"-D__unix__", "-D__i386__", "-D__FreeBSD__",
+	"$1", "$2", "$3", 0};
+
+char *lcc_ritchey_cpp[] = {
+	LCCDIR "cpp",
+	"-D__STDC__=1", "-D__STRICT_ANSI__",
+	"-D_POSIX_SOURCE",
+	"-U__GNUC__",
+	"-Dunix", "-D__unix__",
+	"-DFreeBSD", "-D__FreeBSD__",
+	"-Di386", "-D__i386__",
+	"-Dx86", "-D__x86__",
+	"$1", "$2", "$3", 0
+};
+
+/* char **cpp = stock_cpp; */
+
+char *include[] = {
+	"-I" LCCDIR "include", 
+	"-I%%PREFIX%%/include/%%VERSION%%",
+	"-I/usr/include", 
+	"-I%%PREFIX%%/include", 
+	0
+};
+
+char *com[] = {
+	LCCDIR "rcc",
+	"-target=i386-FreeBSD",
+	"$1", "$2", "$3", 0
+};
+
+char *as[] = {"/usr/bin/as", "-o", "$3", "$1", "$2", 0};
+
+char *ld[] = {"/usr/bin/ld", "", "-estart", "-dc", "-dp", "-o", "$3",
+	"/usr/lib/crt0.o", "$1", "$2", "",
+	"-lm", "", "-lc", "", "",
+#if 0
+	"-lgcc",
+#endif
+	0};
+
+int 
+option(arg)
+	char *arg;
+{
+	if (strcmp(arg, "-g") == 0) {}
+	else if (strcmp(arg, "-p") == 0) {
+		ld[8] = "/usr/lib/gcrt0.o";
+		ld[14] = "-lc_p";
+	} 
+	else if (strcmp(arg, "-b") == 0 &&
+			access(LCCDIR "bbexit.o", 4) == 0) {
+		ld[11] = LCCDIR "bbexit.o";
+	} else {
+		return 0;
+	}
+
+	return 1;
+}

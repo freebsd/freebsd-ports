@@ -1,0 +1,23 @@
+--- makefile.orig	Sat Oct 19 06:17:24 1996
++++ makefile	Sun Dec  8 19:40:15 1996
+@@ -40,6 +40,7 @@
+ 	$(BUILDDIR)/gen.o \
+ 	$(BUILDDIR)/mips.o \
+ 	$(BUILDDIR)/sparc.o \
++	$(BUILDDIR)/%%OPSYS%%.o \
+ 	$(BUILDDIR)/x86.o
+ 
+ $(BUILDDIR)/rcc:	$(RCCOBJS)
+@@ -76,10 +77,12 @@
+ 
+ $(BUILDDIR)/mips.o:	$(BUILDDIR)/mips.c;	$(CC) -c $(CFLAGS) -Isrc -o $@ $(BUILDDIR)/mips.c
+ $(BUILDDIR)/sparc.o:	$(BUILDDIR)/sparc.c;	$(CC) -c $(CFLAGS) -Isrc -o $@ $(BUILDDIR)/sparc.c
++$(BUILDDIR)/%%OPSYS%%.o:	$(BUILDDIR)/%%OPSYS%%.c;	$(CC) -c $(CFLAGS) -Isrc -o $@ $(BUILDDIR)/%%OPSYS%%.c
+ $(BUILDDIR)/x86.o:	$(BUILDDIR)/x86.c;	$(CC) -c $(CFLAGS) -Isrc -o $@ $(BUILDDIR)/x86.c
+ 
+ $(BUILDDIR)/mips.c:	$(BUILDDIR)/lburg src/mips.md;	$(BUILDDIR)/lburg <src/mips.md  >$@
+ $(BUILDDIR)/sparc.c:	$(BUILDDIR)/lburg src/sparc.md;	$(BUILDDIR)/lburg <src/sparc.md >$@
++$(BUILDDIR)/%%OPSYS%%.c:	$(BUILDDIR)/lburg src/%%OPSYS%%.md;	$(BUILDDIR)/lburg <src/%%OPSYS%%.md   >$@
+ $(BUILDDIR)/x86.c:	$(BUILDDIR)/lburg src/x86.md;	$(BUILDDIR)/lburg <src/x86.md   >$@
+ 
+ YFLAGS=

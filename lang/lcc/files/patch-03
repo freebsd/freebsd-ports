@@ -1,0 +1,16 @@
+--- src/bind.c.orig	Fri Oct 18 17:38:38 1996
++++ src/bind.c	Fri Dec 27 02:31:21 1996
+@@ -1,10 +1,13 @@
+ #include "c.h"
+ extern Interface nullIR,   symbolicIR;
++extern Interface x86freebsdIR;
+ extern Interface mipsebIR, mipselIR;
+ extern Interface sparcIR,  solarisIR;
+ extern Interface x86IR;
++
+ Binding bindings[] = {
+ 	"symbolic",      &symbolicIR,
++	"i386-FreeBSD",	 &x86freebsdIR,
+ 	"mips-irix",     &mipsebIR,
+ 	"mips-ultrix",   &mipselIR,
+ 	"sparc-sun",     &sparcIR,
