@@ -4687,6 +4687,7 @@ p5-Tcl-Tk	ports/x11-toolkits/p5-Tcl-Tk
 p5-Telnet-Cisco	ports/net/p5-Telnet-Cisco
 p5-Template-Toolkit	ports/www/p5-Template-Toolkit
 p5-Term-ANSIColor	ports/devel/p5-Term-ANSIColor
+p5-Term-ProgressBar	ports/devel/p5-Term-ProgressBar
 p5-Term-Prompt	ports/devel/p5-Term-Prompt
 p5-Term-Query	ports/devel/p5-Term-Query
 p5-Term-ReadKey	ports/devel/p5-Term-ReadKey
