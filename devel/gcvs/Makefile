@@ -13,7 +13,7 @@ CATEGORIES=	devel tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cvsgui
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-end interface client for CVS
 
 BUILD_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
