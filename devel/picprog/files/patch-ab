@@ -9,8 +9,8 @@
 -LDFLAGS=
 +CXX?=g++
 +CXXFLAGS?=-O2 -Wall -Wmissing-prototypes
-+CXXFLAGS+=-I$(PREFIX)/include
-+LDFLAGS=-L$(PREFIX)/lib -lgnugetopt
++CXXFLAGS+=-I${LOCALBASE}/include
++LDFLAGS=-L${LOCALBASE}/lib -lgnugetopt
  
  OBJS=main.o picport.o hexfile.o program.o stringc.o
  PROG=picprog
