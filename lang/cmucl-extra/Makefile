@@ -5,11 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	cmucl-extra
-PORTVERSION=	18e
+PORTVERSION=	19a
 CATEGORIES=	lang
-MASTER_SITES=	ftp://cmucl.cons.org/pub/lisp/cmucl/release/18e/ \
-		${MASTER_SITE_LOCAL}
-DISTNAME=	cmucl-18e-x86-freebsd.extra
+MASTER_SITES=	ftp://ftp.common-lisp.net/pub/project/cmucl/release/19a/ \
+		http://www.pmsf.de/pub/cmucl/release/19a/ \
+		ftp://ftp.averillpark.net/cmucl/release/19a/ \
+		ftp://ftp.linux.org.uk/pub/lisp/cmucl/release/19a/ \
+		ftp://ftp.tepus.com/pub/project/cmucl/release/19a/
+DISTNAME=	cmucl-19a-x86-FreeBSD.extra
 EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	sf@slappy.org
@@ -30,6 +33,7 @@ LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
 
 do-install:
 	-${MKDIR} ${PREFIX}/lib/cmucl
-	(cd ${WRKDIR} && tar fc - lib) | (cd ${PREFIX} && tar fx -)
+	cd ${WRKDIR} && ${FIND} lib | \
+		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}
 
 .include <bsd.port.post.mk>
