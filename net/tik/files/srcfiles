@@ -1,0 +1,37 @@
+SRCFILES=	media/AOL.gif media/Admin.gif media/Away.gif media/DT.gif  \
+		media/DoorSlam.wav media/Icon.gif media/Idle.gif	   \
+		media/Pounce.wav media/Login.gif media/add.gif		   \
+		media/angel.gif media/back.gif media/bigsmile.gif	   \
+		media/block.gif media/bold.gif media/bsmile.gif		   \
+		media/burp.gif media/chat.gif media/close.gif		   \
+		media/color.gif media/crossedlips.gif media/cry.gif	   \
+		media/delete.gif media/dooropen.wav media/embarrassed.gif  \
+		media/font.gif media/ignore.gif media/im.gif		   \
+		media/imrcv.wav media/imsend.wav media/info.gif		   \
+		media/invite.gif media/italic.gif media/kiss.gif	   \
+		media/moneymouth.gif media/ok.gif media/ring.wav	   \
+		media/sad.gif media/scream.gif media/send.gif		   \
+		media/smile.gif media/smile8.gif media/strike.gif	   \
+		media/think.gif media/tongue.gif media/underline.gif	   \
+		media/warn.gif media/whisper.gif media/wink.gif		   \
+		media/Logo.gif media/Logout.gif media/Oscar.gif		   \
+		media/downarrow.gif media/uparrow.gif media/BuddyArrive.au \
+		media/BuddyLeave.au media/Receive.au media/yell.gif	   \
+		media/Send.au						   \
+		components/HTTPProxy.tcl components/away.tcl		   \
+		components/bcast.tcl components/beat.tcl		   \
+		components/boxinfo.tcl components/buddylog.tcl		   \
+		components/chatcapture.tcl components/dir.tcl		   \
+		components/filetrans.tcl components/getaway.tcl		   \
+		components/imcapture.tcl components/pounce.tcl		   \
+		components/quickchat.tcl components/remoteadmin.tcl	   \
+		components/remotegui.tcl components/search.tcl		   \
+		components/socksproxy.tcl components/sslproxy.tcl	   \
+		components/ticker.tcl					   \
+		packages/control.tcl packages/mynews.tcl		   \
+		strs/English.strs sflap.tcl balloonhelp.tcl		   \
+		buddylist.tcl buddymgmt.tcl callbacks.tcl chat.tcl	   \
+		configandpkg.tcl im.tcl info.tcl popup.tcl preproc.tcl	   \
+		protocol.tcl proxy.tcl ui.tcl util.tcl version.tcl	   \
+		configTool.tcl toc.tcl tik.tcl sag.tcl			   \
+		configdir.tcl prefs.tcl 
