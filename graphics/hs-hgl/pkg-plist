@@ -1,39 +1,38 @@
-bin/hugs-hgl
-share/doc/hgl/License
-share/doc/hgl/Readme
-share/doc/hgl/Version
-share/doc/hgl/Version-2.0.4
-share/doc/hgl/Graphics.dvi
-share/doc/hgl/Graphics.tex
-share/doc/hgl/appendix.tex
-share/doc/hgl/graphics.bib
-share/doc/hgl/oldappendix.tex
-share/hugs/demos/hgl/HelloWorld.hs
-share/hugs/demos/hgl/GTest.hs
-share/hugs/demos/hgl/Tests.hs
-share/hugs/lib/x11/GraphicsCore.hs
-share/hugs/lib/x11/GraphicsDC.hs
-share/hugs/lib/x11/GraphicsEvent.hs
-share/hugs/lib/x11/GraphicsEvents.hs
-share/hugs/lib/x11/GraphicsFlag.hs
-share/hugs/lib/x11/GraphicsFont.hs
-share/hugs/lib/x11/GraphicsKey.hs
-share/hugs/lib/x11/GraphicsPicture.hs
-share/hugs/lib/x11/GraphicsRegion.hs
-share/hugs/lib/x11/GraphicsTimer.hs
-share/hugs/lib/x11/GraphicsUtils.hs
-share/hugs/lib/x11/GraphicsWindow.hs
-share/hugs/lib/x11/GraphicsWindows.hs
-share/hugs/lib/x11/Graphics_Utilities.hs
-share/hugs/lib/x11/SOEGraphics.hs
-share/hugs/lib/x11/X.hs
-share/hugs/lib/x11/X.o
-share/hugs/lib/x11/X.so
-share/hugs/lib/x11/Xlib.hs
-share/hugs/lib/x11/Xlib.o
-share/hugs/lib/x11/Xlib.so
-share/hugs/lib/x11/Xlib_StdDIS.hs
-share/hugs/lib/x11/Xlib_StdDIS.so
-@dirrm share/doc/hgl
-@dirrm share/hugs/demos/hgl
-@dirrm share/hugs/lib/x11
+share/doc/hs-hgl/License
+share/doc/hs-hgl/Readme
+share/doc/hs-hgl/Version
+share/doc/hs-hgl/Version-2.0.4
+share/doc/hs-hgl/Graphics.dvi
+share/doc/hs-hgl/Graphics.tex
+share/doc/hs-hgl/appendix.tex
+share/doc/hs-hgl/graphics.bib
+share/doc/hs-hgl/oldappendix.tex
+lib/hugs/x11/demos/HelloWorld.hs
+lib/hugs/x11/demos/GTest.hs
+lib/hugs/x11/demos/Tests.hs
+lib/hugs/x11/GraphicsCore.hs
+lib/hugs/x11/GraphicsDC.hs
+lib/hugs/x11/GraphicsEvent.hs
+lib/hugs/x11/GraphicsEvents.hs
+lib/hugs/x11/GraphicsFlag.hs
+lib/hugs/x11/GraphicsFont.hs
+lib/hugs/x11/GraphicsKey.hs
+lib/hugs/x11/GraphicsPicture.hs
+lib/hugs/x11/GraphicsRegion.hs
+lib/hugs/x11/GraphicsTimer.hs
+lib/hugs/x11/GraphicsUtils.hs
+lib/hugs/x11/GraphicsWindow.hs
+lib/hugs/x11/GraphicsWindows.hs
+lib/hugs/x11/Graphics_Utilities.hs
+lib/hugs/x11/SOEGraphics.hs
+lib/hugs/x11/X.hs
+lib/hugs/x11/X.o
+lib/hugs/x11/X.so
+lib/hugs/x11/Xlib.hs
+lib/hugs/x11/Xlib.o
+lib/hugs/x11/Xlib.so
+lib/hugs/x11/Xlib_StdDIS.hs
+lib/hugs/x11/Xlib_StdDIS.so
+@dirrm share/doc/hs-hgl
+@dirrm lib/hugs/x11/demos
+@dirrm lib/hugs/x11
