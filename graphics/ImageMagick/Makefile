@@ -25,7 +25,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME:L} ${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	Image processing tools
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
@@ -140,6 +140,13 @@ CONFIGURE_ARGS+=	--without-jbig
 LIB_DEPENDS+=	jasper.4:${PORTSDIR}/graphics/jasper
 .else
 CONFIGURE_ARGS+=	--without-jp2
+.endif
+
+# GraphViz dot graphs
+.if defined(WITH_IMAGEMAGICK_DOT)
+LIB_DEPENDS+=		dotneato.0:${PORTSDIR}/graphics/graphviz
+.else
+CONFIGURE_ARGS+=	--without-dot
 .endif
 
 # LCMS (Little CMS) color management
