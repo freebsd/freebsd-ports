@@ -1,22 +1,22 @@
 # New ports collection makefile for:	mpich (portable mpi standard imp.)
 # Date created:		2 May 1998
-# Whom:                 dbader@eece.unm.edu
+# Whom:                 dbader@ece.unm.edu
 #
 # $FreeBSD$
 #
 
 PORTNAME=	mpich
 PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 DIST_SUBDIR=	mpich
 
-MAINTAINER=	dbader@eece.unm.edu
+MAINTAINER=	dbader@ece.unm.edu
 COMMENT=	Message Passing Interface (MPI) Library
 
 PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/${PORTVERSION}/
-PATCHFILES=	3524 7633
+PATCHFILES=	7633 7629 7791 7814 7829 # 7650
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
