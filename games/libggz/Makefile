@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libggz
-PORTVERSION=	0.0.9
+PORTVERSION=	0.0.10
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.ggzgamingzone.org/pub/ggz/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -17,7 +17,6 @@ COMMENT=	The GGZ Gaming Zone - Base Library
 
 USE_GNOME=	gnomehack gnometarget
 USE_LIBTOOL_VER=	15
-GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug
 INSTALLS_SHLIB=	yes
