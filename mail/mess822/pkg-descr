@@ -1,0 +1,23 @@
+mess822 is a library for parsing Internet mail messages. The mess822
+package contains several applications that work with qmail:
+   * ofmipd rewrites messages from dumb clients. It supports a database
+     of recognized senders and From lines, using cdb for fast lookups.
+   * new-inject is an experimental new version of qmail-inject. It
+     includes a flexible user-controlled hostname rewriting mechanism.
+   * iftocc can be used in .qmail files. It checks whether a known
+     address is listed in To or Cc.
+   * 822header, 822field, 822date, and 822received extract various
+     pieces of information from a mail message.
+   * 822print converts a message into an easier-to-read format.
+
+mess822 supports the full complexity of RFC 822 address lists, including
+address groups, source routes, spaces around dots, etc. It also supports
+common RFC 822 extensions: backslashes in atoms, dots in phrases,
+addresses without host names, etc. It extracts each address as an
+easy-to-use string, with a separate string for the accompanying comment.
+
+mess822 converts RFC 822 dates into libtai's struct caltime format. It
+supports numeric time zones, the standard old-fashioned time zones, and
+many nonstandard time zones.
+
+WWW: http://cr.yp.to/mess822.html

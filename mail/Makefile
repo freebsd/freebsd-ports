@@ -56,6 +56,7 @@
     SUBDIR += majorcool
     SUBDIR += majordomo
     SUBDIR += mbx2mbox
+    SUBDIR += mess822
     SUBDIR += metamail
     SUBDIR += mew
     SUBDIR += mew-emacs20
