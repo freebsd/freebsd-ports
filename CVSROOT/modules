@@ -6734,6 +6734,7 @@ p5-Apache-SSI	ports/www/p5-Apache-SSI
 p5-Apache-Scoreboard	ports/www/p5-Apache-Scoreboard
 p5-Apache-Session	ports/www/p5-Apache-Session
 p5-Apache-Session-PHP	ports/www/p5-Apache-Session-PHP
+p5-Apache-Session-SQLite3	ports/www/p5-Apache-Session-SQLite3
 p5-Apache-Session-SharedMem	ports/www/p5-Apache-Session-SharedMem
 p5-Apache-Session-Wrapper	ports/www/p5-Apache-Session-Wrapper
 p5-Apache-Singleton	ports/www/p5-Apache-Singleton
