@@ -3,7 +3,7 @@
 # Date created:				23 September 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.7 1998/08/29 20:24:34 hoek Exp $
+# $Id: Makefile,v 1.8 1998/10/06 07:35:03 asami Exp $
 #
 
 DISTNAME=		ncurses-4.2
@@ -12,8 +12,6 @@ MASTER_SITES=		${MASTER_SITE_GNU} \
 			ftp://ftp.clark.net/pub/dickey/ncurses/
 
 MAINTAINER=		andy@icc.surw.chel.su
-
-BROKEN=	runs ldconfig without arguments
 
 MAN1=	captoinfo.1m clear.1 infocmp.1m tic.1m toe.1m tput.1 tset.1
 MAN3=	curs_addch.3x curs_addchstr.3x curs_addstr.3x curs_attr.3x \
@@ -48,10 +46,18 @@ MANUAL_PACKAGE_BUILD=	conflicts with system ncurses
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 		--disable-termcap --includedir=${PREFIX}/include/ncurses \
-		--prefix=${PREFIX} --with-profile --with-shared --with-debug
-CONFIGURE_ENV=		gnat_exists="no"
+		--prefix=${PREFIX} --with-profile --with-shared
+CONFIGURE_ENV=		gnat_exists="no" ac_cv_path_LDCONFIG="/usr/bin/env OBJFORMAT=${PORTOBJFORMAT} /sbin/ldconfig -m ${PREFIX}/lib"
+
+.include <bsd.port.pre.mk>
 
 post-install:
+.if ${PORTOBJFORMAT} == "aout"
+	@ ${LN} -sf ${PREFIX}/lib/libform.so.4.2 ${PREFIX}/lib/libform.so
+	@ ${LN} -sf ${PREFIX}/lib/libmenu.so.4.2 ${PREFIX}/lib/libmenu.so
+	@ ${LN} -sf ${PREFIX}/lib/libncurses.so.4.2 ${PREFIX}/lib/libncurses.so
+	@ ${LN} -sf ${PREFIX}/lib/libpanel.so.4.2 ${PREFIX}/lib/libpanel.so
+.endif
 	@ ${MKDIR} ${PREFIX}/share/doc/ncurses
 .for file in ANNOUNCE INSTALL NEWS README TO-DO announce.html misc/hackguide.doc misc/hackguide.html misc/ncurses-intro.doc misc/ncurses-intro.html
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/ncurses
@@ -69,4 +75,4 @@ post-install:
 .endfor
 	@ ${INSTALL_DATA} ${FILESDIR}/Makefile.c++ ${PREFIX}/share/examples/ncurses/c++/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
