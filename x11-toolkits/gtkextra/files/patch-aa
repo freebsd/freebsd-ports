@@ -1,11 +1,11 @@
---- gtkextra/Makefile.in	2000/10/18 11:13:56	1.1
-+++ gtkextra/Makefile.in	2000/10/18 11:14:01
+--- gtkextra/Makefile.in.orig	Sat Nov 18 23:02:45 2000
++++ gtkextra/Makefile.in	Wed Nov 22 13:38:22 2000
 @@ -123,7 +123,7 @@
  
  lib_LTLIBRARIES = libgtkextra.la
  libgtkextra_la_SOURCES = $(gtkextra_c_sources)
 -libgtkextra_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE) 	-export-dynamic 	$(shell gtk-config --libs)
-+libgtkextra_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-export-dynamic 	$(shell gtk-config --libs)
++libgtkextra_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-export-dynamic 	$(shell @GTK_CONFIG@ --libs)
  
  EXTRA_HEADERS =  
  EXTRA_DIST =  $(gtkextra_private_h_sources) gtkextra.def makefile.msc

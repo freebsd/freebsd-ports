@@ -12,14 +12,24 @@ include/gtkextra/gtkiconfilesel.h
 include/gtkextra/gtkiconlist.h
 include/gtkextra/gtkitementry.h
 include/gtkextra/gtkplot.h
+include/gtkextra/gtkplot3d.h
+include/gtkextra/gtkplotbar.h
+include/gtkextra/gtkplotbox.h
 include/gtkextra/gtkplotcanvas.h
+include/gtkextra/gtkplotcsurface.h
+include/gtkextra/gtkplotdata.h
+include/gtkextra/gtkplotflux.h
+include/gtkextra/gtkplotgdk.h
 include/gtkextra/gtkplotpc.h
+include/gtkextra/gtkplotpolar.h
 include/gtkextra/gtkplotprint.h
 include/gtkextra/gtkplotps.h
+include/gtkextra/gtkplotsurface.h
 include/gtkextra/gtkpsfont.h
 include/gtkextra/gtksheet.h
+include/gtkextra/gtktogglecombo.h
 lib/libgtkextra.a
 lib/libgtkextra.so
-lib/libgtkextra.so.10
+lib/libgtkextra.so.12
 share/aclocal/gtk+extra.m4
 @dirrm include/gtkextra
