@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freedb
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	audio net ruby
 MASTER_SITES=	http://davedd.free.fr/%SUBDIR%/
 MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
