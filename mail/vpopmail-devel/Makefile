@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.4.0
+PORTVERSION=	5.4.2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Easy virtual domain and authentication package for use with qmail
 
 BUILD_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 		${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 		${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
+
+CONFLICTS=	vpopmail-5.*
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
