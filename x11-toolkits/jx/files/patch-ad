@@ -1,0 +1,14 @@
+--- ACE/ACE_wrappers/ace/Log_Msg.cpp.orig	Mon Apr 10 14:01:34 2000
++++ ACE/ACE_wrappers/ace/Log_Msg.cpp	Mon Apr 10 14:02:38 2000
+@@ -670,9 +670,9 @@
+   ACE_TRACE ("ACE_Log_Msg::log");
+   // External decls.
+ 
+-#if ! (defined(__BORLANDC__) && __BORLANDC__ >= 0x0530)
++#if defined(ACE_LACKS_SYS_NERR)
+    extern int sys_nerr;
+-#endif /* ! (defined(__BORLANDC__) && __BORLANDC__ >= 0x0530) */
++#endif /* defined(ACE_LACKS_SYS_NERR) */
+   typedef void (*PTF)(...);
+ 
+   // Only print the message if <priority_mask_> hasn't been reset to

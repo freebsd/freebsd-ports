@@ -1,0 +1,26 @@
+--- ACE/ACE_wrappers/ace/config-freebsd-pthread.h.orig	Mon Apr 10 13:55:24 2000
++++ ACE/ACE_wrappers/ace/config-freebsd-pthread.h	Mon Apr 10 13:56:09 2000
+@@ -44,7 +44,6 @@
+ #define ACE_HAS_NONCONST_SELECT_TIMEVAL
+ #define ACE_HAS_CHARPTR_DL
+ //#define ACE_USES_ASM_SYMBOL_IN_DLSYM
+-#define ACE_LACKS_SIGSET
+ #define ACE_NEEDS_SCHED_H
+ 
+ // Use of <malloc.h> is deprecated.
+@@ -84,6 +83,15 @@
+ #if (__FreeBSD_version >= 300000)
+ #define ACE_HAS_SIGINFO_T
+ #endif /* __FreeBSD_version >= 300000 */
++
++#if (__FreeBSD_version < 400000)
++#define ACE_LACKS_SIGSET
++#endif /* __FreeBSD_version < 400000 */
++
++#if (__FreeBSD_version >= 400000)
++#define ACE_HAS_UCONTEXT_T
++#define ACE_HAS_SOCKLEN_T
++#endif /* __FreeBSD_version >= 400000 */
+ 
+ #define ACE_HAS_CONSISTENT_SIGNAL_PROTOTYPES
+ #define ACE_LACKS_SIGINFO_H
