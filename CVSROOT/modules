@@ -5905,6 +5905,7 @@ mod_zap		ports/www/mod_zap
 mode-info	ports/editors/mode-info
 modlogan	ports/textproc/modlogan
 modplugplay	ports/audio/modplugplay
+modules		ports/sysutils/modules
 moftpd		ports/ftp/moftpd
 moinmoin	ports/www/moinmoin
 molden		ports/biology/molden
