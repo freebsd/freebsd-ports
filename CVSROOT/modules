@@ -4398,6 +4398,7 @@ libvanessa_logger	ports/devel/libvanessa_logger
 libvanessa_socket	ports/devel/libvanessa_socket
 libvc		ports/devel/libvc
 libvm68k	ports/emulators/libvm68k
+libvncserver	ports/net/libvncserver
 libvorbis	ports/audio/libvorbis
 libwhisker	ports/security/libwhisker
 libwmf		ports/graphics/libwmf
