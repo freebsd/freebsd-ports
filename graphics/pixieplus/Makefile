@@ -7,13 +7,14 @@
 
 PORTNAME=	pixieplus
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://people.fruitsalad.org/avleeuwen/distfiles/${PORTNAME}/
 
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A free, fast, and feature packed image browser and viewer for KDE
 
-LIB_DEPENDS=	Magick.5:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	Magick.6:${PORTSDIR}/graphics/ImageMagick \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
 GNU_CONFIGURE=	yes
