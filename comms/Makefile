@@ -20,6 +20,7 @@
     SUBDIR += gmfsk
     SUBDIR += gnokii
     SUBDIR += gpredict
+    SUBDIR += grig
     SUBDIR += gscmxx
     SUBDIR += gsmlib
     SUBDIR += hamfax
