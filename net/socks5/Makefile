@@ -1,15 +1,14 @@
 # New ports collection makefile for:	socks5
-# Version required:			v1.0r3
+# Version required:			v1.0r5
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
-# $Id: Makefile,v 1.16 1998/01/05 19:00:50 imp Exp $
+# $Id: Makefile,v 1.17 1998/04/07 17:08:16 imp Exp $
 #
 
-DISTNAME=	socks5-v1.0r3
-PKGNAME=	socks5-1.0.3
+DISTNAME=	socks5-v1.0r5
+PKGNAME=	socks5-1.0.5
 CATEGORIES=	net security
-MASTER_SITES=	ftp://ftp.ualg.pt/Linux/network/proxies/socks5/
 EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	imp@freebsd.org
@@ -25,7 +24,7 @@ RESTRICTED=	"no commercial use"
 #		--with-syslog-facility=LOG_AUTH \
 #		--with-passwd
 
-WRKSRC=		${WRKDIR}/socks5-v1.0r3
+WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libconffile=${PREFIX}/etc/libsocks5.conf \
 		--with-srvconffile=${PREFIX}/etc/socks5.conf \
@@ -34,6 +33,17 @@ CONFIGURE_ARGS=	--with-libconffile=${PREFIX}/etc/libsocks5.conf \
 		${EXTRA_CONFIGURE_ARGS}
 MAN1=		runsocks.1 socks5.1 stopsocks.1 socks5_clients.1
 MAN5=		libsocks5.conf.5 socks5.conf.5
+
+do-fetch:
+	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
+	  ${ECHO} ""; \
+	  ${ECHO} "NEC requires that you grab the dist files from their"; \
+	  ${ECHO} "web site at http://www.socks5.nec.com.  Please make sure"; \
+	  ${ECHO} "you have ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}"; \
+	  ${ECHO} "and run make again."; \
+	  ${ECHO} ""; \
+	  exit 1;\
+	fi
 
 .include <bsd.port.mk>
 
