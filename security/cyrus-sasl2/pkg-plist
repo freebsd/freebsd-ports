@@ -90,6 +90,7 @@ sbin/saslpasswd2
 %%PORTDOCS%%%%DOCSDIR%%/html/readme.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sysadmin.html
 %%PORTDOCS%%%%DOCSDIR%%/html/upgrading.html
+%%PORTDOCS%%%%DOCSDIR%%/html/windows.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/sasl2

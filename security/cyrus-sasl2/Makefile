@@ -7,11 +7,12 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	2.1.14
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security ipv6
-MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
-		ftp://ftp.westbend.net/pub/cyrus-mail/ \
-		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
+MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
+		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
+		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. OLD-VERSIONS/sasl
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
@@ -164,7 +165,7 @@ DOC2=	ONEWS TODO draft-burdis-cat-srp-sasl-06.txt \
 	rfc2945.txt rfc3174.txt server-plugin-flow.fig testing.txt
 
 HTDOCS=	advanced appconvert gssapi index install macosx mechanisms \
-	options plugprog programming readme sysadmin upgrading
+	options plugprog programming readme sysadmin upgrading windows
 
 PLIST_SUB=	PREFIX=${PREFIX} \
 		OTP=${OTP} \
