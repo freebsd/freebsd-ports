@@ -3,6 +3,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTML/Filter.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTML/HeadParser.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTML/LinkExtor.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTML/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTML/PullParser.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTML/TokeParser.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Parser/Parser.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Parser/Parser.so
