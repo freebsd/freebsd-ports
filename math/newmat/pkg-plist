@@ -1,0 +1,15 @@
+include/newmat/boolean.h
+include/newmat/controlw.h
+include/newmat/include.h
+include/newmat/myexcept.h
+include/newmat/newmat.h
+include/newmat/newmatap.h
+include/newmat/newmatio.h
+include/newmat/newmatnl.h
+include/newmat/newmatrc.h
+include/newmat/newmatrm.h
+include/newmat/precisio.h
+include/newmat/solution.h
+include/newmat/tmt.h
+@dirrm include/newmat
+lib/libnewmat.a

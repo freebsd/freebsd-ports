@@ -54,6 +54,7 @@
     SUBDIR += naturalmath
     SUBDIR += nauty
     SUBDIR += netcdf
+    SUBDIR += newmat
     SUBDIR += ngraph
     SUBDIR += ntl
     SUBDIR += octave
