@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qhacc
-PORTVERSION=	0.6.1a
+PORTVERSION=	0.6.2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.ostrich-emulators.cx/qhacc/
 
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 USE_QT2=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-qt="${X11BASE}"
+CONFIGURE_ENV=	QTDIR="${X11BASE}"
 
 pre-build:
 	@${RM} -f ${WRKSRC}/src/moc_*.cpp
