@@ -14,13 +14,21 @@ MASTER_SITES?=	ftp://ftp3.freebsd.org/pub/FreeBSD/development/CVSup/sources/ \
 
 MAINTAINER=	jdp@FreeBSD.org
 
+.ifdef PACKAGE_BUILDING
+STATIC=		yes
+.endif
+
 .ifdef WITHOUT_X11
 M3FLAGS+=	-DNOGUI
 BUILD_DEPENDS=	${L1}libm3tcp${L2}:${PORTSDIR}/lang/pm3-net
+.ifndef STATIC
 RUN_DEPENDS=	${L1}libm3tcp${L2}:${PORTSDIR}/lang/pm3-net
+.endif
 .else
 BUILD_DEPENDS=	${L1}libm3formsvbt${L2}:${PORTSDIR}/lang/pm3-forms
+.ifndef STATIC
 RUN_DEPENDS=	${L1}libm3formsvbt${L2}:${PORTSDIR}/lang/pm3-forms
+.endif
 .endif
 
 MAKE_ARGS+=	PREFIX=${PREFIX} M3FLAGS="${M3FLAGS}"
@@ -30,8 +38,9 @@ MAN8=		cvsupd.8
 L1=		${PREFIX}/lib/m3/${TARGET}/
 SOVERSION=	7
 
-# To link the programs statically:
-#M3FLAGS+=	-DSTATIC
+.ifdef STATIC
+M3FLAGS+=	-DSTATIC
+.endif
 
 .include <bsd.port.pre.mk>
 
