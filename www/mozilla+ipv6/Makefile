@@ -9,7 +9,8 @@ PORTNAME=	mozilla
 PORTVERSION= 	M17
 PKGNAMESUFFIX=	+ipv6
 CATEGORIES=	www ipv6
-MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/releases/${PORTVERSION:S/M/m/}/src/
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR=	mozilla/releases/${PORTVERSION:S/M/m/}/src
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	sumikawa@FreeBSD.org

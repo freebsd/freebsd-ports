@@ -8,7 +8,8 @@
 PORTNAME=	perldap
 PORTVERSION=	1.4
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.mozilla.org/pub/directory/perldap/
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR=	directory/perldap
 EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	paul@FreeBSD.org
