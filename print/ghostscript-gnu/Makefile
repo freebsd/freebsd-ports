@@ -7,7 +7,8 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	${GS_VERSION}
-PORTREVISION=	8
+PORTREVISION=	${GS_REVISION}
+PORTEPOCH=	${GS_EPOCH}
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gprint,bjc250/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
@@ -214,7 +215,7 @@ EPAG_SRCS=	${EPAG_NAME}.tar.gz
 # EPLASER - additional driver for ESC/Page printers (Epson Kowa developed)
 # http://www.epkowa.co.jp/english/linux_e/index.html
 EPLASER=	eplaser
-EPLASER_VERS=	3.1.3
+EPLASER_VERS=	3.1.4
 EPLASER_NAME=	${EPLASER}-${EPLASER_VERS}
 EPLASER_SRCS=	${EPLASER_NAME}-705.tgz
 
@@ -249,6 +250,7 @@ LEX7000_SRCS=	gs6.0.lexmark7000.patch
 CONTRIB_UPP=	lqx70ch.upp lqx70cl.upp lqx70cm.upp \
 		stc740ih.upp stc740p.upp stc740pl.upp
 
+.include "Makefile.inc"
 .include <bsd.port.pre.mk>
 .SILENT:
 
@@ -677,5 +679,4 @@ post-install:
 .endif
 	${ECHO_MSG} "> post-installation tasks completed."
 
-.include "Makefile.inc"
 .include <bsd.port.post.mk>
