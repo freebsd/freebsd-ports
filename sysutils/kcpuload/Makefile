@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.brueffer.de/distfiles/
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	CPU meter for Kicker
 
 USE_KDELIBS_VER=3
@@ -19,8 +19,7 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|-O2||g' -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
