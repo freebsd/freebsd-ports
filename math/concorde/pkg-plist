@@ -1,3 +1,35 @@
+bin/concorde/bg_test
+bin/concorde/bosstell
+bin/concorde/checker
+bin/concorde/combtest
+bin/concorde/concorde
+bin/concorde/cutserv
+bin/concorde/edg2len
+bin/concorde/edgegen
+bin/concorde/edgunion
+bin/concorde/fconvert
+bin/concorde/first
+bin/concorde/fmatch
+bin/concorde/heldkarp
+bin/concorde/kdtree
+bin/concorde/killgrun
+bin/concorde/lin_all
+bin/concorde/linkern
+bin/concorde/localcut
+bin/concorde/mincut
+bin/concorde/peeler
+bin/concorde/peeler2
+bin/concorde/poolcat
+bin/concorde/pqtest
+bin/concorde/prob2tsp
+bin/concorde/probserv
+bin/concorde/randtsp.awk
+bin/concorde/showres
+bin/concorde/test_tsp
+bin/concorde/tinytsp
+bin/concorde/tourchk
+bin/concorde/tourlen
+bin/concorde/verify
 lib/libconcorde.a
 include/concorde/bigguy.h
 include/concorde/combs.h
@@ -20,10 +52,9 @@ include/concorde/mlinkern.h
 include/concorde/necklace.h
 include/concorde/pq.h
 include/concorde/pqsets.h
-include/concorde/profdata.h
-include/concorde/profrus.h
 include/concorde/tinytsp.h
 include/concorde/tsp.h
 include/concorde/util.h
 include/concorde/verify.h
+@dirrm bin/concorde
 @dirrm include/concorde
