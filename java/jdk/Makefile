@@ -8,8 +8,8 @@
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
 CATEGORIES=	java devel
-MASTER_SITES=	ftp://ftp.sc.sri.com/pub/FreeBSD/JDK/ \
-		http://www.freebsd.org/java/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	nate/JDK1.1
 
 MAINTAINER=	nate@FreeBSD.org
 
