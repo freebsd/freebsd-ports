@@ -14,9 +14,8 @@ MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 DISTNAME=	openssh-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=dinoex
-PATCHFILES=	openbsd2x_3.0.1.patch
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	openbsd28_3.0.1.patch
 
 MAINTAINER=	dinoex@FreeBSD.org
 
