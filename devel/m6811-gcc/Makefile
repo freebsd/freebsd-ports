@@ -21,6 +21,9 @@ MAINTAINER=	dinoex@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/bin/m6811-elf-as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
 BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
 
+# Configuration alpha-unknown-freebsdelf not supported
+ONLY_FOR_ARCHS=	i386
+
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 PLIST_SUB=	GCC_VER=${PORTVERSION}
