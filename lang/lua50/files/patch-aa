@@ -1,5 +1,5 @@
---- config.orig Sun Jan 30 00:05:20 2000
-+++ config      Thu Jul  8 06:32:37 1999
+--- config.orig	Thu Jul  8 06:32:37 1999
++++ config	Sat Feb 26 23:51:52 2000
 @@ -18,7 +18,7 @@
  # ------------------------------------------------------------------ C compiler
  
@@ -9,10 +9,11 @@
  WARN= -ansi -Wall
  
  # on IRIX, cc is a good ANSI compiler.
-@@ -64,5 +64,5 @@
+@@ -64,5 +64,6 @@
  INCS= -I$(INC) $(EXTRA_INCS)
  DEFS= $(COMPAT) $(NUMBER) $(OLD_ANSI) $(EXTRALIB) $(EXTRA_DEFS)
  
-+CFLAGS= $(WARN) $(INCS) $(DEFS)
 -CFLAGS= -O2 $(WARN) $(INCS) $(DEFS)
-
++CFLAGS?= -O2
++CFLAGS+= $(WARN) $(INCS) $(DEFS)
+ 
