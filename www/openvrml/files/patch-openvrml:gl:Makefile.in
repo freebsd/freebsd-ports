@@ -1,0 +1,11 @@
+--- src/libopenvrml-gl/openvrml/gl/Makefile.in.orig	Wed Apr  7 14:11:15 2004
++++ src/libopenvrml-gl/openvrml/gl/Makefile.in	Wed Apr  7 14:12:00 2004
+@@ -193,7 +193,7 @@
+ AM_CXXFLAGS = @GL_CFLAGS@
+ 
+ @ENABLE_GL_RENDERER_TRUE@lib_LTLIBRARIES = libopenvrml-gl.la
+-@ENABLE_GL_RENDERER_TRUE@openvrml_gl_includedir = $(pkgincludedir)/openvrml/gl
++@ENABLE_GL_RENDERER_TRUE@openvrml_gl_includedir = $(pkgincludedir)/gl
+ @ENABLE_GL_RENDERER_TRUE@openvrml_gl_include_HEADERS = viewer.h
+ 
+ @ENABLE_GL_RENDERER_TRUE@libopenvrml_gl_la_SOURCES = viewer.cpp

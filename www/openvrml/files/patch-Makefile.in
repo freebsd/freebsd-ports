@@ -1,11 +1,11 @@
---- Makefile.in.orig	Wed Oct 16 09:41:01 2002
-+++ Makefile.in	Wed Oct 16 09:43:58 2002
-@@ -113,7 +113,7 @@
+--- Makefile.in.orig	Wed Apr  7 13:30:15 2004
++++ Makefile.in	Wed Apr  7 13:30:30 2004
+@@ -173,7 +173,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = doc ide-projects m4 models lib java src
++SUBDIRS = ide-projects m4 models lib java src
  
- @WITH_GL_TRUE@OPENVRML_GL_PC = openvrml-gl.pc
+ ACLOCAL_AMFLAGS = -I m4
  
--pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = $(prefix)/libdata/pkgconfig
- pkgconfig_DATA = openvrml.pc $(OPENVRML_GL_PC)
- 
- pixmapdatadir = $(datadir)/pixmaps

@@ -1,0 +1,11 @@
+--- src/libopenvrml/openvrml/Makefile.in.orig	Wed Apr  7 13:54:36 2004
++++ src/libopenvrml/openvrml/Makefile.in	Wed Apr  7 13:55:02 2004
+@@ -175,7 +175,7 @@
+ target_alias = @target_alias@
+ lib_LTLIBRARIES = libopenvrml.la
+ 
+-openvrml_includedir = $(pkgincludedir)/openvrml
++openvrml_includedir = $(pkgincludedir)
+ openvrml_include_HEADERS = \
+         common.h \
+         basetypes.h \
