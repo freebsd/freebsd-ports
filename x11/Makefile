@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.198 1998/04/29 21:20:59 vanilla Exp $
+# $Id: Makefile,v 1.199 1998/04/29 23:33:11 mph Exp $
 #
 
     SUBDIR += FWF
@@ -47,6 +47,9 @@
     SUBDIR += mlvwm
     SUBDIR += mouseclock
     SUBDIR += neXtaw
+    SUBDIR += offix-clipboard
+    SUBDIR += offix-execute
+    SUBDIR += offix-files
     SUBDIR += olvwm
     SUBDIR += p5-Gtk
     SUBDIR += p5-Tcl-Tk
