@@ -1,4 +1,5 @@
 bin/gnumeric
+bin/ssconvert
 etc/gconf/gconf.xml.defaults/apps/gnome-settings/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnome-settings/gnumeric/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/%gconf.xml
@@ -306,6 +307,7 @@ share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/analysistools-correlati
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/analysistools-covariance-ex1.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/analysistools-covariance-ex2.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/analysistools-covariance.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/analysistools-descstats-ex1-options.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/analysistools-descstats-ex1.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/analysistools-descstats-ex2.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/analysistools-descstats.png
@@ -383,6 +385,7 @@ share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/button-font-size.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/button-font-type.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/button-frame.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/button-function.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/button-graphEditor-add.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/button-graph.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/button-increase-indent.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/button-increase-precision.png
@@ -428,6 +431,10 @@ share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/dialog-filter.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/dialog-graphing.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/dialog-insert-object.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/dialog-summary.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/example-colGraph-modified.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/example-colGraph.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/example-columnSelect.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/example-data.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/file-dialog.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/file-formats-import-list.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/files-csv-export-ex1.png
@@ -445,6 +452,7 @@ share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/files-html40-example.pn
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/files-latex-example.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/files-xml-example.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/gnumeric-empty.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/gnumeric-icon-24.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/gnumeric-labelled.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/gnumeric-power-example.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/gnumeric-rearranged.png
@@ -458,6 +466,7 @@ share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/label-three.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/label-transparent.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/label-two.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/menu-context-col-row-header.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/menu-context-graph.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/menu-context-grid.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/menu-context-object.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/menu-context-tabs.png
@@ -499,6 +508,14 @@ share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/pointer_right.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/pointer_text_edit.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/pointer_zoom_in.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/pointer_zoom_out.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/preferences-files.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/preferences-font-header.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/preferences-font.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/preferences-sorting.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/preferences-undo.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/preferences-various-internal.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/preferences-various.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/preferences-windows.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/print-large.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/print-preview-back.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/print-preview-first.png
@@ -511,13 +528,10 @@ share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/print-preview-toolbar.p
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/print-preview-zoomin.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/print-preview-zoomout.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/print-preview.png
-share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/print-worksheet.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/print.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/printing-preview.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/printing-setup-header-config.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/printing-setup-header.png
-share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/printing-setup-margins.png
-share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/printing-setup-page-1.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/printing-setup-page.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/printing-setup-sheet.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/selection-1.png
