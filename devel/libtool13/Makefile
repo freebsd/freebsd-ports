@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libtool
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alane@FreeBSD.org
 
 # This port has not been upgraded to 1.4 because it is used by about 30% of
 # the ports collection, and more testing is needed.  If someone can supply a
