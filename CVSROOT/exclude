@@ -3,3 +3,4 @@
 ^src/sys/boot/common/help.common
 ^src/contrib/.*/FREEBSD-Xlist
 ^src/share/examples/diskless/.*
+^src/usr.bin/more/more.help
