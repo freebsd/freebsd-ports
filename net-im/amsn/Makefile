@@ -17,7 +17,6 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/msn
-USE_PERL5_BUILD=yes
 
 LIBDIR=		${PREFIX}/lib/msn
 DOCSDIR=	${PREFIX}/share/doc/amsn
