@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cups-pstoraster
-PORTVERSION=	7.05.3
+PORTVERSION=	7.05.5
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.easysw.com/pub/ghostscript/
