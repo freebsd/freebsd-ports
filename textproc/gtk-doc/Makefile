@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gtk-doc
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_GNOME} \
-		ftp://ftp.gtk.org/pub/gtk-doc/
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.3
 
 MAINTAINER=	gnome@freebsd.org
 COMMENT=	Code documentation system, originally for GTK+
@@ -28,6 +27,7 @@ CATALOG_DIR=		${PREFIX}/share/sgml/${PORTNAME}
 XMLCATMGR=		${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
+USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget libxslt

@@ -18,7 +18,9 @@ share/gtk-doc/data/gtkdoc-common.pl
 share/gtk-doc/data/home.png
 share/gtk-doc/data/left.png
 share/gtk-doc/data/right.png
+share/gtk-doc/data/style.css
 share/gtk-doc/data/up.png
+share/gtk-doc/data/version-greater-or-equal.xsl
 @unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove CATALOG %%CATALOG_DIR%%/gtk-doc.cat
 share/sgml/gtk-doc/gtk-doc.cat
 @exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%CATALOG_DIR%%/gtk-doc.cat
