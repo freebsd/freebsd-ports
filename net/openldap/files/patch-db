@@ -1,13 +1,13 @@
---- configure.orig	Fri Jun  9 13:16:04 2000
-+++ configure	Tue Jul  4 15:59:42 2000
-@@ -6170,14 +6170,14 @@
+--- configure.orig	Wed Dec 12 09:55:07 2001
++++ configure	Wed Dec 12 10:00:07 2001
+@@ -6194,14 +6194,14 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    	ol_LIBS="$LIBS"
 -	echo $ac_n "checking for db_open in -ldb""... $ac_c" 1>&6
--echo "configure:6175: checking for db_open in -ldb" >&5
+-echo "configure:6199: checking for db_open in -ldb" >&5
 +	echo $ac_n "checking for db_open in -ldb2""... $ac_c" 1>&6
-+echo "configure:6175: checking for db_open in -ldb2" >&5
++echo "configure:6199: checking for db_open in -ldb2" >&5
  ac_lib_var=`echo db'_'db_open | sed 'y%./+-:%__p__%'`
  if eval "test \"\${ac_cv_lib_$ac_lib_var+set}\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -16,9 +16,9 @@
 -LIBS="-ldb  $LIBS"
 +LIBS="-ldb2  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 6183 "configure"
+ #line 6207 "configure"
  #include "confdefs.h"
-@@ -6205,7 +6205,7 @@
+@@ -6229,7 +6229,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
