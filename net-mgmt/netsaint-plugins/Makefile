@@ -7,7 +7,7 @@
 
 PORTNAME=	netsaint-plugins
 PORTVERSION=	1.2.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netsaintplug
@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugins for netsaint
 
 USE_SUBMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/share/netsaint/sbin \
 		--libexecdir=${PREFIX}/libexec/netsaint \
@@ -35,6 +36,13 @@ pre-fetch:
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
+
+post-patch:
+	@${FIND} ${WRKSRC}/plugins-scripts/ -type f -perm -+x | ${XARGS} -n1 \
+		${REINPLACE_CMD} -e "s,/bin/diff,/usr/bin/diff,g" \
+			-e "s,/bin/sed,/usr/bin/sed,g" \
+			-e "s,/bin/tail,/usr/bin/tail,g" \
+			-e "s,/bin/grep,/usr/bin/grep,g"
 
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
