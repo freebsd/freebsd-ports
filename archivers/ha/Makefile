@@ -3,13 +3,13 @@
 # Date created:         24 Jan 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.7 1996/11/12 02:17:27 obrien Exp $
+# $Id: Makefile,v 1.8 1997/07/21 00:48:34 fenner Exp $
 #
 
 DISTNAME=       ha0999
 PKGNAME=        ha-0.999b
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.kiae.su/pub/unix/arcers/
+MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=     ache@FreeBSD.ORG

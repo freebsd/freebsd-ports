@@ -4,14 +4,14 @@
 # Date created:         15 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1997/05/20 08:05:52 asami Exp $
+# $Id: Makefile,v 1.6 1997/07/21 00:48:40 fenner Exp $
 #
 
 DISTNAME=       rarbsd
 PKGNAME=        rar-2.01
 CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.inetpros.net/pub/rar/ \
-		ftp://ftp.relcom.ru/pub/unix/arcers/
+		ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=   .exe
 
 MAINTAINER=     ache@FreeBSD.ORG
