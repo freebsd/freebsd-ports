@@ -1,6 +1,0 @@
---- gncal/doc/C/topic.dat.orig	Sat Jun  1 13:10:13 2002
-+++ gncal/doc/C/topic.dat	Sat Jun  1 13:10:21 2002
-@@ -1,2 +1,2 @@
--gnomecal.html	Manual
-+index.html	Manual
- cmdline.html	Command line options 
