@@ -8,7 +8,7 @@
 PORTNAME=	punkbuster
 PORTVERSION=	0.0.956
 CATEGORIES=	net linux
-MASTER_SITES=	http://www.punkbuster.com/downloads/
+MASTER_SITES=	http://www.evenbalance.com/downloads/
 DISTNAME=	pbsv${PORTVERSION:E}
 DIST_SUBDIR=	punkbuster
 

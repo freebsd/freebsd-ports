@@ -8,7 +8,7 @@
 PORTNAME=	punkbuster
 PORTVERSION=	0.1157.0
 CATEGORIES=	net linux
-MASTER_SITES=	http://www.punkbuster.com/downloads/
+MASTER_SITES=	http://www.evenbalance.com/downloads/
 PKGNAMESUFFIX=	-data
 EXTRACT_SUFX=
 DISTFILES=	cvar.cfg pbclhl.dat pbclhl_
