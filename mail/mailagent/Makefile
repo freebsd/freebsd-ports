@@ -3,12 +3,12 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.12 1997/04/20 13:52:30 wosch Exp $
+# $Id: Makefile,v 1.13 1997/04/30 03:18:05 asami Exp $
 #
 
 DISTNAME=	mailagent-3.0pl56
 PKGNAME=	mailagent-3.0.56
-CATEGORIES=	mail perl5
+CATEGORIES=	mail
 MASTER_SITES=	http://www.sfc.wide.ad.jp/~max/FreeBSD/ports/distfiles/ \
 		${MASTER_SITE_LOCAL}
 
