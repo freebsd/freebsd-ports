@@ -3,11 +3,11 @@
 # Date created:         05 April 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.5 1996/11/05 08:33:57 tg Exp $
+# $Id: Makefile,v 1.6 1996/11/12 02:18:28 obrien Exp $
 #
 
-DISTNAME=       icon-9.1
-DISTFILES=	unix.tar.gz
+DISTNAME=       unix
+PKGNAME=	icon-9.1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cs.arizona.edu/icon/packages/unix/
 
