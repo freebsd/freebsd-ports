@@ -5,6 +5,7 @@
     SUBDIR += chemeq
     SUBDIR += clustalw
     SUBDIR += deft
+    SUBDIR += emboss
     SUBDIR += gperiodic
     SUBDIR += hmmer
     SUBDIR += kinemage
