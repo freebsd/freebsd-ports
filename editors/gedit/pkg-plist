@@ -1,6 +1,4 @@
 bin/gedit
-include/gedit/client.h
-lib/libclient.a
 libexec/go/plugins/browse-plugin
 libexec/go/plugins/convert-plugin
 libexec/go/plugins/cvsdiff-plugin
@@ -35,6 +33,7 @@ share/gnome/help/gedit/no/index.html
 share/gnome/help/gedit/no/topic.dat
 share/gnome/mime-info/gedit.keys
 share/gnome/pixmaps/gnome-gedit.png
+share/gnome/pixmaps/gedit-logo.png
 share/locale/cs/LC_MESSAGES/gedit.mo
 share/locale/de/LC_MESSAGES/gedit.mo
 share/locale/es/LC_MESSAGES/gedit.mo
@@ -52,8 +51,6 @@ share/locale/sv/LC_MESSAGES/gedit.mo
 share/locale/wa/LC_MESSAGES/gedit.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gedit.mo
 @dirrm include/gedit
-@dirrm libexec/go/plugins
-@dirrm libexec/go
 @dirrm share/doc/gedit
 @dirrm share/gnome/help/gedit/C
 @dirrm share/gnome/help/gedit/no

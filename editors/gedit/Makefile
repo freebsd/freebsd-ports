@@ -1,18 +1,14 @@
 # New ports collection makefile for:	gedit
-# Version required:			0.5.4
+# Version required:			0.5.5
 # Date created:				4 May 1999
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		gedit-0.5.4
+DISTNAME=		gedit-0.5.5
 CATEGORIES=		editors gnome
-MASTER_SITES=		${MASTER_SITE_SUNSITE} \
-			http://gedit.pn.org/ \
-			http://reviewboard.com/gedit/ \
-			ftp://reviewboard.com/pub/gedit/
-MASTER_SITE_SUBDIR=	X11/gtkbuffet/apps/gedit
+MASTER_SITES=		http://gedit.pn.org/tar/
 
 MAINTAINER=		andy@icc.surw.chel.su
 
@@ -45,8 +41,6 @@ post-install:
 	@ ${RMDIR} ${PREFIX}/share/gnome/gnome/help/gedit/C
 	@ ${RMDIR} ${PREFIX}/share/gnome/gnome/help/gedit/no
 	@ ${RMDIR} ${PREFIX}/share/gnome/gnome/help/gedit
-	@ ${RMDIR} ${PREFIX}/share/gnome/gnome/help
-	@ ${RMDIR} ${PREFIX}/share/gnome/gnome
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/gedit
 .for file in AUTHORS COPYING ChangeLog FAQ INSTALL KNOWNBUGS README README.plugins THANKS TODO
