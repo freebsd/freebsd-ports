@@ -1,23 +1,22 @@
 # New ports collection makefile for:	openrm
 # Date created:		8 July 2002
-# Whom:			Igor Pokrovsky <tiamat@telegraph.spb.ru>
+# Whom:			Igor Pokrovsky <tiamat@comset.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=		openrm
-PORTVERSION=		1.4.3
+PORTVERSION=		1.5.0
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		${PORTNAME}-devel-${PORTVERSION}
-EXTRACT_SUFX=		.tgz
 .ifdef (WITH_DEMOS)
 DISTFILES=		${PORTNAME}-devel-${PORTVERSION}${EXTRACT_SUFX} \
 			${PORTNAME}-demo-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tiamat@comset.net
 COMMENT=	Development environment used to build 2D/3D/stereo graphics
 
 LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg
@@ -25,13 +24,21 @@ LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg
 WRKSRC=		${WRKDIR}/rm${PORTVERSION:S/.//g}
 .ifdef (WITH_DEMOS)
 WRKSRC2=	${WRKDIR}/rmdemo
-EXTRA_PATCHES=	${PATCHDIR}/makeinclude.diff ${PATCHDIR}/rm2screen.c.diff
+EXTRA_PATCHES=	${PATCHDIR}/makeinclude.diff
 .endif
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 USE_REINPLACE=	yes
-ALL_TARGET=	linux docs
+ALL_TARGET=	freebsd docs
+MAKE_ARGS=	AR=${AR} \
+		CC=${CC} \
+		CP=${CP} \
+		ECHO_CMD=${ECHO_CMD} \
+		LN=${LN} \
+		RM=${RM} \
+		STRIP_CMD=${STRIP_CMD} \
+		X11BASE=${X11BASE}
 INSTALLS_SHLIB=	yes
 ONLY_FOR_ARCHS=	i386
 
@@ -46,9 +53,11 @@ pre-everything::
 	@${ECHO} "You can define WITH_DEMOS=yes to fetch and install available demos"
 .endif
 
-.ifdef (WITH_DEMOS)
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g; \
+	@${CHMOD} 0755 ${WRKSRC}/bin/mklib.freebsd
+.ifdef (WITH_DEMOS)
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; \
+			      s|%%X11BASE%%|${X11BASE}|g; \
 			      s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g; \
 			      s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC2}/makeinclude
 .endif
@@ -69,15 +78,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/librmv.a ${PREFIX}/lib
 
 # install includes
-	${INSTALL_DATA} ${WRKSRC}/include/rm.h ${PREFIX}/include
 	@${MKDIR} ${PREFIX}/include/rm
 	${INSTALL_DATA} ${WRKSRC}/include/rm/*.h ${PREFIX}/include/rm
-	@${MKDIR} ${PREFIX}/include/rmaux
-	${INSTALL_DATA} ${WRKSRC}/include/rmaux/*.h ${PREFIX}/include/rmaux
-	@${MKDIR} ${PREFIX}/include/rmi
-	${INSTALL_DATA} ${WRKSRC}/include/rmi/*.h ${PREFIX}/include/rmi
-	@${MKDIR} ${PREFIX}/include/rmv
-	${INSTALL_DATA} ${WRKSRC}/include/rmv/*.h ${PREFIX}/include/rmv
 
 .ifdef (WITH_DEMOS)
 	@${MKDIR} ${EXAMPLESDIR}

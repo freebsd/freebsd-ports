@@ -1,26 +1,23 @@
-include/rm.h
+include/rm/rm.h
+include/rm/rmaux.h
 include/rm/rmcmpmgr.h
+include/rm/rmcr.h
 include/rm/rmdeflts.h
 include/rm/rmdefs.h
+include/rm/rmi.h
+include/rm/rmjpeg.h
 include/rm/rmpipe.h
+include/rm/rmppm.h
 include/rm/rmpublic.h
 include/rm/rmthread.h
 include/rm/rmtypes.h
+include/rm/rmv.h
+include/rm/rmvdefs.h
 include/rm/rmvmap.h
+include/rm/rmvpub.h
 include/rm/rmw.h
 include/rm/rmx.h
-include/rmaux/rmaux.h
-include/rmi/rmi.h
-include/rmi/rmjpeg.h
-include/rmi/rmppm.h
-include/rmv/rmv.h
-include/rmv/rmvdefs.h
-include/rmv/rmvpub.h
-
 @dirrm include/rm
-@dirrm include/rmaux
-@dirrm include/rmi
-@dirrm include/rmv
 
 lib/librm.a
 lib/librm.so
@@ -131,6 +128,7 @@ lib/librmv.so.1
 %%PORTDOCS%%share/doc/openrm/rmclip.c.html
 %%PORTDOCS%%share/doc/openrm/rmcmpmgr.c.html
 %%PORTDOCS%%share/doc/openrm/rmcmpmgr.h.html
+%%PORTDOCS%%share/doc/openrm/rmcr.c.html
 %%PORTDOCS%%share/doc/openrm/rmcreatw.c.html
 %%PORTDOCS%%share/doc/openrm/rmerror.c.html
 %%PORTDOCS%%share/doc/openrm/rmflyui.c.html
@@ -165,7 +163,6 @@ lib/librmv.so.1
 %%PORTDOCS%%share/doc/openrm/rmvmeshv.c.html
 %%PORTDOCS%%share/doc/openrm/rmvsignal.c.html
 %%PORTDOCS%%share/doc/openrm/rmvutil.c.html
-%%PORTDOCS%%share/doc/openrm/rmw.h.html
 %%PORTDOCS%%share/doc/openrm/rmwin.c.html
 %%PORTDOCS%%share/doc/openrm/rmx.c.html
 %%PORTDOCS%%share/doc/openrm/rmx.h.html
