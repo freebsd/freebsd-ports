@@ -24,6 +24,7 @@
     SUBDIR += emacs
     SUBDIR += emacs20
     SUBDIR += emacs20-dl
+    SUBDIR += fb
     SUBDIR += fine
     SUBDIR += flim-emacs
     SUBDIR += flim-emacs-current
