@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.45 1996/10/30 20:51:52 jfitz Exp $
+# $Id: LEGAL,v 1.46 1996/10/31 19:25:11 adam Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -44,6 +44,7 @@ maxima-5.0-beta		ports/math/maxima	License required
 mmv/*			ports/misc/mmv		Restrictive/unclear copyright
 msql-*			ports/databases/msql	Not free for commercial org.
 netscape-*		ports/net/netscape	Commercial product
+nte-1.5a23		ports/mbone/nte		Crypto; export-controlled
 pgp262s.zip		ports/misc/pgp*		Various locality restrictions
 radius-2.4.21		ports/net/radius	Restrictive copyright in
 						src/rlmadmin.c
@@ -51,6 +52,7 @@ rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
 rman-2.4.tar.Z		ports/misc/rman		Restrictive copyright
 rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
 sattrack-3.1.4		ports/misc/sattrack	Don't sell for profit
+sdr-2.3*		ports/mbone/sdr		Crypto; export-controlled
 socks5-*		ports/net/socks5	No commercial use
 ssh-*			ports/security/ssh	Crypto; export-controlled
 SSLeay-0.5.1b.tar.gz	ports/security/SSLeay	Crypto; export-controlled
