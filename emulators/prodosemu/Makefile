@@ -3,7 +3,7 @@
 # Date created:		18th February 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 #
-# $Id: Makefile,v 1.2 1998/12/01 09:36:32 obrien Exp $
+# $Id: Makefile,v 1.3 1998/12/02 20:36:04 billf Exp $
 #
 
 DISTNAME=	prodosemu.v0.1
@@ -12,8 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=   ftp://ftp.apple.asimov.net/pub/apple_II/emulators/prodosemu/ \
 		ftp://apple2.caltech.edu/pub/apple2/emulators/ \
 		ftp://apple.cabi.net/pub/apple_II/emulators/prodosemu/ \
-		ftp://ftp.aarnet.edu.au/pub/apple/apple_II/emulators/prodosemu/ \
-		ftp://ftp.recherche.enac.fr/pub/MIRRORS/apple_II/emulators/prodosemu/
+		ftp://ftp.aarnet.edu.au/pub/apple/apple_II/emulators/prodosemu/
 
 MAINTAINER=	sutton@aardvark.apana.org.au
 
