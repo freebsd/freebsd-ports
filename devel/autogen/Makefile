@@ -25,11 +25,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
-MAN1=	autogen.1 columns.1 getdefs.1
+MAN1=	autogen.1 autoopts-config.1 columns.1 getdefs.1
 
 pre-patch:
-	@${PERL} -pi -e 's|regcomp=no|regcomp=yes|g' ${WRKSRC}/configure
 	@${PERL} -pi -e 's|values.h ||g' ${WRKSRC}/snprintfv/configure
-	@${PERL} -pi -e 's|#include "proto.h"||g' ${WRKSRC}/getdefs/getdefs.h
 
 .include <bsd.port.mk>

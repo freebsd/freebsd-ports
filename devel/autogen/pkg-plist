@@ -22,7 +22,7 @@ share/aclocal/autoopts.m4
 share/autogen/aginfo.tpl
 share/autogen/agman1.tpl
 share/autogen/confmacs.tpl
-share/autogen/conftest.tpl  
+share/autogen/conftest.tpl
 share/autogen/fsm-macro.tpl
 share/autogen/fsm-trans.tpl
 share/autogen/fsm.tpl
