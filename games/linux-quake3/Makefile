@@ -18,6 +18,7 @@ MAINTAINER=	pat@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
+USE_PERL5=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
