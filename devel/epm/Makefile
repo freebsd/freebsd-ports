@@ -19,7 +19,9 @@ COMMENT=	A free UNIX software/file packaging program
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOCONF_VER=	259
 MAN1=		epm.1 epminstall.1 mkepmlist.1 setup.1
 MAN5=		epm.list.5 setup.types.5
 
 .include <bsd.port.mk>
+
