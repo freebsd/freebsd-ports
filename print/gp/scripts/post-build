@@ -3,28 +3,37 @@
 cd ${WRKSRC}
 
 ${MV} GP GP.bak
+if [ X"${LANGUAGE}" = "XEnglish" ]; then
 ${SED} \
-	-e '/^set[ 	]*PRINTER_LIST[ 	]/s@/usr/local@%%PREFIX%%@' \
-	-e '/^set[ 	]*FILETYPE_LIST[ 	]/s@/usr/local@%%PREFIX%%@' \
-	-e '/^set[ 	]*FILTERS_DIR[ 	]/s@/usr/local@%%PREFIX%%@' \
-	-e '/^set[ 	]*ICONS_PATH[ 	]/s@/usr/local@%%PREFIX%%@' \
-	-e '/^set[ 	]*PS_PREVIEWER[ 	]/s@ghostview@gv@' \
+-e 's@^\(set[ 	]*PRINTER_LIST[ 	]*\)"[^"]*"\(.*\)$@\1"%%PREFIX%%/lib/GP/printer"\2@' \
+-e 's@^\(set[ 	]*FILETYPE_LIST[ 	]*\)"[^"]*"\(.*\)$@\1"%%PREFIX%%/lib/GP/filetype"\2@' \
+-e 's@^\(set[ 	]*FILTERS_DIR[ 	]*\)"[^"]*"\(.*\)$@\1"%%PREFIX%%/lib/GP/filters"\2@' \
+-e 's@^\(set[ 	]*ICONS_PATH[ 	]*\)"[^"]*"\(.*\)$@\1"%%PREFIX%%/lib/GP/icons"\2@' \
 	< GP.bak > GP
+elif [ X"${LANGUAGE}" = "XJapanese" ]; then
+${SED} \
+-e 's@^\(set[ 	]*PRINTER_LIST[ 	]*\)"[^"]*"\(.*\)$@\1"%%PREFIX%%/lib/GP/ja/printer"\2@' \
+-e 's@^\(set[ 	]*FILETYPE_LIST[ 	]*\)"[^"]*"\(.*\)$@\1"%%PREFIX%%/lib/GP/ja/filetype"\2@' \
+-e 's@^\(set[ 	]*FILTERS_DIR[ 	]*\)"[^"]*"\(.*\)$@\1"%%PREFIX%%/lib/GP/ja/filters"\2@' \
+-e 's@^\(set[ 	]*ICONS_PATH[ 	]*\)"[^"]*"\(.*\)$@\1"%%PREFIX%%/lib/GP/ja/icons"\2@' \
+	< GP.bak > GP
+fi
 ${MV} GP GP.bak
 ${SED} \
-	-e "s@%%PREFIX%%@${PREFIX}@g" \
+    -e "s@%%PREFIX%%@${PREFIX}@g" \
+    -e 's@^\(set[ 	]*PS_PREVIEWER[ 	]*\)"[^"]*"\(.*\)$@\1"/usr/X11R6/bin/gv"\2@' \
 	< GP.bak > GP
 
 cd ${WRKSRC}/filters
 
-if [ X"${LANGUAGE}" = "XJapanese" ]; then
-	for f in a2ps-j dvi2ps-j; do
+if [ X"${LANGUAGE}" = "XEnglish" ]; then
+	for f in a2ps dvips; do
 		${MV} ${f} ${f}.bak
 		${SED} -e 's@^\(NUMBER[ 	]*=\).*$@\1 1@' < ${f}.bak > ${f}
 		${RM} -f ${f}.bak
 	done
-else
-	for f in a2ps dvips; do
+elif [ X"${LANGUAGE}" = "XJapanese" ]; then
+	for f in a2ps-j dvi2ps-j; do
 		${MV} ${f} ${f}.bak
 		${SED} -e 's@^\(NUMBER[ 	]*=\).*$@\1 1@' < ${f}.bak > ${f}
 		${RM} -f ${f}.bak

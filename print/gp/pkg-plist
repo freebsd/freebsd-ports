@@ -1,4 +1,6 @@
-bin/GP
+bin/GPen
+@exec cd %B;if [ -h GP ]; then mv GP GP.previous; fi;ln -sf %f GP
+@unexec cd %B;ls -l GP GP.previous 2>/dev/null|awk -v f=%f '$11==f{cmd="rm -f " $9; system(cmd)}';if [ -h GP.previous ]; then mv GP.previous GP; fi
 lib/GP/filters/ImageMagick
 lib/GP/filters/a2ps
 lib/GP/filters/dvips
@@ -15,23 +17,20 @@ share/doc/GP/Install
 share/doc/GP/Manual/GP.gif
 share/doc/GP/Manual/index.html
 share/doc/GP/Manual/README
-share/doc/GP/Manual/English/bug_info.html
-share/doc/GP/Manual/English/future.html
-share/doc/GP/Manual/English/intro.html
-share/doc/GP/Manual/English/option.html
-share/doc/GP/Manual/English/print.html
-share/doc/GP/Manual/English/queue.html
-share/doc/GP/Manual/English/queue_remove.html
-share/doc/GP/Manual/English/start.html
-share/doc/GP/Manual/English/image/Remove.gif
-share/doc/GP/Manual/English/image/Queue.gif
-share/doc/GP/Manual/English/image/Print.gif
-share/doc/GP/Manual/English/image/Option.gif
-share/doc/GP/Manual/English/image/GPicon.gif
+share/doc/GP/Manual/bug_info.html
+share/doc/GP/Manual/future.html
+share/doc/GP/Manual/intro.html
+share/doc/GP/Manual/option.html
+share/doc/GP/Manual/print.html
+share/doc/GP/Manual/queue.html
+share/doc/GP/Manual/queue_remove.html
+share/doc/GP/Manual/start.html
+share/doc/GP/Manual/image/Remove.gif
+share/doc/GP/Manual/image/Queue.gif
+share/doc/GP/Manual/image/Print.gif
+share/doc/GP/Manual/image/Option.gif
+share/doc/GP/Manual/image/GPicon.gif
 @dirrm lib/GP/filters
 @dirrm lib/GP/icons
-@dirrm lib/GP
-@dirrm share/doc/GP/Manual/English/image
-@dirrm share/doc/GP/Manual/English
+@dirrm share/doc/GP/Manual/image
 @dirrm share/doc/GP/Manual
-@dirrm share/doc/GP
