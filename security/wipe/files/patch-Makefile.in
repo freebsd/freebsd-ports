@@ -1,0 +1,16 @@
+--- Makefile.in.orig     Sat Aug 30 18:18:03 2003
++++ Makefile.in          Sat Mar  5 00:24:22 2005
+@@ -60,13 +60,6 @@
+ 	$(INSTALL_BIN) -d $(bindir)
+ 	$(INSTALL_BIN) -s $(BIN_OUT) $(bindir)
+ 	$(INSTALL) -d $(mandir)/man1
+-	$(INSTALL) -o root -m 0644 wipe.1 $(mandir)/man1/
+-	rm -rf $(datadir)/doc/wipe*
+-	$(INSTALL) -d $(datadir)/doc/wipe
+-
+-	for file in $(DOCS); do \
+-		$(INSTALL) -o root -m 0644 $$file $(datadir)/doc/wipe/; \
+-	done
+ 
+ install_home: $(BIN_OUT)
+ 	strip $(BIN_OUT)

@@ -488,6 +488,7 @@
     SUBDIR += vulnerability-test-port
     SUBDIR += vuxml
     SUBDIR += vxquery
+    SUBDIR += wipe
     SUBDIR += wpa_supplicant
     SUBDIR += xca
     SUBDIR += xinetd
