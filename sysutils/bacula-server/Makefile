@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bacula
-PORTVERSION=	1.32c
+PORTVERSION=	1.32f
 #PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -15,11 +15,23 @@ MASTER_SITE_SUBDIR=	bacula
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 COMMENT=	The network backup solution
 
+# The user/group IDs below are registered, see
+# http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/book.html#DADS-UID
+#
+BACULA_DIR=/var/db/bacula
+#
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcp-wrappers=/usr/lib \
 		--enable-smartalloc \
-		--with-working-dir=/var/db/bacula
+		--with-working-dir=${BACULA_DIR} \
+		--with-fd-user=root \
+		--with-fd-group=wheel \
+		--with-dir-user=bacula \
+		--with-dir-group=bacula \
+		--with-sd-user=bacula \
+		--with-sd-group=operator
+
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
@@ -49,12 +61,12 @@ pre-everything::
 .if !defined(WITH_CLIENT_ONLY)
 	@${ECHO_MSG} "=======> ATTENTION <======="
 	@${ECHO_MSG} "===> Note that there is a pthreads problem, which leads to the loss of 500kB"
-	@${ECHO_MSG} "===> of data at the end of an tape. This is corrected in the upcoming"
+	@${ECHO_MSG} "===> of data at the end of an tape. This is corrected in FreeBSD"
 	@${ECHO_MSG} "===> 4.9-RELEASE and 5.2-RELEASE or use the -stable or -current tree."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  WITH_CLIENT_ONLY=yes	if you only want the file daemon."
+	@${ECHO_MSG} "  WITH_CLIENT_ONLY=yes		if you only want the file daemon."
 .if !defined(WITH_MYSQL)
 	@${ECHO_MSG} "  WITH_MYSQL=yes		if you want MySQL instead of SqLite as the database."
 .else
@@ -68,6 +80,12 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_CFLAGS}|g' ${WRKSRC}/configure
+
+pre-install:
+.if !defined(WITH_CLIENT_ONLY)
+	@ ${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+.endif
 
 post-install:
 .if defined(WITH_CLIENT_ONLY)
@@ -87,6 +105,9 @@ post-install:
 	elif [ -f ${PREFIX}/etc/console.conf ]; then \
 		${ECHO_CMD} "etc/console.conf" >> ${TMPPLIST}; \
 	fi
+	# chmod of smtp program so bacula can use it with dropped down permissions
+	${CHMOD} o+x ${PREFIX}/sbin/smtp
+	${CHOWN} -R bacula:bacula ${PREFIX}/share/bacula
 .endif
 	# Install leaves existing conf files untouched. Respect this here!
 	for na in sd fd dir; do \
@@ -104,7 +125,7 @@ post-install:
 		cpio -pdm -L -R root:wheel ${DOCSDIR}
 .endif
 
-# Inform user when full build takes place about
+# Inform user afer install about important things ....
 .if !defined(WITH_CLIENT_ONLY)
 	@${ECHO_MSG} "*******************************************************"
 	@${ECHO_MSG} "NOTE:"
@@ -118,6 +139,23 @@ post-install:
 	@${ECHO_MSG} "auto-changer. You have to configure the usage in"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "  ${PREFIX}/etc/bacula-dir.conf"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Take care of correct permissions for changer and"
+	@${ECHO_MSG} "tape device (e.g. /dev/ch0 and /dev/n[r]sa0) i.e."
+	@${ECHO_MSG} "they must be accesable by user bacula."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Due to lack of some features in the FreeBSD tape driver"
+	@${ECHO_MSG} "implemtation you MUST add some OS dependent options to"
+	@${ECHO_MSG} "the bacula-sd.conf file:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  Backward Space Record = no;"
+	@${ECHO_MSG} "  Hardware End of Medium = no;"
+	@${ECHO_MSG} "  Fast Forward Space File = no;"
+	@${ECHO_MSG} "  BSF at EOM = yes;"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "It is also important that all the scripts accessed"
+	@${ECHO_MSG} "by RunBeforeJob and RunAfterJob could be executed by"
+	@${ECHO_MSG} "the user bacula, too."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "*******************************************************"
 .endif

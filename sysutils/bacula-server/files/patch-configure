@@ -1,0 +1,25 @@
+*** configure.org	Thu Jan  1 18:52:12 2004
+--- configure	Thu Jan  1 18:52:33 2004
+***************
+*** 19029,19038 ****
+  
+    Director User:	    ${dir_user}
+    Director Group:	    ${dir_group}
+!   Storage Daemon User:	    ${dir_user}
+!   Storage DaemonGroup:	    ${dir_group}
+!   File Daemon User:	    ${dir_user}
+!   File Daemon Group:	    ${dir_group}
+  
+    SQL binaries Directory      ${SQL_BINDIR}
+  
+--- 19029,19038 ----
+  
+    Director User:	    ${dir_user}
+    Director Group:	    ${dir_group}
+!   Storage Daemon User:	    ${sd_user}
+!   Storage DaemonGroup:	    ${sd_group}
+!   File Daemon User:	    ${fd_user}
+!   File Daemon Group:	    ${fd_group}
+  
+    SQL binaries Directory      ${SQL_BINDIR}
+  

@@ -33,7 +33,7 @@ BARCODE_FILE=/usr/local/etc/bacula-barcodes
 me=$(basename $0)
 
 # Debug
-echo "$me $@" > /dev/console
+logger -p user.err "$me $@"
 
 if [ -z "$1" ] ; then
     usage;
@@ -58,7 +58,7 @@ fi
 # Time to wait for loading
 SLEEP=20
 # What drive of the autochanger should be used primary
-# At the moment bacula (1.31a) could not deal with more drives
+# At the moment bacula (1.31a) could not deal with more than one drive
 DRIVE=1
 
 usage()
@@ -90,9 +90,15 @@ usage()
 case ${COMMAND} in
     unload)
 	# enable the following line if you need to eject the cartridge
-	#mt -f ${TAPE} off
-	#sleep 2
+	mt -f ${TAPE} off
+	sleep 2
 	${MTX} -f ${CHANGER} return drive ${DRIVE}
+	# If the changer is power cycled with a tape loaded in a drive
+	if [ "$?" != "0" ]; then
+	    free_slot=`${MTX} -f ${CHANGER} stat | grep "^slot " | grep -v "FULL" | awk '{print $2}'`
+	    free_slot=${free_slot%:}
+	    ${MTX} -f ${CHANGER} move drive ${DRIVE} slot $free_slot
+	fi
 	;;
 
     load)
@@ -121,8 +127,8 @@ case ${COMMAND} in
 	# echo "Request loaded"
 	${MTX} -f ${CHANGER} status -S > /tmp/mtx.$$
 	rtn=$?
-	cat /tmp/mtx.$$ | grep "^drive ${DRIVE}: <FULL>" | awk '{print $6+1}' | tr -d ">"
-	cat /tmp/mtx.$$ | grep "^drive ${DRIVE}:  source: <>" | awk "{print 0}"
+	cat /tmp/mtx.$$ | grep "^drive ${DRIVE}: <FULL> .*slot" | awk '{print $6+1}' | tr -d ">"
+	cat /tmp/mtx.$$ | grep "^drive ${DRIVE}: .* source: <>" | awk "{print 0}"
 	rm -f /tmp/mtx.$$
 	exit $rtn
 	;;
