@@ -3,7 +3,7 @@
 # Date created:				16 February 1997
 # Whom:					Sandro Sigala
 #
-# $Id: Makefile,v 1.6 1998/09/16 22:34:37 vanilla Exp $
+# $Id: Makefile,v 1.7 1998/10/12 21:08:35 jseger Exp $
 #
 
 DISTNAME=	tvision-0.6
@@ -11,8 +11,6 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.vix.com/guests/ssigala/pub/tvision/
 
 MAINTAINER=	ssigala@globalnet.it
-
-BROKEN_ELF=	library names
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)"
