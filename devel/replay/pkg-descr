@@ -1,0 +1,14 @@
+Best program ever.
+
+This program is a wrapper, it will exec whatever arguments it's given and
+if the program returns a non-zero exit status or terminates abnormally it
+will prompt the user to run the program again.
+
+It's best used when debugging a large build like so:
+
+make CC="replay cc"
+
+Then if cc bombs you don't have to restart make, you can just fix your
+source file and resume your build.
+
+-Alfred Perlstein <alfred@freebsd.org>

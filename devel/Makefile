@@ -774,6 +774,7 @@
     SUBDIR += re2c
     SUBDIR += regexx
     SUBDIR += regexxer
+    SUBDIR += replay
     SUBDIR += rhtvision
     SUBDIR += rinfo
     SUBDIR += rlwrap
