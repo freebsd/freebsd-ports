@@ -1,0 +1,13 @@
+--- glstuff.c.orig	Thu Feb 17 13:03:21 2000
++++ glstuff.c	Thu Feb 17 13:07:17 2000
+@@ -17,7 +17,10 @@
+ */
+ 
+ #include "xt.h"
++#include <sys/types.h>
++#include <sys/socket.h>
+ #include <netinet/in.h>
++#include <arpa/inet.h>
+ 
+ extern void sphere(int level);
+ 

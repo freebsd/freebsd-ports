@@ -1,0 +1,7 @@
+Xtraceroute is a graphical version of the traceroute program, which traces the
+route your IP packets travel to their destination.
+
+This version shows that on a rotating globe, as a series of yellow lines
+between 'sites', shown as small balls of different colors.
+
+WWW: http://www.dtek.chalmers.se/~d3august/xt/
