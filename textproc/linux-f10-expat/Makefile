@@ -7,6 +7,7 @@
 
 PORTNAME=	expat
 PORTVERSION=	1.95.5
+PORTREVISION=	0
 CATEGORIES=	textproc linux
 
 MAINTAINER=	trevor@FreeBSD.org

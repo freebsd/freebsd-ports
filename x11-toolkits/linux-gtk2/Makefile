@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk2
 PORTVERSION=	2.2.1
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	trevor@FreeBSD.org
