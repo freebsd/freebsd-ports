@@ -1,0 +1,10 @@
+bin/uae
+bin/readdisk
+share/doc/uae/COMPATIBILITY
+share/doc/uae/CREDITS
+share/doc/uae/FAQ
+share/doc/uae/NEWS
+share/doc/uae/README
+share/doc/uae/README.unix
+share/doc/uae/README.PROGRAMMERS
+@dirrm share/doc/uae
