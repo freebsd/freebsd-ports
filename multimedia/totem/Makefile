@@ -32,7 +32,7 @@ WITH_DVDNAV=	yes
 .endif
 
 .if defined(WITH_DVDNAV)
-LIB_DEPENDS+=	dvdnav.1:${PORTSDIR}/multimedia/libdvdnav
+LIB_DEPENDS+=	dvdnav.3:${PORTSDIR}/multimedia/libdvdnav
 .endif
 
 .if !defined(WITH_DVDNAV)
