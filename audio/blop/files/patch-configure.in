@@ -1,0 +1,29 @@
+--- configure.in.orig	Sun Jul 14 20:42:42 2002
++++ configure.in	Mon Sep 23 17:55:28 2002
+@@ -23,13 +23,6 @@
+ 
+ dnl Supported --enable and --with options
+ 
+-AC_ARG_ENABLE(
+-   debug,
+-   [  --enable-debug          Enable debugging [no]],
+-   [CFLAGS="-pipe -Wall -O0 -g"],
+-   [CPU=$(uname -m)
+-    CFLAGS="-pipe -Wall -O3 -DNO_DEBUG -Wno-unused -mcpu=$CPU -march=$CPU -ffast-math -fomit-frame-pointer -fstrength-reduce -funroll-loops -fmove-all-movables -fPIC -DPIC"]
+-)
+ 
+ AC_ARG_WITH(
+   ladspa-prefix,
+@@ -80,7 +73,12 @@
+ AC_CHECK_FUNC(cos, [], [AC_CHECK_LIB(m, cos, [], [AC_MSG_ERROR( ** No cos function found)])])
+ AC_CHECK_FUNC(floorf, [], [AC_CHECK_LIB(m, floorf, [], [AC_MSG_ERROR( ** No floorf function found)])])
+ AC_CHECK_FUNC(powf, [], [AC_CHECK_LIB(m, powf, [], [AC_MSG_ERROR( ** No powf function found)])])
++AC_CHECK_FUNC(getopt_long,[], [AC_CHECK_LIB(gnugetopt, getopt_long, [], [AC_MSG_ERROR( ** No getopt_long function found)])])
+ 
++if test "$HAVE_LIBGNUGETOPT" != ""; then
++	ac_save_LIBS="$LIBS"
++	LIBS= "$ac_save_LIBS -lgnugetopt"
++fi
+ 
+ dnl Makefiles generated
+ AC_OUTPUT(Makefile \

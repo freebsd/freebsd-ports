@@ -1,4 +1,12 @@
+lib/ladspa/adsr.so
+lib/ladspa/amp.so
+lib/ladspa/fmod.so
+lib/ladspa/interpolator.so
+lib/ladspa/lp4pole.so
+lib/ladspa/product.so
 lib/ladspa/pulse.so
+lib/ladspa/random.so
 lib/ladspa/sawtooth.so
 lib/ladspa/square.so
+lib/ladspa/sum.so
 lib/ladspa/triangle.so
