@@ -3,7 +3,7 @@
 # Date created:				5 August 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/10 00:31:40 steve Exp $
 #
 
 DISTNAME=	hexedit-0.9.3
@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.src.tgz
 MAINTAINER=	andy@icc.surw.chel.su
 
 LIB_DEPENDS=	ncurses\\.4\\.:${PORTSDIR}/devel/ncurses
+
+MANUAL_PACKAGE_BUILD=	depends on ncurses
 
 ALL_TARGET=
 WRKSRC=		${WRKDIR}/hexedit
