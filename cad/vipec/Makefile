@@ -19,7 +19,8 @@ BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 USE_QT_VER=	2
 USE_GMAKE=	yes
 MAKE_ENV+=	TMAKEPATH="${LOCALBASE}/share/tmake/freebsd-g++" \
-		QTDIR="${X11BASE}" MOC="${X11BASE}/bin/moc2"
+		QTDIR="${X11BASE}" MOC="${X11BASE}/bin/moc2" \
+		SUBLIBS=${PTHREAD_LIBS}
 
 post-patch:
 	@${PERL} -pi -e "s,/opt,${PREFIX},g" ${WRKSRC}/Makefile
