@@ -1060,10 +1060,46 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://www.osvdb.org/9521</url>
       <url>http://www.osvdb.org/9522</url>
       <bid>10354</bid>
+      <bid>11093</bid>
+      <url>http://rhn.redhat.com/errata/RHSA-2004-323.html</url>
     </references>
     <dates>
       <discovery>2004-05-19</discovery>
       <entry>2004-09-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fdbbed57-f933-11d8-a776-00e081220a76">
+    <topic>cdrtools local privilege escalation</topic>
+    <affects>
+      <package>
+        <name>cdrtools</name>
+        <range><lt>2.0.3_4</lt></range>
+      </package>
+      <package>
+        <name>cdrtools-cjk</name>
+        <range><lt>2.0.3.20030714_4</lt></range>
+      </package>
+      <package>
+        <name>cdrtools-devel</name>
+        <range><lt>2.01a38</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Max Vozeler found a flaw in in cdrecord allowing a local root exploit</p>
+      </body>
+    </description>
+    <references>
+      <url>ftp://ftp.berlios.de/pub/cdrecord/alpha/AN-2.01a38</url>
+      <url>http://www.osvdb.org/9395</url>
+      <cvename>CAN-2004-0806</cvename>
+      <mlist msgid="E1C0yA3-0002cc-00@newraff.debian.org">http://lists.debian.org/debian-devel-changes/2004/08/msg03421.html</mlist>
+      <bid>11075</bid>
+    </references>
+    <dates>
+      <discovery>2004-08-28</discovery>
+      <entry>2004-08-30</entry>
     </dates>
   </vuln>
 </vuxml>
