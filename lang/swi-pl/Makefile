@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	swi-pl
-PORTVERSION=	5.4.5
+PORTVERSION=	5.4.6
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.swi.psy.uva.nl/SWI-Prolog/ \
 		http://gollem.science.uva.nl/cgi-bin/nph-download/SWI-Prolog/
