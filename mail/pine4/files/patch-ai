@@ -1,7 +1,7 @@
-*** pine/send.c.orig	Mon Jul 20 22:02:18 1998
---- pine/send.c	Tue Jul 21 14:51:50 1998
+*** pine/send.c.orig	Wed Aug 12 19:00:10 1998
+--- pine/send.c	Wed Aug 12 19:49:04 1998
 ***************
-*** 6672,6684 ****
+*** 6673,6685 ****
   		body->subtype = cpystr("octet-stream");
   	    }
   
@@ -15,7 +15,7 @@
   	}
       }
   
---- 6672,6688 ----
+--- 6673,6689 ----
   		body->subtype = cpystr("octet-stream");
   	    }
   
@@ -34,7 +34,7 @@
       }
   
 ***************
-*** 7508,7514 ****
+*** 7499,7505 ****
   
   	switch (body->encoding) {	/* all else needs filtering */
   	  case ENC8BIT:			/* encode 8BIT into QUOTED-PRINTABLE */
@@ -42,7 +42,7 @@
   	    break;
   
   	  case ENCBINARY:		/* encode binary into BASE64 */
---- 7512,7519 ----
+--- 7503,7510 ----
   
   	switch (body->encoding) {	/* all else needs filtering */
   	  case ENC8BIT:			/* encode 8BIT into QUOTED-PRINTABLE */
@@ -52,19 +52,19 @@
   
   	  case ENCBINARY:		/* encode binary into BASE64 */
 ***************
-*** 7575,7581 ****
-        sprintf (*dst += strlen (*dst),"Content-Transfer-Encoding: %s\015\012",
-  	       body_encodings[(body->encoding == ENCBINARY)
-  				? ENCBASE64
-! 				: (body->encoding == ENC8BIT)
-  				    ? ENCQUOTEDPRINTABLE
-  				    : (body->encoding <= ENCMAX)
-  					? body->encoding : ENCOTHER]);
---- 7580,7586 ----
-        sprintf (*dst += strlen (*dst),"Content-Transfer-Encoding: %s\015\012",
-  	       body_encodings[(body->encoding == ENCBINARY)
-  				? ENCBASE64
-! 				: (body->encoding == ENC8BIT && F_OFF(F_ENABLE_8BIT, ps_global))
-  				    ? ENCQUOTEDPRINTABLE
-  				    : (body->encoding <= ENCMAX)
-  					? body->encoding : ENCOTHER]);
+*** 7582,7588 ****
+  	     && !(so_puts(so, "Content-Transfer-Encoding: ")
+  		  && so_puts(so, body_encodings[(body->encoding==ENCBINARY)
+  						? ENCBASE64
+! 						: (body->encoding == ENC8BIT)
+  						  ? ENCQUOTEDPRINTABLE
+  						  : (body->encoding <= ENCMAX)
+  						    ? body->encoding
+--- 7587,7593 ----
+  	     && !(so_puts(so, "Content-Transfer-Encoding: ")
+  		  && so_puts(so, body_encodings[(body->encoding==ENCBINARY)
+  						? ENCBASE64
+! 						: (body->encoding == ENC8BIT && F_OFF(F_ENABLE_8BIT, ps_global))
+  						  ? ENCQUOTEDPRINTABLE
+  						  : (body->encoding <= ENCMAX)
+  						    ? body->encoding

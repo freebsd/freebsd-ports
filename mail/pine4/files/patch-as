@@ -24,3 +24,60 @@
   			 || (F) == F_AGG_SEQ_COPY)
   
 --- 696,701 ----
+*** pico/edef.h.orig	Thu Apr 23 02:53:44 1998
+--- pico/edef.h	Tue Jul 21 14:33:38 1998
+***************
+*** 59,65 ****
+  int	ComposerEditing = FALSE;	/* TRUE if message line is open */
+  int	revexist = FALSE;		/* does reverse video exist?	*/
+  char	modecode[] = "WCSEVO";		/* letters to represent modes	*/
+! long	gmode = MDWRAP;			/* global editor mode		*/
+  int     sgarbf  = TRUE;                 /* TRUE if screen is garbage	*/
+  int     mpresf  = FALSE;                /* TRUE if message in last line */
+  int	clexec	= FALSE;		/* command line execution flag	*/
+--- 59,65 ----
+  int	ComposerEditing = FALSE;	/* TRUE if message line is open */
+  int	revexist = FALSE;		/* does reverse video exist?	*/
+  char	modecode[] = "WCSEVO";		/* letters to represent modes	*/
+! long	gmode = MDWRAP | MDTCAPWINS;	/* global editor mode		*/
+  int     sgarbf  = TRUE;                 /* TRUE if screen is garbage	*/
+  int     mpresf  = FALSE;                /* TRUE if message in last line */
+  int	clexec	= FALSE;		/* command line execution flag	*/
+*** pico/main.c.orig	Thu Jul 16 11:30:47 1998
+--- pico/main.c	Tue Jul 21 14:33:38 1998
+***************
+*** 424,430 ****
+  	    gmode ^= MDSSPD;
+  	    break;
+  	  case 'q':			/* -q for termcap takes precedence */
+! 	    gmode ^= MDTCAPWINS;
+  	    break;
+  	  case 'w':			/* -w turn off word wrap */
+  	    gmode ^= MDWRAP;
+--- 424,430 ----
+  	    gmode ^= MDSSPD;
+  	    break;
+  	  case 'q':			/* -q for termcap takes precedence */
+! 	    gmode |= MDTCAPWINS;
+  	    break;
+  	  case 'w':			/* -w turn off word wrap */
+  	    gmode ^= MDWRAP;
+*** pico/pilot.c.orig	Thu Jul 16 11:30:46 1998
+--- pico/pilot.c	Tue Jul 21 14:33:38 1998
+***************
+*** 222,228 ****
+  	    sup_keyhelp = !sup_keyhelp;
+  	    break;
+  	  case 'q':			/* -q for termcap takes precedence */
+! 	    gmode ^= MDTCAPWINS;
+  	    break;
+  	  case 'z':			/* -z to suspend */
+  	    gmode ^= MDSSPD;
+--- 222,228 ----
+  	    sup_keyhelp = !sup_keyhelp;
+  	    break;
+  	  case 'q':			/* -q for termcap takes precedence */
+! 	    gmode |= MDTCAPWINS;
+  	    break;
+  	  case 'z':			/* -z to suspend */
+  	    gmode ^= MDSSPD;
