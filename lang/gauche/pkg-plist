@@ -1,22 +1,37 @@
 bin/gosh
 bin/gauche-config
+lib/gauche/%%VERSION%%/%%TARGET%%/auxsys.la
 lib/gauche/%%VERSION%%/%%TARGET%%/auxsys.so
+lib/gauche/%%VERSION%%/%%TARGET%%/fcntl.la
 lib/gauche/%%VERSION%%/%%TARGET%%/fcntl.so
 lib/gauche/%%VERSION%%/%%TARGET%%/gauche-config
 lib/gauche/%%VERSION%%/%%TARGET%%/gosh
+lib/gauche/%%VERSION%%/%%TARGET%%/libcharconv.la
 lib/gauche/%%VERSION%%/%%TARGET%%/libcharconv.so
+lib/gauche/%%VERSION%%/%%TARGET%%/libgauche-uvector.so
+lib/gauche/%%VERSION%%/%%TARGET%%/libgauche-uvector.la
 lib/gauche/%%VERSION%%/%%TARGET%%/libgauche.a
+lib/gauche/%%VERSION%%/%%TARGET%%/libgauche.la
 lib/gauche/%%VERSION%%/%%TARGET%%/libgauche.so
+lib/gauche/%%VERSION%%/%%TARGET%%/libgauche.so.0
+lib/gauche/%%VERSION%%/%%TARGET%%/libnet.la
 lib/gauche/%%VERSION%%/%%TARGET%%/libnet.so
-lib/gauche/%%VERSION%%/%%TARGET%%/libuvector.so
+lib/gauche/%%VERSION%%/%%TARGET%%/md5.la
 lib/gauche/%%VERSION%%/%%TARGET%%/md5.so
+lib/gauche/%%VERSION%%/%%TARGET%%/mt-random.la
 lib/gauche/%%VERSION%%/%%TARGET%%/mt-random.so
+lib/gauche/%%VERSION%%/%%TARGET%%/ndbm.la
 lib/gauche/%%VERSION%%/%%TARGET%%/ndbm.so
+lib/gauche/%%VERSION%%/%%TARGET%%/sha1.la
 lib/gauche/%%VERSION%%/%%TARGET%%/sha1.so
+lib/gauche/%%VERSION%%/%%TARGET%%/syslog.la
 lib/gauche/%%VERSION%%/%%TARGET%%/syslog.so
+lib/gauche/%%VERSION%%/%%TARGET%%/termios.la
 lib/gauche/%%VERSION%%/%%TARGET%%/termios.so
+lib/gauche/%%VERSION%%/%%TARGET%%/threads.la
 lib/gauche/%%VERSION%%/%%TARGET%%/threads.so
 lib/gauche/%%VERSION%%/include/gauche.h
+lib/gauche/%%VERSION%%/include/gauche/arch.h
 lib/gauche/%%VERSION%%/include/gauche/char_euc_jp.h
 lib/gauche/%%VERSION%%/include/gauche/char_none.h
 lib/gauche/%%VERSION%%/include/gauche/char_sjis.h
@@ -25,20 +40,14 @@ lib/gauche/%%VERSION%%/include/gauche/class.h
 lib/gauche/%%VERSION%%/include/gauche/config.h
 lib/gauche/%%VERSION%%/include/gauche/exception.h
 lib/gauche/%%VERSION%%/include/gauche/extend.h
-lib/gauche/%%VERSION%%/include/gauche/fcntl.h
-lib/gauche/%%VERSION%%/include/gauche/net.h
-lib/gauche/%%VERSION%%/include/gauche/netconfig.h
 lib/gauche/%%VERSION%%/include/gauche/predef-syms.h
 lib/gauche/%%VERSION%%/include/gauche/pthread.h
-lib/gauche/%%VERSION%%/include/gauche/termconfig.h
-lib/gauche/%%VERSION%%/include/gauche/termios.h
 lib/gauche/%%VERSION%%/include/gauche/uthread.h
 lib/gauche/%%VERSION%%/include/gauche/uvector.h
 lib/gauche/%%VERSION%%/include/gauche/vm.h
 lib/gauche/%%VERSION%%/include/gauche/vminsn.h
 lib/gauche/%%VERSION%%/include/gc.h
 lib/gauche/%%VERSION%%/include/gc_pthread_redirects.h
-lib/gauche/site/%%VERSION%%/%%TARGET%%/example.so
 @dirrm lib/gauche/site/%%VERSION%%/%%TARGET%%
 @dirrm lib/gauche/site/%%VERSION%%
 @dirrm lib/gauche/site
@@ -50,6 +59,8 @@ lib/gauche/site/%%VERSION%%/%%TARGET%%/example.so
 lib/libgauche.a
 lib/libgauche.so
 share/gauche/%%VERSION%%/aclocal.m4
+share/gauche/%%VERSION%%/lib/binary/io.scm
+share/gauche/%%VERSION%%/lib/binary/pack.scm
 share/gauche/%%VERSION%%/lib/compat/jfilter.scm
 share/gauche/%%VERSION%%/lib/compat/stk.scm
 share/gauche/%%VERSION%%/lib/dbm.scm
@@ -166,6 +177,7 @@ share/gauche/%%VERSION%%/lib/srfi-37.scm
 share/gauche/%%VERSION%%/lib/srfi-4.scm
 share/gauche/%%VERSION%%/lib/srfi-9.scm
 share/gauche/%%VERSION%%/lib/text/csv.scm
+share/gauche/%%VERSION%%/lib/text/diff.scm
 share/gauche/%%VERSION%%/lib/text/gettext.scm
 share/gauche/%%VERSION%%/lib/text/html-lite.scm
 share/gauche/%%VERSION%%/lib/text/info.scm
@@ -175,12 +187,12 @@ share/gauche/%%VERSION%%/lib/text/tree.scm
 share/gauche/%%VERSION%%/lib/util/combinations.scm
 share/gauche/%%VERSION%%/lib/util/digest.scm
 share/gauche/%%VERSION%%/lib/util/isomorph.scm
+share/gauche/%%VERSION%%/lib/util/lcs.scm
 share/gauche/%%VERSION%%/lib/util/list.scm
 share/gauche/%%VERSION%%/lib/util/queue.scm
 share/gauche/%%VERSION%%/lib/util/toposort.scm
 share/gauche/%%VERSION%%/lib/util/tree.scm
 share/gauche/%%VERSION%%/lib/www/cgi.scm
-share/gauche/site/lib/example.scm
 @dirrm share/gauche/site/lib
 @dirrm share/gauche/site
 @dirrm share/gauche/%%VERSION%%/lib/www
@@ -199,6 +211,7 @@ share/gauche/site/lib/example.scm
 @dirrm share/gauche/%%VERSION%%/lib/gauche
 @dirrm share/gauche/%%VERSION%%/lib/file
 @dirrm share/gauche/%%VERSION%%/lib/compat
+@dirrm share/gauche/%%VERSION%%/lib/binary
 @dirrm share/gauche/%%VERSION%%/lib/dbm
 @dirrm share/gauche/%%VERSION%%/lib
 @dirrm share/gauche/%%VERSION%%
