@@ -3720,6 +3720,7 @@ linux-edonkey-gui-gtk	ports/net/linux-edonkey-gui-gtk
 linux-edonkey-server	ports/net/linux-edonkey-server
 linux-esound	ports/audio/linux-esound
 linux-flashplugin	ports/www/linux-flashplugin
+linux-flashplugin6	ports/www/linux-flashplugin6
 linux-gnomelibs	ports/x11/linux-gnomelibs
 linux-gtk	ports/x11-toolkits/linux-gtk
 linux-ibm-jdk13	ports/java/linux-ibm-jdk13
