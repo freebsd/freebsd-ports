@@ -13,3 +13,5 @@ environments.)  Support for numbers is weak: bignums are slow and
 floating point is almost nonexistent.  DEFINE-SYNTAX, LET-SYNTAX,
 LETREC-SYNTAX, and SYNTAX-RULES are supported, but not the rest of
 the Revised^4 Scheme macro proposal.
+
+WWW: http://www.s48.org
