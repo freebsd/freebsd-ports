@@ -12,14 +12,14 @@ buildenv () {
     	export PKGSUFFIX=.tgz
     	export PKGZIPCMD=gzip
 	export INDEXFILE=INDEX
-	export XFREE86_VERSION=4
+	export X_WINDOW_SYSTEM=xfree86-4
 	    ;;
 	x4-exp)
     	export PKGSUFFIX=.tgz
     	export PKGZIPCMD=gzip
 	export PORTS_AUDIT=1
 	export INDEXFILE=INDEX
-	export XFREE86_VERSION=4
+	export X_WINDOW_SYSTEM=xfree86-4
 	    ;;
 	x5)
     	export PKGSUFFIX=.tbz
