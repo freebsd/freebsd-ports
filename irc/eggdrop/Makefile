@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eggdrop
-PORTVERSION=	1.6.13
+PORTVERSION=	1.6.15
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/
 DISTNAME=	${PORTNAME:S/-//}${PORTVERSION}
@@ -55,7 +55,7 @@ do-install:
 		${PREFIX}/share/eggdrop/scripts/
 	@cd ${WRKSRC}/help && ${INSTALL_DATA} cmds1.help cmds2.help core.help \
 		${PREFIX}/share/eggdrop/help/
-	@cd ${WRKSRC}/help/set && ${INSTALL_DATA} cmds1.help cmds2.help \
+	@cd ${WRKSRC}/help/set && ${INSTALL_DATA} cmds1.help \
 		${PREFIX}/share/eggdrop/help/set/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/eggdrop ${PREFIX}/share/eggdrop/html

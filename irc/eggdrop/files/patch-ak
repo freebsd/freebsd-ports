@@ -1,11 +1,11 @@
---- src/eggdrop.h.orig	Fri Mar 29 22:40:24 2002
-+++ src/eggdrop.h	Sun Aug 18 22:51:25 2002
-@@ -68,7 +68,7 @@
+--- src/eggdrop.h.orig	Mon Jun  2 11:39:45 2003
++++ src/eggdrop.h	Mon Jun  2 11:40:17 2003
+@@ -85,7 +85,7 @@
+ 
  
  /* Language stuff */
- 
--#define LANGDIR	"./language"	/* language file directory		*/
-+#define LANGDIR	__PREFIX__ "/share/eggdrop/language"	/* language file directory		*/
- #define BASELANG "english"	/* language which always gets loaded
- 				   before all other languages. You do
- 				   not want to change this.		*/
+-#define LANGDIR  "./language" /* language file directory                   */
++#define LANGDIR  __PREFIX__ "/share/eggdrop/language" /* language file directory                   */
+ #define BASELANG "english"    /* language which always gets loaded before 
+                                  all other languages. You do not want to
+                                  change this.                              */

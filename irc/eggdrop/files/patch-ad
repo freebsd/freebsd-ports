@@ -1,6 +1,6 @@
---- src/mod/filesys.mod/filesys.c.orig	Wed Dec  9 20:05:21 1998
-+++ src/mod/filesys.mod/filesys.c	Wed Dec  9 20:09:13 1998
-@@ -458,7 +458,7 @@
+--- src/mod/filesys.mod/filesys.c.orig	Mon Jun  2 11:25:01 2003
++++ src/mod/filesys.mod/filesys.c	Mon Jun  2 11:25:46 2003
+@@ -452,7 +452,7 @@
    if (at_limit(nick)) {
      char xxx[1024];
  
