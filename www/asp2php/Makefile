@@ -8,7 +8,7 @@
 PORTNAME=	asp2php
 PORTVERSION=	0.75.11
 CATEGORIES=	www
-MASTER_SITES=	http://www.naken.cc/asp2php/
+MASTER_SITES=	http://home.i1.net/~naken/asp2php/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
