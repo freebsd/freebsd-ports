@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xmltv
-PORTVERSION=	0.5.21
-CATEGORIES=	textproc perl5
+PORTVERSION=	0.5.33
+CATEGORIES=	textproc perl5 python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmltv
 PKGNAMEPREFIX=	p5-
@@ -31,37 +31,48 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 	${SITE_PERL}/Lingua/Preferred.pm:${PORTSDIR}/textproc/p5-Lingua-Preferred \
 	${SITE_PERL}/Lingua/EN/Numbers/Ordinate.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Numbers-Ordinate \
-	${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String
+	${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String \
+	${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
+	${SITE_PERL}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree \
+	${SITE_PERL}/HTML/LinkExtractor.pm:${PORTSDIR}/www/p5-HTML-LinkExtractor \
+	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
+USE_PYTHON=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 PERL_CONFIGURE=	yes
-PLIST_SUB=	VERSION="${PORTVERSION}"
+
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+
+PORTDOCS=	COPYING \
+		QuickStart \
+		README \
+		README.tv_check \
+		README.win32 \
+		tv_check_doc.html \
+		tv_check_doc.jpg
+
+.ifdef(NOPORTDOCS)
+EXTRA_PATCHES+=	${FILESDIR}/extra-noportdocs-patch-Makefile.PL
+.endif
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} <= 500600
 IGNORE=	"perl 5.6 or higher is required to build this port"
-.else
-BROKEN=	"Broken pkg-plist"
 .endif
 
-.if ${OSVERSION} >= 500000
-MAN1PREFIX=	${PREFIX}/share
-.else
-# override bsd.port.mk setting for perl ports
-MAN3PREFIX=	${MANPREFIX}
-.endif
-
-MAN1=	tv_cat.1 tv_check.1 tv_extractinfo_en.1 tv_grab_dk.1 \
-	tv_grab_es.1 tv_grab_fi.1 tv_grab_hu.1 tv_grab_it.1 \
-	tv_grab_na.1 tv_grab_nl.1 tv_grab_nl_wolf.1 tv_grab_nz.1 \
-	tv_grab_sn.1 tv_grab_uk.1 tv_grab_uk_rt.1 tv_grep.1 \
+MAN1=	tv_cat.1 tv_check.1 tv_extractinfo_en.1 \
+	tv_grab_de_tvtoday.1 tv_grab_dk.1 tv_grab_es.1 \
+	tv_grab_es_digital.1 tv_grab_fi.1 tv_grab_fr.1 tv_grab_hu.1 \
+	tv_grab_it.1 tv_grab_jp.1 tv_grab_na_dd.1 tv_grab_na_icons.1 \
+	tv_grab_nl.1 tv_grab_nl_wolf.1 tv_grab_no.1 tv_grab_nz.1 \
+	tv_grab_pt.1 tv_grab_se.1 tv_grab_uk_rt.1 tv_grep.1 \
 	tv_imdb.1 tv_remove_some_overlapping.1 tv_sort.1 tv_split.1 \
 	tv_to_latex.1 tv_to_text.1
-MAN3=	XMLTV.3 XMLTV::Grab_XML.3 XMLTV::Gunzip.3 XMLTV::Summarize.3
+MAN3=	XMLTV.3 XMLTV::Date.3 XMLTV::Grab_XML.3 XMLTV::Gunzip.3 \
+	XMLTV::Summarize.3
 
 # idea taken from devel/cvsweb port
 # Specify these directories in relative paths to ${PREFIX}.
