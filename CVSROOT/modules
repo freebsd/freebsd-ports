@@ -7251,6 +7251,7 @@ ru-fortuneru	ports/russian/fortuneru
 ru-gd		ports/russian/gd
 ru-kde3-i18n	ports/russian/kde3-i18n
 ru-koffice-i18n	ports/russian/koffice-i18n
+ru-koi2koi	ports/russian/koi2koi
 ru-koi8r-ps	ports/russian/koi8r-ps
 ru-ksocrat	ports/russian/ksocrat
 ru-messarge	ports/russian/messarge
