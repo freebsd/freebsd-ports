@@ -1,7 +1,22 @@
---- configure.orig	Tue Mar 12 13:03:57 2002
-+++ configure	Fri Mar 15 18:15:51 2002
-@@ -11776,3 +11775,3 @@
+
+$FreeBSD$
+
+--- configure.orig	Tue Mar 12 21:03:57 2002
++++ configure	Mon Apr 29 23:49:41 2002
+@@ -6094,6 +6094,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -11774,7 +11775,7 @@
+   IFS="$ac_save_ifs"
+ fi
  fi
 -EMACS="$ac_cv_prog_EMACS"
 +EMACS=no
  if test -n "$EMACS"; then
+   echo "$ac_t""$EMACS" 1>&6
+ else
