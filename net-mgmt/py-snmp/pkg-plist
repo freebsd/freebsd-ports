@@ -285,6 +285,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/agent/traporig.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/manager/getgen.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/manager/nextgen.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/manager/setgen.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/manager/traprecv.py
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/manager
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/agent
