@@ -1,13 +1,13 @@
---- printstats.c.orig	Wed Oct 22 22:34:42 2003
-+++ printstats.c	Wed Oct 22 22:34:48 2003
-@@ -34,9 +34,9 @@
+--- printstats.c.orig	Wed Jan  7 09:18:37 2004
++++ printstats.c	Wed Jan  7 09:18:46 2004
+@@ -27,9 +27,9 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <time.h>
+-#include <tdb.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <tdb.h>
+ #include <fcntl.h>
  
  int traverse_keys(TDB_CONTEXT *tdb_context, TDB_DATA key, TDB_DATA value, void *pattern)
- {
-+	long *ivalue;
- 	if(!key.dptr) return 0;
- 
--	long *ivalue;
- 	ivalue = (long *)value.dptr;
- 	printf("%s: %ld\n", key.dptr, *ivalue);
- 	return 0;
