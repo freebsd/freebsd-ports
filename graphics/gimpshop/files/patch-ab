@@ -16,14 +16,143 @@
        _exit(127);
      }
    else
---- plug-ins/nova.c~	Tue Apr  8 10:34:29 1997
-+++ plug-ins/nova.c	Tue Apr  8 10:34:36 1997
-@@ -1010,7 +1010,7 @@
- 	      l = sqrt( u*u + v*v );
- 
- 	      /* This algorithm is still under construction. */
--	      c = (atan2(u,v)/(2*PI)+0.51) * pvals.nspoke;
-+	      c = (atan2(u,v)/(2*M_PI)+0.51) * pvals.nspoke;
- 	      i=(int)floor(c); c-=i; i%=pvals.nspoke;
- 	      w1=spoke[i]*(1-c)+spoke[(i+1)%pvals.nspoke]*c;
- 	      w1*=w1;
+--- plug-ins/ripple.c~	Fri Apr 18 09:21:26 1997
++++ plug-ins/ripple.c	Fri Apr 18 09:21:31 1997
+@@ -1015,7 +1015,7 @@
+     switch (rvals.waveform)
+     {
+         case SINE:
+-            return rvals.amplitude*sin(location*(2*PI)/(double)rvals.period);
++            return rvals.amplitude*sin(location*(2*M_PI)/(double)rvals.period);
+             break;
+         case SAWTOOTH:
+             return floor(rvals.amplitude*(fabs((((location%rvals.period)/(double)rvals.period)*4)-2)-1));
+
+The patches for displace
+------------------------
+*** plug-ins/displace.c.ots	Tue Apr  8 09:07:34 1997
+--- plug-ins/displace.c	Tue Apr  8 09:53:32 1997
+***************
+*** 222,231 ****
+  	  dvals.amount_x = param[3].data.d_float;
+  	  dvals.amount_y = param[4].data.d_float;
+  	  dvals.do_x = param[5].data.d_int32;
+! 	  dvals.do_x = param[6].data.d_int32;
+  	  dvals.displace_map_x = param[7].data.d_int32;
+  	  dvals.displace_map_y = param[8].data.d_int32;
+  	  dvals.displace_type = param[9].data.d_int32;
+  	}
+        break;
+  
+--- 222,238 ----
+  	  dvals.amount_x = param[3].data.d_float;
+  	  dvals.amount_y = param[4].data.d_float;
+  	  dvals.do_x = param[5].data.d_int32;
+! 	  dvals.do_y = param[6].data.d_int32;
+  	  dvals.displace_map_x = param[7].data.d_int32;
+  	  dvals.displace_map_y = param[8].data.d_int32;
+  	  dvals.displace_type = param[9].data.d_int32;
++ 
++ 	  if (dvals.do_x && 
++ 	      gimp_drawable_type(dvals.displace_map_x) != GRAY_IMAGE)
++ 	    status = STATUS_CALLING_ERROR;
++ 	  if (dvals.do_y && 
++ 	      gimp_drawable_type(dvals.displace_map_y) != GRAY_IMAGE)
++ 	    status = STATUS_CALLING_ERROR;
+  	}
+        break;
+  
+***************
+*** 566,592 ****
+  	      if (dvals.displace_type == WRAP)
+  		{
+  		  if (xi < 0)
+! 		    xi = width - (-xi % width);
+  		  else
+! 		    xi %= width;
+  
+  		  if (yi < 0)
+! 		    yi = height - (-yi % height);
+  		  else
+! 		    yi %= height;
+  		}
+  	      /* Smear out the edges of the image by repeating pixels. */
+  	      else if (dvals.displace_type == SMEAR)
+  		{
+  		  if (xi < 0)
+  		    xi = 0;
+! 		  else if (xi > width - 1)
+! 		    xi = width - 1;
+  
+  		  if (yi < 0)
+  		    yi = 0;
+! 		  else if (yi > height - 1)
+! 		    yi = height - 1;
+  		}
+  
+  	      tile = displace_pixel (drawable, tile, x1, y1, x2, y2, xi, yi, &row, &col, pixel[0]);
+--- 573,599 ----
+  	      if (dvals.displace_type == WRAP)
+  		{
+  		  if (xi < 0)
+! 		    xi = (width-1) - (-xi % (width-1));
+  		  else
+! 		    xi %= (width-1);
+  
+  		  if (yi < 0)
+! 		    yi = (height-1) - (-yi % (height-1));
+  		  else
+! 		    yi %= (height-1);
+  		}
+  	      /* Smear out the edges of the image by repeating pixels. */
+  	      else if (dvals.displace_type == SMEAR)
+  		{
+  		  if (xi < 0)
+  		    xi = 0;
+! 		  else if (xi > width - 2)
+! 		    xi = width - 2;
+  
+  		  if (yi < 0)
+  		    yi = 0;
+! 		  else if (yi > height - 2)
+! 		    yi = height - 2;
+  		}
+  
+  	      tile = displace_pixel (drawable, tile, x1, y1, x2, y2, xi, yi, &row, &col, pixel[0]);
+***************
+*** 712,718 ****
+      return TRUE;
+  
+    if (gimp_drawable_width (drawable_id) == drawable->width &&
+!       gimp_drawable_height (drawable_id) == drawable->height)
+      return TRUE;
+    else
+      return FALSE;
+--- 719,726 ----
+      return TRUE;
+  
+    if (gimp_drawable_width (drawable_id) == drawable->width &&
+!       gimp_drawable_height (drawable_id) == drawable->height &&
+!       gimp_drawable_type (drawable_id) == GRAY_IMAGE)
+      return TRUE;
+    else
+      return FALSE;
+
+--- plug-ins/script-fu/interp_regex.c~	Fri Apr 18 14:00:00 1997
++++ plug-ins/script-fu/interp_regex.c	Fri Apr 18 14:00:45 1997
+@@ -1,3 +1,4 @@
++#include <sys/types.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+--- plug-ins/plasma.c~	Fri Apr 18 15:01:43 1997
++++ plug-ins/plasma.c	Fri Apr 18 15:01:53 1997
+@@ -310,7 +310,7 @@
+   gtk_widget_set_usize( entry, ENTRY_WIDTH, 0 );
+   sprintf( buffer, "%d", pvals.seed );
+   gtk_entry_set_text (GTK_ENTRY (entry), buffer );
+-  gtk_signal_connect (GTK_OBJECT (entry), "changed_text",
++  gtk_signal_connect (GTK_OBJECT (entry), "changed",
+ 		      (GtkSignalFunc) plasma_entry_callback,
+ 		      &pvals.seed);
+   gtk_widget_show (entry);
