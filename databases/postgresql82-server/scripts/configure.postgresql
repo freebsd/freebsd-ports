@@ -25,9 +25,10 @@ if [ "${BATCH}" ]; then
 else
 	/usr/bin/dialog --title "configuration options" --clear \
 					--checklist "\n\
-Please select desired options:" -1 -1 7 \
+Please select desired options:" -1 -1 3 \
 MultiByte  "Multibyte for Multilingualism" ON \
-KRB5       "Kerberos 5" ON \
+KRB5       "Kerberos 5 (only if it exists)" ON \
+CLIENT     "PostgreSQL client only, no server" OFF \
 2> /tmp/checklist.tmp.$$
 
 	retval=$?
@@ -58,6 +59,9 @@ while [ "$1" ]; do
 			;;
 		\"KRB5\")
 			KRB5=1
+			;;
+		\"CLIENT\")
+			CLIENT=1
 			;;
 		\"nothing\"|true)
 			;;
@@ -162,4 +166,8 @@ if [ "${KRB5}" ]; then
 			echo "	########################################################"
 		fi
 	fi
+fi
+
+if [ ${CLIENT} ]; then
+	echo "WITHOUT_SERVER=yes" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 fi
