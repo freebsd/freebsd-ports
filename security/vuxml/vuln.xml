@@ -2513,12 +2513,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <bid>11468</bid>
+      <cvename>CAN-2004-0982</cvename>
       <mlist msgid="200410200119.42801.barros@barrossecurity.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109834486312407</mlist>
     </references>
     <dates>
       <discovery>2004-10-02</discovery>
       <entry>2004-10-23</entry>
-      <modified>2004-11-05</modified>
+      <modified>2004-12-30</modified>
     </dates>
   </vuln>
 
@@ -2647,6 +2649,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-1170</cvename>
       <freebsdpr>ports/70618</freebsdpr>
       <bid>11025</bid>
       <url>http://www.osvdb.org/9176</url>
@@ -2655,6 +2658,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-08-18</discovery>
       <entry>2004-10-20</entry>
+      <modified>2004-12-30</modified>
     </dates>
   </vuln>
 
