@@ -3,7 +3,7 @@
 # Date created:		23 June 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/24 15:23:11 kuriyama Exp $
 #
 
 DISTNAME=	xt
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	kuriyama@FreeBSD.ORG
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-RUN_DEPENDS=	${PREFIX}/${JAVASUBDIR}/bin/java:${PORTSDIR}/lang/jdk
+RUN_DEPENDS=	${PREFIX}/${JAVASUBDIR}/bin/java:${PORTSDIR}/java/jdk
 
 EXTRACT_CMD=	unzip
 EXTRACT_BEFORE_ARGS=	-a -q -L

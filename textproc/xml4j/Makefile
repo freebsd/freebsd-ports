@@ -3,7 +3,7 @@
 # Date created:		16 May 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/06/23 15:02:33 kuriyama Exp $
+# $Id: Makefile,v 1.5 1999/06/27 04:53:55 kuriyama Exp $
 #
 
 DISTNAME=	xml4j_2_0_11
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.alphaworks.ibm.com/tech/xml4j/
 
 MAINTAINER=	kuriyama@FreeBSD.ORG
 
-RUN_DEPENDS=	${PREFIX}/${JFCSUBDIR}/swing.jar:${PORTSDIR}/lang/jfc
+RUN_DEPENDS=	${PREFIX}/${JFCSUBDIR}/swing.jar:${PORTSDIR}/java/jfc
 
 RESTRICTED=	"License prohibites distribute."
 NO_BUILD=	YES
