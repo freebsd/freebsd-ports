@@ -1,9 +1,9 @@
 bin/gfont
 lib/gfont/etc/Fontmap
-lib/gfont/exec/gfont_pktopx
-lib/gfont/exec/gfont_pxtogdf
 lib/gfont/exec/gfont_mkgdf
 lib/gfont/exec/gfont_mkgdf_all
+lib/gfont/exec/gfont_pktopx
+lib/gfont/exec/gfont_pxtogdf
 lib/gfont/gdf/CMBoldface-F.gdf.gz
 lib/gfont/gdf/CMBoldface-H.gdf.gz
 lib/gfont/gdf/CMBoldface-L.gdf.gz
@@ -39,7 +39,53 @@ lib/gfont/gdf/CMTeleType-S.gdf.gz
 lib/gfont/gdf/CMTeleType-T.gdf.gz
 lib/gfont/gdf/CMTeleType-V.gdf.gz
 lib/gfont/gdf/CMTeleType.gdf.gz
-@dirrm lib/gfont/etc
-@dirrm lib/gfont/exec
+lib/gfont/gdf/Courier.gdf.gz
+lib/gfont/gdf/CourierBold.gdf.gz
+lib/gfont/gdf/CourierBoldOblique.gdf.gz
+lib/gfont/gdf/CourierOblique.gdf.gz
+lib/gfont/gdf/ECBoldface-F.gdf.gz
+lib/gfont/gdf/ECBoldface-H.gdf.gz
+lib/gfont/gdf/ECBoldface-L.gdf.gz
+lib/gfont/gdf/ECBoldface-S.gdf.gz
+lib/gfont/gdf/ECBoldface-T.gdf.gz
+lib/gfont/gdf/ECBoldface-V.gdf.gz
+lib/gfont/gdf/ECBoldface.gdf.gz
+lib/gfont/gdf/ECItalic-F.gdf.gz
+lib/gfont/gdf/ECItalic-H.gdf.gz
+lib/gfont/gdf/ECItalic-L.gdf.gz
+lib/gfont/gdf/ECItalic-S.gdf.gz
+lib/gfont/gdf/ECItalic-T.gdf.gz
+lib/gfont/gdf/ECItalic-V.gdf.gz
+lib/gfont/gdf/ECItalic.gdf.gz
+lib/gfont/gdf/ECRoman-F.gdf.gz
+lib/gfont/gdf/ECRoman-H.gdf.gz
+lib/gfont/gdf/ECRoman-L.gdf.gz
+lib/gfont/gdf/ECRoman-S.gdf.gz
+lib/gfont/gdf/ECRoman-T.gdf.gz
+lib/gfont/gdf/ECRoman-V.gdf.gz
+lib/gfont/gdf/ECRoman.gdf.gz
+lib/gfont/gdf/ECSansSerif-F.gdf.gz
+lib/gfont/gdf/ECSansSerif-H.gdf.gz
+lib/gfont/gdf/ECSansSerif-L.gdf.gz
+lib/gfont/gdf/ECSansSerif-S.gdf.gz
+lib/gfont/gdf/ECSansSerif-T.gdf.gz
+lib/gfont/gdf/ECSansSerif-V.gdf.gz
+lib/gfont/gdf/ECSansSerif.gdf.gz
+lib/gfont/gdf/ECTeleType-F.gdf.gz
+lib/gfont/gdf/ECTeleType-H.gdf.gz
+lib/gfont/gdf/ECTeleType-L.gdf.gz
+lib/gfont/gdf/ECTeleType-S.gdf.gz
+lib/gfont/gdf/ECTeleType-T.gdf.gz
+lib/gfont/gdf/ECTeleType-V.gdf.gz
+lib/gfont/gdf/ECTeleType.gdf.gz
+lib/gfont/gdf/Helvetica.gdf.gz
+lib/gfont/gdf/HelveticaBold.gdf.gz
+lib/gfont/gdf/HelveticaOblique.gdf.gz
+lib/gfont/gdf/Times.gdf.gz
+lib/gfont/gdf/TimesBold.gdf.gz
+lib/gfont/gdf/TimesBoldItalic.gdf.gz
+lib/gfont/gdf/TimesItalic.gdf.gz
 @dirrm lib/gfont/gdf
+@dirrm lib/gfont/exec
+@dirrm lib/gfont/etc
 @dirrm lib/gfont
