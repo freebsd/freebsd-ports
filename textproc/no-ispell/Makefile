@@ -9,7 +9,7 @@ MAINTAINER=     alex@FreeBSD.org
 
 ISPELL_NO=	yes
 PORTNAME=	no-ispell
-PORTVERSION= 	1.1
+PORTVERSION= 	2.0
 MASTERDIR=      ${.CURDIR}/../ispell
 
 .include        "${MASTERDIR}/Makefile"
