@@ -38,7 +38,7 @@ ECLIPSE_BUILD=	2135
 ECLIPSE_OS=	freebsd
 ECLIPSE_WS=	gtk
 ECLIPSE_ARCH=	x86
- 
+
 # Here we must work around a bug that pops up when building from sources. A
 # certain "run" method must be made visible in the whole class hierarchy by
 # changing making it public, as documented here:
