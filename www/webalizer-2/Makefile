@@ -12,6 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=   ftp://ftp.mrunix.net/pub/webalizer/pre-release/
 DISTNAME=       ${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=   .tar.bz2
+NO_LATEST_LINK=	yes
 
 MAINTAINER=     ache@freebsd.org
 
