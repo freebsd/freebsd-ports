@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	talkfilters
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	misc
 MASTER_SITES=	http://www2.dystance.net:8080/software/talkfilters/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Set of filters to convert English text to various stereotyped dialects
 
 CONFLICTS=	jive* chef*
@@ -20,11 +20,13 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 MAN1=	talkfilters.1 wrap.1
-MLINKS=	talkfilters.1 b1ff.1 \
+MLINKS=	talkfilters.1 austro.1 \
+	talkfilters.1 b1ff.1 \
 	talkfilters.1 brooklyn.1 \
 	talkfilters.1 chef.1 \
 	talkfilters.1 cockney.1 \
 	talkfilters.1 drawl.1 \
+	talkfilters.1 dubya.1 \
 	talkfilters.1 fudd.1 \
 	talkfilters.1 funetak.1 \
 	talkfilters.1 jethro.1 \
