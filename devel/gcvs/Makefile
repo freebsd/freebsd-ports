@@ -18,7 +18,6 @@ COMMENT=	High-end interface client for CVS
 
 BUILD_DEPENDS+=	autoconf213:${PORTSDIR}/devel/autoconf213
 BUILD_DEPENDS+=	automake14:${PORTSDIR}/devel/automake14
-BUILD_DEPENDS+=	glade:${PORTSDIR}/devel/glade
 BUILD_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
