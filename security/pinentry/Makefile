@@ -30,13 +30,17 @@ INFO=		pinentry
 
 CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE}
 
-.if defined(PINENTRY_QT) || defined(PINENTRY_GTK) || defined(PINENTRY_CURSES)
+.if defined(PINENTRY_QT) || defined(PINENTRY_GTK) || defined(PINENTRY_GTK2) || defined(PINENTRY_CURSES)
 .if defined(PINENTRY_QT)
 USE_QT_VER=	3
 PLIST_SUB+=	WITH_QT=""
 .else
 CONFIGURE_ARGS+=--disable-pinentry-qt
 PLIST_SUB+=	WITH_QT="@comment "
+
+pre-configure:
+	${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@g" \
+		${WRKSRC}/acinclude.m4 ${WRKSRC}/configure
 .endif
 
 .if defined(PINENTRY_GTK)
@@ -47,6 +51,24 @@ CONFIGURE_ARGS+=--disable-pinentry-gtk
 PLIST_SUB+=	WITH_GTK="@comment "
 .endif
 
+.if defined(PINENTRY_GTK2)
+USE_GNOME+=	gtk20
+PLIST_SUB+=	WITH_GTK2=""
+
+PATCH_SITES=		http://home.arcor.de/dralbrecht.dress/GnuPG/
+PATCHFILES=		pinentry-0.7.1-gtk+-2.4.diff.bz2
+PATCH_DIST_STRIP=	-p1
+
+USE_AUTOCONF_VER=	259
+USE_AUTOMAKE_VER=	19
+
+pre-configure:
+	@cd ${WRKSRC}; ${ACLOCAL}
+.else
+CONFIGURE_ARGS+=--disable-pinentry-gtk2
+PLIST_SUB+=	WITH_GTK2="@comment "
+.endif
+
 .if defined(PINENTRY_CURSES)
 PLIST_SUB+=	WITH_CURSES=""
 .else
@@ -54,15 +76,28 @@ CONFIGURE_ARGS+=--disable-pinentry-curses
 PLIST_SUB+=	WITH_CURSES="@comment "
 .endif
 .else
+PATCH_SITES=            http://home.arcor.de/dralbrecht.dress/GnuPG/
+PATCHFILES=             pinentry-0.7.1-gtk+-2.4.diff.bz2
+PATCH_DIST_STRIP=       -p1
+USE_AUTOCONF_VER=       259
+USE_AUTOMAKE_VER=       19
 USE_QT_VER=	3
-USE_GNOME+=	gtk12
+USE_GNOME+=	gtk12 gtk20
 PLIST_SUB+=	WITH_QT=""
 PLIST_SUB+=	WITH_GTK=""
+PLIST_SUB+=	WITH_GTK2=""
 PLIST_SUB+=	WITH_CURSES=""
-.endif
 
 pre-configure:
+	@cd ${WRKSRC}; ${ACLOCAL}
+.endif
+
+run-autotools:
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} \
+		${AUTOMAKE_ARGS})
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} \
+		${AUTOCONF_ARGS})
 	${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@g" \
-		${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
+		${WRKSRC}/acinclude.m4 ${WRKSRC}/configure
 
 .include <bsd.port.mk>
