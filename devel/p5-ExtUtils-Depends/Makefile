@@ -21,8 +21,8 @@ MAN3=		ExtUtils::Depends.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-BROKEN=		"Does not compile with this version of perl"
+.if ${PERL_LEVEL} < 500600
+IGNORE=	"Perl 5.6 or newer required. Install lang/perl5 or lang/perl5.8 and try again."
 .endif
 
 .include <bsd.port.post.mk>
