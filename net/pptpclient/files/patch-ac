@@ -1,0 +1,14 @@
+RCS file: /home/jdp/f5/pptp/cvs/pptp/pptp_callmgr.h,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -r1.1.1.1 -r1.2
+--- pptp_callmgr.h	1999/04/28 19:36:57	1.1.1.1
++++ pptp_callmgr.h	1999/04/28 19:43:06	1.2
+@@ -6,4 +6,7 @@
+  */
+ 
+ #define PPTP_SOCKET_PREFIX "/var/run/pptp/"
++
++#ifndef PPTP_CALLMGR_BINARY
+ #define PPTP_CALLMGR_BINARY "./pptp_callmgr"
++#endif

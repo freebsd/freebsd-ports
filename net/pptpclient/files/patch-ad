@@ -1,0 +1,28 @@
+RCS file: /home/jdp/f5/pptp/cvs/pptp/pptp_gre.c,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -r1.1.1.1 -r1.2
+--- pptp_gre.c	1999/04/28 19:36:57	1.1.1.1
++++ pptp_gre.c	1999/04/28 19:43:56	1.2
+@@ -5,10 +5,10 @@
+  * $Id: pptp_gre.c,v 1.5 1997/12/15 10:11:38 cananian Exp $
+  */
+ 
++#include <sys/types.h>
++#include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+-#include <sys/socket.h>
+-#include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/time.h>
+ #include <unistd.h>
+@@ -59,7 +59,7 @@
+   struct sockaddr_in src_addr;
+   int s, n, stat1, stat2;
+ 
+-  pptp_gre_call_id = call_id;
++  pptp_gre_call_id = peer_call_id;
+   /* Open IP protocol socket */
+   s = socket(AF_INET, SOCK_RAW, PPTP_PROTO);
+   if (s<0) { warn("socket: %s", strerror(errno)); return; }
