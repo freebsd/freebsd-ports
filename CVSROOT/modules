@@ -1305,6 +1305,7 @@ dynamechs	ports/graphics/dynamechs
 e16utils	ports/x11-wm/e16utils
 e2fsprogs	ports/sysutils/e2fsprogs
 e3		ports/editors/e3
+e4graph		ports/devel/e4graph
 e93		ports/editors/e93
 eBones		src/eBones
 easygtk		ports/x11-toolkits/easygtk
