@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xlogmaster
-# Version required:	1.2.2
+# Version required:	1.4.1
 # Date created:		11 July 1998
 # Whom:			Adrian Wontroba <aw1@stade.co.uk>
 #
-# $Id: Makefile,v 1.2 1998/08/05 09:31:38 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/07 23:56:48 asami Exp $
 #
 
-DISTNAME=	xlogmaster-1.2.2
+DISTNAME=	xlogmaster-1.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.fusebox.hanse.de/xlogmaster/\
 		http://porter.desy.de/~greve/xlogmaster/
@@ -14,13 +14,12 @@ EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	aw1@stade.co.uk
 
-LIB_DEPENDS=	gtk\\.1\\.:${PORTSDIR}/x11-toolkits/gtk
+LIB_DEPENDS=	gtk\\.1\\.5:${PORTSDIR}/x11-toolkits/gtk
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 MAN1=		xlogmaster.1
-WRKSRC=		${WRKDIR}/xlogmaster
 USE_X_PREFIX=	yes
 NO_PACKAGE=	ignores cflags
 
