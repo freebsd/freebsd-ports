@@ -28,7 +28,8 @@ stop_postcmd()
 mailgraph_enable=${mailgraph_enable:-"NO"}
 mailgraph_pidfile=${mailgraph_pidfile:-"%%DATADIR%%/mailgraph.pid"}
 mailgraph_flags=${mailgraph_flags:-"--logfile /var/log/maillog --daemon-rrd=%%DATADIR%% --ignore-localhost --daemon --daemon-pid=${mailgraph_pidfile}"}
-mailgraph_user=${mailgraph_user:-"www"}
+mailgraph_user=${mailgraph_user:-"%%MAILGRAPH_USER%%"}
+mailgraph_group=${mailgraph_group:-"%%MAILGRAPH_GROUP%%"}
 mailgraph_chdir=${mailgraph_chdir:-"%%DATADIR%%"}
 
 load_rc_config $name
