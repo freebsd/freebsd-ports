@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/unrar
 USE_GMAKE=	yes
 
 post-patch:
-	@${SED} -e 's|c++|${CXX}|g' -e 's|-O2|${CXXFLAGS}|g' \
+	@${SED} -e 's|g++|${CXX}|g' -e 's|-O2|${CXXFLAGS}|g' \
 		${WRKSRC}/makefile.unix > ${WRKSRC}/Makefile
 
 do-install:
