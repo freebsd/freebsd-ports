@@ -11,3 +11,199 @@
  } ZUnique_Id_t;
  
  /* Checksum */
+--- lib/ZParseNot.c.orig	Thu Aug 12 20:19:44 1999
++++ lib/ZParseNot.c	Sun Mar 11 23:18:38 2001
+@@ -151,10 +151,10 @@
+ 	
+     if (numfields) {
+ 	if (ZReadAscii(ptr, end-ptr, (unsigned char *)&notice->z_uid,
+-		       sizeof(ZUnique_Id_t)) == ZERR_BADFIELD)
++		       sizeof(notice->z_uid)) == ZERR_BADFIELD)
+ 	    BAD_PACKET;
+-	notice->z_time.tv_sec = ntohl((u_long) notice->z_uid.tv.tv_sec);
+-	notice->z_time.tv_usec = ntohl((u_long) notice->z_uid.tv.tv_usec);
++	notice->z_time.tv_sec = ntohl((u_long) notice->z_uid.zuid_sec);
++	notice->z_time.tv_usec = ntohl((u_long) notice->z_uid.zuid_usec);
+ 	numfields--;
+ 	next_field (ptr);
+     }
+@@ -265,10 +265,10 @@
+ 
+     if (numfields) {
+ 	if (ZReadAscii(ptr, end-ptr, (unsigned char *)&notice->z_multiuid,
+-		       sizeof(ZUnique_Id_t)) == ZERR_BADFIELD)
++		       sizeof(notice->z_multiuid)) == ZERR_BADFIELD)
+ 	    BAD_PACKET;
+-	notice->z_time.tv_sec = ntohl((u_long) notice->z_multiuid.tv.tv_sec);
+-	notice->z_time.tv_usec = ntohl((u_long) notice->z_multiuid.tv.tv_usec);
++	notice->z_time.tv_sec = ntohl((u_long) notice->z_multiuid.zuid_sec);
++	notice->z_time.tv_usec = ntohl((u_long) notice->z_multiuid.zuid_usec);
+ 	numfields--;
+ 	next_field (ptr);
+     }
+--- lib/Zinternal.c.orig	Sun Mar 11 23:20:05 2001
++++ lib/Zinternal.c	Sun Mar 11 23:46:57 2001
+@@ -585,6 +585,7 @@
+     Code_t retval;
+     static char version[BUFSIZ]; /* default init should be all \0 */
+     struct sockaddr_in name;
++    struct timeval tv;
+     int namelen = sizeof(name);
+ 
+     if (!notice->z_sender)
+@@ -604,9 +605,9 @@
+ 
+     notice->z_multinotice = "";
+     
+-    (void) gettimeofday(&notice->z_uid.tv, (struct timezone *)0);
+-    notice->z_uid.tv.tv_sec = htonl((u_long) notice->z_uid.tv.tv_sec);
+-    notice->z_uid.tv.tv_usec = htonl((u_long) notice->z_uid.tv.tv_usec);
++    (void) gettimeofday(&tv, (struct timezone *)0);
++    notice->z_uid.zuid_sec = htonl((u_long) tv.tv_sec);
++    notice->z_uid.zuid_usec = htonl((u_long) tv.tv_usec);
+     
+     (void) memcpy(&notice->z_uid.zuid_addr, &__My_addr, sizeof(__My_addr));
+ 
+@@ -684,7 +685,7 @@
+     ptr += strlen(ptr)+1;
+ 
+     if (ZMakeAscii(ptr, end-ptr, (unsigned char *)&notice->z_uid, 
+-		   sizeof(ZUnique_Id_t)) == ZERR_FIELDLEN)
++		   sizeof(notice->z_uid)) == ZERR_FIELDLEN)
+ 	return (ZERR_HEADERLEN);
+     ptr += strlen(ptr)+1;
+ 
+@@ -738,7 +739,7 @@
+ 	return (ZERR_HEADERLEN);
+ 
+     if (ZMakeAscii(ptr, end-ptr, (unsigned char *)&notice->z_multiuid, 
+-		   sizeof(ZUnique_Id_t)) == ZERR_FIELDLEN)
++		   sizeof(notice->z_multiuid)) == ZERR_FIELDLEN)
+ 	return (ZERR_HEADERLEN);
+     ptr += strlen(ptr)+1;
+ 	
+@@ -858,6 +859,7 @@
+     char multi[64];
+     int offset, hdrsize, fragsize, ret_len, message_len, waitforack;
+     Code_t retval;
++    struct timeval tv;
+     
+     hdrsize = len-notice->z_message_len;
+     fragsize = Z_MAXPKTLEN-hdrsize-Z_FRAGFUDGE;
+@@ -873,12 +875,9 @@
+ 	(void) sprintf(multi, "%d/%d", offset, notice->z_message_len);
+ 	partnotice.z_multinotice = multi;
+ 	if (offset > 0) {
+-	    (void) gettimeofday(&partnotice.z_uid.tv,
+-				(struct timezone *)0);
+-	    partnotice.z_uid.tv.tv_sec =
+-		htonl((u_long) partnotice.z_uid.tv.tv_sec);
+-	    partnotice.z_uid.tv.tv_usec =
+-		htonl((u_long) partnotice.z_uid.tv.tv_usec);
++	    (void) gettimeofday(&tv, (struct timezone *)0);
++	    partnotice.z_uid.zuid_sec = htonl((u_long) tv.tv_sec);
++	    partnotice.z_uid.zuid_usec = htonl((u_long) tv.tv_usec);
+ 	    (void) memcpy((char *)&partnotice.z_uid.zuid_addr, &__My_addr, 
+ 			  sizeof(__My_addr));
+ 	}
+--- server/dispatch.c.orig	Sun Mar 11 23:27:40 2001
++++ server/dispatch.c	Sun Mar 11 23:34:42 2001
+@@ -25,8 +25,8 @@
+ #define NACKTAB_HASHVAL(sockaddr, uid)	(((sockaddr).sin_addr.s_addr ^ \
+ 					  (sockaddr).sin_port ^ \
+ 					  (uid).zuid_addr.s_addr ^ \
+-					  (uid).tv.tv_sec ^ \
+-					  (uid).tv.tv_usec) % NACKTAB_HASHSIZE)
++					  (uid).zuid_sec ^ \
++					  (uid).zuid_usec) % NACKTAB_HASHSIZE)
+ #define HOSTS_SIZE_INIT			256
+ 
+ #ifdef DEBUG
+@@ -820,9 +820,10 @@
+ 
+     /* search the not-yet-acked table for this packet, and flush it. */
+ #if 0
+-    zdbug((LOG_DEBUG, "nack_cancel: %s:%08X,%08X",
++    zdbug((LOG_DEBUG, "nack_cancel: %s:%08lX,%08lX",
+ 	   inet_ntoa(notice->z_uid.zuid_addr),
+-	   notice->z_uid.tv.tv_sec, notice->z_uid.tv.tv_usec));
++	   (u_long) notice->z_uid.zuid_sec,
++	   (u_long) notice->z_uid.zuid_usec));
+ #endif
+     hashval = NACKTAB_HASHVAL(*who, notice->z_uid);
+     for (nacked = nacktab[hashval]; nacked; nacked = nacked->next) {
+@@ -840,9 +841,10 @@
+     }
+ 
+ #if 1
+-    zdbug((LOG_DEBUG,"nack_cancel: nack not found %s:%08X,%08X",
++    zdbug((LOG_DEBUG,"nack_cancel: nack not found %s:%08lX,%08lX",
+ 	   inet_ntoa (notice->z_uid.zuid_addr),
+-	   notice->z_uid.tv.tv_sec, notice->z_uid.tv.tv_usec));
++	   (u_long) notice->z_uid.zuid_sec,
++	   (u_long) notice->z_uid.zuid_usec));
+ #endif
+ }
+ 
+--- server/realm.c.orig	Sun Mar 11 23:35:16 2001
++++ server/realm.c	Sun Mar 11 23:40:06 2001
+@@ -240,9 +240,10 @@
+   ZPacket_t retval;
+   
+ #if 0
+-    zdbug((LOG_DEBUG, "rlm_nack_cancel: %s:%08X,%08X",
++    zdbug((LOG_DEBUG, "rlm_nack_cancel: %s:%08lX,%08lX",
+            inet_ntoa(notice->z_uid.zuid_addr),
+-           notice->z_uid.tv.tv_sec, notice->z_uid.tv.tv_usec));
++	   (u_long) notice->z_uid.zuid_sec,
++	   (u_long) notice->z_uid.zuid_usec));
+ #endif
+   if (!which) {
+     syslog(LOG_ERR, "non-realm ack?");
+@@ -266,9 +267,10 @@
+     }
+   }
+ #if 0
+-    zdbug((LOG_DEBUG,"nack_cancel: nack not found %s:%08X,%08X",
++    zdbug((LOG_DEBUG,"nack_cancel: nack not found %s:%08lX,%08lX",
+            inet_ntoa (notice->z_uid.zuid_addr),
+-           notice->z_uid.tv.tv_sec, notice->z_uid.tv.tv_usec));
++	   (u_long) notice->z_uid.zuid_sec,
++	   (u_long) notice->z_uid.zuid_usec));
+ #endif
+   return;
+ }
+@@ -743,6 +745,7 @@
+   int buffer_len, hdrlen, offset, fragsize, ret_len, message_len;
+   int origoffset, origlen;
+   Code_t retval;
++  struct timeval tv;
+   Unacked *nacked;
+   char buf[1024], multi[64];
+   CREDENTIALS cred;
+@@ -857,11 +860,9 @@
+       (void) sprintf(multi, "%d/%d", offset+origoffset, origlen);
+       partnotice.z_multinotice = multi;
+       if (offset > 0) {
+-        (void) gettimeofday(&partnotice.z_uid.tv, (struct timezone *)0);
+-        partnotice.z_uid.tv.tv_sec = htonl((u_long) 
+-                                           partnotice.z_uid.tv.tv_sec);
+-        partnotice.z_uid.tv.tv_usec = htonl((u_long) 
+-                                            partnotice.z_uid.tv.tv_usec);
++        (void) gettimeofday(&tv, (struct timezone *)0);
++	partnotice.z_uid.zuid_sec = htonl((u_long) tv.tv_sec);
++	partnotice.z_uid.zuid_usec = htonl((u_long) tv.tv_usec);
+         (void) memcpy((char *)&partnotice.z_uid.zuid_addr, &__My_addr, 
+                       sizeof(__My_addr));
+       }
+--- server/server.c.orig	Sun Mar 11 23:40:14 2001
++++ server/server.c	Sun Mar 11 23:40:44 2001
+@@ -22,7 +22,7 @@
+ 
+ #define SRV_NACKTAB_HASHSIZE		1023
+ #define SRV_NACKTAB_HASHVAL(which, uid)	(((which) ^ (uid).zuid_addr.s_addr ^ \
+-					  (uid).tv.tv_sec ^ (uid).tv.tv_usec) \
++					  (uid).zuid_sec ^ (uid).zuid_usec) \
+ 					 % SRV_NACKTAB_HASHSIZE)
+ /*
+  * Server manager.  Deal with  traffic to and from other servers.
