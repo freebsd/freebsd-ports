@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gap
-PORTVERSION=	4.4.4
+PORTVERSION=	4.4.4.20050131
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gap-system.org/pub/gap/gap4/tar.bz2/:new \
 		ftp://ftp.gap-system.org/pub/gap/gap4/old/:old
-DISTFILES=	packages-2004_12_07-12_33_UTC.tar.bz2:old \
+DISTFILES=	packages-2005_01_31-19_34_UTC.tar.bz2:new \
 		gap4r4p4.tar.bz2:new \
 		xtom1r1.tar.bz2:new
 DIST_SUBDIR=	gap
@@ -23,7 +23,7 @@ COMMENT=	GAP is a system for computational discrete algebra
 GAP_VERSION=	gap4r4
 GAP_WRKSRC=	${WRKSRC}/${GAP_VERSION}
 GAP_LIBDIR=	${PREFIX}/lib/${GAP_VERSION}
-PLIST_SUB=	GAP_LIBDIR=lib/${GAP_VERSION}
+PLIST_FILES=	bin/gap
 
 do-extract:
 	(${MKDIR} ${WRKSRC}; \
@@ -31,7 +31,7 @@ do-extract:
 	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/gap4r4p4.tar.bz2; \
 	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/xtom1r1.tar.bz2 ; \
 	cd ${GAP_WRKSRC}/pkg; \
-	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/packages-2004_12_07-12_33_UTC.tar.bz2 )
+	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/packages-2005_01_31-19_34_UTC.tar.bz2 )
 
 do-configure:
 	(cd ${GAP_WRKSRC}; ./configure)
@@ -45,8 +45,16 @@ do-install:
 	@${MKDIR} ${GAP_LIBDIR} ${GAP_LIBDIR}/bin
 	@${INSTALL_PROGRAM} ${GAP_WRKSRC}/bin/*/gap ${GAP_LIBDIR}/bin
 	@${INSTALL_SCRIPT} ${GAP_WRKSRC}/bin/*/gac ${GAP_LIBDIR}/bin
+	@${INSTALL_DATA} ${GAP_WRKSRC}/sysinfo.gap ${GAP_LIBDIR}
 .for subdir in doc etc grp lib pkg prim small trans tst
 	@${CP} -R ${GAP_WRKSRC}/${subdir} ${GAP_LIBDIR}/
 .endfor
+
+post-install:
+	@${FIND} ${GAP_LIBDIR} -type d -empty -delete
+	@${FIND} ${GAP_LIBDIR} ! -type d | \
+		${SED} 's,${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${GAP_LIBDIR} -type d -depth | \
+		${SED} 's,${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
