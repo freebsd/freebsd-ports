@@ -28,6 +28,7 @@ LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 		intl.1:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
+USE_AUTOCONF=	yes
 USE_XPM=	yes
 USE_NEWGCC=	yes
 USE_PERL5=	yes
