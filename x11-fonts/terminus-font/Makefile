@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	terminus-font
-PORTVERSION=	3.96
-PORTREVISION=	2
+PORTVERSION=	4.00
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.is-vn.bg/hamster/
 
