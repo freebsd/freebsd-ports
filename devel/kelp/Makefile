@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	kelp
-PORTVERSION=	1.3
+PORTVERSION=	1.3_1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.ucsd.edu/pub/scg/KeLP/
 DISTNAME=	KeLP1.3
