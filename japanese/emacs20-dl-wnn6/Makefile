@@ -3,7 +3,7 @@
 # Date created:		10 October 1998
 # Whom:			shige
 #
-# $Id: Makefile,v 1.3 1999/03/01 09:38:03 shige Exp $
+# $Id: Makefile,v 1.4 1999/06/15 00:31:22 shige Exp $
 #
 
 DISTNAME=	dl-wnn-0.2.2
@@ -31,7 +31,7 @@ EMACS_VER=	20.3
 EMACSDL_DIR=	${.CURDIR}/../../editors/emacs20-dl
 
 post-install:
-	@${LN} ${PREFIX}/share/emacs/site-lisp/egg/eggrc-wnn \
+	@${LN} -sf ${PREFIX}/share/emacs/site-lisp/egg/eggrc-wnn \
 		${PREFIX}/share/emacs/site-lisp/egg/.eggrc
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/${DOCDIR}
