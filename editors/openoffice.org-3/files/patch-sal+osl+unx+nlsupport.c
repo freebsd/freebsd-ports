@@ -9,7 +9,17 @@
  #include <pthread.h>
  #include <locale.h>
  #include <langinfo.h>
-@@ -241,12 +241,13 @@
+@@ -114,8 +114,7 @@
+         comparison = _pair_compare( key, base + current );
+         if (comparison < 0)
+             upper = current;
+-        else
+-        if (comparison > 0)
++        else if (comparison > 0)
+             lower = current + 1;
+         else
+             return base + current;
+@@ -241,12 +240,13 @@
      return NULL;
  }
          
@@ -25,7 +35,7 @@
   *
   * This routine is SLOW because of the setlocale call, so
   * grab the result and cache it.
-@@ -312,7 +313,30 @@
+@@ -312,7 +312,30 @@
     { "big5",		RTL_TEXTENCODING_BIG5		}, /* China - Traditional Chinese */
     { "eucgbk",		RTL_TEXTENCODING_DONTKNOW	}, /* China - Simplified Chinese */
     { "gbk",		RTL_TEXTENCODING_GBK		}, /* China - Simplified Chinese */
@@ -57,7 +67,7 @@
  };
  
  #elif defined(LINUX) || defined(NETBSD)
-@@ -496,7 +520,7 @@
+@@ -496,7 +519,7 @@
      { "WIN-SAMI-2",                 RTL_TEXTENCODING_DONTKNOW }     /* WS2 */
  };
  
@@ -66,7 +76,7 @@
  
  static pthread_mutex_t aLocalMutex = PTHREAD_MUTEX_INITIALIZER;
  
-@@ -618,7 +642,7 @@
+@@ -618,7 +641,7 @@
      return ret;
  }
  
@@ -75,7 +85,7 @@
  
  /*
   * FIXME: the MacOS X implemetation is missing
-@@ -651,7 +675,7 @@
+@@ -651,7 +674,7 @@
      return 0;
  }
  
@@ -84,7 +94,7 @@
  
  /*
   * This implementation of osl_getTextEncodingFromLocale maps 
-@@ -887,6 +911,6 @@
+@@ -887,6 +910,6 @@
      return 0;
  }
  
