@@ -1,6 +1,5 @@
-diff -NPru cmds.c.orig cmds.c
---- cmds.c.orig	Thu Jun  3 23:42:39 1999
-+++ cmds.c	Sun Jan 23 00:35:15 2000
+--- cmds.c.orig	Thu Jun  3 14:42:39 1999
++++ cmds.c	Sat Nov 30 14:55:20 2002
 @@ -6,17 +6,22 @@
   * Most simple built-in commands are here.
   */
@@ -26,14 +25,18 @@ diff -NPru cmds.c.orig cmds.c
  
  
  void
-@@ -501,19 +506,34 @@
+@@ -501,19 +506,38 @@
  	}
  }
  
 +#ifdef __FreeBSD__
 +#include <ufs/ufs/ufsmount.h>
 +#include <isofs/cd9660/cd9660_mount.h>
++#if __FreeBSD_version >= 500019
++#include <fs/msdosfs/msdosfsmount.h>
++#else
 +#include <msdosfs/msdosfsmount.h>
++#endif
 +#endif
  
  void
@@ -66,7 +69,7 @@ diff -NPru cmds.c.orig cmds.c
  	while ((argc > 0) && (**argv == '-'))
  	{
  		argc--;
-@@ -533,6 +553,7 @@
+@@ -533,6 +557,7 @@
  				argc--;
  				break;
  
@@ -74,7 +77,7 @@ diff -NPru cmds.c.orig cmds.c
  			case 'r':
  				flags |= MS_RDONLY;
  				break;
-@@ -540,6 +561,16 @@
+@@ -540,6 +565,16 @@
  			case 'm':
  				flags |= MS_REMOUNT;
  				break;
@@ -91,7 +94,7 @@ diff -NPru cmds.c.orig cmds.c
  
  			default:
  				fprintf(stderr, "Unknown option\n");
-@@ -555,15 +586,44 @@
+@@ -555,15 +590,44 @@
  		return;
  	}
  
