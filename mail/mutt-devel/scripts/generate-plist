@@ -147,6 +147,9 @@ EOF
     if [ "$MUTT_MAILDIR_HEADER_CACHE" = "yes" ]; then
       html=$(($html + 3))
     fi
+    if [ "$MUTT_SIDEBAR_PATCH" = "yes" ]; then
+      html=$(($html + 2))
+    fi
     if [ "$MUTT_SIGNATURE_MENU" = "yes" ]; then
       html=$(($html + 1))
     fi
