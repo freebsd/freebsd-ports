@@ -6,18 +6,15 @@
 #
 
 PORTNAME=		sectar
-PORTVERSION=		1.01
+PORTVERSION=		1.02
 CATEGORIES=		archivers
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	star
 
 MAINTAINER=		greid@ukug.uk.freebsd.org
-COMMENT=	A program to create encrypted tar archives
+COMMENT=		A program to create encrypted tar archives
 
-LIB_DEPENDS=		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
-CONFIGURE_ENV=		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			LIBS="-L${LOCALBASE}/lib -lgnugetopt"
+USE_GETOPT_LONG=	yes
 USE_LIBTOOL=		yes
 
 .include <bsd.port.mk>
