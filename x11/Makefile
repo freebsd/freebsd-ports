@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.236 1998/10/28 15:58:30 vanilla Exp $
+# $Id: Makefile,v 1.237 1998/11/08 15:11:58 kuriyama Exp $
 #
 
     SUBDIR += XFree86
@@ -56,7 +56,6 @@
     SUBDIR += xcoloredit
     SUBDIR += xcolors
     SUBDIR += xdtm
-    SUBDIR += xfce
     SUBDIR += xfedor
     SUBDIR += xfishtank
     SUBDIR += xgrab
