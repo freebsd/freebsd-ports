@@ -7,7 +7,7 @@
 
 PORTNAME=	otojiro-fpw
 PORTVERSION=	1.0.a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/eijiro/ \
 		http://member.nifty.ne.jp/~satomii/freepwing/archive/
@@ -29,8 +29,10 @@ SRCFILE?=	otojiro.txt
 
 # For eijiro included in a book sold by ALC Inc.
 # (http://www.alc.co.jp/alcshop/eng/eijiro/)
-.if exists(${DICT_PATH}/eijiro-original)
-BUILD_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
+.include <bsd.port.pre.mk>
+DICT_ARCHIVE!=	${ECHO_CMD} ${DICT_PATH}/eijiro-original/*.exe || ${TRUE}
+.if exists(${DICT_ARCHIVE})
+EXTRACT_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
 
 CDROM_PATH:=	${DICT_PATH}
 DICT_PATH:=	${WRKDIR}
@@ -76,4 +78,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
