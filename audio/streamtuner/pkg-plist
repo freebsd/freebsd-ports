@@ -1,10 +1,13 @@
 bin/streamtuner
 bin/streamtuner-theme-convert
+include/streamtuner/st-action-api.h
 include/streamtuner/st-category-api.h
 include/streamtuner/st-dialog-api.h
 include/streamtuner/st-handler-api.h
 include/streamtuner/st-handler-field-api.h
 include/streamtuner/st-handlers-api.h
+include/streamtuner/st-m3u-api.h
+include/streamtuner/st-pls-api.h
 include/streamtuner/st-programs-api.h
 include/streamtuner/st-re-api.h
 include/streamtuner/st-settings-api.h
