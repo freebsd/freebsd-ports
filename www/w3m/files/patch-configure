@@ -1,57 +1,45 @@
---- configure.orig	Thu Sep 27 21:30:08 2001
-+++ configure	Sun Oct  7 14:33:20 2001
-@@ -33,7 +33,9 @@
- 
- # parameters:
- 
--prefix=/usr/local
-+if [ -z "$prefix" ]; then
-+  prefix=/usr/local
-+fi
- all_yes=0
- while [ $# -gt 0 ]
- do
-@@ -332,6 +334,9 @@
- readdir "$def_helpdir"
+--- configure.orig	Fri Dec 21 11:11:50 2001
++++ configure	Sun Jan  6 15:25:08 2002
+@@ -64,6 +64,9 @@
+   -helpdir=*|--helpdir=*)
+     helpdir=`expr "$1" : "-*helpdir=\(.*\)"`
+     ;;
++  -helpdir-ja=*|--helpdir-ja=*)
++    helpdir_ja=`expr "$1" : "-*helpdir-ja=\(.*\)"`
++    ;;
+   -sysconfdir=*|--sysconfdir=*)
+     sysconfdir=`expr "$1" : "-*sysconfdir=\(.*\)"`
+     ;;
+@@ -513,6 +516,16 @@
  helpdir=$_dir
- echo "def_helpdir='$helpdir'" >> config.param
-+readdir "$def_helpdir_ja"
+ echo "helpdir='$helpdir'" >> config.param
+ 
++d_helpdir_ja=$helpdir_ja
++if [ -z "$d_helpdir_ja" ]; then
++  d_helpdir_ja="$topdir/share/w3m"
++fi
++echo "Which directory do you want to put the Japanese helpfile?"
++Echo "(default: $d_helpdir_ja) "
++readdir "$d_helpdir_ja"
 +helpdir_ja=$_dir
-+echo "def_helpdir_ja='$helpdir_ja'" >> config.param
- 
- echo "Which language do you prefer?"
- echo "  1 - Japanese (charset ISO-2022-JP, EUC-JP, Shift_JIS)"
-@@ -1686,7 +1691,7 @@
-    VIEW_UNSEENOBJECTS enables w3m to make a link to unseen objects.
-    e.g. background image.
-  */
--#undef VIEW_UNSEENOBJECTS
-+#define VIEW_UNSEENOBJECTS
- 
- /*
-    VI_PREC_NUM enables vi-like behavior for '2 SPC' or '2 b'
-@@ -1731,7 +1736,7 @@
- /*
-  * Use Emacs-like key binding for file name completion
-  */
--#undef EMACS_LIKE_LINEEDIT
-+#define EMACS_LIKE_LINEEDIT
- 
- /*
-  * Remove line trailing spaces in html buffer.
-@@ -1753,6 +1758,7 @@
++echo "helpdir_ja='$helpdir_ja'" >> config.param
++
+ d_sysconfdir=$sysconfdir
+ if [ -z "$d_sysconfdir" ]; then
+   d_sysconfdir="$topdir/etc/w3m"
+@@ -1948,6 +1961,7 @@
  
  BIN_DIR = $bindir
  HELP_DIR = $helpdir
 +HELP_DIR_JA = $helpdir_ja
- LIB_DIR = $suplibdir
+ LIB_DIR = $libdir
+ ETC_DIR = $sysconfdir
  HELP_FILE = $helpfile
- SYS_LIBRARIES = $gpmlib $extlib $termlib $ssllib $v6lib
-@@ -1801,6 +1807,7 @@
+@@ -2007,6 +2021,7 @@
  
- #define LIB_DIR      "$suplibdir"
+ #define LIB_DIR      "$libdir"
  #define HELP_DIR     "$helpdir"
 +#define HELP_DIR_JA  "$helpdir_ja"
+ #define ETC_DIR	     "$sysconfdir"
  #define HELP_FILE    "w3mhelp.html"
- #define W3MCONFIG    "w3mconfig"
- 
+ #define HELP_CGI     "w3mhelp"

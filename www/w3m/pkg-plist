@@ -1,7 +1,11 @@
 bin/w3m
+bin/w3mman
 libexec/w3m/dirlist.cgi
-%%NO_M17N%%libexec/w3m/inflate
+libexec/w3m/inflate
+libexec/w3m/multipart.cgi
 libexec/w3m/w3mbookmark
+libexec/w3m/w3mhelp.cgi
+libexec/w3m/w3mman2html.cgi
 libexec/w3m/w3mhelperpanel
 %%INLINE_IMAGE_ONLY%%libexec/w3m/w3mimgdisplay
 %%INLINE_IMAGE_ONLY%%libexec/w3m/w3mimgsize
@@ -22,8 +26,6 @@ libexec/w3m/w3mhelperpanel
 %%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/keymap.lynx
 %%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/menu.default
 %%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/menu.submenu
-share/doc/ja/w3m/w3mhelp-lynx_ja.html
-share/doc/ja/w3m/w3mhelp-w3m_ja.html
 %%PORTDOCS%%share/doc/w3m/FAQ.html
 %%PORTDOCS%%share/doc/w3m/HISTORY
 %%PORTDOCS%%share/doc/w3m/MANUAL.html
@@ -37,9 +39,9 @@ share/doc/ja/w3m/w3mhelp-w3m_ja.html
 %%PORTDOCS%%share/doc/w3m/keymap.lynx
 %%PORTDOCS%%share/doc/w3m/menu.default
 %%PORTDOCS%%share/doc/w3m/menu.submenu
-share/doc/w3m/w3mhelp-lynx_en.html
-share/doc/w3m/w3mhelp-w3m_en.html
 share/doc/w3m/w3mhelp.html
+share/doc/w3m/w3mhelp-funcdesc.en.pl
+share/doc/w3m/w3mhelp-funcdesc.ja.pl
+share/doc/w3m/w3mhelp-funcname.pl
 @dirrm libexec/w3m
-@dirrm share/doc/ja/w3m
 @dirrm share/doc/w3m

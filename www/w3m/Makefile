@@ -16,16 +16,21 @@ MAINTAINER?=	nobutaka@FreeBSD.org
 
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
-W3M_VERSION=	0.2.2
-IMG_VERSION=	1.14
-M17N_VERSION=	0.19
-M17N_BASE_W3M_VERSION=	0.2.1
+W3M_VERSION=	0.2.3.2
+IMG_VERSION=	1.17
+M17N_VERSION=	20011230
+M17N_BASE_W3M_VERSION=	0.2.3.2
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	-nonstop
+CONFIGURE_ARGS=	-nonstop --prefix=${PREFIX} \
+			--libdir=${PREFIX}/libexec/w3m \
+			--helpdir=${PREFIX}/share/doc/w3m \
+			--helpdir-ja=${PREFIX}/share/doc/ja/w3m \
+			--gc-includedir=${LOCALBASE}/include \
+			--gc-libdir=${LOCALBASE}/lib
 HOSTNAME!=	/bin/hostname
 SCRIPTS_ENV=	HOSTNAME=${HOSTNAME} WRKSRC=${WRKSRC} PREFIX=${PREFIX} \
-		LOCALBASE=${LOCALBASE} JAPANESE=${JAPANESE} \
+		CC=${CC} LOCALBASE=${LOCALBASE} JAPANESE=${JAPANESE} \
 		USE_OPENSSL="${USE_OPENSSL}" SSL_CFLAGS="${SSL_CFLAGS}" \
 		SSL_LIBS="${SSL_LIBS}" EXTRA_SSL_LIBS="${EXTRA_SSL_LIBS}" \
 		INLINE_IMAGE=${INLINE_IMAGE} M17N=${M17N}
@@ -49,20 +54,15 @@ USE_OPENSSL=	yes
 PORTVERSION:=	${M17N_BASE_W3M_VERSION}+${M17N_VERSION}
 
 MASTER_SITES=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
-DISTNAME=	${PORTNAME}-m17n-${M17N_VERSION}
+DISTNAME=	${PORTNAME}-${M17N_BASE_W3M_VERSION}-m17n-${M17N_VERSION}
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-configure.m17n
+CONFIGURE_ARGS+=	--suffix=""
 
-PATCH_SITES=	http://www.nobutaka.com/FreeBSD/ports/20011009/
-PATCHFILES=	${PORTNAME}-m17n-${M17N_VERSION}-security-fix.diff
-PATCH_DIST_STRIP=	-p0 -F3
-
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-XMakefile.m17n \
-			${PATCHDIR}/extra-patch-terms.c.m17n
 PLIST_SUB+=	M17N_ONLY="" NO_M17N="@comment "
 
 # Disable inline image support for w3m-m17n.
 .undef INLINE_IMAGE
 .else
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-XMakefile
 PLIST_SUB+=	M17N_ONLY="@comment " NO_M17N=""
 .endif
 
@@ -89,7 +89,7 @@ MAKE_FLAGS+=	DEFS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 .if defined(INLINE_IMAGE)
 PORTVERSION:=	${PORTVERSION}+${IMG_VERSION}
 PATCH_SITES=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
-PATCHFILES=	${PORTNAME}-${W3M_VERSION}-img-${IMG_VERSION}.patch
+PATCHFILES=	${PORTNAME}-${W3M_VERSION}-img-${IMG_VERSION}.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 USE_IMLIB=	yes
