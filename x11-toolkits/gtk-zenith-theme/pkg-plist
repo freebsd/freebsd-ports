@@ -1,0 +1,6 @@
+lib/gtk/themes/engines/libzenith.so
+share/themes/Zenith/ICON.png
+share/themes/Zenith/README.html
+share/themes/Zenith/gtk/gtkrc
+@dirrm share/themes/Zenith/gtk
+@dirrm share/themes/Zenith
