@@ -1,0 +1,27 @@
+--- src/lib/fte/doplot.c.orig	Fri Mar 22 21:02:55 2002
++++ src/lib/fte/doplot.c	Fri Mar 22 22:14:07 2002
+@@ -147,10 +147,23 @@
+ 	      DevSwitch(NULL);
+ 	      return;
+ 	    }
++	    /*
++	     * Since the hardcopy output routines rely on currentgraph
++	     * being set, we need to set it to our tempgraph.  Note
++	     * that DevSwitch(NULL) causes the Close() function of the
++	     * hardcopy device to be called which will in turn
++	     * finalize the output, thus still needs a valid
++	     * currentgraph.  For that reason, we may only pop the
++	     * context after calling it, and likewise we should not
++	     * destroy the tempgraph until the hardcopy device has
++	     * been closed.
++	     */
++	    PushGraphContext(tempgraph);
+ 	    gr_resize(tempgraph);
+ 	    gr_redraw(tempgraph);
+-	    DestroyGraph(tempgraph->graphid);
+ 	    DevSwitch(NULL);
++	    PopGraphContext();
++	    DestroyGraph(tempgraph->graphid);
+ 	    foundit = 1;
+ 	}
+     }
