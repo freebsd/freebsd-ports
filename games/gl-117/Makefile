@@ -17,6 +17,8 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	erik@smluc.org
 COMMENT=	An OpenGL & SDL action flight simulator
 
+LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+
 WRKSRC=		${WRKDIR}/${DISTNAME}-src
 USE_SDL=	mixer sdl
 USE_GL=		yes
