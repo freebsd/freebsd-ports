@@ -2740,6 +2740,7 @@ gscmxx		ports/comms/gscmxx
 gscommander	ports/shells/gscommander
 gsculpt		ports/graphics/gsculpt
 gsed		ports/textproc/gsed
+gseen.mod	ports/irc/gseen.mod
 gsfonts		ports/print/gsfonts
 gsfv		ports/security/gsfv
 gshisen		ports/games/gshisen
