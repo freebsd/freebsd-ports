@@ -1,5 +1,5 @@
---- config.h.in.orig	Thu Jan 10 11:06:01 2002
-+++ config.h.in	Thu Jan 10 11:06:18 2002
+--- config.h.in.orig	Mon May 20 23:48:55 2002
++++ config.h.in	Mon May 20 23:49:11 2002
 @@ -6,6 +6,7 @@
  #undef HAVE_CATGETS
  #undef HAVE_GETTEXT

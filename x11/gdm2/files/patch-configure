@@ -1,12 +1,18 @@
-
-$FreeBSD$
-
---- configure	2002/03/13 23:11:57	1.3
-+++ configure	2002/03/13 23:16:32
-@@ -8575,6 +8575,52 @@
+--- configure.orig	Mon May 20 23:47:49 2002
++++ configure	Mon May 20 23:47:42 2002
+@@ -7371,6 +7371,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -10963,6 +10964,53 @@
+ 		 GDMOPEN=gdmopen
  fi
- 
- 
+ done
++
 +for ac_hdr in sys/types.h login_cap.h
 +do
 +ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
@@ -41,9 +47,9 @@ $FreeBSD$
 +  cat >> confdefs.h <<EOF
 +#define $ac_tr_hdr 1
 +EOF
-+ 
-+		 LIBS="$LIBS -lutil"
-+		 cat >> confdefs.h <<\EOF
++
++                LIBS="$LIBS -lutil"
++                cat >> confdefs.h <<\EOF
 +#define HAVE_LOGINCAP 1
 +EOF
 +
@@ -53,6 +59,6 @@ $FreeBSD$
 +done
 +
 +
- if test x$enable_authentication_scheme = xpam -a x$have_pam = xno ; then
- 	{ echo "configure: error: PAM support requested but not available" 1>&2; exit 1; }
- fi
+ 
+ have_pam=no
+ VRFY="verify-crypt"

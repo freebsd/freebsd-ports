@@ -1,23 +1,22 @@
-
-$FreeBSD$
-
---- config/locale.alias.orig	Thu Dec 20 11:40:42 2001
-+++ config/locale.alias	Thu Dec 20 11:40:47 2001
-@@ -29,39 +29,38 @@
- catalan		ca_ES.ISO-8859-1
+--- config/locale.alias.orig	Wed May  1 13:01:47 2002
++++ config/locale.alias	Tue May 21 00:01:09 2002
+@@ -26,42 +26,41 @@
+ # it with the rest of us.  Send it using the `glibcbug' script to
+ # bugs@gnu.org.
+ 
+-catalan		ca_ES.ISO-8859-1
++catalan		ca_ES.ISO_8859-1
  chinese(simplified)	zh_CN.GB2312
- chinese(traditional)	zh_TW
+ chinese(traditional)	zh_TW.Big5
 -croatian	hr_HR.ISO-8859-2
 -czech		cs_CZ.ISO-8859-2
-+croatian	hr_HR.ISO_8859-2
-+czech		cs_CZ.ISO_8859-2
- danish          da_DK.ISO-8859-1
+-danish          da_DK.ISO-8859-1
 -dansk		da_DK.ISO-8859-1
 -deutsch		de_DE.ISO-8859-1
 -dutch		nl_NL.ISO-8859-1
--english		en.ISO-8859-1
 -english.us	en_US.ISO-8859-1
 -english.gb	en_GB.ISO-8859-1
+-estonian	et_EE.ISO-8859-15
 -finnish         fi_FI.ISO-8859-1
 -french		fr_FR.ISO-8859-1
 -galician	gl_ES.ISO-8859-1
@@ -38,12 +37,15 @@ $FreeBSD$
 -portuguese      pt_PT.ISO-8859-1
 -portuguese.br	pt_BR.ISO-8859-1
 -romanian        ro_RO.ISO-8859-2
++croatian	hr_HR.ISO_8859-2
++czech		cs_CZ.ISO_8859-2
++danish          da_DK.ISO_8859-1
 +dansk		da_DK.ISO_8859-1
 +deutsch		de_DE.ISO_8859-1
 +dutch		nl_NL.ISO_8859-1
-+english		en_US.ISO_8859-1
 +english.us	en_US.ISO_8859-1
 +english.gb	en_GB.ISO_8859-1
++estonian	et_EE.ISO_8859-15
 +finnish         fi_FI.ISO_8859-1
 +french		fr_FR.ISO_8859-1
 +galician	gl_ES.ISO_8859-1
