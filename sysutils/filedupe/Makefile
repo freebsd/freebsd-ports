@@ -7,6 +7,7 @@
 
 PORTNAME=	filedupe
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sammy.net/~sammy/hacks/
 
