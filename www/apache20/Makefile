@@ -115,9 +115,9 @@ CONFIGURE_ENV+=		LTFLAGS="--tag=CXX"
 PLIST_SUB+=	PORTS_APR="@comment "
 .else
 .   if exists(${LOCALBASE}/lib/libapr-0.so)
-IGNORE=				"apr is installed and may conflict with apache one\
-					\(if you want to use apr port define WITH_APR_FROM_PORTS,\
-					at your own risk\)"
+IGNORE=			apr is installed and may conflict with apache one\
+				(if you want to use apr port define WITH_APR_FROM_PORTS,\
+				at your own risk)
 .   endif
 PLIST_SUB+=	PORTS_APR=""
 .endif
