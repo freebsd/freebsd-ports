@@ -1,14 +1,8 @@
---- ./src/cgi.c~	2005-02-08 00:08:01.000000000 +0200
-+++ ./src/cgi.c	2005-02-08 00:13:02.000000000 +0200
-@@ -686,16 +686,18 @@
+--- src/mod_cgi.c	(revision 34)
++++ src/mod_cgi.c	(revision 35)
+@@ -690,12 +690,14 @@
  	
- 	int to_cgi_fds[2];
- 	int from_cgi_fds[2];
--	struct stat st;
--	
-+
  #ifndef __WIN32	
-+	struct stat st;
  	
 -	/* stat the exec file */
 -	if (-1 == (stat(cgi_handler->ptr, &st))) {
