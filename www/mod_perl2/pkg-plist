@@ -3,13 +3,20 @@ bin/mp2doc
 include/apache2/modules/perl/mod_perl.h
 include/apache2/modules/perl/modperl_apache_compat.h
 include/apache2/modules/perl/modperl_apache_includes.h
+include/apache2/modules/perl/modperl_apr_includes.h
 include/apache2/modules/perl/modperl_bucket.h
 include/apache2/modules/perl/modperl_callback.h
 include/apache2/modules/perl/modperl_cgi.h
 include/apache2/modules/perl/modperl_cmd.h
+include/apache2/modules/perl/modperl_common_debug.h
+include/apache2/modules/perl/modperl_common_includes.h
+include/apache2/modules/perl/modperl_common_log.h
+include/apache2/modules/perl/modperl_common_types.h
+include/apache2/modules/perl/modperl_common_util.h
 include/apache2/modules/perl/modperl_config.h
 include/apache2/modules/perl/modperl_const.h
 include/apache2/modules/perl/modperl_constants.h
+include/apache2/modules/perl/modperl_debug.h
 include/apache2/modules/perl/modperl_directives.h
 include/apache2/modules/perl/modperl_env.h
 include/apache2/modules/perl/modperl_error.h
@@ -52,6 +59,7 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestConfigPerl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestHandler.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestHarness.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestMB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestMM.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestPerlDB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestReport.pm
@@ -71,11 +79,12 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Base64.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Brigade.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Bucket.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/BucketType.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Const.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Date.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Error.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Finfo.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/NetLib.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/IpSubnet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/OS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/PerlIO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Pool.pm
@@ -83,6 +92,7 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Socket.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/String.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Table.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/ThreadMutex.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/URI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/UUID.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Util.pm
@@ -110,7 +120,7 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/RequestRec.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/RequestUtil.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Response.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Server.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/ServerRec.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/ServerUtil.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/SourceTables.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Status.pm
@@ -153,6 +163,8 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Brigade/Brigade.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Bucket/Bucket.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Bucket/Bucket.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/BucketType/BucketType.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/BucketType/BucketType.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Const/Const.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Const/Const.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Date/Date.bs
@@ -161,8 +173,8 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Error/Error.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Finfo/Finfo.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Finfo/Finfo.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/NetLib/NetLib.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/NetLib/NetLib.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/IpSubnet/IpSubnet.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/IpSubnet/IpSubnet.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/OS/OS.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/OS/OS.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/PerlIO/PerlIO.bs
@@ -218,8 +230,8 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/RequestUtil/RequestUtil.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/Response/Response.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/Response/Response.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/Server/Server.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/Server/Server.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/ServerRec/ServerRec.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/ServerRec/ServerRec.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/ServerUtil/ServerUtil.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/ServerUtil/ServerUtil.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/SubProcess/SubProcess.bs
@@ -237,14 +249,16 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Global/Global.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Util/Util.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Util/Util.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/libaprext/libaprext.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/libaprext/libaprext.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/mod_perl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Bundle/Apache2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Bundle/ApacheTest.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/mod_perl/.packlist
 libexec/apache2/mod_perl.so
-@unexec rmdir %D/libexec/apache2 2>/dev/null || true
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/mod_perl
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Bundle 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/libaprext
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Util
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Global
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Const
@@ -254,7 +268,7 @@ libexec/apache2/mod_perl.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/SubRequest
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/SubProcess
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/ServerUtil
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/Server
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/ServerRec
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/Response
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/RequestUtil
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/Apache/RequestRec
@@ -284,11 +298,12 @@ libexec/apache2/mod_perl.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Pool
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/PerlIO
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/OS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/NetLib
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/IpSubnet
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Finfo
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Error
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Date
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Const
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/BucketType
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Bucket
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Brigade
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Base64
