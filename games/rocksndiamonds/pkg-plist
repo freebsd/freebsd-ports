@@ -1114,7 +1114,6 @@ share/rocksndiamonds/levels/Boulderdash/bd_xbd/031.level
 share/rocksndiamonds/levels/Boulderdash/bd_xbd/037.level
 share/rocksndiamonds/levels/Boulderdash/bd_xbd/030.level
 share/rocksndiamonds/levels/Boulderdash/levelinfo.conf
-share/rocksndiamonds/sounds/alchemy.wav
 share/rocksndiamonds/sounds/amoebe.wav
 share/rocksndiamonds/sounds/antigrav.wav
 share/rocksndiamonds/sounds/autsch.wav
@@ -1125,8 +1124,6 @@ share/rocksndiamonds/sounds/boom.wav
 share/rocksndiamonds/sounds/booom.wav
 share/rocksndiamonds/sounds/bug.wav
 share/rocksndiamonds/sounds/buing.wav
-share/rocksndiamonds/sounds/chase.wav
-share/rocksndiamonds/sounds/czardasz.wav
 share/rocksndiamonds/sounds/deng.wav
 share/rocksndiamonds/sounds/empty.wav
 share/rocksndiamonds/sounds/exit.wav
@@ -1149,7 +1146,6 @@ share/rocksndiamonds/sounds/krach.wav
 share/rocksndiamonds/sounds/lachen.wav
 share/rocksndiamonds/sounds/laser.wav
 share/rocksndiamonds/sounds/miep.wav
-share/rocksndiamonds/sounds/network.wav
 share/rocksndiamonds/sounds/njam.wav
 share/rocksndiamonds/sounds/oeffnen.wav
 share/rocksndiamonds/sounds/pling.wav
@@ -1168,9 +1164,6 @@ share/rocksndiamonds/sounds/schwirr.wav
 share/rocksndiamonds/sounds/sirr.wav
 share/rocksndiamonds/sounds/slurp.wav
 share/rocksndiamonds/sounds/sproing.wav
-share/rocksndiamonds/sounds/twilight.wav
-share/rocksndiamonds/sounds/tyger.wav
-share/rocksndiamonds/sounds/voyager.wav
 share/rocksndiamonds/sounds/warnton.wav
 share/rocksndiamonds/sounds/whoosh.wav
 share/rocksndiamonds/sounds/zisch.wav
