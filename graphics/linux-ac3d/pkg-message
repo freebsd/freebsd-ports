@@ -1,7 +1,4 @@
 *******************************************************************************
-Now you can start program by running /usr/local/bin/ac3d.sh
-
-TIP: Fonts were installed in /usr/local/share/ac3d
-To use them, you can change variable <fontpath> in ~/.ac3dprefs after first run
-There is also some examples, installed in /usr/local/share/examples/ac3d
+Now you can start program by running %%PREFIX%%/bin/%%PORTNAME%%.sh
+There are also some sample models installed in %%EXAMPLESDIR%%
 *******************************************************************************

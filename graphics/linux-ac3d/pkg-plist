@@ -1,63 +1,91 @@
 bin/ac3d.sh
 %%DYNAMIC_VERSION%%bin/real-ac3d
 %%STATIC_VERSION%%bin/real-ac3ds
-share/ac3d/font.ac
-share/ac3d/fontwire.ac
-share/ac3d/lib/tcl8.3/auto.tcl
-share/ac3d/lib/tcl8.3/history.tcl
-share/ac3d/lib/tcl8.3/init.tcl
-share/ac3d/lib/tcl8.3/ldAout.tcl
-share/ac3d/lib/tcl8.3/license.terms
-share/ac3d/lib/tcl8.3/package.tcl
-share/ac3d/lib/tcl8.3/parray.tcl
-share/ac3d/lib/tcl8.3/safe.tcl
-share/ac3d/lib/tcl8.3/tclIndex
-share/ac3d/lib/tcl8.3/word.tcl
-share/ac3d/lib/tk8.3/bgerror.tcl
-share/ac3d/lib/tk8.3/button.tcl
-share/ac3d/lib/tk8.3/choosedir.tcl
-share/ac3d/lib/tk8.3/clrpick.tcl
-share/ac3d/lib/tk8.3/comdlg.tcl
-share/ac3d/lib/tk8.3/console.tcl
-share/ac3d/lib/tk8.3/dialog.tcl
-share/ac3d/lib/tk8.3/entry.tcl
-share/ac3d/lib/tk8.3/focus.tcl
-share/ac3d/lib/tk8.3/license.terms
-share/ac3d/lib/tk8.3/listbox.tcl
-share/ac3d/lib/tk8.3/menu.tcl
-share/ac3d/lib/tk8.3/msgbox.tcl
-share/ac3d/lib/tk8.3/obsolete.tcl
-share/ac3d/lib/tk8.3/optMenu.tcl
-share/ac3d/lib/tk8.3/palette.tcl
-share/ac3d/lib/tk8.3/safetk.tcl
-share/ac3d/lib/tk8.3/scale.tcl
-share/ac3d/lib/tk8.3/scrlbar.tcl
-share/ac3d/lib/tk8.3/tclIndex
-share/ac3d/lib/tk8.3/tearoff.tcl
-share/ac3d/lib/tk8.3/text.tcl
-share/ac3d/lib/tk8.3/tk.tcl
-share/ac3d/lib/tk8.3/tkfbox.tcl
-share/ac3d/lib/tk8.3/xmfbox.tcl
+share/ac3d/lib/tcl8.4/auto.tcl
+share/ac3d/lib/tcl8.4/history.tcl
+share/ac3d/lib/tcl8.4/init.tcl
+share/ac3d/lib/tcl8.4/ldAout.tcl
+share/ac3d/lib/tcl8.4/package.tcl
+share/ac3d/lib/tcl8.4/parray.tcl
+share/ac3d/lib/tcl8.4/safe.tcl
+share/ac3d/lib/tcl8.4/tclIndex
+share/ac3d/lib/tcl8.4/word.tcl
+share/ac3d/lib/tk8.4/bgerror.tcl
+share/ac3d/lib/tk8.4/button.tcl
+share/ac3d/lib/tk8.4/choosedir.tcl
+share/ac3d/lib/tk8.4/clrpick.tcl
+share/ac3d/lib/tk8.4/comdlg.tcl
+share/ac3d/lib/tk8.4/console.tcl
+share/ac3d/lib/tk8.4/dialog.tcl
+share/ac3d/lib/tk8.4/entry.tcl
+share/ac3d/lib/tk8.4/focus.tcl
+share/ac3d/lib/tk8.4/listbox.tcl
+share/ac3d/lib/tk8.4/menu.tcl
+share/ac3d/lib/tk8.4/mkpsenc.tcl
+share/ac3d/lib/tk8.4/msgbox.tcl
+share/ac3d/lib/tk8.4/obsolete.tcl
+share/ac3d/lib/tk8.4/optMenu.tcl
+share/ac3d/lib/tk8.4/palette.tcl
+share/ac3d/lib/tk8.4/panedwindow.tcl
+share/ac3d/lib/tk8.4/pkgIndex.tcl
+share/ac3d/lib/tk8.4/safetk.tcl
+share/ac3d/lib/tk8.4/scale.tcl
+share/ac3d/lib/tk8.4/scrlbar.tcl
+share/ac3d/lib/tk8.4/spinbox.tcl
+share/ac3d/lib/tk8.4/tclIndex
+share/ac3d/lib/tk8.4/tearoff.tcl
+share/ac3d/lib/tk8.4/text.tcl
+share/ac3d/lib/tk8.4/tk.tcl
+share/ac3d/lib/tk8.4/tkfbox.tcl
+share/ac3d/lib/tk8.4/unsupported.tcl
+share/ac3d/lib/tk8.4/xmfbox.tcl
+@dirrm share/ac3d/lib/tk8.4
+@dirrm share/ac3d/lib/tcl8.4
+@dirrm share/ac3d/lib
 share/ac3d/tcl/ac3d.tcl
 share/ac3d/tcl/ac3dfsbox.tcl
 share/ac3d/tcl/ac3dhier.tcl
+share/ac3d/tcl/ac3dkeys.tcl
+share/ac3d/tcl/ac3dobject.tcl
+share/ac3d/tcl/ac3dobjlib.tcl
 share/ac3d/tcl/ac3dops.tcl
 share/ac3d/tcl/ac3dpalette.tcl
 share/ac3d/tcl/ac3dplugins.tcl
 share/ac3d/tcl/ac3dprefs.tcl
+share/ac3d/tcl/ac3drender.tcl
 share/ac3d/tcl/ac3dtips.tcl
+share/ac3d/tcl/ac3dttfont.tcl
+share/ac3d/tcl/ac3dutil.tcl
 share/ac3d/tcl/ac3duvedit.tcl
 share/ac3d/tcl/ac3dview.tcl
-%%PORTDOCS%%share/doc/ac3d/IMPORTANT
-%%PORTDOCS%%share/doc/ac3d/LICENCE
-%%PORTDOCS%%share/doc/ac3d/README
-%%PORTDOCS%%share/examples/ac3d/tie3.ac
-%%PORTDOCS%%share/examples/ac3d/tree.ac
-%%PORTDOCS%%share/examples/ac3d/tree_transparent.gif
-%%PORTDOCS%%@dirrm share/examples/ac3d
-%%PORTDOCS%%@dirrm share/doc/ac3d
+share/ac3d/tcl/combobox.tcl
 @dirrm share/ac3d/tcl
-@dirrm share/ac3d/lib/tk8.3
-@dirrm share/ac3d/lib/tcl8.3
-@dirrm share/ac3d/lib
 @dirrm share/ac3d
+%%PORTDOCS%%%%DOCSDIR%%/IMPORTANT
+%%PORTDOCS%%%%DOCSDIR%%/LICENCE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/Penguin_beak.rgb
+%%EXAMPLESDIR%%/Penguin_body.rgb
+%%EXAMPLESDIR%%/amp.ac
+%%EXAMPLESDIR%%/car.ac
+%%EXAMPLESDIR%%/celtic12.ac
+%%EXAMPLESDIR%%/diningtable.ac
+%%EXAMPLESDIR%%/enterprise.ac
+%%EXAMPLESDIR%%/falcon.ac
+%%EXAMPLESDIR%%/glider.ac
+%%EXAMPLESDIR%%/gym2.ac
+%%EXAMPLESDIR%%/head.ac
+%%EXAMPLESDIR%%/mydesk4.ac
+%%EXAMPLESDIR%%/racecar.ac
+%%EXAMPLESDIR%%/rocket.ac
+%%EXAMPLESDIR%%/rose.ac
+%%EXAMPLESDIR%%/subdivided hand.ac
+%%EXAMPLESDIR%%/sword.ac
+%%EXAMPLESDIR%%/tie3.ac
+%%EXAMPLESDIR%%/tree.ac
+%%EXAMPLESDIR%%/tree_transparent.gif
+%%EXAMPLESDIR%%/tuxedo.ac
+%%EXAMPLESDIR%%/world.ac
+%%EXAMPLESDIR%%/world.rgb
+@dirrm %%EXAMPLESDIR%%
