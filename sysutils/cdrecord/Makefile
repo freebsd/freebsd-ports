@@ -3,7 +3,7 @@
 # Date created:         2 November 1997
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.3 1998/03/16 02:38:21 steve Exp $
+# $Id: Makefile,v 1.4 1998/03/16 07:45:59 steve Exp $
 #
 
 DISTNAME=	cdrecord-1.6a12
@@ -27,6 +27,6 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cdrecord/OBJ/i386-freebsd-cc/cdrecord \
 	 ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 ${PREFIX}/man/man1
-	@cd /dev && ln -sf /dev/rworm0.ctl sgx
+	@cd /dev && ln -sf /dev/rworm0.ctl scgx
 
 .include <bsd.port.mk>
