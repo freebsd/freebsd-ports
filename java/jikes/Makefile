@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jikes
-PORTVERSION=	1.19
-PORTREVISION=	1
+PORTVERSION=	1.20
 CATEGORIES=	java
 MASTER_SITES=	ftp://www-126.ibm.com/pub/jikes/${PORTVERSION}/
 
