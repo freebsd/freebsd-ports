@@ -107,6 +107,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/uri.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/weakref.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/cgi/session.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/date/format.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/dl/import.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/dl/struct.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/dl/types.rb
@@ -160,6 +161,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 @unexec rmdir %D/lib/ruby/site_ruby 2>/dev/null || true
 @dirrm %%RUBY_ARCHLIBDIR%%
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/cgi
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/date
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/dl
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/lc/ja
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/lc
