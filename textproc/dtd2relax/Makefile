@@ -23,14 +23,19 @@ NO_BUILD=	yes
 NO_BUILD_DEPENDS_JAVA=	yes
 
 JARFILE=	${DISTNAME}-bin-XML4J.jar
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 do-install:
 	${INSTALL_DATA} ${DISTDIR}/${JARFILE} ${JAVAJARDIR}/${PORTNAME}.jar
 
+.if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/* ${EXAMPLESDIR}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
