@@ -11935,7 +11935,6 @@ zope-cmfforum	ports/www/zope-cmfforum
 zope-cmfphoto	ports/www/zope-cmfphoto
 zope-cmfphotoalbum	ports/www/zope-cmfphotoalbum
 zope-cmfquickinstaller	ports/www/zope-cmfquickinstaller
-zope-cmftransforms	ports/www/zope-cmftransforms
 zope-coreblog	ports/www/zope-coreblog
 zope-epoz	ports/www/zope-epoz
 zope-exuserfolder	ports/www/zope-exuserfolder
@@ -11950,6 +11949,7 @@ zope-mysqluserfolder	ports/www/zope-mysqluserfolder
 zope-parsedxml	ports/www/zope-parsedxml
 zope-placelesstranslationservice	ports/www/zope-placelesstranslationservice
 zope-plonelanguagetool	ports/www/zope-plonelanguagetool
+zope-portaltransforms	ports/www/zope-portaltransforms
 zope-proxyindex	ports/www/zope-proxyindex
 zope-silva	ports/www/zope-silva
 zope-silvaviews	ports/www/zope-silvaviews
