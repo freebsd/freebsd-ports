@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	global
-PORTVERSION=	4.4
+PORTVERSION=	4.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.tamacom.com/global/
 
 MAINTAINER=	jos@catnook.com
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 
