@@ -43,7 +43,7 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/demos/*.c ${PREFIX}/share/examples/cdk/demos
 	@ ${INSTALL_DATA} ${WRKSRC}/demos/Makefile ${PREFIX}/share/examples/cdk/demos
 
- post-install:
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/cdk
 .for file in BUGS EXPANDING INSTALL NOTES README TODO
