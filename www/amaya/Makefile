@@ -20,7 +20,7 @@ MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://nic.funet.fi/index/WWW/W3/amaya/ \
 		http://www.nic.funet.fi/index/WWW/W3/amaya/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+DISTFILES=	${DISTNAME}.tgz
 DIST_SUBDIR=	amaya
 
 MAINTAINER=	adam-ports@blacktabby.org
