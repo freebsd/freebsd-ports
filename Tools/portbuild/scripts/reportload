@@ -1,4 +1,8 @@
 #!/bin/sh
+#
+# This is run on the clients to report their loads to the server.
+# Every 5 seconds we concatenate the number of currently building ports with
+# the machine uptime and push it to the server.
 
 # configurable variables
 pb=/var/portbuild
@@ -6,7 +10,7 @@ pb=/var/portbuild
 . ${pb}/portbuild.conf
 
 me=$(hostname -s)
-tmpfile=${pb}/${me}
+tmpfile=${scratchdir}/${me}
 
 while true; do
   num=$(echo $(ls -1d ${pb}/*/chroot/*/used 2>/dev/null| wc -l))
