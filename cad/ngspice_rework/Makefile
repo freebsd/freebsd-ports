@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	ngspice_rework
-PORTVERSION=	14
+PORTVERSION=	15
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ngspice
-DISTNAME=	ng-spice-rework-${PORTVERSION}
+DISTNAME=	ngspice-rework${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amakawa@jp.FreeBSD.org
 COMMENT=	A circuit simulator derived from spice3f5
 
-USE_AUTOCONF_VER?=	213
+WRKSRC=		${WRKDIR}/ng-spice-rework-${PORTVERSION}
+GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER?=15
+USE_GMAKE=	yes
 
+INFO=		ngspice
 MAN1=		ngspice.1 ngnutmeg.1 ngsconvert.1
-
-pre-configure:
-		(cd ${WRKSRC} && ${AUTOHEADER})
 
 .include <bsd.port.mk>
