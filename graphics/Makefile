@@ -92,6 +92,7 @@
     SUBDIR += imlib2
     SUBDIR += ipe
     SUBDIR += isreal
+    SUBDIR += iview
     SUBDIR += jbigkit
     SUBDIR += jgraph
     SUBDIR += jgv
