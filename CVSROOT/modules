@@ -1800,7 +1800,6 @@ filepp		ports/textproc/filepp
 fileprune	ports/sysutils/fileprune
 fileroller	ports/archivers/fileroller
 filerunner	ports/x11-fm/filerunner
-fileutils	ports/sysutils/fileutils
 filmgimp	ports/graphics/filmgimp
 filtermail	ports/mail/filtermail
 find-zlib	ports/security/find-zlib
@@ -8392,7 +8391,6 @@ sh-rtems-g77	ports/devel/sh-rtems-g77
 sh-rtems-gcc	ports/devel/sh-rtems-gcc
 sh-rtems-gdb	ports/devel/sh-rtems-gdb
 sh-rtems-objc	ports/devel/sh-rtems-objc
-sh-utils	ports/misc/sh-utils
 sha		ports/security/sha
 shaaft		ports/games/shaaft
 shapelib	ports/devel/shapelib
@@ -8905,7 +8903,6 @@ texmaker	ports/editors/texmaker
 texpower	ports/print/texpower
 textedit	ports/editors/textedit
 textmaze	ports/games/textmaze
-textutils	ports/textproc/textutils
 tftp-hpa	ports/ftp/tftp-hpa
 tgif		ports/graphics/tgif
 tgif-nls	ports/graphics/tgif-nls
