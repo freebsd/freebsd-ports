@@ -5,6 +5,7 @@ USE_IMAKE=	yes
 USE_GMAKE=	yes
 IS_INTERACTIVE=	yes
 
+.if !defined(BATCH)
 install:
 	@echo "===>  Installing for ${DISTNAME}"
 	@mkdir -p /usr/local/man/man1
@@ -14,5 +15,6 @@ install:
 	@(cd ${WRKSRC}; ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} xdvi.man)
 	@(cd ${WRKSRC}; ${GMAKE} -f Makefile install BINDIR=${PREFIX}/bin)
 	@(cd ${WRKSRC}; install -c -m 755 -o bin MakeTeXPK ${PREFIX}/bin)
+.endif
 
 .include <bsd.port.mk>
