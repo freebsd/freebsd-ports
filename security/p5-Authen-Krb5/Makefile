@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Authen
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Krb5-${PORTVERSION}
 
-MAINTAINER=	ajk@iu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for Kerberos 5
 
 LIB_DEPENDS=	gssapi_krb5.2:${PORTSDIR}/security/krb5
@@ -21,12 +21,11 @@ LIB_DEPENDS=	gssapi_krb5.2:${PORTSDIR}/security/krb5
 PERL_CONFIGURE=	yes
 
 MAN3=		Authen::Krb5.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 KRB5_HOME?=	${PREFIX}
 
 post-patch:
-	@${PERL} -pi -e 's:/usr/local/krb5:${KRB5_HOME}:g' \
+	@${PERL} -pi -e 's:${LOCALBASE}/krb5:${KRB5_HOME}:g' \
 		${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
