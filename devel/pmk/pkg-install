@@ -8,11 +8,11 @@ pmkconf=%%PREFIX%%/etc/pmk/pmk.conf
  
 if [ -f $pmkconf ]; then
 	mv -f ${pmkconf} ${pmkconf}.bak
-	%%PREFIX%%/sbin/pmksetup
+	%%PREFIX%%/bin/pmksetup
 	mv -f ${pmkconf} ${pmkconf}.dist
 	mv -f ${pmkconf}.bak ${pmkconf}    
 else
-	%%PREFIX%%/sbin/pmksetup
+	%%PREFIX%%/bin/pmksetup
 	cp -fp ${pmkconf} ${pmkconf}.dist
 fi
  
