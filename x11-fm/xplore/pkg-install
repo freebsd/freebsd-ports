@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# Pre/post-installation setup of xplore
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PREFIX:-${PKG_PREFIX:-/usr/X11R6}}
+LIBDIR=${PREFIX}/lib/X11/xplore
+
+# Verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+    : nothing to pre-install for this port
+    ;;
+    POST-INSTALL)
+    if [ ! -d ${LIBDIR}/shelf ]; then
+        mkdir ${LIBDIR}/shelf
+        mkdir ${LIBDIR}/shelf/Clipboard
+        mkdir ${LIBDIR}/shelf/Desk
+        mkdir ${LIBDIR}/shelf/Programs
+        mkdir ${LIBDIR}/shelf/Trash
+    fi
+    ;;
+    *)
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+    ;;
+esac
+
+exit 0

@@ -1,0 +1,9 @@
+--- scripts/find.script.orig    Mon Aug  5 02:51:39 2002
++++ scripts/find.script    Sun Aug 10 04:24:10 2003
+@@ -27,5 +27,5 @@
+     $find "$1" -name "$2" -print
+ else
+     echo "+++ find [$1]: searching \"$2\" for \"$3\" +++"
+-    $find "$1" -name "$2" -xtype f -print0 | $xargs -0 grep -l "$3"
++    $find "$1" -name "$2" -type f -print0 | $xargs -0 grep -l "$3"
+ fi
