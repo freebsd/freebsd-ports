@@ -7,6 +7,7 @@
 
 PORTNAME=	QuakeForge
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:qf/} \
 		ftp://ftp.idsoftware.com/idstuff/quakeworld/unix/:qw
@@ -67,7 +68,7 @@ WITH_SVGALIB=	yes
 WITH_XMMS=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libvorbis.so.2)
+.if exists(${LOCALBASE}/lib/libvorbis.so.3)
 WITH_VORBIS=	yes
 .endif
 
@@ -184,7 +185,6 @@ post-patch:
 
 do-install:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-
 .if !defined(NO_WAD)
 	${MKDIR} ${PREFIX}/share/quakeforge/id1 && \
 	${TAR} xzf ${DISTDIR}/${WADFILE} -C ${PREFIX}/share/quakeforge --no-same-owner id1/pak0.pak
@@ -199,15 +199,13 @@ do-install:
 	@cd ${PREFIX}/share/quakeforge/qw/skins && ./fixskins.sh *
 .endif
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/quakeforge/config
-	${MKDIR} ${PREFIX}/share/doc/quakeforge/data/docs
-	${MKDIR} ${PREFIX}/share/doc/quakeforge/ideas
+	${MKDIR} ${DOCSDIR}/config ${DOCSDIR}/data/docs ${DOCSDIR}/ideas
 	cd ${WRKSRC}/doc && \
-		${INSTALL_MAN} *.txt *.q1 *.q2 *.ico *.gif *.fig *.h CodingStyle ${PREFIX}/share/doc/quakeforge && \
-		${INSTALL_MAN} config/*.cfg ${PREFIX}/share/doc/quakeforge/config && \
-		${INSTALL_MAN} data/*.txt ${PREFIX}/share/doc/quakeforge/data && \
-		${INSTALL_MAN} data/docs/* ${PREFIX}/share/doc/quakeforge/data/docs && \
-		${INSTALL_MAN} ideas/*.txt ${PREFIX}/share/doc/quakeforge/ideas
+		${INSTALL_MAN} *.txt *.q1 *.q2 *.ico *.gif *.fig *.h CodingStyle ${DOCSDIR} && \
+		${INSTALL_MAN} config/*.cfg ${DOCSDIR}/config && \
+		${INSTALL_MAN} data/*.txt ${DOCSDIR}/data && \
+		${INSTALL_MAN} data/docs/* ${DOCSDIR}/data/docs && \
+		${INSTALL_MAN} ideas/*.txt ${DOCSDIR}/ideas
 .endif
 
 post-install:

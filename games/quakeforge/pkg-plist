@@ -48,6 +48,7 @@ lib/libQFgamecode_builtins.so
 lib/libQFgamecode_builtins.la
 lib/libQFgamecode_builtins.a
 lib/libQFgib.so.1
+lib/libQFgib.so
 lib/libQFgib.la
 lib/libQFgib.a
 lib/libQFcsqc.so.1
@@ -422,61 +423,63 @@ include/QF/ruamoko/gib.h
 include/QF/ruamoko/hash.h
 include/QF/ruamoko/plist.h
 include/QF/ruamoko/Array.h
-%%PORTDOCS%%share/doc/quakeforge/3dfx.txt
-%%PORTDOCS%%share/doc/quakeforge/CodingStyle
-%%PORTDOCS%%share/doc/quakeforge/config/glspeed-v1.cfg
-%%PORTDOCS%%share/doc/quakeforge/config/glspeed-v3.cfg
-%%PORTDOCS%%share/doc/quakeforge/config/swspeed.cfg
-%%PORTDOCS%%share/doc/quakeforge/data/comexp.txt
-%%PORTDOCS%%share/doc/quakeforge/data/docs/install
-%%PORTDOCS%%share/doc/quakeforge/data/docs/install.q2mission
-%%PORTDOCS%%share/doc/quakeforge/data/docs/install.quake
-%%PORTDOCS%%share/doc/quakeforge/data/docs/install.quake2
-%%PORTDOCS%%share/doc/quakeforge/data/docs/readme
-%%PORTDOCS%%share/doc/quakeforge/data/docs/readme.glquake
-%%PORTDOCS%%share/doc/quakeforge/data/docs/readme.squake
-%%PORTDOCS%%share/doc/quakeforge/data/docs/readme.x11
-%%PORTDOCS%%share/doc/quakeforge/data/help.txt
-%%PORTDOCS%%share/doc/quakeforge/data/licinfo.txt
-%%PORTDOCS%%share/doc/quakeforge/data/manual.txt
-%%PORTDOCS%%share/doc/quakeforge/data/order.txt
-%%PORTDOCS%%share/doc/quakeforge/data/readme.txt
-%%PORTDOCS%%share/doc/quakeforge/data/rlicnse.txt
-%%PORTDOCS%%share/doc/quakeforge/data/slicnse.txt
-%%PORTDOCS%%share/doc/quakeforge/data/techinfo.txt
-%%PORTDOCS%%share/doc/quakeforge/glqnotes.txt
-%%PORTDOCS%%share/doc/quakeforge/ideas/quakedownload.txt
-%%PORTDOCS%%share/doc/quakeforge/ideas/rhamph.txt
-%%PORTDOCS%%share/doc/quakeforge/ideas/serverlist.txt
-%%PORTDOCS%%share/doc/quakeforge/net_DoS_protection.txt
-%%PORTDOCS%%share/doc/quakeforge/progdefs.q1
-%%PORTDOCS%%share/doc/quakeforge/progdefs.q2
-%%PORTDOCS%%share/doc/quakeforge/qe3.ico
-%%PORTDOCS%%share/doc/quakeforge/qf-client-3dfx-cvar.txt
-%%PORTDOCS%%share/doc/quakeforge/qf-client-glx-cvar.txt
-%%PORTDOCS%%share/doc/quakeforge/qf-client-sdl-cvar.txt
-%%PORTDOCS%%share/doc/quakeforge/qf-client-sgl-cvar.txt
-%%PORTDOCS%%share/doc/quakeforge/qf-client-svga-cvar.txt
-%%PORTDOCS%%share/doc/quakeforge/qf-client-x11-cmd.txt
-%%PORTDOCS%%share/doc/quakeforge/qf-client-x11-cvar.txt
-%%PORTDOCS%%share/doc/quakeforge/qf-server-cmd.txt
-%%PORTDOCS%%share/doc/quakeforge/qf-server-cvar.txt
-%%PORTDOCS%%share/doc/quakeforge/quake.gif
-%%PORTDOCS%%share/doc/quakeforge/quake.ico
-%%PORTDOCS%%share/doc/quakeforge/readme.txt
-%%PORTDOCS%%share/doc/quakeforge/skybox.fig
-%%PORTDOCS%%share/doc/quakeforge/template.h
-%%PORTDOCS%%share/doc/quakeforge/timestamps.txt
-%%PORTDOCS%%share/doc/quakeforge/wqreadme.txt
-%%PORTDOCS%%@dirrm share/doc/quakeforge/ideas
-%%PORTDOCS%%@dirrm share/doc/quakeforge/config
-%%PORTDOCS%%@dirrm share/doc/quakeforge/data/docs
-%%PORTDOCS%%@dirrm share/doc/quakeforge/data
-%%PORTDOCS%%@dirrm share/doc/quakeforge/
+%%PORTDOCS%%%%DOCSDIR%%/3dfx.txt
+%%PORTDOCS%%%%DOCSDIR%%/CodingStyle
+%%PORTDOCS%%%%DOCSDIR%%/config/glspeed-v1.cfg
+%%PORTDOCS%%%%DOCSDIR%%/config/glspeed-v3.cfg
+%%PORTDOCS%%%%DOCSDIR%%/config/swspeed.cfg
+%%PORTDOCS%%%%DOCSDIR%%/data/comexp.txt
+%%PORTDOCS%%%%DOCSDIR%%/data/docs/install
+%%PORTDOCS%%%%DOCSDIR%%/data/docs/install.q2mission
+%%PORTDOCS%%%%DOCSDIR%%/data/docs/install.quake
+%%PORTDOCS%%%%DOCSDIR%%/data/docs/install.quake2
+%%PORTDOCS%%%%DOCSDIR%%/data/docs/readme
+%%PORTDOCS%%%%DOCSDIR%%/data/docs/readme.glquake
+%%PORTDOCS%%%%DOCSDIR%%/data/docs/readme.squake
+%%PORTDOCS%%%%DOCSDIR%%/data/docs/readme.x11
+%%PORTDOCS%%%%DOCSDIR%%/data/help.txt
+%%PORTDOCS%%%%DOCSDIR%%/data/licinfo.txt
+%%PORTDOCS%%%%DOCSDIR%%/data/manual.txt
+%%PORTDOCS%%%%DOCSDIR%%/data/order.txt
+%%PORTDOCS%%%%DOCSDIR%%/data/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/data/rlicnse.txt
+%%PORTDOCS%%%%DOCSDIR%%/data/slicnse.txt
+%%PORTDOCS%%%%DOCSDIR%%/data/techinfo.txt
+%%PORTDOCS%%%%DOCSDIR%%/glqnotes.txt
+%%PORTDOCS%%%%DOCSDIR%%/ideas/quakedownload.txt
+%%PORTDOCS%%%%DOCSDIR%%/ideas/rhamph.txt
+%%PORTDOCS%%%%DOCSDIR%%/ideas/serverlist.txt
+%%PORTDOCS%%%%DOCSDIR%%/net_DoS_protection.txt
+%%PORTDOCS%%%%DOCSDIR%%/progdefs.q1
+%%PORTDOCS%%%%DOCSDIR%%/progdefs.q2
+%%PORTDOCS%%%%DOCSDIR%%/qe3.ico
+%%PORTDOCS%%%%DOCSDIR%%/qf-client-3dfx-cvar.txt
+%%PORTDOCS%%%%DOCSDIR%%/qf-client-glx-cvar.txt
+%%PORTDOCS%%%%DOCSDIR%%/qf-client-sdl-cvar.txt
+%%PORTDOCS%%%%DOCSDIR%%/qf-client-sgl-cvar.txt
+%%PORTDOCS%%%%DOCSDIR%%/qf-client-svga-cvar.txt
+%%PORTDOCS%%%%DOCSDIR%%/qf-client-x11-cmd.txt
+%%PORTDOCS%%%%DOCSDIR%%/qf-client-x11-cvar.txt
+%%PORTDOCS%%%%DOCSDIR%%/qf-server-cmd.txt
+%%PORTDOCS%%%%DOCSDIR%%/qf-server-cvar.txt
+%%PORTDOCS%%%%DOCSDIR%%/quake.gif
+%%PORTDOCS%%%%DOCSDIR%%/quake.ico
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/skybox.fig
+%%PORTDOCS%%%%DOCSDIR%%/template.h
+%%PORTDOCS%%%%DOCSDIR%%/timestamps.txt
+%%PORTDOCS%%%%DOCSDIR%%/wqreadme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ideas
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/config
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/data/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/data
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/QF/GL
 @dirrm include/QF/plugin
 @dirrm include/QF/ruamoko
 @dirrm include/QF
+%%TOOL:%%@dirrm lib/ruamoko
+@dirrm lib/quakeforge
 @unexec rmdir %D/share/quakeforge/QFplugins/ 2>/dev/null || true
 @unexec rmdir %D/share/quakeforge/id1/ 2>/dev/null || true
 @unexec rmdir %D/share/quakeforge/qw/skins/ 2>/dev/null || true
