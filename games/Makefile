@@ -258,6 +258,7 @@
     SUBDIR += uclient
     SUBDIR += uox3
     SUBDIR += utserver
+    SUBDIR += utserver-to
     SUBDIR += virt
     SUBDIR += wmeyes
     SUBDIR += wmminichess

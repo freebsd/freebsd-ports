@@ -1,0 +1,165 @@
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/Tactical Ops Manual.htm
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/Logo.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/Menu.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/PageBackground.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/eva-blunts.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/eva-cocaine.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/eva-money.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/eva-weed.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/hud-Ammo.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/hud-Amour.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/hud-BuyZone.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/hud-Clip.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/hud-Death.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/hud-EscapeZone.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/hud-Evidence.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/hud-Health.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/hud-Home.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/hud-HostageRescue.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/hud-Money.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/hud-SpecailItem.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/hud-Timer.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/hud-c4.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/ins-part1.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/ins-part2.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/ins-part3.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/ins-part4.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/ins-part5.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/itm-Amour.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/itm-c4.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/itm-concgren.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/itm-flashbang.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/itm-hegren.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/itm-nades.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/itm-nightvision.jpg
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/mac-launch1.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/mac-launch2.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/mac-part1.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/mac-part2.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/mac-part3.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/mac-part4.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/run-icon.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/score-c4.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/score-escaped.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-ak47.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-aug.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-beretta.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-deagle.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-famas.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-glock.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-hk33.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-knife.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-m3.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-m4.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-mac10.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-mossberg.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-mp5k.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-mp5n.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-oicw.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-ph85.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-psg1.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-saiga.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/Images/wpn-sr9.gif
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/armory.html
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/barepage.html
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/basics.html
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/config.html
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/credits.html
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/installation.html
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/interface.html
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/manual.css
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/manual.html
+%%PORTDOCS%%%%UTDIR%%Help/TO2Manual/manual/running.html
+%%PORTDOCS%%%%UTDIR%%Help/TacticalOps.ico
+%%PORTDOCS%%%%UTDIR%%Help/TacticalOps2.ico
+%%PORTDOCS%%%%UTDIR%%Help/TacticalOps3.ico
+%%UTDIR%%System/TOSystem.int
+%%UTDIR%%System/TOUT.int
+%%UTDIR%%System/TacticalOps.ini
+%%UTDIR%%System/TacticalOpsLinuxLauncher
+%%UTDIR%%System/TacticalOpsLinuxServer
+%%UTDIR%%System/TacticalOpsLinuxServer2
+%%UTDIR%%System/s_SWAT.int
+%%UTDIR%%TacticalOps/Bind_AmmoWeaponsItems.txt
+%%UTDIR%%TacticalOps/Extra/DefaultINIfile/TacticalOpsLinux.ini
+%%UTDIR%%TacticalOps/Extra/LinuxServerCmd/readme.txt
+%%UTDIR%%TacticalOps/Extra/LinuxServerCmd/ut3.dat
+%%UTDIR%%TacticalOps/History.txt
+%%UTDIR%%TacticalOps/Install.txt
+%%UTDIR%%TacticalOps/License.txt
+%%UTDIR%%TacticalOps/Maps/Entry.unr
+%%UTDIR%%TacticalOps/Maps/TO-Blister.unr
+%%UTDIR%%TacticalOps/Maps/TO-Forge.unr
+%%UTDIR%%TacticalOps/Maps/TO-Getaway.unr
+%%UTDIR%%TacticalOps/Maps/TO-IcyBreeze.unr
+%%UTDIR%%TacticalOps/Maps/TO-Monastery.unr
+%%UTDIR%%TacticalOps/Maps/TO-Oilrig2.unr
+%%UTDIR%%TacticalOps/Maps/TO-Province.unr
+%%UTDIR%%TacticalOps/Maps/TO-RMSTitanic.unr
+%%UTDIR%%TacticalOps/Maps/TO-Ransom2.unr
+%%UTDIR%%TacticalOps/Maps/TO-RapidWaters2.unr
+%%UTDIR%%TacticalOps/Maps/TO-Resurrection.unr
+%%UTDIR%%TacticalOps/Maps/TO-Scope.unr
+%%UTDIR%%TacticalOps/Maps/TO-Spynet2.unr
+%%UTDIR%%TacticalOps/Maps/TO-TrainStation.unr
+%%UTDIR%%TacticalOps/Maps/TO-Verdon.unr
+%%UTDIR%%TacticalOps/Music/WarGate.umx
+%%UTDIR%%TacticalOps/Music/Winter.umx
+%%UTDIR%%TacticalOps/Sounds/Bird.uax
+%%UTDIR%%TacticalOps/Sounds/TO-Spinex.uax
+%%UTDIR%%TacticalOps/Sounds/TOsoundpack.uax
+%%UTDIR%%TacticalOps/Sounds/bstretzsnds.uax
+%%UTDIR%%TacticalOps/System/ActorResetter.txt
+%%UTDIR%%TacticalOps/System/ActorResetter.u
+%%UTDIR%%TacticalOps/System/TODatas.u
+%%UTDIR%%TacticalOps/System/TODecos.u
+%%UTDIR%%TacticalOps/System/TOModels.u
+%%UTDIR%%TacticalOps/System/TOPModels.u
+%%UTDIR%%TacticalOps/System/TOSystem.u
+%%UTDIR%%TacticalOps/System/TOUT.u
+%%UTDIR%%TacticalOps/System/s_SWAT.u
+%%UTDIR%%TacticalOps/TO200_Features.txt
+%%UTDIR%%TacticalOps/TO_MappingDoc.txt
+%%UTDIR%%TacticalOps/TacticalOps.txt
+%%UTDIR%%TacticalOps/Textures/CargoShip.utx
+%%UTDIR%%TacticalOps/Textures/DP_Pack-1.utx
+%%UTDIR%%TacticalOps/Textures/EP_Swt1.utx
+%%UTDIR%%TacticalOps/Textures/Icy.utx
+%%UTDIR%%TacticalOps/Textures/RKLphoto1.utx
+%%UTDIR%%TacticalOps/Textures/RichTrain.utx
+%%UTDIR%%TacticalOps/Textures/Spinex.utx
+%%UTDIR%%TacticalOps/Textures/Spynet-pack.utx
+%%UTDIR%%TacticalOps/Textures/TAcars.utx
+%%UTDIR%%TacticalOps/Textures/TAconeysigns.utx
+%%UTDIR%%TacticalOps/Textures/TAconeytex.utx
+%%UTDIR%%TacticalOps/Textures/TO-(c)-text-1.utx
+%%UTDIR%%TacticalOps/Textures/TO-(c)-text-2.utx
+%%UTDIR%%TacticalOps/Textures/TO-Desertpack-1.utx
+%%UTDIR%%TacticalOps/Textures/TO-Epic.utx
+%%UTDIR%%TacticalOps/Textures/TO-Neuro1.utx
+%%UTDIR%%TacticalOps/Textures/TO-Neuro2.utx
+%%UTDIR%%TacticalOps/Textures/TO-Rig2.utx
+%%UTDIR%%TacticalOps/Textures/TO-ganja-free-1.utx
+%%UTDIR%%TacticalOps/Textures/TO-iran-textures[ganja].utx
+%%UTDIR%%TacticalOps/Textures/UTtech4.utx
+%%UTDIR%%TacticalOps/Textures/Verdon.utx
+%%UTDIR%%TacticalOps/Textures/a3text.utx
+%%UTDIR%%TacticalOps/Textures/richchurch.utx
+%%UTDIR%%TacticalOps/Textures/richrig.utx
+%%UTDIR%%TacticalOps/Textures/terrorist3tex.utx
+%%UTDIR%%Web/TO_defaults_rules.uhtm
+%%UTDIR%%Web/TO_defaults_settings.uhtm
+@dirrm %%UTDIR%%Web
+@dirrm %%UTDIR%%TacticalOps/Textures
+@dirrm %%UTDIR%%TacticalOps/System
+@dirrm %%UTDIR%%TacticalOps/Sounds
+@dirrm %%UTDIR%%TacticalOps/Music
+@dirrm %%UTDIR%%TacticalOps/Maps
+@dirrm %%UTDIR%%TacticalOps/Extra/LinuxServerCmd
+@dirrm %%UTDIR%%TacticalOps/Extra/DefaultINIfile
+@dirrm %%UTDIR%%TacticalOps/Extra
+@unexec rmdir %D/%%UTDIR%%TacticalOps 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%UTDIR%%TacticalOps`` to remove any configuration files and logs left." | fmt
+%%PORTDOCS%%@dirrm %%UTDIR%%Help/TO2Manual/manual/Images
+%%PORTDOCS%%@dirrm %%UTDIR%%Help/TO2Manual/manual
+%%PORTDOCS%%@dirrm %%UTDIR%%Help/TO2Manual
+%%PORTDOCS%%@unexec rmdir %D/%%UTDIR%%Help 2>/dev/null || true
