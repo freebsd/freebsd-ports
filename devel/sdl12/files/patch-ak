@@ -2,7 +2,7 @@
 $FreeBSD$
 
 --- sdl-config.in.orig	Mon Sep  9 08:28:06 2002
-+++ sdl-config.in	Thu Jan  2 12:44:39 2003
++++ sdl-config.in	Fri Jan  3 10:43:28 2003
 @@ -5,7 +5,7 @@
  exec_prefix_set=no
  
@@ -17,7 +17,7 @@ $FreeBSD$
        ;;
      --cflags)
 -      echo -I@includedir@/SDL @SDL_CFLAGS@
-+      echo -I@includedir@/SDL11 @SDL_CFLAGS@
++      echo -I@includedir@/SDL11 -I@includedir@ @SDL_CFLAGS@
  
        # The portable way of including SDL is #include "SDL.h"
        #if test @includedir@ != /usr/include ; then
