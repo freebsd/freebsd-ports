@@ -278,5 +278,3 @@ share/aclocal/libOggFLAC.m4
 @dirrm include/OggFLAC
 @dirrm include/FLAC++
 @dirrm include/FLAC
-%%XMMS%%@cwd %%X11BASE%%
-%%XMMS%%lib/xmms/Input/libxmms-flac.so
