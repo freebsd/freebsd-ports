@@ -4996,6 +4996,7 @@ opengk		ports/net/opengk
 opengl-man	ports/graphics/opengl-man
 openh323	ports/net/openh323
 openh323proxy	ports/net/openh323proxy
+openhbci	ports/finance/openhbci
 openjade	ports/textproc/openjade
 openjit		ports/java/openjit
 openldap	ports/net/openldap
