@@ -1,5 +1,5 @@
 #
-# $Id: ac,v 1.2 1999/08/09 08:45:08 jkh Exp $
+# $Id: access,v 1.105 1999/08/11 19:37:18 jkh Exp $
 #
 # Please try to keep the handbook (contrib/chapter.sgml authors.ent) in
 # in sync with this.
@@ -176,3 +176,4 @@ pho
 chris
 alfred
 jim
+jhb
