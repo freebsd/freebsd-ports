@@ -31,7 +31,7 @@ MAKE_ENV=	SHORT_TK_VER=${SHORT_TK_VER}
 PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=${SHORT_TK_VER}
 PKGINSTALL=	${PKGDIR}/pkg-install.wish
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
-NOPRECIOUSMAKEVARS= yes # Otherwise 'make readmes' is broken
+NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 
 MANCOMPRESSED=	no
 
