@@ -29,6 +29,7 @@ EXAMPLEDIR=	${PREFIX}/share/examples/reportlab
 
 post-patch:
 	${MV} ${WRKSRC}/lib/setup.py ${WRKDIR}
+	${PERL} -pi -e "s/freebsd4/freebsd4','freebsd5/g" ${WRKDIR}/setup.py
 
 do-build:
 	@(cd ${WRKDIR}; \
