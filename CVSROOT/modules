@@ -6026,6 +6026,7 @@ pilrc		ports/palm/pilrc
 pim6dd		ports/net/pim6dd
 pim6sd		ports/net/pim6sd
 pimp3		ports/audio/pimp3
+pinball		ports/games/pinball
 pine.language	ports/ukrainian/pine.language
 pine4		ports/mail/pine4
 pinfo		ports/misc/pinfo
