@@ -8,6 +8,7 @@
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}.${PATCHVERSION}
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTNAME}-${GCCVERSION}
@@ -42,10 +43,11 @@ USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
-		--enable-languages=c,c++,ada,f77,objc \
+		--enable-languages=c,c++,f77,objc \
 		--with-gcc --with-gnu-ld --with-gnu-as \
 		--enable-threads --disable-nls \
-		--disable-win32-registry --disable-shared
+		--disable-win32-registry --disable-shared \
+		--enable-sjlj-exceptions
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 LIBTOOLFILES=	configure gcc/configure
 MAN1=		${PKGNAMEPREFIX}gcc.1 ${PKGNAMEPREFIX}g++.1 ${PKGNAMEPREFIX}g77.1  \
@@ -58,7 +60,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} GCC_TARG=${PKGNAMEPREFIX:S/-$//} \
 BINARIES=	gcc cpp g++ g77 gcov
 
 post-configure:
-	@${PERL} -pi.bak -e 's,^(TARGET_CONFIGDIRS\s*=).+$$,\1,' ${WRKSRC}/Makefile
+	@${PERL} -pi.bak -e 's,^(TARGET_CONFIGDIRS\s*=\s*).+$$,\1libstdc++-v3 libf2c libobjc mingw,' ${WRKSRC}/Makefile
 	@${PERL} -pi.bak -e 's,^(install-info:),\1\ndonot-\1,' ${WRKSRC}/gcc/Makefile
 
 post-install:
