@@ -1,0 +1,15 @@
+--- build.old	Fri Aug  9 15:37:20 1996
++++ build	Fri Aug  9 15:53:55 1996
+@@ -195,10 +195,10 @@
+ 	make clean
+         echo "Cleaning Pine"
+         cd $PHOME/pine
+-        make -f makefile.ult clean
++        make -f makefile.bsf clean
+         echo "Cleaning pico"
+         cd $PHOME/pico
+-        make $makeargs -f makefile.ult clean
++        make $makeargs -f makefile.bsf clean
+         echo "Done"
+         cd $PHOME
+         ;;

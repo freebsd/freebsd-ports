@@ -253,7 +253,7 @@
 + #define SigType void     /* value returned by sig handlers is void */
 + /* #define SigType int      /* value returned by sig handlers is int */
 + 
-+ /* #define POSIX_SIGNALS    /* use POSIX signal semantics (ttyin.c) */
++ #define POSIX_SIGNALS    /* use POSIX signal semantics (ttyin.c) */
 + /* #define SYSV_SIGNALS    /* use System-V signal semantics (ttyin.c) */
 + 
 + 
@@ -272,8 +272,8 @@
 + 
 + 
 + /*-------------- fcntl flag to set non-blocking IO ---------------------*/
-+ /*#define	NON_BLOCKING_IO	O_NONBLOCK		/* POSIX style */
-+ #define	NON_BLOCKING_IO	FNDELAY		/* good ol' bsd style  */
++ #define	NON_BLOCKING_IO	O_NONBLOCK		/* POSIX style */
++ /* #define	NON_BLOCKING_IO	FNDELAY		/* good ol' bsd style  */
 + 
 + 
 + 
@@ -288,15 +288,15 @@
 +  */
 + 
 + /*--------- Good 'ol BSD -----------------------------------------------*/
-+ #include <sgtty.h>      /* BSD-based systems */
++ /* #include <sgtty.h>      /* BSD-based systems */
 + 
 + /*--------- System V terminal driver -----------------------------------*/
 + /* #define HAVE_TERMIO     /* this is for pure System V */
 + /* #include <termio.h>     /* Sys V */
 + 
 + /*--------- POSIX terminal driver --------------------------------------*/
-+ /* #define HAVE_TERMIOS    /* this is an alternative */
-+ /* #include <termios.h>    /* POSIX */
++ #define HAVE_TERMIOS    /* this is an alternative */
++ #include <termios.h>    /* POSIX */
 + 
 + 
 + 
@@ -311,7 +311,7 @@
 + 
 + 
 + /*-- What argument does wait(2) take? Define this if it is a union -----*/
-+ #define HAVE_WAIT_UNION  /* the arg to wait is a union wait * */
++ /* #define HAVE_WAIT_UNION  /* the arg to wait is a union wait * */
 + 
 + 
 + 
@@ -340,7 +340,7 @@
 + 
 + 
 + /*--------- Program employed by users to change their password ---------*/
-+ #define	PASSWD_PROG	"/bin/passwd"
++ #define	PASSWD_PROG	"/usr/bin/passwd"
 + 
 + 
 + /*-------------- A couple constants used to size arrays ----------------*/
