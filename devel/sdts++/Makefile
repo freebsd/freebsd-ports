@@ -19,7 +19,13 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:site1 \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for SDTS related development
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Configure fails"
+.endif
+
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-boost=${WRKDIR}/boost_1_27_0
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

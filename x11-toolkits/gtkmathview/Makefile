@@ -20,6 +20,12 @@ LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		gmetadom_gdome_cpp_smart:${PORTSDIR}/textproc/gmetadom
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Configure fails"
+.endif
+
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	glib12 gtk12
@@ -39,4 +45,4 @@ post-patch:
 post-install:
 	@install-info ${PREFIX}/info/gtkmathview.info ${PREFIX}/info/dir
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

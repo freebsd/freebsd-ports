@@ -26,6 +26,10 @@ MAN1=		vdk-config.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Configure fails"
+.endif
+
 .if ${HAVE_GNOME:Mgnomelibs}!=""
 USE_GNOME=	gnomelibs
 PKGNAMESUFFIX=	-gnome

@@ -19,6 +19,12 @@ COMMENT=	The GNU music typesetter
 BUILD_DEPENDS=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/teTeX
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Configure fails"
+.endif
+
 MAN1=	abc2ly.1 as2text.1 convert-ly.1 etf2ly.1 lilypond.1 \
 	lilypond-book.1 ly2dvi.1 midi2ly.1 mup2ly.1 musedata2ly.1 pmx2ly.1
 
@@ -45,4 +51,4 @@ post-install:
 	${FIND} ${PREFIX}/share/examples/lilypond -name "GNUmakefile" | xargs ${RM} ;\
 	${FIND} ${PREFIX}/share/examples/lilypond -name "out" | xargs ${RM} -rf ;\
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

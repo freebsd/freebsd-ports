@@ -40,6 +40,10 @@ MAN1=		xsidplay.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Configure fails"
+.endif
+
 .if ${MACHINE_ARCH} == "alpha"
 CFLAGS+=	-O0
 .endif
