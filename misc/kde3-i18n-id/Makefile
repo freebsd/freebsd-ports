@@ -16,7 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Indonesian messages and documentation for KDE3
 
-IGNORE=		Needs update from vendor.
+IGNORE=		needs an update from the vendor
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
