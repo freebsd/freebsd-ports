@@ -31,7 +31,7 @@ RUN_DEPENDS+=	python:${PORTSDIR}/lang/python
 
 .if defined(WITH_PATENTED)
 CONFIGURE_ARGS+=	--with-patented
-PLIST=		${PKGDIR}/PLIST.with_patented
+PLIST=		${PKGDIR}/pkg-plist.with_patented
 .endif
 
 post-install:
