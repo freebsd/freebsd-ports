@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	rvm
-PORTVERSION=	0.80.2.a
+PORTVERSION=	0.90.b
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/-alpha/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An archive manager that uses rsync to manage backups
@@ -27,10 +27,4 @@ NO_LATEST_LINK=	YES
 MAN1=		rvm.1
 PLIST_FILES=	bin/rvm
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500034
-CXXFLAGS+=	-O0
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
