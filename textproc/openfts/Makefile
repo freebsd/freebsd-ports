@@ -20,8 +20,9 @@ USE_REINPLACE=	yes
 
 MAN3=	Search::OpenFTS.3 Search::OpenFTS::Base.3 \
 	Search::OpenFTS::Dict::PorterEng.3 Search::OpenFTS::Dict::Snowball.3 \
-	Search::OpenFTS::Dict::UnknownDict.3 Search::OpenFTS::Index.3 \
-	Search::OpenFTS::Morph::ISpell.3 Search::OpenFTS::Parser.3
+	Search:OpenFTS::Dict::Synonym.3 Search::OpenFTS::Dict::UnknownDict.3 \
+	Search::OpenFTS::Index.3 Search::OpenFTS::Morph::ISpell.3 \
+	Search::OpenFTS::Parser.3
 
 # Sample DB initialization.
 DBNAME?=	openfts
