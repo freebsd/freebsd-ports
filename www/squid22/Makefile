@@ -1,13 +1,13 @@
 # New ports collection makefile for:	squid
-# Version required:	1.2-beta10
+# Version required:	1.2-beta11
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.35 1997/12/06 12:27:32 peter Exp $
+# $Id: Makefile,v 1.36 1998/01/04 09:30:18 peter Exp $
 #
 
-DISTNAME=	squid-1.2.beta10
-PKGNAME=	squid-1.2b10
+DISTNAME=	squid-1.2.beta11
+PKGNAME=	squid-1.2b11
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://squid.nlanr.net/pub/squid-1.2.beta/ \
@@ -17,11 +17,11 @@ MASTER_SITES=  \
 EXTRACT_SUFX=	-src.tar.gz
 
 PATCH_SITES+=   http://squid.nlanr.net/Squid/1.2.beta/
-PATCHFILES+=    1.2.beta10.patches
+PATCHFILES+=    1.2.beta11.patches
 
 MAINTAINER=	peter@freebsd.org
 
-DIST_SUBDIR=	squid1.2b10
+DIST_SUBDIR=	squid1.2b11
 GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/squid --bindir=${PREFIX}/sbin \
@@ -29,30 +29,41 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/squid --bindir=${PREFIX}/sbin \
 STRIP=		# won't install scripts correctly othervise.
 MAKEFILE=	makefile
 
-# To turn on SNMP, uncomment these three.  I'm not sure how this works,
-# I think you need some sort of snmp multiplexor if you run another snmp
-# server as well.
-#MAKE_ENV+=	SQUID_SNMP="-DSQUID_SNMP=1"
-#MAKE_ENV+=	SQUID_MIB="mib.txt"
-#MAKE_ENV+=	SQUID_SNMP_LIBS="-L../snmplib -lsnmp"
-
 # Some other configure options..
 # - Use hash function as store index, instead of URL (trades CPU for memory)
-#CONFIGURE_ARGS+= --enable-hashkey=sha
-#CONFIGURE_ARGS+= --enable-hashkey=md5
-#  - Use ASYNC disk I/O (Requires pthreads, probably doesn't work yet)
+#CONFIGURE_ARGS+= --enable-new-storekey=sha
+#CONFIGURE_ARGS+= --enable-new-storekey=md5
+#  - Use ASYNC disk I/O (Requires real pthreads, libc_r probably doesn't work)
 #CONFIGURE_ARGS+= --enable-async-io
+#  - Compile and use the malloc package from Doug Lea
+#CONFIGURE_ARGS+= --enable-dlmalloc
+#  - Use tree function to store ACL lists
+#CONFIGURE_ARGS+= --enable-acltree=bin
+#CONFIGURE_ARGS+= --enable-acltree=splay
+#  - Enable ICMP pinging for heirarchy stats and selection
+#CONFIGURE_ARGS+= --enable-icmp
+#  - Enable delay hack to limit bandwidth usage
+#CONFIGURE_ARGS+= --enable-delay-hack
+#  - Enable logging of the User-Agent header
+#CONFIGURE_ARGS+= --enable-useragent-log
+#  - Kill parent (eg: RunCache) on shutdown (use with great care!!)
+#CONFIGURE_ARGS+= --enable-kill-parent
+#  - Turn on SNMP server support
+#CONFIGURE_ARGS+= --enable-snmp
+#  - Optimize time updates to one per second rather than calling gettimeofday()
+#CONFIGURE_ARGS+= --enable-time-hack
+#  - Set an explicit hostname in cachemgr.cgi
+#CONFIGURE_ARGS+= --enable-cachemgr-hostname=some.hostname
+#  - Enable ACL based on ethernet address (eg: for machines with dynamic DHCP 
+#    assigned IP addresses)
+#CONFIGURE_ARGS+= --enable-arp-acl
+#  - Enable simple malloc debugging
+#CONFIGURE_ARGS+= --enable-xmalloc-debug
+#  - Detailed trace of memory allocations
+#CONFIGURE_ARGS+= --enable-xmalloc-debug-count
+#  - Show malloc statistics in cachemgr status pages
+#CONFIGURE_ARGS+= --enable-xmalloc-statistics
 
-# There are several other configurable options in ${WRKSRC}/src/options.h[.in]
-# CACHEMGR_HOSTNAME	- alternate method for cachemgr.cgi to get hostname
-# USE_ICMP 1		- enable ICMP pings (using pinger) for selecting hosts.
-# DELAY_HACK 1		- see code.
-# USE_USERAGENT_LOG 1	- log user agents
-# KILL_PARENT_OPT 1	- kill parent (such as runcache) on SIGTERM etc.
-# USE_SPLAY_TREE 1	- use splay or binary trees for storing and searching
-# USE_BIN_TREE 1	  the in-memory cache contents table.
-# ALARM_UPDATES_TIME 1	- optimize gettimeofday calls (default on)
-# USE_ARP_ACL 1		- enable ethernet hardware address ACL's
 
 post-install:
 	cd ${WRKSRC}/src; make install-pinger
