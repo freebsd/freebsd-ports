@@ -1,8 +1,9 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/SAX/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/Base.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/DocumentLocator.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/Exception.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/ParserDetails.ini
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/Intro.pod
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/ParserFactory.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/DTDDecls.pm
@@ -10,11 +11,15 @@ lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/DebugHandler.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/DocType.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/EncodingDetect.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Exception.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/NoUnicodeExt.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Productions.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/UnicodeExt.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Reader.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Reader/NoUnicodeExt.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Reader/Stream.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Reader/String.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Reader/URI.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Reader/UnicodeExt.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/XMLDecl.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/placeholder.pl
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/Reader
