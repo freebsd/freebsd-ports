@@ -494,6 +494,8 @@ share/doc/ghc/network/haskell_icon.gif
 share/doc/ghc/network/index.html
 share/doc/ghc/users_guide.ps
 share/doc/ghc/users_guide/bug-reporting.html
+share/doc/ghc/users_guide/bugs-and-infelicities.html
+share/doc/ghc/users_guide/bugs.html
 share/doc/ghc/users_guide/concurrent-and-parallel.html
 share/doc/ghc/users_guide/docbook.css
 share/doc/ghc/users_guide/ext-core.html
@@ -567,7 +569,6 @@ share/doc/ghc/users_guide/users-guide.html
 share/doc/ghc/users_guide/using-ghc.html
 share/doc/ghc/users_guide/utils.html
 share/doc/ghc/users_guide/version-numbering.html
-share/doc/ghc/users_guide/vs-haskell-defn.html
 share/doc/ghc/users_guide/win32-dlls-create.html
 share/doc/ghc/users_guide/win32-dlls-foreign.html
 share/doc/ghc/users_guide/win32-dlls-linking-static.html
