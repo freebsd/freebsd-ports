@@ -3,7 +3,8 @@ diff -crP ../netatalk-1.4b2/rc.atalk.freebsd ./rc.atalk.freebsd
 --- ./rc.atalk.freebsd	Thu Jul 24 02:14:39 1997
 ***************
 *** 0 ****
---- 1,26 ----
+--- 1,27 ----
++ #!/bin/sh
 + #
 + # AppleTalk daemons. Make sure not to start atalkd in the background:
 + # its data structures must have time to stablize before running the
