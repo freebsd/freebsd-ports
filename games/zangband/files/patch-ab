@@ -1,11 +1,11 @@
---- src/z-config.h.orig	Wed Feb 11 05:30:28 1998
-+++ src/z-config.h	Sat Sep 18 18:20:32 1999
-@@ -52,7 +52,7 @@
- /*
-  * OPTION: Use the POSIX "termios" methods in "main-gcu.c"
-  */
--/* #define USE_TPOSIX */
-+#define USE_TPOSIX
+--- lib/apex/Makefile.in.0	Fri Aug 17 05:10:34 2001
++++ lib/apex/Makefile.in	Fri Aug 17 05:10:52 2001
+@@ -200,7 +200,7 @@
  
- /*
-  * OPTION: Use the "termio" methods in "main-gcu.c"
+ install-data-hook:
+ @SET_GID_TRUE@	touch "$(DESTDIR)$(angbanddir)/scores.raw"
+-@SET_GID_TRUE@	chown -R root.@GAMEGROUP@ "$(DESTDIR)$(angbanddir)"
++@SET_GID_TRUE@	chown -R root:@GAMEGROUP@ "$(DESTDIR)$(angbanddir)"
+ @SET_GID_TRUE@	chmod -R g+w "$(DESTDIR)$(angbanddir)"
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
