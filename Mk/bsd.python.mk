@@ -77,21 +77,32 @@ Python_Include_MAINTAINER=	tg@FreeBSD.org
 # version number is substituted and the corresponding Python distribution
 # will be built through the dependency processing.
 _PYTHON_VERSION!=	(python -c 'import sys; print sys.version[:3]') 2> /dev/null \
-					|| echo 2.0
+					|| echo 2.1
 PYTHON_VERSION?=	python${_PYTHON_VERSION}
 PYTHON_PORTVERSION!=	(${PYTHON_VERSION} -c 'import string, sys; \
 								print string.split(sys.version)[0]') 2> /dev/null \
-					|| echo 2.0
+					|| echo 2.1
+
+# Python-2.1
+.if ${PYTHON_VERSION} == "python2.1"
+PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
+PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
+
+PYTHON_DISTFILE=	Python-2.1.tgz
+PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
+PYTHON_REL=			210
+PYTHON_SUFFIX=		# empty, default version
+PYTHON_WRKSRC=		${WRKDIR}/Python-2.1
 
 # Python-2.0
-.if ${PYTHON_VERSION} == "python2.0"
+.elif ${PYTHON_VERSION} == "python2.0"
 PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
 PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
 PYTHON_DISTFILE=	BeOpen-Python-2.0.tar.gz
-PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
+PYTHON_PORTSDIR=	${PORTSDIR}/lang/python20
 PYTHON_REL=			200
-PYTHON_SUFFIX=		# empty, default version
+PYTHON_SUFFIX=		20
 PYTHON_WRKSRC=		${WRKDIR}/Python-2.0
 
 # Python-1.6
@@ -123,7 +134,11 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-1.5.2
 .else
 .BEGIN:
 	@${ECHO} "Error: bad value for PYTHON_VERSION: ${PYTHON_VERSION}."
-	@${ECHO} "Use one of python1.5, python1.6 or python2.0 (default)."
+	@${ECHO} "Legal values are:"
+	@${ECHO} "  python1.5"
+	@${ECHO} "  python1.6"
+	@${ECHO} "  python2.0"
+	@${ECHO} "  python2.1 (default)."
 	@${FALSE}
 .endif
 
