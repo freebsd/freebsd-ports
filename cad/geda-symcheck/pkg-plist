@@ -1,0 +1,4 @@
+bin/gsymcheck
+share/doc/geda-doc/man/gsymcheck.html
+share/gEDA/system-gsymcheckrc
+@unexec rmdir %D/share/doc/geda-doc/man 2>/dev/null || true

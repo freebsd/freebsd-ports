@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	geda
-PORTVERSION=	20030223
-PORTREVISION=	1
+PORTVERSION=	20040111
 CATEGORIES=	cad
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -16,14 +15,13 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	bruno@tinkerbox.org
 COMMENT=	The "meta-port" for gEDA
 
-BUILD_DEPENDS=	gesym-config:${PORTSDIR}/cad/geda-symbols \
+BUILD_DEPENDS=	${LOCALBASE}/share/gEDA/sym:${PORTSDIR}/cad/geda-symbols \
 		gschem:${PORTSDIR}/cad/gschem \
 		gnetlist:${PORTSDIR}/cad/gnetlist \
 		gmk_sym:${PORTSDIR}/cad/geda-utils \
 		gsymcheck:${PORTSDIR}/cad/geda-symcheck
-
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
-		geda.18:${PORTSDIR}/cad/libgeda
+		geda.20:${PORTSDIR}/cad/libgeda
 
 NO_BUILD=	yes
 

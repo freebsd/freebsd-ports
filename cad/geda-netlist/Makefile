@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnetlist
-PORTVERSION=	20030223
-PORTREVISION=	1
+PORTVERSION=	20040111
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://geda.seul.org/devel/${PORTVERSION}/ \
@@ -17,15 +16,11 @@ DISTNAME=	geda-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	bruno@tinkerbox.org
 COMMENT=	gEDA electronic schematic capture tools, netlister
 
-LIB_DEPENDS=	geda.18:${PORTSDIR}/cad/libgeda \
+LIB_DEPENDS=	geda.20:${PORTSDIR}/cad/libgeda \
 		guile.15:${PORTSDIR}/lang/guile
-BUILD_DEPENDS=	gesym-config:${PORTSDIR}/cad/geda-symbols
+RUN_DEPENDS=	${LOCALBASE}/share/gEDA/sym:${PORTSDIR}/cad/geda-symbols
 
 USE_LIBTOOL=	yes
-
-GNU_CONFIGURE=	yes
-AUTOCONF=	autoconf
-
 USE_GNOME=	gtk12
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

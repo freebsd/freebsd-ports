@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geda-symbols
-PORTVERSION=	20030223
+PORTVERSION=	20040111
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://geda.seul.org/devel/${PORTVERSION}/ \
@@ -16,9 +16,10 @@ MAINTAINER=	bruno@tinkerbox.org
 COMMENT=	gEDA symbols
 
 GNU_CONFIGURE=	yes
-AUTOCONF=	autoconf
-
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+post-install:
+	@${TOUCH} ${PREFIX}/share/gEDA/sym/local/.keep_me
 
 .include <bsd.port.mk>

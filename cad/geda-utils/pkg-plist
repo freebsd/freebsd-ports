@@ -3,9 +3,18 @@ bin/smash_megafile
 bin/convert_sym
 bin/sarlacc_schem
 bin/olib
+bin/gsch2pcb
 bin/gschlas
 bin/sarlacc_sym
 bin/gschupdate
 bin/gsymupdate
 bin/gschemdoc
 bin/refdes_renum
+bin/tragesym
+bin/pads_backannotate
+bin/garchive
+share/doc/geda-doc/readmes/README.gsch2pcb
+share/doc/geda-doc/readmes/README.olib
+share/doc/geda-doc/readmes/README.tragesym
+share/gEDA/system-gschlasrc
+@unexec rmdir %D/share/doc/geda-doc/readmes 2>/dev/null || true

@@ -1,33 +1,35 @@
 bin/gschem
-@unexec install-info --delete %D/info/gschemdoc.info %D/info/dir
-info/gschemdoc.info
-info/gschemdoc.info-1
-info/gschemdoc.info-2
-info/gschemdoc.info-3
-info/gschemdoc.info-4
-info/gschemdoc.info-5
-info/gschemdoc.info-6
-info/gschemdoc.info-7
-info/gschemdoc.info-8
-info/gschemdoc.info-9
-info/gschemdoc.info-10
-info/gschemdoc.info-11
-info/gschemdoc.info-12
-info/gschemdoc.info-13
-info/gschemdoc.info-14
-info/gschemdoc.info-15
-info/gschemdoc.info-16
-info/gschemdoc.info-17
-info/gschemdoc.info-18
-info/gschemdoc.info-19
-@exec install-info %D/info/gschemdoc.info %D/info/dir
+share/doc/geda-doc/man/gschem.html
+share/gEDA/system-gschemrc
+share/gEDA/gschem-gtkrc
+share/gEDA/gschem-lightbg
+share/gEDA/gschem-darkbg
+share/gEDA/scheme/auto-uref.scm
+share/gEDA/scheme/generate_netlist.scm
+share/gEDA/scheme/gschem.scm
+share/gEDA/scheme/list-keys.scm
+share/gEDA/scheme/print-NB-attribs.scm
+share/gEDA/bitmap/gschem-bus.xpm
+share/gEDA/bitmap/gschem-comp.xpm
+share/gEDA/bitmap/gschem-net.xpm
+share/gEDA/bitmap/gschem-new.xpm
+share/gEDA/bitmap/gschem-open.xpm
+share/gEDA/bitmap/gschem-redo.xpm
+share/gEDA/bitmap/gschem-save.xpm
+share/gEDA/bitmap/gschem-select.xpm
+share/gEDA/bitmap/gschem-undo.xpm
+share/gEDA/bitmap/gschem-edit.xpm
+share/gEDA/bitmap/gschem-text.xpm
+share/gEDA/bitmap/gschem-copy.xpm
+share/gEDA/bitmap/gschem-move.xpm
+share/gEDA/bitmap/gschem-delete.xpm
+share/gEDA/bitmap/gschem-rotate.xpm
+share/gEDA/bitmap/gschem-mirror.xpm
 share/locale/pt_BR/LC_MESSAGES/geda-gschem.mo
 share/locale/de_DE/LC_MESSAGES/geda-gschem.mo
 share/locale/nl_NL/LC_MESSAGES/geda-gschem.mo
 share/locale/ja_JP/LC_MESSAGES/geda-gschem.mo
 share/locale/ru/LC_MESSAGES/geda-gschem.mo
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/de_DE/LC_MESSAGES
-@dirrm share/locale/nl_NL/LC_MESSAGES
-@dirrm share/locale/ja_JP/LC_MESSAGES
-@dirrm share/locale/ru/LC_MESSAGES
+@unexec rmdir %D/share/doc/geda-doc/man 2>/dev/null || true
+@unexec rmdir %D/share/gEDA/scheme 2>/dev/null || true
+@dirrm share/gEDA/bitmap
