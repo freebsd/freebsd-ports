@@ -141,29 +141,36 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.mirror.ac.uk/sites/ftp.cpan.org/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://sunsite.org.uk/packages/perl/CPAN/modules/by-module/%SUBDIR%/ \
 
+#
+# RingServers in Japan
+#
+#
+# Note: If you know which of the following RingServers is nearest to
+# you, please specify it in your /etc/make.conf.
+#
+#	ring.etl.go.jp			ring.asahi-net.or.jp
+#	ring.crl.go.jp			ring.astem.or.jp
+#	ring.jah.ne.jp			ring.exp.fujixerox.co.jp
+#	ring.so-net.ne.jp		ring.ip-kyoto.ad.jp
+#	ring.iwate-pu.ac.jp		ring.shibaura-it.ac.jp
+#	ring.ocn.ad.jp			ring.htcn.ne.jp
+#	ring.omp.ad.jp			ring.jec.ad.jp
+#	ring.tains.tohoku.ac.jp		ring.toyama-ix.net
+#	ring.toyama-u.ac.jp		ring.edogawa-u.ac.jp
+#	ring.data-hotel.net		ring.yamanashi.ac.jp
+#	ring.nihon-u.ac.jp		ring.ctc.jp
+#	ring.riken.go.jp		ring.hosei.ac.jp
+#
+# (The latest list is available at http://www.ring.gr.jp/)
+#
+# You can choose either http or ftp to access to a server:
+#
+#	http://<server>/archives/%SUBDIR%/
+#	ftp://<server>/pub/%SUBDIR%/
+#
 MASTER_SITE_RINGSERVER+=	\
-	ftp://core.ring.gr.jp/pub/%SUBDIR%/ \
-	ftp://ring.etl.go.jp/pub/%SUBDIR%/ \
-	ftp://ring.asahi-net.or.jp/pub/%SUBDIR%/ \
-	ftp://ring.crl.go.jp/pub/%SUBDIR%/ \
-	ftp://ring.astem.or.jp/pub/%SUBDIR%/ \
-	ftp://ring.jah.ne.jp/pub/%SUBDIR%/ \
-	ftp://ring.exp.fujixerox.co.jp/pub/%SUBDIR%/ \
-	ftp://ring.so-net.ne.jp/pub/%SUBDIR%/ \
-	ftp://ring.ip-kyoto.ad.jp/pub/%SUBDIR%/ \
-	ftp://ring.iwate-pu.ac.jp/pub/%SUBDIR%/ \
-	ftp://ring.shibaura-it.ac.jp/pub/%SUBDIR%/ \
-	ftp://ring.ocn.ad.jp/pub/%SUBDIR%/ \
-	ftp://ring.htcn.ne.jp/pub/%SUBDIR%/ \
-	ftp://ring.omp.ad.jp/pub/%SUBDIR%/ \
-	ftp://ring.jec.ad.jp/pub/%SUBDIR%/ \
-	ftp://ring.tains.tohoku.ac.jp/pub/%SUBDIR%/ \
-	ftp://ring.toyama-ix.net/pub/%SUBDIR%/ \
-	ftp://ring.toyama-u.ac.jp/pub/%SUBDIR%/ \
-	ftp://ring.edogawa-u.ac.jp/pub/%SUBDIR%/ \
-	ftp://ring.data-hotel.net/pub/%SUBDIR%/ \
-	ftp://ring.yamanashi.ac.jp/pub/%SUBDIR%/ \
-	ftp://ring.nihon-u.ac.jp/pub/%SUBDIR%/
+	ftp://ftp.dnsbalance.ring.gr.jp/pub/%SUBDIR%/ \
+	http://www.dnsbalance.ring.gr.jp/archives/%SUBDIR%/
 
 MASTER_SITE_RUBY+= \
 	ftp://ftp.netlab.co.jp/pub/lang/ruby/%SUBDIR%/ \
