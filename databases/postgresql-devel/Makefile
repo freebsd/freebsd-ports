@@ -3,7 +3,7 @@
 # Date created:		April 2, 1997
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.15 1997/10/03 14:13:34 andreas Exp $
+# $Id: Makefile,v 1.16 1997/10/04 22:43:21 andreas Exp $
 
 DISTNAME=	postgresql-6.2
 CATEGORIES=	databases
@@ -79,7 +79,9 @@ post-install:
 			>> ${PREFIX}/pgsql/.profile; \
 		${ECHO} "PGDATA=${PREFIX}/pgsql/data" \
 			>> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "export PATH MANPATH PGLIB PGDATA" \
+		${ECHO} "DISPLAY=:0" \
+			>> ${PREFIX}/pgsql/.profile; \
+		${ECHO} "export PATH MANPATH PGLIB PGDATA DISPLAY" \
 			>> ${PREFIX}/pgsql/.profile; \
 		${ECHO} "# if you want to make regression tests use this TZ" \
 			>> ${PREFIX}/pgsql/.profile; \
