@@ -55,6 +55,7 @@
     SUBDIR += elsa
     SUBDIR += etherboot
     SUBDIR += ethereal
+    SUBDIR += everybuddy
     SUBDIR += fping
     SUBDIR += freewais-sf
     SUBDIR += fspclient
