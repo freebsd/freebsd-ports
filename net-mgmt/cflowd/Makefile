@@ -17,7 +17,7 @@ PATCH_SITES=	http://net.doit.wisc.edu/~plonka/cflowd/
 PATCHFILES=	cflowd-2-1-b1-djp.patch
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ler@lerctr.org
 COMMENT=	Flow analysis tool used for analyzing Cisco's NetFlow switching
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libArts.a:${PORTSDIR}/net/arts++
