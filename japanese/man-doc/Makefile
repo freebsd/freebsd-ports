@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	man-doc
-PORTVERSION=	5.2
+PORTVERSION=	5.3
 CATEGORIES=	japanese
 DISTFILES=	# none
 
-MAINTAINER=	horikawa@FreeBSD.org
+MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Japanese online manual pages corresponding to /usr/share/man/man*
 
 PREFIX?=	/usr
