@@ -3,7 +3,7 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.16 1998/09/26 23:48:21 steve Exp $
+# $Id: Makefile,v 1.17 1998/11/14 09:43:05 asami Exp $
 #
 
 DISTNAME=       uudeview-0.5.13
@@ -38,7 +38,7 @@ do-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/uulib/libuu.a ${PREFIX}/lib
 	@/usr/bin/ranlib ${PREFIX}/lib/libuu.a
-	${INSTALL_DATA} ${WRKSRC}/uulib/uudeview.h ${PREFIX}/include/uu.h
+	${INSTALL_DATA} ${WRKSRC}/uulib/uudeview.h ${PREFIX}/include
 	${INSTALL_MAN} ${FILESDIR}/uulib.3 ${PREFIX}/man/man3
 	perl -pi -e '$$a = '\''${PREFIX}/'\''; $$a =~ s/([^\w\/])/\\$$1/g; s/FUNKYTOKENHERE/$$a/' ${PREFIX}/man/man3/uulib.3
 .if !defined(NOPORTDOCS)

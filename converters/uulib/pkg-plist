@@ -2,7 +2,7 @@ lib/libuu.a
 lib/libuu.so
 lib/libuu.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-include/uu.h
+include/uudeview.h
 share/doc/uulib/Makefile
 share/doc/uulib/README
 share/doc/uulib/binhex.fig
