@@ -66,6 +66,7 @@
     SUBDIR += iv
     SUBDIR += japaneseAFM
     SUBDIR += jcode.pl
+    SUBDIR += jed
     SUBDIR += jgv
     SUBDIR += jhd
     SUBDIR += jls
