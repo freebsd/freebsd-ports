@@ -1,0 +1,12 @@
+--- xsis/xutil.c.orig	Sat Jul 16 07:56:03 1994
++++ xsis/xutil.c	Thu Aug  3 22:34:03 2000
+@@ -49,7 +49,9 @@
+     /*	Similar to perror but print errno value also for debugging. */
+ 
+     extern int sys_nerr;
++#if !defined(__FreeBSD__)
+     extern char *sys_errlist[];
++#endif
+ 
+     if (errno >= 0 && errno < sys_nerr) {
+ 	fprintf(stderr,"%s: %s (errno=%d)\n",s,sys_errlist[errno],errno);

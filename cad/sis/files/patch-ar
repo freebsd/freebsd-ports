@@ -1,0 +1,11 @@
+--- sis/mincov/Makefile.orig	Sat Jul 16 07:48:38 1994
++++ sis/mincov/Makefile	Fri Aug  4 00:41:55 2000
+@@ -34,7 +34,7 @@
+ LINTLIBS= ../sparse/llib-lsparse.ln 	\
+ 	  ../util/llib-lutil.ln 
+ 
+-CFLAGS	= -O $(INCLUDE)
++CFLAGS	+= $(INCLUDE)
+ LDFLAGS	=
+ LINTFLAGS =  $(INCLUDE) ${LINTEXTRAS}
+ 

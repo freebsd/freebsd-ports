@@ -1,0 +1,11 @@
+--- utility/pipefork.c.orig	Sat Apr 23 11:05:01 1994
++++ utility/pipefork.c	Thu Aug  3 22:34:03 2000
+@@ -37,7 +37,7 @@
+     int forkpid, waitpid;
+     int topipe[2], frompipe[2];
+     char buffer[1024];
+-#if defined(__hpux) || defined (__osf__)
++#if defined(__hpux) || defined (__osf__) || defined(__FreeBSD__)
+     int status;
+ #else
+     union wait status;

@@ -1,0 +1,40 @@
+--- sred/Makefile.orig	Sat Mar 12 01:58:41 1994
++++ sred/Makefile	Fri Aug  4 00:12:25 2000
+@@ -17,23 +17,23 @@
+ # for HPUX
+ SHELL	= /bin/sh
+ 
+-MAKE = /bin/make
++#MAKE = /bin/make
+ AR = ar
+ RANLIB = ranlib
+-CPLUSPLUS = g++
++CPLUSPLUS = ${CXX}
+ 
+ OCTTOOLS	= /projects/octtools/octtools/$(MACHINE)
+ # SIS	= /projects/classes/sis/$(MACHINE)
+ SIS	= /usr/eesww/sis
+ UTILS	= ${OCTTOOLS}/utils
+-XINCLOC = -I/usr/local/X11R4/include
+-XLIBLOC = -L/usr/local/X11R4/lib
++XINCLOC = -I${X11BASE}/include
++XLIBLOC = -L${X11BASE}/lib
+ 
+ LINTCREATEFLAG = -C
+ LINTEXTRAS =
+ LDEXTRAS =
+ DBGFLAG =
+-OPTFLAG = -O
++#OPTFLAG = -O
+ 
+ # an alternative if you want links in the installation locations
+ # back to the source directories would be:
+@@ -108,7 +108,7 @@
+ 		"VPATH=${VPATH}"
+ 
+ INCLUDE	= ${XINCLOC}  -I${SIS}/include
+-CFLAGS	= ${OPTFLAG} ${DBGFLAG} ${INCLUDE} 
++CFLAGS	+= ${OPTFLAG} ${DBGFLAG} ${INCLUDE} 
+ YFLAGS = -d
+ VERSION	= "-DCUR_DATE=\"`date | awk '{print $$2, $$3, $$6}'`\"" \
+ 	  "-DCUR_TIME=\"`date | awk '{print $$4}'`\""

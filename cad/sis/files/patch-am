@@ -1,0 +1,11 @@
+--- port/port.h.orig	Sat Apr 23 11:02:33 1994
++++ port/port.h	Thu Aug  3 22:34:01 2000
+@@ -110,7 +110,7 @@
+ #define LACK_SYS5
+ #endif
+ 
+-#if defined(ultrix3) || defined(sunos4) || defined(_IBMR2) || defined(ultrix4) || defined(__osf__)
++#if defined(ultrix3) || defined(sunos4) || defined(_IBMR2) || defined(ultrix4) || defined(__osf__) || defined(__FreeBSD__)
+ #define SIGNAL_FN	void
+ #else
+ /* sequent, ultrix2, 4.3BSD (vax, hp), sunos3 */

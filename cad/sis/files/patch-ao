@@ -1,0 +1,22 @@
+--- sis/Makefile.nooct.orig	Sat Jul 16 07:56:21 1994
++++ sis/Makefile.nooct	Fri Aug  4 00:16:52 2000
+@@ -13,7 +13,7 @@
+ UNPACK	= unpack
+ COPY = .
+ SHELL = /bin/sh
+-MAKE = /bin/make
++#MAKE = /bin/make
+ REQUIRE = oh oct utility st errtrap mm port
+ LINTCREATEFLAG = -C
+ LINTEXTRAS = -DOCT -DUSE_MM -DSIS
+@@ -40,8 +40,8 @@
+ 
+ LIBSG	=
+ 
+-CC	= cc
+-CFLAGS	= -DSIS
++#CC	= cc
++CFLAGS	+= -DSIS
+ CFLAGSG = -g -DSIS
+ LDFLAGS = -lm
+ 

@@ -1,0 +1,11 @@
+--- sis/astg/bwd_com.c.orig	Sat Jul 16 07:56:43 1994
++++ sis/astg/bwd_com.c	Thu Aug  3 22:34:02 2000
+@@ -1207,7 +1207,7 @@
+ 	 ns = stg_get_num_states (stg);
+ 	 fprintf (siserr, "give the codes in the form state_name binary_code\n");
+ 	 for (i = 0; i < ns; i++) {
+-		gets (buf1);
++		fgets (buf1, sizeof(buf1), stdin);
+ 		do {
+ 			sscanf (buf1, "%s %s", buf2, buf3);
+ 			state = stg_get_state_by_name (stg, buf2);

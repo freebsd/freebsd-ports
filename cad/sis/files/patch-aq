@@ -1,0 +1,29 @@
+--- sis/bdd_cmu/Make_lib.include.orig	Tue Jan 18 07:04:19 1994
++++ sis/bdd_cmu/Make_lib.include	Fri Aug  4 00:44:33 2000
+@@ -6,7 +6,7 @@
+ DBGFLAG =   # empty now, but assign -g for debugging
+ OPTFLAG =   # empty now, but assign -O for optimization
+ PACKFL	=   # flags peculiar to individual packages, empty now, to be assigned in the package's makefile.
+-CFLAGS = $(OPTFLAG) $(DBGFLAG) $(PACKFL) $(INCLUDE)
++CFLAGS += $(OPTFLAG) $(DBGFLAG) $(PACKFL) $(INCLUDE)
+ 
+ # object files
+ OBJ = $(SRC:.c=.o)
+@@ -20,7 +20,7 @@
+ # present, they were compiled with -g. This assumption is maintained by
+ # removing the .o files before and after the other library builds.
+ $(LIBG): $(SRC) $(HDR)
+-	$(MAKE) $(MFLAGS) MAKE=$(MAKE) CURRENT=$(CURRENT) CC=$(CC) DBGFLAG=-g make_libg
++	$(MAKE) $(MFLAGS) MAKE=$(MAKE) CURRENT=$(CURRENT) CC=$(CC) DBGFLAG=$(DBGFLAG) make_libg
+ 	chmod 0775 $(LIBG) $(OBJ)
+ 
+ lib: 
+@@ -33,7 +33,7 @@
+ # optimized libary
+ $(LIB): $(SRC) $(HDR)
+ 	rm -f $(OBJ)
+-	$(MAKE) $(MFLAGS) MAKE=$(MAKE) CURRENT=$(CURRENT) CC=$(CC) OPTFLAG=-O make_lib
++	$(MAKE) $(MFLAGS) MAKE=$(MAKE) CURRENT=$(CURRENT) CC=$(CC) OPTFLAG=$(OPTFLAG) make_lib
+ #	rm -f $(OBJ)
+ #	chmod 0775 $(LIB) 
+ 

@@ -1,0 +1,25 @@
+--- utility/csystem.c.orig	Sat Oct 24 09:31:44 1992
++++ utility/csystem.c	Thu Aug  3 22:34:03 2000
+@@ -17,8 +17,12 @@
+ util_csystem(s)
+ char *s;
+ {
++#ifdef __FreeBSD__
++    sig_t istat, qstat;
++#else
+     register SIGNAL_FN (*istat)(), (*qstat)();
+-#if defined(_IBMR2) || defined(__osf__)
++#endif
++#if defined(_IBMR2) || defined(__osf__) || defined(__FreeBSD__)
+     int status;    
+ #else
+     union wait status;
+@@ -39,7 +43,7 @@
+     if (w == -1) {		/* check for no children ?? */
+ 	retval = -1;
+     } else {
+-#if defined(_IBMR2) || defined(__osf__)
++#if defined(_IBMR2) || defined(__osf__) || defined(__FreeBSD__)
+ 	retval = status;
+ #else
+ 	retval = status.w_status;

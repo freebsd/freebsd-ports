@@ -1,0 +1,74 @@
+--- sis/Makefile.orig	Sat Jul 16 08:02:00 1994
++++ sis/Makefile	Thu Aug  3 23:20:29 2000
+@@ -13,7 +13,7 @@
+ UNPACK	= unpack
+ COPY = .
+ SHELL = /bin/sh
+-MAKE = /bin/make
++MAKE = make
+ REQUIRE = oh oct utility st errtrap mm port
+ LINTCREATEFLAG = -C
+ LINTEXTRAS = -DOCT -DUSE_MM -DSIS
+@@ -60,8 +60,8 @@
+ 	  $(CAD)/lib/libpq-g.a \
+ 	  $(CAD)/lib/libda-g.a
+ 
+-CC	= cc
+-CFLAGS	= -DOCT -DUSE_MM -DSIS
++CC	?= cc
++CFLAGS	+= -DOCT -DUSE_MM -DSIS
+ CFLAGSG = -g -DOCT -DUSE_MM -DSIS
+ LDFLAGS = -lm
+ 
+@@ -92,21 +92,21 @@
+ 	@for dir in $(DIRS); do				\
+ 	    (cd $$dir; 					\
+ 	     echo Making $$dir ...; 			\
+-	     ${MAKE} CC=$(CC) 'CFLAGS=$(CFLAGS) $$(INCLUDE)' SIS=$(SIS) CADROOT=$(CADROOT) CAD=$(CAD) lib$$dir.a)\
++	     ${MAKE} CC=$(CC) 'CFLAGS=$(CFLAGS) $$(INCLUDE)' SIS=$(SIS) CADROOT=$(CADROOT) CAD=$(CAD) LIBDIR=$(LIBDIR) lib$$dir.a)\
+ 	done
+ 
+ do_makeg:
+ 	@for dir in $(DIRS); do 			\
+ 	    (cd $$dir; 					\
+ 	     echo Making $$dir ...; 			\
+-	     ${MAKE} CC=$(CC) 'CFLAGS=$(CFLAGSG) $$(INCLUDE)' SIS=$(SIS) CADROOT=$(CADROOT) CAD=$(CAD) lib$$dir.a)\
++	     ${MAKE} CC=$(CC) 'CFLAGS=$(CFLAGSG) $$(INCLUDE)' SIS=$(SIS) CADROOT=$(CADROOT) CAD=$(CAD) LIBDIR=$(LIBDIR) lib$$dir.a)\
+ 	done
+ 
+ do_lintlib:
+ 	@-for dir in $(DIRS); do				\
+ 	    (cd $$dir; 					\
+ 	       echo Linting $$dir ...; 			\
+-	       ${MAKE} SIS=$(SIS) LINTCREATEFLAG=${LINTCREATEFLAG} LINTEXTRAS=${LINTEXTRAS} CADROOT=$(CADROOT) CAD=$(CAD) llib-l$$dir.ln);	\
++	       ${MAKE} SIS=$(SIS) LINTCREATEFLAG=${LINTCREATEFLAG} LINTEXTRAS=${LINTEXTRAS} CADROOT=$(CADROOT) CAD=$(CAD) LIBDIR=$(LIBDIR) llib-l$$dir.ln);	\
+ 	done
+ 
+ do_repack:
+@@ -142,7 +142,7 @@
+ 	@for dir in $(DIRS); do				\
+ 	    (cd $$dir; 					\
+ 	     echo Cleaning $$dir ...; 			\
+-	     ${MAKE} -i CAD=$(CAD) SIS=$(SIS) strip_depend >/dev/null	\
++	     ${MAKE} -i CAD=$(CAD) SIS=$(SIS) strip_depend >/dev/null;	\
+ 	     ${MAKE} -i CAD=$(CAD) SIS=$(SIS) clean >/dev/null)	\
+ 	done
+ 
+@@ -201,7 +201,7 @@
+ 	@for dir in $(DIRS); do				\
+ 	    (cd $$dir; 					\
+ 	     echo; echo "lint $$dir ...";		\
+-	     ${MAKE} SIS=$(SIS) 'CFLAGS=$(CFLAGSG) $$(INCLUDE)' LINTCREATEFLAG=${LINTCREATEFLAG} LINTEXTRAS=${LINTEXTRAS} CADROOT=${CADROOT} CAD=$(CAD) lint)		\
++	     ${MAKE} SIS=$(SIS) 'CFLAGS=$(CFLAGSG) $$(INCLUDE)' LINTCREATEFLAG=${LINTCREATEFLAG} LINTEXTRAS=${LINTEXTRAS} CADROOT=${CADROOT} CAD=$(CAD) LIBDIR=$(LIBDIR) lint)		\
+ 	done
+ 
+ wc:
+@@ -221,7 +221,7 @@
+ 	    (cd $$dir; 					\
+ 	     sleep 1;					\
+ 	     echo $$dir;				\
+-	     ${MAKE} CAD=$(CAD) tags)			\
++	     ${MAKE} CAD=$(CAD)				\
+ 	done
+ 	sort -o tags tags
+ 

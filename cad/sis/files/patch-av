@@ -1,0 +1,20 @@
+--- stamina/mimi/Makefile.orgi	Sat Jul 16 07:58:51 1994
++++ stamina/mimi/Makefile	Fri Aug  4 00:45:55 2000
+@@ -28,7 +28,7 @@
+ 
+ INCLUDE=-I../hash -I$(SIS)/mincov -I$(SIS)/sparse -I$(SIS)/util
+ 
+-CFLAG= -c -O
++CFLAGS+= $(INCLUDE)
+ 
+ install: stamina
+ 	cp stamina $(INSDIR)
+@@ -37,7 +37,7 @@
+ 	$(CC) -o stamina $(OBJ) $(LIB) $(SISLIBS)
+ 
+ .c.o:
+-	$(CC) $(CFLAG) $(INCLUDE) $*.c
++	$(CC) $(CFLAGS) -c $*.c
+ 
+ main.o:  struct.h user.h
+ install_state.o:

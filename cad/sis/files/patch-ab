@@ -1,6 +1,6 @@
---- xsis/Makefile.orig	Thu Oct  1 01:05:09 1998
-+++ xsis/Makefile	Thu Oct  1 01:05:48 1998
-@@ -40,6 +40,9 @@
+--- xsis/Makefile.orig	Fri Mar 18 05:11:04 1994
++++ xsis/Makefile	Fri Aug  4 00:42:30 2000
+@@ -40,11 +40,14 @@
  
  LIBS	= $(SIS)/lib/libsis.a
  LIBS2	= -L$(X11)/lib -lXaw -lXmu -lXt -lXext -lX11 -lm
@@ -10,3 +10,10 @@
  
  # ---------------------------------------------------------------------------
  
+-CC	= cc
+-CFLAGS	= -O $(INCLUDE)
++CC	?= cc
++CFLAGS	+= $(INCLUDE)
+ LDFLAGS	=
+ 
+ $(TARGET): $(OBJ) $(LIBS)

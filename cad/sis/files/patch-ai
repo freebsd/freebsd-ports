@@ -1,0 +1,42 @@
+--- jedi/Makefile.orig	Sun Jan 17 10:52:25 1993
++++ jedi/Makefile	Fri Aug  4 00:08:37 2000
+@@ -67,7 +67,7 @@
+ # for HPUX
+ SHELL	= /bin/sh
+ 
+-MAKE = /bin/make
++#MAKE = /bin/make
+ 
+ CAD	= /octtools/release-3.0
+ CADROOT	= ~octtools
+@@ -76,7 +76,7 @@
+ LINTCREATEFLAG = -C
+ LINTEXTRAS =
+ DBGFLAG =
+-OPTFLAG =
++#OPTFLAG =
+ 
+ # an alternative if you want links in the installation locations
+ # back to the source directories would be:
+@@ -97,9 +97,9 @@
+ # tools required for this tool
+ TOOLREQUIRE = 
+ 
+-SRC	= cluster.c expand.c getopt.c hill.c hot.c jedi.c options.c random.c read.c rp.c util.c weights.c write.c
+-LSRC	= cluster.c expand.c getopt.c hill.c hot.c jedi.c options.c random.c read.c rp.c util.c weights.c write.c
+-OBJ	= cluster.o expand.o getopt.o hill.o hot.o jedi.o options.o random.o read.o rp.o util.o weights.o write.o
++SRC	= cluster.c expand.c hill.c hot.c jedi.c options.c random.c read.c rp.c util.c weights.c write.c
++LSRC	= cluster.c expand.c hill.c hot.c jedi.c options.c random.c read.c rp.c util.c weights.c write.c
++OBJ	= cluster.o expand.o hill.o hot.o jedi.o options.o random.o read.o rp.o util.o weights.o write.o
+ HDR	= jedi.h jedi_int.h rp.h rp_int.h util.h
+ 
+ CADBIN	= ${CAD}/bin
+@@ -146,7 +146,7 @@
+ 		"VPATH=${VPATH}"
+ 
+ INCLUDE	=  -I$(CAD)/include
+-CFLAGS	= ${OPTFLAG} ${DBGFLAG} ${INCLUDE} '-DCADROOT="${CADROOT}"'
++CFLAGS	+= ${OPTFLAG} ${DBGFLAG} ${INCLUDE} '-DCADROOT="${CADROOT}"'
+ VERSION	= "-DCUR_DATE=\"`date | awk '{print $$2, $$3, $$6}'`\"" \
+ 	  "-DCUR_TIME=\"`date | awk '{print $$4}'`\""
+ LINTFLAGS= ${INCLUDE} '-DCADROOT="${CADROOT}"'${LINTEXTRAS}
