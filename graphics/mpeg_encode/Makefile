@@ -3,7 +3,7 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.5 1998/08/23 07:34:42 hoek Exp $
+# $Id: Makefile,v 1.6 1998/10/12 01:05:06 jseger Exp $
 #
 
 DISTNAME=	mpeg_encode-1.5b-src
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://mm-ftp.CS.Berkeley.EDU/pub/multimedia/mpeg/encode/
 
 MAINTAINER=	erich@FreeBSD.org
 
-BROKEN_ELF=	jpeg/libjpeg.a
+USE_GMAKE=	yes
 
 MAN1=		mpeg_encode.1
 MANCOMPRESSED=	yes
