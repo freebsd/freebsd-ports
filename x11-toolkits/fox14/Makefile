@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fox
-PORTVERSION?=	1.0.30
-PORTREVISION?=	0
+PORTVERSION=	1.1.22
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
@@ -26,8 +25,9 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=--with-opengl=mesa --with-x
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lXm"
+CONFIGURE_ARGS+=--with-opengl=mesa --with-x \
+		--enable-xthreads
 
 MAN1=	reswrap.1
 
@@ -133,4 +133,16 @@ pre-everything::
 .endif
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+##
+## Port conflict management
+##
+.if exists(${LOCALBASE}/lib/libFOX-1.0.so)
+IGNORE= Conflict management: you have port fox-devel installed. The\
+        fox port is incompatible with fox-devel one. You have to\
+        uninstall fox-devel port if you really need the fox one 
+.endif
+
+.include <bsd.port.post.mk>
+
