@@ -1,8 +1,8 @@
 *** configure.in.orig	Wed May 12 13:20:02 1999
---- configure.in	Tue Jan 11 22:55:20 2000
+--- configure.in	Sat Feb 12 15:32:11 2000
 ***************
 *** 30,37 ****
---- 30,163 ----
+--- 30,169 ----
   fi
   
   AC_PROG_CC
@@ -69,8 +69,6 @@
 + yes
 + #endif],
 + 				[ipv6type=$i;
-+ 				ipv6lib=inet6;
-+ 				ipv6libdir=/usr/local/v6/lib;
 + 				CPPFLAGS="-DINET6 $CPPFLAGS"])
 + 			;;
 + 		linux)
@@ -123,6 +121,14 @@
 + 	AC_MSG_RESULT($ipv6type)
 + fi
 + 
++ if test "$ipv6" = "yes" -a -f /usr/local/v6/lib/libinet6.a; then
++ 	ac_inet6_LDFLAGS="inet6"
++ 	ipv6libdir=/usr/local/v6/lib
++ 	LDFLAGS="$LDFLAGS -L/usr/local/v6/lib"
++ 	AC_CHECK_LIB(inet6, getaddrinfo, , ipv6lib="$ac_inet6_LDFLAGS")
++ fi
++ 
++ 
 + if test "$ipv6" = "yes" -a "$ipv6lib" != "none"; then
 + 	if test -d $ipv6libdir -a -f $ipv6libdir/lib$ipv6lib.a; then
 + 		LIBS="-L$ipv6libdir -l$ipv6lib $LIBS"
@@ -146,7 +152,7 @@
   
   AC_MSG_CHECKING([that the compiler works])
   AC_TRY_RUN([ main(int ac, char **av) { return 0; } ],
---- 439,445 ----
+--- 445,451 ----
   
   # Socket pairs appear to be broken on several systems.  I don't know exactly
   # where, so I'll use pipes everywhere for now.
@@ -163,7 +169,7 @@
   AC_CHECK_HEADERS(sgtty.h sys/select.h sys/ioctl.h machine/endian.h)
   AC_CHECK_HEADERS(paths.h usersec.h utime.h netinet/in_systm.h)
   AC_CHECK_HEADERS(netinet/in_system.h netinet/ip.h netinet/tcp.h ulimit.h)
---- 495,501 ----
+--- 501,507 ----
   
   AC_HEADER_STDC
   AC_HEADER_SYS_WAIT
@@ -173,7 +179,7 @@
   AC_CHECK_HEADERS(netinet/in_system.h netinet/ip.h netinet/tcp.h ulimit.h)
 ***************
 *** 399,404 ****
---- 525,540 ----
+--- 531,546 ----
   [ AC_DEFINE(HAVE_INCOMPATIBLE_SIGINFO)
     AC_MSG_RESULT(yes)] , AC_MSG_RESULT(no))
   
@@ -192,7 +198,7 @@
   AC_CHECK_LIB(seq, get_process_stats)
 ***************
 *** 436,441 ****
---- 572,676 ----
+--- 578,682 ----
   
   AC_REPLACE_FUNCS(strerror memmove remove random putenv crypt socketpair snprintf)
   
@@ -307,7 +313,7 @@
     AC_CHECK_LIB(ndbm, dbm_open, KERBEROS_LIBS="$KERBEROS_LIBS -lndbm")
     KERBEROS_OBJS="auth-kerberos.o"
     ;;
---- 1167,1177 ----
+--- 1173,1183 ----
     AC_DEFINE(KRB5)
     KERBEROS_ROOT="$with_kerberos5"
     KERBEROS_INCS="-I${KERBEROS_ROOT}/include"
@@ -321,7 +327,7 @@
     ;;
 ***************
 *** 1252,1257 ****
---- 1491,1528 ----
+--- 1497,1534 ----
     AC_DEFINE(ENABLE_TCP_NODELAY)
   )
   
@@ -362,7 +368,7 @@
   [  --enable-so-linger      Enable setting SO_LINGER socket option],
 ***************
 *** 1311,1316 ****
---- 1582,1589 ----
+--- 1588,1595 ----
     AC_DEFINE(SCP_ALL_STATISTICS_ENABLED)
   )
   
@@ -380,7 +386,7 @@
   
   AC_ARG_PROGRAM
   
---- 1597,1603 ----
+--- 1603,1609 ----
   fi
   AC_MSG_RESULT($PIDDIR)
   
@@ -394,7 +400,7 @@
   AC_SUBST(SSHINSTALLMODE)
   
 ! AC_OUTPUT(Makefile sshd.8 ssh.1 make-ssh-known-hosts.1 zlib-1.0.4/Makefile)
---- 1609,1612 ----
+--- 1615,1618 ----
   AC_SUBST(SSHDCONFOBJS)
   AC_SUBST(SSHINSTALLMODE)
   
