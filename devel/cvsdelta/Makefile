@@ -1,0 +1,30 @@
+# ex:ts=8
+# Ports collection makefile for:  cvsdelta
+# Date created:                   Thu Jul 25, 2002
+# Whom:                           Michael L. Hostbaek (mich@freebsdcluster.org)
+#
+# $FreeBSD$
+#
+
+PORTNAME=	cvsdelta
+PORTVERSION=	1.3
+CATEGORIES=	devel
+MASTER_SITES=	http://belnet.dl.sourceforge.net/sourceforge/cvsdelta/ \
+		${MASTER_SITE_SOURCEFORGE}
+
+MAINTAINER=	mich@freebsdcluster.org
+
+USE_RUBY=	yes
+NO_BUILD=	yes
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^#!/usr/bin/ruby|#!${RUBY}|' ${WRKSRC}/cvsdelta
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/cvsdelta.1 ${PREFIX}/man/man1/
+
+MAN1=		cvsdelta.1
+
+.include <bsd.port.mk>
