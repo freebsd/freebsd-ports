@@ -2,7 +2,6 @@ bin/sylpheed-claws
 bin/sylpheed-switcher
 bin/sylprint.pl
 etc/sylprint.rc.example
-lib/charset.alias
 %%PORTDOCS%%share/doc/sylpheed-claws/NEWS
 %%PORTDOCS%%share/doc/sylpheed-claws/README
 %%PORTDOCS%%share/doc/sylpheed-claws/README.claws
@@ -145,7 +144,6 @@ share/locale/hr/LC_MESSAGES/sylpheed-claws.mo
 share/locale/it/LC_MESSAGES/sylpheed-claws.mo
 share/locale/ja/LC_MESSAGES/sylpheed-claws.mo
 share/locale/ko/LC_MESSAGES/sylpheed-claws.mo
-share/locale/locale.alias
 share/locale/nl/LC_MESSAGES/sylpheed-claws.mo
 share/locale/pl/LC_MESSAGES/sylpheed-claws.mo
 share/locale/pt_BR/LC_MESSAGES/sylpheed-claws.mo

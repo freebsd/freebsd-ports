@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.7.6
+PORTVERSION=	0.7.8
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -17,6 +17,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	corecode@corecode.ath.cx
 
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+
 THEMEVERSION=	2
 THEMEFILE=	sylpheed-theme-pak${THEMEVERSION}${EXTRACT_SUFX}
 
@@ -26,8 +28,7 @@ USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 USE_GTK=	yes
 
-CONFIGURE_ARGS=	--program-suffix="-claws" --with-included-gettext \
-		--enable-ipv6
+CONFIGURE_ARGS=	--program-suffix="-claws" --enable-ipv6
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
@@ -40,7 +41,7 @@ USE_IMLIB=		yes
 CONFIGURE_ARGS+=	--disable-gdk-pixbuf
 .endif
 .if defined(WITH_GPGME) || defined(WITH_ALL)
-LIB_DEPENDS+=		gpgme.5:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=		gpgme.8:${PORTSDIR}/security/gpgme
 RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=	--enable-gpgme
 .endif
@@ -103,10 +104,11 @@ post-extract:
 .endif
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" \
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/tools/README.sylprint ${WRKSRC}/tools/sylprint.pl
+	@${REINPLACE_CMD} -e "s|po intl libkcc|po libkcc|" ${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)
-	@${PERL} -pi -e 's|^(SUBDIRS = .*)manual faq (.*)|\1\2|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|src manual faq tools|src tools|' ${WRKSRC}/Makefile.in
 .endif
 
 pre-build:
@@ -115,9 +117,9 @@ pre-build:
 post-install:
 .if !defined(NOPORTDOCS)
 .for i in NEWS README README.jp README.claws ReleaseNotes.claws TODO TODO.jp tools/README.sylprint
-	@${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-	@${INSTALL_MAN} ${WRKSRC}/tools/README ${DOCSDIR}/README.tools
+	@${INSTALL_DATA} ${WRKSRC}/tools/README ${DOCSDIR}/README.tools
 .endif
 	@${MKDIR} ${DATADIR}
 .for i in eud2gc.py filter_conv.pl gif2xface.pl ldif-to-xml.py newscache_clean.pl
