@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config
-PORTVERSION=	1.10.3
+PORTVERSION=	1.10.4
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
