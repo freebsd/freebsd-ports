@@ -9,7 +9,7 @@
 +X11_PATH= -L${X11BASE}/lib
 +X11_PATHI= -I${X11BASE}/include
  
- OGL_LIBS= -lGLU -lGL -lm
+ OGL_LIBS= -lGL -lm
  #OGL_LIBS= -lm                                                # Think Different
  
  #------------------------------------------------------------------------------
