@@ -1,40 +1,27 @@
-*** src/Imakefile.orig	Tue Mar  2 07:06:36 1999
---- src/Imakefile	Sat Mar 27 22:51:32 1999
-***************
-*** 5,11 ****
-  
-  ICONS = WSoundPrefs.xpm WSoundPrefs.tiff
-  
-! CC = gcc
-  
-  BINDIR = /GNUstep/Apps/WSoundPrefs.app
-  
---- 5,11 ----
-  
-  ICONS = WSoundPrefs.xpm WSoundPrefs.tiff
-  
-! XCOMM CC = gcc
-  
-  BINDIR = /GNUstep/Apps/WSoundPrefs.app
-  
-***************
-*** 17,25 ****
-  WRASTERCFLAGS = `get-wraster-flags --cflags`
-  WRASTERLFLAGS = `get-wraster-flags --lflags`
-  WRASTERLIBS = `get-wraster-flags --libs`
-! WINGSLIBS = -lWINGs -lPropList
-  
-! STD_INCLUDES = $(WRASTERCFLAGS)
-  DEPLIBS = $(DEPXLIB) 
-  
-  LOCAL_LIBRARIES =	$(XLIB) $(WINGSLIBS) $(WMSOUNDLIB) $(WRASTERLFLAGS) $(WRASTERLIBS) $(EFENCELIB)
---- 17,25 ----
-  WRASTERCFLAGS = `get-wraster-flags --cflags`
-  WRASTERLFLAGS = `get-wraster-flags --lflags`
-  WRASTERLIBS = `get-wraster-flags --libs`
-! WINGSLIBS = -lWINGs -L/$(LOCALBASE)/lib -lPropList
-  
-! STD_INCLUDES = $(WRASTERCFLAGS) -I/usr/local/include -I/usr/X11R6/include
-  DEPLIBS = $(DEPXLIB) 
-  
-  LOCAL_LIBRARIES =	$(XLIB) $(WINGSLIBS) $(WMSOUNDLIB) $(WRASTERLFLAGS) $(WRASTERLIBS) $(EFENCELIB)
+--- src/Imakefile.orig	Mon Oct 18 11:35:58 1999
++++ src/Imakefile	Mon May 22 20:01:17 2000
+@@ -5,9 +5,9 @@
+ 
+ ICONS = WSoundPrefs.xpm WSoundPrefs.tiff
+ 
+-CC = gcc
++XCOMM CC = gcc
+ 
+-BINDIR = /Apps/WSoundPrefs.app
++BINDIR = /GNUstep/Apps/WSoundPrefs.app
+ 
+ XCOMM EFENCELIB = -lefence
+ EFENCELIB =
+@@ -18,9 +18,9 @@
+ WRASTERCFLAGS = `get-wraster-flags --cflags`
+ WRASTERLFLAGS = `get-wraster-flags --lflags`
+ WRASTERLIBS = `get-wraster-flags --libs`
+-WINGSLIBS = -lWINGs -lPropList
+-
+-STD_INCLUDES = $(WRASTERCFLAGS) $(WSOUNDCFLAGS)
++WINGSLIBS = -lWINGs -L/$(LOCALBASE)/lib -lPropList
++  
++STD_INCLUDES = $(WRASTERCFLAGS) -I${LOCALBASE}/include -I${X11BASE}/include
+ DEPLIBS = $(DEPXLIB) 
+ 
+ LOCAL_LIBRARIES =	$(XLIB) $(WINGSLIBS) $(WSOUNDLFLAGS) $(WSOUNDLIBS) $(WRASTERLFLAGS) $(WRASTERLIBS) $(EFENCELIB)

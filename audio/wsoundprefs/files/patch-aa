@@ -1,15 +1,16 @@
---- Imakefile.orig	Sat Jun 19 02:08:06 1999
-+++ Imakefile	Sat Jun 19 23:19:31 1999
-@@ -1,10 +1,10 @@
- #define IHaveSubdirs
- #define PassCDebugFlags CDEBUGFLAGS="$(CDEBUGFLAGS)"
+--- Imakefile.orig	Fri Mar 31 17:16:47 2000
++++ Imakefile	Mon May 22 19:46:29 2000
+@@ -6,11 +6,11 @@
+ XCOMM Installation Path: $(PREFIX)/Apps/WSoundPrefs.app
+ XCOMM -------------------------------------------------
+ XCOMM PREFIX = /usr/GNUstep/Local
+-PREFIX = /usr/local/GNUstep
++XCOMM PREFIX = /usr/local/GNUstep
  
--PREFIX = /usr/X11R6
-+XCOMM PREFIX = /usr/X11R6
  
  XCOMM CDEBUGFLAGS = -Wall -ggdb -DDEBUG
--CDEBUGFLAGS ?= -O6 -m486 
-+XCOMM CDEBUGFLAGS ?= -O6 -m486 
+-CDEBUGFLAGS ?= -O2 -m486 
++XCOMM CDEBUGFLAGS ?= -O2 -m486 
  
  SUBDIRS = src
  
