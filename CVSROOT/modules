@@ -8446,6 +8446,7 @@ sfs		ports/security/sfs
 sftp_port	ports/ftp/sftp
 sgb		ports/devel/sgb
 sge		ports/sysutils/sge
+sgeee		ports/sysutils/sgeee
 sgf2tex		ports/print/sgf2tex
 sgifonts	ports/x11-fonts/sgifonts
 sgl		ports/devel/sgl
