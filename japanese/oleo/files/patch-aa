@@ -1,0 +1,26 @@
+--- io-utils.c.orig	Wed Jun 11 19:48:27 1997
++++ io-utils.c	Wed Jun 11 19:55:10 1997
+@@ -85,12 +85,23 @@
+ init_infinity ()
+ #endif
+ {
++#ifdef __FreeBSD__
++  /* Imprimentation of 'Divide by 0' on FreeBSD is difference
++     from NetBSD, Solaris, Linux. */
++  (void)signal (SIGFPE, ignore_sig);
++  __plinf = 1./0.;
++  (void)signal (SIGFPE, ignore_sig);
++  __neinf = -1.0/0.;
++  (void)signal (SIGFPE, ignore_sig);
++  __nan = 0./0.;
++#else
+   (void)signal (SIGFPE, ignore_sig);
+   __plinf = divide (1., 0.);
+   (void)signal (SIGFPE, ignore_sig);
+   __neinf = divide (-1., 0.);
+   (void)signal (SIGFPE, ignore_sig);
+   __nan = __plinf + __neinf;
++#endif
+ }
+ 
+ 

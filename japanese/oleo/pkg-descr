@@ -1,0 +1,42 @@
+
+* jp-oleo-1.6
+	Japanized Spreadsheet program, oleo.
+
+	This ports collection use japanized patch by Kuniaki HAYASHIDA. 
+
+* documentation in Japanese is:
+	     ${PREFIX}/share/doc/oleo/ja_JP.EUC/USING.eucJP
+    useally /usr/local/share/doc/oleo/ja_JP.EUC/USING.eucJP
+
+* Known PROBLEMS
+	 o  enviroment variable LANG is set to C under X11 client mode:
+		(cf)
+		setenv LANG C
+		setenv DISPLAY localhost:0.0
+
+	    when start oleo, X11 is too heavy load to operate X clients.
+
+	    ---- please use under.... -----
+		o set enviroment variable LANG ja_JP.EUC
+	     or
+		o non window client mode(unset DISPLAY variable)
+
+* Tips
+	  Oleo default editing mode is like Emacs(Ctrl-h is call
+	help mode).
+	  If you want to use Ctrl-h and BS key to delete-char,
+	set to $HOME/.oleorc as below:
+
+bind-key generic-main backward-delete-char ^H
+
+* Related URL
+	http://www.hh.iij4u.or.jp/%7Ehayasida/oleo/
+
+** Acknowledgements to this ports file **
+        Special thanks to:
+ 		Kuniaki HAYASHIDA<hh.iij4u.or.jp>
+		Takeshi MUTOH <mutoh@sentinel.info.nara-k.ac.jp>
+
+---
+Yoshiro MIHIRA
+(sanpei@yy.cs.keio.ac.jp)
