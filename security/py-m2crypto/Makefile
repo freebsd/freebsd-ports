@@ -28,7 +28,7 @@ USE_REINPLACE=	yes
 PINSTALL_PLIST=	${WRKDIR}/pinstall-plist
 
 post-patch:
-	${REINPLACE_CMD} "s/PYTHON_VERSION/${PYTHON_VERSION}/" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|" ${WRKSRC}/Makefile
 
 post-build:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/../M2Crypto
