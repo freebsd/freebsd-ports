@@ -1277,6 +1277,7 @@ dvips2ascii	ports/print/dvips2ascii
 dviselect	ports/print/dviselect
 dvorak7min	ports/misc/dvorak7min
 dvorakng	ports/misc/dvorakng
+dvts		ports/multimedia/dvts
 dwatch		ports/sysutils/dwatch
 dxpc		ports/x11/dxpc
 dylan		ports/lang/dylan
