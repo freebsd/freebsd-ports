@@ -11704,7 +11704,6 @@ xmcd		ports/audio/xmcd
 xmdiary		ports/deskutils/xmdiary
 xmedcon		ports/graphics/xmedcon
 xmemory		ports/games/xmemory
-xmerl		ports/textproc/xmerl
 xmess		ports/emulators/xmess
 xmfract		ports/graphics/xmfract
 xmhtml		ports/x11-toolkits/xmhtml

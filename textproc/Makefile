@@ -665,7 +665,6 @@
     SUBDIR += xincluder
     SUBDIR += xlhtml
     SUBDIR += xls2xml
-    SUBDIR += xmerl
     SUBDIR += xml-i18n-tools
     SUBDIR += xml-lite.el
     SUBDIR += xml2rfc
