@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php-screw
-PORTVERSION=	1.1
+PORTVERSION=	1.2.1
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,8 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-CRYPTKEY?=	abcdefg
-PATTERN?=	PAT1
+CRYPTKEY?=	11152, 368, 192, 1281, 62
 
 USE_LIBTOOL=	yes
 
@@ -35,9 +34,8 @@ pre-everything:
 	@${ECHO} ""
 	@${ECHO} "To achieve real security, define your own encryption"
 	@${ECHO} "seed key (CRYPTKEY); longer is better."
-	@${ECHO} "Optionally customize the file pattern (PATTERN)."
 	@${ECHO} ""
-	@${ECHO} "make CRYPTKEY=MyLongKey PATTERN=MYPAT"
+	@${ECHO} "make CRYPTKEY=\"234, 84, 39664, 771, 9853\""
 	@${ECHO} ""
 
 post-extract:
@@ -45,15 +43,13 @@ post-extract:
 	@(cd ${WRKSRC}; ${LOCALBASE}/bin/phpize)
 
 post-patch:
-	@${ECHO} "#define PM9SCREW_MYCRYPTKEY_1   \"${CRYPTKEY}\"" > \
-		${WRKSRC}/extension/my_screw.h
-	@${ECHO} "#define PM9SCREW_MYPATTERN_1   \"${PATTERN}\"" >> \
-		${WRKSRC}/extension/my_screw.h
+	@${ECHO} "short pm9screw_mycryptkey[] = { ${CRYPTKEY} };" > \
+		${WRKSRC}/my_screw.h
 
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
-	@(cd ${BUILD_WRKSRC}/extension; ${SETENV} ${MAKE_ENV} ${MAKE} \
+	@(cd ${BUILD_WRKSRC}/tools; ${SETENV} ${MAKE_ENV} ${MAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 post-build:
@@ -63,9 +59,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/lib/php/extensions
 	@${INSTALL_DATA} ${WRKSRC}/modules/php_screw.so \
 		${PREFIX}/lib/php/extensions
-	@${INSTALL_DATA} ${WRKSRC}/extension/php_screw_ext.so \
-		${PREFIX}/lib/php/extensions
-	@${INSTALL_PROGRAM} ${WRKSRC}/extension/screw ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/tools/screw ${PREFIX}/bin
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
