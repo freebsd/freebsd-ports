@@ -1,0 +1,14 @@
+--- src/lib/IV-2_6/rubrect.c.org	Wed Sep 25 22:28:00 2002
++++ src/lib/IV-2_6/rubrect.c	Wed Sep 25 22:28:59 2002
+@@ -32,7 +32,11 @@
+ #include <math.h>
+ #include <stdlib.h>
+ #ifndef apollo
++#ifdef __FreeBSD__
++#include <limits.h>
++#else
+ #include <values.h>
++#endif
+ #endif
+ 
+ RubberRect::RubberRect(
