@@ -1,3 +1,4 @@
+$FreeBSD$
 --- lib/prepargs.c.orig	Thu Nov 16 01:32:16 2000
 +++ lib/prepargs.c	Thu Nov 16 01:32:58 2000
 @@ -23,6 +23,11 @@
