@@ -8,11 +8,11 @@
 PORTNAME=	libticables
 PORTVERSION=	3.7.7
 CATEGORIES=	comms
-COMMENT=	TI calculator link cables library
-MAINTAINER=	tijl@ulyssis.org
-
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tilp
+
+MAINTAINER=	tijl@ulyssis.org
+COMMENT=	TI calculator link cables library
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
