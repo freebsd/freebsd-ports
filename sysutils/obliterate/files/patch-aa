@@ -1,0 +1,8 @@
+--- Makefile.orig	Sat Feb 19 13:43:28 2000
++++ Makefile	Sat Feb 19 13:43:34 2000
+@@ -1,4 +1,4 @@
+-CFLAGS=		-g
++CFLAGS?=		-g
+ PROG=		obliterate
+ SRCS=		obliterate.c
+ MAN8=		obliterate.8
