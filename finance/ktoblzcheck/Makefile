@@ -8,10 +8,10 @@
 PORTNAME=	ktoblzcheck
 PORTVERSION=	0.4
 CATEGORIES=	finance german
-MASTER_SITES=	http://ktoblzcheck.sourceforge.net/download/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILE}
+MASTER_SITES=	http://ktoblzcheck.sourceforge.net/download/:misc \
+		${MASTER_SITE_SOURCEFORGE:S/$/:main/}
+MASTER_SITE_SUBDIR=	${PORTNAME}/:main
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main ${DATAFILE}:misc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
