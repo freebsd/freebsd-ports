@@ -185,6 +185,7 @@
     SUBDIR += sshbuddy
     SUBDIR += stan
     SUBDIR += sword
+    SUBDIR += sword-modules
     SUBDIR += tcb
     SUBDIR += team
     SUBDIR += tet
