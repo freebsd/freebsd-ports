@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Oct 13 16:20:11 1999
-+++ Makefile	Mon Oct 25 10:43:21 1999
-@@ -3,19 +3,19 @@
+--- Makefile.orig	Thu Oct 14 01:20:11 1999
++++ Makefile	Sat Dec 11 19:01:31 1999
+@@ -3,35 +3,35 @@
  #If you do not have gcc, change the setting for COMPILER, but you must
  #use an ANSI standard C compiler (NOT the old SunOS 4.1.3 cc
  #compiler; get gcc if you are still using it). 
@@ -23,13 +23,24 @@
 +#CFLAGS=-O
  #If you do have FreeType and/or Xpm fully installed, uncomment a
  #variation of this and comment out the line above. See also LIBS below.
- #CFLAGS=-O -DHAVE_XPM -DHAVE_LIBTTF
-@@ -31,7 +31,7 @@
+-#CFLAGS=-O -DHAVE_XPM -DHAVE_LIBTTF
++CFLAGS+=-DHAVE_XPM -DHAVE_LIBTTF
+ 
+ #If you don't have FreeType and/or Xpm fully installed, uncomment this
+ #(default).
+-LIBS=-lm -lgd -lpng -lz
++#LIBS=-lm -lgd -lpng -lz
+ 
+ #If you do have FreeType and/or Xpm fully installed, uncomment a 
+ #variation of this and comment out the line above. Note that
+ #Xpm requires X11. See also CFLAGS above.
+-#LIBS=-lm -lgd -lpng -lz -lttf -lXpm -lX11
++LIBS=-lm -lgd -lpng -lz -lttf -lXpm -lX11
  
  #Typical install locations for freetype, zlib, xpm and libpng header files.
  #If yours are somewhere else, change this. 
 -INCLUDEDIRS=-I/usr/local/include -I/usr/include/X11 -I/usr/X11R6/include/X11
-+CFLAGS+=-I$(LOCALBASE)/include
++CFLAGS+=-I$(LOCALBASE)/include -I$(LOCALBASE)/include/freetype -I$(X11BASE)/include -I$(X11BASE)/include/X11
  
  #Typical install locations for freetype, zlib, xpm and libpng libraries.
  #If yours are somewhere else, other than a standard location
@@ -38,7 +49,7 @@
  #Put -L. first so that old versions of the gd library elsewhere
  #on your system can't cause conflicts while building a new one.
 -LIBDIRS=-L. -L/usr/local/lib -L/usr/lib/X11 -L/usr/X11R6/lib
-+LIBDIRS=-L. -L$(LOCALBASE)/lib
++LIBDIRS=-L. -L$(LOCALBASE)/lib -L$(X11BASE)/lib
  
  #Location where libgd.a should be installed by "make install".
 -INSTALL_LIB=/usr/local/lib
