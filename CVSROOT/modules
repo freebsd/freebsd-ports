@@ -4681,6 +4681,7 @@ p5-SOAP		ports/net/p5-SOAP
 p5-SOAP-Lite	ports/net/p5-SOAP-Lite
 p5-SQL-Statement	ports/databases/p5-SQL-Statement
 p5-SVG	ports/textproc/p5-SVG
+p5-Scalar-List-Utils	ports/lang/p5-Scalar-List-Utils
 p5-Schedule-At	ports/sysutils/p5-Schedule-At
 p5-Schedule-Cron	ports/sysutils/p5-Schedule-Cron
 p5-Schedule-Match	ports/sysutils/p5-Schedule-Match
