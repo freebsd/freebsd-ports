@@ -18,8 +18,9 @@ To use Exim instead of sendmail on startup:
 *) Clear the sendmail queue and stop the sendmail daemon.
 *) Adjust mailer.conf(5) as appropriate.
 *) Set the 'sendmail_enable' rc.conf(5) variable to 'NONE'.
-*) Set the 'daily_status_include_submit_mailq' periodic.conf(5) variable
-   to 'NO'.
+*) Set the 'daily_status_include_submit_mailq' and
+   'daily_clean_hoststat_enable' periodic.conf(5)
+   variables to 'NO'.
 *) Start exim with '${PREFIX}/etc/rc.d/exim.sh start'.
 
 You may also want to configure newsyslog(8) to rotate Exim log files:
