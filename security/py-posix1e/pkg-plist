@@ -1,0 +1,8 @@
+%%PYTHON_SITELIBDIR%%/posix1e.so
+share/doc/py-posix1e-0.2.1/BENCHMARK
+share/doc/py-posix1e-0.2.1/IMPLEMENTATION
+share/doc/py-posix1e-0.2.1/PLATFORMS
+share/doc/py-posix1e-0.2.1/README
+share/doc/py-posix1e-0.2.1/posix1e.html
+share/doc/py-posix1e-0.2.1/posix1e.txt
+@dirrm share/doc/py-posix1e-0.2.1

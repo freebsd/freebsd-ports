@@ -231,6 +231,7 @@
     SUBDIR += py-mcrypt
     SUBDIR += py-mhash
     SUBDIR += py-openssl
+    SUBDIR += py-posix1e
     SUBDIR += py-pow
     SUBDIR += py-rijndael
     SUBDIR += py-twofish
