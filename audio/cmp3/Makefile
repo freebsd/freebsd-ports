@@ -25,9 +25,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cmp3 ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/rnmp3 ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/cmp3
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/cmp3
-	${INSTALL_DATA} ${WRKSRC}/cmp3rc ${PREFIX}/share/doc/cmp3/sample.cmp3rc
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/cmp3rc ${DOCSDIR}/sample.cmp3rc
 .endif
 
 .include <bsd.port.mk>

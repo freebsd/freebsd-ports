@@ -1,5 +1,5 @@
 bin/cmp3
 bin/rnmp3
-%%PORTDOCS%%share/doc/cmp3/README
-%%PORTDOCS%%share/doc/cmp3/sample.cmp3rc
-%%PORTDOCS%%@dirrm share/doc/cmp3
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/sample.cmp3rc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
