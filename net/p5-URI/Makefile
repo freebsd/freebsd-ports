@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	URI
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	URI
@@ -22,6 +22,7 @@ MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		URI.3 \
 		URI::Escape.3 \
 		URI::Heuristic.3 \
+		URI::QueryParam.3 \
 		URI::URL.3 \
 		URI::WithBase.3 \
 		URI::data.3 \

@@ -1,6 +1,7 @@
 lib/perl5/site_perl/%%PERL_VER%%/URI.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/Escape.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/Heuristic.pm
+lib/perl5/site_perl/%%PERL_VER%%/URI/QueryParam.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/URL.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/WithBase.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/_foreign.pm
@@ -32,6 +33,8 @@ lib/perl5/site_perl/%%PERL_VER%%/URI/rlogin.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/rsync.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/rtsp.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/rtspu.pm
+lib/perl5/site_perl/%%PERL_VER%%/URI/sip.pm
+lib/perl5/site_perl/%%PERL_VER%%/URI/sips.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/snews.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/ssh.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/telnet.pm
