@@ -266,6 +266,7 @@
     SUBDIR += kmerlin
     SUBDIR += kmess
     SUBDIR += kmldonkey
+    SUBDIR += knemo
     SUBDIR += konverse
     SUBDIR += kphone
     SUBDIR += kpopup

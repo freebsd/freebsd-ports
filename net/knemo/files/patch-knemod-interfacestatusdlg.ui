@@ -1,0 +1,271 @@
+--- knemod/interfacestatusdlg.ui.orig	Fri Jan 21 16:57:24 2005
++++ knemod/interfacestatusdlg.ui	Fri Jan 21 20:02:50 2005
+@@ -9,7 +9,7 @@
+             <x>0</x>
+             <y>0</y>
+             <width>272</width>
+-            <height>258</height>
++            <height>237</height>
+         </rect>
+     </property>
+     <property name="caption">
+@@ -145,7 +145,7 @@
+                     </property>
+                     <widget class="QLayoutWidget">
+                         <property name="name">
+-                            <cstring>layout3</cstring>
++                            <cstring>layout7</cstring>
+                         </property>
+                         <hbox>
+                             <property name="name">
+@@ -171,18 +171,18 @@
+                                 </property>
+                                 <property name="sizeHint">
+                                     <size>
+-                                        <width>20</width>
++                                        <width>40</width>
+                                         <height>20</height>
+                                     </size>
+                                 </property>
+                             </spacer>
+-                            <widget class="KActiveLabel">
++                            <widget class="KComboBox">
+                                 <property name="name">
+-                                    <cstring>textLabelIP</cstring>
++                                    <cstring>comboBoxIP</cstring>
+                                 </property>
+                                 <property name="sizePolicy">
+                                     <sizepolicy>
+-                                        <hsizetype>1</hsizetype>
++                                        <hsizetype>5</hsizetype>
+                                         <vsizetype>0</vsizetype>
+                                         <horstretch>0</horstretch>
+                                         <verstretch>0</verstretch>
+@@ -193,7 +193,7 @@
+                     </widget>
+                     <widget class="QLayoutWidget">
+                         <property name="name">
+-                            <cstring>layout4</cstring>
++                            <cstring>layout8</cstring>
+                         </property>
+                         <hbox>
+                             <property name="name">
+@@ -207,41 +207,30 @@
+                                     <string>Subnet Mask:</string>
+                                 </property>
+                             </widget>
+-                            <spacer>
+-                                <property name="name">
+-                                    <cstring>spacer13_2</cstring>
+-                                </property>
+-                                <property name="orientation">
+-                                    <enum>Horizontal</enum>
+-                                </property>
+-                                <property name="sizeType">
+-                                    <enum>Expanding</enum>
+-                                </property>
+-                                <property name="sizeHint">
+-                                    <size>
+-                                        <width>71</width>
+-                                        <height>21</height>
+-                                    </size>
+-                                </property>
+-                            </spacer>
+-                            <widget class="KActiveLabel">
++                            <widget class="QLabel">
+                                 <property name="name">
+                                     <cstring>textLabelSubnet</cstring>
+                                 </property>
+                                 <property name="sizePolicy">
+                                     <sizepolicy>
+-                                        <hsizetype>1</hsizetype>
+-                                        <vsizetype>0</vsizetype>
++                                        <hsizetype>7</hsizetype>
++                                        <vsizetype>5</vsizetype>
+                                         <horstretch>0</horstretch>
+                                         <verstretch>0</verstretch>
+                                     </sizepolicy>
+                                 </property>
++                                <property name="text">
++                                    <string></string>
++                                </property>
++                                <property name="alignment">
++                                    <set>AlignVCenter|AlignRight</set>
++                                </property>
+                             </widget>
+                         </hbox>
+                     </widget>
+                     <widget class="QLayoutWidget">
+                         <property name="name">
+-                            <cstring>layout5</cstring>
++                            <cstring>layout9</cstring>
+                         </property>
+                         <hbox>
+                             <property name="name">
+@@ -255,41 +244,22 @@
+                                     <string>Broadcast Address:</string>
+                                 </property>
+                             </widget>
+-                            <spacer>
+-                                <property name="name">
+-                                    <cstring>spacer13_3</cstring>
+-                                </property>
+-                                <property name="orientation">
+-                                    <enum>Horizontal</enum>
+-                                </property>
+-                                <property name="sizeType">
+-                                    <enum>Expanding</enum>
+-                                </property>
+-                                <property name="sizeHint">
+-                                    <size>
+-                                        <width>71</width>
+-                                        <height>21</height>
+-                                    </size>
+-                                </property>
+-                            </spacer>
+-                            <widget class="KActiveLabel">
++                            <widget class="QLabel">
+                                 <property name="name">
+                                     <cstring>variableText1</cstring>
+                                 </property>
+-                                <property name="sizePolicy">
+-                                    <sizepolicy>
+-                                        <hsizetype>1</hsizetype>
+-                                        <vsizetype>0</vsizetype>
+-                                        <horstretch>0</horstretch>
+-                                        <verstretch>0</verstretch>
+-                                    </sizepolicy>
++                                <property name="text">
++                                    <string></string>
++                                </property>
++                                <property name="alignment">
++                                    <set>AlignVCenter|AlignRight</set>
+                                 </property>
+                             </widget>
+                         </hbox>
+                     </widget>
+                     <widget class="QLayoutWidget">
+                         <property name="name">
+-                            <cstring>layout6</cstring>
++                            <cstring>layout10</cstring>
+                         </property>
+                         <hbox>
+                             <property name="name">
+@@ -303,41 +273,30 @@
+                                     <string>Default Gateway:</string>
+                                 </property>
+                             </widget>
+-                            <spacer>
+-                                <property name="name">
+-                                    <cstring>spacer13_4</cstring>
+-                                </property>
+-                                <property name="orientation">
+-                                    <enum>Horizontal</enum>
+-                                </property>
+-                                <property name="sizeType">
+-                                    <enum>Expanding</enum>
+-                                </property>
+-                                <property name="sizeHint">
+-                                    <size>
+-                                        <width>71</width>
+-                                        <height>21</height>
+-                                    </size>
+-                                </property>
+-                            </spacer>
+-                            <widget class="KActiveLabel">
++                            <widget class="QLabel">
+                                 <property name="name">
+                                     <cstring>variableText2</cstring>
+                                 </property>
+                                 <property name="sizePolicy">
+                                     <sizepolicy>
+-                                        <hsizetype>1</hsizetype>
+-                                        <vsizetype>0</vsizetype>
++                                        <hsizetype>7</hsizetype>
++                                        <vsizetype>5</vsizetype>
+                                         <horstretch>0</horstretch>
+                                         <verstretch>0</verstretch>
+                                     </sizepolicy>
+                                 </property>
++                                <property name="text">
++                                    <string></string>
++                                </property>
++                                <property name="alignment">
++                                    <set>AlignVCenter|AlignRight</set>
++                                </property>
+                             </widget>
+                         </hbox>
+                     </widget>
+                     <widget class="QLayoutWidget">
+                         <property name="name">
+-                            <cstring>layout7</cstring>
++                            <cstring>layout11</cstring>
+                         </property>
+                         <hbox>
+                             <property name="name">
+@@ -351,35 +310,24 @@
+                                     <string>HW-Address:</string>
+                                 </property>
+                             </widget>
+-                            <spacer>
+-                                <property name="name">
+-                                    <cstring>spacer13_5</cstring>
+-                                </property>
+-                                <property name="orientation">
+-                                    <enum>Horizontal</enum>
+-                                </property>
+-                                <property name="sizeType">
+-                                    <enum>Expanding</enum>
+-                                </property>
+-                                <property name="sizeHint">
+-                                    <size>
+-                                        <width>71</width>
+-                                        <height>21</height>
+-                                    </size>
+-                                </property>
+-                            </spacer>
+-                            <widget class="KActiveLabel">
++                            <widget class="QLabel">
+                                 <property name="name">
+                                     <cstring>variableText3</cstring>
+                                 </property>
+                                 <property name="sizePolicy">
+                                     <sizepolicy>
+-                                        <hsizetype>1</hsizetype>
+-                                        <vsizetype>0</vsizetype>
++                                        <hsizetype>7</hsizetype>
++                                        <vsizetype>5</vsizetype>
+                                         <horstretch>0</horstretch>
+                                         <verstretch>0</verstretch>
+                                     </sizepolicy>
+                                 </property>
++                                <property name="text">
++                                    <string></string>
++                                </property>
++                                <property name="alignment">
++                                    <set>AlignVCenter|AlignRight</set>
++                                </property>
+                             </widget>
+                         </hbox>
+                     </widget>
+@@ -728,8 +676,6 @@
+         </widget>
+     </vbox>
+ </widget>
+-<customwidgets>
+-</customwidgets>
+ <connections>
+     <connection>
+         <sender>buttonClose</sender>
+@@ -740,10 +686,6 @@
+ </connections>
+ <layoutdefaults spacing="6" margin="11"/>
+ <includehints>
+-    <includehint>kactivelabel.h</includehint>
+-    <includehint>kactivelabel.h</includehint>
+-    <includehint>kactivelabel.h</includehint>
+-    <includehint>kactivelabel.h</includehint>
+-    <includehint>kactivelabel.h</includehint>
++    <includehint>kcombobox.h</includehint>
+ </includehints>
+ </UI>

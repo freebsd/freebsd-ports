@@ -1,0 +1,62 @@
+lib/kde3/kcm_knemo.la
+lib/kde3/kcm_knemo.so
+lib/kde3/kded_knemod.la
+lib/kde3/kded_knemod.so
+share/applnk/Settings/Network/kcm_knemo.desktop
+share/apps/knemo/eventsrc
+share/icons/crystalsvg/16x16/apps/knemo.png
+share/icons/crystalsvg/22x22/actions/network_connected.png
+share/icons/crystalsvg/22x22/actions/network_connected_lan.png
+share/icons/crystalsvg/22x22/actions/network_connected_ppp.png
+share/icons/crystalsvg/22x22/actions/network_connected_wlan.png
+share/icons/crystalsvg/22x22/actions/network_disconnected.png
+share/icons/crystalsvg/22x22/actions/network_disconnected_lan.png
+share/icons/crystalsvg/22x22/actions/network_disconnected_ppp.png
+share/icons/crystalsvg/22x22/actions/network_disconnected_wlan.png
+share/icons/crystalsvg/22x22/actions/network_incoming.png
+share/icons/crystalsvg/22x22/actions/network_incoming_lan.png
+share/icons/crystalsvg/22x22/actions/network_incoming_ppp.png
+share/icons/crystalsvg/22x22/actions/network_incoming_wlan.png
+share/icons/crystalsvg/22x22/actions/network_outgoing.png
+share/icons/crystalsvg/22x22/actions/network_outgoing_lan.png
+share/icons/crystalsvg/22x22/actions/network_outgoing_ppp.png
+share/icons/crystalsvg/22x22/actions/network_outgoing_wlan.png
+share/icons/crystalsvg/22x22/actions/network_traffic.png
+share/icons/crystalsvg/22x22/actions/network_traffic_lan.png
+share/icons/crystalsvg/22x22/actions/network_traffic_ppp.png
+share/icons/crystalsvg/22x22/actions/network_traffic_wlan.png
+share/icons/crystalsvg/32x32/apps/knemo.png
+share/locale/bg/LC_MESSAGES/kcm_knemo.mo
+share/locale/bg/LC_MESSAGES/knemod.mo
+share/locale/cs/LC_MESSAGES/kcm_knemo.mo
+share/locale/cs/LC_MESSAGES/knemod.mo
+share/locale/de/LC_MESSAGES/kcm_knemo.mo
+share/locale/de/LC_MESSAGES/knemod.mo
+share/locale/es/LC_MESSAGES/kcm_knemo.mo
+share/locale/es/LC_MESSAGES/knemod.mo
+share/locale/fr/LC_MESSAGES/kcm_knemo.mo
+share/locale/fr/LC_MESSAGES/knemod.mo
+share/locale/it/LC_MESSAGES/kcm_knemo.mo
+share/locale/it/LC_MESSAGES/knemod.mo
+share/locale/nl/LC_MESSAGES/kcm_knemo.mo
+share/locale/nl/LC_MESSAGES/knemod.mo
+share/locale/pt_BR/LC_MESSAGES/kcm_knemo.mo
+share/locale/pt_BR/LC_MESSAGES/knemod.mo
+share/locale/ru/LC_MESSAGES/kcm_knemo.mo
+share/locale/ru/LC_MESSAGES/knemod.mo
+share/services/kded/knemod.desktop
+@unexec rmdir %D/share/services/kded 2>/dev/null || true
+@unexec rmdir %D/share/services 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/22x22/actions 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/apps/knemo
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Settings/Network 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Settings 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
