@@ -8547,6 +8547,7 @@ postgresql-jdbc	ports/databases/postgresql-jdbc
 postgresql-libpq++	ports/databases/postgresql-libpq++
 postgresql-libpqxx	ports/databases/postgresql-libpqxx
 postgresql-odbc	ports/databases/postgresql-odbc
+postgresql-plpython	ports/databases/postgresql-plpython
 postgresql-plruby	ports/databases/postgresql-plruby
 postgresql-pltcl	ports/databases/postgresql-pltcl
 postgresql-relay	ports/databases/postgresql-relay
