@@ -24,6 +24,11 @@ MAN1=           timidity.1
 
 post-install:
 	cd ${PREFIX}/lib/timidity && \
-	tar zxf ${DISTDIR}/${TIINS}
+	tar zxf ${DISTDIR}/${TIINS} && \
+	cp goemon.cfg goemon.cfg.bak && \
+	sed 's=dir goemon=dir ${PREFIX}/lib/timidity/goemon=' \
+	   < goemon.cfg.bak > goemon.cfg && \
+	rm goemon.cfg.bak
+
 
 .include <bsd.port.mk>
