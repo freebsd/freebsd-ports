@@ -10,8 +10,6 @@ TTFM=${PREFIX}/bin/ttfm.sh
 
 FONTDIR=${PREFIX}/share/fonts/TrueType
 FONTS="bkai00mp.ttf bsmi00lp.ttf gbsn00lp.ttf gkai00mp.ttf"
-DEFAULTMING="bsmi00lp.ttf gbsn00lp.ttf"
-DEFAULTKAI="bkai00mp.ttf gkai00mp.ttf"
 
 if [ ! -x $TTFM ]; then
     echo "$TTFM not found!"
@@ -24,24 +22,12 @@ if [ "X$WANT_GS" != "X" ]; then
     for f in $FONTS; do
         $TTFM --add gscjk $FONTDIR/$f
     done
-    for f in $DEFAULTMING; do
-        $TTFM --setdefault gscjk $FONTDIR/$f
-    done
-    for f in $DEFAULTKAI; do
-        $TTFM --setdefault_kai gscjk $FONTDIR/$f
-    done
     echo "gscjk" >> $FONTDIR/$PKGNAME
 fi
 
 if [ "X$WITHOUT_X" = "X" ]; then
     for f in $FONTS; do
         $TTFM --add xttfm $FONTDIR/$f
-    done
-    for f in $DEFAULTMING; do
-        $TTFM --setdefault xttfm $FONTDIR/$f
-    done
-    for f in $DEFAULTKAI; do
-        $TTFM --setdefault_kai xttfm $FONTDIR/$f
     done
     echo "xttfm" >> $FONTDIR/$PKGNAME
 fi

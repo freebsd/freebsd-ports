@@ -10,12 +10,10 @@ TTFM=${PKG_PREFIX}/bin/ttfm.sh
 
 FONTDIR=${PREFIX}/share/fonts/TrueType
 FONTS="bkai00mp.ttf bsmi00lp.ttf gbsn00lp.ttf gkai00mp.ttf"
-DEFAULTMING="default_ming-big5-0.ttf default_ming-gb2312.1980-0.ttf"
-DEFAULTKAI="default_kai-big5-0.ttf default_kai-gb2312.1980-0.ttf"
 
 if [ -r $FONTDIR/$PKGNAME ]; then
     for i in `cat $FONTDIR/$PKGNAME`; do
-        for f in $FONTS $DEFAULTMING $DEFAULTKAI; do
+        for f in $FONTS; do
             $TTFM --remove $i $f
         done
     done

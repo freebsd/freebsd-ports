@@ -12,7 +12,7 @@ CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	keith@FreeBSD.org
+MAINTAINER=	statue@freebsd.sinica.edu.tw
 COMMENT=	Four Chinese Big5/GB TrueType fonts made by Arphic Technology
 
 RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm
