@@ -70,6 +70,7 @@
     SUBDIR += hello
     SUBDIR += heyu
     SUBDIR += histring
+    SUBDIR += instant-server
     SUBDIR += instant-workstation
     SUBDIR += iselect
     SUBDIR += jargon
