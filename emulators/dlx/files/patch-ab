@@ -1,5 +1,5 @@
---- dlxsim/sim.c.orig	Thu May  9 04:37:56 1991
-+++ dlxsim/sim.c	Sat Sep 28 02:42:32 2002
+--- dlxsim/sim.c.orig	Sun Sep 22 09:32:12 2002
++++ dlxsim/sim.c	Sun Sep 22 10:20:30 2002
 @@ -22,7 +22,7 @@
  #include <stdio.h>
  #include <stdlib.h>
@@ -18,12 +18,24 @@
      if (!(j = machPtr->fp_units[unitType][i])) break;
      else if (j < soonest) soonest = j;
    }
-@@ -2833,7 +2833,7 @@
+@@ -2832,8 +2832,11 @@
+ 
  static char *errstring()
  {
++/*
  	extern int errno, sys_nerr;
--	extern char *sys_errlist[];
-+	/* extern char *sys_errlist[]; */
+ 	extern char *sys_errlist[];
++*/
++	extern int errno;
  	static char msgbuf[64];
  
  	if( !errno )
+@@ -2842,7 +2845,7 @@
+ 		sprintf( msgbuf, "unknown error %d", errno );
+ 		return msgbuf;
+ 	}
+-	return sys_errlist[ errno ];
++	return (char *)(sys_errlist[ errno ]);
+ }
+ 
+ /*
