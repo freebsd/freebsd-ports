@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	2.0.44
+PORTVERSION=	2.0.45
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://apache.mirrorcentral.com/dist/httpd/ \
