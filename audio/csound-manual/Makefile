@@ -8,7 +8,7 @@
 PORTNAME=	csound-manual
 PORTVERSION=	4.10
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.csounds.com/manual/current/
+MASTER_SITES=	ftp://csounds.com/manual/current/
 DISTFILES=	ascii.zip \
 		espanol.zip \
 		html.zip \
@@ -23,9 +23,10 @@ DIST_SUBDIR=	csound
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Manuals for Csound
 
-BROKEN=		Does not fetch
-
 RUN_DEPENDS=	csound:${PORTSDIR}/audio/csound
+
+BROKEN=		Files are not available for distribution anymore. \
+		Owner has withdrawn the files due to bandwidth costs.
 
 RESTRICTED=	"no redistribution; no commercial use except to make music (see http://mitpress.mit.edu/e-books/csound/fpage/FAQml/faq/faq.html)"
 NO_CDROM=	${RESTRICTED}
