@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymol
-PORTVERSION=	0.93
+PORTVERSION=	0.97
 CATEGORIES=	biology python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pymol
@@ -48,6 +48,10 @@ post-patch:
 		${WRKSRC}/modules/pmg_tk/Demo.py
 	@${RM} -f ${WRKSRC}/modules/pmg_tk/Demo.py.*
 	${REINPLACE_CMD} -e 's,@PYTHON_VERSION@,${PYTHON_VERSION},g' \
+		-e 's,@LOCALBASE@,${LOCALBASE},g' \
+		-e 's,@X11BASE@,${X11BASE},g' \
+		-e 's,@CFLAGS@,${CFLAGS},g' \
+		-e 's,@CC@,${CC},g' \
 		-e 's,@PICFLAG@,${PICFLAG},g' ${WRKSRC}/Rules.make
 
 do-install:
