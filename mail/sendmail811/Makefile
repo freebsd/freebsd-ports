@@ -8,7 +8,8 @@
 PORTNAME=	sendmail
 PORTVERSION=	8.11.4
 CATEGORIES=	mail ipv6
-MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/
+MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
