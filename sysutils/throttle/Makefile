@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	throttle
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://klicman.org/throttle/
 
@@ -17,10 +17,4 @@ GNU_CONFIGURE=	yes
 MAN1=		throttle.1
 PLIST_FILES=	bin/throttle
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
