@@ -11,16 +11,11 @@ PORTNAME=	festival
 PORTVERSION=	1.4.1
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.speech.cs.cmu.edu/festival/cstr/festival/${PORTVERSION}/ \
-		ftp://ftp.leb.net/pub/blinux/${SUB} \
-		ftp://ftp.mayn.de/pub/linux/BLinux/${SUB} \
-		ftp://ftp.tuwien.ac.at/opsys/linux/blinux/${SUB}
-SUB=		festival/mirror.festival_home/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_FESTIVAL}
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 .if defined (WITH_OGI)
 MASTER_SITES+=	${PATCH_SITES}
-PATCH_SITES=	ftp://ftp.leb.net/pub/blinux/festival/mirror.ogi-synth_home/ \
-		ftp://ftp.mayn.de/pub/linux/BLinux/festival/mirror.ogi-synth_home/ \
-		ftp://cslu.cse.ogi.edu/pub/tts/
+PATCH_SITES=	${MASTER_SITE_FESTIVAL_OGI}
 .endif
 DISTFILES=	${DISTNAME}.tar.gz \
 		speech_tools-1.2.1.tar.gz
