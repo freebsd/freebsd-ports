@@ -1,0 +1,12 @@
+bin/pgpsplit
+bin/pks-mail.sh
+bin/pks-queue-run.sh
+bin/pksclient
+bin/pksd
+bin/pksdctl
+etc/rc.d/pksd.sh
+@unexec if cmp -s %D/etc/pksd.conf %D/share/examples/pksd.conf; then rm -f %D/etc/pksd.conf; fi
+share/examples/pksd.conf
+share/pks/mail_intro
+share/pks/pks_help.en
+@dirrm share/pks

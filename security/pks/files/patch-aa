@@ -1,0 +1,61 @@
+$NetBSD$
+
+--- Makefile.in.orig	Thu Jul 27 11:11:28 2000
++++ Makefile.in	Thu Jul 27 11:24:02 2000
+@@ -9,9 +9,9 @@
+ SHELL = /bin/sh
+ 
+ ## this does recursion for db2, if it's in the tree
+-
+-SUBDIRS = db2-sleepycat/dist
+-
++#
++# We use the installed db2, so we don't need this line anymore
++#
+ depend all install check clean distclean maintainer-clean::
+ 	for i in ${SUBDIRS}; do (test -d $$i && cd $$i && ${MAKE} $@) || exit 1; done
+ 
+@@ -32,12 +32,13 @@
+ all-pure:: $(ALL_PURE)
+ all-utils:: $(UTILS)
+ 
+-DBDIR = db2-sleepycat/dist
++DBDIR = ${LOCALBASE}/include/db2
+ 
+ CC = @CC@
+ INSTALL = @INSTALL@
+-INSTALL_PROGRAM = $(INSTALL)
+-INSTALL_DATA = $(INSTALL)
++INSTALL_PROGRAM = $(BSD_INSTALL_PROGRAM)
++INSTALL_DATA = $(BSD_INSTALL_DATA)
++INSTALL_SCRIPT = $(BSD_INSTALL_SCRIPT)
+ SOCKLIBS = @LIBS@
+ VPATH = @srcdir@
+ 
+@@ -60,7 +61,7 @@
+ DEFINES = $(DBG) @DEFS@
+ CFLAGS = @gcc_cflags@ -g -O $(INCLUDES) $(DEFINES)
+ 
+-LIBDB = $(DBDIR)/libdb.a
++LIBDB = -ldb2
+ 
+ CLEAN = rm -f
+ 
+@@ -118,6 +119,8 @@
+ pgpdump: pgpdump.o pgpfile.o $(PGPOBJS) $(UTILOBJS)
+ 
+ pgpsplit: pgpsplit.o $(PGPOBJS) $(UTILOBJS)
++	$(CC) -o $@ pgpsplit.o $(PGPOBJS) $(UTILOBJS) $(LDFLAGS) \
++	    $(SOCKLIBS) $(LIBDB)
+ 
+ kvcv: kvcv.o pgpfile.o logging.o $(PGPOBJS) $(UTILOBJS)
+ 
+@@ -138,7 +141,7 @@
+ install:: all installdirs
+ 	for f in $(ALL); do $(INSTALL_PROGRAM) $$f $(bindir); done
+ 	for f in $(SYSCONF); do $(INSTALL_DATA) $$f $(sysconfdir); done
+-	for f in $(ALL_SH); do $(INSTALL_PROGRAM) $(srcdir)/$$f $(bindir); done
++	for f in $(ALL_SH); do $(INSTALL_SCRIPT) $(srcdir)/$$f $(bindir); done
+ 	for f in $(DATA); do $(INSTALL_DATA) $(srcdir)/$$f $(datadir); done
+ 	for f in $(MAN5); do $(INSTALL_DATA) $(srcdir)/$$f $(man5dir); done
+ 	for f in $(MAN8); do $(INSTALL_DATA) $(srcdir)/$$f $(man8dir); done

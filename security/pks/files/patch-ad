@@ -1,0 +1,9 @@
+--- pks_www.h.orig	Wed May 19 23:39:52 1999
++++ pks_www.h	Thu Jul 27 10:17:35 2000
+@@ -13,6 +13,7 @@
+ typedef struct _pks_www_conf {
+    int port;
+    int max_reply_keys;
++   char *db_dir;
+    pks_incr_conf *pic;
+ } pks_www_conf;
