@@ -8,11 +8,10 @@
 PORTNAME=		juke
 PORTVERSION=		0.7
 CATEGORIES=		audio
-MASTER_SITES=		http://www.initio.no/~oyvindmo/distfiles/
-# johan.nocrew.org is unreachable, informed maintainer - edwin 20021226
-#MASTER_SITES=		http://johan.nocrew.org/unix/juke/archive/
+MASTER_SITES=		http://www.moll.no/oyvind/distfiles/\
+			http://www.orakel.ntnu.no/~oyvindmo/distfiles/
 
-MAINTAINER=		oyvindmo@initio.no
+MAINTAINER=		oyvind@moll.no
 COMMENT=	A simple curses/ncurses based juke box program
 
 GNU_CONFIGURE=		yes
