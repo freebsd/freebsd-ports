@@ -1,5 +1,5 @@
 --- configure.orig	Tue Feb 12 17:52:58 2002
-+++ configure	Fri Mar 29 13:23:17 2002
++++ configure	Fri Mar 29 19:27:19 2002
 @@ -53,19 +53,22 @@
      shift
      ;;
@@ -28,15 +28,6 @@
      ;;
    -lang=en|--lang=en|-lang=EN|--lang=EN)
      lang=EN
-@@ -92,7 +95,7 @@
-     dmodel=6
-     ;;
-   -code=*|--code=*)
--    display_code=`expr "$1" : "-*code=\(.*\)"`
-+    display_code=`expr \( "$1" : "-*code=\(.*\)" \)`
-     ;;
-   -cflags=*|--cflags=*)
-     dcflags=`echo $1 | sed -e 's/-*cflags=//'`
 @@ -101,19 +104,19 @@
      dldflags=`echo $1 | sed -e 's/-*ldflags=//'`
      ;;
