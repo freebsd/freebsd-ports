@@ -1,0 +1,12 @@
+This directory contains a Python module that implements a DNS (Domain
+Name Server) client, plus additional modules that define some symbolic
+constants used by DNS (dnstype, dnsclass, dnsopcode).
+
+This code is released under a Python-style license.
+
+A mailing list is available at pydns-developer@lists.sourceforge.net.
+
+WWW: http://pydns.sourceforge.net/
+
+- Mark Linimon
+linimon@lonesome.com

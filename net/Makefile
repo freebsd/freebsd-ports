@@ -435,6 +435,7 @@
     SUBDIR += pvm++
     SUBDIR += pxe
     SUBDIR += py-adns
+    SUBDIR += py-dns
     SUBDIR += py-fngrab
     SUBDIR += py-google
     SUBDIR += py-ipy
