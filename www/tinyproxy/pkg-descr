@@ -1,0 +1,12 @@
+Tinyproxy is a lightweight, non-caching,optionally anonymizing http proxy.
+It is designed to consume a minimum of system resources.
+It listens on a given TCP port and handles HTTP proxy requests.
+
+Note that tinyproxy requires commandline arguments to run in anonymizing
+mode. For most people, "/usr/local/sbin/tinyproxy -a Host: -a Authorization:"
+is sufficient for an anonymizing proxy.
+
+WWW: http://tinyproxy.attacca.com/
+
+- Mitsuru Yoshida
+mitsuru@riken.go.jp

@@ -1,0 +1,27 @@
+--- src/Makefile.orig	Fri Jun  4 14:42:34 1999
++++ src/Makefile	Sun Jul  4 16:15:09 1999
+@@ -1,13 +1,13 @@
+ # Written by Steven Young (sdyoung@well.com)
+ # Additions by Robert James Kaes (rjkaes@flarenet.com) 1999/02/05
+ 
+-CC = gcc # change this to your prefered compiler
++#CC = gcc # change this to your prefered compiler
+ 
+ WARN = -Wall -Wshadow -Wstrict-prototypes  # Warnings
+ 
+ #
+ # Full Production System (No debuging info)
+-CFLAGS = -O2 ${WARN} 
++CFLAGS += ${WARN} 
+ #
+ # Full Debuging Version
+ #CFLAGS = -g ${WARN}
+@@ -21,7 +21,7 @@
+ 
+ # Set location for installation
+ INSTALL = /usr/bin/install
+-BINPATH = /usr/local/bin
++BINPATH = /usr/local/sbin
+ STRIP = /usr/bin/strip
+ 
+ all: ${OBJS}
