@@ -7,7 +7,7 @@
 
 PORTNAME=	python
 PORTVERSION=	2.2.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -83,10 +83,13 @@ PLATFORMS=plat-freebsd2 plat-freebsd4 plat-freebsd5
 PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 .endif
 
-post-patch:
+pre-patch:
 	${REINPLACE_CMD} -e \
 		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
 		${WRKSRC}/Lib/pydoc.py
+	${REINPLACE_CMD} -e \
+		's|^\(prefixes = .*\)\]$$|\1, "${X11BASE}"]|g' \
+		${WRKSRC}/Lib/site.py
 
 pre-su-install:
 .for platform in ${PLATFORMS}
