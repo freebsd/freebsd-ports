@@ -372,6 +372,7 @@ sub mlist_map {
    
 	return 'cvs-CVSROOT'	if $dir =~ /^CVSROOT\//;
 	return 'cvs-ports'	if $dir =~ /^ports\//;
+	return 'cvs-projects'	if $dir =~ /^projects\//;
 	return 'cvs-www'	if $dir =~ /^www\//;
 	return 'cvs-doc'	if $dir =~ /^doc\//;
 	return 'cvs-distrib'	if $dir =~ /^distrib\//;
