@@ -13,7 +13,7 @@ MASTER_SITES=	http://downloads.daveblood.com/lunar_lander/
 DISTNAME=	moon-lander-1.0
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	"land a spacecraft on the moon"
+COMMENT=	Land a spacecraft on the moon
 
 USE_SDL=	mixer image sdl
 USE_X_PREFIX=	YES
