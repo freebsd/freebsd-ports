@@ -332,6 +332,14 @@ Specifies a set of default options for
 .Nm .
 These options can be overridden by command line parameters.
 .El
+.Pp
+The following variables are removed from the environment before any
+work is performed:
+.Ev CLASSPATH ,
+.Ev LD_* ,
+.Ev JAVA_* ,
+.Ev USE_* ,
+.Ev WANT_* .
 .Sh FILES
 .Nm
 maintains and operates on a ports tree, normally
