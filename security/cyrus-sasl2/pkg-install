@@ -92,6 +92,10 @@ case $2 in
 	POST-INSTALL)
 		if [ "${PKG_BATCH}" = "NO" ]; then
 			create_sasldb
+		elif [ ! -f ${SASLDB_NAME} ]; then
+			echo "*** We do not create ${SASLDB_NAME} automatically in"
+			echo "*** BATCH mode.  Please create it by yourself.  It should be"
+			echo "*** owner: ${CYRUS_USER}, group: mail, mode: 0640."
 		fi
 		;;
 
