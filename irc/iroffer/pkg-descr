@@ -1,0 +1,8 @@
+iroffer is a fileserver for irc (commonly referred to as a DCC bot). It
+uses the DCC feature of irc to send files to other users. iroffer will
+connect to an irc server and let people request files from it. iroffer
+is not a script, it is a standalone executable written in C.
+
+WWW: http://iroffer.org/
+
+[ This port is maintained by Donald Burr <dburr@FreeBSD.ORG> ]
