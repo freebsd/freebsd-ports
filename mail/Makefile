@@ -149,6 +149,7 @@
     SUBDIR += mew2-xemacs21
     SUBDIR += mew2-xemacs21-mule
     SUBDIR += mimedefang
+    SUBDIR += mini_sendmail
     SUBDIR += minimalist
     SUBDIR += ml
     SUBDIR += mmc
