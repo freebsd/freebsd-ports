@@ -1,4 +1,67 @@
 bin/calc
+bin/cscript/mersenne
+bin/cscript/piforever
+bin/cscript/plus
+bin/cscript/simple
+include/calc/align32.h
+include/calc/endian_calc.h
+include/calc/have_memmv.h
+include/calc/have_ustat.h
+include/calc/qmath.h
+include/calc/alloc.h
+include/calc/file.h
+include/calc/have_newstr.h
+include/calc/hist.h
+include/calc/shs.h
+include/calc/args.h
+include/calc/fposval.h
+include/calc/have_offscl.h
+include/calc/jump.h
+include/calc/shs1.h
+include/calc/blkcpy.h
+include/calc/func.h
+include/calc/have_posscl.h
+include/calc/label.h
+include/calc/string.h
+include/calc/block.h
+include/calc/hash.h
+include/calc/have_rusage.h
+include/calc/lib_util.h
+include/calc/symbol.h
+include/calc/byteswap.h
+include/calc/have_const.h
+include/calc/have_stdlib.h
+include/calc/longbits.h
+include/calc/terminal.h
+include/calc/calc.h
+include/calc/have_fpos.h
+include/calc/have_strdup.h
+include/calc/longlong.h
+include/calc/token.h
+include/calc/calcerr.h
+include/calc/have_getpgid.h
+include/calc/have_string.h
+include/calc/math_error.h
+include/calc/value.h
+include/calc/cmath.h
+include/calc/have_getprid.h
+include/calc/have_times.h
+include/calc/md5.h
+include/calc/zmath.h
+include/calc/conf.h
+include/calc/have_getsid.h
+include/calc/have_uid_t.h
+include/calc/nametype.h
+include/calc/zrand.h
+include/calc/config.h
+include/calc/have_gettime.h
+include/calc/have_unistd.h
+include/calc/opcodes.h
+include/calc/zrandom.h
+include/calc/custom.h
+include/calc/have_malloc.h
+include/calc/have_urandom.h
+include/calc/prime.h
 lib/calc/help/intro
 lib/calc/help/overview
 lib/calc/help/help
@@ -310,7 +373,6 @@ lib/calc/help/bug
 lib/calc/help/change
 lib/calc/help/errorcode
 lib/calc/help/type
-lib/calc/help/custhelp
 lib/calc/help/custhelp/argv
 lib/calc/help/custhelp/devnull
 lib/calc/help/custhelp/help
@@ -320,7 +382,6 @@ lib/calc/bindings
 lib/calc/README
 lib/calc/bigprime.cal
 lib/calc/chrem.cal
-lib/calc/custom
 lib/calc/custom/argv.cal
 lib/calc/custom/halflen.cal
 lib/calc/custom/pzasusb8.cal
@@ -375,5 +436,9 @@ lib/calc/natnumset.cal
 lib/calc/qtime.cal
 lib/calc/test8400.cal
 lib/calc/test8500.cal
+@dirrm lib/calc/help/custhelp
 @dirrm lib/calc/help
+@dirrm lib/calc/custom
 @dirrm lib/calc
+@dirrm bin/cscript
+@dirrm include/calc
