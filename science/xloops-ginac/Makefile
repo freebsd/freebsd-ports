@@ -8,8 +8,7 @@
 
 PORTNAME=	xloops-ginac
 PORTVERSION=	0.1.3
-PORTREVISION=	1
-PORTREVISOIN=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	http://wwwthep.physik.uni-mainz.de/~xloops/
 
@@ -18,23 +17,16 @@ COMMENT=	A program calculating Feynman diagrams
 
 LIB_DEPENDS=	ginac-1.2.3:${PORTSDIR}/math/GiNaC
 
+USE_GCC=	3.3
+USE_GNOME=	gnometarget lthack
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_INC_LIBTOOL_VER=	13
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
+CFLAGS+=	-O0
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-CPPFLAGS+=	-I${LOCALBASE}/include/stlport ${PTHREAD_CFLAGS}
-LDFLAGS+=	-lstlport_gcc ${PTHREAD_LIBS}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
