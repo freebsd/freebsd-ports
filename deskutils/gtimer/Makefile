@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtimer
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.radix.net/~cknudsen/gtimer/
 
@@ -19,6 +19,10 @@ USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
 MAN1=		gtimer.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib.h|g' \
+		${WRKSRC}/project.c
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/gtimer.1 ${PREFIX}/man/man1
