@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://vampiro.rootshell.ru/pub/FreeBSD/distfiles/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	ysmv7_2_8_1
 
-MAINTAINER=	vampiro@rootshell.ru
+MAINTAINER=	vampiro@rusunix.org
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 

@@ -1,6 +1,6 @@
 # New ports collection makefile for:   bpft
-# Date created:        26 August 2002
-# Whom:            El Vampiro <vampiro@rootshell.ru>
+# Date created:			26 August 2002
+# Whom:				El Vampiro <vampiro@rootshell.ru>
 #
 # $FreeBSD$
 
@@ -11,7 +11,7 @@ MASTER_SITES=	http://bpft.by.ru/ \
 		ftp://vampiro.rootshell.ru/pub/FreeBSD/distfiles/
 EXTRACT_SUFX=	_29-07-2002.tgz
 
-MAINTAINER=	vampiro@rootshell.ru
+MAINTAINER=	vampiro@rusunix.org
 
 WRKSRC=		${WRKDIR}/bpft
 MAN1=		traflog.1 trafstat.1
