@@ -7,20 +7,20 @@
 
 PORTNAME=	sidplug
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	www audio
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jmcoopr@webmail.bmi.net
+MAINTAINER=	coop9211@uidaho.edu
 
-RUN_DEPENDS=	xsidplay:${PORTSDIR}/audio/xsidplay \
-		mozilla:${PORTSDIR}/www/mozilla
+RUN_DEPENDS=	xsidplay:${PORTSDIR}/audio/xsidplay
 
 USE_X_PREFIX=	yes
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/mozilla/plugins
-	@${INSTALL_PROGRAM} ${WRKSRC}/npsidplug.so ${PREFIX}/lib/mozilla/plugins
+	@${MKDIR} ${PREFIX}/lib/browser_plugins
+	@${INSTALL_PROGRAM} ${WRKSRC}/npsidplug.so ${PREFIX}/lib/browser_plugins
 	@${LN} -sf ${X11BASE}/bin/xsidplay ${PREFIX}/bin/sidplug
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
