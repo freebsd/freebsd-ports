@@ -1,0 +1,5 @@
+Message-ids are optional, but highly recommended, headers that
+identify a message uniquely. This software generates a unique
+message-id.
+
+WWW: http://search.cpan.org/dist/Email-MessageID

@@ -241,6 +241,7 @@
     SUBDIR += p5-Email-MIME-Attachment-Stripper
     SUBDIR += p5-Email-MIME-ContentType
     SUBDIR += p5-Email-MIME-Encodings
+    SUBDIR += p5-Email-MessageID
     SUBDIR += p5-Email-Simple
     SUBDIR += p5-Email-Simple-Creator
     SUBDIR += p5-Email-Valid
