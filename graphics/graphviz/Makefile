@@ -3,7 +3,7 @@
 # Date created:         03 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/08/07 23:56:25 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/26 23:11:01 steve Exp $
 #
 
 DISTNAME=       graphviz_1_21
@@ -13,6 +13,8 @@ MASTER_SITES=	# http://www.research.att.com/sw/tools/graphviz/
 EXTRACT_SUFX=	.src.unix.tgz
 
 MAINTAINER=	ports@FreeBSD.ORG
+
+BROKEN=		fetch
 
 LIB_DEPENDS=	tk42.1:${PORTSDIR}/x11-toolkits/tk42
 
