@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome
 PORTVERSION=	1.4.1b2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -34,7 +34,7 @@ RUN_DEPENDS=	another_clock_applet:${PORTSDIR}/x11/gnomeapplets \
 		gnomeg:${PORTSDIR}/x11-toolkits/guile-gnome \
 		${X11BASE}/etc/panelmmConf.sh:${PORTSDIR}/x11-toolkits/panel-- \
 		nautilus:${PORTSDIR}/x11-fm/nautilus \
-		xscreensaver:${PORTSDIR}/x11/xscreensaver
+		screensaver-properties-capplet:${PORTSDIR}/x11/xscreensaver-gnome
 
 NO_BUILD=	yes
 
