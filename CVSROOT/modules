@@ -1644,6 +1644,7 @@ eclipse-langpack	ports/java/eclipse-langpack
 eclipse-lomboz	ports/java/eclipse-lomboz
 eclipse-pmd	ports/java/eclipse-pmd
 eclipse-quantum	ports/java/eclipse-quantum
+eclipse-sqlexplorer	ports/java/eclipse-sqlexplorer
 eclipse-sysdeo-tomcat	ports/java/eclipse-sysdeo-tomcat
 eclipse-vep	ports/java/eclipse-vep
 eclipse-vep-examples	ports/java/eclipse-vep-examples
