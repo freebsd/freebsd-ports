@@ -20,6 +20,7 @@
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
+ *   Roland Mainz <roland.mainz@informatik.med.uni-giessen.de>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or 
@@ -99,15 +100,24 @@ pref("applications.tn3270", "xterm -e tn3270 %h");
 pref("applications.rlogin", "xterm -e rlogin %h");
 pref("applications.rlogin_with_user", "xterm -e rlogin %h -l %u");
 pref("applications.tmp_dir", "/tmp");
-// Choose print module. Default is "auto" which selects Xprint module
-// if the XPSERVERLIST env var is set
-pref("print.print_method", 0); // 0=auto, 1=Xprint, 2=PostScript, 3=reserved
 // On Solaris/IRIX, this should be "lp"
-pref("print.print_command", "lpr");
+pref("print.print_command", "lpr ${MOZ_PRINTER_NAME:+'-P'}${MOZ_PRINTER_NAME}");
+pref("print.printer_list", ""); // list of printers, seperated by spaces
 pref("print.print_reversed", false);
 pref("print.print_color", true);
 pref("print.print_landscape", false);
 pref("print.print_paper_size", 0);
+
+// print_headerfooter_gap enables platforms to specify an extra "gap" in twips
+// between the H/F and the edge of the paper,  
+// this is used by both Printing and Print Preview
+pref("print.print_headerfooter_gap", 60); // twips
+
+// print_extra_margin enables platforms to specify an extra gap or margin
+// around the content of the page for Print Preview only
+pref("print.print_extra_margin", 0); // twips
+
+pref("print.whileInPrintPreview", false);
 
 pref("font.allow_double_byte_special_chars", true);
 // font names
@@ -122,9 +132,9 @@ pref("font.name.serif.he", "misc-fixed-iso8859-8");
 pref("font.name.sans-serif.he", "misc-fixed-iso8859-8");
 pref("font.name.monospace.he", "misc-fixed-iso8859-8");
 
-pref("font.name.serif.ja", "netscape-fixed-jisx0208.1983-0");
-pref("font.name.sans-serif.ja", "netscape-fixed-jisx0208.1983-0");
-pref("font.name.monospace.ja", "netscape-fixed-jisx0208.1983-0");
+pref("font.name.serif.ja", "alias-fixed-jisx0208.1983-0");
+pref("font.name.sans-serif.ja", "alias-fixed-jisx0208.1983-0");
+pref("font.name.monospace.ja", "alias-fixed-jisx0208.1983-0");
 
 pref("font.name.serif.ko", "daewoo-mincho-ksc5601.1987-0");
 pref("font.name.sans-serif.ko", "daewoo-mincho-ksc5601.1987-0");
@@ -209,28 +219,49 @@ pref("font.size.fixed.zh-CN", 16);
 pref("font.size.variable.zh-TW", 16);
 pref("font.size.fixed.zh-TW", 16);
 
-// below a certian pixel size scaled fonts produce poor results
+// below a certian pixel size outline scaled fonts produce poor results
 pref("font.scale.outline.min",      6);
+
+// below a certian pixel size anti-aliased bitmat scaled fonts 
+// produce poor results
+pref("font.scale.aa_bitmap.enable", true);
+pref("font.scale.aa_bitmap.always", false);
+pref("font.scale.aa_bitmap.min", 6);
+pref("font.scale.aa_bitmap.undersize", 80);
+pref("font.scale.aa_bitmap.oversize", 120);
+pref("font.scale.aa_bitmap.dark_text.min", 64);
+pref("font.scale.aa_bitmap.dark_text.gain", "0.5");
+pref("font.scale.aa_bitmap.light_text.min", 64);
+pref("font.scale.aa_bitmap.light_text.gain", "1.3");
+
 pref("font.scale.bitmap.min",       12);
 pref("font.scale.bitmap.undersize", 80);
 pref("font.scale.bitmap.oversize",  120);
 
-pref("font.scale.outline.min.ja",      8);
-pref("font.scale.bitmap.min.ja",       8);
+pref("font.scale.outline.min.ja",      10);
+pref("font.scale.aa_bitmap.min.ja",    12);
+pref("font.scale.aa_bitmap.always.ja", false);
+pref("font.scale.bitmap.min.ja",       16);
 pref("font.scale.bitmap.undersize.ja", 80);
 pref("font.scale.bitmap.oversize.ja",  120);
 
 pref("font.scale.outline.min.ko",      10);
+pref("font.scale.aa_bitmap.min.ko",    12);
+pref("font.scale.aa_bitmap.always.ko", false);
 pref("font.scale.bitmap.min.ko",       16);
 pref("font.scale.bitmap.undersize.ko", 80);
 pref("font.scale.bitmap.oversize.ko",  120);
 
 pref("font.scale.outline.min.zh-CN",      10);
+pref("font.scale.aa_bitmap.min.zh-CN",    12);
+pref("font.scale.aa_bitmap.always.zh-CN", false);
 pref("font.scale.bitmap.min.zh-CN",       16);
 pref("font.scale.bitmap.undersize.zh-CN", 80);
 pref("font.scale.bitmap.oversize.zh-CN",  120);
 
 pref("font.scale.outline.min.zh-TW",      10);
+pref("font.scale.aa_bitmap.min.zh-TW",    12);
+pref("font.scale.aa_bitmap.always.zh-TW", false);
 pref("font.scale.bitmap.min.zh-TW",       16);
 pref("font.scale.bitmap.undersize.zh-TW", 80);
 pref("font.scale.bitmap.oversize.zh-TW",  120);
@@ -248,6 +279,37 @@ pref("font.min-size.fixed.zh-CN", 10);
 
 pref("font.min-size.variable.zh-TW", 10);
 pref("font.min-size.fixed.zh-TW", 10);
+
+// X11 specific
+/* X11 font accept/reject patterns:
+ * Patterns have to match against strings like this:
+ * (boolean values can only be "true" or "false")
+ * "fname=.*;scalable=.*;outline_scaled=.*;xdisplay=.*;xdpy=%d;ydpy=%d;xdevice=.*"
+ * - fname     = X11 font name (string)
+ * - scalable  = is font scalable ? (boolean)
+ * - outline_scaled = is font an outline scaled font ? (boolean)
+ * - xdisplay  = X11 display name (like "host:0.0" (string)
+ * - xdpy      = X DPI (X screen resolution) (integer)
+ * - ydpy      = Y DPI (Y screen resolution) (integer)
+ * - xdevice   = "display" or "printer" (Xprint)
+ * Patterns use  the regular expressions described in the EXTENDED REGULAR
+ * EXPRESSIONS section of the regex(5) manual page.
+ * Note that prefs strings can always be concatenated via the '+'-operator,
+ * e.g. pref("font.x11.acceptfontpattern", "pattern1|" + 
+ *                                         "pattern2|" +
+ *                                         "pattern3");
+ */
+/* reject font if accept pattern does not match it... */
+//pref("font.x11.acceptfontpattern", ".*");
+/* reject font if reject pattern matches it... */
+//pref("font.x11.rejectfontpattern", 
+//     "fname=-urw.*;scalable=false;outline_scaled=false;xdisplay=.*;xdpy=.*;ydpy=.*;xdevice=.*");
+
+/* reject font if accept pattern does not match it... */
+//pref("printer.font.xprint.acceptfontpattern", ".*");
+/* reject font if reject pattern matches it... */
+//pref("printer.font.xprint.rejectfontpattern", 
+//     "fname=-urw.*;scalable=false;outline_scaled=false;xdisplay=.*;xdpy=.*;ydpy=.*;xdevice=.*");
 
 // ps font
 // this list is used by the postscript font
