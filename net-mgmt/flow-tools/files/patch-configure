@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -1674,7 +1674,7 @@
+           ac_config_headers="$ac_config_headers lib/ftconfig.h:lib/ftconfig.h.in"
+ 
+ 
+-CFLAGS="-g -Wall"
++CFLAGS="-g -Wall -fPIC"
+ 
+ ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
