@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.ab.wakwak.com/~tino/jatk/
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A library for making toolkits support Unicode
 
+BROKEN=		"Checksum mismatch"
+
 USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
