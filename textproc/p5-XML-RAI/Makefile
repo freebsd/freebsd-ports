@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/50/5/}
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RSS Abstraction Interface
 
 BUILD_DEPENDS=	${SITE_PERL}/XML/Elemental.pm:${PORTSDIR}/textproc/p5-XML-Elemental
