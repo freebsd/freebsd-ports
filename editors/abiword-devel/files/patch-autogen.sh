@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- autogen.sh	2001/10/30 10:05:41	1.1
-+++ autogen.sh	2001/10/30 10:05:42
+--- autogen.sh.orig	Fri Sep 28 12:06:00 2001
++++ autogen.sh	Fri Nov 23 16:33:29 2001
 @@ -10,20 +10,20 @@
  
  set -e
@@ -34,8 +34,8 @@ $FreeBSD$
 -aclocal -I ac-helpers
 +aclocal14 -I ac-helpers
  
--autoheader
-+autoheader213
+-# autoheader
++# autoheader14
  
  # Produce all the `Makefile.in's, verbosely, and create neat missing things
  # like `libtool', `install-sh', etc.

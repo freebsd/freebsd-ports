@@ -118,6 +118,7 @@ share/AbiSuite/AbiWord/help/en-US/basis1.html
 share/AbiSuite/AbiWord/help/en-US/basis2.html
 share/AbiSuite/AbiWord/help/en-US/beos_intel.html
 share/AbiSuite/AbiWord/help/en-US/beos_ppc.html
+share/AbiSuite/AbiWord/help/en-US/bidi.html
 share/AbiSuite/AbiWord/help/en-US/check.html
 share/AbiSuite/AbiWord/help/en-US/column.html
 share/AbiSuite/AbiWord/help/en-US/comindex.html
@@ -312,6 +313,8 @@ share/AbiSuite/AbiWord/help/images/cursor7.gif
 share/AbiSuite/AbiWord/help/images/cursor8.gif
 share/AbiSuite/AbiWord/help/images/cursor9.gif
 share/AbiSuite/AbiWord/help/images/cut.png
+share/AbiSuite/AbiWord/help/images/dir_ltr.png
+share/AbiSuite/AbiWord/help/images/dir_rtl.png
 share/AbiSuite/AbiWord/help/images/elevator.png
 share/AbiSuite/AbiWord/help/images/exmarg1.jpg
 share/AbiSuite/AbiWord/help/images/expose.png
@@ -330,6 +333,7 @@ share/AbiSuite/AbiWord/help/images/minim.png
 share/AbiSuite/AbiWord/help/images/new.png
 share/AbiSuite/AbiWord/help/images/open.png
 share/AbiSuite/AbiWord/help/images/ovr.png
+share/AbiSuite/AbiWord/help/images/para_dir.png
 share/AbiSuite/AbiWord/help/images/paste.png
 share/AbiSuite/AbiWord/help/images/print.png
 share/AbiSuite/AbiWord/help/images/redo.png
@@ -554,7 +558,8 @@ share/AbiSuite/fonts/z003034l.pfb
 share/AbiSuite/icons/abiword_48.png
 share/AbiSuite/icons/abiword_48.tif
 share/AbiSuite/icons/abiword_48.xpm
-share/AbiSuite/icons/abiword_logo.xpm
+share/AbiSuite/templates/normal.awt
+@dirrm share/AbiSuite/templates
 @dirrm share/AbiSuite/icons
 @dirrm share/AbiSuite/fonts
 @dirrm share/AbiSuite/dictionary
