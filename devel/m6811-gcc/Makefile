@@ -28,7 +28,9 @@ ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
+.if defined(_CPUCFLAGS) && !empty(_CPUCFLAGS)
 CFLAGS:=	${CFLAGS:S/${_CPUCFLAGS}//g}
+.endif
 PLIST_SUB=	GCC_VER=${PORTVERSION}
 CONFIGURE_ARGS=		--prefix=${PREFIX} --target=m6811-elf   \
 			--program-prefix=m6811-elf-
