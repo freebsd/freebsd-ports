@@ -2129,6 +2129,7 @@ gnome--		ports/x11-toolkits/gnome--
 gnome-commander	ports/x11-fm/gnome-commander
 gnome-devel	ports/devel/gnome-devel
 gnome-fifth-toe	ports/x11/gnome-fifth-toe
+gnome2-fifth-toe	ports/x11/gnome2-fifth-toe
 gnome-look	ports/x11-toolkits/gnome-look
 gnome-vnc	ports/net/gnome-vnc
 gnome2		ports/x11/gnome2
