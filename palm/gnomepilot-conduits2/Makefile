@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gnomepilot-conduits
-# Version required:	0.1
+# Version required:	0.2
 # Date created:		16th March 2000
 # Whom:			Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
 
-DISTNAME=	gnome-pilot-conduits-0.1
-PKGNAME=	gnomepilot-conduits-0.1
+DISTNAME=	gnome-pilot-conduits-0.2
+PKGNAME=	gnomepilot-conduits-0.2
 CATEGORIES=	palm comms gnome
 MASTER_SITES=	http://www.gnome.org/gnome-pilot/download/
 
