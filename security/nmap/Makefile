@@ -16,14 +16,10 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     obrien@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
 .include <bsd.port.pre.mk>
 
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --libdir=${PREFIX}/share/misc
-MAKE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
 .if ${OSVERSION} < 300004
 CFLAGS+=	-DDLT_RAW=12 # for obsoleted <net/bpf.h>
 .endif

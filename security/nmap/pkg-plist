@@ -1,6 +1,4 @@
 @comment $FreeBSD$
 bin/nmap
-bin/nmapfe
-bin/xnmap
 share/misc/nmap-os-fingerprints
 share/misc/nmap-services
