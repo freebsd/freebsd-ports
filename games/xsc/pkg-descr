@@ -1,0 +1,15 @@
+Xsc is a clone of the old vector graphics video game Star Castle by
+Cinematronics. The object is to destroy the enemy ship, destroying its
+protective rings first while dodging various buzzers and fireballs
+sent to destroy you.
+
+Keys:
+D	turn counter-clockwise
+F	turn clockwise
+J	thrust
+K	fire laser
+P	pause
+Q	quit
+space	new game
+
+WWW: http://www.panix.com/~mbh/projects.html
