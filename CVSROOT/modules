@@ -7848,6 +7848,7 @@ tamago		ports/editors/tamago
 tamago-emacs20	ports/editors/tamago-emacs20
 tank		ports/games/tank
 tar		src/gnu/usr.bin/tar
+tardy		ports/archivers/tardy
 tas		ports/net/tas
 task		ports/sysutils/task
 tcb		ports/misc/tcb
