@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	inn
-SNAPSHOT=	20020121
+SNAPSHOT=	20020208
 PORTVERSION=	2.3.${SNAPSHOT}
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/snapshots/
