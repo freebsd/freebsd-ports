@@ -1,0 +1,17 @@
+--- Makefile.orig	Wed Jul 31 20:33:51 2002
++++ Makefile	Fri Sep 13 23:09:34 2002
+@@ -1,11 +1,11 @@
+-BINDIR=/usr/X11R6/bin
+-DATADIR=/usr/share/earthview
++BINDIR=%%PREFIX%%/bin
++DATADIR=%%PREFIX%%/share/earthview
+ 
+ all: earthview
+ 	cat WARNING
+ 
+ earthview: earthview.c
+-	gcc -Wall -DDATADIR=\"$(DATADIR)\" earthview.c -o earthview -L/usr/X11R6/lib -lX11 -lm -lz -lbz2
++	%%CC%% %%CFLAGS%% -DDATADIR=\"$(DATADIR)\" earthview.c -o earthview -L%%X11BASE%%/lib -lX11 -lm -lz -lbz2
+ 
+ install:
+ 	install -c -s earthview $(BINDIR)

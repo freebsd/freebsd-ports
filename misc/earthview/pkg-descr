@@ -1,0 +1,6 @@
+Earthview produces a view or an image file output of an arbitrary region of
+the Earth, showing the elevation of lands and depth of oceans across the
+globe. It also supports other data sets such as the population density. The
+package only includes low-resolution samples, but earthview can make use of
+the GTOPO30 or ETOPO2 data sets, which have a resolution better than 1km on
+most land areas, and better than 4km in the oceans.
