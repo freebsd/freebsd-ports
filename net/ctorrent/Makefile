@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	ctorrent
-PORTVERSION=	1.3.r1
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	CTorrent-1.3r1
 
 PLIST_FILES=	bin/ctorrent
 
 MAINTAINER=	flz@xbsd.org
 COMMENT=	BitTorrent Client written in C for FreeBSD and Linux
+
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
