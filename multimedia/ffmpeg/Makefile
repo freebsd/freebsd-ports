@@ -293,6 +293,12 @@ post-extract:
 .endif # ${ARCH} == i386
 
 post-patch:
+# force detection of texi2html
+.ifndef(NOPORTDOCS)
+	@${REINPLACE_CMD} -E \
+		-e 's|^(texi2html=)no|\1yes|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
 .ifndef(WITHOUT_FFMPEG_FFSERVER)
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|; s|%%RC_SUBR%%|${RC_SUBR}|' \
 		${FILESDIR}/ffserver.sh >${WRKDIR}/ffserver.sh
