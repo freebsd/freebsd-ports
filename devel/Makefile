@@ -551,6 +551,7 @@
     SUBDIR += p5-DateTime-Event-Cron
     SUBDIR += p5-DateTime-Event-Easter
     SUBDIR += p5-DateTime-Event-ICal
+    SUBDIR += p5-DateTime-Event-NameDay
     SUBDIR += p5-DateTime-Event-Recurrence
     SUBDIR += p5-DateTime-LeapSecond
     SUBDIR += p5-DateTime-Precise
