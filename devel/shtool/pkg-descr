@@ -1,9 +1,6 @@
 GNU shtool -- The GNU Portable Shell Tool
 Copyright (c) 1994-1999 Ralf S. Engelschall <rse@engelschall.com>
 
-http://www.gnu.org/software/shtool/
-ftp://ftp.gnu.org/gnu/shtool/
-
 The GNU shtool program is a compilation of small but very stable and
 portable shell scripts into a single shell tool. All ingredients were
 in successful use over many years in various free software projects.
@@ -11,3 +8,5 @@ The compiled shtool program is intended to be used inside the source
 tree of free software packages. There it can take over various (usually
 non-portable) tasks related to the building and installation of such
 packages.
+
+WWW: http://www.gnu.org/software/shtool/
