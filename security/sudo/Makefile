@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sudo
-PORTVERSION=	1.6.5.2.1
+PORTVERSION=	1.6.5.2
 PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://ftp.stikman.com/pub/sudo/ \
 		ftp://ftp.uu.net/pub/security/sudo/
 DISTNAME=	${PORTNAME}-1.6.5p2
-PATCHFILES=	sudo-1.6.5p3.patch
-PATCH_SITES=	http://www.globalintersec.com/adv/files/
 
 MAINTAINER=	mharo@FreeBSD.org
 
