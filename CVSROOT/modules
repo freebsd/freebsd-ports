@@ -2352,6 +2352,7 @@ gtk-gnutella	ports/net/gtk-gnutella
 gtk-knocker	ports/security/gtk-knocker
 gtk-qn-x11-theme	ports/x11-toolkits/gtk-qn-x11-theme
 gtk-theme-switch ports/x11/gtk-theme-switch
+gtk-xfce-engine	ports/x11-toolkits/gtk-xfce-engine
 gtk-zenith-theme	ports/x11-toolkits/gtk-zenith-theme
 gtk12		ports/x11-toolkits/gtk12
 gtk12-apireference	ports/x11-toolkits/gtk12-apireference
