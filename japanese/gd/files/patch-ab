@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Mon Aug 30 00:23:49 1999
++++ Makefile.in	Mon Aug 30 00:24:49 1999
+@@ -88,7 +88,7 @@
+ libgd_la_SOURCES = gd.c gd_io.c gd_io_file.c gd_io_dp.c gd_io_ss.c 	gd_png.c gd_ss.c gd_gd.c gd_gd2.c gdfontt.c gdfonts.c gdfontmb.c 	gdfontl.c gdfontg.c gdttf.c gdcache.c gdkanji.c	gd.h gdcache.h gdfontl.h gdfonts.h gd_io.h gdfontg.h 	gdfontmb.h gdfontt.h jisx0208.h
+ 
+ 
+-libgd_la_LIBADD = @LIBS@
++libgd_la_LIBADD = @LIBS@ -lm -L$(libdir) -lpng
+ 
+ bin_PROGRAMS = pngtogd pngtogd2 gdtopng gd2topng gd2copypal gdparttopng webpng
+ 
+@@ -136,7 +136,7 @@
+ LTLIBRARIES =  $(lib_LTLIBRARIES)
+ 
+ 
+-DEFS = @DEFS@ -I. -I$(srcdir) 
++DEFS = @DEFS@ -I. -I$(srcdir) -I$(includedir)
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
