@@ -1314,7 +1314,7 @@ docproj-nojadetex	ports/textproc/docproj-nojadetex
 docsis		ports/net/docsis
 dog		ports/misc/dog
 domainname	src/bin/domainname
-domc		ports/devel/domc
+domc		ports/textproc/domc
 domtools	ports/net/domtools
 donkey		ports/security/donkey
 dontspace	ports/games/dontspace

@@ -8,7 +8,7 @@
 
 PORTNAME=	domc
 PORTVERSION=	0.5.8
-CATEGORIES=	devel
+CATEGORIES=	textproc
 MASTER_SITES=	http://auditorymodels.org/domc/src/
 EXTRACT_SUFX=	.tgz
 

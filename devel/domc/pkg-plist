@@ -1,8 +1,0 @@
-include/dom.h
-include/msgno.h
-lib/libdomc.so
-lib/libdomc.so.%%SHLIB_MAJOR%%
-%%PORTDOCS%%share/doc/domc/domc.html
-%%PORTDOCS%%share/doc/domc/index.html
-%%PORTDOCS%%share/doc/domc/todo.txt
-%%PORTDOCS%%@dirrm share/doc/domc
