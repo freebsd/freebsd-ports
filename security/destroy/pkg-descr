@@ -1,0 +1,7 @@
+A system utility that destroys files on the hard drive
+by writing null and random bytes to the file over and over.
+
+
+WWW: http://www.freebsdhackers.net
+
+-Shane Kinney   <shane@freebsdhackers.net>

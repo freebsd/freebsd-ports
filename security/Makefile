@@ -55,6 +55,7 @@
     SUBDIR += cyrus-sasl2-saslauthd
     SUBDIR += dcetest
     SUBDIR += ddos_scan
+    SUBDIR += destroy
     SUBDIR += didentd
     SUBDIR += digest
     SUBDIR += dirmngr
