@@ -99,7 +99,7 @@ CONFIGURE_ARGS+=--enable-krb4=${LOCALBASE}/krb4
 CONFIGURE_ARGS+=--disable-krb4
 .endif
 
-.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
+USE_OPENSSL=	yes
 .if !defined(WITH_OPENSSL_BASE)
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif

@@ -142,7 +142,7 @@ CONFIGURE_ARGS+=--disable-krb4
 EBONES=	"@comment "
 .endif
 
-.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
+USE_OPENSSL=	yes
 .if !defined(WITH_OPENSSL_BASE)
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
