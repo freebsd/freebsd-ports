@@ -1,11 +1,7 @@
-%%PORTDOCS%%usr/doc/%%PKGNAME%%/Codec Core Interface.txt
 %%PORTDOCS%%usr/doc/%%PKGNAME%%/license.txt
 %%PORTDOCS%%usr/doc/%%PKGNAME%%/RELNOTES.linux
 usr/include/divx/decore.h
-usr/include/divx/encore2.h
-usr/include/divx/mv_hint.h
 usr/lib/libdivxdecore.so
-usr/lib/libdivxencore.so
 @dirrm usr/include/divx
 %%PORTDOCS%%@dirrm usr/doc/%%PKGNAME%%
 @exec %D/sbin/ldconfig

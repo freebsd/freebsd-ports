@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	divx4linux
-PORTVERSION=	0.${RELEASE_DATE:S/_/./}
+PORTVERSION=	5.0.${RELEASE_DATE}
 CATEGORIES=	graphics linux
-MASTER_SITES=	http://download.divx.com/videocodecs/linux/
-DISTNAME=	${PORTNAME}-${RELEASE_DATE}
+MASTER_SITES=	http://download.divx.com/divx/
+
+DISTNAME=	${PORTNAME}50-${RELEASE_DATE}
+
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
@@ -18,14 +20,14 @@ RESTRICTED=	unsure of licensing issues
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
-WRKSRC=	${WRKDIR}/${DISTNAME:C/_.+$//}
+WRKSRC=	${WRKDIR}/${DISTNAME:S/50-/-/}
 NO_BUILD=	yes
 PLIST_SUB=	PKGNAME="${PKGNAME}"
 
-RELEASE_DATE=	20011010_4.02
+RELEASE_DATE=	20020304
 
 post-patch:
-.for ext in h linux txt
+.for ext in linux txt
 	@${PERL} -pi -e "s///" ${WRKSRC}/*.${ext}
 .endfor
 
