@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	2.1.14
-PORTREVISION=	1
+PORTVERSION=	2.1.15
+#PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -155,14 +155,15 @@ CYRUS_GROUP?=	cyrus
 
 DOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
-DOC2=	ONEWS TODO draft-burdis-cat-srp-sasl-06.txt \
-	draft-ietf-cat-sasl-gssapi-05.txt draft-ietf-sasl-anon-01.txt \
-	draft-ietf-sasl-crammd5-00.txt draft-ietf-sasl-plain-01.txt \
-	draft-ietf-sasl-rfc2222bis-00.txt draft-ietf-sasl-rfc2831bis-01.txt \
-	draft-newman-sasl-c-api-01.txt draft-sasl-login.txt rfc1321.txt \
-	rfc1939.txt rfc2104.txt rfc2195.txt rfc2222.txt rfc2243.txt \
-	rfc2245.txt rfc2289.txt rfc2444.txt rfc2595.txt rfc2831.txt \
-	rfc2945.txt rfc3174.txt server-plugin-flow.fig testing.txt
+DOC2=	ONEWS TODO draft-burdis-cat-srp-sasl-08.txt \
+	draft-ietf-cat-sasl-gssapi-05.txt draft-ietf-sasl-anon-02.txt \
+	draft-ietf-sasl-crammd5-00.txt draft-ietf-sasl-plain-02.txt \
+	draft-ietf-sasl-rfc2222bis-01.txt draft-ietf-sasl-rfc2831bis-02.txt \
+	draft-ietf-sasl-saslprep-03.txt draft-newman-sasl-c-api-01.txt \
+	draft-sasl-login.txt rfc1321.txt rfc1939.txt rfc2104.txt rfc2195.txt \
+	rfc2222.txt rfc2243.txt rfc2245.txt rfc2289.txt rfc2444.txt \
+	rfc2595.txt rfc2831.txt rfc2945.txt rfc3174.txt \
+	server-plugin-flow.fig testing.txt
 
 HTDOCS=	advanced appconvert gssapi index install macosx mechanisms \
 	options plugprog programming readme sysadmin upgrading windows

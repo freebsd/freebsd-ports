@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	saslauthd
-PORTVERSION=	2.1.14
+PORTVERSION=	2.1.15
 #PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
@@ -77,7 +77,6 @@ CONFIGURE_ARGS+=--enable-gssapi=${HEIMDAL_HOME}
 CONFIGURE_ARGS+=--enable-gssapi
 .else
 CONFIGURE_ARGS+=--disable-gssapi
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-saslauthd::mechanisms.h
 .endif
 
 .include <bsd.port.pre.mk>
