@@ -1,0 +1,138 @@
+--- makefile.orig	Mon Nov 29 16:37:20 1999
++++ makefile	Fri May  9 16:40:56 2003
+@@ -33,21 +33,18 @@
+ TMP = ./tmp
+ SRC = ./src
+ 
+-CPP = g++
+-CPPFLAGS_XMILL = -O3 -c -Izlib -DXMILL
+-CPPFLAGS_XDEMILL = -O3 -c -Izlib -DXDEMILL
++CPP = $(CXX)
++CPPFLAGS_XMILL = $(CXXFLAGS) -c -Izlib -DXMILL
++CPPFLAGS_XDEMILL = $(CXXFLAGS) -c -Izlib -DXDEMILL
+ 
+-CC = gcc
+-CFLAGS = -O3 -c
++CC = $(CC)
++CFLAGS += -c
+ LINK=g++
+ # LINK_FLAGS = -L.
+ 
+-ZLIB_OBJS = $(TMP)/adler32.o $(TMP)/crc32.o $(TMP)/deflate.o $(TMP)/trees.o $(TMP)/uncompr.o \
+-            $(TMP)/inffast.o $(TMP)/inflate.o $(TMP)/inftrees.o $(TMP)/infutil.o $(TMP)/infblock.o \
+-            $(TMP)/infcodes.o $(TMP)/zutil.o
++ZLIB_LIBS = -lz
+ 
+-BZLIB_OBJS= $(TMP)/blocksort.o $(TMP)/bzlib.o $(TMP)/compress_b.o $(TMP)/crctable.o $(TMP)/decompress.o \
+-            $(TMP)/huffman.o $(TMP)/randtable.o
++BZLIB_LIBS = -lbz2
+ 
+ XMILL_OBJSPART  =  $(TMP)/CompressMan.o $(TMP)/ContMan.o $(TMP)/PathDict.o $(TMP)/PathTree.o \
+                    $(TMP)/RepeatCompress.o $(TMP)/RunLenCompress.o $(TMP)/SAXClient.o \
+@@ -61,11 +58,11 @@
+                    $(TMP)/DivCompress_u.o $(TMP)/EnumCompress_u.o $(TMP)/Error_u.o \
+                    $(TMP)/Options_u.o $(TMP)/MemStreamer_u.o
+ 
+-XMILLOBJS    = $(ZLIB_OBJS)  $(XMILL_OBJSPART) $(TMP)/ZLib.o
+-XBMILLOBJS   = $(BZLIB_OBJS) $(XMILL_OBJSPART) $(TMP)/ZLib_b.o
++XMILLOBJS    = $(XMILL_OBJSPART) $(TMP)/ZLib.o $(ZLIB_LIBS)
++XBMILLOBJS   = $(XMILL_OBJSPART) $(TMP)/ZLib_b.o $(BZLIB_LIBS)
+ 
+-XDEMILLOBJS  = $(ZLIB_OBJS)  $(XDEMILL_OBJSPART) $(TMP)/ZLib_u.o
+-XBDEMILLOBJS = $(BZLIB_OBJS) $(XDEMILL_OBJSPART) $(TMP)/ZLib_bu.o
++XDEMILLOBJS  = $(XDEMILL_OBJSPART) $(TMP)/ZLib_u.o $(ZLIB_LIBS)
++XBDEMILLOBJS = $(XDEMILL_OBJSPART) $(TMP)/ZLib_bu.o $(BZLIB_LIBS)
+ 
+ $(BIN)/xmill : $(XMILLOBJS)
+ 	$(LINK) -o $(BIN)/xmill $(LINK_FLAGS) $(XMILLOBJS)
+@@ -146,7 +143,7 @@
+ 	$(CPP) -o $*.o $(CPPFLAGS_XMILL) $(SRC)/ZLib.cpp
+ 
+ $(TMP)/ZLib_b.o         : $(SRC)/ZLib.cpp
+-	$(CPP) -o $*.o -I./bzlib $(CPPFLAGS_XMILL) -DUSE_BZIP $(SRC)/ZLib.cpp
++	$(CPP) -o $*.o $(CPPFLAGS_XMILL) -DUSE_BZIP $(SRC)/ZLib.cpp
+ 
+ #********************************************************************
+ 
+@@ -199,80 +196,7 @@
+ 	$(CPP) -o $*.o $(CPPFLAGS_XDEMILL) $(SRC)/ZLib.cpp
+ 
+ $(TMP)/ZLib_bu.o          : $(SRC)/ZLib.cpp
+-	$(CPP) -o $*.o -I./bzlib $(CPPFLAGS_XDEMILL) -DUSE_BZIP $(SRC)/ZLib.cpp
+-
+-#********************************************************************
+-
+-$(TMP)/adler32.o : ./zlib/adler32.c
+-	$(CC) -o $*.o $(CFLAGS) ./zlib/adler32.c
+-
+-$(TMP)/crc32.o : ./zlib/crc32.c
+-	$(CC) -o $*.o $(CFLAGS) ./zlib/crc32.c
+-
+-$(TMP)/compress.o : ./zlib/compress.c
+-	$(CC) -o $*.o $(CFLAGS) ./zlib/compress.c
+-
+-$(TMP)/deflate.o : ./zlib/deflate.c
+-	$(CC) -o $*.o $(CFLAGS) ./zlib/deflate.c
+-
+-$(TMP)/gzio.o : ./zlib/gzio.c
+-	$(CC) -o $*.o $(CFLAGS) ./zlib/gzio.c
+-
+-$(TMP)/infblock.o : ./zlib/infblock.c
+-	$(CC) -o $*.o $(CFLAGS) ./zlib/infblock.c
+-
+-$(TMP)/infcodes.o : ./zlib/infcodes.c
+-	$(CC) -o $*.o $(CFLAGS) ./zlib/infcodes.c
+-
+-$(TMP)/inffast.o : ./zlib/inffast.c
+-	$(CC) -o $*.o $(CFLAGS) ./zlib/inffast.c
+-
+-$(TMP)/inflate.o : ./zlib/inflate.c
+-	$(CC) -o $*.o $(CFLAGS) ./zlib/inflate.c
+-
+-$(TMP)/inftrees.o : ./zlib/inftrees.c
+-	$(CC) -o $*.o $(CFLAGS) ./zlib/inftrees.c
+-
+-$(TMP)/infutil.o : ./zlib/infutil.c
+-	$(CC) -o $*.o $(CFLAGS) ./zlib/infutil.c
+-
+-$(TMP)/trees.o : ./zlib/trees.c
+-	$(CC) -o $*.o $(CFLAGS) ./zlib/trees.c
+-
+-$(TMP)/uncompr.o : ./zlib/uncompr.c
+-	$(CC) -o $*.o $(CFLAGS) ./zlib/uncompr.c
+-
+-$(TMP)/zutil.o : ./zlib/zutil.c
+-	$(CC) -o $*.o $(CFLAGS) ./zlib/zutil.c
+-
+-$(TMP)/minigzip.o : ./zlib/minigzip.c
+-	$(CC) -o $*.o $(CFLAGS) ./zlib/minigzip.c
+-
+-#********************************************************************
+-
+-$(TMP)/blocksort.o : ./bzlib/blocksort.c
+-	$(CC) -o $*.o $(CFLAGS) ./bzlib/blocksort.c
+-
+-$(TMP)/compress_b.o : ./bzlib/compress.c
+-	$(CC) -o $*.o $(CFLAGS) ./bzlib/compress.c
+-
+-$(TMP)/crctable.o : ./bzlib/crctable.c
+-	$(CC) -o $*.o $(CFLAGS) ./bzlib/crctable.c
+-
+-$(TMP)/decompress.o : ./bzlib/decompress.c
+-	$(CC) -o $*.o $(CFLAGS) ./bzlib/decompress.c
+-
+-$(TMP)/huffman.o : ./bzlib/huffman.c
+-	$(CC) -o $*.o $(CFLAGS) ./bzlib/huffman.c
+-
+-$(TMP)/randtable.o : ./bzlib/randtable.c
+-	$(CC) -o $*.o $(CFLAGS) ./bzlib/randtable.c
+-
+-$(TMP)/bzlib.o : ./bzlib/bzlib.c
+-	$(CC) -o $*.o $(CFLAGS) ./bzlib/bzlib.c
+-
+-#$(TMP)/bzip2.o : ./bzlib/bzip2.c
+-#	$(CC) -o $*.o $(CFLAGS) ./bzlib/bzip2.c
++	$(CPP) -o $*.o $(CPPFLAGS_XDEMILL) -DUSE_BZIP $(SRC)/ZLib.cpp
+ 
+ #********************************************************************
+ 

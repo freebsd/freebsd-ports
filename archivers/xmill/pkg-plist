@@ -1,0 +1,10 @@
+bin/xmill
+bin/xdemill
+bin/xbmill
+bin/xbdemill
+%%PORTDOCS%%share/doc/xmill/COPYRIGHT.txt
+%%PORTDOCS%%share/doc/xmill/LICENSE.txt
+%%PORTDOCS%%share/doc/xmill/MANUAL.txt
+%%PORTDOCS%%share/doc/xmill/README.txt
+%%PORTDOCS%%share/doc/xmill/xmill.ps.gz
+%%PORTDOCS%%@dirrm share/doc/xmill
