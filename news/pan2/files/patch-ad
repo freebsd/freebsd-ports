@@ -1,0 +1,26 @@
+--- pan/gui.h.orig	Sun Dec 12 01:06:10 1999
++++ pan/gui.h	Mon Dec 13 17:04:30 1999
+@@ -21,6 +21,10 @@
+ #ifndef __GUI_H__
+ #define __GUI_H__
+ 
++#if defined(__FreeBSD__)
++typedef u_long ulong;
++#endif
++
+ extern GtkWidget *appbar;
+ 
+ extern GtkWidget *infobar;
+--- pan/gui.h.orig	Sun Dec 12 01:06:10 1999
++++ pan/gui.h	Mon Dec 13 17:04:30 1999
+@@ -21,6 +21,10 @@
+ #ifndef __GUI_H__
+ #define __GUI_H__
+ 
++#if defined(__FreeBSD__)
++#define ulong u_long
++#endif
++
+ extern GtkWidget *appbar;
+ 
+ extern GtkWidget *infobar;
