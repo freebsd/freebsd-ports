@@ -1,6 +1,6 @@
 --- ../sal/osl/unx/system.h.orig	Tue Aug 20 08:54:55 2002
 +++ ../sal/osl/unx/system.h	Sat Apr 19 22:09:15 2003
-@@ -203,8 +203,16 @@
+@@ -203,25 +203,25 @@
  #   include <dlfcn.h>
  #   include <sys/filio.h>
  #   include <sys/ioctl.h>
@@ -12,15 +12,17 @@
 +#   include <vm/vm_param.h>
 +#   include <vm/pmap.h>
 +#   include <vm/swap_pager.h>
-+#   include <machine/vmparam.h>
-+#   include <machine/pmap.h>
  #	include <sys/un.h>
  #   include <netinet/tcp.h>
  #	define 	IORESOURCE_TRANSFER_BSD 
-@@ -216,12 +224,13 @@
- #   elif BYTE_ORDER == PDP_ENDIAN
- #   	define _PDP_ENDIAN
- #   endif
+ #   include <machine/endian.h>
+-#   if BYTE_ORDER == LITTLE_ENDIAN
+-#   	define _LITTLE_ENDIAN
+-#   elif BYTE_ORDER == BIG_ENDIAN
+-#   	define _BIG_ENDIAN
+-#   elif BYTE_ORDER == PDP_ENDIAN
+-#   	define _PDP_ENDIAN
+-#   endif
 -#   define  sched_yield() 				pthread_yield()
 -#   define  pthread_testcancel()
  #	define  NO_PTHREAD_RTL
@@ -36,7 +38,7 @@
  #endif
  
  #ifdef SCO
-@@ -569,12 +578,14 @@
+@@ -547,12 +547,14 @@
  #endif
  
  #ifdef NO_PTHREAD_RTL
