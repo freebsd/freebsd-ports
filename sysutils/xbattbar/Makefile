@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xbattbar
-PORTVERSION=	1.3
+PORTVERSION=	1.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://infonet.aist-nara.ac.jp/member/suguru/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -15,7 +15,7 @@ MAINTAINER=	sumikawa@FreeBSD.org
 
 USE_IMAKE=      yes
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/xbattbar
+WRKSRC=		${WRKDIR}/xbattbar-${PORTVERSION}
 MAN1=		xbattbar.1
 
 .include <bsd.port.mk>
