@@ -3,7 +3,7 @@
 # Date created:				04/17/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.4 1998/11/14 09:43:26 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1999/04/17 17:34:02 nectar Exp $
 #
 
 DISTNAME=		xml-0.5.1
@@ -13,6 +13,8 @@ MASTER_SITES=		http://www.python.org/sigs/xml-sig/files/
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		nectar@FreeBSD.ORG
+
+RUN_DEPENDS=		python:${PORTSDIR}/lang/python
 
 PLIST=			${WRKDIR}/PLIST
 
