@@ -18,7 +18,7 @@ MAINTAINER=	mbr@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
-LIB_DEPENDS+=	pth.14:${PORTSDIR}/devel/pth
+LIB_DEPENDS+=	pth.14:pth:${PORTSDIR}/devel/pth
 
 BROKEN=		'Work in progress -- does not build yet till the end'
 
