@@ -1,0 +1,9 @@
+POE::Component::IRC is a POE component which acts as an easily controllable
+IRC client for your other POE components and sessions. You create an IRC
+component and tell it what events your session cares about and where to
+connect to, and it sends back interesting IRC events when they happen.
+
+WWW: http://search.cpan.org/search?dist=POE-Component-IRC
+
+-- Sergey Skvortsov
+skv@protey.ru
