@@ -1,0 +1,20 @@
+--- tkfax.orig	Sat May 11 15:24:22 2002
++++ tkfax	Sat May 11 15:25:18 2002
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ # the next line restarts using wish \
+-exec wish "$0" "$@"
++exec wish8.0jp "$0" "$@"
+ 
+ set fax(libdir) /usr/local/lib/tkscanfax
+ set c(libdir) $fax(libdir)
+--- tkscan.orig	Sat May 11 15:25:57 2002
++++ tkscan	Sat May 11 15:26:04 2002
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ # the next line restarts using wish \
+-exec wish "$0" "$@"
++exec wish8.0jp "$0" "$@"
+ 
+ # Set TkScan installation directory.
+ 
