@@ -13,6 +13,8 @@ DISTNAME=	gpc-19990118
 
 MAINTAINER=	antonz@library.ntu-kpi.kiev.ua
 
+BROKEN=		"Does not package correctly"
+
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/lang/gcc28:patch
 
 WRKSRC=		${WRKDIR}/gpc
