@@ -18,6 +18,7 @@
     SUBDIR += gsmlib
     SUBDIR += hylafax
     SUBDIR += ixj
+    SUBDIR += java-commapi
     SUBDIR += kermit
     SUBDIR += lrzsz
     SUBDIR += ltmdm
