@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	bison
-PORTVERSION=	1.75
+PORTVERSION=	1.875
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	A parser generator from FSF, (mostly) compatible with Yacc
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4

@@ -1,14 +1,17 @@
 @comment $FreeBSD$
 bin/bison
+bin/yacc
 @unexec install-info --delete %D/info/bison.info %D/info/dir
 info/bison.info
+lib/liby.a
 @exec install-info %D/info/bison.info %D/info/dir
 share/bison/c.m4
 share/bison/glr.c
 share/bison/lalr1.cc
 share/bison/m4sugar/m4sugar.m4
-share/bison/m4sugar/version.m4
+share/bison/README
 share/bison/yacc.c
+share/locale/da/LC_MESSAGES/bison.mo
 share/locale/de/LC_MESSAGES/bison.mo
 share/locale/es/LC_MESSAGES/bison.mo
 share/locale/et/LC_MESSAGES/bison.mo
