@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
