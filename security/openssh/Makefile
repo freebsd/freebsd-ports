@@ -103,7 +103,7 @@ post-install:
 .if !defined(BATCH)
 .if !exists(${PREFIX}/etc/ssh_host_key)
 	@${ECHO_MSG} ">> Generating an RSA1 secret host key."
-	${PREFIX}/bin/ssh-keygen -N "" -f ${PREFIX}/etc/ssh_host_key
+	${PREFIX}/bin/ssh-keygen -t rsa1 -N "" -f ${PREFIX}/etc/ssh_host_key
 .endif
 .if !exists(${PREFIX}/etc/ssh_host_rsa_key)
 	@${ECHO_MSG} ">> Generating a RSA secret host key."
