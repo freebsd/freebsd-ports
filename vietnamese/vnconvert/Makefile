@@ -19,8 +19,10 @@ MAINTAINER=	obrien@FreeBSD.org
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=
+MAN1=		vnconvert.1
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/vnconvert ${PREFIX}/bin
+	@${INSTALL_MAN} ${FILESDIR}/vnconvert.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
