@@ -70,14 +70,14 @@ share/gtk-doc/html/roadrunner/index.sgml
 @dirrm share/gtk-doc/html/roadrunner
 @unexec rmdir %D/share/gtk-doc/html 2>/dev/null || true
 @unexec rmdir %D/share/gtk-doc 2>/dev/null || true
-%%PORTDOCS%%share/doc/roadrunner/API_CHANGES
-%%PORTDOCS%%share/doc/roadrunner/AUTHORS
-%%PORTDOCS%%share/doc/roadrunner/COPYING
-%%PORTDOCS%%share/doc/roadrunner/ChangeLog
-%%PORTDOCS%%share/doc/roadrunner/LICENSE
-%%PORTDOCS%%share/doc/roadrunner/NEWS
-%%PORTDOCS%%share/doc/roadrunner/README
-%%PORTDOCS%%share/doc/roadrunner/README.announce
-%%PORTDOCS%%share/doc/roadrunner/design.dia
-%%PORTDOCS%%share/doc/roadrunner/dataflow.dia
-%%PORTDOCS%%@dirrm share/doc/roadrunner
+%%PORTDOCS%%%%DOCSDIR%%/API_CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.announce
+%%PORTDOCS%%%%DOCSDIR%%/design.dia
+%%PORTDOCS%%%%DOCSDIR%%/dataflow.dia
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
