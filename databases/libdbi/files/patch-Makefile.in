@@ -1,11 +1,11 @@
---- Makefile.in.orig	Sat Jun 15 09:45:17 2002
-+++ Makefile.in	Sat Oct  5 21:18:07 2002
-@@ -92,7 +92,7 @@
+--- Makefile.in.orig	Thu Oct 30 10:24:07 2003
++++ Makefile.in	Thu Oct 30 10:24:15 2003
+@@ -88,7 +88,7 @@
  
  AUTOMAKE_OPTIONS = foreign dist-zip
  
--SUBDIRS = src include doc drivers tests
-+SUBDIRS = src include drivers tests
+-SUBDIRS = src include doc
++SUBDIRS = src include
  
- 
- #m4datadir = $(datadir)/aclocal
+ EXTRA_DIST = AUTHORS COPYING ChangeLog INSTALL README README.win32 README.osx TODO libdbi.spec.in config.h.in Makefile.w32 autogen.sh
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

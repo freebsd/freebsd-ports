@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	libdbi
-PORTVERSION=	0.6.7
-PORTREVISION=	1
+PORTVERSION=	0.7.1
+PORTREVISION=	0
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://linux.ucla.edu/~dap24/%SUBDIR%/
@@ -19,25 +19,6 @@ COMMENT=	Database Independent Abstraction Layer for C
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-
-.if defined(WITH_MYSQL)
-LIB_DEPENDS+=	mysqlclient:${PORTSDIR}/databases/mysql323-client
-CONFIGURE_ARGS+=	--with-mysql \
-			--with-mysql-incdir=${LOCALBASE}/include \
-			--with-mysql-libdir=${LOCALBASE}/lib/mysql
-PLIST_SUB+=	MYSQL=""
-.else
-PLIST_SUB+=	MYSQL="@comment "
-.endif
-
-.if defined(WITH_PGSQL)
-POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-CONFIGURE_ARGS+=	--with-pgsql
-PLIST_SUB+=	PGSQL=""
-.else
-PLIST_SUB+=	PGSQL="@comment "
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
