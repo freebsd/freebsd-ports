@@ -1,5 +1,5 @@
 # New ports collection makefile for:	nethack
-# Version required:	3.2.1 + 1.0.5.3-beta-960925
+# Version required:	3.2.1 + 1.0.5.4
 # Date created:		13 February 1995
 # Whom:			asami
 #
@@ -7,12 +7,12 @@
 #
 
 DISTNAME=	nethack-3.2.1
-PKGNAME=	jp-nethack-1.0.5.3.1
+PKGNAME=	jp-nethack-1.0.5.4
 CATEGORIES=	japanese games
 MASTER_SITES=	${MASTER_SITE_GNU}
 
 PATCH_SITES=	ftp://mitsuko.jaist.ac.jp/pub/nethack/
-PATCHFILES=	jnethack-1.0.5.3-beta-960925.gz
+PATCHFILES=	jnethack-1.0.5.4.gz
 
 MAINTAINER=	max@FreeBSD.ORG
 
