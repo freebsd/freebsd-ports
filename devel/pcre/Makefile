@@ -9,9 +9,10 @@ PORTNAME=	pcre
 PORTVERSION=	4.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
-		http://dl.droso.net/FreeBSD/distfiles/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+		ftp://ftp.fu-berlin.de/unix/misc/%SUBDIR%/ \
+		ftp://ftp.tin.org/pub/libs/%SUBDIR%/
+MASTER_SITE_SUBDIR=	\
+		${PORTNAME}
 
 MAINTAINER=	eikemeier@fillmore-labs.com
 COMMENT=	Perl Compatible Regular Expressions library
