@@ -3,7 +3,7 @@
 # Date created:        4 November 1997
 # Whom:                Satoshi Asami <asami@freebsd.org>
 #
-# $Id: Makefile,v 1.5 1998/02/21 15:15:58 se Exp $
+# $Id: Makefile,v 1.6 1998/02/26 03:32:35 asami Exp $
 #
 
 DISTNAME=	kde-2.1b
@@ -19,7 +19,7 @@ RUN_DEPENDS=	kwm:${PORTSDIR}/x11/kdebase \
 		kmahjongg:${PORTSDIR}/games/kdegames \
 		kghostview:${PORTSDIR}/graphics/kdegraphics \
 		kmedia:${PORTSDIR}/audio/kdemultimedia \
-#		kmail:${PORTSDIR}/net/kdenetwork
+		kmail:${PORTSDIR}/net/kdenetwork
 
 EXTRACT_ONLY=	# empty
 NO_PATCH=	yes
