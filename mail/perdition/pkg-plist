@@ -23,4 +23,3 @@ sbin/perdition
 sbin/perdition.pop3
 sbin/perdition.imap4
 @dirrm etc/perdition
-@dirrm etc/pam.d
