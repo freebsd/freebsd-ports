@@ -120,12 +120,6 @@ include/gtk12/gtk/gtkvscrollbar.h
 include/gtk12/gtk/gtkvseparator.h
 include/gtk12/gtk/gtkwidget.h
 include/gtk12/gtk/gtkwindow.h
-@unexec install-info --delete %D/info/gdk.info %D/info/dir
-@unexec install-info --delete %D/info/gtk.info %D/info/dir
-info/gdk.info
-info/gtk.info
-@exec install-info %D/info/gdk.info %D/info/dir
-@exec install-info %D/info/gtk.info %D/info/dir
 lib/libgdk12.a
 lib/libgdk12.so
 lib/libgdk12.so.2

@@ -35,6 +35,7 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+INFO=		gdk gtk
 MAN1=		gtk-config.1
 
 pre-build:
