@@ -9,7 +9,7 @@ PORTNAME=	gupsc
 PORTVERSION=	0.3.1
 PORTREVISION=	2
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	http://www.stud.ifi.uio.no/~hennikul/gupsc/download/
+MASTER_SITES=	http://heim.ifi.uio.no/~hennikul/gupsc/download/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A free Gnome client for the Network UPS Tools
