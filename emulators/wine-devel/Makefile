@@ -17,7 +17,6 @@ MAINTAINER=	pfeifer@dbai.tuwien.ac.at
 
 WRKSRC=		${WRKDIR}/wine-${PORTVERSION:S/.//g}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-opengl
 CONFIGURE_ENV=	LIBS=-Wl,-rpath,${PREFIX}/lib/wine
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/wine
