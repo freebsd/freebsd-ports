@@ -2387,6 +2387,7 @@ gnomememoryblocks	ports/games/gnomememoryblocks
 gnomemimedata	ports/misc/gnomemimedata
 gnomemm		ports/x11-toolkits/gnomemm
 gnomenetstatus	ports/net/gnomenetstatus
+gnomenetwork	ports/net/gnomenetwork
 gnomepanel	ports/x11/gnomepanel
 gnomephotoprinter	ports/print/gnomephotoprinter
 gnomepilot-conduits2	ports/palm/gnomepilot-conduits2
