@@ -21,8 +21,3 @@
  'LEX=lex -I'
  'YACC=yacc -d'
  'SYSLIBS=-lutil'
-@@ -17,3 +19,4 @@
- 'CATEXT=0'
- 'PS=ps'
- 'RANLIB=ranlib'
-+'SH=${SH}'
