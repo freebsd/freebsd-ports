@@ -1,0 +1,20 @@
+SWF::Builder - creates Flash(R) movie (SWF) files.
+This package contains:
+
+  SWF::Builder               - Main module
+  SWF::Builder::ActionScript - SWF ActionScript object
+  SWF::Builder::ActionScript::Compiler
+                             - SWF ActionScript compiler
+  SWF::Builder::Bitmap       - SWF Bitmap object
+  SWF::Builder::Bitmap::Lossless::*
+                             - Drivers for SWF Bitmap object
+  SWF::Builder::Font         - SWF font object
+  SWF::Builder::Gradient     - SWF gradient object
+  SWF::Builder::MovieClip    - SWF movie clip object
+  SWF::Builder::Shape        - SWF shape object
+  SWF::Builder::Text         - SWF static text object
+
+WWW: http://search.cpan.org/dist/SWF-Builder/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
