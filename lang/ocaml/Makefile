@@ -88,6 +88,10 @@ PLIST_SUB+=	PROF="@comment "
 PLIST_SUB+=	PROF=""
 .endif
 
+.if ${ARCH} == "sparc64" && defined(WITHOUT_X11)
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 post-install:
 	@${TOUCH} ${PREFIX}/lib/ocaml/ocamldoc/custom/.keep
 .if !defined(WITHOUT_TK)
