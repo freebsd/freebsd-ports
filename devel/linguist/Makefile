@@ -17,6 +17,8 @@ COMMENT=	A tool for generating translations of strings used in i10 Qt programs
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 
+BROKEN=		"Inconsistent dependencies (qt 2.x and 3.x)"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_REINPLACE=	yes
