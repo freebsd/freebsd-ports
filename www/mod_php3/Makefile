@@ -42,7 +42,8 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 DISTFILES=	apache_${VERSION_APACHE}.tar.gz php-${VERSION_PHP}.tar.gz
 
 PATCH_SITES=	http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
-PATCHFILES=	php_configure.diff php_gd.c.diff php_php3_gd.h.diff
+PATCHFILES=	php_configure.diff php_gd.c.diff php_php3_gd.h.diff \
+		php_pdf.c.diff
 
 MAINTAINER=	dirk@FreeBSD.org
 
