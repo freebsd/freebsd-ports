@@ -11,18 +11,15 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://math.smsu.edu/~erik/files/
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image viewer for X
 
-LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
+USE_SDL=	image
 USE_GETOPT_LONG=yes
 USE_LIBTOOL=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		SDL_CONFIG="${SDL_CONFIG}" \
 		ac_cv_func_getopt_long=yes
 USE_REINPLACE=	yes
 MAN1=		vp.1
