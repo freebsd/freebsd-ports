@@ -4,7 +4,7 @@
 #
 
 PORTNAME=	nessus-libnasl-devel
-PORTVERSION=	1.1.13
+PORTVERSION=	1.1.14
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/unstable/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.nessus.org/pub/nessus/unstable/nessus-${PORTVERSION}/src/ \
@@ -15,14 +15,14 @@ MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/unstable/nessus-${PORTVERSION}/sr
 		ftp://sunsite.cnlab-switch.ch/mirror/unstable/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.chg.ru/pub/security/nessus/unstable/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.sekure.net/pub/nessus/unstable/nessus-${PORTVERSION}/src/
+DISTNAME=	libnasl-${PORTVERSION}
 
-MAINTAINER=	udo.schweigert@siemens.com	
+MAINTAINER=	udo.schweigert@siemens.com
 
 LIB_DEPENDS=	nessus.2:${PORTSDIR}/security/nessus-libraries-devel
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/libnasl
-DISTNAME=	libnasl-${PORTVERSION}
 
 USE_LIBTOOL=	YES
 INSTALLS_SHLIB=	YES
