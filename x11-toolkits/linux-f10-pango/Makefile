@@ -13,7 +13,7 @@ CATEGORIES=	x11-toolkits linux
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Linux/i386 pango binary
 
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio \
+BUILD_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio \
 	${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
 
 BASEVERSION=	9
@@ -27,7 +27,7 @@ pre-install:
 	${ECHO_CMD} etc/pango/pango.modules > ${PLIST}
 	${MKDIR} ${WRKSRC}/tmp
 	cd ${WRKSRC}/tmp; \
-		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | cpio -id; \
+		rpm2cpio.pl < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | cpio -id; \
 		${FIND} * -type f -o -type l >> ${PLIST}; \
 		${FIND} -d * -type d | ${GREP} pango | \
 		${SED} -e 's:^:@dirrm :' >> ${PLIST}

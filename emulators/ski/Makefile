@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.rpm
 MAINTAINER=	freebsd-ia64@FreeBSD.org
 COMMENT=	HP's Ski IA-64 simulator
 
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
+BUILD_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 ONLY_FOR_ARCHS=	i386
 
@@ -24,7 +24,7 @@ NOTICE=		 -- please manually download ${DISTNAME}${EXTRACT_SUFX} from the HP sit
 NO_PACKAGE=	${NOTICE}
 NO_CDROM=	${NOTICE}
 
-EXTRACT_CMD=		rpm2cpio
+EXTRACT_CMD=		rpm2cpio.pl
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|cpio -idum
 NO_WRKSUBDIR=		yes

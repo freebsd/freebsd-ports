@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${UPDATEDIST}
 MAINTAINER=	vns@delta.odessa.ua
 COMMENT=	Linux RealPlayer 8.0 from RealNetworks
 
-EXTRACT_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
+EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 		${LINUXBASE}/usr/lib/libesd.so.0:${PORTSDIR}/audio/linux-esound
 
@@ -49,7 +49,7 @@ NO_CDROM=	"Redistribution not allowed"
 NO_BUILD=	yes
 
 post-extract:
-	cd ${WRKDIR}; rpm2cpio ${DISTDIR}/${MAINDIST} | cpio -id --quiet
+	cd ${WRKDIR}; rpm2cpio.pl ${DISTDIR}/${MAINDIST} | cpio -id --quiet
 
 post-patch:
 	${REINPLACE_CMD} -e \

@@ -16,12 +16,12 @@ EXTRACT_SUFX=	.rpm
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	The base set of libraries needed in OSF/1 (Tru64) mode
 
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
+BUILD_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 ONLY_FOR_ARCHS=	alpha
 
 PREFIX=			/compat/osf1
-EXTRACT_CMD=		rpm2cpio
+EXTRACT_CMD=		rpm2cpio.pl
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|cpio -idum
 NO_WRKSUBDIR=		yes

@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Intels C/C++ compiler, set up to produce native FreeBSD binaries
 
-EXTRACT_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
+EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 RESTRICTED=	Intel forbids any redistribution
 NO_PACKAGE=	${RESTRICTED}
@@ -75,7 +75,7 @@ post-extract:
 #	intel-ecc7-7.1-35.ia64.rpm \
 #	intel-eidb7-7.2.2-72.ia64.rpm \
 #	intel-esubh7-7.1-35.ia64.rpm
-	@cd ${WRKSRC} && rpm2cpio 2>/dev/null ${i} | \
+	@cd ${WRKSRC} && rpm2cpio.pl 2>/dev/null ${i} | \
 		${CPIO} -idfuE ${WRKDIR}/cpio-exclude --quiet
 .endfor
 
