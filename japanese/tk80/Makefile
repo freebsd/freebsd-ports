@@ -3,12 +3,12 @@
 # Date created:		26 Dec 1997
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.3 1998/07/04 19:14:03 steve Exp $
+# $Id: Makefile,v 1.4 1998/07/27 00:19:21 steve Exp $
 #
 
 DISTNAME=	tk8.0p2
 PKGNAME=	ja-tk-8.0.2
-CATEGORIES=	japanese x11 tk80
+CATEGORIES=	japanese x11-toolkits tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
