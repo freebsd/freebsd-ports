@@ -3,13 +3,13 @@
 # Date created:		4. July 1996
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/07/05 23:47:28 torstenb Exp $
 #
 
 DISTNAME=	radius.2.4.21
 PKGNAME=	radius-2.4.21
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.merit.edu/pub/radius/release/
+MASTER_SITES=	ftp://ftp.merit.edu/radius/release/
 
 # Restrictive copyright in src/rlmadmin.c
 RESTRICTED= "use for non-profit, non-commercial purposes on a shareware basis"
