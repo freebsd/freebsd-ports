@@ -1,0 +1,5 @@
+News::Article::NoCeM is a library of perl modules for managing NoCeM notice in
+Network News services. It's meant to be used for code-reuse and sharing when
+writing news-based applications.
+
+WWW: http://search.cpan.org/dist/News-Article-NoCeM/
