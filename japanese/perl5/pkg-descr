@@ -5,7 +5,7 @@
 	    and jperl5.005_02-981225
 				by yasushi@cs.washington.edu,
 		port collection japanese/perl5
-				by shige@kuis.kyoto-u.ac.jp.
+				by shige@FreeBSD.ORG
 
 ----------- From lang/perl5/pkg/DESC
 From the distribution README:

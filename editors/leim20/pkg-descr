@@ -21,4 +21,4 @@ The "language name" you can choose is one of these:
 
 In the default keybindings, (toggle-input-method) is bound to `C-\'.
 
---- Porting by shige@kuis.kyoto-u.ac.jp
+--- Porting by shige@FreeBSD.ORG

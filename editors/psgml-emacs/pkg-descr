@@ -17,4 +17,4 @@ To use psgml, put the following setup into your ~/.emacs:
 
 	(require 'psml-setup)
 
---- Porting by shige <shige@kuis.kyoto-u.ac.jp>
+--- Porting by shige <shige@FreeBSD.ORG>.

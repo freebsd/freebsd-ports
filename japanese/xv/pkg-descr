@@ -21,4 +21,4 @@ And this xv supports japanese character codes.
 These codes are as follow:
 	JIS(iso-2022-jp) / EUC / Shift-JIS
 
---- Porting by. shige@kuis.kyoto-u.ac.jp
+--- Porting by. shige@FreeBSD.ORG
