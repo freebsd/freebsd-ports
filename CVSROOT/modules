@@ -2425,6 +2425,7 @@ honeyd		ports/net/honeyd
 hope		ports/lang/hope
 horde2		ports/www/horde2
 hotjava		ports/www/hotjava
+hotkeys		ports/misc/hotkeys
 hotwayd		ports/mail/hotwayd
 hp2xx		ports/print/hp2xx
 hp48cc		ports/devel/hp48cc
