@@ -42,8 +42,6 @@ lib/libfleditor.so.1
 %%PORTDOCS%%share/doc/fl_editor/Fl_FancyEditor.jpg
 %%PORTDOCS%%share/doc/fl_editor/Fl_FancyMultiEditor.html
 %%PORTDOCS%%share/doc/fl_editor/Fl_MultiEditor.html
-%%PORTDOCS%%share/doc/fl_editor/Fl_ProgressBox.html
-%%PORTDOCS%%share/doc/fl_editor/Fl_ProgressBox.jpg
 %%PORTDOCS%%share/doc/fl_editor/Fl_StatusPanel.html
 %%PORTDOCS%%share/doc/fl_editor/Fl_StatusPanel.jpg
 %%PORTDOCS%%share/doc/fl_editor/index.html
