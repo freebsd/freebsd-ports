@@ -9,4 +9,3 @@ FIXDIRS="${WRKSRC}/skip/man ${WRKSRC}/admin"
 for DIR in ${FIXDIRS}; do
   chmod -R u+w ${DIR}
 done
-

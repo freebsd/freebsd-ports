@@ -82,4 +82,3 @@ Confirm "Do you want to proceed" "y" || exit 0
 init_skip_dbs;
 generate_key;
 activate_skip;
-
