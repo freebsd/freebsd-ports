@@ -48,6 +48,84 @@ include/objpak/octext.h
 include/objpak/paragrph.h
 include/objpak/txtstyle.h
 include/objpak/sequence.h
+include/oclib/addrof.h
+include/oclib/arrowxpr.h
+include/oclib/arydecl.h
+include/oclib/assign.h
+include/oclib/bflddecl.h
+include/oclib/binxpr.h
+include/oclib/blockxpr.h
+include/oclib/btincall.h
+include/oclib/casestmt.h
+include/oclib/castxpr.h
+include/oclib/classdef.h
+include/oclib/commaxpr.h
+include/oclib/compdef.h
+include/oclib/compstmt.h
+include/oclib/condxpr.h
+include/oclib/constxpr.h
+include/oclib/contstmt.h
+include/oclib/cppdirec.h
+include/oclib/datadef.h
+include/oclib/decl.h
+include/oclib/def.h
+include/oclib/deref.h
+include/oclib/dfltstmt.h
+include/oclib/dostmt.h
+include/oclib/dotxpr.h
+include/oclib/enumsp.h
+include/oclib/enumtor.h
+include/oclib/expr.h
+include/oclib/exprstmt.h
+include/oclib/forstmt.h
+include/oclib/funbody.h
+include/oclib/funcall.h
+include/oclib/fundecl.h
+include/oclib/fundef.h
+include/oclib/gasmop.h
+include/oclib/gasmstmt.h
+include/oclib/gatrdecl.h
+include/oclib/gattrib.h
+include/oclib/gotostmt.h
+include/oclib/identxpr.h
+include/oclib/ifstmt.h
+include/oclib/indexxpr.h
+include/oclib/initdecl.h
+include/oclib/keywdecl.h
+include/oclib/keywxpr.h
+include/oclib/lblstmt.h
+include/oclib/listxpr.h
+include/oclib/methdef.h
+include/oclib/method.h
+include/oclib/msgxpr.h
+include/oclib/namedecl.h
+include/oclib/node.h
+include/oclib/options.h
+include/oclib/parmdef.h
+include/oclib/parmlist.h
+include/oclib/pfixdecl.h
+include/oclib/pfixxpr.h
+include/oclib/pointer.h
+include/oclib/precdecl.h
+include/oclib/precxpr.h
+include/oclib/relxpr.h
+include/oclib/rtrnstmt.h
+include/oclib/selector.h
+include/oclib/selxpr.h
+include/oclib/shared.h
+include/oclib/sizeof.h
+include/oclib/stardecl.h
+include/oclib/stclass.h
+include/oclib/stmt.h
+include/oclib/structsp.h
+include/oclib/switstmt.h
+include/oclib/symbol.h
+include/oclib/trlunit.h
+include/oclib/type.h
+include/oclib/typeof.h
+include/oclib/unyxpr.h
+include/oclib/util.h
+include/oclib/whilstmt.h
 include/ppi/Array.h
 include/ppi/Assoc.h
 include/ppi/Filer.h
@@ -137,6 +215,7 @@ share/doc/objc/html/objpak/TextStyle.html
 @dirrm share/doc/objc/html
 @dirrm share/doc/objc
 @dirrm include/cakit
+@dirrm include/oclib
 @dirrm include/objcrt
 @dirrm include/objpak
 @dirrm include/ppi
