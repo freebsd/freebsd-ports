@@ -88,6 +88,7 @@
     SUBDIR += p5-Unix-Syslog
     SUBDIR += pib
     SUBDIR += pkg_remove
+    SUBDIR += portupgrade
     SUBDIR += prips
     SUBDIR += procmap
     SUBDIR += pslist
