@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	AquaGatekeeper
-PORTVERSION=	1.17
+PORTVERSION=	1.19
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.aqua.comptek.ru/pub/GateKeeper/ \
 		ftp://www.kuzbass.ru/pub/FreeBSD/ports/distfiles/
-DISTNAME=	AquaGatekeeper117FreeBSD
+DISTNAME=	AquaGatekeeper119FreeBSD
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	eugen@grosbein.pp.ru
@@ -37,6 +37,10 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	@for docfile in ${WRKSRC}/Help/*; \
 		do ${INSTALL_MAN} $$docfile ${DOCSDIR}; \
+	done
+	@${MKDIR} ${DOCSDIR}/Rus
+	@for docfile in ${WRKSRC}/Help.Rus/*; \
+		do ${INSTALL_MAN} $$docfile ${DOCSDIR}/Rus; \
 	done
 .endif
 
