@@ -43,6 +43,7 @@
     SUBDIR += gpart
     SUBDIR += grub
     SUBDIR += gtar
+    SUBDIR += gtoaster
     SUBDIR += gtop
     SUBDIR += guitar
     SUBDIR += healthd
