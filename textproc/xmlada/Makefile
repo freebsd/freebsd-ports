@@ -23,12 +23,16 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-.if !defined(NOPORTDOCS)
+INFO=		xmlada
+PORTDOCS=	xml.html xml_1.html xml_2.html xml_3.html xml_4.html \
+		xml_5.html xml_6.html xml_toc.html xml_ovr.html xml_abt.html
+
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/xml.info ${PREFIX}/info/xmlada.info
-	install-info ${PREFIX}/info/xmlada.info ${PREFIX}/info/dir
 .endif
+	${INSTALL_DATA} ${WRKSRC}/docs/xml.info ${PREFIX}/${INFO_PATH}/xmlada.info
+	install-info ${PREFIX}/${INFO_PATH}/xmlada.info ${PREFIX}/${INFO_PATH}/dir
 
 .include <bsd.port.mk>

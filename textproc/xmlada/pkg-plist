@@ -291,17 +291,3 @@ lib/libxmlada_sax.so
 lib/libxmlada_dom-0.7.so
 lib/libxmlada_dom.a
 lib/libxmlada_dom.so
-%%PORTDOCS%%share/doc/xmlada/xml.html
-%%PORTDOCS%%share/doc/xmlada/xml_1.html
-%%PORTDOCS%%share/doc/xmlada/xml_2.html
-%%PORTDOCS%%share/doc/xmlada/xml_3.html
-%%PORTDOCS%%share/doc/xmlada/xml_4.html
-%%PORTDOCS%%share/doc/xmlada/xml_5.html
-%%PORTDOCS%%share/doc/xmlada/xml_6.html
-%%PORTDOCS%%share/doc/xmlada/xml_toc.html
-%%PORTDOCS%%share/doc/xmlada/xml_ovr.html
-%%PORTDOCS%%share/doc/xmlada/xml_abt.html
-%%PORTDOCS%%@dirrm share/doc/xmlada
-%%PORTDOCS%%@unexec install-info --delete %D/info/xmlada.info %D/info/dir
-%%PORTDOCS%%info/xmlada.info
-%%PORTDOCS%%@exec install-info %D/info/xmlada.info %D/info/dir
