@@ -7,6 +7,7 @@
 
 PORTNAME=	kdegraphics
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -20,7 +21,8 @@ BUILD_DEPENDS=	dvips:${PORTSDIR}/print/teTeX \
 .if ${MACHINE_ARCH} == "i386" && !defined(NO_KDE_OBJPRELINK)
 BUILD_DEPENDS+=	objprelink:${PORTSDIR}/devel/objprelink
 .endif
-RUN_DEPENDS=	dvips:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=	dvips:${PORTSDIR}/print/teTeX \
+		gs:${PORTSDIR}/print/ghostscript-gnu
 
 USE_KDELIBS_VER=2
 USE_BZIP2=	yes
