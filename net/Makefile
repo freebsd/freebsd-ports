@@ -534,6 +534,7 @@
     SUBDIR += p5-SNMP-Util
     SUBDIR += p5-SNMP_Session
     SUBDIR += p5-SOAP
+    SUBDIR += p5-SOAP-Data-Builder
     SUBDIR += p5-SOAP-Lite
     SUBDIR += p5-Socket6
     SUBDIR += p5-Socks

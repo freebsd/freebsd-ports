@@ -1,0 +1,6 @@
+This Module provides a quick and easy way to build complex SOAP data
+and header structures for use with SOAP::Lite.
+
+It primarily provides a wrapper around SOAP::Serializer and
+SOAP::Data (or SOAP::Header) enabling you to generate complex XML
+within your SOAP request or response.
