@@ -65,7 +65,6 @@ post-patch:
 
 pre-install:
 		@ ${CP} ${WRKSRC}/man/quota.8 ${WRKSRC}/man/cyrquota.8
-		@${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 		@ ${MV} ${PREFIX}/cyrus/bin/quota ${PREFIX}/cyrus/bin/cyrquota
