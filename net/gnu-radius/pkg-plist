@@ -1,43 +1,35 @@
+bin/builddbm
+bin/radgrep
+bin/radlast
+bin/radping
+bin/radtest
 bin/radwho
 bin/radzap
-bin/radlast
-bin/raduse
-bin/radping
-bin/radgrep
-bin/radtest
-bin/builddbm
-sbin/radauth
-sbin/radiusd
-sbin/radctl
 etc/raddb/access.deny
 etc/raddb/client.conf
 etc/raddb/clients
 etc/raddb/config
-etc/raddb/config.syntax
+etc/raddb/dict/ascend
+etc/raddb/dict/ascend.vs
+etc/raddb/dict/cisco
+etc/raddb/dict/compat
+etc/raddb/dict/livingston
+etc/raddb/dict/tunnel
+etc/raddb/dict/usr
+etc/raddb/dict/voip
 etc/raddb/dictionary
 etc/raddb/hints
 etc/raddb/huntgroups
-etc/raddb/nas.rc
+etc/raddb/menus/menu1
+etc/raddb/menus/menu2
 etc/raddb/naslist
 etc/raddb/nastypes
 etc/raddb/realms
 etc/raddb/rewrite
-etc/raddb/rewrite.full
 etc/raddb/sqlserver
 etc/raddb/users
-etc/raddb/dict/ascend
-etc/raddb/dict/cisco
-etc/raddb/dict/livingston
-etc/raddb/dict/usr
-etc/raddb/dict/ascend.vs
-etc/raddb/dict/compat
-etc/raddb/dict/tunnel
-etc/raddb/dict/voip
-etc/raddb/menus/menu1
-etc/raddb/menus/menu2
 etc/rc.d/gnu-radius.sh
-share/gnu-radius/boot.scm
-share/gnu-radius/ttl.scm
+@unexec install-info --delete %D/info/radius.info %D/info/dir
 info/radius.info
 info/radius.info-1
 info/radius.info-2
@@ -46,10 +38,19 @@ info/radius.info-4
 info/radius.info-5
 info/radius.info-6
 info/radius.info-7
-@dirrm etc/raddb/dict
+@exec install-info %D/info/radius.info %D/info/dir
+sbin/radauth
+sbin/radctl
+sbin/radiusd
+share/locale/es/LC_MESSAGES/radius.mo
+share/locale/pl/LC_MESSAGES/radius.mo
+share/locale/ru/LC_MESSAGES/radius.mo
+share/radius/boot.scm
+share/radius/ttl.scm
+%%GUILE%%share/radius/guile-procedures.txt
 @dirrm etc/raddb/menus
+@dirrm etc/raddb/dict
 @dirrm etc/raddb
-@dirrm share/gnu-radius
 @unexec rm -f /var/run/radiusd.pid
 @unexec rm -rf /var/log/radius
 @unexec echo "Leaving /var/run/radutmp, /var/log/radwtmp and /var/log/radstat alone."

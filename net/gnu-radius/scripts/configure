@@ -18,14 +18,14 @@ MySQL		"Enable MySQL support" ON \
 PostgreSQL	"Enable PostgreSQL support" OFF \
 SNMP	    "Enable SNMP support" ON \
 Notify		"Enable TTL notification" OFF \
-2> /tmp/checklist.tmp.$$
+2> $tempfile
 
 	retval=$?
 
-	if [ -s /tmp/checklist.tmp.$$ ]; then
-		set `cat /tmp/checklist.tmp.$$`
+	if [ -s $tempfile ]; then
+		set `cat $tempfile`
 	fi
-	rm -f /tmp/checklist.tmp.$$
+	rm -f $tempfile
 
 	case $retval in
 		0)	if [ -z "$*" ]; then
@@ -59,7 +59,7 @@ while [ "$1" ]; do
 			;;
 		\"PostgreSQL\")
 			echo "POSTGRESQL_PORT?=	databases/postgresql7"
-			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/${POSTGRESQL_PORT}:install"
+			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}:install"
 			echo "CONFIGURE_ARGS+= --with-postgres"
 			INCLUDE_PATH="$INCLUDE_PATH:${LOCALBASE}/include/pgsql/"
 			;;
@@ -83,8 +83,11 @@ echo "CONFIGURE_ARGS+= --with-lib-path=\"$LIB_PATH\""
 
 if [ -z $GUILE ]; then
 	echo "CONFIGURE_ARGS+= --without-guile"
-echo ${PLIST}
+	echo "GUILE=	\"@comment \""
 else
 	echo "BUILD_DEPENDS+= guile:${PORTSDIR}/lang/guile"
+	echo "GUILE=	\"\""
 	unset GUILE
 fi
+
+echo "PLIST_SUB+=	GUILE=\${GUILE}"
