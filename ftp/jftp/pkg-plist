@@ -1,0 +1,3 @@
+bin/jftp
+%%DATADIR%%/jftp.jar
+@dirrm %%DATADIR%%

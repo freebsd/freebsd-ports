@@ -30,6 +30,7 @@
     SUBDIR += greed
     SUBDIR += gtm
     SUBDIR += hsftp
+    SUBDIR += jftp
     SUBDIR += jftpgw
     SUBDIR += jigdo
     SUBDIR += jmirror
