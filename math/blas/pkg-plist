@@ -1,0 +1,3 @@
+@cwd /usr/local
+lib/libcor.a
+lib/libcor.so.1.0
