@@ -3,7 +3,7 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.10 1999/01/09 03:19:44 asami Exp $
+# $Id: Makefile,v 1.11 1999/01/09 03:36:14 asami Exp $
 #
 
 DISTNAME=       9term.1.6.3
@@ -14,7 +14,7 @@ MASTER_SITES=   ftp://ftp.ecf.toronto.edu/pub/plan9/matty/
 MAINTAINER=	erich@FreeBSD.org
 
 # needs library and private header, but not during runtime
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/editors/sam:extract
+BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/editors/sam:build
 
 USE_XLIB=	yes
 MAN1=		9term.1
