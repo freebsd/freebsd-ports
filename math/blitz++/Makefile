@@ -17,8 +17,7 @@ MAINTAINER=	olivier.saut@gmail.com
 COMMENT=	A C++ class library for scientific computing
 
 .ifndef NOPORTDOCS
-BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen	\
-		texi2dvi:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/teTeX-base
 INFO=		blitz
 .else
 MAKE_ARGS=	NOPORTDOCS=yes
@@ -28,7 +27,7 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-cxx=gcc
+CONFIGURE_ARGS=	--with-cxx=gcc --disable-doxygen
 MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
