@@ -1,4 +1,4 @@
-MD5 (ghostscript/ghostscript-8.00.tar.bz2) = f87b74758f8e73f899f0b3654e5887b1
+MD5 (ghostscript/ghostscript-8.10.tar.bz2) = fe2817648951839741cbfa48f7bf76de
 MD5 (ghostscript/ghostscript-fonts-std-6.0.tar.gz) = 8250132d6fcc6eb1419f505f06c7690b
 MD5 (ghostscript/ghostscript-fonts-other-6.0.tar.gz) = 1a643ae62ef166562e4d422b1a601272
 MD5 (ghostscript/gs-hp2200.tar.gz) = cafe60c0003abe370579f9bfb1d27caa
@@ -15,3 +15,6 @@ MD5 (ghostscript/eplaser-3.0.6-652.tgz) = a575b9f3424d0a9ab6fbb5619429a8fd
 MD5 (ghostscript/gdevmjc-0.8.tar.gz) = 228f41c3cccce22c8f477c7a9407527c
 MD5 (ghostscript/gdevnpdl-1.6.3.tar.gz) = 6c8dad13d07bbaf6e951d6d2d6b8a9f2
 MD5 (ghostscript/Samsung-SmartGDI-all-GS.tar.gz) = e6963f6c9460a964fe57d38479bbdd41
+MD5 (ghostscript/lxm3200-tweaked-20030501.tar.gz) = 0f88082030c6eb66a95804a6cc9b9e6b
+MD5 (ghostscript/gdevlx50.c) = 081e355c866316a56fbbff5b59f2b7cf
+MD5 (ghostscript/gs6.0.lexmark7000.patch) = fd5018c18351bf64805fe5727be196de
