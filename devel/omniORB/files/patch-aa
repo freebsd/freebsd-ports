@@ -6,7 +6,7 @@ diff -rc ./Makefile ../omniORB_2.2.0.freebsd/Makefile
 --- 1,7 ----
 + # Makefile for omniORB2
 + #
-+ # $Id: patch-aa,v 1.1.1.1 1997/06/04 05:54:33 asami Exp $
++ # $Id: patch-aa,v 1.2 1997/06/04 05:57:29 asami Exp $
 + 
 + SUBDIR=	src
 + 
@@ -27,7 +27,7 @@ diff -rc ./include/omnithread.h ../omniORB_2.2.0.freebsd/include/omnithread.h
   #include "omnithread/solaris.h"
   #endif
   
-! #elif defined(__linux__) || defined(__FreeBSD__)
+! #elif defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
   #include "omnithread/posix.h"
   
   #else
@@ -139,7 +139,7 @@ diff -rc ./src/Makefile ../omniORB_2.2.0.freebsd/src/Makefile
 --- 1,7 ----
 ! # Makefile for omniORB2
 ! #
-! # $Id: patch-aa,v 1.1.1.1 1997/06/04 05:54:33 asami Exp $
+! # $Id: patch-aa,v 1.2 1997/06/04 05:57:29 asami Exp $
   
 ! SUBDIR=	tool lib appl examples
   
@@ -277,7 +277,7 @@ diff -rc ./src/appl/omniNames/log.cc ../omniORB_2.2.0.freebsd/src/appl/omniNames
       try {
   #ifdef __NT__
         int fd = _open(active, O_WRONLY | O_CREAT | O_TRUNC, _S_IWRITE);
-+ #elif defined(__FreeBSD__)
++ #elif defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
 +       int fd = open(active, O_WRONLY | O_CREAT | O_TRUNC, 0666);
   #else
         int fd = open(active, O_WRONLY | O_CREAT | O_TRUNC | O_SYNC, 0666);
@@ -288,7 +288,7 @@ diff -rc ./src/appl/omniNames/log.cc ../omniORB_2.2.0.freebsd/src/appl/omniNames
   
   #ifdef __NT__
     int fd = _open(active, O_WRONLY | O_APPEND);
-+ #elif defined(__FreeBSD__)
++ #elif defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
 +   int fd = open(active, O_WRONLY | O_APPEND);
   #else
     int fd = open(active, O_WRONLY | O_APPEND | O_SYNC);
@@ -299,7 +299,7 @@ diff -rc ./src/appl/omniNames/log.cc ../omniORB_2.2.0.freebsd/src/appl/omniNames
   
   #ifdef __NT__
     int fd = _open(checkpt, O_WRONLY | O_CREAT | O_TRUNC, _S_IWRITE);
-+ #elif defined(__FreeBSD__)
++ #elif defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
 +   int fd = open(checkpt, O_WRONLY | O_CREAT | O_TRUNC, 0666);
   #else
     int fd = open(checkpt, O_WRONLY | O_CREAT | O_TRUNC | O_SYNC, 0666);
@@ -310,7 +310,7 @@ diff -rc ./src/appl/omniNames/log.cc ../omniORB_2.2.0.freebsd/src/appl/omniNames
   
   #ifdef __NT__
     fd = _open(active, O_WRONLY | O_APPEND);
-+ #elif defined(__FreeBSD__)
++ #elif defined(__FreeBSD__) defined(__OpenBSD__) || defined(__NetBSD__)
 +   fd = open(active, O_WRONLY | O_APPEND);
   #else
     fd = open(active, O_WRONLY | O_APPEND | O_SYNC);
@@ -446,7 +446,7 @@ diff -rc ./src/appl/utils/catior/catior.cc ../omniORB_2.2.0.freebsd/src/appl/uti
   
   #include <iostream.h>
   #include <stdlib.h>
-+ #ifdef __FreeBSD__
++ #if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
 + #include <unistd.h>
 + #endif
   
@@ -1628,7 +1628,7 @@ diff -rc ./src/lib/omnithread/posix.cc ../omniORB_2.2.0.freebsd/src/lib/omnithre
   
       if (detached) {
   
-! #if (PthreadDraftVersion <= 6) || defined(__FreeBSD__)
+! #if (PthreadDraftVersion <= 6) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
   	rc = ERRNO(pthread_detach(&posix_thread));
   #else
   	rc = ERRNO(pthread_detach(posix_thread));
@@ -1662,7 +1662,7 @@ diff -rc ./src/lib/omnithread/posix.cc ../omniORB_2.2.0.freebsd/src/lib/omnithre
   
   int omni_thread::cancel(void)
   {
-! #if defined(__linux__) || defined(__FreeBSD__)
+! #if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
       cerr << "omni_thread::cancel: no pthread_cancel on this platform\n";
       return ENOSYS;
   #else
@@ -1744,7 +1744,7 @@ diff -rc ./src/tool/Makefile ../omniORB_2.2.0.freebsd/src/tool/Makefile
 --- 1,7 ----
 ! # Makefile for omniORB2
 ! #
-! # $Id: patch-aa,v 1.1.1.1 1997/06/04 05:54:33 asami Exp $
+! # $Id: patch-aa,v 1.2 1997/06/04 05:57:29 asami Exp $
   
 ! SUBDIR=	omniidl2
   
@@ -2001,7 +2001,7 @@ diff -rc ./src/tool/omniidl2/driver/drv_fork.cc ../omniORB_2.2.0.freebsd/src/too
   #endif
   #endif
   
-+ #if defined(__FreeBSD__)
++ #if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
 + #include <unistd.h>
 + #include <sys/wait.h>
 + #endif
@@ -2018,7 +2018,7 @@ diff -rc ./src/tool/omniidl2/driver/drv_preproc.cc ../omniORB_2.2.0.freebsd/src/
   #endif
   #endif
   
-+ #if defined(__FreeBSD__)
++ #if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
 + #include        <unistd.h>              // POSIX standard types
 + #include        <sys/wait.h>            // POSIX definition of wait()
 + #endif
