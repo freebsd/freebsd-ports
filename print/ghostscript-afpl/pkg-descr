@@ -1,20 +1,23 @@
-This is Aladdin Ghostscript, the non-GPL version that comes
-with a licence different from the GPL. Read the file PUBLIC in the
-work/gsX.Y directory or in /usr/local/share/ghostscript/X.Y/doc/PUBLIC
-after installation for details !
+This is Aladdin Ghostscript, the non-GPL version that comes with a licence
+different from the GPL. Read the file PUBLIC in the work/gsX.Y directory or
+in ${PREFIX}/share/ghostscript/X.Y/doc/PUBLIC after installation for details !
 
-Ghostscript is the well-known PostScript interpreter which is
-available for all common and most esoteric platforms and supports
-many different printers and some displays.
+Ghostscript is the well-known PostScript interpreter which is available for
+all common and most esoteric platforms and supports many different printers
+and some displays.
 
-The official ghostscript Web page:
+Official ghostscript homepage, see:
 	http://www.cs.wisc.edu/~ghost/index.html
 
-Thomas Merz has written a Ghostscript manual which is available in
-PDF from this site (456k) and also from Thomas Merz's site in Germany.
-
+This FreeBSD port includes two useful add-on packages:
+	o Support for HP DeskJet 670, 690, 850, 855, 870, 890, 1100 and 1600,
+	  see announcement on
+		 http://bonk.ethz.ch/hp850/hp850.html
+	o Support for pdfencrypt, see description on
+	  	http://www.ozemail.com.au/~geoffk/pdfencrypt/
+		
+Thomas Merz has written a Ghostscript manual in PDF format:
 	http://www.cs.wisc.edu/~ghost/merz.html
 
-On the german site the manual is also available in German language.
-
+The manual is also available in German language, see:
 	http://www.muc.de/~tm/free/free.html

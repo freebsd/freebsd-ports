@@ -30,7 +30,10 @@ Have fun with this new configuration style !     -andreas \n\n\
   "cdjmono"  "HP DeskJet 500/510/520/540C b/w printing" ON \
   "cdj500"   "HP DeskJet 500C (same as cdjcolor)" ON \
   "cdj550"   "HP DeskJet 550C/560C" ON \
-  "cdj850"   "HP DeskJet 850/855/870/890" ON \
+  "cdj670"   "HP DeskJet 670/690" ON \
+  "cdj850"   "HP DeskJet 850/855/870/1100" ON \
+  "cdj890"   "HP DeskJet 890" ON \
+  "cdj1600"  "HP DeskJet 1600" ON \
   "cp50"     "Mitsubishi CP50 color" ON \
   "declj250" "alternate DEC LJ250 driver" ON \
   "deskjet"  "HP DeskJet and DeskJet Plus" ON \

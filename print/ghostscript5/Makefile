@@ -3,13 +3,13 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.19 1998/04/01 01:43:05 asami Exp $
+# $Id: Makefile,v 1.20 1998/04/19 18:34:50 andreas Exp $
 #
 
 DISTNAME=	ghostscript-5.10
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs510/ \
-		http://freefall.freebsd.org/~andreas/download/ \
+		ftp://bonk.ethz.ch/gs-driver-distrib/ \
 		http://www.ozemail.com.au/~geoffk/pdfencrypt/
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${HP850_DRV} ${DECRYPT_PDF}
@@ -36,7 +36,7 @@ GS_FONTS_STD=	ghostscript-fonts-std-5.10.tar.gz
 GS_FONTS_OTHER=	ghostscript-fonts-other-5.10.tar.gz
 
 # Additional driver HP 850, see http://bonk.ethz.ch/hp850/hp850.html
-HP850_DRV=	hp850-1.2.zip
+HP850_DRV=	hp8xxs13.zip
 
 # replacement for pdf_sec.ps, that allows you to read encrypted PDF files
 DECRYPT_PDF=	pdf_sec.ps
@@ -61,7 +61,7 @@ post-extract:
 	${TOUCH} ${WRKSRC}/trees.o
 	ln -s ${PORTSDIR}/graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg-6b
 	ln -s ${PORTSDIR}/graphics/png/work/libpng-1.0.1 ${WRKSRC}/libpng
-	cd ${WRKSRC} && unzip -La ${DISTDIR}/${HP850_DRV}
+	cd ${WRKSRC} && unzip -Lao ${DISTDIR}/${HP850_DRV}
 
 do-configure:
 .if defined(BATCH)
@@ -79,9 +79,14 @@ pre-install:
 	(cd ${PREFIX}/share/ghostscript/fonts ; \
 			tar -xzf ${DISTDIR}/${GS_FONTS_OTHER})
 
+# install the readme and license file of the hp8xxx driver as well
 post-install:
 	strip ${PREFIX}/bin/gs
 	${INSTALL_DATA} ${DISTDIR}/${DECRYPT_PDF} \
 		${PREFIX}/share/ghostscript/5.10
+	${INSTALL_DATA} ${DISTDIR}/license.hp8 \
+		${PREFIX}/share/ghostscript/5.10/doc
+	${INSTALL_DATA} ${DISTDIR}/readme.hp8 \
+		${PREFIX}/share/ghostscript/5.10/doc
 
 .include <bsd.port.mk>
