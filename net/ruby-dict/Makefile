@@ -14,6 +14,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	A client-side implementation of the DICT protocol in Ruby
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

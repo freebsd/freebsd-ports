@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}rb-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	tacho@daemonz.org
+COMMENT=	A YAML serialization specification implementation for Ruby
 
 USE_RUBY=	yes
 

@@ -14,6 +14,7 @@ DISTNAME=	PCSC-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	toni@soth.at
+COMMENT=	Ruby extension for the UNIX PC/SC Lite API (MUSCLE)
 
 LIB_DEPENDS=	pcsclite.0:${PORTSDIR}/devel/pcsc-lite
 
