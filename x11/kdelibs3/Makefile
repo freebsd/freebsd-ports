@@ -52,7 +52,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=# empty
 CONFIGURE_ARGS+=--disable-ltdl-install	\
 		--enable-mt \
-		--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+		--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
+		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
 FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/tcvn-0.enc
