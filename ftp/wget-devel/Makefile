@@ -21,7 +21,7 @@ MAINTAINER=	obrien@FreeBSD.org
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=  CPPFLAGS=-I${PREFIX}/include \
+CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include \
 		LDFLAGS=-L${PREFIX}/lib
 
 INFOFILES=	wget.info
