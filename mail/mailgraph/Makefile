@@ -7,6 +7,7 @@
 
 PORTNAME=	mailgraph
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://people.ee.ethz.ch/~dws/software/mailgraph/pub/
 
@@ -31,5 +32,10 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${STARTUP_SCRIPT} ${PREFIX}/etc/rc.d/
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL}
 	@${CHOWN} www:www ${PREFIX}/www/cgi-bin/
+
+post-install:
+	@${ECHO}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO}
 
 .include <bsd.port.mk>
