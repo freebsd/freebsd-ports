@@ -23,8 +23,8 @@ USE_RC_SUBR=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV+=	LINK="${CC}"
 CONFIGURE_ARGS=	--prefix=${PREFIX}/etc/nginx \
-		--with-cc-opt="-I ${PREFIX}/include" \
-		--with-ld-opt="-L ${PREFIX}/lib" \
+		--with-cc-opt="-I ${LOCALBASE}/include" \
+		--with-ld-opt="-L ${LOCALBASE}/lib" \
 		--conf-path=${PREFIX}/etc/nginx/nginx.conf \
 		--sbin-path=${PREFIX}/sbin/nginx \
 		--pid-path=${RUNDIR}/nginx.pid \
