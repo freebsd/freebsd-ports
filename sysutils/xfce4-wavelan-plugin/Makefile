@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-wavelan-plugin
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTVERSION=	0.4.1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
 		http://matt.nerim.net/xfce-goodies/ \
@@ -26,7 +25,7 @@ RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
