@@ -17,10 +17,7 @@ COMMENT=	AMR encoder/decoder for Mbuni MMS Gateway (www.mbuni.org)
 
 MAN1=		amrdecoder.1 amrencoder.1
 
-.include <bsd.port.pre.mk>
+post-extract:
+	@${RM} ${WRKSRC}/*.o
 
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		"Does not build on ia64 or sparc64"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
