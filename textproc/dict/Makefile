@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cs.unc.edu/pub/users/faith/dict/ \
 		ftp://ftp.dict.org/pub/dict/
 DISTNAME=	${PORTNAME}d-${PORTVERSION}
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}" \

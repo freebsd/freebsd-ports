@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://ftp.identicalsoftware.com/pub/linux/xwpe/
 MASTER_SITE_SUBDIR=	apps/editors/X
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 # LD_LIBRARY_PATH is to deal with a braindead libX11.a search in configure
 # (once again author assumes too many Linux'isms)

@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.netsw.org/softeng/lang/c/tools/cdecl/  \
 		ftp://ftp.bitcon.no//pub/linux/linuxberg/files/console/dev/  \
 		ftp://ftp.uakom.sk/pub/linux/devel/lang/c/
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=
 MAN1=		cdecl.1

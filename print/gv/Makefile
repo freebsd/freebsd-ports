@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/gv/unix/  \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/ghostscript/gnu/gv/unix
 
-MAINTAINER=	obrien@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 

@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tar.Z
 PATCH_SITES=	ftp://ftp.samba.org/pub/samba/tcpdump-smb/
 PATCHFILES=	tcpdump-3.4a5-smb.patch
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	depend tcpdump

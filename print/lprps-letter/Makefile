@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.jclark.com/pub/lprps/
 DISTNAME=	lprps-2.5
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MAKE_FLAGS?=	PAPERSIZE=${PS} -f
 MAN1=		psrev.1 textps.1

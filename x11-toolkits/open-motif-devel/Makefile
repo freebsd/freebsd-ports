@@ -7,16 +7,16 @@
 #
 
 PORTNAME=	open-motif-devel
-PORTVERSION=	2.1.30
+PORTVERSION=	2.2.1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R2.1.30/binaries/metrolink/  \
-		ftp://ftp.opengroup.org/pub/openmotif/R2.1.30/binaries/metrolink/  \
+MASTER_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R2.2.1/binaries/metrolink/  \
+		ftp://ftp.opengroup.org/pub/openmotif/R2.2.1/binaries/metrolink/  \
 		ftp://ftp.isca.uiowa.edu/pub/mirrors/openmotif/binaries/metrolink/  \
 		ftp://ftp.kddlabs.co.jp:/X11/openmotif/binaries/metrolink/
 DISTNAME=	openmotif-devel-${PORTVERSION}-4_MLI
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 PREFIX?=	/	# will install into ${PREFIX}/usr/X11R6

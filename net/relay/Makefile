@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.iagora.com/~espel/  \
 MASTER_SITE_SUBDIR=	obrien
 DISTNAME=	relay
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 IS_INTERACTIVE=	'must set server hostname in relay.h'
 

@@ -11,7 +11,7 @@ PORTVERSION=	0.2.2
 CATEGORIES=	editors
 MASTER_SITES=	http://user.tninet.se/~uxm165t/
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/sted
 

@@ -11,7 +11,7 @@ PORTVERSION=	0.40
 CATEGORIES=	mail www
 MASTER_SITES=	http://www3.bc.sympatico.ca/brian_winters/mutt/
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 pre-configure:
 	@${PERL} -pi.orig \
