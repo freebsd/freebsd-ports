@@ -7,6 +7,7 @@
     SUBDIR += SSLtelnet
     SUBDIR += adasockets
     SUBDIR += adns
+    SUBDIR += aggregate
     SUBDIR += aim
     SUBDIR += airport
     SUBDIR += amcl
