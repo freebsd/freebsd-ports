@@ -1,11 +1,14 @@
 share/doc/nut/Changes.trust
 share/doc/nut/FAQ
 share/doc/nut/access.txt
+share/doc/nut/big-servers.txt
 share/doc/nut/commands.txt
+share/doc/nut/configure.txt
 share/doc/nut/data-room.txt
 share/doc/nut/generic-ups.txt
 share/doc/nut/new-modules.txt
 share/doc/nut/pager.txt
+share/doc/nut/powercom.txt
 share/doc/nut/protocol.txt
 share/doc/nut/shutdown.txt
 share/doc/nut/tips.txt
@@ -13,4 +16,6 @@ share/doc/nut/todo.txt
 share/doc/nut/ups-trust425+625.txt
 share/doc/nut/README
 share/doc/nut/QUICKSTART
+share/doc/nut/cables/victron.txt
+@dirrm share/doc/nut/cables
 @dirrm share/doc/nut
