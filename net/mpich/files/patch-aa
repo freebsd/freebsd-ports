@@ -1,0 +1,11 @@
+--- util/mpiinstall.in.orig	Sun Jul 26 14:52:49 1998
++++ util/mpiinstall.in	Sun Jul 26 14:53:02 1998
+@@ -611,7 +611,7 @@
+ if [ "$DEVICE" = "ch_p4" ] ; then
+     if [ ! -x mpid/server/server ] ; then
+ 	echo "Attempting to build alternate ch_p4 secure server"
+-	$Show "( cd mpid/server ; configure ; $MAKE server )"
++	$Show "( cd mpid/server ; ./configure ; $MAKE server )"
+     fi
+     if [ -x mpid/server/server ] ; then 
+ 	CopyFile mpid/server/server $PREFIX/bin $XMODE
