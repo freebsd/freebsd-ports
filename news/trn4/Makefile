@@ -3,7 +3,7 @@
 # Date created:		21 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.12 1996/12/08 01:45:12 max Exp $
+# $Id: Makefile,v 1.13 1997/04/27 00:24:32 asami Exp $
 #
 
 DISTNAME=	trn-3.6
@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.uu.net/networking/news/readers/trn/
 
 RUN_DEPENDS=  munpack:${PORTSDIR}/converters/mpack
 
+BROKEN=		awaiting upgrade to trn4 after repository copy
 NO_PACKAGE=	"Too many questions"
 IS_INTERACTIVE=	yes
 MAN1=		trn.1 Pnews.1 Rnmail.1 newsetup.1 newsgroups.1
