@@ -1,0 +1,14 @@
+SWF Tools is a collection of SWF manipulation and generation utilities
+
+At the moment, this includes:
+   - PDF2SWF : A PDF to SWF Converter. Generates one frame per page.
+   - SWFCombine : A tool for inserting SWFs into Wrapper SWFs.
+   - SWFStrings : Scans SWFs for text data.
+   - SWFDump : Prints out various informations about SWFs.
+   - JPEG2SWF : Takes one or more JPEG pictures and generates a SWF slideshow.
+   - SWFExtract : Allows to extract Movieclips, Sounds, Images etc. from SWF
+     files.
+   - RFXSWF Library : A fully featured library which can be used for
+     standalone SWF generation.
+
+WWW: http://www.quiss.org/swftools/

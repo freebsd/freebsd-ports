@@ -1,0 +1,44 @@
+bin/jpeg2swf
+bin/pdf2swf
+bin/swfcombine
+bin/swfdump
+bin/swfextract
+bin/swfstrings
+share/swftools/fonts/FontDataBase
+share/swftools/fonts/d050000l.afm
+share/swftools/fonts/d050000l.pfb
+share/swftools/fonts/n019003l.afm
+share/swftools/fonts/n019003l.pfb
+share/swftools/fonts/n019004l.afm
+share/swftools/fonts/n019004l.pfb
+share/swftools/fonts/n019023l.afm
+share/swftools/fonts/n019023l.pfb
+share/swftools/fonts/n019024l.afm
+share/swftools/fonts/n019024l.pfb
+share/swftools/fonts/n021003l.afm
+share/swftools/fonts/n021003l.pfb
+share/swftools/fonts/n021004l.afm
+share/swftools/fonts/n021004l.pfb
+share/swftools/fonts/n021023l.afm
+share/swftools/fonts/n021023l.pfb
+share/swftools/fonts/n021024l.afm
+share/swftools/fonts/n021024l.pfb
+share/swftools/fonts/n022003l.afm
+share/swftools/fonts/n022003l.pfb
+share/swftools/fonts/n022004l.afm
+share/swftools/fonts/n022004l.pfb
+share/swftools/fonts/n022023l.afm
+share/swftools/fonts/n022023l.pfb
+share/swftools/fonts/n022024l.afm
+share/swftools/fonts/n022024l.pfb
+share/swftools/fonts/s050000l.afm
+share/swftools/fonts/s050000l.pfb
+share/swftools/swfs/PreLoaderTemplate.swf
+share/swftools/swfs/default_loader.swf
+share/swftools/swfs/default_viewer.swf
+share/swftools/swfs/simple_viewer.swf
+share/swftools/swfs/swft_loader.swf
+share/swftools/swfs/tessel_loader.swf
+@dirrm share/swftools/fonts
+@dirrm share/swftools/swfs
+@dirrm share/swftools
