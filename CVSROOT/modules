@@ -1991,6 +1991,7 @@ glimpse		ports/textproc/glimpse
 glitter		ports/news/glitter
 gliv		ports/graphics/gliv
 glload		ports/sysutils/glload
+glmaze		ports/games/glmaze
 global		ports/devel/global
 glove		ports/math/glove
 glpk		ports/math/glpk
