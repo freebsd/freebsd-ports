@@ -16,8 +16,7 @@ MAINTAINER=	moro@remus.dti.ne.jp
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-post-build:
-	@${PERL} -pi -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/rbl
+CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/rbl ${PREFIX}/bin
