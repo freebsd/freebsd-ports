@@ -138,7 +138,6 @@ choose to go this route).
 	return ${_VAL}
     fi
     EXPORT=YES
-    fi
     return ${_VAL}
 }
 
