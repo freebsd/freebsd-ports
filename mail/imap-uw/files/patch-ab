@@ -13,7 +13,7 @@
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
--CFLAGS=$(BASECFLAGS) $(EXTRACFLAGS)
+-CFLAGS=-g
 +CFLAGS+=$(BASECFLAGS) $(EXTRACFLAGS)
  
  CAT=cat
@@ -37,7 +37,7 @@
 @@ -190,12 +199,13 @@
  
  bsf:	# FreeBSD
- 	$(BUILD) `$(CAT) SPECIALS` OS=bsi \
+ 	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
 -	 SIGTYPE=psx CRXTYPE=nfs \
 +	 SIGTYPE=psx CRXTYPE=nfs CHECKPW=pam \
  	 SPOOLDIR=/var \

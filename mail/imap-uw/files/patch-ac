@@ -1,6 +1,6 @@
---- src/imapd/Makefile.orig	Tue Oct 24 16:54:32 2000
-+++ src/imapd/Makefile	Sun Dec 17 23:44:22 2000
-@@ -18,30 +18,25 @@
+--- src/imapd/Makefile.orig	Tue Jan  9 16:08:17 2001
++++ src/imapd/Makefile		Sun Feb  4 11:54:00 2001
+@@ -18,9 +18,9 @@
  # CPYRIGHT, included with this Distribution.
  
  
@@ -12,16 +12,18 @@
  SHELL= /bin/sh
  
  
+@@ -39,21 +39,17 @@
  # Get local definitions from c-client directory
  
  C = ../c-client
 -CCLIENTLIB = $C/c-client.a
 +#CCLIENTLIB = $C/c-client.a
  CC = `cat $C/CCTYPE`
--CFLAGS = -I$C `cat $C/CFLAGS` -DANOFILE=\"$(ANO)\" \
+-CFLAGS = -I$C `cat $C/CFLAGS` $(EXTRACFLAGS) -DANOFILE=\"$(ANO)\" \
 +CFLAGS = `cat $C/CFLAGS` -DANOFILE=\"$(ANO)\" \
  	-DALERTFILE=\"$(ALERT)\" -DUSERALERTFILE=\"$(USERALERT)\"
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
++
 +LDFLAGS = $(EXTRALDFLAGS) `cat $C/LDFLAGS`
  
  all:	imapd
