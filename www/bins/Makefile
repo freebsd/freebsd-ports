@@ -27,6 +27,7 @@ RUN_DEPENDS= \
 	${PBASE}/XML/Handler/YAWriter.pm:${PORTSDIR}/textproc/p5-XML-Handler-YAWriter \
 	${PBASE}/XML/Parser/PerlSAX.pm:${PORTSDIR}/textproc/p5-libxml
 
+IS_INTERACTIVE=	yes
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 USE_REINPLACE=	yes
