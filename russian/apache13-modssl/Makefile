@@ -56,9 +56,9 @@ DOCSDIR=	${PREFIX}/share/doc/apache
 
 .include <bsd.port.pre.mk>
 
-VERSION_APACHE=	1.3.31
-VERSION_MODSSL=	2.8.18
-VERSION_RA=	30.20
+VERSION_APACHE=	1.3.33
+VERSION_MODSSL=	2.8.22
+VERSION_RA=	30.21
 
 #
 # some defaults
