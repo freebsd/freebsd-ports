@@ -6727,6 +6727,7 @@ pcb		ports/cad/pcb
 pccts		ports/devel/pccts
 pcemu		ports/emulators/pcemu
 pcf2bdf		ports/x11-fonts/pcf2bdf
+pcgen		ports/games/pcgen
 pchar		ports/net/pchar
 pciutils	ports/sysutils/pciutils
 pcl-cvs-emacs	ports/devel/pcl-cvs-emacs
