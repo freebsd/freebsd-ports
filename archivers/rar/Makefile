@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	rar
-PORTVERSION=    3.30
-PORTREVISION=	1
+PORTVERSION=    3.40
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=   http://files10.rarlab.com/rar/
-DISTNAME=       rarbsd-3.3.0
+DISTNAME=       rarbsd-3.4.0
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	File archiver (binary port)
@@ -38,7 +37,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && \
-		${INSTALL_DATA} rar_faq.txt technote.txt license.txt \
+		${INSTALL_DATA} technote.txt license.txt \
 				order.htm readme.txt whatsnew.txt \
 				file_id.diz \
 			${DOCSDIR}
