@@ -3,7 +3,7 @@
 # Date created:		26 Oct 1996
 # Whom:			Ville Eerola <ve@sci.fi>
 #
-# $Id: Makefile,v 1.39 1997/09/06 06:28:27 max Exp $
+# $Id: Makefile,v 1.40 1997/09/07 13:16:59 ache Exp $
 #
 
 DISTNAME=       fetchmail-4.1.6
@@ -16,6 +16,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --enable-OPIE
 CONFIGURE_ENV+= LDFLAGS="${CFLAGS}"
 MAN1=		fetchmail.1
+
+.if exists(/usr/lib/libkrb.a) && defined(MAKE_EBONES)
+CONFIGURE_ARGS += --with-kerberos=/usr/include/kerberosIV
+.endif
 
 FDOC=   ${PREFIX}/share/doc/fetchmail
 
