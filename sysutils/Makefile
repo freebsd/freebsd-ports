@@ -121,6 +121,7 @@
     SUBDIR += rtty
     SUBDIR += rmonitor
     SUBDIR += roottail
+    SUBDIR += ruby-quota
     SUBDIR += ruby-syslog
     SUBDIR += safecat
     SUBDIR += samefile
