@@ -1,0 +1,13 @@
+Bonk is a an audio compression program that operates in both lossy and
+lossless modes. The compression method Bonk uses is quite simple compared to
+other lossy formats such as MP3, and is based on speech compression techniques.
+It is nevertheless capable of producing a high compression ratio while
+maintaining good sound quality. 
+
+In lossy mode, it averages 14:1 compression while remaining almost perceptually
+lossless. This corresponds to 95 kbps for high quality audio. 
+
+In lossless mode the original audio file can be recovered exactly. Lossless
+mode typically achieves around 2:1 compression. 
+
+WWW: http://yoyo.cc.monash.edu.au/~pfh/bonk/
