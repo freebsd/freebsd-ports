@@ -25,4 +25,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
+BROKEN=		"Build dies with \"guile-gtk.h:235: conflicting types for \`gdk_color_copy'\""
+
 .include <bsd.port.mk>
