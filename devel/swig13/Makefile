@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	swig
-PORTVERSION=	1.3.12
-CATEGORIES=	devel perl5 python ruby tcl82
+PORTVERSION=	1.3.14
+CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.rge.com/pub/languages/swig/ \
 		ftp://ftp.mcc.ac.uk/pub/mvc/swig/
@@ -31,6 +31,7 @@ PLIST_SUB+=		WANT_SWIG_GUILE=""
 PLIST_SUB+=		WANT_SWIG_GUILE="@comment "
 .endif
 .if defined(WANT_SWIG_PERL)
+CATEGORIES+=		perl5
 USE_PERL5=		yes
 PLIST_SUB+=		WANT_SWIG_PERL=""
 .else
@@ -45,6 +46,7 @@ PLIST_SUB+=		WANT_SWIG_PHP4=""
 PLIST_SUB+=		WANT_SWIG_PHP4="@comment "
 .endif
 .if defined(WANT_SWIG_PYTHON)
+CATEGORIES+=		python
 USE_PYTHON=		yes
 PYTHON_NO_DEPENDS=	yes
 BUILD_DEPENDS+=		${PYTHON_CMD}:${PYTHON_PORTSDIR}
@@ -55,6 +57,7 @@ PLIST_SUB+=		WANT_SWIG_PYTHON=""
 PLIST_SUB+=		WANT_SWIG_PYTHON="@comment "
 .endif
 .if defined(WANT_SWIG_RUBY)
+CATEGORIES+=		ruby
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 PLIST_SUB+=		WANT_SWIG_RUBY=""
@@ -62,12 +65,37 @@ PLIST_SUB+=		WANT_SWIG_RUBY=""
 PLIST_SUB+=		WANT_SWIG_RUBY="@comment "
 .endif
 .if defined(WANT_SWIG_TCL)
-BUILD_DEPENDS+=		${LOCALBASE}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
-CONFIGURE_ARGS+=	--with-tclincl=${LOCALBASE}/include/tcl8.2/ \
-			--with-tcllib=${LOCALBASE}/lib/tcl8.2/
+CATEGORIES+=		tcl83
+BUILD_DEPENDS+=		${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83
+CONFIGURE_ARGS+=	--with-tclincl=${LOCALBASE}/include/tcl8.3/ \
+			--with-tcllib=${LOCALBASE}/lib/tcl8.3/
 PLIST_SUB+=		WANT_SWIG_TCL=""
 .else
 PLIST_SUB+=		WANT_SWIG_TCL="@comment "
+.endif
+
+.if defined(WANT_SWIG_OCAML)
+BUILD_DEPENDS+=		${LOCALBASE}/bin/ocamlc:${PORTSDIR}/lang/ocaml
+PLIST_SUB+=		WANT_SWIG_OCAML=""
+.else
+PLIST_SUB+=		WANT_SWIG_OCAML="@comment "
+.endif
+
+.if defined(WANT_SWIG_PIKE)
+BUILD_DEPENDS+=		${LOCALBASE}/bin/pike:${PORTSDIR}/lang/pike
+PLIST_SUB+=		WANT_SWIG_PIKE=""
+.else
+PLIST_SUB+=		WANT_SWIG_PIKE="@comment "
+CONFIGURE_ARGS +=	--without-pike
+.endif
+
+.if defined(WANT_SWIG_JAVA)
+CATEGORIES+=		java
+USE_JAVA=	1.2+
+PLIST_SUB+=		WANT_SWIG_JAVA=""
+.else
+PLIST_SUB+=		WANT_SWIG_JAVA="@comment "
+CONFIGURE_ARGS +=	--without-java
 .endif
 
 INSTALLS_SHLIB=	yes
