@@ -7,6 +7,7 @@
 
 PORTNAME=	icu2
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://oss.software.ibm.com/icu/download/${PORTVERSION}/
 DISTNAME=	icu-${PORTVERSION}
