@@ -9,6 +9,7 @@
     SUBDIR += adpcm
     SUBDIR += afsp
     SUBDIR += agsatellite
+    SUBDIR += alienwah
     SUBDIR += amp
     SUBDIR += ample
     SUBDIR += arts

@@ -1,0 +1,8 @@
+Paul Nasca's AlienWah LADSPA Plugin. The DSP code for the plugin was written
+by Paul Nasca and the conversion to LADSPA was done by Paul Thompson.
+
+Author: Paul Nasca <paulnasca@email.ro>
+WWW: http://plugin.org.uk/releases/alienwah/
+
+- Tilman Linneweh
+freebsdports@arved.de
