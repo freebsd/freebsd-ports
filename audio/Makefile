@@ -116,6 +116,7 @@
     SUBDIR += gkrellmvolume
     SUBDIR += gkrellmvolume2
     SUBDIR += glame
+    SUBDIR += glurp
     SUBDIR += gmixer
     SUBDIR += gmpc
     SUBDIR += gnapster

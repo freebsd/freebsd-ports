@@ -1,0 +1,11 @@
+A GTK2 based graphical client with simple and clean interface.
+
+Features
+* Support for loading/saving playlists
+* File Browser
+* Playlist Quicksearch
+* Supports streams in MPD (MPD 0.11.0 and higher)
+* ID3 Information
+* Single window interface, with possibility to hide the playlist
+
+WWW:	http://www.musicpd.org/?page=glurp

@@ -1,0 +1,13 @@
+bin/glurp
+share/glurp/pixmaps/media-audiofile.png
+share/glurp/pixmaps/media-stream.png
+share/glurp/pixmaps/player-prev.png
+share/glurp/pixmaps/player-play.png
+share/glurp/pixmaps/player-pause.png
+share/glurp/pixmaps/player-stop.png
+share/glurp/pixmaps/player-next.png
+share/glurp/pixmaps/player-repeat.png
+share/glurp/pixmaps/player-shuffle.png
+share/glurp/glurp.glade
+@dirrm share/glurp/pixmaps
+@dirrm share/glurp
