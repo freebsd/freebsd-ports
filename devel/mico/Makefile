@@ -102,7 +102,7 @@ post-extract:
 
 post-patch:
 	${REINPLACE_CMD} -e "s#-O2#${CFLAGS}#" ${WRKSRC}/configure
-.if ${OSVERSION} < 500035 && defined(WITH_GCC32)
+.if ${OSVERSION} < 500035 && !defined(WITH_SYSTEM_GCC)
 	${LN} -s /usr/include/g++/FlexLexer.h ${WRKSRC}/include
 .endif
 
