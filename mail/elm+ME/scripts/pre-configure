@@ -1,10 +1,12 @@
-#!/bin/sh -
+#!/bin/sh -e
 #
 #       pre-configure script for Elm port to FreeBSD
 #
 # $FreeBSD$
 
 [ -r /usr/include/inttypes.h ] && has_inttypes=define || has_inttypes=undef
+
+d_shared_rev=${SO_REV:-$(awk '/SHAREDTAG:/{print $2}' ${WRKSRC}/hdrs/patchlevel.h)}
 
 [ -d  ${WRKSRC}/shlib ] || mkdir ${WRKSRC}/shlib
 
@@ -33,7 +35,7 @@ d_connect_reopen='undef'
 d_netdb='define'
 d_netinet_in='define'
 d_use_aton='define'
-d_inttypes='$has_inttypes'
+d_inttypes='${has_inttypes}'
 d_nointtypes='undef'
 n='-n'
 c=''
@@ -121,7 +123,7 @@ vi
 '
 test='/bin/test'
 inews=''
-ispell='${PREFIX}/bin/ispell'
+ispell='${LOCALBASE}/bin/ispell'
 egrep='/usr/bin/egrep'
 more='/usr/bin/more'
 pg='pg'
@@ -131,7 +133,7 @@ mailx='mailx'
 mail=''
 cpp='/usr/bin/cpp'
 perl=''
-emacs='${PREFIX}/bin/emacs'
+emacs='${LOCALBASE}/bin/emacs'
 ls='/bin/ls'
 rmail='/bin/rmail'
 sendmail='/usr/sbin/sendmail'
@@ -195,7 +197,7 @@ i_term='define'
 d_index='undef'
 d_internet=''
 d_ispell='define'
-ispell_path='${PREFIX}/bin/ispell'
+ispell_path='${LOCALBASE}/bin/ispell'
 ispell_options='-x'
 d_locale='define'
 d_nl_types='define'
@@ -203,7 +205,7 @@ d_msgcat='define'
 d_usenls=''
 d_mallocvoid='define'
 d_mboxedit='define'
-metamail_path='${PREFIX}/bin/metamail'
+metamail_path='${LOCALBASE}/bin/metamail'
 d_8bitmime='define'
 d_binarymime='undef'
 d_dsn='define'
@@ -242,9 +244,9 @@ d_subshell='define'
 d_tempnam='define'
 d_setlinebuf='define'
 d_shared='define'
-d_shared_rev='${SO_REV}'
+d_shared_rev='${d_shared_rev}'
 d_dlopen_libs='define'
-shared_list='tls'
+shared_list='iconv tls'
 d_dynamic_main='define'
 dynamic_opt='-rdynamic'
 dlopen_lib=''
@@ -292,7 +294,7 @@ manroffopts=''
 suffix=''
 packer=''
 optimize='${CFLAGS}'
-ccflags=''
+ccflags='-D_LIBICONV_VERSION=200'
 cppflags=''
 ldflags='-s'
 cc='cc'
@@ -318,20 +320,32 @@ d_xenix='undef'
 d_bsd='define'
 locale='locale'
 d_pgp='define'
-pgp='${PREFIX}/bin/pgp'
-pgp2_path='${PREFIX}/bin/pgp'
-pgp5_dir='${PREFIX}/bin'
-gpg_path='${PREFIX}/bin/gpg'
+pgp='${LOCALBASE}/bin/pgp'
+pgp2_path='${LOCALBASE}/bin/pgp'
+pgp5_dir='${LOCALBASE}/bin'
+gpg_path='${LOCALBASE}/bin/gpg'
 special_path='/usr/bin'
 special_path2='${PREFIX}/bin'
 locale_dir='/usr/share/locale'
 CONFIG=true
-tls_ok='define'
 EOF
 
-mv  ${WRKSRC}/shared_libs/tls/README.ME+ ${WRKSRC}/shared_libs/tls/README.TLS
+mv ${WRKSRC}/shared_libs/iconv/README.ME+ \
+   ${WRKSRC}/shared_libs/iconv/README.ICONV
 
-cat > ${WRKSRC}/shared_libs/tls/config.res << EOF
+tee -a ${WRKSRC}/config.sh > ${WRKSRC}/shared_libs/iconv/config.res << EOF
+#  Support for ICONV
+iconv_ok='define'
+iconv_dir='${LOCALBASE}'
+iconv_include_dir='${LOCALBASE}/include'
+iconv_lib_dir='${LOCALBASE}/lib'
+iconv_link='iconv'
+EOF
+
+mv ${WRKSRC}/shared_libs/tls/README.ME+ \
+   ${WRKSRC}/shared_libs/tls/README.TLS
+
+tee -a ${WRKSRC}/config.sh > ${WRKSRC}/shared_libs/tls/config.res << EOF
 #  Support for TLS
 tls_ok='define'
 tls_dir='system'

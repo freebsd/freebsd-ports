@@ -24,11 +24,11 @@ taz	application/octet-stream; type=tar; conversions=x-compress
 tgz	application/octet-stream; type=tar; conversions=x-gzip
 tbz	application/octet-stream; type=tar; conversions=x-bzip
 tbz2	application/octet-stream; type=tar; conversions=x-bzip2
-#tar	application/octet-stream; type=tar
+#	application/octet-stream; type=tar
 #Z	application/octet-stream
 #gz	application/octet-stream
 #bz2	application/octet-stream
-#zip	application/octet-stream; type=zip
+#zip	application/octet-stream; type=zip	[-> application/zip]
 
 # PGP users might want the following
 #pgp	application/pgp
@@ -963,9 +963,13 @@ enc		application/pre-encrypted
 mda		application/vnd.ms-access
 mdb		application/vnd.ms-access
 mde		application/vnd.ms-access
+pwz		application/vnd.ms-powerpoint
 sc2		application/vnd.ms-schedule
 scd		application/vnd.ms-schedule
 sch		application/vnd.ms-schedule
+wp5		application/wordperfect5.1
+wk		application/x-123
+ckl		application/x-fortezza-ckl
 mocha		application/x-javascript
 jsc		application/x-javascript-config
 pac		application/x-ns-proxy-autoconfig
@@ -976,6 +980,7 @@ perl		application/x-perl
 #		application/x-pkcs7-mime	[-> application/pkcs7-mime]
 #		application/x-pkcs7-signature	[-> application/pkcs7-signature]
 #		application/x-sdp		[-> application/sdp]
+wz		application/x-wingz
 #		application/x-zip-compressed	[-> application/zip]
 
 # Image types
@@ -1065,6 +1070,7 @@ mpa2		audio/x-mpeg2
 #		text/directory			[-> text/x-directory]
 #		text/htmlh			[-> text/x-htmlh]
 #		text/mathml			[-> text/x-mathml]
+#		text/spreadsheet		[-> text/x-spreadsheet]
 #		text/x-abiword			[-> application/x-abiword]
 #		text/x-applix-word		[-> application/x-applix-word]
 #??		text/x-authors
@@ -1092,6 +1098,8 @@ mml		text/x-mathml
 #		text/x-python			[-> application/x-python]
 #??		text/x-readme
 #		text/x-scheme			[-> application/vnd.lotus-screencam]
+slk		text/x-spreadsheet
+sylk		text/x-spreadsheet
 stx		text/x-setext
 #		text/x-sh			[-> application/x-sh]
 #??		text/x-speech
@@ -1115,7 +1123,9 @@ gcrd		text/x-vcard
 #		application/msexcel		[-> application/vnd.ms-excel]
 #		application/mspowerpoint	[-> application/vnd.ms-powerpoint]
 pgp		application/pgp
-awb		application/x-abiword
+#		application/qif			[-> application/x-qif]
+wks		application/vnd.lotus-1-2-3
+abw		application/x-abiword
 as		application/x-applix-spreadsheet
 aw		application/x-applix-word
 arj		application/x-arj
@@ -1128,7 +1138,8 @@ cgi		application/x-cgi
 #		application/x-bzip-compressed-tar	[-> application/octet-stream]
 #??		application/x-cpio-compressed
 core		application/x-core-file
-deb		application/x-deb
+#		application/x-deb		[-> application/x-debian-package]
+dia		application/x-dia-diagram
 etheme		application/x-e-theme
 #??		application/x-executable-file	[-> application/octet-stream]
 afm		application/x-font-afm
@@ -1146,21 +1157,32 @@ ttf		application/x-font-ttf
 pfa		application/x-font-type1
 pfb		application/x-font-type1
 #??		application/x-font-vfont
+glade		application/x-glade
 desktop		application/x-gnome-app-info
 caves		application/x-gnome-stones
+gnucash		application/x-gnucash
+gnc		application/x-gnucash
+xac		application/x-gnucash
 gnumeric	application/x-gnumeric
-#??		application/x-java-byte-code
+#		application/x-java-byte-code	[-> application/x-java-vm]
+jpr		application/x-jbuilder-project
+jpx		application/x-jbuilder-project
 lha		application/x-lha
 lzh		application/x-lzh
 #		application/x-kde-app-info	[-> application/x-desktop]
 #??		application/x-ms-dos-executable
 o		application/x-object-file
 #		application/x-ogg		[-> audio/x-ogg]
+oleo		application/x-oleo
 #		application/x-palm-database	[-> application/vnd.palm]
 #??		application/x-pef-executable
 #		application/x-php		[-> application/x-httpd-php4]
-#??		application/x-profile
+out		application/x-profile
+qif		application/x-qif
+#		application/x-qw		[-> application/x-qif]
+sml		application/x-smil
 rar		application/x-rar
+#		application/x-rar-compressed	[-> application/x-rar]
 rej		application/x-reject
 rpm		application/x-rpm
 so		application/x-shared-library
@@ -1173,6 +1195,7 @@ theme		application/x-theme
 #??		application/x-troff-man-compressed
 a		application/x-unix-archive
 #		application/x-wordperfect	[-> application/wordperfect5.1]
+dbf		application/x-xbase
 zoo		application/x-zoo
 
 # Image types
@@ -1193,17 +1216,21 @@ lws		image/x-lws
 psd		image/x-psd
 svg		image/x-svg
 #		image/x-tga			[-> image/x-targa]
+wmf		image/x-wmf
 xcf		image/x-xcf
 fig		image/x-xfig
 
 # Audio types
 # -----------
 
+#		audio/ac3			[-> audio/x-ac3]
+ac3		audio/x-ac3
 it		audio/x-it
 #		audio/x-mp3			[-> audio/mpeg]
-#??		audio/x-mp3-playlist
+#		audio/x-mp3-playlist		[-> audio/x-mpegurl]
 m3u		audio/x-mpegurl
 ogg		audio/x-ogg
+#		audio/x-real-audio		[-> audio/vnd.rn-realaudio]
 #??		audio/x-riff
 #		audio/x-s3m			[-> audio/x-mod]
 #		audio/x-stm			[-> audio/x-mod]
@@ -1218,9 +1245,13 @@ xi		audio/x-xi
 #		video/isivideo			[-> video/x-isivideo]
 #		video/vivo			[-> video/vnd.vivo]
 #		video/wavelet			[-> video/x-wavelet]
+vob		video/mpeg
+dat		video/mpeg
 anim		video/x-anim
 #		video/x-avi			[-> video/x-msvideo]
 #??		video/x-isivideo
+#		video/x-ms-asf			[-> video/vnd.ms-asf]
+asx		video/vnd.ms-asf
 #??		video/x-wavelet
 #		video/x-real-video		[-> video/vnd.rn-realvideo]
 
@@ -1254,6 +1285,9 @@ anim		video/x-anim
 
 #		text/english			[-> text/plain]
 #??		text/xmcd
+H		text/x-c++hdr
+hpp		text/x-c++hdr
+hxx		text/x-c++hdr
 hh		text/x-c++hdr
 C		text/x-c++src
 cc		text/x-c++src
@@ -1348,8 +1382,7 @@ rm		application/vnd.rn-realmedia
 # Image types
 # -----------
 
-#		image/vnd.rn-realflash		[-> application/x-shockwave-flash2-preview]
-#		image/vnd.rn-realflash		[-> application/x-shockwave-flash]
+rf		image/vnd.rn-realflash
 rp		image/vnd.rn-realpix
 #		image/x-realaudio		[-> audio/vnd.rn-realaudio]
 
@@ -1379,7 +1412,7 @@ rv		video/vnd.rn-realvideo
 # -----------------
 
 swf		application/x-shockwave-flash
-rf		application/x-shockwave-flash2-preview
+#		application/x-shockwave-flash2-preview	[-> image/vnd.rn-realflash]
 
 # ======================================================================
 # Known unregistered MIME types from StarDivision
@@ -1396,6 +1429,33 @@ sds		application/x-sds
 sgl		application/x-sgl
 smf		application/x-smf
 sdw		application/x-swriter
+
+# ======================================================================
+# Known unregistered MIME types from Links
+# ======================================================================
+
+# Application types
+# -----------------
+
+#		application/x-debian-package	[-> application/x-deb]
+phtml		application/x-httpd-php
+pht		application/x-httpd-php
+#		application/x-maker		[-> application/vnd.framemaker]
+#		application/x-msdos-program	[-> application/octet-stream]
+#		text/comma-separated-values	[-> text/x-comma-separated-values]
+
+# Video types
+# -----------
+
+#		video/dl			[-> video/x-dl]
+dl		video/x-dl
+#		video/gl			[-> video/x-gl]
+gl		video/x-gl
+
+# Model types
+# -----------
+
+vrm		model/vrml
 
 # ======================================================================
 # Known unregistered MIME types from Anywhere
