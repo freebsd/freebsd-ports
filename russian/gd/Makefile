@@ -3,7 +3,7 @@
 # Date created:         17 Aug 1998
 # Whom:                 gsm@infosite.ru
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/05 14:10:52 kuriyama Exp $
 #
 
 DISTNAME=       gd1.3
@@ -13,6 +13,8 @@ MASTER_SITES=   http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/
 
 MAINTAINER=     gsm@infosite.ru
+
+RESTRICTED=	unavailable from master site due to legal problems
 
 FETCH_BEFORE_ARGS=	-b
 

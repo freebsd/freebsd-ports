@@ -3,7 +3,7 @@
 # Date created:         27 Mar 1998
 # Whom:                 jeff@cetlink.net
 #
-# $Id: Makefile,v 1.4 1998/04/19 15:38:31 steve Exp $
+# $Id: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 #
 
 DISTNAME=       gd1.3
@@ -13,6 +13,8 @@ MASTER_SITES=   http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/
 
 MAINTAINER=     jeff@cetlink.net
+
+RESTRICTED=	unavailable from master site due to legal problems
 
 FETCH_BEFORE_ARGS=	-b
 
