@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	citrix_ica
-PORTVERSION=	6.30.1052
+PORTVERSION=	7.00
 CATEGORIES=	net comms linux
 MASTER_SITES=
-DISTNAME=	${PORTNAME}-linuxx86
+DISTNAME=	${PORTNAME}-linuxx86-${PORTVERSION}
 
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Citrix(R) client for the Microsoft Windows Terminal Server
@@ -35,6 +35,10 @@ NSCP=	/usr/local/libexec/netscape \
 	${MOZILLA_HOME}
 
 .include <bsd.port.pre.mk>
+
+.if exists(${PREFIX}/bin/kde-config)
+HAVE_KDE=	"\\ny"
+.endif
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 IGNORE='The distribution file for this port may not be automatically fetched due to licensing restrictions.'
@@ -66,13 +70,13 @@ do-install:
 		${FALSE} ; \
 	fi
 
-	@${ECHO_CMD} -e "1\n${CDIR}\ny\ny\ny\ny\n3" > ${WRKSRC}/response ;
+	@${ECHO_CMD} -e "1\n${CDIR}\ny\ny\ny\ny${HAVE_KDE}\n3" > ${WRKSRC}/response ;
 	@for dir in ${NSCP}; do \
 		if [ -e $${dir}/plugins/libnullplugin.so ]; then \
 			BIN=`${FILE} $${dir}/plugins/libnullplugin.so | ${AWK} '{print $$11}'` ; \
 			case $${BIN} in \
 			\(SYSV\),) \
-				${ECHO_CMD} -e "1\n${CDIR}\ny\ny\ny\n3" > ${WRKSRC}/response ; \
+				${ECHO_CMD} -e "1\n${CDIR}\ny\ny\ny${HAVE_KDE}\n3" > ${WRKSRC}/response ; \
 			esac \
 		fi \
 	done

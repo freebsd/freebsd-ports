@@ -19,12 +19,15 @@ ICAClient/config/.server
 ICAClient/config/appsrv.ini
 ICAClient/config/module.ini
 ICAClient/config/wfclient.ini
+ICAClient/desktop/wfcmgr.desktop
+ICAClient/desktop/Citrix_PNA.desktop
 ICAClient/eula.txt
 ICAClient/help/index.htm
 ICAClient/icons/ica16.xpm
 ICAClient/icons/ica32.xpm
 ICAClient/icons/ica48.xpm
 ICAClient/icons/ica64.xpm
+ICAClient/icons/pn32.xpm
 ICAClient/install.txt
 ICAClient/keyboard/age2.kbd
 ICAClient/keyboard/agex2.kbd
@@ -92,6 +95,8 @@ ICAClient/keystore/cacerts/GTECTGlobalRoot.crt
 ICAClient/keystore/cacerts/GTECTRoot.crt
 ICAClient/keystore/cacerts/Pcs3ss_v4.crt
 ICAClient/keystore/cacerts/SecureServer.crt
+ICAClient/nls/C
+ICAClient/nls/en/pna.nls
 ICAClient/npica.so
 ICAClient/pkginf/F.core.linuxx86
 ICAClient/pkginf/Ver.core.linuxx86
@@ -103,20 +108,26 @@ ICAClient/util/XCapture.ad
 ICAClient/util/echo_cmd
 ICAClient/util/hinst
 ICAClient/util/icalicense.sh
+ICAClient/util/nslaunch
 ICAClient/util/xcapture
 ICAClient/wfcmgr
 ICAClient/wfica
+ICAClient/wfica.sh
+ICAClient/wfica_assoc.sh
 bin/wfcmgr
 bin/wfica
 @dirrm ICAClient/.config
 @dirrm ICAClient/cache/zlcache
 @dirrm ICAClient/cache
 @dirrm ICAClient/config
+@dirrm ICAClient/desktop
 @dirrm ICAClient/help
 @dirrm ICAClient/icons
 @dirrm ICAClient/keyboard
 @dirrm ICAClient/keystore/cacerts
 @dirrm ICAClient/keystore
+@dirrm ICAClient/nls/en
+@dirrm ICAClient/nls
 @dirrm ICAClient/pkginf
 @dirrm ICAClient/util
 @dirrm ICAClient
