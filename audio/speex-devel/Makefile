@@ -7,21 +7,22 @@
 #
 
 PORTNAME=	speex
-PORTVERSION=	1.0.4
-PORTEPOCH=	1
+PORTVERSION=	1.1.6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.speex.org/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	An open-source patent-free voice codec
 
 LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
+CONFLICTS=	speex-1.0*
+
 USE_GNOME=	gnomehack
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
