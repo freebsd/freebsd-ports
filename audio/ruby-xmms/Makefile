@@ -1,0 +1,37 @@
+# New ports collection makefile for:	Xmms-Ruby
+# Date created:		12 May 2002
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xmms
+PORTVERSION=	0.1.0
+CATEGORIES=	audio ruby
+MASTER_SITES=	http://www.pablotron.org/download/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
+DIST_SUBDIR=	ruby
+
+MAINTAINER=	knu@FreeBSD.org
+
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
+
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
+
+INSTALL_TARGET=	site-install
+
+DOCS=		AUTHORS ChangeLog README doc
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${CP} -R ${WRKSRC}/examples/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
+.for f in ${DOCS}
+	${CP} -R ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+.endfor
+.endif
+
+.include <bsd.port.mk>

@@ -192,6 +192,7 @@
     SUBDIR += ruby-mp3tag
     SUBDIR += ruby-qt2sound
     SUBDIR += ruby-smf
+    SUBDIR += ruby-xmms
     SUBDIR += s3mod
     SUBDIR += sbagen
     SUBDIR += sdl_mixer
