@@ -1,11 +1,10 @@
---- src/userserver.c.orig	Mon Mar 10 16:49:07 2003
-+++ src/userserver.c	Mon Mar 10 16:49:16 2003
-@@ -27,13 +27,13 @@
+--- src/userserver.c.orig	Fri Apr  2 15:20:45 2004
++++ src/userserver.c	Fri Apr  2 15:20:54 2004
+@@ -6,12 +6,12 @@
+ ***************************/
  
- #include <gdk/gdk.h>
- #include <gdk/gdkkeysyms.h>
-+#include <sys/types.h>
  #include <errno.h>
++#include <sys/types.h>
  #include <netinet/in.h>
  #include <pwd.h>
  #include <stdio.h>
