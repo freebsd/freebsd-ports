@@ -3,7 +3,7 @@
 # Date created:		So  31 Mai 1998 11:00:30 CEST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/31 09:25:50 andreas Exp $
 #
 
 DISTNAME=	zebra-980401
@@ -13,5 +13,6 @@ MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 MAINTAINER=	andreas@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--enable-confdir=${PREFIX}/etc/zebra
 
 .include <bsd.port.mk>
