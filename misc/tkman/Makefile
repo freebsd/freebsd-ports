@@ -26,5 +26,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/tkman-help.html ${PREFIX}/share/doc/tkman
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/tkmanclient ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/etc/periodic/weekly
+	${INSTALL_SCRIPT} ${FILESDIR}/310.index_manpages ${PREFIX}/etc/periodic/weekly
 
 .include <bsd.port.mk>

@@ -1,5 +1,8 @@
 bin/tkman
 bin/tkmanclient
 bin/retkman
+etc/periodic/weekly/310.index_manpages
 share/doc/tkman/tkman-help.html
 @dirrm share/doc/tkman
+@dirrm etc/periodic/weekly
+@dirrm etc/periodic

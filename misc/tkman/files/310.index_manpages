@@ -1,0 +1,23 @@
+#!/bin/sh
+
+if ! PREFIX=$(expr $0 : "\(/.*\)/etc/periodic/weekly/$(basename $0)\$"); then
+    echo "$0: Cannot determine the PREFIX" >&2
+    exit 1
+fi
+
+IFS=":" mandirs=`/usr/bin/manpath`
+
+for dir in ${mandirs}; do
+	cd ${dir}
+	if [ ! -r .glimpse_filters ] ; then
+		echo '*.gz	/usr/bin/gzip -cdfq' > .glimpse_filters
+	fi
+	if [ -x ${PREFIX}/bin/glimpseindex ]; then
+		echo ""
+		echo "Rebuilding man page indexes:"
+		${PREFIX}/bin/glimpseindex -z -o -B -f -H ${dir} man*
+		chmod 644 ${dir}/.glimpse_*
+	fi
+done
+
+exit 0
