@@ -6,10 +6,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	cdict
-PORTVERSION=	1.0
+PORTNAME=	stardict
+PORTVERSION=	1.3
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.cn.FreeBSD.org/pub/ported/
+PKGNAMEPREFIX=	zh-
 DISTNAME=	${PKGNAME}
 
 MAINTAINER=	phj@cn.FreeBSD.org
@@ -17,9 +18,12 @@ MAINTAINER=	phj@cn.FreeBSD.org
 REQUIRES_MOTIF=	yes
 
 GNU_CONFIGURE=	yes
+USE_GMAKE    =  yes
 USE_XLIB=	yes
 
-MANCOMPRESSED=	yes
-MAN1=		cdict.1
+PREFIX=		${X11BASE}
+
+port-install:
+	strip	$(PREFIX)/bin/${PORTNAME}
 
 .include <bsd.port.mk>
