@@ -7,6 +7,7 @@
 
 PORTNAME=	libsectok
 PORTVERSION=	20030619
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.citi.umich.edu/projects/smartcard/
 DISTNAME=	libsectok-${PORTVERSION}
@@ -20,8 +21,14 @@ USE_OPENSSL=	YES
 
 MAN3=		sectok.3
 
-IGNORE=		produces a broken package (dangling symlink)
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	"${IGNORE}"
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/sectok.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/libsectok.a ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/libsectok.so.3 ${PREFIX}/lib
+	${LN} -s ${PREFIX}/lib/libsectok.so.3 ${PREFIX}/lib/libsectok.so
+	${INSTALL_MAN} ${WRKSRC}/sectok.3 ${PREFIX}/man/man3
+
+PLIST_FILES=	include/sectok.h lib/libsectok.a \
+		lib/libsectok.so lib/libsectok.so.3
 
 .include <bsd.port.mk>
