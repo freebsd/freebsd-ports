@@ -1,0 +1,11 @@
+--- config.make.orig	Fri Jul 30 23:29:26 1999
++++ config.make	Fri Jul 30 23:30:56 1999
+@@ -141,7 +141,7 @@
+ 
+ 
+ # The perl interpreter used by subst.pl
+-PERL			= /usr/bin/perl
++PERL			= /usr/local/bin/perl
+ 
+ # Directories for installing documentation, not used by subst.pl
+ INFODIR			= /usr/local/share/doc/fidogate/info

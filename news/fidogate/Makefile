@@ -26,6 +26,12 @@ FORBIDDEN=	indefinite hang
 USE_GMAKE=	yes
 USE_PERL5=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 300000
+EXTRA_PATCHES+=	${FILESDIR}/patch-perl
+.endif
+
 pre-configure:
 	@${MV} ${WRKSRC}/config.make ${WRKSRC}/config.make.sed
 	@${SED} -e 's/\$${PREFIX}/${PREFIX:S/\//\\\//g}/g' \
@@ -63,4 +69,4 @@ post-install:
 		(cd ${PREFIX}/share/examples/fidogate; tar xf -)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
