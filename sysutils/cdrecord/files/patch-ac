@@ -9,12 +9,3 @@
  #endif
  
  #if	defined(_SIZE_T)     || defined(_T_SIZE_) || defined(_T_SIZE) || \
-@@ -139,7 +139,7 @@
- extern	int	geterrno __PR((void));
- extern	void	raisecond __PR((const char *, long));
- #ifdef	HAVE_SIZE_T
--extern	int	snprintf __PR((char *, size_t, const char *, ...));
-+/*extern	int	snprintf __PR((char *, size_t, const char *, ...));*/
- #endif
- /*extern	int	sprintf __PR((char *, const char *, ...)); ist woanders falsch deklariert !!!*/
- extern	char	*strcatl __PR((char *, ...));
