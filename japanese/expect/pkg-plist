@@ -20,16 +20,16 @@ bin/unbuffer-jp
 bin/weather-jp
 bin/xkibitz-jp
 bin/xpstat-jp
-include/expect5.28jp/tclRegexp.h
-include/expect5.28jp/expect.h
-include/expect5.28jp/expect_comm.h
-include/expect5.28jp/expect_tcl.h
-include/expect5.28jp/tcldbg.h
-@dirrm include/expect5.28jp
-lib/expect5.28jp/pkgIndex.tcl
-@dirrm lib/expect5.28jp
-lib/libexpect528jp.a
-lib/libexpect528jp.so.1.2
-lib/libexpect528jp.so
+include/expect5.30jp/tclRegexp.h
+include/expect5.30jp/expect.h
+include/expect5.30jp/expect_comm.h
+include/expect5.30jp/expect_tcl.h
+include/expect5.30jp/tcldbg.h
+@dirrm include/expect5.30jp
+lib/expect5.30jp/pkgIndex.tcl
+@dirrm lib/expect5.30jp
+lib/libexpect530jp.a
+lib/libexpect530jp.so.1.2
+lib/libexpect530jp.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
