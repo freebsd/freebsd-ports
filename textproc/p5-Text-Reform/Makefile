@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Reform
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -18,6 +18,8 @@ COMMENT=	Manual text wrapping and reformatting
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::Reform.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
+pre-configure:
+	@${FIND} ${WRKSRC} -name \*.orig -delete
 
 .include <bsd.port.mk>

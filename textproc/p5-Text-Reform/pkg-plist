@@ -1,8 +1,10 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Reform/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Text/demo_ws.pl
-lib/perl5/site_perl/%%PERL_VER%%/Text/demo_table.pl
-lib/perl5/site_perl/%%PERL_VER%%/Text/demo_filler.pl
-lib/perl5/site_perl/%%PERL_VER%%/Text/demo_columns.pl
-lib/perl5/site_perl/%%PERL_VER%%/Text/demo.pl
-lib/perl5/site_perl/%%PERL_VER%%/Text/Reform.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Reform
+%%SITE_PERL%%/Text/Reform.pm
+%%SITE_PERL%%/Text/demo.pl
+%%SITE_PERL%%/Text/demo_columns.pl
+%%SITE_PERL%%/Text/demo_filler.pl
+%%SITE_PERL%%/Text/demo_table.pl
+%%SITE_PERL%%/Text/demo_ws.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Reform/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Reform
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
