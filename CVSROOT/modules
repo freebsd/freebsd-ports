@@ -9659,6 +9659,7 @@ unquote		ports/sysutils/unquote
 unrar		ports/archivers/unrar
 unroff		ports/textproc/unroff
 unrtf		ports/textproc/unrtf
+unshield	ports/archivers/unshield
 untar		ports/archivers/untar
 unzip		ports/archivers/unzip
 uox3		ports/games/uox3
