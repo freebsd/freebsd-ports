@@ -22,6 +22,8 @@ LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
+BROKEN=		"Broken pkg-plist"
+
 USE_LIBLTDL=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LIBTOOL_VER=	13
