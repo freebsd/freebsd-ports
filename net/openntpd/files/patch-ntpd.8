@@ -1,32 +1,33 @@
 
 $FreeBSD$
 
---- ntpd.8.orig	Thu Jul 15 12:16:28 2004
-+++ ntpd.8	Sun Jul 18 16:53:12 2004
-@@ -40,14 +40,14 @@
- .Nm
- is usually started at boot time, and can be enabled by
- setting the following in
--.Pa /etc/rc.conf.local :
-+.Pa /etc/rc.conf :
- .Pp
--.Dl ntpd_flags=\&"\&"
-+.Dl openntpd_enable=\&"YES\&"
- .Pp
- See
- .Xr rc 8
- and
--.Xr rc.conf 8
-+.Xr rc.conf 5
- for more information on the boot process
- and enabling daemons.
- .Pp
-@@ -70,11 +70,11 @@
+--- ntpd.8.orig
++++ ntpd.8
+@@ -71,7 +71,7 @@
  .Ar file
  as the configuration file,
  instead of the default
 -.Pa /etc/ntpd.conf .
 +.Pa %%PREFIX%%/etc/ntpd.conf .
+ .It Fl S
+ Do not set the time immediately at startup.
+ This is the default.
+@@ -83,22 +83,10 @@
+ .Xr rdate 8
+ before starting
+ .Nm .
+-Currently, the
+-.Fl s
+-option is added unconditionally in
+-.Xr rc 8 .
+-Make sure to specify the
+-.Fl S
+-option
+-(add/edit
+-.Va ntpd_flags
+-in
+-.Xr rc.conf.local 8 )
+-if this behaviour is not desired.
  .El
  .Sh FILES
 -.Bl -tag -width "/etc/ntpd.confXXX" -compact
@@ -36,3 +37,13 @@ $FreeBSD$
  default
  .Nm
  configuration file
+@@ -107,8 +95,8 @@
+ .Xr date 1 ,
+ .Xr adjtime 2 ,
+ .Xr ntpd.conf 5 ,
++.Xr rc.conf 5 ,
+ .Xr rc 8 ,
+-.Xr rc.conf 8 ,
+ .Xr rdate 8 ,
+ .Xr timed 8
+ .Rs
