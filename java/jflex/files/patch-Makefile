@@ -1,7 +1,0 @@
---- src/Makefile.orig	Mon May  3 23:23:09 2004
-+++ src/Makefile	Mon May  3 23:20:03 2004
-@@ -0,0 +1,4 @@
-+# Makefile to wrap a call to ant
-+
-+all:
-+	${SETENV} CLASSPATH=${DISTDIR}/JFlex.jar:${DISTDIR}/java_cup.jar:${JAVAJARDIR}/junit.jar:. ${LOCALBASE}/bin/ant jar
