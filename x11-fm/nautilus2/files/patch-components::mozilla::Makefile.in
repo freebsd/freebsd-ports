@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- components/mozilla/Makefile.in	2002/02/26 22:23:08	1.1
++++ components/mozilla/Makefile.in	2002/02/26 22:24:11
+@@ -221,7 +221,7 @@
+ 
+ NULL = 
+ 
+-INCLUDES =  	-I$(top_srcdir) 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-DG_LOG_DOMAIN=\"Nautilus-Mozilla\" 	-DDATADIR=\"$(datadir)\" 	-DPREFIX=\"$(prefix)\" 	$(MOZILLA_COMPONENT_DEBUG_FLAGS) 	$(MOZILLA_PROFILES_CFLAGS) 	$(MOZILLA_COMPONENT_CFLAGS) 	$(GCONF_CFLAGS) 	$(NAUTILUS_DEPENDENCY_CFLAGS) 	$(NULL)
++INCLUDES =  	-I$(top_srcdir) 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-DG_LOG_DOMAIN=\"Nautilus-Mozilla\" 	-DDATADIR=\"$(datadir)\" 	-DPREFIX=\"$(prefix)\"	-DMOZILLA_LIB_PLACE=\"@MOZILLA_LIB_PLACE@\" 	$(MOZILLA_COMPONENT_DEBUG_FLAGS) 	$(MOZILLA_PROFILES_CFLAGS) 	$(MOZILLA_COMPONENT_CFLAGS) 	$(GCONF_CFLAGS) 	$(NAUTILUS_DEPENDENCY_CFLAGS) 	$(NULL)
+ 
+ 
+ bin_PROGRAMS =  	nautilus-mozilla-content-view 	$(NULL)
