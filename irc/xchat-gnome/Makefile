@@ -7,6 +7,7 @@
 
 PORTNAME=	xchat2
 PORTVERSION=	1.9.4
+PORTREVISION=	1
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://xchat.org/files/source/1.9/ \
 		http://xchat.linuxpower.org/files/source/1.9/
@@ -24,8 +25,8 @@ USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-nls \
 		--enable-ipv6 \
 		--enable-perl
