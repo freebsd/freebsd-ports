@@ -3,7 +3,7 @@
 # Date created:         7 Mar 1996
 # Whom:                 se
 #
-# $Id: Makefile,v 1.9 1997/06/03 06:47:59 asami Exp $
+# $Id: Makefile,v 1.10 1997/06/03 07:35:25 asami Exp $
 #
 
 DISTNAME=       DHCPD-BETA-5.16
@@ -11,12 +11,7 @@ PKGNAME=	isc-dhcp-b5.16
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.isc.org/isc/dhcp/
 
-MAINTAINER=	ports@FreeBSD.org
-
-OSVERSION!=	sysctl -n kern.osreldate
-.if ${OSVERSION} >= 300000
-BROKEN=		"currently doesn't compile for -current"
-.endif
+MAINTAINER=	jseger@scds.com
 
 HAS_CONFIGURE=	yes
 
