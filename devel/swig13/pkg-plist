@@ -31,6 +31,7 @@ lib/swig%%VER%%/guile/list-vector.i
 lib/swig%%VER%%/guile/pointer-in-out.i
 lib/swig%%VER%%/guile/ports.i
 lib/swig%%VER%%/guile/typemaps.i
+lib/swig%%VER%%/java/java.i
 lib/swig%%VER%%/java/java.swg
 lib/swig%%VER%%/java/java_arrays.i
 lib/swig%%VER%%/java/stl_string.i
@@ -69,6 +70,7 @@ lib/swig%%VER%%/ruby/rubydec.swg
 lib/swig%%VER%%/ruby/rubydef.swg
 lib/swig%%VER%%/ruby/typemaps.i
 lib/swig%%VER%%/stdlib.i
+lib/swig%%VER%%/swig.swg
 lib/swig%%VER%%/tcl/constarray.i
 lib/swig%%VER%%/tcl/consthash.i
 lib/swig%%VER%%/tcl/object.swg
