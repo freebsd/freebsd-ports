@@ -1,0 +1,11 @@
+--- makefile.orig	Fri Nov 29 14:30:00 2002
++++ makefile	Fri Nov 29 14:34:56 2002
+@@ -13,7 +13,7 @@
+ LPNG = -lpng -lz
+ LDFLAGS=-O2
+ # LIBS=-L/usr/lib `gtk-config --libs` $(LPNG) -lgthread -lpthread -lxmms -Wl,--rpath -Wl,/usr/local/lib
+-LIBS=`xmms-config --libs` $(LPNG)
++LIBS=`xmms-config --libs` $(LPNG) -lc_r
+ OBJS=kj.o resource.o config.o image.o playlist.o
+ CC=gcc
+ 

@@ -345,6 +345,7 @@
     SUBDIR += xmms-fc
     SUBDIR += xmms-flac
     SUBDIR += xmms-kde
+    SUBDIR += xmms-kj
     SUBDIR += xmms-ladspa
     SUBDIR += xmms-liveice
     SUBDIR += xmms-mad
