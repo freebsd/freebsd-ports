@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	apcupsd
-PORTVERSION=	3.8.5
-PORTREVISION=	2
+PORTVERSION=	3.8.6
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.apcupsd.com/pub/apcupsd/stable/tar/
 
@@ -51,6 +50,7 @@ PORTDOCS=	apcupsd.pdf apcaccess.html apcnisd.html apctest.html apcupsd-styles.cs
 		new_features_3_8_0.html new_features_3_8_1.html \
 		new_features_3_8_2.html new_features_3_8_3.html \
 		new_features_3_8_4.html new_features_3_8_5.html \
+		new_features_3_8_6.html \
 		oldversions.html onbatt.gif online.gif security.html \
 		shutdown.html status.gif status.html stopping.html testing.html \
 		thanks.gif thanks.html troubles.html upgrading_to_3_7_0.html \
