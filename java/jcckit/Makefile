@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Chart Construction Kit
 
+BROKEN=		Size mismatch
+
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.1+
