@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Atom
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -27,10 +27,11 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		XML::Atom.3 \
-		XML::Atom::API.3 \
+		XML::Atom::Client.3 \
 		XML::Atom::Entry.3 \
 		XML::Atom::Feed.3 \
 		XML::Atom::Person.3 \
+		XML::Atom::Server.3 \
 		XML::Atom::Util.3
 
 .include <bsd.port.pre.mk>
