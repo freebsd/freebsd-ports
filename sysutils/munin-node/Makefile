@@ -17,6 +17,8 @@ DISTNAME=	munin_1.0.0pre3
 MAINTAINER=	lupe@lupe-christoph.de
 COMMENT=	Node-specific part of Munin
 
+BROKEN=		"Broken pkg-plist, and changes permissions on system directories"
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${SITE_PERL}/Net/Server/Fork.pm:${PORTSDIR}/net/p5-Net-Server
 
