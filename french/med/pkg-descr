@@ -1,0 +1,18 @@
+MED stands for "Modélisation et Échanges de Données", i.e. Data Modelization
+and Exchanges.
+
+MED « fichier », c'est :
+
+	* Un modèle d'échange de données commun centré sur les notions de
+	maillage et de résultat. Ce modèle décrit quelles sont les données
+	exportées et échangées entre les codes.
+
+	* Une API (Application Programming Interface) d'accès aux données
+	qui se présente sous la forme d'une bibliothèque informatique écrite
+	en C et FORTRAN 77. Cette bibliothèque est distribuée sous licence
+	GNU LGPL.
+
+	* Des données échangées et stockées dans des fichiers au format HDF
+	(Hierarchical Data Format).
+
+WWW: http://www.code-aster.org/outils/med/

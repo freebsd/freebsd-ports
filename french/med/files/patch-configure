@@ -1,0 +1,12 @@
+--- configure.orig	Wed Sep 18 18:09:45 2002
++++ configure	Wed Jul  9 21:19:27 2003
+@@ -667,6 +667,9 @@
+     linux*)
+ 	machine=PCLINUX
+ 	;;
++    freebsd*)
++	machine=PCLINUX
++	;;
+     hpux*)
+ 	machine=HP9000
+ 	;;
