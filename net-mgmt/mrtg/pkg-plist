@@ -1,0 +1,24 @@
+bin/cfgmaker
+bin/convert
+bin/indexmaker
+bin/mrtg
+bin/rateup
+etc/mrtg/mrtg.cfg-dist
+lib/perl5/site_perl/BER.pm
+lib/perl5/site_perl/SNMP_Session.pm
+share/mrtg/mrtg-l.gif
+share/mrtg/mrtg-m.gif
+share/mrtg/mrtg-r.gif
+share/mrtg/mrtg-ti.gif
+share/doc/mrtg/COPYING
+share/doc/mrtg/COPYRIGHT
+share/doc/mrtg/INSTALL
+share/doc/mrtg/Changes
+share/doc/mrtg/Contributors
+share/doc/mrtg/Todo
+share/doc/mrtg/mibhelp.txt
+share/doc/mrtg/readme.html
+share/doc/mrtg/readme.txt
+@dirrm etc/mrtg
+@dirrm share/doc/mrtg
+@dirrm share/mrtg
