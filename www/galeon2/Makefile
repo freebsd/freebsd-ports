@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	galeon2
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/2$//}
@@ -31,7 +31,7 @@ HEADERS_SUFX=
 .if ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	${WITH_MOZILLA}
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="trunk"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.4b"
 .else
 MOZILLA=	mozilla-gtk2
 HEADERS_SUFX=
@@ -75,9 +75,8 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|mozilla-gtkmozembed|mozilla-gtkmozembed${HEADERS_SUFX}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|mozilla-gtkmozembed|mozilla-gtkmozembed${HEADERS_SUFX}|g' \
+		${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
 		 's|-lpthread|${PTHREAD_LIBS}|g'
 	@${FIND} ${WRKSRC} -name "*.cpp" | ${XARGS} ${REINPLACE_CMD} -e \
