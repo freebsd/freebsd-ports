@@ -1,6 +1,6 @@
 --- vmnet-only/freebsd/vmnet.c	Sun Feb 29 11:17:28 2004
 +++ vmnet-only/freebsd/vmnet.c	Sun Feb 29 10:52:01 2004
-@@ -104,6 +104,10 @@
+@@ -104,14 +104,22 @@
  
  static struct cdevsw vmnet_cdevsw = {
  #if __FreeBSD_version >= 500104
@@ -11,12 +11,14 @@
         .d_open =       vmnet_open,
         .d_close =      vmnet_close,
         .d_read =       vmnet_read,
-@@ -111,7 +115,9 @@
+        .d_write =      vmnet_write,
         .d_ioctl =      vmnet_ioctl,
         .d_poll =       vmnet_poll,
++#if __FreeBSD_version < 502104
         .d_name =       DEVICE_NAME,
-+#if __FreeBSD_version > 502104
         .d_maj =        CDEV_MAJOR
++#else
++       .d_name =       DEVICE_NAME
 +#endif
  #else
  	/* open */	vmnet_open,
@@ -48,7 +50,7 @@
  .include <bsd.kmod.mk>
 --- vmmon-only/freebsd/driver.c	Sun Feb 29 11:17:28 2004
 +++ vmmon-only/freebsd/driver.c	Sun Feb 29 10:58:11 2004
-@@ -163,6 +163,10 @@
+@@ -163,9 +163,15 @@
  
  static struct cdevsw vmmon_cdevsw = {
  #if __FreeBSD_version >= 500104
@@ -58,14 +60,9 @@
 +#endif
  	.d_open =       FreeBSD_Driver_Open,
  	.d_name =       DEVICE_NAME,
++#if __FreeBSD_version < 502104
  	.d_maj =        CDEV_MAJOR
-@@ -172,7 +176,9 @@
-         /* read */      noread,
-         /* psize */     nopsize,
-         /* flags */     0,
-+#if __FreeBSD_version > 502104
-         /* bmaj */      -1
 +#endif
- #endif
- };
- 
+ #else
+         /* open */      FreeBSD_Driver_Open,
+         /* close */     noclose,
