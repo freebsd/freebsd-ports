@@ -2156,6 +2156,7 @@ icqlib		ports/net/icqlib
 icqlib0		ports/net/icqlib0
 icqmail		ports/mail/icqmail
 icqnix		ports/net/icqnix
+icradius	ports/net/icradius
 icu		ports/devel/icu
 icukrell	ports/net/icukrell
 id		src/usr.bin/id
