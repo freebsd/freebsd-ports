@@ -749,6 +749,7 @@
     SUBDIR += whatmask
     SUBDIR += whois
     SUBDIR += wide-dhcp
+    SUBDIR += widentd
     SUBDIR += wmlj
     SUBDIR += wmnd
     SUBDIR += wmnet
