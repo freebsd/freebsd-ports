@@ -1,6 +1,6 @@
 # ex:ts=8
 # New ports collection makefile for:	gman
-# Date created:			Mar 30, 3001
+# Date created:			Mar 30, 2001
 # Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
 #
 # $FreeBSD$
@@ -8,7 +8,7 @@
 
 PORTNAME=	gman
 PORTVERSION=	0.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/g/gman
@@ -23,7 +23,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user-friendly graphical front end for the man system
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
-RUN_DEPENDS=	ghostview:${PORTSDIR}/print/ghostview
+RUN_DEPENDS=	ghostview:${PORTSDIR}/print/ghostview	\
+		man2html:${PORTSDIR}/textproc/man2html
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -47,5 +48,5 @@ do-install:
 	@${MKDIR} ${PREFIX}/www/cgi-bin
 	${INSTALL_SCRIPT} ${WRKSRC}/gman.pl ${PREFIX}/www/cgi-bin
 	${INSTALL_MAN} ${WRKSRC}/gman.1x ${MANPREFIX}/man/man1
-
+	@${CAT} ${PKGMESSAGE}
 .include <bsd.port.mk>
