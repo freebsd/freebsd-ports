@@ -1,4 +1,4 @@
-$NetBSD: patch-aa,v 1.2 1999/10/11 14:13:49 proff Exp $
+$FreeBSD$
 
 --- festival/config/config	Mon Oct 11 07:48:44 1999
 +++ festival/config/config	Mon Oct 11 05:48:33 1999
