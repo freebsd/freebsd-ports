@@ -7,26 +7,27 @@
 
 PORTNAME=	apache_fp
 PORTVERSION=	1.3.19
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://www.apache.org/dist/ \
+MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		ftp://ftp.microsoft.com/products/frontpage/ \
 		ftp://www.westbend.net/Mirrors/ftp.microsoft.com/Products/frontpage/ \
 		http://www.freebsd.org/gifs/ \
 		http://officeupdate.microsoft.com/frontpage/wpp/serk/ \
-		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
-		ftp://ftp.rge.com/pub/infosystems/apache/dist/ \
-		ftp://apache.compuex.com/pub/apache/dist/ \
-		ftp://apache.arctic.org/pub/apache/dist/ \
-		ftp://ftp.epix.net/pub/apache/dist/ \
-		ftp://ftp.ameth.org/pub/mirrors/ftp.apache.org/apache/dist/ \
-		ftp://ftp.connectnet.com/pub/www/apache/ \
-		ftp://apache.technomancer.com/mirrors/apache/dist/ \
-		ftp://ftp.raver.net/pub/ftp.apache.org/ \
-		ftp://www3.service.digital.com/apache/dist/ \
-		ftp://galileo.galilei.com/pub/apache/ \
-		ftp://ftp.mtnranch.net/pub/apache/dist/ \
-		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
-		ftp://apache.nextpath.com/pub/apache/dist/
+		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
+		ftp://ftp.rge.com/pub/infosystems/apache/dist/httpd/ \
+		ftp://apache.compuex.com/pub/apache/dist/httpd/ \
+		ftp://apache.arctic.org/pub/apache/dist/httpd/ \
+		ftp://ftp.epix.net/pub/apache/dist/httpd/ \
+		ftp://ftp.ameth.org/pub/mirrors/ftp.apache.org/apache/dist/httpd/ \
+		ftp://ftp.connectnet.com/pub/www/apache/httpd/ \
+		ftp://apache.technomancer.com/mirrors/apache/dist/httpd/ \
+		ftp://ftp.raver.net/pub/ftp.apache.org/httpd/ \
+		ftp://www3.service.digital.com/apache/dist/httpd/ \
+		ftp://galileo.galilei.com/pub/apache/httpd/ \
+		ftp://ftp.mtnranch.net/pub/apache/dist/httpd/ \
+		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/httpd/ \
+		ftp://apache.nextpath.com/pub/apache/dist/httpd/
 DISTNAME=	apache_${PORTVERSION}
 DISTFILES=	${APACHE} ${FRONTPAGE} powerlogo.gif fplogo.gif
 
@@ -37,27 +38,26 @@ MAINTAINER=	hetzels@westbend.net
 
 APACHE=		${DISTNAME}${EXTRACT_SUFX}
 
+.include <bsd.port.pre.mk>
 
-.if !defined(ARCH)
-ARCH!=  /usr/bin/uname -m
-.endif
+ONLY_FOR_ARCHS=	i386 alpha
 
 .if ${ARCH} == i386
 .ifdef WANT_FREEBSD_EXT
-FRONTPAGE=	fp40.freebsd.tar.z
+FRONTPAGE=	fp40.freebsd.tar.Z
+.if ${OSVERSION} < 500016
 PKGMESSAGE=	pkg-message.freebsd
+.endif
 .else
-FRONTPAGE=	fp40.bsdi.tar.z
+FRONTPAGE=	fp40.bsdi.tar.Z
 EXTRA_PATCHES=	${FILESDIR}/change_server.bsdi ${FILESDIR}/fp_install.bsdi
+.if ${OSVERSION} < 50016
 PKGMESSAGE=	pkg-message.bsdi
 .endif
+.endif
 .elif ${ARCH} == alpha
-FRONTPAGE=	fp40.alpha.tar.z
+FRONTPAGE=	fp40.alpha.tar.Z
 EXTRA_PATCHES=	${FILESDIR}/change_server.alpha ${FILESDIR}/fp_install.alpha
-.else
-.BEGIN:
-	@${ECHO} "Unsupported system ${ARCH}"
-	@${FALSE}
 .endif
 
 EXTRACT_ONLY=	${APACHE}
@@ -139,6 +139,7 @@ CONFIGURE_ARGS+=	--enable-suexec \
 MAN8+=	suexec.8
 .endif
 
+.if ${OSVERSION} < 500016
 pre-extract:
 	@if ! ${LDCONFIG} -r | ${GREP} -q -e "-ldescrypt"; then \
 	   ${ECHO} ; \
@@ -160,6 +161,7 @@ pre-extract:
 	   ${ECHO} ; \
 	   ${FALSE} ; \
 	fi
+.endif
 .endif
 
 post-extract:
@@ -211,8 +213,10 @@ post-install:
 	@${INSTALL_FILE} ${WRKSRC}/${CHANGESERVER} ${PREFIX}/${CHANGESERVER}-dist
 	@${INSTALL_FILE} ${WRKSRC}/${FPSETPERM} ${PREFIX}/${FPSETPERM}
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.if ${OSVERSION} < 500016
 .if ${ARCH} == i386
 	@${CAT} ${PKGMESSAGE}
 .endif
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
