@@ -5,6 +5,7 @@ share/locale/fr/LC_MESSAGES/Xdialog.mo
 share/locale/hu/LC_MESSAGES/Xdialog.mo
 share/locale/pt_BR/LC_MESSAGES/Xdialog.mo
 share/locale/ru/LC_MESSAGES/Xdialog.mo
+share/locale/no_NO/LC_MESSAGES/Xdialog.mo
 %%PORTDOCS%%%%DOCSDIR%%/2ranges.png
 %%PORTDOCS%%%%DOCSDIR%%/authors.html
 %%PORTDOCS%%%%DOCSDIR%%/box.html
