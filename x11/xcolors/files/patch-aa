@@ -1,0 +1,15 @@
+--- ./Imakefile.org	Mon Jun  6 17:28:45 1994
++++ ./Imakefile	Sun Dec 22 16:28:05 1996
+@@ -8,12 +8,7 @@
+            OBJS = xcolors.o
+   SYS_LIBRARIES = -lm
+ 
+-#if BuildServer
+         DEFINES = -DRGB_TXT=\"$(RGBDBFILE).txt\"
+-#else
+-	/* rgb.txt will not be installed, so find it in build tree */
+-	DEFINES = -DRGB_TXT=\"$(RGBSRC)/rgb.txt\"
+-#endif
+ 
+ ComplexProgramTarget(xcolors)
+ InstallAppDefaults(Xcolors)
