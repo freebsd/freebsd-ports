@@ -15,6 +15,10 @@ share/ttf2pt1/README.html
 share/ttf2pt1/app/RPM/Makefile
 share/ttf2pt1/app/RPM/ttf2pt1.spec
 share/ttf2pt1/app/RPM/ttf2pt1.spec.src
+share/ttf2pt1/app/TeX/README.html
+share/ttf2pt1/app/TeX/cjk-latex-config
+share/ttf2pt1/app/TeX/cjk-latex-t1mapgen
+share/ttf2pt1/app/TeX/sfd2map
 share/ttf2pt1/app/X11/README
 share/ttf2pt1/app/X11/README.html
 share/ttf2pt1/app/X11/t1-xf86.334.patch
@@ -85,6 +89,7 @@ share/ttf2pt1/scripts/trans
 share/ttf2pt1/scripts/unhtml
 share/ttf2pt1/scripts/x2gs
 @dirrm share/ttf2pt1/app/RPM
+@dirrm share/ttf2pt1/app/TeX
 @dirrm share/ttf2pt1/app/X11
 @dirrm share/ttf2pt1/app/netscape
 @dirrm share/ttf2pt1/app
