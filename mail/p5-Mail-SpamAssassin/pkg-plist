@@ -52,7 +52,6 @@ etc/rc.d/spamd%%RC_SUFX%%
 %%PORTDOCS%%%%DOCSDIR%%/sample-nonspam.txt
 %%PORTDOCS%%%%DOCSDIR%%/sample-spam.txt
 %%PORTDOCS%%%%DOCSDIR%%/spamassassin.sql
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 share/spamassassin/10_misc.cf
 share/spamassassin/20_anti_ratware.cf
 share/spamassassin/20_body_tests.cf
@@ -82,10 +81,11 @@ share/spamassassin/60_whitelist.cf
 share/spamassassin/languages
 share/spamassassin/triplets.txt
 share/spamassassin/user_prefs.template
+@dirrm share/spamassassin
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
 @dirrm %%SITE_PERL%%/Mail/SpamAssassin
 @unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true
 @unexec rmdir %D/etc/mail/spamassassin 2>/dev/null || true
 @unexec rmdir %D/etc/mail 2>/dev/null || true
-@dirrm share/spamassassin
