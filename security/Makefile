@@ -317,6 +317,7 @@
     SUBDIR += pgpdump
     SUBDIR += pgpgpg
     SUBDIR += pgpin
+    SUBDIR += php4-crack
     SUBDIR += pidentd
     SUBDIR += pinentry
     SUBDIR += pinentry-curses
