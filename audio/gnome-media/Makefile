@@ -15,7 +15,8 @@ DISTNAME=	gnome-media-${PORTVERSION}
 MAINTAINER=	reg@FreeBSD.org
 
 BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
-RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
+RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
+		sox:${PORTSDIR}/audio/sox
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
