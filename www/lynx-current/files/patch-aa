@@ -1,0 +1,12 @@
+--- makefile.in.orig	Tue Mar 30 09:10:37 1999
++++ makefile.in	Fri Apr 16 09:41:59 1999
+@@ -398,8 +398,7 @@
+ 	PATH=$(srcdir):$$PATH; export PATH; $(SHELL) -c '$(srcdir)/cfg_defs.sh'
+ 
+ install-cfg : $(libdir)
+-	-mv -f $(libdir)/lynx.cfg $(libdir)/lynx.oldcfg
+-	$(INSTALL_DATA) $(srcdir)/lynx.cfg $(libdir)/lynx.cfg
++	-[ ! -f $(libdir)/lynx.cfg ] && $(INSTALL_DATA) $(srcdir)/lynx.cfg $(libdir)/lynx.cfg
+ 
+ install-lss : $(libdir)
+ 	-mv -f $(libdir)/lynx.lss $(libdir)/lynx.oldlss
