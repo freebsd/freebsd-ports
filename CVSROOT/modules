@@ -2171,6 +2171,7 @@ gkrellmss2	ports/audio/gkrellmss2
 gkrellmvolume	ports/audio/gkrellmvolume
 gkrellmvolume2	ports/audio/gkrellmvolume2
 gkrellmwho	ports/sysutils/gkrellmwho
+gkrellmwho2	ports/sysutils/gkrellmwho2
 gkrellmwireless	ports/net/gkrellmwireless
 gkrellmwireless2	ports/net/gkrellmwireless2
 gkrellscore	ports/misc/gkrellscore
