@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libmba
-PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTVERSION=	0.8.10
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ioplex.com/~miallen/libmba/dl/
 
@@ -26,11 +25,18 @@ MAKE_ENV=	prefix="${PREFIX}" CC="${CC}" \
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 INSTALLS_SHLIB=	yes
 
-MAN3=		cfg.3m csv.3m domnode.3m mbs.3m msgno.3m hashmap.3m hexdump.3m \
-		linkedlist.3m pool.3m shellout.3m stack.3m varray.3m
+MAN3=		allocator.3m bitset.3m cfg.3m csv.3m diff.3m eval.3m hashmap.3m \
+		hexdump.3m linkedlist.3m msgno.3m path.3m pool.3m shellout.3m \
+		stack.3m suba.3m svcond.3m svsem.3m text.3m time.3m varray.3m
 MANCOMPRESSED=	yes
 
-SHLIB_MAJOR=	0
+SHLIB_MAJOR=	1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500039
+IGNORE=		requires wchar functions for compilation
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|\$${PREFIX}|g ; \
@@ -41,6 +47,7 @@ post-patch:
 		 s|^RPM_OPT_FLAGS|#RPM_OPT_FLAGS|g ; \
 		 s| -lc| \$${LDFLAGS}|g ; \
 		 s|install -m ...|\$${BSD_INSTALL_DATA}|g ; \
-		 s|-/sbin/ldconfig.*$$||g' ${WRKSRC}/Makefile
+		 s|-/sbin/ldconfig.*$$||g ; \
+		 s|-D_XOPEN_SOURCE=500||g' ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
