@@ -1546,6 +1546,7 @@ fvwm2-i18n	ports/x11-wm/fvwm2-i18n
 fvwm95		ports/x11-wm/fvwm95
 fvwm95-i18n	ports/x11-wm/fvwm95-i18n
 fwbuilder	ports/security/fwbuilder
+fwlogwatch	ports/security/fwlogwatch
 fwtk		ports/security/fwtk
 fxhtml		ports/www/fxhtml
 fxtv		ports/graphics/fxtv
