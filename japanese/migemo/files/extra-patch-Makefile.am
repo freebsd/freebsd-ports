@@ -1,15 +1,18 @@
---- Makefile.am.orig	Mon Sep 17 18:40:23 2001
-+++ Makefile.am	Mon Sep 17 18:41:59 2001
+--- Makefile.am.orig	Wed May 28 21:14:04 2003
++++ Makefile.am	Sat Jun 14 20:06:43 2003
 @@ -1,6 +1,5 @@
  SUBDIRS      = 	tests
  bin_SCRIPTS  =  migemo migemo-grep migemo-server migemo-client
 -lisp_LISP    = 	migemo.el
- ruby_DATA    =  migemo.rb migemo-dict.rb migemo-regex.rb\
+ ruby_data_    = migemo-dict.rb migemo-regex.rb\
  		migemo-convert.rb migemo-index.rb migemo-cache.rb 
- pkgdata_DATA = 	migemo-dict migemo-dict.idx\
-@@ -9,9 +8,6 @@
- 		migemo.ja.rd migemo.ja.html
- EXTRA_DIST   =	$(bin_SCRIPTS) $(ruby_DATA) migemo.el.in \
+ ruby_DATA    =  migemo.rb $(ruby_data_)
+@@ -8,11 +7,8 @@
+ 		migemo-dict.cache migemo-dict.cache.idx\
+ 		user-dict.sample regex-dict.sample\
+ 		migemo.ja.rd
+-EXTRA_DIST   =	$(bin_SCRIPTS) migemo.rb.in $(ruby_data_) migemo.el.in \
++EXTRA_DIST   =	$(bin_SCRIPTS) migemo.rb.in $(ruby_data_) \
  		genchars.sh ngram.sh frequent-chars $(pkgdata_DATA)
 -
 -migemo.el: migemo.el.in
