@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkhtml
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gtkhtml
@@ -17,7 +18,7 @@ LIB_DEPENDS=	bonobo.2:${PORTSDIR}/devel/bonobo \
 		wwwzip.1:${PORTSDIR}/www/libwww \
 		gconf-1.1:${PORTSDIR}/devel/gconf \
 		pspell.2:${PORTSDIR}/textproc/pspell \
-		gal.1:${PORTSDIR}/x11-toolkits/gal
+		gal.2:${PORTSDIR}/x11-toolkits/gal
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
