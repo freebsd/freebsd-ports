@@ -322,7 +322,6 @@ sbin/snmptrapd
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/NetSNMP
 %%WITH_PERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle 2>/dev/null || true
-%%WITH_PERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto 2>/dev/null || true
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/agent
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP
 %%WITH_PERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Bundle 2>/dev/null || true
