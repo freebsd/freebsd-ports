@@ -1,5 +1,20 @@
 ************************************************************************
 
+Check your httpd.conf, if you have included a ResourceConfig and
+AccessConfig. If you do not have these files, you'll have to add
+these lines to make frontpage extensions working properly:
+
+ResourceConfig /dev/null
+AccessConfig /dev/null
+
+
+You'll also need to change AllowOverride under
+<Directory "/usr/local/www/data"> ( or the place where you
+moved your webservers ) from None to at least:
+
+AllowOverride AuthConfig Limit Indexes Options
+
+
 You can turn off/on the extensions and the frontpage administration
 per site in httpd.conf and per virtual server. FrontPageAdminDisable
 is the default if no option is given.
@@ -8,5 +23,10 @@ FrontPageEnable		# Enable Frontpage Extensions
 FrontPageDisable	# Disable Frontpage Extensions
 FrontPageAdminEnable	# Enable Frontpage Extensions fpadmcgi.exe
 FrontPageAdminDisable	# Disable Frontpage Extensions fpadmcgi.exe
+
+
+After you have made these changes, you'll have to execute:
+
+/usr/local/frontpage/version5.0/fp_install.sh
 
 ************************************************************************
