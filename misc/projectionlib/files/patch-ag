@@ -1,0 +1,18 @@
+diff -ruN ORIG/Projection.cpp Projection.cpp
+--- ORIG/Projection.cpp	Fri May  5 07:24:56 2000
++++ Projection.cpp	Fri Apr 27 19:07:08 2001
+@@ -9,6 +9,8 @@
+ #include "GeographicProjection.h"
+ #include "gctpc/untfz.h"
+ 
++#include <stdio.h>
++
+ #ifndef NULL
+ #define NULL 0
+ #endif
+@@ -238,4 +240,4 @@
+     longitude /= factor;
+ 
+     return bResult;
+-}
++}

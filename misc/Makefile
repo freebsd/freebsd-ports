@@ -126,6 +126,7 @@
     SUBDIR += pinfo
     SUBDIR += pkg_tarup
     SUBDIR += porteasy
+    SUBDIR += projectionlib
     SUBDIR += proxyper
     SUBDIR += py-distutils
     SUBDIR += pybliographer

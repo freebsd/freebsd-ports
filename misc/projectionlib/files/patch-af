@@ -1,0 +1,11 @@
+diff -ruN ORIG/PolarStereographicProjection.cpp PolarStereographicProjection.cpp
+--- ORIG/PolarStereographicProjection.cpp	Fri May  5 07:24:56 2000
++++ PolarStereographicProjection.cpp	Fri Apr 27 19:07:11 2001
+@@ -4,6 +4,7 @@
+ //      Started: 2/26/98
+ 
+ #include "PolarStereographicProjection.h"
++#include <stdio.h>
+ 
+ PolarStereographicProjection::PolarStereographicProjection( double longPole, double trueScale,
+                                                             double sMajor, double sMinor,
