@@ -333,6 +333,7 @@
     SUBDIR += pear-Auth_HTTP
     SUBDIR += pear-Auth_SASL
     SUBDIR += pear-Crypt_CBC
+    SUBDIR += pear-Crypt_CHAP
     SUBDIR += pear-Crypt_HMAC
     SUBDIR += pear-Crypt_RC4
     SUBDIR += pear-File_HtAccess

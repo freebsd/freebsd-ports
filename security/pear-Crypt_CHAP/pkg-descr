@@ -1,0 +1,9 @@
+PEAR::Crypt_CHAP provides Classes for generating CHAP packets.
+Currently these types of CHAP are supported:
+* CHAP-MD5
+* MS-CHAPv1
+* MS-CHAPv2
+
+For MS-CHAP the mhash and mcrypt extensions must be loaded.
+
+WWW: http://pear.php.net/package/Crypt_CHAP/
