@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAINTAINER=	erwin@FreeBSD.org
-COMMENT=	Client and server for access to a distributed document service
+COMMENT=	Gopher client for access to a distributed document service
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
