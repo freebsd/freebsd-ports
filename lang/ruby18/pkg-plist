@@ -11,13 +11,14 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ARCHLIBDIR%%/dbm.so
 %%RUBY_ARCHLIBDIR%%/defines.h
 %%RUBY_ARCHLIBDIR%%/digest.so
+%%RUBY_ARCHLIBDIR%%/dl.h
 %%RUBY_ARCHLIBDIR%%/dl.so
+%%RUBY_ARCHLIBDIR%%/dlconfig.h
 %%RUBY_ARCHLIBDIR%%/dln.h
 %%RUBY_ARCHLIBDIR%%/env.h
 %%RUBY_ARCHLIBDIR%%/etc.so
 %%RUBY_ARCHLIBDIR%%/fcntl.so
 %%RUBY_ARCHLIBDIR%%/intern.h
-%%RUBY_ARCHLIBDIR%%/lib%%RUBY_NAME%%.a
 %%RUBY_ARCHLIBDIR%%/missing.h
 %%RUBY_ARCHLIBDIR%%/nkf.so
 %%RUBY_ARCHLIBDIR%%/node.h
