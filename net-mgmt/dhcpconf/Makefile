@@ -7,7 +7,6 @@
 
 PORTNAME=	dhcpconf
 PORTVERSION=	0.7.0
-DISTNAME=	dhcp-conf
 CATEGORIES=	net sysutils
 MASTER_SITES=	http://members.xoom.com/vschade/dhcp-conf/
 DISTNAME=	dhcp-conf
