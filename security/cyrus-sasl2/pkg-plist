@@ -1,4 +1,4 @@
-@unexec [ -r /var/run/pwcheck.pid ] && %D/etc/rc.d/pwcheck.sh stop && echo " stopped."
+@unexec if [ -f /var/run/pwcheck.pid ] ; then %D/etc/rc.d/pwcheck.sh stop ; echo " stopped." ; fi
 etc/rc.d/pwcheck.sh
 include/sasl/hmac-md5.h
 include/sasl/md5.h
@@ -33,7 +33,9 @@ lib/sasl/libplain.so
 lib/sasl/libplain.so.1
 sbin/sasldblistusers
 sbin/saslpasswd
-sbin/pwcheck
+sbin/pwcheck_pwnam
+@exec ln %D/sbin/pwcheck_pwnam %D/sbin/pwcheck
+@unexec rm -f %D/sbin/pwcheck
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -53,15 +55,11 @@ sbin/pwcheck
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/programming.html
 %%PORTDOCS%%%%DOCSDIR%%/sysadmin.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/sasl
-@mode ug=rwx,o=
 @cwd /var
-@exec mkdir pwcheck
-@exec chown cyrus:cyrus pwcheck
-@exec chmod o= pwcheck
+@exec install -d -m 770 -o cyrus -g cyrus %D/pwcheck
 @comment This file gets created by the pwcheck program
-@unexec rm -f /var/pwcheck/pwcheck
+@unexec rm -f %D/pwcheck/pwcheck
 @dirrm pwcheck
 @cwd %%PREFIX%%

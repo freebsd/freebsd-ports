@@ -10,10 +10,12 @@ PKG_BATCH=${BATCH:=NO}
 
 PKG_PREFIX=${PKG_PREFIX:=/usr/local}
 
+SASLDB_NAME=${PKG_PREFIX}/etc/%%SASLDB%%
+
 # delete sasldb database
 
 delete_sasldb() {
-	[ -f %D/etc/sasldb.db -a ! -s %D/etc/sasldb.db ] && rm %D/etc/sasldb.db
+	[ -f ${SASLDB_NAME} -a ! -s ${SASLDB_NAME} ] && rm ${SASLDB_NAME}
 }
 
 # This should really be uninstalled by Sendmail

@@ -5,6 +5,8 @@ if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
 fi
 
+SASLDB_NAME=sasldb.db
+
 tempfile=`mktemp -t checklist`
 
 if [ "${BATCH}" ]; then
@@ -74,6 +76,7 @@ while [ "$1" ]; do
 		\"DB3\")
 			echo "LIB_DEPENDS+=	db3.2:\${PORTSDIR}/databases/db3"
 			echo "CONFIGURE_ARGS+=--with-dblib=berkeley"
+			SASLDB_NAME=sasldb
 			;;
 		\"MySQL\")
 			echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client"
@@ -92,3 +95,5 @@ while [ "$1" ]; do
 	esac
 	shift
 done
+
+echo "SASLDB_NAME=	${SASLDB_NAME}"
