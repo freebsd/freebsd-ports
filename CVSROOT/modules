@@ -2294,6 +2294,7 @@ gpsdrive	ports/astro/gpsdrive
 gpsman		ports/astro/gpsman
 gputils		ports/devel/gputils
 gq		ports/net/gq
+gqlplus		ports/databases/gqlplus
 gqmpeg		ports/audio/gqmpeg
 gqview		ports/graphics/gqview
 gr-openoffice	ports/editors/openoffice-gr
