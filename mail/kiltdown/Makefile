@@ -41,4 +41,10 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kiltdown/kiltdown ${PREFIX}/bin/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502122
+BROKEN=		gcc34: no match for operator==
+.endif
+
+.include <bsd.port.post.mk>
