@@ -1,12 +1,12 @@
 # New ports collection makefile for:	glade
-# Version required:     0.2.3
+# Version required:     0.3
 # Date created:		29 June 1998
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/30 09:47:16 tg Exp $
+# $Id: Makefile,v 1.2 1998/07/01 23:59:40 asami Exp $
 #
 
-DISTNAME=	glade-0.2.3
+DISTNAME=	glade-0.3
 CATEGORIES=	devel
 MASTER_SITES=   http://www.comp.lancs.ac.uk/~damon/builder/
 
@@ -26,6 +26,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/file_format.txt ${PREFIX}/share/doc/glade
 	${INSTALL_MAN} ${WRKSRC}/doc/manual.txt ${PREFIX}/share/doc/glade
 	${INSTALL_MAN} ${WRKSRC}/doc/notes.txt ${PREFIX}/share/doc/glade
+	${INSTALL_MAN} ${WRKSRC}/doc/source_code.txt ${PREFIX}/share/doc/glade
 .endif
 
 .include <bsd.port.mk>
