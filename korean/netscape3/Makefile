@@ -1,13 +1,12 @@
 # New ports collection makefile for:	netscape3-intl-ko
-# Version required:     3.04/ko
 # Date created:		6 Apr 1995
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	netscape-3.04
-PKGNAME=	ko-netscape-3.04
+PORTNAME=	netscape
+PORTVERSION=	3.04
 CATEGORIES=	korean www
 MASTER_SITES=	ftp://archive:oldies@archive.netscape.com/archive/navigator/intl/3.01/unix/ko/ \
 		http://www.bpel.tutics.tut.ac.jp/~take/Netscape/etc/

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	HLaTeX OCF fonts collection
-# Version required:     none
 # Date created:		30 Jun 1999
 # Whom:			CHOI Junho <cjh@kr.freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	hlatexfonts-ocf
-PKGNAME=	ko-hlatexfonts-ocf-1.0
+PORTNAME=	hlatexfonts-ocf
+PORTVERSION=	1.0
 CATEGORIES=	korean print
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/gs-ko/
+DISTNAME=	${PORTNAME}
 DISTFILES=	HLaTeX-Myoungjo-OCF-PS.tar.gz HLaTeX-Gothic-OCF-PS.tar.gz
 
 MAINTAINER=	cjh@kr.freebsd.org

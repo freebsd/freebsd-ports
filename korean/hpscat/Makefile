@@ -1,18 +1,18 @@
 # New ports collection makefile for:    hpscat-1.3jshin
-# Version required:     1.3jshin
 # Date created:         4 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	hpscat-jshin
-PKGNAME=	ko-hpscat-1.3jshin
+PORTNAME=	hpscat
+PORTVERSION=	1.3jshin
 CATEGORIES=	korean print
 MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/print/hpscat/ \
 		ftp://ftp.kaist.ac.kr/pub/hangul/editor/ked/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/print/hpscat/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/editor/ked/
+DISTNAME=	hpscat-jshin
 DISTFILES=	hpscat-jshin.tar.gz ked.tar.gz
 
 MAINTAINER=	junker@jazz.snu.ac.kr

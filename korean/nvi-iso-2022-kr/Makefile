@@ -1,12 +1,11 @@
 # New ports collection makefile for:	nvi-1.79 + multilingual patch(iso-2022-kr)
-# Version required:	1.79
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
 # $FreeBSD$
 #
 
-PKGNAME=	ko-nvi-iso2022kr-1.79.19991117
+PKGNAMESUFFIX=	-iso2022kr
 
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
 COMMENT=	${.CURDIR}/pkg/COMMENT

@@ -1,16 +1,16 @@
 # New ports collection makefile for:    hanyangfonts
-# Version required:     ?
 # Date created:         22 Mar 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       hanyang-font-pcf
-PKGNAME=        ko-hanyangfonts-1.0
+PORTNAME=	hanyangfonts
+PORTVERSION=	1.0
 CATEGORIES=     korean x11-fonts
 MASTER_SITES=   ftp://ftp.kaist.ac.kr/pub/hangul/fonts/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/fonts/
+DISTNAME=       hanyang-font-pcf
 
 MAINTAINER=     junker@jazz.snu.ac.kr
 

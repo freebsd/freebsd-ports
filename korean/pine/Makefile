@@ -1,6 +1,4 @@
 # New ports collection makefile for:	pine-ko
-#
-# Version required:     3.96k2
 # Date created:		15 Mar 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
@@ -9,12 +7,13 @@
 # $FreeBSD$
 #
 
-DISTNAME=       pine3.96
-PKGNAME=        ko-pine-3.96k.3
+PORTNAME=	pine
+PORTVERSION=	3.96k.3
 CATEGORIES=     korean mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/old/ \
 		ftp://ftp.kaist.ac.kr/pub/hangul/incoming/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/incoming/
+DISTNAME=       pine3.96
 DISTFILES=	pine3.96.tar.Z pine396k2.tar.gz
 
 PATCH_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/misc/

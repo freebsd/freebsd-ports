@@ -1,13 +1,12 @@
 # New ports collection makefile for:    Linuxdoc-SGML 1.6bh2
-# Version required:     1.6bh2
 # Date created:         2 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	linuxdoc-sgml-1.6bh2
-PKGNAME=	ko-linuxdoc-sgml-1.6bh2
+PORTNAME=	linuxdoc-sgml
+PORTVERSION=	1.6bh2
 CATEGORIES=	korean textproc
 MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/tools/
 

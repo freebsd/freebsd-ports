@@ -1,5 +1,4 @@
 # New ports collection makefile for: Netscape browser with Korean resources
-# Version required:	4
 # Date created:		25 Oct 1998
 # Whom:			CHOI Junho <cjh@kr.freebsd.org>
 #
@@ -7,7 +6,8 @@
 #
 # based on japanese/netscape4-*
 
-DISTNAME=	ko-netscape-${BROWSER}-${BROWSER_VERSION}
+PORTNAME=	netscape-${BROWSER}
+PORTVERSION=	${BROWSER_VERSION}
 CATEGORIES=	korean www
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/netscape-ko/ \
 		http://www.kr.freebsd.org/~cjh/freetime/mozilla/netscape-ko/

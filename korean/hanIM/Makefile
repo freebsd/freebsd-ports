@@ -1,16 +1,16 @@
 # New ports collection makefile for:    hanIM
-# Version required:     1.0
 # Date created:         17 Mar 1998
 # Whom:                 CHOI Junho <cjh@kr.freebsd.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=       hanIM-${HANIM_VER}-${HANIM_VER_PL}.i386
-PKGNAME=        ko-hanIM-${HANIM_VER}
+PORTNAME=	hanIM
+PORTVERSION=	1.1b
 CATEGORIES=     korean x11 linux
 MASTER_SITES=   ftp://www.mizi.co.kr/pub/hanIM/ \
 		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
+DISTNAME=       hanIM-${PORTVERSION}-${HANIM_VER_PL}.i386
 EXTRACT_SUFX=   .rpm
 
 MAINTAINER=     cjh@kr.freebsd.org
@@ -30,7 +30,6 @@ RPM2CPIO=	rpm2cpio
 CPIO=		/usr/bin/cpio
 CPIO_OPT=	-i --make-directories
 
-HANIM_VER=	1.1b
 HANIM_VER_PL=	glibc2.0.7-1
 
 do-extract:
@@ -41,13 +40,13 @@ do-extract:
 
 do-build:
 	# documents & samples
-	${RM} ${WRKDIR}/usr/doc/hanIM-${HANIM_VER}/samples/*.orig
+	${RM} ${WRKDIR}/usr/doc/hanIM-${PORTVERSION}/samples/*.orig
 	# dirty workaround. you should delete compiled garbages!
-	${RM} ${WRKDIR}/usr/doc/hanIM-${HANIM_VER}/samples/.#* \
-	      ${WRKDIR}/usr/doc/hanIM-${HANIM_VER}/samples/*.o \
-	      ${WRKDIR}/usr/doc/hanIM-${HANIM_VER}/samples/asample \
-	      ${WRKDIR}/usr/doc/hanIM-${HANIM_VER}/samples/overspot \
-	      ${WRKDIR}/usr/doc/hanIM-${HANIM_VER}/samples/rootwin
+	${RM} ${WRKDIR}/usr/doc/hanIM-${PORTVERSION}/samples/.#* \
+	      ${WRKDIR}/usr/doc/hanIM-${PORTVERSION}/samples/*.o \
+	      ${WRKDIR}/usr/doc/hanIM-${PORTVERSION}/samples/asample \
+	      ${WRKDIR}/usr/doc/hanIM-${PORTVERSION}/samples/overspot \
+	      ${WRKDIR}/usr/doc/hanIM-${PORTVERSION}/samples/rootwin
 
 do-install:
 	# binary
@@ -66,7 +65,7 @@ do-install:
 
 	# documents & samples
 	${MKDIR} ${PREFIX}/share/doc/hanIM
-	${CP} -r ${WRKDIR}/usr/doc/hanIM-${HANIM_VER}/* \
+	${CP} -r ${WRKDIR}/usr/doc/hanIM-${PORTVERSION}/* \
 		${PREFIX}/share/doc/hanIM
 
 	# patch XLC_LOCALE for ko_KR.EUC(harmless)
