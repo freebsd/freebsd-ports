@@ -20,6 +20,9 @@ WRKSRC=		${WRKDIR}/ecls
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/ecl
 
+# does not build on 64-bit archs
+ONLY_FOR_ARCHS=	i386
+
 MAN1=		ecl.1
 INFO=		ecl ecldev
 
