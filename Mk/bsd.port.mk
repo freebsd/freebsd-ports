@@ -340,6 +340,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_FREETYPE	- Says that the port uses the freetype print libraries.
 # USE_MESA		- Says that the port uses the Mesa libraries.
 # USE_MOTIF		- Says that the port uses the Motif toolkit.  Implies USE_XPM.
+# USE_SDL		- Says that the port uses the sdl libraries.
 # USE_XPM		- Says that the port uses the xpm graphics libraries.
 ##
 # USE_OPENSSL	- Says that the port relies on the OpenSSL package.
@@ -1357,6 +1358,13 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 RUN_DEPENDS+=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
 .endif
 
+.if defined(USE_SDL)
+LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
+CONFIGURE_ENV+=	SDL_CONFIG=${SDL_CONFIG}
+MAKE_ENV+=		SDL_CONFIG=${SDL_CONFIG}
+.endif
+
 .if defined(USE_MOTIF)
 USE_XPM=			yes
 .if !defined(NO_OPENMOTIF)
@@ -1597,7 +1605,7 @@ TAR?=	/usr/bin/tar
 # EXTRACT_SUFX is defined in .pre.mk section
 .if defined(USE_ZIP)
 EXTRACT_CMD?=			unzip
-EXTRACT_BEFORE_ARGS?=	-q
+EXTRACT_BEFORE_ARGS?=	-qo
 EXTRACT_AFTER_ARGS?=	-d ${WRKDIR}
 .else
 EXTRACT_BEFORE_ARGS?=	-dc
@@ -3008,11 +3016,12 @@ delete-package-list: delete-package-links-list
 .if !target(check-already-installed)
 check-already-installed:
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
+.if ${OSVERSION} >= 460102
 		@${ECHO_MSG} "===>  Checking if ${PKGORIGIN} already installed"
 		@already_installed=`${PKG_INFO} -q -O ${PKGORIGIN} 2> /dev/null`; \
 		if [ -n "$${already_installed}" ]; then \
 				for p in $${already_installed}; do \
-						prfx=`${PKG_INFO} -q -p $${p} 2> /dev/null | ${SED} -e 's|^@cwd ||'`; \
+						prfx=`${PKG_INFO} -q -p $${p} 2> /dev/null | ${HEAD} -n 1 | ${SED} -ne '1s|^@cwd ||p'`; \
 						if [ "x${PREFIX}" = "x$${prfx}" ]; then \
 								df=`${PKG_INFO} -q -f $${p} 2> /dev/null | ${GREP} -v "^@" | ${COMM} -12 - ${TMPPLIST}`; \
 								if [ -n "$${df}" ]; then \
@@ -3021,8 +3030,9 @@ check-already-installed:
 								fi; \
 						fi; \
 				done; \
-		fi; \
-		if [ -d ${PKG_DBDIR}/${PKGNAME} -o -n "$${found_package}" ]; then \
+		fi;
+.endif
+		@if [ -d ${PKG_DBDIR}/${PKGNAME} -o -n "$${found_package}" ]; then \
 				if [ -d ${PKG_DBDIR}/${PKGNAME} ]; then \
 						${ECHO_CMD} "===>   ${PKGNAME} is already installed"; \
 				else \
@@ -3068,6 +3078,11 @@ install-mtree:
 			exit 1; \
 		else \
 			${MTREE_CMD} ${MTREE_ARGS} ${PREFIX}/ >/dev/null; \
+			if [ ${MTREE_FILE} = "/etc/mtree/BSD.local.dist" ]; then \
+				cd ${PREFIX}/share/nls; \
+				${LN} -sf C POSIX; \
+				${LN} -sf C en_US.US-ASCII; \
+			fi; \
 		fi; \
 	else \
 		${ECHO_MSG} "Warning: not superuser, can't run mtree."; \
@@ -3399,11 +3414,12 @@ reinstall:
 .if !target(deinstall)
 deinstall:
 	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN}"
+.if ${OSVERSION} >= 460102
 	@found_names=`${PKG_INFO} -q -O ${PKGORIGIN} 2> /dev/null`; \
 	for p in $${found_names}; do \
 			check_name=`${ECHO} $${p} | ${SED} -e 's/-[^-]*$$//'`; \
 			if [ "$${check_name}" = "${PKGBASE}" ]; then \
-					prfx=`${PKG_INFO} -q -p $${p} 2> /dev/null | ${SED} -e 's|^@cwd ||'`; \
+					prfx=`${PKG_INFO} -q -p $${p} 2> /dev/null | ${HEAD} -n 1 | ${SED} -ne '1s|^@cwd ||p'`; \
 					if [ "x${PREFIX}" = "x$${prfx}" ]; then \
 							${ECHO_MSG} "===>   Deinstalling $${p}"; \
 							${PKG_DELETE} -f $${p}; \
@@ -3415,6 +3431,13 @@ deinstall:
 	if [ -z "$${found_names}" ]; then \
 			${ECHO_MSG} "===>   ${PKGBASE} not installed, skipping"; \
 	fi
+.else
+	@if ${PKG_INFO} -e ${PKGNAME}; then \
+		${PKG_DELETE} -f ${PKGNAME}; \
+	 else \
+		${ECHO_MSG} "===>   ${PKGNAME} not installed, skipping"; \
+	 fi
+.endif
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
 .endif
 
@@ -3424,6 +3447,7 @@ deinstall:
 
 .if !target(deinstall-all)
 deinstall-all:
+.if ${OSVERSION} >= 460102
 	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN}"
 	@deinstall_names=`${PKG_INFO} -q -O ${PKGORIGIN} 2> /dev/null`; \
 	if [ -n "$${deinstall_names}" ]; then \
@@ -3435,6 +3459,7 @@ deinstall-all:
 		${ECHO_MSG} "===>   ${PKGORIGIN} not installed, skipping"; \
 	fi
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
+.endif
 .endif
 
 # Cleaning up
