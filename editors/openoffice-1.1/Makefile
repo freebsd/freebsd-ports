@@ -50,7 +50,7 @@ JAVA_BUILD=	jdk
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
-.if (${OSVERSION} < 503001 && ${OSVERSION} >= 500000) || (${OSVERSION} < 492000)
+.if (${OSVERSION} < 503001 && ${OSVERSION} >= 500000) || (${OSVERSION} <= 492000)
 BROKEN=		"rtld depends on _end symbol. type make -DBROKEN to see how to upgrade your rtld"
 .endif
 
