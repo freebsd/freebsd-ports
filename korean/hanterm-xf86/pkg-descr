@@ -7,5 +7,5 @@ such as automatic fonts detection, johab844 font support, and based on
 XFree86's xterm code. The scrollbar is displayed in right.
 
 --
-CHOI Junho <cjh@kr.freebsd.org>
+CHOI Junho <cjh@FreeBSD.org>
 WWW: http://www.kr.FreeBSD.org/~hwang/hanterm/index.html
