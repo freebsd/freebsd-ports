@@ -1,0 +1,11 @@
+--- callback/callback.c.orig	Fri Feb 18 10:08:43 2000
++++ callback/callback.c	Fri Feb 18 10:08:54 2000
+@@ -69,7 +69,7 @@
+  * system header files)
+  */
+ #ifndef __NetBSD__
+-time_t		time _PROTO(( long * tloc ));
++time_t		time _PROTO(( time_t * tloc ));
+ #endif
+ 
+ /* conf_cb.c */

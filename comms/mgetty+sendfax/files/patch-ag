@@ -1,0 +1,11 @@
+--- sendfax.c.orig	Fri Feb 18 10:06:53 2000
++++ sendfax.c	Fri Feb 18 10:07:37 2000
+@@ -41,7 +41,7 @@
+ 
+ /* seems to missing nearly everywhere */
+ #ifndef __NetBSD__
+-time_t	time _PROTO(( long * tloc ));
++time_t	time _PROTO(( time_t * tloc ));
+ #endif
+ 
+ void exit_usage _P2( (program, msg ),
