@@ -1,3 +1,4 @@
+bin/printemf
 include/libEMF/wine/basetsd.h
 include/libEMF/wine/guiddef.h
 include/libEMF/wine/poppack.h
