@@ -81,19 +81,19 @@ CONFIGURE_ARGS+=	\
 .endif
 
 MAN1=		maildirmake.1
-MAN8=		authlib.8 makeuserdb.8 userdb.8 userdbpw.8 couriertcpd.8 \
+MAN8=		authlib.7 makeuserdb.8 userdb.8 userdbpw.8 couriertcpd.1 \
 		deliverquota.8 imapd.8 mkimapdcert.8 mkpop3dcert.8
 
-MLINKS=		authlib.8 authpwd.8 \
-		authlib.8 authuserdb.8 \
-		authlib.8 authshadow.8 \
-		authlib.8 authpam.8 \
-		authlib.8 authvchkpw.8 \
-		authlib.8 authcram.8 \
-		authlib.8 authldap.8 \
-		authlib.8 authmysql.8 \
-		authlib.8 authdaemon.8 \
-		authlib.8 authdaemond.8 \
+MLINKS=		authlib.7 authpwd.7 \
+		authlib.7 authuserdb.7 \
+		authlib.7 authshadow.7 \
+		authlib.7 authpam.7 \
+		authlib.7 authvchkpw.7 \
+		authlib.7 authcram.7 \
+		authlib.7 authldap.7 \
+		authlib.7 authmysql.7 \
+		authlib.7 authdaemon.7 \
+		authlib.7 authdaemond.7 \
 		makeuserdb.8 pw2userdb.8 \
 		makeuserdb.8 vchkpw2userdb.8
 
