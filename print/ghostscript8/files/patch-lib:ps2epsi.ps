@@ -1,0 +1,11 @@
+--- lib/ps2epsi.ps.orig	Tue Jun  5 15:31:41 2001
++++ lib/ps2epsi.ps	Sat Apr 20 15:57:44 2002
+@@ -52,7 +52,7 @@
+   /ps2epsi
+    {				% Open the file
+      outfile (w) file /epsifile exch def
+-     //systemdict /.setsafe known { .setsafe } if
++%     //systemdict /.setsafe known { .setsafe } if
+ 					% Get the device parameters
+      currentdevice getdeviceprops .dicttomark
+      /HWSize get aload pop

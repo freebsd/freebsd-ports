@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	7.04
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:DEFAULT,gprint,hpijs/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
@@ -18,7 +18,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:DEFAULT,gprint,hpijs/} \
 		http://www.humblesoft.com/pub/:epag \
 		http://www.epkowa.on.arena.ne.jp/pips/data/gs65_301/:eplaser \
 		http://www.ceres.dti.ne.jp/~owatanab/gdevnpdl/:npdl \
-		http://www.linuxprinting.org/download/printing/:gdi \
+		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/fonts/:fonts \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/gs704/ \
 		ftp://gatekeeper.dec.com/pub/GNU/ghostscript/:gatekeeper
@@ -213,7 +213,7 @@ NPDL_SRCS=	${NPDL_NAME}.tar.gz
 
 # GDI - additional driver for Samsung SmartGDI laser printers
 GDI=		gdi
-GDI_NAME=	samsung-gdi-driver
+GDI_NAME=	samsung-gdi-driver-gs5.50
 GDI_SRCS=	${GDI_NAME}.tar.gz
 
 # contributed uniprint profiles
