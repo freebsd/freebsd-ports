@@ -20,14 +20,8 @@ RUN_DEPENDS=	dotty:${PORTSDIR}/graphics/graphviz
 
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/makelist/makelist ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/netmap/netmap ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
