@@ -26,6 +26,7 @@
     SUBDIR += gopchop
     SUBDIR += gstreamer
     SUBDIR += gstreamer-editor
+    SUBDIR += gstreamer-ffmpeg
     SUBDIR += gstreamer-player
     SUBDIR += gstreamer-plugins
     SUBDIR += gsubedit
