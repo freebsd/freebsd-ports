@@ -1,5 +1,5 @@
 @unexec install-info --delete %D/info/speedbar.info %D/info/dir
-@unexec test -f %D/info/speedbar && install-info %D/info/speedbar %D/info/dir
+@unexec [ -f %D/info/speedbar ] && install-info %D/info/speedbar %D/info/dir || true
 info/speedbar.info
 @exec install-info %D/info/speedbar.info %D/info/dir
 %%EMACS_VERSION_SITE_LISPDIR%%/speedbar/bigclock.el

@@ -3,6 +3,7 @@ info/semantic.info
 info/semantic.info-1
 info/semantic.info-2
 info/semantic.info-3
+info/semantic.info-4
 @exec install-info %D/info/semantic.info %D/info/dir
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/c.bnf
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/document-vars.el
@@ -61,6 +62,6 @@ info/semantic.info-3
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/working.el
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/working.elc
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/semantic
-%%PORTDOCS%%share/doc/semantic/INSTALL
-%%PORTDOCS%%share/doc/semantic/NEWS
-%%PORTDOCS%%@dirrm share/doc/semantic
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
