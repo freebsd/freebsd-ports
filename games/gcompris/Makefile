@@ -20,7 +20,7 @@ RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf
+USE_GNOME=	gnomeprefix gnomehack gnomelibs gnomecanvas
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
