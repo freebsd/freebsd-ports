@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	squishdot
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.3
 CATEGORIES=	www
 MASTER_SITES=	http://squishdot.org/Download/ \
 		http://www.zope.org/Members/chrisw/Squishdot/
@@ -26,7 +26,7 @@ ZOPEBASEDIR=		${PREFIX}/${SZOPEBASEDIR}
 ZOPEPRODUCTNAME=	Squishdot
 ZOPEPRODUCTDIR=		lib/python/Products
 
-WRKSRC=		${WRKDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
+WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
 
 PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
 
