@@ -1,18 +1,18 @@
 # New ports collection makefile for:    pilot-link
 # Date created:         November, 1997
-# Whom:                 Paul Traina <pst@freebsd.org>
+# Whom:                 Paul Traina <pst@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	pilot-link
 PORTVERSION=	0.9.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	palm comms tk83
 MASTER_SITES=	http://www.pilot-link.org/source/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=	dima@freebsd.org
+MAINTAINER=	dima@FreeBSD.org
 
 LIB_DEPENDS=	tk83:${PORTSDIR}/x11-toolkits/tk83 \
 		giconv:${PORTSDIR}/converters/libiconv
@@ -41,10 +41,5 @@ post-patch:
 	# When the day comes, and pilot-link starts using longopt,
 	# we'll start using -lgnugetopt. No need for this files:
 	${RM} -f ${WRKSRC}/getopt*
-
-post-install:
-	@${SED} "s|%%PREFIX%%|${PREFIX}/pilot|g" < ${FILESDIR}/pilot-link.sh \
-		> ${PREFIX}/etc/rc.d/pilot-link.sh
-	@${CHMOD} 750 ${PREFIX}/etc/rc.d/pilot-link.sh
 
 .include <bsd.port.mk>

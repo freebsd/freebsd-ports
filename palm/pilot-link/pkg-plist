@@ -1,4 +1,3 @@
-etc/rc.d/pilot-link.sh
 bin/addresses
 bin/ccexample
 bin/debugsh
