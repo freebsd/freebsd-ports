@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd $WRKSRC || exit 1
-cp policy.h-dist policy.h
+sed -e s:/usr/local:$PREFIX: < policy.h-dist > policy.h
 
 cat >> policy.h <<END
 
@@ -9,9 +9,6 @@ cat >> policy.h <<END
 #define DEFAULT_LOGIN_PROGRAM "/usr/bin/login"
 
 #define CNDFILE               "dialin.config"
-
-#undef MGETTY_PID_FILE
-#define MGETTY_PID_FILE	      "/var/run/mg-pid.%s"
 
 #undef LOCK
 #define LOCK "/var/spool/lock/LCK..%s"
