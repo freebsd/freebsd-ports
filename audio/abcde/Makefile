@@ -62,7 +62,7 @@ pre-fetch:
 	@${ECHO_MSG} ${EJECT_MSG}
 	@${ECHO_MSG} ""
 .endif
-.if defined(EJECT_MSG)
+.if defined(FLAC_MSG)
 	@${ECHO_MSG} ${FLAC_MSG}
 	@${ECHO_MSG} ""
 .endif
