@@ -1608,6 +1608,7 @@ fasta3		ports/biology/fasta3
 fastboot	src/sbin/fastboot
 fastcrc		ports/devel/fastcrc
 fastdb		ports/databases/fastdb
+fastdep		ports/devel/fastdep
 fastdnaml	ports/biology/fastdnaml
 fastest_cvsup	ports/sysutils/fastest_cvsup
 fastjar		ports/archivers/fastjar
