@@ -7,7 +7,7 @@
 
 PORTNAME=	apsfilter
 PORTVERSION=	6.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 
@@ -40,6 +40,9 @@ RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
 RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
+
+MAN1=		apsfilter.1
+MAN5=		apsfilterrc.5
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/apsfilter
