@@ -4,4 +4,6 @@
 %%SITE_PERL%%/Mail/Folder/Mbox.pm
 %%SITE_PERL%%/Mail/Folder/NNTP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
 @dirrm %%SITE_PERL%%/Mail/Folder
+@unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true
