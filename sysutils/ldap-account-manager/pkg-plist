@@ -1,11 +1,16 @@
+@comment $FreeBSD$
 %%WWWROOT%%/index.html
 %%WWWROOT%%/config/profiles/groups/default.prg
 %%WWWROOT%%/config/profiles/hosts/default.prh
 %%WWWROOT%%/config/profiles/users/default.pru
 %%WWWROOT%%/config/.htaccess
+@unexec if cmp -s %D/%%WWWROOT%%/config/lam.conf %D/%%WWWROOT%%/config/lam.conf_sample; then rm -f %D/%%WWWROOT%%/config/lam.conf; fi
 %%WWWROOT%%/config/lam.conf_sample
+@exec [ -f %B/lam.conf ] || cp %B/%f %B/lam.conf
 %%WWWROOT%%/config/language
+@unexec if cmp -s %D/%%WWWROOT%%/config/config.cfg %D/%%WWWROOT%%/config/config.cfg_sample; then rm -f %D/%%WWWROOT%%/config/config.cfg ; fi
 %%WWWROOT%%/config/config.cfg_sample
+@exec [ -f %B/config.cfg ] || cp %B/%f %B/config.cfg
 %%WWWROOT%%/config/shells
 %%WWWROOT%%/graphics/banner.jpg
 %%WWWROOT%%/graphics/printLogo.jpg
@@ -88,9 +93,7 @@
 %%WWWROOT%%/templates/account/useredit.php
 %%WWWROOT%%/templates/account/groupedit.php
 %%WWWROOT%%/templates/getpdf.php
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/README.fpdf
@@ -99,7 +102,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.shells
 %%PORTDOCS%%%%DOCSDIR%%/README.hosts
 %%PORTDOCS%%%%DOCSDIR%%/README.security
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%WWWROOT%%/graphics
 @dirrm %%WWWROOT%%/help
 @dirrm %%WWWROOT%%/lib/font/makefont
@@ -120,4 +123,5 @@
 @unexec rmdir %D/%%WWWROOT%%/config/profiles 2>/dev/null || true
 @unexec rmdir %D/%%WWWROOT%%/config 2>/dev/null || true
 @unexec rmdir %D/%%WWWROOT%%/sess || true
+@unexec rmdir %D/%%WWWROOT%%/tmp || true
 @unexec rmdir %D/%%WWWROOT%% 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf %D/%%WWWROOT%%`` to remove any files left." | fmt
