@@ -24,12 +24,9 @@ USE_GMAKE=	yes
 ALL_TARGET=	ftrack
 MAKEFILE=	${WRKSRC}/MakeFiles/FreeBSD/Makefile
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
+USE_GCC=	2.95
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
+PORTDOCS=	ftrack.faq readme report.err
 
 pre-patch:
 	${REINPLACE_CMD} -e "s@-I../../hpp -I../../.. -O3@-Ihpp -I${LOCALBASE}/include ${CFLAGS}@g; \
@@ -49,11 +46,13 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ftrack ${PREFIX}/sbin
 	${MKDIR} ${PREFIX}/etc/ftrack
 	${INSTALL_DATA} ${WRKSRC}/samples/node.cfg ${PREFIX}/etc/ftrack/ftrack.cfg-dist
-	${MKDIR} ${PREFIX}/share/doc/ftrack
-	${INSTALL_DATA} ${WRKSRC}/doc/eng/* ${PREFIX}/share/doc/ftrack
 	${INSTALL_DATA} ${WRKSRC}/samples/tpl/* ${PREFIX}/etc/ftrack
 .for FILE in alt2koi.tbl koi2alt.tbl
 	${INSTALL_DATA} ${WRKSRC}/samples/${FILE} ${PREFIX}/etc/ftrack
 .endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/eng/* ${DOCSDIR}
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
