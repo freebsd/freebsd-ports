@@ -1,0 +1,11 @@
+--- ../sablot/Sablot-0.52.patch.orig	Sat Mar  2 22:30:15 2002
++++ ../sablot/Sablot-0.52.patch	Sat Mar  2 22:30:42 2002
+@@ -85,7 +85,7 @@
+ ! CFLAGS+=     -DHAVE_IEEEFP_H
+ ! .ENDIF
+ ! 
+-! .IF "$(OS)"=="LINUX" || "$(OS)"=="MACOSX" || "$(OS)"=="IRIX"
++! .IF "$(OS)"=="LINUX" || "$(OS)"=="MACOSX" || "$(OS)"=="FREEBSD" || "$(OS)"=="IRIX"
+ ! CFLAGS+=      -DHAVE_UNISTD_H
+ ! .ENDIF
+ ! 
