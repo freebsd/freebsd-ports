@@ -3,11 +3,11 @@
 # Date created:				11 February 1999
 # Whom:                			Dima Sivachenko <dima@Chg.RU>
 #
-# $Id: Makefile,v 1.6 1999/05/01 02:03:09 steve Exp $
+# $Id: Makefile,v 1.7 1999/05/01 16:56:12 mharo Exp $
 #
 
-DISTNAME=	fltk-1.0.2-source
-PKGNAME=	fltk-1.0.2
+DISTNAME=	fltk-1.0.3-source
+PKGNAME=	fltk-1.0.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.fltk.org/pub/fltk/${VERSION}/ \
 		ftp://ftp.chg.ru/pub/X11/fltk/${VERSION}/ \
@@ -23,11 +23,10 @@ LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared
-CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
 WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_X_PREFIX=	yes
 MAN1=		fluid.1
-VERSION=	1.0.2
+VERSION=	1.0.3
 
 .include <bsd.port.pre.mk>
 .if (${OBJFORMAT} == "aout")
