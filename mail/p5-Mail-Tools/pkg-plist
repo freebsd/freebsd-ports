@@ -24,6 +24,7 @@ lib/perl5/site_perl/auto/Mail/Internet/nntppost.al
 lib/perl5/site_perl/auto/Mail/Internet/reply.al
 lib/perl5/site_perl/auto/Mail/Internet/sign.al
 lib/perl5/site_perl/auto/Mail/Internet/smtpsend.al
+lib/perl5/site_perl/auto/Mail/Internet/unescape_from.al
 lib/perl5/site_perl/auto/Mail/Util/autosplit.ix
 lib/perl5/site_perl/auto/Mail/Util/mailaddress.al
 lib/perl5/site_perl/auto/Mail/Util/maildomain.al
