@@ -3707,6 +3707,7 @@ libgnomeprint20	ports/print/libgnomeprint20
 libgnomeprintui	ports/x11-toolkits/libgnomeprintui
 libgnomeprintui20	ports/x11-toolkits/libgnomeprintui20
 libgnomeui	ports/x11-toolkits/libgnomeui
+libgnomeuimm	ports/x11-toolkits/libgnomeuimm
 libgnugetopt	ports/devel/libgnugetopt
 libgphoto2	ports/graphics/libgphoto2
 libgrass5	ports/graphics/libgrass5
