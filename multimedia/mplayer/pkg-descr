@@ -1,10 +1,10 @@
 This is the port of mplayer, a project which has the effort
-to become a very stable and useful movie player.
+to become a very stable and useful movie player and encoder.
 
 It is based on the windows codec compilation and
 provides the ability to play many formats
 in a very good quality without much CPU comsumption.
 
-Support for ffmpeg and DVD are also included.
+Support for ffmpeg, quicktime and DVD are also included.
 
 WWW: http://www.mplayerhq.hu/

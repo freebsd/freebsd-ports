@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mplayer
-PORTVERSION=	0.90.0.102
+PORTVERSION=	0.90.0.103
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -16,13 +16,12 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp2.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-0.90rc2
+DISTNAME=	MPlayer-0.90rc3
 
 MAINTAINER=	riggs@rrr.de
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		iconv.3:${PORTSDIR}/converters/libiconv \
-		mp3lame.0:${PORTSDIR}/audio/lame
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -42,7 +41,6 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
 MAN1=		mplayer.1
-MLINKS=		mplayer.1 mencoder.1
 MANCOMPRESSED=	no
 
 CONFFILES=	codecs.conf example.conf input.conf menu.conf
@@ -176,6 +174,16 @@ CONFIGURE_ARGS+=	--enable-mad \
 CONFIGURE_ARGS+=	--disable-mad
 .endif
 
+.if !defined(WITHOUT_MENCODER)
+LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
+
+MLINKS+=	mplayer.1 mencoder.1
+PLIST_SUB+=	MENCODER=""
+.else
+CONFIGURE_ARGS+=	--disable-mencoder
+PLIST_SUB+=	MENCODER="@comment "
+.endif
+
 .if defined(WITH_SVGALIB)
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 .endif
@@ -256,8 +264,7 @@ RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
 CONFIGURE_ARGS+=	--with-win32libdir=${LOCALBASE}/lib/win32
 
-#CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
-CODEC_PORT=	${.CURDIR}/../win32-codecs
+CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 .else
 CONFIGURE_ARGS+=	--disable-win32 \

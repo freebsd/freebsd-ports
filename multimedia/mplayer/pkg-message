@@ -16,3 +16,11 @@ http://www.mplayerhq.hu/
 In order to use DVD please make sure that your
 kernel and base system is newer than 2001-09-25,
 otherwise DVD play will not work!
+
+NOTE: Some users have ran into trouble when using mplayer on a
+SSE-capable CPU but not having SSE enabled in the kernel config.
+
+This is only for SSE-capable CPUs. For 5.x systems, this should not
+be necessary but 4.x users must recompile the kernel with
+
+options		CPU_ENABLE_SSE
