@@ -1,6 +1,7 @@
 #!/bin/sh
 
-LANG=ja_JP.EUC; export LANG
+LANG=@LOCALENAME@; export LANG
+@LIBXPG4@
 
 cd @PREFIX@/lib/mozilla
 exec ./mozilla "$@"

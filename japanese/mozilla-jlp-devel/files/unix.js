@@ -176,7 +176,7 @@ pref("font.name.monospace.zh-CN", "isas-song ti-gb2312.1980-0");
 
 // zh-TW
 
-pref("font.default", "serif");
+pref("font.default", "sans-serif");
 pref("font.size.variable.ar", 16);
 pref("font.size.fixed.ar", 12);
 
@@ -334,7 +334,6 @@ pref("print.xprint.font.rejectfontpattern",
 
 /* Xprint print module prefs */
 pref("print.xprint.font.force_outline_scaled_fonts", true);
-pref("print.xprint.font.scale_bitmap_fonts_with_devscale", true);
 
 /* PostScript print module prefs */
 pref("print.postscript.paper_size",    "letter");
