@@ -1,5 +1,5 @@
---- src/net.c.orig	Sun Apr 18 06:53:46 1999
-+++ src/net.c	Wed Apr 21 22:44:24 1999
+--- src/net.c.orig	Tue May  4 13:20:43 1999
++++ src/net.c	Tue May  4 13:22:13 1999
 @@ -101,9 +101,9 @@
  	{
  		return -1;
@@ -12,25 +12,15 @@
  	rv = connect(sock, (struct sockaddr*)&addr, sizeof(addr));
  	if (rv && (errno != EINPROGRESS) && (errno != EISCONN))
  	{
-@@ -121,8 +121,8 @@
- #endif
+@@ -267,9 +267,9 @@
+ 	int rv;
  
- #ifdef GTK_FACE
--		cfg.gtk.inid = gtk_timeout_add(cfg.ctimeout * 60000 ,
--					(GtkFunction)TOut , NULL);
-+		cfg.gtk.inid = cfg.ctimeout ? gtk_timeout_add(cfg.ctimeout * 60000 ,
-+					(GtkFunction)TOut , NULL) : 0;
- #endif
- 
- 
-@@ -261,8 +261,9 @@
- #ifdef I_FACE
- 	if (cfg.xi_face)
- 	{
-+#ifndef __FreeBSD__
- 		fcntl(sock , F_SETFL , O_NONBLOCK);
+ 	p = sizeof(caller);
+-
++#ifdef __FreeBSD__
+ 	fcntl(sock , F_SETFL , O_NONBLOCK);
 -
 +#endif
- 		rsock = accept(sock, (struct sockaddr*)&caller, &p);
- 		if ((rsock < 0) && (errno != EWOULDBLOCK))
- 		{
+ 	rsock = accept(sock, (struct sockaddr*)&caller, &p);
+ 	if ((rsock < 0) && (errno != EWOULDBLOCK))
+ 	{
