@@ -17,7 +17,7 @@ DISTFILES=	PageTemplates-${PORTVERSION}.tar.gz \
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	Zope Page Templates separate design and logic in Zope applications
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
+RUN_DEPENDS=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope
 
 USE_PYTHON=	yes
 DIST_SUBDIR=	zope

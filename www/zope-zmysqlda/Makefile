@@ -17,7 +17,7 @@ DISTNAME=	${ZOPEPRODUCTNAME}-${PORTVERSION}
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	MySQL Database Adapter for the Zope web application framework
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope \
+RUN_DEPENDS=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope \
 		${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb
 
 USE_PYTHON=	yes

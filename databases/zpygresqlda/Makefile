@@ -15,7 +15,7 @@ DISTNAME=	ZPyGreSQLDA-0.3-rjr2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostgreSQL database adapter for Zope
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
+RUN_DEPENDS=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 
 POSTGRESQL_PORT?=	databases/postgresql7

@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mechanism for the automatic creation and maintenance of Knowledge Bases
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
+RUN_DEPENDS=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope
 
 NO_BUILD=	YES
 PKGMESSAGE=	${WRKDIR}/.MESSAGE
