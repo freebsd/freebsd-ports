@@ -1,0 +1,29 @@
+A Portable Emacs Library.
+
+--- Emacs Library Porting
+
+APEL is programed by MORIOKA Tomohiko <morioka@jaist.ac.jp>.
+
+  APEL stands for "A Portable Emacs Library".  It consists of
+  following modules:
+    APEL
+     - utility to write portable CCL program
+     - utility for Association-list
+     - utility for condition tree and condition/situation-alist
+     - utility for path management or file detection
+     - utility to make file-name
+     - utility to install emacs-lisp package
+     - ROT 13-47-48 Caesar rotation utility
+    emu
+     - poe: emulation module mainly for basic functions and special forms/macros
+     - poem: provide basic functions to write portable MULE programs
+     - mcs: provide MIME charset related features
+     - broken: provide information of broken facilities of Emacs.
+     - emu: bundled in tm-7.106 compat module; it required poe, poem and mcs
+     - text/richtext module
+
+  APEL is installed the following directory tree:
+	${PREFIX}/share/emacs/site-lisp/apel/		--- APEL
+	${PREFIX}/share/emacs/20.3/site-lisp/emu/	--- emu
+
+--- Porting by shige <shige@kuis.kyoto-u.ac.jp>

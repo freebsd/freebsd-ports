@@ -1,0 +1,11 @@
+--- poem-ltn1.el.orig	Sun Dec 27 11:19:17 1998
++++ poem-ltn1.el	Sun Dec 27 11:19:20 1998
+@@ -161,7 +161,7 @@
+   (let ((emx-binary-mode t))
+     (find-file-noselect filename nowarn rawfile)))
+ 
+-(defalias find-file-noselect-as-raw-text 'find-file-noselect)
++(defalias 'find-file-noselect-as-raw-text 'find-file-noselect)
+ 
+ (defun open-network-stream-as-binary (name buffer host service)
+   "Like `open-network-stream', q.v., but don't code conversion."
