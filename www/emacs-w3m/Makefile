@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emacs-w3m
-PORTVERSION=	1.1.100
+PORTVERSION=	1.2.1
 CATEGORIES=	www elisp
 MASTER_SITES=	http://emacs-w3m.namazu.org/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -14,19 +14,12 @@ DISTNAME=	w3m_el-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
-PORTCLASS?=		master
-
-.if (${PORTCLASS} == "master")
 EMACS_PORT_NAME?=	emacs21
-DEPPORT_SUFFIX=		
-.else
-DEPPORT_SUFFIX=		-${EMACS_PORT_NAME}
-.endif
 
 CONFIGURE_ARGS?=	--with-emacs=${EMACS_CMD} \
-			--with-lispdir=${LOCALBASE}/${LISPDIR}
+			--with-lispdir=${PREFIX}/${LISPDIR}
 LISPDIR?=	${EMACS_VERSION_SITE_LISPDIR}/w3m
-ETCDIR?=	share/w3m
+ETCDIR?=	${EMACS_LIBDIR_WITH_VER}/etc/w3m/icons
 PKGINFODIR?=	"@comment "
 
 USE_AUTOCONF=	yes
@@ -34,48 +27,77 @@ ALL_TARGET=	default
 
 PLIST_SUB+=	EMACS_NAME=${EMACS_NAME} \
 		XEMACS_ONLY=${XEMACS_ONLY} \
+		EMACS20_ONLY=${EMACS20_ONLY} \
+		EMACS21_ONLY=${EMACS21_ONLY} \
 		EMACS_ONLY=${EMACS_ONLY} \
 		LISPDIR=${LISPDIR} \
 		ETCDIR=${ETCDIR} \
 		PKGINFODIR=${PKGINFODIR} \
-		SHIMBUN=${SHIMBUN}
+		SHIMBUN=${SHIMBUN} \
+		ICONS=${ICONS}
 
-DOCS=		README
-DOCS_JA=	README.ja TIPS.ja
+DOCS=		FAQ README
+DOCS_JA=	FAQ.ja README.ja README.namazu.ja README.shimbun.ja TIPS.ja
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 DOCSDIR_JA=	${PREFIX}/share/doc/ja/${PORTNAME}
 
+.if (${EMACS_PORT_NAME} == "xemacs21-mule")
+XEMACS_ONLY=	""
+EMACS_ONLY=	"@comment "
+EMACS20_ONLY=	"@comment "
+EMACS21_ONLY=	"@comment "
+ICONS=		""
+.else
+.if (${EMACS_PORT_NAME} == "emacs20")
+XEMACS_ONLY=	"@comment "
+EMACS_ONLY=	""
+EMACS20_ONLY=	""
+EMACS21_ONLY=	"@comment "
+ICONS=		"@comment "
+.else
+XEMACS_ONLY=	"@comment "
+EMACS_ONLY=	""
+EMACS20_ONLY=	"@comment "
+EMACS21_ONLY=	""
+ICONS=		""
+INSTALL_TARGET=	install install-icons
+.endif
+.endif
+
 .include <bsd.port.pre.mk>
 
-.if (${EMACS_NAME} == "xemacs")
-XEMACS_ONLY?=		""
-EMACS_ONLY?=		"@comment "
-SEMI_FILE=		${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/semi/mime-setup.el
+FLIM_TRUNK=	1.14
+FLIM_COOKIE=	${LOCALBASE}/share/flim/flim-${EMACS_PORT_NAME}-${FLIM_TRUNK}.FreeBSD-packages
+.if (${EMACS_PORT_NAME} == "emacs21")
+FLIM_PORT=	${PORTSDIR}/editors/flim
 .else
-XEMACS_ONLY?=		"@comment "
-EMACS_ONLY?=		""
-SEMI_FILE=		${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/semi/mime-setup.el
+FLIM_PORT=	${PORTSDIR}/editors/flim-${EMACS_PORT_NAME}
 .endif
 
 .if defined(WITH_SHIMBUN)
-HAVE_SEMI=yes
-SHIMBUN=		""
-.else 
-.if exists(${SEMI_FILE})
-HAVE_SEMI=yes
-SHIMBUN=		""
+HAVE_FLIM=	yes
+SHIMBUN=	""
 .else
-SHIMBUN=		"@comment "
+.if exists(${FLIM_COOKIE})
+HAVE_FLIM=	yes
+SHIMBUN=	""
+.else
+SHIMBUN=	"@comment "
 .endif
+.endif
+.if (${EMACS_PORT_NAME} == "emacs21")
+SHIMBUN=	""
 .endif
 
-.if defined(HAVE_SEMI) 
-BUILD_DEPENDS+=		${SEMI_FILE}:${PORTSDIR}/editors/semi${DEPPORT_SUFFIX}
-RUN_DEPENDS+=		${SEMI_FILE}:${PORTSDIR}/editors/semi${DEPPORT_SUFFIX}
+.if defined(HAVE_FLIM)
+BUILD_DEPENDS+=	${FLIM_COOKIE}:${FLIM_PORT}
+RUN_DEPENDS+=		${FLIM_COOKIE}:${FLIM_PORT}
 .endif
+BUILD_DEPENDS+=	w3m:${PORTSDIR}/www/w3m
+RUN_DEPENDS+=		w3m:${PORTSDIR}/www/w3m
 
-.if !defined(HAVE_SEMI)
+.if !defined(HAVE_FLIM)
 pre-fetch:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "NOTE: You can have shimbun support by adding \"WITH_SHIMBUN=yes\" to argument of make."

@@ -1,21 +1,21 @@
 %%PKGINFODIR%%/MANIFEST.w3m
-%%XEMACS_ONLY%%%%ETCDIR%%/antenna-up.xpm
-%%XEMACS_ONLY%%%%ETCDIR%%/back-disabled.xpm
-%%XEMACS_ONLY%%%%ETCDIR%%/back-up.xpm
-%%XEMACS_ONLY%%%%ETCDIR%%/copy-up.xpm
-%%XEMACS_ONLY%%%%ETCDIR%%/db-history-up.xpm
-%%XEMACS_ONLY%%%%ETCDIR%%/forward-disabled.xpm
-%%XEMACS_ONLY%%%%ETCDIR%%/forward-up.xpm
-%%XEMACS_ONLY%%%%ETCDIR%%/history-up.xpm
-%%XEMACS_ONLY%%%%ETCDIR%%/home-up.xpm
-%%XEMACS_ONLY%%%%ETCDIR%%/image-up.xpm
-%%XEMACS_ONLY%%%%ETCDIR%%/open-up.xpm
-%%XEMACS_ONLY%%%%ETCDIR%%/parent-disabled.xpm
-%%XEMACS_ONLY%%%%ETCDIR%%/parent-up.xpm
-%%XEMACS_ONLY%%%%ETCDIR%%/reload-up.xpm
-%%XEMACS_ONLY%%%%ETCDIR%%/search-up.xpm
-%%XEMACS_ONLY%%%%ETCDIR%%/weather-up.xpm
-%%XEMACS_ONLY%%@dirrm %%ETCDIR%%
+%%ICONS%%%%ETCDIR%%/antenna-up.xpm
+%%ICONS%%%%ETCDIR%%/back-disabled.xpm
+%%ICONS%%%%ETCDIR%%/back-up.xpm
+%%ICONS%%%%ETCDIR%%/copy-up.xpm
+%%ICONS%%%%ETCDIR%%/db-history-up.xpm
+%%ICONS%%%%ETCDIR%%/forward-disabled.xpm
+%%ICONS%%%%ETCDIR%%/forward-up.xpm
+%%ICONS%%%%ETCDIR%%/history-up.xpm
+%%ICONS%%%%ETCDIR%%/home-up.xpm
+%%ICONS%%%%ETCDIR%%/image-up.xpm
+%%ICONS%%%%ETCDIR%%/open-up.xpm
+%%ICONS%%%%ETCDIR%%/parent-disabled.xpm
+%%ICONS%%%%ETCDIR%%/parent-up.xpm
+%%ICONS%%%%ETCDIR%%/reload-up.xpm
+%%ICONS%%%%ETCDIR%%/search-up.xpm
+%%ICONS%%%%ETCDIR%%/weather-up.xpm
+%%ICONS%%@dirrm %%ETCDIR%%
 %%XEMACS_ONLY%%%%LISPDIR%%/_pkg.el
 %%XEMACS_ONLY%%%%LISPDIR%%/_pkg.elc
 %%XEMACS_ONLY%%%%LISPDIR%%/auto-autoloads.el
@@ -39,6 +39,10 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-cnet.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-ding.el
 %%SHIMBUN%%%%LISPDIR%%/sb-ding.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-f1express.el
+%%SHIMBUN%%%%LISPDIR%%/sb-f1express.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-f1fan.el
+%%SHIMBUN%%%%LISPDIR%%/sb-f1fan.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-fml.el
 %%SHIMBUN%%%%LISPDIR%%/sb-fml.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-glimpse.el
@@ -51,8 +55,12 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-h14m.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-hns.el
 %%SHIMBUN%%%%LISPDIR%%/sb-hns.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-ibm-dev.el
+%%SHIMBUN%%%%LISPDIR%%/sb-ibm-dev.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-impress.el
 %%SHIMBUN%%%%LISPDIR%%/sb-impress.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-isize-sports.el
+%%SHIMBUN%%%%LISPDIR%%/sb-isize-sports.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-javaconf.el
 %%SHIMBUN%%%%LISPDIR%%/sb-javaconf.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-kantei.el
@@ -65,22 +73,28 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-m17n.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-mainichi.el
 %%SHIMBUN%%%%LISPDIR%%/sb-mainichi.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-makanai.el
+%%SHIMBUN%%%%LISPDIR%%/sb-makanai.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-meadow.el
 %%SHIMBUN%%%%LISPDIR%%/sb-meadow.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-mew.el
 %%SHIMBUN%%%%LISPDIR%%/sb-mew.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-mhonarc.el
 %%SHIMBUN%%%%LISPDIR%%/sb-mhonarc.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-muchy.el
+%%SHIMBUN%%%%LISPDIR%%/sb-muchy.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-namazu.el
 %%SHIMBUN%%%%LISPDIR%%/sb-namazu.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-netbsd.el
 %%SHIMBUN%%%%LISPDIR%%/sb-netbsd.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-nikkei.el
 %%SHIMBUN%%%%LISPDIR%%/sb-nikkei.elc
-%%SHIMBUN%%%%LISPDIR%%/sb-rika.el
-%%SHIMBUN%%%%LISPDIR%%/sb-rika.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-nikkansports.el
+%%SHIMBUN%%%%LISPDIR%%/sb-nikkansports.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-ruby.el
 %%SHIMBUN%%%%LISPDIR%%/sb-ruby.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-security-memo.el
+%%SHIMBUN%%%%LISPDIR%%/sb-security-memo.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-slashdot-jp.el
 %%SHIMBUN%%%%LISPDIR%%/sb-slashdot-jp.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-sponichi.el
@@ -103,6 +117,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-yahoo.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-yomiuri.el
 %%SHIMBUN%%%%LISPDIR%%/sb-yomiuri.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-yomiuri-html.el
+%%SHIMBUN%%%%LISPDIR%%/sb-yomiuri-html.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-zdnet.el
 %%SHIMBUN%%%%LISPDIR%%/sb-zdnet.elc
 %%SHIMBUN%%%%LISPDIR%%/shimbun.el
@@ -114,20 +130,26 @@
 %%LISPDIR%%/w3m-dtree.el
 %%LISPDIR%%/w3m-dtree.elc
 %%LISPDIR%%/w3m-e20.el
-%%EMACS_ONLY%%@unexec rm -f %D/%%LISPDIR%%/w3m-e20.elc
+%%EMACS20_ONLY%%%%LISPDIR%%/w3m-e20.elc
 %%LISPDIR%%/w3m-e21.el
-%%EMACS_ONLY%%@unexec rm -f %D/%%LISPDIR%%/w3m-e21.elc
+%%EMACS21_ONLY%%%%LISPDIR%%/w3m-e21.elc
 %%LISPDIR%%/w3m-filter.el
 %%LISPDIR%%/w3m-filter.elc
+%%LISPDIR%%/w3m-fsf.el
+%%EMACS_ONLY%%%%LISPDIR%%/w3m-fsf.elc
 %%LISPDIR%%/w3m-form.el
 %%LISPDIR%%/w3m-form.elc
 %%LISPDIR%%/w3m-hist.el
 %%LISPDIR%%/w3m-hist.elc
 %%LISPDIR%%/w3m-macro.el
 %%LISPDIR%%/w3m-macro.elc
+%%LISPDIR%%/w3m-namazu.el
+%%LISPDIR%%/w3m-namazu.elc
 %%LISPDIR%%/w3m-om.el
 %%LISPDIR%%/w3m-search.el
 %%LISPDIR%%/w3m-search.elc
+%%LISPDIR%%/w3m-ucs.el
+%%EMACS21_ONLY%%%%LISPDIR%%/w3m-ucs.elc
 %%LISPDIR%%/w3m-weather.el
 %%LISPDIR%%/w3m-weather.elc
 %%LISPDIR%%/w3m-xmas.el
@@ -135,8 +157,12 @@
 %%LISPDIR%%/w3mhack.el
 %%LISPDIR%%/w3m.el
 @dirrm %%LISPDIR%%
-share/doc/ja/emacs-w3m/TIPS.ja
-share/doc/ja/emacs-w3m/README.ja
-share/doc/emacs-w3m/README
-@dirrm share/doc/ja/emacs-w3m
-@dirrm share/doc/emacs-w3m
+%%PORTDOCS%%share/doc/ja/emacs-w3m/FAQ.ja
+%%PORTDOCS%%share/doc/ja/emacs-w3m/README.ja
+%%PORTDOCS%%share/doc/ja/emacs-w3m/README.namazu.ja
+%%PORTDOCS%%share/doc/ja/emacs-w3m/README.shimbun.ja
+%%PORTDOCS%%share/doc/ja/emacs-w3m/TIPS.ja
+%%PORTDOCS%%share/doc/emacs-w3m/FAQ
+%%PORTDOCS%%share/doc/emacs-w3m/README
+%%PORTDOCS%%@dirrm share/doc/ja/emacs-w3m
+%%PORTDOCS%%@dirrm share/doc/emacs-w3m
