@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	6.1.6.8
+PORTVERSION=	6.1.9.2
 CATEGORIES=	graphics perl5
-MASTER_SITES=	http://people.fruitsalad.org/avleeuwen/distfiles/imagemagick/ \
-		${MASTER_SITE_LOCAL:S/%SUBDIR%/josef/}
+MASTER_SITES=	ftp://ftp.nluug.nl/pub/ImageMagick/ \
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/pav/}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	avleeuwen@piwebs.com
