@@ -2367,6 +2367,7 @@ hbiff		ports/mail/hbiff
 hdconv		ports/palm/hdconv
 hdf		ports/graphics/hdf
 hdf5		ports/graphics/hdf5
+health-nut	ports/misc/nut
 healthd		ports/sysutils/healthd
 heimdal		ports/security/heimdal
 helium		ports/lang/helium
@@ -4089,8 +4090,6 @@ mipsel-linux-kernel-headers	ports/devel/mipsel-linux-kernel-headers
 mird		ports/databases/mird
 mirror		ports/ftp/mirror
 mirrormagic	ports/games/mirrormagic
-misc-bb		ports/misc/bb
-misc-nut	ports/misc/nut
 miscom		ports/games/miscom
 misterproper	ports/misc/misterproper
 mit-scheme	ports/lang/mit-scheme
