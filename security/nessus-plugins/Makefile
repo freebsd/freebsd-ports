@@ -7,6 +7,7 @@
 
 PORTNAME=	nessus-plugins
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
@@ -21,7 +22,8 @@ DISTNAME=	nessus-plugins-${PORTVERSION}
 
 MAINTAINER=	udo.schweigert@siemens.com
 
-BUILD_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus
+BUILD_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus \
+		libnet-config:${PORTSDIR}/net/libnet
 RUN_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus \
 		nmap:${PORTSDIR}/security/nmap \
 		wget:${PORTSDIR}/ftp/wget
