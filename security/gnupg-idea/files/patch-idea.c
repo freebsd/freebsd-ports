@@ -1,17 +1,16 @@
---- idea.c.orig	Tue May  9 08:18:54 2000
-+++ idea.c	Tue May  9 08:20:49 2000
-@@ -474,7 +474,9 @@
- }
+--- idea.c.orig	Wed Oct  9 02:32:12 2002
++++ idea.c	Wed Oct  9 21:39:05 2002
+@@ -420,6 +420,9 @@
  
  
--
+ 
 +#ifndef IS_MODULE
 +static
 +#endif
  const char * const gnupgext_version = "IDEA ($Revision: 1.11 $)";
  
  static struct {
-@@ -504,6 +506,9 @@
+@@ -449,6 +452,9 @@
   *		  version = interface version of the function/pointer
   *			    (currently this is 1 for all functions)
   */
@@ -21,11 +20,10 @@
  void *
  gnupgext_enum_func( int what, int *sequence, int *class, int *vers )
  {
-@@ -533,4 +538,18 @@
+@@ -477,3 +483,17 @@
+     *sequence = i;
      return ret;
  }
- 
-+
 +
 +#ifndef IS_MODULE
 +
@@ -39,4 +37,4 @@
 +					gnupgext_enum_func );
 +}
 +#endif
- 
++
