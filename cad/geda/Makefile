@@ -3,7 +3,7 @@
 # Date created:			24 Nov 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/12/27 20:49:40 vanilla Exp $
+# $Id: Makefile,v 1.6 1999/01/22 20:26:59 nectar Exp $
 #
 
 DISTNAME=	gEDA-19981213
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.geda.seul.org/dist/  \
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-LIB_DEPENDS=	gtk.1:${PORTSDIR}/x11-toolkits/gtk \
+LIB_DEPENDS=	gtk10.1:${PORTSDIR}/x11-toolkits/gtk10 \
 		guile.4:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=	yes
