@@ -1,4 +1,6 @@
 bin/sodipodi
+share/gnome/apps/Graphics/sodipodi.desktop
+share/gnome/pixmaps/sodipodi.png
 share/gnome/sodipodi/back.xpm
 share/gnome/sodipodi/delete.xpm
 share/gnome/sodipodi/duplicate.xpm
