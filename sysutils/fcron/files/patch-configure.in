@@ -1,0 +1,22 @@
+--- configure.in.orig	Sun Jul  8 07:32:17 2001
++++ configure.in	Sat Aug 25 14:36:05 2001
+@@ -201,13 +201,13 @@
+     fi
+     ;;
+   *)
+-    if test -d "$withval"; then
++#    if test -d "$withval"; then
+       etcdir="$withval"
+-      AC_MSG_RESULT($withval)
+-    else
+-      AC_MSG_ERROR([
+-Directory $withval does not exist])
+-    fi
++#      AC_MSG_RESULT($withval)
++#    else
++#      AC_MSG_ERROR([
++#Directory $withval does not exist])
++#    fi
+     ;;
+   esac ],
+   if test -d "/etc"; then
