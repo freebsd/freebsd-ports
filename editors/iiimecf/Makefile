@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iiimecf
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.kddlabs.co.jp/Japan/m17n.org/mule/IIIM/ \
 		ftp://ftp.etl.go.jp/pub/mule/IIIM/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.kddlabs.co.jp/Japan/m17n.org/mule/IIIM/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	IIIMECF-${PORTVERSION}
 
-MAINTAINER=	okazaki@be.to
+MAINTAINER=	okazaki@FreeBSD.org
 
 BUILD_DEPENDS=	${UN_DEFINE}:${PORTSDIR}/converters/mule-ucs-emacs20
 RUN_DEPENDS=	${UN_DEFINE}:${PORTSDIR}/converters/mule-ucs-emacs20
