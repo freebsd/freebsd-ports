@@ -7,6 +7,7 @@ if [ ! -f ${PKG_PREFIX}/bin/tclsh ] || [ \
 then
 	[ -f ${PKG_PREFIX}/bin/tclsh ] && chmod u+w ${PKG_PREFIX}/bin/tclsh
 
+	mkdir -p ${PKG_PREFIX}/bin
 	cat > ${PKG_PREFIX}/bin/tclsh <<'EOF'
 #!/bin/sh
 # Installed by ports system.  id: awieYJFnsuILOnfsYEW**001

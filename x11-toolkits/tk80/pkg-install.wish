@@ -7,6 +7,7 @@ if [ ! -f ${PKG_PREFIX}/bin/wish ] || [ \
 then
 	[ -f ${PKG_PREFIX}/bin/wish ] && chmod u+w ${PKG_PREFIX}/bin/wish
 
+	mkdir -p ${PKG_PREFIX}/bin
 	cat > ${PKG_PREFIX}/bin/wish <<'EOF'
 #!/bin/sh
 # Installed by ports system.  id: awieYJFnsuILOnfsYEW**001
