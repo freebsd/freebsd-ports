@@ -13,7 +13,7 @@ MASTER_SITES=	http://flwm.sourceforge.net/ \
 		ftp://ftp.sai.msu.su/pub/X11/win_man/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	gj@FreeBSD.org
 COMMENT=	The Fast Light Window Manager
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
@@ -24,5 +24,7 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 MAN1=		flwm.1
 PLIST_FILES=	bin/flwm
+
+CONFIGURE_ARGS?=--includedir="-I/usr/local/include -I/usr/local/include/freetype2"
 
 .include <bsd.port.mk>
