@@ -1,0 +1,3 @@
+@unexec /bin/rm -rf %D/share/dotfile-2.0b5
+share/dotfile-2.0b5
+man/man1/dotfile.1.gz
