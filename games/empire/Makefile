@@ -7,6 +7,7 @@
 
 PORTNAME=	empire
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/vms-empire/
 DISTNAME=	vms-${PORTNAME}-${PORTVERSION}
@@ -20,7 +21,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vms-empire ${PREFIX}/bin/empire
 	${INSTALL_MAN} ${WRKSRC}/vms-empire.6 ${MANPREFIX}/man/man6/empire.6
 .if !defined(NOPORTDOCS)
-.for file in BUGS READ.ME
+.for file in BUGS README
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
