@@ -3,7 +3,7 @@
 # Date created:		27 March 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.10 1996/12/23 02:29:13 asami Exp $
+# $Id: Makefile,v 1.11 1997/01/03 09:36:45 obrien Exp $
 #
 
 DISTNAME=	nethack-3.2.2
@@ -16,11 +16,10 @@ MAINTAINER=	asami@FreeBSD.ORG
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 USE_GMAKE=	yes
-SHELL=		/bin/sh
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
 
 pre-configure:
-	@cd ${WRKSRC}/sys/unix; ${SHELL} setup.sh
+	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh
 
 post-install:
 	@cd ${WRKSRC}/doc; chmod 644 *.6
