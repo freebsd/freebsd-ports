@@ -2,4 +2,4 @@ Gtranslator is a Gtk+-2 GUI to assist in the creation of GNU gettext
 translations.  It features auto-learning of translation rules, fuzzy
 string manipulation, and self-contained msgfmt compilation/testing.
 
-WWW: http://www.gtranslator.org/
+WWW: http://gtranslator.sourceforge.net/
