@@ -85,7 +85,7 @@ CONFIGURE_ARGS=		--prefix=${PREFIX}/cdsware		\
 USE_GMAKE=		yes
 USE_APACHE=		yes
 WITH_APACHE2=		yes
-USE_PHP=		zlib pcntl
+USE_PHP=		zlib pcntl mysql xml
 WANT_PHP_MOD=		yes
 WANT_PHP_CLI=		yes
 USE_MYSQL=		yes
