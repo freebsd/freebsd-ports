@@ -7,12 +7,12 @@
 
 PORTNAME=	wmpinboard
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils afterstep windowmaker
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	t.kempka@web.de
 COMMENT=	Post-it notes for the WindowMaker dock or AfterStep Wharf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
