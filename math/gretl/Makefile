@@ -22,8 +22,9 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk20 libxml2
 USE_GMAKE=	yes
+WANT_GNOME=	yes
+USE_GNOME=	gtk20 libxml2
 USE_AUTOCONF_VER=	253
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -33,12 +34,15 @@ INSTALLS_SHLIB=	yes
 
 MAN1=	gretl.1 gretl-config.1
 
-.if defined(WITHOUT_GNOME2)
-CONFIGURE_ARGS+=	--without-gnome
-PLIST_SUB+=	GNOME2:="@comment " DATADIR="share"
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mlibgnomeui}!=""
+PKGNAMESUFFIX=	-gnome
+USE_GNOME+=	gnomeprefix libgnomeprintui
+PLIST_SUB+=	GRETLDATADIR="share/gnome"
 .else
-USE_GNOME+=	gnomeprefix libgnomeprintui libgnomeui
-PLIST_SUB+=	GNOME2:="" DATADIR="share/gnome"
+CONFIGURE_ARGS+=	--without-gnome
+PLIST_SUB+=	GRETLDATADIR="share"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
