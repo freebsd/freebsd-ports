@@ -1,4 +1,4 @@
-@cwd /usr/X11R6
 bin/xearth
 man/man1/xearth.1.gz
-lib/X11/freebsd.markers
+lib/X11/xearth/freebsd.core.markers
+lib/X11/xearth/freebsd.ftp.markers

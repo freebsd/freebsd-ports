@@ -6,6 +6,6 @@ time between updates can be changed with the -wait option.
 Xearth  can  also  render  directly into PPM and GIF files
 instead of drawing in the root window.
 
-There is an additional file called freebsd.markers which
-give the location of several FreeBSD core team members and
-FTP sites.
+There are additional files called freebsd.{core,ftp}.markers
+which give the location of FreeBSD core team members and FTP
+sites.  These are installed in /usr/X11R6/lib/X11/xearth.
