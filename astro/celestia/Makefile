@@ -20,6 +20,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 OPTIONS=	KDE "KDE support" off
 OPTIONS+=	LUA "Lua support" off
 PLIST=		${WRKDIR}/pkg-plist
