@@ -14,17 +14,35 @@ info/git.info
 info/git.info-1
 info/git.info-2
 info/git.info-3
+lib/git/html/git_1.html
+lib/git/html/git_10.html
+lib/git/html/git_2.html
+lib/git/html/git_3.html
+lib/git/html/git_4.html
+lib/git/html/git_5.html
+lib/git/html/git_6.html
+lib/git/html/git_7.html
+lib/git/html/git_8.html
+lib/git/html/git_9.html
+lib/git/html/git_toc.html
 lib/git/term/.gitrc.aixterm
 lib/git/term/.gitrc.ansi
 lib/git/term/.gitrc.common
 lib/git/term/.gitrc.cons25
 lib/git/term/.gitrc.console
+lib/git/term/.gitrc.dtterm
+lib/git/term/.gitrc.eterm
 lib/git/term/.gitrc.generic
 lib/git/term/.gitrc.hft
 lib/git/term/.gitrc.hp
 lib/git/term/.gitrc.hpterm
+lib/git/term/.gitrc.iris-ansi
+lib/git/term/.gitrc.iris-ansi-net
 lib/git/term/.gitrc.linux
+lib/git/term/.gitrc.mach
 lib/git/term/.gitrc.minix
+lib/git/term/.gitrc.pc3
+lib/git/term/.gitrc.screen
 lib/git/term/.gitrc.sun
 lib/git/term/.gitrc.sun-cmd
 lib/git/term/.gitrc.thix
@@ -40,6 +58,7 @@ lib/git/term/.gitrc.vt320
 lib/git/term/.gitrc.vt400
 lib/git/term/.gitrc.vt420
 lib/git/term/.gitrc.xterm
+lib/git/term/.gitrc.xterm-color
 lib/git/term/.gitrc.xterms
 man/man1/git.1.gz
 man/man1/gitaction.1.gz
@@ -48,3 +67,6 @@ man/man1/gitkeys.1.gz
 man/man1/gitrgrep.1.gz
 man/man1/gitps.1.gz
 man/man1/gitview.1.gz
+@dirrm lib/git/term
+@dirrm lib/git/html
+@dirrm lib/git
