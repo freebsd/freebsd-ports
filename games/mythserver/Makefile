@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://support.bungie.com/ftp/pub/win/misc/
 DISTNAME=	metaserver2open
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flynn@energyhq.homeip.net
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
