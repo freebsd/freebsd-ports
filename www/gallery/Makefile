@@ -20,6 +20,7 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \
 		jhead:${PORTSDIR}/graphics/jhead \
 		unzip:${PORTSDIR}/archivers/unzip
 
+.if !defined(WITHOUT_NLS)
 LANGVERSION=	1.4.2
 LANGPACKS=	af_ZA-pack-${LANGVERSION}${EXTRACT_SUFX} \
 		bg_BG-pack-${LANGVERSION}${EXTRACT_SUFX} \
@@ -53,6 +54,10 @@ LANGPACKS=	af_ZA-pack-${LANGVERSION}${EXTRACT_SUFX} \
 		zh_CN-pack-${LANGVERSION}${EXTRACT_SUFX} \
 		zh_TW-pack-${LANGVERSION}${EXTRACT_SUFX} \
 		zh_TW.utf8-pack-${LANGVERSION}${EXTRACT_SUFX}
+PLIST_SUB=		NLS=""
+.else
+PLIST_SUB=		NLS="@comment "
+.endif
 
 USE_PHP=	yes
 WANT_PHP_WEB=	yes
@@ -63,7 +68,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 DOCFILES=	AUTHORS ChangeLog README
 EXCEPTFILES=	${DOCFILES} LICENSE.txt
 CPIOARGS=	--quiet -pdum -R
-PLIST_SUB=	GALLERYDIR=${GALLERYDIR}
+PLIST_SUB+=	GALLERYDIR=${GALLERYDIR}
 
 pre-fetch:
 .if !defined(GALLERYDIR)

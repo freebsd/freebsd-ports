@@ -249,199 +249,199 @@
 %%GALLERYDIR%%/layout/navtableend.inc
 %%GALLERYDIR%%/layout/navtablemiddle.inc
 %%GALLERYDIR%%/layout/searchdraw.inc
-%%GALLERYDIR%%/locale/af_ZA/LC_MESSAGES/af_ZA-gallery_config.mo
-%%GALLERYDIR%%/locale/af_ZA/LC_MESSAGES/af_ZA-gallery_core.mo
-%%GALLERYDIR%%/locale/af_ZA/af_ZA-gallery_config.po
-%%GALLERYDIR%%/locale/af_ZA/af_ZA-gallery_core.po
-%%GALLERYDIR%%/locale/af_ZA/af_ZA-nls.php
-%%GALLERYDIR%%/locale/af_ZA/flagimage/af_ZA.gif
-%%GALLERYDIR%%/locale/bg_BG/LC_MESSAGES/bg_BG-gallery_config.mo
-%%GALLERYDIR%%/locale/bg_BG/LC_MESSAGES/bg_BG-gallery_core.mo
-%%GALLERYDIR%%/locale/bg_BG/bg_BG-gallery_config.po
-%%GALLERYDIR%%/locale/bg_BG/bg_BG-gallery_core.po
-%%GALLERYDIR%%/locale/bg_BG/bg_BG-nls.php
-%%GALLERYDIR%%/locale/bg_BG/flagimage/bg_BG.gif
-%%GALLERYDIR%%/locale/ca_ES/LC_MESSAGES/ca_ES-gallery_config.mo
-%%GALLERYDIR%%/locale/ca_ES/LC_MESSAGES/ca_ES-gallery_core.mo
-%%GALLERYDIR%%/locale/ca_ES/ca_ES-gallery_config.po
-%%GALLERYDIR%%/locale/ca_ES/ca_ES-gallery_core.po
-%%GALLERYDIR%%/locale/ca_ES/ca_ES-nls.php
-%%GALLERYDIR%%/locale/ca_ES/flagimage/ca_ES.gif
-%%GALLERYDIR%%/locale/cs_CZ.cp1250/LC_MESSAGES/cs_CZ.cp1250-gallery_config.mo
-%%GALLERYDIR%%/locale/cs_CZ.cp1250/LC_MESSAGES/cs_CZ.cp1250-gallery_core.mo
-%%GALLERYDIR%%/locale/cs_CZ.cp1250/cs_CZ.cp1250-gallery_config.po
-%%GALLERYDIR%%/locale/cs_CZ.cp1250/cs_CZ.cp1250-gallery_core.po
-%%GALLERYDIR%%/locale/cs_CZ.cp1250/cs_CZ.cp1250-nls.php
-%%GALLERYDIR%%/locale/cs_CZ.cp1250/flagimage/cs_CZ.cp1250.gif
-%%GALLERYDIR%%/locale/da_DK/LC_MESSAGES/da_DK-gallery_config.mo
-%%GALLERYDIR%%/locale/da_DK/LC_MESSAGES/da_DK-gallery_core.mo
-%%GALLERYDIR%%/locale/da_DK/da_DK-gallery_config.po
-%%GALLERYDIR%%/locale/da_DK/da_DK-gallery_core.po
-%%GALLERYDIR%%/locale/da_DK/da_DK-nls.php
-%%GALLERYDIR%%/locale/da_DK/flagimage/da_DK.gif
-%%GALLERYDIR%%/locale/de_DE/LC_MESSAGES/de_DE-gallery_config.mo
-%%GALLERYDIR%%/locale/de_DE/LC_MESSAGES/de_DE-gallery_core.mo
-%%GALLERYDIR%%/locale/de_DE/de_DE-gallery_config.po
-%%GALLERYDIR%%/locale/de_DE/de_DE-gallery_core.po
-%%GALLERYDIR%%/locale/de_DE/de_DE-nls.php
-%%GALLERYDIR%%/locale/de_DE/flagimage/de_DE.gif
-%%GALLERYDIR%%/locale/en_GB/LC_MESSAGES/en_GB-gallery_config.mo
-%%GALLERYDIR%%/locale/en_GB/LC_MESSAGES/en_GB-gallery_core.mo
-%%GALLERYDIR%%/locale/en_GB/en_GB-gallery_config.po
-%%GALLERYDIR%%/locale/en_GB/en_GB-gallery_core.po
-%%GALLERYDIR%%/locale/en_GB/en_GB-nls.php
-%%GALLERYDIR%%/locale/en_GB/flagimage/en_GB.gif
+%%NLS%%%%GALLERYDIR%%/locale/af_ZA/LC_MESSAGES/af_ZA-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/af_ZA/LC_MESSAGES/af_ZA-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/af_ZA/af_ZA-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/af_ZA/af_ZA-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/af_ZA/af_ZA-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/af_ZA/flagimage/af_ZA.gif
+%%NLS%%%%GALLERYDIR%%/locale/bg_BG/LC_MESSAGES/bg_BG-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/bg_BG/LC_MESSAGES/bg_BG-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/bg_BG/bg_BG-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/bg_BG/bg_BG-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/bg_BG/bg_BG-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/bg_BG/flagimage/bg_BG.gif
+%%NLS%%%%GALLERYDIR%%/locale/ca_ES/LC_MESSAGES/ca_ES-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/ca_ES/LC_MESSAGES/ca_ES-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/ca_ES/ca_ES-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/ca_ES/ca_ES-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/ca_ES/ca_ES-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/ca_ES/flagimage/ca_ES.gif
+%%NLS%%%%GALLERYDIR%%/locale/cs_CZ.cp1250/LC_MESSAGES/cs_CZ.cp1250-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/cs_CZ.cp1250/LC_MESSAGES/cs_CZ.cp1250-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/cs_CZ.cp1250/cs_CZ.cp1250-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/cs_CZ.cp1250/cs_CZ.cp1250-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/cs_CZ.cp1250/cs_CZ.cp1250-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/cs_CZ.cp1250/flagimage/cs_CZ.cp1250.gif
+%%NLS%%%%GALLERYDIR%%/locale/da_DK/LC_MESSAGES/da_DK-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/da_DK/LC_MESSAGES/da_DK-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/da_DK/da_DK-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/da_DK/da_DK-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/da_DK/da_DK-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/da_DK/flagimage/da_DK.gif
+%%NLS%%%%GALLERYDIR%%/locale/de_DE/LC_MESSAGES/de_DE-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/de_DE/LC_MESSAGES/de_DE-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/de_DE/de_DE-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/de_DE/de_DE-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/de_DE/de_DE-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/de_DE/flagimage/de_DE.gif
+%%NLS%%%%GALLERYDIR%%/locale/en_GB/LC_MESSAGES/en_GB-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/en_GB/LC_MESSAGES/en_GB-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/en_GB/en_GB-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/en_GB/en_GB-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/en_GB/en_GB-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/en_GB/flagimage/en_GB.gif
 %%GALLERYDIR%%/locale/en_US/flagimage/en_US.gif
-%%GALLERYDIR%%/locale/es_ES/LC_MESSAGES/es_ES-gallery_config.mo
-%%GALLERYDIR%%/locale/es_ES/LC_MESSAGES/es_ES-gallery_core.mo
-%%GALLERYDIR%%/locale/es_ES/es_ES-gallery_config.po
-%%GALLERYDIR%%/locale/es_ES/es_ES-gallery_core.po
-%%GALLERYDIR%%/locale/es_ES/es_ES-nls.php
-%%GALLERYDIR%%/locale/es_ES/flagimage/es_ES.gif
-%%GALLERYDIR%%/locale/fi_FI/LC_MESSAGES/fi_FI-gallery_config.mo
-%%GALLERYDIR%%/locale/fi_FI/LC_MESSAGES/fi_FI-gallery_core.mo
-%%GALLERYDIR%%/locale/fi_FI/fi_FI-gallery_config.po
-%%GALLERYDIR%%/locale/fi_FI/fi_FI-gallery_core.po
-%%GALLERYDIR%%/locale/fi_FI/fi_FI-nls.php
-%%GALLERYDIR%%/locale/fi_FI/flagimage/fi_FI.gif
-%%GALLERYDIR%%/locale/fr_FR/LC_MESSAGES/fr_FR-gallery_config.mo
-%%GALLERYDIR%%/locale/fr_FR/LC_MESSAGES/fr_FR-gallery_core.mo
-%%GALLERYDIR%%/locale/fr_FR/flagimage/fr_FR.gif
-%%GALLERYDIR%%/locale/fr_FR/fr_FR-gallery_config.po
-%%GALLERYDIR%%/locale/fr_FR/fr_FR-gallery_core.po
-%%GALLERYDIR%%/locale/fr_FR/fr_FR-nls.php
-%%GALLERYDIR%%/locale/he_IL/LC_MESSAGES/he_IL-gallery_config.mo
-%%GALLERYDIR%%/locale/he_IL/LC_MESSAGES/he_IL-gallery_core.mo
-%%GALLERYDIR%%/locale/he_IL/flagimage/he_IL.gif
-%%GALLERYDIR%%/locale/he_IL/he_IL-gallery_config.po
-%%GALLERYDIR%%/locale/he_IL/he_IL-gallery_core.po
-%%GALLERYDIR%%/locale/he_IL/he_IL-nls.php
-%%GALLERYDIR%%/locale/hu_HU/LC_MESSAGES/hu_HU-gallery_config.mo
-%%GALLERYDIR%%/locale/hu_HU/LC_MESSAGES/hu_HU-gallery_core.mo
-%%GALLERYDIR%%/locale/hu_HU/flagimage/hu_HU.gif
-%%GALLERYDIR%%/locale/hu_HU/hu_HU-gallery_config.po
-%%GALLERYDIR%%/locale/hu_HU/hu_HU-gallery_core.po
-%%GALLERYDIR%%/locale/hu_HU/hu_HU-nls.php
-%%GALLERYDIR%%/locale/is_IS/LC_MESSAGES/is_IS-gallery_config.mo
-%%GALLERYDIR%%/locale/is_IS/LC_MESSAGES/is_IS-gallery_core.mo
-%%GALLERYDIR%%/locale/is_IS/flagimage/is_IS.gif
-%%GALLERYDIR%%/locale/is_IS/is_IS-gallery_config.po
-%%GALLERYDIR%%/locale/is_IS/is_IS-gallery_core.po
-%%GALLERYDIR%%/locale/is_IS/is_IS-nls.php
-%%GALLERYDIR%%/locale/it_IT/LC_MESSAGES/it_IT-gallery_config.mo
-%%GALLERYDIR%%/locale/it_IT/LC_MESSAGES/it_IT-gallery_core.mo
-%%GALLERYDIR%%/locale/it_IT/flagimage/it_IT.gif
-%%GALLERYDIR%%/locale/it_IT/it_IT-gallery_config.po
-%%GALLERYDIR%%/locale/it_IT/it_IT-gallery_core.po
-%%GALLERYDIR%%/locale/it_IT/it_IT-nls.php
-%%GALLERYDIR%%/locale/ja_JP/LC_MESSAGES/ja_JP-gallery_config.mo
-%%GALLERYDIR%%/locale/ja_JP/LC_MESSAGES/ja_JP-gallery_core.mo
-%%GALLERYDIR%%/locale/ja_JP/flagimage/ja_JP.gif
-%%GALLERYDIR%%/locale/ja_JP/ja_JP-gallery_config.po
-%%GALLERYDIR%%/locale/ja_JP/ja_JP-gallery_core.po
-%%GALLERYDIR%%/locale/ja_JP/ja_JP-nls.php
-%%GALLERYDIR%%/locale/ko_KR/LC_MESSAGES/ko_KR-gallery_config.mo
-%%GALLERYDIR%%/locale/ko_KR/LC_MESSAGES/ko_KR-gallery_core.mo
-%%GALLERYDIR%%/locale/ko_KR/flagimage/ko_KR.gif
-%%GALLERYDIR%%/locale/ko_KR/ko_KR-gallery_config.po
-%%GALLERYDIR%%/locale/ko_KR/ko_KR-gallery_core.po
-%%GALLERYDIR%%/locale/ko_KR/ko_KR-nls.php
-%%GALLERYDIR%%/locale/lt_LT/LC_MESSAGES/lt_LT-gallery_config.mo
-%%GALLERYDIR%%/locale/lt_LT/LC_MESSAGES/lt_LT-gallery_core.mo
-%%GALLERYDIR%%/locale/lt_LT/flagimage/lt_LT.gif
-%%GALLERYDIR%%/locale/lt_LT/lt_LT-gallery_config.po
-%%GALLERYDIR%%/locale/lt_LT/lt_LT-gallery_core.po
-%%GALLERYDIR%%/locale/lt_LT/lt_LT-nls.php
-%%GALLERYDIR%%/locale/nl_NL/LC_MESSAGES/nl_NL-gallery_config.mo
-%%GALLERYDIR%%/locale/nl_NL/LC_MESSAGES/nl_NL-gallery_core.mo
-%%GALLERYDIR%%/locale/nl_NL/flagimage/nl_NL.gif
-%%GALLERYDIR%%/locale/nl_NL/nl_NL-gallery_config.po
-%%GALLERYDIR%%/locale/nl_NL/nl_NL-gallery_core.po
-%%GALLERYDIR%%/locale/nl_NL/nl_NL-nls.php
-%%GALLERYDIR%%/locale/no_NO/LC_MESSAGES/no_NO-gallery_config.mo
-%%GALLERYDIR%%/locale/no_NO/LC_MESSAGES/no_NO-gallery_core.mo
-%%GALLERYDIR%%/locale/no_NO/flagimage/no_NO.gif
-%%GALLERYDIR%%/locale/no_NO/no_NO-gallery_config.po
-%%GALLERYDIR%%/locale/no_NO/no_NO-gallery_core.po
-%%GALLERYDIR%%/locale/no_NO/no_NO-nls.php
-%%GALLERYDIR%%/locale/pl_PL/LC_MESSAGES/pl_PL-gallery_config.mo
-%%GALLERYDIR%%/locale/pl_PL/LC_MESSAGES/pl_PL-gallery_core.mo
-%%GALLERYDIR%%/locale/pl_PL/flagimage/pl_PL.gif
-%%GALLERYDIR%%/locale/pl_PL/pl_PL-gallery_config.po
-%%GALLERYDIR%%/locale/pl_PL/pl_PL-gallery_core.po
-%%GALLERYDIR%%/locale/pl_PL/pl_PL-nls.php
-%%GALLERYDIR%%/locale/pt_BR/LC_MESSAGES/pt_BR-gallery_config.mo
-%%GALLERYDIR%%/locale/pt_BR/LC_MESSAGES/pt_BR-gallery_core.mo
-%%GALLERYDIR%%/locale/pt_BR/flagimage/pt_BR.gif
-%%GALLERYDIR%%/locale/pt_BR/pt_BR-gallery_config.po
-%%GALLERYDIR%%/locale/pt_BR/pt_BR-gallery_core.po
-%%GALLERYDIR%%/locale/pt_BR/pt_BR-nls.php
-%%GALLERYDIR%%/locale/pt_PT/LC_MESSAGES/pt_PT-gallery_config.mo
-%%GALLERYDIR%%/locale/pt_PT/LC_MESSAGES/pt_PT-gallery_core.mo
-%%GALLERYDIR%%/locale/pt_PT/flagimage/pt_PT.gif
-%%GALLERYDIR%%/locale/pt_PT/pt_PT-gallery_config.po
-%%GALLERYDIR%%/locale/pt_PT/pt_PT-gallery_core.po
-%%GALLERYDIR%%/locale/pt_PT/pt_PT-nls.php
-%%GALLERYDIR%%/locale/ru_RU/LC_MESSAGES/ru_RU-gallery_config.mo
-%%GALLERYDIR%%/locale/ru_RU/LC_MESSAGES/ru_RU-gallery_core.mo
-%%GALLERYDIR%%/locale/ru_RU/flagimage/ru_RU.gif
-%%GALLERYDIR%%/locale/ru_RU/ru_RU-gallery_config.po
-%%GALLERYDIR%%/locale/ru_RU/ru_RU-gallery_core.po
-%%GALLERYDIR%%/locale/ru_RU/ru_RU-nls.php
-%%GALLERYDIR%%/locale/ru_RU.koi8r/LC_MESSAGES/ru_RU.koi8r-gallery_config.mo
-%%GALLERYDIR%%/locale/ru_RU.koi8r/LC_MESSAGES/ru_RU.koi8r-gallery_core.mo
-%%GALLERYDIR%%/locale/ru_RU.koi8r/flagimage/ru_RU.koi8r.gif
-%%GALLERYDIR%%/locale/ru_RU.koi8r/ru_RU.koi8r-gallery_config.po
-%%GALLERYDIR%%/locale/ru_RU.koi8r/ru_RU.koi8r-gallery_core.po
-%%GALLERYDIR%%/locale/ru_RU.koi8r/ru_RU.koi8r-nls.php
-%%GALLERYDIR%%/locale/sl_SI/LC_MESSAGES/sl_SI-gallery_config.mo
-%%GALLERYDIR%%/locale/sl_SI/LC_MESSAGES/sl_SI-gallery_core.mo
-%%GALLERYDIR%%/locale/sl_SI/flagimage/sl_SI.gif
-%%GALLERYDIR%%/locale/sl_SI/sl_SI-gallery_config.po
-%%GALLERYDIR%%/locale/sl_SI/sl_SI-gallery_core.po
-%%GALLERYDIR%%/locale/sl_SI/sl_SI-nls.php
-%%GALLERYDIR%%/locale/sv_SE/LC_MESSAGES/sv_SE-gallery_config.mo
-%%GALLERYDIR%%/locale/sv_SE/LC_MESSAGES/sv_SE-gallery_core.mo
-%%GALLERYDIR%%/locale/sv_SE/flagimage/sv_SE.gif
-%%GALLERYDIR%%/locale/sv_SE/sv_SE-gallery_config.po
-%%GALLERYDIR%%/locale/sv_SE/sv_SE-gallery_core.po
-%%GALLERYDIR%%/locale/sv_SE/sv_SE-nls.php
-%%GALLERYDIR%%/locale/tr_TR/LC_MESSAGES/tr_TR-gallery_config.mo
-%%GALLERYDIR%%/locale/tr_TR/LC_MESSAGES/tr_TR-gallery_core.mo
-%%GALLERYDIR%%/locale/tr_TR/flagimage/tr_TR.gif
-%%GALLERYDIR%%/locale/tr_TR/tr_TR-gallery_config.po
-%%GALLERYDIR%%/locale/tr_TR/tr_TR-gallery_core.po
-%%GALLERYDIR%%/locale/tr_TR/tr_TR-nls.php
-%%GALLERYDIR%%/locale/uk_UA/LC_MESSAGES/uk_UA-gallery_config.mo
-%%GALLERYDIR%%/locale/uk_UA/LC_MESSAGES/uk_UA-gallery_core.mo
-%%GALLERYDIR%%/locale/uk_UA/flagimage/uk_UA.gif
-%%GALLERYDIR%%/locale/uk_UA/uk_UA-gallery_config.po
-%%GALLERYDIR%%/locale/uk_UA/uk_UA-gallery_core.po
-%%GALLERYDIR%%/locale/uk_UA/uk_UA-nls.php
-%%GALLERYDIR%%/locale/vi_VN/LC_MESSAGES/vi_VN-gallery_config.mo
-%%GALLERYDIR%%/locale/vi_VN/LC_MESSAGES/vi_VN-gallery_core.mo
-%%GALLERYDIR%%/locale/vi_VN/flagimage/vi_VN.gif
-%%GALLERYDIR%%/locale/vi_VN/vi_VN-gallery_config.po
-%%GALLERYDIR%%/locale/vi_VN/vi_VN-gallery_core.po
-%%GALLERYDIR%%/locale/vi_VN/vi_VN-nls.php
-%%GALLERYDIR%%/locale/zh_CN/LC_MESSAGES/zh_CN-gallery_config.mo
-%%GALLERYDIR%%/locale/zh_CN/LC_MESSAGES/zh_CN-gallery_core.mo
-%%GALLERYDIR%%/locale/zh_CN/flagimage/zh_CN.gif
-%%GALLERYDIR%%/locale/zh_CN/zh_CN-gallery_config.po
-%%GALLERYDIR%%/locale/zh_CN/zh_CN-gallery_core.po
-%%GALLERYDIR%%/locale/zh_CN/zh_CN-nls.php
-%%GALLERYDIR%%/locale/zh_TW.utf8/LC_MESSAGES/zh_TW.utf8-gallery_config.mo
-%%GALLERYDIR%%/locale/zh_TW.utf8/LC_MESSAGES/zh_TW.utf8-gallery_core.mo
-%%GALLERYDIR%%/locale/zh_TW.utf8/flagimage/zh_TW.utf8.gif
-%%GALLERYDIR%%/locale/zh_TW.utf8/zh_TW.utf8-gallery_config.po
-%%GALLERYDIR%%/locale/zh_TW.utf8/zh_TW.utf8-gallery_core.po
-%%GALLERYDIR%%/locale/zh_TW.utf8/zh_TW.utf8-nls.php
-%%GALLERYDIR%%/locale/zh_TW/LC_MESSAGES/zh_TW-gallery_config.mo
-%%GALLERYDIR%%/locale/zh_TW/LC_MESSAGES/zh_TW-gallery_core.mo
-%%GALLERYDIR%%/locale/zh_TW/flagimage/zh_TW.gif
-%%GALLERYDIR%%/locale/zh_TW/zh_TW-gallery_config.po
-%%GALLERYDIR%%/locale/zh_TW/zh_TW-gallery_core.po
-%%GALLERYDIR%%/locale/zh_TW/zh_TW-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/es_ES/LC_MESSAGES/es_ES-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/es_ES/LC_MESSAGES/es_ES-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/es_ES/es_ES-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/es_ES/es_ES-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/es_ES/es_ES-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/es_ES/flagimage/es_ES.gif
+%%NLS%%%%GALLERYDIR%%/locale/fi_FI/LC_MESSAGES/fi_FI-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/fi_FI/LC_MESSAGES/fi_FI-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/fi_FI/fi_FI-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/fi_FI/fi_FI-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/fi_FI/fi_FI-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/fi_FI/flagimage/fi_FI.gif
+%%NLS%%%%GALLERYDIR%%/locale/fr_FR/LC_MESSAGES/fr_FR-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/fr_FR/LC_MESSAGES/fr_FR-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/fr_FR/flagimage/fr_FR.gif
+%%NLS%%%%GALLERYDIR%%/locale/fr_FR/fr_FR-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/fr_FR/fr_FR-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/fr_FR/fr_FR-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/he_IL/LC_MESSAGES/he_IL-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/he_IL/LC_MESSAGES/he_IL-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/he_IL/flagimage/he_IL.gif
+%%NLS%%%%GALLERYDIR%%/locale/he_IL/he_IL-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/he_IL/he_IL-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/he_IL/he_IL-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/hu_HU/LC_MESSAGES/hu_HU-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/hu_HU/LC_MESSAGES/hu_HU-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/hu_HU/flagimage/hu_HU.gif
+%%NLS%%%%GALLERYDIR%%/locale/hu_HU/hu_HU-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/hu_HU/hu_HU-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/hu_HU/hu_HU-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/is_IS/LC_MESSAGES/is_IS-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/is_IS/LC_MESSAGES/is_IS-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/is_IS/flagimage/is_IS.gif
+%%NLS%%%%GALLERYDIR%%/locale/is_IS/is_IS-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/is_IS/is_IS-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/is_IS/is_IS-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/it_IT/LC_MESSAGES/it_IT-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/it_IT/LC_MESSAGES/it_IT-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/it_IT/flagimage/it_IT.gif
+%%NLS%%%%GALLERYDIR%%/locale/it_IT/it_IT-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/it_IT/it_IT-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/it_IT/it_IT-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/ja_JP/LC_MESSAGES/ja_JP-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/ja_JP/LC_MESSAGES/ja_JP-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/ja_JP/flagimage/ja_JP.gif
+%%NLS%%%%GALLERYDIR%%/locale/ja_JP/ja_JP-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/ja_JP/ja_JP-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/ja_JP/ja_JP-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/ko_KR/LC_MESSAGES/ko_KR-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/ko_KR/LC_MESSAGES/ko_KR-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/ko_KR/flagimage/ko_KR.gif
+%%NLS%%%%GALLERYDIR%%/locale/ko_KR/ko_KR-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/ko_KR/ko_KR-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/ko_KR/ko_KR-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/lt_LT/LC_MESSAGES/lt_LT-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/lt_LT/LC_MESSAGES/lt_LT-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/lt_LT/flagimage/lt_LT.gif
+%%NLS%%%%GALLERYDIR%%/locale/lt_LT/lt_LT-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/lt_LT/lt_LT-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/lt_LT/lt_LT-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/nl_NL/LC_MESSAGES/nl_NL-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/nl_NL/LC_MESSAGES/nl_NL-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/nl_NL/flagimage/nl_NL.gif
+%%NLS%%%%GALLERYDIR%%/locale/nl_NL/nl_NL-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/nl_NL/nl_NL-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/nl_NL/nl_NL-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/no_NO/LC_MESSAGES/no_NO-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/no_NO/LC_MESSAGES/no_NO-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/no_NO/flagimage/no_NO.gif
+%%NLS%%%%GALLERYDIR%%/locale/no_NO/no_NO-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/no_NO/no_NO-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/no_NO/no_NO-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/pl_PL/LC_MESSAGES/pl_PL-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/pl_PL/LC_MESSAGES/pl_PL-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/pl_PL/flagimage/pl_PL.gif
+%%NLS%%%%GALLERYDIR%%/locale/pl_PL/pl_PL-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/pl_PL/pl_PL-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/pl_PL/pl_PL-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/pt_BR/LC_MESSAGES/pt_BR-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/pt_BR/LC_MESSAGES/pt_BR-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/pt_BR/flagimage/pt_BR.gif
+%%NLS%%%%GALLERYDIR%%/locale/pt_BR/pt_BR-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/pt_BR/pt_BR-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/pt_BR/pt_BR-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/pt_PT/LC_MESSAGES/pt_PT-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/pt_PT/LC_MESSAGES/pt_PT-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/pt_PT/flagimage/pt_PT.gif
+%%NLS%%%%GALLERYDIR%%/locale/pt_PT/pt_PT-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/pt_PT/pt_PT-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/pt_PT/pt_PT-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/ru_RU/LC_MESSAGES/ru_RU-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/ru_RU/LC_MESSAGES/ru_RU-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/ru_RU/flagimage/ru_RU.gif
+%%NLS%%%%GALLERYDIR%%/locale/ru_RU/ru_RU-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/ru_RU/ru_RU-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/ru_RU/ru_RU-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/ru_RU.koi8r/LC_MESSAGES/ru_RU.koi8r-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/ru_RU.koi8r/LC_MESSAGES/ru_RU.koi8r-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/ru_RU.koi8r/flagimage/ru_RU.koi8r.gif
+%%NLS%%%%GALLERYDIR%%/locale/ru_RU.koi8r/ru_RU.koi8r-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/ru_RU.koi8r/ru_RU.koi8r-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/ru_RU.koi8r/ru_RU.koi8r-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/sl_SI/LC_MESSAGES/sl_SI-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/sl_SI/LC_MESSAGES/sl_SI-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/sl_SI/flagimage/sl_SI.gif
+%%NLS%%%%GALLERYDIR%%/locale/sl_SI/sl_SI-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/sl_SI/sl_SI-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/sl_SI/sl_SI-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/sv_SE/LC_MESSAGES/sv_SE-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/sv_SE/LC_MESSAGES/sv_SE-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/sv_SE/flagimage/sv_SE.gif
+%%NLS%%%%GALLERYDIR%%/locale/sv_SE/sv_SE-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/sv_SE/sv_SE-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/sv_SE/sv_SE-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/tr_TR/LC_MESSAGES/tr_TR-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/tr_TR/LC_MESSAGES/tr_TR-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/tr_TR/flagimage/tr_TR.gif
+%%NLS%%%%GALLERYDIR%%/locale/tr_TR/tr_TR-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/tr_TR/tr_TR-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/tr_TR/tr_TR-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/uk_UA/LC_MESSAGES/uk_UA-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/uk_UA/LC_MESSAGES/uk_UA-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/uk_UA/flagimage/uk_UA.gif
+%%NLS%%%%GALLERYDIR%%/locale/uk_UA/uk_UA-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/uk_UA/uk_UA-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/uk_UA/uk_UA-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/vi_VN/LC_MESSAGES/vi_VN-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/vi_VN/LC_MESSAGES/vi_VN-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/vi_VN/flagimage/vi_VN.gif
+%%NLS%%%%GALLERYDIR%%/locale/vi_VN/vi_VN-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/vi_VN/vi_VN-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/vi_VN/vi_VN-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/zh_CN/LC_MESSAGES/zh_CN-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/zh_CN/LC_MESSAGES/zh_CN-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/zh_CN/flagimage/zh_CN.gif
+%%NLS%%%%GALLERYDIR%%/locale/zh_CN/zh_CN-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/zh_CN/zh_CN-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/zh_CN/zh_CN-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/zh_TW.utf8/LC_MESSAGES/zh_TW.utf8-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/zh_TW.utf8/LC_MESSAGES/zh_TW.utf8-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/zh_TW.utf8/flagimage/zh_TW.utf8.gif
+%%NLS%%%%GALLERYDIR%%/locale/zh_TW.utf8/zh_TW.utf8-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/zh_TW.utf8/zh_TW.utf8-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/zh_TW.utf8/zh_TW.utf8-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/zh_TW/LC_MESSAGES/zh_TW-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/zh_TW/LC_MESSAGES/zh_TW-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/zh_TW/flagimage/zh_TW.gif
+%%NLS%%%%GALLERYDIR%%/locale/zh_TW/zh_TW-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/zh_TW/zh_TW-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/zh_TW/zh_TW-nls.php
 %%GALLERYDIR%%/login.php
 %%GALLERYDIR%%/manage_users.php
 %%GALLERYDIR%%/manifest.inc
@@ -754,104 +754,104 @@
 @dirrm %%GALLERYDIR%%/setup
 @dirrm %%GALLERYDIR%%/po
 @dirrm %%GALLERYDIR%%/platform
-@dirrm %%GALLERYDIR%%/locale/zh_TW/flagimage
-@dirrm %%GALLERYDIR%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/zh_TW.utf8/flagimage
-@dirrm %%GALLERYDIR%%/locale/zh_TW.utf8/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/zh_TW.utf8
-@dirrm %%GALLERYDIR%%/locale/zh_TW
-@dirrm %%GALLERYDIR%%/locale/zh_CN/flagimage
-@dirrm %%GALLERYDIR%%/locale/zh_CN/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/zh_CN
-@dirrm %%GALLERYDIR%%/locale/vi_VN/flagimage
-@dirrm %%GALLERYDIR%%/locale/vi_VN/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/vi_VN
-@dirrm %%GALLERYDIR%%/locale/uk_UA/flagimage
-@dirrm %%GALLERYDIR%%/locale/uk_UA/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/uk_UA
-@dirrm %%GALLERYDIR%%/locale/tr_TR/flagimage
-@dirrm %%GALLERYDIR%%/locale/tr_TR/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/tr_TR
-@dirrm %%GALLERYDIR%%/locale/sv_SE/flagimage
-@dirrm %%GALLERYDIR%%/locale/sv_SE/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/sv_SE
-@dirrm %%GALLERYDIR%%/locale/sl_SI/flagimage
-@dirrm %%GALLERYDIR%%/locale/sl_SI/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/sl_SI
-@dirrm %%GALLERYDIR%%/locale/ru_RU.koi8r/flagimage
-@dirrm %%GALLERYDIR%%/locale/ru_RU.koi8r/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/ru_RU.koi8r
-@dirrm %%GALLERYDIR%%/locale/ru_RU/flagimage
-@dirrm %%GALLERYDIR%%/locale/ru_RU/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/ru_RU
-@dirrm %%GALLERYDIR%%/locale/pt_PT/flagimage
-@dirrm %%GALLERYDIR%%/locale/pt_PT/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/pt_PT
-@dirrm %%GALLERYDIR%%/locale/pt_BR/flagimage
-@dirrm %%GALLERYDIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/pt_BR
-@dirrm %%GALLERYDIR%%/locale/pl_PL/flagimage
-@dirrm %%GALLERYDIR%%/locale/pl_PL/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/pl_PL
-@dirrm %%GALLERYDIR%%/locale/no_NO/flagimage
-@dirrm %%GALLERYDIR%%/locale/no_NO/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/no_NO
-@dirrm %%GALLERYDIR%%/locale/nl_NL/flagimage
-@dirrm %%GALLERYDIR%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/nl_NL
-@dirrm %%GALLERYDIR%%/locale/lt_LT/flagimage
-@dirrm %%GALLERYDIR%%/locale/lt_LT/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/lt_LT
-@dirrm %%GALLERYDIR%%/locale/ko_KR/flagimage
-@dirrm %%GALLERYDIR%%/locale/ko_KR/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/ko_KR
-@dirrm %%GALLERYDIR%%/locale/ja_JP/flagimage
-@dirrm %%GALLERYDIR%%/locale/ja_JP/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/ja_JP
-@dirrm %%GALLERYDIR%%/locale/it_IT/flagimage
-@dirrm %%GALLERYDIR%%/locale/it_IT/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/it_IT
-@dirrm %%GALLERYDIR%%/locale/is_IS/flagimage
-@dirrm %%GALLERYDIR%%/locale/is_IS/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/is_IS
-@dirrm %%GALLERYDIR%%/locale/hu_HU/flagimage
-@dirrm %%GALLERYDIR%%/locale/hu_HU/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/hu_HU
-@dirrm %%GALLERYDIR%%/locale/he_IL/flagimage
-@dirrm %%GALLERYDIR%%/locale/he_IL/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/he_IL
-@dirrm %%GALLERYDIR%%/locale/fr_FR/flagimage
-@dirrm %%GALLERYDIR%%/locale/fr_FR/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/fr_FR
-@dirrm %%GALLERYDIR%%/locale/fi_FI/flagimage
-@dirrm %%GALLERYDIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/fi_FI
-@dirrm %%GALLERYDIR%%/locale/es_ES/flagimage
-@dirrm %%GALLERYDIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/es_ES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_TW/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_TW.utf8/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_TW.utf8/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_TW.utf8
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_TW
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_CN/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_CN
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/vi_VN/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/vi_VN/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/vi_VN
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/uk_UA/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/uk_UA/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/uk_UA
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/tr_TR/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/tr_TR/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/tr_TR
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/sv_SE/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/sv_SE/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/sv_SE
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/sl_SI/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/sl_SI/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/sl_SI
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/ru_RU.koi8r/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/ru_RU.koi8r/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/ru_RU.koi8r
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/ru_RU/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/ru_RU/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/ru_RU
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/pt_PT/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/pt_PT/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/pt_PT
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/pt_BR/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/pt_BR
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/pl_PL/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/pl_PL/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/pl_PL
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/no_NO/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/no_NO/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/no_NO
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/nl_NL/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/nl_NL/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/nl_NL
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/lt_LT/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/lt_LT/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/lt_LT
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/ko_KR/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/ko_KR/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/ko_KR
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/ja_JP/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/ja_JP/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/ja_JP
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/it_IT/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/it_IT/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/it_IT
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/is_IS/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/is_IS/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/is_IS
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/hu_HU/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/hu_HU/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/hu_HU
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/he_IL/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/he_IL/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/he_IL
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/fr_FR/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/fr_FR/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/fr_FR
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/fi_FI/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/fi_FI/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/fi_FI
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/es_ES/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/es_ES/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/es_ES
 @dirrm %%GALLERYDIR%%/locale/en_US/flagimage
 @dirrm %%GALLERYDIR%%/locale/en_US
-@dirrm %%GALLERYDIR%%/locale/en_GB/flagimage
-@dirrm %%GALLERYDIR%%/locale/en_GB/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/en_GB
-@dirrm %%GALLERYDIR%%/locale/de_DE/flagimage
-@dirrm %%GALLERYDIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/de_DE
-@dirrm %%GALLERYDIR%%/locale/da_DK/flagimage
-@dirrm %%GALLERYDIR%%/locale/da_DK/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/da_DK
-@dirrm %%GALLERYDIR%%/locale/cs_CZ.cp1250/flagimage
-@dirrm %%GALLERYDIR%%/locale/cs_CZ.cp1250/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/cs_CZ.cp1250
-@dirrm %%GALLERYDIR%%/locale/ca_ES/flagimage
-@dirrm %%GALLERYDIR%%/locale/ca_ES/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/ca_ES
-@dirrm %%GALLERYDIR%%/locale/bg_BG/flagimage
-@dirrm %%GALLERYDIR%%/locale/bg_BG/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/bg_BG
-@dirrm %%GALLERYDIR%%/locale/af_ZA/flagimage
-@dirrm %%GALLERYDIR%%/locale/af_ZA/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/af_ZA
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/en_GB/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/en_GB/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/en_GB
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/de_DE/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/de_DE/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/de_DE
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/da_DK/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/da_DK/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/da_DK
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/cs_CZ.cp1250/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/cs_CZ.cp1250/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/cs_CZ.cp1250
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/ca_ES/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/ca_ES/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/ca_ES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/bg_BG/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/bg_BG/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/bg_BG
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/af_ZA/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/af_ZA/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/af_ZA
 @dirrm %%GALLERYDIR%%/locale
 @dirrm %%GALLERYDIR%%/layout
 @dirrm %%GALLERYDIR%%/js
