@@ -21,7 +21,7 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/qpage.sh ]; then \
 		${ECHO} "Install ${PREFIX}/etc/rc.d/qpage.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/qpage.sh \
-			${PREFIX}/etc/rc.d/qpage.sh \
+			${PREFIX}/etc/rc.d/qpage.sh; \
 	fi
 
 .include <bsd.port.mk>
