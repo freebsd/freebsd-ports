@@ -7,6 +7,7 @@
 
 PORTNAME=	libgnome
 PORTVERSION=	1.117.0
+PORTREVISION=	1
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta5
