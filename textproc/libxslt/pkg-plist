@@ -105,10 +105,14 @@ share/aclocal/libxslt.m4
 %%DOCSDIR%%/html/tutorial/libxslt_tutorial.c
 %%DOCSDIR%%/html/tutorial/libxslttutorial.html
 %%DOCSDIR%%/html/tutorial/libxslttutorial.xml
+%%DOCSDIR%%/html/tutorial2/libxslt_pipes.c
+%%DOCSDIR%%/html/tutorial2/libxslt_pipes.html
+%%DOCSDIR%%/html/tutorial2/libxslt_pipes.xml
 %%DOCSDIR%%/html/up.png
 %%DOCSDIR%%/html/xslt.html
 %%DOCSDIR%%/html/xsltproc.html
 %%DOCSDIR%%/html/xsltproc2.html
+@dirrm %%DOCSDIR%%/html/tutorial2
 @dirrm %%DOCSDIR%%/html/tutorial
 @dirrm %%DOCSDIR%%/html/EXSLT
 @dirrm %%DOCSDIR%%/html
