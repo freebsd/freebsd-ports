@@ -2,6 +2,7 @@
 #
 
     SUBDIR += aish
+    SUBDIR += base64
     SUBDIR += btoa
     SUBDIR += dumpasn1
     SUBDIR += fconv
