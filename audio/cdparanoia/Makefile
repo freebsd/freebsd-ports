@@ -7,7 +7,7 @@
 
 PORTNAME=	cdparanoia
 PORTVERSION=	3.9.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio sysutils
 MASTER_SITES=	http://www.xiph.org/paranoia/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/^3\./III-alpha/}
@@ -15,19 +15,20 @@ EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	corecode@corecode.ath.cx
 
+.if !exists(/usr/include/getopt.h)
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500041
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lgnugetopt"
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 .endif
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 MAN1=		cdparanoia.1
 
-.include <bsd.port.post.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's/\(^ *default:\)/\1break;/' ${WRKSRC}/interface/utils.h
+
+.include <bsd.port.mk>
