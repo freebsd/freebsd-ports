@@ -1,2 +1,4 @@
 bin/ups
-lib/X11/app-defaults/Ups
+share/doc/ups/FAQ
+share/doc/ups/README
+share/doc/ups/Ups
