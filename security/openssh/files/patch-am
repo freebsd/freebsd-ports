@@ -1,5 +1,5 @@
---- sshd/Makefile.orig	Thu Apr 27 06:31:57 2000
-+++ sshd/Makefile	Fri May 12 07:10:41 2000
+--- sshd/Makefile.orig	Wed Apr 26 17:31:57 2000
++++ sshd/Makefile	Sun Jul 30 15:09:25 2000
 @@ -3,14 +3,15 @@
  PROG=	sshd
  BINOWN=	root
@@ -18,6 +18,18 @@
  
  .if (${KERBEROS} == "yes")
  .if (${AFS} == "yes")
+@@ -18,9 +19,9 @@
+ LDADD+=  -lkafs
+ DPADD+=  ${LIBKRBAFS}
+ .endif # AFS
+-CFLAGS+= -DKRB4 -I${DESTDIR}/usr/include/kerberosIV
++CFLAGS+= -DKRB4 -I/usr/include/kerberosIV
+ SRCS+=	auth-krb4.c
+-LDADD+=	 -lkrb
++LDADD+=	 -lkrb -lcom_err
+ DPADD+=	 ${LIBKRB}
+ .endif # KERBEROS
+ 
 @@ -30,7 +31,7 @@
  
  .include <bsd.prog.mk>
