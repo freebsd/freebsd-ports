@@ -1,0 +1,13 @@
+lib/common-lisp/system-registry/port.asd
+lib/common-lisp/port/port.asd
+lib/common-lisp/port/port.system
+lib/common-lisp/port/ext.lisp
+lib/common-lisp/port/gray.lisp
+lib/common-lisp/port/net.lisp
+lib/common-lisp/port/path.lisp
+lib/common-lisp/port/proc.lisp
+lib/common-lisp/port/shell.lisp
+lib/common-lisp/port/sys.lisp
+%%PORTDOCS%%share/doc/cl-port/port.html
+@dirrm lib/common-lisp/port
+@dirrm share/doc/cl-port
