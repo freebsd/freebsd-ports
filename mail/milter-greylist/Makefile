@@ -30,6 +30,9 @@ post-extract:
 	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/milter-greylist.sh > ${WRKSRC}/milter-greylist.sh
 
+pre-install:
+	@${MKDIR} ${PREFIX}/etc/mail
+
 post-install:
 	@${MKDIR} /var/milter-greylist /var/db/milter-greylist
 	@${CHOWN} smmsp /var/milter-greylist /var/db/milter-greylist
