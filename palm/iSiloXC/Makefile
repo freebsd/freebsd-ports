@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	iSiloXC
-PORTVERSION=	3.15
+PORTVERSION=	3.2
 CATEGORIES=	palm textproc
 MASTER_SITES=	http://www.isilox.com/download/dl/
-DISTNAME=	iSiloXC315BSD
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}BSD
 
 MAINTAINER=	skv@FreeBSD.org
 
