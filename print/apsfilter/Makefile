@@ -3,10 +3,10 @@
 # Date created: 	Tue Nov 14 18:29:48 MET 1995
 # Whom: 		Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.20 1998/06/04 21:43:38 andreas Exp $
+# $Id: Makefile,v 1.21 1998/06/27 05:19:20 asami Exp $
 #
 
-DISTNAME=	apsfilter-4.9.7
+DISTNAME=	apsfilter-4.9.8
 CATEGORIES=	print
 MASTER_SITES=	http://www.FreeBSD.ORG/~andreas/download/
 
