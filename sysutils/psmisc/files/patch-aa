@@ -1,0 +1,68 @@
+--- Makefile.orig	Mon Jul 28 05:28:00 1997
++++ Makefile	Sat Dec 19 22:01:20 1998
+@@ -3,18 +3,20 @@
+   -Wall -Wno-parentheses -Wwrite-strings -Wpointer-arith \
+   # -Wcast-align -Wconversion -g
+ LDFLAGS=#-s -N #-Xlinker -qmagic
+-REAL_CPP=/lib/cpp
+-PROGS=killall pstree fuser
+-EBINDIR=/bin		# essential binaries
+-BINDIR=/usr/bin		# not so essential ones
+-MANDIR=/usr/man/man1	# all man pages
++REAL_CPP=gcc -E
++PROGS=killall pstree # fuser
++EBINDIR=${PREFIX}/bin		# essential binaries
++BINDIR=${PREFIX}/bin		# not so essential ones
++MANDIR=${PREFIX}/man/man1	# all man pages
++INSTALL_MAN=${BSD_INSTALL_MAN}
++INSTALL_BIN=${BSD_INSTALL_PROGRAM}
+ 
+ all:		$(PROGS)
+ 
+ signames.h:	/usr/include/signal.h
+-		$(REAL_CPP) -dM </usr/include/signal.h | \
++		$(REAL_CPP) -dM /usr/include/signal.h | \
+ 		tr -s '\t ' '  ' | sort -n +2 | sed \
+-	's:#define SIG\([A-Z]\+[0-9]*\) \([0-9]\+\) *\(\|/\*.*\)$$:{\
++	's:#define SIG\([A-Z][A-Z]*[0-9]*\) \([0-9][0-9]*\).*$$:{\
+ \2,"\1" },:p;d' \
+ 		  > signames.h
+ 
+@@ -25,27 +27,27 @@
+ 
+ fuser:		fuser.o signals.o
+ killall:	killall.o signals.o
++		$(CC) $(CFLAGS) $(LDFLAGS) -o killall killall.o signals.o -ltermcap
+ 
+ pstree:		pstree.c comm.h Makefile VERSION
+ 		$(CC) $(CFLAGS) $(LDFLAGS) -o pstree pstree.c -ltermcap
+ 
++install-all: install install-pidof
++
+ install:	$(PROGS)
+ #		EBINDIR is expected to exist, so we don't try to create it
+-		install -o 0 -g 0 -m 555 fuser $(EBINDIR)
++#		install -o 0 -g 0 -m 555 fuser $(EBINDIR)
+ 		[ -d $(BINDIR) ] || install -d -o 0 -g 0 -m 755 $(BINDIR)
+-		install -o 0 -g 0 -m 555 killall $(BINDIR)
+-		install -o 0 -g 0 -m 555 pstree $(BINDIR)
++		$(INSTALL_BIN) killall $(BINDIR)
++		$(INSTALL_BIN) pstree $(BINDIR)
+ 		[ -d $(MANDIR) ] || install -d -o 0 -g 0 -m 755 $(MANDIR)
+-		install -o 0 -g 0 -m 444 fuser.1 $(MANDIR)
+-		install -o 0 -g 0 -m 444 killall.1 $(MANDIR)
+-		install -o 0 -g 0 -m 444 pstree.1 $(MANDIR)
++#		install -o 0 -g 0 -m 444 fuser.1 $(MANDIR)
++		$(INSTALL_MAN) killall.1 $(MANDIR)
++		$(INSTALL_MAN) pstree.1 $(MANDIR)
+ 
+ install-pidof:
+-		@[ -x `echo $(BINDIR)`/killall ] || { \
+-		  echo "Need `echo $(BINDIR)`/killall to install pidof"; \
+-		  exit 1 }
+ 		ln -sf killall `echo $(BINDIR)`/pidof
+-		install -o 0 -g 0 -m 444 pidof.1 $(MANDIR)
++		$(INSTALL_MAN) pidof.1 $(MANDIR)
+ 
+ clean:
+ 		rm -f *.o signames.h

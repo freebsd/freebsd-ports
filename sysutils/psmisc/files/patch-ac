@@ -1,0 +1,72 @@
+--- pstree.c.orig	Tue Aug 26 12:09:05 1997
++++ pstree.c	Sat Dec 19 22:01:20 1998
+@@ -9,7 +9,6 @@
+ #include <ctype.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+-#include <getopt.h>
+ #include <pwd.h>
+ #include <dirent.h>
+ #include <termios.h>
+@@ -17,6 +16,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/ioctl.h>
++#include <sys/param.h>
+ 
+ #include "comm.h"
+ 
+@@ -387,8 +387,7 @@
+     char path[PATH_MAX+1],comm[COMM_LEN+1];
+     char *buffer;
+     pid_t pid,ppid;
+-    int fd,size;
+-    int empty,dummy;
++    int empty;
+ 
+     if (!print_args) buffer = NULL;
+     else if (!(buffer = malloc((size_t) (output_width+1)))) {
+@@ -402,31 +401,15 @@
+     empty = 1;
+     while (de = readdir(dir))
+ 	if (pid = atoi(de->d_name)) {
+-	    sprintf(path,"%s/%d/stat",PROC_BASE,pid);
++	    sprintf(path,"%s/%d/status",PROC_BASE,pid);
+ 	    if (file = fopen(path,"r")) {
+ 		empty = 0;
+ 		if (fstat(fileno(file),&st) < 0) {
+ 		    perror(path);
+ 		    exit(1);
+ 		}
+-		if (fscanf(file,"%d (%[^)]) %c %d",&dummy,comm,(char *) &dummy,
+-		  &ppid) == 4) {
+-		    if (!print_args) add_proc(comm,pid,ppid,st.st_uid,NULL,0);
+-		    else {
+-			sprintf(path,"%s/%d/cmdline",PROC_BASE,pid);
+-			if ((fd = open(path,O_RDONLY)) < 0) {
+-			    perror(path);
+-			    exit(1);
+-			}
+-			if ((size = read(fd,buffer,(size_t) output_width)) < 0)
+-			  {
+-			    perror(path);
+-			    exit(1);
+-			}
+-			(void) close(fd);
+-			if (size) buffer[size++] = 0;
+-			add_proc(comm,pid,ppid,st.st_uid,buffer,size);
+-		    }
++		if (fscanf(file,"%s %*d %d",comm,&ppid) == 2) {
++		    add_proc(comm,pid,ppid,st.st_uid,NULL,0);
+ 		}
+ 		(void) fclose(file);
+ 	    }
+@@ -500,7 +483,7 @@
+     while ((c = getopt(argc,argv,"acGhnpluUV")) != EOF)
+ 	switch (c) {
+ 	    case 'a':
+-		print_args = 1;
++		/* print_args = 1; */
+ 		break;
+ 	    case 'c':
+ 		compact = 0;

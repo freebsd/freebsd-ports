@@ -1,0 +1,3 @@
+bin/killall
+bin/pidof
+bin/pstree
