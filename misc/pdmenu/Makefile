@@ -1,14 +1,14 @@
 # New ports collection makefile for:	pdmenu
-# Version required:     1.2.48
 # Date created:		14 December 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
 # $FreeBSD$
 
-DISTNAME=       pdmenu_1.2.59
-PKGNAME=	pdmenu-1.2.59
+PORTNAME=	pdmenu
+PORTVERSION=	1.2.59
 CATEGORIES=	misc
 MASTER_SITES=	http://kitenet.net/programs/code/pdmenu/
+DISTNAME=       pdmenu_${PORTVERSION}
 
 MAINTAINER=	nbm@FreeBSD.org
 

@@ -1,17 +1,17 @@
 # New ports collection makefile for:	United Kingdom phone codes.
-# Version required:     1.0
 # Date created:         1998-01-01
 # Whom:                 wosch
 #
 # $FreeBSD$
 #
 
-DISTNAME=	uk.phone
-PKGNAME=        uk-phone-1.0
+PORTNAME=       phone
+PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=   ${MASTER_SITE_LOCAL} \
 		http://people.FreeBSD.org/~wosch/src/
-EXTRACT_SUFX=	.gz
+PKGNAMEPREFIX=	uk-
+DISTFILES=	uk.phone.gz
 
 MAINTAINER=     brian@FreeBSD.org
 

@@ -1,17 +1,17 @@
 # New ports collection makefile for:	USA zipcodes
-# Version required:     1.0
 # Date created:         1997-12-30
 # Whom:                 wosch
 #
 # $FreeBSD$
 #
 
-DISTNAME=	zipcodes
-PKGNAME=        us-zipcodes-1.0
+PORTNAME=       zipcodes
+PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=   ${MASTER_SITE_LOCAL} \
 		http://people.FreeBSD.org/~wosch/src/
-EXTRACT_SUFX=	.gz
+PKGNAMEPREFIX=	us-
+DISTFILES=	${PORTNAME}.gz
 
 MAINTAINER=     ports@FreeBSD.org
 

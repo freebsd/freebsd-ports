@@ -1,12 +1,12 @@
 # New ports collection makefile for:   cassowary
-# Version required:    0.55
 # Date created:        01 October 1999
 # Whom:                Yukihiro Nakai <nakai@FreeBSD>org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cassowary-0.55
+PORTNAME=	cassowary
+PORTVERSION=	0.55
 CATEGORIES=	misc
 MASTER_SITES=	http://www.cs.washington.edu/research/constraints/cassowary/
 

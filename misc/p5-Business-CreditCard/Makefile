@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-Business-CreditCard
-# Version required:			0.21
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Business-CreditCard-0.21
-PKGNAME=	p5-Business-CreditCard-0.21
+PORTNAME=	Business-CreditCard
+PORTVERSION=	0.21
 CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Business
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jfitz@FreeBSD.org
 

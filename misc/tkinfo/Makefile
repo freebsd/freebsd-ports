@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tkinfo
-# Version required:     2.4
 # Date created:         16 Jan 1995
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tkinfo-2.4
+PORTNAME=	tkinfo
+PORTVERSION=	2.4
 CATEGORIES=	misc tk82
 MASTER_SITES=	http://math-www.uni-paderborn.de/~axel/tkinfo/
 

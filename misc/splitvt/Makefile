@@ -1,13 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  Splitvt
-# Version required: 0.0
 # Date created:			  Fri Oct 4, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	splitvt-1.6.3
+PORTNAME=	splitvt
+PORTVERSION=	1.6.3
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/console

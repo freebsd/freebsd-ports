@@ -1,14 +1,14 @@
 # New ports collection makefile for:	wmMand
-# Version required:     1.0
 # Date created:		16 April 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
 
-DISTNAME=	wmMand-1.0
-PKGNAME=	wmmand-1.0
+PORTNAME=	wmmand
+PORTVERSION=	1.0
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
+DISTNAME=	wmMand-${PORTVERSION}
 
 MAINTAINER=	cpiazza@FreeBSD.org
 

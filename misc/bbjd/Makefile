@@ -1,12 +1,12 @@
 # New ports collection makefile for:	bbjd
-# Version required:	1.01
 # Date created:		3 February 1999
 # Whom:			Dima Sivachenko
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bbjd-1.01
+PORTNAME=	bbjd
+PORTVERSION=	1.01
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy

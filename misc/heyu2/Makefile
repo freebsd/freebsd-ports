@@ -1,15 +1,15 @@
 # New ports collection makefile for:	heyu
-# Version required:	1.28h
 # Date created:		27 December 1999
 # Whom:			plambert@plambert.net
 #
 # $FreeBSD$
 #
 
-DISTNAME=	x10_heyu
-PKGNAME=	heyu-1.28h
+PORTNAME=	heyu
+PORTVERSION=	1.28h
 CATEGORIES=	misc
 MASTER_SITES=	http://www.prado.com/~dbs/
+DISTNAME=	x10_heyu
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	plambert@plambert.net

@@ -6,11 +6,12 @@
 # $FreeBSD$
 #
 
-DISTNAME=	fileutils-4.0
-PKGNAME=	gnuls-4.0
+PORTNAME=	gnuls
+PORTVERSION=	4.0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	fileutils
+DISTNAME=	fileutils-${PORTVERSION}
 
 MAINTAINER=	bmc@WillsCreek.COM
 

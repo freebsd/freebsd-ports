@@ -1,13 +1,12 @@
 # New ports collection makefile for:	mmv
-# Version required:	1.01b
 # Date created:		2 Feb 1995
 # Whom:			Michael Elbel (me)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mmv
-PKGNAME=	mmv-1.01b
+PORTNAME=	mmv
+PORTVERSION=	1.01b
 CATEGORIES=	misc
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.unix/volume21/mmv/
 DISTFILES=	part01.Z part02.Z
@@ -19,7 +18,7 @@ MAINTAINER=	me@FreeBSD.org
 
 NO_CDROM=	"No redistribution for charge"
 NO_PACKAGE=	"No modification"
-DIST_SUBDIR=	${DISTNAME}
+DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes
 PATCH_DIST_ARGS=	-d ${WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP} mmv.c
 MAN1=		mmv.1

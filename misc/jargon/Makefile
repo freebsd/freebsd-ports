@@ -1,12 +1,12 @@
 # New ports collection makefile for:  jargon
-# Version required:	4.0.0
 # Date created: 	11 July 1998
 # Whom:			moeding
 #
 # $FreeBSD$
 #
 
-DISTNAME=	jargon-4.1.1
+PORTNAME=	jargon
+PORTVERSION=	4.1.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.tuxedo.org/~esr/jargon/                     \
 		http://www.nectar.com/distfiles/

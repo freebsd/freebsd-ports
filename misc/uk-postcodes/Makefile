@@ -1,17 +1,17 @@
 # New ports collection makefile for:	United Kingdom post codes.
-# Version required:     1.0
 # Date created:         1998-01-01
 # Whom:                 wosch
 #
 # $FreeBSD$
 #
 
-DISTNAME=	uk.postcodes
-PKGNAME=        uk-postcodes-1.0
+PORTNAME=       postcodes
+PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=   ${MASTER_SITE_LOCAL} \
 		http://people.FreeBSD.org/~wosch/src/
-EXTRACT_SUFX=	.gz
+PKGNAMEPREFIX=	uk-
+DISTFILES=	uk.postcodes.gz
 
 MAINTAINER=     brian@FreeBSD.org
 

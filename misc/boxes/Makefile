@@ -1,12 +1,12 @@
 # New ports collection makefile for:	boxes
-# Version required:			1.0
 # Date created:				3 March 2000
 # Whom:					Patrick Seal (patseal@hyperhost.net)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	boxes-1.0
+PORTNAME=	boxes
+PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=	http://www6.informatik.uni-erlangen.de/~tsjensen/software/boxes/download/ \
 		${MASTER_SITE_SUNSITE}

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	orville-write
-# Version required:	2.41a
 # Date created:		4 December 1999
 # Whom:			James Howard <howardj@wam.umd.edu>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	orville-write-2.41a
+PORTNAME=	orville-write
+PORTVERSION=	2.41a
 CATEGORIES=	misc
 MASTER_SITES=	http://www.wwnet.net/~janc/software/
 

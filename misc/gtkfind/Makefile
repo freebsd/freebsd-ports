@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gtkfind
-# Version required:			1.1
 # Date created:				28 Sept 1998
 # Whom:					Bill Fumerola <billf@chc-chimes.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gtkfind-1.1
+PORTNAME=	gtkfind
+PORTVERSION=	1.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.oz.net/~mattg/
 # metalab hasn't caught up yet...

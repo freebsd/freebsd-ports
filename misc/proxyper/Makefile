@@ -1,16 +1,16 @@
 # New ports collection makefile for:	distributed.net-v2personalproxy
-# Version required:     308
 # Date created:         31 Oct 1999
 # Whom:                 globalpanic@gmx.net
 #
 # $FreeBSD$
 #
 
-DISTNAME=	proxyper313-freebsd-x86
-PKGNAME=	proxyper-freebsd3-elf-x86-313
+PORTNAME=	proxyper-freebsd3-elf-x86
+PORTVERSION=	313
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/proxyper-rc5des/ \
 		http://http.distributed.net/pub/dcti/proxyper-rc5des/
+DISTNAME=	proxyper${PORTVERSION}-freebsd-x86
 
 MAINTAINER=	dbaker@FreeBSD.org
 

@@ -1,17 +1,17 @@
 # ports collection makefile for:	estic
-# Version required:			1.40
 # Date created:				21 Sep 1996
 # Whom:					Julian Stacey <jhs@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		estic-1.40-sources
-PKGNAME=		estic-1.40
+PORTNAME=		estic
+PORTVERSION=		1.40
 CATEGORIES=		misc
 MASTER_SITES=		ftp://linux01.gwdg.de/pub/isdn/estic/  \
 			ftp://ftp.franken.de/pub/isdn4linux/estic/  \
 			http://www.fast.de/~uli/isdn/estic/
+DISTNAME=		estic-${PORTVERSION}-sources
 
 MAINTAINER=		jhs@FreeBSD.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	unclutter
-# Version required:	-8
 # Date created:		03 Aug 1996
 # Whom:			shanee@augusta.de
 #
 # $FreeBSD$
 #
 
-DISTNAME=	unclutter-8
+PORTNAME=	unclutter
+PORTVERSION=	8
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities

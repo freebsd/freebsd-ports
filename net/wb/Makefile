@@ -1,12 +1,12 @@
 # New ports collection makefile for:	wb
-# Version required:     1.59
 # Date created:		2 Novermber 1996
 # Whom:			fenner
 #
 # $FreeBSD$
 #
 
-DISTNAME=       wb-1.59
+PORTNAME=       wb
+PORTVERSION=	1.59
 CATEGORIES=	mbone
 MASTER_SITES=   ftp://ftp.ee.lbl.gov/conferencing/wb/
 DISTFILES=      i386-wb-1.59.tar.Z
