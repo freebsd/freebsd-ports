@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ted
-PORTVERSION=	2.12
+PORTVERSION=	2.14
 CATEGORIES=	editors textproc print
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/
 EXTRACT_SUFX=	.src.tar.gz
