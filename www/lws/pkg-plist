@@ -22,8 +22,23 @@ etc/lws/admin/servers.tmpl
 etc/lws/admin/servlet.tmpl
 etc/lws/admin/stylesheet.css
 etc/lws/admin/vhost.tmpl
-etc/lws/docroot/index.tmpl
 etc/lws/bogus-ssl.crt
 etc/lws/bogus-ssl.key
+etc/lws/ca/.rnd
+etc/lws/ca/ca.crt
+etc/lws/ca/ca.key
+etc/lws/ca/cert.cfg
+etc/lws/ca/certs/01.pem
+etc/lws/ca/check_cert
+etc/lws/ca/index
+etc/lws/ca/index.old
+etc/lws/ca/serial
+etc/lws/ca/serial.old
 etc/lws/default-config.xml
+etc/lws/docroot/index.tmpl
+@dirrm etc/lws/docroot
+@dirrm etc/lws/ca/certs
+@dirrm etc/lws/ca
+@dirrm etc/lws/admin/help
+@dirrm etc/lws/admin
 @dirrm etc/lws
