@@ -1,4 +1,4 @@
-Kappdock is a kicker applet for KDE2 that is able to swallow small
+Kappdock is a kicker applet for KDE3 that is able to swallow small
 X-applications.  It was originally designed to embed WindowMaker
 dock applets, but it can also handle other programs.
 

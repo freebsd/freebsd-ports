@@ -1,2 +1,37 @@
 bin/kappdock
 share/applnk/Utilities/kappdock.desktop
+share/apps/kappdock/icons/kappdock-darker.png
+share/apps/kappdock/icons/kappdock-normal.png
+share/apps/kappdock/styles/darkblue.style
+share/apps/kappdock/styles/default.style
+share/apps/kappdock/styles/gradient.style
+share/apps/kappdock/styles/sample.stylerc
+share/apps/kappdock/styles/wood.style
+share/doc/HTML/en/doc/common
+share/doc/HTML/en/doc/index.cache.bz2
+share/doc/HTML/en/doc/index.docbook
+share/doc/HTML/en/doc/scrsht1.png
+share/doc/HTML/en/doc/scrsht2.png
+share/doc/HTML/en/doc/scrsht3.png
+share/icons/hicolor/32x32/apps/kappdock.png
+share/icons/hicolor/48x48/apps/kappdock.png
+share/icons/locolor/16x16/apps/kappdock.png
+share/icons/locolor/32x32/apps/kappdock.png
+@comment directories
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor
+@dirrm share/doc/HTML/en/doc
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
+@dirrm share/apps/kappdock/styles
+@dirrm share/apps/kappdock/icons
+@dirrm share/apps/kappdock
+@dirrm share/applnk/Utilities

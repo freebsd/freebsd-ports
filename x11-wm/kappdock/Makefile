@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	kappdock
-PORTVERSION=	0.43
-PORTREVISION=	1
+PORTVERSION=	0.46.1
+PORTREVISION=	0
 CATEGORIES=	x11-wm kde
 MASTER_SITES=	http://www.Informatik.Uni-Oldenburg.DE/~bigboss/kappdock/
+DISTNAME=	${PORTNAME}-0.46-1
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.46
 
 MAINTAINER=	jeremy@external.org
 
-LIB_DEPENDS=	kdeui.4:${PORTSDIR}/x11/kdelibs2 \
-		intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
-INSTALLS_SHLIB=	yes
-USE_XLIB=	yes
-USE_QT_VER=	2
+USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=
 CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include \
+		--enable-threads \
 		--disable-closure
 MAKE_ENV=	${CONFIGURE_ENV}
 USE_GMAKE=	yes
