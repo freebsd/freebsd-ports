@@ -72,6 +72,7 @@ share/gnome/pixmaps/sawfish.png
 %%GNOME:%%share/gnome/pixmaps/sawfish-tooltips.png
 %%GNOME:%%share/gnome/pixmaps/sawfish-workspaces.png
 %%GNOME:%%share/gnome/wm-properties/Sawfish.desktop
+share/locale/ca/LC_MESSAGES/sawfish.mo
 share/locale/da/LC_MESSAGES/sawfish.mo
 share/locale/de/LC_MESSAGES/sawfish.mo
 share/locale/el/LC_MESSAGES/sawfish.mo
@@ -91,6 +92,7 @@ share/locale/pl/LC_MESSAGES/sawfish.mo
 share/locale/pt_BR/LC_MESSAGES/sawfish.mo
 share/locale/pt_PT/LC_MESSAGES/sawfish.mo
 share/locale/ru/LC_MESSAGES/sawfish.mo
+share/locale/sk/LC_MESSAGES/sawfish.mo
 share/locale/sl/LC_MESSAGES/sawfish.mo
 share/locale/sv/LC_MESSAGES/sawfish.mo
 share/locale/tr/LC_MESSAGES/sawfish.mo
@@ -248,6 +250,8 @@ share/sawfish/%%VERSION%%/lisp/sawfish/wm/commands/size-window.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/commands/size-window.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/commands/slide-window.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/commands/slide-window.jlc
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/commands/viewport-extras.jl
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/commands/viewport-extras.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/commands/viewport-linear.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/commands/viewport-linear.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/commands/x-cycle.jl
@@ -306,10 +310,14 @@ share/sawfish/%%VERSION%%/lisp/sawfish/wm/misc.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/misc.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/placement.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/placement.jlc
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/placement/off-center.jl
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/placement/off-center.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/placement/smart.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/placement/smart.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/placement/stagger.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/placement/stagger.jlc
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/placement/top-left.jl
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/placement/top-left.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/server.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/server.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/session/init.jl
