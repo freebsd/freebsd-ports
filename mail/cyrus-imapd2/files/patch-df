@@ -1,10 +1,12 @@
 Index: master/service.c
 diff -u master/service.c.orig master/service.c
---- master/service.c.orig	Mon Dec 17 18:08:07 2001
-+++ master/service.c	Mon Dec 17 18:08:38 2001
-@@ -101,7 +101,11 @@
+--- master/service.c.orig	Thu Aug 15 06:02:41 2002
++++ master/service.c	Fri Aug 16 00:28:31 2002
+@@ -103,8 +103,13 @@
+     socklen_t len = sizeof(sin);
      
      /* is this a connection from the local host? */
++    memset(&sin, 0, len);
      if (getpeername(fd, (struct sockaddr *) &sin, &len) == 0) {
 -	if (((struct sockaddr *)&sin)->sa_family == AF_UNIX) {
 +	switch (((struct sockaddr *)&sin)->sa_family) {
