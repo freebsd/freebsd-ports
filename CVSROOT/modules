@@ -4133,6 +4133,7 @@ nsping		ports/net/nsping
 nspmod		ports/audio/nspmod
 nspostgres	ports/www/nspostgres
 nspr		ports/devel/nspr
+nss		ports/security/nss
 nstreams	ports/net/nstreams
 ntalk		ports/net/ntalk
 nte		ports/mbone/nte
