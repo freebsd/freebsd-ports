@@ -1,15 +1,15 @@
 # New ports collection makefile for:    napster
-# Version required:     0.9BETA
 # Date created:         Thu Nov 18 01:07:00 PST 1999
 # Whom:                 dburr@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nap-bsd-0.9BETA
-PKGNAME=	napster-0.9b
+PORTNAME=	napster
+PORTVERSION=	0.9b
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.gis.net/~nite/
+DISTNAME=	nap-bsd-0.9BETA
 
 MAINTAINER=	dburr@FreeBSD.org
 

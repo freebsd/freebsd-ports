@@ -1,15 +1,15 @@
 # ports collection makefile for:   lame
-# Version required:    3.50
 # Date created:        11 January 1998
 # Whom:                yoshiaki Uchikawa
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dist10
-PKGNAME=	lame-3.51
+PORTNAME=	lame
+PORTVERSION=	3.51
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.sunet.se/pub/multimedia/Berkeley/mpeg2/conformance-bitstreams/audio/mpeg2/software/technical_report/
+DISTNAME=	dist10
 
 PATCH_SITES=	http://www.sulaco.org/mp3/download/patches/
 PATCHFILES=	lame3.51.patch.gz

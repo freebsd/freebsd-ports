@@ -1,12 +1,12 @@
 # New ports collection makefile for: 	xmp
-# Version required:	xmp-2.0.1
 # Date created:		18 September 1999
 # Whom:			Anders Nordby <anders@fix.no>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xmp-2.0.1
+PORTNAME=	xmp
+PORTVERSION=	2.0.1
 CATEGORIES=	audio
 MASTER_SITES=	http://xmp.helllabs.org/pkg/2.0.1/ \
 		http://xmp.linuxbox.com/pkg/2.0.1/

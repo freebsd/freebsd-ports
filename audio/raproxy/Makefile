@@ -1,15 +1,15 @@
 # New ports collection makefile for:	raproxy
-# Version required:	3.0b1
 # Date created:		January 24, 1999
 # Whom:		mi@aldan.algebra.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	raproxy3.0b1
-PKGNAME=	raproxy-3.0b1
+PORTNAME=	raproxy
+PORTVERSION=	3.0b1
 CATEGORIES=	audio net
 MASTER_SITES=	http://docs.real.com/proxykit/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	nsayer@freebsd.org
 

@@ -1,16 +1,16 @@
-# New ports collection makefile for:	gnome-media
-# Version required:			1.0.51
+# New ports collection makefile for:	gnomemedia
 # Date created:				20 January 1999
 # Whom:					Jeremy Lea <reg@shale.csir.co.za>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnome-media-1.0.51
-PKGNAME=	gnomemedia-1.0.51
+PORTNAME=	gnomemedia
+PORTVERSION=	1.0.51
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-media
+DISTNAME=	gnome-media-${PORTVERSION}
 
 MAINTAINER=	reg@FreeBSD.org
 

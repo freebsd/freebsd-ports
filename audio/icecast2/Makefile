@@ -1,12 +1,12 @@
 # New ports collection makefile for:   icecast
-# Version required:	1.3.0
 # Date created:		28 Jan 1999
 # Whom:			Chip Marshall <chip@eboai.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	icecast-1.3.0
+PORTNAME=	icecast
+PORTVERSION=	1.3.0
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.icecast.org/releases/	\
 		ftp://ftp.eboai.org/pub/icecast/

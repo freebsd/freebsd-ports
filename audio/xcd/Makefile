@@ -1,12 +1,12 @@
 # New ports collection makefile for:    xcd
-# Version required:     1.7
 # Date created:         22 November 1994
 # Whom:                 jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xcd-1.7
+PORTNAME=	xcd
+PORTVERSION=	1.7
 CATEGORIES=	audio tk82
 MASTER_SITES=	http://people.FreeBSD.org/~jmz/
 

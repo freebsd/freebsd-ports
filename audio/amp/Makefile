@@ -1,12 +1,12 @@
 # New ports collection makefile for:	amp
-# Version required:	0.7.6
 # Date created:		Jun 23 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	amp-0.7.6
+PORTNAME=	amp
+PORTVERSION=	0.7.6
 CATEGORIES=	audio
 #MASTER_SITES=	ftp://ftp.rasip.fer.hr/pub/mpeg/
 # the author's site seems dead.

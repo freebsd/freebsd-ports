@@ -1,14 +1,15 @@
 # New ports collection makefile for:	rosegarden
-# Version required:	2.1pl2
 # Date created:		04 Aug 1996
 # Whom:			shanee@augusta.de
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rosegarden-2.1pl2
+PORTNAME=	rosegarden
+PORTVERSION=	2.1.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.all-day-breakfast.com/rosegarden/patches/
+DISTNAME=	${PORTNAME}-2.1pl2
 
 MAINTAINER=	shanee@augusta.de
 

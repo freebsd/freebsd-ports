@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xmms
-# Version required:		1.0.1
 # Date created:			3 July 1999
 # Whom:				Espen Skoglund <esk@ira.uka.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xmms-1.0.1
+PORTNAME=	xmms
+PORTVERSION=	1.0.1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.xmms.org/xmms/1.0/ \
 		ftp://ftp.uk.xmms.org/xmms/1.0/ \

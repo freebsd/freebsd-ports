@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xmix
-# Version required:	2.1
 # Date created:		30 June 1995
 # Whom:			janek@gaja.ipan.lublin.pl
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xmix-2.1
+PORTNAME=	xmix
+PORTVERSION=	2.1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/mixers

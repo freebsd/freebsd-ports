@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gmixer
-# Version required:    0.98c
 # Date created:        25 February 1999
 # Whom:                Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gmixer-0.98c
+PORTNAME=	gmixer
+PORTVERSION=	0.98c
 CATEGORIES=	audio
 MASTER_SITES=	http://people.FreeBSD.org/~cpiazza/distfiles/	
 

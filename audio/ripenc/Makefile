@@ -1,16 +1,16 @@
 # New ports collection makefile for: ripenc
 # URL: http://www.asde.com/~mjparme/index.htm
-# Version required:     0.7
 # Date created:         28 February 1999
 # Whom:                 Joao Carlos Mendes Luis <jonny@jonny.eng.br>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ripenc0.7
-PKGNAME=	ripenc-0.7
+PORTNAME=	ripenc
+PORTVERSION=	0.7
 CATEGORIES=	audio
 MASTER_SITES=	http://www.asde.com/~mjparme/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	jonny@jonny.eng.br
 

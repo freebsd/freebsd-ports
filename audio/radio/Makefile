@@ -1,15 +1,15 @@
 # New ports collection makefile for:	radio
-# Version required:	2.0.4
 # Date created:		5 July 1995
 # Whom:			janek@gaja.ipan.lublin.pl
 #
 # $FreeBSD$
 #
 
-DISTNAME=	radio2.0.4
-PKGNAME=	radio-2.0.4
+PORTNAME=	radio
+PORTVERSION=	2.0.4
 CATEGORIES=	audio net
 MASTER_SITES=	ftp://ftp.cwi.nl/pub/audio/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	janek@gaja.ipan.lublin.pl
 

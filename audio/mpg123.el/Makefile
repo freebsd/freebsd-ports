@@ -1,15 +1,15 @@
 # New ports collection makefile for:	mpg123.el
-# Version required:	1.5
 # Date created:		99/10/6
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mpg123.el
-PKGNAME=	mpg123.el-1.5
+PORTNAME=	mpg123.el
+PORTVERSION=	1.5
 CATEGORIES=	audio elisp
 MASTER_SITES=	http://www.gentei.org/~yuuji/software/mpg123el/
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	# empty
 
 MAINTAINER=	taoka@FreeBSD.org

@@ -1,16 +1,15 @@
 # New ports collection makefile for:	ascd
-# Version required:		0.13.2
 # Date created:			29 November 1998
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ascd-0.13.2-src
-PKGNAME=	ascd-0.13.2
+PORTNAME=	ascd
+PORTVERSION=	0.13.2
 CATEGORIES=	audio afterstep windowmaker
 MASTER_SITES=	http://worldserver.oleane.com/rsn/Archives/
-DISTFILES=	${DISTNAME}.tgz ${DATAFILES}
+DISTFILES=	${DISTNAME}-src.tgz ${DATAFILES}
 
 MAINTAINER=	jim@FreeBSD.org
 

@@ -1,18 +1,18 @@
 # New ports collection makefile for: dagrab
-# Version required:	0.3.4
 # Date created:		2nd, Jan 1999
 # Whom:			Chia-liang Kao <clkao@CirX.ORG>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dagrab-0.3.4
+PORTNAME=	dagrab
+PORTVERSION=	0.3.4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/cdrom
 
 PATCH_SITES=	http://people.FreeBSD.org/~cpiazza/distfiles/
-PATCHFILES=	dagrab-0.3.4-freebsd.patch.gz
+PATCHFILES=	${DISTNAME}-freebsd.patch.gz
 
 MAINTAINER=	clkao@CirX.ORG
 

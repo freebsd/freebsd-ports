@@ -1,12 +1,12 @@
 # New ports collection makefile for:   soundtracker
-# Version required:    0.3.10
 # Date created:        28 November 1999
 # Whom:                kzentner
 #
 # $FreeBSD$
 #
 
-DISTNAME=	soundtracker-0.3.10
+PORTNAME=	soundtracker
+PORTVERSION=	0.3.10
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.soundtracker.org/pub/soundtracker/v0.3/
 

@@ -1,16 +1,16 @@
 # New ports collection makefile for:    s3mod
-# Version required:     1.09
 # Date created:         9 March 1995
 # Whom:                 ugen
 #
 # $FreeBSD$
 #
 
-DISTNAME=	s3mod-v1.09
-PKGNAME=	s3mod-1.09
+PORTNAME=	s3mod
+PORTVERSION=	1.09
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/players
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	ugen@FreeBSD.org
 
