@@ -1,8 +1,14 @@
-
-$FreeBSD$
-
---- guile-gnome/gtkhtml/gtkhtml-glue.c.orig	Tue Feb  6 05:46:22 2001
-+++ guile-gnome/gtkhtml/gtkhtml-glue.c	Fri Aug 17 17:47:25 2001
+--- guile-gnome/gtkhtml/gtkhtml-glue.c.orig	Mon Feb  5 22:46:22 2001
++++ guile-gnome/gtkhtml/gtkhtml-glue.c	Sat Aug 31 14:03:17 2002
+@@ -110,7 +110,7 @@
+ extern sgtk_boxed_info sgtk_gtimer_info;
+ 
+ GtkTypeInfo sgtk_gtk_htmlstream_info_gtk = {
+-  "GtkHTMLStream", "sizeof (GtkHTMLStream)", 0,
++  "GtkHTMLStream", 0, 0,
+   (GtkClassInitFunc) NULL,
+   (GtkObjectInitFunc) NULL,
+   (GtkArgSetFunc) NULL,
 @@ -310,17 +310,20 @@
  static char s_gtk_html_set_iframe_parent[] = "gtk-html-set-iframe-parent";
  
