@@ -2,6 +2,9 @@
 # Version required:	0.07
 # Date created:		19 December 1996
 # Whom:			FURUSAWA, Kazuhisa <furusawa@com.cs.osakafu-u.ac.jp>
+#
+# $Id$
+#
 
 DISTNAME=	lupe-0.07
 CATEGORIES=	x11
