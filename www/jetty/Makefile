@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jetty
-PORTVERSION=	2.4.9
+PORTVERSION=	3.1.4
 CATEGORIES=	www java
 MASTER_SITES=	http://download.sourceforge.net/jetty/ \
 		ftp://jetty.mortbay.com/pub/
@@ -16,21 +16,24 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	stephane.legrand@bigfoot.com
 
 RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre
+		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13
 
 JAVAVM?=	${LOCALBASE}/bin/javavm
 NO_BUILD=	yes
 
+PLIST_SUB=      JETTY_VERSION=${PORTVERSION}
+
 post-extract:
-	find ${WRKSRC} -name CVS | xargs ${RM} -rf
-	find ${WRKSRC} -name .cvsignore | xargs ${RM} -rf
+	find ${WRKSRC} -name CVS -delete
+	find ${WRKSRC} -name .cvsignore -delete
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/java/${PORTNAME}
+	@${MKDIR} ${PREFIX}/share/java/${PORTNAME}-${PORTVERSION}
 	@(cd ${WRKSRC} && ${TAR} -c -f - [^src]* ) \
-		| (cd ${PREFIX}/share/java/${PORTNAME} && ${TAR} --unlink -x -f -)
+		| (cd ${PREFIX}/share/java/${PORTNAME}-${PORTVERSION} && ${TAR} --unlink -x -f -)
 
 post-install:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGMESSAGE}
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGMESSAGE} \
+		| ${SED} 's|%%PORTVERSION%%|${PORTVERSION}|g'
 
 .include <bsd.port.mk>

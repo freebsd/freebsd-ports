@@ -1,358 +1,541 @@
-share/java/jetty/CONTRIBUTORS.txt
-share/java/jetty/FileBase/Images/mbLogoSmall.gif
-share/java/jetty/FileBase/Images/powered.gif
-share/java/jetty/FileBase/JSP/date.jsp
-share/java/jetty/FileBase/JSP/hello.jsp
-share/java/jetty/FileBase/JSP/snoop.jsp
-share/java/jetty/FileBase/Jetty/Config/current.html
-share/java/jetty/FileBase/Jetty/Config/debug.html
-share/java/jetty/FileBase/Jetty/Config/overview.html
-share/java/jetty/FileBase/Jetty/Config/pathMap.html
-share/java/jetty/FileBase/Jetty/Demo/auth.html
-share/java/jetty/FileBase/Jetty/Demo/chat.html
-share/java/jetty/FileBase/Jetty/Demo/dump.html
-share/java/jetty/FileBase/Jetty/Demo/embed.html
-share/java/jetty/FileBase/Jetty/Demo/encode.html
-share/java/jetty/FileBase/Jetty/Demo/file.html
-share/java/jetty/FileBase/Jetty/Demo/filter.html
-share/java/jetty/FileBase/Jetty/Demo/forward.html
-share/java/jetty/FileBase/Jetty/Demo/generate.html
-share/java/jetty/FileBase/Jetty/Demo/include.html
-share/java/jetty/FileBase/Jetty/Demo/indexServlet.html
-share/java/jetty/FileBase/Jetty/Demo/jsp.html
-share/java/jetty/FileBase/Jetty/Demo/lookAndFeel.html
-share/java/jetty/FileBase/Jetty/Demo/propertytree.html
-share/java/jetty/FileBase/Jetty/Demo/proxy.html
-share/java/jetty/FileBase/Jetty/Demo/push.html
-share/java/jetty/FileBase/Jetty/Demo/servlet.html
-share/java/jetty/FileBase/Jetty/Demo/servletdispatch.html
-share/java/jetty/FileBase/Jetty/Demo/sessions.html
-share/java/jetty/FileBase/Jetty/Demo/upload.html
-share/java/jetty/FileBase/Jetty/File/file.html
-share/java/jetty/FileBase/Jetty/File/file.txt
-share/java/jetty/FileBase/Jetty/Info/features.html
-share/java/jetty/FileBase/Jetty/Info/history.html
-share/java/jetty/FileBase/Jetty/Info/license.html
-share/java/jetty/FileBase/Jetty/Info/support.html
-share/java/jetty/FileBase/Jetty/Program/generatedVtemplate.html
-share/java/jetty/FileBase/Jetty/Program/handlerVservlet.html
-share/java/jetty/FileBase/Jetty/Program/overview.html
-share/java/jetty/LICENSE.html
-share/java/jetty/Makefile
-share/java/jetty/README.txt
-share/java/jetty/TODO.txt
-share/java/jetty/VERSION.txt
-share/java/jetty/bin/generateJavaDoc
-share/java/jetty/build-unix.mak
-share/java/jetty/build-win32.mak
-share/java/jetty/doc/JettyConfig.html
-share/java/jetty/doc/JsseSSL.html
-share/java/jetty/etc/Bold.mk
-share/java/jetty/etc/FindPath-Recurse.mk
-share/java/jetty/etc/FindPath.mk
-share/java/jetty/etc/Global.mk
-share/java/jetty/etc/InetGateway.prp
-share/java/jetty/etc/JettyDemo.prp
-share/java/jetty/etc/JettyDemoAlias.prp
-share/java/jetty/etc/JettyDemoDump.prp
-share/java/jetty/etc/JettyDemoFiles.prp
-share/java/jetty/etc/JettyDemoRealms.prp
-share/java/jetty/etc/JettyDemoServlets.prp
-share/java/jetty/etc/JettyFastDump.prp
-share/java/jetty/etc/JettyFasterDump.prp
-share/java/jetty/etc/JettyFastestDump.prp
-share/java/jetty/etc/JettyMinimalDemo.prp
-share/java/jetty/etc/JettyServer.prp
-share/java/jetty/etc/JettyServer21.prp
-share/java/jetty/etc/LICENSE.jsse.txt
-share/java/jetty/etc/Mime.prp
-share/java/jetty/etc/NSPlugin.mk
-share/java/jetty/etc/NSRoamDemo.prp
-share/java/jetty/etc/RealmDemo.prp
-share/java/jetty/etc/Recurse.mk
-share/java/jetty/etc/WWW.mk
-share/java/jetty/etc/gen-build-class.pl
-share/java/jetty/etc/perl.mk
-share/java/jetty/etc/stresstest.url
-share/java/jetty/javadoc/allclasses-frame.html
-share/java/jetty/javadoc/com/mortbay/Base/Code.html
-share/java/jetty/javadoc/com/mortbay/Base/CodeException.html
-share/java/jetty/javadoc/com/mortbay/Base/DateCache.html
-share/java/jetty/javadoc/com/mortbay/Base/FileLogSink.html
-share/java/jetty/javadoc/com/mortbay/Base/Frame.html
-share/java/jetty/javadoc/com/mortbay/Base/Log.html
-share/java/jetty/javadoc/com/mortbay/Base/LogSink.html
-share/java/jetty/javadoc/com/mortbay/Base/LogWriter.html
-share/java/jetty/javadoc/com/mortbay/Base/RolloverFileLogSink.html
-share/java/jetty/javadoc/com/mortbay/Base/Test.html
-share/java/jetty/javadoc/com/mortbay/Base/TestHarness.html
-share/java/jetty/javadoc/com/mortbay/Base/package-frame.html
-share/java/jetty/javadoc/com/mortbay/Base/package-summary.html
-share/java/jetty/javadoc/com/mortbay/Base/package-tree.html
-share/java/jetty/javadoc/com/mortbay/FTP/DataPort.html
-share/java/jetty/javadoc/com/mortbay/FTP/Ftp.html
-share/java/jetty/javadoc/com/mortbay/FTP/FtpCmdStreamException.html
-share/java/jetty/javadoc/com/mortbay/FTP/FtpException.html
-share/java/jetty/javadoc/com/mortbay/FTP/FtpReplyException.html
-share/java/jetty/javadoc/com/mortbay/FTP/TestFtp.html
-share/java/jetty/javadoc/com/mortbay/FTP/package-frame.html
-share/java/jetty/javadoc/com/mortbay/FTP/package-summary.html
-share/java/jetty/javadoc/com/mortbay/FTP/package-tree.html
-share/java/jetty/javadoc/com/mortbay/HTML/Applet.html
-share/java/jetty/javadoc/com/mortbay/HTML/Block.html
-share/java/jetty/javadoc/com/mortbay/HTML/Break.html
-share/java/jetty/javadoc/com/mortbay/HTML/Comment.html
-share/java/jetty/javadoc/com/mortbay/HTML/Composite.html
-share/java/jetty/javadoc/com/mortbay/HTML/CompositeFactory.html
-share/java/jetty/javadoc/com/mortbay/HTML/DefList.html
-share/java/jetty/javadoc/com/mortbay/HTML/Element.html
-share/java/jetty/javadoc/com/mortbay/HTML/Font.html
-share/java/jetty/javadoc/com/mortbay/HTML/Form.html
-share/java/jetty/javadoc/com/mortbay/HTML/Frame.html
-share/java/jetty/javadoc/com/mortbay/HTML/FrameSet.html
-share/java/jetty/javadoc/com/mortbay/HTML/Heading.html
-share/java/jetty/javadoc/com/mortbay/HTML/Image.html
-share/java/jetty/javadoc/com/mortbay/HTML/Include.html
-share/java/jetty/javadoc/com/mortbay/HTML/Input.html
-share/java/jetty/javadoc/com/mortbay/HTML/Link.html
-share/java/jetty/javadoc/com/mortbay/HTML/List.html
-share/java/jetty/javadoc/com/mortbay/HTML/Page.html
-share/java/jetty/javadoc/com/mortbay/HTML/PageFactory.html
-share/java/jetty/javadoc/com/mortbay/HTML/Script.html
-share/java/jetty/javadoc/com/mortbay/HTML/Select.html
-share/java/jetty/javadoc/com/mortbay/HTML/Style.html
-share/java/jetty/javadoc/com/mortbay/HTML/StyleLink.html
-share/java/jetty/javadoc/com/mortbay/HTML/Table.html
-share/java/jetty/javadoc/com/mortbay/HTML/TableForm.html
-share/java/jetty/javadoc/com/mortbay/HTML/Tag.html
-share/java/jetty/javadoc/com/mortbay/HTML/Text.html
-share/java/jetty/javadoc/com/mortbay/HTML/TextArea.html
-share/java/jetty/javadoc/com/mortbay/HTML/package-frame.html
-share/java/jetty/javadoc/com/mortbay/HTML/package-summary.html
-share/java/jetty/javadoc/com/mortbay/HTML/package-tree.html
-share/java/jetty/javadoc/com/mortbay/HTTP/B64Code.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Configure/BaseConfiguration.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Configure/FileServer.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Configure/ProxyConfig.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Configure/ServletServer.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Configure/package-frame.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Configure/package-summary.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Configure/package-tree.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Cookies.html
-share/java/jetty/javadoc/com/mortbay/HTTP/ExceptionHandler.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Filter/GzipFilter.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Filter/HtmlExpireFilter.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Filter/HtmlFilter.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Filter/MethodTag.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Filter/TestHarness.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Filter/package-frame.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Filter/package-summary.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Filter/package-tree.html
-share/java/jetty/javadoc/com/mortbay/HTTP/HTML/EmbedUrl.html
-share/java/jetty/javadoc/com/mortbay/HTTP/HTML/package-frame.html
-share/java/jetty/javadoc/com/mortbay/HTTP/HTML/package-summary.html
-share/java/jetty/javadoc/com/mortbay/HTTP/HTML/package-tree.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/BasicAuthHandler.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/BasicAuthRealm.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/DefaultExceptionHandler.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/FileHandler.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/FileJarServletLoader.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/FilterHandler.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/ForwardHandler.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/LogHandler.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/NotFoundHandler.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/NullHandler.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/ParamHandler.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/ProxyHandler.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/ServletContextWrapper.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/ServletHandler.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/ServletHolder.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/ServletLoader.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/SessionHandler.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/TerseExceptionHandler.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/TestHarness.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/TranslateHandler.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/VirtualHostHandler.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/package-frame.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/package-summary.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Handler/package-tree.html
-share/java/jetty/javadoc/com/mortbay/HTTP/HeadException.html
-share/java/jetty/javadoc/com/mortbay/HTTP/HttpConfiguration.html
-share/java/jetty/javadoc/com/mortbay/HTTP/HttpFilter.html
-share/java/jetty/javadoc/com/mortbay/HTTP/HttpHandler.html
-share/java/jetty/javadoc/com/mortbay/HTTP/HttpHeader.html
-share/java/jetty/javadoc/com/mortbay/HTTP/HttpInputStream.html
-share/java/jetty/javadoc/com/mortbay/HTTP/HttpListener.html
-share/java/jetty/javadoc/com/mortbay/HTTP/HttpOutputStream.html
-share/java/jetty/javadoc/com/mortbay/HTTP/HttpRequest.html
-share/java/jetty/javadoc/com/mortbay/HTTP/HttpRequestDispatcher.html
-share/java/jetty/javadoc/com/mortbay/HTTP/HttpResponse.html
-share/java/jetty/javadoc/com/mortbay/HTTP/HttpServer.html
-share/java/jetty/javadoc/com/mortbay/HTTP/HttpTests.html
-share/java/jetty/javadoc/com/mortbay/HTTP/JsseListener.html
-share/java/jetty/javadoc/com/mortbay/HTTP/MultiPartRequest.html
-share/java/jetty/javadoc/com/mortbay/HTTP/MultiPartResponse.html
-share/java/jetty/javadoc/com/mortbay/HTTP/PathMap.html
-share/java/jetty/javadoc/com/mortbay/HTTP/SessionContext.html
-share/java/jetty/javadoc/com/mortbay/HTTP/SunJsseListener.html
-share/java/jetty/javadoc/com/mortbay/HTTP/Version.html
-share/java/jetty/javadoc/com/mortbay/HTTP/package-frame.html
-share/java/jetty/javadoc/com/mortbay/HTTP/package-summary.html
-share/java/jetty/javadoc/com/mortbay/HTTP/package-tree.html
-share/java/jetty/javadoc/com/mortbay/JDBC/Clause.html
-share/java/jetty/javadoc/com/mortbay/JDBC/CloudscapeAdaptor.html
-share/java/jetty/javadoc/com/mortbay/JDBC/Column.html
-share/java/jetty/javadoc/com/mortbay/JDBC/ColumnGroup.html
-share/java/jetty/javadoc/com/mortbay/JDBC/CreateTables.html
-share/java/jetty/javadoc/com/mortbay/JDBC/Database.html
-share/java/jetty/javadoc/com/mortbay/JDBC/DbAdaptor.html
-share/java/jetty/javadoc/com/mortbay/JDBC/Key.html
-share/java/jetty/javadoc/com/mortbay/JDBC/MsqlAdaptor.html
-share/java/jetty/javadoc/com/mortbay/JDBC/MultiTestTable.html
-share/java/jetty/javadoc/com/mortbay/JDBC/NonKeyException.html
-share/java/jetty/javadoc/com/mortbay/JDBC/OracleAdaptor.html
-share/java/jetty/javadoc/com/mortbay/JDBC/RelationalTable.html
-share/java/jetty/javadoc/com/mortbay/JDBC/Row.html
-share/java/jetty/javadoc/com/mortbay/JDBC/RowEnumeration.html
-share/java/jetty/javadoc/com/mortbay/JDBC/Select.html
-share/java/jetty/javadoc/com/mortbay/JDBC/Table.html
-share/java/jetty/javadoc/com/mortbay/JDBC/Transaction.html
-share/java/jetty/javadoc/com/mortbay/JDBC/package-frame.html
-share/java/jetty/javadoc/com/mortbay/JDBC/package-summary.html
-share/java/jetty/javadoc/com/mortbay/JDBC/package-tree.html
-share/java/jetty/javadoc/com/mortbay/Jetty/Demo.html
-share/java/jetty/javadoc/com/mortbay/Jetty/DemoIndex.html
-share/java/jetty/javadoc/com/mortbay/Jetty/GenerateLafServlet.html
-share/java/jetty/javadoc/com/mortbay/Jetty/GenerateServlet.html
-share/java/jetty/javadoc/com/mortbay/Jetty/JettyLaF.html
-share/java/jetty/javadoc/com/mortbay/Jetty/MultiPartCount.html
-share/java/jetty/javadoc/com/mortbay/Jetty/Server.html
-share/java/jetty/javadoc/com/mortbay/Jetty/Server21.html
-share/java/jetty/javadoc/com/mortbay/Jetty/StressTester.html
-share/java/jetty/javadoc/com/mortbay/Jetty/UploadServlet.html
-share/java/jetty/javadoc/com/mortbay/Jetty/package-frame.html
-share/java/jetty/javadoc/com/mortbay/Jetty/package-summary.html
-share/java/jetty/javadoc/com/mortbay/Jetty/package-tree.html
-share/java/jetty/javadoc/com/mortbay/Servlets/ConfigDump.html
-share/java/jetty/javadoc/com/mortbay/Servlets/DebugServlet.html
-share/java/jetty/javadoc/com/mortbay/Servlets/Dispatch.html
-share/java/jetty/javadoc/com/mortbay/Servlets/DispatchServlet.html
-share/java/jetty/javadoc/com/mortbay/Servlets/Dump.html
-share/java/jetty/javadoc/com/mortbay/Servlets/Exit.html
-share/java/jetty/javadoc/com/mortbay/Servlets/IndexServlet.html
-share/java/jetty/javadoc/com/mortbay/Servlets/LookAndFeelServlet.html
-share/java/jetty/javadoc/com/mortbay/Servlets/PagePush.html
-share/java/jetty/javadoc/com/mortbay/Servlets/PropertyTreeEditor.Context.html
-share/java/jetty/javadoc/com/mortbay/Servlets/PropertyTreeEditor.EditArgs.html
-share/java/jetty/javadoc/com/mortbay/Servlets/PropertyTreeEditor.EditorDispatcher.html
-share/java/jetty/javadoc/com/mortbay/Servlets/PropertyTreeEditor.PruneArgs.html
-share/java/jetty/javadoc/com/mortbay/Servlets/PropertyTreeEditor.html
-share/java/jetty/javadoc/com/mortbay/Servlets/ServletDispatch.html
-share/java/jetty/javadoc/com/mortbay/Servlets/ServletDispatchErrorHandler.html
-share/java/jetty/javadoc/com/mortbay/Servlets/ServletDispatchHandler.html
-share/java/jetty/javadoc/com/mortbay/Servlets/ServletNode.html
-share/java/jetty/javadoc/com/mortbay/Servlets/SessionDump.html
-share/java/jetty/javadoc/com/mortbay/Servlets/package-frame.html
-share/java/jetty/javadoc/com/mortbay/Servlets/package-summary.html
-share/java/jetty/javadoc/com/mortbay/Servlets/package-tree.html
-share/java/jetty/javadoc/com/mortbay/Util/ArrayConverter.html
-share/java/jetty/javadoc/com/mortbay/Util/ArrayConverter.ArrayConvertFail.html
-share/java/jetty/javadoc/com/mortbay/Util/BlockingQueue.html
-share/java/jetty/javadoc/com/mortbay/Util/Converter.html
-share/java/jetty/javadoc/com/mortbay/Util/ContainerIteratorTransformer.ContainerTransformFail.html
-share/java/jetty/javadoc/com/mortbay/Util/ContainerIteratorTransformer.html
-share/java/jetty/javadoc/com/mortbay/Util/ConvertFail.html
-share/java/jetty/javadoc/com/mortbay/Util/ConverterBase.html
-share/java/jetty/javadoc/com/mortbay/Util/ConverterSet.PrimitiveConverter.html
-share/java/jetty/javadoc/com/mortbay/Util/ConverterSet.html
-share/java/jetty/javadoc/com/mortbay/Util/DataClass.html
-share/java/jetty/javadoc/com/mortbay/Util/DictionaryConverter.html
-share/java/jetty/javadoc/com/mortbay/Util/DumpFilterOutputStream.html
-share/java/jetty/javadoc/com/mortbay/Util/IO.html
-share/java/jetty/javadoc/com/mortbay/Util/InetAddrPort.html
-share/java/jetty/javadoc/com/mortbay/Util/InetGateway.html
-share/java/jetty/javadoc/com/mortbay/Util/KeyPairTool.html
-share/java/jetty/javadoc/com/mortbay/Util/LineInput.html
-share/java/jetty/javadoc/com/mortbay/Util/Observed.html
-share/java/jetty/javadoc/com/mortbay/Util/ObjectConverter.ObjectConvertFail.html
-share/java/jetty/javadoc/com/mortbay/Util/ObjectConverter.html
-share/java/jetty/javadoc/com/mortbay/Util/ObjectConverterTest.A.html
-share/java/jetty/javadoc/com/mortbay/Util/ObjectConverterTest.B.html
-share/java/jetty/javadoc/com/mortbay/Util/ObjectConverterTest.TestClass1.html
-share/java/jetty/javadoc/com/mortbay/Util/ObjectConverterTest.TestClass2.html
-share/java/jetty/javadoc/com/mortbay/Util/ObjectConverterTest.html
-share/java/jetty/javadoc/com/mortbay/Util/Password.html
-share/java/jetty/javadoc/com/mortbay/Util/PropertyTreeConverter.html
-share/java/jetty/javadoc/com/mortbay/Util/PropertyEnumeration.html
-share/java/jetty/javadoc/com/mortbay/Util/PropertyTree.html
-share/java/jetty/javadoc/com/mortbay/Util/PropertyTreeTest.html
-share/java/jetty/javadoc/com/mortbay/Util/SmtpMail.html
-share/java/jetty/javadoc/com/mortbay/Util/StringUtil.html
-share/java/jetty/javadoc/com/mortbay/Util/SummaryFilterOutputStream.html
-share/java/jetty/javadoc/com/mortbay/Util/Test/T1.html
-share/java/jetty/javadoc/com/mortbay/Util/Test/T2.html
-share/java/jetty/javadoc/com/mortbay/Util/Test/package-frame.html
-share/java/jetty/javadoc/com/mortbay/Util/Test/package-summary.html
-share/java/jetty/javadoc/com/mortbay/Util/Test/package-tree.html
-share/java/jetty/javadoc/com/mortbay/Util/TestHarness.html
-share/java/jetty/javadoc/com/mortbay/Util/ThreadPool.html
-share/java/jetty/javadoc/com/mortbay/Util/ThreadedServer.html
-share/java/jetty/javadoc/com/mortbay/Util/URI.html
-share/java/jetty/javadoc/com/mortbay/Util/UrlEncoded.html
-share/java/jetty/javadoc/com/mortbay/Util/package-frame.html
-share/java/jetty/javadoc/com/mortbay/Util/package-summary.html
-share/java/jetty/javadoc/com/mortbay/Util/package-tree.html
-share/java/jetty/javadoc/deprecated-list.html
-share/java/jetty/javadoc/help-doc.html
-share/java/jetty/javadoc/index-all.html
-share/java/jetty/javadoc/index.html
-share/java/jetty/javadoc/overview-frame.html
-share/java/jetty/javadoc/overview-summary.html
-share/java/jetty/javadoc/overview-tree.html
-share/java/jetty/javadoc/package-list
-share/java/jetty/javadoc/packages.html
-share/java/jetty/javadoc/serialized-form.html
-share/java/jetty/javadoc/stylesheet.css
-share/java/jetty/lib/com.mortbay.Jetty.jar
-share/java/jetty/lib/gnujsp.jar
-share/java/jetty/lib/i686-Linux/libSetUID.so
-share/java/jetty/lib/javax.servlet.jar
-share/java/jetty/lib/jcert.jar
-share/java/jetty/lib/jnet.jar
-share/java/jetty/lib/jsse.jar
-share/java/jetty/log/LOG
-share/java/jetty/log/RCS/.log
-@dirrm share/java/jetty/log/RCS
-@dirrm share/java/jetty/log
-@dirrm share/java/jetty/lib/i686-Linux
-@dirrm share/java/jetty/lib
-@dirrm share/java/jetty/javadoc/com/mortbay/Util/Test
-@dirrm share/java/jetty/javadoc/com/mortbay/Util
-@dirrm share/java/jetty/javadoc/com/mortbay/Servlets
-@dirrm share/java/jetty/javadoc/com/mortbay/Jetty
-@dirrm share/java/jetty/javadoc/com/mortbay/JDBC
-@dirrm share/java/jetty/javadoc/com/mortbay/HTTP/Handler
-@dirrm share/java/jetty/javadoc/com/mortbay/HTTP/HTML
-@dirrm share/java/jetty/javadoc/com/mortbay/HTTP/Filter
-@dirrm share/java/jetty/javadoc/com/mortbay/HTTP/Configure
-@dirrm share/java/jetty/javadoc/com/mortbay/HTTP
-@dirrm share/java/jetty/javadoc/com/mortbay/HTML
-@dirrm share/java/jetty/javadoc/com/mortbay/FTP
-@dirrm share/java/jetty/javadoc/com/mortbay/Base
-@dirrm share/java/jetty/javadoc/com/mortbay
-@dirrm share/java/jetty/javadoc/com
-@dirrm share/java/jetty/javadoc
-@dirrm share/java/jetty/etc/jsp
-@dirrm share/java/jetty/etc
-@dirrm share/java/jetty/doc
-@dirrm share/java/jetty/bin
-@dirrm share/java/jetty/FileBase/Jetty/Program
-@dirrm share/java/jetty/FileBase/Jetty/Info
-@dirrm share/java/jetty/FileBase/Jetty/File
-@dirrm share/java/jetty/FileBase/Jetty/Demo
-@dirrm share/java/jetty/FileBase/Jetty/Config
-@dirrm share/java/jetty/FileBase/Jetty
-@dirrm share/java/jetty/FileBase/JSP
-@dirrm share/java/jetty/FileBase/Images
-@dirrm share/java/jetty/FileBase
-@dirrm share/java/jetty
+share/java/jetty-%%JETTY_VERSION%%/LICENSE.html
+share/java/jetty-%%JETTY_VERSION%%/README.TXT
+share/java/jetty-%%JETTY_VERSION%%/VERSION.TXT
+share/java/jetty-%%JETTY_VERSION%%/bin/generateJavaDoc
+share/java/jetty-%%JETTY_VERSION%%/bin/jetty.bat
+share/java/jetty-%%JETTY_VERSION%%/bin/jetty.sh
+share/java/jetty-%%JETTY_VERSION%%/bin/jetty.sysvinit
+share/java/jetty-%%JETTY_VERSION%%/bin/orgConvert.sh
+share/java/jetty-%%JETTY_VERSION%%/bin/rant
+share/java/jetty-%%JETTY_VERSION%%/bin/release-jetty.sh
+share/java/jetty-%%JETTY_VERSION%%/build.xml
+share/java/jetty-%%JETTY_VERSION%%/docroot/files/dick/.htaccess
+share/java/jetty-%%JETTY_VERSION%%/docroot/files/dick/dick.txt
+share/java/jetty-%%JETTY_VERSION%%/docroot/files/tom/tom.txt
+share/java/jetty-%%JETTY_VERSION%%/docroot/files/.htaccess
+share/java/jetty-%%JETTY_VERSION%%/docroot/files/file.html
+share/java/jetty-%%JETTY_VERSION%%/docroot/files/file.txt
+share/java/jetty-%%JETTY_VERSION%%/docroot/files/harry/.htaccess
+share/java/jetty-%%JETTY_VERSION%%/docroot/files/harry/harry.txt
+share/java/jetty-%%JETTY_VERSION%%/docroot/formCookie.html
+share/java/jetty-%%JETTY_VERSION%%/docroot/formGET.html
+share/java/jetty-%%JETTY_VERSION%%/docroot/formPOST.html
+share/java/jetty-%%JETTY_VERSION%%/docroot/formQueryPOST.html
+share/java/jetty-%%JETTY_VERSION%%/docroot/jetty.css
+share/java/jetty-%%JETTY_VERSION%%/docroot/images/powered.png
+share/java/jetty-%%JETTY_VERSION%%/docroot/jsp/date.jsp
+share/java/jetty-%%JETTY_VERSION%%/docroot/jsp/hello.jsp
+share/java/jetty-%%JETTY_VERSION%%/docroot/jsp/snoop.jsp
+share/java/jetty-%%JETTY_VERSION%%/etc/dtd/configure.dtd
+share/java/jetty-%%JETTY_VERSION%%/etc/dtd/configure_1_0.dtd
+share/java/jetty-%%JETTY_VERSION%%/etc/dtd/configure_1_1.dtd
+share/java/jetty-%%JETTY_VERSION%%/etc/dtd/web.dtd
+share/java/jetty-%%JETTY_VERSION%%/etc/LICENSE.javax.servlet.txt
+share/java/jetty-%%JETTY_VERSION%%/etc/LICENSE.javax.xml.html
+share/java/jetty-%%JETTY_VERSION%%/etc/LICENSE.jsse.txt
+share/java/jetty-%%JETTY_VERSION%%/etc/admin.xml
+share/java/jetty-%%JETTY_VERSION%%/etc/demo.xml
+share/java/jetty-%%JETTY_VERSION%%/etc/demoRealm.properties
+share/java/jetty-%%JETTY_VERSION%%/etc/demokeystore
+share/java/jetty-%%JETTY_VERSION%%/etc/htaccess
+share/java/jetty-%%JETTY_VERSION%%/etc/htgroup
+share/java/jetty-%%JETTY_VERSION%%/etc/htpasswd
+share/java/jetty-%%JETTY_VERSION%%/etc/jetty.policy
+share/java/jetty-%%JETTY_VERSION%%/etc/jetty.xml
+share/java/jetty-%%JETTY_VERSION%%/etc/nbio.xml
+share/java/jetty-%%JETTY_VERSION%%/etc/package-list
+share/java/jetty-%%JETTY_VERSION%%/etc/watchdog.xml
+share/java/jetty-%%JETTY_VERSION%%/etc/webdefault.xml
+share/java/jetty-%%JETTY_VERSION%%/javadoc/overview-tree.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/index-all.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/deprecated-list.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/allclasses-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/index.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/packages.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/overview-summary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/overview-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/package-summary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/package-tree.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/package-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/http/package-summary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/http/package-tree.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/http/package-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/http/HttpServletRequest.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/http/HttpServletResponse.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/http/HttpSession.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/http/HttpSessionBindingListener.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/http/HttpSessionContext.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/http/Cookie.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/http/HttpServlet.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/http/HttpSessionBindingEvent.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/http/HttpUtils.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/package-summary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/package-tree.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/package-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/tagext/package-summary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/tagext/package-tree.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/tagext/package-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/tagext/BodyTag.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/tagext/Tag.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/tagext/BodyContent.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/tagext/BodyTagSupport.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/tagext/TagAttributeInfo.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/tagext/TagData.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/tagext/TagExtraInfo.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/tagext/TagInfo.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/tagext/TagLibraryInfo.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/tagext/TagSupport.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/tagext/VariableInfo.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/HttpJspPage.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/JspPage.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/JspEngineInfo.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/JspFactory.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/JspWriter.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/PageContext.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/JspException.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/JspTagException.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/RequestDispatcher.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/Servlet.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/ServletConfig.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/ServletContext.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/ServletRequest.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/ServletResponse.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/SingleThreadModel.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/GenericServlet.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/ServletInputStream.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/ServletOutputStream.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/ServletException.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/UnavailableException.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/package-summary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/package-tree.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/package-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/package-summary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/package-tree.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/package-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/ClassDeclarationPhase.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/CommentGenerator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/DestroyMethodPhase.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/FileDeclarationPhase.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/Generator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/InitMethodPhase.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/JavaCompiler.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/Mangler.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/ParseEventListener.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/Parser.Action.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/ServiceMethodPhase.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/StaticInitializerPhase.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/BeanGenerator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/BaseJspListener.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/BeanEndGenerator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/BeanRepository.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/CharDataGenerator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/ClassName.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/CommandLineCompiler.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/Compiler.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/DeclarationGenerator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/DumbParseEventListener.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/EscapeUnicodeWriter.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/ExpressionGenerator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/ForwardGenerator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/GetPropertyGenerator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/IncludeGenerator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/JakartaCommentGenerator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/Mark.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/JikesJavaCompiler.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/JspCompiler.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/JspParseEventListener.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/JspReader.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/JspUtil.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/JspUtil.ValidAttribute.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/MappedCharDataGenerator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/Parser.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/PluginGenerator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/ScriptletGenerator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/ServletWriter.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/SetPropertyGenerator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/StoredCharDataGenerator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/SunJavaCompiler.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/TagBeginGenerator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/TagCache.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/TagEndGenerator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/TagLibraries.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/TagLibraryInfoImpl.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/CompileException.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler/ParseException.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/runtime/package-summary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/runtime/package-tree.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/runtime/package-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/runtime/BodyContentImpl.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/runtime/HttpJspBase.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/runtime/JspFactoryImpl.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/runtime/JspLoader.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/runtime/JspRuntimeLibrary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/runtime/JspWriterImpl.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/runtime/PageContextImpl.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/servlet/package-summary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/servlet/package-tree.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/servlet/package-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/servlet/JasperLoader.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/servlet/JasperLoader12.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/servlet/JspServlet.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/servlet/ServletEngine.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/servlet/TomcatServletEngine.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/JspCompilationContext.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/Options.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/CommandLineContext.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/Constants.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/EmbededServletOptions.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/JspC.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/JspEngineContext.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/JasperException.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/package-summary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/package-tree.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/package-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/CompositeFactory.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Applet.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Block.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Break.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Comment.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Composite.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/DefList.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Element.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Font.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Form.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/FrameSet.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Heading.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Image.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Include.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Input.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Link.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/List.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Page.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Script.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Select.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Style.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/StyleLink.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Table.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/TableForm.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Tag.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Target.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/Text.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html/TextArea.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/package-summary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/package-tree.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/package-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/handler/package-summary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/handler/package-tree.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/handler/package-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/handler/SecurityHandler.FormAuthenticator.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/handler/DumpHandler.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/handler/ForwardHandler.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/handler/HTAccessHandler.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/handler/NotFoundHandler.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/handler/NullHandler.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/handler/ResourceHandler.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/handler/SecurityHandler.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/handler/TestTEHandler.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/HttpHandler.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/HttpListener.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/OutputObserver.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/RequestLogFormat.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/UserPrincipal.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/UserRealm.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/ChunkableInputStream.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/ChunkableOutputStream.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/ContextLoader.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/HandlerContext.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/HashUserRealm.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/Http10TestClient.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/HttpConnection.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/HttpEncoding.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/HttpFields.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/HttpMessage.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/HttpRequest.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/HttpResponse.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/HttpServer.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/InclusiveByteRange.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/JsseListener.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/MultiPartResponse.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/NCSARequestLogFormat.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/PathMap.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/SecurityConstraint.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/SocketListener.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/SunJsseListener.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/TestHarness.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/TestRequest.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/TestRFC2616.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/Version.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/TestRFC2616.RedirectHandler.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/HttpException.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/package-summary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/package-tree.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/package-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/servlet/package-summary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/servlet/package-tree.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/servlet/package-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/servlet/Context.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/servlet/Dispatcher.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/servlet/ServletHandler.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/servlet/ServletHandlerContext.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/servlet/ServletHolder.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/servlet/ServletRequest.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/servlet/ServletResponse.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/servlet/ServletSSL.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/servlet/WebApplicationContext.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/win32/package-summary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/win32/package-tree.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/win32/package-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/win32/Service.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/Demo.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/Server.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/servlet/package-summary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/servlet/package-tree.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/servlet/package-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/servlet/AdminServlet.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/servlet/CGI.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/servlet/Debug.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/servlet/Dump.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/servlet/Forward.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/servlet/MultiPartRequest.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/servlet/MultiPartResponse.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/servlet/NotFoundServlet.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/servlet/RequestDispatchTest.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/servlet/SessionDump.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/package-summary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/package-tree.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/package-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/LifeCycle.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/LogSink.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/B64Code.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/BlockingQueue.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/ByteArrayISO8859Writer.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/ByteArrayOutputStream2.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/ByteBufferOutputStream.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/Code.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/DateCache.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/FileLogSink.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/Frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/InetAddrPort.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/IO.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/JarResource.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/KeyPairTool.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/LazyList.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/LifeCycleThread.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/LineInput.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/LineInput.LineBuffer.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/Log.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/LogWriter.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/MultiMap.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/Observed.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/OutputStreamLogSink.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/Password.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/Primitive.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/QuotedStringTokenizer.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/Resource.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/SingletonList.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/StringMap.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/StringUtil.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/Test.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/TestHarness.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/ThreadedServer.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/ThreadPool.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/ThreadPool.PoolThread.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/UnixCrypt.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/URI.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/UrlEncoded.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/WriterLogSink.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/CodeException.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util/MultiException.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/xml/package-summary.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/xml/package-tree.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/xml/package-frame.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/xml/TestConfiguration.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/xml/TestHarness.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/xml/XmlConfiguration.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/xml/XmlParser.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/xml/XmlParser.Attribute.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/xml/XmlParser.Node.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/serialized-form.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/package-list
+share/java/jetty-%%JETTY_VERSION%%/javadoc/help-doc.html
+share/java/jetty-%%JETTY_VERSION%%/javadoc/stylesheet.css
+share/java/jetty-%%JETTY_VERSION%%/lib/com.sun.net.ssl.jar
+share/java/jetty-%%JETTY_VERSION%%/lib/javax.xml.jaxp.jar
+share/java/jetty-%%JETTY_VERSION%%/lib/org.apache.crimson.jar
+share/java/jetty-%%JETTY_VERSION%%/lib/javax.servlet.jar
+share/java/jetty-%%JETTY_VERSION%%/lib/org.mortbay.jetty.jar
+share/java/jetty-%%JETTY_VERSION%%/lib/org.apache.jasper.jar
+share/java/jetty-%%JETTY_VERSION%%/testdocs/alphabet0.txt
+share/java/jetty-%%JETTY_VERSION%%/testdocs/alphabet1.txt
+share/java/jetty-%%JETTY_VERSION%%/webapps/default/WEB-INF/web.xml
+share/java/jetty-%%JETTY_VERSION%%/webapps/default/index.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/WEB-INF/classes/org/mortbay/webapps/jetty/JettyIndex.properties
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/WEB-INF/classes/org/mortbay/webapps/jetty/JettyIndex_en.properties
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/WEB-INF/classes/org/mortbay/webapps/jetty/ExServlet.class
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/WEB-INF/classes/org/mortbay/webapps/jetty/JettyPage.class
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/WEB-INF/classes/org/mortbay/webapps/jetty/JettyPage$Section.class
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/WEB-INF/classes/org/mortbay/webapps/jetty/JettyServlet.class
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/WEB-INF/web-jetty.xml
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/WEB-INF/web.xml
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/JsseSSL.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/contributing.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/contributors.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/demoHandlers.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/demoJSP.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/demoServlets.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/demoWebApps.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/demos.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/download.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/error401.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/error403.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/error404.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/errorNullPointer.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/history.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/iX.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/index.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/jetty.css
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/logon.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/auth/admin/file.txt
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/auth/file.txt
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/auth/snoop.jsp
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/auth/relax/file.txt
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/snoop.jsp
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/logonError.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/mailingLists.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/resources.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/sponsors.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/AnnotatedConfigFile.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/B2B.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/BasicAuthorization.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/CalledJetty.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/CiscoSSD.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/CommercialPurposes.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/CompatibleWithTomcat.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/DevWiki.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/DynamicServlet.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/EquipNET.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/FrontPage.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/GregWilkins.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/IndexFiles.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/InitParameters.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/IntelligentSwitchedSystems.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/J2EE.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/JakartaTomcat.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/JettyArchitecture.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/JettyConfiguration.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/JettyContribute.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/JettyDebug.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/JettyDevelopment.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/JettyFaq.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/JettyJbossCocoon.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/JettySuccessStories.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/JettyWishList.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/JettyWithApache.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/JettyWithJikes.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/LanguageProServer.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/LearnWikiOnThisPage.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/LogConfiguration.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/LondonClearingHouse.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/MimeTypes.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/User80.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/PathInfo.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/PathMapping.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/PreloadServlet.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/ServletContainer.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/ServletVersion.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/SslListener.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/SupportWARFiles.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/UNCCharlotteCOIT.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/UnixRunScript.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/XmlConfiguration.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/index.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc/jettyUML.png
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/images/blank.png
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/images/inetu.png
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/images/jettybg.png
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/images/mbLogoBar.png
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/images/powered.png
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/images/sourceforge.png
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/tut/HttpServer.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/tut/Server.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/tut/XmlConfiguration.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/tut/index.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/tut/logging.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/tut/other.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/tut/overview.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/LICENSE.html
+share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/versions.txt
+share/java/jetty-%%JETTY_VERSION%%/webappsrc/org/mortbay/webapps/jetty/ExServlet.java
+share/java/jetty-%%JETTY_VERSION%%/webappsrc/org/mortbay/webapps/jetty/JettyIndex.properties
+share/java/jetty-%%JETTY_VERSION%%/webappsrc/org/mortbay/webapps/jetty/JettyPage.java
+share/java/jetty-%%JETTY_VERSION%%/webappsrc/org/mortbay/webapps/jetty/JettyServlet.java
+share/java/jetty-%%JETTY_VERSION%%/win32/service/jettysvc.c
+share/java/jetty-%%JETTY_VERSION%%/win32/service/makefile
+share/java/jetty-%%JETTY_VERSION%%/win32/service/parseargs.c
+share/java/jetty-%%JETTY_VERSION%%/win32/service/parseargs.h
+share/java/jetty-%%JETTY_VERSION%%/win32/service/registry.c
+share/java/jetty-%%JETTY_VERSION%%/win32/service/registry.h
+share/java/jetty-%%JETTY_VERSION%%/win32/service/service.c
+share/java/jetty-%%JETTY_VERSION%%/win32/service/service.h
+share/java/jetty-%%JETTY_VERSION%%/win32/jettyenv.bat
+share/java/jetty-%%JETTY_VERSION%%/win32/readme.txt
+@dirrm share/java/jetty-%%JETTY_VERSION%%/bin
+@dirrm share/java/jetty-%%JETTY_VERSION%%/docroot/files/dick
+@dirrm share/java/jetty-%%JETTY_VERSION%%/docroot/files/tom
+@dirrm share/java/jetty-%%JETTY_VERSION%%/docroot/files/harry
+@dirrm share/java/jetty-%%JETTY_VERSION%%/docroot/files
+@dirrm share/java/jetty-%%JETTY_VERSION%%/docroot/images
+@dirrm share/java/jetty-%%JETTY_VERSION%%/docroot/jsp
+@dirrm share/java/jetty-%%JETTY_VERSION%%/docroot
+@dirrm share/java/jetty-%%JETTY_VERSION%%/etc/dtd
+@dirrm share/java/jetty-%%JETTY_VERSION%%/etc
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/http
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp/tagext
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet/jsp
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/javax/servlet
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/javax
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/compiler
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/runtime
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper/servlet
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache/jasper
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/org/apache
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/html
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http/handler
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/http
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/servlet
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty/win32
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/jetty
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/servlet
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/util
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay/xml
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/org/mortbay
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc/org
+@dirrm share/java/jetty-%%JETTY_VERSION%%/javadoc
+@dirrm share/java/jetty-%%JETTY_VERSION%%/lib
+@dirrm share/java/jetty-%%JETTY_VERSION%%/logs
+@dirrm share/java/jetty-%%JETTY_VERSION%%/testdocs
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webapps/default/WEB-INF
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webapps/default
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/WEB-INF/classes/org/mortbay/webapps/jetty
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/WEB-INF/classes/org/mortbay/webapps
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/WEB-INF/classes/org/mortbay
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/WEB-INF/classes/org
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/WEB-INF/classes
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/WEB-INF
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/auth/admin
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/auth/relax
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/auth
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/doc
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/images
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webapps/jetty/tut
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webapps/jetty
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webapps
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webappsrc/org/mortbay/webapps/jetty
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webappsrc/org/mortbay/webapps
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webappsrc/org/mortbay
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webappsrc/org
+@dirrm share/java/jetty-%%JETTY_VERSION%%/webappsrc
+@dirrm share/java/jetty-%%JETTY_VERSION%%/win32/service
+@dirrm share/java/jetty-%%JETTY_VERSION%%/win32
+@dirrm share/java/jetty-%%JETTY_VERSION%%/

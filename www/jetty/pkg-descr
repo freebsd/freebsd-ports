@@ -1,22 +1,22 @@
-Jetty is an Open Source HTTP Servlet Server written in 100% Java. It is
-designed to be light weight, high performance, embeddable, extensible and
-flexible, thus making it an ideal platform for serving dynamic HTTP requests
-from any Java application.
+Jetty is an Open Source HTTP Servlet Server written in 100% Java.
+It is both a full featured HTTP/1.1 server and a servlet container.
+It is designed to be full featured, light weight, high performance,
+embeddable, extensible and flexible, thus making it an ideal platform
+for serving dynamic HTTP requests from or for any Java application.
 
 Features :
 
-	100% Java 
+	100% Java Server
 	Open Source 
-	Servlet API 
-	HTTP/1.1 Protocol 
-	Embeddable 
-	Java Server Pages 
+	HTTP Protocol 1.1
+	Servlet API 2.2
+	Java Server Pages 1.1 
 	SSL Support 
 	Modular Architecture
+	Embeddable
 	Small & Efficient
-	Response Filtering
 	Flexible Configuration
-	Utility Classes
 	HTML Generation
+	EJB & JMX Integration
 
 WWW: http://jetty.mortbay.com/
