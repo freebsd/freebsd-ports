@@ -3,14 +3,13 @@
 # Date created:		8 June 1999
 # Whom:			Sheldon Hearn <sheldonh@freebsd.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/07/08 13:31:59 sheldonh Exp $
 #
 
-DISTNAME=	grep-0.3
-PKGNAME=	freegrep-0.3
+DISTNAME=	grep-0.7
+PKGNAME=	freegrep-0.7
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://dragon.ham.muohio.edu/pub/howardjp/ \
-		ftp://ftp.wam.umd.edu/pub/howardjp/ \
+MASTER_SITES=	http://www.freebsd.org/~des/software/ \
 		ftp://ftp.ofug.org/pub/grep/
 
 MAINTAINER=	howardjp@wam.umd.edu
