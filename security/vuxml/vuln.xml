@@ -267,12 +267,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <url>http://www.squid-cache.org/Advisories/SQUID-2005_3.txt</url>
 	<url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-wccp_buffer_overflow</url>
 	<url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1217</url>
-	<certvu>823350</certvu>
+	<cvename>886006</cvename>
     </references>
     <dates>
       <discovery>2005-01-28</discovery>
       <entry>2005-01-28</entry>
-      <modified>2005-02-01</modified>
+      <modified>2005-02-08</modified>
     </dates>
   </vuln>
 
@@ -1087,11 +1087,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2005-0173</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-ldap_spaces</url>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1187</url>
+      <certvu>924198</certvu>
     </references>
     <dates>
       <discovery>2005-01-10</discovery>
       <entry>2005-01-19</entry>
-      <modified>2005-01-31</modified>
+      <modified>2005-02-08</modified>
     </dates>
   </vuln>
 
