@@ -1,4 +1,3 @@
-share/ghostscript/fonts/COPYING
 share/ghostscript/fonts/Fontmap
 share/ghostscript/fonts/a010013l.afm
 share/ghostscript/fonts/a010013l.pfb
@@ -169,4 +168,3 @@ share/ghostscript/fonts/z003034l.afm
 share/ghostscript/fonts/z003034l.pfb
 share/ghostscript/fonts/z003034l.pfm
 @dirrm share/ghostscript/fonts
-@dirrm share/ghostscript
