@@ -27,6 +27,7 @@ bin/nt
 %%PORTDOCS%%share/doc/downloader/README.pl
 %%PORTDOCS%%share/doc/downloader/README.pt_BR
 %%PORTDOCS%%share/doc/downloader/README.ru
+%%PORTDOCS%%@dirrm share/doc/downloader
 share/locale/bg/LC_MESSAGES/nt.mo
 share/locale/cs/LC_MESSAGES/nt.mo
 share/locale/de/LC_MESSAGES/nt.mo
@@ -46,8 +47,8 @@ share/locale/pl/LC_MESSAGES/nt.mo
 share/locale/pt_BR/LC_MESSAGES/nt.mo
 share/locale/ru/LC_MESSAGES/nt.mo
 share/locale/sk/LC_MESSAGES/nt.mo
+share/locale/tr/LC_MESSAGES/nt.mo
 share/locale/zh_CN.GBK/LC_MESSAGES/nt.mo
-%%PORTDOCS%%@dirrm share/doc/downloader
 share/d4x/sounds/complete.wav
 share/d4x/sounds/dnd.wav
 share/d4x/sounds/finish.wav
