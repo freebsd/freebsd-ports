@@ -28,6 +28,7 @@
     SUBDIR += gcc-devel
     SUBDIR += gcc28
     SUBDIR += gcl
+    SUBDIR += ghc
     SUBDIR += glibstdc++28
     SUBDIR += gnat
     SUBDIR += gnomeobjc
