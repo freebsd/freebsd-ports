@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xawtv
-PORTVERSION=	3.74
+PORTVERSION=	3.75
 CATEGORIES=	graphics
 MASTER_SITES=	http://bytesex.org/xawtv/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -25,10 +25,8 @@ USE_GMAKE=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes
 
-FILES_CFLAGS=	. font i2c man src radio webcam oldstuff/vtx \
-		libng libvbi http
-FILES_X11BASE=	configure Make.config.in
-FILES_LOCALBASE=configure
+FILES_X11BASE=	configure
+FILES_LOCALBASE=configure console/Subdir.mk debug/Subdir.mk x11/Subdir.mk
 
 MAN1=		alevtd.1 dump-mixers.1 fbtv.1 motv.1 ntsc-cc.1 propwatch.1 \
 		radio.1 record.1 rootv.1 scantv.1 showriff.1 streamer.1 \
@@ -51,11 +49,6 @@ post-patch:
 .endfor
 .for i in ${FILES_LOCALBASE}
 	${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/$i
-.endfor
-
-post-configure:
-.for i in ${FILES_CFLAGS}
-	${PERL} -pi -e "s|^CFLAGS=|CFLAGS+=|g" ${WRKSRC}/$i/Makefile
 .endfor
 
 .include <bsd.port.post.mk>
