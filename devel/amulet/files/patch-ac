@@ -1,0 +1,392 @@
+--- include/amulet/gemM.h.orig	Wed Jun 11 06:01:40 1997
++++ include/amulet/gemM.h	Wed Jan 10 19:20:23 2001
+@@ -524,7 +524,7 @@
+   Am_Point_Array_Data (int size);
+   ~Am_Point_Array_Data ();
+ 
+-  operator== (Am_Point_Array_Data&)
++  bool operator== (Am_Point_Array_Data&)
+   { return false; }
+ 
+ protected:
+@@ -584,7 +584,7 @@
+   Am_Time_Data(Am_Time_Data* other) 
+     { time.tv_usec = other->time.tv_usec; time.tv_sec = other->time.tv_sec; }
+   timeval time;
+-  operator== (Am_Time_Data& other)
++  bool operator== (Am_Time_Data& other)
+     { return time.tv_usec == other.time.tv_usec 
+ 	&& time.tv_sec == other.time.tv_sec; }
+   void Print (ostream& out) const;
+--- include/amulet/gemX.h.orig	Wed Jun 25 02:30:31 1997
++++ include/amulet/gemX.h	Wed Jan 10 19:20:23 2001
+@@ -576,7 +576,7 @@
+ 
+   ~Am_Font_Data ();
+ 
+-  operator== (Am_Font_Data&)
++  bool operator== (Am_Font_Data&)
+   { return false; }
+   
+   void Add_Font (Display*, XFontStruct*);
+@@ -656,7 +656,7 @@
+   bool Get_Cursor (Display*, Cursor&);
+ 
+   // I think I need this for a wrapper class
+-  operator== (Am_Cursor_Data&)
++  bool operator== (Am_Cursor_Data&)
+   { return false; }
+ 
+   Display* main_display;
+@@ -724,7 +724,7 @@
+ 
+   ~Am_Image_Array_Data ();
+     
+-  operator== (Am_Image_Array_Data&)
++  bool operator== (Am_Image_Array_Data&)
+   { return false; }
+   
+   Pixmap Get_X_Pixmap (const Am_Drawonable_Impl* draw);
+@@ -823,7 +823,7 @@
+   Am_Style_Data ();
+   ~Am_Style_Data ();
+ 
+-  operator== (Am_Style_Data&)
++  bool operator== (Am_Style_Data&)
+   { return false; }
+ 
+   void Add_Color_Index (Display*, XColor);
+@@ -883,7 +883,7 @@
+   Am_Point_Array_Data (int size);
+   ~Am_Point_Array_Data ();
+ 
+-  operator== (Am_Point_Array_Data&)
++  bool operator== (Am_Point_Array_Data&)
+   { return false; }
+ 
+ protected:
+--- include/amulet/object_advanced.h.orig	Mon Dec 16 02:15:48 1996
++++ include/amulet/object_advanced.h	Wed Jan 10 19:20:23 2001
+@@ -252,9 +252,9 @@
+   Am_Slot (Am_Slot_Data* in_data)
+   { data = in_data; }
+ 
+-  operator== (const Am_Slot& test) const
++  bool operator== (const Am_Slot& test) const
+   { return data == test.data; }
+-  operator!= (const Am_Slot& test) const
++  bool operator!= (const Am_Slot& test) const
+   { return data != test.data; }
+   operator Am_Slot_Data* () const
+   { return data; }
+--- include/amulet/rich_text.h.orig	Thu May  8 03:02:24 1997
++++ include/amulet/rich_text.h	Wed Jan 10 19:20:23 2001
+@@ -169,7 +169,7 @@
+   inline Am_Text_Fragment*
+              Get_Fragment_At( const Am_Text_Index inIndex ) const;
+ 
+-  inline Move_Cursor( Am_Cursor& inCursor, Am_Cursor_Move inMove ) const;
++  //  inline Move_Cursor( Am_Cursor& inCursor, Am_Cursor_Move inMove ) const;
+ };
+ 
+ /******************************************************************************
+@@ -770,8 +770,8 @@
+  *  Am_Text_Fragment
+  */
+ 
+-const kFragStrSize  = 1024;
+-const kMinFragBreak = kFragStrSize / 2;
++const unsigned int kFragStrSize  = 1024;
++const unsigned int kMinFragBreak = kFragStrSize / 2;
+ 
+ class Am_Text_Fragment
+ {
+--- include/amulet/widgets_advanced.h.orig	Mon Jul 21 22:49:07 1997
++++ include/amulet/widgets_advanced.h	Wed Jan 10 19:20:23 2001
+@@ -51,7 +51,7 @@
+   }
+   Computed_Colors_Record_Data (const Am_Style& foreground);
+   Computed_Colors_Record_Data (Computed_Colors_Record_Data*);
+-  operator== (Computed_Colors_Record_Data&)
++  bool operator== (Computed_Colors_Record_Data&)
+   { return false; }
+   // destructor
+   virtual ~Computed_Colors_Record_Data ();
+--- src/anim/testanimators.cc.orig	Tue May  6 02:25:23 1997
++++ src/anim/testanimators.cc	Wed Jan 10 19:20:23 2001
+@@ -278,7 +278,7 @@
+   else if (c == 'r')
+     Mover.Set (Am_VISIBLE, !(bool)Mover.Get(Am_VISIBLE));
+   else if (c == 'i') {
+-    static debugging = false;
++    static bool debugging = false;
+     if (!debugging) Am_Set_Inter_Trace(Am_INTER_TRACE_ALL);
+     else Am_Set_Inter_Trace(Am_INTER_TRACE_NONE);
+     debugging = !debugging;
+--- src/debug/inspector.cc.orig	Mon Jul 21 18:50:20 1997
++++ src/debug/inspector.cc	Wed Jan 10 19:20:23 2001
+@@ -3311,7 +3311,7 @@
+ 					    Am_Set_Reason reason)
+ {
+ #ifdef DEBUG
+-  static flag = 0;
++  static int flag = 0;
+   if (flag) return; // prevent recursive call.
+   // We have a single global variable controlling refresh of all inspector
+   // windows.  Without this, we'd still need to do a list traverse below,
+--- src/gem/gemW_cursor.h.orig	Thu Oct 10 08:58:10 1996
++++ src/gem/gemW_cursor.h	Wed Jan 10 19:20:23 2001
+@@ -15,7 +15,7 @@
+ 	Am_Cursor_Data (Am_Image_Array image, Am_Image_Array mask);
+ 	virtual ~Am_Cursor_Data ();
+ 
+-	operator== (Am_Cursor_Data&)
++	bool operator== (Am_Cursor_Data&)
+ 		{ return false; }
+ 
+ public:
+--- src/gem/gemW_image.h.orig	Wed Jan 29 02:20:49 1997
++++ src/gem/gemW_image.h	Wed Jan 10 19:20:23 2001
+@@ -28,7 +28,7 @@
+   Am_Image_Array_Data (Am_Image_Array_Data* proto, int width, int height);
+   virtual ~Am_Image_Array_Data();
+ 
+-  operator== (Am_Image_Array_Data&)
++  bool operator== (Am_Image_Array_Data&)
+     { return false; }
+ 
+ public:
+--- src/gem/gemW_points.h.orig	Wed Dec 18 03:36:36 1996
++++ src/gem/gemW_points.h	Wed Jan 10 19:20:23 2001
+@@ -30,7 +30,7 @@
+   Am_Point_Array_Data (int size);
+   ~Am_Point_Array_Data ();
+ 
+-  operator== (Am_Point_Array_Data&)
++  bool operator== (Am_Point_Array_Data&)
+   { return false; }
+ 
+ protected:
+--- src/gem/gemW_styles.h.orig	Tue May 20 18:25:51 1997
++++ src/gem/gemW_styles.h	Wed Jan 10 19:20:23 2001
+@@ -35,7 +35,7 @@
+ 
+   virtual ~Am_Style_Data ();
+ 
+-  operator== (Am_Style_Data&)
++  bool operator== (Am_Style_Data&)
+     { return false; }
+ 
+   virtual const char *Get_Color_Name ();
+--- src/gem/gemW_text.h.orig	Mon Jan 13 19:59:01 1997
++++ src/gem/gemW_text.h	Wed Jan 10 19:20:23 2001
+@@ -20,7 +20,7 @@
+ 	~Am_Font_Data ();
+ 
+ public:
+-	operator== (Am_Font_Data&)
++	bool operator== (Am_Font_Data&)
+ 		{ return false; }
+ 
+ 	HFONT WinFont (HDC hdc);
+--- src/gem/gemW_time.h.orig	Mon Jan 13 19:59:03 1997
++++ src/gem/gemW_time.h	Wed Jan 10 19:20:23 2001
+@@ -17,7 +17,7 @@
+   Am_Time_Data(Am_Time_Data* other) 
+     { time = other->time; }
+   unsigned long time;
+-  operator== (Am_Time_Data& other)
++  bool operator== (Am_Time_Data& other)
+     { return time == other.time; }
+ };
+ 
+--- src/gem/gemX_draw.cc.orig	Tue Aug  5 22:11:19 1997
++++ src/gem/gemX_draw.cc	Wed Jan 10 19:20:23 2001
+@@ -892,7 +892,7 @@
+   // if we have a match, do no work.
+   if (XAllocColor(screen->display, screen->colormap, &c)) return;
+   
+-  static flag = 0;
++  static int flag = 0;
+   if (!flag) {
+     cerr << "** No color cells left; using closest match.\n";
+     flag = 1;
+--- src/gem/gemX_time.h.orig	Mon Jan 13 19:59:09 1997
++++ src/gem/gemX_time.h	Wed Jan 10 19:20:23 2001
+@@ -19,7 +19,7 @@
+   Am_Time_Data(Am_Time_Data* other) 
+     { time.tv_usec = other->time.tv_usec; time.tv_sec = other->time.tv_sec; }
+   timeval time;
+-  operator== (Am_Time_Data& other)
++  bool operator== (Am_Time_Data& other)
+     { return time.tv_usec == other.time.tv_usec 
+ 	&& time.tv_sec == other.time.tv_sec; }
+ };
+--- src/gem/gem_points.cc.orig	Fri Feb 21 21:12:54 1997
++++ src/gem/gem_points.cc	Wed Jan 10 19:20:23 2001
+@@ -41,7 +41,7 @@
+   Am_Point_List_Data (int *ar, int size);
+   Am_Point_List_Data (float *ar, int size);
+   ~Am_Point_List_Data ();
+-  operator== (const Am_Point_List_Data&) const
++  bool operator== (const Am_Point_List_Data&) const
+     { return false; }
+   void Add (float x, float y, Am_Add_Position position);
+   void Insert (float x, float y, Am_Point_Item* current,
+--- src/gesture/gest_classifier.cc.orig	Mon Jan 13 19:59:17 1997
++++ src/gesture/gest_classifier.cc	Wed Jan 10 19:20:23 2001
+@@ -351,7 +351,7 @@
+ static double
+ MahalanobisDistance(register Vector v, register Vector u, register Matrix sigma)
+ {
+-	register i;
++	register int i;
+ 	static Vector space;
+ 	double result;
+ 
+--- src/gesture/gest_impl.h.orig	Mon Jan 13 19:59:19 1997
++++ src/gesture/gest_impl.h	Wed Jan 10 19:20:23 2001
+@@ -78,7 +78,7 @@
+ 
+   ~Am_Feature_Vector_Data ();
+   
+-  operator== (Am_Feature_Vector_Data&)
++  bool operator== (Am_Feature_Vector_Data&)
+   { return false; }
+ 
+   void Add_Point (int x, int y);
+@@ -139,7 +139,7 @@
+ 
+   ~Am_Gesture_Classifier_Data ();
+   
+-  operator== (Am_Gesture_Classifier_Data&)
++  bool operator== (Am_Gesture_Classifier_Data&)
+   { return false; }
+ 
+   Am_String Classify (Am_Feature_Vector fv, double *nap = 0, double *dist = 0);
+@@ -182,7 +182,7 @@
+ 
+   ~Am_Gesture_Trainer_Data ();
+   
+-  operator== (Am_Gesture_Trainer_Data&)
++  bool operator== (Am_Gesture_Trainer_Data&)
+   { return false; }
+ 
+   struct Gesture_Class {
+--- src/gesture/gest_matrix.cc.orig	Mon Dec 16 02:18:01 1996
++++ src/gesture/gest_matrix.cc	Wed Jan 10 19:20:23 2001
+@@ -159,14 +159,14 @@
+ void
+ ZeroVector(Vector v)
+ {
+-	register i;
++	register int i;
+ 	for(i = 0; i < NROWS(v); i++) v[i] = 0.0;
+ }
+ 
+ void
+ ZeroMatrix(Matrix m)
+ {
+-	register i, j;
++	register int i, j;
+ 	for(i = 0; i < NROWS(m); i++)
+ 		for(j = 0; j < NCOLS(m); j++)
+ 			m[i][j] = 0.0;
+@@ -175,7 +175,7 @@
+ void
+ FillMatrix(Matrix m, double fill)
+ {
+-	register i, j;
++	register int i, j;
+ 	for(i = 0; i < NROWS(m); i++)
+ 		for(j = 0; j < NCOLS(m); j++)
+ 			m[i][j] = fill;
+@@ -197,7 +197,7 @@
+ void
+ MatrixMultiply(register Matrix m1, register Matrix m2, register Matrix prod)
+ {
+-	register i, j, k;
++	register int i, j, k;
+ 	double sum;
+ 
+ 	if(NCOLS(m1) != NROWS(m2))
+@@ -279,7 +279,7 @@
+ double
+ QuadraticForm(register Vector v, register Matrix m)
+ {
+-	register i, j, n;
++	register int i, j, n;
+ 	double result = 0;
+ 
+ 	n = NROWS(v);
+@@ -327,7 +327,7 @@
+ double
+ InvertMatrix(Matrix ym, Matrix rm)
+ {
+-	register i, j, k;
++	register int i, j, k;
+ 	double det, biga, recip_biga, hold;
+ 	int l[PERMBUFSIZE], m[PERMBUFSIZE];
+ 	register int n;
+@@ -519,7 +519,7 @@
+ Matrix
+ SliceMatrix(Matrix m, unsigned rowmask, unsigned colmask)
+ {
+-	register i, ri, j, rj;
++	register int i, ri, j, rj;
+ 
+ 	Matrix r;
+ 	
+@@ -540,7 +540,7 @@
+ DeSliceMatrix(Matrix m, double fill, unsigned rowmask, unsigned colmask,
+ 	      Matrix r)
+ {
+-	register i, ri, j, rj;
++	register int i, ri, j, rj;
+ 
+ 	FillMatrix(r, fill);
+ 
+--- src/inter/inter_move_grow.cc.orig	Fri Mar 14 05:05:14 1997
++++ src/inter/inter_move_grow.cc	Wed Jan 10 19:20:23 2001
+@@ -48,7 +48,7 @@
+   void Print (ostream& out) const; // to print out the contents
+   
+   Am_Inter_Location_Data (Am_Inter_Location_Data* proto); //required by wrapper
+-  operator== (Am_Inter_Location_Data& test_data) //required by wrapper
++  bool operator== (Am_Inter_Location_Data& test_data) //required by wrapper
+   {
+     return (ref_obj == test_data.ref_obj) &&
+       (as_line == test_data.as_line) &&
+--- src/object/impl.h.orig	Thu Apr 10 22:32:34 1997
++++ src/object/impl.h	Wed Jan 10 19:20:23 2001
+@@ -259,7 +259,7 @@
+   Am_Object_Data (const char* schema_name, Am_Object_Data* in_prototype);
+   ~Am_Object_Data ();
+ 
+-  operator== (Am_Object_Data&)
++  bool operator== (Am_Object_Data&)
+   { return false; }
+ 
+   Am_Object_Data* create_object (const char* new_name);
+--- src/object/testobject.cc.orig	Thu Jul  3 01:45:20 1997
++++ src/object/testobject.cc	Wed Jan 10 19:20:23 2001
+@@ -610,7 +610,7 @@
+   { store = in_store; }
+   int Get ()
+   { return store; }
+-  operator== (Am_Foo_Data& test_value)
++  bool operator== (Am_Foo_Data& test_value)
+   { return test_value.store == store; }
+  private:
+   int store;
+--- src/opal/text_fns.cc.orig	Wed Mar  5 09:06:09 1997
++++ src/opal/text_fns.cc	Wed Jan 10 19:20:23 2001
+@@ -714,7 +714,7 @@
+ #endif
+   void Remove (Am_Input_Char ic);
+   Am_Text_Edit_Operation* Translate (Am_Input_Char ic) const;
+-  operator== (Am_Edit_Translation_Table_Data& test_value) const
++  bool operator== (Am_Edit_Translation_Table_Data& test_value) const
+   { return this == &test_value; }
+ 
+  protected:

@@ -28,6 +28,7 @@ SO_VERSION=	3.0
 
 pre-build:
 	${CP} $(FILESDIR)/Makefile.vars.gcc.FreeBSD $(WRKSRC)/bin
+	${RM} -f ${WRKSRC}/include/amulet/*.orig
 
 do-build:
 	@(cd $(WRKSRC)/bin; $(MAKE_ENV) $(MAKE) libs)
