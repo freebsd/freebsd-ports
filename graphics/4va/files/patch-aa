@@ -1,0 +1,13 @@
+--- Makefile.orig	Fri Sep  4 00:58:45 1992
++++ Makefile	Mon Jul 27 12:10:06 1998
+@@ -2,8 +2,8 @@
+ # Please send questions or bugs to mdw1@crux2.cit.cornell.edu
+ 
+ CC = cc
+-CLIBS = -lm -lX11
+-CFLAGS = -O 
++CLIBS = -lm -L/usr/X11R6/lib -lX11
++CFLAGS = -I/usr/X11R6/include -O2 -fexpensive-optimizations -fomit-frame-pointer
+ 
+ 
+ all: 4va ctorus cutctorus 4vdmake
