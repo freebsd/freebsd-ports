@@ -8,8 +8,8 @@
 PORTNAME=	cvs
 PORTVERSION=	1.11.17
 CATEGORIES=	devel ipv6
-MASTER_SITES=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/cvs/&,}
-MASTER_SITE_SUBDIR=	release/stable/${DISTNAME}
+MASTER_SITES=	http://musthave.sunbase.org/progs/ccvs/ \
+		http://keyserver.kjsl.com/~jharris/distfiles/
 PKGNAMESUFFIX=	+ipv6
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
@@ -31,7 +31,7 @@ MAN5=		cvs.5
 MAN8=		cvsbug.8
 INFO=		cvs cvsclient
 
-CVS_SITE?=	:pserver:anoncvs@anoncvs.FreeBSD.org:/home/ncvs
+CVS_SITE?=	:pserver:anoncvs@anoncvs.jp.FreeBSD.org:/home/ncvs
 CVS_VER?=	v${PORTVERSION:S/./_/g}
 
 USE_REINPLACE=	yes
@@ -47,14 +47,14 @@ replace:
 .endfor
 
 generate-patch:
-	cvs -Rl -d ${CVS_SITE} rdiff -u -r ${CVS_VER} -r HEAD \
+	cvs -R -d ${CVS_SITE} rdiff -u -r ${CVS_VER} -r HEAD \
 	  src/contrib/cvs \
 	| ${SED} \
 	  -e 's,^\+\+\+ src/contrib/cvs/,+++ ,' \
 	  -e 's,^Index: src/contrib/cvs/,Index: ,' \
 	  -e 's,\$$FreeBSD: ,FreeBSD: ,' \
 	  > ${FILESDIR}/patch-freebsdlocal
-	cvs -Rl -d ${CVS_SITE} rdiff -u -D 1999-12-01 -r HEAD \
+	cvs -R -d ${CVS_SITE} rdiff -u -D 1999-12-01 -r HEAD \
 	  gnu/usr.bin/cvs/cvs/prepend_args.c \
 	  gnu/usr.bin/cvs/cvs/prepend_args.h \
 	| ${SED} \
