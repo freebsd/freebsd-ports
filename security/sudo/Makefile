@@ -17,6 +17,7 @@ DISTNAME=	${PORTNAME}-1.6.6
 
 MAINTAINER=	mharo@FreeBSD.org
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS= --sysconfdir=${PREFIX}/etc \
@@ -40,7 +41,7 @@ MAN5=		sudoers.5
 MAN8=		sudo.8 visudo.8
 
 post-patch:
-	@${PERL} -i -pe 's,^,#,g' ${WRKSRC}/sample.sudoers
+	@${REINPLACE_CMD} -e 's|^|#|g' ${WRKSRC}/sample.sudoers
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/sample.sudoers ${PREFIX}/etc/sudoers.sample
