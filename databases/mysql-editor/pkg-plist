@@ -1,4 +1,4 @@
-share/doc/mysql-editor/readme.html
+%%PORTDOCS%%share/doc/mysql-editor/readme.html
 www/cgi-bin/mysql-editor/addi.cgi
 www/cgi-bin/mysql-editor/addu.cgi
 www/cgi-bin/mysql-editor/dat.conf.sample
@@ -7,5 +7,5 @@ www/cgi-bin/mysql-editor/edit.cgi
 www/cgi-bin/mysql-editor/index.html
 www/cgi-bin/mysql-editor/insert.cgi
 www/cgi-bin/mysql-editor/view.cgi
-@dirrm share/doc/mysql-editor
 @dirrm www/cgi-bin/mysql-editor
+%%PORTDOCS%%@dirrm share/doc/mysql-editor
