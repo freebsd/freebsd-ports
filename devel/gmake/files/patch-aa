@@ -1,11 +1,11 @@
---- Makefile.in.orig	Sat Sep 20 03:58:51 1997
-+++ Makefile.in	Thu Oct 16 00:50:40 1997
-@@ -54,7 +54,7 @@
- CC = @CC@
- CPP = @CPP@
+--- Makefile.in.orig	Wed Apr  5 11:23:54 2000
++++ Makefile.in	Tue Apr 25 17:27:41 2000
+@@ -72,7 +72,7 @@
+ GLOBINC = @GLOBINC@
+ GLOBLIB = @GLOBLIB@
  LIBOBJS = @LIBOBJS@
 -MAKEINFO = @MAKEINFO@
 +MAKEINFO = @MAKEINFO@ --no-split
+ MOFILES = @MOFILES@
  PACKAGE = @PACKAGE@
- REMOTE = @REMOTE@
- VERSION = @VERSION@
+ PERL = @PERL@
