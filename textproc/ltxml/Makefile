@@ -30,16 +30,12 @@ PROGRAMS=	getindex intersect knit nslshowddb nslwhere pesis sgcount \
 		sggrep sgmlsb sgmlseg sgmltrans sgrpg sgsort simple simpleq \
 		textonly unknit xmlnorm
 
+OPTIONS=	OPTIMIZED_CFLAGS "Extra optimizations" off
+
 .include <bsd.port.pre.mk>
+
 .ifdef WITH_OPTIMIZED_CFLAGS
 CFLAGS+=	-Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations -O3
-.endif
-
-pre-everything::
-.ifndef(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===> You can enable extra optimizations by defining WITH_OPTIMIZED_CFLAGS'
-	@${ECHO_MSG} "===> For example, 'make WITH_OPTIMIZED_CFLAGS=yes'"
 .endif
 
 post-install:
