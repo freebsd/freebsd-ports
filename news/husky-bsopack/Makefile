@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	bsopack
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.2.4
 CATEGORIES=	news mail
-DISTNAME=	${PORTNAME}-${PORTVERSION}-release
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Binkley-style outbound netmail packer
