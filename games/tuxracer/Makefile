@@ -20,9 +20,10 @@ LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/Mesa3 \
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-tcl-inc="${LOCALBASE}/include/tcl8.2" \
 		--with-tcl-libs="${LOCALBASE}/lib" \
+		--with-tcl-lib-name=tcl82 \
 		--with-glut-libs="${X11BASE}/lib" \
 		--with-glut-inc="${X11BASE}/include" \
 		--with-data-dir=${PREFIX}/share/tuxracer

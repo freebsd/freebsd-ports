@@ -1,0 +1,38 @@
+--- configure.orig	Tue Apr 18 09:05:12 2000
++++ configure	Mon Jan 15 03:26:36 2001
+@@ -2776,7 +2776,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lMesaGL  $LIBS"
++LIBS="-lMesaGL -lc_r $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2782 "configure"
+ #include "confdefs.h"
+@@ -2810,7 +2810,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lMesaGL $LIBS"
++  LIBS="-lMesaGL -lc_r $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -2874,7 +2874,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lMesaGLU  $LIBS"
++LIBS="-lMesaGLU -lc_r $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2880 "configure"
+ #include "confdefs.h"
+@@ -2908,7 +2908,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lMesaGLU $LIBS"
++  LIBS="-lMesaGLU -lc_r $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
