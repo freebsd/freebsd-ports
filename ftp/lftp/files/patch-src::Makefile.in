@@ -1,0 +1,10 @@
+--- src/Makefile.in.orig	Wed Nov 21 17:37:09 2001
++++ src/Makefile.in	Wed Nov 21 17:37:23 2001
+@@ -396,7 +396,6 @@
+ 	$(RANLIB) libtasks.a
+ install-pkgverlibLTLIBRARIES: $(pkgverlib_LTLIBRARIES)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(pkgverlibdir)
+ 	@list='$(pkgverlib_LTLIBRARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+ 	    echo " $(LIBTOOL) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(pkgverlibdir)/$$p"; \
