@@ -1,9 +1,0 @@
---- src/gtktetcolor.desktop	2000/08/17 10:12:36	1.1
-+++ src/gtktetcolor.desktop	2000/08/17 10:13:38
-@@ -4,5 +4,6 @@
- Comment=Gnome tetcolor
- Comment[ru]=Цветной тетрис для Gnome
- Exec=gtktetcolor
-+Icon=gtktetcolor.xpm
- Terminal=0
- Type=Application
