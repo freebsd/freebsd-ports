@@ -1,0 +1,19 @@
+#!/bin/sh
+
+prefix=/usr/local
+
+cat << END
+
+Deinstalling mgetty+sendfax will remove your configuration files (usually
+mgetty.config and sendfax.config in $prefix/etc/mgetty+sendfax/). If you
+want to reinstall the port later, you must make a backup of those files 
+now.
+
+END
+
+echo -n "do you want to deinstall the package ? [y] "
+read answ; if [ "$answ" = "" ]; then answ=y; fi
+case $answ in
+  y*|Y*) exit 0;;
+  *) exit 1;;
+esac
