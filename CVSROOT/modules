@@ -2737,6 +2737,7 @@ irchat-pj-xemacs-devel-mule	ports/irc/irchat-pj-xemacs-devel-mule
 irchat-pj-xemacs21-mule	ports/irc/irchat-pj-xemacs21-mule
 ircservices	ports/irc/ircservices
 iroffer		ports/irc/iroffer
+irrtoolset	ports/net/irrtoolset
 irsim		ports/cad/irsim
 irssi		ports/irc/irssi
 isakmpd		ports/security/isakmpd
@@ -6631,7 +6632,6 @@ rat		ports/mbone/rat
 rat30		ports/mbone/rat30
 ratfor		ports/lang/ratfor
 ratmenu		ports/x11-wm/ratmenu
-ratoolset	ports/net/ratoolset
 ratpoison	ports/x11-wm/ratpoison
 rats		ports/security/rats
 rawboot		src/sys/i386/boot/rawboot
