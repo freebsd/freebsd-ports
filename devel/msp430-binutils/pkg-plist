@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/devel/msp430-binutils/pkg-plist,v 1.6 2004-02-24 14:44:26 lev Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/devel/msp430-binutils/pkg-plist,v 1.7 2004-03-03 13:07:46 lev Exp $
 %%BINUTILS_TARG%%/bin/addr2line
 %%BINUTILS_TARG%%/bin/ar
 %%BINUTILS_TARG%%/bin/as
@@ -202,6 +202,16 @@
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x413.xn
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x413.xr
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x413.xu
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x415.x
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x415.xbn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x415.xn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x415.xr
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x415.xu
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x417.x
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x417.xbn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x417.xn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x417.xr
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x417.xu
 %%BINUTILS_TARG%%/lib/ldscripts/msp430xE423.x
 %%BINUTILS_TARG%%/lib/ldscripts/msp430xE423.xbn
 %%BINUTILS_TARG%%/lib/ldscripts/msp430xE423.xn
