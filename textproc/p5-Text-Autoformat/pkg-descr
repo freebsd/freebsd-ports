@@ -10,7 +10,7 @@ The module also supplies a re-entrant, highly configurable replacement
 for the built-in Perl format() mechanism. 
 
 Author: Damian Conway <damian@conway.org>
-WWW: http://search.cpan.org/search?dist=Text-Autoformat
+WWW: http://search.cpan.org/dist/Text-Autoformat/
 
 -Anton
 <tobez@FreeBSD.org>
