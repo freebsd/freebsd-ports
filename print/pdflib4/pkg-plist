@@ -1,9 +1,11 @@
-bin/imagepdf
-bin/pdfclock
-bin/pdfdemo
-bin/pdfgraph
-bin/text2pdf
-include/pdf.h
-lib/libpdf.a
-share/doc/pdflib/PDFlib-0.6.pdf
+include/pdflib.h
+lib/libpdf.so
+lib/libpdf.so.2
+share/doc/pdflib/PDFlib.pdf
+share/doc/pdflib/changes.txt
+share/doc/pdflib/compatibility.txt
+share/doc/pdflib/install.txt
+share/doc/pdflib/license.pdf
 @dirrm share/doc/pdflib
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
