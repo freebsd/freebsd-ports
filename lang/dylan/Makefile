@@ -8,7 +8,8 @@
 PORTNAME=	dylan
 PORTVERSION=	2.3.11
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.gwydiondylan.org/pub/gd/src/                 \
+MASTER_SITES=	http://ftp.gwydiondylan.org/downloads/src/tar/         \
+		ftp://ftp.gwydiondylan.org/pub/gd/src/                 \
 		ftp://ftp.gwydiondylan.org/pub/gd/FreeBSD/             \
 		ftp://folk.federated.com/pub/gd/src/                   \
 		ftp://folk.federated.com/pub/gd/FreeBSD/               \
