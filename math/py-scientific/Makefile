@@ -23,7 +23,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 NUMPYDIR=	${PYTHON_SITELIBDIR}/Numeric
-SCIENTIFICDIR=	${PYTHON_SITELIBDIR}/Scientific
 DOCDIR=		${PREFIX}/share/doc/py-scientific
 EXAMPLEDIR=	${PREFIX}/share/examples/py-scientific
 
