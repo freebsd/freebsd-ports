@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.165 1998/06/12 08:36:56 tg Exp $
+# $Id: Makefile,v 1.166 1998/06/28 03:22:50 mph Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -121,6 +121,7 @@
     SUBDIR += wide-dhcp
     SUBDIR += wu-ftpd
     SUBDIR += xarchie
+    SUBDIR += xicq
     SUBDIR += xipmsg
     SUBDIR += yale-tftpd
     SUBDIR += ytalk
