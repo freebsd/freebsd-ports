@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/multiplayer
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bsdport@ddm.wox.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-player memory game
 
 USE_IMAKE=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/c
 
-MAINTAINER=	bsdport@ddm.wox.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A call graph generator for C code
 
 USE_GMAKE=	yes
