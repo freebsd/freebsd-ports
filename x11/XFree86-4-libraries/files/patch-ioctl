@@ -1,0 +1,12 @@
+--- ./programs/Xserver/hw/xfree86/os-support/bsd/drm/kernel/drm.h~	Sun Dec 16 12:45:01 2001
++++ ./programs/Xserver/hw/xfree86/os-support/bsd/drm/kernel/drm.h	Tue Apr  9 21:45:35 2002
+@@ -35,7 +35,9 @@
+ #ifndef _DRM_H_
+ #define _DRM_H_
+ 
++#undef ioctl
+ #include <sys/ioccom.h>
++#define ioctl(a,b,c) xf86ioctl(a,b,c)
+ #define DRM_IOCTL_NR(n)	     ((n) & 0xff)
+ 
+ #define XFREE86_VERSION(major,minor,patch,snap) \
