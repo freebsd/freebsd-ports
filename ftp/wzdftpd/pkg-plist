@@ -57,7 +57,7 @@ etc/file_groups.txt
 %%DATADIR%%/modules/libwzd_sfv.a
 %%DATADIR%%/modules/libwzd_sfv.so
 %%PERL%%%%DATADIR%%/modules/libwzd_perl.a
-%%PERL%%%%DATADIR%%/modules/libwzd_perl.la 
+%%PERL%%%%DATADIR%%/modules/libwzd_perl.la
 %%PERL%%%%DATADIR%%/modules/libwzd_perl.so
 %%TCL%%%%DATADIR%%/modules/libwzd_tcl.a
 %%TCL%%%%DATADIR%%/modules/libwzd_tcl.la
