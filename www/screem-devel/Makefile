@@ -15,14 +15,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	coop9211@uidaho.edu
+COMMENT=	Nice GNOME/GTK-based HTML editor
 
 LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
+		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui20 \
 		gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml \
 		zvt-2.0.0:${PORTSDIR}/x11-toolkits/libzvt \
 		neon.23:${PORTSDIR}/www/neon
 
-BROKEN=		"Requires update to work with libgnomeprint-2-2"
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
