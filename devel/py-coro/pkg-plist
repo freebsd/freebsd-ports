@@ -1,0 +1,31 @@
+lib/python1.5/site-packages/coro/coro.py
+lib/python1.5/site-packages/coro/coro.pyc
+lib/python1.5/site-packages/coro/corodns.py
+lib/python1.5/site-packages/coro/corodns.pyc
+lib/python1.5/site-packages/coro/coromysql.py
+lib/python1.5/site-packages/coro/coromysql.pyc
+lib/python1.5/site-packages/coro/corourl.py
+lib/python1.5/site-packages/coro/corourl.pyc
+lib/python1.5/site-packages/coro/coutil.py
+lib/python1.5/site-packages/coro/coutil.pyc
+lib/python1.5/site-packages/coroutinemodule.so
+lib/python1.5/site-packages/sendfilemodule.so
+share/doc/py-coro/README
+share/doc/py-coro/coro.txt
+share/examples/py-coro/backdoor.py
+share/examples/py-coro/backdoor.pyc
+share/examples/py-coro/coro_ehttpd.py
+share/examples/py-coro/coro_ehttpd.pyc
+share/examples/py-coro/crawler.py
+share/examples/py-coro/crawler.pyc
+share/examples/py-coro/fifo.py
+share/examples/py-coro/fifo.pyc
+share/examples/py-coro/fringe.py
+share/examples/py-coro/fringe.pyc
+share/examples/py-coro/newpotato.py
+share/examples/py-coro/newpotato.pyc
+share/examples/py-coro/potato.py
+share/examples/py-coro/potato.pyc
+@dirrm lib/python1.5/site-packages/coro
+@dirrm share/examples/py-coro
+@dirrm share/doc/py-coro
