@@ -30,7 +30,7 @@ if ($user ne "") {
 
 open(D, "> $pr") or die "$pr: $!";
 open(PATCH, "> pr-patch") or die "pr-patch: $!";
-open(PR, " ${ssh} ${user}freefall.freebsd.org query-pr -F $pr | ") or die $!;
+open(PR, " ${ssh} ${user}freefall.freebsd.org query-pr.real -F $pr | ") or die $!;
 
 my $fix = "";
 my $infix = 0;
