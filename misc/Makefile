@@ -9,6 +9,7 @@
     SUBDIR += 31upgrade
     SUBDIR += 32upgrade
     SUBDIR += Howto
+    SUBDIR += aclgen
     SUBDIR += acron
     SUBDIR += alevt
     SUBDIR += amanda
