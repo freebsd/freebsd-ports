@@ -16,6 +16,7 @@
     SUBDIR += linux_base
     SUBDIR += linux_glide
     SUBDIR += linux_mesa
+    SUBDIR += kmamerun
     SUBDIR += macutils
     SUBDIR += mastergear
     SUBDIR += mtools
