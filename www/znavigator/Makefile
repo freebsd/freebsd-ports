@@ -17,6 +17,7 @@ MAINTAINER=	nbm@FreeBSD.org
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
 
 NO_BUILD=	YES
+USE_PERL5=	yes
 USE_REINPLACE=	yes
 
 # You can change this in the environment if you like.
