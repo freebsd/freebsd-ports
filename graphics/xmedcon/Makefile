@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		xmedcon
-PORTVERSION=		0.9.1
+PORTVERSION=		0.9.3
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +23,7 @@ OPTIONS=	X11 "With X11" on \
 		GLIB "With Glib" on \
 		ACR_NEMA "With Acr/Nema 2.0" on \
 		ANALYZE "With Analyze (SPM)" on \
-		CONCORDE "With COncorde µPET" on \
+		CONCORDE "With Concorde µPET" on \
 		DICOM "With DICOM 3.0" on \
 		DICOM_LJPEG "With DICOM 3.0 Lossless JPEG" on \
 		ECAT "With ECAT 6.4 / 7.2" on \
@@ -40,7 +40,6 @@ WANT_GNOME=	yes
 CONFIGURE_ARGS=	--disable-gui
 PLIST_SUB+=	X11="@comment "
 .else
-#USE_X_PREFIX=	yes
 USE_GNOME+=	gtk12 gdkpixbuf
 PLIST_SUB+=	X11=""
 .endif
@@ -50,8 +49,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .if !defined(WITH_GLIB)
 CONFIGURE_ARGS+=	--disable-glib
-.else
-#USE_GNOME+=		glib12
 .endif
 
 .if !defined(WITH_ACR_NEMA) && !defined(WITH_DICOM)
@@ -103,8 +100,8 @@ MAN1=	medcon.1 xmedcon-config.1
 MAN1+=	xmedcon.1
 .endif
 
-MAN3+=	medcon.3
+MAN3=	medcon.3
 
-MAN4+=	m-acr.4 m-anlz.4 m-ecat.4 m-gif.4 m-intf.4 m-inw.4
+MAN4=	m-acr.4 m-anlz.4 m-ecat.4 m-gif.4 m-intf.4 m-inw.4
 
 .include <bsd.port.post.mk>

@@ -22,6 +22,7 @@ include/xmedcon/m-files.h
 include/xmedcon/m-getopt.h
 include/xmedcon/m-gif.h
 include/xmedcon/m-global.h
+include/xmedcon/m-init.h
 include/xmedcon/m-intf.h
 include/xmedcon/m-inw.h
 include/xmedcon/m-matrix.h
@@ -30,7 +31,6 @@ include/xmedcon/m-png.h
 include/xmedcon/m-qmedian.h
 include/xmedcon/m-raw.h
 include/xmedcon/m-rslice.h
-include/xmedcon/m-sigfpe.h
 include/xmedcon/m-split.h
 include/xmedcon/m-stack.h
 include/xmedcon/m-structs.h
