@@ -15,10 +15,16 @@ share/icons/locolor/32x32/apps/kscope.png
 share/icons/hicolor/16x16/apps/kscope.png
 share/applnk/Utilities/kscope.desktop
 share/apps/kscope/kscopeui.rc
+share/apps/kscope/pics/file_ro.png
+share/apps/kscope/pics/file_rw.png
+share/apps/kscope/pics/file_save.png
+share/apps/kscope/pics/query_locked.png
+share/apps/kscope/pics/query_unlocked.png
 @unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
 @dirrm %%DOCSDIR%%
+@dirrm share/apps/kscope/pics
 @dirrm share/apps/kscope
