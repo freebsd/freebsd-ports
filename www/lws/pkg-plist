@@ -6,6 +6,7 @@ etc/lws/admin/doit.tmpl
 etc/lws/admin/foot.tmpl
 etc/lws/admin/head.tmpl
 etc/lws/admin/help/index.tmpl
+etc/lws/admin/help/manpage.tmpl
 etc/lws/admin/help/tmplfunc.tmpl
 etc/lws/admin/index.tmpl
 etc/lws/admin/logexport.txt.tmpl
