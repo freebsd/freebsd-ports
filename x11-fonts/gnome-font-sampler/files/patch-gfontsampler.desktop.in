@@ -1,0 +1,17 @@
+--- gfontsampler.desktop.in.orig	Sun Dec 26 19:32:38 2004
++++ gfontsampler.desktop.in	Fri Dec 31 22:00:39 2004
+@@ -1,10 +1,10 @@
+-
+ [Desktop Entry]
+ Name=Font Sampler
+-Comment=No comment
++Comment=View several fonts at once
+ Exec=gfontsampler
+-Icon=@PACKAGE_PIXMAPS_DIR@/gfontsampler-icon.png
++Icon=gfontsampler-icon.png
+ Terminal=false
+ MultipleArgs=false
+ Type=Application
+-
++Categories=Application;Utility;
++StartupNotify=true

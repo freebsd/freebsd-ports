@@ -1,0 +1,29 @@
+--- Makefile.in.orig	Fri Dec 31 21:17:40 2004
++++ Makefile.in	Fri Dec 31 21:18:55 2004
+@@ -154,7 +154,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ 
+-SUBDIRS = intl po macros include src pixmaps
++SUBDIRS = intl po macros src pixmaps
+ 
+ gfontsamplerdocdir = ${prefix}/doc/gfontsampler
+ gfontsamplerdoc_DATA = \
+@@ -561,7 +561,7 @@
+ all-am: Makefile $(DATA) config.h
+ installdirs: installdirs-recursive
+ installdirs-am:
+-	$(mkinstalldirs) $(DESTDIR)$(gfontsampler_glade_filedir) $(DESTDIR)$(gfontsamplerdocdir) $(DESTDIR)$(gnomemenudir)
++	$(mkinstalldirs) $(DESTDIR)$(gfontsampler_glade_filedir) $(DESTDIR)$(gnomemenudir)
+ 
+ install: install-recursive
+ install-exec: install-exec-recursive
+@@ -607,7 +607,7 @@
+ info-am:
+ 
+ install-data-am: install-gfontsampler_glade_fileDATA \
+-	install-gfontsamplerdocDATA install-gnomemenuDATA
++	install-gnomemenuDATA
+ 
+ install-exec-am:
+ 
