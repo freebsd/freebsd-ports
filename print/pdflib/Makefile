@@ -29,6 +29,7 @@ CONFIGURE_ARGS=	--with-java=no \
 USE_PERL5=	yes
 PLIST_SUB=	PERL=""
 CONFIGURE_ARGS+=--with-perl=${PERL}
+PKGNAMESUFFIX=	-perl
 .else
 CONFIGURE_ARGS+=--with-perl=no
 PLIST_SUB=	PERL="@comment "
