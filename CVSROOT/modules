@@ -8536,6 +8536,7 @@ wscan		ports/x11/wscan
 wsmake		ports/www/wsmake
 wsoundprefs	ports/audio/wsoundprefs
 wsoundserver	ports/audio/wsoundserver
+wtail		ports/sysutils/wtail
 wterm		ports/x11/wterm
 wtf		ports/games/wtf
 wu-ftpd		ports/ftp/wu-ftpd
