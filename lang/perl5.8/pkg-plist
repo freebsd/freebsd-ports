@@ -483,6 +483,7 @@ lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regexp.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regnodes.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/scope.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/sv.h
+%%ENABLE_SUIDPERL%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/sperl.o
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/thrdvar.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/thread.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/uconfig.h
