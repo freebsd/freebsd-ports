@@ -83,6 +83,7 @@ proc_catalog () {
                 rm -f ${catalog_high}
             else
                 cp ${TMPCAT} ${catalog_high} || exit 1
+                undelete_flag="YES"
             fi
             ;;
     esac
@@ -99,18 +100,30 @@ dtd_name=$1
 dtd_list="$*"
 IFS=" "
 n_dtd_list=$#
-counter=0
+counter=${n_dtd_list}
+undelete_flag="NO"
 
-for i in ${dtd_list}
+while [ ${counter} -ne 0 ];
 do
-    counter=`expr ${counter} + 1`
-    cat_high_dir=${CAT_DIR}${dtd_base}
+    lower_dtd_dir=`echo ${dtd_list} | sed 's/[^ ]* //g'`
+    upper_dtd_list=`echo ${dtd_list} | sed "s/${lower_dtd_dir}$//"`
 
-    if [ ${counter} -ne ${n_dtd_list} ]; then
-        proc_catalog ${cat_high_dir}/catalog ${i}/catalog
-    else
-        proc_catalog ${cat_high_dir}/catalog ${i}/${dtd_catalog:-catalog}
+    cat_high_dir=${CAT_DIR}/`echo "${upper_dtd_list}" | sed 's; ;/;g'`
+    cat_high_dir=`echo ${cat_high_dir} | sed 's;/$;;'`
+    cat_low_dir=${lower_dtd_dir}
+
+    if [ ${undelete_flag} = "YES" ]; then
+        exit 0;
     fi
 
-    dtd_base=${dtd_base}/$i
+    if [ ${counter} -ne ${n_dtd_list} ]; then
+        proc_catalog ${cat_high_dir}/catalog ${cat_low_dir}/catalog
+    else
+        proc_catalog ${cat_high_dir}/catalog ${cat_low_dir}/${dtd_catalog:-catalog}
+    fi
+
+    counter=`expr ${counter} - 1`
+    dtd_list=${upper_dtd_list}
 done
+
+exit 0;
