@@ -9,8 +9,7 @@
 DISTNAME=	pari-2.0.16.beta
 PKGNAME=	pari-2.0.16b
 CATEGORIES=	math
-MASTER_SITES=   ftp://megrez.math.u-bordeaux.fr/pub/pari/unix/ \
-				ftp://hasse.mathematik.tu-muenchen.de/pub/pari/
+MASTER_SITES=	ftp://hasse.mathematik.tu-muenchen.de/pub/pari/
 
 MAINTAINER=     yoshiaki@kt.rim.or.jp
 
