@@ -8,7 +8,7 @@
 
 PORTNAME=	pipebench
 PORTVERSION=	0.20
-CATEGORIES=	misc
+CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/
 
 MAINTAINER=	mich@freebsdcluster.org

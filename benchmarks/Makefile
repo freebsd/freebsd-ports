@@ -12,6 +12,7 @@
     SUBDIR += nbench
     SUBDIR += netperf
     SUBDIR += netpipe
+    SUBDIR += pipebench
     SUBDIR += polygraph
     SUBDIR += postal
     SUBDIR += postmark
