@@ -103,6 +103,10 @@ MAKE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
 PLIST_SUB+=		THREADS=""
 .endif
 
+.if ${OSVERSION} >= 502112
+BROKEN=			"Coredump during install on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@${RM} ${WRKSRC}/test/Makefile.arch.orig
 	@${REINPLACE_CMD} -e 's|auxcflags=\"-pthread|auxcflags=\"${PTHREAD_CFLAGS}| ;	\
