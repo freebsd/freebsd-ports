@@ -1,6 +1,5 @@
-# $Id: Makefile,v 1.4 1994/10/23 02:38:20 torstenb Exp $
+# $Id: Makefile,v 1.5 1995/01/23 20:14:55 gpalmer Exp $
 #
-# BROKEN = cnews
-SUBDIR=	nn nntp trn inn
+SUBDIR=	cnews nn nntp trn inn
 
 .include <bsd.port.subdir.mk>
