@@ -1,5 +1,6 @@
 bin/xgettext.pl
 %%SITE_PERL%%/Locale/Maketext/Extract.pm
+%%SITE_PERL%%/Locale/Maketext/Extract/Run.pm
 %%SITE_PERL%%/Locale/Maketext/Lexicon.pm
 %%SITE_PERL%%/Locale/Maketext/Lexicon/Auto.pm
 %%SITE_PERL%%/Locale/Maketext/Lexicon/Gettext.pm
@@ -10,5 +11,6 @@ bin/xgettext.pl
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Maketext 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale 2>/dev/null || true
 @dirrm %%SITE_PERL%%/Locale/Maketext/Lexicon
+@unexec rmdir %D/%%SITE_PERL%%/Locale/Maketext/Extract 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Locale/Maketext 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Locale 2>/dev/null || true
