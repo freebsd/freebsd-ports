@@ -1,0 +1,26 @@
+include/libgnomeprintui-2.0/libgnomeprintui/gnome-font-dialog.h
+include/libgnomeprintui-2.0/libgnomeprintui/gnome-print-copies.h
+include/libgnomeprintui-2.0/libgnomeprintui/gnome-print-dialog.h
+include/libgnomeprintui-2.0/libgnomeprintui/gnome-print-master-preview.h
+include/libgnomeprintui-2.0/libgnomeprintui/gnome-print-paper-selector.h
+include/libgnomeprintui-2.0/libgnomeprintui/gnome-print-preview.h
+include/libgnomeprintui-2.0/libgnomeprintui/gnome-printer-dialog.h
+lib/libgnomeprintui-2.a
+lib/libgnomeprintui-2.so
+lib/libgnomeprintui-2.so.0
+libdata/pkgconfig/libgnomeprintui-2.0.pc
+share/locale/az/LC_MESSAGES/libgnomeprintui.mo
+share/locale/ca/LC_MESSAGES/libgnomeprintui.mo
+share/locale/de/LC_MESSAGES/libgnomeprintui.mo
+share/locale/et/LC_MESSAGES/libgnomeprintui.mo
+share/locale/ko/LC_MESSAGES/libgnomeprintui.mo
+share/locale/ms/LC_MESSAGES/libgnomeprintui.mo
+share/locale/pl/LC_MESSAGES/libgnomeprintui.mo
+share/locale/pt/LC_MESSAGES/libgnomeprintui.mo
+share/locale/sl/LC_MESSAGES/libgnomeprintui.mo
+share/locale/sv/LC_MESSAGES/libgnomeprintui.mo
+share/locale/ta/LC_MESSAGES/libgnomeprintui.mo
+share/locale/wa/LC_MESSAGES/libgnomeprintui.mo
+share/locale/zh_CN/LC_MESSAGES/libgnomeprintui.mo
+share/locale/zh_TW/LC_MESSAGES/libgnomeprintui.mo
+@dirrm include/libgnomeprintui-2.0/libgnomeprintui
