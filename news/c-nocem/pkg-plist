@@ -1,2 +1,2 @@
-libexec/cnews/fastcancel
-libexec/cnews/c-nocem
+%%NEWSBIN%%/fastcancel
+%%NEWSBIN%%/c-nocem

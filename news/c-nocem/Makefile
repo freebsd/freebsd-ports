@@ -20,5 +20,6 @@ CNEWSSRC?=	${.CURDIR}/../cnews/work
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-cnews=${WRKDIRPREFIX}${CNEWSSRC}
+PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=${PREFIX}/==}
 
 .include <bsd.port.mk>
