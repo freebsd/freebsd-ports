@@ -9,8 +9,7 @@ PORTNAME=	afbackup
 PORTVERSION=	3.3.5
 PORTREVISION=	2
 CATEGORIES?=	misc
-MASTER_SITES=	ftp://ftp.vic.com/af/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	afbackup
 DISTNAME=	${PORTNAME}-3.3.5
 # XXX Remember to remove the comment if the actual variable is needed by someone.
