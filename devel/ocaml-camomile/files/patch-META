@@ -1,0 +1,11 @@
+--- META	Wed Jul 14 17:00:05 2004
++++ META.1	Tue Aug 10 22:27:49 2004
+@@ -8,7 +8,7 @@
+ 
+ package "unpack"
+ 	(name="unpack"
+-	varison="0.5.3"
++	version="0.5.3"
+ 	description="Unicode library for ocaml (not packed)"
+ 	requires="bigarray"
+ 	archive(byte)="camomileunpack.cma" 

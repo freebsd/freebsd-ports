@@ -27,6 +27,10 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Need working <wctype.h>"
+.endif
+
 .if ${ARCH} == "amd64"
 BROKEN=		"Coredump during build on amd64"
 .endif
