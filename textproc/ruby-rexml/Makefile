@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rexml
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://www.germane-software.com/~ser/Software/archives/
+MASTER_SITES=	http://www.germane-software.com/software/archives/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -21,7 +21,7 @@ USE_RUBY=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-DOCS=		README index.html tutorial.html api img
+DOCS=		README index.html docs/tutorial.xml img
 
 do-install:
 	cd ${WRKSRC} && ${RUBY} bin/install.rb
