@@ -1,0 +1,20 @@
+WebStone is an open benchmark proposal to the server industry. It is
+designed to measure the performance of HTTP servers under multiple
+scenarios which reflect different Web site profiles. 
+
+The original WebStone benchmark was released in March, 1995. The original
+white paper describing this benchmark is available from
+http://www.sgi.com/Products/WebFORCE/WebStone/.
+
+WebStone is not a proprietary benchmark - it is an open benchmark. The
+source code is freely available, and anyone can examine it. By design,
+WebStone does not unfairly favor SGI, Netscape, or any other company - it
+is simply a performance measurement tool.
+
+This FreeBSD port rely on rsh and rcp being allowed for the user proces
+running webstone between the web server and web clients. This is not
+enable per default in FreeBSD, and root is never allowed to do it without
+entering password for each operation. 
+
+- Soren Dossing
+sauber@netcom.com
