@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	ftp://ftp.gnutls.org/pub/gnutls/libtasn1/
 MASTER_SITE_SUBDIR=	alpha/gnutls/libtasn1
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	ASN.1 structure parser library
 
 USE_REINPLACE=	yes

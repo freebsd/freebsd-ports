@@ -10,7 +10,7 @@ PORTVERSION=	0.11.0
 CATEGORIES=	mail
 MASTER_SITES=	http://smarden.org/qconfirm/
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Filter spam by requesting confirmation from sender
 
 WRKSRC=		${WRKDIR}/mail/${DISTNAME}

@@ -10,7 +10,7 @@ PORTVERSION=	3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/qlogtools/
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Tools for processing logs from qmail and other packages
 
 MAN1=		multipipe.1 multitail.1 qfilelog.1 \

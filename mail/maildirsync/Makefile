@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://hacks.dlux.hu/maildirsync/
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Online synchronizer for Maildir-format mailboxes
 
 USE_PERL5=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.9.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.annexia.org/freeware/${PORTNAME}/
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Extracts documentation from C source code comments
 
 BUILD_DEPENDS+=	make+:${PORTSDIR}/devel/makeplus

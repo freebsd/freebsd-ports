@@ -14,7 +14,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://cyberelk.net/tim/data/xmlto/stable/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Front-end to an XSL toolchain
 
 BUILD_DEPENDS=	${BASH_CMD}:${PORTSDIR}/shells/bash2 \

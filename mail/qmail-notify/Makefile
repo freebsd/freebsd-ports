@@ -10,7 +10,7 @@ PORTVERSION=	0.93
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/qmail-notify/
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Delayed delivery notification for qmail
 
 EXAMPLES=	cron.hourly message.txt

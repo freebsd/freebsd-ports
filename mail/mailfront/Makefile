@@ -10,7 +10,7 @@ PORTVERSION=	0.87
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/mailfront/
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Mail server network protocol front-ends
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbg-unix.a:${PORTSDIR}/devel/bglibs

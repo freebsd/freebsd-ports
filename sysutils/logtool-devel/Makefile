@@ -10,7 +10,7 @@ PORTVERSION=	1.2.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://xjack.org/logtool/download/
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Parse ASCII logfiles into ANSI, CSV, HTML formats
 
 USE_GMAKE=	yes

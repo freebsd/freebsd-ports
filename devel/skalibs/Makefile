@@ -10,7 +10,7 @@ PORTVERSION=	0.32
 CATEGORIES=	devel
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	General purpose C libraries used by skarnet.org software
 
 WRKSRC=		${WRKDIR}/prog/${DISTNAME}
