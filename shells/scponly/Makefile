@@ -39,6 +39,10 @@
 # default: undefined
 # define if you want to enable rsync compatibility.
 #
+# WITH_SCPONLY_UNISON
+# default: undefined
+# define if you want to enable unison compatibility.
+#
 #
 # Additional knobs:
 #
@@ -49,7 +53,7 @@
 # to be installed.
 
 PORTNAME=	scponly
-PORTVERSION=	3.9
+PORTVERSION=	3.11
 PORTREVISION=	0
 CATEGORIES=	shells
 MASTER_SITES=	http://www.sublimation.org/scponly/
@@ -84,14 +88,18 @@ CONFIGURE_ARGS+=--disable-winscp-compat
 .if defined(WITH_SCPONLY_CHROOT)
 PLIST_SUB=	SCPONLY_CHROOT=""
 CONFIGURE_ARGS+=--enable-chrooted-binary
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ab
-USE_AUTOCONF_VER=253
 .endif
 
 .if defined(WITH_SCPONLY_RSYNC)
 BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 RUN_DEPENDS=	${BUILD_DEPENDS}
 CONFIGURE_ARGS+=--enable-rsync-compat
+.endif
+
+.if defined(WITH_SCPONLY_UNISON)
+BUILD_DEPENDS+=	unison:${PORTSDIR}/net/unison
+RUN_DEPENDS+=	${BUILD_DEPENDS}
+CONFIGURE_ARGS+=--enable-unison-compat
 .endif
 
 pre-everything::
