@@ -28,6 +28,7 @@ PATCHFILES=	vile-9.3a.patch.gz \
 		vile-9.3l.patch.gz
 
 MAINTAINER=	gj@FreeBSD.org
+COMMENT=	VI Like Emacs.  a vi "workalike", with many additional features
 
 MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
