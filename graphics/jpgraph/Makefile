@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jpgraph
-PORTVERSION=	1.12
+PORTVERSION=	1.12.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.aditus.nu/jpgraph/downloads/
 
