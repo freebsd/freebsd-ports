@@ -27,10 +27,16 @@ CONFIGURE_ARGS=	--with-apxs="${APXS}" \
 		--enable-eruby=yes \
 		--with-eruby-includes="${LOCALBASE}/include" \
 		--with-eruby-libraries="${LOCALBASE}/lib"
+MAKE_ARGS=	RUBY="${RUBY}"
 INSTALL_TARGET=	site-install
 
 DOCS_EN=	COPYING ChangeLog README.en doc/default.css doc/*.en.*
 DOCS_JA=	README.ja doc/default.css doc/*.ja.*
+
+post-patch:
+.if !defined(NOPORTDOCS)
+	${RUBY} -i -pe 'sub(/ruby /, "${RUBY} ")' ${WRKSRC}/doc/Makefile
+.endif
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} configure.rb ${CONFIGURE_ARGS}
