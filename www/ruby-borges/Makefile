@@ -15,9 +15,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A web application framework for Ruby that allows linear programming
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/webrick.rb:${PORTSDIR}/www/ruby-webrick
-
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	webrick
 
 NO_BUILD=	yes
 

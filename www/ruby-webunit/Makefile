@@ -18,11 +18,10 @@ COMMENT=	A Ruby API for automated unit testing of web sites
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/html-parser.rb:${PORTSDIR}/textproc/ruby-html-parser \
 		${RUBY_SITELIBDIR}/htmlrepair.rb:${PORTSDIR}/textproc/ruby-htmlrepair \
-		${RUBY_SITELIBDIR}/htmlsplit.rb:${PORTSDIR}/textproc/ruby-htmlsplit \
-		${RUBY_SITELIBDIR}/rexml/rexml.rb:${PORTSDIR}/textproc/ruby-rexml
+		${RUBY_SITELIBDIR}/htmlsplit.rb:${PORTSDIR}/textproc/ruby-htmlsplit
 
 USE_RUBY=	yes
-USE_RUBY_FEATURES=	testunit
+USE_RUBY_FEATURES=	rexml testunit
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

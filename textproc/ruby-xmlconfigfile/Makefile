@@ -16,11 +16,10 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby module for easy handling of XML configuration files
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/rexml/document.rb:${PORTSDIR}/textproc/ruby-rexml
-
 USE_ZIP=	yes
 
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	rexml
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 

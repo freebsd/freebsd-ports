@@ -13,10 +13,10 @@ MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 MAINTAINER=	david+ports@bushong.net
 COMMENT=	Ruby IRC bot similar to infobot
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb \
-		${RUBY_SITELIBDIR}/rexml/document.rb:${PORTSDIR}/textproc/ruby-rexml
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	rexml
 
 NO_BUILD=	yes
 
