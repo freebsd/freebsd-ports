@@ -1,0 +1,11 @@
+--- client/Makefile.dist.orig	Wed Dec  3 19:33:35 1997
++++ client/Makefile.dist	Wed Dec  3 19:33:44 1997
+@@ -40,7 +40,7 @@
+ DEBUG  = -g
+ INCLUDES = -I.. -I../includes
+ DHCPLIB = ../common/libdhcp.a
+-CFLAGS = $(DEBUG) $(PREDEFINES) $(INCLUDES) $(COPTS)
++CFLAGS += $(DEBUG) $(PREDEFINES) $(INCLUDES) $(COPTS)
+ 
+ all:	$(PROG) $(CATMANPAGES)
+ 
