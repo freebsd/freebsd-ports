@@ -220,6 +220,7 @@
     SUBDIR += php5-dba
     SUBDIR += php5-dbase
     SUBDIR += php5-dbx
+    SUBDIR += php5-filepro
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
     SUBDIR += postgis
