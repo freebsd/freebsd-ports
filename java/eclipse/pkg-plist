@@ -2822,6 +2822,7 @@ eclipse/startup.jar
 @dirrm eclipse/plugins/org.apache.xerces_4.0.13
 @dirrm eclipse/plugins/org.apache.lucene_1.2.1
 @dirrm eclipse/plugins/org.apache.ant_1.5.3
+@dirrm eclipse/features/org.eclipse.team.extras_2.1.0
 @dirrm eclipse/features/org.eclipse.platform_2.1.1
 @dirrm eclipse/features/org.eclipse.platform.source_2.1.1
 @dirrm eclipse/features/org.eclipse.platform.freebsd.gtk_2.1.1
