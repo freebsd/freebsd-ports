@@ -19,7 +19,13 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+MAKE_ENV=	CC="${CC}"
+
+post-patch:
+	${REINPLACE_CMD} -e 's|-O2|${CFLAGS}|' \
+		${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/glewinfo ${PREFIX}/bin
