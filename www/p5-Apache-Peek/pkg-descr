@@ -1,0 +1,7 @@
+Apache::Peek is Ilya Zakharevich's Devel::Peek module that sends
+output to the browser instead of stderr.
+
+WWW: http://search.cpan.org/doc/DOUGM/mod_perl-1.24/apache-modlist.html
+
+- Leo Kim
+leo@florida.sarang.net
