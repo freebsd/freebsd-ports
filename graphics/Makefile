@@ -349,6 +349,7 @@
     SUBDIR += xmandel
     SUBDIR += xmfract
     SUBDIR += xmms-avi
+    SUBDIR += xmms-fishmatic
     SUBDIR += xmms-gforce
     SUBDIR += xmms-goom
     SUBDIR += xmms-xvs
