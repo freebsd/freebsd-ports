@@ -176,6 +176,7 @@
     SUBDIR += librsync
     SUBDIR += libsmi
     SUBDIR += libsocket++
+    SUBDIR += libsocketcpp
     SUBDIR += libunp
     SUBDIR += libunpipc
     SUBDIR += licq
