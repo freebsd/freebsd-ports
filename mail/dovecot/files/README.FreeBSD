@@ -13,7 +13,7 @@
   + FreeBSD 4 (DEFAULT)
 
     auth_passdb = passwd
-    auth_user = dovecot-auth
+    auth_user = root
 
   + FreeBSD 5
 
