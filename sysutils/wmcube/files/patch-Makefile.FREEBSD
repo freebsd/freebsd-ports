@@ -1,0 +1,22 @@
+--- Makefile.FREEBSD.orig	Tue May 29 15:20:30 2001
++++ Makefile.FREEBSD	Tue May 29 15:22:08 2001
+@@ -9,7 +9,7 @@
+ 
+ OSLIBS = -lkvm
+ LIBS   = -lXpm -lXext -lX11 -lm $(OSLIBS)
+-CFLAGS = -Wall -O2 $(OS)
++CFLAGS += -Wall $(OS)
+ 
+ OBJS =	wmcube.o \
+ 	../wmgeneral/wmgeneral.o \
+@@ -32,7 +32,7 @@
+ 	rm -f *~
+ 
+ install:: wmcube
+-	cp -f wmcube /usr/local/bin/
+-	chmod g+s /usr/local/bin/wmcube
+-	chown root.kmem /usr/local/bin/wmcube
++	$(BSD_INSTALL_PROGRAM) wmcube $(PREFIX)/bin/
++	chown root.kmem $(PREFIX)/bin/wmcube
++	chmod g+s $(PREFIX)/bin/wmcube
+ 	@echo "wmCube installation finished..."
