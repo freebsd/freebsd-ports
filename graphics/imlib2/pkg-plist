@@ -15,4 +15,6 @@ lib/libgdk_imlib.a
 lib/libgdk_imlib.la
 lib/libgdk_imlib.so
 lib/libgdk_imlib.so.1.6
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 @dirrm etc/imlib
