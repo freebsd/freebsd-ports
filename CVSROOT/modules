@@ -6102,12 +6102,16 @@ pear		ports/devel/pear
 pear-Console_Getopt	ports/devel/pear-Console_Getopt
 pear-Date	ports/devel/pear-Date
 pear-File	ports/sysutils/pear-File
+pear-HTML_Common	ports/devel/pear-HTML_Common
+pear-HTML_Select	ports/devel/pear-HTML_Select
+pear-I18N	ports/devel/pear-I18N
 pear-Log	ports/sysutils/pear-Log
 pear-Mail_Mime	ports/mail/pear-Mail_Mime
 pear-Net_Sieve	ports/net/pear-Net_Sieve
 pear-Net_Socket	ports/net/pear-Net_Socket
 pear-PEAR	ports/devel/pear-PEAR
 pear-install	ports/devel/pear-install
+pear-Crypt_CBC	ports/security/pear-Crypt_CBC
 pedisassem	ports/devel/pedisassem
 peeper		ports/x11/peeper
 pekwm		ports/x11-wm/pekwm
