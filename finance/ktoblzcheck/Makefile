@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check bank codes of German banks
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 
 GNU_CONFIGURE=	yes
 
