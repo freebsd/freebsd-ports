@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	apsfilter
-PORTVERSION=	5.4.2
+PORTVERSION=	6.0.0
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
-PATCH_SITES=	http://www.apsfilter.org/download/
-PATCHFILES=	diff-5.4.2-14.08.2000.gz
+DISTFILES=	apsfilter-current-16.08.2000.tar.bz2
 
 MAINTAINER=	andreas@FreeBSD.org
 

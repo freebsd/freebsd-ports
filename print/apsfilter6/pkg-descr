@@ -1,23 +1,23 @@
+This is the developement snapshot of the new upcoming apsfilter
+release V 6.0.0 for you to test.
+
+Please report trouble / suggestions / comments to
+apsfilter-current@apsfilter.org
+
+Apsfilter V 6.0.0 is a complete rewrite of apsfilter 5.4.2:
+- we kept old functionalities, added new
+- modified configuration
+- enhanced file type support
+
 apsfilter is a magic printfilter, that allows you to print different document
 types "automagically" without having to convert them manually into something
-which is understood by your lineprinter. Apsfilter supports the following
-file and compression types: gzip, bzip, compress, freeze, pack, ASCII, BMP,
+which is understood by your lineprinter. Apsfilter supports lots of file and
+compression types: gzip, bzip, compress, freeze, pack, ASCII, BMP,
 Data (data,PCL,...), English, TeX DVI, FIG, GIF, Group 3 Fax, HTML, JPEG,
 Mail/News, PBM/PNM/PPM, PC Bitmap Data, PDF, Postscript(tm), raw, script
-(shell,..), Text, sunraster, tiff, roff (nroff, groff, troff).
+(shell,..), Text, sunraster, tiff, roff (nroff, groff, troff) and lots
+more in V 6.0.0. Docu concerning that is in the pipeline ...
 
-Example: lpr ascii.Z test.gif picture.tiff TeX.dvi.gz webpage.html docu.pdf
+Example: lpr -C high:presentation:glossy ascii.Z test.gif picture.tiff ...
 
-Prerequisites: Filter programs, installed automatically by FreeBSD ports
-collection, Postscript Printer or Printer supported by ghostscript, Berkeley
-compatible line printer scheduler (lpd) or Line Printer Next Generation
-(LPRng) which is so to say the successor.
-
-SETUP installs you printer by creating suitable /etc/printcap entries for
-serial and parallel printers and customizes apsfilter for your system/printer.
-
-License Information: GNU GPL and so called "Postcard License". You have to
-write me a postcard if you use apsfilter. Request my snail mail address
-by writing mail to	mailto:request-snailmail@klemm.gtn.com
-
-WWW:	http://people.FreeBSD.org/~andreas/apsfilter/index.html
+WWW:	http://www.apsfilter.org/
