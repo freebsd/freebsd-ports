@@ -1,12 +1,12 @@
 # New ports collection makefile for:	WindowMaker
-# Version required:	0.51.0
+# Version required:	0.51.2
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.46 1999/02/10 21:29:28 fenner Exp $
+# $Id: Makefile,v 1.47 1999/02/21 21:51:01 billf Exp $
 
-DISTNAME=	WindowMaker-0.51.0
-PKGNAME=	windowmaker-0.51.0
+DISTNAME=	WindowMaker-0.51.2
+PKGNAME=	windowmaker-0.51.2
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 		http://jgo.local.net/cool_downloads/wm/
