@@ -13,6 +13,7 @@
 
     /usr/share/info/dir
     /usr/share/mk/bsd.port*.mk
+    /usr/share/mk/sys.mk
 
 (2) Run "sh mkbindist".  Note the first time you should set "ftp=1".
 
