@@ -16,6 +16,10 @@ lib/libpngwriter.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/lyapunov.espaniol.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/pngtest.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/pngtest.espaniol.cc
+%%DATADIR%%/fonts/FreeMonoBold.ttf
+%%DATADIR%%/fonts/FreeSansBold.ttf
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/espaniol
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/english

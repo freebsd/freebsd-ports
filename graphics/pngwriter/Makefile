@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	pngwriter
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.4
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library for creating PNG images
@@ -20,7 +21,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
-CXXFLAGS+=	`freetype-config --cflags` -I${LOCALBASE}/include
+CXXFLAGS+=	`freetype-config --cflags` -I${LOCALBASE}/include/libpng
 
 do-build:
 	cd ${BUILD_WRKSRC} \
@@ -30,11 +31,13 @@ do-build:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/pngwriter.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/src/libpngwriter.a ${PREFIX}/lib
+	@${MKDIR} ${DATADIR}/fonts
+	cd ${WRKSRC}/fonts && ${FIND} . | \
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/fonts
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
