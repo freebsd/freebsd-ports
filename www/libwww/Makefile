@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-PKGNAME=	libwww-5.2.6
 DISTNAME=	w3c-${PKGNAME}
+PKGNAME=	libwww-5.2.6
 CATEGORIES=	www devel
 MASTER_SITES=	http://www.w3.org/Library/Distribution/
 
