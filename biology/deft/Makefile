@@ -7,9 +7,9 @@
 
 PORTNAME=	deft
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
-MASTER_SITES=	ftp://theory.chem.uottawa.ca/pub/
+MASTER_SITES=	http://www.dq.ufscar.br/download/chem/dft/
 DISTNAME=	DeFT_${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
@@ -23,13 +23,27 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/source
 # Using g77 is troublesome, then it is better to use f2c/cc.
 BUILD_DEPENDS=	ftn77:${PORTSDIR}/lang/f77
 .endif
+.if defined(USEMPICH) && ${USEMPICH} == yes
+BUILD_DEPENDS+=	mpif77:${PORTSDIR}/net/mpich
+FFLAGS+=	-I/usr/local/mpich/include
+FC=		/usr/local/mpich/bin/mpif77
+LFLAGS+=	-L/usr/local/mpich/lib -lmpich
+.endif
 
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g"\
 		${WRKDIR}/${DISTNAME}/examples/DeFT
+.if !defined(USEMPICH)
+	@echo "******************************"
+	@echo "If you want to use MPI library, set 'USEMPICH=yes'."
+	@echo "******************************"
+.endif
 
 post-configure:
 	${CP} ${FILESDIR}/Makefile.deft ${WRKSRC}/Makefile
+.if defined(USEMPICH) && ${USEMPICH} == yes
+	${MV} ${WRKSRC}/mpi.f ${WRKSRC}/mpi.f.notuse
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/DeFT.exec ${PREFIX}/bin/

@@ -2,8 +2,8 @@
 # Makefile for DeFT
 #
 TARGET = DeFT.exec
-FFLAGS += -w
-CFLAGS += -w
+FFLAGS += -w -O3
+CFLAGS += -w -O3
 .if ${MACHINE_ARCH} == "i386"
 FFLAGS += -malign-double
 CFLAGS += -malign-double
@@ -18,15 +18,22 @@ CFLAGS += -I${PREFIX}/include
 LFLAGS = 
 SRCS:sh = ls *.f
 OBJS = $(SRCS:.f=.o)
+.if defined(USEMPICH) && ${USEMPICH} == yes
+FFLAGS+=	-I/usr/local/mpich/include
+FC=		/usr/local/mpich/bin/mpif77
+LFLAGS+=	-L/usr/local/mpich/lib -lmpich
+.endif
 
 all: ${TARGET}
 
 ${TARGET}: ${OBJS}
 	${FC} ${LFLAGS} ${OBJS} -o $@
 
-cdgrxx.o:
+.if ${FC} == ftn77
+cdgrxx.o: cdgrxx.f
 	${F2C} ${F2CFLAGS} cdgrxx.f
 	${CC} ${CFLAGS} -c cdgrxx.c
+.endif
 
 clean:
 	rm -f ${OBJS} ${TARGET}
