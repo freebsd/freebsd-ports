@@ -21,8 +21,9 @@ COMMENT=	The Apache 1.3 webserver with SSL/TLS functionality
 LIB_DEPENDS=	mm.13:${PORTSDIR}/devel/mm
 PATCH_DEPENDS=	${BUILD_DEPENDS}
 
-CONFLICTS?=	apache+ipv6-1.* apache+ssl-1.* apache-1.* apache-2.* apache_fp-1.* \
-		caudium-devel-1.* caudium10-1.* caudium12-* ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
+CONFLICTS?=	apache+ipv6-1.* apache+ssl-1.* apache-1.* apache-2.* \
+		apache_fp-1.* caudium-devel-1.* caudium10-1.* caudium12-* \
+		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.* w3c-httpd-3.*
 VERSION_APACHE=	1.3.28
 VERSION_MODSSL=	2.8.15
 USE_OPENSSL=	yes
