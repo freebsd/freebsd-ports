@@ -2,6 +2,12 @@ $FreeBSD$
 
 Here is a list of some useful hints on using VMware on FreeBSD.
 
+- Note that this port includes some kernel modules, which means you
+should rebuild and reinstall this port everytime you update the kernel
+so as to keep them in sync; otherwise VMware might coredump or crash
+together with the whole system if kernel interfaces were somewhat
+different than before.
+
 - Full screen text mode does not work.  Don't ever do it!
 
 - Full screen graphics mode will work, but you have to be careful e.g.
