@@ -1,5 +1,5 @@
---- configure.orig	Fri Jun  6 10:39:41 2003
-+++ configure	Fri Aug 29 13:26:35 2003
+--- configure.orig	Thu Sep 11 13:49:33 2003
++++ configure	Fri Sep 19 16:37:59 2003
 @@ -8070,6 +8070,7 @@
  
  # This can be used to rebuild libtool when needed
@@ -138,15 +138,6 @@
  mysql_cv_btype_last_arg_accept=none
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
-@@ -16942,7 +16886,7 @@
-   FILE *file=fopen("conftestval", "w");
-   f = (float) ll;
-   fprintf(file,"%g\n",f);
--  close(file);
-+  fclose(file);
-   exit (0);
- }
- _ACEOF
 @@ -19229,14 +19173,6 @@
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
