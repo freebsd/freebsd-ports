@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	4.0.2
+PORTVERSION=	4.0.3
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflib.com/pdflib/download/
 
@@ -15,15 +15,13 @@ MAINTAINER=	sysadmin@alexdupre.com
 RESTRICTED=	"many odd restrictions on usage and distribution"
 
 INSTALLS_SHLIB=	yes
-USE_GMAKE=	yes
-USE_LIBTOOL=	yes
-LIBTOOLFILES=	config/aclocal.m4
 USE_PERL5=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-cxx
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
