@@ -1,5 +1,5 @@
-*** src/Makefile.in.orig	Mon Oct 21 09:59:29 1996
---- src/Makefile.in	Tue Oct 22 06:22:51 1996
+*** src/Makefile.in.orig	Tue Jan 21 20:21:34 1997
+--- src/Makefile.in	Mon Jan 27 23:49:32 1997
 ***************
 *** 2,16 ****
   #---------------------------------------------------------------------------
@@ -40,35 +40,37 @@
   	-$(RM) $(ELFDIR_ELF_LIB)
 ! 	cd $(ELFDIR); $(ELF_LINK),$(ELFLIB_MAJOR) -o $(ELFLIB_MAJOR_MINOR) $(OFILES)
 ! 	cd $(ELFDIR); $(RM) $(ELFLIB); $(LN) $(ELFLIB_MAJOR) $(ELFLIB)
-  	@echo
-! 	@echo $(ELFLIB_MAJOR_MINOR) created in $(ELFDIR).  Be sure to add 
-! 	@echo $(ELFDIR) to your LD_LIBRARY_PATH environment variable.
+  	@echo ""
+  	@echo $(ELFLIB_MAJOR_MINOR) created in $(ELFDIR).
+- 	@echo The link $(ELFLIB) to $(ELFLIB_MAJOR_MINOR) was also created.
+  	@echo ""
   $(OBJDIR) :
   	-$(MKDIR) $(OBJDIR)
-  $(ELFDIR) :
 --- 93,101 ----
   #	cd $(ELFDIR); $(RM) $(ELFLIB_MAJOR); $(LN) $(ELFLIB_MAJOR_MINOR) $(ELFLIB_MAJOR)
   $(ELFDIR_ELF_LIB): $(ELFDIR) $(ELFOBJS)
   	-$(RM) $(ELFDIR_ELF_LIB)
 ! 	cd $(ELFDIR); $(ELF_LINK) -o $(ELFLIB_MAJOR_MINOR) $(OFILES)
-  	@echo
-! 	@echo $(ELFLIB_MAJOR_MINOR) created in $(ELFDIR).
+  	@echo ""
+  	@echo $(ELFLIB_MAJOR_MINOR) created in $(ELFDIR).
+  	@echo ""
   $(OBJDIR) :
   	-$(MKDIR) $(OBJDIR)
-  $(ELFDIR) :
 ***************
-*** 123,135 ****
-  install-elf: $(install_lib_dir) $(install_include_dir) $(ELFDIR_ELF_LIB)
+*** 124,138 ****
+  install-elf: install elf $(install_lib_dir) $(install_include_dir) $(ELFDIR_ELF_LIB)
   	$(INSTALL_DATA) $(SRCDIR)/slang.h $(install_include_dir)
   	$(INSTALL_DATA) $(SRCDIR)/slcurses.h $(install_include_dir)
-- 	-$(RM) $(install_lib_dir)/$(ELFLIB_MAJOR)
 - 	-$(RM) $(install_lib_dir)/$(ELFLIB)
+- 	-$(RM) $(install_lib_dir)/$(ELFLIB_MAJOR)
   	@echo installing $(ELFLIB_MAJOR_MINOR) in $(install_lib_dir)
   	$(INSTALL_DATA) $(ELFDIR_ELF_LIB) $(install_lib_dir)
 - 	@echo creating symbolic links to $(ELFLIB_MAJOR_MINOR)
-- 	-cd $(install_lib_dir); $(LN) $(ELFLIB_MAJOR) $(ELFLIB)
-- 	@echo You will have to run ldconfig yourself.
-  #	-cd $(install_lib_dir); $(LN) $(ELFLIB_MAJOR_MINOR) $(ELFLIB_MAJOR)
-  #---------------------------------------------------------------------------
-  # Housekeeping
---- 121,128 ----
+- 	-cd $(install_lib_dir); $(LN) $(ELFLIB_MAJOR_MINOR) $(ELFLIB)
+  	@echo ""
+  	@echo $(ELFLIB_MAJOR_MINOR) created in $(install_lib_dir).
+- 	@echo The link $(ELFLIB) to $(ELFLIB_MAJOR_MINOR) was also created.
+  	@echo ""
+  install-links:
+  	-$(RM) $(install_lib_dir)/$(ELFLIB)
+--- 122,131 ----

@@ -1,13 +1,13 @@
 # New ports collection makefile for:    S-Lang library
-# Version required:     0.99-35
+# Version required:     0.99-38
 # Date created:         11 July 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1996/10/25 00:51:47 ache Exp $
+# $Id: Makefile,v 1.7 1996/11/18 11:23:03 asami Exp $
 #
 
-DISTNAME=       slang0.99-35
-PKGNAME=        libslang-0.99.35
+DISTNAME=       slang0.99-38
+PKGNAME=        libslang-0.99.38
 CATEGORIES=	devel
 MASTER_SITES=   ftp://space.mit.edu/pub/davis/slang/
 
@@ -19,7 +19,7 @@ INSTALL_TARGET= install install-elf
 WRKSRC=         ${WRKDIR}/slang
 
 post-install:
-	rm -f ${PREFIX}/lib/libslang.so.99.3[34]
+	@rm -f ${PREFIX}/lib/libslang.so.99.3[34]
 	/sbin/ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
