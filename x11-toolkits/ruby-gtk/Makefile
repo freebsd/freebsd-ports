@@ -24,7 +24,7 @@ USE_GTK=	yes
 .include "${.CURDIR}/../../x11/ruby-gnome/Makefile.common"
 
 WRKSRC=		${RUBY_GNOME_WRKSRC}/${PORTNAME}
-CONFIGURE_ARGS=	${GTK_CONFIG}
+CONFIGURE_ARGS=	--with-gtk-config=${GTK_CONFIG}
 INSTALL_TARGET=	site-install
 
 DOCS_EN=	BUGS \
