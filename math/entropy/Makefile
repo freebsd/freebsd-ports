@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	entropy
-PORTVERSION=	1.1
+PORTVERSION=	2.0
 CATEGORIES=	math archivers
 MASTER_SITES=	http://www.seccuris.com/documents/downloads/
 
-MAINTAINER=	maneo@bsdpro.com
+MAINTAINER=	csjp@FreeBSD.org
 COMMENT=	Calculate data entropy to benchmark compression algorithms
 
 MAN1=		entropy.1
