@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome2-fifth-toe
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -49,7 +50,8 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		meld:${PORTSDIR}/textproc/meld \
 		gcompris:${PORTSDIR}/games/gcompris2 \
 		gurlchecker:${PORTSDIR}/www/gurlchecker \
-		gswitchit-properties-capplet:${PORTSDIR}/x11/gswitchit
+		gswitchit-properties-capplet:${PORTSDIR}/x11/gswitchit \
+		workrave:${PORTSDIR}/x11/workrave
 
 NO_BUILD=	yes
 
