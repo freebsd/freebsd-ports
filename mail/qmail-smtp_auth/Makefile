@@ -19,6 +19,9 @@ COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH TLS support
 
 USE_OPENSSL=	YES
 
+# Patches from the main qmail port are not wanted
+MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER=	yes
+
 TLS_PATCH_DATE=	20020825
 
 # Using default from master port, i.e., /var/qmail
