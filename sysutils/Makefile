@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.35 1998/06/16 16:52:16 dburr Exp $
+# $Id: Makefile,v 1.36 1998/07/09 10:22:04 dburr Exp $
 #
 
     SUBDIR += LPRng
@@ -35,6 +35,7 @@
     SUBDIR += xdu
     SUBDIR += xfsm
     SUBDIR += xloadface
+    SUBDIR += xlogmaster
     SUBDIR += xosview
     SUBDIR += xperfmon
     SUBDIR += xsysinfo
