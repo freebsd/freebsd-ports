@@ -1,12 +1,13 @@
---- src/liba52/Makefile.in.orig	Sun Jan  5 18:47:47 2003
-+++ src/liba52/Makefile.in	Sun Jan  5 18:47:56 2003
-@@ -208,25 +208,12 @@
+--- src/liba52/Makefile.in.orig	Sun Nov  9 11:41:01 2003
++++ src/liba52/Makefile.in	Sun Nov  9 11:46:09 2003
+@@ -254,26 +254,12 @@
  
  lib_LTLIBRARIES = xineplug_decode_a52.la
  
 -xineplug_decode_a52_la_SOURCES = \
 -	bitstream.c \
 -	bit_allocate.c \
+-	crc.c \
 -	downmix.c \
 -	imdct.c \
 -	parse.c \
@@ -28,11 +29,11 @@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
-@@ -234,8 +221,7 @@
+@@ -281,8 +267,7 @@
  
  xineplug_decode_a52_la_DEPENDENCIES = \
  	$(top_builddir)/src/xine-engine/libxine.la
--am_xineplug_decode_a52_la_OBJECTS = bitstream.lo bit_allocate.lo \
+-am_xineplug_decode_a52_la_OBJECTS = bitstream.lo bit_allocate.lo crc.lo \
 -	downmix.lo imdct.lo parse.lo xine_decoder.lo
 +am_xineplug_decode_a52_la_OBJECTS = xine_decoder.lo
  xineplug_decode_a52_la_OBJECTS = $(am_xineplug_decode_a52_la_OBJECTS)

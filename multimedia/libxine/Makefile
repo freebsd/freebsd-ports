@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.0.r0
-PORTREVISION=	2
+PORTVERSION=	1.0.r2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	lib
-DISTNAME=	${PORTNAME}-lib-1-rc0a
+DISTNAME=	${PORTNAME}-lib-1-rc2
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
@@ -43,8 +42,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread -
 		THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}" \
 		X_EXTRA_LIBS="-lGL -lGLU -lXext -lX11 -lm"
-CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 \
-		--disable-vidix
+CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32
 INSTALLS_SHLIB=	yes
 
 MAN1=		xine-config.1
@@ -56,10 +54,23 @@ MAN1=		xine-config.1
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src:xine-engine:audio_out.c
 .endif
 
-.if ${XFREE86_VERSION} >= 4
-PLIST_SUB=	HAVE_LIBXV=""
+# FBIOVERTICAL macro is not defined
+.if ${OSVERSION} < 500023
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src:video_out:Makefile.in
+PLIST_SUB+=	PGX64="@comment "
 .else
-PLIST_SUB=	HAVE_LIBXV="@comment "
+PLIST_SUB+=	PGX64=""
+.endif
+
+# CDIOCREADAUDIO macro is not defined
+.if ${OSVERSION} >= 501106
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src:input:input_cdda.c
+.endif
+
+.if ${XFREE86_VERSION} >= 4
+PLIST_SUB+=	HAVE_LIBXV=""
+.else
+PLIST_SUB+=	HAVE_LIBXV="@comment "
 .endif
 
 .if exists(${LOCALBASE}/bin/artsc-config) || defined(WITH_ARTS)
@@ -81,6 +92,19 @@ USE_GNOME+=	gnomevfs2
 PLIST_SUB+=	HAVE_GNOMEVFS2=""
 .else
 PLIST_SUB+=	HAVE_GNOMEVFS2="@comment "
+.endif
+
+.if ${ARCH} == "i386"
+PLIST_SUB+=	VIDIX=""
+.else
+PLIST_SUB+=	VIDIX="@comment "
+.endif
+
+.if exists(${X11BASE}/lib/libXvMCNVIDIA.so.1)
+LIB_DEPENDS+=	XvMCNVIDIA.1:${PORTSDIR}/x11/nvidia-driver
+PLIST_SUB+=	XVMC=""
+.else
+PLIST_SUB+=	XVMC="@comment "
 .endif
 
 pre-everything::
