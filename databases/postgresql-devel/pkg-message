@@ -39,7 +39,7 @@ setting WITH_PGBLOCKSIZE to either "16K" or "32K".  Changing block
 sizes has uncertain performance implications and can result in faster
 operation, in other cases slower.  Benchmarking and testing your
 installation is *highly recommended* before using these values in any
-form of production!  When changing block sizes, it is necesary to
+form of production!  When changing block sizes, it is necessary to
 dump, initdb, and reload data when changing block sizes.  Be careful
 when switching from databases/postgresql-devel and
 databases/postgresql7 or from databases/postgresql-devel -> src
