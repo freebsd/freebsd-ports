@@ -23,7 +23,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		netpbm.1:${PORTSDIR}/graphics/netpbm
 
 USE_X_PREFIX=	yes
-USE_GCC=	3.2
+USE_GCC=	3.3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-map-extension=jpg --with-freetype --with-gif \
 		--with-png --with-pnm --with-tiff
