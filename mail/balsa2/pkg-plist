@@ -1,10 +1,20 @@
 bin/balsa
-share/gnome/pixmaps/balsa/attachment.png
-share/gnome/pixmaps/balsa/balsa_logo.png
-share/gnome/pixmaps/balsa/balsa_icon.png
+etc/sound/events/balsa.soundlist
+etc/sound/events/email.soundlist
+etc/CORBA/servers/balsa.gnorba
+lib/libbalsasrv.a
 share/locale/de/LC_MESSAGES/balsa.mo
+share/locale/es/LC_MESSAGES/balsa.mo
 share/locale/fi/LC_MESSAGES/balsa.mo
 share/locale/fr/LC_MESSAGES/balsa.mo
 share/locale/ga/LC_MESSAGES/balsa.mo
 share/locale/ko/LC_MESSAGES/balsa.mo
+share/locale/no/LC_MESSAGES/balsa.mo
+share/locale/it/LC_MESSAGES/balsa.mo
+share/gnome/sounds/balsa/startup.wav
+share/gnome/sounds/balsa/newmail.wav
+share/gnome/pixmaps/balsa/attachment.png
+share/gnome/pixmaps/balsa/balsa_logo.png
+share/gnome/pixmaps/balsa/balsa_icon.png
+@dirrm share/gnome/sounds/balsa
 @dirrm share/gnome/pixmaps/balsa
