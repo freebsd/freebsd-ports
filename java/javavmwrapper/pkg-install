@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+LOCALBASE=%%LOCALBASE%%
+
+# This script runs during post-install
+if [ "x${2}" != "xPOST-INSTALL" ]; then
+    exit 0
+fi
+
+# Ensure all JDKs and JREs are installed
+for jvm in "${LOCALBASE}"/*jdk* "${LOCALBASE}"/*jre*; do
+    if [ -x "${jvm}/bin/java" ]; then
+        "${PKG_PREFIX}"/bin/registervm "${jvm}/bin/java"
+    fi
+done
+
+# Ensure all VMs are configured correctly
+"${PKG_PREFIX}"/bin/checkvms

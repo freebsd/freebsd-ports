@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+
+# Run this script at the pre-deinstall stage
+if [ "x${2}" != "xDEINSTALL" ]; then
+    exit 0
+fi
+
+# The configuration file
+CONF="${PKG_PREFIX}/etc/javavms"
+
+# Ensure the configuration file exists
+if [ ! -f "${CONF}" ]; then
+    exit 0
+fi
+
+# Ensure the configuration file has the correct permissions
+if [ ! -r "${CONF}" ]; then
+    echo "error: can't read configuration file ${CONF}" 1>&2
+    exit 1
+fi
+
+# Destroy the symbolic links that were created for every executable for a VM.
+cat "${CONF}" | \
+(
+while read JAVAVM; do
+    VM=`echo "${JAVAVM}" | sed -E 's|[[:space:]]*#.*||' 2>/dev/null`
+    JAVA_HOME=`dirname "${VM}"`
+    JAVA_HOME=`dirname "${JAVA_HOME}"`
+    for exe in "${JAVA_HOME}"/bin/* "${JAVA_HOME}"/jre/bin/*; do
+        exe=`basename "${exe}"`
+        if [ -L "${PKG_PREFIX}/bin/${exe}" -a \
+             "`ls -ld "${PKG_PREFIX}/bin/${exe}" 2>/dev/null | \
+               awk '/->/{print $NF;exit 0}END{exit 1}'`" = \
+             "${PKG_PREFIX}/bin/javavm" ]; then
+            rm "${PKG_PREFIX}/bin/${exe}"
+        fi
+    done;
+done;
+)
+
+exit 0
