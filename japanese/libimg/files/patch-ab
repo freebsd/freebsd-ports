@@ -1,0 +1,12 @@
+--- Makefile.in~	Sun Mar  7 17:35:11 1999
++++ Makefile.in	Sat Mar 27 20:05:22 1999
+@@ -221,7 +221,8 @@
+ 			-DZ_LIB_NAME=\"$(IMG_FULL_PATH)$(Z_LIB_FILE)\"		\
+ 			-DPNG_LIB_NAME=\"$(IMG_FULL_PATH)$(PNG_LIB_FILE)\"	\
+ 			-DJPEG_LIB_NAME=\"$(IMG_FULL_PATH)$(JPEG_LIB_FILE)\"	\
+-			-DTIFF_LIB_NAME=\"$(IMG_FULL_PATH)$(TIFF_LIB_FILE)\"
++			-DTIFF_LIB_NAME=\"$(IMG_FULL_PATH)$(TIFF_LIB_FILE)\"	\
++			-I$(TCL_INC_DIR)
+ 
+ #		fundamentals of this library
+ SOURCES	=	imgInit.c imgObj.c imgUtil.c imgPmap.c imgUnixPmap.c \
