@@ -403,6 +403,7 @@
     SUBDIR += xmms-flac
     SUBDIR += xmms-imms
     SUBDIR += xmms-infopipe
+    SUBDIR += xmms-jack
     SUBDIR += xmms-kde
     SUBDIR += xmms-kj
     SUBDIR += xmms-ladspa
