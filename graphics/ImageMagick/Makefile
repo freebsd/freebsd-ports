@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.5.7.16
-PORTREVISION=	1
+PORTVERSION=	6.0.1.3
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
@@ -41,8 +40,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared
 INSTALLS_SHLIB=	yes
 
-MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 \
-		composite.1 convert.1 identify.1 mogrify.1 montage.1
+MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 Wand-config.1 \
+		compare.1 composite.1 convert.1 identify.1 mogrify.1 montage.1
 MAN4=		miff.4
 MAN5=		quantize.5
 
