@@ -15,7 +15,7 @@ bin/mtools
 @exec ln -fs %D/%F %B/mren
 @exec ln -fs %D/%F %B/mtype
 @exec ln -fs %D/%F %B/mwrite
-@exec ln -fs %D/%F %B/mtest
+@exec ln -fs %D/%F %B/mttest
 bin/mkmanifest
 bin/mcheck
 bin/mxtar
@@ -39,7 +39,7 @@ man/man1/mmove.1.gz
 man/man1/mrd.1.gz
 man/man1/mread.1.gz
 man/man1/mren.1.gz
-man/man1/mtest.1.gz
+man/man1/mttest.1.gz
 man/man1/mtools.1.gz
 man/man1/mtype.1.gz
 man/man1/mwrite.1.gz
