@@ -213,3 +213,6 @@ libh-0.2/libh/release/scripts/commonvars.tcl
 libh-0.2/libh/release/scripts/ftpinstall.tcl
 libh-0.2/libh/release/scripts/instmethod.tcl
 libh-0.2/libh/release/scripts/netsetup.tcl
+libh-0.2/libh/release/diskedit/disk.tcl
+libh-0.2/libh/release/diskedit/diskwizard.tcl
+libh-0.2/libh/release/diskedit/fdisk.tcl
