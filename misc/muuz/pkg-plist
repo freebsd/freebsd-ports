@@ -1,0 +1,8 @@
+bin/muuz
+bin/muuzbeats
+share/muuz/aboutMuuz.text
+share/muuz/acknowledgement.text
+share/muuz/helpOverview.text
+share/muuz/helpPrep.text
+share/muuz/helpUserPrep.text
+@dirrm share/muuz
