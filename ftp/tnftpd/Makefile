@@ -12,7 +12,7 @@ CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
 DISTNAME=	${PORTNAME}-2.0-beta3
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cejkar@fit.vutbr.cz
 COMMENT=	Enhanced ftp server from NetBSD
 
 USE_REINPLACE=	yes
