@@ -6,13 +6,18 @@
 #
 
 PORTNAME=		wmbiff
-PORTVERSION=		0.4.7
+PORTVERSION=		0.4.15
 CATEGORIES=		mail windowmaker afterstep
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		jim@FreeBSD.org
-COMMENT=	An xbiff-like Window Maker dock app
+MAINTAINER=		simon@nitro.dk
+COMMENT=		An xbiff-like Window Maker dock app
+
+.ifdef WITH_GNUTLS
+LIB_DEPENDS=		gcrypt:${PORTSDIR}/security/libgcrypt \
+			gnutls:${PORTSDIR}/security/gnutls
+.endif
 
 USE_X_PREFIX=		yes
 USE_XPM=		yes
@@ -26,6 +31,5 @@ post-install:
 	@${ECHO_MSG} "===>   Installing sample.wmbiffrc to ${DATADIR}"
 	@${ECHO_MSG} "===>   Modify it to suit your needs and copy to ~/.wmbiffrc"
 	@${INSTALL_DATA} -m 644 ${WRKSRC}/wmbiff/sample.wmbiffrc ${DATADIR}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
