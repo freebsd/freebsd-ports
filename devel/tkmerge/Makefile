@@ -14,7 +14,7 @@ MAINTAINER=	bob@immure.com
 COMMENT=	A tk script to aid in the merging changes between two files
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
-		bwidget:${PORTSDIR}/x11-toolkits/bwidget
+		${LOCALBASE}/lib/bwidget/label.tcl:${PORTSDIR}/x11-toolkits/bwidget
 
 NO_BUILD=	yes
 MAN1=		tkmerge.1
