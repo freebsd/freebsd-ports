@@ -1,0 +1,38 @@
+*** Makefile.bak	Fri Feb 17 00:39:41 1995
+--- Makefile	Mon May  1 18:09:04 1995
+***************
+*** 1,5 ****
+! CFLAGS=$(OPT) $(DEFINES)
+! OPT=-O
+  
+  
+  #Uncomment the following line if your system does not have strchr()
+--- 1,5 ----
+! CFLAGS+=$(OPT) $(DEFINES)
+! #OPT=-O
+  
+  
+  #Uncomment the following line if your system does not have strchr()
+***************
+*** 42,51 ****
+  	-mkdir $(DESTDIR)/bin
+  	-mkdir $(DESTDIR)/man
+  	-mkdir $(DESTDIR)/man/man1
+! 	install -s -m 755 mpack $(DESTDIR)/bin
+! 	install -s -m 755 munpack $(DESTDIR)/bin
+! 	install -m 644 unixpk.man $(DESTDIR)/man/man1/mpack.1
+! 	install -m 644 unixunpk.man $(DESTDIR)/man/man1/munpack.1
+  
+  clean:
+  	rm -f *.o mpack munpack
+--- 42,51 ----
+  	-mkdir $(DESTDIR)/bin
+  	-mkdir $(DESTDIR)/man
+  	-mkdir $(DESTDIR)/man/man1
+! 	install -c -s -m 755 mpack $(DESTDIR)/bin
+! 	install -c -s -m 755 munpack $(DESTDIR)/bin
+! 	install -c -m 644 unixpk.man $(DESTDIR)/man/man1/mpack.1
+! 	install -c -m 644 unixunpk.man $(DESTDIR)/man/man1/munpack.1
+  
+  clean:
+  	rm -f *.o mpack munpack
