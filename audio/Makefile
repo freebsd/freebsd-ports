@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.43 1998/04/30 09:48:51 tg Exp $
+# $Id: Makefile,v 1.44 1998/06/12 08:07:11 tg Exp $
 #
 
     SUBDIR += amp
@@ -11,6 +11,7 @@
     SUBDIR += kmpg
     SUBDIR += maplay
     SUBDIR += mikmod
+    SUBDIR += mp3info
     SUBDIR += mpegaudio
     SUBDIR += mpg123
     SUBDIR += mxv
