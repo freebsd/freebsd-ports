@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += 9libs
     SUBDIR += SoXt
     SUBDIR += Xaw3d
     SUBDIR += XawPlus
