@@ -5,27 +5,94 @@ ECHO_MSG=	echo
 WRKDIR?=	.
 DISTDIR?=	/usr/ports/distfiles
 FILESDIR?=	../files
+LOCALBASE?=	/usr/local
 
-#ifdef HasSecureRPC
-HASSECURERPC=	 HasSecureRPC
+#if BuildXInputExt
+BUILDXINPUTEXT=	 YES
+#else
+JOYSTICSUPPORT=	 YES
 #endif
-#ifdef HasXdmAuth
-HASXDMAUTH=	HasXdmAuth
+#if BuildPexExt
+BUILDPEXEXT=	 YES
 #endif
-#
-#ifdef HasKrb4
-HASKRB4=	HasKrb4
+#if BuildXIE
+BUILDXIE=	 YES
+#endif
+#if HasSecureRPC
+HASSECURERPC=	 YES
+#endif
+#if HasXdmAuth
+HASXDMAUTH=	 YES
+#endif
+#if HasKrb4
+HASKRB4=	 YES
 #endif	
 
-all:: SecureRPCCheck XdmAuthCheck Krb4Check
+all:: SecureRPCCheck XdmAuthCheck Krb4Check InputExtCheck pexCheck xieCheck
 
 initialize::
-	@${ECHO_MSG} "Now checking your XFree86 environment."
-	@rm -f ${CONFFILE}
+	@( \
+	${ECHO_MSG} "  Now checking your XFree86 environment."; \
+	rm -f ${CONFFILE}; \
+	${ECHO_MSG} "#define FreeTypeLibDir ${LOCALBASE}/lib" >> ${CONFFILE}; \
+	${ECHO_MSG} "#define FreeTypeIncDir ${LOCALBASE}/include" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef XF86SVGAServer" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef XF86VGA16Server" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef XF86VGA16DualServer" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef XF86MonoServer" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef XF86MonoDualServer" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef XF86S3Server" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef XF86S3VServer" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef XF86I8514Server" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef XF86Mach8Server" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef XF86Mach32Server" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef XF86Mach64Server" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef XF86P9000Server" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef XF86AGXServer" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef XF86W32Server" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef XF86I128Server" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef BuildFontServer" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef BuildFonts" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef XnestServer" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef XVirtualFramebufferServer" >> ${CONFFILE}; \
+	${ECHO_MSG} "#undef XprtServer" >> ${CONFFILE}; \
+	${ECHO_MSG} "#define BuildFonts	NO" >> ${CONFFILE}; \
+	${ECHO_MSG} "#define XnestServer NO" >> ${CONFFILE}; \
+	${ECHO_MSG} "#define XVirtualFramebufferServer NO" >> ${CONFFILE}; \
+	${ECHO_MSG} "#define XprtServer	NO" >> ${CONFFILE}; \
+	)
 
+InputExtCheck:: initialize
+.if defined(BUILDXINPUTEXT) && ${BUILDXINPUTEXT} == YES
+	@( \
+	${ECHO_MSG} "#define BuildXInputExt YES" >> ${CONFFILE}; \
+	${ECHO_MSG} "   Using BuildXInputExt." )
+.else
+	@( \
+	${ECHO_MSG} "#define JoystickSupport YES" >> ${CONFFILE}; \
+	${ECHO_MSG} "   Using JoystickSupport." )
+.endif
+
+pexCheck:: initialize
+.if defined(BUILDPEXEXT) && ${BUILDPEXEXT} == YES
+	@( \
+	${ECHO_MSG} "#define BuildPexExt YES" >> ${CONFFILE}; \
+	${ECHO_MSG} "   Using BuildPexExt." )
+.endif
+
+xieCheck:: initialize
+.if defined(BUILDXIE) && ${BUILDXIE} == YES
+	@( \
+	${ECHO_MSG} "#define BuildXIE YES" >> ${CONFFILE}; \
+	${ECHO_MSG} "   Using BuildXIE." )
+.endif
+	
 SecureRPCCheck:: initialize
 .if defined(HASSECURERPC) && ${HASSECURERPC} == YES
-	@echo "#define HasSecureRPC ${HASSECURERPC}" >> ${CONFFILE}
+	@( \
+	${ECHO_MSG} "#define HasSecureRPC ${HASSECURERPC}" >> ${CONFFILE}; \
+	${ECHO_MSG} "   Using Secure RPC"; \
+	)
 .else
 	@${DO_NADA}
 .endif
@@ -33,14 +100,16 @@ SecureRPCCheck:: initialize
 XdmAuthCheck:: initialize
 .if defined(HASXDMAUTH) && ${HASXDMAUTH} == YES
 	@( \
-	echo "#define HasXdmAuth ${HASXDMAUTH}" >> ${CONFFILE} ; \
+	${ECHO_MSG} "   Using XdmAuth." ; \
 	if [ ! -f ${WRKDIR}/xc/lib/Xdmcp/Wraphelp.c ]; then \
 	   if [ -f ${DISTDIR}/xc/Wraphelp.c ]; then \
 		${ECHO_MSG} "===> Whaphelp.c found in DISTDIR directory, copying it to source tree." ; \
 		${CP} ${DISTDIR}/xc/Wraphelp.c ${WRKDIR}/xc/lib/Xdmcp/ ; \
+		${ECHO_MSG} "#define HasXdmAuth ${HASXDMAUTH}" >> ${CONFFILE} ; \
 	   elif [ -f ${FILESDIR}/Wraphelp.c ]; then \
 		${ECHO_MSG} "===> Whaphelp.c found in FILESDIR directory, copying it to source tree." ; \
 		${CP} ${FILESDIR}/Wraphelp.c ${WRKDIR}/xc/lib/Xdmcp/ ; \
+		${ECHO_MSG} "#define HasXdmAuth ${HASXDMAUTH}" >> ${CONFFILE} ; \
 	   else \
 		${ECHO_MSG} "Wraphelp.c not found. You can not use XDM-AUTHORIZATION-1!" ; \
 		false ; \
@@ -54,7 +123,8 @@ XdmAuthCheck:: initialize
 Krb4Check:: initialize
 .if defined(HASKRB4) && ${HASKRB4} == YES
 	@( \
-	echo "#define HasKrb4 ${HASKRB4}" >> ${CONFFILE} ; \
+	${ECHO_MSG} "#define HasKrb4 ${HASKRB4}" >> ${CONFFILE} ; \
+	${ECHO_MSG} "   Using KerberosIV." ; \
 	${ECHO_MSG} "===>  Applying KerberosIV patches" ; \
 	patch -s -d ${WRKDIR}/xc -E -p0 < ${FILESDIR}/kerberos4.diffs ; \
 	)
