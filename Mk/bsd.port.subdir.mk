@@ -327,7 +327,7 @@ README.html:
 	PKGINSTALLVER="${PKGINSTALLVER:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}"
 .endif
 
-PORTSEARCH_DISPLAY_FIELDS?=name,path,info,maint,index,bdeps,rdeps
+PORTSEARCH_DISPLAY_FIELDS?=name,path,info,maint,index,bdeps,rdeps,www
 PORTSEARCH_KEYLIM?=0
 PORTSEARCH_XKEYLIM?=0
 PORTSEARCH_IGNORECASE?=1
@@ -342,7 +342,8 @@ search: ${PORTSDIR}/${INDEXFILE}
 	     -z "$$maint" -a -z "$$xmaint" -a \
 	     -z "$$cat"   -a -z "$$xcat"   -a \
 	     -z "$$bdeps" -a -z "$$xbdeps" -a \
-	     -z "$$rdeps" -a -z "$$xrdeps" ]; \
+	     -z "$$rdeps" -a -z "$$xrdeps" -a \
+	     -z "$$www"   -a -z "$$xwww"   ]; \
 	then \
 	  echo "The search target requires a keyword parameter or name parameter,"; \
 	  echo "e.g.: \"make search key=somekeyword\""; \
@@ -358,6 +359,7 @@ search: ${PORTSDIR}/${INDEXFILE}
 	    -v cat="$$cat"          -v xcat="$$xcat" \
 	    -v bdeps="$$bdeps"      -v xbdeps="$$xbdeps" \
 	    -v rdeps="$$rdeps"      -v xrdeps="$$xrdeps" \
+	    -v www="$$www"          -v xwww="$$xwww" \
 	    -v icase="$${icase:-${PORTSEARCH_IGNORECASE}}" \
 	    -v keylim="$${keylim:-${PORTSEARCH_KEYLIM}}" \
 	    -v xkeylim="$${xkeylim:-${PORTSEARCH_XKEYLIM}}" \
@@ -373,29 +375,32 @@ search: ${PORTSDIR}/${INDEXFILE}
 	    if (!xkeylim && xkeylen) \
 	      xparms[0] = (icase ? tolower(xkey) : xkey); \
 		if (icase) { \
-	    if (length(name))  parms[1] = tolower(name);  if (length(xname))  xparms[1] = tolower(xname); \
-	    if (length(path))  parms[2] = tolower(path);  if (length(xpath))  xparms[2] = tolower(xpath); \
-	    if (length(info))  parms[4] = tolower(info);  if (length(xinfo))  xparms[4] = tolower(xinfo); \
-	    if (length(maint)) parms[6] = tolower(maint); if (length(xmaint)) xparms[6] = tolower(xmaint); \
-	    if (length(cat))   parms[7] = tolower(cat);   if (length(xcat))   xparms[7] = tolower(xcat); \
-	    if (length(bdeps)) parms[8] = tolower(bdeps); if (length(xbdeps)) xparms[8] = tolower(xbdeps); \
-	    if (length(rdeps)) parms[9] = tolower(rdeps); if (length(xrdeps)) xparms[9] = tolower(xrdeps); \
+	    if (length(name))  parms[1]  = tolower(name);  if (length(xname))  xparms[1]  = tolower(xname); \
+	    if (length(path))  parms[2]  = tolower(path);  if (length(xpath))  xparms[2]  = tolower(xpath); \
+	    if (length(info))  parms[4]  = tolower(info);  if (length(xinfo))  xparms[4]  = tolower(xinfo); \
+	    if (length(maint)) parms[6]  = tolower(maint); if (length(xmaint)) xparms[6]  = tolower(xmaint); \
+	    if (length(cat))   parms[7]  = tolower(cat);   if (length(xcat))   xparms[7]  = tolower(xcat); \
+	    if (length(bdeps)) parms[8]  = tolower(bdeps); if (length(xbdeps)) xparms[8]  = tolower(xbdeps); \
+	    if (length(rdeps)) parms[9]  = tolower(rdeps); if (length(xrdeps)) xparms[9]  = tolower(xrdeps); \
+	    if (length(www))   parms[10] = tolower(www);   if (length(xwww))   xparms[10] = tolower(xwww); \
 	  } else { \
-	    if (length(name))  parms[1] = name;  if (length(xname))  xparms[1] = xname; \
-	    if (length(path))  parms[2] = path;  if (length(xpath))  xparms[2] = xpath; \
-	    if (length(info))  parms[4] = info;  if (length(xinfo))  xparms[4] = xinfo; \
-	    if (length(maint)) parms[6] = maint; if (length(xmaint)) xparms[6] = xmaint; \
-	    if (length(cat))   parms[7] = cat;   if (length(xcat))   xparms[7] = xcat; \
-	    if (length(bdeps)) parms[8] = bdeps; if (length(xbdeps)) xparms[8] = xbdeps; \
-	    if (length(rdeps)) parms[9] = rdeps; if (length(xrdeps)) xparms[9] = xrdeps; \
+	    if (length(name))  parms[1]  = name;  if (length(xname))  xparms[1]  = xname; \
+	    if (length(path))  parms[2]  = path;  if (length(xpath))  xparms[2]  = xpath; \
+	    if (length(info))  parms[4]  = info;  if (length(xinfo))  xparms[4]  = xinfo; \
+	    if (length(maint)) parms[6]  = maint; if (length(xmaint)) xparms[6]  = xmaint; \
+	    if (length(cat))   parms[7]  = cat;   if (length(xcat))   xparms[7]  = xcat; \
+	    if (length(bdeps)) parms[8]  = bdeps; if (length(xbdeps)) xparms[8]  = xbdeps; \
+	    if (length(rdeps)) parms[9]  = rdeps; if (length(xrdeps)) xparms[9]  = xrdeps; \
+	    if (length(www))   parms[10] = www;   if (length(xwww))   xparms[10] = xwww; \
 	  } \
-	    fields["name"]  = 1; names[1] = "Port"; \
-	    fields["path"]  = 2; names[2] = "Path"; \
-	    fields["info"]  = 4; names[4] = "Info"; \
-	    fields["maint"] = 6; names[6] = "Maint"; \
-	    fields["cat"]   = 7; names[7] = "Index"; \
-	    fields["bdeps"] = 8; names[8] = "B-deps"; \
-	    fields["rdeps"] = 9; names[9] = "R-deps"; \
+	    fields["name"]  = 1;  names[1]  = "Port"; \
+	    fields["path"]  = 2;  names[2]  = "Path"; \
+	    fields["info"]  = 4;  names[4]  = "Info"; \
+	    fields["maint"] = 6;  names[6]  = "Maint"; \
+	    fields["cat"]   = 7;  names[7]  = "Index"; \
+	    fields["bdeps"] = 8;  names[8]  = "B-deps"; \
+	    fields["rdeps"] = 9;  names[9]  = "R-deps"; \
+	    fields["www"]   = 10; names[10] = "WWW"; \
 	    split(display, d, /,[ \t]*/); \
 	    for (i in d) { \
 	      disp[fields[d[i]]] = 1; \
@@ -411,7 +416,7 @@ search: ${PORTSDIR}/${INDEXFILE}
 	      if ((icase ? tolower($$i) : $$i) ~ xparms[i]) \
 	        next; \
 	    found = 0; \
-	    for (i = 1; i < 10; i++) \
+	    for (i = 1; i < 11; i++) \
 	      if (i in disp) { \
 	        if (xkeylim && (icase ? tolower($$i) : $$i) ~ xkey) \
 	          next; \
@@ -420,7 +425,7 @@ search: ${PORTSDIR}/${INDEXFILE}
 	      } \
 	    if (keylim && !found) \
 	      next; \
-	    for (i = 1; i < 10; i++) \
+	    for (i = 1; i < 11; i++) \
 	      if (i in disp) \
 	        printf("%s:\t%s\n", names[i], $$i); \
 	    print(""); \
