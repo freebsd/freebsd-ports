@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	qterm
-PORTVERSION=	0.4.0.p1
+PORTVERSION=	0.4.0.p2
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-0.4.0pre1
+DISTNAME=	${PORTNAME}-0.4.0pre2
 
 MAINTAINER=	gavin@FreeBSDChina.org
 COMMENT=	QTerm is a BBS client in Unix
@@ -22,14 +22,8 @@ CONFIGURE_ARGS=	--enable-mt --prefix=${PREFIX} \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 .if !defined(WITHOUT_PYTHON)
-USE_PYTHON=	-2.3
+USE_PYTHON=	2.3+
 CONFIGURE_ARGS+=	--with-pythondir=${LOCALBASE}
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600000 && ${ARCH} != "i386"
-BROKEN=		"Does not compile on FreeBSD >= 6.x on !i386"
 .endif
 
 pre-everything::
@@ -41,4 +35,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,-lssl,-lssl -lcrypto,' \
 		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
