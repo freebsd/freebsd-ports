@@ -21,6 +21,8 @@ COMMENT=	A webmail system which accesses mail over IMAP
 #-----------------------------------------------------------------------
 # You may define these options:
 #
+# - WITH_APACHE2	: if you run Apache2;
+#
 # - WITHOUT_LDAP	: if you do not need OpenLDAP;
 #
 # - WITHOUT_SUPPORTED_DB: if you run a database not in the ports tree;
@@ -56,11 +58,9 @@ COMMENT=	A webmail system which accesses mail over IMAP
 #
 # - WITH_COURIER-IMAP	: IMP will work with courier-imap.
 #
-# These choice are mutually exclusive, and imap-uw is the default.
+# These choices are mutually exclusive, and imap-uw is the default.
 #
 #-----------------------------------------------------------------------
-
-LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 
 .if defined(WITHOUT_TURBA)
 .if !defined(WITHOUT_LDAP)
@@ -115,7 +115,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/aspell:${PORTSDIR}/textproc/aspell
 .endif
 .endif
 
-IS_INTERACTIVE=	'need to build mod_php4 with mcrypt, cclient with SSL.'
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
