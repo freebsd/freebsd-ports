@@ -1,0 +1,19 @@
+*** src/subsys/font.c.orig	Mon Feb 27 13:33:40 1995
+--- src/subsys/font.c	Mon Feb 27 13:34:04 1995
+***************
+*** 70,76 ****
+  void dor_font_initialize (void)
+  {
+      if ( ! (doe_font_library_name = DDgetenv("DORE_FONTDATA")))
+! 	    doe_font_library_name = "/usr/dore/data/fonts";
+  
+      doe_text_max_font = 0;	/* maximum font index in use */
+  
+--- 70,76 ----
+  void dor_font_initialize (void)
+  {
+      if ( ! (doe_font_library_name = DDgetenv("DORE_FONTDATA")))
+! 	    doe_font_library_name = "%%PREFIX%%/share/dore/fonts";
+  
+      doe_text_max_font = 0;	/* maximum font index in use */
+ 

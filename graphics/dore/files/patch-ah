@@ -1,0 +1,19 @@
+*** src/device_config/pex/drom/makefile.orig	Fri Jan 13 07:04:34 1995
+--- src/device_config/pex/drom/makefile	Tue Dec  7 07:20:59 1999
+***************
+*** 15,21 ****
+  # EXPRESS OR IMPLIED.
+  
+  SHELL = /bin/sh
+! CCCOM = $(CC) $(CFLAGS) -DERRCHK -I${DORE_LOC}/dore/include -I${ROOT}/usr/local/X11/include -I${ROOT}/usr/include
+  LDCOM = $(LD) $(LDFLAGS)
+  ARCOM = $(AR) $(ARFLAGS)
+  SRC_PATH = $(DORE_LOC)/dore/src/device_config/pex/drom
+--- 15,21 ----
+  # EXPRESS OR IMPLIED.
+  
+  SHELL = /bin/sh
+! CCCOM = $(CC) $(CFLAGS) -DERRCHK -I${DORE_LOC}/dore/include -I${PREFIX}/include
+  LDCOM = $(LD) $(LDFLAGS)
+  ARCOM = $(AR) $(ARFLAGS)
+  SRC_PATH = $(DORE_LOC)/dore/src/device_config/pex/drom

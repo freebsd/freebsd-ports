@@ -55,7 +55,7 @@
   # EXPRESS OR IMPLIED.
    
   PRECISION= SINGLE
-! DORELIB = -L../../../lib/i386 -ldore
+! DORELIB = -L../../../lib/${ARCH} -ldore
   
 ! INCDIR=../../../include
   CFLAGS= -DDORE_REAL_$(PRECISION) -I$(INCDIR) 

@@ -11,14 +11,22 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 EXTRACT_SUFX=	.tar.Z
 
+MAINTAINER=	ports@FreeBSD.org
+
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/dore
-EXTRACT_CMD=	${MKDIR} dore; cd dore; ${GZIP_CMD}
-EXTRACT_BEFORE_ARGS=	-dc
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
+EXTRACT_CMD=	${MKDIR} ${WRKSRC}; cd ${WRKSRC}; ${GZIP_CMD}
 MAKEFILE=	mk.stdx
-MAKE_FLAGS=	DORE_LOC=${WRKDIR} CFLAGS=-O2 MAKEFLAGS=m -f
-ALL_TARGET=
+MAKE_ENV=	DORE_LOC=${WRKDIR}
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/lib
+
+post-patch:
+	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/subsys/*.c
+
+pre-install:
+	@${MKDIR} ${PREFIX}/share/dore
 
 .include <bsd.port.mk>
