@@ -16,8 +16,8 @@ EXTRACT_ONLY=	${UPDATEDIST}
 MAINTAINER=	vns@delta.odessa.ua
 COMMENT=	Linux RealPlayer 8.0 from RealNetworks
 
+EXTRACT_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 
 MAINDIST=	rp${PORTVERSION:R}_linux20_libc6_i386_${PORTVERSION:E}_rpm
 UPDATEDIST=	rv9_libc6_i386_cs2.tgz
