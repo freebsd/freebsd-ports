@@ -75,6 +75,7 @@
     SUBDIR += nagios-plugins
     SUBDIR += nagios-silfreed-plugins
     SUBDIR += nagios-snmp-plugins
+    SUBDIR += nagios12
     SUBDIR += nagiostat
     SUBDIR += nat
     SUBDIR += nav
