@@ -1,0 +1,38 @@
+*** gen.h.orig	Thu Jan 21 21:27:33 1993
+--- gen.h	Sat Aug  3 15:14:37 1996
+***************
+*** 11,18 ****
+  #include <X11/Xaw/MenuButton.h>
+  #include <X11/Shell.h>
+  #include <X11/Xaw/Cardinals.h>
+! /* #include <stdlib.h>  */
+! #include <malloc.h>
+  #include <ctype.h>
+  #include <unistd.h>
+  #include "xpm.h"
+--- 11,18 ----
+  #include <X11/Xaw/MenuButton.h>
+  #include <X11/Shell.h>
+  #include <X11/Xaw/Cardinals.h>
+! #include <stdlib.h>
+! /* #include <malloc.h>  */
+  #include <ctype.h>
+  #include <unistd.h>
+  #include "xpm.h"
+***************
+*** 32,38 ****
+  #define NO_OF_COLS  18		/* default number of columns */
+  
+  #define	EDITOR		"xterm -e "	/* editor used to edit icon file. */
+! #define	FORMATTER	"xterm -e vi " 	/* text formatter for help file */
+  #define	HELP_VIEWER	" "		/* viewer for help file */
+  
+  #define	MAXPROCS	20
+--- 32,38 ----
+  #define NO_OF_COLS  18		/* default number of columns */
+  
+  #define	EDITOR		"xterm -e "	/* editor used to edit icon file. */
+! #define	FORMATTER	"xterm -e man " 	/* text formatter for help file */
+  #define	HELP_VIEWER	" "		/* viewer for help file */
+  
+  #define	MAXPROCS	20
