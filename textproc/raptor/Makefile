@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	librdf
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		expat.4:${PORTSDIR}/textproc/expat2 \
+		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xmlparse.1:${PORTSDIR}/www/libwww
 
 LIBWWW_CONFIG=	${LOCALBASE}/bin/libwww-config
