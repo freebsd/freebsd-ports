@@ -1,0 +1,9 @@
+From the README file:
+
+These modules are used to keep persistent user data across http requests.
+Apache::Session was designed for use with Apache and mod_perl, but works
+just as well under CGI and any other web server.
+
+Apache::Session is Copyright(c) 1998, 1999 Jeffrey William Baker
+<jeffrey@kathyandjeffrey.net>.  Distribute under the same terms as
+Perl itself.
