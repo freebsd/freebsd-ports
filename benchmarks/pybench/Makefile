@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pybench
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	benchmarks python
 MASTER_SITES=	http://www.lemburg.com/files/python/
 

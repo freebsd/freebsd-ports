@@ -30,6 +30,9 @@ share/pybench/Lists.pyo
 share/pybench/Lookups.py
 share/pybench/Lookups.pyc
 share/pybench/Lookups.pyo
+share/pybench/Numbers.py
+share/pybench/Numbers.pyc
+share/pybench/Numbers.pyo
 share/pybench/Setup.py
 share/pybench/Setup.pyc
 share/pybench/Setup.pyo
