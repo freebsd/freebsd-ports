@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	okle
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://okle.sourceforge.net/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A KDE frontend to the Ogle DVD player
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.8:${PORTSDIR}/multimedia/ogle
+BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.9:${PORTSDIR}/multimedia/ogle
 RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 
 USE_AUTOCONF_VER=	253
@@ -55,8 +55,5 @@ post-patch:
 # do not use version names
 	@${REINPLACE_CMD} -E -e 's|^(PACKAGE[[:space:]]+=).+$$|\1${PORTNAME}|' \
 		${WRKSRC}/po/Makefile.in
-# patch to handle ogle 0.8.5
-	@${REINPLACE_CMD} -e 's|DVDGetPTTsForTitle|DVDGetNumberOfPTTs|' \
-		${WRKSRC}/src/okle_win.cpp
 
 .include <bsd.port.post.mk>
