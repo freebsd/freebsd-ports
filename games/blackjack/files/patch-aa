@@ -1,11 +1,14 @@
---- Makefile.orig	Wed Feb 11 21:42:00 1998
-+++ Makefile	Sun Sep 27 18:38:34 1998
-@@ -2,8 +2,11 @@
- CC=gcc
- CXX=g++
- CFLAGS=
+--- Makefile.orig	Wed Feb 11 19:42:00 1998
++++ Makefile	Sat Jan  8 23:59:30 2000
+@@ -1,9 +1,11 @@
+ 
+-CC=gcc
+-CXX=g++
+-CFLAGS=
 -INCLUDES=-I$(QTDIR)/include
 -LDFLAGS=-L$(QTDIR)/lib -lqt
++CC?=gcc
++CXX?=g++
 +INCLUDES=-I$(X11BASE)/include/X11/qt
 +LDFLAGS=-L$(X11BASE)/lib -lqt
 +.if $(PORTOBJFORMAT) == "elf"
@@ -14,7 +17,7 @@
  VERSION=1.1
  
  # For systems that don't have install, use this
-@@ -25,7 +28,7 @@
+@@ -25,7 +27,7 @@
  	blackjack/*.cpp			\
  	blackjack/*.bm
  
@@ -23,7 +26,7 @@
  INSTALL_BIN_FLAGS=-s
  
  INSTALL_ROOT=/usr/local
-@@ -39,12 +42,14 @@
+@@ -39,12 +41,14 @@
       user_input.o dollar_scroll_bar.o bet_option.o table_option.o \
       insurance_window.o $(METAOBJS)
  
@@ -33,7 +36,8 @@
  .SUFFIXES: .cpp
  
  .cpp.o:
- 	$(CXX) -c $(CFLAGS) $(INCLUDES) $<
+-	$(CXX) -c $(CFLAGS) $(INCLUDES) $<
++	$(CXX) -c $(CXXFLAGS) $(INCLUDES) $<
 +
 +all: blackjack
  

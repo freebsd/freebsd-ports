@@ -1,0 +1,15 @@
+--- bet_option.h.orig	Sat Jan  8 23:58:22 2000
++++ bet_option.h	Sat Jan  8 23:53:45 2000
+@@ -63,9 +63,9 @@
+       void  setInc(float inc);
+ 
+    private slots:
+-      minBetPressed(int id);
+-      maxBetPressed(int id);
+-      betIncPressed(int id);
++      int minBetPressed(int id);
++      int maxBetPressed(int id);
++      int betIncPressed(int id);
+ };
+ 
+ #endif
