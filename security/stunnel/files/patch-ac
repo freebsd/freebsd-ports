@@ -1,53 +1,19 @@
-*** configure.orig	Tue Apr  4 11:11:36 2000
---- configure	Tue Apr  4 11:11:40 2000
+*** configure.in.orig	Sun Jun 18 10:25:31 2000
+--- configure.in	Sun Jun 18 10:28:17 2000
 ***************
-*** 935,941 ****
-  
-  
-  checkssldir() { :
-!     if test -d "$1/certs"; then
-          if test -f "$1/include/openssl/ssl.h"; then
-              cat >> confdefs.h <<\EOF
-  #define HAVE_OPENSSL 1
---- 935,941 ----
-  
-  
-  checkssldir() { :
-! #    if test -d "$1/certs"; then
-          if test -f "$1/include/openssl/ssl.h"; then
-              cat >> confdefs.h <<\EOF
-  #define HAVE_OPENSSL 1
-***************
-*** 948,954 ****
-              ssldir="$1"
-              return 0
-          fi
-!     fi
-      return 1
-  }
-  
---- 948,954 ----
-              ssldir="$1"
-              return 0
-          fi
-! #    fi
-      return 1
-  }
-  
-***************
-*** 1260,1266 ****
-  echo $ac_n "checking for RSAref library""... $ac_c" 1>&6
-  echo "configure:1262: checking for RSAref library" >&5
+*** 109,115 ****
+  dnl Check for RSAref library.
+  AC_MSG_CHECKING([for RSAref library])
   saved_LIBS="$LIBS"
 ! LIBS="$saved_LIBS -lRSAglue -lrsaref"
-  cat > conftest.$ac_ext <<EOF
-  #line 1266 "configure"
-  #include "confdefs.h"
---- 1260,1266 ----
-  echo $ac_n "checking for RSAref library""... $ac_c" 1>&6
-  echo "configure:1262: checking for RSAref library" >&5
+  AC_TRY_LINK([], [],
+  [AC_MSG_RESULT(yes); ],
+  [AC_MSG_RESULT(no)]; LIBS="$saved_LIBS")
+--- 109,115 ----
+  dnl Check for RSAref library.
+  AC_MSG_CHECKING([for RSAref library])
   saved_LIBS="$LIBS"
-! LIBS="$saved_LIBS -lRSAglue -L${prefix}/lib -lrsaref"
-  cat > conftest.$ac_ext <<EOF
-  #line 1266 "configure"
-  #include "confdefs.h"
+! LIBS="$saved_LIBS -lRSAglue -L$prefix/lib -lrsaref"
+  AC_TRY_LINK([], [],
+  [AC_MSG_RESULT(yes); ],
+  [AC_MSG_RESULT(no)]; LIBS="$saved_LIBS")

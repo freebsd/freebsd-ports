@@ -1,2 +1,3 @@
-sbin/stunnel
+etc/rc.d/stunnel.sh.sample
 lib/stunnel.so
+sbin/stunnel
