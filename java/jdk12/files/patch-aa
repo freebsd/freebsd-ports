@@ -1,21 +1,20 @@
---- makefiles/Defs-freebsd.gmk	2000/10/13 00:16:56	1.1
-+++ makefiles/Defs-freebsd.gmk	2000/10/13 00:20:36
-@@ -59,11 +59,11 @@
+$FreeBSD$
+
+--- makefiles/Defs-bsd.gmk	2000/10/13 00:16:56	1.1
++++ makefiles/Defs-bsd.gmk	2000/10/13 00:20:36
+@@ -59,10 +59,10 @@
  GCC_STYLE	= -Wmissing-prototypes -Wmissing-declarations -Wnested-externs
  GCC_WARNINGS	= -W -Wall $(GCC_STYLE) $(GCC_INHIBIT)
  CFLAGS_COMMON   = $(GCC_WARNINGS) -pipe
 -CFLAGS_OPT      = $(POPT) -fomit-frame-pointer # -mcpu=i686
--CFLAGS_DBG      = -g
 +CFLAGS_OPT      = $(POPT) $(SYS_CFLAGS) #-fomit-frame-pointer # -mcpu=i686
-+CFLAGS_DBG      = -g3
+ CFLAGS_DBG      = -g3
  CXXFLAGS_COMMON = $(GCC_WARNINGS) -pipe -DFD_SETSIZE=2048
 -CXXFLAGS_OPT	= $(POPT) -fomit-frame-pointer # -mcpu=i686
--CXXFLAGS_DBG	= -g
 +CXXFLAGS_OPT	= $(POPT) $(SYS_CFLAGS) #-fomit-frame-pointer # -mcpu=i686
-+CXXFLAGS_DBG	= -g3
+ CXXFLAGS_DBG	= -g3
  endif
  
- ifneq ($(CC_VERSION), gcc)
 @@ -232,7 +232,7 @@
      _OPT = -xO4
  else
