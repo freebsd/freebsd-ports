@@ -47,6 +47,7 @@ lib/gaim/spellchk.so
 %%DATADIR%%/pixmaps/gaim/cancel.xpm
 %%DATADIR%%/pixmaps/gaim/close.xpm
 %%DATADIR%%/pixmaps/gaim/close_small.xpm
+%%DATADIR%%/pixmaps/gaim/crazy4.xpm
 %%DATADIR%%/pixmaps/gaim/crossedlips.xpm
 %%DATADIR%%/pixmaps/gaim/cry.xpm
 %%DATADIR%%/pixmaps/gaim/daemon-buddyadd.xpm
