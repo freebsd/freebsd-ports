@@ -204,13 +204,10 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "To build Openoffice, you should have a lot"
 .if defined(WITH_DEBUG)
-	@${ECHO} "of free diskspace (~ 8GB) and you should"
+	@${ECHO} "of free diskspace (~ 8GB)."
 .else
-	@${ECHO} "of free diskspace (~ 4GB) and you should"
+	@${ECHO} "of free diskspace (~ 4GB)."
 .endif
-	@${ECHO} "be an experienced port builder. This port"
-	@${ECHO} "has beta quality and does not yet work as"
-	@${ECHO} "stable as it should."
 	@${ECHO}
 .if (defined(USE_GCC) && ${USE_GCC} == 2.95) || \
     (${OSVERSION} < 500000 && !defined(USE_GCC))
@@ -238,11 +235,18 @@ pre-fetch:
 .endif
 .if ${OSVERSION} < 460002
 	@${ECHO}
-	@${ECHO} "OO.org build and also OO.org itself"
-	@${ECHO} "can deadlock. You can work around"
+	@${ECHO} "OO.org soffice binary can deadlock. You can work around"
 	@${ECHO} "this problem with this patch:"
 	@${ECHO}
 	@${ECHO} "http://people.freebsd.org/~mbr/patches/rtld-elf-patch2.diff"
+	@${ECHO}
+.endif
+.if ${OSVERSION} < 500000
+	@${ECHO}
+	@${ECHO} "OO.org build can deadlock in regmerge. You can work around"
+	@${ECHO} "this problem with this patch:"
+	@${ECHO}
+	@${ECHO} "http://people.freebsd.org/~mbr/patches/rtld-elf-patch3.diff"
 	@${ECHO}
 .endif
 .if !exists(/usr/include/langinfo.h)
