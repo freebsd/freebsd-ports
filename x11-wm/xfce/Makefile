@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.xfce.org/archive/
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	gdk_pibxuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
