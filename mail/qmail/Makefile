@@ -8,18 +8,22 @@
 
 DISTNAME=	qmail-1.03
 CATEGORIES=	mail
-MASTER_SITES=	ftp://koobera.math.uic.edu/pub/software/ \
-		ftp://ftp.hpcl.titech.ac.jp/qmail/ \
-		ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
+MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
-		ftp://ftp.mira.net.au/pub/unix/mail/qmail/ \
+		ftp://ftp.mira.net.au/unix/mail/qmail/ \
 		ftp://ftp.id.wustl.edu/pub/qmail/ \
-		ftp://ftp.pipex.net/mirrors/qmail/ \
-		ftp://ftp.jp.qmail.org/qmail/
-# These patches may not apply to versions after 1.02
-#PATCH_SITES=	http://hippo.ail-inc.co.jp/air/ports/patches/
-#PATCHFILES=	patch-qmail-date-localtime.gz \
-#		patch-qmail-smtpd.gz
+		ftp://mirror.uk.uu.net/pub/qmail/ \
+		ftp://ftp.jp.qmail.org/qmail/ \
+		http://ftp.rifkin.technion.ac.il/pub/qmail/ \
+		http://koobera.math.uic.edu/www/software/ \
+		http://pobox.com/~djb/software/ 
+
+# Patch necessary to cope with non-RFC >512 dns entries
+# Since AOL has been using those, the problem has skyrocketed from minor to
+# groundzero. qmail being RFC compliant need to be "fixed" to work with those
+PATCH_SITES=	http://www.ckdhr.com/ckd/
+PATCHFILES=	qmail-103.patch
+PATCH_DIST_STRIP+=	-p1
 
 MAINTAINER=	lioux@gns.com.br
 
