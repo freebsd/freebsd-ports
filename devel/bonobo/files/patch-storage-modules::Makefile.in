@@ -1,14 +1,12 @@
-
-$FreeBSD$
-
---- storage-modules/Makefile.in	2002/05/01 01:03:30	1.1
-+++ storage-modules/Makefile.in	2002/05/01 01:15:16
-@@ -180,7 +180,7 @@
- libstorage_efs_la_SOURCES =  	bonobo-storage-efs.c		bonobo-storage-efs.h		bonobo-stream-efs.c		bonobo-stream-efs.h
- 
- 
--libstorage_efs_la_LDFLAGS =  	$(common_ldflags) 				-L$(top_builddir)/libefs/src			-lefs
-+libstorage_efs_la_LDFLAGS =  	$(common_ldflags) 				$(top_builddir)/libefs/src/libefs.la
- 
+--- storage-modules/Makefile.in.orig	Tue Oct  8 02:07:53 2002
++++ storage-modules/Makefile.in	Tue Oct  8 02:09:33 2002
+@@ -196,8 +196,7 @@
+ libstorage_efs_la_LDFLAGS = \
+ 	$(common_ldflags) 			\
+ 	-L$(top_builddir)/libefs/src		\
+-	-lefs
+-
++	$(top_builddir)/libefs/src/libefs.la
  
  #
+ # File-system based storage

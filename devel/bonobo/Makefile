@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bonobo
-PORTVERSION=	1.0.20
-PORTREVISION=	2
+PORTVERSION=	1.0.21
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/bonobo/1.0
@@ -23,8 +22,9 @@ USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix oaf gnomehier gnomeprint
 GNOME_HTML_DIR=	${PREFIX}/share/doc/bonobo
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL=	yes
-LIBTOOLFILES=	configure libefs/configure
+#USE_LIBTOOL=	yes
+#LIBTOOLFILES=	configure libefs/configure
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
