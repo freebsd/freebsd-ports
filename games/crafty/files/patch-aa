@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Nov 11 11:19:29 1999
-+++ Makefile	Sun Feb  6 18:33:46 2000
+--- Makefile.orig	Sun Jan 30 20:43:42 2000
++++ Makefile	Tue May 16 11:06:31 2000
 @@ -23,7 +23,7 @@
  #     SGI      {SGI Workstation running Irix (SYSV/R4) Unix}
  #     SUN      {Sun SparcStation running Solaris (SYSV/R4) Unix}
@@ -32,7 +32,7 @@
  
  # FreeBSD (pgcc)
  #target  = FreeBSD
-@@ -111,20 +115,25 @@
+@@ -111,20 +115,27 @@
   
  # LINUX (gcc 2.95)
  # Note: You have to uncomment exactly ONE of the `asm' lines below.
@@ -40,7 +40,7 @@
 -CC      = gcc
 -CPP	= g++
 -CFLAGS  = -Wall -pipe -D_REENTRANT -march=i686 -O -fforce-mem \
--          -fomit-frame-pointer
+-          -fomit-frame-pointer -mpreferred-stack-boundary=2
 -LDFLAGS = -lpthread
 -opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
 -          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST -DSMP -DCPUS=4 -DDGT
@@ -48,10 +48,11 @@
 +#CC      = gcc
 +#CPP	= g++
 +#CFLAGS  = -Wall -pipe -D_REENTRANT -march=i686 -O -fforce-mem \
-+#          -fomit-frame-pointer
++#          -fomit-frame-pointer -mpreferred-stack-boundary=2
 +#LDFLAGS = -lpthread
 +#opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
 +#          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST -DSMP -DCPUS=4 -DDGT
++
  
  # Uncomment the FIRST `asm' line for a.out systems.
  # Uncomment the SECOND `asm' line for ELF systems.
@@ -64,10 +65,11 @@
  asm     = X86-elf.o
 +.endif
 +.endif
++
   
  # NEXT
  #target  = NEXT
-@@ -169,7 +178,7 @@
+@@ -169,7 +180,7 @@
  
  # Do not change anything below this line!
  
