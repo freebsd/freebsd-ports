@@ -7,6 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 #MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 #MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,8 +40,8 @@ CONFIGURE_ARGS=	--disable-tests \
 		--disable-v4l
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+		CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib -L${LOCALBASE}/lib"
 CONFIGURE_TARGET=
 PLIST_SUB=	\
 		VERSION="${PORTVERSION:C/..$//}" \
@@ -91,16 +92,6 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's|^.*afOpenVirtualFile[[:space:]]*\(\);|;|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-# XXX - fix {x,}videosink build
-	@${REINPLACE_CMD} -E -e \
-		's|^(DEFAULT_INCLUDES.*)$$|\1 \$$\(X_CFLAGS\)|; \
-		s|^(XVIDEO_LIBS.*)$$|\1 -lX11 -lXext -lXv -lXxf86vm|' \
-		${WRKSRC}/sys/xvideo/Makefile.in \
-		${WRKSRC}/sys/videosink/Makefile.in
-	@${REINPLACE_CMD} -E -e \
-		's|@USE_XVIDEO_TRUE@||; \
-		s|@USE_XVIDEO_FALSE@|#|' \
-		${WRKSRC}/sys/Makefile.in
 
 post-configure:
 # CC safeness
