@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image filter system based on volterra and morphologic filters
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+
 PLIST_FILES=	bin/xenomorph
 USE_BZIP2=	yes
 USE_QT_VER=	3
