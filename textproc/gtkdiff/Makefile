@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gtkdiff
-# Version required:	1.0.2
 # Date created:		17 November 1999
 # Whom:			Maxim Sobolev
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gtkdiff-1.0.2
+PORTNAME=	gtkdiff
+PORTVERSION= 	1.0.2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://www.ainet.or.jp/~inoue/software/gtkdiff/
 

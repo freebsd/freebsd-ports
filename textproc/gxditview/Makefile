@@ -1,13 +1,12 @@
 # New ports collection makefile for:   gxditview
-# Version required:     1.10
 # Date created:                24 June 1998
 # Whom:                        Dom Mitchell <dom@myrddin.demon.co.uk>
 #
 # $FreeBSD$
 #
 
-# Same version as the contrib groff sources...
-DISTNAME=	gxditview-1.10
+PORTNAME=	gxditview
+PORTVERSION= 	1.10
 CATEGORIES=	textproc
 DISTFILES=	# none
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	Coccon
-# Version required:	1.5
 # Date created:		27 June 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Cocoon_1.5
-PKGNAME=	cocoon-1.5
+PORTNAME=	cocoon
+PORTVERSION= 	1.5
 CATEGORIES=	textproc www java
 MASTER_SITES=	http://java.apache.org/cocoon/dist/
+DISTNAME=	Cocoon_${PORTVERSION}
 EXTRACT_SUFX=	.jar
 
 MAINTAINER=	kuriyama@FreeBSD.org

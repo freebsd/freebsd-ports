@@ -1,17 +1,17 @@
 # New ports collection makefile for:	Text::Template
-# Version required:	1.20
 # Date created:		Thu Oct 28 01:58:13 EDT 1999
 # Whom:			Bill "I hate Perl" Fumerola
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Text-Template-1.20
-PKGNAME=	p5-Text-Template-1.20
+PORTNAME=	p5-Text-Template
+PORTVERSION= 	1.20
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://www.plover.com/~mjd/perl/Template/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
+DISTNAME=	Text-Template-1.20
 
 MAINTAINER=	ports@FreeBSD.org
 

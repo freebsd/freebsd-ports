@@ -1,5 +1,4 @@
 # New ports collection makefile for:   docbook
-# Version required:    N/A
 # Date created:        7 April 1999
 # Whom:                Nik Clayton <nik@freebsd.org>
 #
@@ -8,11 +7,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=       docbook
-PKGNAME=        docbook-1.0
+PORTNAME=	docbook
+PORTVERSION= 	1.0
 CATEGORIES=     textproc
 MASTER_SITES=   # empty
-DISTFILES=      # empty
+DISTFILES=	# empty
 
 MAINTAINER=     nik@freebsd.org
 

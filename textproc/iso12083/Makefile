@@ -1,12 +1,12 @@
 # New ports collection makefile for:	iso12083
-# Version required:	1993
 # Date created:		July 9, 1997
 # Whom:			jfieber
 #
 # $FreeBSD$
 #
 
-DISTNAME=	iso12083-1993
+PORTNAME=	iso12083
+PORTVERSION= 	1993
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://info.ex.ac.uk/pub/SGML/ISO-12083/
 DISTFILES=	article.dtd book.dtd maths.dtd serial.dtd

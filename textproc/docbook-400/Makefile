@@ -1,5 +1,4 @@
 # New ports collection makefile for:	docbook-400
-# Version required:	4.0
 # Date created:		4 April 2000
 # Whom:			asmodai
 #
@@ -8,10 +7,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=	docbk40beta5
-PKGNAME=	docbook-4.0
+PORTNAME=	docbook
+PORTVERSION= 	4.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/sgml/4.0beta5/
+DISTNAME=	docbk40beta5
 
 MAINTAINER=	asmodai@FreeBSD.org
 

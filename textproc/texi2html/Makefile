@@ -1,15 +1,15 @@
 # New ports collection makefile for:	texi2html
-# Version required:			1.52
 # Date created:				5 Nov 1997
 # Whom:					Ian Vaudrey <i.vaudrey@bigfoot.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	texi2html
-PKGNAME=	texi2html-1.52
+PORTNAME=	texi2html
+PORTVERSION= 	1.52
 CATEGORIES=	textproc
 MASTER_SITES=	http://wwwcn.cern.ch/dci/texi2html/
+DISTNAMe=	${PORTNAME}
 EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	i.vaudrey@bigfoot.com

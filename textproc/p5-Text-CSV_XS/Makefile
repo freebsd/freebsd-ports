@@ -1,15 +1,16 @@
 # New ports collection makefile for:    Text::CSV_XS
-# Version required:     0.*
 # Date created:         Fri Nov 19 03:11:08 MSK 1999
 # Whom:                 Ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=       Text-CSV_XS-0.20
+PORTNAME=	p5-Text-CSV_XS
+PORTVERSION=	0.20
 CATEGORIES=	textproc perl5
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
+DISTNAME=	Text-CSV_XS-0.20
 
 MAINTAINER=     ache@FreeBSD.org
 

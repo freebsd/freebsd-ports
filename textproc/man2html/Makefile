@@ -1,15 +1,15 @@
 # New ports collection makefile for:   	man2html
-# Version required:			3.0.1
 # Date created:				29 August 1998
 # Whom:                			Dima Sivachenko <demon@gpad.ac.ru>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	man2html3.0.1
-PKGNAME=	man2html-3.0.1
+PORTNAME=	man2html
+PORTVERSION= 	3.0.1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	demon@gpad.ac.ru
 

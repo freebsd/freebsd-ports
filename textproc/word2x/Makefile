@@ -1,11 +1,12 @@
 # New ports collection makefile for:	word2x
-# Version required:	0.005
 # Date created:		10 June 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
+#
 
-DISTNAME=	word2x-0.005
+PORTNAME=	word2x
+PORTVERSION=	0.005
 CATEGORIES=	textproc
 MASTER_SITES=	http://word2x.alcom.co.uk/download/
 

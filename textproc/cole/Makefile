@@ -1,12 +1,12 @@
 # New ports collection makefile for:	cole
-# Version required:			2.0.1
 # Date created:				4 November 1999
 # Whom:					Maxim Sobolev <sobomax@altavista.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cole-2.0.1
+PORTNAME=	cole
+PORTVERSION= 	2.0.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://arturo.directmail.org/filters/archive/ \
 		http://homepages.go.com/~sobomax/filtersweb/

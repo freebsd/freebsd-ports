@@ -1,17 +1,17 @@
 # ex:ts=8
 # Ports collection makefile for:    vnless
-# Version required: 0.0
 # Date created:         Tue Dec 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	vnless
-PKGNAME=	vi-vnless-1.0
+PORTNAME=	vi-vnless
+PORTVERSION= 	1.0
 CATEGORIES=	vietnamese
 MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
 		ftp://ftp.monash.edu.au/pub/vietnam/unix/
+DISTNAME=	vnless
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	textutils
-# Version required:	2.0
 # Date created:		14 May 1998
 # Whom:			Adrian Wontroba <aw1@stade.co.uk>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	textutils-2.0
+PORTNAME=	textutils
+PORTVERSION= 	2.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	textutils

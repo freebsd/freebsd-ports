@@ -1,5 +1,4 @@
 # New ports collection makefile for:	docbook-310
-# Version required:	3.0
 # Date created:		7 April 1999
 # Whom:			nik
 #
@@ -8,10 +7,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=	docbk31
-PKGNAME=	docbook-3.1
+PORTNAME=	docbook
+PORTVERSION= 	3.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/sgml/3.1/
+DISTNAME=	docbk31
 
 MAINTAINER=	nik@FreeBSD.org
 

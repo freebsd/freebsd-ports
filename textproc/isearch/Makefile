@@ -1,15 +1,15 @@
 # New ports collection makefile for:   isearch
-# Version required:		1.14
 # Date created:			21 Sept 1996
 # Whom:				Pedro
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Isearch-1.14
-PKGNAME=	isearch-1.14
+PORTNAME=	isearch
+PORTVERSION= 	1.14
 CATEGORIES=	textproc databases
 MASTER_SITES=	ftp://ftp.cnidr.org/pub/NIDR.tools/Isearch/
+DISTNAME-	Isearc-${PORTVERSION}
 
 MAINTAINER=	giffunip@asme.org
 

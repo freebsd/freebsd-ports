@@ -1,15 +1,15 @@
 # New ports collection makefile for:	XML for Java
-# Version required:	3.0.0-EA3
 # Date created:		21 Feb 2000
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xml4J_3_0_0EA3
-PKGNAME=	xml4j-3.0.0e3
+PORTNAME=	xml4j
+PORTVERSION= 	3.0.0.e3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.alphaworks.ibm.com/tech/xml4j/
+DISTNAME=	xml4J_3_0_0EA3
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
