@@ -7,6 +7,7 @@
 
 PORTNAME=		heimdal
 PORTVERSION=	0.4e
+PORTREVISION=	1
 CATEGORIES=		security ipv6
 MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 				ftp://ftp.replay.com/pub/replay/crypto/APPS/kerberos/heimdal/ \
@@ -16,8 +17,12 @@ MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 MAINTAINER=		nectar@FreeBSD.ORG
 
 .if defined(WITH_LDAP)
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
 .endif
+.if defined(WITH_CRACKLIB)
+BUILD_DEPENDS+= ${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
+.endif
+
 
 RESTRICTED=		"Crypto; export-controlled"
 
@@ -60,6 +65,24 @@ OPENSSL_IN_BASE=	YES
 
 PLIST:=				${WRKDIR}/PLIST
 
+pre-configure:
+.if !defined(WITH_CRACKLIB)
+	@${ECHO_MSG}
+	@${ECHO_MSG} You can utilize CrackLib for the kpasswdd by defining
+	@${ECHO_MSG} WITH_CRACKLIB and uncommenting the appropriate lines in
+	@${ECHO_MSG} ${PREFIX}/etc/rc.d/kdc.sh.
+	@${ECHO_MSG}
+.endif
+
+post-build:
+.if defined(WITH_CRACKLIB)
+	sed -e "s;%%LOCALBASE%%;${LOCALBASE};g" \
+	${FILESDIR}/kpasswdd-cracklib.c.in > ${WRKSRC}/kpasswdd-cracklib.c
+	(cd ${WRKSRC} && \
+	${CC} ${CFLAGS} -fPIC -shared -I${LOCALBASE}/include -I./include \
+	-L${LOCALBASE}/lib -o ./kpasswdd-cracklib.so ./kpasswdd-cracklib.c -lcrack)
+.endif
+
 pre-install:
 	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
 .if exists(/usr/lib/libkrb.a) && !defined(WITHOUT_KRB4)
@@ -73,6 +96,10 @@ pre-install:
 .endif
 .if !exists(/usr/include/ifaddrs.h)
 	@${ECHO} include/ifaddrs.h >> ${PLIST}
+.endif
+.if defined(WITH_CRACKLIB)
+	${INSTALL_PROGRAM} ${WRKSRC}/kpasswdd-cracklib.so ${PREFIX}/lib/
+	@${ECHO} lib/kpasswdd-cracklib.so >> ${PLIST}
 .endif
 
 .include "Makefile.man"

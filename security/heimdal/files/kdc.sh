@@ -10,6 +10,8 @@ IPROP_MASTER_HOST=""
 
 KDC="${PREFIX}/libexec/kdc"
 KPASSWDD="${PREFIX}/libexec/kpasswdd"
+# Uncomment to use CrackLib
+#KPASSWDD_FLAGS="--check-library=${PREFIX}/lib/kpasswdd-cracklib.so"
 IPROPD_MASTER="${PREFIX}/libexec/ipropd-master"
 IPROPD_SLAVE="${PREFIX}/libexec/ipropd-slave"
 
@@ -25,7 +27,7 @@ esac
 do_start() {
     if test "${run_kdc}" -eq "1"; then
 	${KDC} ${KDC_FLAGS} &
-	test "${run_master}" -eq "1" && ${KPASSWDD} &
+	test "${run_master}" -eq "1" && ${KPASSWDD} ${KPASSWDD_FLAGS} &
 	test "${run_master}" -eq "1" && ${IPROPD_MASTER} &
 	test "${run_slave}"  -eq "1" && ${IPROPD_SLAVE} ${IPROP_MASTER_HOST} &
     fi
