@@ -1,0 +1,16 @@
+About the project
+
+We plan to build a program that will accept ASCII text as input and generate
+International Morse Code as output. The output formats can be: 
+
+     - . -..- - (text) on the console 
+     Raw audio on /dev/audio (8bit PCM data) 
+     .wav files 
+     .ogg or (proprietary format) compressed audio 
+
+International Morse Code
+
+Supported character set includes [A-Za-z] (all downcased as Morse is not case
+sensitive), [0-9], ",-.?/" plus a few procedural characters (SK, AR, BT etc). 
+
+WWW: http://cwtext.sourceforge.net/
