@@ -24,7 +24,6 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sf@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt-old:${PORTSDIR}/devel/gettext-old
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 .if !defined(WITHOUT_SSL)
@@ -34,9 +33,8 @@ CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib" \
-		MSGFMT="${LOCALBASE}/bin/msgfmt-old" \
-		XGETTEXT="${LOCALBASE}/bin/xgettext-old"
+		LIBS="-L${LOCALBASE}/lib"
+MAKE_ENV=	OLD_PO_FILE_INPUT=1
 
 MAN1=		wget.1
 
