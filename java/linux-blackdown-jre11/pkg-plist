@@ -70,8 +70,8 @@ linux-blackdown-jre%%JRE_VERSION%%/lib/security/java.security
 linux-blackdown-jre%%JRE_VERSION%%/lib/serialver.properties
 @exec   mkdir -p %D/share/doc/java
 @unexec rmdir %D/share/doc/java 2>/dev/null || true
-@exec   %D/bin/registervm "%D/linux-blackdown-jre%%JRE_VERSION%%/bin/java # Linux-Blackdown-JRE%%JRE_VERSION%%"
-@unexec %D/bin/unregistervm Linux-Blackdown-JRE%%JRE_VERSION%%
+@exec   %%LOCALBASE%%/bin/registervm "%D/linux-blackdown-jre%%JRE_VERSION%%/bin/java # Linux-Blackdown-JRE%%JRE_VERSION%%"
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/linux-blackdown-jre%%JRE_VERSION%%/bin/java"
 @dirrm linux-blackdown-jre%%JRE_VERSION%%/lib/security
 @dirrm linux-blackdown-jre%%JRE_VERSION%%/lib/i686/native_threads
 @dirrm linux-blackdown-jre%%JRE_VERSION%%/lib/i686/green_threads
