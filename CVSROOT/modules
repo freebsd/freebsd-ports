@@ -9889,6 +9889,7 @@ uzap		ports/editors/uzap
 v		ports/x11-toolkits/v
 v6eval		ports/net/v6eval
 vMac		ports/emulators/vMac
+valgrind	ports/devel/valgrind
 vamos		ports/games/vamos
 varconf		ports/devel/varconf
 varkon		ports/cad/varkon
