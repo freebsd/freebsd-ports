@@ -49,8 +49,7 @@ BROKEN=	"This port cannot be built when textproc/wv is installed because of a he
 .endif
 
 .if ${HAVE_GNOME:Mnautilus2}!="" && ${HAVE_GNOME:Mgal2}!=""
-LIB_DEPENDS+=		nautilus.2:${PORTSDIR}/x11-fm/nautilus2 \
-			gal-2.0.1:${PORTSDIR}/x11-toolkits/gal2
+USE_GNOME+=		nautilus2 gal2
 CONFIGURE_ARGS+=	--enable-gnome
 PLIST_SUB+=		GNOME:=""
 PKGNAMESUFFIX=		-gnome
