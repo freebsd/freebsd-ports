@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libowfat
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	devel
 MASTER_SITES=	http://dl.fefe.de/
 
@@ -29,9 +29,13 @@ CFLAGS+=	-O2 -fomit-frame-pointer
 
 .include "${FILESDIR}/manpages"
 
-PLIST_FILES=	lib/libowfat.a
+examples=	test/client.c test/dllink.c test/httpd.c test/readhttp.c \
+		test/server.c test/uudecode.c test/vd.c
+examplesdir=	${EXAMPLESDIR:S,^${PREFIX}/,,}
+PLIST_DIRS=	${examplesdir}
+PLIST_FILES=	lib/libowfat.a ${examples:S,^test/,${examplesdir}/,}
 .if!defined(NOPORTDOCS)
-PORTDOCS=	README
+PORTDOCS=	CHANGES README TODO
 .endif
 
 post-install:
@@ -39,6 +43,8 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
+	${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${examples} ${EXAMPLESDIR}
 # add installed header files to packaging list:
 	@cd ${PREFIX} && \
 	    ${FIND} include/libowfat -type f -o -type l | ${SORT} >>${TMPPLIST}
