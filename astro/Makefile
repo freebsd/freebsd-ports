@@ -32,6 +32,7 @@
     SUBDIR += p5-GPS
     SUBDIR += p5-Geo-METAR
     SUBDIR += p5-SETI-Stats
+    SUBDIR += phoon
     SUBDIR += planets
     SUBDIR += py-metar
     SUBDIR += pyweather
