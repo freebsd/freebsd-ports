@@ -22,7 +22,7 @@ USE_X_PREFIX=	yes
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
 MAN1=		nxtvepg.1
-PORTDOCS=	README TODO CHANGES manual.html
+MYPORTDOCS=	README TODO CHANGES manual.html
 
 .include <bsd.port.pre.mk>
 
@@ -40,7 +40,7 @@ post-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif

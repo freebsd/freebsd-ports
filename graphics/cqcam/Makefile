@@ -29,7 +29,7 @@ MAN1=		cqcam.1
 MLINKS=		cqcam.1 webcam.1 \
 		cqcam.1 xcqcam.1
 
-PORTDOCS=	README docs/APINOTES docs/CHANGES docs/README.webcam \
+MYPORTDOCS=	README docs/APINOTES docs/CHANGES docs/README.webcam \
 		docs/refresh.html docs/webcam.html docs/README.movies
 
 .include <bsd.port.pre.mk>
@@ -48,7 +48,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/webcam/nph-webcam ${PREFIX}/share/examples/cqcam/sample.nph-webcam
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif

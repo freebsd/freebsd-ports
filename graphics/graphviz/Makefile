@@ -45,13 +45,13 @@ MAN1=		acyclic.1 ccomps.1 colorize.1 dot.1 dot2gxl.1 dotty.1 gc.1 \
 MAN3=		agraph.3 cdt.3 expr.3 graph.3 pack.3 pathplan.3
 MANN=		gdtclft.n tcldgl.n tcldgr.n tcldot.n tkspline.n
 
-PORTDOCS=	dotguide.pdf dottyguide.pdf gd.html leftyguide.pdf \
+MYPORTDOCS=	dotguide.pdf dottyguide.pdf gd.html leftyguide.pdf \
 		neatoguide.pdf tcldot.html Dot.ref FAQ.html
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .endif

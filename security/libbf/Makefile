@@ -24,7 +24,7 @@ MAKEFLAGS+=	BF_ENC=bf_enc.o
 
 WRKSRC=		${WRKDIR}/bf
 
-PORTDOCS=	blowfish.doc COPYRIGHT README VERSION
+MYPORTDOCS=	blowfish.doc COPYRIGHT README VERSION
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bfspeed ${PREFIX}/bin
@@ -35,7 +35,7 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
+.for doc in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif

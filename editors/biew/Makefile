@@ -19,7 +19,7 @@ COMMENT=	Binary vIEWer + editor for binary, hexadecimal and dis-asm modes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-PORTDOCS=	biew_en.txt biew_ru.txt develop.en develop.ru file_ini.en \
+MYPORTDOCS=	biew_en.txt biew_ru.txt develop.en develop.ru file_ini.en \
 		file_ini.ru licence.en licence.ru release.txt unix.txt
 
 .include <bsd.port.pre.mk>
@@ -56,7 +56,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/hlp/biew.hlp ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .endif

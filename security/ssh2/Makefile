@@ -79,7 +79,7 @@ MLINKS=		ssh2.1 ssh.1 ssh-add2.1 ssh-add.1 ssh-agent2.1 ssh-agent.1 \
 		ssh-probe2.1 ssh-probe.1 sshd2.8 sshd.8
 MANCOMPRESSED=	no
 
-PORTDOCS=	CHANGES FAQ INSTALL LICENSE MANIFEST NEWS README \
+MYPORTDOCS=	CHANGES FAQ INSTALL LICENSE MANIFEST NEWS README \
 		REGEX-SYNTAX SSH2.QUICKSTART
 
 post-patch:
@@ -93,7 +93,7 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
+.for i in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif

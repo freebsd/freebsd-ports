@@ -22,7 +22,7 @@ EXAMPLES=	examples/asqrt examples/asqrt.README examples/blink \
 		examples/counter examples/counter.README examples/life \
 		examples/life.README examples/graphtest.sh examples/sqrt \
 		examples/sqrt.README
-PORTDOCS=	doc/teapot.doc doc/teapot.html doc/teapot.ps
+MYPORTDOCS=	doc/teapot.doc doc/teapot.html doc/teapot.ps
 
 post-build:
 	@cd ${WRKSRC}/doc && ${MAKE} teapot.doc teapot.html teapot.ps
@@ -36,7 +36,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${EXAMPLESDIR}
 .endfor
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif

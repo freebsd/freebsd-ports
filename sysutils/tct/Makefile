@@ -23,7 +23,7 @@ USE_PERL5_RUN=	yes
 MAN1=		ils.1 mactime.1 pcat.1 grave-robber.1 lastcomm.1 major_minor.1 timeout.1 icat.1 lazarus.1 unrm.1
 MAN5=		magic.5 tm-format.5
 
-PORTDOCS=	CHANGES COPYRIGHT INSTALL LICENSE MANIFEST OS-NOTES README.FIRST TODO docs/README docs/design-notes docs/lazarus.README docs/grave-robber.README docs/mac.README
+MYPORTDOCS=	CHANGES COPYRIGHT INSTALL LICENSE MANIFEST OS-NOTES README.FIRST TODO docs/README docs/design-notes docs/lazarus.README docs/grave-robber.README docs/mac.README
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/file ${LOCALBASE}/bin/file-tct
@@ -46,7 +46,7 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/tct
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/tct
 .endfor
 .endif

@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--enable-imlib-icons
 
 MAN1=		dfm.1x
 
-PORTDOCS=	ANNOUNCE BUGS COPYRIGHT CREDITS ChangeLog DOWNLOAD HELP.ERROR \
+MYPORTDOCS=	ANNOUNCE BUGS COPYRIGHT CREDITS ChangeLog DOWNLOAD HELP.ERROR \
 		NO_WARRANTY README START TESTED TODO
 
 pre-patch:
@@ -40,7 +40,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/dfmext-samples/dfmext_user ${PREFIX}/share/examples/dfm/dfmext.sample.user
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif

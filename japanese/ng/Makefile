@@ -20,7 +20,7 @@ COMMENT?=	A very light Emacs-clone with Japanese support
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="-ltermcap"
 ALL_TARGET=	ng
 
-PORTDOCS=	CHANGES.1_3 CHANGES.doc Ng.FAQ Ng.doc Ng.ref Ng.tut \
+MYPORTDOCS=	CHANGES.1_3 CHANGES.doc Ng.FAQ Ng.doc Ng.ref Ng.tut \
 		README.Ng README.SKG
 
 post-patch:
@@ -30,7 +30,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ng ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ja/ng
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${PREFIX}/share/doc/ja/ng/${file}.euc-jp
 .endfor
 .endif
