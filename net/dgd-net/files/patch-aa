@@ -1,0 +1,79 @@
+*** Makefile.orig	Sun Dec 10 19:21:36 1995
+--- Makefile	Wed Feb  7 22:53:33 1996
+***************
+*** 3,14 ****
+  #
+  HOST=	NETBSD
+  DEFINES=-D$(HOST) #-DDUMP_FUNCS
+! DEBUG=	-g -DDEBUG
+  CCFLAGS=$(DEFINES) $(DEBUG)
+  CFLAGS=	-I. -Icomp -Ilex -Ied -Ikfun $(CCFLAGS)
+! LDFLAGS=
+! LIBS=
+! CC=	gcc
+  LD=	$(CC)
+  DMAKE=	make
+  BIN=	../bin
+--- 3,15 ----
+  #
+  HOST=	NETBSD
+  DEFINES=-D$(HOST) #-DDUMP_FUNCS
+! DEBUG=-O2
+! #DEBUG=	-g -DDEBUG
+  CCFLAGS=$(DEFINES) $(DEBUG)
+  CFLAGS=	-I. -Icomp -Ilex -Ied -Ikfun $(CCFLAGS)
+! LDFLAGS=-s
+! LIBS=-lcrypt
+! CC=	cc
+  LD=	$(CC)
+  DMAKE=	make
+  BIN=	../bin
+***************
+*** 20,25 ****
+--- 21,28 ----
+  COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o data.o \
+  	interpret.o config.o
+  
++ all: a.out comp/a.out
++ 
+  a.out:	$(OBJ) always
+  	cd comp; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
+  	cd lex; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
+***************
+*** 38,44 ****
+  	-mv $(BIN)/driver $(BIN)/driver.old
+  	cp a.out $(BIN)/driver
+  
+! install: $(BIN)/driver
+  
+  comp.sub: $(COMPOBJ)
+  	@for i in $(COMPOBJ); do echo ../$$i; done > comp.sub
+--- 41,51 ----
+  	-mv $(BIN)/driver $(BIN)/driver.old
+  	cp a.out $(BIN)/driver
+  
+! $(BIN)/precomp: comp/a.out
+! 	-mv $(BIN)/precomp $(BIN)/precomp.old
+! 	cp comp/a.out $(BIN)/precomp
+! 
+! install: $(BIN)/driver $(BIN)/precomp
+  
+  comp.sub: $(COMPOBJ)
+  	@for i in $(COMPOBJ); do echo ../$$i; done > comp.sub
+***************
+*** 54,60 ****
+  
+  comp/a.out:
+  	cd comp; $(DMAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' \
+! 			  'LIBS=$(LIBS)' a.out
+  
+  clean:
+  	rm -f a.out $(OBJ) comp.sub lex.sub ed.sub
+--- 61,67 ----
+  
+  comp/a.out:
+  	cd comp; $(DMAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' \
+! 			'LDFLAGS=$(LDFLAGS)' 'LIBS=$(LIBS)' a.out
+  
+  clean:
+  	rm -f a.out $(OBJ) comp.sub lex.sub ed.sub

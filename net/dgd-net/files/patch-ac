@@ -1,0 +1,19 @@
+*** ../Copyright.NET.old	Mon Jun 17 17:53:49 1996
+--- ../Copyright.NET	Mon Jun 17 17:54:29 1996
+***************
+*** 3,9 ****
+  The package is also a derived work of Dworkin's Generic Driver, which
+  is copyrighted by BeeHive Internet Technologies, Inc.  Therefore, its
+  copyright applies to it in addition to mine.  Its license is included
+! in the file Copyright.DGD.
+  
+  I grant permission for any use of this package which does not conflict
+  with the terms of the DGD copyright mentioned above.
+--- 3,9 ----
+  The package is also a derived work of Dworkin's Generic Driver, which
+  is copyrighted by BeeHive Internet Technologies, Inc.  Therefore, its
+  copyright applies to it in addition to mine.  Its license is included
+! in the file Copyright.
+  
+  I grant permission for any use of this package which does not conflict
+  with the terms of the DGD copyright mentioned above.
