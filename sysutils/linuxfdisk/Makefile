@@ -15,17 +15,13 @@ EXTRACT_SUFX=	.tar.bz2
 MAINTAINER=	netch@netch.kiev.ua
 COMMENT=	Fdisk, a partition tables manipulator, from util-linux
 
-WRKSRC=		${WRKDIR}/linuxfdisk-${PORTVERSION}
+WRKSRC=		${WRKDIR}/util-linux-${PORTVERSION}/fdisk
 USE_BZIP2=	yes
-MAN8=		linuxfdisk.8
-
-post-extract:
-	@cd ${WRKDIR} && ${LN} -sf util-linux-${PORTVERSION}/fdisk linuxfdisk-${PORTVERSION}
+MAN8=		fdisk-linux.8 cfdisk-linux.8 sfdisk-linux.8
 
 pre-patch:
 	@rm -f ${WRKSRC}/Makefile
 	@cp ${FILESDIR}/linuxfdisk-Makefile ${WRKSRC}/Makefile
 	@cp ${FILESDIR}/linuxfdisk-sys_bsd.c ${WRKSRC}/sys_bsd.c
-	@cp -p ${WRKSRC}/fdisk.8 ${WRKSRC}/linuxfdisk.8
 
 .include <bsd.port.mk>

@@ -1,6 +1,169 @@
+diff -rNu cfdisk.c cfdisk.c
+--- cfdisk.c	Tue Nov 26 18:44:33 2002
++++ cfdisk.c	Fri Jun 20 19:47:15 2003
+@@ -76,25 +76,14 @@
+ #include <string.h>
+ #include <sys/stat.h>
+ #include <sys/ioctl.h>
+-#include <linux/types.h>
+ 
+ #include "nls.h"
+-#include "xstrncpy.h"
+ #include "common.h"
+ 
+-#if defined(__GNUC__) || defined(HAS_LONG_LONG)
+-typedef long long ext2_loff_t;
+-#else
+-typedef long      ext2_loff_t;
+-#endif
+-
+-extern ext2_loff_t ext2_llseek(unsigned int fd, ext2_loff_t offset,
+-			       unsigned int origin);
+-
+ #define VERSION UTIL_LINUX_VERSION
+ 
+-#define DEFAULT_DEVICE "/dev/hda"
+-#define ALTERNATE_DEVICE "/dev/sda"
++#define DEFAULT_DEVICE "/dev/ad0"
++#define ALTERNATE_DEVICE "/dev/da0"
+ 
+ /* With K=1024 we have `binary' megabytes, gigabytes, etc.
+    Some misguided hackers like that.
+@@ -324,7 +313,8 @@
+ int logical = 0;
+ int logical_sectors[MAXIMUM_PARTS];
+ 
+-__sighandler_t old_SIGINT, old_SIGTERM;
++void (*old_SIGINT)(int);
++void (*old_SIGTERM)(int);
+ 
+ int arrow_cursor = FALSE;
+ int display_units = MEGABYTES;
+@@ -571,7 +561,7 @@
+ 
+ static void
+ read_sector(char *buffer, int sect_num) {
+-    if (ext2_llseek(fd, ((ext2_loff_t) sect_num)*SECTOR_SIZE, SEEK_SET) < 0)
++    if (lseek(fd, ((off_t) sect_num)*SECTOR_SIZE, SEEK_SET) < 0)
+ 	fatal(_("Cannot seek on disk drive"), 2);
+     if (read(fd, buffer, SECTOR_SIZE) != SECTOR_SIZE)
+ 	fatal(_("Cannot read disk drive"), 2);
+@@ -579,7 +569,7 @@
+ 
+ static void
+ write_sector(char *buffer, int sect_num) {
+-    if (ext2_llseek(fd, ((ext2_loff_t) sect_num)*SECTOR_SIZE, SEEK_SET) < 0)
++    if (lseek(fd, ((off_t) sect_num)*SECTOR_SIZE, SEEK_SET) < 0)
+ 	fatal(_("Cannot seek on disk drive"), 2);
+     if (write(fd, buffer, SECTOR_SIZE) != SECTOR_SIZE)
+ 	fatal(_("Cannot write disk drive"), 2);
+@@ -603,11 +593,11 @@
+ #define DOS_OSTYPE_SZ 8
+ #define DOS_LABEL_SZ 11
+ #define DOS_FSTYPE_SZ 8
+-	ext2_loff_t offset;
++	off_t offset;
+ 
+-	offset = ((ext2_loff_t) p_info[i].first_sector + p_info[i].offset)
++	offset = ((off_t) p_info[i].first_sector + p_info[i].offset)
+ 		* SECTOR_SIZE;
+-	if (ext2_llseek(fd, offset, SEEK_SET) == offset
++	if (lseek(fd, offset, SEEK_SET) == offset
+ 	    && read(fd, &sector, sizeof(sector)) == sizeof(sector)) {
+ 		dos_copy_to_info(p_info[i].ostype, OSTYPESZ,
+ 				 sector+DOS_OSTYPE_OFFSET, DOS_OSTYPE_SZ);
+@@ -664,12 +654,12 @@
+ 	} xfsb;
+ 
+ 	char *label;
+-	ext2_loff_t offset;
++	off_t offset;
+ 	int j;
+ 
+-	offset = ((ext2_loff_t) p_info[i].first_sector + p_info[i].offset)
++	offset = ((off_t) p_info[i].first_sector + p_info[i].offset)
+ 		* SECTOR_SIZE + 1024;
+-	if (ext2_llseek(fd, offset, SEEK_SET) == offset
++	if (lseek(fd, offset, SEEK_SET) == offset
+ 	    && read(fd, &e2fsb, sizeof(e2fsb)) == sizeof(e2fsb)
+ 	    && e2fsb.s_magic[0] + (e2fsb.s_magic[1]<<8) == EXT2_SUPER_MAGIC) {
+ 		label = e2fsb.s_volume_name;
+@@ -684,9 +674,9 @@
+ 		return;
+ 	}
+ 
+-	offset = ((ext2_loff_t) p_info[i].first_sector + p_info[i].offset)
++	offset = ((off_t) p_info[i].first_sector + p_info[i].offset)
+ 		* SECTOR_SIZE + 0;
+-	if (ext2_llseek(fd, offset, SEEK_SET) == offset
++	if (lseek(fd, offset, SEEK_SET) == offset
+ 	    && read(fd, &xfsb, sizeof(xfsb)) == sizeof(xfsb)
+ 	    && !strcmp(xfsb.s_magic, XFS_SUPER_MAGIC)) {
+ 		label = xfsb.s_fname;
+@@ -698,9 +688,9 @@
+ 	}
+ 
+ 	/* reiserfs? */
+-	offset = ((ext2_loff_t) p_info[i].first_sector + p_info[i].offset)
++	offset = ((off_t) p_info[i].first_sector + p_info[i].offset)
+ 		* SECTOR_SIZE + REISERFS_DISK_OFFSET_IN_BYTES;
+-	if (ext2_llseek(fd, offset, SEEK_SET) == offset
++	if (lseek(fd, offset, SEEK_SET) == offset
+ 	    && read(fd, &reiserfsb, 1024) == 1024
+ 	    && is_reiserfs_magic_string(&reiserfsb)) {
+ 		strncpy(p_info[i].fstype, "reiserfs", FSTYPESZ);
+@@ -1140,7 +1130,7 @@
+             print_warning(_("Menu item too long. Menu may look odd."));
+ #endif
+ 	if (lenName >= sizeof(buff)) {	/* truncate ridiculously long string */
+-	    xstrncpy(buff, mi, sizeof(buff));
++	    strlcpy(buff, mi, sizeof(buff));
+ 	} else {
+             snprintf(buff, sizeof(buff),
+ 		     (menuType & MENU_BUTTON) ? "[%*s%-*s]" : "%*s%-*s",
+@@ -1605,17 +1595,7 @@
+ 	 opentype = O_RDWR;
+     opened = TRUE;
+ 
+-    /* Blocks are visible in more than one way:
+-       e.g. as block on /dev/hda and as block on /dev/hda3
+-       By a bug in the Linux buffer cache, we will see the old
+-       contents of /dev/hda when the change was made to /dev/hda3.
+-       In order to avoid this, discard all blocks on /dev/hda.
+-       Note that partition table blocks do not live in /dev/hdaN,
+-       so this only plays a role if we want to show volume labels. */
+-    ioctl(fd, BLKFLSBUF);	/* ignore errors */
+-				/* e.g. Permission Denied */
+-
+-    if (ioctl(fd, BLKGETSIZE, &actual_size))
++    if (sys_bsd_getsectors(fd, &actual_size))
+ 	fatal(_("Cannot get disk size"), 3);
+ 
+     read_sector(buffer.c.b, 0);
+@@ -1824,7 +1804,7 @@
+     if (is_bdev) {
+ 	 sync();
+ 	 sleep(2);
+-	 if (!ioctl(fd,BLKRRPART))
++	 if (!sys_bsd_ptsync(fd))
+ 	      changed = TRUE;
+ 	 sync();
+ 	 sleep(4);
+@@ -2850,9 +2830,11 @@
+     int c;
+     int i, len;
+ 
++#if 0
+     setlocale(LC_ALL, "");
+     bindtextdomain(PACKAGE, LOCALEDIR);
+     textdomain(PACKAGE);
++#endif
+ 
+     while ((c = getopt(argc, argv, "ac:gh:s:vzP:")) != -1)
+ 	switch (c) {
 diff -rNu common.h common.h
 --- common.h	Thu May  9 02:50:35 2002
-+++ common.h	Mon Jun 16 17:30:59 2003
++++ common.h	Fri Jun 20 19:25:55 2003
 @@ -1,11 +1,10 @@
  /* common stuff for fdisk, cfdisk, sfdisk */
  
@@ -39,7 +202,7 @@ diff -rNu common.h common.h
 +int sys_bsd_getgeometry(int, struct hd_geometry*);
 diff -rNu fdisk.c fdisk.c
 --- fdisk.c	Sat Nov 23 18:05:24 2002
-+++ fdisk.c	Mon Jun 16 17:37:33 2003
++++ fdisk.c	Fri Jun 20 19:25:55 2003
 @@ -37,11 +37,6 @@
  #include "fdisksgilabel.h"
  #include "fdiskaixlabel.h"
@@ -242,7 +405,7 @@ diff -rNu fdisk.c fdisk.c
  			if (opts == 1)
 diff -rNu fdiskaixlabel.c fdiskaixlabel.c
 --- fdiskaixlabel.c	Tue Apr 18 15:21:28 2000
-+++ fdiskaixlabel.c	Mon Jun 16 16:46:01 2003
++++ fdiskaixlabel.c	Fri Jun 20 19:25:55 2003
 @@ -8,7 +8,7 @@
  #include <string.h>             /* strstr */
  #include <unistd.h>             /* write */
@@ -254,7 +417,7 @@ diff -rNu fdiskaixlabel.c fdiskaixlabel.c
  #include "fdisk.h"
 diff -rNu fdiskaixlabel.h fdiskaixlabel.h
 --- fdiskaixlabel.h	Sun Feb 20 18:50:51 2000
-+++ fdiskaixlabel.h	Mon Jun 16 16:46:01 2003
++++ fdiskaixlabel.h	Fri Jun 20 19:25:55 2003
 @@ -1,4 +1,3 @@
 -#include <linux/types.h>   /* for __u32 etc */
  /*
@@ -262,7 +425,7 @@ diff -rNu fdiskaixlabel.h fdiskaixlabel.h
   *	This file may be redistributed under
 diff -rNu fdiskbsdlabel.c fdiskbsdlabel.c
 --- fdiskbsdlabel.c	Thu Oct 31 15:43:42 2002
-+++ fdiskbsdlabel.c	Mon Jun 16 16:46:01 2003
++++ fdiskbsdlabel.c	Fri Jun 20 19:25:55 2003
 @@ -566,7 +566,7 @@
    sector = get_start_sect(xbsd_part);
  #endif
@@ -298,7 +461,7 @@ diff -rNu fdiskbsdlabel.c fdiskbsdlabel.c
    if (sizeof (struct xbsd_disklabel) != write (fd, d, sizeof (struct xbsd_disklabel)))
 diff -rNu fdiskbsdlabel.h fdiskbsdlabel.h
 --- fdiskbsdlabel.h	Thu Oct 31 15:45:34 2002
-+++ fdiskbsdlabel.h	Mon Jun 16 16:46:01 2003
++++ fdiskbsdlabel.h	Fri Jun 20 19:25:55 2003
 @@ -31,8 +31,6 @@
   * SUCH DAMAGE.
   */
@@ -310,7 +473,7 @@ diff -rNu fdiskbsdlabel.h fdiskbsdlabel.h
  #endif
 diff -rNu fdisksgilabel.c fdisksgilabel.c
 --- fdisksgilabel.c	Thu May  9 02:51:31 2002
-+++ fdisksgilabel.c	Mon Jun 16 17:31:32 2003
++++ fdisksgilabel.c	Fri Jun 20 19:25:55 2003
 @@ -17,9 +17,8 @@
  #include <sys/stat.h>           /* stat */
  #include <assert.h>             /* assert */
@@ -346,7 +509,7 @@ diff -rNu fdisksgilabel.c fdisksgilabel.c
  	sectors = geometry.sectors;
 diff -rNu fdisksgilabel.h fdisksgilabel.h
 --- fdisksgilabel.h	Tue Feb 20 12:26:53 2001
-+++ fdisksgilabel.h	Mon Jun 16 16:46:01 2003
++++ fdisksgilabel.h	Fri Jun 20 19:25:55 2003
 @@ -1,4 +1,3 @@
 -#include <linux/types.h>   /* for __u32 etc */
  /*
@@ -354,7 +517,7 @@ diff -rNu fdisksgilabel.h fdisksgilabel.h
   *	This file may be modified and redistributed under
 diff -rNu fdisksunlabel.c fdisksunlabel.c
 --- fdisksunlabel.c	Fri Nov  1 03:55:25 2002
-+++ fdisksunlabel.c	Mon Jun 16 17:30:38 2003
++++ fdisksunlabel.c	Fri Jun 20 19:25:55 2003
 @@ -16,18 +16,18 @@
  #include <unistd.h>		/* write */
  #include <sys/ioctl.h>		/* ioctl */
@@ -409,7 +572,7 @@ diff -rNu fdisksunlabel.c fdisksunlabel.c
  	        cylinders = geometry.cylinders;
 diff -rNu fdisksunlabel.h fdisksunlabel.h
 --- fdisksunlabel.h	Tue Oct  3 00:42:10 2000
-+++ fdisksunlabel.h	Mon Jun 16 16:46:01 2003
++++ fdisksunlabel.h	Fri Jun 20 19:25:55 2003
 @@ -1,4 +1,3 @@
 -#include <linux/types.h>   /* for __u16, __u32 */
  
@@ -417,13 +580,13 @@ diff -rNu fdisksunlabel.h fdisksunlabel.h
  	unsigned char info[128];   /* Informative text string */
 diff -rNu nls.h nls.h
 --- nls.h	Thu Jan  1 03:00:00 1970
-+++ nls.h	Mon Jun 16 16:46:01 2003
++++ nls.h	Fri Jun 20 19:25:55 2003
 @@ -0,0 +1,2 @@
 +#define _(x) (x)
 +#define N_(x) (x)
 diff -rNu partname.c partname.c
 --- partname.c	Sun Jul  7 15:16:43 2002
-+++ partname.c	Mon Jun 16 16:46:02 2003
++++ partname.c	Fri Jun 20 19:25:55 2003
 @@ -21,14 +21,16 @@
  	p = "";
  
@@ -442,3 +605,515 @@ diff -rNu partname.c partname.c
  
  	wp = strlen(p);
  		
+diff -rNu sfdisk.8 sfdisk.8
+--- sfdisk.8	Fri Jun 20 20:37:34 2003
++++ sfdisk.8	Fri Jun 20 20:43:24 2003
+@@ -9,9 +9,9 @@
+ .SH NAME
+ sfdisk \- Partition table manipulator for Linux
+ .SH SYNOPSIS
+-.BR sfdisk " [options] device"
++.BR sfdisk-linux " [options] device"
+ .br
+-.BR "sfdisk \-s " [partition]
++.BR "sfdisk-linux \-s " [partition]
+ .SH DESCRIPTION
+ .B sfdisk
+ has four (main) uses: list the size of a partition, list the partitions
+@@ -19,7 +19,7 @@
+ repartition a device.
+ 
+ .SS "List Sizes"
+-.BI "sfdisk \-s " partition
++.BI "sfdisk-linux \-s " partition
+ gives the size of
+ .I partition
+ in blocks. This may be useful in connection with programs like
+@@ -27,16 +27,16 @@
+ or so. Here
+ .I partition
+ is usually something like
+-.I /dev/hda1
++.I /dev/ad0s1
+ or
+-.IR /dev/sdb12 ,
++.IR /dev/da2s12 ,
+ but may also be an entire disk, like
+-.IR /dev/xda .
++.IR /dev/amrd0 .
+ .br
+ .RS
+ .nf
+ .if t .ft CW
+-% sfdisk \-s /dev/hda9
++% sfdisk-linux \-s /dev/ad0s9
+ 81599
+ %
+ .if t .ft R
+@@ -49,12 +49,12 @@
+ .RS
+ .nf
+ .if t .ft CW
+-% sfdisk \-s
+-/dev/hda: 208896
+-/dev/hdb: 1025136
+-/dev/hdc: 1031063
+-/dev/sda: 8877895
+-/dev/sdb: 1758927
++% sfdisk-linux \-s
++/dev/ad0: 208896
++/dev/ad1: 1025136
++/dev/ad2: 1031063
++/dev/da0: 8877895
++/dev/da1: 1758927
+ total: 12901917 blocks
+ %
+ .if t .ft R
+@@ -70,16 +70,16 @@
+ .br
+ .nf
+ .if t .ft CW
+-% sfdisk \-l /dev/hdc
++% sfdisk-linux \-l /dev/ad2
+ 
+-Disk /dev/hdc: 16 heads, 63 sectors, 2045 cylinders
++Disk /dev/ad2: 16 heads, 63 sectors, 2045 cylinders
+ Units = cylinders of 516096 bytes, blocks of 1024 bytes, counting from 0
+ 
+    Device Boot Start     End   #cyls   #blocks   Id  System
+-/dev/hdc1          0+    406     407\-   205096+  83  Linux native
+-/dev/hdc2        407     813     407    205128   83  Linux native
+-/dev/hdc3        814    2044    1231    620424   83  Linux native
+-/dev/hdc4          0       \-       0         0    0  Empty
++/dev/ad2s1          0+    406     407\-   205096+  83  Linux native
++/dev/ad2s2        407     813     407    205128   83  Linux native
++/dev/ad2s3        814    2044    1231    620424   83  Linux native
++/dev/ad2s4          0       \-       0         0    0  Empty
+ %
+ .if t .ft R
+ .fi
+@@ -89,17 +89,17 @@
+ 
+ .SS "Check partitions"
+ The third type of invocation:
+-.BI "sfdisk \-V " device
++.BI "sfdisk-linux \-V " device
+ will apply various consistency checks to the partition tables on
+ .IR device .
+ It prints `OK' or complains. The \-V option can be used together
+ with \-l. In a shell script one might use
+-.BI "sfdisk \-V \-q " device
++.BI "sfdisk-linux \-V \-q " device
+ which only returns a status.
+ 
+ .SS "Create partitions"
+ The fourth type of invocation:
+-.BI "sfdisk " device
++.BI "sfdisk-linux " device
+ will cause
+ .B sfdisk
+ to read the specification for the desired partitioning of
+@@ -119,7 +119,7 @@
+ .RS
+ .nf
+ .if t .ft CW
+-% sfdisk /dev/hdd \-O hdd-partition-sectors.save
++% sfdisk-linux /dev/ad3 \-O ad3-partition-sectors.save
+ \&...
+ %
+ .if t .ft R
+@@ -132,7 +132,7 @@
+ .RS
+ .nf
+ .if t .ft CW
+-% sfdisk /dev/hdd \-I hdd-partition-sectors.save
++% sfdisk-linux /dev/ad3 \-I ad3-partition-sectors.save
+ %
+ .if t .ft R
+ .fi
+@@ -176,8 +176,8 @@
+ .br
+ .nf
+ .if t .ft CW
+-    % sfdisk -d /dev/hda > hda.out
+-    % sfdisk /dev/hda < hda.out
++    % sfdisk-linux -d /dev/ad0 > ad0.out
++    % sfdisk-linux /dev/ad0 < ad0.out
+ .if t .ft R
+ .fi
+ will correct the bad last extended partition that the OS/2
+@@ -194,14 +194,14 @@
+ .br
+ .nf
+ .if t .ft CW
+-    % sfdisk /dev/hdb \-N5
++    % sfdisk-linux /dev/ad1 \-N5
+     ,,,*
+     %
+ .if t .ft R
+ .fi
+-will make the fifth partition on /dev/hdb bootable (`active')
++will make the fifth partition on /dev/ad1 bootable (`active')
+ and change nothing else. (Probably this fifth partition
+-is called /dev/hdb5, but you are free to call it something else,
++is called /dev/ad1s5, but you are free to call it something else,
+ like `/my_equipment/disks/2/5' or so).
+ .TP
+ .BI \-A "number"
+@@ -216,13 +216,13 @@
+ .br
+ .nf
+ .if t .ft CW
+-    % sfdisk --print-id /dev/hdb 5
++    % sfdisk-linux --print-id /dev/ad1 5
+     6
+-    % sfdisk --change-id /dev/hdb 5 83
++    % sfdisk-linux --change-id /dev/ad1 5 83
+     OK
+ .if t .ft R
+ .fi
+-first reports that /dev/hdb5 has Id 6, and then changes that into 83.
++first reports that /dev/ad1s5 has Id 6, and then changes that into 83.
+ .TP
+ .BR \-uS " or " \-uB " or " \-uC " or " \-uM
+ Accept or report in units of sectors (blocks, cylinders, megabytes,
+@@ -420,7 +420,7 @@
+ .RS
+ .nf
+ .if t .ft CW
+-sfdisk /dev/hdc << EOF
++sfdisk-linux /dev/ad2 << EOF
+ 0,407
+ ,407
+ ;
+@@ -429,7 +429,7 @@
+ .if t .ft R
+ .fi
+ .RE
+-will partition /dev/hdc just as indicated above.
++will partition /dev/ad2 just as indicated above.
+ 
+ With the \-x option, the number of input lines must be a multiple of 4:
+ you have to list the two empty partitions that you never want
+@@ -456,9 +456,9 @@
+ .B dd
+ to zero the first 512 bytes of that partition before using DOS FORMAT to
+ format the partition.  For example, if you were using sfdisk to make a DOS
+-partition table entry for /dev/hda1, then (after exiting sfdisk and
++partition table entry for /dev/ad0s1, then (after exiting sfdisk and
+ rebooting Linux so that the partition table information is valid) you
+-would use the command "dd if=/dev/zero of=/dev/hda1 bs=512 count=1" to zero
++would use the command "dd if=/dev/zero of=/dev/ad0s1 bs=512 count=1" to zero
+ the first 512 bytes of the partition.
+ .B BE EXTREMELY CAREFUL
+ if you use the
+@@ -508,7 +508,7 @@
+ 
+ .SH BUGS
+ A corresponding interactive
+-.B cfdisk
++.B cfdisk-linux
+ (with curses interface) is still lacking.
+ .LP
+ There are too many options.
+@@ -519,7 +519,7 @@
+ A. E. Brouwer (aeb@cwi.nl)
+ 
+ .SH "SEE ALSO"
+-.BR cfdisk (8),
++.BR cfdisk-linux (8),
++.BR fdisk-linux (8),
+ .BR fdisk (8),
+-.BR mkfs (8),
+-.BR parted (8)
++.BR newfs (8)
+diff -rNu cfdisk.8 cfdisk.8
+--- cfdisk.8	Sun Jul  7 15:28:27 2002
++++ cfdisk.8	Fri Jun 20 20:57:52 2003
+@@ -15,7 +15,7 @@
+ .SH NAME
+ cfdisk \- Curses based disk partition table manipulator for Linux
+ .SH SYNOPSIS
+-.BI "cfdisk [ \-agvz ] [ \-c " cylinders " ] [ \-h " heads " ]"
++.BI "cfdisk-linux [ \-agvz ] [ \-c " cylinders " ] [ \-h " heads " ]"
+ .BI "[ \-s " sectors-per-track " ] [ -P " opt " ] [ " device " ]"
+ .SH DESCRIPTION
+ .B cfdisk
+@@ -26,12 +26,10 @@
+ .sp
+ .nf
+ .RS
+-/dev/hda [default]
+-/dev/hdb
+-/dev/sda
+-/dev/sdb
+-/dev/sdc
+-/dev/sdd
++/dev/ad0 [default]
++/dev/ad1
++/dev/da0
++/dev/da1
+ .RE
+ .fi
+ 
+@@ -132,9 +130,9 @@
+ .B dd
+ to zero the first 512 bytes of that partition before using DOS FORMAT to
+ format the partition.  For example, if you were using cfdisk to make a DOS
+-partition table entry for /dev/hda1, then (after exiting fdisk or cfdisk
++partition table entry for /dev/ad0s1, then (after exiting fdisk or cfdisk
+ and rebooting Linux so that the partition table information is valid) you
+-would use the command "dd if=/dev/zero of=/dev/hda1 bs=512 count=1" to zero
++would use the command "dd if=/dev/zero of=/dev/ad0s1 bs=512 count=1" to zero
+ the first 512 bytes of the partition. Note:
+ 
+ .B BE EXTREMELY CAREFUL
+@@ -418,10 +416,10 @@
+ 0: No errors; 1: Invocation error; 2: I/O error;
+ 3: cannot get geometry; 4: bad partition table on disk.
+ .SH "SEE ALSO"
++.BR fdisk-linux (8),
++.BR newfs (8),
+ .BR fdisk (8),
+-.BR mkfs (8),
+-.BR parted (8),
+-.BR sfdisk (8)
++.BR sfdisk-linux (8)
+ .SH BUGS
+ The current version does not support multiple disks.
+ .SH AUTHOR
+diff -rNu fdisk.8 fdisk.8
+--- fdisk.8	Tue Aug  6 17:33:33 2002
++++ fdisk.8	Fri Jun 20 21:01:24 2003
+@@ -5,14 +5,14 @@
+ .SH NAME
+ fdisk \- Partition table manipulator for Linux
+ .SH SYNOPSIS
+-.BI "fdisk [\-u] [\-b " sectorsize ]
++.BI "fdisk-linux [\-u] [\-b " sectorsize ]
+ .BI "[\-C " cyls "] [\-H " heads "] [\-S " sects "] " device
+ .sp
+-.BI "fdisk \-l [\-u] [" "device ..." ]
++.BI "fdisk-linux \-l [\-u] [" "device ..." ]
+ .sp
+-.BI "fdisk \-s " "partition ..."
++.BI "fdisk-linux \-s " "partition ..."
+ .sp
+-.BI "fdisk \-v
++.BI "fdisk-linux \-v
+ .SH DESCRIPTION
+ Hard disks can be divided into one or more logical disks called
+ .IR partitions .
+@@ -48,26 +48,22 @@
+ .br
+ .nf
+ .RS
+-/dev/hda
+-/dev/hdb
+-/dev/sda
+-/dev/sdb
++/dev/ad0
++/dev/ad1
++/dev/da0
++/dev/da1
+ .RE
+ .fi
+-(/dev/hd[a-h] for IDE disks, /dev/sd[a-p] for SCSI disks,
+-/dev/ed[a-d] for ESDI disks, /dev/xd[ab] for XT disks).
++(/dev/adN for IDE disks, /dev/daN for SCSI disks, N=0,1,2...)
+ A device name refers to the entire disk.
+ 
+ The
+ .I partition
+ is a
+ .I device
+-name followed by a partition number.  For example,
+-.B /dev/hda1
++name followed by 's' and a partition number.  For example,
++.B /dev/ad0s1
+ is the first partition on the first IDE hard disk in the system.
+-IDE disks can have up to 63 partitions, SCSI disks up to 15.
+-See also
+-.IR /usr/src/linux/Documentation/devices.txt .
+ 
+ A BSD/SUN type disklabel can describe 8 partitions,
+ the third of which should be a `whole disk' partition.
+@@ -132,7 +128,7 @@
+ Partitions beginning in cylinder 1 cannot begin on a cylinder boundary, but
+ this is unlikely to cause difficulty unless you have OS/2 on your machine.
+ 
+-A sync() and a BLKRRPART ioctl() (reread partition table from disk)
++A sync() and a sys_bsd_ptsync() (reread partition table from disk)
+ are performed before exiting when the partition table has been updated.
+ Long ago it used to be necessary to reboot after the use of fdisk.
+ I do not think this is the case anymore - indeed, rebooting too quickly
+@@ -242,7 +238,7 @@
+ .\" Andreas Neuper (ANeuper@GUUG.de)
+ .\" and many others.
+ .SH "SEE ALSO"
+-.BR cfdisk (8),
+-.BR mkfs (8),
+-.BR parted (8),
+-.BR sfdisk (8)
++.BR cfdisk_linux (8),
++.BR newfs (8),
++.BR fdisk (8),
++.BR sfdisk_linux (8)
+diff -rNu sfdisk.c sfdisk.c
+--- sfdisk.c	Tue Jan 28 20:18:03 2003
++++ sfdisk.c	Tue Jun 24 01:10:28 2003
+@@ -42,11 +42,9 @@
+ #include <errno.h>		/* ERANGE */
+ #include <string.h>		/* index() */
+ #include <ctype.h>
+-#include <getopt.h>
++#include "getopt.h"
+ #include <sys/ioctl.h>
+ #include <sys/stat.h>
+-#include <sys/utsname.h>
+-#include <linux/unistd.h>	/* _syscall */
+ #include "nls.h"
+ #include "common.h"
+ 
+@@ -130,23 +128,14 @@
+  *
+  * Note: we use 512-byte sectors here, irrespective of the hardware ss.
+  */
+-#if !defined (__alpha__) && !defined (__ia64__) && !defined (__x86_64__) && !defined (__s390x__)
+-static
+-_syscall5(int,  _llseek,  uint,  fd, ulong, hi, ulong, lo,
+-       loff_t *, res, uint, wh);
+-#endif
+ 
+ static int
+ sseek(char *dev, unsigned int fd, unsigned long s) {
+-    loff_t in, out;
+-    in = ((loff_t) s << 9);
++    off_t in, out;
++    in = ((off_t) s << 9);
+     out = 1;
+ 
+-#if !defined (__alpha__) && !defined (__ia64__) && !defined (__x86_64__) && !defined (__s390x__)
+-    if (_llseek (fd, in>>32, in & 0xffffffff, &out, SEEK_SET) != 0) {
+-#else
+     if ((out = lseek(fd, in, SEEK_SET)) != in) {
+-#endif
+ 	perror("llseek");
+ 	error(_("seek error on %s - cannot seek to %lu\n"), dev, s);
+ 	return 0;
+@@ -399,12 +388,13 @@
+     long size;
+     struct geometry R;
+ 
+-    if (ioctl(fd, BLKGETSIZE, &size)) {
++    if (sys_bsd_getsectors(fd, (unsigned long*) &size)) {
+ 	size = 0;
+ 	if (!silent)
+ 	    printf(_("Disk %s: cannot get size\n"), dev);
+     }
+-    if (ioctl(fd, HDIO_GETGEO, &g)) {
++    g.start = 0; /* XXX ?????????? */
++    if (sys_bsd_getgeometry(fd, &g)) {
+ 	g.heads = g.sectors = g.cylinders = g.start = 0;
+ 	if (!silent)
+ 	    printf(_("Disk %s: cannot get geometry\n"), dev);
+@@ -721,8 +711,8 @@
+ /* tell the kernel to reread the partition tables */
+ static int
+ reread_ioctl(int fd) {
+-    if(ioctl(fd, BLKRRPART)) {
+-	perror("BLKRRPART");
++    if(sys_bsd_ptsync(fd)) {
++	perror("sys_bsd_ptsync");
+ 	return -1;
+     }
+     return 0;
+@@ -1428,22 +1418,6 @@
+ 	z->partno = pno;
+ }
+ 
+-#define MAKE_VERSION(p,q,r)     (65536*(p) + 256*(q) + (r))
+-
+-static int
+-linux_version_code(void) {
+-        struct utsname my_utsname;
+-        int p, q, r;
+-
+-        if (uname(&my_utsname) == 0) {
+-                p = atoi(strtok(my_utsname.release, "."));
+-                q = atoi(strtok(NULL, "."));
+-                r = atoi(strtok(NULL, "."));
+-                return MAKE_VERSION(p,q,r);
+-        }
+-        return 0;
+-}
+-
+ static int
+ msdos_partition(char *dev, int fd, unsigned long start, struct disk_desc *z) {
+     int i;
+@@ -1452,7 +1426,10 @@
+     struct sector *s;
+     struct part_desc *partitions = &(z->partitions[0]);
+     int pno = z->partno;
+-    int bsd_later = (linux_version_code() >= MAKE_VERSION(2,3,40));
++    /* Under FreeBSD, "bsd later" is always true because BSD partitions
++     * in MBR or MBREXT partitions doesn't be listed immediately.
++     */
++    int bsd_later = 1;
+ 
+     if (!(s = get_sector(dev, fd, start)))
+ 	return 0;
+@@ -1501,6 +1478,8 @@
+ 	    }
+ 	    extended_partition(dev, fd, &partitions[i], z);
+ 	}
++#if 0
++/* FreeBSD port: don't count partitions as they won't be list as slices */
+ 	if (!bsd_later && is_bsd(partitions[i].p.sys_type)) {
+ 	    if (!partitions[i].size) {
+ 		printf(_("strange..., a BSD partition of size 0?\n"));
+@@ -1508,8 +1487,11 @@
+ 	    }
+ 	    bsd_partition(dev, fd, &partitions[i], z);
+ 	}
++#endif
+     }
+ 
++#if 0
++/* FreeBSD port: don't count partitions as they won't be list as slices */
+     if (bsd_later) {
+ 	for (i=0; i<4; i++) {
+ 	    if (is_bsd(partitions[i].p.sys_type)) {
+@@ -1521,6 +1503,7 @@
+ 	    }
+ 	}
+     }
++#endif
+ 	    
+     return 1;
+ }
+@@ -2413,9 +2396,11 @@
+     char *activatearg = 0;
+     char *unhidearg = 0;
+ 
++#if 0
+     setlocale(LC_ALL, "");
+     bindtextdomain(PACKAGE, LOCALEDIR);
+     textdomain(PACKAGE);
++#endif
+ 
+     if (argc < 1)
+       fatal(_("no command?\n"));
+@@ -2668,10 +2653,10 @@
+     if (fd < 0)
+ 	return;
+ 
+-    if(ioctl(fd, BLKGETSIZE, &size)) {
++    if(sys_bsd_getsectors(fd, (unsigned long*) &size)) {
+ 	if(!silent) {
+ 	    perror(dev);
+-	    fatal(_("BLKGETSIZE ioctl failed for %s\n"), dev);
++	    fatal(_("sys_bsd_getsectors() failed for %s\n"), dev);
+ 	}
+ 	return;
+     }

@@ -1,1 +1,3 @@
-sbin/linuxfdisk
+sbin/fdisk-linux
+sbin/cfdisk-linux
+sbin/sfdisk-linux
