@@ -4,7 +4,7 @@ To activate the new printing system do the following:
 - save your old printcap (`cp /etc/printcap /etc/printcap.save')
 - set `lpd_enable=NO' in /etc/rc.conf
 - reboot or kill the old lpd (`killall lpd') and
-  start the new one (`/usr/local/libexec/lpd')
+  start the new one (`/usr/local/sbin/lpd')
 - remember to adjust your aliases or your PATH to use the new programs
 
 Note that LPRng searches /usr/local/etc before /etc for
