@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Kwiki/GDGraphGenerator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/GDGraphGenerator/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/GDGraphGenerator
+@unexec rmdir %D/%%SITE_PERL%%/Kwiki 2>/dev/null || true
