@@ -10,7 +10,7 @@ PORTVERSION=	0.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OpenGL image compositing library
 
 USE_REINPLACE=	yes
