@@ -8,6 +8,7 @@ include/fox/FXBMPIcon.h
 include/fox/FXBMPImage.h
 include/fox/FXBitmap.h
 include/fox/FXButton.h
+%%NEWFILE%%include/fox/FXCURCursor.h
 include/fox/FXCanvas.h
 include/fox/FXCharset.h
 include/fox/FXCheckButton.h
@@ -111,7 +112,7 @@ include/fox/FXPacker.h
 include/fox/FXPoint.h
 include/fox/FXPopup.h
 include/fox/FXPrintDialog.h
-include/fox/FXProfiler.h
+%%OLDFILE%%include/fox/FXProfiler.h
 include/fox/FXProgressBar.h
 include/fox/FXProgressDialog.h
 include/fox/FXQuat.h
@@ -122,6 +123,7 @@ include/fox/FXRectangle.h
 include/fox/FXRegion.h
 include/fox/FXRegistry.h
 include/fox/FXReplaceDialog.h
+%%NEWFILE%%include/fox/FXRex.h
 include/fox/FXRootWindow.h
 include/fox/FXScrollArea.h
 include/fox/FXScrollWindow.h
@@ -173,7 +175,7 @@ include/fox/fx.h
 include/fox/fx3d.h
 include/fox/fxdefs.h
 include/fox/fxkeys.h
-include/fox/fxregex.h
+%%OLDFILE%%include/fox/fxregex.h
 include/fox/fxver.h
 include/fox/xincs.h
 @dirrm include/fox
@@ -219,14 +221,15 @@ lib/libFOX.so.%%LIBVER%%
 %%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/pathfinder.html
 %%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/projects.html
 %%PORTDOCS%%share/doc/fox/html/registry.html
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/rex.html
 %%PORTDOCS%%%%OLDFILE%%share/doc/fox/html/scribble.png
 %%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/screenshots.html
 %%PORTDOCS%%share/doc/fox/html/serialization.html
 %%PORTDOCS%%%%OLDFILE%%share/doc/fox/html/sgitextedit.png
+%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/styles.css
 %%PORTDOCS%%%%OLDFILE%%share/doc/fox/html/tb-paste.png
 %%PORTDOCS%%%%OLDFILE%%share/doc/fox/html/textedit.png
 %%PORTDOCS%%%%OLDFILE%%share/doc/fox/html/textedit2.png
-%%PORTDOCS%%%%NEWFILE%%share/doc/fox/html/styles.css
 %%PORTDOCS%%share/doc/fox/html/timers.html
 %%PORTDOCS%%share/doc/fox/html/widgets.html
 %%PORTDOCS%%%%OLDFILE%%share/doc/fox/html/win32-libraries.png
