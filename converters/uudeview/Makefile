@@ -3,19 +3,19 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.14 1997/12/07 08:50:23 hoek Exp $
+# $Id: Makefile,v 1.15 1998/02/18 22:19:58 hoek Exp $
 #
 
 DISTNAME=       uudeview-0.5.13
 CATEGORIES=	converters
-MASTER_SITES=	http://www.uni-frankfurt.de/~fp/uudeview/Apps/frank/  \
+MASTER_SITES=	http://www.informatik.uni-frankfurt.de/~fp/uudeview/Apps/frank/ \
 		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/
 
 MAINTAINER=	hoek@FreeBSD.ORG
 
 LIB_DEPENDS=	uu\\.1\\.:${PORTSDIR}/converters/uulib
 
-GNU_CONFIGURE=	Yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-inews=${PREFIX}/news/lib/inews \
 		--disable-tcl
 
