@@ -244,6 +244,7 @@
     SUBDIR += libfpx
     SUBDIR += libgdgeda
     SUBDIR += libggi
+    SUBDIR += libggigcp
     SUBDIR += libggimisc
     SUBDIR += libggiwmh
     SUBDIR += libglut

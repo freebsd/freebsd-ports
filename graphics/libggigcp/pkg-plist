@@ -1,0 +1,17 @@
+@unexec if cmp -s %D/etc/ggi/libggigcp.conf %D/etc/ggi/libggigcp.conf.dist; then rm -f %D/etc/ggi/libggigcp.conf; fi
+etc/ggi/libggigcp.conf.dist
+@exec [ -f %B/libggigcp.conf ] || cp %B/%f %B/libggigcp.conf
+include/ggi/gcp-defs.h
+include/ggi/gcp.h
+include/ggi/internal/gcp.h
+lib/ggi/gcp/default/color_gcp.la
+lib/ggi/gcp/default/color_gcp.so
+lib/libggigcp.la
+lib/libggigcp.so
+lib/libggigcp.so.0
+@dirrm etc/ggi
+@dirrm include/ggi/internal
+@dirrm include/ggi
+@dirrm lib/ggi/gcp/default
+@dirrm lib/ggi/gcp
+@dirrm lib/ggi
