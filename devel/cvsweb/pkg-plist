@@ -1,6 +1,7 @@
 etc/cvsweb.conf.sample
 share/doc/cvsweb/INSTALL
 share/doc/cvsweb/README
+share/doc/cvsweb/README.knu
 share/doc/cvsweb/TODO
 @dirrm share/doc/cvsweb
 %%CGIDIR%%/cvsweb.cgi
