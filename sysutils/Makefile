@@ -87,6 +87,7 @@
     SUBDIR += fontedit
     SUBDIR += fonteditfs
     SUBDIR += fortunelock
+    SUBDIR += freedt
     SUBDIR += freesbie
     SUBDIR += fsck_ext2fs
     SUBDIR += ftrace
