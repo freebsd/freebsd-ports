@@ -1,0 +1,21 @@
+--- ./tools/Makefile.in.orig	Tue Apr 30 07:16:37 1996
++++ ./tools/Makefile.in	Sun May 25 22:37:20 1997
+@@ -43,14 +43,14 @@
+ INSTALL	= @INSTALL@
+ #
+ COPTS	= @GCOPTS@
+-OPTIMIZER=-O
++#OPTIMIZER=-O
+ IPATH	= -I. -I${SRCDIR} -I${LIBDIR}
+-CFLAGS	= @ENVOPTS@ ${COPTS} ${OPTIMIZER} ${IPATH}
++CFLAGS	= @ENVOPTS@ ${COPTS} ${OPTIMIZER} ${IPATH} -L../libtiff
+ #
+-LIBTIFF	= ${DEPTH}/libtiff/libtiff.@DSOSUF@
++LIBTIFF	= ${DEPTH}/libtiff/libtiff34.@DSOSUF_VERSION@
+ LIBJPEG	= @LIBJPEG@
+ LIBGZ	= @LIBGZ@
+-LIBS	= ${LIBTIFF} ${LIBJPEG} ${LIBGZ} @LIBPORT@ @MACHDEPLIBS@
++LIBS	= ${LIBJPEG} ${LIBGZ} @LIBPORT@ @MACHDEPLIBS@ -ltiff34
+ #
+ OBJS=	\
+ 	fax2tiff.o \
