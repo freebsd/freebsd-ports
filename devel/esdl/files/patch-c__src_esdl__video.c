@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- c_src/esdl_video.c.orig	Mon Dec  9 23:12:18 2002
-+++ c_src/esdl_video.c	Mon Dec  9 23:13:01 2002
-@@ -18,7 +18,11 @@
+--- c_src/esdl_video.c.ori	Tue Sep  9 10:28:24 2003
++++ c_src/esdl_video.c	Mon Nov 17 18:24:48 2003
+@@ -16,7 +16,11 @@
  #ifdef WIN32
  #include <SDL_syswm.h>
  #else
@@ -14,4 +11,4 @@ $FreeBSD$
 +#endif
  #endif
  
- int es_setVideoMode(sdl_data *sd, int len, char * buff) 
+ void es_setVideoMode(sdl_data *sd, int len, char* bp) 

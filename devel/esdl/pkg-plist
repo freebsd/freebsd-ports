@@ -1,5 +1,6 @@
 lib/erlang/lib/esdl-%%VERSION%%/Readme
 lib/erlang/lib/esdl-%%VERSION%%/Readme.MacOSX-Cocoa
+lib/erlang/lib/esdl-%%VERSION%%/Readme.win32
 lib/erlang/lib/esdl-%%VERSION%%/c_src/CPS.h
 lib/erlang/lib/esdl-%%VERSION%%/c_src/SDLMain.h
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl.h
@@ -12,10 +13,14 @@ lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_events.h
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_gen.c
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_gl.c
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_gl.h
+lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_gl_fp.h
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_glext.c
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_glext.h
+lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_glext_fp.h
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_glu.c
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_glu.h
+lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_glu_fp.h
+lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_sdl_fp.h
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_spec.c
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_util.c
 lib/erlang/lib/esdl-%%VERSION%%/c_src/esdl_util.h
@@ -48,7 +53,6 @@ lib/erlang/lib/esdl-%%VERSION%%/ebin/sdl_util.beam
 lib/erlang/lib/esdl-%%VERSION%%/ebin/sdl_video.beam
 lib/erlang/lib/esdl-%%VERSION%%/include/gl.hrl
 lib/erlang/lib/esdl-%%VERSION%%/include/glu.hrl
-lib/erlang/lib/esdl-%%VERSION%%/include/old_gl.hrl
 lib/erlang/lib/esdl-%%VERSION%%/include/sdl.hrl
 lib/erlang/lib/esdl-%%VERSION%%/include/sdl_active.hrl
 lib/erlang/lib/esdl-%%VERSION%%/include/sdl_audio.hrl
