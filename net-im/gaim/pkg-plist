@@ -74,6 +74,7 @@ lib/gaim/docklet.so
 lib/gaim/extplacement.so
 lib/gaim/gaim-remote.so
 lib/gaim/gestures.so
+%%EVO%%lib/gaim/gevolution.so
 lib/gaim/history.so
 lib/gaim/iconaway.so
 lib/gaim/idle.so
