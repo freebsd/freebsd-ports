@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Term-ReadKey
-PORTVERSION=	2.14
+PORTVERSION=	2.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Term
@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	TermReadKey-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	A perl5 module for simple terminal control
 
 PERL_CONFIGURE=	yes
 
