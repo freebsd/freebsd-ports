@@ -9,6 +9,7 @@ lib/libcommdlg.so
 lib/libcommdlg.so.%%LIBVER%%
 lib/libddeml.so
 lib/libddeml.so.%%LIBVER%%
+lib/libdebug.so
 lib/libdll.a
 lib/libkeyboard.so
 lib/libkeyboard.so.%%LIBVER%%
@@ -24,6 +25,7 @@ lib/libolesvr.so
 lib/libolesvr.so.%%LIBVER%%
 lib/libpe32.so
 lib/libpe32.so.%%LIBVER%%
+lib/libreadline.a
 lib/libshell.so
 lib/libshell.so.%%LIBVER%%
 lib/libsound.so
