@@ -94,6 +94,7 @@
     SUBDIR += xballoon
     SUBDIR += xbanner
     SUBDIR += xcb
+    SUBDIR += xclip
     SUBDIR += xcmd
     SUBDIR += xco
     SUBDIR += xcoloredit
