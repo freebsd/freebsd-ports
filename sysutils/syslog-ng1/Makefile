@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/syslog-ng/1.6/src/
 
