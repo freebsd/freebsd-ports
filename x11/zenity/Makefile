@@ -7,13 +7,14 @@
 
 PORTNAME=	zenity
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://ftp.acc.umu.se/pub/GNOME/sources/zenity/1.0/
 
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	Display GNOME dialogs from the command line
 
-LIB_DEPEND=	gconf-2:${PORTSDIR}/devel/gconf2 \
+LIB_DEPENDS=	gconf-2:${PORTSDIR}/devel/gconf2 \
 		gnomecanvas-2.200:${PORTSDIR}/graphics/libgnomecanvas \
 		popt.0:${PORTSDIR}/devel/popt
 
