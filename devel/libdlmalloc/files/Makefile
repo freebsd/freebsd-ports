@@ -15,15 +15,15 @@
 LIBDIR=${PREFIX}/lib
 
 # for the shared lib stuff
-VERSION=2.5
+VERSION=2.6
 
 LIBMALLOC=libdlmalloc.a
 LIBSMALLOC=libdlmalloc.so.${VERSION}
 
-SRCS = malloc-2.5.3b.c
+SRCS = malloc-2.6.4.c
 
-OBJS = malloc-2.5.3b.o
-SOBJS = malloc-2.5.3b.so
+OBJS = $(SRCS:.c=.o)
+SOBJS = $(SRCS:.c=.so)
 
 .SUFFIXES:
 .SUFFIXES: .out .o .po .so .s .S .c .cc .cxx .m .C .f .y .l
@@ -55,5 +55,5 @@ install:
 	-$(RANLIB) $(LIBDIR)/${LIBMALLOC}
 	install -c -m 555 ${LIBSMALLOC} $(LIBDIR)
 
-malloc-2.5.3b.o:	malloc-2.5.3b.c
-malloc-2.5.3b.so:	malloc-2.5.3b.c
+$(OBJS): $(SRCS)
+$(SOBJS): $(SRCS)
