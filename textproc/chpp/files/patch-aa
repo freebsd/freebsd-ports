@@ -1,0 +1,11 @@
+--- gc/mach_dep.c	Tue Feb  9 17:03:04 1999
++++ /home/andy/tmp/wrk/gc/mach_dep.c	Thu Aug 26 08:53:50 1999
+@@ -170,7 +170,7 @@
+ 
+ #       if defined(I386) &&!defined(OS2) &&!defined(SVR4) &&!defined(MSWIN32) \
+ 	&& !defined(SCO) && !(defined(LINUX) && defined(__ELF__)) \
+-	&& !defined(DOS4GW)
++	&& !defined(DOS4GW) && !defined(FREEBSD)
+ 	/* I386 code, generic code does not appear to work */
+ 	/* It does appear to work under OS2, and asms dont */
+ 	/* This is used for some 38g UNIX variants and for CYGWIN32 */
