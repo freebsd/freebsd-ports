@@ -2,9 +2,6 @@ bin/g-wrap-config
 include/g-wrap/g-wrap-compatibility.h
 include/g-wrap/g-wrap-glib.h
 include/g-wrap/g-wrap-wct.h
-info/g-wrap.info
-info/g-wrap.info-1
-info/g-wrap.info-2
 lib/libgw-glib.a
 lib/libgw-glib.so
 lib/libgw-glib.so.0

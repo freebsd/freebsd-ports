@@ -7,7 +7,7 @@
 
 PORTNAME=	tar
 PORTVERSION=	1.13.25
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/tar/ \
 		ftp://ftp.funet.fi/pub/mirrors/alpha.gnu.org/gnu/tar/
@@ -17,6 +17,8 @@ MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	GNU version of the traditional tar archiver
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+
+INFO=		tar
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
