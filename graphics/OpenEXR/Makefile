@@ -12,6 +12,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	http://savannah.nongnu.org/download/openexr/${PORTNAME}.pkg/${PORTVERSION}/
 
 MAINTAINER=	nork@FreeBSD.org
+COMMENT=	OpenEXR, a high dynamic-range (HDR) image file format developed by ILM
 
 USE_GCC=	3.1
 USE_LIBTOOL=	YES

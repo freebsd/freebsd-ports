@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	nork@FreeBSD.org
+COMMENT=	Perl implementation of the RC5 encryption algorithm
 
 PERL_CONFIGURE=	yes
 

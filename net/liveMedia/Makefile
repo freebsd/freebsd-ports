@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	nork
 DISTNAME=	live.${PORTVERSION}
 
 MAINTAINER=	nork@FreeBSD.org
+COMMENT=	LIVE.COM Streaming Media
 
 NO_CDROM=	'dated material'
 

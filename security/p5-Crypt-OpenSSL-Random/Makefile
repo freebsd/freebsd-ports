@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	nork@FreeBSD.org
+COMMENT=	Perl5 interface to the OpenSSL pseudo-random number generator
 
 PERL_CONFIGURE=	yes
 

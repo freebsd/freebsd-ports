@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	DB_File
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	nork@FreeBSD.org
+COMMENT=	Perl module to use the DB_File with Lock
 
 PERL_CONFIGURE=	yes
 
