@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pager
-PORTVERSION=	0.4a
+PORTVERSION=	0.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dapfy.bei.t-online.de/sawfish/pager/
 EXTRACT_SUFX=	.tgz
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${X11BASE}/bin/sawfish:${PORTSDIR}/x11-wm/sawfish
 RUN_DEPENDS=	${X11BASE}/bin/sawfish:${PORTSDIR}/x11-wm/sawfish
 
 USE_GMAKE=	yes
+MAKEFILE=	GNUmakefile
 USE_GNOME=	gtk12
 USE_GNOMENG=	yes
 USE_REINPLACE=	yes
@@ -28,7 +29,7 @@ SAWFISH_VERSION=	`${X11BASE}/bin/sawfish --version 2>&1 | \
 PLIST_SUB+=	SAWFISH_VERSION="${SAWFISH_VERSION}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/gtk-config/gtk12-config/g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's/gtk-config/gtk12-config/g' ${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
