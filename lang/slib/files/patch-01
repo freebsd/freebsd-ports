@@ -1,0 +1,24 @@
+--- Makefile.orig	Sun Jan 17 11:25:23 1999
++++ Makefile	Tue Aug 24 01:02:48 1999
+@@ -55,10 +55,10 @@
+ 	  > $(bindir)/slib48
+ 	chmod +x $(bindir)/slib48
+ 
+-$(LIB)/slibcat:
+-	touch $(LIB)/slibcat
++./slibcat:
++	touch ./slibcat
+ 
+-slib48:	$(LIB)/slibcat Makefile
++slib48:	./slibcat Makefile
+ 	(echo ",batch on"; \
+ 	 echo ",config"; \
+ 	 echo ",load =scheme48/misc/packages.scm"; \
+@@ -92,6 +92,7 @@
+ 	 echo ",batch off"; \
+ 	 echo ",dump $(IMAGE) \"(slib $(VERSION))\""; \
+ 	 echo ",exit") | scheme48
++	 touch slib48
+ 
+ install48: slib48
+ 	$(INSTALL_DATA) $(IMAGE) $(LIB)
