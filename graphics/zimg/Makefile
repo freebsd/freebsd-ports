@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zimg
-PORTVERSION=	2.5.3
+PORTVERSION=	4.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.zellner.org/zimg/download/
 
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--disable-edf --with-gd-includes=${LOCALBASE}/include
+CONFIGURE_ARGS+=--disable-edf --with-gd-includes=${LOCALBASE}/include/gd
 MAN1=		zimg.1
 
 .include <bsd.port.mk>
