@@ -1,8 +1,8 @@
---- Makefile.orig	Tue Mar 25 20:50:38 2003
-+++ Makefile	Mon Sep  8 12:31:58 2003
-@@ -4,8 +4,8 @@
+--- Makefile.orig	Tue Dec  9 21:59:18 2003
++++ Makefile	Tue Dec  9 22:00:42 2003
+@@ -4,21 +4,21 @@
  #
- VERSION=1.18e
+ VERSION=1.18i
  
 -BINDIR=/usr/local/bin
 -SAMPLEDIR=/usr/local/share
@@ -11,15 +11,22 @@
  
  SHELL = /bin/sh
  INSTALL = install
-@@ -16,9 +16,9 @@
- GLIBINC=`glib-config --cflags`
- GLIBLIB=`glib-config --libs`
  
--CFLAGS = -g ${GLIBINC} ${GTKINC} -Dunix
-+CFLAGS += -g ${GLIBINC} ${GTKINC} -Dunix
+ 
+-GTKINC=`gtk-config --cflags`
+-GTKLIB=`gtk-config --libs`
+-GLIBINC=`glib-config --cflags`
+-GLIBLIB=`glib-config --libs`
++GTKINC=`gtk12-config --cflags`
++GTKLIB=`gtk12-config --libs`
++GLIBINC=`glib12-config --cflags`
++GLIBLIB=`glib12-config --libs`
+ 
+-CFLAGS = -g $(GLIBINC) $(GTKINC) -Dunix #-static
++CFLAGS += -g $(GLIBINC) $(GTKINC) -Dunix #-static
  
 -CC = cc
 +CC ?= cc
  
- LIBS = ${GLIBLIB} ${GTKLIB}
+ LIBS = $(GLIBLIB) $(GTKLIB)
  
