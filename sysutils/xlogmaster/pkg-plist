@@ -14,8 +14,13 @@ etc/xlogmaster/sound/notice
 etc/xlogmaster/sound/uniconify
 etc/xlogmaster/steelblue.gtkrc
 etc/xlogmaster/xlogmaster.gtkrc
-share/doc/xlogmaster/tutorial.txt
+@unexec install-info --delete %D/info/xlogmaster.info %D/info/dir
+@unexec install-info --delete %D/info/xlogmaster_faq.info %D/info/dir
+info/xlogmaster.info
+info/xlogmaster_faq.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/xlogmaster.info %D/info/dir
+@exec install-info %D/info/xlogmaster_faq.info %D/info/dir
 @dirrm etc/xlogmaster/scripts
 @dirrm etc/xlogmaster/sound
 @dirrm etc/xlogmaster
-@dirrm share/doc/xlogmaster
