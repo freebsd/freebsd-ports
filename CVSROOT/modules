@@ -5303,6 +5303,7 @@ linux-flashplugin7	ports/www/linux-flashplugin7
 linux-fontconfig	ports/x11-fonts/linux-fontconfig
 linux-gdk-pixbuf	ports/graphics/linux-gdk-pixbuf
 linux-geepee32	ports/emulators/linux-geepee32
+linux-gid	ports/cad/linux-gid
 linux-glib2	ports/devel/linux-glib2
 linux-gnomelibs	ports/x11/linux-gnomelibs
 linux-gtk	ports/x11-toolkits/linux-gtk
