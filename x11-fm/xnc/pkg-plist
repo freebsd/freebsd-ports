@@ -1,4 +1,3 @@
-bin/findslave.xnc
 bin/users.xnc
 bin/groups.xnc
 bin/rpm.xnc
@@ -12,6 +11,7 @@ bin/vs
 bin/xncsetup
 bin/xjpegroot
 bin/xnlaunch
+lib/libxncfive.so
 share/doc/xnc/index.html
 share/doc/xnc/doc1.html
 share/doc/xnc/doc2.html

@@ -1,0 +1,11 @@
+--- Make.common.in.orig	Fri Jan  5 00:17:13 2001
++++ Make.common.in	Fri Jan  5 00:17:25 2001
+@@ -31,7 +31,7 @@
+ INSOWN=@INSTALL@
+ INSTDIR=@prefix@/bin
+ INSTMAN=@prefix@/man
+-INSTPLUG=@prefix@/lib/xnc
++INSTPLUG=@prefix@/lib
+ DEB=
+ STRIPPING=
+ XINC=@X_CFLAGS@

@@ -1,13 +1,11 @@
---- Makefile.in.orig	Wed Feb 16 16:16:31 2000
-+++ Makefile.in	Wed Feb 16 16:18:27 2000
-@@ -170,22 +170,22 @@
+--- Makefile.in.orig	Thu Jan  4 23:53:59 2001
++++ Makefile.in	Thu Jan  4 23:58:48 2001
+@@ -181,21 +181,21 @@
  
  install:
  	#Installing X Northern Captain...
--	$(INS) ./findslave.xnc $(INSTDIR)
 -	$(INS) ./users.xnc $(INSTDIR)
 -	$(INS) ./groups.xnc $(INSTDIR)
-+	$(INSTALL_PROGRAM) ./findslave.xnc $(INSTDIR)
 +	$(INSTALL_PROGRAM) ./users.xnc $(INSTDIR)
 +	$(INSTALL_PROGRAM) ./groups.xnc $(INSTDIR)
  	$(INS) ./rpm.xnc $(INSTDIR)
@@ -32,6 +30,6 @@
 +	$(INSTALL_PROGRAM) ./xjroot/xjpegroot $(INSTDIR)
 +	$(INSTALL_PROGRAM) ./launch/xnlaunch $(INSTDIR)
 +#	/bin/sh ./replace.script
+ 	mkdir -p $(INSTPLUG)
+ 	$(INS) ./plugins/five/libxncfive.so $(INSTPLUG)
  	echo "Don't foget run 'xncsetup' before starting XNC"
- 
- install-rpm:
