@@ -19,6 +19,7 @@ MAINTAINER=	jdp@FreeBSD.org
 M3FLAGS+=	-DNOGUI
 BUILD_DEPENDS=	${PREFIX}/lib/m3/pkg/tcp/${TARGET}/libm3tcp.a:${PORTSDIR}/lang/ezm3
 .else
+USE_XLIB=	yes
 BUILD_DEPENDS=	${PREFIX}/lib/m3/pkg/formsvbt/${TARGET}/libm3formsvbt.a:${PORTSDIR}/lang/ezm3
 .endif
 
