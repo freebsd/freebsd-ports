@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openwebmail
-PORTVERSION=	1.62
-PORTREVISION=	1
+PORTVERSION=	1.63
 CATEGORIES=	mail
 MASTER_SITES=	http://turtle.ee.ncku.edu.tw/openwebmail/download/
 EXTRACT_SUFX=	.tgz
@@ -20,21 +19,19 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/CGI.pm:${PORTSDIR}/www
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 OWCGIDIR=	${PREFIX}/www/cgi-bin/openwebmail
-SUIDPERL=	/usr/bin/suidperl
 
 do-install:
 .for dir in cgi-bin data
+	@${MKDIR} ${PREFIX}/www/${dir}
 	@${CP} -R ${WRKSRC}/${dir}/openwebmail ${PREFIX}/www/${dir}/
 	@${CHOWN} -R root:mail ${PREFIX}/www/${dir}/openwebmail
-.endfor
-.for file in auth_pop3.pl openwebmail-main.pl openwebmail-prefs.pl openwebmail-read.pl openwebmail-send.pl openwebmail-viewatt.pl openwebmail.pl
-	@${CHMOD} 4555 ${SUIDPERL}
-	@${PERL5} -pi -e 's,/usr/bin/perl,${SUIDPERL},g' ${OWCGIDIR}/${file}
-	@${CHMOD} 4555 ${OWCGIDIR}/${file}
 .endfor
 .for dir in sessions users
 	@${CHMOD} 0770 ${OWCGIDIR}/etc/${dir}
 .endfor
-	@${CHMOD} 0755 ${OWCGIDIR}/etc ${OWCGIDIR}/vacation.pl
+.for file in openwebmail.pl openwebmail-main.pl openwebmail-read.pl openwebmail-viewatt.pl openwebmail-send.pl openwebmail-spell.pl openwebmail-prefs.pl openwebmail-folder.pl checkmail.pl
+	@${CHMOD} 4555 ${OWCGIDIR}/${file}
+.endfor
+	@${PERL5} ${WRKSRC}/cgi-bin/openwebmail/uty/wrapsuid.pl ${OWCGIDIR}
 
 .include <bsd.port.mk>
