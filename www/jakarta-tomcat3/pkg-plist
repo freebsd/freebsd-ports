@@ -1,5 +1,5 @@
-bin/tomcatctl
-etc/rc.d/020.jakarta-tomcat.sh
+bin/tomcat3ctl
+etc/rc.d/020.jakarta-tomcat3.sh
 %%T%%/KEYS
 %%T%%/LICENSE
 %%T%%/bin/jspc.sh
@@ -24,7 +24,6 @@ etc/rc.d/020.jakarta-tomcat.sh
 %%T%%/conf/users/example-users.xml
 %%T%%/conf/users/global-users.xml
 %%T%%/conf/users/tomcat-users.xml
-%%T%%/conf/workers.properties
 %%T%%/doc/AJPv13.html
 %%T%%/doc/JDBCRealm-howto.html
 %%T%%/doc/NT-Service-howto.html
@@ -84,7 +83,6 @@ etc/rc.d/020.jakarta-tomcat.sh
 %%T%%/lib/container/tomcat_util.jar
 %%T%%/lib/container/xalan.jar
 %%T%%/lib/stop-tomcat.jar
-%%T%%/lib/tmp42807.tmp
 %%T%%/lib/tomcat.jar
 %%T%%/logs/stderr.log
 %%T%%/logs/stdout.log
@@ -176,7 +174,7 @@ etc/rc.d/020.jakarta-tomcat.sh
 %%T%%/webapps/ROOT.war
 %%T%%/webapps/admin.war
 %%T%%/webapps/examples.war
-man/man1/tomcatctl.1
+man/man1/tomcat3ctl.1
 @dirrm %%T%%/logs
 @dirrm %%T%%/doc/images
 @dirrm %%T%%/doc/appdev/sample/lib

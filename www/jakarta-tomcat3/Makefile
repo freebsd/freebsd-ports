@@ -7,7 +7,7 @@
 
 PORTNAME=	jakarta-tomcat
 PORTVERSION=	3.3.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	www java
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -19,16 +19,18 @@ MAINTAINER=	znerd@FreeBSD.org
 USE_JAVA=	1.2+
 NO_BUILD=	YES
 
+MAJOR_VER=	${PORTVERSION:R:R}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION}
 LOG_DIR=	${APP_HOME}/logs
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 APP_TITLE=	Jakarta Tomcat
-APP_SHORTNAME=	tomcat
+APP_SHORTNAME=	tomcat${MAJOR_VER}
 CONTROL_SCRIPT_NAME=	${APP_SHORTNAME}ctl
 CONTROL_SCRIPT=	${PREFIX}/bin/${CONTROL_SCRIPT_NAME}
+CONTROL_SCRIPT_MANPAGE_TITLE=	${CONTROL_SCRIPT_NAME:U}
 STARTUP_ORDER?=	020
-STARTUP_SCRIPT_NAME=	${PORTNAME}.sh
+STARTUP_SCRIPT_NAME=	${PORTNAME}${MAJOR_VER}.sh
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${STARTUP_SCRIPT_NAME}
 USER=		www
 GROUP=		www
@@ -40,16 +42,15 @@ AUTO_START?=	NO
 STOP_TIMEOUT?=	5
 PID_FILE=	/var/run/${APP_SHORTNAME}.pid
 REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.c \
-		${FILESDIR}/${CONTROL_SCRIPT_NAME}.1 \
-		${FILESDIR}/${STARTUP_SCRIPT_NAME} \
+		${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.1 \
+		${PORTSDIR}/www/jakarta-tomcat4/files/startup.sh \
 		${WRKSRC}/conf/server.xml
 JAR_FILE=	lib/${APP_SHORTNAME}.jar
-CONTROL_SCRIPT_MANPAGE_TITLE=	TOMCATCTL
 WRKDIR?=	${.CURDIR}/work
 
 .include <bsd.port.pre.mk>
 
-pre-install:
+pre-patch:
 	@${ECHO_CMD} "Installation settings:"
 	@${ECHO_CMD} "   Destination directory:    ${APP_HOME}"
 	@${ECHO_CMD} "   Control program location: ${CONTROL_SCRIPT}"
@@ -64,9 +65,9 @@ pre-install:
 	@${ECHO_CMD} "   Stop time-out:            ${STOP_TIMEOUT} sec."
 	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
-do-install:
+post-patch:
 	@${ECHO_CMD} -n ">> Removing unneeded files..."
-	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'`
+	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'`
 	@${ECHO_CMD} " [ DONE ]"
 
 .for f in ${REPLACE_FILES}
@@ -98,6 +99,7 @@ do-install:
 	@${ECHO_CMD} " [ DONE ]"
 .endfor
 
+do-install:
 	@${ECHO_CMD} -n ">> Creating destination directory..."
 	@${MKDIR} ${APP_HOME}
 	@${MKDIR} ${LOG_DIR}
@@ -120,13 +122,13 @@ do-install:
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Installing startup script..."
-	@${CP} ${WRKDIR}/${STARTUP_SCRIPT_NAME} ${STARTUP_SCRIPT}
+	@${CP} ${WRKDIR}/startup.sh ${STARTUP_SCRIPT}
 	@${CHMOD} 0544 ${STARTUP_SCRIPT}
 	@${ECHO_CMD} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
 	@${ECHO_CMD} -n ">> Installing man pages..."
-	@${INSTALL_MAN} ${WRKDIR}/${CONTROL_SCRIPT_NAME}.1 ${MANPREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKDIR}/daemonctl.1 ${MANPREFIX}/man/man1/${CONTROL_SCRIPT_NAME}.1
 	@${ECHO_CMD} " [ DONE ]"
 .endif
 
