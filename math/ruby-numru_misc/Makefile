@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	numru_misc
-PORTVERSION=	0.0.4
+PORTVERSION=	0.0.5
 CATEGORIES=	math ruby
-MASTER_SITES=	ftp://www.gfd-dennou.org/arch/ruby/products/misc/
+MASTER_SITES=	ftp://www.gfd-dennou.org/arch/ruby/products/numru-misc/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	misc-${PORTVERSION}
+DISTNAME=	numru-misc-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	murakami@ahs.scitec.kobe-u.ac.jp
