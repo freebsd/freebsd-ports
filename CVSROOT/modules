@@ -2431,6 +2431,7 @@ ja-a2ps		ports/japanese/a2ps
 ja-ack		ports/japanese/ack
 ja-acroread-jpnfont	ports/japanese/acroread-jpnfont
 ja-addttfont	ports/japanese/addttfont
+ja-alias-fonts	ports/japanese/alias-fonts
 ja-another-htmllint	ports/japanese/another-htmllint
 ja-aterm	ports/japanese/aterm
 ja-balsa	ports/japanese/balsa
