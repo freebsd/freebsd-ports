@@ -1,4 +1,1 @@
 bin/bnf
-%%PORTDOCS%%@unexec install-info --delete %D/%%PORTDOCS%%info/bnf.info %D/info/dir
-%%PORTDOCS%%info/bnf.info
-%%PORTDOCS%%@exec install-info %D/%%PORTDOCS%%info/bnf.info %D/info/dir

@@ -7,6 +7,7 @@
 
 PORTNAME=	bnf
 PORTVERSION=	1.6.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,15 +17,6 @@ COMMENT=	Generate C parser given a grammar in BNF notation
 
 GNU_CONFIGURE=	yes
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/bnf ${PREFIX}/bin/bnf
-.if !defined(NOPORTDOCS)
-	@${INSTALL_DATA} ${WRKSRC}/doc/bnf.info ${PREFIX}/info
-.endif
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@install-info ${PREFIX}/info/bnf.info ${PREFIX}/info/dir
-.endif
+INFO=		bnf
 
 .include <bsd.port.mk>
