@@ -7158,6 +7158,7 @@ ruby-devel	ports/lang/ruby-devel
 ruby-devel-logger	ports/sysutils/ruby-devel-logger
 ruby-dialogs	ports/devel/ruby-dialogs
 ruby-dict	ports/net/ruby-dict
+ruby-div	ports/www/ruby-div
 ruby-drb	ports/net/ruby-drb
 ruby-dump.rb	ports/converters/ruby-dump.rb
 ruby-esound	ports/audio/ruby-esound
