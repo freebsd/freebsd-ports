@@ -1,4 +1,3 @@
-bin/gmetadom-config
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOM.hh
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOMAttr.hh
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOMBasic.hh
@@ -10,7 +9,6 @@ include/gmetadom/gdome_cpp_smart/GdomeSmartDOMCore.hh
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOMDOMException.hh
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOMDOMImplementation.hh
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOMDOMString.hh
-include/gmetadom/gdome_cpp_smart/GdomeSmartDOMDOMStringAux.hh
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOMDOMTimeStamp.hh
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOMDocument.hh
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOMDocumentFragment.hh
@@ -22,7 +20,7 @@ include/gmetadom/gdome_cpp_smart/GdomeSmartDOMEvent.hh
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOMEventListener.hh
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOMEventTarget.hh
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOMEvents.hh
-include/gmetadom/gdome_cpp_smart/GdomeSmartDOMGdomeStringAux.hh
+include/gmetadom/gdome_cpp_smart/GdomeSmartDOMGdomeString.hh
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOMHelper.hh
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOMMutationEvent.hh
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOMNamedNodeMap.hh
@@ -31,12 +29,15 @@ include/gmetadom/gdome_cpp_smart/GdomeSmartDOMNodeList.hh
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOMNotation.hh
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOMProcessingInstruction.hh
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOMText.hh
+include/gmetadom/gdome_cpp_smart/GdomeSmartDOMTraits.hh
+include/gmetadom/gdome_cpp_smart/GdomeSmartDOMUCS4String.hh
+include/gmetadom/gdome_cpp_smart/GdomeSmartDOMUTF16String.hh
+include/gmetadom/gdome_cpp_smart/GdomeSmartDOMUTF8String.hh
 lib/libgmetadom_gdome_cpp_smart.a
 lib/libgmetadom_gdome_cpp_smart.so
-lib/libgmetadom_gdome_cpp_smart.so.0
+lib/libgmetadom_gdome_cpp_smart.so.1
 lib/ocaml/gdome2/META
 lib/ocaml/gdome2/gdome.cmi
-lib/ocaml/gdome2/gdome.ml
 lib/ocaml/gdome2/gdome.mli
 lib/ocaml/gdome2/gdomeDOMExceptionT.cmi
 lib/ocaml/gdome2/gdomeDOMExceptionT.mli
@@ -93,18 +94,6 @@ lib/ocaml/gdome2/iProcessingInstruction.cmi
 lib/ocaml/gdome2/iProcessingInstruction.ml
 lib/ocaml/gdome2/iText.cmi
 lib/ocaml/gdome2/iText.ml
-lib/ocaml/gdome2/libmlgdome.a
-lib/ocaml/gdome2/libmlgdome.so
-lib/ocaml/gdome2/libmlgdome.so.0
-lib/ocaml/gdome2/mlbasic.a
-lib/ocaml/gdome2/mlbasic.cma
-lib/ocaml/gdome2/mlbasic.cmxa
-lib/ocaml/gdome2/mlcore.a
-lib/ocaml/gdome2/mlcore.cma
-lib/ocaml/gdome2/mlcore.cmxa
-lib/ocaml/gdome2/mlevents.a
-lib/ocaml/gdome2/mlevents.cma
-lib/ocaml/gdome2/mlevents.cmxa
 lib/ocaml/gdome2/mlgdome.a
 lib/ocaml/gdome2/mlgdome.cma
 lib/ocaml/gdome2/mlgdome.cmxa
@@ -158,13 +147,10 @@ lib/ocaml/gdome2/tProcessingInstruction.cmi
 lib/ocaml/gdome2/tProcessingInstruction.mli
 lib/ocaml/gdome2/tText.cmi
 lib/ocaml/gdome2/tText.mli
-lib/ocaml/site-lib/gdome2/META
-lib/ocaml/site-lib/gdome2/libmlgdome.so
-share/gmetadom/gdome_cpp_smart.conf
+lib/ocaml/stublibs/dllmlgdome.so.owner
+lib/ocaml/stublibs/dllmlgdome.so
+lib/ocaml/stublibs/libmlgdome.so
+lib/pkgconfig/gdome2-cpp-smart.pc
 @dirrm include/gmetadom/gdome_cpp_smart
 @dirrm include/gmetadom
 @dirrm lib/ocaml/gdome2
-@dirrm lib/ocaml/site-lib/gdome2
-@dirrm share/gmetadom
-@exec echo "Updating %D/lib/ocaml/ld.conf"; echo "%D/lib/ocaml/site-lib/gdome2" >> %D/lib/ocaml/ld.conf
-@unexec echo "Updating %D/lib/ocaml/ld.conf"; cp %D/lib/ocaml/ld.conf %D/lib/ocaml/ld.conf.tmp; grep -v "lib/ocaml/site-lib/gdome2" %D/lib/ocaml/ld.conf.tmp > %D/lib/ocaml/ld.conf; rm %D/lib/ocaml/ld.conf.tmp

@@ -7,21 +7,20 @@
 #
 
 PORTNAME=	gmetadom
-PORTVERSION=	0.0.3c
+PORTVERSION=	0.1.7
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-0.0.3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Collection of DOM Implementations
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
-LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
-		xslt:${PORTSDIR}/textproc/libxslt \
-		gdome:${PORTSDIR}/textproc/gdome2 \
-		iconv:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
+		xslt.1:${PORTSDIR}/textproc/libxslt \
+		gdome.7:${PORTSDIR}/textproc/gdome2 \
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_GNOME=	glib12
 USE_LIBTOOL=	yes
