@@ -53,7 +53,6 @@ CONFLICTS=	linux_base-6* linux_base-7.1* linux_base-debian* \
 		linux_base-gentoo* linux_base-rh-9* linux_base-suse-9* \
 		linux-XFree86-libs*
 
-RESTRICTED=		"binaries under GNU GPL without accompanying source"
 ONLY_FOR_ARCHS=		amd64 i386
 DIST_SUBDIR=		rpm/rh-7.3
 PREFIX=			${LINUXBASE}
@@ -136,5 +135,12 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
+
+pre-package:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} If you are distributing the package, you may be required
+	@${ECHO_MSG} to offer the sources as well.  You can do this easily
+	@${ECHO_MSG} with the emulators/linux_base-src-rh-7.3 port.
+	@${ECHO_MSG} ""
 
 .include <bsd.port.post.mk>
