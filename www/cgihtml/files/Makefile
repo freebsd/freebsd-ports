@@ -44,6 +44,7 @@ install:
 	${INSTALL} -c -m 644 lib${LIB}.a ${PREFIX}/lib
 #	${RANLIB} -t ${PREFIX}/lib/lib${LIB}.a
 	${INSTALL} -c -m 644 lib${LIB}.so.${SHLIB_VER} ${PREFIX}/lib
+	@ln -s ${PREFIX}/lib/lib${LIB}.so.${SHLIB_VER} ${PREFIX}/lib/lib${LIB}.so
 .for file in ${HDRS}
 	${INSTALL} -c -m 644 ${file} ${PREFIX}/include
 .endfor
