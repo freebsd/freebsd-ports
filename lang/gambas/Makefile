@@ -6,6 +6,7 @@
 
 PORTNAME=		gambas
 PORTVERSION=		0.92
+PORTREVISION=		1
 CATEGORIES=		lang
 MASTER_SITES=		http://gambas.sourceforge.net/
 
