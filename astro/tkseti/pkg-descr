@@ -3,7 +3,14 @@ current best spikes and gaussians for the user and can be used in
 multiple directories.  It can also fetch the user's statistics from
 the seti@home web site.
 
-WWW: http://www.cuug.ab.ca/~macdonal/tkseti/
+tkseti can be started if the client is already running, or it can 
+start the client manually or automatically for you.  It will look for
+the client files in the directory /var/db/setiathome . If you've run 
+the client elsewhere, or run more than one client, just specify the 
+setiathome client directory on the tkseti command line. For example:
 
-- Pete
-petef@databits.net
+	tkseti ~/setiathome
+
+Make sure the user has write access to the setiathome directory!
+
+WWW: http://phileimer.9online.fr/tkseti/CHANGES
