@@ -8,7 +8,7 @@
 PORTNAME=	qpopper
 PORTVERSION= 	2.53
 CATEGORIES=	mail
-MASTER_SITES=   ftp://ftp.qualcomm.com/eudora/servers/unix/popper/
+MASTER_SITES=   ftp://ftp.qualcomm.com/eudora/servers/unix/popper/old/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
