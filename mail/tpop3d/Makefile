@@ -15,7 +15,7 @@ COMMENT=	Virtual-domain capable POP3 server supporting MySQL auth
 
 # mysql authentication
 .if !defined(WITHOUT_MYSQL)
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--enable-auth-mysql \
 			--with-mysql-lib-dir=${LOCALBASE}/lib/mysql \
 			--with-mysql-include-dir=${LOCALBASE}/include/mysql
