@@ -9,7 +9,7 @@
 
 PORTNAME=	mgp-gallery
 PORTVERSION=	2.0
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://puchol.com/cpg/software/mgp/
@@ -40,7 +40,8 @@ do-install:
 .for i in midgard backgrounds solid gradients
 	${MKDIR} ${PKGDATADIR}/${i}
 	cd ${WRKDIR}/mgp-${i}-${PORTVERSION};\
-	${INSTALL_DATA} * ${PKGDATADIR}/${i}
+	${INSTALL_DATA} * ${PKGDATADIR}/${i};\
+	${SCRIPTDIR}/fix-gallery "${INSTALL_DATA}" ${PKGDATADIR}/${i} *.mgp
 .endfor # i in midgard backgrounds solid gradient
 	cd ${PREFIX};\
 	${RM} -f ${PLIST};\
