@@ -44,8 +44,8 @@ HEADERS_SUFX=
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack lthack gnometarget
-USE_LIBTOOL_VER=13
+USE_GNOME=	gnomeprefix gnomehack gnometarget
+USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
