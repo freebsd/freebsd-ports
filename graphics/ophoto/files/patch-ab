@@ -1,0 +1,47 @@
+--- Makefile.orig	Sat Dec 18 23:35:16 1999
++++ Makefile	Sun Oct 19 02:47:23 2003
+@@ -6,34 +6,36 @@
+ #   @(#)$Id: Makefile,v 1.5 1999/08/28 23:32:12 olli Exp $
+ #
+ 
+-CFLAGS=-Wall -ansi -pedantic -O -pipe
++CC?=cc
++CFLAGS?=-O -pipe
++CFLAGS+=-Wall -ansi -pedantic
+ 
+ BIN=ophoto
+ OBJS=ophoto.o command.o directory.o proto.o utils.o getlopt.o
+ 
+ $(BIN): $(OBJS)
+-	cc $(CFLAGS) -o $(BIN) $(OBJS)
++	$(CC) $(CFLAGS) -o $(BIN) $(OBJS)
+ 
+ ophoto.o: ophoto.h ophoto.c proto.h utils.h getlopt.h
+-	cc $(CFLAGS) -c ophoto.c
++	$(CC) $(CFLAGS) -c ophoto.c
+ 
+ command.o: command.c command.h directory.h ophoto.h proto.h
+-	cc $(CFLAGS) -c command.c
++	$(CC) $(CFLAGS) -c command.c
+ 
+ directory.o: directory.c directory.h proto.h ophoto.h
+-	cc $(CFLAGS) -c directory.c
++	$(CC) $(CFLAGS) -c directory.c
+ 
+ proto.o: proto.c proto.h cmds.h
+-	cc $(CFLAGS) -c proto.c
++	$(CC) $(CFLAGS) -c proto.c
+ 
+ cmds.h: cmds.src
+ 	./cmds.make cmds.src > cmds.h
+ 
+ utils.o: utils.c utils.h
+-	cc $(CFLAGS) -c utils.c
++	$(CC) $(CFLAGS) -c utils.c
+ 
+ getlopt.o: getlopt.c getlopt.h
+-	cc $(CFLAGS) -c getlopt.c
++	$(CC) $(CFLAGS) -c getlopt.c
+ 
+ install:
+ 	strip $(BIN)
