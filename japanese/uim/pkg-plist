@@ -1,4 +1,5 @@
 bin/uim-helper-server
+%%GTK%%bin/uim-helper-candwin-gtk
 bin/uim-xim
 include/uim/uim-helper.h
 include/uim/uim.h
@@ -27,6 +28,7 @@ share/uim/im.scm
 share/uim/ipa.scm
 share/uim/japanese.scm
 share/uim/key.scm
+share/uim/latin.scm
 share/uim/loader.scm
 share/uim/prime.scm
 share/uim/rk.scm
