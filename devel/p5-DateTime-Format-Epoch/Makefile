@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	DateTime-Format-Epoch
-PORTVERSION=	0.07
+PORTVERSION=	0.08.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
+
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Convert DateTimes to/from epoch seconds
@@ -22,9 +24,19 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		DateTime::Format::Epoch.3 DateTime::Format::Epoch::DotNet.3 \
-       		DateTime::Format::Epoch::MacOS.3 DateTime::Format::Epoch::TAI64.3 \
-	       	DateTime::Format::Epoch::Unix.3
+MAN3=		DateTime::Format::Epoch.3 \
+		DateTime::Format::Epoch::ActiveDirectory.3 \
+		DateTime::Format::Epoch::DotNet.3 \
+		DateTime::Format::Epoch::JD.3 \
+		DateTime::Format::Epoch::Lilian.3 \
+		DateTime::Format::Epoch::MJD.3 \
+		DateTime::Format::Epoch::MacOS.3 \
+		DateTime::Format::Epoch::RJD.3 \
+		DateTime::Format::Epoch::RataDie.3 \
+		DateTime::Format::Epoch::TAI64.3 \
+		DateTime::Format::Epoch::TJD.3 \
+		DateTime::Format::Epoch::Unix.3 \
+		DateTime::Format::Epoch::Unix.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README TODO
