@@ -1,0 +1,11 @@
+--- extras/FvwmCommand/FvwmCommand.c.orig	Sun Jan 10 21:59:41 1999
++++ extras/FvwmCommand/FvwmCommand.c	Sat Jun 10 20:50:13 2000
+@@ -700,7 +700,7 @@
+ 
+   printf( "           %-20s x %ld, y %ld, desk %ld, max x %ld, max y %ld\n",
+ 	  "new page", 
+-	  body[0], body[0], body[2], body[3], body[4]);
++	  body[0], body[1], body[2], body[3], body[4]);
+ }
+ 
+ /*************************************************************************
