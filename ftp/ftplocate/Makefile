@@ -7,11 +7,13 @@
 
 PORTNAME=	ftplocate
 PORTVERSION=	2.01
+PORTREVISION=	1
 CATEGORIES=	ftp www
 MASTER_SITES=	ftp://ftp.ee.ncku.edu.tw/pub/ftplocate/
 
 MAINTAINER=	tung@turtle.ee.ncku.edu.tw
 
+BUILD_DEPENDS=  ${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	glimpse:${PORTSDIR}/textproc/glimpse \
 		unzip:${PORTSDIR}/archivers/unzip
 
@@ -24,10 +26,11 @@ PL_FILES=	install.pl bin/dcollect.pl bin/dindex.pl bin/dsearch.pl \
 		bin/flserv.pl bin/flsummary.pl bin/fltop.pl \
 		bin/fltrain.pl bin/flcatsite.pl template/ftplocate
 
-post-extract:
+post-patch:
 .for f in ${PL_FILES}
 	@${PERL} -pi -e 's,/usr/local/bin/perl,${PERL},' ${WRKSRC}/${f}
 .endfor
+	@${PERL} -pi -e "s,/usr/local,${LOCALBASE},g" ${WRKSRC}/install.pl
 
 do-install:
 	cd ${WRKSRC}; ${PERL} install.pl -y -c -bsdport
