@@ -34,7 +34,10 @@ etc/ppxp/modem/generic
 etc/ppxp/modem/mc6500
 etc/ppxp/modem/mc6530
 etc/ppxp/modem/mn128
+etc/ppxp/modem/mn7650
+etc/ppxp/modem/ms288af
 etc/ppxp/modem/ms336
+etc/ppxp/modem/mt128
 etc/ppxp/modem/pcins128
 etc/ppxp/modem/pcmi336_128@64
 etc/ppxp/modem/rta50i
@@ -51,6 +54,7 @@ etc/ppxp/rc/sendmail.rc
 etc/ppxp/rc/skeleton.rc
 etc/ppxp/rc/start
 etc/ppxp/rc/stop
+info/dir
 lib/ppxp/tcl/PPxP.so
 lib/ppxp/tcl/pkgIndex.tcl
 lib/ppxp/tkppxp/images/circle.xbm
@@ -100,9 +104,13 @@ lib/ppxp/tkppxp/widgets/widgetutil.tcl
 sbin/in.ppxp
 sbin/ppxpd
 share/doc/ppxp/C/QuickStart.txt
+share/doc/ppxp/ja/Answers.txt
 share/doc/ppxp/ja/QuickStart.txt
+share/doc/ppxp/ja/QuickUsage.txt
+share/doc/ppxp/ja/Report.txt
 share/doc/ppxp/ja/guide-1.html
 share/doc/ppxp/ja/guide-10.html
+share/doc/ppxp/ja/guide-11.html
 share/doc/ppxp/ja/guide-2.html
 share/doc/ppxp/ja/guide-3.html
 share/doc/ppxp/ja/guide-4.html
@@ -150,7 +158,6 @@ share/ppxp/label/xaxon.xpm
 @dirrm share/doc/ppxp/ja
 @dirrm share/doc/ppxp/C
 @dirrm share/doc/ppxp
-@dirrm etc/ppxp/rc
 @dirrm lib/ppxp/tkppxp/widgets
 @dirrm lib/ppxp/tkppxp/scripts
 @dirrm lib/ppxp/tkppxp/resources
@@ -158,6 +165,7 @@ share/ppxp/label/xaxon.xpm
 @dirrm lib/ppxp/tkppxp
 @dirrm lib/ppxp/tcl
 @dirrm lib/ppxp
+@dirrm etc/ppxp/rc
 @dirrm etc/ppxp/modem
 @dirrm etc/ppxp/ip
 @dirrm etc/ppxp/conf
