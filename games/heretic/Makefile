@@ -23,7 +23,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	WANT_OGL="no" WANT_OGL_FULLSCREEN="no" WANT_NICE_OGL="no"
 .if !defined(NO_WAD)
-PLIST=		${PKGDIR}/PLIST.nowad
+PLIST=		${PKGDIR}/pkg-plist.nowad
 .endif
 ALL_TARGET=	x11
 BINARY=		xheretic
