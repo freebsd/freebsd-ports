@@ -1,0 +1,17 @@
+========================================================================
+   NOTICE    NOTICE    NOTICE    NOTICE    NOTICE    NOTICE    NOTICE
+========================================================================
+
+The rbldnsd port has been installed with an example zone file, located
+in %%PREFIX%%/etc/rbldnsd/.
+
+After starting the daemon with this example data, you should be able to
+test the success of your install with the command:
+
+	% host -a 1.1.168.192.bl.example.com. localhost
+or
+	% dig @localhost 1.1.168.192.bl.example.com. any
+
+If you see a response that mentions 127.0.0.2, the install worked!
+
+========================================================================
