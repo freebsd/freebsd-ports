@@ -90,6 +90,8 @@ SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%RC_SUBR%%|${RC_SUBR}|g'
 .if defined(WITH_SQLDB)
 SED_SCRIPT+=	-e 's|%%SQL%%|-Q|g'
+.else
+SED_SCRIPT+=	-e 's|%%SQL%%||g'
 .endif
 
 pre-patch:
