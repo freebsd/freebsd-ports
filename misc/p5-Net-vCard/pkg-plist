@@ -1,0 +1,7 @@
+bin/vCard2label
+lib/perl5/site_perl/%%PERL_VER%%/Net/vCard.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/vCard/ADR.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/vFile.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/vCard/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/vCard
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/vCard
