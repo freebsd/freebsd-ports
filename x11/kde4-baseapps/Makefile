@@ -3,13 +3,13 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.12 1998/05/04 20:22:49 jseger Exp $
+# $Id: Makefile,v 1.13 1998/07/13 23:35:37 se Exp $
 #
 
 DISTNAME=	kdebase-1.0
 CATEGORIES=	x11 kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/1.0/distribution/tgz/generic/source
+MASTER_SITE_SUBDIR= stable/1.0/distribution/tar/generic/source
 
 MAINTAINER=	se@freebsd.org
 
