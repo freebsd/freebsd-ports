@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dhcp6
-PORTVERSION=	20040816a
+PORTVERSION=	20040903a
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 DISTNAME=	kame-${PORTNAME}-${PORTVERSION}
