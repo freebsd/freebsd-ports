@@ -144,6 +144,7 @@
     SUBDIR += libao
     SUBDIR += libaudiofile
     SUBDIR += libcdaudio
+    SUBDIR += libmad
     SUBDIR += libmikmod
     SUBDIR += libmusicbrainz
     SUBDIR += libogg
