@@ -7,7 +7,7 @@
 
 PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	3.23.53
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.kernelnotes.de/MySQL/Downloads/MySQL-3.23/ \
@@ -136,7 +136,7 @@ post-install:
 .endif
 	@${SETENV} DB_DIR=${DB_DIR} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-server.sh > ${PREFIX}/etc/rc.d/mysql-server.sh
+	@${SED} "s|%%PREFIX%%|${PREFIX}|g; s|%%DB_DIR%%|${DB_DIR}|g" < ${FILESDIR}/mysql-server.sh > ${PREFIX}/etc/rc.d/mysql-server.sh
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/mysql-server.sh
 
 .if !defined(NOPORTDOCS)
