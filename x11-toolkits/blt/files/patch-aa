@@ -1,94 +1,54 @@
---- configure.orig	Sun Apr 21 07:47:32 1996
-+++ configure	Sat Aug  3 18:59:02 1996
-@@ -1460,7 +1460,7 @@
+--- configure.orig	Tue Jul  7 19:00:28 1998
++++ configure	Thu Jul  9 13:35:07 1998
+@@ -2298,6 +2298,9 @@
+  $blt_ckcmd_tcl_home \
+  $blt_ckcmd_tcl_home/lib \
+  $blt_cv_tcl_lib \
++ /usr/local/lib/tcl8.0 \
++ /usr/local/lib/tcl7.6 \
++ /usr/local/lib/tcl7.5 \
+  /usr/local/tcl/lib \
+  /usr/local/tcl/tcl8.0/lib \
+  /usr/local/tcl/tcl7.6/lib \
+@@ -2337,6 +2340,9 @@
+  $blt_ckcmd_tcl_home \
+  $blt_ckcmd_tcl_home/lib \
+  $blt_cv_tk_lib \
++ /usr/local/lib/tk8.0 \
++ /usr/local/lib/tk4.2 \
++ /usr/local/lib/tk4.1 \
+  /usr/local/tcl/lib \
+  /usr/local/tcl/tk8.0/lib \
+  /usr/local/tcl/tk4.2/lib \
+@@ -2432,6 +2438,13 @@
+ tclLibDir=${TCL_PREFIX}/lib
+ tkLibDir=${TK_PREFIX}/lib
  
- if test "$prefix" = "NONE"; then 
-     if test -z "$PREFIX" ; then
--	prefix=/usr/local/blt
-+	prefix=/usr/local
-     else
- 	prefix=$PREFIX
-     fi
-@@ -2100,7 +2100,7 @@
- guesses="$TCLINCDIR \
-      $TCL_LIBRARY/../../include \
-      /usr/local/itcl/include \
--     /usr/local/tcl/tcl7.5/include /usr/local/tcl/tcl7.4/include \
-+     /usr/local/include/tcl7.5 /usr/local/tcl/tcl7.4/include \
-      /usr/local/tcl/tcl7.3/include /usr/local/tcl/tcl7.2/include \
-      /usr/local/tcl/tcl7.1/include /usr/local/tcl/tcl7.0/include \
-      $PWD/../itcl2.0/tcl7.4 \
-@@ -2165,8 +2165,8 @@
- 	blt_path_tcl_lib="$dir/itcl"
- 	break
-     fi
--    libnames=`echo $dir/libtcl*`
--    if test "$libnames" != "$dir/libtcl*" ; then
-+    libnames=`echo $dir/libtcl75*`
-+    if test "$libnames" != "$dir/libtcl75*" ; then
- 	blt_path_tcl_lib=$dir
- 	break
-     fi
-@@ -2180,8 +2180,8 @@
-   *-sunos4*)
-      ;;
-   *) 
--     if test -r $TCLLIBDIR/tclConfig.sh; then
--	 . $TCLLIBDIR/tclConfig.sh
-+     if test -r $TCLLIBDIR/tcl7.5/tclConfig.sh; then
-+	 . $TCLLIBDIR/tcl7.5/tclConfig.sh
-      fi
-      ;;
- esac
-@@ -2192,9 +2192,7 @@
-     TCLLIBDIR="__Edit_${saveFile}__"
-     echo "$ac_t""no" 1>&6
- fi
--if test "$TCLLIBDIR" != "/usr/lib" ; then
--    TCLLIBSW="-L$TCLLIBDIR -ltcl${TCL_VERSION}"
--fi
-+TCLLIBSW=${TCL_LIB_SPEC}
++case $target in
++  *-freebsd*)
++    tclIncSpec="-I${TCL_PREFIX}/include/tcl${TCL_MAJOR_VERSION}.${TCL_MINOR_VERSION}"
++    tkIncSpec="-I${TK_PREFIX}/include/tk${TK_MAJOR_VERSION}.${TK_MINOR_VERSION}"
++    ;;
++esac
++
+ itclLibSpec=""
+ itclIncSpec=""
+ itclSuffix=""
+@@ -2448,7 +2461,7 @@
+ tkLibSpec=${TK_LIB_SPEC}
  
- 
- 
-@@ -2208,7 +2206,7 @@
-      $TKINCDIR \
-      /usr/local/itcl/include \
-      /usr/local/tcl/include \
--     /usr/local/tcl/tk4.1/include \
-+     /usr/local/include/tk4.1 \
-      /usr/local/tcl/tk4.0/include \
-      /usr/local/tcl/tk3.6/include \
-      /usr/local/tcl/tk3.5/include \
-@@ -2299,8 +2297,8 @@
-   *-sunos4*)
-      ;;
-   *) 
--     if test -r $TKLIBDIR/tkConfig.sh; then
--	 . $TKLIBDIR/tkConfig.sh
-+     if test -r $TKLIBDIR/tk4.1/tkConfig.sh; then
-+	 . $TKLIBDIR/tk4.1/tkConfig.sh
-      fi
-      ;;
- esac
-@@ -2312,10 +2310,7 @@
-     echo "$ac_t""no" 1>&6
- fi
- 
--if test "$TKLIBDIR" != "/usr/lib" ; then
--    TKLIBSW="-L$TKLIBDIR -ltk${TK_VERSION}"
--fi
--
-+TKLIBSW=${TK_LIB_SPEC}
- 
-  
- 
-@@ -2634,6 +2629,8 @@
-   *-freebsd*|*-386bsd*|*-netbsd*)
-     SHLIB_CCFLAGS="-fpic"
-     SHLIB_LDFLAGS="-Bshareable"
-+    SHLIB_LOADER="ld"
-+    SHLIB_SUFFIX=".so.${blt_cv_major_version}.${blt_cv_minor_version}"
+ case $target in
+-  *-sunos4*|NetBSD-*|FreeBSD-*|OpenBSD-*)
++  *-freebsd*|*-sunos4*|NetBSD-*|FreeBSD-*|OpenBSD-*)
+     tclLib="-ltcl${TCL_MAJOR_VERSION}${TCL_MINOR_VERSION}${itclSuffix}"
+     tkLib="-ltk${TK_MAJOR_VERSION}${TK_MINOR_VERSION}${itclSuffix}"
      ;;
-   *-linux*)
-     if eval "test \"`echo '$''{'blt_cv_sys_elf'+set}'`\" = set"; then
+@@ -3164,7 +3177,7 @@
+       SHLIB_CFLAGS="-fpic"
+       SHLIB_LD="ld"
+       SHLIB_LD_FLAGS="-Bshareable -x"
+-      SHLIB_SUFFIX=".so"
++      SHLIB_SUFFIX=".so.${bltMajor}.${bltMinor}"
+     fi
+     ;;
+ 
