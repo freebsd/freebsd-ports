@@ -968,6 +968,7 @@ share/texmf/tex/latex/test1.tex
 share/texmf/tex/latex/test2.tex
 share/texmf/tex/latex/test3.tex
 share/texmf/tex/latex/testpage.tex
+share/texmf/tex/latex/texsys.cfg
 share/texmf/tex/latex/textcomp.sty
 share/texmf/tex/latex/textures.def
 share/texmf/tex/latex/thb.sty
