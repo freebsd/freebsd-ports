@@ -1,0 +1,11 @@
+--- client/remote/rdir.c.orig	Wed Dec 10 15:36:57 2003
++++ client/remote/rdir.c	Mon Aug 23 21:41:29 2004
+@@ -29,7 +29,7 @@
+ {
+     int i;
+     /* this is just a small wrapper for rls_main */
+-    char * const *newargv;
++    char const * * newargv;
+     newargv=malloc( (argc+2)*(sizeof(char *)));
+     newargv[0]="dir";
+     newargv[1]="-l";
