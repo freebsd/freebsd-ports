@@ -3,12 +3,12 @@
 # Date created:		27 March 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.16 1998/09/28 02:10:56 steve Exp $
+# $Id: Makefile,v 1.17 1998/11/21 00:48:19 flathill Exp $
 #
 
 DISTNAME=	nethack-3.2.2
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.uu.net/pub/games/nethack/sources/ \
+MASTER_SITES=	ftp://ftp.wtower.com/nethack/sources/ \
 		${MASTER_SITE_GNU}
 
 MAINTAINER=	ports@FreeBSD.ORG

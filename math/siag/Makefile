@@ -3,12 +3,13 @@
 # Date created:		27 Jan 1998
 # Whom:			ports@freebsd.org
 #
-# $Id: Makefile,v 1.10 1998/10/01 06:12:15 steve Exp $
+# $Id: Makefile,v 1.11 1998/11/29 13:09:40 asami Exp $
 #
 
 DISTNAME=	siag-2.80
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.edu.stockholm.se/pub/siag/
+MASTER_SITES=	ftp://ftp.edu.stockholm.se/pub/siag/OLD/ \
+		ftp://ftp.icm.edu.pl/site/siag/OLD/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tsiag-2.80.tar.gz
 
 MAINTAINER=	ports@freebsd.org
