@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	1.3.23
-PORTREVISION=	1
+PORTVERSION=	2.0.pre1
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/gimp/%SUBDIR%,}
-MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}/v${PORTVERSION}
+#MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}/v${PORTVERSION}
+MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}/testing
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.pre/pre/}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNU Image Manipulation Program (unstable development version)
