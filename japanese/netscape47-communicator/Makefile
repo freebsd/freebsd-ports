@@ -15,7 +15,7 @@ PKGDIR=		${.CURDIR}/../netscape47-communicator/pkg
 
 BROWSER_CMD=	ja-${BROWSER}-47
 BROWSER_VERSION=	4.7
-JAPANIZE_KIT=	communicator-ja-euc-v461-export.generic-generic-generic.tar.gz
-NETHELP=	nethelp-v451
+JAPANIZE_KIT=	communicator-ja-euc-v47-export.generic-generic-generic.tar.gz
+NETHELP=	nethelp-v47
 
 .include "${MASTERDIR}/Makefile"

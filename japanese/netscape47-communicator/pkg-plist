@@ -8,6 +8,7 @@ bin/ja-communicator-47
 %%NSUBDIR%%/%%LANG%%/Netscape
 %%NSUBDIR%%/%%LANG%%/about
 %%NSUBDIR%%/%%LANG%%/mail.msg
+%%NSUBDIR%%/%%LANG%%/nethelp/picsfaill.htm
 %%NSUBDIR%%/%%LANG%%/nethelp/Back_dep.gif
 %%NSUBDIR%%/%%LANG%%/nethelp/Back_dis.gif
 %%NSUBDIR%%/%%LANG%%/nethelp/Back_sel.gif
@@ -106,7 +107,6 @@ bin/ja-communicator-47
 %%NSUBDIR%%/%%LANG%%/nethelp/netwatch.gif
 %%NSUBDIR%%/%%LANG%%/nethelp/picsfail.htm
 %%NSUBDIR%%/%%LANG%%/nethelp/picsfail.jar
-%%NSUBDIR%%/%%LANG%%/nethelp/scraps
 %%NSUBDIR%%/%%LANG%%/plugins
 %%NSUBDIR%%/%%LANG%%/splash
 %%NSUBDIR%%/preferences.js
