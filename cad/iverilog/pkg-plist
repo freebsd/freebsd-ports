@@ -5,6 +5,7 @@ include/acc_user.h
 include/ivl_target.h
 include/veriuser.h
 include/vpi_user.h
+lib/ivl/cadpli.vpl
 lib/ivl/fpga.tgt
 lib/ivl/iverilog.conf
 lib/ivl/ivl
