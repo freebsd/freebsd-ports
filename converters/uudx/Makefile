@@ -1,15 +1,15 @@
 # New ports collection makefile for:	uudx
-# Version required:	2.99
 # Date created:		2 June 1996
 # Whom:			ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	uudx_299
-PKGNAME=	uudx-2.99
+PORTNAME=	uudx
+PORTVERSION=	2.99
 CATEGORIES=	converters
 MASTER_SITES=	ftp://ftp.vector.co.jp/pack/dos/util/bin/conv/
+DISTNAME=	uudx_299
 EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	rewsirow@ff.iij4u.or.jp

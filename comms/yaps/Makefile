@@ -1,17 +1,17 @@
 # New ports collection makefile for:    yaps
-# Version required:     0.96
 # Date created:         Di  29 Sep 1998 15:51:27 CEST
 # Whom:                 se
 #
 # $FreeBSD$
 #
 
-DISTNAME=       yaps-0.96
+PORTNAME=	yaps
+PORTVERSION=	0.96
 CATEGORIES=	comms
-MASTER_SITES=   ${MASTER_SITE_SUNSITE}
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/serialcomm/machines
 
-MAINTAINER=     se@FreeBSD.org
+MAINTAINER=	se@FreeBSD.org
 
 USE_GMAKE=	true
 

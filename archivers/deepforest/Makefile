@@ -1,15 +1,15 @@
 # New ports collection makefile for:	JDE's DeepForest
-# Version required:	1.0a
 # Date created:		25 March 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	DeepForest-1.0a
-PKGNAME=	${LANGPREFIX}deepforest-1.0a
+PORTNAME=	${LANGPREFIX}DeepForest
+PORTVERSION=	1.0a
 CATEGORIES=	${CATEGORY_LIST}
 MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/JDE/dist/
+DISTNAME=	DeepForest-${PORTVERSION}
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 

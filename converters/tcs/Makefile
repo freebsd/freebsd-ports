@@ -1,16 +1,16 @@
 # New ports collection makefile for:	tcs
-# Version required:	1.44
 # Date created:		18 Oct 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tcs
-PKGNAME=	tcs-19950325
+PORTNAME=	tcs
+PORTVERSION=	1995.03.25
 CATEGORIES=	converters plan9
 MASTER_SITES= 	ftp://plan9.bell-labs.com/plan9/unixsrc/ \
 		ftp://ftp.gwdg.de/pub/gnu2/plan9/unixsrc/
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	kuriyama@FreeBSD.org

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xcircuit
-# Version required:	2.0b4
 # Date created:		3 Apr 1998
 # Whom:			giffunip@asme.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xcircuit-2.0b4
+PORTNAME=	xcircuit
+PORTVERSION=	2.0b4
 CATEGORIES=	cad
 MASTER_SITES=	ftp://bach.ece.jhu.edu/pub/tim/xcircuit/ \
 		http://bach.ece.jhu.edu/~tim/programs/xcircuit/archive/

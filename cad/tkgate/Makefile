@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tkgate
-# Version required:			1.0
 # Date created:				28 May 1999
 # Whom:					Jeffery Hansen <hansen@cmu.edu>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		tkgate-1.0
+PORTNAME=		tkgate
+PORTVERSION=		1.0
 CATEGORIES=		cad
 MASTER_SITES=		http://www.cs.cmu.edu/~hansen/tkgate/
 EXTRACT_SUFX=		.tgz

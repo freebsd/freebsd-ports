@@ -1,12 +1,12 @@
 # New ports collection makefile for:	sredird
-# Version required:	1.1.7
 # Date created:		19 Dec 1999
 # Whom:			Maxim Sobolev <sobomax@altavista.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sredird-1.1.7
+PORTNAME=	sredird
+PORTVERSION=	1.1.7
 CATEGORIES=	comms
 MASTER_SITES=	http://metalab.unc.edu/pub/Linux/system/serial/
 

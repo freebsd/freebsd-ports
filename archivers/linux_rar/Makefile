@@ -1,21 +1,21 @@
 # New ports collection makefile for:    linux_rar
 # http://www.rarsoft.com/rar_archiver.htm
-# Version required:	2.60
 # Date created:		30 April 1999
 # Whom:			FUJISHIMA Satsuki <k5@respo.or.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       rarlnx26
-PKGNAME=        linux_rar-2.60
+PORTNAME=	linux_rar
+PORTVERSION=	2.60
 CATEGORIES=	archivers linux
 MASTER_SITES=	ftp://rarsoft.ti.sk/pub/rar/ \
 		ftp://ftp.cdrom.com/pub/cheats/dlh/rar/ \
 		ftp://ftp.cdrom.com/pub/sac/pack/
-EXTRACT_SUFX=   .sfx
+DISTNAME=	rarlnx26
+EXTRACT_SUFX=	.sfx
 
-MAINTAINER=     k5@cheerful.com
+MAINTAINER=	k5@cheerful.com
 
 BUILD_DEPENDS=	/compat/linux/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
 RUN_DEPENDS=	/compat/linux/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
@@ -23,7 +23,7 @@ RUN_DEPENDS=	/compat/linux/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	NOFEE: Can not charge for distribution
-NO_PACKAGE=     Only unmodified original package can be distributed
+NO_PACKAGE=	Only unmodified original package can be distributed
 
 EXTRACT_CMD=		# empty
 EXTRACT_BEFORE_ARGS=	# empty

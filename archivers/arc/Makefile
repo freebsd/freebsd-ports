@@ -1,15 +1,15 @@
 # New ports collection makefile for:    arc
-# Version required:     5.21e
 # Date created:         31 Dec 1994
 # Whom:                 ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=       arc521e.pl8
-PKGNAME=        arc-5.21e
+PORTNAME=	arc
+PORTVERSION=	5.21e.8
 CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
+DISTNAME=       arc521e.pl8
 EXTRACT_SUFX=   .tar.Z
 
 MAINTAINER=     ache@FreeBSD.org

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	xdeview
-# Version Required:	0.5.13
 # Date Created:		9 Feb 1997
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	uudeview-0.5.13
-PKGNAME=	xdeview-0.5.13
+PORTNAME=	xdeview
+PORTVERSION=	0.5.13
 CATEGORIES=	converters tk82
 MASTER_SITES=	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/ \
 		http://www.informatik.uni-frankfurt.de/~fp/uudeview/Apps/frank/
+DISTNAME=	uudeview-${PORTVERSION}
 
 MAINTAINER=	hoek@FreeBSD.org
 

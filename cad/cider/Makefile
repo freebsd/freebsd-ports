@@ -1,15 +1,15 @@
 # New ports collection makefile for:	cider
-# Version required:	1b1
 # Date created:		1999-12-12
 # Whom:			AMAKAWA Shuhei <amakawa@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cider1b1
-PKGNAME=	cider-1b1
+PORTNAME=	cider
+PORTVERSION=	1.b1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ic.eecs.berkeley.edu/pub/Cider/new/
+DISTNAME=	cider1b1
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	amakawa@jp.FreeBSD.org

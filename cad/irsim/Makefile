@@ -1,15 +1,15 @@
 # New ports collection makefile for:    irsim
-# Version required:     9.2
 # Date created:         18 Dec 1994
 # Whom:                 swallace
 #
 # $FreeBSD$
 #
 
-DISTNAME=       irsim-9.4.1
+PORTNAME=	irsim
+PORTVERSION=	9.4.1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/WRL/projects/magic/6.5/
-EXTRACT_SUFX=   .tar.Z
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	swallace@FreeBSD.org
 

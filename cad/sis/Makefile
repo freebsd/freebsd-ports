@@ -1,15 +1,15 @@
 # New ports collection makefile for:    sis
-# Version required:     1.2 (pl1)
 # Date created:         10 October 1997
 # Whom:                 volf@oasis.IAEhv.nl
 #
 # $FreeBSD$
 #
 
-DISTNAME=		sis-1.2
-PKGNAME=		sis-1.2.1
+PORTNAME=		sis
+PORTVERSION=		1.2.1
 CATEGORIES=		cad
 MASTER_SITES=		ftp://ic.eecs.berkeley.edu/pub/Sis/
+DISTNAME=		${PORTNAME}-1.2
 EXTRACT_SUFX=   	.tar.Z
 
 PATCH_SITES=		ftp://ic.eecs.berkeley.edu/pub/Sis/

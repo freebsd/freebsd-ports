@@ -1,16 +1,16 @@
 # ex:ts=8
 # Ports collection makefile for:  MaRS
-# Version required: 0.0
 # Date created:			  Mon Nov 18, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	MaRS-2.1
-PKGNAME=	mars-2.1
+PORTNAME=	mars
+PORTVERSION=	2.1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/sdag/MaRS/
+DISTNAME=	MaRS-${PORTVERSION}
 .if !defined(NOPORTDOCS)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} MaRS-2-doc${EXTRACT_SUFX}
 .endif

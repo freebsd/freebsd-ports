@@ -1,16 +1,16 @@
 # Ports collection makefile for:    conserver
-# Version required:     5.21-Beta
 # Date created:         22 November 1997
 # Whom:                 Peter Wemm <peter@netplex.com.au>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	conserver-5.21-Beta
-PKGNAME=	conserver-5.21
+PORTNAME=	conserver
+PORTVERSION=	5.21b
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.uu.net/vendor/bitsko/config-mgmt/ \
 		ftp://unix.hensa.ac.uk/mirrors/uunet/vendor/bitsko/config-mgmt/
+DISTNAME=	conserver-5.21-Beta
 EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	peter@FreeBSD.org

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	uudeview
-# Version Required:     0.5.9
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       uudeview-0.5.13
+PORTNAME=	uudeview
+PORTVERSION=	0.5.13
 CATEGORIES=	converters
 MASTER_SITES=	http://www.informatik.uni-frankfurt.de/~fp/uudeview/Apps/frank/ \
 		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/
