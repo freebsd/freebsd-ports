@@ -7,14 +7,16 @@
 #
 
 PORTNAME=	t1lib
-PORTVERSION=	1.2
+PORTVERSION=	1.3.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/graphics
 
 MAINTAINER=	ijliao@FreeBSD.org
 
+USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
@@ -23,16 +25,11 @@ CONFIGURE_ARGS+=	--with-x
 CONFIGURE_ARGS+=	--without-x
 .endif
 
-USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/T1Lib-${PORTVERSION}
-
 # DOCS depends on LaTeX and LaTeX-babel module
 #.if defined(NOPORTDOCS)
 ALL_TARGET=	without_doc
 #.else
 #BUILD_DEPEND+=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/latex
 #.endif
-
-INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
