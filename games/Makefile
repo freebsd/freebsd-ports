@@ -115,6 +115,7 @@
     SUBDIR += omega
     SUBDIR += uox3
     SUBDIR += wmeyes
+    SUBDIR += wmminichess
     SUBDIR += wmtictactoe
     SUBDIR += wmtimebomb
     SUBDIR += xabacus
