@@ -1,27 +1,29 @@
 # New ports collection makefile for:   cheap-call
-# Version required:     0.7e-1.6.99
+# Version required:     0.7e-1.9.99
 # Date created:         9 Jun 1999
 # Whom:                 Peter Cornelius <pcc@gmx.net>
 #
 # $FreeBSD$
+#
 
 DISTNAME=	cheap-call-${LONGVER}.tcl
 PKGNAME=	cheapcall-0.7e
 CATEGORIES=	german
-MASTER_SITES=	http://www03.billiger-telefonieren.de/download/
+MASTER_SITES=	http://212.227.69.105/download/
 EXTRACT_SUFX=	.bz2
 
 MAINTAINER=	pcc@gmx.net
 
 RUN_DEPENDS=	wishx:${PORTSDIR}/lang/tclX80
 
+LONGVER=	0.7e-1.9.99
+
 EXTRACT_AFTER_ARGS= | ${CAT} - > ${WRKDIR}/cheap-call-${LONGVER}.tcl
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 STRIP=
 USE_BZIP2=	yes
-
-LONGVER=	0.7e-1.6.99
+PLIST_SUB=	LONGVER="${LONGVER}"
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/cheap-call-${LONGVER}.tcl ${PREFIX}/bin
