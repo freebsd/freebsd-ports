@@ -7,6 +7,7 @@
 
 PORTNAME=	autotrace
 PORTVERSION=	0.30
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,11 +32,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ming"
 USE_XLIB=	yes
+USE_REINPLACE=	yes
 
 MAN1=		autotrace.1
 
 pre-patch:
-	@${PERL} -pi.orig -e \
+	@${REINPLACE_CMD} -e \
 		's|\$$\(libdir\)/pkgconfig|\$$\(prefix\)/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
 
