@@ -1,0 +1,8 @@
+--- des/Makefile.orig	Wed Jan  5 20:20:30 2000
++++ des/Makefile	Wed Jan  5 20:20:44 2000
+@@ -1,4 +1,4 @@
+-CFLAGS=-O
++CFLAGS=$(OPTFLAGS)
+ 
+ all:	des.a
+ 

@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Sep 18 10:29:44 1999
-+++ Makefile	Fri Dec 31 15:40:34 1999
+--- Makefile.orig	Sat Sep 18 18:29:44 1999
++++ Makefile	Wed Jan  5 20:23:52 2000
 @@ -3,7 +3,7 @@
  
  # Debugging options
@@ -28,11 +28,50 @@
  #    CCFLAGS line.
 -#CCFLAGS = -DM_LITTLE_ENDIAN
 -#LFLAGS = -lcurses -ltermcap -lcompat -lm
-+CCFLAGS = -O2 -DM_LITTLE_ENDIAN -DHALF_DUPLEX
++CCFLAGS = -DM_LITTLE_ENDIAN -DHALF_DUPLEX
 +LFLAGS = -lcurses -ltermcap -lcompat -lm
  
  #			   Hewlett-Packard
  #		      (courtesy of Marc Kilian)
+@@ -269,7 +269,7 @@
+ 
+ #   Compiler flags
+ 
+-CFLAGS = $(DEBUG) -Iadpcm -Ilpc -Igsm/inc -Imd5 -Iidea -Ilibdes -Iblowfish $(CARGS) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
++CFLAGS = $(OPTFLAGS) $(DEBUG) -Iadpcm -Ilpc -I$(LOCALBASE)/include -Iidea -Ilibdes -Iblowfish $(CARGS) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
+ 
+ PROGRAMS = sfspeaker sfmike sflaunch sflwld sflwl sfecho sfreflect sfvod
+ 
+@@ -278,12 +278,12 @@
+ SPKROBJS = speaker.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o ulaw.o usleep.o vatpkt.o vox.o audio_hp.o audio_sgi.o common.o
+ 
+ sfspeaker: $(SPKROBJS) adpcmlib.o libblowfish.o lpclib.o lpc10lib.o gsmlib.o deslib.o md5lib.o idealib.o libdes.o xdsub.o 
+-	$(CC) $(SPKROBJS) adpcm/adpcm-u.o blowfish/libblowfish.a des/des.a md5/md5.o idea/idea.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o xdsub.o libdes/libdes.a $(LFLAGS) -o sfspeaker
++	$(CC) $(SPKROBJS) adpcm/adpcm-u.o blowfish/libblowfish.a des/des.a -lmd idea/idea.a lpc10/liblpc10.a -L/usr/local/lib -lgsm lpc/lpc.o xdsub.o libdes/libdes.a $(LFLAGS) -o sfspeaker
+ 
+ MIKEOBJS = mike.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o ulaw.o usleep.o vatpkt.o xdsub.o audio_hp.o audio_sgi.o
+ 
+ sfmike: $(MIKEOBJS) adpcmlib.o libblowfish.o lpclib.o lpc10lib.o gsmlib.o deslib.o md5lib.o idealib.o libdes.o
+-	$(CC) $(MIKEOBJS) adpcm/adpcm-u.o des/des.a md5/md5.o idea/idea.a -lm blowfish/libblowfish.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o libdes/libdes.a $(LFLAGS) -o sfmike
++	$(CC) $(MIKEOBJS) adpcm/adpcm-u.o des/des.a -lmd idea/idea.a -lm blowfish/libblowfish.a lpc10/liblpc10.a -L/usr/local/lib -lgsm lpc/lpc.o libdes/libdes.a $(LFLAGS) -o sfmike
+ 
+ LAUNCHOBJS = launch.o soundbyte.o usleep.o g711.o
+ 
+@@ -303,12 +303,12 @@
+ ECHOOBJS = echo.o codecs.o g711.o rtpacket.o ulaw.o xdsub.o
+ 
+ sfecho: $(ECHOOBJS) md5lib.o
+-	$(CC) $(ECHOOBJS) md5/md5.o adpcm/adpcm-u.o lpc/lpc.o $(LFLAGS) -o sfecho
++	$(CC) $(ECHOOBJS) -lmd adpcm/adpcm-u.o lpc/lpc.o $(LFLAGS) -o sfecho
+ 
+ REFLECTOBJS = reflect.o codecs.o html.o g711.o rtpacket.o ulaw.o xdsub.o
+ 
+ sfreflect: $(REFLECTOBJS) md5lib.o
+-	$(CC) $(REFLECTOBJS) md5/md5.o adpcm/adpcm-u.o lpc/lpc.o $(LFLAGS) -o sfreflect
++	$(CC) $(REFLECTOBJS) -lmd adpcm/adpcm-u.o lpc/lpc.o $(LFLAGS) -o sfreflect
+ 
+ #	Configure the voice on demand server for the platform's
+ #	location of Perl and network constant definitions.
 @@ -337,7 +337,7 @@
  #	in make not necessarily available on all platforms.
  
@@ -42,17 +81,31 @@
  	echo "ADPCM" >adpcmlib.o
  
  deslib.o:
+@@ -349,11 +349,11 @@
+ 	echo "BLOWFISH" >libblowfish.o
+ 
+ libdes.o:
+-	( echo "Building LIBDES library."; cd libdes ; make -f Makefile.sf CC="$(CC) $(CCFLAGS) $(DEBUG)" )
++	( echo "Building LIBDES library."; cd libdes ; make -f Makefile.sf CC="$(CC) $(OPTFLAGS) $(CCFLAGS) $(DEBUG)" )
+ 	echo "LIBDES" >libdes.o
+ 
+ lpclib.o:
+-	( echo "Building LPC library."; cd lpc ; make CC="$(CC) $(CCFLAGS) $(DEBUG)" )
++	( echo "Building LPC library."; cd lpc ; make CC="$(CC) $(OPTFLAGS) $(CCFLAGS) $(DEBUG)" )
+ 	echo "LPC" >lpclib.o
+ 
+ lpc10lib.o:
 @@ -361,15 +361,15 @@
  	echo "LPC" >lpc10lib.o
  
  gsmlib.o:
 -	( echo "Building GSM library."; cd gsm ; make CC="$(CC)" )
-+	( echo "Building GSM library."; cd gsm ; make CC="$(CC) $(CCFLAGS)" )
++#	( echo "Building GSM library."; cd gsm ; make CC="$(CC) $(CCFLAGS)" )
  	echo "GSM" >gsmlib.o
  
  md5lib.o:
 -	( echo "Building MD5 library."; cd md5 ; make CC="$(CC)" )
-+	( echo "Building MD5 library."; cd md5 ; make CC="$(CC) $(CCFLAGS)" )
++#	( echo "Building MD5 library."; cd md5 ; make CC="$(CC) $(CCFLAGS)" )
  	echo "MD5" >md5lib.o
  
  idealib.o:

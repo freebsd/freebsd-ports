@@ -1,7 +1,7 @@
 # New ports collection makefile for:    speak_freely
-# Original WWW site: http://www.fourmilab.ch/speakfree/unix/index.html
 # Version required:     7.1
 # Date created:         18 Apr 1996
+# Whom:                 Mister X (to make portlint happy ;)
 #
 # $FreeBSD$
 #
@@ -14,15 +14,17 @@ MAINTAINER=     ports@FreeBSD.org
 
 LIB_DEPENDS=    gsm.1:${PORTSDIR}/audio/gsm
 
-UTILS=   sfspeaker sfmike sflwl
-DEMNS=   sfecho sflwld
+UTILS=   sfspeaker sfmike sflwl sflaunch
+DEMNS=   sfecho sflwld sfreflect
 DDEMNS=  sfvod
 SFLIB=   ${PREFIX}/lib/speak_freely
 MAN1=	 ${UTILS:S/$/.1/} ${DEMNS:S/$/.1/} ${DDEMNS:S/$/.1/}
 
+MAKE_ENV="OPTFLAGS=${CFLAGS}"
+
 do-install:
 	if [ ! -d ${SFLIB} ]; then \
-		install -d -o ${BINOWN} -g ${BINGRP} -m 755 ${SFLIB}; \
+		${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755 ${SFLIB}; \
 	fi
 	cd ${WRKSRC}; \
 	$(INSTALL_DATA) busy.au ring.au ${SFLIB}

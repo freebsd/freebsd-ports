@@ -1,0 +1,11 @@
+--- blowfish/Makefile.orig	Wed Jan  5 20:12:14 2000
++++ blowfish/Makefile	Wed Jan  5 20:15:02 2000
+@@ -18,7 +18,7 @@
+ 
+ MAKE=make -f Makefile
+ CC=cc
+-CFLAG= -O
++CFLAG= $(OPTFLAGS)
+ 
+ #CC=gcc
+ #CFLAG= -O4 -funroll-loops -fomit-frame-pointer
