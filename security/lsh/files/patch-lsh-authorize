@@ -1,5 +1,5 @@
---- src/lsh-authorize.orig	Tue Jul 11 13:56:07 2000
-+++ src/lsh-authorize	Tue Jul 11 14:00:58 2000
+--- src/lsh-authorize.orig	Tue Mar 26 16:40:49 2002
++++ src/lsh-authorize	Wed Dec 18 05:01:48 2002
 @@ -1,4 +1,4 @@
 -#! /bin/sh
 +#!/bin/sh
@@ -15,27 +15,22 @@
      if mkdir $1 2>/dev/null; then
  	echo Created $1
  	chmod $2 $1 || exit 1
-@@ -37,26 +37,27 @@
- }
+@@ -40,23 +40,25 @@
+ create_dir $HOME/.lsh 0700
+ create_dir $HOME/.lsh/authorized_keys_sha1 0700
  
- # Create directories
--create_dir ~/.lsh 0700
--create_dir ~/.lsh/authorized_keys_sha1 0700
-+create-dir ~/.lsh 0700
-+create-dir ~/.lsh/authorized_keys_sha1 0700
- 
--if type sexp-conv ; then
--    SEXP_CONV=sexp_conv
+-if type sexp-conv >/dev/null 2>&1 ; then
+-    SEXP_CONV=sexp-conv
 -else
--    SEXP_CONV=./sexp_conv
+-    SEXP_CONV=./sexp-conv
 -fi
 +PATH=$PATH:`dirname $0`
  
--if ! type $SEXP_CONV ; then
--    echo "Can't find the sexp_conv program"
+-if type $SEXP_CONV >/dev/null 2>&1 ; then : ; else
+-    echo "Can't find the sexp-conv program"
 -    exit 1
 -fi
-+SEXP_CONV="sexp_conv"
++SEXP_CONV="sexp-conv"
  
  while [ $# != 0 ]; do
 -    hash=`$SEXP_CONV < $1 --once --hash sha1 --raw-hash`
@@ -43,18 +38,19 @@
 -	echo $0: File $1 not found.
 -    else
 +    if [ -f $1 ]; then
-+      hash=`$SEXP_CONV < $1 --once --hash sha1 --raw-hash`
-+      if [ $? = 127 ]; then
-+	echo "Can't find the sexp_conv program"
-+       exit 1
-+      fi
-+      if [ -z "$hash" ] ; then
-+	echo $0: File $1 not readable
-+      else
-         $SEXP_CONV < $1 -f canonical --once > ~/.lsh/authorized_keys_sha1/$hash
-+      fi
++       hash=`$SEXP_CONV < $1 --once --hash sha1 --raw-hash`
++       if [ $? = 127 ]; then
++ 	echo "Can't find the sexp_conv program"
++        exit 1
++       fi
++       if [ -z "$hash" ] ; then
++ 	echo $0: File $1 not readable
++       else
+         $SEXP_CONV < $1 -f canonical --once > $HOME/.lsh/authorized_keys_sha1/$hash
++       fi
 +    else
-+      echo $0: File $1 not found.
++       echo $0: File $1 not found.
      fi
      shift
  done
++
