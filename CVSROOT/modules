@@ -5415,6 +5415,7 @@ mod_php3	ports/www/mod_php3
 mod_php4	ports/www/mod_php4
 mod_php5	ports/www/mod_php5
 mod_proxy_add_forward	ports/www/mod_proxy_add_forward
+mod_proxy_html	ports/www/mod_proxy_html
 mod_put		ports/www/mod_put
 mod_python	ports/www/mod_python
 mod_python3	ports/www/mod_python3
