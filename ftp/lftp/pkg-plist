@@ -12,8 +12,8 @@ etc/lftp.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/FEATURES
-share/lftp/import-ncftp
-share/lftp/import-netscape
+%%DATADIR%%/import-ncftp
+%%DATADIR%%/import-netscape
 %%NLS%%share/locale/de/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/es/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/lftp.mo
@@ -26,4 +26,4 @@ share/lftp/import-netscape
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lftp.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/lftp
+@dirrm %%DATADIR%%
