@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	netperf
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/
-DISTNAME=	netperf-2.2pl3
+DISTNAME=	netperf-2.2pl4
 
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	Rick Jones' <raj@cup.hp.com> network performance benchmarking package
