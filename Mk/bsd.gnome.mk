@@ -486,7 +486,8 @@ _USE_GNOME+=	${${component}_USE_GNOME_IMPL} ${component}
 # Then traverse through all components, check which of them
 # exist in ${_USE_GNOME} and set variables accordingly
 . for component in ${_USE_GNOME_ALL}
-.  if ${_USE_GNOME:M${component}}==${component}
+_COMP_TEST=	${_USE_GNOME:M${component}}
+.  if ${_COMP_TEST:S/${component}//}!=${_COMP_TEST:S/  / /g}
 BUILD_DEPENDS+=	${${component}_BUILD_DEPENDS}
 LIB_DEPENDS+=	${${component}_LIB_DEPENDS}
 RUN_DEPENDS+=	${${component}_RUN_DEPENDS}
