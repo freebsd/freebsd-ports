@@ -3925,6 +3925,7 @@ magictun	ports/net/magictun
 mahjong		ports/games/mahjong
 mahogany	ports/mail/mahogany
 mail2procmailrc	ports/mail/mail2procmailrc
+mail2sms	ports/mail/mail2sms
 mailagent	ports/mail/mailagent
 mailcrypt	ports/mail/mailcrypt
 maildirsync	ports/mail/maildirsync
