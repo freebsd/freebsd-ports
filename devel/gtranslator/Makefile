@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME application for creating GNU gettext translation files
 
+LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gnometarget gnomevfs2 libgnomeui
