@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${TARGET}
 USE_GMAKE=	yes
 TARGET=	i386-go32
+ONLY_FOR_ARCHS=	i386
 
 MAN1=	i386-go32-ar.1 i386-go32-nm.1 i386-go32-objdump.1\
 	i386-go32-ranlib.1 i386-go32-size.1 i386-go32-strings.1\
