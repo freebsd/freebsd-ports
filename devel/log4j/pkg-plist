@@ -273,6 +273,7 @@ share/doc/jakarta-log4j/api/org/apache/log4j/varia/ReloadingPropertyConfigurator
 share/doc/jakarta-log4j/api/org/apache/log4j/varia/Roller.html
 share/doc/jakarta-log4j/api/org/apache/log4j/varia/StringMatchFilter.html
 share/doc/jakarta-log4j/api/org/apache/log4j/xml/class-use/DOMConfigurator.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/class-use/Log4jEntityResolver.html
 share/doc/jakarta-log4j/api/org/apache/log4j/xml/class-use/SAXErrorHandler.html
 share/doc/jakarta-log4j/api/org/apache/log4j/xml/class-use/XMLLayout.html
 share/doc/jakarta-log4j/api/org/apache/log4j/xml/examples/class-use/ReportParserError.html
@@ -284,6 +285,7 @@ share/doc/jakarta-log4j/api/org/apache/log4j/xml/examples/package-use.html
 share/doc/jakarta-log4j/api/org/apache/log4j/xml/examples/ReportParserError.html
 share/doc/jakarta-log4j/api/org/apache/log4j/xml/examples/XMLSample.html
 share/doc/jakarta-log4j/api/org/apache/log4j/xml/DOMConfigurator.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/Log4jEntityResolver.html
 share/doc/jakarta-log4j/api/org/apache/log4j/xml/package-frame.html
 share/doc/jakarta-log4j/api/org/apache/log4j/xml/package-summary.html
 share/doc/jakarta-log4j/api/org/apache/log4j/xml/package-tree.html
@@ -427,7 +429,7 @@ share/examples/jakarta-log4j/sort3.properties
 share/examples/jakarta-log4j/sort4.properties
 share/examples/jakarta-log4j/SortAlgo.java
 share/examples/jakarta-log4j/Trivial.java
-share/java/classes/log4j-1.2.7.jar
+share/java/classes/log4j.jar
 @dirrm share/doc/jakarta-log4j/api/org/apache/log4j/chainsaw/class-use
 @dirrm share/doc/jakarta-log4j/api/org/apache/log4j/chainsaw/doc-files
 @dirrm share/doc/jakarta-log4j/api/org/apache/log4j/chainsaw
