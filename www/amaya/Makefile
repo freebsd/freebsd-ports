@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tgz
 DIST_SUBDIR=	amaya
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adam-ports@blacktabby.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
