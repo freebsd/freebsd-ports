@@ -73,6 +73,7 @@
     SUBDIR += gnome-cups-manager
     SUBDIR += gnomephotoprinter
     SUBDIR += gnomeprint
+    SUBDIR += gribouy
     SUBDIR += gsfonts
     SUBDIR += gtklp
     SUBDIR += guitartex
