@@ -269,6 +269,7 @@
     SUBDIR += rbl-milter
     SUBDIR += rblcheck
     SUBDIR += regm
+    SUBDIR += relaydb
     SUBDIR += rftp
     SUBDIR += ricochet
     SUBDIR += ripmime
