@@ -2,7 +2,6 @@ lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Client.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Component.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Data.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Data/Auth.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Debug.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Dialback.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Dialback/Result.pm
@@ -12,57 +11,16 @@ lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/JID.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Key.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Log.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Message.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Namespaces.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Presence.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Protocol.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/Agent.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/Agents.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/Auth.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/AutoUpdate.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/AutoUpdate/Release.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/Filter.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/Filter/Rule.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/Fneg.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/Oob.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/Register.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/Roster.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/Roster/Item.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/Search.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/Search/Item.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/Time.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/Version.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Server.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/AutoUpdate.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/Delay.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/Encrypted.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/Form.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/Form/Field.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/Form/Field/Option.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/GC.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/Ident.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/Oob.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/ReplyPres.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/Roster.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/Roster/Item.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/SXPM.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/SXPM/Map.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/Signed.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/XDB.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Jabber/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Jabber
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/SXPM
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/Roster
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/Form/Field
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/Form
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/Search
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/Roster
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/Filter
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query/AutoUpdate
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Dialback
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Data
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
