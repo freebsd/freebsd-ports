@@ -1,15 +1,15 @@
---- abcde.conf.orig	Sun May 11 12:58:34 2003
-+++ abcde.conf	Sun May 11 13:22:44 2003
-@@ -87,7 +87,7 @@
- #MP3ENCOPTS=
+--- abcde.conf.orig	Wed Aug 20 02:43:58 2003
++++ abcde.conf	Wed Aug 20 02:57:42 2003
+@@ -92,7 +92,7 @@
+ 
  # Ogg:
  #VORBIZEOPTS=
 -#OGGENCOPTS=
 +OGGENCOPTS="-q 5"
+ 
  # FLAC:
  #FLACOPTS=
- 
-@@ -145,10 +145,10 @@
+@@ -154,10 +154,10 @@
  # Since multiple-output was integrated we always append the file type
  # to the files. Remove it from your user defined string if you are getting
  # files like ".ogg.ogg".
