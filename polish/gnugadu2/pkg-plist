@@ -223,7 +223,6 @@ share/gg2/pixmaps/icons/rozgwiazda/gadu-gadu-offline-descr.png
 share/gg2/pixmaps/icons/rozgwiazda/gadu-gadu-offline.png
 share/gg2/pixmaps/icons/rozgwiazda/gadu-gadu-online-descr.png
 share/gg2/pixmaps/icons/rozgwiazda/gadu-gadu-online.png
-share/gg2/pixmaps/icons/rozgwiazda/gadu-gadu.png
 share/gg2/pixmaps/icons/rozgwiazda/icon.png
 share/gg2/pixmaps/icons/rozgwiazda/jabber.png
 share/gg2/pixmaps/icons/rozgwiazda/license.txt
@@ -256,6 +255,7 @@ share/gg2/pixmaps/jabber.png
 share/gg2/pixmaps/new-msg.png
 share/gg2/pixmaps/offline.png
 share/gg2/pixmaps/online.png
+share/gg2/pixmaps/send-im.png
 share/gg2/pixmaps/show-hide-inactive.png
 share/gg2/pixmaps/sms.png
 share/gg2/pixmaps/sms_i.png
@@ -284,7 +284,9 @@ share/gg2/themes/vgreen2.theme
 share/gg2/themes/vred2.theme
 share/gg2/themes/white2.theme
 %%GNOME:%%share/gnome/apps/Internet/gg2.desktop
+%%GNOME:%%share/gnome/pixmaps/gg2.png
 share/locale/pl/LC_MESSAGES/gg2.mo
+share/pixmaps/gg2.png
 @dirrm share/gg2/themes
 @dirrm share/gg2/sounds
 @dirrm share/gg2/pixmaps/icons/tlen-3d

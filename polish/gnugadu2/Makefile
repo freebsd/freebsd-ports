@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gnugadu2
-PORTVERSION=	2.0.p6
-PORTREVISION=	2
+PORTVERSION=	2.0.p7
 CATEGORIES=	polish net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggadu
-DISTNAME=	gg2-${PORTVERSION:S/.p6/pre6/}
+DISTNAME=	gg2-${PORTVERSION:S/.p7/pre7/}
 
 MAINTAINER=	smyru@heron.pl
 COMMENT=	GTK2 based Gadu-Gadu client for X11
@@ -143,6 +142,7 @@ post-patch:
 post-install:
 .if (${HAVE_GNOME:Mgnomehier}!="")
 	${INSTALL_DATA} ${WRKSRC}/gg2.desktop ${X11BASE}/share/gnome/apps/Internet
+	${LN} -sf ${PREFIX}/share/pixmaps/gg2.png ${X11BASE}/share/gnome/pixmaps
 .endif
 .if exists(${LOCALBASE}/lib/libkdecore.so)
 	${INSTALL_DATA} ${WRKSRC}/gg2.desktop ${LOCALBASE}/share/applnk/Internet
