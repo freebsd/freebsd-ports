@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	http-access
-PORTVERSION=	2.F
+PORTVERSION=	2.G
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/http-access/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
