@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Jan  3 19:03:10 2003
++++ Makefile.in	Fri Jan  3 19:04:08 2003
+@@ -71,7 +71,7 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+-mandir = @MANDIR@
++mandir = @prefix@/man
+ 
+ AUTOMAKE_OPTIONS = foreign dist-zip
+ 
