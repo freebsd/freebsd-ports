@@ -11,43 +11,11 @@ include/gdk_imlib_types.h
 lib/libImlib.a
 lib/libImlib.la
 lib/libImlib.so
-lib/libImlib.so.2
+lib/libImlib.so.2.1
 lib/libgdk_imlib.a
 lib/libgdk_imlib.la
 lib/libgdk_imlib.so
-lib/libgdk_imlib.so.2
-lib/libimlib-bmp.a
-lib/libimlib-bmp.la
-lib/libimlib-bmp.so
-lib/libimlib-bmp.so.0
-lib/libimlib-gif.a
-lib/libimlib-gif.la
-lib/libimlib-gif.so
-lib/libimlib-gif.so.0
-lib/libimlib-jpeg.a
-lib/libimlib-jpeg.la
-lib/libimlib-jpeg.so
-lib/libimlib-jpeg.so.0
-lib/libimlib-png.a
-lib/libimlib-png.la
-lib/libimlib-png.so
-lib/libimlib-png.so.0
-lib/libimlib-ppm.a
-lib/libimlib-ppm.la
-lib/libimlib-ppm.so
-lib/libimlib-ppm.so.0
-lib/libimlib-ps.a
-lib/libimlib-ps.la
-lib/libimlib-ps.so
-lib/libimlib-ps.so.0
-lib/libimlib-tiff.a
-lib/libimlib-tiff.la
-lib/libimlib-tiff.so
-lib/libimlib-tiff.so.0
-lib/libimlib-xpm.a
-lib/libimlib-xpm.la
-lib/libimlib-xpm.so
-lib/libimlib-xpm.so.0
+lib/libgdk_imlib.so.2.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @dirrm etc/imlib
