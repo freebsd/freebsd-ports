@@ -37,6 +37,7 @@
     SUBDIR += wm2
     SUBDIR += wmakerconf
     SUBDIR += wmg
+    SUBDIR += wmthemeinstall
     SUBDIR += wmx
     SUBDIR += xfce
 
