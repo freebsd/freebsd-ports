@@ -1,0 +1,5 @@
+bin/netqc
+etc/netqc.conf.sample
+%%PORTDOCS%%share/doc/netqc/COPYING
+%%PORTDOCS%%share/doc/netqc/README
+%%PORTDOCS%%@dirrm share/doc/netqc

@@ -1,0 +1,5 @@
+Network Monitoring System based on Net-snmp package.
+Netqc monitores preconfigured entities using SNMP protocol(v1,v2c,v3).
+It watches for degined ``events'' (onSame, onChange, onNonZero..) and 
+react with different ``actions'' like logging (mysql, netqc-log file) &
+notification.
