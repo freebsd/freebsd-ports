@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# usage: $0 BRANCH [-noclean] [-norestr] [-plistcheck] [-nodummy] PKGNAME.tgz DIRNAME [DEPENDENCY.tgz ...]
+# usage: $0 ARCH BRANCH [-noclean] [-norestr] [-plistcheck] [-nodummy] PKGNAME.tgz DIRNAME [DEPENDENCY.tgz ...]
 
 cleanup()
 {
@@ -43,7 +43,10 @@ cleanup()
 # configurable variables
 pb=/var/portbuild
 
-. ${pb}/portbuild.conf
+arch=$1
+shift
+
+. ${pb}/${arch}/portbuild.conf
 . ${pb}/scripts/buildenv
 
 buildroot=${scratchdir}
@@ -78,7 +81,7 @@ fi
 
 args="$*"
 
-buildenv ${pb} ${branch}
+buildenv ${pb} ${arch} ${branch}
 
 pkgname=$(basename $1 ${PKGSUFFIX})
 dirname=$2
@@ -96,7 +99,7 @@ unset MAKEFLAGS
 unset PORTSDIR
 
 # wait 1 hour before killing build with no output
-export TIMEOUT=3600
+export TIMEOUT=7200
 
 # to prevent runaway processes -- 256 meg file size limit, one hour CPU limit
 ulimit -f 524288
@@ -114,9 +117,9 @@ export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/X11R6/bin:.
 echo "building $pkgname"
 
 chrootdir=${buildroot}/${branch}/chroot
-bakdir=${pb}/${branch}/tarballs
+bakdir=${pb}/${arch}/${branch}/tarballs
 bindist=${buildroot}/${branch}/tarballs/bindist.tar
-packages=${pb}/${branch}/packages
+packages=${pb}/${arch}/${branch}/packages
 
 found=0
 for dir in ${chrootdir}/*; do
@@ -165,13 +168,13 @@ echo "with arguments: ${args}" | tee -a ${chroot}/tmp/${pkgname}.log
 # intentionally set up ${PORTSDIR} with symlink to catch broken ports
 mkdir -p ${chroot}/a/ports
 rm -rf ${chroot}/usr/ports
-mount -r ${master}:${pb}/${branch}/ports ${chroot}/a/ports
+mount -o nfsv3,intr -r ${master}:${pb}/${arch}/${branch}/ports ${chroot}/a/ports
 ln -sf ../a/ports ${chroot}/usr/ports
 
 mkdir -p ${chroot}/usr/src ${chroot}/usr/opt/doc
 
-mount -r ${master}:${pb}/${branch}/src ${chroot}/usr/src
-mount -r ${master}:${pb}/${branch}/doc ${chroot}/usr/opt/doc
+mount -o nfsv3,intr -r ${master}:${pb}/${arch}/${branch}/src ${chroot}/usr/src
+mount -o nfsv3,intr -r ${master}:${pb}/${arch}/${branch}/doc ${chroot}/usr/opt/doc
 
 mount -t devfs foo ${chroot}/dev
 
@@ -222,7 +225,8 @@ while [ $# -gt 0 ]; do
   shift
 done
 
-cp -p ${pb}/scripts/buildscript ${pb}/scripts/pnohang ${chroot}
+cp -p ${pb}/scripts/buildscript ${chroot}
+cp -p ${pb}/scripts/pnohang.${arch} ${chroot}/pnohang
 
 # phase 1, make checksum
 chroot ${chroot} /buildscript ${dirname} 1 2>&1 | tee -a ${chroot}/tmp/${pkgname}.log
@@ -234,10 +238,10 @@ fi
 
 if [ "${error}" = 0 ]; then
 # make checksum succeeded
-  ssh -a -x $master mkdir -p ${pb}/${branch}/distfiles/.pbtmp/${pkgname}
+  ssh -a -x ${user}@$master mkdir -p ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname}
   tar -C ${chroot}/tmp/distfiles -cf - . | \
-    ssh -a -x $master tar --unlink -C ${pb}/${branch}/distfiles/.pbtmp/${pkgname} -xvf -
-  ssh -a -x $master touch ${pb}/${branch}/distfiles/.pbtmp/${pkgname}/.done
+    ssh -a -x ${user}@$master tar --unlink -C ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname} -xvf -
+  ssh -a -x ${user}@$master touch ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname}/.done
 
 # phase 2, make package
   ln -sf ${pkgname}.log2 ${chroot}/tmp/make.log
@@ -246,21 +250,24 @@ if [ "${error}" = 0 ]; then
   cat ${chroot}/tmp/${pkgname}.log2 >> ${chroot}/tmp/${pkgname}.log
   rm ${chroot}/tmp/${pkgname}.log2
 ###  chroot ${chroot} /buildscript ${dirname} 2 2>&1 | tee -a ${chroot}/tmp/${pkgname}.log
-  scp ${chroot}/tmp/${pkgname}.log ${master}:${pb}/${branch}/logs/${pkgname}.log
+  scp ${chroot}/tmp/${pkgname}.log ${user}@${master}:${pb}/${arch}/${branch}/logs/${pkgname}.log
   error=$(cat ${chroot}/tmp/status)
 
   if [ "${error}" = 0 ]; then
     tar -C ${chroot}/tmp -cf - packages | \
-      ssh -a -x $master tar --unlink -C ${pb}/${branch} -xvf -
-    ssh -a -x $master [ -f ${pb}/${branch}/packages/All/${pkgname}${PKGSUFFIX} ] '&&' touch ${pb}/${branch}/packages/All/${pkgname}${PKGSUFFIX}
-    ssh $master rm -f ${pb}/${branch}/errors/${pkgname}.log
+      ssh -a -x ${user}@$master tar --unlink -C ${pb}/${arch}/${branch} -xvf -
+    ssh -a -x ${user}@$master [ -f ${pb}/${arch}/${branch}/packages/All/${pkgname}${PKGSUFFIX} ] '&&' touch ${pb}/${arch}/${branch}/packages/All/${pkgname}${PKGSUFFIX}
+    ssh ${user}@$master rm -f ${pb}/${arch}/${branch}/errors/${pkgname}.log
+    ssh ${user}@$master lockf ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/buildsuccess ${arch} ${branch} ${pkgname}
   else
-    scp ${chroot}/tmp/${pkgname}.log ${master}:${pb}/${branch}/errors/${pkgname}.log
+    scp ${chroot}/tmp/${pkgname}.log ${user}@${master}:${pb}/${arch}/${branch}/errors/${pkgname}.log
+    ssh ${user}@$master lockf ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/buildfailure ${arch} ${branch} ${pkgname}
   fi
 
 else
-  scp ${chroot}/tmp/${pkgname}.log ${master}:${pb}/${branch}/errors/${pkgname}.log
-  scp ${chroot}/tmp/${pkgname}.log ${master}:${pb}/${branch}/logs/${pkgname}.log
+  scp ${chroot}/tmp/${pkgname}.log ${user}@${master}:${pb}/${arch}/${branch}/errors/${pkgname}.log
+  scp ${chroot}/tmp/${pkgname}.log ${user}@${master}:${pb}/${arch}/${branch}/logs/${pkgname}.log
+  ssh ${user}@$master lockf ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/buildfailure ${arch} ${branch} ${pkgname}
 fi
 
 cleanup ${chroot} ${noclean} ${error} "${cleandirs}" ${pkgname}
