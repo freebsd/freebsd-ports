@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	apd
-PORTVERSION=	1.0.1
+PORTVERSION=	${APD_VER}
+PORTEPOCH=	1
 CATEGORIES=	devel pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,10 +18,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
-DEFAULT_PHP_VER=5
-BROKEN_WITH_PHP=4
-
-IGNORE=	"cannot build package if pear-* have been built with PHP4"
 
 CONFIGURE_ARGS=	--enable-apd
 
@@ -31,10 +28,19 @@ PORTDOCS=	README
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 
+.if ${PHP_VER} == 4
+APD_VER=	0.9.2
+MD5_FILE=	${MASTERDIR}/distinfo.php4
+.else
+APD_VER=	1.0.1
+MD5_FILE=	${MASTERDIR}/distinfo.php5
+.endif
+
 PLIST_SUB+=	EXTDIR=lib/php/${PHP_EXT_DIR}
 
+PHP_DEBUG=	${PHP_EXT_DIR:C/[0-9]*//}
 SUB_FILES=	pkg-message
-SUB_LIST=	PHP_EXT_DIR=${PHP_EXT_DIR} DUMP_DIR=${DUMP_DIR}
+SUB_LIST=	PHP_EXT_DIR=${PHP_EXT_DIR} DUMP_DIR=${DUMP_DIR} DEBUG=${PHP_DEBUG:S/-/_/}
 
 post-extract:
 	@${CHMOD} -R u+w ${WRKSRC}
