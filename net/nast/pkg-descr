@@ -1,0 +1,19 @@
+Nast is a packet sniffer and a LAN analyzer based on Libnet and Libpcap.
+As analyzer tool, it has many features like:
+
+              * Build LAN hosts list
+              * Follow a TCP-DATA stream
+              * Find LAN internet gateways
+              * Discorver promiscous nodes
+              * Reset an established connection
+              * Perform a single half-open portscanner
+              * Perform a multi half-open portscanner
+              * Find link type (hub or switch)
+              * Catch daemon banner of LAN nodes
+              * Control arp answers to discover possible arp-spoofings
+              * Byte couting with an optional filter
+              * Write reports logging
+
+It also provides a ncurses menu.
+
+WWW: http://nast.berlios.de
