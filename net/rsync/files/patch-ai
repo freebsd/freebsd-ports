@@ -1,0 +1,53 @@
+*** rsyncd.conf.5.orig	Thu Jun 18 19:30:22 1998
+--- rsyncd.conf.5	Sat Jun 27 15:42:17 1998
+***************
+*** 66,72 ****
+  config file\&.
+  .PP 
+  Note that you should not send the rsync server a HUP signal to force
+! it to reread the \f(CW/etc/rsyncd\&.conf\fP\&. The file is re-read on each client
+  connection\&. 
+  .PP 
+  .SH "GLOBAL OPTIONS" 
+--- 66,72 ----
+  config file\&.
+  .PP 
+  Note that you should not send the rsync server a HUP signal to force
+! it to reread the \f(CW!!PREFIX!!/etc/rsyncd\&.conf\fP\&. The file is re-read on each client
+  connection\&. 
+  .PP 
+  .SH "GLOBAL OPTIONS" 
+***************
+*** 132,138 ****
+  The "path" option specifies the directory in the servers
+  filesystem to make available in this module\&. The rsync server will
+  chroot to this path before starting the file transfer with the
+! client\&. You must specify this option for each module in \f(CW/etc/rsyncd\&.conf\fP\&.
+  .IP 
+  .IP "\fBread only\fP" 
+  The "read only" option determines whether clients
+--- 132,138 ----
+  The "path" option specifies the directory in the servers
+  filesystem to make available in this module\&. The rsync server will
+  chroot to this path before starting the file transfer with the
+! client\&. You must specify this option for each module in \f(CW!!PREFIX!!/etc/rsyncd\&.conf\fP\&.
+  .IP 
+  .IP "\fBread only\fP" 
+  The "read only" option determines whether clients
+***************
+*** 335,341 ****
+  .PP 
+  .SH "FILES" 
+  .PP 
+! /etc/rsyncd\&.conf
+  .PP 
+  .SH "SEE ALSO" 
+  .PP 
+--- 335,341 ----
+  .PP 
+  .SH "FILES" 
+  .PP 
+! !!PREFIX!!/etc/rsyncd\&.conf
+  .PP 
+  .SH "SEE ALSO" 
+  .PP 
