@@ -19,6 +19,10 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_OPENSSL=	YES
 
+MAN1=		scp.1 slogin.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh.1
+MAN8=		sshd.8
+MANCOMPRESSED=	yes
+ 
 .include <bsd.port.pre.mk>
 
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
