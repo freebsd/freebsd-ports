@@ -638,6 +638,7 @@ bjfilters630	ports/print/bjfilters630
 bjfilters6300	ports/print/bjfilters6300
 bjorb		ports/security/bjorb
 bk2site		ports/www/bk2site
+bk_edit		ports/www/bk_edit
 bkmrkconv	ports/www/bkmrkconv
 bkpupsd		ports/sysutils/bkpupsd
 bksh		ports/sysutils/bksh
