@@ -15,7 +15,6 @@ COMMENT=	VPN scanner and identifier
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	"--datadir=${DATADIR}"
-USE_GETOPT_LONG=yes
 
 post-install:
 .	if !defined(NOPORTDOCS)
