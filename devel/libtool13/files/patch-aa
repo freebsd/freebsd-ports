@@ -1,11 +1,28 @@
---- doc/libtool.texi.orig	Tue Jun 29 15:48:12 1999
-+++ doc/libtool.texi	Tue Aug 31 23:41:25 1999
-@@ -11,7 +11,7 @@
+--- doc/libtool13.texi.orig	Tue Nov  2 07:36:23 1999
++++ doc/libtool13.texi	Sat Dec 14 00:11:27 2002
+@@ -1,6 +1,6 @@
+ \input texinfo   @c -*-texinfo-*-
+ @c %**start of header
+-@setfilename libtool.info
++@setfilename libtool13.info
+ @settitle Libtool
+ @c For double-sided printing, uncomment:
+ @c @setchapternewpage odd
+@@ -11,14 +11,14 @@
  @set MAILLIST the libtool mailing list @email{libtool@@gnu.org}
  @set objdir .libs
  
 -@dircategory GNU programming tools
 +@dircategory Programming & development tools
  @direntry
- * Libtool: (libtool).           Generic shared library support script.
+-* Libtool: (libtool).           Generic shared library support script.
++* Libtool: (libtool13).         Generic shared library support script.
  @end direntry
+ 
+ @dircategory Individual utilities
+ @direntry
+-* libtoolize: (libtool)Invoking libtoolize.     Adding libtool support.
++* libtoolize: (libtool13)Invoking libtoolize.   Adding libtool support.
+ @end direntry
+ 
+ @ifinfo

@@ -29,6 +29,12 @@ USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/libshout
 
+# Idiot packagers
+pre-configure:
+.for file in config.guess config.sub ltmain.sh
+	${LN} -sf ${LIBTOOL_SHAREDIR}/${file} ${WRKSRC}
+.endfor
+
 post-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|'\
 					${WRKSRC}/examples/Makefile

@@ -13,10 +13,14 @@ MASTER_SITES=	ftp://gdal.velocet.ca/pub/outgoing/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C API for reading and writing ArcView Shapefiles
 
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
-
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	# none
 ALL_TARGET=	lib
 INSTALLS_SHLIB=	yes
+
+# no configure script, but we need the libtool environment
+do-configure:
+	@${CP} ${LIBTOOL} ${WRKSRC}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/.libs/libshp.so.1 ${PREFIX}/lib

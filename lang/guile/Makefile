@@ -7,7 +7,7 @@
 
 PORTNAME=	guile
 PORTVERSION=	1.6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	guile
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	guile
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 
-LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
+LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

@@ -3752,6 +3752,7 @@ libjtoolbar	ports/x11-toolkits/libjtoolbar
 libjtree	ports/x11-toolkits/libjtree
 libksba		ports/security/libksba
 liblrdf		ports/textproc/liblrdf
+libltdl		ports/devel/libltdl
 liblug		ports/graphics/liblug
 libmal		ports/palm/libmal
 libmatroska	ports/multimedia/libmatroska
@@ -3823,7 +3824,6 @@ libtai		ports/devel/libtai
 libtar		ports/devel/libtar
 libtasn1	ports/security/libtasn1
 libtecla	ports/devel/libtecla
-libtool		ports/devel/libtool
 libtool13	ports/devel/libtool13
 libtool14	ports/devel/libtool14
 libtre		ports/textproc/libtre

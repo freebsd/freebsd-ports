@@ -1,13 +1,11 @@
---- libltdl/Makefile.in.orig	Tue Dec  7 13:03:38 1999
-+++ libltdl/Makefile.in	Mon Jan 17 16:35:34 2000
-@@ -326,17 +326,16 @@
- distdir: $(DISTFILES)
- 	-rm -rf $(distdir)
+--- libltdl/Makefile.in.orig	Wed Oct 23 02:26:07 2002
++++ libltdl/Makefile.in	Mon Feb 17 02:06:58 2003
+@@ -342,3 +342,3 @@
  	mkdir $(distdir)
 -	-chmod 777 $(distdir)
 +	-chmod 555 $(distdir)
  	@for file in $(DISTFILES); do \
- 	  d=$(srcdir); \
+@@ -346,9 +346,8 @@
  	  if test -d $$d/$$file; then \
 -	    cp -pr $$d/$$file $(distdir)/$$file; \
 +	    echo no copy dir $$d/$$file; \
@@ -20,5 +18,20 @@
  	done
 +	-chmod a+x $(distdir)/configure
  info-am:
- info: info-am
- dvi-am:
+@@ -452,4 +451,4 @@
+ local-install-files: $(DISTFILES)
+-	-rm -rf $(DESTDIR)$(datadir)/libtool/libltdl
+-	$(mkinstalldirs) $(DESTDIR)$(datadir)/libtool/libltdl
++	-rm -rf $(DESTDIR)$(datadir)/libtool14/libltdl
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/libtool14/libltdl
+ 	@for file in $(DISTFILES); do \
+@@ -457,6 +456,6 @@
+ 	  if test -d $$d/$$file; then \
+-	    cp -r $$d/$$file $(DESTDIR)$(datadir)/libtool/libltdl/$$file; \
++	    cp -r $$d/$$file $(DESTDIR)$(datadir)/libtool14/libltdl/$$file; \
+ 	  else \
+-	    test -f $(DESTDIR)$(datadir)/libtool/libltdl/$$file \
+-	    || cp $$d/$$file $(DESTDIR)$(datadir)/libtool/libltdl/$$file || :; \
++	    test -f $(DESTDIR)$(datadir)/libtool14/libltdl/$$file \
++	    || cp $$d/$$file $(DESTDIR)$(datadir)/libtool14/libltdl/$$file || :; \
+ 	  fi; \

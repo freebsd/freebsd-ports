@@ -18,8 +18,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-rc1
 MAINTAINER=	mikeh@FreeBSD.org
 COMMENT=	An X Window System application for receiving electronic mail
 
-BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
-
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 
@@ -31,10 +29,6 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-
-AUTOCONF=	autoconf
-AUTOHEADER=	autoheader
-ACLOCAL=	aclocal
 
 # XXX: Disable patching for libtool until we can generate the files
 LIBTOOLFILES=
@@ -82,7 +76,7 @@ pre-everything::
 	@echo
 
 pre-configure:
-	@(cd ${WRKSRC} && ${SH} autogen.sh);	\
+	@(cd ${WRKSRC} && ${ENV} ${SCRIPTS_ENV} ${SH} autogen.sh);	\
 	${MAKE} LIBTOOLFILES=aclocal.m4 patch-libtool
 
 .include <bsd.port.post.mk>

@@ -1,11 +1,50 @@
---- doc/Makefile.in.orig	Fri Jul  2 09:24:54 1999
-+++ doc/Makefile.in	Tue Aug 31 23:41:57 1999
-@@ -70,7 +70,7 @@
- LIBTOOL = @LIBTOOL@
- LIBTOOL_FLAGS = @LIBTOOL_FLAGS@
+--- doc/Makefile.in.orig	Wed Oct 23 02:51:04 2002
++++ doc/Makefile.in	Mon Feb 17 02:01:16 2003
+@@ -72,3 +72,3 @@
  LN_S = @LN_S@
 -MAKEINFO = @MAKEINFO@
 +MAKEINFO = @MAKEINFO@ --no-split
  NM = @NM@
- OBJDUMP = @OBJDUMP@
- PACKAGE = @PACKAGE@
+@@ -85,4 +85,4 @@
+ AUTOMAKE_OPTIONS = gnits
+-info_TEXINFOS = libtool.texi
+-libtool_TEXINFOS = PLATFORMS fdl.texi
++info_TEXINFOS = libtool14.texi
++libtool14_TEXINFOS = PLATFORMS fdl.texi
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -90,6 +90,6 @@
+ TEXI2DVI = texi2dvi
+-INFO_DEPS = libtool.info
+-DVIS = libtool.dvi
+-TEXINFOS = libtool.texi
+-DIST_COMMON =  $(libtool_TEXINFOS) Makefile.am Makefile.in mdate-sh \
++INFO_DEPS = libtool14.info
++DVIS = libtool14.dvi
++TEXINFOS = libtool14.texi
++DIST_COMMON =  $(libtool14_TEXINFOS) Makefile.am Makefile.in mdate-sh \
+ stamp-vti texinfo.tex version.texi
+@@ -115,4 +115,4 @@
+ 
+-$(srcdir)/stamp-vti: libtool.texi $(top_srcdir)/configure.in
+-	@echo "@set UPDATED `$(SHELL) $(srcdir)/mdate-sh $(srcdir)/libtool.texi`" > vti.tmp
++$(srcdir)/stamp-vti: libtool14.texi $(top_srcdir)/configure.in
++	@echo "@set UPDATED `$(SHELL) $(srcdir)/mdate-sh $(srcdir)/libtool14.texi`" > vti.tmp
+ 	@echo "@set EDITION $(VERSION)" >> vti.tmp
+@@ -135,4 +135,4 @@
+ 
+-libtool.info: libtool.texi version.texi $(libtool_TEXINFOS)
+-libtool.dvi: libtool.texi version.texi $(libtool_TEXINFOS)
++libtool14.info: libtool14.texi version.texi $(libtool14_TEXINFOS)
++libtool14.dvi: libtool14.texi version.texi $(libtool14_TEXINFOS)
+ 
+@@ -235,6 +235,6 @@
+ mostlyclean-aminfo:
+-	-rm -f libtool.aux libtool.cp libtool.cps libtool.dvi libtool.fn \
+-	  libtool.fns libtool.ky libtool.kys libtool.ps libtool.log \
+-	  libtool.pg libtool.toc libtool.tp libtool.tps libtool.vr \
+-	  libtool.vrs libtool.op libtool.tr libtool.cv libtool.cn
++	-rm -f libtool14.aux libtool14.cp libtool14.cps libtool14.dvi libtool14.fn \
++	  libtool14.fns libtool14.ky libtool14.kys libtool14.ps libtool14.log \
++	  libtool14.pg libtool14.toc libtool14.tp libtool14.tps libtool14.vr \
++	  libtool14.vrs libtool14.op libtool14.tr libtool14.cv libtool14.cn
+ 

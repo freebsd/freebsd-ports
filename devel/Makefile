@@ -333,6 +333,7 @@
     SUBDIR += libhash
     SUBDIR += libhoard
     SUBDIR += libical
+    SUBDIR += libltdl
     SUBDIR += libmba
     SUBDIR += libmcve
     SUBDIR += libmtrie
@@ -356,7 +357,8 @@
     SUBDIR += libtai
     SUBDIR += libtar
     SUBDIR += libtecla
-    SUBDIR += libtool
+    SUBDIR += libtool13
+    SUBDIR += libtool14
     SUBDIR += libukcprog
     SUBDIR += libunicode
     SUBDIR += libusb

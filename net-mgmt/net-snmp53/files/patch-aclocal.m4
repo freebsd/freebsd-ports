@@ -12,8 +12,8 @@
 +LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
 +LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
 +DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
-+${CONFIG_SHELL-/bin/sh} %%LOCALBASE%%/share/libtool/ltconfig --no-reexec \
-+$libtool_flags --no-verify --disable-ltlibs --release-ignore %%LOCALBASE%%/share/libtool/ltmain.sh $lt_target \
++${CONFIG_SHELL-/bin/sh} %%LTCONFIG%% --no-reexec \
++$libtool_flags --no-verify --disable-ltlibs --release-ignore %%LTMAIN%% $lt_target \
 +|| AC_MSG_ERROR([libtool configure failed])
 +
 +# Reload cache, that may have been modified by ltconfig
@@ -21,7 +21,7 @@
 +
  # This can be used to rebuild libtool when needed
 -LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+LIBTOOL_DEPS="--disable-ltlibs --release-ignore %%LOCALBASE%%/share/libtool/ltmain.sh"
++LIBTOOL_DEPS="--disable-ltlibs --release-ignore %%LTMAIN%%"
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
@@ -42,7 +42,7 @@
  # which needs '.lib').
  libext=a
 -ltmain="$ac_aux_dir/ltmain.sh"
-+ltmain="--disable-ltlibs --release-ignore %%LOCALBASE%%/share/libtool/ltmain.sh"
++ltmain="--disable-ltlibs --release-ignore %%LTMAIN%%"
  ofile="$default_ofile"
  with_gnu_ld="$lt_cv_prog_gnu_ld"
  need_locks="$enable_libtool_lock"

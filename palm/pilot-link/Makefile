@@ -27,7 +27,6 @@ CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-perl5=${PERL5} --with-libiconv=${LOCALBASE}
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
-MAKE_ARGS+=	LIBTOOL=libtool
 
 .include "${.CURDIR}/manpages.mk"
 

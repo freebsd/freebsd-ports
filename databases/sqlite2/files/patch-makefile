@@ -13,7 +13,7 @@
   prefix = @prefix@
   exec_prefix = @exec_prefix@
   INSTALL = @INSTALL@
-! LIBTOOL = @prefix@/bin/libtool
+! LIBTOOL = %%LIBTOOL%%
   
   # Compiler options needed for programs that use the TCL library.
   #

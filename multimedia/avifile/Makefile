@@ -273,7 +273,7 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-configure:
-	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
+	@${LN} -sf ${LIBTOOL} ${WRKSRC}
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open-source COBOL compiler
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
-		ltdl.1:${PORTSDIR}/devel/libtool \
+		ltdl.4:${PORTSDIR}/devel/libltdl \
 		gmp.6:${PORTSDIR}/math/libgmp4
 
 GNU_CONFIGURE=	yes

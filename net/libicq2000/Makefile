@@ -34,7 +34,7 @@ post-patch:
 		${WRKSRC}/libicq2000-config.in
 
 post-configure:
-	@${CP} ${LOCALBASE}/bin/libtool ${WRKSRC}
+	@${CP} ${LIBTOOL} ${WRKSRC}
 	@${REINPLACE_CMD} -E -e 's|^(install_ltlibs=).+$$|\1no|' \
 		${WRKSRC}/libtool
 

@@ -8,6 +8,7 @@
 
 PORTNAME=	dictd
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES+=	net textproc
 MASTER_SITES=	ftp://ftp.dict.org/pub/dict/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -15,6 +16,8 @@ MASTER_SITE_SUBDIR=		dict
 
 MAINTAINER?=	dd@FreeBSD.org
 COMMENT=	Dict protocol (RFC 2229) server
+
+LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
 
 MAN1=		dictzip.1
 MAN8=		dictd.8

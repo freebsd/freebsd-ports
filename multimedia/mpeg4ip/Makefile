@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Standards-based system to encode, stream and play MPEG-4 audio/video
 
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
-		nasm:${PORTSDIR}/devel/nasm \
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
 		pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt

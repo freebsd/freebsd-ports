@@ -18,10 +18,11 @@ COMMENT=	Apache module mounts Tomcat web applications
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13 \
 		${NONEXISTANT}:${PORTSDIR}/devel/apr:extract \
-		${AUTOCONF}:${PORTSDIR}/devel/autoconf \
-		${LIBTOOL}:${PORTSDIR}/devel/libtool
+		${AUTOCONF}:${PORTSDIR}/devel/autoconf
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	# none
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
@@ -38,7 +39,6 @@ APR_LIB?=	${LOCALBASE}/lib/
 APR_INCLUDE?=	${LOCALBASE}/include/apr-0/
 APACHE_MODULES?= libexec/apache/
 APR_SRC?=	${WRKDIRPREFIX}${PORTSDIR}/devel/apr/work/apr-?\.?\.?/
-LIBTOOL?=	${LOCALBASE}/bin/libtool
 AUTOCONF?=	${LOCALBASE}/bin/autoconf
 
 # If the user's changed the modules directory, pack things correctly.

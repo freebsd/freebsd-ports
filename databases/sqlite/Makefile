@@ -57,9 +57,9 @@ GNU_CONFIGURE=	YES
 USE_REINPLACE=	YES
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-hints=freebsd.hints
 ALL_TARGET=	all
-.if defined(WITH_TCL)
-ALL_TARGET+=	libtclsqlite.la
-.endif
+#.if defined(WITH_TCL)
+#ALL_TARGET+=	libtclsqlite.la
+#.endif
 
 INSTALLS_SHLIB=	YES
 
@@ -76,7 +76,9 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 
 post-patch:
-	${REINPLACE_CMD} -e "s/tclsh \$$(TOP)/\$$(TCLSH) \$$(TOP)/g" ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e "s/tclsh \$$(TOP)/\$$(TCLSH) \$$(TOP)/g" \
+			 -e "s|%%LIBTOOL%%|${LIBTOOL}|g" \
+			 ${WRKSRC}/Makefile.in
 	${ECHO} "config_TARGET_TCL_INC=\"-I${PREFIX}/include/tcl${TCL_V}\"" >${WRKSRC}/freebsd.hints
 	${ECHO} "config_TARGET_TCL_LIBS=\"-L${PREFIX}/lib -ltcl${TCL_SHORT_V}\"" >>${WRKSRC}/freebsd.hints
 	#${ECHO} "config_TARGET_CFLAGS=\"-DTHREADSAFE=1 -pthread\"" >>${WRKSRC}/freebsd.hints

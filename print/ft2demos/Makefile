@@ -19,8 +19,7 @@ MASTER_SITE_SUBDIR=	freetype2
 MAINTAINER=	kanou@khdd.net
 COMMENT=	Demo programs for FreeType2
 
-BUILD_DEPENDS+=	libtool:${PORTSDIR}/devel/libtool
-BUILD_DEPENDS+=	${FREETYPE_WRKSRC}/config.mk:${PORTSDIR}/print/freetype2:configure
+BUILD_DEPENDS+=	${FREETYPE_WRKSRC}/config.mk:${PORTSDIR}/print/freetype2:build
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_XLIB=	yes

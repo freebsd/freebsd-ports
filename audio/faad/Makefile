@@ -38,8 +38,8 @@ pre-patch: build-depends
 post-patch:
 # make sure everything is prepared prior to configure stage
 # pre-configure will not work since *AUTO* tools happen in-between
-	@cd ${WRKSRC}; ${ACLOCAL} -I ${ACLOCAL_DIR} -I .; libtoolize \
-		--automake
+	@cd ${WRKSRC}; ${ACLOCAL} -I ${ACLOCAL_DIR} -I .; \
+		${SETENV} ${SCRIPTS_ENV} ${LIBTOOLIZE} --automake
 # CFLAGS safeness
 	@${FIND} ${WRKSRC} -type f -name Makefile.am | \
 		${XARGS} -n 5 -x \
@@ -48,7 +48,7 @@ post-patch:
 
 post-configure:
 # sync the multiple libtool copies
-	@${CP} ${WRKSRC}/${LIBTOOL} ${WRKSRC}/common/mp4v2/
+	@${CP} ${WRKSRC}/libtool ${WRKSRC}/common/mp4v2/
 
 .include <bsd.port.pre.mk>
 

@@ -101,7 +101,9 @@ SHLIB_VERSION=	5
 PLIST_SUB+=	shlib=${SHLIB_VERSION}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+	@${REINPLACE_CMD} \
+		-e 's|%%LTCONFIG%%|${LIBTOOL_SHAREDIR}/ltconfig${LIBTOOL_VERSION}|g' \
+		-e 's|%%LTMAIN%%|${LIBTOOL_SHAREDIR}/ltmain.sh|g' \
 		${WRKSRC}/aclocal.m4
 
 post-configure:

@@ -17,12 +17,11 @@ COMMENT=	A C++ wrapper library to the sockets
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOMAKE=	yes
 USE_AUTOMAKE_VER=	15
 USE_LIBTOOL=	yes
 
 post-patch:
-	cd ${WRKSRC}; ./autogen
+	@(cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ${SH} ./autogen)
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -56,7 +56,7 @@ post-patch:
 .else
 	@${CP} -R -f ${WRKSRC}/build/gnuauto/* ${WRKSRC}
 	(cd ${WRKSRC}	\
-	&& ${LOCALBASE}/bin/libtoolize --force --copy	\
+	&& ${LIBTOOLIZE} --force --copy	\
 	&& ${ACLOCAL})
 .endif
 

@@ -22,7 +22,7 @@ LIB_DEPENDS=	gnomeprint.16:${PORTSDIR}/print/gnomeprint \
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

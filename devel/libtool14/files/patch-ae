@@ -1,13 +1,14 @@
---- configure.orig	Fri Jul  2 09:01:56 1999
-+++ configure	Tue Aug 31 23:45:29 1999
-@@ -1853,10 +1853,6 @@
-       *) # Relative path.
-         ac_sub_cache_file="$ac_dots$cache_file" ;;
+--- configure.orig	Wed Oct 23 02:26:05 2002
++++ configure	Mon Feb 17 02:04:57 2003
+@@ -865,3 +865,3 @@
+ 
+-PACKAGE=libtool
++PACKAGE=libtool14
+ 
+@@ -6089,6 +6089,2 @@
        esac
 -  case "$ac_given_INSTALL" in
 -        [/$]*) INSTALL="$ac_given_INSTALL" ;;
 -        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
 -        esac
  
-       echo "running ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir"
-       # The eval makes quoting arguments work.

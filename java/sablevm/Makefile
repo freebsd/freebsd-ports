@@ -7,6 +7,7 @@
 
 PORTNAME=	sablevm
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=sablevm
@@ -20,7 +21,8 @@ COMMENT=	Java VM created by McGill University's Sable Research Group
 BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		ffi.2:${PORTSDIR}/devel/libffi \
-		gmp.6:${PORTSDIR}/math/libgmp4
+		gmp.6:${PORTSDIR}/math/libgmp4 \
+		ltdl.4:${PORTSDIR}/devel/libltdl
 
 PATCH_WRKSRC=	${WRKDIR}
 PATCH_STRIP=	-p1
@@ -30,9 +32,12 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 CONFIGURE_ENV=	CFLAGS="-D__XSI_VISIBLE -D__BSD_VISIBLE -D_P1003_1B_VISIBLE -pthread -I${PREFIX}/include -L${PREFIX}/lib"
+
 .if defined(WITH_GNOMELIBS) || exists(${X11BASE}/include/gnome-1.0/libart_lgpl/art_misc.h)
 USE_GNOME=	gnomelibs
-PLIST=		${PKGDIR}/pkg-plist.gnome
+PLIST_SUB+=	GNOME:=""
+.else
+PLIST_SUB+=	GNOME:="@comment "
 .endif
 
 # Directories for the three SableVM source components

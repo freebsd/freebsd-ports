@@ -15,10 +15,11 @@ DISTFILES=	redhat-artwork-${PORTVERSION}-${RH_SUBVERSION}.src.rpm
 MAINTAINER=	rzheka@users.sourceforge.net
 COMMENT=	Bluecurve unified-look theme for QT3 from RedHat 8.0
 
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio \
-		libtool:${PORTSDIR}/devel/libtool
+BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 
 WRKSRC= 	${WRKDIR}/redhat-artwork-${PORTVERSION}
+USE_LIBTOOL=	yes
+#LIBTOOLFILES=	# none
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
@@ -36,6 +37,10 @@ do-extract:
 			exit 1; \
 		fi
 	${CP} ${FILESDIR}/Makefile-qt3 ${WRKSRC}/art/qt/Bluecurve/Makefile
+
+# There's no configure script, but we need libtool to build
+do-configure:
+	@${DO_NADA}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#' ${WRKSRC}/art/qt/Bluecurve/Makefile

@@ -31,7 +31,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 pre-configure:
-	cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/libtool/libltdl
+	cd ${WRKSRC} && ${ACLOCAL} -I ${LIBTOOL_SHAREDIR}/libltdl
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

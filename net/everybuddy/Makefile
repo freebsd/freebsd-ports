@@ -7,6 +7,7 @@
 
 PORTNAME=	everybuddy
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.everybuddy.com/files/
 
@@ -14,7 +15,8 @@ MAINTAINER=	jim@FreeBSD.org
 COMMENT=	A "chat" program that combines AIM, ICQ, and Yahoo! Chat into one
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
-		iconv.3:${PORTSDIR}/converters/libiconv
+		iconv.3:${PORTSDIR}/converters/libiconv \
+		ltdl.4:${PORTSDIR}/devel/libltdl
 
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes

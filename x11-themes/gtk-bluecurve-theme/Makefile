@@ -15,14 +15,14 @@ DISTFILES=	redhat-artwork-${PORTVERSION}-${RH_SUBVERSION}.src.rpm
 MAINTAINER=	rzheka@users.sourceforge.net
 COMMENT=	Bluecurve unified-look theme for GTK1 and GTK2 from RedHat 8.0
 
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio \
-		libtool:${PORTSDIR}/devel/libtool
+BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 
 WRKSRC= 	${WRKDIR}/redhat-artwork-${PORTVERSION}
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gdkpixbuf
 USE_REINPLACE=	yes
+USE_LIBTOOL=	yes
 
 RH_SUBVERSION=	1
 THEMES_SUBDIRS= ${WRKSRC}/art/gtk/Bluecurve1
@@ -56,6 +56,9 @@ do-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#' ${WRKSRC}/art/gtk/Bluecurve1/Makefile
 	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#' ${WRKSRC}/art/gtk/Bluecurve/Makefile
+
+do-configure:
+	@${DO_NADA}
 
 do-build:
 	@for theme_dir in ${THEMES_SUBDIRS};do \

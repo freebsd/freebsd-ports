@@ -13,12 +13,11 @@ MASTER_SITES=	http://math.smsu.edu/~erik/files/
 MAINTAINER=	markp@FreeBSD.org
 COMMENT=	An image viewer for X
 
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lgnugetopt" \
 		ac_cv_func_getopt_long=yes
