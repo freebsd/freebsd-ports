@@ -11,7 +11,7 @@ PORTREVISION?=	1
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
-	      	${MASTER_SITE_LOCAL:S/$/:local/}
+		${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION}/src \
 		marcus/:local
 DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX} \
@@ -42,7 +42,7 @@ USE_GNOME=	gtk12 orbit
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 .if exists(${X11BASE}/lib/X11/fonts/mozilla/fonts.dir)
 BROKEN=		Mozilla and Xft2 render the mozilla-fonts \
-	 	illegibly. Please remove the mozilla-fonts package.
+		illegibly. Please remove the mozilla-fonts package.
 .endif
 .endif
 
@@ -152,6 +152,12 @@ CONFIGURE_ARGS+=	--disable-xft
 PKGCONFIG_FILES=	mozilla-gtkmozembed mozilla-js mozilla-xpcom \
 			mozilla-nspr mozilla-nss mozilla-plugin
 
+# JPI sutff.  List paths to Java Plug-ins here in the order to try.
+JPI_LIST=\
+	  ${LOCALBASE}/jdk1.4.1/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
+	  ${LOCALBASE}/diablo-jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
+	  ${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so
+
 .include <bsd.port.pre.mk>
 
 MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin \
@@ -219,9 +225,9 @@ post-build:
 	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%MOZILLA%%|${MOZILLA}|g" \
 		${FILESDIR}/mozilla.sh >${WRKSRC}/${MOZILLA}
 	(cd ${WRKSRC}/dist/bin; \
-	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
-	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome; \
-	  ${TOUCH} ./chrome/user-skins.rdf ./chrome/user-locales.rdf)
+		${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
+		${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome; \
+		${TOUCH} ./chrome/user-skins.rdf ./chrome/user-locales.rdf)
 	${FIND} ${WRKSRC}/dist/bin -type d | /usr/bin/sort -r | \
 		${XARGS} ${RMDIR} 2> /dev/null || ${TRUE}
 
@@ -229,22 +235,22 @@ pre-install:
 	${RM} -f ${PLIST}
 	${TOUCH} -f ${PLIST}
 	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then \
-	    ${ECHO_CMD} bin/mozilla >> ${PLIST} ; \
+		${ECHO_CMD} bin/mozilla >> ${PLIST} ; \
 	fi
 	if [ "${MOZILLA}" != "mozilla" ]; then \
-	    ${ECHO_CMD} bin/${MOZILLA} >> ${PLIST} ; \
+		${ECHO_CMD} bin/${MOZILLA} >> ${PLIST} ; \
 	fi
 	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
-	    ${ECHO_CMD} lib/browser_plugins/libjavaplugin_oji.so >> ${PLIST} ; \
-	    ${ECHO_CMD} @dirrm lib/browser_plugins >> ${PLIST} ; \
+		${ECHO_CMD} lib/browser_plugins/libjavaplugin_oji.so >> ${PLIST} ; \
+		${ECHO_CMD} @dirrm lib/browser_plugins >> ${PLIST} ; \
 	fi
 	cd ${WRKSRC}/dist/bin && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:lib/${MOZILLA}/:' >> ${PLIST} \
-		&& ${FIND} -d * -type d | \
-		${SED} -e 's:^:@dirrm lib/${MOZILLA}/:' >> ${PLIST}
+			&& ${FIND} -d * -type d | \
+			${SED} -e 's:^:@dirrm lib/${MOZILLA}/:' >> ${PLIST}
 	${ECHO_CMD} @dirrm lib/${MOZILLA} >> ${PLIST}
 	for pcfile in ${PKGCONFIG_FILES}; do \
-	    	${ECHO_CMD} libdata/pkgconfig/$${pcfile}${PKGNAMESUFFIX}.pc >> ${PLIST} ; \
+		${ECHO_CMD} libdata/pkgconfig/$${pcfile}${PKGNAMESUFFIX}.pc >> ${PLIST} ; \
 	done
 
 do-install:
@@ -254,17 +260,21 @@ do-install:
 		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/${MOZILLA}
 	${INSTALL_SCRIPT} ${WRKSRC}/${MOZILLA} ${PREFIX}/bin
 	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then \
-	    ${LN} -sf ${PREFIX}/bin/${MOZILLA} ${PREFIX}/bin/mozilla ; \
+		${LN} -sf ${PREFIX}/bin/${MOZILLA} ${PREFIX}/bin/mozilla ; \
 	fi
 	if [ ! -d ${PREFIX}/lib/browser_plugins ]; then \
-	    ${MKDIR} ${PREFIX}/lib/browser_plugins ; \
+		${MKDIR} ${PREFIX}/lib/browser_plugins ; \
 	fi
 	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
-	    ${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
-	    	${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
+		for jpi in ${JPI_LIST}; do \
+			if [ -f $${jpi} ]; then \
+				${LN} -sf $${jpi} \
+					${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
+			fi; \
+		done; \
 	fi
 	for pcfile in ${PKGCONFIG_FILES}; do \
-	    	${INSTALL_DATA} ${WRKSRC}/build/unix/$${pcfile}.pc \
+		${INSTALL_DATA} ${WRKSRC}/build/unix/$${pcfile}.pc \
 			${PREFIX}/libdata/pkgconfig/$${pcfile}${PKGNAMESUFFIX}.pc ; \
 	done
 
