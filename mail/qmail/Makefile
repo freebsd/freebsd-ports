@@ -16,24 +16,32 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.id.wustl.edu/pub/qmail/
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
 
+# qmail-* skeleton ports including this port may not want
+# its patches
+.if !defined (MAIN_QMAIL_PORT_PATCH_BARRIER)
 # Patch necessary to cope with non-RFC >512 dns entries
 # Since AOL has been using those, the problem has skyrocketed from minor to
 # groundzero. qmail being RFC compliant need to be "fixed" to work with those
-PATCH_SITES?=	http://www.ckdhr.com/ckd/ \
+PATCH_SITES+=	http://www.ckdhr.com/ckd/ \
 		${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR?=	lioux
-PATCHFILES?=	qmail-103.patch
+PATCH_SITE_SUBDIR+=	lioux
+PATCHFILES+=	qmail-103.patch
 PATCH_DIST_STRIP+=	-p1
+.endif
 
 MAINTAINER=	lioux@FreeBSD.org
 
-NO_PACKAGE=	Forbidden - we have patches to the distribution.
+NO_PACKAGE=	djb\'s packaging license does not allow non-standard\
+		qmail binary distributions
 
 # A normal qmail installation puts everything into /var/qmail/.
 # If you want to install to /usr/local/, then "/usr/local/qmail" is
 # suggested instead of "/usr/local", but both will work.
 PREFIX?=		/var/qmail
 QMAIL_VERSION?=		1.03
+
+# Some programs we use when building/installing the port
+HEAD?=	/usr/bin/head
 
 ALL_TARGET=	default dot-qmail.5 qmail-control.5 qmail-getpw.8 \
 		qmail-limits.7 qmail-newmrh.8 qmail-newu.8 qmail-pw2u.8 \
@@ -98,16 +106,32 @@ NO_MTREE=	yes
 .include <bsd.port.pre.mk>
 .endif
 
+pre-fetch: yetanotherone-pre-fetch
+
+# Yet anther ugly hack (used by qmail-* skeleton ports)
+# Permits them to define local targets without braking everything
+# The ugly target name hopefully will avoid name clashing
+.if !target(yetanotherone-pre-fetch)
+yetanotherone-pre-fetch:
+.endif
+
 # If you want to change the qmail users, they must be changed in both
 # work/*/conf-users and pkg/INSTALL.
 
 do-configure:
 	@# Create/Check the necessary groups/users
 	@PKG_PREFIX=${PREFIX} ${PERL5} ${PKGINSTALL}
-	@${ECHO} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
+	@${ECHO} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO} ${PREFIX} > ${WRKSRC}/conf-qmail
 
-post-patch: thereal-post-patch
+post-patch: thereal-post-patch yetanotherone-post-patch
+
+# Yet anther ugly hack (used by qmail-* skeleton ports)
+# Permits them to define local targets without braking everything
+# The ugly target name hopefully will avoid name clashing
+.if !target(yetanotherone-post-patch)
+yetanotherone-post-patch:
+.endif
 
 do-install:
 	@# Check again, just in case (ideally should error if not found)
@@ -158,8 +182,8 @@ thereal-post-patch:
 	then \
 		${CP} $i.sh $i.sh.orig; \
 		(head -c `${EXPR} \`ls -l $i.sh.orig \
-		    | ${AWK} '{print $$5}'\` - 1` $i.sh.orig ; ${ECHO} '&') \
-		    > $i.sh ; \
+			| ${AWK} '{print $$5}'\` - 1` $i.sh.orig ; ${ECHO} '&') \
+			> $i.sh ; \
 	fi
 .endfor
 	@${SED} s!/var/qmail/!${PREFIX}/!g ${FILESDIR}/mailer.conf.sample > \
@@ -226,7 +250,7 @@ enable-qmail: install disable-sendmail
 		${ECHO_MSG} "===> installation breaking your qmail one." ; \
 		${ECHO_MSG} "===> Read the FreeBSD Handbook section on \"make world\"" ; \
 		${ECHO_MSG} "===> if you do not know what I am talking about." ; \
-		${ECHO_MSG} "===> Check http://www.freebsd.org/ for the most" ; \
+		${ECHO_MSG} "===> Check http://www.FreeBSD.org/ for the most" ; \
 		${ECHO_MSG} "===> updated copy of the Handbook." ; \
 	fi
 	@${ECHO_MSG} "===> Do not forget to choose an appropriate qmail startup"
