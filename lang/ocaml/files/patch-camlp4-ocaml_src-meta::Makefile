@@ -1,0 +1,11 @@
+--- camlp4/ocaml_src/meta/Makefile.orig	Sun Dec 14 02:33:49 2003
++++ camlp4/ocaml_src/meta/Makefile	Sun Dec 14 02:35:12 2003
+@@ -49,7 +49,7 @@
+ 	cp camlp4r$(EXE) "$(BINDIR)/."
+ 	if test -f camlp4r.opt; then \
+ 	  cp camlp4r.opt "$(BINDIR)/camlp4r.opt$(EXE)" ;\
+-	  for target in $(OBJSX) $(OBJSX:.cmx=.$(O)) ; do \
++	  for target in $(OBJSX) $(OBJSX:S/.cmx$/.$(O)/) ; do \
+ 	    if test -f $$target; then \
+ 	      cp $$target "$(LIBDIR)/camlp4/."; \
+ 	    fi; \

@@ -59,6 +59,7 @@ lib/ocaml/camlp4/fstream.mli
 lib/ocaml/camlp4/gramext.cmi
 lib/ocaml/camlp4/gramext.cmx
 lib/ocaml/camlp4/gramext.mli
+lib/ocaml/camlp4/gramlib.a
 lib/ocaml/camlp4/gramlib.cma
 lib/ocaml/camlp4/gramlib.cmxa
 lib/ocaml/camlp4/grammar.cmi
@@ -92,8 +93,10 @@ lib/ocaml/camlp4/pa_oop.cmo
 lib/ocaml/camlp4/pa_op.cmo
 lib/ocaml/camlp4/pa_r.cmo
 lib/ocaml/camlp4/pa_r.cmx
+lib/ocaml/camlp4/pa_r.o
 lib/ocaml/camlp4/pa_rp.cmo
 lib/ocaml/camlp4/pa_rp.cmx
+lib/ocaml/camlp4/pa_rp.o
 lib/ocaml/camlp4/pa_ru.cmo
 lib/ocaml/camlp4/pa_scheme.cmo
 lib/ocaml/camlp4/pa_sml.cmo
@@ -105,6 +108,7 @@ lib/ocaml/camlp4/plexer.mli
 lib/ocaml/camlp4/pr_depend.cmo
 lib/ocaml/camlp4/pr_dump.cmo
 lib/ocaml/camlp4/pr_dump.cmx
+lib/ocaml/camlp4/pr_dump.o
 lib/ocaml/camlp4/pr_extend.cmo
 lib/ocaml/camlp4/pr_extfun.cmo
 lib/ocaml/camlp4/pr_null.cmo
@@ -662,7 +666,7 @@ lib/ocaml/libasmrun.a
 lib/ocaml/libasmrunp.a
 lib/ocaml/libbigarray.a
 lib/ocaml/libcamlrun.a
-lib/ocaml/libgraphics.a
+%%X11%%lib/ocaml/libgraphics.a
 lib/ocaml/libmldbm.a
 lib/ocaml/libnums.a
 lib/ocaml/libstr.a

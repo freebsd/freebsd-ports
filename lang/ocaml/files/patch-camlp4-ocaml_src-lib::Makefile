@@ -1,0 +1,10 @@
+--- camlp4/ocaml_src/lib/Makefile.orig	Sun Dec 14 02:38:28 2003
++++ camlp4/ocaml_src/lib/Makefile	Sun Dec 14 02:38:55 2003
+@@ -43,6 +43,6 @@
+ 
+ installopt:
+ 	cp $(TARGET:.cma=.cmxa) *.cmx "$(LIBDIR)/camlp4/."
+-	tar cf - $(TARGET:.cma=.$(A)) | (cd "$(LIBDIR)/camlp4/."; tar xf -)
++	tar cf - $(TARGET:S/.cma$/.$(A)/) | (cd "$(LIBDIR)/camlp4/."; tar xf -)
+ 
+ include .depend
