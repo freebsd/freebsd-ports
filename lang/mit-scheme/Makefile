@@ -3,7 +3,7 @@
 # Date created:         Mar 26 1995
 # Whom:                 jmacd@FreeBSD.ORG
 #
-# $Id$
+# $Id: Makefile,v 1.10 1997/04/30 03:48:10 asami Exp $
 #
 
 DISTNAME=       mit-scheme
@@ -13,5 +13,7 @@ MASTER_SITES=   ${MASTER_SITE_LOCAL}
 DISTFILES=	scheme-microcode+dist-7.3-freebsd.tgz
 
 MAINTAINER= 	jmacd@FreeBSD.ORG
+
+BROKEN_ELF=	yes
 
 .include <bsd.port.mk>
