@@ -1,0 +1,11 @@
+IO-stringy makes it possible to create perl filehandles that point to
+just about any object.  It contains three modules:
+
+IO::Scalar
+	IO:: interface for reading/writing a scalar
+
+IO::ScalarArray
+	 IO:: interface for reading/writing an array of scalars
+
+IO::Wrap
+	Wrap raw filehandles in IO::Handle interface
