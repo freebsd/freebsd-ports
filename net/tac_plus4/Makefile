@@ -28,6 +28,16 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ba
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bb
 .endif
 
+# finger output differs for CISCO IOS versions 11 and 12.
+# Define version of your IOS (default is 11): 
+# Example: make TAC_IOS_VERSION=12
+#
+.if defined(TAC_IOS_VERSION)
+CFLAGS+=	-DTAC_IOS_VERSION=${TAC_IOS_VERSION}
+.else
+CFLAGS+=	-DTAC_IOS_VERSION=11
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tac_plus ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/tac_plus.1 ${PREFIX}/man/man1/tac_plus.1
