@@ -18,8 +18,8 @@ COMMENT=	toLua: accessing C/C++ code from Lua
 LIB_DEPENDS=	lua:${PORTSDIR}/lang/lua
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-5.0
-
 USE_GMAKE=	yes
+CONFLICTS=	tolua4-.*
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/tolua ${PREFIX}/bin
