@@ -3,10 +3,10 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.12 1997/02/05 07:34:31 tg Exp $
+# $Id: Makefile,v 1.13 1997/02/06 09:19:44 tg Exp $
 #
 
-DISTNAME=       xpaint-2.4.8
+DISTNAME=       xpaint-2.5
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://www.danbbs.dk/~torsten/xpaint/
 
