@@ -3,15 +3,15 @@
 # Date created:		21 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.28 1999/01/13 04:00:07 scrappy Exp $
+# $Id: Makefile,v 1.29 1999/01/26 02:37:15 steve Exp $
 #
 
-DISTNAME=       netscape-3.04
+DISTNAME?=	netscape-3.04
 CATEGORIES=	www
-MASTER_SITES=   ftp://archive:oldies@archive.netscape.com/archive/navigator/3.04/shipping/english/unix/bsdi11/navigator_complete/
+MASTER_SITES?=   ftp://archive:oldies@archive.netscape.com/archive/navigator/3.04/shipping/english/unix/bsdi11/navigator_complete/
 DISTFILES=      netscape-v304-export.x86-unknown-bsd.tar.gz
 
-MAINTAINER=     ports@FreeBSD.ORG
+MAINTAINER=	sada@FreeBSD.ORG
 
 Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 
@@ -20,18 +20,14 @@ NOT_FOR_ARCHS=	alpha
 NO_LATEST_LINK=	yes
 NO_WRKSUBDIR=	yes
 
-.if defined(GOLD)
-MASTER_SITES=   ftp://archive:oldies@archive.netscape.com/archive/navigator/3.04/shipping/english/unix/bsdi11/navigator_gold_complete/
-DIST_SUBDIR=    gold
-PKGNAME=	${DISTNAME}-gold
-.endif
-
-.if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
+.if defined(USE_128BIT)
 MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
 		ftp://ftp.za.freebsd.org/pub/Fortify/
-DISTFILES+=	Fortify-1.3.2-unix-x86.tar.gz
+DISTFILES+=	${FORTIFY}.tar.gz
 RESTRICTED=     "Contains strong cryptography"
 .endif
+
+FORTIFY=	Fortify-1.4.3-unix-x86
 
 .if !defined(USE_128BIT)
 pre-extract:
@@ -39,9 +35,12 @@ pre-extract:
 		@${ECHO} "and defining USA_RESIDENT to NO"
 .endif
 
+pre-install:
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGREQ} ${PKGNAME} INSTALL
+
 post-install:
-.if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
-	cd ${WRKSRC}/Fortify-1.3.2-unix-x86 && \
+.if defined(USE_128BIT)
+	cd ${WRKDIR}/${FORTIFY} && \
 		(${ECHO} yes ; ${ECHO} no ; ${ECHO} no) | ./Fortify.sh ${PREFIX}/lib/netscape/netscape.bin
 .endif
 	@${CAT} ${PKGDIR}/DESCR
