@@ -14,6 +14,8 @@ MAINTAINER=	mwest@uct.ac.za
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
+BROKEN=		"Does not build"
+
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 USE_GMAKE=	YES
