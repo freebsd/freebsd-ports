@@ -1,0 +1,11 @@
+#!/bin/sh
+DIFF=${PKG_PREFIX}/www/data/mt/mt.diff
+CGIDIR=${PKG_PREFIX}/www/cgi-bin/mt
+
+if [ "$2" = "POST-INSTALL" ]; then
+  cat ${DIFF} | patch -d ${CGIDIR} --forward --quiet -E -p1
+  find ${CGIDIR} -name "*.orig" -delete
+elif [ "$2" = "DEINSTALL" ]; then
+  cat ${DIFF} | patch -d ${CGIDIR} --reverse --quiet -E -p1
+  find ${CGIDIR} -name "*.orig" -delete
+fi

@@ -6,39 +6,53 @@
 #
 
 PORTNAME=	MT
-PORTVERSION=	2.64
+PORTVERSION=	2.661
 CATEGORIES=	chinese
-MASTER_SITES=	http://www.movabletype.org/downloads/
-DISTNAME=	mt-zh-tw
+MASTER_SITES=	http://mtbook.net/download/
+DISTFILES=	MT-${PORTVERSION}-full-lib.new.tar.gz mt.diff mt.no-htmlarea.diff
+EXTRACT_ONLY=	MT-${PORTVERSION}-full-lib.new.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Web-based personal publishing system like weblogs
 
 RUN_DEPENDS=	${LOCALBASE}/${CGIDIR}/mt.cgi:${PORTSDIR}/www/MT
 
 NO_BUILD=	yes
-
+NO_WRKSUBDIR=	yes
 DATADIR=	www/data/mt
 CGIDIR=		www/cgi-bin/mt
 PLIST_SUB+=	DATADIR=${DATADIR} CGIDIR=${CGIDIR}
+PATCH_MT_ARGS=	-d ${PREFIX}/${CGIDIR} --forward --quiet -E -p1
 USE_REINPLACE=	yes
+PKGDEINSTALL=	${PKGINSTALL}
 
-.include <bsd.port.pre.mk>
+.if defined(WITH_HTMLAREA)
+MT_DIFF=	mt.diff
+.else
+MT_DIFF=	mt.no-htmlarea.diff
+.endif
+
+post-extract:
+	@${MKDIR} ${WRKDIR}/${DATADIR} ${WRKDIR}/${CGIDIR}
+	@${MV} ${WRKDIR}/MT-${PORTVERSION}-full-lib/lib ${WRKDIR}/${CGIDIR}
+	@${MV} ${WRKDIR}/MT-${PORTVERSION}-full-lib/extlib ${WRKDIR}/${CGIDIR}
+	@${MV} ${WRKDIR}/MT-${PORTVERSION}-full-lib/*cgi ${WRKDIR}/${CGIDIR}
+	@${MV} ${WRKDIR}/MT-${PORTVERSION}-full-lib/* ${WRKDIR}/${DATADIR}
+	@${RMDIR} ${WRKDIR}/MT-${PORTVERSION}-full-lib
 
 do-install:
-	${REINPLACE_CMD} -e 's/# PublishCharset Shift_JIS/PublishCharset UTF-8/g' \
+	@${REINPLACE_CMD} -e 's/# PublishCharset Shift_JIS/PublishCharset UTF-8/g' \
 		${PREFIX}/${CGIDIR}/mt.cfg
-	${REINPLACE_CMD} -e 's,en-us,zh-tw,g' \
-		${PREFIX}/${CGIDIR}/lib/MT/App/Trackback.pm \
-		${PREFIX}/${CGIDIR}/lib/MT/App/CMS.pm \
-		${PREFIX}/${CGIDIR}/lib/MT/default-templates.pl \
-		${PREFIX}/${CGIDIR}/mt-load.cgi
-	${RM} ${PREFIX}/${CGIDIR}/lib/MT/App/Trackback.pm.bak \
-		${PREFIX}/${CGIDIR}/lib/MT/App/CMS.pm.bak \
-		${PREFIX}/${CGIDIR}/lib/MT/default-templates.pl.bak \
-		${PREFIX}/${CGIDIR}/mt-load.cgi.bak \
-		${PREFIX}/${CGIDIR}/mt.cfg.bak
-	@${CP} ${WRKDIR}/mt-zh-tw/zh_tw.pm ${PREFIX}/${CGIDIR}/extlib/MT/L10N/
-	@${CP} -R ${WRKDIR}/mt-zh-tw/lang-zh-tw/ ${PREFIX}/${DATADIR}/images/lang-zh-tw/
+	@cd ${WRKDIR} && ${CP} -R www ${PREFIX}
+	@${ECHO} "===>   Patching www/MT for ${PKGNAME}"
+	@${CAT} ${DISTDIR}/${MT_DIFF} | \
+		${SED} -e 's#$$MT_DIR, .schemas.#"${PREFIX}/${DATADIR}/schemas"#' > \
+		${PREFIX}/${DATADIR}/mt.diff
+	@${FIND} ${PREFIX}/${CGIDIR} \( -name "*.orig" -o -name "*.bak" -o -name "*.rej" \) -delete
+	@${CHOWN} -R www:www ${PREFIX}/${CGIDIR} ${PREFIX}/${DATADIR}
 
-.include <bsd.port.post.mk>
+post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
