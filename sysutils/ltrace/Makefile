@@ -26,5 +26,6 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ltrace ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/etc/ltrace.conf ${PREFIX}/etc
+	${INSTALL_MAN} ${WRKSRC}/ltrace.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
