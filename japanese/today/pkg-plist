@@ -1,7 +1,7 @@
 bin/today
 bin/calendar-today
 bin/dayinfo
-man/ja_JP.euc/cat1/today.1.gz
+man/ja_JP.EUC/cat1/today.1.gz
 lib/today.cnf
 share/today/birthday.tbl
 share/today/event01.tbl
