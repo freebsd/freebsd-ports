@@ -15,9 +15,13 @@ MAINTAINER=	sam@inf.enst.fr
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 
-USE_AUTOCONF=	yes
+USE_AUTOMAKE_VER=14
 CONFIGURE_ENV=	ADA=adagcc
 USE_GMAKE=	yes
+
+pre-configure:
+	${PERL} -pi -e "s@aclocal\)@${ACLOCAL})@g;\
+			s@automake\)@${AUTOMAKE})@g" ${WRKSRC}/aclocal.m4
 
 post-install:
 	strip ${PREFIX}/bin/gnatdist
