@@ -117,6 +117,7 @@
     SUBDIR += mdw
     SUBDIR += mgstat
     SUBDIR += mhonarc
+    SUBDIR += micro_httpd
     SUBDIR += mmosaic
     SUBDIR += mnoGoSearch-current
     SUBDIR += mod_access_identd
