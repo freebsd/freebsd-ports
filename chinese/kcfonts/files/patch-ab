@@ -1,0 +1,7 @@
+--- kc_fonts.alias	Sat May  1 22:48:12 1999
++++ kc_fonts.alias.orig	Sat May  1 22:48:10 1999
+@@ -0,0 +1,4 @@
++-kc-fixed-medium-r-normal--16-160-72-72-c-160-big5-0 kc15f
++-kc-fixed-medium-r-normal--24-240-72-72-c-240-big5-0 kc24f
++taipei16 kc15f
++taipei24 kc24f

@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Nov 11 13:19:28 1998
-+++ Makefile	Wed Nov 11 13:22:05 1998
+--- Makefile.orig	Sun Dec 17 04:00:46 1995
++++ Makefile	Fri Jun 18 15:52:57 1999
 @@ -2,13 +2,13 @@
  #	Kau Chauo Chinese Fanti Ming Fonts Version 1.05 For FreeBSD
  #
@@ -18,12 +18,13 @@
  FONTS	=kc24f.pcf.gz kc15f.pcf.gz kc8x15.pcf.gz kc12x24.pcf.gz
  PROGS	=kc24f kc15f kc8x15 kc12x24 kca2et
  OBJS	=tran.o kc24f.o kc15f.o kc8x15.o kc12x24.o kca2et.o
-@@ -43,7 +43,7 @@
+@@ -42,7 +42,9 @@
+ 	if [ ! -d $(CFONTDIR) ]; then mkdir $(CFONTDIR); fi
  	cp kc*f.pcf.gz $(CFONTDIR)
  	cp kc*x*.pcf.gz $(EFONTDIR)
++	cp kc_fonts.alias $(CFONTDIR)
  	mkfontdir $(CFONTDIR)
--	mkfontdir $(EFONTDIR)
-+#	mkfontdir $(EFONTDIR)
++	cd ${PREFIX}/lib/X11/fonts/local ; cat kc_fonts.alias >> fonts.alias ; cp fonts.alias ..fonts.alias.. ; sort ..fonts.alias.. | uniq > fonts.alias ; rm ..fonts.alias..
+ 	mkfontdir $(EFONTDIR)
  
  clean:
- 	rm -f kc*.pcf.gz ascfont.* *.o *~ $(PROGS)
