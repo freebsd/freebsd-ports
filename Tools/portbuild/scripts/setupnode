@@ -1,6 +1,6 @@
 #!/bin/sh
-if [ $# != 3 ]; then
-  echo "usage: $0 master portbuilddir branch"
+if [ $# != 4 ]; then
+  echo "usage: $0 master portbuilddir branch md5"
   exit 1
 fi
 if [ $(echo $(/sbin/mount | grep "$2/.*(read-only)" | awk '{print $3}' | wc -c)) != 0 ]; then
@@ -8,4 +8,10 @@ if [ $(echo $(/sbin/mount | grep "$2/.*(read-only)" | awk '{print $3}' | wc -c))
 fi
 rm -rf $2/*/chroot/*
 scp -p -a $1:$2/scripts/portbuild $2/scripts
-scp -p -a $1:$2/$3/tarballs/bindist.tar $2/$3/tarballs
+md5=$(/sbin/md5 $2/$3/tarballs/bindist.tar | awk '{print $4}')
+if [ "$md5" = "$4" ]; then
+  echo "not copying bindist to $(hostname -s) since it is already up to date"
+else
+  echo "copying bindist to $(hostname -s)"
+  scp -p -a $1:$2/$3/tarballs/bindist.tar $2/$3/tarballs
+fi
