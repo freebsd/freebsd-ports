@@ -1,0 +1,16 @@
+diff -ur public.h public.h
+--- public.h	Thu Mar 28 21:09:08 2002
++++ public.h	Fri Jan 21 15:14:24 2005
+@@ -85,9 +85,12 @@
+ typedef struct _st_cond *   st_cond_t;
+ typedef struct _st_mutex *  st_mutex_t;
+ typedef struct _st_netfd *  st_netfd_t;
++typedef void (*st_switch_cb_t)(void);
+ 
+ extern int st_init(void);
+ extern int st_getfdlimit(void);
++extern st_switch_cb_t st_set_switch_in_cb(st_switch_cb_t cb);
++extern st_switch_cb_t st_set_switch_out_cb(st_switch_cb_t cb);
+ 
+ extern st_thread_t st_thread_self(void);
+ extern void st_thread_exit(void *retval);
