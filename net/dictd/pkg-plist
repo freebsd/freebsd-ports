@@ -1,0 +1,8 @@
+bin/dictzip
+sbin/dictd
+share/dictd/example.conf
+share/dictd/example.dictrc
+share/dictd/example.site
+share/dictd/example2.conf
+share/dictd/example3.conf
+@dirrm share/dictd

@@ -59,6 +59,7 @@
     SUBDIR += dgd-net
     SUBDIR += dhid
     SUBDIR += dhcpconf
+    SUBDIR += dictd
     SUBDIR += djbdns
     SUBDIR += dlint
     SUBDIR += dnsutl
