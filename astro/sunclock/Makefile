@@ -7,12 +7,14 @@
 #
 
 PORTNAME=	sunclock
-PORTVERSION=	3.38
+PORTVERSION=	3.45
 CATEGORIES=	astro x11-clocks
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	torstenb@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/${DISTNAME}v2
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
