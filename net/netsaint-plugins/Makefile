@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://netsaintplug.sourceforge.net/src/
 DISTNAME=	${PORTNAME}-1.2.8-4
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 # make absolutely sure we have the user/group added!
 BUILD_DEPENDS=	netsaint:${PORTSDIR}/net/netsaint

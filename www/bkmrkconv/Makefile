@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.dcs.warwick.ac.uk/~csube/bkmrkconv/
 DISTFILES=	${PORTNAME}.tar.gz
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_PERL5=	yes
 NO_BUILD=	yes

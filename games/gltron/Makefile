@@ -10,7 +10,7 @@ PORTVERSION=	0.59
 CATEGORIES=	games
 MASTER_SITES=	http://gltron.sourceforge.net/download/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		png.4:${PORTSDIR}/graphics/png

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.scrollz.com/Bins/
 DISTNAME=	ScrollZ-${PORTVERSION}-FreeBSD-3.4
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 EXTRACT_CMD=	gunzip
 EXTRACT_BEFORE_ARGS=	-c

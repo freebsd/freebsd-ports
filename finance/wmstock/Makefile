@@ -10,7 +10,7 @@ PORTVERSION=	0.11
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://mattfischer.com/wmstock/src/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
