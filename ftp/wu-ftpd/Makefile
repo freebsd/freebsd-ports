@@ -9,6 +9,7 @@
 
 PORTNAME=	wu-ftpd
 PORTVERSION=    2.6.2
+PORTREVISION=   1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/
 
@@ -18,6 +19,8 @@ USE_AUTOCONF=   yes
 CONFIGURE_ARGS=	--enable-rfc931 --disable-pasvip --enable-opie \
 		--enable-noop --disable-numericuid  --enable-nlst-dirs \
 		--prefix=${PREFIX} --with-etc-dir=${PREFIX}/etc
+
+MAKE_ENV+=      WARNINGS=-DSPT_TYPE=SPT_BUILTIN
 
 MAN1=		ftpcount.1 ftpwho.1
 MAN5=		ftpaccess.5 ftphosts.5 ftpconversions.5 xferlog.5 \
