@@ -1,6 +1,7 @@
 ==================================================================
 
-Note: QKMJ supports TERM=vt100 only.
+Note: 1) QKMJ supports TERM=vt100 only.
+      2) This port requires COMPAT22. Install it via sysinstall.
 
 Take a look at ftp://ftp.csie.nctu.edu.tw/pub/CSIE/qkmj/qkmj.faq
 for advanced usage.
