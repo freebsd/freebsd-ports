@@ -1,0 +1,16 @@
+$FreeBSD$
+
+--- docs/Makefile.in.orig	Wed Mar  9 11:09:11 2005
++++ docs/Makefile.in	Wed Mar  9 11:09:24 2005
+@@ -332,11 +332,6 @@
+ 	@if test ! -f gnuplot.doc ; then \
+ 	  cp $(srcdir)/gnuplot.doc. ; \
+ 	fi
+-	@if test "$(EMACS)" != no; then \
+-	   $(EMACS) -batch -l $(srcdir)/doc2texi.el -f d2t-doc-to-texi; \
+-	else \
+-	   echo "No emacs found - cannot create texinfo file" ; \
+-	fi
+ 
+ # this is how to make OS/2 ipfc documentation
+ ipf: gnuplot.ipf
