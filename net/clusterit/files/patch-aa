@@ -1,0 +1,13 @@
+--- Makefile.orig	Mon Dec 14 20:51:56 1998
++++ Makefile	Thu Feb  4 16:37:34 1999
+@@ -3,8 +3,8 @@
+ 
+ OPSYS!=		uname
+ #CC=		/usr/local/bin/gcc
+-CFLAGS=		-O2 -Wall
+-PREFIX?=	/usr/local
++CFLAGS?=	${CFLAGS} -O2 -Wall
++#PREFIX?=	/usr/local
+ 
+ SUBDIR=		dsh pcp barrier
+ 

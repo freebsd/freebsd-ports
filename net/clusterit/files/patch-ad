@@ -1,0 +1,11 @@
+--- dsh/Makefile.orig	Mon Dec 14 20:51:53 1998
++++ dsh/Makefile	Thu Feb  4 16:36:19 1999
+@@ -4,7 +4,7 @@
+ # Some of the below needs to be uncommented for Solaris to work.
+ 
+ #CC=		/usr/local/bin/gcc
+-CFLAGS=		-Wall -O2 #-DDEBUG -g
++CFLAGS?=		${CFLAGS} -Wall -O2 #-DDEBUG -g
+ PROGS=		dsh seq run
+ 
+ OBJS= dsh.o seq.o run.o
