@@ -4,7 +4,9 @@ addport	- future replacement for easy-import
 
 consistency-check -  check whether all your ports are installed properly,
                      what files have changed, and what new files there are
-
+distclean - compare md5 sums of distfiles in ports/distfiles with currently
+            installed ports collection in ports/* and prompt to remove
+            unmatched entries
 getpr   - downloads a problem report from GNATS and attempts to extract
           the patch, shar, uuencoded file from it.
           this probably needs to be checked for potential security problems.
@@ -41,12 +43,21 @@ getpr, prpatch and prdone are used as so:
 	<this will attempt to fill out the cvs log message, check in the
 	 port and edit-pr the problem report so you can close it>
 
-NOTE: These scripts need work and are *NOT* safe to use unless you know
-      what they do.  Use at your own risk.  Patches would be great, but
-      I'd prefer they pass through me.
-
 ----------------------------------------------------------------------
 
 checksum is a script that allows checking of ports to see if their checksums
 match, and if they don't, give a diff against the older version to try and
 discover why the checksum didn't match.
+
+----------------------------------------------------------------------
+
+distclean is a script that allows to compare md5 checksums of distfiles in
+ports/distfiles with list of all md5 sums listed in "md5" files in the ports
+collection. After comparing, utility will prompt to remove distfiles which
+doesn't have associated md5 entry (most likely outdated distfiles).
+
+----------------------------------------------------------------------
+
+NOTE: These scripts need work and are *NOT* safe to use unless you know
+      what they do.  Use at your own risk.  Patches would be great, but
+      I'd prefer they pass through me.
