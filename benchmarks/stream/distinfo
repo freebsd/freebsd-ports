@@ -1,2 +1,4 @@
-MD5 (stream-1.0/second_cpu.c) = ec4d884bbe6832f21615617e54af187f
-MD5 (stream-1.0/stream_d.c) = 87e07a8a6e898d2b7f1d60324da46531
+MD5 (stream-1.0/second_cpu.c) = 65f4111f06a5f5a677925fa0ede61416
+SIZE (stream-1.0/second_cpu.c) = 287
+MD5 (stream-1.0/stream_d.c) = 76ef0d3b0c8884a130e8a723da96697b
+SIZE (stream-1.0/stream_d.c) = 5555

@@ -6,6 +6,7 @@
 
 PORTNAME=	stream
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.cs.virginia.edu/pub/stream/Code/
 DISTFILES=	second_cpu.c stream_d.c
@@ -13,8 +14,6 @@ DIST_SUBDIR=	stream-${PORTVERSION}
 
 MAINTAINER=	sf@slappy.org
 COMMENT=	Synthetic benchmark program that measures sustainable memory bandwidth
-
-BROKEN=		"Checksum mismatch"
 
 MAKEFILE=	${FILESDIR}/Makefile
 PLIST_FILES=	bin/stream
