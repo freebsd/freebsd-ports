@@ -1,4 +1,5 @@
 bin/check_sendfile
+bin/ewl
 bin/fetchfile
 bin/receive
 bin/sendfile
