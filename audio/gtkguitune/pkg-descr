@@ -1,0 +1,9 @@
+gtkguitune is a program for tuning guitars and other instruments.  Rather than
+using FFT like many programs, it counts the number of triggerings between two
+trigger levels in a certain amount of time, which tends to be more accurate for
+instrument tuning while requiring less processing than FFT.
+
+WWW: http://www.geocities.com/harpin_floh/kguitune_page.html
+
+- Eric Anholt
+anholt@FreeBSD.org

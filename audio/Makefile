@@ -152,6 +152,7 @@
     SUBDIR += gstreamer-monkeysaudio
     SUBDIR += gtick
     SUBDIR += gtkgep
+    SUBDIR += gtkguitune
     SUBDIR += gtkpod
     SUBDIR += holyshout
     SUBDIR += hydrogen
