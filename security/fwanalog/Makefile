@@ -10,7 +10,7 @@ PORTVERSION=	0.6.1
 CATEGORIES=	security
 MASTER_SITES=	http://tud.at/programm/fwanalog/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 
 RUN_DEPENDS=	analog:${PORTSDIR}/www/analog
 
