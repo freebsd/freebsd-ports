@@ -1,0 +1,11 @@
+--- scripts/cstubgen.rep/code.ys.orig	Sun Aug 24 14:37:32 2003
++++ scripts/cstubgen.rep/code.ys	Thu Jul 29 15:59:31 2004
+@@ -262,7 +262,7 @@
+     return NEW <? WriteString(pluginname); ?>;
+ }
+ 
+-};
++}
+ 
+ <?
+ WriteString(postlog);
