@@ -53,7 +53,7 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.sourceforge.net/pub/mirrors/gnome/%SUBDIR%/ \
 	ftp://gnome.eazel.com/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
-	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/
+	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/X11/GNOME/%SUBDIR%/ \
 	ftp://ftp.dit.upm.es/linux/gnome/%SUBDIR%/ \
 	ftp://ftp.tr.gnome.org/pub/GNOME/%SUBDIR%/ \
