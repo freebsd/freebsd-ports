@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.jormas.com/~vesuri/xpk/ \
 		http://www.energyhq.org/files/
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=     flynn@energyhq.org
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
