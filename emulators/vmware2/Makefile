@@ -62,6 +62,7 @@ MAKE_ARGS=	KMODDIR="${VMDIR}/lib/modules"
 post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	${CP} ${FILESDIR}/Makefile.vmmon ${WRKSRC}/vmmon-only/Makefile
+	${RM} -rf ${WRKSRC}/vmmon-only/linux/
 
 setoptions:
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
