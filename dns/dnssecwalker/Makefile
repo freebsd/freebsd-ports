@@ -7,18 +7,23 @@
 #
 
 PORTNAME=	dnssecwalker
-PORTVERSION=	2.0
+PORTVERSION=	3.5
 CATEGORIES=	dns
-MASTER_SITES=	http://josefsson.org/walker/
+MASTER_SITES=	http://josefsson.org/walker/releases/
 DISTNAME=	walker-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	DNSSEC Walker
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS\
+		${SITE_PERL}/Net/DNS/SEC.pm:${PORTSDIR}/dns/p5-Net-DNS-SEC
 
 USE_PERL5=	yes
 NO_BUILD=	yes
+USE_GPG?=	yes
+SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.sig
 
 CONFLICTS=	walker-1.*
 
