@@ -1,0 +1,44 @@
+--- doc/Makefile.in.orig	Thu Feb 25 20:04:04 1999
++++ doc/Makefile.in	Thu Feb 25 20:05:24 1999
+@@ -20,7 +20,7 @@
+ DIST_MENU = menu/menu menu/example.menu menu/rxvt.menu menu/terminal.menu\
+ 	    menu/jedmenu.sl
+ DIST	  = Makefile.in README.greek README.menu README.xvt BUGS FAQ TODO\
+-	    changes.txt xterm.seq LSM.in rxvt.1 rxvt.pretbl rxvtRef.txt\
++	    changes.txt xterm.seq LSM.in wterm.1 rxvt.pretbl rxvtRef.txt\
+ 	    rxvtRef.html rxvtRef-frame.html rxvtRef-toc.html rxvt.html 
+ 
+ #-------------------------------------------------------------------------
+@@ -41,26 +41,26 @@
+ 
+ tags allbin:
+ 
+-alldoc:	$(basedir)/$(VERNAME).lsm rxvt.1 rxvt.html rxvtRef.html rxvtRef.txt
++alldoc:	$(basedir)/$(VERNAME).lsm wterm.1 rxvt.html rxvtRef.html rxvtRef.txt
+ 
+ $(basedir)/$(VERNAME).lsm: LSM.in ../autoconf/Make.common.in
+ 	$(SED) $(SEDREPLACE) < LSM.in > $@
+ 
+-rxvt.1: rxvt.pretbl
++wterm.1: rxvt.pretbl
+ 	tbl rxvt.pretbl > $@
+ clean:
+ 	$(RMF) rxvt.man *~ 
+ 
+ realclean: clean
+-	$(RMF) tags rxvt.1 rxvt.html rxvtRef.html rxvtRef.txt
++	$(RMF) tags wterm.1 rxvt.html rxvtRef.html rxvtRef.txt
+ 
+ distclean:
+ 
+-install: rxvt.1
+-	$(INSTALL_DATA) rxvt.1 $(DESTDIR)$(mandir)/$(manprefix)rxvt.$(manext)
++install: wterm.1
++	$(INSTALL_DATA) wterm.1 $(DESTDIR)$(mandir)/$(manprefix)wterm.$(manext)
+ 
+ uninstall:
+-	-cd $(mandir); $(RMF) $(manprefix)rxvt.$(manext)
++	-cd $(mandir); $(RMF) $(manprefix)wterm.$(manext)
+ 
+ distdirs:
+ 	mkdir $(basedir)/../$(VERNAME)/$(thisdir)
