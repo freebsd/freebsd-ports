@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	leafnode-1.9.7
+DISTNAME=	leafnode-1.9.11
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.Awfulhak.org/leafnode/
