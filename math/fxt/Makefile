@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fxt
-PORTVERSION=	2002.10.09
+PORTVERSION=	2002.12.16
 CATEGORIES=	math
 MASTER_SITES=	http://www.jjj.de/fxt/
 EXTRACT_SUFX=	.tgz
@@ -16,8 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_GCC=	3.1
 USE_GMAKE=	yes
-MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 MAKEFILE=	makefile
 
 .include <bsd.port.mk>

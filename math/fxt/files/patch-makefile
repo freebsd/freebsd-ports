@@ -1,25 +1,25 @@
---- makefile.orig	Tue Feb 26 07:53:01 2002
-+++ makefile	Thu Feb 28 21:50:58 2002
-@@ -4,7 +4,7 @@
+--- makefile.orig	Tue Dec 17 02:37:28 2002
++++ makefile	Sun Dec 22 08:38:00 2002
+@@ -3,7 +3,7 @@
+ 
  PROJ=fxt
  
- ##### GCC 2.x:
 -CXX = c++
 +#CXX = c++
  PPLIBS = -lm -lstdc++
- RUNBIN=$(TESTBIN)
  
-@@ -29,7 +29,7 @@
+ 
+@@ -16,7 +16,7 @@
  #  -mcpu=   Schedule code for given CPU
- #     -march implies -mcpu
+ # Note that specifying `-march=CPU-TYPE' implies `-mcpu=CPU-TYPE'
  
 -OFLAGS = -O2 -ffast-math
 +OFLAGS += -ffast-math
  OFLAGS += $(ARCHFLAG)
  OFLAGS += -fomit-frame-pointer
  OFLAGS += -fno-exceptions
-@@ -60,12 +60,12 @@
-  -Imod -Iwavelet -Isort
+@@ -47,12 +47,12 @@
+  -Imod -Iwavelet -Isort -Islow
  
  #### choose the FLAG combo here:
 -CXXFLAGS  = -pipe -fno-exceptions
@@ -34,7 +34,7 @@
  
  #-------------------------------------
  
-@@ -378,16 +378,16 @@
+@@ -348,16 +348,16 @@
  #	@echo ' ===== make FXT lib DONE. ====='
  
  
