@@ -112,7 +112,7 @@ lib/libebook.so
 lib/libebook.so.8
 lib/libecal.a
 lib/libecal.so
-lib/libecal.so.8
+lib/libecal.so.9
 lib/libedata-book.a
 lib/libedata-book.so
 lib/libedata-book.so.1
