@@ -1,49 +1,11 @@
-bin/ici3
-include/ici3/pcre/internal.h
-include/ici3/pcre/pcre.h
-include/ici3/alloc.h
-include/ici3/array.h
-include/ici3/buf.h
-include/ici3/catch.h
-include/ici3/cfunc.h
-include/ici3/conf-bsd.h
-include/ici3/exec.h
-include/ici3/file.h
-include/ici3/float.h
-include/ici3/forall.h
-include/ici3/func.h
-include/ici3/fwd.h
-include/ici3/ici.h
-include/ici3/int.h
-include/ici3/mark.h
-include/ici3/mem.h
-include/ici3/method.h
-include/ici3/null.h
-include/ici3/object.h
-include/ici3/op.h
-include/ici3/parse.h
-include/ici3/pc.h
-include/ici3/primes.h
-include/ici3/ptr.h
-include/ici3/re.h
-include/ici3/set.h
-include/ici3/skt.h
-include/ici3/src.h
-include/ici3/str.h
-include/ici3/struct.h
-include/ici3/trace.h
-include/ici3/win.h
-include/ici3/wrap.h
-lib/ici3/ici3core.ici
-lib/ici3/ici3core1.ici
-lib/ici3/ici3core2.ici
-lib/ici3/ici3core3.ici
-lib/libici3.a
-%%PORTDOCS%%share/doc/ici3/ici-a4.ps
-%%PORTDOCS%%share/doc/ici3/ici-ltr.ps
-%%PORTDOCS%%share/doc/ici3/ici.txt
-%%PORTDOCS%%share/doc/ici3/ici.pdf
-%%PORTDOCS%%@dirrm share/doc/ici3
-@dirrm include/ici3/pcre
-@dirrm include/ici3
-@unexec rmdir %D/lib/ici3 2>/dev/null || true
+bin/ici
+include/ici.h
+include/icistr-setup.h
+lib/libici4.a
+lib/ici4/ici4core.ici
+lib/ici4/ici4core1.ici
+lib/ici4/ici4core2.ici
+lib/ici4/ici4core3.ici
+share/doc/ici4/ici.pdf
+@unexec rmdir %D/lib/ici4 2>/dev/null || true
+@dirrm share/doc/ici4
