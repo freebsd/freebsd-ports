@@ -1,13 +1,13 @@
 # New ports collection makefile for:	squid
-# Version required:	1.2-beta17
+# Version required:	1.2-beta18
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.46 1998/03/09 03:35:09 peter Exp $
+# $Id: Makefile,v 1.47 1998/03/20 14:00:51 peter Exp $
 #
 
-DISTNAME=	squid-1.2.beta17
-PKGNAME=	squid-1.2b17
+DISTNAME=	squid-1.2.beta18
+PKGNAME=	squid-1.2b18
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://squid.nlanr.net/pub/squid-1.2.beta/ \
@@ -17,11 +17,11 @@ MASTER_SITES=  \
 EXTRACT_SUFX=	-src.tar.gz
 
 #PATCH_SITES+=   http://squid.nlanr.net/Squid/1.2.beta/
-#PATCHFILES+=    1.2.beta17.patch
+#PATCHFILES+=    1.2.beta18.patch
 
 MAINTAINER=	peter@freebsd.org
 
-DIST_SUBDIR=	squid1.2b17
+DIST_SUBDIR=	squid1.2b18
 GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
@@ -50,6 +50,8 @@ NO_LATEST_LINK=	yes
 #CONFIGURE_ARGS+= --enable-icmp
 #  - Enable delay hack to limit bandwidth usage
 #CONFIGURE_ARGS+= --enable-delay-hack
+#  - Enable generic memory use tracing
+#CONFIGURE+ARGS+= --enable-mem-gen-trace
 #  - Enable logging of the User-Agent header
 #CONFIGURE_ARGS+= --enable-useragent-log
 #  - Kill parent (eg: RunCache) on shutdown (use with great care!!)
