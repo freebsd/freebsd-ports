@@ -7,7 +7,7 @@
 
 PORTNAME=	themes
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-psi_
@@ -15,6 +15,8 @@ DISTNAME=	PsiDisplayPackage-${DISTVERSION}
 
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	Themes from the Psi Display Package
+
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 USE_X_PREFIX=	yes
 
