@@ -9,6 +9,7 @@ include/libgda-%%VERSION%%/gda++/gdaConnection.h
 include/libgda-%%VERSION%%/gda++/gdaError.h
 include/libgda-%%VERSION%%/gda++/gdaErrorList.h
 include/libgda-%%VERSION%%/gda++/gdaField.h
+include/libgda-%%VERSION%%/gda++/gdaHelpers.h
 include/libgda-%%VERSION%%/gda++/gdaIncludes.h
 include/libgda-%%VERSION%%/gda++/gdaRecordset.h
 include/libgda-%%VERSION%%/gda++/gdaValue.h
