@@ -1,0 +1,71 @@
+# New ports collection makefile for:	antivirus
+# Date created:				02.Jan 2004
+# Whom:					dirk.meyer@dinoex.sub.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	antivirus
+PORTVERSION=	3.30
+CATEGORIES=	mail
+MASTER_SITES=	http://www.nmt.edu/~wcolburn/antivirus/
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Sendmail milter wich uses Mcafee Virus Scan
+
+RUN_DEPENDS=	${LOCALBASE}/bin/ripmime:${PORTSDIR}/mail/ripmime
+.if !defined(SENDMAIL_MILTER_IN_BASE)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
+.endif
+
+USE_REINPLACE=	yes
+CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
+LIBS+=		-lmilter ${PTHREAD_LIBS}
+ANTIVIRUS_DIR?=	/var/spool/antivirus
+PLIST_SUB+=	ANTIVIRUS=${ANTIVIRUS_DIR}
+SED_SCRIPT=	-e 's|%%ANTIVIRUS%%|${ANTIVIRUS_DIR}|g' \
+		-e 's|%%PREFIX%%|${PREFIX}|g'
+MAKE_ENV+=	SENDMAILBASE="${SENDMAILBASE}" \
+		SENDMAILOBJ="${SENDMAILOBJ}" \
+		LIBS="${LIBS}"
+
+.if !defined(SENDMAIL_MILTER_IN_BASE)
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+SENDMAILBASE=	${LOCALBASE}
+SENDMAILOBJ=	${LOCALBASE}
+.else
+SENDMAILBASE=	/usr
+SENDMAILOBJ=	/usr
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if defined(SENDMAIL_WITHOUT_MILTER)
+pre-fetch:
+	@${ECHO_MSG}
+	@${ECHO_MSG} You must unset variable SENDMAIL_WITHOUT_MILTER,
+	@${ECHO_MSG} and rebuild sendmail in the ports
+	@${FALSE}
+.endif
+
+do-configure:
+	@${REINPLACE_CMD} -e 's|/etc/mail/antivirus.conf|${LOCALBASE}/etc/antivirus.conf|' \
+		${CONFIGURE_WRKSRC}/antivirus.c
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/antivirus-milter.sh \
+		> ${WRKSRC}/antivirus-milter.sh
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/antivirus.conf \
+		> ${WRKSRC}/antivirus.conf
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/antivirus \
+		${PREFIX}/libexec/antivirus
+	${INSTALL_SCRIPT} ${WRKSRC}/antivirus-milter.sh \
+		${PREFIX}/etc/rc.d/antivirus-milter.sh.sample
+	${INSTALL_DATA} ${WRKSRC}/antivirus.conf ${PREFIX}/etc/antivirus.conf-dist
+	${MKDIR} /var/antivirus/spool /var/antivirus/run /var/antivirus/quarantine
+	${CHOWN} -R nobody:nobody /var/antivirus/
+	@${ECHO_MSG} "Add to your *.mc configfile:"
+	@${ECHO_MSG} "INPUT_MAIL_FILTER(\`antivirus', \`S=local:${ANTIVIRUS_DIR}/antivirus.sock, F=')"
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,21 @@
+--- Makefile.orig	Fri Jun 27 19:55:26 2003
++++ Makefile	Fri Jan  2 14:21:02 2004
+@@ -1,5 +1,5 @@
+-SENDMAILBASE=/system/compile/sendmail-8.12.9
+-SENDMAILOBJ=obj.Linux.2.2.19.i686
++#SENDMAILBASE=/system/compile/sendmail-8.12.9
++#SENDMAILOBJ=obj.Linux.2.2.19.i686
+ 
+ INCDIRS=\
+   -I$(SENDMAILBASE)/include/libmilter/ \
+@@ -10,8 +10,8 @@
+   -L$(SENDMAILBASE)/$(SENDMAILOBJ)/libsm/
+ 
+ # Linux
+-LIBS=-lmilter -lpthread
+-CFLAGS=-Wall -Werror -g
++#LIBS=-lmilter -lpthread
++#CFLAGS=-Wall -Werror -g
+ 
+ ##
+ ## Solaris

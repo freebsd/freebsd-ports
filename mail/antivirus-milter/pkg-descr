@@ -1,0 +1,20 @@
+Sendmail milter wich uses Mcafee Virus Scan
+
+The milter recives messages from sendmail, and saves them as a file in
+a directory. The directory name and the file name are the "$i" (queue
+identifier) from Sendmail, making it easier to identify them. Once the
+entire message has been received, the milter runs "ripmime" on the file
+to extract any attachments. If rupmime returns without an error then it
+will run "uvscan" on the diretory to scan all the files in it. If uvscan
+returns an error, then the milter will look for viruses output from
+uvscan, and reject the message reporting which viruses were found. If
+viruses were found then the entire directory is moved to quarantine,
+otherwise it is deleted. 
+
+The milter also does extention checks. Certain extentions are blocked
+completely. In specific, extenions of .scr, .vbs, .pif, and .com are
+blocked.
+
+Author gave permission to distribute it with BSD-License.
+
+WWW: http://www.nmt.edu/~wcolburn/antivirus/

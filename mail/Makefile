@@ -10,6 +10,7 @@
     SUBDIR += althea
     SUBDIR += annoyance-filter
     SUBDIR += anomy-sanitizer
+    SUBDIR += antivirus-milter
     SUBDIR += anubis
     SUBDIR += archivemail
     SUBDIR += arrow

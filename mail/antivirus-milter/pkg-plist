@@ -1,0 +1,5 @@
+libexec/antivirus
+etc/antivirus.conf-dist
+etc/rc.d/antivirus-milter.sh.sample
+@exec mkdir -p %%ANTIVIRUS%%/spool %%ANTIVIRUS%%/run %%ANTIVIRUS%%/run/quarantine
+@exec chown -R nobody:nobody %%ANTIVIRUS%%/
