@@ -86,59 +86,59 @@ lib/libtdsS.so.1
 lib/libtemplate.a
 lib/libtemplate.so
 lib/libtemplate.so.1
-%%PORTDOCS%%share/doc/unixODBC/AdministratorManual/index.html
-%%PORTDOCS%%share/doc/unixODBC/AdministratorManual/odbcinst.html
-%%PORTDOCS%%share/doc/unixODBC/AdministratorManual/php3.html
-%%PORTDOCS%%share/doc/unixODBC/AdministratorManual/unixODBC.gif
-%%PORTDOCS%%share/doc/unixODBC/AdministratorManual/unixODBCsetup.html
-%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/close.html
-%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/conne.html
-%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/dsn.html
-%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/gloss.html
-%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/index.html
-%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/intro.html
-%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/navi.html
-%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/odbc.css
-%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/query.html
-%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/resul.html
-%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/index.html
-%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/unixODBC.gif
-%%PORTDOCS%%share/doc/unixODBC/UserManual/Figure1.gif
-%%PORTDOCS%%share/doc/unixODBC/UserManual/Figure2.gif
-%%PORTDOCS%%share/doc/unixODBC/UserManual/Figure3.gif
-%%PORTDOCS%%share/doc/unixODBC/UserManual/Figure4.gif
-%%PORTDOCS%%share/doc/unixODBC/UserManual/Figure6.gif
-%%PORTDOCS%%share/doc/unixODBC/UserManual/My.sql
-%%PORTDOCS%%share/doc/unixODBC/UserManual/StarOfficeDataGrid.gif
-%%PORTDOCS%%share/doc/unixODBC/UserManual/index.html
-%%PORTDOCS%%share/doc/unixODBC/UserManual/unixODBC.gif
-%%PORTDOCS%%share/doc/unixODBC/index.html
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure.gif
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure.html
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure.vsd
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure2.gif
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure2.html
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure3.gif
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure3.html
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure4.gif
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure4.html
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure5.gif
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure5.html
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure6.gif
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure6.html
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure7.gif
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure7.html
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure8.gif
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure8.html
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure9.gif
-%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure9.html
-%%PORTDOCS%%share/doc/unixODBC/lst/back.gif
-%%PORTDOCS%%share/doc/unixODBC/lst/next.gif
-%%PORTDOCS%%share/doc/unixODBC/smallbook.gif
-%%PORTDOCS%%share/doc/unixODBC/unixODBC.gif
-%%PORTDOCS%%@dirrm share/doc/unixODBC/lst
-%%PORTDOCS%%@dirrm share/doc/unixODBC/UserManual
-%%PORTDOCS%%@dirrm share/doc/unixODBC/ProgrammerManual/Tutorial
-%%PORTDOCS%%@dirrm share/doc/unixODBC/ProgrammerManual
-%%PORTDOCS%%@dirrm share/doc/unixODBC/AdministratorManual
-%%PORTDOCS%%@dirrm share/doc/unixODBC
+%%PORTDOCS%%%%DOCSDIR%%/AdministratorManual/index.html
+%%PORTDOCS%%%%DOCSDIR%%/AdministratorManual/odbcinst.html
+%%PORTDOCS%%%%DOCSDIR%%/AdministratorManual/php3.html
+%%PORTDOCS%%%%DOCSDIR%%/AdministratorManual/unixODBC.gif
+%%PORTDOCS%%%%DOCSDIR%%/AdministratorManual/unixODBCsetup.html
+%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/close.html
+%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/conne.html
+%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/dsn.html
+%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/gloss.html
+%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/navi.html
+%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/odbc.css
+%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/query.html
+%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/resul.html
+%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/unixODBC.gif
+%%PORTDOCS%%%%DOCSDIR%%/UserManual/Figure1.gif
+%%PORTDOCS%%%%DOCSDIR%%/UserManual/Figure2.gif
+%%PORTDOCS%%%%DOCSDIR%%/UserManual/Figure3.gif
+%%PORTDOCS%%%%DOCSDIR%%/UserManual/Figure4.gif
+%%PORTDOCS%%%%DOCSDIR%%/UserManual/Figure6.gif
+%%PORTDOCS%%%%DOCSDIR%%/UserManual/My.sql
+%%PORTDOCS%%%%DOCSDIR%%/UserManual/StarOfficeDataGrid.gif
+%%PORTDOCS%%%%DOCSDIR%%/UserManual/index.html
+%%PORTDOCS%%%%DOCSDIR%%/UserManual/unixODBC.gif
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure.gif
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure.html
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure.vsd
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure2.gif
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure2.html
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure3.gif
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure3.html
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure4.gif
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure4.html
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure5.gif
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure5.html
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure6.gif
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure6.html
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure7.gif
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure7.html
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure8.gif
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure8.html
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure9.gif
+%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure9.html
+%%PORTDOCS%%%%DOCSDIR%%/lst/back.gif
+%%PORTDOCS%%%%DOCSDIR%%/lst/next.gif
+%%PORTDOCS%%%%DOCSDIR%%/smallbook.gif
+%%PORTDOCS%%%%DOCSDIR%%/unixODBC.gif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lst
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/UserManual
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ProgrammerManual/Tutorial
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ProgrammerManual
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/AdministratorManual
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
