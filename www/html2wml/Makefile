@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	html2wml
-PORTVERSION=	0.4.5r2
+PORTVERSION=	0.4.6.p5
 CATEGORIES=	www
 MASTER_SITES=	http://maddingue.free.fr/techie/download/Html2Wml/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p5//}-pre5
 
 MAINTAINER=	greid@FreeBSD.org
 
