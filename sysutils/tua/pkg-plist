@@ -1,0 +1,5 @@
+@cwd /usr/local
+bin/tua
+man/man1/tua.1
+info/tua.info
+lib/tua.pcd
