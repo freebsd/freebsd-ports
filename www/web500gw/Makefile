@@ -3,7 +3,7 @@
 # Date created:         30 July 1998
 # Whom:                 Brent J. Nordquist <bjn@visi.com>
 #
-# $Id: Makefile,v 1.2 1998/07/31 21:34:38 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/24 01:26:30 steve Exp $
 #
 
 DISTNAME=	web500gw-2.1b2
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.tu-chemnitz.de/pub/Local/urz/web500gw/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bjn@visi.com
+
+BROKEN_ELF=	yes
 
 BUILD_DEPENDS=	${PREFIX}/lib/libldap.a:${PORTSDIR}/net/ldap
 
