@@ -1,0 +1,2 @@
+The Quine-McCluskey Logic Simplifier is a utility written to simplify
+digital logic. You feed it a canonical decimal list and it does the rest.
