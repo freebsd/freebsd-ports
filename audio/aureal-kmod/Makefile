@@ -99,8 +99,7 @@ pre-fetch:
 	@${FALSE}
 .endif
 .endfor
-
-	@if [ ! -d /sys -o ! -d ${SRCPREFIX}/sys ]; then \
+	@if [ ! -d /sys -a ! -d ${SRCPREFIX}/sys ]; then \
 		${ECHO} "****************************************" ; \
 		${ECHO} " You need to extract kernel source tree" ; \
 		${ECHO} " before you build this package..." ; \
