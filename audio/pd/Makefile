@@ -30,12 +30,6 @@ USE_X_PREFIX=	yes
 USE_AUTOCONF_VER=	259
 WRKSRC=		${WRKDIR}/pd-0.37-1test1/src
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
-
 pre-patch:
 	${RM} -f ${WRKSRC}/configure
 
@@ -92,4 +86,4 @@ do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/../extra && ${PAX} -r -w * ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
