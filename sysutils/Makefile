@@ -204,6 +204,7 @@
     SUBDIR += mcron
     SUBDIR += memgrep
     SUBDIR += memtest
+    SUBDIR += memtest86
     SUBDIR += metalog
     SUBDIR += mgeupsd
     SUBDIR += minirsyslogd
