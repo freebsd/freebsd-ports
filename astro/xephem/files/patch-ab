@@ -1,11 +1,11 @@
---- XEphem.ad.orig	Sat Mar 14 01:45:06 1998
-+++ XEphem.ad	Wed Apr 22 13:19:37 1998
-@@ -166,7 +166,7 @@
- ! system-wide directory for xephem support files
- ! N.B. under this are auxil/, fifos/, and catalogs/
+--- XEphem.ad.orig	Wed Mar 10 11:20:24 1999
++++ XEphem.ad	Wed Mar 10 11:20:50 1999
+@@ -170,7 +170,7 @@
+ ! system-wide directory for xephem support files. Shared r-o among all users.
+ ! N.B. under this are auxil/, fifos/, fits/, and catalogs/.
  ! N.B. if present, ppm.xe and the gsc base directory must be under catalogs/
--XEphem.BaseDir: .
-+XEphem.BaseDir: @PREFIX@/lib/X11/xephem
+-XEphem.ShareDir: .
++XEphem.ShareDir: @PREFIX@/lib/X11/xephem
  
- ! mount point for CDROM device
- ! only used if have access to ASP GSC CDROM
+ ! *************************************************************************
+ ! default FITS info
