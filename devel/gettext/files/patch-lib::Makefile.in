@@ -1,19 +1,41 @@
---- lib/Makefile.in.orig	Tue Mar 12 13:04:16 2002
-+++ lib/Makefile.in	Fri Mar 15 17:41:01 2002
-@@ -240,3 +240,3 @@
+
+$FreeBSD$
+
+--- lib/Makefile.in.orig	Tue Mar 12 21:04:16 2002
++++ lib/Makefile.in	Tue Apr 30 00:01:20 2002
+@@ -220,7 +220,7 @@
+ # Need @LTLIBICONV@ because linebreak.c uses iconv().
+ libgettextlib_la_LDFLAGS = \
+   -release @VERSION@ \
+-  @LTLIBINTL@ @LTLIBICONV@ -lc -no-undefined
++  @LTLIBINTL@ @LTLIBICONV@ -no-undefined
+ 
+ 
+ 
+@@ -238,14 +238,14 @@
+ gen-lbrkprop.c 3level.h Combining.txt
+ 
  
 -DEFS = -DLIBDIR=\"$(libdir)\" @DEFS@
 +DEFS = -DLIBDIR=\"$(prefix)/libdata\" @DEFS@
  INCLUDES = -I. -I$(srcdir) -I.. -I../intl -I$(top_srcdir)/intl
-@@ -246,4 +246,4 @@
+ 
+ DISTCLEANFILES = fnmatch.h
+ MOSTLYCLEANFILES = @STDBOOL_H@
  
 -charset_alias = $(DESTDIR)$(libdir)/charset.alias
 -charset_tmp = $(DESTDIR)$(libdir)/charset.tmp
 +charset_alias = $(DESTDIR)$(prefix)/libdata/charset.alias
 +charset_tmp = $(DESTDIR)$(prefix)/libdata/charset.tmp
  
-@@ -524,3 +524,3 @@
+ SUFFIXES = .sed .sin
+ 
+@@ -522,7 +522,7 @@
+ 
+ all-local: charset.alias ref-add.sed ref-del.sed
  install-exec-local: all-local
 -	$(mkinstalldirs) $(DESTDIR)$(libdir)
 +	$(mkinstalldirs) $(DESTDIR)$(prefix)/libdata
  	if test -f $(charset_alias); then \
+ 	  sed -f ref-add.sed $(charset_alias) > $(charset_tmp) ; \
+ 	  $(INSTALL_DATA) $(charset_tmp) $(charset_alias) ; \
