@@ -6075,6 +6075,7 @@ py-sgrep	ports/textproc/py-sgrep
 py-smb		ports/net/py-smb
 py-snmp		ports/net/py-snmp
 py-soap		ports/net/py-soap
+py-soapy	ports/net/py-soapy
 py-spark	ports/devel/py-spark
 py-spreadmodule	ports/net/py-spreadmodule
 py-sqlrelay	ports/databases/py-sqlrelay
