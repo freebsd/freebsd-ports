@@ -15,6 +15,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Receive, filter, read, compose and send mail at the text console
 
+CONFLICTS=	elmo-[0-9]*
+
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
