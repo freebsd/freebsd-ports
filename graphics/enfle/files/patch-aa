@@ -86,3 +86,14 @@
  libdir = @Plugins_archiver_dir@
  LIBS = 
  
+--- plugins/archiver/one/Makefile.in.orig	Thu Aug 17 22:51:37 2000
++++ plugins/archiver/one/Makefile.in	Mon Aug 21 01:30:27 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = archiver_one.la
+-archiver_one_la_LDFLAGS = -module
++archiver_one_la_LDFLAGS = -module -version-info 1:0:0
+ libdir = @Plugins_archiver_dir@
+ LIBS = 
+ 

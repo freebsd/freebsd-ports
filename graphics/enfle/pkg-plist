@@ -11,6 +11,8 @@ lib/enfle/plugins/archiver/archiver_libarc.so
 lib/enfle/plugins/archiver/archiver_libarc.so.1
 lib/enfle/plugins/archiver/archiver_misc.so
 lib/enfle/plugins/archiver/archiver_misc.so.1
+lib/enfle/plugins/archiver/archiver_one.so
+lib/enfle/plugins/archiver/archiver_one.so.1
 lib/enfle/plugins/archiver/archiver_pak.so
 lib/enfle/plugins/archiver/archiver_pak.so.1
 lib/enfle/plugins/archiver/archiver_tar.so
