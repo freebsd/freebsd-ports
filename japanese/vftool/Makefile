@@ -12,17 +12,18 @@ MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/ \
 		ftp://bash.cc.keio.ac.jp/pub/TeX/ascii-ptex/ptex215/ \
 		ftp://ftp.iis.u-tokyo.ac.jp/TeX/NTT-JTeX/:old/ \
 		ftp://ftp.iis.u-tokyo.ac.jp/TeX/fonts/pk/ \
-		ftp://ftp.waseda.ac.jp/pub/tex/ascii-OLD/
+		ftp://ftp.waseda.ac.jp/pub/tex/ascii-OLD/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	. kiri
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		plib13-euc.tar.gz \
 		jtex-1.52.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
-COMMENT=	Virtual font kit for using in dvi2ps, dvipsk or dvi2dvi (n2a,a2n,a2bk,p2pn)
+MAINTAINER=	kiri@FreeBSD.org
+COMMENT=	Virtual font kit (n2a,a2n,a2bk,p2pn)
 
 BUILD_DEPENDS=	${AFMDIR}/GothicBBB-Medium-H:${PORTSDIR}/japanese/japaneseAFM
-
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 ALL_TARGET=	n2a a2n a2bk p2pn
 SCRIPTS_ENV=	MV=${MV} SED=${SED} AFMDIR=${AFMDIR} JFMDIR=${JFMDIR}
