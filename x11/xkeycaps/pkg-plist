@@ -1,0 +1,5 @@
+@cd /usr/local
+@mode 755
+bin/xkeycaps
+@mode 444
+man/man1/xkeycaps.1.gz

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+cd $WRKSRC || exit 1
+
+#mv Imakefile Imakefile.orig
+#sed -e s/linux/freebsd/ <Imakefile.orig >Imakefile
+cat >> Imakefile << elifekamI
+BINDIR=$PREFIX/bin
+MANDIR=$PREFIX/man/man1
+
+KBD_DEFINES = -DDEFAULT_KBD_NAME="\"L101-3\""
+
+elifekamI
+
+cd kbds
+mv  all-kbds.h  all-kbds.h.orig
+sed -e s/Linux/FreeBSD/ <all-kbds.h.orig>all-kbds.h
+
+exit 0
