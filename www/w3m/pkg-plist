@@ -46,3 +46,4 @@ share/doc/w3m/w3mhelp-funcdesc.ja.pl
 share/doc/w3m/w3mhelp-funcname.pl
 @dirrm libexec/w3m
 @dirrm share/doc/w3m
+%%PORTDOCS%%%%JAPANESE_ONLY%%@dirrm share/doc/ja/w3m
