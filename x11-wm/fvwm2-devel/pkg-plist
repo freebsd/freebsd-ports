@@ -53,7 +53,7 @@ libexec/fvwm/%%FVWM_VERSION%%/FvwmTheme
 libexec/fvwm/%%FVWM_VERSION%%/FvwmTile
 libexec/fvwm/%%FVWM_VERSION%%/FvwmWharf
 libexec/fvwm/%%FVWM_VERSION%%/FvwmWinList
-libexec/fvwm/%%FVWM_VERSION%%/FvwmWindowLister
+libexec/fvwm/%%FVWM_VERSION%%/FvwmWindowMenu
 @comment The following are here because they are symlinks
 man/man1/fvwm2.1.gz
 man/man1/xpmroot.1.gz
@@ -412,11 +412,14 @@ share/fvwm/FvwmScript-WidgetDemo
 share/fvwm/fvwm-script-ComExample.pl
 share/fvwm/fvwm-script-setup95.pl
 share/fvwm/system.fvwm2rc-sample-95
+share/fvwm/perllib/FVWM/Commands.pm
 share/fvwm/perllib/FVWM/Constants.pm
 share/fvwm/perllib/FVWM/Event.pm
 share/fvwm/perllib/FVWM/EventNames.pm
 share/fvwm/perllib/FVWM/Module/Gtk.pm
+share/fvwm/perllib/FVWM/Module/Gtk2.pm
 share/fvwm/perllib/FVWM/Module/Tk.pm
+share/fvwm/perllib/FVWM/Module/Toolkit.pm
 share/fvwm/perllib/FVWM/Module.pm
 share/fvwm/perllib/General/FileSystem.pm
 share/fvwm/perllib/General/Parse.pm
