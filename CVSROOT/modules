@@ -3348,7 +3348,6 @@ kdenetwork3	ports/net/kdenetwork3
 kdepim3		ports/deskutils/kdepim3
 kdesdk3		ports/devel/kdesdk3
 kdestroy	src/eBones/kdestroy
-kdetelnet	ports/net/kdetelnet
 kdetoys3	ports/x11-clocks/kdetoys3
 kdeutils3	ports/misc/kdeutils3
 kdevelop	ports/devel/kdevelop
@@ -3556,7 +3555,6 @@ kwatch		ports/misc/kwatch
 kwebget		ports/ftp/kwebget
 kwebwatch	ports/www/kwebwatch
 kxicq-devel		ports/net/kxicq-devel
-kxicq2		ports/net/kxicq2
 kxl		ports/games/kxl
 kxmleditor	ports/editors/kxmleditor
 kzip		src/usr.bin/kzip
