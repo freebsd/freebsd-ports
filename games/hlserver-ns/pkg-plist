@@ -346,6 +346,7 @@
 %%HLDSDIR%%ns/models/player/heavy/heavy.mdl
 %%HLDSDIR%%ns/models/player/soldier/soldier.mdl
 %%HLDSDIR%%ns/models/pshell.mdl
+%%HLDSDIR%%ns/models/shell.mdl
 %%HLDSDIR%%ns/models/spike.mdl
 %%HLDSDIR%%ns/models/v_gg.mdl
 %%HLDSDIR%%ns/models/v_gg_hv.mdl
