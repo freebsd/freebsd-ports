@@ -31,7 +31,7 @@ PLIST_SUB=	KMODDIR="@comment "
 .endif
 
 .if ${OSVERSION} > 500027
-BROKEN=		"OS versions subsequent to 500027 include smbfs"
+IGNORE=		"OS versions subsequent to 500027 include smbfs"
 .endif
 
 .if defined(SMP_SUPPORT)
