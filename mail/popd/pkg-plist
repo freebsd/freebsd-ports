@@ -1,6 +1,6 @@
 include/poputil.h
 libexec/popd
-libpoputil.a
-libpoputil.so
-libpoputil.so.1
-libpoputil_p.a
+lib/libpoputil.a
+lib/libpoputil.so
+lib/libpoputil.so.1
+lib/libpoputil_p.a
