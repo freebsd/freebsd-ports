@@ -1,6 +1,14 @@
---- Makefile.tmpl.orig	Thu Jan  7 05:50:45 1999
-+++ Makefile.tmpl	Fri Jan 22 22:24:16 1999
-@@ -110,6 +110,7 @@
+--- Makefile.tmpl.orig	Mon Mar 15 18:38:46 1999
++++ Makefile.tmpl	Sat Apr  3 15:25:47 1999
+@@ -113,13 +113,14 @@
+ sysconfdir      = @sysconfdir@
+ datadir         = @datadir@
+ iconsdir        = $(datadir)/icons
+-htdocsdir       = $(datadir)/htdocs
++htdocsdir       = $(datadir)/data
+ cgidir          = $(datadir)/cgi-bin
+ includedir      = @includedir@
+ localstatedir   = @localstatedir@
  runtimedir      = @runtimedir@
  logfiledir      = @logfiledir@
  proxycachedir   = @proxycachedir@
@@ -8,27 +16,27 @@
  
  libexecdir_relative   = @libexecdir_relative@
  
-@@ -124,6 +125,7 @@
+@@ -134,6 +135,7 @@
  suexec_safepath = @suexec_safepath@
  
  #   some substituted configuration parameters
-+conf_user     = @conf_user@
++conf_user        = @conf_user@
  conf_group       = @conf_group@
  conf_port        = @conf_port@
  conf_serveradmin = @conf_serveradmin@
-@@ -239,9 +241,9 @@
+@@ -249,9 +251,9 @@
  	$(MKDIR) $(root)$(mandir)/man1
  	$(MKDIR) $(root)$(mandir)/man8
  	$(MKDIR) $(root)$(sysconfdir)
--	$(MKDIR) $(root)$(datadir)/htdocs
+-	$(MKDIR) $(root)$(htdocsdir)
 +	$(MKDIR) $(root)$(doc_prefix)
- 	$(MKDIR) $(root)$(datadir)/icons
--	$(MKDIR) $(root)$(datadir)/cgi-bin
-+	$(MKDIR) $(root)$(datadir)/cgi-bin.default
+ 	$(MKDIR) $(root)$(iconsdir)
+-	$(MKDIR) $(root)$(cgidir)
++	$(MKDIR) $(root)$(cgidir).default
  	$(MKDIR) $(root)$(includedir)
  	$(MKDIR) $(root)$(runtimedir)
  	$(MKDIR) $(root)$(logfiledir)
-@@ -278,9 +280,11 @@
+@@ -294,9 +296,11 @@
  			file=`echo $${mod} | sed -e 's;^.*/\([^/]*\);\1;'`; \
  			echo "$(INSTALL_DSO) $(TOP)/$(SRC)/$${mod} $(root)$(libexecdir)/$${file}"; \
  			$(INSTALL_DSO) $(TOP)/$(SRC)/$${mod} $(root)$(libexecdir)/$${file}; \
@@ -43,7 +51,7 @@
  		done; \
  		echo "" >>$(SRC)/.apaci.install.conf; \
  		echo "#  Reconstruction of the complete module list from all available modules" >>$(SRC)/.apaci.install.conf; \
-@@ -288,6 +292,7 @@
+@@ -304,6 +308,7 @@
  		echo "#  [WHENEVER YOU CHANGE THE LOADMODULE SECTION ABOVE UPDATE THIS, TOO]" >>$(SRC)/.apaci.install.conf; \
  		echo "ClearModuleList" >>$(SRC)/.apaci.install.conf; \
  		egrep "^[ 	]*(Add|Shared)Module" $(SRC)/Configuration.apaci |\
@@ -51,72 +59,67 @@
  		sed	-e 's:SharedModule:AddModule:' \
  			-e 's:modules/[^/]*/::' \
  			-e 's:[ 	]lib: mod_:' \
-@@ -308,6 +313,7 @@
+@@ -324,6 +329,7 @@
  	echo "$(INSTALL_SCRIPT) $(TOP)/$(SRC)/support/apachectl[*] $(root)$(sbindir)/$${apachectl}"; \
  	sed -e 's;PIDFILE=.*;PIDFILE=$(runtimedir)/$(TARGET).pid;' \
  		-e 's;HTTPD=.*;HTTPD=$(sbindir)/$(TARGET);' \
 +		-e 's;LD_LIBRARY_PATH=.*;LD_LIBRARY_PATH=/usr/lib\:$(prefix)/lib;' \
  		< $(TOP)/$(SRC)/support/apachectl > $(TOP)/$(SRC)/.apaci.install.tmp && \
  		$(INSTALL_SCRIPT) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sbindir)/$${apachectl}; \
- 	echo "$(INSTALL_DATA) $(TOP)/$(SRC)/support/apachectl.1 $(root)$(mandir)/man1/$${apachectl}.1"; \
-@@ -363,25 +369,32 @@
+ 	echo "$(INSTALL_DATA) $(TOP)/$(SRC)/support/apachectl.8 $(root)$(mandir)/man8/$${apachectl}.8"; \
+@@ -379,25 +385,32 @@
  #   icons and distributed CGI scripts.
  install-data:
  	@echo "===> [data: Installing initial data files]"
--	-@if [ -f $(root)$(datadir)/htdocs/index.html ]; then \
--		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/htdocs/]"; \
+-	-@if [ -f $(root)$(htdocsdir)/index.html ]; then \
+-		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(htdocsdir)/]"; \
 -	else \
--		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(datadir)/htdocs/"; \
-+#	-@if [ -f $(root)$(datadir)/htdocs/index.html ]; then \
-+#		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/htdocs/]"; \
+-		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(htdocsdir)/"; \
++#	-@if [ -f $(root)$(htdocsdir)/index.html ]; then \
++#		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(htdocsdir)/]"; \
 +#	else \
 +		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(doc_prefix)/"; \
- 		(cd $(TOP)/htdocs/ && $(TAR) -hcf - *) |\
--		(cd $(root)$(datadir)/htdocs/ && $(TAR) -xf -); \
--		find $(root)$(datadir)/htdocs/ -type d -exec chmod a+rx {} \; ; \
--		find $(root)$(datadir)/htdocs/ -type f -exec chmod a+r {} \; ; \
-+		(cd $(root)$(doc_prefix) && $(TAR) -xf -); \
-+		find $(root)$(doc_prefix) -type d -exec chmod a+rx {} \; ; \
-+		find $(root)$(doc_prefix) -type f -exec chmod a+r {} \; ; \
+ 		(cd $(TOP)/htdocs/ && $(TAR) $(TAROPT) - *) |\
+-		(cd $(root)$(htdocsdir)/ && $(TAR) -xf -); \
+-		find $(root)$(htdocsdir)/ -type d -exec chmod a+rx {} \; ; \
+-		find $(root)$(htdocsdir)/ -type f -exec chmod a+r {} \; ; \
++		(cd $(root)$(doc_prefix)/ && $(TAR) -xf -); \
++		find $(root)$(doc_prefix)/ -type d -exec chmod a+rx {} \; ; \
++		find $(root)$(doc_prefix)/ -type f -exec chmod a+r {} \; ; \
 +#	fi
-+	if [ ! -d $(root)$(datadir)/data ]; then \
-+		$(CP) -rp $(root)$(doc_prefix) $(root)$(datadir)/data; \
++	if [ ! -d $(root)$(htdocsdir) ]; then \
++		$(CP) -rp $(root)$(doc_prefix) $(root)$(htdocsdir); \
  	fi
--	-@if [ -f $(root)$(datadir)/cgi-bin/printenv ]; then \
--		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/cgi-bin/]"; \
+-	-@if [ -f $(root)$(cgidir)/printenv ]; then \
+-		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
 -	else \
-+	$(LN) -sf $(root)$(doc_prefix) $(root)$(datadir)/data.default
-+#	-@if [ -f $(root)$(datadir)/cgi-bin/printenv ]; then \
-+#		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/cgi-bin/]"; \
++	$(LN) -s $(root)$(doc_prefix) $(root)$(htdocsdir).default
++#	-@if [ -f $(root)$(cgidir)/printenv ]; then \
++#		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
 +#	else \
  		for script in printenv test-cgi; do \
  			cat $(TOP)/cgi-bin/$${script} |\
  			sed -e 's;^#!/.*perl;#!$(PERL);' \
  			> $(TOP)/$(SRC)/.apaci.install.tmp; \
--			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(datadir)/cgi-bin/$${script}"; \
--			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(datadir)/cgi-bin/$${script}; \
--		done; \
-+			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(datadir)/cgi-bin.default/$${script}"; \
-+			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(datadir)/cgi-bin.default/$${script}; \
-+		done;
+-			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(cgidir)/$${script}"; \
+-			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(cgidir)/$${script}; \
++			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(cgidir).default/$${script}"; \
++			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(cgidir).default/$${script}; \
+ 		done; \
 +#	fi
-+	if [ ! -d $(root)$(datadir)/cgi-bin ]; then \
-+		$(LN) -sf $(root)$(datadir)/cgi-bin.default $(root)$(datadir)/cgi-bin; \
++	if [ ! -d $(root)$(cgidir) ]; then \
++		$(CP) -rp $(root)$(cgidir).default $(root)$(cgidir); \
  	fi
- 	@echo "Copying tree $(TOP)/icons/ -> $(root)$(datadir)/icons/"; \
- 	(cd $(TOP)/icons/ && $(TAR) -hcf - *) |\
-@@ -411,20 +424,23 @@
- 		 echo ""; \
- 		 cat $(TOP)/conf/$${conf}-dist ) |\
- 		 sed -e '/# LoadModule/r $(TOP)/$(SRC)/.apaci.install.conf' \
--			-e 's;@@ServerRoot@@/htdocs;$(datadir)/htdocs;' \
-+			-e 's;@@ServerRoot@@/htdocs;$(datadir)/data;' \
- 			-e 's;@@ServerRoot@@/icons;$(datadir)/icons;' \
- 			-e 's;@@ServerRoot@@/cgi-bin;$(datadir)/cgi-bin;' \
+ 	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
+ 	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
+@@ -431,17 +444,20 @@
+ 			-e 's;@@ServerRoot@@/icons;$(iconsdir);' \
+ 			-e 's;@@ServerRoot@@/cgi-bin;$(cgidir);' \
  			-e 's;@@ServerRoot@@/proxy;$(proxycachedir);' \
 +			-e 's;@@ServerRoot@@/srm.conf;$(sysconfdir)/srm.conf;' \
 +			-e 's;@@ServerRoot@@/access.conf;$(sysconfdir)/access.conf;' \
  			-e 's;@@ServerRoot@@;$(prefix);g' \
+ 			-e 's;httpd.conf;$(TARGET).conf;' \
  			-e 's;logs/accept.lock;$(runtimedir)/$(TARGET).lock;' \
  			-e 's;logs/apache_runtime_status;$(runtimedir)/$(TARGET).scoreboard;' \
  			-e 's;logs/httpd.pid;$(runtimedir)/$(TARGET).pid;' \

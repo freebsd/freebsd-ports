@@ -3,7 +3,7 @@
 # Date created:         Sat Oct 31 16:30:00 CDT 1997
 # Whom:                 hetzels@westbend.net
 #
-# $Id: Makefile,v 1.10 1999/03/13 17:57:44 billf Exp $
+# $Id: Makefile,v 1.11 1999/03/26 14:07:16 asami Exp $
 #
 
 DISTNAME=       apache_${AP_VERS}
@@ -30,8 +30,7 @@ DISTFILES=	${APACHE} ${FRONTPAGE}
 
 MAINTAINER=	hetzels@westbend.net
 
-#PATCH_SITES=    http://www.apache.org/dist//patches/apply_to_${AP_VERS}/ \
-#		http://www.apache.org/dist/patches/apply_to_${AP_VERS}/
+#PATCH_SITES=    http://www.apache.org/dist/patches/apply_to_${AP_VERS}/
 #PATCHFILES=
 
 .if defined(PATCH_DEBUG)
@@ -40,7 +39,7 @@ PATCH_DIST_ARGS=       -d ${WRKSRC}/src -E ${PATCH_DIST_STRIP}
 PATCH_DIST_ARGS=       -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 
-AP_VERS=	1.3.4
+AP_VERS=	1.3.6
 APACHE=		${DISTNAME}${EXTRACT_SUFX}
 FRONTPAGE=	fp30.bsdi3.tar.Z
 
@@ -95,8 +94,8 @@ CFLAGS+= -O6 -fomit-frame-pointer
 
 CONFIGURE_ENV= OPTIM='${OPTIM}'
 
-MAN1=   ab.1 apachectl.1 dbmmanage.1 htdigest.1 htpasswd.1
-MAN8=   apxs.8 httpd.8 logresolve.8 rotatelogs.8
+MAN1=   dbmmanage.1 htdigest.1 htpasswd.1
+MAN8=   ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
 
 .if defined(SUEXEC)
 HTTPD_USER?=www
