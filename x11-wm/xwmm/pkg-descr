@@ -4,7 +4,10 @@ one. Once a WM is launched, it hides itself until that WM terminates,
 then it shows itself again and lets you choose another WM, and so on,
 until you press the Close button.
 
-If you have K-Desktop Envirenment, it is recommended to use "startkde.fixed"
-script rather than "startkde" to start KDE.
+Just write "xwmm" instead of your favorite window manager in ~/.xinitrc or
+~/.xsession.
 
-WWW: http://www.softarc.com/~msharkey/wmm/
+If you have K-Desktop Envirenment, it is recommended to use "startkde.xwmm"
+script rather than "startkde" to start KDE in the xwmm setting.
+
+The originator is Mike Sharkey <msharkey@softarc.com>.
