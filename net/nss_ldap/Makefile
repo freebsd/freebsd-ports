@@ -7,7 +7,7 @@
 
 PORTNAME=	nss_ldap
 PORTVERSION=	1.${NSS_LDAP_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.padl.com/download/
 DISTNAME=	${PORTNAME}-${NSS_LDAP_VERSION}
@@ -26,8 +26,12 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib"
 
-CONFIGURE_ARGS=	--with-ldap-conf-file=${PREFIX}/etc/nss_ldap.conf \
-		--with-ldap-secret-file=${PREFIX}/etc/nss_ldap.secret
+CONFIGURE_ARGS+= \
+		--with-ldap-conf-file=${PREFIX}/etc/nss_ldap.conf \
+		--with-ldap-secret-file=${PREFIX}/etc/nss_ldap.secret \
+		--enable-rfc2307bis \
+		--enable-schema-mapping \
+		--enable-paged-results
 
 post-extract:
 	${CP} ${FILESDIR}/bsdnss.c ${WRKSRC}
@@ -39,7 +43,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nss_ldap.so ${PREFIX}/lib/nss_ldap.so.1
 	${INSTALL_DATA} ${WRKSRC}/ldap.conf ${PREFIX}/etc/nss_ldap.conf.sample
 	${CAT} ${PKGMESSAGE}
-
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 500112
