@@ -1,6 +1,8 @@
+bin/grepjar
+bin/jar
 bin/sh-rtems-gcj
-bin/gcjh
-bin/jv-scan
-bin/jcf-dump
-lib/gcc-lib/sh-rtems/2.95.3/jc1
-lib/gcc-lib/sh-rtems/2.95.3/jvgenmain
+bin/sh-rtems-gcjh
+bin/sh-rtems-jv-scan
+bin/sh-rtems-jcf-dump
+lib/gcc-lib/sh-rtems/3.2.1/jc1
+lib/gcc-lib/sh-rtems/3.2.1/jvgenmain
