@@ -1,0 +1,213 @@
+Index: include/common.h
+===================================================================
+RCS file: /cvsroot/bzflag/bzflag/include/common.h,v
+retrieving revision 1.6
+diff -u -r1.6 common.h
+--- include/common.h	2001/03/09 02:38:24	1.6
++++ include/common.h	2001/03/28 01:12:02
+@@ -17,6 +17,11 @@
+ #ifndef BZF_COMMON_H
+ #define	BZF_COMMON_H
+ 
++// Might we be BSDish? sys/param.h has BSD defined if so
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
++
+ #if defined(_WIN32)
+ // turn off bogus `this used in base member initialization list'
+ #pragma warning(disable: 4355)
+@@ -77,7 +82,7 @@
+ 
+ #if !defined(_WIN32) & !defined(macintosh)
+ 
+-#ifndef __FreeBSD__
++#ifndef BSD
+ #include <values.h>
+ #endif
+ #include <sys/types.h>
+Index: src/net/multicast.cxx
+===================================================================
+RCS file: /cvsroot/bzflag/bzflag/src/net/multicast.cxx,v
+retrieving revision 1.6
+diff -u -r1.6 multicast.cxx
+--- src/net/multicast.cxx	2001/03/09 02:38:24	1.6
++++ src/net/multicast.cxx	2001/03/28 01:12:02
+@@ -21,10 +21,8 @@
+ {
+ #if defined(_WIN32)
+   const BOOL optOn = TRUE;
+-  BOOL opt = optOn;
+ #else
+   const int optOn = 1;
+-  int opt = optOn;
+ #endif
+   int fd;
+ 
+@@ -67,18 +65,16 @@
+ 
+ #if defined(SO_REUSEPORT)
+   /* set reuse port */
+-  opt = optOn;
+   if (setsockopt(fd, SOL_SOCKET, SO_REUSEPORT,
+-				(SSOType)&opt, sizeof(opt)) < 0) {
++				(SSOType)&optOn, sizeof(optOn)) < 0) {
+     nerror("openBroadcast: setsockopt SO_REUSEPORT");
+     close(fd);
+     return -1;
+   }
+ #elif defined(SO_REUSEADDR)
+   /* set reuse address */
+-  opt = optOn;
+   if (setsockopt(fd, SOL_SOCKET, SO_REUSEADDR,
+-				(SSOType)&opt, sizeof(opt)) < 0) {
++				(SSOType)&optOn, sizeof(optOn)) < 0) {
+     nerror("openBroadcast: setsockopt SO_REUSEADDR");
+     close(fd);
+     return -1;
+@@ -93,9 +89,8 @@
+   }
+ 
+   /* make broadcast */
+-  opt = optOn;
+   if (setsockopt(fd, SOL_SOCKET, SO_BROADCAST,
+-				(SSOType)&opt, sizeof(opt)) < 0) {
++				(SSOType)&optOn, sizeof(optOn)) < 0) {
+     nerror("openBroadcast: setsockopt SO_BROADCAST");
+     close(fd);
+     return -1;
+@@ -174,6 +169,11 @@
+   struct ip_mreq mreq;
+   struct in_addr ifaddr;
+   int fd;
++#if defined(_WIN32)
++  const BOOL optOn = TRUE;
++#else
++  const int optOn = 1;
++#endif
+ 
+   /* check parameters */
+   if (!addr) {
+@@ -322,9 +322,8 @@
+   else {
+ #if defined(SO_REUSEPORT)
+     /* set reuse port */
+-    int opt = 1;
+     if (setsockopt(fd, SOL_SOCKET, SO_REUSEPORT,
+-				(SSOType)&opt, sizeof(opt)) < 0) {
++				(SSOType)&optOn, sizeof(optOn)) < 0) {
+       nerror("WARNING: openMulticast: setsockopt SO_REUSEPORT");
+       close(fd);
+       return -1;
+@@ -332,13 +331,8 @@
+ #endif
+ #if defined(SO_REUSEADDR)
+     /* set reuse address */
+-#if defined(_WIN32)
+-    BOOL opt = TRUE;
+-#else
+-    int opt = 1;
+-#endif
+     if (setsockopt(fd, SOL_SOCKET, SO_REUSEADDR,
+-				(SSOType)&opt, sizeof(opt)) < 0) {
++				(SSOType)&optOn, sizeof(optOn)) < 0) {
+       nerror("WARNING: openMulticast: setsockopt SO_REUSEADDR");
+       close(fd);
+       return -1;
+Index: src/platform/LinuxDisplay.h
+===================================================================
+RCS file: /cvsroot/bzflag/bzflag/src/platform/LinuxDisplay.h,v
+retrieving revision 1.4
+diff -u -r1.4 LinuxDisplay.h
+--- src/platform/LinuxDisplay.h	2001/02/02 09:14:10	1.4
++++ src/platform/LinuxDisplay.h	2001/03/28 01:12:02
+@@ -18,7 +18,7 @@
+ #define	BZF_LINUXDISPLAY_H
+ 
+ #include "XDisplay.h"
+-#if defined(__linux__) && defined(XF86VIDMODE_EXT)
++#if defined(XF86VIDMODE_EXT)
+ #define USE_XF86VIDMODE_EXT
+ #define private c_private
+ #include <X11/extensions/xf86vmode.h>
+Index: src/platform/LinuxMedia.cxx
+===================================================================
+RCS file: /cvsroot/bzflag/bzflag/src/platform/LinuxMedia.cxx,v
+retrieving revision 1.8
+diff -u -r1.8 LinuxMedia.cxx
+--- src/platform/LinuxMedia.cxx	2001/03/02 08:02:49	1.8
++++ src/platform/LinuxMedia.cxx	2001/03/28 01:12:02
+@@ -13,7 +13,7 @@
+ #include "LinuxMedia.h"
+ #include <math.h>
+ #include <fcntl.h>
+-#ifdef __FreeBSD__
++#ifdef BSD
+ #include <machine/endian.h>
+ #else
+ #include <endian.h>
+Index: src/platform/XWindow.cxx
+===================================================================
+RCS file: /cvsroot/bzflag/bzflag/src/platform/XWindow.cxx,v
+retrieving revision 1.8
+diff -u -r1.8 XWindow.cxx
+--- src/platform/XWindow.cxx	2001/03/06 22:07:42	1.8
++++ src/platform/XWindow.cxx	2001/03/28 01:12:02
+@@ -13,7 +13,7 @@
+ #include "XWindow.h"
+ #include "XVisual.h"
+ #include "OpenGLGState.h"
+-#if defined(__linux__) && defined(XF86VIDMODE_EXT)
++#if defined(XF86VIDMODE_EXT)
+ #  define USE_XF86VIDMODE_EXT
+ #  define private c_private
+ #  include <X11/extensions/xf86vmode.h>
+@@ -362,6 +362,23 @@
+   xsh.base_height = getDisplay()->getHeight();
+   xsh.flags |= USPosition | PPosition | PBaseSize;
+ 
++#if defined(USE_XF86VIDMODE_EXT)
++  {
++    int eventbase, errorbase;
++    // Check if we have the XF86 vidmode extension, for virtual roots
++    if (XF86VidModeQueryExtension(display->getDisplay(), &eventbase, &errorbase)) {
++      int dotclock;
++      XF86VidModeModeLine modeline;
++	
++      XF86VidModeGetModeLine(display->getDisplay(), display->getScreen(), &dotclock, &modeline);
++      xsh.base_width=modeline.hdisplay;
++      xsh.base_height=modeline.vdisplay;
++      if (modeline.c_private)
++	XFree(modeline.c_private);
++    }
++  }
++#endif
++// this might want to be used on non-linux too?
+ #ifdef __linux__
+   {
+     char *env;
+@@ -371,23 +388,6 @@
+       xsh.base_width=getDisplay()->getPassthroughWidth();
+       xsh.base_height=getDisplay()->getPassthroughHeight();
+     }
+-#if defined(USE_XF86VIDMODE_EXT)
+-    else {
+-      int eventbase, errorbase;
+-      // Check if we have the XF86 vidmode extension, for virtual roots
+-      if (XF86VidModeQueryExtension(display->getDisplay(), &eventbase,
+-				    &errorbase)) {
+-	int dotclock;
+-	XF86VidModeModeLine modeline;
+-	
+-	XF86VidModeGetModeLine(display->getDisplay(), display->getScreen(),
+-			       &dotclock, &modeline);
+-	xsh.base_width=modeline.hdisplay;
+-	xsh.base_height=modeline.vdisplay;
+-	if (modeline.c_private) XFree(modeline.c_private);
+-      }
+-    }
+-#endif
+   }
+ #endif
+ 
+

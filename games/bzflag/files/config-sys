@@ -44,24 +44,17 @@ ECHO	= echo
 #
 # compiler definitions
 #
-PCDEFS   = -D_BSD_SOURCE $(XF86VIDMODE_DEF)
-PCXXDEFS = -D_BSD_SOURCE $(XF86VIDMODE_DEF)
+PCDEFS   = $(XF86VIDMODE_DEF)
+PCXXDEFS = $(XF86VIDMODE_DEF)
 
 #
 # compiler options
 #
 PCOPTS   = -Wall -W -ansi $(ACOPTS)
-.if defined(OSVERSION) && ${OSVERSION} < 400000
-PCXXOPTS = -Wall -W -fno-rtti $(ACXXOPTS)
-COPT     = -DNDEBUG ${PORTCFLAGS} -DAddrLen='int'
-CXXOPT   = -DNDEBUG ${PORTCXXFLAGS} -ffast-math -fomit-frame-pointer -fnonnull-objects \
-		-fexpensive-optimizations -DAddrLen='int'
-.else
 PCXXOPTS = -Wall -W -fno-exceptions -fno-rtti $(ACXXOPTS)
-COPT     = -DNDEBUG ${PORTCFLAGS} -DAddrLen='socklen_t'
-CXXOPT   = -DNDEBUG ${PORTCXXFLAGS} -ffast-math -fomit-frame-pointer -fnonnull-objects \
-		-fexpensive-optimizations -DAddrLen='socklen_t'
-.endif
+COPT     = -DNDEBUG ${PORTCFLAGS}
+CXXOPT   = -DNDEBUG ${PORTCXXFLAGS} -ffast-math -fomit-frame-pointer \
+	-fnonnull-objects -fexpensive-optimizations
 CDEBUG   = -DDEBUG -g
 CXXDEBUG = -DDEBUG -g
 CWOFF    =
@@ -76,7 +69,7 @@ PCXXINCS = -I/usr/include -I/usr/X11R6/include
 #
 # linker options
 #
-PLDOPTS  = -L/usr/X11R6/lib
+PLDOPTS  = -L${X11BASE}/lib
 
 #
 # dirt
