@@ -1,5 +1,17 @@
 --- libguile/gc_os_dep.c.orig	Sat May  3 23:15:57 2003
 +++ libguile/gc_os_dep.c	Sat May  3 23:26:25 2003
+@@ -93,6 +93,11 @@
+ #    define OPENBSD
+ #    define mach_type_known
+ # endif
++# if defined(__FreeBSD__) && defined(__sparc__)
++#    define SPARC
++#    define FREEBSD
++#    define mach_type_known
++# endif
+ # if defined(__NetBSD__) && defined(__powerpc__)
+ #    define POWERPC
+ #    define NETBSD
 @@ -225,7 +230,11 @@
  #    define ARM32
  #    define mach_type_known
