@@ -30,18 +30,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME:L} ${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image processing tools (interactive optional--misc/display conflict)
 
-BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
-LIB_DEPENDS=	jasper.4:${PORTSDIR}/graphics/jasper \
-		jbig.1:${PORTSDIR}/graphics/jbigkit \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		lcms.1:${PORTSDIR}/graphics/lcms \
-		fpx.1:${PORTSDIR}/graphics/libfpx \
-		wmf.2:${PORTSDIR}/graphics/libwmf \
-		png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		xml2.5:${PORTSDIR}/textproc/libxml2
-
 USE_PERL5=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -49,19 +37,24 @@ USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	# none
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-shared --with-perl=${PERL5} \
-		--without-gslib
+CONFIGURE_ARGS=	--enable-shared
 INSTALLS_SHLIB=	yes
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 \
-		composite.1 conjure.1 convert.1 identify.1 mogrify.1 montage.1
-MAN3=		Image::Magick.3
+		composite.1 convert.1 identify.1 mogrify.1 montage.1
 MAN4=		miff.4
 MAN5=		quantize.5
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
+
+.if defined(WITH_PERL)
+CONFIGURE_ARGS+=	--with-perl=${PERL5}
+MAN3=				Image::Magick.3
+MAN3PREFIX=			${PREFIX}/lib/perl5/${PERL_VERSION}
+.else
+CONFIGURE_ARGS+=	--without-perl
+.endif
 
 # PerlMagick not works with threads, if perl is not threaded, and vice versa
 .if defined(WITH_IMAGEMAGICK_THREADS) || \
@@ -88,29 +81,128 @@ CONFIGURE_ARGS+=	--enable-lzw
 # ('make test' there works)
 .if defined(WITH_IMAGEMAGICK_MODULES)
 CONFIGURE_ARGS+=	--with-modules
-PLIST_SUB+=	MODULES=''
+PLIST_SUB+=		MODULES=''
 .else
-PLIST_SUB+=	MODULES='@comment '
+PLIST_SUB+=		MODULES='@comment '
 .endif
 
+.if defined(WITH_JPEG)
+LIB_DEPENDS+=		jpeg.9:${PORTSDIR}/graphics/jpeg
+.else
+CONFIGURE_ARGS+=	--without-jpeg
+.endif
+
+.if defined(WITH_PNG)
+LIB_DEPENDS+=		png.5:${PORTSDIR}/graphics/png
+.else
+CONFIGURE_ARGS+=	--without-png
+.endif
+
+.if defined(WITH_TIFF)
+LIB_DEPENDS+=		tiff.4:${PORTSDIR}/graphics/tiff
+.else
+CONFIGURE_ARGS+=	--without-tiff
+.endif
+
+# Produce BZip compressed MIFF images
+.if !defined(WITH_BZLIB)
+CONFIGURE_ARGS+=	--without-bzlib
+.endif
+
+# HDF (Hierarchical Data Format) images
 .if defined(WITH_HDF)
-LIB_DEPENDS=	df.1:${PORTSDIR}/graphics/hdf
+LIB_DEPENDS=		df.1:${PORTSDIR}/graphics/hdf
 CONFIGURE_ARGS+=	--with-hdf
 .endif
 
-.if defined(WITHOUT_X11)
-PKGNAMESUFFIX+=	-nox11
-BUILD_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu-nox11
-RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu-nox11
-CONFIGURE_ARGS+=	--without-x --without-mpeg2
-PLIST_SUB+=	X11='@comment '
+# FPX (FlashPIX) images
+.if defined(WITH_FPX)
+LIB_DEPENDS+=		fpx.1:${PORTSDIR}/graphics/libfpx
 .else
-LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
-BUILD_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
-RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
-USE_XLIB=	yes
-MAN1+=		animate.1 display.1 import.1
-PLIST_SUB+=	X11=''
+CONFIGURE_ARGS+=	--without-fpx
+.endif
+
+# JBIG images (lossless compression for bi-level images)
+.if defined(WITH_JBIG)
+LIB_DEPENDS+=		jbig.1:${PORTSDIR}/graphics/jbigkit
+.else
+CONFIGURE_ARGS+=	--without-jbig
+.endif
+
+# JPEG2000 images (wavelet-based lossy compression)
+.if defined(WITH_JPEG2000)
+LIB_DEPENDS+=	jasper.4:${PORTSDIR}/graphics/jasper
+.else
+CONFIGURE_ARGS+=	--without-jp2
+.endif
+
+# LCMS (Little CMS) color management
+.if defined(WITH_LCMS)
+LIB_DEPENDS+=		lcms.1:${PORTSDIR}/graphics/lcms
+.else
+CONFIGURE_ARGS+=	--without-lcms
+.endif
+
+# TTF (TrueType Font) support
+.if defined(WITH_TTF)
+BUILD_DEPENDS+=		freetype-config:${PORTSDIR}/print/freetype2	# XXX
+LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
+.else
+CONFIGURE_ARGS+=	--without-ttf
+.endif
+
+# WMF (Windows Meta File) images
+.if defined(WITH_WMF)
+LIB_DEPENDS+=		wmf.2:${PORTSDIR}/graphics/libwmf
+.else
+CONFIGURE_ARGS+=	--without-wmf
+.endif
+
+# SVG (Scalable Vector Graphics) images and MSL (Magick Scripting Language)
+# both require XML
+.if defined(WITH_SVG) || defined(WITH_MSL)
+LIB_DEPENDS+=		xml2.5:${PORTSDIR}/textproc/libxml2
+MAN1+=			conjure.1
+.else
+CONFIGURE_ARGS+=	--without-xml
+.endif
+
+# DPS (Display PostScript) support
+.if defined(WITH_DPS)
+CONFIGURE_ARGS+=	--with-dps
+.else
+CONFIGURE_ARGS+=	--without-dps
+.endif
+
+# PDF (Adobe Portable Document Format) support
+.if defined(WITH_PDF)
+CONFIGURE_ARGS+=	--with-gslib
+.if defined(WITHOUT_X11)
+BUILD_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu-nox11
+RUN_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu-nox11
+.else
+BUILD_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu
+RUN_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu
+.endif
+.else
+CONFIGURE_ARGS+=	--without-gslib
+.endif
+
+.if defined(WITHOUT_X11)
+PKGNAMESUFFIX+=		-nox11
+CONFIGURE_ARGS+=	--without-x --without-mpeg2
+PLIST_SUB+=		X11='@comment '
+.else
+CONFIGURE_ARGS+=	--with-x
+USE_XLIB=		yes
+MAN1+=			animate.1 display.1 import.1
+PLIST_SUB+=		X11=''
+.if defined(WITH_MPEG2)
+CONFIGURE_ARGS+=	--with-mpeg2
+LIB_DEPENDS+=		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
+.else
+CONFIGURE_ARGS+=	--without-mpeg2
+.endif
 .endif
 
 .if defined(NOPORTDOCS)
@@ -138,4 +230,13 @@ post-patch:
 	@${PERL} -pi -e 's|timestamp: %ld|timestamp: %d|g' \
 		${WRKSRC}/magick/xwindow.c
 
+post-install:
+.if !defined(WITH_SVG) && !defined(WITH_MSL)
+	${GREP} -v "^bin/conjure" ${TMPPLIST} > ${TMPPLIST}.tmp
+	${MV} -f ${TMPPLIST}.tmp ${TMPPLIST}
+.endif
+.if !defined(WITH_PERL)
+	${GREP} -v "lib/perl5/site_perl" ${TMPPLIST} > ${TMPPLIST}.tmp
+	${MV} -f ${TMPPLIST}.tmp ${TMPPLIST}
+.endif
 .include <bsd.port.mk>
