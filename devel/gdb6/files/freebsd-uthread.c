@@ -608,9 +608,9 @@ freebsd_uthread_fetch_registers (int regno)
 	child_ops.to_fetch_registers (regno);
       else
 	if (thread)
-	  supply_register (regno, (char*) &regbase[regmap[regno]]);
+	  regcache_raw_supply (current_regcache, regno, (char*) &regbase[regmap[regno]]);
 	else
-	  supply_register (regno, NULL);
+	  regcache_raw_supply (current_regcache, regno, NULL);
     }
 }
 
