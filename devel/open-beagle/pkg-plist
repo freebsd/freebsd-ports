@@ -6,17 +6,17 @@ include/Threading/Thread.hpp
 include/Threading/Threading.hpp
 @dirrm include/Threading
 include/gzstream.h
-lib/libThreading-2.1.3.so
+lib/libThreading-%%PORTVERSION%%.so
 lib/libThreading.a
 lib/libThreading.so
-lib/libbeagle-2.1.3.so
-lib/libbeagle-Coev-2.1.3.so
+lib/libbeagle-%%PORTVERSION%%.so
+lib/libbeagle-Coev-%%PORTVERSION%%.so
 lib/libbeagle-Coev.a
 lib/libbeagle-Coev.so
-lib/libbeagle-GA-2.1.3.so
+lib/libbeagle-GA-%%PORTVERSION%%.so
 lib/libbeagle-GA.a
 lib/libbeagle-GA.so
-lib/libbeagle-GP-2.1.3.so
+lib/libbeagle-GP-%%PORTVERSION%%.so
 lib/libbeagle-GP.a
 lib/libbeagle-GP.so
 lib/libbeagle.a
