@@ -1,5 +1,22 @@
-*** Makefile.orig	Wed Jan 26 20:32:33 1994
---- Makefile	Mon Nov 20 01:31:41 1995
+*** Makefile.orig      Wed Jan 26 12:32:33 1994
+--- Makefile   Wed Jan 19 18:53:05 2000
+***************
+*** 26,32 ****
+  CP = cp
+  
+  # How to compile C programs
+! CC = cc
+  
+  # You may also want to change the CFLAGS variable, which will be passed on 
+  # to all subdirectories.    If you do that, the changes will only work right if you
+--- 26,32 ----
+  CP = cp
+  
+  # How to compile C programs
+! #CC = cc
+  
+  # You may also want to change the CFLAGS variable, which will be passed on 
+  # to all subdirectories.    If you do that, the changes will only work right if you
 ***************
 *** 38,44 ****
   
