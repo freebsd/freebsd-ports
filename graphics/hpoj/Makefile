@@ -54,6 +54,10 @@ PLIST_SUB+=	X11="@comment "
 BROKEN=	"ffs() clash, see i386/41930"
 .endif
 
+.if ${ARCH} != "i386"
+BROKEN=	"Configure fails on !i386"
+.endif
+
 .if ${ARCH} == "alpha"
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-mlcd-Makefile.in \
 		${FILESDIR}/extra-patch-mlcd-ParPort.h
