@@ -1,0 +1,16 @@
+This module is for generating documents in Rich Text Format.
+
+This module is a class; an object belonging to this class
+acts like an output filehandle, and calling methods on it
+causes RTF text to be written.
+
+Incidentally, this module also exports a few useful functions, 
+upon request.
+
+The following documentation assumes some familiarity with
+the RTF Specification.  Users not already intimately
+familiar with RTF should look at RTF::Cookbook.
+
+--
+Sean M. Burke.
+sburke@cpan.org
