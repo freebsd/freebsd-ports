@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	xcircuit
-PORTVERSION=	2.3.3 
+PORTVERSION=	2.3.3.b9
+PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://bach.ece.jhu.edu/~tim/programs/xcircuit/archive/
 
 MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_BZIP2=	yes
 USE_XPM=	yes
