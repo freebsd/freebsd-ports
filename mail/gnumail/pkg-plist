@@ -82,12 +82,6 @@ Local/Applications/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.
 Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so
 Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so.1
 Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so.1.0.0
-@exec ln -sf A %D/Local/Library/Frameworks/GNUMail.framework/Versions/Current
-@unexec rm -f %D/Local/Library/Frameworks/GNUMail.framework/Versions/Current
-@exec ln -sf Versions/Current/Headers %D/Local/Library/Frameworks/GNUMail.framework/Headers
-@unexec rm -f %D/Local/Library/Frameworks/GNUMail.framework/Headers
-@exec ln -sf Versions/Current/Resources %D/Local/Library/Frameworks/GNUMail.framework/Resources
-@unexec rm -f %D/Local/Library/Frameworks/GNUMail.framework/Resources
 Local/Library/GNUMail/Compose.prefs/Contents/Info.plist
 @exec ln -sf ../Resources %D/Local/Library/GNUMail/Compose.prefs/Contents/Resources
 @unexec rm -f %D/Local/Library/GNUMail/Compose.prefs/Contents/Resources
