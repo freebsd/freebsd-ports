@@ -6547,7 +6547,6 @@ p5-POE-Component-DBIAgent	ports/devel/p5-POE-Component-DBIAgent
 p5-POE-Component-DebugShell	ports/devel/p5-POE-Component-DebugShell
 p5-POE-Component-DirWatch	ports/devel/p5-POE-Component-DirWatch
 p5-POE-Component-IKC	ports/devel/p5-POE-Component-IKC
-p5-POE-Component-IKC-ReallySimple	ports/devel/p5-POE-Component-IKC-ReallySimple
 p5-POE-Component-IRC	ports/irc/p5-POE-Component-IRC
 p5-POE-Component-IRC-Object	ports/irc/p5-POE-Component-IRC-Object
 p5-POE-Component-JobQueue	ports/devel/p5-POE-Component-JobQueue
@@ -6557,7 +6556,6 @@ p5-POE-Component-RRDTool	ports/net/p5-POE-Component-RRDTool
 p5-POE-Component-RSS	ports/devel/p5-POE-Component-RSS
 p5-POE-Component-SMTP	ports/mail/p5-POE-Component-SMTP
 p5-POE-Exceptions	ports/devel/p5-POE-Exceptions
-p5-POE-Session-Cascading	ports/devel/p5-POE-Session-Cascading
 p5-POE-Session-MultiDispatch	ports/devel/p5-POE-Session-MultiDispatch
 p5-PPerl	ports/devel/p5-PPerl
 p5-PV		ports/devel/p5-PV
