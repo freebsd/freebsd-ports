@@ -35,8 +35,6 @@ lib/lib-org-xml-sax.a
 lib/lib-org-w3c-dom.la
 lib/lib-org-w3c-dom.a
 share/java/libgcj-3.3.jar
-@dirrm share/java/classes
-@dirrm share/java
 @comment Insert PLIST.gcc-lib here
 @comment -=[ begin PLIST.gcc-lib ]=-
 @comment -=[ end PLIST.gcc-lib ]=-
