@@ -3,13 +3,13 @@
 # Date created:		7 July 1997
 # Whom:			doconnor@ist.flinders.edu.au
 #
-# $Id: Makefile,v 1.6 1998/03/20 14:35:28 tg Exp $
+# $Id: Makefile,v 1.7 1998/05/10 16:55:03 steve Exp $
 #
 
 DISTNAME=	xmp3_1.0.0
 PKGNAME=	xmpeg3-1.0
 CATEGORIES=	audio tk80
-MASTER_SITES=	ftp://ftp.rasip.fer.hr/pub/sci/audio/mpeg/amp/
+MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/audio/mpeg/amp/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.ORG
