@@ -1,0 +1,20 @@
+--- texk/web2c/Makefile.in.orig	Tue Apr 18 16:28:32 2000
++++ texk/web2c/Makefile.in	Tue Jan 11 12:16:09 2005
+@@ -425,7 +425,7 @@
+ newtexmflcl = $(srcdir)/../../texmf.local
+ texin = {$(newtexmf),$(newtexmflcl)}/tex//
+ texfonts = {$(newtexmf),$(newtexmflcl)}/fonts/tfm//
+-dumpenv = TEXMFCNF=../kpathsea TEXINPUTS=$(texin): TEXFONTS=$(texfonts):
++dumpenv = TEXMFCNF=../kpathsea TEXMF=\{${TEXMFDUMP},${TEXMFDISTDIR},$(texmf),${TEXMFLOCALDIR}\} TEXINPUTS=$(texin): TEXFONTS=$(texfonts):
+ 
+ dumps: fmts efmts cfmts ofmts pdffmts pdfefmts bases mems
+ fmts: $(all_fmts)
+@@ -511,7 +511,7 @@
+ 
+ # This is meant to be called recursively, with $(files) set.
+ prereq-check: $(kpathsea_dir)/kpsewhich
+-	$(kpathsea_dir)/kpsewhich $(files) >/dev/null || $(MAKE) prereq-lose >/dev/null
++	$(dumpenv) $(kpathsea_dir)/kpsewhich $(files) >/dev/null || $(MAKE) prereq-lose >/dev/null
+ 
+ prereq-lose:
+ 	@echo "You seem to be missing input files necessary to make the" >&2

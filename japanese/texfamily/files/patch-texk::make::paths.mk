@@ -5,7 +5,7 @@
  
  # mktex.cnf, texmf.cnf, etc.
 -web2cdir = $(texmf)/web2c
-+web2cdir = $(texmf)/web2c-jtex
++web2cdir = $(texmf)/web2c/jtex
  
  # The top-level font directory.
  fontdir = $(texmf)/fonts
