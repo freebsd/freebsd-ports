@@ -16,6 +16,8 @@ COMMENT=	Unit conversion and calculation
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
+
+INFO=		units
 MAN1=		gunits.1
 
 .include <bsd.port.mk>
