@@ -1,5 +1,5 @@
---- ./ls.c.org	Sun Jul 19 23:29:17 1998
-+++ ./ls.c	Mon Aug 24 01:25:50 1998
+--- ls.c.orig	Sun Jul 19 23:29:17 1998
++++ ls.c	Sun Nov 21 11:51:18 1999
 @@ -94,6 +94,7 @@
  int f_statustime;		/* use time of last mode change */
  int f_timesort;			/* sort by time vice name */
@@ -17,17 +17,18 @@
  		switch (ch) {
  		/*
  		 * The -1, -C and -l options all override each other so shell
-@@ -169,6 +170,9 @@
+@@ -169,6 +170,10 @@
  		case 'H':
  		        fts_options |= FTS_COMFOLLOW;
  			break;
 +		case 'G':
-+			f_color = 1;
++			if (isatty(STDOUT_FILENO))
++				f_color = 1;
 +			break;
  		case 'L':
  			fts_options &= ~FTS_PHYSICAL;
  			fts_options |= FTS_LOGICAL;
-@@ -236,18 +240,21 @@
+@@ -236,18 +241,21 @@
  	argc -= optind;
  	argv += optind;
  
