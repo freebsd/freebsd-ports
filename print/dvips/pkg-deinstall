@@ -1,0 +1,21 @@
+#!/bin/sh
+
+prefix=/usr/local
+
+cat << END
+
+Installing dvips will remove $prefix/MakeTeXPK. This file may be used by
+xdvi or other programs. If this is the case, you must make a backup of
+this file now.
+
+END
+
+echo -n "do you want to deinstall the package ? [y] "
+read answ; if [ "$answ" = "" ]; then answ=y; fi
+case $answ in
+  y*|Y*) break;;
+  *) exit 1;;
+esac
+
+exit 0
+
