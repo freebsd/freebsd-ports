@@ -68,7 +68,7 @@ cert:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
-BROKEN=		Bus error with OpenSSL in -CURRENT, under investigation
+IGNORE=		Bus error with OpenSSL in -CURRENT, under investigation
 .endif
 
 .include <bsd.port.post.mk>
