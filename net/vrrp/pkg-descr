@@ -1,0 +1,12 @@
+This is a port from Linux for the implementation of VRRP 
+(Virtual Redundent Router Protocol). This was first done
+by gem@express.ru but there were quite a few problems
+with this. These have been fixed up and are presented
+here for your use.
+
+Note, built and tested on FreeBSD4.2-STABLE
+
+WWW: http://www.vrrp.net/
+
+- Andy K
+minosh@engineer.com
