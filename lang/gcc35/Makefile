@@ -4,18 +4,18 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.21 1998/07/06 10:17:09 obrien Exp $
+# $Id: Makefile,v 1.22 1998/07/16 06:23:40 obrien Exp $
 #
 
-DISTNAME=	egcs-19980715
+DISTNAME=	egcs-19980721
 CATEGORIES=	lang
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-07-15/ \
-		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-07-15/ \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-07-15/
+MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-07-21/ \
+		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-07-21/ \
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-07-21/
 
 MAINTAINER=	obrien@FreeBSD.org
 
-EGCS_REV=	egcs-2.91.50
+EGCS_REV=	egcs-2.91.51
 GNUHOST=	i386-unknown-freebsd${GNUOSREL}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
