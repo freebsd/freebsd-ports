@@ -6188,6 +6188,7 @@ p5-Apache-Session-PHP	ports/www/p5-Apache-Session-PHP
 p5-Apache-Session-SharedMem	ports/www/p5-Apache-Session-SharedMem
 p5-Apache-SubProcess	ports/www/p5-Apache-SubProcess
 p5-Apache-Test	ports/www/p5-Apache-Test
+p5-Apache-XBEL	ports/textproc/p5-Apache-XBEL
 p5-ApacheBench	ports/www/p5-ApacheBench
 p5-ApacheDBILogConfig	ports/databases/p5-ApacheDBILogConfig
 p5-ApacheDBILogger	ports/databases/p5-ApacheDBILogger
