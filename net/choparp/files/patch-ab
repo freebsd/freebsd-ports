@@ -1,10 +1,10 @@
---- /dev/null	Wed Oct  8 00:26:43 1997
-+++ Makefile	Tue Oct  7 16:35:28 1997
+--- /dev/null	Tue Oct  7 23:33:35 1997
++++ Makefile	Tue Oct  7 23:42:51 1997
 @@ -0,0 +1,8 @@
 +PROG=	choparp
 +MAN8=	choparp.8
 +
-+DESTDIR=/usr/local
++DESTDIR=${PREFIX}
 +BINDIR=	/sbin
 +MANDIR=	/man/man
 +
