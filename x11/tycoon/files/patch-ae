@@ -7,8 +7,8 @@
 -EXTRA_LIBRARIES  = -L/usr/local/lib -lforms -lXpm -lm
 -EXTRA_INCLUDES  = -I/usr/local/include -I.
 -EXTRA_DEFINES  = -DICON_DIR=\"/usr/include/X11/pixmaps\"
-+EXTRA_LIBRARIES  = -lxforms -lXpm -lm
-+EXTRA_INCLUDES  = -I.
++EXTRA_LIBRARIES  = -lforms -lXpm -lm
++EXTRA_INCLUDES  = -I. -I${INCDIR}/X11
 +EXTRA_DEFINES  = -DICON_DIR=\"${INCDIR}/pixmaps/\"
  LDLIBS = $(EXTRA_LIBRARIES) $(EXTENSIONLIB) $(XLIB)
  
