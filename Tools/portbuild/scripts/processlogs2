@@ -30,27 +30,29 @@ else
   echo "<tr><th>Log</th><th>Aff.</th><th>Size</th><th>Repository</th><th>Maintainer</th><th>Pathname</th></tr>" >>$of
   while [ $# -gt 0 ]; do
     log=$(echo $1 | basename $1 .log)
-    for file in $(cat $log.log | sed -e '1,/^list of extra files and directories/d' -e '/^list of all files and directories/,$d' -e '/^	/d' -e 's/^extra: //' -e 's/^missing: //' -e 's/://' | awk '{print $1}'); do
-    echo -n "<tr><td>" >>$of
+    echo -n "<tr><td valign=\"top\">" >>$of
     echo -n "<a name=\"$log.log\"></a>" >> $of
     echo -n "<a href=\"$log.log\">" >>$of
     echo -n $log >>$of
     echo -n "</a>" >>$of
-    echo -n "</td><td align=right>" >>$of
+    echo -n "</td><td align=right valign=\"top\">" >>$of
     affected=$(($(grep -cF $log < INDEX) - 1))
     if [ $affected != 0 ]; then echo -n $affected >>$of; fi
-    echo -n "</td><td align=right>" >>$of
+    echo -n "</td><td align=right valign=\"top\">" >>$of
     size=$(/bin/ls -sk $log.log | awk '{print $1}')
     echo -n "$size KB" >>$of
-    echo -n "</td><td>" >>$of
+    echo -n "</td><td valign=\"top\">" >>$of
     dir=$(sed -n -e '3p' $log.log | awk '{print $4}' | sed -e 's,^/[^/]*/[^/]*/,,')
     echo -n "<a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$dir\">$dir</a>" >>$of
-    echo -n "</td><td>" >>$of
+    echo -n "</td><td valign=\"top\">" >>$of
     maint=$(sed -n -e '4p' $log.log | awk '{print $3}')
     maints="$maints $maint"
     echo -n "<a href=\"mailto:$maint\">$maint</a>" >>$of
-    echo "</td><td>$file</td></tr>" >>$of
+    echo "</td><td valign=\"top\">" >>$of
+    for file in $(cat $log.log | sed -e '1,/^list of extra files and directories/d' -e '/^list of all files and directories/,$d' -e '/^	/d' -e 's/^extra: //' -e 's/^missing: //' -e 's/://' | awk '{print $1}'); do
+      echo "$file<br>" >>$of
     done
+    echo "</td></tr>" >>$of
     shift
   done
   echo "</table><br>" >> $of
