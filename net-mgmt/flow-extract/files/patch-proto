@@ -1,0 +1,12 @@
+--- hosts.c.orig	Fri Mar 14 13:06:31 2003
++++ hosts.c	Fri Mar 14 13:06:13 2003
+@@ -24,7 +24,8 @@
+ static int hnc_init = 0;
+ static unsigned long hit = 0, miss = 0, coll = 0;
+ 
+-sigusr1()
++void
++sigusr1(int ignore)
+ {
+      printf("Hit/Miss: %lu/%lu, Collisions: %lu\n",
+ 	    hit, miss,coll);

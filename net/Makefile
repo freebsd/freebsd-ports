@@ -145,6 +145,7 @@
     SUBDIR += fidelio
     SUBDIR += firedns
     SUBDIR += firetalk
+    SUBDIR += flow-extract
     SUBDIR += flow-tools
     SUBDIR += flowscan
     SUBDIR += forg

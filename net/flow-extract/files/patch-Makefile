@@ -1,0 +1,25 @@
+--- Makefile.original	Fri Mar 14 13:20:42 2003
++++ Makefile	Fri Mar 14 13:21:33 2003
+@@ -10,10 +10,9 @@
+ #
+ # For SunOS 5, use LIBS=-lsocket -lnsl
+ #
+-CC=gcc
+-FLAGS=-ggdb3 -gstabs
+-LIBS=-L/opt/lib -R/opt/lib /opt/lib/libft.a -lsocket -lnsl -lz
+-INCLUDES=-I/opt/include
++CC ?= cc
++LIBS = -L%%PREFIX%%/lib -lft -lz
++INCLUDES = -I%%PREFIX%%/include
+ #
+ # For Linux
+ #
+@@ -30,7 +29,7 @@
+ 
+ #CC = cc
+ LIB=$(LIBS)
+-CFLAGS=-O $(FLAGS) $(INCLUDES) 
++CFLAGS+=$(INCLUDES) 
+ 
+ all: flow-extract
+ 
