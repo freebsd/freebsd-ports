@@ -6,12 +6,16 @@
 #
 
 PORTNAME=		xchat
-PORTVERSION=		1.8.2
-CATEGORIES+=		irc gnome
+PORTVERSION=		1.8.3
+CATEGORIES+=		irc gnome ipv6
 MASTER_SITES=		http://xchat.org/files/source/1.8/ \
 			http://xchat.linuxpower.org/files/source/1.8/
 
-MAINTAINER=		jim@FreeBSD.org
+MAINTAINER?=		jim@FreeBSD.org
+
+BUILD_DEPENDS=		msgfmt-new:${PORTSDIR}/devel/gettext-devel
+LIB_DEPENDS=		giconv.2:${PORTSDIR}/converters/libiconv
+
 # This port has a slave port japanese/xchat.  Do not carelessly overwrite
 # the variables or the targets defined in it.  When you need to, please
 # contact its maintainer.
@@ -24,7 +28,13 @@ USE_IMLIB=		yes
 WANT_GNOME=		yes
 GNU_CONFIGURE=		yes
 # Assign with `+=' for slave ports
-CONFIGURE_ARGS+=	--disable-python --disable-nls
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LIBS="-L${LOCALBASE}/lib -lintl -lgiconv" \
+			MSGFMT=${LOCALBASE}/bin/msgfmt-new
+CONFIGURE_ARGS+=	--disable-python \
+			--without-included-gettext \
+			--enable-nls \
+			--enable-ipv6
 
 .include <bsd.port.pre.mk>
 
@@ -47,13 +57,16 @@ CONFIGURE_ARGS+=	--disable-gnome --disable-gdk-pixbuf
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
-		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
-		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
+	@${PERL} -pi \
+		-e 's|-lpthread|${PTHREAD_LIBS}|g;' \
+		-e 's|DATADIRNAME=lib|DATADIRNAME=share|g;' \
+		-e 's|iconv|giconv|;' \
+		${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi \
+		-e 's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g;' \
+		-e 's|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g;'
+	@${PERL} -pi -e 's|iconv\.h|giconv.h|;' \
+		${WRKSRC}/src/common/jcode.c
 
 post-install:
 .if !defined(NOPORTDOCS)
