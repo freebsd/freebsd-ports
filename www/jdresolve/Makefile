@@ -9,7 +9,7 @@
 PORTNAME=	jdresolve
 PORTVERSION=	0.6.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.jdrowell.com/static/
+MASTER_SITES=	http://www.jdrowell.com/projects/jdresolve/
 
 MAINTAINER=	christophe@labouisse.org
 
