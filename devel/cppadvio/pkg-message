@@ -1,0 +1,10 @@
+Don't forget to compile and run verification/validation code: gmake check-all
+or specifically, sub-targets
+	vmyenv vendian_io vendian_io_ext vhistogram varithm
+	vTCPstream vTCPstream_server vvoc
+	
+See comments in the work/cppadvio/Makefile for details, as well as
+c++serv.dr.  The verification code checks to see that all the
+functions in this package have compiled and run well. The validation
+code can also serve as an illustration of how package's classes and
+functions may be employed.

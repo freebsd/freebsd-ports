@@ -1,0 +1,20 @@
+cppadvio: Advanced i/o, Networking, and Arithmetic Compression
+classlib, extended file names, and portable handling and compression
+of binary data
+
+A collection of classes and C++ streams that perform:
+ - a variable-bit coding of sequences of integers (including
+   Arithmetic compression),
+ - a trick of sharing a stream buffer (a "file") among several streams, 
+ - handling of extended file names, with uni- and bi-directional 'pipes'
+   and a 'tcp://' prefix
+ - explicit endian specification in dealing with integer streams 
+ - TCP streams
+ - a Vocabulary package, (poly/homo)morphic dictionaries with a
+   dynamic "inheritance" path, an embedded OO system
+
+Current Version:	2.6, November 19, 2000.
+WWW: http://pobox.com/~oleg/ftp/packages.html
+
+Oleg Kiselyov
+mailto:oleg@pobox.com, mailto:oleg@acm.org, mailto:oleg@computer.org
