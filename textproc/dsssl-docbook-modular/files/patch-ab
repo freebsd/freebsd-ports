@@ -1,0 +1,12 @@
+--- html/dbautoc.dsl.old	Wed Jan  3 11:55:08 2001
++++ html/dbautoc.dsl	Wed Jan  3 11:55:22 2001
+@@ -53,8 +53,7 @@
+ 		  (node-list-filter-by-gi (children nd)
+ 					  (append (division-element-list)
+ 						  (component-element-list)
+-						  (section-element-list)
+-						  (list-element-list)))))
++						  (section-element-list)))))
+ 	(wrappergi (if first? "DIV" "DD"))
+ 	(wrapperattr (if first? '(("CLASS" "TOC")) '())))
+     (if (or (<= depth 0) 
