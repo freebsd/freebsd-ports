@@ -1,10 +1,13 @@
 %%GUI:%%bin/DataManager
+%%GUI:%%bin/DataManagerII
 %%GUI:%%bin/ODBCConfig
 bin/dltest
 bin/isql
 bin/iusql
 bin/odbcinst
 %%GUI:%%bin/odbctest
+etc/odbc.ini
+etc/odbcinst.ini
 include/autotest.h
 include/odbcinst.h
 include/odbcinstext.h
@@ -13,8 +16,6 @@ include/sqlext.h
 include/sqltypes.h
 include/sqlucode.h
 include/uodbc_stats.h
-etc/odbc.ini
-etc/odbcinst.ini
 lib/libboundparam.a
 lib/libboundparam.so
 lib/libboundparam.so.1
@@ -46,6 +47,8 @@ lib/libodbcinst.a
 lib/libodbcinst.so
 lib/libodbcinst.so.1
 %%GUI:%%lib/libodbcinstQ.a
+%%GUI:%%lib/libodbcinstQ.so
+%%GUI:%%lib/libodbcinstQ.so.1
 lib/libodbcminiS.a
 lib/libodbcminiS.so
 lib/libodbcminiS.so.1

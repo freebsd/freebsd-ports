@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	unixODBC
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
 MAINTAINER=	ports@FreeBSD.org
 
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--enable-static --enable-shared
+CONFIGURE_ARGS=	--enable-static --enable-shared \
+		--with-libiconv-prefix=${LOCALBASE}
 INSTALLS_SHLIB=	yes
 
 .if defined(WITH_GUI)
