@@ -27,11 +27,20 @@ EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.gz
 
 MAINTAINER=	openoffice@FreeBSD.org
 
-USE_GNOME=	orbit gtk12 gtk20
+USE_GNOME=	gtk20
+.if !defined(WITHOUT_MOZILLA)
+USE_GNOME+=	orbit gtk12
+.endif
+
 USE_PERL5=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+
+.if !defined(WITHOUT_JAVA)
+USE_JAVA=	1.4+
+NO_RUN_DEPENDS_JAVA=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
@@ -77,9 +86,6 @@ CC=	gcc32
 CXX=	g++32
 .endif
 
-.if !defined(WITHOUT_JAVA)
-BUILD_DEPENDS+=	${JDKDIR}/bin/java:${PORTSDIR}/java/jdk14
-.endif
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
@@ -92,8 +98,9 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		freetype.9:${PORTSDIR}/print/freetype2
-
-JDKDIR?=	${LOCALBASE}/jdk1.4.2
+.if defined(WITHOUT_JAVA)
+LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
+.endif
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=	259
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
@@ -111,11 +118,13 @@ DISPLAYHACK=localhost:1001
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp
+
 .if defined(WITHOUT_JAVA)
 CONFIGURE_ARGS+=	--disable-java
 .else
-CONFIGURE_ARGS+=	--with-jdk-home=${JDKDIR}
+CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}"
 .endif
+
 .if defined(WITHOUT_MOZILLA)
 CONFIGURE_ARGS+=	--disable-mozilla
 .endif
@@ -224,10 +233,10 @@ post-patch:
 
 .include <${FILESDIR}/Makefile.mozilla>
 
-.if !defined(WITHOUT_MOZILLA) && \
-	!exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIruntime.zip) && \
-	!exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIlib.zip) && \
-	!exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIinc.zip)
+.if !defined(WITHOUT_MOZILLA) && ( \
+	!exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIruntime.zip) || \
+	!exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIlib.zip) || \
+	!exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIinc.zip) )
 do-build: mozilla
 .else
 do-build:
