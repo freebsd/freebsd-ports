@@ -1,0 +1,18 @@
+#
+# Perforce FreeBSD configuration file
+#
+
+#
+# Perforce ROOT
+#
+PERFORCE_ROOT="/usr/p4root"
+
+#
+# Perforce options (see man p4d)
+#
+PERFORCE_OPTIONS="-v server=1 -L /var/log/perforce"
+
+#
+# Uncomment this line to have the server started automatically
+#
+#PERFORCE_START=yes
