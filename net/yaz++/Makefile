@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yaz++
-PORTVERSION=	0.6
+PORTVERSION=	0.8
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz++/
 
@@ -19,12 +19,4 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shared --with-yazconfig=${LOCALBASE}/bin
 INSTALLS_SHLIB=	yes
 
-MAN8=		yaz-proxy.8
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
