@@ -46,6 +46,7 @@
     SUBDIR += xdms
     SUBDIR += xpk
     SUBDIR += zip
+    SUBDIR += zipios++
     SUBDIR += zoo
 
 .include <bsd.port.subdir.mk>
