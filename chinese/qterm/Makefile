@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	qterm
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.7
 CATEGORIES=	chinese
 MASTER_SITES=	http://qterm.gnuchina.org/qterm-${PORTVERSION}/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/qterm/
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 
-USE_QT_VER=	2
+USE_QT_VER=	3
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 
