@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gentoo
-PORTVERSION=	0.11.46
+PORTVERSION=	0.11.48
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ based, file manager inspired by DirectoryOpus
 
-USE_SIZE=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -26,6 +25,7 @@ MYPORTDOCS=	BUGS CONFIG-CHANGES CREDITS NEWS README README.NLS \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|icons|${DATADIR}/icons|g' ${WRKSRC}/gentoorc.in
+	@${REINPLACE_CMD} -e 's|-O2|${CFLAGS}|g' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/gentoo.1x ${MANPREFIX}/man/man1/gentoo.1
