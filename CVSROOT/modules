@@ -5509,6 +5509,7 @@ ruby-dbd_odbc	ports/databases/ruby-dbd_odbc
 ruby-dbd_pg	ports/databases/ruby-dbd_pg
 ruby-dbd_proxy	ports/databases/ruby-dbd_proxy
 ruby-dbd_sqlite	ports/databases/ruby-dbd_sqlite
+ruby-dbd_sqlrelay	ports/databases/ruby-dbd_sqlrelay
 ruby-dbd_sybase	ports/databases/ruby-dbd_sybase
 ruby-dbi	ports/databases/ruby-dbi
 ruby-devel	ports/lang/ruby-devel
