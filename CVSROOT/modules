@@ -2489,6 +2489,7 @@ gtkfind		ports/misc/gtkfind
 gtkglarea	ports/x11-toolkits/gtkglarea
 gtkglarea2	ports/x11-toolkits/gtkglarea2
 gtkglareamm	ports/x11-toolkits/gtkglarea--
+gtkglext	ports/x11-toolkits/gtkglext
 gtkgraph	ports/graphics/gtkgraph
 gtkgrepmail	ports/mail/gtkgrepmail
 gtkhtml		ports/www/gtkhtml
