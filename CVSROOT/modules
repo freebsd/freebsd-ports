@@ -8819,6 +8819,7 @@ zangband	ports/games/zangband
 zclock		ports/x11-clocks/zclock
 zebedee		ports/security/zebedee
 zebra		ports/net/zebra
+zebra-pj		ports/net/zebra-pj
 zebra-server	ports/net/zebra-server
 zed		ports/editors/zed
 zenity		ports/x11/zenity
