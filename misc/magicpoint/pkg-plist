@@ -2,38 +2,40 @@ bin/mgp
 bin/mgp2ps
 bin/mgpembed
 bin/mgpnet
-bin/xmindpath
 bin/xwintoppm
+bin/xmindpath
 lib/X11/mgp/default.mgp
-lib/X11/mgp/mgp1.gif
-lib/X11/mgp/mgp2.gif
-lib/X11/mgp/mgp3.gif
+lib/X11/mgp/mgp1.jpg
+lib/X11/mgp/mgp2.jpg
+lib/X11/mgp/mgp3.jpg
 share/doc/mgp/COPYRIGHT
 share/doc/mgp/COPYRIGHT.jp
 share/doc/mgp/README
 share/doc/mgp/README.fonts
 share/doc/mgp/README.fonts.jp
+share/doc/mgp/README.lang
+share/doc/mgp/RELNOTES
 share/doc/mgp/SYNTAX
 share/doc/mgp/TODO.jp
 share/doc/mgp/USAGE
 share/doc/mgp/USAGE.jp
 share/doc/mgp/sample/README
 share/doc/mgp/sample/README.jp
-share/doc/mgp/sample/cloud.gif
+share/doc/mgp/sample/cloud.jpg
 share/doc/mgp/sample/dad.eps
-share/doc/mgp/sample/dad.gif
+share/doc/mgp/sample/dad.jpg
 share/doc/mgp/sample/default.mgp
 share/doc/mgp/sample/dns-jp.mgp
 share/doc/mgp/sample/embed-jp.mgp
 share/doc/mgp/sample/embed.mgp
 share/doc/mgp/sample/gradation-jp.mgp
 share/doc/mgp/sample/gradation.mgp
-share/doc/mgp/sample/mgp-old1.gif
-share/doc/mgp/sample/mgp-old2.gif
-share/doc/mgp/sample/mgp-old3.gif
-share/doc/mgp/sample/mgp1.gif
-share/doc/mgp/sample/mgp2.gif
-share/doc/mgp/sample/mgp3.gif
+share/doc/mgp/sample/mgp-old1.jpg
+share/doc/mgp/sample/mgp-old2.jpg
+share/doc/mgp/sample/mgp-old3.jpg
+share/doc/mgp/sample/mgp1.jpg
+share/doc/mgp/sample/mgp2.jpg
+share/doc/mgp/sample/mgp3.jpg
 share/doc/mgp/sample/mgp3.xbm
 share/doc/mgp/sample/mgprc-sample
 share/doc/mgp/sample/multilingual.mgp
@@ -47,7 +49,20 @@ share/doc/mgp/sample/tutorial.mgp
 share/doc/mgp/sample/v6-jp.mgp
 share/doc/mgp/sample/v6.mgp
 share/doc/mgp/sample/v6header.eps
-share/doc/mgp/sample/v6header.gif
-@dirrm lib/X11/mgp
+share/doc/mgp/sample/v6header.jpg
+share/doc/mgp/emacs-lisp/mgp-el/COPYING
+share/doc/mgp/emacs-lisp/mgp-el/README
+share/doc/mgp/emacs-lisp/mgp-el/mgp.el
+share/doc/mgp/emacs-lisp/mgp-el/mgp.sty
+share/doc/mgp/emacs-lisp/mgp-el/sample.tex
+share/doc/mgp/emacs-lisp/mgp-mode.el
+share/doc/mgp/scripts/eqn2eps.sh
+share/doc/mgp/scripts/tex2eps.sh
+share/doc/mgp/scripts/mgp2html.pl
+share/doc/mgp/scripts/mgp2latex.pl
+@dirrm share/doc/mgp/emacs-lisp/mgp-el
+@dirrm share/doc/mgp/emacs-lisp
+@dirrm share/doc/mgp/scripts
 @dirrm share/doc/mgp/sample
 @dirrm share/doc/mgp
+@dirrm lib/X11/mgp
