@@ -3200,6 +3200,7 @@ libdvdcss	ports/graphics/libdvdcss
 libdvdread	ports/graphics/libdvdread
 libedit		src/lib/libedit
 libelf		ports/devel/libelf
+libelysium	ports/misc/libelysium
 libepplet	ports/x11-wm/libepplet
 libesmtp	ports/mail/libesmtp
 libevent	ports/devel/libevent
