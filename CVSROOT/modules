@@ -7225,6 +7225,7 @@ snowstar	ports/audio/snowstar
 sntop		ports/net/sntop
 socat		ports/net/socat
 socket		ports/sysutils/socket
+socklog		ports/sysutils/socklog
 socks5		ports/net/socks5
 sockstat	src/usr.bin/sockstat
 sodipodi	ports/graphics/sodipodi
