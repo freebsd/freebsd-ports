@@ -26,7 +26,6 @@ to restrict the access rights to servers you want to have access
 to this machine.
 
 This release is known to work under FreeBSD 4.4. It should work
-under FreeBSD-4.3. It should also work under under FreeBSD-5.0,
-but please be sure to install the 4.X compat libraries.
+under FreeBSD-4.3. It should also work under FreeBSD-5.0.
 
 -------------------------------------------------------------------------------
