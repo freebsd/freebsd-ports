@@ -1,0 +1,10 @@
+A Perl module that performs the analysis of variance (ANOVA) for
+multiple data sets with varying numbers of elements by computing the
+F-ratio.
+
+The F-ratio is defined as the mean square between (the variance between
+the means of each data set) divided by the mean square within (the mean
+of the variance estimates).
+
+-Anton
+<tobez@tobez.org>
