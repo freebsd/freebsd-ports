@@ -21,13 +21,9 @@ MAN8=		mpd.8
 MANCOMPRESSED=	maybe
 
 USE_OPENSSL	=yes
-.if defined(WITH_OPENSSL_PORT)
-USE_OPENSSL_PORT=yes
-MAKE_ENV=	COPTS+=-I${OPENSSLINC} LDADD+=-L${OPENSSLLIB}
-.else
-USE_OPENSSL_BASE=yes
-MAKE_ENV=	COPTS+=-I${OPENSSLINC}
-.endif
+MAKE_ENV=	COPTS="${COPTS} -I${OPENSSLINC}" LDADD="${LDADD} -L${OPENSSLLIB}"
+
+.include <bsd.port.pre.mk>
 
 pre-build:
 	@${ECHO}
@@ -37,4 +33,4 @@ pre-build:
 post-install:
 	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/mpd.sh ${PREFIX}/etc/rc.d/mpd.sh.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
