@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lockdown
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	security
 MASTER_SITES=	http://lockdown.trunet.dk/ \
 		http://lockdown.loproc.dk/
