@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.7.17";
+my $VERSION	= "2.7.18";
 my $COPYRIGHT	= "Copyright (c) 2000-2004 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
@@ -275,7 +275,7 @@ sub cvs($;@) {
     if (!$verbose) {
 	push(@args, "-q");
     }
-    push(@args, "-f", "-z3", "-R", "-d$cvsroot", $cmd, "-A");
+    push(@args, "-f", "-z3", "-R", "-d$cvsroot", $cmd, "-A", "-T");
     if ($cmd eq "checkout") {
 	push(@args, "-P");
     } elsif ($cmd eq "update") {
@@ -771,6 +771,12 @@ sub update_ports_tree(@) {
 	# Process all unprocessed ports we know of so far
 	foreach my $port (@update_now) {
 	    next if ($processed{$port});
+	    if (! -f "$portsdir/$port/Makefile") {
+		bsd::warnx("$port does not exist in $portsdir");
+		$pkgname{$port} = $installed{$port}->[0] || "";
+		$processed{$port} = 1;
+		next;
+	    }
 	    setproctitle("updating $port");
 
 	    # See if the port has an unprocessed master port
@@ -972,7 +978,11 @@ sub show_port_status($) {
 
     if ($installed{$port}) {
 	foreach my $pkg (@{$installed{$port}}) {
-	    $cmp = cmp_version($pkg, $pkgname{$port});
+	    if (-d "$portsdir/$port") {
+		$cmp = cmp_version($pkg, $pkgname{$port});
+	    } else {
+		$cmp = '?';
+	    }
 	    if ($cmp eq '=') {
 		print("   $pkg\n");
 	    } else {
