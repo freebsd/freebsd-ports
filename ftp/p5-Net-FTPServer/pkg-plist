@@ -18,17 +18,22 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/RO/Server.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/FTPServer/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/FTPServer/FTPServer.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/FTPServer/FTPServer.so
-sbin/perlftpd
+sbin/dbeg1-ftpd.pl
+sbin/ftpd.pl
+sbin/inmem-ftpd.pl
+sbin/ro-ftpd.pl
 %%PORTDOCS%%share/doc/Net-FTPServer/FAQ
 %%PORTDOCS%%share/doc/Net-FTPServer/README
 %%PORTDOCS%%share/doc/Net-FTPServer/TODO
 %%PORTDOCS%%share/doc/Net-FTPServer/archives.txt
 %%PORTDOCS%%share/doc/Net-FTPServer/eg1-psql63.sql
 %%PORTDOCS%%share/doc/Net-FTPServer/eg1.sql
+%%PORTDOCS%%share/doc/Net-FTPServer/modules.txt
 %%PORTDOCS%%share/doc/Net-FTPServer/press1.0.txt
 %%PORTDOCS%%share/doc/Net-FTPServer/rfcs.txt
 %%PORTDOCS%%share/doc/Net-FTPServer/roadmap-1.2.txt
 %%PORTDOCS%%share/doc/Net-FTPServer/safesignals.txt
+%%PORTDOCS%%share/doc/Net-FTPServer/sharedstate.txt
 share/examples/Net-FTPServer/ftpd.conf
 @dirrm share/examples/Net-FTPServer
 %%PORTDOCS%%@dirrm share/doc/Net-FTPServer
