@@ -186,6 +186,8 @@ include/wine/windows/mmreg.h
 include/wine/windows/mmsystem.h
 include/wine/windows/msacm.h
 include/wine/windows/msacmdlg.h
+include/wine/windows/msi.h
+include/wine/windows/msiquery.h
 include/wine/windows/mssip.h
 include/wine/windows/mswsock.h
 include/wine/windows/nb30.h
@@ -394,12 +396,14 @@ lib/wine/libmapi32.def
 lib/wine/libmpr.def
 lib/wine/libmsacm32.def
 lib/wine/libmsdmo.def
+lib/wine/libmsi.def
 lib/wine/libmsimg32.def
 lib/wine/libmsnet32.def
 lib/wine/libmsrle32.def
 lib/wine/libmsvcrt.def
 lib/wine/libmsvcrt20.def
 lib/wine/libmsvfw32.def
+lib/wine/libmswsock.def
 lib/wine/libnetapi32.def
 lib/wine/libntdll.def
 lib/wine/libodbc32.def
@@ -464,6 +468,7 @@ lib/wine/msacm32.dll.so
 lib/wine/msadp32.acm.so
 lib/wine/msdmo.dll.so
 lib/wine/msg711.acm.so
+lib/wine/msi.dll.so
 lib/wine/msimg32.dll.so
 lib/wine/msisys.ocx.so
 lib/wine/msnet32.dll.so
@@ -473,6 +478,7 @@ lib/wine/msvcrt20.dll.so
 lib/wine/msvcrtd.dll.so
 lib/wine/msvfw32.dll.so
 lib/wine/msvideo.dll.so
+lib/wine/mswsock.dll.so
 lib/wine/netapi32.dll.so
 lib/wine/notepad.exe.so
 lib/wine/ntdll.dll.so
