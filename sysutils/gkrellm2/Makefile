@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -18,7 +18,7 @@ USE_X_PREFIX=	yes
 USE_IMLIB=	yes
 USE_GMAKE=	yes
 
-INCLUDES=	gkrellm.h gkrellm_public_proto.h gkrellm_private_proto.h
+INCLUDES=	gkrellm.h gkrellm_public_proto.h
 DOCS=		COPYRIGHT README Themes.html
 
 # You should aware that GKrellM must be setuid root to obtain
