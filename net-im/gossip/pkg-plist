@@ -1,12 +1,16 @@
 bin/gossip
 etc/gconf/gconf.xml.defaults/apps/gossip/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gossip/auto_away/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gossip/contacts/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gossip/conversation/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gossip/geometry/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gossip/sound/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gossip/status/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gossip/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gossip/auto_away/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gossip/contacts/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gossip/conversation/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gossip/geometry/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gossip/sound/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gossip/status/%gconf.xml
 etc/gconf/schemas/gossip.schemas
 share/gnome/applications/gossip.desktop
 share/gnome/gossip/channel-old4.png
@@ -26,41 +30,55 @@ share/gnome/gossip/emoticon-face6.png
 share/gnome/gossip/emoticon-face7.png
 share/gnome/gossip/emoticon-face8.png
 share/gnome/gossip/emoticon-face9.png
+share/gnome/gossip/gossip-available.png
 share/gnome/gossip/gossip-away.png
 share/gnome/gossip/gossip-busy.png
-share/gnome/gossip/gossip-chat.png
 share/gnome/gossip/gossip-extended-away.png
+share/gnome/gossip/gossip-group-message.png
+share/gnome/gossip/gossip-log.xsl
+share/gnome/gossip/gossip-message.png
 share/gnome/gossip/gossip-offline.png
-share/gnome/gossip/gossip-online.png
+share/gnome/gossip/gossip-typing.png
 share/gnome/gossip/group-chat.glade
 share/gnome/gossip/main.glade
-share/gnome/gossip/message.png
 share/gnome/gossip/my-user_48.png
 share/gnome/gossip/offline.wav
 share/gnome/gossip/online.wav
 share/gnome/gossip/query_48.png
 share/gnome/gossip/send.wav
-share/gnome/gossip/typing.png
 share/gnome/gossip/vcard_48.png
 share/gnome/gossip/watermark.png
+share/locale/az/LC_MESSAGES/gossip.mo
 share/locale/ca/LC_MESSAGES/gossip.mo
 share/locale/cs/LC_MESSAGES/gossip.mo
 share/locale/cy/LC_MESSAGES/gossip.mo
+share/locale/da/LC_MESSAGES/gossip.mo
+share/locale/de/LC_MESSAGES/gossip.mo
 share/locale/es/LC_MESSAGES/gossip.mo
+share/locale/fr/LC_MESSAGES/gossip.mo
+share/locale/hr/LC_MESSAGES/gossip.mo
 share/locale/it/LC_MESSAGES/gossip.mo
 share/locale/ml/LC_MESSAGES/gossip.mo
 share/locale/nl/LC_MESSAGES/gossip.mo
+share/locale/no/LC_MESSAGES/gossip.mo
+share/locale/pl/LC_MESSAGES/gossip.mo
 share/locale/pt/LC_MESSAGES/gossip.mo
 share/locale/ru/LC_MESSAGES/gossip.mo
 share/locale/sr/LC_MESSAGES/gossip.mo
 share/locale/sr@Latn/LC_MESSAGES/gossip.mo
 share/locale/sv/LC_MESSAGES/gossip.mo
+share/locale/zh_CN/LC_MESSAGES/gossip.mo
+share/locale/zh_TW/LC_MESSAGES/gossip.mo
 @dirrm share/gnome/gossip
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gossip/status
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gossip/sound
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gossip/geometry
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gossip/conversation
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gossip/auto_away
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gossip/contacts
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gossip
+@dirrm etc/gconf/gconf.xml.defaults/apps/gossip/status
 @dirrm etc/gconf/gconf.xml.defaults/apps/gossip/sound
+@dirrm etc/gconf/gconf.xml.defaults/apps/gossip/geometry
 @dirrm etc/gconf/gconf.xml.defaults/apps/gossip/conversation
-@dirrm etc/gconf/gconf.xml.defaults/apps/gossip/auto_away
+@dirrm etc/gconf/gconf.xml.defaults/apps/gossip/contacts
 @dirrm etc/gconf/gconf.xml.defaults/apps/gossip
