@@ -4,4 +4,4 @@ Mailparse is stream based, which means that it does not keep in-memory
 copies of the files it processes - so it is very resource efficient
 when dealing with large messages.
 
-WWW: http://www.php.net/manual/en/ref.mailparse.php
+WWW: http://pear.php.net/package/mailparse
