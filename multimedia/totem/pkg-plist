@@ -43,8 +43,6 @@ share/gnome/totem/playlist-16.png
 share/gnome/totem/playlist-24.png
 share/gnome/totem/playlist-playing.png
 share/gnome/totem/rhythmbox-volume-max.png
-share/gnome/totem/rhythmbox-volume-medium.png
-share/gnome/totem/rhythmbox-volume-min.png
 share/gnome/totem/rhythmbox-volume-zero.png
 share/gnome/totem/totem.glade
 share/gnome/totem/totem-download.glade
@@ -58,6 +56,7 @@ share/locale/am/LC_MESSAGES/totem.mo
 share/locale/az/LC_MESSAGES/totem.mo
 share/locale/bg/LC_MESSAGES/totem.mo
 share/locale/be/LC_MESSAGES/totem.mo
+share/locale/bn/LC_MESSAGES/totem.mo
 share/locale/ca/LC_MESSAGES/totem.mo
 share/locale/cs/LC_MESSAGES/totem.mo
 share/locale/cy/LC_MESSAGES/totem.mo
