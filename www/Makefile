@@ -410,6 +410,7 @@
     SUBDIR += p5-Apache-Scoreboard
     SUBDIR += p5-Apache-Session
     SUBDIR += p5-Apache-Session-PHP
+    SUBDIR += p5-Apache-Session-SQLite3
     SUBDIR += p5-Apache-Session-SharedMem
     SUBDIR += p5-Apache-Session-Wrapper
     SUBDIR += p5-Apache-Singleton

@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Apache/Session/SQLite3.pm
+%%SITE_PERL%%/Apache/Session/Store/SQLite3.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Session/SQLite3/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Session/SQLite3
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Session 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Apache/Session/Store 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Apache/Session 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
