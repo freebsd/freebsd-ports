@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		dragstack
-PORTVERSION=		1.3
-PORTREVISION=	2
+PORTVERSION=		1.4
 CATEGORIES=		deskutils kde
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,9 +17,6 @@ USE_KDEBASE_VER=	3
 GNU_CONFIGURE=		yes
 USE_REINPLACE=		yes
 INSTALLS_SHLIB=		yes
-
-post-extract:
-	@${TOUCH} ${WRKSRC}/config.h.in
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g; s|-lpthread|${PTHREAD_LIBS}|g' \
