@@ -1,7 +1,18 @@
 %%SITE_PERL%%/HTML/TokeParser/Simple.pm
+%%SITE_PERL%%/HTML/TokeParser/Simple/Token.pm
+%%SITE_PERL%%/HTML/TokeParser/Simple/Token/Comment.pm
+%%SITE_PERL%%/HTML/TokeParser/Simple/Token/Declaration.pm
+%%SITE_PERL%%/HTML/TokeParser/Simple/Token/ProcessInstruction.pm
+%%SITE_PERL%%/HTML/TokeParser/Simple/Token/Tag.pm
+%%SITE_PERL%%/HTML/TokeParser/Simple/Token/Tag/End.pm
+%%SITE_PERL%%/HTML/TokeParser/Simple/Token/Tag/Start.pm
+%%SITE_PERL%%/HTML/TokeParser/Simple/Token/Text.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TokeParser/Simple/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TokeParser/Simple
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TokeParser 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TokeParser
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTML/TokeParser 2>/dev/null || true
+@dirrm %%SITE_PERL%%/HTML/TokeParser/Simple/Token/Tag
+@dirrm %%SITE_PERL%%/HTML/TokeParser/Simple/Token
+@dirrm %%SITE_PERL%%/HTML/TokeParser/Simple
+@dirrm %%SITE_PERL%%/HTML/TokeParser
 @unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true

@@ -8,3 +8,5 @@ constants for them, you can now do something like:
 Instead of 
 
  $token->[0] eq 'S' and $token->[1] eq 'form'
+
+WWW: http://search.cpan.org/~ovid/HTML-TokeParser-Simple/
