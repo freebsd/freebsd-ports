@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	6.5.2
+PORTVERSION=	7.2.1
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.nu/stuff/ \
 		ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
@@ -18,6 +18,13 @@ MASTER_SITES=	http://curl.haxx.nu/stuff/ \
 MAINTAINER=	kris@FreeBSD.org
 
 MAN1=		curl.1
+MAN3=		curl_easy_cleanup.3 curl_easy_init.3 curl_easy_perform.3 curl_easy_setopt.3 curl_formparse.3 curl_getdate.3 curl_getenv.3 curl_slist_append.3 curl_slist_free_all.3 curl_version.3
+
+INSTALLS_SHLIB=	yes
+SHLIB_VER=	0
+
+MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
+PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
 .if defined(WITH_SSL)
 USE_OPENSSL=	RSA
@@ -35,6 +42,7 @@ CONFIGURE_ENV+=	LIBS="-L${OPENSSLLIB} -lcrypto -lRSAglue -L${LOCALBASE}/lib -lrs
 .endif
 
 GNU_CONFIGURE=	yes
+USE_AUTOMAKE=	yes
 MAKEFILES=	Makefile src/Makefile
 
 post-configure:
