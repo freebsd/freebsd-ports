@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	squirm
-PORTVERSION= 	1.0b
+PORTVERSION= 	1.23
 CATEGORIES=	www
 MASTER_SITES=	http://www.senet.com.au/squirm/ \
 		http://www.elab.co.za/squirm/
-DISTNAME=	squirm-1.0betaB
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid22
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid23
 
 NO_PACKAGE=	must set SQUID_UID and SQUID_GID before building
 
 MAKE_ENV+=	SQUID_UID=${SQUID_UID} SQUID_GID=${SQUID_GID}
 
-post-patch:
-	@${PERL} -pi -e "s.%PREFIX%.${PREFIX}.g" ${WRKSRC}/paths.h
+PLIST_SUB=	SQUID_UID=${SQUID_UID} SQUID_GID=${SQUID_GID}
 
 pre-install:
 .if defined(SQUID_UID) && defined(SQUID_GID)
