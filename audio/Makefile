@@ -122,6 +122,7 @@
     SUBDIR += libaudiofile
     SUBDIR += libcdaudio
     SUBDIR += libmikmod
+    SUBDIR += libmusicbrainz
     SUBDIR += libogg
     SUBDIR += libsamplerate
     SUBDIR += libshout
