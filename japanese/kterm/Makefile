@@ -46,7 +46,7 @@ post-patch:
 	@${ECHO_MSG}  "===>  Applying Xaw3d scrollbar patch"
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-Xaw3d
 .elif defined(WITH_NEXTAWLIB)
-LIB_DEPENDS+=	neXtaw.6:${PORTSDIR}/x11-toolkits/neXtaw
+LIB_DEPENDS+=	neXtaw.7:${PORTSDIR}/x11-toolkits/neXtaw
 post-patch:
 	@${ECHO_MSG}  "===>  Applying neXtaw scrollbar patch"
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-neXtaw
