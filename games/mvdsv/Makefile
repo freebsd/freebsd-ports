@@ -15,6 +15,8 @@ DISTNAME=	qwex_src-${PORTVERSION}
 MAINTAINER=	danfe@regency.nsu.ru
 COMMENT=	Enhanced QuakeWorld server with multi-view demos capability
 
+FORBIDDEN=	Remote buffer overflow exists
+
 MAKEFILE=	${FILESDIR}/Makefile
 WRKSRC=		${WRKDIR}/mvdsrc/source
 
