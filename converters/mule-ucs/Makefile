@@ -1,4 +1,4 @@
-# New ports collection makefile for:	Mule-UCS for GNU Emacs 20
+# New ports collection makefile for:	Mule-UCS for GNU Emacs 21
 # Date created:		14 January 2000
 # Whom:			OKAZAKI Tetsurou
 #
@@ -16,12 +16,15 @@ MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/Mule-UCS/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	Mule-UCS-${PORTVERSION}
 
-MAINTAINER=	okazaki@FreeBSD.org
+MAINTAINER?=	okazaki@FreeBSD.org
 
-EMACS_PORT_NAME=	emacs20
+# This is a master port.
+PORTCLASS?=	master
 
-PLIST_SUB=	PORTDOCDIR=${PORTDOCDIR}
-PORTDOCDIR=	share/doc/mule-ucs
+.if (${PORTCLASS} == "master")
+EMACS_PORT_NAME=	emacs21
+.endif
+
 MULEUCS_DESTDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mule-ucs
 EMACS_ARGS=	-q --no-site-file -batch
 
@@ -45,17 +48,17 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/${PORTDOCDIR}
+	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/lisp; \
 	for i in ChangeLog MuleUni.txt README* ; do \
-		${INSTALL_DATA} $${i} ${PREFIX}/${PORTDOCDIR} ; \
+		${INSTALL_DATA} $${i} ${DOCSDIR} ; \
 	done
 	${INSTALL_DATA} ${WRKSRC}/lisp/big5conv/README \
-			 ${PREFIX}/${PORTDOCDIR}/README.big5conv
+			 ${DOCSDIR}/README.big5conv
 	${INSTALL_DATA} ${WRKSRC}/lisp/jisx0213/ChangeLog \
-			 ${PREFIX}/${PORTDOCDIR}/ChangeLog.jisx0213
+			 ${DOCSDIR}/ChangeLog.jisx0213
 	${INSTALL_DATA} ${WRKSRC}/lisp/jisx0213/readme.txt \
-			 ${PREFIX}/${PORTDOCDIR}/README.jisx0213
+			 ${DOCSDIR}/README.jisx0213
 .endif
 	@${CAT} ${PKGMESSAGE}
 

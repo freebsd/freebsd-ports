@@ -1,0 +1,31 @@
+--- lisp/un-define.el.original	Wed Mar  7 07:41:38 2001
++++ lisp/un-define.el	Thu May 16 13:34:46 2002
+@@ -610,13 +610,21 @@
+ 
+  (mapcar
+   (lambda (x)
+-    (mapcar
+-     (lambda (y)
+-       (mucs-define-coding-system
+-	(nth 0 y) (nth 1 y) (nth 2 y)
+-	(nth 3 y) (nth 4 y) (nth 5 y) (nth 6 y))
+-       (coding-system-put (car y) 'alias-coding-systems (list (car x))))
+-     (cdr x)))
++    (if (fboundp 'register-char-codings)
++	;; Mule 5, where we don't need the eol-type specified and
++	;; register-char-codings may be very slow for these coding
++	;; system definitions.
++	(let ((y (cadr x)))
++	  (mucs-define-coding-system
++	   (car x) (nth 1 y) (nth 2 y)
++	   (nth 3 y) (nth 4 y) (nth 5 y)))
++      (mapcar
++       (lambda (y)
++	 (mucs-define-coding-system
++	  (nth 0 y) (nth 1 y) (nth 2 y)
++	  (nth 3 y) (nth 4 y) (nth 5 y) (nth 6 y))
++	 (coding-system-put (car y) 'alias-coding-systems (list (car x)))))
++      (cdr x)))
+   `((utf-8
+      (utf-8-unix
+       ?u "UTF-8 coding system"
