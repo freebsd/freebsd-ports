@@ -43,3 +43,5 @@ post-install:
 
 .include "${.CURDIR}/../../x11-toolkits/ruby-qt2/Makefile.common"
 .include <bsd.port.mk>
+
+DEPENDS_TARGET+=	RUBY_WITH_PTHREAD=yes
