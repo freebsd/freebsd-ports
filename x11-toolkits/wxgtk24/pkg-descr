@@ -1,24 +1,3 @@
-The wxWindows project is a C++ cross-platform GUI toolkit which
-was started by Julian Smart.
+A C++ package for platform independed program development.
 
-Currently, work is being done on these ports of wxWindows 2.X: 
-        Windows (wxMSW, finished) 
-        Unix, GTK+ (wxGTK, finished) 
-        Unix, Motif (wxMotif, finished) 
-        Macintosh (wxMac, advanced and preview available) 
-        OS/2 (wxOS2, just started) 
-        BeOS (wxBeOS, just started) 
-        SciTech's MGL library (wxMGL, started a few months ago) 
-
-This is the current stable (2.0.1) version of the GTK port.  There
-is also a "CVS-Version" that is considered beta.
-
-After installing, look in samples/ of the work directory (assuming
-you did not install this as a package --- the package of this port
-is broken in that the samples/ are not installed).  The samples
-are very helpful.
-
-WWW: http://www.freiburg.linux.de/~wxxt/
-     http://web.ukonline.co.uk/julian.smart/wxwin/
-
-- Alexander Langer <alex@cichlids.com>
+WWW:http://wesley.informatik.uni-freiburg.de/~wxxt/
