@@ -1,12 +1,12 @@
 # New ports collection makefile for:    kp
-# Version required:     0.96
+# Version required:     0.97
 # Date created:         8 May 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.9 1998/08/05 09:31:33 asami Exp $
+# $Id: Makefile,v 1.10 1998/08/07 23:56:40 asami Exp $
 #
 
-DISTNAME=       kp-0.96
+DISTNAME=       kp-0.97
 CATEGORIES=	misc tk41
 MASTER_SITES=   ftp://stampede.cs.berkeley.edu/pub/kp/
 
