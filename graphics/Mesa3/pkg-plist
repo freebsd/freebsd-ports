@@ -1,11 +1,11 @@
 lib/libMesaGL.a
-lib/libMesaGL.so.2.0
+lib/libMesaGL.so.13.0
 lib/libMesaGLU.a
-lib/libMesaGLU.so.2.0
+lib/libMesaGLU.so.13.0
 lib/libMesaaux.a
-lib/libMesaaux.so.2.0
+lib/libMesaaux.so.13.0
 lib/libMesatk.a
-lib/libMesatk.so.2.0
+lib/libMesatk.so.13.0
 include/Mesa/glaux.h
 include/Mesa/gltk.h
 include/Mesa/GL/fgl.h
