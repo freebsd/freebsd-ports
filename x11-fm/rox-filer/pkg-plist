@@ -17,6 +17,7 @@ apps/ROX-Filer/Messages/es.gmo
 apps/ROX-Filer/Messages/fr.gmo
 apps/ROX-Filer/Messages/hu.gmo
 apps/ROX-Filer/Messages/it.gmo
+apps/ROX-Filer/Messages/ja.gmo
 apps/ROX-Filer/Messages/nl.gmo
 apps/ROX-Filer/Messages/no.gmo
 apps/ROX-Filer/Messages/pl.gmo
@@ -124,6 +125,7 @@ share/Choices/MIME-icons/video_quicktime.png
 share/Choices/MIME-types/application_postscript
 share/Choices/MIME-types/text
 share/Choices/MIME-types/text_html
+share/mime/packages/rox.xml
 @dirrm share/Choices/MIME-types
 @dirrm share/Choices/MIME-icons
 @dirrm share/Choices
@@ -132,6 +134,9 @@ share/Choices/MIME-types/text_html
 @dirrm apps/ROX-Filer/Help
 @dirrm apps/ROX-Filer/%%BINARIES%%
 @dirrm apps/ROX-Filer
+@unexec rmdir %D/share/mime/packages 2>/dev/null || true
 @unexec rmdir %D/share/mime/mime-info 2>/dev/null || true
 @unexec rmdir %D/share/mime 2>/dev/null || true
 @unexec rmdir %D/apps 2>/dev/null || true
+@exec %%LOCALBASE%%/bin/update-mime-database %%LOCALBASE%%/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %%LOCALBASE%%/share/mime
