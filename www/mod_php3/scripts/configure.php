@@ -29,6 +29,7 @@ dBase		"PHP:    dBase database support" OFF \
 OpenLDAP	"PHP:    OpenLDAP support" OFF \
 SNMP		"PHP:    SNMP support" OFF \
 XML		"PHP:    XML support" OFF \
+FTP		"PHP:    File Transfer Protocol support" OFF \
 2> /tmp/checklist.tmp.$$
 
 	retval=$?
@@ -151,6 +152,9 @@ while [ "$1" ]; do
 			echo "BUILD_DEPENDS+=	\${PREFIX}/include/xml/xmlparse.h:\${PORTSDIR}/textproc/expat"
 			echo "BUILD_DEPENDS+=	\${PREFIX}/include/xml/xmltok.h:\${PORTSDIR}/textproc/expat"
 			echo "PHP_CONF_ARGS+=	--with-xml=\${PREFIX}"
+			;;
+		\"FTP\")
+			echo "PHP_CONF_ARGS+=	--with-ftp"
 			;;
 		\"modssl\")
 			cat << EOF
