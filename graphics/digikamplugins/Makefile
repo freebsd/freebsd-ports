@@ -58,7 +58,7 @@ PLIST_SUB+=	CDARCHIVING:="@comment "
 PLIST_SUB+=	COMMENTSEDITOR:=""
 .else
 DO_NOT_COMPILE+=commentseditor
-PLIST_SUB+=	ACQUIREIMAGES:="@comment "
+PLIST_SUB+=	COMMENTSEDITOR:="@comment "
 .endif
 
 .if defined(WITH_IMAGESGALLERY)
@@ -103,7 +103,7 @@ PLIST_SUB+=	RAWCONVERTER:=""
 RUN_DEPENDS+=	dcraw:${PORTSDIR}/graphics/dcraw
 .else
 DO_NOT_COMPILE+=rawconverter
-PLIST_SUB+=	PRINTWIZARD:="@comment "
+PLIST_SUB+=	RAWCONVERTER:="@comment "
 .endif
 
 .if defined(WITH_SENDIMAGES)
