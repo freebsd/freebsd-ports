@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	fastdb
-PORTVERSION=	2.91
-PORTREVISION=	1
+PORTVERSION=	2.93
 CATEGORIES=	databases
 MASTER_SITES=	http://www.garret.ru/~knizhnik/
 
