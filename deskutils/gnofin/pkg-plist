@@ -1,1 +1,20 @@
 bin/gnofin
+lib/gnofin/plugins/libqif.so.0
+lib/gnofin/plugins/libqif.so
+lib/gnofin/plugins/libqif.la
+lib/gnofin/plugins/libqif.a
+lib/gnofin/plugins/libhtml.so.0
+lib/gnofin/plugins/libhtml.so
+lib/gnofin/plugins/libhtml.la
+lib/gnofin/plugins/libhtml.a
+lib/gnofin/plugins/liblatex.so.0
+lib/gnofin/plugins/liblatex.so
+lib/gnofin/plugins/liblatex.la
+lib/gnofin/plugins/liblatex.a
+lib/gnofin/plugins/libtext.so.0
+lib/gnofin/plugins/libtext.so
+lib/gnofin/plugins/libtext.la
+lib/gnofin/plugins/libtext.a
+share/gnome/apps/Applications/gnofin.desktop
+@dirrm lib/gnofin/plugins
+@dirrm lib/gnofin
