@@ -21,7 +21,7 @@ RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 USE_MOTIF=	yes
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/xmcd-3.2.1
-PLIST_SUB+=	RELEASE=${OSREL:R} ARCH=${ARCH}
+PLIST_SUB+=	RELEASE=${OSREL:R:R} ARCH=${ARCH}
 
 MAN1=		cda.1 xmcd.1
 MANCOMPRESSED=	no
@@ -29,7 +29,7 @@ RMAN=		${X11BASE}/bin/rman
 
 .include <bsd.port.pre.mk>
 
-LIBBINDIR=	${PREFIX}/lib/X11/xmcd/bin-FreeBSD_${OSREL:R}-${ARCH}
+LIBBINDIR=	${PREFIX}/lib/X11/xmcd/bin-FreeBSD_${OSREL:R:R}-${ARCH}
 
 post-extract:
 	@${CHMOD} -R u+w ${WRKSRC}
