@@ -572,7 +572,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 @exec /bin/mkdir -p %D/%%RUBY_SITEARCHLIBDIR%%
 @dirrm %%RUBY_SITEARCHLIBDIR%%
 %%RUBYLIB%%@dirrm %%RUBY_SITELIBDIR%%
-@unexec rmdir %D/lib/ruby/site_ruby 2>/dev/null || true
+@unexec /bin/rmdir %D/lib/ruby/site_ruby 2>/dev/null || true
 @dirrm %%RUBY_ARCHLIBDIR%%
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/yaml
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/xsd/xmlparser
@@ -643,10 +643,10 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/cgi
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/bigdecimal
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%
-@unexec rmdir -p %D/lib/xemacs/site-lisp 2>/dev/null || true
+@unexec /bin/rmdir -p %D/lib/xemacs/site-lisp 2>/dev/null || true
 %%RUBY_ELISPDIR%%/.keep_me.%%RUBY_NAME%%
-@unexec rmdir %D/%%RUBY_ELISPDIR%% 2>/dev/null || true
-@unexec rmdir %D/lib/ruby 2>/dev/null || true
+@unexec /bin/rmdir %D/%%RUBY_ELISPDIR%% 2>/dev/null || true
+@unexec /bin/rmdir %D/lib/ruby 2>/dev/null || true
 %%PORTDOCS%%%%RUBY_DOCDIR%%/COPYING
 %%PORTDOCS%%%%RUBY_DOCDIR%%/COPYING.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/ChangeLog
@@ -684,7 +684,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pty
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/irb
 %%RUBY_DOCDIR%%/.keep_me
-@unexec rmdir %D/%%RUBY_DOCDIR%% 2>/dev/null || true
+@unexec /bin/rmdir %D/%%RUBY_DOCDIR%% 2>/dev/null || true
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/README
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/biorhythm.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cal.rb
@@ -937,7 +937,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/dl
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/curses
 %%RUBY_EXAMPLESDIR%%/.keep_me
-@unexec rmdir %D/%%RUBY_EXAMPLESDIR%% 2>/dev/null || true
+@unexec /bin/rmdir %D/%%RUBY_EXAMPLESDIR%% 2>/dev/null || true
 %%PORTDOCS%%%%RUBY_RIDIR%%/Abbrev/abbrev-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Abbrev/cdesc-Abbrev.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/ArgumentError/cdesc-ArgumentError.yaml
@@ -1532,6 +1532,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_each_src_dest-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_each_src_dest0-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_list-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_mkdir-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_output_message-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_same%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_stream_blksize-i.yaml
@@ -3169,8 +3170,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 @exec /bin/mkdir -p %D/%%RUBY_RIDIR%%
 @exec env LC_TIME=C /bin/date > %D/%%RUBY_RIDIR%%/created.rid
 @unexec /bin/rm -f %D/%%RUBY_RIDIR%%/created.rid
-@unexec /bin/rmdir -p %D/%%RUBY_RIDIR%%
+@unexec /bin/rmdir -p %D/%%RUBY_RIDIR%% 2>/dev/null || true
 @exec /bin/mkdir -p %D/%%RUBY_SITERIDIR%%
 @exec env LC_TIME=C /bin/date > %D/%%RUBY_SITERIDIR%%/created.rid
 @unexec /bin/rm -f %D/%%RUBY_SITERIDIR%%/created.rid
-@unexec /bin/rmdir -p %D/%%RUBY_SITERIDIR%%
+@unexec /bin/rmdir -p %D/%%RUBY_SITERIDIR%% 2>/dev/null || true
