@@ -240,6 +240,7 @@
     SUBDIR += xsl-docbook-modular
     SUBDIR += xslint
     SUBDIR += xt
+    SUBDIR += xxdiff
     SUBDIR += y2l
     SUBDIR += yodl
 

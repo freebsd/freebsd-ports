@@ -1,0 +1,3 @@
+bin/xxdiff
+%%PORTDOCS%%share/doc/xxdiff/xxdiff.html
+%%PORTDOCS%%@dirrm share/doc/xxdiff
