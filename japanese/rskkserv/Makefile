@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rskkserv
-PORTVERSION=	2.94.12
-PORTREVISION=	2
+PORTVERSION=	2.94.12a
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://www.unixuser.org/~ysjj/rskkserv/
 DIST_SUBDIR=	ruby
@@ -40,6 +39,9 @@ STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/rskkserv.sh
 DOCS_EN=	ChangeLog
 DOCS_JA=	README		TODO
 
+post-extract:
+	${LN} -s ${WRKSRC}/skkserv.rb.in ${WRKSRC}/rskkserv.in
+
 post-patch:
 	${RUBY} -i -ne 'if $$. == 1 then puts "#!@RUBY@" else puts $$_ end' ${WRKSRC}/skkserv.rb.in
 	${RUBY} -i -p \
@@ -60,7 +62,7 @@ post-install:
 		${ECHO_CMD} "start)"; \
 		${ECHO_CMD} "	if [ -f ${PREFIX}/libexec/rskkserv ]; then"; \
 		${ECHO_CMD} "		${ECHO_CMD} -n ' rskkserv: '"; \
-		${ECHO_CMD} "		${PREFIX}/libexec/rskkserv --verbose"; \
+		${ECHO_CMD} "		${PREFIX}/libexec/rskkserv"; \
 		${ECHO_CMD} "	fi"; \
 		${ECHO_CMD} "	;;"; \
 		${ECHO_CMD} "stop)"; \
