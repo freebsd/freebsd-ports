@@ -1,0 +1,14 @@
+ITS4 is  a tool  that   statically scans C  and   C++ source code  for
+potential security vulnerabilities.   It  is a command-line  tool that
+works across Unix  environments  (hopefully) and will also  work under
+Windows with CygWin installed.  ITS4  scans code, looking for function
+calls that  are potentially dangerous.  For some  calls, ITS4 tries to
+perform some code analysis  to determine  how  risky the call is.   In
+each    case,  ITS4 provides  a  problem    report, including  a short
+description of the potential problem and suggestions on how to fix the
+code.
+
+WWW: http://www.rstcorp.com/its4/
+
+- Chris D. Faulhaber
+ <jedgar@FreeBSD.org>
