@@ -19,6 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libfreetype.a:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png \
