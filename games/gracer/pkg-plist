@@ -1,0 +1,37 @@
+bin/gracer
+share/gracer/courses/course1.grc
+share/gracer/courses/course1.grs
+share/gracer/courses/grass.jpg
+share/gracer/courses/road.jpg
+share/gracer/license
+share/gracer/scenes/font.grs
+share/gracer/scenes/panel.grs
+share/gracer/scenes/sky.grs
+share/gracer/scenes/sky.jpg
+share/gracer/scripts/cache.tcl
+share/gracer/scripts/glut.tcl
+share/gracer/scripts/gr.tcl
+share/gracer/scripts/init.tcl
+share/gracer/scripts/init.tcl.in
+share/gracer/scripts/ui.tcl
+share/gracer/scripts/ui.tcl.in
+share/gracer/vehicles/formula.grv
+share/gracer/vehicles/formula/engine.dat
+share/gracer/vehicles/formula/fbmu.dat
+share/gracer/vehicles/formula/formula.grs
+share/gracer/vehicles/formula/ftire.dat
+share/gracer/vehicles/formula/rtire.dat
+share/gracer/vehicles/road.grv
+share/gracer/vehicles/road/engine.dat
+share/gracer/vehicles/road/fbmu.dat
+share/gracer/vehicles/road/ftire.dat
+share/gracer/vehicles/road/road.grs
+share/gracer/vehicles/road/rtire.dat
+share/gracer/vehicles/road/sbmu.dat
+@dirrm share/gracer/courses
+@dirrm share/gracer/scenes
+@dirrm share/gracer/scripts
+@dirrm share/gracer/vehicles/formula
+@dirrm share/gracer/vehicles/road
+@dirrm share/gracer/vehicles
+@dirrm share/gracer
