@@ -16,7 +16,7 @@ COMMENT=	X11 extension headers
 
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto
 
-CONFLICTS=	XFree86-libraries-*
+CONFLICTS=	XFree86-libraries-* xorg-libraries-*
 
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}

@@ -14,7 +14,7 @@ MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Header files and documentation for the X render extension
 
-CONFLICTS=	XFree86-libraries-*
+CONFLICTS=	XFree86-libraries-* xorg-libraries-*
 
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
