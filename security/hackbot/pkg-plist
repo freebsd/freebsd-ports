@@ -1,5 +1,5 @@
 bin/hackbot.pl
-etc/hackbot/google.db
-etc/hackbot/fingerprint.db
-etc/hackbot/cgi.db
-@dirrm etc/hackbot
+share/hackbot/google.db
+share/hackbot/fingerprint.db
+share/hackbot/cgi.db
+@dirrm share/hackbot
