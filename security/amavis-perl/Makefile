@@ -8,7 +8,8 @@
 PORTNAME=	amavis-perl
 PORTVERSION=	11
 CATEGORIES=	security
-MASTER_SITES=	http://www.amavis.org/dist/perl/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITE_SUBDIR=	amavis
 
 MAINTAINER=	svenasse@polaris.ca
 COMMENT=	Mail Virus Scanner (uses external antivirus)
