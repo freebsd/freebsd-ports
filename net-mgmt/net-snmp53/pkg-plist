@@ -23,7 +23,8 @@ bin/snmpusm
 bin/snmpvacm
 bin/snmpwalk
 bin/traptoemail
-etc/rc.d/snmpd.sh
+@unexec if cmp -s %D/etc/snmpd.sh %D/etc/snmpd.sh.sample; then rm -f %D/etc/snmpd.sh; fi
+etc/rc.d/snmpd.sh.sample
 include/net-snmp/agent/agent_callbacks.h
 include/net-snmp/agent/agent_handler.h
 include/net-snmp/agent/agent_index.h
@@ -213,6 +214,7 @@ share/snmp/mibs/UCD-DLMOD-MIB.txt
 share/snmp/mibs/UCD-IPFWACC-MIB.txt
 share/snmp/mibs/UCD-SNMP-MIB.txt
 share/snmp/mibs/UDP-MIB.txt
+@unexec rm -f %D/share/snmp/mibs/.index 2>/dev/null || true
 share/snmp/snmpconf-data/snmp-data/authopts
 share/snmp/snmpconf-data/snmp-data/debugging
 share/snmp/snmpconf-data/snmp-data/mibs
@@ -229,6 +231,8 @@ share/snmp/snmpconf-data/snmpd-data/trapsinks
 share/snmp/snmpconf-data/snmptrapd-data/formatting
 share/snmp/snmpconf-data/snmptrapd-data/snmpconf-config
 share/snmp/snmpconf-data/snmptrapd-data/traphandle
+@dirrm include/net-snmp/library
+@dirrm include/net-snmp
 @dirrm share/snmp/snmpconf-data/snmp-data
 @dirrm share/snmp/snmpconf-data/snmpd-data
 @dirrm share/snmp/snmpconf-data/snmptrapd-data
