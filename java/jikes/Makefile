@@ -7,7 +7,7 @@
 
 PORTNAME=	jikes
 PORTVERSION=	1.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java
 MASTER_SITES=	http://oss.software.ibm.com/pub/jikes/
 
@@ -17,7 +17,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libicuuc.a:${PORTSDIR}/devel/icu
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		CPPFLAGS="-D_THREAD_SAFE -I${PREFIX}/include" \
-		LDFLAGS="-pthread -L${PREFIX}/lib"
+		LDFLAGS="-pthread -L${PREFIX}/lib" \
+		CXXFLAGS="-pipe"
 
 MAN1=		jikes.1
 
