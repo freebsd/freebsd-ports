@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rssgrab
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	net gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -15,9 +14,8 @@ PKGNAMEPREFIX=	gdesklets-
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	View the content of RSS/RDF feed on your desktop
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
+RUN_DEPENDS=	${X11BASE}/share/gnome/gdesklets/Sensors/DisplayConstraints/__init__.py:${PORTSDIR}/deskutils/gdesklets-sensor-displayconstraints
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
