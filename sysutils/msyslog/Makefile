@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	msyslog
-PORTVERSION=	1.04b
+PORTVERSION=	1.04d
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.core-sdi.com/soft/
-DISTNAME=	${PORTNAME}-v${PORTVERSION:S/b//}
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@fix.no
@@ -46,6 +46,8 @@ INSTALLS_SHLIB=	yes
 DOCDIR=	${PREFIX}/share/doc/${PORTNAME}
 FIXPREFIX=	README src/man/om_peo.8 src/man/syslog.conf.5 \
 		src/man/syslogd.8 src/TODO src/syslogd.h
+
+WRKSRC=		${WRKDIR}/releases/${DISTNAME}
 
 pre-patch:
 .for f in ${FIXPREFIX}
