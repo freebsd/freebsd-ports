@@ -370,6 +370,7 @@
     SUBDIR += p5-XML-Directory
     SUBDIR += p5-XML-Dumper
     SUBDIR += p5-XML-Encoding
+    SUBDIR += p5-XML-Feed
     SUBDIR += p5-XML-Filter-BufferText
     SUBDIR += p5-XML-Filter-DetectWS
     SUBDIR += p5-XML-Filter-GenericChunk
