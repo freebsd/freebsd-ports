@@ -190,6 +190,7 @@ include/gsl/gsl_statistics_ushort.h
 include/gsl/gsl_sum.h
 include/gsl/gsl_sys.h
 include/gsl/gsl_test.h
+include/gsl/gsl_types.h
 include/gsl/gsl_vector.h
 include/gsl/gsl_vector_char.h
 include/gsl/gsl_vector_complex.h
@@ -235,7 +236,7 @@ info/gsl-ref.info-22
 lib/libgsl.a
 lib/libgsl.la
 lib/libgsl.so
-lib/libgsl.so.0
+lib/libgsl.so.3
 lib/libgslcblas.a
 lib/libgslcblas.la
 lib/libgslcblas.so
@@ -286,13 +287,14 @@ share/aclocal/gsl.m4
 %%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_46.html
 %%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_47.html
 %%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_48.html
+%%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_49.html
 %%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_5.html
 %%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_6.html
 %%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_7.html
 %%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_8.html
 %%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_9.html
 %%PORTDOCS%%share/doc/gsl/gsl-ref-html/gsl-ref_toc.html
-%%PORTDOCS%%share/doc/gsl/html 
+%%PORTDOCS%%share/doc/gsl/html
 %%PORTDOCS%%@dirrm share/doc/gsl/gsl-ref-html
 %%PORTDOCS%%@dirrm share/doc/gsl
 @dirrm include/gsl
