@@ -22,7 +22,7 @@ BROKEN=		tries to cd to directory that do not exist yet
 PLIST_SUB=	DISTNAME=${DISTNAME}
 
 MAKEFILE=	${WRKSRC}/unix/Makefile
-MAKE_ENV=	TFVER=${DISTNAME:S/^tf-//}
+MAKE_ENV=	TFVER=${DISTNAME:S/^tf-//} CC="${CC}" CFLAGS="${CFLAGS}"
 
 MAN1=		tf.1
 
