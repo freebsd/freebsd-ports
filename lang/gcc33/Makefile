@@ -80,7 +80,7 @@ CONFIGURE_ARGS+=	--enable-threads
 #	?is this an ObjC only thing?
 CONFIGURE_ARGS+=	--enable-threads=posix
 .endif
-ALL_TARGET=	bootstrap
+ALL_TARGET=	bootstrap-lean
 MAN1=		cpp33.1 g++33.1 g77-33.1 gcc33.1 gcov33.1 \
 		gcj33.1 gcjh33.1 gij33.1 grepjar33.1 jar33.1 \
 		jcf-dump33.1 jv-scan33.1 jv-convert33.1 \
