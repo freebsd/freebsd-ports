@@ -4957,6 +4957,7 @@ p5-MIME-Lite	ports/mail/p5-MIME-Lite
 p5-MIME-Tools	ports/mail/p5-MIME-Tools
 p5-MIME-Types	ports/mail/p5-MIME-Types
 p5-MLDBM	ports/databases/p5-MLDBM
+p5-MLDBM-Sync	ports/databases/p5-MLDBM-Sync
 p5-MP3-ID3v1Tag	ports/audio/p5-MP3-ID3v1Tag
 p5-MP3-Info	ports/audio/p5-MP3-Info
 p5-MPEG-ID3v2Tag	ports/audio/p5-MPEG-ID3v2Tag
