@@ -61,6 +61,7 @@ Acrobat4/Reader/res/splashScreen21.xbm
 Acrobat4/Reader/res/splashScreen28.xpm
 Acrobat4/ReadMe
 Acrobat4/bin/acroread
+bin/acroread
 bin/acroread4
 @exec ln -sf ../../Resource/Font/ %D/Acrobat4/Reader/%%ARCHDIR%%/fonts
 @unexec rm -f %D/Acrobat4/Reader/%%ARCHDIR%%/fonts

@@ -63,6 +63,7 @@ Acrobat5/Reader/res/splashScreen11R.xbm
 Acrobat5/Reader/res/splashScreen18R.xpm
 Acrobat5/Reader/license.txt
 Acrobat5/bin/acroread
+bin/acroread
 bin/acroread5
 %%PORTDOCS%%share/doc/acroread/README
 @exec ln -sf ../../Resource/Font/ %D/Acrobat5/Reader/%%ARCHDIR%%/fonts
