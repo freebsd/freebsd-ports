@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	dia
-PORTVERSION=	0.92.2
-PORTREVISION=	3
+PORTVERSION=	0.93
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.92
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.93
 DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	gnome@FreeBSD.org
@@ -26,14 +25,15 @@ USE_GNOME=	gtk20 gnomehack gnomeprefix libxslt libartlgpl2
 WANT_GNOME=	yes
 USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl"
+		LIBS="-L${LOCALBASE}/lib -lintl" \
+		LOCALBASE="${LOCALBASE}"
 
 MAN1=		dia.1
 
 .if !defined(WITHOUT_PYTHON)
 USE_PYTHON=	yes
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
 CONFIGURE_ARGS=	--with-python
 PLIST_SUB=	PYTHON:=""
 .else
