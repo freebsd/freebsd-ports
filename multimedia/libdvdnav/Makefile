@@ -7,6 +7,7 @@
 
 PORTNAME=	libdvdnav
 PORTVERSION=	0.1.9
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dvd
@@ -35,5 +36,5 @@ post-patch:
 		 s|autoconf|${TRUE}|g ; \
 		 s|autoheader|${TRUE}|g' ${WRKSRC}/configure \
 		 ${WRKSRC}/missing ${WRKSRC}/aclocal.m4 ${WRKSRC}/autogen.sh
-		
+
 .include <bsd.port.mk>
