@@ -25,7 +25,7 @@
 +    raise SystemExit
 +
  PACKAGE = "pyxmms"
- VERSION = "1.05"
+ VERSION = "1.06"
 -GLIB_CONFIG = "glib-config"
 +GLIB_CONFIG = os.environ['GLIB_CONFIG']
 +XMMS_CONFIG = os.environ['XMMS_CONFIG']
