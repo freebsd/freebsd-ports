@@ -1,7 +1,4 @@
 bin/tipograf
-%%DATADIR%%/trans/tipograf_de.qm
-@dirrm %%DATADIR%%/trans
-@dirrm %%DATADIR%%
 %%DOCSDIR%%/benutzerhandbuch.dvi
 %%DOCSDIR%%/benutzerhandbuch.ps
 %%DOCSDIR%%/html/de/benutzerhandbuch.css
@@ -26,7 +23,10 @@ bin/tipograf
 %%DOCSDIR%%/html/en/userguide.html
 %%DOCSDIR%%/userguide.dvi
 %%DOCSDIR%%/userguide.ps
-@dirrm %%DOCSDIR%%/html/de
+%%DATADIR%%/trans/tipograf_de.qm
+@dirrm %%DATADIR%%/trans
+@dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%/html/en
+@dirrm %%DOCSDIR%%/html/de
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
