@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	healthd
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://healthd.thehousleys.net/
 
@@ -15,10 +15,8 @@ MAINTAINER=	jim@thehousleys.net
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 
-.if !defined(NOPORTDOCS)
 MAN8=		healthd.8 healthdc.8
 INSTALL_TARGET=	install-all
-.endif
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/healthd.sh ]; then \
