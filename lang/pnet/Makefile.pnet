@@ -12,7 +12,7 @@ PNET_MASTER_SITE_SUBDIR=	dotgnu/pnet/
 ILSTRIP_CMD=	${LOCALBASE}/bin/ilstrip
 
 .if defined(WITH_OPTIMIZED_CSFLAGS)
-CSFLAGS=-02
+CSFLAGS=-O2
 .endif
 
 pre-everything:: post-everything
