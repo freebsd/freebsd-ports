@@ -18,7 +18,8 @@ MAINTAINER=	cjh@kr.freebsd.org
 BUILD_DEPENDS=	${PREFIX}/share/ghostscript/fonts/Fontmap:${PORTSDIR}/print/gsfonts
 
 # sample fonts(cid, free Korean fonts is just only one.. :< )
-CID_FONTS_KO=   Munhwa-Regular MunhwaGothic-Regular
+CID_FONTS_KO=   Munhwa-Regular Munhwa-Bold \
+		MunhwaGothic-Regular MunhwaGothic-Bold
 # CID CMAP
 CID_CMAP_KO=    ak11.tar.Z
 
@@ -31,6 +32,8 @@ do-extract:
 do-install:
 	${INSTALL_DATA} ${FILESDIR}/Munhwa-Regular-KSC-EUC-H.gsf \
 			${FILESDIR}/MunhwaGothic-Regular-KSC-EUC-H.gsf \
+			${FILESDIR}/Munhwa-Bold-KSC-EUC-H.gsf \
+			${FILESDIR}/MunhwaGothic-Bold-KSC-EUC-H.gsf \
 			${PREFIX}/share/ghostscript/fonts
 	for file in ${CID_FONTS_KO}; do \
 		${INSTALL_DATA} ${DISTDIR}/$$file \

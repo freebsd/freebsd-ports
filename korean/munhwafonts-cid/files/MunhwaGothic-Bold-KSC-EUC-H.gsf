@@ -1,0 +1,22 @@
+% MunhwaGothic-Bold font definition
+%
+% idea from README.CID in
+%   http://www.ldl.jaist.ac.jp/~akr/nonresearch/free-software/ghostscript/\
+%   gs5.10-vflib-1.1.tar.gz
+
+/MunhwaGothic-Bold-KSC-EUC-H
+/MunhwaGothic-Bold (MunhwaGothic-Bold)
+/KSC-EUC-H (CMap/KSC-EUC-H)
+
+1 index /CMap resourcestatus
+{pop pop pop}
+{runlibfile} ifelse
+/CMap findresource
+
+3 1 roll
+1 index /CIDFont resourcestatus
+{pop pop pop}
+{runlibfile} ifelse
+/CIDFont findresource
+
+[ exch ] composefont pop
