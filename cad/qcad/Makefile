@@ -28,10 +28,6 @@ MAKE_ENV=	QTDIR="${QTDIR}" MAKE="${GMAKE}" \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502102
-BROKEN=		"Broken pkg-plist"
-.endif
-
 .if ${MACHINE_ARCH} == "alpha"
 CFLAGS+=	-O0
 .endif
