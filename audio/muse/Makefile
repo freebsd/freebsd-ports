@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--disable-debug --disable-lubrify
 
 MAN1=		muse.1
 PORTDOCS=	${DOCSFILES:S,doc/,,g}
-PLIT_FILES=	bin/muse
+PLIST_FILES=	bin/muse
 
 CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT -DHAVE_SYS_UIO_H \
 		${PTHREAD_CFLAGS}
