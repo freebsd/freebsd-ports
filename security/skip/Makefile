@@ -11,7 +11,7 @@ CATEGORIES=		security
 # Note: the original source comes from Sun, via this web page:
 #    http://skip.incog.com/src-form.html
 # The site below is outside of the U.S.
-MASTER_SITES=		ftp://ftp.replaytv.com/pub/replay/crypto/APPS/skip/ \
+MASTER_SITES=		ftp://ftp.zedz.net/pub/crypto/programs/skip/ \
 			ftp://ftp.internat.freebsd.org/pub/FreeBSD/distfiles/
 DISTNAME=		skipsrc-1.0
 EXTRACT_SUFX=		.tar.Z
