@@ -21,6 +21,7 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	YES
+NO_PACKAGE=	"Requires IMAP/IMAP_SSL enabled in www/mod_php4"
 
 SILKYMAILDIR=	${LOCALBASE}/www/${PORTNAME}
 
