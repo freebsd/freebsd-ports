@@ -7,6 +7,7 @@
 
 PORTNAME=	gd
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/ \
@@ -22,8 +23,8 @@ MAINTAINER?=	ports@FreeBSD.org
 BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		freetype.7:${PORTSDIR}/print/freetype2
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		freetype:${PORTSDIR}/print/freetype2
 
 LATEST_LINK=	gd2
 

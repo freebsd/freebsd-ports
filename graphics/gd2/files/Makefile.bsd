@@ -41,11 +41,11 @@ ${PROGS} ${TESTS}: ${SHLIB_NAME} lib${LIB}.a
 		CFLAGS="${CFLAGS}" -ECFLAGS -f bsd.prog.mk
 
 install:
-	mkdir -p ${PREFIX}/include/gd
+	mkdir -p ${PREFIX}/include
 	make LIB=${LIB} LIBDIR="${PREFIX}/lib" NOPROFILE=true \
 		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
 		-f bsd.lib.mk install
-	cd ${.CURDIR} && ${INSTALL_DATA} ${INCS} ${PREFIX}/include/gd
+	cd ${.CURDIR} && ${INSTALL_DATA} ${INCS} ${PREFIX}/include
 	cd ${.CURDIR} && ${INSTALL_PROGRAM} ${PROGS} "${PREFIX}/bin/"
 	${INSTALL_SCRIPT} "${.CURDIR}/bdftogd" "${PREFIX}/bin/"
 
