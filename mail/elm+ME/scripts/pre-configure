@@ -15,10 +15,10 @@ case ${CFLAGS} in
 *)	DEBUG= ;;
 esac
 
-cat > ${WRKSRC}/config.sh << EOF
+cat >> ${CONFIG_PATH} << EOF
 #!/bin/sh
 # config.sh
-# This file was produced by running the Configure script.
+# This file was produced by running the $0 script.
 
 Log='\$Log'
 Header='\$Header'
@@ -49,6 +49,7 @@ orderlib='false'
 ranlib=':'
 package='elm2.4me+'
 pager='builtin++'
+use_builtin_pager='define'
 startsh='#!/bin/sh'
 define='define'
 loclist='
@@ -178,7 +179,7 @@ compress='/usr/bin/compress'
 execmail=''
 libswanted='sun nls c_s'
 noaddlib='yes'
-c_date='Fri Jan 18 00:59:09 CET 2002'
+c_date='Wed Dec 24 03:02:21 CET 2003'
 d_ascii='undef'
 d_broke_ctype='undef'
 d_calendar='define'
@@ -257,7 +258,8 @@ d_setlinebuf='define'
 d_shared='define'
 d_shared_rev='${d_shared_rev}'
 d_dlopen_libs='define'
-shared_list='iconv smtp tls'
+shared_list='${ELM_SHLIBS}'
+shared_register='${ELM_SHLIBS}'
 d_dynamic_main='define'
 dynamic_opt='-rdynamic'
 dlopen_lib=''
@@ -286,8 +288,11 @@ d_systimekernel='undef'
 i_unistd='define'
 i_utime='define'
 i_sysutime='undef'
-lib='${PREFIX}/${LIB_SUBDIR}'
-shlib='${PREFIX}/${SHLIB_SUBDIR}'
+lib='${LIB_DIR}'
+shlib='${SHLIB_DIR}'
+etc='${CONF_DIR}'
+stage_dir='${STAGE_DIR}'
+build_package='undef'
 libdirname='lib'
 libc='/usr/lib/libc.so'
 linepr='/usr/bin/lp'
@@ -346,32 +351,14 @@ locale_dir='/usr/share/locale'
 CONFIG=true
 EOF
 
-mv ${WRKSRC}/shared_libs/iconv/README.ME+ \
-   ${WRKSRC}/shared_libs/iconv/README.ICONV
-
-tee -a ${WRKSRC}/config.sh > ${WRKSRC}/shared_libs/iconv/config.res << EOF
-#  Support for ICONV
-iconv_ok='define'
+tee -a ${CONFIG_PATH} >> ${WRKSRC}/shared_libs/iconv/config.res << EOF
 iconv_dir='${LOCALBASE}'
 iconv_include_dir='${LOCALBASE}/include'
 iconv_lib_dir='${LOCALBASE}/lib'
 iconv_link='iconv'
 EOF
 
-mv ${WRKSRC}/shared_libs/smtp/README.ME+ \
-   ${WRKSRC}/shared_libs/smtp/README.SMTP
-
-tee -a ${WRKSRC}/config.sh > ${WRKSRC}/shared_libs/smtp/config.res << EOF
-#  Support for SMTP
-smtp_ok='define'
-EOF
-
-mv ${WRKSRC}/shared_libs/tls/README.ME+ \
-   ${WRKSRC}/shared_libs/tls/README.TLS
-
-tee -a ${WRKSRC}/config.sh > ${WRKSRC}/shared_libs/tls/config.res << EOF
-#  Support for TLS
-tls_ok='define'
+tee -a ${CONFIG_PATH} >> ${WRKSRC}/shared_libs/tls/config.res << EOF
 tls_dir='system'
 tls_include_dir=''
 tls_lib_dir=''
