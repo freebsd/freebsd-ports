@@ -17,6 +17,8 @@ MAINTAINER=	mi@aldan.algebra.com
 LIB_DEPENDS=	mhash:${PORTSDIR}/security/mhash \
 		pq:${PORTSDIR}/databases/postgresql7
 
+FORBIDDEN=	security
+
 # When the family of Debian mirrors is added to bsd.port.mk,
 # this will suddenly start making sense:
 MASTER_SITE_DEBIAN?= http://ftp.debian.org/debian/%SUBDIR%/
