@@ -7,7 +7,7 @@
 
 PORTNAME=	jmeter
 PORTVERSION=	1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-jmeter/release/v${PORTVERSION}/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -35,6 +35,7 @@ post-patch:
 	@${ECHO_CMD} -n ">> Customizing `basename $f`..."
 	@${SED} \
 	-e "/%%JAVA%%/s//${JAVA:S/\//\\\//g}/g" \
+	-e "/%%APP_HOME%%/s//${APP_HOME:S/\//\\\//g}/g" \
 	$f > ${WRKDIR}/`basename $f`
 	@${ECHO_CMD} " [ DONE ]"
 .endfor
