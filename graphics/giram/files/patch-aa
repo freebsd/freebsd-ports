@@ -1,0 +1,19 @@
+--- src/view.c.orig	Tue Jul 11 20:34:10 2000
++++ src/view.c	Tue Jul 11 20:52:40 2000
+@@ -223,6 +223,7 @@
+ {
+   ViewUserDataStruct *UserData;
+   FrameStruct *LocalFrame;
++  int fd;
+   char *TmpFileName;
+   gchar *CommandLine;
+ 
+@@ -230,7 +231,7 @@
+   strcpy(TmpFileName, "/tmp/GiramXXXXXX");
+   UserData = get_view_user_data();
+   LocalFrame = UserData->FrameView;    
+-  mktemp(TmpFileName);
++  fd = mkstemp(TmpFileName);
+   SavePovByName(LocalFrame, TmpFileName);
+   CommandLine = g_strdup_printf("povfront -p -s %s &", TmpFileName);
+   system(CommandLine);
