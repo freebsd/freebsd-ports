@@ -10,6 +10,5 @@
     SUBDIR += hspell
     SUBDIR += kde3-i18n
     SUBDIR += koffice-i18n
-    SUBDIR += pine
 
 .include <bsd.port.subdir.mk>
