@@ -1,0 +1,22 @@
+Index: gdb/avr-tdep.c
+===================================================================
+RCS file: /cvs/src/src/gdb/avr-tdep.c,v
+retrieving revision 1.4
+diff -u -p -r1.4 avr-tdep.c
+--- gdb/avr-tdep.c	17 Jun 2002 23:32:27 -0000	1.4
++++ gdb/avr-tdep.c	19 Jul 2002 18:33:30 -0000
+@@ -995,7 +995,12 @@ avr_skip_prologue (CORE_ADDR pc)
+     {
+       sal = find_pc_line (func_addr, 0);
+
+-      if (sal.line != 0 && sal.end < func_end)
++      /* troth/2002-70-19: For some very simple functions, gcc doesn't
++         generate a prologue and the sal.end ends up being the insn (2 bytes)
++         before func_end (the address of the next func). By adjusting
++         func_end, we can catch these functions and return the correct pc. */
++
++      if (sal.line != 0 && sal.end < (func_end-2))
+ 	return sal.end;
+     }
+
+
