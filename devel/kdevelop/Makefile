@@ -7,6 +7,7 @@
 
 PORTNAME=	kdevelop
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.e-technik.fh-muenchen.de/pub/unix/ide/KDevelop/ \
 		ftp://ftp.chg.ru/pub/X11/kdevelop/ \
