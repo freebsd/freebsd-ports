@@ -123,5 +123,6 @@
     SUBDIR += xmps-win32-plugin
     SUBDIR += xtheater
     SUBDIR += xvid
+    SUBDIR += y4mscaler
 
 .include <bsd.port.subdir.mk>
