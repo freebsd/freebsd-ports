@@ -44,6 +44,7 @@
     SUBDIR += fbm
     SUBDIR += femlab
     SUBDIR += fftw
+    SUBDIR += fftw-float
     SUBDIR += fftw3
     SUBDIR += fftw3-float
     SUBDIR += fftw3-long
