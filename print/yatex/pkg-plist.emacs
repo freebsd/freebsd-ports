@@ -20,10 +20,12 @@ info/yahtmle
 info/yahtmlj
 info/yatexe
 info/yatexj
+share/doc/yatex/00readme
 share/doc/yatex/htmlqa
 share/doc/yatex/htmlqa.eng
 share/doc/yatex/qanda
 share/doc/yatex/qanda.eng
+share/doc/yatex/readme.meadow.j
 share/doc/yatex/yahtmle.tex
 share/doc/yatex/yahtmlj.tex
 share/doc/yatex/yatex.new

@@ -6,29 +6,28 @@
 #
 
 PORTNAME=	yatex
-PORTVERSION=	1.69.k
+PORTVERSION=	1.70
 CATEGORIES?=	print elisp
 MASTER_SITES=	http://www.yatex.org/ \
 		http://www.gentei.org/~yuuji/tmp/
-DISTNAME=	${PORTNAME}${VERSION}
-#DISTNAME=	${PORTNAME}${PORTVERSION}
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
 
 PKGINSTALL=	${WRKDIR}/INSTALL
 PKGDEINSTALL=	${WRKDIR}/DEINSTALL
 PKGMESSAGE=	${WRKDIR}/MESSAGE
-VERSION=	10106111128
-TARGETNAME=	YaTeX
-DIRSECTION=	The Emacs editor and associated tools
-EMACS_PORT_NAME?=emacs20
-.if (${EMACS_PORT_NAME} == xemacs21-mule)
-BUILD_DEPENDS=	xemacs:${PORTSDIR}/japanese/xemacs21-canna \
-		${LOCALBASE}/${EMACS_PACKAGESDIR}/../xemacs-packages/lisp/texinfo/texinfmt.el:${PORTSDIR}/editors/xemacs-packages \
-		nkf:${PORTSDIR}/japanese/nkf
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
+
+EMACS_PORT_NAME?=emacs21
+EMACS_NO_RUN_DEPENDS=YES
+.if (${EMACS_PORT_NAME} != xemacs21-mule)
+EMACS_NO_BUILD_DEPENDS=YES
 .endif
 
+VERSION=	${PORTVERSION}
+TARGETNAME=	YaTeX
+DIRSECTION=	The Emacs editor and associated tools
 EMACS_PACKAGESDIR=${EMACS_LIBDIR}/site-packages
 # Note that 'INFODIR' is defined in bsd.info.mk
 .if (${EMACS_PORT_NAME} == xemacs21)
@@ -56,13 +55,13 @@ HELPDIR=	${ELISPDIR}
 .endif
 PORTSDOCDIR=	${PREFIX}/share/doc/yatex
 .if (${EMACS_PORT_NAME} == xemacs21)
-NEW=
+DOCS=
 HELP=		help/YATEXHLP.eng
 INFOFILES=	yatexe:yahtmle
 INFONODES=	YaTeX:yahtml
 INFONODEEXPS=	Yet Another tex-mode for Emacs.:Yet Another HTML mode.
 .else
-NEW=		yatex.new
+DOCS=		00readme readme.meadow.j yatex.new
 HELP=		help/YATEXHLP.jp help/YATEXHLP.eng
 DOCSRC=		docs/yatexj.tex \
 		docs/yatex.ref \
@@ -106,14 +105,10 @@ do-build:
 		 -e 's,%%EMACS_NAME%%,${EMACS_NAME},g' \
 		< ${FILESDIR}/$${file}.tmpl > ${WRKDIR}/$${file}; \
 	done
-# For XEmacs-mule 20.4, yatexj.info (in Japanese) should be remade
-# after Kanji code of yatexj.tex is convert from shift jis (MS-Kanji)
-# to EUC.
+# For XEmacs, yatexj (a Japanese info file) should be remade.
 .if (${EMACS_PORT_NAME} == xemacs21-mule)
 	(cd ${WRKSRC}/docs; \
-	${MV} yatexj.tex yatexj.tex.org; \
-	nkf -e yatexj.tex.org > yatexj.tex; \
-	${SETENV} LANG=ja_JP.EUC ${EMACS_CMD} -no-site-file -no-init-file \
+	${SETENV} LANG=ja_JP.eucJP ${EMACS_CMD} -no-site-file -no-init-file \
 		-batch -l texinfmt -f batch-texinfo-format yatexj.tex; \
 	)
 .endif
@@ -138,7 +133,7 @@ do-install:
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PORTSDOCDIR}
-	cd ${WRKSRC}; ${INSTALL_DATA} ${NEW} ${DOCSRC} ${PORTSDOCDIR}
+	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${DOCSRC} ${PORTSDOCDIR}
 .endif
 
 post-install:
