@@ -13,7 +13,8 @@ MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
 .if ${ARCH} == "i386"
 DISTNAME=	linux-505
 .endif
-MAINTAINER=	osa@FreeBSD.org.ru
+
+MAINTAINER=	ports@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 
