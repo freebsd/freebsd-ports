@@ -405,6 +405,7 @@
     SUBDIR += sparc-rtems-gcj
     SUBDIR += sparc-rtems-gdb
     SUBDIR += sparc-rtems-objc
+    SUBDIR += st
     SUBDIR += stlport
     SUBDIR += str
     SUBDIR += swarm
