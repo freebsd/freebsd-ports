@@ -1,13 +1,13 @@
-# New ports collection makefile for:	cern_httpd
+# New ports collection makefile for:	w3c_httpd
 # Version required:	3.0 / 2.17
 # Date created:		29 October 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.9 1995/12/10 18:41:24 ache Exp $
+# $Id: Makefile,v 1.10 1995/12/10 18:51:56 ache Exp $
 #
 
 DISTNAME=	WWW
-PKGNAME=	cern_httpd-3.0
+PKGNAME=	w3c_httpd-3.0
 CATEGORIES+=	www
 MASTER_SITES=   ftp://ftp.w3.org/pub/httpd/ \
 		ftp://ftp.w3.org/pub/libwww/
