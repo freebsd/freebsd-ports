@@ -31,6 +31,10 @@ CONFIGURE_ARGS=	--enable-video-aalib \
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
 .if exists(/usr/lib/libvgl.so.3)
 CONFIGURE_ARGS+=--enable-video-vgl
 DISPLAY_MSG=	${CAT} ${PKGMESSAGE}
@@ -93,15 +97,15 @@ post-configure:
 		${WRKSRC}/libtool
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/SDL11
-	${INSTALL_DATA} ${WRKSRC}/test/* ${PREFIX}/share/examples/SDL11
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/test/* ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/SDL11/docs
+	@${MKDIR} ${DOCSDIR}/docs
 .for file in BUGS COPYING CREDITS README WhatsNew docs.html
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/SDL11
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 	@cd ${WRKSRC}/docs; ${TAR} cf - `${ECHO_CMD} [^Mm]*` | \
-		(cd ${PREFIX}/share/doc/SDL11/docs; ${TAR} --unlink -xf - )
+		(cd ${DOCSDIR}/docs; ${TAR} --unlink -xf - )
 .endif
 	@${DISPLAY_MSG}
 
