@@ -8,7 +8,7 @@
 PORTNAME=	asp2php
 PORTVERSION=	0.75.11
 CATEGORIES=	www
-MASTER_SITES=	http://home.i1.net/~naken/asp2php/
+MASTER_SITES=	http://www.naken.cc/asp2php/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,6 +22,7 @@ WANT_GTK=	yes
 .if defined(HAVE_GTK)
 USE_GTK=	yes
 ALL_TARGET=	all gtkasp2php
+INSTALL_TARGET=	install install-gtk
 PLIST_SUB+=	WANT_GTK=""
 .else
 PLIST_SUB+=	WANT_GTK="@comment "
