@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	games/strategy
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Daemonic X Labyrinth played directly with the mouse pointer
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes

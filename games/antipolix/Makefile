@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	games/multiplayer
 DISTNAME=	AntipoliX_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Simple multiplayer game for X Window System
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes

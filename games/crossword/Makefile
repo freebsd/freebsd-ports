@@ -12,6 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.ldc.usb.ve/~96-28234/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Crossword Generator
 
 WRKSRC=		${WRKDIR}/Crossword
 USE_REINPLACE=	yes

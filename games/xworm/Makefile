@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.ekran.no/archive/x/
 DISTNAME=	${PORTNAME}102
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Classic game with apples and hungry worm
 
 WRKSRC=		${WRKDIR}/XWorm
 USE_X_PREFIX=	yes

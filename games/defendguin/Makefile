@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.nbswebfx.com/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Another shoot-the-Bill game
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 

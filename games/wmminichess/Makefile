@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.electricrain.com/edavis/miniCHESS/
 DISTNAME=	miniCHESS-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	WindowMaker chess dockapp game
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gnuchess:${PORTSDIR}/games/gnuchess
 

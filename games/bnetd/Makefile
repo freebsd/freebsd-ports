@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A program that attempts to emulate Blizzard's Battle.net service
 
 IGNORE=		"has been disabled for legal issue"
 GNU_CONFIGURE=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	games
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Simple version for X Window of the famous card game Super Truco
 
 USE_X_PREFIX=	yes
 

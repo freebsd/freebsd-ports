@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.Org
+COMMENT=	X11 minesweeper game
 
 USE_IMAKE=	yes
 MAN1=		xminesweep.1

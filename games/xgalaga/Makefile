@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.cit.uws.edu.au/pub/unix/games/ \
 MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Galaga resurrected on X
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

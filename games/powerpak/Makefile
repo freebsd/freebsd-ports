@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.angelfire.com/va/powerpakgsdk/images/
 DISTNAME=	PowerPak
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	SDL-based Game Software Development Kit
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		png.5:${PORTSDIR}/graphics/png \

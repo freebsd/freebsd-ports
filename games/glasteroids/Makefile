@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.honors.montana.edu/~jjc/Glasteroids/
 DISTNAME=	Glasteriods
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	3D Asteroids game for X Window System
 
 MAKEFILE=	Makefile.FreeBSD
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Time Trek - like game for X Window System
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes

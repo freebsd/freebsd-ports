@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://forte.mathematik.uni-bremen.de/pub/comp/X11/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Mahjongg
 
 USE_IMAKE=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	gnome-memblocks
 DISTNAME=	gnome-memblocks-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Memory Blocks game for GNOME
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

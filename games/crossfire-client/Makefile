@@ -18,6 +18,7 @@ DISTFILES=	${PORTNAME}-client-${PORTVERSION}.tar.gz \
 		${PORTNAME}-client-sounds-${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Multiplayer graphical arcade and adventure game made for X11
 
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
 

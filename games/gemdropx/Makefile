@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.nbswebfx.com/downloads/ \
 		ftp://ftp.sonic.net/pub/users/nbs/unix/x/gemdropx
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An interesting one-player puzzle game for X
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 

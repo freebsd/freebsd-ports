@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.catb.org/~esr/vms-empire/
 DISTNAME=	vms-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Solitaire empire game "VMS Empire"
 
 MAN6=		empire.6
 

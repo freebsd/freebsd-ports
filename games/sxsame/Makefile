@@ -14,6 +14,7 @@ MASTER_SITES=   ftp://stardust.sfc.wide.ad.jp/pub/JG/JG-0.9.1/sources/ \
 		ftp://mirror.nucba.ac.jp/mirror/JG/JG-0.9.1/sources/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A tile-removing puzzle game for the X Window system
 
 USE_IMAKE=	yes
 USE_XPM=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	games/arcade
 DISTNAME=		${PORTNAME}
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	Atari "Missile Command" clone
 
 ALL_TARGET=
 WRKSRC=			${WRKDIR}/miscom

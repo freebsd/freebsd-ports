@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/galaxis/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Clone of the nifty little Macintosh game
 
 ALL_TARGET=	# empty
 MAN6=		galaxis.6

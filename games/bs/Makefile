@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/bs/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Battleships solitaire game with a color interface
 
 ALL_TARGET=	# empty
 MAN6=		bs.6

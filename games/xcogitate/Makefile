@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mph
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A logic game with board and stones
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

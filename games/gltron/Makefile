@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	-source.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A 3D worm game for two players for X Window System
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		SDL_net.0:${PORTSDIR}/net/sdl_net \

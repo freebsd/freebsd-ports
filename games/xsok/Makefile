@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin.X11/ \
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A generic Sokoban game for X11
 
 USE_IMAKE=	yes
 USE_XPM=	yes

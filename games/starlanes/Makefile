@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The classic space-age stock trading game
 
 ALL_TARGET=	# empty
 MAN6=		starlanes.6

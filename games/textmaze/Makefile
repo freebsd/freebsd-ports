@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.robobunny.com/projects/textmaze/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Generates mazes on a text terminal and lets you traverse them
 
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/TextMaze

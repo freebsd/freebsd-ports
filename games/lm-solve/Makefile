@@ -13,6 +13,7 @@ MASTER_SITES=	http://vipe.technion.ac.il/~shlomif/lm-solve/
 DISTNAME=	LM-Solve-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Computerized Solver for Logic Mazes
 
 PERL_CONFIGURE=	yes
 

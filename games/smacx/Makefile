@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-demo-x86
 EXTRACT_SUFX=	.run
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Free demo of Sid Meier's Alpha Centauri
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

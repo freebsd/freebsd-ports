@@ -12,6 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.moosh.net/pub/mush/servers/tinymux/TinyMUX-1.x/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Multi-Player FreeForm adventure Program
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 

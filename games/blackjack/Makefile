@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	games/strategy
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	One of the better implementations of blackjack, based on QT
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_QT_VER=	3

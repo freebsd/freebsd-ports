@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/arcade/invaders
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Shoot-em-up them nasty little bugs
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Pac-man-like game under X11
 
 WRKSRC=		${WRKDIR}/xchomp
 USE_IMAKE=	yes

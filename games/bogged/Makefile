@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	games/strategy
 EXTRACT_SUFX=		.gz
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	Word game for X Window System
 
 RUN_DEPENDS=		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A challenging double decked solitaire game
 
 USE_IMAKE=	yes
 INSTALL_TARGET=	install install.doc

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	games
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	X window mille bourne game
 
 WRKSRC=		${WRKDIR}/Mille
 

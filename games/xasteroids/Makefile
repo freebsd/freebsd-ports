@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.x.org/pub/R5contrib/
 DISTFILES=	xasteroids.sh.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	X11 based asteroids style arcade game
 
 USE_IMAKE=	yes
 NO_WRKSUBDIR=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	games windowmaker afterstep
 MASTER_SITES=	http://www.01.246.ne.jp/~m-sugano/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A dockapp that outputs fortune messages
 
 USE_GMAKE=	yes
 USE_XPM=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.redlinelabs.com/pub/oonsoo/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	A solitaire card game for X
 
 USE_XLIB=	yes
 

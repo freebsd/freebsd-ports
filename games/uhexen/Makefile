@@ -12,6 +12,7 @@ MASTER_SITES=	http://uhexen.sourceforge.net/
 DISTNAME=	${PORTNAME}-latest
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Yet another port of Hexen, popular game from Raven Softrware
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer

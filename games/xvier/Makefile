@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Throw stones into free columns
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_IMAKE=	yes

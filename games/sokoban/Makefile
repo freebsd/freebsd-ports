@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	games/strategy
 DISTFILES=		${PORTNAME}-src${EXTRACT_SUFX}
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	Logical game: problems with packets in cave
 
 WRKSRC=			${WRKDIR}/sokoban
 ALL_TARGET=

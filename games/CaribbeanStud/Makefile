@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	games
 DISTNAME=		CS
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	Caribbean Stud gambling game for X Window System
 
 MAKEFILE=		Xmakefile
 USE_MOTIF=		yes

@@ -12,6 +12,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Simple program to generate anagrams
 
 NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes

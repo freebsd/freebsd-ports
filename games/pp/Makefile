@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://www.mps.de/pub/unix/
 DISTFILES=	ppinst-0.01.tar.gz ppsrc-0.01.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Prometeus Project - real time strategy game for X Window System
 
 WRKSRC=		${WRKDIR}/ppsrc
 USE_QT_VER=	1

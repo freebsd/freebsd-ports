@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	games
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An X version of a simple but tricky board game
 
 USE_REINPLACE=	yes
 USE_IMAKE=	yes

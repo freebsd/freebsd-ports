@@ -24,6 +24,7 @@ DISTFILES+=	${SKINFILES}
 .endif
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Cleaned up copy of the GPL'd Quake 1 source code
 
 WADFILE=	quakesw-1.0.6.tar.gz
 PROGFILE=	qwsv-2.30-glibc-i386-unknown-linux2.0.tar.gz

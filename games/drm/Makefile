@@ -14,6 +14,7 @@ DISTNAME=		dr_mario
 EXTRACT_SUFX=		.tar.Z
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	Very simple tetris-style game
 
 ALL_TARGET=
 

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A multiplayer 3D tank battle game
 
 USE_XLIB=	yes
 USE_MESA=	yes

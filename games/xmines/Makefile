@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	games/strategy
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Minesweeper game for the X Window System
 
 USE_X_PREFIX=	yes
 

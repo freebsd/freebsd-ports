@@ -16,6 +16,7 @@ PATCHFILES=	xemeraldia-0.3to0.31.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A game of breaking blocks
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes

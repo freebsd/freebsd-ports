@@ -8,6 +8,7 @@
 MASTERDIR=      ${.CURDIR}/../nethack33
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A dungeon explorin', slashin', hackin' game (w/ Qt graphics)
 
 WITH_QT_GRAPHICS=	yes
 

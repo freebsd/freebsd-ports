@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	games
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Save your computers from the evil clutches of Bill
 
 USE_IMAKE=	yes
 USE_XPM=	yes
