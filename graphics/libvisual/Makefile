@@ -28,7 +28,7 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 50001
+.if ${OSVERSION} < 500001
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-libvisual_lv_cpu.c
 .endif
 
