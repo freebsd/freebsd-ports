@@ -7,7 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION=	${EXIM_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/infosys/mail/exim/%SUBDIR%/ \
@@ -39,7 +39,7 @@ MASTER_SITE_SUBDIR=	exim4 exiscan/:exiscan exiscan-acl/:exiscan_acl
 DISTFILES=	exim-${EXIM_VERSION}${EXTRACT_SUFX} \
 		exim-texinfo-${EXIM_DOCVERSION}${EXTRACT_SUFX}
 .if defined(WITH_EXISCAN_ACL)
-DISTFILES+=	exiscan-acl-${EXISCAN_ACL_VERSION}.patch:exiscan_acl
+DISTFILES+=	exiscan-acl-${EXISCAN_ACL_VERSION}.patch.bz2:exiscan_acl
 .elif !defined(WITHOUT_EXISCAN)
 DISTFILES+=	exiscan-${EXISCAN_VERSION}${EXTRACT_SUFX}:exiscan
 .endif
@@ -60,7 +60,7 @@ MAN8=		exim.8
 
 EXIM_VERSION=		4.20
 EXIM_DOCVERSION=	4.20
-EXISCAN_ACL_VERSION=	${EXIM_VERSION}-07
+EXISCAN_ACL_VERSION=	${EXIM_VERSION}-08
 EXISCAN_VERSION=	${EXIM_VERSION}-26
 
 PLIST_SUB+=     EXIM_VERSION="${EXIM_VERSION}"
@@ -334,9 +334,8 @@ SEDLIST+=	-e 's,^\# TRANSPORT_LMTP=,TRANSPORT_LMTP=,'
 
 post-patch:
 .if defined(WITH_EXISCAN_ACL)
-	cd ${WRKSRC} && ${PATCH} -p1 \
-	    < ${DISTDIR}/${DIST_SUBDIR}/exiscan-acl-${EXISCAN_ACL_VERSION}.patch \
-	    > ${WRKDIR}/patch-exiscan-acl.log 2>&1
+	${BZCAT} ${DISTDIR}/${DIST_SUBDIR}/exiscan-acl-${EXISCAN_ACL_VERSION}.patch.bz2 \
+	    | ${PATCH} -d ${WRKSRC} -p1 > ${WRKDIR}/patch-exiscan-acl.log 2>&1
 	@${CAT} ${FILESDIR}/POST-INSTALL-NOTES.exiscan-acl \
 	    ${FILESDIR}/POST-INSTALL-NOTES > ${WRKDIR}/POST-INSTALL-NOTES
 .elif !defined(WITHOUT_EXISCAN)
