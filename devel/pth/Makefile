@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.engelschall.com/sw/pth/
 MASTER_SITE_SUBDIR=	pth
 
-MAINTAINER=	rse@engelschall.com
+MAINTAINER=	ports@FreeBSD.org
 
 INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes
