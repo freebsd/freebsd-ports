@@ -27,6 +27,9 @@ lib/scons/SCons/Executor.pyo
 lib/scons/SCons/Job.py
 lib/scons/SCons/Job.pyc
 lib/scons/SCons/Job.pyo
+lib/scons/SCons/Memoize.py
+lib/scons/SCons/Memoize.pyc
+lib/scons/SCons/Memoize.pyo
 lib/scons/SCons/Node/Alias.py
 lib/scons/SCons/Node/Alias.pyc
 lib/scons/SCons/Node/Alias.pyo
@@ -111,6 +114,9 @@ lib/scons/SCons/Scanner/C.pyo
 lib/scons/SCons/Scanner/D.py
 lib/scons/SCons/Scanner/D.pyc
 lib/scons/SCons/Scanner/D.pyo
+lib/scons/SCons/Scanner/Dir.py
+lib/scons/SCons/Scanner/Dir.pyc
+lib/scons/SCons/Scanner/Dir.pyo
 lib/scons/SCons/Scanner/Fortran.py
 lib/scons/SCons/Scanner/Fortran.pyc
 lib/scons/SCons/Scanner/Fortran.pyo
@@ -123,6 +129,9 @@ lib/scons/SCons/Scanner/Prog.pyo
 lib/scons/SCons/Scanner/__init__.py
 lib/scons/SCons/Scanner/__init__.pyc
 lib/scons/SCons/Scanner/__init__.pyo
+lib/scons/SCons/Script/Main.py
+lib/scons/SCons/Script/Main.pyc
+lib/scons/SCons/Script/Main.pyo
 lib/scons/SCons/Script/SConscript.py
 lib/scons/SCons/Script/SConscript.pyc
 lib/scons/SCons/Script/SConscript.pyo
@@ -183,6 +192,9 @@ lib/scons/SCons/Tool/aixf77.pyo
 lib/scons/SCons/Tool/aixlink.py
 lib/scons/SCons/Tool/aixlink.pyc
 lib/scons/SCons/Tool/aixlink.pyo
+lib/scons/SCons/Tool/applelink.py
+lib/scons/SCons/Tool/applelink.pyc
+lib/scons/SCons/Tool/applelink.pyo
 lib/scons/SCons/Tool/ar.py
 lib/scons/SCons/Tool/ar.pyc
 lib/scons/SCons/Tool/ar.pyo
@@ -270,6 +282,9 @@ lib/scons/SCons/Tool/ilink.pyo
 lib/scons/SCons/Tool/ilink32.py
 lib/scons/SCons/Tool/ilink32.pyc
 lib/scons/SCons/Tool/ilink32.pyo
+lib/scons/SCons/Tool/intelc.py
+lib/scons/SCons/Tool/intelc.pyc
+lib/scons/SCons/Tool/intelc.pyo
 lib/scons/SCons/Tool/jar.py
 lib/scons/SCons/Tool/jar.pyc
 lib/scons/SCons/Tool/jar.pyo
@@ -315,6 +330,12 @@ lib/scons/SCons/Tool/msvc.pyo
 lib/scons/SCons/Tool/msvs.py
 lib/scons/SCons/Tool/msvs.pyc
 lib/scons/SCons/Tool/msvs.pyo
+lib/scons/SCons/Tool/mwcc.py
+lib/scons/SCons/Tool/mwcc.pyc
+lib/scons/SCons/Tool/mwcc.pyo
+lib/scons/SCons/Tool/mwld.py
+lib/scons/SCons/Tool/mwld.pyc
+lib/scons/SCons/Tool/mwld.pyo
 lib/scons/SCons/Tool/nasm.py
 lib/scons/SCons/Tool/nasm.pyc
 lib/scons/SCons/Tool/nasm.pyo
@@ -330,6 +351,9 @@ lib/scons/SCons/Tool/qt.pyo
 lib/scons/SCons/Tool/rmic.py
 lib/scons/SCons/Tool/rmic.pyc
 lib/scons/SCons/Tool/rmic.pyo
+lib/scons/SCons/Tool/rpcgen.py
+lib/scons/SCons/Tool/rpcgen.pyc
+lib/scons/SCons/Tool/rpcgen.pyo
 lib/scons/SCons/Tool/sgiar.py
 lib/scons/SCons/Tool/sgiar.pyc
 lib/scons/SCons/Tool/sgiar.pyo
