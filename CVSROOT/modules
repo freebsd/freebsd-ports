@@ -8500,6 +8500,7 @@ pgpin		ports/security/pgpin
 pgplot		ports/graphics/pgplot
 pgpmoose	ports/news/pgpmoose
 pgpsendmail	ports/mail/pgpsendmail
+pgworksheet	ports/databases/pgworksheet
 phalanx		ports/games/phalanx
 pharmacy	ports/devel/pharmacy
 phase		ports/x11-themes/phase
