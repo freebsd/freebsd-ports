@@ -45,7 +45,6 @@
     SUBDIR += pktsuckers
     SUBDIR += portscanner
     SUBDIR += portsentry
-    SUBDIR += raproxy
     SUBDIR += rsaref
     SUBDIR += skip
     SUBDIR += slush
