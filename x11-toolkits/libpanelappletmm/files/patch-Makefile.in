@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Dec  3 16:16:50 2003
++++ Makefile.in	Thu Dec  4 03:39:42 2003
+@@ -93,7 +93,7 @@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
+ 
+-SUBDIRS = tools libpanelapplet docs examples
++SUBDIRS = tools libpanelapplet docs 
+ DIST_SUBDIRS = $(SUBDIRS) scripts
+ 
+ EXTRA_DIST = libpanelappletmm.spec.in 		  build_shared/Makefile_build.am_fragment 		  build_shared/Makefile_build_gensrc.am_fragment 		  build_shared/Makefile_gensrc.am_fragment autogen.sh
