@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xemacs-packages
-PORTVERSION=	4.0
+PORTVERSION=	5.0
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS} \
 		${MASTER_SITE_LOCAL}
@@ -21,22 +21,25 @@ DISTFILES=	\
 		c-support-1.16-pkg.tar.gz \
 		calc-1.23-pkg.tar.gz \
 		calendar-1.18-pkg.tar.gz \
-		cc-mode-1.29-pkg.tar.gz \
+		cc-mode-1.30-pkg.tar.gz \
 		clearcase-1.04-pkg.tar.gz \
 		cookie-1.14-pkg.tar.gz \
 		crisp-1.12-pkg.tar.gz \
 		debug-1.15-pkg.tar.gz \
 		dictionary-1.11-pkg.tar.gz \
 		dired-1.12-pkg.tar.gz \
+		docbookide-0.05-pkg.tar.gz \
+		ecrypto-0.11-pkg.tar.gz \
 		edebug-1.14-pkg.tar.gz \
 		ediff-1.41-pkg.tar.gz \
-		edit-utils-1.92-pkg.tar.gz \
+		edit-utils-1.93-pkg.tar.gz \
 		edt-1.12-pkg.tar.gz \
 		efs-1.29-pkg.tar.gz \
 		eieio-1.03-pkg.tar.gz \
 		elib-1.10-pkg.tar.gz \
 		emerge-1.09-pkg.tar.gz \
 		eshell-1.03-pkg.tar.gz \
+		ess-1.02-pkg.tar.gz \
 		eterm-1.13-pkg.tar.gz \
 		eudc-1.36-pkg.tar.gz \
 		footnote-1.15-pkg.tar.gz \
@@ -51,54 +54,58 @@ DISTFILES=	\
 		ibuffer-1.08-pkg.tar.gz \
 		idlwave-1.25-pkg.tar.gz \
 		igrep-1.09-pkg.tar.gz \
-		ilisp-1.27-pkg.tar.gz \
+		ilisp-1.28-pkg.tar.gz \
 		ispell-1.24-pkg.tar.gz \
 		jde-1.35-pkg.tar.gz \
 		liece-1.07-pkg.tar.gz \
-		mail-lib-1.48-pkg.tar.gz \
+		mail-lib-1.49-pkg.tar.gz \
 		mailcrypt-2.11-pkg.tar.gz \
 		mew-1.17-pkg.tar.gz \
 		mh-e-1.15-pkg.tar.gz \
 		mine-1.14-pkg.tar.gz \
 		misc-games-1.15-pkg.tar.gz \
 		mmm-mode-1.00-pkg.tar.gz \
-		net-utils-1.27-pkg.tar.gz \
+		net-utils-1.28-pkg.tar.gz \
+		ocaml-0.03-pkg.tar.gz \
 		os-utils-1.28-pkg.tar.gz \
 		pc-1.25-pkg.tar.gz \
 		pcl-cvs-1.64-pkg.tar.gz \
 		pcomplete-1.01-pkg.tar.gz \
-		prog-modes-1.63-pkg.tar.gz \
-		ps-print-1.07-pkg.tar.gz \
-		psgml-1.31-pkg.tar.gz \
-		reftex-1.26-pkg.tar.gz \
+		prog-modes-1.65-pkg.tar.gz \
+		ps-print-1.08-pkg.tar.gz \
+		psgml-1.33-pkg.tar.gz \
+		psgml-dtds-1.02-pkg.tar.gz \
+		reftex-1.28-pkg.tar.gz \
 		rmail-1.13-pkg.tar.gz \
+		sasl-1.12-pkg.tar.gz \
 		scheme-1.11-pkg.tar.gz \
 		semantic-1.14-pkg.tar.gz \
 		sgml-1.08-pkg.tar.gz \
 		sh-script-1.15-pkg.tar.gz \
 		sieve-1.09-pkg.tar.gz \
 		slider-1.13-pkg.tar.gz \
+		sml-mode-0.03-pkg.tar.gz \
 		sounds-au-1.10-pkg.tar.gz \
 		sounds-wav-1.10-pkg.tar.gz \
 		speedbar-1.24-pkg.tar.gz \
 		strokes-1.08-pkg.tar.gz \
 		supercite-1.19-pkg.tar.gz \
 		texinfo-1.20-pkg.tar.gz \
-		text-modes-1.51-pkg.tar.gz \
+		text-modes-1.52-pkg.tar.gz \
 		textools-1.12-pkg.tar.gz \
-		time-1.11-pkg.tar.gz \
+		time-1.12-pkg.tar.gz \
 		tm-1.34-pkg.tar.gz \
 		tooltalk-1.13-pkg.tar.gz \
 		tpu-1.12-pkg.tar.gz \
-		tramp-1.07-pkg.tar.gz \
+		tramp-1.08-pkg.tar.gz \
 		vc-1.33-pkg.tar.gz \
 		vc-cc-1.21-pkg.tar.gz \
 		vhdl-1.15-pkg.tar.gz \
-		view-process-1.11-pkg.tar.gz \
+		view-process-1.12-pkg.tar.gz \
 		viper-1.34-pkg.tar.gz \
 		vm-7.07-pkg.tar.gz \
 		w3-1.25-pkg.tar.gz \
-		xemacs-base-1.67-pkg.tar.gz \
+		xemacs-base-1.68-pkg.tar.gz \
 		xemacs-devel-1.48-pkg.tar.gz \
 		xslide-1.03-pkg.tar.gz \
 		xslt-process-1.10-pkg.tar.gz \
