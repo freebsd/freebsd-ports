@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/devel/msp430-binutils/pkg-plist,v 1.4 2003-08-12 08:49:48 lev Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/devel/msp430-binutils/pkg-plist,v 1.5 2003-10-15 13:18:19 lev Exp $
 %%BINUTILS_TARG%%/bin/addr2line
 %%BINUTILS_TARG%%/bin/ar
 %%BINUTILS_TARG%%/bin/as
@@ -247,7 +247,6 @@
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x449.xn
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x449.xr
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x449.xu
-lib/libiberty.a
 bin/%%BINUTILS_TARG%%-addr2line
 bin/%%BINUTILS_TARG%%-ar
 bin/%%BINUTILS_TARG%%-as
@@ -261,12 +260,12 @@ bin/%%BINUTILS_TARG%%-readelf
 bin/%%BINUTILS_TARG%%-strip
 bin/%%BINUTILS_TARG%%-size
 bin/%%BINUTILS_TARG%%-strings
-@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/bfd.info %D/info/dir
-@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/binutils.info %D/info/dir
-@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/as.info %D/info/dir
-@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/ld.info %D/info/dir
-@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/standards.info %D/info/dir
-@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/configure.info %D/info/dir
+@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/bfd.info %D/%%BINUTILS_TARG%%/info/dir
+@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/binutils.info %D/%%BINUTILS_TARG%%/info/dir
+@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/as.info %D/%%BINUTILS_TARG%%/info/dir
+@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/ld.info %D/%%BINUTILS_TARG%%/info/dir
+@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/standards.info %D/%%BINUTILS_TARG%%/info/dir
+@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/configure.info %D/%%BINUTILS_TARG%%/info/dir
 %%BINUTILS_TARG%%/info/bfd.info
 %%BINUTILS_TARG%%/info/bfd.info-1
 %%BINUTILS_TARG%%/info/bfd.info-2
@@ -286,12 +285,12 @@ bin/%%BINUTILS_TARG%%-strings
 %%BINUTILS_TARG%%/info/configure.info-2
 %%BINUTILS_TARG%%/info/configure.info-3
 %%BINUTILS_TARG%%/info/dir
-@exec install-info %D/%%BINUTILS_TARG%%/info/bfd.info %D/info/dir
-@exec install-info %D/%%BINUTILS_TARG%%/info/binutils.info %D/info/dir
-@exec install-info %D/%%BINUTILS_TARG%%/info/as.info %D/info/dir
-@exec install-info %D/%%BINUTILS_TARG%%/info/ld.info %D/info/dir
-@exec install-info %D/%%BINUTILS_TARG%%/info/standards.info %D/info/dir
-@exec install-info %D/%%BINUTILS_TARG%%/info/configure.info %D/info/dir
+@exec install-info %D/%%BINUTILS_TARG%%/info/bfd.info %D/%%BINUTILS_TARG%%/info/dir
+@exec install-info %D/%%BINUTILS_TARG%%/info/binutils.info %D/%%BINUTILS_TARG%%/info/dir
+@exec install-info %D/%%BINUTILS_TARG%%/info/as.info %D/%%BINUTILS_TARG%%/info/dir
+@exec install-info %D/%%BINUTILS_TARG%%/info/ld.info %D/%%BINUTILS_TARG%%/info/dir
+@exec install-info %D/%%BINUTILS_TARG%%/info/standards.info %D/%%BINUTILS_TARG%%/info/dir
+@exec install-info %D/%%BINUTILS_TARG%%/info/configure.info %D/%%BINUTILS_TARG%%/info/dir
 @dirrm %%BINUTILS_TARG%%/bin
 @dirrm %%BINUTILS_TARG%%/lib/ldscripts
 @dirrm %%BINUTILS_TARG%%/lib
