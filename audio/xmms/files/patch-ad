@@ -1,13 +1,13 @@
---- configure.orig	Mon Jun 12 17:06:00 2000
-+++ configure	Fri Jun 16 16:44:02 2000
-@@ -3287,14 +3287,14 @@
+--- configure.orig	Mon Jun 19 16:19:25 2000
++++ configure	Tue Jun 20 11:35:37 2000
+@@ -3290,14 +3290,14 @@
  
  fi
  if test "x$PTHREAD_LIBS" = xerror; then
 -        echo $ac_n "checking for pthread_attr_init in -lc_r""... $ac_c" 1>&6
--echo "configure:3292: checking for pthread_attr_init in -lc_r" >&5
+-echo "configure:3295: checking for pthread_attr_init in -lc_r" >&5
 +        echo $ac_n "checking for pthread_attr_init in -pthread""... $ac_c" 1>&6
-+echo "configure:3292: checking for pthread_attr_init in -pthread" >&5
++echo "configure:3295: checking for pthread_attr_init in -pthread" >&5
  ac_lib_var=`echo c_r'_'pthread_attr_init | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -16,9 +16,9 @@
 -LIBS="-lc_r  $LIBS"
 +LIBS="-pthread  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 3300 "configure"
+ #line 3303 "configure"
  #include "confdefs.h"
-@@ -3322,7 +3322,7 @@
+@@ -3325,7 +3325,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -27,7 +27,7 @@
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -5472,7 +5472,7 @@
+@@ -5475,7 +5475,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -36,7 +36,7 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -7110,14 +7110,14 @@
+@@ -7113,14 +7113,14 @@
  
  if test -n "$GCC"
  then
