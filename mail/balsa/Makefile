@@ -37,9 +37,4 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 MAN1=		balsa.1
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' \
-			${WRKSRC}/configure ${WRKSRC}/libmutt/configure
-
 .include <bsd.port.mk>

@@ -31,8 +31,6 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
 		's|share/idl|share/gnome/idl|g'
 

@@ -41,8 +41,6 @@ MAN1=		dns-helper.1 gconfigger.1 gnome-bug.1 gnome-config.1 \
 MAN5=		gnome-mime.5
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/gnome-config.in ${WRKSRC}/libgnome/gnome-util.c
 

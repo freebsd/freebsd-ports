@@ -38,8 +38,4 @@ PLIST_SUB=	PYTHON:=""
 PLIST_SUB=	PYTHON:="@comment "
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-
 .include <bsd.port.mk>

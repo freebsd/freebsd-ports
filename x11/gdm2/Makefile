@@ -49,10 +49,6 @@ post-extract:
 	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" \
 		${FILESDIR}/gdm.sh.sample > ${WRKSRC}/gdm.sh.sample
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-
 post-install:
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

@@ -21,10 +21,7 @@ COMMENT=	Callback Framework for C++
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure
+USE_GNOME=	gnomehack
 
 post-install:
 .if !defined(NOPORTDOCS)

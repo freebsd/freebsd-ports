@@ -36,8 +36,4 @@ PLIST_SUB=      BATTERY="@comment "
 PLIST_SUB=      BATTERY=""
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-
 .include <bsd.port.post.mk>

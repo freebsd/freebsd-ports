@@ -37,8 +37,4 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 post-extract:
 	@cd ${PORTSDIR}/math/gnumeric && ${MAKE} patch
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-
 .include <bsd.port.mk>

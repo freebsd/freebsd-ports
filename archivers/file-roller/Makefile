@@ -40,10 +40,6 @@ RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar
 RUN_DEPENDS+=	bzip:${PORTSDIR}/archivers/bzip
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

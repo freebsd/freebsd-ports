@@ -26,8 +26,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#-lpthread#${PTHREAD_LIBS}#g ; \
-		 s#DATADIRNAME=lib#DATADIRNAME=share#g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/src/Makefile.in
 

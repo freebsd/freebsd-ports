@@ -39,10 +39,6 @@ MAN1=		gabber.1
 BROKEN=	"Crashes or hangs on 5.x"
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-
 pre-build:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 

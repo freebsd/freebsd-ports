@@ -73,8 +73,4 @@ pre-everything::
 	@${ECHO_MSG} "You can enable support for LDAP databases by defining WITH_LDAP."
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-
 .include <bsd.port.mk>

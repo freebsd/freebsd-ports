@@ -23,9 +23,6 @@ CONFIGURE_ARGS=	--enable-glib2
 MAN1=	gnet-glib2-config.1
 
 post-patch:
-# fix pthreads detection
-	@${REINPLACE_CMD} -E -e 's,-lpthread|-lc_r,${PTHREAD_LIBS},' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 # remove "release" information from lib name
 	@${REINPLACE_CMD} -E -e 's|-release[ ]+\$$\(LT_RELEASE\)||g' \
 		${WRKSRC}/src/Makefile.in

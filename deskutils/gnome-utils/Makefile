@@ -31,8 +31,4 @@ MAN1=	gnome-calculator.1 \
 	gnome-character-map.1 gnome-dictionary.1 \
 	gnome-search-tool.1 gnome-system-log.1 gdialog.1
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-
 .include <bsd.port.mk>

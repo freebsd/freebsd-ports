@@ -31,9 +31,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 CONFIGURE_ARGS=	--enable-html
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		 s|gnet-config|gnet-glib2-config|g ; \
+	@${REINPLACE_CMD} -e 's|gnet-config|gnet-glib2-config|g ; \
 		 s|gnet/gnet\.h|gnet-glib2/gnet.h|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|gnet/gnet\.h|gnet-glib2/gnet.h|g'
