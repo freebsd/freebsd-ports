@@ -16,7 +16,7 @@ MAINTAINER=	ijliao@FreeBSD.org
 USE_PERL5=	yes
 
 MAN1=	ipfmeta.1
-POD2MAN?=	/usr/bin/pod2man
+POD2MAN?=	pod2man
 
 do-build:
 	@${POD2MAN} ${WRKSRC}/ipfmeta > ${WRKSRC}/${MAN1}

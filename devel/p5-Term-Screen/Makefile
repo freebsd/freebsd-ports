@@ -19,7 +19,7 @@ USE_PERL5=	YES
 
 MAN3=		Term::Screen.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-POD2MAN?=	/usr/bin/pod2man
+POD2MAN?=	pod2man
 
 do-build:
 	@${POD2MAN} ${WRKSRC}/Screen.pm > ${WRKSRC}/${MAN3}
