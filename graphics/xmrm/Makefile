@@ -30,6 +30,8 @@ NO_WRKSUBDIR=	yes
 
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
+.else
+BROKEN=		"Does not compile on i386"
 .endif
 
 do-install:
