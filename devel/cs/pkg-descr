@@ -1,0 +1,19 @@
+                     A tool to find your way in C sources
+                                      
+   cs offers the following functions:
+     * find C symbol
+     * find functions called from a certain function
+     * find functions calling a certain function
+     * find string literals
+     * find files #including a certain header file
+     * find file
+     * find POSIX naming violations
+     * execute shell command
+       
+   The found lines will be displayed. Besides browsing through them, cs
+   allows to edit them using your favourite editor. If you frequently
+   grep for identifiers and edit the found files, then cs is for you. cs
+   should work on any system which supports the following:
+     * POSIX
+     * ANSI C
+     * SYSV curses library
