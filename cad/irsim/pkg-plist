@@ -5,5 +5,12 @@ bin/inet2sim
 man/man1/irsim.1.gz
 man/man3/irsim-analyzer.3.gz
 man/man5/netchange.5.gz
-lib/scmos1_6um.prm
-lib/scmos2um.prm
+lib/irsim/scmos1_6um.prm
+lib/irsim/scmos2um.prm
+lib/irsim/scmos100.prm
+lib/irsim/scmos30.prm
+lib/irsim/scmos35.prm
+lib/irsim/scmos50_3v.prm
+lib/irsim/scmos50_5v.prm
+lib/irsim/scmos60.prm
+@dirrm lib/irsim
