@@ -2865,7 +2865,6 @@ ipv6calc	ports/net/ipv6calc
 ipv6socket_scrub	ports/net/ipv6socket_scrub
 ipw		ports/net/ipw
 irc		ports/irc/irc
-irc		ports/irc/irc
 ircII		ports/irc/ircII
 ircatlite	ports/irc/ircatlite
 ircd-hybrid	ports/irc/ircd-hybrid
@@ -7540,7 +7539,6 @@ scout		ports/www/scout
 scponly		ports/shells/scponly
 scr2png		ports/graphics/scr2png
 scr2txt		ports/textproc/scr2txt
-screamer	ports/lang/screamer
 screamer	ports/lang/screamer
 screem		ports/www/screem
 screen		ports/misc/screen
