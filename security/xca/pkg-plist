@@ -1,0 +1,26 @@
+@comment $FreeBSD$
+bin/xca
+share/applications/xca.desktop
+share/pixmaps/xca.xpm
+share/xca/bigcert.png
+share/xca/bigcrl.png
+share/xca/bigcsr.png
+share/xca/bigkey.png
+share/xca/bigtemp.png
+share/xca/crl.png
+share/xca/halfkey.png
+share/xca/invalidcert.png
+share/xca/invalidcertkey.png
+share/xca/key.png
+share/xca/netscape.png
+share/xca/req.png
+share/xca/reqkey.png
+share/xca/revoked.png
+share/xca/template.png
+share/xca/validcert.png
+share/xca/validcertkey.png
+share/xca/xca_de.qm
+share/xca/xca_es.qm
+@dirrm share/xca
+@dirrm share/pixmaps
+@dirrm share/applications
