@@ -1,0 +1,8 @@
+--- Makefile.am.orig	Fri Mar  2 01:12:07 2001
++++ Makefile.am	Fri Mar  2 01:12:44 2001
+@@ -5,4 +5,4 @@
+ ##
+ 
+-SUBDIRS = pcre src examples
++SUBDIRS = src examples
+ EXTRA_DIST = regexx.spec.in
