@@ -8,7 +8,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	20021227.p2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-p/}
@@ -16,7 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-p/}
 MAINTAINER=	blaz@si.FreeBSD.org
 COMMENT=	Performance-enhanced daemonized version of amavis-perl
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/UNIX.pm:${PORTSDIR}/devel/p5-IO \
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		${SITE_PERL}/MIME/Words.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 		${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
@@ -74,11 +75,14 @@ pre-build:
 		       -e 's,%%PREFIX%%,${PREFIX},g' \
 	               < ${FILESDIR}/$${file}.tmpl > ${WRKDIR}/$${file}; \
 	done
-	${SED} -e 's,%%AMAVISUSER%%,${AMAVISUSER},g' \
-	       -e 's,%%AMAVISGROUP%%,${AMAVISGROUP},g' \
-	       -e 's,%%AMAVISDIR%%,${AMAVISDIR},g' \
-	       -e 's,%%AMAVISQUARANTINE%%,${AMAVISQUARANTINE},g' \
-		< ${WRKSRC}/amavisd.conf > ${WRKDIR}/amavisd.conf
+	for file in amavisd.conf amavisd amavisdconf; do \
+		${SED} -e 's,%%AMAVISUSER%%,${AMAVISUSER},g' \
+		       -e 's,%%AMAVISGROUP%%,${AMAVISGROUP},g' \
+		       -e 's,%%AMAVISDIR%%,${AMAVISDIR},g' \
+		       -e 's,%%AMAVISQUARANTINE%%,${AMAVISQUARANTINE},g' \
+		       -e 's,%%PREFIX%%,${PREFIX},g' \
+		       < ${WRKSRC}/$${file} > ${WRKDIR}/$${file}; \
+	done
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
@@ -88,7 +92,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/helper-progs/amavis ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/helper-progs/amavis-milter ${PREFIX}/sbin
 .endif
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKDIR}/amavisd ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKDIR}/amavisdconf ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.conf ${PREFIX}/etc/amavisd.conf-dist
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.sh ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)

@@ -19,3 +19,4 @@ etc/rc.d/amavisd.sh
 %%AMAVIS_NOMILTER%%sbin/amavis
 %%AMAVIS_NOMILTER%%sbin/amavis-milter
 sbin/amavisd
+sbin/amavisdconf
