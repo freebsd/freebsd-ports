@@ -1,0 +1,2206 @@
+diff -ru --exclude *.bak --exclude Makefile --exclude Makefile.in work.buhg/Makefile.am work/buhg/Makefile.am
+--- work.buhg/Makefile.am	Thu Jan 16 00:08:03 2003
++++ buhg/Makefile.am	Tue Jan 21 21:36:44 2003
+@@ -1,6 +1,7 @@
+ SUBDIRS=bx doc
+ CC = ${CXX}
+ CONFIG_PATH=$(libdir)/iceB
++CFLAGS += -DICEB_DOC_PATH="\""@datadir@/doc/iceb"\""
+
+ INCLUDES = -I$(top_srcdir)/libscr -I$(top_srcdir)/libutil \
+ 	-I$(top_srcdir)/libbuh -I$(top_srcdir)/libsql \diff -ru buhg/alimdbf.c new/buhg/alimdbf.c
+--- buhg/alimdbf.c	Thu Jun  5 06:50:31 2003
++++ new/buhg/alimdbf.c	Fri Jan  2 00:49:23 2004
+@@ -98,7 +98,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_4_1.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp4_4_1.txt");
+     prosf(strsql);
+     goto naz;
+ 
+diff -ru buhg/copdok.c new/buhg/copdok.c
+--- buhg/copdok.c	Thu Jun  5 06:50:31 2003
++++ new/buhg/copdok.c	Fri Jan  2 00:49:23 2004
+@@ -101,7 +101,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"matu2_1_2d.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_1_2d.txt");
+    prosf(strsql);
+    clear();
+    goto naz;
+diff -ru buhg/copdoku.c new/buhg/copdoku.c
+--- buhg/copdoku.c	Wed Jul 23 13:31:12 2003
++++ new/buhg/copdoku.c	Fri Jan  2 00:49:23 2004
+@@ -95,7 +95,7 @@
+   case FK1:   /*Помощь*/
+    GDITE();
+ /*
+-   sprintf(strsql,"%s/doc/%s",putnansi,"matu2_1_2d.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_1_2d.txt");
+    prosf(strsql);
+    clear();
+ */
+diff -ru buhg/denrog.c new/buhg/denrog.c
+--- buhg/denrog.c	Fri Sep 19 07:49:12 2003
++++ new/buhg/denrog.c	Fri Jan  2 00:49:23 2004
+@@ -85,7 +85,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_3_1_1.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp4_3_1_1.txt");
+    prosf(strsql);
+    goto naz;
+ 
+diff -ru buhg/diramort.c new/buhg/diramort.c
+--- buhg/diramort.c	Thu Jun  5 06:50:32 2003
++++ new/buhg/diramort.c	Fri Jan  2 00:49:23 2004
+@@ -279,7 +279,7 @@
+ 
+   case FK1: /*помощь*/
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"uos8.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"uos8.txt");
+     prosf(strsql);
+     clear();
+     goto naz1;
+diff -ru buhg/diramortby.c new/buhg/diramortby.c
+--- buhg/diramortby.c	Thu Jun  5 06:50:32 2003
++++ new/buhg/diramortby.c	Fri Jan  2 00:49:23 2004
+@@ -225,7 +225,7 @@
+ 
+   case FK1: /*помощь*/
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"uos8.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"uos8.txt");
+     prosf(strsql);
+     clear();
+     goto naz1;
+diff -ru buhg/diravt.c new/buhg/diravt.c
+--- buhg/diravt.c	Thu Aug  7 05:04:25 2003
++++ new/buhg/diravt.c	Fri Jan  2 00:49:23 2004
+@@ -571,7 +571,7 @@
+    {
+     attroff(VV.VVOD_return_cs(iceb_CFS));
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"upl3_4_1.txt");
++    sprintf(strsql,"../..",ICEB_DOC_PATH,"upl3_4_1.txt");
+     prosf(strsql);
+     clear();
+     goto naz;
+diff -ru buhg/dirdok.c new/buhg/dirdok.c
+--- buhg/dirdok.c	Fri Sep 19 07:49:12 2003
++++ new/buhg/dirdok.c	Fri Jan  2 00:49:23 2004
+@@ -565,7 +565,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"matu2_1_2.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_1_2.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+diff -ru buhg/dirdok1.c new/buhg/dirdok1.c
+--- buhg/dirdok1.c	Thu Jun  5 06:50:32 2003
++++ new/buhg/dirdok1.c	Fri Jan  2 00:49:23 2004
+@@ -547,7 +547,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"matu2_1_2.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_1_2.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+diff -ru buhg/dirdokkr.c new/buhg/dirdokkr.c
+--- buhg/dirdokkr.c	Fri Sep 19 07:49:12 2003
++++ new/buhg/dirdokkr.c	Fri Jan  2 00:49:23 2004
+@@ -250,7 +250,7 @@
+  {
+   case FK1: //Помощь
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"ukr2_2.txt");
++    sprintf(strsql,"../..",ICEB_DOC_PATH,"ukr2_2.txt");
+     prosf(strsql);
+     clear();
+     goto naz1;
+diff -ru buhg/dirdokskr.c new/buhg/dirdokskr.c
+--- buhg/dirdokskr.c	Fri Sep 19 07:49:12 2003
++++ new/buhg/dirdokskr.c	Fri Jan  2 00:49:23 2004
+@@ -341,7 +341,7 @@
+ 
+   case FK1: //Просмотр документации
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"ukr2_3.txt");
++    sprintf(strsql,"../..",ICEB_DOC_PATH,"ukr2_3.txt");
+     prosf(strsql);
+     clear();
+ 
+diff -ru buhg/dirf8dr.c new/buhg/dirf8dr.c
+--- buhg/dirf8dr.c	Sat Jul 12 16:01:06 2003
++++ new/buhg/dirf8dr.c	Fri Jan  2 00:49:23 2004
+@@ -400,7 +400,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_7_1_2_2.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp4_7_1_2_2.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+diff -ru buhg/dirkasord.c new/buhg/dirkasord.c
+--- buhg/dirkasord.c	Fri Sep 19 07:49:12 2003
++++ new/buhg/dirkasord.c	Fri Jan  2 00:49:23 2004
+@@ -314,7 +314,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"kas2_1_1.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"kas2_1_1.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+diff -ru buhg/dirkasords.c new/buhg/dirkasords.c
+--- buhg/dirkasords.c	Mon May 12 17:49:29 2003
++++ new/buhg/dirkasords.c	Fri Jan  2 00:49:23 2004
+@@ -358,7 +358,7 @@
+ 
+   case FK1: /*Помощь*/
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"kas2_4.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"kas2_4.txt");
+     prosf(strsql);
+     if(kolstr > 0)
+       goto naz;
+diff -ru buhg/dirkkr.c new/buhg/dirkkr.c
+--- buhg/dirkkr.c	Mon Jul 21 12:58:31 2003
++++ new/buhg/dirkkr.c	Fri Jan  2 00:49:23 2004
+@@ -276,7 +276,7 @@
+ 
+   case FK1: //Просмотр описания режима
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"ukr3_3.txt");
++    sprintf(strsql,"../..",ICEB_DOC_PATH,"ukr3_3.txt");
+     prosf(strsql);
+     clear();
+ 
+@@ -725,7 +725,7 @@
+     attroff(VV.VVOD_return_cs(iceb_CFS));
+     attron(VV.VVOD_return_cs(iceb_CFM));
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"ukr3_3_1.txt");
++    sprintf(strsql,"../..",ICEB_DOC_PATH,"ukr3_3_1.txt");
+     prosf(strsql);
+     clear();
+     goto naz;
+diff -ru buhg/dirmatr.c new/buhg/dirmatr.c
+--- buhg/dirmatr.c	Sat Oct 18 14:54:39 2003
++++ new/buhg/dirmatr.c	Fri Jan  2 00:49:23 2004
+@@ -559,7 +559,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"matu4_3.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu4_3.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+@@ -1368,7 +1368,7 @@
+     attroff(VV->VVOD_return_cs(iceb_CFS));
+     attron(VV->VVOD_return_cs(iceb_CFM));
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"matu4_3_1.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu4_3_1.txt");
+     prosf(strsql);
+     clear();
+     goto naz;
+@@ -2035,7 +2035,7 @@
+  {
+   case FK1:
+     GDITE();
+-//    sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_6_2.txt");
++//    sprintf(strsql,"../..",ICEB_DOC_PATH,"zarp2_6_2.txt");
+ //    prosf(strsql);
+     clear();
+     goto naz;
+diff -ru buhg/dirmatr1.c new/buhg/dirmatr1.c
+--- buhg/dirmatr1.c	Fri May 30 13:45:45 2003
++++ new/buhg/dirmatr1.c	Fri Jan  2 00:49:23 2004
+@@ -486,7 +486,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"matu4_3.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu4_3.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+diff -ru buhg/dirmusl.c new/buhg/dirmusl.c
+--- buhg/dirmusl.c	Thu Jun  5 08:10:29 2003
++++ new/buhg/dirmusl.c	Fri Jan  2 00:49:23 2004
+@@ -232,7 +232,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"matu2_1_2b.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_1_2b.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+diff -ru buhg/dirnu.c new/buhg/dirnu.c
+--- buhg/dirnu.c	Fri Sep 26 14:46:17 2003
++++ new/buhg/dirnu.c	Fri Jan  2 00:49:23 2004
+@@ -408,7 +408,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_8_1.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp2_8_1.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+@@ -1898,7 +1898,7 @@
+    {
+     case FK1:   /*Помощь*/
+      GDITE();
+-     sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_8_1_1.txt");
++     sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp2_8_1_1.txt");
+      prosf(strsql);
+      clear();
+      goto naz;
+@@ -2199,7 +2199,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_8_1_3.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp2_8_1_3.txt");
+    prosf(strsql);
+    goto naz;
+ 
+@@ -2335,7 +2335,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_8_1_4.txt");
++   sprintf(strsql,"../..",ICEB_DOC_PATH,"zarp2_8_1_4.txt");
+    prosf(strsql);
+    goto naz;
+ 
+diff -ru buhg/dirobq.c new/buhg/dirobq.c
+--- buhg/dirobq.c	Wed Jun 25 09:06:54 2003
++++ new/buhg/dirobq.c	Fri Jan  2 00:49:23 2004
+@@ -288,7 +288,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"dokum4.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"dokum4.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+diff -ru buhg/diros.c new/buhg/diros.c
+--- buhg/diros.c	Sun Apr 20 12:57:41 2003
++++ new/buhg/diros.c	Fri Jan  2 00:49:23 2004
+@@ -318,7 +318,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"uos4.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"uos4.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+diff -ru buhg/dirout.c new/buhg/dirout.c
+--- buhg/dirout.c	Mon Jul 21 12:58:31 2003
++++ new/buhg/dirout.c	Fri Jan  2 00:49:23 2004
+@@ -688,7 +688,7 @@
+    {
+     attroff(VV.VVOD_return_cs(iceb_CFS));
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"upl3_3_1.txt");
++    sprintf(strsql,"../..",ICEB_DOC_PATH,"upl3_3_1.txt");
+     prosf(strsql);
+     clear();
+     goto naz;
+diff -ru buhg/dirpodu.c new/buhg/dirpodu.c
+--- buhg/dirpodu.c	Thu Jun  5 08:10:29 2003
++++ new/buhg/dirpodu.c	Fri Jan  2 00:49:23 2004
+@@ -635,7 +635,7 @@
+ 
+   case FK1:       /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"matu3.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu3.txt");
+ //   prosf(strsql);
+    if(kolstr > 0)
+       goto naz;
+diff -ru buhg/dirprkas.c new/buhg/dirprkas.c
+--- buhg/dirprkas.c	Sun Apr 20 12:57:41 2003
++++ new/buhg/dirprkas.c	Fri Jan  2 00:49:23 2004
+@@ -378,7 +378,7 @@
+   case FK1:   /*Получить подсказку*/
+    GDITE();
+ 
+-   sprintf(strsql,"%s/doc/%s",putnansi,"kas2_1_1_1.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"kas2_1_1_1.txt");
+    prosf(strsql);
+ 
+    clear();
+diff -ru buhg/dirprkr.c new/buhg/dirprkr.c
+--- buhg/dirprkr.c	Sun Apr 20 12:57:41 2003
++++ new/buhg/dirprkr.c	Fri Jan  2 00:49:23 2004
+@@ -311,7 +311,7 @@
+   case FK1:   /*Получить подсказку*/
+    GDITE();
+ 
+-   sprintf(strsql,"%s/doc/%s",putnansi,"ukr2_2_1.txt");
++   sprintf(strsql,"../..",ICEB_DOC_PATH,"ukr2_2_1.txt");
+    prosf(strsql);
+ 
+    clear();
+diff -ru buhg/dirprmu.c new/buhg/dirprmu.c
+--- buhg/dirprmu.c	Sun Apr 20 12:57:41 2003
++++ new/buhg/dirprmu.c	Fri Jan  2 00:49:23 2004
+@@ -356,7 +356,7 @@
+ 
+   case FK1:   /*Получить подсказку*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"matu2_1_2a.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_1_2a.txt");
+    prosf(strsql);
+    clear();
+    goto naz1;
+diff -ru buhg/dirprov.c new/buhg/dirprov.c
+--- buhg/dirprov.c	Wed May 28 13:08:00 2003
++++ new/buhg/dirprov.c	Fri Jan  2 00:49:23 2004
+@@ -349,7 +349,7 @@
+ 
+   case FK1:
+    GDITE();
+-   sprintf(bros,"%s/doc/%s",putnansi,"buhg3a.txt");
++   sprintf(bros,"%s/%s",ICEB_DOC_PATH,"buhg3a.txt");
+    prosf(bros);
+    clear();
+    goto naz;
+diff -ru buhg/dirprpd.c new/buhg/dirprpd.c
+--- buhg/dirprpd.c	Sun Apr 20 12:57:41 2003
++++ new/buhg/dirprpd.c	Fri Jan  2 00:49:23 2004
+@@ -399,7 +399,7 @@
+ 
+   case FK1:   /*Получение подсказки*/
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"dokum2_1_2.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"dokum2_1_2.txt");
+     prosf(strsql);
+     clear();
+     if(kolstr > 0)
+diff -ru buhg/dirprus.c new/buhg/dirprus.c
+--- buhg/dirprus.c	Sun Apr 20 12:57:41 2003
++++ new/buhg/dirprus.c	Fri Jan  2 00:49:23 2004
+@@ -335,7 +335,7 @@
+   case FK1:   /*Получить подсказку*/
+    GDITE();
+ 
+-   sprintf(strsql,"%s/doc/%s",putnansi,"usl2_1_1_1.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"usl2_1_1_1.txt");
+    prosf(strsql);
+ 
+    clear();
+diff -ru buhg/dirprzar.c new/buhg/dirprzar.c
+--- buhg/dirprzar.c	Sun Apr 20 12:57:41 2003
++++ new/buhg/dirprzar.c	Fri Jan  2 00:49:23 2004
+@@ -349,7 +349,7 @@
+ 
+   case FK1:   /*Получить подсказку*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_1_1.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp2_1_1.txt");
+    prosf(strsql);
+    clear();
+    goto naz1;
+@@ -567,7 +567,7 @@
+         
+       case FK1:
+         GDITE();
+-        sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_1_1_1.txt");
++        sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp2_1_1_1.txt");
+         prosf(strsql);
+         clear();
+         goto sfk4;
+diff -ru buhg/dirpzpd.c new/buhg/dirpzpd.c
+--- buhg/dirpzpd.c	Fri Sep 19 07:49:12 2003
++++ new/buhg/dirpzpd.c	Fri Jan  2 00:49:23 2004
+@@ -257,7 +257,7 @@
+      break;
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"dokum2_1_3.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"dokum2_1_3.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+diff -ru buhg/dirsaldo.c new/buhg/dirsaldo.c
+--- buhg/dirsaldo.c	Thu Jun  5 08:10:29 2003
++++ new/buhg/dirsaldo.c	Fri Jan  2 00:49:23 2004
+@@ -342,9 +342,9 @@
+   case FK1:  /*Получить подсказку*/
+     GDITE();
+     if(tz[0] == '0')
+-      sprintf(strsql,"%s/doc/buhg4_4.txt",putnansi);
++      sprintf(strsql,"%s/buhg4_4.txt",ICEB_DOC_PATH);
+     if(tz[0] == '1')
+-      sprintf(strsql,"%s/doc/buhg4_5.txt",putnansi);
++      sprintf(strsql,"%s/buhg4_5.txt",ICEB_DOC_PATH);
+ 
+  /*
+     printw("strsql=%s\n",strsql);
+diff -ru buhg/dirsdf8dr.c new/buhg/dirsdf8dr.c
+--- buhg/dirsdf8dr.c	Tue Jul  8 14:37:36 2003
++++ new/buhg/dirsdf8dr.c	Fri Jan  2 00:49:23 2004
+@@ -274,7 +274,7 @@
+ 
+   case FK1: /*Помощь*/
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_7_1_2.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp4_7_1_2.txt");
+     prosf(strsql);
+     if(kolstr > 0)
+       goto naz;
+diff -ru buhg/dirsoc.c new/buhg/dirsoc.c
+--- buhg/dirsoc.c	Thu Jun  5 08:10:29 2003
++++ new/buhg/dirsoc.c	Fri Jan  2 00:49:23 2004
+@@ -279,7 +279,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_9.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp2_9.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+diff -ru buhg/dirtab.c new/buhg/dirtab.c
+--- buhg/dirtab.c	Mon Mar 31 22:24:06 2003
++++ new/buhg/dirtab.c	Fri Jan  2 00:49:23 2004
+@@ -319,7 +319,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_5.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp2_5.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+diff -ru buhg/dirtabel.c new/buhg/dirtabel.c
+--- buhg/dirtabel.c	Sun Oct  5 09:52:38 2003
++++ new/buhg/dirtabel.c	Fri Jan  2 00:49:23 2004
+@@ -263,7 +263,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_4.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp2_4.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+diff -ru buhg/dirtabelo.c new/buhg/dirtabelo.c
+--- buhg/dirtabelo.c	Mon Jul 21 12:58:31 2003
++++ new/buhg/dirtabelo.c	Fri Jan  2 00:49:23 2004
+@@ -296,7 +296,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_6.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp2_6.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+@@ -1005,7 +1005,7 @@
+   if(K == FK1) /*Просмотр подсказки*/
+    {  
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_6_1.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp2_6_1.txt");
+     prosf(strsql);
+     clear();
+     goto naz;
+diff -ru buhg/dirudok.c new/buhg/dirudok.c
+--- buhg/dirudok.c	Sat Oct 18 14:49:54 2003
++++ new/buhg/dirudok.c	Fri Jan  2 00:49:23 2004
+@@ -491,7 +491,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"usl2_1_1.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"usl2_1_1.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+diff -ru buhg/diruosdok.c new/buhg/diruosdok.c
+--- buhg/diruosdok.c	Sun Apr 20 12:57:41 2003
++++ new/buhg/diruosdok.c	Fri Jan  2 00:49:23 2004
+@@ -340,7 +340,7 @@
+     
+   case FK1: /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"uos2_2.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"uos2_2.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+diff -ru buhg/diruplds.c new/buhg/diruplds.c
+--- buhg/diruplds.c	Thu Jun  5 06:20:55 2003
++++ new/buhg/diruplds.c	Fri Jan  2 00:49:23 2004
+@@ -343,7 +343,7 @@
+ 
+   case FK1: //Помощь
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"upl2_4.txt");
++    sprintf(strsql,"../..",ICEB_DOC_PATH,"upl2_4.txt");
+     prosf(strsql);
+     if(kolstr > 0)
+       goto naz;
+diff -ru buhg/dirupls.c new/buhg/dirupls.c
+--- buhg/dirupls.c	Mon Jul 21 12:58:31 2003
++++ new/buhg/dirupls.c	Fri Jan  2 00:49:23 2004
+@@ -567,7 +567,7 @@
+    {
+     attroff(VV.VVOD_return_cs(iceb_CFS));
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"upl3_5_1.txt");
++    sprintf(strsql,"../..",ICEB_DOC_PATH,"upl3_5_1.txt");
+     prosf(strsql);
+     clear();
+     goto naz;
+@@ -936,7 +936,7 @@
+   case FK1:   /*Помощь*/
+    GDITE();
+    char strsql[300];
+-   sprintf(strsql,"%s/doc/%s",putnansi,"upl3_5_2.txt");
++   sprintf(strsql,"../..",ICEB_DOC_PATH,"upl3_5_2.txt");
+    prosf(strsql);
+    goto naz;
+ 
+diff -ru buhg/dirusdok.c new/buhg/dirusdok.c
+--- buhg/dirusdok.c	Fri May 23 15:48:38 2003
++++ new/buhg/dirusdok.c	Fri Jan  2 00:49:23 2004
+@@ -388,7 +388,7 @@
+ 
+   case FK1: /*Помощь*/
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"usl2_3.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"usl2_3.txt");
+     prosf(strsql);
+     if(kolstr > 0)
+       goto naz;
+diff -ru buhg/dirusl.c new/buhg/dirusl.c
+--- buhg/dirusl.c	Thu Jun  5 08:10:29 2003
++++ new/buhg/dirusl.c	Fri Jan  2 00:49:23 2004
+@@ -365,7 +365,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"usl3_2.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"usl3_2.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+diff -ru buhg/dirzarp.c new/buhg/dirzarp.c
+--- buhg/dirzarp.c	Thu Jun  5 08:10:29 2003
++++ new/buhg/dirzarp.c	Fri Jan  2 00:49:23 2004
+@@ -353,7 +353,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_2.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp2_2.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+@@ -775,7 +775,7 @@
+   case FK1:   /*Помощь*/
+    clear();
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_2_1.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp2_2_1.txt");
+    prosf(strsql);
+    
+    goto naz;
+diff -ru buhg/dirzarsl.c new/buhg/dirzarsl.c
+--- buhg/dirzarsl.c	Fri Sep 19 07:49:12 2003
++++ new/buhg/dirzarsl.c	Fri Jan  2 00:49:23 2004
+@@ -220,7 +220,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/zarp3_1_9.txt",putnansi);
++   sprintf(strsql,"%s/zarp3_1_9.txt",ICEB_DOC_PATH);
+    prosf(strsql);
+    clear();
+    goto naz;
+diff -ru buhg/dirzkart.c new/buhg/dirzkart.c
+--- buhg/dirzkart.c	Mon Jul 21 12:58:31 2003
++++ new/buhg/dirzkart.c	Fri Jan  2 00:49:23 2004
+@@ -667,7 +667,7 @@
+   case FK1:       /*Помощь*/
+    GDITE();
+    
+-   sprintf(strsql,"%s/doc/%s",putnansi,"matu3.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu3.txt");
+    prosf(strsql);
+    if(kolstr > 0)
+       goto naz;
+@@ -1138,7 +1138,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(bros,"%s/doc/%s",putnansi,"matu3_1.txt");
++    sprintf(bros,"%s/%s",ICEB_DOC_PATH,"matu3_1.txt");
+     prosf(bros);
+     goto naz;
+ 
+diff -ru buhg/dooc.c new/buhg/dooc.c
+--- buhg/dooc.c	Sun Apr 20 12:57:41 2003
++++ new/buhg/dooc.c	Fri Jan  2 00:49:23 2004
+@@ -69,7 +69,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(bros,"%s/doc/%s",putnansi,"matu2_1_2h.txt");
++    sprintf(bros,"%s/%s",ICEB_DOC_PATH,"matu2_1_2h.txt");
+     prosf(bros);
+     clear();
+     goto naz1;
+diff -ru buhg/doocsum.c new/buhg/doocsum.c
+--- buhg/doocsum.c	Mon Jul 21 12:58:31 2003
++++ new/buhg/doocsum.c	Fri Jan  2 00:49:23 2004
+@@ -68,7 +68,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(bros,"%s/doc/%s",putnansi,"matu5_16.txt");
++    sprintf(bros,"%s/%s",ICEB_DOC_PATH,"matu5_16.txt");
+     prosf(bros);
+     clear();
+     goto naz1;
+diff -ru buhg/dvtmcf1.c new/buhg/dvtmcf1.c
+--- buhg/dvtmcf1.c	Mon Jul 21 12:58:31 2003
++++ new/buhg/dvtmcf1.c	Fri Jan  2 00:49:23 2004
+@@ -201,9 +201,9 @@
+   case FK1:
+     GDITE();
+     if(tipras == 0)
+-      sprintf(bros,"%s/doc/%s",putnansi,"matu5_4.txt");
++      sprintf(bros,"%s/%s",ICEB_DOC_PATH,"matu5_4.txt");
+     if(tipras == 1)
+-      sprintf(bros,"%s/doc/%s",putnansi,"matu5_7.txt");
++      sprintf(bros,"%s/%s",ICEB_DOC_PATH,"matu5_7.txt");
+     prosf(bros);
+     clear();
+     goto naz;
+diff -ru buhg/dvtmcf2.c new/buhg/dvtmcf2.c
+--- buhg/dvtmcf2.c	Mon Jul 21 12:58:31 2003
++++ new/buhg/dvtmcf2.c	Fri Jan  2 00:49:23 2004
+@@ -147,7 +147,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(bros,"%s/doc/%s",putnansi,"matu5_5.txt");
++    sprintf(bros,"%s/%s",ICEB_DOC_PATH,"matu5_5.txt");
+     prosf(bros);
+     clear();
+     goto naz;
+diff -ru buhg/dvuslf2.c new/buhg/dvuslf2.c
+--- buhg/dvuslf2.c	Sat Oct 18 14:54:39 2003
++++ new/buhg/dvuslf2.c	Fri Jan  2 00:49:23 2004
+@@ -129,7 +129,7 @@
+   case FK1:
+     GDITE();
+ 
+-    sprintf(bros,"%s/doc/%s",putnansi,"usl4_1.txt");
++    sprintf(bros,"%s/%s",ICEB_DOC_PATH,"usl4_1.txt");
+     prosf(bros);
+ 
+     clear();
+diff -ru buhg/glkni.c new/buhg/glkni.c
+--- buhg/glkni.c	Sun Oct 19 17:25:42 2003
++++ new/buhg/glkni.c	Fri Jan  2 00:49:23 2004
+@@ -104,7 +104,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"buhg5_1.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"buhg5_1.txt");
+    prosf(strsql);
+    goto naz;
+ 
+diff -ru buhg/glkninbs.c new/buhg/glkninbs.c
+--- buhg/glkninbs.c	Wed Oct 22 12:28:08 2003
++++ new/buhg/glkninbs.c	Fri Jan  2 00:49:23 2004
+@@ -93,7 +93,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"buhg5_1_1.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"buhg5_1_1.txt");
+    prosf(strsql);
+    goto naz;
+ 
+diff -ru buhg/impmatdok.c new/buhg/impmatdok.c
+--- buhg/impmatdok.c	Fri Sep 19 07:49:12 2003
++++ new/buhg/impmatdok.c	Fri Jan  2 00:49:23 2004
+@@ -97,7 +97,7 @@
+  {
+   case FK1:
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"matu2_5.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_5.txt");
+     prosf(strsql);
+     clear();
+     goto naz;
+diff -ru buhg/impotvr.c new/buhg/impotvr.c
+--- buhg/impotvr.c	Thu Jun  5 08:10:29 2003
++++ new/buhg/impotvr.c	Fri Jan  2 00:49:23 2004
+@@ -66,7 +66,7 @@
+  {
+   case FK1:
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_6_2.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp2_6_2.txt");
+     prosf(strsql);
+     clear();
+     goto naz;
+diff -ru buhg/impprov.c new/buhg/impprov.c
+--- buhg/impprov.c	Wed Jun 11 10:33:09 2003
++++ new/buhg/impprov.c	Fri Jan  2 00:49:23 2004
+@@ -61,7 +61,7 @@
+  {
+   case FK1:
+     GDITE();
+-    sprintf(strsql,"%s/doc/buhg3_5.txt",putnansi);
++    sprintf(strsql,"%s/buhg3_5.txt",ICEB_DOC_PATH);
+     prosf(strsql);
+     clear();
+     goto naz;
+diff -ru buhg/impuosdok.c new/buhg/impuosdok.c
+--- buhg/impuosdok.c	Mon Jul  7 10:11:04 2003
++++ new/buhg/impuosdok.c	Fri Jan  2 00:49:23 2004
+@@ -56,7 +56,7 @@
+  {
+   case FK1:
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"uos2_4.txt");
++    sprintf(strsql,"../..",ICEB_DOC_PATH,"uos2_4.txt");
+     prosf(strsql);
+     clear();
+     goto naz;
+diff -ru buhg/impzarnu.c new/buhg/impzarnu.c
+--- buhg/impzarnu.c	Thu Jun  5 08:10:30 2003
++++ new/buhg/impzarnu.c	Fri Jan  2 00:49:23 2004
+@@ -98,7 +98,7 @@
+  {
+   case FK1:
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_8_1_2.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp2_8_1_2.txt");
+     prosf(strsql);
+     clear();
+     goto naz;
+diff -ru buhg/kasoth.c new/buhg/kasoth.c
+--- buhg/kasoth.c	Mon Jul 21 12:58:31 2003
++++ new/buhg/kasoth.c	Fri Jan  2 00:49:23 2004
+@@ -74,7 +74,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(bros,"%s/doc/%s",putnansi,"kas4_1.txt");
++   sprintf(bros,"../..",ICEB_DOC_PATH,"kas4_1.txt");
+    prosf(bros);
+    goto naz;
+ 
+diff -ru buhg/kassa.c new/buhg/kassa.c
+--- buhg/kassa.c	Sat Oct 18 14:54:39 2003
++++ new/buhg/kassa.c	Fri Jan  2 00:49:23 2004
+@@ -395,10 +395,10 @@
+   case 1 :
+    GDITE();
+     if(tipkas == T_DATECS)
+-     sprintf(strsql,"%s/doc/%s",putnansi,"datecs_reset.txt");
++     sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"datecs_reset.txt");
+ 
+    if(tipkas == T_ERA)
+-     sprintf(strsql,"%s/doc/%s",putnansi,"era_reset.txt");
++     sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"era_reset.txt");
+ 
+    prosf(strsql);
+    goto naz;
+diff -ru buhg/kategor.c new/buhg/kategor.c
+--- buhg/kategor.c	Fri Sep 19 07:49:12 2003
++++ new/buhg/kategor.c	Fri Jan  2 00:49:23 2004
+@@ -97,9 +97,9 @@
+   case FK1:   /*Помощь*/
+    GDITE();
+    if(metkar == 0)
+-     sprintf(bros,"%s/doc/%s",putnansi,"zarp4_2_1.txt");
++     sprintf(bros,"%s/%s",ICEB_DOC_PATH,"zarp4_2_1.txt");
+    if(metkar == 1)
+-     sprintf(bros,"%s/doc/%s",putnansi,"zarp4_2_2.txt");
++     sprintf(bros,"%s/%s",ICEB_DOC_PATH,"zarp4_2_2.txt");
+    prosf(bros);
+    goto naz;
+ 
+diff -ru buhg/kprik.c new/buhg/kprik.c
+--- buhg/kprik.c	Fri Sep 19 11:31:58 2003
++++ new/buhg/kprik.c	Fri Jan  2 00:49:23 2004
+@@ -48,7 +48,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"ukr4_3.txt");
++   sprintf(strsql,"../..",ICEB_DOC_PATH,"ukr4_3.txt");
+    prosf(strsql);
+    goto naz;
+ 
+diff -ru buhg/kriost.c new/buhg/kriost.c
+--- buhg/kriost.c	Mon Jul 21 12:58:31 2003
++++ new/buhg/kriost.c	Fri Jan  2 00:49:23 2004
+@@ -79,7 +79,7 @@
+     return;
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"matu5_17.txt");
++   sprintf(strsql,"../..",ICEB_DOC_PATH,"matu5_17.txt");
+    prosf(strsql);
+    clear();
+    goto naz;
+diff -ru buhg/mariq.c new/buhg/mariq.c
+--- buhg/mariq.c	Wed Oct 22 09:39:29 2003
++++ new/buhg/mariq.c	Fri Jan  2 00:49:23 2004
+@@ -473,7 +473,7 @@
+ /*
+   case FK1:
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"buhg3_2.txt");
++    sprintf(strsql,"../..",ICEB_DOC_PATH,"buhg3_2.txt");
+     prosf(strsql);
+     clear();
+     goto naz1;
+@@ -540,7 +540,7 @@
+ /*
+   case FK1:
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"buhg3_2.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"buhg3_2.txt");
+     prosf(strsql);
+     clear();
+     goto naz1;
+diff -ru buhg/motpk.c new/buhg/motpk.c
+--- buhg/motpk.c	Mon Jul 21 12:58:31 2003
++++ new/buhg/motpk.c	Fri Jan  2 00:49:23 2004
+@@ -172,7 +172,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(bros,"%s/doc/%s",putnansi,"matu5_6.txt");
++    sprintf(bros,"%s/%s",ICEB_DOC_PATH,"matu5_6.txt");
+     prosf(bros);
+     clear();
+     goto naz;
+diff -ru buhg/muinv.c new/buhg/muinv.c
+--- buhg/muinv.c	Tue Oct 14 13:54:15 2003
++++ new/buhg/muinv.c	Fri Jan  2 00:49:23 2004
+@@ -92,7 +92,7 @@
+     return;
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"matu5_18.txt");
++   sprintf(strsql,"../..",ICEB_DOC_PATH,"matu5_18.txt");
+    prosf(strsql);
+    clear();
+    goto naz;
+diff -ru buhg/nahpodr.c new/buhg/nahpodr.c
+--- buhg/nahpodr.c	Fri Aug 15 12:28:19 2003
++++ new/buhg/nahpodr.c	Fri Jan  2 00:49:23 2004
+@@ -85,7 +85,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-//     sprintf(bros,"%s/doc/%s",putnansi,"zarp4_2_2.txt");
++//     sprintf(bros,"../..",ICEB_DOC_PATH,"zarp4_2_2.txt");
+ //   prosf(bros);
+    goto naz;
+ 
+diff -ru buhg/otrshd.c new/buhg/otrshd.c
+--- buhg/otrshd.c	Sat Oct 18 14:54:39 2003
++++ new/buhg/otrshd.c	Fri Jan  2 00:49:23 2004
+@@ -88,7 +88,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(bros,"%s/doc/%s",putnansi,"zarp4_2_3.txt");
++   sprintf(bros,"%s/%s",ICEB_DOC_PATH,"zarp4_2_3.txt");
+    prosf(bros);
+    goto naz;
+ 
+diff -ru buhg/pgpld.c new/buhg/pgpld.c
+--- buhg/pgpld.c	Mon Jul 21 12:58:31 2003
++++ new/buhg/pgpld.c	Fri Jan  2 00:49:23 2004
+@@ -69,7 +69,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"dokum2_5.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"dokum2_5.txt");
+    prosf(strsql);
+    goto naz;
+ 
+diff -ru buhg/platdok.c new/buhg/platdok.c
+--- buhg/platdok.c	Tue Oct 14 09:55:47 2003
++++ new/buhg/platdok.c	Fri Jan  2 00:49:23 2004
+@@ -485,7 +485,7 @@
+ 
+     case FK1:   /*Помощь*/
+       GDITE();
+-      sprintf(strsql,"%s/doc/%s",putnansi,"dokum2_1.txt");
++      sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"dokum2_1.txt");
+       prosf(strsql);
+       clear();
+       par=0;
+diff -ru buhg/pld.c new/buhg/pld.c
+--- buhg/pld.c	Thu Oct 16 11:39:46 2003
++++ new/buhg/pld.c	Fri Jan  2 00:49:23 2004
+@@ -354,7 +354,7 @@
+ 
+   case FK1:   /*Помощь*/
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"dokum2_1_1.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"dokum2_1_1.txt");
+     prosf(strsql);
+     clear();
+     goto naz;
+diff -ru buhg/poikasdok.c new/buhg/poikasdok.c
+--- buhg/poikasdok.c	Wed Aug 28 09:45:35 2002
++++ new/buhg/poikasdok.c	Fri Jan  2 00:49:23 2004
+@@ -45,7 +45,7 @@
+ if(i == FK1)
+  {
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"kas5.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"kas5.txt");
+    prosf(strsql);
+    clear();
+    goto naz2;
+diff -ru buhg/poikrdok.c new/buhg/poikrdok.c
+--- buhg/poikrdok.c	Tue Dec 10 11:41:28 2002
++++ new/buhg/poikrdok.c	Fri Jan  2 00:49:23 2004
+@@ -45,7 +45,7 @@
+ if(i == FK1)
+  {
+   GDITE();
+-  sprintf(strsql,"%s/doc/%s",putnansi,"matu2_2.txt");
++  sprintf(strsql,"../..",ICEB_DOC_PATH,"matu2_2.txt");
+   prosf(strsql);
+   clear();
+   goto naz2;
+diff -ru buhg/poimatdok.c new/buhg/poimatdok.c
+--- buhg/poimatdok.c	Wed Aug 28 09:45:35 2002
++++ new/buhg/poimatdok.c	Fri Jan  2 00:49:23 2004
+@@ -45,7 +45,7 @@
+ if(i == FK1)
+  {
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"matu2_2.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_2.txt");
+    prosf(strsql);
+    clear();
+    goto naz2;
+diff -ru buhg/poiplatdok.c new/buhg/poiplatdok.c
+--- buhg/poiplatdok.c	Wed Aug 28 09:45:35 2002
++++ new/buhg/poiplatdok.c	Fri Jan  2 00:49:23 2004
+@@ -49,7 +49,7 @@
+ if(i == FK1)
+  {
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"matu2_2.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_2.txt");
+    prosf(strsql);
+    clear();
+    goto naz2;
+diff -ru buhg/poiprov.c new/buhg/poiprov.c
+--- buhg/poiprov.c	Thu May 22 13:38:15 2003
++++ new/buhg/poiprov.c	Fri Jan  2 00:49:23 2004
+@@ -133,7 +133,7 @@
+ 
+     case FK1:
+       GDITE();
+-      sprintf(strsql,"%s/doc/%s",putnansi,"buhg3_3.txt");
++      sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"buhg3_3.txt");
+       prosf(strsql);
+       clear();
+       goto naz;
+diff -ru buhg/poiupldok.c new/buhg/poiupldok.c
+--- buhg/poiupldok.c	Sat Apr 26 11:20:47 2003
++++ new/buhg/poiupldok.c	Fri Jan  2 00:49:23 2004
+@@ -45,7 +45,7 @@
+ if(i == FK1)
+  {
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"matu2_2.txt");
++   sprintf(strsql,"../..",ICEB_DOC_PATH,"matu2_2.txt");
+ //   prosf(strsql);
+    clear();
+    goto naz2;
+diff -ru buhg/poiusldok.c new/buhg/poiusldok.c
+--- buhg/poiusldok.c	Wed Aug 28 09:45:35 2002
++++ new/buhg/poiusldok.c	Fri Jan  2 00:49:23 2004
+@@ -44,7 +44,7 @@
+ if(i == FK1)
+  {
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"usl2_2.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"usl2_2.txt");
+    prosf(strsql);
+    clear();
+    goto naz2;
+diff -ru buhg/printpershek.c new/buhg/printpershek.c
+--- buhg/printpershek.c	Tue May 27 13:34:20 2003
++++ new/buhg/printpershek.c	Fri Jan  2 00:49:23 2004
+@@ -43,7 +43,7 @@
+ /*
+   case FK1:
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"buhg3_2.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"buhg3_2.txt");
+     prosf(strsql);
+     clear();
+     goto naz1;
+diff -ru buhg/prognoz.c new/buhg/prognoz.c
+--- buhg/prognoz.c	Sat Jul  5 18:48:31 2003
++++ new/buhg/prognoz.c	Fri Jan  2 00:49:23 2004
+@@ -100,7 +100,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(bros,"%s/doc/%s",putnansi,"matu5_11.txt");
++    sprintf(bros,"%s/%s",ICEB_DOC_PATH,"matu5_11.txt");
+     prosf(bros);
+     clear();
+     goto naz;
+diff -ru buhg/pvbank.c new/buhg/pvbank.c
+--- buhg/pvbank.c	Mon Oct  6 15:03:37 2003
++++ new/buhg/pvbank.c	Fri Jan  2 00:49:23 2004
+@@ -70,7 +70,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"buhg5_5.txt");
++   sprintf(strsql,"../..",ICEB_DOC_PATH,"buhg5_5.txt");
+    prosf(strsql);
+    goto naz;
+ 
+diff -ru buhg/pvbanks.c new/buhg/pvbanks.c
+--- buhg/pvbanks.c	Wed Oct  8 05:17:23 2003
++++ new/buhg/pvbanks.c	Fri Jan  2 00:49:23 2004
+@@ -62,7 +62,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-//   sprintf(strsql,"%s/doc/%s",putnansi,"buhg5_5.txt");
++//   sprintf(strsql,"../..",ICEB_DOC_PATH,"buhg5_5.txt");
+ //   prosf(strsql);
+    goto naz;
+ 
+diff -ru buhg/rasdolgi.c new/buhg/rasdolgi.c
+--- buhg/rasdolgi.c	Sat Oct 18 14:54:39 2003
++++ new/buhg/rasdolgi.c	Fri Jan  2 00:49:23 2004
+@@ -156,7 +156,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(bros,"%s/doc/%s",putnansi,"zarp4_3_9.txt");
++   sprintf(bros,"%s/%s",ICEB_DOC_PATH,"zarp4_3_9.txt");
+    prosf(bros);
+    goto naz;
+ 
+diff -ru buhg/rasdolgi1.c new/buhg/rasdolgi1.c
+--- buhg/rasdolgi1.c	Mon Jul 21 12:58:31 2003
++++ new/buhg/rasdolgi1.c	Fri Jan  2 00:49:23 2004
+@@ -64,7 +64,7 @@
+  {
+   case FK1:
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_3_10.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp4_3_10.txt");
+    prosf(strsql);
+    goto naz;
+   
+diff -ru buhg/rashod.c new/buhg/rashod.c
+--- buhg/rashod.c	Mon Jun  9 11:11:17 2003
++++ new/buhg/rashod.c	Fri Jan  2 00:49:23 2004
+@@ -597,9 +597,9 @@
+      attron(VV.VVOD_return_cs(iceb_CFM));
+      GDITE();
+      if(mdd == 0) /*Одинарный документ*/
+-      sprintf(strsql,"%s/doc/%s",putnansi,"matu2_1_2j.txt");
++      sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_1_2j.txt");
+      if(mdd == 1) /*Двойной документ*/
+-      sprintf(strsql,"%s/doc/%s",putnansi,"matu2_1_2j1.txt");
++      sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_1_2j1.txt");
+      prosf(strsql);
+      clear();
+      goto naz1;
+diff -ru buhg/rasknig.c new/buhg/rasknig.c
+--- buhg/rasknig.c	Mon Jul 21 12:58:31 2003
++++ new/buhg/rasknig.c	Fri Jan  2 00:49:23 2004
+@@ -92,7 +92,7 @@
+  {
+   case FK1:
+     GDITE();
+-    sprintf(bros,"%s/doc/%s",putnansi,"matu5_14.txt");
++    sprintf(bros,"%s/%s",ICEB_DOC_PATH,"matu5_14.txt");
+     prosf(bros);
+     clear();
+     goto nazz;
+diff -ru buhg/rasknigpok.c new/buhg/rasknigpok.c
+--- buhg/rasknigpok.c	Mon Jul 21 12:58:31 2003
++++ new/buhg/rasknigpok.c	Fri Jan  2 00:49:23 2004
+@@ -82,7 +82,7 @@
+  {
+   case FK1:
+     GDITE();
+-    sprintf(bros,"%s/doc/%s",putnansi,"matu5_15.txt");
++    sprintf(bros,"%s/%s",ICEB_DOC_PATH,"matu5_15.txt");
+     prosf(bros);
+     clear();
+     goto nazz;
+diff -ru buhg/rasnash.c new/buhg/rasnash.c
+--- buhg/rasnash.c	Mon Jul 21 12:58:32 2003
++++ new/buhg/rasnash.c	Fri Jan  2 00:49:23 2004
+@@ -71,7 +71,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-//   sprintf(bros,"%s/doc/%s",putnansi,"zarp4_2_2.txt");
++//   sprintf(bros,"%s/%s",ICEB_DOC_PATH,"zarp4_2_2.txt");
+ //   prosf(bros);
+    goto naz;
+ 
+diff -ru buhg/rasnds.c new/buhg/rasnds.c
+--- buhg/rasnds.c	Mon Jul 21 12:58:32 2003
++++ new/buhg/rasnds.c	Fri Jan  2 00:49:23 2004
+@@ -140,7 +140,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(bros,"%s/doc/%s",putnansi,"matu5_10.txt");
++    sprintf(bros,"%s/%s",ICEB_DOC_PATH,"matu5_10.txt");
+     prosf(bros);
+     clear();
+     goto naz;
+diff -ru buhg/rasoskr.c new/buhg/rasoskr.c
+--- buhg/rasoskr.c	Sun Aug 10 07:49:35 2003
++++ new/buhg/rasoskr.c	Fri Jan  2 00:49:23 2004
+@@ -141,7 +141,7 @@
+     return;
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"matu5_1.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu5_1.txt");
+    prosf(strsql);
+    clear();
+    goto naz;
+diff -ru buhg/rasspdok.c new/buhg/rasspdok.c
+--- buhg/rasspdok.c	Mon Jul 21 12:58:32 2003
++++ new/buhg/rasspdok.c	Fri Jan  2 00:49:23 2004
+@@ -128,7 +128,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(bros,"%s/doc/%s",putnansi,"matu5_8.txt");
++    sprintf(bros,"%s/%s",ICEB_DOC_PATH,"matu5_8.txt");
+     prosf(bros);
+     clear();
+     goto naz;
+diff -ru buhg/rasspdoku.c new/buhg/rasspdoku.c
+--- buhg/rasspdoku.c	Thu Jun  5 08:10:30 2003
++++ new/buhg/rasspdoku.c	Fri Jan  2 00:49:23 2004
+@@ -122,7 +122,7 @@
+   case FK1:
+     GDITE();
+ 
+-    sprintf(bros,"%s/doc/%s",putnansi,"usl4_2.txt");
++    sprintf(bros,"%s/%s",ICEB_DOC_PATH,"usl4_2.txt");
+     prosf(bros);
+ 
+     clear();
+diff -ru buhg/rastab.c new/buhg/rastab.c
+--- buhg/rastab.c	Thu Jun  5 08:10:30 2003
++++ new/buhg/rastab.c	Fri Jan  2 00:49:23 2004
+@@ -81,7 +81,7 @@
+  {
+   case FK1:
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_3_5.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp4_3_5.txt");
+    prosf(strsql);
+    clear();
+    goto naz;
+diff -ru buhg/rasved.c new/buhg/rasved.c
+--- buhg/rasved.c	Mon Jul 21 12:58:32 2003
++++ new/buhg/rasved.c	Fri Jan  2 00:49:23 2004
+@@ -170,7 +170,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_1_1.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp4_1_1.txt");
+     prosf(strsql);
+     goto naz;
+ 
+diff -ru buhg/raszall.c new/buhg/raszall.c
+--- buhg/raszall.c	Thu Jun  5 08:10:30 2003
++++ new/buhg/raszall.c	Fri Jan  2 00:49:23 2004
+@@ -78,7 +78,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(bros,"%s/doc/%s",putnansi,"zarp2_7.txt");
++   sprintf(bros,"%s/%s",ICEB_DOC_PATH,"zarp2_7.txt");
+    prosf(bros);
+    goto naz;
+ 
+diff -ru buhg/raszpodr.c new/buhg/raszpodr.c
+--- buhg/raszpodr.c	Thu Jun  5 08:10:30 2003
++++ new/buhg/raszpodr.c	Fri Jan  2 00:49:23 2004
+@@ -76,7 +76,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(bros,"%s/doc/%s",putnansi,"zarp4_8.txt");
++   sprintf(bros,"%s/%s",ICEB_DOC_PATH,"zarp4_8.txt");
+    prosf(bros);
+    goto naz;
+ 
+diff -ru buhg/rozkor.c new/buhg/rozkor.c
+--- buhg/rozkor.c	Sun Apr 20 12:57:42 2003
++++ new/buhg/rozkor.c	Fri Jan  2 00:49:23 2004
+@@ -108,7 +108,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"matu2_1_2c.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_1_2c.txt");
+    prosf(strsql);
+    clear();
+    goto naz;
+diff -ru buhg/rozprod.c new/buhg/rozprod.c
+--- buhg/rozprod.c	Wed Oct 22 11:59:51 2003
++++ new/buhg/rozprod.c	Fri Jan  2 00:49:23 2004
+@@ -405,7 +405,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"rozn1.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"rozn1.txt");
+    prosf(strsql);
+    goto naz1;
+ 
+diff -ru buhg/rozsvod.c new/buhg/rozsvod.c
+--- buhg/rozsvod.c	Wed Oct 22 11:59:51 2003
++++ new/buhg/rozsvod.c	Fri Jan  2 00:49:23 2004
+@@ -76,7 +76,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-//   sprintf(strsql,"%s/doc/%s",putnansi,"buhg5_1.txt");
++//   sprintf(strsql,"../..",ICEB_DOC_PATH,"buhg5_1.txt");
+ //   prosf(strsql);
+    goto naz;
+ 
+diff -ru buhg/rozvse.c new/buhg/rozvse.c
+--- buhg/rozvse.c	Mon Jul 21 12:58:32 2003
++++ new/buhg/rozvse.c	Fri Jan  2 00:49:23 2004
+@@ -74,7 +74,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-//   sprintf(strsql,"%s/doc/%s",putnansi,"buhg5_1.txt");
++//   sprintf(strsql,"../..",ICEB_DOC_PATH,"buhg5_1.txt");
+ //   prosf(strsql);
+    goto naz;
+ 
+diff -ru buhg/rppvo.c new/buhg/rppvo.c
+--- buhg/rppvo.c	Sun Apr 20 12:57:42 2003
++++ new/buhg/rppvo.c	Fri Jan  2 00:49:23 2004
+@@ -90,7 +90,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(bros,"%s/doc/%s",putnansi,"matu5_9.txt");
++    sprintf(bros,"%s/%s",ICEB_DOC_PATH,"matu5_9.txt");
+     prosf(bros);
+     clear();
+     goto naz;
+diff -ru buhg/rppvokr.c new/buhg/rppvokr.c
+--- buhg/rppvokr.c	Sun Apr 20 12:57:42 2003
++++ new/buhg/rppvokr.c	Fri Jan  2 00:49:23 2004
+@@ -71,7 +71,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(bros,"%s/doc/%s",putnansi,"ukr4_1.txt");
++    sprintf(bros,"../..",ICEB_DOC_PATH,"ukr4_1.txt");
+     prosf(bros);
+     clear();
+     goto naz;
+diff -ru buhg/rppvou.c new/buhg/rppvou.c
+--- buhg/rppvou.c	Sun Apr 20 12:57:42 2003
++++ new/buhg/rppvou.c	Fri Jan  2 00:49:23 2004
+@@ -83,7 +83,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(bros,"%s/doc/%s",putnansi,"usl4_3.txt");
++    sprintf(bros,"%s/%s",ICEB_DOC_PATH,"usl4_3.txt");
+     prosf(bros);
+     clear();
+     goto naz;
+diff -ru buhg/salallk.c new/buhg/salallk.c
+--- buhg/salallk.c	Mon Jul 21 12:58:32 2003
++++ new/buhg/salallk.c	Fri Jan  2 00:49:23 2004
+@@ -98,7 +98,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"buhg5_3.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"buhg5_3.txt");
+    prosf(strsql);
+    clear();
+    goto naz;
+diff -ru buhg/smdok.c new/buhg/smdok.c
+--- buhg/smdok.c	Fri May 23 15:48:38 2003
++++ new/buhg/smdok.c	Fri Jan  2 00:49:23 2004
+@@ -375,7 +375,7 @@
+ 
+   case FK1: /*Помощь*/
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"matu2_3.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_3.txt");
+     prosf(strsql);
+     if(kolstr > 0)
+       goto naz;
+diff -ru buhg/smdok1.c new/buhg/smdok1.c
+--- buhg/smdok1.c	Tue May 27 13:34:20 2003
++++ new/buhg/smdok1.c	Fri Jan  2 00:49:23 2004
+@@ -334,7 +334,7 @@
+  {  
+   case FK1: /*Помощь*/
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"matu2_3.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_3.txt");
+     prosf(strsql);
+     if(kolstr > 0)
+       goto naz;
+diff -ru buhg/smenakof.c new/buhg/smenakof.c
+--- buhg/smenakof.c	Thu Jun  5 08:10:30 2003
++++ new/buhg/smenakof.c	Fri Jan  2 00:49:23 2004
+@@ -72,7 +72,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"uos5_9.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"uos5_9.txt");
+    prosf(strsql);
+    goto naz;
+ 
+diff -ru buhg/smpld.c new/buhg/smpld.c
+--- buhg/smpld.c	Wed Oct 15 13:15:40 2003
++++ new/buhg/smpld.c	Fri Jan  2 00:49:23 2004
+@@ -360,7 +360,7 @@
+ 
+     case FK1:   /*Помощь*/
+       GDITE();
+-      sprintf(strsql,"%s/doc/%s",putnansi,"dokum2_4.txt");
++      sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"dokum2_4.txt");
+       prosf(strsql);
+       clear();
+       if(kolstr > 0)
+diff -ru buhg/snublsn.c new/buhg/snublsn.c
+--- buhg/snublsn.c	Sun Apr 20 12:57:42 2003
++++ new/buhg/snublsn.c	Fri Jan  2 00:49:23 2004
+@@ -77,7 +77,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(bros,"%s/doc/%s",putnansi,"zarp4_5_2.txt");
++   sprintf(bros,"%s/%s",ICEB_DOC_PATH,"zarp4_5_2.txt");
+    prosf(bros);
+    goto naz;
+ 
+diff -ru buhg/socstrm.c new/buhg/socstrm.c
+--- buhg/socstrm.c	Mon Jul 21 12:58:32 2003
++++ new/buhg/socstrm.c	Fri Jan  2 00:49:23 2004
+@@ -78,7 +78,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_7_4.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp4_7_4.txt");
+    prosf(strsql);
+    goto naz;
+   case ESC:
+diff -ru buhg/spiin.c new/buhg/spiin.c
+--- buhg/spiin.c	Sat Oct 18 14:54:39 2003
++++ new/buhg/spiin.c	Fri Jan  2 00:49:23 2004
+@@ -107,7 +107,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_3_3.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp4_3_3.txt");
+     prosf(strsql);
+     goto naz;
+ 
+diff -ru buhg/spininu.c new/buhg/spininu.c
+--- buhg/spininu.c	Mon Oct  6 15:03:37 2003
++++ new/buhg/spininu.c	Fri Jan  2 00:49:23 2004
+@@ -89,7 +89,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_3_4.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp4_3_4.txt");
+     prosf(strsql);
+     goto naz;
+ 
+diff -ru buhg/sprkvrt.c new/buhg/sprkvrt.c
+--- buhg/sprkvrt.c	Mon Jul 21 12:58:32 2003
++++ new/buhg/sprkvrt.c	Fri Jan  2 00:49:23 2004
+@@ -224,7 +224,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(bros,"%s/doc/%s",putnansi,"zarp4_7_1_1.txt");
++   sprintf(bros,"%s/%s",ICEB_DOC_PATH,"zarp4_7_1_1.txt");
+    prosf(bros);
+    goto naz;
+ 
+diff -ru buhg/sprkvrt1.c new/buhg/sprkvrt1.c
+--- buhg/sprkvrt1.c	Wed Oct 15 10:34:56 2003
++++ new/buhg/sprkvrt1.c	Fri Jan  2 00:49:23 2004
+@@ -269,7 +269,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(bros,"%s/doc/%s",putnansi,"zarp4_7_1_1.txt");
++   sprintf(bros,"../..",ICEB_DOC_PATH,"zarp4_7_1_1.txt");
+    prosf(bros);
+    goto naz;
+ 
+diff -ru buhg/sprozn.c new/buhg/sprozn.c
+--- buhg/sprozn.c	Wed Oct 22 11:59:52 2003
++++ new/buhg/sprozn.c	Fri Jan  2 00:49:23 2004
+@@ -84,7 +84,7 @@
+    {
+     case FK1:   /*Помощь*/
+      GDITE();
+-     sprintf(strsql,"%s/doc/%s",putnansi,"matu2_6.txt");
++     sprintf(strsql,"../..",ICEB_DOC_PATH,"matu2_6.txt");
+      prosf(strsql);
+      goto naz;
+ 
+diff -ru buhg/sprpen1.c new/buhg/sprpen1.c
+--- buhg/sprpen1.c	Thu Jun  5 08:10:30 2003
++++ new/buhg/sprpen1.c	Fri Jan  2 00:49:23 2004
+@@ -133,7 +133,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(bros,"%s/doc/%s",putnansi,"zarp4_7_3.txt");
++   sprintf(bros,"%s/%s",ICEB_DOC_PATH,"zarp4_7_3.txt");
+    prosf(bros);
+    goto naz;
+   case FK2:
+diff -ru buhg/sprsov.c new/buhg/sprsov.c
+--- buhg/sprsov.c	Mon Jul 21 12:58:32 2003
++++ new/buhg/sprsov.c	Fri Jan  2 00:49:23 2004
+@@ -147,7 +147,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_3_8.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp4_3_8.txt");
+    prosf(strsql);
+    goto naz;
+ 
+diff -ru buhg/sprsov1.c new/buhg/sprsov1.c
+--- buhg/sprsov1.c	Sat Oct 18 14:54:39 2003
++++ new/buhg/sprsov1.c	Fri Jan  2 00:49:23 2004
+@@ -150,7 +150,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_3_8.txt");
++   sprintf(strsql,"../..",ICEB_DOC_PATH,"zarp4_3_8.txt");
+    prosf(strsql);
+    goto naz;
+ 
+diff -ru buhg/sprtab.c new/buhg/sprtab.c
+--- buhg/sprtab.c	Sun Apr 20 12:57:42 2003
++++ new/buhg/sprtab.c	Fri Jan  2 00:49:23 2004
+@@ -232,20 +232,20 @@
+     case FK1:
+       GDITE();
+       if(metkaoth == 1)
+-        sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_3_2_1.txt");
++        sprintf(strsql,"../..",ICEB_DOC_PATH,"zarp4_3_2_1.txt");
+       if(metkaoth == 2)
+-        sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_3_2_2.txt");
++        sprintf(strsql,"../..",ICEB_DOC_PATH,"zarp4_3_2_2.txt");
+       if(metkaoth == 3)
+-        sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_3_2_5.txt");
++        sprintf(strsql,"../..",ICEB_DOC_PATH,"zarp4_3_2_5.txt");
+ 
+       if(metkaoth == 4)
+-       sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_3_2_3.txt");
++       sprintf(strsql,"../..",ICEB_DOC_PATH,"zarp4_3_2_3.txt");
+ 
+       if(metkaoth == 5)
+-        sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_3_2_4.txt");
++        sprintf(strsql,"../..",ICEB_DOC_PATH,"zarp4_3_2_4.txt");
+ 
+       if(metkaoth == 6)
+-        sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_3_2_6.txt");
++        sprintf(strsql,"../..",ICEB_DOC_PATH,"zarp4_3_2_6.txt");
+ 
+       prosf(strsql);
+       goto naz;
+diff -ru buhg/srvcen.c new/buhg/srvcen.c
+--- buhg/srvcen.c	Sat Jul  5 18:48:31 2003
++++ new/buhg/srvcen.c	Fri Jan  2 00:49:23 2004
+@@ -79,7 +79,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(bros,"%s/doc/%s",putnansi,"matu2_4.txt");
++    sprintf(bros,"%s/%s",ICEB_DOC_PATH,"matu2_4.txt");
+     prosf(bros);
+     clear();
+     goto naz;
+diff -ru buhg/svodnu.c new/buhg/svodnu.c
+--- buhg/svodnu.c	Sat Oct 18 14:54:39 2003
++++ new/buhg/svodnu.c	Fri Jan  2 00:49:23 2004
+@@ -117,7 +117,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_3_6.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp4_3_6.txt");
+    prosf(strsql);
+    clear();
+   case FK10:
+diff -ru buhg/uddusl.c new/buhg/uddusl.c
+--- buhg/uddusl.c	Mon Sep  2 14:18:25 2002
++++ new/buhg/uddusl.c	Fri Jan  2 00:49:23 2004
+@@ -41,7 +41,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"usl2_4.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"usl2_4.txt");
+    prosf(strsql);
+    goto naz;
+ 
+diff -ru buhg/ukrras.c new/buhg/ukrras.c
+--- buhg/ukrras.c	Sat Oct 18 14:54:39 2003
++++ new/buhg/ukrras.c	Fri Jan  2 00:49:23 2004
+@@ -76,7 +76,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(bros,"%s/doc/%s",putnansi,"ukr4_2.txt");
++    sprintf(bros,"../..",ICEB_DOC_PATH,"ukr4_2.txt");
+     prosf(bros);
+     clear();
+     goto naz;
+diff -ru buhg/uosdok.c new/buhg/uosdok.c
+--- buhg/uosdok.c	Sun Jul 20 06:55:52 2003
++++ new/buhg/uosdok.c	Fri Jan  2 00:49:23 2004
+@@ -468,7 +468,7 @@
+ 
+   case FK1:   /*Получение подсказки*/
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"uos2_1_3.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"uos2_1_3.txt");
+     prosf(strsql);
+     clear();
+ 
+diff -ru buhg/uosinved.c new/buhg/uosinved.c
+--- buhg/uosinved.c	Wed Oct 15 10:39:49 2003
++++ new/buhg/uosinved.c	Fri Jan  2 00:49:23 2004
+@@ -113,7 +113,7 @@
+ 
+   case FK1:
+     GDITE();
+-//    sprintf(bros,"%s/doc/%s",putnansi,"matu5_5.txt");
++//    sprintf(bros,"%s/%s",ICEB_DOC_PATH,"matu5_5.txt");
+ //    prosf(bros);
+ //    clear();
+     goto naz;
+diff -ru buhg/uosrs.c new/buhg/uosrs.c
+--- buhg/uosrs.c	Fri Oct 24 11:19:42 2003
++++ new/buhg/uosrs.c	Fri Jan  2 00:49:23 2004
+@@ -160,7 +160,7 @@
+    {
+     attroff(VV.VVOD_return_cs(iceb_CFS));
+     GDITE();
+- //   sprintf(strsql,"%s/doc/%s",putnansi,"matu2_1_2g1.txt");
++ //   sprintf(strsql,"../..",ICEB_DOC_PATH,"matu2_1_2g1.txt");
+ //    prosf(strsql);
+     clear();
+     goto naz;
+diff -ru buhg/uosvdok.c new/buhg/uosvdok.c
+--- buhg/uosvdok.c	Fri Sep 19 07:49:12 2003
++++ new/buhg/uosvdok.c	Fri Jan  2 00:49:23 2004
+@@ -754,9 +754,9 @@
+      attroff(VV->VVOD_return_cs(iceb_CFS)); 
+      GDITE();
+      if(uos.tipz == 1)
+-       sprintf(strsql,"%s/doc/%s",putnansi,"uos2_1_1.txt");
++       sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"uos2_1_1.txt");
+      if(uos.tipz == 2)
+-       sprintf(strsql,"%s/doc/%s",putnansi,"uos2_1_2.txt");
++       sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"uos2_1_2.txt");
+      prosf(strsql);
+      clear();
+      goto nazad;
+diff -ru buhg/uplrpl.c new/buhg/uplrpl.c
+--- buhg/uplrpl.c	Tue Oct  7 10:47:40 2003
++++ new/buhg/uplrpl.c	Fri Jan  2 00:49:23 2004
+@@ -84,9 +84,9 @@
+   case FK1:
+     GDITE();
+     if(metkar == 0)
+-     sprintf(strsql,"%s/doc/%s",putnansi,"upl4_1.txt");
++     sprintf(strsql,"../..",ICEB_DOC_PATH,"upl4_1.txt");
+     if(metkar == 1)
+-     sprintf(strsql,"%s/doc/%s",putnansi,"upl4_2.txt");
++     sprintf(strsql,"../..",ICEB_DOC_PATH,"upl4_2.txt");
+     prosf(strsql);
+     clear();
+     goto naz;
+diff -ru buhg/uplvst.c new/buhg/uplvst.c
+--- buhg/uplvst.c	Mon Jul 21 12:58:32 2003
++++ new/buhg/uplvst.c	Fri Jan  2 00:49:23 2004
+@@ -74,7 +74,7 @@
+  {
+   case FK1:
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"upl4_3.txt");
++    sprintf(strsql,"../..",ICEB_DOC_PATH,"upl4_3.txt");
+     prosf(strsql);
+     clear();
+     goto naz;
+diff -ru buhg/vdkr.c new/buhg/vdkr.c
+--- buhg/vdkr.c	Tue Oct 14 10:16:05 2003
++++ new/buhg/vdkr.c	Fri Jan  2 00:49:23 2004
+@@ -428,7 +428,7 @@
+     case FK1:
+       attroff(VV.VVOD_return_cs(iceb_CFS));
+       attron(VV.VVOD_return_cs(iceb_CB));
+-      sprintf(strsql,"%s/doc/%s",putnansi,"ukr2_1.txt");
++      sprintf(strsql,"../..",ICEB_DOC_PATH,"ukr2_1.txt");
+       prosf(strsql);
+       clear();
+       goto nazad;
+diff -ru buhg/vdnd.c new/buhg/vdnd.c
+--- buhg/vdnd.c	Fri Sep 19 07:49:12 2003
++++ new/buhg/vdnd.c	Fri Jan  2 00:49:23 2004
+@@ -800,7 +800,7 @@
+     attroff(VV->VVOD_return_cs(iceb_CFS));
+     attron(VV->VVOD_return_cs(iceb_CB));
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"matu2_1_1.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_1_1.txt");
+     prosf(strsql);
+     goto nazad;
+    }
+diff -ru buhg/vdnu.c new/buhg/vdnu.c
+--- buhg/vdnu.c	Thu Jun  5 08:10:31 2003
++++ new/buhg/vdnu.c	Fri Jan  2 00:49:23 2004
+@@ -565,7 +565,7 @@
+      attroff(VV->VVOD_return_cs(iceb_CFS));
+      attron(VV->VVOD_return_cs(iceb_CFM));
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"usl2_1.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"usl2_1.txt");
+     prosf(strsql);
+     clear();
+     goto nazad;
+diff -ru buhg/vdupl.c new/buhg/vdupl.c
+--- buhg/vdupl.c	Wed Aug  6 10:01:58 2003
++++ new/buhg/vdupl.c	Fri Jan  2 00:49:23 2004
+@@ -486,7 +486,7 @@
+     attroff(VV.VVOD_return_cs(iceb_CFS));
+     attron(VV.VVOD_return_cs(iceb_CB));
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"upl2_1.txt");
++    sprintf(strsql,"../..",ICEB_DOC_PATH,"upl2_1.txt");
+     prosf(strsql);
+     goto nazad;
+    }
+diff -ru buhg/vedprz.c new/buhg/vedprz.c
+--- buhg/vedprz.c	Mon Jul 21 12:58:32 2003
++++ new/buhg/vedprz.c	Fri Jan  2 00:49:23 2004
+@@ -104,7 +104,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_5_1.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp4_5_1.txt");
+    prosf(strsql);
+    goto naz;
+   case ESC:
+diff -ru buhg/vipiska.c new/buhg/vipiska.c
+--- buhg/vipiska.c	Fri Jun 20 07:35:53 2003
++++ new/buhg/vipiska.c	Fri Jan  2 00:49:23 2004
+@@ -709,7 +709,7 @@
+    {
+     wattroff(win2,VV.VVOD_return_cs(iceb_CFS));
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"upl3_4_1.txt");
++    sprintf(strsql,"../..",ICEB_DOC_PATH,"upl3_4_1.txt");
+ //    prosf(strsql);
+     clear();
+     goto naz;
+diff -ru buhg/vkart.c new/buhg/vkart.c
+--- buhg/vkart.c	Fri Sep 26 10:15:18 2003
++++ new/buhg/vkart.c	Fri Jan  2 00:49:23 2004
+@@ -779,7 +779,7 @@
+     case FK1:   /*Помощь*/
+       attroff(VV.VVOD_return_cs(iceb_CFS));
+       GDITE();
+-      sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_1.txt");
++      sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp2_1.txt");
+       prosf(strsql);
+       clear();
+       goto naz;
+diff -ru buhg/vkart1.c new/buhg/vkart1.c
+--- buhg/vkart1.c	Fri Sep 26 10:15:18 2003
++++ new/buhg/vkart1.c	Fri Jan  2 00:49:23 2004
+@@ -292,7 +292,7 @@
+       attroff(VV.VVOD_return_cs(iceb_CFS));
+       attron(VV.VVOD_return_cs(iceb_CFM));
+       GDITE();
+-      sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_3.txt");
++      sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp2_3.txt");
+       prosf(strsql);
+       clear();
+       goto naz;
+diff -ru buhg/vkasord.c new/buhg/vkasord.c
+--- buhg/vkasord.c	Thu Jun  5 08:10:31 2003
++++ new/buhg/vkasord.c	Fri Jan  2 00:49:23 2004
+@@ -435,9 +435,9 @@
+     attron(VV->VVOD_return_cs(iceb_CB));
+     GDITE();
+     if(tipz == 1)
+-     sprintf(strsql,"%s/doc/%s",putnansi,"kas2_2.txt");
++     sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"kas2_2.txt");
+     if(tipz == 2)
+-     sprintf(strsql,"%s/doc/%s",putnansi,"kas2_1.txt");
++     sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"kas2_1.txt");
+     prosf(strsql);
+     goto nazad;
+    }
+diff -ru buhg/vmat.c new/buhg/vmat.c
+--- buhg/vmat.c	Fri Oct 24 07:18:03 2003
++++ new/buhg/vmat.c	Fri Jan  2 00:49:23 2004
+@@ -634,7 +634,7 @@
+    if(cp == 1)
+     {
+      GDITE();
+-     sprintf(strsql,"%s/doc/%s",putnansi,"matu2_1_2f.txt");
++     sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_1_2f.txt");
+      prosf(strsql);
+      clear();
+     }
+@@ -642,14 +642,14 @@
+    if(tipz == 1 && cp == 0)
+     {
+      GDITE();
+-     sprintf(strsql,"%s/doc/%s",putnansi,"matu2_1_2g.txt");
++     sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_1_2g.txt");
+      prosf(strsql);
+      clear();
+     }
+    if(tipz == 2 && cp == 0)
+     {
+      GDITE();
+-     sprintf(strsql,"%s/doc/%s",putnansi,"matu2_1_2s.txt");
++     sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_1_2s.txt");
+      prosf(strsql);
+      clear();
+     }
+@@ -1403,7 +1403,7 @@
+    {
+     attroff(VV.VVOD_return_cs(iceb_CFS));
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"matu2_1_2g1.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"matu2_1_2g1.txt");
+     prosf(strsql);
+     clear();
+     goto naz;
+diff -ru buhg/vnu.c new/buhg/vnu.c
+--- buhg/vnu.c	Wed May 14 11:22:40 2003
++++ new/buhg/vnu.c	Fri Jan  2 00:49:23 2004
+@@ -126,7 +126,7 @@
+    {
+     case FK1:   /*Помощь*/
+      GDITE();
+-     sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_2.txt");
++     sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp2_2.txt");
+      prosf(strsql);
+      clear();
+      goto naz;
+diff -ru buhg/vos.c new/buhg/vos.c
+--- buhg/vos.c	Thu Jul  3 10:24:16 2003
++++ new/buhg/vos.c	Fri Jan  2 00:49:23 2004
+@@ -429,7 +429,7 @@
+     case FK1:   /*Помощь*/
+      attroff(VV->VVOD_return_cs(iceb_CFS)); 
+      GDITE();
+-     sprintf(strsql,"%s/doc/%s",putnansi,"uos3.txt");
++     sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"uos3.txt");
+      prosf(strsql);
+      clear();
+      goto naz;
+diff -ru buhg/vprov.c new/buhg/vprov.c
+--- buhg/vprov.c	Sun Apr 20 12:57:43 2003
++++ new/buhg/vprov.c	Fri Jan  2 00:49:23 2004
+@@ -562,7 +562,7 @@
+      attroff(VV.VVOD_return_cs(iceb_CFS));
+      GDITE();
+ 
+-     sprintf(strsql,"%s/doc/%s",putnansi,"buhg3_1.txt");
++     sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"buhg3_1.txt");
+      prosf(strsql);
+ 
+      clear();
+diff -ru buhg/vprovgr.c new/buhg/vprovgr.c
+--- buhg/vprovgr.c	Sun Apr 20 12:57:43 2003
++++ new/buhg/vprovgr.c	Fri Jan  2 00:49:23 2004
+@@ -278,7 +278,7 @@
+      attroff(VV.VVOD_return_cs(iceb_CFS));
+      GDITE();
+ 
+-     sprintf(strsql,"%s/doc/%s",putnansi,"buhg3_4.txt");
++     sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"buhg3_4.txt");
+      prosf(strsql);
+ 
+      clear();
+diff -ru buhg/vprovnbs.c new/buhg/vprovnbs.c
+--- buhg/vprovnbs.c	Sun Apr 20 12:57:43 2003
++++ new/buhg/vprovnbs.c	Fri Jan  2 00:49:23 2004
+@@ -353,7 +353,7 @@
+     attroff(VV.VVOD_return_cs(iceb_CFS));
+     GDITE();
+ 
+-    sprintf(strsql,"%s/doc/%s",putnansi,"buhg3_1_1.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"buhg3_1_1.txt");
+     prosf(strsql);
+ 
+     clear();
+diff -ru buhg/vusl.c new/buhg/vusl.c
+--- buhg/vusl.c	Sat Jul  5 18:48:31 2003
++++ new/buhg/vusl.c	Fri Jan  2 00:49:23 2004
+@@ -377,7 +377,7 @@
+     {
+      attroff(VV.VVOD_return_cs(iceb_CFS));
+      GDITE();
+-     sprintf(bros,"%s/doc/%s",putnansi,"usl2_1_1_2.txt");
++     sprintf(bros,"%s/%s",ICEB_DOC_PATH,"usl2_1_1_2.txt");
+      prosf(bros);
+      clear();
+      goto naz;
+diff -ru buhg/vvodf8dr.c new/buhg/vvodf8dr.c
+--- buhg/vvodf8dr.c	Thu Jun  5 08:10:31 2003
++++ new/buhg/vvodf8dr.c	Fri Jan  2 00:49:23 2004
+@@ -164,7 +164,7 @@
+   if(K == FK1)
+    {
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_7_1_2_1.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp4_7_1_2_1.txt");
+     prosf(strsql);
+     clear();
+     goto nazad;
+diff -ru buhg/vvodkr1.c new/buhg/vvodkr1.c
+--- buhg/vvodkr1.c	Thu Jun  5 08:10:31 2003
++++ new/buhg/vvodkr1.c	Fri Jan  2 00:49:23 2004
+@@ -351,7 +351,7 @@
+    {
+     attroff(VV.VVOD_return_cs(iceb_CFS));
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"ukr2_2_2.txt");
++    sprintf(strsql,"../..",ICEB_DOC_PATH,"ukr2_2_2.txt");
+     prosf(strsql);
+     clear();
+     goto naz;
+diff -ru buhg/vvodztab.c new/buhg/vvodztab.c
+--- buhg/vvodztab.c	Sun Oct  5 09:38:34 2003
++++ new/buhg/vvodztab.c	Fri Jan  2 00:49:23 2004
+@@ -392,7 +392,7 @@
+   if(K == FK1) /*Просмотр подсказки*/
+    {  
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_6_1.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp2_6_1.txt");
+     prosf(strsql);
+     clear();
+     goto naz;
+diff -ru buhg/xbu.c new/buhg/xbu.c
+--- buhg/xbu.c	Wed Oct 22 12:28:08 2003
++++ new/buhg/xbu.c	Fri Jan  2 00:49:23 2004
+@@ -319,7 +319,7 @@
+           goto nazad;
+         case FK1:
+           GDITE();
+-          sprintf(strsql,"%s/doc/%s",putnansi,"buhg3_2.txt");
++          sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"buhg3_2.txt");
+           prosf(strsql);
+           clear();
+           goto naz1;
+@@ -487,7 +487,7 @@
+        {
+         case FK1:   /*Помощь*/
+          GDITE();
+-         sprintf(bros,"%s/doc/%s",putnansi,"buhg5_2.txt");
++         sprintf(bros,"%s/%s",ICEB_DOC_PATH,"buhg5_2.txt");
+          prosf(bros);
+          goto naz;
+        
+@@ -623,7 +623,7 @@
+ 
+         case FK1:
+           GDITE();
+-          sprintf(bros,"%s/doc/%s",putnansi,"buhg5_4.txt");
++          sprintf(bros,"%s/%s",ICEB_DOC_PATH,"buhg5_4.txt");
+           prosf(bros);
+           goto nom3;
+ 
+diff -ru buhg/zarkart.c new/buhg/zarkart.c
+--- buhg/zarkart.c	Sat Oct 18 14:54:39 2003
++++ new/buhg/zarkart.c	Fri Jan  2 00:49:23 2004
+@@ -103,9 +103,9 @@
+   case FK1:   /*Помощь*/
+    GDITE();
+    if(metka == 0)
+-     sprintf(bros,"%s/doc/%s",putnansi,"zarp4_3_12.txt");
++     sprintf(bros,"../..",ICEB_DOC_PATH,"zarp4_3_12.txt");
+    if(metka == 1)
+-     sprintf(bros,"%s/doc/%s",putnansi,"zarp4_3_11.txt");
++     sprintf(bros,"../..",ICEB_DOC_PATH,"zarp4_3_11.txt");
+ 
+    prosf(bros);
+    goto naz;
+diff -ru buhg/zarrasp.c new/buhg/zarrasp.c
+--- buhg/zarrasp.c	Mon Jul 21 12:58:32 2003
++++ new/buhg/zarrasp.c	Fri Jan  2 00:49:23 2004
+@@ -98,7 +98,7 @@
+   case FK1:   /*Помощь*/
+    GDITE();
+ 
+-   sprintf(bros,"%s/doc/%s",putnansi,"zarp4_7_5.txt");
++   sprintf(bros,"%s/%s",ICEB_DOC_PATH,"zarp4_7_5.txt");
+    prosf(bros);
+ 
+    goto naz;
+diff -ru buhg/zarsend.c new/buhg/zarsend.c
+--- buhg/zarsend.c	Fri Jun 20 05:45:08 2003
++++ new/buhg/zarsend.c	Fri Jan  2 00:49:23 2004
+@@ -148,7 +148,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_1_3.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp4_1_3.txt");
+     prosf(strsql);
+     goto naz;
+ 
+diff -ru buhg/zarsocd.c new/buhg/zarsocd.c
+--- buhg/zarsocd.c	Fri Sep 19 07:49:12 2003
++++ new/buhg/zarsocd.c	Fri Jan  2 00:49:23 2004
+@@ -70,7 +70,7 @@
+  {
+   case FK1:
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_7_8.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp4_7_8.txt");
+    prosf(strsql);
+    goto naz;
+   
+diff -ru buhg/zarspek.c new/buhg/zarspek.c
+--- buhg/zarspek.c	Fri Jun 13 05:13:41 2003
++++ new/buhg/zarspek.c	Fri Jan  2 00:49:23 2004
+@@ -105,7 +105,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(bros,"%s/doc/%s",putnansi,"zarp4_7_2.txt");
++   sprintf(bros,"%s/%s",ICEB_DOC_PATH,"zarp4_7_2.txt");
+    prosf(bros);
+    goto naz;
+ 
+diff -ru buhg/zarspek1.c new/buhg/zarspek1.c
+--- buhg/zarspek1.c	Mon Jul 21 12:58:32 2003
++++ new/buhg/zarspek1.c	Fri Jan  2 00:49:23 2004
+@@ -61,7 +61,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(bros,"%s/doc/%s",putnansi,"zarp4_7_6.txt");
++   sprintf(bros,"%s/%s",ICEB_DOC_PATH,"zarp4_7_6.txt");
+    prosf(bros);
+    goto naz;
+ 
+diff -ru buhg/zarspi.c new/buhg/zarspi.c
+--- buhg/zarspi.c	Sun Apr 20 12:57:43 2003
++++ new/buhg/zarspi.c	Fri Jan  2 00:49:23 2004
+@@ -98,7 +98,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_1_2.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp4_1_2.txt");
+     prosf(strsql);
+     goto naz;
+ 
+diff -ru buhg/zarsprsoc.c new/buhg/zarsprsoc.c
+--- buhg/zarsprsoc.c	Mon Jul 21 12:58:32 2003
++++ new/buhg/zarsprsoc.c	Fri Jan  2 00:49:23 2004
+@@ -75,7 +75,7 @@
+  {
+   case FK1:
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"zarp4_7_7.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"zarp4_7_7.txt");
+    prosf(strsql);
+    goto naz;
+   
+diff -ru buhg/zarstomn.c new/buhg/zarstomn.c
+--- buhg/zarstomn.c	Thu Jun  5 09:27:45 2003
++++ new/buhg/zarstomn.c	Fri Jan  2 00:49:23 2004
+@@ -76,7 +76,7 @@
+  {
+   case FK1:   /*Помощь*/
+    GDITE();
+-//   sprintf(bros,"%s/doc/%s",putnansi,"zarp4_2_1.txt");
++//   sprintf(bros,"%s/%s",ICEB_DOC_PATH,"zarp4_2_1.txt");
+ //   prosf(bros);
+    goto naz;
+ 
+diff -ru libbuh/Makefile.am new/libbuh/Makefile.am
+--- libbuh/Makefile.am	Fri Sep 19 07:44:42 2003
++++ new/libbuh/Makefile.am	Fri Jan  2 00:37:46 2004
+@@ -1,4 +1,5 @@
+ CC = ${CXX}
++CFLAGS += -DICEB_DOC_PATH="\""@datadir@/doc/iceb"\""
+ lib_LTLIBRARIES = libbuh.la
+ 
+ INCLUDES = -I$(top_srcdir)/libscr -I$(top_srcdir)/libsql @ICEB_DB_H@ \
+diff -ru libbuh/dirkontr.c new/libbuh/dirkontr.c
+--- libbuh/dirkontr.c	Thu Jun  5 14:52:38 2003
++++ new/libbuh/dirkontr.c	Fri Jan  2 00:50:55 2004
+@@ -405,7 +405,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"buhg4_2.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"buhg4_2.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+@@ -1124,7 +1124,7 @@
+  {
+   case FK1:
+     GDITE();
+-//    sprintf(strsql,"%s/doc/%s",putnansi,"zarp2_6_2.txt");
++//    sprintf(strsql,"../..",ICEB_DOC_PATH,"zarp2_6_2.txt");
+ //    prosf(strsql);
+     clear();
+     goto naz;
+diff -ru libbuh/dirmat1.c new/libbuh/dirmat1.c
+--- libbuh/dirmat1.c	Fri Oct 31 10:00:39 2003
++++ new/libbuh/dirmat1.c	Fri Jan  2 00:50:55 2004
+@@ -570,7 +570,7 @@
+        goto naz1;
+       }     
+     }
+-   sprintf(strsql,"%s/doc/%s",putnansi,imaf);
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,imaf);
+ 
+ /*
+    printw("strsql=%s\n",strsql);
+diff -ru libbuh/dirmt.c new/libbuh/dirmt.c
+--- libbuh/dirmt.c	Mon Jul 21 12:58:34 2003
++++ new/libbuh/dirmt.c	Fri Jan  2 00:50:55 2004
+@@ -387,7 +387,7 @@
+ 
+   case FK1:
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"upl3_2_1.txt");
++    sprintf(strsql,"../..",ICEB_DOC_PATH,"upl3_2_1.txt");
+     prosf(strsql);
+     clear();
+     goto naz;
+diff -ru libbuh/dirshet.c new/libbuh/dirshet.c
+--- libbuh/dirshet.c	Mon Jul 21 12:58:34 2003
++++ new/libbuh/dirshet.c	Fri Jan  2 00:50:55 2004
+@@ -329,7 +329,7 @@
+   case FK1:   /*Получить подсказку*/
+    
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"buhg4_1.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"buhg4_1.txt");
+    prosf(strsql);
+    clear();
+    goto naz;
+diff -ru libbuh/dirskont.c new/libbuh/dirskont.c
+--- libbuh/dirskont.c	Sat Oct 18 14:54:41 2003
++++ new/libbuh/dirskont.c	Fri Jan  2 00:50:55 2004
+@@ -576,7 +576,7 @@
+ 
+   case FK1:   /*Помощь*/
+    GDITE();
+-   sprintf(strsql,"%s/doc/%s",putnansi,"buhg4_3.txt");
++   sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"buhg4_3.txt");
+    prosf(strsql);
+    clear();
+    if(kolstr > 0)
+diff -ru libbuh/smenabaz.c new/libbuh/smenabaz.c
+--- libbuh/smenabaz.c	Thu Jun  5 14:52:38 2003
++++ new/libbuh/smenabaz.c	Fri Jan  2 00:50:55 2004
+@@ -47,7 +47,7 @@
+   if(i == FK1)
+    {
+     GDITE();
+-    sprintf(strsql,"%s/doc/%s",putnansi,"smenabaz.txt");
++    sprintf(strsql,"%s/%s",ICEB_DOC_PATH,"smenabaz.txt");
+     prosf(strsql);
+     clear();
+     goto naz;
+diff -ru libbuh/vmat1.c new/libbuh/vmat1.c
+--- libbuh/vmat1.c	Sat Oct 18 14:54:41 2003
++++ new/libbuh/vmat1.c	Fri Jan  2 00:50:55 2004
+@@ -1021,7 +1021,7 @@
+         clear();
+         goto naz1;
+        }
+-      sprintf(strsql,"%s/doc/%s",putnansi,imaf);
++      sprintf(strsql,"%s/%s",ICEB_DOC_PATH,imaf);
+ 
+    /*
+       printw("strsql=%s\n",strsql);

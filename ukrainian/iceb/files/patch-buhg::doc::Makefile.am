@@ -1,7 +1,13 @@
-diff -ru --exclude *.in iceb-5.35.old/buhg/doc/Makefile.am iceb-5.35/buhg/doc/Makefile.am
 --- buhg/doc/Makefile.am	Sat Jul 21 09:10:15 2001
-+++ buhg/doc/Makefile.am	Sat Dec 21 00:24:44 2002
-@@ -7,7 +7,7 @@
++++ buhg/doc/Makefile.am	Fri Jan  2 12:42:41 2004
+@@ -1,13 +1,13 @@
+ # $Id: Makefile.am,v 5.1 2001/07/21 09:10:15 yuk Exp $
+ #
+ 
+-CONFDIR=@CONFIG_PATH@/doc
++CONFDIR=@datadir@/doc/iceb
+ #------------------------------------------------------------
+ 
  all:    ;
  
  install:        $(CONFDIR)
