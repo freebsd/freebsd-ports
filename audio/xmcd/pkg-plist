@@ -1,0 +1,11 @@
+@cwd /usr/X11R6
+@mode 755
+bin/xmcd
+bin/cda
+bin/wm2xmcd
+@mode 444
+man/man1/xmcd.1.gz
+man/man1/cda.1.gz
+man/man1/wm2xmcd.1.gz
+@mode 755
+lib/X11/xmcd
