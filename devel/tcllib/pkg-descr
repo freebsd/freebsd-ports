@@ -2,23 +2,11 @@ Tcllib is  a collection  of utility  modules for Tcl.  The intent  is to
 collect commonly  used function into  a single library, which  users can
 rely on to be available and stable.
 
-The latest version of tcllib, 0.8, includes the following modules: 
-	base64	base64 encoder and decoder
-	cmdline	command line argument processor similar to opt
-	counter Event counters, interval timers, and histogram display
-	fileutil Tcl implementations of some standard Unix utilities
-	ftp	FTP client library
-	ftpd	FTP server
-	html	HTML generation procedures. This uses ncgi.
-	javascript Javascript generation procedures.
-	math	common math functions like min, max, and others
-	mime	MIME encoder and decoder
-	ncgi	new CGI processing module
-	nntp	NNTP (news) client
-	pop3	POP3 protocol implementation
-	profiler function level Tcl source code profiler
-	struct	Tcl implementations of common data structures
-	textutil Text processing utilities
-	uri	URI parsing module
+There  are  too many  modules  now  to  list  here. Browse  the  on-line
+documentation at
 
-WWW: http://dev.scriptics.com/software/tcllib/
+	http://tcllib.sourceforge.net/doc/
+
+to get the idea.
+
+WWW: http://tcllib.sourceforge.net/

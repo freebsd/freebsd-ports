@@ -1,0 +1,8 @@
+--- all.tcl	Mon Jan 21 12:55:22 2002
++++ all.tcl	Mon Jan 28 14:30:41 2002
+@@ -122,4 +122,5 @@
+     # import the auto_path from the parent interp, so "package require" works
+     $c eval {
++	set ::argv0 [pSet ::argv0]
+ 	set ::tcllibModule [pSet module]
+ 	set auto_path [pSet auto_path]

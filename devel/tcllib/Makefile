@@ -6,33 +6,26 @@
 #
 
 PORTNAME=		tcllib
-PORTVERSION=		0.8
+PORTVERSION=		1.2
 CATEGORIES=		devel
-MASTER_SITES=		${MASTER_SITE_TCLTK}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcllib
-DISTNAME=		${PORTNAME}${PORTVERSION}
-EXTRACT_ONLY=
 
 MAINTAINER=	mi@aldan.algebra.com
 
-NO_BUILD=	YES
+GNU_CONFIGURE=	yes
+ALL_TARGET=	test
+MAKE_ENV+=	LANG=C
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-MANN=	counter.n ftpd.n graph.n html.n javascript.n math.n \
-	ncgi.n nntp.n pop3.n profiler.n queue.n stack.n textutil.n \
-	tree.n uri.n
+MANN= base64.n cksum.n cmdline.n combinatorics.n comm.n control.n \
+	counter.n crc32.n csv.n expander.n fileutil.n ftp.n ftpd.n \
+	graph.n html.n htmlparse.n javascript.n log.n math.n matrix.n \
+	md5.n mime.n ncgi.n nntp.n pop3.n profiler.n report.n queue.n \
+	sha1.n smtp.n stack.n stooop.n sum.n textutil.n tree.n uri.n \
+	uuencode.n
+
 MANCOMPRESSED=	no
-
-do-install:
-	${TAR} -xpz --exclude "${PORTNAME}${PORTVERSION}/[RI]*" \
-		--exclude install.sh \
-		-C ${LOCALBASE}/lib -f ${DISTDIR}/${DISTFILES}
-	${MV} `find ${LOCALBASE}/lib/${PORTNAME}${PORTVERSION} \
-			-type f -name '*.n'` \
-		${LOCALBASE}/man/mann/
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
