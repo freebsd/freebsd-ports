@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	libxml
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 DISTNAME=	libxml-perl-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Collection of Perl5 modules for working with XML
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
