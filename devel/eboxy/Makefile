@@ -27,7 +27,7 @@ USE_LIBTOOL=	yes
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt -lstdc++"
+		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -lgnugetopt -lstdc++"
 
 post-patch:
 	@${GREP} -lR "malloc.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
