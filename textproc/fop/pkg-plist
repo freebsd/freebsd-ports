@@ -1,0 +1,1023 @@
+share/java/classes/fop.jar
+share/java/classes/svg-w3c.jar
+share/java/fop-%%PORTVERSION%%/LICENSE
+share/java/fop-%%PORTVERSION%%/README
+share/java/fop-%%PORTVERSION%%/STATUS
+share/java/fop-%%PORTVERSION%%/build.sh
+share/java/fop-%%PORTVERSION%%/build.xml
+share/java/fop-%%PORTVERSION%%/docs/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/bugtests/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/bugtests/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/bugtests/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/bugtests/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/bugtests/build.xml
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/background_color.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/background_transparent.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/block-container.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/block.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/border.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/break-before.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/color.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/external-graphic.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/font-family.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/font-size.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/font.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/header_footer.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/image.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/indent.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/inline.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/keep-with-next.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/leader.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/letter-spacing.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/line-height.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/padding.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/page-number.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/rule.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/simple-link.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/space-treatment.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/space.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/text-align.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/text-decoration.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/text-indent.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/word-spacing.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/wrap.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/list-mountjoy.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/list-nested-breaks.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/list-nested.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/reference/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/bugtests/reference/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/bugtests/reference/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/bugtests/reference/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/bugtests/runtests.bat
+share/java/fop-%%PORTVERSION%%/docs/bugtests/runtests.sh
+share/java/fop-%%PORTVERSION%%/docs/bugtests/svg-apachexml.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/svg-lingrad.fo
+share/java/fop-%%PORTVERSION%%/docs/bugtests/tests/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/bugtests/tests/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/bugtests/tests/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/bugtests/tests/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/design/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/design/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/design/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/design/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/design/apps.gif
+share/java/fop-%%PORTVERSION%%/docs/design/datatypes.gif
+share/java/fop-%%PORTVERSION%%/docs/design/flow.gif
+share/java/fop-%%PORTVERSION%%/docs/design/fo.gif
+share/java/fop-%%PORTVERSION%%/docs/design/fop.gif
+share/java/fop-%%PORTVERSION%%/docs/design/image.gif
+share/java/fop-%%PORTVERSION%%/docs/design/layout.gif
+share/java/fop-%%PORTVERSION%%/docs/design/messaging.gif
+share/java/fop-%%PORTVERSION%%/docs/design/pagination.gif
+share/java/fop-%%PORTVERSION%%/docs/design/pdf.gif
+share/java/fop-%%PORTVERSION%%/docs/design/render_pdf.gif
+share/java/fop-%%PORTVERSION%%/docs/examples/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/examples/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/examples/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/examples/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/examples/build.xml
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/border.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/extensive.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/fonts.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/images.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/inhprop.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/instream.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/leader.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/link.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/list.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/normal.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/normalex.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/readme.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/simple.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/table.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/fo/textdeko.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/pagination/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/examples/pagination/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/examples/pagination/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/examples/pagination/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/examples/pagination/basic1.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/pagination/basic2.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/pagination/errors/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/examples/pagination/errors/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/examples/pagination/errors/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/examples/pagination/errors/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/examples/pagination/franklin_2pageseqs.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/pagination/franklin_alt.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/pagination/franklin_rep.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/pagination/franklin_rep_max_repeats.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/pagination/franklin_rep_max_repeats_expl.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/pagination/franklin_rep_max_repeats_nl.fo
+share/java/fop-%%PORTVERSION%%/docs/examples/reference/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/examples/reference/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/examples/reference/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/examples/reference/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/examples/reference/border.pdf
+share/java/fop-%%PORTVERSION%%/docs/examples/reference/extensive.pdf
+share/java/fop-%%PORTVERSION%%/docs/examples/reference/fonts.pdf
+share/java/fop-%%PORTVERSION%%/docs/examples/reference/images.pdf
+share/java/fop-%%PORTVERSION%%/docs/examples/reference/inhprop.pdf
+share/java/fop-%%PORTVERSION%%/docs/examples/reference/leader.pdf
+share/java/fop-%%PORTVERSION%%/docs/examples/reference/link.pdf
+share/java/fop-%%PORTVERSION%%/docs/examples/reference/list.pdf
+share/java/fop-%%PORTVERSION%%/docs/examples/reference/normal.pdf
+share/java/fop-%%PORTVERSION%%/docs/examples/reference/normalex.pdf
+share/java/fop-%%PORTVERSION%%/docs/examples/reference/readme.pdf
+share/java/fop-%%PORTVERSION%%/docs/examples/reference/simple.pdf
+share/java/fop-%%PORTVERSION%%/docs/examples/reference/table.pdf
+share/java/fop-%%PORTVERSION%%/docs/examples/reference/textdeko.pdf
+share/java/fop-%%PORTVERSION%%/docs/examples/runtests.bat
+share/java/fop-%%PORTVERSION%%/docs/examples/runtests.sh
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/All.xml
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/BasicExamples.xml
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/Design.xml
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/Document.dtd
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/Document.xsl
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/Examples.xml
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/LargeExamples.xml
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/Misc.xml
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/MoreTests.xml
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/Tests.xml
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/Todo.xml
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/UnitTests.xml
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/apache-diagrams.xml
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/arch-diagrams.xml
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/build.xml
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/diagrams.dtd
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/ex-diagrams.xml
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/image.jpg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/makedoc.bat
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/makedoc.sh
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/misc-diagrams.xml
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/mozilla-diagrams.xml
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/arcs.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/initialCoords.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/junk.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/molecule.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/nested.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/newCSSUnits.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/newCoordSys.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/newViewport.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/origCoordSys.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/preserveAspectRatio.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/rotateScale.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/shapes.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/skew.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/transformTest.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/units.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/use01.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/use02.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/use03.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/viewBox1.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/viewBox2.svg
+share/java/fop-%%PORTVERSION%%/docs/examples/tests/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/examples/tests/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/examples/tests/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/examples/tests/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/graphics/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/graphics/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/graphics/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/graphics/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/graphics/fop.jpg
+share/java/fop-%%PORTVERSION%%/docs/graphics/linux.bmp
+share/java/fop-%%PORTVERSION%%/docs/graphics/listgeometry.gif
+share/java/fop-%%PORTVERSION%%/docs/graphics/page.gif
+share/java/fop-%%PORTVERSION%%/docs/graphics/xml_feather.gif
+share/java/fop-%%PORTVERSION%%/docs/graphics/xml_feather_transparent.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/html-docs/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/html-docs/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/html-docs/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/html-docs/architecture.html
+share/java/fop-%%PORTVERSION%%/docs/html-docs/bugs.html
+share/java/fop-%%PORTVERSION%%/docs/html-docs/compiling.html
+share/java/fop-%%PORTVERSION%%/docs/html-docs/download.html
+share/java/fop-%%PORTVERSION%%/docs/html-docs/embedding.html
+share/java/fop-%%PORTVERSION%%/docs/html-docs/examples.html
+share/java/fop-%%PORTVERSION%%/docs/html-docs/faq-running.html
+share/java/fop-%%PORTVERSION%%/docs/html-docs/faqs.html
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/architecture-header.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/architecture-label-1.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/architecture-label-2.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/architecture-label-3.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/bugs-header.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/bugs-label-1.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/bugs-label-2.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/bugs-label-3.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/compiling-header.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/compiling-label-1.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/compiling-label-2.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/compiling-label-3.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/download-header.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/download-label-1.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/download-label-2.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/download-label-3.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/embedding-header.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/embedding-label-1.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/embedding-label-2.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/embedding-label-3.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/examples-header.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/examples-label-1.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/examples-label-2.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/examples-label-3.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/ext-2-label-1.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/ext-2-label-2.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/ext-2-label-3.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/faq-running-header.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/faqs-header.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/faqs-label-1.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/faqs-label-2.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/faqs-label-3.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/implemented-header.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/implemented-label-1.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/implemented-label-2.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/implemented-label-3.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/index-header.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/index-label-1.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/index-label-2.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/index-label-3.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/involved-header.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/involved-label-1.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/involved-label-2.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/involved-label-3.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/license-header.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/license-label-1.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/license-label-2.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/license-label-3.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/limitations-header.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/limitations-label-1.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/limitations-label-2.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/limitations-label-3.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/running-header.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/running-label-1.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/running-label-2.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/running-label-3.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/specs-header.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/specs-label-1.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/specs-label-2.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/specs-label-3.jpg
+share/java/fop-%%PORTVERSION%%/docs/html-docs/implemented.html
+share/java/fop-%%PORTVERSION%%/docs/html-docs/index.html
+share/java/fop-%%PORTVERSION%%/docs/html-docs/involved.html
+share/java/fop-%%PORTVERSION%%/docs/html-docs/license.html
+share/java/fop-%%PORTVERSION%%/docs/html-docs/limitations.html
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/bottom.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/button-asf-hi.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/button-asf-lo.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/button-w3c-hi.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/button-w3c-lo.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/button-xml-hi.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/button-xml-lo.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/close.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/dot.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/green-bar-1.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/green-bar-2.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/green-bar.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/green-hi.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/green-lo.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/join.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/line.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/logo-1.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/logo-2.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/logo-3.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/logo.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/note.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/red-hi.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/red-lo.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/right.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/script.js
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/separator.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/void.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/www.apache.org.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/www.w3.org.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/www.xml.org.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/xml.apache.org.gif
+share/java/fop-%%PORTVERSION%%/docs/html-docs/running.html
+share/java/fop-%%PORTVERSION%%/docs/html-docs/specs.html
+share/java/fop-%%PORTVERSION%%/docs/readme
+share/java/fop-%%PORTVERSION%%/docs/resources/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/resources/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/resources/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/resources/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/build.xml
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop.xml
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/CVS/Entries
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/CVS/Repository
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/CVS/Root
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/CVS/Template
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/architecture.xml
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/bugs.xml
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/compiling.xml
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/download.xml
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/embedding.xml
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/examples.xml
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/faq.xml
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/fonts.xml
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/implemented.xml
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/implemented.xml.bak
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/involved.xml
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/license.xml
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/limitations.xml
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/readme.xml
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/running.xml
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/specs.xml
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/makedoc.bat
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/makedoc.sh
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/readme
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/xml2pdf.xsl
+share/java/fop-%%PORTVERSION%%/docs/xml-docs/xml2xml.xsl
+share/java/fop-%%PORTVERSION%%/lib/CVS/Entries
+share/java/fop-%%PORTVERSION%%/lib/CVS/Repository
+share/java/fop-%%PORTVERSION%%/lib/CVS/Root
+share/java/fop-%%PORTVERSION%%/lib/CVS/Template
+share/java/fop-%%PORTVERSION%%/lib/Compare.class
+share/java/fop-%%PORTVERSION%%/lib/Compare.java
+share/java/fop-%%PORTVERSION%%/lib/CompileXMLFiles.class
+share/java/fop-%%PORTVERSION%%/lib/CompileXMLFiles.java
+share/java/fop-%%PORTVERSION%%/lib/Fop.class
+share/java/fop-%%PORTVERSION%%/lib/Fop.java
+share/java/fop-%%PORTVERSION%%/lib/Xslt$StylesheetCache.class
+share/java/fop-%%PORTVERSION%%/lib/Xslt.class
+share/java/fop-%%PORTVERSION%%/lib/Xslt.java
+share/java/fop-%%PORTVERSION%%/lib/ant.jar
+share/java/fop-%%PORTVERSION%%/lib/bin/CVS/Entries
+share/java/fop-%%PORTVERSION%%/lib/bin/CVS/Repository
+share/java/fop-%%PORTVERSION%%/lib/bin/CVS/Root
+share/java/fop-%%PORTVERSION%%/lib/bin/CVS/Template
+share/java/fop-%%PORTVERSION%%/lib/bin/antRun
+share/java/fop-%%PORTVERSION%%/lib/readme
+share/java/fop-%%PORTVERSION%%/lib/w3c.jar
+share/java/fop-%%PORTVERSION%%/lib/xml.jar
+share/java/fop-%%PORTVERSION%%/src/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/codegen/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/codegen/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/codegen/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/codegen/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/codegen/Courier-Bold.xml
+share/java/fop-%%PORTVERSION%%/src/codegen/Courier-BoldOblique.xml
+share/java/fop-%%PORTVERSION%%/src/codegen/Courier-Oblique.xml
+share/java/fop-%%PORTVERSION%%/src/codegen/Courier.xml
+share/java/fop-%%PORTVERSION%%/src/codegen/Helvetica-Bold.xml
+share/java/fop-%%PORTVERSION%%/src/codegen/Helvetica-BoldOblique.xml
+share/java/fop-%%PORTVERSION%%/src/codegen/Helvetica-Oblique.xml
+share/java/fop-%%PORTVERSION%%/src/codegen/Helvetica.xml
+share/java/fop-%%PORTVERSION%%/src/codegen/Symbol.xml
+share/java/fop-%%PORTVERSION%%/src/codegen/Times-Bold.xml
+share/java/fop-%%PORTVERSION%%/src/codegen/Times-BoldItalic.xml
+share/java/fop-%%PORTVERSION%%/src/codegen/Times-Italic.xml
+share/java/fop-%%PORTVERSION%%/src/codegen/Times-Roman.xml
+share/java/fop-%%PORTVERSION%%/src/codegen/ZapfDingbats.xml
+share/java/fop-%%PORTVERSION%%/src/codegen/charlist.xml
+share/java/fop-%%PORTVERSION%%/src/codegen/code-point-mapping.xsl
+share/java/fop-%%PORTVERSION%%/src/codegen/enumgen.xsl
+share/java/fop-%%PORTVERSION%%/src/codegen/font-file.xsl
+share/java/fop-%%PORTVERSION%%/src/codegen/foproperties.xml
+share/java/fop-%%PORTVERSION%%/src/codegen/properties.dtd
+share/java/fop-%%PORTVERSION%%/src/codegen/properties.xml
+share/java/fop-%%PORTVERSION%%/src/codegen/properties.xsl
+share/java/fop-%%PORTVERSION%%/src/codegen/propinc.xsl
+share/java/fop-%%PORTVERSION%%/src/codegen/propmap.xsl
+share/java/fop-%%PORTVERSION%%/src/codegen/svgproperties.xml
+share/java/fop-%%PORTVERSION%%/src/codegen/t1font-file.xsl
+share/java/fop-%%PORTVERSION%%/src/org/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/apps/AWTCommandLine.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/apps/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/apps/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/apps/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/apps/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/apps/CommandLine.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/apps/Driver.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/apps/ErrorHandler.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/apps/FOPException.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/apps/PDFOutputHandler.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/apps/PrintCommandLine.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/apps/Version.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/apps/XTCommandLine.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/apps/XTDriver.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/apps/XalanCommandLine.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/apps/package.html
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/ColorSpace.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/ColorType.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/CondLength.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/IDNode.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/IDReferences.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/Length.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/LengthBase.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/LengthRange.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/MixedLength.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/PathData.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/PercentBase.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/PercentLength.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/PointsData.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/Space.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/StyleData.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/TableColLength.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/TransformData.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/package.html
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/CharacterDataImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/ElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/NodeImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/NodeListImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/css/CSSPrimitiveValueImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/css/CSSStyleDeclarationImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/css/CSSStyleRuleImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/css/CSSStyleSheetImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/css/CSSValueImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/css/CSSValueListImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/css/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/css/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/css/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/css/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/css/RGBColorImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/stylesheets/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/stylesheets/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/stylesheets/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/stylesheets/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/stylesheets/StyleSheetListImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/GraphicElement.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/GraphicImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGAElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGAltGlyphElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGAngleImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGAnimateColorElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGAnimateElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGAnimateMotionElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGAnimateTransformElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGAnimatedEnumerationImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGAnimatedLengthImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGAnimatedLengthListImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGAnimatedNumberImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGAnimatedRectImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGAnimatedStringImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGAnimatedTransformListImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGArea.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGCircleElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGClipPathElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGCursorElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGDefsElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGDescElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGDocumentImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGEllipseElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGExceptionImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGFilterElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGFontElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGGElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGGlyphElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGGradientElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGHKernElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGImageElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGLengthImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGLengthListImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGLineElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGLinearGradientElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGListImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGMarkerElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGMaskElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGMatrixImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGMissingGlyphElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGPathElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGPathSegImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGPatternElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGPolygonElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGPolylineElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGRadialGradientElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGRectElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGRectImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGSVGElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGSetElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGStopElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGStyleElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGSwitchElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGSymbolElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGTRefElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGTSpanElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGTextContentElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGTextElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGTextPathElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGTitleElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGTransformImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGTransformListImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGURIReferenceImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGUseElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/SVGVKernElementImpl.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/ColorTypeProperty.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/CondLengthProperty.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/ElementMapping.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/EnumProperty.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/FONode.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/FOText.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/FOTreeBuilder.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/FObj.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/FObjMixed.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/LengthProperty.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/LengthRangeProperty.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/NumberProperty.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/Property.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/PropertyList.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/PropertyListBuilder.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/PropertyListMapping.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/SVGTreeBuilder.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/SpaceProperty.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/StandardElementMapping.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/StandardPropertyListMapping.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/Status.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/StringProperty.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/TreeBuilder.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/XTElementMapping.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/XTFOTreeBuilder.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/AbsFunction.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/CeilingFunction.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/FloorFunction.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/FromParentFunction.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/FromTableColumnFunction.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/Function.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/FunctionBase.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/InheritedPropFunction.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/MaxFunction.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/MinFunction.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/NCnameProperty.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/NearestSpecPropFunction.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/Numeric.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/NumericProperty.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/PPColWidthFunction.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/PropertyException.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/PropertyInfo.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/PropertyParser.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/PropertyTokenizer.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/RGBColorFunction.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/RoundFunction.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/BasicLink.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/Block.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/BlockContainer.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/DisplaySequence.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/ExternalGraphic.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/Flow.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/Inline.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/InlineGraphic.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/InstreamForeignObject.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/Leader.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/ListBlock.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/ListBlock.java.bak
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/ListItem.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/ListItemBody.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/ListItemLabel.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/PageNumber.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/PageNumberCitation.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/StaticContent.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/Table.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/TableBody.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/TableCell.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/TableColumn.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/TableRow.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/ConditionalPageMasterReference.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/LayoutMasterSet.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/PageMasterReference.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/PageSequence.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/PageSequenceMaster.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/Region.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/RegionAfter.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/RegionBefore.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/RegionBody.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/RepeatablePageMasterAlternatives.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/RepeatablePageMasterReference.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/Root.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/SimplePageMaster.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/SinglePageMasterReference.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/SubSequenceSpecifier.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/properties/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/properties/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/properties/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/properties/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fonts/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fonts/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fonts/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fonts/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fonts/PFMFile.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fonts/PFMInputStream.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fonts/apps/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fonts/apps/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fonts/apps/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fonts/apps/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fonts/apps/FontPostProcess.xsl
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fonts/apps/FontPostProcessSort.xsl
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fonts/apps/PFMReader.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/AbstractFopImage.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/BmpImage.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/FopImage.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/FopImageConsumer.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/FopImageException.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/FopImageFactory.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/GifJpegImage.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/ImageArea.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/JimiImage.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/SVGImage.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/analyser/AbstractImageReader.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/analyser/BMPReader.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/analyser/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/analyser/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/analyser/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/analyser/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/analyser/GIFReader.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/analyser/ImageReader.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/analyser/ImageReaderFactory.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/analyser/JPEGReader.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/analyser/PNGReader.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/analyser/SVGReader.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/Area.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/AreaContainer.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/AreaTree.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/BlockArea.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/Box.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/DisplaySpace.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/FontDescriptor.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/FontInfo.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/FontMetric.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/FontState.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/ForeignObjectArea.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/InlineArea.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/InlineSpace.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/LeaderArea.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/LineArea.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/LinkSet.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/LinkedRectangle.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/Page.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/PageMaster.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/PageNumberInlineArea.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/RegionArea.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/Space.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/messaging/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/messaging/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/messaging/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/messaging/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/messaging/DefaultMessageListener.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/messaging/MessageEvent.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/messaging/MessageHandler.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/messaging/MessageListener.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFAction.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFAnnotList.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFArray.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFBinaryStream.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFColor.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFDocument.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFEncoding.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFFileSpec.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFFilter.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFFilterException.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFFont.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFFontDescriptor.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFFontNonBase14.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFFontType1.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFFunction.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFGoTo.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFGoToRemote.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFInfo.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFInternalLink.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFLink.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFNumber.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFObject.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFPage.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFPages.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFPathPaint.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFPattern.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFRectangle.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFResources.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFRoot.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFShading.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFStream.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFUri.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/PDFXObject.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/package.html
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/Renderer.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/awt/AWTFontMetrics.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/awt/AWTRenderer.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/awt/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/awt/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/awt/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/awt/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/awt/FontMetricsMapper.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/awt/FontSetup.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/package.html
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/pdf/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/pdf/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/pdf/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/pdf/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/pdf/Font.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/pdf/FontSetup.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/pdf/PDFRenderer.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/pdf/SVGRenderer.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/pdf/fonts/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/pdf/fonts/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/pdf/fonts/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/pdf/fonts/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/pdf/fonts/package.html
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/pdf/package.html
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/xml/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/xml/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/xml/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/xml/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/xml/XMLRenderer.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/xml/package.html
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/A.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/AltGlyph.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Animate.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/AnimateColor.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/AnimateMotion.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/AnimateTransform.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Circle.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/ClipPath.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Cursor.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Defs.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Desc.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Ellipse.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Filter.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Font.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/G.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Glyph.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/GraphicsCreator.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/HKern.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Image.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Line.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/LinearGradient.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Marker.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Mask.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/MissingGlyph.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Path.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/PathPoint.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Pattern.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Polygon.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Polyline.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/RadialGradient.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Rect.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/SVG.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/SVGD.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/SVGDriver.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/SVGElementMapping.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/SVGLengthListProperty.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/SVGLengthProperty.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/SVGObj.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/SVGPoints.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/SVGPropertyListMapping.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/SVGStringList.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/SVGStringProperty.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/SVGStyle.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/SVGTransform.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Set.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Stop.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Style.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Switch.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Symbol.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/TRef.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/TSpan.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Text.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/TextElement.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/TextPath.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/TextProperty.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Title.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/Use.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/VKern.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/package.html
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/Command.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/GoToPageDialog.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/IconToolBar.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/Images/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/Images/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/Images/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/Images/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/Images/Print.gif
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/Images/firstpg.gif
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/Images/lastpg.gif
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/Images/nextpg.gif
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/Images/prevpg.gif
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/LoadableProperties.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/MessageException.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/MessagesDialog.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/PreviewDialog.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/PreviewDialogAboutBox.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/ProgressListener.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/SecureResourceBundle.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/Translator.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/UserMessage.java
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/resources/CVS/Entries
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/resources/CVS/Repository
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/resources/CVS/Root
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/resources/CVS/Template
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/resources/messages.de
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/resources/messages.en
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/resources/resources.de
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/resources/resources.en
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/resources/resources.fi
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/resources/resources.fr
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/resources/resources.it
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/resources/resources.pl
+share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/resources/resources.ru
+share/java/fop-%%PORTVERSION%%/src/overview.html
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/resources/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/resources
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/Images/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/Images
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/viewer
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/svg
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/xml/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/xml
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/pdf/fonts/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/pdf/fonts
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/pdf/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/pdf
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/awt/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/awt
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/render
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/pdf
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/messaging/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/messaging
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/layout
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/analyser/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/analyser
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/image
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fonts/apps/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fonts/apps
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fonts/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fonts
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/properties/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/properties
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/pagination
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/flow
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/expr
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/fo
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/svg
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/stylesheets/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/stylesheets
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/css/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/css
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/dom
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/datatypes
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/apps/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/apps
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/fop
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/apache
+@dirrm share/java/fop-%%PORTVERSION%%/src/org/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/org
+@dirrm share/java/fop-%%PORTVERSION%%/src/codegen/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src/codegen
+@dirrm share/java/fop-%%PORTVERSION%%/src/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/src
+@dirrm share/java/fop-%%PORTVERSION%%/lib/bin/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/lib/bin
+@dirrm share/java/fop-%%PORTVERSION%%/lib/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/lib
+@dirrm share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/xml-docs/fop
+@dirrm share/java/fop-%%PORTVERSION%%/docs/xml-docs/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/xml-docs
+@dirrm share/java/fop-%%PORTVERSION%%/docs/resources/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/resources
+@dirrm share/java/fop-%%PORTVERSION%%/docs/html-docs/resources/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/html-docs/resources
+@dirrm share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/html-docs/graphics
+@dirrm share/java/fop-%%PORTVERSION%%/docs/html-docs/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/html-docs
+@dirrm share/java/fop-%%PORTVERSION%%/docs/graphics/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/graphics
+@dirrm share/java/fop-%%PORTVERSION%%/docs/examples/tests/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/examples/tests
+@dirrm share/java/fop-%%PORTVERSION%%/docs/examples/svg/test/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/examples/svg/test
+@dirrm share/java/fop-%%PORTVERSION%%/docs/examples/svg/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/examples/svg
+@dirrm share/java/fop-%%PORTVERSION%%/docs/examples/reference/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/examples/reference
+@dirrm share/java/fop-%%PORTVERSION%%/docs/examples/pagination/errors/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/examples/pagination/errors
+@dirrm share/java/fop-%%PORTVERSION%%/docs/examples/pagination/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/examples/pagination
+@dirrm share/java/fop-%%PORTVERSION%%/docs/examples/fo/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/examples/fo
+@dirrm share/java/fop-%%PORTVERSION%%/docs/examples/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/examples
+@dirrm share/java/fop-%%PORTVERSION%%/docs/design/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/design
+@dirrm share/java/fop-%%PORTVERSION%%/docs/bugtests/tests/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/bugtests/tests
+@dirrm share/java/fop-%%PORTVERSION%%/docs/bugtests/reference/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/bugtests/reference
+@dirrm share/java/fop-%%PORTVERSION%%/docs/bugtests/fo/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/bugtests/fo
+@dirrm share/java/fop-%%PORTVERSION%%/docs/bugtests/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs/bugtests
+@dirrm share/java/fop-%%PORTVERSION%%/docs/CVS
+@dirrm share/java/fop-%%PORTVERSION%%/docs
+@dirrm share/java/fop-%%PORTVERSION%%
+@unexec rmdir %D/share/java/classes 2>/dev/null || true
+@unexec rmdir %D/share/java 2>/dev/null || true
