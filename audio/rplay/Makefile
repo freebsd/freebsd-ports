@@ -7,7 +7,7 @@
 
 PORTNAME=	rplay
 PORTVERSION=	3.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://rplay.doit.org/dist/
 
@@ -37,6 +37,12 @@ post-install:
 	@${ECHO_MSG} "===>	Installing ${PREFIX}/etc/rc.d/rplayd.sh"
 	@${ECHO_MSG} "===>	startup file as ${PREFIX}/etc/rc.d/rplayd.sh.sample"
 	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/rplayd.sh ${PREFIX}/etc/rc.d/rplayd.sh.sample
+	for na in rplay.conf rplay.helpers rplay.servers rplay.hosts; do \
+		${CP} ${WRKSRC}/etc/$$na ${PREFIX}/etc/$$na.sample; \
+		if [ ! -f ${PREFIX}/etc/$$na ]; then \
+			${CP} ${WRKSRC}/etc/$$na ${PREFIX}/etc/$$na; \
+		fi; \
+	done
 .if !exists(${PREFIX}/etc/rplay.hosts)
 	@${ECHO_CMD} localhost > ${PREFIX}/etc/rplay.hosts
 .endif
