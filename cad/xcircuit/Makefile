@@ -17,7 +17,6 @@ COMMENT=	An X11 drawing program [especially for circuit schematics]
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_BZIP2=	yes
 USE_XPM=	yes
 USE_IMAKE=	yes
 USE_REINPLACE=	yes
