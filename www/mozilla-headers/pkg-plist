@@ -2041,6 +2041,7 @@ include/mozilla/xultmpl/nsIXULTemplateBuilder.h
 @dirrm include/mozilla/xpinstall
 @dirrm include/mozilla/xpconnect
 @dirrm include/mozilla/xpcom
+@dirrm include/mozilla/xmlterm
 @dirrm include/mozilla/xmlextras
 @dirrm include/mozilla/xml-rpc
 @dirrm include/mozilla/xlibrgb
