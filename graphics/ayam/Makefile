@@ -1,6 +1,6 @@
-# New ports collection makefile for: ayam
-# Date created:		19 Apr 2003
-# Whom:			Igor Pokrovsky <tiamat@comset.net>
+# New ports collection makefile for:	Ayam
+# Date created:				19 Apr 2003
+# Whom:					Igor Pokrovsky <tiamat@comset.net>
 #
 # $FreeBSD$
 #
