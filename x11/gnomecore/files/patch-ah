@@ -1,0 +1,58 @@
+--- gmenu/gmenu.c.orig	Tue Mar  2 21:19:55 1999
++++ gmenu/gmenu.c	Tue Mar  2 21:20:25 1999
+@@ -137,7 +137,7 @@
+ 
+ 	gnome_init ("GNOME menu editor", VERSION, argc, argv);
+ 
+-	SYSTEM_APPS = gnome_unconditional_datadir_file("gnome/apps");
++	SYSTEM_APPS = gnome_unconditional_datadir_file("apps");
+ 	SYSTEM_PIXMAPS = gnome_unconditional_datadir_file("pixmaps");
+ 	if (!g_file_exists(SYSTEM_APPS) || !g_file_exists(SYSTEM_PIXMAPS))
+ 		{
+--- panel/menu.c.orig	Tue Mar  2 21:21:00 1999
++++ panel/menu.c	Tue Mar  2 21:21:46 1999
+@@ -503,7 +503,7 @@
+ 	/*just load the menus from disk, don't make the widgets
+ 	  this just reads the .desktops of the top most directory
+ 	  and a level down*/
+-	char *menu = gnome_datadir_file("gnome/apps");
++	char *menu = gnome_datadir_file("apps");
+ 	if(menu)
+ 		fr_read_dir(NULL,menu,NULL,2);
+ 	g_free(menu);
+@@ -1972,7 +1972,7 @@
+ static GtkWidget *
+ create_system_menu(GtkWidget *menu, int fake_submenus, int fake)
+ {
+-	char *menu_base = gnome_unconditional_datadir_file ("gnome/apps");
++	char *menu_base = gnome_unconditional_datadir_file ("apps");
+ 	char *menudir;
+ 	
+ 	menudir = g_concat_dir_and_file (menu_base, ".");
+@@ -2877,7 +2877,7 @@
+ 	current_panel = PANEL_WIDGET(menu->button->parent);
+ 
+ 	if(!menu->menu) {
+-		char *menu_base = gnome_unconditional_datadir_file ("gnome/apps");
++		char *menu_base = gnome_unconditional_datadir_file ("apps");
+ 		char *this_menu = get_real_menu_path(menu->path,menu_base);
+ 		GSList *list = g_slist_append(NULL,this_menu);
+ 		
+@@ -2983,7 +2983,7 @@
+ 	Menu *menu;
+ 	int main_menu;
+ 
+-	char *menu_base = gnome_unconditional_datadir_file ("gnome/apps");
++	char *menu_base = gnome_unconditional_datadir_file ("apps");
+ 	char *this_menu = get_real_menu_path(arguments,menu_base);
+ 
+ 	if (!this_menu) {
+@@ -3082,7 +3082,7 @@
+ 	menu->menu = NULL;
+ 
+ 	{
+-		char *menu_base = gnome_unconditional_datadir_file ("gnome/apps");
++		char *menu_base = gnome_unconditional_datadir_file ("apps");
+ 		char *this_menu = get_real_menu_path(menu->path,menu_base);
+ 		GSList *list = g_slist_append(NULL,this_menu);
+ 		char *pixmap_name = get_pixmap(this_menu,
