@@ -1,0 +1,20 @@
+--- wmitime.c.orig      Fri Aug  6 15:12:36 1999
++++ wmitime.c   Fri Aug  6 15:10:34 1999
+@@ -281,7 +281,7 @@
+ 
+     // Compute Inet Time
+     iTime=(clk->tm_hour*3600+clk->tm_min*60+clk->tm_sec);
+-    iTime=iTime+((timezone-1)+3600);
++    iTime=iTime+((1-clk->tm_gmtoff)+3600);
+     if (clk->tm_isdst)
+         iTime-=3600;
+     iTime=(iTime*1000)/86400;
+@@ -398,7 +398,7 @@
+ 
+     // Calculate Wheel Position...
+     iTime=(clk->tm_hour*3600+clk->tm_min*60+clk->tm_sec);
+-    iTime=iTime+((timezone-1)+3600);
++    iTime=iTime+((1-clk->tm_gmtoff)+3600);
+     if (clk->tm_isdst)
+         iTime-=3600;
+     iTime=(iTime*1000)/8640;
