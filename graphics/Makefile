@@ -147,6 +147,7 @@
     SUBDIR += imlib2_loaders
     SUBDIR += imlib3d
     SUBDIR += ipe
+    SUBDIR += irit
     SUBDIR += isreal
     SUBDIR += ivtools
     SUBDIR += jasper
