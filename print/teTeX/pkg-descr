@@ -1,0 +1,67 @@
+teTeX is a complete TeX distribution for UNIX compatible systems.
+
+It features:
+
+  * TeX 3.14159, Metafont 2.718, LaTeX2e Rel. 04 <1995/12/01> PL#1,
+    dvipsk 5.58f, xdvik 18f using kpathsea 2.6, and DC Fonts 1.2;
+  * file organisation according to upcoming TeX Directory Standard;
+  * easy to install with install.sh (not needed for this port!);
+  * easy to customize with `texconfig' utility;
+  * lots of extra LaTeX packages (most of them mentioned in the
+    LaTeX Companion);
+  * much documentation: more than 100 dvi-files plus teTeX manual, 
+    teTeX FAQ and TeX FAQ;
+  * support for read-only inputs tree (it is thus possible to use 
+    an alternate destination for newly created fonts);
+  * ready for multi platform setup;
+  * fast file searching: web2c was patched to work with kpathsea-2.6
+    so that the search paths are chosen to give high performance;
+  * run-time configuration files for DVI drivers as well as TeX &
+    friends;
+  * a nice set of fonts to play with: PostScript fonts, ams, pandora, 
+    cm, dc, oldgerman -- all easily accessable by LaTeX;
+  * the whole distribution can be installed anywhere in the filesystem
+    (e.g., /usr/TeX or /usr/local/tex); you do not need to specify any 
+    environment variable as long as you keep the original structure of 
+    the package;
+  * mailing list for discussion: tetex@informatik.uni-hannover.de.
+
+
+teTeX includes the following programs:
+
+    web2c:       tex, mf, bibtex, gftopk, ...
+    dvi drivers: xdvi, dvips, dvilj, dvilj2p, dvilj4, dvilj4l
+    texinfo:     info, makeinfo, texindex, ...
+    scripts:     dvi2fax, dvihp, ps2frag (perl), xtexsh (tclX-7.3),
+                 fontimport, fontexport, texconfig, allneeded, allcm,
+                 alldc, ...
+    others:      makeindex, kpsetool, gsftopk, ps2pk, afm2tfm, ...
+
+
+teTeX contains the following (La)TeX macros:
+
+    amsfonts amslatex amstex babel dinbrief eepic eplain eplain
+    fancyheadings foiltex g-brief graphics koma-script labels mflogo
+    mfnfss minitoc myletter ntgclass pictex psfrag psnfss seminar
+    supertabular texinfo textmerg tools umlaute wasysym
+
+    + lots of one-file packages (e.g., calc.sty, rotating.sty, etc.)
+
+
+teTeX supports the following fonts:
+
+  avantgar bookman courier helvetic mathptm ncntrsbk palatino symbol
+  times utopia zapfchan zapfding cyrillic euler extracm symbols charter
+  cm concrete dc gothic latex mflogo misc pandora wasy antiqua grotesq
+  nimbus
+
+
+Thanks to Thomas Esser for the great efforts he has put into
+establishing this fine distribution of TeX & friends, and thanks,
+too, for his aid in this port.
+
+Enjoy!
+
+--
+Bernd Rosauer
+br@netland.sub.de
