@@ -1,13 +1,12 @@
---- src/Makefile.in.orig	Tue Sep 15 01:05:43 1998
-+++ src/Makefile.in	Sat Oct 10 01:06:41 1998
-@@ -25,6 +25,10 @@
- 	main.h menubar.h misc.h rxvtgrx.h screen.h scrollbar.h options.h \
-         system.h
- 
+--- src/Makefile.in.orig	Fri Oct 23 01:09:50 1998
++++ src/Makefile.in	Mon Oct 26 18:54:35 1998
+@@ -123,6 +123,9 @@
+              system.h threads.h graphics/Makefile.am graphics/Makefile.in \
+              graphics/README graphics/data graphics/grxlib.c graphics/grxlib.h \
+              graphics/qplot.c 
 +ifeq ($(PORTOBJFORMAT),elf)
 +LDFLAGS+=-Wl,-rpath,$(X11BASE)/lib
 +endif
-+
- #
- # Distribution variables
- #
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
