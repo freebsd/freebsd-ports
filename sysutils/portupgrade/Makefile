@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20011101
+PORTVERSION=	20011102
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
