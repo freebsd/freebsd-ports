@@ -28,11 +28,11 @@ ONLY_FOR_ARCHS=	i386
 # CFLAGS=-march=pentiumpro -O6 -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -foptimize-register-move -ffast-math -fdefer-pop -mfancy-math-387
 
 pre-fetch:
-.if !defined(USE_MT)
-	@${ECHO_MSG} "set USE_MT to compile with linuxthreads."
+.if !defined(WITH_THREADS)
+	@${ECHO_MSG} "set WITH_THREADS to compile with linuxthreads."
 	@${ECHO_MSG} "It would increase performance in SMP environment."
 .else
-MAKE_ENV+=	"USE_MT=yes"
+MAKE_ENV+=	"WITH_THREADS=yes"
 LIB_DEPENDS=	lthread.2:${PORTSDIR}/devel/linuxthreads
 .endif
 
