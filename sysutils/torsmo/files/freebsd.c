@@ -11,13 +11,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <kvm.h>
-#include <sys/dkstat.h>
 #include <sys/param.h>
 #include <sys/types.h>
 #include <sys/time.h>
 #include <sys/resource.h>
 #include <sys/sysctl.h>
 #include <sys/vmmeter.h>
+#include <sys/dkstat.h>
 #include <unistd.h>
 #include <sys/user.h>
 #include <sys/socket.h>
@@ -25,8 +25,6 @@
 #include <net/if_mib.h>
 #include <sys/socket.h>
 #include <ifaddrs.h>
-
-void net_init();
 
 #define GETSYSCTL(name, var) getsysctl(name, &(var), sizeof(var))
 #define KELVTOC(x)      ((x - 2732) / 10.0)
