@@ -1,0 +1,9 @@
+SLmon is a tool for monitoring system's performance. It displays results
+using nice and (hopefully) readable text-based UI. Currently monitored are: 
+
+   - CPU load (SMP is supported)
+   - memory (including swap)
+   - uptime, date and time
+   - number of logged in users
+
+WWW: http://slmon.sourceforge.net/
