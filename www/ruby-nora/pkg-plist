@@ -2,6 +2,14 @@
 %%RUBY_SITEARCHLIBDIR%%/web/writebuffer.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/web
 %%RUBY_SITELIBDIR%%/web.rb
+%%RUBY_SITELIBDIR%%/web/agent.rb
+%%RUBY_SITELIBDIR%%/web/agent/cookiemanager.rb
+%%RUBY_SITELIBDIR%%/web/agent/forms.rb
+%%RUBY_SITELIBDIR%%/web/agent/hina-di.rb
+%%RUBY_SITELIBDIR%%/web/agent/lirs.rb
+%%RUBY_SITELIBDIR%%/web/agent/passwordmanager.rb
+%%RUBY_SITELIBDIR%%/web/agent/robots.rb
+%%RUBY_SITELIBDIR%%/web/agent/table.sql
 %%RUBY_SITELIBDIR%%/web/common.rb
 %%RUBY_SITELIBDIR%%/web/controller.rb
 %%RUBY_SITELIBDIR%%/web/controller/application_old.rb
@@ -30,6 +38,7 @@
 %%RUBY_SITELIBDIR%%/web/persistent/store/gdbm.rb
 %%RUBY_SITELIBDIR%%/web/request.rb
 %%RUBY_SITELIBDIR%%/web/response.rb
+%%RUBY_SITELIBDIR%%/web/template.rb
 @dirrm %%RUBY_SITELIBDIR%%/web/persistent/store
 @dirrm %%RUBY_SITELIBDIR%%/web/persistent/serialize
 @dirrm %%RUBY_SITELIBDIR%%/web/persistent/lock
@@ -37,6 +46,7 @@
 @dirrm %%RUBY_SITELIBDIR%%/web/persistent
 @dirrm %%RUBY_SITELIBDIR%%/web/interface
 @dirrm %%RUBY_SITELIBDIR%%/web/controller
+@dirrm %%RUBY_SITELIBDIR%%/web/agent
 @dirrm %%RUBY_SITELIBDIR%%/web
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
@@ -44,13 +54,40 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bench.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/counter_persistent.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/counter_pstore.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/devlog.htm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dotsuki.lirs.gz
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dotsuki.lirs.txt
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/f
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/form.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/form2.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/form_test.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello.cgi
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello.fcgi
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello.rbx
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hina.txt
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/mailtest.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/nantenna.lirs.gz
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/nantenna.lirs.txt.gz
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/natsumican.di
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/parse_hinadi.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/parse_lirs.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/parse_lirs_gz.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/reqnora.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rget.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda/a.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda/b.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda/echo_service.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda/gateway.cgi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda/gateway.fcgi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda/gateway.rbx
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda/rinda_tuplespace.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda/test_service.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rinda_ts.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rindagw.cgi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample_agent.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample_password.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample_post.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/simplebbs/simplebbs.cgi
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/simplebbs/simplebbs.css
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/simplebbs/simplebbs/.htaccess
@@ -71,10 +108,12 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testcgi.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testfcgi.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testrbx.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/x.html
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/testapp
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/simplebbs/simplebbs/view/board
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/simplebbs/simplebbs/view
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/simplebbs/simplebbs/database
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/simplebbs/simplebbs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/simplebbs
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rinda
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
