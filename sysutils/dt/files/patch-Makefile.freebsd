@@ -1,0 +1,11 @@
+--- Makefile.freebsd.orig	2004-02-13 14:27:00.000000000 -0800
++++ Makefile.freebsd	2004-06-21 17:11:28.000000000 -0700
+@@ -74,7 +74,7 @@
+ PORG      = -O
+ 
+ AWK=	awk
+-CFLAGS= $(PORG) -DAIO -DFIFO -DMMAP -DTTY -DFreeBSD
++CFLAGS+=$(PORG) -DAIO -DFIFO -DMMAP -DTTY -DFreeBSD -D_BSD_SOURCE
+ CPP=	/usr/bin/cpp
+ CPPOPTS= 
+ LDFLAGS=

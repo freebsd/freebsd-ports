@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dt
-PORTVERSION=	14.39
+PORTVERSION=	15.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bit-net.com/~rmiller/ftp/dt/
 DISTNAME=	dt-source
