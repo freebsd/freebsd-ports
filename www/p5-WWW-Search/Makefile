@@ -1,26 +1,26 @@
 # New ports collection makefile for:    p5-WWW-Search
-# Version required:			1.017
+# Version required:			1.019
 # Date created:				June 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/04/26 07:32:20 vanilla Exp $
+# $Id: Makefile,v 1.4 1998/06/04 03:51:19 vanilla Exp $
 #
 
-DISTNAME=	WWW-Search-1.017
-PKGNAME=	p5-WWW-Search-1.017
+DISTNAME=	WWW-Search-1.019
+PKGNAME=	p5-WWW-Search-1.019
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/LWP.pm:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/5.005/LWP.pm:${PORTSDIR}/www/p5-libwww
 
 USE_PERL5=	YES
 
 MAN1PREFIX=	${PREFIX}
 MAN1=		AutoSearch.1 WebSearch.1
-MAN3PREFIX=	${PREFIX}/lib/perl5
+MAN3PREFIX=	${PREFIX}/lib/perl5/5.00501
 MAN3=		WWW::Search.3 WWW::Search::AltaVista.3 \
 		WWW::Search::AltaVista::AdvancedNews.3 \
 		WWW::Search::AltaVista::AdvancedWeb.3 \
