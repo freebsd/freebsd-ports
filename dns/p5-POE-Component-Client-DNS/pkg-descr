@@ -5,4 +5,4 @@ to respond, and it lets several DNS queries run in parallel.
 WWW: http://search.cpan.org/search?dist=POE-Component-Client-DNS
 
 -- Sergey Skvortsov
-skv@protey.ru
+skv@FreeBSD.org
