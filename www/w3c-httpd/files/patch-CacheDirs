@@ -1,0 +1,101 @@
+*** /dev/null	Tue Feb  6 11:05:04 1996
+--- README-CACHEDIRS	Tue Feb  6 13:03:37 1996
+***************
+*** 0 ****
+--- 1,12 ----
++ Patch to translate directory names in the cache from e.g.
++   /www-cache/http/www.some.where.org/
++ to
++   /www-cache/http/org/where/some/www/
++ 
++ Note that this can lead to unexpected problems, when you have two URLs
++ like <URL:http://some.where.org/www/> and <URL:http://www.some.where.org/>.
++ [This does happen, e.g. many sites out there have "some.where.org" and
++ "www.some.where.org" point to the same machine.]
++ 
++ --
++ -- 19950915, Gertjan van Oosten, gertjan@West.NL, West Consulting B.V.
+*** WWW/Daemon/Implementation/HTCache.c.orig	Fri Aug 12 12:36:11 1994
+--- Daemon/Implementation/HTCache.c	Fri Sep 15 16:25:33 1995
+***************
+*** 5,16 ****
+--- 5,19 ----
+  ** AUTHORS:
+  **	AL	Ari Luotonen	luotonen@dxcern.cern.ch
+  **	FM	Fote Macrides	macrides@sci.wfeb.edu
++ **	GJ	Gertjan van Oosten	gertjan@West.NL
+  **
+  ** HISTORY:
+  **	31 Jan 94  AL	Written from scratch on a *very* beautiful
+  **			Sunday afternoon -- seems like the spring
+  **			is already coming, yippee!
+  **	 8 Jul 94  FM	Insulate free() from _free structure element.
++ **	15 Sep 95  GJ	Translate host names in cache to (reversed)
++ **			directories.
+  **
+  ** BUGS:
+  **
+***************
+*** 243,248 ****
+--- 246,252 ----
+  {
+      char * access = NULL;
+      char * host = NULL;
++     char * revhost = NULL;
+      char * path = NULL;
+      char * cfn = NULL;
+      BOOL welcome = NO;
+***************
+*** 274,291 ****
+  	    *cur = TOLOWER(*cur);
+  	    cur++;
+  	}
+      }
+  
+      cfn = (char*)malloc(strlen(cc.cache_root) +
+  			strlen(access) +
+! 			(host ? strlen(host) : 0) +
+  			(path ? strlen(path) : 0) +
+  			(welcome ? strlen(WELCOME_FILE) : 0) + 3);
+      if (!cfn) outofmem(__FILE__, "cache_file_name");
+!     sprintf(cfn, "%s/%s/%s%s%s", cc.cache_root, access, host, path,
+  	    (welcome ? WELCOME_FILE : ""));
+  
+!     FREE(access); FREE(host); FREE(path);
+  
+      /*
+      ** This checks that the last component is not too long.
+--- 278,310 ----
+  	    *cur = TOLOWER(*cur);
+  	    cur++;
+  	}
++ 	/*
++ 	** Now transform host name from "www.some.where.org"
++ 	** to "org/where/some/www".
++ 	** [For nameless hosts, you'd want the IP address
++ 	** translated from "10.127.7.254" to "10/127/7/254",
++ 	** but that is left as an exercise.]
++ 	*/
++ 	revhost = malloc(strlen(host)+1);
++ 	revhost[0] = '\0';
++ 	while (cur = strrchr(host, '.')) {
++ 	    strcat(revhost, cur+1);
++ 	    strcat(revhost, "/");
++ 	    *cur = '\0';
++ 	}
++ 	strcat(revhost, host);
+      }
+  
+      cfn = (char*)malloc(strlen(cc.cache_root) +
+  			strlen(access) +
+! 			(revhost ? strlen(revhost) : 0) +
+  			(path ? strlen(path) : 0) +
+  			(welcome ? strlen(WELCOME_FILE) : 0) + 3);
+      if (!cfn) outofmem(__FILE__, "cache_file_name");
+!     sprintf(cfn, "%s/%s/%s%s%s", cc.cache_root, access, revhost, path,
+  	    (welcome ? WELCOME_FILE : ""));
+  
+!     FREE(access); FREE(host); FREE(revhost); FREE(path);
+  
+      /*
+      ** This checks that the last component is not too long.

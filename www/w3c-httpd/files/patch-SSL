@@ -1,0 +1,532 @@
+============================================================================
+README:
+============================================================================
+
+OVERVIEW
+
+	This SSL tunneling patch for CERN httpd adds support for the
+	CONNECT method used by SSL enhanced clients to open a secure
+	tunnel through the proxy.
+
+THEORY
+
+	The CONNECT method takes
+
+		hostname:port
+
+	as its argument, and the request is in the form of the
+	HTTP/1.0 request (that is, the string "HTTP/1.0" and the
+	request headers must follow the request).  Example:
+
+		CONNECT home1.netscape.com:443 HTTP/1.0<crlf>
+		<crlf>
+
+	The response will be either a normal HTTP/1.0 error response
+	(in case the host is unreachable for one reason or another),
+	or in case of success:
+
+		HTTP/1.0 200 Connection established<crlf>
+		<crlf>
+
+	after which the connection is open, and the client may start
+	the SSL handshake.
+
+	This is a superior approach because it allows the HTTP request
+	headers to be passed, making it possible to do authentication
+	on the proxy, and allows any other future extension.
+
+CONFIGURATION
+
+	Because the configuration of CERN httpd is based on URL
+	patterns, for ease of configuration, the hostname:port
+	argument in automatically transformed into an internal
+	representation:
+
+		connect://hostname:port
+
+	connect:// URLs do not exist in real life -- this is just a
+	notion in the configuration file to make life easier!!
+
+ENABLING
+
+	SSL tunneling is disabled by default.  To enable it for HTTPS
+	(uses the port 443), add the following line in the
+	configuration file:
+
+		Pass connect://*:443
+
+	To enable secure news (SNEWS, uses port 563) tunneling, add
+	line:
+
+		Pass connect://*:563
+
+	DO NOT use trailing slashes.  DO NOT allow all connect://
+	requests, the following is unsafe:
+
+		Pass connect://*
+
+PROTECTION
+
+	IP address protection should always be used in connection with
+	SSL tunneling.  To create a protection template P which allows
+	access only for hosts with IP addresses 198.93.*.* and
+	198.95.*.*, use the template:
+
+		Protection P {
+		    CONNECT-Mask @(198.93.*.*, 198.95.*.*)
+		}
+
+	Note that this only declares a template; to actually apply the
+	protection use the Protect rule, AFTER the Protection
+	declaration, but BEFORE the Pass rule:
+
+		Protect connect://* P
+
+	Or, to collect them all together:
+
+		Protection P {
+		    CONNECT-Mask @(198.93.*.*, 198.95.*.*)
+		}
+		Protect	connect://* P
+		Pass connect://*:443
+		Pass connect://*:563
+
+	The Protection binding to name P may be left out in case it's
+	only used once, and the protection configuration may be
+	inlined in place of the protection name in Protect rule:
+
+		Protect connect://* {
+		    CONNECT-Mask @(198.93.*.*, 198.95.*.*)
+		}
+		Pass connect://*:443
+		Pass connect://*:563
+
+	For a better insight of the CERN httpd's configuration system,
+	please refer to the online manual:
+
+		http://www.w3.org/httpd/
+
+PROXY AUTHENTICATION
+
+	This patch does not enable proxy authentication.  Proxy
+	authentication is not supported by the CERN proxy.  Proxy
+	authentication uses the status code 407, and headers
+	Proxy-Authenticate and Proxy-Authorization.
+
+	You MUST NOT try to use the Protect directive to turn on
+	normal user authentication on (the one that uses the 401
+	status code, and WWW-Authenticate and Authorization headers).
+	That is an incorrect way to do authentication for the proxy,
+	and causes compatibility and security problems.
+
+CHAINING PROXIES
+
+	This patch does not enable chaining proxies to do SSL
+	tunneling.  More specifically, the CERN proxy with this patch
+	IS able to act as the OUTMOST proxy in the chain, but it
+	doesn't work if it is the inner proxy that has to speak to
+	another, outer proxy to establish a secure connection through
+	that.  Therefore, a combination such as inner Netscape Proxy
+	and outer CERN httpd would work, but not vice versa.
+
+THE NETSCAPE PROXY SERVER
+
+	The Netscape Proxy Server is a commercially supported proxy
+	server available from Netscape Communications Corporation.  In
+	addition to it's unique, more efficient architecture, it
+	natively supports proxy authentication, proxy chaining, SSL
+	tunneling and HTTPS proxying, enabling also clients without
+	native SSL support to use HTTPS.
+
+AUTHOR
+	Ari Luotonen, Netscape Communications Corporation, 1995
+	<ari@netscape.com>
+
+DISCLAIMER
+
+	I do not have any official connection to the CERN httpd
+	development anymore.  I have left the CERN WWW project in
+	summer '94.  I do not provide any support for this software or
+	this patch.  For general CERN httpd support, please contact:
+
+		httpd@w3.org
+
+	THIS PATCH IS PROVIDED IN GOOD FAITH, AS IS.  I AND NETSCAPE
+	MAKE NO CLAIMS TO ITS SUITABILITY FOR ANY PARTICULAR PURPOSE,
+	AND I AND NETSCAPE PROVIDE ABSOLUTELY NO WARRANTY OF ANY KIND
+	WITH RESPECT TO THIS PATCH OR THIS SOFTWARE.  THE ENTIRE RISK
+	AS TO THE QUALITY AND PERFORMANCE OF THIS SOFTWARE/PATCH IS
+	WITH THE USER.  IN NO EVENT WILL I OR NETSCAPE BE LIABLE TO
+	ANYONE FOR ANY DAMAGES ARISING OUT THE USE OF THIS
+	SOFTWARE/PATCH, INCLUDING, WITHOUT LIMITATION, DAMAGES
+	RESULTING FROM LOST DATA OR LOST PROFITS, OR FOR ANY SPECIAL,
+	INCIDENTAL OR CONSEQUENTIAL DAMAGES.
+
+
+============================================================================
+PATCH TO WWW COMMON LIBRARY 2.17 AND CERN HTTPD 3.0:
+============================================================================
+
+*** Library/Implementation/HTAccess.c.orig	Thu Sep 29 04:53:28 1994
+--- Library/Implementation/HTAccess.c	Tue May  9 13:16:50 1995
+***************
+*** 146,151 ****
+--- 146,152 ----
+      "SHOWMETHOD",
+      "LINK",
+      "UNLINK",
++     "CONNECT",
+      NULL
+  };
+  
+*** Library/Implementation/HTAccess.h.orig	Sun Sep 25 07:15:14 1994
+--- Library/Implementation/HTAccess.h	Tue May  9 13:15:47 1995
+***************
+*** 60,65 ****
+--- 60,66 ----
+          METHOD_SHOWMETHOD,
+          METHOD_LINK,
+          METHOD_UNLINK,
++ 	METHOD_CONNECT,
+          MAX_METHODS
+  } HTMethod;
+  /*
+*** Daemon/Implementation/HTAAProt.h.orig	Sun Sep 25 06:55:47 1994
+--- Daemon/Implementation/HTAAProt.h	Mon May 15 21:05:40 1995
+***************
+*** 52,57 ****
+--- 52,58 ----
+      GroupDef *    put_mask;     /*  - " - (PUT)                         */
+      GroupDef *    post_mask;    /*  - " - (POST)                        */
+      GroupDef *    delete_mask;  /*  - " - (DELETE)                      */
++     GroupDef *    connect_mask;	/*  - " - (CONNECT)			*/
+      GroupDef *    gen_mask;     /* General mask (used when needed but   */
+                                  /* other masks not set).                */
+      HTList *      valid_schemes;/* Valid authentication schemes         */
+*** Daemon/Implementation/HTAAProt.c.orig	Sun Sep 25 11:53:03 1994
+--- Daemon/Implementation/HTAAProt.c	Mon May 15 21:18:05 1995
+***************
+*** 356,361 ****
+--- 356,373 ----
+  		    }
+  		} /* if "Post-Mask" */
+  
++ 		else if (0==strncasecomp(fieldname, "connect", 7)) {
++ 		    prot->connect_mask = HTAA_parseGroupDef(fp);
++ 		    lex_item=LEX_REC_SEP; /*groupdef parser read this already*/
++ 		    if (TRACE) {
++ 			if (prot->connect_mask) {
++ 			    fprintf(stderr, "CONNECT-Mask\n");
++ 			    HTAA_printGroupDef(prot->connect_mask);
++ 			}
++ 			else fprintf(stderr,"SYNTAX ERROR parsing CONNECT-Mask\n");
++ 		    }
++ 		} /* if "Connect-Mask" */
++ 
+  		else if (0==strncasecomp(fieldname, "delete", 6)) {
+  		    prot->delete_mask = HTAA_parseGroupDef(fp);
+  		    lex_item=LEX_REC_SEP; /*groupdef parser read this already*/
+*** Daemon/Implementation/HTAAServ.c.orig	Sun Sep 25 06:52:53 1994
+--- Daemon/Implementation/HTAAServ.c	Mon May 15 21:06:18 1995
+***************
+*** 208,213 ****
+--- 208,215 ----
+  	    mask = prot->post_mask;
+  	else if (!strcmp(method_name, "DELETE"))
+  	    mask = prot->delete_mask;
++ 	else if (!strcmp(method_name, "CONNECT"))
++ 	    mask = prot->connect_mask;
+  	if (!mask)
+  	    mask = prot->gen_mask;
+      }
+*** Daemon/Implementation/HTRequest.c.orig	Fri Aug 12 03:36:29 1994
+--- Daemon/Implementation/HTRequest.c	Mon May 15 21:32:44 1995
+***************
+*** 1006,1011 ****
+--- 1006,1028 ----
+      }
+  
+      /*
++      * SSL tunneling -- make host:port appear as connect://host:port
++      * to make it work better with the configuration system.
++      * Ari Luotonen <ari@netscape.com> May 1995
++      */
++     if (req->method == METHOD_CONNECT && HTReqArg) {
++ 	char *tmp = HTReqArg;
++ 	HTReqArg = NULL;
++ 	StrAllocCopy(HTReqArg, "connect://");
++ 	StrAllocCat(HTReqArg, tmp);
++ 	free(tmp);
++ 	if ((tmp = strchr(HTReqArg + 10, ':'))) {
++ 	    for (tmp++; *tmp && isdigit(*tmp); tmp++);
++ 	    *tmp = '\0';
++ 	}
++     }
++ 
++     /*
+      ** Check that the third argument actually is a valid
+      ** client protocol specifier (if it is not we might wait
+      ** for an eternity for the rest of an HTTP1 request when it
+*** Daemon/Implementation/HTDaemon.c.orig	Mon Sep 26 07:23:00 1994
+--- Daemon/Implementation/HTDaemon.c	Mon Jun 12 15:58:58 1995
+***************
+*** 65,70 ****
+--- 65,71 ----
+  **			defined via "ServerRoot" in the configuration file.
+  **			Commented out dead extern declarations.
+  **	 8 Jul 94  FM	Insulate free() from _free structure element.
++ **	   May 95  AL   SSL tunneling support
+  */
+  
+  /* (c) CERN WorldWideWeb project 1990-1992. See Copyright.html for details */
+***************
+*** 162,167 ****
+--- 163,173 ----
+  #include <sys/param.h>
+  #include <errno.h>
+  
++ #if !defined(__osf__) && !defined(AIX) && !defined(_HPUX_SOURCE) && \
++     !defined(BSDI) && !defined(__linux)
++ #include <sys/filio.h>
++ #endif
++ 
+  #ifndef SIGCLD
+  #ifdef SIGCHLD
+  #define SIGCLD SIGCHLD
+***************
+*** 376,381 ****
+--- 382,602 ----
+  
+  
+  
++ /*
++  * SSL tunneling support by Ari Luotonen <ari@netscape.com>, May 1995
++  */
++ 
++ 
++ #define SSL_PROXY_BUFSIZE 4096
++ 
++ 
++ int shove_buffer ARGS4(int,	sd,
++ 		       char *,	b,
++ 		       int *,	i,
++ 		       int *,	c)
++ {
++     int n = write(sd, &b[*i], *c);
++ 
++     if (n > 0)
++       {
++ 	  *i += n;
++ 	  *c -= n;
++       }
++     else if (n == -1 && (errno == EWOULDBLOCK || errno == EINTR))
++       {
++ 	  n = 0;
++       }
++ 
++     return n;
++ }
++ 
++ int drag_buffer ARGS4(int,	sd,
++ 		      char *,	b,
++ 		      int *,	i,
++ 		      int *,	c)
++ {
++     int n = read(sd, b, SSL_PROXY_BUFSIZE);
++ 
++     *i = *c = 0;
++ 
++     if (n > 0)
++       {
++ 	  *c = n;
++       }
++     else if (n == -1 && errno != EWOULDBLOCK && errno != EINTR)
++       {
++ 	  return 0;
++       }
++     return n;
++ }
++ 
++ 
++ int ssl_proxy_pump ARGS3(int,		sd1,
++ 			 int,		sd2,
++ 			 char *,	initial)
++ {
++     char b1[SSL_PROXY_BUFSIZE];
++     char b2[SSL_PROXY_BUFSIZE];
++     int i1=0, i2=0;		/* Buffer start index */
++     int c1=0, c2=0;		/* Buffer data counter */
++     int r1=0, r2=0;		/* Socket read ready */
++     int w1=0, w2=0;		/* Socket write ready */
++     int closed1=0, closed2=0;	/* Socket close */
++     int n_fds = ((sd1 > sd2) ? sd1 : sd2) + 1;
++     fd_set rd_fds, wr_fds;
++     int status;
++ 
++     memset(&rd_fds, 0, sizeof(rd_fds));
++     memset(&wr_fds, 0, sizeof(wr_fds));
++ 
++     if (initial && *initial) {
++ 	strcpy(b1, initial);
++ 	c1 = strlen(initial);
++     }
++ 
++     while (1) {
++ 	FD_SET(sd1, &rd_fds);
++ 	FD_SET(sd2, &rd_fds);
++ 	FD_SET(sd1, &wr_fds);
++ 	FD_SET(sd2, &wr_fds);
++ 
++ 	if (!(status = select(n_fds, &rd_fds, &wr_fds, NULL, NULL)))
++ 	  {
++ 	      break;
++ 	  }
++ 	else if (status == -1)
++ 	  {
++ 	      if (errno == EINTR)
++ 		  continue;
++ 	      else
++ 		  break;
++ 	  }
++ 
++ 	r1 = FD_ISSET(sd1, &rd_fds);
++ 	r2 = FD_ISSET(sd2, &rd_fds);
++ 	w1 = FD_ISSET(sd1, &wr_fds);
++ 	w2 = FD_ISSET(sd2, &wr_fds);
++ 
++ 	if (w1 && c1 > 0)
++ 	  {
++ 	      if (shove_buffer(sd1, b1, &i1, &c1) == -1)
++ 		  closed1 = 1;
++ 	  }
++ 	if (w2 && c2 > 0)
++ 	  {
++ 	      if (shove_buffer(sd2, b2, &i2, &c2) == -1)
++ 		    closed2 = 1;
++ 	  }
++ 	if (r1 && !c2)
++ 	  {
++ 	      if (!drag_buffer(sd1, b2, &i2, &c2))
++ 		  closed1 = 1;
++ 	  }
++ 	if (r2 && !c1)
++ 	  {
++ 	      if (!drag_buffer(sd2, b1, &i1, &c1))
++ 		  closed2 = 1;
++ 	  }
++ 
++ 	if (closed1 || closed2)
++ 	  {
++ 	      break;
++ 	  }
++     }
++ 
++     NETCLOSE(sd1);
++     NETCLOSE(sd2);
++ 
++     return 1;
++ }
++ 
++ 
++ BOOL ssl_proxy_get_addr ARGS3(char *,	arg,
++ 			      char **,	host,
++ 			      int *,	port)
++ {
++     char *p;
++ 
++     if (arg && host && port && !strncmp(arg, "connect://", 10)) {
++ 
++ 	*host = NULL;
++ 	StrAllocCopy(*host, arg + 10);
++ 
++ 	if ((p = strchr(*host, ':'))) {
++ 	    *p++ = '\0';
++ 	    if ((*port = atoi(p)) > 0)
++ 		return YES;
++ 	}
++     }
++     return NO;
++ }
++ 
++ 
++ int ssl_proxy_connect ARGS3(HTRequest *,	req,
++ 			    char *,		host,
++ 			    int,		port)
++ {
++     struct sockaddr_in sa;
++     struct hostent *hp;
++     int sd, status, one=1;
++ 
++     memset(&sa, 0, sizeof(sa));
++     sa.sin_family = AF_INET;
++     sa.sin_port = htons(port);
++ 
++     if (isdigit(*host))
++ 	sa.sin_addr.s_addr = inet_addr(host);
++     else if ((hp = gethostbyname(host)))
++ 	memcpy(&sa.sin_addr, hp->h_addr, hp->h_length);
++     else {
++ 	HTLoadError(req, 500, "Unable to locate host");
++ 	return -1;
++     }
++ 
++     if ((sd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)) == -1) {
++ 	HTLoadError(req, 500, "Can't create socket");
++ 	return -1;
++     }
++ 
++     if ((status = connect(sd, (struct sockaddr *)&sa, sizeof(sa))) == -1) {
++ 	HTLoadError(req, 500, "Can't connect to host");
++ 	return -1;
++     }
++ 
++     if ((status = ioctl(sd, FIONBIO, &one)) == -1) {
++ 	HTLoadError(req, 500, "Can't make socket non-blocking");
++ 	return -1;
++     }
++ 
++     return sd;
++ }
++ 
++ 
++ 
++ BOOL ssl_proxy_request ARGS2(char *, arg, HTRequest *, req)
++ {
++     char *host = NULL;
++     int port = 0;
++     int sd, one=1;
++ 
++     CTRACE(stderr, "Handling CONNECT %s\n", arg);
++ 
++     if (!ssl_proxy_get_addr(arg, &host, &port)) {
++ 	HTLoadError(req, 400, "Bad CONNECT request address");
++ 	return NO;
++     }
++ 
++     if ((sd = ssl_proxy_connect(req, host, port)) < 0)
++ 	return NO;
++ 
++     if (ioctl(HTSoc, FIONBIO, &one) < -1) {
++ 	HTLoadError(req, 500, "Can't make client socket non-blocking");
++ 	return NO;
++     }
++ 
++     ssl_proxy_pump(HTSoc, sd, "HTTP/1.0 200 Connection established\r\n\r\n");
++     return YES;
++ }
+  
+  
+  #if defined(Mips)
+***************
+*** 1832,1837 ****
+--- 2053,2062 ----
+              }
+              FREE(cfn);
+          }
++ 	else if (req->method==METHOD_CONNECT) {
++ 	    /* SSL tunneling by Ari Luotonen <ari@netscape.com>, May 1995 */
++ 	    ssl_proxy_request(HTReqArg, req);
++ 	}
+          else {
+              /* Normal retrieve with no caching */
+              CTRACE(stderr, "No caching.. %s\n",
