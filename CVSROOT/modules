@@ -8281,6 +8281,7 @@ pear-Structures_DataGrid	ports/devel/pear-Structures_DataGrid
 pear-System_Command	ports/devel/pear-System_Command
 pear-Text_Figlet	ports/misc/pear-Text_Figlet
 pear-Text_Password	ports/security/pear-Text_Password
+pear-Text_Wiki	ports/www/pear-Text_Wiki
 pear-Translation2	ports/sysutils/pear-Translation2
 pear-VFS	ports/devel/pear-VFS
 pear-Validate	ports/devel/pear-Validate
