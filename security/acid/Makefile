@@ -13,8 +13,7 @@ MASTER_SITES=	http://www.andrew.cmu.edu/~rdanyliw/snort/
 MAINTAINER=	possamai@xs4all.nl
 COMMENT=	Analysis Console for Intrusion Databases (ACID) with Snort and MySQL
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql323-server \
-		${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort \
+RUN_DEPENDS=	${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort \
 		${LOCALBASE}/www/data.default/php/adodb:${PORTSDIR}/databases/adodb
 
 .if defined(WITH_APACHE2)
@@ -22,6 +21,8 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
 .else
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 .endif
+
+USE_MYSQL=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
