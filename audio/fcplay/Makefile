@@ -16,14 +16,18 @@ MAINTAINER=	anders@fix.no
 
 BUILD_DEPENDS=	${LOCALBASE}/include/sidplay/compconf.h:${PORTSDIR}/audio/libsidplay
 
-CXXFLAGS+=	-I${PREFIX}/include -DHAVE_FREEBSD -DHAVE_MACHINE_SOUNDCARD_H
-GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/fcplay-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-post-install:
-	${INSTALL} -d -m 555 ${PREFIX}/share/doc/fcplay
-	@${INSTALL_DATA} ${WRKSRC}/ABOUT ${PREFIX}/share/doc/fcplay/
-	@${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/fcplay/
-	@${INSTALL_DATA} ${WRKSRC}/POINTER ${PREFIX}/share/doc/fcplay/
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CXXFLAGS+=	-I${LOCALBASE}/include
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/fcplay ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/fcplay
+	${INSTALL_DATA} ${WRKSRC}/ABOUT ${PREFIX}/share/doc/fcplay
+	${INSTALL_DATA} ${WRKSRC}/POINTER ${PREFIX}/share/doc/fcplay
+.endif
 
 .include <bsd.port.mk>
