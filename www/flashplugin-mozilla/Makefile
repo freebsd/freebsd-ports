@@ -9,7 +9,7 @@ PORTNAME?=	flashplugin-mozilla
 PORTVERSION=	0.4.10
 PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	http://www.swift-tools.com/Flash/
+MASTER_SITES=	http://www.swift-tools.net/Flash/
 DISTNAME=	flash-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
