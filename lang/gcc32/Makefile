@@ -6,35 +6,36 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-07-26
+SNAPDATE=	2002-09-02
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2
 PORTREVISION=	${SNAPVER}
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
 		ftp://gcc.gnu.org/pub/%SUBDIR%/
-MASTER_SITE_SUBDIR=	gcc/releases/gcc-3.1.1
-DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
-		gcc-g++-${PORTVERSION}${EXTRACT_SUFX} \
-		gcc-g77-${PORTVERSION}${EXTRACT_SUFX} \
-		gcc-java-${PORTVERSION}${EXTRACT_SUFX} \
-		gcc-objc-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITE_SUBDIR=	gcc/snapshots/${SNAPDATE}
+DISTFILES=	\
+		gcc-core-${SNAPVER}${EXTRACT_SUFX} \
+		gcc-g++-${SNAPVER}${EXTRACT_SUFX} \
+		gcc-g77-${SNAPVER}${EXTRACT_SUFX} \
+		gcc-java-${SNAPVER}${EXTRACT_SUFX} \
+		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
 
 PATCH_SITES=	ftp://relay.nuxi.com/obrien/
-PATCHFILES=	port_gcc31_${SNAPDATE}.diff
+PATCHFILES=	port_gcc32_${SNAPDATE}.diff
 
 MAINTAINER=	obrien@FreeBSD.org
 
 NO_CDROM=	'dated material'
-LATEST_LINK=	gcc31
+LATEST_LINK=	gcc32
 
 USE_BZIP2=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
-# do not require Gcc 3.1 to compile -- or we have an infinate loop on RELENG_4.
+# do not require Gcc 3.2 to compile -- or we have an infinate loop on RELENG_4.
 USE_GCC=	X
 NOMANCOMPRESS=	yes	# to hard to deal with differences on 5-cur and releng4
 
@@ -43,13 +44,13 @@ NOMANCOMPRESS=	yes	# to hard to deal with differences on 5-cur and releng4
 .if ${PORTOBJFORMAT} == "aout"
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .else
-CONFIGURE_TARGET?=	${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
 #GCC_REV=	${PORTVERSION:C/\.0$//}
-GCC_REV=	3.1.1
+GCC_REV=	3.2.1
 #SRCDIR=		${WRKDIR}/gcc-${GCC_REV}
-SRCDIR=		${WRKDIR}/gcc-${PORTVERSION}
+SRCDIR=		${WRKDIR}/gcc-${SNAPVER}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
 PLIST_SUB=	GCC_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}  \
@@ -59,9 +60,9 @@ USE_GMAKE=	yes
 USE_BISON=	yes
 CONFIGURE_ARGS=	--disable-nls --with-gnu-as --with-gnu-ld \
 		--with-gxx-include-dir=${TARGLIB}/include/g++-v3
-#CONFIGURE_ARGS+=	--program-suffix=31
-#	Java
+#CONFIGURE_ARGS+=	--program-suffix=32
 CONFIGURE_ARGS+=	--with-system-zlib --includedir=${TARGLIB}/include/Java
+CONFIGURE_ARGS+=	--disable-libgcj	# does not bootstrap now
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+= --enable-shared
@@ -74,9 +75,9 @@ CONFIGURE_ARGS+= --enable-threads
 CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
-MAN1=		cpp31.1 g++31.1 g77-31.1 gcc31.1 gcov31.1 \
-		gcj31.1 gcjh31.1 gij.1 \
-		jcf-dump31.1 jv-scan31.1 jv-convert.1
+MAN1=		cpp32.1 g++32.1 g77-32.1 gcc32.1 gcov32.1 \
+		gcj32.1 gcjh32.1 gij.1 rmic.1 rmiregistry.1 \
+		jcf-dump32.1 jv-scan32.1 jv-convert.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 pre-fetch:
@@ -102,22 +103,21 @@ post-install:
 	@(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ \
 		${PREFIX}/bin/g++filt ${PREFIX}/bin/g77 ${PREFIX}/bin/gcov \
 		${PREFIX}/bin/${CONFIGURE_TARGET}-gcc \
-		${TARGLIB}/cc1 ${TARGLIB}/cc1obj ${TARGLIB}/cc1plus \
 		${TARGLIB}/cpp0 ${TARGLIB}/collect2 ${TARGLIB}/f771 ; \
 	do \
 		strip $$prog ; \
 	done )
 .for file in gcc g++ cpp g++filt gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh jv-scan jcf-dump jar grepjar
-	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}31
+	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}32
 	( ${TEST} ! -e ${PREFIX}/man/man1/${file}.1 \
 		|| ${MV} -f ${PREFIX}/man/man1/${file}.1 \
-		${PREFIX}/man/man1/${file}31.1 )
+		${PREFIX}/man/man1/${file}32.1 )
 .endfor
 .for file in g77
-	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}-31
+	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}-32
 	( ${TEST} ! -e ${PREFIX}/man/man1/${file}.1 \
 		|| ${MV} -f ${PREFIX}/man/man1/${file}.1 \
-		${PREFIX}/man/man1/${file}-31.1 )
+		${PREFIX}/man/man1/${file}-32.1 )
 .endfor
 	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${PORTVERSION}
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
@@ -127,7 +127,7 @@ post-install:
 .endfor
 	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
 	# Java
-	cd ${PREFIX}/lib ; ${MV} -f libgcj.* ${TARGLIB}
+	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
 # I am sick and tired of this .info shit, makeinfo --no-split isn't working
