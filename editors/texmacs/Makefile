@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	texmacs
-PORTVERSION=	1.0.2.5
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	editors print
 MASTER_SITES=	ftp://ftp.texmacs.org/pub/TeXmacs/targz/ \
 		ftp://ftp.texmacs.org/pub/TeXmacs/old-targz/
-DISTNAME=	TeXmacs-${PORTVERSION}-src
+DISTNAME=	TeXmacs-${PORTVERSION}-R2-src
 
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	"A free WYSIWYG scientific text editor."
@@ -19,8 +18,6 @@ COMMENT=	"A free WYSIWYG scientific text editor."
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile \
 		tex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX
-
-WRKSRC=		${WRKDIR}/TeXmacs-${PORTVERSION}-src
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
