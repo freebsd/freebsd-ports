@@ -51,6 +51,8 @@ AP_LIBEXEC?=	${PREFIX}/libexec/apache
 PERL_CONFIGURE= yes
 CONFIGURE_ENV=	PREFIX=${PREFIX}
 
+ONLY_FOR_ARCHS= i386
+
 pre-fetch:
 	@${ECHO}
 	@${ECHO} "*****************************************************"
