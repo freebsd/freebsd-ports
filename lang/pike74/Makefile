@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pike74
-PORTVERSION=	7.4.13
-PORTREVISION=	2
+PORTVERSION=	7.4.25
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
@@ -34,8 +33,6 @@ MAN1=		pike.1
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 
 WANT_MESA=	yes
-WANT_GTK=	yes
-WANT_GNOME=	yes
 
 GNU_CONFIGURE=  yes
 
@@ -50,7 +47,6 @@ CONFIGURE_ARGS+= --without-debug \
 		 --with-oob \
 		 --with-poll \
 		 --with-max-fd=60000 \
-		 --without-perl \
 		 --with-gmp \
 		 --with-zlib \
 		 --with-threads \
@@ -60,6 +56,10 @@ CONFIGURE_ARGS+= --without-debug \
 		 --with-gdbm \
 		 --without-java \
 		 --without-ssleay \
+		 --without-GTK \
+		 --without-gnome \
+		 --without-glade \
+		 --without-libglade-config \
 		 --prefix=${PREFIX}
 
 .include <bsd.port.pre.mk>
@@ -69,6 +69,14 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 # FreeBSD 5.0 Needs to have libgmp port to support gmp.
 .if ${OSVERSION} >= 500000
 LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
+.endif
+
+# Allow building Embeded perl when >= 5.6
+.if ${PERL_LEVEL} > 500600
+CONFIGURE_ARGS+= --with-perl
+USE_PERL5=	YES
+.else
+CONFIGURE_ARGS+= --without-perl
 .endif
 
 .if exists(${LOCALBASE}/lib/libavcodec.so.0)
@@ -85,6 +93,14 @@ WITH_FREETYPE=	yes
 
 .if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.10)
 WITH_MYSQL=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.12)
+WITH_MYSQL40=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.14)
+WITH_MYSQL41=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libpq.so.3)
@@ -177,6 +193,20 @@ CONFIGURE_ARGS+= --with-mysql=${PREFIX}
 CONFIGURE_ARGS+= --without-mysql
 .endif
 
+.if defined(WITH_MYSQL40)
+LIB_DEPENDS+=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
+CONFIGURE_ARGS+= --with-mysql=${PREFIX}
+.else
+CONFIGURE_ARGS+= --without-mysql
+.endif
+
+.if defined(WITH_MYSQL41)
+LIB_DEPENDS+=	mysqlclient.14:${PORTSDIR}/databases/mysql41-client
+CONFIGURE_ARGS+= --with-mysql=${PREFIX}
+.else
+CONFIGURE_ARGS+= --without-mysql
+.endif
+
 .if defined(WITH_POSTGRES)
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+= --with-pgsql=${PREFIX}
@@ -244,21 +274,12 @@ CONFIGURE_ARGS+= --with-GL --with-GLUT
 CONFIGURE_ARGS+= --without-GL --without-GLUT
 .endif
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
-USE_GTK=	yes
-USE_GLI=	yes
-CONFIGURE_ARGS+= --with-GTK --with-gnome --with-glade --with-libglade-config=${X11BASE}/bin/libglade-config
-.else
-CONFIGURE_ARGS+= --without-GTK --without-gnome --without-glade --without-libglade-config
-.endif
-
-.if (${MACHINE} == "i386")
-CONFIGURE_ARGS+= --with-poll
-.else
-# Alpha seems to have problems with poll() with pike... :/
-CONFIGURE_ARGS+= --without-poll
-.endif
+#.if (${MACHINE} == "i386")
+#CONFIGURE_ARGS+= --with-poll
+#.else
+## Alpha seems to have problems with poll() with pike... :/
+#CONFIGURE_ARGS+= --without-poll
+#.endif
 
 USE_GMAKE=	yes
 
@@ -277,7 +298,13 @@ pre-everything::
 	@${ECHO_MSG} "You can enable _Image_FreeType support by defining WITH_FREETYPE."
 .endif
 .if !defined(WITH_MYSQL)
-	@${ECHO_MSG} "You can enable MySQL support by defining WITH_MYSQL."
+	@${ECHO_MSG} "You can enable MySQL 3.23 support by defining WITH_MYSQL."
+.endif
+.if !defined(WITH_MYSQL40)
+	@${ECHO_MSG} "You can enable MySQL 4.0 support by defining WITH_MYSQL40."
+.endif
+.if !defined(WITH_MYSQL41)
+	@${ECHO_MSG} "You can enable MySQL 4.1 support by defining WITH_MYSQL41."
 .endif
 .if !defined(WITH_POSTGRES)
 	@${ECHO_MSG} "You can enable PostGres support by defining WITH_POSTGRES."
@@ -298,7 +325,7 @@ pre-everything::
 .endif
 .if !defined(WITH_MOST)
 	@${ECHO_MSG} "You can enable most of the features here except Sane,"
-	@${ECHO_MSG} "MesaGLi, GNOME and SQL support by defining WITH_MOST."
+	@${ECHO_MSG} "MesaGLi and SQL support by defining WITH_MOST."
 .endif
 .if !defined(WITH_SVG2)
 	@${ECHO_MSG} "You can enable SVG2 image support by "
