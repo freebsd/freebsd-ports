@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log
-PORTVERSION=	1.6.6
+PORTVERSION=	1.6.7
 CATEGORIES=	sysutils www
 
 MAINTAINER=	ports@FreeBSD.org
