@@ -1,0 +1,6 @@
+bin/tenebrae
+%%DATADIR%%/tenebrae/Pak0.pak
+@dirrm %%DATADIR%%/tenebrae
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/Tenebrae_Readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,80 @@
+--- linux/Makefile.i386linux.orig	Sun Mar 14 15:07:08 2004
++++ linux/Makefile.i386linux	Sun Mar 14 17:54:02 2004
+@@ -18,30 +18,30 @@
+ 
+ MOUNT_DIR     = ../
+ 
+-MASTER_DIR    = /usr/local/share/games/quake
++MASTER_DIR    = ${DATADIR}
+ 
+ BUILD_DEBUG_DIR = debug$(ARCH)$(GLIBC)
+ BUILD_RELEASE_DIR = release$(ARCH)$(GLIBC)
+ 
+-LEX           = /usr/bin/flex -i -Cfr
+-CC            = /usr/bin/gcc
++LEX           ?= /usr/bin/flex -i -Cfr
++#CC            = /usr/bin/gcc
+ 
+-X11_LIBS      = -L/usr/X11R6/lib -lpthread -lX11 -lXext -lXxf86dga -lXxf86vm
++X11_LIBS      = -L${X11BASE}/lib ${PTHREAD_LIBS} -lX11 -lXext -lXxf86dga -lXxf86vm
+ 
+ # to enable OpenGL code in source 
+-OPENGL_CFLAGS = -D__glx__ -DGLQUAKE
++OPENGL_CFLAGS = -D__glx__ -DGLQUAKE -I${X11BASE}/include
+ OPENGL_LIBS   = -lGL -lGLU
+ 
+-PNG_LIBS      = -lpng -lz
++PNG_LIBS      = -L${LOCALBASE}/lib -lpng -lz
+ 
+ #OPENAL_LIBS   = -lopenal 
+-#OPENAL_CFLAGS = -DOPENAL -I/usr/local/include/AL
++#OPENAL_CFLAGS = -DOPENAL -I${LOCALBASE}/include/AL
+ 
+-BASE_CFLAGS   = -DBASEDIR="$(MASTER_DIR)" -DUSERPREF_DIR $(OPENGL_CFLAGS) $(OPENAL_CFLAGS) -I$(MOUNT_DIR)
+-RELEASE_CFLAGS = $(BASE_CFLAGS) -mpentiumpro -O6 -ffast-math -funroll-loops \
++BASE_CFLAGS   = -DBASEDIR="$(MASTER_DIR)" -DUSERPREF_DIR $(OPENGL_CFLAGS) $(OPENAL_CFLAGS) -I$(MOUNT_DIR) -I${LOCALBASE}/include `${SDL_CONFIG} --cflags`
++RELEASE_CFLAGS = $(BASE_CFLAGS) -ffast-math -funroll-loops \
+ 	-fomit-frame-pointer -fexpensive-optimizations
+ DEBUG_CFLAGS  = $(BASE_CFLAGS) -g 
+-LDFLAGS       = -lm -ldl $(X11_LIBS) $(OPENGL_LIBS) $(PNG_LIBS) $(OPENAL_LIBS) 
++LDFLAGS       = -lm $(X11_LIBS) $(OPENGL_LIBS) $(PNG_LIBS) $(OPENAL_LIBS) `${SDL_CONFIG} --libs`
+ 
+ DO_GL_CC      = $(CC) $(CFLAGS) -o $@ -c $<
+ DO_GL_AS      = $(CC) $(CFLAGS) -DELF -x assembler-with-cpp -o $@ -c $<
+@@ -57,15 +57,15 @@
+ 	@-mkdir -p $(BUILD_DEBUG_DIR) \
+ 		$(BUILD_DEBUG_DIR)/bin \
+ 		$(BUILD_DEBUG_DIR)/glquake
+-	$(MAKE) targets BUILDDIR=$(BUILD_DEBUG_DIR) CFLAGS="$(DEBUG_CFLAGS)"
++	$(MAKE) targets BUILDDIR=$(BUILD_DEBUG_DIR) CFLAGS+="$(DEBUG_CFLAGS)"
+ 
+ build_release:
+ 	@-mkdir -p $(BUILD_RELEASE_DIR) \
+ 		$(BUILD_RELEASE_DIR)/bin \
+ 		$(BUILD_RELEASE_DIR)/glquake
+-	$(MAKE) targets BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS="$(RELEASE_CFLAGS)"
++	$(MAKE) targets BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS+="$(RELEASE_CFLAGS)"
+ 
+-all: build_debug build_release
++all: build_debug
+ 
+ targets: $(TARGETS)
+ 
+@@ -143,7 +143,7 @@
+ 	$(BUILDDIR)/glquake/snd_dma.o \
+ 	$(BUILDDIR)/glquake/snd_mem.o \
+ 	$(BUILDDIR)/glquake/snd_mix.o \
+-	$(BUILDDIR)/glquake/snd_linux.o \
++	$(BUILDDIR)/glquake/snd_sdl.o \
+ 	$(BUILDDIR)/glquake/gl_vidlinuxglx.o \
+ 	$(BUILDDIR)/glquake/math.o \
+ 	$(BUILDDIR)/glquake/worlda.o \
+@@ -361,7 +361,7 @@
+ $(BUILDDIR)/glquake/snd_mix.o :      $(MOUNT_DIR)/snd_mix.c
+ 	$(DO_GL_CC)
+ 
+-$(BUILDDIR)/glquake/snd_linux.o :    $(MOUNT_DIR)/snd_linux.c
++$(BUILDDIR)/glquake/snd_sdl.o :    $(MOUNT_DIR)/snd_sdl.c
+ 	$(DO_GL_CC)
+ 
+ $(BUILDDIR)/glquake/math.o :         $(MOUNT_DIR)/math.s
