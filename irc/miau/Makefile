@@ -1,0 +1,50 @@
+# New ports collection makefile for:	miau
+# Date created:				23 Apr 2004
+# Whom:					Oliver Eikemeier
+#
+# $FreeBSD$
+#
+
+PORTNAME=		miau
+PORTVERSION=		0.5.2
+CATEGORIES=		irc
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITE_SUBDIR=	miau
+
+MAINTAINER=		eik@FreeBSD.org
+COMMENT=		A fully featured easy to use IRC-bouncer
+
+USE_BZIP2=		yes
+GNU_CONFIGURE=		yes
+
+USE_REINPLACE=		yes
+
+INFO=			miau
+
+CONFIGURE_ARGS=		--enable-dccbounce \
+			--enable-automode \
+			--enable-releasenick \
+			--enable-ctcp-replies \
+			--enable-mkpasswd \
+			--enable-uptime \
+			--enable-chanlog \
+			--enable-privlog \
+			--enable-onconnect \
+			--enable-empty-awaymsg \
+			--disable-dependency-tracking
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
+			LDFLAGS="${LDFLAGS}" \
+			LIBS="${LIBS}"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,\$$datadir/doc/miau/examples,${EXAMPLESDIR},g' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>

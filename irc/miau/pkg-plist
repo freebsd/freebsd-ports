@@ -1,0 +1,7 @@
+bin/miau
+bin/miau-check
+bin/miau-rotatelog
+%%EXAMPLESDIR%%/miaurc
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
