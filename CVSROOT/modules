@@ -4299,6 +4299,7 @@ p5-CGI-ArgChecker	ports/www/p5-CGI-ArgChecker
 p5-CGI-Cache	ports/www/p5-CGI-Cache
 p5-CGI-FastTemplate	ports/www/p5-CGI-FastTemplate
 p5-CGI-Minimal		ports/www/p5-CGI-Minimal
+p5-CGI-XMLApplication	ports/www/p5-CGI-XMLApplication
 p5-CGI.pm	ports/www/p5-CGI.pm
 p5-CGI_Lite	ports/www/p5-CGI_Lite
 p5-Cache-Cache	ports/devel/p5-Cache-Cache
