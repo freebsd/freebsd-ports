@@ -7,6 +7,7 @@
 
 PORTNAME=	dice
 PORTVERSION=	3.15
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://www.obviously.com/dice/
 DISTNAME=	${PORTNAME}-rel-${PORTVERSION}
@@ -15,6 +16,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	flynn@energyhq.homeip.net
 
 post-patch:
+		@for i in ${WRKSRC}/lib/version.h ${WRKSRC}/include/lib/version.h \
+			${WRKSRC}/src/dcpp/main.c ${WRKSRC}/src/dcc/defs.h \
+			${WRKSRC}/src/dlink/main.c; \
+		do \
+			${PERL} -pi -e 's@/home/dice@${PREFIX}/share/dice@g' $$i; \
+		done
+
 		@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 do-install:
@@ -23,11 +31,17 @@ do-install:
 			${INSTALL_PROGRAM} $$i ${PREFIX}/bin; \
 		done
 
+		@${MKDIR} ${PREFIX}/share/dice/config
+		@for i in ${WRKSRC}/config/* ; \
+		do \
+			${INSTALL_DATA} $$i ${PREFIX}/share/dice/config; \
+		done
+
 .if !defined(NOPORTDOCS)
-		@${MKDIR} ${PREFIX}/share/doc/dice
+		@${MKDIR} ${DOCSDIR}
 		@for i in ${WRKSRC}/doc/* ; \
 		do \
-			${INSTALL_DATA} $$i ${PREFIX}/share/doc/dice; \
+			${INSTALL_DATA} $$i ${DOCSDIR}; \
 		done
 .endif
 
