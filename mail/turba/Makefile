@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	turba
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/turba/tarballs/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-RC2
 
 MAINTAINER=	thierry@pompo.net
 
@@ -42,6 +42,7 @@ DOCS=		COPYING README docs/CHANGES docs/CREDITS \
 		docs/INSTALL docs/turba.dia docs/turba.pdf
 CONFFILE=	attributes.php conf.php html.php menu.php \
 		prefs.php sources.php
+SUB_DIRS=	config graphics lib locale scripts templates po
 
 LHORDEDIR?=	www/horde
 LTURBADIR?=	${LHORDEDIR}/turba
@@ -95,9 +96,9 @@ pre-install:
 
 do-install:
 	@${MKDIR}  ${TURBADIR}
-	@${CP} -Rp ${WRKSRC}/config ${WRKSRC}/graphics ${WRKSRC}/lib ${TURBADIR}
-	@${CP} -Rp ${WRKSRC}/locale ${WRKSRC}/scripts ${TURBADIR}
-	@${CP} -Rp ${WRKSRC}/templates ${WRKSRC}/po ${TURBADIR}
+.for REP in ${SUB_DIRS}
+	@${CP} -Rp ${WRKSRC}/${REP} ${TURBADIR}
+.endfor
 	@${CP} -p  ${WRKSRC}/*.php ${TURBADIR}
 .for FILE in ${CONFFILE}
 	@if [ ! -f ${CONFDIR}/${FILE} ]; then \

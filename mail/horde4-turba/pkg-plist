@@ -8,6 +8,7 @@
 %%TURBADIR%%/addobject.php
 %%TURBADIR%%/addobjectaction.php
 %%TURBADIR%%/advanced.php
+%%TURBADIR%%/browse.php
 %%TURBADIR%%/config/.htaccess
 %%TURBADIR%%/config/attributes.php
 %%TURBADIR%%/config/attributes.php.dist
@@ -30,9 +31,13 @@
 %%TURBADIR%%/editobject.php
 %%TURBADIR%%/editobjectaction.php
 %%TURBADIR%%/graphics/add.gif
+%%TURBADIR%%/graphics/down.gif
 %%TURBADIR%%/graphics/group.gif
+%%TURBADIR%%/graphics/lhand.gif
+%%TURBADIR%%/graphics/rhand.gif
 %%TURBADIR%%/graphics/search.gif
 %%TURBADIR%%/graphics/turba.gif
+%%TURBADIR%%/graphics/up.gif
 %%TURBADIR%%/index.php
 %%TURBADIR%%/lib/.htaccess
 %%TURBADIR%%/lib/AbstractObject.php
@@ -53,25 +58,30 @@
 %%TURBADIR%%/lib/Source.php
 %%TURBADIR%%/lib/Turba.php
 %%TURBADIR%%/lib/api.php
-%%TURBADIR%%/lib/api.php.orig
 %%TURBADIR%%/lib/base.php
 %%TURBADIR%%/lib/version.php
 %%TURBADIR%%/locale/.htaccess
 %%TURBADIR%%/locale/cs_CZ/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/da_DK/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/de_DE/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/el_GR/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/es_ES/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/et_EE/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/fi_FI/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/fr_FR/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/it_IT/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/ja_JP/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/ko_KR/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/nl_NL/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/no_BOK/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/nb_NO/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/pl_PL/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/pt_BR/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/ru_koi/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/ru_win/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/pt_PT/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/ru_RU/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/ru_RU.KOI8-R/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/sk_SK/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/sv_SE/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/uk_UA/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/zh_CN/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/zh_TW/LC_MESSAGES/turba.mo
 %%TURBADIR%%/menu.php
@@ -79,25 +89,32 @@
 %%TURBADIR%%/po/Makefile
 %%TURBADIR%%/po/README
 %%TURBADIR%%/po/cs_CZ.po
+%%TURBADIR%%/po/da_DK.po
 %%TURBADIR%%/po/de_DE.po
 %%TURBADIR%%/po/el_GR.po
 %%TURBADIR%%/po/es_ES.po
+%%TURBADIR%%/po/et_EE.po
 %%TURBADIR%%/po/extract.pl
 %%TURBADIR%%/po/fi_FI.po
 %%TURBADIR%%/po/fr_FR.po
 %%TURBADIR%%/po/it_IT.po
+%%TURBADIR%%/po/ja_JP.po
 %%TURBADIR%%/po/ko_KR.po
 %%TURBADIR%%/po/nl_NL.po
-%%TURBADIR%%/po/no_BOK.po
+%%TURBADIR%%/po/nb_NO.po
 %%TURBADIR%%/po/pl_PL.po
 %%TURBADIR%%/po/pt_BR.po
-%%TURBADIR%%/po/ru_koi.po
-%%TURBADIR%%/po/ru_win.po
+%%TURBADIR%%/po/pt_PT.po
+%%TURBADIR%%/po/ru_RU.po
+%%TURBADIR%%/po/ru_RU.KOI8-R.po
 %%TURBADIR%%/po/shtool
+%%TURBADIR%%/po/sk_SK.po
 %%TURBADIR%%/po/sv_SE.po
+%%TURBADIR%%/po/uk_UA.po
 %%TURBADIR%%/po/xgettext.sh
 %%TURBADIR%%/po/zh_CN.po
 %%TURBADIR%%/po/zh_TW.po
+%%TURBADIR%%/prefs.php
 %%TURBADIR%%/scripts/.htaccess
 %%TURBADIR%%/scripts/drivers/turba.sql
 %%TURBADIR%%/search.php
@@ -110,6 +127,8 @@
 %%TURBADIR%%/templates/advanced/foot.inc
 %%TURBADIR%%/templates/advanced/head.inc
 %%TURBADIR%%/templates/advanced/results_head.inc
+%%TURBADIR%%/templates/browse/foot.inc
+%%TURBADIR%%/templates/browse/head.inc
 %%TURBADIR%%/templates/common-footer.inc
 %%TURBADIR%%/templates/common-header.inc
 %%TURBADIR%%/templates/data/export.inc
@@ -119,9 +138,9 @@
 %%TURBADIR%%/templates/index/css.inc
 %%TURBADIR%%/templates/index/notconfigured.inc
 %%TURBADIR%%/templates/menu/menu.inc
+%%TURBADIR%%/templates/prefs/columnselect.inc
 %%TURBADIR%%/templates/search/foot.inc
 %%TURBADIR%%/templates/search/head.inc
-%%TURBADIR%%/templates/search/oldrow.inc
 %%TURBADIR%%/templates/search/row.inc
 %%TURBADIR%%/templates/wml/common-footer.inc
 %%TURBADIR%%/templates/wml/common-header.inc
@@ -140,34 +159,46 @@ etc/horde/httpd.conf.turba
 @dirrm %%TURBADIR%%/lib
 @dirrm %%TURBADIR%%/locale/cs_CZ/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/cs_CZ
+@dirrm %%TURBADIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/da_DK
 @dirrm %%TURBADIR%%/locale/de_DE/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/de_DE
 @dirrm %%TURBADIR%%/locale/el_GR/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/el_GR
 @dirrm %%TURBADIR%%/locale/es_ES/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/es_ES
+@dirrm %%TURBADIR%%/locale/et_EE/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/et_EE
 @dirrm %%TURBADIR%%/locale/fi_FI/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/fi_FI
 @dirrm %%TURBADIR%%/locale/fr_FR/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/fr_FR
 @dirrm %%TURBADIR%%/locale/it_IT/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/it_IT
+@dirrm %%TURBADIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/ja_JP
 @dirrm %%TURBADIR%%/locale/ko_KR/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/ko_KR
 @dirrm %%TURBADIR%%/locale/nl_NL/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/nl_NL
-@dirrm %%TURBADIR%%/locale/no_BOK/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/no_BOK
+@dirrm %%TURBADIR%%/locale/nb_NO/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/nb_NO
 @dirrm %%TURBADIR%%/locale/pl_PL/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/pl_PL
 @dirrm %%TURBADIR%%/locale/pt_BR/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/pt_BR
-@dirrm %%TURBADIR%%/locale/ru_koi/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/ru_koi
-@dirrm %%TURBADIR%%/locale/ru_win/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/ru_win
+@dirrm %%TURBADIR%%/locale/pt_PT/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/pt_PT
+@dirrm %%TURBADIR%%/locale/ru_RU/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/ru_RU
+@dirrm %%TURBADIR%%/locale/ru_RU.KOI8-R/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/ru_RU.KOI8-R
+@dirrm %%TURBADIR%%/locale/sk_SK/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/sk_SK
 @dirrm %%TURBADIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/sv_SE
+@dirrm %%TURBADIR%%/locale/uk_UA/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/uk_UA
 @dirrm %%TURBADIR%%/locale/zh_CN/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/zh_CN
 @dirrm %%TURBADIR%%/locale/zh_TW/LC_MESSAGES
@@ -178,11 +209,13 @@ etc/horde/httpd.conf.turba
 @dirrm %%TURBADIR%%/scripts
 @dirrm %%TURBADIR%%/templates/add
 @dirrm %%TURBADIR%%/templates/advanced
+@dirrm %%TURBADIR%%/templates/browse
 @dirrm %%TURBADIR%%/templates/data
 @dirrm %%TURBADIR%%/templates/display
 @dirrm %%TURBADIR%%/templates/edit
 @dirrm %%TURBADIR%%/templates/index
 @dirrm %%TURBADIR%%/templates/menu
+@dirrm %%TURBADIR%%/templates/prefs
 @dirrm %%TURBADIR%%/templates/search
 @dirrm %%TURBADIR%%/templates/wml/menu
 @dirrm %%TURBADIR%%/templates/wml/search
