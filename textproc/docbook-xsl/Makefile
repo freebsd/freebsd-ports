@@ -7,6 +7,7 @@
 
 PORTNAME=	docbook-xsl
 PORTVERSION=	1.61.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= docbook
@@ -14,15 +15,20 @@ MASTER_SITE_SUBDIR= docbook
 MAINTAINER=	des@freebsd.org
 COMMENT=	XSL DocBook stylesheets
 
-RUN_DEPENDS=	${XMLDIR}/docbook/catalog:${PORTSDIR}/textproc/docbook-xml \
+RUN_DEPENDS=	${XMLDIR}/docbook/4.2/catalog.xml:${PORTSDIR}/textproc/docbook-xml \
 		${XMLDIR}/sdocbook/catalog:${PORTSDIR}/textproc/sdocbook-xml
 
 XMLDIR=		${LOCALBASE}/share/xml
-INSTDIR=	${PREFIX}/share/xsl/docbook
+INSTDIR=	share/xsl/docbook
+PINSTDIR=	${PREFIX}/${INSTDIR}
 COPYDIRS=	common fo extensions html htmlhelp images \
 		javahelp lib manpages params template xhtml
+PKGINSTALL=	${WRKSRC}/pkg-install
+PKGDEINSTALL=	${WRKSRC}/pkg-deinstall
 
 NO_BUILD=	yes
+XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
+CATALOG_PORTS=	${XMLDIR}/catalog.ports
 
 post-extract:
 	${FIND} ${WRKSRC} -name '.#*' -delete
@@ -33,8 +39,18 @@ do-install:
 	(cd ${WRKSRC}/doc && ${TAR} -cf - . |\
 		${TAR} -xf - -C${DOCSDIR})
 .endif
-	${MKDIR} ${INSTDIR}
+	${MKDIR} ${PINSTDIR}
 	(cd ${WRKSRC} && ${TAR} -cf - VERSION ${COPYDIRS} |\
-		${TAR} -xf - -C${INSTDIR})
+		${TAR} -xf - -C${PINSTDIR})
+
+post-install:
+	@${SED} -e 's,@INSTDIR@,${INSTDIR},g ; \
+			s,@XMLCATMGR@,${XMLCATMGR},g ; \
+			s,@CATALOG_PORTS_XML@,${CATALOG_PORTS},g' \
+			< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
+	@${SED} -e 's,@XMLCATMGR@,${XMLCATMGR},g ; \
+			s,@CATALOG_PORTS_XML@,${CATALOG_PORTS},g' \
+			< ${FILESDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
