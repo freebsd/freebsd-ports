@@ -1,0 +1,33 @@
+diff -urp ./arch/i386/core/freebsd_loader.c /data/home/ambrisko/stable/usr/ports/net/etherboot/work.good/etherboot-5.2.4/src/arch/i386/core/freebsd_loader.c
+--- ./arch/i386/core/freebsd_loader.c	Sun Feb 22 17:26:09 2004
++++ /data/home/ambrisko/stable/usr/ports/net/etherboot/work.good/etherboot-5.2.4/src/arch/i386/core/freebsd_loader.c	Wed Jun 30 13:53:10 2004
+@@ -168,7 +168,7 @@ static int elf_freebsd_debug_loader(unsi
+ 					for (j=0; j < estate.e.elf32.e_phnum; j++)
+ 					{
+ 						/* Check only for loaded sections */
+-						if ((estate.p.phdr32[i].p_type | 0x80) == (PT_LOAD | 0x80))
++						if ((estate.p.phdr32[j].p_type | 0x80) == (PT_LOAD | 0x80))
+ 						{
+ 							/* Only the extra symbols */
+ 							if ((shdr[i].sh_offset >= estate.p.phdr32[j].p_offset) &&
+@@ -288,7 +290,7 @@ static void elf_freebsd_boot(unsigned lo
+ 		/* Assumes size of long is a power of 2... */
+ 		bsdinfo.bi_esymtab = (symstr_load +
+ 			sizeof(long) +
+-			*((long *)symstr_load) +
++			*((long *)phys_to_virt(symstr_load)) +
+ 			sizeof(long) - 1) & ~(sizeof(long) - 1);
+ 		
+ 		/* Where we will build the meta data... */
+diff -urp ./core/elf_loader.c /data/home/ambrisko/stable/usr/ports/net/etherboot/work.good/etherboot-5.2.4/src/core/elf_loader.c
+--- ./core/elf_loader.c	Sun Feb 22 17:26:09 2004
++++ /data/home/ambrisko/stable/usr/ports/net/etherboot/work.good/etherboot-5.2.4/src/core/elf_loader.c	Wed Jun 30 11:38:53 2004
+@@ -268,6 +268,7 @@ static sector_t elf32_download(unsigned 
+ 		}
+ 		if (estate.segment == -1) {
+ 			if (elf_freebsd_debug_loader(offset)) {
++				estate.segment = 0; /* -1 makes it not read anymore */
+ 				continue;
+ 			}
+ 			/* No more segments to be loaded, so just start the
+Only in /data/home/ambrisko/stable/usr/ports/net/etherboot/work.good/etherboot-5.2.4/src/core: elf_loader.c.orig

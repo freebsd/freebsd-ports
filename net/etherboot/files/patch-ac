@@ -1,0 +1,15 @@
+--- ./arch/i386/Makefile.orig	Wed Jun 30 14:11:17 2004
++++ ./arch/i386/Makefile	Wed Jun 30 14:12:08 2004
+@@ -271,10 +271,10 @@
+ 
+ # rules to write the .img/.zimg image onto a blank floppy
+ %.fd0:	%.img $(DISKLOADER) $(START16)
+-	cat $(DISKLOADER) $(START16) $< > /dev/fd0
++	cat $(DISKLOADER) $(START16) $< | dd bs=512 conv=sync > /dev/fd0
+ 
+ %.zfd0:	%.zimg $(DISKLOADER) $(START16)
+-	cat $(DISKLOADER) $(START16) $< > /dev/fd0
++	cat $(DISKLOADER) $(START16) $< | dd bs=512 conv=sync > /dev/fd0
+ 
+ # rule to make a non-emulation ISO boot image
+ %.iso:	%.zimg $(START16)
