@@ -130,7 +130,7 @@ CFLAGS+=	-D_LITTLE_ENDIAN
 
 .SILENT:
 
-pre-everything:
+pre-everything::
 .if !defined(A4)
 	${ECHO_MSG} "Type \"make A4=yes\" if you want -DA4 for compilation."
 .else
