@@ -6,34 +6,34 @@
 #
 
 PORTNAME=	qhacc
-PORTVERSION=	1.4
-CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.ostrich-emulators.cx/qhacc/
+PORTVERSION=	2.4
+CATEGORIES=	finance
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kde@freebsd.org
+MAINTAINER=	kde@FreeBSD.org
 
-USE_REINPLACE=	yes
-USE_QT_VER=	2
+USE_QT_VER=	3
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-qt-moc=${X11BASE}/bin \
-		--with-qt-libs=${X11BASE}/lib
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-qt-moc=${QT_PREFIX}/bin \
+		--with-qt-libs=${QT_PREFIX}/lib
 
 post-extract:
 	@${RM} -f ${WRKSRC}/src/moc_*.cpp
 
 pre-patch:
-.for file in configure src/Makefile.in
-	@${REINPLACE_CMD} -e 's|/moc|/${MOC:T}|g ; \
-		 s|-lqt|-l${QTNAME}|g ; \
-		 s|-O2 -Wall|\@CXXFLAGS\@|g' ${WRKSRC}/${file}
-.endfor
+	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^CXXFLAGS =.*$$|CXXFLAGS = \@CXXFLAGS\@|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/qhacc ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/qm/*.qm ${DATADIR}
 	${INSTALL_DATA} ${FILESDIR}/config ${DATADIR}/config.sample
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

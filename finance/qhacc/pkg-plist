@@ -7,5 +7,6 @@ bin/qhacc
 %%PORTDOCS%%share/doc/qhacc/using.html
 %%PORTDOCS%%share/doc/qhacc/primer.html
 share/qhacc/config.sample
+share/qhacc/qhacc_es_ES.qm
 @dirrm share/qhacc
 %%PORTDOCS%%@dirrm share/doc/qhacc
