@@ -1,0 +1,41 @@
+bin/squidGuard
+share/doc/squidGuard/README
+share/doc/squidGuard/README.blacklists
+share/doc/squidGuard/configuration.html
+share/doc/squidGuard/configuration.txt
+share/doc/squidGuard/faq.html
+share/doc/squidGuard/faq.txt
+share/doc/squidGuard/index.html
+share/doc/squidGuard/installation.html
+share/doc/squidGuard/installation.txt
+share/doc/squidGuard/squidGuard.gif
+@dirrm share/doc/squidGuard
+@cwd %%DATADIR%%
+ads/domains
+ads/domains.db
+ads/urls
+ads/urls.db
+agressive/domains
+agressive/domains.db
+agressive/urls
+agressive/urls.db
+drugs/domains
+drugs/domains.db
+drugs/urls
+drugs/urls.db
+hacking/domains
+hacking/domains.db
+hacking/urls
+hacking/urls.db
+porn/domains
+porn/domains.db
+porn/expressions
+porn/urls
+porn/urls.db
+@dirrm ads
+@dirrm agressive
+@dirrm drugs
+@dirrm hacking
+@dirrm porn
+@cwd /
+@dirrm %%DATADIR%%
