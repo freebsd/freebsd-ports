@@ -1,0 +1,17 @@
+--- speed.cc.orig	Sun Oct 29 03:19:48 2000
++++ speed.cc	Sun Oct 29 03:20:05 2000
+@@ -25,8 +25,12 @@
+ 	pthread_mutexattr_init(&ma);
+ #if !defined (__sparc__) && !defined(__mips__)
+ 	pthread_mutexattr_settype(&ma,MUTEX_TYPE_FAST);
+-#elseif defined(__mips__)
+-	pthread_mutexattr_settype(&ma,MUTEX_TYPE_NORMAL);	
++#else
++
++#if defined(__mips__)
++	pthread_mutexattr_settype(&ma,MUTEX_TYPE_NORMAL);
++#endif
++
+ #endif
+ 	pthread_mutex_init(&lock1,&ma);
+ 	pthread_mutexattr_destroy(&ma);
