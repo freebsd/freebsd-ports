@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	muse
-PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTVERSION=	0.7.2
 CATEGORIES=	audio
 MASTER_SITES=	http://freesoftware.fsf.org/download/muse/ \
 		http://muse.dyne.org/releases/
@@ -21,7 +20,8 @@ LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_REINPLACE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
@@ -31,8 +31,8 @@ CONFIGURE_ARGS=	--disable-debug
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3|\$$CFLAGS|g ; \
-		 s|\$$GTK_LIBS -lgthread|\$$GTK_LIBS \$$GLIB_LIBS|g ; \
-		 s|\$$GTK_FLAGS|\$$GTK_CFLAGS \$$GLIB_CFLAGS|g' \
+		 s|[\$$]GTK_LIBS -lgthread|\$$GTK_LIBS \$$GLIB_LIBS|g ; \
+		 s|[\$$]GTK_FLAGS|\$$GTK_CFLAGS \$$GLIB_CFLAGS|g' \
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-lpthread||g' ${WRKSRC}/Makefile.in
 
