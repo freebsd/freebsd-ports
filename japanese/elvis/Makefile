@@ -3,7 +3,7 @@
 # Date created:         5 October 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.8 1997/09/14 23:58:18 max Exp $
+# $Id: Makefile,v 1.9 1997/09/15 00:04:00 max Exp $
 #
 
 DISTNAME=       elvis-1.8
@@ -22,7 +22,6 @@ LIB_DEPENDS=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
 NO_WRKSUBDIR=	yes
 PATCH_DIST_STRIP=       -p1
 MAN1=		elvis.1 ctags.1 ref.1 elvrec.1 elvprsv.1
-MANCOMPRESSED=	yes
 
 STARTUP_SCRIPT= ${PREFIX}/etc/rc.d/ja-elvis.sh
 

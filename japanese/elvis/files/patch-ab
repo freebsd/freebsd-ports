@@ -1,5 +1,5 @@
---- Makefile.mix.orig	Tue Oct 22 00:10:44 1996
-+++ Makefile.mix	Tue Oct 22 00:23:07 1996
+--- Makefile.mix.orig	Thu Sep  3 06:46:47 1998
++++ Makefile.mix	Fri Sep  4 07:28:19 1998
 @@ -120,28 +120,29 @@
  
  #---- These settings are recommended for BSD 4.3 UNIX and SunOS ----
@@ -69,7 +69,7 @@
  	(cd $(BIN); chmod 755 $(PROGS))
  	(cd $(BIN); chown bin $(PROGS))
  	(cd $(BIN); chown root elvprsv$(COM) elvrec$(COM))
-@@ -685,12 +687,9 @@
+@@ -685,14 +687,13 @@
  	-$(LN) $(BIN)/elvis $(BIN)/ex
  	-$(LN) $(BIN)/elvis $(BIN)/view
  	-$(LN) $(BIN)/elvis $(BIN)/input
@@ -81,5 +81,10 @@
 -		echo "::: YOU STILL NEED TO EDIT THE /ETC/RC FILE, OR WHATEVER,"; \
 -		echo "::: TO HAVE TEMP FILES BE PRESERVED AFTER A SYSTEM CRASH."; \
  	fi
- 	sh instman.sh $(PROGS)
+-	sh instman.sh $(PROGS)
++	for f in ${PROGS}; do \
++	  install -o bin -g bin -c -m 644 doc/$$f.man ${PREFIX}/man/man1/$$f.1; \
++	done
  
+ inst.dos: $(DUMMY)
+ 	for %a in ($(PROGS1)) do copy %a $(BIN)
