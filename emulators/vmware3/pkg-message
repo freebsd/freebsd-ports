@@ -1,11 +1,11 @@
 ************************************************************
 Get Linux procfs ready and initialize vmmon/vmnet as follows:
 
-	/usr/local/etc/rc.d/vmware.sh start
+	${PREFIX}/etc/rc.d/vmware.sh start
 
 then you'll be ready to start vmware.
 
 Don't miss the documents installed:
 
-	vmware(1) /usr/local/share/doc/vmware/*
+	vmware(1) ${PREFIX}/share/doc/vmware/*
 ************************************************************

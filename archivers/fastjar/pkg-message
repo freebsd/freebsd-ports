@@ -1,4 +1,4 @@
 ************************************************************
 Please refer to the documents held in:
-	/usr/local/share/doc/fastjar/
+	${PREFIX}/share/doc/fastjar/
 ************************************************************

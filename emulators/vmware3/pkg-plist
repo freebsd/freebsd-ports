@@ -21,7 +21,7 @@ lib/vmware/lib/help/ConfigDisks.htm
 lib/vmware/lib/help/ConfigEditor.htm
 lib/vmware/lib/help/ConfigEthernet.htm
 lib/vmware/lib/help/ConfigFloppy.htm
-lib/vmware/lib/help/ConfigGuestOS.htm       
+lib/vmware/lib/help/ConfigGuestOS.htm
 lib/vmware/lib/help/ConfigMemory.htm
 lib/vmware/lib/help/ConfigMisc.htm
 lib/vmware/lib/help/ConfigParallel.htm

@@ -8,7 +8,7 @@ and you can play with VMware after the next boot.
 Or hit the following commands to play now. :)
 
 	/sbin/mount_linprocfs linproc /compat/linux/proc
-	/usr/local/etc/rc.d/vmware.sh start
+	${PREFIX}/etc/rc.d/vmware.sh start
 
 Also, consider making a link /compat/linux/tmp if your /tmp
 doesn't have sufficient free space or is slow.  VMware uses

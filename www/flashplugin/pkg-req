@@ -28,4 +28,3 @@ or use Netscape for FreeBSD with this port.
 EOF
     exit 1
 fi
-
