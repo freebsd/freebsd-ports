@@ -59,7 +59,7 @@ MAN3=		Qwt.3			\
 		screenshots.3
 
 pre-build:
-	cd ${WRKSRC}; qmake -spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ qwt.pro -o Makefile
+	cd ${WRKSRC}; qmake -spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ qwt.pro -o Makefile
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/libqwt.so.0.4.1 ${PREFIX}/lib
