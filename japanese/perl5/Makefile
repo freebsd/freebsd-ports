@@ -3,7 +3,7 @@
 # Date created:		7 January 1997
 # Whom:			Yoshiro MIHIRA
 #
-# $Id: Makefile,v 1.5 1997/05/24 15:05:04 max Exp $
+# $Id: Makefile,v 1.6 1997/05/28 19:52:34 fenner Exp $
 #
 
 DISTNAME=	perl5.003
@@ -24,7 +24,7 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/languages/perl/CPAN/src/5.0/ \
 PATCHFILES=	jperl5.003.patch7_1.gz
 PATCH_SITES=	ftp://ftp.funet.fi/pub/languages/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.is.co.za/pub/perl/CPAN/authors/id/WATANABE/ \
-		ftp://dong.math.ncu.edu.tw/perl/CPAN/authors/id/WATANABE/ \
+		ftp://ftp.math.ncu.edu.tw/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.pasteur.fr/pub/computing/unix/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.sunet.se/pub/lang/perl/CPAN/authors/id/WATANABE/ \
