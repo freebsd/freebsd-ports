@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.10 1996/11/12 05:00:26 asami Exp $
+# $Id: Makefile,v 1.11 1996/11/26 08:59:28 asami Exp $
 #
 
     SUBDIR += SSLeay
@@ -12,6 +12,7 @@
     SUBDIR += p5-PGP
     SUBDIR += pgp
     SUBDIR += pidentd
+    SUBDIR += safe-tcl
     SUBDIR += ssh
     SUBDIR += sudo
     SUBDIR += tcp_wrapper
