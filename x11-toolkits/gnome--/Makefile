@@ -13,7 +13,7 @@ MASTER_SITES=  http://download.sourceforge.net/gtkmm/
 MAINTAINER=    erich@tacni.net
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		gtkmm-1.2:${PORTSDIR}/x11-toolkits/gtk--
+		gtkmm-1.2.1:${PORTSDIR}/x11-toolkits/gtk--
 BUILD_DEPENDS=	m4:${PORTSDIR}/devel/m4
 
 GTK_CONFIG?=    ${X11BASE}/bin/gtk12-config

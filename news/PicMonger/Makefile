@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.sourceforge.net/PicMonger/
 MAINTAINER=	dburr@FreeBSD.ORG
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		gtkmm-1.2:${PORTSDIR}/x11-toolkits/gtk-- \
+		gtkmm-1.2.1:${PORTSDIR}/x11-toolkits/gtk-- \
 		Imlib.5:${PORTSDIR}/graphics/imlib
 RUN_DEPENDS=	mpack:${PORTSDIR}/converters/mpack
 
