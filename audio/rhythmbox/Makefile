@@ -14,6 +14,8 @@ MASTER_SITES=	http://web.verbum.org/net-rhythmbox/
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	Audio player for the Gnome 2 desktop environment
 
+BROKEN=		Does not configure
+
 LIB_DEPENDS=	musicbrainz.2:${PORTSDIR}/audio/libmusicbrainz \
 		gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins \
 		FLAC.5:${PORTSDIR}/audio/flac \
