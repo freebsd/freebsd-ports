@@ -24,9 +24,6 @@ COMMENT=	Free Pascal beta compiler with Turbo, Delphi and other extensions
 
 EXTRACT_DEPENDS= ${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
-.if !defined(NOPORTDOCS)
-RUN_DEPENDS+=	${LOCALBASE}/bin/acroread4:${PORTSDIR}/print/acroread4
-.endif
 
 ONLY_FOR_ARCHS=	i386
 NO_WRKSUBDIR=	yes
