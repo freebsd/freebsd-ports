@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_layout
-PORTVERSION=	3.2
+PORTVERSION=	3.2.1
 CATEGORIES=	www
 MASTER_SITES=	http://software.tangent.org/download/
 
@@ -19,8 +19,9 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 USE_REINPLACE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's!apxs!${LOCALBASE}/sbin/apxs!g' \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's!apxs!${LOCALBASE}/sbin/apxs!g; \
+		s!-DDEBUG!!g' ${WRKSRC}/Makefile
+	
 
 post-install:
 .if !defined(NOPORTDOCS)
