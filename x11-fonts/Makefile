@@ -28,6 +28,7 @@
     SUBDIR += p5-Font-AFM
     SUBDIR += p5-Font-TTF
     SUBDIR += p5-type1inst
+    SUBDIR += sgifonts
     SUBDIR += sharefonts
     SUBDIR += tkfont
     SUBDIR += ttmkfdir
