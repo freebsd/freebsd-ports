@@ -1,0 +1,57 @@
+--- locale/ansi.c.orig	Sun Oct 25 14:06:42 1998
++++ locale/ansi.c	Sun Feb 28 00:59:25 1999
+@@ -42,6 +42,7 @@
+ #include <limits.h>
+ #include <stddef.h>
+ #include <rune.h>
++#include <string.h>
+ 
+ int
+ mblen(s, n)
+@@ -105,9 +106,19 @@
+ 	char const *e;
+ 	int cnt = 0;
+ 
+-	if (!pwcs || !s)
++	if (!s)
+ 		return (-1);
+ 
++	if (!pwcs) {
++		while (*s) {
++			if (sgetrune(s, MB_LEN_MAX, &e) == _INVALID_RUNE)
++				return (-1);
++			s = e;
++			++cnt;
++		}
++		return (cnt);
++	}
++
+ 	while (n-- > 0) {
+ 		*pwcs = sgetrune(s, MB_LEN_MAX, &e);
+ 		if (*pwcs == _INVALID_RUNE)
+@@ -132,6 +143,13 @@
+ 	if (!pwcs || !s || n > INT_MAX)
+ 		return (-1);
+ 
++if( (pwcs[0]&0xffff0000) || ((!(pwcs[0]&0x8000))&&(pwcs[0]&0xff00)) ){
++  int len;
++  strncpy(s, (char *)pwcs, n);
++  len = strlen((char *)pwcs);
++  return (len < n) ? len : n;
++}
++
+ 	nb = n;
+ 	cnt = 0;
+ 	while (nb > 0) {
+@@ -141,8 +159,10 @@
+ 		}
+ 		if (!sputrune(*pwcs++, s, nb, &e))
+ 			return (-1);		/* encoding error */
+-		if (!e)			/* too long */
++		if (!e) {			/* too long */
++			*s = 0;
+ 			return (cnt);
++		}
+ 		cnt += e - s;
+ 		nb -= e - s;
+ 		s = e;

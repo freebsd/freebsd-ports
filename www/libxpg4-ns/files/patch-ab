@@ -1,0 +1,15 @@
+--- Makefile.orig	Sat Feb 27 20:19:25 1999
++++ Makefile	Sat Feb 27 20:20:05 1999
+@@ -1,8 +1,8 @@
+-LIB=    xpg4
++LIB=    xpg4-ns
+ SRCS=   setlocale.c setrunelocale.c big5.c euc.c mskanji.c utf2.c runetype.c \
+-	tolower.c toupper.c
+-CFLAGS+= -Wall -DXPG4 -I${.CURDIR}/../libc/locale
+-.PATH: ${.CURDIR}/../libc/locale
++	tolower.c toupper.c ansi.c
++CFLAGS+= -Wall -DXPG4 -I${.CURDIR}/locale
++.PATH: ${.CURDIR}/locale
+ 
+ NOMAN= YES
+ 
