@@ -1,0 +1,7 @@
+Ruby/DICT is an RFC 2229 compliant client-side library implementation
+of the DICT protocol, written in the Ruby programming language.  It
+can be used to write clients that access dictionary definitions from a
+set of natural language dictionary databases.
+
+Author:	Ian Macdonald <ian@caliban.org>
+WWW:	http://www.caliban.org/ruby/ruby-dict.shtml
