@@ -3,11 +3,11 @@
 # Date created:                Mon May  4 10:03:02 EST 1998
 # Whom:                        Maurice Castro <maurice@serc.rmit.edu.au>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/04 17:53:34 mph Exp $
 #
 
 DISTNAME=	R-0.61.2
-PKGNAME=	r-${PAPERSIZE:S/A4/a4/:S/LETTER/letter/:S/Letter/letter/}-0.61.2
+PKGNAME=	R-${PAPERSIZE:S/A4/a4/:S/LETTER/letter/:S/Letter/letter/}-0.61.2
 CATEGORIES=	math
 MASTER_SITES=	http://lib.stat.cmu.edu/R/CRAN/src/base/ \
 		ftp://ftp.stat.math.ethz.ch/R/ \
@@ -43,7 +43,7 @@ post-configure:
 	cd ${WRKSRC}/etc; && ${PREFIX}/bin/perl -pi -e "s#/usr/bin/perl#${PREFIX}/bin/perl#" `grep -l /usr/bin/perl *`
 
 do-install:
-	${SED} 's:PREFIX:${PREFIX}:' ${FILESDIR}/R > ${PREFIX}/bin/R
+	${SED} 's:PREFIX:${PREFIX}:;s:DEFAULTPAPER:${PAPERSIZE}:' ${FILESDIR}/R > ${PREFIX}/bin/R
 	(cd ${WRKSRC}; find . -type d -exec chmod a+rx \{\} \; )
 	(cd ${WRKSRC}; find . -type f -exec chmod a+r \{\} \; )
 	chmod a+x ${PREFIX}/bin/R
