@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	kawa
 
 MAINTAINER=		zach@neurosoft.org
 
+BROKEN=			"Does not build"
+
 BUILD_DEPENDS= 	gsed:${PORTSDIR}/textproc/gsed
 
 USE_JAVA=	1.1+
