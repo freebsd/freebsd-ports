@@ -1,53 +1,35 @@
-*** Makefile.UNIX.orig	Sat Mar  6 09:13:53 1999
---- Makefile.UNIX	Fri Jun  4 15:41:11 1999
-***************
-*** 5,11 ****
-  
-  # The location and names of the X11 libraries
-  LDIR = -L/usr/X11R6/lib
-! LIBS = -lXpm -lX11
-  
-  # The include path to the X11 files
-  C_INCLUDE = -I. -I/usr/X11R6/include
---- 5,11 ----
-  
-  # The location and names of the X11 libraries
-  LDIR = -L/usr/X11R6/lib
-! LIBS = -lXpm -lX11 -lkvm
-  
-  # The include path to the X11 files
-  C_INCLUDE = -I. -I/usr/X11R6/include
-***************
-*** 17,23 ****
-  
-  CFLAGS = $(COPTS) $(COMPILE_FLAGS) $(C_INCLUDE)
-  
-! OBJ = asmem.o asmem_x.o read_mem.o x_color.o safecopy.o
-  
-  all:	asmem
-  	@echo Ready.
---- 17,23 ----
-  
-  CFLAGS = $(COPTS) $(COMPILE_FLAGS) $(C_INCLUDE)
-  
-! OBJ = asmem.o asmem_x.o kvm_read.o x_color.o safecopy.o
-  
-  all:	asmem
-  	@echo Ready.
-***************
-*** 34,40 ****
-  x_color.o: x_color.c
-  	$(CC) -c $< $(CFLAGS) -o $@
-  
-! read_mem.o: read_mem.h read_mem.c state.h
-  	$(CC) -c $< $(CFLAGS) -o $@
-  
-  asmem_x.o: asmem_x.c asmem_x.h x_color.h safecopy.h state.h\
---- 34,40 ----
-  x_color.o: x_color.c
-  	$(CC) -c $< $(CFLAGS) -o $@
-  
-! kvm_read.o: read_mem.h kvm_read.c state.h
-  	$(CC) -c $< $(CFLAGS) -o $@
-  
-  asmem_x.o: asmem_x.c asmem_x.h x_color.h safecopy.h state.h\
+--- Makefile.UNIX	Sat Mar  6 09:13:53 1999
++++ Makefile.UNIX.new	Sun Feb 13 01:23:54 2000
+@@ -5,19 +5,19 @@
+ 
+ # The location and names of the X11 libraries
+ LDIR = -L/usr/X11R6/lib
+-LIBS = -lXpm -lX11
++LIBS = -lXpm -lX11 -lkvm
+ 
+ # The include path to the X11 files
+ C_INCLUDE = -I. -I/usr/X11R6/include
+ 
+ #-----------------------------------------------------
+-CC = gcc
++CC ?= gcc
+ COPTS = -O2 -pipe -Wall -Wshadow
+ #COMPILE_FLAGS = -DDEBUG -DTEST -g
+ 
+-CFLAGS = $(COPTS) $(COMPILE_FLAGS) $(C_INCLUDE)
++CFLAGS = $(PCFLAGS) $(COPTS) $(COMPILE_FLAGS) $(C_INCLUDE)
+ 
+-OBJ = asmem.o asmem_x.o read_mem.o x_color.o safecopy.o
++OBJ = asmem.o asmem_x.o kvm_read.o x_color.o safecopy.o
+ 
+ all:	asmem
+ 	@echo Ready.
+@@ -34,7 +34,7 @@
+ x_color.o: x_color.c
+ 	$(CC) -c $< $(CFLAGS) -o $@
+ 
+-read_mem.o: read_mem.h read_mem.c state.h
++kvm_read.o: read_mem.h kvm_read.c state.h
+ 	$(CC) -c $< $(CFLAGS) -o $@
+ 
+ asmem_x.o: asmem_x.c asmem_x.h x_color.h safecopy.h state.h\
