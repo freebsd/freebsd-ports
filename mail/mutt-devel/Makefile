@@ -68,6 +68,10 @@ RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 WITH_MUTT_HTML=	yes
 .endif
 .endif
+.if defined(WITH_MUTT_SSL) && !defined(WITH_MUTT_IMAP) && \
+	!defined(WITH_MUTT_POP)
+WITH_MUTT_IMAP=	yes
+.endif
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
 		giconv.2:${PORTSDIR}/converters/libiconv
