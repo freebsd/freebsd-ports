@@ -3,7 +3,7 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.11 1997/01/23 22:05:43 andreas Exp $
+# $Id: Makefile,v 1.12 1997/01/24 12:16:53 asami Exp $
 #
 
 DISTNAME=	bb
@@ -93,6 +93,10 @@ do-install:
 				${PREFIX}/${DISTNAME}/www/bb-info.html
 	${INSTALL_DATA} ${WRKSRC}/www/bb-page.html \
 				${PREFIX}/${DISTNAME}/www/bb-page.html
+	${INSTALL_SCRIPT} ${WRKSRC}/www/bb-pager.sh \
+				${PREFIX}/www/cgi-bin/bb-pager.sh
+	@ln -sf ${PREFIX}/www/cgi-bin/bb-pager.sh \
+				${PREFIX}/${DISTNAME}/www/bb-pager.sh
 	${INSTALL_DATA} ${WRKSRC}/www/gifs/bb-diag.gif \
 				${PREFIX}/${DISTNAME}/www/gifs/bb-diag.gif
 	${INSTALL_DATA} ${WRKSRC}/www/gifs/bb.gif \
@@ -128,7 +132,6 @@ do-install:
 	@${RM} -f ${PREFIX}/www/data/bb
 	@ln -sf ${PREFIX}/${DISTNAME}/www ${PREFIX}/www/data/bb
 	@ln -sf bb.html ${PREFIX}/${DISTNAME}/www/index.html
-	@ln -sf ${PREFIX}/${DISTNAME}/bin/bb-page.sh ${PREFIX}/www/cgi-bin
 	@echo ""
 	@echo "================================================================"
 	@echo "==== Configuration Notes:                                    ==="
