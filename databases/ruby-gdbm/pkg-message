@@ -1,0 +1,8 @@
+************************************************************
+This package doesn't contain any manuals nor examples, but
+it wouldn't be a problem, as the interface of this module
+is exactly the same as DBM and SDBM, except GDBM has a
+"reorganize" method.  See the DBM module's document included
+in the ruby-man package, and gdbm(3) manpage included in the
+gdbm package.
+************************************************************
