@@ -25,11 +25,11 @@ pre-patch:
 pre-install:
 
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	@ ${MKDIR} ${PREFIX}/listar
-	@ ${CP} -R ${WRKDIR}/${DISTNAME}/* ${PREFIX}/listar
-	@ ${RM} -R ${PREFIX}/listar/src/
-	@ ${RM} -R ${PREFIX}/listar/debian/
-	@ ${CHOWN} -R listar:listar ${PREFIX}/listar/*
+	@ ${MKDIR} ${PREFIX}/${PORTNAME}
+	@ ${CP} -R ${WRKDIR}/${PORTNAME}-1.0.0/* ${PREFIX}/listar
+	@ ${RM} -R ${PREFIX}/${PORTNAME}/src/
+	@ ${RM} -R ${PREFIX}/${PORTNAME}/debian/
+	@ ${CHOWN} -R listar:listar ${PREFIX}/${PORTNAME}/*
 
 post-install:
 
