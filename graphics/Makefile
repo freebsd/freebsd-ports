@@ -91,6 +91,7 @@
     SUBDIR += kplot3d
     SUBDIR += lfview
     SUBDIR += libdjvu++
+    SUBDIR += libflash
     SUBDIR += libggi
     SUBDIR += libimg
     SUBDIR += libmorph
