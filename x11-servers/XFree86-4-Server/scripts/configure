@@ -67,10 +67,11 @@ else
 cat <<EOF
 *** I don't see the static library for tk version $tkversion in /usr/local/lib.
 *** XF86Setup will not be installed. If you want to build this program
-*** install tk 4.2 or 8.0 first.
+*** install tk 4.2 or 8.x first.
 
 EOF
 fi
+
 cat <<END
  Which servers do you wish to build, you can save a lot of disk space
  by only compiling the server you will be using.  It will also save you
@@ -85,7 +86,7 @@ if [ X"${MACHINE}" = X"pc98" ]; then
     echo "#define BuildPC98Servers	YES"  >>$F
     echo "#undef XF98EGCServer"           >>$F
     echo "#define XF98EGCServer     YES"  >>$F
-    servers="GA968 GANBWAP MGA NEC480 NECS3 NKVNEC PWLB PWSKB SVGA TGUI WABEP WABS WSNA"
+    servers="GA968 GANBWAP NEC480 NKVNEC WABS WABEP WSNA TGUI MGA SVGA NECS3 PWSKB PWLB"
     selected=EGC
     for i in $servers; do
 	yesno "Do you want to build the $i server?"
@@ -143,7 +144,7 @@ cat >> $F <<END
                                 cirrus ncr77c22 compaq mga oak al2101 ali \
                                 cl64xx video7 ark mx realtek apm s3v \
                                 s3_svga neo chips cyrix rendition p9x00 \
-				spc8110 generic
+				spc8110 i740 tdfx generic
 
 #define XF86Vga16Drivers	et4000 et3000 ncr77c22 ati sis tvga8900 oak \
 				cl64xx generic 
@@ -152,10 +153,6 @@ cat >> $F <<END
 				cirrus ncr77c22 oak cl64xx generic
 
 #define XF86MonoDrivers		hgc1280 sigma apollo hercules
-
-#define XF86S3Drivers		newmmio mmio_928 s3_generic
-
-#define XF86S3VDrivers		s3_virge
 
 #define XF86W32Drivers		et4000w32
 

@@ -527,6 +527,9 @@ lib/X11/config/convex.cf
 lib/X11/config/cray.cf
 lib/X11/config/fujitsu.cf
 lib/X11/config/generic.cf
+lib/X11/config/gnu.cf
+lib/X11/config/gnuLib.rules
+lib/X11/config/gnuLib.tmpl
 lib/X11/config/host.def
 lib/X11/config/hp.cf
 lib/X11/config/hpLib.rules
@@ -587,6 +590,7 @@ lib/X11/config/xf86site.def
 lib/X11/config/xfree86.cf
 lib/X11/doc/AccelCards
 lib/X11/doc/BUILD
+lib/X11/doc/BetaReport
 lib/X11/doc/COPYRIGHT
 lib/X11/doc/Devices
 lib/X11/doc/Monitors
@@ -597,6 +601,7 @@ lib/X11/doc/README.Config
 lib/X11/doc/README.DECtga
 lib/X11/doc/README.DGA
 lib/X11/doc/README.FreeBSD
+lib/X11/doc/README.I128
 lib/X11/doc/README.LinkKit
 lib/X11/doc/README.MGA
 lib/X11/doc/README.Mach32
@@ -619,6 +624,7 @@ lib/X11/doc/README.cirrus
 lib/X11/doc/README.clkprog
 lib/X11/doc/README.cyrix
 lib/X11/doc/README.epson
+lib/X11/doc/README.i740
 lib/X11/doc/README.mouse
 lib/X11/doc/README.neo
 lib/X11/doc/README.rendition
@@ -1260,6 +1266,7 @@ lib/X11/locale/tbl_data/tabkoi8_r
 lib/X11/locale/th_TH.TACTIS/XLC_LOCALE
 lib/X11/locale/zh/XLC_LOCALE
 lib/X11/locale/zh_TW/XLC_LOCALE
+lib/X11/locale/zh_TW.Big5/XLC_LOCALE
 lib/X11/proxymngr/pmconfig
 lib/X11/rgb.txt
 lib/X11/rstart/commands/@List
@@ -1390,7 +1397,9 @@ lib/X11/xkb/symbols/amiga
 lib/X11/xkb/symbols/ataritt
 lib/X11/xkb/symbols/be
 lib/X11/xkb/symbols/bg
+lib/X11/xkb/symbols/br
 lib/X11/xkb/symbols/ca
+lib/X11/xkb/symbols/ca_enhanced
 lib/X11/xkb/symbols/cs
 lib/X11/xkb/symbols/ctrl
 lib/X11/xkb/symbols/de
@@ -1416,11 +1425,13 @@ lib/X11/xkb/symbols/it
 lib/X11/xkb/symbols/jp
 lib/X11/xkb/symbols/keypad
 lib/X11/xkb/symbols/lock
+lib/X11/xkb/symbols/macintosh/us
 lib/X11/xkb/symbols/nec/jp
 lib/X11/xkb/symbols/no
 lib/X11/xkb/symbols/pc104
 lib/X11/xkb/symbols/pl
 lib/X11/xkb/symbols/pt
+lib/X11/xkb/symbols/ralt
 lib/X11/xkb/symbols/ru
 lib/X11/xkb/symbols/se
 lib/X11/xkb/symbols/sgi/jp
@@ -1429,6 +1440,7 @@ lib/X11/xkb/symbols/sun/se
 lib/X11/xkb/symbols/sun/us
 lib/X11/xkb/symbols/th
 lib/X11/xkb/symbols/us
+lib/X11/xkb/symbols/us_intl
 lib/X11/xkb/types.dir
 lib/X11/xkb/types/basic
 lib/X11/xkb/types/cancel
@@ -1494,7 +1506,9 @@ lib/libxkbui.a
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/modules/pex5.so
 lib/modules/xf86AceCad.so
+lib/modules/xf86Calcomp.so
 lib/modules/xf86Dial.so
+lib/modules/xf86Dyna.so
 lib/modules/xf86Elo.so
 lib/modules/xf86Jstk.so
 lib/modules/xf86MuTouch.so
