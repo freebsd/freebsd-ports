@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	0.99.10
+PORTVERSION=	0.99.10.2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://dovecot.procontrol.fi/
 
@@ -17,12 +17,13 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--without-shadow --enable-ipv6 \
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--without-shadow --enable-ipv6 \
 		--localstatedir=/var --with-ssl=openssl \
 		--with-ssldir=/var/dovecot/ssl --with-pop3d \
 		--with-pam
-CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
-	LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
@@ -141,7 +142,7 @@ post-install:
 	${INSTALL_SCRIPT} -m 751 ${FILESDIR}/dovecot.sh.sample \
 		${PREFIX}/etc/rc.d/dovecot.sh.sample
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/dovecot
+	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} \
 		${WRKSRC}/doc/auth.txt \
 		${WRKSRC}/doc/design.txt \
@@ -155,7 +156,7 @@ post-install:
 		${WRKSRC}/doc/dovecot-openssl.cnf \
 		${WRKSRC}/doc/mkcert.sh \
 		${FILESDIR}/README.FreeBSD \
-			${PREFIX}/share/doc/dovecot
+			${DOCSDIR}
 .endif
 	@${CP} ${PKGMESSAGE} ${WRKDIR}/pkg-message
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \

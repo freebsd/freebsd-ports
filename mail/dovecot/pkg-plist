@@ -6,17 +6,17 @@ libexec/dovecot/pop3
 libexec/dovecot/pop3-login
 libexec/dovecot/dovecot-auth
 sbin/dovecot
-%%PORTDOCS%%share/doc/dovecot/auth.txt
-%%PORTDOCS%%share/doc/dovecot/design.txt
-%%PORTDOCS%%share/doc/dovecot/nfs.txt
-%%PORTDOCS%%share/doc/dovecot/index.txt
-%%PORTDOCS%%share/doc/dovecot/multiaccess.txt
-%%PORTDOCS%%share/doc/dovecot/configuration.txt
-%%PORTDOCS%%share/doc/dovecot/mail-storages.txt
-%%PORTDOCS%%share/doc/dovecot/dovecot-ldap.conf
-%%PORTDOCS%%share/doc/dovecot/dovecot-pgsql.conf
-%%PORTDOCS%%share/doc/dovecot/dovecot-openssl.cnf
-%%PORTDOCS%%share/doc/dovecot/mkcert.sh
-%%PORTDOCS%%share/doc/dovecot/README.FreeBSD
-%%PORTDOCS%%@dirrm share/doc/dovecot
+%%PORTDOCS%%%%DOCSDIR%%/auth.txt
+%%PORTDOCS%%%%DOCSDIR%%/design.txt
+%%PORTDOCS%%%%DOCSDIR%%/nfs.txt
+%%PORTDOCS%%%%DOCSDIR%%/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/multiaccess.txt
+%%PORTDOCS%%%%DOCSDIR%%/configuration.txt
+%%PORTDOCS%%%%DOCSDIR%%/mail-storages.txt
+%%PORTDOCS%%%%DOCSDIR%%/dovecot-ldap.conf
+%%PORTDOCS%%%%DOCSDIR%%/dovecot-pgsql.conf
+%%PORTDOCS%%%%DOCSDIR%%/dovecot-openssl.cnf
+%%PORTDOCS%%%%DOCSDIR%%/mkcert.sh
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/dovecot
