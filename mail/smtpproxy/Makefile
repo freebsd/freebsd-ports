@@ -18,6 +18,8 @@ MAKEFILE=	makefile
 
 MAN1=		smtp.proxy.1
 
+FORBIDDEN=	"format string vulnerability"
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,CC =,CC ?=,; s,CFLAGS =,CFLAGS +=,; \
 		s,/usr/local/sbin,${PREFIX}/libexec,; s,/usr/local,${PREFIX},' \
