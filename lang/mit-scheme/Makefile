@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mit-scheme
-PORTVERSION=	7.5.16
+PORTVERSION=	7.6.0
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.swiss.ai.mit.edu/pub/scheme-7.5/%SUBDIR%/
+MASTER_SITES=	ftp.swiss.ai.mit.edu/pub/mit-scheme/7.6/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION} OLD/${PORTVERSION}
 DISTNAME=	scheme-${PORTVERSION}-ix86-freebsd
 

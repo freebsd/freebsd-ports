@@ -244,6 +244,7 @@ lib/mit-scheme/SRC/runtime/os2winp.bci
 lib/mit-scheme/SRC/runtime/output.bci
 lib/mit-scheme/SRC/runtime/packag.bci
 lib/mit-scheme/SRC/runtime/parse.bci
+lib/mit-scheme/SRC/runtime/parser-buffer.bci
 lib/mit-scheme/SRC/runtime/partab.bci
 lib/mit-scheme/SRC/runtime/pathnm.bci
 lib/mit-scheme/SRC/runtime/poplat.bci
@@ -261,6 +262,7 @@ lib/mit-scheme/SRC/runtime/record.bci
 lib/mit-scheme/SRC/runtime/recslot.bci
 lib/mit-scheme/SRC/runtime/regexp.bci
 lib/mit-scheme/SRC/runtime/rep.bci
+lib/mit-scheme/SRC/runtime/rexp.bci
 lib/mit-scheme/SRC/runtime/rgxcmp.bci
 lib/mit-scheme/SRC/runtime/savres.bci
 lib/mit-scheme/SRC/runtime/scan.bci
@@ -289,6 +291,7 @@ lib/mit-scheme/SRC/runtime/tvector.bci
 lib/mit-scheme/SRC/runtime/udata.bci
 lib/mit-scheme/SRC/runtime/uenvir.bci
 lib/mit-scheme/SRC/runtime/uerror.bci
+lib/mit-scheme/SRC/runtime/unicode.bci
 lib/mit-scheme/SRC/runtime/unpars.bci
 lib/mit-scheme/SRC/runtime/unsyn.bci
 lib/mit-scheme/SRC/runtime/unxdir.bci
@@ -308,6 +311,23 @@ lib/mit-scheme/SRC/runtime/x11graph.bci
 lib/mit-scheme/SRC/runtime/xeval.bci
 lib/mit-scheme/SRC/runtime/ystep.bci
 lib/mit-scheme/all.com
+lib/mit-scheme/cref/anfile.bci
+lib/mit-scheme/cref/anfile.com
+lib/mit-scheme/cref/conpkg.bci
+lib/mit-scheme/cref/conpkg.com
+lib/mit-scheme/cref/cref.pkd
+lib/mit-scheme/cref/forpkg.bci
+lib/mit-scheme/cref/forpkg.com
+lib/mit-scheme/cref/make.bci
+lib/mit-scheme/cref/make.com
+lib/mit-scheme/cref/mset.bci
+lib/mit-scheme/cref/mset.com
+lib/mit-scheme/cref/object.bci
+lib/mit-scheme/cref/object.com
+lib/mit-scheme/cref/redpkg.bci
+lib/mit-scheme/cref/redpkg.com
+lib/mit-scheme/cref/toplev.bci
+lib/mit-scheme/cref/toplev.com
 lib/mit-scheme/doc/COPYING
 lib/mit-scheme/doc/imail.html
 lib/mit-scheme/doc/imail_1.html
@@ -360,6 +380,7 @@ lib/mit-scheme/doc/scheme_38.html
 lib/mit-scheme/doc/scheme_39.html
 lib/mit-scheme/doc/scheme_4.html
 lib/mit-scheme/doc/scheme_40.html
+lib/mit-scheme/doc/scheme_41.html
 lib/mit-scheme/doc/scheme_5.html
 lib/mit-scheme/doc/scheme_6.html
 lib/mit-scheme/doc/scheme_7.html
@@ -442,6 +463,7 @@ lib/mit-scheme/edwin/etc/mime.types
 lib/mit-scheme/edwin/info/dir
 lib/mit-scheme/edwin/info/mit-scheme-imail.info-1.gz
 lib/mit-scheme/edwin/info/mit-scheme-imail.info-2.gz
+lib/mit-scheme/edwin/info/mit-scheme-imail.info-3.gz
 lib/mit-scheme/edwin/info/mit-scheme-imail.info.gz
 lib/mit-scheme/edwin/info/mit-scheme-ref.info-1.gz
 lib/mit-scheme/edwin/info/mit-scheme-ref.info-10.gz
@@ -453,6 +475,7 @@ lib/mit-scheme/edwin/info/mit-scheme-ref.info-15.gz
 lib/mit-scheme/edwin/info/mit-scheme-ref.info-16.gz
 lib/mit-scheme/edwin/info/mit-scheme-ref.info-17.gz
 lib/mit-scheme/edwin/info/mit-scheme-ref.info-18.gz
+lib/mit-scheme/edwin/info/mit-scheme-ref.info-19.gz
 lib/mit-scheme/edwin/info/mit-scheme-ref.info-2.gz
 lib/mit-scheme/edwin/info/mit-scheme-ref.info-3.gz
 lib/mit-scheme/edwin/info/mit-scheme-ref.info-4.gz
@@ -485,6 +508,8 @@ lib/mit-scheme/edwin/info/r5rs.info-4.gz
 lib/mit-scheme/edwin/info/r5rs.info-5.gz
 lib/mit-scheme/edwin/info/r5rs.info.gz
 lib/mit-scheme/gcdrone
+lib/mit-scheme/imail/imail-browser.bci
+lib/mit-scheme/imail/imail-browser.com
 lib/mit-scheme/imail/imail-core.bci
 lib/mit-scheme/imail/imail-core.com
 lib/mit-scheme/imail/imail-file.bci
@@ -501,17 +526,12 @@ lib/mit-scheme/imail/imail-umail.bci
 lib/mit-scheme/imail/imail-umail.com
 lib/mit-scheme/imail/imail-util.bci
 lib/mit-scheme/imail/imail-util.com
-lib/mit-scheme/imail/imail.bco
-lib/mit-scheme/imail/imail.bld
+lib/mit-scheme/imail/imail.pkd
 lib/mit-scheme/imail/imap-response.bci
 lib/mit-scheme/imail/imap-response.com
 lib/mit-scheme/imail/imap-syntax.bci
 lib/mit-scheme/imail/imap-syntax.com
 lib/mit-scheme/imail/load.scm
-lib/mit-scheme/imail/parser.bci
-lib/mit-scheme/imail/parser.com
-lib/mit-scheme/imail/rexp.bci
-lib/mit-scheme/imail/rexp.com
 lib/mit-scheme/imail/url.bci
 lib/mit-scheme/imail/url.com
 lib/mit-scheme/optiondb.scm
@@ -541,10 +561,13 @@ lib/mit-scheme/options/rbtree.bci
 lib/mit-scheme/options/rbtree.com
 lib/mit-scheme/options/regexp.bci
 lib/mit-scheme/options/regexp.com
+lib/mit-scheme/options/rexp.bci
+lib/mit-scheme/options/rexp.com
 lib/mit-scheme/options/rgxcmp.bci
 lib/mit-scheme/options/rgxcmp.com
 lib/mit-scheme/options/syncproc.bci
 lib/mit-scheme/options/syncproc.com
+lib/mit-scheme/options/url.bci
 lib/mit-scheme/options/wttree.bci
 lib/mit-scheme/options/wttree.com
 lib/mit-scheme/options/ystep.bci
@@ -563,19 +586,41 @@ lib/mit-scheme/sos/printer.bci
 lib/mit-scheme/sos/printer.com
 lib/mit-scheme/sos/slot.bci
 lib/mit-scheme/sos/slot.com
-lib/mit-scheme/sos/sos.bco
-lib/mit-scheme/sos/sos.bld
+lib/mit-scheme/sos/sos.pkd
+lib/mit-scheme/star-parser/load.scm
+lib/mit-scheme/star-parser/matcher.bci
+lib/mit-scheme/star-parser/matcher.com
+lib/mit-scheme/star-parser/parser.bci
+lib/mit-scheme/star-parser/parser.com
+lib/mit-scheme/star-parser/parser.pkd
+lib/mit-scheme/star-parser/shared.bci
+lib/mit-scheme/star-parser/shared.com
+lib/mit-scheme/star-parser/synchk.bci
+lib/mit-scheme/star-parser/synchk.com
 lib/mit-scheme/utabmd.bin
-@dirrm lib/mit-scheme/doc
+lib/mit-scheme/xml/load.scm
+lib/mit-scheme/xml/xml-chars.bci
+lib/mit-scheme/xml/xml-chars.com
+lib/mit-scheme/xml/xml-output.bci
+lib/mit-scheme/xml/xml-output.com
+lib/mit-scheme/xml/xml-parser.bci
+lib/mit-scheme/xml/xml-parser.com
+lib/mit-scheme/xml/xml-struct.bci
+lib/mit-scheme/xml/xml-struct.com
+lib/mit-scheme/xml/xml.pkd
+@dirrm lib/mit-scheme/xml
+@dirrm lib/mit-scheme/star-parser
+@dirrm lib/mit-scheme/sos
+@dirrm lib/mit-scheme/options
+@dirrm lib/mit-scheme/lib
 @dirrm lib/mit-scheme/imail
 @dirrm lib/mit-scheme/edwin/info
 @dirrm lib/mit-scheme/edwin/etc
 @dirrm lib/mit-scheme/edwin/autoload
 @dirrm lib/mit-scheme/edwin
-@dirrm lib/mit-scheme/sos
-@dirrm lib/mit-scheme/options
-@dirrm lib/mit-scheme/SRC/edwin
+@dirrm lib/mit-scheme/doc
+@dirrm lib/mit-scheme/cref
 @dirrm lib/mit-scheme/SRC/runtime
+@dirrm lib/mit-scheme/SRC/edwin
 @dirrm lib/mit-scheme/SRC
-@dirrm lib/mit-scheme/lib
 @dirrm lib/mit-scheme
