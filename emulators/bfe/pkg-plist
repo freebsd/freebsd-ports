@@ -1,4 +1,4 @@
-bin/bfe
+bin/bfe2
 share/bfe/bferc.sample
 share/bfe/README.bferc
 @dirrm share/bfe
