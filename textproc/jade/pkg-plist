@@ -171,10 +171,14 @@ share/doc/jade/sx.htm
 share/doc/jade/sysdecl.htm
 share/doc/jade/sysid.htm
 share/doc/jade/xml.htm
+share/sgml/jade/FOT.tex
 share/sgml/jade/Makefile.jadetex
 share/sgml/jade/catalog
+@unexec env LANG=C perl -ni -e 'print if !m|%D/%F|;' %D/share/sgml/catalog
+@exec if [ ! -f %D/share/sgml/catalog ]; then echo "CATALOG \"%D/%F\"" > %D/share/sgml/catalog; else env LANG=C perl -ni -e 'print if !m|%D/%F|;print "CATALOG \"%D/%F\"\n" if eof;' %D/share/sgml/catalog; fi
 share/sgml/jade/demo.dsl
 share/sgml/jade/demo.sgm
+share/sgml/jade/demoMaster.tex
 share/sgml/jade/dsssl.dtd
 share/sgml/jade/fot.dtd
 share/sgml/jade/jadetex.dtx
