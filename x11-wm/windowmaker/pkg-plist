@@ -72,6 +72,7 @@ bin/geticonset
 bin/getstyle
 bin/seticons
 bin/setstyle
+bin/wcopy
 bin/wdread
 bin/wdwrite
 bin/wkdemenu.pl
@@ -82,6 +83,7 @@ bin/wmaker.inst
 bin/wmchlocale
 bin/wmsetbg
 bin/wmsetup
+bin/wpaste
 bin/wsetfont
 bin/wxcopy
 bin/wxpaste
@@ -93,6 +95,7 @@ etc/WindowMaker/WindowMaker
 include/WINGs/WINGs.h
 include/WINGs/WINGsP.h
 include/WINGs/WUtil.h
+include/WINGs/proplist-compat.h
 include/WINGs/wtabledelegates.h
 include/WINGs/wtableview.h
 include/WMaker.h
@@ -263,6 +266,7 @@ share/WindowMaker/plmenu.pl
 share/WindowMaker/plmenu.ro
 share/WindowMaker/plmenu.sk
 share/WindowMaker/plmenu.zh_CN
+share/WindowMaker/plmenu.zh_TW.Big5
 share/WindowMaker/wmmacros
 share/WindowMaker/xtree.dat
 share/locale/bg/LC_MESSAGES/WPrefs.mo
