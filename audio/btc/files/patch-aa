@@ -1,0 +1,11 @@
+--- btc.c.orig	Sun Jul 30 15:55:16 2000
++++ btc.c	Sun Jul 30 15:56:41 2000
+@@ -1583,7 +1583,7 @@
+ 
+ #if FONT == NO_CUSTOM_FONT
+     fprintf( outfile, "\
+-     ||                 Capitol notes are dotted notes (1.5 x duration)\n\
++     ||                 Capital notes are dotted notes (1.5 x duration)\n\
+      ||\n" );
+ #endif
+ 
