@@ -223,20 +223,22 @@ MASTER_SITE_REDHAT_LINUX+= \
 # Note: If you know which of the following RingServers is nearest to
 # you, please specify it in your /etc/make.conf.
 #
-#	ring.etl.go.jp			ring.asahi-net.or.jp
-#	ring.crl.go.jp			ring.astem.or.jp
-#	ring.jah.ne.jp			ring.exp.fujixerox.co.jp
-#	ring.so-net.ne.jp		ring.ip-kyoto.ad.jp
-#	ring.iwate-pu.ac.jp		ring.shibaura-it.ac.jp
-#	ring.ocn.ad.jp			ring.htcn.ne.jp
-#	ring.omp.ad.jp			ring.jec.ad.jp
+#	ring.airnet.ne.jp		ring.asahi-net.or.jp
+#	ring.astem.or.jp		ring.atr.co.jp
+#	ring.crl.go.jp			ring.csi.ad.jp
+#	ring.data-hotel.net		ring.dcs.pref.mie.jp
+#	ring.edogawa-u.ac.jp		ring.etl.go.jp
+#	ring.exp.fujixerox.co.jp	ring.hosei.ac.jp
+#	ring.htcn.ne.jp			ring.ip-kyoto.ad.jp
+#	ring.iwate-pu.ac.jp		ring.jah.ne.jp
+#	ring.k-opti.com			ring.nihon-u.ac.jp		
+#	ring.ocn.ad.jp			ring.pwd.ne.jp
+#	ring.qgpop.net			ring.riken.go.jp
+#	ring.sbp-shimane.net		ring.shibaura-it.ac.jp
+#	ring.shizuoka.ac.jp		ring.so-net.ne.jp
 #	ring.tains.tohoku.ac.jp		ring.toyama-ix.net
-#	ring.toyama-u.ac.jp		ring.edogawa-u.ac.jp
-#	ring.data-hotel.net		ring.yamanashi.ac.jp
-#	ring.nihon-u.ac.jp		ring.ctc.jp
-#	ring.riken.go.jp		ring.hosei.ac.jp
-#	ring.dcs.pref.mie.jp		ring.wakwak.com
-#	ring.qgpop.net
+#	ring.toyama-u.ac.jp		ring.wakwak.com
+#	ring.yamanashi.ac.jp
 #
 # (The latest list is available at http://www.ring.gr.jp/)
 #
@@ -244,6 +246,17 @@ MASTER_SITE_REDHAT_LINUX+= \
 #
 #	http://<server>/archives/%SUBDIR%/
 #	ftp://<server>/pub/%SUBDIR%/
+#
+# MirrorNavi redirects requests to the nearest server from the client
+# using HTTP redirection (301) which "fetch -A" does not follow.
+# If you want to use this, set FETCH_CMD to something other than
+# "fetch -A".  It is also a good idea to check out the URL just to
+# see which mirror site it suggests.
+#
+# 	http://www.mirrornavi.com/ring/archives/%SUBDIR%/
+#
+# DNSBalance redirects requests to the least busy server at the moment
+# at the DNS lookup level. (safe to use with "fetch -A")
 #
 MASTER_SITE_RINGSERVER+=	\
 	ftp://ftp.dnsbalance.ring.gr.jp/pub/%SUBDIR%/ \
