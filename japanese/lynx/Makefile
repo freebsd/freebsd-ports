@@ -3,7 +3,7 @@
 # Date created:         10 August 1998
 # Whom:                 Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1999/02/28 08:22:24 shige Exp $
+# $Id: Makefile,v 1.4 1999/07/04 13:51:00 shige Exp $
 #
 
 DISTNAME=       lynx2.8.2rel.1
@@ -28,8 +28,8 @@ PLIST_SUB=	DOCDIR=${L_DOCDIR} HELPDIR=${L_HELPDIR} \
 INSTALL_TARGET= install install-help
 MAN1=		lynx.1
 
-RUN_DEPENDS=	unzip:${PORTSDIR}/arhivers/unzip \
-		zip:${PORTSDIR}/arhivers/zip
+RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
+		zip:${PORTSDIR}/archivers/zip
 
 L_ETCDIR=	etc
 L_DOCDIR=	share/doc/lynx
