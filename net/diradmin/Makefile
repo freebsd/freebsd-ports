@@ -7,7 +7,7 @@
 
 PORTNAME=	diradmin
 PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://diradmin.open-it.org/
 DISTNAME=	directory_administrator-${PORTVERSION}
@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomelibs
 USE_OPENLDAP=	yes
+USE_OPENSSL=	yes
 CFLAGS+=	-I/usr/src/lib/libcrypt
 
 PORTDOCS=	AUTHORS CREDITS ChangeLog INSTALL NEWS \
