@@ -8,12 +8,13 @@ libexec/fetchaddr
 libexec/lbdb-munge
 libexec/lbdb_bbdb_query.el
 libexec/lbdb_lib
-libexec/m_abook
+%%ABOOK%%libexec/m_abook
 libexec/m_bbdb
+%%EVOLUTION%%libexec/m_evolution
 libexec/m_fido
 libexec/m_finger
 libexec/m_gnomecard
-libexec/m_gpg
+%%GPG%%libexec/m_gpg
 libexec/m_inmail
 libexec/m_ldap
 libexec/m_muttalias
