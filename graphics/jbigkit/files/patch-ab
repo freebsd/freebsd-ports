@@ -1,41 +1,68 @@
---- libjbig/Makefile.orig	Fri Apr 10 20:33:27 1998
-+++ libjbig/Makefile	Tue Sep 15 10:03:50 1998
-@@ -5,9 +5,9 @@
- CC = gcc
- 
- # Options for the compiler: A high optimization level is suggested
--CFLAGS = -O -Wall -ansi -pedantic
-+CFLAGS += -Wall -ansi -pedantic
- 
--all: libjbig.a tstcodec
-+all: libjbig.a libjbig.so.1
- 
- tstcodec: tstcodec.c jbig.c jbig.h jbig_tab.o
- 	$(CC) $(CFLAGS) -o tstcodec -DTEST_CODEC tstcodec.c jbig.c \
-@@ -18,10 +18,25 @@
- 	ar rc libjbig.a jbig.o jbig_tab.o
- 	ranlib libjbig.a
- 
-+libjbig.so.1: jbig.so jbig_tab.so
-+	rm -f libjbig.so.1
-+.if defined(PORTOBJFORMAT) && ${PORTOBJFORMAT} == elf
-+	$(CC) -o ${.TARGET} -shared -Wl,-soname,${.TARGET} ${.ALLSRC}         
-+.else
-+	ld -Bshareable -o ${.TARGET} ${.ALLSRC}
-+.endif
-+	ln -sf libjbig.so.1 libjbig.so
-+	
- jbig.o: jbig.c jbig.h
- 
-+.SUFFIXES: .c .so
-+.c.so:
-+	${CC} -c -fpic -DPIC ${CFLAGS} ${.IMPSRC} -o ${.TARGET}
-+jbig.so: jbig.c jbig.h
-+jbig_tab.so: jbig_tab.c
-+
- test: tstcodec
- 	./tstcodec
- 
- clean:
--	rm -f *.o *~ core gmon.out dbg_d\=??.pbm tstcodec
-+	rm -f *.o *~ core gmon.out dbg_d\=??.pbm tstcodec *.so libjbig.so.1 libjbig.a
+*** libjbig/Makefile.orig	Fri Apr 10 20:33:27 1998
+--- libjbig/Makefile	Wed Sep 16 09:15:13 1998
+***************
+*** 5,13 ****
+  CC = gcc
+  
+  # Options for the compiler: A high optimization level is suggested
+! CFLAGS = -O -Wall -ansi -pedantic
+  
+! all: libjbig.a tstcodec
+  
+  tstcodec: tstcodec.c jbig.c jbig.h jbig_tab.o
+  	$(CC) $(CFLAGS) -o tstcodec -DTEST_CODEC tstcodec.c jbig.c \
+--- 5,20 ----
+  CC = gcc
+  
+  # Options for the compiler: A high optimization level is suggested
+! CFLAGS += -Wall -ansi -pedantic
+  
+! JBIGLIB=libjbig.a
+! .if ${PORTOBJFORMAT} == elf
+! SOJBIGLIB=libjbig.so.1
+! .else
+! SOJBIGLIB=libjbig.so.1.0
+! .endif
+! 
+! all: libjbig.a $(SOJBIGLIB)
+  
+  tstcodec: tstcodec.c jbig.c jbig.h jbig_tab.o
+  	$(CC) $(CFLAGS) -o tstcodec -DTEST_CODEC tstcodec.c jbig.c \
+***************
+*** 18,27 ****
+  	ar rc libjbig.a jbig.o jbig_tab.o
+  	ranlib libjbig.a
+  
+  jbig.o: jbig.c jbig.h
+  
+  test: tstcodec
+  	./tstcodec
+  
+  clean:
+! 	rm -f *.o *~ core gmon.out dbg_d\=??.pbm tstcodec
+--- 25,49 ----
+  	ar rc libjbig.a jbig.o jbig_tab.o
+  	ranlib libjbig.a
+  
++ $(SOJBIGLIB): jbig.so jbig_tab.so
++ 	rm -f ${.TARGET}
++ .if ${PORTOBJFORMAT} == elf
++ 	$(CC) -o ${.TARGET} -shared -Wl,-soname,${.TARGET} ${.ALLSRC}         
++ 	ln -sf ${.TARGET} `echo ${.TARGET} | sed 's/\.so.*$$/.so/'`
++ .else
++ 	ld -Bshareable -o ${.TARGET} ${.ALLSRC}
++ .endif
++ 	
+  jbig.o: jbig.c jbig.h
+  
++ .SUFFIXES: .c .so
++ .c.so:
++ 	${CC} -c -fpic -DPIC ${CFLAGS} ${.IMPSRC} -o ${.TARGET}
++ jbig.so: jbig.c jbig.h
++ jbig_tab.so: jbig_tab.c
++ 
+  test: tstcodec
+  	./tstcodec
+  
+  clean:
+! 	rm -f *.o *~ core gmon.out dbg_d\=??.pbm tstcodec *.so libjbig.so.1 libjbig.so.1.0 libjbig.a
