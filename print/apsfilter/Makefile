@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apsfilter
-PORTVERSION=	7.1.0
+PORTVERSION=	7.1.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 
@@ -90,7 +90,7 @@ RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
 # needed for aps2file :-/
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash2
 
-MAN1=		apsfilter.1 aps2file.1
+MAN1=		apsfilter.1 aps2file.1 apsfilter-bug.1 apspreview.1
 MAN5=		apsfilterrc.5
 
 HAS_CONFIGURE=	yes
