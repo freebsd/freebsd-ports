@@ -14,12 +14,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ebert@informatik.unibw-muenchen.de
 COMMENT=	A pager for sawfish without GNOME
 
-BUILD_DEPENDS=	${X11BASE}/bin/sawfish:${PORTSDIR}/x11-wm/sawfish
-RUN_DEPENDS=	${X11BASE}/bin/sawfish:${PORTSDIR}/x11-wm/sawfish
+BUILD_DEPENDS=	${X11BASE}/bin/sawfish:${PORTSDIR}/x11-wm/sawfish2
+RUN_DEPENDS=	${X11BASE}/bin/sawfish:${PORTSDIR}/x11-wm/sawfish2
 
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
@@ -27,9 +26,6 @@ SAWFISH_VERSION=	`${X11BASE}/bin/sawfish --version 2>&1 | \
 			${SED} 's/^.*version[ ]*\([0-9.]*\).*/\1/'`
 
 PLIST_SUB+=	SAWFISH_VERSION="${SAWFISH_VERSION}"
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/gtk-config/gtk12-config/g' ${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
