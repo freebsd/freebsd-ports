@@ -1868,6 +1868,7 @@ garith		ports/games/garith
 gate		ports/editors/gate
 gated		ports/net/gated
 gatekeeper	ports/net/gatekeeper
+gauche		ports/lang/gauche
 gaussian98	ports/biology/gaussian98
 gawk		ports/lang/gawk
 gbackground	ports/x11/gbackground
