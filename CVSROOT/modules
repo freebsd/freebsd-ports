@@ -9499,6 +9499,7 @@ wmxss		ports/x11/wmxss
 wmymail		ports/mail/wmymail
 wmzazof		ports/sysutils/wmzazof
 wol		ports/net/wol
+wolf3d		ports/games/wolf3d
 wolfpack	ports/games/wolfpack
 word2x		ports/textproc/word2x
 wordnet		ports/textproc/wordnet
