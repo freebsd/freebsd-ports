@@ -1,0 +1,5 @@
+bin/jxvi
+bin/xvi
+man/man1/xvi.1.gz
+share/xvi/xvi.help
+@dirrm share/xvi

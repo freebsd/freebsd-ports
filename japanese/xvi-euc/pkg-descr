@@ -1,0 +1,11 @@
+This is a source release of the Xvi editor (derived from "STEVIE"), a
+clone of the UNIX editor `vi'. The program was originally developed
+for the Atari ST, but has been ported to UNIX, MS-DOS, OS/2 and QNX as
+well.
+
+Xvi is a portable multi-window version of `vi'. In spite of its name,
+there is, as yet, no X-Windows-specific version of it, but work is
+still in progress. Existing versions use text windows separated by
+horizontal status lines on character mode displays.  The windows may
+represent different files being edited, or different views on to the
+same file.
