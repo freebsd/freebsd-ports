@@ -9,8 +9,8 @@ PORTNAME=	gnustep-gui
 PORTVERSION=	0.7.6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
-		http://ftp.codefactory.se/pub/gnu/gstep/ \
-		http://planetmirror.com/pub/gnustep/core/
+		http://archive.progeny.com/gnustep/core/ \
+		ftp://ftp.easynet.nl/mirror/GNUstep/core/
 
 MAINTAINER=	dinoex@FreeBSD.org
 
