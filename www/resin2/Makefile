@@ -13,6 +13,8 @@ MASTER_SITES=		http://www.caucho.com/download/
 MAINTAINER=		jb.quenot@caraldi.com
 COMMENT=		Resin, a Java-based Application Server, 2.x branch
 
+BROKEN=			Does not build
+
 USE_JAVA=		yes
 JAVA_VERSION=		1.2+
 HAS_CONFIGURE=		yes
