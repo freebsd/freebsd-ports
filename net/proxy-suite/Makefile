@@ -39,7 +39,7 @@ CONFIGURE_ARGS+= --enable-rfc1579
 #
 .if defined(WITH_LDAP)
 CONFIGURE_ARGS+=	--with-libldap
-LIB_DEPENDS+=		ldap.1:${PORTSDIR}/net/openldap
+LIB_DEPENDS+=		ldap.1:${PORTSDIR}/net/openldap12
 .else
 CONFIGURE_ARGS+=	--without-libldap
 .endif

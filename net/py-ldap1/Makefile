@@ -15,7 +15,7 @@ DISTNAME=	python-ldap-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An LDAP module for python
 
-LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap
+LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12
 
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes

@@ -20,8 +20,8 @@ MAINTAINER=	marcus@FreeBSD.org
 LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2 \
 		lber.2:${PORTSDIR}/net/openldap2
 .else
-LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap \
-		lber.1:${PORTSDIR}/net/openldap
+LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12 \
+		lber.1:${PORTSDIR}/net/openldap12
 .endif
 
 USE_GMAKE=	yes

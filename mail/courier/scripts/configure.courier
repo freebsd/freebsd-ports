@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/courier/scripts/Attic/configure.courier,v 1.4 2003-01-04 16:17:26 seanc Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/courier/scripts/Attic/configure.courier,v 1.5 2003-02-24 02:26:51 edwin Exp $
 
 [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ] && exit
 
@@ -196,7 +196,7 @@ while [ "$1" ]; do
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			fi
-			echo "LIB_DEPENDS+=	ldap.1:\${PORTSDIR}/net/openldap"
+			echo "LIB_DEPENDS+=	ldap.1:\${PORTSDIR}/net/openldap12"
 			CPPFLAGS="${CPPFLAGS} -I\${LOCALBASE}/include"
 			LDFLAGS="${LDFLAGS} -L\${LOCALBASE}/lib"
 			WITH_LDAP="--with-authldap"

@@ -19,7 +19,7 @@ COMMENT=	Ruby interface to LDAP API based on RFC1823
 WITH_LDAP?=	openldap2
 
 .if ${WITH_LDAP} == openldap1
-LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap
+LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12
 .elif ${WITH_LDAP} == openldap2
 LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2
 .elif ${WITH_LDAP} == ldapsdk

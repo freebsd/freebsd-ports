@@ -27,7 +27,7 @@ MAINTAINER=	DougB@FreeBSD.org
 #
 .if defined(WITH_LDAP)
 LDAP_PREFIX?=	${LOCALBASE}
-BUILD_DEPENDS+=	${LDAP_PREFIX}/lib/libldap.a:${PORTSDIR}/net/openldap
+BUILD_DEPENDS+=	${LDAP_PREFIX}/lib/libldap.a:${PORTSDIR}/net/openldap12
 .endif
 
 .if defined(WITHOUT_SSL)
