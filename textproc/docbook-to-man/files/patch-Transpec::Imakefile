@@ -1,0 +1,11 @@
+--- Transpec/Imakefile.orig	Mon Jun 17 05:50:28 1996
++++ Transpec/Imakefile	Fri Oct  5 18:20:17 2001
+@@ -1,5 +1,6 @@
+-ROOT =		/usr/local
+-TPTLIB =	$(ROOT)/lib/tpt
++PREFIX ?=	/usr/local
++ROOT =		${PREFIX}
++TPTLIB =	$(ROOT)/share/sgml/otranspec
+ 
+ all::
+ 
