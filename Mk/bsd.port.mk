@@ -471,7 +471,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # are for debugging purposes.  Don't set them in your Makefile.
 #
 # ECHO_MSG		- Used to print all the '===>' style prompts - override this
-#				  to turn them off (default: /bin/echo).
+#				  to turn them off (default: ${ECHO}).
 # PATCH_DEBUG	- If set, print out more information about the patches as
 #				  it attempts to apply them.
 # PKG_DBDIR		- Where package installation is recorded (default: /var/db/pkg)
@@ -497,20 +497,36 @@ _PREMKINCLUDED=	yes
 
 AWK?=		/usr/bin/awk
 BASENAME?=	/usr/bin/basename
+.if exists(/usr/bin/bzip2)
+BZCAT?=		/usr/bin/bzcat
+BZIP2_CMD?=	/usr/bin/bzip2
+.else
+BZCAT?=		${LOCALBASE}/bin/bzcat
+BZIP2_CMD?=	${LOCALBASE}/bin/bzip2
+.endif
 CAT?=		/bin/cat
+CHGRP?=		/usr/bin/chgrp
 CHMOD?=		/bin/chmod
 CHOWN?=		/usr/sbin/chown
 CP?=		/bin/cp
-ECHO?=		/bin/echo
+CUT?=		/usr/bin/cut
+DC?=		/usr/bin/dc
+EGREP?=		/usr/bin/egrep
 EXPR?=		/bin/expr
-FALSE?=		/usr/bin/false
+FALSE?=		false				# Shell builtin
+FILE?=		/usr/bin/file
+FIND?=		/usr/bin/find
 GREP?=		/usr/bin/grep
 GUNZIP_CMD?=	/usr/bin/gunzip -f
 GZCAT?=		/usr/bin/gzcat
 GZIP?=		-9
 GZIP_CMD?=	/usr/bin/gzip -nf ${GZIP}
+HEAD?=		/usr/bin/head
+ID?=		/usr/bin/id
+IDENT?=		/usr/bin/ident
 LDCONFIG?=	/sbin/ldconfig
 LN?=		/bin/ln
+LS?=		/bin/ls
 MKDIR?=		/bin/mkdir -p
 MV?=		/bin/mv
 RM?=		/bin/rm
@@ -518,10 +534,20 @@ RMDIR?=		/bin/rmdir
 SED?=		/usr/bin/sed
 SETENV?=	/usr/bin/env
 SH?=		/bin/sh
+STRIP_CMD?=	/usr/bin/strip
+SU?=		/usr/bin/su
+TAIL?=		/usr/bin/tail
+TEST?=		test				# Shell builtin
 TR?=		/usr/bin/tr
-TRUE?=		/usr/bin/true
+TRUE?=		true				# Shell builtin
 UNAME?=		/usr/bin/uname
 WHICH?=		/usr/bin/which
+XARGS?=		/usr/bin/xargs
+
+# ECHO is defined in /usr/share/mk/sys.mk, which can either be "echo",
+# or "true" if the make flag -s is given.  Use ECHO_CMD where you mean
+# the echo command.
+ECHO_CMD?=	echo				# Shell builtin
 
 # Used to print all the '===>' style prompts - override this to turn them off.
 ECHO_MSG?=		${ECHO}
@@ -936,7 +962,7 @@ PACKAGE_COOKIE?=	${WRKDIR}/.package_done.${PKGNAME}
 
 # How to do nothing.  Override if you, for some strange reason, would rather
 # do something.
-DO_NADA?=		/usr/bin/true
+DO_NADA?=		${TRUE}
 
 # Use this as the first operand to always build dependency.
 NONEXISTENT?=	/nonexistent
@@ -1024,7 +1050,7 @@ EXTRACT_AFTER_ARGS?=	-d ${WRKDIR}
 EXTRACT_BEFORE_ARGS?=	-dc
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf -
 .if defined(USE_BZIP2)
-EXTRACT_CMD?=			bzip2
+EXTRACT_CMD?=			${BZIP2_CMD}
 .else
 EXTRACT_CMD?=			${GZIP_CMD}
 .endif
@@ -2110,7 +2136,7 @@ ${INSTALL_COOKIE}:
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} real-install
 # Scan PLIST for setugid files and startup scripts
 	-@for i in `${GREP} -v '^@' ${TMPPLIST}`; do \
-		/usr/bin/find ${PREFIX}/$$i -prune -type f \( -perm -4000 -o -perm -2000 \) \( -perm -0010 -o -perm -0001 \) -ls 2>/dev/null; \
+		${FIND} ${PREFIX}/$$i -prune -type f \( -perm -4000 -o -perm -2000 \) \( -perm -0010 -o -perm -0001 \) -ls 2>/dev/null; \
 	done > ${WRKDIR}/.PLIST.setuid; \
 	${GREP} '^etc/rc.d/' ${TMPPLIST} > ${WRKDIR}/.PLIST.startup; \
 	if [ -s ${WRKDIR}/.PLIST.setuid -o -s ${WRKDIR}/.PLIST.startup ]; then \
@@ -2805,7 +2831,7 @@ describe:
 
 www-site:
 .if exists(${DESCR})
-	@${GREP} '^WWW:[ 	]' ${DESCR} | ${AWK} '{print $$2}' | head -1
+	@${GREP} '^WWW:[ 	]' ${DESCR} | ${AWK} '{print $$2}' | ${HEAD} -1
 .else
 	@${ECHO}
 .endif
@@ -2965,7 +2991,7 @@ fake-pkg:
 		if [ -f ${PKGMESSAGE} ]; then \
 			${CP} ${PKGMESSAGE} ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
 		fi; \
-		for dep in `cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} package-depends ECHO_MSG=/usr/bin/true | sort -u`; do \
+		for dep in `cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} package-depends ECHO_MSG=${TRUE} | sort -u`; do \
 			if [ -d ${PKG_DBDIR}/$$dep -a -z `echo $$dep | ${GREP} -E ${PKG_IGNORE_DEPENDS}` ]; then \
 				if ! ${GREP} ^${PKGNAME}$$ ${PKG_DBDIR}/$$dep/+REQUIRED_BY \
 					>/dev/null 2>&1; then \
