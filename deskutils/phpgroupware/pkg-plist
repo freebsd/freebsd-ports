@@ -79,6 +79,7 @@ www/data-dist/phpgroupware/addressbook/setup/phpgw_nl.lang
 www/data-dist/phpgroupware/addressbook/setup/phpgw_no.lang
 www/data-dist/phpgroupware/addressbook/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/addressbook/setup/phpgw_pt.lang
+www/data-dist/phpgroupware/addressbook/setup/phpgw_sk.lang
 www/data-dist/phpgroupware/addressbook/setup/phpgw_sv.lang
 www/data-dist/phpgroupware/addressbook/setup/setup.inc.php
 www/data-dist/phpgroupware/addressbook/templates/default/about.tpl
@@ -699,6 +700,7 @@ www/data-dist/phpgroupware/calendar/setup/phpgw_nl.lang
 www/data-dist/phpgroupware/calendar/setup/phpgw_no.lang
 www/data-dist/phpgroupware/calendar/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/calendar/setup/phpgw_pt.lang
+www/data-dist/phpgroupware/calendar/setup/phpgw_sk.lang
 www/data-dist/phpgroupware/calendar/setup/phpgw_sv.lang
 www/data-dist/phpgroupware/calendar/setup/phpgw_zh.lang
 www/data-dist/phpgroupware/calendar/setup/phpgw_zt.lang
@@ -833,7 +835,6 @@ www/data-dist/phpgroupware/calendar/templates/idsociety/images/week.gif
 www/data-dist/phpgroupware/calendar/templates/idsociety/images/week.png
 www/data-dist/phpgroupware/calendar/templates/idsociety/images/year.gif
 www/data-dist/phpgroupware/calendar/templates/idsociety/images/year.png
-www/data-dist/phpgroupware/calendar/templates/probusiness/alarm.tpl
 www/data-dist/phpgroupware/calendar/templates/probusiness/config.tpl
 www/data-dist/phpgroupware/calendar/templates/probusiness/csv_import.tpl
 www/data-dist/phpgroupware/calendar/templates/probusiness/day.tpl
@@ -1640,6 +1641,7 @@ www/data-dist/phpgroupware/email/setup/phpgw_ko.lang
 www/data-dist/phpgroupware/email/setup/phpgw_nl.lang
 www/data-dist/phpgroupware/email/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/email/setup/phpgw_pt.lang
+www/data-dist/phpgroupware/email/setup/phpgw_sk.lang
 www/data-dist/phpgroupware/email/setup/phpgw_sv.lang
 www/data-dist/phpgroupware/email/setup/phpgw_zh.lang
 www/data-dist/phpgroupware/email/setup/phpgw_zt.lang
@@ -2934,6 +2936,7 @@ www/data-dist/phpgroupware/folders/phplayersmenu/templates/layersmenu-vertical_m
 www/data-dist/phpgroupware/folders/phplayersmenu/templates/layersmenu-vertical_menu.ihtml
 www/data-dist/phpgroupware/folders/setup/phpgw_de.lang
 www/data-dist/phpgroupware/folders/setup/phpgw_en.lang
+www/data-dist/phpgroupware/folders/setup/phpgw_fr.lang
 www/data-dist/phpgroupware/folders/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/folders/setup/setup.inc.php
 www/data-dist/phpgroupware/folders/templates/default/folders.tpl
@@ -6776,6 +6779,7 @@ www/data-dist/phpgroupware/preferences/setup/phpgw_nl.lang
 www/data-dist/phpgroupware/preferences/setup/phpgw_no.lang
 www/data-dist/phpgroupware/preferences/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/preferences/setup/phpgw_pt.lang
+www/data-dist/phpgroupware/preferences/setup/phpgw_sk.lang
 www/data-dist/phpgroupware/preferences/setup/phpgw_sv.lang
 www/data-dist/phpgroupware/preferences/setup/phpgw_zh.lang
 www/data-dist/phpgroupware/preferences/setup/phpgw_zt.lang
