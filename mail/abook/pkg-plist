@@ -5,8 +5,6 @@ bin/abook
 %%PORTDOCS%%share/doc/abook/COPYING
 %%PORTDOCS%%share/doc/abook/ChangeLog
 %%PORTDOCS%%share/doc/abook/FAQ
-%%PORTDOCS%%share/doc/abook/INSTALL
-%%PORTDOCS%%share/doc/abook/NEWS
 %%PORTDOCS%%share/doc/abook/README
 %%PORTDOCS%%share/doc/abook/THANKS
 %%PORTDOCS%%share/doc/abook/TODO
