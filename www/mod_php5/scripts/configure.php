@@ -103,7 +103,7 @@ BUILD_DEPENDS+=	ssleay:\${PORTSDIR}/security/openssl \\
 		\${PREFIX}/lib/libcrypto.a:\${PORTSDIR}/security/openssl
 RUN_DEPENDS+=	ssleay:\${PORTSDIR}/security/openssl
 
-VERSION_MODSSL=	2.1.7
+VERSION_MODSSL=	2.1.8
 
 RESTRICTED=	"Contains cryptography"
 
