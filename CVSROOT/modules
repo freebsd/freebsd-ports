@@ -4492,6 +4492,7 @@ mmsclient	ports/graphics/mmsclient
 mmtk		ports/science/mmtk
 mmucl		ports/net/mmucl
 mmv		ports/misc/mmv
+mnemo		ports/deskutils/mnemo
 mnogosearch	ports/www/mnogosearch
 mob		ports/devel/mob
 mod_access_identd	ports/www/mod_access_identd
