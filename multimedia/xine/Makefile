@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	0.9.21
+PORTVERSION=	0.9.22
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -46,6 +46,11 @@ CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 
 .if (${OSVERSION} == 500043)
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src:xitk:common.h
+.endif
+
+# mbrtowc() is not implemented
+.if (${OSVERSION} < 500039)
+CONFIGURE_ARGS+=	--disable-mbs
 .endif
 
 post-patch:
