@@ -4,4 +4,3 @@ share/examples/swish-e/swishspider
 share/examples/swish-e/README-SWISH-E
 bin/swish-e
 @dirrm share/examples/swish-e
-@dirrm share/examples
