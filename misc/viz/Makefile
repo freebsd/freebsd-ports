@@ -8,7 +8,7 @@
 
 DISTNAME=	viz-1.1.1
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.ptc.spbu.ru/pub/unix/text/misc/
+MASTER_SITES=	http://people.FreeBSD.org/~fenner/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bjn@visi.com
