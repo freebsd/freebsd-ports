@@ -3,7 +3,7 @@
 # Date created:		19 Apr 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.9 1997/05/29 06:49:15 asami Exp $
+# $Id: Makefile,v 1.10 1997/11/05 15:37:36 tg Exp $
 #
 
 DISTNAME=	hylafax-v4.0pl1
@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-MAKE=gmake --with-CC=/usr/bin/cc \
 		--with-LIBTIFF="-L${PREFIX}/lib -ltiff34 -ljpeg" \
-		--with-TIFFINC="${WRKSRC}"
+		--with-TIFFINC="${PREFIX}/include/tiff34"
 HAS_CONFIGURE=	yes
 MAN1=	hylafax.1 faxalter.1 faxcover.1 faxmail.1 faxrm.1 faxstat.1 sendfax.1 \
 	sendpage.1 sgi2fax.1 textfmt.1
@@ -43,14 +43,6 @@ MAN8=	cqtest.8c choptest.8c dialtest.8c faxabort.8c faxaddmodem.8c \
 
 SUID_EXES= 	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter
-
-# for tiff34
-pre-configure:
-	@${RM} -f ${WRKSRC}/tiff.h 
-	@${RM} -f ${WRKSRC}/tiffio.h 
-	@ln -s ${PREFIX}/include/tiff34.h ${WRKSRC}/tiff34.h
-	@ln -s ${PREFIX}/include/tiff34.h ${WRKSRC}/tiff.h
-	@ln -s ${PREFIX}/include/tiffio34.h ${WRKSRC}/tiffio.h
 
 post-install:
 	chown uucp ${SUID_EXES}
