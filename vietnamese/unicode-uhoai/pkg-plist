@@ -1,0 +1,3 @@
+@comment $FreeBSD$
+lib/X11/fonts/TrueType/uhoaiw21.ttf
+@dirrm lib/X11/fonts/TrueType/vietnamese-unicode
