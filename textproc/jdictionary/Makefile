@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	jdictionary
-PORTVERSION=    1.2
-PORTREVISION=	1
+PORTVERSION=    1.8
 CATEGORIES=	textproc java
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=jdictionary
-DISTNAME=	jdictionary-1_21
+DISTNAME=	jdictionary-1_8
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 
