@@ -7,7 +7,7 @@
 
 PORTNAME=	server
 PORTVERSION=	6.7.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/ \
 		${MASTER_SITE_XORG}

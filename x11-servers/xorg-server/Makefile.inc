@@ -40,6 +40,7 @@ CF_PATCHES=	${PORTSDIR}/x11-servers/xorg-server/files/patch-FreeBSD.cf \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-X11.tmpl
 
 SERVER_PATCHES=	${PORTSDIR}/x11-servers/xorg-server/files/patch-Xserver-Imakefile \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-alpha_video.c \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-bus-Imakefile \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-fb-renderfixes.diff \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-kernel-Imakefile \
@@ -47,6 +48,7 @@ SERVER_PATCHES=	${PORTSDIR}/x11-servers/xorg-server/files/patch-Xserver-Imakefil
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-man-Imakefile \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-os-Imakefile \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-savage-pci-id \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-xf86fbman.c \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-xf86sym.c \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-xf86drmCompat.c \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-xkbout.c
