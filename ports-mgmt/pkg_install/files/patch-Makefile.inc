@@ -1,13 +1,12 @@
---- Makefile.inc.orig	Mon Oct 18 15:09:20 2004
-+++ Makefile.inc	Mon Oct 18 15:10:08 2004
-@@ -7,10 +7,12 @@
+--- Makefile.inc.orig	Tue Dec 21 05:16:03 2004
++++ Makefile.inc	Sat Feb 26 17:02:17 2005
+@@ -7,9 +7,11 @@
  .endif
  
- .if !defined(NOCRYPT) && !defined(NO_OPENSSL) && \
+ .if !defined(NO_CRYPT) && !defined(NO_OPENSSL) && \
 -    defined(LDADD) && ${LDADD:M-lfetch} != ""
-+    defined(LDADD)
++	defined(LDADD)
 +.if  ${LDADD:M-lfetch} != ""
- DISTRIBUTION=	crypto
  DPADD+=		${LIBSSL} ${LIBCRYPTO}
  LDADD+=		-lssl -lcrypto
 +.endif

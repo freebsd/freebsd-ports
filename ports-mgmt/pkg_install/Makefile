@@ -6,14 +6,14 @@
 #
 
 PORTNAME=		pkg_install
-PORTVERSION=		20040802
+PORTVERSION=		20050226
 CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_LOCAL} \
 			http://people.FreeBSD.org/~marcus/
 MASTER_SITE_SUBDIR=	marcus
 
 MAINTAINER=		portmgr@freebsd.org
-COMMENT=		FreeBSD 5.X version of the package tools for older system releases
+COMMENT=		FreeBSD -CURRENT version of the pkg tools for older system releases
 
 MANCOMPRESSED=		yes
 
