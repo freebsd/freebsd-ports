@@ -130,7 +130,7 @@ diff -rc ../old/xview3.2p1-X11R6/lib/libxview/base/xv_debug.h ./lib/libxview/bas
 *** 18,27 ****
   
   /* Unix system error variables */
-  extern int      sys_nerr;
+! extern int      sys_nerr;
   extern char    *sys_errlist[];
   extern int      errno;
   
@@ -141,7 +141,7 @@ diff -rc ../old/xview3.2p1-X11R6/lib/libxview/base/xv_debug.h ./lib/libxview/bas
 --- 19,32 ----
   
   /* Unix system error variables */
-  extern int      sys_nerr;
+! extern const int sys_nerr;
 + #if (defined(BSD) && (BSD >= 199306))
 + extern const char *const sys_errlist[];
 + #else
@@ -1847,15 +1847,26 @@ diff -rc ../old/xview3.2p1-X11R6/lib/libxview/textsw/es_file.c ./lib/libxview/te
 *** ../old/xview3.2p1-X11R6/lib/libxview/textsw/es_file.c	Tue Jun 29 01:17:34 1993
 --- ./lib/libxview/textsw/es_file.c	Sun Nov 20 13:39:11 1994
 ***************
-*** 110,117 ****
---- 110,122 ----
+*** 109,117 ****
+  #include <xview_private/txt_18impl.h>
   
   
-  extern int      errno, sys_nerr;
-+ #if (defined(BSD) && (BSD >= 199306))
-+ extern const char *const sys_err_list[];
-+ extern off_t	lseek();
-+ #else
+! extern int      errno, sys_nerr;
+  extern char    *sys_errlist[];
+  extern long     lseek();
+  
+  static void update_read_buf();  /* update the read buf if overlaps write buf */
+  static Es_status es_file_commit();
+--- 109,123 ----
+  #include <xview_private/txt_18impl.h>
+  
+  
+! extern int      errno;
+! extern const sys_nerr;
+! #if (defined(BSD) && (BSD >= 199306))
+! extern const char *const sys_err_list[];
+! extern off_t  lseek();
+! #else
   extern char    *sys_errlist[];
   extern long     lseek();
 + #endif
@@ -2054,14 +2065,24 @@ diff -rc ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_file.c ./lib/libxview/t
 *** ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_file.c	Tue Jun 29 01:17:48 1993
 --- ./lib/libxview/textsw/txt_file.c	Sun Nov 20 13:39:12 1994
 ***************
-*** 51,57 ****
---- 51,61 ----
+*** 50,57 ****
+  #else
   extern char    *getwd();
   #endif /* SVR4 */
-  extern int      errno, sys_nerr;
-+ #if (defined(BSD) && (BSD >= 199306))
-+ extern const char *const sys_errlist[];
-+ #else
+! extern int      errno, sys_nerr;
+  extern char    *sys_errlist[];
+  
+  Pkg_private int textsw_change_directory();
+  Pkg_private void textsw_display(), textsw_display_view_margins();
+--- 50,62 ----
+  #else
+  extern char    *getwd();
+  #endif /* SVR4 */
+! extern int      errno;
+! extern const int sys_nerr;
+! #if (defined(BSD) && (BSD >= 199306))
+! extern const char *const sys_errlist[];
+! #else
   extern char    *sys_errlist[];
 + #endif
   
