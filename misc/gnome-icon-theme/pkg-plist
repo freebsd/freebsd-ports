@@ -446,8 +446,9 @@ share/icons/gnome/16x16/stock/net/stock_insert_url.png
 share/icons/gnome/16x16/stock/net/stock_internet.png
 share/icons/gnome/16x16/stock/net/stock_link.png
 share/icons/gnome/16x16/stock/net/stock_mail-compose.png
-share/icons/gnome/16x16/stock/net/stock_mail_forward.png
 share/icons/gnome/16x16/stock/net/stock_mail-merge.png
+share/icons/gnome/16x16/stock/net/stock_mail_forward.png
+share/icons/gnome/16x16/stock/net/stock_mail_open.png
 share/icons/gnome/16x16/stock/net/stock_mail.png
 share/icons/gnome/16x16/stock/net/stock_mail_receive.png
 share/icons/gnome/16x16/stock/net/stock_mail_reply.png
@@ -1087,6 +1088,7 @@ share/icons/gnome/24x24/stock/net/stock_internet.png
 share/icons/gnome/24x24/stock/net/stock_link.png
 share/icons/gnome/24x24/stock/net/stock_mail-compose.png
 share/icons/gnome/24x24/stock/net/stock_mail_forward.png
+share/icons/gnome/24x24/stock/net/stock_mail_open.png
 share/icons/gnome/24x24/stock/net/stock_mail-merge.png
 share/icons/gnome/24x24/stock/net/stock_mail.png
 share/icons/gnome/24x24/stock/net/stock_mail_receive.png
@@ -1357,6 +1359,7 @@ share/icons/gnome/32x32/stock/generic/stock_openoffice.png
 share/icons/gnome/32x32/stock/io/stock_opensave.png
 share/icons/gnome/32x32/stock/media/stock_sound.png
 share/icons/gnome/32x32/stock/net/stock_internet.png
+share/icons/gnome/32x32/stock/net/stock_mail_open.png
 share/icons/gnome/36x36/apps/gnome-spinner.png
 share/icons/gnome/36x36/apps/gnome-spinner-rest.png
 share/icons/gnome/36x36/emblems/emblem-symbolic-link.png
@@ -1690,6 +1693,7 @@ share/icons/gnome/48x48/stock/document/stock_new-spreadsheet.png
 share/icons/gnome/48x48/stock/document/stock_new-template.png
 share/icons/gnome/48x48/stock/document/stock_new-text.png
 share/icons/gnome/48x48/stock/generic/stock_autopilot.png
+share/icons/gnome/48x48/stock/net/stock_mail_open.png
 share/icons/gnome/72x72/devices/gnome-dev-harddisk.png
 share/icons/gnome/72x72/filesystems/gnome-fs-directory-accept.icon
 share/icons/gnome/72x72/filesystems/gnome-fs-directory-accept.png
