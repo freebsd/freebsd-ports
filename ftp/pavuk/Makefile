@@ -7,7 +7,7 @@
 
 PORTNAME=	pavuk
 PORTVERSION=	0.9.28
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp www
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.idata.sk/~ondrej/sw/
@@ -26,7 +26,7 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS= --with-locale-dir=${LOCALBASE}/share/locale \
+CONFIGURE_ARGS=	--with-locale-dir=${LOCALBASE}/share/locale \
 		--disable-debug --disable-gnome --enable-threads
 
 MAN1=		pavuk.1
@@ -52,8 +52,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/pavukrc.sample ${PREFIX}/etc
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS BUGS CREDITS ChangeLog FAQ MAILINGLIST NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in AUTHORS BUGS CREDITS ChangeLog FAQ MAILINGLIST NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
