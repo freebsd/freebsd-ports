@@ -17,6 +17,8 @@ COMMENT=	Multiple DNA/protein sequence alignment editor
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+BROKEN=		Checksum mismatch
+
 USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=		${TAR}
