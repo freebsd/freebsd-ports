@@ -1,3 +1,4 @@
+bin/gforce
 lib/xmms/Visualization/libgforce.a
 lib/xmms/Visualization/libgforce.la
 lib/xmms/Visualization/libgforce.so
