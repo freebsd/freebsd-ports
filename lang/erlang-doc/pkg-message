@@ -1,0 +1,11 @@
+===========================================================================
+This documentation package contains the following publications, included
+with permission:
+
+"Making reliable distributed systems in the presence of software errors"
+  Joe Amstrong (http://www.sics.se/~joe/thesis/)
+
+"Design Patterns for Simulations in Erlang/OTP"
+  Lennart Öhman (http://www.st.se/telecom/eng/projects/)
+
+===========================================================================

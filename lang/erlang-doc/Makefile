@@ -7,13 +7,14 @@
 
 PORTNAME=	erlang-doc
 PORTVERSION=	r9c
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.erlang.org/doc/r9c/pdf/ \
 		http://erlang.org/download/ \
 		http://www.erlang.se/doc/ \
-		http://www.sics.se/~joe/thesis/
+		http://www.sics.se/~joe/thesis/ \
+		http://www.st.se/telecom/eng/projects/
 DISTFILES=	appmon-2.1.2.pdf \
 		asn1-1.4.2.pdf \
 		compiler-4.2.pdf \
@@ -69,7 +70,8 @@ DISTFILES=	appmon-2.1.2.pdf \
 		course.pdf \
 		erlang-book-part1.pdf \
 		programming_rules.pdf \
-		armstrong_thesis_2003.pdf
+		armstrong_thesis_2003.pdf \
+		master_thesis_patterns.pdf
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=
 
