@@ -91,7 +91,10 @@ bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/bvtools.png
 %%PORTDOCS%%share/doc/pfaedit/cap-height.png
 %%PORTDOCS%%share/doc/pfaedit/charinfo-comment.png
+%%PORTDOCS%%share/doc/pfaedit/charinfo-comp.png
 %%PORTDOCS%%share/doc/pfaedit/charinfo-lig.png
+%%PORTDOCS%%share/doc/pfaedit/charinfo-pos.png
+%%PORTDOCS%%share/doc/pfaedit/charinfo-subs.png
 %%PORTDOCS%%share/doc/pfaedit/charinfo.html
 %%PORTDOCS%%share/doc/pfaedit/charinfo.png
 %%PORTDOCS%%share/doc/pfaedit/charview-vert.png
