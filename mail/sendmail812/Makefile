@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sendmail
-PORTVERSION=	8.12.6
-PORTREVISION=	2
+PORTVERSION=	8.12.7
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
