@@ -1,16 +1,15 @@
---- Makefile.in.orig	Sun Jun  6 04:51:50 1999
-+++ Makefile.in	Sat Jun 26 08:53:51 1999
-@@ -141,8 +141,11 @@
+--- Makefile.in.orig	Sat Jan  1 17:59:38 2000
++++ Makefile.in	Mon Jan  3 17:19:23 2000
+@@ -144,7 +144,11 @@
  # These are built from source in the Docs directory
  EXTRA_DIST = INSTALL-SOURCE-GENERIC README 			PUBLIC INSTALL-SOURCE MIRRORS
  
--SUBDIRS = @docs_dirs@ @readline_dir@ client @sql_server_dirs@ 			scripts include tests man @bench_dirs@ support-files
--
+-SUBDIRS = include @docs_dirs@ @readline_dir@ client 			@sql_server_dirs@ scripts tests man 			@bench_dirs@ support-files
 +.if defined(CLIENT_ONLY)
-+SUBDIRS = @readline_dir@ client include tests man
++SUBDIRS = include @readline_dir@ client tests man
 +.else
-+SUBDIRS = @docs_dirs@ @sql_server_dirs@ scripts @bench_dirs@ support-files
++SUBDIRS = include @docs_dirs@ @sql_server_dirs@ scripts @bench_dirs@ support-files
 +.endif
  
+ 
  # Relink after clean
- CLEANFILES = linked_client_sources

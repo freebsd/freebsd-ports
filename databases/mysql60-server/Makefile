@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	mysql-3.22.27
+DISTNAME=	mysql-3.22.29
 PKGNAME?=	${DISTNAME:S/-/-server-/}
 CATEGORIES=	databases
 MASTER_SITES=	http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.22/ \
@@ -94,8 +94,8 @@ pre-fetch:
 	@${ECHO}
 .endif
 
-post-patch:
-	${MV} ${WRKSRC}/strings/strings.s ${WRKSRC}/strings/strings.S
+pre-build:
+	${MV} ${WRKSRC}/strings/strings-x86.s ${WRKSRC}/strings/strings-x86.S
 	${MV} ${WRKSRC}/strings/longlong2str-x86.s ${WRKSRC}/strings/longlong2str-x86.S
 
 pre-install:
