@@ -35,6 +35,10 @@ MAN3=		Apache::TestRequest.3 Apache::TestSmoke.3 Apache::TestRun.3 \
 MAN3+=		ModPerl::Config.3 Apache::TestConfig.3
 .endif
 
+.if ${PERL_LEVEL} >= 500800
+BROKEN=		"Broken pkg-plist".
+.endif
+
 ##
 ## this port requires PERL 5.6.x or later
 ##
