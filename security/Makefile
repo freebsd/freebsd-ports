@@ -84,6 +84,7 @@
     SUBDIR += radiusniff
     SUBDIR += rid
     SUBDIR += rsaref
+    SUBDIR += ruby-acl
     SUBDIR += ruby-tcpwrap
     SUBDIR += saint
     SUBDIR += seahorse
