@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openwebmail
-PORTVERSION=	2.20
+PORTVERSION=	2.21
 CATEGORIES=	mail
 MASTER_SITES=	http://openwebmail.com/openwebmail/download/ \
 		http://turtle.ee.ncku.edu.tw/openwebmail/download/
@@ -30,8 +30,9 @@ OWDATADIR=	${PREFIX}/www/data/openwebmail
 PATCH_WRKSRC=	${WRKSRC}/cgi-bin/openwebmail
 PATCH_STRIP=	-p1
 PLIST=		${WRKDIR}/.PLIST.${PKGNAME}
+_SUIDPERL_ENABLED!=	${PERL5} -V | ${GREP} d_dosuid | wc -l
 
-.if ${PERL_LEVEL} > 500800
+.if ${PERL_LEVEL} > 500800 && !defined(_SUIDPERL_ENABLED)
 WITHOUT_SPEEDYCGI=yes
 .endif
 
@@ -113,7 +114,8 @@ post-patch:
 pre-install:
 	@${FIND} ${WRKSRC}/*/openwebmail \( -name "*.bak" -or -name "*.orig" \) -delete
 .if !exists(${PLIST})
-	@${FIND} ${WRKSRC}/*/openwebmail -type f -o -type l | ${SED} -e 's,${WRKSRC},www,g' | sort -u > ${PLIST}
+	@${ECHO} "@unexec if cmp -s %D/www/cgi-bin/openwebmail/etc/openwebmail.conf %D/www/cgi-bin/openwebmail/etc/openwebmail.conf-dist; then rm -f %D/www/cgi-bin/openwebmail/etc/openwebmail.conf; fi" > ${PLIST}
+	@${FIND} ${WRKSRC}/*/openwebmail -type f -o -type l | ${SED} -e 's,${WRKSRC},www,g' | sort -u >> ${PLIST}
 .for f in b2g g2b lunar
 	@${ECHO} "www/cgi-bin/openwebmail/etc/${f}.db" >> ${PLIST}
 .endfor
@@ -130,6 +132,9 @@ do-install:
 	@${MKDIR} ${OWCGIDIR} ${OWDATADIR}
 	@cd ${WRKSRC}/cgi-bin/openwebmail && ${FIND} . | cpio -dpum -R ${BINOWN}:mail ${OWCGIDIR}
 	@cd ${WRKSRC}/data/openwebmail && ${FIND} . | cpio -dpum -R ${SHAREOWN}:${SHAREGRP} ${OWDATADIR}
+.if !exists(${OWCGIDIR}/etc/openwebmail.conf)
+	@${CP} ${OWCGIDIR}/etc/openwebmail.conf-dist ${OWCGIDIR}/etc/openwebmail.conf
+.endif
 	@${CHMOD} 0770 ${OWCGIDIR}/etc/sessions ${OWCGIDIR}/etc/users
 	@${CHMOD} 4755 ${OWCGIDIR}/openwebmail*pl
 .if defined(WITHOUT_SPEEDYCGI)
