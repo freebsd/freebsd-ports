@@ -1,7 +1,7 @@
 #!/bin/sh
 # $FreeBSD$
 
-if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
+if [ -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc ]; then
 	exit
 fi
 
@@ -49,8 +49,8 @@ YP		"YP/NIS support" OFF \
 	esac
 fi
 
-${MKDIR} ${WRKDIRPREFIX}${CURDIR}
-exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+${MKDIR} ${WRKDIRPREFIX}${REALCURDIR}
+exec > ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 
 while [ "$1" ]; do
 	case $1 in
@@ -110,7 +110,7 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=--with-sybase=\${PREFIX}"
 			if [ "$SYBASECT" ]; then
 				echo "SybaseDB and SybaseCT are mutually exclusive." > /dev/stderr
-				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 				exit 1
 			fi
 			SYBASEDB=1
@@ -120,7 +120,7 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=--with-sybase-ct=\${PREFIX}"
 			if [ "$SYBASEDB" ]; then
 				echo "SybaseDB and SybaseCT are mutually exclusive." > /dev/stderr
-				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 				exit 1
 			fi
 			SYBASECT=1
@@ -158,7 +158,7 @@ while [ "$1" ]; do
 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
-			rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 			exit 1
 			;;
 	esac
@@ -166,5 +166,5 @@ while [ "$1" ]; do
 done
 
 if [ "${LIBS}" ]; then
-	echo "CONFIGURE_ENV+=   LIBS='${LIBS}'"
+	echo "CONFIGURE_ENV+=	LIBS='${LIBS}'"
 fi
