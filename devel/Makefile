@@ -621,6 +621,7 @@
     SUBDIR += p5-Cache-Simple-TimedExpiry
     SUBDIR += p5-Calendar-Simple
     SUBDIR += p5-Carp-Assert
+    SUBDIR += p5-Carp-Clan
     SUBDIR += p5-Carp-Datum
     SUBDIR += p5-Cdk
     SUBDIR += p5-Class-Accessor

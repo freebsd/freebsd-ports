@@ -1,0 +1,5 @@
+This module is based on Carp.pm from Perl 5.005_03. It has been
+modified to skip all package names matching the pattern given in
+the "use" statement inside the "qw()" term (or argument list).
+
+WWW: http://search.cpan.org/dist/Carp-Clan
