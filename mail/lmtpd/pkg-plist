@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/filtercheck
 etc/lmtpd.conf.dist
 libexec/lmtpd
@@ -25,3 +26,7 @@ share/nls/fr_CH.ISO8859-15/filtercheck.cat
 share/nls/fr_FR.ISO8859-1/filtercheck.cat
 share/nls/fr_FR.ISO8859-15/filtercheck.cat
 share/nls/fr_FR.ISO_8859-1/filtercheck.cat
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
