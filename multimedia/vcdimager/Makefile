@@ -6,7 +6,7 @@
 
 PORTNAME=	vcdimager
 PORTVERSION=	0.7.14
-CATEGORIES=	multimedia	
+CATEGORIES=	multimedia
 MASTER_SITES=	http://www.vcdimager.org/pub/vcdimager/vcdimager-0.7_UNSTABLE/
 
 MAINTAINER=	arved@FreeBSD.org
@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	
+CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		cdxa2mpeg.1 vcdimager.1 vcdxminfo.1 vcdxrip.1 vcdxgen.1 vcdxbuild.1 \
