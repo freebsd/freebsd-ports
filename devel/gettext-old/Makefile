@@ -3,13 +3,13 @@
 # Date created:        16 March 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.7 1999/03/08 07:28:22 asami Exp $
+# $Id: Makefile,v 1.8 1999/03/09 01:08:51 nectar Exp $
 #
 
 DISTNAME=	gettext-0.10.35
 CATEGORIES=	devel
 MASTER_SITES=	ftp://alpha.gnu.ai.mit.edu/gnu/ \
-		ftp://alpha.gnu.org/pub/gnu
+		ftp://alpha.gnu.org/pub/gnu/
 
 MAINTAINER=	nacai@iname.com
 
