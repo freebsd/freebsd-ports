@@ -4846,6 +4846,7 @@ p5-Tk-Getopt	ports/x11-toolkits/p5-Tk-Getopt
 p5-Tk-HistEntry	ports/x11-toolkits/p5-Tk-HistEntry
 p5-Tk-XMLViewer	ports/textproc/p5-Tk-XMLViewer
 p5-TraceFuncs	ports/devel/p5-TraceFuncs
+p5-Tree-DAG_Node	ports/devel/p5-Tree-DAG_Node
 p5-Tree-Nary	ports/textproc/p5-Tree-Nary
 p5-URI		ports/net/p5-URI
 p5-URI-Find	ports/textproc/p5-URI-Find
