@@ -1,18 +1,26 @@
---- Makefile.orig	Wed May  7 11:28:12 1997
-+++ Makefile	Sun Sep 27 12:19:42 1998
-@@ -6,21 +6,26 @@
+--- Makefile.orig	Thu May  8 01:28:12 1997
++++ Makefile	Sat Aug 12 03:01:04 2000
+@@ -1,26 +1,31 @@
+ # Makefile for XWorm.
+ 
+ #CC = cc
+-CC = gcc
++CC ?= gcc
+ 
  HPFLAGS = -O -D_HPUX_SOURCE
  SUNFLAGS = -O
  LINUXFLAGS = -O
-+FREEBSDFLAGS= -O -DPREFIX=\"/usr/X11R6/share/xworm\"
++FREEBSDFLAGS= ${CFLAGS} -DXWORMDIR=\"${PREFIX}/share/xworm\"
  
- INCDIR = -I/usr/include/X11R5 -I/usr/include -I/usr/X11R6/include
+-INCDIR = -I/usr/include/X11R5 -I/usr/include -I/usr/X11R6/include
++INCDIR = -I${X11BASE}/include
  
  HPLINK = -L/usr/local/lib/X11R5 -lXt -lX11 -lm
  SUNLINK = -L/usr/local/lib/X11R5 -lXt -lX11 -lm -lsocket -lnsl -lICE -lSM
- LINUXLINK = -L/usr/X11R6/lib -lXt -lX11 -lm
+-LINUXLINK = -L/usr/X11R6/lib -lXt -lX11 -lm
++LINUXLINK = -L${X11BASE}/lib -lXt -lX11 -lm
 +.if ${PORTOBJFORMAT} == "elf"
-+LINUXLINK+= -Wl,-rpath,$(X11BASE)/lib
++LINUXLINK+= -Wl,-rpath,${X11BASE}/lib
 +.endif
  
  all: 

@@ -18,9 +18,9 @@
 +#define PREFIX "."
 +#endif
 +
-+#define gridfile PREFIX "/xworm.grid"
-+#define fontfile PREFIX "/xworm.font"
-+#define logofile PREFIX "/xworm.raw"
++#define gridfile XWORMDIR "/xworm.grid"
++#define fontfile XWORMDIR "/xworm.font"
++#define logofile XWORMDIR "/xworm.raw"
  
  #define maxQ 5000    /* max queue */
  #define NCOLORS 15   /* number of colours */
