@@ -31,6 +31,13 @@ MAN8=		stunnel.8
 cert:
 	@(cd ${WRKSRC}; make cert)
 
+.include <bsd.port.pre.mk>
+
+pre-patch:
+.if ${OSVERSION} >= 400000
+	${CP} files/patch-aa patches/
+.endif
+
 post-build:
 	@${ECHO} ""
 	@${ECHO} "********************************************************************"
