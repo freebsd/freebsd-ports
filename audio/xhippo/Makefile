@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xhippo
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	audio
-MASTER_SITES=	http://zenchaos.netpedia.net/software/ \
+MASTER_SITES=	http://zenchaos.netpedia.net/files/ \
 		http://www.us-lot.org/~azz/xhippo/
 
 MAINTAINER=	rod@zort.on.ca
@@ -19,6 +19,7 @@ USE_XLIB=	yes
 USE_GTK=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
+MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
 .include <bsd.port.pre.mk>
 
