@@ -1,0 +1,34 @@
+# ex:ts=8
+# Ports collection makefile for:  foo
+# Version required:     	  2.1
+# Date created:			  Mon Feb 03, 1997
+# Whom:				  David O'Brien (obrien@FreeBSD.org)
+#
+# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+#
+
+DISTNAME=	part01
+PKGNAME=	fping-1.20
+CATEGORIES=	net
+MASTER_SITES=	ftp://ftp.uu.net/usenet/comp.sources.unix/volume26/fping/ \
+		ftp://ftp.digital.com/pub/usenet/comp.sources.unix/volume26/fping/ \
+		ftp://ftp.wustl.edu/usenet/comp.sources.unix/volume26/fping/ \
+		ftp://ftp.isnet.is/pub/Usenet/Usenet.src/comp.sources.unix/v26/fping/
+EXTRACT_SUFX=	.Z
+		
+MAINTAINER=     obrien@NUXI.com
+
+BUILD_DEPENDS=	gunshar:${PORTSDIR}/archivers/gshar+gunshar
+
+DIST_SUBDIR=	fping
+EXTRACT_CMD=	zcat
+EXTRACT_BEFORE_ARGS=
+EXTRACT_AFTER_ARGS=	| gunshar -d ${WRKDIR}
+NO_WRKSUBDIR=	yes
+MAN8=		fping.8
+
+
+post-install:
+	@strip ${PREFIX}/sbin/fping
+
+.include <bsd.port.mk>

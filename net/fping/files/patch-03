@@ -1,0 +1,32 @@
+--- fping.man.orig	Tue Mar 25 01:24:16 1997
++++ fping.man	Tue Mar 25 01:25:33 1997
+@@ -1,4 +1,4 @@
+-.TH fping l
++.TH fping 8
+ .SH NAME
+ fping \- send ICMP ECHO_REQUEST packets to network hosts
+ .SH SYNOPSIS
+@@ -70,12 +70,12 @@
+ example none the less. 
+ .nf
+ 
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ require 'open2.pl';
+ 
+ $MAILTO = "root";
+ 
+-$pid = &open2("OUTPUT","INPUT","/usr/local/bin/fping -u");
++$pid = &open2("OUTPUT","INPUT","/usr/local/sbin/fping -u");
+ 
+ @check=("slapshot","foo","foobar");
+ 
+@@ -96,7 +96,7 @@
+ that are currently reachable.
+ .nf
+ 
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ $hosts_to_backup = `cat /etc/hosts.backup | fping -a`;
+ 
