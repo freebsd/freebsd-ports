@@ -1,0 +1,3 @@
+This is a HTML-generating package for making graphical user interfaces
+via a web browser using a "Layout Manager" paradigm such as in Tcl/Tk
+or Java.  It includes a component hierarchy for making new "widgets".
