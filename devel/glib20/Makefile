@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	glib
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-beta2,} \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-beta3,} \
 		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
 		http://www.ameth.org/gimp/%SUBDIR%/ \

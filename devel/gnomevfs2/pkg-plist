@@ -58,23 +58,23 @@ lib/gnome-vfs-2.0/modules/libvfs-translate.so
 lib/libgnomevfs-2.a
 lib/libgnomevfs-2.so
 lib/libgnomevfs-2.so.0
-lib/vfs2/extfs/README
-lib/vfs2/extfs/a
-lib/vfs2/extfs/ar
-lib/vfs2/extfs/arj
-lib/vfs2/extfs/cpio
-lib/vfs2/extfs/deb
-lib/vfs2/extfs/hp48
-lib/vfs2/extfs/lha
-lib/vfs2/extfs/mailfs
-lib/vfs2/extfs/patchfs
-lib/vfs2/extfs/rar
-lib/vfs2/extfs/rpm
-lib/vfs2/extfs/rpms
-lib/vfs2/extfs/tar
-lib/vfs2/extfs/trpm
-lib/vfs2/extfs/zip
-lib/vfs2/extfs/zoo
+lib/vfs/2.0/extfs/README
+lib/vfs/2.0/extfs/a
+lib/vfs/2.0/extfs/ar
+lib/vfs/2.0/extfs/arj
+lib/vfs/2.0/extfs/cpio
+lib/vfs/2.0/extfs/deb
+lib/vfs/2.0/extfs/hp48
+lib/vfs/2.0/extfs/lha
+lib/vfs/2.0/extfs/mailfs
+lib/vfs/2.0/extfs/patchfs
+lib/vfs/2.0/extfs/rar
+lib/vfs/2.0/extfs/rpm
+lib/vfs/2.0/extfs/rpms
+lib/vfs/2.0/extfs/tar
+lib/vfs/2.0/extfs/trpm
+lib/vfs/2.0/extfs/zip
+lib/vfs/2.0/extfs/zoo
 libdata/bonobo/servers/GNOME_VFS_Moniker_std.server
 libdata/pkgconfig/gnome-vfs-2.0.pc
 libdata/pkgconfig/gnome-vfs-module-2.0.pc
@@ -112,8 +112,9 @@ share/locale/wa/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-vfs-2.0.mo
 @dirrm share/doc/gnome-vfs
-@dirrm lib/vfs2/extfs
-@dirrm lib/vfs2
+@dirrm lib/vfs/2.0/extfs
+@dirrm lib/vfs/2.0
+@dirrm lib/vfs
 @dirrm lib/gnome-vfs-2.0/modules
 @dirrm lib/gnome-vfs-2.0
 @dirrm include/gnome-vfs-module-2.0/libgnomevfs

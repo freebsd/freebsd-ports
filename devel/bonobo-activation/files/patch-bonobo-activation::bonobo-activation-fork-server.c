@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- bonobo-activation/bonobo-activation-fork-server.c	2002/02/14 01:06:52	1.1
-+++ bonobo-activation/bonobo-activation-fork-server.c	2002/02/14 01:07:07
-@@ -270,6 +270,8 @@
+--- bonobo-activation/bonobo-activation-fork-server.c.orig	Tue Mar 12 09:23:47 2002
++++ bonobo-activation/bonobo-activation-fork-server.c	Tue Apr  2 18:27:40 2002
+@@ -342,6 +342,8 @@
  	} else if ((childpid = fork ())) {
  		_exit (0);	/* de-zombifier process, just exit */
  	} else {
 +		sigprocmask (SIG_SETMASK, &omask, NULL);
 +
-                 if (display)
- 		  bonobo_activation_setenv ("DISPLAY", display);
- 		if (od_iorstr)
+                 if (display != NULL) {
+                         bonobo_activation_setenv ("DISPLAY", display);
+                 }

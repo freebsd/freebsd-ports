@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-beta2,} \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-beta3,} \
 		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
 		http://www.ameth.org/gimp/%SUBDIR%/ \
@@ -38,7 +38,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 			  -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
-PLIST_SUB=	GTK_VERSION="${PORTVERSION}"
+PLIST_SUB=	GTK_VERSION="2.0.0"
 
 MAN1=		gdk-pixbuf-csource.1
 
