@@ -7,6 +7,7 @@
 
 PORTNAME=	mbrowse
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.kill-9.org/mbrowse/
 
@@ -16,7 +17,7 @@ COMMENT=	An SNMP MIB Browser for X
 .if defined(WITH_NET_SNMP4)
 LIB_DEPENDS=	snmp.4:${PORTSDIR}/net/net-snmp4
 .else
-LIB_DEPENDS=	netsnmp.5:${PORTSDIR}/net/net-snmp
+LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net/net-snmp
 .endif
 
 GNU_CONFIGURE=	yes

@@ -7,13 +7,14 @@
 
 PORTNAME=	braa
 PORTVERSION=	0.41
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://s-tech.elsat.net.pl/braa/
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Tool for making SNMP queries
 
-LIB_DEPENDS=	netsnmp.5:${PORTSDIR}/net/net-snmp
+LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net/net-snmp
 
 USE_REINPLACE=	yes
 
