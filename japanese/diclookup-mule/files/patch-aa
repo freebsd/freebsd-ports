@@ -1,0 +1,11 @@
+--- diclookup-mule.el.orig	Sun Aug  2 15:52:36 1998
++++ diclookup-mule.el	Sun Aug  2 15:52:47 1998
+@@ -2562,7 +2562,7 @@
+ 	    (set-process-coding-system
+ 	     process od-no-conversion od-no-conversion)
+ 	    (message "transferring sound data...")
+-	    (setq rate (* rate 100))
++	    (setq rate (* rate 1000))
+ 	    (process-send-string
+ 	     process
+ 	     (concat "RIFF"
