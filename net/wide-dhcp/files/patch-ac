@@ -1,5 +1,5 @@
 --- client/dhcpc_subr.c.orig	Fri Nov  3 01:39:55 1995
-+++ client/dhcpc_subr.c	Thu Mar 27 11:39:50 1997
++++ client/dhcpc_subr.c	Mon Apr 21 23:59:03 1997
 @@ -63,6 +63,12 @@
  #ifdef __osf__
  #include <net/pfilt.h>
@@ -95,7 +95,7 @@
    bzero(&so_dst, sizeof(struct sockaddr));
    bzero(&so_mask, sizeof(struct sockaddr));
    bzero(&so_gate, sizeof(struct sockaddr));
-@@ -1772,6 +1794,43 @@
+@@ -1772,6 +1794,44 @@
  
  #endif
  
@@ -115,6 +115,7 @@
 +     */
 +    if (param->dns_domain != NULL && param->dns_server != NULL) {
 +	if(param->dns_server->num && param->dns_server->addr != NULL) {
++	    unlink(_PATH_RESCONF);
 +	    if((fp = fopen(_PATH_RESCONF, "w")) == NULL) {
 +		return;
 +	    }
@@ -139,7 +140,7 @@
  
  void
  make_decline(lsbuf, reqspecp)
-@@ -1897,7 +1956,11 @@
+@@ -1897,7 +1957,11 @@
      lsether->ether_shost[i] = intface.haddr.haddr[i];
  #endif
    }
@@ -151,7 +152,7 @@
  
    return;
  }
-@@ -2199,7 +2262,11 @@
+@@ -2199,7 +2263,11 @@
      snd.ether->ether_shost[i] = intface.haddr.haddr[i];
  #endif
    }
@@ -163,7 +164,7 @@
  
    return;
  }
-@@ -2372,7 +2439,11 @@
+@@ -2372,7 +2440,11 @@
      snd.ether->ether_shost[i] = intface.haddr.haddr[i];
  #endif
    }
@@ -175,7 +176,7 @@
  
    return(0);
  }
-@@ -2391,7 +2462,7 @@
+@@ -2391,7 +2463,7 @@
    struct msghdr msg;
    struct iovec bufvec[1];
    int bufsize = DFLTDHCPLEN;
@@ -184,7 +185,7 @@
    int on;
  #endif
  
-@@ -2417,7 +2488,7 @@
+@@ -2417,7 +2489,7 @@
        return(-1);
      }
  
