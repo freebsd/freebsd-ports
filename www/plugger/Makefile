@@ -7,7 +7,7 @@
 
 PORTNAME=	plugger
 PORTVERSION=	4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www audio graphics
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/ \
 		${MASTER_SITE_NETSCAPE}
@@ -16,8 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} unix-sdk-3.0b5.tar.Z
 
 MAINTAINER=	coop9211@uidaho.edu
 
-RUN_DEPENDS=	${X11BASE}/bin/mozilla:${PORTSDIR}/www/mozilla \
-		${X11BASE}/bin/xanim:${PORTSDIR}/graphics/xanim \
+RUN_DEPENDS=	${X11BASE}/bin/xanim:${PORTSDIR}/graphics/xanim \
 		${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++ \
 		${LOCALBASE}/bin/mpg123:${PORTSDIR}/audio/mpg123 \
 		${LOCALBASE}/bin/wavplay:${PORTSDIR}/audio/wavplay \
@@ -27,7 +26,6 @@ RUN_DEPENDS=	${X11BASE}/bin/mozilla:${PORTSDIR}/www/mozilla \
 		${X11BASE}/bin/gqview:${PORTSDIR}/graphics/gqview \
 		${X11BASE}/bin/gv:${PORTSDIR}/print/gv \
 		${X11BASE}/bin/abiword:${PORTSDIR}/editors/AbiWord \
-		${X11BASE}/bin/gnumeric:${PORTSDIR}/math/gnumeric \
 		${LOCALBASE}/bin/acroread5:${PORTSDIR}/print/acroread5
 
 USE_X_PREFIX=	yes
@@ -47,12 +45,22 @@ WITH_MPLAYER =	yes
 WITH_MTV =	yes
 .endif
 
+.if exists(${X11BASE}/lib/libgnomeprintui-2.so.0)
+WITH_GNOME2 =	yes
+.endif
+
 .if defined(WITH_MPLAYER)
 RUN_DEPENDS+=	${LOCALBASE}/bin/mplayer:${PORTSDIR}/graphics/mplayer
 .endif
 
 .if defined(WITH_MTV)
 RUN_DEPENDS+=	${LOCALBASE}/bin/mtvp:${PORTSDIR}/graphics/mtv
+.endif
+
+.if defined(WITH_GNOME2)
+RUN_DEPENDS+=	${X11BASE}/bin/gnumeric:${PORTSDIR}/math/gnumeric2
+.else
+RUN_DEPENDS+=	${X11BASE}/bin/gnumeric:${PORTSDIR}/math/gnumeric
 .endif
 
 pre-extract:
@@ -62,6 +70,11 @@ pre-extract:
 
 .if !defined(WITH_MTV)
 	@${ECHO_MSG} "Enable mtvp for MPEG video by defining WITH_MTV."
+.endif
+
+.if !defined(WITH_GNOME2)
+	@${ECHO_MSG} "Enable Gnome/2 AbiWord and Gnumeric by defining"
+	@${ECHO_MSG} "WITH_GNOME2."
 .endif
 
 post-patch:
@@ -75,8 +88,9 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/plugger-${PORTVERSION} \
 		${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/lib/browser_plugins
 	@${INSTALL_PROGRAM} ${WRKSRC}/plugger.so \
-		${PREFIX}/lib/mozilla/plugins/npplugger.so
+		${PREFIX}/lib/browser_plugins/npplugger.so
 	@${INSTALL_MAN} ${WRKSRC}/plugger.7 ${MANPREFIX}/man/man7
 	@${INSTALL_DATA} ${WRKSRC}/pluggerrc ${PREFIX}/etc/pluggerrc.sample
 	@${INSTALL_DATA} -b ${WRKSRC}/pluggerrc ${PREFIX}/etc
