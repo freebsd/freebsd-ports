@@ -12,6 +12,7 @@
     SUBDIR += db3
     SUBDIR += db4
     SUBDIR += db41
+    SUBDIR += db41-nocrypto
     SUBDIR += dbXML
     SUBDIR += dbconnect
     SUBDIR += dbf2mysql
