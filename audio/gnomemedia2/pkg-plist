@@ -452,6 +452,7 @@ share/locale/pt/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/ro/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/ru/LC_MESSAGES/gnome-media-2.0.mo
+share/locale/rw/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/sk/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/sq/LC_MESSAGES/gnome-media-2.0.mo
@@ -465,6 +466,7 @@ share/locale/tr/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/vi/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-media-2.0.mo
+share/locale/xh/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
 @dirrm share/gnome/pixmaps/gnome-media/gnome-sound-recorder
