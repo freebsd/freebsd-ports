@@ -1,0 +1,29 @@
+lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/kde.so
+lib/ruby/site_ruby/%%RUBY_VER%%/kde.rb
+share/examples/ruby/kde/classbrows/kdebrows.rb
+share/examples/ruby/kde/classbrows/rbbr_qt.rb
+share/examples/ruby/kde/classbrows/rbbr_rb.rb
+share/examples/ruby/kde/classbrows/rbdump.rb
+share/examples/ruby/kde/classbrows/kdebrows2.rb
+share/examples/ruby/kde/kapp/kapp1.rb
+share/examples/ruby/kde/kredit/kredit_lib.pot
+share/examples/ruby/kde/kredit/kde2ps
+share/examples/ruby/kde/kredit/kredit.rb
+share/examples/ruby/kde/kredit/kredit_lib.rb
+share/examples/ruby/kde/kredit/readme.txt
+share/examples/ruby/kde/kredit/kredit.po
+share/examples/ruby/kde/kredit/kredit.mo
+share/examples/ruby/kde/kredit/kredit.rb.mo
+share/examples/ruby/kde/kredit/make_pot
+share/examples/ruby/kde/kwidgets/kwid.rb
+share/examples/ruby/kde/slider/kslider3.rb
+@dirrm share/examples/ruby/kde/classbrows
+@dirrm share/examples/ruby/kde/kapp
+@dirrm share/examples/ruby/kde/kredit
+@dirrm share/examples/ruby/kde/kwidgets
+@dirrm share/examples/ruby/kde/slider
+@dirrm share/examples/ruby/kde
+share/doc/ruby/kde/README.txt
+share/doc/ruby/kde/ja/README.jp.txt
+@dirrm share/doc/ruby/kde/ja
+@dirrm share/doc/ruby/kde

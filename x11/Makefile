@@ -56,6 +56,8 @@
     SUBDIR += powershell
     SUBDIR += props
     SUBDIR += qrash
+    SUBDIR += ruby-kde
+    SUBDIR += ruby-kde-i18n
     SUBDIR += rxvt
     SUBDIR += stockticker_applet
     SUBDIR += sxpc
