@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.184 1999/05/12 10:04:53 asami Exp $
+# $Id: Makefile,v 1.185 1999/05/20 14:43:16 kuriyama Exp $
 #
 
     SUBDIR += ElectricFence
@@ -91,6 +91,7 @@
     SUBDIR += nasm
     SUBDIR += ncurses
     SUBDIR += noweb
+    SUBDIR += nps
     SUBDIR += omniORB
     SUBDIR += p5-BSD-Resource
     SUBDIR += p5-C-Scan
