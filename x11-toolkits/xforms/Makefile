@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gena@NetVision.net.il
 
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
 
