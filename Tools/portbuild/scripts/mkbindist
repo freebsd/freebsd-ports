@@ -91,14 +91,15 @@ mount localhost:${here}/src ${tmpdir}/usr/src
 sleep 5 # XXX !!!
 
 # Cater to different build locations of 4.x and 5.x
-if [ -d ${here}/src/sys/i386/compile ]; then
-  chroot ${tmpdir} sh -c "cd /usr/src/sys/i386/conf && config ${kernel} && cd /sys/i386/compile/${kernel} && make depend -DNO_MODULES && make all install -DNO_MODULES"
-else
-  chroot ${tmpdir} sh -c "cd /usr/src/sys/i386/conf && config ${kernel} && cd /sys/compile/${kernel} && make depend -DNO_MODULES && make all install -DNO_MODULES"
-fi
+#if [ -d ${here}/src/sys/i386/compile ]; then
+#  chroot ${tmpdir} sh -c "cd /usr/src/sys/i386/conf && config ${kernel} && cd /sys/i386/compile/${kernel} && make depend -DNO_MODULES && make all install -DNO_MODULES"
+#else
+#  chroot ${tmpdir} sh -c "cd /usr/src/sys/i386/conf && config ${kernel} && cd /sys/compile/${kernel} && make depend -DNO_MODULES && make all install -DNO_MODULES"
+#fi
 
 #chroot ${tmpdir} sh -c "cd /usr/src/sys/boot && make obj && make depend && make all install"
 umount -f ${tmpdir}/usr/src
+ln -sf ${tmpdir}/kernel.GENERIC ${tmpdir}/kernel
 rm -rf ${tmpdir}/kernel.old ${tmpdir}/modules.old ${tmpdir}/boot/kernel.old
 
 # Rebuild device nodes.  Again, this was probably intended
