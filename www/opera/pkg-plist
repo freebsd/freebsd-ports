@@ -2,11 +2,13 @@ bin/opera
 share/doc/opera/LICENSE
 share/doc/opera/help
 share/opera/bin/m2.so
+share/opera/bin/missingsyms.so
 share/opera/bin/opera
 share/opera/chartables.bin
 share/opera/config/opera6rc
 share/opera/config/opera6rc.fixed
 share/opera/help/advertising.html
+share/opera/help/background.png
 share/opera/help/dialogs.html
 share/opera/help/filetypes.html
 share/opera/help/fonts.html

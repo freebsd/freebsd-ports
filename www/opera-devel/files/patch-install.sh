@@ -1,5 +1,5 @@
---- install.sh.orig	Wed Aug 27 18:18:06 2003
-+++ install.sh	Sat Aug 30 13:24:01 2003
+--- install.sh.orig	Fri Sep 19 13:23:30 2003
++++ install.sh	Sat Sep 20 22:37:16 2003
 @@ -711,9 +711,7 @@
  
      wrapper_opera_plugin_paths="    \"\${HOME}/.opera/plugins\" \\
@@ -52,7 +52,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1178,44 +1167,6 @@
+@@ -1187,44 +1176,6 @@
  	    echo "This package does not contain support for Netscape Plug-ins.\n"
  	fi
  
@@ -97,7 +97,7 @@
       # Shorcuts and Icons
  	icons
  	gnome
-@@ -1311,22 +1262,22 @@
+@@ -1320,22 +1271,22 @@
  
      debug_msg 0 "in icons()"
  
@@ -132,7 +132,7 @@
      fi
    
      if test ! -d /etc/X11/wmconfig/; then
-@@ -1392,36 +1343,36 @@
+@@ -1401,33 +1352,33 @@
        fi
        # end /opt/gnome share
  
@@ -177,7 +177,7 @@
 +	     generate_desktop /usr/X11R6/share/gnome/apps/Networking/WWW
  	    fi
 -	  elif test -w /usr/share/gnome/apps; then
--	    mkdir $mkdirv $mkdirp/usr/share/gnome/apps/Internet/
+-	    mkdir $mkdirv $mkdirp /usr/share/gnome/apps/Internet/
 -	    chmod $chmodv 755 /usr/share/gnome/apps/Internet
 -            generate_desktop /usr/share/gnome/apps/Internet
 +	  elif test -w /usr/X11R6/share/gnome/apps; then
@@ -186,12 +186,8 @@
 +            generate_desktop /usr/X11R6/share/gnome/apps/Internet
            fi
  	fi
--	# end /usr/share/gnome link
-+	# end /usr/X11R6/share/gnome link
-    fi
-    # Add ximian here
- }
-@@ -1458,12 +1409,12 @@
+ 	# end /usr/share/gnome link
+@@ -1467,12 +1418,12 @@
  
      fi  
      
@@ -209,7 +205,7 @@
      fi
  }
  
-@@ -1487,8 +1438,8 @@
+@@ -1496,8 +1447,8 @@
        fi
        if test -w /opt/kde/share/applnk/Internet; then generate_desktop /opt/kde/share/applnk/Internet; fi
  
