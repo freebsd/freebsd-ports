@@ -1,0 +1,11 @@
+--- kssh/Makefile.in.orig	Sat Nov 18 22:41:06 2000
++++ kssh/Makefile.in	Sat Nov 18 22:41:22 2000
+@@ -192,7 +192,7 @@
+ # you can add here more. This one gets installed 
+ bin_PROGRAMS = kssh 
+ kssh_SOURCES = optionsdiadata.cpp optionsdia.cpp sshdialogdata.cpp sshdialog.cpp main.cpp 
+-kssh_LDADD = -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET)
++kssh_LDADD = -lkdeui -lkdecore -lqt2 -lXext -lX11 $(LIBSOCKET)
+ 
+ SUBDIRS = docs 
+ 
