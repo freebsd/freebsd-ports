@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gettext
-PORTVERSION=	0.11.5
-PORTREVISION=	1
+PORTVERSION=	0.12.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gettext
@@ -18,7 +17,7 @@ COMMENT=	GNU gettext package
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		expat.4:${PORTSDIR}/textproc/expat2
 
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	ACLOCAL="${TRUE}" \
 		AUTOCONF="${TRUE}" \
@@ -27,7 +26,8 @@ CONFIGURE_ENV=	ACLOCAL="${TRUE}" \
 		MAKEINFO="makeinfo --no-split" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-libexpat-prefix=${LOCALBASE}/lib
+CONFIGURE_ARGS=	--with-libexpat-prefix=${LOCALBASE}/lib \
+		--mandir=${PREFIX}/man
 INSTALLS_SHLIB=	yes
 
 PLIST_SUB=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
@@ -41,14 +41,11 @@ MAN3=		bind_textdomain_codeset.3 bindtextdomain.3 dcgettext.3 \
 		dcngettext.3 dgettext.3 dngettext.3 gettext.3 ngettext.3 \
 		textdomain.3
 
-pre-configure:
-	${RM} ${WRKSRC}/doc/gettext.info*
+INFO=		autosprintf gettext
 
 post-install:
-	@install-info ${PREFIX}/info/gettext.info ${PREFIX}/info/dir
-	${MKDIR} ${PREFIX}/share/emacs/site-lisp
-.for file in po-compat.el po-mode.el
-	${INSTALL_DATA} ${WRKSRC}/misc/${file} ${PREFIX}/share/emacs/site-lisp
+.for f in po-compat.el po-mode.el
+	${INSTALL_DATA} ${WRKSRC}/gettext-tools/misc/${f} ${PREFIX}/share/emacs/site-lisp
 .endfor
 	${MKDIR} ${X11BASE}/share/locale
 

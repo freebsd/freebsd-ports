@@ -1,27 +1,24 @@
-
-$FreeBSD$
-
---- intl/Makefile.in.orig	Thu Jan 31 16:11:48 2002
-+++ intl/Makefile.in	Tue Apr 30 11:18:46 2002
+--- gettext-runtime/intl/Makefile.in.orig	Wed May 21 06:55:18 2003
++++ gettext-runtime/intl/Makefile.in	Wed Jun 11 14:28:58 2003
 @@ -52,7 +52,7 @@
  YFLAGS = --name-prefix=__gettext
  
  DEFS = -DLOCALEDIR=\"$(localedir)\" -DLOCALE_ALIAS_PATH=\"$(aliaspath)\" \
---DLIBDIR=\"$(libdir)\" -DIN_LIBINTL @DEFS@
-+-DLIBDIR=\"$(prefix)/libdata\" -DIN_LIBINTL @DEFS@
- CPPFLAGS = @CPPFLAGS@
- CFLAGS = @CFLAGS@
- LDFLAGS = @LDFLAGS@
-@@ -119,7 +119,7 @@
+--DLIBDIR=\"$(libdir)\" -DIN_LIBINTL \
++-DLIBDIR=\"$(prefix)/libdata\" -DIN_LIBINTL \
+ -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"$(libdir)\" -DNO_XMALLOC \
+ -Dset_relocation_prefix=libintl_set_relocation_prefix \
+ -Drelocate=libintl_relocate \
+@@ -145,7 +145,7 @@
  libintl.la libgnuintl.la: $(OBJECTS)
  	$(LIBTOOL) --mode=link \
  	  $(CC) $(CPPFLAGS) $(CFLAGS) $(XCFLAGS) $(LDFLAGS) -o $@ \
--	  $(OBJECTS) @LTLIBICONV@ -lc \
-+	  $(OBJECTS) @LTLIBICONV@ \
+-	  $(OBJECTS) @LTLIBICONV@ $(LIBS) -lc \
++	  $(OBJECTS) @LTLIBICONV@ $(LIBS) \
  	  -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
  	  -rpath $(libdir) \
  	  -no-undefined
-@@ -153,22 +153,6 @@
+@@ -270,22 +270,6 @@
  	  : ; \
  	fi
  	if test '@USE_INCLUDED_LIBINTL@' = yes; then \
@@ -44,7 +41,7 @@ $FreeBSD$
  	  $(mkinstalldirs) $(DESTDIR)$(localedir); \
  	  test -f $(DESTDIR)$(localedir)/locale.alias \
  	    && orig=$(DESTDIR)$(localedir)/locale.alias \
-@@ -240,9 +224,9 @@
+@@ -369,9 +353,9 @@
  	  : ; \
  	fi
  	if test '@USE_INCLUDED_LIBINTL@' = yes; then \
