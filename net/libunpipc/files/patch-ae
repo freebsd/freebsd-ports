@@ -1,0 +1,38 @@
+--- lib/wrappthread.c.orig	Thu Sep 30 11:03:00 1999
++++ lib/wrappthread.c	Thu Sep 30 11:04:50 1999
+@@ -83,17 +83,6 @@
+ }
+ 
+ void
+-Pthread_kill(pthread_t tid, int signo)
+-{
+-	int		n;
+-
+-	if ( (n = pthread_kill(tid, signo)) == 0)
+-		return;
+-	errno = n;
+-	err_sys("pthread_kill error");
+-}
+-
+-void
+ Pthread_mutexattr_init(pthread_mutexattr_t *attr)
+ {
+ 	int		n;
+@@ -274,17 +263,6 @@
+ 		return;
+ 	errno = n;
+ 	err_sys("pthread_key_create error");
+-}
+-
+-void
+-Pthread_setcancelstate(int state, int *oldstate)
+-{
+-	int		n;
+-
+-	if ( (n = pthread_setcancelstate(state, oldstate)) == 0)
+-		return;
+-	errno = n;
+-	err_sys("pthread_setcancelstate error");
+ }
+ 
+ void

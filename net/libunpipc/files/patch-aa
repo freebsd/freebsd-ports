@@ -1,0 +1,18 @@
+--- Makefile.in.orig	Fri Apr 11 18:42:26 1997
++++ Makefile.in	Thu Sep 30 10:24:12 1999
+@@ -1,8 +1,13 @@
+ include ./Make.defines
+ 
++SUBDIRS =	lib
++
+ all:
+-	@echo "Nothing to make in this directory"
+-	@echo "Please read the README file"
++	PWD=`pwd`; \
++	for dir in $(SUBDIRS) ; \
++	do \
++		cd $$PWD/$$dir && $(MAKE) && cd .. ;\
++	done
+ 
+ clean:
+ 	rm -f $(CLEANFILES)

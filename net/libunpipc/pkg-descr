@@ -1,0 +1,12 @@
+libunp is the library used in W. Richard Steven's book "UNIX Network
+Programming Volume 2, 2nd Edition".  It contains the library and headers
+used in the examples as well as all programs from the text that compile on
+FreeBSD systems.
+
+For more information on the book, see
+
+http://www.phptr.com/ptrbooks/ptr_013490012X.html
+
+For more info on W. Richard Stevens, see
+
+http://www.kohala.com/~rstevens/
