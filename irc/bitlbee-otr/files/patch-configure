@@ -1,0 +1,20 @@
+--- configure.orig	Tue Jun  8 09:55:00 2004
++++ configure	Tue Jun  8 09:54:50 2004
+@@ -86,7 +86,7 @@
+ 
+ DESTDIR=
+ LFLAGS=
+-EFLAGS=
++EFLAGS=$LDFLAGS
+ EOF
+ 
+ cat<<EOF>config.h
+@@ -108,7 +108,7 @@
+ 	echo 'DEBUG=1' >> Makefile.settings
+ 	echo '#define DEBUG' >> config.h
+ else
+-	echo 'CFLAGS=-O3' >> Makefile.settings;
++	echo "CFLAGS=$CPPFLAGS" >> Makefile.settings;
+ fi
+ 
+ echo CFLAGS+=-I`pwd` -I`pwd`/protocols -I. >> Makefile.settings

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bitlbee
-PORTVERSION=	0.85a
-PORTREVISION=	1
+PORTVERSION=	0.90
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/
 
@@ -21,17 +20,24 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man --config=${PREFIX}/etc/bitlbee
 USE_GMAKE=	yes
 USE_GNOME=	glib20
+USE_GETOPT_LONG=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if defined(WITH_MSN)
-LIB_DEPENDS=	gnutls.12:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=--msn=1
+LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=	--msn=1
 pre-configure:
 	@${ECHO_CMD} "MSN support will be enabled."
 .else
-CONFIGURE_ARGS+=--msn=0
+CONFIGURE_ARGS+=	--msn=0
 pre-configure:
-	@${ECHO_CMD} "Type \"make -DWITH_MSN\" if you want enable MSN support."
+	@${ECHO_CMD} "Type \"make -DWITH_MSN\" if you want to enable MSN support."
+.endif
+
+.if defined(WITH_FLOOD)
+CONFIGURE_ARGS+=	--flood=1
+.else
+	@${ECHO_CMD} "Type \"make -DWITH_FLOOD\" if you want to enable flood protection."
 .endif
 
 post-build:
