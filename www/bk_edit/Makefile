@@ -18,5 +18,6 @@ USE_BISON=	yes
 USE_GETOPT_LONG=	yes
 USE_GNOME=	gtk12 libxml2
 HAS_CONFIGURE=	yes
+MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.mk>
