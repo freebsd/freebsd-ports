@@ -16,7 +16,7 @@ user-friendly environment. It features:
         Metanet.
    Symbolic capabilities through Maple interface.
 
-WWW: http://www-rocq.inria.fr/scilab/
+WWW: http://www.scilab.org
 
 Note: To configure your local printers, add their names to the PRINTERS
  variable in the scilab script.
