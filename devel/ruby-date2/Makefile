@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	date2
-PORTVERSION=	2.4
+PORTVERSION=	2.4.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.kt.rim.or.jp/~tadf/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
