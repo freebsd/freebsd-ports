@@ -168,6 +168,7 @@
     SUBDIR += psutils-a4
     SUBDIR += psutils-letter
     SUBDIR += pup
+    SUBDIR += pxfonts
     SUBDIR += py-fonttools
     SUBDIR += py-freetype
     SUBDIR += py-reportlab
