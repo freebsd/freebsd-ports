@@ -7,16 +7,18 @@
 
 PORTNAME=	quit
 PORTVERSION=	1.02
-CATEGORIES=	games
+CATEGORIES?=	games
 MASTER_SITES=	http://matsu-www.is.titech.ac.jp/~fukuchi/archive/misc/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	umeno@rr.iij4u.or.jp
+MAINTAINER?=	umeno@rr.iij4u.or.jp
 COMMENT=	A bicycle with trailers like "sl"
 
-ALL_TARGET=	quit
 MAN1=		quit.1
 MANLANG=	ja
+
+do-build:
+	${CC} ${CFLAGS} ${CPPFLAGS} -o ${WRKSRC}/quit ${WRKSRC}/quit.c -lncurses
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/quit ${PREFIX}/bin
