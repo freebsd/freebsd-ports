@@ -1,5 +1,5 @@
---- src/netstat.c.orig	Sun Jul  4 17:57:03 2004
-+++ src/netstat.c	Sun Jul  4 17:57:48 2004
+--- src/netstat.c.orig	Tue Jul  6 13:55:25 2004
++++ src/netstat.c	Fri Aug 20 15:55:40 2004
 @@ -108,12 +108,17 @@
  	g_return_val_if_fail (netinfo != NULL, NULL);
  	
@@ -15,6 +15,6 @@
  			option = g_strdup ("-rn -A inet");
  		}
 +#endif
- 	}
- 	if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (netinfo->protocol))) {
- 		/* Only works for Solaris */
+ 
+ 		if (netinfo->stbar_text)
+ 			g_free (netinfo->stbar_text);

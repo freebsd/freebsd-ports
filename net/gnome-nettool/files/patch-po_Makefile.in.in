@@ -1,0 +1,10 @@
+--- po/Makefile.in.in.orig	Fri Aug 20 15:59:14 2004
++++ po/Makefile.in.in	Fri Aug 20 15:59:26 2004
+@@ -32,6 +32,7 @@
+ gnulocaledir = $(prefix)/share/locale
+ gettextsrcdir = $(datadir)/glib-2.0/gettext/po
+ subdir = po
++mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ 
+ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
