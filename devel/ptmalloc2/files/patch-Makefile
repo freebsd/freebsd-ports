@@ -1,0 +1,55 @@
+--- Makefile.orig	Mon Dec 20 21:58:38 1999
++++ Makefile	Mon Dec 13 17:22:24 2004
+@@ -10,7 +10,7 @@
+ 
+ OPT_FLAGS  = -O #-g
+ WARN_FLAGS = # -Wall
+-SH_FLAGS   = -shared
++SH_FLAGS   = -shared -fpic
+ 
+ # Flags for the test programs
+ T_FLAGS   = -DUSE_MALLOC=1 -DMALLOC_HOOKS -DTEST=1
+@@ -27,6 +27,9 @@
+ THR_FLAGS = -DUSE_PTHREADS=1 -DUSE_TSD_DATA_HACK -D_REENTRANT
+ THR_LIBS  = -lpthread
+ 
++# Target libraries
++LIBS=		libptmalloc.a ptmalloc.so
++
+ RM        = rm -f
+ 
+ # Don't need it for the Linux C library 6, see `glibc' target below.
+@@ -40,7 +43,7 @@
+ .c.o:
+ 	$(CC) -c $(CFLAGS) $<
+ 
+-all: $(TESTS)
++all: ${LIBS} $(TESTS)
+ 
+ shared: ptmalloc.so
+ 
+@@ -48,14 +51,14 @@
+ 	$(CC) -c $(CFLAGS) $(M_FLAGS) $<
+ 
+ ptmalloc.so: ptmalloc.c ptmalloc.h thread-m.h
+-	$(CC) $(SH_FLAGS) $(CFLAGS) $(M_FLAGS) $< -o $@
++	$(CC) $(SH_FLAGS) $(CFLAGS) $(M_FLAGS) ptmalloc.c -o $@
+ 
+ again:
+ 	$(RM) $(TESTS)
+ 	$(MAKE) $(TESTS)
+ 
+ clean:
+-	$(RM) ptmalloc.o ptmalloc.so $(TESTS) core
++	$(RM) ptmalloc.o ptmalloc.so $(TESTS) core lib*
+ 
+ t-test1$(T_SUF): t-test1.c t-test.h thread-m.h $(MALLOC)
+ 	$(CC) $(CFLAGS) $(T_FLAGS) t-test1.c $(MALLOC) $(THR_LIBS) -o $@
+@@ -129,3 +132,7 @@
+ dist:
+ 	cd ..; tar cf - $(DIST_FILES2:%=ptmalloc/%) | \
+ 	 gzip -9 >ptmalloc.tar.gz
++
++libptmalloc.a: ptmalloc.o
++	ar qcvf $@ ptmalloc.o
++	ranlib $@
