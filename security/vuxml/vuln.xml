@@ -37,7 +37,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>krb5</name>
-	<range><le>1.3.4</le></range>
+	<range><le>1.3.4_1</le></range>
       </package>
     </affects>
     <description>
