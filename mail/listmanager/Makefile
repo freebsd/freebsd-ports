@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	listmanager
-PORTVERSION=	2.105.1
-PORTREVISION=	1
+PORTVERSION=	2.107
 CATEGORIES=	mail
 MASTER_SITES=	http://www.listmanager.org/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.freebsd35
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} help.tar.gz listmanager.8 ack
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gshapiro@FreeBSD.org
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
