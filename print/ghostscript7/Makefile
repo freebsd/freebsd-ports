@@ -9,26 +9,30 @@ PORTNAME=	ghostscript
 PORTVERSION=	6.52
 PORTREVISION=	5
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	${MASTER_SITE_GNU:S/$/:fonts/} \
+		${MASTER_SITE_SOURCEFORGE:S/$/:DEFAULT,gimp_print,hpijs/} \
 		http://members.ozemail.com.au/~geoffk/pdfencrypt/:pdf \
 		http://www.gelhaus.net/hp880c/1.4beta/:gdevcd \
 		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/:hpdj_pcl3 \
 		http://www.harsch.net/Download/:gdevdj \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs652/ \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/
-MASTER_SITE_SUBDIR=	${PORTNAME} gimp-print hpinkjet
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/:fonts \
+		ftp://gatekeeper.dec.com/pub/GNU/ghostscript/:gatekeeper
+# gatekeeper is an exception, it is the only GNU site which carries
+# some of the other files, so add it although it is listed inside
+# MASTER_SITE_GNU
+MASTER_SITE_SUBDIR=     ${PORTNAME} gimp-print/:gimp_print hpinkjet/:hpijs
 PKGNAMESUFFIX=	-gnu
-DISTFILES=	${GS_SOURCES} \
-		${GS_FONTS_STD} \
-		${GS_FONTS_OTHER} \
+DISTFILES=	${GS_SOURCES}:DEFAULT,gatekeeper \
+		${GS_FONTS_STD}:fonts \
+		${GS_FONTS_OTHER}:fonts,gatekeeper \
 		${DECRYPT_PDF}:pdf \
 		${HP8XX_DRV}:gdevcd \
 		${HPDJ_SRC}:hpdj_pcl3 \
 		${PCL3_SRC}:hpdj_pcl3 \
 		${HP970_DRV}:gdevdj \
-		${GPRINT_SRC} \
-		${HPIJS_SRC}
+		${GPRINT_SRC}:gatekeeper,gimp_print \
+		${HPIJS_SRC}:gatekeeper,hpijs
 DIST_SUBDIR=	ghostscript
 EXTRACT_ONLY=	${GS_SOURCES}
 
