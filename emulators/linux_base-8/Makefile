@@ -8,7 +8,7 @@
 
 PORTNAME=		linux_base-8
 PORTVERSION=		8.0
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX} \
 			${MASTER_SITE_REDHAT_LINUX:S/$/:new/} \
@@ -55,7 +55,7 @@ COMMENT=	Base set of packages needed in Linux mode (only for i386)
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
-CONFLICTS=	linux_base-6* linux_base-7* linux_base-deb* linux_base-gen* \
+CONFLICTS=	linux_base-6* linux_base-7* linux_base-deb* linux_base-gentoo* \
 		linux_base-rh* linux_base-suse*
 ONLY_FOR_ARCHS=		i386 amd64
 DIST_SUBDIR=		rpm/${ARCH}/${PORTVERSION}
@@ -97,9 +97,6 @@ FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 .endif
 LINUX_ELF=		3
 PREVIOUS_ELF!=		/sbin/sysctl -n ${FALLBACK_ELF_MIB}
-
-do-patch:
-	@${DO_NADA}
 
 do-extract:
 #
