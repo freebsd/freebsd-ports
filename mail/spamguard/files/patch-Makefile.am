@@ -1,0 +1,71 @@
+--- Makefile.am.orig	Sun Oct 26 02:04:34 2003
++++ Makefile.am	Sun Oct 26 02:07:45 2003
+@@ -4,59 +4,22 @@ bin_PROGRAMS = spamguard
+ spamguard_SOURCES = functions.c  loadconfig.c  main.c  parser.c  wildmat.c
+ spamguard_LDADD 	=
+ 
+-EXTRA_DIST = functions.c functions.h loadconfig.c loadconfig.h main.c parser.c parser.h wildmat.c wildtmat.h spam-ignore.txt spam-ignore.txt.sample spamguard.conf spamguard.conf.sample  AUTHORS CHANGELOG COPYING INSTALL README README.DigitalUnix POST-INSTALL THANKS TODO
++DOCS=	AUTHORS CHANGELOG COPYING INSTALL README README.DigitalUnix POST-INSTALL THANKS TODO
++EXTRA_DIST = functions.c functions.h loadconfig.c loadconfig.h main.c parser.c parser.h wildmat.c wildtmat.h spam-ignore.txt spam-ignore.txt.sample spamguard.conf spamguard.conf.sample $(DOCS) 
+ 
+ install-data-local:
+ 	$(mkinstalldirs) ${prefix}/share/doc/spamguard
+-	$(INSTALL_DATA) $(srcdir)/AUTHORS ${prefix}/share/doc/spamguard/AUTHORS
+-   
+-	$(mkinstalldirs) ${prefix}/share/doc/spamguard/
+-	$(INSTALL_DATA) $(srcdir)/CHANGELOG ${prefix}/share/doc/spamguard/CHANGELOG
+-
+-	$(mkinstalldirs) ${prefix}/share/doc/spamguard/
+-	$(INSTALL_DATA) $(srcdir)/COPYING ${prefix}/share/doc/spamguard/COPYING
+-
+-
+-	$(mkinstalldirs) ${prefix}/share/doc/spamguard
+-	$(INSTALL_DATA) $(srcdir)/INSTALL ${prefix}/share/doc/spamguard/INSTALL
+-   
+-	$(mkinstalldirs) ${prefix}/share/doc/spamguard
+-	$(INSTALL_DATA) $(srcdir)/README ${prefix}/share/doc/spamguard/README
+-   
+-	$(mkinstalldirs) ${prefix}/share/doc/spamguard
+-	$(INSTALL_DATA) $(srcdir)/README.DigitalUnix ${prefix}/share/doc/spamguard/README.DigitalUnix
+-   
+-	$(mkinstalldirs) ${prefix}/share/doc/spamguard
+-	$(INSTALL_DATA) $(srcdir)/POST-INSTALL  ${prefix}/share/doc/spamguard/POST-INSTALL
+-   
+-	$(mkinstalldirs) ${prefix}/share/doc/spamguard/
+-	$(INSTALL_DATA) $(srcdir)/THANKS  ${prefix}/share/doc/spamguard/THANKS
+-   
+-	$(mkinstalldirs) ${prefix}/share/doc/spamguard/
+-	$(INSTALL_DATA) $(srcdir)/TODO ${prefix}/share/doc/spamguard/TODO
+-   
+-	$(mkinstalldirs) ${prefix}/etc/
++.for file in $(DOCS)
++	$(INSTALL_DATA) $(srcdir)/$(file) ${prefix}/share/doc/spamguard
++.endfor
++	$(mkinstalldirs) ${prefix}/etc
+ 	$(INSTALL_DATA) $(srcdir)/spam-ignore.txt.sample ${prefix}/etc/spam-ignore.txt.sample
+-
+-	$(mkinstalldirs) ${prefix}/etc/
+-	$(INSTALL_DATA) $(srcdir)/spam-ignore.txt ${prefix}/etc/spam-ignore.txt
+-
+-	$(mkinstalldirs) ${prefix}/etc/
+ 	$(INSTALL_DATA) $(srcdir)/spamguard.conf.sample ${prefix}/etc/spamguard.conf.sample
+ 
+-	$(mkinstalldirs) ${prefix}/etc/
+-	$(INSTALL_DATA) $(srcdir)/spamguard.conf ${prefix}/etc/spamguard.conf
+-
+ uninstall-local:
+-	-rm -f ${prefix}/share/doc/spamguard/AUTHORS
+-	-rm -f ${prefix}/share/doc/spamguard/CHANGELOG
+-	-rm -f ${prefix}/share/doc/spamguard/COPYING
+-	-rm -f ${prefix}/share/doc/spamguard/INSTALL
+-	-rm -f ${prefix}/share/doc/spamguard/README
+-	-rm -f ${prefix}/share/doc/spamguard/README.DigitalUnix
+-	-rm -f ${prefix}/share/doc/spamguard/POST-INSTALL
+-	-rm -f ${prefix}/share/doc/spamguard/THANKS
+-	-rm -f ${prefix}/share/doc/spamguard/TODO
++.for file in $(DOCS)
++	-rm -f ${prefix}/share/doc/spamguard/${file}
++.endfor
+ 	-rm -f ${prefix}/etc/spam-ignore.txt.sample
+ 	-rm -f ${prefix}/etc/spamguard.conf.sample
+  

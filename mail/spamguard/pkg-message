@@ -1,0 +1,7 @@
+
+Edit %%PREFIX%%/etc/spamguard.conf
+After that edit %%PREFIX%%/etc/spam-ignore.txt
+
+Finally you have to add a crontab entry in order to get spamguard work like:
+
+0/5 * * * * %%PREFIX%%/bin/spamguard 1>/dev/null 2>/dev/null
