@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.10.7
+PORTVERSION=	7.10.8
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -50,11 +50,6 @@ USE_OPENSSL=	yes
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64" || ${ARCH} == "alpha" || ${ARCH} == "ia64" || \
-	${ARCH} == "powerpc"
-BROKEN=		"DNS resolution problems on 64-bit machines"
-.endif
 
 .if !defined(WITHOUT_SSL)
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}

@@ -1,19 +1,11 @@
---- tests/server/getpart.c.old	Tue Sep  2 14:05:23 2003
-+++ tests/server/getpart.c	Tue Sep  2 14:07:16 2003
-@@ -20,7 +20,7 @@
- {
+--- tests/server/getpart.c.orig	Wed Dec 10 15:15:52 2003
++++ tests/server/getpart.c	Wed Dec 10 15:17:19 2003
+@@ -21,7 +21,7 @@
    int len = strlen(buffer);
+   int needed_len = len + *stringlen;
  
--  if((len + *stringlen) >= *stralloc) {
-+  while((len + *stringlen) >= *stralloc) {
-     char *newptr= realloc(string, *stralloc*2);
-     if(newptr) {
-       string = newptr;
-@@ -56,6 +56,7 @@
-   } state = STATE_OUTSIDE;
- 
-   string = (char *)malloc(stralloc);
-+  string[0] = '\0';
-   
-   while(fgets(buffer, sizeof(buffer), stream)) {
+-  if(needed_len >= *stralloc) {
++  while(needed_len >= *stralloc) {
+     char *newptr;
+     long newsize = needed_len*2; /* get twice the needed size */
  
