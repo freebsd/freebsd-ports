@@ -8570,6 +8570,7 @@ zh-big5fs	ports/chinese/big5fs
 zh-bind8	ports/chinese/bind8
 zh-bitchx	ports/chinese/bitchx
 zh-c2t		ports/chinese/c2t
+zh-cce		ports/chinese/cce
 zh-celvis	ports/chinese/celvis
 zh-chinput	ports/chinese/chinput
 zh-chinput2	ports/chinese/chinput2
