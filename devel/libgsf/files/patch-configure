@@ -1,0 +1,22 @@
+
+$FreeBSD$
+
+--- configure	2002/09/11 10:13:57	1.1
++++ configure	2002/09/11 10:14:44
+@@ -7245,6 +7245,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -8011,7 +8012,7 @@
+ else
+   echo "$as_me: failed program was:" >&5
+ cat conftest.$ac_ext >&5
+-need_posix=yes
++need_posix=no
+ fi
+ rm -f conftest.$ac_objext conftest.$ac_ext
+ CFLAGS="$saved_CFLAGS"
