@@ -13,9 +13,9 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-dansguardian_enable=${dansguardian_enable:-"NO"}
-dansguardian_flags=${dansguardian_flags:-""}
-dansguardian_pidfile=${dansguardian_pidfile:-"/var/run/dansguardian.pid"
+dansguardian_enable=${dansguardian_enable-"NO"}
+dansguardian_flags=${dansguardian_flags-""}
+dansguardian_pidfile=${dansguardian_pidfile-"/var/run/dansguardian.pid"}
 
 . %%RC_SUBR%%
 
@@ -23,9 +23,9 @@ name="dansguardian"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/dansguardian"
 
-load_rc_config $name
+load_rc_config ${name}
 
 pidfile="${dansguardian_pidfile}"
 
-run_rc_command "$1"
+run_rc_command "${1}"
 

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.8.0.0
+PORTVERSION=	2.8.0.2
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
-DISTNAME=	DansGuardian-${PORTVERSION:R}-${PORTVERSION:E}.source
+DISTNAME=	${PORTNAME}-${PORTVERSION}.source
 
 MAINTAINER=	fcash@sd73.bc.ca
 COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
@@ -18,12 +18,12 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid \
 		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
 
 USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 CONFLICTS=	dansguardian-2.[67]*
 LATEST_LINK=	dansguardian
 
-WRKSRC=		${WRKDIR}/DansGuardian-${PORTVERSION:R}-${PORTVERSION:E}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir=/sbin/ \
 		--sysconfdir=/etc/dansguardian/ \
@@ -46,10 +46,9 @@ RESTRICTED=	${NO_PACKAGE}
 
 .include <bsd.port.pre.mk>
 
-# On FreeBSD 4.x, user can choose which GCC version to use
-.if ${OSVERSION} > 500000 || defined(WITH_DG_GCC3)
+# Set which version of GCC to compile the port with
+.if ${OSVERSION} > 500000
 CONFIGURE_ARGS+=	--gccver=3
-USE_GCC=		3.3
 .else
 CONFIGURE_ARGS+=	--gccver=2
 .endif
