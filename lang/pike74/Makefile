@@ -69,6 +69,10 @@ USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502102
+FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
+.endif
+
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 # FreeBSD 5.0 Needs to have libgmp port to support gmp.

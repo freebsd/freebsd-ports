@@ -33,6 +33,10 @@ USE_GMAKE=	yes
 IGNORE=		"requires perl 5.6.x or later. Install lang/perl5 and try again"
 .endif
 
+.if ${OSVERSION} >= 502102
+FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
+.endif
+
 post-patch:
 	@${PERL} -pi -e "s|-lpthread|${PTHREAD_LIBS}|" ${WRKSRC}/Makefile.PL
 
