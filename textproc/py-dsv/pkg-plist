@@ -1,3 +1,7 @@
+%%PORTDOCS%%share/doc/dsv/README
+%%PORTDOCS%%share/examples/dsv/darkwave.csv
+%%PORTDOCS%%share/examples/dsv/nastiness.csv
+bin/DSV
 lib/%%PYTHON_VERSION%%/site-packages/DSV/DSV.py
 lib/%%PYTHON_VERSION%%/site-packages/DSV/DSV.pyc
 lib/%%PYTHON_VERSION%%/site-packages/DSV/DSV.pyo
@@ -5,3 +9,5 @@ lib/%%PYTHON_VERSION%%/site-packages/DSV/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/DSV/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/DSV/__init__.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/DSV
+%%PORTDOCS%%@dirrm share/examples/dsv
+%%PORTDOCS%%@dirrm share/doc/dsv
