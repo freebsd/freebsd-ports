@@ -1,0 +1,9 @@
+From the README:
+
+  This program is designed to log smurf attacks and the broadcasts used.
+  Essentially it is just an icmp echo reply logger with the following twists:
+   - Logging only begins after passing a certain threshold rate of packets/sec
+     and kilobytes/sec. This prevents the logging of innocent ping replies.
+   - Only the /24 is logged, and it is only logged once per attack.
+
+Jacques Vidrine <nectar@FreeBSD.ORG>
