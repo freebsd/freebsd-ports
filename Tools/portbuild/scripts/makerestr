@@ -1,0 +1,34 @@
+#!/bin/sh
+# usage: $0 arch branch
+
+# configurable variables
+pb=/var/portbuild
+arch=$1
+shift
+
+. ${pb}/${arch}/portbuild.conf
+
+. ${pb}/scripts/buildenv
+
+usage () {
+  echo "usage: makerestr branch"
+  exit 1
+}
+if [ $# != 1 ]; then
+  usage
+fi
+
+branch=$1
+
+buildenv ${pb} ${arch} ${branch}
+
+duds=${pb}/${arch}/${branch}/duds
+
+unset DISPLAY
+
+export PACKAGE_BUILDING=1
+cd ${PORTSDIR}
+make ECHO_MSG=/usr/bin/true clean-restricted-list \
+  | sed -e "s./usr/ports/packages/.${pb}/${arch}/${branch}/packages/.g" \
+  -e "s./usr/ports/.${pb}/${arch}/${branch}/ports/.g" \
+  > ${pb}/${arch}/${branch}/restricted.sh
