@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gifsicle
-PORTVERSION=	1.35
+PORTVERSION=	1.40
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.lcdf.org/gifsicle/
 
@@ -14,6 +14,7 @@ MAINTAINER=	bradh@uunet.co.za
 COMMENT=	Manipulates GIF images and animations
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		gifdiff.1 gifsicle.1
 

@@ -1,5 +1,5 @@
 bin/gifdiff
 bin/gifsicle
 %%X11%%bin/gifview
-%%PORTDOCS%%share/doc/gifsicle/README
-%%PORTDOCS%%@dirrm share/doc/gifsicle
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
