@@ -1,0 +1,46 @@
+# New ports collection makefile for:	XInclude task for Jakarta Ant
+# Date created:				October 18, 2002
+# Whom:					Ernst de Haan <znerd@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xinclude-task
+PORTVERSION=	0.1
+CATEGORIES=	textproc java
+MASTER_SITES=	http://people.freebsd.org/~znerd/xinclude-task/
+PKGNAMEPREFIX=	ant-
+
+MAINTAINER=	znerd@FreeBSD.org
+
+BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
+
+USE_JAVA=	1.1+
+
+ANT?=		${LOCALBASE}/bin/ant
+.if defined(NOPORTDOCS)
+ANT_TARGET=	jar
+.else
+ANT_TARGET=	jar apidocs
+.endif
+JAVASHAREDIR=	${PREFIX}/share/java
+DOCSDIR=	${PREFIX}/doc/${PORTNAME}
+JARDIR=		${JAVASHAREDIR}/classes
+
+do-build:
+	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
+
+do-install:
+
+	@${ECHO} -n ">> Installing JAR as ${JAVASHAREDIR}/classes/${PORTNAME}.jar..."
+	@${CP} ${WRKSRC}/build/${PORTNAME}.jar ${JARDIR}/
+	@${ECHO} " [ DONE ]"
+
+.if !defined(NOPORTDOCS)
+	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
+	@${MKDIR} ${DOCSDIR}
+	@${CP} -r ${WRKSRC}/build/apidocs/* ${DOCSDIR}
+	@${ECHO} " [ DONE ]"
+.endif
+
+.include <bsd.port.mk>

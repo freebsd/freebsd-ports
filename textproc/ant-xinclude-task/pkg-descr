@@ -1,0 +1,8 @@
+XInclude task for Jakarta Ant. The Ant XInclude task allows Ant
+build files to apply XInclude processing to XML files. It is
+based on the XInclude processor developed by Elliotte Rusty
+Harold. You need the xincluder.jar file for the XInclude task to
+work properly. Please put this JAR in your CLASSPATH along with
+the xinclude-task JAR file.
+
+WWW: http://people.freebsd.org/~znerd/xinclude-task/
