@@ -14,7 +14,7 @@ DISTFILES=	wn16.unix.tar.gz
 
 MAINTAINER=	mi@aldan.algebra.com
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 MAN1=		wn.1 wnb.1 wnintro.1
 MAN3=		binsrch.3 morph.3 wnintro.3 wnsearch.3 wnutil.3
@@ -24,7 +24,7 @@ MAN7=		morphy.7 uniqbeg.7 wngloss.7 wngroups.7 wnintro.7 \
 		wnlicens.7 wnpkgs.7 wnstats.7
 MANCOMPRESSED=	maybe
 
-TCL_DVER=	8.2
+TCL_DVER=	8.3
 SCRIPTS_ENV+=	TCL_DVER=${TCL_DVER}
 MAKE_ENV+=	TCL_DVER=${TCL_DVER}
 PLIST_SUB+=	TCL_DVER=${TCL_DVER}
