@@ -7,6 +7,7 @@
 
 PORTNAME=	phpGedView
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpgedview
@@ -14,26 +15,11 @@ MASTER_SITE_SUBDIR=	phpgedview
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	Online genealogy viewer
 
-.if	defined(WITH_APACHE1)
-RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
-.else
-RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache2
-.endif
-
-.if	defined(WITH_MYSQL) || defined(WITH_MYSQL41)
-RUN_DEPENDS+=	${LOCALBASE}/bin/mysql_config:${PORTSDIR}/database/mysql41-server
-.endif
-.if	defined(WITH_MYSQL40)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/mysqlcc:${PORTSDIR}/database/mysql40-server
-.endif
-# .if	defined(WITH_MYSQL50)
-# RUN_DEPENDS+=	${LOCALBASE}/sbin/mysqlcc:${PORTSDIR}/database/mysql50-server
-# .endif
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_PHP=	yes
 NO_BUILD=	yes
+USE_MYSQL=	yes
 
 GEDVIEWDIR?=	www/data/phpGedView
 FULLGWDIR=	${LOCALBASE}/${GEDVIEWDIR}
