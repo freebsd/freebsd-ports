@@ -38,6 +38,7 @@
     SUBDIR += bluefish
     SUBDIR += bluefish-devel
     SUBDIR += boa
+    SUBDIR += bookmarkbridge
     SUBDIR += bozohttpd
     SUBDIR += cadaver
     SUBDIR += calamaris
