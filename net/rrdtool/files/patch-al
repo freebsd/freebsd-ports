@@ -1,0 +1,11 @@
+--- contrib/rrdlastds/Makefile.in.orig Sat Feb 12 18:22:45 2000
++++ contrib/rrdlastds/Makefile.in      Sat Feb 12 18:23:30 2000
+@@ -77,7 +77,7 @@
+
+ EXTRA_DIST = rrdlastds.pl.in
+
+-contribdir = $(prefix)/contrib/rrdlastds
++contribdir = $(prefix)/share/examples/rrdtool/rrdlastds
+ contrib_DATA = README
+ contrib_SCRIPTS = rrdlastds.pl
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs

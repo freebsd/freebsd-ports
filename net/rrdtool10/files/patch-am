@@ -1,0 +1,11 @@
+--- contrib/add_ds/Makefile.in.orig    Sat Feb 12 18:26:00 2000
++++ contrib/add_ds/Makefile.in Sat Feb 12 18:26:17 2000
+@@ -77,7 +77,7 @@
+
+ EXTRA_DIST = add_ds.pl.in batch.pl.in
+
+-contribdir = $(prefix)/contrib/add_ds
++contribdir = $(prefix)/share/examples/rrdtool/add_ds
+ contrib_DATA = README
+ contrib_SCRIPTS = add_ds.pl  batch.pl
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs

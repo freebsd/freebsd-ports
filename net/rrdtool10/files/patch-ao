@@ -1,0 +1,11 @@
+--- contrib/rrdfetchnames/Makefile.in.orig	Mon Feb 14 23:27:59 2000
++++ contrib/rrdfetchnames/Makefile.in	Mon Feb 14 23:28:17 2000
+@@ -77,7 +77,7 @@
+ 
+ EXTRA_DIST = rrdfetchnames.pl.in
+ 
+-contribdir = $(prefix)/contrib/rrdfetchnames
++contribdir = $(prefix)/share/examples/rrdtool/rrdfetchnames
+ contrib_DATA = README
+ contrib_SCRIPTS = rrdfetchnames.pl
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
