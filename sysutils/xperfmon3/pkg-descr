@@ -1,0 +1,8 @@
+This package contains the binary release of xperfmon++ V1.1 a X based
+system performance meter for several systems, ported to FreeBSD 2.X.
+
+The program monitors user-, system-, idle-cputime, free mem, disk io,
+number of interrupts, network-input, -output, -collision packets and
+NFS client and server activity.
+
+Please send BUGS and annotations to: lars.koeller@odie.physik2.uni-rostock.de

@@ -1,0 +1,9 @@
+@cwd /usr/X11R6
+@group kmem
+@owner bin
+@mode 2555
+bin/xperfmon++
+@group bin
+@mode 444
+lib/X11/app-defaults/XPerfmon++
+man/man1/xperfmon++.1.gz
