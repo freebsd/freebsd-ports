@@ -98,5 +98,8 @@ post-install:
 	@${ECHO_CMD} "put your license into your \$${INTEL_FLEXLM_LICENSE} (default:"
 	@${ECHO_CMD} "${PREFIX}/intel/licenses) directory and add"
 	@${ECHO_CMD} "${PREFIX}/intel/compiler60/ia32/bin to your PATH."
+	@${ECHO_CMD}
+	@${ECHO_CMD} "WARNING: If you use icc while having linux-devtools installed, icc will use"
+	@${ECHO_CMD} "the wrong includes and therefore will generate bogus binaries!"
 
 .include <bsd.port.post.mk>
