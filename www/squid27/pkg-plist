@@ -4,6 +4,7 @@ sbin/squid
 sbin/client
 sbin/dnsserver
 sbin/ftpget
+sbin/pinger
 sbin/cachemgr.cgi
 etc/squid/squid.conf.default
 etc/rc.d/squid.sh

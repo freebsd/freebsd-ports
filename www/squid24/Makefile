@@ -1,21 +1,21 @@
 # New ports collection makefile for:	squid
-# Version required:	1.0.20
-# Date created:		Fri May 17 04:02:53 EET DST 1996
-# Whom:			Andrew Stesin <stesin@elvisti.kiev.ua>
+# Version required:	1.1.beta13
+# Date created:		Thu Nov  7 00:53:18 WST 1996
+# Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.2 1996/07/10 21:48:58 asami Exp $
+# $Id: Makefile,v 1.3 1996/11/06 16:37:10 peter Exp $
 #
 
-DISTNAME=	squid-1.0.20
+DISTNAME=	squid-1.1.beta13
 CATEGORIES+=	www
 MASTER_SITES=  \
-	ftp://squid.nlanr.net/pub/squid-1.0/ \
-	ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/squid-1.0/ \
-	ftp://sunsite.auc.dk/pub/infosystems/squid/squid-1.0/ \
-	ftp://ftp.net.lut.ac.uk/squid/squid-1.0/
+	ftp://squid.nlanr.net/pub/squid-1.1.beta/ \
+	ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/squid-1.1.beta/ \
+	ftp://sunsite.auc.dk/pub/infosystems/squid/squid-1.1.beta/ \
+	ftp://ftp.net.lut.ac.uk/squid/squid-1.1.beta/
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	stesin@elvisti.kiev.ua
+MAINTAINER=	peter@freebsd.org
 
 GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
@@ -25,7 +25,7 @@ STRIP=		# won't install scripts correctly othervise.
 MAKEFILE=	makefile
 
 post-install:
-.for file in cachemgr.cgi client dnsserver ftpget squid
+.for file in cachemgr.cgi client dnsserver ftpget pinger squid
 	strip ${PREFIX}/sbin/${file}
 .endfor
 	${MKDIR} ${PREFIX}/squid/logs
