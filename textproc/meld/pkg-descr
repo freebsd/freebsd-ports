@@ -1,0 +1,7 @@
+Meld is a GNOME 2 visual diff and merge tool. It integrates especially well
+with CVS. The diff viewer lets you edit files in place (diffs update
+dynamically), and a middle column shows detailed changes and allows merges. 
+The margins show location of changes for easy navigation, and it also
+features a tabbed interface that allows you to open many diffs at once.
+
+WWW: http://meld.sourceforge.net/

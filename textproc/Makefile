@@ -139,6 +139,7 @@
     SUBDIR += maketeidtd
     SUBDIR += man2html
     SUBDIR += manued.el
+    SUBDIR += meld
     SUBDIR += mgdiff
     SUBDIR += mguesser
     SUBDIR += mifluz
