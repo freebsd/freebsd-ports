@@ -1,0 +1,23 @@
+--- Makefile.orig	Fri Jul 18 11:00:52 2003
++++ Makefile	Sat Dec  6 20:01:12 2003
+@@ -4,14 +4,14 @@
+ #  $Id: Makefile,v 1.6 2003/07/18 02:00:52 shy Exp $
+ #
+ 
+-prefix = /opt/ninix-aya
++prefix = $(PREFIX)
+ 
+-exec_libdir = $(prefix)/lib/ninix
++exec_libdir = $(prefix)/libexec/ninix
+ 
+-bindir = $(DESTDIR)$(prefix)/bin
+-docdir = $(DESTDIR)$(prefix)/doc
+-libdir = $(DESTDIR)$(exec_libdir)
+-localedir = $(DESTDIR)$(prefix)/share/locale
++bindir = $(prefix)/bin
++docdir = $(prefix)/share/doc/ninix
++libdir = $(exec_libdir)
++localedir = $(prefix)/share/locale
+ 
+ python = python
+ 

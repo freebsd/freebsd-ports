@@ -277,6 +277,7 @@
     SUBDIR += nibbles
     SUBDIR += nighthawk
     SUBDIR += nil
+    SUBDIR += ninix-aya
     SUBDIR += njam
     SUBDIR += nonsense
     SUBDIR += nwnusers
