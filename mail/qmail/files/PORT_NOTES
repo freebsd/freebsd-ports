@@ -79,6 +79,9 @@ To upgrade from sendmail to qmail:
  Instead, change the sendmail_enable line in /etc/rc.conf to read
 
         sendmail_enable="NO"
+
+ If you are running a FreeBSD 4.0-RELEASE or later, read
+ PORT_NOTES_FreeBSD_40-RELEASE before executing step 12.
  ]
 
 13. Read REMOVE.binmail.

@@ -1,22 +1,22 @@
 # New ports collection makefile for:	qmail
 # Version required:	1.03
 # Date created:		25 May 1998
-# Whom:			Mario S F Ferreira <lioux@gns.com.br> et al.
+# Whom:			Mario S F Ferreira <lioux@linf.unb.br> et al.
 #
 # $FreeBSD$
 #
 
 DISTNAME=	qmail-1.03
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
+MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
-		ftp://ftp.mira.net.au/unix/mail/qmail/ \
-		ftp://ftp.id.wustl.edu/pub/qmail/ \
-		ftp://mirror.uk.uu.net/pub/qmail/ \
+		ftp://ftp.pipex.net/mirrors/qmail/ \
 		ftp://ftp.jp.qmail.org/qmail/ \
-		http://ftp.rifkin.technion.ac.il/pub/qmail/ \
-		http://koobera.math.uic.edu/www/software/ \
-		http://pobox.com/~djb/software/ 
+		ftp://ftp.rifkin.technion.ac.il/pub/qmail/ \
+		ftp://ftp.mira.net.au/unix/mail/qmail/ \
+		ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
+		ftp://ftp.id.wustl.edu/pub/qmail/ \
+		ftp://koobera.math.uic.edu/www/
 
 # Patch necessary to cope with non-RFC >512 dns entries
 # Since AOL has been using those, the problem has skyrocketed from minor to
@@ -53,7 +53,8 @@ PLIST_SUB=	DOCDIR=${DOCDIR}
 
 DOCFILES=	${WRKSRC}/BLURB ${WRKSRC}/BLURB2 ${WRKSRC}/BLURB3 \
 		${WRKSRC}/BLURB4 ${WRKSRC}/INTERNALS ${WRKSRC}/SECURITY \
-		${WRKSRC}/THOUGHTS ${FILESDIR}/PORT_NOTES
+		${WRKSRC}/THOUGHTS ${FILESDIR}/PORT_NOTES \
+		${FILESDIR}/PORT_NOTES_FreeBSD_40-RELEASE
 
 # The following docfiles are normally installed with qmail-hier
 DOCFILES+=	${WRKSRC}/FAQ ${WRKSRC}/UPGRADE ${WRKSRC}/SENDMAIL \
@@ -78,7 +79,8 @@ BOOTFILES=	${WRKSRC}/home ${WRKSRC}/home+df ${WRKSRC}/proc \
 BOOTFILES+=	${FILESDIR}/maildir
 
 CONFIGUREFILES=	${WRKSRC}/install ${WRKSRC}/dnsfq ${WRKSRC}/hostname \
-		${WRKSRC}/dnsip ${WRKSRC}/ipmeprint ${WRKSRC}/dnsptr
+		${WRKSRC}/dnsip ${WRKSRC}/ipmeprint ${WRKSRC}/dnsptr \
+		${WRKSRC}/config-fast
 
 .if (${PREFIX} == "/usr/local")
 DOCDIR=	share/doc/qmail
