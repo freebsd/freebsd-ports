@@ -1,21 +1,19 @@
-*** src/slrnfeat.h.orig	Sun Apr 18 21:51:20 1999
---- src/slrnfeat.h	Sun Apr 18 22:05:53 1999
+*** src/Makefile.in.orig	Thu Jul 15 16:27:24 1999
+--- src/Makefile.in	Sun Sep  5 21:42:00 1999
 ***************
-*** 215,222 ****
-  #define SLRN_TZ_TM_ZONE  2   /* timezone set in tm_zone of struct tm */
-  #define SLRN_TZ_TIMEZONE 3   /* timezone() */
-    /* choose one from listed above */
-! #define SLRN_TZ_TYPE SLRN_TZ_TZNAME
-! /* #define SLRN_TZ_TYPE SLRN_TZ_TM_ZONE */
-  #ifndef SLRNPULL_CODE
-  #define KANJI
-  #endif
---- 215,222 ----
-  #define SLRN_TZ_TM_ZONE  2   /* timezone set in tm_zone of struct tm */
-  #define SLRN_TZ_TIMEZONE 3   /* timezone() */
-    /* choose one from listed above */
-! /* #define SLRN_TZ_TYPE SLRN_TZ_TZNAME */
-! #define SLRN_TZ_TYPE SLRN_TZ_TM_ZONE
-  #ifndef SLRNPULL_CODE
-  #define KANJI
-  #endif
+*** 61,67 ****
+  prefix = @prefix@
+  exec_prefix = @exec_prefix@
+  BINDIR = @bindir@
+! DOCDIR = $(prefix)/doc/slrn
+  MANDIR = @mandir@
+  MACRODIR = @datadir@/slrn
+  
+--- 61,67 ----
+  prefix = @prefix@
+  exec_prefix = @exec_prefix@
+  BINDIR = @bindir@
+! DOCDIR = $(prefix)/share/doc/slrn
+  MANDIR = @mandir@
+  MACRODIR = @datadir@/slrn
+  
