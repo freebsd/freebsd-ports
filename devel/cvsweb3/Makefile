@@ -19,7 +19,7 @@ NO_BUILD=	yes
 # Specify where your repository belongs.
 # (You can reconfigure it after installation anyway)
 .if defined(PACKAGE_BUILDING) || !defined(CVSROOT) || empty(CVSROOT)
-CVSROOT=	/home/ncvs
+CVSROOT=	/home/cvs
 .endif
 
 # Specify the title of your cvsweb site.
