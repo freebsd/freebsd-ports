@@ -1,22 +1,23 @@
---- Big Brother ---
-	a Web-based Unix Network Monitoring and Notification System
-	by Sean MacGuire <sean@iti.qc.ca>
+*** Web-based Monitoring & Notification for Systems and Networks ***
 
-WWW:	http://www.iti.qc.ca/iti/users/sean/bb-dnld/
-A Life Example:	http://www.menet.umn.edu/bb/bb.html (44 machines)
-
-d e s i g n	- Web-based status display
-		- Notification via Pager
-		- Modular Client-server design
-		- Configurable warning and panic levels
-		- Multi-platform
-		- Easily integrated with other packages
-		- Includes all Source Code
-		- And it's Free
-
-m o n i t o r s	- connectivity via ping or telnet
-		- http servers up and running
-		- disk space usage
-		- cpu usage
-		- essential processes are still running
-		- system-generated messages and warnings
+Big Brother is a combination of monitoring methods.
+Unlike SNMP where information is just collected and devices polled,
+Big Brother is designed in such a way that each local system broadcasts it's
+own information to a central location. Simultaneously, Big Brother also polls
+all networked systems from a central location. This creates a highly efficient
+and redundant method for proactive network monitoring.
+Features:				Monitors:
+- Web-based status display		- dns nntp ftp smtp and pop3 testing
+- Configurable warning and panic levels	- connectivity via ping
+- Notification via Pager or email	- http servers up and running
+- Support for grouping of machines	- disk space usage
+- Support for modem monitoring		- uptime and cpu usage
+- Selectable paging delays		- essential processes are still running
+- Heterogeneous Network Support		- messages and warnings
+Author:			sean@maclawran.ca 
+Homepage:		http://maclawran.ca/~sean/bb-dnld/index.html
+License:		http://maclawran.ca/cgi-bin/newbb.pl
+Demo:			http://maclawran.ca/~sean/bb-dnld/new-demo.html
+Mailing list:		MajorDomo@taex001.tamu.edu / in body: subscribe bb
+Mailing list archive:	http://www.fusioni.com/~bb/
+Contributed scripts:	ftp://ftp.deadcat.net/pub/BB

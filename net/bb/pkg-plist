@@ -1,17 +1,30 @@
-bb/README
-bb/runbb.sh
+bb/LICENSE
+bb/Makefile
 bb/bin/bb
+bb/bin/bb-display.sh
+bb/bin/bb-doack.sh
 bb/bin/bb-local.sh
 bb/bin/bb-network.sh
 bb/bin/bb-page.sh
+bb/bin/bb-page1.sh
+bb/bin/bbclient
+bb/bin/bbconfig
 bb/bin/bbd
 bb/bin/bbnet
+bb/bin/bbrun
 bb/bin/sendmsg
 bb/bin/touchtime
+bb/etc/bb-dftab.INFO
 bb/etc/bb-hosts
+bb/etc/bbchkcfg.sh
+bb/etc/bbchkhosts.sh
 bb/etc/bbdef.sh
 bb/etc/bbinc.sh
 bb/etc/bbsys.aix
+bb/etc/bbsys.bsdi
+bb/etc/bbsys.debian
+bb/etc/bbsys.dgux
+bb/etc/bbsys.dynix
 bb/etc/bbsys.freebsd
 bb/etc/bbsys.hpux
 bb/etc/bbsys.hpux9
@@ -28,29 +41,43 @@ bb/etc/bbsys.solaris
 bb/etc/bbsys.sunos
 bb/etc/bbsys.ultrix
 bb/etc/bbsys.unixware
+bb/etc/bbwarnrules.cfg
+bb/etc/bbwarnsetup.cfg
+bb/etc/numeric-k6.scr
 bb/etc/numeric.scr
 bb/etc/security.INFO
 bb/etc/sms.scr
-bb/tmp/.keep_me
+bb/ext/.helloworld
+bb/runbb.sh
+bb/tmp/.helloworld
+bb/web/bb-ack.sh
+bb/web/bb-hist.sh
+bb/web/footer
+bb/web/header
 bb/web/mkbb.bkg
 bb/web/mkbb.cols
 bb/web/mkbb.comp
+bb/web/mkbb.page
 bb/web/mkbb.sh
 bb/web/mkbb2.sh
+bb/www/acks/.helloworld
 bb/www/bb-faq.html
 bb/www/bb-help.html
 bb/www/bb-info.html
+bb/www/bb-man.html
 bb/www/bb-page.html
 bb/www/gifs/bb-diag.gif
 bb/www/gifs/bb.gif
 bb/www/gifs/bb2.gif
 bb/www/gifs/bbbut.gif
+bb/www/gifs/bkg-clear.gif
 bb/www/gifs/bkg-green.gif
 bb/www/gifs/bkg-purple.gif
 bb/www/gifs/bkg-red.gif
 bb/www/gifs/bkg-yellow.gif
 bb/www/gifs/blue.gif
 bb/www/gifs/buthelp.gif
+bb/www/gifs/buthist.gif
 bb/www/gifs/butinfo.gif
 bb/www/gifs/butpage.gif
 bb/www/gifs/butview.gif
@@ -62,31 +89,38 @@ bb/www/gifs/nb-yellow.gif
 bb/www/gifs/purple.gif
 bb/www/gifs/red.gif
 bb/www/gifs/yellow.gif
+bb/www/hist/.helloworld
+bb/www/html/.helloworld
 @exec ln -fs bb.html %D/bb/www/index.html
 @unexec rm %D/bb/www/index.html
 bb/www/logs/later
-bb/www/notes/README
 bb/www/notes/footer
 bb/www/notes/iti-s01
 bb/www/notes/iti-s01.html
 bb/www/notes/iti-s01.iti.qc.ca
 bb/www/notes/iti-s01.iti.qc.ca.html
 bb/www/notes/router-000.htm
+share/apache/cgi-bin/bb-ack.sh
+share/bb/bbclients/.keep_me
 share/doc/bb/FAQ
 share/doc/bb/README
 share/doc/bb/README.SMS
 share/doc/bb/STRUCTURE
-share/doc/bb/bbclient
-share/doc/bb/bbconfig
-www/cgi-bin/bb-pager.sh
-@exec ln -fs %D/bb/www %D/www/data/bb
-@unexec rm %D/www/data/bb
+@exec ln -fs %D/bb/www %D/share/apache/htdocs/bb
+@unexec rm %D/share/apache/htdocs/bb
 @dirrm bb/bin
 @dirrm bb/etc
+@dirrm bb/ext
 @dirrm bb/web
+@dirrm bb/www/acks
 @dirrm bb/www/gifs
+@dirrm bb/www/hist
+@dirrm bb/www/html
 @dirrm bb/www/logs
 @dirrm bb/www/notes
 @dirrm bb/www
 @dirrm bb/tmp
 @dirrm bb
+@dirrm share/bb/bbclients
+@dirrm share/bb
+@dirrm share/doc/bb

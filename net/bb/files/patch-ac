@@ -1,11 +1,20 @@
---- runbb.sh.orig	Mon May 18 23:22:46 1998
-+++ runbb.sh	Mon May 18 23:23:15 1998
-@@ -16,7 +16,7 @@
- #
+--- runbb.sh.orig	Sun Jun 27 12:08:56 1999
++++ runbb.sh	Sun Jun 27 12:09:57 1999
+@@ -17,7 +17,7 @@
  # BBHOME IS THE ROOT DIRECTORY OF BIG BROTHER!!!
  # YOU MUST SET THE NEXT LINE TO WHERE BB LIVES
+ 
 -BBHOME="" 
 +BBHOME="!!PREFIX!!/bb" 
- 
  export BBHOME
+ 
+ if test "$BBHOME" = ""
+@@ -35,7 +35,7 @@
+ 
+ . $BBHOME/etc/bbdef.sh		# GET STANDARD INCLUDES
+ 
+-BBSLEEP=300			# HOW OFTEN TO UPDATE (IN SECONDS)
++BBSLEEP=!!BBSLEEP!!		# HOW OFTEN TO UPDATE (IN SECONDS)
+ export BBSLEEP
+ 
  

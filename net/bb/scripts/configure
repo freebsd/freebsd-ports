@@ -1,12 +1,21 @@
 #!/bin/sh
 
-# $Id: configure,v 1.3 1997/10/13 20:19:25 andreas Exp $
+# $Id: configure,v 1.4 1998/05/18 21:52:07 andreas Exp $
 
 cd $WRKSRC || exit 1
 
-HOSTNAME=`hostname`
+# some tuneable global defines
+WEBHOST=`hostname`
+SLEEPVAL=300
 
-perl -pi -e "s=!!PREFIX!!=$PREFIX=" ${WRKSRC}/www/bb-pager.sh
-perl -pi -e "s=!!HOSTNAME!!=$HOSTNAME=" ${WRKSRC}/www/bb-pager.sh
+# globally set BBHOME here
 perl -pi -e "s=!!PREFIX!!=$PREFIX=" ${WRKSRC}/runbb.sh
+# globally adjust sleepvalue
+perl -pi -e "s=!!BBSLEEP!!=$SLEEPVAL=" ${WRKSRC}/runbb.sh
+# set paths for bbclient tar archives
+perl -pi -e "s=!!PREFIX!!=$PREFIX=g" ${WRKSRC}/doc/bbclient
+# set webhost
+perl -pi -e "s=!!WEBHOST!!=$WEBHOST=g" ${WRKSRC}/web/bb-ack.sh
+perl -pi -e "s=!!WEBHOST!!=$WEBHOST=g" ${WRKSRC}/web/bb-hist.sh
+# set hostname
 perl -pi -e "s=!!HOSTNAME!!=$HOSTNAME=g" ${WRKSRC}/etc/bb-hosts
