@@ -1,5 +1,4 @@
 bin/background-properties-capplet
-bin/bell-properties-capplet
 bin/gnome-edit-properties-capplet
 bin/gnomecc
 bin/keyboard-properties
@@ -26,11 +25,12 @@ share/gnome/apps/Settings/Desktop/screensaver-properties.desktop
 share/gnome/apps/Settings/Desktop/theme-selector.desktop
 share/gnome/apps/Settings/Desktop/wm-properties.desktop
 share/gnome/apps/Settings/Multimedia/.directory
-share/gnome/apps/Settings/Multimedia/bell-properties.desktop
 share/gnome/apps/Settings/Multimedia/sound-properties.desktop
 share/gnome/apps/Settings/Peripherals/.directory
 share/gnome/apps/Settings/Peripherals/keyboard-properties.desktop
 share/gnome/apps/Settings/Peripherals/mouse-properties.desktop
+share/gnome/apps/Settings/Session/.directory
+share/gnome/apps/Settings/Session/session-properties.desktop
 share/gnome/apps/Settings/UIOptions/.directory
 share/gnome/apps/Settings/UIOptions/application.desktop
 share/gnome/apps/Settings/UIOptions/dialogs.desktop
@@ -38,7 +38,6 @@ share/gnome/apps/Settings/UIOptions/mdi.desktop
 share/gnome/apps/Settings/gnome-edit-properties.desktop
 share/gnome/apps/Settings/gnomecc.desktop
 share/gnome/apps/Settings/mime-type.desktop
-share/gnome/apps/Settings/session-properties.desktop
 share/gnome/apps/Settings/url-properties.desktop
 share/gnome/control-center/.data/3d.desktop
 share/gnome/control-center/.data/3d.png
@@ -176,18 +175,18 @@ share/gnome/control-center/Desktop/screensaver-properties.desktop
 share/gnome/control-center/Desktop/theme-selector.desktop
 share/gnome/control-center/Desktop/wm-properties.desktop
 share/gnome/control-center/Multimedia/.directory
-share/gnome/control-center/Multimedia/bell-properties.desktop
 share/gnome/control-center/Multimedia/sound-properties.desktop
 share/gnome/control-center/Peripherals/.directory
 share/gnome/control-center/Peripherals/keyboard-properties.desktop
 share/gnome/control-center/Peripherals/mouse-properties.desktop
+share/gnome/control-center/Session/.directory
+share/gnome/control-center/Session/session-properties.desktop
 share/gnome/control-center/UIOptions/.directory
 share/gnome/control-center/UIOptions/application.desktop
 share/gnome/control-center/UIOptions/dialogs.desktop
 share/gnome/control-center/UIOptions/mdi.desktop
 share/gnome/control-center/gnome-edit-properties.desktop
 share/gnome/control-center/mime-type.desktop
-share/gnome/control-center/session-properties.desktop
 share/gnome/control-center/url-properties.desktop
 share/gnome/idl/control-center.idl
 share/gnome/pixmaps/control-center.png
@@ -219,12 +218,14 @@ share/locale/ru/LC_MESSAGES/control-center.mo
 share/locale/sv/LC_MESSAGES/control-center.mo
 @dirrm share/gnome/wm-properties
 @dirrm share/gnome/control-center/UIOptions
+@dirrm share/gnome/control-center/Session
 @dirrm share/gnome/control-center/Peripherals
 @dirrm share/gnome/control-center/Multimedia
 @dirrm share/gnome/control-center/Desktop
 @dirrm share/gnome/control-center/.data
 @dirrm share/gnome/control-center
 @dirrm share/gnome/apps/Settings/UIOptions
+@dirrm share/gnome/apps/Settings/Session
 @dirrm share/gnome/apps/Settings/Peripherals
 @dirrm share/gnome/apps/Settings/Multimedia
 @dirrm share/gnome/apps/Settings/Desktop
