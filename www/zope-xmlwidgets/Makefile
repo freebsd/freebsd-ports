@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xmlwidgets
-PORTVERSION=	0.9
+PORTVERSION=	0.10.2
 CATEGORIES=	www zope
-MASTER_SITES=	http://www.zope.org/Members/faassen/XMLWidgets/${PORTVERSION}/
+MASTER_SITES=	http://zope.org/Members/infrae/XMLWidgets/XMLWidgets-${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	XMLWidgets-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -24,8 +24,11 @@ DIST_SUBDIR=	zope
 
 ZOPEPRODUCTNAME=XMLWidgets
 
-# yes, some of us are running zope on python 2.2
-PYTHON_VERSION=	python2.2
+# yes, some of us are running zope on python 2.3
+#PYTHON_VERSION=	python2.3
+
+# You can change this in the environment if you like.
+#SZOPEBASEDIR?=		www/Zope
 
 PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
