@@ -1,6 +1,6 @@
---- configure.orig	Mon May 20 23:47:49 2002
-+++ configure	Mon May 20 23:47:42 2002
-@@ -7371,6 +7371,7 @@
+--- configure.orig	Sat Jun  8 00:21:44 2002
++++ configure	Wed Jun 26 20:30:11 2002
+@@ -7395,6 +7395,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,7 +8,16 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -10963,6 +10964,53 @@
+@@ -8530,6 +8531,8 @@
+   cat >conftest.$ac_ext <<_ACEOF
+ #line 8531 "configure"
+ #include "confdefs.h"
++#include <sys/types.h>
++#include <sys/socket.h>
+ $ac_includes_default
+ int
+ main ()
+@@ -11116,6 +11119,53 @@
  		 GDMOPEN=gdmopen
  fi
  done
