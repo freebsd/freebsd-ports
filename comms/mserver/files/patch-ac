@@ -1,0 +1,12 @@
+diff -ruN mserver-0.23a.orig/mserver.c mserver-0.23a/mserver.c
+--- mserver.c.orig	Wed Jan 28 21:52:09 1998
++++ mserver.c	Thu May 20 19:36:14 1999
+@@ -264,7 +264,7 @@
+ 
+ static struct { int ibaud, speed; } btable[] = 
+ 	{
+-#if !defined(BSDI)
++#if !defined(BSD)
+ 		{ 460800,	B460800 },
+ #endif
+ 		{ 230400,	B230400 },

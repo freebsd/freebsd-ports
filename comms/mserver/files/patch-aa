@@ -1,0 +1,30 @@
+diff -ruN mserver-0.23a.orig/Makefile mserver-0.23a/Makefile
+--- Makefile.orig	Thu Jan 15 21:12:33 1998
++++ Makefile	Fri May 21 11:10:30 1999
+@@ -1,8 +1,7 @@
+ #
+ # Makefile for mserver
+ #
+-CC	= gcc
+-CCOPTS	= -O2
++CC	= cc
+ LIBS	= 
+ 
+ INCLUDES	= config.h stty.h
+@@ -16,13 +15,13 @@
+ 		$(CC) tcpconn.o stty.o -o tcpconn $(LIBS)
+ 
+ mserver.o:	mserver.c $(INCLUDES)
+-		$(CC) $(CCOPTS) -c -o mserver.o mserver.c
++		$(CC) $(CFLAGS) -c -o mserver.o mserver.c
+ 
+ tcpconn.o:	tcpconn.c $(INCLUDES)
+-		$(CC) $(CCOPTS) -c -o tcpconn.o tcpconn.c
++		$(CC) $(CFLAGS) -c -o tcpconn.o tcpconn.c
+ 
+ stty.o:		stty.c $(INCLUDES)
+-		$(CC) $(CCOPTS) -c -o stty.o stty.c
++		$(CC) $(CFLAGS) -c -o stty.o stty.c
+ 
+ clean:
+ 		rm -f mserver tcpconn *.o core
