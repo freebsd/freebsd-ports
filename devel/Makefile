@@ -190,6 +190,7 @@
     SUBDIR += gdb52
     SUBDIR += gdb53
     SUBDIR += gdbmods
+    SUBDIR += gecc
     SUBDIR += gengameng
     SUBDIR += gengetopt
     SUBDIR += gettext
