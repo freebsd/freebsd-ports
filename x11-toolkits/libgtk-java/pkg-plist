@@ -1,0 +1,4 @@
+lib/libgtkjava%%GTK_API_VERSION%%.so.%%PORTVERSION%%
+lib/libgtkjava%%GTK_API_VERSION%%.so
+share/java/classes/gtk%%GTK_API_VERSION%%-%%PORTVERSION%%.jar
+share/java/classes/gtk%%GTK_API_VERSION%%.jar

@@ -1,0 +1,8 @@
+Java-GNOME is a set of Java bindings for GNOME and GTK libraries,
+so GNOME applications can be written in Java.  It is implemented
+as a JNI layer that delegates the Java calls out to the underlying
+C library.
+
+-- Java-GNOME README
+
+WWW: http://java-gnome.sourceforge.net/
