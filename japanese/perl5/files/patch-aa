@@ -1,26 +1,25 @@
---- Configure.orig	Sat Jan 11 15:16:14 1997
-+++ Configure	Sat Jan 11 15:22:42 1997
-@@ -85,11 +85,12 @@
- PATH=.$p_$PATH
- export PATH
+--- Configure.orig	Fri Jul  4 16:55:52 1997
++++ Configure	Fri Jul  4 16:56:50 1997
+@@ -91,11 +91,11 @@
+ *)	CDPATH='' ;;
+ esac
  
 -: Sanity checks
 -if test ! -t 0; then
 -	echo "Say 'sh $me', not 'sh <$me'"
 -	exit 1
 -fi
-+#: Sanity checks (Disabled for FreeBSD build - users coming here [ws]ould
-+#                 know what they are doing anyway) ;-) MarkM
-+#if test ! -t 0; then
-+#	echo "Say 'sh $me', not 'sh <$me'"
-+#	exit 1
-+#fi
++: Sanity checks Disabled for FreeBSD port building - MarkM - May 1997
++: if test ! -t 0; : then
++:	echo "Say 'sh $me', not 'sh <$me'"
++:	exit 1
++: fi
  
- : On HP-UX, large Configure scripts may exercise a bug in /bin/sh
- if test -f /hp-ux -a -f /bin/ksh; then
-@@ -709,7 +710,7 @@
+ : Test and see if we are running under ksh, either blatantly or in disguise.
+ if (PATH=.; alias -x) >/dev/null 2>&1; then
+@@ -756,7 +756,7 @@
  : List of libraries we want.
- libswanted='net socket inet nsl nm ndbm gdbm dbm db malloc dl'
+ libswanted='sfio net socket inet nsl nm ndbm gdbm dbm db malloc dl'
  libswanted="$libswanted dld ld sun m c cposix posix ndir dir crypt"
 -libswanted="$libswanted ucb bsd BSD PW x"
 +libswanted="xpg4 $libswanted ucb bsd BSD PW x"
