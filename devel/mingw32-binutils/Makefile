@@ -8,19 +8,23 @@
 PORTNAME=	binutils
 PORTVERSION=	${BINUTILVERSION}.${PATCHVERSION}
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}  	# ${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	mingw			# binutils/releases
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}  	# ${MASTER_SITE_SOURCEWARE}
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
+#MASTER_SITE_SUBDIR=	mingw			# binutils/releases
+MASTER_SITE_SUBDIR=	binutils/releases
 PKGNAMEPREFIX=	mingw32-
-DISTNAME=	${PORTNAME}-${BINUTILVERSION}.${PATCHVERSION:S/./-/g}-src
-DIST_SUBDIR=	mingw
+#DISTNAME=	${PORTNAME}-${BINUTILVERSION}.${PATCHVERSION:S/./-/g}-src
+DISTNAME=	${PORTNAME}-${BINUTILVERSION}
+#DIST_SUBDIR=	mingw
 
 # No patches for this release
-#PATCH_SITES=	${MASTER_SITE_SOURCEFORGE}
+PATCH_SITES=	${MASTER_SITE_SOURCEFORGE}
 # Special hack: I don't use SITE_SUBDIR & DIST_SUBDIR, and only pathces
 #               will be placed to subdirectory
 #               It allows to use main binutils sources from other ports.
-#PATCHFILES=	mingw/${PORTNAME}-${BINUTILVERSION}.${PATCHVERSION:S/./-/g}-src.diff
+PATCHFILES=	mingw/${PORTNAME}-${BINUTILVERSION}.${PATCHVERSION:S/./-/g}-src.diff.gz
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	FSF binutils-2.14 for Windows cross-development
@@ -29,8 +33,9 @@ BINUTILVERSION=	2.15
 PATCHVERSION=	90.20040222.1
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
+PATCH_DIST_STRIP=	-p1
 
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	13
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
@@ -56,6 +61,9 @@ PLIST_SUB+=	BINUTILS_TARG=${PKGNAMEPREFIX:S/-$//}
 BINARIES=	addr2line ar as c++filt ld nm objcopy objdump ranlib \
 		readelf size strings strip dlltool dllwrap windres
 
+pre-configure:
+	${CHMOD} 755 ${WRKSRC}/configure
+
 post-install:
 # Register these too
 	install-info ${PREFIX}/${INFO_PATH}/configure.info ${PREFIX}/${INFO_PATH}/dir
@@ -65,9 +73,9 @@ post-install:
 	${ECHO} "@unexec rmdir %D/${PKGNAMEPREFIX:S/-$//}/info 2> /dev/null || true" >> ${TMPPLIST}
 	${ECHO} "@unexec rmdir %D/${PKGNAMEPREFIX:S/-$//} 2> /dev/null || true" >> ${TMPPLIST}
 .for F in ${BINARIES}
-	@${STRIP_CMD} ${PREFIX}/bin/${PKGNAMEPREFIX}$F
 	@${LN} -f ${PREFIX}/bin/${PKGNAMEPREFIX}$F \
 		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
 .endfor
 
 .include <bsd.port.mk>
+
