@@ -11,7 +11,7 @@ PORTVERSION=	0.1.2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.netchampagne.com/xbindkeys_config/
 
-MAINTAINER=	obraun@informatik.unibw-muenchen.de
+MAINTAINER=	obraun@FreeBSD.org
 
 USE_GTK=	yes
 USE_REINPLACE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	print mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	muttprint
 
-MAINTAINER=	obraun@informatik.unibw-muenchen.de
+MAINTAINER=	obraun@FreeBSD.org
 
 .if !defined(PAPERSIZE)
 PAPERSIZE=	letter

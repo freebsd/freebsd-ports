@@ -10,7 +10,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.haskell.org/haddock/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	obraun@informatik.unibw-muenchen.de
+MAINTAINER=	obraun@FreeBSD.org
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 

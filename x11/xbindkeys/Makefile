@@ -11,7 +11,7 @@ PORTVERSION=	1.5.5
 CATEGORIES=	x11
 MASTER_SITES=	http://hocwp.free.fr/xbindkeys/
 
-MAINTAINER=	obraun@informatik.unibw-muenchen.de
+MAINTAINER=	obraun@FreeBSD.org
 
 INSTALL_TARGET=	install-binPROGRAMS
 
