@@ -1,0 +1,60 @@
+arm-elf/bin/gcc
+arm-elf/bin/g++
+arm-elf/include/assert.h
+bin/arm-elf-c++
+bin/arm-elf-g++
+bin/arm-elf-gcc
+bin/arm-elf-cpp
+bin/arm-elf-gcov
+bin/arm-elf-protoize
+bin/arm-elf-unprotoize
+lib/gcc-lib/arm-elf/2.95.2/SYSCALLS.c.X
+lib/gcc-lib/arm-elf/2.95.2/cc1
+lib/gcc-lib/arm-elf/2.95.2/cc1obj
+lib/gcc-lib/arm-elf/2.95.2/cc1plus
+lib/gcc-lib/arm-elf/2.95.2/collect2
+lib/gcc-lib/arm-elf/2.95.2/cpp
+lib/gcc-lib/arm-elf/2.95.2/crtbegin.o
+lib/gcc-lib/arm-elf/2.95.2/crtend.o
+lib/gcc-lib/arm-elf/2.95.2/include/README
+lib/gcc-lib/arm-elf/2.95.2/include/assert.h
+lib/gcc-lib/arm-elf/2.95.2/include/exception
+lib/gcc-lib/arm-elf/2.95.2/include/fixed
+lib/gcc-lib/arm-elf/2.95.2/include/float.h
+lib/gcc-lib/arm-elf/2.95.2/include/iso646.h
+lib/gcc-lib/arm-elf/2.95.2/include/limits.h
+lib/gcc-lib/arm-elf/2.95.2/include/new
+lib/gcc-lib/arm-elf/2.95.2/include/new.h
+lib/gcc-lib/arm-elf/2.95.2/include/proto.h
+lib/gcc-lib/arm-elf/2.95.2/include/stdarg.h
+lib/gcc-lib/arm-elf/2.95.2/include/stdbool.h
+lib/gcc-lib/arm-elf/2.95.2/include/stddef.h
+lib/gcc-lib/arm-elf/2.95.2/include/syslimits.h
+lib/gcc-lib/arm-elf/2.95.2/include/typeinfo
+lib/gcc-lib/arm-elf/2.95.2/include/va-alpha.h
+lib/gcc-lib/arm-elf/2.95.2/include/va-arc.h
+lib/gcc-lib/arm-elf/2.95.2/include/va-c4x.h
+lib/gcc-lib/arm-elf/2.95.2/include/va-clipper.h
+lib/gcc-lib/arm-elf/2.95.2/include/va-h8300.h
+lib/gcc-lib/arm-elf/2.95.2/include/va-i860.h
+lib/gcc-lib/arm-elf/2.95.2/include/va-i960.h
+lib/gcc-lib/arm-elf/2.95.2/include/va-m32r.h
+lib/gcc-lib/arm-elf/2.95.2/include/va-m88k.h
+lib/gcc-lib/arm-elf/2.95.2/include/va-mips.h
+lib/gcc-lib/arm-elf/2.95.2/include/va-mn10200.h
+lib/gcc-lib/arm-elf/2.95.2/include/va-mn10300.h
+lib/gcc-lib/arm-elf/2.95.2/include/va-pa.h
+lib/gcc-lib/arm-elf/2.95.2/include/va-ppc.h
+lib/gcc-lib/arm-elf/2.95.2/include/va-pyr.h
+lib/gcc-lib/arm-elf/2.95.2/include/va-sh.h
+lib/gcc-lib/arm-elf/2.95.2/include/va-sparc.h
+lib/gcc-lib/arm-elf/2.95.2/include/va-spur.h
+lib/gcc-lib/arm-elf/2.95.2/include/va-v850.h
+lib/gcc-lib/arm-elf/2.95.2/include/varargs.h
+lib/gcc-lib/arm-elf/2.95.2/libgcc.a
+lib/gcc-lib/arm-elf/2.95.2/specs
+@dirrm arm-elf/include
+@dirrm lib/gcc-lib/arm-elf/2.95.2/include
+@dirrm lib/gcc-lib/arm-elf/2.95.2
+@dirrm lib/gcc-lib/arm-elf
+@dirrm lib/gcc-lib
