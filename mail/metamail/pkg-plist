@@ -25,6 +25,9 @@ bin/sun-message.csh
 bin/sun-to-mime
 bin/sun2mime
 bin/sun2mime.orig
+lib/metamail/fonts/heb6x13.pcf
+lib/metamail/fonts/heb8x13.pcf
+lib/metamail/fonts/heb8x13B.pcf
 etc/mailcap
 man/man1/audiocompose.1.gz
 man/man1/audiosend.1.gz
