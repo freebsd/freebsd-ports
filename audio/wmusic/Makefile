@@ -9,7 +9,6 @@ PORTNAME=	wmusic
 PORTVERSION=	1.4.10
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://home.jtan.com/~john/wmusic/downloads/
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX}
 
 MAINTAINER=	eric@FreeBSD.org
 
@@ -23,6 +22,9 @@ USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PATH_GTKCONFIG=${GTK_CONFIG}
+
+pre-build:
+	cd ${WRKSRC} && make clean
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/wmusic ${PREFIX}/bin
