@@ -45,8 +45,6 @@ share/cone/add.html
 share/cone/address.html
 share/cone/attributes.html
 share/cone/book.html
-share/cone/c2382.html
-share/cone/c2420.html
 share/cone/cone.hlp
 share/cone/cone.html
 share/cone/cone00index.html
@@ -121,23 +119,11 @@ share/cone/mailtool.html
 share/cone/manpage.css
 share/cone/mimestruct.html
 share/cone/native.html
-share/cone/r7497.html
-share/cone/r7717.html
-share/cone/r9123.html
 share/cone/readme.html
 share/cone/search.html
 share/cone/smap1.html
 share/cone/store.html
 share/cone/synchronous.html
-share/cone/x10137.html
-share/cone/x10380.html
-share/cone/x10484.html
-share/cone/x10726.html
-share/cone/x11061.html
-share/cone/x11072.html
-share/cone/x9524.html
-share/cone/x9730.html
-share/cone/x9866.html
 share/cone/rootcerts/052e396b.0
 share/cone/rootcerts/0bb21872.0
 share/cone/rootcerts/0c364b2d.0
@@ -318,6 +304,20 @@ share/cone/rootcerts/xcert-international-inc-xcert-root-00.pem
 share/cone/rootcerts/xcert-international-inc-xcert-root-01.pem
 share/cone/rootcerts/xcert-international-inc-xcert-root-02.pem
 share/cone/rootcerts/xcert-international-inc-xcert-root-03.pem
+share/cone/c2417.html
+share/cone/c2455.html
+share/cone/r7532.html
+share/cone/r7752.html
+share/cone/r9158.html
+share/cone/x10172.html
+share/cone/x10415.html
+share/cone/x10519.html
+share/cone/x10761.html
+share/cone/x11096.html
+share/cone/x11107.html
+share/cone/x9559.html
+share/cone/x9765.html
+share/cone/x9901.html
 @dirrm %%DOCSDIR%%
 @dirrm share/cone/rootcerts
 @dirrm share/cone
