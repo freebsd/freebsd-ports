@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtk-qt-engine
-PORTVERSION=	0.5
-PORTREVISION=	2
+PORTVERSION=	0.6
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.freedesktop.org/~davidsansome/
 
@@ -41,10 +40,8 @@ post-configure:
 		${WRKSRC}/kcm_gtk/Makefile
 
 post-install:
-	@# Remove Debian stuff we didn't want in the first place
 	@${RM} /tmp/menu/kcmgtk.menu
 	@if [ "`ls /tmp/menu`" = "" ]; then ${RMDIR} /tmp/menu; fi
-	@# We do want this archive!
 	@${INSTALL_DATA} ${WRKSRC}/kcm_gtk/kcm_kcmgtk.la ${LOCALBASE}/lib/kde3/
 	@${ECHO}
 	@${ECHO} "Use \"GTK styles and fonts\" from the KDE control center to set or"
