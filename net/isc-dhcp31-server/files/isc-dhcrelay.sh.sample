@@ -2,77 +2,57 @@
 #
 # $FreeBSD$
 #
-# Start or stop isc-dhcrelay.
+# PROVIDE: dhcrelay
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD
+#
+# Add the following line to /etc/rc.conf to enable dhcrelay:
+#
+# dhcrelay_enable="YES"
 #
 
-rc_file=${0##*/}
-rc_arg=$1
-
-# override these variables in ${PREFIX}/etc/rc.isc-dhcrelay.conf
-dhcrelay_options=			# command option(s)
+# override these variables in /etc/rc.conf
+dhcrelay_enable=NO
+dhcrelay_flags=				# command option(s)
+dhcrelay_servers=			# dhcrelay server(s)
 dhcrelay_ifaces=			# ethernet interface(s)
-dhcrelay_servers=			# dhcpd server(s)
 
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/${rc_file}\$"); then
-	echo "${rc_file}: Cannot determine PREFIX." >&2
-	echo "Please use the complete pathname." >&2
-	exit 64
-fi
+dhcrelay_precmd ()
+{
+	local ifaces
 
-rcconf_dir=${PREFIX}/etc
-rcconf_file=rc.${rc_file%.sh}.conf
-rcconf_path=${rcconf_dir}/${rcconf_file}
+	dhcrelay_rcconf=%%PREFIX%%/etc/rc.isc-dhcrelay.conf
 
-if [ -f ${rcconf_path} ]; then
-	. ${rcconf_path}
-fi
+	if [ -f ${dhcrelay_rcconf} ]; then
+		warn "${dhcrelay_rcconf} is obsolete, use /etc/rc.conf instead."
+		. ${dhcrelay_rcconf}
 
-program_dir=${PREFIX}/sbin
-program_file=dhcrelay
-program_path=${program_dir}/${program_file}
-
-pid_dir=/var/run
-pid_file=${program_file}.pid
-pid_path=${pid_dir}/${pid_file}
-
-syslog_facility=daemon.err
-
-case "$rc_arg" in
-start)
-	if [ ! -x ${program_path} ]; then
-		logger -sp ${syslog_facility} -t ${program_file} \
-			"unable to start: ${program_path} is missing."
-		exit 72
+		if [ -n "${dhcrelay_options}" -a -z "${rc_flags}" ]; then
+			warn "dhcrelay_options is obsolete, use dhcrelay_flags instead."
+			rc_flags=${dhcrelay_options}
+		fi
 	fi
+
 	if [ -z "${dhcrelay_servers}" ]; then
-		logger -sp ${syslog_facility} -t ${program_file} \
-			"unable to start: no dhcpd server(s) configured."
-		exit 64
+		err 1 "no dhcrelay server(s) configured."
 	fi
+
 	ifaces=
 	for iface in ${dhcrelay_ifaces}; do
-		ifaces="$ifaces -i $iface"
+		ifaces="${ifaces} -i ${iface}"
 	done
-	${program_path} ${dhcrelay_options} ${ifaces} ${dhcrelay_servers} &&
-	echo -n " ${program_file}"
-	;;
-stop)
-	if [ -r ${pid_path} ]; then
-		kill $(cat ${pid_path}) 2> /dev/null
-	else
-		killall ${program_file} 2> /dev/null
-	fi
-	;;
-restart)
-	$0 stop
-	$0 start
-	;;
-status)
-	ps -auxww | egrep ${program_file} | egrep -v "($0|egrep)"
-	;;
-*)
-	echo "usage: ${rc_file} {start|stop|restart|status}" >&2
-	;;
-esac
 
-exit 0
+	rc_flags="${rc_flags} ${ifaces} ${dhcrelay_servers}"
+}
+
+. %%RC_SUBR%%
+
+name=dhcrelay
+rcvar=$(set_rcvar)
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+start_precmd=${name}_precmd
+
+load_rc_config ${name}
+run_rc_command "$1"

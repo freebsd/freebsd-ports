@@ -1,0 +1,29 @@
+--- dst/Makefile.dist.orig	Sun Nov 17 03:27:43 2002
++++ dst/Makefile.dist	Fri Mar  5 23:40:45 2004
+@@ -26,12 +26,24 @@
+ 
+ all:	libdst.a
+ 
+-install:
+-
+ libdst.a:	$(OBJ)
+ 	rm -f dst.a
+ 	ar cruv libdst.a $(OBJ)
+ 	$(RANLIB) libdst.a
++
++install: all
++	for dir in $(LIBDIR);\
++	 do \
++	  foo=""; \
++	  for bar in `echo $(DESTDIR)$${dir} |tr / ' '`; do \
++	    foo=$${foo}/$$bar; \
++	    if [ ! -d $$foo ]; then \
++	      mkdir $$foo; \
++	      chmod 755 $$foo; \
++	    fi; \
++	  done; \
++	done
++	$(INSTALL) libdst.a $(DESTDIR)$(LIBDIR)
+ 
+ depend:
+ 	$(MKDEP) $(INCLUDES) $(PREDEFINES) $(SRC)

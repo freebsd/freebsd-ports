@@ -1,7 +1,13 @@
-****  To setup dhcrelay, you have to rename %%PREFIX%%/etc/rc.d/isc-\
-      dhcrelay.sh.sample to %%PREFIX%%/etc/rc.d/isc-dhcrelay.sh to
-      enable automatic startup.
-      %%PREFIX%%/etc/rc.isc-dhcrelay.conf may need to be edited to setup
-      the `dhcrelay_servers' as required.  If needed, you may also tune
-      `dhcrelay_options' and `dhcrelay_ifaces', both defaulted to `nothing'.
-      See dhcrelay(8) for details about possible options.
+****  This port installs dhcp relay daemon, but don't invokes dhcrelay by
+      default. If you want to invoke dhcrelay at startup, put these lines
+      into /etc/rc.conf.
+
+	    dhcrelay_enable="YES"
+	    dhcrelay_flags=""		# command option(s)
+	    dhcrelay_servers=""		# dhcrelay server(s)
+	    dhcrelay_ifaces=""		# ethernet interface(s)
+
+****  For instance, rc.conf like variables are still read from
+      %%PREFIX%%/etc/rc.isc-dhcrelay.conf. They should be move
+      into /etc/rc.conf. Also, the dhcrelay_options variable
+      must be renamed dhcrelay_flags.

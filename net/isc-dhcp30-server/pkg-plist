@@ -1,11 +1,7 @@
 @comment $FreeBSD$
 bin/omshell
 etc/dhcpd.conf.sample
-@unexec if cmp -s %D/etc/rc.isc-dhcpd.conf %D/etc/rc.isc-dhcpd.conf.sample; then rm -f %D/etc/rc.isc-dhcpd.conf; fi
-etc/rc.isc-dhcpd.conf.sample
-@exec [ -f %D/etc/rc.isc-dhcpd.conf ] || cp %D/etc/rc.isc-dhcpd.conf.sample %D/etc/rc.isc-dhcpd.conf
-etc/rc.d/isc-dhcpd.sh.sample
-@unexec rm -f etc/rc.d/isc-dhcpd.sh
+etc/rc.d/isc-dhcpd.sh
 sbin/dhcpd
 %%PORTDOCS%%%%DOCSDIR%%/ANONCVS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES

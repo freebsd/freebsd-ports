@@ -8,6 +8,7 @@
 
 PORTNAME=	dhcp
 PORTVERSION=	3.0.1.r12
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.0-history
@@ -19,6 +20,7 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
 USE_REINPLACE=	yes
+USE_RC_SUBR=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -111,6 +113,21 @@ RC_DIR=		${PREFIX}/etc/rc.d
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 DATADIR=	/var/db
 
+REINPLACE_SUB=	PREFIX=${PREFIX}
+RCSCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+PKGMESSAGE_SUB=	PREFIX=${PREFIX} MAN1PREFIX=${MAN1PREFIX}
+
+# Pre-everything
+#
+
+.if ${SUBSYS} == client && !defined(WITHOUT_INTERFACE_POLLING)
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to compile without interface polling support."
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITHOUT_INTERFACE_POLLING=yes\""
+	@${ECHO_MSG}
+.endif
+
 # Post-extract
 #
 
@@ -127,11 +144,18 @@ extract-omshell:
 
 post-patch: patch-scripts patch-makefile-conf \
 	    patch-makefiles-dist patch-man-pages \
-	    patch-pkgmessage
+	    patch-pkgmessage patch-site-conf \
+	    patch-rc-scripts
 
 patch-scripts:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${WRKSRC}/client/dhclient.conf \
 		${WRKSRC}/client/scripts/freebsd
+
+patch-site-conf:
+.if ${SUBSYS} == client && !defined(WITHOUT_INTERFACE_POLLING)
+	@${ECHO_CMD} CFLAGS += -DENABLE_POLLING_MODE >> ${WRKSRC}/site.conf
+.endif
 
 patch-makefile-conf:
 	@${REINPLACE_CMD} -e 's|^DEBUG[ 	]*=|# DEBUG ?=|g' \
@@ -147,9 +171,17 @@ patch-makefiles-dist:
 patch-man-pages:
 	@${REINPLACE_CMD} -e '/^\.Fd$$/d' ${WRKSRC}/dhcpctl/dhcpctl.3
 
+patch-rc-scripts:
+.for f in ${RC_FILES}
+	@${SED} ${RCSCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/${f}.sh${SAMP_SUFX} > ${WRKDIR}/${f}.sh
+.endfor
+
 patch-pkgmessage:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g;s|%%MAN1PREFIX%%|${MAN1PREFIX}|g' \
+.if ${SUBSYS} != devel
+	@${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${MSG_FILE} > ${PKGMESSAGE}
+.endif
 
 # Post-install
 #
@@ -171,16 +203,7 @@ strip-binary-files:
 
 install-startup-files:
 .for f in ${RC_FILES}
-.if exists(${FILESDIR}/rc.${f}.conf${SAMP_SUFX})
-	@${INSTALL_DATA} ${FILESDIR}/rc.${f}.conf${SAMP_SUFX} ${CONF_DIR}
-.if !exists(${CONF_DIR}/rc.${f}.conf)
-	@${INSTALL_DATA} ${FILESDIR}/rc.${f}.conf${SAMP_SUFX} \
-		${CONF_DIR}/rc.${f}.conf
-.endif
-.endif
-.if exists(${FILESDIR}/${f}.sh${SAMP_SUFX})
-	@${INSTALL_SCRIPT} ${FILESDIR}/${f}.sh${SAMP_SUFX} ${RC_DIR}
-.endif
+	@${INSTALL_SCRIPT} ${WRKDIR}/${f}.sh ${RC_DIR}
 .endfor
 
 install-doc-files:
@@ -211,8 +234,10 @@ create-data-files:
 .endfor
 
 display-message:
+.if ${SUBSYS} != devel
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
+.endif
 
 .include <bsd.port.post.mk>
