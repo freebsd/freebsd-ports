@@ -18,10 +18,16 @@ USE_X_PREFIX?=	no
 PREFIX?=	${X11BASE}
 
 USE_IMAKE=	YES
+.if defined(XMAN_DIRS)
 XFREE86_HTML_MAN?=	yes
+.else
+XFREE86_HTML_MAN?=	no
+.endif
 SCRIPTS_ENV+=	CC="${CC}" \
 		CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		PTHREAD_CFLAGS="${PTHREAD_CLFAGS}"
 
 XINSTALL_DIRS?=	${XBUILD_DIRS}
 _XINCLUDE_DIRS=	include ${XBUILD_DIRS} ${XINCLUDE_DIRS}
@@ -30,6 +36,7 @@ CF_PATCHES=	${PORTSDIR}/x11-servers/xorg-server/files/patch-FreeBSD.cf \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-Imake.rules \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-Imake.tmpl \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-Library.tmpl \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-X11.rules \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-X11.tmpl
 
 .if !target(do-configure)

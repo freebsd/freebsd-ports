@@ -1,5 +1,5 @@
 --- config/cf/X11.tmpl.orig	Fri Apr  2 13:47:10 2004
-+++ config/cf/X11.tmpl	Thu May 27 20:52:39 2004
++++ config/cf/X11.tmpl	Sun May 30 12:46:35 2004
 @@ -576,7 +576,7 @@
  #define BuildXft1Library	BuildRenderLibrary
  #endif
@@ -24,3 +24,12 @@
  #endif
  
  #ifndef ResourceConfigurationManagement
+@@ -1615,7 +1622,7 @@
+ 
+      INSTAPPFLAGS = $(INSTDATFLAGS)	/* XXX - this should go away - XXX */
+ 
+-#if UseInstalledX11
++#if UseInstalledX11 || UseInstalledClients
+               RGB = $(BINDIR)/rgb
+             FONTC = $(BINDIR)/bdftopcf
+       MKFONTSCALE = $(BINDIR)/mkfontscale
