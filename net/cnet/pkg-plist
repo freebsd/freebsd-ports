@@ -1,7 +1,44 @@
 bin/cnet
 include/cnet.h
-libdata/cnet/cnet.tcl
-libdata/cnet/cnet_icon.bmp
+share/cnet/bsd.gif
+share/cnet/cnet.h
+share/cnet/cnet.tcl
+share/cnet/dead.gif
+share/cnet/hurd.gif
+share/cnet/linux.gif
+share/cnet/mac.gif
+share/cnet/next.gif
+share/cnet/os2.gif
+share/cnet/palm.gif
+share/cnet/palm.xpm
+share/cnet/paused.gif
+share/cnet/repair.gif
+share/cnet/router.gif
+share/cnet/sgi.gif
+share/cnet/sun.gif
+share/cnet/windows.gif
+share/cnet/zap.gif
+share/doc/cnet/application.html
+share/doc/cnet/enumerated.html
+share/doc/cnet/eventdriven.html
+share/doc/cnet/eventfuncs.html
+share/doc/cnet/faq.html
+share/doc/cnet/functions.html
+share/doc/cnet/images/australia.gif
+share/doc/cnet/images/mainlink.gif
+share/doc/cnet/images/mainstdio.gif
+share/doc/cnet/images/mainwindow.gif
+share/doc/cnet/images/purple-line.gif
+share/doc/cnet/images/skey5.gif
+share/doc/cnet/images/stallings6.jpg
+share/doc/cnet/index.html
+share/doc/cnet/install.html
+share/doc/cnet/introduction.html
+share/doc/cnet/options.html
+share/doc/cnet/otherfuncs.html
+share/doc/cnet/physical.html
+share/doc/cnet/timers.html
+share/doc/cnet/topology.html
 share/examples/cnet/AUSTRALIA.MAP
 share/examples/cnet/CLICK
 share/examples/cnet/EUROPE.MAP
@@ -31,4 +68,6 @@ share/examples/cnet/protocol.c
 share/examples/cnet/stopandwait.c
 share/examples/cnet/ticktock.c
 @dirrm share/examples/cnet
-@dirrm libdata/cnet
+@dirrm share/doc/cnet/images
+@dirrm share/doc/cnet
+@dirrm share/cnet

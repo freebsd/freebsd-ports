@@ -1,15 +1,15 @@
---- src/Makefile.orig	Thu Apr 22 00:42:28 1999
-+++ src/Makefile	Fri Mar  3 07:06:53 2000
+--- src/Makefile.orig	Mon Feb  7 02:49:35 2000
++++ src/Makefile	Sat Jul 22 01:42:34 2000
 @@ -14,6 +14,8 @@
  		make -f Makefile.osf1 $(NAME) ; fi
  	@if uname -s -r | grep "IRIX" ; then \
  		make -f Makefile.irix5 $(NAME) ; fi
 +	@if uname -s -r | grep "FreeBSD" ; then \
 +		$(MAKE) -f Makefile.freebsd $(NAME) ; fi
+ 	cp cnet ..
  
  install:
- 	@if uname -s -r | grep "Linux" ; then \
-@@ -26,6 +28,8 @@
+@@ -27,6 +29,8 @@
  		make -f Makefile.osf1 install ; fi
  	@if uname -s -r | grep "IRIX" ; then \
  		make -f Makefile.irix5 install ; fi
