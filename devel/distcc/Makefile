@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	distcc
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
