@@ -14,8 +14,11 @@ bin/single2bin
 bin/unbin
 bin/unhex
 bin/unsingle
+@unexec if cmp -s %D/etc/AppleVolumes.default %D/etc/AppleVolumes.default.dist; then rm -f %D/etc/AppleVolumes.default; fi
 etc/AppleVolumes.default.dist
+@unexec if cmp -s %D/etc/AppleVolumes.system %D/etc/AppleVolumes.system.dist; then rm -f %D/etc/AppleVolumes.system; fi
 etc/AppleVolumes.system.dist
+@unexec if cmp -s %D/etc/afpd.conf %D/etc/afpd.conf.dist; then rm -f %D/etc/afpd.conf; fi
 etc/afpd.conf.dist
 etc/rc.d/netatalk.sh
 include/atalk/adouble.h
@@ -72,4 +75,3 @@ share/pagecount.ps
 @dirrm libexec/filters
 @dirrm share/examples/netatalk
 @dirrm share/nls/netatalk
-@unexec if cmp -s %D/etc/afpd.conf %D/etc/afpd.conf.dist; then rm -f %D/etc/afpd.conf; fi
