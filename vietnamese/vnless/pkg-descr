@@ -3,7 +3,7 @@ Vietnamese.
 
 VNless is a port of a very old version of GNU's less that suports the display
 of files written in the Vietnamese language using the VISCII (VIetnamese
-Standard Code for Information Interchange) encoding.
+Standard Code for Information Interchange) encoding, RFC 1456.
 
 VNless should be run w/in a VNterm or simular terminal emulator supporting
 Vietnamese language encodings.

@@ -1,6 +1,6 @@
 The two programs "vn7to8" and "vn8to7" convert between the 7-bit
 VIQR format for Vietnamese (Viet-Net like) and the 8-bit VISCII
-data format.
+data formats (RFC 1456).
 
 The current supported version is VISCII 1.1.
 

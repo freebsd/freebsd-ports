@@ -224,7 +224,10 @@ vietterm(1V), vnelvis(1V)
 Viet-Std Standardization Specification (Viet-Std@Haydn.Stanford.EDU)
 .PP
 RFC 1456 Vietnamese Standardization Working Group,
-"Conventions for Encoding the Vietnamese Language VISCII:
-VIetnamese Standard Code for Information Interchange VIQR:
-VIetnamese Quoted-Readable Specification Revision 1.1",
+"Conventions for Encoding the Vietnamese Language
+.br
+VISCII: VIetnamese Standard Code for Information Interchange
+.br
+VIQR: VIetnamese Quoted-Readable Specification Revision 1.1",
+.br
 May 1993.
