@@ -1,5 +1,5 @@
 *** webmagick.in.orig	Tue Mar 24 07:45:45 1998
---- webmagick.in	Fri May 22 04:13:22 1998
+--- webmagick.in	Fri May 22 20:44:59 1998
 ***************
 *** 130,135 ****
 --- 130,136 ----
@@ -255,7 +255,30 @@
           	$indexbar .= " ${page}\n";
   	    }
 ***************
-*** 2034,2041 ****
+*** 2005,2014 ****
+      print( INDEX "  VLINK=\"${opt_colorvlink}\"\n" );
+      print( INDEX "  ALINK=\"${opt_coloralink}\">\n\n" );
+  
+  
+      # Leave page blank unless there is something to show
+      if( $numimages > 0 ) {
+-         print( INDEX "${opt_header}\n" ) if $opt_header;
+  	# Total HACK!!!
+  	if( $opt_framestyle == 1 ) {
+  	    print( INDEX "<p><FONT SIZE=-1>Index of files \"$imageNames[$pageNumber - 1][0]\" through",
+--- 2035,2044 ----
+      print( INDEX "  VLINK=\"${opt_colorvlink}\"\n" );
+      print( INDEX "  ALINK=\"${opt_coloralink}\">\n\n" );
+  
++     print( INDEX "${opt_header}\n" ) if $opt_header;
+  
+      # Leave page blank unless there is something to show
+      if( $numimages > 0 ) {
+  	# Total HACK!!!
+  	if( $opt_framestyle == 1 ) {
+  	    print( INDEX "<p><FONT SIZE=-1>Index of files \"$imageNames[$pageNumber - 1][0]\" through",
+***************
+*** 2034,2045 ****
   	print( INDEX "<MAP NAME=\"${mapname}\">\n" );
   	my $imageNum;
   	for( $imageNum = 0; $imageNum <= $#{$imageNames[$pageNumber - 1]}; ++$imageNum ) {
@@ -264,7 +287,11 @@
   	}
   	print( INDEX "</MAP>\n" );
       }
---- 2064,2115 ----
+  
+      # Print Copyright info on non-blank pages.
+      if( $numimages > 0 ) {
+         print( INDEX "<BR><ADDRESS>\n" );
+--- 2064,2117 ----
   	print( INDEX "<MAP NAME=\"${mapname}\">\n" );
   	my $imageNum;
   	for( $imageNum = 0; $imageNum <= $#{$imageNames[$pageNumber - 1]}; ++$imageNum ) {
@@ -291,17 +318,13 @@
 ! 		print( PICHTML "  LINK=\"${opt_colorlink}\"\n" );
 ! 		print( PICHTML "  VLINK=\"${opt_colorvlink}\"\n" );
 ! 		print( PICHTML "  ALINK=\"${opt_coloralink}\">\n\n" );
-! 		print( PICHTML "<CENTER>\n" );
-! 		print( PICHTML "$opt_pichtmltop\n")
-! 		    if $opt_pichtmltop;
+! 		print( PICHTML "$opt_pichtmltop") if $opt_pichtmltop;
 ! 		if ( $pic =~ /\.(jpg|jpeg?|gif|xbm)$/i ) {
-! 		    print( PICHTML "<IMG SRC=\"$pic\">\n" );
+! 		    print( PICHTML "<IMG SRC=\"$pic\">" );
 ! 		} else {
-! 		    print( PICHTML "<A HREF=\"$pic\"><BIG><B>$pic</B></A> ", fsize($pic), "</BIG>\n" );
+! 		    print( PICHTML "<A HREF=\"$pic\"><BIG><B>$pic</B></A> ", fsize($pic), "</BIG>" );
 ! 		}
-! 		print( PICHTML "$opt_pichtmlbottom\n")
-! 		    if $opt_pichtmlbottom;
-! 		print( PICHTML "</CENTER>\n" );
+! 		print( PICHTML "$opt_pichtmlbottom\n") if $opt_pichtmlbottom;
 ! 		print( PICHTML "</BODY>\n" );
 ! 		print( PICHTML "</HTML>\n" );
 ! 		close ( PICHTML );
@@ -309,27 +332,23 @@
 ! 		    $target = " TARGET=\"$opt_pichtmltarget\"";
 ! 		}
 ! 		print( INDEX "  <AREA$target HREF=\"", $pichtml,
-! 		  "\" SHAPE=RECT COORDS=", $imageThumbCoords[$pageNumber - 1][$imageNum],">\n" );
-! 	    } else {
-! 		print( INDEX "  <AREA HREF=\"", $pic,
   		  "\" SHAPE=RECT COORDS=", $imageThumbCoords[$pageNumber - 1][$imageNum],">\n" );
++ 	    } else {
++ 		print( INDEX "  <AREA HREF=\"", $pic,
++ 		  "\" SHAPE=RECT COORDS=", $imageThumbCoords[$pageNumber - 1][$imageNum],">\n" );
 + 	    }
   	}
   	print( INDEX "</MAP>\n" );
       }
-***************
-*** 2056,2061 ****
---- 2130,2136 ----
-  	   print( INDEX " $webmagickInfo{revision}</NOBR>, <NOBR>Copyright &copy;</NOBR> <NOBR>Bob Friesenhahn</NOBR>\n" );
-         }
-         print( INDEX "</ADDRESS>\n" );
-+        print( INDEX "${opt_footer}\n" ) if $opt_footer;
-      }
   
-      print( INDEX "</BODY>\n" );
++     print( INDEX "${opt_footer}\n" ) if $opt_footer;
++ 
+      # Print Copyright info on non-blank pages.
+      if( $numimages > 0 ) {
+         print( INDEX "<BR><ADDRESS>\n" );
 ***************
 *** 2648,2653 ****
---- 2723,2729 ----
+--- 2720,2726 ----
   	    handleMagickError( __FILE__, __LINE__, "", $status) if "$status";
   	}
   
@@ -357,7 +376,7 @@
   					  quality=>70
   					  );
   		handleMagickError( __FILE__, __LINE__, $fileNames{'montageJPEG'}, $status) if "$status";
---- 2735,2753 ----
+--- 2732,2750 ----
   	handleMagickError( __FILE__, __LINE__, $fileNames{'montageGIF'}, $status) if "$status";
   	last MONTAGE if "$status";
   	undef @$image;
@@ -395,7 +414,7 @@
   	if( $opt_maptype eq 'ncsa' ) {
   	    if ( "${opt_htimage}" ne '' ) {
   		print( IMAGEMAP "rect "
---- 2824,2846 ----
+--- 2821,2843 ----
       # default URL
       if ( "${opt_htimage}" ne '' ) {
   	print( IMAGEMAP "default "
@@ -441,7 +460,7 @@
       }
   
   
---- 3429,3448 ----
+--- 3426,3445 ----
       $fileNames{'montageServerMap'} = "${sourceDirectory}/${opt_pageindexname}${pageNumber}.map";
   
       # Name for current HTML index page
