@@ -3,13 +3,13 @@
 # Date created:         18 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.11 1996/11/15 23:30:57 obrien Exp $
+# $Id: Makefile,v 1.12 1996/12/06 08:18:34 swallace Exp $
 #
 
 DISTNAME=       magic-6.5
-DISTFILES=	magic-6_5_tar.Z
 CATEGORIES=	cad
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/WRL/projects/magic/6.5/
+DISTFILES=	magic-6_5_tar.Z
 
 MAINTAINER=	swallace@FreeBSD.org
 
