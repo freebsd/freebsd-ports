@@ -1587,6 +1587,7 @@ fidogate	ports/news/fidogate
 figlet		ports/misc/figlet
 figlet-fonts	ports/misc/figlet-fonts
 figurine	ports/graphics/figurine
+file		ports/devel/file
 file_menu_applet	ports/x11-fm/file_menu_applet
 filedupe	ports/sysutils/filedupe
 filepp		ports/textproc/filepp
