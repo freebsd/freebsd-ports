@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-Simple
-PORTVERSION=	1.70
+PORTVERSION=	1.80
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
@@ -19,8 +19,5 @@ COMMENT=	Simple, fast mail parser
 PERL_CONFIGURE=	yes
 
 MAN3=		Email::Simple.3
-
-test:
-	cd ${WRKSRC} ; make test
 
 .include <bsd.port.mk>
