@@ -6,73 +6,28 @@
 
 PORTNAME=	gdb
 PORTVERSION=    5.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
+MASTER_SITES=	http://www.johnrshannon.com/download/
 PKGNAMESUFFIX=	-act
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	john@johnrshannon.com
 COMMENT=	GDB 5.3 modified by ACT for Ada programming language
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	bin/gdbada
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-suffix=ada
 CONFIGURE_ARGS+=	--disable-nls
 
-SNAPDATE=	2003-09-03
-CVS_DATE=	${SNAPDATE} 12:44:04 GMT
-.if defined(CVS_DATE)
-NO_CHECKSUM=	yes
-DIST_SUBDIR=	${PKGNAME}
-CVS_CMD?=	cvs -z3 -qR
-CVSROOT=	:pserver:anoncvs@libre.act-europe.fr:/anoncvs
-STAMPFILE=	${DISTDIR}/${DIST_SUBDIR}/.timestamp
-
 .include <bsd.port.pre.mk>
-
-BROKEN=		"Unfetchable"
 
 .if ${ARCH} != "i386" && ${ARCH} != "alpha"
 BROKEN=		"Does not compile on !i386 and !alpha"
 .endif
-
-do-fetch:
-	@if [ ! -e ${WRKDIR}/.extract_done ] ; then \
-		if [ ! -e ${STAMPFILE} ] ; then \
-			${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
-			cd ${DISTDIR}/${DIST_SUBDIR} ; \
-			unset CVS_RSH CVS_SERVER || ${TRUE} ; \
-			${ECHO_MSG} ">> Attempting to CVS checkout from ${CVSROOT}." ;\
-			if ${CVS_CMD} -d ${CVSROOT} co -P gdb-5.3 ; \
-			then \
-				( ${ECHO} -n "${CVS_DATE}" > ${STAMPFILE} ) ; \
-				exit ; \
-			fi ; \
-			${ECHO_MSG} ">> Couldn't CVS checkout ${PKGNAME}." ; \
-			${ECHO_MSG} ">> Please try again later."; \
-			exit 1; \
-		else \
-			if [ "X${CVS_DATE}" != "X$$(${CAT} ${STAMPFILE})" ]; then \
-			cd ${DISTDIR}/${DIST_SUBDIR} ; \
-			unset CVS_RSH CVS_SERVER || ${TRUE} ; \
-			${ECHO_MSG} ">> Attempting to CVS update from ${CVSROOT}." ;\
-			if ${CVS_CMD} -d ${CVSROOT} up -Pd gdb-5.3 ; \
-			then \
-				( ${ECHO} -n "${CVS_DATE}" > ${STAMPFILE} ) ; \
-				exit ; \
-			fi ; \
-			${ECHO_MSG} ">> Couldn't CVS checkout ${PKGNAME}." ; \
-			${ECHO_MSG} ">> Please try again later."; \
-			exit 1; \
-			fi; \
-		fi; \
-	fi;
-
-do-extract:
-	${MKDIR} ${WRKSRC}
-	cd ${DISTDIR}/${DIST_SUBDIR}/gdb-5.3 ; ${PAX} -pe -rwt . ${WRKSRC}
-.endif	# CVS_DATE
 
 pre-configure:
 	cd ${WRKSRC} ; ${RM} -rf dejagnu expect sim tcl texinfo
