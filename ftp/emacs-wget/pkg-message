@@ -1,0 +1,7 @@
+******************************************************************
+* Before using emacs-wget, you must add this to your own .emacs: *
+*                                                                *
+*  (autoload 'wget "wget" "wget interface for Emacs." t)         *
+*  (autoload 'wget-web-page "wget" "download web page." t)       *
+*                                                                *
+******************************************************************

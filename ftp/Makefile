@@ -9,6 +9,7 @@
     SUBDIR += cftp
     SUBDIR += curl
     SUBDIR += downloader
+    SUBDIR += emacs-wget
     SUBDIR += emirror
     SUBDIR += fget
     SUBDIR += frox
