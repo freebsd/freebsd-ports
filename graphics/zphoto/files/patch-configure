@@ -1,0 +1,11 @@
+--- configure.orig	Thu Feb 26 19:09:36 2004
++++ configure	Tue Mar  2 10:21:20 2004
+@@ -3725,7 +3725,7 @@
+     SWFMovie_save(movie, "foo"); /* 0.2a API */
+ }
+ EOF
+-if $CC -c tmp.c > /dev/null 2>&1; then
++if $CC -c $CFLAGS $CPPFLAGS tmp.c > /dev/null 2>&1; then
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define MING_0_2a 1
