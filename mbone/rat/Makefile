@@ -3,7 +3,7 @@
 # Date created:			      3 July 1999
 # Whom:				      O.Hodson@cs.ucl.ac.uk (Orion Hodson)
 #
-# $Id: $
+# $FreeBSD$
 #
 
 DISTNAME=	rat-4.0.4
