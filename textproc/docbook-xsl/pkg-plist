@@ -27,6 +27,7 @@
 %%PORTDOCS%%share/doc/docbook-xsl/fo/arbortext.extensions.html
 %%PORTDOCS%%share/doc/docbook-xsl/fo/author.othername.in.middle.html
 %%PORTDOCS%%share/doc/docbook-xsl/fo/autotoc.label.separator.html
+%%PORTDOCS%%share/doc/docbook-xsl/fo/axf.extensions.html
 %%PORTDOCS%%share/doc/docbook-xsl/fo/biblioentry.item.separator.html
 %%PORTDOCS%%share/doc/docbook-xsl/fo/bibliography.collection.html
 %%PORTDOCS%%share/doc/docbook-xsl/fo/bibliography.numbered.html
@@ -140,6 +141,7 @@
 %%PORTDOCS%%share/doc/docbook-xsl/fo/ld-d0e3037.html
 %%PORTDOCS%%share/doc/docbook-xsl/fo/ld-d0e3121.html
 %%PORTDOCS%%share/doc/docbook-xsl/fo/ld-d0e3137.html
+%%PORTDOCS%%share/doc/docbook-xsl/fo/ld-d0e3176.html
 %%PORTDOCS%%share/doc/docbook-xsl/fo/line-height.html
 %%PORTDOCS%%share/doc/docbook-xsl/fo/linenumbering.everyNth.html
 %%PORTDOCS%%share/doc/docbook-xsl/fo/linenumbering.extension.html
@@ -282,6 +284,7 @@
 %%PORTDOCS%%share/doc/docbook-xsl/fo/variablelist.as.blocks.html
 %%PORTDOCS%%share/doc/docbook-xsl/fo/verbatim.properties.html
 %%PORTDOCS%%share/doc/docbook-xsl/fo/xep.extensions.html
+%%PORTDOCS%%share/doc/docbook-xsl/fo/xep.index.item.properties.html
 %%PORTDOCS%%share/doc/docbook-xsl/fo/xref.properties.html
 %%PORTDOCS%%share/doc/docbook-xsl/fo/xref.with.number.and.title.html
 %%PORTDOCS%%share/doc/docbook-xsl/html/ChangeLog
@@ -823,6 +826,7 @@ share/xsl/docbook/html/param.xml
 share/xsl/docbook/html/param.xsl
 share/xsl/docbook/html/param.xweb
 share/xsl/docbook/html/pi.xsl
+share/xsl/docbook/html/profile-chunk-code.xsl
 share/xsl/docbook/html/profile-chunk.xsl
 share/xsl/docbook/html/profile-docbook.xsl
 share/xsl/docbook/html/profile-onechunk.xsl
@@ -931,6 +935,7 @@ share/xsl/docbook/params/appendix.autolabel.xml
 share/xsl/docbook/params/arbortext.extensions.xml
 share/xsl/docbook/params/author.othername.in.middle.xml
 share/xsl/docbook/params/autotoc.label.separator.xml
+share/xsl/docbook/params/axf.extensions.xml
 share/xsl/docbook/params/base.dir.xml
 share/xsl/docbook/params/biblioentry.item.separator.xml
 share/xsl/docbook/params/bibliography.collection.xml
@@ -1247,6 +1252,7 @@ share/xsl/docbook/params/variablelist.as.blocks.xml
 share/xsl/docbook/params/variablelist.as.table.xml
 share/xsl/docbook/params/verbatim.properties.xml
 share/xsl/docbook/params/xep.extensions.xml
+share/xsl/docbook/params/xep.index.item.properties.xml
 share/xsl/docbook/params/xref.properties.xml
 share/xsl/docbook/params/xref.with.number.and.title.xml
 share/xsl/docbook/template/ChangeLog
@@ -1291,6 +1297,7 @@ share/xsl/docbook/xhtml/oldchunker.xsl
 share/xsl/docbook/xhtml/onechunk.xsl
 share/xsl/docbook/xhtml/param.xsl
 share/xsl/docbook/xhtml/pi.xsl
+share/xsl/docbook/xhtml/profile-chunk-code.xsl
 share/xsl/docbook/xhtml/profile-chunk.xsl
 share/xsl/docbook/xhtml/profile-docbook.xsl
 share/xsl/docbook/xhtml/profile-onechunk.xsl
