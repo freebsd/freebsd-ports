@@ -1,0 +1,17 @@
+%%RUBY_SITEARCHLIBDIR%%/bdb1.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb1/basic.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb1/func.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb1/recno.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb1/tmp/recno.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb1/wordtest
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb1/tmp
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb1
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb1/Changes
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb1/README.en
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb1/arraylike1.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb1/arraylike1.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb1/bdb1.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb1/bdb1.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb1/hashlike1.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb1/hashlike1.rd
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/bdb1

@@ -1,0 +1,15 @@
+Ruby-bdb1 is an interface to Berkeley DB revision 1.85 and 1.86.
+
+This library includes support for the following access methods:
+
+* B+tree
+* Hashing
+* Fixed and Variable-Length Records
+
+And the following interfaces:
+
+* Hash like interface - BDB1::Btree and BDB1::Hash
+* Array like interface - BDB1::Recnum(Recno)
+
+Author:	Guy Decoux <ts@moulon.inra.fr>
+WWW:	http://moulon.inra.fr/ruby/bdb1.html
