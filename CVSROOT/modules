@@ -3775,6 +3775,7 @@ jdk13		ports/java/jdk13
 jdk13-doc	ports/java/jdk13-doc
 jdk14		ports/java/jdk14
 jdk14-doc	ports/java/jdk14-doc
+jdk15-doc	ports/java/jdk15-doc
 jdom		ports/java/jdom
 jdresolve	ports/www/jdresolve
 jed		ports/editors/jed
