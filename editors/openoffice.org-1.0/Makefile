@@ -42,6 +42,9 @@ CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX} \
 			--with-jdk-home=${JDK13DIR} \
 			--with-os-version=${OSVERSION}
 
+CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
+			PTHREAD_LIBS=${PTHREAD_LIBS}
+
 .include <bsd.port.pre.mk>
 
 pre-fetch:

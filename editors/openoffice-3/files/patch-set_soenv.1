@@ -1,24 +1,27 @@
 --- set_soenv.1.orig	Tue Nov 20 18:26:33 2001
-+++ set_soenv.1	Sat Mar  9 00:32:14 2002
++++ set_soenv.1	Sat Mar  9 23:19:31 2002
 @@ -40,7 +40,7 @@
  #
  # Set this value equal to the corresponding amount of
  # command line arguments. 
 -my $numArgs = 17;
-+my $numArgs = 18;
++my $numArgs = 20;
  # Determining the amount of arguments in the call.
  my $numEnter = $#ARGV + 1;
  if ( $numEnter != $numArgs ) 
-@@ -72,7 +72,7 @@
+@@ -72,8 +72,9 @@
  #
  # Platform dependent constant values.
  my ( $BIG_SVX, $COM, $CPU, $CPUNAME, $CVER, $DLLSUFFIX, $GLIBC, $GUI, $GUIBASE, $GUIENV, 
 -     $GVER, $GVERDIR, $OS, $OUTPATH, $INPATH, $PATH_SEPERATOR, $PROSWITCH, $XPVERSION, $BOTH,
+-     $DEMO_ENV, $DYNAMIC_CRT, $SET_EXCEPTIONS, $emergency, $use_shl_versions, $CDPATHx );
 +     $GVER, $GVERDIR, $OSVERSION, $OS, $OUTPATH, $INPATH, $PATH_SEPERATOR, $PROSWITCH, $XPVERSION, $BOTH,
-      $DEMO_ENV, $DYNAMIC_CRT, $SET_EXCEPTIONS, $emergency, $use_shl_versions, $CDPATHx );
++     $DEMO_ENV, $DYNAMIC_CRT, $SET_EXCEPTIONS, $emergency, $use_shl_versions, $CDPATHx, $PTHREAD_CFLAGS,
++     $PTHREAD_LIBS );
  #
  #-------------------------------------------
-@@ -301,7 +301,7 @@
+ # IIc. Declaring the environment variables.
+@@ -301,7 +302,7 @@
     $PROSWITCH      = "-DPRODUCT";
     $XPVERSION      = "3";
     $SOLAR_JAVA	   = "TRUE"; 
@@ -27,25 +30,29 @@
  } 
  elsif ( $platform eq "$FreeBSD" ) 
  {     print "Setting FreeBSD specific values... ";
-@@ -324,6 +324,7 @@
+@@ -324,6 +325,9 @@
        $PATH_SEPERATOR = $ps;
        $PROSWITCH      = "-DPRODUCT";
        $XPVERSION      = "3";
 +      $OSVERSION      = $ARGV[ 17 ];
++      $PTHREAD_CFLAGS = $ARGV[ 18 ];
++      $PTHREAD_LIBS   = $ARGV[ 19 ];
  } 
  elsif ( $platform eq "$Linux" ) 
  {
-@@ -857,7 +858,8 @@
+@@ -857,7 +861,10 @@
                          $D.$OS.
                          $D.$CPUNAME;
  if  ($platform eq "$FreeBSD")
 -{  $SOLARDEF         .= $D."X86";
 +{  $SOLARDEF         .= $D."X86".
-+                        $D."OSVERSION=$OSVERSION";
++                        $D."OSVERSION=$OSVERSION".
++			$D."PTHREAD_CFLAGS=$PTHREAD_CFLAGS".
++			$D."PTHREAD_LIBS=$PTHREAD_LIBS";
  }
  $SOLARDEF            .= $D."_REENTRANT".
                          $D."_POSIX_PTHREAD_SEMANTICS";
-@@ -954,7 +956,7 @@
+@@ -954,7 +961,7 @@
                          $ps.$USR.$LIB.
                          $ps.$USR_LOCAL.$BIN;
  }
@@ -54,7 +61,7 @@
  {  $PATH              = $cur_dir.
                          $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
                          $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
-@@ -968,6 +970,22 @@
+@@ -968,6 +975,22 @@
                          $ps.$USR.$BIN.$ds."X11".
                          $ps.$USR.$LIB;
  }
@@ -77,7 +84,7 @@
  elsif ($platform eq "$Winnt")
  {  $COMPATH_ROOT      = $COMPATH;
     $COMPATH_ROOT      =~ s/\/vc98$//;
-@@ -1067,25 +1085,19 @@
+@@ -1067,25 +1090,19 @@
  {
  $SOLARINC            .= $I.$USR.$INCLUDE.
  			$STLPORT_stlport;
@@ -107,11 +114,13 @@
  $SOLARINC            .= $I.'$SOLARENV'.$INC.$ds."Xp31".
                          $I.'$JAVA_HOME'.$INCLUDE;
  
-@@ -1273,6 +1285,7 @@
+@@ -1273,6 +1290,9 @@
  ToFile( "GUIENV",            $GUIENV,            "e" );
  ToFile( "GVER",              $GVER,              "e" );
  ToFile( "OS",                $OS,                "e" );
 +ToFile( "OSVERSION",         $OSVERSION,         "e" );
++ToFile( "PTHREAD_CFLAGS",    $PTHREAD_CFLAGS,    "e" );
++ToFile( "PTHREAD_LIBS",      $PTHREAD_LIBS,      "e" );
  ToFile( "OUTPATH",           $OUTPATH,           "e" );
  ToFile( "INPATH",            $INPATH,            "e" );
  ToFile( "GVERDIR",           $GVERDIR,           "e" );
