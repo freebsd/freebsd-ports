@@ -5,6 +5,8 @@ share/pygmy/cite.pyc
 share/pygmy/cite.pyo
 share/pygmy/edit.pyc
 share/pygmy/edit.pyo
+share/pygmy/error.pyc
+share/pygmy/error.pyo
 share/pygmy/expand.pyc
 share/pygmy/expand.pyo
 share/pygmy/fileops.pyc
@@ -38,6 +40,8 @@ share/pygmy/prefix.pyc
 share/pygmy/prefix.pyo
 share/pygmy/prefs.pyc
 share/pygmy/prefs.pyo
+share/pygmy/privacy.pyc
+share/pygmy/privacy.pyo
 share/pygmy/pygmy
 share/pygmy/pygmymailbox.pyc
 share/pygmy/pygmymailbox.pyo
