@@ -430,6 +430,7 @@
     SUBDIR += mob
     SUBDIR += moonshine
     SUBDIR += motor
+    SUBDIR += mpatrol
     SUBDIR += mprof
     SUBDIR += msp430-binutils
     SUBDIR += msp430-gcc

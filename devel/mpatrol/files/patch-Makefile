@@ -1,0 +1,88 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Tue Jan  8 22:41:01 2002
++++ Makefile	Sun Jul 13 21:17:49 2003
+@@ -27,7 +27,7 @@
+ # Definitions
+ 
+ SHELL = /bin/sh
+-CC    = g++
++CC    = $(CXX)
+ AR    = ar
+ LD    = $(CC)
+ LINT  = lint
+@@ -41,12 +41,12 @@
+ ifeq ($(GUISUP),true)
+ CFLAGS	= -I$(SOURCE) -I$(TOOLS) -I/usr/X11R6/include -I/usr/X11R5/include -I/usr/X11/include -I/usr/X/include -DMP_GUI_SUPPORT=1
+ else
+-CFLAGS	= -I$(SOURCE) -I$(TOOLS)
++CFLAGS += -I$(SOURCE) -I$(TOOLS) -I$(LOCALBASE)/include
+ endif
+-OFLAGS	= -O3 -fno-inline-functions
++OFLAGS	= -fno-inline-functions -fpermissive
+ SFLAGS	= -fPIC
+-TFLAGS	= -DMP_THREADS_SUPPORT
+-LDFLAGS	= -shared
++TFLAGS	= -DMP_THREADS_SUPPORT $(PTHREAD_CFLAGS)
++LDFLAGS	= -shared -L$(LOCALBASE)/lib -lelf -lintl
+ 
+ MPATROL	 = mpatrol
+ MPALLOC	 = mpalloc
+@@ -123,10 +123,10 @@
+ $(ARCHIVE_MPATROL): $(ARCHIVE_MPTOBJS)
+ 	$(AR) cr $@ $(ARCHIVE_MPTOBJS)
+ 
+-$(SHARED_MPATROL).$(VERSION).$(REVISION): $(SHARED_MPTOBJS)
++$(SHARED_MPATROL).$(VERSION): $(SHARED_MPTOBJS)
+ 	$(LD) $(LDFLAGS) -o $@ $(SHARED_MPTOBJS)
+ 
+-$(SHARED_MPATROL): $(SHARED_MPATROL).$(VERSION).$(REVISION)
++$(SHARED_MPATROL): $(SHARED_MPATROL).$(VERSION)
+ 	@ ln -f -s $< $@
+ 
+ $(OBJECT_MPATROL): $(SOURCE)/library.c
+@@ -138,10 +138,10 @@
+ $(ARCHTS_MPATROL): $(ARCHTS_MPTOBJS)
+ 	$(AR) cr $@ $(ARCHTS_MPTOBJS)
+ 
+-$(SHARTS_MPATROL).$(VERSION).$(REVISION): $(SHARTS_MPTOBJS)
+-	$(LD) $(LDFLAGS) -o $@ $(SHARTS_MPTOBJS)
++$(SHARTS_MPATROL).$(VERSION): $(SHARTS_MPTOBJS)
++	$(LD) $(LDFLAGS) $(PTHREAD_LIBS) -o $@ $(SHARTS_MPTOBJS)
+ 
+-$(SHARTS_MPATROL): $(SHARTS_MPATROL).$(VERSION).$(REVISION)
++$(SHARTS_MPATROL): $(SHARTS_MPATROL).$(VERSION)
+ 	@ ln -f -s $< $@
+ 
+ $(OBJTS_MPATROL): $(SOURCE)/library.c
+@@ -153,10 +153,10 @@
+ $(ARCHIVE_MPALLOC): $(ARCHIVE_MPAOBJS)
+ 	$(AR) cr $@ $(ARCHIVE_MPAOBJS)
+ 
+-$(SHARED_MPALLOC).$(VERSION).$(REVISION): $(SHARED_MPAOBJS)
++$(SHARED_MPALLOC).$(VERSION): $(SHARED_MPAOBJS)
+ 	$(LD) $(LDFLAGS) -o $@ $(SHARED_MPAOBJS)
+ 
+-$(SHARED_MPALLOC): $(SHARED_MPALLOC).$(VERSION).$(REVISION)
++$(SHARED_MPALLOC): $(SHARED_MPALLOC).$(VERSION)
+ 	@ ln -f -s $< $@
+ 
+ $(OBJECT_MPALLOC): $(SOURCE)/library2.c
+@@ -224,13 +224,13 @@
+ 
+ clobber: clean
+ 	-@ rm -f $(ARCHIVE_MPATROL) $(ARCHTS_MPATROL) 2>&1 >/dev/null
+-	-@ rm -f $(SHARED_MPATROL).$(VERSION).$(REVISION) 2>&1 >/dev/null
+-	-@ rm -f $(SHARTS_MPATROL).$(VERSION).$(REVISION) 2>&1 >/dev/null
++	-@ rm -f $(SHARED_MPATROL).$(VERSION) 2>&1 >/dev/null
++	-@ rm -f $(SHARTS_MPATROL).$(VERSION) 2>&1 >/dev/null
+ 	-@ rm -f $(SHARED_MPATROL) $(SHARTS_MPATROL) 2>&1 >/dev/null
+ 	-@ rm -f $(OBJECT_MPATROL) $(OBJTS_MPATROL) 2>&1 >/dev/null
+ 	-@ rm -f $(LINT_MPATROL) $(LINTTS_MPATROL) 2>&1 >/dev/null
+ 	-@ rm -f $(ARCHIVE_MPALLOC) 2>&1 >/dev/null
+-	-@ rm -f $(SHARED_MPALLOC).$(VERSION).$(REVISION) 2>&1 >/dev/null
++	-@ rm -f $(SHARED_MPALLOC).$(VERSION) 2>&1 >/dev/null
+ 	-@ rm -f $(SHARED_MPALLOC) $(OBJECT_MPALLOC) 2>&1 >/dev/null
+ 	-@ rm -f $(LINT_MPALLOC) 2>&1 >/dev/null
+ 	-@ rm -f $(ARCHIVE_MPTOOLS) $(LINT_MPTOOLS) 2>&1 >/dev/null
