@@ -1514,6 +1514,9 @@ share/swat/using_samba/ja/status.html
 share/swat/using_samba/ja/this_edition.html
 share/swat/using_samba/licenseinfo.html
 share/swat/using_samba/this_edition.html
+@dirrm share/swat/help
+@dirrm share/swat/images
+@dirrm share/swat/include
 @dirrm share/swat/ja/help/BrowsingFAQ/image
 @dirrm share/swat/ja/help/BrowsingFAQ
 @dirrm share/swat/ja/help/HowToUseSamba2.2
@@ -1524,6 +1527,7 @@ share/swat/using_samba/this_edition.html
 @dirrm share/swat/ja/help
 @dirrm share/swat/ja/images
 @dirrm share/swat/ja/include
+@dirrm share/swat/ja
 @dirrm share/swat/using_samba/figs
 @dirrm share/swat/using_samba/gifs
 @dirrm share/swat/using_samba/ja/figs

@@ -7,7 +7,6 @@
 
 PORTNAME=	samba
 PORTVERSION=	${SAMBA_VERSION}.j${SAMBA_JA_VERSION}
-PORTREVISION=	5
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
 		ftp://ftp.iij.ad.jp/pub/SAMBA/samba-jp/%SUBDIR%/ \
@@ -22,8 +21,8 @@ COMMENT=	A free SMB and CIFS client and server for UNIX
 
 CONFLICTS=	samba-2.2.* samba-3.0.* sharity-light-1.*
 
-SAMBA_VERSION=		2.2.8a
-SAMBA_JA_VERSION=	1.1
+SAMBA_VERSION=		2.2.9
+SAMBA_JA_VERSION=	1.0
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -138,12 +137,11 @@ post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
 .if defined(WITH_CUPS)
-#BROKEN=	"CUPS support depends on the latest version of gettext whose msgfmt cannot build language catalogs for SWAT"
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 .else
-CONFIGURE_ARGS+= --disable-cups
+CONFIGURE_ARGS+=--disable-cups
 .endif
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
@@ -173,7 +171,7 @@ MANLANG=	"" ja
 
 SED_PLIST=	${SED} -e 's!${PREFIX}!%D!g'
 
-PLIST_SUB=      AUDIT=${AUDIT} \
+PLIST_SUB=	AUDIT=${AUDIT} \
 		RECYCLE=${RECYCLE} \
 		LIBSAMBA=${LIBSAMBA} \
 		BUILD_VFS=${BUILD_VFS} \
