@@ -1,157 +1,17 @@
-*** install.sh.orig	Sat May 23 00:31:42 1998
---- install.sh	Wed Aug 12 17:24:14 1998
+*** Imakefile.orig	Wed Oct 28 03:03:10 1998
+--- Imakefile	Sat Nov  7 15:27:39 1998
 ***************
-*** 46,51 ****
---- 46,54 ----
-  ERRFILE=/tmp/xmcd.err
-  TMPFILE=/tmp/xmcdinst.$$
+*** 66,71 ****
   
-+ # Flag for indicating we do not want to prompt the user if possible.
-+ NO_PROMPT=1
-+ 
-  #
-  # Utility functions
-  #
-***************
-*** 594,600 ****
+  install::
+  	@BINDIR=$(BINDIR) LIBDIR=$(LIBDIR) MANDIR=$(MANDIR) \
+! 		MANSUFFIX=$(MANSUFFIX) $(SHELL) ./install.sh -n
   
-  while :
-  do
-! 	if getstr "\nEnter X binary directory\n[${BINDIR}]:"
-  	then
-  		if [ -d "$ANS" ]
-  		then
---- 597,607 ----
   
-  while :
-  do
-! 	if [ -n "$NO_PROMPT" ]
-! 	then
-! 		$ECHO "X binary directory - using ${BINDIR}"
-! 		break
-! 	elif getstr "\nEnter X binary directory\n[${BINDIR}]:"
-  	then
-  		if [ -d "$ANS" ]
-  		then
-***************
-*** 642,648 ****
+--- 66,71 ----
   
-  while :
-  do
-! 	if getstr "\nEnter X library directory\n[${LIBDIR}]:"
-  	then
-  		if [ -d "$ANS" ]
-  		then
---- 649,659 ----
+  install::
+  	@BINDIR=$(BINDIR) LIBDIR=$(LIBDIR) MANDIR=$(MANDIR) \
+! 		MANSUFFIX=$(MANSUFFIX) $(SHELL) ./install.sh -n -b
   
-  while :
-  do
-! 	if [ -n "$NO_PROMPT" ]
-! 	then
-! 		$ECHO "X library directory - using ${LIBDIR}"
-! 		break
-! 	elif getstr "\nEnter X library directory\n[${LIBDIR}]:"
-  	then
-  		if [ -d "$ANS" ]
-  		then
-***************
-*** 665,671 ****
-  APPDEFAULTSDIR=$LIBDIR/app-defaults
-  while :
-  do
-! 	if getstr "\nEnter X app-defaults directory\n[${APPDEFAULTSDIR}]:"
-  	then
-  		if [ -d "$ANS" ]
-  		then
---- 676,686 ----
-  APPDEFAULTSDIR=$LIBDIR/app-defaults
-  while :
-  do
-! 	if [ -n "$NO_PROMPT" ]
-! 	then
-! 		$ECHO "X app-defaults directory - using ${LIBDIR}"
-! 		break
-! 	elif getstr "\nEnter X app-defaults directory\n[${APPDEFAULTSDIR}]:"
-  	then
-  		if [ -d "$ANS" ]
-  		then
-***************
-*** 688,694 ****
-  XMCDLIB=$LIBDIR/xmcd
-  while :
-  do
-! 	if getstr "\nEnter xmcd library directory\n[${XMCDLIB}]:"
-  	then
-  		UDIR="$ANS"
-  		if [ -d "$UDIR" ]
---- 703,713 ----
-  XMCDLIB=$LIBDIR/xmcd
-  while :
-  do
-! 	if [ -n "$NO_PROMPT" ]
-! 	then
-! 		$ECHO "xmcd library directory - using ${XMCDLIB}"
-! 		break
-! 	elif getstr "\nEnter xmcd library directory\n[${XMCDLIB}]:"
-  	then
-  		UDIR="$ANS"
-  		if [ -d "$UDIR" ]
-***************
-*** 742,748 ****
-  $ECHO "\n\nThe on-line manual directory is where the man pages in"
-  $ECHO "in the xmcd package will be installed."
   
-! if getstr "\nEnter on-line manual directory\n[${MANDIR}]:"
-  then
-  	MANDIR=$ANS
-  fi
---- 761,770 ----
-  $ECHO "\n\nThe on-line manual directory is where the man pages in"
-  $ECHO "in the xmcd package will be installed."
-  
-! if [ -n "$NO_PROMPT" ]
-! then
-! 	$ECHO "xmcd on-line manual directory - using ${MANDIR}"
-! elif getstr "\nEnter on-line manual directory\n[${MANDIR}]:"
-  then
-  	MANDIR=$ANS
-  fi
-***************
-*** 767,773 ****
-  		MANSUFFIX=1
-  	fi
-  
-! 	if getstr "\nEnter on-line manual file name suffix\n[${MANSUFFIX}]:"
-  	then
-  		MANSUFFIX=$ANS
-  	fi
---- 789,798 ----
-  		MANSUFFIX=1
-  	fi
-  
-! 	if [ -n "$NO_PROMPT" ]
-! 	then
-! 		$ECHO "xmcd on-line manual file name suffix - using ${MANSUFFIX}"
-! 	elif getstr "\nEnter on-line manual file name suffix\n[${MANSUFFIX}]:"
-  	then
-  		MANSUFFIX=$ANS
-  	fi
-***************
-*** 939,954 ****
-  fi
-  
-  # Run device-dependent config script
-- if [ -r $XMCDLIB/config/config.sh ]
-- then
-- 	$SHELL $XMCDLIB/config/config.sh
-- 	if [ $? != 0 ]
-- 	then
-- 		logerr -n "$XMCDLIB/config/config.sh failed."
-- 	fi
-- else
-- 	logerr -p "Cannot execute $XMCDLIB/config/config.sh"
-- fi
-  
-  # Demo cddb file
-  if [ -d $XMCDLIB/cddb/misc ]
---- 964,969 ----
