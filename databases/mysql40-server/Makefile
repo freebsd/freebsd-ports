@@ -40,9 +40,15 @@ CONFIGURE_ARGS+=--with-charset=${WITH_CHARSET}
 CONFIGURE_ARGS+=--with-extra-charsets=${WITH_XCHARSET}
 .endif
 .endif
+.if defined(WITH_LINUXTHREADS)
+CONFIGURE_ARGS+=--with-named-thread-libs='-DHAVE_GLIBC2_STYLE_GETHOSTBYNAME_R -D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads -L${LOCALBASE}/lib -llthread -llgcc_r'
+CFLAGS+=	-D__USE_UNIX98 -D_REENTRANT -D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
+LIB_DEPENDS+=	lthread.2:${PORTSDIR}/devel/linuxthreads
+.endif
 CONFIGURE_ENV+=	PERL=${PERL} \
 		PERL5=${PERL} \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+		CFLAGS="${CFLAGS}" \
 		CONFIGURE_ARGS="${CONFIGURE_ARGS}"
 
 .include <bsd.port.pre.mk>
@@ -60,6 +66,7 @@ pre-fetch:
 	@${ECHO} "	WITH_CHARSET=charset	define the primary built-in charset (latin1);"
 	@${ECHO} "	WITH_XCHARSET=list	define other built-in charsets (may be 'all');"
 	@${ECHO} "	DB_DIR=directory	Set alternate directory for database files."
+	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
 	@${ECHO} ""
 
 # MySQL-Server part
