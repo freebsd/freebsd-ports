@@ -1,8 +1,18 @@
---- ./Imakefile.org	Sat Sep  5 15:11:33 1998
-+++ ./Imakefile	Fri Sep 29 13:40:13 2000
-@@ -10,4 +10,4 @@
+--- Imakefile.orig	Sat Sep  5 08:11:33 1998
++++ Imakefile	Thu Sep 12 15:09:14 2002
+@@ -10,4 +10,14 @@
  SRCS = wmmixer.cc
  OBJS = wmmixer.o
  
 -ComplexProgramTarget(wmmixer)
-+ComplexProgramTargetNoMan(wmmixer)
++PROGRAM = wmmixer
++AllTarget(wmmixer)
++
++ProgramTargetName(wmmixer): $(OBJS) $(DEPLIBS)
++	RemoveTargetProgram(wmmixer)
++	CplusplusLinkRule($@,$(LDOPTIONS),$(OBJS),$(LOCAL_LIBRARIES) $(LDLIBS))
++ 
++DependTarget()
++LintTarget()
++clean::
++	RemoveFile(ProgramTargetName(wmmixer))
