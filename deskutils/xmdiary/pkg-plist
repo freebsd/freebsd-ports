@@ -15,7 +15,6 @@ bin/xdremove
 bin/xdrestore
 lib/libTools.a
 lib/libXdiary.a
-lib/libXdndbm.a
 lib/libXtools.a
 lib/X11/app-defaults/XDiary
 lib/X11/app-defaults/XDiary.map
