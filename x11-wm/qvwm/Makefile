@@ -1,12 +1,12 @@
 # New ports collection makefile for:   qvwm
-# Version required:    1.0b8a
+# Version required:    1.0b8c
 # Date created:        2 January 1997
 # Whom:                Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1997/01/24 10:48:52 asami Exp $
+# $Id: Makefile,v 1.5 1997/06/13 21:54:24 max Exp $
 #
 
-DISTNAME=       qvwm-1.0b8a
+DISTNAME=       qvwm-1.0b8c
 CATEGORIES=     x11
 MASTER_SITES=   http://www-masuda.is.s.u-tokyo.ac.jp/~kourai/qvwm/program/
 
