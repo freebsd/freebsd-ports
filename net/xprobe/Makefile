@@ -5,17 +5,30 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xprobe
-PORTVERSION=	0.0.2
-CATEGORIES=    	net security
-MASTER_SITES=	http://www.sys-security.com/archive/tools/X/
+PORTNAME=	xprobe2
+PORTVERSION=	0.2
+CATEGORIES=	net
+MASTER_SITES=	http://www.sys-security.com/archive/tools/xprobe2/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ICMP active OS fingerprint scanner
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
-MAN1=		xprobe.1
-PLIST_FILES=	bin/xprobe
+MAN1=		xprobe2.1
+
+pre-configure:
+	( cd ${WRKSRC}/libs-external/USI++/src ; CFLAGS="${CFLAGS}" ./configure --prefix=${PREFIX} ${CONFIGURE_TARGET} )
+
+# force -O0 for these modules otherwise gcc 3.3.3 20031106 dies with internal error
+post-configure:
+	@${FIND} ${WRKSRC}/src/xpmodules/os_probe -name Makefile | ${XARGS} ${REINPLACE_CMD} -e 's|${CFLAGS}|-O0|'
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/xprobe2 ${PREFIX}/bin
+	${INSTALL} -d ${PREFIX}/etc/xprobe2
+	${INSTALL_DATA} ${WRKSRC}/etc/xprobe2.conf ${PREFIX}/etc/xprobe2
+	${INSTALL_MAN} ${WRKSRC}/docs/xprobe2.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
