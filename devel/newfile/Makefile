@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	newfile
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.9
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	flynn@energyhq.homeip.net
+MAINTAINER=	alane@FreeBSD.org
 COMMENT=	A tool for creating starter files in various languages
 
 BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
@@ -20,6 +20,7 @@ BUILD_DEPENDS+=	rdoc:${PORTSDIR}/textproc/ruby-rdoc
 USE_RUBY=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+USE_PERL=	yes
 
 .if !defined(NOPORTDOCS)
 MAN1=		newfile.1
