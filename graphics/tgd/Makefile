@@ -17,6 +17,7 @@ MAINTAINER=	mharo@FreeBSD.org
 BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
 
 BROKEN=	gd changes
+FORBIDDEN=	author hadn't had time to update for gd changes
 
 ALL_TARGET=	tgd
 DOCS=		README arc.gif cap.gif char.gif fill.gif fontdemo \
