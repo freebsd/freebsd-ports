@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	tya
-PORTVERSION=	1.7
+PORTVERSION=	1.7.2
 CATEGORIES=	java
 MASTER_SITES=	http://sax.sax.de/~adlibit/
-DISTNAME=	tya17
+DISTNAME=	tya17v2
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jburkhol@home.com
 
 BUILD_DEPENDS=	${LOCALBASE}/${JAVADIR}/bin/java:${PORTSDIR}/java/jdk
 
-WRKSRC=		${WRKDIR}/tya1.7
+WRKSRC=		${WRKDIR}/${DISTNAME:S/a1/a1./}
 
 ONLY_FOR_ARCHS=	i386
 
