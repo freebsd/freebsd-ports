@@ -7,6 +7,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/Proxy.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/Sponge.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/DBD.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/FAQ.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/Format.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/ProxyServer.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/Shell.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/W32ODBC.pm
@@ -19,6 +20,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI/DriverST.xst
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI/dbd_xsh.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI/dbi_sql.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI
