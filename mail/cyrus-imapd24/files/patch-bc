@@ -1,17 +1,17 @@
 Index: imap/Makefile.in
 diff -u imap/Makefile.in.orig imap/Makefile.in
---- imap/Makefile.in.orig	Fri Jul 26 06:07:05 2002
-+++ imap/Makefile.in	Fri Sep 13 18:49:25 2002
+--- imap/Makefile.in.orig	Tue Dec 10 09:52:43 2002
++++ imap/Makefile.in	Tue Feb  4 20:28:12 2003
 @@ -61,7 +61,7 @@
  CYRUS_USER=@cyrus_user@
  CYRUS_GROUP=@cyrus_group@
  
 -DEFS = @DEFS@ @LOCALDEFS@
 +DEFS = @DEFS@ @LOCALDEFS@ -DCONFIG_FILENAME=\"$(prefix)/etc/imapd.conf\"
- CPPFLAGS = -I. -I.. -I../sieve -I$(srcdir) -I$(srcdir)/../lib -I$(srcdir)/../acap -I../acap @COM_ERR_CPPFLAGS@ @SIEVE_CPPFLAGS@ @CPPFLAGS@ @SASLFLAGS@
+ CPPFLAGS = -I. -I.. -I$(srcdir) -I$(srcdir)/../lib -I$(srcdir)/../sieve -I$(srcdir)/../acap @COM_ERR_CPPFLAGS@ @SIEVE_CPPFLAGS@ @CPPFLAGS@ @SASLFLAGS@
  IMAP_LIBS = @IMAP_LIBS@
  SIEVE_LIBS = @SIEVE_LIBS@
-@@ -244,12 +244,12 @@
+@@ -243,12 +243,12 @@
  mupdate: mupdate.o mupdate-slave.o mupdate-client.o libimap.a $(DEPLIBS)
  	$(CC) $(LDFLAGS) -o mupdate \
  	 $(SERVICETHREAD) mupdate.o mupdate-slave.o mupdate-client.o \
