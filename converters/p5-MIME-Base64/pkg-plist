@@ -2,11 +2,11 @@ bin/encode-base64
 bin/decode-qp
 bin/encode-qp
 bin/decode-base64
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64/Base64.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64/Base64.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/MIME/Base64.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/MIME/QuotedPrint.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/MIME 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Base64/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Base64/Base64.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Base64/Base64.so
+%%SITE_PERL%%/%%PERL_ARCH%%/MIME/Base64.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MIME/QuotedPrint.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Base64
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/MIME 2>/dev/null || true
