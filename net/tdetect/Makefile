@@ -28,17 +28,13 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tdetect ${PREFIX}/sbin/tdetect
 
 post-install:
-	strip ${PREFIX}/sbin/tdetect
 	@if [ ! -f ${PREFIX}/etc/rc.d/tdetect.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/tdetect.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/tdetect.sh; \
 		${ECHO} "ETHERNETDEV=ed0" >> ${PREFIX}/etc/rc.d/tdetect.sh; \
 		${ECHO} '[ -x ${PREFIX}/sbin/tdetect ] && ${PREFIX}/sbin/tdetect $$ETHERNETDEV && ${ECHO} -n " tdetect"' >> ${PREFIX}/etc/rc.d/tdetect.sh; \
 		${CHMOD} 750 ${PREFIX}/etc/rc.d/tdetect.sh; \
-		${ECHO} ''; \
-		${ECHO} 'IMPORTANT edit ${PREFIX}/etc/rc.d/tdetect.sh and set "ETHERNETDEV" to'; \
-		${ECHO} "the name of the ethernetdev you wish to monitor"; \
-		${ECHO} ''; \
+		${SED} -e 's,/usr/local,${PREFIX},g' ${PKGMESSAGE}; \
 	fi
 
 .include <bsd.port.post.mk>
