@@ -64,6 +64,7 @@
     SUBDIR += dump9660
     SUBDIR += durep
     SUBDIR += dvdtape
+    SUBDIR += dwatch
     SUBDIR += e2fsprogs
     SUBDIR += eject
     SUBDIR += enteruser
