@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Attribute/Handlers/Prospective.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Attribute/Handlers/Prospective/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Attribute/Handlers/Prospective
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Attribute/Handlers 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Attribute 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Attribute/Handlers 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Attribute 2>/dev/null || true
