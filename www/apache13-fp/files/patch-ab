@@ -1,30 +1,14 @@
---- Makefile.tmpl.orig	Mon Mar 15 18:38:46 1999
-+++ Makefile.tmpl	Sat Apr  3 15:25:47 1999
-@@ -113,13 +113,14 @@
- sysconfdir      = @sysconfdir@
- datadir         = @datadir@
- iconsdir        = $(datadir)/icons
--htdocsdir       = $(datadir)/htdocs
-+htdocsdir       = $(datadir)/data
- cgidir          = $(datadir)/cgi-bin
- includedir      = @includedir@
- localstatedir   = @localstatedir@
+--- Makefile.tmpl.orig	Fri Aug 13 01:58:18 1999
++++ Makefile.tmpl	Mon Sep  6 12:58:17 1999
+@@ -120,6 +120,7 @@
  runtimedir      = @runtimedir@
  logfiledir      = @logfiledir@
  proxycachedir   = @proxycachedir@
-+doc_prefix      = $(prefix)/share/doc/apache
++doc_prefix	= $(prefix)/share/doc/apache
  
  libexecdir_relative   = @libexecdir_relative@
  
-@@ -134,6 +135,7 @@
- suexec_safepath = @suexec_safepath@
- 
- #   some substituted configuration parameters
-+conf_user        = @conf_user@
- conf_group       = @conf_group@
- conf_port        = @conf_port@
- conf_serveradmin = @conf_serveradmin@
-@@ -249,9 +251,9 @@
+@@ -255,9 +256,9 @@
  	$(MKDIR) $(root)$(mandir)/man1
  	$(MKDIR) $(root)$(mandir)/man8
  	$(MKDIR) $(root)$(sysconfdir)
@@ -34,32 +18,49 @@
 -	$(MKDIR) $(root)$(cgidir)
 +	$(MKDIR) $(root)$(cgidir).default
  	$(MKDIR) $(root)$(includedir)
+ 	$(MKDIR) $(root)$(includedir)/xml
  	$(MKDIR) $(root)$(runtimedir)
- 	$(MKDIR) $(root)$(logfiledir)
-@@ -294,9 +296,11 @@
- 			file=`echo $${mod} | sed -e 's;^.*/\([^/]*\);\1;'`; \
+@@ -313,19 +314,34 @@
  			echo "$(INSTALL_DSO) $(TOP)/$(SRC)/$${mod} $(root)$(libexecdir)/$${file}"; \
  			$(INSTALL_DSO) $(TOP)/$(SRC)/$${mod} $(root)$(libexecdir)/$${file}; \
--			name=`$(TOP)/$(AUX)/fmn.sh $(TOP)/$(SRC)/$${mod}`; \
--			echo dummy | awk '{ printf("LoadModule %-18s %s\n", modname, modpath); }' \
--			modname="$${name}" modpath="$(libexecdir_relative)$${file}" >>$(SRC)/.apaci.install.conf; \
-+			if [ "$${file}" != "mod_frontpage.so" ]; then \
-+				name=`$(TOP)/$(AUX)/fmn.sh $(TOP)/$(SRC)/$${mod}`; \
-+				echo dummy | awk '{ printf("LoadModule %-18s %s\n", modname, modpath); }' \
-+				modname="$${name}" modpath="$(libexecdir_relative)$${file}" >>$(SRC)/.apaci.install.conf; \
+ 			name=`$(TOP)/$(AUX)/fmn.sh $(TOP)/$(SRC)/$${mod}`; \
++			if [ ".$$name" = .frontpage_module ]; then \
++				echo "<IfDefine FRONTPAGE>" >>$(SRC)/.apaci.install.conf; \
++			fi; \
+ 			echo dummy | awk '{ printf("LoadModule %-18s %s\n", modname, modpath); }' \
+ 			modname="$${name}" modpath="$(libexecdir_relative)$${file}" >>$(SRC)/.apaci.install.conf; \
++			if [ ".$$name" = .frontpage_module ]; then \
++				echo "</IfDefine>" >>$(SRC)/.apaci.install.conf; \
 +			fi; \
  		done; \
  		echo "" >>$(SRC)/.apaci.install.conf; \
  		echo "#  Reconstruction of the complete module list from all available modules" >>$(SRC)/.apaci.install.conf; \
-@@ -304,6 +308,7 @@
+ 		echo "#  (static and shared ones) to achieve correct module execution order." >>$(SRC)/.apaci.install.conf; \
  		echo "#  [WHENEVER YOU CHANGE THE LOADMODULE SECTION ABOVE UPDATE THIS, TOO]" >>$(SRC)/.apaci.install.conf; \
  		echo "ClearModuleList" >>$(SRC)/.apaci.install.conf; \
- 		egrep "^[ 	]*(Add|Shared)Module" $(SRC)/Configuration.apaci |\
-+		egrep -v "mod_frontpage.so" |\
- 		sed	-e 's:SharedModule:AddModule:' \
- 			-e 's:modules/[^/]*/::' \
- 			-e 's:[ 	]lib: mod_:' \
-@@ -324,6 +329,7 @@
+-		egrep "^[ 	]*(Add|Shared)Module" $(SRC)/Configuration.apaci |\
+-		sed	-e 's:SharedModule:AddModule:' \
+-			-e 's:modules/[^/]*/::' \
+-			-e 's:[ 	]lib: mod_:' \
+-			-e 's:\.[soam].*$$:.c:' >>$(SRC)/.apaci.install.conf; \
++		for mod in `egrep "^[ 	]*(Add|Shared)Module" $(SRC)/Configuration.apaci |\
++			    sed	-e 's:[		]*SharedModule::' \
++				-e 's:[		]*AddModule::' \
++				-e 's:modules/[^/]*/::' \
++				-e 's:[ 	]lib: mod_:' \
++				-e 's:\.[soam].*$$:.c:'`; do \
++			if [ ".$$mod" = .mod_frontpage.c ]; then \
++				echo "<IfDefine FRONTPAGE>" >>$(SRC)/.apaci.install.conf; \
++			fi; \
++			echo "AddModule $$mod" >>$(SRC)/.apaci.install.conf; \
++			if [ ".$$mod" = .mod_frontpage.c ]; then \
++				echo "</IfDefine>" >>$(SRC)/.apaci.install.conf; \
++			fi; \
++		done; \
+ 	fi
+ 	@echo "<=== [programs]"
+ 
+@@ -394,6 +410,7 @@
  	echo "$(INSTALL_SCRIPT) $(TOP)/$(SRC)/support/apachectl[*] $(root)$(sbindir)/$${apachectl}"; \
  	sed -e 's;PIDFILE=.*;PIDFILE=$(runtimedir)/$(TARGET).pid;' \
  		-e 's;HTTPD=.*;HTTPD=$(sbindir)/$(TARGET);' \
@@ -67,7 +68,7 @@
  		< $(TOP)/$(SRC)/support/apachectl > $(TOP)/$(SRC)/.apaci.install.tmp && \
  		$(INSTALL_SCRIPT) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sbindir)/$${apachectl}; \
  	echo "$(INSTALL_DATA) $(TOP)/$(SRC)/support/apachectl.8 $(root)$(mandir)/man8/$${apachectl}.8"; \
-@@ -379,25 +385,32 @@
+@@ -441,25 +458,33 @@
  #   icons and distributed CGI scripts.
  install-data:
  	@echo "===> [data: Installing initial data files]"
@@ -93,6 +94,7 @@
 -	-@if [ -f $(root)$(cgidir)/printenv ]; then \
 -		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
 -	else \
++	$(RM) $(root)$(htdocsdir).default
 +	$(LN) -s $(root)$(doc_prefix) $(root)$(htdocsdir).default
 +#	-@if [ -f $(root)$(cgidir)/printenv ]; then \
 +#		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
@@ -112,17 +114,17 @@
  	fi
  	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
  	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
-@@ -431,17 +444,20 @@
+@@ -493,15 +517,17 @@
  			-e 's;@@ServerRoot@@/icons;$(iconsdir);' \
  			-e 's;@@ServerRoot@@/cgi-bin;$(cgidir);' \
  			-e 's;@@ServerRoot@@/proxy;$(proxycachedir);' \
 +			-e 's;@@ServerRoot@@/srm.conf;$(sysconfdir)/$(TARGET).conf;' \
 +			-e 's;@@ServerRoot@@/access.conf;$(sysconfdir)/$(TARGET).conf;' \
  			-e 's;@@ServerRoot@@;$(prefix);g' \
- 			-e 's;httpd.conf;$(TARGET).conf;' \
- 			-e 's;logs/accept.lock;$(runtimedir)/$(TARGET).lock;' \
+ 			-e 's;httpd\.conf;$(TARGET).conf;' \
+ 			-e 's;logs/accept\.lock;$(runtimedir)/$(TARGET).lock;' \
  			-e 's;logs/apache_runtime_status;$(runtimedir)/$(TARGET).scoreboard;' \
- 			-e 's;logs/httpd.pid;$(runtimedir)/$(TARGET).pid;' \
+ 			-e 's;logs/httpd\.pid;$(runtimedir)/$(TARGET).pid;' \
 -			-e "s;logs/access_log;$(logfiledir)/$${target_prefix}access_log;" \
 -			-e "s;logs/error_log;$(logfiledir)/$${target_prefix}error_log;" \
 -			-e "s;logs/referer_log;$(logfiledir)/$${target_prefix}referer_log;" \
@@ -132,8 +134,5 @@
 +			-e "s;logs/referer_log;$(logfiledir)/httpd-referer.log;" \
 +			-e "s;logs/agent_log;$(logfiledir)/httpd-agent.log;" \
  			-e 's;conf/magic;$(sysconfdir)/magic;' \
- 			-e 's;conf/mime.types;$(sysconfdir)/mime.types;' \
-+			-e 's;User nobody;User $(conf_user);' \
- 			-e 's;Group #-1;Group $(conf_group);' \
- 			-e 's;Port 80;Port $(conf_port);' \
- 			-e 's;ServerAdmin you@your.address;ServerAdmin $(conf_serveradmin);' \
+ 			-e 's;conf/mime\.types;$(sysconfdir)/mime.types;' \
+ 			-e 's;User nobody;User $(conf_user);' \

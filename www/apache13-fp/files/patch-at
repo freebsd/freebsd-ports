@@ -1,12 +1,12 @@
---- src/support/apxs.pl.orig	Fri Jan  1 16:00:15 1999
-+++ src/support/apxs.pl	Mon Jan 18 17:18:17 1999
-@@ -393,8 +393,7 @@
-         }
+--- src/support/apxs.pl.orig	Thu Aug 19 22:57:08 1999
++++ src/support/apxs.pl	Thu Aug 19 23:02:17 1999
+@@ -426,8 +426,7 @@
          my $t = $f;
          $t =~ s|^.+/([^/]+)$|$1|;
--        push(@cmds, "cp $f $CFG_LIBEXECDIR/$t");
--        push(@cmds, "chmod 755 $CFG_LIBEXECDIR/$t");
-+        push(@cmds, "install -c -m 555 -o root -g wheel $f $CFG_LIBEXECDIR/$t");
+         if ($opt_i) {
+-	    push(@cmds, "cp $f $CFG_LIBEXECDIR/$t");
+-	    push(@cmds, "chmod 755 $CFG_LIBEXECDIR/$t");
++	    push(@cmds, "install -c -m 555 -o root -g wheel $f $CFG_LIBEXECDIR/$t");
+         }
  
          #   determine module symbolname and filename
-         my $filename = '';

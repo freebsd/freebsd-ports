@@ -2,10 +2,15 @@ bin/dbmmanage
 bin/htdigest
 bin/htpasswd
 etc/apache/access.conf.default
+@exec if [ ! -f %B/access.conf ]; then cp %D/%F %B/access.conf ; fi
 etc/apache/httpd.conf.default
+@exec if [ ! -f %B/httpd.conf ]; then cp %D/%F %B/httpd.conf ; fi
 etc/apache/magic.default
+@exec if [ ! -f %B/magic ]; then cp %D/%F %B/magic ; fi
 etc/apache/mime.types.default
+@exec if [ ! -f %B/mime.types ]; then cp %D/%F %B/mime.types ; fi
 etc/apache/srm.conf.default
+@exec if [ ! -f %B/srm.conf ]; then cp %D/%F %B/srm.conf ; fi
 etc/rc.d/apache.sh
 include/apache/alloc.h
 include/apache/ap.h
@@ -15,6 +20,7 @@ include/apache/ap_config_auto.h
 include/apache/ap_ctype.h
 include/apache/ap_md5.h
 include/apache/ap_mmn.h
+include/apache/ap_sha1.h
 include/apache/buff.h
 include/apache/compat.h
 include/apache/conf.h
@@ -39,20 +45,50 @@ include/apache/util_date.h
 include/apache/util_md5.h
 include/apache/util_script.h
 include/apache/util_uri.h
+include/apache/xml/asciitab.h
+include/apache/xml/hashtable.h
+include/apache/xml/iasciitab.h
+include/apache/xml/latin1tab.h
+include/apache/xml/nametab.h
+include/apache/xml/utf8tab.h
+include/apache/xml/xmldef.h
+include/apache/xml/xmlparse.h
+include/apache/xml/xmlrole.h
+include/apache/xml/xmltok.h
+include/apache/xml/xmltok_impl.h
+libexec/apache/httpd.exp
 libexec/apache/libproxy.so
+libexec/apache/mod_access.so
+libexec/apache/mod_actions.so
+libexec/apache/mod_alias.so
+libexec/apache/mod_asis.so
+libexec/apache/mod_auth.so
 libexec/apache/mod_auth_anon.so
 libexec/apache/mod_auth_db.so
+libexec/apache/mod_autoindex.so
 libexec/apache/mod_cern_meta.so
+libexec/apache/mod_cgi.so
 libexec/apache/mod_digest.so
+libexec/apache/mod_dir.so
+libexec/apache/mod_env.so
 libexec/apache/mod_expires.so
 libexec/apache/mod_frontpage.so
 libexec/apache/mod_headers.so
+libexec/apache/mod_imap.so
+libexec/apache/mod_include.so
 libexec/apache/mod_info.so
+libexec/apache/mod_log_config.so
+libexec/apache/mod_mime.so
 libexec/apache/mod_mime_magic.so
+libexec/apache/mod_negotiation.so
 libexec/apache/mod_rewrite.so
+libexec/apache/mod_setenvif.so
 libexec/apache/mod_speling.so
+libexec/apache/mod_status.so
 libexec/apache/mod_unique_id.so
+libexec/apache/mod_userdir.so
 libexec/apache/mod_usertrack.so
+libexec/apache/mod_vhost_alias.so
 sbin/ab
 sbin/apachectl
 sbin/apxs
@@ -128,6 +164,7 @@ share/doc/apache/manual/mod/mod_auth.html
 share/doc/apache/manual/mod/mod_auth_anon.html
 share/doc/apache/manual/mod/mod_auth_db.html
 share/doc/apache/manual/mod/mod_auth_dbm.html
+share/doc/apache/manual/mod/mod_auth_digest.html
 share/doc/apache/manual/mod/mod_autoindex.html
 share/doc/apache/manual/mod/mod_browser.html
 share/doc/apache/manual/mod/mod_cern_meta.html
@@ -162,6 +199,7 @@ share/doc/apache/manual/mod/mod_status.html
 share/doc/apache/manual/mod/mod_unique_id.html
 share/doc/apache/manual/mod/mod_userdir.html
 share/doc/apache/manual/mod/mod_usertrack.html
+share/doc/apache/manual/mod/mod_vhost_alias.html
 share/doc/apache/manual/multilogs.html
 share/doc/apache/manual/new_features_1_0.html
 share/doc/apache/manual/new_features_1_1.html
@@ -302,8 +340,10 @@ www/icons/uu.gif
 www/icons/uuencoded.gif
 www/icons/world1.gif
 www/icons/world2.gif
-@exec mkdir -p %D/www/proxy
+@exec if [ ! -d /var/spool/apache ] ; then mkdir -p /var/spool/apache ; echo " change owner & group of /var/spool/apache to the owner & group the Apache Server uses in httpd.conf" ; fi
+@unexec rm -rf /var/spool/apache
 @dirrm etc/apache
+@dirrm include/apache/xml
 @dirrm include/apache
 @dirrm libexec/apache
 @dirrm share/doc/apache/manual/images
@@ -316,7 +356,6 @@ www/icons/world2.gif
 @dirrm www/cgi-bin.default
 @dirrm www/icons/small
 @dirrm www/icons
-@dirrm www/proxy
 @dirrm www
 frontpage/version3.0/LICENSE.TXT
 frontpage/version3.0/change_server.sh

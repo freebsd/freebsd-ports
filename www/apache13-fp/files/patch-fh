@@ -1,24 +1,16 @@
-*** src/include/httpd.h.orig	Thu May 21 19:37:29 1998
---- src/include/httpd.h	Fri May 22 16:57:19 1998
-***************
-*** 689,695 ****
-  
-      char *unparsed_uri;		/* the uri without any parsing performed */
-      char *uri;			/* the path portion of the URI */
-!     char *filename;
-      char *path_info;
-      char *args;			/* QUERY_ARGS, if any */
-      struct stat finfo;		/* ST_MODE set to zero if no such file */
---- 689,700 ----
-  
-      char *unparsed_uri;		/* the uri without any parsing performed */
-      char *uri;			/* the path portion of the URI */
-!     char *execfilename;		/* physical filename to exec */
-!     char *filename;		/* logical filename to exec -- always the same
-! 				 * except for FrontPage CGI programs where we
-! 				 * will execute the CGI program in
-! 				 * /usr/local/frontpage....
-! 				 */
-      char *path_info;
-      char *args;			/* QUERY_ARGS, if any */
-      struct stat finfo;		/* ST_MODE set to zero if no such file */
+--- src/include/httpd.h.orig	Mon Aug 16 12:57:53 1999
++++ src/include/httpd.h	Mon Sep  6 13:12:55 1999
+@@ -774,7 +774,12 @@
+ 
+     char *unparsed_uri;		/* the uri without any parsing performed */
+     char *uri;			/* the path portion of the URI */
+-    char *filename;
++    char *execfilename;		/* physical filename to exec */
++    char *filename;		/* logical filename to exec -- always the same
++				 * except for FrontPage CGI programs where we
++				 * will execute the CGI program in
++				 * /usr/local/frontpage....
++				 */
+     char *path_info;
+     char *args;			/* QUERY_ARGS, if any */
+     struct stat finfo;		/* ST_MODE set to zero if no such file */
