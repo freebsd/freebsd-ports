@@ -10,6 +10,7 @@ PORTVERSION=	0.8.10
 CATEGORIES=	textproc www
 MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/ \
 		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	modlogan
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A modular log file analysis program
