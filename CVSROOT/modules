@@ -6152,6 +6152,7 @@ rexecd		src/libexec/rexecd
 rexx-imc	ports/lang/rexx-imc
 rfc		ports/misc/rfc
 rftp		ports/mail/rftp
+rhtvision	ports/devel/rhtvision
 ricochet	ports/mail/ricochet
 rid		ports/security/rid
 rinetd		ports/net/rinetd
