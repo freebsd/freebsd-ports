@@ -1,0 +1,11 @@
+--- ./plugins/octave/doc/README.orig	Sun Oct  3 13:26:27 2004
++++ ./plugins/octave/doc/README	Sat Oct 23 17:39:48 2004
+@@ -26,7 +26,7 @@
+ have TeXmacs call a script like the following (this script is included as 
+ "tm_octave"):
+ 
+-#!/bin/bash
++#!/bin/sh
+ echo -ne "\002verbatim:"
+ octave -v
+ exec octave -qi

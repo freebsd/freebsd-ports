@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- src/Window/event.hpp.orig	Fri Jun 27 17:45:59 2003
-+++ src/Window/event.hpp	Wed Aug 27 20:35:35 2003
+--- ./src/Window/event.hpp.orig	Sun Oct  3 13:26:38 2004
++++ ./src/Window/event.hpp	Sat Oct 23 17:39:48 2004
 @@ -12,12 +12,17 @@
  
  #ifndef EVENT_H

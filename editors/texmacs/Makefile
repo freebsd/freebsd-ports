@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	texmacs
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4.3
 CATEGORIES=	editors print
 MASTER_SITES=	ftp://ftp.texmacs.org/pub/TeXmacs/targz/ \
 		ftp://ftp.texmacs.org/pub/TeXmacs/old-targz/
-DISTNAME=	TeXmacs-${PORTVERSION}-R2-src
+DISTNAME=	TeXmacs-${PORTVERSION}-src
 
-MAINTAINER=	mainland@apeiron.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"A free WYSIWYG scientific text editor."
 
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile \
@@ -29,10 +29,7 @@ ALL_TARGET=
 MAN1=		texmacs.1 fig2ps.1
 MANCOMPRESSED=	yes
 
-.include <bsd.port.pre.mk>
+pre-install:
+	cd ${WRKSRC} ; find . -name '*.orig' -delete
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- src/Guile/Scheme/object.hpp.orig	Mon Nov  3 01:07:27 2003
-+++ src/Guile/Scheme/object.hpp	Mon Nov  3 01:06:19 2003
+--- ./src/Guile/Scheme/object.hpp.orig	Sun Oct  3 13:26:27 2004
++++ ./src/Guile/Scheme/object.hpp	Sat Oct 23 17:39:48 2004
 @@ -16,7 +16,7 @@
  #include "path.hpp"
  #include "command.hpp"

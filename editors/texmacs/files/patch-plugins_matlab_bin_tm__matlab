@@ -1,0 +1,8 @@
+--- ./plugins/matlab/bin/tm_matlab.orig	Sun Oct  3 13:26:27 2004
++++ ./plugins/matlab/bin/tm_matlab	Sat Oct 23 17:39:48 2004
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ echo -ne "\002verbatim:"
+ cd $TEXMACS_PATH/plugins/matlab/code
+ matlab -nojvm -r tmrepl
