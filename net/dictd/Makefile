@@ -7,16 +7,20 @@
 #
 
 PORTNAME=	dictd
-PORTVERSION=	1.5.5
-PORTREVISION=	3
+PORTVERSION=	1.7.1
+PORTREVISION=	0
 CATEGORIES=	net textproc
-MASTER_SITES=	ftp://ftp.dict.org/pub/dict/
+MASTER_SITES=	ftp://ftp.dict.org/pub/dict/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=		dict
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MAN1=		dictzip.1
 MAN8=		dictd.8
 
+USE_PERL5=	yes
+USE_BISON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
 		--without-local-zlib
