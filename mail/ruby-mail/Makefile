@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mail
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.lickey.com/%SUBDIR%/
 MASTER_SITE_SUBDIR=	ruby${PORTNAME}
@@ -22,6 +22,9 @@ NO_BUILD=	yes
 
 RUBY_SHEBANG_FILES=	${WRKSRC}/bin/*.rb
 
+post-extract:
+	${FIND} ${WRKSRC} -type f -name 'heaer*' -delete
+
 do-install:
 	${MKDIR} ${RUBY_SITELIBDIR}/mail
 	${INSTALL_DATA} ${WRKSRC}/mail/* ${RUBY_SITELIBDIR}/mail/
@@ -29,6 +32,7 @@ do-install:
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${WRKSRC}/README ${RUBY_DOCDIR}/${PORTNAME}/
 	${CP} -R ${WRKSRC}/doc/* ${RUBY_DOCDIR}/${PORTNAME}/
 .endif
 
