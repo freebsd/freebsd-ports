@@ -126,11 +126,11 @@ pre-install:
 
 do-install:
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
-	(cd ${JDKIMAGEDIR} && ${BSD_TAR} -c -f - .) \
-		| (cd ${PREFIX}/jdk${JDK_VERSION} && ${BSD_TAR} --unlink -x -f -)
+	cd ${JDKIMAGEDIR} && /usr/bin/find . \
+	  | /usr/bin/cpio -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 .if !defined(NODEBUG)
-	(cd ${JDKIMAGEDIR_G} && ${BSD_TAR} -c -f - .) \
-		| (cd ${PREFIX}/jdk${JDK_VERSION} && ${BSD_TAR} --unlink -x -f -)
+	cd ${JDKIMAGEDIR_G} && /usr/bin/find . \
+	  | /usr/bin/cpio -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 .endif
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}/jre/lib/ext
 
