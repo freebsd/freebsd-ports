@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	6.0.2
+PORTVERSION=	6.0.2.1
 CATEGORIES=	graphics perl5
-MASTER_SITES=	ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
+MASTER_SITES=	ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
+		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/ImageMagick,} \
 		ftp://ftp.crc.ca/pub/packages/graphics/imagemagick/ \
-		ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
 		ftp://ftp.planetmirror.com/pub/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/X11/graphics/%SUBDIR%/ \
 		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/%SUBDIR%/ \
@@ -22,9 +22,12 @@ MASTER_SITES=	ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
 		ftp://ftp.fifi.org/pub/%SUBDIR%/ \
 		ftp://ftp.simplesystems.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME:L} ${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	Image processing tools
+
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_PERL5=	yes
 USE_BZIP2=	yes
@@ -44,7 +47,7 @@ MAN5=		quantize.5
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION:R}
 
 .if !defined(WITHOUT_IMAGEMAGICK_PERL)
 CONFIGURE_ARGS+=	--with-perl=${PERL5}
