@@ -1,12 +1,12 @@
 # New ports collection makefile for:	fvwm95-2
-# Version required:	2.0.41c
+# Version required:	2.0.41f
 # Date created:		Wed Apr 10 21:57:17 MET DST 1996
 # Whom:			Andreas Klemm <andreas@knobel.gun.de>
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1996/04/12 07:41:56 asami Exp $
 #
 
-DISTNAME=	fvwm95-2.0.41c
+DISTNAME=	fvwm95-2.0.41f
 CATEGORIES+=	x11
 MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/
 EXTRACT_SUFX=	.tgz
@@ -19,8 +19,8 @@ USE_IMAKE=	yes
 #XMKMF=		xmkmf
 #ALL_TARGET=	Makefiles all
 
-post-configure:
-	@ln ${WRKSRC}/fvwm/fvwm2.man ${WRKSRC}/fvwm/fvwm95-2.man
+#post-configure:
+#	@ln ${WRKSRC}/fvwm/fvwm2.man ${WRKSRC}/fvwm/fvwm95-2.man
 
 post-install:
 	@echo "installing default system.fvwmrc file..."
