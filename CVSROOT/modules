@@ -10557,6 +10557,7 @@ zope-formulator	ports/www/zope-formulator
 zope-groupuserfolder	ports/www/zope-groupuserfolder
 zope-guf	ports/www/zope-guf
 zope-parsedxml	ports/www/zope-parsedxml
+zope-placelesstranslationservice	ports/www/zope-placelesstranslationservice
 zope-proxyindex	ports/www/zope-proxyindex
 zope-silva	ports/www/zope-silva
 zope-silvaviews	ports/www/zope-silvaviews
