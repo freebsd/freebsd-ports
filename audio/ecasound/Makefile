@@ -8,9 +8,7 @@
 PORTNAME=	ecasound
 PORTVERSION=	2.0.4
 CATEGORIES=	audio
-MASTER_SITES=	http://ecasound.seul.org/download/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ecasound
+MASTER_SITES=	http://ecasound.seul.org/download/
 
 MAINTAINER=	anarcat@anarcat.dyndns.org
 
