@@ -143,25 +143,6 @@
  	if (check_quietlogin(s, command))
  		return;
  
-@@ -726,7 +827,17 @@
- 	buffer_free(&loginmsg);
- 
- #ifndef NO_SSH_LASTLOG
--	if (options.print_lastlog && s->last_login_time != 0) {
-+	/*
-+	 * If the user has logged in before, display the time of last
-+	 * login. However, don't display anything extra if a command
-+	 * has been specified (so that ssh can be used to execute
-+	 * commands on a remote machine without users knowing they
-+	 * are going to another machine). Login(1) will do this for
-+	 * us as well, so check if login(1) is used
-+	 */
-+	if (command == NULL && options.print_lastlog &&
-+	    s->last_login_time != 0 &&
-+	    !options.use_login) {
- 		time_string = ctime(&s->last_login_time);
- 		if (strchr(time_string, '\n'))
- 			*strchr(time_string, '\n') = 0;
 @@ -738,7 +849,30 @@
  	}
  #endif /* NO_SSH_LASTLOG */

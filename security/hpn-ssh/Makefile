@@ -6,15 +6,32 @@
 #
 
 PORTNAME=	openssh
-PORTVERSION=	3.8.1p1
+PORTVERSION=	3.9.0.1
+.if defined(OPENSSH_SNAPSHOT)
+PORTREVISION!=	date -v-1d +%Y%m%d
+.endif
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
-MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
-		ftp://carroll.cac.psu.edu/pub/OpenBSD/OpenSSH/portable/
+MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/ \
+		ftp://carroll.cac.psu.edu/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/
 PKGNAMESUFFIX?=	${PORTABLE_SUFFIX}${GSSAPI_SUFFIX}${BASE_SUFFIX}${PKGNAMESUFFIX2}
+MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR2}
+DISTNAME=	${DISTNAME2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The portable version of OpenBSD's OpenSSH
+
+OPENSSHVERSION=	3.9p1
+.if defined(OPENSSH_SNAPSHOT)
+MASTER_SITE_SUBDIR2=	snapshot/
+DISTNAME2=	${PORTNAME}-SNAP-${PORTREVISION}
+NO_CHECKSUM=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+.else
+MASTER_SITE_SUBDIR2=	
+DISTNAME2=	${PORTNAME}-${OPENSSHVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${OPENSSHVERSION}
+.endif
 
 MAN1=	sftp.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh-keyscan.1 scp.1 ssh.1
 MLINKS=	ssh.1 slogin.1
@@ -129,6 +146,9 @@ test:
 	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} )
 
 .include <bsd.port.pre.mk>
+
+SUDO?=
+MAKE_ENV+=	SUDO="${SUDO}"
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME}) || defined(WITH_GSSAPI)
 .if ${OPENSSLBASE} == "/usr"
