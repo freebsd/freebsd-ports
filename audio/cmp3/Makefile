@@ -3,7 +3,7 @@
 # Date created:        10 April 1999
 # Whom:                Chris Piazza <cpiazza@home.net>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/13 23:26:27 mharo Exp $
+# $Id: Makefile,v 1.2 1999/04/14 19:55:55 mharo Exp $
 #
 
 DISTNAME=	cmp3-2.0pre3
@@ -19,9 +19,6 @@ USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/cmp3
 PKGMESSAGE=	${WRKSRC}/MESSAGE
-.if defined(NOPORTDOCS)
-PLIST=		${PKGDIR}/PLIST.nodocs
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cmp3 ${PREFIX}/bin
