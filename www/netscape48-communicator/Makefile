@@ -3,22 +3,19 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.25 1998/12/08 21:26:23 billf Exp $
+# $Id: Makefile,v 1.26 1998/12/19 11:20:12 markm Exp $
 #
 
-DISTNAME=       netscape-communicator-4.07
+DISTNAME=       netscape-communicator-4.08
 CATEGORIES=	www
-MASTER_SITES=   ftp://ftp.netscape.com/pub/communicator/4.07/development/english/unix/freebsd/professional_edition/
-DISTFILES=      communicator-v407-export.x86-unknown-freebsd.tar.gz ${AUTOADMIN}
-AUTOADMIN=      autoadmin-v407.x86-unknown-freebsd.tar.gz
+MASTER_SITES=   ftp://ftp.netscape.com/pub/communicator/4.08/english/unix/unsupported/freebsd/professional_edition/
+DISTFILES=      communicator-v408-export.x86-unknown-freebsd.tar.gz ${AUTOADMIN}
+AUTOADMIN=      autoadmin-v408.x86-unknown-freebsd.tar.gz
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-BROKEN=		"'due to a lack of disk space, Netscape removed\
-		${DISTNAME}'"
-
 NO_FILTER_SHLIBS=	yes
-WRKSRC=         ${WRKDIR}/communicator-v407.x86-unknown-freebsd
+WRKSRC=         ${WRKDIR}/communicator-v408.x86-unknown-freebsd
 NO_BUILD=       Yes
 
 NDIR=           ${PREFIX}/lib/netscape
@@ -39,9 +36,9 @@ pre-extract:
 do-install:
 	cd ${WRKSRC} && yes "" | \
 	    LC_TIME=C MOZILLA_HOME="${NDIR}" ./ns-install
-	mv -f ${NDIR}/netscape ${NDIR}/communicator-4.07.bin
-	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/communicator-4.07
-	ln -sf communicator-4.07 ${BINDIR}/communicator-4
+	mv -f ${NDIR}/netscape ${NDIR}/communicator-4.08.bin
+	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/communicator-4.08
+	ln -sf communicator-4.08 ${BINDIR}/communicator-4
 	ln -sf communicator-4 ${BINDIR}/netscape
 	if [ ! -f ${NDIR}/mailcap ] ; then \
 	    ${INSTALL_DATA} ${FILESDIR}/mailcap ${NDIR}; \
@@ -50,7 +47,7 @@ do-install:
 	tar zxvf ${DISTDIR}/${AUTOADMIN} -C ${NDIR}
 .if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
 	cd ${WRKDIR}/Fortify-1.3.2-unix-x86 && \
-		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/communicator-4.07.bin
+		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/communicator-4.08.bin
 .endif
 	chown -R bin.bin ${NDIR}
 
