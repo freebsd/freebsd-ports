@@ -29,6 +29,7 @@ RUN_DEPENDS+=	xmp:${PORTSDIR}/audio/xmp
 RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
 .endif
 
+LATEST_LINK=	gqmpeg-devel
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
