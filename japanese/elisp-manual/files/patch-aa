@@ -4,7 +4,7 @@
  \input texinfo  @c -*-texinfo-*-
  @c %**start of header
 -@setfilename elisp
-+@setfilename ../info/elisp-ja
++@setfilename ../info/elisp-ja.info
  @c @settitle GNU Emacs Lisp Reference Manual
  @settitle GNU Emacs Lispリファレンスマニュアル
  @c %**end of header
