@@ -17,7 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	vm68k.4:${PORTSDIR}/emulators/libvm68k
 
 USE_MESA=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure vx68k-gtk/configure
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore

@@ -16,7 +16,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-sound --enable-vidmode --enable-dga
 USE_XLIB=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 

@@ -19,8 +19,8 @@ LIB_DEPENDS=	lthread.2:${PORTSDIR}/devel/linuxthreads
 WRKSRC=		${WRKDIR}/BasiliskII-${PORTVERSION}/src/Unix
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
-USE_ESOUND=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	esound gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--disable-fbdev-dga
