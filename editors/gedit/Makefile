@@ -1,16 +1,18 @@
 # New ports collection makefile for:	gedit
-# Version required:			0.5.5
+# Version required:			0.6.0
 # Date created:				4 May 1999
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		gedit-0.5.5
-CATEGORIES=		editors gnome
-MASTER_SITES=		http://gedit.pn.org/tar/
+DISTNAME=	gedit-0.6.0
+CATEGORIES=	editors gnome
+MASTER_SITES=	http://www.oscentral.org/files/software/ \
+		http://gedit.pn.org/tar/ \
+		ftp://ftp.oscentral.org/pub/software/
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=	andy@icc.surw.chel.su
 
 LIB_DEPENDS=	gnomeui.3:${PORTSDIR}/x11/gnomelibs
 
@@ -26,6 +28,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 MAN1=		gedit.1
 
+pre-install:
+	@ touch ${WRKSRC}/po/da.gmo
 post-install:
 	@ ${MKDIR} ${PREFIX}/share/gnome/apps/Applications
 	@ ${MKDIR} ${PREFIX}/share/gnome/help/gedit
