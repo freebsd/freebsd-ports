@@ -70,6 +70,7 @@
     SUBDIR += twin
     SUBDIR += uae
     SUBDIR += vMac
+    SUBDIR += vba
     SUBDIR += vgb
     SUBDIR += vgb-bin
     SUBDIR += vgba-bin

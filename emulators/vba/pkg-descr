@@ -1,0 +1,21 @@
+- configurable GB/GBA keys, including joystick support
+- option to use BIOS file
+- zip/gzip file support
+- directory selection for save state, battery and screen capture
+- fullscreen mode (selectable resolution)
+- video sizes 1x, 2x, 3x and 4x
+- graphic filters Normal, TV Mode, 2xSaI, Super 2xSaI and more
+- interframe blending support
+- same emulation core as VisualBoyAdvance: GB and GBA emulation
+- built-in ARM/THUMB assembly debugger
+- 10 save states accesible through keyboard
+- automatic battery file load/save
+- auto-fire support
+- pause, reset through keyboard
+- 16, 24 and 32 bit desktop support
+- GDB remote debugging (see below for information)
+- auto frameskipping and throttle
+- AGBPrint support for development
+- RTC support
+
+WWW:  http://vboy.emuhq.com/
