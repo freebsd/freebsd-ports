@@ -17,8 +17,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for dealing with Microsoft ITSS/CHM format files
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS}," ${WRKSRC}/configure
 
 .include <bsd.port.mk>
