@@ -7,7 +7,7 @@
 
 PORTNAME=	portmanager
 PORTVERSION=	0.2.6
-PORTREVISION=	5
+PORTREVISION=	6
 #-----------------------------------------
 #for local use, remove before submitting PR
 CATEGORIES=		sysutils
@@ -18,7 +18,7 @@ MASTER_SITES=		http://portmanager.sunsite.dk/distfiles/	\
 			${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	portmanager
 
-MAINTAINER=		reso3w83@verizon.net
+MAINTAINER=		ringworm01@gmail.com
 COMMENT=		FreeBSD usr/ports status and safe usr/ports update
 
 MAN1=			portmanager.1
