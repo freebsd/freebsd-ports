@@ -1,5 +1,17 @@
---- src/ftpd.c.orig	Tue Jan 18 19:35:30 2000
-+++ src/ftpd.c	Tue Jan 18 19:38:50 2000
+--- src/ftpd.c.orig	Thu Oct 14 23:41:47 1999
++++ src/ftpd.c	Wed Jun 14 14:48:27 2000
+@@ -1602,9 +1602,9 @@
+     /* Display s/key challenge where appropriate. */
+ 
+     if (pwd == NULL || skeychallenge(&skey, pwd->pw_name, sbuf))
+-	sprintf(buf, "Password required for %s.", name);
++	snprintf(buf, 128, "Password required for %s.", name);
+     else
+-	sprintf(buf, "%s %s for %s.", sbuf,
++	snprintf(buf, 128, "%s %s for %s.", sbuf,
+ 		pwok ? "allowed" : "required", name);
+     return (buf);
+ }
 @@ -6346,7 +6346,6 @@
  	    }
  	    goto globfree;
@@ -16,5 +28,3 @@
      }
  
      if (dout != NULL) {
-
-
