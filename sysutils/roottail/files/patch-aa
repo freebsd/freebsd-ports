@@ -1,25 +1,31 @@
---- ../root-tail-0.0.6/root-tail.c	Fri Mar  3 06:16:46 2000
-+++ root-tail.c	Thu Jul 13 07:38:05 2000
-@@ -24,6 +24,7 @@
- /*---------------- Let's define signals functions -------------*/
+--- root-tail.c.orig	Wed May  8 22:54:47 2002
++++ root-tail.c	Sun Mar 16 10:41:37 2003
+@@ -86,6 +86,7 @@
+ void list_files(int);
+ void force_reopen(int);
+ void force_refresh(int);
++void exit_now(int);
+ void blank_window(int);
  
- static void reopen (int);
-+static void exit_now(int);
- static void list_files (int);
- static void force_refresh (int);
- static void InstallSigHandler (void);
-@@ -109,6 +110,14 @@
-   signal (SIGHUP, reopen);
-   signal (SIGUSR1, list_files);
-   signal (SIGUSR2, force_refresh);
-+  signal (SIGSEGV, exit_now);
-+}
-+
-+void exit_now(int signal)
-+{
-+
-+	fprintf (stderr, "Program exiting due to signal: %d\n", signal);
-+ 	exit(-1);
+ void InitWindow(void);
+@@ -128,6 +129,12 @@
+     redraw();
  }
  
++void exit_now(int signal)
++{
++    fprintf (stderr, "Program exiting due to signal: %d\n", signal);
++    exit(-1);
++}
++
+ void blank_window(int dummy)
+ {
+     XClearWindow(disp, root);
+@@ -685,6 +692,7 @@
+     install_signal(SIGHUP, force_reopen);
+     install_signal(SIGUSR1, list_files);
+     install_signal(SIGUSR2, force_refresh);
++    install_signal(SIGSEGV, exit_now);
  
+     if (opt_daemonize)
+ 	daemonize();

@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	roottail
-PORTVERSION=	0.0.10
+PORTVERSION=	0.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.goof.com/pcg/marc/data/ \
-		ftp://ftp.goof.com/pub/pcg/marc/
+MASTER_SITES=	http://www.goof.com/pcg/marc/data/
 DISTNAME=	root-tail-${PORTVERSION}
 
 MAINTAINER=	jedgar@FreeBSD.org
@@ -17,6 +16,5 @@ COMMENT=	Simple utility to tail files/logs to a root X window
 
 MAN1=		root-tail.1
 USE_IMAKE=	yes
-MANCOMPRESSED=	no
 
 .include <bsd.port.mk>
