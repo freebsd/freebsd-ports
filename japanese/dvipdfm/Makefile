@@ -33,6 +33,12 @@ CONFIGURE_ENV+=		CPPFLAGS="${CXXFLAGS} -I${PREFIX}/include" \
 			LDFLAGS=-L${PREFIX}/lib
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+BROKEN=			"Configure fails"
+.endif
+
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
@@ -56,4 +62,4 @@ post-install:
 .endif
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
