@@ -1,4 +1,3 @@
-
 xvile is the X11 version of vile.  in addition to the capabilities
 listed below for the character-oriented version of vile, xvile offers
 scrollbars and more complete mouse integration.
@@ -20,4 +19,3 @@ notably:
 	auxiliary utilities for man page and C program syntax highlighting
 	built-in macro language
 	portability to all UNIX platforms, VMS, DOS, Win32, OS/2
-
