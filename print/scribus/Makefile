@@ -21,6 +21,8 @@ MASTER_SITE_SUBDIR=	apps/office
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehensive desktop publishing program
 
+BROKEN=		"Broken pkg-plist"
+
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		cups.2:${PORTSDIR}/print/cups-base \
