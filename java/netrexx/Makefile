@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	NetRexx
-PORTVERSION=	2.02
-PORTREVISION=	3
+PORTVERSION=	2.05
 CATEGORIES=	java lang
-MASTER_SITES=	http://www2.hursley.ibm.com/netrexx/
+MASTER_SITES=	http://www-306.ibm.com/software/awdtools/netrexx/
 DISTNAME=	NetRexx
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Human-oriented programming language for writing/using Java classes
 
-RUN_DEPENDS=	${LOCALBASE}/bin/rexx:${PORTSDIR}/lang/rexx-imc
-
-BROKEN=		Unfetchable
-
 NO_BUILD=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
+USE_REINPLACE=	yes
+
+.include <bsd.port.pre.mk>
 
 pre-patch:
 	for file in ${WRKSRC}/bin/NetRexxC.sh ${WRKSRC}/read.me.first; do \
@@ -29,26 +27,26 @@ pre-patch:
 	    ${MV} $${file}.new $${file}; \
 	done
 
+post-patch:
+	${REINPLACE_CMD} -e 's,%%JAVA_HOME%%,${JAVA_HOME},' \
+	                 -e 's,%%JAVAJARDIR%%,${JAVAJARDIR},' \
+	                 ${WRKSRC}/bin/NetRexxC.sh
+
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/NetRexxC.sh ${PREFIX}/bin
 	@${LN} -sf ${PREFIX}/bin/NetRexxC.sh ${PREFIX}/bin/nrc
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/NetRexxC.cmd \
-		${PREFIX}/bin/NetRexxC.rexx
-	@${LN} -sf ${PREFIX}/bin/NetRexxC.rexx ${PREFIX}/bin/nrc.rexx
 
-	@${MKDIR} ${PREFIX}/share/java/classes
-	@${INSTALL_DATA} ${WRKSRC}/lib/NetRexxC.jar ${PREFIX}/share/java/classes
-	@${INSTALL_DATA} ${WRKSRC}/runlib/NetRexxR.jar ${PREFIX}/share/java/classes
+	@${INSTALL_DATA} ${WRKSRC}/lib/NetRexxC.jar ${JAVAJARDIR}
+	@${INSTALL_DATA} ${WRKSRC}/runlib/NetRexxR.jar ${JAVAJARDIR}
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/bin/hello.nrx \
 		${EXAMPLESDIR}
-	@${MKDIR} ${DOCSDIR}/netrexx/lang
-.for dir in netrexx/lang .
-	@${INSTALL_DATA} ${WRKSRC}/browse/${dir}/* ${DOCSDIR}/${dir}
-	@${RM} -Rf ${WRKSRC}/browse/netrexx
-.endfor
+	@cd ${WRKSRC}/browse && \
+		${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
+	@cd ${WRKSRC}/browse && \
+		${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 .endif
 
 post-install:
@@ -58,4 +56,4 @@ post-install:
 	@${ECHO} "====================  IMPORTANT!!  ===================="
 	@${CAT} ${WRKSRC}/read.me.first
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
