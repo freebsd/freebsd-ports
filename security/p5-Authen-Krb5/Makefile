@@ -18,6 +18,8 @@ COMMENT=	Perl extension for Kerberos 5
 
 LIB_DEPENDS=	gssapi_krb5.2:${PORTSDIR}/security/krb5
 
+BROKEN=		Incomplete pkg-plist
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Authen::Krb5.3
