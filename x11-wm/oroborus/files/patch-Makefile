@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- Makefile.orig	Thu Jun  7 00:44:43 2001
-+++ Makefile	Fri Jun  8 11:19:26 2001
+--- Makefile.orig	Wed Jun 13 17:59:09 2001
++++ Makefile	Fri Aug 10 23:54:37 2001
 @@ -1,13 +1,13 @@
 -CC        = gcc
 -CFLAGS    = -g -O2 -Wall
@@ -15,20 +12,20 @@ $FreeBSD$
  LDPATH    = -L$(XROOT)/lib
  
  PROG      = oroborus
- VERSION   = 1.13.0
+ VERSION   = 1.14.0
 -PREFIX    = /usr
 +PREFIX    ?= /usr
  FONT      = *-helvetica-bold-r-normal-*-*-120-*
  THEME     = default
- INTERVAL  = 1
-@@ -38,12 +38,17 @@
+ RCFILE    = -DRCFILE=\".oroborusrc\"
+@@ -37,12 +37,17 @@
  	rm -f $(PROG) $(OBJS) core
  
  install:all
 -	install $(PROG) $(PREFIX)/bin
 -	install -d $(PREFIX)/share/$(PROG)
 -	install -d $(PREFIX)/doc/$(PROG)-$(VERSION)
--	./install_rc $(PREFIX) $(PROG) $(THEME) $(FONT) $(INTERVAL) > $(PREFIX)/share/$(PROG)/oroborusrc
+-	./install_rc $(PREFIX) $(PROG) $(THEME) $(FONT) > $(PREFIX)/share/$(PROG)/oroborusrc
 -	cp -R themes $(PREFIX)/share/$(PROG)
 -	cp -R doc $(PREFIX)/doc/$(PROG)-$(VERSION)
 +	$(BSD_INSTALL_PROGRAM) $(PROG) $(PREFIX)/bin
