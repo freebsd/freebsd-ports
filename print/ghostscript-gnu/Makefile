@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	6.53
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU:S/$/:DEFAULT,fonts/} \
 		${MASTER_SITE_SOURCEFORGE:S/$/:DEFAULT,fonts,gprint,hpijs/} \
@@ -19,7 +19,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:S/$/:DEFAULT,fonts/} \
 		http://www.humblesoft.com/pub/:epag \
 		http://www.epkowa.on.arena.ne.jp/pips/data/gs65_301/:eplaser \
 		http://www.ceres.dti.ne.jp/~owatanab/gdevnpdl/:npdl \
-		http://www.linuxprinting.org/download/printing/:gdi \
+		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/ \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs653/
 MASTER_SITE_SUBDIR=	${PORTNAME} \
@@ -196,7 +196,7 @@ NPDL_SRCS=	${NPDL_NAME}.tar.gz
 
 # GDI - additional driver for Samsung SmartGDI laser printers
 GDI=		gdi
-GDI_NAME=	samsung-gdi-driver
+GDI_NAME=	samsung-gdi-driver-gs5.50
 GDI_SRCS=	${GDI_NAME}.tar.gz
 
 # contributed uniprint profiles
