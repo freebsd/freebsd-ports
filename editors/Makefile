@@ -90,6 +90,7 @@
     SUBDIR += nvi-perl
     SUBDIR += offix-editor
     SUBDIR += openoffice
+    SUBDIR += openoffice-devel
     SUBDIR += pico
     SUBDIR += poedit
     SUBDIR += psgml
