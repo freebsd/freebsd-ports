@@ -1,3 +1,6 @@
+This is the legacy 2.13 version of autoconf.  It is explictly for use with
+older software packages that are not buildable with the current autoconf.
+
 Autoconf is an extensible package of m4 macros that produce shell
 scripts to automatically configure software source code packages.
 These scripts can adapt the packages to many kinds of UNIX-like

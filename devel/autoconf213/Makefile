@@ -9,7 +9,7 @@
 # extensive implications for the entire ports system. It will be
 # upgraded as soon as possible. Thanks.
 
-PORTNAME=	autoconf
+PORTNAME=	autoconf213
 PORTVERSION=	2.13.000227
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} ${MASTER_SITE_GNU}
@@ -24,6 +24,7 @@ RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	M4=${PREFIX}/bin/gm4
+CONFIGURE_ARGS=	--program-suffix=213 --datadir=${PREFIX}/share/autoconf213
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-install:

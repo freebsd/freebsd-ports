@@ -1,28 +1,29 @@
-bin/autoconf
-bin/autoheader
-bin/autoreconf
-bin/autoscan
-bin/autoupdate
-bin/ifnames
+bin/autoconf213
+bin/autoheader213
+bin/autoreconf213
+bin/autoscan213
+bin/autoupdate213
+bin/ifnames213
 @unexec install-info --delete %D/info/autoconf.info %D/info/dir
 @unexec install-info --delete %D/info/standards.info %D/info/dir
 info/autoconf.info
 info/standards.info
 @exec install-info %D/info/autoconf.info %D/info/dir
 @exec install-info %D/info/standards.info %D/info/dir
-share/autoconf/acconfig.h
-share/autoconf/acfunctions
-share/autoconf/acgeneral.m4
-share/autoconf/acheaders
-share/autoconf/acidentifiers
-share/autoconf/acmakevars
-share/autoconf/acoldnames.m4
-share/autoconf/acprograms
-share/autoconf/acspecific.m4
-share/autoconf/autoconf.m4
-share/autoconf/autoconf.m4f
-share/autoconf/autoheader.m4
-share/autoconf/autoheader.m4f
-share/autoconf/config.guess
-share/autoconf/config.sub
-@dirrm share/autoconf
+share/autoconf213/autoconf/acconfig.h
+share/autoconf213/autoconf/acfunctions
+share/autoconf213/autoconf/acgeneral.m4
+share/autoconf213/autoconf/acheaders
+share/autoconf213/autoconf/acidentifiers
+share/autoconf213/autoconf/acmakevars
+share/autoconf213/autoconf/acoldnames.m4
+share/autoconf213/autoconf/acprograms
+share/autoconf213/autoconf/acspecific.m4
+share/autoconf213/autoconf/autoconf.m4
+share/autoconf213/autoconf/autoconf.m4f
+share/autoconf213/autoconf/autoheader.m4
+share/autoconf213/autoconf/autoheader.m4f
+share/autoconf213/autoconf/config.guess
+share/autoconf213/autoconf/config.sub
+@dirrm share/autoconf213/autoconf
+@dirrm share/autoconf213
