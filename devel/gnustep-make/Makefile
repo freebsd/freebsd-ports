@@ -9,8 +9,8 @@ PORTNAME=	gnustep-make
 PORTVERSION=	1.4.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
-		http://archive.progeny.com/gnustep/ \
-		ftp://ftp.easynet.nl/mirror/GNUstep/
+		http://archive.progeny.com/gnustep/core/ \
+		ftp://ftp.easynet.nl/mirror/GNUstep/core/
 
 MAINTAINER=	dinoex@FreeBSD.org
 
