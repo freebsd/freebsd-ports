@@ -239,6 +239,7 @@
     SUBDIR += vm
     SUBDIR += vm-pop3d
     SUBDIR += vpopmail
+    SUBDIR += vpopmail-stable
     SUBDIR += vqadmin
     SUBDIR += vrfy
     SUBDIR += wanderlust
