@@ -30,17 +30,13 @@ PLIST_FILES=	bin/klassmodeler
 
 DOS2FIX=	configure Makefile.in klassmodeler/docs/en/Makefile.in \
 		klassmodeler/docs/Makefile.in klassmodeler/Makefile.in \
-		admin/depcomp
+		admin/depcomp klassmodeler/MainFrame.cpp
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
-.endif
 
 post-patch:
 .for df in ${DOS2FIX}
