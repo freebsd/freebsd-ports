@@ -9,14 +9,14 @@ PORTNAME=	dspam
 PORTVERSION=	3.2.3${SNAP_DATE}
 CATEGORIES=	mail
 MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/dspam/sources/
-#DISTFILES=	dspam.3.2.3.cvs.stable${SNAP_DATE}.tar.gz
+DISTFILES=	dspam.3.2.3.cvs.stable${SNAP_DATE}.tar.gz
 
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - development version
 
-#WRKSRC=		${WRKDIR}/dspam-cvs-stable${SNAP_DATE}
+WRKSRC=		${WRKDIR}/dspam-cvs-stable${SNAP_DATE}
 
-#SNAP_DATE=	.20041201.0000
+SNAP_DATE=	.20041203.1245
 
 ## debug / log / admin options
 OPTIONS=	DEBUG "Enable debugging logging" on
@@ -26,6 +26,7 @@ OPTIONS+=	VERBOSE_DEBUG "Enable debug in LOGDIR/dspam.debug" off
 #OPTIONS+=	SAT "Log spam source addresses to syslog" on
 #OPTIONS+=	PARSE_TO_HEADERS "Get user from To header on fp spam" off
 OPTIONS+=	PREF_EXT "Preferences in database not in files" off
+
 ## algorithm options
 OPTIONS+=	GRAHAM_BAYES "Enable Graham (traditional) bayesian" on
 OPTIONS+=	BURTON_BAYES "Enable Burton (alternative) bayesian" on
@@ -36,18 +37,22 @@ OPTIONS+=	TEST_COND "More inoculous results rapidly, risk fps" on
 OPTIONS+=	NO_BIAS "No bias toward innocent mail" off
 OPTIONS+=	WHITELIST "Automatic whitelisting of ham" off
 OPTIONS+=	NEURAL_NET "Enable neural networking" off
+
 ## run-time configure  options
 #OPTIONS+=	HOMEDIR_DOT "Dot files in ~/USER not DSPAM_HOME" off
 OPTIONS+=	USER_HOMEDIR "Store user data in ~/.dspam" off
 #OPTIONS+=	OPT_IN "Run only for users with .dspam" off
 OPTIONS+=	TRUSTED_USERS "Disable trusted user security" off
+
 ## mesage taging options
 #OPTIONS+=	SPAM_SUBJ "Prepends SPAM to the Subject header" off
 #OPTIONS+=	SIGNATURE_HEADERS "Put signatures IDs ONLY in headers" off
 #OPTIONS+=	WEBMAIL "Only with mail stored server-side" off
+
 ## back-end
 OPTIONS+=	MYSQL40 "Use MySQL 4.0.x as back-end" off
 OPTIONS+=	MYSQL41 "Use MySQL 4.1.x as back-end" off
+OPTIONS+=	MYSQL50 "Use MySQL 5.0.x as back-end" off
 OPTIONS+=	MYSQL_COMPRESS "Compress dspam <--> MySQL" off
 OPTIONS+=	POSTGRESQL73 "Use PostgreSQL v.7.3 as back-end" off
 OPTIONS+=	POSTGRESQL74 "Use PostgreSQL v.7.4 as back-end" off
@@ -60,11 +65,13 @@ OPTIONS+=	LONG_USERNAMES "Usernames longer that OS supports" off
 OPTIONS+=	LARGE_SCALE "File structure for large scale" off
 OPTIONS+=	DOMAIN_SCALE "File structure for multiple domains" off
 #OPTIONS+=	SIGNATURE_ATACH "Put server-side signature in mails" off
+
 ## MTA and LDA
-OPTIONS+=	MAILDROP_LDA "Use Maildrop as local delivery agent" off
-OPTIONS+=	PROCMAIL_LDA "Use Procmail as local delivery agent" off
 OPTIONS+=	CYRUS21_LDA "Use Cyrus's 2.1 deliver as LDA" off
 OPTIONS+=	CYRUS22_LDA "Use Cyrus's 2.2 deliver as LDA" off
+OPTIONS+=	EXIM_LDA "Use Exim as local delivery agent" off
+OPTIONS+=	MAILDROP_LDA "Use Maildrop as local delivery agent" off
+OPTIONS+=	PROCMAIL_LDA "Use Procmail as local delivery agent" off
 OPTIONS+=	SENDMAIL_LDA "Use Sendmail as local delivery agent" off
 
 OPTIONS+=	SENDMAIL "Play nice with sendmail server" off
@@ -161,7 +168,7 @@ CONFIGURE_ARGS+=	--enable-verbose-debug
 #CONFIGURE_ARGS+=	--enable-parse-to-headers
 #.endif
 
-.if defined(PREF_EXT)
+.if defined(WITH_PREF_EXT)
 CONFIGURE_ARGS+=	--enable-preferences-extension
 .endif
 
@@ -243,7 +250,7 @@ CONFIGURE_ARGS+=	--disable-trusted-user-security
 #CONFIGURE_ARGS+=	--enable-webmail
 #.endif
 
-DBDRV_TOTAL_COUNT=	ooooooo # 7
+DBDRV_TOTAL_COUNT=	oooooooo # 8
 DBDRV_COUNT=	${DBDRV_TOTAL_COUNT}
 
 .if defined(WITH_MYSQL40)
@@ -252,9 +259,13 @@ WANT_MYSQL_VER=	40
 .elseif defined(WITH_MYSQL41)
 WANT_MYSQL_VER=	41
 #PKGNAMESUFFIX=	-mysql41
+.elseif defined(WITH_MYSQL50)
+WANT_MYSQL_VER=	50
+#PKGNAMESUFFIX=	-mysql50
 .endif
 
-.if defined(WITH_MYSQL40) || defined(WITH_MYSQL41)
+.if defined(WITH_MYSQL40) || defined(WITH_MYSQL41) || defined(WITH_MYSQL50)
+HAVE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-storage-driver=mysql_drv \
 		--with-mysql-includes=${LOCALBASE}/include/mysql \
 		--with-mysql-libraries=${LOCALBASE}/lib/mysql
@@ -314,7 +325,7 @@ CONFIGURE_ARGS+=	--with-storage-driver=ora_drv \
 DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 .endif
 
-.if defined(WITH_BDB)
+.if defined(WITH_BDB4)
 LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
 CONFIGURE_ARGS+=	--with-storage-driver=libdb4_drv \
 	--with-db4-includes=${LOCALBASE}/include/db41
@@ -330,7 +341,6 @@ DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 .endif
 
 .if ${DBDRV_TOTAL_COUNT}==${DBDRV_COUNT} || defined(WITH_SQLITE)
-# DBDRV_COUNT==!(defined(WITH_MYSQL) || defined(WITH_POSTGRESQL73) || defined(WITH_POSTGRESQL74) || defined(WITH_ORACLE) || defined(WITH_BDB))
 WITH_SQLITE=	on
 LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite
 CONFIGURE_ARGS+=	--with-storage-driver=sqlite_drv \
@@ -362,8 +372,38 @@ CONFIGURE_ARGS+=	--enable-domain-scale
 .endif
 
 # add one 'o' here for each new LDA
-LDA_TOTAL_COUNT=	oooooo	#6
+LDA_TOTAL_COUNT=	ooooooo	#7
 LDA_COUNT=	${LDA_TOTAL_COUNT}
+
+.if defined(WITH_CYRUS21_LDA)
+RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd2
+#CONFIGURE_ARGS+=\
+#--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver -e -r $${sender} -m $${extension} $${user} $$u'
+CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
+LDA_COUNT:=	${LDA_COUNT:S/o//}
+.endif
+
+.if defined(WITH_CYRUS22_LDA)
+RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd22
+#CONFIGURE_ARGS+=\
+#--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver -e -r $${sender} -m $${extension} $${user} $$u'
+CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
+LDA_COUNT:=	${LDA_COUNT:S/o//}
+.endif
+
+.if defined(WITH_EXIM_LDA)
+.	if defined(WITH_MYSQL40) || (WITH_MYSQL41)
+_EXIM_EXT=	-mysql
+.	elseif defined(WITH_POSTGRESQL74) || defined(WITH_POSTGRESQL73)
+####
+### fix me for pg 7.3: how to pass the db option to exim port ?
+###
+_EXIM_EXT=	-postgresql
+.	endif
+RUN_DEPENDS+=	exim:${PORTSDIR}/mail/exim${_EXIM_EXT}
+CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/sbin/exim'
+LDA_COUNT:=	${LDA_COUNT:S/o//}
+.endif
 
 .if defined(WITH_MAILDROP_LDA)
 RUN_DEPENDS+=	maildrop:${PORTSDIR}/mail/maildrop
@@ -388,22 +428,6 @@ CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/sbin/sendmail'
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/sbin/sendmail'
 LDA_COUNT:=	${LDA_COUNT:S/o//}
 .	endif
-.endif
-
-.if defined(WITH_CYRUS21_LDA)
-RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd2
-#CONFIGURE_ARGS+=\
-#--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver -e -r $${sender} -m $${extension} $${user} $$u'
-CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
-LDA_COUNT:=	${LDA_COUNT:S/o//}
-.endif
-
-.if defined(WITH_CYRUS22_LDA)
-RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd22
-#CONFIGURE_ARGS+=\
-#--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver -e -r $${sender} -m $${extension} $${user} $$u'
-CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
-LDA_COUNT:=	${LDA_COUNT:S/o//}
 .endif
 
 .if defined(WITH_SENDMAIL)
@@ -474,15 +498,23 @@ DOCS=	CHANGELOG LICENSE README README.FreeBSD README.courier README.exim \
 	RELEASE.NOTES
 
 pre-extract:
-BAD_OPT=	`${PKG_VERSION} -t ${_OPTIONS_READ} ${PKGNAME}`
-
-pre-patch:
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "******************************************************************"
 	@${ECHO_CMD} "Warning: If upgrading please proceed as stated in"
 	@${ECHO_CMD} "${FILESDIR}/UPDATING"
 	@${ECHO_CMD} "******************************************************************"
 	@${ECHO_CMD} ""
+.if defined(WITH_EXIM_LDA) && defined(WITH_POSTGRESQL73)
+	@${ECHO_CMD} "******************************************************************"
+	@${ECHO_CMD} "You have both EXIM_LDA and POSTGRESQL73 defined. To have exim"
+	@${ECHO_CMD} "built with the right pgsql please hit Ctrl-C now and do:"
+	@${ECHO_CMD} "cd ${PORTSDIR}/mail/exim-postgresql && make POSTGRESQL_PORT=postgresql73 install"
+	@${ECHO_CMD} "then return here and do:"
+	@${ECHO_CMD} "make clean && make install"
+	@${ECHO_CMD} "******************************************************************"
+	@${ECHO_CMD} ""
+.endif
+
 	@${ECHO_CMD} "Define vars below before make-ing if you need:"
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "SIGNATURE_LIFE (default 15)"
@@ -500,12 +532,14 @@ pre-patch:
 		@${ECHO_CMD} "installed in other place that this installation's default"
 		@${ECHO_CMD} "${PREFIX}/www/vhosts/dspam"
 .	endif
+	@${ECHO_CMD} ""
+	@sleep 5
+
 .for old_opt in MAILDROP PROCMAIL TRAD_BAYES ALT_BAYES WITH_SPAM_SUBJ \
 	USER_LOGGING SYSTEM_LOGGING WEBMAIL OPT_IN SAT PARSE_TO_HEADERS \
 	BROKEN_MTA BROKEN_ERR_CODES SIGNATURE_HEADERS SIGNATURE_ATACH \
 	HOMEDIR_DOT SIGNATURE_LIFE
-.	if defined(WITH_${old_opt}) || defined(WITHOUT_${old_opt}) || ${BAD_OPT}=='<'
-#.	if defined(CUCU)
+.	if defined(WITH_${old_opt}) || defined(WITHOUT_${old_opt})
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "******************************************************************"
 	@${ECHO_CMD} "******************************************************************"
@@ -551,16 +585,16 @@ pre-configure:
 	@${ECHO_CMD} "You can use one and only one database back-end at once."
 	@${FALSE}
 .endif
-.if defined(WITH_NEURAL_NET) && !(defined(WITH_MYSQL) || defined(WITH_POSTGRESQL73) || defined(WITH_POSTGRESQL74))
+.if defined(WITH_NEURAL_NET) && !(defined(HAVE_MYSQL) || defined(WITH_POSTGRESQL73) || defined(WITH_POSTGRESQL74))
 	@${ECHO_CMD} "You need MySQL or POSTGRESQL to use neural networking."
 	@${FALSE}
 .endif
-.if defined(WITH_VIRT_USERS) && !(defined(WITH_MYSQL) || \
+.if defined(WITH_VIRT_USERS) && !(defined(HAVE_MYSQL) || \
 	defined(WITH_POSTGRESQL73) || defined(WITH_POSTGRESQL74) || defined(WITH_ORACLE))
 	@${ECHO_CMD} "You need MySQL, POSTGRESQL or ORACLE for virtual users."
 	@${FALSE}
 .endif
-.if defined(WITH_PREF_EXT) && !( defined(WITH_MYSQL) || \
+.if defined(WITH_PREF_EXT) && !( defined(HAVE_MYSQL) || \
 	defined(WITH_POSTGRESQL73) || defined(WITH_POSTGRESQL74) )
 	@${ECHO_CMD} "You need MySQL or Postgres for preferences extension"
 	@${FALSE}
@@ -579,7 +613,7 @@ post-install:
 #	@${MKDIR} ${LOG_DIR}
 #	@${MKDIR} ${DSPAM_HOME}
 
-.if defined(WITH_MYSQL40) || defined(WITH_MYSQL41)
+.if defined(HAVE_MYSQL)
 	@${MKDIR} ${EXAMPLESDIR}/mysql
 	cd ${WRKSRC}/tools.mysql_drv && \
 		${INSTALL_DATA} README mysql_objects-space.sql \

@@ -11,6 +11,20 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 #############################################################################
+# dspam-3.2.3.20041203.1245
+#
+
+- now we support also MYSQL50 and we handle MYSQL cases right based on a 
+patch sent by Gea-Suan Lin <gslin@netnews.NCTU.edu.tw>
+- add support for exim as suggested by 
+Shahbaz Javeed <sjaveed@adderpit.com>; we try to build exim with the same
+database back-end if possible (still work to do to automate pg 7.3 case)
+- fix PREF_EXT and BDB4 cases as well in our Makefile (actually is 4.1 and 
+I'm thinking about dropping support for it since SQLite works a lot better if
+you don't want a full sql server; feedback welcome)
+- also small vendor bug-fixes (pgp signed mails, pgsql driver)
+
+#############################################################################
 #  dspam-3.2.3
 #
 
@@ -19,7 +33,6 @@ make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
  BUGFIX: Signature is not written to multipart blocks with no content type
  BUGFIX: dspam_dump for a particular token fails with MySQL 4.1
  BUGFIX: Bayesian Noise Reduction is never instantiated
-
 
 #############################################################################
 #  dspam-3.2.2.20041117.1515:
