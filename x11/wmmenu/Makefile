@@ -12,7 +12,8 @@ MASTER_SITES=	http://www.fcoutant.freesurf.fr/download/
 
 MAINTAINER=	karlj000@unbc.ca
 
-LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp:install
+LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp:install \
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
