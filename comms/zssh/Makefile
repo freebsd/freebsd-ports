@@ -9,7 +9,8 @@ PORTNAME=	zssh
 PORTVERSION=	1.5a
 PORTREVISION=	1
 CATEGORIES=	comms security
-MASTER_SITES=	http://prdownloads.sf.net/zssh/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	zssh
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
