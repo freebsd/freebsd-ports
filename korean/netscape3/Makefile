@@ -3,7 +3,7 @@
 # Date created:		6 Apr 1995
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.6 1998/11/21 20:10:55 steve Exp $
+# $Id: Makefile,v 1.7 1998/11/23 07:49:49 asami Exp $
 #
 
 DISTNAME=	netscape-3.04
@@ -23,7 +23,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 # This directory is hard-coded into the netscape binary
-LIBDIR=         /usr/local/lib/netscape
+LIBDIR=         ${PREFIX}/lib/netscape
 BINDIR=         ${PREFIX}/bin
 NLSDIR=         ${LIBDIR}/nls
 RESSUB=         ko_KR.EUC

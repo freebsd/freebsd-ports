@@ -3,7 +3,7 @@
 # Date created:		November 13, 1998
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.37 1999/04/14 00:03:06 scrappy Exp $
+# $Id: Makefile,v 1.38 1999/04/20 20:32:53 mharo Exp $
 #
 
 DISTNAME=	postgresql-6.4.2
@@ -35,8 +35,8 @@ HAS_CONFIGURE=	YES
 CONFIGURE_ARGS= --prefix=${PREFIX}/pgsql \
 		--enable-locale \
 		--with-template=`uname -s | ${TR} '[A-Z]' '[a-z]'` \
-		--with-includes="/usr/local/include ${TCL_INCDIR} ${TK_INCDIR}" ${WITH_TCL} \
-		--with-libraries=/usr/local/lib
+		--with-includes="${PREFIX}/include ${TCL_INCDIR} ${TK_INCDIR}" ${WITH_TCL} \
+		--with-libraries=${PREFIX}/lib
 
 INSTALL_TARGET= install install-man
 
