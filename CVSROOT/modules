@@ -6781,6 +6781,7 @@ ruby-qt2xml	ports/textproc/ruby-qt2xml
 ruby-quota	ports/sysutils/ruby-quota
 ruby-racc	ports/devel/ruby-racc
 ruby-rbison	ports/devel/ruby-rbison
+ruby-rbtree	ports/devel/ruby-rbtree
 ruby-rd-mode.el	ports/textproc/ruby-rd-mode.el
 ruby-rdbc1	ports/databases/ruby-rdbc1
 ruby-rdoc	ports/textproc/ruby-rdoc
