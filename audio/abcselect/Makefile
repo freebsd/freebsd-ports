@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.lautengesellschaft.de/cdmm/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	sue@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extract parts, movements, etc from abc music files
 
 USE_PERL5=	yes

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	palm comms tk83
 MASTER_SITES=	http://www.pilot-link.org/source/
 
-MAINTAINER=	dima@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PalmPilot communications utilities (backup/restore/install/debug/...)
 
 LIB_DEPENDS=	tk83:${PORTSDIR}/x11-toolkits/tk83 \

@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.rahul.net/pub2/rhn/www/files/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	msmith@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Bywater Basic interpreter
 
 GNU_CONFIGURE=	yes

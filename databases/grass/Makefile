@@ -14,7 +14,7 @@ MASTER_SITES=	http://grass.itc.it/grass5/source/ \
 		ftp://grass.baylor.edu/pub/grass/grass5/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
-MAINTAINER=	reg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source Geographical Information System (GIS)
 
 POSTGRESQL_PORT?=	databases/postgresql7
