@@ -1,0 +1,15 @@
+bin/psiconv
+include/psiconv/buffer.h
+include/psiconv/common.h
+include/psiconv/data.h
+include/psiconv/error.h
+include/psiconv/general.h
+include/psiconv/generate.h
+include/psiconv/generate_routines.h
+include/psiconv/list.h
+include/psiconv/parse.h
+include/psiconv/parse_routines.h
+lib/libpsiconv.a
+lib/libpsiconv.so
+lib/libpsiconv.so.7
+@dirrm include/psiconv
