@@ -1,12 +1,11 @@
---- man/Makefile	Sat Mar 28 15:18:44 1998
-+++ man/Makefile	Tue Mar 31 00:36:53 1998
-@@ -12,7 +12,9 @@
+--- man/Makefile	Mon Jan 15 20:13:00 2001
++++ man/Makefile	Wed Jan 24 11:58:56 2001
+@@ -17,7 +17,7 @@
  CFLAGS+= -I${LIBDESTDIR}
  DPADD=	${LIBMAN}
  LDADD=	${LIBMAN}
-+.if exists(/usr/lib/libxpg4.a)
+-.if exists(/usr/lib/libxpg4.a)
++.if ${OSVERSION} < 400020
  LDADD+= -L/usr/lib -lxpg4
-+.endif
+ .endif
  
- .if exists(${.OBJDIR})
- MAN1=	${.OBJDIR}/jman.1

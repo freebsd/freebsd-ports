@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	man
-PORTVERSION=	1.1h
-PORTREVISION=	1
+PORTVERSION=	1.1i
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://daemon.jp.freebsd.org/pub/FreeBSD-jp/man-jp/ \
 		${MASTER_SITE_PORTS_JP}
