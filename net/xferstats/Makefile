@@ -3,10 +3,10 @@
 # Date created:         19 February 1999
 # Whom:                 Dima Sivachenko
 #
-# $Id: Makefile,v 1.1.1.1 1999/02/22 22:45:12 billf Exp $
+# $Id: Makefile,v 1.2 1999/03/02 01:53:46 steve Exp $
 #
 
-DISTNAME=	xferstats-2.13
+DISTNAME=	xferstats-2.14
 CATEGORIES=	net
 MASTER_SITES=	http://xferstats.off.net/download/xferstats-2.00/ \
 		ftp://xferstats.off.net/pub/xferstats/xferstats-2.00/ \
