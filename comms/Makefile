@@ -48,6 +48,7 @@
     SUBDIR += mlan3
     SUBDIR += mserver
     SUBDIR += mwavem
+    SUBDIR += nokryptia
     SUBDIR += obexapp
     SUBDIR += openobex
     SUBDIR += p5-Device-Modem
