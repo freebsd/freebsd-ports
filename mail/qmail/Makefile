@@ -3,7 +3,7 @@
 # Date created:		25 May 1998
 # Whom:			Mario S F Ferreira <lioux@gns.com.br> et al.
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/18 19:59:54 hoek Exp $
+# $Id: Makefile,v 1.2 1998/07/18 20:10:35 hoek Exp $
 #
 
 DISTNAME=	qmail-1.03
