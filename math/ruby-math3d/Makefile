@@ -15,6 +15,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby library for mathematics for 3D graphics
 
+BROKEN=		Does not compile
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
