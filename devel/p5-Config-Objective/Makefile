@@ -1,6 +1,6 @@
 # New ports collection makefile for:    Config-Objective
 # Date created:                         Mon Feb 16 15:50:34 CST 2004
-# Whom:                                 Jim Pirzyk <pirzyk@freebsd.org>
+# Whom:                                 Jim Pirzyk <pirzyk@uiuc.edu>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Config
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pirzyk@freebsd.org
+MAINTAINER=	pirzyk@uiuc.edu
 COMMENT=	Configuration data as perl objects
 
 BUILD_DEPENDS=	${SITE_PERL}/Parse/Yapp.pm:${PORTSDIR}/devel/p5-Parse-Yapp \
