@@ -1,0 +1,13 @@
+bin/Eterm
+bin/dorand
+bin/random_pixmap.sh
+man/man1/Eterm.1.gz
+share/Eterm/Eterm.help
+share/Eterm/Eterm.ref
+share/Eterm/Eterm.ti
+share/Eterm/Eterm.tcap
+share/Eterm/FAQ
+share/Eterm/RELNOTES.Eterm
+share/Eterm/MAIN.dist
+share/Eterm/colortest.sh
+share/Eterm/menu.sh
