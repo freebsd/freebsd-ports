@@ -6540,7 +6540,6 @@ py-PySQLite	ports/databases/py-PySQLite
 py-SQLDict	ports/databases/py-SQLDict
 py-adns		ports/net/py-adns
 py-albatross	ports/www/py-albatross
-py-amkCrypto	ports/security/py-amkCrypto
 py-ansistyle	ports/devel/py-ansistyle
 py-anygui	ports/x11-toolkits/py-anygui
 py-ao		ports/audio/py-ao
