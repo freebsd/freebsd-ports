@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	honeyd
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/
 
-MAINTAINER=	dominc_marks@btinternet.com
+MAINTAINER=	dominic_marks@btinternet.com
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
 		${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libdnet=${PREFIX} \
-		--with-libevent=${PREFIX} \
+CONFIGURE_ARGS=	--with-libdnet=${LOCALBASE} \
+		--with-libevent=${LOCALBASE} \
 		--with-pcap
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN8=		honeyd.8
