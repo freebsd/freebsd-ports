@@ -1,6 +1,4 @@
-This message announces the availability of Scheme release scm4e1.
-
-Scm conforms to Revised^4 Report on the Algorithmic Language Scheme
+Scm conforms to Revised^5 Report on the Algorithmic Language Scheme
 and the IEEE P1178 specification.  Scm is written in C and runs under
 Amiga, Atari-ST, MacOS, MS-DOS, OS/2, NOS/VE, Unicos, VMS, Unix and
 similar systems.  ASCII and EBCDIC are supported.
@@ -16,11 +14,11 @@ SLIB-PSD is a portable debugger for Scheme (requires emacs editor).
 -------------------Readme.FreeBSD------------------------
 
 1.  Pathname dependencies:
-	The init file is hardcoded as /usr/local/lib/scm/Init.scm.
+	The init file is hardcoded as /usr/local/libdata/scm/Init.scm.
 	Alternatively, one can set the environment variable SCM_INIT_PATH to
 	the pathname of Init.scm.
 
-	The library files are in /usr/local/lib/slib.  Alternatively,
+	The library files are in /usr/local/libdata/slib.  Alternatively,
 	one can set the environment variable SCHEME_LIBRARY_PATH to
 	the slib directory.  Remember to use a trailing / on the
 	pathname.
