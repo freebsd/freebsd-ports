@@ -24,10 +24,6 @@ NO_CDROM=	'contains commercial character data'
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/xhime
 	${INSTALL_MAN} ${WRKSRC}/xhime-man.euc \
