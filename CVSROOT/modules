@@ -5615,6 +5615,7 @@ outguess	ports/security/outguess
 p-interp	ports/emulators/p-interp
 p0f		ports/net/p0f
 p2c		ports/lang/p2c
+p3scan		ports/mail/p3scan
 p4.el		ports/devel/p4.el
 p4api		ports/devel/p4api
 p4db		ports/devel/p4db
