@@ -232,8 +232,6 @@ nntpcache-*		ports/news/nntpcache	Commercial or government use
 nte-1.*			ports/mbone/nte		Crypto; export-controlled
 ORBacus			ports/devel/ORBacus	non commercial use only.
 openssl-*		ports/security/openssl	Crypto; export/import-controlled
-opera-*			ports/www/opera		No redistribution, commercial
-						software
 otojiro*.txt		ports/japanese/otojiro-fpw The original dictionary is not free
 Crypt-*			ports/security/p5-Crypt-*	Crypto; export-controlled
 perforce-*		ports/devel/perforce	Restricted distribution
