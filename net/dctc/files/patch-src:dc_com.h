@@ -1,5 +1,5 @@
---- src/dc_com.h.orig	Wed Nov 21 22:15:21 2001
-+++ src/dc_com.h	Wed Nov 21 22:15:32 2001
+--- src/dc_com.h	Sat Oct 20 03:32:19 2001
++++ src/dc_com.h	Sun Dec  2 19:34:12 2001
 @@ -21,6 +21,8 @@
  #ifndef __DC_COM_H__
  #define __DC_COM_H__

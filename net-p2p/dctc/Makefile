@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.60
+PORTVERSION=	0.61
 CATEGORIES=	net
 MASTER_SITES=	http://ac2i.tzo.com/dctc/
-DISTNAME=	${PORTNAME}_v${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
@@ -34,6 +34,7 @@ post-patch:
 	@${PERL} -pi -e 's/(CK?\(std)(out\))/\1_\2/' ${BUILD_WRKSRC}/*
 
 do-configure:
+	@${CP} ${FILESDIR}/config.h ${BUILD_WRKSRC}
 	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} depend
 
 do-install:
