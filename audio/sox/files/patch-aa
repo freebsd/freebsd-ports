@@ -1,6 +1,5 @@
-diff -c -r sbdsp.c.orig sbdsp.c
-*** sbdsp.c.orig	Mon Jul 26 21:58:00 1993
---- sbdsp.c	Mon Oct 17 16:07:59 1994
+*** sbdsp.c.orig	Mon Jul 26 12:58:00 1993
+--- sbdsp.c	Mon Oct 31 18:26:56 1994
 ***************
 *** 21,27 ****
   #include <i386/isa/sblast.h>
@@ -60,34 +59,3 @@ diff -c -r sbdsp.c.orig sbdsp.c
   #else
   	ioctl(fileno(ft->fp), DSP_IOCTL_VOICE, 1);
   	ioctl(fileno(ft->fp), DSP_IOCTL_SPEED, ft->info.rate);
-diff -c -r st.h.orig st.h
-*** st.h.orig	Mon Jul 26 21:58:00 1993
---- st.h	Mon Oct 17 16:19:26 1994
-***************
-*** 34,39 ****
---- 34,43 ----
-  #include "amiga.h"
-  #endif /* AMIGA */
-  
-+ #ifdef bsd
-+ #include <sys/param.h>
-+ #endif
-+ 
-  /*
-   * Handler structure for each format.
-   */
-***************
-*** 211,218 ****
---- 215,226 ----
-  #if defined(i386) || !defined(__STDC__)
-  /* usually be a const in stdlib.h ?? */
-  /* this is turning out to be a headache */
-+ 
-+ #if BSD < 199306
-  extern char *sys_errlist[];
-  #define strerror(errno)	sys_errlist[errno]
-+ #endif
-+ 
-  #endif
-  #endif
-  
