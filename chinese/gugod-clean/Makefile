@@ -6,7 +6,8 @@
 PORTNAME=	gugod-clean
 PORTVERSION=	1.1
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/clive/
+MASTER_SITES=	ftp://gugod.org/pub/X/ \
+		ftp://freebsd.sinica.edu.tw/pub/clive/
 
 MAINTAINER=	gugod@gugod.org
 
