@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant \
 		${LOCALBASE}/share/java/classes/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang
 
 USE_JAVA=	1.2+
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 ANT?=		${LOCALBASE}/bin/ant
@@ -29,21 +29,22 @@ ANT_TARGET=	jar javadoc -Dnoget -verbose
 .endif
 JAVASHAREDIR=	${PREFIX}/share/java
 JARDIR=		${JAVASHAREDIR}/classes
-JARFILE=	${PORTNAME}.jar
+JARFILE=	${PORTNAME}-${PORTVERSION}-beta-2-dev.jar
+DESTJARFILE=	${PORTNAME}.jar
 
 do-build:
 	@${MKDIR} ${WRKSRC}/lib
 	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
 
 do-install:
-	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${JARFILE}..."
-	@${CP} ${WRKSRC}/dist/${JARFILE} ${JARDIR}/
+	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${DESTJARFILE}..."
+	@${CP} ${WRKSRC}/target/${JARFILE} ${JARDIR}/${DESTJARFILE}
 	@${ECHO} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
 	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
 	${MKDIR} ${DOCSDIR}
-	${CP} -r ${WRKSRC}/dist/docs/api/* ${DOCSDIR}
+	${CP} -r ${WRKSRC}/target/docs/apidocs/* ${DOCSDIR}
 	@${ECHO} " [ DONE ]"
 .endif
 
