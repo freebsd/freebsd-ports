@@ -17,7 +17,7 @@ MAINTAINER=	kde@FreeBSD.org
 BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
 		automake14:${PORTSDIR}/devel/automake14 \
 		objprelink:${PORTSDIR}/devel/objprelink
-LIB_DEPENDS=	pisock:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS=	pisock.4:${PORTSDIR}/palm/pilot-link
 
 USE_KDELIBS_VER=2
 USE_BISON=	yes
