@@ -7,6 +7,7 @@
 
 PORTNAME=	pari
 PORTVERSION=	2.0.20b
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://www.gn-50uma.de/gn/gn-50uma.de/pari-2.0/
 DISTNAME=	pari-2.0.20.beta
