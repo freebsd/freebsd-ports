@@ -1,7 +1,9 @@
 bin/chicken
 bin/chicken-config
+bin/chicken-static
 bin/csc
 bin/csi
+bin/csi-static
 bin/scheme-chicken
 bin/scheme-chicken-hygienic
 bin/scheme-ieee-1178-1990
