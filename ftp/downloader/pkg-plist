@@ -30,9 +30,11 @@ share/locale/id/LC_MESSAGES/nt.mo
 share/locale/it/LC_MESSAGES/nt.mo
 share/locale/iw/LC_MESSAGES/nt.mo
 share/locale/ja/LC_MESSAGES/nt.mo
+share/locale/ko/LC_MESSAGES/nt.mo
 share/locale/nl/LC_MESSAGES/nt.mo
 share/locale/pl/LC_MESSAGES/nt.mo
 share/locale/pt_BR/LC_MESSAGES/nt.mo
 share/locale/ru/LC_MESSAGES/nt.mo
+share/locale/sk/LC_MESSAGES/nt.mo
 share/locale/zh_CN.GBK/LC_MESSAGES/nt.mo
 @dirrm share/doc/downloader

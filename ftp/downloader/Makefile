@@ -7,23 +7,25 @@
 
 PORTNAME=	downloader
 PORTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
 		ftp://ftp.server51.freshmeat.net/pub/d4x/ \
 		ftp://ftp.chg.ru/pub/X11/applications/Xdownloader/
-DISTNAME=	nt-1.20
+DISTNAME=	nt-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+WRKSRC=		${WRKDIR}/${DISTNAME}/main
 
 USE_GTK=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/main
-MAKE_ENV=	MSGFMT_CMD="${LOCALBASE}/bin/msgfmt"
+MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" DEST="${PREFIX}" \
+		GTKCONFIG="${GTK_CONFIG}" MAKE="${GMAKE}" \
+		MSGFMT_CMD="${LOCALBASE}/bin/msgfmt"
 MAN1=		nt.1
 
-D4X_DOC=	ChangeLog FAQ FAQ.de FAQ.es FAQ.fr FAQ.gr LICENSE     \
+PORTDOCS=	ChangeLog FAQ FAQ.de FAQ.es FAQ.fr FAQ.gr LICENSE     \
 		NAMES PLANS README README.de README.es README.gr      \
 		README.pl README.pt_BR README.ru THANKS TODO TROUBLES
 
@@ -31,7 +33,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/../nt.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/downloader
-.for file in ${D4X_DOC}
+.for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/../${file} ${PREFIX}/share/doc/downloader
 .endfor
 .endif
