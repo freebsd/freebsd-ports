@@ -121,6 +121,7 @@
     SUBDIR += pp
     SUBDIR += ptkei
     SUBDIR += pysol
+    SUBDIR += pythoong
     SUBDIR += qcc
     SUBDIR += qix
     SUBDIR += qstat
