@@ -7115,6 +7115,7 @@ spambnc		ports/mail/spambnc
 spamcalc	ports/misc/spamcalc
 spamoracle	ports/mail/spamoracle
 spamprobe	ports/mail/spamprobe
+spamstats	ports/mail/spamstats
 spar		ports/math/spar
 sparc-rtems-binutils	ports/devel/sparc-rtems-binutils
 sparc-rtems-g77	ports/devel/sparc-rtems-g77
