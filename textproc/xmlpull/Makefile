@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.xmlpull.org/v1/download/
 DISTNAME=	${DISTNAME_PREFX}_src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
+MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Common API for XML Pull Parsing (XmlPull)
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant

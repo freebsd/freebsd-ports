@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.exslt.org/
 DISTNAME=	all-${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
+MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Community initiative extensions to XSLT
 
 USE_ZIP=	yes
