@@ -357,6 +357,7 @@
     SUBDIR += squirrelmail
     SUBDIR += srd-fpw
     SUBDIR += srd-fpw-package
+    SUBDIR += stardict2-dict-ja
     SUBDIR += t2ps
     SUBDIR += tcl76
     SUBDIR += tcl80
