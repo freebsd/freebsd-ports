@@ -1,5 +1,5 @@
 --- Makefile.tmpl.orig	Sun Oct  7 02:01:09 2001
-+++ Makefile.tmpl	Wed Oct 17 06:50:16 2001
++++ Makefile.tmpl	Sun Oct 21 23:17:01 2001
 @@ -270,10 +270,12 @@
  	$(MKDIR) $(root)$(mandir)/man1
  	$(MKDIR) $(root)$(mandir)/man8
@@ -71,7 +71,7 @@
  	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
  	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
  	(cd $(root)$(iconsdir)/ && $(TAR) -xf -); \
-@@ -522,10 +531,10 @@
+@@ -522,14 +531,14 @@
  			-e 's;logs/accept\.lock;$(runtimedir)/$(TARGET).lock;' \
  			-e 's;logs/apache_runtime_status;$(runtimedir)/$(TARGET).scoreboard;' \
  			-e 's;logs/httpd\.pid;$(runtimedir)/$(TARGET).pid;' \
@@ -86,3 +86,8 @@
  			-e 's;conf/magic;$(sysconfdir)/magic;' \
  			-e 's;conf/mime\.types;$(sysconfdir)/mime.types;' \
  			-e 's;User nobody;User $(conf_user);' \
+-			-e 's;Group #-1;Group $(conf_group);' \
++			-e 's;Group "#-1";Group $(conf_group);' \
+ 			-e 's;Port 80;Port $(conf_port);' \
+ 			-e 's;ServerAdmin you@your.address;ServerAdmin $(conf_serveradmin);' \
+ 			-e 's;ServerName new.host.name;ServerName $(conf_servername);' \
