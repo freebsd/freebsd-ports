@@ -1,0 +1,21 @@
+bin/peak-config
+include/peak/alloc.h
+include/peak/atomic.h
+include/peak/db.h
+include/peak/dict.h
+include/peak/garbage.h
+include/peak/mem_pool.h
+include/peak/peak.h
+include/peak/runtime.h
+include/peak/signal.h
+include/peak/stdint.h
+include/peak/stream.h
+include/peak/task.h
+include/peak/time.h
+include/peak/timer.h
+include/peak/tz.h
+include/peak/version.h
+@dirrm include/peak
+lib/libpeak.a
+lib/libpeak.so
+lib/libpeak.so.1

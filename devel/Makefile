@@ -462,6 +462,7 @@
     SUBDIR += libowfat
     SUBDIR += libpci
     SUBDIR += libpdel
+    SUBDIR += libpeak
     SUBDIR += libpreps
     SUBDIR += libpreps-devel
     SUBDIR += libredblack
