@@ -23,14 +23,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
+USE_GCC=	2.95
 
 pre-configure:
-	@echo "CPPFLAGS=${CPPFLAGS} CXXFLAGS=${CXXFLAGS}"
+	@${ECHO_MSG} "CPPFLAGS=${CPPFLAGS} CXXFLAGS=${CXXFLAGS}"
 
-.include <bsd.port.post.mk>
+post-install:
+	@${RM} -f ${PREFIX}/lib/libeasysoap.la
+
+.include <bsd.port.mk>
