@@ -215,6 +215,7 @@
     SUBDIR += mod_gzip
     SUBDIR += mod_hosts_access
     SUBDIR += mod_index_rss
+    SUBDIR += mod_injection
     SUBDIR += mod_jk
     SUBDIR += mod_jk2
     SUBDIR += mod_layout
