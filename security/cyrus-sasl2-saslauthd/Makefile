@@ -59,14 +59,15 @@ CONFIGURE_ARGS+=--with-dblib=ndbm
 .endif
 
 .if defined(WITH_OPENLDAP_VER)
-.if ${WITH_OPENLDAP_VER} == 20 || ${WITH_OPENLDAP_VER} == 21 || \
-    ${WITH_OPENLDAP_VER} == 22
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap${WITH_OPENLDAP_VER}-client
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap${WITH_OPENLDAP_VER}-client
-CONFIGURE_ARGS+=--with-ldap=${PREFIX}
-.else
-BROKEN=		"WITH_OPENLDAP_VER must be 20, 21 or 22"
+WITH_OPENLDAP=		yes
+WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
+.if defined(WITH_OPENLDAP)
+.if defined(WANT_OPENLDAP_VER) && ${WANT_OPENLDAP_VER} == 12
+BROKEN=		"this port requires OpenLDAP >= 2.0"
+.endif
+USE_OPENLDAP=	yes
+CONFIGURE_ARGS+=--with-ldap=${PREFIX}
 .endif
 
 .if !defined(WITHOUT_GSSAPI) && defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a)
