@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ResourcePool-Resource-DBI
-PORTVERSION=	1.0100
+PORTVERSION=	1.0101
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.fatalmind.com/projects/ResourcePool/
