@@ -1,0 +1,23 @@
+
+*******************************************************************************
+
+Please set the environment variable FL_FONT_PATH to the directory where your
+TrueType fonts are installed. If you do not set this variable, Open Inventor(TM)
+will use %%PREFIX%%/lib/X11/fonts/TTF as default.
+
+Openi Inventor (TM) needs the following TrueType fonts:
+
+    - Times-Roman
+    - Helvetica
+    - Utopia-Regular
+
+You should make symbolic links of the TrueType fonts to the OpenInventor (TM)
+font names if they are not available:
+
+    # cd %%PREFIX%%/lib/X11/fonts/TTF
+    # ln -s times.ttf Times-Roman
+    # ln -s arial.ttf Helvetica
+    # ln -s cour.ttf Utopia-Regular
+
+*******************************************************************************
+
