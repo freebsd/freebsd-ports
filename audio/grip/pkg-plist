@@ -1,8 +1,12 @@
+@comment grip-files
 bin/grip
 share/gnome/apps/Multimedia/grip.desktop
 share/locale/de/LC_MESSAGES/grip.mo
 share/locale/fr/LC_MESSAGES/grip.mo
+share/locale/ja/LC_MESSAGES/grip.mo
+share/locale/zh_CN/LC_MESSAGES/grip.mo
 share/pixmaps/gripicon.png
+@comment grip-doc-files
 %%PORTDOCS%%share/gnome/help/grip/C/acknowledge.html
 %%PORTDOCS%%share/gnome/help/grip/C/bugs.html
 %%PORTDOCS%%share/gnome/help/grip/C/cdconfig.png
@@ -71,6 +75,7 @@ share/pixmaps/gripicon.png
 %%PORTDOCS%%share/gnome/help/grip/C/trkedit.png
 %%PORTDOCS%%share/gnome/help/grip/C/volume.png
 %%PORTDOCS%%share/gnome/help/grip/C/x131.html
+@comment grip-doc-dirs
 %%PORTDOCS%%@dirrm share/gnome/help/grip/C/images
 %%PORTDOCS%%@dirrm share/gnome/help/grip/C
 %%PORTDOCS%%@dirrm share/gnome/help/grip
