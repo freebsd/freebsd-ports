@@ -19,7 +19,7 @@ RUN_DEPENDS=	bspatch:${PORTSDIR}/misc/bsdiff		\
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 491101 || (${OSVERSION} > 499999 && ${OSVERSION} < 502114)
+.if ${OSVERSION} < 491101 || ( ${OSVERSION} > 499999 && ${OSVERSION} < 502114 )
 RUN_DEPENDS+=	sha1:${PORTSDIR}/sysutils/freebsd-sha1
 .endif
 

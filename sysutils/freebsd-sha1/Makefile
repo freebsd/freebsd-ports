@@ -23,7 +23,7 @@ PLIST_FILES=	sbin/sha1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 502113 || (${OSVERSION} > 491100 && ${OSVERSION} < 500000)
+.if ${OSVERSION} > 502113 || ( ${OSVERSION} > 491100 && ${OSVERSION} < 500000 )
 IGNORE=		"sha1 now contained in the base system"
 .endif
 
