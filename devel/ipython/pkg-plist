@@ -93,9 +93,6 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/iplib.py
 %%PYTHON_SITELIBDIR%%/IPython/iplib.pyc
 %%PYTHON_SITELIBDIR%%/IPython/iplib.pyo
-%%PYTHON_SITELIBDIR%%/IPython/iplib_ori.py
-%%PYTHON_SITELIBDIR%%/IPython/iplib_ori.pyc
-%%PYTHON_SITELIBDIR%%/IPython/iplib_ori.pyo
 %%PYTHON_SITELIBDIR%%/IPython/ipmaker.py
 %%PYTHON_SITELIBDIR%%/IPython/ipmaker.pyc
 %%PYTHON_SITELIBDIR%%/IPython/ipmaker.pyo
@@ -108,41 +105,42 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/usage.py
 %%PYTHON_SITELIBDIR%%/IPython/usage.pyc
 %%PYTHON_SITELIBDIR%%/IPython/usage.pyo
-share/doc/IPython/COPYING
-share/doc/IPython/GNU-LGPL
-share/doc/IPython/NEWS
-share/doc/IPython/README.txt
-share/doc/IPython/README_Windows.txt
-share/doc/IPython/examples/example-embed-short.py
-share/doc/IPython/examples/example-embed.py
-share/doc/IPython/examples/example-gnuplot.py
-share/doc/IPython/examples/example-magic.py
-share/doc/IPython/manual.pdf
-share/doc/IPython/manual/footnode.html
-share/doc/IPython/manual/index.html
-share/doc/IPython/manual/manual.css
-share/doc/IPython/manual/manual.html
-share/doc/IPython/manual/node1.html
-share/doc/IPython/manual/node10.html
-share/doc/IPython/manual/node11.html
-share/doc/IPython/manual/node12.html
-share/doc/IPython/manual/node13.html
-share/doc/IPython/manual/node14.html
-share/doc/IPython/manual/node15.html
-share/doc/IPython/manual/node16.html
-share/doc/IPython/manual/node2.html
-share/doc/IPython/manual/node3.html
-share/doc/IPython/manual/node4.html
-share/doc/IPython/manual/node5.html
-share/doc/IPython/manual/node6.html
-share/doc/IPython/manual/node7.html
-share/doc/IPython/manual/node8.html
-share/doc/IPython/manual/node9.html
-share/doc/IPython/new_design.pdf
-share/doc/IPython/pycon.ico
-@dirrm share/doc/IPython/manual
-@dirrm share/doc/IPython/examples
-@dirrm share/doc/IPython
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/GNU-LGPL
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README.txt
+%%DOCSDIR%%/README_Windows.txt
+%%DOCSDIR%%/examples/example-embed-short.py
+%%DOCSDIR%%/examples/example-embed.py
+%%DOCSDIR%%/examples/example-gnuplot.py
+%%DOCSDIR%%/examples/example-magic.py
+%%DOCSDIR%%/examples/magic_grepl.py
+%%DOCSDIR%%/manual.pdf
+%%DOCSDIR%%/manual/footnode.html
+%%DOCSDIR%%/manual/index.html
+%%DOCSDIR%%/manual/manual.css
+%%DOCSDIR%%/manual/manual.html
+%%DOCSDIR%%/manual/node1.html
+%%DOCSDIR%%/manual/node10.html
+%%DOCSDIR%%/manual/node11.html
+%%DOCSDIR%%/manual/node12.html
+%%DOCSDIR%%/manual/node13.html
+%%DOCSDIR%%/manual/node14.html
+%%DOCSDIR%%/manual/node15.html
+%%DOCSDIR%%/manual/node16.html
+%%DOCSDIR%%/manual/node2.html
+%%DOCSDIR%%/manual/node3.html
+%%DOCSDIR%%/manual/node4.html
+%%DOCSDIR%%/manual/node5.html
+%%DOCSDIR%%/manual/node6.html
+%%DOCSDIR%%/manual/node7.html
+%%DOCSDIR%%/manual/node8.html
+%%DOCSDIR%%/manual/node9.html
+%%DOCSDIR%%/new_design.pdf
+%%DOCSDIR%%/pycon.ico
+@dirrm %%DOCSDIR%%/manual
+@dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/UserConfig
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/Extensions
 @dirrm %%PYTHON_SITELIBDIR%%/IPython
