@@ -7,8 +7,11 @@
 
 MAINTAINER=	kiri@FreeBSD.org
 
+# Mew major version
+MEW_MAJOR_VER=	2
+
 # This is a slave port.
-MASTERDIR=	${.CURDIR}/../mew
+MASTERDIR=	${.CURDIR}/../mew${MEW_MAJOR_VER}-emacs20
 
 # set emacs port
 EMACS_PORT_NAME=	xemacs21
@@ -28,8 +31,8 @@ ALL_TARGET=	package info
 INSTALL_TARGET=	install-package
 
 # for xemacs package
-XEMACS_PKGNAME=	mew
-XEMACS_PKGVER=	1.16
-MEW_DOCDIR=	${EMACS_PACKAGESDIR}/etc/${XEMACS_PKGNAME}
+XEMACS_PKGNAME=	mew${MEW_MAJOR_VER}
+XEMACS_PKGVER=	2.00
+#MEW_DOCDIR=	${EMACS_PACKAGESDIR}/etc/${XEMACS_PKGNAME}
 
 .include "${MASTERDIR}/Makefile"
