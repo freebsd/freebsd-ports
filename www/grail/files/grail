@@ -1,0 +1,2 @@
+#!/bin/sh
+exec python %%PREFIX%%/lib/grail/grail.py ${1+"$@"}
