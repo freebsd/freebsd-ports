@@ -15,7 +15,7 @@ DISTFILES=	${M17N_DISTFILE}:m17n \
 		${GLIBC_DISTFILE}:glibc
 EXTRACT_ONLY=	${M17N_DISTFILE}
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data files for the m17n library
 
 GNU_CONFIGURE=	yes

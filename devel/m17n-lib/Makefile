@@ -10,7 +10,7 @@ PORTVERSION=	1.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib/download/
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for the multilingual text handling
 
 LIB_DEPENDS=	fribidi.0:${PORTSDIR}/converters/fribidi \

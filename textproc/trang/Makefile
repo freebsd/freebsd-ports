@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.thaiopensource.com/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
-MAINTAINER=	fuyuki@nigredo.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-format schema converter based on RELAX NG
 
 USE_ZIP=	yes

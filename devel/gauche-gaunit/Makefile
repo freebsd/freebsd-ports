@@ -10,7 +10,7 @@ CATEGORIES=	devel scheme
 MASTER_SITES=	http://www.cozmixng.org/~kou/download/
 PKGNAMEPREFIX=	gauche-
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An unit testing framework in Gauche
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 		http://qdbm.sourceforge.net/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick Database Manager
 
 GNU_CONFIGURE=	yes

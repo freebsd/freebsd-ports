@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.el
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced support for editing and running Scheme code
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget

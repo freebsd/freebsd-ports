@@ -14,7 +14,7 @@ MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/ \
 DISTFILES=	slib2d5${EXTRACT_SUFX}:old \
 		slib${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	fuyuki@nigredo.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable scheme library
 
 USE_REINPLACE=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp-sop.inria.fr/mimosa/fp/Skribe/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	fuyuki@nigredo.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A highly programmable document processing system
 
 BUILD_DEPENDS=	bigloo:${PORTSDIR}/lang/bigloo

@@ -12,7 +12,7 @@ MASTER_SITES=	# empty
 PKGNAMESUFFIX=	-gauche
 DISTFILES=	# empty
 
-MAINTAINER=	fuyuki@nigredo.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SLIB installation for Gauche
 
 BUILD_DEPENDS=	${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib \

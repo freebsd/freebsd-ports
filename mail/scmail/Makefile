@@ -10,7 +10,7 @@ PORTVERSION=	1.3
 CATEGORIES=	mail
 MASTER_SITES=	http://namazu.org/~satoru/scmail/
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mail filter written in Scheme
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche

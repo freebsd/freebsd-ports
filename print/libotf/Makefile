@@ -10,7 +10,7 @@ PORTVERSION=	0.9.2
 CATEGORIES=	print devel
 MASTER_SITES=	http://tsukuba.m17n.org/libotf/
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for handling OpenType fonts
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
