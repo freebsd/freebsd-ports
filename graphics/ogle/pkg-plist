@@ -7,7 +7,7 @@ include/ogle/msgevents.h
 lib/ogle/libdvdcontrol.a
 lib/ogle/libdvdcontrol.la
 lib/ogle/libdvdcontrol.so
-lib/ogle/libdvdcontrol.so.6
+lib/ogle/libdvdcontrol.so.7
 lib/ogle/libmsgevents.a
 lib/ogle/libmsgevents.la
 lib/ogle/libmsgevents.so
