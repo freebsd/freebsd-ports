@@ -32,6 +32,63 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="93d6162f-1153-11d9-bc4a-000c41e2cdad">
+    <topic>mozilla -- multiple heap buffer overflows</topic>
+    <affects>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>0.7.3_1</lt></range>
+      </package>
+      <package>
+	<name>firefox</name>
+	<range><lt>0.9.3_1</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7.2_2,2</lt></range>
+	<range><ge>1.8.a,2</ge><lt>1.8.a3_1,2</lt></range>
+      </package>
+      <package>
+	<name>mozilla-gtk1</name>
+	<range><lt>1.7.2_3</lt></range>
+      </package>
+      <package>
+	<name>linux-mozilla</name>
+	<range><lt>1.7.3</lt></range>
+      </package>
+      <package>
+	<name>linux-mozillafirebird</name>
+	<range><lt>1.0.p</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Several heap buffer overflows were discovered and fixed in the
+	  most recent versions of Mozilla, Firefox, and Thunderbird.
+	  These overflows may occur when:</p>
+	<ul>
+	  <li>Using the "Send Page" function.</li>
+	  <li>Checking mail on a malicious POP3 server.</li>
+	  <li>Processing non-ASCII URLs.</li>
+	</ul>
+	<p>Each of these vulnerabilities may be exploited for remote
+	  code execution.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0902</cvename>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=258005</url>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=245066</url>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=226669</url>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=256316</url>
+      <uscertta>TA04-261A</uscertta>
+    </references>
+    <dates>
+      <discovery>2004-09-13</discovery>
+      <entry>2004-09-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="edf61c61-0f07-11d9-8393-000103ccf9d6">
     <topic>php -- strip_tags cross-site scripting vulnerability</topic>
     <affects>
