@@ -6,25 +6,26 @@
 #
 
 PORTNAME=	gale
-PORTVERSION=	0.99a
+PORTVERSION=	0.99d
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.gale.org/
+DISTNAME=	${PORTNAME}-${PORTVERSION}anger
 
 MAINTAINER=	peterh@sapros.com
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
 LIB_DEPENDS=	wwwcore.1:${PORTSDIR}/www/libwww \
-		adns.1:${PORTSDIR}/net/adns \
-		rsaref.2:${PORTSDIR}/security/rsaref
+		adns.1:${PORTSDIR}/net/adns
 
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib \
 		-I${LOCALBASE}/include/w3c-libwww
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" INSTALL=""
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 post-install:
 	${CAT} ${PKGMESSAGE}
