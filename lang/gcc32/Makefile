@@ -16,6 +16,7 @@ CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/gcc-${PORTVERSION}
 DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-testsuite-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-g++-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-g77-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-java-${PORTVERSION}${EXTRACT_SUFX} \
@@ -119,6 +120,14 @@ pre-configure:
 
 pre-build:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
+
+post-build:
+	@echo "Consider running 'make check' before 'make install',"
+	@echo "especially if you have not built port on -STABLE or -CURRENT."
+	@echo "This suggestion assumes that you have dejagnu port installed."
+
+check: build
+	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; gmake -sk check
 
 pre-install:
 	${MKDIR} ${PREFIX}/info
