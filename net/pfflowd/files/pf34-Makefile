@@ -1,0 +1,11 @@
+--- Makefile.orig	Thu Aug 19 22:10:22 2004
++++ Makefile	Thu Aug 19 22:10:29 2004
+@@ -10,7 +10,7 @@
+ CFLAGS=-g -O -I /usr/local/include/pf
+ 
+ # Uncomment this if you are using pfflowd on OpenBSD <=3.4
+-#CFLAGS+=-DOLD_PFSYNC
++CFLAGS+=-DOLD_PFSYNC
+ 
+ TARGETS=pfflowd
+ 
