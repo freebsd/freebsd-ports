@@ -1,11 +1,11 @@
 bin/gview
-share/doc/gview/AUTHORS
-share/doc/gview/BUGS
-share/doc/gview/ChangeLog
-share/doc/gview/NEWS
-share/doc/gview/README
-share/doc/gview/TODO
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 share/locale/fr/LC_MESSAGES/gview.mo
 share/locale/ja/LC_MESSAGES/gview.mo
 share/locale/ko/LC_MESSAGES/gview.mo
-@dirrm share/doc/gview
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
