@@ -28,6 +28,7 @@ share/locale/nb/LC_MESSAGES/xchat.mo
 share/locale/nl/LC_MESSAGES/xchat.mo
 share/locale/no/LC_MESSAGES/xchat.mo
 share/locale/pt/LC_MESSAGES/xchat.mo
+share/locale/pt_BR/LC_MESSAGES/xchat.mo
 share/locale/ru/LC_MESSAGES/xchat.mo
 share/locale/sk/LC_MESSAGES/xchat.mo
 share/locale/sl/LC_MESSAGES/xchat.mo
@@ -35,6 +36,7 @@ share/locale/sq/LC_MESSAGES/xchat.mo
 share/locale/sr/LC_MESSAGES/xchat.mo
 share/locale/sv/LC_MESSAGES/xchat.mo
 share/locale/uk/LC_MESSAGES/xchat.mo
+share/locale/vi/LC_MESSAGES/xchat.mo
 share/locale/wa/LC_MESSAGES/xchat.mo
 share/locale/zh_CN/LC_MESSAGES/xchat.mo
 share/locale/zh_TW/LC_MESSAGES/xchat.mo
