@@ -1,0 +1,4 @@
+bin/ggiterm
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/README
+@dirrm %%DOCSDIR%%
