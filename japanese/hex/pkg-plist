@@ -1,2 +1,3 @@
 bin/hex
-share/doc/jp-hex/README
+share/doc/ja-hex/README
+@dirrm share/doc/ja-hex
