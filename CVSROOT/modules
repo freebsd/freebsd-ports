@@ -4009,7 +4009,6 @@ jakarta-commons-logging	ports/java/jakarta-commons-logging
 jakarta-commons-pool	ports/java/jakarta-commons-pool
 jakarta-commons-primitives	ports/java/jakarta-commons-primitives
 jakarta-jmeter	ports/www/jakarta-jmeter
-jakarta-log4j	ports/java/jakarta-log4j
 jakarta-oro	ports/java/jakarta-oro
 jakarta-regexp	ports/java/jakarta-regexp
 jakarta-struts	ports/java/jakarta-struts
@@ -5162,6 +5161,7 @@ lockdown	ports/security/lockdown
 lodju		ports/graphics/lodju
 log4c		ports/devel/log4c
 log4cpp		ports/devel/log4cpp
+log4j		ports/devel/log4j
 log_analysis	ports/sysutils/log_analysis
 logcheck	ports/security/logcheck
 login.app	ports/x11/login.app
