@@ -16,6 +16,7 @@ BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+CONFIGURE_ARGS=	--with-pth=no
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
