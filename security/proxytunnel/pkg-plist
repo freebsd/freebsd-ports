@@ -1,6 +1,5 @@
 bin/proxytunnel
-%%PORTDOCS%%share/doc/proxytunnel/CHANGES
-%%PORTDOCS%%share/doc/proxytunnel/CREDITS
-%%PORTDOCS%%share/doc/proxytunnel/LICENSE.txt
-%%PORTDOCS%%share/doc/proxytunnel/README
-%%PORTDOCS%%@dirrm share/doc/proxytunnel
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
