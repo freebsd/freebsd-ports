@@ -82,6 +82,8 @@ post-configure:
 		${WRKSRC}/kdm/kfrontend/Makefile
 	${REINPLACE_CMD} -e "s@^\s*Exec=.*\$$@Exec=ElectricEyes@" \
 		${WRKSRC}/kappfinder/apps/Graphics/ElectricEyes.desktop
+	${REINPLACE_CMD} -e 's/444/644/g' \
+		${WRKSRC}/kdesktop/init/Templates/Makefile
 
 post-install:
 	${RM} -f ${PREFIX}/share/apps/konsole/linux.desktop
