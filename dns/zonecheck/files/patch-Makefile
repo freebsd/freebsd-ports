@@ -1,51 +1,11 @@
---- Makefile.orig	Wed Aug 27 10:51:19 2003
-+++ Makefile	Tue Sep  2 15:10:51 2003
-@@ -37,7 +37,7 @@
- #
+--- Makefile.orig	Fri Oct 24 15:55:25 2003
++++ Makefile	Tue Nov  4 10:07:49 2003
+@@ -9,7 +9,7 @@
+ # DATE        : $Date: 2003/10/24 13:55:25 $ 
+ # 
  
- PREFIX    ?= /usr/local
--RUBY      ?= $(shell which ruby)
-+RUBY      ?= $(shell which ruby18)
- HTML_PATH ?= /zc
+-RUBY ?=ruby
++RUBY ?=ruby18
+ ZC_INSTALLER=$(RUBY) ./installer.rb
  
- LIBEXEC=$(PREFIX)/libexec
-@@ -84,7 +84,7 @@
- 	@echo "Not automatized yet"
- 
- 
--install: install-common install-cli install-cgi install-doc
-+install: install-common install-cli install-doc
- 
- 
- install-common:
-@@ -115,12 +115,11 @@
- 
- 	@echo "==> Installing default configuration file"
- 	$(INSTALL) -d $(ETCDIR)
--	$(INSTALL) -b -m 0644 etc/zc.conf $(ETCDIR)
--	$(INSTALL) -b -m 0644 etc/zc.conf.fr $(ETCDIR)
--	$(INSTALL) -b -m 0644 etc/zc.conf.arpa $(ETCDIR)
-+	$(INSTALL) -b -m 0644 etc/zc.conf $(ETCDIR)/zc.conf-dist
-+	$(INSTALL) -b -m 0644 etc/zc.conf.fr $(ETCDIR)/zc.conf.fr-dist
-+	$(INSTALL) -b -m 0644 etc/zc.conf.arpa $(ETCDIR)/zc.conf.arpa-dist
- 	@echo "*************************"
--	@echo "** If you already had a zc.conf file it has been renamed"
--	@echo "**   to zc.conf.old"
-+	@echo "** zc.conf file installed as zc.conf-dist. "
- 	@echo "** Don't forget to edit the zc.conf to reflect your system"
- 	@echo "**   configuration"
- 	@echo "*************************"
-@@ -142,10 +141,10 @@
- install-cli:
- 	@echo "==> Installing CLI"
- 	$(INSTALL) -d $(BINDIR)
--	$(LN) -f $(LIBEXEC)/zc/zc/zc.rb $(BINDIR)/zc
--	$(LN) -f $(LIBEXEC)/zc/zc/zc.rb $(BINDIR)/zonecheck
-+	#$(LN) -f $(LIBEXEC)/zc/zc/zc.rb $(BINDIR)/zc
-+	$(LN) -s $(LIBEXEC)/zc/zc/zc.rb $(BINDIR)/zonecheck
- 	$(INSTALL) -d $(MANDIR)/man1
--	$(INSTALL) -m 0644 man/zonecheck.1 $(MANDIR)/man1/zc.1
-+	#$(INSTALL) -m 0644 man/zonecheck.1 $(MANDIR)/man1/zc.1
- 	$(INSTALL) -m 0644 man/zonecheck.1 $(MANDIR)/man1/zonecheck.1
- 	@echo
  

@@ -6,30 +6,34 @@
 #
 
 PORTNAME=	zonecheck
-PORTVERSION=	2.0.0b7
+PORTVERSION=	2.0.0b9
 CATEGORIES=	dns ipv6 ruby
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	janos.mohacsi@bsd.hu
-COMMENT=	Perform consistency checks on DNS zone files
+COMMENT=	Perform consistency checks on DNS zones
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk
-
-BROKEN=		"Broken dependency; will be removed after Feb 2"
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_GMAKE=	yes
-USE_RUBY=	yes
-NO_BUILD=	yes
-RUBY_VER=	1.8
-MAN1=		zonecheck.1
-
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_DEFAULT_VER} != ${RUBY_VER}
-BROKEN=		Broken dependency. This might be only a package building issue. The problem is that the default Ruby version for i386 is ${RUBY_DEFAULT_VER}, while the default version for the other architectures is ${RUBY_VER}. This port requires Ruby ${RUBY_VER}. If you are using the right Ruby version, please remove the BROKEN line from the Makefile and try again.
+.if defined(WITH_X11)
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
 .endif
 
-.include <bsd.port.post.mk>
+USE_GMAKE=	yes
+USE_RUBY=	yes
+RUBY_VER=	1.8
+USE_RUBY_FEATURES=	ruby18
+
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+MAN1=		zonecheck.1
+DOCS=		BUGS INSTALL README TODO
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>
