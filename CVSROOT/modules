@@ -6956,6 +6956,7 @@ ruby-ri		ports/lang/ruby-ri
 ruby-rica	ports/irc/ruby-rica
 ruby-rice	ports/irc/ruby-rice
 ruby-rmail	ports/mail/ruby-rmail
+ruby-robjectteam	ports/devel/ruby-robjectteam
 ruby-romp	ports/net/ruby-romp
 ruby-rreadline	ports/devel/ruby-rreadline
 ruby-rss	ports/textproc/ruby-rss
