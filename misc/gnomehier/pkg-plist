@@ -88,6 +88,7 @@ share/gnome/control-center/Desktop/.keep_me
 share/gnome/control-center/Documents/.keep_me
 share/gnome/control-center/Peripherals/.keep_me
 share/gnome/control-center/Session/.keep_me
+share/gnome/control-center/capplets/.keep_me
 share/gnome/fonts/.keep_me
 share/gnome/games/.keep_me
 share/gnome/gdm/.keep_me
@@ -400,6 +401,7 @@ share/sawfish/themes/.keep_me
 @dirrm share/gnome/gdm
 @dirrm share/gnome/games
 @dirrm share/gnome/fonts
+@dirrm share/gnome/control-center/capplets
 @dirrm share/gnome/control-center/Session
 @dirrm share/gnome/control-center/Peripherals
 @dirrm share/gnome/control-center/Documents
