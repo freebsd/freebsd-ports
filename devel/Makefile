@@ -76,6 +76,7 @@
     SUBDIR += avrdude
     SUBDIR += bcc
     SUBDIR += bcpp
+    SUBDIR += beagle
     SUBDIR += bglibs
     SUBDIR += bicyclerepair
     SUBDIR += bin86
