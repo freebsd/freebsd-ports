@@ -6,6 +6,7 @@ etc/noattach.patterns-dist
 %%PORTDOCS%%share/doc/noattach/INSTALL
 %%PORTDOCS%%share/doc/noattach/NEWS
 %%PORTDOCS%%share/doc/noattach/README
+%%PORTDOCS%%share/doc/noattach/THANKS
 %%PORTDOCS%%share/doc/noattach/ChangeLog
 %%PORTDOCS%%@dirrm share/doc/noattach
 %%PORTDOCS%%share/examples/noattach/README
