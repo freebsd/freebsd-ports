@@ -3,10 +3,10 @@
 # Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1)
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.36 1999/02/23 19:33:07 andreas Exp $
+# $Id: Makefile,v 1.37 1999/02/24 23:27:16 andreas Exp $
 #
 
-DISTNAME=	inn-STABLE_2_2-1999-02-17_03-02
+DISTNAME=	inn-STABLE_2_2-1999-04-08_03-01
 PKGNAME=	inn-stable-v22
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/snapshots/
@@ -18,17 +18,25 @@ Y2K=		http://www.isc.org/inn-y2k.html
 .if defined(BATCH)
 # in BATCH mode we use the default
 NEWSSPOOL=/var/spool/news
+NEWSLIB=${PREFIX}/news
+NEWSLOG=/var/log/news
+NEWSMAN=${PREFIX}/man
+NEWSINFO=${PREFIX}/info
 .else
 # you can set this in /etc/make.conf !
 NEWSSPOOL?=/var/spool/news
+NEWSLIB?=${PREFIX}/news
+NEWSLOG?=/var/log/news
+NEWSMAN?=${PREFIX}/man
+NEWSINFO?=${PREFIX}/info
 .endif
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--prefix=${PREFIX}/news
-CONFIGURE_ARGS+=--infodir=${PREFIX}/info
-CONFIGURE_ARGS+=--mandir=${PREFIX}/man
 CONFIGURE_ARGS+=--with-spool-dir=${NEWSSPOOL}
-CONFIGURE_ARGS+=--with-log-dir=/var/log/news
+CONFIGURE_ARGS+=--prefix=${NEWSLIB}
+CONFIGURE_ARGS+=--with-log-dir=${NEWSLOG}
+CONFIGURE_ARGS+=--mandir=${NEWSMAN}
+CONFIGURE_ARGS+=--infodir=${NEWSINFO}
 
 # tmp- and spool-dir have to live on the same filesystem, to avoid this error:
 # "rnews: cant rename /tmp/36d24c3ehN1072
@@ -46,6 +54,7 @@ CONFIGURE_ARGS+=--disable-static
 # Most available filters seem to be written in Perl these days,
 # so you can safely leave out TCL support (from the author)
 #CONFIGURE_ARGS+=--with-tcl
+
 # Do not create shared libraries
 #CONFIGURE_ARGS+=--disable-shared
 
@@ -70,12 +79,16 @@ MAN8=	actived.8 actsync.8 actsyncd.8 archive.8 batcher.8 buffchan.8 \
 
 pre-extract:
 	@${ECHO} ">> building inn2 with NEWSSPOOL=${NEWSSPOOL}..."
+	@${ECHO} ">> building inn2 with NEWSLIB=${NEWSLIB}..."
+	@${ECHO} ">> building inn2 with NEWSLOG=${NEWSLOG}..."
+	@${ECHO} ">> building inn2 with NEWSMAN=${NEWSMAN}..."
+	@${ECHO} ">> building inn2 with NEWSINFO=${NEWSINFO}..."
 
 pre-install:
-	${MKDIR} ${PREFIX}/news
-	chown news.news ${PREFIX}/news
-	${MKDIR} ${NEWSSPOOL}/news
-	chown news.news ${NEWSSPOOL}
+.for dir in ${NEWSSPOOL} ${NEWSLIB} ${NEWSLOG} ${NEWSMAN} ${NEWSINFO}
+	${MKDIR} ${dir}
+	$(CHOWN} news.news ${dir}
+.endfor
 
 update: build
 	@(cd ${WRKSRC} ; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} update)
@@ -102,6 +115,6 @@ post-install:
 	${SED} <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
 		s+!!PREFIX!!+${PREFIX}+g && chmod +x ${PREFIX}/etc/rc.d/innd.sh
 	# make rnews work when getting news via uucp !
-	chmod 4555 ${PREFIX}/news/bin/rnews
+	chmod 4555 ${NEWSLIB}/bin/rnews
 
 .include <bsd.port.mk>
