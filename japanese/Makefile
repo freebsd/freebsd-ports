@@ -225,6 +225,7 @@
     SUBDIR += pips3000
     SUBDIR += pips3300
     SUBDIR += pips670
+    SUBDIR += pips750_2000
     SUBDIR += pips760
     SUBDIR += pips770
     SUBDIR += pips800

@@ -1,0 +1,22 @@
+Photo Image Print System for Linux is the Printer filter for EPSON
+PM-750C PM-2000C. By using this driver you can print out as high quality as you
+use Windows driver.  See the below URL:
+
+WWW: http://www.epkowa.co.jp/
+
+And this port has a modified filter "filter750_2000.rev" when you print out
+more than one page useful.  For example, if you use it, you add the
+next entry into /etc/printcap.
+
+pm750c_2000c|EPSON PM-750C PM-2000C:\
+        :lp=/dev/lpt0:\
+        :sh:\
+        :if=/usr/local/libexec/pips750_2000/filter750_2000.rev:\
+        :sd=/var/spool/lpd/pm750c_2000c:\
+        :mx#0:\
+        :lf=/var/log/lpd-errs
+
+*************************************************************
+To run with Japanese messages, you should execute as follows:
+  env LANG=ja_JP pips750_2000 -la JP
+*************************************************************
