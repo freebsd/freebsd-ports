@@ -1,11 +1,11 @@
---- milter-sender.c.bak	Fri Oct  3 13:54:10 2003
-+++ milter-sender.c	Sat Oct  4 06:03:58 2003
-@@ -2326,7 +2326,7 @@
- 		/* Generate a false address. */
- 		TextInvert(data->replyLine, 0, -1);
- 		TextReverse(data->replyLine, 0, -1);
--		(void) snprintf(data->line, SMTP_LINE_SIZE, "RCPT TO:<%s%d@%s>\r\n", data->replyLine, data->domain, LuhnGenerate(data->replyLine));
-+		(void) snprintf(data->line, SMTP_LINE_SIZE, "RCPT TO:<%s%d@%s>\r\n", data->replyLine, LuhnGenerate(data->replyLine), data->domain);
+--- ../lib/configure.bak	Sun Oct  5 13:07:02 2003
++++ ../lib/configure	Sun Oct  5 21:36:53 2003
+@@ -1501,7 +1501,7 @@
+ 		ARCHIVE='ar rc $(LIB) {}'
+ 		COMPILE='$(CC) $(CFLAGS) $(CC_O)$*$O -c $<'
  
- 		if (!printline(data, data->line)) {
- 			rc = setReply(data, 450, NULL, MX_INFO_FORMAT " socket write error", MX_INFO_ARGS);
+-		CFLAGS="$CFLAGS -pthread"
++#                CFLAGS="$CFLAGS -pthread"
+ 	elif test "$OS" = 'SunOS'; then
+ 		# This used to be -I{}, but I've seen two different SunOS 5.8
+ 		# systems in two different parts of the world with man pages
