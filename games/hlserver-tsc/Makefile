@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	tsc
-PORTVERSION=	0.2.4.6.b
-MASTER_SITES=	http://www.heyphucker.com/ \
-		http://www.wbg-clan.de/download/server/ \
-		http://www.mystwalker.de/cs/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/^0.//:S/.b$//}
+PORTVERSION=	0.2.5.2.b
+MASTER_SITES=	http://www.fatalgaming.com/ \
+		http://207.127.210.8/starsoft/forum/ \
+		http://tsc.austin2600.org/ \
+		http://www.mystwalker.de/cs/ \
+		http://www.wbg-clan.de/download/server/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/^0.//:S/.b$/beta/}
 
 MAINTAINER=	lioux@FreeBSD.org
 

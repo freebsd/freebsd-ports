@@ -1,7 +1,5 @@
-%%HLDSDIR%%cstrike/cheatlib.tsc
 %%HLDSDIR%%cstrike/dlls/tsc.so
 %%PORTDOCS%%%%HLDSDIR%%cstrike/readme.txt
 %%PORTDOCS%%%%HLDSDIR%%cstrike/sound/player/sound readme.txt
 %%HLDSDIR%%cstrike/sound/welcome.wav
-%%HLDSDIR%%cstrike/tsc.cfg
-%%HLDSDIR%%cstrike/users.tsc
+%%HLDSDIR%%cstrike/tsc.ini
