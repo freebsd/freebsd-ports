@@ -21,17 +21,16 @@ EXTRACT_ONLY=
 DICTMETAPORT=	yes
 LANGDIST?=	bg_BG.zip ca_ES.zip hr_HR.zip cs_CZ.zip \
 		da_DK.zip nl_NL.zip en_CA.zip en_GB.zip \
-		en_US.zip fr_FR.zip de_DE.zip de_CH.zip \
-		hu_HU.zip it_IT.zip pl_PL.zip pt_PT.zip \
-		pt_BR.zip es_ES.zip sk_SK.zip sv_SE.zip \
-		el_GR-enhanced.zip ru_RU_io.zip uk_UA.zip
+		fr_FR.zip de_DE.zip de_CH.zip hu_HU.zip \
+		it_IT.zip pl_PL.zip pt_PT.zip pt_BR.zip \
+		es_ES.zip sk_SK.zip sv_SE.zip el_GR.zip \
+		ru_RU_io.zip uk_UA.zip
 
-HYPHDIST?=	hyph_cs.zip hyph_da.zip hyph_de_DE.zip \
-		hyph_en.zip hyph_en_CA.zip hyph_en_GB.zip \
-		hyph_en_US.zip hyph_es.zip hyph_fr.zip \
-		hyph_it.zip hyph_nl.zip hyph_pt_BR.zip \
-		hyph_pt_PT.zip hyph_ru.zip hyph_sk.zip \
-		hyph_sl.zip hyph_uk.zip
+HYPHDIST?=	hyph_cs_CZ.zip hyph_da_DK.zip hyph_de_DE.zip \
+		hyph_en_CA.zip hyph_en_GB.zip hyph_es_ES.zip \
+		hyph_fr_FR.zip hyph_it_IT.zip hyph_nl_NL.zip \
+		hyph_pt_BR.zip hyph_pt_PT.zip hyph_ru_RU.zip \
+		hyph_sk_SK.zip hyph_sl_SI.zip hyph_uk_UA.zip
 .endif
 
 SORT?=	/usr/bin/sort
