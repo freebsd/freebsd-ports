@@ -1,11 +1,12 @@
---- mixer.h	Sun May 25 21:18:10 1997
-+++ /home/andy/tmp/wrk/mixer.h	Thu May 14 00:25:17 1998
-@@ -41,7 +41,7 @@
- };
- 
- #define _PATH_DEV_AUDIO	"/dev/audio"
--#ifdef linux
-+#if (defined(linux) || defined(__FreeBSD__))
- #define _PATH_DEV_DSP	"/dev/dsp"
- #else
- #define _PATH_DEV_DSP	_PATH_DEV_AUDIO
+--- configure.orig	Mon Mar 13 20:58:01 2000
++++ configure	Mon Mar 13 20:58:05 2000
+@@ -1633,6 +1633,9 @@
+         ac_default_prefix=/boot/beos
+         GAME_INSTALLDIR="\$(prefix)/games/$PACKAGE"
+         ;;
++    *-*-freebsd*)
++	GAME_INSTALLDIR="\$(prefix)/share/$PACKAGE"
++	;;
+     *)
+         GAME_INSTALLDIR="\$(prefix)/games/$PACKAGE"
+         ;;
