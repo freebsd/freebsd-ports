@@ -15,31 +15,31 @@ bin/imsetup
 bin/imsort
 bin/imstore
 lib/im/SiteConfig
-lib/perl5/site_perl/IM/Address.pm
-lib/perl5/site_perl/IM/Alias.pm
-lib/perl5/site_perl/IM/Config.pm
-lib/perl5/site_perl/IM/EncDec.pm
-lib/perl5/site_perl/IM/File.pm
-lib/perl5/site_perl/IM/Folder.pm
-lib/perl5/site_perl/IM/GetPass.pm
-lib/perl5/site_perl/IM/Header.pm
-lib/perl5/site_perl/IM/History.pm
-lib/perl5/site_perl/IM/Http.pm
-lib/perl5/site_perl/IM/Imap.pm
-lib/perl5/site_perl/IM/Iso2022jp.pm
-lib/perl5/site_perl/IM/Japanese.pm
-lib/perl5/site_perl/IM/LocalMbox.pm
-lib/perl5/site_perl/IM/Log.pm
-lib/perl5/site_perl/IM/MD5.pm
-lib/perl5/site_perl/IM/Message.pm
-lib/perl5/site_perl/IM/MsgStore.pm
-lib/perl5/site_perl/IM/Nntp.pm
-lib/perl5/site_perl/IM/Pop.pm
-lib/perl5/site_perl/IM/Recipient.pm
-lib/perl5/site_perl/IM/Scan.pm
-lib/perl5/site_perl/IM/Smtp.pm
-lib/perl5/site_perl/IM/Stdio.pm
-lib/perl5/site_perl/IM/TcpTransaction.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/Address.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/Alias.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/Config.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/EncDec.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/Folder.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/GetPass.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/Header.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/History.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/Http.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/Imap.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/Iso2022jp.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/Japanese.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/LocalMbox.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/Log.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/MD5.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/Message.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/MsgStore.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/Nntp.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/Pop.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/Recipient.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/Scan.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/Smtp.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/Stdio.pm
+lib/perl5/site_perl/%%PERL_VER%%/IM/TcpTransaction.pm
 share/examples/im/Config
 share/examples/im/Petnames
 share/examples/im/get.sbr
@@ -52,6 +52,6 @@ share/doc/im/imget2.jis
 share/doc/im/imput
 share/doc/im/imput.jis
 @dirrm lib/im
-@dirrm lib/perl5/site_perl/IM
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/IM
 @dirrm share/doc/im
 @dirrm share/examples/im
