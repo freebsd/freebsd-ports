@@ -7,36 +7,37 @@
 #
 
 PORTNAME=	hdf5
-PORTVERSION=	1.6.1
-CATEGORIES=	graphics
-MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/misc/
+PORTVERSION=	1.6.2
+CATEGORIES=	science archivers graphics
+MASTER_SITES=	ftp://hdf.ncsa.uiuc.edu/pub/outgoing/hdf5/snapshots/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-post1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	koziol@ncsa.uiuc.edu
 COMMENT=	Hierarchical Data Format library (from NCSA)
 
+USE_BZIP2=	yes
 USE_REINPLACE=	yes
-USE_PERL5=	yes
-USE_OPENSSL=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure c++/configure
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}"
 CONFIGURE_ARGS=	--enable-cxx --enable-production \
 		--enable-threadsafe --disable-debug \
-		--with-ssl --with-pthread
+		--with-pthread
+ALL_TARGET=	lib progs
 INSTALLS_SHLIB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|[\$$]CFLAGS -pthread|\$$CFLAGS|g ; \
-		 s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g ; \
-		 s|[\$$]LDFLAGS -pthread|\$$LDFLAGS ${PTHREAD_LIBS}|g ; \
-		 s|-lcipher||g' \
+	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g ; \
+		 s|[\$$]LDFLAGS -pthread|\$$LDFLAGS ${PTHREAD_LIBS}|g'  \
 			${WRKSRC}/config/freebsd
+	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g ; \
+		 s|[\$$]LDFLAGS -pthread|\$$LDFLAGS ${PTHREAD_LIBS}|g'  \
+			${WRKSRC}/c++/config/freebsd
 	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/config/gnu-flags
 
 post-install:
-.for i in gif2h5 h52gif h5createU8 h5debug h5diff h5dump h5import h5ls h5repart
+.for i in gif2h5 h52gif h5debug h5diff h5dump h5import h5ls h5repart
 	@${STRIP_CMD} ${PREFIX}/bin/${i}
 .endfor
 
