@@ -1,4 +1,4 @@
-Postinstall adjustment is needed at the fist time. The following list is 
+Postinstall adjustment is needed at the first time. The following list is 
 some PERL modules needed for running MT, you can also install them from 
 FreeBSD ports:
 
