@@ -1,13 +1,13 @@
 # New ports collection makefile for:	filerunner
-# Version required:	2.4.2
+# Version required:	2.5
 # Date created:		3 August 1996
 # Whom:			lukin
 #
-# $Id: Makefile,v 1.12 1998/02/24 21:43:11 jseger Exp $
+# $Id: Makefile,v 1.13 1998/03/09 07:04:36 vanilla Exp $
 #
 
-DISTNAME=	FileRunner-2.4.2
-PKGNAME=	filerunner-2.4.2
+DISTNAME=	FileRunner-2.5
+PKGNAME=	filerunner-2.5
 CATEGORIES=	x11 tk81
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/desktop
@@ -27,7 +27,7 @@ do-install:
 	@ ${MKDIR} ${PREFIX}/lib/FileRunner/bitmaps
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/fr ${PREFIX}/lib/FileRunner
 	@ ln -sf ${PREFIX}/lib/FileRunner/fr ${PREFIX}/bin
-.for file in FAQ HISTORY QuickStart.txt Tips Users_Guide.txt chmod.tcl cmd.tcl config.tcl dialog_about.tcl ext.so font.tcl frcolor frftp ftp.tcl http.tcl tclIndex
+.for file in FAQ HISTORY QuickStart.txt Tips.txt Users_Guide.txt chmod.tcl cmd.tcl config.tcl dialog_about.tcl ext.so font.tcl frcolor frftp ftp.tcl http.tcl tclIndex
 		@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/FileRunner
 .endfor
 .for map in cross.bit frterm.bit larger.bit left.bit max.bit pgdown.bit pgup.bit right.bit smaller.bit toggle.bit tree.bit up.bit update.bit xterm.bit
