@@ -20,6 +20,7 @@ bin/mysqld_safe
 %%NDB%%bin/ndb_select_all
 %%NDB%%bin/ndb_select_count
 %%NDB%%bin/ndb_show_tables
+%%NDB%%bin/ndb_test_platform
 %%NDB%%bin/ndb_waiter
 bin/pack_isam
 bin/perror
@@ -28,6 +29,8 @@ bin/resolve_stack_dump
 bin/resolveip
 etc/rc.d/mysql-server.sh
 %%NDB%%include/mysql/ndb/mgmapi/mgmapi.h
+%%NDB%%include/mysql/ndb/mgmapi/mgmapi_config_parameters.h
+%%NDB%%include/mysql/ndb/mgmapi/mgmapi_config_parameters_debug.h
 %%NDB%%include/mysql/ndb/mgmapi/mgmapi_debug.h
 %%NDB%%include/mysql/ndb/ndb_types.h
 %%NDB%%include/mysql/ndb/ndb_version.h
