@@ -1,0 +1,8 @@
+--- Makefile.in.orig	Fri Jan 11 00:00:00 2002
++++ Makefile.in	Thu Jan 31 22:33:39 2002
+@@ -7 +7 @@
+-PREFIX	= /usr/local
++PREFIX	?= /usr/local
+@@ -15 +15 @@
+-DEFRC	= /etc/fd__RCVERSION__rc
++DEFRC	= $(TOPDIR)/etc/fd__RCVERSION__rc

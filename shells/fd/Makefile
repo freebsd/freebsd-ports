@@ -6,33 +6,51 @@
 #
 
 PORTNAME=	fd
-PORTVERSION=	1.03u
-PORTREVISION=	2
+PORTVERSION=	2.00a
 CATEGORIES=	shells
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/ \
 		ftp://ftp.vector.co.jp/pack/unix/util/file/filer/fd/
 DISTNAME=	FD-${PORTVERSION}
 
-MAINTAINER=	nobu@psrc.isac.co.jp
+MAINTAINER=	knu@FreeBSD.org
 
-MANLANG=	ja
+MANLANG=	"" ja
 MAN1=		fd.1
-MAKE_ENV=	LANG=${MANLANG}
-DOCS=		README FAQ HISTORY ToAdmin
-SIGNATURE=	Nobuhiro Yasutomi <${MAINTAINER}>
+MAKE_ENV=	LANG=ja
 
-# require maintainer signature for binary package distributions
-do-configure:
-	@cd ${WRKSRC}; v=version.h; ${MV} $$v $$v.orig; \
-	${SED} 's/\(distributor = \)NULL/\1"${SIGNATURE}"/' $$v.orig > $$v
+DOCS_EN=	FAQ.eng \
+		LICENSES.eng \
+		README.eng \
+		TECHKNOW.eng \
+		ToAdmin.eng
+DOCS_JA=	FAQ \
+		HISTORY \
+		LICENSES \
+		README \
+		TECHKNOW \
+		ToAdmin
 
 post-install:
+	@${ECHO} "Updating /etc/shells"
+	@${CP} /etc/shells /etc/shells.bak
+	@(${GREP} -v ${PREFIX}/bin/fdsh /etc/shells.bak; \
+		${ECHO_CMD} ${PREFIX}/bin/fdsh) > /etc/shells
+	@${RM} /etc/shells.bak
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/fd
-	@for i in $(DOCS); do \
-		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/share/doc/fd; \
+	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
+	@${MKDIR} ${PREFIX}/share/doc/ja/${PORTNAME}
+	@for i in ${DOCS_EN}; do \
+		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/share/doc/${PORTNAME}; \
 	done
-.endif
+	@for i in ${DOCS_JA}; do \
+		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/share/doc/ja/${PORTNAME}; \
+	done
+	@${INSTALL_DATA} ${WRKSRC}/_fdrc.orig ${PREFIX}/etc/fd2rc.dist
+	@${INSTALL_DATA} ${WRKSRC}/_fdrc ${PREFIX}/etc/fd2rc.sample
+	if [ ! -f ${PREFIX}/etc/fd2rc ]; then \
+		${CP} -p ${PREFIX}/etc/fd2rc.sample ${PREFIX}/etc/fd2rc; \
+	fi
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>
