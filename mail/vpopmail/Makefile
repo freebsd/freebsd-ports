@@ -7,6 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.3.29
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -301,12 +302,15 @@ pre-configure:
 
 post-install:
 	${MKDIR} ${PREFIX}/vpopmail/etc
-	if [ ! -f "${PREFIX}/vpopmail/etc/tcp.smtp" ]; then \
-		if [ -f "${VCFGDIR}/tcp.smtp" ]; then \
+	if [ ! -e "${PREFIX}/vpopmail/etc/tcp.smtp" ]; then \
+		if [ -e "${VCFGDIR}/tcp.smtp" ]; then \
 			${INSTALL_DATA} ${VCFGDIR}/tcp.smtp ${PREFIX}/vpopmail/etc/; \
 		else \
 			${TOUCH} ${PREFIX}/vpopmail/etc/tcp.smtp; \
 		fi; \
+	fi
+	if [ ! -e "${PREFIX}/vpopmail/etc/vlimits.default" ]; then \
+		${TOUCH} ${PREFIX}/vpopmail/etc/vlimits.default; \
 	fi
 .if defined(DEFAULT_DOMAIN)
 	${ECHO_CMD} ${DEFAULT_DOMAIN} > ${PREFIX}/vpopmail/etc/defaultdomain
