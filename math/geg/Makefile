@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	science/visualization/plotting
 MAINTAINER=	domi@saargate.de
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_AUTOMAKE=	yes
 AUTOMAKE_ARGS=	-a -i
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

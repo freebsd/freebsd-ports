@@ -16,7 +16,8 @@ MAINTAINER=	freebsdports@arved.de
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

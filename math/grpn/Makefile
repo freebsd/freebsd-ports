@@ -13,7 +13,8 @@ MASTER_SITES=	http://lashwhip.com/grpn/
 MAINTAINER=	jedgar@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 ALL_TARGET=
 
