@@ -1,6 +1,10 @@
 bin/penv
+@unexec if cmp -s %D/etc/penv.conf %D/etc/penv.conf.default; then rm -f %D/etc/penv.conf; fi
 etc/penv.conf.default
+@exec [ -f %B/penv.conf ] || cp %B/%f %B/penv.conf
 %%PORTDOCS%%share/doc/penv/html/created.with.vim.gif
 %%PORTDOCS%%share/doc/penv/html/index.html
 %%PORTDOCS%%@dirrm share/doc/penv/html
 %%PORTDOCS%%@dirrm share/doc/penv
+@exec mkdir -p %%DBDIR%%
+@unexec rmdir %%DBDIR%% 2>/dev/null || true
