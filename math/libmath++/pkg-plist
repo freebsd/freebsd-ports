@@ -1,0 +1,26 @@
+include/math++/nodes.h
+include/math++/nodes.tcc
+include/math++/reader.h
+include/math++/reader.tcc
+include/math++/printer.h
+include/math++/printer.tcc
+include/math++/calculator.h
+include/math++/calculator.tcc
+include/math++/derive.h
+include/math++/derive.tcc
+include/math++/simplifier.h
+include/math++/simplifier.tcc
+include/math++/expander.h
+include/math++/expander.tcc
+include/math++/library.h
+include/math++/library.tcc
+include/math++/matcher.h
+include/math++/matcher.tcc
+include/math++/utils.h
+include/math++/utils.tcc
+include/math++/visitor.h
+include/math++/error.h
+lib/libmath++.so.0
+lib/libmath++.so
+lib/libmath++.a
+@dirrm include/math++
