@@ -28,4 +28,10 @@ PLIST_FILES=	bin/udfdump \
 		bin/cd_disect \
 		bin/cdrw_format
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
+.include <bsd.port.post.mk>
