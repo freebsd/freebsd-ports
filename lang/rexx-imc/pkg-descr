@@ -1,64 +1,7 @@
-What is REXX ?
-==============
+REXX/imc is a Rexx interpreter for Unix. It supports all the standard 
+instructions and built-in functions, plus a small number of extensions, 
+and has a partial implementation of the SAA API allowing applications 
+to call Rexx programs and to register addressing environments, Rexx 
+functions, and exit handlers. 
 
-REXX is a programming language designed by Michael Cowlishaw
-of IBM UK Laboratories.  In his own words:  "REXX is a
-procedural language that allows programs and algorithms to
-be written in a clear and structured way."
-REXX doesn't look that different from any other procedural
-language.  Here's a simple REXX program:
-
-     /* Count some numbers */
-     
-     say "Counting..."
-     do i = 1 to 10
-         say "Number" i
-     end
-
-What makes REXX different from most other languages is that
-it is also designed to be used as a macro language by
-arbitrary application programs.  The idea is that
-application developers don't have to design their own macro
-languages and interpreters.  Instead they use REXX as the
-macro language and support the REXX programming interface.
-If a REXX macro comes across an expression or function call
-that it cannot resolve, it can ask the application to handle
-it instead.  The application only has to support the
-features that are specific to it, freeing the developer from
-handling the mundane (and time-consuming) task of writing a
-language interpreter.  And if all applications use REXX as
-their macro language, the user only has to learn one
-language instead of a dozen.
-
-
-Differences between TRL (The REXX Language) and REXX/imc
-========================================================
-
-The following are all nonstandard features of REXX-imc
-
- * Rejection of labels ending with dot (in case of confusion between
-   function.(args) and stem.(tail))
- * Compound variable accesses of the form "stem.'string constant'" and
-   stem.(expression)
- * Acceptance of any non-zero number for logical truth, rather than just 1
- * "SAYN expression" to output lines without carriage return
- * "SELECT expression" to switch on a value
- * "END SELECT"
- * "PARSE VALUE" with multiple strings separated by commas
- * "PROCEDURE HIDE"
- * The following functions: chdir getcwd getenv putenv system userid
-   plus these I/O functions: open close fdopen popen pclose fileno ftell
- * error messages 80-210, -1 and -3.
-
-
-Good sources of REXX information on the web:
-============================================
-
-REXX/imc Home page
-	http://www.comlab.ox.ac.uk/oucl/users/ian.collier/Rexx/index.html
-
-IBM's REXX Language Page
-	http://rexx.hursley.ibm.com/rexx/
-
-REXX Tutorials Page
-	http://www2.hursley.ibm.com/rexxtut/
+WWW: http://www.comlab.ox.ac.uk/oucl/users/ian.collier/Rexx/index.html
