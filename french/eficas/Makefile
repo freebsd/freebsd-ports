@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eficas
-PORTVERSION=	1.5.3
+PORTVERSION=	1.6.1
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -16,6 +16,7 @@ COMMENT=	ASter Command FIle Editor
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/pmw		\
 		${PYTHON_SITELIBDIR}/mx:${PORTSDIR}/lang/py-mx-base		\
+		${PYNUMERIC}							\
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 USE_PYTHON=	yes
@@ -23,7 +24,7 @@ USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/EficasV1_5b3AsterSTA7
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 LEFICASDIR?=	apps/${PORTNAME}
 EFICASDIR=	${PREFIX}/${LEFICASDIR}
@@ -44,8 +45,7 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -e "s#lang='fr'#lang='${EF_LANG}'#"			\
 		${WRKSRC}/Aster/prefs.py
-	@${REINPLACE_CMD} -e "s#/usr/bin/acroread#${LOCALBASE}/bin/acroread#"	\
-			-e "s#os.path.join(rep_cata,'..','Doc')#\"${DOCSDIR}\"#"	\
+	@${REINPLACE_CMD} -e "s#os.path.join(rep_cata,'..','Doc')#\"${DOCSDIR}\"#"	\
 		${WRKSRC}/Aster/editeur.ini
 
 pre-install:
