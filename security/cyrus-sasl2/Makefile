@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	2.1.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/ \
@@ -15,8 +15,6 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
-
-USE_SUBMAKE=	yes
 
 INSTALLS_SHLIB=	yes
 
@@ -49,60 +47,75 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--enable-static \
 		--enable-login \
 		--enable-auth-sasldb \
-		--with-rc4=openssl
+		--with-rc4=openssl \
+		--with-saslauthd
 
-SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-		PREFIX="${PREFIX}" \
-		TOUCH="${TOUCH}" \
-		MKDIR="${MKDIR}" \
-		REALCURDIR="${.CURDIR}" \
-		WITHOUT_SASLAUTHD="${WITHOUT_SASLAUTHD}" \
-		WITH_DB3="${WITH_DB3}" \
-		WITH_DB4="${WITH_DB4}" \
-		WITH_DB41="${WITH_DB41}" \
-		WITH_MYSQL="${WITH_MYSQL}" \
-		WITH_MYSQL40="${WITH_MYSQL40}" \
-		WITH_MYSQL41="${WITH_MYSQL41}" \
-		WITH_LDAP="${WITH_LDAP}" \
-		WITH_LDAP21="${WITH_LDAP21}"
+.if defined(WITH_BDB_VER)
+.if ${WITH_BDB_VER} == 41
+LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
+CONFIGURE_ARGS+=--with-bdb=db41 --with-bdb-incdir=${PREFIX}/include/db41
+.elif ${WITH_BDB_VER} == 4
+LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
+CONFIGURE_ARGS+=--with-bdb=db4 --with-bdb-incdir=${PREFIX}/include/db4
+.elif ${WITH_BDB_VER} == 3
+LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
+CONFIGURE_ARGS+=--with-bdb=db3 --with-bdb-incdir=${PREFIX}/include/db3
+.else
+BROKEN=		"WITH_BDB_VER must be 3, 4 or 41"
+.endif
+CONFIGURE_ARGS+=--with-dblib=berkeley --with-bdb-libdir=${PREFIX}/lib
+SASLDB_NAME=	sasldb2
+.else
+CONFIGURE_ARGS+=--with-dblib=ndbm
+SASLDB_NAME=	sasldb2.db
+.endif
+
+.if defined(WITH_MYSQL_VER)
+.if ${WITH_MYSQL_VER} == 41
+LIB_DEPENDS+=	mysqlclient.14:${PORTSDIR}/databases/mysql41-client
+.elif ${WITH_MYSQL_VER} == 40
+LIB_DEPENDS+=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
+.elif ${WITH_MYSQL_VER} == 3
+LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+.else
+BROKEN=		"WITH_MYSQL_VER must be 3, 40 or 41"
+.endif
+CONFIGURE_ARGS+=--with-mysql=${PREFIX}
+PLIST_SUB+=	MYSQL=""
+.else
+PLIST_SUB+=	MYSQL="@comment "
+.endif
 
 .if defined(WITHOUT_OTP)
-CONFIGURE_ARGS+=	--disable-otp
+CONFIGURE_ARGS+=--disable-otp
 OTP=	"@comment "
 .endif
 
 .if defined(WITHOUT_CRAM)
-CONFIGURE_ARGS+=	--disable-cram
+CONFIGURE_ARGS+=--disable-cram
 CRAM=	"@comment "
 .endif
 
 .if defined(WITHOUT_DIGEST)
-CONFIGURE_ARGS+=	--disable-digest
+CONFIGURE_ARGS+=--disable-digest
 DIGEST=	"@comment "
 .endif
 
 .if defined(WITHOUT_NTLM)
-CONFIGURE_ARGS+=	--disable-ntlm
+CONFIGURE_ARGS+=--disable-ntlm
 NTLM=	"@comment "
 .else
-CONFIGURE_ARGS+=	--enable-ntlm
-.endif
-
-.if defined(WITHOUT_SASLAUTHD)
-CONFIGURE_ARGS+=	--without-saslauthd
-SASLAUTHD=	"@comment "
-.else
-CONFIGURE_ARGS+=	--with-saslauthd
+CONFIGURE_ARGS+=--enable-ntlm
 .endif
 
 .if !defined(WITHOUT_GSSAPI) && defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a)
-CONFIGURE_ARGS+=	--enable-gssapi=${KRB5_HOME}
+CONFIGURE_ARGS+=--enable-gssapi=${KRB5_HOME}
 .elif !defined(WITHOUT_GSSAPI) && defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
-CONFIGURE_ARGS+=	--enable-gssapi=${HEIMDAL_HOME}
+CONFIGURE_ARGS+=--enable-gssapi=${HEIMDAL_HOME}
 .elif !defined(WITHOUT_GSSAPI) && defined(MAKE_KERBEROS5) && exists(/usr/lib/libkrb5.a)
-CONFIGURE_ARGS+=	--enable-gssapi
+CONFIGURE_ARGS+=--enable-gssapi
 .else
-CONFIGURE_ARGS+=	--disable-gssapi
+CONFIGURE_ARGS+=--disable-gssapi
 GSSAPI=	"@comment "
 .endif
 
@@ -112,24 +125,24 @@ GSSAPI=	"@comment "
 .if ${OSVERSION} > 500105
 .if defined(WITH_KERBEROS4)
 LIB_DEPENDS+=	krb.2:${PORTSDIR}/security/krb4
-CONFIGURE_ARGS+=	--enable-krb4=${LOCALBASE}/krb4
+CONFIGURE_ARGS+=--enable-krb4=${LOCALBASE}/krb4
 .else
-CONFIGURE_ARGS+=	--disable-krb4
+CONFIGURE_ARGS+=--disable-krb4
 EBONES=	"@comment "
 .endif
 .elif exists(/usr/lib/libkrb.a) && defined(MAKE_KERBEROS4) && !defined(WITHOUT_KERBEROS4)
-CONFIGURE_ARGS+=	--enable-krb4
+CONFIGURE_ARGS+=--enable-krb4
 .elif !exists(/usr/lib/libkrb.a) && defined(WITH_KERBEROS4)
 LIB_DEPENDS+=	krb.2:${PORTSDIR}/security/krb4
-CONFIGURE_ARGS+=	--enable-krb4=${LOCALBASE}/krb4
+CONFIGURE_ARGS+=--enable-krb4=${LOCALBASE}/krb4
 .else
-CONFIGURE_ARGS+=	--disable-krb4
+CONFIGURE_ARGS+=--disable-krb4
 EBONES=	"@comment "
 .endif
 
 .include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
 .if !defined(WITH_OPENSSL_BASE)
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
 
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE} \
@@ -152,13 +165,10 @@ DOC2=	ONEWS TODO draft-burdis-cat-srp-sasl-06.txt \
 	rfc2831.txt rfc2945.txt rfc3174.txt server-plugin-flow.fig \
 	testing.txt
 
-SASLAUTHD_DOCS=	AUTHORS COPYING ChangeLog INSTALL LDAP_SASLAUTHD NEWS README
-
 HTDOCS=	advanced appconvert gssapi index install macosx mechanisms \
 	options plugprog programming readme sysadmin upgrading
 
 PLIST_SUB=	PREFIX=${PREFIX} \
-		SASLAUTHD=${SASLAUTHD} \
 		OTP=${OTP} \
 		CRAM=${CRAM} \
 		DIGEST=${DIGEST} \
@@ -171,27 +181,17 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-pre-fetch:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.sasl
-
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
-.endif
-
 # Fix sasldb name in pkg-install/deinstall scripts
 post-patch:
 	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
-		-e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
 		-e "s;%%CYRUS_USER%%;${CYRUS_USER};g" \
 		-e "s;%%CYRUS_GROUP%%;${CYRUS_GROUP};g" \
 		${.CURDIR}/pkg-install > ${PKGINSTALL}
 	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
-		-e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
 		-e "s;%%CYRUS_USER%%;${CYRUS_USER};g" \
 		-e "s;%%CYRUS_GROUP%%;${CYRUS_GROUP};g" \
 		${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
-	@${SED} -e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
-		-e "s;%%PREFIX%%;${PREFIX};g" \
+	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" \
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 # Create Cyrus user and group
@@ -203,14 +203,6 @@ post-install:
 		${MAN8PREFIX}/man/man8/saslpasswd2.8
 	${INSTALL_MAN} ${WRKSRC}/utils/sasldblistusers2.8 \
 		${MAN8PREFIX}/man/man8/sasldblistusers2.8
-.if !defined(WITHOUT_SASLAUTHD)
-	${GZIP_CMD} ${MAN8PREFIX}/man/cat8/saslauthd.8
-	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" ${PWCHECK_SUB} \
-		${FILESDIR}/saslauthd.sh > ${PREFIX}/etc/rc.d/saslauthd.sh
-	@${CHMOD} 755 ${PREFIX}/etc/rc.d/saslauthd.sh
-	${MKDIR} -m 770 /var/state/saslauthd
-	${CHOWN} ${CYRUS_USER}:mail /var/state/saslauthd
-.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
@@ -223,18 +215,9 @@ post-install:
 .for file in ${HTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCSDIR}/html
 .endfor
-.if !defined(WITHOUT_SASLAUTHD)
-	@${MKDIR} ${DOCSDIR}/saslauthd
-.for file in ${SASLAUTHD_DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/saslauthd/${file} ${DOCSDIR}/saslauthd
-.endfor
-.endif
 	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${DOCSDIR}
 .endif
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
-
-post-clean:
-	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
 .include <bsd.port.post.mk>

@@ -1,4 +1,3 @@
-%%SASLAUTHD%%etc/rc.d/saslauthd.sh
 include/sasl/hmac-md5.h
 include/sasl/md5.h
 include/sasl/md5global.h
@@ -43,8 +42,6 @@ lib/sasl2/libplain.so.2
 lib/sasl2/libsasldb.a
 lib/sasl2/libsasldb.so
 lib/sasl2/libsasldb.so.2
-%%SASLAUTHD%%man/cat8/saslauthd.8.gz
-%%SASLAUTHD%%sbin/saslauthd
 sbin/sasldblistusers2
 sbin/saslpasswd2
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -93,22 +90,7 @@ sbin/saslpasswd2
 %%PORTDOCS%%%%DOCSDIR%%/html/readme.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sysadmin.html
 %%PORTDOCS%%%%DOCSDIR%%/html/upgrading.html
-%%SASLAUTHD%%%%PORTDOCS%%%%DOCSDIR%%/saslauthd/AUTHORS
-%%SASLAUTHD%%%%PORTDOCS%%%%DOCSDIR%%/saslauthd/COPYING
-%%SASLAUTHD%%%%PORTDOCS%%%%DOCSDIR%%/saslauthd/ChangeLog
-%%SASLAUTHD%%%%PORTDOCS%%%%DOCSDIR%%/saslauthd/INSTALL
-%%SASLAUTHD%%%%PORTDOCS%%%%DOCSDIR%%/saslauthd/LDAP_SASLAUTHD
-%%SASLAUTHD%%%%PORTDOCS%%%%DOCSDIR%%/saslauthd/NEWS
-%%SASLAUTHD%%%%PORTDOCS%%%%DOCSDIR%%/saslauthd/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%SASLAUTHD%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/saslauthd
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/sasl2
-%%SASLAUTHD%%@mode ug=rwx,o=
-%%SASLAUTHD%%@exec mkdir -p /var/state/saslauthd
-%%SASLAUTHD%%@exec chown -R cyrus:cyrus /var/state
-%%SASLAUTHD%%@exec chmod -R o= /var/state
-%%SASLAUTHD%%@comment This file gets created by the state/saslauthd program
-%%SASLAUTHD%%@unexec rm -fr /var/state/saslauthd
-%%SASLAUTHD%%@unexec rmdir /var/state
 @cwd %%PREFIX%%
