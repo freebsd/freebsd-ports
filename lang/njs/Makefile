@@ -17,6 +17,8 @@ DISTNAME=	js-${PORTVERSION}
 MAINTAINER=	thierry@pompo.net
 COMMENT=	NJS (NGS) is a standalone JavaScript/ECMAScript interpreter
 
+CONFLICTS=	js-1.5.*
+
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 .if defined(NOPORTDOCS)
@@ -29,14 +31,6 @@ MAN1=	js.1 jsdas.1
 
 post-extract:
 	@${RM} ${WRKSRC}/docs/js.info*
-
-pre-configure:
-	@if [ -f ${LOCALBASE}/include/js.h ]; then \
-		${ECHO_MSG} "" ; \
-		${ECHO_MSG} "Conflict: please deinstall the port converters/kdesupport11." ; \
-		${ECHO_MSG} "" ; \
-		${FALSE} ; \
-	fi
 
 pre-install:
 .if defined(NOPORTDOCS)
