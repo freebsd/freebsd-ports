@@ -1,0 +1,8 @@
+--- man/Makefile.orig	Wed Nov 17 13:57:40 1999
++++ man/Makefile	Sun Feb 10 23:44:43 2002
+@@ -16,5 +16,3 @@
+ 
+ install:
+ 	for i in *.m; do cp $$i $(MANDIR)/`basename $$i .m`.$(MANEXT); done
+-	echo '.so man$(MANEXT)/ocamlc.$(MANEXT)' > $(MANDIR)/ocamlc.opt.$(MANEXT)
+-	echo '.so man$(MANEXT)/ocamlopt.$(MANEXT)' > $(MANDIR)/ocamlopt.opt.$(MANEXT)
