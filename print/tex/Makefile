@@ -9,7 +9,7 @@
 DISTNAME=	web2c-7.2
 PKGNAME=	tex-3.14159
 CATEGORIES=	print
-MASTER_SITES=   ftp://ftp.cdrom.com/pub/tex/package/
+MASTER_SITES=   ftp://ftp.freesoftware.com/pub/tex/package/
 DISTFILES=	web2c-7.2b.tar.gz web-7.2a.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz modes.mf 
 
