@@ -14,6 +14,7 @@ DISTNAME=	tac_plus.F4.0.4.alpha
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	marcus@FreeBSD.org
+COMMENT=	The Cisco remote authentication/authorization/accounting server
 
 ALL_TARGET=	tac_plus
 MAN1=		tac_plus.1

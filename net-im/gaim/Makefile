@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	marcus@FreeBSD.org
+COMMENT=	Gtk+ open-source 'clone' of AOL's Instant Messenger client
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

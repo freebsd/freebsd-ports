@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.4
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	marcus@FreeBSD.org
+COMMENT=	A font view for Nautilus
 
 LIB_DEPENDS=	nautilus.2:${PORTSDIR}/x11-fm/nautilus2
 

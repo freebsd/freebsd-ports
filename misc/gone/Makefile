@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://jaguar.ir.miami.edu/~marcus/
 
 MAINTAINER=	marcus@FreeBSD.org
+COMMENT=	A terminal locking utility with many improvements over lock(1)
 
 MAN1=		gone.1
 GNU_CONFIGURE=	yes
