@@ -7,7 +7,7 @@
 
 PORTNAME=	OpenEXR
 PORTVERSION=	1.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://savannah.nongnu.org/download/openexr/${PORTNAME}.pkg/${PORTVERSION}/
 
@@ -30,17 +30,13 @@ BUILD_DEPENDS+=	gcc31:${PORTSDIR}/lang/gcc31
 MAKE_ENV+=	CC=${CC} CXX=${CXX}
 .endif
 
-.if !defined(WITHOUT_X11) && (defined(WITH_FLTK) || defined(WITH_FLTK_XUNICODE))
-.if defined(WITH_FLTK_XUNICODE)
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk-xunicode
-.else
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
-.endif
-USE_MESA=	YES
+.if !defined(WITHOUT_X11) && defined(WITH_FLTK)
 CONFIGURE_ARGS+=--with-fltk-config=${X11BASE}/bin/fltk-config
+USE_MESA=	YES
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LDFLAGS}
 PLIST_SUB+=	WITH_FLTK=
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 .if ${OSVERSION} < 500035
 pre-everything::
 	@${ECHO_CMD} ===================================================
