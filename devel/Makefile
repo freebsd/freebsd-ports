@@ -152,6 +152,7 @@
     SUBDIR += glib12
     SUBDIR += glib13
     SUBDIR += global
+    SUBDIR += glui
     SUBDIR += gmake
     SUBDIR += gnomebuild
     SUBDIR += gnomecrash
