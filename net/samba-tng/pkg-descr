@@ -4,7 +4,5 @@ domain controller.  Like Samba, Samba-TNG can also act as a file and
 print server for LanManager clients such as MS-DOS, OS/2, MS-Windows,
 Windows NT and Windows 2000, and as a WINS (Windows Internet Name
 Service) server.
-.
-This is needed by both the client and server portions of Samba-TNG.
 
 WWW: http://www.samba-tng.org/
