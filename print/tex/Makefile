@@ -63,6 +63,7 @@ install:
 	@mkdir -p ${PREFIX}/lib/texmf/tex
 	@(cd ${WRKDIR}/lib; install -c -m 644 *.tex ${PREFIX}/lib/texmf/tex)
 	@(cd ${WRKDIR}/plain/base; install -c -m 644 *.tex ${PREFIX}/lib/texmf/tex)
+	@(rm -f ${PREFIX}/bin/latex ${PREFIX}/bin/slitex)
 
 .include "Makefile.inc"
 
