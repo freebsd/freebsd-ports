@@ -12,14 +12,12 @@ lib/gst/libgstadder.so
 lib/gst/libgstalaw.so
 %%ARTS%%lib/gst/libgstartsdsink.so
 lib/gst/libgstaudio.so
-%%LIBAUDIOFILE%%lib/gst/libgstaudiofile.so
 lib/gst/libgstaudioscale.so
 lib/gst/libgstauparse.so
 %%AVIFILE%%lib/gst/libgstavidemux.so
 %%AVIFILE%%lib/gst/libgstavimux.so
 lib/gst/libgstcdxaparse.so
 lib/gst/libgstchart.so
-lib/gst/libgstcolorspace.so
 lib/gst/libgstcutter.so
 lib/gst/libgstdeinterlace.so
 %%LIBDVDREAD%%lib/gst/libgstdvdreadsrc.so
@@ -42,7 +40,6 @@ lib/gst/libgstlevel.so
 %%LIBMAD%%lib/gst/libgstmad.so
 lib/gst/libgstmedian.so
 %%LIBMIKMOD%%lib/gst/libgstmikmod.so
-lib/gst/libgstmodplug.so
 lib/gst/libgstmono2stereo.so
 lib/gst/libgstmonoscope.so
 lib/gst/libgstmp1videoparse.so
@@ -79,14 +76,16 @@ lib/gst/libgststereo2mono.so
 lib/gst/libgststereosplit.so
 lib/gst/libgstsynaesthesia.so
 lib/gst/libgstudp.so
+lib/gst/libgstvideocrop.so
 lib/gst/libgstvideoscale.so
+lib/gst/libgstvideotestsrc.so
 lib/gst/libgstvolenv.so
 lib/gst/libgstvolume.so
 %%VORBIS%%lib/gst/libgstvorbis.so
 lib/gst/libgstvumeter.so
 lib/gst/libgstwavparse.so
-%%AVIFILE%%lib/gst/libgstwincodec.so
 lib/gst/libgsty4menc.so
+lib/gst/libmixmatrix.so
 libdata/pkgconfig/gstreamer-libs.pc
 @dirrm include/gst-plugins/gst/riff
 @dirrm include/gst-plugins/gst/resample
