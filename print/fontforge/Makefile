@@ -24,7 +24,6 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.static
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
@@ -34,11 +33,11 @@ ALL_TARGET=	pfaedit
 
 MAN1=		pfaedit.1 sfddiff.1
 
-DIST_VER=	021125
+DIST_VER=	021229
 EXTRACT_ONLY=	${PORTNAME}_full-${DIST_VER}.tgz cidmaps.tgz
 
 .if !defined(NOPORTDOCS)
-DOC_VER=	020910
+DOC_VER=	021229
 DOCFILE=	${PORTNAME}_htdocs-${DOC_VER}.tgz
 .endif
 
@@ -49,17 +48,6 @@ post-extract:
 	${RM} ${WRKDIR}/html/cidmaps.tgz
 	${MV} ${WRKDIR}/*.cidmap ${WRKSRC}/cidmap
 .endif
-
-xxxpost-patch:
-	${REINPLACE_CMD} -e \
-		's,/usr/include/freetype2,${PREFIX}/include/freetype2 -I${PREFIX}/include,g' \
-		${WRKSRC}/configure ${WRKSRC}/configure.in \
-		${WRKSRC}/configure.pfaedit ${WRKSRC}/configure.pfaedit.in \
-		${WRKSRC}/configure.static.in \
-		${WRKSRC}/configure.ttfmod ${WRKSRC}/configure.ttfmod.in
-	${REINPLACE_CMD} -e 's,/usr/share/,${PREFIX}/share/,g' \
-		${WRKSRC}/pfaedit/pfaedit.1
-	${REINPLACE_CMD} -e 's,/usr/pkg/,${PREFIX}/,g' ${WRKSRC}/*/[mM]akefile.*
 
 post-install:
 	${MKDIR} ${DOCSDIR}
