@@ -6,34 +6,36 @@
 #
 
 PORTNAME=	flyspray
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	devel
 MASTER_SITES=	http://flyspray.rocks.cc/files/
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	A simple, easy-to-use web based bug tracking system
 
-.if defined(WITH_APACHE2)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
-.else
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
-.endif
+RUN_DEPENDS=	${LOCALBASE}/share/adodb/adodb.inc.php:${PORTSDIR}/databases/adodb
 
-NO_BUILD=       yes
+USE_PHP=	mysql pcre session
+WANT_PHP_WEB=	yes
 
-DOC_FILES=	AUTHORS BUGS CHANGELOG COPYING INSTALL README TODO UPGRADING flyspray-${PORTVERSION}.sql
+NO_BUILD=	yes
+
+DBDIR=		/var/db
+
+DOC_FILES=	AUTHORS BUGS CHANGELOG COPYING INSTALL README TODO UPGRADING sql/flyspray-${PORTVERSION}.mysql
+FLYSPRAY_FILES=	favicon.ico functions.inc.php functions.js index.php lang scripts themes regexp.php sql/upgrade_0.9.4_to_0.9.5-mysql.php
 
 do-install:
 	${MKDIR} ${PREFIX}/share/${PORTNAME}
 	${CHMOD} 755 ${PREFIX}/share/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/config.inc.php ${PREFIX}/share/${PORTNAME}/config.inc.php-dist
+	${INSTALL_DATA} ${WRKSRC}/header.php ${PREFIX}/share/${PORTNAME}/header.php-dist
 	cd ${WRKSRC} && \
-		tar cf - favicon.ico functions.inc.php functions.js header.php index.php lang scripts themes | \
+		tar cf - ${FLYSPRAY_FILES} | \
 		(cd ${PREFIX}/share/${PORTNAME} && tar -xf -)
-	${LN} -s /var/db/${PORTNAME}/attachments ${PREFIX}/share/${PORTNAME}/attachments
-	${MKDIR} /var/db/${PORTNAME}/attachments
-	${CHMOD} 750 /var/db/${PORTNAME}/attachments
-	${CHOWN} www:www /var/db/${PORTNAME}/attachments
+	${LN} -s ${DBDIR}/${PORTNAME}/attachments ${PREFIX}/share/${PORTNAME}/attachments
+	${MKDIR} ${DBDIR}/${PORTNAME}/attachments
+	${CHMOD} 750 ${DBDIR}/${PORTNAME}/attachments
+	${CHOWN} www:www ${DBDIR}/${PORTNAME}/attachments
 
 post-install: install-doc
 	@${CAT} ${PKGMESSAGE}

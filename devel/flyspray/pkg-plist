@@ -1,10 +1,10 @@
 share/flyspray/attachments
-share/flyspray/config.inc.php-dist
 share/flyspray/favicon.ico
 share/flyspray/functions.inc.php
 share/flyspray/functions.js
-share/flyspray/header.php
+share/flyspray/header.php-dist
 share/flyspray/index.php
+share/flyspray/regexp.php
 share/flyspray/lang/de/admin.php
 share/flyspray/lang/de/authenticate.php
 share/flyspray/lang/de/chpass.php
@@ -15,6 +15,7 @@ share/flyspray/lang/de/loginbox.php
 share/flyspray/lang/de/main.php
 share/flyspray/lang/de/modify.php
 share/flyspray/lang/de/newgroup.php
+share/flyspray/lang/de/newproject.php
 share/flyspray/lang/de/newtask.php
 share/flyspray/lang/de/newuser.php
 share/flyspray/lang/de/register.php
@@ -30,52 +31,75 @@ share/flyspray/lang/en/loginbox.php
 share/flyspray/lang/en/main.php
 share/flyspray/lang/en/modify.php
 share/flyspray/lang/en/newgroup.php
+share/flyspray/lang/en/newproject.php
 share/flyspray/lang/en/newtask.php
 share/flyspray/lang/en/newuser.php
 share/flyspray/lang/en/register.php
 share/flyspray/lang/en/severity.php
 share/flyspray/lang/en/status.php
-share/flyspray/lang/fr/admin.php
-share/flyspray/lang/fr/authenticate.php
-share/flyspray/lang/fr/chpass.php
-share/flyspray/lang/fr/details.php
-share/flyspray/lang/fr/functions.inc.php
-share/flyspray/lang/fr/index.php
-share/flyspray/lang/fr/loginbox.php
-share/flyspray/lang/fr/main.php
-share/flyspray/lang/fr/modify.php
-share/flyspray/lang/fr/newgroup.php
-share/flyspray/lang/fr/newtask.php
-share/flyspray/lang/fr/newuser.php
-share/flyspray/lang/fr/register.php
-share/flyspray/lang/fr/severity.php
-share/flyspray/lang/fr/status.php
-share/flyspray/lang/nl/admin.php
-share/flyspray/lang/nl/authenticate.php
-share/flyspray/lang/nl/chpass.php
-share/flyspray/lang/nl/details.php
-share/flyspray/lang/nl/functions.inc.php
-share/flyspray/lang/nl/index.php
-share/flyspray/lang/nl/loginbox.php
-share/flyspray/lang/nl/main.php
-share/flyspray/lang/nl/modify.php
-share/flyspray/lang/nl/newgroup.php
-share/flyspray/lang/nl/newtask.php
-share/flyspray/lang/nl/newuser.php
-share/flyspray/lang/nl/register.php
-share/flyspray/lang/nl/severity.php
-share/flyspray/lang/nl/status.php
+share/flyspray/lang/it/newgroup.php
+share/flyspray/lang/it/index.php
+share/flyspray/lang/it/severity.php
+share/flyspray/lang/it/newtask.php
+share/flyspray/lang/it/authenticate.php
+share/flyspray/lang/it/newproject.php
+share/flyspray/lang/it/functions.inc.php
+share/flyspray/lang/it/loginbox.php
+share/flyspray/lang/it/chpass.php
+share/flyspray/lang/it/status.php
+share/flyspray/lang/it/main.php
+share/flyspray/lang/it/register.php
+share/flyspray/lang/it/details.php
+share/flyspray/lang/it/modify.php
+share/flyspray/lang/it/newuser.php
+share/flyspray/lang/it/admin.php
+share/flyspray/lang/pl/newgroup.php
+share/flyspray/lang/pl/index.php
+share/flyspray/lang/pl/severity.php
+share/flyspray/lang/pl/newtask.php
+share/flyspray/lang/pl/authenticate.php
+share/flyspray/lang/pl/functions.inc.php
+share/flyspray/lang/pl/newproject.php
+share/flyspray/lang/pl/loginbox.php
+share/flyspray/lang/pl/chpass.php
+share/flyspray/lang/pl/status.php
+share/flyspray/lang/pl/register.php
+share/flyspray/lang/pl/main.php
+share/flyspray/lang/pl/details.php
+share/flyspray/lang/pl/modify.php
+share/flyspray/lang/pl/newuser.php
+share/flyspray/lang/pl/admin.php
+share/flyspray/lang/ptbr/newgroup.php
+share/flyspray/lang/ptbr/index.php
+share/flyspray/lang/ptbr/severity.php
+share/flyspray/lang/ptbr/newtask.php
+share/flyspray/lang/ptbr/authenticate.php
+share/flyspray/lang/ptbr/newproject.php
+share/flyspray/lang/ptbr/functions.inc.php
+share/flyspray/lang/ptbr/loginbox.php
+share/flyspray/lang/ptbr/chpass.php
+share/flyspray/lang/ptbr/status.php
+share/flyspray/lang/ptbr/register.php
+share/flyspray/lang/ptbr/main.php
+share/flyspray/lang/ptbr/readme.txt
+share/flyspray/lang/ptbr/details.php
+share/flyspray/lang/ptbr/modify.php
+share/flyspray/lang/ptbr/newuser.php
+share/flyspray/lang/ptbr/admin.php
 share/flyspray/scripts/admin.php
 share/flyspray/scripts/authenticate.php
 share/flyspray/scripts/chpass.php
+share/flyspray/scripts/chproject.php
 share/flyspray/scripts/details.php
 share/flyspray/scripts/index.php
 share/flyspray/scripts/loginbox.php
 share/flyspray/scripts/modify.php
 share/flyspray/scripts/newgroup.php
+share/flyspray/scripts/newproject.php
 share/flyspray/scripts/newtask.php
 share/flyspray/scripts/newuser.php
 share/flyspray/scripts/register.php
+share/flyspray/sql/upgrade_0.9.4_to_0.9.5-mysql.php
 share/flyspray/themes/Bluey/button.png
 share/flyspray/themes/Bluey/index.html
 share/flyspray/themes/Bluey/percent-0.png
@@ -109,6 +133,7 @@ share/flyspray/themes/Woodgrain/percent-70.png
 share/flyspray/themes/Woodgrain/percent-80.png
 share/flyspray/themes/Woodgrain/percent-90.png
 share/flyspray/themes/Woodgrain/theme.css
+share/flyspray/themes/Woodgrain/title.png
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
@@ -117,17 +142,19 @@ share/flyspray/themes/Woodgrain/theme.css
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
-%%PORTDOCS%%%%DOCSDIR%%/flyspray-0.9.4.sql
+%%PORTDOCS%%%%DOCSDIR%%/flyspray-0.9.5.mysql
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/flyspray/lang/en
 @dirrm share/flyspray/lang/de
-@dirrm share/flyspray/lang/fr
-@dirrm share/flyspray/lang/nl
+@dirrm share/flyspray/lang/it
+@dirrm share/flyspray/lang/pl
+@dirrm share/flyspray/lang/ptbr
 @dirrm share/flyspray/lang
 @dirrm share/flyspray/themes/Bluey
 @dirrm share/flyspray/themes/Woodgrain
 @dirrm share/flyspray/themes
 @dirrm share/flyspray/scripts
+@dirrm share/flyspray/sql
 @dirrm share/flyspray
 @unexec rmdir /var/db/flyspray/attachments 2>/dev/null || true
 @unexec rmdir /var/db/flyspray 2>/dev/null || true

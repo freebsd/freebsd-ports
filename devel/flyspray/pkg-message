@@ -3,20 +3,24 @@
 Configuration Instructions for Flyspray
 =======================================
 
-1) Create a mysql database for Flyspray to use.  Here is one way to
-do that, from the command line, entering your mysql root password when
+1) Create a mysql database for Flyspray to use.  Here is one way to do that,
+from the unix/linux command line, entering your mysql root password when
 prompted:
 
 # mysqladmin -u root -p create flyspray
 
-2) Import the Flyspray database tables into your new empty
-database. Here is the command line method; be sure to enter your mysql root
+2) Import the Flyspray database tables into your new empty database. Here is
+the unix/linux command line method; be sure to enter your mysql root
 password when prompted:
 
 # mysql -u root -p flyspray < flyspray-version.sql
 
-3) Copy the config.inc.php-dist file to config.inc.php and edit it to suit
-your database setup.  Examples are provided in the file.
+3) Edit the header.php file to suit your database setup.  Examples are
+provided in the file.  You will need to set your database type to an ADODB
+supported database, your database username and password, and the host the
+database server runs on.  You will also need to enter the location of the
+adodb.inc.php file and functions.inc.php file.  Consider changing the cookie
+salt value as well.
 
 4) Insert the following configuration command into your httpd.conf:
 
@@ -25,15 +29,23 @@ your database setup.  Examples are provided in the file.
 5) Point your browser to http://yourserver.com/flyspray/ and you should
 see Flyspray!  Login as 'super', with the password 'super'.
 
-6) Create youself a new user, place them into the Admin group.
+6) Create youself a new user, and put this user into the Admin group.
 
 7) CHANGE THE PASSWORD FOR THE super/super ACCOUNT by clicking the
 'Change Password' link near the top of the page.  You might like to disable
 the account entirely, or it will appear in the list of members to be assigned
 tasks.
 
-8) Close the sample task, and begin adding your own.
+8) Click on the admin links to set up your Options and lists.
 
-9) Report any bugs you find back to http://flyspray.rocks.cc/bts/
+9) Close the sample task, and begin adding your own.
+
+10) Report any bugs you find back to http://flyspray.rocks.cc/bts/ or the
+mailing list linked from the Flyspray homepage.
+
+11) If you are upgrading from flyspray 0.9.4, please use your browser to
+open the URL:
+
+http://yourserver.com/flyspray/sql/upgrade_0.9.4_to_0.9.5-mysql.php
 
 ##
