@@ -1,12 +1,12 @@
 bin/lame
-share/doc/lame/contributors.html
-share/doc/lame/examples.html
-share/doc/lame/history.html
-share/doc/lame/id3.html
-share/doc/lame/index.html
-share/doc/lame/lame.css
-share/doc/lame/node5.html
-share/doc/lame/node6.html
-share/doc/lame/node7.html
-share/doc/lame/switchs.html
-@dirrm share/doc/lame
+%%PORTDOCS%%share/doc/lame/contributors.html
+%%PORTDOCS%%share/doc/lame/examples.html
+%%PORTDOCS%%share/doc/lame/history.html
+%%PORTDOCS%%share/doc/lame/id3.html
+%%PORTDOCS%%share/doc/lame/index.html
+%%PORTDOCS%%share/doc/lame/lame.css
+%%PORTDOCS%%share/doc/lame/node5.html
+%%PORTDOCS%%share/doc/lame/node6.html
+%%PORTDOCS%%share/doc/lame/node7.html
+%%PORTDOCS%%share/doc/lame/switchs.html
+%%PORTDOCS%%@dirrm share/doc/lame
