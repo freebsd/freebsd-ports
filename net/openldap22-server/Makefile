@@ -52,7 +52,7 @@ PORTDOCS=		drafts rfc
 .error You have `USE_OPENLDAP' defined either in your environment or in make(1) arguments.
 .endif
 .else
-OPENLDAP_PORTVERSION=	0
+OPENLDAP_PORTVERSION=	1
 OPENLDAP_PKGNAMESUFFIX?=-server
 OPENLDAP_PKGFILESUFX?=
 
@@ -114,6 +114,7 @@ EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR} \
 			--enable-ldbm \
 			--with-ldbm-api=berkeley \
+			--enable-crypt \
 			--enable-lmpasswd \
 			--enable-ldap \
 			--enable-meta \
