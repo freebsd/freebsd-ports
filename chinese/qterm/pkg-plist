@@ -1,58 +1,60 @@
 bin/qterm
 share/applications/qterm.desktop
 share/icons/qterm.png
-share/qterm/address.cfg
-share/qterm/credits
-share/qterm/cursor/end.xpm
-share/qterm/cursor/enter.xpm
-share/qterm/cursor/exit.xpm
-share/qterm/cursor/hand.xpm
-share/qterm/cursor/home.xpm
-share/qterm/cursor/next.xpm
-share/qterm/cursor/pagedown.xpm
-share/qterm/cursor/pageup.xpm
-share/qterm/cursor/prev.xpm
-share/qterm/pic/addr.png
-share/qterm/pic/anti-idle.png
-share/qterm/pic/article.png
-share/qterm/pic/auto-reply.png
-share/qterm/pic/color-copy.png
-share/qterm/pic/color.png
-share/qterm/pic/connect.png
-share/qterm/pic/copy.png
-share/qterm/pic/disconnect.png
-share/qterm/pic/fonts.png
-share/qterm/pic/keys.png
-share/qterm/pic/message.png
-share/qterm/pic/mouse.png
-share/qterm/pic/paste.png
-share/qterm/pic/popwidget.png
-share/qterm/pic/pref.png
-share/qterm/pic/qterm_32x32.png
-share/qterm/pic/qterm_48x48.png
-share/qterm/pic/qterm_tray.png
-share/qterm/pic/quick.png
-share/qterm/pic/reconnect.png
-share/qterm/pic/rect.png
-share/qterm/pic/refresh.png
-share/qterm/pic/sound.png
-share/qterm/pic/tabpad.png
-share/qterm/po/qterm_chs.qm
-share/qterm/po/qterm_cht.qm
-share/qterm/qterm.cfg
-share/qterm/schema/Linux.schema
-share/qterm/schema/Softness.schema
-share/qterm/schema/VIM.schema
-share/qterm/schema/XTerm.schema
-share/qterm/schema/default.schema
-share/qterm/script/continuous.py
-share/qterm/script/download.py
-share/qterm/script/sendmsg.py
-share/qterm/script/system.py
-share/qterm/script/tools.py
-@dirrm share/qterm/script
-@dirrm share/qterm/schema
-@dirrm share/qterm/po
-@dirrm share/qterm/pic
-@dirrm share/qterm/cursor
-@dirrm share/qterm
+%%DATADIR%%/address.cfg
+%%DATADIR%%/credits
+%%DATADIR%%/cursor/end.xpm
+%%DATADIR%%/cursor/enter.xpm
+%%DATADIR%%/cursor/exit.xpm
+%%DATADIR%%/cursor/hand.xpm
+%%DATADIR%%/cursor/home.xpm
+%%DATADIR%%/cursor/next.xpm
+%%DATADIR%%/cursor/pagedown.xpm
+%%DATADIR%%/cursor/pageup.xpm
+%%DATADIR%%/cursor/prev.xpm
+%%DATADIR%%/pic/addr.png
+%%DATADIR%%/pic/anti-idle.png
+%%DATADIR%%/pic/article.png
+%%DATADIR%%/pic/auto-reply.png
+%%DATADIR%%/pic/color-copy.png
+%%DATADIR%%/pic/color.png
+%%DATADIR%%/pic/connect.png
+%%DATADIR%%/pic/copy.png
+%%DATADIR%%/pic/disconnect.png
+%%DATADIR%%/pic/fonts.png
+%%DATADIR%%/pic/keys.png
+%%DATADIR%%/pic/message.png
+%%DATADIR%%/pic/mouse.png
+%%DATADIR%%/pic/paste.png
+%%DATADIR%%/pic/popwidget.png
+%%DATADIR%%/pic/pref.png
+%%DATADIR%%/pic/qterm_32x32.png
+%%DATADIR%%/pic/qterm_48x48.png
+%%DATADIR%%/pic/qterm_tray.png
+%%DATADIR%%/pic/quick.png
+%%DATADIR%%/pic/reconnect.png
+%%DATADIR%%/pic/rect.png
+%%DATADIR%%/pic/refresh.png
+%%DATADIR%%/pic/sound.png
+%%DATADIR%%/pic/tabpad.png
+%%DATADIR%%/po/qterm_chs.qm
+%%DATADIR%%/po/qterm_cht.qm
+%%DATADIR%%/qterm.cfg
+%%DATADIR%%/schema/Linux.schema
+%%DATADIR%%/schema/Softness.schema
+%%DATADIR%%/schema/VIM.schema
+%%DATADIR%%/schema/XTerm.schema
+%%DATADIR%%/schema/default.schema
+%%DATADIR%%/script/continuous.py
+%%DATADIR%%/script/download.py
+%%DATADIR%%/script/sendmsg.py
+%%DATADIR%%/script/system.py
+%%DATADIR%%/script/tools.py
+@dirrm %%DATADIR%%/script
+@dirrm %%DATADIR%%/schema
+@dirrm %%DATADIR%%/po
+@dirrm %%DATADIR%%/pic
+@dirrm %%DATADIR%%/cursor
+@dirrm %%DATADIR%%
+@dirrm share/icons
+@dirrm share/applications
