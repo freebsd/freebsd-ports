@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmms-gdancer
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.figz.com/gdancer/files/
 DISTNAME=	gdancer-$(PORTVERSION)
