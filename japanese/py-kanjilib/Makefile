@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kanjilib
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2
 CATEGORIES=	japanese python converters
 MASTER_SITES=	http://www.asahi-net.or.jp/~rd6t-kjym/python/kanjilib/dist/
 
