@@ -1,5 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Session/MultiDispatch/.packlist
 %%SITE_PERL%%/POE/Session/MultiDispatch.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Session/MultiDispatch
+@unexec rmdir %D/%%SITE_PERL%%/POE/Session 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/POE 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Session 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
