@@ -353,7 +353,7 @@ if [ "$nobuild" = 0 -a "$finish" = 0 ]; then
   echo "================================================"
   echo "setting up nodes"
   echo "================================================"
-  for node in $(awk '{print $1}' ${pb}/${arch}/mlist); do
+  for node in $(cat ${pb}/${arch}/mlist); do
     ${scripts}/dosetupnode ${arch} ${branch} ${node} &
   done
 fi
@@ -508,8 +508,8 @@ if [ "$nobuild" = 0 ]; then
   echo "================================================"
   echo "setting up nodes"
   echo "================================================"
-  for node in $(awk '{print $1}' ${pb}/${arch}/mlist); do
-    ${scripts}/dosetupnode ${arch} ${branch} ${node} &
+  for node in $(cat ${pb}/${arch}/mlist); do
+    ${scripts}/dosetupnode ${arch} ${branch} ${node} -norsync &
     sleep 2
   done
 
@@ -517,7 +517,12 @@ if [ "$nobuild" = 0 ]; then
 
   echo "setting up of nodes ended at $(date)"
 
-  count=$(awk '{sum+=$2}END{print sum+NR/2}' ${pb}/${arch}/mlist | sed -e 's/\..*$//')
+  count=0
+  for i in `cat ${pb}/${arch}/mlist`; do
+    . ${pb}/${arch}/portbuild.conf
+    test -f ${pb}/${arch}/portbuild.${i} && . ${pb}/${arch}/portbuild.${i}
+    count=$((${count}+${maxjobs}))
+  done
   cd ${pb}/${arch}/${branch}/packages/All
   echo "================================================"
   echo "building packages (phase 2)"
