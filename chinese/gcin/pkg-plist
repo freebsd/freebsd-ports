@@ -7,31 +7,33 @@ bin/tsa2d
 bin/tsd2a
 bin/tslearn
 lib/menu/gcin
+lib/menu/gcin.in
 lib/menu/gcin-setup
-share/gcin/script/gcin-user-setup
-share/gcin/script/gcin-utf8-setup
-share/gcin/table/ar30.gtab
-share/gcin/table/cj.gtab
-share/gcin/table/et.kbm
-share/gcin/table/et-asdf.kbm
-share/gcin/table/et26.kbm
-share/gcin/table/et26-asdf.kbm
-share/gcin/table/gtab.list
-share/gcin/table/hsu.kbm
-share/gcin/table/ibm.kbm
-share/gcin/table/phrase.table
-share/gcin/table/pho.tab
-share/gcin/table/symbol-table
-share/gcin/table/tsin
-share/gcin/table/tsin.idx
-share/gcin/table/zo.kbm
-share/gcin/table/zo-asdf.kbm
+lib/menu/gcin-setup.in
+%%DATADIR%%/script/gcin-user-setup
+%%DATADIR%%/script/gcin-utf8-setup
+%%DATADIR%%/table/ar30.gtab
+%%DATADIR%%/table/cj.gtab
+%%DATADIR%%/table/et.kbm
+%%DATADIR%%/table/et-asdf.kbm
+%%DATADIR%%/table/et26.kbm
+%%DATADIR%%/table/et26-asdf.kbm
+%%DATADIR%%/table/gtab.list
+%%DATADIR%%/table/hsu.kbm
+%%DATADIR%%/table/ibm.kbm
+%%DATADIR%%/table/phrase.table
+%%DATADIR%%/table/pho.tab
+%%DATADIR%%/table/symbol-table
+%%DATADIR%%/table/tsin
+%%DATADIR%%/table/tsin.idx
+%%DATADIR%%/table/zo.kbm
+%%DATADIR%%/table/zo-asdf.kbm
 share/icons/gcin.png
 share/icons/gcin/pin-fixed24.png
 share/icons/gcin/pin-float16.png
 @dirrm lib/menu
 @dirrm share/icons/gcin
 @unexec rmdir %D/share/icons 2>/dev/null || true
-@dirrm share/gcin/table
-@dirrm share/gcin/script
-@dirrm share/gcin
+@dirrm %%DATADIR%%/table
+@dirrm %%DATADIR%%/script
+@dirrm %%DATADIR%%
