@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	gnomespell
-PORTVERSION=	0.4
+PORTVERSION=	0.4.1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gnome-spell
 DISTNAME=	gnome-spell-${PORTVERSION}
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml-i18n-tools/xml-i18n-extract.in:${PORTSDIR}/textproc/xml-i18n-tools
 LIB_DEPENDS=	aspell.11:${PORTSDIR}/textproc/aspell
 
 USE_X_PREFIX=	yes
@@ -25,11 +25,6 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-
-post-extract:
-.for file in xml-i18n-extract.in xml-i18n-merge.in xml-i18n-update.in
-	@${LN} -sf ${LOCALBASE}/share/xml-i18n-tools/${file} ${WRKSRC}/${file}
-.endfor
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
