@@ -9678,6 +9678,7 @@ thinice		ports/x11-themes/thinice
 thoteditor	ports/editors/thoteditor
 threeDS		ports/graphics/threeDS
 throttle	ports/sysutils/throttle
+throttled	ports/net/throttled
 thttpd		ports/www/thttpd
 thudboard	ports/games/thudboard
 thumbnail_index ports/www/thumbnail_index
