@@ -15,25 +15,27 @@ MAINTAINER=	mwm@mired.org
 
 USE_PYTHON=	YES
 USE_BZIP2=	YES
-
-do-install:
-	@${MKDIR} ${DATADIR}
-	${CP} ${WRKSRC}/*.py ${DATADIR}
-	${CP} ${WRKSRC}/*.css ${DATADIR}
-.for d in plugins schemes
-	@${MKDIR} ${DATADIR}/${d}
-	${CP} ${WRKSRC}/${d}/*.py ${DATADIR}/${d}
-.endfor
-	${LN} -sf ${DATADIR}/webcheck.py ${PREFIX}/bin/webcheck
-.ifndef NOPORTDOCS
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/USAGE ${DOCSDIR}
+.if defined(NOPORTDOCS)
+NO_BUILD=	YES
+.endif
 
 do-build:
 	${AWK} '/^Running Webcheck/ { output=1 } output' \
 		< ${WRKSRC}/INSTALL > ${WRKSRC}/USAGE
-.else
-NO_BUILD=	yes
+
+do-install:
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.py ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.css ${DATADIR}
+.for d in plugins schemes
+	@${MKDIR} ${DATADIR}/${d}
+	${INSTALL_DATA} ${WRKSRC}/${d}/*.py ${DATADIR}/${d}
+.endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/webcheck.py ${DATADIR}
+	${LN} -sf ${DATADIR}/webcheck.py ${PREFIX}/bin/webcheck
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/USAGE ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
