@@ -6,10 +6,11 @@
 #
 
 PORTNAME=       xboard
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.gnu.org/gnu/xboard/ \
 		http://www.research.compaq.com/SRC/personal/Tim_Mann/xboard/
+DISTNAME=	xboard-4.2.0beta
 
 MAINTAINER=	xaa+ports@madison-gurkha.com
 
