@@ -1,5 +1,4 @@
-#i27028 and #i27028
-http://qa.openoffice.org/issues/show_bug.cgi?id=27021  (Xaw)
+#i27028
 http://qa.openoffice.org/issues/show_bug.cgi?id=27028  (ant)
 
 Index: config_office/configure.in
@@ -9,14 +8,6 @@ retrieving revision 1.63
 diff -u -r1.63 configure.in
 --- ../config_office/configure.in	17 Mar 2004 09:33:26 -0000	1.63
 +++ ../config_office/configure.in	8 Jun 2004 20:53:16 -0000
-@@ -1478,6 +1478,7 @@
- elif test "$_os" != "WINNT" ; then
-    AC_PATH_X
-    AC_PATH_XTRA
-+   CPPFLAGS="$CPPFLAGS $X_CFLAGS"
-    AC_CHECK_HEADERS(X11/Xaw/Label.h,[AC_MSG_RESULT([Ok])],[AC_MSG_ERROR([Xaw include headers not found])])
- 
-    if test "x$x_includes" = "x"; then
 @@ -1830,10 +1831,12 @@
  
  if test "$enable_java" != "no"; then
