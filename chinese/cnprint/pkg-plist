@@ -11,6 +11,8 @@ share/cnprint/jiskan24.hbf
 share/cnprint/kanji48.bin
 share/cnprint/kanji48.hbf
 share/cnprint/ksc16.hbf
+share/cnprint/ntu_kai48.bin
+share/cnprint/ntu_kai48.hbf
 share/cnprint/uwjis-16.hbf
 share/cnprint/uwksc-16.hbf
 share/cnprint/mshei.htf
