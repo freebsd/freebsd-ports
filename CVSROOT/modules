@@ -1247,6 +1247,7 @@ diablo		ports/news/diablo
 diablo-jdk13	ports/java/diablo-jdk13
 diablo-jre13	ports/java/diablo-jre13
 diacanvas	ports/graphics/diacanvas
+diacanvas2	ports/graphics/diacanvas2
 dice		ports/lang/dice
 dico		ports/textproc/dico
 dictd		ports/net/dictd
