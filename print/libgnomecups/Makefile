@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgnomecups
-PORTVERSION=	0.1.13
+PORTVERSION=	0.1.14
 PORTEPOCH=	1
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack glib20
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
