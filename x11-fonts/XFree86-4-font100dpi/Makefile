@@ -19,7 +19,7 @@ DISTFILES=	X401src-2.tgz
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	${X11_BASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
 
 XFREE86_VERSION=	4
 USE_IMAKE=		YES
