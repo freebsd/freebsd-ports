@@ -2,6 +2,7 @@
 #
 
     SUBDIR += agrep
+    SUBDIR += antiword
     SUBDIR += aspell
     SUBDIR += br-ispell
     SUBDIR += british-ispell
