@@ -7,6 +7,7 @@
 
 PORTNAME=	crm114
 PORTVERSION=	20040221
+PORTREVISION=	1
 # WARNING change versionname in CRM114RELEASENAME too.
 # portlint didn't like this variable at this place.
 # So I have to put it down in this file.
@@ -23,6 +24,8 @@ MAINTAINER=	Meno.Abels@Adviser.com
 COMMENT=	An Markov based SpamFilter
 
 LIB_DEPENDS=	tre.4:${PORTSDIR}/textproc/libtre
+# there is no other then formail on this planet
+RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
 CRM114RELEASENAME=BlameYokohama
 
@@ -42,11 +45,16 @@ CRM_FILES=	classifytest.crm exectest.crm inserttest_a.crm \
 		matchtest.crm overalterisolatedtest.crm \
 		windowtest.crm
 
+# Peter Jeremy recommended the use of b64decode and md5 20040302
 post-build:
 	${MKDIR} ${WRKSRC}/fbsdinstall
+	${SED} 's|:mime_decoder: /mewdecode/|:mime_decoder: /b64decode -pr/|' \
+		 ${WRKSRC}/mailfilter.cf > ${WRKSRC}/fbsdinstall/mailfilter.cf
 .for i in ${CRM_FILES}
 	${SED} "1s|/usr/bin/crm|${PREFIX}/bin/crm|g" ${WRKSRC}/${i} > ${WRKSRC}/fbsdinstall/${i}
 .endfor
+	${SED} 's|/md5sum/|/md5 -r/|' ${WRKSRC}/mailfilter.crm > ${WRKSRC}/fbsdinstall/mailfilter.crm.md5
+	mv ${WRKSRC}/fbsdinstall/mailfilter.crm.md5 ${WRKSRC}/fbsdinstall/mailfilter.crm
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -56,7 +64,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	${MKDIR} ${EXAMPLESDIR}
-.for i in procmailrc.recipe blacklist.mfp mailfilter.cf whitelist.mfp priolist.mfp
+.for i in procmailrc.recipe blacklist.mfp fbsdinstall/mailfilter.cf whitelist.mfp priolist.mfp
 	${INSTALL_DATA} ${WRKSRC}/${i} ${EXAMPLESDIR}
 .endfor
 .for i in ${CRM_FILES}
