@@ -9,7 +9,7 @@
 +BINDIR=	${PREFIX}/bin
 +MANDIR=	${PREFIX}/man
 +CC	?=gcc
-+CFLAGS=	-O -D_FILE_OFFSET_BITS=64 -Wall -I${LOCALBASE}/include
++CFLAGS+=	-D_FILE_OFFSET_BITS=64 -I${LOCALBASE}/include
 +LD	=${CC}
 +LDFLAGS=-L${LOCALBASE}/lib
 +LIBS=	-lgnugetopt
