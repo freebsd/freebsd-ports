@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	bonnie++
-PORTVERSION=	1.01c
+PORTVERSION=	1.01d
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.coker.com.au/bonnie++/
 EXTRACT_SUFX=	.tgz
