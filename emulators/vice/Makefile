@@ -20,8 +20,6 @@ LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 
 RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
-NO_CDROM=	${RESTRICTED}
-NO_PACKAGE=	${RESTRICTED}
 
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
