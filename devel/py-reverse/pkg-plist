@@ -2,24 +2,34 @@ bin/pyargo
 bin/pystats
 lib/%%PYTHON_VERSION%%/site-packages/logilab/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/logilab/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/logilab/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/base.py
 lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/base.pyc
+lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/base.pyo
 lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/data/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/data/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/data/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/data/standard_21.py
 lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/data/standard_21.pyc
+lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/data/standard_21.pyo
 lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/pyargo.py
 lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/pyargo.pyc
+lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/pyargo.pyo
 lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/pyparser.py
 lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/pyparser.pyc
+lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/pyparser.pyo
 lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/pystats.py
 lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/pystats.pyc
+lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/pystats.pyo
 lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/xmi_uml.py
 lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/xmi_uml.pyc
+lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/xmi_uml.pyo
 lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/xmlconf.py
 lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/xmlconf.pyc
+lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/xmlconf.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse/data
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/logilab/pyreverse
-@unexec rmdir %D/lib/%%PYTHON_VERSION%%/site-packages/logilab 2>/dev/null || true
+@dirrm lib/%%PYTHON_VERSION%%/site-package//logilab

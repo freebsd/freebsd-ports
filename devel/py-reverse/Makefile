@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	reverse
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.logilab.org/pub/pyreverse/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,13 +19,6 @@ BUILD_DEPENDS=	${PYXML}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
-
-SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
-
-do-build:
-	@${SETUP_CMD} build
-
-do-install:
-	@${SETUP_CMD} install
+USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
