@@ -4,10 +4,8 @@
 #
 # $FreeBSD$
 #
-
 PORTNAME=	gdb
 PORTVERSION=	${GDBVERSION}.${PATCHVERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
 		http://lev.serebryakov.spb.ru/download/msp430/:patches
@@ -20,7 +18,7 @@ MAINTAINER=	lev@FreeBSD.org
 COMMENT=	FSF gdb-5.1.1 for TI's msp430 MCUs cross-development
 
 GDBVERSION=	5.1.1
-PATCHVERSION=	20030604
+PATCHVERSION=	20030909
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GDBVERSION}
 
