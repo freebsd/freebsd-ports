@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.68 1999/01/26 03:11:58 steve Exp $
+# $Id: Makefile,v 1.69 1999/02/12 15:45:08 kuriyama Exp $
 #
 
     SUBDIR += 8hz-mp3
@@ -9,8 +9,8 @@
     SUBDIR += cdd
     SUBDIR += cddbd
     SUBDIR += cdplay
-    SUBDIR += dap
     SUBDIR += dagrab
+    SUBDIR += dap
     SUBDIR += esound
     SUBDIR += gmod
     SUBDIR += gnomeaudio
@@ -35,6 +35,7 @@
     SUBDIR += playmidi
     SUBDIR += radio
     SUBDIR += replay
+    SUBDIR += rio
     SUBDIR += rosegarden
     SUBDIR += rplay
     SUBDIR += rsynth
