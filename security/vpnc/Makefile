@@ -32,9 +32,9 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} -m 751 ${WRKSRC}/vpnc ${PREFIX}/sbin/vpnc
-	@${INSTALL_SCRIPT} -m 755 ${FILESDIR}/vpnc.sh ${PREFIX}/etc/rc.d/vpnc.sh.sample
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
-				${PREFIX}/etc/rc.d/vpnc.sh.sample
+	@${CP} ${FILESDIR}/vpnc.sh ${WRKDIR}
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKDIR}/vpnc.sh
+	@${INSTALL_SCRIPT} -m 755 ${WRKDIR}/vpnc.sh ${PREFIX}/etc/rc.d/vpnc.sh.sample
 	@${INSTALL_DATA} -m 600 ${WRKSRC}/vpnc.conf ${PREFIX}/etc/vpnc.conf.sample
 .if !defined(NO_INSTALL_MANPAGES)
 	@${INSTALL_MAN} ${FILESDIR}/vpnc.8 ${PREFIX}/man/man8
