@@ -102,6 +102,7 @@ share/gnome/omf/quick-lounge-applet/quick-lounge-zh_TW.omf
 share/gnome/pixmaps/quick-lounge-applet.png
 share/gnome/quick-lounge/glade/quick-lounge.glade
 share/locale/az/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/bs/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/ca/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/cs/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/de/LC_MESSAGES/quick-lounge-applet.mo
@@ -109,7 +110,9 @@ share/locale/el/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/en_CA/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/en_GB/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/es/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/fi/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/fr/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/gu/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/hr/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/hu/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/it/LC_MESSAGES/quick-lounge-applet.mo
@@ -118,16 +121,20 @@ share/locale/ko/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/ms/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/nl/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/no/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/pa/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/pl/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/pt/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/pt_BR/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/ru/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/rw/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/sk/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/sr/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/sr@Latn/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/sv/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/uk/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/zh_CN/LC_MESSAGES/quick-lounge-applet.mo
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw 2> /dev/null || true
 @dirrm share/gnome/quick-lounge/glade
 @dirrm share/gnome/quick-lounge
 @dirrm share/gnome/omf/quick-lounge-applet
