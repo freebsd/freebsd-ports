@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.4.b4.2003.10.03
+PORTVERSION?=	7.4.b5.2003.10.23
 CATEGORIES?=	databases
 MASTER_SITES=	http://freebsd.sean.chittenden.org/ports/ \
 		http://people.freebsd.org/~seanc/ports/
@@ -17,6 +17,7 @@ DIST_SUBDIR=	postgresql
 MAINTAINER?=	seanc@FreeBSD.org
 COMMENT=	Development snapshots of PostgreSQL's latest features
 
+CONFLICTS=	postgresql7*
 CONFIGURE_ENV+=	DOCBOOKSTYLE=${LOCALBASE}/share/sgml/docbook/3.1/
 USE_BZIP2=	YES
 USE_GMAKE=	YES
