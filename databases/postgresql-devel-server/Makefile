@@ -3,12 +3,14 @@
 # Date created:		November 13, 1998
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.36 1999/04/12 20:39:12 andreas Exp $
+# $Id: Makefile,v 1.37 1999/04/14 00:03:06 scrappy Exp $
 #
 
 DISTNAME=	postgresql-6.4.2
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.postgresql.org/pub/
+MASTER_SITES=	ftp://ftp.postgresql.org/pub/ \
+		ftp://ftp.iodynamics.com/pub/mirror/postgresql/
+
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
