@@ -3,7 +3,7 @@
 # Date created:         03 Aug 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
-# $Id: Makefile,v 1.4 1996/10/16 02:40:47 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/11 05:50:23 obrien Exp $
 #
 
 DISTNAME=	zorro-1.1p8
@@ -18,7 +18,7 @@ LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 NO_BUILD=	yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/zorro ${PREFIX}/bin/zorro
+	${INSTALL_SCRIPT} ${WRKSRC}/zorro ${PREFIX}/bin/zorro
 	${MKDIR} ${PREFIX}/share/zorro
 	${INSTALL_DATA} ${WRKSRC}/DOTzorrorc ${PREFIX}/share/zorro
 	@echo ""
