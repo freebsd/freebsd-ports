@@ -1,15 +1,15 @@
---- configure.orig	Fri Aug  4 22:23:00 2000
-+++ configure	Fri Aug 25 06:50:42 2000
-@@ -603,7 +603,7 @@
+--- configure.orig	Wed Sep 27 09:15:44 2000
++++ configure	Thu Sep 28 09:38:24 2000
+@@ -607,7 +607,7 @@
  SDL_MAJOR_VERSION=1
  SDL_MINOR_VERSION=1
- SDL_MICRO_VERSION=4
--SDL_INTERFACE_AGE=1
+ SDL_MICRO_VERSION=5
+-SDL_INTERFACE_AGE=0
 +SDL_INTERFACE_AGE=2
- SDL_BINARY_AGE=4
+ SDL_BINARY_AGE=5
  SDL_VERSION=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION.$SDL_MICRO_VERSION
  
-@@ -616,9 +616,9 @@
+@@ -620,9 +620,9 @@
  
  # libtool versioning
  LT_RELEASE=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION
@@ -21,7 +21,7 @@
  
  
  
-@@ -2685,7 +2685,7 @@
+@@ -3002,7 +3002,7 @@
  
  
  SDL_CFLAGS=""
@@ -29,8 +29,8 @@
 +SDL_LIBS="-lSDL-1.1"
  
  
- # Check whether --enable-audio or --disable-audio was given.
-@@ -4448,8 +4448,6 @@
+ case "$target" in
+@@ -4788,8 +4788,6 @@
           #include <vga.h>
           #include <vgamouse.h>
           #include <vgakeyboard.h>
@@ -39,11 +39,11 @@
          
  int main() {
  
-@@ -5166,6 +5164,7 @@
+@@ -5538,6 +5536,7 @@
+         ARCH=freebsd
+         CheckNASM
          CheckESD
++        CheckSVGA
          CheckX11
+         CheckDGA
          CheckAAlib
-+	CheckSVGA
-         CheckOpenGL
-         CheckPTHREAD
-         # Set up files for the main() stub
