@@ -24,6 +24,8 @@ RUN_DEPENDS=		ptex:${PORTSDIR}/japanese/ptex-tetex
 PKGMESSAGE=		${WRKDIR}/pkg-message
 PKGMESSAGE_SUB=		LOCALBASE=${LOCALBASE}
 
+PLIST_SUB=		PKGNAMESUFFIX=${PKGNAMESUFFIX}
+
 pre-patch:
 	${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		< ${PKGDIR}/pkg-message > ${PKGMESSAGE}
