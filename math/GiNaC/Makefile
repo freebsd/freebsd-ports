@@ -8,32 +8,36 @@
 
 PORTNAME=	GiNaC
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
 
 MAINTAINER=	ports@FreeBSD.org
 
+LIB_DEPENDS=	cln.2:${PORTSDIR}/math/cln
+
 USE_BZIP2=	yes
-LIB_DEPENDS=	cln:${PORTSDIR}/math/cln
-
-USE_LIBTOOL=	yes
-USE_GMAKE=	yes
 USE_NEWGCC=	yes
-
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		MAKEINFO="makeinfo --no-split"
 INSTALLS_SHLIB=	yes
 
-MAN1=	ginsh.1 viewgar.1 ginac-config.1
+MAN1=	ginac-config.1 ginsh.1 viewgar.1
+
+post-extract:
+	@${RM} -f ${WRKSRC}/doc/tutorial/ginac.info*
 
 post-patch:
-	@${PERL} -pi -e "s,sstream,strstream,g" ${WRKSRC}/configure
-.for file in numeric.cpp tostring.h
-	@${PERL} -pi -e "s,sstream,strstream,g ; \
-		s,stringstream,strstream,g" ${WRKSRC}/ginac/${file}
+.for file in configure ginac/numeric.cpp ginac/tostring.h
+	@${PERL} -pi -e 's|sstream|strstream|g ; \
+		 s|stringstream|strstream|g' ${WRKSRC}/${file}
 .endfor
-
-pre-build:
-	@(cd ${WRKSRC} ; \
-	  ${LN} -sf ${PREFIX}/bin/libtool)
+	@${PERL} -pi -e 's|-release \$$\(LT_RELEASE\)||g' \
+		${WRKSRC}/ginac/Makefile.in
 
 .include <bsd.port.mk>

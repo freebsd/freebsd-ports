@@ -5,9 +5,9 @@ include/ginac/add.h
 include/ginac/archive.h
 include/ginac/assertion.h
 include/ginac/basic.h
-include/ginac/constant.h
 include/ginac/clifford.h
 include/ginac/color.h
+include/ginac/constant.h
 include/ginac/ex.h
 include/ginac/expair.h
 include/ginac/expairseq.h
@@ -39,16 +39,11 @@ include/ginac/tensor.h
 include/ginac/tinfos.h
 include/ginac/version.h
 include/ginac/wildcard.h
-@dirrm include/ginac
 @unexec install-info --delete %D/info/ginac.info %D/info/dir
 info/ginac.info
-info/ginac.info-1
-info/ginac.info-2
-info/ginac.info-3
-info/ginac.info-4
-info/ginac.info-5
 @exec install-info %D/info/ginac.info %D/info/dir
 lib/libginac.a
 lib/libginac.so
-lib/libginac-1.0.so.0
+lib/libginac.so.0
 share/aclocal/ginac.m4
+@dirrm include/ginac
