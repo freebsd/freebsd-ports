@@ -1,5 +1,5 @@
 This program is a clock that shows which portion of the Earth's surface is
-illuminated by the Sun.  It is designed to be usually iconic, but can be
+illuminated by the sun.  It is designed to be usually iconic, but can be
 opened for a larger display with the time updated every second and both the
 local timezone and UTC displayed.  The Suntools version had a menu that
 allowed you to speed up time, show different dates, etc., but I have

@@ -1,4 +1,4 @@
-     playmidi is a small quick midi file player using the level two sequencer
+     playmidi is a small, quick midi file player using the level two sequencer
      of the voxware 3.0 package to play on general midi devices or FM or
      Gravis Ultrasound.  If no files are specified, playmidi will give a short
      summary of usage options.	If more than one file is specified, you may

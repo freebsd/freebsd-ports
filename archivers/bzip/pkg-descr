@@ -1,4 +1,4 @@
-Bzip  compresses  files  using the Burrows-Wheeler-Fenwick
+Bzip compresses files using the Burrows-Wheeler-Fenwick
 block-sorting text compression algorithm.
 
 Compression is generally considerably better than that achieved by
