@@ -1,0 +1,51 @@
+diff -rub -x config.h org/mars_nwe/doc/README.FREEBSD ./doc/README.FREEBSD
+--- org/mars_nwe/doc/README.FREEBSD	Fri Jul 24 00:11:24 1998
++++ ./doc/README.FREEBSD	Tue Dec 29 10:26:00 1998
+@@ -5,9 +5,11 @@
+ 	Notes given below related only to FreeBSD. For full description
+ of Mars_nwe, please read README file.
+ 
++	Additional info available at http://www.dixi.ml.org/bp/
++
+ 	1. Kernel configuration
+ 	
+-	To enable kernel support for IPX protol you must include
++	To enable kernel support for IPX protocol you must include
+ keyword "options  IPX" and rebuild kernel.
+ 
+ 
+@@ -76,7 +78,4 @@
+ 
+ 	6. Problems
+ 	
+-	Because this is first release for FreeBSD you can encounter
+-different problems with compilation, configuration, etc. Please send
+-questions and suggestions to bp@butya.kz.
+-
++If you have any questions do not hesitate to contact me at bp@butya.kz.
+diff -rub -x config.h org/mars_nwe/examples/mk.li ./examples/mk.li
+--- org/mars_nwe/examples/mk.li	Sun Jul 12 01:38:04 1998
++++ ./examples/mk.li	Tue Dec 29 10:05:52 1998
+@@ -109,7 +109,7 @@
+      NSLLIB=""
+      MAKE=make
+      TMP=/tmp
+-     INSTALL=install
++     INSTALL="install -c"
+      ;;
+ 
+    *) echo "mk.li: Unknown or not supported OS, probably you must set \$UNX"
+diff -rub -x config.h org/mars_nwe/ipxif.c ./ipxif.c
+--- org/mars_nwe/ipxif.c	Sun Jul 12 01:40:53 1998
++++ ./ipxif.c	Tue Dec 29 10:06:07 1998
+@@ -6,7 +6,9 @@
+ #include <sys/time.h>
+ 
+ #include <net/if.h>
+-#include <net/if_var.h>
++#ifndef if_mtu
++#  include <net/if_var.h>
++#endif
+ #include <net/if_dl.h>
+ #include <net/if_types.h>
+ #include <net/route.h>

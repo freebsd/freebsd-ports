@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cp ${WRKSRC}/examples/config.h ${WRKSRC}/config.h
+cp ${WRKSRC}/examples/nw.ini ${WRKSRC}/nw.ini
+cp ${WRKSRC}/examples/mk.li ${WRKSRC}/mk.li

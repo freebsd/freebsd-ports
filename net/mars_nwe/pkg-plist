@@ -1,0 +1,5 @@
+sbin/nwserv
+sbin/ncpserv
+sbin/nwbind
+sbin/nwclient
+sbin/nwconn
