@@ -1,5 +1,3 @@
-bin/bsetbg
-bin/bsetroot
 bin/fbrun
 bin/fluxbox
 bin/fluxbox-generate_menu
