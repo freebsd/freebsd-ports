@@ -260,6 +260,11 @@ pre-install:
 	for pcfile in ${PKGCONFIG_FILES}; do \
 		${ECHO_CMD} libdata/pkgconfig/$${pcfile}${MOZ_SUFX}${PKGNAMESUFFIX}.pc >> ${PLIST} ; \
 	done
+	cd ${WRKSRC}/dist/include && ${FIND} -s * -type f -o -type l | \
+		${SED} -e 's:^:include/mozilla/:' >> ${PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's:^:@dirrm include/mozilla/:' >> ${PLIST}
+	${ECHO_CMD} @dirrm include/mozilla >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/${MOZILLA}
@@ -286,6 +291,11 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/build/unix/$${pcfile}.pc \
 			${PREFIX}/libdata/pkgconfig/$${pcfile}${MOZ_SUFX}${PKGNAMESUFFIX}.pc ; \
 	done
+	-${RM} -fr ${PREFIX}/include/mozilla
+	${MKDIR} ${PREFIX}/include/mozilla
+	${CHMOD} 755 ${PREFIX}/include/mozilla
+	cd ${WRKSRC}/dist/include && ${FIND} . | \
+		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/mozilla
 
 post-install:
 	@${CHMOD} -R u-w ${PREFIX}/lib/${MOZILLA}/components
