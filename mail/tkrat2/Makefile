@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	tkrat
-PORTVERSION= 	2.0.rc3
+PORTVERSION= 	2.0.rc6
 CATEGORIES=	mail tk82
 MASTER_SITES=	ftp://ftp.md.chalmers.se/pub/tkrat/ \
 		ftp://ftp.sunet.se/pub/unix/mail/tkrat/
-DISTNAME=	${PORTNAME}-2.0rc3
+DISTNAME=	${PORTNAME}-2.0rc6
 
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tcl82:${PORTSDIR}/lang/tcl82 \
 		tk82:${PORTSDIR}/x11-toolkits/tk82 \
-		c-client4.7:${PORTSDIR}/mail/imap-uw
+		c-client4.7:${PORTSDIR}/mail/cclient
 
 GNU_CONFIGURE=	yes
 
