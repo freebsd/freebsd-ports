@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	erlang
-PORTVERSION=	7.3.0
+PORTVERSION=	7.4.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.erlang.org/pub/download/     \
 		http://www.erlang.org/download/        \
 		http://erlang.stacken.kth.se/download/ \
 		http://www.csd.uu.se/ftp/mirror/erlang/download/
-DISTNAME=	otp_src_R7B-3
+DISTNAME=	otp_src_R7B-4
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ERLANG_MAN} ${ERLANG_DOCS}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -37,7 +37,7 @@ DIST_SUBDIR=	erlang
 
 ERLANG_MAN=     otp_doc_man_R7B.tar.gz
 .if !defined(NOPORTDOCS)
-ERLANG_DOCS=	otp_doc_html_R7B.tar.gz
+ERLANG_DOCS=	otp_doc_html_R7B01.tar.gz
 .endif
 
 .if !defined(WITHOUT_X11)
@@ -52,11 +52,11 @@ GNU_CONFIGURE=	yes
 # directory and should never be prefixed by lib/. See below for Java related
 # packages.
 
-UPDATED_PACKAGES=	erts lib/compiler lib/erl_interface \
-			lib/kernel lib/mnesia lib/sasl \
-			lib/snmp lib/stdlib lib/asn1 lib/debugger \
-			lib/gs lib/ic lib/inets lib/orber \
-			lib/runtime_tools lib/ssl lib/tools
+UPDATED_PACKAGES=	erts lib/asn1 lib/cosEvent lib/cosNotification \
+			lib/cosTime lib/ic lib/inets lib/kernel lib/mnesia \
+			lib/mnesia_session lib/orber lib/os_mon \
+			lib/runtime_tools lib/sasl lib/snmp lib/stdlib \
+			lib/tools
 
 .if !defined(WITHOUT_JAVA)
 # The Java applications that are part of the Erlang distribution are
@@ -70,7 +70,7 @@ UPDATED_PACKAGES=	erts lib/compiler lib/erl_interface \
 BUILD_DEPENDS+=  ${JAVAPORT}
 
 # The following UPDATED_PACKAGES depend on java.
-UPDATED_PACKAGES+=	lib/jinterface
+# UPDATED_PACKAGES+=	# nothing yet
 
 # Make sure javabindir is in the path
 CONFIGURE_ENV+= PATH=${PATH}:${JAVABINDIR}
@@ -102,33 +102,40 @@ post-install:
 	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_MAN} \
 		-C ${PREFIX}/lib/erlang
 .if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/lib/erlang/temp
 	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
-		-C ${PREFIX}/lib/erlang
+		-C ${PREFIX}/lib/erlang/temp
 	@${RM} -rf ${PREFIX}/lib/erlang/man/cat?
+	${CP} -R ${PREFIX}/lib/erlang/temp/doc ${PREFIX}/lib/erlang
 
 	@for erlang_package in ${UPDATED_PACKAGES}; do \
-		epkg_pathname=${PREFIX}/lib/erlang/$${erlang_package}; \
-		epkg_dirname=`dirname $${epkg_pathname}`; \
-		epkg_basename=`basename $${epkg_pathname}`; \
-		doc_release=`ls $${epkg_dirname}/ \
-			| ${GREP} -E "^$${epkg_basename}-" | ${SED} -e "2d"`; \
-		app_release=`ls $${epkg_dirname}/ \
-			| ${GREP} -E "^$${epkg_basename}-" | ${SED} -e "1d"`; \
-		if [ -z "$${doc_release}" -o -z "$${app_release}" ]; then \
+		epkg_libpathname=${PREFIX}/lib/erlang/$${erlang_package}-*; \
+		epkg_docpathname=${PREFIX}/lib/erlang/temp/$${erlang_package}-*; \
+		epkg_libdirname=`dirname $${epkg_libpathname}`; \
+		epkg_docdirname=`dirname $${epkg_docpathname}`; \
+		epkg_libbasename=`basename $${epkg_libpathname}`; \
+		epkg_docbasename=`basename $${epkg_docpathname}`; \
+		if [ -z "$${epkg_docbasename}" -o -z "$${epkg_libbasename}" ]; then \
 			${ECHO_MSG} ">> Error: post-install target failed to merge documentation"; \
 			exit 1; \
 		fi; \
-		( \
-		${ECHO_MSG} ">> Documentation merge: $${doc_release} -> $${app_release}"; \
-		${PERL} -pi -e "s/$${doc_release}/$${app_release}/g;" \
+		${ECHO_MSG} ">> Documentation merge: $${epkg_docbasename} -> $${epkg_libbasename}"; \
+		${PERL} -pi -e "s/$${epkg_docbasename}/$${epkg_libbasename}/g;" \
 			${PREFIX}/lib/erlang/doc/index.html; \
-		${CP} -R $${epkg_dirname}/$${app_release}/* \
-			$${epkg_dirname}/$${doc_release}/; \
-		${RM} -rf $${epkg_dirname}/$${app_release}; \
-		${MV} $${epkg_dirname}/$${doc_release} \
-			$${epkg_dirname}/$${app_release} \
-		); \
+		lib_notes=$${epkg_libpathname}/notes.html; \
+		doc_notes=$${epkg_docpathname}/notes.html; \
+		lib_history=$${epkg_libpathname}/notes_history.html; \
+		doc_history=$${epkg_docpathname}/notes_history.html; \
+		if [ -e $${doc_notes} -a ! -e $${lib_notes} ]; then \
+			${CP} $${doc_notes} $${epkg_libpathname}; \
+		fi; \
+		if [ -e $${doc_history} -a ! -e $${lib_history} ]; then \
+			${CP} $${doc_history} $${epkg_libpathname}; \
+		fi; \
+		${CP} -R $${epkg_docpathname}/doc \
+			$${epkg_libpathname}/; \
 	done
+	@${RM} -rf ${PREFIX}/lib/erlang/temp
 .endif
 	sslapp=`ls -d ${PREFIX}/lib/erlang/lib/ssl-* | tail -1`; \
 	cd $$sslapp/priv/obj && ${MAKE} && strip ../bin/ssl_esock
