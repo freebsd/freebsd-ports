@@ -3,7 +3,7 @@
 # Date created:		25 May 1998
 # Whom:			Mario S F Ferreira <lioux@gns.com.br> et al.
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/18 19:59:54 hoek Exp $
 #
 
 DISTNAME=	qmail-1.03
@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://koobera.math.uic.edu/pub/software/ \
 		ftp://ftp.id.wustl.edu/pub/qmail/ \
 		ftp://ftp.pipex.net/mirrors/qmail/ \
 		ftp://ftp.jp.qmail.org/qmail/
+# These patches may not apply to versions after 1.02
 #PATCH_SITES=	http://hippo.ail-inc.co.jp/air/ports/patches/
 #PATCHFILES=	patch-qmail-date-localtime.gz \
 #		patch-qmail-smtpd.gz
