@@ -8,7 +8,7 @@
 PORTNAME=	rdate
 PORTVERSION=	1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www2.cons.org:8000/freebsd-distfiles/ \
+MASTER_SITES=	http://www3.cons.org/freebsd-distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	cracauer
 
