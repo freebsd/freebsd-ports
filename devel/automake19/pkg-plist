@@ -3,6 +3,8 @@ bin/automake%%BUILD_VERSION%%
 @unexec install-info --delete %D/info/automake%%BUILD_VERSION%%.info %D/info/dir
 info/automake%%BUILD_VERSION%%.info
 @exec install-info %D/info/automake%%BUILD_VERSION%%.info %D/info/dir
+libexec/automake%%BUILD_VERSION%%/aclocal
+libexec/automake%%BUILD_VERSION%%/automake
 share/aclocal%%BUILD_VERSION%%/amversion.m4
 share/aclocal%%BUILD_VERSION%%/as.m4
 share/aclocal%%BUILD_VERSION%%/auxdir.m4
@@ -115,3 +117,4 @@ share/automake%%BUILD_VERSION%%/ylwrap
 @dirrm share/automake%%BUILD_VERSION%%/Automake
 @dirrm share/automake%%BUILD_VERSION%%/am
 @dirrm share/automake%%BUILD_VERSION%%
+@dirrm libexec/automake%%BUILD_VERSION%%

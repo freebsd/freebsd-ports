@@ -5,6 +5,12 @@ bin/autoreconf%%BUILD_VERSION%%
 bin/autoscan%%BUILD_VERSION%%
 bin/autoupdate%%BUILD_VERSION%%
 bin/ifnames%%BUILD_VERSION%%
+libexec/autoconf%%BUILD_VERSION%%/autoconf
+libexec/autoconf%%BUILD_VERSION%%/autoheader
+libexec/autoconf%%BUILD_VERSION%%/autoreconf
+libexec/autoconf%%BUILD_VERSION%%/autoscan
+libexec/autoconf%%BUILD_VERSION%%/autoupdate
+libexec/autoconf%%BUILD_VERSION%%/ifnames
 @unexec install-info --delete %D/info/autoconf%%BUILD_VERSION%%.info %D/info/dir
 @unexec install-info --delete %D/info/standards%%BUILD_VERSION%%.info %D/info/dir
 info/autoconf%%BUILD_VERSION%%.info
@@ -60,3 +66,4 @@ share/autoconf%%BUILD_VERSION%%/mkinstalldirs
 @dirrm share/autoconf%%BUILD_VERSION%%/autoconf
 @dirrm share/autoconf%%BUILD_VERSION%%/Autom4te
 @dirrm share/autoconf%%BUILD_VERSION%%
+@dirrm libexec/autoconf%%BUILD_VERSION%%

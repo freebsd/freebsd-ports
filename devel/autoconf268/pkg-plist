@@ -11,6 +11,12 @@ info/autoconf%%BUILD_VERSION%%.info
 info/standards%%BUILD_VERSION%%.info
 @exec install-info %D/info/autoconf%%BUILD_VERSION%%.info %D/info/dir
 @exec install-info %D/info/standards%%BUILD_VERSION%%.info %D/info/dir
+libexec/autoconf%%BUILD_VERSION%%/autoconf
+libexec/autoconf%%BUILD_VERSION%%/autoheader
+libexec/autoconf%%BUILD_VERSION%%/autoreconf
+libexec/autoconf%%BUILD_VERSION%%/autoscan
+libexec/autoconf%%BUILD_VERSION%%/autoupdate
+libexec/autoconf%%BUILD_VERSION%%/ifnames
 share/autoconf%%BUILD_VERSION%%/Autom4te/C4che.pm
 share/autoconf%%BUILD_VERSION%%/Autom4te/ChannelDefs.pm
 share/autoconf%%BUILD_VERSION%%/Autom4te/Channels.pm
@@ -62,3 +68,4 @@ share/autoconf%%BUILD_VERSION%%/mkinstalldirs
 @dirrm share/autoconf%%BUILD_VERSION%%/autoconf
 @dirrm share/autoconf%%BUILD_VERSION%%/Autom4te
 @dirrm share/autoconf%%BUILD_VERSION%%
+@dirrm libexec/autoconf%%BUILD_VERSION%%

@@ -7,7 +7,7 @@
 
 PORTNAME=	automake
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -50,5 +50,17 @@ post-patch:
 		${REINPLACE_CMD} -e 's,%%BUILD_VERSION%%,${BUILD_VERSION},g; \
 				     s,%%X11BASE%%,${X11BASE},g' aclocal.in \
 	)
+
+pre-install:
+	${RM} -fr ${PREFIX}/share/automake${BUILD_VERSION}
+	${MKDIR} ${PREFIX}/share/automake${BUILD_VERSION}
+	${MKDIR} ${PREFIX}/share/aclocal${BUILD_VERSION}
+	${MKDIR} ${PREFIX}/libexec/automake${BUILD_VERSION}
+
+post-install:
+.for i in aclocal automake
+	${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} \
+		${PREFIX}/libexec/automake${BUILD_VERSION}/${i}
+.endfor
 
 .include <bsd.port.mk>
