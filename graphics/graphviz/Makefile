@@ -12,12 +12,15 @@ MASTER_SITES=	http://www.graphviz.org/pub/graphviz/
 
 MAINTAINER=	ports@FreeBSD.org
 
+BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png \
 		tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
 		ttf.4:${PORTSDIR}/print/freetype \
 		Xpm.4:${PORTSDIR}/graphics/xpm
 
+# do not use USE_AUTOMAKE -- it only works if the configure script
+# finds automake by itself
 USE_AUTOCONF=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3 -DHAVE_TERMIOS" \
