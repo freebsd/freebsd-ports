@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	porteasy
-PORTVERSION=	2.7.20
+PORTVERSION=	2.8.0
 CATEGORIES=	misc
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -32,7 +32,5 @@ do-configure:
 do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/porteasy ${PREFIX}/bin/porteasy
 	@${INSTALL_MAN} ${SRC}/porteasy.8 ${PREFIX}/man/man8
-	@${MKDIR} ${PREFIX}/share/porteasy
-	@${INSTALL_DATA} ${SRC}/cvspass ${PREFIX}/share/porteasy/cvspass
 
 .include <bsd.port.mk>

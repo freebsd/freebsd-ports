@@ -27,7 +27,7 @@
 .\"
 .\"	$FreeBSD$
 .\"
-.Dd May 24, 2004
+.Dd October 31, 2004
 .Dt PORTEASY 8
 .Os
 .Sh NAME
@@ -35,7 +35,7 @@
 .Nd fetch and build ports
 .Sh SYNOPSIS
 .Nm
-.Op Fl abCceFfhIikLlsuVvw
+.Op Fl AabCceFfhIikLlRSsuVvw
 .Op Fl D Ar date
 .Op Fl d Ar dir
 .Op Fl p Ar dir
@@ -50,7 +50,14 @@ automatically, keeping track of dependencies.
 The following options are available:
 .Bl -tag -width Fl
 .It Fl a
-Use the FreeBSD project's anoncvs server as CVS root directory.
+Use one of the FreeBSD project's anonymous CVS servers.
+Note that this forces the use of
+.Xr ssh 1 ,
+regardless of the
+.Fl R
+and
+.Fl S
+options.
 .It Fl b
 Build the selected ports.
 .It Fl C
@@ -86,8 +93,28 @@ List the selected ports.
 .It Fl p Ar dir
 Specify the ports directory (normally
 .Pa /usr/ports ) .
+.It Fl R
+Force the use of
+.Xr rsh 1
+to connect to remote CVS repositories.
+By default,
+.Nm
+respects the existing
+.Ev CVS_RSH
+setting.
+This option is ignored when using anoncvs.
 .It Fl r Ar dir
-Specify the CVS root directory.
+Specify the location of the CVS repository.
+.It Fl S
+Force the use of
+.Xr ssh 1
+to connect to remote CVS repositories.
+By default,
+.Nm
+respects the existing
+.Ev CVS_RSH
+setting.
+This option is ignored when using anoncvs.
 .It Fl s
 Indicate the installation status of the selected ports.
 Each selected port is listed with a symbol indicating its status:

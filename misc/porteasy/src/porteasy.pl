@@ -33,21 +33,21 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.7.20";
+my $VERSION	= "2.8.0";
 my $COPYRIGHT	= "Copyright (c) 2000-2004 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
 # Constants
-sub ANONCVS_ROOT	{ ":pserver:anoncvs\@anoncvs.FreeBSD.org:/home/ncvs" }
+sub ANONCVS_ROOT	{ ":ext:anoncvs\@anoncvs.FreeBSD.org:/home/ncvs" }
 sub REQ_EXPLICIT	{ 1 }
 sub REQ_IMPLICIT	{ 2 }
-
-sub CVS_PASSFILE	{ "%%PREFIX%%/share/porteasy/cvspass" }
 
 sub PATH_CVS		{ "/usr/bin/cvs" }
 sub PATH_FETCH		{ "/usr/bin/fetch" }
 sub PATH_LDCONFIG	{ "/sbin/ldconfig" }
 sub PATH_MAKE		{ "/usr/bin/make" }
+sub PATH_RSH		{ "/usr/bin/rsh" }
+sub PATH_SSH		{ "/usr/bin/ssh" }
 
 # Global parameters
 my $dbdir     = "/var/db/pkg";	# Package database directory
@@ -59,7 +59,7 @@ my $date      = undef;		# CVS date to use
 my $release   = undef;		# OS release
 
 # Global flags
-my $anoncvs   = 0;		# Use anoncvs.FreeBSD.org
+my $anoncvs   = 0;		# Use anoncvs1.FreeBSD.org
 my $clean     = 0;		# Clean ports
 my $cvsroot   = 0;		# CVS root directory
 my $exclude   = 0;		# Do not list installed ports
@@ -423,7 +423,9 @@ sub find_port($) {
 
     stderr("Can't find required port '$port'");
     my $portre = $port;
-    $portre =~ s/([^\w])/\\$1/g;
+    $portre =~ s/([^\w\*\?])/\\$1/g;
+    $portre =~ s/\*/\.\*/g;
+    $portre =~ s/\?/\./g;
     @suggest = grep(/^$portre/i, keys(%ports));
     if (@suggest == 1 && $suggest[0] =~ m/^$portre[0-9.-]/) {
 	$port = $ports{$suggest[0]};
@@ -1110,6 +1112,8 @@ Options:
   -k, --packages           Build packages for the specified ports
   -L, --plist              Show the packing lists for the specified ports
   -l, --list               List required ports and their dependencies
+  -R, --use-rsh            Force use of rsh for cvs :ext: method
+  -S, --use-ssh            Force use of ssh for cvs :ext: method
   -s, --status             List installed ports and their status
   -u, --update             Update relevant portions of the ports tree
   -V, --version            Show version number
@@ -1166,7 +1170,9 @@ MAIN:{
 	       "L|plist"		=> \$plist,
 	       "l|list"			=> \$list,
 	       "p|portsdir=s"		=> \$portsdir,
+	       "R|use-rsh"		=> sub { $ENV{'CVS_RSH'} = &PATH_RSH },
 	       "r|cvsroot=s"		=> \$cvsroot,
+	       "S|use-ssh"		=> sub { $ENV{'CVS_RSH'} = &PATH_SSH },
 	       "s|status"		=> \$status,
 	       "t|tag=s"		=> \$tag,
 	       "u|update"		=> \$update,
@@ -1198,10 +1204,8 @@ MAIN:{
 
     # Set and check CVS root
     if ($anoncvs && !$cvsroot) {
+	$ENV{'CVS_RSH'} = &PATH_SSH;
 	$cvsroot = &ANONCVS_ROOT;
-	if (-f &CVS_PASSFILE) {
-	    $ENV{'CVS_PASSFILE'} = &CVS_PASSFILE;
-	}
     }
     if (!$cvsroot) {
 	$cvsroot = $ENV{'CVSROOT'};
