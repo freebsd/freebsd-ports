@@ -42,3 +42,5 @@ How to enable SMTP AUTH with FreeBSD default Sendmail
    The DONT_BLAME_SENDMAIL option GroupReadableSASLDBFile is needed when you
    are using cyrus-imapd and sendmail on the same server that requires access
    to the sasldb2 database.
+
+   SASLv2 support of Sendmail is starting with 8.12.4.

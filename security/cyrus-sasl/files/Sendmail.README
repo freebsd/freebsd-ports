@@ -10,7 +10,7 @@ How to enable SMTP AUTH with FreeBSD default Sendmail
     NOTE: 1. Sendmail 8.10 - 8.11 needS -D_FFR_UNSAFE_SASL added
           to SENDMAIL_CFLAGS, if you need the GroupReadableSASLFile option
 
-    Starting with Sendmail 8.12, you can also use the security/cyrus-sasl2
+    Starting with Sendmail 8.12.4, you can also use the security/cyrus-sasl2
     port.  Then you will not need the SASL V1 port installed.
 
     SENDMAIL_CFLAGS=-I/usr/local/include -DSASL=2
