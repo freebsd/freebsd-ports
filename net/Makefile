@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.288 1999/08/02 03:15:06 cpiazza Exp $
+# $Id: Makefile,v 1.289 1999/08/02 11:15:41 asami Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -115,6 +115,7 @@
     SUBDIR += pathchar
     SUBDIR += pcnfsd
     SUBDIR += perldap
+    SUBDIR += pipsecd
     SUBDIR += pmf
     SUBDIR += ppp-nt
     SUBDIR += pppload
