@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	openh323
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
 		http://www.ru.openh323.org/bin/
-DISTFILES=	openh323_1.7.2.tar.gz \
-		pwlib_1.2.2.tar.gz
+DISTFILES=	openh323_1.7.4.tar.gz \
+		pwlib_1.2.5.tar.gz
 
 MAINTAINER=	roger@freebsd.org
 
