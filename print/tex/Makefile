@@ -19,6 +19,8 @@ EXTRACT_ONLY=	web2c-7.2b.tar.gz web-7.2a.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	TeX and METAFONT
 
+DIST_SUBDIR=	tex
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
@@ -36,7 +38,7 @@ pre-configure:
 post-configure:
 	@cd ${WRKSRC}/web2c; \
 	${LN} -s ../../tfm/*.tfm ../../base/*.tex ../../mf/*.mf ../../lib/*.mf .; \
-	${CP} ${DISTDIR}/modes.mf .
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/modes.mf .
 
 do-build:
 	@(cd ${WRKSRC}; unset `env|${GREP} ^TEX|${SED} -e s/=.*//`; \
