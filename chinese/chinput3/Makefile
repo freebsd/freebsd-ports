@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	chinput
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.2.5
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/chinput3/
-DISTNAME=	zh-${PORTNAME}-${PORTVERSION}fix4
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 COMMENT=	Chinese GB2312,BIG5 code input server
 
 USE_XLIB=	yes
 USE_IMLIB=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}fix3
+
+port-install:
+	@${SED} -e 's,%%X11BASE%%,${X11BASE},g' < ${PKGMESSAGE}
 
 .include <bsd.port.mk>
