@@ -563,6 +563,7 @@ bladeenc	ports/audio/bladeenc
 blas		ports/math/blas
 blast		ports/x11/blast
 blender		ports/graphics/blender
+blender-devel	ports/graphics/blender-devel
 blimitd		ports/sysutils/blimitd
 blitz++		ports/math/blitz++
 block		ports/games/block
