@@ -8,7 +8,8 @@
 PORTNAME=	mod_backhand
 PORTVERSION=	1.2.2
 CATEGORIES=	www
-MASTER_SITES=	http://people.FreeBSD.org/~seanc/ports/mod_backhand/
+MASTER_SITES=	http://mirrors.omniti.com/mod_backhand/ \
+		http://people.FreeBSD.org/~seanc/ports/mod_backhand/
 
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Apache module that allows seamless redirection and load balancing of HTTP requests
