@@ -1,35 +1,45 @@
 
 $FreeBSD$
 
---- pango/Makefile.in.orig	Wed Jul 18 15:23:42 2001
-+++ pango/Makefile.in	Wed Jul 18 15:24:55 2001
-@@ -143,10 +143,10 @@
+--- pango/Makefile.in.orig	Fri Jan 18 10:25:47 2002
++++ pango/Makefile.in	Fri Jan 18 10:28:08 2002
+@@ -200,10 +200,10 @@
  # down at which point we'll either use the GTK+ versioning
  # scheme or the standard libtool scheme.
  #
--libpango_la_LDFLAGS = -release $(VERSION) $(GLIB_LIBS)
-+libpango_la_LDFLAGS = -version-info $(VERSION:S/./:/) $(GLIB_LIBS)
- @HAVE_FRIBIDI_FALSE@libpango_la_LIBADD = mini-fribidi/libmini-fribidi.la
+-libpango_la_LDFLAGS = -release $(VERSION) $(GLIB_LIBS) $(no_undefined) $(pango_export_symbols)
++libpango_la_LDFLAGS = -version-info $(VERSION:S/./:/) $(GLIB_LIBS) $(no_undefined) $(pango_export_symbols)
+ @HAVE_FRIBIDI_FALSE@libpango_la_LIBADD = @HAVE_FRIBIDI_FALSE@mini-fribidi/libmini-fribidi.la
  
 -libpangox_la_LDFLAGS = -release $(VERSION)
 +libpangox_la_LDFLAGS = -version-info $(VERSION:S/./:/)
- libpangox_la_LIBADD = $(INCLUDED_X_MODULES) $(X_LIBS) libpango.la
+ libpangox_la_LIBADD = libpango.la $(INCLUDED_X_MODULES) $(X_LIBS) 
  libpangox_la_DEPENDENCIES = $(INCLUDED_X_MODULES) libpango.la
  
-@@ -154,14 +154,14 @@
+@@ -216,7 +216,7 @@
+ 	module-defs-win32.c
  
  
- libpangoxft_la_LIBADD = $(INCLUDED_XFT_MODULES) $(XFT_LIBS) opentype/libpango-ot.la libpango.la
+-libpangowin32_la_LDFLAGS = -release $(VERSION) $(GLIB_LIBS) $(no_undefined) $(pangowin32_export_symbols)
++libpangowin32_la_LDFLAGS = -version-info $(VERSION:S/./:/) $(GLIB_LIBS) $(no_undefined) $(pangowin32_export_symbols)
+ libpangowin32_la_LIBADD = libpango.la $(INCLUDED_WIN32_MODULES) $(WIN32_LIBS) 
+ libpangowin32_la_DEPENDENCIES = libpango.la
+ 
+@@ -228,7 +228,7 @@
+ 
+ 
+ libpangoxft_la_LIBADD = opentype/libpango-ot.la libpango.la $(INCLUDED_XFT_MODULES) $(XFT_LIBS) 
 -libpangoxft_la_LDFLAGS = -release $(VERSION)
 +libpangoxft_la_LDFLAGS = -version-info $(VERSION:S/./:/)
  libpangoxft_la_DEPENDENCIES = $(INCLUDED_XFT_MODULES) libpango.la
  
- libpangoft2_la_SOURCES =  	pangoft2.h			pangoft2.c			pangoft2-private.h		pangoft2-fontcache.c		pangoft2-fontmap.c		module-defs-ft2.c
+ libpangoft2_la_SOURCES = \
+@@ -240,7 +240,7 @@
  
  
- libpangoft2_la_LIBADD = $(INCLUDED_FT2_MODULES) $(FREETYPE_LIBS) libpango.la
--libpangoft2_la_LDFLAGS = -release $(VERSION)
-+libpangoft2_la_LDFLAGS = -version-info $(VERSION:S/./:/)
+ libpangoft2_la_LIBADD = $(INCLUDED_FT2_MODULES) $(FREETYPE_LIBS) mini-xft/libmini-xft.la libpango.la
+-libpangoft2_la_LDFLAGS = -release $(VERSION) $(GLIB_LIBS) $(no_undefined) $(pangoft2_export_symbols)
++libpangoft2_la_LDFLAGS = -version-info $(VERSION:S/./:/) $(GLIB_LIBS) $(no_undefined) $(pangoft2_export_symbols)
  libpangoft2_la_DEPENDENCIES = $(INCLUDED_FT2_MODULES) libpango.la
  
  pangoincludedir = $(includedir)/pango-1.0/pango
