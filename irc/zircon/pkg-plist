@@ -68,6 +68,7 @@ lib/zircon/lib/Notice.tcl
 lib/zircon/lib/Notrace.tcl
 lib/zircon/lib/Object.tcl
 lib/zircon/lib/On.tcl
+lib/zircon/lib/Protect.tcl
 lib/zircon/lib/Server.tcl
 lib/zircon/lib/Service.tcl
 lib/zircon/lib/Sound.tcl
