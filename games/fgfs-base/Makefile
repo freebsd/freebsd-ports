@@ -3,7 +3,7 @@
 # Date created:		26 June 1999
 # Whom:			Brian Buchanan <brian@CSUA.Berkeley.EDU>
 #
-# $Id: Makefile,v 1.1.1.1 1999/07/03 06:36:33 cpiazza Exp $
+# $Id: Makefile,v 1.2 1999/07/08 06:11:20 cpiazza Exp $
 #
 
 DISTNAME=		FlightGear-${FLIGHTGEAR_VERSION}
@@ -25,7 +25,7 @@ FLIGHTGEAR_VERSION=	0.6.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400003
-BUILD_DEPENDS=		eg++:${PORTSDIR}/lang/egcs
+BUILD_DEPENDS+=		eg++:${PORTSDIR}/lang/egcs
 CXX=			eg++
 .endif
 
