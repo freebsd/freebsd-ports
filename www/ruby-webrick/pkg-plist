@@ -4,7 +4,7 @@
 %%RUBY_SITELIBDIR%%/webrick/cookie.rb
 %%RUBY_SITELIBDIR%%/webrick/htmlutils.rb
 %%RUBY_SITELIBDIR%%/webrick/httpauth.rb
-%%RUBY_SITELIBDIR%%/webrick/httpdate.rb
+%%RUBY_SITELIBDIR%%/webrick/httpproxy.rb
 %%RUBY_SITELIBDIR%%/webrick/httprequest.rb
 %%RUBY_SITELIBDIR%%/webrick/httpresponse.rb
 %%RUBY_SITELIBDIR%%/webrick/https.rb
@@ -21,7 +21,6 @@
 %%RUBY_SITELIBDIR%%/webrick/log.rb
 %%RUBY_SITELIBDIR%%/webrick/mime.types
 %%RUBY_SITELIBDIR%%/webrick/server.rb
-%%RUBY_SITELIBDIR%%/webrick/uri.rb
 %%RUBY_SITELIBDIR%%/webrick/utils.rb
 %%RUBY_SITELIBDIR%%/webrick/version.rb
 @dirrm %%RUBY_SITELIBDIR%%/webrick/httpservlet
@@ -30,6 +29,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/conf/sample.key
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/htdocs/test.cgi
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/htdocs/test.rhtml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/htproxy.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/httpd.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/httpsd.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/rfc/cache/.keep_me
