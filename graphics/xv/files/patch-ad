@@ -1,5 +1,5 @@
---- Imakefile.orig	Thu Aug 27 04:53:33 1998
-+++ Imakefile	Thu Aug 27 04:54:22 1998
+--- Imakefile.orig	Wed Oct  7 22:24:59 1998
++++ Imakefile	Wed Oct  7 22:27:00 1998
 @@ -6,13 +6,15 @@
  /* if, for whatever reason, you're unable to get the JPEG library to compile
   * on your machine, *COMMENT OUT* the following line
@@ -49,7 +49,7 @@
  #ifdef HavePDS
  PDS = -DDOPDS
  #endif
-@@ -149,8 +165,8 @@
+@@ -149,12 +165,12 @@
  #endif
  
  
@@ -60,6 +60,11 @@
  
  DEFINES= $(SCO) $(UNIX) $(NODIRENT) $(VPRINTF) $(TIMERS) \
  	$(HPUX7) $(JPEG) $(TIFF) $(PDS) $(DXWM) $(RAND) \
+-	$(BACKING_STORE) $(BSDTYPES) $(SGI) $(MGCSFX)
++	$(BACKING_STORE) $(BSDTYPES) $(SGI) $(MGCSFX) $(LOCALE_EXTENSION)
+ 
+ INCLUDES = $(JPEGINCLUDE) $(TIFFINCLUDE)
+ 
 @@ -254,10 +270,10 @@
  #endif
  

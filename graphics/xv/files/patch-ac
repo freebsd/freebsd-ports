@@ -51,6 +51,15 @@
  
  
  /***************************************************************************
+@@ -216,7 +216,7 @@
+  * 'undef' to 'define' in the following line.
+  */
+ 
+-#undef TV_L10N
++/* #undef TV_L10N */
+ 
+ #ifdef TV_L10N
+ /*
 @@ -259,7 +259,7 @@
   * magic number or suffix in "~/.xv_mgcsfx" .
   * To enable this feature, change 'undef' to 'define' in the following line.
@@ -77,12 +86,12 @@
  /* #    define MGCSFX_PREPROCESSOR "cc -E" */
  
  #  endif /* USE_MGCSFX_PREPROCESSOR */
-@@ -320,7 +320,7 @@
+@@ -325,7 +325,7 @@
   * 'undef' to 'define' in the following line.
   */
  
 -#undef TV_MULTILINGUAL
-+#define TV_MULTILINGUAL
++/* #undef TV_MULTILINGUAL */
  
  #define TV_DEFAULT_CODESET TV_EUC_JAPAN
  
