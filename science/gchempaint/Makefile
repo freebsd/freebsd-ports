@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gchempaint
-PORTVERSION=	0.3.90
+PORTVERSION=	0.4.0
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://jean.brefort.free.fr/info/gcp/download/
@@ -16,6 +16,7 @@ COMMENT=	2D chemical structures editor for GNOME 2
 
 LIB_DEPENDS=	gcu.2:${PORTSDIR}/science/gchemutils
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeprintui libgnomeui
 USE_GMAKE=	yes
