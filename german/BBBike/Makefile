@@ -12,7 +12,7 @@ MASTER_SITES=	http://pub.cs.tu-berlin.de/src/BBBike/
 
 MAINTAINER=	eserte@cs.tu-berlin.de
 
-BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 
 USE_PERL5=      YES
 PERLEXE=	perl5

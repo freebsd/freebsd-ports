@@ -6,18 +6,13 @@ oder manuell erstellt werden.
 BBBike liefert unter anderem die Antwort auf folgende Fragen:
 
 * Wie lang ist die Strecke von A nach B?
-
 * Wie schnell komme ich von A nach B, wenn ich durchschnittlich 15
   km/h schnell fahre?
-
 * Wie lange brauche ich von A nach B, wenn ich mit 100 Watt Leistung
   fahre, mit Beruecksichtigung des aktuellen Windes und von
   Steigungen auf der Strecke?
-
 * Auf welchen Strassen fahre ich, wenn ich von A nach B kommen will?
-
 * Wo habe ich Gegenwind- und Rueckenwindstrecken?
-
 * Wo gibt es Steigungen und Gefaelle?
 
 ---
