@@ -1,0 +1,44 @@
+--- makefile.def.orig	Wed Mar  1 02:42:58 2000
++++ makefile.def	Mon May 20 11:18:27 2002
+@@ -12,11 +12,11 @@
+ #		g++ 2.7.0)  Some other choices for ARCH are "SGI" and "RIOS" (RS-6000)
+ #
+ 
+-ARCH = Linux
++ARCH = FreeBSD
+ CPP = g++
+-CPPFLAGS =  -I$(LAPACKPP_INC) -D$(ARCH)   -Wall
+-CPPLIBS = -lm
+-CFLAGS = -I$(LAPACKPP_INC)
++CPPFLAGS+=  $(CFLAGS) -I$(LAPACKPP_INC) -D$(ARCH)
++CPPLIBS+= -lm
++CFLAGS+= -I$(LAPACKPP_INC)
+ #
+ #
+ 
+@@ -35,8 +35,14 @@
+ #
+ # Linux
+ #
+-BLAS_LIB = $(HOME)/lib/Linux/libblas.a
+-LAPACK_LIB = $(HOME)/lib/Linux/liblapack.a
++#BLAS_LIB = $(HOME)/lib/Linux/libblas.a
++#LAPACK_LIB = $(HOME)/lib/Linux/liblapack.a
++#FLIBS = -lm -lg2c
++#
++# FreeBSD
++#
++BLAS_LIB = -lf77blas -latlas
++LAPACK_LIB = -lalapack -lcblas 
+ FLIBS = -lm -lg2c
+ #
+ # Sun
+@@ -60,7 +66,7 @@
+ LAPACKPP_LIB = $(LAPACKPP_LIB_DIR)/liblapack++.a
+ BLASPP_LIB = $(LAPACKPP_LIB_DIR)/libblas++.a 
+ 
+-ALL_LAPACKPP_LIB =   				\
++ALL_LAPACKPP_LIB = -L${PREFIX}/lib 				\
+ 		$(LAMATRIXPP_LIB) 			\
+ 		$(LAPACKPP_LIB)  			\
+ 		$(TMGLIB)  					\
