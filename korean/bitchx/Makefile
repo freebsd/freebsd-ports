@@ -8,7 +8,7 @@
 PORTNAME=	BitchX
 PORTVERSION=	1.0c16
 PORTREVISION=	3
-CATEGORIES=	korean irc gnome
+CATEGORIES=	korean irc
 MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/
 
 PATCH_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/
@@ -34,12 +34,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
-CONFIGURE_ARGS+=--with-gtk
-.else
 CONFIGURE_ARGS+=--without-gtk
-.endif
+
 .if defined(HAVE_ESOUND)
 USE_ESOUND=	yes
 CONFIGURE_ARGS+=--enable-sound
