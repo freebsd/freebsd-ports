@@ -1,0 +1,25 @@
+--- src/main/Makefile.orig	Fri Mar 30 13:37:05 2001
++++ src/main/Makefile	Fri Mar 30 13:38:31 2001
+@@ -7,15 +7,15 @@
+ 
+ ####### Compiler, tools and options
+ 
+-CC	=	gcc
+-CXX	=	g++
+-CFLAGS	=	-pipe -Wall -W -O2 -DNO_DEBUG
+-CXXFLAGS=	-pipe -Wall -W -O2 -DNO_DEBUG
+-INCPATH	=	-I../../include -I/usr/local/mysql/include/mysql -I$(QTDIR)/include
++CC	?=	gcc
++CXX	?=	g++
++CFLAGS	?=	-pipe -Wall -W -O2 -DNO_DEBUG
++CXXFLAGS?=	-pipe -Wall -W -O2 -DNO_DEBUG
++INCPATH	=	-I../../include -I/${LOCALBASE}/include/mysql -I$(QTDIR)/include -I${X11BASE}/include/qt2
+ LINK	=	g++
+ LFLAGS	=	
+-LIBS	=	-L$(QTDIR)/lib -L/usr/X11R6/lib -L../../lib -lmysqlnavigator -lqt -lXext -lX11 -lm
+-MOC	=	$(QTDIR)/bin/moc
++LIBS	=	-L$(LOCALBASE)/lib/mysql -L${X11BASE}/lib -L../../lib -lmysqlnavigator -lqt2 -lXext -lX11 -lm
++MOC	=	$(QTDIR)/bin/moc2
+ 
+ TAR	=	tar -cf
+ GZIP	=	gzip -9f

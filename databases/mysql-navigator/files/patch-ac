@@ -1,0 +1,58 @@
+--- src/mysqlnavigator/Makefile.orig	Fri Mar 23 03:50:33 2001
++++ src/mysqlnavigator/Makefile	Fri Mar 30 14:13:30 2001
+@@ -7,17 +7,17 @@
+ 
+ ####### Compiler, tools and options
+ 
+-CC	=	gcc
+-CXX	=	g++
+-CFLAGS	=	-pipe -Wall -W -O2 -fPIC -DNO_DEBUG
+-CXXFLAGS=	-pipe -Wall -W -O2 -fPIC -DNO_DEBUG
+-INCPATH	=	-I../../pics -I../../include -I/usr/local/mysql/include/mysql -I$(QTDIR)/include
++CC	?=	gcc
++CXX	?=	g++
++CFLAGS	?=	-pipe -Wall -W -O2 -fPIC -DNO_DEBUG
++CXXFLAGS?=	-pipe -Wall -W -O2 -fPIC -DNO_DEBUG
++INCPATH	=	-I../../pics -I../../include -I${LOCALBASE}/include/mysql -I$(QTDIR)/include -I${X11BASE}/include/qt2
+ LINK	=	g++
+ LFLAGS	=	-shared -Wl,-soname,libmysqlnavigator.so.1
+-LIBS	=	-L$(QTDIR)/lib -L/usr/X11R6/lib -lmysqlclient -lqt -lXext -lX11 -lm
++LIBS	=	-L$(LOCALBASE)/lib/mysql -L${X11BASE}/lib -lmysqlclient -lqt2 -lXext -lX11 -lm
+ AR	=	ar cqs
+ RANLIB	=	
+-MOC	=	$(QTDIR)/bin/moc
++MOC	=	$(X11BASE)/bin/moc2
+ 
+ TAR	=	tar -cf
+ GZIP	=	gzip -9f
+@@ -215,12 +215,10 @@
+ 		../../include/moc_xport.o \
+ 		../../include/moc_querylistview.o
+ DIST	=	
+-TARGET	=	libmysqlnavigator.so.1.0.0
++TARGET	=	libmysqlnavigator.so.1
++TARGETD	=	libmysqlnavigator.so.1
+ TARGETA	=	libmysqlnavigator.a
+-TARGETD	=	libmysqlnavigator.so.1.0.0
+ TARGET0	=	libmysqlnavigator.so
+-TARGET1	=	libmysqlnavigator.so.1
+-TARGET2	=	libmysqlnavigator.so.1.0
+ 
+ ####### Implicit rules
+ 
+@@ -246,13 +244,10 @@
+ all: $(TARGET)
+ 
+ $(TARGET): $(OBJECTS) $(OBJMOC) 
+-	-rm -f $(TARGET) $(TARGET0) $(TARGET1) $(TARGET2)
++	-rm -f $(TARGET) $(TARGET0)
+ 	$(LINK) $(LFLAGS) -o $(TARGETD) $(OBJECTS) $(OBJMOC) $(LIBS)
+ 	-ln -s $(TARGET) $(TARGET0)
+-	-ln -s $(TARGET) $(TARGET1)
+-	-ln -s $(TARGET) $(TARGET2)
+-	-cp -df libmysqlnavigator* ../../lib
+-	-rm -rf libmysqlnavigator*
++	-cp libmysqlnavigator* ../../lib
+ 
+ staticlib: $(TARGETA)
+ 
