@@ -7,6 +7,7 @@
 
 PORTNAME=	bfilter
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,11 +30,38 @@ CONFIGURE_ARGS+=	--enable-debug
 
 .if defined(WITH_GUI)
 USE_GNOME=	gtk20 pkgconfig
-LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2
+LIB_DEPENDS+=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2
 CONFIGURE_ARGS+=	--with-gui
 PLIST_SUB+=	WITH_GUI=""
 .else
 PLIST_SUB+=	WITH_GUI="@comment "
 .endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/main/bfilter ${PREFIX}/bin
+.if defined(WITH_GUI)
+	${INSTALL_PROGRAM} ${WRKSRC}/main/gui/gtk/bfilter-gui ${PREFIX}/bin
+.endif
+	${MKDIR} ${PREFIX}/etc/bfilter
+	${INSTALL_DATA} ${WRKSRC}/conf/config.default \
+		${PREFIX}/etc/bfilter/config.default
+	${INSTALL_DATA} ${WRKSRC}/conf/rules \
+		${PREFIX}/etc/bfilter/rules.sample
+	${INSTALL_DATA} ${WRKSRC}/conf/rules.local \
+		${PREFIX}/etc/bfilter/rules.local.sample
+
+post-install:
+	@${ECHO_MSG} "-----------------------------------------------"
+	@${ECHO_MSG} "Sample configuration files placed in"
+	@${ECHO_MSG} "${PREFIX}/etc/bfilter/config.default"
+	@${ECHO_MSG} "${PREFIX}/etc/bfilter/rules.sample"
+	@${ECHO_MSG} "${PREFIX}/etc/bfilter/rules.local.sample"
+	@${ECHO_MSG} "-----------------------------------------------"
+	@[ -f ${PREFIX}/etc/bfilter/config ] || \
+	${CP} ${PREFIX}/etc/bfilter/config.default ${PREFIX}/etc/bfilter/config
+	@[ -f ${PREFIX}/etc/bfilter/rules ] || \
+	${CP} ${PREFIX}/etc/bfilter/rules.sample ${PREFIX}/etc/bfilter/rules
+	@[ -f ${PREFIX}/etc/bfilter/rules.local ] || \
+	${CP} ${PREFIX}/etc/bfilter/rules.local.sample ${PREFIX}/etc/bfilter/rules.local
 
 .include <bsd.port.mk>

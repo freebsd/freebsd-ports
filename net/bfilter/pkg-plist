@@ -1,7 +1,12 @@
 bin/bfilter
 %%WITH_GUI%%bin/bfilter-gui
-etc/bfilter/config
+@unexec if cmp -s %D/etc/bfilter/config %D/etc/bfilter/config.default; then rm -f %D/etc/bfilter/config; fi
 etc/bfilter/config.default
-etc/bfilter/rules
-etc/bfilter/rules.local
-@dirrm /etc/bfilter
+@exec [ -f %B/config ] || cp %B/%f %B/config
+@unexec if cmp -s %D/etc/bfilter/rules %D/etc/bfilter/rules.sample; then rm -f %D/etc/bfilter/rules; fi
+etc/bfilter/rules.sample
+@exec [ -f %B/rules ] || cp %B/%f %B/rules
+@unexec if cmp -s %D/etc/bfilter/rules.local %D/etc/bfilter/rules.local.sample; then rm -f %D/etc/bfilter/rules.local; fi
+etc/bfilter/rules.local.sample
+@exec [ -f %B/rules.local ] || cp %B/%f %B/rules.local
+@unexec rmdir %B 2>/dev/null || true
