@@ -1104,6 +1104,7 @@
     SUBDIR += py-ctypes
     SUBDIR += py-cxx
     SUBDIR += py-dialog
+    SUBDIR += py-dbus
     SUBDIR += py-fam
     SUBDIR += py-fileutils
     SUBDIR += py-fortran

@@ -1,0 +1,4 @@
+lib/%%PYTHON_VERSION%%/site-packages/dbus.py
+lib/%%PYTHON_VERSION%%/site-packages/dbus.pyc
+lib/%%PYTHON_VERSION%%/site-packages/dbus.pyo
+lib/%%PYTHON_VERSION%%/site-packages/dbus_bindings.so
