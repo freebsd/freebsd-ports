@@ -1,19 +1,21 @@
 # New ports collection makefile for: fly
-# Version required:     1.6.4
+# Version required:     1.6.5
 # Date created:         30 December 1997
 # Whom:                 Juergen Unger <j.unger@choin.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       fly-1.6.4
+DISTNAME=       fly-1.6.5
 CATEGORIES=	graphics
-MASTER_SITES=   ftp://www.unimelb.edu.au/pub/www/tools/unix/fly/ \
-		ftp://ftp.ibrado.com/pub/fly/
+MASTER_SITES=   ftp://www.unimelb.edu.au/pub/www/tools/unix/fly/
 
 MAINTAINER=     j.unger@choin.net
 
-BUILD_DEPENDS=	${PREFIX}/lib/libgd\.a:${PORTSDIR}/graphics/gd
+#this doesn't matter.. the program builds its own libgd.a.
+#BUILD_DEPENDS=	${PREFIX}/lib/libgd\.a #can't use ports' gd..
+
+MAKE_ENV=	PREFIX="${PREFIX}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fly ${PREFIX}/bin
