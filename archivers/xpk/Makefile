@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.jormas.com/~vesuri/xpk/ \
 		http://energyhq.homeip.net/files/
 
-MAINTAINER=     flynn@energyhq.homeip.net
+MAINTAINER=     ports@FreeBSD.org
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

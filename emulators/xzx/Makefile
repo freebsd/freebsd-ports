@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.zx-spectrum.net/xzx/files/
 DISTNAME=	${PORTNAME}-pro-${PORTVERSION}-eval
 
-MAINTAINER=	flynn@energyhq.homeip.net
+MAINTAINER=	ports@FreeBSD.org
 
 # xmkmf is used in configure script
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
