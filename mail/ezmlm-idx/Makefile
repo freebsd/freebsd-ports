@@ -16,11 +16,13 @@ MASTER_SITES=	ftp://ftp.ezmlm.org/pub/patches/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		ezmlm-${EZMLM_VERSION}${EXTRACT_SUFX}
 
-PATCHFILES=	ezmlm-cgi.patch
 PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	ezmlm-cgi.patch
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Improved version of the ezmlm-0.53 mailing list management software
+MAINTAINER=	sergei@kolobov.com
+COMMENT=	Improved version of the ezmlm mailing list manager
+
+RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 
 # QMAIL_DIR is the directory where qmail is installed
 QMAIL_DIR?=	/var/qmail
@@ -28,27 +30,38 @@ QMAIL_DIR?=	/var/qmail
 # LANGUAGE is the ISO code for the language to use in ezmlmrc
 LANGUAGE?=	en_US
 
-RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
-
 # If WITH_MYSQL is defined, build with MySQL extensions
 .if defined(WITH_MYSQL)
 ALL_TARGET=	mysql it ${LANGUAGE}
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-EXTRACT_INCLUDE+=	-I${PREFIX}/include/mysql
-EXTRACT_LIB+=	-L${PREFIX}/lib/mysql -lmysqlclient -lm
+EXTRACT_INCLUDE+=	-I${LOCALBASE}/include/mysql
+EXTRACT_LIB+=	-L${LOCALBASE}/lib/mysql -lmysqlclient -lm
 .elif defined(WITH_POSTGRESQL)
 ALL_TARGET=	pgsql it ${LANGUAGE}
 POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-EXTRACT_INCLUDE+=	-I${PREFIX}/include/pgsql
-EXTRACT_LIB+=	-L${PREFIX}/lib -lpq -lcrypt
+EXTRACT_INCLUDE+=	-I${LOCALBASE}/include/pgsql
+EXTRACT_LIB+=	-L${LOCALBASE}/lib -lpq -lcrypt
 .else
 ALL_TARGET=	it ${LANGUAGE}
 .endif
 
-NO_PACKAGE=	Unsure of djb's license
+NO_PACKAGE=	Unsure of DJB license
+
+USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/ezmlm-${EZMLM_VERSION}
+EZMLM_VERSION=	0.53
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+PROGRAMS=	ezmlm-archive ezmlm-cgi ezmlm-clean ezmlm-cron ezmlm-gate \
+		ezmlm-get ezmlm-idx ezmlm-issubn ezmlm-limit ezmlm-list \
+		ezmlm-make ezmlm-manage ezmlm-moderate ezmlm-request \
+		ezmlm-reject ezmlm-return ezmlm-send ezmlm-split ezmlm-store \
+		ezmlm-sub ezmlm-tstdig ezmlm-unsub ezmlm-warn ezmlm-weed
+SCRIPTS=	ezmlm-accept ezmlm-check ezmlm-glconf ezmlm-mktab ezmlm-test
+CONFIG=		ezmlmglrc ezmlmrc ezmlmsubrc
 
 MAN1=	ezmlm-accept.1 ezmlm-archive.1 ezmlm-cgi.1 ezmlm-check.1 \
 	ezmlm-clean.1 ezmlm-cron.1 ezmlm-gate.1 ezmlm-get.1 \
@@ -59,18 +72,7 @@ MAN1=	ezmlm-accept.1 ezmlm-archive.1 ezmlm-cgi.1 ezmlm-check.1 \
 	ezmlm-sub.1 ezmlm-test.1 ezmlm-tstdig.1 ezmlm-unsub.1 \
 	ezmlm-warn.1 ezmlm-weed.1
 MAN5=	ezmlm.5 ezmlmglrc.5 ezmlmrc.5 ezmlmsubrc.5
-
-DIFF_MSG=	Cannot Make and Install with different PREFIX or QMAIL_DIR
-
-MY_PROGRAMS=	archive cgi clean cron gate get idx issubn limit \
-		list make manage moderate request reject return \
-		send split store sub tstdig unsub warn weed
-
-MY_SCRIPTS=	accept check glconf mktab test
-
-MY_CONFIG=	ezmlmglrc ezmlmrc ezmlmsubrc
-
-EZMLM_VERSION=	0.53
+DOCS=	CHANGES.idx DOWNGRADE.idx FAQ.idx INSTALL.idx README.idx UPGRADE.idx
 
 pre-patch:
 	@${MV} -f ${WRKDIR}/ezmlm-idx-${PORTVERSION}/* ${WRKSRC}
@@ -89,43 +91,25 @@ post-patch:
 .endif
 	@${ECHO_CMD} ${PREFIX}/man > ${WRKSRC}/conf-man
 	@${ECHO_CMD} ${QMAIL_DIR} > ${WRKSRC}/conf-qmail
-	@${ECHO_CMD} ${PREFIX} > ${WRKDIR}/.PPREFIX
-	@${ECHO_CMD} ${QMAIL_DIR} >> ${WRKDIR}/.PPREFIX
-	@${ECHO_CMD} ${NOPORTDOCS} ${WITH_MYSQL} ${WITH_POSTGRESQL}>> ${WRKDIR}/.PPREFIX
-	@${MV} ${WRKSRC}/idx.h ${WRKSRC}/idx.h.orig
-	@${SED} -e 's#/etc/ezmlm/#'${PREFIX}'/etc/ezmlm/#' \
-		< ${WRKSRC}/idx.h.orig > ${WRKSRC}/idx.h
-
-pre-install:
-	@${ECHO_CMD} ${PREFIX} > ${WRKDIR}/.IPREFIX
-	@${ECHO_CMD} ${QMAIL_DIR} >> ${WRKDIR}/.IPREFIX
-	@${ECHO_CMD} ${NOPORTDOCS} ${WITH_MYSQL} ${WITH_POSTGRESQL}>> ${WRKDIR}/.IPREFIX
-	@diff ${WRKDIR}/.[PI]PREFIX || (${ECHO} ${DIFF_MSG} && exit 1)
+	@${REINPLACE_CMD} -e 's,/etc/ezmlm/,${PREFIX}/etc/ezmlm/,' \
+		${WRKSRC}/idx.h
 
 do-install:
-.for file in ${MY_PROGRAMS}
-	@${INSTALL_PROGRAM} ${WRKSRC}/ezmlm-${file} ${PREFIX}/bin
-.endfor
-.for file in ${MY_SCRIPTS}
-	@${INSTALL_SCRIPT} ${WRKSRC}/ezmlm-${file} ${PREFIX}/bin
-.endfor
+	cd ${WRKSRC} && \
+		${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin && \
+		${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin && \
+		${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1 && \
+		${INSTALL_MAN} ${MAN5} ${MANPREFIX}/man/man5
 	@${MKDIR} ${PREFIX}/etc/ezmlm
-.for file in ${MY_CONFIG}
+.for file in ${CONFIG}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/etc/ezmlm/${file}.sample
 .endfor
-.for file in ${MAN1}
-	@${INSTALL_MAN} ${WRKSRC}/${file} ${PREFIX}/man/man1
-.endfor
-.for file in ${MAN5}
-	@${INSTALL_MAN} ${WRKSRC}/${file} ${PREFIX}/man/man5
-.endfor
 .if !defined(NOPORTDOCS)
-	@${ECHO} "===>  Copying documents to ${PREFIX}/share/doc/ezmlm-idx"
-	@${MKDIR} ${PREFIX}/share/doc/ezmlm-idx
-.for file in CHANGES.idx DOWNGRADE.idx FAQ.idx INSTALL.idx README.idx UPGRADE.idx
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/ezmlm-idx
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
+	@${SED} -e 's,$${PREFIX},${PREFIX},' ${.CURDIR}/pkg-message \
+		> ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
