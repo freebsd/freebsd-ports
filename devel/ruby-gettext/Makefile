@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gettext
-PORTVERSION=	0.5.4
+PORTVERSION=	0.6.1
 CATEGORIES=	devel ruby
-MASTER_SITES=	${MASTER_SITE_RUBY}
-MASTER_SITE_SUBDIR=	contrib
+MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-package-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -23,7 +22,6 @@ USE_GETTEXT=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	racc-runtime
 USE_RUBY_SETUP=	yes
-RUBY_SETUP=	install.rb
 
 RUBY_RD_FILES=	# defined
 RUBY_SHEBANG_FILES=	${WRKSRC}/samples/*.rb
