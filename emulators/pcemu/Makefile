@@ -7,6 +7,7 @@
 
 PORTNAME=	pcemu
 PORTVERSION=	1.01b
+PORTREVISION=	1
 CATEGORIES=	emulators
 #
 # This could in theory become a chicken-and-egg problem.  Anyway,
