@@ -15,6 +15,12 @@ MAINTAINER=		ports@FreeBSD.org
 
 Y2K=			http://www.gnu.org/software/year2000.html
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400000
+FORBIDDEN=	already is in the base system
+.endif
+
 MANUAL_PACKAGE_BUILD=	conflicts with system ncurses
 USE_LIBTOOL=		yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
@@ -191,4 +197,4 @@ post-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/c++/${file} ${PREFIX}/share/examples/ncurses/c++
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
