@@ -4286,6 +4286,7 @@ p5-Authen-Ticket	ports/security/p5-Authen-Ticket
 p5-AxKit	ports/www/p5-AxKit
 p5-B-Graph	ports/devel/p5-B-Graph
 p5-BSD-Resource	ports/devel/p5-BSD-Resource
+p5-BSD-stat	ports/devel/p5-BSD-stat
 p5-BerkeleyDB	ports/databases/p5-BerkeleyDB
 p5-Bit-ShiftReg	ports/math/p5-Bit-ShiftReg
 p5-Bit-Vector	ports/math/p5-Bit-Vector
