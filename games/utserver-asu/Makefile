@@ -12,6 +12,8 @@ DISTNAME=	asu-${PORTVERSION}
 
 MAINTAINER=	matuska@wu-wien.ac.at
 
+RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
 WRKSRC=		${WRKDIR}/Abfackeln.com
 DONT_USE_ZIP=	yes
 DO_USE_WRKSUBDIR=	yes
