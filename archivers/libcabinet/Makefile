@@ -8,9 +8,10 @@
 PORTNAME=	libcabinet
 PORTVERSION=	0.30
 CATEGORIES=	archivers
-MASTER_SITES=	http://trill.cis.fordham.edu/~barbacha/cabinet_library/
+MASTER_SITES=	http://trill.cis.fordham.edu/~barbacha/cabinet_library/ \
+		http://www.jian.tv/pub/linux/distfiles/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable library and utility to use Microsoft cabinet files (.cab)
 
 INSTALLS_SHLIB=	yes
