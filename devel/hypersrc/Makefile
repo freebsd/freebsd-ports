@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hypersrc
-PORTVERSION=	5.2.8
+PORTVERSION=	5.2.11
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.jimbrooks.org/hypersrc/%SUBDIR%/
 MASTER_SITE_SUBDIR=	latest old
