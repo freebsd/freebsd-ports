@@ -408,6 +408,7 @@ astrolog	ports/misc/astrolog
 astyle		ports/devel/astyle
 aswedit		ports/www/aswedit
 aswiki		ports/www/aswiki
+at		ports/science/at
 at-spi		ports/x11-toolkits/at-spi
 atari800	ports/emulators/atari800
 aterm		ports/x11/aterm
