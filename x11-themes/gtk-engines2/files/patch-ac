@@ -1,11 +1,55 @@
---- pixmap/Theme/gtk/gtkrc.orig	Thu Dec 24 00:56:36 1998
-+++ pixmap/Theme/gtk/gtkrc	Thu Dec 24 00:57:01 1998
-@@ -12,7 +12,7 @@
- 
+--- metal/Theme/gtk/gtkrc.orig	Sun Jan 31 03:04:18 1999
++++ metal/Theme/gtk/gtkrc	Sun Jan 31 03:11:48 1999
+@@ -13,9 +13,9 @@
  # testgtkrc2 sets all the buttons in the main window to blue by default
  #include "testgtkrc2"
--
-+pixmap_path "/usr/X11R6/share/themes/Pixmap/gtk"
- #module_path ".:/home/raster/themes"
+ 
+-#module_path ".:/home/raster/themes"
++#module_path "%%PREFIX%%/share/themes"
+ 
+-pixmap_path "."
++pixmap_path "%%PREFIX%%/share/themes/Metal/gtk"
+ 
+ style "default"
+ {
+--- notif/Theme/gtk/gtkrc.orig	Sun Jan 31 03:05:48 1999
++++ notif/Theme/gtk/gtkrc	Sun Jan 31 03:11:41 1999
+@@ -13,9 +13,9 @@
+ # testgtkrc2 sets all the buttons in the main window to blue by default
+ #include "testgtkrc2"
+ 
+-#module_path ".:/home/raster/themes"
++#module_path "%%PREFIX%%/share/themes"
+ 
+-pixmap_path ".:/home/raster/themes"
++pixmap_path "%%PREFIX%%/share/themes/Notif/gtk"
+ 
+ style "default"
+ {
+--- pixmap/Theme/gtk/gtkrc.orig	Thu Dec 17 01:05:37 1998
++++ pixmap/Theme/gtk/gtkrc	Sun Jan 31 03:09:55 1999
+@@ -13,7 +13,9 @@
+ # testgtkrc2 sets all the buttons in the main window to blue by default
+ #include "testgtkrc2"
+ 
+-#module_path ".:/home/raster/themes"
++#module_path "%%PREFIX%%/share/themes"
++
++pixmap_path "%%PREFIX%%/share/themes/Pixmap/gtk"
  
  style "eventbox" {
+   bg_pixmap[NORMAL] = "<parent>"
+--- redmond95/Theme/gtk/gtkrc.orig	Sun Jan 31 03:10:29 1999
++++ redmond95/Theme/gtk/gtkrc	Sun Jan 31 03:11:23 1999
+@@ -13,9 +13,9 @@
+ # testgtkrc2 sets all the buttons in the main window to blue by default
+ #include "testgtkrc2"
+ 
+-#module_path ".:/home/raster/themes"
++#module_path "%%PREFIX%%/share/themes"
+ 
+-pixmap_path ".:/home/raster/themes"
++pixmap_path "%%PREFIX%%/share/themes/Redmond95/gtk"
+ 
+ style "default"
+ {
