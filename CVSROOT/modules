@@ -50,6 +50,7 @@ mod_accesscookie	ports/www/mod_accesscookie
 mod_auth_useragent	ports/www/mod_auth_useragent
 mod_log_sql2	ports/www/mod_log_sql2
 mod_jk2-apache2	ports/www/mod_jk2-apache2
+mod_clamav	ports/www/mod_clamav
 modules		CVSROOT modules
 rcsinfo		CVSROOT rcsinfo
 rcstemplate	CVSROOT rcstemplate
