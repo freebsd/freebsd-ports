@@ -1,0 +1,13 @@
+A collection of Hebrew fonts from El-Mar software Ltd.
+
+You'll have to add /usr/X11R6/lib/X11/fonts/hebrew
+to you're X font path by either:
+
+$ xset fp+ /usr/X11R6/lib/X11/fonts/hebrew
+$ xset fp rehash
+
+or by adding it to you're X-server configuration file (usually
+/etc/XF86Config or /etc/Xaccel.ini) and restarting the X-server.
+
+Nadav.
+nadav@cs.technion.ac.il
