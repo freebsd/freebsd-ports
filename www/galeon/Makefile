@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/
 LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
-#BROKEN=		"b0rken with Mozilla-0.9.1"
+BROKEN=		"b0rken with Mozilla-0.9.9"
 
 #WITH_FULL_MOZILLA=	"Problems with missed scrollbars when linked with mozilla-embedded"
 
