@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	openam
-PORTVERSION=	1.1.4
-PORTREVISION=	1
+PORTVERSION=	1.1.7
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
 		http://www.ru.openh323.org/bin/
-DISTNAME=	openam_1.1.4
+DISTNAME=	openam_1.1.7
 
 MAINTAINER=	roger@FreeBSD.org
 
@@ -24,7 +23,7 @@ NOCLEANDEPENDS=	yes
 
 USE_NEWGCC=	yes
 USE_GMAKE=	yes
-ALL_TARGET=	opt
+ALL_TARGET=	optnoshared
 MAKE_ENV=	PWLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/pwlib \
 		OPENH323DIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/openh323
 THE_MACHTYPE=	${ARCH:S/i386/x86/}
