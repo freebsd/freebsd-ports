@@ -7242,6 +7242,7 @@ popa3d		ports/mail/popa3d
 popa3d-before-sendmail	ports/mail/popa3d-before-sendmail
 popcheck	ports/mail/popcheck
 popd		ports/mail/popd
+popfile		ports/mail/popfile
 poppassd	ports/mail/poppassd
 popper		ports/mail/popper
 poppwd		ports/mail/poppwd
