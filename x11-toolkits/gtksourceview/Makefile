@@ -22,6 +22,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnome libgnomeprintui
+CONFIGURE_ARGS=	--enable-compile-warnings=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lgnuregex"
 
