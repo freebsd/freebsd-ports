@@ -30,11 +30,11 @@ MD5_FILE=	${.CURDIR}/distinfo
 PLIST=		${WRKDIR}/pkg-plist
 BROKEN=		"not ported to Python-2.2.3 yet"
 
-post-patch:
-	@${FIND} ${WRKSRC} -name '*.orig' -exec ${RM} -f {} \;
-	@${RM} -rf ${WRKSRC}/Lib/test/output/test_atexit \
-			${WRKSRC}/Lib/test/output/test_minidom
-	@${ECHO} "lib/%%PYTHON_VERSION%%/lib-dynload/stackless.so" >${PLIST}
-	@${CAT} ${MASTERDIR}/pkg-plist >>${PLIST}
+#post-patch:
+#	@${FIND} ${WRKSRC} -name '*.orig' -exec ${RM} -f {} \;
+#	@${RM} -rf ${WRKSRC}/Lib/test/output/test_atexit \
+#			${WRKSRC}/Lib/test/output/test_minidom
+#	@${ECHO} "lib/%%PYTHON_VERSION%%/lib-dynload/stackless.so" >${PLIST}
+#	@${CAT} ${MASTERDIR}/pkg-plist >>${PLIST}
 
 .include "${MASTERDIR}/Makefile"
