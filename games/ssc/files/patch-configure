@@ -1,0 +1,177 @@
+--- configure.orig	Fri Oct 10 17:07:07 2003
++++ configure	Sat Jan 17 16:57:07 2004
+@@ -4196,163 +4196,6 @@
+ 
+ 
+ 
+-CPU_NAME="unknown"
+-CPU_TYPE="unknown"
+-if test -e "/proc/cpuinfo" ; then
+-        intel[30]="-march=i386"
+-        intel[32]="-march=i386"
+-        intel[34]="-march=i386"
+-        intel[40]="-march=i486"
+-        intel[41]="-march=i486"
+-        intel[42]="-march=i486"
+-        intel[43]="-march=i486"
+-        intel[44]="-march=i486"
+-        intel[45]="-march=i486"
+-        intel[47]="-march=i486"
+-        intel[48]="-march=i486"
+-        intel[51]="-march=pentium"
+-        intel[52]="-march=pentium"
+-        intel[54]="-march=pentium-mmx"
+-        intel[61]="-march=pentiumpro"
+-        intel[63]="-march=pentium2"
+-        intel[65]="-march=pentium2"
+-        intel[66]="-march=pentium2"
+-        intel[67]="-march=pentium3"
+-        intel[68]="-march=pentium3"
+-        intel[610]="-march=pentium3"
+-        intel[611]="-march=pentium3"
+-        intel[150]="-march=pentium4"
+-        intel[151]="-march=pentium4"
+-        intel[152]="-march=pentium4"
+-        amd[50]="-march=i586"
+-        amd[51]="-march=i586"
+-        amd[52]="-march=i586"
+-        amd[53]="-march=i586"
+-        amd[56]="-march=k6"
+-        amd[57]="-march=k6"
+-        amd[58]="-march=k6-2"
+-        amd[59]="-march=k6-3"
+-        amd[61]="-march=athlon"
+-        amd[62]="-march=athlon"
+-        amd[63]="-march=athlon"
+-        amd[64]="-march=athlon"
+-        amd[66]="-march=athlon-xp"
+-        amd[67]="-march=athlon"
+-        amd[68]="-march=athlon"
+-        CPU_TYPE="known"
+-        CPU_FAMILY=`cat /proc/cpuinfo | grep "cpu family"`
+-        CPU_MODEL=`cat /proc/cpuinfo | grep model[^\ ]`
+-        CPU_NAME=`cat /proc/cpuinfo | grep "model name"`
+-        CPU_FLAGS=`cat /proc/cpuinfo | grep "flags"`
+-        CPU_VENDOR=`cat /proc/cpuinfo | grep "vendor_id"`
+-        CPU_FAMILY=${CPU_FAMILY#'cpu family        : '}
+-        CPU_MODEL=${CPU_MODEL#'model                : '}
+-        CPU_NAME=${CPU_NAME#'model name        : '}
+-        CPU_FLAGS=${CPU_FLAGS#'flags                : '}
+-        CPU_VENDOR=${CPU_VENDOR#'vendor_id        : '}
+-        if test "x${CPU_VENDOR}" = "xGenuineIntel" ; then
+-                CPU_OPTIONS=${intel[$CPU_FAMILY$CPU_MODEL]}
+-        fi
+-        if test "x${CPU_VENDOR}" = "xAuthenticAMD" ; then
+-                CPU_OPTIONS=${amd[$CPU_FAMILY$CPU_MODEL]}
+-        fi
+-        if test "x${CPU_OPTIONS}" = "x" ; then
+-                CPU_TYPE="unknown"
+-        fi
+-        CPU_EXT=""
+-        for i in $CPU_FLAGS ; do
+-                case $i in
+-                fpu)
+-                        CPU_FPU="-mfpmath=387"
+-                        ;;
+-                mmx)
+-                        CPU_EXT="$CPU_EXT -mmmx"
+-                        ;;
+-                sse)
+-                        CPU_FPU="-mfpmath=sse -msse"
+-                        ;;
+-                sse2)
+-                        CPU_FPU="-mfpmath=sse -msse2"
+-                        ;;
+-                3dnow)
+-                        CPU_EXT="$CPU_EXT -m3dnow"
+-                        ;;
+-                esac
+-        done
+-        CPU_OPTIONS="$CPU_OPTIONS $CPU_FPU $CPU_EXT"
+-fi
+-if test "x${CPU_TYPE}" = "xunknown"; then
+-        CPU_TYPE=`( uname -p ) 2>&1`
+-        case $CPU_TYPE in
+-        i386)
+-                CPU_OPTIONS="-march=i386"
+-                ;;
+-        i486)
+-                CPU_OPTIONS="-march=i486"
+-                ;;
+-	athlon)
+-		CPU_OPTIONS="-march=athlon-xp"
+-		;;
+-        Pentium2)
+-                CPU_OPTIONS="-march=pentium2"
+-                ;;
+-        Pentiumpro)
+-                CPU_OPTIONS="-march=pentiumpro"
+-                ;;
+-        Pentium*)
+-                CPU_OPTIONS="-march=pentium"
+-                ;;
+-        k6)
+-                CPU_OPTIONS="-march=k6"
+-                ;;
+-        k6-2)
+-                CPU_OPTIONS="-march=k6-2"
+-                ;;
+-        k6-3)
+-                CPU_OPTIONS="-march=k6-3"
+-                ;;
+-        *)
+-                CPU_OPTIONS=""
+-                CPU_TYPE="unknown"
+-                ;;
+-        esac
+-        if test "x${CPU_TYPE}" = "xunknown"; then
+-                CPU_TYPE=`( uname -m ) 2>&1`
+-                case $CPU_TYPE in
+-                i386)
+-                        CPU_OPTIONS="-march=i386"
+-                        ;;
+-                i486)
+-                        CPU_OPTIONS="-march=i486"
+-                        ;;
+-                i586)
+-                        CPU_OPTIONS="-march=i586"
+-                        ;;
+-                i686)
+-                        CPU_OPTIONS="-march=i686"
+-                        ;;
+-                Pentium2)
+-                        CPU_OPTIONS="-march=pentium2"
+-                        ;;
+-                Pentiumpro)
+-                        CPU_OPTIONS="-march=pentiumpro"
+-                        ;;
+-                k6)
+-                        CPU_OPTIONS="-march=k6"
+-                        ;;
+-                k6-2)
+-                        CPU_OPTIONS="-march=k6-2"
+-                        ;;
+-                k6-3)
+-                        CPU_OPTIONS="-march=k6-3"
+-                        ;;
+-                *)
+-                        CPU_OPTIONS=""
+-                        ;;
+-                esac
+-        fi
+-fi
+-echo "Detected CPU:`echo $CPU_NAME | sed -e 's/.*://'`"
+ COMPILER=$CXX
+ for I in "$TMPDIR" "$TEMPDIR" "/tmp" ; do
+         test "$I" && break
+@@ -4375,8 +4218,8 @@
+ 
+ 
+ DBG_CXXFLAGS="$UNAME_DEFS  -g -Wall -Werror"
+-OPT_CXXFLAGS="$UNAME_DEFS  -O3 -pipe -finline-functions -falign-functions=4 -ffast-math -fno-rtti -fno-exceptions -mfancy-math-387 -fomit-frame-pointer  $CPU_OPTIONS  -Wall -Werror"
+-PRF_CXXFLAGS="$UNAME_DEFS  -O3 -pipe -finline-functions -falign-functions=4 -mfancy-math-387 -pg $CPU_OPTIONS  -Wall -Werror"
++OPT_CXXFLAGS="$UNAME_DEFS  -O3 -pipe -finline-functions -ffast-math -fno-rtti -fno-exceptions -mfancy-math-387 -fomit-frame-pointer -Wall -Werror"
++PRF_CXXFLAGS="$UNAME_DEFS  -O3 -pipe -finline-functions -mfancy-math-387 -pg -Wall -Werror"
+ 
+ CXXFLAGS=$OPT_CXXFLAGS
+ 

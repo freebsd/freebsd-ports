@@ -376,6 +376,7 @@
     SUBDIR += speyes
     SUBDIR += spider
     SUBDIR += ssamtse
+    SUBDIR += ssc
     SUBDIR += starlanes
     SUBDIR += stvef-paks
     SUBDIR += stvef-server

@@ -1,0 +1,25 @@
+--- src/Makefile.in.orig	Sat Jan 17 16:40:15 2004
++++ src/Makefile.in	Sat Jan 17 16:41:53 2004
+@@ -68,9 +68,9 @@
+ 
+ LIBS = \
+ 	../support/ode/lib/libode.a \
+-	`freetype-config --libs` \
++	`${LOCALBASE}/bin/freetype-config --libs` \
+ 	-lGLU -lGL -lSDL_mixer \
+-	`sdl-config --libs` \
++	`${SDL_CONFIG} --libs` \
+ 	-lpng -lz
+ 
+ LTLIBOBJS = @LTLIBOBJS@
+@@ -118,8 +118,8 @@
+ target_alias = @target_alias@
+ INCLUDES = \
+ 	-I../support/ode/include \
+-	`freetype-config --cflags` \
+-	`sdl-config --cflags`
++	`${LOCALBASE}/bin/freetype-config --cflags` \
++	`${SDL_CONFIG} --cflags`
+ 
+ 
+ bin_PROGRAMS = ssc
