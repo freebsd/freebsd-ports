@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Locale-Maketext-Lexicon
-PORTVERSION=	0.16
+PORTVERSION=	0.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Locale
@@ -34,5 +34,8 @@ MAN3=		Locale::Maketext::Lexicon::Auto.3 \
 		Locale::Maketext::Lexicon.3
 
 MAN1=		xgettext.pl.1
+
+pre-configure:
+	@${FIND} ${WRKSRC} -name \*.orig -delete
 
 .include <bsd.port.mk>
