@@ -29,10 +29,10 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=     obrien@FreeBSD.org
 
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 .if defined(BATCH)
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
-BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
-		msgfmt:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 .if ${MACHINE_ARCH} != "alpha"
 #  coredump in sgmls
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
