@@ -8,7 +8,7 @@
 PORTNAME=	entropy
 PORTVERSION=	1.0
 CATEGORIES=	math archivers
-MASTER_SITES=	http://staff.seccuris.com/~cperon/
+MASTER_SITES=	http://www.seccuris.com/documents/downloads/
 
 MAINTAINER=	maneo@bsdpro.com
 
