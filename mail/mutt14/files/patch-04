@@ -1,6 +1,6 @@
---- configure.orig.bak	Fri Feb 12 13:59:51 1999
-+++ configure	Sat Feb 13 18:00:01 1999
-@@ -1725,6 +1725,9 @@
+--- configure.orig	Tue Jan 18 14:19:14 2000
++++ configure	Tue Feb 29 01:47:49 2000
+@@ -1925,6 +1925,9 @@
  /* We use char because int might match the return type of a gcc2
      builtin and then its argument prototype would still apply.  */
  char $ac_func();
@@ -10,3 +10,12 @@
  
  int main() {
  
+@@ -5710,7 +5713,7 @@
+ s%@FFLAGS@%$FFLAGS%g
+ s%@DEFS@%$DEFS%g
+ s%@LDFLAGS@%$LDFLAGS%g
+-s%@LIBS@%$LIBS%g
++s%@LIBS@%$LIBS -lxpg4%g
+ s%@exec_prefix@%$exec_prefix%g
+ s%@prefix@%$prefix%g
+ s%@program_transform_name@%$program_transform_name%g
