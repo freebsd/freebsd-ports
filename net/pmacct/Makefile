@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pmacct
-PORTVERSION=	0.6.0.p1
+PORTVERSION=	0.6.0p2
 CATEGORIES=	net
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p1/p1/}
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Network tool to gather IP traffic information
