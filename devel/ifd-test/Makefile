@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.linuxnet.com/drivers/readers/files/
 MAINTAINER=	bms@spc.org
 COMMENT=	IFD Test Suite for PC/SC Lite
 
-BROKEN=		"Does not link"
-
 LIB_DEPENDS=    pcsclite.0:${PORTSDIR}/devel/pcsc-lite
 
 USE_GMAKE=	yes
