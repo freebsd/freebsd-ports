@@ -20,6 +20,8 @@ COMMENT=	The GNU file utilities
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
+CONFLICTS=	coreutils-*
+
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
