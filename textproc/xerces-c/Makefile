@@ -5,37 +5,41 @@
 # $FreeBSD$
 #
 
-PORTNAME=      xerces_c
-PORTVERSION=   1.6.0
-CATEGORIES=    textproc
-MASTER_SITES=  http://xml.apache.org/dist/xerces-c/stable/ \
-	http://document-root.de/xerces-c-mirror/
-DISTNAME=      xerces-c-src1_6_0
+PORTNAME=	xerces_c
+PORTVERSION=	1.7.0
+CATEGORIES=	textproc
+MASTER_SITES=	http://xml.apache.org/dist/xerces-c/stable/ \
+		http://document-root.de/xerces-c-mirror/
+DISTNAME=	xerces-c-src${PORTVERSION:S/./_/g}
 
-MAINTAINER=    kiesel@schlund.de
+MAINTAINER=	ports@FreeBSD.org
 
 INSTALLS_SHLIB=yes
 LDCONFIG_DIRS= ${PREFIX}/lib
 
-CONFIGURE_WRKSRC= ${WRKSRC}/src
-BUILD_WRKSRC=     ${WRKSRC}/src
-INSTALL_WRKSRC=   ${WRKSRC}/src
+XERCESWRKSRC=	${WRKSRC}/src/xercesc
+CONFIGURE_WRKSRC= ${XERCESWRKSRC}
+BUILD_WRKSRC=     ${XERCESWRKSRC}
+INSTALL_WRKSRC=   ${XERCESWRKSRC}
 
-# Set this to where the source lives
-MAKE_ENV+= XERCESCROOT=${WRKSRC}
+USE_GMAKE=	yes
+MAKE_ENV+=	XERCESCROOT=${WRKSRC}
 
-# If configure fails, try this:
-#CONFIGURE_SCRIPT= runConfigure -pfreebsd
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	XERCESCROOT=${WRKSRC} TRANSCODER="IconvFBSD"
+CONFIGURE_SCRIPT= runConfigure
+CONFIGURE_ARGS=	-p freebsd -n socket -P ${PREFIX}
+.if defined(NO_THREADS)
+CONFIGURE_ARGS+= -r none
+.endif
 
-USE_GMAKE=     yes
-HAS_CONFIGURE= yes
-GNU_CONFIGURE= yes
+PLIST_SUB+=	XERCESC_VER=${PORTVERSION:S/./_/g} \
 
 pre-configure:
 	${CHMOD} 700 ${CONFIGURE_WRKSRC}/runConfigure
 	${CHMOD} 700 ${CONFIGURE_WRKSRC}/configure
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/lib/libxerces-c1_6_0.so
+	${STRIP_CMD} ${PREFIX}/lib/libxerces-c${PORTVERSION:S/./_/g}.so
 
 .include <bsd.port.mk>
