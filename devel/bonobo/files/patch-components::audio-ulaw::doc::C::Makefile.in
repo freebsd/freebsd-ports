@@ -2,7 +2,7 @@
 $FreeBSD$
 
 --- components/audio-ulaw/doc/C/Makefile.in	2002/05/01 01:17:50	1.1
-+++ components/audio-ulaw/doc/C/Makefile.in	2002/05/01 01:28:03
++++ components/audio-ulaw/doc/C/Makefile.in	2002/05/02 14:07:25
 @@ -168,7 +168,7 @@
  cxxflags_set = @cxxflags_set@
  l = @l@
@@ -12,3 +12,12 @@ $FreeBSD$
  
  # 
  # Module configuration information
+@@ -288,7 +288,7 @@
+ 	-cp $(module)/index.html .
+ 
+ $(module)/$(module).html: $(SGML_FILES)
+-	-db2html $(srcdir)/$(main_module_file)
++	-db2html_foo $(srcdir)/$(main_module_file)
+ 
+ dist-hook:
+ 	mkdir $(distdir)/$(module)
