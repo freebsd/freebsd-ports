@@ -22,6 +22,7 @@ share/texmf/documentation/enumerate.dtx
 share/texmf/documentation/epsfig.dtx
 share/texmf/documentation/exscale.dtx
 share/texmf/documentation/fileerr.dtx
+share/texmf/documentation/fixltx2e.dtx
 share/texmf/documentation/fntguide.tex
 share/texmf/documentation/fontdef.dtx
 share/texmf/documentation/fontsmpl.dtx
@@ -75,6 +76,8 @@ share/texmf/documentation/ltnews07.tex
 share/texmf/documentation/ltnews08.tex
 share/texmf/documentation/ltnews09.tex
 share/texmf/documentation/ltnews10.tex
+share/texmf/documentation/ltnews11.tex
+share/texmf/documentation/ltnews12.tex
 share/texmf/documentation/ltoutenc.dtx
 share/texmf/documentation/ltoutput.dtx
 share/texmf/documentation/ltpage.dtx
@@ -250,6 +253,7 @@ share/texmf/tex/latex/emtex.def
 share/texmf/tex/latex/enumerate.sty
 share/texmf/tex/latex/epsfig.sty
 share/texmf/tex/latex/exscale.sty
+share/texmf/tex/latex/fixltx2e.sty
 share/texmf/tex/latex/flafter.sty
 share/texmf/tex/latex/fleqn.clo
 share/texmf/tex/latex/fleqn.sty
@@ -417,3 +421,5 @@ share/texmf/tex/latex/x.tex
 share/texmf/tex/latex/xr.sty
 share/texmf/tex/latex/xspace.sty
 share/texmf/web2c/latex.fmt
+@dirrm share/texmf/tex/latex
+@unexec rmdir %D/share/texmf/documentation 2>/dev/null || true
