@@ -19,4 +19,7 @@ MAN6=		xyagamo.6
 MANLANG=	ja
 MAN6COMPRESSED=	no
 
+pre-build:
+	@cd ${BUILD_WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} depend
+
 .include <bsd.port.mk>
