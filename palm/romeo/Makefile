@@ -20,7 +20,13 @@ COMMENT=	The Palm ROM Discombobulator
 PLIST_FILES=	bin/romeo
 USE_GMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/romeo ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
