@@ -1,0 +1,10 @@
+Generic Haskell extends Haskell with type-indexed values, kind-indexed values,
+generic abstraction, and generic application.
+
+The Generic Haskell compiler generates ordinary Haskell code which can be run
+or compiled using lang/ghc, lang/nhc98 or lang/hugs.
+
+WWW: http://www.generic-haskell.org/
+
+-- Oliver Braun
+obraun@informatik.unibw-muenchen.de
