@@ -181,6 +181,7 @@
     SUBDIR += glui
     SUBDIR += gmake
     SUBDIR += gnomebuild
+    SUBDIR += gnomecommon
     SUBDIR += gnomecrash
     SUBDIR += gnomedebug
     SUBDIR += gnomevfs
