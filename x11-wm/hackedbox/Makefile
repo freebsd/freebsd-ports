@@ -1,12 +1,12 @@
 # New ports collection makefile for:	Blackbox
-# Version required:	0.50.5
+# Version required:	0.51.0
 # Date created:		June 15, 1998
 # Whom:			Brian Handy <handy@physics.montana.edu>
 #
-# $Id: Makefile,v 1.23 1999/06/20 00:50:01 cpiazza Exp $
+# $Id: Makefile,v 1.24 1999/07/15 01:03:11 cpiazza Exp $
 #
 
-DISTNAME=	blackbox-0.50.5
+DISTNAME=	blackbox-0.51.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://balance.wiw.org/pub/blackbox/ \
 		ftp://ftp.digex.net/pub/X11/window-managers/blackbox/ \
@@ -31,8 +31,5 @@ pre-configure:
 	@ ${ECHO_MSG}
 CONFIGURE_ARGS= --enable-kde
 .endif
-
-post-extract:
-	@ ${RM} ${WRKSRC}/config.cache
 
 .include <bsd.port.mk>
