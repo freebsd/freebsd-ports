@@ -1,3 +1,0 @@
-bin/cdpr
-%%PORTDOCS%%share/doc/cdpr/README
-%%PORTDOCS%%@dirrm share/doc/cdpr

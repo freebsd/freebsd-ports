@@ -1,4 +1,0 @@
-bin/disco
-bin/disco.fp
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

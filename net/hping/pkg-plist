@@ -1,7 +1,0 @@
-sbin/hping
-%%PORTDOCS%%share/doc/hping/AS-BACKDOOR
-%%PORTDOCS%%share/doc/hping/HPING2-HOWTO.txt
-%%PORTDOCS%%share/doc/hping/HPING2-IS-OPEN
-%%PORTDOCS%%share/doc/hping/MORE-FUN-WITH-IPID
-%%PORTDOCS%%share/doc/hping/SPOOFED_SCAN.txt
-%%PORTDOCS%%@dirrm share/doc/hping

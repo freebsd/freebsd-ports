@@ -1,7 +1,0 @@
---- client/Makefile.in.orig	Sun Jun 18 19:05:24 2000
-+++ client/Makefile.in	Fri Sep  1 11:57:51 2000
-@@ -105,3 +105,3 @@
- 
--SUBDIRS = help
-+SUBDIRS = # help
- 

@@ -1,7 +1,0 @@
-[Environment]
-InstallationMode = INSTALL_NETWORK
-InstallationType = STANDARD
-DestinationPath = %%PREFIX%%/OpenOffice.org1.0
-
-[Java]
-JavaSupport = preinstalled_or_none

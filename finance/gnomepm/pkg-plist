@@ -1,6 +1,0 @@
-bin/gnome-pm
-share/gnome/apps/Applications/gnome-pm.desktop
-share/gnome/pixmaps/gnome-pm.png
-share/gnome/pixmaps/gnome-pm/about.jpg
-share/locale/it/LC_MESSAGES/gnome-pm.mo
-@dirrm share/gnome/pixmaps/gnome-pm
