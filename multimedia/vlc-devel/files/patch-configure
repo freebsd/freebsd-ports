@@ -1,0 +1,11 @@
+--- configure.orig	Mon Jun 30 18:06:22 2003
++++ configure	Mon Jun 30 18:07:02 2003
+@@ -14017,7 +14017,7 @@
+ fi
+ 
+ 
+-#BUILTINS="${BUILTINS} mpeg_video_old idct idctclassic motion"
++BUILTINS="${BUILTINS} mpeg_video_old idct idctclassic motion"
+ PLUGINS="${PLUGINS} dummy rc logger gestures memcpy"
+ PLUGINS="${PLUGINS} es audio m4v mpeg_system ps ts avi asf aac mp4 rawdv"
+ PLUGINS="${PLUGINS} spudec mpeg_audio lpcm a52 dts cinepak"
