@@ -7,22 +7,23 @@
 
 PORTNAME=	apache
 PORTVERSION=    1.3.19
+PORTREVISION=   1
 CATEGORIES=	www
-MASTER_SITES=	http://www.apache.org/dist/ \
-		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
-		ftp://ftp.rge.com/pub/infosystems/apache/dist/ \
-		ftp://apache.compuex.com/pub/apache/dist/ \
-		ftp://apache.arctic.org/pub/apache/dist/ \
-		ftp://ftp.epix.net/pub/apache/dist/ \
-		ftp://ftp.ameth.org/pub/mirrors/ftp.apache.org/apache/dist/ \
-		ftp://ftp.connectnet.com/pub/www/apache/ \
-		ftp://apache.technomancer.com/mirrors/apache/dist/ \
-		ftp://ftp.raver.net/pub/ftp.apache.org/ \
-		ftp://www3.service.digital.com/apache/dist/ \
-		ftp://galileo.galilei.com/pub/apache/ \
-		ftp://ftp.mtnranch.net/pub/apache/dist/ \
-		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
-		ftp://apache.nextpath.com/pub/apache/dist/
+MASTER_SITES=   http://httpd.apache.org/dist/httpd/ \
+		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
+		ftp://ftp.rge.com/pub/infosystems/apache/dist/httpd/ \
+		ftp://apache.compuex.com/pub/apache/dist/httpd/ \
+		ftp://apache.arctic.org/pub/apache/dist/httpd/ \
+		ftp://ftp.epix.net/pub/apache/dist/httpd/ \
+		ftp://ftp.ameth.org/pub/mirrors/ftp.apache.org/apache/dist/httpd/ \
+		ftp://ftp.connectnet.com/pub/www/apache/httpd/ \
+		ftp://apache.technomancer.com/mirrors/apache/dist/httpd/ \
+		ftp://ftp.raver.net/pub/ftp.apache.org/httpd/ \
+		ftp://www3.service.digital.com/apache/dist/httpd/ \
+		ftp://galileo.galilei.com/pub/apache/httpd/ \
+		ftp://ftp.mtnranch.net/pub/apache/dist/httpd/ \
+		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/httpd/ \
+		ftp://apache.nextpath.com/pub/apache/dist/httpd/
 DISTNAME=	apache_${PORTVERSION}
 
 #PATCH_SITES=    ${MASTER_SITES}
