@@ -8,12 +8,15 @@ include/pccts/AParser.h
 include/pccts/ASTBase.cpp
 include/pccts/ASTBase.h
 include/pccts/ATokPtr.h
-include/pccts/ATokPtr.cpp
+include/pccts/ATokPtrImpl.h
 include/pccts/ATokenBuffer.cpp
 include/pccts/AToken.h
 include/pccts/ATokenBuffer.h
 include/pccts/ATokenStream.h
-include/pccts/DLexer.cpp
+include/pccts/BufFileInput.cpp
+include/pccts/BufFileInput.h
+include/pccts/DLG_stream_input.h
+include/pccts/DLexer.h
 include/pccts/DLexerBase.cpp
 include/pccts/DLexerBase.h
 include/pccts/PBlackBox.h
