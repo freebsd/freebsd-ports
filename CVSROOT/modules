@@ -5156,6 +5156,7 @@ p5-Apache-Peek	ports/www/p5-Apache-Peek
 p5-Apache-Radius	ports/www/p5-Apache-Radius
 p5-Apache-Reload	ports/www/p5-Apache-Reload
 p5-Apache-SSI	ports/www/p5-Apache-SSI
+p5-Apache-Scoreboard	ports/www/p5-Apache-Scoreboard
 p5-Apache-Session	ports/www/p5-Apache-Session
 p5-Apache-Session-PHP	ports/www/p5-Apache-Session-PHP
 p5-Apache-Session-SharedMem	ports/www/p5-Apache-Session-SharedMem
