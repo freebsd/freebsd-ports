@@ -113,7 +113,7 @@ LIB_DEPENDS+=		pq:${PORTSDIR}/databases/postgresql7
 DBTYPE=			postgresql
 .else
 CONFIGURE_ARGS+=	--with-sqlite=yes
-LIB_DEPENDS+=		sqlite:${PORTSDIR}/databases/sqlite
+LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
 DBTYPE=			sqlite
 .endif
 PLIST_SUB+=		DBTYPE=${DBTYPE}
