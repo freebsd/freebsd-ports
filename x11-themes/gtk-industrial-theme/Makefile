@@ -7,12 +7,12 @@
 
 PORTNAME=	gtk-industrial-theme
 PORTVERSION=	0.2.29
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://ftp.ximian.com/pub/xd2/redhat-9-i386/source/ \
-		http://www.linux-friends.de/stoerte/FreeBSD/
+		${MASTER_SITE_GENTOO:S,%SUBDIR%,distfiles,}
 DISTNAME=	ximian-artwork-${PORTVERSION}-${XIMIAN_SUBVERSION}.ximian.${XIMIAN_DISTVERSION}.src
-EXTRACT_SUFX=   .rpm
+EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	stoerte@dreamwarrior.net
 COMMENT=	Slick theme for GTK1 from Ximian
@@ -27,7 +27,7 @@ USE_REINPLACE=	yes
 USE_LIBTOOL_VER=13
 
 XIMIAN_SUBVERSION=	0
-XIMIAN_DISTVERSION=	6.2
+XIMIAN_DISTVERSION=	6.3
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
