@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qdbm
-PORTVERSION=	1.8.18
+PORTVERSION=	1.8.20
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 		http://qdbm.sourceforge.net/
@@ -32,7 +32,7 @@ MAN3=		cabin.3 curia.3 depot.3 hovel.3 odeum.3 qdbm.3 relic.3 villa.3
 MLINKS=		curia.3 cropen.3 depot.3 dpopen.3 \
 		odeum.3 odopen.3 villa.3 vlopen.3 villa.3 vista.3
 
-OPTIONS=	PTHREAD "Enable pthread support !! USE IT WITH CARE !!" Off \
+OPTIONS=	PTHREAD "Enable pthread support" Off \
 		DEBUG "Enable debug" Off
 
 .include <bsd.port.pre.mk>
