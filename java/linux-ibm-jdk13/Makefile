@@ -29,7 +29,7 @@ ONLY_FOR_ARCHS=	i386
 APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION}
 LINUX_SH?=	${LINUXBASE}/bin/sh
 
-NO_CDROM=	"License doesn\'t allow distribution with fee"
+NO_CDROM=	"License does not allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
 
 DOWNLOAD_URL=	http://www6.software.ibm.com/dl/dklx130/dklx130-i?S_PKG=ia32ww
@@ -42,15 +42,11 @@ RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/wadalab-gothic.ttf:${PORTSDIR}/j
 PLIST_SUB+=	JAPANESE="@comment "
 .endif
 
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-IGNORE=	"You can not legally distribute binaries"
-.endif
-
-.include <bsd.port.pre.mk>
-
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=You must manually fetch the IBM Java SDK ${JDK_VERSION} for Linux archive (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again.
 .endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@for shfn in `${GREP} -r '^#!/bin/sh' ${WRKSRC}|${AWK} -F: '{print $$1}'`; do \
