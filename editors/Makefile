@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.77 1999/05/10 14:55:16 shige Exp $
+# $Id: Makefile,v 1.78 1999/05/29 14:38:49 kuriyama Exp $
 #
 
     SUBDIR += AbiWord
@@ -16,13 +16,14 @@
     SUBDIR += emacs
     SUBDIR += emacs20
     SUBDIR += emacs20-dl
-    SUBDIR += gnotepad+
     SUBDIR += flim-emacs
     SUBDIR += flim-emacs-current
     SUBDIR += flim-emacs20
     SUBDIR += flim-emacs20-current
     SUBDIR += flim-mule
     SUBDIR += flim-mule-current
+    SUBDIR += gedit
+    SUBDIR += gnotepad+
     SUBDIR += gxedit
     SUBDIR += hexedit
     SUBDIR += jed
