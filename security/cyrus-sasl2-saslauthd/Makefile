@@ -133,5 +133,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/saslauthd/${file} ${DOCSDIR}/saslauthd
 .endfor
 .endif
+	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} \
+		POST-INSTALL
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+#	$FreeBSD$
+#
+
+PKG_BATCH=${BATCH:=NO}
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+
+# This should really be installed by Sendmail
+sendmail_conf() {
+	if [ ! -f ${PKG_PREFIX}/lib/sasl2/Sendmail.conf ]; then
+		echo "pwcheck_method: saslauthd" > ${PKG_PREFIX}/lib/sasl2/Sendmail.conf
+	fi
+}
+
+case $2 in
+POST-INSTALL)
+	if [ "${PKG_BATCH}" = "NO" ]; then
+		sendmail_conf
+	fi
+	;;
+esac
