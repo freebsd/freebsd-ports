@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk-engines
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gtk-engines
@@ -17,7 +18,7 @@ USE_X_PREFIX=	yes
 USE_IMLIB=	yes
 USE_LIBTOOL=	yes
 
-THEMES=		metal notif pixmap redmond95
+THEMES=		metal notif pixmap raleigh redmond95
 
 post-patch:
 	@for theme in ${THEMES}; do \

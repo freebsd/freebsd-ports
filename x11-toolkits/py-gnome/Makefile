@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	py-gnome
-PORTVERSION=	1.0.53
+PORTVERSION=	1.4.0
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-python
@@ -15,7 +15,6 @@ DISTNAME=	gnome-python-${PORTVERSION}
 MAINTAINER=	nectar@FreeBSD.org
 
 BUILD_DEPENDS=	${PYGTK_DEP}
-LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
 RUN_DEPENDS=	${PYGTK_DEP}
 
 USE_GMAKE=	yes

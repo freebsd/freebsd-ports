@@ -8,7 +8,7 @@
 @@ -158,3 +158,3 @@
  
 -libzvt_la_LDFLAGS = -version-info 4:10:2 -rpath $(libdir)
-+libzvt_la_LDFLAGS = -version-info 4:0:0 -rpath $(libdir)
++libzvt_la_LDFLAGS = -version-info 5:0:0 -rpath $(libdir)
  
 @@ -194,3 +194,3 @@
  update.lo vt.lo zvtterm.lo

@@ -24,7 +24,7 @@ include/libgnomeprint/gnome-rfont.h
 include/libgnomeprint/gnome-text.h
 lib/libgnomeprint.a
 lib/libgnomeprint.so
-lib/libgnomeprint.so.13
+lib/libgnomeprint.so.16
 share/gnome/fonts/afms/adobe/pagd8a.afm
 share/gnome/fonts/afms/adobe/pagdo8a.afm
 share/gnome/fonts/afms/adobe/pagk8a.afm
@@ -66,9 +66,11 @@ share/gnome/fonts/afms/adobe/putr8a.afm
 share/gnome/fonts/afms/adobe/putri8a.afm
 share/gnome/fonts/afms/adobe/pzcmi8a.afm
 share/gnome/fonts/afms/adobe/pzdr.afm
-share/gnome/fonts/fontmap
+share/gnome/fonts/fontmap2
 share/gnome/gnome-print/%%VERSION%%/profiles/PostscriptOptimized.profile
+share/gnome/gnome-print/%%VERSION%%/profiles/fax-g3.profile
 share/gnome/gnome-print/%%VERSION%%/profiles/pdf.profile
+share/locale/az/LC_MESSAGES/gnome-print.mo
 share/locale/ca/LC_MESSAGES/gnome-print.mo
 share/locale/da/LC_MESSAGES/gnome-print.mo
 share/locale/de/LC_MESSAGES/gnome-print.mo

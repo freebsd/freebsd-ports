@@ -8,6 +8,9 @@ include/glade/glade-widget-tree.h
 lib/libglade.a
 lib/libglade.so
 lib/libglade.so.4
+lib/libglade-bonobo.a
+lib/libglade-bonobo.so
+lib/libglade-bonobo.so.4
 lib/libglade-gnome.a
 lib/libglade-gnome.so
 lib/libglade-gnome.so.4

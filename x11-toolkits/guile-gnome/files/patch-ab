@@ -1,30 +1,11 @@
---- configure.orig	Sat May 20 14:55:24 2000
-+++ configure	Fri Jun  9 15:16:53 2000
-@@ -3094,9 +3094,9 @@
- try_libglade=true
- libglade_msg="no"
- build_libglade=false
--# Check whether --with-gtkhtml or --without-gtkhtml was given.
--if test "${with_gtkhtml+set}" = set; then
--  withval="$with_gtkhtml"
-+# Check whether --with-libglade or --without-libglade was given.
-+if test "${with_libglade+set}" = set; then
-+  withval="$with_libglade"
-   if test x$withval = xno; then
- 		try_libglade=false
- 	fi
-@@ -3129,7 +3129,7 @@
- 
- CPPFLAGS="$saved_CPPFLAGS"
+--- configure.orig	Fri Mar  9 11:06:26 2001
++++ configure	Thu Apr  5 11:39:56 2001
+@@ -3261,3 +3261,3 @@
  
 -subdirs="guile-gtk"
 +subdirs=""
  
- 
- trap '' 1 2 15
-@@ -3595,76 +3595,6 @@
-     esac
-   done
+@@ -3739,72 +3739,2 @@
  
 -  for ac_config_dir in guile-gtk; do
 -
@@ -97,5 +78,3 @@
 -    cd $ac_popdir
 -  done
  fi
- 
- 

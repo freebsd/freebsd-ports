@@ -1,0 +1,10 @@
+--- gtk-threads.c.orig	Thu Nov 30 09:22:53 2000
++++ gtk-threads.c	Wed Feb 28 10:40:06 2001
+@@ -244,3 +244,7 @@
+ 
++#ifdef __FreeBSD__
++  timed_out = (result == ETIMEDOUT);
++#else
+   timed_out = (result == ETIME);
++#endif
+ 

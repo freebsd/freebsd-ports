@@ -1,0 +1,7 @@
+--- Makefile.in.orig	Sun Apr 22 07:12:11 2001
++++ Makefile.in	Tue Apr 24 00:06:26 2001
+@@ -137,3 +137,3 @@
+ # that use Gtk-- and want to check for the correct version
+-m4datadir = $(datadir)/aclocal
++m4datadir = $(prefix)/share/aclocal
+ m4data_DATA = gnome--.m4

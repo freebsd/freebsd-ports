@@ -1,6 +1,7 @@
 etc/gnomemmConf.sh
 include/gnome--.h
 include/gnome--/about.h
+include/gnome--/affinetrans.h
 include/gnome--/animator.h
 include/gnome--/app-callback.h
 include/gnome--/app-helper.h
@@ -55,6 +56,7 @@ include/gnome--/paper-selector.h
 include/gnome--/pixmap-entry.h
 include/gnome--/pixmap.h
 include/gnome--/pixmapmenuitem.h
+include/gnome--/point.h
 include/gnome--/private/about_p.h
 include/gnome--/private/animator_p.h
 include/gnome--/private/app_p.h
@@ -115,6 +117,7 @@ include/gnome--/stock.h
 include/gnome--/types.h
 lib/libgnomemm.a
 lib/libgnomemm.so
-lib/libgnomemm.so.4
+lib/libgnomemm.so.6
+share/aclocal/gnome--.m4
 @dirrm include/gnome--/private
 @dirrm include/gnome--

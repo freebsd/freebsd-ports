@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomecore
-PORTVERSION=	1.2.4
+PORTVERSION=	1.4.0.3
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-core
@@ -14,9 +14,8 @@ DISTNAME=	gnome-core-${PORTVERSION}
 
 MAINTAINER?=	ade@FreeBSD.org
 
-LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml \
-		bz2.1:${PORTSDIR}/archivers/bzip2
-RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/startup.wav:${PORTSDIR}/audio/gnomeaudio
+LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
+RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -27,7 +26,7 @@ CONFIGURE_ARGS=	--with-kde-datadir=${LOCALBASE}/share
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-MAN1=		gnome-session.1 gnome-wm.1 save-session.1
+MAN1=		gnome-session.1 gnome-terminal.1 gnome-wm.1 save-session.1
 MAN5=		default.session.5
 
 pre-patch:

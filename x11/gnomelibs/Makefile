@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomelibs
-PORTVERSION=	1.2.11
+PORTVERSION=	1.2.13
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-libs
@@ -14,7 +14,9 @@ DISTNAME=	gnome-libs-${PORTVERSION}
 
 MAINTAINER?=	ade@FreeBSD.org
 
+BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit
+RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
@@ -24,7 +26,7 @@ USE_IMLIB=	yes
 USE_ESOUND=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-LIBTOOLFILES=	configure libart_lgpl/configure devel-docs/configure
+LIBTOOLFILES=	configure libart_lgpl/configure
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--disable-test-gnome

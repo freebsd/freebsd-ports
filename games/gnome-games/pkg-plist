@@ -150,100 +150,530 @@ share/gnome/gturing/examples/bin2dec.tur
 share/gnome/gturing/examples/dashnumbers.tur
 share/gnome/gturing/examples/dec2bin.tur
 share/gnome/gturing/examples/subst.tur
+share/gnome/help/aisleriot/C/agnes.html
+share/gnome/help/aisleriot/C/agnes.sgml
+share/gnome/help/aisleriot/C/aisleriot.sgml
 share/gnome/help/aisleriot/C/auld-lang-syne.html
+share/gnome/help/aisleriot/C/auld_lang_syne.sgml
+share/gnome/help/aisleriot/C/bakers-dozen.html
+share/gnome/help/aisleriot/C/bakers-game.html
+share/gnome/help/aisleriot/C/bakers_dozen.sgml
+share/gnome/help/aisleriot/C/bakers_game.sgml
 share/gnome/help/aisleriot/C/beleaguered-castle.html
+share/gnome/help/aisleriot/C/beleaguered_castle.sgml
+share/gnome/help/aisleriot/C/block-ten.html
+share/gnome/help/aisleriot/C/block_ten.sgml
 share/gnome/help/aisleriot/C/bristol.html
-share/gnome/help/aisleriot/C/camelot-goal.gif
+share/gnome/help/aisleriot/C/bristol.sgml
 share/gnome/help/aisleriot/C/camelot.html
+share/gnome/help/aisleriot/C/camelot.sgml
 share/gnome/help/aisleriot/C/canfield.html
-share/gnome/help/aisleriot/C/clock-rules.gif
+share/gnome/help/aisleriot/C/canfield.sgml
 share/gnome/help/aisleriot/C/clock.html
+share/gnome/help/aisleriot/C/clock.sgml
+share/gnome/help/aisleriot/C/cover.html
+share/gnome/help/aisleriot/C/cover.sgml
+share/gnome/help/aisleriot/C/definitions.sgml
+share/gnome/help/aisleriot/C/diamond-mine.html
+share/gnome/help/aisleriot/C/diamond_mine.sgml
 share/gnome/help/aisleriot/C/docbook.css
 share/gnome/help/aisleriot/C/doublets.html
+share/gnome/help/aisleriot/C/doublets.sgml
 share/gnome/help/aisleriot/C/eagle-wing.html
+share/gnome/help/aisleriot/C/eagle-wing.sgml
+share/gnome/help/aisleriot/C/easthaven.html
+share/gnome/help/aisleriot/C/easthaven.sgml
+share/gnome/help/aisleriot/C/eight-off.html
+share/gnome/help/aisleriot/C/eight_off.sgml
 share/gnome/help/aisleriot/C/elevator.html
+share/gnome/help/aisleriot/C/elevator.sgml
+share/gnome/help/aisleriot/C/escalator.html
+share/gnome/help/aisleriot/C/escalator.sgml
+share/gnome/help/aisleriot/C/figures/camelot-goal.png
+share/gnome/help/aisleriot/C/figures/clock-rules.png
 share/gnome/help/aisleriot/C/first-law.html
+share/gnome/help/aisleriot/C/first_law.sgml
+share/gnome/help/aisleriot/C/fortress.html
+share/gnome/help/aisleriot/C/fortress.sgml
 share/gnome/help/aisleriot/C/fortunes.html
+share/gnome/help/aisleriot/C/fortunes.sgml
 share/gnome/help/aisleriot/C/fourteen.html
+share/gnome/help/aisleriot/C/fourteen.sgml
 share/gnome/help/aisleriot/C/freecell.html
+share/gnome/help/aisleriot/C/freecell.sgml
+share/gnome/help/aisleriot/C/gay-gordons.html
+share/gnome/help/aisleriot/C/gay_gordons.sgml
+share/gnome/help/aisleriot/C/glenwood.html
+share/gnome/help/aisleriot/C/glenwood.sgml
 share/gnome/help/aisleriot/C/glossary.html
-share/gnome/help/aisleriot/C/gpl.html
+share/gnome/help/aisleriot/C/golf.html
+share/gnome/help/aisleriot/C/golf.sgml
+share/gnome/help/aisleriot/C/gypsy.html
+share/gnome/help/aisleriot/C/gypsy.sgml
+share/gnome/help/aisleriot/C/helsinki.html
+share/gnome/help/aisleriot/C/helsinki.sgml
 share/gnome/help/aisleriot/C/hopscotch.html
+share/gnome/help/aisleriot/C/hopscotch.sgml
 share/gnome/help/aisleriot/C/index.html
 share/gnome/help/aisleriot/C/intro.html
+share/gnome/help/aisleriot/C/isabel.html
+share/gnome/help/aisleriot/C/isabel.sgml
+share/gnome/help/aisleriot/C/jamestown.html
+share/gnome/help/aisleriot/C/jamestown.sgml
+share/gnome/help/aisleriot/C/jumbo.html
+share/gnome/help/aisleriot/C/jumbo.sgml
 share/gnome/help/aisleriot/C/kansas.html
+share/gnome/help/aisleriot/C/kansas.sgml
+share/gnome/help/aisleriot/C/king-albert.html
+share/gnome/help/aisleriot/C/king_albert.sgml
 share/gnome/help/aisleriot/C/klondike.html
+share/gnome/help/aisleriot/C/klondike.sgml
+share/gnome/help/aisleriot/C/labyrinth.html
+share/gnome/help/aisleriot/C/labyrinth.sgml
 share/gnome/help/aisleriot/C/lady-jane.html
+share/gnome/help/aisleriot/C/lady_jane.sgml
+share/gnome/help/aisleriot/C/maze.html
+share/gnome/help/aisleriot/C/maze.sgml
+share/gnome/help/aisleriot/C/monte-carlo.html
+share/gnome/help/aisleriot/C/monte_carlo.sgml
 share/gnome/help/aisleriot/C/neighbor.html
+share/gnome/help/aisleriot/C/neighbor.sgml
 share/gnome/help/aisleriot/C/odessa.html
+share/gnome/help/aisleriot/C/odessa.sgml
 share/gnome/help/aisleriot/C/osmosis.html
+share/gnome/help/aisleriot/C/osmosis.sgml
+share/gnome/help/aisleriot/C/peek.html
+share/gnome/help/aisleriot/C/peek.sgml
 share/gnome/help/aisleriot/C/pileon.html
+share/gnome/help/aisleriot/C/pileon.sgml
+share/gnome/help/aisleriot/C/poker.html
+share/gnome/help/aisleriot/C/poker.sgml
+share/gnome/help/aisleriot/C/quatorze.html
+share/gnome/help/aisleriot/C/quatorze.sgml
 share/gnome/help/aisleriot/C/royal-east.html
+share/gnome/help/aisleriot/C/royal_east.sgml
 share/gnome/help/aisleriot/C/scorpion.html
+share/gnome/help/aisleriot/C/scorpion.sgml
+share/gnome/help/aisleriot/C/scuffle.html
+share/gnome/help/aisleriot/C/scuffle.sgml
+share/gnome/help/aisleriot/C/seahaven.html
+share/gnome/help/aisleriot/C/seahaven.sgml
+share/gnome/help/aisleriot/C/sir-tommy.html
+share/gnome/help/aisleriot/C/sir_tommy.sgml
 share/gnome/help/aisleriot/C/spider.html
+share/gnome/help/aisleriot/C/spider.sgml
+share/gnome/help/aisleriot/C/spiderette.html
+share/gnome/help/aisleriot/C/spiderette.sgml
 share/gnome/help/aisleriot/C/straight-up.html
+share/gnome/help/aisleriot/C/straight_up.sgml
+share/gnome/help/aisleriot/C/streets-and-alleys.html
+share/gnome/help/aisleriot/C/streets_and_alleys.sgml
+share/gnome/help/aisleriot/C/stylesheet-images/caution.gif
+share/gnome/help/aisleriot/C/stylesheet-images/home.gif
+share/gnome/help/aisleriot/C/stylesheet-images/important.gif
+share/gnome/help/aisleriot/C/stylesheet-images/next.gif
+share/gnome/help/aisleriot/C/stylesheet-images/note.gif
+share/gnome/help/aisleriot/C/stylesheet-images/prev.gif
+share/gnome/help/aisleriot/C/stylesheet-images/tip.gif
+share/gnome/help/aisleriot/C/stylesheet-images/toc-blank.gif
+share/gnome/help/aisleriot/C/stylesheet-images/toc-minus.gif
+share/gnome/help/aisleriot/C/stylesheet-images/toc-plus.gif
+share/gnome/help/aisleriot/C/stylesheet-images/up.gif
+share/gnome/help/aisleriot/C/stylesheet-images/warning.gif
 share/gnome/help/aisleriot/C/thieves.html
+share/gnome/help/aisleriot/C/thieves.sgml
 share/gnome/help/aisleriot/C/thirteen.html
+share/gnome/help/aisleriot/C/thirteen.sgml
 share/gnome/help/aisleriot/C/thumb-and-pouch.html
+share/gnome/help/aisleriot/C/thumb_and_pouch.sgml
 share/gnome/help/aisleriot/C/topic.dat
+share/gnome/help/aisleriot/C/treize.html
+share/gnome/help/aisleriot/C/treize.sgml
 share/gnome/help/aisleriot/C/union-square.html
+share/gnome/help/aisleriot/C/union_square.sgml
+share/gnome/help/aisleriot/C/valentine.html
+share/gnome/help/aisleriot/C/valentine.sgml
 share/gnome/help/aisleriot/C/westhaven.html
+share/gnome/help/aisleriot/C/westhaven.sgml
+share/gnome/help/aisleriot/C/whitehead.html
+share/gnome/help/aisleriot/C/whitehead.sgml
+share/gnome/help/aisleriot/C/will-o-the-wisp.html
+share/gnome/help/aisleriot/C/will_o_the_wisp.sgml
+share/gnome/help/aisleriot/C/yield.html
+share/gnome/help/aisleriot/C/yield.sgml
 share/gnome/help/aisleriot/C/yukon.html
+share/gnome/help/aisleriot/C/yukon.sgml
 share/gnome/help/aisleriot/C/zebra.html
+share/gnome/help/aisleriot/C/zebra.sgml
+share/gnome/help/gataxx/C/authors.html
+share/gnome/help/gataxx/C/bugs.html
+share/gnome/help/gataxx/C/docbook.css
+share/gnome/help/gataxx/C/figures/gataxx-legalmoves.png
+share/gnome/help/gataxx/C/figures/gataxx-prefs.png
+share/gnome/help/gataxx/C/figures/gataxx-startgame.png
+share/gnome/help/gataxx/C/gataxx.sgml
+share/gnome/help/gataxx/C/index.html
+share/gnome/help/gataxx/C/license.html
+share/gnome/help/gataxx/C/prefs.html
+share/gnome/help/gataxx/C/stylesheet-images/caution.gif
+share/gnome/help/gataxx/C/stylesheet-images/home.gif
+share/gnome/help/gataxx/C/stylesheet-images/important.gif
+share/gnome/help/gataxx/C/stylesheet-images/next.gif
+share/gnome/help/gataxx/C/stylesheet-images/note.gif
+share/gnome/help/gataxx/C/stylesheet-images/prev.gif
+share/gnome/help/gataxx/C/stylesheet-images/tip.gif
+share/gnome/help/gataxx/C/stylesheet-images/toc-blank.gif
+share/gnome/help/gataxx/C/stylesheet-images/toc-minus.gif
+share/gnome/help/gataxx/C/stylesheet-images/toc-plus.gif
+share/gnome/help/gataxx/C/stylesheet-images/up.gif
+share/gnome/help/gataxx/C/stylesheet-images/warning.gif
+share/gnome/help/gataxx/C/topic.dat
+share/gnome/help/gataxx/C/usage.html
+share/gnome/help/gnibbles/C/authors.html
+share/gnome/help/gnibbles/C/bugs.html
+share/gnome/help/gnibbles/C/docbook.css
+share/gnome/help/gnibbles/C/figures/game.png
+share/gnome/help/gnibbles/C/figures/graphics.png
+share/gnome/help/gnibbles/C/figures/intro.png
+share/gnome/help/gnibbles/C/figures/playing.png
+share/gnome/help/gnibbles/C/figures/worm_op.png
+share/gnome/help/gnibbles/C/gnibbles.sgml
+share/gnome/help/gnibbles/C/index.html
+share/gnome/help/gnibbles/C/license.html
+share/gnome/help/gnibbles/C/objective.html
+share/gnome/help/gnibbles/C/prefs.html
+share/gnome/help/gnibbles/C/stylesheet-images/caution.gif
+share/gnome/help/gnibbles/C/stylesheet-images/home.gif
+share/gnome/help/gnibbles/C/stylesheet-images/important.gif
+share/gnome/help/gnibbles/C/stylesheet-images/next.gif
+share/gnome/help/gnibbles/C/stylesheet-images/note.gif
+share/gnome/help/gnibbles/C/stylesheet-images/prev.gif
+share/gnome/help/gnibbles/C/stylesheet-images/tip.gif
+share/gnome/help/gnibbles/C/stylesheet-images/toc-blank.gif
+share/gnome/help/gnibbles/C/stylesheet-images/toc-minus.gif
+share/gnome/help/gnibbles/C/stylesheet-images/toc-plus.gif
+share/gnome/help/gnibbles/C/stylesheet-images/up.gif
+share/gnome/help/gnibbles/C/stylesheet-images/warning.gif
+share/gnome/help/gnibbles/C/topic.dat
+share/gnome/help/gnibbles/C/usage.html
+share/gnome/help/gnobots2/C/authors.html
+share/gnome/help/gnobots2/C/bugs.html
+share/gnome/help/gnobots2/C/customization.html
+share/gnome/help/gnobots2/C/docbook.css
+share/gnome/help/gnobots2/C/figures/gnobots2-main.png
+share/gnome/help/gnobots2/C/gnobots2.sgml
 share/gnome/help/gnobots2/C/index.html
+share/gnome/help/gnobots2/C/keyboard.html
+share/gnome/help/gnobots2/C/license.html
+share/gnome/help/gnobots2/C/menubar.html
+share/gnome/help/gnobots2/C/objective.html
+share/gnome/help/gnobots2/C/stylesheet-images/caution.gif
+share/gnome/help/gnobots2/C/stylesheet-images/home.gif
+share/gnome/help/gnobots2/C/stylesheet-images/important.gif
+share/gnome/help/gnobots2/C/stylesheet-images/next.gif
+share/gnome/help/gnobots2/C/stylesheet-images/note.gif
+share/gnome/help/gnobots2/C/stylesheet-images/prev.gif
+share/gnome/help/gnobots2/C/stylesheet-images/tip.gif
+share/gnome/help/gnobots2/C/stylesheet-images/toc-blank.gif
+share/gnome/help/gnobots2/C/stylesheet-images/toc-minus.gif
+share/gnome/help/gnobots2/C/stylesheet-images/toc-plus.gif
+share/gnome/help/gnobots2/C/stylesheet-images/up.gif
+share/gnome/help/gnobots2/C/stylesheet-images/warning.gif
 share/gnome/help/gnobots2/C/topic.dat
+share/gnome/help/gnobots2/C/usage.html
 share/gnome/help/gnobots2/da/index.html
 share/gnome/help/gnobots2/da/topic.dat
 share/gnome/help/gnobots2/es/index.html
 share/gnome/help/gnobots2/es/topic.dat
 share/gnome/help/gnobots2/it/index.html
 share/gnome/help/gnobots2/it/topic.dat
+share/gnome/help/gnome-mines/C/authors.html
+share/gnome/help/gnome-mines/C/bugs.html
+share/gnome/help/gnome-mines/C/docbook.css
+share/gnome/help/gnome-mines/C/figures/advanced_121_a.png
+share/gnome/help/gnome-mines/C/figures/advanced_121_b.png
+share/gnome/help/gnome-mines/C/figures/advanced_121_c.png
+share/gnome/help/gnome-mines/C/figures/basic-corner.png
+share/gnome/help/gnome-mines/C/figures/basic-flat3.png
+share/gnome/help/gnome-mines/C/figures/basic-wall.png
+share/gnome/help/gnome-mines/C/figures/gnomine-begin-play.png
+share/gnome/help/gnome-mines/C/figures/gnomine-fail.png
+share/gnome/help/gnome-mines/C/figures/gnomine-fresh.png
+share/gnome/help/gnome-mines/C/figures/gnomine-preferences.png
+share/gnome/help/gnome-mines/C/figures/gnomine-won.png
+share/gnome/help/gnome-mines/C/gnome-mines.sgml
+share/gnome/help/gnome-mines/C/index.html
+share/gnome/help/gnome-mines/C/license.html
+share/gnome/help/gnome-mines/C/menubar.html
+share/gnome/help/gnome-mines/C/objective.html
+share/gnome/help/gnome-mines/C/stylesheet-images/caution.gif
+share/gnome/help/gnome-mines/C/stylesheet-images/home.gif
+share/gnome/help/gnome-mines/C/stylesheet-images/important.gif
+share/gnome/help/gnome-mines/C/stylesheet-images/next.gif
+share/gnome/help/gnome-mines/C/stylesheet-images/note.gif
+share/gnome/help/gnome-mines/C/stylesheet-images/prev.gif
+share/gnome/help/gnome-mines/C/stylesheet-images/tip.gif
+share/gnome/help/gnome-mines/C/stylesheet-images/toc-blank.gif
+share/gnome/help/gnome-mines/C/stylesheet-images/toc-minus.gif
+share/gnome/help/gnome-mines/C/stylesheet-images/toc-plus.gif
+share/gnome/help/gnome-mines/C/stylesheet-images/up.gif
+share/gnome/help/gnome-mines/C/stylesheet-images/warning.gif
+share/gnome/help/gnome-mines/C/topic.dat
+share/gnome/help/gnome-mines/C/usage.html
+share/gnome/help/gnome-stones/C/authors.html
+share/gnome/help/gnome-stones/C/bugs.html
+share/gnome/help/gnome-stones/C/docbook.css
+share/gnome/help/gnome-stones/C/figures/main-game.png
+share/gnome/help/gnome-stones/C/figures/main-start.png
+share/gnome/help/gnome-stones/C/figures/preferences-joystick.png
+share/gnome/help/gnome-stones/C/figures/preferences-main.png
+share/gnome/help/gnome-stones/C/gamescenarios.html
+share/gnome/help/gnome-stones/C/gnome-stones.sgml
+share/gnome/help/gnome-stones/C/index.html
+share/gnome/help/gnome-stones/C/license.html
+share/gnome/help/gnome-stones/C/prefs.html
+share/gnome/help/gnome-stones/C/stylesheet-images/caution.gif
+share/gnome/help/gnome-stones/C/stylesheet-images/home.gif
+share/gnome/help/gnome-stones/C/stylesheet-images/important.gif
+share/gnome/help/gnome-stones/C/stylesheet-images/next.gif
+share/gnome/help/gnome-stones/C/stylesheet-images/note.gif
+share/gnome/help/gnome-stones/C/stylesheet-images/prev.gif
+share/gnome/help/gnome-stones/C/stylesheet-images/tip.gif
+share/gnome/help/gnome-stones/C/stylesheet-images/toc-blank.gif
+share/gnome/help/gnome-stones/C/stylesheet-images/toc-minus.gif
+share/gnome/help/gnome-stones/C/stylesheet-images/toc-plus.gif
+share/gnome/help/gnome-stones/C/stylesheet-images/up.gif
+share/gnome/help/gnome-stones/C/stylesheet-images/warning.gif
+share/gnome/help/gnome-stones/C/usage.html
+share/gnome/help/gnotravex/C/authors.html
+share/gnome/help/gnotravex/C/bugs.html
+share/gnome/help/gnotravex/C/docbook.css
+share/gnome/help/gnotravex/C/figures/gnotravex_game.png
+share/gnome/help/gnotravex/C/figures/gnotravex_mainwindow.png
+share/gnome/help/gnotravex/C/gnotravex.sgml
+share/gnome/help/gnotravex/C/index.html
+share/gnome/help/gnotravex/C/license.html
+share/gnome/help/gnotravex/C/prefs.html
+share/gnome/help/gnotravex/C/stylesheet-images/caution.gif
+share/gnome/help/gnotravex/C/stylesheet-images/home.gif
+share/gnome/help/gnotravex/C/stylesheet-images/important.gif
+share/gnome/help/gnotravex/C/stylesheet-images/next.gif
+share/gnome/help/gnotravex/C/stylesheet-images/note.gif
+share/gnome/help/gnotravex/C/stylesheet-images/prev.gif
+share/gnome/help/gnotravex/C/stylesheet-images/tip.gif
+share/gnome/help/gnotravex/C/stylesheet-images/toc-blank.gif
+share/gnome/help/gnotravex/C/stylesheet-images/toc-minus.gif
+share/gnome/help/gnotravex/C/stylesheet-images/toc-plus.gif
+share/gnome/help/gnotravex/C/stylesheet-images/up.gif
+share/gnome/help/gnotravex/C/stylesheet-images/warning.gif
+share/gnome/help/gnotravex/C/topic.dat
+share/gnome/help/gnotravex/C/usage.html
+share/gnome/help/gtali/C/authors.html
+share/gnome/help/gtali/C/bugs.html
+share/gnome/help/gtali/C/docbook.css
+share/gnome/help/gtali/C/figures/mainwindow.png
+share/gnome/help/gtali/C/figures/preferences.png
+share/gnome/help/gtali/C/gtali.sgml
 share/gnome/help/gtali/C/index.html
+share/gnome/help/gtali/C/license.html
+share/gnome/help/gtali/C/options.html
+share/gnome/help/gtali/C/playing.html
+share/gnome/help/gtali/C/strategy.html
+share/gnome/help/gtali/C/stylesheet-images/caution.gif
+share/gnome/help/gtali/C/stylesheet-images/home.gif
+share/gnome/help/gtali/C/stylesheet-images/important.gif
+share/gnome/help/gtali/C/stylesheet-images/next.gif
+share/gnome/help/gtali/C/stylesheet-images/note.gif
+share/gnome/help/gtali/C/stylesheet-images/prev.gif
+share/gnome/help/gtali/C/stylesheet-images/tip.gif
+share/gnome/help/gtali/C/stylesheet-images/toc-blank.gif
+share/gnome/help/gtali/C/stylesheet-images/toc-minus.gif
+share/gnome/help/gtali/C/stylesheet-images/toc-plus.gif
+share/gnome/help/gtali/C/stylesheet-images/up.gif
+share/gnome/help/gtali/C/stylesheet-images/warning.gif
 share/gnome/help/gtali/C/topic.dat
 share/gnome/help/gtali/da/index.html
 share/gnome/help/gtali/da/topic.dat
+share/gnome/help/gturing/C/authors.html
+share/gnome/help/gturing/C/docbook.css
+share/gnome/help/gturing/C/figures/mainwin.png
+share/gnome/help/gturing/C/gturing.sgml
+share/gnome/help/gturing/C/index.html
+share/gnome/help/gturing/C/license.html
+share/gnome/help/gturing/C/prgfmt.html
+share/gnome/help/gturing/C/stylesheet-images/caution.gif
+share/gnome/help/gturing/C/stylesheet-images/home.gif
+share/gnome/help/gturing/C/stylesheet-images/important.gif
+share/gnome/help/gturing/C/stylesheet-images/next.gif
+share/gnome/help/gturing/C/stylesheet-images/note.gif
+share/gnome/help/gturing/C/stylesheet-images/prev.gif
+share/gnome/help/gturing/C/stylesheet-images/tip.gif
+share/gnome/help/gturing/C/stylesheet-images/toc-blank.gif
+share/gnome/help/gturing/C/stylesheet-images/toc-minus.gif
+share/gnome/help/gturing/C/stylesheet-images/toc-plus.gif
+share/gnome/help/gturing/C/stylesheet-images/up.gif
+share/gnome/help/gturing/C/stylesheet-images/warning.gif
 share/gnome/help/gturing/C/topic.dat
+share/gnome/help/gturing/C/turingmachine.html
+share/gnome/help/gturing/C/using.html
+share/gnome/help/gturing/it/description.html
+share/gnome/help/gturing/it/dialogs.html
+share/gnome/help/gturing/it/display.html
+share/gnome/help/gturing/it/docbook.css
+share/gnome/help/gturing/it/figures/mainwin.png
+share/gnome/help/gturing/it/gturing.sgml
+share/gnome/help/gturing/it/index.html
+share/gnome/help/gturing/it/ln10.html
+share/gnome/help/gturing/it/prgfmt.html
+share/gnome/help/gturing/it/stylesheet-images/caution.gif
+share/gnome/help/gturing/it/stylesheet-images/home.gif
+share/gnome/help/gturing/it/stylesheet-images/important.gif
+share/gnome/help/gturing/it/stylesheet-images/next.gif
+share/gnome/help/gturing/it/stylesheet-images/note.gif
+share/gnome/help/gturing/it/stylesheet-images/prev.gif
+share/gnome/help/gturing/it/stylesheet-images/tip.gif
+share/gnome/help/gturing/it/stylesheet-images/toc-blank.gif
+share/gnome/help/gturing/it/stylesheet-images/toc-minus.gif
+share/gnome/help/gturing/it/stylesheet-images/toc-plus.gif
+share/gnome/help/gturing/it/stylesheet-images/up.gif
+share/gnome/help/gturing/it/stylesheet-images/warning.gif
+share/gnome/help/gturing/it/toolbar.html
 share/gnome/help/gturing/it/topic.dat
-share/gnome/help/iagno/C/ANIMATION.png
-share/gnome/help/iagno/C/BLOCK.png
-share/gnome/help/iagno/C/FIRST.png
-share/gnome/help/iagno/C/PLAYER.png
-share/gnome/help/iagno/C/START.png
 share/gnome/help/iagno/C/animations.html
 share/gnome/help/iagno/C/bugs.html
 share/gnome/help/iagno/C/credits.html
 share/gnome/help/iagno/C/docbook.css
+share/gnome/help/iagno/C/figures/ANIMATION.png
+share/gnome/help/iagno/C/figures/BLOCK.png
+share/gnome/help/iagno/C/figures/FIRST.png
+share/gnome/help/iagno/C/figures/PLAYER.png
+share/gnome/help/iagno/C/figures/START.png
+share/gnome/help/iagno/C/iagno.sgml
 share/gnome/help/iagno/C/index.html
 share/gnome/help/iagno/C/license.html
-share/gnome/help/iagno/C/ln7.html
 share/gnome/help/iagno/C/playing.html
 share/gnome/help/iagno/C/settings.html
-share/gnome/help/iagno/C/stylesheet-images/caution.png
-share/gnome/help/iagno/C/stylesheet-images/important.png
-share/gnome/help/iagno/C/stylesheet-images/note.png
-share/gnome/help/iagno/C/stylesheet-images/tip.png
-share/gnome/help/iagno/C/stylesheet-images/warning.png
+share/gnome/help/iagno/C/stylesheet-images/caution.gif
+share/gnome/help/iagno/C/stylesheet-images/home.gif
+share/gnome/help/iagno/C/stylesheet-images/important.gif
+share/gnome/help/iagno/C/stylesheet-images/next.gif
+share/gnome/help/iagno/C/stylesheet-images/note.gif
+share/gnome/help/iagno/C/stylesheet-images/prev.gif
+share/gnome/help/iagno/C/stylesheet-images/tip.gif
+share/gnome/help/iagno/C/stylesheet-images/toc-blank.gif
+share/gnome/help/iagno/C/stylesheet-images/toc-minus.gif
+share/gnome/help/iagno/C/stylesheet-images/toc-plus.gif
+share/gnome/help/iagno/C/stylesheet-images/up.gif
+share/gnome/help/iagno/C/stylesheet-images/warning.gif
 share/gnome/help/iagno/C/topic.dat
-share/gnome/help/samegnome/C/authors.html
-share/gnome/help/samegnome/C/book1.html
-share/gnome/help/samegnome/C/bugs.html
-share/gnome/help/samegnome/C/c11.html
-share/gnome/help/samegnome/C/docbook.css
-share/gnome/help/samegnome/C/index.html
-share/gnome/help/samegnome/C/ln9.html
-share/gnome/help/samegnome/C/newthemes.html
-share/gnome/help/samegnome/C/topic.dat
-share/gnome/help/samegnome/ru/authors.html
-share/gnome/help/samegnome/ru/book1.html
-share/gnome/help/samegnome/ru/bugs.html
-share/gnome/help/samegnome/ru/c11.html
-share/gnome/help/samegnome/ru/docbook.css
-share/gnome/help/samegnome/ru/index.html
-share/gnome/help/samegnome/ru/ln9.html
-share/gnome/help/samegnome/ru/newthemes.html
-share/gnome/help/samegnome/ru/topic.dat
+share/gnome/help/iagno/it/animations.html
+share/gnome/help/iagno/it/bugs.html
+share/gnome/help/iagno/it/credits.html
+share/gnome/help/iagno/it/docbook.css
+share/gnome/help/iagno/it/figures/ANIMATION.png
+share/gnome/help/iagno/it/figures/BLOCK.png
+share/gnome/help/iagno/it/figures/FIRST.png
+share/gnome/help/iagno/it/figures/PLAYER.png
+share/gnome/help/iagno/it/figures/START.png
+share/gnome/help/iagno/it/iagno.sgml
+share/gnome/help/iagno/it/index.html
+share/gnome/help/iagno/it/license.html
+share/gnome/help/iagno/it/playing.html
+share/gnome/help/iagno/it/settings.html
+share/gnome/help/iagno/it/stylesheet-images/caution.gif
+share/gnome/help/iagno/it/stylesheet-images/home.gif
+share/gnome/help/iagno/it/stylesheet-images/important.gif
+share/gnome/help/iagno/it/stylesheet-images/next.gif
+share/gnome/help/iagno/it/stylesheet-images/note.gif
+share/gnome/help/iagno/it/stylesheet-images/prev.gif
+share/gnome/help/iagno/it/stylesheet-images/tip.gif
+share/gnome/help/iagno/it/stylesheet-images/toc-blank.gif
+share/gnome/help/iagno/it/stylesheet-images/toc-minus.gif
+share/gnome/help/iagno/it/stylesheet-images/toc-plus.gif
+share/gnome/help/iagno/it/stylesheet-images/up.gif
+share/gnome/help/iagno/it/stylesheet-images/warning.gif
+share/gnome/help/iagno/it/topic.dat
+share/gnome/help/mahjongg/C/authors.html
+share/gnome/help/mahjongg/C/bugs.html
+share/gnome/help/mahjongg/C/docbook.css
+share/gnome/help/mahjongg/C/figures/color.png
+share/gnome/help/mahjongg/C/figures/confirm.png
+share/gnome/help/mahjongg/C/figures/mahjongg.png
+share/gnome/help/mahjongg/C/figures/no-match.png
+share/gnome/help/mahjongg/C/figures/no-move.png
+share/gnome/help/mahjongg/C/figures/preferences.png
+share/gnome/help/mahjongg/C/figures/scores.png
+share/gnome/help/mahjongg/C/figures/seed.png
+share/gnome/help/mahjongg/C/figures/toolbar.png
+share/gnome/help/mahjongg/C/index.html
+share/gnome/help/mahjongg/C/license.html
+share/gnome/help/mahjongg/C/mahjongg.sgml
+share/gnome/help/mahjongg/C/prefs.html
+share/gnome/help/mahjongg/C/stylesheet-images/caution.gif
+share/gnome/help/mahjongg/C/stylesheet-images/home.gif
+share/gnome/help/mahjongg/C/stylesheet-images/important.gif
+share/gnome/help/mahjongg/C/stylesheet-images/next.gif
+share/gnome/help/mahjongg/C/stylesheet-images/note.gif
+share/gnome/help/mahjongg/C/stylesheet-images/prev.gif
+share/gnome/help/mahjongg/C/stylesheet-images/tip.gif
+share/gnome/help/mahjongg/C/stylesheet-images/toc-blank.gif
+share/gnome/help/mahjongg/C/stylesheet-images/toc-minus.gif
+share/gnome/help/mahjongg/C/stylesheet-images/toc-plus.gif
+share/gnome/help/mahjongg/C/stylesheet-images/up.gif
+share/gnome/help/mahjongg/C/stylesheet-images/warning.gif
+share/gnome/help/mahjongg/C/topic.dat
+share/gnome/help/mahjongg/C/usage.html
+share/gnome/help/same-gnome/C/docbook.css
+share/gnome/help/same-gnome/C/index.html
+share/gnome/help/same-gnome/C/newthemes.html
+share/gnome/help/same-gnome/C/same-gnome.sgml
+share/gnome/help/same-gnome/C/stylesheet-images/caution.gif
+share/gnome/help/same-gnome/C/stylesheet-images/home.gif
+share/gnome/help/same-gnome/C/stylesheet-images/important.gif
+share/gnome/help/same-gnome/C/stylesheet-images/next.gif
+share/gnome/help/same-gnome/C/stylesheet-images/note.gif
+share/gnome/help/same-gnome/C/stylesheet-images/prev.gif
+share/gnome/help/same-gnome/C/stylesheet-images/tip.gif
+share/gnome/help/same-gnome/C/stylesheet-images/toc-blank.gif
+share/gnome/help/same-gnome/C/stylesheet-images/toc-minus.gif
+share/gnome/help/same-gnome/C/stylesheet-images/toc-plus.gif
+share/gnome/help/same-gnome/C/stylesheet-images/up.gif
+share/gnome/help/same-gnome/C/stylesheet-images/warning.gif
+share/gnome/help/same-gnome/C/topic.dat
+share/gnome/help/same-gnome/ru/docbook.css
+share/gnome/help/same-gnome/ru/index.html
+share/gnome/help/same-gnome/ru/newthemes.html
+share/gnome/help/same-gnome/ru/same-gnome.sgml
+share/gnome/help/same-gnome/ru/stylesheet-images/caution.gif
+share/gnome/help/same-gnome/ru/stylesheet-images/home.gif
+share/gnome/help/same-gnome/ru/stylesheet-images/important.gif
+share/gnome/help/same-gnome/ru/stylesheet-images/next.gif
+share/gnome/help/same-gnome/ru/stylesheet-images/note.gif
+share/gnome/help/same-gnome/ru/stylesheet-images/prev.gif
+share/gnome/help/same-gnome/ru/stylesheet-images/tip.gif
+share/gnome/help/same-gnome/ru/stylesheet-images/toc-blank.gif
+share/gnome/help/same-gnome/ru/stylesheet-images/toc-minus.gif
+share/gnome/help/same-gnome/ru/stylesheet-images/toc-plus.gif
+share/gnome/help/same-gnome/ru/stylesheet-images/up.gif
+share/gnome/help/same-gnome/ru/stylesheet-images/warning.gif
+share/gnome/help/same-gnome/ru/topic.dat
 share/gnome/mime-info/gnome-stones.keys
 share/gnome/mime-info/gnome-stones.mime
+share/gnome/omf/gnome-games/aisleriot-C.omf
+share/gnome/omf/gnome-games/gataxx-C.omf
+share/gnome/omf/gnome-games/gnibbles-C.omf
+share/gnome/omf/gnome-games/gnobots2-C.omf
+share/gnome/omf/gnome-games/gnome-mines-C.omf
+share/gnome/omf/gnome-games/gnome-stones-C.omf
+share/gnome/omf/gnome-games/gnotravex-C.omf
+share/gnome/omf/gnome-games/gtali-C.omf
+share/gnome/omf/gnome-games/gturing-C.omf
+share/gnome/omf/gnome-games/gturing-it.omf
+share/gnome/omf/gnome-games/iagno-C.omf
+share/gnome/omf/gnome-games/iagno-it.omf
+share/gnome/omf/gnome-games/mahjongg-C.omf
+share/gnome/omf/gnome-games/same-gnome-C.omf
+share/gnome/omf/gnome-games/same-gnome-ru.omf
 share/gnome/pixmaps/cards/backs/beige.png
 share/gnome/pixmaps/cards/backs/face.png
 share/gnome/pixmaps/cards/backs/grey.png
@@ -283,9 +713,14 @@ share/gnome/pixmaps/gataxx/metal.png
 share/gnome/pixmaps/gataxx/metal2.png
 share/gnome/pixmaps/gataxx/shrink.png
 share/gnome/pixmaps/gataxx/woodtrim.png
-share/gnome/pixmaps/glines.xpm
-share/gnome/pixmaps/glines/ball.xpm
-share/gnome/pixmaps/glines/box.xpm
+share/gnome/pixmaps/glines.png
+share/gnome/pixmaps/glines/ball.png
+share/gnome/pixmaps/glines/black.xpm
+share/gnome/pixmaps/glines/classic.png
+share/gnome/pixmaps/glines/dots.png
+share/gnome/pixmaps/glines/gray.xpm
+share/gnome/pixmaps/glines/pulse.png
+share/gnome/pixmaps/glines/woody.xpm
 share/gnome/pixmaps/gnibbles/gnibbles-logo.png
 share/gnome/pixmaps/gnibbles/gnibbles.png
 share/gnome/pixmaps/gnobots2/aieee.png
@@ -301,6 +736,7 @@ share/gnome/pixmaps/gnome-aisleriot.png
 share/gnome/pixmaps/gnome-gnobots2.png
 share/gnome/pixmaps/gnome-gtali.png
 share/gnome/pixmaps/gnome-gtetris.png
+share/gnome/pixmaps/gnome-gturing.png
 share/gnome/pixmaps/gnome-mahjongg.png
 share/gnome/pixmaps/gnome-nibbles.png
 share/gnome/pixmaps/gnome-stones-file.png
@@ -351,43 +787,78 @@ share/gnome/pixmaps/mahjongg/bg/bg4.png
 share/gnome/pixmaps/mahjongg/default.png
 share/gnome/pixmaps/mahjongg/seta.png
 share/gnome/pixmaps/same-gnome/blink-sync.png
+share/gnome/pixmaps/same-gnome/glass.png
 share/gnome/pixmaps/same-gnome/marbles.png
 share/gnome/pixmaps/same-gnome/planets.png
 share/gnome/pixmaps/same-gnome/rotate.png
 share/gnome/pixmaps/same-gnome/stones.png
 share/gnome/pixmaps/xbill.png
+share/gnome/sol-games/agnes.scm
 share/gnome/sol-games/auld_lang_syne.scm
+share/gnome/sol-games/bakers_dozen.scm
+share/gnome/sol-games/bakers_game.scm
 share/gnome/sol-games/beleaguered_castle.scm
+share/gnome/sol-games/block_ten.scm
 share/gnome/sol-games/bristol.scm
 share/gnome/sol-games/camelot.scm
 share/gnome/sol-games/canfield.scm
 share/gnome/sol-games/clock.scm
+share/gnome/sol-games/cover.scm
+share/gnome/sol-games/diamond_mine.scm
 share/gnome/sol-games/doublets.scm
 share/gnome/sol-games/eagle_wing.scm
+share/gnome/sol-games/easthaven.scm
+share/gnome/sol-games/eight_off.scm
 share/gnome/sol-games/elevator.scm
+share/gnome/sol-games/escalator.scm
 share/gnome/sol-games/first_law.scm
+share/gnome/sol-games/fortress.scm
 share/gnome/sol-games/fortunes.scm
 share/gnome/sol-games/fourteen.scm
 share/gnome/sol-games/freecell.scm
+share/gnome/sol-games/gay_gordons.scm
+share/gnome/sol-games/glenwood.scm
+share/gnome/sol-games/golf.scm
+share/gnome/sol-games/gypsy.scm
+share/gnome/sol-games/helsinki.scm
 share/gnome/sol-games/hopscotch.scm
+share/gnome/sol-games/isabel.scm
+share/gnome/sol-games/jamestown.scm
+share/gnome/sol-games/jumbo.scm
 share/gnome/sol-games/kansas.scm
+share/gnome/sol-games/king_albert.scm
 share/gnome/sol-games/klondike.scm
+share/gnome/sol-games/labyrinth.scm
 share/gnome/sol-games/lady_jane.scm
 share/gnome/sol-games/maze.scm
+share/gnome/sol-games/monte_carlo.scm
 share/gnome/sol-games/neighbor.scm
 share/gnome/sol-games/odessa.scm
 share/gnome/sol-games/osmosis.scm
+share/gnome/sol-games/peek.scm
 share/gnome/sol-games/pileon.scm
+share/gnome/sol-games/poker.scm
+share/gnome/sol-games/quatorze.scm
 share/gnome/sol-games/royal_east.scm
 share/gnome/sol-games/scorpion.scm
+share/gnome/sol-games/scuffle.scm
+share/gnome/sol-games/seahaven.scm
+share/gnome/sol-games/sir_tommy.scm
 share/gnome/sol-games/sol.scm
 share/gnome/sol-games/spider.scm
+share/gnome/sol-games/spiderette.scm
 share/gnome/sol-games/straight_up.scm
+share/gnome/sol-games/streets_and_alleys.scm
 share/gnome/sol-games/thieves.scm
 share/gnome/sol-games/thirteen.scm
 share/gnome/sol-games/thumb_and_pouch.scm
+share/gnome/sol-games/treize.scm
 share/gnome/sol-games/union_square.scm
+share/gnome/sol-games/valentine.scm
 share/gnome/sol-games/westhaven.scm
+share/gnome/sol-games/whitehead.scm
+share/gnome/sol-games/will_o_the_wisp.scm
+share/gnome/sol-games/yield.scm
 share/gnome/sol-games/yukon.scm
 share/gnome/sol-games/zebra.scm
 share/gnome/sounds/gataxx/flip-piece.wav
@@ -504,7 +975,9 @@ share/locale/pl/LC_MESSAGES/gnome-games.mo
 share/locale/pt/LC_MESSAGES/gnome-games.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-games.mo
 share/locale/ru/LC_MESSAGES/gnome-games.mo
+share/locale/sk/LC_MESSAGES/gnome-games.mo
 share/locale/sv/LC_MESSAGES/gnome-games.mo
+share/locale/tr/LC_MESSAGES/gnome-games.mo
 share/locale/uk/LC_MESSAGES/gnome-games.mo
 share/locale/wa/LC_MESSAGES/gnome-games.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-games.mo
@@ -539,23 +1012,66 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/pixmaps/cards/honors
 @dirrm share/gnome/pixmaps/cards/backs
 @dirrm share/gnome/pixmaps/cards
-@dirrm share/gnome/help/samegnome/ru
-@dirrm share/gnome/help/samegnome/C
-@dirrm share/gnome/help/samegnome
+@dirrm share/gnome/omf/gnome-games
+@dirrm share/gnome/help/same-gnome/ru/stylesheet-images
+@dirrm share/gnome/help/same-gnome/ru/figures
+@dirrm share/gnome/help/same-gnome/ru
+@dirrm share/gnome/help/same-gnome/C/stylesheet-images
+@dirrm share/gnome/help/same-gnome/C/figures
+@dirrm share/gnome/help/same-gnome/C
+@dirrm share/gnome/help/same-gnome
+@dirrm share/gnome/help/mahjongg/C/stylesheet-images
+@dirrm share/gnome/help/mahjongg/C/figures
+@dirrm share/gnome/help/mahjongg/C
+@dirrm share/gnome/help/mahjongg
+@dirrm share/gnome/help/iagno/it/stylesheet-images
+@dirrm share/gnome/help/iagno/it/figures
+@dirrm share/gnome/help/iagno/it
 @dirrm share/gnome/help/iagno/C/stylesheet-images
+@dirrm share/gnome/help/iagno/C/figures
 @dirrm share/gnome/help/iagno/C
 @dirrm share/gnome/help/iagno
+@dirrm share/gnome/help/gturing/it/stylesheet-images
+@dirrm share/gnome/help/gturing/it/figures
 @dirrm share/gnome/help/gturing/it
+@dirrm share/gnome/help/gturing/C/stylesheet-images
+@dirrm share/gnome/help/gturing/C/figures
 @dirrm share/gnome/help/gturing/C
 @dirrm share/gnome/help/gturing
 @dirrm share/gnome/help/gtali/da
+@dirrm share/gnome/help/gtali/C/stylesheet-images
+@dirrm share/gnome/help/gtali/C/figures
 @dirrm share/gnome/help/gtali/C
 @dirrm share/gnome/help/gtali
+@dirrm share/gnome/help/gnotravex/C/stylesheet-images
+@dirrm share/gnome/help/gnotravex/C/figures
+@dirrm share/gnome/help/gnotravex/C
+@dirrm share/gnome/help/gnotravex
+@dirrm share/gnome/help/gnome-stones/C/stylesheet-images
+@dirrm share/gnome/help/gnome-stones/C/figures
+@dirrm share/gnome/help/gnome-stones/C
+@dirrm share/gnome/help/gnome-stones
+@dirrm share/gnome/help/gnome-mines/C/stylesheet-images
+@dirrm share/gnome/help/gnome-mines/C/figures
+@dirrm share/gnome/help/gnome-mines/C
+@dirrm share/gnome/help/gnome-mines
 @dirrm share/gnome/help/gnobots2/it
 @dirrm share/gnome/help/gnobots2/es
 @dirrm share/gnome/help/gnobots2/da
+@dirrm share/gnome/help/gnobots2/C/stylesheet-images
+@dirrm share/gnome/help/gnobots2/C/figures
 @dirrm share/gnome/help/gnobots2/C
 @dirrm share/gnome/help/gnobots2
+@dirrm share/gnome/help/gnibbles/C/stylesheet-images
+@dirrm share/gnome/help/gnibbles/C/figures
+@dirrm share/gnome/help/gnibbles/C
+@dirrm share/gnome/help/gnibbles
+@dirrm share/gnome/help/gataxx/C/stylesheet-images
+@dirrm share/gnome/help/gataxx/C/figures
+@dirrm share/gnome/help/gataxx/C
+@dirrm share/gnome/help/gataxx
+@dirrm share/gnome/help/aisleriot/C/stylesheet-images
+@dirrm share/gnome/help/aisleriot/C/figures
 @dirrm share/gnome/help/aisleriot/C
 @dirrm share/gnome/help/aisleriot
 @dirrm share/gnome/gturing/examples

@@ -1,0 +1,10 @@
+bin/xalf
+bin/xalf-capplet
+bin/xalfoff
+lib/libxalflaunch.a
+lib/libxalflaunch.so
+lib/libxalflaunch.so.0
+share/gnome/apps/Settings/Desktop/xalf-settings.desktop
+share/gnome/control-center/Desktop/xalf-settings.desktop
+share/gnome/pixmaps/hourglass-big.png
+share/gnome/pixmaps/hourglass-small.png

@@ -1,13 +1,33 @@
 bin/ghex
 share/gnome/apps/Applications/ghex.desktop
+share/gnome/help/ghex/C/docbook.css
+share/gnome/help/ghex/C/ghex.sgml
+share/gnome/help/ghex/C/ghexconverter.png
+share/gnome/help/ghex/C/ghexdisplaypref.png
+share/gnome/help/ghex/C/ghexfind.png
+share/gnome/help/ghex/C/ghexfindreplace.png
+share/gnome/help/ghex/C/ghexfullwindow.png
+share/gnome/help/ghex/C/ghexmdiprefs.png
+share/gnome/help/ghex/C/ghexmenubar.png
+share/gnome/help/ghex/C/ghexmenues.html
+share/gnome/help/ghex/C/ghexprefedit.png
+share/gnome/help/ghex/C/ghexprintprefs.png
 share/gnome/help/ghex/C/index.html
+share/gnome/help/ghex/C/stylesheet-images/caution.gif
+share/gnome/help/ghex/C/stylesheet-images/home.gif
+share/gnome/help/ghex/C/stylesheet-images/important.gif
+share/gnome/help/ghex/C/stylesheet-images/next.gif
+share/gnome/help/ghex/C/stylesheet-images/note.gif
+share/gnome/help/ghex/C/stylesheet-images/prev.gif
+share/gnome/help/ghex/C/stylesheet-images/tip.gif
+share/gnome/help/ghex/C/stylesheet-images/toc-blank.gif
+share/gnome/help/ghex/C/stylesheet-images/toc-minus.gif
+share/gnome/help/ghex/C/stylesheet-images/toc-plus.gif
+share/gnome/help/ghex/C/stylesheet-images/up.gif
+share/gnome/help/ghex/C/stylesheet-images/warning.gif
 share/gnome/help/ghex/C/topic.dat
-share/gnome/help/ghex/es/index.html
-share/gnome/help/ghex/es/topic.dat
-share/gnome/help/ghex/ja/index.html
-share/gnome/help/ghex/ja/topic.dat
-share/gnome/help/ghex/sv/index.html
-share/gnome/help/ghex/sv/topic.dat
+share/gnome/help/ghex/C/usage.html
+share/gnome/omf/ghex/ghex-C.omf
 share/gnome/pixmaps/gnome-ghex.png
 share/locale/ca/LC_MESSAGES/ghex.mo
 share/locale/cs/LC_MESSAGES/ghex.mo
@@ -32,14 +52,15 @@ share/locale/pt/LC_MESSAGES/ghex.mo
 share/locale/pt_BR/LC_MESSAGES/ghex.mo
 share/locale/ro/LC_MESSAGES/ghex.mo
 share/locale/ru/LC_MESSAGES/ghex.mo
+share/locale/sk/LC_MESSAGES/ghex.mo
 share/locale/sl/LC_MESSAGES/ghex.mo
 share/locale/sv/LC_MESSAGES/ghex.mo
+share/locale/tr/LC_MESSAGES/ghex.mo
 share/locale/uk/LC_MESSAGES/ghex.mo
 share/locale/wa/LC_MESSAGES/ghex.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/ghex.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/ghex.mo
-@dirrm share/gnome/help/ghex/sv
-@dirrm share/gnome/help/ghex/ja
-@dirrm share/gnome/help/ghex/es
+@dirrm share/gnome/omf/ghex
+@dirrm share/gnome/help/ghex/C/stylesheet-images
 @dirrm share/gnome/help/ghex/C
 @dirrm share/gnome/help/ghex

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gdk-pixbuf
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.11.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gdk-pixbuf

@@ -1,0 +1,8 @@
+Panel-- - A GTK-- wrapper for applet_widget
+
+This is a wrapper for the applet_widget component of GNOME for use
+with the GTK-- wrapper for GTK, the Gimp Toolkit and libgnomeui, the
+GNOME UI library.  The wrapper is distributed under the GNU LGPL and
+its demo is distibuted under the GNU GPL.
+
+WWW: http://www.gnome.org/

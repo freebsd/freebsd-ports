@@ -182,10 +182,28 @@ share/gnome/clockmail/classic/clockmaildata
 share/gnome/clockmail/classic/digmed.png
 share/gnome/clockmail/classic/mailpics.png
 share/gnome/clockmail/clock-analog/back.png
+share/gnome/clockmail/clock-analog/back_small.png
+share/gnome/clockmail/clock-analog/back_tiny.png
 share/gnome/clockmail/clock-analog/clockmaildata
 share/gnome/clockmail/clock-analog/hour_hand.png
+share/gnome/clockmail/clock-analog/hour_hand_small.png
+share/gnome/clockmail/clock-analog/hour_hand_tiny.png
 share/gnome/clockmail/clock-analog/minute_hand.png
+share/gnome/clockmail/clock-analog/minute_hand_small.png
+share/gnome/clockmail/clock-analog/minute_hand_tiny.png
 share/gnome/clockmail/clock-analog/second_hand.png
+share/gnome/clockmail/clock-analog/second_hand_small.png
+share/gnome/clockmail/clock-analog/second_hand_tiny.png
+share/gnome/clockmail/clock-digital-black/bback.png
+share/gnome/clockmail/clock-digital-black/bback_sm.png
+share/gnome/clockmail/clock-digital-black/bdigits.png
+share/gnome/clockmail/clock-digital-black/bdigits_sm.png
+share/gnome/clockmail/clock-digital-black/clockmaildata
+share/gnome/clockmail/clock-digital-red/back.png
+share/gnome/clockmail/clock-digital-red/back_sm.png
+share/gnome/clockmail/clock-digital-red/clockmaildata
+share/gnome/clockmail/clock-digital-red/digits.png
+share/gnome/clockmail/clock-digital-red/digits_sm.png
 share/gnome/clockmail/clock-odometer/back_h.png
 share/gnome/clockmail/clock-odometer/back_tiny_h.png
 share/gnome/clockmail/clock-odometer/back_tiny_v.png
@@ -218,6 +236,22 @@ share/gnome/clockmail/mailcounter/backgrnd.png
 share/gnome/clockmail/mailcounter/clockmaildata
 share/gnome/clockmail/mailcounter/digmed.png
 share/gnome/clockmail/mailcounter/mailpics.png
+share/gnome/clockmail/nice_clock/back.png
+share/gnome/clockmail/nice_clock/back_tiny.png
+share/gnome/clockmail/nice_clock/clockmaildata
+share/gnome/clockmail/nice_clock/hour_hand.png
+share/gnome/clockmail/nice_clock/hour_hand_tiny.png
+share/gnome/clockmail/nice_clock/minute_hand.png
+share/gnome/clockmail/nice_clock/minute_hand_tiny.png
+share/gnome/clockmail/nice_clock/second_hand.png
+share/gnome/clockmail/nice_clock/second_hand_tiny.png
+share/gnome/clockmail/nice_mailcount/back.png
+share/gnome/clockmail/nice_mailcount/back_h.png
+share/gnome/clockmail/nice_mailcount/button.png
+share/gnome/clockmail/nice_mailcount/button_h.png
+share/gnome/clockmail/nice_mailcount/clockmaildata
+share/gnome/clockmail/nice_mailcount/digit.png
+share/gnome/clockmail/nice_mailcount/light.png
 share/gnome/clockmail/odometer/backgrnd.png
 share/gnome/clockmail/odometer/clockmaildata
 share/gnome/clockmail/odometer/diglrg.png
@@ -247,657 +281,1545 @@ share/gnome/geyes/Default/config
 share/gnome/geyes/Horrid/config
 share/gnome/geyes/Horrid/horrid_eye.png
 share/gnome/geyes/Horrid/horrid_pupil.png
+share/gnome/gkb/AM_Armenian.keyprop
+share/gnome/gkb/AZ_Azerbaidjani_Turkic.keyprop
+share/gnome/gkb/Armenian.keyprop
+share/gnome/gkb/BE_Dutch.keyprop
+share/gnome/gkb/BG_Bulgarian.keyprop
+share/gnome/gkb/BG_Bulgarian_x.keyprop
+share/gnome/gkb/BR_Portuguese.keyprop
+share/gnome/gkb/BR_Portuguese_x.keyprop
+share/gnome/gkb/BY_Belarussian.keyprop
+share/gnome/gkb/Basque.keyprop
+share/gnome/gkb/Belgian.keyprop
+share/gnome/gkb/BulgarianCyril.keyprop
+share/gnome/gkb/CA_English.keyprop
+share/gnome/gkb/CH_German_x.keyprop
+share/gnome/gkb/CS_Czech.keyprop
+share/gnome/gkb/CZ_Czech_Slovak.keyprop
+share/gnome/gkb/CZ_Czech_x.keyprop
+share/gnome/gkb/DE_German.keyprop
+share/gnome/gkb/DE_German_x.keyprop
+share/gnome/gkb/DK_Danish.keyprop
+share/gnome/gkb/DK_Danish_x.keyprop
+share/gnome/gkb/EE_Estonian.keyprop
+share/gnome/gkb/EE_Estonian_x.keyprop
+share/gnome/gkb/ES_Spanish.keyprop
+share/gnome/gkb/ES_Spanish_x.keyprop
+share/gnome/gkb/FI_Finnish.keyprop
+share/gnome/gkb/FI_Finnish_x.keyprop
+share/gnome/gkb/FR_French.keyprop
+share/gnome/gkb/FR_French_x.keyprop
+share/gnome/gkb/FrenchCanadian.keyprop
+share/gnome/gkb/FrenchCanadian2.keyprop
+share/gnome/gkb/FrenchSwiss.keyprop
+share/gnome/gkb/GB-102.keyprop
+share/gnome/gkb/GB.keyprop
+share/gnome/gkb/GB_English.keyprop
+share/gnome/gkb/GB_English_x.keyprop
+share/gnome/gkb/GE_Georgian_x.keyprop
+share/gnome/gkb/GR_Greek.keyprop
+share/gnome/gkb/GR_Greek_x.keyprop
+share/gnome/gkb/GeorgianLatin.keyprop
+share/gnome/gkb/GeorgianRussian.keyprop
+share/gnome/gkb/German.keyprop
+share/gnome/gkb/GermanSwiss.keyprop
+share/gnome/gkb/HU_Hungarian.keyprop
+share/gnome/gkb/Hungarian-101.keyprop
+share/gnome/gkb/Hungarian-lat1.keyprop
+share/gnome/gkb/Hungarian-sun.keyprop
+share/gnome/gkb/Hungarian.keyprop
+share/gnome/gkb/Hungarian101-1.keyprop
+share/gnome/gkb/Hungarian101.keyprop
+share/gnome/gkb/IL_Hebrew.keyprop
+share/gnome/gkb/IL_Hebrew_x.keyprop
+share/gnome/gkb/IS_Icelandic.keyprop
+share/gnome/gkb/IS_Icelandic_x.keyprop
+share/gnome/gkb/IT_Italian.keyprop
+share/gnome/gkb/IT_Italian_x.keyprop
+share/gnome/gkb/JP_Japanese.keyprop
+share/gnome/gkb/JP_Japanese_x.keyprop
+share/gnome/gkb/LA_Lao_x.keyprop
+share/gnome/gkb/LT_Lithuanian.keyprop
+share/gnome/gkb/LT_Lithuanian_x.keyprop
+share/gnome/gkb/LT_Prog.keyprop
+share/gnome/gkb/LT_Standard.keyprop
+share/gnome/gkb/MK_Macedonian.keyprop
+share/gnome/gkb/Macedonian.keyprop
+share/gnome/gkb/NL_Dutch_x.keyprop
+share/gnome/gkb/NO_Norwegian.keyprop
+share/gnome/gkb/Norwegian.keyprop
+share/gnome/gkb/PL_Polish.keyprop
+share/gnome/gkb/PT_Portuguese.keyprop
+share/gnome/gkb/PT_Portuguese_x.keyprop
+share/gnome/gkb/Polish.keyprop
+share/gnome/gkb/PolishDeadkeys.keyprop
+share/gnome/gkb/Portugal.keyprop
+share/gnome/gkb/PortugalDeadkeys.keyprop
+share/gnome/gkb/RO_Romanian.keyprop
+share/gnome/gkb/RU_Russian.keyprop
+share/gnome/gkb/RU_Russian_x.keyprop
+share/gnome/gkb/RussianCyril.keyprop
+share/gnome/gkb/SE_Swedish.keyprop
+share/gnome/gkb/SI_Slovenian.keyprop
+share/gnome/gkb/SR_Dutch.keyprop
+share/gnome/gkb/Slovak.keyprop
+share/gnome/gkb/Slovene.keyprop
+share/gnome/gkb/Swedish.keyprop
+share/gnome/gkb/TH_Thai.keyprop
+share/gnome/gkb/TH_Thai_x.keyprop
+share/gnome/gkb/TR-f.keyprop
+share/gnome/gkb/TR-q.keyprop
+share/gnome/gkb/TR_Turkish.keyprop
+share/gnome/gkb/TR_Turkish_x.keyprop
+share/gnome/gkb/Thai.keyprop
+share/gnome/gkb/Thai2.keyprop
+share/gnome/gkb/UA_Ukrainian.keyprop
+share/gnome/gkb/UK.keyprop
+share/gnome/gkb/US-101.keyprop
+share/gnome/gkb/US-84.keyprop
+share/gnome/gkb/US-dec.keyprop
+share/gnome/gkb/US-ibm.keyprop
+share/gnome/gkb/US-int.keyprop
+share/gnome/gkb/US-mac.keyprop
+share/gnome/gkb/US-sgi-101.keyprop
+share/gnome/gkb/US-sun.keyprop
+share/gnome/gkb/US.keyprop
+share/gnome/gkb/US_English.keyprop
+share/gnome/gkb/US_international.keyprop
+share/gnome/gkb/VN_Vietnamese.keyprop
+share/gnome/gkb/YU_Serbo-Croatian_x.keyprop
+share/gnome/gkb/Yugoslav.keyprop
 share/gnome/gweather/Locations
-share/gnome/help/anotherclock_applet/C/anotherclock-applet.png
-share/gnome/help/anotherclock_applet/C/anotherclock-properties.png
-share/gnome/help/anotherclock_applet/C/docbook.css
+share/gnome/help/anotherclock_applet/C/anotherclock.sgml
+share/gnome/help/anotherclock_applet/C/anotherclock_applet.sgml
+share/gnome/help/anotherclock_applet/C/figures/anotherclock-applet.png
+share/gnome/help/anotherclock_applet/C/figures/anotherclock-properties.png
 share/gnome/help/anotherclock_applet/C/index.html
 share/gnome/help/anotherclock_applet/C/ln7.html
-share/gnome/help/anotherclock_applet/C/stylesheet-images/caution.png
-share/gnome/help/anotherclock_applet/C/stylesheet-images/important.png
-share/gnome/help/anotherclock_applet/C/stylesheet-images/note.png
-share/gnome/help/anotherclock_applet/C/stylesheet-images/tip.png
-share/gnome/help/anotherclock_applet/C/stylesheet-images/warning.png
-share/gnome/help/anotherclock_applet/it/anotherclock-applet.png
-share/gnome/help/anotherclock_applet/it/docbook.css
+share/gnome/help/anotherclock_applet/C/stylesheet-images/caution.gif
+share/gnome/help/anotherclock_applet/C/stylesheet-images/home.gif
+share/gnome/help/anotherclock_applet/C/stylesheet-images/important.gif
+share/gnome/help/anotherclock_applet/C/stylesheet-images/next.gif
+share/gnome/help/anotherclock_applet/C/stylesheet-images/note.gif
+share/gnome/help/anotherclock_applet/C/stylesheet-images/prev.gif
+share/gnome/help/anotherclock_applet/C/stylesheet-images/tip.gif
+share/gnome/help/anotherclock_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/anotherclock_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/anotherclock_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/anotherclock_applet/C/stylesheet-images/up.gif
+share/gnome/help/anotherclock_applet/C/stylesheet-images/warning.gif
+share/gnome/help/anotherclock_applet/C/topic.dat
+share/gnome/help/anotherclock_applet/it/anotherclock.sgml
+share/gnome/help/anotherclock_applet/it/anotherclock_applet.sgml
+share/gnome/help/anotherclock_applet/it/figures/anotherclock-applet.png
 share/gnome/help/anotherclock_applet/it/index.html
 share/gnome/help/anotherclock_applet/it/ln7.html
-share/gnome/help/anotherclock_applet/it/stylesheet-images/caution.png
-share/gnome/help/anotherclock_applet/it/stylesheet-images/important.png
-share/gnome/help/anotherclock_applet/it/stylesheet-images/note.png
-share/gnome/help/anotherclock_applet/it/stylesheet-images/tip.png
-share/gnome/help/anotherclock_applet/it/stylesheet-images/warning.png
-share/gnome/help/asclock_applet/C/asclock_applet.png
-share/gnome/help/asclock_applet/C/asclock_settings.png
-share/gnome/help/asclock_applet/C/docbook.css
+share/gnome/help/anotherclock_applet/it/stylesheet-images/caution.gif
+share/gnome/help/anotherclock_applet/it/stylesheet-images/home.gif
+share/gnome/help/anotherclock_applet/it/stylesheet-images/important.gif
+share/gnome/help/anotherclock_applet/it/stylesheet-images/next.gif
+share/gnome/help/anotherclock_applet/it/stylesheet-images/note.gif
+share/gnome/help/anotherclock_applet/it/stylesheet-images/prev.gif
+share/gnome/help/anotherclock_applet/it/stylesheet-images/tip.gif
+share/gnome/help/anotherclock_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/anotherclock_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/anotherclock_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/anotherclock_applet/it/stylesheet-images/up.gif
+share/gnome/help/anotherclock_applet/it/stylesheet-images/warning.gif
+share/gnome/help/anotherclock_applet/it/topic.dat
+share/gnome/help/anotherclock_applet/uk/anotherclock.sgml
+share/gnome/help/anotherclock_applet/uk/anotherclock_applet.sgml
+share/gnome/help/anotherclock_applet/uk/figures/anotherclock-applet.png
+share/gnome/help/anotherclock_applet/uk/figures/anotherclock-properties.png
+share/gnome/help/anotherclock_applet/uk/index.html
+share/gnome/help/anotherclock_applet/uk/ln7.html
+share/gnome/help/anotherclock_applet/uk/stylesheet-images/caution.gif
+share/gnome/help/anotherclock_applet/uk/stylesheet-images/home.gif
+share/gnome/help/anotherclock_applet/uk/stylesheet-images/important.gif
+share/gnome/help/anotherclock_applet/uk/stylesheet-images/next.gif
+share/gnome/help/anotherclock_applet/uk/stylesheet-images/note.gif
+share/gnome/help/anotherclock_applet/uk/stylesheet-images/prev.gif
+share/gnome/help/anotherclock_applet/uk/stylesheet-images/tip.gif
+share/gnome/help/anotherclock_applet/uk/stylesheet-images/toc-blank.gif
+share/gnome/help/anotherclock_applet/uk/stylesheet-images/toc-minus.gif
+share/gnome/help/anotherclock_applet/uk/stylesheet-images/toc-plus.gif
+share/gnome/help/anotherclock_applet/uk/stylesheet-images/up.gif
+share/gnome/help/anotherclock_applet/uk/stylesheet-images/warning.gif
+share/gnome/help/anotherclock_applet/uk/topic.dat
+share/gnome/help/asclock_applet/C/asclock.sgml
+share/gnome/help/asclock_applet/C/asclock_applet.sgml
+share/gnome/help/asclock_applet/C/figures/asclock_applet.png
+share/gnome/help/asclock_applet/C/figures/asclock_settings.png
 share/gnome/help/asclock_applet/C/index.html
 share/gnome/help/asclock_applet/C/ln7.html
-share/gnome/help/asclock_applet/C/stylesheet-images/caution.png
-share/gnome/help/asclock_applet/C/stylesheet-images/important.png
-share/gnome/help/asclock_applet/C/stylesheet-images/note.png
-share/gnome/help/asclock_applet/C/stylesheet-images/tip.png
-share/gnome/help/asclock_applet/C/stylesheet-images/warning.png
-share/gnome/help/asclock_applet/it/docbook.css
+share/gnome/help/asclock_applet/C/stylesheet-images/caution.gif
+share/gnome/help/asclock_applet/C/stylesheet-images/home.gif
+share/gnome/help/asclock_applet/C/stylesheet-images/important.gif
+share/gnome/help/asclock_applet/C/stylesheet-images/next.gif
+share/gnome/help/asclock_applet/C/stylesheet-images/note.gif
+share/gnome/help/asclock_applet/C/stylesheet-images/prev.gif
+share/gnome/help/asclock_applet/C/stylesheet-images/tip.gif
+share/gnome/help/asclock_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/asclock_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/asclock_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/asclock_applet/C/stylesheet-images/up.gif
+share/gnome/help/asclock_applet/C/stylesheet-images/warning.gif
+share/gnome/help/asclock_applet/C/topic.dat
+share/gnome/help/asclock_applet/it/asclock.sgml
+share/gnome/help/asclock_applet/it/asclock_applet.sgml
 share/gnome/help/asclock_applet/it/index.html
 share/gnome/help/asclock_applet/it/ln11.html
-share/gnome/help/asclock_applet/it/stylesheet-images/caution.png
-share/gnome/help/asclock_applet/it/stylesheet-images/important.png
-share/gnome/help/asclock_applet/it/stylesheet-images/note.png
-share/gnome/help/asclock_applet/it/stylesheet-images/tip.png
-share/gnome/help/asclock_applet/it/stylesheet-images/warning.png
-share/gnome/help/battery_applet/C/battery-applet-ac-offline-25-20.png
-share/gnome/help/battery_applet/C/battery-applet-ac-online-25-20.png
-share/gnome/help/battery_applet/C/battery-applet-graph.png
-share/gnome/help/battery_applet/C/battery-applet-properties-general.png
-share/gnome/help/battery_applet/C/battery-applet-properties-graph.png
-share/gnome/help/battery_applet/C/battery-applet-properties-messages.png
-share/gnome/help/battery_applet/C/battery-applet-properties-readout.png
-share/gnome/help/battery_applet/C/docbook.css
+share/gnome/help/asclock_applet/it/stylesheet-images/caution.gif
+share/gnome/help/asclock_applet/it/stylesheet-images/home.gif
+share/gnome/help/asclock_applet/it/stylesheet-images/important.gif
+share/gnome/help/asclock_applet/it/stylesheet-images/next.gif
+share/gnome/help/asclock_applet/it/stylesheet-images/note.gif
+share/gnome/help/asclock_applet/it/stylesheet-images/prev.gif
+share/gnome/help/asclock_applet/it/stylesheet-images/tip.gif
+share/gnome/help/asclock_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/asclock_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/asclock_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/asclock_applet/it/stylesheet-images/up.gif
+share/gnome/help/asclock_applet/it/stylesheet-images/warning.gif
+share/gnome/help/asclock_applet/it/topic.dat
+share/gnome/help/asclock_applet/ja/asclock.sgml
+share/gnome/help/asclock_applet/ja/asclock_applet.sgml
+share/gnome/help/asclock_applet/ja/docbook.css
+share/gnome/help/asclock_applet/ja/figures/asclock_applet.png
+share/gnome/help/asclock_applet/ja/figures/asclock_settings.png
+share/gnome/help/asclock_applet/ja/index.html
+share/gnome/help/asclock_applet/ja/ln10.html
+share/gnome/help/asclock_applet/ja/stylesheet-images/caution.gif
+share/gnome/help/asclock_applet/ja/stylesheet-images/home.gif
+share/gnome/help/asclock_applet/ja/stylesheet-images/important.gif
+share/gnome/help/asclock_applet/ja/stylesheet-images/next.gif
+share/gnome/help/asclock_applet/ja/stylesheet-images/note.gif
+share/gnome/help/asclock_applet/ja/stylesheet-images/prev.gif
+share/gnome/help/asclock_applet/ja/stylesheet-images/tip.gif
+share/gnome/help/asclock_applet/ja/stylesheet-images/toc-blank.gif
+share/gnome/help/asclock_applet/ja/stylesheet-images/toc-minus.gif
+share/gnome/help/asclock_applet/ja/stylesheet-images/toc-plus.gif
+share/gnome/help/asclock_applet/ja/stylesheet-images/up.gif
+share/gnome/help/asclock_applet/ja/stylesheet-images/warning.gif
+share/gnome/help/asclock_applet/ja/topic.dat
+share/gnome/help/battery_applet/C/battery.sgml
+share/gnome/help/battery_applet/C/battery_applet.sgml
+share/gnome/help/battery_applet/C/figures/battery-applet-ac-offline-25-20.png
+share/gnome/help/battery_applet/C/figures/battery-applet-ac-online-25-20.png
+share/gnome/help/battery_applet/C/figures/battery-applet-graph.png
+share/gnome/help/battery_applet/C/figures/battery-applet-properties-general.png
+share/gnome/help/battery_applet/C/figures/battery-applet-properties-graph.png
+share/gnome/help/battery_applet/C/figures/battery-applet-properties-messages.png
+share/gnome/help/battery_applet/C/figures/battery-applet-properties-readout.png
 share/gnome/help/battery_applet/C/index.html
 share/gnome/help/battery_applet/C/ln7.html
-share/gnome/help/battery_applet/C/stylesheet-images/caution.png
-share/gnome/help/battery_applet/C/stylesheet-images/important.png
-share/gnome/help/battery_applet/C/stylesheet-images/note.png
-share/gnome/help/battery_applet/C/stylesheet-images/tip.png
-share/gnome/help/battery_applet/C/stylesheet-images/warning.png
-share/gnome/help/battery_applet/it/battery-applet-ac-offline-25-20.png
-share/gnome/help/battery_applet/it/battery-applet-ac-online-25-20.png
-share/gnome/help/battery_applet/it/battery-applet-graph.png
-share/gnome/help/battery_applet/it/battery-applet-properties-general.png
-share/gnome/help/battery_applet/it/battery-applet-properties-graph.png
-share/gnome/help/battery_applet/it/battery-applet-properties-messages.png
-share/gnome/help/battery_applet/it/battery-applet-properties-readout.png
-share/gnome/help/battery_applet/it/docbook.css
+share/gnome/help/battery_applet/C/stylesheet-images/caution.gif
+share/gnome/help/battery_applet/C/stylesheet-images/home.gif
+share/gnome/help/battery_applet/C/stylesheet-images/important.gif
+share/gnome/help/battery_applet/C/stylesheet-images/next.gif
+share/gnome/help/battery_applet/C/stylesheet-images/note.gif
+share/gnome/help/battery_applet/C/stylesheet-images/prev.gif
+share/gnome/help/battery_applet/C/stylesheet-images/tip.gif
+share/gnome/help/battery_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/battery_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/battery_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/battery_applet/C/stylesheet-images/up.gif
+share/gnome/help/battery_applet/C/stylesheet-images/warning.gif
+share/gnome/help/battery_applet/C/topic.dat
+share/gnome/help/battery_applet/it/battery.sgml
+share/gnome/help/battery_applet/it/battery_applet.sgml
+share/gnome/help/battery_applet/it/figures/battery-applet-ac-offline-25-20.png
+share/gnome/help/battery_applet/it/figures/battery-applet-ac-online-25-20.png
+share/gnome/help/battery_applet/it/figures/battery-applet-graph.png
+share/gnome/help/battery_applet/it/figures/battery-applet-properties-general.png
+share/gnome/help/battery_applet/it/figures/battery-applet-properties-graph.png
+share/gnome/help/battery_applet/it/figures/battery-applet-properties-messages.png
+share/gnome/help/battery_applet/it/figures/battery-applet-properties-readout.png
 share/gnome/help/battery_applet/it/index.html
 share/gnome/help/battery_applet/it/ln11.html
-share/gnome/help/battery_applet/it/stylesheet-images/caution.png
-share/gnome/help/battery_applet/it/stylesheet-images/important.png
-share/gnome/help/battery_applet/it/stylesheet-images/note.png
-share/gnome/help/battery_applet/it/stylesheet-images/tip.png
-share/gnome/help/battery_applet/it/stylesheet-images/warning.png
-share/gnome/help/cdplayer_applet/C/cdplayer_applet.png
-share/gnome/help/cdplayer_applet/C/docbook.css
+share/gnome/help/battery_applet/it/stylesheet-images/caution.gif
+share/gnome/help/battery_applet/it/stylesheet-images/home.gif
+share/gnome/help/battery_applet/it/stylesheet-images/important.gif
+share/gnome/help/battery_applet/it/stylesheet-images/next.gif
+share/gnome/help/battery_applet/it/stylesheet-images/note.gif
+share/gnome/help/battery_applet/it/stylesheet-images/prev.gif
+share/gnome/help/battery_applet/it/stylesheet-images/tip.gif
+share/gnome/help/battery_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/battery_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/battery_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/battery_applet/it/stylesheet-images/up.gif
+share/gnome/help/battery_applet/it/stylesheet-images/warning.gif
+share/gnome/help/battery_applet/it/topic.dat
+share/gnome/help/battery_applet/ja/battery.sgml
+share/gnome/help/battery_applet/ja/battery_applet.sgml
+share/gnome/help/battery_applet/ja/docbook.css
+share/gnome/help/battery_applet/ja/figures/battery-applet-ac-offline-25-20.png
+share/gnome/help/battery_applet/ja/figures/battery-applet-ac-online-25-20.png
+share/gnome/help/battery_applet/ja/figures/battery-applet-graph.png
+share/gnome/help/battery_applet/ja/figures/battery-applet-properties-general.png
+share/gnome/help/battery_applet/ja/figures/battery-applet-properties-graph.png
+share/gnome/help/battery_applet/ja/figures/battery-applet-properties-messages.png
+share/gnome/help/battery_applet/ja/figures/battery-applet-properties-readout.png
+share/gnome/help/battery_applet/ja/index.html
+share/gnome/help/battery_applet/ja/ln10.html
+share/gnome/help/battery_applet/ja/stylesheet-images/caution.gif
+share/gnome/help/battery_applet/ja/stylesheet-images/home.gif
+share/gnome/help/battery_applet/ja/stylesheet-images/important.gif
+share/gnome/help/battery_applet/ja/stylesheet-images/next.gif
+share/gnome/help/battery_applet/ja/stylesheet-images/note.gif
+share/gnome/help/battery_applet/ja/stylesheet-images/prev.gif
+share/gnome/help/battery_applet/ja/stylesheet-images/tip.gif
+share/gnome/help/battery_applet/ja/stylesheet-images/toc-blank.gif
+share/gnome/help/battery_applet/ja/stylesheet-images/toc-minus.gif
+share/gnome/help/battery_applet/ja/stylesheet-images/toc-plus.gif
+share/gnome/help/battery_applet/ja/stylesheet-images/up.gif
+share/gnome/help/battery_applet/ja/stylesheet-images/warning.gif
+share/gnome/help/battery_applet/ja/topic.dat
+share/gnome/help/cdplayer_applet/C/cdplayer.sgml
+share/gnome/help/cdplayer_applet/C/cdplayer_applet.sgml
+share/gnome/help/cdplayer_applet/C/figures/cdplayer_applet.png
 share/gnome/help/cdplayer_applet/C/index.html
 share/gnome/help/cdplayer_applet/C/ln7.html
-share/gnome/help/cdplayer_applet/C/stylesheet-images/caution.png
-share/gnome/help/cdplayer_applet/C/stylesheet-images/important.png
-share/gnome/help/cdplayer_applet/C/stylesheet-images/note.png
-share/gnome/help/cdplayer_applet/C/stylesheet-images/tip.png
-share/gnome/help/cdplayer_applet/C/stylesheet-images/warning.png
-share/gnome/help/cdplayer_applet/it/cdplayer_applet.png
-share/gnome/help/cdplayer_applet/it/docbook.css
+share/gnome/help/cdplayer_applet/C/stylesheet-images/caution.gif
+share/gnome/help/cdplayer_applet/C/stylesheet-images/home.gif
+share/gnome/help/cdplayer_applet/C/stylesheet-images/important.gif
+share/gnome/help/cdplayer_applet/C/stylesheet-images/next.gif
+share/gnome/help/cdplayer_applet/C/stylesheet-images/note.gif
+share/gnome/help/cdplayer_applet/C/stylesheet-images/prev.gif
+share/gnome/help/cdplayer_applet/C/stylesheet-images/tip.gif
+share/gnome/help/cdplayer_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/cdplayer_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/cdplayer_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/cdplayer_applet/C/stylesheet-images/up.gif
+share/gnome/help/cdplayer_applet/C/stylesheet-images/warning.gif
+share/gnome/help/cdplayer_applet/C/topic.dat
+share/gnome/help/cdplayer_applet/it/cdplayer.sgml
+share/gnome/help/cdplayer_applet/it/cdplayer_applet.sgml
+share/gnome/help/cdplayer_applet/it/figures/cdplayer_applet.png
 share/gnome/help/cdplayer_applet/it/index.html
 share/gnome/help/cdplayer_applet/it/ln10.html
-share/gnome/help/cdplayer_applet/it/stylesheet-images/caution.png
-share/gnome/help/cdplayer_applet/it/stylesheet-images/important.png
-share/gnome/help/cdplayer_applet/it/stylesheet-images/note.png
-share/gnome/help/cdplayer_applet/it/stylesheet-images/tip.png
-share/gnome/help/cdplayer_applet/it/stylesheet-images/warning.png
-share/gnome/help/charpick_applet/C/charpick_applet.png
-share/gnome/help/charpick_applet/C/charpick_applet_settings.png
-share/gnome/help/charpick_applet/C/charpick_characters.png
-share/gnome/help/charpick_applet/C/docbook.css
+share/gnome/help/cdplayer_applet/it/stylesheet-images/caution.gif
+share/gnome/help/cdplayer_applet/it/stylesheet-images/home.gif
+share/gnome/help/cdplayer_applet/it/stylesheet-images/important.gif
+share/gnome/help/cdplayer_applet/it/stylesheet-images/next.gif
+share/gnome/help/cdplayer_applet/it/stylesheet-images/note.gif
+share/gnome/help/cdplayer_applet/it/stylesheet-images/prev.gif
+share/gnome/help/cdplayer_applet/it/stylesheet-images/tip.gif
+share/gnome/help/cdplayer_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/cdplayer_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/cdplayer_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/cdplayer_applet/it/stylesheet-images/up.gif
+share/gnome/help/cdplayer_applet/it/stylesheet-images/warning.gif
+share/gnome/help/cdplayer_applet/ja/cdplayer.sgml
+share/gnome/help/cdplayer_applet/ja/cdplayer_applet.sgml
+share/gnome/help/cdplayer_applet/ja/docbook.css
+share/gnome/help/cdplayer_applet/ja/figures/cdplayer_applet.png
+share/gnome/help/cdplayer_applet/ja/index.html
+share/gnome/help/cdplayer_applet/ja/ln10.html
+share/gnome/help/cdplayer_applet/ja/stylesheet-images/caution.gif
+share/gnome/help/cdplayer_applet/ja/stylesheet-images/home.gif
+share/gnome/help/cdplayer_applet/ja/stylesheet-images/important.gif
+share/gnome/help/cdplayer_applet/ja/stylesheet-images/next.gif
+share/gnome/help/cdplayer_applet/ja/stylesheet-images/note.gif
+share/gnome/help/cdplayer_applet/ja/stylesheet-images/prev.gif
+share/gnome/help/cdplayer_applet/ja/stylesheet-images/tip.gif
+share/gnome/help/cdplayer_applet/ja/stylesheet-images/toc-blank.gif
+share/gnome/help/cdplayer_applet/ja/stylesheet-images/toc-minus.gif
+share/gnome/help/cdplayer_applet/ja/stylesheet-images/toc-plus.gif
+share/gnome/help/cdplayer_applet/ja/stylesheet-images/up.gif
+share/gnome/help/cdplayer_applet/ja/stylesheet-images/warning.gif
+share/gnome/help/cdplayer_applet/ja/topic.dat
+share/gnome/help/charpick_applet/C/charpick.sgml
+share/gnome/help/charpick_applet/C/charpick_applet.sgml
+share/gnome/help/charpick_applet/C/figures/charpick_applet.png
+share/gnome/help/charpick_applet/C/figures/charpick_applet_settings.png
+share/gnome/help/charpick_applet/C/figures/charpick_characters.png
 share/gnome/help/charpick_applet/C/index.html
 share/gnome/help/charpick_applet/C/ln7.html
-share/gnome/help/charpick_applet/C/stylesheet-images/caution.png
-share/gnome/help/charpick_applet/C/stylesheet-images/important.png
-share/gnome/help/charpick_applet/C/stylesheet-images/note.png
-share/gnome/help/charpick_applet/C/stylesheet-images/tip.png
-share/gnome/help/charpick_applet/C/stylesheet-images/warning.png
-share/gnome/help/charpick_applet/it/charpick_applet.png
-share/gnome/help/charpick_applet/it/charpick_applet_settings.png
-share/gnome/help/charpick_applet/it/charpick_characters.png
-share/gnome/help/charpick_applet/it/docbook.css
+share/gnome/help/charpick_applet/C/stylesheet-images/caution.gif
+share/gnome/help/charpick_applet/C/stylesheet-images/home.gif
+share/gnome/help/charpick_applet/C/stylesheet-images/important.gif
+share/gnome/help/charpick_applet/C/stylesheet-images/next.gif
+share/gnome/help/charpick_applet/C/stylesheet-images/note.gif
+share/gnome/help/charpick_applet/C/stylesheet-images/prev.gif
+share/gnome/help/charpick_applet/C/stylesheet-images/tip.gif
+share/gnome/help/charpick_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/charpick_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/charpick_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/charpick_applet/C/stylesheet-images/up.gif
+share/gnome/help/charpick_applet/C/stylesheet-images/warning.gif
+share/gnome/help/charpick_applet/C/topic.dat
+share/gnome/help/charpick_applet/it/charpick.sgml
+share/gnome/help/charpick_applet/it/charpick_applet.sgml
+share/gnome/help/charpick_applet/it/figures/charpick_applet.png
+share/gnome/help/charpick_applet/it/figures/charpick_applet_settings.png
+share/gnome/help/charpick_applet/it/figures/charpick_characters.png
 share/gnome/help/charpick_applet/it/index.html
 share/gnome/help/charpick_applet/it/ln10.html
-share/gnome/help/charpick_applet/it/stylesheet-images/caution.png
-share/gnome/help/charpick_applet/it/stylesheet-images/important.png
-share/gnome/help/charpick_applet/it/stylesheet-images/note.png
-share/gnome/help/charpick_applet/it/stylesheet-images/tip.png
-share/gnome/help/charpick_applet/it/stylesheet-images/warning.png
-share/gnome/help/clockmail_applet/C/clockmail-prefs-general.png
-share/gnome/help/clockmail_applet/C/clockmail-prefs-theme.png
-share/gnome/help/clockmail_applet/C/clockmail_applet.png
-share/gnome/help/clockmail_applet/C/docbook.css
+share/gnome/help/charpick_applet/it/stylesheet-images/caution.gif
+share/gnome/help/charpick_applet/it/stylesheet-images/home.gif
+share/gnome/help/charpick_applet/it/stylesheet-images/important.gif
+share/gnome/help/charpick_applet/it/stylesheet-images/next.gif
+share/gnome/help/charpick_applet/it/stylesheet-images/note.gif
+share/gnome/help/charpick_applet/it/stylesheet-images/prev.gif
+share/gnome/help/charpick_applet/it/stylesheet-images/tip.gif
+share/gnome/help/charpick_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/charpick_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/charpick_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/charpick_applet/it/stylesheet-images/up.gif
+share/gnome/help/charpick_applet/it/stylesheet-images/warning.gif
+share/gnome/help/charpick_applet/it/topic.dat
+share/gnome/help/charpick_applet/ja/charpick.sgml
+share/gnome/help/charpick_applet/ja/charpick_applet.sgml
+share/gnome/help/charpick_applet/ja/docbook.css
+share/gnome/help/charpick_applet/ja/figures/charpick_applet.png
+share/gnome/help/charpick_applet/ja/figures/charpick_applet_settings.png
+share/gnome/help/charpick_applet/ja/figures/charpick_characters.png
+share/gnome/help/charpick_applet/ja/index.html
+share/gnome/help/charpick_applet/ja/ln10.html
+share/gnome/help/charpick_applet/ja/stylesheet-images/caution.gif
+share/gnome/help/charpick_applet/ja/stylesheet-images/home.gif
+share/gnome/help/charpick_applet/ja/stylesheet-images/important.gif
+share/gnome/help/charpick_applet/ja/stylesheet-images/next.gif
+share/gnome/help/charpick_applet/ja/stylesheet-images/note.gif
+share/gnome/help/charpick_applet/ja/stylesheet-images/prev.gif
+share/gnome/help/charpick_applet/ja/stylesheet-images/tip.gif
+share/gnome/help/charpick_applet/ja/stylesheet-images/toc-blank.gif
+share/gnome/help/charpick_applet/ja/stylesheet-images/toc-minus.gif
+share/gnome/help/charpick_applet/ja/stylesheet-images/toc-plus.gif
+share/gnome/help/charpick_applet/ja/stylesheet-images/up.gif
+share/gnome/help/charpick_applet/ja/stylesheet-images/warning.gif
+share/gnome/help/charpick_applet/ja/topic.dat
+share/gnome/help/clockmail_applet/C/clockmail.sgml
+share/gnome/help/clockmail_applet/C/clockmail_applet.sgml
+share/gnome/help/clockmail_applet/C/figures/clockmail-prefs-general.png
+share/gnome/help/clockmail_applet/C/figures/clockmail-prefs-theme.png
+share/gnome/help/clockmail_applet/C/figures/clockmail_applet.png
 share/gnome/help/clockmail_applet/C/index.html
 share/gnome/help/clockmail_applet/C/ln7.html
-share/gnome/help/clockmail_applet/C/stylesheet-images/caution.png
-share/gnome/help/clockmail_applet/C/stylesheet-images/important.png
-share/gnome/help/clockmail_applet/C/stylesheet-images/note.png
-share/gnome/help/clockmail_applet/C/stylesheet-images/tip.png
-share/gnome/help/clockmail_applet/C/stylesheet-images/warning.png
-share/gnome/help/clockmail_applet/it/docbook.css
+share/gnome/help/clockmail_applet/C/stylesheet-images/caution.gif
+share/gnome/help/clockmail_applet/C/stylesheet-images/home.gif
+share/gnome/help/clockmail_applet/C/stylesheet-images/important.gif
+share/gnome/help/clockmail_applet/C/stylesheet-images/next.gif
+share/gnome/help/clockmail_applet/C/stylesheet-images/note.gif
+share/gnome/help/clockmail_applet/C/stylesheet-images/prev.gif
+share/gnome/help/clockmail_applet/C/stylesheet-images/tip.gif
+share/gnome/help/clockmail_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/clockmail_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/clockmail_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/clockmail_applet/C/stylesheet-images/up.gif
+share/gnome/help/clockmail_applet/C/stylesheet-images/warning.gif
+share/gnome/help/clockmail_applet/C/topic.dat
+share/gnome/help/clockmail_applet/it/clockmail.sgml
+share/gnome/help/clockmail_applet/it/clockmail_applet.sgml
 share/gnome/help/clockmail_applet/it/index.html
 share/gnome/help/clockmail_applet/it/ln11.html
-share/gnome/help/clockmail_applet/it/stylesheet-images/caution.png
-share/gnome/help/clockmail_applet/it/stylesheet-images/important.png
-share/gnome/help/clockmail_applet/it/stylesheet-images/note.png
-share/gnome/help/clockmail_applet/it/stylesheet-images/tip.png
-share/gnome/help/clockmail_applet/it/stylesheet-images/warning.png
-share/gnome/help/cpuload_applet/C/cpuload-applet-default.png
-share/gnome/help/cpuload_applet/C/cpuload-applet-greyed.png
-share/gnome/help/cpuload_applet/C/cpuload-applet-properties.png
-share/gnome/help/cpuload_applet/C/cpuload-applet.png
-share/gnome/help/cpuload_applet/C/docbook.css
+share/gnome/help/clockmail_applet/it/stylesheet-images/caution.gif
+share/gnome/help/clockmail_applet/it/stylesheet-images/home.gif
+share/gnome/help/clockmail_applet/it/stylesheet-images/important.gif
+share/gnome/help/clockmail_applet/it/stylesheet-images/next.gif
+share/gnome/help/clockmail_applet/it/stylesheet-images/note.gif
+share/gnome/help/clockmail_applet/it/stylesheet-images/prev.gif
+share/gnome/help/clockmail_applet/it/stylesheet-images/tip.gif
+share/gnome/help/clockmail_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/clockmail_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/clockmail_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/clockmail_applet/it/stylesheet-images/up.gif
+share/gnome/help/clockmail_applet/it/stylesheet-images/warning.gif
+share/gnome/help/clockmail_applet/it/topic.dat
+share/gnome/help/clockmail_applet/ja/clockmail.sgml
+share/gnome/help/clockmail_applet/ja/clockmail_applet.sgml
+share/gnome/help/clockmail_applet/ja/docbook.css
+share/gnome/help/clockmail_applet/ja/figures/clockmail-prefs-general.png
+share/gnome/help/clockmail_applet/ja/figures/clockmail-prefs-theme.png
+share/gnome/help/clockmail_applet/ja/figures/clockmail_applet.png
+share/gnome/help/clockmail_applet/ja/index.html
+share/gnome/help/clockmail_applet/ja/ln10.html
+share/gnome/help/clockmail_applet/ja/stylesheet-images/caution.gif
+share/gnome/help/clockmail_applet/ja/stylesheet-images/home.gif
+share/gnome/help/clockmail_applet/ja/stylesheet-images/important.gif
+share/gnome/help/clockmail_applet/ja/stylesheet-images/next.gif
+share/gnome/help/clockmail_applet/ja/stylesheet-images/note.gif
+share/gnome/help/clockmail_applet/ja/stylesheet-images/prev.gif
+share/gnome/help/clockmail_applet/ja/stylesheet-images/tip.gif
+share/gnome/help/clockmail_applet/ja/stylesheet-images/toc-blank.gif
+share/gnome/help/clockmail_applet/ja/stylesheet-images/toc-minus.gif
+share/gnome/help/clockmail_applet/ja/stylesheet-images/toc-plus.gif
+share/gnome/help/clockmail_applet/ja/stylesheet-images/up.gif
+share/gnome/help/clockmail_applet/ja/stylesheet-images/warning.gif
+share/gnome/help/clockmail_applet/ja/topic.dat
+share/gnome/help/cpuload_applet/C/cpuload.sgml
+share/gnome/help/cpuload_applet/C/cpuload_applet.sgml
+share/gnome/help/cpuload_applet/C/figures/cpuload-applet-default.png
+share/gnome/help/cpuload_applet/C/figures/cpuload-applet-greyed.png
+share/gnome/help/cpuload_applet/C/figures/cpuload-applet-properties.png
+share/gnome/help/cpuload_applet/C/figures/cpuload-applet.png
 share/gnome/help/cpuload_applet/C/index.html
 share/gnome/help/cpuload_applet/C/ln7.html
-share/gnome/help/cpuload_applet/C/stylesheet-images/caution.png
-share/gnome/help/cpuload_applet/C/stylesheet-images/important.png
-share/gnome/help/cpuload_applet/C/stylesheet-images/note.png
-share/gnome/help/cpuload_applet/C/stylesheet-images/tip.png
-share/gnome/help/cpuload_applet/C/stylesheet-images/warning.png
-share/gnome/help/cpuload_applet/it/cpuload-applet-default.png
-share/gnome/help/cpuload_applet/it/cpuload-applet-greyed.png
-share/gnome/help/cpuload_applet/it/cpuload-applet-properties.png
-share/gnome/help/cpuload_applet/it/cpuload-applet.png
-share/gnome/help/cpuload_applet/it/docbook.css
+share/gnome/help/cpuload_applet/C/stylesheet-images/caution.gif
+share/gnome/help/cpuload_applet/C/stylesheet-images/home.gif
+share/gnome/help/cpuload_applet/C/stylesheet-images/important.gif
+share/gnome/help/cpuload_applet/C/stylesheet-images/next.gif
+share/gnome/help/cpuload_applet/C/stylesheet-images/note.gif
+share/gnome/help/cpuload_applet/C/stylesheet-images/prev.gif
+share/gnome/help/cpuload_applet/C/stylesheet-images/tip.gif
+share/gnome/help/cpuload_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/cpuload_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/cpuload_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/cpuload_applet/C/stylesheet-images/up.gif
+share/gnome/help/cpuload_applet/C/stylesheet-images/warning.gif
+share/gnome/help/cpuload_applet/C/topic.dat
+share/gnome/help/cpuload_applet/it/cpuload.sgml
+share/gnome/help/cpuload_applet/it/cpuload_applet.sgml
+share/gnome/help/cpuload_applet/it/figures/cpuload-applet-default.png
+share/gnome/help/cpuload_applet/it/figures/cpuload-applet-greyed.png
+share/gnome/help/cpuload_applet/it/figures/cpuload-applet-properties.png
+share/gnome/help/cpuload_applet/it/figures/cpuload-applet.png
 share/gnome/help/cpuload_applet/it/index.html
 share/gnome/help/cpuload_applet/it/ln7.html
-share/gnome/help/cpuload_applet/it/stylesheet-images/caution.png
-share/gnome/help/cpuload_applet/it/stylesheet-images/important.png
-share/gnome/help/cpuload_applet/it/stylesheet-images/note.png
-share/gnome/help/cpuload_applet/it/stylesheet-images/tip.png
-share/gnome/help/cpuload_applet/it/stylesheet-images/warning.png
-share/gnome/help/cpumemusage_applet/C/cpumemusage-applet.png
-share/gnome/help/cpumemusage_applet/C/docbook.css
+share/gnome/help/cpuload_applet/it/stylesheet-images/caution.gif
+share/gnome/help/cpuload_applet/it/stylesheet-images/home.gif
+share/gnome/help/cpuload_applet/it/stylesheet-images/important.gif
+share/gnome/help/cpuload_applet/it/stylesheet-images/next.gif
+share/gnome/help/cpuload_applet/it/stylesheet-images/note.gif
+share/gnome/help/cpuload_applet/it/stylesheet-images/prev.gif
+share/gnome/help/cpuload_applet/it/stylesheet-images/tip.gif
+share/gnome/help/cpuload_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/cpuload_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/cpuload_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/cpuload_applet/it/stylesheet-images/up.gif
+share/gnome/help/cpuload_applet/it/stylesheet-images/warning.gif
+share/gnome/help/cpuload_applet/it/topic.dat
+share/gnome/help/cpumemusage_applet/C/cpumemusage.sgml
+share/gnome/help/cpumemusage_applet/C/cpumemusage_applet.sgml
+share/gnome/help/cpumemusage_applet/C/figures/cpumemusage-applet.png
 share/gnome/help/cpumemusage_applet/C/index.html
 share/gnome/help/cpumemusage_applet/C/ln17.html
-share/gnome/help/cpumemusage_applet/C/stylesheet-images/caution.png
-share/gnome/help/cpumemusage_applet/C/stylesheet-images/important.png
-share/gnome/help/cpumemusage_applet/C/stylesheet-images/note.png
-share/gnome/help/cpumemusage_applet/C/stylesheet-images/tip.png
-share/gnome/help/cpumemusage_applet/C/stylesheet-images/warning.png
-share/gnome/help/cpumemusage_applet/it/cpumemusage-applet.png
-share/gnome/help/cpumemusage_applet/it/docbook.css
+share/gnome/help/cpumemusage_applet/C/stylesheet-images/caution.gif
+share/gnome/help/cpumemusage_applet/C/stylesheet-images/home.gif
+share/gnome/help/cpumemusage_applet/C/stylesheet-images/important.gif
+share/gnome/help/cpumemusage_applet/C/stylesheet-images/next.gif
+share/gnome/help/cpumemusage_applet/C/stylesheet-images/note.gif
+share/gnome/help/cpumemusage_applet/C/stylesheet-images/prev.gif
+share/gnome/help/cpumemusage_applet/C/stylesheet-images/tip.gif
+share/gnome/help/cpumemusage_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/cpumemusage_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/cpumemusage_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/cpumemusage_applet/C/stylesheet-images/up.gif
+share/gnome/help/cpumemusage_applet/C/stylesheet-images/warning.gif
+share/gnome/help/cpumemusage_applet/C/topic.dat
+share/gnome/help/cpumemusage_applet/it/cpumemusage.sgml
+share/gnome/help/cpumemusage_applet/it/cpumemusage_applet.sgml
+share/gnome/help/cpumemusage_applet/it/figures/cpumemusage-applet.png
 share/gnome/help/cpumemusage_applet/it/index.html
 share/gnome/help/cpumemusage_applet/it/ln17.html
-share/gnome/help/cpumemusage_applet/it/stylesheet-images/caution.png
-share/gnome/help/cpumemusage_applet/it/stylesheet-images/important.png
-share/gnome/help/cpumemusage_applet/it/stylesheet-images/note.png
-share/gnome/help/cpumemusage_applet/it/stylesheet-images/tip.png
-share/gnome/help/cpumemusage_applet/it/stylesheet-images/warning.png
-share/gnome/help/diskusage_applet/C/diskusage-applet-prefs.png
-share/gnome/help/diskusage_applet/C/diskusage-applet.png
-share/gnome/help/diskusage_applet/C/docbook.css
+share/gnome/help/cpumemusage_applet/it/stylesheet-images/caution.gif
+share/gnome/help/cpumemusage_applet/it/stylesheet-images/home.gif
+share/gnome/help/cpumemusage_applet/it/stylesheet-images/important.gif
+share/gnome/help/cpumemusage_applet/it/stylesheet-images/next.gif
+share/gnome/help/cpumemusage_applet/it/stylesheet-images/note.gif
+share/gnome/help/cpumemusage_applet/it/stylesheet-images/prev.gif
+share/gnome/help/cpumemusage_applet/it/stylesheet-images/tip.gif
+share/gnome/help/cpumemusage_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/cpumemusage_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/cpumemusage_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/cpumemusage_applet/it/stylesheet-images/up.gif
+share/gnome/help/cpumemusage_applet/it/stylesheet-images/warning.gif
+share/gnome/help/cpumemusage_applet/it/topic.dat
+share/gnome/help/cpumemusage_applet/ja/cpumemusage.sgml
+share/gnome/help/cpumemusage_applet/ja/cpumemusage_applet.sgml
+share/gnome/help/cpumemusage_applet/ja/docbook.css
+share/gnome/help/cpumemusage_applet/ja/figures/cpumemusage-applet.png
+share/gnome/help/cpumemusage_applet/ja/index.html
+share/gnome/help/cpumemusage_applet/ja/ln20.html
+share/gnome/help/cpumemusage_applet/ja/stylesheet-images/caution.gif
+share/gnome/help/cpumemusage_applet/ja/stylesheet-images/home.gif
+share/gnome/help/cpumemusage_applet/ja/stylesheet-images/important.gif
+share/gnome/help/cpumemusage_applet/ja/stylesheet-images/next.gif
+share/gnome/help/cpumemusage_applet/ja/stylesheet-images/note.gif
+share/gnome/help/cpumemusage_applet/ja/stylesheet-images/prev.gif
+share/gnome/help/cpumemusage_applet/ja/stylesheet-images/tip.gif
+share/gnome/help/cpumemusage_applet/ja/stylesheet-images/toc-blank.gif
+share/gnome/help/cpumemusage_applet/ja/stylesheet-images/toc-minus.gif
+share/gnome/help/cpumemusage_applet/ja/stylesheet-images/toc-plus.gif
+share/gnome/help/cpumemusage_applet/ja/stylesheet-images/up.gif
+share/gnome/help/cpumemusage_applet/ja/stylesheet-images/warning.gif
+share/gnome/help/cpumemusage_applet/ja/topic.dat
+share/gnome/help/diskusage_applet/C/diskusage.sgml
+share/gnome/help/diskusage_applet/C/diskusage_applet.sgml
+share/gnome/help/diskusage_applet/C/figures/diskusage-applet-prefs.png
+share/gnome/help/diskusage_applet/C/figures/diskusage-applet.png
 share/gnome/help/diskusage_applet/C/index.html
 share/gnome/help/diskusage_applet/C/ln7.html
-share/gnome/help/diskusage_applet/C/stylesheet-images/caution.png
-share/gnome/help/diskusage_applet/C/stylesheet-images/important.png
-share/gnome/help/diskusage_applet/C/stylesheet-images/note.png
-share/gnome/help/diskusage_applet/C/stylesheet-images/tip.png
-share/gnome/help/diskusage_applet/C/stylesheet-images/warning.png
-share/gnome/help/diskusage_applet/it/diskusage-applet-prefs.png
-share/gnome/help/diskusage_applet/it/diskusage-applet.png
-share/gnome/help/diskusage_applet/it/docbook.css
+share/gnome/help/diskusage_applet/C/stylesheet-images/caution.gif
+share/gnome/help/diskusage_applet/C/stylesheet-images/home.gif
+share/gnome/help/diskusage_applet/C/stylesheet-images/important.gif
+share/gnome/help/diskusage_applet/C/stylesheet-images/next.gif
+share/gnome/help/diskusage_applet/C/stylesheet-images/note.gif
+share/gnome/help/diskusage_applet/C/stylesheet-images/prev.gif
+share/gnome/help/diskusage_applet/C/stylesheet-images/tip.gif
+share/gnome/help/diskusage_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/diskusage_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/diskusage_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/diskusage_applet/C/stylesheet-images/up.gif
+share/gnome/help/diskusage_applet/C/stylesheet-images/warning.gif
+share/gnome/help/diskusage_applet/C/topic.dat
+share/gnome/help/diskusage_applet/it/diskusage.sgml
+share/gnome/help/diskusage_applet/it/diskusage_applet.sgml
+share/gnome/help/diskusage_applet/it/figures/diskusage-applet-prefs.png
+share/gnome/help/diskusage_applet/it/figures/diskusage-applet.png
 share/gnome/help/diskusage_applet/it/index.html
 share/gnome/help/diskusage_applet/it/ln10.html
-share/gnome/help/diskusage_applet/it/stylesheet-images/caution.png
-share/gnome/help/diskusage_applet/it/stylesheet-images/important.png
-share/gnome/help/diskusage_applet/it/stylesheet-images/note.png
-share/gnome/help/diskusage_applet/it/stylesheet-images/tip.png
-share/gnome/help/diskusage_applet/it/stylesheet-images/warning.png
-share/gnome/help/drivemount_applet/C/docbook.css
-share/gnome/help/drivemount_applet/C/drivemount_applet_all.png
-share/gnome/help/drivemount_applet/C/drivemount_applet_floppy.png
-share/gnome/help/drivemount_applet/C/drivemount_applet_settings.png
-share/gnome/help/drivemount_applet/C/drivemount_applet_tooltip.png
+share/gnome/help/diskusage_applet/it/stylesheet-images/caution.gif
+share/gnome/help/diskusage_applet/it/stylesheet-images/home.gif
+share/gnome/help/diskusage_applet/it/stylesheet-images/important.gif
+share/gnome/help/diskusage_applet/it/stylesheet-images/next.gif
+share/gnome/help/diskusage_applet/it/stylesheet-images/note.gif
+share/gnome/help/diskusage_applet/it/stylesheet-images/prev.gif
+share/gnome/help/diskusage_applet/it/stylesheet-images/tip.gif
+share/gnome/help/diskusage_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/diskusage_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/diskusage_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/diskusage_applet/it/stylesheet-images/up.gif
+share/gnome/help/diskusage_applet/it/stylesheet-images/warning.gif
+share/gnome/help/diskusage_applet/it/topic.dat
+share/gnome/help/diskusage_applet/ja/diskusage.sgml
+share/gnome/help/diskusage_applet/ja/diskusage_applet.sgml
+share/gnome/help/diskusage_applet/ja/docbook.css
+share/gnome/help/diskusage_applet/ja/figures/diskusage-applet-prefs.png
+share/gnome/help/diskusage_applet/ja/figures/diskusage-applet.png
+share/gnome/help/diskusage_applet/ja/index.html
+share/gnome/help/diskusage_applet/ja/ln10.html
+share/gnome/help/diskusage_applet/ja/stylesheet-images/caution.gif
+share/gnome/help/diskusage_applet/ja/stylesheet-images/home.gif
+share/gnome/help/diskusage_applet/ja/stylesheet-images/important.gif
+share/gnome/help/diskusage_applet/ja/stylesheet-images/next.gif
+share/gnome/help/diskusage_applet/ja/stylesheet-images/note.gif
+share/gnome/help/diskusage_applet/ja/stylesheet-images/prev.gif
+share/gnome/help/diskusage_applet/ja/stylesheet-images/tip.gif
+share/gnome/help/diskusage_applet/ja/stylesheet-images/toc-blank.gif
+share/gnome/help/diskusage_applet/ja/stylesheet-images/toc-minus.gif
+share/gnome/help/diskusage_applet/ja/stylesheet-images/toc-plus.gif
+share/gnome/help/diskusage_applet/ja/stylesheet-images/up.gif
+share/gnome/help/diskusage_applet/ja/stylesheet-images/warning.gif
+share/gnome/help/diskusage_applet/ja/topic.dat
+share/gnome/help/drivemount_applet/C/drivemount.sgml
+share/gnome/help/drivemount_applet/C/drivemount_applet.sgml
+share/gnome/help/drivemount_applet/C/figures/drivemount_applet_all.png
+share/gnome/help/drivemount_applet/C/figures/drivemount_applet_floppy.png
+share/gnome/help/drivemount_applet/C/figures/drivemount_applet_settings.png
+share/gnome/help/drivemount_applet/C/figures/drivemount_applet_tooltip.png
 share/gnome/help/drivemount_applet/C/index.html
 share/gnome/help/drivemount_applet/C/ln7.html
-share/gnome/help/drivemount_applet/C/stylesheet-images/caution.png
-share/gnome/help/drivemount_applet/C/stylesheet-images/important.png
-share/gnome/help/drivemount_applet/C/stylesheet-images/note.png
-share/gnome/help/drivemount_applet/C/stylesheet-images/tip.png
-share/gnome/help/drivemount_applet/C/stylesheet-images/warning.png
-share/gnome/help/drivemount_applet/it/docbook.css
-share/gnome/help/drivemount_applet/it/drivemount_applet_all.png
-share/gnome/help/drivemount_applet/it/drivemount_applet_floppy.png
-share/gnome/help/drivemount_applet/it/drivemount_applet_settings.png
-share/gnome/help/drivemount_applet/it/drivemount_applet_tooltip.png
+share/gnome/help/drivemount_applet/C/stylesheet-images/caution.gif
+share/gnome/help/drivemount_applet/C/stylesheet-images/home.gif
+share/gnome/help/drivemount_applet/C/stylesheet-images/important.gif
+share/gnome/help/drivemount_applet/C/stylesheet-images/next.gif
+share/gnome/help/drivemount_applet/C/stylesheet-images/note.gif
+share/gnome/help/drivemount_applet/C/stylesheet-images/prev.gif
+share/gnome/help/drivemount_applet/C/stylesheet-images/tip.gif
+share/gnome/help/drivemount_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/drivemount_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/drivemount_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/drivemount_applet/C/stylesheet-images/up.gif
+share/gnome/help/drivemount_applet/C/stylesheet-images/warning.gif
+share/gnome/help/drivemount_applet/C/topic.dat
+share/gnome/help/drivemount_applet/it/drivemount.sgml
+share/gnome/help/drivemount_applet/it/drivemount_applet.sgml
+share/gnome/help/drivemount_applet/it/figures/drivemount_applet_all.png
+share/gnome/help/drivemount_applet/it/figures/drivemount_applet_floppy.png
+share/gnome/help/drivemount_applet/it/figures/drivemount_applet_settings.png
+share/gnome/help/drivemount_applet/it/figures/drivemount_applet_tooltip.png
 share/gnome/help/drivemount_applet/it/index.html
 share/gnome/help/drivemount_applet/it/ln10.html
-share/gnome/help/drivemount_applet/it/stylesheet-images/caution.png
-share/gnome/help/drivemount_applet/it/stylesheet-images/important.png
-share/gnome/help/drivemount_applet/it/stylesheet-images/note.png
-share/gnome/help/drivemount_applet/it/stylesheet-images/tip.png
-share/gnome/help/drivemount_applet/it/stylesheet-images/warning.png
-share/gnome/help/fifteen_applet/C/docbook.css
-share/gnome/help/fifteen_applet/C/fifteen_applet.png
+share/gnome/help/drivemount_applet/it/stylesheet-images/caution.gif
+share/gnome/help/drivemount_applet/it/stylesheet-images/home.gif
+share/gnome/help/drivemount_applet/it/stylesheet-images/important.gif
+share/gnome/help/drivemount_applet/it/stylesheet-images/next.gif
+share/gnome/help/drivemount_applet/it/stylesheet-images/note.gif
+share/gnome/help/drivemount_applet/it/stylesheet-images/prev.gif
+share/gnome/help/drivemount_applet/it/stylesheet-images/tip.gif
+share/gnome/help/drivemount_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/drivemount_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/drivemount_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/drivemount_applet/it/stylesheet-images/up.gif
+share/gnome/help/drivemount_applet/it/stylesheet-images/warning.gif
+share/gnome/help/drivemount_applet/it/topic.dat
+share/gnome/help/drivemount_applet/ja/docbook.css
+share/gnome/help/drivemount_applet/ja/drivemount.sgml
+share/gnome/help/drivemount_applet/ja/drivemount_applet.sgml
+share/gnome/help/drivemount_applet/ja/figures/drivemount_applet_all.png
+share/gnome/help/drivemount_applet/ja/figures/drivemount_applet_floppy.png
+share/gnome/help/drivemount_applet/ja/figures/drivemount_applet_settings.png
+share/gnome/help/drivemount_applet/ja/figures/drivemount_applet_tooltip.png
+share/gnome/help/drivemount_applet/ja/index.html
+share/gnome/help/drivemount_applet/ja/ln10.html
+share/gnome/help/drivemount_applet/ja/stylesheet-images/caution.gif
+share/gnome/help/drivemount_applet/ja/stylesheet-images/home.gif
+share/gnome/help/drivemount_applet/ja/stylesheet-images/important.gif
+share/gnome/help/drivemount_applet/ja/stylesheet-images/next.gif
+share/gnome/help/drivemount_applet/ja/stylesheet-images/note.gif
+share/gnome/help/drivemount_applet/ja/stylesheet-images/prev.gif
+share/gnome/help/drivemount_applet/ja/stylesheet-images/tip.gif
+share/gnome/help/drivemount_applet/ja/stylesheet-images/toc-blank.gif
+share/gnome/help/drivemount_applet/ja/stylesheet-images/toc-minus.gif
+share/gnome/help/drivemount_applet/ja/stylesheet-images/toc-plus.gif
+share/gnome/help/drivemount_applet/ja/stylesheet-images/up.gif
+share/gnome/help/drivemount_applet/ja/stylesheet-images/warning.gif
+share/gnome/help/drivemount_applet/ja/topic.dat
+share/gnome/help/fifteen_applet/C/fifteen.sgml
+share/gnome/help/fifteen_applet/C/fifteen_applet.sgml
+share/gnome/help/fifteen_applet/C/figures/fifteen_applet.png
 share/gnome/help/fifteen_applet/C/index.html
 share/gnome/help/fifteen_applet/C/ln7.html
-share/gnome/help/fifteen_applet/C/stylesheet-images/caution.png
-share/gnome/help/fifteen_applet/C/stylesheet-images/important.png
-share/gnome/help/fifteen_applet/C/stylesheet-images/note.png
-share/gnome/help/fifteen_applet/C/stylesheet-images/tip.png
-share/gnome/help/fifteen_applet/C/stylesheet-images/warning.png
-share/gnome/help/fifteen_applet/it/docbook.css
-share/gnome/help/fifteen_applet/it/fifteen_applet.png
+share/gnome/help/fifteen_applet/C/stylesheet-images/caution.gif
+share/gnome/help/fifteen_applet/C/stylesheet-images/home.gif
+share/gnome/help/fifteen_applet/C/stylesheet-images/important.gif
+share/gnome/help/fifteen_applet/C/stylesheet-images/next.gif
+share/gnome/help/fifteen_applet/C/stylesheet-images/note.gif
+share/gnome/help/fifteen_applet/C/stylesheet-images/prev.gif
+share/gnome/help/fifteen_applet/C/stylesheet-images/tip.gif
+share/gnome/help/fifteen_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/fifteen_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/fifteen_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/fifteen_applet/C/stylesheet-images/up.gif
+share/gnome/help/fifteen_applet/C/stylesheet-images/warning.gif
+share/gnome/help/fifteen_applet/C/topic.dat
+share/gnome/help/fifteen_applet/it/fifteen.sgml
+share/gnome/help/fifteen_applet/it/fifteen_applet.sgml
+share/gnome/help/fifteen_applet/it/figures/fifteen_applet.png
 share/gnome/help/fifteen_applet/it/index.html
 share/gnome/help/fifteen_applet/it/ln10.html
-share/gnome/help/fifteen_applet/it/stylesheet-images/caution.png
-share/gnome/help/fifteen_applet/it/stylesheet-images/important.png
-share/gnome/help/fifteen_applet/it/stylesheet-images/note.png
-share/gnome/help/fifteen_applet/it/stylesheet-images/tip.png
-share/gnome/help/fifteen_applet/it/stylesheet-images/warning.png
-share/gnome/help/geyes_applet/C/docbook.css
-share/gnome/help/geyes_applet/C/geyes_applet.png
-share/gnome/help/geyes_applet/C/geyes_settings.png
+share/gnome/help/fifteen_applet/it/stylesheet-images/caution.gif
+share/gnome/help/fifteen_applet/it/stylesheet-images/home.gif
+share/gnome/help/fifteen_applet/it/stylesheet-images/important.gif
+share/gnome/help/fifteen_applet/it/stylesheet-images/next.gif
+share/gnome/help/fifteen_applet/it/stylesheet-images/note.gif
+share/gnome/help/fifteen_applet/it/stylesheet-images/prev.gif
+share/gnome/help/fifteen_applet/it/stylesheet-images/tip.gif
+share/gnome/help/fifteen_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/fifteen_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/fifteen_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/fifteen_applet/it/stylesheet-images/up.gif
+share/gnome/help/fifteen_applet/it/stylesheet-images/warning.gif
+share/gnome/help/fifteen_applet/it/topic.dat
+share/gnome/help/geyes_applet/C/figures/geyes_applet.png
+share/gnome/help/geyes_applet/C/figures/geyes_settings.png
+share/gnome/help/geyes_applet/C/geyes.sgml
+share/gnome/help/geyes_applet/C/geyes_applet.sgml
 share/gnome/help/geyes_applet/C/index.html
 share/gnome/help/geyes_applet/C/ln7.html
-share/gnome/help/geyes_applet/C/stylesheet-images/caution.png
-share/gnome/help/geyes_applet/C/stylesheet-images/important.png
-share/gnome/help/geyes_applet/C/stylesheet-images/note.png
-share/gnome/help/geyes_applet/C/stylesheet-images/tip.png
-share/gnome/help/geyes_applet/C/stylesheet-images/warning.png
-share/gnome/help/geyes_applet/it/docbook.css
-share/gnome/help/geyes_applet/it/geyes_applet.png
+share/gnome/help/geyes_applet/C/stylesheet-images/caution.gif
+share/gnome/help/geyes_applet/C/stylesheet-images/home.gif
+share/gnome/help/geyes_applet/C/stylesheet-images/important.gif
+share/gnome/help/geyes_applet/C/stylesheet-images/next.gif
+share/gnome/help/geyes_applet/C/stylesheet-images/note.gif
+share/gnome/help/geyes_applet/C/stylesheet-images/prev.gif
+share/gnome/help/geyes_applet/C/stylesheet-images/tip.gif
+share/gnome/help/geyes_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/geyes_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/geyes_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/geyes_applet/C/stylesheet-images/up.gif
+share/gnome/help/geyes_applet/C/stylesheet-images/warning.gif
+share/gnome/help/geyes_applet/C/topic.dat
+share/gnome/help/geyes_applet/it/figures/geyes_applet.png
+share/gnome/help/geyes_applet/it/geyes.sgml
+share/gnome/help/geyes_applet/it/geyes_applet.sgml
 share/gnome/help/geyes_applet/it/index.html
 share/gnome/help/geyes_applet/it/ln10.html
-share/gnome/help/geyes_applet/it/stylesheet-images/caution.png
-share/gnome/help/geyes_applet/it/stylesheet-images/important.png
-share/gnome/help/geyes_applet/it/stylesheet-images/note.png
-share/gnome/help/geyes_applet/it/stylesheet-images/tip.png
-share/gnome/help/geyes_applet/it/stylesheet-images/warning.png
-share/gnome/help/gkb_applet/C/docbook.css
-share/gnome/help/gkb_applet/C/gkb_applet.png
-share/gnome/help/gkb_applet/C/gkb_applet_settings.png
+share/gnome/help/geyes_applet/it/stylesheet-images/caution.gif
+share/gnome/help/geyes_applet/it/stylesheet-images/home.gif
+share/gnome/help/geyes_applet/it/stylesheet-images/important.gif
+share/gnome/help/geyes_applet/it/stylesheet-images/next.gif
+share/gnome/help/geyes_applet/it/stylesheet-images/note.gif
+share/gnome/help/geyes_applet/it/stylesheet-images/prev.gif
+share/gnome/help/geyes_applet/it/stylesheet-images/tip.gif
+share/gnome/help/geyes_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/geyes_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/geyes_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/geyes_applet/it/stylesheet-images/up.gif
+share/gnome/help/geyes_applet/it/stylesheet-images/warning.gif
+share/gnome/help/geyes_applet/it/topic.dat
+share/gnome/help/gkb_applet/C/figures/gkb_add_list.png
+share/gnome/help/gkb_applet/C/figures/gkb_applet.png
+share/gnome/help/gkb_applet/C/figures/gkb_applet_settings.png
+share/gnome/help/gkb_applet/C/figures/gkb_applet_settings2.png
+share/gnome/help/gkb_applet/C/figures/gkb_edit_keymap.png
+share/gnome/help/gkb_applet/C/gkb.sgml
+share/gnome/help/gkb_applet/C/gkb_applet.sgml
 share/gnome/help/gkb_applet/C/index.html
 share/gnome/help/gkb_applet/C/ln7.html
-share/gnome/help/gkb_applet/C/stylesheet-images/caution.png
-share/gnome/help/gkb_applet/C/stylesheet-images/important.png
-share/gnome/help/gkb_applet/C/stylesheet-images/note.png
-share/gnome/help/gkb_applet/C/stylesheet-images/tip.png
-share/gnome/help/gkb_applet/C/stylesheet-images/warning.png
-share/gnome/help/gkb_applet/hu/docbook.css
-share/gnome/help/gkb_applet/hu/gkb_applet.png
-share/gnome/help/gkb_applet/hu/gkb_applet_settings.png
+share/gnome/help/gkb_applet/C/stylesheet-images/caution.gif
+share/gnome/help/gkb_applet/C/stylesheet-images/home.gif
+share/gnome/help/gkb_applet/C/stylesheet-images/important.gif
+share/gnome/help/gkb_applet/C/stylesheet-images/next.gif
+share/gnome/help/gkb_applet/C/stylesheet-images/note.gif
+share/gnome/help/gkb_applet/C/stylesheet-images/prev.gif
+share/gnome/help/gkb_applet/C/stylesheet-images/tip.gif
+share/gnome/help/gkb_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/gkb_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/gkb_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/gkb_applet/C/stylesheet-images/up.gif
+share/gnome/help/gkb_applet/C/stylesheet-images/warning.gif
+share/gnome/help/gkb_applet/C/topic.dat
+share/gnome/help/gkb_applet/hu/figures/gkb_applet.png
+share/gnome/help/gkb_applet/hu/figures/gkb_applet_settings.png
+share/gnome/help/gkb_applet/hu/gkb.sgml
+share/gnome/help/gkb_applet/hu/gkb_applet.sgml
 share/gnome/help/gkb_applet/hu/index.html
 share/gnome/help/gkb_applet/hu/ln10.html
-share/gnome/help/gkb_applet/hu/stylesheet-images/caution.png
-share/gnome/help/gkb_applet/hu/stylesheet-images/important.png
-share/gnome/help/gkb_applet/hu/stylesheet-images/note.png
-share/gnome/help/gkb_applet/hu/stylesheet-images/tip.png
-share/gnome/help/gkb_applet/hu/stylesheet-images/warning.png
-share/gnome/help/gkb_applet/it/docbook.css
+share/gnome/help/gkb_applet/hu/stylesheet-images/caution.gif
+share/gnome/help/gkb_applet/hu/stylesheet-images/home.gif
+share/gnome/help/gkb_applet/hu/stylesheet-images/important.gif
+share/gnome/help/gkb_applet/hu/stylesheet-images/next.gif
+share/gnome/help/gkb_applet/hu/stylesheet-images/note.gif
+share/gnome/help/gkb_applet/hu/stylesheet-images/prev.gif
+share/gnome/help/gkb_applet/hu/stylesheet-images/tip.gif
+share/gnome/help/gkb_applet/hu/stylesheet-images/toc-blank.gif
+share/gnome/help/gkb_applet/hu/stylesheet-images/toc-minus.gif
+share/gnome/help/gkb_applet/hu/stylesheet-images/toc-plus.gif
+share/gnome/help/gkb_applet/hu/stylesheet-images/up.gif
+share/gnome/help/gkb_applet/hu/stylesheet-images/warning.gif
+share/gnome/help/gkb_applet/hu/topic.dat
 share/gnome/help/gkb_applet/it/gkb_applet.png
+share/gnome/help/gkb_applet/it/gkb_applet.sgml
 share/gnome/help/gkb_applet/it/gkb_applet_settings.png
 share/gnome/help/gkb_applet/it/index.html
 share/gnome/help/gkb_applet/it/ln10.html
+share/gnome/help/gkb_applet/it/stylesheet-images/caution.gif
 share/gnome/help/gkb_applet/it/stylesheet-images/caution.png
+share/gnome/help/gkb_applet/it/stylesheet-images/home.gif
+share/gnome/help/gkb_applet/it/stylesheet-images/important.gif
 share/gnome/help/gkb_applet/it/stylesheet-images/important.png
+share/gnome/help/gkb_applet/it/stylesheet-images/next.gif
+share/gnome/help/gkb_applet/it/stylesheet-images/note.gif
 share/gnome/help/gkb_applet/it/stylesheet-images/note.png
+share/gnome/help/gkb_applet/it/stylesheet-images/prev.gif
+share/gnome/help/gkb_applet/it/stylesheet-images/tip.gif
 share/gnome/help/gkb_applet/it/stylesheet-images/tip.png
+share/gnome/help/gkb_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/gkb_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/gkb_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/gkb_applet/it/stylesheet-images/up.gif
+share/gnome/help/gkb_applet/it/stylesheet-images/warning.gif
 share/gnome/help/gkb_applet/it/stylesheet-images/warning.png
-share/gnome/help/gnotes_applet/C/docbook.css
-share/gnome/help/gnotes_applet/C/gnotes-fig.png
-share/gnome/help/gnotes_applet/C/gnotes-properties.png
+share/gnome/help/gkb_applet/it/topic.dat
+share/gnome/help/gnotes_applet/C/figures/gnotes-fig.png
+share/gnome/help/gnotes_applet/C/figures/gnotes-properties.png
+share/gnome/help/gnotes_applet/C/gnotes.sgml
+share/gnome/help/gnotes_applet/C/gnotes_applet.sgml
 share/gnome/help/gnotes_applet/C/index.html
 share/gnome/help/gnotes_applet/C/ln7.html
-share/gnome/help/gnotes_applet/C/stylesheet-images/caution.png
-share/gnome/help/gnotes_applet/C/stylesheet-images/important.png
-share/gnome/help/gnotes_applet/C/stylesheet-images/note.png
-share/gnome/help/gnotes_applet/C/stylesheet-images/tip.png
-share/gnome/help/gnotes_applet/C/stylesheet-images/warning.png
-share/gnome/help/gnotes_applet/it/docbook.css
-share/gnome/help/gnotes_applet/it/gnotes-fig.png
-share/gnome/help/gnotes_applet/it/gnotes-properties.png
+share/gnome/help/gnotes_applet/C/stylesheet-images/caution.gif
+share/gnome/help/gnotes_applet/C/stylesheet-images/home.gif
+share/gnome/help/gnotes_applet/C/stylesheet-images/important.gif
+share/gnome/help/gnotes_applet/C/stylesheet-images/next.gif
+share/gnome/help/gnotes_applet/C/stylesheet-images/note.gif
+share/gnome/help/gnotes_applet/C/stylesheet-images/prev.gif
+share/gnome/help/gnotes_applet/C/stylesheet-images/tip.gif
+share/gnome/help/gnotes_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/gnotes_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/gnotes_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/gnotes_applet/C/stylesheet-images/up.gif
+share/gnome/help/gnotes_applet/C/stylesheet-images/warning.gif
+share/gnome/help/gnotes_applet/C/topic.dat
+share/gnome/help/gnotes_applet/it/figures/gnotes-fig.png
+share/gnome/help/gnotes_applet/it/figures/gnotes-properties.png
+share/gnome/help/gnotes_applet/it/gnotes.sgml
+share/gnome/help/gnotes_applet/it/gnotes_applet.sgml
 share/gnome/help/gnotes_applet/it/index.html
 share/gnome/help/gnotes_applet/it/ln11.html
-share/gnome/help/gnotes_applet/it/stylesheet-images/caution.png
-share/gnome/help/gnotes_applet/it/stylesheet-images/important.png
-share/gnome/help/gnotes_applet/it/stylesheet-images/note.png
-share/gnome/help/gnotes_applet/it/stylesheet-images/tip.png
-share/gnome/help/gnotes_applet/it/stylesheet-images/warning.png
-share/gnome/help/gweather_applet/C/docbook.css
-share/gnome/help/gweather_applet/C/gweather_applet.png
-share/gnome/help/gweather_applet/C/gweather_settings.png
-share/gnome/help/gweather_applet/C/gweather_weather.png
+share/gnome/help/gnotes_applet/it/stylesheet-images/caution.gif
+share/gnome/help/gnotes_applet/it/stylesheet-images/home.gif
+share/gnome/help/gnotes_applet/it/stylesheet-images/important.gif
+share/gnome/help/gnotes_applet/it/stylesheet-images/next.gif
+share/gnome/help/gnotes_applet/it/stylesheet-images/note.gif
+share/gnome/help/gnotes_applet/it/stylesheet-images/prev.gif
+share/gnome/help/gnotes_applet/it/stylesheet-images/tip.gif
+share/gnome/help/gnotes_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/gnotes_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/gnotes_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/gnotes_applet/it/stylesheet-images/up.gif
+share/gnome/help/gnotes_applet/it/stylesheet-images/warning.gif
+share/gnome/help/gnotes_applet/it/topic.dat
+share/gnome/help/gweather_applet/C/figures/gweather_applet.png
+share/gnome/help/gweather_applet/C/figures/gweather_settings.png
+share/gnome/help/gweather_applet/C/figures/gweather_weather.png
+share/gnome/help/gweather_applet/C/gweather.sgml
+share/gnome/help/gweather_applet/C/gweather_applet.sgml
 share/gnome/help/gweather_applet/C/index.html
 share/gnome/help/gweather_applet/C/ln7.html
-share/gnome/help/gweather_applet/C/stylesheet-images/caution.png
-share/gnome/help/gweather_applet/C/stylesheet-images/important.png
-share/gnome/help/gweather_applet/C/stylesheet-images/note.png
-share/gnome/help/gweather_applet/C/stylesheet-images/tip.png
-share/gnome/help/gweather_applet/C/stylesheet-images/warning.png
-share/gnome/help/gweather_applet/it/docbook.css
-share/gnome/help/gweather_applet/it/gweather_applet.png
-share/gnome/help/gweather_applet/it/gweather_settings.png
-share/gnome/help/gweather_applet/it/gweather_weather.png
+share/gnome/help/gweather_applet/C/stylesheet-images/caution.gif
+share/gnome/help/gweather_applet/C/stylesheet-images/home.gif
+share/gnome/help/gweather_applet/C/stylesheet-images/important.gif
+share/gnome/help/gweather_applet/C/stylesheet-images/next.gif
+share/gnome/help/gweather_applet/C/stylesheet-images/note.gif
+share/gnome/help/gweather_applet/C/stylesheet-images/prev.gif
+share/gnome/help/gweather_applet/C/stylesheet-images/tip.gif
+share/gnome/help/gweather_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/gweather_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/gweather_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/gweather_applet/C/stylesheet-images/up.gif
+share/gnome/help/gweather_applet/C/stylesheet-images/warning.gif
+share/gnome/help/gweather_applet/C/topic.dat
+share/gnome/help/gweather_applet/it/figures/gweather_applet.png
+share/gnome/help/gweather_applet/it/figures/gweather_settings.png
+share/gnome/help/gweather_applet/it/figures/gweather_weather.png
+share/gnome/help/gweather_applet/it/gweather.sgml
+share/gnome/help/gweather_applet/it/gweather_applet.sgml
 share/gnome/help/gweather_applet/it/index.html
 share/gnome/help/gweather_applet/it/ln10.html
-share/gnome/help/gweather_applet/it/stylesheet-images/caution.png
-share/gnome/help/gweather_applet/it/stylesheet-images/important.png
-share/gnome/help/gweather_applet/it/stylesheet-images/note.png
-share/gnome/help/gweather_applet/it/stylesheet-images/tip.png
-share/gnome/help/gweather_applet/it/stylesheet-images/warning.png
-share/gnome/help/jbc_applet/C/docbook.css
+share/gnome/help/gweather_applet/it/stylesheet-images/caution.gif
+share/gnome/help/gweather_applet/it/stylesheet-images/home.gif
+share/gnome/help/gweather_applet/it/stylesheet-images/important.gif
+share/gnome/help/gweather_applet/it/stylesheet-images/next.gif
+share/gnome/help/gweather_applet/it/stylesheet-images/note.gif
+share/gnome/help/gweather_applet/it/stylesheet-images/prev.gif
+share/gnome/help/gweather_applet/it/stylesheet-images/tip.gif
+share/gnome/help/gweather_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/gweather_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/gweather_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/gweather_applet/it/stylesheet-images/up.gif
+share/gnome/help/gweather_applet/it/stylesheet-images/warning.gif
+share/gnome/help/gweather_applet/it/topic.dat
+share/gnome/help/jbc_applet/C/figures/jbc_applet.png
 share/gnome/help/jbc_applet/C/index.html
-share/gnome/help/jbc_applet/C/jbc_applet.png
+share/gnome/help/jbc_applet/C/jbc.sgml
+share/gnome/help/jbc_applet/C/jbc_applet.sgml
 share/gnome/help/jbc_applet/C/ln7.html
-share/gnome/help/jbc_applet/C/stylesheet-images/caution.png
-share/gnome/help/jbc_applet/C/stylesheet-images/important.png
-share/gnome/help/jbc_applet/C/stylesheet-images/note.png
-share/gnome/help/jbc_applet/C/stylesheet-images/tip.png
-share/gnome/help/jbc_applet/C/stylesheet-images/warning.png
-share/gnome/help/jbc_applet/it/docbook.css
+share/gnome/help/jbc_applet/C/stylesheet-images/caution.gif
+share/gnome/help/jbc_applet/C/stylesheet-images/home.gif
+share/gnome/help/jbc_applet/C/stylesheet-images/important.gif
+share/gnome/help/jbc_applet/C/stylesheet-images/next.gif
+share/gnome/help/jbc_applet/C/stylesheet-images/note.gif
+share/gnome/help/jbc_applet/C/stylesheet-images/prev.gif
+share/gnome/help/jbc_applet/C/stylesheet-images/tip.gif
+share/gnome/help/jbc_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/jbc_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/jbc_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/jbc_applet/C/stylesheet-images/up.gif
+share/gnome/help/jbc_applet/C/stylesheet-images/warning.gif
+share/gnome/help/jbc_applet/C/topic.dat
+share/gnome/help/jbc_applet/it/figures/jbc_applet.png
 share/gnome/help/jbc_applet/it/index.html
-share/gnome/help/jbc_applet/it/jbc_applet.png
+share/gnome/help/jbc_applet/it/jbc.sgml
+share/gnome/help/jbc_applet/it/jbc_applet.sgml
 share/gnome/help/jbc_applet/it/ln10.html
-share/gnome/help/jbc_applet/it/stylesheet-images/caution.png
-share/gnome/help/jbc_applet/it/stylesheet-images/important.png
-share/gnome/help/jbc_applet/it/stylesheet-images/note.png
-share/gnome/help/jbc_applet/it/stylesheet-images/tip.png
-share/gnome/help/jbc_applet/it/stylesheet-images/warning.png
-share/gnome/help/life_applet/C/docbook.css
+share/gnome/help/jbc_applet/it/stylesheet-images/caution.gif
+share/gnome/help/jbc_applet/it/stylesheet-images/home.gif
+share/gnome/help/jbc_applet/it/stylesheet-images/important.gif
+share/gnome/help/jbc_applet/it/stylesheet-images/next.gif
+share/gnome/help/jbc_applet/it/stylesheet-images/note.gif
+share/gnome/help/jbc_applet/it/stylesheet-images/prev.gif
+share/gnome/help/jbc_applet/it/stylesheet-images/tip.gif
+share/gnome/help/jbc_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/jbc_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/jbc_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/jbc_applet/it/stylesheet-images/up.gif
+share/gnome/help/jbc_applet/it/stylesheet-images/warning.gif
+share/gnome/help/jbc_applet/it/topic.dat
+share/gnome/help/life_applet/C/figures/life-applet.png
 share/gnome/help/life_applet/C/index.html
-share/gnome/help/life_applet/C/life-applet.png
+share/gnome/help/life_applet/C/life.sgml
+share/gnome/help/life_applet/C/life_applet.sgml
 share/gnome/help/life_applet/C/ln7.html
-share/gnome/help/life_applet/C/stylesheet-images/caution.png
-share/gnome/help/life_applet/C/stylesheet-images/important.png
-share/gnome/help/life_applet/C/stylesheet-images/note.png
-share/gnome/help/life_applet/C/stylesheet-images/tip.png
-share/gnome/help/life_applet/C/stylesheet-images/warning.png
-share/gnome/help/life_applet/it/docbook.css
+share/gnome/help/life_applet/C/stylesheet-images/caution.gif
+share/gnome/help/life_applet/C/stylesheet-images/home.gif
+share/gnome/help/life_applet/C/stylesheet-images/important.gif
+share/gnome/help/life_applet/C/stylesheet-images/next.gif
+share/gnome/help/life_applet/C/stylesheet-images/note.gif
+share/gnome/help/life_applet/C/stylesheet-images/prev.gif
+share/gnome/help/life_applet/C/stylesheet-images/tip.gif
+share/gnome/help/life_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/life_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/life_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/life_applet/C/stylesheet-images/up.gif
+share/gnome/help/life_applet/C/stylesheet-images/warning.gif
+share/gnome/help/life_applet/C/topic.dat
+share/gnome/help/life_applet/it/figures/life-applet.png
 share/gnome/help/life_applet/it/index.html
-share/gnome/help/life_applet/it/life-applet.png
+share/gnome/help/life_applet/it/life.sgml
+share/gnome/help/life_applet/it/life_applet.sgml
 share/gnome/help/life_applet/it/ln7.html
-share/gnome/help/life_applet/it/stylesheet-images/caution.png
-share/gnome/help/life_applet/it/stylesheet-images/important.png
-share/gnome/help/life_applet/it/stylesheet-images/note.png
-share/gnome/help/life_applet/it/stylesheet-images/tip.png
-share/gnome/help/life_applet/it/stylesheet-images/warning.png
-share/gnome/help/loadavg_applet/C/docbook.css
+share/gnome/help/life_applet/it/stylesheet-images/caution.gif
+share/gnome/help/life_applet/it/stylesheet-images/home.gif
+share/gnome/help/life_applet/it/stylesheet-images/important.gif
+share/gnome/help/life_applet/it/stylesheet-images/next.gif
+share/gnome/help/life_applet/it/stylesheet-images/note.gif
+share/gnome/help/life_applet/it/stylesheet-images/prev.gif
+share/gnome/help/life_applet/it/stylesheet-images/tip.gif
+share/gnome/help/life_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/life_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/life_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/life_applet/it/stylesheet-images/up.gif
+share/gnome/help/life_applet/it/stylesheet-images/warning.gif
+share/gnome/help/life_applet/it/topic.dat
+share/gnome/help/loadavg_applet/C/figures/loadavg-applet-default.png
+share/gnome/help/loadavg_applet/C/figures/loadavg-applet-greyed.png
+share/gnome/help/loadavg_applet/C/figures/loadavg-applet-properties.png
+share/gnome/help/loadavg_applet/C/figures/loadavg-applet.png
 share/gnome/help/loadavg_applet/C/index.html
 share/gnome/help/loadavg_applet/C/ln7.html
-share/gnome/help/loadavg_applet/C/loadavg-applet-default.png
-share/gnome/help/loadavg_applet/C/loadavg-applet-greyed.png
-share/gnome/help/loadavg_applet/C/loadavg-applet-properties.png
-share/gnome/help/loadavg_applet/C/loadavg-applet.png
-share/gnome/help/loadavg_applet/C/stylesheet-images/caution.png
-share/gnome/help/loadavg_applet/C/stylesheet-images/important.png
-share/gnome/help/loadavg_applet/C/stylesheet-images/note.png
-share/gnome/help/loadavg_applet/C/stylesheet-images/tip.png
-share/gnome/help/loadavg_applet/C/stylesheet-images/warning.png
-share/gnome/help/loadavg_applet/it/docbook.css
+share/gnome/help/loadavg_applet/C/loadavg.sgml
+share/gnome/help/loadavg_applet/C/loadavg_applet.sgml
+share/gnome/help/loadavg_applet/C/stylesheet-images/caution.gif
+share/gnome/help/loadavg_applet/C/stylesheet-images/home.gif
+share/gnome/help/loadavg_applet/C/stylesheet-images/important.gif
+share/gnome/help/loadavg_applet/C/stylesheet-images/next.gif
+share/gnome/help/loadavg_applet/C/stylesheet-images/note.gif
+share/gnome/help/loadavg_applet/C/stylesheet-images/prev.gif
+share/gnome/help/loadavg_applet/C/stylesheet-images/tip.gif
+share/gnome/help/loadavg_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/loadavg_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/loadavg_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/loadavg_applet/C/stylesheet-images/up.gif
+share/gnome/help/loadavg_applet/C/stylesheet-images/warning.gif
+share/gnome/help/loadavg_applet/C/topic.dat
+share/gnome/help/loadavg_applet/it/figures/loadavg-applet-default.png
+share/gnome/help/loadavg_applet/it/figures/loadavg-applet-greyed.png
+share/gnome/help/loadavg_applet/it/figures/loadavg-applet-properties.png
+share/gnome/help/loadavg_applet/it/figures/loadavg-applet.png
 share/gnome/help/loadavg_applet/it/index.html
 share/gnome/help/loadavg_applet/it/ln10.html
-share/gnome/help/loadavg_applet/it/loadavg-applet-default.png
-share/gnome/help/loadavg_applet/it/loadavg-applet-greyed.png
-share/gnome/help/loadavg_applet/it/loadavg-applet-properties.png
-share/gnome/help/loadavg_applet/it/loadavg-applet.png
-share/gnome/help/loadavg_applet/it/stylesheet-images/caution.png
-share/gnome/help/loadavg_applet/it/stylesheet-images/important.png
-share/gnome/help/loadavg_applet/it/stylesheet-images/note.png
-share/gnome/help/loadavg_applet/it/stylesheet-images/tip.png
-share/gnome/help/loadavg_applet/it/stylesheet-images/warning.png
+share/gnome/help/loadavg_applet/it/loadavg.sgml
+share/gnome/help/loadavg_applet/it/loadavg_applet.sgml
+share/gnome/help/loadavg_applet/it/stylesheet-images/caution.gif
+share/gnome/help/loadavg_applet/it/stylesheet-images/home.gif
+share/gnome/help/loadavg_applet/it/stylesheet-images/important.gif
+share/gnome/help/loadavg_applet/it/stylesheet-images/next.gif
+share/gnome/help/loadavg_applet/it/stylesheet-images/note.gif
+share/gnome/help/loadavg_applet/it/stylesheet-images/prev.gif
+share/gnome/help/loadavg_applet/it/stylesheet-images/tip.gif
+share/gnome/help/loadavg_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/loadavg_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/loadavg_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/loadavg_applet/it/stylesheet-images/up.gif
+share/gnome/help/loadavg_applet/it/stylesheet-images/warning.gif
+share/gnome/help/loadavg_applet/it/topic.dat
 share/gnome/help/memload_applet/C/docbook.css
+share/gnome/help/memload_applet/C/figures/memload-applet-default.png
+share/gnome/help/memload_applet/C/figures/memload-applet-greyed.png
+share/gnome/help/memload_applet/C/figures/memload-applet-properties.png
+share/gnome/help/memload_applet/C/figures/memload-applet.png
 share/gnome/help/memload_applet/C/index.html
 share/gnome/help/memload_applet/C/ln7.html
-share/gnome/help/memload_applet/C/memload-applet-default.png
-share/gnome/help/memload_applet/C/memload-applet-greyed.png
-share/gnome/help/memload_applet/C/memload-applet-properties.png
-share/gnome/help/memload_applet/C/memload-applet.png
-share/gnome/help/memload_applet/C/stylesheet-images/caution.png
-share/gnome/help/memload_applet/C/stylesheet-images/important.png
-share/gnome/help/memload_applet/C/stylesheet-images/note.png
-share/gnome/help/memload_applet/C/stylesheet-images/tip.png
-share/gnome/help/memload_applet/C/stylesheet-images/warning.png
-share/gnome/help/memload_applet/it/docbook.css
+share/gnome/help/memload_applet/C/memload.sgml
+share/gnome/help/memload_applet/C/memload_applet.sgml
+share/gnome/help/memload_applet/C/stylesheet-images/caution.gif
+share/gnome/help/memload_applet/C/stylesheet-images/home.gif
+share/gnome/help/memload_applet/C/stylesheet-images/important.gif
+share/gnome/help/memload_applet/C/stylesheet-images/next.gif
+share/gnome/help/memload_applet/C/stylesheet-images/note.gif
+share/gnome/help/memload_applet/C/stylesheet-images/prev.gif
+share/gnome/help/memload_applet/C/stylesheet-images/tip.gif
+share/gnome/help/memload_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/memload_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/memload_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/memload_applet/C/stylesheet-images/up.gif
+share/gnome/help/memload_applet/C/stylesheet-images/warning.gif
+share/gnome/help/memload_applet/C/topic.dat
+share/gnome/help/memload_applet/it/figures/memload-applet-default.png
+share/gnome/help/memload_applet/it/figures/memload-applet-greyed.png
+share/gnome/help/memload_applet/it/figures/memload-applet-properties.png
+share/gnome/help/memload_applet/it/figures/memload-applet.png
 share/gnome/help/memload_applet/it/index.html
 share/gnome/help/memload_applet/it/ln10.html
-share/gnome/help/memload_applet/it/memload-applet-default.png
-share/gnome/help/memload_applet/it/memload-applet-greyed.png
-share/gnome/help/memload_applet/it/memload-applet-properties.png
-share/gnome/help/memload_applet/it/memload-applet.png
-share/gnome/help/memload_applet/it/stylesheet-images/caution.png
-share/gnome/help/memload_applet/it/stylesheet-images/important.png
-share/gnome/help/memload_applet/it/stylesheet-images/note.png
-share/gnome/help/memload_applet/it/stylesheet-images/tip.png
-share/gnome/help/memload_applet/it/stylesheet-images/warning.png
-share/gnome/help/mini-commander_applet/C/docbook.css
+share/gnome/help/memload_applet/it/memload.sgml
+share/gnome/help/memload_applet/it/memload_applet.sgml
+share/gnome/help/memload_applet/it/stylesheet-images/caution.gif
+share/gnome/help/memload_applet/it/stylesheet-images/home.gif
+share/gnome/help/memload_applet/it/stylesheet-images/important.gif
+share/gnome/help/memload_applet/it/stylesheet-images/next.gif
+share/gnome/help/memload_applet/it/stylesheet-images/note.gif
+share/gnome/help/memload_applet/it/stylesheet-images/prev.gif
+share/gnome/help/memload_applet/it/stylesheet-images/tip.gif
+share/gnome/help/memload_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/memload_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/memload_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/memload_applet/it/stylesheet-images/up.gif
+share/gnome/help/memload_applet/it/stylesheet-images/warning.gif
+share/gnome/help/memload_applet/it/topic.dat
+share/gnome/help/mini-commander_applet/C/figures/mini-commander_applet.png
+share/gnome/help/mini-commander_applet/C/figures/mini-commander_settings_general.png
 share/gnome/help/mini-commander_applet/C/index.html
 share/gnome/help/mini-commander_applet/C/ln7.html
-share/gnome/help/mini-commander_applet/C/mini-commander_applet.png
-share/gnome/help/mini-commander_applet/C/mini-commander_settings_general.png
-share/gnome/help/mini-commander_applet/C/stylesheet-images/caution.png
-share/gnome/help/mini-commander_applet/C/stylesheet-images/important.png
-share/gnome/help/mini-commander_applet/C/stylesheet-images/note.png
-share/gnome/help/mini-commander_applet/C/stylesheet-images/tip.png
-share/gnome/help/mini-commander_applet/C/stylesheet-images/warning.png
-share/gnome/help/mini-commander_applet/it/docbook.css
+share/gnome/help/mini-commander_applet/C/mini-commander.sgml
+share/gnome/help/mini-commander_applet/C/mini-commander_applet.sgml
+share/gnome/help/mini-commander_applet/C/stylesheet-images/caution.gif
+share/gnome/help/mini-commander_applet/C/stylesheet-images/home.gif
+share/gnome/help/mini-commander_applet/C/stylesheet-images/important.gif
+share/gnome/help/mini-commander_applet/C/stylesheet-images/next.gif
+share/gnome/help/mini-commander_applet/C/stylesheet-images/note.gif
+share/gnome/help/mini-commander_applet/C/stylesheet-images/prev.gif
+share/gnome/help/mini-commander_applet/C/stylesheet-images/tip.gif
+share/gnome/help/mini-commander_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/mini-commander_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/mini-commander_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/mini-commander_applet/C/stylesheet-images/up.gif
+share/gnome/help/mini-commander_applet/C/stylesheet-images/warning.gif
+share/gnome/help/mini-commander_applet/C/topic.dat
+share/gnome/help/mini-commander_applet/it/figures/mini-commander_applet.png
+share/gnome/help/mini-commander_applet/it/figures/mini-commander_settings_general.png
 share/gnome/help/mini-commander_applet/it/index.html
 share/gnome/help/mini-commander_applet/it/ln10.html
-share/gnome/help/mini-commander_applet/it/mini-commander_applet.png
-share/gnome/help/mini-commander_applet/it/mini-commander_settings_general.png
-share/gnome/help/mini-commander_applet/it/stylesheet-images/caution.png
-share/gnome/help/mini-commander_applet/it/stylesheet-images/important.png
-share/gnome/help/mini-commander_applet/it/stylesheet-images/note.png
-share/gnome/help/mini-commander_applet/it/stylesheet-images/tip.png
-share/gnome/help/mini-commander_applet/it/stylesheet-images/warning.png
-share/gnome/help/mixer_applet/C/docbook.css
+share/gnome/help/mini-commander_applet/it/mini-commander.sgml
+share/gnome/help/mini-commander_applet/it/mini-commander_applet.sgml
+share/gnome/help/mini-commander_applet/it/stylesheet-images/caution.gif
+share/gnome/help/mini-commander_applet/it/stylesheet-images/home.gif
+share/gnome/help/mini-commander_applet/it/stylesheet-images/important.gif
+share/gnome/help/mini-commander_applet/it/stylesheet-images/next.gif
+share/gnome/help/mini-commander_applet/it/stylesheet-images/note.gif
+share/gnome/help/mini-commander_applet/it/stylesheet-images/prev.gif
+share/gnome/help/mini-commander_applet/it/stylesheet-images/tip.gif
+share/gnome/help/mini-commander_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/mini-commander_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/mini-commander_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/mini-commander_applet/it/stylesheet-images/up.gif
+share/gnome/help/mini-commander_applet/it/stylesheet-images/warning.gif
+share/gnome/help/mini-commander_applet/it/topic.dat
+share/gnome/help/mixer_applet/C/figures/mixer_applet.png
 share/gnome/help/mixer_applet/C/index.html
 share/gnome/help/mixer_applet/C/ln7.html
-share/gnome/help/mixer_applet/C/mixer_applet.png
-share/gnome/help/mixer_applet/C/stylesheet-images/caution.png
-share/gnome/help/mixer_applet/C/stylesheet-images/important.png
-share/gnome/help/mixer_applet/C/stylesheet-images/note.png
-share/gnome/help/mixer_applet/C/stylesheet-images/tip.png
-share/gnome/help/mixer_applet/C/stylesheet-images/warning.png
-share/gnome/help/mixer_applet/it/docbook.css
+share/gnome/help/mixer_applet/C/mixer.sgml
+share/gnome/help/mixer_applet/C/mixer_applet.sgml
+share/gnome/help/mixer_applet/C/stylesheet-images/caution.gif
+share/gnome/help/mixer_applet/C/stylesheet-images/home.gif
+share/gnome/help/mixer_applet/C/stylesheet-images/important.gif
+share/gnome/help/mixer_applet/C/stylesheet-images/next.gif
+share/gnome/help/mixer_applet/C/stylesheet-images/note.gif
+share/gnome/help/mixer_applet/C/stylesheet-images/prev.gif
+share/gnome/help/mixer_applet/C/stylesheet-images/tip.gif
+share/gnome/help/mixer_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/mixer_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/mixer_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/mixer_applet/C/stylesheet-images/up.gif
+share/gnome/help/mixer_applet/C/stylesheet-images/warning.gif
+share/gnome/help/mixer_applet/C/topic.dat
+share/gnome/help/mixer_applet/es/docbook.css
+share/gnome/help/mixer_applet/es/index.html
+share/gnome/help/mixer_applet/es/ln10.html
+share/gnome/help/mixer_applet/es/mixer.sgml
+share/gnome/help/mixer_applet/es/mixer_applet.png
+share/gnome/help/mixer_applet/es/mixer_applet.sgml
+share/gnome/help/mixer_applet/es/stylesheet-images/caution.gif
+share/gnome/help/mixer_applet/es/stylesheet-images/caution.png
+share/gnome/help/mixer_applet/es/stylesheet-images/home.gif
+share/gnome/help/mixer_applet/es/stylesheet-images/important.gif
+share/gnome/help/mixer_applet/es/stylesheet-images/important.png
+share/gnome/help/mixer_applet/es/stylesheet-images/next.gif
+share/gnome/help/mixer_applet/es/stylesheet-images/note.gif
+share/gnome/help/mixer_applet/es/stylesheet-images/note.png
+share/gnome/help/mixer_applet/es/stylesheet-images/prev.gif
+share/gnome/help/mixer_applet/es/stylesheet-images/tip.gif
+share/gnome/help/mixer_applet/es/stylesheet-images/tip.png
+share/gnome/help/mixer_applet/es/stylesheet-images/toc-blank.gif
+share/gnome/help/mixer_applet/es/stylesheet-images/toc-minus.gif
+share/gnome/help/mixer_applet/es/stylesheet-images/toc-plus.gif
+share/gnome/help/mixer_applet/es/stylesheet-images/up.gif
+share/gnome/help/mixer_applet/es/stylesheet-images/warning.gif
+share/gnome/help/mixer_applet/es/stylesheet-images/warning.png
+share/gnome/help/mixer_applet/es/topic.dat
 share/gnome/help/mixer_applet/it/index.html
 share/gnome/help/mixer_applet/it/ln10.html
+share/gnome/help/mixer_applet/it/mixer.sgml
 share/gnome/help/mixer_applet/it/mixer_applet.png
+share/gnome/help/mixer_applet/it/mixer_applet.sgml
+share/gnome/help/mixer_applet/it/stylesheet-images/caution.gif
 share/gnome/help/mixer_applet/it/stylesheet-images/caution.png
+share/gnome/help/mixer_applet/it/stylesheet-images/home.gif
+share/gnome/help/mixer_applet/it/stylesheet-images/important.gif
 share/gnome/help/mixer_applet/it/stylesheet-images/important.png
+share/gnome/help/mixer_applet/it/stylesheet-images/next.gif
+share/gnome/help/mixer_applet/it/stylesheet-images/note.gif
 share/gnome/help/mixer_applet/it/stylesheet-images/note.png
+share/gnome/help/mixer_applet/it/stylesheet-images/prev.gif
+share/gnome/help/mixer_applet/it/stylesheet-images/tip.gif
 share/gnome/help/mixer_applet/it/stylesheet-images/tip.png
+share/gnome/help/mixer_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/mixer_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/mixer_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/mixer_applet/it/stylesheet-images/up.gif
+share/gnome/help/mixer_applet/it/stylesheet-images/warning.gif
 share/gnome/help/mixer_applet/it/stylesheet-images/warning.png
-share/gnome/help/modemlights_applet/C/docbook.css
+share/gnome/help/mixer_applet/it/topic.dat
+share/gnome/help/modemlights_applet/C/figures/modemlights-advpref.png
+share/gnome/help/modemlights_applet/C/figures/modemlights-prefs.png
+share/gnome/help/modemlights_applet/C/figures/modemlights.png
 share/gnome/help/modemlights_applet/C/index.html
 share/gnome/help/modemlights_applet/C/ln7.html
-share/gnome/help/modemlights_applet/C/modemlights-advpref.png
-share/gnome/help/modemlights_applet/C/modemlights-prefs.png
-share/gnome/help/modemlights_applet/C/modemlights.png
-share/gnome/help/modemlights_applet/C/stylesheet-images/caution.png
-share/gnome/help/modemlights_applet/C/stylesheet-images/important.png
-share/gnome/help/modemlights_applet/C/stylesheet-images/note.png
-share/gnome/help/modemlights_applet/C/stylesheet-images/tip.png
-share/gnome/help/modemlights_applet/C/stylesheet-images/warning.png
-share/gnome/help/modemlights_applet/it/docbook.css
+share/gnome/help/modemlights_applet/C/modemlights.sgml
+share/gnome/help/modemlights_applet/C/modemlights_applet.sgml
+share/gnome/help/modemlights_applet/C/stylesheet-images/caution.gif
+share/gnome/help/modemlights_applet/C/stylesheet-images/home.gif
+share/gnome/help/modemlights_applet/C/stylesheet-images/important.gif
+share/gnome/help/modemlights_applet/C/stylesheet-images/next.gif
+share/gnome/help/modemlights_applet/C/stylesheet-images/note.gif
+share/gnome/help/modemlights_applet/C/stylesheet-images/prev.gif
+share/gnome/help/modemlights_applet/C/stylesheet-images/tip.gif
+share/gnome/help/modemlights_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/modemlights_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/modemlights_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/modemlights_applet/C/stylesheet-images/up.gif
+share/gnome/help/modemlights_applet/C/stylesheet-images/warning.gif
+share/gnome/help/modemlights_applet/C/topic.dat
+share/gnome/help/modemlights_applet/it/figures/modemlights-advpref.png
+share/gnome/help/modemlights_applet/it/figures/modemlights-prefs.png
+share/gnome/help/modemlights_applet/it/figures/modemlights.png
 share/gnome/help/modemlights_applet/it/index.html
 share/gnome/help/modemlights_applet/it/ln7.html
-share/gnome/help/modemlights_applet/it/modemlights-advpref.png
-share/gnome/help/modemlights_applet/it/modemlights-prefs.png
-share/gnome/help/modemlights_applet/it/modemlights.png
-share/gnome/help/modemlights_applet/it/stylesheet-images/caution.png
-share/gnome/help/modemlights_applet/it/stylesheet-images/important.png
-share/gnome/help/modemlights_applet/it/stylesheet-images/note.png
-share/gnome/help/modemlights_applet/it/stylesheet-images/tip.png
-share/gnome/help/modemlights_applet/it/stylesheet-images/warning.png
-share/gnome/help/netload_applet/C/docbook.css
+share/gnome/help/modemlights_applet/it/modemlights.sgml
+share/gnome/help/modemlights_applet/it/modemlights_applet.sgml
+share/gnome/help/modemlights_applet/it/stylesheet-images/caution.gif
+share/gnome/help/modemlights_applet/it/stylesheet-images/home.gif
+share/gnome/help/modemlights_applet/it/stylesheet-images/important.gif
+share/gnome/help/modemlights_applet/it/stylesheet-images/next.gif
+share/gnome/help/modemlights_applet/it/stylesheet-images/note.gif
+share/gnome/help/modemlights_applet/it/stylesheet-images/prev.gif
+share/gnome/help/modemlights_applet/it/stylesheet-images/tip.gif
+share/gnome/help/modemlights_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/modemlights_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/modemlights_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/modemlights_applet/it/stylesheet-images/up.gif
+share/gnome/help/modemlights_applet/it/stylesheet-images/warning.gif
+share/gnome/help/modemlights_applet/it/topic.dat
+share/gnome/help/netload_applet/C/figures/netload-applet-default.png
+share/gnome/help/netload_applet/C/figures/netload-applet-greyed.png
+share/gnome/help/netload_applet/C/figures/netload-applet-properties.png
+share/gnome/help/netload_applet/C/figures/netload-applet.png
 share/gnome/help/netload_applet/C/index.html
 share/gnome/help/netload_applet/C/ln7.html
-share/gnome/help/netload_applet/C/netload-applet-default.png
-share/gnome/help/netload_applet/C/netload-applet-greyed.png
-share/gnome/help/netload_applet/C/netload-applet-properties.png
-share/gnome/help/netload_applet/C/netload-applet.png
-share/gnome/help/netload_applet/C/stylesheet-images/caution.png
-share/gnome/help/netload_applet/C/stylesheet-images/important.png
-share/gnome/help/netload_applet/C/stylesheet-images/note.png
-share/gnome/help/netload_applet/C/stylesheet-images/tip.png
-share/gnome/help/netload_applet/C/stylesheet-images/warning.png
-share/gnome/help/netload_applet/it/docbook.css
+share/gnome/help/netload_applet/C/netload.sgml
+share/gnome/help/netload_applet/C/netload_applet.sgml
+share/gnome/help/netload_applet/C/stylesheet-images/caution.gif
+share/gnome/help/netload_applet/C/stylesheet-images/home.gif
+share/gnome/help/netload_applet/C/stylesheet-images/important.gif
+share/gnome/help/netload_applet/C/stylesheet-images/next.gif
+share/gnome/help/netload_applet/C/stylesheet-images/note.gif
+share/gnome/help/netload_applet/C/stylesheet-images/prev.gif
+share/gnome/help/netload_applet/C/stylesheet-images/tip.gif
+share/gnome/help/netload_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/netload_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/netload_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/netload_applet/C/stylesheet-images/up.gif
+share/gnome/help/netload_applet/C/stylesheet-images/warning.gif
+share/gnome/help/netload_applet/C/topic.dat
+share/gnome/help/netload_applet/it/figures/netload-applet-default.png
+share/gnome/help/netload_applet/it/figures/netload-applet-greyed.png
+share/gnome/help/netload_applet/it/figures/netload-applet-properties.png
+share/gnome/help/netload_applet/it/figures/netload-applet.png
 share/gnome/help/netload_applet/it/index.html
 share/gnome/help/netload_applet/it/ln7.html
-share/gnome/help/netload_applet/it/netload-applet-default.png
-share/gnome/help/netload_applet/it/netload-applet-greyed.png
-share/gnome/help/netload_applet/it/netload-applet-properties.png
-share/gnome/help/netload_applet/it/netload-applet.png
-share/gnome/help/netload_applet/it/stylesheet-images/caution.png
-share/gnome/help/netload_applet/it/stylesheet-images/important.png
-share/gnome/help/netload_applet/it/stylesheet-images/note.png
-share/gnome/help/netload_applet/it/stylesheet-images/tip.png
-share/gnome/help/netload_applet/it/stylesheet-images/warning.png
-share/gnome/help/odometer_applet/C/docbook.css
+share/gnome/help/netload_applet/it/netload.sgml
+share/gnome/help/netload_applet/it/netload_applet.sgml
+share/gnome/help/netload_applet/it/stylesheet-images/caution.gif
+share/gnome/help/netload_applet/it/stylesheet-images/home.gif
+share/gnome/help/netload_applet/it/stylesheet-images/important.gif
+share/gnome/help/netload_applet/it/stylesheet-images/next.gif
+share/gnome/help/netload_applet/it/stylesheet-images/note.gif
+share/gnome/help/netload_applet/it/stylesheet-images/prev.gif
+share/gnome/help/netload_applet/it/stylesheet-images/tip.gif
+share/gnome/help/netload_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/netload_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/netload_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/netload_applet/it/stylesheet-images/up.gif
+share/gnome/help/netload_applet/it/stylesheet-images/warning.gif
+share/gnome/help/netload_applet/it/topic.dat
+share/gnome/help/odometer_applet/C/figures/odometer_applet.png
+share/gnome/help/odometer_applet/C/figures/odometer_settings.png
+share/gnome/help/odometer_applet/C/figures/odometer_themes.png
 share/gnome/help/odometer_applet/C/index.html
 share/gnome/help/odometer_applet/C/ln7.html
-share/gnome/help/odometer_applet/C/odometer_applet.png
-share/gnome/help/odometer_applet/C/odometer_settings.png
-share/gnome/help/odometer_applet/C/odometer_themes.png
-share/gnome/help/odometer_applet/C/stylesheet-images/caution.png
-share/gnome/help/odometer_applet/C/stylesheet-images/important.png
-share/gnome/help/odometer_applet/C/stylesheet-images/note.png
-share/gnome/help/odometer_applet/C/stylesheet-images/tip.png
-share/gnome/help/odometer_applet/C/stylesheet-images/warning.png
-share/gnome/help/odometer_applet/fr/docbook.css
+share/gnome/help/odometer_applet/C/odometer.sgml
+share/gnome/help/odometer_applet/C/odometer_applet.sgml
+share/gnome/help/odometer_applet/C/stylesheet-images/caution.gif
+share/gnome/help/odometer_applet/C/stylesheet-images/home.gif
+share/gnome/help/odometer_applet/C/stylesheet-images/important.gif
+share/gnome/help/odometer_applet/C/stylesheet-images/next.gif
+share/gnome/help/odometer_applet/C/stylesheet-images/note.gif
+share/gnome/help/odometer_applet/C/stylesheet-images/prev.gif
+share/gnome/help/odometer_applet/C/stylesheet-images/tip.gif
+share/gnome/help/odometer_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/odometer_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/odometer_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/odometer_applet/C/stylesheet-images/up.gif
+share/gnome/help/odometer_applet/C/stylesheet-images/warning.gif
+share/gnome/help/odometer_applet/C/topic.dat
+share/gnome/help/odometer_applet/fr/figures/odometer_applet.png
+share/gnome/help/odometer_applet/fr/figures/odometer_settings.png
+share/gnome/help/odometer_applet/fr/figures/odometer_themes.png
 share/gnome/help/odometer_applet/fr/index.html
 share/gnome/help/odometer_applet/fr/ln10.html
-share/gnome/help/odometer_applet/fr/odometer_applet.png
-share/gnome/help/odometer_applet/fr/odometer_settings.png
-share/gnome/help/odometer_applet/fr/odometer_themes.png
-share/gnome/help/odometer_applet/fr/stylesheet-images/caution.png
-share/gnome/help/odometer_applet/fr/stylesheet-images/important.png
-share/gnome/help/odometer_applet/fr/stylesheet-images/note.png
-share/gnome/help/odometer_applet/fr/stylesheet-images/tip.png
-share/gnome/help/odometer_applet/fr/stylesheet-images/warning.png
-share/gnome/help/odometer_applet/it/docbook.css
+share/gnome/help/odometer_applet/fr/odometer.sgml
+share/gnome/help/odometer_applet/fr/odometer_applet.sgml
+share/gnome/help/odometer_applet/fr/stylesheet-images/caution.gif
+share/gnome/help/odometer_applet/fr/stylesheet-images/home.gif
+share/gnome/help/odometer_applet/fr/stylesheet-images/important.gif
+share/gnome/help/odometer_applet/fr/stylesheet-images/next.gif
+share/gnome/help/odometer_applet/fr/stylesheet-images/note.gif
+share/gnome/help/odometer_applet/fr/stylesheet-images/prev.gif
+share/gnome/help/odometer_applet/fr/stylesheet-images/tip.gif
+share/gnome/help/odometer_applet/fr/stylesheet-images/toc-blank.gif
+share/gnome/help/odometer_applet/fr/stylesheet-images/toc-minus.gif
+share/gnome/help/odometer_applet/fr/stylesheet-images/toc-plus.gif
+share/gnome/help/odometer_applet/fr/stylesheet-images/up.gif
+share/gnome/help/odometer_applet/fr/stylesheet-images/warning.gif
+share/gnome/help/odometer_applet/fr/topic.dat
+share/gnome/help/odometer_applet/it/figures/odometer_applet.png
+share/gnome/help/odometer_applet/it/figures/odometer_settings.png
+share/gnome/help/odometer_applet/it/figures/odometer_themes.png
 share/gnome/help/odometer_applet/it/index.html
 share/gnome/help/odometer_applet/it/ln10.html
-share/gnome/help/odometer_applet/it/odometer_applet.png
-share/gnome/help/odometer_applet/it/odometer_settings.png
-share/gnome/help/odometer_applet/it/odometer_themes.png
-share/gnome/help/odometer_applet/it/stylesheet-images/caution.png
-share/gnome/help/odometer_applet/it/stylesheet-images/important.png
-share/gnome/help/odometer_applet/it/stylesheet-images/note.png
-share/gnome/help/odometer_applet/it/stylesheet-images/tip.png
-share/gnome/help/odometer_applet/it/stylesheet-images/warning.png
-share/gnome/help/quicklaunch_applet/C/docbook.css
+share/gnome/help/odometer_applet/it/odometer.sgml
+share/gnome/help/odometer_applet/it/odometer_applet.sgml
+share/gnome/help/odometer_applet/it/stylesheet-images/caution.gif
+share/gnome/help/odometer_applet/it/stylesheet-images/home.gif
+share/gnome/help/odometer_applet/it/stylesheet-images/important.gif
+share/gnome/help/odometer_applet/it/stylesheet-images/next.gif
+share/gnome/help/odometer_applet/it/stylesheet-images/note.gif
+share/gnome/help/odometer_applet/it/stylesheet-images/prev.gif
+share/gnome/help/odometer_applet/it/stylesheet-images/tip.gif
+share/gnome/help/odometer_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/odometer_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/odometer_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/odometer_applet/it/stylesheet-images/up.gif
+share/gnome/help/odometer_applet/it/stylesheet-images/warning.gif
+share/gnome/help/odometer_applet/it/topic.dat
+share/gnome/help/quicklaunch_applet/C/figures/quicklaunch_applet.png
 share/gnome/help/quicklaunch_applet/C/index.html
 share/gnome/help/quicklaunch_applet/C/ln7.html
-share/gnome/help/quicklaunch_applet/C/quicklaunch_applet.png
-share/gnome/help/quicklaunch_applet/C/stylesheet-images/caution.png
-share/gnome/help/quicklaunch_applet/C/stylesheet-images/important.png
-share/gnome/help/quicklaunch_applet/C/stylesheet-images/note.png
-share/gnome/help/quicklaunch_applet/C/stylesheet-images/tip.png
-share/gnome/help/quicklaunch_applet/C/stylesheet-images/warning.png
-share/gnome/help/quicklaunch_applet/it/docbook.css
+share/gnome/help/quicklaunch_applet/C/quicklaunch.sgml
+share/gnome/help/quicklaunch_applet/C/quicklaunch_applet.sgml
+share/gnome/help/quicklaunch_applet/C/stylesheet-images/caution.gif
+share/gnome/help/quicklaunch_applet/C/stylesheet-images/home.gif
+share/gnome/help/quicklaunch_applet/C/stylesheet-images/important.gif
+share/gnome/help/quicklaunch_applet/C/stylesheet-images/next.gif
+share/gnome/help/quicklaunch_applet/C/stylesheet-images/note.gif
+share/gnome/help/quicklaunch_applet/C/stylesheet-images/prev.gif
+share/gnome/help/quicklaunch_applet/C/stylesheet-images/tip.gif
+share/gnome/help/quicklaunch_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/quicklaunch_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/quicklaunch_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/quicklaunch_applet/C/stylesheet-images/up.gif
+share/gnome/help/quicklaunch_applet/C/stylesheet-images/warning.gif
+share/gnome/help/quicklaunch_applet/C/topic.dat
+share/gnome/help/quicklaunch_applet/it/figures/quicklaunch_applet.png
 share/gnome/help/quicklaunch_applet/it/index.html
 share/gnome/help/quicklaunch_applet/it/ln10.html
-share/gnome/help/quicklaunch_applet/it/quicklaunch_applet.png
-share/gnome/help/quicklaunch_applet/it/stylesheet-images/caution.png
-share/gnome/help/quicklaunch_applet/it/stylesheet-images/important.png
-share/gnome/help/quicklaunch_applet/it/stylesheet-images/note.png
-share/gnome/help/quicklaunch_applet/it/stylesheet-images/tip.png
-share/gnome/help/quicklaunch_applet/it/stylesheet-images/warning.png
-share/gnome/help/sound-monitor_applet/C/docbook.css
+share/gnome/help/quicklaunch_applet/it/quicklaunch.sgml
+share/gnome/help/quicklaunch_applet/it/quicklaunch_applet.sgml
+share/gnome/help/quicklaunch_applet/it/stylesheet-images/caution.gif
+share/gnome/help/quicklaunch_applet/it/stylesheet-images/home.gif
+share/gnome/help/quicklaunch_applet/it/stylesheet-images/important.gif
+share/gnome/help/quicklaunch_applet/it/stylesheet-images/next.gif
+share/gnome/help/quicklaunch_applet/it/stylesheet-images/note.gif
+share/gnome/help/quicklaunch_applet/it/stylesheet-images/prev.gif
+share/gnome/help/quicklaunch_applet/it/stylesheet-images/tip.gif
+share/gnome/help/quicklaunch_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/quicklaunch_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/quicklaunch_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/quicklaunch_applet/it/stylesheet-images/up.gif
+share/gnome/help/quicklaunch_applet/it/stylesheet-images/warning.gif
+share/gnome/help/quicklaunch_applet/it/topic.dat
+share/gnome/help/sound-monitor_applet/C/figures/soundmonitor_applet.png
+share/gnome/help/sound-monitor_applet/C/figures/soundmonitor_applet_settings.png
+share/gnome/help/sound-monitor_applet/C/figures/soundmonitor_applet_themes.png
+share/gnome/help/sound-monitor_applet/C/figures/soundmonitor_manager_server.png
 share/gnome/help/sound-monitor_applet/C/index.html
 share/gnome/help/sound-monitor_applet/C/ln7.html
-share/gnome/help/sound-monitor_applet/C/soundmonitor_applet.png
-share/gnome/help/sound-monitor_applet/C/soundmonitor_applet_settings.png
-share/gnome/help/sound-monitor_applet/C/soundmonitor_applet_themes.png
-share/gnome/help/sound-monitor_applet/C/soundmonitor_manager_server.png
-share/gnome/help/sound-monitor_applet/C/stylesheet-images/caution.png
-share/gnome/help/sound-monitor_applet/C/stylesheet-images/important.png
-share/gnome/help/sound-monitor_applet/C/stylesheet-images/note.png
-share/gnome/help/sound-monitor_applet/C/stylesheet-images/tip.png
-share/gnome/help/sound-monitor_applet/C/stylesheet-images/warning.png
-share/gnome/help/sound-monitor_applet/it/docbook.css
+share/gnome/help/sound-monitor_applet/C/sound-monitor.sgml
+share/gnome/help/sound-monitor_applet/C/sound-monitor_applet.sgml
+share/gnome/help/sound-monitor_applet/C/stylesheet-images/caution.gif
+share/gnome/help/sound-monitor_applet/C/stylesheet-images/home.gif
+share/gnome/help/sound-monitor_applet/C/stylesheet-images/important.gif
+share/gnome/help/sound-monitor_applet/C/stylesheet-images/next.gif
+share/gnome/help/sound-monitor_applet/C/stylesheet-images/note.gif
+share/gnome/help/sound-monitor_applet/C/stylesheet-images/prev.gif
+share/gnome/help/sound-monitor_applet/C/stylesheet-images/tip.gif
+share/gnome/help/sound-monitor_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/sound-monitor_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/sound-monitor_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/sound-monitor_applet/C/stylesheet-images/up.gif
+share/gnome/help/sound-monitor_applet/C/stylesheet-images/warning.gif
+share/gnome/help/sound-monitor_applet/C/topic.dat
+share/gnome/help/sound-monitor_applet/it/figures/soundmonitor_applet.png
+share/gnome/help/sound-monitor_applet/it/figures/soundmonitor_applet_settings.png
+share/gnome/help/sound-monitor_applet/it/figures/soundmonitor_applet_themes.png
+share/gnome/help/sound-monitor_applet/it/figures/soundmonitor_manager_server.png
 share/gnome/help/sound-monitor_applet/it/index.html
 share/gnome/help/sound-monitor_applet/it/ln10.html
-share/gnome/help/sound-monitor_applet/it/soundmonitor_applet.png
-share/gnome/help/sound-monitor_applet/it/soundmonitor_applet_settings.png
-share/gnome/help/sound-monitor_applet/it/soundmonitor_applet_themes.png
-share/gnome/help/sound-monitor_applet/it/soundmonitor_manager_server.png
-share/gnome/help/sound-monitor_applet/it/stylesheet-images/caution.png
-share/gnome/help/sound-monitor_applet/it/stylesheet-images/important.png
-share/gnome/help/sound-monitor_applet/it/stylesheet-images/note.png
-share/gnome/help/sound-monitor_applet/it/stylesheet-images/tip.png
-share/gnome/help/sound-monitor_applet/it/stylesheet-images/warning.png
-share/gnome/help/swapload_applet/C/docbook.css
+share/gnome/help/sound-monitor_applet/it/sound-monitor.sgml
+share/gnome/help/sound-monitor_applet/it/sound-monitor_applet.sgml
+share/gnome/help/sound-monitor_applet/it/stylesheet-images/caution.gif
+share/gnome/help/sound-monitor_applet/it/stylesheet-images/home.gif
+share/gnome/help/sound-monitor_applet/it/stylesheet-images/important.gif
+share/gnome/help/sound-monitor_applet/it/stylesheet-images/next.gif
+share/gnome/help/sound-monitor_applet/it/stylesheet-images/note.gif
+share/gnome/help/sound-monitor_applet/it/stylesheet-images/prev.gif
+share/gnome/help/sound-monitor_applet/it/stylesheet-images/tip.gif
+share/gnome/help/sound-monitor_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/sound-monitor_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/sound-monitor_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/sound-monitor_applet/it/stylesheet-images/up.gif
+share/gnome/help/sound-monitor_applet/it/stylesheet-images/warning.gif
+share/gnome/help/swapload_applet/C/figures/swapload-applet-default.png
+share/gnome/help/swapload_applet/C/figures/swapload-applet-greyed.png
+share/gnome/help/swapload_applet/C/figures/swapload-applet-properties.png
+share/gnome/help/swapload_applet/C/figures/swapload-applet.png
 share/gnome/help/swapload_applet/C/index.html
 share/gnome/help/swapload_applet/C/ln7.html
-share/gnome/help/swapload_applet/C/stylesheet-images/caution.png
-share/gnome/help/swapload_applet/C/stylesheet-images/important.png
-share/gnome/help/swapload_applet/C/stylesheet-images/note.png
-share/gnome/help/swapload_applet/C/stylesheet-images/tip.png
-share/gnome/help/swapload_applet/C/stylesheet-images/warning.png
-share/gnome/help/swapload_applet/C/swapload-applet-default.png
-share/gnome/help/swapload_applet/C/swapload-applet-greyed.png
-share/gnome/help/swapload_applet/C/swapload-applet-properties.png
-share/gnome/help/swapload_applet/C/swapload-applet.png
-share/gnome/help/swapload_applet/it/docbook.css
+share/gnome/help/swapload_applet/C/stylesheet-images/caution.gif
+share/gnome/help/swapload_applet/C/stylesheet-images/home.gif
+share/gnome/help/swapload_applet/C/stylesheet-images/important.gif
+share/gnome/help/swapload_applet/C/stylesheet-images/next.gif
+share/gnome/help/swapload_applet/C/stylesheet-images/note.gif
+share/gnome/help/swapload_applet/C/stylesheet-images/prev.gif
+share/gnome/help/swapload_applet/C/stylesheet-images/tip.gif
+share/gnome/help/swapload_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/swapload_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/swapload_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/swapload_applet/C/stylesheet-images/up.gif
+share/gnome/help/swapload_applet/C/stylesheet-images/warning.gif
+share/gnome/help/swapload_applet/C/swapload.sgml
+share/gnome/help/swapload_applet/C/swapload_applet.sgml
+share/gnome/help/swapload_applet/C/topic.dat
+share/gnome/help/swapload_applet/it/figures/swapload-applet-default.png
+share/gnome/help/swapload_applet/it/figures/swapload-applet-greyed.png
+share/gnome/help/swapload_applet/it/figures/swapload-applet-properties.png
+share/gnome/help/swapload_applet/it/figures/swapload-applet.png
 share/gnome/help/swapload_applet/it/index.html
 share/gnome/help/swapload_applet/it/ln7.html
-share/gnome/help/swapload_applet/it/stylesheet-images/caution.png
-share/gnome/help/swapload_applet/it/stylesheet-images/important.png
-share/gnome/help/swapload_applet/it/stylesheet-images/note.png
-share/gnome/help/swapload_applet/it/stylesheet-images/tip.png
-share/gnome/help/swapload_applet/it/stylesheet-images/warning.png
-share/gnome/help/swapload_applet/it/swapload-applet-default.png
-share/gnome/help/swapload_applet/it/swapload-applet-greyed.png
-share/gnome/help/swapload_applet/it/swapload-applet-properties.png
-share/gnome/help/swapload_applet/it/swapload-applet.png
-share/gnome/help/tickastat_applet/C/docbook.css
+share/gnome/help/swapload_applet/it/stylesheet-images/caution.gif
+share/gnome/help/swapload_applet/it/stylesheet-images/home.gif
+share/gnome/help/swapload_applet/it/stylesheet-images/important.gif
+share/gnome/help/swapload_applet/it/stylesheet-images/next.gif
+share/gnome/help/swapload_applet/it/stylesheet-images/note.gif
+share/gnome/help/swapload_applet/it/stylesheet-images/prev.gif
+share/gnome/help/swapload_applet/it/stylesheet-images/tip.gif
+share/gnome/help/swapload_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/swapload_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/swapload_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/swapload_applet/it/stylesheet-images/up.gif
+share/gnome/help/swapload_applet/it/stylesheet-images/warning.gif
+share/gnome/help/swapload_applet/it/swapload.sgml
+share/gnome/help/swapload_applet/it/swapload_applet.sgml
+share/gnome/help/swapload_applet/it/topic.dat
+share/gnome/help/tickastat_applet/C/figures/tickastat_applet.png
+share/gnome/help/tickastat_applet/C/figures/tickastat_coredump.png
+share/gnome/help/tickastat_applet/C/figures/tickastat_loadaverage.png
+share/gnome/help/tickastat_applet/C/figures/tickastat_settings.png
 share/gnome/help/tickastat_applet/C/index.html
 share/gnome/help/tickastat_applet/C/ln7.html
-share/gnome/help/tickastat_applet/C/stylesheet-images/caution.png
-share/gnome/help/tickastat_applet/C/stylesheet-images/important.png
-share/gnome/help/tickastat_applet/C/stylesheet-images/note.png
-share/gnome/help/tickastat_applet/C/stylesheet-images/tip.png
-share/gnome/help/tickastat_applet/C/stylesheet-images/warning.png
-share/gnome/help/tickastat_applet/C/tickastat_applet.png
-share/gnome/help/tickastat_applet/C/tickastat_coredump.png
-share/gnome/help/tickastat_applet/C/tickastat_loadaverage.png
-share/gnome/help/tickastat_applet/C/tickastat_settings.png
-share/gnome/help/tickastat_applet/it/docbook.css
+share/gnome/help/tickastat_applet/C/stylesheet-images/caution.gif
+share/gnome/help/tickastat_applet/C/stylesheet-images/home.gif
+share/gnome/help/tickastat_applet/C/stylesheet-images/important.gif
+share/gnome/help/tickastat_applet/C/stylesheet-images/next.gif
+share/gnome/help/tickastat_applet/C/stylesheet-images/note.gif
+share/gnome/help/tickastat_applet/C/stylesheet-images/prev.gif
+share/gnome/help/tickastat_applet/C/stylesheet-images/tip.gif
+share/gnome/help/tickastat_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/tickastat_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/tickastat_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/tickastat_applet/C/stylesheet-images/up.gif
+share/gnome/help/tickastat_applet/C/stylesheet-images/warning.gif
+share/gnome/help/tickastat_applet/C/tickastat.sgml
+share/gnome/help/tickastat_applet/C/tickastat_applet.sgml
+share/gnome/help/tickastat_applet/C/topic.dat
+share/gnome/help/tickastat_applet/it/figures/tickastat_applet.png
+share/gnome/help/tickastat_applet/it/figures/tickastat_coredump.png
+share/gnome/help/tickastat_applet/it/figures/tickastat_loadaverage.png
+share/gnome/help/tickastat_applet/it/figures/tickastat_settings.png
 share/gnome/help/tickastat_applet/it/index.html
 share/gnome/help/tickastat_applet/it/ln10.html
-share/gnome/help/tickastat_applet/it/stylesheet-images/caution.png
-share/gnome/help/tickastat_applet/it/stylesheet-images/important.png
-share/gnome/help/tickastat_applet/it/stylesheet-images/note.png
-share/gnome/help/tickastat_applet/it/stylesheet-images/tip.png
-share/gnome/help/tickastat_applet/it/stylesheet-images/warning.png
-share/gnome/help/tickastat_applet/it/tickastat_applet.png
-share/gnome/help/tickastat_applet/it/tickastat_coredump.png
-share/gnome/help/tickastat_applet/it/tickastat_loadaverage.png
-share/gnome/help/tickastat_applet/it/tickastat_settings.png
-share/gnome/help/webcontrol_applet/C/docbook.css
+share/gnome/help/tickastat_applet/it/stylesheet-images/caution.gif
+share/gnome/help/tickastat_applet/it/stylesheet-images/home.gif
+share/gnome/help/tickastat_applet/it/stylesheet-images/important.gif
+share/gnome/help/tickastat_applet/it/stylesheet-images/next.gif
+share/gnome/help/tickastat_applet/it/stylesheet-images/note.gif
+share/gnome/help/tickastat_applet/it/stylesheet-images/prev.gif
+share/gnome/help/tickastat_applet/it/stylesheet-images/tip.gif
+share/gnome/help/tickastat_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/tickastat_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/tickastat_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/tickastat_applet/it/stylesheet-images/up.gif
+share/gnome/help/tickastat_applet/it/stylesheet-images/warning.gif
+share/gnome/help/tickastat_applet/it/tickastat.sgml
+share/gnome/help/tickastat_applet/it/tickastat_applet.sgml
+share/gnome/help/tickastat_applet/it/topic.dat
+share/gnome/help/webcontrol_applet/C/figures/webcontrol-applet-prefs.png
+share/gnome/help/webcontrol_applet/C/figures/webcontrol-applet.png
 share/gnome/help/webcontrol_applet/C/index.html
 share/gnome/help/webcontrol_applet/C/ln7.html
-share/gnome/help/webcontrol_applet/C/stylesheet-images/caution.png
-share/gnome/help/webcontrol_applet/C/stylesheet-images/important.png
-share/gnome/help/webcontrol_applet/C/stylesheet-images/note.png
-share/gnome/help/webcontrol_applet/C/stylesheet-images/tip.png
-share/gnome/help/webcontrol_applet/C/stylesheet-images/warning.png
-share/gnome/help/webcontrol_applet/C/webcontrol-applet-prefs.png
-share/gnome/help/webcontrol_applet/C/webcontrol-applet.png
-share/gnome/help/webcontrol_applet/it/docbook.css
+share/gnome/help/webcontrol_applet/C/stylesheet-images/caution.gif
+share/gnome/help/webcontrol_applet/C/stylesheet-images/home.gif
+share/gnome/help/webcontrol_applet/C/stylesheet-images/important.gif
+share/gnome/help/webcontrol_applet/C/stylesheet-images/next.gif
+share/gnome/help/webcontrol_applet/C/stylesheet-images/note.gif
+share/gnome/help/webcontrol_applet/C/stylesheet-images/prev.gif
+share/gnome/help/webcontrol_applet/C/stylesheet-images/tip.gif
+share/gnome/help/webcontrol_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/webcontrol_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/webcontrol_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/webcontrol_applet/C/stylesheet-images/up.gif
+share/gnome/help/webcontrol_applet/C/stylesheet-images/warning.gif
+share/gnome/help/webcontrol_applet/C/topic.dat
+share/gnome/help/webcontrol_applet/C/webcontrol.sgml
+share/gnome/help/webcontrol_applet/C/webcontrol_applet.sgml
+share/gnome/help/webcontrol_applet/it/figures/webcontrol-applet-prefs.png
+share/gnome/help/webcontrol_applet/it/figures/webcontrol-applet.png
 share/gnome/help/webcontrol_applet/it/index.html
 share/gnome/help/webcontrol_applet/it/ln7.html
-share/gnome/help/webcontrol_applet/it/stylesheet-images/caution.png
-share/gnome/help/webcontrol_applet/it/stylesheet-images/important.png
-share/gnome/help/webcontrol_applet/it/stylesheet-images/note.png
-share/gnome/help/webcontrol_applet/it/stylesheet-images/tip.png
-share/gnome/help/webcontrol_applet/it/stylesheet-images/warning.png
-share/gnome/help/webcontrol_applet/it/webcontrol-applet-prefs.png
-share/gnome/help/webcontrol_applet/it/webcontrol-applet.png
-share/gnome/help/whereami_applet/C/docbook.css
+share/gnome/help/webcontrol_applet/it/stylesheet-images/caution.gif
+share/gnome/help/webcontrol_applet/it/stylesheet-images/home.gif
+share/gnome/help/webcontrol_applet/it/stylesheet-images/important.gif
+share/gnome/help/webcontrol_applet/it/stylesheet-images/next.gif
+share/gnome/help/webcontrol_applet/it/stylesheet-images/note.gif
+share/gnome/help/webcontrol_applet/it/stylesheet-images/prev.gif
+share/gnome/help/webcontrol_applet/it/stylesheet-images/tip.gif
+share/gnome/help/webcontrol_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/webcontrol_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/webcontrol_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/webcontrol_applet/it/stylesheet-images/up.gif
+share/gnome/help/webcontrol_applet/it/stylesheet-images/warning.gif
+share/gnome/help/webcontrol_applet/it/topic.dat
+share/gnome/help/webcontrol_applet/it/webcontrol.sgml
+share/gnome/help/webcontrol_applet/it/webcontrol_applet.sgml
+share/gnome/help/whereami_applet/C/figures/whereami_applet.png
 share/gnome/help/whereami_applet/C/index.html
 share/gnome/help/whereami_applet/C/ln7.html
-share/gnome/help/whereami_applet/C/stylesheet-images/caution.png
-share/gnome/help/whereami_applet/C/stylesheet-images/important.png
-share/gnome/help/whereami_applet/C/stylesheet-images/note.png
-share/gnome/help/whereami_applet/C/stylesheet-images/tip.png
-share/gnome/help/whereami_applet/C/stylesheet-images/warning.png
-share/gnome/help/whereami_applet/C/whereami_applet.png
-share/gnome/help/whereami_applet/it/docbook.css
+share/gnome/help/whereami_applet/C/stylesheet-images/caution.gif
+share/gnome/help/whereami_applet/C/stylesheet-images/home.gif
+share/gnome/help/whereami_applet/C/stylesheet-images/important.gif
+share/gnome/help/whereami_applet/C/stylesheet-images/next.gif
+share/gnome/help/whereami_applet/C/stylesheet-images/note.gif
+share/gnome/help/whereami_applet/C/stylesheet-images/prev.gif
+share/gnome/help/whereami_applet/C/stylesheet-images/tip.gif
+share/gnome/help/whereami_applet/C/stylesheet-images/toc-blank.gif
+share/gnome/help/whereami_applet/C/stylesheet-images/toc-minus.gif
+share/gnome/help/whereami_applet/C/stylesheet-images/toc-plus.gif
+share/gnome/help/whereami_applet/C/stylesheet-images/up.gif
+share/gnome/help/whereami_applet/C/stylesheet-images/warning.gif
+share/gnome/help/whereami_applet/C/topic.dat
+share/gnome/help/whereami_applet/C/whereami.sgml
+share/gnome/help/whereami_applet/C/whereami_applet.sgml
+share/gnome/help/whereami_applet/it/figures/whereami_applet.png
 share/gnome/help/whereami_applet/it/index.html
 share/gnome/help/whereami_applet/it/ln10.html
-share/gnome/help/whereami_applet/it/stylesheet-images/caution.png
-share/gnome/help/whereami_applet/it/stylesheet-images/important.png
-share/gnome/help/whereami_applet/it/stylesheet-images/note.png
-share/gnome/help/whereami_applet/it/stylesheet-images/tip.png
-share/gnome/help/whereami_applet/it/stylesheet-images/warning.png
-share/gnome/help/whereami_applet/it/whereami_applet.png
+share/gnome/help/whereami_applet/it/stylesheet-images/caution.gif
+share/gnome/help/whereami_applet/it/stylesheet-images/home.gif
+share/gnome/help/whereami_applet/it/stylesheet-images/important.gif
+share/gnome/help/whereami_applet/it/stylesheet-images/next.gif
+share/gnome/help/whereami_applet/it/stylesheet-images/note.gif
+share/gnome/help/whereami_applet/it/stylesheet-images/prev.gif
+share/gnome/help/whereami_applet/it/stylesheet-images/tip.gif
+share/gnome/help/whereami_applet/it/stylesheet-images/toc-blank.gif
+share/gnome/help/whereami_applet/it/stylesheet-images/toc-minus.gif
+share/gnome/help/whereami_applet/it/stylesheet-images/toc-plus.gif
+share/gnome/help/whereami_applet/it/stylesheet-images/up.gif
+share/gnome/help/whereami_applet/it/stylesheet-images/warning.gif
+share/gnome/help/whereami_applet/it/topic.dat
+share/gnome/help/whereami_applet/it/whereami.sgml
+share/gnome/help/whereami_applet/it/whereami_applet.sgml
 share/gnome/odometer/57chevy/57chevy-small-black.png
 share/gnome/odometer/57chevy/57chevy-small-red.png
 share/gnome/odometer/57chevy/themedata
@@ -913,6 +1835,74 @@ share/gnome/odometer/o/o-red.png
 share/gnome/odometer/o/themedata
 share/gnome/odometer/smplst/smplst.png
 share/gnome/odometer/smplst/themedata
+share/gnome/omf/gnome-applets/anotherclock_applet-C.omf
+share/gnome/omf/gnome-applets/anotherclock_applet-it.omf
+share/gnome/omf/gnome-applets/anotherclock_applet-uk.omf
+share/gnome/omf/gnome-applets/asclock_applet-C.omf
+share/gnome/omf/gnome-applets/asclock_applet-it.omf
+share/gnome/omf/gnome-applets/asclock_applet-ja.omf
+share/gnome/omf/gnome-applets/battery_applet-C.omf
+share/gnome/omf/gnome-applets/battery_applet-it.omf
+share/gnome/omf/gnome-applets/battery_applet-ja.omf
+share/gnome/omf/gnome-applets/cdplayer_applet-C.omf
+share/gnome/omf/gnome-applets/cdplayer_applet-it.omf
+share/gnome/omf/gnome-applets/cdplayer_applet-ja.omf
+share/gnome/omf/gnome-applets/charpick_applet-C.omf
+share/gnome/omf/gnome-applets/charpick_applet-it.omf
+share/gnome/omf/gnome-applets/charpick_applet-ja.omf
+share/gnome/omf/gnome-applets/clockmail_applet-C.omf
+share/gnome/omf/gnome-applets/clockmail_applet-it.omf
+share/gnome/omf/gnome-applets/clockmail_applet-ja.omf
+share/gnome/omf/gnome-applets/cpuload_applet-C.omf
+share/gnome/omf/gnome-applets/cpuload_applet-it.omf
+share/gnome/omf/gnome-applets/cpumemusage_applet-C.omf
+share/gnome/omf/gnome-applets/cpumemusage_applet-ja.omf
+share/gnome/omf/gnome-applets/diskusage_applet-C.omf
+share/gnome/omf/gnome-applets/diskusage_applet-it.omf
+share/gnome/omf/gnome-applets/diskusage_applet-ja.omf
+share/gnome/omf/gnome-applets/drivemount_applet-C.omf
+share/gnome/omf/gnome-applets/drivemount_applet-it.omf
+share/gnome/omf/gnome-applets/drivemount_applet-ja.omf
+share/gnome/omf/gnome-applets/fifteen_applet-C.omf
+share/gnome/omf/gnome-applets/fifteen_applet-it.omf
+share/gnome/omf/gnome-applets/geyes_applet-C.omf
+share/gnome/omf/gnome-applets/geyes_applet-it.omf
+share/gnome/omf/gnome-applets/gkb_applet-C.omf
+share/gnome/omf/gnome-applets/gkb_applet-hu.omf
+share/gnome/omf/gnome-applets/gnotes_applet-C.omf
+share/gnome/omf/gnome-applets/gnotes_applet-it.omf
+share/gnome/omf/gnome-applets/gweather_applet-C.omf
+share/gnome/omf/gnome-applets/gweather_applet-it.omf
+share/gnome/omf/gnome-applets/jbc_applet-C.omf
+share/gnome/omf/gnome-applets/jbc_applet-it.omf
+share/gnome/omf/gnome-applets/life_applet-C.omf
+share/gnome/omf/gnome-applets/life_applet-it.omf
+share/gnome/omf/gnome-applets/loadavg_applet-C.omf
+share/gnome/omf/gnome-applets/loadavg_applet-it.omf
+share/gnome/omf/gnome-applets/memload_applet-C.omf
+share/gnome/omf/gnome-applets/memload_applet-it.omf
+share/gnome/omf/gnome-applets/mini-commander_applet-C.omf
+share/gnome/omf/gnome-applets/mini-commander_applet-it.omf
+share/gnome/omf/gnome-applets/mixer_applet-C.omf
+share/gnome/omf/gnome-applets/modemlights_applet-C.omf
+share/gnome/omf/gnome-applets/modemlights_applet-it.omf
+share/gnome/omf/gnome-applets/netload_applet-C.omf
+share/gnome/omf/gnome-applets/netload_applet-it.omf
+share/gnome/omf/gnome-applets/odometer_applet-C.omf
+share/gnome/omf/gnome-applets/odometer_applet-fr.omf
+share/gnome/omf/gnome-applets/odometer_applet-it.omf
+share/gnome/omf/gnome-applets/quicklaunch_applet-C.omf
+share/gnome/omf/gnome-applets/quicklaunch_applet-it.omf
+share/gnome/omf/gnome-applets/sound-monitor_applet-C.omf
+share/gnome/omf/gnome-applets/sound-monitor_applet-it.omf
+share/gnome/omf/gnome-applets/swapload_applet-C.omf
+share/gnome/omf/gnome-applets/swapload_applet-it.omf
+share/gnome/omf/gnome-applets/tickastat_applet-C.omf
+share/gnome/omf/gnome-applets/tickastat_applet-it.omf
+share/gnome/omf/gnome-applets/webcontrol_applet-C.omf
+share/gnome/omf/gnome-applets/webcontrol_applet-it.omf
+share/gnome/omf/gnome-applets/whereami_applet-C.omf
+share/gnome/omf/gnome-applets/whereami_applet-it.omf
 share/gnome/pixmaps/another_clock.xpm
 share/gnome/pixmaps/charpick.png
 share/gnome/pixmaps/gkb-icon.png
@@ -923,26 +1913,33 @@ share/gnome/pixmaps/gkb/bg.png
 share/gnome/pixmaps/gkb/br.png
 share/gnome/pixmaps/gkb/ca.png
 share/gnome/pixmaps/gkb/ch.png
+share/gnome/pixmaps/gkb/cu.png
 share/gnome/pixmaps/gkb/cz.png
 share/gnome/pixmaps/gkb/de.png
 share/gnome/pixmaps/gkb/dk.png
 share/gnome/pixmaps/gkb/ee.png
 share/gnome/pixmaps/gkb/es.png
+share/gnome/pixmaps/gkb/eu.png
 share/gnome/pixmaps/gkb/fi.png
 share/gnome/pixmaps/gkb/fr.png
 share/gnome/pixmaps/gkb/gb.png
+share/gnome/pixmaps/gkb/gkb-foot.png
 share/gnome/pixmaps/gkb/gr.png
+share/gnome/pixmaps/gkb/hr.png
 share/gnome/pixmaps/gkb/hu.png
 share/gnome/pixmaps/gkb/il.png
 share/gnome/pixmaps/gkb/is.png
 share/gnome/pixmaps/gkb/it.png
 share/gnome/pixmaps/gkb/jp.png
+share/gnome/pixmaps/gkb/lt.png
+share/gnome/pixmaps/gkb/mk.png
 share/gnome/pixmaps/gkb/mx.png
 share/gnome/pixmaps/gkb/nl.png
 share/gnome/pixmaps/gkb/no.png
 share/gnome/pixmaps/gkb/pl.png
 share/gnome/pixmaps/gkb/pt.png
 share/gnome/pixmaps/gkb/qc.png
+share/gnome/pixmaps/gkb/ro.png
 share/gnome/pixmaps/gkb/ru.png
 share/gnome/pixmaps/gkb/se.png
 share/gnome/pixmaps/gkb/si.png
@@ -1015,6 +2012,17 @@ share/gnome/sound-monitor/radar-green/scope.png
 share/gnome/sound-monitor/radar-green/scope_tiny_h.png
 share/gnome/sound-monitor/radar-green/scope_tiny_v.png
 share/gnome/sound-monitor/radar-green/themedata
+share/gnome/sound-monitor/scope-clear/back.png
+share/gnome/sound-monitor/scope-clear/back_small_h.png
+share/gnome/sound-monitor/scope-clear/back_small_v.png
+share/gnome/sound-monitor/scope-clear/back_tiny_h.png
+share/gnome/sound-monitor/scope-clear/back_tiny_v.png
+share/gnome/sound-monitor/scope-clear/scope.png
+share/gnome/sound-monitor/scope-clear/scope_small_h.png
+share/gnome/sound-monitor/scope-clear/scope_small_v.png
+share/gnome/sound-monitor/scope-clear/scope_tiny_h.png
+share/gnome/sound-monitor/scope-clear/scope_tiny_v.png
+share/gnome/sound-monitor/scope-clear/themedata
 share/gnome/sound-monitor/scope-larger/back_h.png
 share/gnome/sound-monitor/scope-larger/back_tiny_h.png
 share/gnome/sound-monitor/scope-larger/back_tiny_v.png
@@ -1047,6 +2055,7 @@ share/gnome/xmodmap/xmodmap.ch_de
 share/gnome/xmodmap/xmodmap.ch_fr
 share/gnome/xmodmap/xmodmap.cz
 share/gnome/xmodmap/xmodmap.de
+share/gnome/xmodmap/xmodmap.de-apple
 share/gnome/xmodmap/xmodmap.dk
 share/gnome/xmodmap/xmodmap.dvorak
 share/gnome/xmodmap/xmodmap.ee
@@ -1054,20 +2063,30 @@ share/gnome/xmodmap/xmodmap.es
 share/gnome/xmodmap/xmodmap.fi
 share/gnome/xmodmap/xmodmap.fr
 share/gnome/xmodmap/xmodmap.fr-2
+share/gnome/xmodmap/xmodmap.gb
+share/gnome/xmodmap/xmodmap.gb-102
+share/gnome/xmodmap/xmodmap.gb-105
 share/gnome/xmodmap/xmodmap.ge_la
 share/gnome/xmodmap/xmodmap.ge_ru
 share/gnome/xmodmap/xmodmap.gr
 share/gnome/xmodmap/xmodmap.hu
+share/gnome/xmodmap/xmodmap.hu-101-lat1
+share/gnome/xmodmap/xmodmap.hu-101-lat2
+share/gnome/xmodmap/xmodmap.hu-ibm
+share/gnome/xmodmap/xmodmap.hu-lat1
+share/gnome/xmodmap/xmodmap.hu-sun-lat2
 share/gnome/xmodmap/xmodmap.hu.old
 share/gnome/xmodmap/xmodmap.hu_latin1
 share/gnome/xmodmap/xmodmap.il
 share/gnome/xmodmap/xmodmap.il_phonetic
 share/gnome/xmodmap/xmodmap.is
 share/gnome/xmodmap/xmodmap.it
+share/gnome/xmodmap/xmodmap.jp
 share/gnome/xmodmap/xmodmap.la
 share/gnome/xmodmap/xmodmap.lt
 share/gnome/xmodmap/xmodmap.lt_b
 share/gnome/xmodmap/xmodmap.lt_p
+share/gnome/xmodmap/xmodmap.mk
 share/gnome/xmodmap/xmodmap.nl
 share/gnome/xmodmap/xmodmap.no
 share/gnome/xmodmap/xmodmap.pl
@@ -1076,6 +2095,7 @@ share/gnome/xmodmap/xmodmap.pt
 share/gnome/xmodmap/xmodmap.pt-dead
 share/gnome/xmodmap/xmodmap.qc
 share/gnome/xmodmap/xmodmap.qc-2
+share/gnome/xmodmap/xmodmap.ro
 share/gnome/xmodmap/xmodmap.ru
 share/gnome/xmodmap/xmodmap.ru_yawerty
 share/gnome/xmodmap/xmodmap.se
@@ -1084,13 +2104,23 @@ share/gnome/xmodmap/xmodmap.sg
 share/gnome/xmodmap/xmodmap.si
 share/gnome/xmodmap/xmodmap.sk
 share/gnome/xmodmap/xmodmap.th
+share/gnome/xmodmap/xmodmap.th2
 share/gnome/xmodmap/xmodmap.tr_f
 share/gnome/xmodmap/xmodmap.tr_q
 share/gnome/xmodmap/xmodmap.uk
 share/gnome/xmodmap/xmodmap.us
+share/gnome/xmodmap/xmodmap.us-101
+share/gnome/xmodmap/xmodmap.us-84
+share/gnome/xmodmap/xmodmap.us-dec
+share/gnome/xmodmap/xmodmap.us-ibm
+share/gnome/xmodmap/xmodmap.us-int
+share/gnome/xmodmap/xmodmap.us-mac
+share/gnome/xmodmap/xmodmap.us-sgi-101
+share/gnome/xmodmap/xmodmap.us-sun
 share/gnome/xmodmap/xmodmap.us.old
 share/gnome/xmodmap/xmodmap.us_intl
 share/gnome/xmodmap/xmodmap.yu
+share/locale/az/LC_MESSAGES/gnome-applets.mo
 share/locale/ca/LC_MESSAGES/gnome-applets.mo
 share/locale/cs/LC_MESSAGES/gnome-applets.mo
 share/locale/da/LC_MESSAGES/gnome-applets.mo
@@ -1113,21 +2143,23 @@ share/locale/nl/LC_MESSAGES/gnome-applets.mo
 share/locale/no/LC_MESSAGES/gnome-applets.mo
 share/locale/pl/LC_MESSAGES/gnome-applets.mo
 share/locale/pt/LC_MESSAGES/gnome-applets.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-applets.mo
 share/locale/ro/LC_MESSAGES/gnome-applets.mo
 share/locale/ru/LC_MESSAGES/gnome-applets.mo
 share/locale/sk/LC_MESSAGES/gnome-applets.mo
 share/locale/sl/LC_MESSAGES/gnome-applets.mo
 share/locale/sv/LC_MESSAGES/gnome-applets.mo
-share/locale/ta/LC_MESSAGES/gnome-applets.mo
 share/locale/tr/LC_MESSAGES/gnome-applets.mo
 share/locale/uk/LC_MESSAGES/gnome-applets.mo
 share/locale/wa/LC_MESSAGES/gnome-applets.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-applets.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gnome-applets.mo
 @dirrm share/gnome/xmodmap
 @dirrm share/gnome/tickastat/news
 @dirrm share/gnome/tickastat
 @dirrm share/gnome/sound-monitor/scope-round
 @dirrm share/gnome/sound-monitor/scope-larger
+@dirrm share/gnome/sound-monitor/scope-clear
 @dirrm share/gnome/sound-monitor/scope
 @dirrm share/gnome/sound-monitor/radar-green
 @dirrm share/gnome/sound-monitor/radar-blue
@@ -1140,6 +2172,7 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-applets.mo
 @dirrm share/gnome/pixmaps/mini-commander
 @dirrm share/gnome/pixmaps/gweather
 @dirrm share/gnome/pixmaps/gkb
+@dirrm share/gnome/omf/gnome-applets
 @dirrm share/gnome/odometer/smplst
 @dirrm share/gnome/odometer/o
 @dirrm share/gnome/odometer/default
@@ -1148,160 +2181,250 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-applets.mo
 @dirrm share/gnome/odometer/57chevy
 @dirrm share/gnome/odometer
 @dirrm share/gnome/help/whereami_applet/it/stylesheet-images
+@dirrm share/gnome/help/whereami_applet/it/figures
 @dirrm share/gnome/help/whereami_applet/it
 @dirrm share/gnome/help/whereami_applet/C/stylesheet-images
+@dirrm share/gnome/help/whereami_applet/C/figures
 @dirrm share/gnome/help/whereami_applet/C
 @dirrm share/gnome/help/whereami_applet
 @dirrm share/gnome/help/webcontrol_applet/it/stylesheet-images
+@dirrm share/gnome/help/webcontrol_applet/it/figures
 @dirrm share/gnome/help/webcontrol_applet/it
 @dirrm share/gnome/help/webcontrol_applet/C/stylesheet-images
+@dirrm share/gnome/help/webcontrol_applet/C/figures
 @dirrm share/gnome/help/webcontrol_applet/C
 @dirrm share/gnome/help/webcontrol_applet
 @dirrm share/gnome/help/tickastat_applet/it/stylesheet-images
+@dirrm share/gnome/help/tickastat_applet/it/figures
 @dirrm share/gnome/help/tickastat_applet/it
 @dirrm share/gnome/help/tickastat_applet/C/stylesheet-images
+@dirrm share/gnome/help/tickastat_applet/C/figures
 @dirrm share/gnome/help/tickastat_applet/C
 @dirrm share/gnome/help/tickastat_applet
 @dirrm share/gnome/help/swapload_applet/it/stylesheet-images
+@dirrm share/gnome/help/swapload_applet/it/figures
 @dirrm share/gnome/help/swapload_applet/it
 @dirrm share/gnome/help/swapload_applet/C/stylesheet-images
+@dirrm share/gnome/help/swapload_applet/C/figures
 @dirrm share/gnome/help/swapload_applet/C
 @dirrm share/gnome/help/swapload_applet
 @dirrm share/gnome/help/sound-monitor_applet/it/stylesheet-images
+@dirrm share/gnome/help/sound-monitor_applet/it/figures
 @dirrm share/gnome/help/sound-monitor_applet/it
 @dirrm share/gnome/help/sound-monitor_applet/C/stylesheet-images
+@dirrm share/gnome/help/sound-monitor_applet/C/figures
 @dirrm share/gnome/help/sound-monitor_applet/C
 @dirrm share/gnome/help/sound-monitor_applet
 @dirrm share/gnome/help/quicklaunch_applet/it/stylesheet-images
+@dirrm share/gnome/help/quicklaunch_applet/it/figures
 @dirrm share/gnome/help/quicklaunch_applet/it
 @dirrm share/gnome/help/quicklaunch_applet/C/stylesheet-images
+@dirrm share/gnome/help/quicklaunch_applet/C/figures
 @dirrm share/gnome/help/quicklaunch_applet/C
 @dirrm share/gnome/help/quicklaunch_applet
 @dirrm share/gnome/help/odometer_applet/it/stylesheet-images
+@dirrm share/gnome/help/odometer_applet/it/figures
 @dirrm share/gnome/help/odometer_applet/it
 @dirrm share/gnome/help/odometer_applet/fr/stylesheet-images
+@dirrm share/gnome/help/odometer_applet/fr/figures
 @dirrm share/gnome/help/odometer_applet/fr
 @dirrm share/gnome/help/odometer_applet/C/stylesheet-images
+@dirrm share/gnome/help/odometer_applet/C/figures
 @dirrm share/gnome/help/odometer_applet/C
 @dirrm share/gnome/help/odometer_applet
 @dirrm share/gnome/help/netload_applet/it/stylesheet-images
+@dirrm share/gnome/help/netload_applet/it/figures
 @dirrm share/gnome/help/netload_applet/it
 @dirrm share/gnome/help/netload_applet/C/stylesheet-images
+@dirrm share/gnome/help/netload_applet/C/figures
 @dirrm share/gnome/help/netload_applet/C
 @dirrm share/gnome/help/netload_applet
 @dirrm share/gnome/help/modemlights_applet/it/stylesheet-images
+@dirrm share/gnome/help/modemlights_applet/it/figures
 @dirrm share/gnome/help/modemlights_applet/it
 @dirrm share/gnome/help/modemlights_applet/C/stylesheet-images
+@dirrm share/gnome/help/modemlights_applet/C/figures
 @dirrm share/gnome/help/modemlights_applet/C
 @dirrm share/gnome/help/modemlights_applet
 @dirrm share/gnome/help/mixer_applet/it/stylesheet-images
 @dirrm share/gnome/help/mixer_applet/it
+@dirrm share/gnome/help/mixer_applet/es/stylesheet-images
+@dirrm share/gnome/help/mixer_applet/es
 @dirrm share/gnome/help/mixer_applet/C/stylesheet-images
+@dirrm share/gnome/help/mixer_applet/C/figures
 @dirrm share/gnome/help/mixer_applet/C
 @dirrm share/gnome/help/mixer_applet
 @dirrm share/gnome/help/mini-commander_applet/it/stylesheet-images
+@dirrm share/gnome/help/mini-commander_applet/it/figures
 @dirrm share/gnome/help/mini-commander_applet/it
 @dirrm share/gnome/help/mini-commander_applet/C/stylesheet-images
+@dirrm share/gnome/help/mini-commander_applet/C/figures
 @dirrm share/gnome/help/mini-commander_applet/C
 @dirrm share/gnome/help/mini-commander_applet
 @dirrm share/gnome/help/memload_applet/it/stylesheet-images
+@dirrm share/gnome/help/memload_applet/it/figures
 @dirrm share/gnome/help/memload_applet/it
 @dirrm share/gnome/help/memload_applet/C/stylesheet-images
+@dirrm share/gnome/help/memload_applet/C/figures
 @dirrm share/gnome/help/memload_applet/C
 @dirrm share/gnome/help/memload_applet
 @dirrm share/gnome/help/loadavg_applet/it/stylesheet-images
+@dirrm share/gnome/help/loadavg_applet/it/figures
 @dirrm share/gnome/help/loadavg_applet/it
 @dirrm share/gnome/help/loadavg_applet/C/stylesheet-images
+@dirrm share/gnome/help/loadavg_applet/C/figures
 @dirrm share/gnome/help/loadavg_applet/C
 @dirrm share/gnome/help/loadavg_applet
 @dirrm share/gnome/help/life_applet/it/stylesheet-images
+@dirrm share/gnome/help/life_applet/it/figures
 @dirrm share/gnome/help/life_applet/it
 @dirrm share/gnome/help/life_applet/C/stylesheet-images
+@dirrm share/gnome/help/life_applet/C/figures
 @dirrm share/gnome/help/life_applet/C
 @dirrm share/gnome/help/life_applet
 @dirrm share/gnome/help/jbc_applet/it/stylesheet-images
+@dirrm share/gnome/help/jbc_applet/it/figures
 @dirrm share/gnome/help/jbc_applet/it
 @dirrm share/gnome/help/jbc_applet/C/stylesheet-images
+@dirrm share/gnome/help/jbc_applet/C/figures
 @dirrm share/gnome/help/jbc_applet/C
 @dirrm share/gnome/help/jbc_applet
 @dirrm share/gnome/help/gweather_applet/it/stylesheet-images
+@dirrm share/gnome/help/gweather_applet/it/figures
 @dirrm share/gnome/help/gweather_applet/it
 @dirrm share/gnome/help/gweather_applet/C/stylesheet-images
+@dirrm share/gnome/help/gweather_applet/C/figures
 @dirrm share/gnome/help/gweather_applet/C
 @dirrm share/gnome/help/gweather_applet
 @dirrm share/gnome/help/gnotes_applet/it/stylesheet-images
+@dirrm share/gnome/help/gnotes_applet/it/figures
 @dirrm share/gnome/help/gnotes_applet/it
 @dirrm share/gnome/help/gnotes_applet/C/stylesheet-images
+@dirrm share/gnome/help/gnotes_applet/C/figures
 @dirrm share/gnome/help/gnotes_applet/C
 @dirrm share/gnome/help/gnotes_applet
 @dirrm share/gnome/help/gkb_applet/it/stylesheet-images
 @dirrm share/gnome/help/gkb_applet/it
 @dirrm share/gnome/help/gkb_applet/hu/stylesheet-images
+@dirrm share/gnome/help/gkb_applet/hu/figures
 @dirrm share/gnome/help/gkb_applet/hu
 @dirrm share/gnome/help/gkb_applet/C/stylesheet-images
+@dirrm share/gnome/help/gkb_applet/C/figures
 @dirrm share/gnome/help/gkb_applet/C
 @dirrm share/gnome/help/gkb_applet
 @dirrm share/gnome/help/geyes_applet/it/stylesheet-images
+@dirrm share/gnome/help/geyes_applet/it/figures
 @dirrm share/gnome/help/geyes_applet/it
 @dirrm share/gnome/help/geyes_applet/C/stylesheet-images
+@dirrm share/gnome/help/geyes_applet/C/figures
 @dirrm share/gnome/help/geyes_applet/C
 @dirrm share/gnome/help/geyes_applet
 @dirrm share/gnome/help/fifteen_applet/it/stylesheet-images
+@dirrm share/gnome/help/fifteen_applet/it/figures
 @dirrm share/gnome/help/fifteen_applet/it
 @dirrm share/gnome/help/fifteen_applet/C/stylesheet-images
+@dirrm share/gnome/help/fifteen_applet/C/figures
 @dirrm share/gnome/help/fifteen_applet/C
 @dirrm share/gnome/help/fifteen_applet
+@dirrm share/gnome/help/drivemount_applet/ja/stylesheet-images
+@dirrm share/gnome/help/drivemount_applet/ja/figures
+@dirrm share/gnome/help/drivemount_applet/ja
 @dirrm share/gnome/help/drivemount_applet/it/stylesheet-images
+@dirrm share/gnome/help/drivemount_applet/it/figures
 @dirrm share/gnome/help/drivemount_applet/it
 @dirrm share/gnome/help/drivemount_applet/C/stylesheet-images
+@dirrm share/gnome/help/drivemount_applet/C/figures
 @dirrm share/gnome/help/drivemount_applet/C
 @dirrm share/gnome/help/drivemount_applet
+@dirrm share/gnome/help/diskusage_applet/ja/stylesheet-images
+@dirrm share/gnome/help/diskusage_applet/ja/figures
+@dirrm share/gnome/help/diskusage_applet/ja
 @dirrm share/gnome/help/diskusage_applet/it/stylesheet-images
+@dirrm share/gnome/help/diskusage_applet/it/figures
 @dirrm share/gnome/help/diskusage_applet/it
 @dirrm share/gnome/help/diskusage_applet/C/stylesheet-images
+@dirrm share/gnome/help/diskusage_applet/C/figures
 @dirrm share/gnome/help/diskusage_applet/C
 @dirrm share/gnome/help/diskusage_applet
+@dirrm share/gnome/help/cpumemusage_applet/ja/stylesheet-images
+@dirrm share/gnome/help/cpumemusage_applet/ja/figures
+@dirrm share/gnome/help/cpumemusage_applet/ja
 @dirrm share/gnome/help/cpumemusage_applet/it/stylesheet-images
+@dirrm share/gnome/help/cpumemusage_applet/it/figures
 @dirrm share/gnome/help/cpumemusage_applet/it
 @dirrm share/gnome/help/cpumemusage_applet/C/stylesheet-images
+@dirrm share/gnome/help/cpumemusage_applet/C/figures
 @dirrm share/gnome/help/cpumemusage_applet/C
 @dirrm share/gnome/help/cpumemusage_applet
 @dirrm share/gnome/help/cpuload_applet/it/stylesheet-images
+@dirrm share/gnome/help/cpuload_applet/it/figures
 @dirrm share/gnome/help/cpuload_applet/it
 @dirrm share/gnome/help/cpuload_applet/C/stylesheet-images
+@dirrm share/gnome/help/cpuload_applet/C/figures
 @dirrm share/gnome/help/cpuload_applet/C
 @dirrm share/gnome/help/cpuload_applet
+@dirrm share/gnome/help/clockmail_applet/ja/stylesheet-images
+@dirrm share/gnome/help/clockmail_applet/ja/figures
+@dirrm share/gnome/help/clockmail_applet/ja
 @dirrm share/gnome/help/clockmail_applet/it/stylesheet-images
+@dirrm share/gnome/help/clockmail_applet/it/figures
 @dirrm share/gnome/help/clockmail_applet/it
 @dirrm share/gnome/help/clockmail_applet/C/stylesheet-images
+@dirrm share/gnome/help/clockmail_applet/C/figures
 @dirrm share/gnome/help/clockmail_applet/C
 @dirrm share/gnome/help/clockmail_applet
+@dirrm share/gnome/help/charpick_applet/ja/stylesheet-images
+@dirrm share/gnome/help/charpick_applet/ja/figures
+@dirrm share/gnome/help/charpick_applet/ja
 @dirrm share/gnome/help/charpick_applet/it/stylesheet-images
+@dirrm share/gnome/help/charpick_applet/it/figures
 @dirrm share/gnome/help/charpick_applet/it
 @dirrm share/gnome/help/charpick_applet/C/stylesheet-images
+@dirrm share/gnome/help/charpick_applet/C/figures
 @dirrm share/gnome/help/charpick_applet/C
 @dirrm share/gnome/help/charpick_applet
+@dirrm share/gnome/help/cdplayer_applet/ja/stylesheet-images
+@dirrm share/gnome/help/cdplayer_applet/ja/figures
+@dirrm share/gnome/help/cdplayer_applet/ja
 @dirrm share/gnome/help/cdplayer_applet/it/stylesheet-images
+@dirrm share/gnome/help/cdplayer_applet/it/figures
 @dirrm share/gnome/help/cdplayer_applet/it
 @dirrm share/gnome/help/cdplayer_applet/C/stylesheet-images
+@dirrm share/gnome/help/cdplayer_applet/C/figures
 @dirrm share/gnome/help/cdplayer_applet/C
 @dirrm share/gnome/help/cdplayer_applet
+@dirrm share/gnome/help/battery_applet/ja/stylesheet-images
+@dirrm share/gnome/help/battery_applet/ja/figures
+@dirrm share/gnome/help/battery_applet/ja
 @dirrm share/gnome/help/battery_applet/it/stylesheet-images
+@dirrm share/gnome/help/battery_applet/it/figures
 @dirrm share/gnome/help/battery_applet/it
 @dirrm share/gnome/help/battery_applet/C/stylesheet-images
+@dirrm share/gnome/help/battery_applet/C/figures
 @dirrm share/gnome/help/battery_applet/C
 @dirrm share/gnome/help/battery_applet
+@dirrm share/gnome/help/asclock_applet/ja/stylesheet-images
+@dirrm share/gnome/help/asclock_applet/ja/figures
+@dirrm share/gnome/help/asclock_applet/ja
 @dirrm share/gnome/help/asclock_applet/it/stylesheet-images
+@dirrm share/gnome/help/asclock_applet/it/figures
 @dirrm share/gnome/help/asclock_applet/it
 @dirrm share/gnome/help/asclock_applet/C/stylesheet-images
+@dirrm share/gnome/help/asclock_applet/C/figures
 @dirrm share/gnome/help/asclock_applet/C
 @dirrm share/gnome/help/asclock_applet
+@dirrm share/gnome/help/anotherclock_applet/uk/stylesheet-images
+@dirrm share/gnome/help/anotherclock_applet/uk/figures
+@dirrm share/gnome/help/anotherclock_applet/uk
 @dirrm share/gnome/help/anotherclock_applet/it/stylesheet-images
+@dirrm share/gnome/help/anotherclock_applet/it/figures
 @dirrm share/gnome/help/anotherclock_applet/it
 @dirrm share/gnome/help/anotherclock_applet/C/stylesheet-images
+@dirrm share/gnome/help/anotherclock_applet/C/figures
 @dirrm share/gnome/help/anotherclock_applet/C
 @dirrm share/gnome/help/anotherclock_applet
 @dirrm share/gnome/gweather
+@dirrm share/gnome/gkb
 @dirrm share/gnome/geyes/Horrid
 @dirrm share/gnome/geyes/Default-tiny
 @dirrm share/gnome/geyes/Default
@@ -1311,12 +2434,16 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-applets.mo
 @dirrm share/gnome/clockmail/radar-green
 @dirrm share/gnome/clockmail/radar-blue
 @dirrm share/gnome/clockmail/odometer
+@dirrm share/gnome/clockmail/nice_mailcount
+@dirrm share/gnome/clockmail/nice_clock
 @dirrm share/gnome/clockmail/mailcounter
 @dirrm share/gnome/clockmail/mail-fuel-gauge
 @dirrm share/gnome/clockmail/mail-flap
 @dirrm share/gnome/clockmail/lcd
 @dirrm share/gnome/clockmail/clockmail-G
 @dirrm share/gnome/clockmail/clock-odometer
+@dirrm share/gnome/clockmail/clock-digital-red
+@dirrm share/gnome/clockmail/clock-digital-black
 @dirrm share/gnome/clockmail/clock-analog
 @dirrm share/gnome/clockmail/classic
 @dirrm share/gnome/clockmail/calendar

@@ -1,38 +1,11 @@
---- gnome-terminal/gnome-terminal.c.orig	Fri May 19 23:38:07 2000
-+++ gnome-terminal/gnome-terminal.c	Fri May 26 15:15:38 2000
-@@ -507,7 +507,7 @@
- 	else
- 		cfg->color_type = PALETTE_LINUX;
+--- gnome-terminal/gnome-terminal.c.orig	Wed Feb 14 19:25:02 2001
++++ gnome-terminal/gnome-terminal.c	Mon Feb 26 20:01:55 2001
+@@ -513,3 +513,3 @@
  	
 -	cfg->keyboard_secured  = FALSE;
 +	cfg->keyboard_secured  = gnome_config_get_bool ("keyboard_secured=0");
  	
- 	cfg->bell              = gnome_config_get_bool ("bell_silenced=0");
- 	cfg->blink             = gnome_config_get_bool ("blinking=0");
-@@ -1028,6 +1028,7 @@
- 				 cfg->scrollbar_position == SCROLLBAR_LEFT ? "left" :
- 				 cfg->scrollbar_position == SCROLLBAR_RIGHT ? "right" : "hidden");
+@@ -1032,2 +1032,3 @@
  
 +	gnome_config_set_bool	("keyboard_secured", cfg->keyboard_secured);
  	gnome_config_set_bool   ("bell_silenced", cfg->bell);
- 	gnome_config_set_bool   ("blinking", cfg->blink);
- 	gnome_config_set_bool   ("swap_del_and_backspace", cfg->swap_keys);
-@@ -2544,12 +2545,12 @@
- 	DONOUTMP_KEY = -10,
- 	DOWTMP_KEY   = -11,
- 	DONOWTMP_KEY = -12,
--        TITLE_KEY    = -13,
--	TERM_KEY     = -14,
--	START_FACTORY_KEY= -15,
--	USE_FACTORY_KEY  = -16,
--	DOLASTLOG_KEY   = -17,
--	DONOLASTLOG_KEY = -18,
-+        DOLASTLOG_KEY    = -13,
-+	DONOLASTLOG_KEY     = -14,
-+	TITLE_KEY    = -15,
-+	TERM_KEY     = -16,
-+	START_FACTORY_KEY= -17,
-+	USE_FACTORY_KEY  = -18
- };
- 
- static struct poptOption cb_options [] = {

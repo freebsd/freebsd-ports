@@ -1,10 +1,6 @@
---- configure.orig	Mon May 22 00:00:41 2000
-+++ configure	Fri May 26 18:10:31 2000
-@@ -3399,6 +3399,7 @@
- *irix*) CDROM_HOST=iric; CDROM_LIBS="-lcdaudio -lmediad -lds";;
- *linux*) CDROM_HOST=linux;;
+--- configure.orig	Thu Mar 15 11:59:13 2001
++++ configure	Mon Mar 19 10:00:53 2001
+@@ -3503,2 +3503,3 @@
  *solaris*) CDROM_HOST=solaris;;
 +*freebsd*) CDROM_HOST=freebsd;;
  esac
- 
- 

@@ -1,11 +1,11 @@
---- gncal/Makefile.in.orig	Sat May 20 20:52:50 2000
-+++ gncal/Makefile.in	Wed Aug  2 10:27:30 2000
-@@ -143,3 +143,3 @@
+--- gncal/Makefile.in.orig	Tue Feb 27 16:56:32 2001
++++ gncal/Makefile.in	Tue Feb 27 16:56:49 2001
+@@ -139,3 +139,3 @@
  
 -help_base = $(datadir)/help/cal
 +help_base = $(datadir)/help/gnomecal
  
-@@ -174,3 +174,3 @@
+@@ -170,3 +170,3 @@
  
 -libcalendar_conduit_la_LDFLAGS =  	-rpath $(libdir)
 +libcalendar_conduit_la_LDFLAGS =  	-rpath $(libdir) -avoid-version

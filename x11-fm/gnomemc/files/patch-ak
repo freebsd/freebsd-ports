@@ -1,0 +1,7 @@
+--- idl/Makefile.in.orig	Sun Mar 18 12:21:08 2001
++++ idl/Makefile.in	Thu Mar 29 10:09:30 2001
+@@ -159,3 +159,3 @@
+ 
+-idldir = $(prefix)/share/idl
++idldir = $(datadir)/idl
+ 

@@ -6,20 +6,18 @@
 #
 
 PORTNAME=	py-gtk
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.7
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-python	
-DISTNAME=	gnome-python-1.0.53
+DISTNAME=	gnome-python-1.4.0
 
 MAINTAINER=	nectar@FreeBSD.org
-
-LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/pygtk
 
 USE_GMAKE=	yes
-USE_IMLIB=	yes
+USE_GNOME=	yes
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
