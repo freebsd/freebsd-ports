@@ -1,4 +1,1 @@
 bin/netmask
-@unexec install-info --delete %D/info/netmask.info %D/info/dir
-info/netmask.info
-@exec install-info %D/info/netmask.info %D/info/dir
