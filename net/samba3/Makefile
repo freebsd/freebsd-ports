@@ -1,60 +1,80 @@
 # New ports collection makefile for:	samba
-# Version required:			1.9.17p4
+# Version required:			1.9.18
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.16 1997/10/23 14:38:55 max Exp $
+# $Id: Makefile,v 1.17 1997/10/23 15:03:20 max Exp $
 #
 
-DISTNAME=	samba-1.9.17p4
-PKGNAME=	samba-1.9.17.4
+DISTNAME=	samba-1.9.18
+PKGNAME=	samba-1.9.18.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/samba/
 
 MAINTAINER=	hosokawa@jp.FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
-MAN1=		smbstatus.1 smbclient.1 smbrun.1 smbtar.1 testparm.1 testprns.1
+MAN1=		smbstatus.1 smbclient.1 smbrun.1 smbtar.1 testparm.1 testprns.1 make_smbcodepage.1
 MAN5=		smb.conf.5
 MAN7=		samba.7
 MAN8=		smbd.8 nmbd.8 smbpasswd.8
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/samba.sh.sample
-SAMPLE_CONFIG=	${PREFIX}/etc/smb.conf.sample
+SAMPLE_CONFIG=	${PREFIX}/etc/smb.conf.default
 SAMBA_SPOOL=	/var/spool/samba
 XSAMBA_SPOOL=	\/var\/spool\/samba
 SAMBA_LOGDIR=	/var/log
 XSAMBA_LOGDIR=	\/var\/log
+SAMBA_PRIVATE=	${PREFIX}/private
+
+SAMBA_DOCS=${WRKDIR}/${DISTNAME}/docs/INSTALL.sambatar \
+	${WRKDIR}/${DISTNAME}/docs/THANKS \
+	${WRKDIR}/${DISTNAME}/docs/history \
+	${WRKDIR}/${DISTNAME}/docs/announce \
+	${WRKDIR}/${DISTNAME}/docs/PROJECTS \
 
 post-install:
+	${MKDIR} ${PREFIX}/share/examples/samba
+	${CP} -rp ${WRKDIR}/${DISTNAME}/examples/* ${PREFIX}/share/examples/samba
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/samba/faq
-	for i in ${WRKDIR}/${DISTNAME}/docs/*.txt ${WRKDIR}/${DISTNAME}/docs/README* ; do \
-		${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba ; \
+	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${PREFIX}/share/doc/samba
+	for i in ${SAMBA_DOCS} ${WRKDIR}/${DISTNAME}/docs/*.txt		\
+			${WRKDIR}/${DISTNAME}/docs/*.reg		\
+			${WRKDIR}/${DISTNAME}/docs/*.htm		\
+			${WRKDIR}/${DISTNAME}/*.txt			\
+			${WRKDIR}/${DISTNAME}/README			\
+			${WRKDIR}/${DISTNAME}/docs/README.* ; do	\
+		${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba ;		\
 	done
-	for i in ${WRKDIR}/${DISTNAME}/docs/faq/* ; do \
-		${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba/faq ; \
+	for i in ${WRKDIR}/${DISTNAME}/docs/faq/* ; do			\
+		${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba/faq ;	\
 	done
 .endif
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
 		${ECHO} "Installing ${STARTUP_SCRIPT} startup file." ;	\
-		${ECHO} '#!/bin/sh' > ${STARTUP_SCRIPT} ;			\
-		${ECHO} 'smbd=${PREFIX}/sbin/smbd' >> ${STARTUP_SCRIPT} ;\
-		${ECHO} 'nmbd=${PREFIX}/sbin/nmbd' >> ${STARTUP_SCRIPT} ;\
-		${ECHO} 'if [ -f $$smbd ]; then' >> ${STARTUP_SCRIPT} ;	\
-		${ECHO} "	${ECHO} -n ' Samba'" >> ${STARTUP_SCRIPT} ;\
-		${ECHO} '	$$smbd -D' >> ${STARTUP_SCRIPT} ;	\
-		${ECHO} '	$$nmbd -D' >> ${STARTUP_SCRIPT} ;	\
-		${ECHO} "fi" >> ${STARTUP_SCRIPT} ;			\
-		chmod 755 ${STARTUP_SCRIPT} ;				\
-		chown bin.bin ${STARTUP_SCRIPT};			\
+		${INSTALL_SCRIPT} ${FILESDIR}/samba.sh.sample 		\
+			${STARTUP_SCRIPT} ;				\
 	fi
 	@test -d ${SAMBA_SPOOL} || ${MKDIR} ${SAMBA_SPOOL} && chmod 1777 ${SAMBA_SPOOL}
 	@if [ ! -f ${SAMPLE_CONFIG} ]; then				\
 		${SED} -e 's/__SAMBA_SPOOL__/${XSAMBA_SPOOL}/'		\
 		    -e 's/__LOGDIR__/${XSAMBA_LOGDIR}/' 		\
-			${FILESDIR}/smb.conf.sample			\
+			${FILESDIR}/smb.conf.default			\
 			> ${SAMPLE_CONFIG} ;				\
 	fi
+	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/source/mksmbpasswd.sh ${PREFIX}/bin
+	if [ ! -d ${SAMBA_PRIVATE} ] ; then				\
+		${MKDIR} ${SAMBA_PRIVATE} ;				\
+		chown root.wheel ${SAMBA_PRIVATE} ;			\
+	fi
+	chmod 700 ${SAMBA_PRIVATE}
+	if [ ! -f ${SAMBA_PRIVATE}/smbpasswd ] ; then			\
+		${CAT} /etc/passwd | ${PREFIX}/bin/mksmbpasswd.sh > ${SAMBA_PRIVATE}/smbpasswd ; \
+		chmod 600 ${SAMBA_PRIVATE}/smbpasswd ;			\
+	fi
+	chmod 500 ${SAMBA_PRIVATE}
+	chown root.wheel ${PREFIX}/bin/smbpasswd
+	chmod 4111 ${PREFIX}/bin/smbpasswd
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Sep 27 00:04:52 1997
-+++ Makefile	Wed Oct 15 17:09:58 1997
+--- Makefile.orig	Thu Jan  8 03:29:04 1998
++++ Makefile	Thu Jan  8 14:52:32 1998
 @@ -5,11 +5,11 @@
  ###########################################################################
  
@@ -22,31 +22,21 @@
 -LIBDIR = $(BASEDIR)/lib
 -VARDIR = $(BASEDIR)/var
 +SBINDIR = $(BASEDIR)/sbin
-+ETCDIR = $(BASEDIR)/etc
-+LOGDIR = /var/log
++LIBDIR = $(BASEDIR)/etc
++VARDIR = /var/log
  
  # The permissions to give the executables
  INSTALLPERMS = 0755
-@@ -45,13 +45,13 @@
- # set these to where to find various files
- # These can be overridden by command line switches (see smbd(8))
- # or in smb.conf (see smb.conf(5))
--SMBLOGFILE = $(VARDIR)/log.smb
--NMBLOGFILE = $(VARDIR)/log.nmb
--CONFIGFILE = $(LIBDIR)/smb.conf
--LMHOSTSFILE = $(LIBDIR)/lmhosts
-+SMBLOGFILE = $(LOGDIR)/smb
-+NMBLOGFILE = $(LOGDIR)/nmb
-+CONFIGFILE = $(ETCDIR)/smb.conf
-+LMHOSTSFILE = $(ETCDIR)/lmhosts
+@@ -55,7 +55,7 @@
+ WEB_ROOT = $(BASEDIR)
  
  # the directory where lock files go
 -LOCKDIR = $(VARDIR)/locks
 +LOCKDIR = /var/spool/lock
  
- # set this to the default group you want your machine to appear in
- # for browsing. This can also be set in nmbd (see nmbd(8))
-@@ -383,8 +383,8 @@
+ # The directory where code page definition files go
+ CODEPAGEDIR = $(LIBDIR)/codepages
+@@ -396,8 +396,8 @@
  # This is for FreeBSD
  # contributed by kuku@acds.physik.rwth-aachen.de
  # NOTE: You may need to add -DBSD44 if you have password problems
@@ -55,16 +45,5 @@
 +FLAGSM = -DFreeBSD -DFAST_SHARE_MODES
 +LIBSM = -lcrypt 
  
- 
- # This is for NEXTSTEP Release 2.X
-@@ -684,8 +684,8 @@
- install: installbin installman installscripts
- 
- installbin: all
--	@$(SHELL) $(srcdir)installbin.sh $(INSTALLPERMS) $(BASEDIR) $(SBINDIR) $(LIBDIR) $(VARDIR) $(SPROGS)
--	@$(SHELL) $(srcdir)installbin.sh $(INSTALLPERMS) $(BASEDIR) $(BINDIR) $(LIBDIR) $(VARDIR) $(PROGS)
-+	@$(SHELL) $(srcdir)installbin.sh $(INSTALLPERMS) $(BASEDIR) $(SBINDIR) $(ETCDIR) $(LOGDIR) $(SPROGS)
-+	@$(SHELL) $(srcdir)installbin.sh $(INSTALLPERMS) $(BASEDIR) $(BINDIR) $(ETCDIR) $(LOGDIR) $(PROGS)
- 
- installscripts:
- 	@$(SHELL) $(srcdir)installscripts.sh $(INSTALLPERMS) $(BINDIR) $(SCRIPTS)
+ # This is for OpenBSD
+ # contributed by todd@openbsd.org
