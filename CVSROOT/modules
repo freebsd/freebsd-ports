@@ -272,6 +272,7 @@ amanda24-client	ports/misc/amanda24-client
 amanda24-server	ports/misc/amanda24-server
 amaterus	ports/x11-wm/amaterus
 amavis-perl	ports/security/amavis-perl
+amavisd		ports/security/amavisd
 amaya		ports/www/amaya
 amcl		ports/net/amcl
 amd		src/usr.sbin/amd
