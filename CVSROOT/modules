@@ -5905,6 +5905,7 @@ ports_editors	ports/editors
 ports_egcs	ports/lang/egcs
 ports_emulators	ports/emulators
 ports_f2c	ports/lang/f2c
+ports_file	ports/sysutils/file
 ports_finance	ports/finance
 ports_french	ports/french
 ports_ftp	ports/ftp
