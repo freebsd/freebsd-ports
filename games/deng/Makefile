@@ -16,6 +16,8 @@ COMMENT=	An enhanced Doom, Heretic and Hexen source port
 
 RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity
 
+BROKEN=		Missing dependency
+
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 GNU_CONFIGURE=	yes
