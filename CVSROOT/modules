@@ -506,6 +506,7 @@ bacula		ports/sysutils/bacula
 baduki		ports/games/baduki
 badwm		ports/x11-wm/badwm
 bakery		ports/x11-toolkits/bakery
+bakery_gnomeui	ports/x11-toolkits/bakery_gnomeui
 balance		ports/net/balance
 balsa		ports/mail/balsa
 balsa2		ports/mail/balsa2
