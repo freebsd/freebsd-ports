@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mm
-PORTVERSION=	1.1.3
+PORTVERSION=	1.2.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.engelschall.com/sw/mm/ \
-		ftp://ftp.engelschall.com/sw/mm/
+MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/mm/
 
 MAINTAINER=	rse@engelschall.com
 
