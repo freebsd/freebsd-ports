@@ -1,4 +1,4 @@
-# New ports collection makefile for:	dclock
+# New ports collection makefile for:	bclock
 # Version required:	1.0
 # Date created:		13 May 1997
 # Whom:			Brian Handy <handy@physics.montana.edu>
