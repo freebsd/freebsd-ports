@@ -65,6 +65,7 @@ sbin/tfwmpap
 sbin/tfwmpaprev
 sbin/tfwpap
 sbin/tfwpaprev
+%%TIMELORD%%sbin/timelord
 @unexec if cmp -s %D/etc/AppleVolumes.default %D/etc/AppleVolumes.default.dist; then rm -f %D/etc/AppleVolumes.default; fi
 etc/AppleVolumes.default.dist
 @exec [ ! -f %B/AppleVolumes.default ] && cp %B/%f %B/AppleVolumes.default
