@@ -49,6 +49,7 @@
     SUBDIR += phpgroupware
     SUBDIR += plan
     SUBDIR += preferences.app
+    SUBDIR += rolo
     SUBDIR += rox-memo
     SUBDIR += rubrica
     SUBDIR += sliderule

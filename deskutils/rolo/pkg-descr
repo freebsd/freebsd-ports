@@ -1,0 +1,10 @@
+Rolo keeps track of your contacts and display them to you with a text-based
+menu. Rolo strives to be a well-constructed tool for complimenting text-based
+email programs-such as mutt. It utilizes the vCard version 3.0 format for
+storing its contacts and it interfaces with the end-user through a NCurses
+front-end.
+
+WWW: http://rolo.sf.net/
+
+- Andrew
+ahsu@users.sf.net
