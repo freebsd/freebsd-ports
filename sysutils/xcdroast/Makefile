@@ -16,17 +16,22 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./alpha/}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Another X11 frontend to mkisofs/cdrecord
 
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+		iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gdkpixbuf
 GNU_CONFIGURE=	yes
+USE_AUTOCONF_VER=	253
 
 CONFIGURE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}"
 
-CONFIGURE_ARGS=	--with-cdrtools-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--with-cdrtools-prefix=${LOCALBASE} \
+		--with-libintl-prefix=${LOCALBASE} \
+		--with-libiconv-prefix=${LOCALBASE}
 
 MAN1=		xcdroast.1
 
