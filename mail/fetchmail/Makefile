@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.ccil.org/pub/esr/fetchmail/
 MAINTAINER=	ve@sci.fi
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= --enable-OPIE
+CONFIGURE_ARGS+= --enable-opie
 CONFIGURE_ENV+= LDFLAGS="${CFLAGS}"
 MAN1=		fetchmail.1
 
