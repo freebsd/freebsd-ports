@@ -1,0 +1,12 @@
+--- rat/configure.orig	Sun Aug 22 10:52:06 1999
++++ rat/configure	Sun Aug 22 10:53:22 1999
+@@ -111,7 +111,8 @@
+             WFLAGS=$GCCWFLAGS
+ 	    INCLUDE="-I/usr/X11R6/include -I/usr/local/include"
+ 	    LDLIBS="-L/usr/X11R6/lib -lXext -lX11 -lm"
+-	    TCL_LIBS="../tk-8.0/unix/libtk80.a ../tcl-8.0/unix/libtcl80.a"
++	    TCL_LIBS="-L/usr/local/lib -ltk80 -ltcl80"
++	    TCL_INCL="-I/usr/local/include/tk8.0 -I/usr/local/include/tcl8.0"
+ 	    AUDIO="auddev_luigi.o"
+ 	    DEBUG="-g"
+ 	    CHAR="-fsigned-char"
