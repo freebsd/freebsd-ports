@@ -17,21 +17,15 @@ DISTFILES=	${RPM_SET}
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/misc/rpm
-.if (${MACHINE_ARCH} == "i386")
-RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
-.elif (${MACHINE_ARCH} == "alpha")
-RUN_DEPENDS=	/compat/linux/lib/libc.so.6.1:${PORTSDIR}/emulators/linux_base
-.endif
+USE_LINUX_PREFIX=	yes
 
 ONLY_FOR_ARCHS=	i386 alpha
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
-NO_MTREE=	yes
 PLIST=		${PKGDIR}/pkg-plist.${MACHINE_ARCH}
 MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
-PREFIX=		/compat/linux
 
 RPM_MIRRORS=	ftp://ftp.freesoftware.com/pub/linux/redhat/old-releases/__DIR__/ \
 		ftp://ftp.freesoftware.com/pub/linux/redhat/__DIR__/
