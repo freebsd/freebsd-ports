@@ -6,18 +6,13 @@
 #
 
 PORTNAME=	flf
-PORTVERSION=	1.7b
-MASTER_SITES=	http://www.frontlineforce.com/download/ \
-		ftp://ftp.clanserver4u.de/exp/hl/mod/flf/
+PORTVERSION=	1.8b
+MASTER_SITES=	http://nephilim.net/files/
 
-DISTFILES=	frontline17_linux${EXTRACT_SUFX} \
-		frontline17b-update${EXTRACT_SUFX}
+DISTFILES=	frontline${PORTVERSION:S/.//}_full-linux${EXTRACT_SUFX}
+COMMENT=	Half-Life mod Frontline Force full server package for Linux
 
 WRKSRC=		${WRKDIR}/frontline
-USE_ZIP=	yes
-EXTRACT_BEFORE_ARGS=	-o -qq
-
-COMMENT=	Half-Life mod Frontline Force full server package for Linux
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
