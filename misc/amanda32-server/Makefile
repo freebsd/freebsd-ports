@@ -7,7 +7,7 @@
 
 PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	2.4.2p2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	amanda
@@ -36,6 +36,8 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "    -DWITH_PLOT to enable ploting, requires X11 libraries"
 	@${ECHO} "    -DWITH_SAMBA to enable the use of smbclient"
+	@${ECHO} "    -DWITHOUT_GNUTAR to NOT use GNUTar and use the"
+	@${ECHO} "        native FreeBSD version"
 	@${ECHO} "    AMANDA_SERVER=server to specify a server name"
 	@${ECHO} "        The default is `uname -n`"
 	@${ECHO} "    AMANDA_TAPE=tape to specify the default tape device"
@@ -44,16 +46,14 @@ pre-fetch:
 	@${ECHO} "        The default is user"
 	@${ECHO} ""
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda24-client \
-		gtar:${PORTSDIR}/archivers/gtar
-BUILD_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda24-client \
-		gtar:${PORTSDIR}/archivers/gtar
+RUN_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda24-client
+BUILD_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda24-client
 
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
 		--with-dump-honor-nodump --with-buffered-dump \
 		--with-user=operator --with-group=operator \
-		--without-client --with-gnutar=${PREFIX}/bin/gtar
+		--without-client
 
 MAN8=		amadmin.8 amcheck.8 amcheckdb.8 amcleanup.8 amdump.8 \
 		amflush.8 amgetconf.8 amlabel.8 amoverview.8 amreport.8 \
@@ -72,6 +72,12 @@ PLIST_SUB+=	PLOT='@comment '
 BUILD_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
 RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
 CONFIGURE_ARGS+=	--with-smbclient=${PREFIX}/bin/smbclient
+.endif
+
+.if !defined (WITHOUT_GNUTAR)
+CONFIGURE_ARGS+=	--with-gnutar=${PREFIX}/bin/gtar
+BUILD_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
+RUN_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
 .endif
 
 .if defined (AMANDA_SERVER)
@@ -102,20 +108,19 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
+	@${ECHO} "    -DWITHOUT_GNUTAR to NOT use GNUTar and use the"
+	@${ECHO} "        native FreeBSD version"
 	@${ECHO} "    AMANDA_SERVER=server to specify a server name"
 	@${ECHO} "        The default is `uname -n`"
 	@${ECHO} "    AMANDA_CONFIG=config to specify the default configuation"
 	@${ECHO} "        The default is user"
 	@${ECHO} ""
 
-BUILD_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
-RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
-
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
 		--with-dump-honor-nodump --with-buffered-dump \
 		--with-user=operator --with-group=operator \
-		--without-server --with-gnutar=${PREFIX}/bin/gtar
+		--without-server
 
 MAN8=		amanda.8 amrecover.8 amrestore.8
 
@@ -126,6 +131,12 @@ post-install:
 		${WRKSRC}/example/chg-scsi.conf \
 		${WRKSRC}/example/disklist \
 		${PREFIX}/share/examples/amanda
+
+.if !defined (WITHOUT_GNUTAR)
+CONFIGURE_ARGS+=	--with-gnutar=${PREFIX}/bin/gtar
+BUILD_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
+RUN_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
+.endif
 
 .if defined (AMANDA_SERVER)
 CONFIGURE_ARGS+=	--with-index-server=${AMANDA_SERVER}
