@@ -1,0 +1,20 @@
+   SPOOLES is a library for solving sparse real and complex linear
+   systems of equations, written in the C language using object oriented
+   design. At present, there is the following functionality:
+    1. Compute multiple minimum degree, generalized nested dissection and
+       multisection orderings of matrices with symmetric structure.
+    2. Factor and solve square linear systems of equations with symmetric
+       structure, with or without pivoting for stability. The
+       factorization can be symmetric LDLT, Hermitian LDLH, or
+       nonsymmetric LDU. A direct factorization or a drop tolerance
+       factorization can be computed. The factors and solve can be done
+       in serial mode, multithreaded with Solaris or POSIX threads, or
+       with MPI.
+    3. Factor and solve overdetermined full rank systems of equations
+       using a multifrontal QR factorization, in serial or using POSIX
+       threads.
+    4. Solve square linear systems using a variety of Krylov iterative
+       methods. The preconditioner is a drop tolerance factorization,
+       with or without pivoting for stability.
+
+WWW:	http://netlib.bell-labs.com/netlib/linalg/spooles/spooles.2.2.html
