@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		snd
-PORTVERSION=		7
-PORTREVISION=	1
+PORTVERSION=		7.8
 CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,7 +32,7 @@ OPTIONS=	ESD		"output through enlightened sound daemon" on \
 PLIST=		${WRKDIR}/plist
 PLIST_FILES=	share/examples/snd/DotEmacs
 PLIST_DIRS=	share/examples/snd
-WRKSRC=		${WRKDIR}/snd-${PORTVERSION}
+WRKSRC=		${WRKDIR}/snd-7
 
 .if !defined(NOPORTDOCS)
 PLIST_FILES+=	share/doc/snd/tutorial/files/.snd \
@@ -75,8 +74,8 @@ CONFIGURE_ARGS+=	--with-no-gui
 CONFIGURE_ARGS+=	--with-gtk \
 			--with-gtkrc-colors \
 			--with-float-samples
-PREFIX=		${X11BASE}
 USE_GNOME=	gtk20
+USE_X_PREFIX=	yes
 USE_XLIB=	yes
 .endif
 
