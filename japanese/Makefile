@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.136 1998/08/10 16:02:58 kuriyama Exp $
+# $Id: Makefile,v 1.137 1998/08/10 23:39:07 kuriyama Exp $
 #
 
     SUBDIR += Canna
@@ -108,6 +108,7 @@
     SUBDIR += onew-canna+wnn6
     SUBDIR += onew-wnn4
     SUBDIR += onew-wnn6
+    SUBDIR += p5-jcode.pl
     SUBDIR += p5-manual
     SUBDIR += perl5
     SUBDIR += pgp.language
