@@ -5542,6 +5542,7 @@ muuz		ports/misc/muuz
 mvdsv		ports/games/mvdsv
 mwavem		ports/comms/mwavem
 mxico		ports/x11/mxico
+mybudget	ports/finance/mybudget
 mydns		ports/dns/mydns
 mymoon		ports/astro/mymoon
 myodbc		ports/databases/myodbc
