@@ -1,22 +1,13 @@
---- configure.orig	Wed Sep  1 04:00:37 1999
-+++ configure	Mon Sep  6 15:17:37 1999
-@@ -1826,7 +1826,7 @@
- LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh"
- 
- # Always use our own libtool.
--LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-+LIBTOOL='$(SHELL) /usr/local/bin/libtool'
- 
- # Redirect the config.log output again, so that the ltconfig log is not
- # clobbered by the next message.
+--- configure.orig	Sun Feb 27 11:57:26 2000
++++ configure	Sun Feb 27 11:59:58 2000
 @@ -2367,8 +2367,8 @@
  echo "configure:2368: checking whether to build gmodulized imlib" >&5
    oLIBS="$LIBS"
    oCFLAGS="$CFLAGS"
 -  LIBS="$LIBS `glib-config --libs gmodule`"
 -  CFLAGS="$CFLAGS `glib-config --cflags gmodule`"
-+  LIBS="$LIBS `glib12-config --libs gmodule`"
-+  CFLAGS="$CFLAGS `glib12-config --cflags gmodule`"
++  LIBS="$LIBS `${GLIB_CONFIG} --libs gmodule`"
++  CFLAGS="$CFLAGS `${GLIB_CONFIG} --cflags gmodule`"
    if test "$cross_compiling" = yes; then
      { echo "configure: error: can not run test program while cross compiling" 1>&2; exit 1; }
  else
@@ -26,44 +17,17 @@
  
 -   GMODULE_LIBS="`glib-config --libs gmodule`"
 -   GMODULE_FLAGS="`glib-config --cflags gmodule`"
-+   GMODULE_LIBS="`glib12-config --libs gmodule`"
-+   GMODULE_FLAGS="`glib12-config --cflags gmodule`"
++   GMODULE_LIBS="`${GLIB_CONFIG} --libs gmodule`"
++   GMODULE_FLAGS="`${GLIB_CONFIG} --cflags gmodule`"
     
     
     echo "$ac_t""yes" 1>&6
-@@ -4217,7 +4217,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lXext $X_LIBS $LIBS"
-+LIBS="-lXext -lX11 $X_LIBS $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 4223 "configure"
- #include "confdefs.h"
 @@ -4536,7 +4536,7 @@
    echo "$ac_t""$jpeg_ok" 1>&6
    if test "$jpeg_ok" = yes; then 
      JPEGLIBS="-ljpeg"
 -    SUPPORT_LIBS="$SUPPORT_LIBS -ljpeg"; cat >> confdefs.h <<\EOF
-+    SUPPORT_LIBS="$SUPPORT_LIBS -L/usr/local/lib"; cat >> confdefs.h <<\EOF
++    SUPPORT_LIBS="$SUPPORT_LIBS"; cat >> confdefs.h <<\EOF
  #define HAVE_LIBJPEG 1
- EOF
- 
-@@ -4552,7 +4552,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-ltiff $GX_LIBS $LIBS"
-+LIBS="-ltiff -ljpeg -lz $GX_LIBS $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 4558 "configure"
- #include "confdefs.h"
-@@ -4609,7 +4609,7 @@
- if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
-   TIFFLIBS="-ltiff"
--    SUPPORT_LIBS="$SUPPORT_LIBS -ltiff"; cat >> confdefs.h <<\EOF
-+    SUPPORT_LIBS="$SUPPORT_LIBS -ltiff -ljpeg"; cat >> confdefs.h <<\EOF
- #define HAVE_LIBTIFF 1
  EOF
  
