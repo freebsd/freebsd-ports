@@ -50,6 +50,23 @@ libdata/pkgconfig/libgnetwork-1.0.pc
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/tutorials.html
 %%DOCSDIR%%/up.png
+share/locale/am/LC_MESSAGES/libgnetwork-1.0.mo
+share/locale/az/LC_MESSAGES/libgnetwork-1.0.mo
+share/locale/cs/LC_MESSAGES/libgnetwork-1.0.mo
+share/locale/de/LC_MESSAGES/libgnetwork-1.0.mo
+share/locale/es/LC_MESSAGES/libgnetwork-1.0.mo
+share/locale/fr/LC_MESSAGES/libgnetwork-1.0.mo
+share/locale/ja/LC_MESSAGES/libgnetwork-1.0.mo
+share/locale/ml/LC_MESSAGES/libgnetwork-1.0.mo
+share/locale/ms/LC_MESSAGES/libgnetwork-1.0.mo
+share/locale/nl/LC_MESSAGES/libgnetwork-1.0.mo
+share/locale/no/LC_MESSAGES/libgnetwork-1.0.mo
+share/locale/pl/LC_MESSAGES/libgnetwork-1.0.mo
+share/locale/pt/LC_MESSAGES/libgnetwork-1.0.mo
+share/locale/pt_BR/LC_MESSAGES/libgnetwork-1.0.mo
+share/locale/sr/LC_MESSAGES/libgnetwork-1.0.mo
+share/locale/sr@Latn/LC_MESSAGES/libgnetwork-1.0.mo
+share/locale/sv/LC_MESSAGES/libgnetwork-1.0.mo
 @dirrm %%DOCSDIR%%
 @dirrm include/libgnetwork-1.0/libgnetwork
 @dirrm include/libgnetwork-1.0
