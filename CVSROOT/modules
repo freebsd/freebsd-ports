@@ -8564,6 +8564,7 @@ xlispstat	ports/math/xlispstat
 xloadface	ports/sysutils/xloadface
 xloadimage	ports/x11/xloadimage
 xlockmore	ports/x11/xlockmore
+xlog		ports/comms/xlog
 xlogmaster	ports/sysutils/xlogmaster
 xlogout		ports/x11/xlogout
 xloops-ginac	ports/science/xloops-ginac
