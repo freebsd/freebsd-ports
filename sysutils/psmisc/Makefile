@@ -10,7 +10,7 @@ PORTVERSION=	17
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.bitcon.no/pub/linux/slackware/source/a/procps/
 
-MAINTAINER=	rantapaa@uswest.net
+MAINTAINER=	ports@FreeBSD.Org
 
 INSTALL_TARGET=	install-all
 MAN1=		pidof.1 pstree.1 killall.1
