@@ -14,17 +14,14 @@ MASTER_SITE_SUBDIR=	fwbuilder
 MAINTAINER=	vadim@fwbuilder.org
 COMMENT=	Firewall Builder API
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xslt.2:${PORTSDIR}/textproc/libxslt \
-		netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp \
-		crypto.3:${PORTSDIR}/security/openssl
+LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
 
-USE_GNOME=	glib12
-
+USE_GNOME=	glib12 libxslt
+USE_OPENSSL=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
-GNU_CONFIGURE=  yes
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
 INSTALLS_SHLIB=	yes
