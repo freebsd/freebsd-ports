@@ -21,6 +21,8 @@ USE_RUBY_EXTCONF=	yes
 
 USE_MESA=	yes
 
+RUBY_WITH_PTHREAD=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_ARGS=	--with-ruby-dir="${LOCALBASE}" --with-x11-dir="${X11BASE}"
 INSTALL_TARGET=	site-install
