@@ -12,7 +12,7 @@ void gdImageBigGif(gdImagePtr im, FILE *outFile)
 {
         gdIOCtx   *out = gdNewFileCtx(outFile);
         gdImageBigGifCtx(im, out);
-	out->free(out);
+	out->gd_free(out);
 }
 
 void* gdImageBigGifPtr(gdImagePtr im, int *size)
@@ -21,7 +21,7 @@ void* gdImageBigGifPtr(gdImagePtr im, int *size)
         gdIOCtx   *out = gdNewDynamicCtx(2048, NULL);
         gdImageBigGifCtx(im, out);
 	rv = gdDPExtractData(out,size);
- 	out->free(out);
+ 	out->gd_free(out);
 	return rv;
 }
 

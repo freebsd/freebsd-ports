@@ -72,7 +72,7 @@ void gdImageLzw(gdImagePtr im, FILE *outFile)
 {
         gdIOCtx   *out = gdNewFileCtx(outFile);
         gdImageLzwCtx(im, out);
-        out->free(out);
+        out->gd_free(out);
 }
 
 void* gdImageLzwPtr(gdImagePtr im, int *size)
@@ -81,7 +81,7 @@ void* gdImageLzwPtr(gdImagePtr im, int *size)
         gdIOCtx   *out = gdNewDynamicCtx(2048, NULL);
         gdImageLzwCtx(im, out);
         rv = gdDPExtractData(out,size);
-	out->free(out);
+	out->gd_free(out);
 	return rv;
 }
 

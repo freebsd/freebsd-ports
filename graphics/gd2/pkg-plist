@@ -1,3 +1,4 @@
+bin/annotate
 bin/bdftogd
 bin/gd2copypal
 bin/gd2togif

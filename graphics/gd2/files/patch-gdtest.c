@@ -2,7 +2,7 @@
 +++ gdtest.c	Tue Nov  6 15:53:38 2001
 @@ -84,6 +84,35 @@
    gdImageDestroy (im2);
-   ctx->free (ctx);
+   ctx->gd_free (ctx);
  
 +        /* */
 +        /* Send to GIF File then Ptr */
@@ -32,7 +32,7 @@
 +        CompareImages("GD->GIF ptr->GD", ref, im2);
 +
 +	gdImageDestroy(im2);
-+	ctx->free(ctx);
++	ctx->gd_free(ctx);
  
    /* */
    /* Send to GD2 File then Ptr */
