@@ -8,13 +8,13 @@
 
 PORTNAME=	faces
 PORTVERSION=	1.7.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
-LIB_DEPENDS=    intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=    intl.4:${PORTSDIR}/devel/gettext
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS= --prefix=${PREFIX} --enable-imap --enable-pop \
