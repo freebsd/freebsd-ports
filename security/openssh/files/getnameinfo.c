@@ -26,7 +26,9 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: /tmp/pcvs/ports/security/openssh/files/Attic/getnameinfo.c,v 1.1 2000-01-13 23:22:12 green Exp $
+ * ported from:
+ * FreeBSD: src/lib/libc/net/getnameinfo.c,v 1.3 2000/02/09 00:38:06 shin Exp 
+ * $FreeBSD: /tmp/pcvs/ports/security/openssh/files/Attic/getnameinfo.c,v 1.2 2000-04-17 22:20:23 sumikawa Exp $
  */
 
 /*
@@ -151,7 +153,7 @@ getnameinfo(sa, salen, host, hostlen, serv, servlen, flags)
 		if (IN_MULTICAST(v4a) || IN_EXPERIMENTAL(v4a))
 			flags |= NI_NUMERICHOST;
 		v4a >>= IN_CLASSA_NSHIFT;
-		if (v4a == 0 || v4a == IN_LOOPBACKNET)
+		if (v4a == 0)
 			flags |= NI_NUMERICHOST;
 		break;
 #ifdef INET6
@@ -189,14 +191,24 @@ getnameinfo(sa, salen, host, hostlen, serv, servlen, flags)
 				unsigned int ifindex =
 					((struct sockaddr_in6 *)sa)->sin6_scope_id;
 				char ifname[IF_NAMESIZE * 2 /* for safety */];
+				int scopelen, numaddrlen;
 
 				if ((if_indextoname(ifindex, ifname)) == NULL)
 					return ENI_SYSTEM;
-				if (strlen(host) + 1 /* SCOPE_DELIMITER */
-				    + strlen(ifname) > hostlen)
+				scopelen = strlen(ifname);
+				numaddrlen = strlen(host);
+				if (numaddrlen + 1 /* SCOPE_DELIMITER */
+				    + scopelen > hostlen)
 					return ENI_MEMORY;
-				*ep = SCOPE_DELIMITER;
-				strcpy(ep + 1, ifname);
+				/*
+				 * Shift the host string to allocate
+				 * space for the scope ID part.
+				 */
+				memmove(host + scopelen + 1, host, numaddrlen);
+				/* copy the scope ID and the delimiter */
+				memcpy(host, ifname, scopelen);
+				host[scopelen] = SCOPE_DELIMITER;
+				host[scopelen + 1 + numaddrlen] = '\0';
 			}
 		}
 #endif /* INET6 */
