@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvu
-PORTVERSION=	0.80
+PORTVERSION=	0.81
 CATEGORIES=	www
 MASTER_SITES=	http://cvs.nvu.com/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
@@ -34,7 +34,7 @@ OPTIONS=	XFT "Enable Xft font anti-aliasing" on \
 		DEBUG "Enable debugging (i.e. gdb) support" off \
 		OPTIMIZED_CFLAGS "Enable -O2 optimizations" off
 
-NVU=		nvu-0.80
+NVU=		${PORTNAME}-${PORTVERSION}
 FAKEDIR=	${WRKDIR}/FAKE
 WRKSRC=		${WRKDIR}/mozilla
 PLIST=		${WRKDIR}/plist
@@ -93,7 +93,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/nsprpub/configure \
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
-		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
 
 pre-install:
