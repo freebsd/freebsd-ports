@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qsstv
-PORTVERSION=	5.3a
+PORTVERSION=	5.3b
 CATEGORIES=	comms
 MASTER_SITES=	http://users.telenet.be/on4qz/download/
 
