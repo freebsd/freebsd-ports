@@ -19,14 +19,15 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
 LIB_DEPENDS=	wx_gtk:${PORTSDIR}/x11-toolkits/wxgtk-devel
 
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/Hashish
 CFLAGS+=	-I${LOCALBASE}/include
 USE_GMAKE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,^CXXFLAGS =,CXXFLAGS+=,g ; \
+	@${REINPLACE_CMD} -e "s,^CXXFLAGS =,CXXFLAGS+=,g ; \
 		s,^LBLIBS =,LBLIBS = -L${LOCALBASE}/lib,g" ${WRKSRC}/Makefile
-	@${PERL} -pi -e "s,crypto/,cryptopp/,g" ${WRKSRC}/src/main.cpp
+	@${REINPLACE_CMD} -e "s,crypto/,cryptopp/,g" ${WRKSRC}/src/main.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hashish ${PREFIX}/bin

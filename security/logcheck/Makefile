@@ -13,14 +13,15 @@ DISTNAME=	logsentry-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 
 pre-configure:
-	${PERL} -pi -e "s@/usr/local/etc/tmp@${PREFIX}/var/tmp@g; \
+	${REINPLACE_CMD} -e "s@/usr/local/etc/tmp@${PREFIX}/var/tmp@g; \
 		s@/usr/local@${PREFIX}@" ${WRKSRC}/Makefile \
 		${WRKSRC}/systems/freebsd/logcheck.sh
-	${PERL} -pi -e "s@/bin/mkdir@${MKDIR}@g" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s@/bin/mkdir@${MKDIR}@g" ${WRKSRC}/Makefile
 
 post-build:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}

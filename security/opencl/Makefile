@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_NEWGCC=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.pl
@@ -27,7 +28,7 @@ INSTALLS_SHLIB=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 post-patch:
-	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g ; \
+	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g ; \
 		s,%%CFLAGS%%,${CFLAGS},g" ${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${RM} -f ${WRKSRC}/src/pipe_io.cpp.orig
 

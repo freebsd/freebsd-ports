@@ -16,9 +16,10 @@ DISTFILES=	${PORTNAME}-1_0.tgz
 MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=	rid
+USE_REINPLACE=	yes
 
 pre-configure:
-	@${PERL} -pi -e 's:config.txt:${PREFIX}/etc/rid.conf:g'  \
+	@${REINPLACE_CMD} -e 's:config.txt:${PREFIX}/etc/rid.conf:g'  \
 		${WRKSRC}/config.h
 
 do-install:
