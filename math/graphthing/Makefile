@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	graphthing
-PORTVERSION=	0.7
+PORTVERSION=	0.9.1
 CATEGORIES=	math
-MASTER_SITES=	http://members.optushome.com.au/davidsymonds/gt/
+MASTER_SITES=	http://graph.seul.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool that allows you to create, manipulate and study graphs
@@ -18,11 +18,12 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 
 USE_BISON=	yes
+USE_BZIP2=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-CONFIGURE_ARGS=	--without-included-gettext \
+CONFIGURE_ARGS=	--without-included-gettext
 
 .include <bsd.port.mk>
