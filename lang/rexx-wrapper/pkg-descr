@@ -1,0 +1,10 @@
+Rexx/Wrapper is a tool that wraps Rexx source or tokenised code into an
+executable. The Rexx source code can be optionally compressed and encoded to
+ensure that the original Rexx code cannot be viewed (unless you have the
+original encryption key).
+
+To use Rexx/Wrapper you need two extra bits of software:
+   1. A supported Rexx interpreter
+   2. A supported C compiler 
+
+WWW: http://rexxwrapper.sourceforge.net/
