@@ -7,10 +7,12 @@
 
 PORTNAME=	xcin
 PORTVERSION=	2.5.2.3
+PORTREVISION=	1
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/ \
-		http://chewing.oio.cx/download/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} chewing-0.0.5.1.tar.gz
+		http://chewing.oio.cx/download/ \
+		http://chewing.oio.cx/snapshot/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} chewing-2001Nov01-snapshot.tar.gz
 
 MAINTAINER=	keith@FreeBSD.org
 
