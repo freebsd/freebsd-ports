@@ -9,3 +9,5 @@ information about multiple packages. There is also a tool that allows
 the user to enter queries on the command-line. In order to simplify
 compilation and linkage, there are new frontends of the various OCaml
 compilers that can directly deal with packages.
+
+WWW: http://www.ocaml-programming.de/packages/documentation/findlib/
