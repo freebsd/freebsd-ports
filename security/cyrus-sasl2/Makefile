@@ -7,6 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	2.1.7
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/ \
