@@ -6156,6 +6156,7 @@ ports_x11_toolkits	ports/x11-toolkits
 ports_x11_wm	ports/x11-wm
 portscanner	ports/security/portscanner
 portsentry	ports/security/portsentry
+portsman	ports/sysutils/portsman
 portupgrade	ports/sysutils/portupgrade
 posadis		ports/net/posadis
 pose		ports/palm/pose
