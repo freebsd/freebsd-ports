@@ -1,6 +1,5 @@
 bin/msql2mysql
 bin/mysql_convert_table_format
-bin/mysql_create_system_tables
 bin/mysql_explain_log
 bin/mysql_find_rows
 bin/mysql_fix_extensions
