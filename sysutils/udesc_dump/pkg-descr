@@ -1,0 +1,14 @@
+udesc_dump - show USB descriptors
+
+Display following descriptors.
+ 1. Device descriptor
+ 2. Configuration descriptor
+ 3. Interface descriptor
+ 4. Interface Power descriptor
+ 5. Endpoint descriptor
+ 6. String descriptor
+ 7. Audio Class descriptors
+ 8. HID descriptor
+ 9. Report descriptor
+
+WWW: http://home.jp.freebsd.org/~gehenna/USB/

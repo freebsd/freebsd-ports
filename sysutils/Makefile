@@ -229,6 +229,7 @@
     SUBDIR += ttyload
     SUBDIR += tua
     SUBDIR += ucspi-tcp
+    SUBDIR += udesc_dump
     SUBDIR += unquote
     SUBDIR += upsd
     SUBDIR += upsmon
