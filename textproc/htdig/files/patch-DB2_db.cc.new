@@ -1,0 +1,10 @@
+--- htlib/DB2_db.cc	Thu Feb 24 18:29:11 2000
++++ htlib/DB2_db.cc.new	Tue Dec 11 00:16:27 2001
+@@ -44,7 +44,6 @@
+ #include <errno.h>
+ #include <stdlib.h>
+ #include <fstream.h>
+-#include <malloc.h>
+ #include <unistd.h>
+ 
+ // Where do I need this for? I don't know.
