@@ -106,7 +106,7 @@ CONFIGURE_ARGS+=	--with-ldap \
 # Untested and may fail !
 .if defined(WITH_APR_FROM_PORTS)
 .    if defined (WITH_BDB) || defined(WITH_BERKELEYDB)
-BROKEN=			"You can't set WITH_BDB or WITH_BERKELEYDB when WITH_APR_FROM_PORTS is defined"
+IGNORE=			"You can't set WITH_BDB or WITH_BERKELEYDB when WITH_APR_FROM_PORTS is defined"
 .    endif
 LIB_DEPENDS+=		apr-0.9:${PORTSDIR}/devel/apr
 CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}/bin/apr-config \
@@ -115,7 +115,7 @@ CONFIGURE_ENV+=		LTFLAGS="--tag=CXX"
 PLIST_SUB+=	PORTS_APR="@comment "
 .else
 .   if exists(${LOCALBASE}/lib/libapr-0.so)
-BROKEN=				"apr is installed and may conflict with apache one\
+IGNORE=				"apr is installed and may conflict with apache one\
 					(if you want to use apr port define WITH_APR_FROM_PORTS,\
 					at your own risk)"
 .   endif

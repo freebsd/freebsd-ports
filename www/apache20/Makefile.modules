@@ -13,7 +13,7 @@
 #
 
 .if defined(SLAVE_DESIGNED_FOR) && ${PORTVERSION} != ${SLAVE_DESIGNED_FOR}
-BROKEN=		"Sorry, ${SLAVENAME} and ${PORTNAME} versions are out of sync"
+IGNORE=		"Sorry, ${SLAVENAME} and ${PORTNAME} versions are out of sync"
 .endif
 
 # MPM section:
@@ -30,7 +30,7 @@ PLIST_SUB+=	PREFORK="@comment " WORKER=""
 .      elif  ${WITH_MPM:L} == "perchild"
 PLIST_SUB+=	PREFORK="@comment " WORKER="@comment "
 .      else
-BROKEN=		"Unknown MPM: ${WITH_MPM}"
+IGNORE=		"Unknown MPM: ${WITH_MPM}"
 .      endif
 .   else
 PLIST_SUB+=	PREFORK="@comment " WORKER="@comment "
@@ -79,10 +79,10 @@ LIB_DEPENDS+=		db-4.2:${PORTSDIR}/databases/db42
 CONFIGURE_ARGS+=	--with-dbm=db42 \
 			--with-berkeley-db=${LOCALBASE}/include:${LOCALBASE}/lib/db42
 .       else
-BROKEN=		"Unknown Berkeley DB version"
+IGNORE=		"Unknown Berkeley DB version"
 .       endif
 .   else
-BROKEN=		"Unknown DBM"
+IGNORE=		"Unknown DBM"
 .   endif
 .else
 CONFIGURE_ARGS+=	--with-dbm=sdbm
@@ -126,7 +126,7 @@ ${module}_PLIST_SUB=	"@comment "
 # Configure
 
 .if defined(WITH_MODULES) && ( defined(WITHOUT_MODULES) || defined(WITH_EXTRA_MODULES))
-BROKEN=		"WITH_MODULES and WITHOUT_MODULES are mutually exclusive"
+IGNORE=		"WITH_MODULES and WITHOUT_MODULES are mutually exclusive"
 .endif
 
 .if defined(WITHOUT_AUTH) || defined(WITH_CUSTOM_AUTH) || \
