@@ -1,6 +1,6 @@
 --- configure.orig	Fri Jun 11 20:37:06 2004
 +++ configure	Wed Jun 16 13:43:31 2004
-@@ -1617,7 +1617,7 @@
+@@ -1647,7 +1647,7 @@
  	COMPILE='$(CC) $(CFLAGS) $(CC_O)$*$O -c $<'
  
  	# Assume GCC.
