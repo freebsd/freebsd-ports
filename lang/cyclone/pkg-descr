@@ -1,0 +1,16 @@
+Cyclone is a programming language based on C that is safe, meaning
+that it rules out programs that have buffer overflows, dangling
+pointers, format string attacks, and so on. High-level, type-safe
+languages, such as Java, Scheme, or ML also provide safety, but
+they don't give the same control over data representations and
+memory management that C does (witness the fact that the run-time
+systems for these languages are usually written in C.) Furthermore,
+porting legacy C code to these languages or interfacing with legacy
+C libraries is a difficult and error-prone process. The goal of
+Cyclone is to give programmers the same low-level control and
+performance of C without sacrificing safety, and to make it easy
+to port or interface with legacy C code.
+
+WWW: http://www.cs.cornell.edu/projects/cyclone/ 
+
+-- AlanE <ports@geeksrus.net>
