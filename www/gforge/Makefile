@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	http://gforge.org/download.php/44/
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source collaborative software development tool
 
 RUN_DEPENDS=	${LOCALBASE}/bin/php:${PORTSDIR}/lang/php4 \
