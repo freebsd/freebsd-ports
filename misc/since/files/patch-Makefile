@@ -1,0 +1,31 @@
+--- Makefile.orig	Mon May  7 13:05:30 2001
++++ Makefile	Mon Feb 11 12:37:38 2002
+@@ -16,8 +16,8 @@
+ ###########################################################################
+ # Compiler and Flags ######################################################
+ 
+-CC        = gcc
+-CFLAGS    = -Wall -O2 -fomit-frame-pointer -DVERSION=\"$(VERSION)\"
++#CC       = gcc
++CFLAGS    += -Wall -fomit-frame-pointer -DVERSION=\"$(VERSION)\"
+ STRIP     = strip
+ 
+ #CFLAGS   += -DTRACE
+@@ -43,15 +43,14 @@
+ # Install #################################################################
+ 
+ install : $(TARGET)
+-	$(INSTALL) -m 0755 $(TARGET) $(INTARGET)
+-	$(INSTALL) -m 0644 $(MAN) $(INMAN)
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(PREFIX)/bin/$(TARGET)
++	$(BSD_INSTALL_MAN) $(MAN) $(PREFIX)/man/man1/$(MAN)
+ 
+ ###########################################################################
+ # Build since executable ##################################################
+ 
+ $(TARGET) : $(OBJ)
+ 	$(CC) $(CFLAGS) $(OBJ) -o $(TARGET)
+-	$(STRIP) $(TARGET)
+ 
+ ###########################################################################
+ # Build object files from source ##########################################
