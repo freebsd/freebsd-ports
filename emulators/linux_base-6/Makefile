@@ -9,11 +9,13 @@ PORTNAME=		linux_base
 PORTVERSION=		6.1
 PORTREVISION=		1
 CATEGORIES=		emulators linux
-MASTER_SITES=		${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
+MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
+MASTER_SITE_SUBDIR=	${PORTVERSION}/en/os/${MACHINE_ARCH}/RedHat/RPMS
 DISTFILES=		${RPM_SET1} ${RPM_LDCONFIG} ${RPM_SET2} \
 			${RPM_RPM} ${RPM_SET3}
 
-PATCH_SITES=		${RPM_MIRRORS:S/__DIR__/${UPDDIR}/g}
+PATCH_SITES=		${MASTER_SITE_REDHAT_LINUX}
+PATCH_SITE_SUBDIR=	updates/6.2/en/os/${MACHINE_ARCH}
 PATCHFILES=		${UPDATES}
 
 MAINTAINER=		ports@FreeBSD.org
@@ -29,19 +31,6 @@ NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
 PLIST=			${PKGDIR}/pkg-plist.${MACHINE_ARCH}
 MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
-
-RPM_MIRRORS=		\
-	ftp://ftp.redhat.com/pub/redhat/__DIR__/ \
-	ftp://ftp.infomagic.com/pub/mirrors/linux/RedHat/__DIR__/ \
-	ftp://ftp.crc.ca/mirrors/by-site/ftp.redhat.com/redhat/__DIR__/ \
-	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/__DIR__/ \
-	ftp://mirror.nucba.ac.jp/mirror/redhat/__DIR__/ \
-	ftp://ftp.mirror.ac.uk/sites/ftp.redhat.com/pub/redhat/__DIR__/ \
-	ftp://ftp.is.co.za/linux/distributions/redhat/__DIR__/ \
-	ftp://mirror.aarnet.edu.au/pub/linux/redhat/__DIR__/
-
-STDDIR=			linux/6.1/en/os/${MACHINE_ARCH}/RedHat/RPMS
-UPDDIR=			linux/updates/6.2/en/os/${MACHINE_ARCH}
 
 .include <bsd.port.pre.mk>
 
