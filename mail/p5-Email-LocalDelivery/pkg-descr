@@ -1,0 +1,5 @@
+This is the second module produced by the "Perl Email Project", a
+reaction against the complexity and increasing bugginess of the Mail::*
+modules. It delivers an email to a list of mailboxes.
+
+WWW: http://search.cpan.org/dist/Email-LocalDelivery
