@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.33 1997/01/09 03:00:49 asami Exp $
+# $Id: Makefile,v 1.34 1997/02/02 02:12:09 chuckr Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -12,9 +12,6 @@
     SUBDIR += eperl
     SUBDIR += gn
     SUBDIR += harvest
-    SUBDIR += javac_netscape
-    SUBDIR += jdk
-    SUBDIR += kaffe
     SUBDIR += libwww
     SUBDIR += linemode
     SUBDIR += lynx
@@ -29,7 +26,6 @@
     SUBDIR += p5-HTML-Stream
     SUBDIR += p5-HTTPD-Tools
     SUBDIR += p5-libwww
-    SUBDIR += sawt
     SUBDIR += slang-lynx
     SUBDIR += squid
     SUBDIR += squid11
