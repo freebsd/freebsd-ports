@@ -1553,6 +1553,7 @@ dmachine	ports/ftp/dmachine
 dmake		ports/devel/dmake
 dmalloc		ports/devel/dmalloc
 dmidecode	ports/sysutils/dmidecode
+dmitry		ports/security/dmitry
 dmjava		ports/games/dmjava
 dna-qc		ports/biology/dna-qc
 dnetc		ports/misc/dnetc
