@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zwiki
-PORTVERSION=	0.9.8
+PORTVERSION=	0.27.1
 CATEGORIES=	www zope
 MASTER_SITES=	http://www.zope.org/Members/simon/ZWiki/ \
 		http://zwiki.org/zwikidir/releases/
@@ -17,20 +17,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	A WikiWikiWeb product for Zope
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
-
+USE_ZOPE=	yes
 USE_PYTHON=	yes
 DIST_SUBDIR=	zope
 
-# You can change this in the environment if you like.
-SZOPEBASEDIR?=		www/Zope
-
-# Don't change these
-ZOPEBASEDIR=		${PREFIX}/${SZOPEBASEDIR}
 ZOPEPRODUCTNAME=	ZWiki
 ZOPEPRODUCTDIR=		lib/python/Products
 
-PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
 CPIO=		cpio --quiet -pdum -R
 
