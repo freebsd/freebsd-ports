@@ -16,6 +16,8 @@ COMMENT=	Media player for KDE
 
 LIB_DEPENDS=    tag.4:${PORTSDIR}/audio/taglib
 
+BROKEN=		Incomplete pkg-plist
+
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
 
 USE_BZIP2=	yes

@@ -23,6 +23,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
+BROKEN=		Incomplete pkg-plist
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=13

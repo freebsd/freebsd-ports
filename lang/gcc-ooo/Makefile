@@ -24,6 +24,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER?=	openoffice@FreeBSD.org
 COMMENT?=	GNU Compiler Collection for OpenOffice.org
 
+BROKEN=		Incomplete pkg-plist
+
 NO_LATEST_LINK=	yes
 
 USE_BISON=	yes
