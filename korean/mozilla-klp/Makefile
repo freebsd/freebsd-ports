@@ -16,6 +16,8 @@ EXTRACT_ONLY=	${KLP_SRC}${EXTRACT_SUFX}
 
 MAINTAINER=	cjh@FreeBSD.org
 
+BROKEN=		"out of sync with mozilla"
+
 BUILD_DEPENDS=	${X11BASE}/lib/mozilla/regxpcom:${PORTSDIR}/www/mozilla
 RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla \
 		${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
