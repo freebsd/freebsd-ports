@@ -17,6 +17,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby interface to libcurl
 
+BROKEN=		"Does not compile"
+
 LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
 
 USE_RUBY=	yes
@@ -27,12 +29,6 @@ INSTALL_TARGET=	site-install
 
 DOCS_EN=	README TODO
 EXAMPLES_EN=	example.rb
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -46,4 +42,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
