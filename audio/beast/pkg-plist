@@ -1,12 +1,14 @@
 bin/beast
-bin/beast-0.6.1
+bin/beast-0.6.4
 bin/bsesh
-bin/bsesh-0.6.1
+bin/bsesh-0.6.4
 bin/sfidl
 include/bse/bse.h
 include/bse/bse.idl
 include/bse/bseamplifier.idl
 include/bse/bsebiquadfilter.h
+include/bse/bsebus.h
+include/bse/bsebusmodule.idl
 include/bse/bsecategories.h
 include/bse/bsecompat.h
 include/bse/bseconfig.h
@@ -14,6 +16,7 @@ include/bse/bseconstant.h
 include/bse/bseconstvalues.h
 include/bse/bsecontainer.h
 include/bse/bsecontextmerger.h
+include/bse/bsecore.gen-idl.h
 include/bse/bsecore.idl
 include/bse/bsecsynth.h
 include/bse/bsecxxarg.h
@@ -27,7 +30,13 @@ include/bse/bsecxxutils.h
 include/bse/bsecxxvalue.h
 include/bse/bsedatapocket.h
 include/bse/bsedefs.h
+include/bse/bsedevice.h
 include/bse/bseeditablesample.h
+include/bse/bseengine.h
+include/bse/bseenginemaster.h
+include/bse/bseenginenode.h
+include/bse/bseengineschedule.h
+include/bse/bseengineutils.h
 include/bse/bseenums.h
 include/bse/bseexports.h
 include/bse/bsegconfig.h
@@ -36,6 +45,7 @@ include/bse/bsegentypes.h
 include/bse/bseglobals.h
 include/bse/bseglue.h
 include/bse/bsehack.idl
+include/bse/bseieee754.h
 include/bse/bseincluder.h
 include/bse/bseinstrumentinput.h
 include/bse/bseinstrumentoutput.h
@@ -45,6 +55,7 @@ include/bse/bseladspa.h
 include/bse/bseladspamodule.h
 include/bse/bsemain.h
 include/bse/bsemath.h
+include/bse/bsemathsignal.h
 include/bse/bsemidicontroller.h
 include/bse/bsemididecoder.h
 include/bse/bsemididevice-null.h
@@ -62,28 +73,30 @@ include/bse/bseobject.h
 include/bse/bseparam.h
 include/bse/bseparasite.h
 include/bse/bsepart.h
+include/bse/bsepcmdevice-null.h
 include/bse/bsepcmdevice-oss.h
 include/bse/bsepcmdevice.h
 include/bse/bsepcminput.h
 include/bse/bsepcmoutput.h
 include/bse/bsepcmwriter.h
 include/bse/bseplugin.h
+include/bse/bseprobe.idl
 include/bse/bseprocedure.h
 include/bse/bseproject.h
 include/bse/bsescripthelper.h
+include/bse/bsesequencer.h
 include/bse/bseserver.h
 include/bse/bsesnet.h
-include/bse/bsesniffer.idl
 include/bse/bsesnooper.h
 include/bse/bsesong.h
 include/bse/bsesource.h
-include/bse/bsessequencer.h
 include/bse/bsestandardosc.h
 include/bse/bsestandardsynths.h
 include/bse/bsestorage.h
 include/bse/bsesubiport.h
 include/bse/bsesuboport.h
 include/bse/bsesubsynth.h
+include/bse/bsesummation.idl
 include/bse/bsesuper.h
 include/bse/bsetrack.h
 include/bse/bsetype.h
@@ -100,25 +113,18 @@ include/bse/gsldatahandle-vorbis.h
 include/bse/gsldatahandle.h
 include/bse/gsldatautils.h
 include/bse/gsldefs.h
-include/bse/gslengine.h
 include/bse/gslfft.h
 include/bse/gslfilehash.h
 include/bse/gslfilter.h
-include/bse/gslieee754.h
 include/bse/gslloader.h
 include/bse/gslmagic.h
-include/bse/gslmath.h
 include/bse/gsloscillator.h
 include/bse/gslosctable.h
-include/bse/gslsignal.h
 include/bse/gslvorbis-cutter.h
 include/bse/gslvorbis-enc.h
 include/bse/gslwavechunk.h
 include/bse/gslwaveosc.h
 include/bse/ladspa.h
-include/bsw/bsw.h
-include/bsw/bswgenapi.h
-include/bsw/bswproxy.h
 include/sfi/glib-extra.h
 include/sfi/sfi.h
 include/sfi/sficomport.h
@@ -142,137 +148,151 @@ include/sfi/sfitypes.h
 include/sfi/sfiustore.h
 include/sfi/sfivalues.h
 include/sfi/sfivmarshal.h
-lib/bse/v0.6.1/plugins/artscompressor.la
-lib/bse/v0.6.1/plugins/artscompressor.so
-lib/bse/v0.6.1/plugins/bseadder.la
-lib/bse/v0.6.1/plugins/bseadder.so
-lib/bse/v0.6.1/plugins/bseatandistort.la
-lib/bse/v0.6.1/plugins/bseatandistort.so
-lib/bse/v0.6.1/plugins/bsebalance.la
-lib/bse/v0.6.1/plugins/bsebalance.so
-lib/bse/v0.6.1/plugins/bseevaluator.la
-lib/bse/v0.6.1/plugins/bseevaluator.so
-lib/bse/v0.6.1/plugins/bseiirfilter.la
-lib/bse/v0.6.1/plugins/bseiirfilter.so
-lib/bse/v0.6.1/plugins/bsemixer.la
-lib/bse/v0.6.1/plugins/bsemixer.so
-lib/bse/v0.6.1/plugins/bsemult.la
-lib/bse/v0.6.1/plugins/bsemult.so
-lib/bse/v0.6.1/plugins/bsenoise.la
-lib/bse/v0.6.1/plugins/bsenoise.so
-lib/bse/v0.6.1/plugins/bsesequencer.la
-lib/bse/v0.6.1/plugins/bsesequencer.so
-lib/bse/v0.6.1/plugins/bsesimpleadsr.la
-lib/bse/v0.6.1/plugins/bsesimpleadsr.so
-lib/bse/v0.6.1/plugins/davbassfilter.la
-lib/bse/v0.6.1/plugins/davbassfilter.so
-lib/bse/v0.6.1/plugins/davcanyondelay.la
-lib/bse/v0.6.1/plugins/davcanyondelay.so
-lib/bse/v0.6.1/plugins/davchorus.la
-lib/bse/v0.6.1/plugins/davchorus.so
-lib/bse/v0.6.1/plugins/davorgan.la
-lib/bse/v0.6.1/plugins/davorgan.so
-lib/bse/v0.6.1/plugins/davsyndrum.la
-lib/bse/v0.6.1/plugins/davsyndrum.so
-lib/bse/v0.6.1/plugins/davxtalstrings.la
-lib/bse/v0.6.1/plugins/davxtalstrings.so
-lib/bse/v0.6.1/plugins/freeverb.la
-lib/bse/v0.6.1/plugins/freeverb.so
+lib/bse/v0.6.4/plugins/artscompressor.la
+lib/bse/v0.6.4/plugins/artscompressor.so
+lib/bse/v0.6.4/plugins/bseadder.la
+lib/bse/v0.6.4/plugins/bseadder.so
+lib/bse/v0.6.4/plugins/bseatandistort.la
+lib/bse/v0.6.4/plugins/bseatandistort.so
+lib/bse/v0.6.4/plugins/bsebalance.la
+lib/bse/v0.6.4/plugins/bsebalance.so
+lib/bse/v0.6.4/plugins/bsecontribsampleandhold.la
+lib/bse/v0.6.4/plugins/bsecontribsampleandhold.so
+lib/bse/v0.6.4/plugins/bseevaluator.la
+lib/bse/v0.6.4/plugins/bseevaluator.so
+lib/bse/v0.6.4/plugins/bseiirfilter.la
+lib/bse/v0.6.4/plugins/bseiirfilter.so
+lib/bse/v0.6.4/plugins/bsemixer.la
+lib/bse/v0.6.4/plugins/bsemixer.so
+lib/bse/v0.6.4/plugins/bsemult.la
+lib/bse/v0.6.4/plugins/bsemult.so
+lib/bse/v0.6.4/plugins/bsenoise.la
+lib/bse/v0.6.4/plugins/bsenoise.so
+lib/bse/v0.6.4/plugins/bsesequencer.la
+lib/bse/v0.6.4/plugins/bsesequencer.so
+lib/bse/v0.6.4/plugins/bsesimpleadsr.la
+lib/bse/v0.6.4/plugins/bsesimpleadsr.so
+lib/bse/v0.6.4/plugins/davbassfilter.la
+lib/bse/v0.6.4/plugins/davbassfilter.so
+lib/bse/v0.6.4/plugins/davcanyondelay.la
+lib/bse/v0.6.4/plugins/davcanyondelay.so
+lib/bse/v0.6.4/plugins/davchorus.la
+lib/bse/v0.6.4/plugins/davchorus.so
+lib/bse/v0.6.4/plugins/davorgan.la
+lib/bse/v0.6.4/plugins/davorgan.so
+lib/bse/v0.6.4/plugins/davsyndrum.la
+lib/bse/v0.6.4/plugins/davsyndrum.so
+lib/bse/v0.6.4/plugins/davxtalstrings.la
+lib/bse/v0.6.4/plugins/davxtalstrings.so
+lib/bse/v0.6.4/plugins/freeverb.la
+lib/bse/v0.6.4/plugins/freeverb.so
 lib/libbse-0.6.so
-lib/libbse-0.6.so.1
+lib/libbse-0.6.so.4
 lib/libbse.la
 lib/libbse.so
-lib/libbsw-0.6.so
-lib/libbsw-0.6.so.1
-lib/libbsw.la
-lib/libbsw.so
 lib/libsfi-0.6.so
-lib/libsfi-0.6.so.1
+lib/libsfi-0.6.so.4
 lib/libsfi.la
 lib/libsfi.so
 libdata/pkgconfig/bse.pc
 libdata/pkgconfig/sfi.pc
 share/gnome/application-registry/beast.applications
 share/gnome/applications/beast.desktop
-share/gnome/beast/v0.6.1/docs/beast-gxk.3.markup
-share/gnome/beast/v0.6.1/docs/beast-index.markup
-share/gnome/beast/v0.6.1/docs/beast.1.markup
-share/gnome/beast/v0.6.1/docs/bse-procs.3.markup
-share/gnome/beast/v0.6.1/docs/bse-structs.3.markup
-share/gnome/beast/v0.6.1/docs/bse.3.markup
-share/gnome/beast/v0.6.1/docs/bsesh.1.markup
-share/gnome/beast/v0.6.1/docs/engine-mplan.markup
-share/gnome/beast/v0.6.1/docs/faq.markup
-share/gnome/beast/v0.6.1/docs/objdoc.markup
-share/gnome/beast/v0.6.1/docs/plugin-devel.markup
-share/gnome/beast/v0.6.1/docs/quickstart.markup
-share/gnome/beast/v0.6.1/docs/release-news.markup
-share/gnome/beast/v0.6.1/docs/release-notes.markup
-share/gnome/beast/v0.6.1/docs/sfi.3.markup
-share/gnome/beast/v0.6.1/docs/sfidl-manual.markup
-share/gnome/beast/v0.6.1/docs/sfidl.1.markup
-share/gnome/beast/v0.6.1/images/beast-mime.png
-share/gnome/beast/v0.6.1/images/beast-splash.png
-share/gnome/beast/v0.6.1/images/bse-mime.png
-share/gnome/beast/v0.6.1/images/module-voices.png
-share/gnome/beast/v0.6.1/keys/keyrc.de
-share/gnome/beast/v0.6.1/keys/keyrc.us
-share/gnome/beast/v0.6.1/skins/biogreen.skin
-share/gnome/beast/v0.6.1/skins/blueimpress.skin
-share/gnome/beast/v0.6.1/skins/brownforms.skin
-share/gnome/beast/v0.6.1/skins/images/biogreen.jpg
-share/gnome/beast/v0.6.1/skins/images/blueimpress.jpg
-share/gnome/beast/v0.6.1/skins/images/brownforms.jpg
-share/gnome/beast/v0.6.1/skins/images/moonpaper.png
-share/gnome/beast/v0.6.1/skins/images/silvervein.png
-share/gnome/beast/v0.6.1/skins/moonpaper.skin
-share/gnome/beast/v0.6.1/skins/silvervein.skin
-share/gnome/beast/v0.6.1/skins/white.skin
-share/gnome/bse/v0.6.1/demo/partymonster.bse
-share/gnome/bse/v0.6.1/effects/atan-canyon.bse
-share/gnome/bse/v0.6.1/instruments/synth-lead.bse
-share/gnome/bse/v0.6.1/instruments/test-string.bse
-share/gnome/bse/v0.6.1/scripts/bse-scm-glue.boot
-share/gnome/bse/v0.6.1/scripts/modules2grid.scm
-share/gnome/bse/v0.6.1/scripts/part-harmonic-transposer.scm
-share/gnome/bse/v0.6.1/scripts/progressor-example.scm
-share/gnome/bse/v0.6.1/scripts/song-parts-operations.scm
+share/gnome/beast/v0.6.4/docs/architecture.markup
+share/gnome/beast/v0.6.4/docs/beast-gxk.3.markup
+share/gnome/beast/v0.6.4/docs/beast-index.markup
+share/gnome/beast/v0.6.4/docs/beast.1.markup
+share/gnome/beast/v0.6.4/docs/bse-procs.3.markup
+share/gnome/beast/v0.6.4/docs/bse-structs.3.markup
+share/gnome/beast/v0.6.4/docs/bse.3.markup
+share/gnome/beast/v0.6.4/docs/bsesh.1.markup
+share/gnome/beast/v0.6.4/docs/engine-mplan.markup
+share/gnome/beast/v0.6.4/docs/faq.markup
+share/gnome/beast/v0.6.4/docs/objdoc.markup
+share/gnome/beast/v0.6.4/docs/plugin-devel.markup
+share/gnome/beast/v0.6.4/docs/quickstart.markup
+share/gnome/beast/v0.6.4/docs/release-news.markup
+share/gnome/beast/v0.6.4/docs/release-notes.markup
+share/gnome/beast/v0.6.4/docs/sfi.3.markup
+share/gnome/beast/v0.6.4/docs/sfidl-manual.markup
+share/gnome/beast/v0.6.4/docs/sfidl.1.markup
+share/gnome/beast/v0.6.4/images/beast-components.png
+share/gnome/beast/v0.6.4/images/beast-mime.png
+share/gnome/beast/v0.6.4/images/beast-progs.png
+share/gnome/beast/v0.6.4/images/beast-splash.png
+share/gnome/beast/v0.6.4/images/bse-mime.png
+share/gnome/beast/v0.6.4/images/module-voices.png
+share/gnome/beast/v0.6.4/keys/keyrc.de
+share/gnome/beast/v0.6.4/keys/keyrc.us
+share/gnome/beast/v0.6.4/skins/biogreen.skin
+share/gnome/beast/v0.6.4/skins/blueimpress.skin
+share/gnome/beast/v0.6.4/skins/brownforms.skin
+share/gnome/beast/v0.6.4/skins/images/biogreen.jpg
+share/gnome/beast/v0.6.4/skins/images/blueimpress.jpg
+share/gnome/beast/v0.6.4/skins/images/brownforms.jpg
+share/gnome/beast/v0.6.4/skins/images/moonpaper.png
+share/gnome/beast/v0.6.4/skins/images/silvervein.png
+share/gnome/beast/v0.6.4/skins/moonpaper.skin
+share/gnome/beast/v0.6.4/skins/silvervein.skin
+share/gnome/beast/v0.6.4/skins/white.skin
+share/gnome/bse/v0.6.4/demo/partymonster.bse
+share/gnome/bse/v0.6.4/demo/stereo-through.bse
+share/gnome/bse/v0.6.4/demo/x2-midi-test.bse
+share/gnome/bse/v0.6.4/effects/atan-canyon.bse
+share/gnome/bse/v0.6.4/instruments/synth-lead.bse
+share/gnome/bse/v0.6.4/instruments/test-string.bse
+share/gnome/bse/v0.6.4/scripts/bse-scm-glue.boot
+share/gnome/bse/v0.6.4/scripts/modules2grid.scm
+share/gnome/bse/v0.6.4/scripts/part-harmonic-transposer.scm
+share/gnome/bse/v0.6.4/scripts/progressor-example.scm
+share/gnome/bse/v0.6.4/scripts/song-parts-operations.scm
 share/gnome/mime-info/bse.keys
 share/gnome/mime-info/bse.mime
 share/gnome/pixmaps/beast-audio-x-bse.png
 share/gnome/pixmaps/beast.png
-share/locale/az/LC_MESSAGES/beast-v0.6.1.mo
-share/locale/ca/LC_MESSAGES/beast-v0.6.1.mo
-share/locale/cs/LC_MESSAGES/beast-v0.6.1.mo
-share/locale/de/LC_MESSAGES/beast-v0.6.1.mo
-share/locale/el/LC_MESSAGES/beast-v0.6.1.mo
-share/locale/es/LC_MESSAGES/beast-v0.6.1.mo
-share/locale/fr/LC_MESSAGES/beast-v0.6.1.mo
-share/locale/hr/LC_MESSAGES/beast-v0.6.1.mo
-share/locale/mn/LC_MESSAGES/beast-v0.6.1.mo
-share/locale/nl/LC_MESSAGES/beast-v0.6.1.mo
-share/locale/pt/LC_MESSAGES/beast-v0.6.1.mo
-share/locale/ru/LC_MESSAGES/beast-v0.6.1.mo
-share/locale/sq/LC_MESSAGES/beast-v0.6.1.mo
-share/locale/sr/LC_MESSAGES/beast-v0.6.1.mo
-share/locale/sr@Latn/LC_MESSAGES/beast-v0.6.1.mo
-share/locale/sv/LC_MESSAGES/beast-v0.6.1.mo
+share/locale/az/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/ca/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/cs/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/de/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/el/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/en_CA/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/en_GB/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/eo/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/es/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/fr/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/hr/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/it/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/ja/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/mn/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/nl/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/pa/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/pt/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/pt_BR/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/ru/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/sq/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/sr/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/sr@Latn/LC_MESSAGES/beast-v0.6.4.mo
+share/locale/sv/LC_MESSAGES/beast-v0.6.4.mo
+share/mime/audio/x-bse.xml
+share/mime/audio/x-bsewave.xml
+share/mime/packages/beast.xml
 @dirrm include/bse
-@dirrm include/bsw
 @dirrm include/sfi
-@dirrm lib/bse/v0.6.1/plugins
-@dirrm lib/bse/v0.6.1
+@dirrm lib/bse/v0.6.4/plugins
+@dirrm lib/bse/v0.6.4
 @dirrm lib/bse
-@dirrm share/gnome/beast/v0.6.1/docs
-@dirrm share/gnome/beast/v0.6.1/images
-@dirrm share/gnome/beast/v0.6.1/keys
-@dirrm share/gnome/beast/v0.6.1/skins/images
-@dirrm share/gnome/beast/v0.6.1/skins
-@dirrm share/gnome/beast/v0.6.1
+@dirrm share/gnome/beast/v0.6.4/docs
+@dirrm share/gnome/beast/v0.6.4/images
+@dirrm share/gnome/beast/v0.6.4/keys
+@dirrm share/gnome/beast/v0.6.4/skins/images
+@dirrm share/gnome/beast/v0.6.4/skins
+@dirrm share/gnome/beast/v0.6.4
 @dirrm share/gnome/beast
-@dirrm share/gnome/bse/v0.6.1/demo
-@dirrm share/gnome/bse/v0.6.1/effects
-@dirrm share/gnome/bse/v0.6.1/instruments
-@dirrm share/gnome/bse/v0.6.1/scripts
-@dirrm share/gnome/bse/v0.6.1
+@dirrm share/gnome/bse/v0.6.4/demo
+@dirrm share/gnome/bse/v0.6.4/effects
+@dirrm share/gnome/bse/v0.6.4/instruments
+@dirrm share/gnome/bse/v0.6.4/scripts
+@dirrm share/gnome/bse/v0.6.4
 @dirrm share/gnome/bse
+@exec update-mime-database %D/share/mime
+@unexec update-mime-database %D/share/mime
