@@ -31,8 +31,10 @@ Local/Applications/Gomoku.app/Resources/HumanRight.png
 Local/Applications/Gomoku.app/Resources/HumanTop.png
 Local/Applications/Gomoku.app/Resources/HumanTopLeft.png
 Local/Applications/Gomoku.app/Resources/HumanTopRight.png
+Local/Applications/Gomoku.app/Resources/Hungarian.lproj/Localizable.strings
 Local/Applications/Gomoku.app/Resources/Info-gnustep.plist
 Local/Applications/Gomoku.app/Resources/Italian.lproj/Localizable.strings
+Local/Applications/Gomoku.app/Resources/Norwegian.lproj/Localizable.strings
 Local/Applications/Gomoku.app/Resources/Spanish.lproj/Localizable.strings
 Local/Applications/Gomoku.app/Resources/Swedish.lproj/Localizable.strings
 Local/Applications/Gomoku.app/Resources/TraditionalChinese.lproj/Localizable.strings
@@ -41,7 +43,9 @@ Local/Applications/Gomoku.app/stamp.make
 @dirrm Local/Applications/Gomoku.app/Resources/TraditionalChinese.lproj
 @dirrm Local/Applications/Gomoku.app/Resources/Swedish.lproj
 @dirrm Local/Applications/Gomoku.app/Resources/Spanish.lproj
+@dirrm Local/Applications/Gomoku.app/Resources/Norwegian.lproj
 @dirrm Local/Applications/Gomoku.app/Resources/Italian.lproj
+@dirrm Local/Applications/Gomoku.app/Resources/Hungarian.lproj
 @dirrm Local/Applications/Gomoku.app/Resources/German.lproj
 @dirrm Local/Applications/Gomoku.app/Resources/French.lproj
 @dirrm Local/Applications/Gomoku.app/Resources/English.lproj
