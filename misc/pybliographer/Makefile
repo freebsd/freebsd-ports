@@ -7,6 +7,7 @@
 
 PORTNAME=	pybliographer
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	misc python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/pyblio
@@ -24,15 +25,17 @@ USE_PYTHON=	yes
 USE_GNOME=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		Python="${PYTHON_CMD}"
 CONFIGURE_ARGS=	--with-recode-prefix="${LOCALBASE}"
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		 s|glib-config|glib12-config|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
