@@ -13,8 +13,8 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/SWIG
-RUN_DEPENDS=	swig:${PORTSDIR}/devel/SWIG
+BUILD_DEPENDS=	swig1.1:${PORTSDIR}/devel/swig11
+RUN_DEPENDS=	swig1.1:${PORTSDIR}/devel/swig11
 
 USE_RUBY=	yes
 
