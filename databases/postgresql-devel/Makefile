@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.4.2003.02.16
+PORTVERSION?=	7.4.2003.05.06
 CATEGORIES?=	databases
 MASTER_SITES=	http://freebsd.sean.chittenden.org/ports/ \
 		http://people.freebsd.org/~seanc/ports/
@@ -15,13 +15,11 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER?=	seanc@FreeBSD.org
 COMMENT=	Development snapshots of PostgreSQL's latest features
 
-BROKEN=		"Does not install"
-
 DIST_SUBDIR=	postgresql
 
-USE_BISON=	YES
 USE_BZIP2=	YES
 USE_GMAKE=	YES
+USE_PERL5_BUILD=	YES
 GNU_CONFIGURE=	YES
 
 .if defined(POSTGRESQL_SUBPORT)
@@ -33,6 +31,7 @@ MD5_FILE=	${.CURDIR}/../postgresql7/distinfo
 ## The rest of this file is for normal base installation
 INSTALLS_SHLIB=	YES
 
+BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison1875
 CONFIGURE_ARGS=	--with-libraries=${LOCALBASE}/lib \
 		--with-includes=${LOCALBASE}/include \
 		--with-docdir=${LOCALBASE}/share/doc/$PORTNAME}${PKGNAMESUFFIX}
@@ -111,6 +110,7 @@ pre-everything::
 	@${ECHO} "	WITH_MIT_KRB5		Builds with MIT's kerberos support"
 	@${ECHO} "	WITH_HEIMDAL_KRB5	Builds with Heimdal's kerberos support"
 	@${ECHO} "	WITH_OPTIMIZED_CFLAGS	Builds with compiler optimizations (-O3)"
+	@${ECHO} "	WITH_PGCRYPTO		Builds and installs pgcrypto"
 	@${ECHO} "	WITH_DEBUG		Builds with debugging symbols"
 	@${ECHO} ""
 .if defined(WITH_MIT_KRB5) && defined(WITH_HEIMDAL_KRB5)
@@ -130,6 +130,11 @@ pre-everything::
 	@exit 1
 .endif
 
+.if defined(WITH_PGCRYPTO)
+post-build:
+	${GMAKE} -C ${WRKSRC}/contrib/pgcrypto
+.endif
+
 .if defined(WITHOUT_SERVER)
 do-install:
 	@ cd ${WRKSRC}; \
@@ -143,6 +148,9 @@ pre-install:
 .endif
 
 post-install:
+.if defined(WITH_PGCRYPTO)
+	${GMAKE} -C ${WRKSRC}/contrib/pgcrypto install
+.endif
 	@ ${MKDIR} ${PREFIX}/share/postgresql ;\
 	${CAT} ${FILESDIR}/post-install-notes ${PKGMESSAGE} |\
 		${SED} "s|/usr/local|${PREFIX}|g" |\
