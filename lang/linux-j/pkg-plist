@@ -87,6 +87,12 @@ lib/j/system/examples/data/tdata.dbf
 lib/j/system/examples/data/tdata.prn
 lib/j/system/examples/data/toolbar.bmp
 lib/j/system/examples/data/toolbar.gif
+lib/j/system/examples/dde/client1.ijs
+lib/j/system/examples/dde/client2.ijs
+lib/j/system/examples/dde/dde.txt
+lib/j/system/examples/dde/jdialog.frm
+lib/j/system/examples/dde/jdialog.frx
+lib/j/system/examples/dde/jmodule.bas
 lib/j/system/examples/demo/allout.ijs
 lib/j/system/examples/demo/citycalc.ijs
 lib/j/system/examples/demo/citydemo.ijs
@@ -511,7 +517,6 @@ lib/j/system/extras/help/dictionary/dadot.htm
 lib/j/system/extras/help/dictionary/dbdotn.htm
 lib/j/system/extras/help/dictionary/dbdotu.htm
 lib/j/system/extras/help/dictionary/dccapdot.htm
-lib/j/system/extras/help/dictionary/dcdot.htm
 lib/j/system/extras/help/dictionary/dcons.htm
 lib/j/system/extras/help/dictionary/dconsf.htm
 lib/j/system/extras/help/dictionary/ddcapco.htm
@@ -532,7 +537,6 @@ lib/j/system/extras/help/dictionary/dictc.htm
 lib/j/system/extras/help/dictionary/dictd.htm
 lib/j/system/extras/help/dictionary/dicte.htm
 lib/j/system/extras/help/dictionary/dictf.htm
-lib/j/system/extras/help/dictionary/dictf.x
 lib/j/system/extras/help/dictionary/dictg.htm
 lib/j/system/extras/help/dictionary/dicth.htm
 lib/j/system/extras/help/dictionary/dicti.htm
@@ -961,6 +965,7 @@ lib/j/system/extras/help/release/9x38.htm
 lib/j/system/extras/help/release/9x40.htm
 lib/j/system/extras/help/release/9x6.htm
 lib/j/system/extras/help/release/adot.htm
+lib/j/system/extras/help/release/agenda.htm
 lib/j/system/extras/help/release/apply.htm
 lib/j/system/extras/help/release/assert.htm
 lib/j/system/extras/help/release/bdot.htm
@@ -968,6 +973,8 @@ lib/j/system/extras/help/release/binrep.htm
 lib/j/system/extras/help/release/bond.htm
 lib/j/system/extras/help/release/brep.htm
 lib/j/system/extras/help/release/ccapdot.htm
+lib/j/system/extras/help/release/cdot.htm
+lib/j/system/extras/help/release/circle.htm
 lib/j/system/extras/help/release/compsc.htm
 lib/j/system/extras/help/release/contents.htm
 lib/j/system/extras/help/release/cut.htm
@@ -986,6 +993,7 @@ lib/j/system/extras/help/release/eqins.htm
 lib/j/system/extras/help/release/errcap.htm
 lib/j/system/extras/help/release/errmsg.htm
 lib/j/system/extras/help/release/errnum.htm
+lib/j/system/extras/help/release/expand.htm
 lib/j/system/extras/help/release/fromsp.htm
 lib/j/system/extras/help/release/gcdrat.htm
 lib/j/system/extras/help/release/grade.htm
@@ -1024,10 +1032,12 @@ lib/j/system/extras/help/release/shapex.htm
 lib/j/system/extras/help/release/slashcat.htm
 lib/j/system/extras/help/release/sort.htm
 lib/j/system/extras/help/release/space.htm
+lib/j/system/extras/help/release/sploc.htm
 lib/j/system/extras/help/release/status.htm
 lib/j/system/extras/help/release/stitchsl.htm
 lib/j/system/extras/help/release/throw.htm
 lib/j/system/extras/help/release/title.htm
+lib/j/system/extras/help/release/trace.htm
 lib/j/system/extras/help/release/try.htm
 lib/j/system/extras/help/release/uco.htm
 lib/j/system/extras/help/release/where.htm
@@ -1063,6 +1073,7 @@ lib/j/system/extras/help/user/demo.htm
 lib/j/system/extras/help/user/design.htm
 lib/j/system/extras/help/user/devenv.htm
 lib/j/system/extras/help/user/dir_layout.htm
+lib/j/system/extras/help/user/directory_match.htm
 lib/j/system/extras/help/user/dirpaths.htm
 lib/j/system/extras/help/user/dlls.htm
 lib/j/system/extras/help/user/enter_info.htm
@@ -1272,6 +1283,8 @@ lib/j/system/extras/java/classes/isi/jserver/jsnmns.dll
 lib/j/system/extras/java/classes/jstest.class
 lib/j/system/extras/java/classes/nyse.class
 lib/j/system/extras/labs/general/ballclck.ijt
+lib/j/system/extras/labs/general/circuittheoryi.ijt
+lib/j/system/extras/labs/general/circuittheoryii.ijt
 lib/j/system/extras/labs/general/fuzzy.ijt
 lib/j/system/extras/labs/graphics/fractals.ijt
 lib/j/system/extras/labs/graphics/graphut.ijt
@@ -1345,11 +1358,13 @@ lib/j/system/extras/labs/system/sockinet.ijt
 lib/j/system/extras/labs/system/sockserv.ijt
 lib/j/system/extras/migrate/gl2.ijs
 lib/j/system/extras/migrate/gl3.ijs
+lib/j/system/extras/migrate/paths.ijs
 lib/j/system/extras/migrate/socket.ijs
 lib/j/system/extras/util/autocode.ijs
 lib/j/system/extras/util/boot.ijs
 lib/j/system/extras/util/browser.ijs
 lib/j/system/extras/util/cfgfns.ijs
+lib/j/system/extras/util/cfguser.ijs
 lib/j/system/extras/util/configur.ijs
 lib/j/system/extras/util/dbtbar.bmp
 lib/j/system/extras/util/debugs.ijs
@@ -1437,6 +1452,7 @@ lib/j/system/packages/color/xwin.ijs
 lib/j/system/packages/dde/dde.txt
 lib/j/system/packages/dde/server1.ijs
 lib/j/system/packages/dde/server2.ijs
+lib/j/system/packages/files/bigfiles.ijs
 lib/j/system/packages/files/csv.ijs
 lib/j/system/packages/files/dbase.ijs
 lib/j/system/packages/files/files.txt
@@ -1507,6 +1523,7 @@ lib/j/system/packages/misc/misc.txt
 lib/j/system/packages/misc/primitiv.ijs
 lib/j/system/packages/misc/rtfview.ijs
 lib/j/system/packages/misc/telecom.ijs
+lib/j/system/packages/misc/trace.ijs
 lib/j/system/packages/misc/vkeyshow.ijs
 lib/j/system/packages/misc/vocab.ijs
 lib/j/system/packages/misc/xenos.ijs
@@ -1546,111 +1563,98 @@ lib/j/user/config/config.txt
 lib/j/user/labs/labs.txt
 lib/j/user/projects/projects.txt
 lib/j/user/user.txt
-@dirrm lib/j/system/packages/winapi
-@dirrm lib/j/system/packages/stats
-@dirrm lib/j/system/packages/regex
-@dirrm lib/j/system/packages/publish
-@dirrm lib/j/system/packages/print
-@dirrm lib/j/system/packages/odbc
-@dirrm lib/j/system/packages/ocx
-@dirrm lib/j/system/packages/misc
-@dirrm lib/j/system/packages/math
-@dirrm lib/j/system/packages/graphics
-@dirrm lib/j/system/packages/forms
-@dirrm lib/j/system/packages/finance
-@dirrm lib/j/system/packages/files
-@dirrm lib/j/system/packages/dde
-@dirrm lib/j/system/packages/color
-@dirrm lib/j/system/packages/autocode
-@dirrm lib/j/system/packages/zdefs
-@dirrm lib/j/system/packages
-@dirrm lib/j/system/main/defs/build
-@dirrm lib/j/system/main/defs
-@dirrm lib/j/system/main
-@dirrm lib/j/system/examples/java/image
-@dirrm lib/j/system/examples/java/jcalc
-@dirrm lib/j/system/examples/java/jstest
-@dirrm lib/j/system/examples/java/nyse
-@dirrm lib/j/system/examples/java
-@dirrm lib/j/system/examples/runtime
-@dirrm lib/j/system/examples/socket
-@dirrm lib/j/system/examples/print
-@dirrm lib/j/system/examples/phrases
+@dirrm lib/j/system/classes/dict
+@dirrm lib/j/system/classes/dir
+@dirrm lib/j/system/classes/graph
+@dirrm lib/j/system/classes/grid
+@dirrm lib/j/system/classes/input
+@dirrm lib/j/system/classes/opengl
+@dirrm lib/j/system/classes/pbc
+@dirrm lib/j/system/classes/plot
+@dirrm lib/j/system/classes/socket
+@dirrm lib/j/system/classes/template
+@dirrm lib/j/system/classes/view
+@dirrm lib/j/system/classes
+@dirrm lib/j/system/examples/data
+@dirrm lib/j/system/examples/demo
+@dirrm lib/j/system/examples/dll
+@dirrm lib/j/system/examples/dllwrite
+@dirrm lib/j/system/examples/graphics/gnuplot
+@dirrm lib/j/system/examples/graphics/isigraph
+@dirrm lib/j/system/examples/graphics/misc
+@dirrm lib/j/system/examples/graphics/opengl/demo
+@dirrm lib/j/system/examples/graphics/opengl/lab
+@dirrm lib/j/system/examples/graphics/opengl/simple
+@dirrm lib/j/system/examples/graphics/opengl
+@dirrm lib/j/system/examples/graphics/plot
+@dirrm lib/j/system/examples/graphics
+@dirrm lib/j/system/examples/odbc
+@dirrm lib/j/system/examples/ole/excel
+@dirrm lib/j/system/examples/ole/vb
 @dirrm lib/j/system/examples/ole/cpp/jclient/res
 @dirrm lib/j/system/examples/ole/cpp/jclient
 @dirrm lib/j/system/examples/ole/cpp
-@dirrm lib/j/system/examples/ole/vb
-@dirrm lib/j/system/examples/ole/excel
-@dirrm lib/j/system/examples/ole/delphi/jserver
-@dirrm lib/j/system/examples/ole/delphi
 @dirrm lib/j/system/examples/ole
-@dirrm lib/j/system/examples/odbc
-@dirrm lib/j/system/examples/graphics/plot
-@dirrm lib/j/system/examples/graphics/opengl/simple
-@dirrm lib/j/system/examples/graphics/opengl/lab
-@dirrm lib/j/system/examples/graphics/opengl/demo
-@dirrm lib/j/system/examples/graphics/opengl
-@dirrm lib/j/system/examples/graphics/misc
-@dirrm lib/j/system/examples/graphics/isigraph
-@dirrm lib/j/system/examples/graphics/gnuplot
-@dirrm lib/j/system/examples/graphics
-@dirrm lib/j/system/examples/dllwrite
-@dirrm lib/j/system/examples/dll
-@dirrm lib/j/system/examples/demo
+@dirrm lib/j/system/examples/phrases
+@dirrm lib/j/system/examples/print
+@dirrm lib/j/system/examples/socket
+@dirrm lib/j/system/examples/runtime
+@dirrm lib/j/system/examples/java/nyse
+@dirrm lib/j/system/examples/java/jstest
+@dirrm lib/j/system/examples/java/jcalc
+@dirrm lib/j/system/examples/java/image
+@dirrm lib/j/system/examples/java
 @dirrm lib/j/system/examples/dde
-@dirrm lib/j/system/examples/data
-@dirrm lib/j/system/examples/help/user
-@dirrm lib/j/system/examples/help/release
-@dirrm lib/j/system/examples/help/primer
-@dirrm lib/j/system/examples/help/phrases
-@dirrm lib/j/system/examples/help/learning
-@dirrm lib/j/system/examples/help/index
-@dirrm lib/j/system/examples/help/dictionary
-@dirrm lib/j/system/examples/help/camn/camnimgs
-@dirrm lib/j/system/examples/help/camn
-@dirrm lib/j/system/examples/help
 @dirrm lib/j/system/examples
-@dirrm lib/j/system/classes/view
-@dirrm lib/j/system/classes/template
-@dirrm lib/j/system/classes/plot
-@dirrm lib/j/system/classes/pbc
-@dirrm lib/j/system/classes/opengl
-@dirrm lib/j/system/classes/input
-@dirrm lib/j/system/classes/grid
-@dirrm lib/j/system/classes/graph
-@dirrm lib/j/system/classes/dir
-@dirrm lib/j/system/classes/dict
-@dirrm lib/j/system/classes/socket
-@dirrm lib/j/system/classes
+@dirrm lib/j/system/extras/config
+@dirrm lib/j/system/extras/labs/general
+@dirrm lib/j/system/extras/labs/graphics
+@dirrm lib/j/system/extras/labs/language
+@dirrm lib/j/system/extras/labs/livetexts
+@dirrm lib/j/system/extras/labs/math
+@dirrm lib/j/system/extras/labs/personal
+@dirrm lib/j/system/extras/labs/system
+@dirrm lib/j/system/extras/labs
+@dirrm lib/j/system/extras/migrate
+@dirrm lib/j/system/extras/util
+@dirrm lib/j/system/extras/help/man
+@dirrm lib/j/system/extras/help/jforc/jforcprogrammers_files
+@dirrm lib/j/system/extras/help/jforc
+@dirrm lib/j/system/extras/help/user
+@dirrm lib/j/system/extras/help/release
+@dirrm lib/j/system/extras/help/primer
+@dirrm lib/j/system/extras/help/phrases
+@dirrm lib/j/system/extras/help/learning
+@dirrm lib/j/system/extras/help/index
+@dirrm lib/j/system/extras/help/dictionary
+@dirrm lib/j/system/extras/help/camn/camnimgs
+@dirrm lib/j/system/extras/help/camn
+@dirrm lib/j/system/extras/help
 @dirrm lib/j/system/extras/java/classes/isi/jserver
 @dirrm lib/j/system/extras/java/classes/isi
 @dirrm lib/j/system/extras/java/classes
 @dirrm lib/j/system/extras/java
-@dirrm lib/j/system/extras/util
-@dirrm lib/j/system/extras/migrate
-@dirrm lib/j/system/extras/labs/system
-@dirrm lib/j/system/extras/labs/personal
-@dirrm lib/j/system/extras/labs/math
-@dirrm lib/j/system/extras/labs/livetexts
-@dirrm lib/j/system/extras/labs/language
-@dirrm lib/j/system/extras/labs/graphics
-@dirrm lib/j/system/extras/labs/general
-@dirrm lib/j/system/extras/labs
-@dirrm lib/j/system/extras/config
-@dirrm lib/j/system/extras/help/dictionary
-@dirrm lib/j/system/extras/help/release
-@dirrm lib/j/system/extras/help/index
-@dirrm lib/j/system/extras/help/user
-@dirrm lib/j/system/extras/help/primer
-@dirrm lib/j/system/extras/help/phrases
-@dirrm lib/j/system/extras/help/learning
-@dirrm lib/j/system/extras/help/camn/camnimgs
-@dirrm lib/j/system/extras/help/camn
-@dirrm lib/j/system/extras/help/jforc/jforcprogrammers_files
-@dirrm lib/j/system/extras/help/jforc
-@dirrm lib/j/system/extras/help/man
-@dirrm lib/j/system/extras/help
 @dirrm lib/j/system/extras
+@dirrm lib/j/system/main/defs/build
+@dirrm lib/j/system/main/defs
+@dirrm lib/j/system/main
+@dirrm lib/j/system/packages/autocode
+@dirrm lib/j/system/packages/color
+@dirrm lib/j/system/packages/dde
+@dirrm lib/j/system/packages/files
+@dirrm lib/j/system/packages/finance
+@dirrm lib/j/system/packages/forms
+@dirrm lib/j/system/packages/graphics
+@dirrm lib/j/system/packages/math
+@dirrm lib/j/system/packages/misc
+@dirrm lib/j/system/packages/ocx
+@dirrm lib/j/system/packages/odbc
+@dirrm lib/j/system/packages/print
+@dirrm lib/j/system/packages/publish
+@dirrm lib/j/system/packages/regex
+@dirrm lib/j/system/packages/stats
+@dirrm lib/j/system/packages/winapi
+@dirrm lib/j/system/packages
 @dirrm lib/j/system
 @dirrm lib/j/user/classes
 @dirrm lib/j/user/config
