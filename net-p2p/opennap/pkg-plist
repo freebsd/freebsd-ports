@@ -2,8 +2,9 @@ sbin/opennap
 sbin/metaserver
 sbin/setup
 share/opennap/users
+share/opennap/examples/sample.block
 share/opennap/examples/sample.channels
-share/opennap/examples/sample.conf
+share/opennap/examples/sample.config
 share/opennap/examples/sample.filter
 share/opennap/examples/sample.motd
 share/opennap/examples/sample.servers
