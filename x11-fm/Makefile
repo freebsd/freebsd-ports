@@ -15,6 +15,7 @@
     SUBDIR += gnomemc
     SUBDIR += mtoolsfm
     SUBDIR += nautilus
+    SUBDIR += nautilus2
     SUBDIR += offix-files
     SUBDIR += rox-base
     SUBDIR += rox-filer
