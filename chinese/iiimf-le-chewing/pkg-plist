@@ -1,0 +1,2 @@
+lib/im/leif/chewing.so
+@unexec rmdir %D/lib/im/leif 2>/dev/null || true
