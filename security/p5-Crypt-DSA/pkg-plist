@@ -1,0 +1,11 @@
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/DSA/Key/SSH2.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/DSA/Key/PEM.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/DSA/Key.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/DSA/Signature.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/DSA/KeyChain.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/DSA/Util.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/DSA.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/DSA/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Crypt/DSA/Key
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Crypt/DSA
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/DSA
