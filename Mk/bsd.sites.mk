@@ -902,6 +902,14 @@ MASTER_SITE_XFREE+= \
 	ftp://ftp.physics.uvt.ro/pub/XFree86/%SUBDIR%/source/ \
 	ftp://ftp.chg.ru/pub/XFree86/%SUBDIR%/source/
 
+MASTER_SITE_XORG+= \
+	ftp://ftp.x.org/pub/%SUBDIR%/ \
+	ftp://ftp.gwdg.de/pub/x11/x.org/pub/%SUBDIR%/ \
+	ftp://ftp.cica.es/pub/X/pub/%SUBDIR%/ \
+	ftp://ftp.cs.cuhk.edu.hk/pub/X11/%SUBDIR%/ \
+	ftp://sunsite.sut.ac.jp/pub/archives/X11/%SUBDIR%/ \
+	ftp://ftp.unicamp.br/pub/X11/releases/%SUBDIR%/
+
 MASTER_SITE_GNUSTEP+= \
 	http://python.planetmirror.com/pub/gnustep/gnustep/%SUBDIR%/ \
 	ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/ \
