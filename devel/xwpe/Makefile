@@ -4,14 +4,14 @@
 # Date created:			  Fri Jan 24, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.5 1996/12/01 01:23:12 obrien Exp $
+# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
 #
 
 DISTNAME=	xwpe-1.4.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
-		ftp://ftp.uni-hannover.de/pub/mirror/linux-distrib/apps/editors/
-MASTER_SITE_SUBDIR=	apps/editors
+		ftp://ftp.uni-hannover.de/pub/mirror/linux-distrib/apps/editors/X/
+MASTER_SITE_SUBDIR=	apps/editors/X
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     obrien@NUXI.com
