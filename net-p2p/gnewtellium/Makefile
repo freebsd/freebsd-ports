@@ -15,15 +15,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gnutella client
 
 USE_X_PREFIX=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk12
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOCONF=	yes
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/gnewtellium %%DATADIR%%/pixmaps/gnewtellium.xpm
+PLIST_DIRS=	%%DATADIR%%/pixmaps %%DATADIR%%
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
