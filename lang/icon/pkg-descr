@@ -22,6 +22,4 @@ The language is described in R. E. Griswold and M. T. Griswold, The
 Icon Programming Language, Prentice-Hall, Inc., Englewood Cliffs,
 NJ, second edition, 1990.
 
-For further documentation see the docs directory in the
-unpacked source tree (make extract; cd work/docs).
 
