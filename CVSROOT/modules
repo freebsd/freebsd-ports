@@ -823,6 +823,7 @@ cabextract	ports/archivers/cabextract
 cacti		ports/net/cacti
 cadaver		ports/www/cadaver
 cadubi		ports/graphics/cadubi
+cairo		ports/graphics/cairo
 cake		ports/games/cake
 cal3d		ports/graphics/cal3d
 calamaris	ports/www/calamaris
@@ -2993,6 +2994,7 @@ gtkada		ports/x11-toolkits/gtkada
 gtkam		ports/graphics/gtkam
 gtkballs	ports/games/gtkballs
 gtkbe		ports/x11-themes/gtkbe
+gtkcairo	ports/graphics/gtkcairo
 gtkchtheme	ports/x11/gtkchtheme
 gtkdatabox	ports/x11-toolkits/gtkdatabox
 gtkdatabox2	ports/x11-toolkits/gtkdatabox2
@@ -4888,6 +4890,7 @@ libstocks	ports/finance/libstocks
 libstrfunc	ports/devel/libstrfunc
 libstroke	ports/devel/libstroke
 libsvg		ports/graphics/libsvg
+libsvg-cairo	ports/graphics/libsvg-cairo
 libsvm		ports/science/libsvm
 libsx		ports/x11/libsx
 libtai		ports/devel/libtai
