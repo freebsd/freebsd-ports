@@ -11,6 +11,7 @@ MAINTAINER=	makoto@pinpott.spnet.ne.jp
 
 MASTERDIR=	${.CURDIR}/../../games/zangband
 
+PKGDIR=		${MASTERDIR}
 COMMENT=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
