@@ -3,6 +3,7 @@ bin/ircdpasswd
 etc/ircd-ru/ircd.conf-dist
 etc/ircd-ru/ircd.motd-dist
 etc/ircd-ru/ircd.smotd-dist
+etc/ircd-ru/kline.conf
 etc/ircd-ru/ru_RU.CP1251/ircd.motd-dist
 etc/ircd-ru/ru_RU.CP1251/ircd.smotd-dist
 etc/ircd-ru/ru_RU.KOI8-R/ircd.conf-dist
