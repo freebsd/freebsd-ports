@@ -1,55 +1,30 @@
-*** Makefile.orig	Mon Jun  5 21:49:08 1995
---- Makefile	Fri Jul 28 04:53:59 1995
-***************
-*** 15,21 ****
-  #
-  TAR=tar
-  MAKE=make
-! DESTROOT=/usr/local
-  DESTDIR=$(DESTROOT)/sbin
-  MANROOT=$(DESTROOT)/man
-  MANDIR=$(MANROOT)/man8
---- 15,21 ----
-  #
-  TAR=tar
-  MAKE=make
-! DESTROOT=${PREFIX}
-  DESTDIR=$(DESTROOT)/sbin
-  MANROOT=$(DESTROOT)/man
-  MANDIR=$(MANROOT)/man8
-***************
-*** 42,48 ****
-  # GLIBS=-lident -ldes
-  GLIBS=
+--- Makefile.orig	Mon Aug 12 06:08:06 1996
++++ Makefile	Sat Aug 17 01:54:22 1996
+@@ -18,9 +18,9 @@
+ MAKE=make
+ 
+ # set this to 'in.' if you like Sun's prefix on internet daemons
+-PREFIX=in.
++PREFIX=
   
-! CFLAGS=-O
-  
-  all:
-  	@echo "Please specify the type of system you wish to build for."
---- 42,48 ----
-  # GLIBS=-lident -ldes
-  GLIBS=
-  
-! #CFLAGS=-O
-  
-  all:
-  	@echo "Please specify the type of system you wish to build for."
-***************
-*** 387,394 ****
-  
-  install: in.identd idecrypt
-	cp identd.man  $(MANDIR)/identd.$(MANSECT)
-	echo ".so man$(MANSECT)/identd.$(MANSECT)" > $(MANDIR)/in.identd.$(MANSECT)
-! 	cp in.identd $(DESTDIR)/in.identd
-  	cp idecrypt.man  $(MANDIR)/idecrypt.$(MANSECT)
-  	cp idecrypt $(DESTDIR)/idecrypt
-  
---- 387,394 ----
-  
-  install: in.identd idecrypt
-	cp identd.man  $(MANDIR)/identd.$(MANSECT)
-	echo ".so man$(MANSECT)/identd.$(MANSECT)" > $(MANDIR)/in.identd.$(MANSECT)
-! 	cp in.identd $(DESTDIR)/identd
-  	cp idecrypt.man  $(MANDIR)/idecrypt.$(MANSECT)
-  	cp idecrypt $(DESTDIR)/idecrypt
-  
+-DESTROOT=/usr/local
++DESTROOT=${REALPREFIX}
+ 
+ # set this to '/share' if your man pages are in /usr/share
+ #SHARE=/share
+@@ -60,13 +60,13 @@
+ #	-DSTRONG_LOG -DALLOW_FORMAT \
+ #
+ GDEFS=-DSTRONG_LOG -DALLOW_FORMAT \
+-	-DDPATH_CONFIG='\"$(CONFDIR)/identd.conf\"' \
++	-DPATH_CONFIG='\"$(CONFDIR)/identd.conf\"' \
+ 	-DPATH_DESKEY='\"$(CONFDIR)/identd.key\"'
+ 
+ # GLIBS=-lident -ldes
+ GLIBS=
+ 
+-CFLAGS=-O
++#CFLAGS=-O
+ #LDFLAGS=-L$(DESTROOT)/lib
+ 
+ all:
