@@ -3,7 +3,7 @@
 In order to run this port, please add the following line to
 /etc/mail/YOUR-CONF.mc:
 
-INPUT_MAIL_FILTER(`sentinel', `S=local:/usr/local/var/sentinel/sentinel.socket, F=T, T=S:2m;R:4m;E:6m')
+INPUT_MAIL_FILTER(`sentinel', `S=local:/var/sentinel/sentinel.socket, F=T, T=S:2m;R:4m;E:6m')
 
 Don't forget remake sendmail configuration file after modifying YOUR-CONF.mc
 

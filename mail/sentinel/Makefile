@@ -7,7 +7,7 @@
 
 PORTNAME=	sentinel
 PORTVERSION=	1.6.5b
-PORTREVISION=   2
+PORTREVISION=   3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	smfilter
@@ -17,8 +17,6 @@ COMMENT=	A sendmail milter API implementation
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
-USE_REINPLACE=	yes
-
 .include <bsd.port.pre.mk>
 
 .if !exists(/usr/lib/libmilter.a) && !exists(${LOCALBASE}/lib/libmilter.a)
@@ -26,10 +24,6 @@ IGNORE=         requires Sendmail 8.12
 .endif
 CFLAGS+=       -I${LOCALBASE}/include
 LDFLAGS+=      -L${LOCALBASE}/lib
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|:/var|:${PREFIX}/var|g' ${WRKSRC}/sentinel.cf.SAMPLE
 
 do-build:
 	cd ${WRKSRC} && \
@@ -39,8 +33,8 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sentinel ${PREFIX}/sbin
-	@${MKDIR} ${PREFIX}/var/sentinel
-	${CHOWN} smmsp:smmsp ${PREFIX}/var/sentinel
+	@${MKDIR} /var/sentinel
+	${CHOWN} smmsp:smmsp /var/sentinel
 	${INSTALL_DATA} ${FILESDIR}/000.sentinel.sh ${PREFIX}/etc/rc.d/sentinel.sh-dist
 	${INSTALL_DATA} ${WRKSRC}/sentinel.cf.SAMPLE ${PREFIX}/etc/sentinel.cf.dist
 .if !defined(NOPORTDOCS)
