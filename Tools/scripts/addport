@@ -103,7 +103,11 @@ $moduleshost = "freefall.freebsd.org" if ($moduleshost eq "");
 
 # SSH is always required nowadays... pcvs.FreeBSD.org isn't shell accessible.
 $ssh = "$ENV{CVS_RSH} $h -l $u";
-$sshmod = "$ENV{CVS_RSH} -A $moduleshost -l $u";
+if ($myhost eq $moduleshost) {
+	$sshmod = "";
+} else {
+	$sshmod = "$ENV{CVS_RSH} -A $moduleshost -l $u";
+}
 $repo= "$u\@$h:/home/pcvs" if !$ENV{ADDPCVSROOT};
 $repo = "$ENV{ADDPCVSROOT}" if $ENV{ADDPCVSROOT};
 
