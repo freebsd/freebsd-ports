@@ -42,7 +42,6 @@ PROCFS!=	/sbin/mount | ${GREP} '^procfs' | ${AWK} '{print $1}'
 
 pre-everything::
 
-.if !defined(PACKAGE_BUILDING)
 .if ${PROCFS}
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Check if procfs is running: YES"
@@ -56,8 +55,6 @@ pre-everything::
 	@${ECHO_CMD} "proc /proc procfs rw 0 0"
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "-----------------------------------------------------------"
-	@${FALSE}
-.endif
 .endif
 
 pre-patch:
