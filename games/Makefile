@@ -500,6 +500,7 @@
     SUBDIR += wolf3d
     SUBDIR += wolfpack
     SUBDIR += wordplay
+    SUBDIR += wormux
     SUBDIR += wtf
     SUBDIR += x3eyes
     SUBDIR += xabacus
