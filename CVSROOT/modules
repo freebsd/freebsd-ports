@@ -5102,6 +5102,7 @@ phex		ports/net/phex
 phluid		ports/x11-wm/phluid
 photopc		ports/graphics/photopc
 php-sqlrelay	ports/databases/php-sqlrelay
+php-templates	ports/www/php-templates
 php_doc		ports/lang/php_doc
 phpgroupware	ports/deskutils/phpgroupware
 phpmyadmin	ports/databases/phpmyadmin
