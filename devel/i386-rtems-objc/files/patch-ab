@@ -1,15 +1,15 @@
---- gcc-2.95.3/gcc/Makefile.in.orig	Thu Jan 25 09:02:58 2001
-+++ gcc-2.95.3/gcc/Makefile.in	Thu Sep 13 07:11:36 2001
-@@ -401,7 +401,7 @@
- MAYBE_USE_COLLECT2 = @maybe_use_collect2@
+--- gcc-3.2.1/gcc/Makefile.in.orig	Mon Oct 14 17:04:16 2002
++++ gcc-3.2.1/gcc/Makefile.in	Sun Feb  2 22:07:09 2003
+@@ -405,7 +405,7 @@
+ 
  # It is convenient for configure to add the assignment at the beginning,
  # so don't override it here.
 -USE_COLLECT2 = collect2$(exeext)
 +USE_COLLECT2 = 
  
- # List of extra C and assembler files to add to libgcc1.a.
+ # List of extra C and assembler files to add to static and shared libgcc2.
  # Assembler files should have names ending in `.asm'.
-@@ -438,7 +438,7 @@
+@@ -445,7 +445,7 @@
  
  # A list of all the language-specific executables.
  # This is overridden by configure.
@@ -18,19 +18,19 @@
  
  # List of things which should already be built whenever we try to use xgcc
  # to compile anything (without linking).
-@@ -2433,9 +2433,8 @@
+@@ -2530,9 +2530,8 @@
  # Copy the compiler files into directories where they will be run.
  # Install the driver last so that the window when things are
  # broken is small.
--install-normal: install-common $(INSTALL_HEADERS) $(INSTALL_LIBGCC) \
--    $(INSTALL_CPP) install-man install-info intl.install lang.install-normal \
--    install-driver
-+install-normal: install-common \
+-install: install-common $(INSTALL_HEADERS) $(INSTALL_LIBGCC) \
+-    $(INSTALL_CPP) install-man install-info intl.install install-@POSUB@ \
+-    lang.install-normal install-driver
++install: install-common \
 +    intl.install lang.install-normal
  
- # Do nothing while making gcc with a cross-compiler. The person who
- # makes gcc for the target machine has to know how to put a complete
-@@ -2508,51 +2507,6 @@
+ # Handle cpp installation.
+ install-cpp: cpp$(exeext)
+@@ -2593,53 +2592,6 @@
  	  else true; \
  	  fi; \
  	done
@@ -73,12 +73,14 @@
 -	fi
 -	-rm -f $(libsubdir)/cpp0$(exeext)
 -	$(INSTALL_PROGRAM) cpp0$(exeext) $(libsubdir)/cpp0$(exeext)
+-	-rm -f $(libsubdir)/tradcpp0$(exeext)
+-	$(INSTALL_PROGRAM) tradcpp0$(exeext) $(libsubdir)/tradcpp0$(exeext)
 -# Install gcov if it was compiled.
 -	-if [ -f gcov$(exeext) ]; \
 -	then \
 -	    rm -f $(bindir)/gcov$(exeext); \
 -	    $(INSTALL_PROGRAM) gcov$(exeext) $(bindir)/$(GCOV_INSTALL_NAME)$(exeext); \
 -	fi
+ 	$(INSTALL_SCRIPT) gccbug $(bindir)/$(GCCBUG_INSTALL_NAME)
  
  # Install the driver program as $(target_alias)-gcc
- # and also as either gcc (if native) or $(gcc_tooldir)/bin/gcc.

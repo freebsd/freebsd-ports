@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	objc
-PORTVERSION=	2.95.3
+PORTVERSION=	3.2.1
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
@@ -15,8 +15,8 @@ MASTER_SITE_SUBDIR=	newlib \
 			gcc/releases/${OBJCNAME}/:gcc
 DISTFILES=		${NEWLIBNAME}.tar.gz \
 			${OBJCNAME}.tar.gz:gcc
-PATCHFILES=	${OBJCNAME}-rtems-20010622a.diff \
-		${NEWLIBNAME}-rtems-20010622.diff
+PATCHFILES=	${OBJCNAME}-rtems-20021209.diff \
+		${NEWLIBNAME}-rtems-20030120.diff
 PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 
@@ -24,8 +24,8 @@ MAINTAINER=	jeh@FreeBSD.org
 
 LCLTARGET?=	i386-rtems
 
-OBJCNAME=	gcc-2.95.3
-NEWLIBNAME=	newlib-1.9.0
+OBJCNAME=	gcc-3.2.1
+NEWLIBNAME=	newlib-1.11.0
 MASTERDIR=	${.CURDIR}/../i386-rtems-objc
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
 
