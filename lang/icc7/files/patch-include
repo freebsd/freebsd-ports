@@ -11,3 +11,44 @@
  #define _CPPLIB_VER	310
  
   #if defined(ia64) || defined(__ia64) || defined(__ia64__)	/* assume Itanium */
+--- opt/intel/compiler60/ia32/include/cwchar.orig	Tue Aug  6 04:32:48 2002
++++ opt/intel/compiler60/ia32/include/cwchar	Tue Aug  6 05:04:09 2002
+@@ -13,25 +13,29 @@
+ 
+  #ifdef _GLOBAL_USING
+ _STD_BEGIN
+-using ::mbstate_t; using ::size_t; using ::tm; using ::wint_t;
++using ::mbstate_t; using ::size_t; using ::wint_t;
++// using ::tm;
+ 
+ 
+-using ::btowc;
++// using ::btowc;
+ // using ::fwide; using ::fwprintf;
+ // using ::fwscanf;
+-using ::mbrlen; using ::mbrtowc; using ::mbsrtowcs;
+-using ::mbsinit;
++// using ::mbrlen; using ::mbrtowc; using ::mbsrtowcs;
++// using ::mbsinit;
+ // using ::swprintf; using ::swscanf;
+ // using ::vfwprintf; using ::vswprintf; using ::vwprintf;
+-using ::wcrtomb;
++// using ::wcrtomb;
+ // using ::wprintf; using ::wscanf;
+-using ::wcsrtombs; using ::wcstol; using ::wcscat;
+-using ::wcschr; using ::wcscmp; using ::wcscoll;
++// using ::wcsrtombs; using ::wcstol;
++using ::wcscat;
++using ::wcschr; using ::wcscmp;
++// using ::wcscoll;
+ using ::wcscpy; using ::wcscspn; using ::wcslen;
+ using ::wcsncat; using ::wcsncmp; using ::wcsncpy;
+ using ::wcspbrk; using ::wcsrchr; using ::wcsspn;
+-using ::wcstod; using ::wcstoul; using ::wcsstr;
+-using ::wcstok; using ::wcsxfrm; using ::wctob;
++// using ::wcstod; using ::wcstoul;
++using ::wcsstr;
++// using ::wcstok; using ::wcsxfrm; using ::wctob;
+ using ::wmemchr; using ::wmemcmp; using ::wmemcpy;
+ using ::wmemmove; using ::wmemset;
+ // using ::wcsftime;

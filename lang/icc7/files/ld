@@ -6,8 +6,24 @@
 
 # Written by Dan Nelson <dnelson@allantgroup.com> with some modifications
 # by Alexander Leidinger <netchild@FreeBSD.org>.
+# C++ support by Marius Strobl <marius@alchemy.franken.de>.
 
 PREFIX=@@PREFIX@@
+
+i=0
+argc=$#
+while [ $i -lt $argc ] ; do
+ val=$1
+ shift
+ if [ "$val" == "-CPLUSPLUS" ] ; then
+ 	cplusplus=1
+ elif [ "$val" == "-BOOTSTRAPSTLPORT" ] ; then
+	bootstrapstlport=1
+ else
+ 	set -- "$@" "$val"
+ fi
+ i=$(($i+1))
+done
 
 i=0
 argc=$#
@@ -17,8 +33,8 @@ while [ $i -lt $argc ] ; do
  val=$1
  shift
  case $val in 
-	# there was also "-lirc", but it a test with -lirc works here
-	-limf|-lcprts|-lunwind|\
+	# there was also "-lirc", but in a test -lirc works here
+	-limf|\
 	${PREFIX}/intel/compiler60/ia32/lib/icrt.link|\
 	-Qy\
 	)
@@ -27,6 +43,22 @@ while [ $i -lt $argc ] ; do
 		# obsolete flag
 		unset val
 	;;
+	-lcprts|-lunwind)
+		# only needed when compiling c++ source, depend on libc_r
+		if [ ! "$cplusplus" ] ; then
+			unset val
+		fi
+	;;
+	-lc)
+		if [ "$cplusplus" ] ; then
+			if [ "$bootstrapstlport" ] ; then
+				val=-lc_r
+			else
+				unset val
+				set -- "$@" -lc_r -lstlport_icc
+			fi
+		fi
+	;;
 	/lib/ld-linux.so.2)
 		# switch it
 		val=/usr/libexec/ld-elf.so.1
@@ -34,7 +66,8 @@ while [ $i -lt $argc ] ; do
 	-L/usr/lib)
 		# remove this, and replace with FreeBSD's lib paths
 		unset val
-		set -- "$@" -L/usr/libexec/elf -L/usr/libexec -L/usr/lib
+		set -- "$@" -L/usr/libexec/elf -L/usr/libexec -L/usr/lib \
+			-L${PREFIX}/lib
 	;;
 	${PREFIX}/intel/compiler60/ia32/lib/crtxi.o)
 		# switch it
@@ -45,13 +78,42 @@ while [ $i -lt $argc ] ; do
 		val=/usr/lib/crtend.o
 	;;
 	-Bdynamic)
-		# Force libcxa to static linkage, since the dynamic
-		# version has a linux glibc dependency.  This might not
-		# fully work, as when it does call libc stuff it could
-		# fail.  I haven't been able to make it happen though.
-		if [ "$1" == "-lcxa" ] ; then
-			val=-Bstatic
-		fi
+		# Force libcprts, libcxa and libunwind to static linkage,
+		# since the dynamic versions have linux glibc
+		# dependencies. This might not fully work, as when it
+		# does call libc stuff it could fail. I haven't been able
+		# to make it happen though.
+		# ibcprts and libunwind are only needed when compiling c++
+		# source, else we remove the superfluous -Bdynamic.
+ 		case $1 in 
+			-lcxa)
+				val=-Bstatic
+			;;
+			-lcprts|-lunwind)
+				if [ "$cplusplus" ] ; then
+					val=-Bstatic
+				else
+					unset val
+				fi
+			;;
+			*)
+			;;
+		esac
+	;;
+	-Bstatic)
+		# remove superfluous -Bstatic not followed by a library
+ 		case $1 in 
+			-limf|-lirc)
+				unset val
+			;;
+			-lcprts|-lunwind)
+				if [ ! "$cplusplus" ] ; then
+					unset val
+				fi
+			;;
+			*)
+			;;
+		esac
 	;;
 	*)
 	;;
