@@ -1,63 +1,20 @@
-*** include/unixconf.h.orig	Thu Aug 29 23:53:22 1996
---- include/unixconf.h	Fri Aug 30 00:06:59 1996
-***************
-*** 31,37 ****
-  
-  /* define any of the following that are appropriate */
-  /* #define SVR4		/* use in addition to SYSV for System V Release 4 */
-! #define NETWORK		/* if running on a networked system */
-  			/* e.g. Suns sharing a playground through NFS */
-  #define SUNOS4	/* SunOS 4.x */
-  /* #define NEWSOS4	/* NEWS-OS 4.x */
---- 31,37 ----
-  
-  /* define any of the following that are appropriate */
-  /* #define SVR4		/* use in addition to SYSV for System V Release 4 */
-! /*#define NETWORK		/* if running on a networked system */
-  			/* e.g. Suns sharing a playground through NFS */
-  #define SUNOS4	/* SunOS 4.x */
-  /* #define NEWSOS4	/* NEWS-OS 4.x */
-***************
-*** 43,54 ****
-  /* #define AIX_31	/* In AIX 3.1 (IBM RS/6000) use BSD ioctl's to gain
-  			 * job control (note that AIX is SYSV otherwise)
-  			 * Also define this for AIX 3.2 */
-! /* #define TEXTCOLOR	/* Use System V r3.2 terminfo color support */
-  			/* and/or ANSI color support on termcap systems */
-  			/* and/or X11 color */
-! /* #define POSIX_JOB_CONTROL	/* use System V / POSIX job control
-  			 * (e.g., VSUSP) */
-! /* #define POSIX_TYPES	/* use POSIX types for system calls and termios */
-  			/* define for many recent OS releases, including
-  			 * those with specific defines (since types are
-  			 * changing toward the standard from earlier chaos).
---- 43,54 ----
-  /* #define AIX_31	/* In AIX 3.1 (IBM RS/6000) use BSD ioctl's to gain
-  			 * job control (note that AIX is SYSV otherwise)
-  			 * Also define this for AIX 3.2 */
-! #define TEXTCOLOR	/* Use System V r3.2 terminfo color support */
-  			/* and/or ANSI color support on termcap systems */
-  			/* and/or X11 color */
-! #define POSIX_JOB_CONTROL	/* use System V / POSIX job control
-  			 * (e.g., VSUSP) */
-! #define POSIX_TYPES	/* use POSIX types for system calls and termios */
-  			/* define for many recent OS releases, including
-  			 * those with specific defines (since types are
-  			 * changing toward the standard from earlier chaos).
-***************
-*** 126,132 ****
-   * A stat system call is done on the mailbox every MAILCKFREQ moves.
-   */
-  
-! #define MAIL			/* Deliver mail during the game */
-  
-  /* The Andrew Message System does mail a little differently from normal
-   * UNIX.  Mail is deposited in the user's own directory in ~/Mailbox
---- 126,132 ----
-   * A stat system call is done on the mailbox every MAILCKFREQ moves.
-   */
-  
-! /* #define MAIL			/* Deliver mail during the game */
-  
-  /* The Andrew Message System does mail a little differently from normal
-   * UNIX.  Mail is deposited in the user's own directory in ~/Mailbox
+--- include/config.h.orig	Sun Jun 16 03:02:11 2002
++++ include/config.h	Sun Jun 16 03:05:19 2002
+@@ -216,7 +216,7 @@
+ /* #define COMPRESS "/usr/bin/compress"	*/ /* Lempel-Ziv compression */
+ /* #define COMPRESS_EXTENSION ".Z" */		/* compress's extension */
+ /* An example of one alternative you might want to use: */
+- #define COMPRESS "/usr/local/bin/gzip" 	/* FSF gzip compression */
++ #define COMPRESS "/usr/bin/gzip"	 	/* FSF gzip compression */
+  #define COMPRESS_EXTENSION ".gz" 		/* normal gzip extension */
+ #endif
+ 
+@@ -251,7 +251,7 @@
+ #  ifdef __APPLE__
+ #    define HACKDIR "jnethackdir"	/* nethack directory */
+ #  else
+-#    define HACKDIR "/usr/games/lib/jnethackdir"
++#    define HACKDIR "%%PREFIX%%/lib/jnethack"
+ #  endif
+ # endif
+ 

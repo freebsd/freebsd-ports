@@ -260,6 +260,7 @@
     SUBDIR += ndtpd
     SUBDIR += ne
     SUBDIR += nethack32
+    SUBDIR += nethack34
     SUBDIR += netscape-fonts
     SUBDIR += netscape3.language
     SUBDIR += netscape4-communicator
