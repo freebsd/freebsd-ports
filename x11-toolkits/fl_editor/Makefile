@@ -7,46 +7,58 @@
 
 PORTNAME=	fl_editor
 PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://robertk.com/source/fl_editor/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	cyrille.lefevre@laposte.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text Editor Widgets for the Fast Light ToolKit
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--enable-shared --with-fltk=${PREFIX}
+CONFIGURE_ARGS=	--enable-shared --with-fltk=${LOCALBASE}
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+PLIST_SUB=	INCSDIR="${INCSDIR:S,^${PREFIX}/,,}" \
+		LIBSDIR="${LIBSDIR:S,^${PREFIX}/,,}"
+REINPLACE_SUB=	PREFIX=${PREFIX}
+
+INCSDIR=	${PREFIX}/include/FL
+LIBSDIR=	${PREFIX}/lib
+
 DOC_FILES=	documentation/*.html documentation/*.jpg
 INC1_FILES=	Fl_Editor.H Fl_FancyEditor.H Fl_FancyMultiEditor.H \
 		Fl_MultiEditor.H Fl_ProgressBox.H Fl_StatusPanel.H
 INC2_FILES=	editengine.h editvars.h lists.h stringsup.h wstring.h
-INC_SUBDIR=	include/FL
 LIB_FILES=	libfleditor.so.1
-LIB_SUBDIR=	lib
+
+post-patch: patch-inplace
+
+patch-inplace:
+	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${WRKSRC}/Makefile.in
 
 post-install: symlink-inc symlink-lib install-doc
 
 symlink-inc:
 .for file in ${INC1_FILES}
-	@${LN} -fs ${file} ${PREFIX}/${INC_SUBDIR}/${file:R}.${file:E:L}
+	@${LN} -fs ${file} ${INCSDIR}/${file:R}.${file:E:L}
 .endfor
 .for file in ${INC2_FILES}
-	@${LN} -fs ${file} ${PREFIX}/${INC_SUBDIR}/${file:R}.${file:E:U}
+	@${LN} -fs ${file} ${INCSDIR}/${file:R}.${file:E:U}
 .endfor
 
 symlink-lib:
 .for file in ${LIB_FILES}
-	@${LN} -fs ${file} ${PREFIX}/${LIB_SUBDIR}/${file:R}
+	@${LN} -fs ${file} ${LIBSDIR}/${file:R}
 .endfor
 
 install-doc:
