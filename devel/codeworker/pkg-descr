@@ -1,0 +1,13 @@
+CodeWorker is a parsing tool and a source code generator, available in Open
+Source (distributed under the GNU Lesser General Public License) devoted to
+cover many aspects of the generative programming. Generative programming is
+a software engineering approach for producing reusable, tailor-made, evolvable
+and reliable IT systems with a high level of automation.
+
+The tool interprets a scripting language that drives the processing of parsing
+and source code generation in a quite familiar syntax for developers. It
+insists on adapting the syntax of the language to the particularities of tasks
+to resolve (parse, code generation, procedural) and on offering powerful
+functionalities to do intensive source code generation.
+
+WWW: http://www.codeworker.org/

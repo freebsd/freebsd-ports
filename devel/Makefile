@@ -125,6 +125,7 @@
     SUBDIR += clo++
     SUBDIR += cmake
     SUBDIR += codecrusader
+    SUBDIR += codeworker
     SUBDIR += commoncpp
     SUBDIR += cons
     SUBDIR += cons-test
