@@ -1,36 +1,10 @@
-*** configure.h.orig	Sat Nov 18 17:06:08 1995
---- configure.h	Sat Nov 18 17:08:26 1995
-***************
-*** 6,12 ****
-   *  You'll probably want to leave this as sendmail, but make sure the path
-   *  is right.  If you don't have sendmail, use /bin/false :-).
-   */
-! #define MAIL_COMMAND "/usr/lib/sendmail -t"
-  
-  
-  /*  This macro controls the generation of email addresses.
---- 6,12 ----
-   *  You'll probably want to leave this as sendmail, but make sure the path
-   *  is right.  If you don't have sendmail, use /bin/false :-).
-   */
-! #define MAIL_COMMAND "/usr/sbin/sendmail -t"
-  
-  
-  /*  This macro controls the generation of email addresses.
-***************
-*** 33,39 ****
-   *  Both %s and %i are optional, although the editor will not be much use
-   *  if you don't specify %s...
-   */
-! #define DEFAULT_EDIT_COMMAND "xterm -e vi +%i %s"
-  
-  
-  /*  The default NNTPSERVER.  Basically: don't set this, use $NNTPSERVER
---- 33,39 ----
-   *  Both %s and %i are optional, although the editor will not be much use
-   *  if you don't specify %s...
-   */
-! #define DEFAULT_EDIT_COMMAND "xterm -cr red -fn 10x20 -bg lightsteelblue -e vi +%i %s"
-  
-  
-  /*  The default NNTPSERVER.  Basically: don't set this, use $NNTPSERVER
+--- configure.h.orig	Thu Mar 28 17:30:55 1996
++++ configure.h	Sun Apr 14 08:41:35 1996
+@@ -15,7 +15,7 @@
+  *
+  *  If you don't have sendmail, use /bin/false :-).
+  */
+-/* #define MAIL_COMMAND "/usr/sbin/sendmail -t" */
++#define MAIL_COMMAND "/usr/sbin/sendmail -t"
+ /* #define MAIL_COMMAND "/usr/lib/sendmail -t"  */
+ 

@@ -1,8 +1,10 @@
-True threading, with a graphical tree for the threads. 
+Knews is a threaded newsreader with an X Window interface that uses
+NNTP to get news. It displays the threads in a graphical tree.
+
 Full support for reading MIME articles, except message/partial. 
 Some options that will improve things for people reading over slow lines: 
 
-  o Background threading of groups in advance. 
+  o Background threading of newsgroups
   o Doesn't have to read the active file or group descriptions on startup. 
   o A mechansim for reading the spool directory. 
   o Kill file support. Articles can be 
@@ -15,3 +17,12 @@ Some options that will improve things for people reading over slow lines:
   o Supports multiple nntp servers. 
   o Tagging of articles and saving or piping them in order. 
   o Uudecode function. Not perfect, but handles most cases. 
+  o article text widget is able to display wide-character fonts
+  o article tree has a 'vertical' layout by popular demand
+  o experimental: Decoding of 16 bit encoded charsets
+  o Mailcap file support
+  o save thread data between sessions 
+  o article prefetch cache and 'trailing' cache.
+  o Less restrictive locking of the interface,
+    edit killfile and such while knews is busy.
+  o Message-id lookup of articles.

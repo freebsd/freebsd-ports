@@ -1,0 +1,10 @@
+--- src/Knews.ad.orig	Sun Apr 14 08:44:59 1996
++++ src/Knews.ad	Sun Apr 14 08:45:42 1996
+@@ -35,6 +35,7 @@
+ !Knews.editCommand:	xterm -e $EDITOR +%i %s
+ !Knews.editCommand:	xemacs +%i %s
+ !Knews.editCommand:	xterm -e vi +%i %s
++!Knews.editCommand:	xterm -fn 10x20 -cr red -bg grey90 -e vi +%i %s
+ !
+ ! You might need a few stty settings for vi:
+ !

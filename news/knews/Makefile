@@ -1,23 +1,29 @@
 # New ports collection makefile for:	knews
-# Version required:     0.9.3
-# Date created:         Sat Nov 18 15:23:47 MET 1995
+# Version required:     0.9.6
+# Date created:         Sun Apr 14 09:23:59 MET DST 1996
 # Whom:                 Andreas Klemm <andreas@knobel.gun.de>
 #
 #
 
-DISTNAME=	knews-0.9.3
-PKGNAME=	knews-0.9.3
+DISTNAME=	knews-0.9.6
+PKGNAME=	knews-0.9.6
 CATEGORIES+=	x11
 CATEGORIES+=	news
+
+LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+
+MASTER_SITES+=	ftp://ftp.nada.kth.se/home/su95-kjo/knews/
 MASTER_SITES+=	ftp://sunsite.unc.edu/pub/Linux/X11/xapps/networked/
 MASTER_SITES+=	ftp://ftp.cc.gatech.edu/ac88/linux/X11/xapps/networked/
 MASTER_SITES+=	ftp://ftp.germany.eu.net/pub/os/Linux/Mirror.SunSITE/X11/xapps/networked/
 MASTER_SITES+=	ftp://ftp.funet.fi/pub/mirrors/sunsite.unc.edu/pub/Linux/X11/xapps/networked/
 
 # perhaps Andreas is going to maintain it personally some day... :)
-#MAINTAINER=	andreas@knobel.gun.de
-MAINTAINER=	joerg
+#MAINTAINER=	joerg
+# this time ;-)
+MAINTAINER=	andreas@knobel.gun.de
 
+WRKSRC=		${WRKDIR}/knews
 USE_IMAKE=	yes
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  -f
