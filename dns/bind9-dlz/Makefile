@@ -71,7 +71,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		DISTNAME="${DISTNAME}" \
 		BINDDLZ_OPTIONS="${BINDDLZ_OPTIONS}"
 
-DIR=		${WRKSRC}/bin/
+DOCSDIR=	${PREFIX}/share/doc/bind9
 EXTRA_DOCSDIR=	share/doc/bind9-dlz
 EXTRA_FIX=	${WRKSRC}/configure
 DOCS=		README.txt bind_dlz.txt changelog.txt \
@@ -134,10 +134,10 @@ post-patch:
 	@ ${CHMOD} +x ${EXTRA_FIX}
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.8 \
 	rndc/rndc.8
-	@ ${MV} ${DIR}/${FILE} ${DIR}/${FILE}.sed
+	@ ${MV} ${WRKSRC}/bin/${FILE} ${WRKSRC}/bin/${FILE}.sed
 	${SED} -e 's#/etc/named.conf#${PREFIX}/etc/named.conf#g' \
 		-e 's#/etc/rndc.conf#${PREFIX}/etc/rndc.conf#g' \
-		${DIR}/${FILE}.sed > ${DIR}/${FILE}
+		${WRKSRC}/bin/${FILE}.sed > ${WRKSRC}/bin/${FILE}
 .endfor
 
 pre-configure:
@@ -157,14 +157,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
 		${PREFIX}/etc/rndc.conf.sample
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/bind9/arm
-	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM*html \
-		${PREFIX}/share/doc/bind9/arm
-	${MKDIR} ${PREFIX}/share/doc/bind9/misc
-	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* \
-		${PREFIX}/share/doc/bind9/misc
+	${MKDIR} ${DOCSDIR}/arm ${DOCSDIR}/misc
+	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM*html ${DOCSDIR}/arm
+	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* ${DOCSDIR}/misc
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
-		${WRKSRC}/README ${PREFIX}/share/doc/bind9/
+		${WRKSRC}/README ${DOCSDIR}/
 	${MKDIR} ${PREFIX}/${EXTRA_DOCSDIR}
 	@cd ${WRKDIR} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/${EXTRA_DOCSDIR}/
 .endif
