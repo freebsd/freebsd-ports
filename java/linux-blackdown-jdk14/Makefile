@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.nluug.nl/pub/os/Linux/java/jdk/${DOWNLOAD_DIR}/ \
 		ftp://metalab.unc.edu/pub/linux/devel/lang/java/blackdown.org/${DOWNLOAD_DIR}/ \
 		ftp://ftp.tux.org/pub/java/${DOWNLOAD_DIR}/
 PKGNAMEPREFIX=	linux-blackdown-
-DISTNAME=	j2sdk-${JDK_VERSION}${JDK_VER_SUFFIX}-linux-i586
+DISTNAME=	j2sdk-${JDK_VERSION}${JDK_VER_SUFFIX}-linux-i586-gcc2.95
 EXTRACT_SUFX=	.bin
 
 MAINTAINER=	znerd@FreeBSD.org
@@ -21,18 +21,19 @@ COMMENT=	Blackdown Java Development Kit 1.4 for Linux
 BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
-EXTRACT_CMD=		# empty
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	# empty
+EXTRACT_CMD=		${TAIL}
+EXTRACT_BEFORE_ARGS=	+522
+EXTRACT_AFTER_ARGS=	| ${BZIP2_CMD} -dc | ${TAR} xf -
+USE_BZIP2=	yes
 
 WRKSRC=		${WRKDIR}/j2sdk${PORTVERSION}
-PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
+PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
 JDK_VERSION=	1.4.1
-JDK_VER_SUFFIX=	-beta
-DOWNLOAD_DIR=	${PORTNAME:U}-${JDK_VERSION}/${ARCH}/beta
+JDK_VER_SUFFIX=	-01
+DOWNLOAD_DIR=	${PORTNAME:U}-${JDK_VERSION}/${ARCH}/01
 ONLY_FOR_ARCHS=	i386
 
 NO_CDROM=	"License doesn\'t allow distribution with fee"
@@ -57,10 +58,11 @@ do-install:
 
 	@${ECHO} -n ">> Copying files..."
 	@${CP} -R ${WRKSRC}/* ${APP_HOME}
+	@${CHOWN} -h -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
 	@${ECHO} " [ DONE ]"
 
 	@${ECHO} -n ">> Registering with javavm..."
-	@${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-Blackdown-JDK${PORTVERSION}_${PORTREVISION}"
+	@${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-Blackdown-JDK${PORTVERSION}"
 	@${ECHO} " [ DONE ]"
 
 .include <bsd.port.post.mk>
