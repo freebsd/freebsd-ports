@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gno3dtet
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.4
 CATEGORIES=	games gnome
-MASTER_SITES=	ftp://webdat.com/pub/seb/gno3dtet/
+MASTER_SITES=	ftp://65.3.69.88/pub/gno3dtet/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
