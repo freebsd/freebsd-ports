@@ -1,6 +1,6 @@
---- configure.orig	Thu Oct 10 12:17:48 2002
-+++ configure	Sun Nov 10 23:07:01 2002
-@@ -4222,7 +4222,7 @@
+--- configure.orig	Thu Dec  5 10:37:31 2002
++++ configure	Sat Dec 14 16:07:17 2002
+@@ -8988,7 +8988,7 @@
    ;;
  esac
  fi
@@ -8,12 +8,12 @@
 +HOSTNAME="$ac_cv_path_HOSTNAME -s"
  
  if test -n "$HOSTNAME"; then
-   echo "$as_me:4228: result: $HOSTNAME" >&5
-@@ -4397,43 +4397,7 @@
+   echo "$as_me:$LINENO: result: $HOSTNAME" >&5
+@@ -9177,43 +9177,7 @@
  echo "${ECHO_T}no" >&6
  fi
  
--echo "$as_me:4400: checking \"how to check if pid exists\"" >&5
+-echo "$as_me:$LINENO: checking \"how to check if pid exists\"" >&5
 -echo $ECHO_N "checking \"how to check if pid exists\"... $ECHO_C" >&6
 -PS=$ac_cv_path_PS
 -# Linux style
@@ -45,42 +45,34 @@
 -      FIND_PROC="$PS -e | grep mysqld | grep \" \$\$PID \" > /dev/null"
 -      ;;
 -    *)
--      { { echo "$as_me:4432: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." >&5
+-      { { echo "$as_me:$LINENO: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." >&5
 -echo "$as_me: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." >&2;}
 -   { (exit 1); exit 1; }; }
 -  esac
 -fi
 +FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
  
- echo "$as_me:4438: result: \"$FIND_PROC\"" >&5
+ echo "$as_me:$LINENO: result: \"$FIND_PROC\"" >&5
  echo "${ECHO_T}\"$FIND_PROC\"" >&6
-@@ -7420,6 +7384,7 @@
-     ;;
-   *freebsd*)
-     echo "Adding fix for interrupted reads"
-+    CFLAGS="$CFLAGS -DHAVE_BROKEN_REALPATH"
-     CXXFLAGS="$CXXFLAGS -DMYSQLD_NET_RETRY_COUNT=1000000"
-     ;;
-   *netbsd*)
-@@ -8090,7 +8055,6 @@
+@@ -13208,7 +13172,6 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lc_r  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line 8095 "configure"
+ #line $LINENO "configure"
  #include "confdefs.h"
-@@ -8138,7 +8102,6 @@
+@@ -13262,7 +13225,6 @@
  #define HAVE_LIBC_R 1
- EOF
+ _ACEOF
  
 -  LIBS="-lc_r $LIBS"
  
  fi
  
-@@ -8495,29 +8458,6 @@
- 
+@@ -13706,29 +13668,6 @@
  fi
+ 
  
 -# Build optimized or debug version ?
 -# First check for gcc and g++
@@ -105,10 +97,10 @@
 -  OPTIMIZE_CXXFLAGS="-O"
 -fi
 -
+ 
  # Check whether --with-debug or --without-debug was given.
  if test "${with_debug+set}" = set; then
-   withval="$with_debug"
-@@ -10249,10 +10189,6 @@
+@@ -16081,10 +16020,6 @@
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
@@ -118,10 +110,10 @@
 -fi
  mysql_cv_btype_last_arg_accept=none
  cat >conftest.$ac_ext <<_ACEOF
- #line 10258 "configure"
-@@ -12922,14 +12858,6 @@
- ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ #line $LINENO "configure"
+@@ -19222,14 +19157,6 @@
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+ 
  
 -# Do not treat warnings as errors if we are linking against other libc
 -# this is to work around gcc not being permissive on non-system includes
@@ -132,9 +124,9 @@
 -fi
 -
  cat >conftest.$ac_ext <<_ACEOF
- #line 12934 "configure"
+ #line $LINENO "configure"
  #include "confdefs.h"
-@@ -13006,10 +12934,6 @@
+@@ -19313,10 +19240,6 @@
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
@@ -143,9 +135,9 @@
 -  CXXFLAGS="$CXXFLAGS -Werror"
 -fi
  cat >conftest.$ac_ext <<_ACEOF
- #line 13014 "configure"
+ #line $LINENO "configure"
  #include "confdefs.h"
-@@ -13085,10 +13009,6 @@
+@@ -19399,10 +19322,6 @@
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
@@ -154,5 +146,5 @@
 -  CXXFLAGS="$CXXFLAGS -Werror"
 -fi
  cat >conftest.$ac_ext <<_ACEOF
- #line 13093 "configure"
+ #line $LINENO "configure"
  #include "confdefs.h"

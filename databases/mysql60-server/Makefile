@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	${MASTERPORTNAME}
-PORTVERSION=	3.23.53
-PORTREVISION?=	4
+PORTVERSION=	3.23.54
+PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/MySQL-3.23/ \
 		http://mysql.he.net/Downloads/MySQL-3.23/ \
@@ -17,8 +17,6 @@ MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/MySQL-3.23/ \
 		http://web.tryc.on.ca/mysql/Downloads/MySQL-3.23/ \
 		ftp://ftp.gwdg.de/pub/misc/mysql/Downloads/MySQL-3.23/
 DISTFILES=	mysql-${PORTVERSION}${EXTRACT_SUFX}
-
-FORBIDDEN=	"Myltiple security vulnerabilities - see http://security.e-matters.de/advisories/042002.html"
 
 MAINTAINER=	dirk@FreeBSD.org
 
