@@ -3,7 +3,7 @@
 # Date created:		17 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.4 1995/04/11 19:46:52 asami Exp $
+# $Id: Makefile,v 1.5 1995/05/05 20:43:47 torstenb Exp $
 #
 
 DISTNAME=	sox10p11
@@ -13,5 +13,8 @@ MASTER_SITES=	ftp://nic.switch.ch/software/sources/audio/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	torstenb@FreeBSD.ORG
+
+post-install:
+	gzip -9nf ${PREFIX}/man/man1/sox.1
 
 .include <bsd.port.mk>
