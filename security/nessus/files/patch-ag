@@ -1,15 +1,6 @@
---- nessus/preferences.c.orig	Sat Nov 13 18:06:16 1999
-+++ nessus/preferences.c	Tue Nov 30 20:49:15 1999
-@@ -24,7 +24,7 @@
- #include "globals.h"
- #include "nessus.h"
- #ifdef ENABLE_CRYPTO_LAYER
--#include <peks.h>
-+#include "peks/peks.h"
- #endif
- 
- static int preferences_new();
-@@ -60,15 +60,6 @@
+--- nessus/preferences.c.old	Mon Dec 27 10:39:54 1999
++++ nessus/preferences.c	Mon Dec 27 10:42:11 1999
+@@ -57,27 +57,6 @@
  static char * 
  preferences_get_filename()
  {
@@ -20,12 +11,24 @@
 -  /* peks uses another memory management */
 -  t = estrdup (s);
 -  xfree (s);
+-#ifdef _WIN32
+-  /* on Windows we have no HOME varable set, by default */
+-  if (getenv("HOME") == 0 && (s = peks_get_homedir (0)) != 0) {
+-    char *e = strcat (strcpy (pmalloc (strlen (s) + 10), "HOME="), s);
+-#   ifdef HAVE__PUTENV
+-    _putenv (e);
+-#   else
+-    putenv (e);
+-#   endif
+-    xfree (e);
+-  }
+-#endif /* _WIN32 */
 -  return t;
 -#else
    char* home;
    char * ret;
    struct passwd * pwd;
-@@ -88,7 +79,6 @@
+@@ -97,7 +76,6 @@
     return(ret);
    } 
    return(NULL);

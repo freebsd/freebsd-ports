@@ -1,11 +1,11 @@
+bin/nessus
 include/nessus/config.h
-include/nessus/ntcompat.h
 include/nessus/includes.h
 include/nessus/nessus-devel.h
-include/nessus/nessusraw.h
-include/nessus/nessusip.h
 include/nessus/nessusicmp.h
+include/nessus/nessusip.h
+include/nessus/nessusraw.h
 include/nessus/nessustcp.h
 include/nessus/nessusudp.h
-bin/nessus
+include/nessus/ntcompat.h
 sbin/nessusd
