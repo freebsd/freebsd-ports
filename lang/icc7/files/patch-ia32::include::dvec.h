@@ -9,3 +9,16 @@
          #define EXPLICIT explicit
  #else
     #if (__INTEL_COMPILER)
+@@ -50,10 +50,10 @@
+ #endif
+ 
+ /* Figure out whether and how to define the output operators */
+-#if defined(_IOSTREAM_) || defined(_CPP_IOSTREAM)
++#if defined(_IOSTREAM_) || defined(_CPP_IOSTREAM) || defined(_STLP_IOSTREAM)
+ #define DVEC_DEFINE_OUTPUT_OPERATORS
+ #define DVEC_STD std::
+-#elif defined(_INC_IOSTREAM) || defined(_IOSTREAM_H_)
++#elif defined(_INC_IOSTREAM) || defined(_IOSTREAM_H_) || defined(_STLP_IOSTREAM_H)
+ #define DVEC_DEFINE_OUTPUT_OPERATORS
+ #define DVEC_STD
+ #endif

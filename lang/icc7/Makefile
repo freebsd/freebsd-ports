@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	icc
-PORTVERSION=	7.0.078
-PORTREVISION=	1
+PORTVERSION=	7.0.082
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pu_${PORTVERSION}
@@ -61,12 +60,12 @@ post-extract:
 		${FILESDIR}/cpio-exclude_noportdocs >>${WRKDIR}/cpio-exclude
 .endif
 .for i in \
-	intel-icc7-7.0-78.i386.rpm
-#	intel-ildb7-7.0-156.i386.rpm \
-#	intel-isubh7-7.0-78.i386.rpm \
-#	intel-ecc7-7.0-78.ia64.rpm \
-#	intel-eldb7-7.0-156.ia64.rpm \
-#	intel-esubh7-7.0-78.ia64.rpm
+	intel-icc7-7.0-82.i386.rpm
+#	intel-ildb7-7.0-164.i386.rpm \
+#	intel-isubh7-7.0-82.i386.rpm \
+#	intel-ecc7-7.0-82.ia64.rpm \
+#	intel-eldb7-7.0-164.ia64.rpm \
+#	intel-esubh7-7.0-82.ia64.rpm
 	@cd ${WRKSRC} && rpm2cpio 2>/dev/null ${i} | \
 		cpio -idfuE ${WRKDIR}/cpio-exclude --quiet
 .endfor
@@ -103,7 +102,7 @@ post-patch:
 .for i in icc.cfg icpc.cfg
 	@${REINPLACE_CMD} -i "" -e 's:-Xlinker -rpath -Xlinker <INSTALLDIR>/${COMPILERDIR}/ia32/lib::g' \
 		${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
-	@${ECHO} -e "-Qlocation,ld,${PREFIX}/intel/${COMPILERDIR}/ia32/bin/ldwrapper\n\n-Ulinux\n-U__linux__\n-U__linux\n\n-D__FreeBSD__=${ICCCFGVAL}\n-D__ELF__=1\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
+	@${ECHO} -e "-Qlocation,ld,${PREFIX}/intel/${COMPILERDIR}/ia32/bin/ldwrapper\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${ICCCFGVAL}\n-D__ELF__=1\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
 .if ${OSVERSION} >= 500039
 	@${ECHO} -e "-D__wchar_t=__ct_rune_t\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
 .endif
@@ -126,7 +125,7 @@ do-build:
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stdout.o ${FILESDIR}/stdout.c
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stderr.o ${FILESDIR}/stderr.c
 .else
-.for i in libcxa.a libimf.a libirc.a libircmt.a libompstub.a libunwind.a
+.for i in libcxa.a libimf.a libirc.a libircmt.a libunwind.a
 	@${OBJCOPY} --redefine-sym stdin=__stdinp \
 		--redefine-sym stdout=__stdoutp \
 		--redefine-sym stderr=__stderrp \
@@ -161,5 +160,9 @@ post-install:
 	@${ECHO_CMD}
 	@${ECHO_CMD} "WARNING: If you use icc while having linux_devtools installed, icc will use"
 	@${ECHO_CMD} "the wrong includes and therefore will generate bogus (not working) binaries!"
+	@${ECHO_CMD}
+	@${ECHO_CMD} "If you encounter further problems with icc please consult the errata at"
+	@${ECHO_CMD} "http://support.intel.com/support/performancetools/c/C_Compiler_Errata.htm"
+	@${ECHO_CMD} "first."
 
 .include <bsd.port.post.mk>

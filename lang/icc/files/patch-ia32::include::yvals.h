@@ -172,11 +172,11 @@
 -typedef wchar_t _Wchart;
 -typedef wchar_t _Wintt;
 -    #else /* _HAS_WCHAR_TYPE */
--typedef int _Wchart;
+-typedef __WCHAR_TYPE__ _Wchart;
 -typedef int _Wintt;
 -    #endif /* _HAS_WCHAR_TYPE */
 -  #else /* __cplusplus */
--typedef int _Wchart;
+-typedef __WCHAR_TYPE__ _Wchart;
 -typedef int _Wintt;
 -  #endif /* __cplusplus */
 - #endif /* __CYGWIN__ */

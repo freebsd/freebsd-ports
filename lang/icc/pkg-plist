@@ -732,7 +732,6 @@ intel/%%COMPILERDIR%%/ia32/include/exception
 intel/%%COMPILERDIR%%/ia32/include/fvec.h
 intel/%%COMPILERDIR%%/ia32/include/ivec.h
 intel/%%COMPILERDIR%%/ia32/include/math.h
-intel/%%COMPILERDIR%%/ia32/include/mathf.h
 intel/%%COMPILERDIR%%/ia32/include/mathimf.h
 intel/%%COMPILERDIR%%/ia32/include/mmintrin.h
 intel/%%COMPILERDIR%%/ia32/include/new
@@ -759,7 +758,6 @@ intel/%%COMPILERDIR%%/ia32/lib/libcxa.so.3
 intel/%%COMPILERDIR%%/ia32/lib/libimf.a
 intel/%%COMPILERDIR%%/ia32/lib/libirc.a
 intel/%%COMPILERDIR%%/ia32/lib/libircmt.a
-intel/%%COMPILERDIR%%/ia32/lib/libompstub.a
 intel/%%COMPILERDIR%%/ia32/lib/libsvml.a
 intel/%%COMPILERDIR%%/ia32/lib/libunwind.a
 @dirrm intel/%%COMPILERDIR%%/ia32/lib
