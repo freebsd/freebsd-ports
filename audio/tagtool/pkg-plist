@@ -1,0 +1,21 @@
+bin/tagtool
+share/gnome/apps/Multimedia/tagtool.desktop
+share/pixmaps/TagTool.png
+%%DATADIR%%/TagTool.png
+%%DATADIR%%/edit.png
+%%DATADIR%%/fail.png
+%%DATADIR%%/file.png
+%%DATADIR%%/folder.png
+%%DATADIR%%/graydot.png
+%%DATADIR%%/greendot.png
+%%DATADIR%%/info.png
+%%DATADIR%%/ok.png
+%%DATADIR%%/preferences.dtd
+%%DATADIR%%/tab_clear.png
+%%DATADIR%%/tab_edit.png
+%%DATADIR%%/tab_playlist.png
+%%DATADIR%%/tab_rename.png
+%%DATADIR%%/tab_tag.png
+%%DATADIR%%/tagtool.glade
+%%DATADIR%%/warn.png
+@dirrm %%DATADIR%%
