@@ -3,7 +3,7 @@
 # Date created:		9 October 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.2 1995/11/22 13:20:03 asami Exp $
+# $Id: Makefile,v 1.3 1996/09/14 23:15:20 torstenb Exp $
 #
 
 DISTNAME=	libident-0.19
@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/libs/
 MAINTAINER=	torstenb@FreeBSD.ORG
 
 ALL_TARGET=	freebsd
-
-post-install:
-	gzip -9nf ${PREFIX}/man/man3/ident.3
+MAN3=		ident.3
 
 .include <bsd.port.mk>

@@ -5,12 +5,12 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.15 1996/05/27 00:53:55 ache Exp $
+# $Id: Makefile,v 1.16 1996/10/16 08:13:48 asami Exp $
 #
 
 # Pick an initial default, else it doesn't get set in the INDEX.
 DISTNAME=	pgp262s
-CATEGORIES+=	security
+CATEGORIES=	security
 
 MAINTAINER=	ache@FreeBSD.ORG
 

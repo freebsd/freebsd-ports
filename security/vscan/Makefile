@@ -3,12 +3,12 @@
 # Date created:         Thur Sept 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.1.1.1 1996/10/27 10:08:45 max Exp $
+# $Id: Makefile,v 1.2 1996/11/14 01:13:57 ache Exp $
 #
 
 DISTNAME=	vfrb101e
 PKGNAME=	vscan-1.0.2
-CATEGORIES+=	security
+CATEGORIES=	security
 MASTER_SITES=   ftp://ftp.mcafee.com/pub/antivirus/english/unix/freebsd/
 EXTRACT_SUFX=	.taz
 
@@ -18,6 +18,7 @@ NO_WRKSUBDIR=	yes
 RESTRICTED=	"Commercial software."
 
 LIBDIR=	${PREFIX}/lib/mcafee
+MAN1=	uvscan.1
 
 pre-fetch:
 .if defined(PREFIX) && ${PREFIX} != "/usr/local"
@@ -39,11 +40,6 @@ post-install:
 	@/usr/sbin/chown ${BINOWN}.${BINGRP} ${PREFIX}/bin/uvscan
 	@/usr/sbin/chown -R ${SHAREOWN}.${SHAREGRP} ${LIBDIR}
 	@/usr/sbin/chown ${MANOWN}.${MANGRP} ${PREFIX}/man/man1/uvscan.1	
-.if !defined(NOMANCOMPRESS)
-.for mp in uvscan
-	gzip -9nf ${PREFIX}/man/man1/${mp}.1
-.endfor
-.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} -p ${PREFIX}/share/doc/vscan
 	${INSTALL_DATA} ${WRKSRC}/Whatsnew.txt ${PREFIX}/share/doc/vscan
