@@ -1,0 +1,18 @@
+AxPoint is a Perl module that uses the PDFLib module and the pdflib library
+to generate PDF based presentations from XML data sources.
+It has the following features:
+   - Ability to create slideshows with your choice of background image
+   - Slideshows break down into slidesets, or not at your choice.
+   - Slides can show bullet points, source code (fixed font), or images.
+   - Slides can have transition effects (dissolve, box, wipe, etc)
+   - All elements of a slide can transition in too.
+   - Text on slides supports bold, italics, and colours. Colours can be any
+     one of the 16 HTML colours, or defined as hex RGB values.
+   - Output uses the standard XML::SAX::Writer consumer classes, allowing you
+     to output direct to a file, or to a string, or however you need to. Very
+     useful for dynamic web based presentations.
+   - PDF bookmarks allow direct navigation to any slide.
+   - Using PDF allows you to go "Full Screen", even on Linux
+   - Image formats supported include GIF, JPEG, PNG and TIFF
+
+WWW: http://axpoint.axkit.org/
