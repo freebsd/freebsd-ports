@@ -1,11 +1,11 @@
---- configure.orig	Mon Dec 29 16:07:44 2003
-+++ configure	Mon Dec 29 16:07:56 2003
-@@ -23734,7 +23734,7 @@
+--- configure.orig	Sun Feb 22 13:14:13 2004
++++ configure	Sun Feb 22 13:14:42 2004
+@@ -23709,7 +23709,7 @@
          ;;
        esac
  
--      for db_libname in db-4.1 db-4 db4 db; do
-+      for db_libname in db-4.1 db-4 db41 db; do
+-      for db_libname in db-4.2 db-4.1 db-4 db4 db; do
++      for db_libname in db-4.2 db-4.1 db-4 db4 db41 db; do
          # We generate a separate cache variable for each prefix and libname
          # we search under.  That way, we avoid caching information that
          # changes if the user runs `configure' with a different set of
