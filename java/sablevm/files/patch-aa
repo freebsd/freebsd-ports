@@ -1,7 +1,6 @@
-diff -ur work.orig/sablevm-1.0.5/configure work/sablevm-1.0.5/configure
---- work.orig/sablevm-1.0.5/configure	Wed Aug 14 22:34:00 2002
-+++ work/sablevm-1.0.5/configure	Sat Aug 17 21:14:52 2002
-@@ -8025,62 +8025,6 @@
+--- work/sablevm-1.0.6/configure.orig	Wed Feb 19 22:28:32 2003
++++ work/sablevm-1.0.6/configure	Thu Feb 20 13:35:35 2003
+@@ -8088,67 +8088,6 @@
    echo ***ERROR: libpopt is missing; exit 1
  fi
  
@@ -14,7 +13,11 @@ diff -ur work.orig/sablevm-1.0.5/configure work/sablevm-1.0.5/configure
 -LIBS="-lpthread  $LIBS"
 -cat >conftest.$ac_ext <<_ACEOF
 -#line $LINENO "configure"
--#include "confdefs.h"
+-/* confdefs.h.  */
+-_ACEOF
+-cat confdefs.h >>conftest.$ac_ext
+-cat >>conftest.$ac_ext <<_ACEOF
+-/* end confdefs.h.  */
 -
 -/* Override any gcc2 internal prototype to avoid an error.  */
 -#ifdef __cplusplus
@@ -46,7 +49,8 @@ diff -ur work.orig/sablevm-1.0.5/configure work/sablevm-1.0.5/configure
 -  ac_cv_lib_pthread_pthread_self=yes
 -else
 -  echo "$as_me: failed program was:" >&5
--cat conftest.$ac_ext >&5
+-sed 's/^/| /' conftest.$ac_ext >&5
+-
 -ac_cv_lib_pthread_pthread_self=no
 -fi
 -rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext

@@ -1,0 +1,18 @@
+--- work/sablevm-1.0.6/src/libsablevm/gc_copying.c.orig	Tue Dec 10 11:51:13 2002
++++ work/sablevm-1.0.6/src/libsablevm/gc_copying.c	Tue Dec 10 11:51:34 2002
+@@ -1054,14 +1054,7 @@
+       return JNI_ERR;
+     }
+ 
+-  {
+-    size_t i;
+-
+-    for (i = 0; i < instance_size; i++)
+-      {
+-	((char *) result)[i] = 0;
+-      }
+-  }
++  memset(result, 0, instance_size);
+ 
+   *pinstance = result;
+ 

@@ -1,5 +1,5 @@
---- work.orig/sablevm-native-library-1.0.5/src/classpath/jcl.c	Tue Jan 22 16:16:06 2002
-+++ work/sablevm-native-library-1.0.5/src/classpath/jcl.c	Fri Aug 30 10:21:41 2002
+--- work.orig/sablevm-native-library-1.0.6/src/classpath/jcl.c	Tue Jan 22 16:16:06 2002
++++ work/sablevm-native-library-1.0.6/src/classpath/jcl.c	Fri Aug 30 10:21:41 2002
 @@ -37,7 +37,7 @@
  
  #include <stdio.h>

@@ -1,0 +1,12 @@
+--- work/sablevm-1.0.6/src/libsablevm/thread.c.orig	Fri Dec 13 11:29:17 2002
++++ work/sablevm-1.0.6/src/libsablevm/thread.c	Fri Dec 13 11:29:19 2002
+@@ -229,7 +229,8 @@
+ 	  void *new_stack;
+ 
+ 	  /* detect overflows */
+-	  if (new_size <= current_size)
++	  if ((vm->stack_max_size != 0 && new_size > vm->stack_max_size) ||
++	      new_size <= current_size)
+ 	    {
+ 	      _svmf_error_OutOfMemoryError (env);
+ 	      return JNI_ERR;

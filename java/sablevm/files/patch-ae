@@ -1,0 +1,20 @@
+--- work/sablevm-class-library-1.0.6/src/java/io/LineNumberReader.java.orig	Mon Dec  9 19:12:35 2002
++++ work/sablevm-class-library-1.0.6/src/java/io/LineNumberReader.java	Mon Dec  9 19:12:02 2002
+@@ -115,7 +115,7 @@
+   public
+   LineNumberReader(Reader in, int size)
+   {
+-    super(new PushbackReader(in), size);
++    super(in, size);
+   }
+ 
+   /*************************************************************************/
+@@ -243,7 +243,7 @@
+         int extra_char_read = super.read();
+ 
+         if ((extra_char_read != '\n') && (extra_char_read != -1))
+-          ((PushbackReader)in).unread(extra_char_read);
++          pos--;
+ 
+         char_read = '\n';
+         ++line_number;
