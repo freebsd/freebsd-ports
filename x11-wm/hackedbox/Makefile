@@ -7,13 +7,15 @@
 #
 
 PORTNAME=	openbox
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://sunsite.dk/projects/openbox/
 
 MAINTAINER=	trevor@FreeBSD.org
 
 MAN1=		openbox.1 osetroot.1 osetbg.1
+
+RUN_DEPENDS=	xsetbg:${PORTSDIR}/x11/xloadimage
 
 DOCS=		AUTHORS BUGS CHANGELOG CHANGELOG.Blackbox CHANGELOG.bsetbg \
 			CodingStyle INSTALL LICENSE README README.bbtools \
