@@ -15,6 +15,7 @@ MAINTAINER=	billf@FreeBSD.org
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+WANT_GTK=	yes
 
 MAN8=	mtr.8
 
@@ -30,17 +31,11 @@ CONFIGURE_ARGS+=--enable-ipv6
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
-pre-patch:
-.if !defined(WITH_GTK)
-	@${ECHO} ""
-	@${ECHO} "If you want to compile with GTK support,"
-	@${ECHO} "hit Ctrl-C right now and use \"make WITH_GTK=yes\" "
-	@${ECHO} ""
-CONFIGURE_ARGS+=--with-gtk-prefix=/nopath
-.else
+.if defined(HAVE_GTK)
 USE_XLIB=	yes
-LIB_DEPENDS=    gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
+USE_GTK=	yes
+.else
+CONFIGURE_ARGS+=--with-gtk-prefix=/nopath
 .endif
 
 do-install:

@@ -13,17 +13,14 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-.if defined(WANT_GTK)
-LIB_DEPENDS+=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-.endif
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKE_ENV+=	GTK_CONFIG="${GTK_CONFIG}"
-ALL_TARGET=	all
-INSTALL_TARGET=	install
 
-.if defined(WANT_GTK)
+WANT_GTK=	yes
+
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GTK)
+USE_GTK=	yes
 ALL_TARGET+=	gtkasp2php
 INSTALL_TARGET+=install-gtk
 PLIST_SUB+=	WANT_GTK=""
@@ -31,16 +28,4 @@ PLIST_SUB+=	WANT_GTK=""
 PLIST_SUB+=	WANT_GTK="@comment "
 .endif
 
-pre-fetch:
-	@${ECHO}
-.if !defined(WANT_GTK)
-	@${ECHO} "If you want the GTK frontend, define the WANT_GTK variable"
-	@${ECHO} "in your make args.  For example:"
-	@${ECHO}
-	@${ECHO} "	make -DWANT_GTK"
-.else
-	@${ECHO} "Building with GTK frontend."
-.endif
-	@${ECHO}
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

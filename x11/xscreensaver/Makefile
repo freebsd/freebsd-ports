@@ -12,11 +12,13 @@ MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
 MAINTAINER=	jseger@FreeBSD.org
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_MESA=	yes
+WANT_GTK=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm
+
 MAN1= 		attraction.1 blitspin.1 bouboule.1 braid.1 \
 		bsod.1 bubbles.1 critical.1 decayscreen.1 \
 		deco.1 distort.1 drift.1 epicycle.1 flag.1 flame.1 \
@@ -31,4 +33,11 @@ MAN1= 		attraction.1 blitspin.1 bouboule.1 braid.1 \
 		xlyap.1 xmatrix.1 xroger.1 xscreensaver-command.1 \
 		xscreensaver.1 xsublim.1 xteevee.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GTK)
+USE_GTK=	yes
+CONFIGURE_ARGS+=	--with-gtk
+.endif
+
+.include <bsd.port.post.mk>
