@@ -1,34 +1,76 @@
-bin/civserver
 bin/civclient
+bin/civserver
 share/freeciv/Freeciv
-share/freeciv/civ1/buildings.ruleset
-share/freeciv/civ1/techs.ruleset
-share/freeciv/civ1/units.ruleset
 share/freeciv/civ1.serv
+share/freeciv/civ1/buildings.ruleset
+share/freeciv/civ1/governments.ruleset
+share/freeciv/civ1/techs.ruleset
+share/freeciv/civ1/terrain.ruleset
+share/freeciv/civ1/units.ruleset
+share/freeciv/civ2.serv
+share/freeciv/civ2/buildings.ruleset
+share/freeciv/civ2/governments.ruleset
+share/freeciv/civ2/techs.ruleset 
+share/freeciv/civ2/terrain.ruleset
+share/freeciv/civ2/units.ruleset
+share/freeciv/classic/terrain.ruleset
 share/freeciv/default/buildings.ruleset
-share/freeciv/default/flags.xpm
-share/freeciv/default/roads.xpm
-share/freeciv/default/small.xpm
-share/freeciv/default/space.xpm
+share/freeciv/default/cities.ruleset
+share/freeciv/default/governments.ruleset
+share/freeciv/default/nations.ruleset
 share/freeciv/default/techs.ruleset
-share/freeciv/default/tiles.xpm
-share/freeciv/default/treaty.xpm
+share/freeciv/default/terrain.ruleset
 share/freeciv/default/units.ruleset
-share/freeciv/default/units.xpm
-share/freeciv/trident/flags.xpm
-share/freeciv/trident/roads.xpm
-share/freeciv/trident/tiles.xpm
-share/freeciv/trident/units.xpm
-share/freeciv/scenario/earth-80x50-v1.sav
-share/freeciv/scenario/earth-80x50-v2.sav
+share/freeciv/engels.tilespec
+share/freeciv/engels/cities.spec
+share/freeciv/engels/cities.xpm
+share/freeciv/engels/flags.spec
+share/freeciv/engels/flags.xpm
+share/freeciv/engels/roads.spec
+share/freeciv/engels/roads.xpm
+share/freeciv/engels/tiles.spec
+share/freeciv/engels/tiles.xpm
+share/freeciv/engels/units.spec
+share/freeciv/engels/units.xpm
+share/freeciv/helpdata.txt
+share/freeciv/misc/intro.xpm
+share/freeciv/misc/radar.xpm
+share/freeciv/misc/small.spec
+share/freeciv/misc/small.xpm
+share/freeciv/misc/space.spec
+share/freeciv/misc/space.xpm
+share/freeciv/misc/treaty.spec
+share/freeciv/misc/treaty.xpm
 share/freeciv/scenario/earth-160x90-v1.sav
 share/freeciv/scenario/earth-160x90-v2.sav
+share/freeciv/scenario/earth-80x50-v1.sav
+share/freeciv/scenario/earth-80x50-v2.sav
 share/freeciv/scenario/europe-200x100-v1.sav
 share/freeciv/scenario/europe-200x100-v2.sav
-share/freeciv/helpdata.txt
-share/freeciv/intro.xpm
-share/freeciv/radar.xpm
+share/freeciv/trident.tilespec
+share/freeciv/trident/cities.spec
+share/freeciv/trident/cities.xpm
+share/freeciv/trident/flags.spec
+share/freeciv/trident/flags.xpm
+share/freeciv/trident/roads.spec
+share/freeciv/trident/roads.xpm
+share/freeciv/trident/tiles.spec
+share/freeciv/trident/tiles.xpm
+share/freeciv/trident/units.spec
+share/freeciv/trident/units.xpm
+share/locale/de/LC_MESSAGES/freeciv.mo
+share/locale/es/LC_MESSAGES/freeciv.mo
+share/locale/fr/LC_MESSAGES/freeciv.mo
+share/locale/hu/LC_MESSAGES/freeciv.mo
+share/locale/pl/LC_MESSAGES/freeciv.mo
+share/locale/pt/LC_MESSAGES/freeciv.mo
+share/locale/pt_BR/LC_MESSAGES/freeciv.mo
 @dirrm share/freeciv/civ1
+@dirrm share/freeciv/civ2
+@dirrm share/freeciv/classic
 @dirrm share/freeciv/default
+@dirrm share/freeciv/engels
+@dirrm share/freeciv/misc
+@dirrm share/freeciv/scenario
 @dirrm share/freeciv/trident
 @dirrm share/freeciv

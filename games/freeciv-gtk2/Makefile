@@ -6,9 +6,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	freeciv-1.8.3
+DISTNAME=	freeciv-1.9.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/beta_version/ \
+MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable_version/ \
+		ftp://ftp.pvv.ntnu.no/pub/freeciv/stable_version/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
 MAINTAINER=	sheldonh@freebsd.org
