@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xnee
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,5 +25,8 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^CFLAGS = |CFLAGS = @CFLAGS@ |g ; \
 		 s|-g$$||g'
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/xnee.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
