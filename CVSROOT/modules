@@ -8232,6 +8232,7 @@ pear-I18N	ports/devel/pear-I18N
 pear-I18Nv2	ports/sysutils/pear-I18Nv2
 pear-Image_Color	ports/graphics/pear-Image_Color
 pear-LiveUser	ports/security/pear-LiveUser
+pear-LiveUser_Admin	ports/security/pear-LiveUser_Admin
 pear-Log	ports/sysutils/pear-Log
 pear-MDB	ports/databases/pear-MDB
 pear-MDB2	ports/databases/pear-MDB2
