@@ -13,6 +13,8 @@ MASTER_SITES=	http://linuxhelp.hn.org/
 MAINTAINER=	sascha@root-login.org
 COMMENT=	Place launch icons directly on your desktop
 
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
