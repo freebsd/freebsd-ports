@@ -11,6 +11,7 @@
     SUBDIR += fasta
     SUBDIR += fasta3
     SUBDIR += fastdnaml
+    SUBDIR += fluctuate
     SUBDIR += gaussian98
     SUBDIR += genpak
     SUBDIR += gperiodic
