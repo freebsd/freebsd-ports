@@ -5,11 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	fvwm2
+PORTNAME=	fvwm
 PORTVERSION=	2.2.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
-DISTNAME=	fvwm-${PORTVERSION}
 
 MAINTAINER=	jcwells@u.washington.edu
 
