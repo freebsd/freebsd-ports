@@ -1,14 +1,14 @@
 # New ports collection makefile for:    txt2html
-# Version required:     1.25
+# Version required:     1.27
 # Date created:         29 Jun 1998
 # Whom:                 Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	txt2html-1.25
+DISTNAME=	txt2html-1.27
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.thehouse.org/txt2html/
+MASTER_SITES=	http://www.aigeek.com/txt2html/
 
 MAINTAINER=	croyle@gelemna.ft-wayne.in.us
 
@@ -29,6 +29,6 @@ do-install:
 .endif
 	@${ECHO_MSG} "To install the sample links dictionary as the default"
 	@${ECHO_MSG} "copy or link ${PREFIX}/share/doc/txt2html/txt2html.dict to"
-	@${ECHO_MSG} "${PREFIX}/lib/txt2html-linkdict or ~/.txt2html-linkdict"
+	@${ECHO_MSG} "${PREFIX}/lib/txt2html.dict or ~/.txt2html.dict"
 
 .include <bsd.port.mk>
