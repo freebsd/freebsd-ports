@@ -172,9 +172,10 @@ if [ $answ = YES ]; then
   echo "#define ForceNormalLib		YES" >> $F
 fi
 
+if [ ! `uname -r|grep ^2` ]; then
 cat <<'END'
 
- FreeBSD-3.x has support for Secure RPC. DO NOT ENABLE THIS ON FreeBSD-2.* !!
+ FreeBSD-3.x has support for Secure RPC.
 
  While this scheme is not used for general purpose encryption, 
  some countries restrict the use of strong cryptography.
@@ -184,7 +185,7 @@ yesno "Build with Secure RPC? [YES] "
 if [ $answ = YES ]; then
   echo "#define HasSecureRPC		YES" >> $F
 fi
-
+fi
 cat <<'END'
 
  MIT supplies an authentication mechanism that relies upon DES, this is
