@@ -9,8 +9,7 @@ PORTNAME=	mwavem-fbsd
 PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	comms
-MASTER_SITES=	ftp://www-126.ibm.com/pub/acpmodem/ \
-		http://www.escape.com/~simonw/
+MASTER_SITES=	ftp://www-126.ibm.com/pub/acpmodem/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	oberman@es.net
