@@ -512,7 +512,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>XFree86-Server</name>
-	<range><le>4.3.0_14</le></range>
+	<range><le>4.3.0_13</le></range>
 	<range><ge>4.3.99</ge><le>4.3.99.15_1</le></range>
       </package>
     </affects>
