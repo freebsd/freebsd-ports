@@ -7,9 +7,10 @@
 
 PORTNAME=	portell
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	http://www.seekrut.com/rk/
+MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
+		http://www.seekrut.com/rk/
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
