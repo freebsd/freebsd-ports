@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += HVSC-Update
     SUBDIR += Maaate
     SUBDIR += abcde
     SUBDIR += abcmidi
