@@ -14,7 +14,7 @@
  		OBJECTS='decode_i386.o dct64_i386.o getbits_.o audio_oss.o' \
 -		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
 -			-funroll-all-loops -ffast-math -DROT_I386 \
-+		CFLAGS+='-Wall -O2 -ansi -pedantic -fomit-frame-pointer \
++		CFLAGS+='$(CFLAGS) -Wall -O2 -ansi -pedantic -fomit-frame-pointer \
 +			-funroll-all-loops -ffast-math -DROT_I386 -DREAD_MMAP \
 +			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
 +		mpg123-make
@@ -22,7 +22,7 @@
 +freebsd-elf:
 +	$(MAKE) CC=cc LDFLAGS= \
 +		OBJECTS='decode_i386.o dct64_i386.o getbits.o audio_oss.o' \
-+		CFLAGS+='-Wall -O2 -ansi -pedantic -fomit-frame-pointer \
++		CFLAGS+='$(CFLAGS) -Wall -O2 -ansi -pedantic -fomit-frame-pointer \
 +			-funroll-all-loops -ffast-math -DROT_I386 -DREAD_MMAP \
  			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
  		mpg123-make
