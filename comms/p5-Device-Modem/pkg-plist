@@ -13,4 +13,5 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/shell.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/dial.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/active.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/caller-id.pl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
