@@ -11,8 +11,10 @@ CATEGORIES=	databases perl5 www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wwwdb
 
-MAINTAINER=	rehsack@liwing.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Perl based generic WWW DB interface / frontend
+
+BROKEN=		Incomplete pkg-plist
 
 PERL_CONFIGURE=	yes
 
