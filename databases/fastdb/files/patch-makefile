@@ -1,0 +1,27 @@
+--- makefile.orig	Sat Jul 22 00:34:36 2000
++++ makefile	Fri Mar  2 23:57:53 2001
+@@ -2,13 +2,13 @@
+ # Makefile for Generic Unix with GCC compiler
+ 
+ # Place where to copy GastDB header files
+-INCSPATH=/usr/local/include/fastdb
++INCSPATH=%%PREFIX%%/include/fastdb
+ 
+ #Place where to copy Fastdb library
+-LIBSPATH=/usr/local/lib
++LIBSPATH=%%PREFIX%%/lib
+ 
+ #Place where to copy Fastdb subsql utility
+-BINSPATH=/usr/local/bin
++BINSPATH=%%PREFIX%%/bin
+ 
+ OBJS = class.o compiler.o database.o hashtab.o file.o symtab.o ttree.o \
+ 	cursor.o query.o wwwapi.o unisock.o sync.o
+@@ -259,7 +259,6 @@
+ 	cp $(INCS) $(INCSPATH)
+ 	mkdir -p $(LIBSPATH)
+ 	cp $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
+-	cp -P libcli.so $(LIBSPATH)
+ 	ln -f -s $(LIBSPATH)/$(FASTDB_SHARED) $(LIBSPATH)/libfastdb$(SUFF).so
+ 	ln -f -s $(LIBSPATH)/$(CLI_SHARED) $(LIBSPATH)/libcli$(SUFF).so
+ 	mkdir -p $(BINSPATH)

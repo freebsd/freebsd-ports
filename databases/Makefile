@@ -8,6 +8,7 @@
     SUBDIR += dbmetrix
     SUBDIR += dbview
     SUBDIR += edb
+    SUBDIR += fastdb
     SUBDIR += freetds
     SUBDIR += gadfly
     SUBDIR += gdbm
