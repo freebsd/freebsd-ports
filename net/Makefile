@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.173 1998/07/11 18:33:00 steve Exp $
+# $Id: Makefile,v 1.174 1998/08/07 23:58:37 asami Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -72,6 +72,7 @@
     SUBDIR += nettest
     SUBDIR += nslint
     SUBDIR += ntimelord
+    SUBDIR += ntop
     SUBDIR += ntp
     SUBDIR += omi
     SUBDIR += p5-Archie
