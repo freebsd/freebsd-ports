@@ -11,6 +11,7 @@ CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.meowfishies.com/code/
 
 MAINTAINER=	sethk@meowfishies.com
+COMMENT=	A player for NES Sound Format (NSF)
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

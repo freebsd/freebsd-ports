@@ -9,6 +9,7 @@ CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/gugod/
 
 MAINTAINER=	gugod@gugod.org
+COMMENT=	A pretty font modifyed from X11 schumacher-clean that match kcfonts
 
 USE_X_PREFIX=	yes
 .include <bsd.port.pre.mk>

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://sid.joedog.org/pub/siege/ \
 		http://www.cus.org.uk/~dom/distfiles/siege/
 
 MAINTAINER=	d.marks@student.umist.ac.uk
+COMMENT=	A http regression testing and benchmarking utility
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes

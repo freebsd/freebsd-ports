@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.mikmod.org/files/mikmod/
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
+COMMENT=	Mod player which plays MTM, STM, XM, MOD, S3M, ULT, UNI and IT mods
 
 LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
 

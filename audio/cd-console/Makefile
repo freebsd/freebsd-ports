@@ -12,5 +12,6 @@ MASTER_SITES=	http://www.cs.helsinki.fi/u/salerma/cd-console/ \
 		ftp://ftp.aquezada.com/pub/distrib/cd-console/
 
 MAINTAINER=	jdunn@aquezada.com
+COMMENT=	A curses-based console CD player
 
 .include <bsd.port.mk>

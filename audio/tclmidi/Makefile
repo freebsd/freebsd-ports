@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.cs.ruu.nl/pub/MIDI/PROGRAMS/
 # doesn't work - edwin 20021227
 
 MAINTAINER=	shanee@augusta.de
+COMMENT=	A language designed for creating and editing standard MIDI files
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 

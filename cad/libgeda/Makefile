@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://www.tinkerbox.org/projects/files/gEDA/
 
 MAINTAINER=	bruno@tinkerbox.org
+COMMENT=	gEDA tools base utility library
 
 LIB_DEPENDS=	gdgeda.4:${PORTSDIR}/graphics/libgdgeda \
 		guile.10:${PORTSDIR}/lang/guile

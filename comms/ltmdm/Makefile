@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.dons.net.au/~darius/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	darius@dons.net.au
+COMMENT=	Driver for the Lucent LT Winmodem chipset
 
 ONLY_FOR_ARCHS=	i386
 BUILD_WRKSRC=	${WRKSRC}/sys/modules/ltmdm

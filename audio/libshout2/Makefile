@@ -14,6 +14,7 @@ MASTER_SITES=	http://tigress.com/lofi/ \
 DISTNAME=	libshout-devel-${PORTVERSION}
 
 MAINTAINER=	michaelnottebrock@gmx.net
+COMMENT=	Routines for connecting and transmitting data to the icecast server
 
 LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg \
 		vorbis.2:${PORTSDIR}/audio/libvorbis

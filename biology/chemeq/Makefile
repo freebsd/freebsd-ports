@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://boltz.univ-littoral.fr/pub/chemeq/
 DISTNAME=	chemeq-V110-1
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
+COMMENT=	Outputs LaTeX code for chemical reaction
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

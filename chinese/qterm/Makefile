@@ -12,6 +12,7 @@ MASTER_SITES=	http://qterm.gnuchina.org/qterm-${PORTVERSION}/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/qterm/
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
+COMMENT=	QTerm is a BBS client in Unix
 
 USE_QT_VER=	3
 USE_GMAKE=	yes

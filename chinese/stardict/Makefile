@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	zh-
 DISTNAME=	${PKGNAME}
 
 MAINTAINER=	phj@cn.FreeBSD.org
+COMMENT=	English-Chinese dictionary
 
 USE_MOTIF=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.sra.co.jp/pub/os/OpenBSD/distfiles/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.g/g/}
 
 MAINTAINER=	calle.madestrand@norrgarden.se
+COMMENT=	Console napster client
 
 .if defined(WITH_MP3)
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123

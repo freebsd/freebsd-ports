@@ -17,6 +17,7 @@ PATCHFILES=		sis-1.2.patch1.Z
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=		volf@oasis.IAEhv.nl
+COMMENT=	Synthesis program for the synthesis of sequential circuits
 
 USE_XLIB=		yes
 MAKEFILE=		Makefile.FreeBSD

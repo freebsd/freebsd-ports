@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	openags
 DISTNAME=	OpenAG-${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
+COMMENT=	An open source version of the Audiogalaxy client
 
 BROKEN=		The AudioGalaxy Search Server shutdown in June 2002
 

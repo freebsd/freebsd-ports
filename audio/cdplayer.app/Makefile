@@ -13,6 +13,7 @@ MASTER_SITES=	http://shawcable.linux.tucows.com/files/ \
 DISTNAME=	CDPlayer.app-${PORTVERSION}
 
 MAINTAINER=	dsh@vlink.ru
+COMMENT=	A CD player with CDDB support resembling OpenStep's OmniCD
 
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 		cdaudio.1:${PORTSDIR}/audio/libcdaudio \

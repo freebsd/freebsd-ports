@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.coker.com.au/postal/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	chris@unixpages.org
+COMMENT=	Benchmark SMTP/POP servers
 
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes

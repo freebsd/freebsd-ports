@@ -12,6 +12,7 @@ MASTER_SITES=	http://cbothamy.free.fr/projects/id3ren/
 DISTNAME=	id3ren97a
 
 MAINTAINER=	jonny@jonny.eng.br
+COMMENT=	Mpeg Audio Layer 3 util: rename files, edit tags, search, etc
 
 USE_ZIP=	yes
 USE_REINPLACE=	yes

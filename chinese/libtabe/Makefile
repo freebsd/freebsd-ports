@@ -12,6 +12,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/libtabe/devel/
 
 MAINTAINER=	kcwu@ck.tp.edu.tw
+COMMENT=	Unified library for Chinese text processing
 
 .if !defined(USE_DB2)
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.seul.org/pub/gperiodic/ \
 		http://www.unixpages.org/distfiles/
 
 MAINTAINER=	chris@unixpages.org
+COMMENT=	Displays a periodic table of the elements
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	biology java
 MASTER_SITES=	http://www.biojava.org/download/source/
 
 MAINTAINER=	bio@freebsd.net
+COMMENT=	Open-source java tools for processing biological data
 
 BUILD_DEPENDS=	${JAVA_COMMAND}:${PORTSDIR}/java/linux-sun-jdk12
 

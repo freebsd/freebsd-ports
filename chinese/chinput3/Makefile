@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/chinput3/
 DISTNAME=	zh-${PORTNAME}-${PORTVERSION}fix3
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
+COMMENT=	Chinese GB2312,BIG5 code input server
 
 USE_XLIB=	yes
 USE_IMLIB=	yes

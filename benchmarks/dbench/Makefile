@@ -11,6 +11,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://dnuc.polyn.kiae.su/pub/dbench/
 
 MAINTAINER=	nyxo@dnuc.polyn.kiae.su
+COMMENT=	A simulation of the Ziff-Davis netbench benchmark
 
 WRKSRC=		${WRKDIR}/dbench
 USE_REINPLACE=	yes

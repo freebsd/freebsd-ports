@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	spiralmodular
 DISTNAME=	spiralmodular-${PORTVERSION}
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	An object orientated modular softsynth / sequencer / sampler
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk

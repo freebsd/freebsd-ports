@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	lyngbol@wheel.dk
+COMMENT?=	Another gtk-based MP3 frontend
 
 .if defined(WITH_MPG321)
 RUN_DEPENDS=	mpg321:${PORTSDIR}/audio/mpg321

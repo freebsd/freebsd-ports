@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.cn.FreeBSD.org/pub/ported/
 DISTNAME=	${PKGNAME}
 
 MAINTAINER=	phj@cn.FreeBSD.org
+COMMENT=	Translates PostScript files with Chinese characters
 
 MANCOMPRESSED=	yes
 MAN1=		tocps.1

@@ -7,6 +7,9 @@
 
 INTERFACE=	gtk
 
+MAINTAINER=	yatt@luna2.org
+COMMENT=	Gtk interface for TiMidity++
+
 MASTERDIR=	${.CURDIR}/../../audio/timidity++-emacs
 
 .include "${MASTERDIR}/Makefile"

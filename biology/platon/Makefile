@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://xraysoft.chem.uu.nl/pub/unix/
 DISTNAME=	platon
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
+COMMENT=	Tool for viewing molecular/crystallographic structures
 
 # PLATON may be used free of charge by the academic community under
 # the condition that it is not redistributed for a current & fresh copy.

@@ -12,6 +12,7 @@ DISTFILES=	second_cpu.c stream_d.c
 DIST_SUBDIR=	stream-${PORTVERSION}
 
 MAINTAINER=	sf@dsinw.com
+COMMENT=	Synthetic benchmark program that measures sustainable memory bandwidth
 
 MAKEFILE=	${FILESDIR}/Makefile
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=MP3
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	leo@florida.sarang.net
+COMMENT=	Edit ID3v1 Tags from an Audio MPEG Layer 3
 
 PERL_CONFIGURE=	yes
 

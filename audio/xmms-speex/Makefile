@@ -12,6 +12,7 @@ MASTER_SITES=	http://jzb.rapanden.dk/speex/
 DISTNAME=	speex-xmms-${PORTVERSION}
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	XMMS input plugin to play speex files
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	speex.0:${PORTSDIR}/audio/speex

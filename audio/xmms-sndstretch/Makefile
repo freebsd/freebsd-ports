@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	xmms-
 DISTNAME=	sndstretch_xmms-${PORTVERSION}
 
 MAINTAINER=	ports@edwinm.ik.nu
+COMMENT=	Plugin for xmms to change the pitch and/or speed
 
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 

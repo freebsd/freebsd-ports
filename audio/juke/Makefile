@@ -13,6 +13,7 @@ MASTER_SITES=		http://www.initio.no/~oyvindmo/distfiles/
 #MASTER_SITES=		http://johan.nocrew.org/unix/juke/archive/
 
 MAINTAINER=		oyvindmo@initio.no
+COMMENT=	A simple curses/ncurses based juke box program
 
 GNU_CONFIGURE=		yes
 

@@ -12,6 +12,7 @@ CATEGORIES=	audio net
 MASTER_SITES=	http://www.icecast.org/releases/
 
 MAINTAINER=	zach@pabst.bendnet.com
+COMMENT=	A streaming mp3 audio server
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libwrap

@@ -13,6 +13,7 @@ DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	bruno@tinkerbox.org
+COMMENT=	The "meta-port" for gEDA
 
 BUILD_DEPENDS=	gesym-config:${PORTSDIR}/cad/geda-symbols \
 		gschem:${PORTSDIR}/cad/gschem \

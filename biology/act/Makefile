@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.sanger.ac.uk/Software/ACT/v1/
 DISTNAME=	act_compiled_v1
 
 MAINTAINER=	chuynh@biolateral.com.au
+COMMENT=	A DNA sequence comparison viewer based on Artemis
 
 RUN_DEPENDS=	${JAVA_COMMAND}:${PORTSDIR}/java/jdk13
 

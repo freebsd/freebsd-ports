@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	xmmskde-${PORTVERSION}
 
 MAINTAINER=	jan@jungnickel.com
+COMMENT=	Integrates XMMS into the KDE3 Panel
 
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 

@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 DISTNAME=	geda-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bruno@tinkerbox.org
+COMMENT=	gEDA electronic schematic capture tools
 
 BUILD_DEPENDS=	gesym-config:${PORTSDIR}/cad/geda-symbols
 LIB_DEPENDS=	geda.16:${PORTSDIR}/cad/libgeda \

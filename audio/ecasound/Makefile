@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
 MAINTAINER=	anarcat@anarcat.dyndns.org
+COMMENT=	Multitrack audio processing software
 
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=14

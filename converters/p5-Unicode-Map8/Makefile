@@ -12,6 +12,7 @@ MASTER_SITE_SUBDIR=	Unicode
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ilia@cgu.chel.su
+COMMENT=	Perl class that implement efficient mapping tables between 8-bit charsets and Unicode
 
 BUILD_DEPENDS=	${SITE_PERL}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String
 

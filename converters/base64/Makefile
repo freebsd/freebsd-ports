@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.fourmilab.ch/webtools/base64/ \
 		http://dl.droso.net/ports/
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Simple program to convert binary files to base64
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	prog

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dannyboy
 
 MAINTAINER=	anttik@iki.fi
+COMMENT=	CD-player with text-based user interface
 
 MAN1=		cdplay.1
 

@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}-base-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sec@42.org
+COMMENT=	A Commodore SID-chip emulator that plays SID music files
 
 LIB_DEPENDS=	sidplay.1:${PORTSDIR}/audio/libsidplay
 

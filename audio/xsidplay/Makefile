@@ -16,6 +16,7 @@ MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	coop9211@uidaho.edu
+COMMENT=	Graphical front end for libsidplay
 
 .if defined(WITH_SIDPLAY2)
 LIB_DEPENDS=	sidplay2.0:${PORTSDIR}/audio/libsidplay2

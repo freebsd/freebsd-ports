@@ -12,6 +12,7 @@ MASTER_SITES=	http://www-genome.wi.mit.edu/ftp/distribution/software/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/}_test
 
 MAINTAINER=	tonym@biolateral.com.au
+COMMENT=	Primer3 helps to choose primers for PCR reactions
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

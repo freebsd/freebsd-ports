@@ -8,13 +8,13 @@
 CATEGORIES=	japanese
 
 MAINTAINER=	katsu@iec.hiroshima-u.ac.jp
+COMMENT=	Another gtk-based MP3 frontend with Japanese support
 
 .if defined(WITH_SJIS_TAG)
 EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-*
 .endif
 
 MASTERDIR=	${.CURDIR}/../../audio/gqmpeg
-COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
 CONFIGURE_ARGS=	--enable-japanese

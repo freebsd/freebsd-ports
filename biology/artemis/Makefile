@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.sanger.ac.uk/Software/Artemis/v4/
 DISTNAME=	artemis_compiled_v4
 
 MAINTAINER=	chuynh@biolateral.com.au
+COMMENT=	A DNA sequence viewer and annotation tool
 
 RUN_DEPENDS=	${JAVA_COMMAND}:${PORTSDIR}/java/jdk13
 

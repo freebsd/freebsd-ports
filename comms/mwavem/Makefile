@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://www-126.ibm.com/pub/acpmodem/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	oberman@es.net
+COMMENT=	Loadable module and user excutable to support IBM Mwave ACP modem
 
 ONLY_FOR_ARCHS=	i386
 

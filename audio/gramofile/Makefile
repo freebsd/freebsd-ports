@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://panic.et.tudelft.nl/~costar/gramofile/
 
 MAINTAINER=	nox@jelal.kn-bremen.de
+COMMENT=	Audio recording and tick/scratch reduction for e.g. vinyl records
 
 ALL_TARGET=	gramofile
 USE_GMAKE=	yes

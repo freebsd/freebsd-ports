@@ -14,6 +14,7 @@ DISTFILES=	xpdf-chinese-simplified-2002-jun-17.tar.gz \
 		xpdf-chinese-traditional-2002-apr-14.tar.gz
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
+COMMENT=	Chinese-traditional xpdf font support
 
 RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf\
 		${LOCALBASE}/share/ghostscript/Resource/CMap/Adobe-CNS1-0:${PORTSDIR}/print/adobe-cmaps

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/cmexfonts/ \
 		ftp://sunsite.unc.edu/pub/Linux/X11/fonts/
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
+COMMENT=	Big5+ Chinese Mingti bitmap font (by CMEX & DynaLab) for X11
 
 USE_X_PREFIX=	yes
 NO_BUILD=	yes

@@ -7,6 +7,9 @@
 
 INTERFACE=	xaw
 
+MAINTAINER=	yatt@luna2.org
+COMMENT=	Xaw interface for TiMidity++
+
 MASTERDIR=	${.CURDIR}/../../audio/timidity++-emacs
 
 .include "${MASTERDIR}/Makefile"

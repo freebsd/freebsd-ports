@@ -7,6 +7,9 @@
 
 INTERFACE=	motif
 
+MAINTAINER=	yatt@luna2.org
+COMMENT=	Motif interface for TiMidity++
+
 MASTERDIR=	${.CURDIR}/../../audio/timidity++-emacs
 
 .include "${MASTERDIR}/Makefile"

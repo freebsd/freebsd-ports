@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/players
 
 MAINTAINER=		brett@peloton.runet.edu
+COMMENT=	A tk based interface for splay
 
 RUN_DEPENDS=	splay:${PORTSDIR}/audio/splay \
 		wish8.2:${PORTSDIR}/x11-toolkits/tk82

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.4
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	coop9211@uidaho.edu
+COMMENT=	A GNOME pop-up fax manager
 
 BUILD_DEPENDS=	${LOCALBASE}/share/automake/install-sh:${PORTSDIR}/devel/automake \
 		${LOCALBASE}/bin/sendfax:${PORTSDIR}/comms/hylafax

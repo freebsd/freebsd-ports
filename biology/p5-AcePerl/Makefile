@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Ace
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bio@freebsd.net
+COMMENT=	Perl5 interface to the ACEDB genome database system
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 RUN_DEPENDS=	${BUILD_DEPENDS}

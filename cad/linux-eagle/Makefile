@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME:S/linux-//}-${EAGLEVERSION}${EAGLELANG}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER?=	riggs@rrr.de
+COMMENT?=	An easy to use, yet powerful tool for designing printed circuit boards
 
 RUN_DEPENDS=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
 

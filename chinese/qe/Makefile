@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cc.ncu.edu.tw/~center5/product/qe/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/qe/
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
+COMMENT=	QE is a PE2-like editor program under U*nix
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

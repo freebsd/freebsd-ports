@@ -12,6 +12,7 @@ CATEGORIES=		audio
 MASTER_SITES=           http://www.blackh0le.net/cd2mp3/dist/${PORTVERSION}/
 
 MAINTAINER=		jamie@blackh0le.net
+COMMENT=	Easy to use MP3 manipulation and creation tool
 
 RUN_DEPENDS=		lame:${PORTSDIR}/audio/lame/ \
 			dagrab:${PORTSDIR}/audio/dagrab

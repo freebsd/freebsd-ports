@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}.source
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	tonym@biolateral.com.au
+COMMENT=	Creation of multilocus linkage maps
 
 NO_WRKSUBDIR=	true
 

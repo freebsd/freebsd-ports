@@ -11,6 +11,7 @@ MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=     gugod@gugod.org
+COMMENT=	A color vt102 terminal emulator with transparency support
 
 USE_XPM=        yes
 HAS_CONFIGURE=  yes

@@ -14,6 +14,7 @@ DISTFILES=	part01.gz patch1.gz
 PATCH_DIST_STRIP=	-p1	# no ${PATCHFILES} but used below
 
 MAINTAINER=	kazu@jp.freebsd.org
+COMMENT=	Reciprocating engine for X
 
 BUILD_DEPENDS=	gunshar:${PORTSDIR}/archivers/gshar+gunshar
 

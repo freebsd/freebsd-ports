@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://core.de/~coto/radio/
 
 MAINTAINER=	gonter@wu-wien.ac.at
+COMMENT=	Motif based FM tuner (for use with bt848 driver)
 
 # This program does not actually depend on the below, but they are pretty
 # useful if you are into digital audio recording and playback.

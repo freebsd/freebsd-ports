@@ -12,6 +12,7 @@ MASTER_SITES=	http://p4.elixus.org/dist/
 DISTNAME=	metalist-${PORTVERSION}
 
 MAINTAINER=	autrijus@autrijus.org
+COMMENT=	A Chinese port of Slash-Like Automatic Storytelling Homepage system
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/safe_mysqld:${PORTSDIR}/databases/mysql323-server \
 		${SITE_PERL}/Bundle/Slash.pm:${PORTSDIR}/www/p5-Bundle-Slash \

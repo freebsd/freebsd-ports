@@ -13,6 +13,7 @@ MASTER_SITES=	http://math.smsu.edu/~erik/files/fbsd/\
 		http://csc.smsu.edu/~greenwald/
 
 MAINTAINER=	erik@smluc.org
+COMMENT=	A 3D positional spatialized sound library
 
 WRKSRC=		${WRKDIR}/${DISTNAME}fbsd/linux
 GNU_CONFIGURE=  yes

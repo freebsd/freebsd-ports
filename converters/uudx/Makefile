@@ -13,6 +13,7 @@ DISTNAME=	uudx_299
 EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	rewsirow@ff.iij4u.or.jp
+COMMENT=	Extractor from uuencoded files
 
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		nkf:${PORTSDIR}/japanese/nkf

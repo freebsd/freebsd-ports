@@ -11,6 +11,7 @@ CATEGORIES=	audio net
 MASTER_SITES=	http://www.icecast.org/releases/
 
 MAINTAINER=	kevin@puis.net
+COMMENT=	Program that sends mp3 streams to an icecast/shoutcast server
 
 GNU_CONFIGURE=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.tnsp.org/xs-files/
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	XMMS input plugin to play SID files
 
 LIB_DEPENDS=	sidplay.1:${PORTSDIR}/audio/libsidplay
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

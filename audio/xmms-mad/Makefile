@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmms-mad
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	A XMMS input plugin that uses libmad
 
 LIB_DEPENDS=	mad.1:${PORTSDIR}/audio/mad
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

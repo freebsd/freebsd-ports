@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.sanger.ac.uk/pub/birney/wise2/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	tonym@biolateral.com.au
+COMMENT=	Intelligent algorithms for DNA searches
 
 WRKTOP=		${WRKDIR}/${DISTNAME}
 WRKSRC=		${WRKTOP}/src

@@ -13,6 +13,7 @@ PKGNAMESUFFIX=	-kst
 DISTNAME=	bforce-0.22.7.kst5
 
 MAINTAINER=	fox@furry.spb.ru
+COMMENT=	Simple ifcico like Fidonet technology mailer
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

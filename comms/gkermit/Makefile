@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	File transfer utility using the kermit protocol
 
 NO_WRKSUBDIR=	yes
 MAN1=		gkermit.1

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
+COMMENT=	A fast Console Chinese System which supports framebuffer device
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

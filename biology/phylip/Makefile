@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dbader@eece.unm.edu
+COMMENT=	A Phylogeny Inference Package
 
 USE_XLIB=	yes
 BUILD_WRKSRC=	${WRKSRC}/src

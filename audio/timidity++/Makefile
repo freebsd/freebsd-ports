@@ -12,7 +12,8 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.timidity.jp/dist/
 DISTNAME=	TiMidity++-${PORTVERSION}
 
-MAINTAINER=	yatt@luna2.org
+MAINTAINER?=	yatt@luna2.org
+COMMENT?=	Software MIDI player
 
 # If you don't have X11, type "make -DWITHOUT_X11" or uncomment this.
 #WITHOUT_X11=	yes

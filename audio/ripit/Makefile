@@ -12,6 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.initio.no/~oyvindmo/distfiles/
 
 MAINTAINER=	oyvindmo@initio.no
+COMMENT=	A perl-script frontend for encoding audio CDs to MP3 files
 
 # See pkg-message about other dependencies.
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/CDDB_get.pm:${PORTSDIR}/audio/p5-CDDB_get

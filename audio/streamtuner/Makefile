@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	streamtuner
 
 MAINTAINER=		jylefort@brutele.be
+COMMENT=	A GTK+ stream directory browser
 
 LIB_DEPENDS=		gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
 			curl:${PORTSDIR}/ftp/curl

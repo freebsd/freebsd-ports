@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://cseg.lucidx.com/projects/src/mziq/
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
+COMMENT=	A Perl frontend to mpg123
 
 RUN_DEPENDS=	${LOCALBASE}/bin/mpg123:${PORTSDIR}/audio/mpg123
 

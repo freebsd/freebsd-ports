@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=../by-authors/id/F/FO/FONKIE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	oyvindmo@initio.no
+COMMENT=	A high-level interface to the Compact Disc Database
 
 PERL_CONFIGURE=	yes
 

@@ -14,6 +14,7 @@ DISTFILES=	cwtexmain.tgz cwtexbin-16.6.tgz
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
+COMMENT=	CwTeX let you use Chinese Big5 codes in TeX/LaTeX documents
 
 BUILD_DEPENDS=  latex:${PORTSDIR}/print/teTeX
 

@@ -7,6 +7,9 @@
 
 INTERFACE=	tcltk
 
+MAINTAINER=	yatt@luna2.org
+COMMENT=	Tcl/Tk interface for TiMidity++
+
 MASTERDIR=	${.CURDIR}/../../audio/timidity++-emacs
 
 .include "${MASTERDIR}/Makefile"

@@ -12,6 +12,7 @@ MASTER_SITES=	http://rnoc.urc.ac.ru/~anton/projects/files/
 DISTNAME=	pr-${PORTVERSION}
 
 MAINTAINER=	anton@urc.ac.ru
+COMMENT=	A daemon that connects local terminal device to a terminal server
 
 WRKSRC=		${WRKDIR}/pr
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mp3check
 
 MAINTAINER=	ericb@thedeepsky.com
+COMMENT=	Verifies the integrity of mp3 audio files
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

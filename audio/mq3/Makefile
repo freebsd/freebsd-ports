@@ -12,6 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.mq3.org/source/
 
 MAINTAINER=	erich@tacni.net
+COMMENT=	A minimal mp3/ogg player written in Qt
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		vorbis.2:${PORTSDIR}/audio/libvorbis \

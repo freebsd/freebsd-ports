@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.tsp.ece.mcgill.ca/pub/AFsp/
 DISTNAME=	AFsp-v6r6a
 
 MAINTAINER=	ginga-freebsd@ginganet.org
+COMMENT=	Audio file conversion utilities and library
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

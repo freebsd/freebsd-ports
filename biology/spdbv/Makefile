@@ -20,6 +20,7 @@ MASTER_SITES=	http://au.expasy.org/spdbv/program/ \
 DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//}-Linux
 
 MAINTAINER=	chuynh@biolateral.com.au
+COMMENT=	Deep View Swiss-PdbViewer is a Protein viewer and analysis tool
 
 RUN_DEPENDS=	${LINUXBASE}${X11BASE}/lib/libMesaGL.so.3:${PORTSDIR}/graphics/linux_mesa3 \
 		${LINUXBASE}${X11BASE}/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif

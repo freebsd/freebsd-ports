@@ -13,6 +13,7 @@ MASTER_SITES=	http://frantica.lly.org/~rcw/abcde/
 DISTNAME= 	abcde_2.0.3.orig
 
 MAINTAINER=	mchopra@engmail.uwaterloo.ca
+COMMENT=	Front-end sh script to encode CDs in ogg or mp3 format
 
 RUN_DEPENDS=    cd-discid:${PORTSDIR}/audio/cd-discid \
 		cdparanoia:${PORTSDIR}/audio/cdparanoia \

@@ -11,6 +11,7 @@ CATEGORIES=	converters
 MASTER_SITES=	ftp://ftp.guug.org/pub/
 
 MAINTAINER=	obonilla@galileo.edu
+COMMENT=	Translate ASCII files from DOS (cr/lf) to UNIX (lf)
 
 MAN1=		unix2dos.1 dos2unix.1
 NO_WRKSUBDIR=	yes

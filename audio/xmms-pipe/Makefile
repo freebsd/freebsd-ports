@@ -13,6 +13,7 @@ DISTNAME=	xmmspipe-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	Controls XMMS with a named pipe
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

@@ -11,6 +11,7 @@ CATEGORIES=    audio
 MASTER_SITES=  ftp://ftp.ibiblio.org/pub/Linux/apps/sound/mixers/
 
 MAINTAINER=    jerry.e@gmx.net
+COMMENT=	A ncurses-based console mixer
 
 .include <bsd.port.pre.mk>
 

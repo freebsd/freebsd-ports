@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	icqmail
 
 MAINTAINER=	never@nevermind.kiev.ua
+COMMENT=	C++ class library for manipulating messages in MIME format
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

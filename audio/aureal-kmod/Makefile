@@ -13,6 +13,7 @@ MASTER_SITES=	http://home.columbus.rr.com/amatey/au88x0/
 DISTNAME=	au88x0-${PORTVERSION}_${PORTREVISION}
 
 MAINTAINER=	lx@matey.org
+COMMENT=	A FreeBSD Driver for Aureal Vortex based soundcards
 
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
 

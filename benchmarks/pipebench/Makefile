@@ -12,6 +12,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/
 
 MAINTAINER=	mich@freebsdcluster.org
+COMMENT=	Pipebench shows current throughput/amount of data through a pipe
 
 USE_REINPLACE=  yes
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://tigress.com/lofi/ \
 DISTNAME=	${PORTNAME}-devel-${PORTVERSION}
 
 MAINTAINER=	michaelnottebrock@gmx.net
+COMMENT=	A streaming source client for icecast 2
 
 LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg \
 		shout.3:${PORTSDIR}/audio/libshout2 \

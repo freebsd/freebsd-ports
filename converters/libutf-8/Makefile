@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.whizkidtech.net/fports/ \
 DISTNAME=	libutf-8-1.0
 
 MAINTAINER=	adam@whizkidtech.net
+COMMENT=	Unicode conversion routines between UCS-4 and UTF-8
 
 INSTALLS_SHLIB=	yes
 

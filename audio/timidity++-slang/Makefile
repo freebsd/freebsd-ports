@@ -7,6 +7,9 @@
 
 INTERFACE=	slang
 
+MAINTAINER=	yatt@luna2.org
+COMMENT=	Slang interface for TiMidity++
+
 MASTERDIR=	${.CURDIR}/../../audio/timidity++-emacs
 
 .include "${MASTERDIR}/Makefile"

@@ -15,6 +15,7 @@ DISTFILES=	povchem.c \
 		periodic.tab
 
 MAINTAINER=	frankch@waru.life.nthu.edu.tw
+COMMENT=	Simple yet powerful tool to generate POV from a PDB file
 
 NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes

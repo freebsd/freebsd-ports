@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sec@42.org
+COMMENT=	A Commodore SID-chip emulator library to play SID music files
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

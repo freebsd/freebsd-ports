@@ -7,6 +7,9 @@
 
 CATEGORIES=	japanese
 
+MAINTAINER=	yatt@luna2.org
+COMMENT=	Tcl/Tk interface for TiMidity++ with Japanese support
+
 INTERFACE=	tcltk
 JAPANESE=	yes
 
