@@ -1,0 +1,22 @@
+--- Makefile.in	Sat Dec 30 07:22:51 2000
++++ Makefile.in	Sat Nov  9 10:16:13 2002
+@@ -66,6 +66,8 @@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
+ 
++libexecdir = @libexecdir@/nullmailer
++
+ localstatedir = @localstatedir@/nullmailer
+ sysconfdir = @sysconfdir@/nullmailer
+ 
+@@ -368,8 +370,8 @@
+ 	chown nullmail $(DESTDIR)$(localstatedir)/*
+ 	chown nullmail $(DESTDIR)$(sbindir)/nullmailer-queue
+ 	chmod u+s $(DESTDIR)$(sbindir)/nullmailer-queue
+-	chown nullmail $(DESTDIR)$(bindir)/mailq
+-	chmod u+s $(DESTDIR)$(bindir)/mailq
++	chown nullmail $(DESTDIR)$(libexecdir)/mailq
++	chmod u+s $(DESTDIR)$(libexecdir)/mailq
+ 
+ dist-hook:
+ 	sed -e s/@VERSION\@/@VERSION@/ \

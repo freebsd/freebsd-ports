@@ -1,29 +1,28 @@
 libexec/nullmailer/smtp
 libexec/nullmailer/qmqp
-bin/mailq
+libexec/nullmailer/mailq
+libexec/nullmailer/sendmail
 bin/nullmailer-inject
 sbin/nullmailer-queue
 sbin/nullmailer-send
-sbin/sendmail
 etc/nullmailer/remotes.sample
 etc/rc.d/nullmail.sh
-@exec mkdir -p %%LOCALSTATEDIR%%/var/nullmailer/queue
-@exec chmod 700 %%LOCALSTATEDIR%%/var/nullmailer/queue
-@exec mkdir -p %%LOCALSTATEDIR%%/var/nullmailer/tmp
-@exec chmod 700 %%LOCALSTATEDIR%%/var/nullmailer/tmp
-@exec rm -f %%LOCALSTATEDIR%%/var/nullmailer/trigger
-@exec mkfifo %%LOCALSTATEDIR%%/var/nullmailer/trigger
-@exec chmod 600 %%LOCALSTATEDIR%%/var/nullmailer/trigger
-@exec chown -R nullmail %%LOCALSTATEDIR%%/var/nullmailer/*
+@exec mkdir -p %%LOCALSTATEDIR%%/var/%%SPOOL%%nullmailer/queue
+@exec chmod 700 %%LOCALSTATEDIR%%/var/%%SPOOL%%nullmailer/queue
+@exec mkdir -p %%LOCALSTATEDIR%%/var/%%SPOOL%%nullmailer/tmp
+@exec chmod 700 %%LOCALSTATEDIR%%/var/%%SPOOL%%nullmailer/tmp
+@exec rm -f %%LOCALSTATEDIR%%/var/%%SPOOL%%nullmailer/trigger
+@exec mkfifo %%LOCALSTATEDIR%%/var/%%SPOOL%%nullmailer/trigger
+@exec chmod 600 %%LOCALSTATEDIR%%/var/%%SPOOL%%nullmailer/trigger
+@exec chown -R nullmail %%LOCALSTATEDIR%%/var/%%SPOOL%%nullmailer/*
 @exec chown nullmail %D/sbin/nullmailer-queue
 @exec chmod u+s %D/sbin/nullmailer-queue
-@exec chown nullmail %D/bin/mailq
-@exec chmod u+s %D/bin/mailq
-%%LOCALSTATEDIR_RM%%var/nullmailer/queue
-%%LOCALSTATEDIR_RM%%var/nullmailer/tmp
-@unexec rm -f %%LOCALSTATEDIR%%/var/nullmailer/trigger
+@exec chown nullmail %D/libexec/nullmailer/mailq
+@exec chmod u+s %D/libexec/nullmailer/mailq
+%%LOCALSTATEDIR_RM%%var/%%SPOOL%%nullmailer/queue
+%%LOCALSTATEDIR_RM%%var/%%SPOOL%%nullmailer/tmp
+@unexec rm -f %%LOCALSTATEDIR%%/var/%%SPOOL%%nullmailer/trigger
 @dirrm etc/nullmailer
 @dirrm libexec/nullmailer
-%%LOCALSTATEDIR_RM%%var/nullmailer
-%%LOCALSTATEDIR_RM%%var
+%%LOCALSTATEDIR_RM%%var/%%SPOOL%%nullmailer
 @unexec if [ -n "$BATCH" ]; then echo "Warning: In batch mode, I will do 'rmuser -y nullmail'"; rmuser -y nullmail; fi
