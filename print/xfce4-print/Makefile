@@ -18,7 +18,8 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XFce 4 graphical frontend for printing
 
-LIB_DEPENDS=	xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
+LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
+		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
 
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes

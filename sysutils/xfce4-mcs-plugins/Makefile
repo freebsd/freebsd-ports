@@ -19,6 +19,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XFce 4 settings manager plugins
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
+LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
+		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
 
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes

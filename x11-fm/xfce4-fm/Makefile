@@ -20,7 +20,9 @@ COMMENT=	XFce 4 file manager
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
 LIB_DEPENDS=	dbh-1.0.1:${PORTSDIR}/databases/dbh \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+		xml2.5:${PORTSDIR}/textproc/libxml2 \
+		xfce4util.1:${PORTSDIR}/x11/libxfce4util \
+		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
 
 USE_GNOME=	gtk20
 USE_REINPLACE=	yes
