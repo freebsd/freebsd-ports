@@ -15,5 +15,8 @@ lib/irssi/plugins/libspeech.so.0
 lib/irssi/plugins/libsound.a
 lib/irssi/plugins/libsound.so
 lib/irssi/plugins/libsound.so.0
+etc/irssi/colorless.theme
+etc/irssi/config
 @dirrm lib/irssi/plugins
 @dirrm lib/irssi
+@dirrm etc/irssi
