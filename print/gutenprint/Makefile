@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	gimp-print
-PORTVERSION=	4.2.2
+PORTVERSION=	4.2.3
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
@@ -30,7 +30,7 @@ MAN8=	cups-calibrate.8
 PLIST_SUB+=	CUPS="@comment "
 .else
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
-BUILD_DEPENDS+=	cups-config:${PORTSDIR}/print/cups-base
+RUN_DEPENDS+=	espgs:${PORTSDIR}/print/cups-pstoraster
 CONFIGURE_ARGS+=	--with-cups=${PREFIX}
 PLIST_SUB+=	CUPS=""
 .endif
