@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fftw
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://theory.lcs.mit.edu/pub/fftw/	\
@@ -17,6 +17,7 @@ COMMENT=	Fast C routines to compute the Discrete Fourier Transform
 
 .include <bsd.port.pre.mk>
 
+USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
