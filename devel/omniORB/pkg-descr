@@ -1,0 +1,60 @@
+http://www.orl.co.uk/omniORB/omniORB.html
+
+omniORB2 is an Object Request Broker (ORB) which implements
+specification 2.0 of the Common Object Request Broker Architecture (CORBA).
+Further information on CORBA can be found at http://www.omg.org
+
+Technical highlights
+--------------------
+
+C++ language binding is supported.
+
+The IDL compiler uses the compiler front end from Sun, and
+generates C++ language mapping conforming to the latest revision of
+the CORBA specification.
+
+The Internet Inter-ORB Protocol (IIOP) is used as the native protocol.
+
+The omniORB2 runtime is fully multithreaded. It uses native
+platform thread support encapsulated with a small class library, omnithread,
+to abstract away from differences in native thread APIs.
+
+A COS Naming Service, omniNames, is provided.
+
+The following platforms are supported:
+
+	Solaris 2.5/ Sun SparcCompiler C++ version 4.2
+    	Digital Unix 3.2/ DEC C++ compiler version 5.5
+    	Linux 2.0 (x86)/ GNU C++ compiler version 2.7.2 / Linuxthreads 0.5
+    	Windows NT / Windows 95 / Visual C++ version 4.2
+
+It should be straightforward to port omniORB2 to any platform which
+supports POSIX style threads, BSD style sockets and has a decent C++ 
+compiler which supports exceptions.
+
+It has been tested for interoperability via IIOP with other ORBs, such as 
+Iona Orbix 2.1 MT, Iona OrbixWeb 2.0.1, Visigenic Visibroker for C++,
+and HP ORB Plus 2.5.
+
+Work in progress
+----------------
+
+omniORB2 is not yet a complete implementation of the CORBA core. The
+following features are not supported in the current release. 
+Support for these features will be included shortly in
+a future release of omniORB2.
+
+`Typecode' and the type `Any' are not supported. 
+The Dynamic Invocation Interface (DII) is not supported. 
+The Dynamic Skeleton Interface (DSI) is not supported. 
+
+Missing features
+----------------
+
+The following features are missing from omniORB2. 
+We are not currently planning on adding support for these features.
+
+The BOA only supports the persistent server activation policy. Other
+dynamic activation and deactivation polices are not supported.
+omniORB2 does not has its own Interface Repository.
+
