@@ -20,15 +20,6 @@
  #endif /* !USE_CURSES */
  
  		MoveCursor (i + scroll_region_top, 0);
-@@ -918,7 +918,7 @@
- 
- 	search_line = curr_line;	/* Reset search to start from top of display */
- 
--	buff = my_malloc(cCOLS + 1);	/* Need to account for \n */
-+	buff = my_malloc(LEN + 1);	/* Need to account for \n */
- 
- 	if (part == 0) {
- 		ClearScreen();
 @@ -1364,7 +1364,7 @@
  					chunk += 50;
  					pgart.rawl = my_realloc((char *) pgart.rawl, sizeof(t_lineinfo) * chunk);
