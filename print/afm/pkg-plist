@@ -35,3 +35,4 @@ lib/afm/Times-Oblique
 lib/afm/Times-Roman
 lib/afm/ZapfChancery-MediumItalic
 lib/afm/ZapfDingbats
+@dirrm lib/afm
