@@ -6,26 +6,25 @@
 #
 
 PORTNAME=	portsnap
-PORTVERSION=	0.3.1
+PORTVERSION=	0.9
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.daemonology.net/portsnap/
 
 MAINTAINER=	cperciva@daemonology.net
 COMMENT=	Provides secure snapshots of the ports directory
 
-RUN_DEPENDS=	bspatch:${PORTSDIR}/misc/bsdiff		\
-		freebsd-update-verify:${PORTSDIR}/security/freebsd-update
+RUN_DEPENDS=	bspatch:${PORTSDIR}/misc/bsdiff
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 491101 || ( ${OSVERSION} > 499999 && ${OSVERSION} < 502114 )
-RUN_DEPENDS+=	sha1:${PORTSDIR}/sysutils/freebsd-sha1
+.if ${OSVERSION} < 600021
+RUN_DEPENDS+=	sha256:${PORTSDIR}/sysutils/freebsd-sha256
 .endif
 
 MAN5=		portsnap.conf.5
 MAN8=		portsnap.8
 PLIST_FILES=	etc/portsnap.conf.sample sbin/portsnap		\
-		portsnap/.package.this.directory
+		libexec/make_index portsnap/.package.this.directory
 PLIST_DIRS=	portsnap
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -39,6 +38,7 @@ post-extract:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/portsnap ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/make_index ${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/portsnap.conf.5 ${PREFIX}/man/man5/
 	${INSTALL_MAN} ${WRKSRC}/portsnap.8 ${PREFIX}/man/man8/
 	${INSTALL_DATA} ${WRKSRC}/portsnap.conf		\
