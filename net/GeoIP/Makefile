@@ -12,8 +12,6 @@ MASTER_SITES=	http://maxmind.com/download/geoip/api/c/
 
 MAINTAINER=	seanc@FreeBSD.org
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-gnu-ld=yes
 INSTALLS_SHLIB=	yes
