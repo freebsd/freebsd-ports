@@ -15,6 +15,7 @@ wcol_pid=/var/run/wcol.pid
 #
 if [ -f /etc/defaults/rc.conf ]; then
 	. /etc/defaults/rc.conf
+	source_rc_confs
 elif [ -f /etc/rc.conf ]; then
 	. /etc/rc.conf
 fi
