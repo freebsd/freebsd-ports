@@ -20,19 +20,25 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	rpm:${PORTSDIR}/misc/rpm
 RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
+ONLY_FOR_ARCHS=	i386 alpha
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=	yes
-ONLY_FOR_ARCHS=	i386
+PLIST=		${PKGDIR}/pkg-plist.${MACHINE_ARCH}
+MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
 PREFIX=		/compat/linux
 
 RPM_MIRRORS=	ftp://ftp.freesoftware.com/pub/linux/redhat/old-releases/__DIR__/ \
 		ftp://ftp.freesoftware.com/pub/linux/redhat/__DIR__/
 STDDIR=		redhat-6.1/${MACHINE_ARCH}/RedHat/RPMS
 UPDDIR=		updates/6.1/${MACHINE_ARCH}
+.if (${MACHINE_ARCH} == "i386")
 RPM_SET?=	gtk+-1.2.5-2.${MACHINE_ARCH}.rpm
+.elif (${MACHINE_ARCH} == "alpha")
+RPM_SET?=	gtk+-1.2.6-1.${MACHINE_ARCH}.rpm
+.endif
 DBPATH=		/var/lib/rpm
 RPMFLAGS=	--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
 		--nodeps --replacepkgs
