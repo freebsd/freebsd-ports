@@ -1,0 +1,8 @@
+clog is a program that logs all connections on your subnet.  It uses the
+pcap(3) packet capture library to log any SYN packets to a logfile.  The
+output format is designed to be very easily parsed by various text
+processing tools.
+
+
+-- David
+   (obrien@NUXI.com)
