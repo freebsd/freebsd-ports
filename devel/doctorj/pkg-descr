@@ -1,0 +1,12 @@
+DoctorJ is a set of applications that analyze Java code. Documentation is 
+verified for compliance with the standard and for accuracy against the 
+code, beyond what javadoc does. Statistics for a file or project can be 
+generated, including the number of lines of code per class and method, 
+and the overall total. A syntax analyzer is in development.
+
+
+WWW:		http://doctorj.sourceforge.net/
+AUTHOR:		Jeff Pace <jpace@incava.org>
+
+	- Michael L. Hostbaek
+	mich@freebsdcluster.org

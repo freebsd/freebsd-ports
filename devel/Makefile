@@ -150,6 +150,7 @@
     SUBDIR += dmake
     SUBDIR += dmalloc
     SUBDIR += doc++
+    SUBDIR += doctorj
     SUBDIR += dotconf
     SUBDIR += doxygen
     SUBDIR += e4graph
