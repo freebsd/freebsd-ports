@@ -205,6 +205,7 @@
     SUBDIR += rot
     SUBDIR += rotix
     SUBDIR += rtf2htm
+    SUBDIR += rtfreader
     SUBDIR += ruby-csv
     SUBDIR += ruby-erb
     SUBDIR += ruby-format

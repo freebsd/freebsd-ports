@@ -1,0 +1,9 @@
+RTF is the Microsoft Richtext Format, a more portable, mostly-ASCII
+formatting language that is exported by word processors like MS Word.
+These files generally have the extension .rtf, but occassionally have
+.doc extensions as well.  This parser is from the Microsoft spec,
+"ported" to Unix systems.
+
+WWW:	http://www.fiction.net/blong/programs/#rtf
+
+- jim <jim@FreeBSD.org>

@@ -1,0 +1,12 @@
+--- Makefile.orig	Mon Jan 14 00:40:08 2002
++++ Makefile	Mon Jan 14 00:40:20 2002
+@@ -1,7 +1,7 @@
+ 
+ 
+-CC = gcc
+-CFLAGS = -O2
++CC ?= gcc
++CFLAGS += -O2
+ 
+ rtfreader: rtfactn.o rtfreadr.o
+ 	$(CC) -o rtfreader rtfreadr.o rtfactn.o
