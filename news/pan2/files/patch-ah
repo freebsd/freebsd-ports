@@ -1,11 +1,29 @@
---- pan/Makefile.in.orig	Tue May  9 13:27:56 2000
-+++ pan/Makefile.in	Tue May 16 17:44:07 2000
-@@ -116,7 +116,7 @@
+--- pan/Makefile.in.orig	Thu May 18 02:27:48 2000
++++ pan/Makefile.in	Tue Jun 13 17:07:18 2000
+@@ -115,7 +115,7 @@
  
  SUBDIRS = dialogs xpm
  
 -INCLUDES =  	-I$(top_srcdir) 					-I$(top_srcdir)/uulib 					-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 		-DLOCALEDIR=\"$(datadir)/locale\" 			$(GNOME_INCLUDEDIR) 					$(GLIB_CFLAGS) 						@CPPFLAGS@
-+INCLUDES =  	-I$(top_srcdir) 					-I$(top_srcdir)/uulib 					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 		-DLOCALEDIR=\"$(prefix)/share/locale\" 			$(GNOME_INCLUDEDIR) 					$(GLIB_CFLAGS) 						@CPPFLAGS@
++INCLUDES =  	-I$(top_srcdir) 									-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 		-DLOCALEDIR=\"$(prefix)/share/locale\" 			$(GNOME_INCLUDEDIR) 					$(GLIB_CFLAGS) 						@CPPFLAGS@
  
  
  bin_PROGRAMS = pan
+@@ -123,7 +123,7 @@
+ pan_SOURCES =  	acache.c acache.h 				article.c article.h 				article-toolbar.c article-toolbar.h 		article-find.c article-find.h 			article-db.c article-db.h 			article-thread.c article-thread.h 		articlelist.c articlelist.h 			date.c date.h 					debug.c debug.h 				decode.c decode.h 				folder.c folder.h 				folderlist.c folderlist.h 			fnmatch.c fnmatch.h 				globals.h					group.c group.h 				grouplist.c grouplist.h 			gui.c gui.h 					gui-notebook.c gui-notebook.h 			gui-paned.c gui-paned.h 			log.c log.h 					message.c message.h 				message-filter.c message-filter.h 		message-send.c message-send.h 			message-window.c message-window.h 		msort.c 					nntp.c nntp.h 					pan.c pan.h 					pan-callback.c pan-callback.h 			pan-db.c pan-db.h 				pan-object.c pan-object.h 			prefs.c prefs.h 				print.c print.h 				queue.c queue.h 				task.c task.h 					task-bodies.c task-bodies.h 			task-body.c task-body.h 			task-decode.c task-decode.h 			task-grouplist.c task-grouplist.h 		task-headers.c task-headers.h 			task-send.c task-send.h 			task-manager.c task-manager.h 			rfc822.c rfc822.h 				save.c save.h 					server.c server.h 				smtp.c smtp.h 					sockets.c sockets.h 				status-item.c status-item.h 			status-item-view.c status-item-view.h 		text.c text.h 					util.c util.h
+ 
+ 
+-pan_LDADD =  	dialogs/libdialogs.a 			$(INTLLIBS) 				$(GNOMEUI_LIBS) 			$(GNOME_LIBDIR) 			$(GLIB_LIBS) 				$(top_builddir)/uulib/libuu.a
++pan_LDADD =  	dialogs/libdialogs.a 			$(INTLLIBS) 				$(GNOMEUI_LIBS) 			$(GNOME_LIBDIR) 			$(GLIB_LIBS) 				
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+@@ -144,7 +144,7 @@
+ task-body.o task-decode.o task-grouplist.o task-headers.o task-send.o \
+ task-manager.o rfc822.o save.o server.o smtp.o sockets.o status-item.o \
+ status-item-view.o text.o util.o
+-pan_DEPENDENCIES =  dialogs/libdialogs.a $(top_builddir)/uulib/libuu.a
++pan_DEPENDENCIES =  dialogs/libdialogs.a 
+ pan_LDFLAGS = 
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
