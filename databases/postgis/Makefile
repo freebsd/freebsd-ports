@@ -16,6 +16,7 @@ COMMENT=	Adds support for geographic objects to PostgreSQL databases
 LIB_DEPENDS=	proj.5:${PORTSDIR}/graphics/proj
 
 USE_GMAKE=	yes
+USE_BISON=	yes
 USE_PERL5_BUILD=	yes
 
 PKGMESSAGE=	pkg-message
