@@ -1,5 +1,5 @@
---- print-callbacks.c.ori	Fri Jan 31 18:49:46 2003
-+++ print-callbacks.c	Fri Jan 31 18:51:39 2003
+--- libgthumb/print-callbacks.c.ori	Fri Jan 31 18:49:46 2003
++++ libgthumb/print-callbacks.c	Fri Jan 31 18:51:39 2003
 @@ -25,11 +25,8 @@
  
  #include <libgnome/libgnome.h>
