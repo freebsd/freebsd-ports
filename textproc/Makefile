@@ -194,6 +194,7 @@
     SUBDIR += p5-Lingua-EN-NameParse
     SUBDIR += p5-Lingua-EN-Nickname
     SUBDIR += p5-Lingua-EN-Numbers
+    SUBDIR += p5-Lingua-EN-Numbers-Easy
     SUBDIR += p5-Lingua-EN-Numbers-Ordinate
     SUBDIR += p5-Lingua-EN-Sentence
     SUBDIR += p5-Lingua-EN-Squeeze
