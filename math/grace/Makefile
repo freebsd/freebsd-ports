@@ -1,6 +1,6 @@
 # New ports collection makefile for: grace
 # Date created:		Dec 28 1998
-# Whom:			Lars Koeller <Lars.Köller@Uni-Bielefeld.de>
+# Whom:			Lars Köller <Lars.Koeller@Uni-Bielefeld.de>
 #
 # $FreeBSD$
 #
