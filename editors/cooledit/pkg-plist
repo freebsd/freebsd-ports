@@ -8,9 +8,11 @@ bin/coolman
 bin/coolmessage
 bin/coolproject
 bin/coolquery
+bin/obsidiansplash
 bin/smalledit
+@unexec if cmp -s %D/etc/coolicon.config.dist %D/etc/coolicon.config; then rm -f %D/etc/coolicon.config; fi
 etc/coolicon.config.dist
-@exec if [ ! -f %D/etc/coolicon.config ]; then cp -p %D/%F %B/cooledit.config; fi 
+@exec if [ ! -f %D/etc/coolicon.config ]; then cp -p %D/%F %B/coolicon.config; fi
 lib/libCw.a
 lib/libCw.so
 lib/libCw.so.1
