@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/Unicode/MapUTF8.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/MapUTF8/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/MapUTF8
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Unicode
