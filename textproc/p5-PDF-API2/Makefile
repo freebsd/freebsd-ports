@@ -7,13 +7,11 @@
 #
 
 PORTNAME=	PDF-API2
-PORTVERSION=	0.2.3.8
-PORTREVISION=	1
+PORTVERSION=	0.3a30
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Text
+MASTER_SITE_SUBDIR=	PDF
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION}_fix1
 
 MAINTAINER=	erwin@lansing.dk
 
@@ -25,7 +23,14 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 PERL_SITELIBDIR=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
-post-patch:
-	@${RM} -f  ${WRKSRC}/lib/Text/PDF/FileAPI.pm.orig
+FILES=		API2.pm API2/IOString.pm API2/UniMap.pm  \
+		API2/PDF/FileAPI.pm API2/TTF/Font.pm
+
+pre-patch:
+.for i in ${FILES}
+	@${PERL} -pi -e '$$_="" if /require 5/;' \
+		-e '$$_="" if /no warnings/;' \
+		${WRKSRC}/lib/PDF/${i}
+.endfor
 
 .include <bsd.port.mk>
