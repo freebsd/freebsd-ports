@@ -1,17 +1,13 @@
-From the Twisted Philosophy FAQ:
-  Twisted is a project that is basically an abstract Python networking
-  library. It contains a low-level (but high-level) networking infrastructure
-  (twisted.internet), a Remote Object Thingy[TM] (twisted.spread.pb), a web
-  server (twisted.web), and a multi/single-player interactive fiction engine
-  (twisted.reality), amongst many other things.
+From the README:
 
-From the (more lucid?) README:
   Twisted is an event-based framework for internet applications.  It includes
-  a web server, a telnet server, a multiplayer RPG engine, a generic client
-  and server for remote object access, and APIs for creating new protocols.
+  a web server, a telnet server, a chat server, a news server, a generic
+  client and server for remote object access, and APIs for creating new
+  protocols and services. Twisted supports integration of the Tk, GTK+, Qt or
+  wxPython event loop with its main event loop. The Win32 event loop is also
+  supported, as is basic support for running servers on top of Jython.
 
-Twisted is based on an unconventional and somewhat Twisted design philosphy:
-  http://twistedmatrix.com/page.epy/twistedphil.html
+Twisted is based on an unconventional and somewhat Twisted design philosphy.
 
 WWW: http://twistedmatrix.com/
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twisted
-PORTVERSION=	0.17.4
+PORTVERSION=	0.19.0
 CATEGORIES=	devel net python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,6 +22,7 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 CPIO=		cpio --quiet -pdum -R
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 MAN1=		coil.1 im.1 manhole.1 mktap.1 t-im.1 twistd.1
 
 post-patch:
@@ -36,14 +37,16 @@ post-install:
 	@ ${INSTALL_MAN} ${WRKSRC}/doc/man/${manpage} ${MANPREFIX}/man/man1
 .endfor
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}/api
-	@ cd ${WRKSRC}/doc/api && find * \
-	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/api
-.for docsubdir in howto img
+.for docsubdir in api howto
+	@ ${MKDIR} ${DOCSDIR}/${docsubdir}
+	@ cd ${WRKSRC}/doc/${docsubdir} && find * \! -name .\* \
+	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/${docsubdir}
+.endfor
+.for docsubdir in img legal specifications
 	@ ${MKDIR} ${DOCSDIR}/${docsubdir}
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/${docsubdir}/* ${DOCSDIR}/${docsubdir}
 .endfor
-.for docfile in CREDITS ERRATA README TODO
+.for docfile in CREDITS ChangeLog ERRATA README TODO
 	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 	@ ${MKDIR} ${EXAMPLESDIR}/scripts ${EXAMPLESDIR}/static
