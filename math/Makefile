@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.34 1997/11/24 00:48:41 fenner Exp $
+# $Id: Makefile,v 1.35 1998/02/22 00:24:13 steve Exp $
 #
 
     SUBDIR += Scilab
@@ -22,6 +22,7 @@
     SUBDIR += p5-MatrixReal
     SUBDIR += pari
     SUBDIR += plplot
+    SUBDIR += siag
     SUBDIR += simpack
     SUBDIR += ss
     SUBDIR += umatrix
