@@ -331,6 +331,7 @@
     SUBDIR += pear-Crypt_RC4
     SUBDIR += pear-File_Passwd
     SUBDIR += pear-LiveUser
+    SUBDIR += pear-LiveUser_Admin
     SUBDIR += pear-Text_Password
     SUBDIR += pf
     SUBDIR += pft
