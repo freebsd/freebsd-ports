@@ -8,7 +8,7 @@
 
 PORTNAME=	centericq
 PORTVERSION=	4.9.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://konst.org.ua/download/
 
@@ -67,7 +67,7 @@ post-patch:
 	  ${MV} -f ${file} ${file}.orig ; \
 	  ${GREP} -v "_G_config.h" ${file}.orig > ${file})
 .endfor
-		
+
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
