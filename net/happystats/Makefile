@@ -27,6 +27,12 @@ MAN1=		happystats.1
 MANCOMPRESSED=	yes
 DOCS=		AUTHORS INSTALL TODO
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502108
+BROKEN=		"Does not link on FreeBSD >= 5.x"
+.endif
+
 do-configure:
 	@cd ${WRKSRC} && ${MAKE} dep
 
@@ -42,4 +48,4 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
