@@ -6,3 +6,4 @@ share/doc/coda-intro/INSTALL.FreeBSD
 share/doc/coda-intro/README
 share/doc/coda-intro/RUN
 share/doc/coda-intro/WARNING
+@dirrm share/doc/coda-intro

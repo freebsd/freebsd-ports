@@ -19,6 +19,6 @@ do-build:
 
 do-install:
 	@${ECHO} "We will copy the files to ${PREFIX}/share/doc/coda-intro"
-	cd ${WRKSRC}; tar cf - doc | (cd ${PREFIX}/share; tar xvf -)
+	cd ${WRKSRC}; tar --create --file - --exclude \*NetBSD --exclude CVS doc | (cd ${PREFIX}/share; tar xvf -)
 
 .include <bsd.port.mk>
