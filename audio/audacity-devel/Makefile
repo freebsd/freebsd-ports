@@ -1,61 +1,64 @@
-# New ports collection makefile for:	audacity
-# Date created:				21 Jul 2001
-# Whom:					Marc van Woerkom <3d@freebsd.org>
+# New ports collection makefile for:	audacity-devel
+# Date created:				2 Dec 2003
+# Whom:					Craig Boston <craig@yekse.gank.org>
 #
 # $FreeBSD$
 
 PORTNAME=	audacity
-PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTVERSION=	1.2.0.p3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}-2
-EXTRACT_SUFX=	.tgz
+DISTNAME=	${PORTNAME}-src-1.2.0-pre3
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	craig@yekse.gank.org
 COMMENT=	Audacity is a GUI editor for digital audio waveforms
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2 \
-		mad.2:${PORTSDIR}/audio/mad
+LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
-GNU_CONFIGURE=	yes
+CONFLICTS=	audacity-1.0*
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-src-1.2.0-pre3
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-AUDACITY_HELP_DIR=	${PREFIX}/share/doc/audacity
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		CFLAGS="-DAUDACITY_HELP_DIR=${AUDACITY_HELP_DIR} ${PTHREAD_CFLAGS}" \
+USE_LIBTOOL=	yes
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		WX_CONFIG=${X11BASE}/bin/wxgtk2-2.4-config
-CONFIGURE_ARGS+=	--with-id3=no --with-libmad=yes
+CONFIGURE_ARGS+=	--with-id3=no
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ARTS)
-LIB_DEPENDS+=	qtmcop.1:${PORTSDIR}/audio/arts
-CONFIGURE_ARGS+=	--with-arts-soundserver=yes
+.if !defined(NOPORTDOCS)
+MAKE_ENV=	DOC=yes
+.endif
+
+.if !defined(WITHOUT_MAD)
+CONFIGURE_ARGS+=	--with-libmad=system
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
+.else
+CONFIGURE_ARGS+=	--without-libmad
 .endif
 
 .if !defined(WITHOUT_VORBIS)
-CONFIGURE_ARGS+=	--with-vorbis
+CONFIGURE_ARGS+=	--with-vorbis=system
 LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
+.else
+CONFIGURE_ARGS+=	--without-vorbis
 .endif
 
 pre-everything::
+.if !defined(WITHOUT_MAD)
+	@${ECHO_MSG} "You can disable support for libmad (MP3) by defining WITHOUT_MAD."
+.endif
 .if !defined(WITHOUT_VORBIS)
 	@${ECHO_MSG} "You can disable support for vorbis by defining WITHOUT_VORBIS."
 .endif
-.if !defined(WITH_ARTS)
-	@${ECHO_MSG} "You can use artsd instead of OSS for output by defining WITH_ARTS."
-.endif
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/audacity ${PREFIX}/bin/audacity
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/audacity
-	${INSTALL_DATA} ${WRKSRC}/audacity-help.htb ${WRKSRC}/README.txt ${WRKSRC}/LICENSE.txt ${PREFIX}/share/doc/audacity/
-.endif
+MAN1=		audacity.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.post.mk>
