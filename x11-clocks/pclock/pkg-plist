@@ -1,19 +1,19 @@
 bin/pclock
-share/pclock/pixmaps/glowclock.xpm
-share/pclock/pixmaps/green.xpm
-share/pclock/pixmaps/moonphase.xpm
-share/pclock/pixmaps/oclock.xpm
-share/pclock/pixmaps/radar.xpm
-share/pclock/pixmaps/rolex2.xpm
-share/pclock/pixmaps/rolexgmt.xpm
-share/pclock/pixmaps/round-3d.xpm
-share/pclock/pixmaps/square.xpm
-share/pclock/pixmaps/swatch.xpm
-share/pclock/pixmaps/time-icon.xpm
-share/pclock/pixmaps/will-return.xpm
-share/pclock/pixmaps/wmaker-tile.xpm
-share/pclock/pixmaps/wood-tile.xpm
-share/pclock/pixmaps/wristwatch.xpm
-share/pclock/pixmaps/yellow-diamond.xpm
-@dirrm share/pclock/pixmaps
-@dirrm share/pclock
+%%DATADIR%%/pixmaps/glowclock.xpm
+%%DATADIR%%/pixmaps/green.xpm
+%%DATADIR%%/pixmaps/moonphase.xpm
+%%DATADIR%%/pixmaps/oclock.xpm
+%%DATADIR%%/pixmaps/radar.xpm
+%%DATADIR%%/pixmaps/rolex2.xpm
+%%DATADIR%%/pixmaps/rolexgmt.xpm
+%%DATADIR%%/pixmaps/round-3d.xpm
+%%DATADIR%%/pixmaps/square.xpm
+%%DATADIR%%/pixmaps/swatch.xpm
+%%DATADIR%%/pixmaps/time-icon.xpm
+%%DATADIR%%/pixmaps/will-return.xpm
+%%DATADIR%%/pixmaps/wmaker-tile.xpm
+%%DATADIR%%/pixmaps/wood-tile.xpm
+%%DATADIR%%/pixmaps/wristwatch.xpm
+%%DATADIR%%/pixmaps/yellow-diamond.xpm
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
