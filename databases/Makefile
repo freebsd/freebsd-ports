@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += WWWdb
     SUBDIR += adodb
     SUBDIR += arcexplorer
     SUBDIR += bbdb
