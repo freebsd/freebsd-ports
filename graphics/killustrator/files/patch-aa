@@ -1,11 +1,11 @@
---- standalone/Makefile.in.orig	Tue Oct 19 08:59:09 1999
-+++ standalone/Makefile.in	Tue Jan  4 21:11:54 2000
-@@ -212,7 +212,7 @@
- FILTER_LIBS = ../filter/libfilter.a
- XML_LIBS = ../xmlutils/libxml.a
- KSHARE_LIBS = ../share/libkillu.a
--killustrator_LDADD = $(FILTER_LIBS) $(KSHARE_LIBS) $(XML_LIBS) 	   $(LIBQIMGIO) $(LIB_KFILE) $(LIB_KIMGIO) $(LIBJPEG) $(LIBTIFF) $(LIBJPEG) $(LIBTIFF)
-+killustrator_LDADD = $(FILTER_LIBS) $(KSHARE_LIBS) $(XML_LIBS) 	   $(LIBQIMGIO) $(LIB_KFILE) $(LIB_KIMGIO) $(LIBJPEG) $(LIBTIFF) $(LIBJPEG) $(LIBTIFF) -lgnugetopt
+--- standalone/Makefile.in.orig	Mon Mar 20 03:03:53 2000
++++ standalone/Makefile.in	Sun Jul 16 09:45:51 2000
+@@ -215,7 +215,7 @@
+ FILTER_LIBS = ../filter/libfilter.la
+ XML_LIBS = ../xmlutils/libxml.la
+ KSHARE_LIBS = ../share/libkillu.la
+-killustrator_LDADD = $(FILTER_LIBS) $(KSHARE_LIBS) $(XML_LIBS) 	                $(LIB_KFILE) $(LIBQIMGIO) $(LIB_KIMGIO)                         $(LIBJPEG) $(LIBTIFF) $(LIBJPEG) $(LIBTIFF)
++killustrator_LDADD = $(FILTER_LIBS) $(KSHARE_LIBS) $(XML_LIBS) 	                $(LIB_KFILE) $(LIBQIMGIO) $(LIB_KIMGIO)                         $(LIBJPEG) $(LIBTIFF) $(LIBJPEG) $(LIBTIFF) -lgnugetopt
  
  
  # this option you can leave out. Just, if you use "make dist", you need it
