@@ -35,6 +35,12 @@ CONFIGURE_ARGS=	--with-freetype \
 		--with-freetype-includedir=${PREFIX}/include/freetype1/freetype \
 		--with-freetype-libdir=${PREFIX}/lib
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (need to replace varargs.h with stdarg.h)"
+.endif
+
 pre-patch:
 	@${SED} -e "s;%%LOCALBASE%%;${LOCALBASE};g" -e "s;%%X11BASE%%;${X11BASE};g" ${DISTDIR}/zh-vfontcap.in > ${WRKSRC}/vfontcap
 
@@ -49,4 +55,4 @@ pre-install:
 post-install:
 	${MV} ${PREFIX}/share/VFlib/${VFLIB_VERSION}/VF.h ${PREFIX}/include
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
