@@ -26,6 +26,7 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 WRKSRC=		${WRKDIR}/x3270-3.1.1
 MAN1=		x3270.1 x3270if.1 x3270-script.1 ibm_hosts.1
 MANCOMPRESSED=	yes
+USE_REINPLACE=	yes
 
 pre-install:
 .if !exists(${X11BASE}/lib/X11/fonts/local)
@@ -35,5 +36,15 @@ pre-install:
 	@${ECHO} "in /etc/XF86Config."
 	@${ECHO} "*********************************************************"
 .endif
+
+#
+# This patch is to make sure that mkversion.sh can be ran on FreeBSD 4-STABLE
+# which will get $(CLIENTENVSETUP) in its CC macro.
+#
+post-configure:
+	${REINPLACE_CMD} \
+	    -e 's,sh \./mkversion\.sh $$(CC),$$(CLIENTENVSETUP) sh ./mkversion.sh %%CC%%,' \
+	    -e 's,%%CC%%,${CC},' \
+	    ${WRKSRC}/Makefile
 
 .include <bsd.port.post.mk>
