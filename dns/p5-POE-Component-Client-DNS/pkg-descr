@@ -3,6 +3,3 @@ It lets other tasks to run while something is waiting for a nameserver
 to respond, and it lets several DNS queries run in parallel.
 
 WWW: http://search.cpan.org/dist/POE-Component-Client-DNS/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
