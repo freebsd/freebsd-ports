@@ -1,1 +1,1 @@
-very simple TCP proxy server + telnet,ftp,finger client wrappers
+TCP proxy server with telnet, ftp, finger client wrappers
