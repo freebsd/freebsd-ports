@@ -3,10 +3,8 @@
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id: Makefile,v 1.1.1.1 1997/01/09 09:07:30 asami Exp $
+# $Id: Makefile,v 1.2 1997/02/16 15:08:19 andreas Exp $
 #
-
-PREFIX=/local/lesstif
 
 DISTNAME=	lesstif-0.76
 CATEGORIES=	x11
@@ -45,7 +43,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/clients/mwm/alt.map ${PREFIX}/lib/X11/mwm
 	${INSTALL_DATA} ${WRKSRC}/clients/mwm/Mwm \
 		${PREFIX}/lib/X11/app-defaults/Mwm
-	/usr/bin/strip ${PREFIX}/lib/libXm.so.0.76 ${PREFIX}/lib/libMrm.so.0.76
+	/usr/bin/strip ${PREFIX}/lib/libXm.so.0.0 ${PREFIX}/lib/libMrm.so.0.0
 	/sbin/ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
