@@ -4,29 +4,22 @@
 #
 # $FreeBSD$
 #
-POSTGRESQL_PORT?=	databases/postgresql7
 
-PORTNAME=	postgresql
-PORTVERSION!=	cd ${.CURDIR}/../../${POSTGRESQL_PORT} && ${MAKE} -V PORTVERSION
-PORTREVISION?=	1
+PORTREVISION=	0
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_PGSQL}
-MASTER_SITE_SUBDIR!=	cd ${.CURDIR}/../../${POSTGRESQL_PORT} && ${MAKE} -V MASTER_SITE_SUBDIR
 PKGNAMESUFFIX=	-contrib
-DISTFILES!=	cd ${.CURDIR}/../../${POSTGRESQL_PORT} && ${MAKE} -V DISTFILES
-DIST_SUBDIR=	postgresql
 
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	The contrib utilities from the PostgreSQL distribution
 
 LIB_DEPENDS=	pq:${PORTSDIR}/${POSTGRESQL_PORT}
 
-USE_BISON=	YES
-INSTALLS_SHLIB=	yes
-MD5_FILE=	${.CURDIR}/../../${POSTGRESQL_PORT}/distinfo
+POSTGRESQL_PORT?=	databases/postgresql7
+POSTGRESQL_SUBPORT=YES
+.include <${.CURDIR}/../../${POSTGRESQL_PORT}/Makefile>
 
-USE_GMAKE=	YES
-GNU_CONFIGURE=	YES
+INSTALLS_SHLIB=	yes
+USE_BISON=	yes
 
 CONFIGURE_ARGS=	--with-libraries=${LOCALBASE}/lib \
 		--with-includes=${LOCALBASE}/include \
@@ -36,6 +29,7 @@ MAKE_ARGS=	-C contrib
 pre-build:
 	cd ${WRKSRC}/src/backend ;\
 	${GMAKE} ../../src/include/parser/parse.h ../../src/include/utils/fmgroids.h
+	cd ${WRKSRC}/src/port; ${GMAKE}
 
 post-install:
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/contrib/ipc_check/ipc_check.pl ${PREFIX}/bin/ipc_check ;\

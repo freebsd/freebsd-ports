@@ -11,7 +11,7 @@ backupwarning() {
   =========== BACKUP YOUR DATA! =============
   As always, backup your data before
   upgrading. If the upgrade leads to a higher
-  minor revision (e.g. 7.2.x -> 7.3), a dump
+  minor revision (e.g. 7.3.x -> 7.4), a dump
   and restore of all databases is
   required. This is *NOT* done by the port!
 

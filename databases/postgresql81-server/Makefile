@@ -5,9 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	postgresql
-PORTVERSION?=	7.3.4
-PORTREVISION=	1
+PORTNAME=	postgresql
+PORTVERSION?=	7.4
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -20,6 +20,7 @@ COMMENT?=	The most advanced open-source database available anywhere
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
 
+USE_BZIP2=	YES
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 
@@ -36,6 +37,10 @@ CONFIGURE_ARGS=	--with-libraries=${LOCALBASE}/lib \
 		--with-includes=${LOCALBASE}/include
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
+.if defined(WITH_PAM)
+CONFIGURE_ARGS+=	--with-pam
+.endif
+
 .if !defined(WITHOUT_GNUGETOPT)
 USE_GETOPT_LONG=yes
 .endif
@@ -50,7 +55,7 @@ PLIST_SUB+=	GETTEXT="@comment "
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+= -O3 -funroll-loops
+CFLAGS+=	-O3 -funroll-loops
 .endif
 
 .if defined(WITH_DEBUG)
@@ -62,18 +67,20 @@ INSTALL_TARGET=	install-strip
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+= "--with-openssl=${OPENSSLBASE}"
+CONFIGURE_ARGS+=	"--with-openssl=${OPENSSLBASE}"
 .endif
 
 .if defined(WITHOUT_SERVER)
 PLIST_SUB+=	SERVER="@comment "
 PKGNAMESUFFIX=	-client
 PKGMSG=		""
+CONFLICTS=	postgresql-7*
 .else
 PKGMESSAGE=	${FILESDIR}/pkg-message.server
 PKGMSG=		${PKGMESSAGE}
+CONFLICTS=	postgresql-7*client
 PLIST_SUB+=	SERVER=""
-INSTALL_TARGET+= install-all-headers
+INSTALL_TARGET+=	install-all-headers
 MAKEFILE=	GNUmakefile
 .endif
 
@@ -92,7 +99,7 @@ WITH_KRB5=	yes
 .if defined(WITH_KRB5)
 CONFIGURE_ARGS+=	--with-krb5="`${KRB5CONF} --prefix krb5`"
 LDFLAGS+=	`${KRB5CONF} --libs krb5`
-CONFIGURE_ENV=  LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 .endif
 
 .if defined(WITH_TESTS)
@@ -110,7 +117,10 @@ MAN1=		clusterdb.1 createdb.1 createlang.1 createuser.1 dropdb.1 \
 		pg_resetxlog.1 pg_restore.1 pgtclsh.1 pgtksh.1 postgres.1 \
 		postmaster.1 psql.1 vacuumdb.1
 
-MAN7=		abort.7 alter_database.7 alter_group.7 alter_table.7 \
+MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 \
+		alter_database.7 alter_domain.7 alter_function.7 \
+		alter_group.7 alter_language.7 alter_operator_class.7 \
+		alter_schema.7 alter_sequence.7 alter_table.7 \
 		alter_trigger.7 alter_user.7 analyze.7 begin.7 checkpoint.7 \
 		close.7 cluster.7 comment.7 commit.7 copy.7 create_aggregate.7 \
 		create_cast.7 create_constraint_trigger.7 create_conversion.7 \
@@ -142,9 +152,10 @@ pre-everything::
 	@${ECHO} "	WITHOUT_GETTEXT		Skips building with support for"
 	@${ECHO} "				internationalized error messages"
 	@${ECHO} "	WITHOUT_SERVER		Don't install the server,"
-	@${ECHO} "                              only install binaries, headers and libs"
+	@${ECHO} "				only install binaries, headers and libs"
 	@${ECHO} "				for PostgreSQL clients"
 	@${ECHO} "	WITHOUT_SSL		Builds without OpenSSL support"
+	@${ECHO} "	WITH_PAM		Builds with PAM support"
 	@${ECHO} "	WITH_MIT_KRB5		Builds with MIT's kerberos support"
 	@${ECHO} "	WITH_HEIMDAL_KRB5	Builds with Heimdal's kerberos support"
 	@${ECHO} "	WITH_OPTIMIZED_CFLAGS	Builds with compiler optimizations (-O3)"
