@@ -3,12 +3,12 @@
 # Date created:		5 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.10 1997/09/14 21:34:36 max Exp $
+# $Id: Makefile,v 1.11 1997/12/25 22:29:32 asami Exp $
 #
 
 DISTNAME=	gawk-2.15.6
 PKGNAME=	ja-gawk-2.15.6
-CATEGORIES=	japanese
+CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	ports@FreeBSD.ORG
