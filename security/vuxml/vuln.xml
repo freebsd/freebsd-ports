@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="58fc2752-5f74-11d9-a9e7-0001020eed82">
+    <topic>pcal -- buffer overflow vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>pcal</name>
+	<range><lt>4.8.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Danny Lungstrom has found two buffer overflow
+	  vulnerabilities in pcal which can lead to execution of
+	  arbitrary code by making a user run pcal on a specially
+	  crafted calendar file.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1289</cvename>
+      <bid>12035</bid>
+      <bid>12036</bid>
+      <mlist msgid="20041215083219.56092.qmail@cr.yp.to">http://securesoftware.list.cr.yp.to/archive/0/46</mlist>
+    </references>
+    <dates>
+      <discovery>2004-12-15</discovery>
+      <entry>2005-01-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ca9ce879-5ebb-11d9-a01c-0050569f0001">
     <topic>exim -- two relatively minor security issues</topic>
     <affects>
