@@ -42,7 +42,7 @@ mkdir -p ${WRKDIRPREFIX}${CURDIR}
 while [ "$1" ]; do
 	case $1 in
 		\"FreeType\")
-			echo "LIB_DEPENDS+=		ttf.3:\${PORTSDIR}/print/freetype" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "LIB_DEPENDS+=	ttf.4:\${PORTSDIR}/print/freetype" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			echo "CONFIGURE_ARGS+=	--with-ttflib" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			FreeType=1
 			;;
@@ -63,7 +63,7 @@ while [ "$1" ]; do
 			JPEG=1
 			;;
 		\"GDBM\")
-			echo "BUILD_DEPENDS= ${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc 
+			echo "LIB_DEPENDS+=	gdbm.2:${PORTSDIR}/databases/gdbm" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc 
 			echo "CONFIGURE_ARGS+=	--with-gdbm=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			GDBM=1
 			;;
@@ -72,11 +72,7 @@ while [ "$1" ]; do
 			zlib=1
 			;;
 		\"MySQL\")
-			echo ".if !exists(\${PREFIX}/lib/mysql/libmysqlclient.a) || exists(\${PREFIX}/lib/mysql/libmysqlclient.so)" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo "LIB_DEPENDS+=		mysqlclient.5:\${PORTSDIR}/databases/mysql322" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo ".else" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/mysql/libmysqlclient.a:\${PORTSDIR}/databases/mysql321" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo ".endif" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "LIB_DEPENDS+=	mysqlclient.6:\${PORTSDIR}/databases/mysql322-client" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			echo "CONFIGURE_ARGS+=	--with-mysql=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			MySQL=1
 			;;
