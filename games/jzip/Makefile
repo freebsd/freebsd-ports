@@ -3,7 +3,7 @@
 # Date created:				7 May 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/08 02:38:34 mph Exp $
 #
 
 DISTNAME=		jzip201g
@@ -21,7 +21,14 @@ EXTRACT_BEFORE_ARGS=	-qq
 
 NO_WRKSUBDIR=		yes
 
+MAN1=			jzip.1
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jzip ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/jzip.1 ${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/jzip
+	${INSTALL_DATA} ${WRKSRC}/Jzip.doc ${PREFIX}/share/doc/jzip
+.endif
 
 .include <bsd.port.mk>

@@ -1,1 +1,4 @@
 bin/jzip
+man/man1/jzip.1.gz
+share/doc/jzip/Jzip.doc
+@dirrm share/doc/jzip
