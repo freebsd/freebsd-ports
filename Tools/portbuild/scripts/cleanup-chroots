@@ -5,6 +5,38 @@
 # in 24 hours (corresponding to port builds that have timed out or shut down uncleanly)
 # and prunes them to reclaim space.
 
+kill_procs()
+{
+  dir=$1
+
+  pids="XXX"
+  while [ ! -z "${pids}" ]; do
+    pids=$(fstat -f "$dir" | tail +2 | awk '{print $3}' | sort -u)
+    if [ ! -z "${pids}" ]; then
+      echo "Killing off pids in ${dir}"
+      ps -p $pids
+      kill -KILL ${pids} 2> /dev/null
+      sleep 2
+    fi
+  done
+}
+
+cleanup_mount() {
+  chroot=$1
+  mount=$2
+
+  if [ -d ${chroot}${mount} ]; then
+    mdir=$(fstat -f ${chroot}${mount} | head -2 | tail -1 | awk '{print $5}')
+    if [ "${mdir}" = "MOUNT" ]; then
+      umount ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!"
+    fi
+    if [ "${mdir}" = "${chroot}${mount}" ]; then
+      kill_procs ${chroot}${mount}
+      umount ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!"
+    fi
+  fi
+}
+
 pb=/var/portbuild
 arch=$(cat /etc/arch)
 
@@ -37,7 +69,9 @@ fi
 for i in ${old2}; do
 	mounts=$(mount | grep $i | awk '{print $3}')
 	if [ ! -z "${mounts}" ]; then
-		umount -f ${mounts}
+	  for j in ${mounts}; do
+	    umount ${j} || cleanup_mount ${j}
+	  done
 	fi
 done
 
