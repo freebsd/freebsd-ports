@@ -27,10 +27,4 @@ CONFIGURE_ARGS+=	--datadir=${DATADIR}
 
 WRKSRC=		${WRKDIR}/postgresql_autodoc
 
-# post-patch:
-#	@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL},g" ${WRKSRC}/postgresql_autodoc.pl
-
-# do-install:
-#	@${INSTALL_SCRIPT} ${WRKSRC}/postgresql_autodoc.pl ${PREFIX}/bin/postgresql_autodoc
-
 .include <bsd.port.mk>
