@@ -1,25 +1,24 @@
-# New ports collection makefile for:    STk
-# Date created:         17 Sep 96 
-# Whom:                 jmacd@cs.berkeley.edu
+# New ports collection makefile for:	STk
+# Date created:		17 Sep 96 
+# Whom:			jmacd@cs.berkeley.edu
 #
 # $FreeBSD$
 #
 
 PORTNAME=	STk
-PORTVERSION=	3.1.1
+PORTVERSION=	4.0.1
 CATEGORIES=	lang
-MASTER_SITES=	ftp://kaolin.unice.fr/pub/
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		ftp://kaolin.unice.fr/pub/STk/
+MASTER_SITE_SUBDIR=	devel/lang/lisp
 
-MAINTAINER=	jmacd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
-PATCH_STRIP=	-p1
 GNU_CONFIGURE=	yes
-MAKE_FLAGS=	"prefix=${PREFIX}" -f
-STK_ARCH!=	echo "$$(uname)-$$(uname -r)-$$(uname -m)"
-PLIST_SUB=	STK_VERSION=3.1.1 STK_ARCH=${STK_ARCH}
 
-post-install:
-	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install.man)
+PLIST_SUB=	STK_VERSION=${PORTVERSION} STK_ARCH=${STK_ARCH}
+
+STK_ARCH!=	${ECHO} "$$(uname)-$$(uname -r)-$$(uname -m)"
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- configure.orig	Mon Sep 27 00:02:14 1999
++++ configure	Wed Mar 15 23:44:50 2000
+@@ -578,7 +578,7 @@
+ 	  esac;;
+   FreeBSD*)
+  	  case $machine in
+- 	    i*86) machine=ix86;;
++ 	    i*86) machine=i386;;
+  	  esac;;
+   SunOS*)
+ 	  case $version in
