@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vte
-PORTVERSION=	0.10.8
+PORTVERSION=	0.10.10
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
@@ -27,6 +27,7 @@ USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-python
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 post-patch:
