@@ -31,6 +31,7 @@ share/locale/nl/LC_MESSAGES/gthumb.mo
 share/locale/pt_BR/LC_MESSAGES/gthumb.mo
 share/locale/ru/LC_MESSAGES/gthumb.mo
 share/locale/sv/LC_MESSAGES/gthumb.mo
+@exec mkdir -p %D/share/gnome/help/gthumb/C/images 2>/dev/null || true
 @dirrm share/gnome/help/gthumb/C/images
 @dirrm share/gnome/help/gthumb/C
 @dirrm share/gnome/help/gthumb
