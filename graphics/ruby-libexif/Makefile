@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libexif
-PORTVERSION=	0.1
+PORTVERSION=	0.1.1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://tam.0xfa.com/ruby-libexif/pkg/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,11 +21,10 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDTOOL=	yes
 
-WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 INSTALL_TARGET=	site-install
 
-DOCS_EN=	README	exif.rd.en	exif.en.html
-DOCS_JA=		exif.rd.ja	exif.ja.html
+DOCS_EN=	ChangeLog	README	exif.rd.en	exif.en.html
+DOCS_JA=				exif.rd.ja	exif.ja.html
 
 .if !defined(NOPORTDOCS)
 post-build:
