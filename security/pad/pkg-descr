@@ -1,14 +1,10 @@
-from the README:
-
-This is a small command-line utility to turn one file into two, each
-indistinguishable from noise, and put them back together into
-the original.
-
-from the maintainer:
-
-Note that the resulting files are the same size as the original.
+This is a small command-line utility for encryption and decryption
+using the principle of one-time pads (OTPs).  One or more data files
+given to pad are XORd with each other and with RNG output, resulting
+in two or more output files.  The output files are indistinguishable
+from random noise, except that when the pad utility is used to XOR
+them together again, the original data files may be recovered.
 
 WWW:  http://www.lammah.com/pad/
 
-Trevor Johnson
-trevor@jpj.net
+Jason Harris <jharris@widomaker.com>
