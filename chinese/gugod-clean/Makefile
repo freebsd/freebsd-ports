@@ -4,14 +4,14 @@
 # $FreeBSD$
 
 PORTNAME=	gugod-clean
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	ftp://gugod.org/pub/X/ \
 		ftp://freebsd.sinica.edu.tw/pub/clive/
 
 MAINTAINER=	gugod@gugod.org
 
-FONTFILES=	gugod16.bdf gugod18.bdf gugod20.bdf
+FONTFILES=	gugod16.bdf gugod18.bdf gugod20.bdf gugod22.bdf
 USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}
