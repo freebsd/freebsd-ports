@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomeuserdocs2
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	2.0.0/sources/gnome2-user-docs
+MASTER_SITE_SUBDIR=	2.0.2/sources/gnome2-user-docs
 DISTNAME=	gnome2-user-docs-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -22,14 +22,11 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
-		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
-		 s|[(]datadir[)]/locale|(prefix)/share/locale|g'
 
 .include <bsd.port.mk>

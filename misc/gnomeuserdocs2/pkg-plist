@@ -56,6 +56,7 @@ share/gnome/help/user-guide/C/figures/gedit2_window.png
 share/gnome/help/user-guide/C/figures/gedit_pref2_dialog.png
 share/gnome/help/user-guide/C/figures/gedit_pref_dialog.png
 share/gnome/help/user-guide/C/figures/gedit_window.png
+share/gnome/help/user-guide/C/figures/gnome-logo.png
 share/gnome/help/user-guide/C/figures/gnome_panel.png
 share/gnome/help/user-guide/C/figures/gnometerminal_icon.png
 share/gnome/help/user-guide/C/figures/help_icon.png
@@ -123,6 +124,10 @@ share/gnome/help/user-guide/C/figures/open_main_menu.png
 share/gnome/help/user-guide/C/figures/openwindows_menu.png
 share/gnome/help/user-guide/C/figures/panel_object_popup_menu.png
 share/gnome/help/user-guide/C/figures/panelprop_dialog.png
+share/gnome/help/user-guide/C/figures/rmedia_format_dialog.png
+share/gnome/help/user-guide/C/figures/rmedia_properties1_dialog.png
+share/gnome/help/user-guide/C/figures/rmedia_protection_dialog.png
+share/gnome/help/user-guide/C/figures/rmedia_slice_dialog.png
 share/gnome/help/user-guide/C/figures/runprogram2_dialog.png
 share/gnome/help/user-guide/C/figures/runprogram_dialog.png
 share/gnome/help/user-guide/C/figures/runprogram_icon.png
