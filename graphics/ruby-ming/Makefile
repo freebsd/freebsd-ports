@@ -39,6 +39,11 @@ do-extract:
 post-extract:
 	${LN} -sf ../ming.i ${WRKSRC}/
 
+pre-configure:
+	cd ${WRKSRC}; \
+	${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} depend SWIG="${SWIG}" ming_wrap.c; \
+	${RM} -f depend
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/ming.rb ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)
