@@ -47,6 +47,7 @@ share/bzflag/data/ricochet.wav
 share/bzflag/data/rlaser.rgb
 share/bzflag/data/roof.rgb
 share/bzflag/data/shock.wav
+share/bzflag/data/teamgrab.wav
 share/bzflag/data/teleport.wav
 share/bzflag/data/timesbi.rgb
 share/bzflag/data/timesbr.rgb
@@ -54,3 +55,5 @@ share/bzflag/data/title.rgb
 share/bzflag/data/wall.rgb
 share/bzflag/data/ybolt.rgb
 share/bzflag/data/ylaser.rgb
+@dirrm share/bzflag/data
+@dirrm share/bzflag

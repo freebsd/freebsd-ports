@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	bzflag
-PORTVERSION=	1.7e.6
+PORTVERSION=	1.7g.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	bzflag
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/e./e/}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -36,9 +36,9 @@ post-build:
 	@(cd ${WRKSRC}/man && ${MAKE} targets)
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin/
-	@${INSTALL_MAN}	${WRKSRC}/man/*.6 ${PREFIX}/man/man6/
-	@${MKDIR} ${PREFIX}/share/bzflag/data
-	@${INSTALL_DATA} ${WRKSRC}/data/* ${PREFIX}/share/bzflag/data/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/man/*.6 ${MANPREFIX}/man/man6/
+	@${MKDIR} ${DATADIR}/data
+	${INSTALL_DATA} ${WRKSRC}/data/* ${DATADIR}/data/
 
 .include <bsd.port.mk>
