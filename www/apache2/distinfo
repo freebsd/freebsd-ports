@@ -6,3 +6,5 @@ MD5 (apache2/httpd-2.0.48-buildconf.patch) = 6c87bda01550a99402c3ea0bd333c5e0
 SIZE (apache2/httpd-2.0.48-buildconf.patch) = 2407
 MD5 (apache2/httpd-2.0.48-ldap-fix.patch) = cfb30edd10c43e51953aecc0da40b104
 SIZE (apache2/httpd-2.0.48-ldap-fix.patch) = 35209
+MD5 (apache2/httpd-2.0.48-windowsupdate.patch) = a96fe94b28094483a112705d0428e6f5
+SIZE (apache2/httpd-2.0.48-windowsupdate.patch) = 464
