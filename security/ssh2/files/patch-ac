@@ -1,11 +1,10 @@
---- lib/sshcrypt/Makefile.in.old	Tue Nov 24 18:24:57 1998
-+++ lib/sshcrypt/Makefile.in	Tue Nov 24 18:25:21 1998
-@@ -173,7 +173,7 @@
- INCLUDES = -I../.. -I. -I$(srcdir) \
+--- lib/sshcrypt/Makefile.in.orig	Fri Jan 29 14:30:22 1999
++++ lib/sshcrypt/Makefile.in	Fri Feb  5 08:42:04 1999
+@@ -176,7 +176,6 @@
  	-I$(top_builddir) -I$(top_srcdir) \
  	-I../sshutil -I$(srcdir)/../sshutil \
--	-I../sshmath -I$(srcdir)/../sshmath -I../zlib -I$(srcdir)/../zlib \
-+	-I../sshmath -I$(srcdir)/../sshmath \
+ 	-I../sshmath -I$(srcdir)/../sshmath \
+-	-I../zlib -I$(srcdir)/../zlib \
  	-I../sshscard -I$(srcdir)/../sshscard \
  	-I../trq -I$(srcdir)/../trq
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
