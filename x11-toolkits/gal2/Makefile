@@ -7,6 +7,7 @@
 
 PORTNAME=	gal
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES?=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gal
@@ -14,12 +15,12 @@ MASTER_SITE_SUBDIR=	unstable/sources/gal
 MAINTAINER?=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode \
-		giconv.2:${PORTSDIR}/converters/libiconv
+		glade.4:${PORTSDIR}/devel/libglade \
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMECTRL=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static --with-libiconv

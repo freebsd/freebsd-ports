@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomecore
 PORTVERSION=	1.4.0.4
+PORTREVISION=	1
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-core
@@ -14,7 +15,7 @@ DISTNAME=	gnome-core-${PORTVERSION}
 
 MAINTAINER?=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
+LIB_DEPENDS=	gtkhtml.10:${PORTSDIR}/www/gtkhtml
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio
 
 USE_X_PREFIX=	yes
@@ -22,7 +23,7 @@ USE_GMAKE=	yes
 USE_GNOMECTRL=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--with-kde-datadir=${LOCALBASE}/share
+CONFIGURE_ARGS=	--with-kde-datadir=${LOCALBASE}/share --with-gtkhtml
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
