@@ -21,5 +21,6 @@ lib/netscape/nls/wr_WR.ct
 lib/netscape/nls/zh_CN.ugb
 lib/netscape/nls/zh_TW.big5
 @dirrm lib/netscape/nls
-share/doc/ja-netscape-3.04/setup.doc
-@dirrm share/doc/ja-netscape-3.04
+share/doc/ja/netscape-3.04/setup.doc
+@dirrm share/doc/ja/netscape-3.04
+@unexec rmdir %B 2>/dev/null || true
