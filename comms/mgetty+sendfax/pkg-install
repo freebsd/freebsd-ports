@@ -103,6 +103,7 @@ open (F, ">/etc/ttys");
 print F @ttys;
 close (F);
 
+print STDERR "\n\n*** WARNING the directory /var/spool/fax/outgoing/ is world writable.\n*** This is potentially insecure\n";
 
 exit 0;
 
