@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.14 1998/11/20 23:23:00 billf Exp $
+# $Id: Makefile,v 1.15 1999/01/07 12:05:24 asami Exp $
 #
 
     SUBDIR += aish
@@ -6,6 +6,7 @@
     SUBDIR += ish
     SUBDIR += kdesupport
     SUBDIR += kdesupport11
+    SUBDIR += libutf-8
     SUBDIR += mimepp
     SUBDIR += mpack
     SUBDIR += p5-Convert-UU
