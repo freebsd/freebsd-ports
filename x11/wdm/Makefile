@@ -13,13 +13,11 @@ MASTER_SITES=	http://voins.program.ru/wdm/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	tg
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DAEMONPICS}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	wdm
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WINGs Display Manager; an xdm replacement
-
-BROKEN=		Broken pkg-plist
 
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 
