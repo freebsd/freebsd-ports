@@ -71,6 +71,7 @@
     SUBDIR += digest
     SUBDIR += dirmngr
     SUBDIR += dissembler
+    SUBDIR += dmitry
     SUBDIR += donkey
     SUBDIR += doorman
     SUBDIR += doscan
