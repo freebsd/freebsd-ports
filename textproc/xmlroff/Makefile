@@ -7,6 +7,7 @@
 
 PORTNAME=	xmlroff
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +19,7 @@ LIB_DEPENDS=	pangoxsl-1.0.600:${PORTSDIR}/x11-toolkits/pangoxsl
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget libgnomeprint
+USE_GNOME=	gnomehack gnometarget libgnomeprint libxslt
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--disable-gtk-doc \
