@@ -9,11 +9,12 @@
 #
 
 PORTNAME=	cdialog
-PORTVERSION=	0.9b-20020814
-PORTREVISION=	2
+PORTVERSION=	0.9b.20030130
+PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://dickey.his.com/dialog/
-DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION}
+MASTER_SITES=	ftp://invisible-island.net/dialog/
+DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION:S|.200|-200|}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	alane@freebsd.org
@@ -22,15 +23,15 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 
-MAN1=		cdialog.1
-
-BINDIR=		${PREFIX}/bin
-MAN1DIR=	${MANPREFIX}/man/man1
+BINDIR?=	${PREFIX}/bin
+MAN1DIR?=	${MANPREFIX}/man/man1
 
 do-install:
 	cd ${WRKSRC};\
 	${INSTALL_PROGRAM} dialog ${BINDIR}/cdialog;\
 	${INSTALL_DATA} dialog.1 ${MAN1DIR}/cdialog.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${FILESDIR}/manpages.mk"
+.include <bsd.port.post.mk>
 #EOF
