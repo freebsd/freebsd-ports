@@ -1,308 +1,294 @@
-diff -cr ../complt.c ./complt.c
-*** ../complt.c	Mon Jun 14 09:31:36 1993
---- ./complt.c	Wed Apr 17 04:12:07 1996
-***************
-*** 10,19 ****
---- 10,26 ----
-  #include    "complt.h"
-  #define    LIST_COL    35
-  
-+ #ifndef __FreeBSD__
-  BUFFER    *bp = NULL;
-  BUFFER    *prev_bp = NULL;
-  WINDOW    *prev_wp = NULL;
-  WINDOW    prev_window;
-+ #else
-+ static BUFFER    *bp = NULL;
-+ static BUFFER    *prev_bp = NULL;
-+ static WINDOW    *prev_wp = NULL;
-+ static WINDOW    prev_window;
-+ #endif /* __FreeBSD__ */
-  
-  /*
-   * do some completion.
-***************
-*** 24,32 ****
---- 31,45 ----
-      int    flags;
-  {
-      int    res;
-+ #ifndef __FreeBSD__
-      int    complete_funcname ();
-      int    complete_buffername ();
-      int    complete_filename ();
-+ #else
-+     static int    complete_funcname ();
-+     static int    complete_buffername ();
-+     static int    complete_filename ();
-+ #endif /* __FreeBSD__ */
-  
-      switch (flags & (EFFUNC | EFBUF | EFFILE))
-        {
-***************
-*** 256,264 ****
---- 269,283 ----
-      int    cur_row;
-      int    cur_col;
-      WINDOW    *wp;
-+ #ifndef __FreeBSD__
-      int    complete_list_funcnames ();
-      int    complete_list_buffernames ();
-      int    complete_list_filenames ();
-+ #else
-+     static int    complete_list_funcnames ();
-+     static int    complete_list_buffernames ();
-+     static int    complete_list_filenames ();
-+ #endif /* __FreeBSD__ */
-  
-      if ((bp = bfind ("*Completions*", TRUE)) == NULL)
-        return (FALSE);
-diff -cr ../echo.c ./echo.c
-*** ../echo.c	Mon Jun 14 09:31:38 1993
---- ./echo.c	Wed Apr 17 04:14:53 1996
-***************
-*** 192,199 ****
-  {
-      int    cpos;
-      int    c;
-!      int    veread_del_char ();
-!      int    veread_complete ();
-  
-  #ifdef	ADDFUNC	/* 91.01.16  by S.Yoshida */
-      /* If an extra argument exists, use it.			*/
---- 192,204 ----
-  {
-      int    cpos;
-      int    c;
-! #ifndef __FreeBSD__
-!     int  veread_del_char ();
-!     int  veread_complete ();
-! #else
-!     static int	veread_del_char(char *, int);
-!     static int	veread_complete(char *, int, int, int);
-! #endif /* __FreeBSD__ */
-  
-  #ifdef	ADDFUNC	/* 91.01.16  by S.Yoshida */
-      /* If an extra argument exists, use it.			*/
-diff -cr ../extend.c ./extend.c
-*** ../extend.c	Mon Jun 14 09:31:39 1993
---- ./extend.c	Wed Apr 17 04:07:48 1996
-***************
-*** 96,102 ****
---- 96,106 ----
-  	KEYMAP	*mp;
-  	PF	*pfp;
-  	MAP_ELEMENT *mep;
-+ #ifndef __FreeBSD__
-  	KEYMAP	*realocmap();	/* 90.03.23  delete "static" by A.Shirahashi */
-+ #else
-+ 	static KEYMAP	*realocmap(KEYMAP *);
-+ #endif /* __FreeBSD__ */
-  
-  	if(ele >= &curmap->map_element[curmap->map_num] || c < ele->k_base) {
-  	    if(ele > &curmap->map_element[0] && (funct!=prefix ||
-***************
-*** 247,253 ****
---- 251,261 ----
-  {
-      register KEYMAP *mp;
-      register int i;
-+ #ifndef __FreeBSD__
-      VOID fixmap();	/* 90.03.23  delete "static" by A.Shirahashi */
-+ #else
-+     static VOID fixmap(KEYMAP *,KEYMAP *,KEYMAP *);
-+ #endif /* __FreeBSD__ */
-      extern int nmaps;
-  
-      if((mp = (KEYMAP *)malloc((unsigned)(sizeof(KEYMAP)+
-***************
-*** 607,614 ****
---- 615,627 ----
-  #endif
-  	PF	name_function();
-  	LINE	*lalloc();
-+ #ifndef __FreeBSD__
-  	char	*skipwhite(), *parsetoken();	/* 90.03.23  delete "static" */
-  						/*           by A.Shirahashi */
-+ #else
-+ 	static char *skipwhite(char *);
-+ 	static char *parsetoken(char *);
-+ #endif /* __FreeBSD__ */
-  
-  	if(macrodef || inmacro) {
-  		ewprintf("Not now!");
-diff -cr ../sys/bsd/fileio.c ./sys/bsd/fileio.c
-*** ../sys/bsd/fileio.c	Wed Feb 13 13:05:02 1991
---- ./sys/bsd/fileio.c	Wed Apr 17 04:26:24 1996
-***************
-*** 6,11 ****
---- 6,15 ----
-  #include	"config.h"	/* 90.12.20  by S.Yoshida */
-  #include	"def.h"
-  
-+ #ifdef __FreeBSD__
-+ #include	<string.h>
-+ #endif /* __FreeBSD__ */
-+ 
-  static	FILE	*ffp;
-  extern	char	*getenv(), *strncpy();
-  char	*adjustname();
-***************
-*** 384,390 ****
---- 388,398 ----
-  {
-      int pid;
-      char *eargv[3];
-+ #ifndef __FreeBSD__
-      union wait status;
-+ #else
-+     int status;
-+ #endif /* __FreeBSD__ */
-  
-  #ifdef	BUGFIX	/* 91.01.11  by Y.Kaneko */
-      if((pid = vfork()) == 0) {
-***************
-*** 403,409 ****
---- 411,421 ----
-      if(pid == -1)	return	-1;
-  #endif	/* BUGFIX */
-      while(wait(&status) != pid) {}
-+ #ifndef __FreeBSD__
-      return status.w_status == 0;
-+ #else
-+     return status == 0;
-+ #endif /* __FreeBSD__ */
-  }
-  
-  BUFFER *dired_(dirname)
-***************
-*** 461,472 ****
---- 473,506 ----
-  register char *fn;
-  {
-      register char *cp;
-+ #ifndef __FreeBSD__
-  
-      if(llength(lp) <= 47) return ABORT;
-      (VOID) strcpy(fn, curbp->b_fname);
-      cp = fn + strlen(fn);
-      bcopy(&lp->l_text[47], cp, llength(lp) - 47);
-      cp[llength(lp) - 47] = '\0';
-+ #else
-+     register int sepidx, duplen;
-+ 
-+     if(llength(lp) < 47) return ABORT;
-+     cp = strrchr(lp->l_text, ' ');
-+     sepidx = (cp - lp->l_text) + 1;
-+ 
-+     if ( lgetc(lp, 2) == 'l' && strncmp(cp - 3, " -> " ,4) == 0 ) {
-+ 	duplen = sepidx-4;
-+ 	strncpy(fn, lp->l_text, duplen);
-+ 	fn[duplen] = '\0';
-+ 	sepidx = (strrchr(fn, ' ') - fn) + 1;
-+ 	duplen = duplen - sepidx;
-+     }
-+     else duplen = llength(lp) - sepidx;
-+ 
-+     (VOID) strcpy(fn, curbp->b_fname);
-+     cp = fn + strlen(fn);
-+     bcopy(&lp->l_text[sepidx], cp, duplen);
-+     cp[duplen] = '\0';
-+ #endif
-      return lgetc(lp, 2) == 'd';
-  }
-  #endif
-diff -cr ../sys/bsd/spawn.c ./sys/bsd/spawn.c
-*** ../sys/bsd/spawn.c	Wed Feb 13 13:01:41 1991
---- ./sys/bsd/spawn.c	Mon Apr 15 21:59:50 1996
-***************
-*** 39,51 ****
---- 39,65 ----
-   */
-  /*ARGSUSED*/
-  spawncli(f, n) {
-+ #ifndef __FreeBSD__
-  	register int	pid, wpid, (*oqsig)(), (*oisig)(), omask;
-+ #else
-+ 	register int	omask;
-+ 	register pid_t	pid, wpid;
-+ 	register sig_t	oqsig, oisig;
-+ #endif /* __FreeBSD__ */
-  #ifdef	ADDFUNC		/* 90.02.14  by S.Yoshida */
-  #ifdef	SIGWINCH	/* 90.02.14  by S.Yoshida */
-+ #ifndef __FreeBSD__
-  	register int	(*owsig)();
-+ #else
-+ 	register sig_t	owsig;
-+ #endif /* __FreeBSD__ */
-  #endif	/* SIGWINCH */
-  #endif	/* ADDFUNC */
-+ #ifndef __FreeBSD__
-  	union wait	status;
-+ #else
-+ 	int	status;
-+ #endif /* __FreeBSD__ */
-  
-  	if (shellp == NULL) {
-  		shellp = getenv("SHELL");
-***************
-*** 141,148 ****
---- 155,169 ----
-  	char *tmp;
-  	int ostdin, ostdout, ostderr, in, out, s;
-  	extern char *mktemp();
-+ #ifdef __FreeBSD__
-+ 	static char tmpfile[] = "/tmp/ngXXXXXX";
-+ #endif /* __FreeBSD__ */
-  
-+ #ifndef __FreeBSD__
-  	if ((tmp = mktemp("/tmp/ngXXXXXX")) == NULL)
-+ #else
-+ 	if ((tmp = mktemp(tmpfile)) == NULL)
-+ #endif /* __FreeBSD__ */
-  		return NULL;
-  	if ((in = open(input ? input : "/dev/null", 0)) < 0)
-  		return NULL;
-diff -cr ../sys/bsd/ttyio.c ./sys/bsd/ttyio.c
-*** ../sys/bsd/ttyio.c	Wed Feb 13 13:02:01 1991
---- ./sys/bsd/ttyio.c	Mon Apr 15 21:59:50 1996
-***************
-*** 32,38 ****
---- 32,42 ----
-  int	ncol;				/* Terminal size, columns.	*/
-  #ifdef	ADDFUNC		/* 90.02.14  by S.Yoshida */
-  #ifdef	SIGWINCH	/* 90.02.13  by S.Yoshida */
-+ #ifndef __FreeBSD__
-  int	ttwinch();
-+ #else
-+ void	ttwinch();
-+ #endif /* __FreeBSD__ */
-  #endif	/* SIGWINCH */
-  #endif	/* ADDFUNC */
-  
-***************
-*** 46,52 ****
---- 50,58 ----
-  ttopen() {
-  	register char *tv_stype;
-  	char *getenv(), *tgetstr(), tcbuf[1024], err_str[72];
-+ #ifndef __FreeBSD__
-  	char *sprintf();
-+ #endif /* __FreeBSD__ */
-  
-  /* do this the REAL way */
-  	if ((tv_stype = getenv("TERM")) == NULL)
-***************
-*** 256,262 ****
---- 262,272 ----
-  /*
-   * Signal handler when window size has changed.
-   */
-+ #ifndef __FreeBSD__
-  ttwinch()
-+ #else
-+ void ttwinch()
-+ #endif /* __FreeBSD__ */
-  {
-  	refresh(FFRAND, 0);			/* Very easy way... */
-  }
+diff -ur Ng-1.3L.orig/complt.c ./complt.c
+--- Ng-1.3L.orig/complt.c	Mon Jun 14 09:31:36 1993
++++ ./complt.c	Sun Mar  5 11:41:39 2000
+@@ -10,10 +10,17 @@
+ #include    "complt.h"
+ #define    LIST_COL    35
+ 
++#ifndef __FreeBSD__
+ BUFFER    *bp = NULL;
+ BUFFER    *prev_bp = NULL;
+ WINDOW    *prev_wp = NULL;
+ WINDOW    prev_window;
++#else
++static BUFFER    *bp = NULL;
++static BUFFER    *prev_bp = NULL;
++static WINDOW    *prev_wp = NULL;
++static WINDOW    prev_window;
++#endif /* __FreeBSD__ */
+ 
+ /*
+  * do some completion.
+@@ -24,9 +31,15 @@
+     int    flags;
+ {
+     int    res;
++#ifndef __FreeBSD__
+     int    complete_funcname ();
+     int    complete_buffername ();
+     int    complete_filename ();
++#else
++    static int    complete_funcname ();
++    static int    complete_buffername ();
++    static int    complete_filename ();
++#endif /* __FreeBSD__ */
+ 
+     switch (flags & (EFFUNC | EFBUF | EFFILE))
+       {
+@@ -256,9 +269,15 @@
+     int    cur_row;
+     int    cur_col;
+     WINDOW    *wp;
++#ifndef __FreeBSD__
+     int    complete_list_funcnames ();
+     int    complete_list_buffernames ();
+     int    complete_list_filenames ();
++#else
++    static int    complete_list_funcnames ();
++    static int    complete_list_buffernames ();
++    static int    complete_list_filenames ();
++#endif /* __FreeBSD__ */
+ 
+     if ((bp = bfind ("*Completions*", TRUE)) == NULL)
+       return (FALSE);
+diff -ur Ng-1.3L.orig/echo.c ./echo.c
+--- Ng-1.3L.orig/echo.c	Mon Jun 14 09:31:38 1993
++++ ./echo.c	Sun Mar  5 11:41:39 2000
+@@ -192,8 +192,13 @@
+ {
+     int    cpos;
+     int    c;
+-     int    veread_del_char ();
+-     int    veread_complete ();
++#ifndef __FreeBSD__
++    int  veread_del_char ();
++    int  veread_complete ();
++#else
++    static int	veread_del_char(char *, int);
++    static int	veread_complete(char *, int, int, int);
++#endif /* __FreeBSD__ */
+ 
+ #ifdef	ADDFUNC	/* 91.01.16  by S.Yoshida */
+     /* If an extra argument exists, use it.			*/
+diff -ur Ng-1.3L.orig/extend.c ./extend.c
+--- Ng-1.3L.orig/extend.c	Mon Jun 14 09:31:39 1993
++++ ./extend.c	Sun Mar  5 11:41:39 2000
+@@ -96,7 +96,11 @@
+ 	KEYMAP	*mp;
+ 	PF	*pfp;
+ 	MAP_ELEMENT *mep;
++#ifndef __FreeBSD__
+ 	KEYMAP	*realocmap();	/* 90.03.23  delete "static" by A.Shirahashi */
++#else
++	static KEYMAP	*realocmap(KEYMAP *);
++#endif /* __FreeBSD__ */
+ 
+ 	if(ele >= &curmap->map_element[curmap->map_num] || c < ele->k_base) {
+ 	    if(ele > &curmap->map_element[0] && (funct!=prefix ||
+@@ -247,7 +251,11 @@
+ {
+     register KEYMAP *mp;
+     register int i;
++#ifndef __FreeBSD__
+     VOID fixmap();	/* 90.03.23  delete "static" by A.Shirahashi */
++#else
++    static VOID fixmap(KEYMAP *,KEYMAP *,KEYMAP *);
++#endif /* __FreeBSD__ */
+     extern int nmaps;
+ 
+     if((mp = (KEYMAP *)malloc((unsigned)(sizeof(KEYMAP)+
+@@ -607,8 +615,13 @@
+ #endif
+ 	PF	name_function();
+ 	LINE	*lalloc();
++#ifndef __FreeBSD__
+ 	char	*skipwhite(), *parsetoken();	/* 90.03.23  delete "static" */
+ 						/*           by A.Shirahashi */
++#else
++	static char *skipwhite(char *);
++	static char *parsetoken(char *);
++#endif /* __FreeBSD__ */
+ 
+ 	if(macrodef || inmacro) {
+ 		ewprintf("Not now!");
+diff -ur Ng-1.3L.orig/kinit.h ./kinit.h
+--- Ng-1.3L.orig/kinit.h	Mon Jun 14 09:31:40 1993
++++ ./kinit.h	Sun Mar  5 11:42:20 2000
+@@ -32,14 +32,14 @@
+ 
+ /*	'@'	Select JIS-78 [ESC-$-@].	*/
+ /*	'B'	Select JIS-83 [ESC-$-B].	*/
+-#define	TO_KFIO		'@'		/* to-kanji-fileio		*/
+-#define	TO_KDISPLAY	'@'		/* to-kanji-display		*/
++#define	TO_KFIO		'B'		/* to-kanji-fileio		*/
++#define	TO_KDISPLAY	'B'		/* to-kanji-display		*/
+ 
+ /*	'B'	Select ASCII		     [ESC-(-B].	*/
+ /*	'J'	Select JIS-ROMAJI	     [ESC-(-J].	*/
+ /*	'H'	Illegal selection, but used. [ESC-(-H].	*/
+-#define	TO_AFIO		'J'		/* to-ascii-fileio		*/
+-#define	TO_ADISPLAY	'J'		/* to-ascii-display		*/
++#define	TO_AFIO		'B'		/* to-ascii-fileio		*/
++#define	TO_ADISPLAY	'B'		/* to-ascii-display		*/
+ 
+ #ifdef  HANKANA  /* 92.11.21  by S.Sasaki */
+ /*	'7'	Use SI/SO for KATAKANA	     [SI / SO]	*/
+diff -ur Ng-1.3L.orig/sys/bsd/fileio.c ./sys/bsd/fileio.c
+--- Ng-1.3L.orig/sys/bsd/fileio.c	Wed Feb 13 13:05:02 1991
++++ ./sys/bsd/fileio.c	Sun Mar  5 11:42:04 2000
+@@ -6,6 +6,10 @@
+ #include	"config.h"	/* 90.12.20  by S.Yoshida */
+ #include	"def.h"
+ 
++#ifdef __FreeBSD__
++#include	<string.h>
++#endif /* __FreeBSD__ */
++
+ static	FILE	*ffp;
+ extern	char	*getenv(), *strncpy();
+ char	*adjustname();
+@@ -384,7 +388,11 @@
+ {
+     int pid;
+     char *eargv[3];
++#ifndef __FreeBSD__
+     union wait status;
++#else
++    int status;
++#endif /* __FreeBSD__ */
+ 
+ #ifdef	BUGFIX	/* 91.01.11  by Y.Kaneko */
+     if((pid = vfork()) == 0) {
+@@ -403,7 +411,11 @@
+     if(pid == -1)	return	-1;
+ #endif	/* BUGFIX */
+     while(wait(&status) != pid) {}
++#ifndef __FreeBSD__
+     return status.w_status == 0;
++#else
++    return status == 0;
++#endif /* __FreeBSD__ */
+ }
+ 
+ BUFFER *dired_(dirname)
+@@ -461,12 +473,35 @@
+ register char *fn;
+ {
+     register char *cp;
++#ifndef __FreeBSD__
+ 
+     if(llength(lp) <= 47) return ABORT;
+     (VOID) strcpy(fn, curbp->b_fname);
+     cp = fn + strlen(fn);
+     bcopy(&lp->l_text[47], cp, llength(lp) - 47);
+     cp[llength(lp) - 47] = '\0';
++#else
++    register int sepidx, duplen;
++
++    if(llength(lp) < 47) return ABORT;
++    cp = &lp->l_text[llength(lp)];
++    while (*--cp != ' ') ;
++    sepidx = (cp - lp->l_text) + 1;
++
++    if ( lgetc(lp, 2) == 'l' && strncmp(cp - 3, " -> " ,4) == 0 ) {
++	duplen = sepidx-4;
++	strncpy(fn, lp->l_text, duplen);
++	fn[duplen] = '\0';
++	sepidx = (strrchr(fn, ' ') - fn) + 1;
++	duplen = duplen - sepidx;
++    }
++    else duplen = llength(lp) - sepidx;
++
++    (VOID) strcpy(fn, curbp->b_fname);
++    cp = fn + strlen(fn);
++    bcopy(&lp->l_text[sepidx], cp, duplen);
++    cp[duplen] = '\0';
++#endif
+     return lgetc(lp, 2) == 'd';
+ }
+ #endif
+diff -ur Ng-1.3L.orig/sys/bsd/spawn.c ./sys/bsd/spawn.c
+--- Ng-1.3L.orig/sys/bsd/spawn.c	Wed Feb 13 13:01:41 1991
++++ ./sys/bsd/spawn.c	Sun Mar  5 11:41:39 2000
+@@ -39,13 +39,27 @@
+  */
+ /*ARGSUSED*/
+ spawncli(f, n) {
++#ifndef __FreeBSD__
+ 	register int	pid, wpid, (*oqsig)(), (*oisig)(), omask;
++#else
++	register int	omask;
++	register pid_t	pid, wpid;
++	register sig_t	oqsig, oisig;
++#endif /* __FreeBSD__ */
+ #ifdef	ADDFUNC		/* 90.02.14  by S.Yoshida */
+ #ifdef	SIGWINCH	/* 90.02.14  by S.Yoshida */
++#ifndef __FreeBSD__
+ 	register int	(*owsig)();
++#else
++	register sig_t	owsig;
++#endif /* __FreeBSD__ */
+ #endif	/* SIGWINCH */
+ #endif	/* ADDFUNC */
++#ifndef __FreeBSD__
+ 	union wait	status;
++#else
++	int	status;
++#endif /* __FreeBSD__ */
+ 
+ 	if (shellp == NULL) {
+ 		shellp = getenv("SHELL");
+@@ -141,8 +155,15 @@
+ 	char *tmp;
+ 	int ostdin, ostdout, ostderr, in, out, s;
+ 	extern char *mktemp();
++#ifdef __FreeBSD__
++	static char tmpfile[] = "/tmp/ngXXXXXX";
++#endif /* __FreeBSD__ */
+ 
++#ifndef __FreeBSD__
+ 	if ((tmp = mktemp("/tmp/ngXXXXXX")) == NULL)
++#else
++	if ((tmp = mktemp(tmpfile)) == NULL)
++#endif /* __FreeBSD__ */
+ 		return NULL;
+ 	if ((in = open(input ? input : "/dev/null", 0)) < 0)
+ 		return NULL;
+diff -ur Ng-1.3L.orig/sys/bsd/ttyio.c ./sys/bsd/ttyio.c
+--- Ng-1.3L.orig/sys/bsd/ttyio.c	Wed Feb 13 13:02:01 1991
++++ ./sys/bsd/ttyio.c	Sun Mar  5 11:41:39 2000
+@@ -32,7 +32,11 @@
+ int	ncol;				/* Terminal size, columns.	*/
+ #ifdef	ADDFUNC		/* 90.02.14  by S.Yoshida */
+ #ifdef	SIGWINCH	/* 90.02.13  by S.Yoshida */
++#ifndef __FreeBSD__
+ int	ttwinch();
++#else
++void	ttwinch();
++#endif /* __FreeBSD__ */
+ #endif	/* SIGWINCH */
+ #endif	/* ADDFUNC */
+ 
+@@ -46,7 +50,9 @@
+ ttopen() {
+ 	register char *tv_stype;
+ 	char *getenv(), *tgetstr(), tcbuf[1024], err_str[72];
++#ifndef __FreeBSD__
+ 	char *sprintf();
++#endif /* __FreeBSD__ */
+ 
+ /* do this the REAL way */
+ 	if ((tv_stype = getenv("TERM")) == NULL)
+@@ -256,7 +262,11 @@
+ /*
+  * Signal handler when window size has changed.
+  */
++#ifndef __FreeBSD__
+ ttwinch()
++#else
++void ttwinch()
++#endif /* __FreeBSD__ */
+ {
+ 	refresh(FFRAND, 0);			/* Very easy way... */
+ }
+
