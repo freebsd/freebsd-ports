@@ -5308,6 +5308,7 @@ pybench		ports/benchmarks/pybench
 pybliographer	ports/misc/pybliographer
 pychecker	ports/devel/pychecker
 pyching		ports/games/pyching
+pycodec		ports/chinese/pycodec
 pyfind		ports/sysutils/pyfind
 pygist		ports/math/pygist
 pygmy		ports/mail/pygmy
