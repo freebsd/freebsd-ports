@@ -157,6 +157,7 @@ share/gnome/pixmaps/vnterm.xpm
 share/locale/ar/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/bs/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/da/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -199,18 +200,9 @@ share/locale/vi/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-desktop-2.0.mo
-@dirrm share/gnome/vfolders
 @dirrm share/gnome/help/lgpl/C/figures
-@dirrm share/gnome/help/lgpl/C
-@dirrm share/gnome/help/lgpl
 @dirrm share/gnome/help/gpl/C/figures
-@dirrm share/gnome/help/gpl/C
-@dirrm share/gnome/help/gpl
 @dirrm share/gnome/help/fdl/C/figures
-@dirrm share/gnome/help/fdl/C
-@dirrm share/gnome/help/fdl
-@dirrm share/gnome/help
-@dirrm share/gnome/gnome-about
 @dirrm include/gnome-desktop-2.0/libgnomeui
 @dirrm include/gnome-desktop-2.0/libgnome
 @dirrm include/gnome-desktop-2.0
