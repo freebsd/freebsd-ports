@@ -992,6 +992,7 @@ cvspadm		ports/devel/cvspadm
 cvsplot		ports/devel/cvsplot
 cvsps		ports/devel/cvsps
 cvsstat		ports/devel/cvsstat
+cvstrac		ports/devel/cvstrac
 cvsup		ports/net/cvsup
 cvsup-mirror	ports/net/cvsup-mirror
 cvsup-without-gui	ports/net/cvsup-without-gui
