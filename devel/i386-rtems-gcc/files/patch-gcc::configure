@@ -1,0 +1,29 @@
+--- gcc-3.2.3/gcc/configure.orig	Mon Feb  3 19:17:46 2003
++++ gcc-3.2.3/gcc/configure	Mon Oct 27 08:00:22 2003
+@@ -6013,7 +6017,7 @@
+   cat > conftest.$ac_ext <<EOF
+ #line 6015 "configure"
+ #include "confdefs.h"
+-#include <libintl.h>
++#include "%%LOCALBASE%%/include/libintl.h"
+ EOF
+ ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+ { (eval echo configure:6020: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+@@ -6044,7 +6048,7 @@
+   cat > conftest.$ac_ext <<EOF
+ #line 6046 "configure"
+ #include "confdefs.h"
+-#include <libintl.h>
++#include "%%LOCALBASE%%/include/libintl.h"
+ extern int _nl_msg_cat_cntr;
+ int main() {
+ bindtextdomain ("", "");
+@@ -6076,7 +6080,7 @@
+ 		cat > conftest.$ac_ext <<EOF
+ #line 6078 "configure"
+ #include "confdefs.h"
+-#include <libintl.h>
++#include "%%LOCALBASE%%/include/libintl.h"
+ extern int _nl_msg_cat_cntr;
+ int main() {
+ bindtextdomain ("", "");

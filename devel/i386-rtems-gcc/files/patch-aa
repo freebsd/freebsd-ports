@@ -1,15 +1,19 @@
---- gcc-3.2.1/libiberty/Makefile.in.orig	Tue Jan 22 15:03:29 2002
-+++ gcc-3.2.1/libiberty/Makefile.in	Thu Oct 24 08:56:14 2002
-@@ -237,9 +237,9 @@
+--- gcc-3.2.3/libiberty/Makefile.in.orig	Sun Feb  2 16:15:38 2003
++++ gcc-3.2.3/libiberty/Makefile.in	Wed Sep  3 20:57:06 2003
+@@ -240,11 +240,11 @@
  install: install_to_$(INSTALL_DEST) install-subdir
  
  install_to_libdir: all
--	$(INSTALL_DATA) $(TARGETLIB) $(libdir)$(MULTISUBDIR)/$(TARGETLIB)n
--	( cd $(libdir)$(MULTISUBDIR) ; $(RANLIB) $(TARGETLIB)n )
--	mv -f $(libdir)$(MULTISUBDIR)/$(TARGETLIB)n $(libdir)$(MULTISUBDIR)/$(TARGETLIB)
-+#	$(INSTALL_DATA) $(TARGETLIB) $(libdir)$(MULTISUBDIR)/$(TARGETLIB)n
-+#	( cd $(libdir)$(MULTISUBDIR) ; $(RANLIB) $(TARGETLIB)n )
-+#	mv -f $(libdir)$(MULTISUBDIR)/$(TARGETLIB)n $(libdir)$(MULTISUBDIR)/$(TARGETLIB)
+-	$(mkinstalldirs) $(DESTDIR)$(libdir)$(MULTISUBDIR)
+-	$(INSTALL_DATA) $(TARGETLIB) $(DESTDIR)$(libdir)$(MULTISUBDIR)/$(TARGETLIB)n
+-	( cd $(DESTDIR)$(libdir)$(MULTISUBDIR) && \
+-	  $(RANLIB) $(TARGETLIB)n && \
+-	  mv -f $(TARGETLIB)n $(TARGETLIB) )
++#	$(mkinstalldirs) $(DESTDIR)$(libdir)$(MULTISUBDIR)
++#	$(INSTALL_DATA) $(TARGETLIB) $(DESTDIR)$(libdir)$(MULTISUBDIR)/$(TARGETLIB)n
++#	( cd $(DESTDIR)$(libdir)$(MULTISUBDIR) && \
++#	  $(RANLIB) $(TARGETLIB)n && \
++#	  mv -f $(TARGETLIB)n $(TARGETLIB) )
  	@$(MULTIDO) $(FLAGS_TO_PASS) multi-do DO=install
  
  install_to_tooldir: all
