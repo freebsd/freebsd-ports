@@ -1,15 +1,15 @@
-The ideal way to learn about the software is from the book it is designed to
-support.  You should be able to get the book from any local bookstore or from
-our web page. The web page also contains some html reference pages for the
-objects in VTK as well as a FAQ.
+	VTK - the Visualization Toolkit is an object oriented, high
+level library that allows one to easily write programs in C++, Tcl,
+Python and Java that do 3D visualization. 
 
-  The VTK User's Guide
-  by Will Schroeder, Ken Martin
-  Kitware (see VTK web page)
+        VTK enables users to concentrate on their work by providing a
+large number of excellent and feature packed high level functions that
+do visualization.  The library needs OpenGL to render the graphics and
+for FreeBSD machines Mesa is necessary. 
 
-  The Visualization Toolkit, An Object-Oriented Approach to 3D Graphics
-  by Will Schroeder, Ken Martin and Bill Lorensen.
-  Prentice Hall, ISBN 013199837-4
+The terms/copyright can be read in the docs dir/README.html. The patented 
+classes (few in number) are not to be used in commercial application 
+without a license from the patent/copyright holder (listed in the class
+header). Patented classes are listed in README.patented-classes.
 
-For more information and a FAQ see our web page at
-WWW: http://www.kitware.com/vtk.html
+WWW: http://www.vtk.org

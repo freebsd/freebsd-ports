@@ -1,0 +1,2 @@
+Remember to set your VTK_DATA_ROOT variable to %%PREFIX%%/share/examples/vtk/VTKData
+before running tests or examples

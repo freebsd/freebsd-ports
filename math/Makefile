@@ -196,6 +196,12 @@
     SUBDIR += unixstat
     SUBDIR += vecfem
     SUBDIR += vtk
+    SUBDIR += vtk-data
+    SUBDIR += vtk-examples
+    SUBDIR += vtk-headers
+    SUBDIR += vtk-java
+    SUBDIR += vtk-python
+    SUBDIR += vtk-tcl
     SUBDIR += wingz
     SUBDIR += wingz3
     SUBDIR += wmcalc
