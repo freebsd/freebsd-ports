@@ -3925,6 +3925,7 @@ malbolge	ports/lang/malbolge
 malsync		ports/palm/malsync
 man.el		ports/misc/man.el
 man2html	ports/textproc/man2html
+man2web		ports/www/man2web
 manck		ports/sysutils/manck
 manedit		ports/editors/manedit
 mangband	ports/games/mangband
