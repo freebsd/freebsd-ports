@@ -1,5 +1,5 @@
---- makefile.unx.orig	Sun Aug 23 05:14:04 1998
-+++ makefile.unx	Tue Dec  7 00:50:56 1999
+--- makefile.unx.orig	Sat Dec  5 04:05:34 1998
++++ makefile.unx	Fri Feb 25 04:42:20 2000
 @@ -20,13 +20,13 @@
  RM=/bin/rm -f
  SHELL=/bin/sh
@@ -7,7 +7,7 @@
 -BINDIR=/usr/local/bin
 -INCLUDES=-I/usr/openwin/include
 +BINDIR=${PREFIX}/bin
-+INCLUDES=-I${X11BASE}/include
++INCLUDES=
  LIBS=
  # if you have a strict ANSI compiler, add -D__STDC__
  DEFINES=-DUNIX -DEPSTOOL -DHAVE_UNISTD_H
