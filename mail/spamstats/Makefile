@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spamstats
-PORTVERSION=	0.5
+PORTVERSION=	0.5a
 CATEGORIES=	mail
 MASTER_SITES=	http://www.gryzor.com/tools/
 
