@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.10 1995/07/15 22:48:36 torstenb Exp $
+# $Id: Makefile,v 1.11 1995/10/03 11:45:11 asami Exp $
 #
 
     SUBDIR += cnews
     SUBDIR += inn
+    SUBDIR += knews
     SUBDIR += nn
     SUBDIR += nntp
     SUBDIR += rkive
