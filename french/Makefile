@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += abispell-fr-FR
     SUBDIR += aspell
     SUBDIR += daCode
     SUBDIR += ispell
