@@ -3,7 +3,7 @@
 # Date created:		8 Dec 1995
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.10 1998/11/20 18:29:20 itojun Exp $
+# $Id: Makefile,v 1.11 1998/12/24 12:49:47 flathill Exp $
 #
 
 DISTNAME=	tgif-3.0.18
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/tgif
 
-PATCH_SITES=	http://www.venus.dtinet.or.jp/~iisaka/
+PATCH_SITES=	http://www.venus.dti.ne.jp/~iisaka/
 PATCHFILES=	tgif-3.0J0.12-p18-patch.gz
 PATCH_DIST_STRIP=	-p1
 
