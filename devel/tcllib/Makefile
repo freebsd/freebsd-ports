@@ -33,7 +33,7 @@ MANN= base64.n calculus.n cksum.n cmdline.n combinatorics.n comm.n \
 MANCOMPRESSED=	no
 
 test:
-	${MAKE_ENV} ${MAKE} -C ${WRKSRC} test
+	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE} test
 
 # The directory is created by install, but not populated. Just
 # remove it for now. In future versions, it may get some files
