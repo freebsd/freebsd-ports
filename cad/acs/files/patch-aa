@@ -1,31 +1,18 @@
-*** src/md_unix.h.orig	Sun Mar 31 00:09:51 1996
---- src/md_unix.h	Mon Apr  1 18:51:55 1996
-***************
-*** 49,61 ****
-  #define	ENDDIR		"/"
-  #define PATHSEP		':'
-  #define SYSTEMSTARTFILE	"acs.rc"
-! #define SYSTEMSTARTPATH	getenv("PATH")
-  #define USERSTARTFILE	".acsrc"
-  #define	USERSTARTPATH	getenv("HOME")
-  #define STEPFILE   	"/tmp/SXXXXXX"
-  #define PLOTFILE    	"acs.plot"
-  #define HELPFILE    	"acs.hlp"
-! #define HELPPATH	getenv("PATH")
-  /*--------------------------------------------------------------------------*/
-  #if defined(__GNUG__)
-    #define MANUAL_TEMPLATES
---- 49,61 ----
-  #define	ENDDIR		"/"
-  #define PATHSEP		':'
-  #define SYSTEMSTARTFILE	"acs.rc"
-! #define SYSTEMSTARTPATH	"@PREFIX@/share/acs"
-  #define USERSTARTFILE	".acsrc"
-  #define	USERSTARTPATH	getenv("HOME")
-  #define STEPFILE   	"/tmp/SXXXXXX"
-  #define PLOTFILE    	"acs.plot"
-  #define HELPFILE    	"acs.hlp"
-! #define HELPPATH	"@PREFIX@/share/acs"
-  /*--------------------------------------------------------------------------*/
-  #if defined(__GNUG__)
-    #define MANUAL_TEMPLATES
+--- src/md.h.orig	Fri Nov  5 07:11:00 1999
++++ src/md.h	Mon Nov  8 11:24:55 1999
+@@ -46,13 +46,13 @@
+ #define	ENDDIR		"/"
+ #define PATHSEP		':'
+ #define SYSTEMSTARTFILE	"acs.rc"
+-#define SYSTEMSTARTPATH	OS::getenv("PATH")
++#define SYSTEMSTARTPATH	"@PREFIX@/share/acs"
+ #define USERSTARTFILE	".acsrc"
+ #define	USERSTARTPATH	OS::getenv("HOME")
+ #define STEPFILE   	"/tmp/SXXXXXX"
+ #define PLOTFILE    	"acs.plot"
+ #define HELPFILE    	"acs.hlp"
+-#define HELPPATH	OS::getenv("PATH")
++#define HELPPATH	"@PREFIX@/share/acs"
+ /* constants related to memory size, word size, etc */
+ enum {
+   BUFLEN = 256,
