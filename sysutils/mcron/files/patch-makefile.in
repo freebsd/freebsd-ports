@@ -1,0 +1,14 @@
+--- makefile.in.bak	Fri Dec 12 00:53:35 2003
++++ makefile.in	Wed Mar 17 17:10:28 2004
+@@ -693,9 +693,9 @@
+ 
+ install-exec-hook:
+ 	rm -f $(fpp)cron$(EXEEXT) > /dev/null 2>&1
+-	$(INSTALL) --mode='u=rwx' mcron$(EXEEXT) $(fpp)cron$(EXEEXT)
++	$(INSTALL) -m 'u=rwx' mcron$(EXEEXT) $(fpp)cron$(EXEEXT)
+ 	rm -f $(fpp)crontab$(EXEEXT) > /dev/null 2>&1
+-	$(INSTALL) --mode='u=rwxs,og=rx' mcron$(EXEEXT) $(fpp)crontab$(EXEEXT)
++	$(INSTALL) -m 'u=rwxs,og=rx' mcron$(EXEEXT) $(fpp)crontab$(EXEEXT)
+ 	./mkinstalldirs -m 'u=rwx' /var/cron
+ 	./mkinstalldirs -m 'u=rwx,og=rx' /var/run
+ 	./mkinstalldirs -m 'u=rwx,og=rx' @GUILE_SITE@
