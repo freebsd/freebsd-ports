@@ -7,6 +7,7 @@
 
 PORTNAME=	spdbv
 PORTVERSION=	3.7
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://au.expasy.org/spdbv/program/ \
 		http://www.expasy.org/spdbv/program/ \
@@ -22,9 +23,11 @@ MAINTAINER=	chuynh@biolateral.com.au
 COMMENT=	Deep View Swiss-PdbViewer is a Protein viewer and analysis tool
 
 RUN_DEPENDS=	${LINUXBASE}${X11BASE}/lib/libMesaGL.so.3:${PORTSDIR}/graphics/linux_mesa3 \
-		${LINUXBASE}${X11BASE}/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif
+		${LINUXBASE}${X11BASE}/lib/libXm.so.3:${PORTSDIR}/x11-toolkits/linux-openmotif
 
 SPDBV=	SPDBV
+
+BROKEN=		"Incompatible with new x11-toolkits/linux-opera 2.2.4"
 
 WRKSRC=		${WRKDIR}/SPDBV_DISTRIBUTION
 

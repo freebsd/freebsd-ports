@@ -7,6 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
 		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/${OPERA_VER:S/.//}/final/en/i386/static/ \
@@ -47,10 +48,10 @@ RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrandr.so.2:${PORTSDIR}/x11/linux-XF
 		${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
 		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat \
 		${LINUXBASE}/usr/lib/libaspell.so.15:${PORTSDIR}/textproc/linux-aspell \
-		${LINUXBASE}/usr/X11R6/lib/libXm.so.2.1:${PORTSDIR}/x11-toolkits/linux-openmotif
+		${LINUXBASE}/usr/X11R6/lib/libXm.so.3:${PORTSDIR}/x11-toolkits/linux-openmotif
 WITH_LINUX8=	yes
 .else
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2.1:${PORTSDIR}/x11-toolkits/linux-openmotif
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXm.so.3:${PORTSDIR}/x11-toolkits/linux-openmotif
 USE_LINUX=	yes
 .endif
 
