@@ -7,6 +7,7 @@
 
 PORTNAME=	bastet
 PORTVERSION=	0.41
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://fph.altervista.org/prog/
 EXTRACT_SUFX=	.tgz
