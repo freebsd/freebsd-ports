@@ -17,7 +17,7 @@ COMMENT=	A collection of simple dialogs as a front end to GConf
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeui gconf2 libglade2
+USE_GNOME=	gnomehack gnomeprefix libgnomeui gconf2 libglade2 intlhack
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
