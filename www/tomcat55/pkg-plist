@@ -9,6 +9,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/bin/catalina.xml
 %%T%%/bin/commons-daemon.jar
 %%T%%/bin/commons-launcher.jar
+%%T%%/bin/commons-logging-api.jar
 %%T%%/bin/digest.sh
 %%T%%/bin/jsvc.tar.gz
 %%T%%/bin/launcher.properties
@@ -25,7 +26,6 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/common/lib/commons-collections.jar
 %%T%%/common/lib/commons-dbcp.jar
 %%T%%/common/lib/commons-el.jar
-%%T%%/common/lib/commons-logging-api.jar
 %%T%%/common/lib/commons-pool.jar
 %%T%%/common/lib/jasper-compiler.jar
 %%T%%/common/lib/jasper-runtime.jar
@@ -47,6 +47,8 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/conf/web.xml
 %%T%%/logs/stderr.log
 %%T%%/logs/stdout.log
+@exec mkdir %D/%%T%%/server || true
+@exec mkdir %D/%%T%%/server/classes || true
 %%T%%/server/lib/catalina-ant.jar
 %%T%%/server/lib/catalina-cluster.jar
 %%T%%/server/lib/catalina-i18n-es.jar
@@ -57,9 +59,8 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/server/lib/commons-beanutils.jar
 %%T%%/server/lib/commons-digester.jar
 %%T%%/server/lib/commons-fileupload-1.0.jar
-%%T%%/server/lib/commons-logging.jar
 %%T%%/server/lib/commons-modeler.jar
-%%T%%/server/lib/jakarta-regexp-1.2.jar
+%%T%%/server/lib/jakarta-regexp-1.3.jar
 %%T%%/server/lib/jkconfig.jar
 %%T%%/server/lib/jkshm.jar
 %%T%%/server/lib/servlets-cgi.renametojar
@@ -84,6 +85,9 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/server/webapps/admin/WEB-INF/web.xml
 %%T%%/server/webapps/admin/admin.css
 %%T%%/server/webapps/admin/admin.xml
+@exec mkdir %D/%%T%%/server/webapps/admin/connector || true
+@exec mkdir %D/%%T%%/server/webapps/admin/defaultcontext || true
+@exec mkdir %D/%%T%%/server/webapps/admin/host || true
 %%T%%/server/webapps/admin/images/BlueTile.gif
 %%T%%/server/webapps/admin/images/Connector.gif
 %%T%%/server/webapps/admin/images/Context.gif
@@ -114,6 +118,8 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/server/webapps/admin/images/linelastnode.gif
 %%T%%/server/webapps/admin/images/linemiddlenode.gif
 %%T%%/server/webapps/admin/images/linevertical.gif
+@exec mkdir %D/%%T%%/server/webapps/admin/logger || true
+@exec mkdir %D/%%T%%/server/webapps/admin/realm || true
 %%T%%/server/webapps/admin/resources/dataSources.jspf
 %%T%%/server/webapps/admin/resources/envEntries.jspf
 %%T%%/server/webapps/admin/resources/listDataSources.jspf
@@ -124,6 +130,9 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/server/webapps/admin/resources/mailSessions.jspf
 %%T%%/server/webapps/admin/resources/resourceLinks.jspf
 %%T%%/server/webapps/admin/resources/userDatabases.jspf
+@exec mkdir %D/%%T%%/server/webapps/admin/context || true
+@exec mkdir %D/%%T%%/server/webapps/admin/server || true
+@exec mkdir %D/%%T%%/server/webapps/admin/service || true
 %%T%%/server/webapps/admin/tree-control-test.css
 %%T%%/server/webapps/admin/users/groups.jspf
 %%T%%/server/webapps/admin/users/listGroups.jspf
@@ -131,6 +140,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/server/webapps/admin/users/listUsers.jspf
 %%T%%/server/webapps/admin/users/roles.jspf
 %%T%%/server/webapps/admin/users/users.jspf
+@exec mkdir %D/%%T%%/server/webapps/admin/valve || true
 %%T%%/server/webapps/manager/WEB-INF/lib/catalina-manager.jar
 %%T%%/server/webapps/manager/WEB-INF/web.xml
 %%T%%/server/webapps/manager/html-manager-howto.html
@@ -146,6 +156,10 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/server/webapps/manager/manager-howto.html
 %%T%%/server/webapps/manager/manager.xml
 %%T%%/server/webapps/manager/xform.xsl
+@exec mkdir %D/%%T%%/shared || true
+@exec mkdir %D/%%T%%/shared/classes || true
+@exec mkdir %D/%%T%%/shared/lib || true
+@exec mkdir %D/%%T%%/temp || true
 %%T%%/webapps/ROOT/RELEASE-NOTES.txt
 %%T%%/webapps/ROOT/WEB-INF/classes/org/apache/jsp/index_jsp.class
 %%T%%/webapps/ROOT/WEB-INF/web.xml
@@ -474,9 +488,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/servlets-examples/reqinfo.html
 %%T%%/webapps/servlets-examples/reqparams.html
 %%T%%/webapps/servlets-examples/sessions.html
-%%T%%/webapps/tomcat-docs/BUILDING.txt
 %%T%%/webapps/tomcat-docs/RELEASE-NOTES.txt
-%%T%%/webapps/tomcat-docs/RUNNING.txt
 %%T%%/webapps/tomcat-docs/WEB-INF/web.xml
 %%T%%/webapps/tomcat-docs/appdev/build.xml.txt
 %%T%%/webapps/tomcat-docs/appdev/deployment.html
@@ -501,6 +513,8 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/appdev/sample/web/index.html
 %%T%%/webapps/tomcat-docs/appdev/source.html
 %%T%%/webapps/tomcat-docs/appdev/web.xml.txt
+%%T%%/webapps/tomcat-docs/build.xml
+%%T%%/webapps/tomcat-docs/building.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/allclasses-frame.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/allclasses-noframe.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/constant-values.html
@@ -1537,6 +1551,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/jspapi/stylesheet.css
 %%T%%/webapps/tomcat-docs/manager-howto.html
 %%T%%/webapps/tomcat-docs/mbeans-descriptor-howto.html
+%%T%%/webapps/tomcat-docs/printer/building.html
 %%T%%/webapps/tomcat-docs/printer/cgi-howto.html
 %%T%%/webapps/tomcat-docs/printer/changelog.html
 %%T%%/webapps/tomcat-docs/printer/class-loader-howto.html
@@ -1668,6 +1683,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/ssi-howto.html
 %%T%%/webapps/tomcat-docs/ssl-howto.html
 %%T%%/webapps/tomcat-docs/status.html
+@exec mkdir %D/%%T%%/work || true
 @dirrm %%T%%/work
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/resources
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/http/class-use
