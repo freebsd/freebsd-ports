@@ -1,0 +1,7 @@
+Kupu is a 'document-centric' open source client-side editor for Mozilla,
+Netscape and Internet Explorer. Inspired by Maik Jablonski's Epoz editor
+to improve the JavaScript code and architecture, pluggability, standards
+support, support for other webservers than Zope (which was the original target
+platform for Epoz), configurability and a lot of other issues.
+
+WWW: http://kupu.oscom.org/
