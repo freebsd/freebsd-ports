@@ -155,6 +155,7 @@
     SUBDIR += quickpics
     SUBDIR += qvplay
     SUBDIR += rayshade
+    SUBDIR += ruby-libpng
     SUBDIR += ruby-opengl
     SUBDIR += sane
     SUBDIR += sced
