@@ -207,6 +207,7 @@ share/doc/autobook/autobook_283.html
 share/doc/autobook/autobook_284.html
 share/doc/autobook/autobook_285.html
 share/doc/autobook/autobook_286.html
+share/doc/autobook/autobook_287.html
 share/doc/autobook/autobook_29.html
 share/doc/autobook/autobook_3.html
 share/doc/autobook/autobook_30.html
@@ -311,4 +312,5 @@ share/doc/autobook/toc.png
 share/doc/autobook/tocon.png
 share/doc/autobook/up.png
 share/doc/autobook/upon.png
-@dirrm share/doc/autobook
+
+@dirrm share/doc/autobook/
