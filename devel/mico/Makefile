@@ -1,12 +1,12 @@
 # New ports collection makefile for:   mico
-# Version required:    2.2.3
+# Version required:    2.2.7
 # Date created:        11 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.32 1999/05/13 00:15:48 asami Exp $
+# $Id: Makefile,v 1.33 1999/05/29 03:55:55 steve Exp $
 #
 
-DISTNAME=	mico-2.2.3
+DISTNAME=	mico-2.2.7
 CATEGORIES=	devel
 MASTER_SITES=	http://diamant-atm.vsb.cs.uni-frankfurt.de/~mico/
 
@@ -31,8 +31,7 @@ USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/mico
 
-CONFIGURE_ARGS=	--with-qt --with-gtk --with-tcl \
-		--disable-optimize --disable-mini-stl
+CONFIGURE_ARGS=	--with-qt --with-gtk --with-tcl --disable-mini-stl
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 MAN1=		idl.1 imr.1 nsadmin.1
