@@ -1243,6 +1243,7 @@
     SUBDIR += ruby-gconf
     SUBDIR += ruby-gconf2
     SUBDIR += ruby-gemfinder
+    SUBDIR += ruby-gems
     SUBDIR += ruby-gettext
     SUBDIR += ruby-glib2
     SUBDIR += ruby-gnomevfs

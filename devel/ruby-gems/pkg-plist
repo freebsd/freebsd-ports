@@ -1,0 +1,22 @@
+%%RUBY_SITELIBDIR%%/rubygems/version.rb
+%%RUBY_SITELIBDIR%%/rubygems/validator.rb
+%%RUBY_SITELIBDIR%%/rubygems/user_interaction.rb
+%%RUBY_SITELIBDIR%%/rubygems/specification.rb
+%%RUBY_SITELIBDIR%%/rubygems/remote_installer.rb
+%%RUBY_SITELIBDIR%%/rubygems/package.rb
+%%RUBY_SITELIBDIR%%/rubygems/open-uri.rb
+%%RUBY_SITELIBDIR%%/rubygems/old_format.rb
+%%RUBY_SITELIBDIR%%/rubygems/loadpath_manager.rb
+%%RUBY_SITELIBDIR%%/rubygems/installer.rb
+%%RUBY_SITELIBDIR%%/rubygems/gem_runner.rb
+%%RUBY_SITELIBDIR%%/rubygems/gem_commands.rb
+%%RUBY_SITELIBDIR%%/rubygems/format.rb
+%%RUBY_SITELIBDIR%%/rubygems/doc_manager.rb
+%%RUBY_SITELIBDIR%%/rubygems/config_file.rb
+%%RUBY_SITELIBDIR%%/rubygems/command.rb
+%%RUBY_SITELIBDIR%%/rubygems/cmd_manager.rb
+%%RUBY_SITELIBDIR%%/rubygems/cache.rb
+%%RUBY_SITELIBDIR%%/rubygems/builder.rb
+%%RUBY_SITELIBDIR%%/ubygems.rb
+%%RUBY_SITELIBDIR%%/rubygems.rb
+@dirrm %%RUBY_SITELIBDIR%%/rubygems
