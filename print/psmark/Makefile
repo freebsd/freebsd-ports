@@ -8,6 +8,7 @@
 
 PORTNAME=	psmark
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.antitachyon.com/download/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -17,12 +18,11 @@ MAINTAINER=	ports@FreeBSD.org
 PORTCOMMENT=	Renders a vertical string on any PostScript document
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_REINPLACE=	yes
 
 MAN1=	psmark.1
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|^CFLAGS|#CFLAGS|g" ${WRKSRC}/Makefile
+do-build:
+	@cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/psmark ${PREFIX}/bin
