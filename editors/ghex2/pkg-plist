@@ -29,7 +29,10 @@ share/gnome/help/ghex2/C/figures/ghex_window_open.png
 share/gnome/help/ghex2/C/ghex2.xml
 share/gnome/help/ghex2/C/legal.xml
 share/gnome/help/ghex2/C/topic.dat
+share/gnome/omf/ghex/ghex-C.omf
+share/gnome/omf/ghex/ghex-ja.omf
 share/gnome/pixmaps/gnome-ghex.png
+share/locale/am/LC_MESSAGES/ghex-2.0.mo
 share/locale/bg/LC_MESSAGES/ghex-2.0.mo
 share/locale/ca/LC_MESSAGES/ghex-2.0.mo
 share/locale/cs/LC_MESSAGES/ghex-2.0.mo
@@ -67,6 +70,7 @@ share/locale/vi/LC_MESSAGES/ghex-2.0.mo
 share/locale/wa/LC_MESSAGES/ghex-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/ghex-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/ghex-2.0.mo
+@dirrm share/gnome/omf/ghex
 @dirrm share/gnome/help/ghex2/C/figures
 @dirrm share/gnome/help/ghex2/C
 @dirrm share/gnome/help/ghex2/ja/stylesheet-images
