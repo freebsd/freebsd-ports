@@ -340,3 +340,4 @@ chinese/rxvt-gb||2003-05-20|no longer needed
 misc/p5-DataCash||2003-05-20|No longer available
 net/p5-Net-BGP4|net/p5-Net-BGP|2003-05-21|module was renamed
 x11-wm/kde-icontheme-crystal||2003-05-22|Included in kdelibs
+devel/p5-File-Tools||2003-05-22|Newer version included into Perl distribution
