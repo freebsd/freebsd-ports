@@ -1,30 +1,46 @@
---- src/Makefile.orig	Mon Jun  2 23:09:02 2003
-+++ src/Makefile	Mon Jun 30 22:53:43 2003
-@@ -1,12 +1,12 @@
+--- src/Makefile.orig	Tue May 25 08:36:00 2004
++++ src/Makefile	Mon Jun  7 00:36:22 2004
+@@ -10,7 +10,7 @@
+    MODECFLAGS=-g -Wall -pg -fprofile-arcs -g
+    MODELDFLAGS=-pg
+ else
+-   MODECFLAGS=-O2 -ffast-math -fomit-frame-pointer -Wall $(OPTIONS)
++   MODECFLAGS=-ffast-math -fomit-frame-pointer -Wall $(OPTIONS) -I${LOCALBASE}/include
+    MODELDFLAGS=
+ endif
+ endif
+@@ -20,17 +20,17 @@
+ 	SQLLDFLAGS=
+ 	SQLTOOLS=
+ else
+-   SQLCFLAGS=-DROADMAP_USES_SQLITE
+-	SQLLDFLAGS=-lsqlite
++   SQLCFLAGS=-DROADMAP_USES_SQLITE -I${LOCALBASE}/include
++	SQLLDFLAGS=-lsqlite -L${LOCALBASE}/lib
+ 	SQLTOOLS=sqliteload
+ endif
  
- 
--CFLAGS=-O2 -ffast-math -fomit-frame-pointer -Wall
-+CFLAGS=-O2 -ffast-math -fomit-frame-pointer -Wall -I${LOCALBASE}/include
- # CFLAGS=-g -Wall
- # CFLAGS=-g -Wall -DROADMAP_DEBUG_HEAP
- # CFLAGS=-g -Wall -pg -fprofile-arcs -g
+-CFLAGS=$(MODECFLAGS) $(SQLCFLAGS)
++CFLAGS+=$(MODECFLAGS) $(SQLCFLAGS)
+ LDFLAGS=$(MODELDFLAGS) $(SQLLDFLAGS)
+ TOOLS=sunrise $(SQLTOOLS)
  
  RDMLIBS=libroadmap.a unix/libosroadmap.a
 -LIBS=$(RDMLIBS) -lpopt -lm
 +LIBS=$(RDMLIBS) -lpopt -lm -L${LOCALBASE}/lib
  
- # LDFLAGS=-pg $(LDFLAGS)
  
-@@ -98,7 +98,7 @@
+ 
+@@ -133,7 +133,7 @@
  SCRIPTS=rdmdownload rdmgetall rdmgenmaps rdmcompare
- RUNTIME=libroadmap.a libguiroadgps.a libguiroadmap.a
+ RUNTIME=$(RDMLIBS) libguiroadgps.a libguiroadmap.a
  
 -INSTALLDIR=/usr/local
-+INSTALLDIR=${LOCALBASE}
++INSTALLDIR=${PREFIX}
  
  
  # --- Conventional targets ----------------------------------------
-@@ -114,10 +114,10 @@
+@@ -149,10 +149,10 @@
  	strip -s $(BUILD)
  
  clean: cleanone
@@ -39,28 +55,28 @@
  
  cleanone:
  	rm -f *.o *.a *.da $(BUILD)
-@@ -138,14 +138,14 @@
+@@ -168,7 +168,7 @@
+ 	cd $(INSTALLDIR)/bin ; chmod a+x $(BUILD) $(SCRIPTS)
+ 	if [ -d /usr/lib/menu ] ; then cp roadmap.menu /usr/lib/menu/roadmap; fi
+ 	mkdir -p $(INSTALLDIR)/share/pixmaps
+-	cd icons ; make ICONDIR="$(INSTALLDIR)/share/pixmaps" install
++	cd icons ; ${MAKE} ICONDIR="$(INSTALLDIR)/share/pixmaps" install
+ 	cp -f roadmap*.png $(INSTALLDIR)/share/pixmaps
+ 	cp -f roadmap.desktop $(INSTALLDIR)/applications
+ 
+@@ -178,9 +178,7 @@
  	rm -f /usr/lib/menu/roadmap
  
- everything: build
+ everything: runtime build icons $(TOOLS)
 -	cd gtk ; make STDCFLAGS="$(CFLAGS)" all
 -	cd gtk2 ; make STDCFLAGS="$(CFLAGS)" all
 -	cd qt ; make STDCFLAGS="$(CFLAGS)" all
 +	cd gtk ; ${MAKE} STDCFLAGS="$(CFLAGS)" all
-+#	cd gtk2 ; make STDCFLAGS="$(CFLAGS)" all
-+#	cd qt ; make STDCFLAGS="$(CFLAGS)" all
  
  cleanall:
  	cd gtk ; make clean
--	cd gtk2 ; make clean
--	cd qt ; make clean
-+#	cd gtk2 ; make clean
-+#	cd qt ; make clean
- 
- rebuild: cleanall everything
- 
-@@ -161,7 +161,7 @@
- 	ar rf libguiroadgps.a $(RGGUIOBJS)
+@@ -207,7 +205,7 @@
+ 	$(AR) rf libguiroadgps.a $(RGGUIOBJS)
  
  unix/libosroadmap.a:
 -	cd unix; make "CFLAGS=$(CFLAGS) -I.."

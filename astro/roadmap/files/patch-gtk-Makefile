@@ -1,5 +1,5 @@
---- src/gtk/Makefile.orig	Sun May 11 22:23:11 2003
-+++ src/gtk/Makefile	Mon Jun 30 22:51:16 2003
+--- src/gtk/Makefile.orig	Tue May 25 07:28:15 2004
++++ src/gtk/Makefile	Mon Jun  7 00:25:58 2004
 @@ -1,12 +1,12 @@
  
 -GUICFLAGS=`gtk-config --cflags`
@@ -7,15 +7,15 @@
 +GUICFLAGS=`${GTK_CONFIG} --cflags`
 +GUILDFLAGS=`${GTK_CONFIG} --libs`
  
--STDCFLAGS=-O2 -ffast-math -fomit-frame-pointer -Wall
-+STDCFLAGS=-O2 -ffast-math  -fomit-frame-pointer -Wall -I${LOCALBASE}/include
+-STDCFLAGS=-O2 -ffast-math -fomit-frame-pointer -g -Wall
++STDCFLAGS=-ffast-math -fomit-frame-pointer -Wall -I${LOCALBASE}/include
  # STDCFLAGS=-g -Wall -DROADMAP_DEBUG_HEAP
  # STDCFLAGS=-g -Wall -pg -fprofile-arcs -g
  
 -CFLAGS=$(STDCFLAGS) $(GUICFLAGS) -I..
 +CFLAGS+=$(STDCFLAGS) $(GUICFLAGS) -I..
  
- RDMLIBS= ../libroadmap.a libgtkroadmap.a ../unix/libosroadmap.a
+ RDMLIBS= ../libroadmap.a libgtkroadmap.a ../unix/libosroadmap.a ../libroadmap.a
  LIBS=$(RDMLIBS) $(GUILDFLAGS) -lm
 @@ -24,7 +24,7 @@
  
