@@ -1,5 +1,5 @@
---- rblcheck.c.orig	Wed Aug 19 22:47:03 1998
-+++ rblcheck.c	Fri Jan 21 10:56:00 2000
+--- rblcheck.c.orig	Thu Aug 20 00:47:03 1998
++++ rblcheck.c	Mon Feb 26 18:28:46 2001
 @@ -79,6 +79,7 @@
  #include <sys/types.h>
  #include <netinet/in.h>
@@ -71,7 +71,7 @@
  			{
  				if( *cp == '\n' || *cp == '"' ||
  				  *cp == '\\' )
-@@ -308,23 +312,29 @@
+@@ -308,23 +312,40 @@
  	char **argv;
  {
  	extern int optind;
@@ -90,11 +90,23 @@
  
  	/* Add more sites you want in the default list of RBL-alike
  	   systems here. ### An easier way to change this is needed. ### */
- 	rblsites = togglesite( "rbl.maps.vix.com", rblsites );
+-	rblsites = togglesite( "rbl.maps.vix.com", rblsites );
 -	rblsites = togglesite( "rbl.dorkslayers.com", rblsites );
-+	rblsites = togglesite( "relays.orbs.org", rblsites );
-+	rblsites = togglesite( "dul.maps.vix.com", rblsites );
++
++	/* MAPS: Mail Abuse Protection System - http://mail-abuse.org */
++	rblsites = togglesite( "blackholes.mail-abuse.org", rblsites );
 +	rblsites = togglesite( "relays.mail-abuse.org", rblsites );
++	rblsites = togglesite( "dialups.mail-abuse.org", rblsites );
++
++	/* ORBS: Open Relay Behaviour-modification System - http://www.orbs.org */
++	rblsites = togglesite( "inputs.orbs.org", rblsites );
++	rblsites = togglesite( "outputs.orbs.org", rblsites );
++	rblsites = togglesite( "delayed-outputs.orbs.org", rblsites );
++	rblsites = togglesite( "manual.orbs.org", rblsites );
++	rblsites = togglesite( "spamsources.orbs.org", rblsites );
++	rblsites = togglesite( "untestable-netblocks.orbs.org", rblsites );
++	rblsites = togglesite( "spamsource-netblocks.orbs.org", rblsites );
++	rblsites = togglesite( "testing.orbs.org", rblsites );
  
  	progname = argv[ 0 ];
  
@@ -105,7 +117,7 @@
  		{
  			case 'q':
  				/* Quiet */
-@@ -372,10 +382,20 @@
+@@ -372,10 +393,20 @@
  		return -1;
  	}
  
@@ -130,7 +142,7 @@
  		fprintf( stderr, "%s: invalid IP address\n", progname );
  		usage();	
  		return -1;
-@@ -383,7 +403,7 @@
+@@ -383,7 +414,7 @@
  
  	for( ptr = rblsites; ptr != NULL; ptr = ptr->next )
  	{
