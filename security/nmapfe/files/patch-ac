@@ -1,5 +1,5 @@
---- nmapfe_sig.c.orig	Fri May  7 04:51:52 1999
-+++ nmapfe_sig.c	Fri Jul 23 11:09:45 1999
+--- gladesig.c.orig	Fri May  7 04:51:52 1999
++++ gladesig.c	Fri Jul 23 11:09:45 1999
 @@ -171,7 +171,7 @@
  on_Get_Nmap_Version_activate           (GtkMenuItem    *menuitem,
                                          gpointer        user_data)
