@@ -14,8 +14,7 @@ DISTNAME=	${PORTNAME}_gui-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
-BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
-		${LOCALBASE}/lib/ogle/libdvdcontrol.so.4:${PORTSDIR}/graphics/ogle
+BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.4:${PORTSDIR}/graphics/ogle
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	ogle:${PORTSDIR}/graphics/ogle
@@ -34,8 +33,12 @@ CONFIGURE_ARGS=	--with-dvd-includes=${LOCALBASE}/include \
 
 post-patch:
 	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
+	@${PERL} -pi -e "s/aclocal/${ACLOCAL}/;s/autoconf/${AUTOCONF}/; \
+		s/autoheader/${AUTOHEADER}/" \
+		${CONFIGURE_WRKSRC}/aclocal.m4
 
 pre-configure:
+	@${TOUCH} `find -E ${WRKSRC} -regex ".*Makefile\.(am|in)"`
 .for file in intl/Makefile.in po/Makefile.in.in
 	@${ECHO} 'all:' > ${WRKSRC}/${file}
 	@${ECHO} 'install:' >> ${WRKSRC}/${file}
