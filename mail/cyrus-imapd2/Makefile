@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION= 	2.1.13
+PORTVERSION= 	2.1.14
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/cyrus-mail/&,}
 
 PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
-PATCHFILES=	${DISTNAME}-ipv6-20030503.diff.gz
+PATCHFILES=	${DISTNAME}-ipv6-20030703.diff.gz
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
@@ -89,8 +89,8 @@ MAN5=		cyrus.conf.5 imapd.conf.5 krb.equiv.5
 MAN8=		arbitron.8 chk_cyrus.8 collectnews.8 ctl_cyrusdb.8 \
 		ctl_deliver.8 ctl_mboxlist.8 cvt_cyrusdb.8 cyrquota.8 \
 		deliver.8 fud.8 idled.8 imapd.8 ipurge.8 lmtpd.8 master.8 \
-		mbpath.8 notifyd.8 pop3d.8 reconstruct.8 rmnews.8 \
-		squatter.8 syncnews.8 timsieved.8 tls_prune.8
+		mbexamine.8 mbpath.8 notifyd.8 pop3d.8 reconstruct.8 \
+		rmnews.8 squatter.8 syncnews.8 timsieved.8 tls_prune.8
 
 DOCS=		altnamespace anoncvs bugs changes faq feedback index \
 		install install-admin-mb install-auth install-compile \
