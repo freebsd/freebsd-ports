@@ -1,0 +1,14 @@
+Migrate estimates effective population sizes and past migration rates between
+two or "n" populations assuming a migration matrix model with asymmetric
+migration rates and different subpopulation sizes.  The n-population migrate
+can use sequence data, microsatellite data or electrophoretic data.
+
+Migrate forms part of the Lamarc (Likelihood Analysis with Metropolis
+Algorithm using Random Coalescence) suite.  See:
+
+  http://evolution.genetics.washington.edu/lamarc.html
+
+Author: Peter Beerli <beerli@genetics.washington.edu>
+WWW:    http://evolution.genetics.washington.edu/lamarc/migrate.html
+
+-- Johann Visagie <johann@FreeBSD.org>

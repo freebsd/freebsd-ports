@@ -16,6 +16,7 @@
     SUBDIR += grappa
     SUBDIR += hmmer
     SUBDIR += kinemage
+    SUBDIR += migrate
     SUBDIR += molden
     SUBDIR += mopac
     SUBDIR += nab
