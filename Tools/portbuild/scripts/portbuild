@@ -79,7 +79,7 @@ pkgname=$(basename $1 .tgz)
 dirname=$2
 shift 2
 
-buildenv ${branch}
+buildenv ${pb} ${branch}
 
 export WRKDIRPREFIX=${buildroot}
 export DISTDIR=/tmp/distfiles
@@ -144,11 +144,10 @@ if [ ${found} != 1 ]; then
   # to be able to run ps and killall inside chroot area
   cp -p /bin/ps ${chroot}/bin
   cp -p /usr/bin/killall ${chroot}/usr/bin
-
-  # Set up desired uname version
-  echo ${OSREL}-${BRANCH} > ${chroot}/usr/bin/UNAME_TARGET
-
 fi
+
+# Set up desired uname version
+echo ${OSREL}-${BRANCH} > ${chroot}/usr/bin/UNAME_TARGET
 
 trap "cleanup ${chroot} ${noclean} ${error} \"${cleandirs}\" ${pkgname}" 1 2 3 9 10 11 15 
 
@@ -171,13 +170,6 @@ mkdir -p ${chroot}/usr/src ${chroot}/usr/opt/doc
 mount -r ${master}:${pb}/${branch}/src ${chroot}/usr/src
 mount -r ${master}:${pb}/usr/opt/doc ${chroot}/usr/opt/doc
 
-mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.root.dist -p ${chroot} \
-  >/dev/null 2>&1
-mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.var.dist -p ${chroot}/var \
-  >/dev/null 2>&1
-mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.usr.dist -p ${chroot}/usr \
-  >/dev/null 2>&1
-
 # just in case...
 for dir in ${cleandirs}; do
   if ! rm -rf ${chroot}${dir} >/dev/null 2>&1; then
@@ -187,6 +179,23 @@ for dir in ${cleandirs}; do
 done
 
 rm -rf ${chroot}/var/db/pkg/*
+
+mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.root.dist -p ${chroot} \
+  >/dev/null 2>&1
+mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.var.dist -p ${chroot}/var \
+  >/dev/null 2>&1
+mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.usr.dist -p ${chroot}/usr \
+  >/dev/null 2>&1
+mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.local.dist -p ${chroot}/usr/local \
+  >/dev/null 2>&1
+
+if [ $XFREE86_VERSION = 4 ]; then
+  mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.x11-4.dist -p ${chroot}/usr/X11R6 \
+    >/dev/null 2>&1
+else
+  mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.x11.dist -p ${chroot}/usr/X11R6 \
+    >/dev/null 2>&1
+fi
 
 chroot ${chroot} /sbin/ldconfig -m /usr/lib/compat
 chroot ${chroot} /sbin/ldconfig -R
