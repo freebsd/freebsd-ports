@@ -33,6 +33,7 @@
     SUBDIR += libarchive
     SUBDIR += libcabinet
     SUBDIR += libcomprex
+    SUBDIR += liblzxcomp
     SUBDIR += libmspack
     SUBDIR += lzo
     SUBDIR += lzop
