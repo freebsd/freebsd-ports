@@ -1,8 +1,8 @@
-       The Devel::DProf package is a Perl code profiler.  This
-       will collect information on the execution time of a Perl
-       script and of the subs in that script.  This information
-       can be used to determine which subroutines are using the
-       most time and which subroutines are being called most
-       often.  This information can also be used to create an
-       execution graph of the script, showing subroutine
-       relationships.
+The Devel::DProf package is a Perl code profiler.  This will collect
+information on the execution time of a Perl script and of the subs in
+that script.  This information can be used to determine which
+subroutines are using the most time and which subroutines are being
+called most often.  This information can also be used to create an
+execution graph of the script, showing subroutine relationships.
+
+WWW: http://search.cpan.org/dist/DProf/

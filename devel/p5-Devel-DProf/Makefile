@@ -12,14 +12,19 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel
 PKGNAMEPREFIX=	p5-Devel-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Perl code profiler
 
 PERL_CONFIGURE=	yes
 
 MAN1PREFIX=	${PREFIX}
 MAN1=		dprofpp.1
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Devel::DProf.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 500600
+IGNORE=		"Version included in perl distribution is newer"
+.endif
+
+.include <bsd.port.post.mk>
