@@ -42,26 +42,35 @@ share/bmp/Skins/Default/readme.txt
 share/bmp/Skins/Default/screenshot.bmp
 share/bmp/Skins/Default/vIscolor.txt
 share/icons/bmp.svg
-share/bmp/glade/equalizerwin_preset_menu.glade
+share/bmp/glade/addfiles.glade
 share/bmp/glade/prefswin.glade
 share/bmp/images/appearance.png
 share/bmp/images/mouse.png
 share/bmp/images/playlist.png
 share/bmp/images/plugins.png
 share/bmp/images/eq.png
-share/locale/fr/LC_MESSAGES/bmp.mo
+share/locale/br/LC_MESSAGES/bmp.mo
+share/locale/cs/LC_MESSAGES/bmp.mo
 share/locale/cy/LC_MESSAGES/bmp.mo
 share/locale/de/LC_MESSAGES/bmp.mo
+share/locale/el/LC_MESSAGES/bmp.mo
 share/locale/es/LC_MESSAGES/bmp.mo
+share/locale/fr/LC_MESSAGES/bmp.mo
+share/locale/hu/LC_MESSAGES/bmp.mo
 share/locale/it/LC_MESSAGES/bmp.mo
 share/locale/ja/LC_MESSAGES/bmp.mo
 share/locale/ko/LC_MESSAGES/bmp.mo
 share/locale/lt/LC_MESSAGES/bmp.mo
+share/locale/mk/LC_MESSAGES/bmp.mo
 share/locale/nl/LC_MESSAGES/bmp.mo
 share/locale/pl/LC_MESSAGES/bmp.mo
+share/locale/pt_BR/LC_MESSAGES/bmp.mo
+share/locale/ro/LC_MESSAGES/bmp.mo
 share/locale/ru/LC_MESSAGES/bmp.mo
+share/locale/sk/LC_MESSAGES/bmp.mo
 share/locale/sv/LC_MESSAGES/bmp.mo
 share/locale/zh_CN/LC_MESSAGES/bmp.mo
+@unexec rmdir %D/share/applications 2>/dev/null || true
 @dirrm share/beep/Skins
 @dirrm share/beep
 @dirrm share/bmp/Skins/Default
