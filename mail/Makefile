@@ -90,6 +90,7 @@
     SUBDIR += wanderlust-mule
     SUBDIR += wanderlust-xemacs-mule
     SUBDIR += wanderlust-xemacs20
+    SUBDIR += wmbiff
     SUBDIR += wmmail
     SUBDIR += wmpop3
     SUBDIR += xbuffy
