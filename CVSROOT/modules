@@ -438,6 +438,7 @@ bbkeys		ports/x11-wm/bbkeys
 bbmail		ports/mail/bbmail
 bbpager		ports/x11-wm/bbpager
 bbrun		ports/x11-wm/bbrun
+bbsnet		ports/net/bbsnet
 bc		src/gnu/usr.bin/bc
 bc-gcc		ports/lang/bc-gcc
 bcc		ports/devel/bcc
