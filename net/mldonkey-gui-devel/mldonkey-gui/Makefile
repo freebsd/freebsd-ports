@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_GNOMENG=    yes
 USE_GNOME=      gtk12
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-distrib-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-distrib-${PORTVERSION:C/.(.)$/-\1/}
 
 DIRNAME=	${HOME}/.mldonkey
 
