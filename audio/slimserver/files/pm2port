@@ -1,6 +1,6 @@
 Audio-Musepack,
-Audio-WMA,Audio/WMA.pm:audio/p5-Audio-WMA
-Audio-Wav,Audio/Wav.pm:audio/p5-Audio-Wav
+Audio-WMA,
+Audio-Wav,
 Class-Accessor,Class/Accessor.pm:devel/p5-Class-Accessor
 Class-Accessor-Chained,Class/Accessor/Chained.pm:devel/p5-Class-Accessor-Chained
 Class-DBI,Class/DBI.pm:databases/p5-Class-DBI
