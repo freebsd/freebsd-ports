@@ -2112,7 +2112,7 @@ do-fetch:
 				exit 1; \
 			fi ; \
 			${ECHO_MSG} ">> $$file doesn't seem to exist in ${_DISTDIR}."; \
-			if [ ! -z $$select ] ; then \
+			if [ ! -z "$$select" ] ; then \
 				__PATCH_SITES_TMP= ; \
 				for group in $$select; do \
 					if [ ! -z \$${_PATCH_SITES_$${group}} ] ; then \
