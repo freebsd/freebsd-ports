@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Server-Mail
-PORTVERSION=	0.09
+PORTVERSION=	0.12
 CATEGORIES=	mail perl5
 MASTER_SITES=	ftp://ftp.rhapsodyk.net/pub/devel/perl/Net-Server-Mail/
 PKGNAMEPREFIX=	p5-
