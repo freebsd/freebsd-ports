@@ -1,7 +1,7 @@
 # New ports collection makefile for:	kappafont
 # Version required:	0.3
 # Date created:		8 Oct 1998
-# Whom: Kawaguti Ginga <ginga@athena.club.or.jp>
+# Whom: Kawaguti Ginga <ginga@athena.club.ne.jp>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PKGNAME=	ja-kappa20-0.3
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/misc/character/fonts/kappa/
 
-MAINTAINER=	ginga@athena.club.or.jp
+MAINTAINER=	ginga@athena.club.ne.jp
 
 ALL_TARGET=	default
 USE_X_PREFIX=	yes
