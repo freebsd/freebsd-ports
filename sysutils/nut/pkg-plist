@@ -5,6 +5,7 @@ sbin/bestups
 sbin/ups-trust425+625
 sbin/fentonups
 sbin/upsc
+sbin/upscmd
 sbin/upslog
 sbin/upsmon
 sbin/upsct
