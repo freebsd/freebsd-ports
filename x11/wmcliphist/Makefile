@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmcliphist
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://linux.nawebu.cz/wmcliphist/
 
@@ -16,9 +16,6 @@ COMMENT=	Clipboard history management dockapp for Window Maker
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GNOME=	gtk12
-
-pre-patch:
-	@${RM} ${WRKSRC}/foodock/foodock.o
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

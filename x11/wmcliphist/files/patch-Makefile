@@ -1,23 +1,20 @@
---- Makefile.orig	Sat Nov 16 05:57:01 2002
-+++ Makefile	Thu Jul  3 00:46:29 2003
-@@ -1,6 +1,4 @@
+--- Makefile.orig	Mon Jun 23 18:30:16 2003
++++ Makefile	Sat Aug  9 16:09:52 2003
+@@ -1,11 +1,7 @@
 -CC = gcc
 -
 -INCLUDES = `gtk-config --cflags` -I. -Ifoodock -g
+-
+-DESTDIR = "/usr/local/bin"
 +INCLUDES = `${GTK_CONFIG} --cflags` -I. -Ifoodock
  
- # choose icon
- #    for light background
-@@ -11,7 +9,7 @@
- #ICON_TYPE = 2
- 
  # for normal use
--CFLAGS = -Wall -O2 -ansi -pedantic $(INCLUDES) -DICON_TYPE=$(ICON_TYPE)
-+CFLAGS += $(INCLUDES) -DICON_TYPE=$(ICON_TYPE)
+-CFLAGS = -Wall -O2 -ansi -pedantic $(INCLUDES)
++CFLAGS += $(INCLUDES)
  DEBUG = 
  
  # for debuggind purposes
-@@ -21,7 +19,7 @@
+@@ -15,7 +11,7 @@
  #DEBUG = debug.o
  
  
@@ -26,12 +23,12 @@
  
  
  OBJECTS = wmcliphist.o clipboard.o gui.o rcconfig.o history.o hotkeys.o $(DEBUG)
-@@ -33,7 +31,7 @@
+@@ -27,7 +23,7 @@
  	lclint $(INCLUDES) +posixlib *.c >lclint.log
  
  wmcliphist: $(OBJECTS) foodock/foodock.o
 -	$(CC) $(LFLAGS) -o $@ $(OBJECTS) foodock/foodock.o
 +	$(CC) $(LFLAGS) -o $@ $(OBJECTS) foodock.o
  
- wmcliphist.o: wmcliphist.c wmcliphist.h icon/wmcliphist_ico_mask.xbm \
- 	icon/wmcliphist_ico_dark.xpm icon/wmcliphist_ico_mid.xpm \
+ wmcliphist.o: wmcliphist.c wmcliphist.h \
+ 	icon/ico_60x60_black.xpm icon/ico_60x60_gray.xpm \
