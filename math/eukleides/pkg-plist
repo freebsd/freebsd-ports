@@ -1,0 +1,24 @@
+bin/euk2edit
+bin/euk2eps
+bin/eukleides
+%%PORTDOCS%%%%EXAMPLESDIR%%/abdul_al_wafa.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/agnesi.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/angles.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/archimedes.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/bisectors.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/gravity_center.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/inequality.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/intercept.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/intersection.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/lines_and_circles.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/locus.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/morley.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/orthocenter.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/parallelogram.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/pascal.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/perdigal.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/pstexample.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/quadrilateral.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/similar.euk
+%%PORTDOCS%%%%EXAMPLESDIR%%/vecten.euk
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
