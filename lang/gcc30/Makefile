@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc30
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 PORTREVISION=	0
 CATEGORIES=	lang java
 MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/releases/gcc-${GCC_REV}/  \
@@ -21,9 +21,9 @@ DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
 
 MAINTAINER=	obrien@FreeBSD.org
 
-USE_BZIP2=	yes
-
 LATEST_LINK=	gcc30
+
+USE_BZIP2=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
