@@ -65,6 +65,7 @@
     SUBDIR += ucspi-tcp
     SUBDIR += upsd
     SUBDIR += upsmon
+    SUBDIR += uwatch
     SUBDIR += webmin
     SUBDIR += wmapm
     SUBDIR += wmavgload
