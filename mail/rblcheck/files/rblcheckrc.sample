@@ -2,8 +2,6 @@
 -s blackholes.mail-abuse.org
 -s relays.mail-abuse.org
 -s dialups.mail-abuse.org
--s 3y.spam.mrs.kithrup.com
--s or.orbl.org
--s orbz.gst-group.co.uk
--s manual.orbz.gst-group.co.uk
 -s relays.ordb.org
+-s list.dsbl.org
+-s multihop.dsbl.org
