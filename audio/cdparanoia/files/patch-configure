@@ -1,0 +1,16 @@
+Index: configure
+===================================================================
+RCS file: /home/cvs/cdparanoia/configure,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -r1.1.1.1 -r1.2
+--- configure	2003/01/05 09:46:26	1.1.1.1
++++ configure	2003/01/05 12:41:47	1.2
+@@ -1084,7 +1084,6 @@
+ fi
+ 
+ 
+-CFLAGS=""
+ 
+ TYPESIZES="" 
+ 

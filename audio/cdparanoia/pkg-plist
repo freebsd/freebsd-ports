@@ -1,0 +1,12 @@
+bin/cdparanoia
+include/cdda_interface.h
+include/cdda_paranoia.h
+include/utils.h
+lib/libcdda_interface.a
+lib/libcdda_interface.so
+lib/libcdda_interface.so.0
+lib/libcdda_interface.so.0.9.8
+lib/libcdda_paranoia.a
+lib/libcdda_paranoia.so
+lib/libcdda_paranoia.so.0
+lib/libcdda_paranoia.so.0.9.8
