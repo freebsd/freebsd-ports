@@ -357,6 +357,7 @@
     SUBDIR += p5-Text-MagicTemplate
     SUBDIR += p5-Text-Metaphone
     SUBDIR += p5-Text-Netstring
+    SUBDIR += p5-Text-Ngram
     SUBDIR += p5-Text-Ngrams
     SUBDIR += p5-Text-Original
     SUBDIR += p5-Text-ParagraphDiff
