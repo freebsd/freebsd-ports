@@ -8,6 +8,7 @@
 PORTNAME=	dod
 PORTVERSION=	1.3
 MASTER_SITES=	http://www.vigilantegamers.com/dod/files/official/ \
+		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/half-life/modifications/dod/ \
 		http://ftp2.extreme-players.de/exp/hl/mod/dod/ \
 		ftp://ftp.task.gda.pl/mirror/ftp.extreme-players.de/exp/hl/mod/dod/ \
 		ftp://ftp.gigabell.net/pub/exp/hl/mod/dod/ \
