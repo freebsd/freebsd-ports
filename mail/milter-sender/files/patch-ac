@@ -1,15 +1,15 @@
---- milter-sender.sh.in.orig	Tue Feb 24 20:18:59 2004
-+++ milter-sender.sh.in	Sat Mar  6 12:33:09 2004
-@@ -69,34 +69,24 @@
- start()
- {
+--- milter-sender.sh.in.orig	Thu Aug 12 09:44:49 2004
++++ milter-sender.sh.in	Mon Aug 23 10:45:57 2004
+@@ -88,35 +88,25 @@
+ 	rm -f $STATE_DIR/mutex
+ 
  	NAME=`basename "$PROGRAM"`
 -        printf "Starting %s" $NAME
  
  	pid=`getpid "$PROGRAM"`
  	if [ X"$pid" != X ]; then
 -		printf '\r\033[71C['${FG_RED}'FAILED'${FG_NORMAL}']\n'
-+		echo " milter-sender:FAILED"
++ 		echo " milter-sender:FAILED"
  		return
  	fi
  
@@ -19,8 +19,7 @@
 -	# Start the program in the background from a sub-shell
 -	# so that process will appear in the ps output immediately.
 -	sh -c "$PROGRAM $OPTIONS &"
-+	cd $STATE_DIR && /usr/sbin/daemon -f $PROGRAM $OPTIONS &
- 
+-
 -	pid=`getpid "$PROGRAM"`
 -	if [ X"$pid" = X ]; then
 -		printf '\r\033[71C['${FG_RED}'FAILED'${FG_NORMAL}']\n'
@@ -28,9 +27,12 @@
 -	fi
 -
 -	printf '\r\033[71C['${FG_GREEN}'  OK  '${FG_NORMAL}']\n'
-+	echo -n " milter-sender"
++ 	cd $STATE_DIR && /usr/sbin/daemon -f $PROGRAM $OPTIONS &
++  
++ 	echo -n " milter-sender"
  }
  
+ unalias stop
  stop()
  {
  	NAME=`basename "$PROGRAM"`
@@ -38,7 +40,7 @@
  
  	pid=`getpid "$PROGRAM"`
  	if [ X"$pid" != X ]; then
-@@ -113,7 +103,7 @@
+@@ -133,7 +123,7 @@
  			
  			pid=`getpid "$PROGRAM"`
  			if [ X"$pid" != X ]; then					
@@ -47,7 +49,7 @@
  				return
  			fi
  			
-@@ -132,7 +122,7 @@
+@@ -152,7 +142,7 @@
  		fi
  	fi
  
@@ -56,7 +58,7 @@
  }
  
  case "$1" in
-@@ -163,9 +153,9 @@
+@@ -183,9 +173,9 @@
  status)
  	pid=`getpid "$PROGRAM"`
  	if [ X"$pid" != X ]; then
