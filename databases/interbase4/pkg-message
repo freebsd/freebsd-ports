@@ -1,0 +1,12 @@
+You may want to add these lines...
+
+----- /etc/inetd.conf
+#
+# Borland International InterBase Database Server
+#
+gds_db	stream	tcp	nowait	root	/usr/local/interbase/bin/gds_inet_server  gds_inet_server
+-----
+----- /etc/services
+gds_db		3050/tcp	# Borland International 
+				# InterBase Database Remote Protocol
+-----
