@@ -5,18 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=	BitchX
-PORTVERSION=	1.0c17
-PORTREVISION=	3
+PORTNAME=       BitchX
+PORTVERSION=	1.0c18
 CATEGORIES=	irc gnome
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.bitchx.org/pub/BitchX/source/
+DISTNAME=	ircii-pana-1.0c18
 
 MAINTAINER=	cj@vallcom.net
 
 WRKSRC=		${WRKDIR}/BitchX
 
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WANT_ESOUND=	yes
 WANT_GNOME=	yes
@@ -62,7 +62,7 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 .endif
 
 .if defined(WITH_PLUGINS)
-CONFIGURE_ARGS+=--with-plugins=pkga,possum,encrypt,hint,abot,acro,amp,blowfish,scan,wavplay,qmail,fserv,nap,qbx
+CONFIGURE_ARGS+=--with-plugins
 PLIST_SUB+=	PLUGINS:=""
 .else
 CONFIGURE_ARGS+=--without-plugins
