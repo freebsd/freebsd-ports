@@ -1,5 +1,5 @@
---- unixlib/dboxpath.h.orig	Wed May 16 18:39:49 2001
-+++ unixlib/dboxpath.h	Mon Jun 18 00:08:26 2001
+--- unixlib/dboxpath.h.orig	Thu May 17 01:39:49 2001
++++ unixlib/dboxpath.h	Mon Aug  6 02:52:11 2001
 @@ -5,6 +5,7 @@
  #include <string>
  
@@ -14,7 +14,7 @@
  
 -#define DKIMAP4DIR "/var/spool/dkimap/"
 +#ifndef GLOBALMAILDIR
-+#define GLOBALMAILDIR _PATH_MAILDIR
++#define GLOBALMAILDIR _PATH_MAILDIR "/"
 +#endif
  
  //#define DBOXSYSTEMDIR "%s" "system" DIRCHAR
