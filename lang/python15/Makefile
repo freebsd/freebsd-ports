@@ -91,7 +91,7 @@ PLATFORMS=plat-freebsd2 plat-freebsd4 plat-freebsd5
 PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 .endif
 
-pre-install:
+pre-su-install:
 .for platform in ${PLATFORMS}
 	${MKDIR} ${PYTHONPREFIX_LIBDIR}/${platform}
 	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/*                    \
