@@ -3,7 +3,7 @@
 # Date created:         Sa   9 Nov 1996 00:52:22 MET
 # Whom:			se
 #
-# $Id: Makefile,v 1.63 1998/10/13 03:55:19 jseger Exp $
+# $Id: Makefile,v 1.64 1998/10/13 04:39:18 jseger Exp $
 #
 
 DATE=		980927
@@ -14,8 +14,6 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
 
 MAINTAINER=	se@FreeBSD.ORG
-
-BROKEN=		treeview.c
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
