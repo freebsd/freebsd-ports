@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phptags
-PORTVERSION=	0.1
+PORTVERSION=	0.2.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,10 +18,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		phptags.1
-PLIST_FILES=	bin/phptags
+PLIST_FILES=	bin/phptags \
+		etc/phptags.conf.sample
 PORTDOCS=	AUTHORS TODO README ChangeLog INSTALL
 
 post-install:
+	@${INSTALL_DATA} ${WRKSRC}/phptags.conf.sample ${PREFIX}/etc
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
