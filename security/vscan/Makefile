@@ -7,6 +7,7 @@
 
 PORTNAME=	uvscan
 PORTVERSION=	4.16e
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/cmdline/bsd/version_4.16/
 DISTNAME=	vbsd416e
@@ -33,6 +34,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/uvscan ${PREFIX}/libexec/uvscan
 	${INSTALL_SCRIPT} ${WRKSRC}/uvscan.sh ${PREFIX}/bin/uvscan
 	${INSTALL_PROGRAM} ${WRKSRC}/libbsdfv.so ${PREFIX}/lib/libbsdfv.so
+	${INSTALL_PROGRAM} ${WRKSRC}/libbsdfv.so.4 ${PREFIX}/lib/libbsdfv.so.4
 .for file in license.dat messages.dat
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/libexec/uvscan
 .endfor
