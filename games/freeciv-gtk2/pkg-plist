@@ -1,6 +1,7 @@
 bin/civserver
 bin/civclient
 share/freeciv/Freeciv
+share/freeciv/helpdata.txt
 share/freeciv/intro.xpm
 share/freeciv/radar.xpm
 share/freeciv/tiles.xpm
