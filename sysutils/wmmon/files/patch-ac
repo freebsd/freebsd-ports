@@ -1,16 +1,13 @@
---- wmmon.c.orig	Fri Jan  8 16:54:07 1999
-+++ wmmon.c	Fri Jan  8 16:54:25 1999
-@@ -220,11 +220,13 @@
- 		}
- 	}
- 
-+#if __FreeBSD_version >= 300000
- 	if( checkversion() < 0 )
- 	{
- 		fprintf( stderr, devstat_errbuf );
- 		exit(1);
- 	}
-+#endif
- 
- 	wmmon_routine(argc, argv);
- }
+*** ../../wmmon.app/wmgeneral/misc.c.orig	Tue May 19 17:13:23 1998
+--- ../../wmmon.app/wmgeneral/misc.c	Mon May 24 21:26:26 1999
+***************
+*** 64,69 ****
+--- 64,71 ----
+  
+      t = ret = malloc(strlen(word)+1);
+      ptr = word;
++ 
++     if (ret==NULL) return NULL;
+      
+      state = 0;
+      *t = 0;
