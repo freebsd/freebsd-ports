@@ -1,15 +1,9 @@
---- Makefile.orig	Sun Sep 24 23:50:45 2000
-+++ Makefile	Thu Sep 28 11:58:34 2000
-@@ -1,7 +1,7 @@
- VERSION=0.8.21
- 
- #Langue : francais ou english
--LANGUE=francais
-+LANGUE=english
- #langue=english
- 
- #Cible : Linux ou Windows (ou probablement d'autres mais je n'ai que ceux-là).
-@@ -28,14 +28,15 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Wed Dec 27 19:04:26 2000
++++ Makefile	Sat Mar 10 12:51:44 2001
+@@ -24,14 +24,15 @@
  	ifeq ($(LOCAL),1)
  	 	DATADIR = $(HOME)/BomberInstinct
  	else
@@ -28,5 +22,5 @@
 +	CFLAGS += $(CFLAGS_)
 +	LIBS := $(shell $(SDL_CONFIG) --libs) -lSDL_mixer -lsmpeg -lm #-lSDL_image --static 
  endif
- OBJS = sprites.o niveaux.o pouvoirs.o evenements.o options.o son.o intro.o SFont/font.o
+ OBJS = sprites.o niveaux.o pouvoirs.o evenements.o options.o son.o intro.o gamelogic.o SFont/SFont.o
  ifeq ($(DEBUG),1)

@@ -7,6 +7,7 @@
 
 PORTNAME=	bomberinstinct
 PORTVERSION=	0.8.21
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://harpe.dptmaths.ens-cachan.fr/U/gesbert/dl/
 DISTNAME=	BomberInstinct-${PORTVERSION}
@@ -31,7 +32,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/Spred/spred ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/share/BomberInstinct
 	@${INSTALL_DATA} ${WRKSRC}/bi.cfg ${PREFIX}/share/BomberInstinct
-	@cd ${WRKSRC}; tar cf - Décors Sprites Niveaux Bruitages | \
+	@cd ${WRKSRC}; tar cf - Decors Sprites Niveaux Bruitages | \
 		(cd ${PREFIX}/share/BomberInstinct; ${TAR} --unlink -xf - )
 
 .include <bsd.port.mk>

@@ -10,20 +10,22 @@ share/BomberInstinct/Bruitages/fontaine.wav
 share/BomberInstinct/Bruitages/intro.s3m
 share/BomberInstinct/Bruitages/mort.wav
 share/BomberInstinct/Bruitages/teleport.wav
-share/BomberInstinct/Décors/Bande.bmp
-share/BomberInstinct/Décors/Choix.bmp
-share/BomberInstinct/Décors/Menu.bmp
-share/BomberInstinct/Décors/Menu_en.bmp
-share/BomberInstinct/Décors/Menu_fr.bmp
-share/BomberInstinct/Décors/Options.bmp
-share/BomberInstinct/Décors/Options_en.bmp
-share/BomberInstinct/Décors/Options_fr.bmp
-share/BomberInstinct/Décors/font.bmp
-share/BomberInstinct/Décors/icone.bmp
-share/BomberInstinct/Décors/mode.bmp
-share/BomberInstinct/Décors/mode_0.bmp
-share/BomberInstinct/Décors/mode_1.bmp
-share/BomberInstinct/Décors/mode_2.bmp
+share/BomberInstinct/Decors/Bande.bmp
+share/BomberInstinct/Decors/Barbare.bmp
+share/BomberInstinct/Decors/Choix.bmp
+share/BomberInstinct/Decors/Magus.bmp
+share/BomberInstinct/Decors/Menu_en.bmp
+share/BomberInstinct/Decors/Menu_fr.bmp
+share/BomberInstinct/Decors/Options_en.bmp
+share/BomberInstinct/Decors/Options_fr.bmp
+share/BomberInstinct/Decors/Titre.bmp
+share/BomberInstinct/Decors/Troll.bmp
+share/BomberInstinct/Decors/font.bmp
+share/BomberInstinct/Decors/icone.bmp
+share/BomberInstinct/Decors/mode.bmp
+share/BomberInstinct/Decors/mode_0.bmp
+share/BomberInstinct/Decors/mode_1.bmp
+share/BomberInstinct/Decors/mode_2.bmp
 share/BomberInstinct/Niveaux/choix.niv
 share/BomberInstinct/Niveaux/dedale.niv
 share/BomberInstinct/Niveaux/electr.g
@@ -90,6 +92,6 @@ share/BomberInstinct/Sprites/tunnel.spr
 share/BomberInstinct/bi.cfg
 @dirrm share/BomberInstinct/Sprites
 @dirrm share/BomberInstinct/Niveaux
-@dirrm share/BomberInstinct/Décors
+@dirrm share/BomberInstinct/Decors
 @dirrm share/BomberInstinct/Bruitages
 @dirrm share/BomberInstinct
