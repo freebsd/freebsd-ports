@@ -1,6 +1,5 @@
-lib/streamtuner/plugins/python.a
-lib/streamtuner/plugins/python.la
 lib/streamtuner/plugins/python.so
+share/locale/fr/LC_MESSAGES/streamtuner-python.mo
 share/streamtuner-python/icons/google-stations.png
 share/streamtuner-python/modules/G.py
 share/streamtuner-python/modules/G.pyc
