@@ -8,7 +8,7 @@
 PORTNAME=	aolserver
 PORTVERSION=	3.0
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.aolserver.com/3.0/
+MASTER_SITES=	ftp://ftp.aolserver.com/server/3.0/
 DISTNAME=	aolserver3_0
 
 MAINTAINER=	mab@red-bean.com
