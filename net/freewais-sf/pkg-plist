@@ -4,9 +4,10 @@ bin/dictionary
 bin/getaddrs
 bin/inverted_file
 bin/makedb
-bin/stringtoany
+bin/mkfmt
+bin/server_stats
+bin/stats.awk
 bin/swais
-bin/trunc
 bin/wais-gif-display
 bin/wais-html-display
 bin/wais-jfif-display
@@ -15,15 +16,16 @@ bin/wais-pict-display
 bin/wais-ppm-display
 bin/wais-tiff-display
 bin/waisindex
+bin/waisping
 bin/waisq
 bin/waisretrieve
 bin/waissearch
 bin/waisserver
 bin/ws
-bin/xwais
-bin/xwaisq
-lib/XwaisHELP
-lib/XwaisqHELP
-lib/app-defaults/Xwais
-lib/emacs/lisp/wais.el
+lib/freeWAIS-sf/emacs/lisp/wais.el
+lib/freeWAIS-sf/libwais.a
 share/doc/SF/fwsf.ps
+@dirrm lib/freeWAIS-sf/emacs/lisp
+@dirrm lib/freeWAIS-sf/emacs
+@dirrm lib/freeWAIS-sf
+@dirrm share/doc/SF

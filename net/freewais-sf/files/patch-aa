@@ -1,18 +1,19 @@
---- configure~	Mon Jul  8 22:36:12 1996
-+++ configure	Mon Feb 17 16:22:27 1997
-@@ -2575,6 +2575,7 @@
- #line 2576 "configure"
- #include "confdefs.h"
- 
-+#include <sys/types.h>
- #ifdef HAVE_SYS_DIR_H
- #include <sys/dir.h>
- #endif
-@@ -2616,6 +2617,7 @@
- #line 2617 "configure"
- #include "confdefs.h"
- 
-+#include <sys/types.h>
- #ifdef HAVE_SYS_DIR_H
- #include <sys/dir.h>
- #endif
+*** Configure.orig	Tue Mar  2 11:28:08 1999
+--- Configure	Tue Mar  2 11:36:05 1999
+***************
+*** 829,835 ****
+  *)
+  	if test ! -t 0; then
+  		echo "Say 'sh Configure', not 'sh <Configure'"
+! 		exit 1
+  	fi
+  	;;
+  esac
+--- 829,835 ----
+  *)
+  	if test ! -t 0; then
+  		echo "Say 'sh Configure', not 'sh <Configure'"
+! #		exit 1
+  	fi
+  	;;
+  esac
