@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	japanese www elisp
+CATEGORIES=	japanese
 
 # Don't RUN_DEPENDS on mule because we don't know which version the
 # user would want.  We can't omit the BUILD_DEPENDS because it needs

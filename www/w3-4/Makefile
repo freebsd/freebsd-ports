@@ -7,7 +7,7 @@
 
 PORTNAME=	w3
 PORTVERSION= 	2.2.26
-CATEGORIES?=	www elisp
+CATEGORIES+=	www elisp
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/network/WWW/w3/ \
 		ftp://ftp.cs.indiana.edu/pub/elisp/w3/
 
@@ -37,11 +37,11 @@ INFOFILE=	w3.info
 post-build:
 .for f in DEINSTALL INSTALL dot.emacs user-install
 	@${SED} -e "s,%VERSION%,${VERSION},g" \
- 		-e "s,%PREFIX%,${PREFIX},g" \
- 		-e "s,%INFODIR%,${INFODIR},g" \
- 		-e "s,%ELISPDIR%,${ELISPDIR},g" \
+		-e "s,%PREFIX%,${PREFIX},g" \
+		-e "s,%INFODIR%,${INFODIR},g" \
+		-e "s,%ELISPDIR%,${ELISPDIR},g" \
 		-e "s,%INFOFILE%,${INFOFILE},g" \
- 		-e "s,%ADDIR%,${ADDIR},g" \
+		-e "s,%ADDIR%,${ADDIR},g" \
 		-e "s,%TOUCH%,${TOUCH},g" \
 		-e "s,%MKDIR%,${MKDIR},g" \
 		-e "s,%SAMPLEDIR%,${SAMPLEDIR},g" \
