@@ -260,6 +260,7 @@
     SUBDIR += py-HTMLgen
     SUBDIR += qdecoder
     SUBDIR += quanta
+    SUBDIR += quixote
     SUBDIR += reportmagic
     SUBDIR += roxen
     SUBDIR += ruboard
