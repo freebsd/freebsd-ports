@@ -20,15 +20,15 @@ MAN8=	mtr.8
 
 .include <bsd.port.pre.mk>
 
-#.if ${OSVERSION} >= 400014
-#PATCHFILES=	mtr-041-v6-20000127a.diff.gz
-#PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-#PATCH_DIST_STRIP=	-p1
+.if ${OSVERSION} >= 400014
+PATCHFILES=	mtr-042-v6-20000507.diff.gz
+PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
+PATCH_DIST_STRIP=	-p1
 
-#CONFIGURE_ARGS+=--enable-ipv6
-#.else
+CONFIGURE_ARGS+=--enable-ipv6
+.else
 CONFIGURE_ARGS+=--disable-ipv6
-#.endif
+.endif
 
 pre-patch:
 .if !defined(WITH_GTK)
