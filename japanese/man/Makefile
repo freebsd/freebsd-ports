@@ -7,10 +7,14 @@
 
 PORTNAME=	man
 PORTVERSION=	1.1j
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://daemon.jp.freebsd.org/pub/FreeBSD-jp/man-jp/ \
 		${MASTER_SITE_PORTS_JP}
 DISTNAME=	jp-${PORTNAME}-${PORTVERSION}
+
+PATCH_SITES=	ftp://daemon.jp.freebsd.org/pub/FreeBSD-jp/man-jp/
+PATCHFILES=	jp-man-1.1j-ex-20010724.patch
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
