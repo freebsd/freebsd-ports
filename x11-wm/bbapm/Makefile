@@ -16,8 +16,6 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	adam@vectors.cx
 
-RUN_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
-
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
