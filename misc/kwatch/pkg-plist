@@ -4,25 +4,24 @@ share/apps/kwatch/kwatchui.rc
 share/doc/HTML/default/kwatch/common
 share/doc/HTML/default/kwatch/index.cache.bz2
 share/doc/HTML/default/kwatch/index.docbook
-share/doc/HTML/default/kwatch/index.docbook.orig
 share/icons/hicolor/16x16/apps/kwatch.png
 share/icons/hicolor/32x32/apps/kwatch.png
 share/icons/locolor/16x16/apps/kwatch.png
 share/icons/locolor/32x32/apps/kwatch.png
 share/locale/de/LC_MESSAGES/kwatch.mo
 @comment directories
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @dirrm share/doc/HTML/default/kwatch
-@dirrm share/doc/HTML/default
-@dirrm share/doc/HTML
+@unexec rmdir %D/share/doc/HTML/default 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
 @dirrm share/apps/kwatch
-@dirrm share/applnk/Utilities
+@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true

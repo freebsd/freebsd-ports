@@ -6,23 +6,25 @@
 #
 
 PORTNAME=	kwatch
-PORTVERSION=	2.3.0
-PORTREVISION=	2
+PORTVERSION=	2.3.3
 CATEGORIES=	misc kde
 MASTER_SITES=	http://www.m-j-s.net/pub/kde/ \
 		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/apps/KDE3.x/admin/
 
-MAINTAINER=	kde@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE/Qt log file viewer
 
-USE_GETTEXT=	yes
-USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_KDELIBS_VER=	3
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2 ||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,-O2 ,,g ; \
+		 s,-lpthread,${PTHREAD_LIBS},g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's,$$(LIB_KFILE)$$,$$(LIB_KFILE) $$(LIBPTHREAD),g' \
+			${WRKSRC}/kwatch/Makefile.in
 
 .include <bsd.port.mk>
