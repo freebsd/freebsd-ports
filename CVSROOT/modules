@@ -7842,6 +7842,7 @@ teapot		ports/deskutils/teapot
 ted		ports/editors/ted
 tee		src/usr.bin/tee
 teg		ports/games/teg
+tei-guidelines-p4	ports/textproc/tei-guidelines-p4
 teknap		ports/audio/teknap
 telnet		src/usr.bin/telnet
 telnetd		src/libexec/telnetd
