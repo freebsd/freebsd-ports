@@ -1940,6 +1940,8 @@ eclipse/features/org.eclipse.emf.doc.nls1_%%LANGPACKVER%%/cpl-v10.html
 @dirrm eclipse/features/org.eclipse.xsd.nls1_%%LANGPACKVER%%
 @dirrm eclipse/features/org.eclipse.xsd.doc_1.1.1
 @dirrm eclipse/features/org.eclipse.xsd.doc.nls1_%%LANGPACKVER%%
+@dirrm eclipse/features/org.eclipse.platform_%%LANGPACKVER%%
+@dirrm eclipse/features/org.eclipse.platform.source_%%LANGPACKVER%%
 @dirrm eclipse/features/org.eclipse.platform.source.nls1_%%LANGPACKVER%%
 @dirrm eclipse/features/org.eclipse.platform.nls1_%%LANGPACKVER%%
 @dirrm eclipse/features/org.eclipse.platform.linux.gtk_%%LANGPACKVER%%
@@ -1948,6 +1950,8 @@ eclipse/features/org.eclipse.emf.doc.nls1_%%LANGPACKVER%%/cpl-v10.html
 @dirrm eclipse/features/org.eclipse.platform.linux.gtk.nls1_%%LANGPACKVER%%
 @dirrm eclipse/features/org.eclipse.pde_2.1.0
 @dirrm eclipse/features/org.eclipse.pde.nls1_%%LANGPACKVER%%
+@dirrm eclipse/features/org.eclipse.jdt_%%LANGPACKVER%%
+@dirrm eclipse/features/org.eclipse.jdt.source_%%LANGPACKVER%%
 @dirrm eclipse/features/org.eclipse.jdt.source.nls1_%%LANGPACKVER%%
 @dirrm eclipse/features/org.eclipse.jdt.nls1_%%LANGPACKVER%%
 @dirrm eclipse/features/org.eclipse.hyades_1.0.3.1
