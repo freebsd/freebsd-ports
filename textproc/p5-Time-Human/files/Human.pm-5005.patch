@@ -1,0 +1,59 @@
+--- Human.pm.orig	Thu May 30 14:01:27 2002
++++ Human.pm	Tue Jun 29 11:52:35 2004
+@@ -1,12 +1,15 @@
++#!/usr/bin/perl -w
++
+ package Time::Human;
+ 
+-require 5.005_62;
++require 5.005_03;
+ use strict;
+-use warnings;
+ 
+ require Exporter;
+ 
+-our @ISA = qw(Exporter);
++use vars qw/@ISA $VERSION %EXPORT_TAGS @EXPORT_OK @EXPORT
++	%templates $Language $Evening $Night/;
++@ISA = qw(Exporter);
+ 
+ # Items to export into callers namespace by default. Note: do not export
+ # names by default without a very good reason. Use EXPORT_OK instead.
+@@ -15,19 +18,19 @@
+ # This allows declaration	use Time::Human ':all';
+ # If you do not need this, moving things directly into @EXPORT or @EXPORT_OK
+ # will save memory.
+-our %EXPORT_TAGS = ( 'all' => [ qw(
++%EXPORT_TAGS = ( 'all' => [ qw(
+ 	humantime
+ ) ] );
+ 
+-our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
++@EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
+ 
+-our @EXPORT = qw(
++@EXPORT = qw(
+     humanize
+ 	
+ );
+-our $VERSION = '1.02';
++$VERSION = '1.02';
+ 
+-our %templates = (
++%templates = (
+ 
+     English => {
+         numbers  => [ qw(one two three four five six seven eight nine ten eleven twelve) ],
+@@ -43,9 +46,9 @@
+     }
+ );
+ 
+-our $Language = "English";
+-our $Evening = 18;
+-our $Night = 22;
++$Language = "English";
++$Evening = 18;
++$Night = 22;
+ 
+ # Preloaded methods go here.
+ 
