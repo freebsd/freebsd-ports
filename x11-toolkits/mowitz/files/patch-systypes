@@ -1,0 +1,11 @@
+--- Mowitz/MwUtils.h	Wed Feb 13 08:51:58 2002
++++ Mowitz/MwUtils.h	Tue Jul 16 13:25:32 2002
+@@ -1,6 +1,8 @@
+ #ifndef MW_UTILS_H
+ #define MW_UTILS_H
+ 
++#include <sys/types.h>	/* for the pid_t definition */
++
+ #ifndef MW_MAX
+ #define MW_MAX(a,b) ((a)>(b)?(a):(b))
+ #endif
