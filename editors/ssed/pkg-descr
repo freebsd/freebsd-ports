@@ -1,10 +1,10 @@
-This is a version of sed based on GNU sed 3.02.80.  It is not
-a version of GNU sed, though.
+This is a version of sed based on GNU sed. It is not a version of
+GNU sed, though.
 
-Relative to 3.02, there are several new features (including in-place
-editing of files, extended regular expression syntax and a few new
-commands) and some bug fixes; see the NEWS file for a brief summary
-and the ChangeLog for more detailed descriptions of changes.
+There are several new features (including in-place editing of files,
+extended regular expression syntax and a few new commands) and some
+bug fixes; see the NEWS file for a brief summary and the ChangeLog
+for more detailed descriptions of changes.
 
 The biggest note, i think is the *huge* speed difference, where
 regular sed might take a few mins, super-sed can take only seconds
@@ -12,4 +12,4 @@ this is not true in all cases, and sometimes you have modify your
 regexp syntax, however for the speed increase, it might be worth
 it.
 
-WWW: http://queen.rett.polimi.it/~paolob/seders/ssed/
+WWW: http://sed.sourceforge.net/grabbag/ssed/
