@@ -43,7 +43,8 @@ CONFIGURE_ARGS=	--with-apxs=${APXS} \
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		TOUCH="${TOUCH}" \
-		MKDIR="${MKDIR}"
+		MKDIR="${MKDIR}" \
+		CAT="${CAT}"
 
 .if exists(${APXS})
 AP_LIBEXEC!=	${APXS} -q LIBEXEC
