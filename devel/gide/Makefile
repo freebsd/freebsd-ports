@@ -22,7 +22,8 @@ LIB_DEPENDS=	gdl.0:${PORTSDIR}/x11-toolkits/gdl \
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOME=	gnomehack gnomeprefix gnomevfs bonobo
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -30,15 +31,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		gide.1
 
-pre-patch:
-	@${PERL} -pi -e \
-		 's|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
-		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/src/*.c
-	@${PERL} -pi -e "s|%%X11BASE%%|${X11BASE}|g" ${WRKSRC}/src/*.c
+post-patch:
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g; \
+		s|%%X11BASE%%|${X11BASE}|g" ${WRKSRC}/src/*.c
 
 pre-configure:
 	@${LN} -sf ${LOCALBASE}/share/xml-i18n-tools/*.in ${WRKSRC}
