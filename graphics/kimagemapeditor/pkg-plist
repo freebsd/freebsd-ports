@@ -1,0 +1,47 @@
+bin/kimagemapeditor
+lib/kde3/libkimagemapeditor.la
+lib/kde3/libkimagemapeditor.so
+lib/kde3/libkimagemapeditor.so.1
+share/applnk/Development/kimagemapeditor.desktop
+share/apps/kimagemapeditor/addpointcursor.png
+share/apps/kimagemapeditor/freehandcursor.png
+share/apps/kimagemapeditor/kimagemapeditorpartui.rc
+share/apps/kimagemapeditor/kimagemapeditorui.rc
+share/apps/kimagemapeditor/polygoncursor.png
+share/apps/kimagemapeditor/removepointcursor.png
+share/icons/hicolor/16x16/apps/kimagemapeditor.png
+share/icons/hicolor/22x22/actions/addpoint.png
+share/icons/hicolor/22x22/actions/arrow.png
+share/icons/hicolor/22x22/actions/circle.png
+share/icons/hicolor/22x22/actions/circle2.png
+share/icons/hicolor/22x22/actions/freehand.png
+share/icons/hicolor/22x22/actions/lower.png
+share/icons/hicolor/22x22/actions/polygon.png
+share/icons/hicolor/22x22/actions/raise.png
+share/icons/hicolor/22x22/actions/rectangle.png
+share/icons/hicolor/22x22/actions/removepoint.png
+share/icons/hicolor/32x32/apps/kimagemapeditor.png
+share/icons/hicolor/48x48/apps/kimagemapeditor.png
+share/icons/locolor/16x16/apps/kimagemapeditor.png
+share/icons/locolor/32x32/apps/kimagemapeditor.png
+share/locale/de/LC_MESSAGES/kimagemapeditor.mo
+share/locale/es/LC_MESSAGES/kimagemapeditor.mo
+share/locale/fr/LC_MESSAGES/kimagemapeditor.mo
+share/locale/nl/LC_MESSAGES/kimagemapeditor.mo
+share/services/kimagemapeditorpart.desktop
+@dirrm share/apps/kimagemapeditor
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Development 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22/actions 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/services 2>/dev/null || true
+@unexec rmdir %D/lib/kde3 2>/dev/null || true
