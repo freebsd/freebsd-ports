@@ -1,151 +1,107 @@
-*** Imakefile.orig	Sat Mar  1 00:48:57 1997
---- Imakefile	Sat Jan 15 00:00:00 2000
-***************
-*** 6,63 ****
-  
-  
-  /* ----------------------------------------------------------------------- */
-! /* -------------------- その1 インストール先の設定 ----------------------- */
-  /* ----------------------------------------------------------------------- */
-  
-! /* インストールディレクトリ						   */
-! /* 書き込み権限が無いとインストール出来ません．=> 遊べない．(^^;           */
-! PIXMAPDIR	= /usr/local/games/lib/xsoldier
-! SCOREDIR	= /usr/local/games/lib/xsoldier
-! BINDIR		= /usr/local/games
-  
-! /* スコアファイル名．SCOREDIR 以下に置かれます．			   */
-  SCOREFILE	= .scorefile
-  
-  
-  /* ----------------------------------------------------------------------- */
-! /* --------------------- その2 コンパイルの設定 -------------------------- */
-  /* ----------------------------------------------------------------------- */
-  
-! /* xmkmf の Makefile で cc になっちゃう場合				   */
-  /* CC		= gcc */
-  
-! /* xpmがXと異なるディレクトリにインストールされている場合		   */
-  /* XPMINCDIR	= /usr/X11R6/include */
-  /* XPMLIBDIR	= /usr/X11R6/lib */
-! /* 			  ココに path を書いて				   */
-  /* XPMINCFLAGS	= -I$(XPMINCDIR) */
-  /* XPMLIBFLAGS	= -L$(XPMLIBDIR) */
-! /* 上の2つのコメントを解除してください					   */
-  
-! /* ゲームのウエイト							   */
-  WAIT		= 35000
-  
-! /* その他コンパイルオプション						   */
-! /*     -DDUPSCORE … 同一人物がハイスコアに複数エントリ出来る              */
-! /*     -DSYSV     … SystemV 系などで random 関数が無い場合，		   */
-! /*                   かわりに srand48 と lrand48 関数を使用します	   */
-  LOCAL_DEF	= 
-  
-! /* ジョイスティックを使う場合						   */
-  /* #define JOYSTICK */
-  
-  
-  /* ----------------------------------------------------------------------- */
-! /* ------------------ その3 インストールコマンドの設定 ------------------- */
-  /* ----------------------------------------------------------------------- */
-  
-! /* Solarisでopenwinを使用してコンパイルするときに必要			   */
-  /* INSTALL		= /usr/ucb/install */
-  
-  
-  /* ----------------------------------------------------------------------- */
-  /*									   */
-! /* 		 基本的にここから下はいぢらなくて済むハズ		   */
-  /*									   */
-  /* ----------------------------------------------------------------------- */
-  
---- 6,63 ----
-  
-  
-  /* ----------------------------------------------------------------------- */
-! /* ---------------------- PART1 INSTALL DIRECTORY ------------------------ */
-  /* ----------------------------------------------------------------------- */
-  
-! /* Install Directory                                                       */
-! /* You can't install without write permission of these. => Unplayable. (^^;*/
-! PIXMAPDIR	= $(LIBDIR)/xsoldier
-! SCOREDIR	= $(LIBDIR)/xsoldier
-! /* BINDIR		= /usr/local/games */
-  
-! /* Score File Name. It's under SCOREDIR.                                   */
-  SCOREFILE	= .scorefile
-  
-  
-  /* ----------------------------------------------------------------------- */
-! /* ------------------- PART2 COMPILE CONFIGURATION ----------------------- */
-  /* ----------------------------------------------------------------------- */
-  
-! /* What compiler do you want to use?                                       */
-  /* CC		= gcc */
-  
-! /* If you have xpm not in the X directory.                                 */
-  /* XPMINCDIR	= /usr/X11R6/include */
-  /* XPMLIBDIR	= /usr/X11R6/lib */
-! /*                        Write path name here and .....                   */
-  /* XPMINCFLAGS	= -I$(XPMINCDIR) */
-  /* XPMLIBFLAGS	= -L$(XPMLIBDIR) */
-! /* Uncomment the upper 2 lines.                                            */
-  
-! /* Game Wait                                                               */
-  WAIT		= 35000
-  
-! /* The other compile options                                               */
-! /*     -DDUPSCORE -> Allow multiple entry in the high score                */
-! /*     -DSYSV     -> Specify when not have random functions(SystemV etc.)  */
-! /*                   Use srand48 and lrand48 instead.                      */
-  LOCAL_DEF	= 
-  
-! /* When you use the joystick                                               */
-  /* #define JOYSTICK */
-  
-  
-  /* ----------------------------------------------------------------------- */
-! /* ------------------ PART3 INSTALL COMMAND CONFIGURATION ---------------- */
-  /* ----------------------------------------------------------------------- */
-  
-! /* You need this when you use openwin on Solaris.                          */
-  /* INSTALL		= /usr/ucb/install */
-  
-  
-  /* ----------------------------------------------------------------------- */
-  /*									   */
-! /*               Basically, you don't need change below.                   */
-  /*									   */
-  /* ----------------------------------------------------------------------- */
-  
-***************
-*** 95,101 ****
-  install.score::
-  	@if [ -d $(SCOREDIR) ]; then chmod 755 $(SCOREDIR); \
-          else $(MKDIRHIER) $(SCOREDIR); chmod 755 $(SCOREDIR); fi
-! 	$(INSTALL) -c -m 600 scorefile.txt $(SCOREDIR)/$(SCOREFILE)
-  	@echo "install score . done"
-  
-  install.pixmap::
---- 95,101 ----
-  install.score::
-  	@if [ -d $(SCOREDIR) ]; then chmod 755 $(SCOREDIR); \
-          else $(MKDIRHIER) $(SCOREDIR); chmod 755 $(SCOREDIR); fi
-! 	$(INSTALL) -c -g games -m 660 scorefile.txt $(SCOREDIR)/$(SCOREFILE)
-  	@echo "install score . done"
-  
-  install.pixmap::
-***************
-*** 109,113 ****
-  install.bin::
-  	@if [ -d $(BINDIR) ]; then set +x; \
-          else (set -x; $(MKDIRHIER) $(BINDIR)); fi
-! 	$(INSTALL) -c -m 4755 $(PROGRAM) $(BINDIR)/$(PROGRAM)
-  	@echo "install bin . done"
---- 109,113 ----
-  install.bin::
-  	@if [ -d $(BINDIR) ]; then set +x; \
-          else (set -x; $(MKDIRHIER) $(BINDIR)); fi
-! 	$(INSTALL) -c -g games -m 2755 $(PROGRAM) $(BINDIR)/$(PROGRAM)
-  	@echo "install bin . done"
+--- Imakefile.orig	Sat Mar  1 00:48:57 1997
++++ Imakefile	Wed Nov  1 12:11:15 2000
+@@ -6,58 +6,58 @@
+ 
+ 
+ /* ----------------------------------------------------------------------- */
+-/* -------------------- その1 インストール先の設定 ----------------------- */
++/* ---------------------- PART1 INSTALL DIRECTORY ------------------------ */
+ /* ----------------------------------------------------------------------- */
+ 
+-/* インストールディレクトリ						   */
+-/* 書き込み権限が無いとインストール出来ません．=> 遊べない．(^^;           */
+-PIXMAPDIR	= /usr/local/games/lib/xsoldier
+-SCOREDIR	= /usr/local/games/lib/xsoldier
+-BINDIR		= /usr/local/games
++/* Install Directory                                                       */
++/* You can't install without write permission of these. => Unplayable. (^^;*/
++PIXMAPDIR	= $(LIBDIR)/xsoldier
++SCOREDIR	= $(LIBDIR)/xsoldier
++/* BINDIR		= /usr/local/games */
+ 
+-/* スコアファイル名．SCOREDIR 以下に置かれます．			   */
++/* Score File Name. It's under SCOREDIR.                                   */
+ SCOREFILE	= .scorefile
+ 
+ 
+ /* ----------------------------------------------------------------------- */
+-/* --------------------- その2 コンパイルの設定 -------------------------- */
++/* ------------------- PART2 COMPILE CONFIGURATION ----------------------- */
+ /* ----------------------------------------------------------------------- */
+ 
+-/* xmkmf の Makefile で cc になっちゃう場合				   */
++/* What compiler do you want to use?                                       */
+ /* CC		= gcc */
+ 
+-/* xpmがXと異なるディレクトリにインストールされている場合		   */
++/* If you have xpm not in the X directory.                                 */
+ /* XPMINCDIR	= /usr/X11R6/include */
+ /* XPMLIBDIR	= /usr/X11R6/lib */
+-/* 			  ココに path を書いて				   */
++/*                        Write path name here and .....                   */
+ /* XPMINCFLAGS	= -I$(XPMINCDIR) */
+ /* XPMLIBFLAGS	= -L$(XPMLIBDIR) */
+-/* 上の2つのコメントを解除してください					   */
++/* Uncomment the upper 2 lines.                                            */
+ 
+-/* ゲームのウエイト							   */
++/* Game Wait                                                               */
+ WAIT		= 35000
+ 
+-/* その他コンパイルオプション						   */
+-/*     -DDUPSCORE … 同一人物がハイスコアに複数エントリ出来る              */
+-/*     -DSYSV     … SystemV 系などで random 関数が無い場合，		   */
+-/*                   かわりに srand48 と lrand48 関数を使用します	   */
++/* The other compile options                                               */
++/*     -DDUPSCORE -> Allow multiple entry in the high score                */
++/*     -DSYSV     -> Specify when not have random functions(SystemV etc.)  */
++/*                   Use srand48 and lrand48 instead.                      */
+ LOCAL_DEF	= 
+ 
+-/* ジョイスティックを使う場合						   */
++/* When you use the joystick                                               */
+ /* #define JOYSTICK */
+ 
+ 
+ /* ----------------------------------------------------------------------- */
+-/* ------------------ その3 インストールコマンドの設定 ------------------- */
++/* ------------------ PART3 INSTALL COMMAND CONFIGURATION ---------------- */
+ /* ----------------------------------------------------------------------- */
+ 
+-/* Solarisでopenwinを使用してコンパイルするときに必要			   */
++/* You need this when you use openwin on Solaris.                          */
+ /* INSTALL		= /usr/ucb/install */
+ 
+ 
+ /* ----------------------------------------------------------------------- */
+ /*									   */
+-/* 		 基本的にここから下はいぢらなくて済むハズ		   */
++/*               Basically, you don't need change below.                   */
+ /*									   */
+ /* ----------------------------------------------------------------------- */
+ 
+@@ -85,7 +85,7 @@
+ 
+ OBJS = $(SRCS:.c=.o)
+ 
+-ComplexProgramTarget(xsoldier)
++ComplexProgramTargetNoMan(xsoldier)
+ 
+ install:: install.pixmap install.score install.bin
+ 
+@@ -95,7 +95,7 @@
+ install.score::
+ 	@if [ -d $(SCOREDIR) ]; then chmod 755 $(SCOREDIR); \
+         else $(MKDIRHIER) $(SCOREDIR); chmod 755 $(SCOREDIR); fi
+-	$(INSTALL) -c -m 600 scorefile.txt $(SCOREDIR)/$(SCOREFILE)
++	$(INSTALL) -c -g games -m 660 scorefile.txt $(SCOREDIR)/$(SCOREFILE)
+ 	@echo "install score . done"
+ 
+ install.pixmap::
+@@ -109,5 +109,5 @@
+ install.bin::
+ 	@if [ -d $(BINDIR) ]; then set +x; \
+         else (set -x; $(MKDIRHIER) $(BINDIR)); fi
+-	$(INSTALL) -c -m 4755 $(PROGRAM) $(BINDIR)/$(PROGRAM)
++	$(INSTALL) -c -g games -m 2755 $(PROGRAM) $(BINDIR)/$(PROGRAM)
+ 	@echo "install bin . done"

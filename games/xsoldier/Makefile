@@ -14,6 +14,5 @@ MAINTAINER=	nakai@FreeBSD.org
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.mk>
