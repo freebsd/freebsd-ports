@@ -41,6 +41,7 @@
 %%HORDEDIR%%/config/lang.php.dist
 %%HORDEDIR%%/config/mime_drivers.php
 %%HORDEDIR%%/config/mime_drivers.php.dist
+%%HORDEDIR%%/config/mime_drivers.php.dist.orig
 %%HORDEDIR%%/config/mime_mapping.php
 %%HORDEDIR%%/config/mime_mapping.php.dist
 %%HORDEDIR%%/config/motd.php
