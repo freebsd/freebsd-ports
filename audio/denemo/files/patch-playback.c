@@ -1,11 +1,10 @@
---- playback.c.orig	Tue Jun 27 22:13:08 2000
-+++ playback.c	Sat Feb 10 19:34:55 2001
-@@ -18,7 +18,7 @@
- #include <stdlib.h>
- #include <unistd.h>
- #include <sys/types.h>
--#include <wait.h>
-+#include <sys/wait.h>
- #include <errno.h>
+--- playback.c.old	Wed Nov 14 11:13:02 2001
++++ playback.c	Wed Jan  9 19:38:16 2002
+@@ -7,6 +7,7 @@
  
- extern char **environ;		/* I don't know why this is here. Hiller 19 Apr 2000 */
+ 
+ #include "datastructures.h"
++#include "exportmidi.h"
+ #include "exportmudela.h"
+ #include "staffops.h"
+ #include "scoreops.h"
