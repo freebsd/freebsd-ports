@@ -1,0 +1,18 @@
+*** scripts/ion-view.orig	Sat Jan 20 01:44:05 2001
+--- scripts/ion-view	Sat Jan 20 01:55:39 2001
+***************
+*** 1,7 ****
+  #!/bin/sh
+  if echo "$1"|grep -E '^([a-zA-Z]+://|www.)' > /dev/null; then
+! 	exec netscape-remote "$1"
+  else
+! 	exec run-mailcap --action=view "$1" > /dev/null
+  fi
+  
+--- 1,7 ----
+  #!/bin/sh
+  if echo "$1"|grep -E '^([a-zA-Z]+://|www.)' > /dev/null; then
+! 	exec netscape "$1"
+  else
+! 	exec ion-runinxterm -T $1 $EDITOR "$1" > /dev/null
+  fi
