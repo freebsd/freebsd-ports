@@ -1,8 +1,12 @@
-lib/perl5/site_perl/%%PERL_VER%%/Mail/IMAPClient.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/IMAPClient/BodyStructure.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/IMAPClient/Parse.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/IMAPClient/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/IMAPClient
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/IMAPClient
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Mail 2>/dev/null || true
+%%SITE_PERL%%/Mail/IMAPClient.pm
+%%SITE_PERL%%/Mail/IMAPClient.pod
+%%SITE_PERL%%/Mail/IMAPClient/BodyStructure.pm
+%%SITE_PERL%%/Mail/IMAPClient/BodyStructure/Parse.pm
+%%SITE_PERL%%/Mail/IMAPClient/MessageSet.pm
+%%SITE_PERL%%/Mail/IMAPClient/Thread.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/IMAPClient/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/IMAPClient
+@dirrm %%SITE_PERL%%/Mail/IMAPClient/BodyStructure
+@dirrm %%SITE_PERL%%/Mail/IMAPClient
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true
