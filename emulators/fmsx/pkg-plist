@@ -1,15 +1,18 @@
 bin/fmsx
 bin/fmsx.bin
-bin/fmsx-dasm
 bin/fmsx-rddsk
 bin/fmsx-wrdsk
 share/fmsx/CMOS.ROM
 share/fmsx/CYRILLIC.FNT
 share/fmsx/DISK.ROM
 share/fmsx/ITALIC.FNT
+share/fmsx/KANJI.ROM
 share/fmsx/MSX.ROM
 share/fmsx/MSX2.ROM
 share/fmsx/MSX2EXT.ROM
 share/fmsx/MSX2P.ROM
 share/fmsx/MSX2PEXT.ROM
-share/doc/fmsx/fMSX.doc
+share/fmsx/PAINTER.ROM
+@dirrm share/fmsx
+share/doc/fmsx/fMSX.html
+@dirrm share/doc/fmsx

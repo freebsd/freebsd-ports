@@ -1,0 +1,21 @@
+--- Unix.c.orig	Thu Aug  3 20:10:32 2000
++++ Unix.c	Wed Aug 16 16:14:50 2000
+@@ -309,12 +309,16 @@
+           }
+           break;
+ 
+-        case XK_F9:
++        case XK_F6:
+           if(Control) AutoFire=!AutoFire;
+           break;
+ 
+-        case XK_F10:   
++        case XK_F9:   
+           if(Control) UseFont=UseFont? 0:FontBuf? 1:0;
++          break;
++
++        case XK_F10:
++          if(Control) LogSnd=!LogSnd;
+           break;
+ 
+         case XK_F12:   ExitNow=1;break;
