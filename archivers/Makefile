@@ -4,6 +4,7 @@
     SUBDIR += 9e
     SUBDIR += arc
     SUBDIR += arj
+    SUBDIR += bicom
     SUBDIR += bzip
     SUBDIR += bzip2
     SUBDIR += cabextract
@@ -64,6 +65,7 @@
     SUBDIR += unzip
     SUBDIR += wzip
     SUBDIR += xdms
+    SUBDIR += xmill
     SUBDIR += xpk
     SUBDIR += zip
     SUBDIR += zipios++
