@@ -1,0 +1,20 @@
+*** src/mod_mp3.c.orig	Mon Nov 18 11:26:53 2002
+--- src/mod_mp3.c	Mon Nov 18 11:26:42 2002
+***************
+*** 6,12 ****
+  #include "mod_mp3.h"
+  
+  /* Setup for our scoreboard */
+! static key_t shmkey = IPC_CREAT;
+  
+  extern mp3_dispatch internal;
+  #ifdef MYSQL_ENABLED
+--- 6,12 ----
+  #include "mod_mp3.h"
+  
+  /* Setup for our scoreboard */
+! static key_t shmkey = IPC_PRIVATE;
+  
+  extern mp3_dispatch internal;
+  #ifdef MYSQL_ENABLED
+
