@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.6
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.7
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -31,7 +31,7 @@ HEADERS_SUFX=
 .if ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	${WITH_MOZILLA}
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="trunk"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.4"
 .else
 MOZILLA=	mozilla-gtk2
 HEADERS_SUFX=
@@ -41,12 +41,12 @@ HEADERS_SUFX=
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
+WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla${HEADERS_SUFX}" \
 		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}" \
-		--enable-nautilus-view=no \
 		${MOZ_CONFIGURE_ARGS}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -54,6 +54,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_C
 FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
 
 .include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mnautilus2}!=""
+USE_GNOME+=		nautilus2
+CONFIGURE_ARGS+=	--enable-nautilus-view
+.else
+CONFIGURE_ARGS+=	--enable-nautilus-view=no
+.endif
 
 .if ${OSVERSION} > 500000
 # Galeon does not build correctly in -CURRENT if -Werror is passed
