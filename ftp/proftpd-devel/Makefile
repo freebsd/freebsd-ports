@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 PORTVERSION=	1.2.10
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -48,6 +48,42 @@ PLIST_SUB+=	RC_DIR=${RC_DIR} \
 CONFIGURE_ARGS=	--localstatedir=/var/run \
 		--disable-sendfile
 
+OPTIONS=	IPV6 "Use IPv6" off \
+		LDAP "Use LDAP" off \
+		MYSQL "Use MySQL" off \
+		POSTGRESQL "Use Postgres" off \
+		OPENSSL "Include mod_tls" off \
+		QUOTA "Include mod_quota" off \
+		IFSESSION "Include mod_ifsession" on \
+		README "Include mod_readme" on \
+		RATIO "Include mod_ratio" on \
+		REWRITE "Include mod_rewrite" on \
+		WRAP "Include mod_wrap" on
+
+MODULES?=	
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_IFSESSION)
+MODULES:=${MODULES}:mod_ifsession
+.endif
+
+.if defined(WITH_RATIO)
+MODULES:=${MODULES}:mod_ratio
+.endif
+
+.if defined(WITH_README)
+MODULES:=${MODULES}:mod_readme
+.endif
+
+.if defined(WITH_REWRITE)
+MODULES:=${MODULES}:mod_rewrite
+.endif
+
+.if defined(WITH_WRAP)
+MODULES:=${MODULES}:mod_wrap
+.endif
+
 .if defined(WITH_SETPASSENT)
 CONFIGURE_ARGS+=	--enable-force-setpassent
 .endif
@@ -65,7 +101,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 #allow user to override
-MODULES?=	mod_ratio:mod_readme:mod_wrap
+MODULES?=	mod_ifsession:mod_ratio:mod_readme:mod_rewrite:mod_wrap
 
 INCLUDEDIRS=
 LIBDIRS=
@@ -134,6 +170,8 @@ CONFIGURE_ARGS+=	--with-includes=${INCLUDEDIRS}
 CONFIGURE_ARGS+=	--with-libraries=${LIBDIRS}
 .endif
 
+MODULES!=${ECHO} ${MODULES} | ${SED} -e 's,^:,,' -e 's,:$$,,'
+
 pre-configure:
 	@${ECHO_MSG} "==> Configuring with ${MODULES}"
 
@@ -194,4 +232,4 @@ do-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
