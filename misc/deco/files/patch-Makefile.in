@@ -1,0 +1,11 @@
+--- Makefile.in	Tue Jan  4 09:38:18 2000
++++ Makefile.in	Sun Mar 23 23:05:33 2003
+@@ -44,7 +44,7 @@
+ 		cd help; for f in *.general *.edit *.view *.hexview; do\
+ 			$(INSTALL_DATA) $$f $(libdir)/deco/help/$$f; done
+ 		$(INSTALL_DATA) ref.man $(mandir)/man1/deco.1
+-		$(INSTALL_DATA) cyrref.man $(mandir)/man1/deco-r.1
++		$(INSTALL_DATA) cyrref.man $(mandir)/ru.KOI8-R/man1/deco.1
+ 
+ $(libdir)/deco:
+ 		mkdir $(libdir)/deco
