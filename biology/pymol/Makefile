@@ -28,7 +28,7 @@ USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "sparc64"
+.if ${ARCH} == "sparc64" || ${ARCH} == "amd64" || ${ARCH} == "ia64"
 PICFLAG?=	-fPIC
 .else
 PICFLAG?=	-fpic
