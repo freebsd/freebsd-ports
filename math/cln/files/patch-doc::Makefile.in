@@ -1,9 +1,9 @@
---- doc/Makefile.in.orig	Wed Dec  6 00:38:27 2000
-+++ doc/Makefile.in	Thu Oct  9 22:51:12 2003
-@@ -81,14 +81,11 @@
- 
- install : all installdirs force
- 	$(INSTALL_DATA) $(srcdir)/$(PACKAGE).info $(DESTDIR)$(infodir)/$(PACKAGE).info
+--- doc/Makefile.in.orig	Mon Feb 14 15:24:29 2005
++++ doc/Makefile.in	Mon Feb 14 15:25:14 2005
+@@ -86,14 +86,11 @@
+ 	  echo " install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$(PACKAGE).info";\
+ 	  install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$(PACKAGE).info || :;\
+ 	else : ; fi
 -	$(INSTALL_DATA) $(srcdir)/$(PACKAGE)_*.html $(DESTDIR)$(htmldir)
 -	$(INSTALL_DATA) $(srcdir)/$(PACKAGE).dvi $(DESTDIR)$(dvidir)/$(PACKAGE).dvi
 +	install-info $(DESTDIR)$(infodir)/$(PACKAGE).info $(DESTDIR)$(infodir)/dir
@@ -15,4 +15,4 @@
 -	$(MKDIR) $(DESTDIR)$(dvidir)
  
  uninstall : force
- 	$(RM) $(DESTDIR)$(infodir)/$(PACKAGE).info
+ 	@if (install-info --version && \
