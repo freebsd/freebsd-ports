@@ -6,11 +6,9 @@ include/clint/python.h
 info/clint.info
 @exec install-info %D/info/clint.info %D/info/dir
 lib/clint/python.a
-lib/clint/python.la
 lib/clint/python.so
 lib/clint/python.so.0
 lib/libpython++.a
-lib/libpython++.la
 lib/libpython++.so
 lib/libpython++.so.0
 @dirrm lib/clint
