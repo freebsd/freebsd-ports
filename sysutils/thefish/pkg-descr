@@ -1,8 +1,6 @@
-The Fish provides a graphical tool (based on GTK and ncurses) to manage and 
-edit system variables stored in /etc/defaults/rc.conf and /etc/rc.conf. For
-testing purposes, or, for users that need to have different configurations,
-the program honours two environment variables: FISH_RC_DEFAULTS and
-FISH_RC.
+The Fish provides a graphical tool (with GTK+, Qt and ncurses frotends) to 
+manage and edit system variables stored in /etc/defaults/rc.conf and 
+/etc/rc.conf. 
 
 WWW: http://www.energyhq.es.eu.org/thefish.html
 
