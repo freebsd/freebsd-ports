@@ -1,5 +1,5 @@
 bin/epic
-bin/epic-EPIC4pre2.003
+bin/epic-EPIC4pre2.200
 libexec/wserv
 share/epic/help/1_General/away
 share/epic/help/1_General/describe
@@ -861,6 +861,9 @@ share/epic/script/columns
 share/epic/script/country
 share/epic/script/dcc_timeout
 share/epic/script/deban
+share/epic/script/debug.irc
+share/epic/script/dig
+share/epic/script/dns
 share/epic/script/edit
 share/epic/script/environment
 share/epic/script/events

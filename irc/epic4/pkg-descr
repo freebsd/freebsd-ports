@@ -4,10 +4,10 @@ compatability is undesirable have been found and fixed. No gratuitous
 incompatabilities have been added, but lots of new code has been added to 
 make EPIC the best ircII client available.
 
-WWW: http://www.frenzy.com/~bhauber/epic/
-
 EPIC no longer shares any file names with ircII, so they should happily
 co-exist.
+
+WWW: http://epicsol.org/
 
 - BenHutch
   benhutch@xfiles.org.uk
