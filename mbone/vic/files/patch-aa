@@ -1,5 +1,5 @@
 --- configure.orig	Sun Jun 23 17:59:45 1996
-+++ configure	Sat Nov  2 23:26:46 1996
++++ configure	Wed Nov  6 22:45:01 1996
 @@ -1,7 +1,7 @@
  #! /bin/sh
  
@@ -299,7 +299,17 @@
  				break
  			fi
  		done
-@@ -1651,6 +1651,7 @@
+@@ -1614,7 +1614,8 @@
+ 	fi
+ 	echo "checking for tcl/init.tcl"
+ 	V_LIBRARY_TCL=FAIL
+-	places="/usr/local/lib/tcl7.5 \
++	places="/usr/libdata/tcl \
++		/usr/local/lib/tcl7.5 \
+ 		/usr/contrib/lib/tcl7.5 \
+ 		/usr/lib/tcl7.5 \
+ 		/usr/lib/tk/tcl7.5 \
+@@ -1651,6 +1652,7 @@
    d=""
  fi
  
@@ -307,7 +317,7 @@
  if test "$d" != "" ; then 
  	if test ! -d $d ; then 
  		echo "'$d' is not a directory"
-@@ -1661,18 +1662,18 @@
+@@ -1661,18 +1663,18 @@
  		echo "can't find tk.h in $d/include"
  		exit 1
  	fi
@@ -334,7 +344,7 @@
  		echo "can't find libtk.a in $d/lib"
  		exit 1
  	fi
-@@ -1691,12 +1692,12 @@
+@@ -1691,12 +1693,12 @@
  	fi
  else
  	cat > conftest.$ac_ext <<EOF
@@ -349,7 +359,7 @@
  ac_err=`grep -v '^ *+' conftest.out`
  if test -z "$ac_err"; then
    rm -rf conftest*
-@@ -1734,22 +1735,24 @@
+@@ -1734,22 +1736,24 @@
  		fi
  	fi
  	echo $ac_n "checking for -ltk4.1""... $ac_c" 1>&6
@@ -377,7 +387,7 @@
    rm -rf conftest*
    eval "ac_cv_lib_$ac_lib_var=yes"
  else
-@@ -1780,12 +1783,17 @@
+@@ -1780,12 +1784,17 @@
  			$prefix/lib \
  			$x_libraries"
  		for dir in $places; do
@@ -401,7 +411,7 @@
  				break
  			fi
  		done
-@@ -2074,6 +2082,10 @@
+@@ -2074,6 +2083,10 @@
  	V_TARCMD="tar -h -c -f"
  	V_LIB="$V_LIB -L/usr/local/lib"
  	;;
@@ -412,7 +422,7 @@
  *-*-hpux*)
  	V_CCOPT="-O"
  	;;
-@@ -2132,18 +2144,16 @@
+@@ -2132,18 +2145,16 @@
  		;;
  	*-*-linux*)
  		echo $ac_n "checking for -ldl""... $ac_c" 1>&6
@@ -433,7 +443,7 @@
  char dlopen();
  
  int main() { return 0; }
-@@ -2151,7 +2161,7 @@
+@@ -2151,7 +2162,7 @@
  dlopen()
  ; return 0; }
  EOF
@@ -442,7 +452,7 @@
    rm -rf conftest*
    eval "ac_cv_lib_$ac_lib_var=yes"
  else
-@@ -2177,22 +2187,24 @@
+@@ -2177,22 +2188,24 @@
  	esac
  	if test ! -z "$V_LIB_DL" ; then
  		echo $ac_n "checking for -l$V_LIB_DL""... $ac_c" 1>&6
@@ -470,7 +480,7 @@
    rm -rf conftest*
    eval "ac_cv_lib_$ac_lib_var=yes"
  else
-@@ -2350,7 +2362,7 @@
+@@ -2350,7 +2363,7 @@
      echo "running \${CONFIG_SHELL-/bin/sh} $0 $ac_configure_args --no-create --no-recursion"
      exec \${CONFIG_SHELL-/bin/sh} $0 $ac_configure_args --no-create --no-recursion ;;
    -version | --version | --versio | --versi | --vers | --ver | --ve | --v)
