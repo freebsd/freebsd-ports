@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://gltt.sourceforge.net/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tiamat@comset.net
 COMMENT=	TrueType fonts rendering using OpenGL
 
 USE_X_PREFIX=	yes

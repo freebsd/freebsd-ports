@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.cs.technion.ac.il/~irit/
 DISTNAME=	${PORTNAME}-sm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tiamat@comset.net
 COMMENT=	Solid modelling system
 
 NO_WRKSUBDIR=	yes
