@@ -15,8 +15,7 @@ DISTNAME=	SDL-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
-		vga.1:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_XLIB=	yes
@@ -27,7 +26,6 @@ CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-video-aalib \
-		--enable-video-svga \
 		--disable-arts \
 		--disable-nas
 
@@ -47,6 +45,10 @@ CONFIGURE_ARGS+=--disable-video-opengl
 .else
 USE_MESA=	yes
 CONFIGURE_ARGS+=--enable-video-opengl
+.endif
+.if !defined(WITHOUT_SVGALIB)
+LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
+CONFIGURE_ARGS+=--enable-video-svga
 .endif
 
 .include <bsd.port.pre.mk>
