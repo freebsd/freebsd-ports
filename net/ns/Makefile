@@ -27,10 +27,16 @@ CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
 
 ALL_TARGET=
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
+BROKEN=		"Does not compile on alpha 4.x"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ns ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ns.1 ${PREFIX}/man/man1
 	${MKDIR} ${PREFIX}/share/examples/ns2
 	${INSTALL_DATA} ${WRKSRC}/tcl/ex/*.tcl ${PREFIX}/share/examples/ns2
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
