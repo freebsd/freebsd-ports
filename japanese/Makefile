@@ -266,6 +266,7 @@
     SUBDIR += onew-wnn7
     SUBDIR += openoffice
     SUBDIR += openoffice-devel
+    SUBDIR += openoffice-templates
     SUBDIR += otojiro-fpw
     SUBDIR += p5-Date-Japanese-Era
     SUBDIR += p5-Jcode
