@@ -10,6 +10,7 @@
     SUBDIR += XFree86-4-VirtualFramebufferServer
     SUBDIR += Xfstt
     SUBDIR += driglide
+    SUBDIR += mga_hal
     SUBDIR += x2vnc
     SUBDIR += x2x
     SUBDIR += xorg-fontserver

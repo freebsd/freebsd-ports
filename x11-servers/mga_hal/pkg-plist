@@ -1,0 +1,3 @@
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+lib/modules/drivers/mga_hal_drv.o
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
