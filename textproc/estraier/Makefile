@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--with-sysqdbm \
 		--enable-devel
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/include"
+		LDFLAGS="-L${LOCALBASE}/include ${PTHREAD_LIBS}"
 
 OPTIONS=	CHASEN "Japanese Morphological Analysis Support" On \
 		MECAB "Part-of-Speech and Morphological Analyzer" On \
