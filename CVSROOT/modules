@@ -6524,6 +6524,7 @@ p5-IPC-Cache	ports/devel/p5-IPC-Cache
 p5-IPC-Locker	ports/devel/p5-IPC-Locker
 p5-IPC-MM	ports/devel/p5-IPC-MM
 p5-IPC-Run	ports/devel/p5-IPC-Run
+p5-IPC-Run3	ports/devel/p5-IPC-Run3
 p5-IPC-ShareLite	ports/devel/p5-IPC-ShareLite
 p5-IPC-Shareable	ports/devel/p5-IPC-Shareable
 p5-IPC-SharedCache	ports/devel/p5-IPC-SharedCache
