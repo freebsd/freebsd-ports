@@ -125,3 +125,6 @@ print/pips820ug||2002-12-08|license problems
 print/pips920||2002-12-08|license problems
 print/pips-sc680_777||2002-12-08|license problems
 x11/launch.app||2002-12-08|security vulnerability
+net/icradius||2002-12-08|security vulnerability
+net/p5-IC-Radius||2002-12-08|security vulnerability
+net/radius||2002-12-08|security vulnerability
