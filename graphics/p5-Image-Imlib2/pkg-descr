@@ -1,0 +1,8 @@
+Image::Imlib2 is a Perl port of Imlib2, a graphics library
+that does image file loading and saving as well as manipulation,
+arbitrary polygon support, etc. It does ALL of these operations
+FAST. It allows you to create colour images using a large number
+of graphics primitives, and output the images in a range of formats.
+
+
+WWW: http://search.cpan.org/dist/Image-Imlib2

@@ -253,6 +253,7 @@
     SUBDIR += p5-GraphViz-Data-Structure
     SUBDIR += p5-Graphics-ColorNames
     SUBDIR += p5-Image-Grab
+    SUBDIR += p5-Image-Imlib2
     SUBDIR += p5-Image-Info
     SUBDIR += p5-Image-Size
     SUBDIR += p5-Imager
