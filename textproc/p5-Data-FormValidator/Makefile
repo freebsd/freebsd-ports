@@ -19,13 +19,12 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-
 		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
 		${SITE_PERL}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic \
-		${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build \
 		${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
 		${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common \
 		${SITE_PERL}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=		yes
+PERL_MODBUILD=		yes
 
 MAN3=		Data::FormValidator.3 \
 		Data::FormValidator::ConstraintsFactory.3 \

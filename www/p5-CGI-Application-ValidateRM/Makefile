@@ -16,14 +16,13 @@ DISTNAME=	${PORTNAME:S/eRM/e-RM/}-${PORTVERSION}
 MAINTAINER=		mig@mig-29.net
 COMMENT=		Help validate forms with the CGI::Application framework
 
-BUILD_DEPENDS=		${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build
 RUN_DEPENDS=		${SITE_PERL}/HTML/FillInForm.pm:${PORTSDIR}/www/p5-HTML-FillInForm \
 			${SITE_PERL}/Data/FormValidator.pm:${PORTSDIR}/textproc/p5-Data-FormValidator \
 			${SITE_PERL}/CGI/Carp.pm:${PORTSDIR}/www/p5-CGI.pm \
 			${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PERL_CONFIGURE=		yes
+PERL_MODBUILD=		yes
 
 MAN3=			CGI::Application::ValidateRM.3
 

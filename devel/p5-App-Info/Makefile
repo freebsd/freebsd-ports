@@ -17,7 +17,7 @@ COMMENT=	Interface for providing metadata about installed software packages
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	YES
+PERL_MODBUILD=	YES
 
 MAN3=		App::Info::HTTPD.3 App::Info::Lib::Iconv.3 \
 		App::Info::HTTPD::Apache.3 App::Info::Lib.3 App::Info::RDBMS.3 \
@@ -26,7 +26,6 @@ MAN3=		App::Info::HTTPD.3 App::Info::Lib::Iconv.3 \
 		App::Info::Util.3 App::Info::Handler.3 App::Info.3 \
 		App::Info::Handler::Prompt.3 App::Info::Handler::Carp.3
 
-.include "../../devel/p5-Module-Build/inc.build.mk"
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} <= 500600
