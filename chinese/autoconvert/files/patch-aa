@@ -1,6 +1,6 @@
---- Makefile.orig	Mon Jan  8 18:05:51 2001
-+++ Makefile	Tue Jan  9 03:03:10 2001
-@@ -1,11 +1,12 @@
+--- Makefile.orig	Sat Apr 28 09:45:46 2001
++++ Makefile	Thu Aug  9 23:31:09 2001
+@@ -1,7 +1,7 @@
  
  CC=gcc
 -CFLAG=-O2 -g -Wall -Iinclude
@@ -10,9 +10,24 @@
  
  .PHONY: all hzlib clean install-home install
  
--all: autob5 autogb hzlib  xchat-plugins
-+all: autob5 autogb hzlib
-+#xchat-plugins
- 
- autob5: autogb
- 	rm -f autob5;ln -s autogb autob5
+@@ -30,12 +30,11 @@
+ 	ln -s $(HOME)/bin/autogb $(HOME)/bin/autob5
+ 	chmod 755 $(HOME)/bin/autogb 
+ install:
+-	install -m 755 autogb $(DESTDIR)/usr/bin
+-	install -m 755 lib/libhz.so.0.0 $(DESTDIR)/usr/lib
+-	cd $(DESTDIR)/usr/lib;ln -s  libhz.so.0.0 libhz.so.0
+-	cd $(DESTDIR)/usr/lib;ln -s  libhz.so.0 libhz.so
+-	install -m 755 lib/libhz.a $(DESTDIR)/usr/lib
+-	install -m 755 contrib/xchat-plugins/xchat-autogb.so $(DESTDIR)/usr/share/zh-autoconvert
+-	install -m 755 contrib/xchat-plugins/xchat-autob5.so $(DESTDIR)/usr/share/zh-autoconvert
+-	install -m 644 include/*.h  $(DESTDIR)/usr/include
+-	ln -s autogb $(DESTDIR)/usr/bin/autob5
++	install -m 755 autogb $(PREFIX)/bin
++	install -m 755 lib/libhz.so.0.0 $(PREFIX)/lib/libhz.so.0
++	cd $(PREFIX)/lib;ln -s  libhz.so.0 libhz.so
++	install -m 755 lib/libhz.a $(PREFIX)/lib
++	install -m 755 contrib/xchat-plugins/xchat-autogb.so $(PREFIX)/share/zh-autoconvert
++	install -m 755 contrib/xchat-plugins/xchat-autob5.so $(PREFIX)/share/zh-autoconvert
++	install -m 644 include/*.h  $(PREFIX)/include
++	ln -s autogb $(PREFIX)/bin/autob5
