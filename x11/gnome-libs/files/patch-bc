@@ -4,7 +4,7 @@
  
  EXTRA_DIST = parse-path.cP 
  
--libgnome_la_LDFLAGS = -version-info 35:7:3 #-rpath $(libdir)
+-libgnome_la_LDFLAGS = -version-info 35:8:3 #-rpath $(libdir)
 +libgnome_la_LDFLAGS = -version-info 3:0:0 #-rpath $(libdir)
  libgnome_la_LIBADD = $(GLIB_LIBS) -lm $(DL_LIB)
  

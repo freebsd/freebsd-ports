@@ -113,11 +113,11 @@ include/libgnomeui/gnome-dock-band.h
 include/libgnomeui/gnome-dock-item.h
 include/libgnomeui/gnome-dock-layout.h
 include/libgnomeui/gnome-dock.h
-include/libgnomeui/gnome-druid.h
-include/libgnomeui/gnome-druid-page.h
-include/libgnomeui/gnome-druid-page-start.h
-include/libgnomeui/gnome-druid-page-standard.h
 include/libgnomeui/gnome-druid-page-finish.h
+include/libgnomeui/gnome-druid-page-standard.h
+include/libgnomeui/gnome-druid-page-start.h
+include/libgnomeui/gnome-druid-page.h
+include/libgnomeui/gnome-druid.h
 include/libgnomeui/gnome-entry.h
 include/libgnomeui/gnome-file-entry.h
 include/libgnomeui/gnome-font-picker.h
@@ -211,8 +211,8 @@ share/gnome/gtkrc.ka_GE.georgianacademy
 share/gnome/gtkrc.ka_GE.georgianps
 share/gnome/gtkrc.ko
 share/gnome/gtkrc.ru
-share/gnome/gtkrc.tr
 share/gnome/gtkrc.th
+share/gnome/gtkrc.tr
 share/gnome/gtkrc.uk
 share/gnome/gtkrc.vi_VN.tcvn
 share/gnome/gtkrc.vi_VN.viscii
