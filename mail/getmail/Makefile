@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	getmail
-PORTVERSION=	2.1.8
+PORTVERSION=	2.2.0
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.qcc.sk.ca/~charlesc/software/getmail-2.0/
 
 MAINTAINER=	petef@FreeBSD.org
 
 USE_PYTHON=	yes
-
 NO_BUILD=	yes
 
 post-patch:
