@@ -592,7 +592,6 @@
     SUBDIR += wcol
     SUBDIR += web-traceroute
     SUBDIR += web2ldap
-    SUBDIR += web500gw
     SUBDIR += webalizer
     SUBDIR += webcheck
     SUBDIR += webcopy

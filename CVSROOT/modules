@@ -1711,7 +1711,6 @@ etktab		ports/audio/etktab
 etlfonts	ports/x11-fonts/etlfonts
 ettercap	ports/net-mgmt/ettercap
 euchre		ports/games/euchre
-eudc-emacs20	ports/net/eudc-emacs20
 eukleides	ports/math/eukleides
 euler		ports/science/euler
 eval		ports/math/eval
@@ -5748,7 +5747,6 @@ openh323	ports/net/openh323
 openhbci	ports/finance/openhbci
 openjade	ports/textproc/openjade
 openjit		ports/java/openjit
-openldap12	ports/net/openldap12
 openldap20-client	ports/net/openldap20-client
 openldap20-server	ports/net/openldap20-server
 openldap21-client	ports/net/openldap21-client
@@ -7932,7 +7930,6 @@ py-jaxml	ports/textproc/py-jaxml
 py-kde		ports/x11-toolkits/py-kde
 py-kjbuckets	ports/devel/py-kjbuckets
 py-kqueue	ports/devel/py-kqueue
-py-ldap1	ports/net/py-ldap1
 py-ldap2	ports/net/py-ldap2
 py-libmpdclient	ports/audio/py-libmpdclient
 py-libnet	ports/net/py-libnet
@@ -9003,7 +9000,6 @@ smtpmap		ports/security/smtpmap
 smtpproxy	ports/mail/smtpproxy
 smtprc		ports/mail/smtprc
 smtpscan	ports/security/smtpscan
-smunge		ports/mail/smunge
 smurflog	ports/security/smurflog
 smv		ports/devel/smv
 sn		ports/news/sn
@@ -9924,7 +9920,6 @@ wdiff		ports/textproc/wdiff
 wdm		ports/x11/wdm
 web-traceroute	ports/www/web-traceroute
 web2ldap	ports/www/web2ldap
-web500gw	ports/www/web500gw
 webalizer	ports/www/webalizer
 webalizer2	ports/polish/webalizer2
 webbench	ports/benchmarks/webbench
