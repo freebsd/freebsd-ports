@@ -1,15 +1,15 @@
 # New ports collection makefile for: Japanese Aladdin ghostscript + vector font library
-# Version required:	5.03
+# Version required:	5.10
 # Date created:		26 Aug 1997
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.13 1997/09/29 11:42:31 max Exp $
+# $Id: Makefile,v 1.14 1997/11/16 19:58:36 max Exp $
 #
 
-DISTNAME=	ghostscript-5.03
-PKGNAME=	ja-vfghostscript-5.03
+DISTNAME=	ghostscript-5.10
+PKGNAME=	ja-vfghostscript-5.10
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs503/ \
+MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs510/ \
 		ftp://ftp.cs.wisc.edu/ghost/aladdin/fonts/ \
 		ftp://ftp.uu.net/graphics/png/src/ \
 		ftp://ftp.uu.net/graphics/jpeg/ \
@@ -26,20 +26,20 @@ MAINTAINER=	mita@jp.FreeBSD.org
 
 LIB_DEPENDS=	VFlib\\.2\\.:${PORTSDIR}/japanese/vflib
 
-EXTRACT_ONLY=	ghostscript-5.03.tar.gz jpegsrc.v6a.tar.gz libpng-0.96.tgz
-WRKSRC=		${WRKDIR}/gs5.03
+EXTRACT_ONLY=	ghostscript-5.10.tar.gz jpegsrc.v6a.tar.gz libpng-0.96.tgz
+WRKSRC=		${WRKDIR}/gs5.10
 MAKEFILE=	unix-gcc.mak
 MAKE_FLAGS=	prefix=${PREFIX} zlibc_=-lz CFLAGS="${CFLAGS}" -f
 MAN1=		gs.1 pdf2ps.1 ps2ascii.1 ps2epsi.1 ps2pdf.1 pdf2dsc.1
 
 CFLAGS+=	-DA4
-GSINST_DIR=	${PREFIX}/share/ghostscript/5.03vflib
+GSINST_DIR=	${PREFIX}/share/ghostscript/5.10vflib
 DOC_DIR=	${GSINST_DIR}/doc
 PRINTER=	${WRKSRC}/jp-printers
-GS_SOURCES=	ghostscript-5.03.tar.gz
+GS_SOURCES=	ghostscript-5.10.tar.gz
 GS_SOURCES+=	jpegsrc.v6a.tar.gz
 GS_SOURCES+=	libpng-0.96.tgz
-GS_DRIVERS=	gs5.03-vflib.tar.gz
+GS_DRIVERS=	gs5.10-vflib-1.1.tar.gz
 GS_DRIVERS+=	gdevlips4-1.2.0.tar.gz
 GS_DRIVERS+=	gdevmjc-0.7.tar.gz
 GS_DRIVERS+=	gdevrpdl.tar.gz
@@ -54,9 +54,9 @@ GS_FONTS_STD=	ghostscript-fonts-std-4.0.tar.gz
 GS_FONTS_OTHER=	ghostscript-fonts-other-4.40.tar.gz
 
 pre-patch:
-	@(cd ${WRKSRC} ; tar xzf ${DISTDIR}/gs5.03-vflib.tar.gz )
+	@(cd ${WRKSRC} ; tar xzf ${DISTDIR}/gs5.10-vflib-1.1.tar.gz )
 	@(cd ${WRKDIR} ; \
-	  ${PATCH} -p < ${WRKSRC}/gs5.03-vflib/gs5.03-vflib.diff >/dev/null 2>&1; \
+	  ${PATCH} -p < ${WRKSRC}/gs5.10-vflib-1.1/gs5.10-vflib-1.1.diff >/dev/null 2>&1; \
 	)
 
 post-patch:
@@ -93,17 +93,17 @@ post-patch:
 	@${CAT} ${WRKSRC}/mjc.dev >> ${WRKSRC}/unix-gcc.mak
 
 pre-install:
-	@${MKDIR} -p ${PREFIX}/share/ghostscript
+	@${MKDIR} ${PREFIX}/share/ghostscript
 	@tar -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_STD}
 	@tar -C ${PREFIX}/share/ghostscript/fonts -xzf ${DISTDIR}/${GS_FONTS_OTHER}
 
 post-install:
 	@strip ${PREFIX}/bin/gs
 	@( \
-	  ${CP} ${WRKSRC}/gs5.03-vflib/README ${DOC_DIR}/README.gs5.03-vflib ; \
-	  ${CP} ${WRKSRC}/gs5.03-vflib/README.CID ${DOC_DIR}/README.CID.gs5.03-vflib ; \
-	  ${CP} ${WRKSRC}/gs5.03-vflib/OLD-DOC/gs261d13-doc/* ${DOC_DIR} ; \
-	  ${CP} ${WRKSRC}/gs5.03-vflib/OLD-DOC/gs261j10-doc/* ${DOC_DIR} ; \
+	  ${CP} ${WRKSRC}/gs5.10-vflib-1.1/README ${DOC_DIR}/README.gs5.10-vflib ; \
+	  ${CP} ${WRKSRC}/gs5.10-vflib-1.1/README.CID ${DOC_DIR}/README.CID.gs5.10-vflib ; \
+	  ${CP} ${WRKSRC}/gs5.10-vflib-1.1/OLD-DOC/gs261d13-doc/* ${DOC_DIR} ; \
+	  ${CP} ${WRKSRC}/gs5.10-vflib-1.1/OLD-DOC/gs261j10-doc/* ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdev10v/gdev10v.jis ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevep82/gdevep82.jis ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevlips4-1.2.0/Readme ${DOC_DIR}/gdevlips4.euc ; \

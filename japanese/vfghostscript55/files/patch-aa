@@ -1,119 +1,75 @@
-*** unix-gcc.mak.orig	Thu Jul  3 01:56:40 1997
---- unix-gcc.mak	Thu Jul  3 01:58:16 1997
-***************
-*** 212,218 ****
-  # XLDFLAGS can be set from the command line.
-  XLDFLAGS=
-  
-! LDFLAGS=$(XLDFLAGS)
-  
-  # Define any extra libraries to link into the executable.
-  # ISC Unix 2.2 wants -linet.
---- 212,218 ----
-  # XLDFLAGS can be set from the command line.
-  XLDFLAGS=
-  
-! LDFLAGS=$(XLDFLAGS) -L/usr/local/lib
-  
-  # Define any extra libraries to link into the executable.
-  # ISC Unix 2.2 wants -linet.
-***************
-*** 220,226 ****
-  # SVR4 may need -lnsl.
-  # (Libraries required by individual drivers are handled automatically.)
-  
-! EXTRALIBS=
-  
-  # Define the include switch(es) for the X11 header files.
-  # This can be null if handled in some other way (e.g., the files are
---- 220,226 ----
-  # SVR4 may need -lnsl.
-  # (Libraries required by individual drivers are handled automatically.)
-  
-! EXTRALIBS=-lz
-  
-  # Define the include switch(es) for the X11 header files.
-  # This can be null if handled in some other way (e.g., the files are
-***************
-*** 3632,3639 ****
-  libpng95.dev: $(LIBPNG_MAK) $(ECHOGS_XE) pngwio.$(OBJ) crc32.dev
-  	$(SETMOD) libpng95 pngwio.$(OBJ) -include crc32
-  
-! libpng96.dev: $(LIBPNG_MAK) $(ECHOGS_XE) pngwio.$(OBJ) crc32.dev
-! 	$(SETMOD) libpng96 pngwio.$(OBJ) -include crc32
-  #    Copyright (C) 1995, 1996, 1997 Aladdin Enterprises.  All rights reserved.
-  # 
-  # This file is part of Aladdin Ghostscript.
---- 3632,3639 ----
-  libpng95.dev: $(LIBPNG_MAK) $(ECHOGS_XE) pngwio.$(OBJ) crc32.dev
-  	$(SETMOD) libpng95 pngwio.$(OBJ) -include crc32
-  
-! libpng96.dev: $(LIBPNG_MAK) $(ECHOGS_XE) pngwio.$(OBJ) # crc32.dev
-! 	$(SETMOD) libpng96 pngwio.$(OBJ) # -include crc32
-  #    Copyright (C) 1995, 1996, 1997 Aladdin Enterprises.  All rights reserved.
-  # 
-  # This file is part of Aladdin Ghostscript.
-***************
-*** 3714,3720 ****
-  zlibe_1.dev: $(MAKEFILE) $(ZLIB_MAK) $(ECHOGS_XE)
-  	$(SETMOD) zlibe_1 -lib $(ZLIB_NAME)
-  
-! zlibe_=adler32.$(OBJ) deflate.$(OBJ) trees.$(OBJ)
-  zlibe_0.dev: $(ZLIB_MAK) $(ECHOGS_XE) zlibc.dev $(zlibe_)
-  	$(SETMOD) zlibe_0 $(zlibe_)
-  	$(ADDMOD) zlibe_0 -include zlibc
---- 3714,3720 ----
-  zlibe_1.dev: $(MAKEFILE) $(ZLIB_MAK) $(ECHOGS_XE)
-  	$(SETMOD) zlibe_1 -lib $(ZLIB_NAME)
-  
-! zlibe_=
-  zlibe_0.dev: $(ZLIB_MAK) $(ECHOGS_XE) zlibc.dev $(zlibe_)
-  	$(SETMOD) zlibe_0 $(zlibe_)
-  	$(ADDMOD) zlibe_0 -include zlibc
-***************
-*** 3761,3771 ****
-  
-  zlibd1_=infblock.$(OBJ) infcodes.$(OBJ) inffast.$(OBJ)
-  zlibd2_=inflate.$(OBJ) inftrees.$(OBJ) infutil.$(OBJ)
-! zlibd_ = $(zlibd1_) $(zlibd2_)
-! zlibd_0.dev: $(ZLIB_MAK) $(ECHOGS_XE) zlibc.dev $(zlibd_)
-! 	$(SETMOD) zlibd_0 $(zlibd1_)
-! 	$(ADDMOD) zlibd_0 -obj $(zlibd2_)
-! 	$(ADDMOD) zlibd_0 -include zlibc
-  
-  infblock.$(OBJ): $(ZSRC)infblock.c $(ZDEP) zutil.h
-  	$(CP_) $(ZSRC)infblock.c .
---- 3761,3771 ----
-  
-  zlibd1_=infblock.$(OBJ) infcodes.$(OBJ) inffast.$(OBJ)
-  zlibd2_=inflate.$(OBJ) inftrees.$(OBJ) infutil.$(OBJ)
-! zlibd_=
-! zlibd_0.dev: $(ZLIB_MAK) $(ECHOGS_XE) zlibc.dev
-! 	$(SETMOD) zlibd_0
-! 	$(ADDMOD) zlibd_0
-! 	$(ADDMOD) zlibd_0
-  
-  infblock.$(OBJ): $(ZSRC)infblock.c $(ZDEP) zutil.h
-  	$(CP_) $(ZSRC)infblock.c .
-***************
-*** 4750,4758 ****
-  lbp8.dev: $(lbp8_) page.dev
-  	$(SETPDEV) lbp8 $(lbp8_)
-  
-- lips3.dev: $(lbp8_) page.dev
-- 	$(SETPDEV) lips3 $(lbp8_)
-- 
-  gdevlbp8.$(OBJ): gdevlbp8.c $(PDEVH)
-  
-  ### ----------- The DEC LN03/LA50/LA70/LA75 printer devices ------------ ###
---- 4750,4755 ----
-***************
-*** 5408,5413 ****
---- 5405,5411 ----
-  	$(ADDMOD) kfvflib -lib VFlib
-  
-  zkfvflib.$(OBJ): zkfvflib.c 
-+ 	${CC} ${CFLAGS} -I${PREFIX}/include/ -c zkfvflib.c
-  
-  #    Copyright (C) 1990, 1995, 1996, 1997 Aladdin Enterprises.  All rights reserved.
-  # 
+--- unix-gcc.mak.orig	Tue Nov 25 18:41:44 1997
++++ unix-gcc.mak	Tue Nov 25 18:41:46 1997
+@@ -213,7 +213,7 @@
+ # XLDFLAGS can be set from the command line.
+ XLDFLAGS=
+ 
+-LDFLAGS=$(XLDFLAGS)
++LDFLAGS=$(XLDFLAGS) -L/usr/local/lib
+ 
+ # Define any extra libraries to link into the executable.
+ # ISC Unix 2.2 wants -linet.
+@@ -221,7 +221,7 @@
+ # SVR4 may need -lnsl.
+ # (Libraries required by individual drivers are handled automatically.)
+ 
+-EXTRALIBS=
++EXTRALIBS=-lz
+ 
+ # Define the include switch(es) for the X11 header files.
+ # This can be null if handled in some other way (e.g., the files are
+@@ -3679,8 +3679,8 @@
+ libpng95.dev: $(LIBPNG_MAK) $(ECHOGS_XE) pngwio.$(OBJ) crc32.dev
+ 	$(SETMOD) libpng95 pngwio.$(OBJ) -include crc32
+ 
+-libpng96.dev: $(LIBPNG_MAK) $(ECHOGS_XE) pngwio.$(OBJ) crc32.dev
+-	$(SETMOD) libpng96 pngwio.$(OBJ) -include crc32
++libpng96.dev: $(LIBPNG_MAK) $(ECHOGS_XE) pngwio.$(OBJ) # crc32.dev
++	$(SETMOD) libpng96 pngwio.$(OBJ) # -include crc32
+ #    Copyright (C) 1995, 1996, 1997 Aladdin Enterprises.  All rights reserved.
+ # 
+ # This file is part of Aladdin Ghostscript.
+@@ -3761,7 +3761,7 @@
+ zlibe_1.dev: $(MAKEFILE) $(ZLIB_MAK) $(ECHOGS_XE)
+ 	$(SETMOD) zlibe_1 -lib $(ZLIB_NAME)
+ 
+-zlibe_=adler32.$(OBJ) deflate.$(OBJ) trees.$(OBJ)
++zlibe_=
+ zlibe_0.dev: $(ZLIB_MAK) $(ECHOGS_XE) zlibc.dev $(zlibe_)
+ 	$(SETMOD) zlibe_0 $(zlibe_)
+ 	$(ADDMOD) zlibe_0 -include zlibc
+@@ -3808,11 +3808,11 @@
+ 
+ zlibd1_=infblock.$(OBJ) infcodes.$(OBJ) inffast.$(OBJ)
+ zlibd2_=inflate.$(OBJ) inftrees.$(OBJ) infutil.$(OBJ)
+-zlibd_ = $(zlibd1_) $(zlibd2_)
+-zlibd_0.dev: $(ZLIB_MAK) $(ECHOGS_XE) zlibc.dev $(zlibd_)
+-	$(SETMOD) zlibd_0 $(zlibd1_)
+-	$(ADDMOD) zlibd_0 -obj $(zlibd2_)
+-	$(ADDMOD) zlibd_0 -include zlibc
++zlibd_=
++zlibd_0.dev: $(ZLIB_MAK) $(ECHOGS_XE) zlibc.dev
++	$(SETMOD) zlibd_0
++	$(ADDMOD) zlibd_0
++	$(ADDMOD) zlibd_0
+ 
+ infblock.$(OBJ): $(ZSRC)infblock.c $(ZDEP) zutil.h
+ 	$(CP_) $(ZSRC)infblock.c .
+@@ -4799,9 +4799,6 @@
+ lbp8.dev: $(lbp8_) page.dev
+ 	$(SETPDEV) lbp8 $(lbp8_)
+ 
+-lips3.dev: $(lbp8_) page.dev
+-	$(SETPDEV) lips3 $(lbp8_)
+-
+ gdevlbp8.$(OBJ): gdevlbp8.c $(PDEVH)
+ 
+ ### ----------- The DEC LN03/LA50/LA70/LA75 printer devices ------------ ###
+@@ -5474,6 +5471,7 @@
+ 	$(ADDMOD) kfvflib -lib VFlib
+ 
+ zkfvflib.$(OBJ): zkfvflib.c 
++	${CC} ${CFLAGS} -I${PREFIX}/include/ -c zkfvflib.c
+ 
+ #    Copyright (C) 1990, 1995, 1996, 1997 Aladdin Enterprises.  All rights reserved.
+ # 
