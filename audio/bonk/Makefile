@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bonk
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	audio
 MASTER_SITES=	http://yoyo.cc.monash.edu.au/~pfh/bonk/
 
