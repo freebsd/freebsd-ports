@@ -1,2 +1,4 @@
 bin/darcs
+bin/darcs-createrepo
+libexec/darcs-patcher
 %%CGIDIR%%/darcs
