@@ -17,7 +17,6 @@ COMMENT=	Provides an interface between Perl and the statvfs() system call
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Filesys::Df.3 Filesys::Statvfs.3
 
 .include <bsd.port.mk>
