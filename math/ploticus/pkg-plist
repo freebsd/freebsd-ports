@@ -1,5 +1,5 @@
 @comment $FreeBSD$
-bin/pl
+bin/ploticus
 %%PORTDOCS%%%%EXAMPLESDIR%%/Diag.out
 %%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
@@ -8,6 +8,7 @@ bin/pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/api_examp.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/bars3.htm
 %%PORTDOCS%%%%EXAMPLESDIR%%/clickmap_mouse.htm
+%%PORTDOCS%%%%EXAMPLESDIR%%/clickmap_mouse.map
 %%PORTDOCS%%%%EXAMPLESDIR%%/colorgrid.htm
 %%PORTDOCS%%%%EXAMPLESDIR%%/cumufrac.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/curve1.dat
@@ -97,6 +98,7 @@ bin/pl
 %%DATADIR%%/README
 %%DATADIR%%/chron.pl
 %%DATADIR%%/chron.pl-
+%%DATADIR%%/chron.pl--
 %%DATADIR%%/chunk_area
 %%DATADIR%%/chunk_chronfilter
 %%DATADIR%%/chunk_doheatmap
