@@ -1,27 +1,27 @@
---- config/Makefile.SH.orig	Wed Apr 18 08:40:57 2001
-+++ config/Makefile.SH	Tue Jun 26 12:26:00 2001
-@@ -167,7 +167,7 @@
+--- config/Makefile.SH.orig	Tue Jun 11 02:48:05 2002
++++ config/Makefile.SH	Mon Jul 29 11:31:28 2002
+@@ -242,7 +242,7 @@
  LIBDIR = \$(DESTDIR)$libdir
  BINDIR = \$(DESTDIR)$bindir
  DATADIR= \$(DESTDIR)$datadir
 -MANDIR = \$(DESTDIR)$mandir
 +MANDIR = \$(DESTDIR)\${PREFIX}/man/man1
  ALLDIR = \$(DESTDIR)$miscdir
+ READMEDIR = \$(ALLDIR)
  DOCDIR  = \$(ALLDIR)/doc
- EMACSDIR= \$(ALLDIR)/emacs
-@@ -327,7 +327,7 @@
+@@ -430,7 +430,7 @@
  
  install-doc::
- 	-mkdir -p \$(ALLDIR) \$(BINDIR) \$(DOCDIR)
+ 	-mkdir -p \$(BINDIR) \$(DOCDIR)
 -	-cd $doc; \$(MAKE) all
 +#	-cd $doc; \$(MAKE) all
  	-\$(INSTALL_PROGRAM) $doc/gphelp    \$(BINDIR)
  	-\$(INSTALL_DATA) $doc/Makefile     \$(DOCDIR)
  	-\$(INSTALL_DATA) $doc/translations \$(DOCDIR)
-@@ -345,10 +345,10 @@
- 	-\$(INSTALL_DATA) $doc/usersch3.tex \$(DOCDIR)
+@@ -448,10 +448,10 @@
  	-\$(INSTALL_DATA) $doc/usersch4.tex \$(DOCDIR)
  	-\$(INSTALL_DATA) $doc/usersch5.tex \$(DOCDIR)
+ 	-\$(INSTALL_DATA) $doc/paricfg.tex  \$(DOCDIR)
 -	-\$(INSTALL_DATA) $doc/users.dvi    \$(DOCDIR)
 -	-\$(INSTALL_DATA) $doc/tutorial.dvi \$(DOCDIR)
 -	-\$(INSTALL_DATA) $doc/refcard.dvi  \$(DOCDIR)
@@ -33,7 +33,7 @@
  
  install-examples:
  	-mkdir -p \$(EXDIR)
-@@ -366,8 +366,8 @@
+@@ -469,8 +469,8 @@
  	-\$(INSTALL_DATA) $ex/taylor.gp   \$(EXDIR)
  
  install-data:
@@ -44,7 +44,7 @@
  
  install-lib-sta: \$(LIBPARI_STA)
  	-mkdir -p \$(LIBDIR)
-@@ -435,13 +435,13 @@
+@@ -538,13 +538,13 @@
  
  if test -n "$emacs"; then
    cat >> $file << EOT

@@ -15,8 +15,8 @@ include/pari/parisys.h
 include/pari/pariport.h
 include/pari/paridecl.h
 include/pari/genpari.h
-lib/libpari-2.2.so.0.0.0
-lib/libpari-2.2.so.0
+lib/libpari-2.2.so.3.0.0
+lib/libpari-2.2.so.3
 lib/libpari-2.2.so
 share/doc/pari/emacs/pari.el
 share/doc/pari/emacs/pariemacs.txt
@@ -45,7 +45,7 @@ share/doc/pari/doc/translations
 share/doc/pari/doc/appa.tex
 share/doc/pari/doc/appb.tex
 share/doc/pari/doc/appc.tex
-share/doc/pari/doc/paricfg.tex.in
+share/doc/pari/doc/paricfg.tex
 share/doc/pari/doc/parimacro.tex
 share/doc/pari/doc/pdfmacs.tex
 share/doc/pari/doc/refcard.tex

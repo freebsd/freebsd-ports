@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pari
-PORTVERSION=	2.2.0.a
+PORTVERSION=	2.2.3.a
 CATEGORIES=	math
 MASTER_SITES=	ftp://www.gn-50uma.de/gn/gn-50uma.de/pari-2.2/
-DISTNAME=	pari-2.2.0.alpha
+DISTNAME=	pari-2.2.3.alpha
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 
