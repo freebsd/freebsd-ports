@@ -1,1 +1,3 @@
-Read %%PREFIX%%/share/doc/wmmenu/README for info on configuring this dockapp.
+Read man page on "wmmenu" and see examples in
+%%PREFIX%%/share/doc/wmmenu
+for info on configuring this dockapp.

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmmenu
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.fcoutant.freesurf.fr/download/
 
@@ -19,13 +19,14 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMECTRL=	yes
 
+MAN1=		wmmenu.1
+
 post-patch:
 	@ ${MV} ${WRKSRC}/example/defaults ${WRKSRC}/example/defaults.presed
 	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#' ${WRKSRC}/example/defaults.presed \
 	> ${WRKSRC}/example/defaults
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmmenu ${PREFIX}/bin
+post-install:
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/wmmenu
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/wmmenu
@@ -33,8 +34,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/example/apps ${PREFIX}/share/doc/wmmenu/example
 	${INSTALL_DATA} ${WRKSRC}/example/defaults ${PREFIX}/share/doc/wmmenu/example
 .endif
-
-post-install:
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
