@@ -3,7 +3,7 @@
 # Date created:		Tue Nov 12 15:54:21 CST 1996
 # Whom:			erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.3 1996/11/16 08:49:10 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/20 02:09:54 obrien Exp $
 #
 
 DISTNAME=	cam-1.02
@@ -13,5 +13,7 @@ MASTER_SITE_SUBDIR=	apps/sound/mixers
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	erich@FreeBSD.org
+
+MAN1=	cam.1
 
 .include <bsd.port.mk>

@@ -1,0 +1,36 @@
+diff -ru ../cam-1.02-virgin/xcam ./xcam
+--- ../cam-1.02-virgin/xcam	Thu Sep 19 12:10:40 1996
++++ ./xcam	Sun Nov 10 12:21:10 1996
+@@ -1 +1 @@
+-color-xterm -tn xterm-color -font vga  -geometry 80x25 -bg black -fg gray -e cam
++color_xterm -tn xterm-color -font vga  -geometry 80x25 -bg black -fg gray -e ./cam
+--- Makefile~	Tue Nov 12 16:03:05 1996
++++ Makefile	Tue Nov 12 16:03:57 1996
+@@ -8,11 +8,11 @@
+ CFLAGS = -Wall -O2
+ LIBS   = -lncurses
+ INSTALL = install
+-BINDIR = /usr/local/bin
++BINDIR = ${PREFIX}/bin
+ MANFILE= cam.1
+-MANDIR = /usr/man/man1
++MANDIR = ${PREFIX}/man/man1
+ EFILE  = cam
+-XEFILE = xcam
++#XEFILE = xcam
+ OBJS   = cam.o screens.o sounds.o
+ ###############################################################################
+ 
+@@ -69,12 +69,9 @@
+ 	@echo ""
+ 	@echo "installing $(EFILE) in directory $(BINDIR)"
++	@$(INSTALL) -c -m 755 -o $(BINOWN) -g $(BINGRP) $(EFILE) $(BINDIR)
+-	@$(INSTALL) -m 755 -o root -g root $(EFILE) $(BINDIR)
+-	@$(INSTALL) -m 755 -o root -g root $(XEFILE) $(BINDIR)
+ 	@echo ""
+ 	@echo "installing manpages for cam"
++	@$(INSTALL) -c -m 644 -o $(MANOWN) -g $(MANGRP) $(MANFILE) $(MANDIR)
+-	@$(INSTALL) -m 644 -o root -g root $(MANFILE) $(MANDIR)
+-	@echo ""
+-	@. installvgafont.sh
+ 	@echo ""
