@@ -14,9 +14,7 @@ DISTFILES=	${manpages}.tgz
 
 MAINTAINER=	wosch@FreeBSD.org
 
-BROKEN=		"Does not build"
-
-LANG=		de_DE.ISO_8859-1
+LANG=		de.ISO8859-1
 NO_WRKSUBDIR=	YES
 PLIST=		${WRKSRC}/PLIST
 
