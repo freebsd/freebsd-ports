@@ -3,7 +3,7 @@
 # Date created:		16 Mar 1996
 # Whom:			Hideaki Ohmon <ohmon@tom.sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.4 1996/11/09 11:29:43 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/17 08:45:02 obrien Exp $
 #
 
 DISTNAME=	pkfonts
@@ -45,7 +45,7 @@ pre-fetch:
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/fonts
-	tar -C ${PREFIX}/lib/fonts -xzf ${DISTDIR}/${DISTFILES}
+	tar -C ${PREFIX}/lib/fonts -xzf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
 	@${CP} ${PKGDIR}/${RESOLUTION}.list ${PKGDIR}/PLIST 
 
 pre-clean:

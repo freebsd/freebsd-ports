@@ -3,7 +3,7 @@
 # Date created:		8 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/09 12:59:07 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/11 10:13:07 max Exp $
 #
 
 DISTNAME=	xdvi-17
@@ -54,9 +54,9 @@ pre-fetch:
 
 pre-patch:
 	@(cd ${WRKDIR} ; \
-	  ${GZCAT} ${DISTDIR}/950923.02.Z | uudecode ; \
-	  ${GZCAT} ${DISTDIR}/951109.04.Z | uudecode ; \
-	  uudecode ${DISTDIR}/xdvi18-okagawa-patch ; \
+	  ${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/950923.02.Z | uudecode ; \
+	  ${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/951109.04.Z | uudecode ; \
+	  uudecode ${DISTDIR}/${DIST_SUBDIR}/xdvi18-okagawa-patch ; \
 	  gzip -d xdvi18.vflib.patch.gz ; \
 	  ${PATCH} < ${FILESDIR}/xdvi18.vflib.patch.of.patch >/dev/null 2>&1; \
 	  gzip -d xdvi-17+ptex.fixed.patch.gz ; \
@@ -65,7 +65,7 @@ pre-patch:
 	  cd tmp; \
 	  ${PATCH} -f < ../xdvi18.vflib.patch >/dev/null 2>&1; \
 	  cd .. ; \
-	  ${GZCAT} ${DISTDIR}/xdvi-17miyu.patch-beta6.gz | patch -d . >/dev/null 2>&1; \
+	  ${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/xdvi-17miyu.patch-beta6.gz | patch -d . >/dev/null 2>&1; \
 	  ${GZCAT} xdvi-pl17+markpage+toc+printdvi+paper.patch.gz | patch -d . >/dev/null 2>&1 ; \
 	  ${PATCH} -d . < xdvi-17+ptex.fixed.patch >/dev/null 2>&1; \
 	  ${CP} tmp/dnpzeit.c tmp/zeit.c . ; \
