@@ -18,6 +18,8 @@ share/doc/smokeping/COPYING
 share/doc/smokeping/COPYRIGHT
 share/doc/smokeping/README
 share/doc/smokeping/TODO
+share/doc/smokeping/DNS.pm.html
+share/doc/smokeping/DNS.pm.txt
 share/doc/smokeping/EchoPing.pm.html
 share/doc/smokeping/EchoPing.pm.txt
 share/doc/smokeping/EchoPingChargen.pm.html
