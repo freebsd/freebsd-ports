@@ -1,0 +1,13 @@
+bin/ksnes9x
+share/applnk/Games/ksnes9x.kdelnk
+share/icons/ksnes9x.xpm
+share/icons/mini/ksnes9x.xpm
+share/doc/HTML/en/ksnes9x/index.html
+share/doc/HTML/en/ksnes9x/index-1.html
+share/doc/HTML/en/ksnes9x/index-2.html
+share/doc/HTML/en/ksnes9x/index-3.html
+share/doc/HTML/en/ksnes9x/index-4.html
+share/doc/HTML/en/ksnes9x/index-5.html
+share/doc/HTML/en/ksnes9x/index-6.html
+share/apps/ksnes9x/toolbar/open.xpm
+@dirrm share/doc/HTML/en/ksnes9x
