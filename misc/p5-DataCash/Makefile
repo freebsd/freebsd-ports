@@ -15,7 +15,7 @@ MAINTAINER=	markm@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/CSV.pm:${PORTSDIR}/devel/p5-Text-CSV
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/CSV.pm:${PORTSDIR}/textproc/p5-Text-CSV
 		
 PERL_CONFIGURE=	yes
 
