@@ -11,7 +11,7 @@
 # you can generally build it cleanly from the source. - Doug
 
 PORTNAME=	bind
-PORTVERSION=	8.3.2
+PORTVERSION=	8.3.3
 CATEGORIES?=	net
 MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/${PORTVERSION}/ \
 		ftp://ftp.epix.net/pub/isc/bind/src/${PORTVERSION}/ \
@@ -23,7 +23,7 @@ DIST_SUBDIR=	bind-${PORTVERSION}
 
 MAINTAINER=	DougB@FreeBSD.org
 
-.if defined(REPLACE_SYSTEM_BIND)
+.if defined(PORT_REPLACES_BASE_BIND8)
 PREFIX=		/usr
 .endif
 
@@ -42,7 +42,7 @@ PATCH_ARGS=	-s -d ${WRKDIR}
 PATCH_DIST_ARGS=	-s -d ${WRKDIR}
 
 post-patch:
-.if defined(REPLACE_SYSTEM_BIND)
+.if defined(PORT_REPLACES_BASE_BIND8)
 	@${SED} -e "s#\'DESTETC=.*#'DESTETC=/etc/namedb'#" \
 		${WRKSRC}/port/freebsd/Makefile.set > \
 		${WRKSRC}/port/freebsd/Makefile.set.sed

@@ -1,15 +1,15 @@
---- src/port/freebsd/Makefile.set.orig	Mon Feb 25 18:56:32 2002
-+++ src/port/freebsd/Makefile.set	Sat Jun 22 13:29:41 2002
+--- src/port/freebsd/Makefile.set.orig	Sun Jun 23 17:32:49 2002
++++ src/port/freebsd/Makefile.set	Fri Jun 28 16:55:49 2002
 @@ -1,12 +1,14 @@
  'CC=cc'
--'CDEBUG=-O2 -g -W -Wall -Wmissing-prototypes -Wcast-qual -Wwrite-strings -Wformat -DMEMCLUSTER_RECORD=1'
+-'CDEBUG=-O2 -g -W -Wall -Wmissing-prototypes -Wcast-qual -Wwrite-strings -Wformat'
 -'DESTBIN=/usr/bin'
 -'DESTSBIN=/usr/sbin'
 -'DESTEXEC=/usr/libexec'
 -'DESTMAN=/usr/share/man'
 -'DESTHELP=/usr/share/misc'
 -'DESTETC=/etc'
-+'CDEBUG=${CFLAGS} -W -Wall -Wmissing-prototypes -Wcast-qual -Wwrite-strings -Wformat -DMEMCLUSTER_RECORD=1'
++'CDEBUG=${CFLAGS} -W -Wall -Wmissing-prototypes -Wcast-qual -Wwrite-strings -Wformat'
 +'DESTBIN=${PREFIX}/bin'
 +'DESTSBIN=${PREFIX}/sbin'
 +'DESTEXEC=${PREFIX}/libexec'
@@ -21,8 +21,8 @@
 +'DESTLIB=${PREFIX}/lib'
  'LEX=lex -I'
  'YACC=yacc -d'
- 'SYSLIBS=-ll -lutil'
-@@ -16,3 +18,4 @@
+ 'SYSLIBS=-lutil'
+@@ -17,3 +19,4 @@
  'CATEXT=0'
  'PS=ps'
  'RANLIB=ranlib'
