@@ -1,0 +1,11 @@
+--- libs/pgpcdk/priv/crypto/random/pgpRandomPool.c.orig	Fri Aug  6 13:56:49 1999
++++ libs/pgpcdk/priv/crypto/random/pgpRandomPool.c	Fri Sep 29 20:41:26 2000
+@@ -424,7 +424,7 @@
+  * #define UMULH_32(r,a,b) (r) = 0
+  */
+ #ifndef UMULH_32
+-#if defined(__GNUC__) && defined(__i386__)
++#if 0
+ /* Inline asm goodies */
+ #define UMULH_32(r,a,b) __asm__("mull %2" : "=d"(r) : "%a"(a), "mr"(b) : "ax")
+ #elif HAVE64
