@@ -9,7 +9,7 @@ PORTNAME=	htdump
 PORTVERSION=	0.9x
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://arak.cs.hro.nl/~ren/linux/htdump/bin/
+MASTER_SITES=	http://www.palli.nl/~ivo/prog/linux/htdump/bin/
 
 MAINTAINER=	mux@FreeBSD.org
 COMMENT=	A tool to retrieve WWW data
