@@ -1,0 +1,28 @@
+#!/bin/sh
+
+cd ${WRKSRC}
+
+EMACS=${PREFIX}/bin/emacs-${EMACS_VER}
+EMACS_CMD='${prefix}'"/bin/emacs-${EMACS_VER}"
+
+version=${EMACS_VER}
+prefix=${PREFIX}
+# normal setting
+#datadir='${prefix}/share'
+# paranoiac setting ;-)
+datadir='${prefix}'`strings ${EMACS} | grep -e "${EMACS_VER}.*leim" \
+	| awk 'BEGIN {FS=":"}
+		 { for(i=1;i<=NF;i++) { if(match($i,"leim")) print $i; } }' \
+	| sed -e "s;/emacs/${EMACS_VER}/leim$;;" \
+	| sed -e "s;${PREFIX};;"`
+srcdir=${WRKSRC}
+buildlisppath='${datadir}/emacs/${version}/lisp'
+
+rm -f Makefile
+cat Makefile.in | sed   -e "s;@version@;${version};" \
+			-e "s;@prefix@;${prefix};" \
+			-e "s;@datadir@;${datadir};" \
+			-e "s;@srcdir@;${srcdir};" \
+		-e "s;^BUILT-EMACS.*$;BUILT-EMACS=${EMACS_CMD};" \
+		-e "s;^buildlisppath.*$;buildlisppath=${buildlisppath};" \
+> Makefile

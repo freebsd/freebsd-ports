@@ -1,0 +1,24 @@
+LEIM is Libraries of Emacs Input Method.
+
+This enables you to input Multilingual Characters.
+
+To input these characters, select the "language name" in which
+you want to input, and evalute the following two expressions:
+
+(set-language-environment "language name")
+(toggle-input-method)
+
+The "language name" you can choose is one of these:
+  - Chinege		- Chinese-BIG5		- Chinese-CNS
+  - Chinese-GB		- Cyrillic-ALT		- Cyrillic-ISO
+  - Cyrillic-KOI8	- Czech			- Devanagari
+  - Ethiopic		- German		- Greek
+  - Hebrew		- IPA		 	- Japanese
+  - Korean		- Lao			- Latin-1
+  - Latin-2		- Latin-3		- Latin-4
+  - Latin-5		- Romanian		- Slovak
+  - Thai		- Tibetan		- Vietnamese
+
+In the default keybindings, (toggle-input-method) is bound to `C-\'.
+
+Ported by shige@FreeBSD.ORG
