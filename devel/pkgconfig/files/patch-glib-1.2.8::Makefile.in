@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- glib-1.2.8/Makefile.in	2001/04/29 10:41:24	1.1
-+++ glib-1.2.8/Makefile.in	2001/04/29 10:42:12
-@@ -624,7 +624,7 @@
+--- glib-1.2.8/Makefile.in.orig	Thu Jul 12 03:45:31 2001
++++ glib-1.2.8/Makefile.in	Wed Aug  1 10:42:44 2001
+@@ -501,7 +501,7 @@
  
  install-am: all-am
  	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
 -install: install-recursive
 +install:
- uninstall-am: uninstall-libLTLIBRARIES uninstall-binSCRIPTS \
- 		uninstall-configincludeDATA uninstall-m4dataDATA \
- 		uninstall-pkgconfigDATA uninstall-glibincludeHEADERS
+ uninstall-am:
+ uninstall: uninstall-recursive
+ all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) \
