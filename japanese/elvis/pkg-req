@@ -1,0 +1,9 @@
+#!/bin/sh
+if [ "$2" != "INSTALL" ]; then
+  exit 0
+fi
+echo "**************************************************************"
+echo "*                      W a r n i n g                         *"
+echo "* This Japanized elvis program read \`.elvisrc', not \`.exrc'  *"
+echo "* at start up time.                                          *"
+echo "**************************************************************"
