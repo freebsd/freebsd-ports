@@ -9,8 +9,7 @@ PORTNAME=	libdockapp
 PORTVERSION= 	0.4.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://shadowmere.student.utwente.nl/pub/WindowMaker/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	jim
+		http://soupnazi.org/FreeBSD/ports/distfiles/
 
 MAINTAINER=	jim@FreeBSD.org
 

@@ -8,7 +8,8 @@
 PORTNAME=	wmpinboard
 PORTVERSION=	0.10
 CATEGORIES=	deskutils afterstep windowmaker
-MASTER_SITES=	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
+MASTER_SITES=	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/ \
+		http://soupnazi.org/FreeBSD/ports/distfiles/
 
 MAINTAINER=	jim@FreeBSD.org
 
