@@ -139,6 +139,7 @@
     SUBDIR += ocaml-cryptokit
     SUBDIR += oidentd
     SUBDIR += op
+    SUBDIR += opencdk
     SUBDIR += opensc
     SUBDIR += openssh
     SUBDIR += openssh-askpass
