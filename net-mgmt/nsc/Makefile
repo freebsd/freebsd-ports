@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	nsc
-PORTVERSION=	0.51
+PORTVERSION=	0.52
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dirk
+MASTER_SITES=	http://dev.null.dk/~goth/nsc/ \
+		http://meridian-enviro.com/rand/
 
 MAINTAINER=	dirk@FreeBSD.org
 COMMENT=	Netsaint Console monitor
