@@ -16,7 +16,7 @@ DISTNAME=	pkgtools-${PORTVERSION}
 MAINTAINER=	knu@FreeBSD.org
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse \
-		pkg_tarup:${PORTSDIR}/misc/pkg_tarup
+		${LOCALBASE}/sbin/pkg_tarup:${PORTSDIR}/misc/pkg_tarup
 
 USE_RUBY=	yes
 
