@@ -606,6 +606,7 @@
     SUBDIR += plone
     SUBDIR += plugger
     SUBDIR += plugger-plugins-hubbe
+    SUBDIR += pmwiki
     SUBDIR += pnews
     SUBDIR += polipo
     SUBDIR += postnuke
