@@ -353,6 +353,7 @@
     SUBDIR += regm
     SUBDIR += relay-ctrl
     SUBDIR += relaydb
+    SUBDIR += renattach
     SUBDIR += rftp
     SUBDIR += ricochet
     SUBDIR += ripmime
