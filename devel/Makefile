@@ -419,6 +419,7 @@
     SUBDIR += uclmmbase
     SUBDIR += ucpp
     SUBDIR += uds
+    SUBDIR += understand_c
     SUBDIR += ups-debug
     SUBDIR += veepee
     SUBDIR += viewcvs

@@ -1,0 +1,25 @@
+Understand for C and C++ can't be used without a license code.
+
+You need a limited time period license to run the product in
+evaluation mode. One can be obtained in the www site.
+
+A permanent license can be purchased there, too.
+
+The Understand_c program will try to write a license file under
+/usr/local/share/understand_c/license when you register it.
+
+Registration instructions:
+
+1) Make sure that the user running Understand_c when entering the
+registration code has proper permissions to create files under
+/usr/local/share/understand_c/license when your register it.
+Understand_c will try to create a file under this directory to save
+the registration information. This applies for both evaluation and
+permanent licenses.
+
+2) Verify that the files created under
+/usr/local/share/understand_c/license are accessible by all users
+who will be using Understand_c. Usually ''chmod -R a=r+X
+/usr/local/share/understand_c/license'' will do.
+
+http://www.scitools.com/
