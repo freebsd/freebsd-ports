@@ -3,7 +3,7 @@
 # Date created:         26 June 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.10 1995/12/04 10:55:52 asami Exp $
+# $Id: Makefile,v 1.12 1995/12/21 10:39:40 ache Exp $
 #
 
 DISTNAME=       elm-2.4pl24me8b
@@ -22,7 +22,6 @@ MAINTAINER=	ache@FreeBSD.ORG
 #PATCH_DIST_STRIP= -p1
 
 pre-patch:
-	rm -f ${WRKSRC}/src/state.c
 	-patch -d ${WRKSRC} -s -p -N -S + < ${PORTSDIR}/distfiles/elm2.4.p25
 
 post-install:
