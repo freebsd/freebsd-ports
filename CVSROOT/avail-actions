@@ -1,8 +1,0 @@
-#!/bin/sh
-#
-# This is unfortunately necessary as I have no idea how to put multiple
-# -i commands for the same module in the modules file.
-#
-mkmodules CVSROOT avail
-echo "Rebuilding mail alias."
-mkavail

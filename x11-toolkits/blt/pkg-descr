@@ -1,8 +1,0 @@
-This is version 2.1 of the BLT library.  BLT is an extension to the Tk
-toolkit, adding new widgets, geometry managers, and miscellaneous
-commands.  It does not require any patching of the Tcl or Tk source
-files.
-
-NOTE: This kit requires as a pre-requisite the Tcl and Tk binary kits.
-This version uses FreeBSD shared libraries.
-

@@ -1,5 +1,0 @@
-Mirror is a package written in Perl that uses the ftp protocol to
-duplicate a directory hierarchy between the machine it is run on and a
-remote host.  It avoids copying files unnecessarily by comparing the
-file timestamps and sizes before transfering.  Amongst other things
-can optionally compress, gzip, and split files.

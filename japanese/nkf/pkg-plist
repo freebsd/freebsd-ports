@@ -1,5 +1,0 @@
-@cwd /usr/local
-@mode 755
-bin/nkf
-@mode 644
-man/man1/nkf.1.gz

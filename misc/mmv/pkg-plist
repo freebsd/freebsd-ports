@@ -1,6 +1,0 @@
-@cwd /usr/local/
-bin/mmv
-bin/mad
-bin/mcp
-bin/mln
-man/man1/mmv.1.gz

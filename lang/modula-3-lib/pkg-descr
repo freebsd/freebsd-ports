@@ -1,6 +1,0 @@
-This is a subset of the Modula-3 port, consisting of the shared
-libraries only.  People who don't wish to install the entire Modula-3
-system just so they can execute Modula-3 programs can install this
-package instead.
-
-jdp@freebsd.org

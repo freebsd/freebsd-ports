@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# $Id: post-configure,v 1.1.1.1 1994/12/18 21:12:09 swallace Exp $
-#
-
-cp ${CURDIR}/files/vfont.h ${WRKSRC}/include
-echo echo $PREFIX > ${WRKSRC}/:findcad
-chmod -R a+rX ${WRKSRC}
-date > ${WRKSRC}/.config

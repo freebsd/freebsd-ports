@@ -1,3 +1,0 @@
-#!/bin/sh
-echo "Don't forget to edit /usr/local/lib/mnews/default-domain and make sure"
-echo "that it contains correct domain name for this host."

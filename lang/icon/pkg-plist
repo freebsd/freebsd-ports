@@ -1,9 +1,0 @@
-bin/iconc
-bin/icont
-bin/iconx
-bin/patchstr
-share/icon/dlrgint.o
-share/icon/rt.a
-share/icon/rt.db
-share/icon/rt.h
-man/man1/icon.1.gz

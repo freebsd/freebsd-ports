@@ -1,5 +1,0 @@
-This is pTeX, a TeX system supports Japanese written by ASCII.
-
-This system is based on TeX 3.1415.
-
-This package can be compiled to use either JIS, SJIS or Japanese-EUC.

@@ -1,9 +1,0 @@
-This library is able to decode files in the following formats:
-
-        uuencode
-        xxencode
-        Base64
-        BinHex
-
-It is also able to encode files in all of the above formats except
-for BinHex.

@@ -1,6 +1,0 @@
-@cd /usr/local
-@owner bin
-@mode 755
-bin/dviselect
-@mode 444
-man/man1/dviselect.1

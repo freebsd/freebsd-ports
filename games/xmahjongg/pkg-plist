@@ -1,6 +1,0 @@
-bin/xmahjongg
-man/man6/xmahjongg.6
-lib/X11/xmahjongg
-@dirrm lib/X11/xmahjongg
-lib/X11/fonts/misc/xmahjongg.bdf 
-@exec /usr/X11R6/bin/mkfontdir %B

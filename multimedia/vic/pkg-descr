@@ -1,5 +1,0 @@
-This package contains the binary release of LBL's `vic' network video
-conferencing tool.  This version of `vic' was compiled with MIT-SHM
-disabled, so performance will be inferior.
-
-NOTE: This kit requires XFree86 3.1, Tk, Tcl, and BLT shared libraries.

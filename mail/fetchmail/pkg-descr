@@ -1,8 +1,0 @@
-This is fetchmail 1.9.
-
-Fetchmail is a full-featured IMAP/POP2/POP3/APOP/KPOP client with easy
-configuration, daemon mode, forwarding via SMTP or local MDA, superior
-reply handling. Not a mail user agent, rather a pipe-fitting that
-seamlessly forwards fetched mail to your local delivery system. Your
-one-stop solution for intermittent email connections. This is the
-lineal descendant of and replacement for the old popclient program.

@@ -1,4 +1,0 @@
-@cwd ${X11BASE}
-bin/xmine
-lib/X11/app-defaults/Xmine
-man/man1/xmine.1

@@ -1,3 +1,0 @@
-This package implements several file operations under the umbrella of
-File::Tools. It replaces the old File::Copy package and impliments new
-functionality as well.

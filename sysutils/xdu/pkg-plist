@@ -1,6 +1,0 @@
-@cwd /usr/X11R6
-@mode 755
-bin/xdu
-@mode 644
-lib/X11/app-defaults/XDu
-man/man1/xdu.1.gz

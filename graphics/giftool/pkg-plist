@@ -1,5 +1,0 @@
-bin/giftool
-share/doc/giftool/COPYRIGHT
-share/doc/giftool/README
-share/doc/giftool/post-install-notes
-@dirrm share/doc/giftool

@@ -1,7 +1,0 @@
-This provides SOCKS support for Modula-3 network applications.  It is
-based on the H-P SOCKS library, with modifications developed by Darryl
-Okahata to support Modula-3's thread package.  It uses version 4 of the
-SOCKS protocol, which is compatible with both version 4 and version 5
-SOCKS servers.
-
-jdp@freebsd.org

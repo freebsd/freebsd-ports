@@ -1,3 +1,0 @@
-@cwd ${PREFIX}
-@mode 755
-bin/sed

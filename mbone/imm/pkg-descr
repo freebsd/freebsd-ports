@@ -1,5 +1,0 @@
-This is IMM, a program to send and receive images using IP multicast.
-This program is currently in use on the MBONE to transmit semi-real-time
-weather satellite images, as well as a number of other miscellaneous
-pictures.  IMM requires X11R6 and either `xli' or `xv' to perform the
-actual image display.

@@ -1,3 +1,0 @@
-#!/bin/sh
-
-sed s+@PREFIX@+${PREFIX}+ ${WRKSRC}/pine/osdep/os-bsf.h.in >${WRKSRC}/pine/osdep/os-bsf.h

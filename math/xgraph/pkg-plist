@@ -1,3 +1,0 @@
-@cwd ${X11BASE}
-bin/xgraph
-man/man1/xgraph.1.gz

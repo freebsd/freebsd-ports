@@ -1,8 +1,0 @@
-#!/bin/sh
-# installation script for astrolog
-if [ "$2" != "POST-INSTALL" ]; then
-  exit 0
-fi
-echo "See the file ${PKG_PREFIX}/share/astrolog/helpfile.520 for help"
-echo "and tune ${PKG_PREFIX}/lib/astrolog/astrolog.dat,"
-echo "also look at ${PKG_PREFIX}/info/astrolog.info.gz"
