@@ -1,0 +1,21 @@
+diff -ruN ../fetchmail-5.3.0.OLD/Makefile.in ./Makefile.in
+--- ../fetchmail-5.3.0.OLD/Makefile.in	Tue Feb 22 13:48:21 2000
++++ ./Makefile.in	Wed Feb 23 23:40:25 2000
+@@ -70,6 +70,8 @@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ # Program to install the man page.
+ INSTALL_DATA = @INSTALL_DATA@
++# Program to install scripts
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ # Generic install program.
+ INSTALL = @INSTALL@
+ 
+@@ -152,7 +154,7 @@
+ 	@echo "Installing fetchmail binary..."
+ 	$(INSTALL_PROGRAM) ./fetchmail $(bindir)/fetchmail
+ 	@echo "Installing fetchmail configurator..."
+-	$(INSTALL_PROGRAM) ${srcdir}/fetchmailconf $(bindir)/fetchmailconf
++	$(INSTALL_SCRIPT) ${srcdir}/fetchmailconf $(bindir)/fetchmailconf
+ 	@echo "Installing manual page..."
+ 	$(INSTALL_DATA) $(srcdir)/fetchmail.man $(mandir)/fetchmail.$(manext)
+ 	rm -f $(mandir)/fetchmailconf.$(manext)
