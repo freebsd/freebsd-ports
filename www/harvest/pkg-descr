@@ -1,0 +1,18 @@
+Harvest is an integrated set of tools to gather, extract, organize, search,
+cache, and replicate relevant information across the Internet.  With modest
+effort users can tailor Harvest to digest information in many different
+formats, and offer custom search services on the Internet.  Moreover, Harvest
+makes very efficient use of network traffic, remote servers, and disk space.
+
+You can learn more about and experiment with Harvest starting with the 
+Harvest Home Page at: 
+
+	http://harvest.cs.colorado.edu/
+
+Source code fixes will occasionally be made available in the Fixes/
+directory.  Binary distributions will be rebuilt approximately every one
+to two months.  We urge you to compile the source code if you want to
+incorporate fixes immediately.
+
+The Harvest documentation is on-line, and is available via the Home Page.
+For further assistance, see http://harvest.cs.colorado.edu/support.html.
