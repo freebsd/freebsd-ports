@@ -29,4 +29,8 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/usr/share|$${prefix}/share|g'
 
+pre-build:
+	-@${RM} ${WRKSRC}/qgo/src/*_gui.cpp
+	-@${RM} ${WRKSRC}/qgo/src/*_gui.h
+
 .include <bsd.port.mk>
