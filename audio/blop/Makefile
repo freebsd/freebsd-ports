@@ -23,6 +23,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-ladspa-prefix="${LOCALBASE}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+BROKEN=		"Configure fails on alpha 5.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's|-pipe -Wall -O3 |\$$CFLAGS |g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -32,4 +38,4 @@ post-patch:
 pre-build:
 	cd ${WRKSRC}/src; ${GMAKE} sawtooth_data.h square_data.h parabola_data.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
