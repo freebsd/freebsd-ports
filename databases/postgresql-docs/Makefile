@@ -7,6 +7,7 @@
 
 PORTNAME=	postgresql
 PKGNAMESUFFIX=	-docs
+PORTREVISION=	0
 
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	The PostgreSQL documentation set

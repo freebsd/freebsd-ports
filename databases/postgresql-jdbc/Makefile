@@ -7,6 +7,7 @@
 
 PORTNAME=	postgresql-jdbc
 CATEGORIES=	databases java
+PORTREVISION=	0
 
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	The Java JDBC implementation for PostgreSQL

@@ -8,6 +8,7 @@
 PORTNAME=	postgresql-plperl
 CATEGORIES=	databases perl5
 PKGNAMEPREFIX=	p5-
+PORTREVISION=	0
 
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	A module for using Perl5 to write SQL functions

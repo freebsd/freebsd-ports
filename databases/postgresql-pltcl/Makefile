@@ -7,6 +7,7 @@
 
 PORTNAME=	postgresql-pltcl
 CATEGORIES=	databases tcl83
+PORTREVISION=	0
 
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	A module for using Tcl to write SQL functions
