@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dbg
-PORTVERSION=	2.11.22
+PORTVERSION=	2.11.23
 CATEGORIES=	devel
 MASTER_SITES=	http://dd.cron.ru/dbg/dnld/
 PKGNAMEPREFIX=	php-
