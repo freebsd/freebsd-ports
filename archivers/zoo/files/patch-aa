@@ -1,19 +1,232 @@
-*** bsd.c~	Wed Aug  7 23:34:07 1991
---- bsd.c	Mon Oct 17 16:41:17 1994
+*** bsd.c.old	Thu Aug  8 09:34:07 1991
+--- bsd.c	Thu Jan  5 05:20:03 1995
 ***************
-*** 98,104 ****
+*** 69,76 ****
+  }
+  
+  /* Function gettz() returns the offset from GMT in seconds */
+! long gettz()
+  {
+  #define SEC_IN_DAY	(24L * 60L * 60L)
+  #define INV_VALUE		(SEC_IN_DAY + 1L)
+  	static long retval = INV_VALUE;	     /* cache, init to impossible value */
+--- 69,80 ----
+  }
+  
+  /* Function gettz() returns the offset from GMT in seconds */
+! long gettz(t)
+! long t;
+  {
++ #ifdef __FreeBSD__
++    return -localtime(&t)->tm_gmtoff;
++ #else
+  #define SEC_IN_DAY	(24L * 60L * 60L)
+  #define INV_VALUE		(SEC_IN_DAY + 1L)
+  	static long retval = INV_VALUE;	     /* cache, init to impossible value */
+***************
+*** 83,88 ****
+--- 87,93 ----
+  	/* Timezone fix thanks to Bill Davidsen <wedu@ge-crd.ARPA> */
+  	retval = tzp.tz_minuteswest * 60 - tzp.tz_dsttime * 3600L;
+  	return retval;
++ #endif
+  }
+  
+  /* Standard UNIX-compatible time routines */
+***************
+*** 91,105 ****
+  /* Standard UNIX-specific file attribute routines */
+  #include "nixmode.i"
+  
+  #ifndef SEEK_CUR
+  # define  SEEK_CUR    1
+  #endif
+  
   /* Truncate a file. */
   int zootrunc(f) FILE *f;
   {
 ! 	extern long lseek();
-  	long seekpos;
+! 	long seekpos;
   	int fd = fileno(f);
   	seekpos = lseek(fd, 0L, SEEK_CUR);
---- 98,104 ----
+  	if (seekpos >= 0)
+--- 96,114 ----
+  /* Standard UNIX-specific file attribute routines */
+  #include "nixmode.i"
+  
++ #ifdef __FreeBSD__
++ #include <unistd.h>
++ #else
+  #ifndef SEEK_CUR
+  # define  SEEK_CUR    1
+  #endif
++ #endif
+  
   /* Truncate a file. */
   int zootrunc(f) FILE *f;
   {
 ! 	extern off_t lseek();
-  	long seekpos;
+! 	off_t seekpos;
   	int fd = fileno(f);
   	seekpos = lseek(fd, 0L, SEEK_CUR);
+  	if (seekpos >= 0)
+*** misc2.c.old	Thu Aug  8 09:34:48 1991
+--- misc2.c	Thu Jan  5 05:37:06 1995
+***************
+*** 314,323 ****
+  {
+  	long diff_tz;
+  	long longtime;
+  	if (direntry->tz == NO_TZ)		/* none stored */
+  		return;
+! 	diff_tz = (long) direntry->tz * (3600/4) - gettz(); /* diff. in seconds */
+! 	longtime = mstonix (direntry->date, direntry->time) + diff_tz; /* adj tz */
+  	mstime (longtime, &direntry->date, &direntry->time);
+  }
+  #endif /* GETTZ */
+--- 314,325 ----
+  {
+  	long diff_tz;
+  	long longtime;
++ 	long t;
+  	if (direntry->tz == NO_TZ)		/* none stored */
+  		return;
+! 	t = mstonix (direntry->date, direntry->time);
+! 	diff_tz = (long) direntry->tz * (3600/4) - gettz(t); /* diff. in seconds */
+! 	longtime = t + diff_tz; /* adj tz */
+  	mstime (longtime, &direntry->date, &direntry->time);
+  }
+  #endif /* GETTZ */
+*** nixtime.i.old	Thu Aug  8 09:34:57 1991
+--- nixtime.i	Thu Jan  5 05:16:28 1995
+***************
+*** 52,58 ****
+  	long mstonix();
+  	long gettz();
+  	long utimbuf[2];
+! 	utimbuf[0] = utimbuf[1] = gettz() + mstonix (date, time);
+  	return (utime (path, utimbuf));
+  }
+  
+--- 52,59 ----
+  	long mstonix();
+  	long gettz();
+  	long utimbuf[2];
+! 	long t = mstonix (date, time);
+! 	utimbuf[0] = utimbuf[1] = t + gettz(t);
+  	return (utime (path, utimbuf));
+  }
+  
+*** zoolist.c.old	Thu Aug  8 09:36:09 1991
+--- zoolist.c	Thu Jan  5 05:41:47 1995
+***************
+*** 539,548 ****
+  {
+  	long gettz();
+  	int diff_tz;				/* timezone difference */
+  	if (file_tz == NO_TZ) 	/* if no timezone stored ..*/
+  		printf ("   ");			/* .. just pad with blanks */
+  	else {
+! 		diff_tz = (file_tz / 4) - (int) (gettz() / 3600);
+  		if (diff_tz == 0)
+  			printf ("   ");					/* print nothing if same */
+  		else if (diff_tz > 0)			/* else print signed difference */
+--- 539,550 ----
+  {
+  	long gettz();
+  	int diff_tz;				/* timezone difference */
++ 	long t;
+  	if (file_tz == NO_TZ) 	/* if no timezone stored ..*/
+  		printf ("   ");			/* .. just pad with blanks */
+  	else {
+! 		time(&t);
+! 		diff_tz = (file_tz / 4) - (int) (gettz(t) / 3600);
+  		if (diff_tz == 0)
+  			printf ("   ");					/* print nothing if same */
+  		else if (diff_tz > 0)			/* else print signed difference */
+*** zoofns.h.bak	Thu Aug  8 09:36:02 1991
+--- zoofns.h	Thu Jan  5 06:03:04 1995
+***************
+*** 94,100 ****
+--- 94,104 ----
+  void fixslash PARMS ((char *));
+  void makelist PARMS ((int, char *[], char *[], int, char *, char *, char *, int *));
+  void memerr PARMS ((unsigned int));
++ #ifdef STDARG
++ void prterror(int level, char *format, ...);
++ #else
+  void prterror PARMS ((int, char *, ...));
++ #endif
+  void rootname PARMS ((char *, char *));
+  void skip_files PARMS ((ZOOFILE, unsigned int *, unsigned int *, int *,
+                    char [], long *));
+*** options.h.orig	Sat May  1 08:27:59 1993
+--- options.h	Thu Jan  5 06:51:56 1995
+***************
+*** 96,102 ****
+  #define NIXTIME
+  #define NIXFNAME
+  #define NEEDCTYP
+- #define NOENUM
+  #define REN_STDC
+  #define SETBUF
+  #define GETTZ
+--- 96,101 ----
+***************
+*** 110,115 ****
+--- 109,115 ----
+  #define ANSI_PROTO
+  #define VOIDPTR		void *
+  #else
++ #define NOENUM
+  #define NOSTRCHR /* not really needed for 4.3BSD */
+  #define T_SIGNAL	int
+  #define VARARGS
+*** zooadd2.c.orig	Sat Jul 20 02:38:10 1991
+--- zooadd2.c	Thu Jan  5 06:55:40 1995
+***************
+*** 258,269 ****
+  register struct direntry *direntry;
+  {
+  #ifdef GETTZ
+  	long gettz();
+  #endif
+     direntry->zoo_tag = ZOO_TAG;
+     direntry->type = 2;                  /* type is now 2 */
+  #ifdef GETTZ
+! 	direntry->tz = gettz() / (15 * 60); /* seconds => 15-min units */
+  #else
+     direntry->tz = NO_TZ;                /* timezone unknown */
+  #endif
+--- 258,272 ----
+  register struct direntry *direntry;
+  {
+  #ifdef GETTZ
++ 	long mstonix();
+  	long gettz();
++ 	long t;
+  #endif
+     direntry->zoo_tag = ZOO_TAG;
+     direntry->type = 2;                  /* type is now 2 */
+  #ifdef GETTZ
+! 	t = mstonix (direntry->date, direntry->time);
+! 	direntry->tz = gettz(t) / (15 * 60); /* seconds => 15-min units */
+  #else
+     direntry->tz = NO_TZ;                /* timezone unknown */
+  #endif
+*** ar.h.orig	Sat May  1 08:04:22 1993
+--- ar.h	Thu Jan  5 07:05:36 1995
+***************
+*** 15,23 ****
+--- 15,25 ----
+  /* uchar should be 8 bits or more */
+  /* typedef unsigned char  uchar;   -- already in zoo.h */
+  
++ #ifndef __FreeBSD__
+  typedef unsigned int   uint;    /* 16 bits or more */
+  #if !defined(__386BSD__) || !defined(_TYPES_H_)
+  typedef unsigned short ushort;  /* 16 bits or more */
++ #endif
+  #endif
+  typedef unsigned long  ulong;   /* 32 bits or more */
+  
