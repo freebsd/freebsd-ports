@@ -6,6 +6,7 @@ saint/READMEs/CHANGES-2.0
 saint/READMEs/CHANGES-2.1
 saint/READMEs/CHANGES-2.2-3.1
 saint/READMEs/CHANGES-3.2
+saint/READMEs/CHANGES-3.3
 saint/READMEs/README-exclusions.html
 saint/READMEs/README.1.3.1
 saint/READMEs/README.1.3.2
@@ -40,7 +41,6 @@ saint/bin/imap.saint
 saint/bin/inn.saint
 saint/bin/login.saint
 saint/bin/md5
-saint/bin/mountd.saint
 saint/bin/nfs-chk
 saint/bin/nfs-chk.saint
 saint/bin/ostype.saint
@@ -51,7 +51,6 @@ saint/bin/registry.saint
 saint/bin/relay.saint
 saint/bin/rex
 saint/bin/rex.saint
-saint/bin/rexec.saint
 saint/bin/rlogin.saint
 saint/bin/rpc.saint
 saint/bin/rsh.saint
@@ -240,6 +239,7 @@ saint/html/tutorials/vulnerability/AnswerBook_vulnerabilities.html
 saint/html/tutorials/vulnerability/Apache_authentication_modules.html
 saint/html/tutorials/vulnerability/Apache_vulnerabilities.html
 saint/html/tutorials/vulnerability/Archives
+saint/html/tutorials/vulnerability/Avirt_Gateway_vulnerabilities.html
 saint/html/tutorials/vulnerability/BSD_lpd.html
 saint/html/tutorials/vulnerability/Bugzilla_vulnerabilities.html
 saint/html/tutorials/vulnerability/CDE_Subprocess_Control_daemon.html
@@ -280,6 +280,7 @@ saint/html/tutorials/vulnerability/MDaemon_vulnerabilities.html
 saint/html/tutorials/vulnerability/MERCUR_vulnerabilities.html
 saint/html/tutorials/vulnerability/MMDF_vulnerability.html
 saint/html/tutorials/vulnerability/MS_Universal_Plug_and_Play.html
+saint/html/tutorials/vulnerability/Microsoft_Site_Server.html
 saint/html/tutorials/vulnerability/Microsoft_Telnet_Server.html
 saint/html/tutorials/vulnerability/Microsoft_Terminal_Server.html
 saint/html/tutorials/vulnerability/Microsoft_mail_server_vulnerabilities.html
@@ -294,6 +295,7 @@ saint/html/tutorials/vulnerability/OpenServer_calserver.html
 saint/html/tutorials/vulnerability/Oracle_TNS_Listener.html
 saint/html/tutorials/vulnerability/Oracle_Web_Cache.html
 saint/html/tutorials/vulnerability/Oracle_vulnerabilities.html
+saint/html/tutorials/vulnerability/PHP_vulnerabilities.html
 saint/html/tutorials/vulnerability/POP_server.html
 saint/html/tutorials/vulnerability/Performance_Copilot.html
 saint/html/tutorials/vulnerability/REXD_access.html
@@ -302,11 +304,13 @@ saint/html/tutorials/vulnerability/SAINT_password_disclosure.html
 saint/html/tutorials/vulnerability/SGI_fam_vulnerability.html
 saint/html/tutorials/vulnerability/SMTP_mail_relay.html
 saint/html/tutorials/vulnerability/SNMP_to_DMI_mapper.html
+saint/html/tutorials/vulnerability/SNMP_vulnerabilities.html
 saint/html/tutorials/vulnerability/SSH_vulnerabilities.html
 saint/html/tutorials/vulnerability/Samba_vulnerabilities.html
 saint/html/tutorials/vulnerability/Sendmail_vulnerabilities.html
 saint/html/tutorials/vulnerability/Serv_U_vulnerabilities.html
 saint/html/tutorials/vulnerability/SpoonFTP_vulnerabilities.html
+saint/html/tutorials/vulnerability/Squid_vulnerabilities.html
 saint/html/tutorials/vulnerability/Sun_Cluster_vulnerabilities.html
 saint/html/tutorials/vulnerability/Sun_lpd.html
 saint/html/tutorials/vulnerability/TFTP_file_access.html
@@ -383,6 +387,7 @@ saint/html/tutorials/vulnerability/sadmind.html
 saint/html/tutorials/vulnerability/sendmail_decode.html
 saint/html/tutorials/vulnerability/sendmail_info.html
 saint/html/tutorials/vulnerability/signal_handling_problems.html
+saint/html/tutorials/vulnerability/switch_access.html
 saint/html/tutorials/vulnerability/synk4.html
 saint/html/tutorials/vulnerability/teardrop.html
 saint/html/tutorials/vulnerability/telnetd_vulnerabilities.html
