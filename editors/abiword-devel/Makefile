@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	abiword
-PORTVERSION=	2.2.4
-PORTREVISION=	1
+PORTVERSION=	2.2.5
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
+MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
 DISTNAME=	abiword-${PORTVERSION}
 DIST_SUBDIR=	AbiWord
@@ -101,10 +99,10 @@ post-install:
 		${X11BASE}/share/gnome/applications/abiword.desktop
 	@${LN} -sf ${PREFIX}/share/AbiSuite-${ABIVERSION}/icons/abiword_48.png \
 		${X11BASE}/share/gnome/pixmaps/abiword_48.png
-	@${LN} -sf ${PREFIX}/share/AbiSuite-${ABIVERSION}/GNOME_AbiWord_Control_${ABIVERSION:S/./_/}.server \
-		${X11BASE}/libdata/bonobo/servers/GNOME_AbiWord_Control_${ABIVERSION:S/./_/}.server
-	@${LN} -sf ${PREFIX}/share/AbiSuite-${ABIVERSION}/abi-nautilus-view-file.xml \
-		${X11BASE}/share/gnome/gnome-2.0/ui/abi-nautilus-view-file.xml
+	@${INSTALL_DATA} ${WRKDIR}/abiword-${PORTVERSION}/abidistfiles/GNOME_AbiWord_Control_${ABIVERSION:S/./_/}.server \
+		${X11BASE}/libdata/bonobo/servers/
+	@${INSTALL_DATA} ${WRKDIR}/abiword-${PORTVERSION}/abidistfiles/abi-nautilus-view-file.xml \
+		${X11BASE}/share/gnome/gnome-2.0/ui/
 	@-update-desktop-database
 .endif
 
