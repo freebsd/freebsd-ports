@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- doc/Makefile.in	2001/07/30 13:29:13	1.1
++++ doc/Makefile.in	2001/07/30 13:29:34
+@@ -99,7 +99,7 @@
+ XSLT_LIBDIR = @XSLT_LIBDIR@
+ XSLT_LIBS = @XSLT_LIBS@
+ 
+-DOC_MODULE = libxslt-$(VERSION)
++DOC_MODULE = libxslt
+ 
+ # The top-level SGML file.
+ DOC_MAIN_SGML_FILE = libxslt.sgml
