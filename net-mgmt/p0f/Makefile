@@ -44,7 +44,7 @@ pre-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/p0f
+	${MKDIR} ${DOCSDIR}
 .for i in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/p0f
 .endfor
