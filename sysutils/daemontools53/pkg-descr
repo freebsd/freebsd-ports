@@ -1,0 +1,7 @@
+Daemontools is a small set of /very/ useful utilities, from Dan
+Bernstein.  They are mainly used for controlling processes, and
+maintaining logfiles.
+
+WWW: http://pobox.com/~djb/daemontools.html
+
+-Dom <dom@myrddin.demon.co.uk>

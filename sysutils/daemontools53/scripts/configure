@@ -1,0 +1,56 @@
+#!/bin/sh
+#
+# Set up daemontools for the *BSD environment...
+#
+# @(#) $FreeBSD: /tmp/pcvs/ports/sysutils/daemontools53/scripts/configure,v 1.1.1.1 2000-04-27 21:25:36 nbm Exp $
+#
+
+# Tune the options we're given.
+echo ${PREFIX}/bin > ${WRKSRC}/conf-bin
+echo ${PREFIX}/man > ${WRKSRC}/conf-man
+echo cc ${CFLAGS} > ${WRKSRC}/conf-cc
+
+# Set up binaries correctly.
+awk 'BEGIN {
+	FS=":"
+	OFS=":"
+}
+$1 == "c" {
+	if ($6 == "setuser") {
+		$2 = "0"
+		$3 = "0"
+	} else {
+		$2 = bu
+		$3 = bg
+		$4 = bm
+	}
+	print
+	next
+}
+{
+	print
+}' bu=`id -u ${BINOWN}` bg=`id -g ${BINGRP}` bm=${BINMODE} \
+    ${WRKSRC}/BIN > ${WRKSRC}/BIN.tmp
+mv ${WRKSRC}/BIN.tmp ${WRKSRC}/BIN
+
+# Set up man pages correctly.
+awk 'BEGIN {
+	FS=":"
+	OFS=":"
+}
+# Dispose of preformatted man pages.
+$5 ~ "cat" {
+	next
+}
+$1 == "c" {
+	$2 = bu
+	$3 = bg
+	$4 = mm
+	print
+	next
+}
+{
+	print
+}' bu=`id -u ${BINOWN}` bg=`id -g ${BINGRP}` mm=${MANMODE} \
+    ${WRKSRC}/MAN > ${WRKSRC}/MAN.tmp
+mv ${WRKSRC}/MAN.tmp ${WRKSRC}/MAN
