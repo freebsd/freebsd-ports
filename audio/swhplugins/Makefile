@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	swhplugins
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -15,36 +15,43 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Steve Harris' huge Collection of LADSPA Plugins
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
+LIB_DEPENDS=	fftw3.3:${PORTSDIR}/math/fftw3
 
 # includes assember code
 ONLY_FOR_ARCHS=	i386 amd64
 
+USE_GNOME=	gnometarget lthack
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	13
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-fPIC -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	 --with-libintl-prefix=${LOCALBASE}
+USE_INC_LIBTOOL_VER=	13
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
-.if !defined(WITHOUT_NLS)
+.if defined(WITH_3DNOW)
+CONFIGURE_ARGS+=	--enable-3dnow
+.endif
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g ; \
-		 s|INCLUDED_LIBINTL=yes|INCLUDED_LIBINTL=no|g ; \
-		 s|\\\$${top_builddir}/intl/libintl.a|-lintl|g ' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|#include <bits/nan.h>||g' \
-		${WRKSRC}/gverb/gverb-test.c
-	@${REINPLACE_CMD} -e 's|-lrt||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-O2 .*"|-lm"|g ; \
+		 s|-O6 .*"|-fPIC -DPIC"|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's| metadata||g ; \
+		 s|gcc |$$(CC) |g ; \
+		 s| -lc| $$(LDFLAGS)|g ; \
+		 s|-lrt||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|<stdint\.h>|<inttypes.h>|g ; \
+		 s|ls_pcast |ls_pcast32 |g' ${WRKSRC}/ladspa-util.h
+
+post-install:
+	@${MKDIR} ${PREFIX}/share/ladspa/rdf
+	${INSTALL_DATA} ${WRKSRC}/metadata/*.rdf ${PREFIX}/share/ladspa/rdf
 
 .include <bsd.port.mk>
