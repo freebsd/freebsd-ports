@@ -386,6 +386,7 @@ arm-rtems-g77	ports/devel/arm-rtems-g77
 arm-rtems-gcc	ports/devel/arm-rtems-gcc
 arm-rtems-gdb	ports/devel/arm-rtems-gdb
 arm-rtems-objc	ports/devel/arm-rtems-objc
+arp-sk		ports/net/arp-sk
 arpack		ports/math/arpack
 arpack++	ports/math/arpack++
 arpd		ports/net/arpd
