@@ -10,10 +10,14 @@ PORTNAME=	cvsd
 PORTVERSION=	1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://tiefighter.et.tudelft.nl/~arthur/cvsd/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS pserver daemon
 
+USE_GPG?=	yes
+SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.sig
 USE_PERL5=	yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
@@ -28,17 +32,17 @@ MAN8=	cvsd.8 cvsd-buildroot.8 cvsd-passwd.8
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cvsd ${PREFIX}/sbin/cvsd
-.for file in cvsd-buildroot cvsd-passwd
-	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/sbin/${file}
+.for FILE in cvsd-buildroot cvsd-passwd
+	${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${PREFIX}/sbin
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/cvsd.init ${PREFIX}/etc/rc.d/cvsd.sh.sample
 	@${MKDIR} ${PREFIX}/etc/cvsd
 	${INSTALL_DATA} ${WRKSRC}/cvsd.conf-dist ${PREFIX}/etc/cvsd/cvsd.conf.sample
-.for file in ${MAN5}
-	${INSTALL_MAN} ${WRKSRC}/${file} ${MANPREFIX}/man/man5/${file}
+.for FILE in ${MAN5}
+	${INSTALL_MAN} ${WRKSRC}/${FILE} ${MANPREFIX}/man/man5
 .endfor
-.for file in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/${file} ${MANPREFIX}/man/man8/${file}
+.for FILE in ${MAN8}
+	${INSTALL_MAN} ${WRKSRC}/${FILE} ${MANPREFIX}/man/man8
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
