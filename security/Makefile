@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.49 1999/04/02 19:09:53 nsayer Exp $
+# $Id: Makefile,v 1.50 1999/04/07 20:24:46 ache Exp $
 #
 
     SUBDIR += bjorb
@@ -18,6 +18,7 @@
     SUBDIR += krb5
     SUBDIR += l0pht-watch
     SUBDIR += libident
+    SUBDIR += libparanoia
     SUBDIR += nbaudit
     SUBDIR += nmap
     SUBDIR += openssl
