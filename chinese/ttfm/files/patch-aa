@@ -5,7 +5,7 @@
  export PATH; PATH=/bin:/sbin:/usr/bin:/usr/sbin:$PREFIX/bin:$PREFIX/sbin:$X11BASE/bin
  export TEMPFILE; TEMPFILE="`mktemp /tmp/ttfm.tmpXXX`"
 -export ABIFontPath; ABIFontPath=$PREFIX/AbiSuite/fonts
-+export ABIFontPath; ABIFontPath=$PREFIX/share/AbiSuite/fonts
++export ABIFontPath; ABIFontPath=$X11BASE/share/AbiSuite/fonts
  export DefaultFontPath; DefaultFontPath=$PREFIX/share/fonts/TrueType
  export TTFM; TTFM=$PREFIX/bin/ttfm.sh
  export XTTFFONTPATH; XTTFFONTPATH="$X11BASE/lib/X11/fonts/TrueType"
