@@ -15,7 +15,7 @@ DISTNAME=	libWPCG-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A basic 2D/3D computer graphics library which uses OpenGL
 
-USE_GCC=	3.1
+USE_GCC=	3.3
 USE_MESA=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
