@@ -7,6 +7,7 @@
 
 PORTNAME=	tiff2png
 PORTVERSION=	0.9
+PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.libpng.org/pub/png/src/ \
 		ftp://swrinde.nde.swri.edu/pub/png/applications/
