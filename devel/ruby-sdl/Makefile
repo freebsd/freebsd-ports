@@ -7,6 +7,7 @@
 
 PORTNAME=	sdl
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	devel graphics audio ruby
 MASTER_SITES=	http://www.kmc.kyoto-u.ac.jp/~ohai/rubysdl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -50,7 +51,6 @@ post-extract:
 post-patch:
 	${RUBY} -i -pe '/require \x27mkmf\x27/ and $$_ += "dir_config(\x27x11\x27)\n"' \
 		${WRKSRC}/${RUBY_EXTCONF}
-	cd ${WRKSRC} && ${PATCH} -p1 < sdlgl.patch
 
 post-build:
 .if !defined(NOPORTDOCS)
