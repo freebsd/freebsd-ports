@@ -3,20 +3,22 @@
 # Date created:         3 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.7 1996/11/18 11:32:07 asami Exp $
+# $Id: Makefile,v 1.8 1996/11/18 14:04:52 asami Exp $
 #
 
 DISTNAME=	calc-2.9.3t6
 PKGNAME=	calc-2.9.3
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/misc/4.4BSD-Lite/contrib/
+MASTER_SITES=	ftp://ftp.cdrom.com/pub/bsd-sources/4.4BSD-Lite/usr/src/contrib/
 
 MAINTAINER=	jmz@FreeBSD.org
 
 MAN1=		calc.1
 
+pre-patch:
+	@cd ${WRKDIR} && mv pub/bsd-sources/4.4BSD-Lite/usr/src/contrib/calc-2.9.3t6 .
+
 pre-install:
 	@${MKDIR} ${PREFIX}/lib/calc/help
-	@${MKDIR} ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
