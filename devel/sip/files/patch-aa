@@ -1,0 +1,23 @@
+--- configure.orig	Sat Nov  4 17:18:43 2000
++++ configure	Fri Nov 17 19:24:29 2000
+@@ -2101,9 +2101,9 @@
+ 
+ 	for d in $qt_mocdirs
+ 	do
+-		if test -x $d/moc
++		if test -x $d/moc2
+ 		then
+-			sip_qt_moc=$d/moc
++			sip_qt_moc=$d/moc2
+ 			break
+ 		fi
+ 	done
+@@ -3166,7 +3166,7 @@
+ then
+ 	SIP_QT_MOC=$sip_qt_moc
+ 	SIP_CPPFLAGS="-DSIP_QT_SUPPORT -I$sip_qt_incdir $X_CFLAGS $SIP_CPPFLAGS"
+-	SIP_LDFLAGS="-L$sip_qt_libdir -lqt $X_LIBS $X_PRE_LIBS -lX11 $X_EXTRA_LIBS"
++	SIP_LDFLAGS="-L$sip_qt_libdir -lqt2 $X_LIBS $X_PRE_LIBS -lX11 $X_EXTRA_LIBS"
+ else
+ 	SIP_QT_MOC=":"
+ 	SIP_LDFLAGS=
