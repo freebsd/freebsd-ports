@@ -81,7 +81,6 @@
     SUBDIR += fortuneit
     SUBDIR += freedialog
     SUBDIR += ftree
-    SUBDIR += gambit
     SUBDIR += gctpc
     SUBDIR += geekcode
     SUBDIR += git
