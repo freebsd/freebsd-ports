@@ -1,19 +1,26 @@
-*** shared.c~	Thu Dec 14 20:41:02 1989
---- shared.c	Sun Nov 20 00:59:30 1994
-***************
-*** 58,64 ****
-  #include "bitmap/window.bits"
-  #include "bitmap/anti.bits"
-  
-! char *sprintf();    /* UNIX brain damage */
-  
-  /* All in and out movements except up */
-  #define NOUPBITS   DLEAVE | LLEAVE | RLEAVE | HENTER | VENTER
---- 58,64 ----
-  #include "bitmap/window.bits"
-  #include "bitmap/anti.bits"
-  
-! /* char *sprintf();    /* UNIX brain damage */
-  
-  /* All in and out movements except up */
-  #define NOUPBITS   DLEAVE | LLEAVE | RLEAVE | HENTER | VENTER
+--- shared.c.orig	Mon May  1 18:20:48 2000
++++ shared.c	Mon May  1 18:25:28 2000
+@@ -58,7 +58,7 @@
+ #include "bitmap/window.bits"
+ #include "bitmap/anti.bits"
+ 
+-char *sprintf();    /* UNIX brain damage */
++/* char *sprintf();    /* UNIX brain damage */
+ 
+ /* All in and out movements except up */
+ #define NOUPBITS   DLEAVE | LLEAVE | RLEAVE | HENTER | VENTER
+@@ -316,8 +316,12 @@
+ 
+   /* Manufaction the file name by starting with the world name and */
+   /* appending the level number to it. */
+-  strcpy(filename,LIB);
+-  strcat(filename,"/");
++  if (strchr (worldname, '/')) 
++      *filename = 0;
++  else {
++      strcpy(filename,LIB);
++      strcat(filename,"/");
++  }
+   strcat(filename,worldname);
+   sprintf(filename + strlen(filename),"%03d",levelnum);
+   /* Open level file for reading */

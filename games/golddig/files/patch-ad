@@ -1,31 +1,57 @@
---- Makefile.orig	Sun Apr 30 18:59:40 2000
-+++ Makefile	Sun Apr 30 19:01:22 2000
-@@ -34,23 +34,25 @@
+--- Makefile.orig	Mon May  1 18:11:58 2000
++++ Makefile	Mon May  1 18:11:59 2000
+@@ -9,40 +9,44 @@
+ # Name of level editor executable
+ EDITOR = makelev
+ # Directory where games binaries are stored
+-BIN = /usr/public/${HOSTTYPE}/games
++BIN = ${PREFIX}/bin
+ # Directory where the library for this game will be stored
+-LIB = /usr/public/sun3/games/lib/${GAME}
++LIB =  ${PREFIX}/lib/${GAME}
+ # Directory where manual pages are kept
+-MANEXT = p
+-MAN = /usr/public/man/man${MANEXT}
++MANEXT = 6
++MAN =  ${PREFIX}/man/man${MANEXT}
+ # Font used to display score
+ SCOREFONT = -adobe-times-bold-r-normal--18-180-75-75-p-99-iso8859-1
+ # Height of SCOREFONT
+ SCORESIZE = 18
+ 
+ # Common compilers
+-#CC = cc
+-CC = gcc
++CC = cc
++#CC = gcc
+ 
+ # Some common choices for CFLAGS.
+ #CFLAGS = -O2
+ #CFLAGS = -O
+-CFLAGS = -O -W -Wreturn-type -Wunused -g -finline-functions
++CFLAGS += -W -Wreturn-type -Wunused -finline-functions -I${X11BASE}/include
+ #CFLAGS = -g
+-LDFLAGS = -g
++LDFLAGS = -L ${X11BASE}/lib
+ 
  all: ${GAME} ${EDITOR}
  
  install: all
--	-mkdir ${LIB}
-+	-mkdir -m 0664 ${LIB}
+ 	-mkdir ${LIB}
  	cp ${GAME} ${EDITOR} ${BIN}
++	chown root.games ${BIN}/${GAME}
++	chmod g+s  ${BIN}/${GAME}
  # The next line sets up the level files so that anyone can edit all of
  # the levels.  Remove this line to have better security.
 -	chmod 4755 ${BIN}/${EDITOR}
-+	chmod 2755 ${BIN}/${EDITOR}
-+	chown root:games ${BIN}/${EDITOR}
++#	chmod 4755 ${BIN}/${EDITOR}
  	touch ${LIB}/scores
++	chown  root.games ${LIB}/scores
++	chmod g+w  ${LIB}/scores
  # Allow anyone to modify the high score file.  An alternative is to
  # change the mode bits of ${GAME} to be 4755.
- 	chmod 666 ${LIB}/scores
+-	chmod 666 ${LIB}/scores
++#	chmod 666 ${LIB}/scores
  	cp goldlev* default ${LIB}
-+	chown -R root:games ${LIB}
  	cp golddig.p ${MAN}/golddig.${MANEXT}
  
- update: all
- 	cp ${GAME} ${EDITOR} ${BIN}
- # The next line sets up the level files so that anyone can edit all of
- # the levels.  Remove this line to have better security.
--	chmod 4755 ${BIN}/${EDITOR}
-+	chmod 2755 ${BIN}/${EDITOR}
- 
- clean:
- 	rm -f *.o *~ bitmap/*~ core ${GAME} ${EDITOR}
