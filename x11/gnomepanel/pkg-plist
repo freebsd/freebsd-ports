@@ -8,8 +8,6 @@ etc/gconf/gconf.xml.defaults/apps/panel/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/panel/global/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/prefs/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/pager_applet/%gconf.xml
@@ -169,6 +167,7 @@ share/locale/ja/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/mk/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-panel-2.0.mo
@@ -250,8 +249,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/pager_applet
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet/prefs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/prefs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/prefs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet
 @dirrm etc/gconf/gconf.xml.defaults/apps/panel/global

@@ -200,6 +200,12 @@ share/gnome/gnome-2.0/ui/GNOME_MultiloadApplet.xml
 share/gnome/gweather/Locations
 share/gnome/help/cdplayer/C/cdplayer.xml
 share/gnome/help/cdplayer/C/figures/cdplayer_applet.png
+share/gnome/help/cdplayer/C/figures/cdplayer_applet_eject.png
+share/gnome/help/cdplayer/C/figures/cdplayer_applet_nexttrack.png
+share/gnome/help/cdplayer/C/figures/cdplayer_applet_playing.png
+share/gnome/help/cdplayer/C/figures/cdplayer_applet_playpause.png
+share/gnome/help/cdplayer/C/figures/cdplayer_applet_prevtrack.png
+share/gnome/help/cdplayer/C/figures/cdplayer_applet_stop.png
 share/gnome/help/cdplayer/C/legal.xml
 share/gnome/help/cdplayer/C/topic.dat
 share/gnome/help/char-palette/C/char-palette.xml
@@ -218,17 +224,20 @@ share/gnome/help/gtik2_applet2/C/figures/gtik_applet.png
 share/gnome/help/gtik2_applet2/C/gtik2_applet2.xml
 share/gnome/help/gtik2_applet2/C/legal.xml
 share/gnome/help/gweather/C/figures/gweather_applet.png
-share/gnome/help/gweather/C/figures/gweather_settings.png
-share/gnome/help/gweather/C/figures/gweather_weather.png
 share/gnome/help/gweather/C/gweather.xml
 share/gnome/help/gweather/C/legal.xml
 share/gnome/help/gweather/C/topic.dat
-share/gnome/omf/gnome-applets/cdplayer_applet-C.omf
+share/gnome/help/mixer_applet2/C/figures/volumecontrol_applet.png
+share/gnome/help/mixer_applet2/C/legal.xml
+share/gnome/help/mixer_applet2/C/mixer_applet2.xml
+share/gnome/help/mixer_applet2/C/topic.dat
+share/gnome/omf/gnome-applets/cdplayer-C.omf
 share/gnome/omf/gnome-applets/char-palette-C.omf
 share/gnome/omf/gnome-applets/command-line-C.omf
 share/gnome/omf/gnome-applets/geyes-C.omf
 share/gnome/omf/gnome-applets/gtik2_applet2-C.omf
-share/gnome/omf/gnome-applets/gweather_applet-C.omf
+share/gnome/omf/gnome-applets/gweather-C.omf
+share/gnome/omf/gnome-applets/mixer_applet2-C.omf
 share/gnome/pixmaps/battstat.png
 share/gnome/pixmaps/charpick.png
 share/gnome/pixmaps/drivemount-applet.png
@@ -435,12 +444,27 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm share/gnome/pixmaps/gweather
 @dirrm share/gnome/pixmaps/gkb
 @dirrm share/gnome/omf/gnome-applets
+@dirrm share/gnome/help/mixer_applet2/C/figures
+@dirrm share/gnome/help/mixer_applet2/C
+@dirrm share/gnome/help/mixer_applet2
+@dirrm share/gnome/help/gweather/C/figures
+@dirrm share/gnome/help/gweather/C
+@dirrm share/gnome/help/gweather
+@dirrm share/gnome/help/gtik2_applet2/C/figures
+@dirrm share/gnome/help/gtik2_applet2/C
+@dirrm share/gnome/help/gtik2_applet2
+@dirrm share/gnome/help/geyes/C/figures
+@dirrm share/gnome/help/geyes/C
+@dirrm share/gnome/help/geyes
 @dirrm share/gnome/help/command-line/C/figures
 @dirrm share/gnome/help/command-line/C
 @dirrm share/gnome/help/command-line
 @dirrm share/gnome/help/char-palette/C/figures
 @dirrm share/gnome/help/char-palette/C
 @dirrm share/gnome/help/char-palette
+@dirrm share/gnome/help/cdplayer/C/figures
+@dirrm share/gnome/help/cdplayer/C
+@dirrm share/gnome/help/cdplayer
 @dirrm share/gnome/gweather
 @dirrm share/gnome/gkb
 @dirrm share/gnome/geyes/Horrid

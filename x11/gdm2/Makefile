@@ -9,7 +9,7 @@ PORTNAME=	gdm2
 PORTVERSION=	2.3.90.3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=		pre-gnome2/releases/gnome-2.0-desktop-beta5
+MASTER_SITE_SUBDIR=		pre-gnome2/releases/gnome-2.0-desktop-20020525
 DISTNAME=	gdm-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 

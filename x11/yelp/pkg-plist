@@ -2,6 +2,9 @@ bin/gnome-help
 bin/yelp
 libdata/bonobo/servers/GNOME_Yelp.server
 share/gnome/applications/yelp.desktop
+share/gnome/images/yelp/bcg.png
+share/gnome/images/yelp/empty.png
+share/gnome/images/yelp/gnome2-button.png
 share/gnome/sgml/docbook/yelp/l10n.xml
 share/gnome/sgml/docbook/yelp/yelp-custom.xsl
 share/gnome/sgml/docbook/yelp/yelp-customization.xsl
@@ -37,3 +40,4 @@ share/locale/zh_CN/LC_MESSAGES/yelp.mo
 share/locale/zh_TW/LC_MESSAGES/yelp.mo
 @dirrm share/gnome/yelp
 @dirrm share/gnome/sgml/docbook/yelp
+@dirrm share/gnome/images/yelp

@@ -1,3 +1,8 @@
+etc/gconf/gconf.xml.defaults/schemas/system/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/system/http_proxy/%gconf.xml
+etc/gconf/gconf.xml.defaults/system/%gconf.xml
+etc/gconf/gconf.xml.defaults/system/http_proxy/%gconf.xml
+etc/gconf/schemas/system_http_proxy.schemas
 etc/gnome-vfs-2.0/modules/default-modules.conf
 etc/gnome-vfs-2.0/vfolders/applications.vfolder-info
 etc/gnome-vfs-2.0/vfolders/preferences.vfolder-info
@@ -51,6 +56,7 @@ lib/gnome-vfs-2.0/modules/libgzip.so
 lib/gnome-vfs-2.0/modules/libhttp.so
 lib/gnome-vfs-2.0/modules/libnntp.so
 lib/gnome-vfs-2.0/modules/libssh.so
+lib/gnome-vfs-2.0/modules/libtar.so
 lib/gnome-vfs-2.0/modules/libvfolder-desktop.so
 lib/gnome-vfs-2.0/modules/libvfs-pipe.so
 lib/gnome-vfs-2.0/modules/libvfs-test.so
@@ -133,6 +139,7 @@ share/locale/fi/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/hi/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/hu/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-vfs-2.0.mo
@@ -168,4 +175,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-vfs-2.0.mo
 @dirrm etc/gnome-vfs-2.0/vfolders
 @dirrm etc/gnome-vfs-2.0/modules
 @dirrm etc/gnome-vfs-2.0
+@dirrm etc/gconf/gconf.xml.defaults/system/http_proxy
+@dirrm etc/gconf/gconf.xml.defaults/system
+@dirrm etc/gconf/gconf.xml.defaults/schemas/system/http_proxy
+@dirrm etc/gconf/gconf.xml.defaults/schemas/system
 @unexec /bin/rmdir %D/lib/vfs 2>/dev/null || /usr/bin/true

@@ -11,7 +11,7 @@ include/libwnck-1.0/libwnck/wnck-enum-types.h
 include/libwnck-1.0/libwnck/workspace.h
 lib/libwnck-1.a
 lib/libwnck-1.so
-lib/libwnck-1.so.2
+lib/libwnck-1.so.4
 libdata/pkgconfig/libwnck-1.0.pc
 share/locale/az/LC_MESSAGES/libwnck.mo
 share/locale/da/LC_MESSAGES/libwnck.mo
