@@ -3,11 +3,11 @@
 # Date created:         18 July 1995
 # Whom:                 jmacd
 #
-# $Id: Makefile,v 1.3 1996/06/26 19:55:06 swallace Exp $
+# $Id: Makefile,v 1.7 1996/11/21 20:23:10 swallace Exp $
 #
 
 DISTNAME=       xpilot-3.5.1
-CATEGORIES+=	games
+CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cs.uit.no/pub/games/xpilot/
 
 USE_IMAKE=	yes

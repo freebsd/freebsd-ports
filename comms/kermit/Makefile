@@ -3,12 +3,12 @@
 # Date created:		Oct 27, 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.12 1996/12/10 10:23:48 pst Exp $
+# $Id: Makefile,v 1.13 1996/12/10 20:30:37 ache Exp $
 #
 
 DISTNAME=	cku192src
 PKGNAME=        kermit-6.0.192
-CATEGORIES+=	comms
+CATEGORIES=	comms
 
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 		ftp://ftp.th-darmstadt.de/pub/networking/kermit/ \
