@@ -15,7 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kapr@crosswinds.net
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	INSTALLMAN1DIR=${MANPREFIX}/man/man1
 
 MAN1=		htmlclean.1
 MAN3=		HTML::Clean.3
