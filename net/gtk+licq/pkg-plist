@@ -1,4 +1,24 @@
-lib/licq/licq_%%GUITYPE%%_gui.a
+%%GNOME:%%lib/licq/licq_gnome_gui.so
+%%GNOME:%%share/gnome/help/gtk+licq/C/arvancedusage.html
+%%GNOME:%%share/gnome/help/gtk+licq/C/authors.html
+%%GNOME:%%share/gnome/help/gtk+licq/C/bugs.html
+%%GNOME:%%share/gnome/help/gtk+licq/C/docbook.css
+%%GNOME:%%share/gnome/help/gtk+licq/C/goodstuff.html
+%%GNOME:%%share/gnome/help/gtk+licq/C/images/gtk_licq_applet.png
+%%GNOME:%%share/gnome/help/gtk+licq/C/images/gtk_licq_chatwindow.png
+%%GNOME:%%share/gnome/help/gtk+licq/C/images/gtk_licq_infowindow.png
+%%GNOME:%%share/gnome/help/gtk+licq/C/images/gtk_licq_mainwindow.png
+%%GNOME:%%share/gnome/help/gtk+licq/C/images/gtk_licq_optionwindow.png
+%%GNOME:%%share/gnome/help/gtk+licq/C/images/gtk_licq_regwindow.png
+%%GNOME:%%share/gnome/help/gtk+licq/C/images/gtk_licq_searchwindow.png
+%%GNOME:%%share/gnome/help/gtk+licq/C/images/gtk_licq_sendwindow.png
+%%GNOME:%%share/gnome/help/gtk+licq/C/images/gtk_licq_viewwindow.png
+%%GNOME:%%share/gnome/help/gtk+licq/C/index.html
+%%GNOME:%%share/gnome/help/gtk+licq/C/license.html
+%%GNOME:%%share/gnome/help/gtk+licq/C/prefs.html
+%%GNOME:%%share/gnome/help/gtk+licq/C/topic.dat
+%%GNOME:%%share/gnome/help/gtk+licq/C/usage.html
+%%NOGNOME:%%lib/licq/licq_gtk_gui.so
 share/licq/gtk-gui/pixmaps/arrow.xpm
 share/licq/gtk-gui/pixmaps/chatBeep.xpm
 share/licq/gtk-gui/pixmaps/chatBold.xpm
@@ -21,6 +41,10 @@ share/licq/gtk-gui/pixmaps/sideways_strippeddownlogo.xpm
 share/locale/de/LC_MESSAGES/gtk+licq.mo
 share/locale/es/LC_MESSAGES/gtk+licq.mo
 share/locale/pt/LC_MESSAGES/gtk+licq.mo
+share/locale/pt_BR/LC_MESSAGES/gtk+licq.mo
 share/locale/ru/LC_MESSAGES/gtk+licq.mo
+%%GNOME:%%@dirrm share/gnome/help/gtk+licq/C/images
+%%GNOME:%%@dirrm share/gnome/help/gtk+licq/C
+%%GNOME:%%@dirrm share/gnome/help/gtk+licq
 @dirrm share/licq/gtk-gui/pixmaps
 @dirrm share/licq/gtk-gui

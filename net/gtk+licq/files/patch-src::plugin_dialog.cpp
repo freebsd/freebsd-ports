@@ -3,7 +3,7 @@
 @@ -1,5 +1,6 @@
  #include "gtk-gui.h"
  
-+#include <sys/unistd.h>
++#include <unistd.h>
  #include <sys/time.h>
  #include <stdio.h>
  #include <sys/types.h>

@@ -7,33 +7,38 @@
 
 PORTNAME=	gtk+licq
 PORTVERSION=	0.50.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://gtk.licq.org/download/
 
 MAINTAINER=	ishmael27@home.com
 
 BUILD_DEPENDS=	${LOCALBASE}/include/licq/licq_icqd.h:${PORTSDIR}/net/licq
+LIB_DEPENDS=	pspell.4:${PORTSDIR}/textproc/pspell
 RUN_DEPENDS=	licq:${PORTSDIR}/net/licq
 
 USE_GMAKE=	yes
 USE_GTK=	yes
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes
-USE_AUTOMAKE=	yes
-
-.if defined(WITHOUT_GNOME)
-CONFIGURE_ARGS=	--disable-gnome
-GUITYPE=	gtk
-.else
-GUITYPE=	gnome
-.endif
-
-PLIST_SUB=	GUITYPE=${GUITYPE}
-
-CONFIGURE_ENV=	CPPFLAGS=-"I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-post-install:
-	strip ${PREFIX}/lib/licq/licq_${GUITYPE}_gui.a
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
+CONFIGURE_ARGS=	--enable-gnome
+.else
+CONFIGURE_ARGS=	--disable-gnome
+post-patch:
+	@${PERL5} -pi -e \
+		's|^SUBDIRS\ =.*|SUBDIRS\ =\ |' ${WRKSRC}/doc/Makefile.in
+.endif
+
+post-configure:
+	@${PERL5} -pi -e \
+		's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
+		${WRKSRC}/libtool
+
+.include <bsd.port.post.mk>
