@@ -1,0 +1,81 @@
+*** Makefile.orig	Mon Jul  8 23:41:43 1996
+--- Makefile	Tue Jul  9 11:24:56 1996
+***************
+*** 19,31 ****
+  #
+  
+  # This is where "wrapper" looks for the programs it's supposed to run.
+! W_BIN=/tools/majordomo-1.93
+  
+  # This is the environment that (along with LOGNAME and USER inherited from the
+  # parent process, and without the leading "W_" in the variable names) gets
+  # passed to processes run by "wrapper"
+  
+! W_PATH=/bin:/usr/bin:/usr/ucb
+  W_HOME=${W_BIN}
+  W_SHELL=/bin/csh
+  W_MAJORDOMO_CF=$(W_BIN)/majordomo.cf
+--- 19,31 ----
+  #
+  
+  # This is where "wrapper" looks for the programs it's supposed to run.
+! W_BIN=@@PREFIX@@/majordomo
+  
+  # This is the environment that (along with LOGNAME and USER inherited from the
+  # parent process, and without the leading "W_" in the variable names) gets
+  # passed to processes run by "wrapper"
+  
+! W_PATH=/bin:/usr/bin:
+  W_HOME=${W_BIN}
+  W_SHELL=/bin/csh
+  W_MAJORDOMO_CF=$(W_BIN)/majordomo.cf
+***************
+*** 45,52 ****
+  # and comment out the BSD settings above.
+  #
+  #
+! W_UID = 54
+! W_GID = 54
+  W_CHOWN=root
+  W_CHMOD=4755
+  WRAPPER_FLAGS = -DBIN=\"${W_BIN}\" -DPATH=\"PATH=${W_PATH}\" \
+--- 45,52 ----
+  # and comment out the BSD settings above.
+  #
+  #
+! W_UID = @@UID@@
+! W_GID = @@GID@@
+  W_CHOWN=root
+  W_CHMOD=4755
+  WRAPPER_FLAGS = -DBIN=\"${W_BIN}\" -DPATH=\"PATH=${W_PATH}\" \
+***************
+*** 83,99 ****
+  # proper place unless a majordomo.cf file exists in whcih case the
+  # majordomo.cf file will be used.
+  install-cf:
+! 	(test ! -f majordomo.cf  && echo "using sample.cf" && \
+! 		cp sample.cf $(W_BIN)/majordomo.cf; exit 0)
+! 	(test -f majordomo.cf  && echo "using majordomo.cf" && \
+! 		cp majordomo.cf $(W_BIN)/majordomo.cf; exit 0) 
+  
+  install-man:
+! 	@-test -d $(W_BIN)/man || mkdir $(W_BIN)/man
+! 	@-test -d $(W_BIN)/man/man1 || mkdir $(W_BIN)/man/man1
+! 	@-test -d $(W_BIN)/man/man8 || mkdir $(W_BIN)/man/man8
+! 	cp Doc/man/approve.1 $(W_BIN)/man/man1
+! 	cp Doc/man/majordomo.8 $(W_BIN)/man/man8
+  
+  install-shared: install-wrapper-shared install-scripts
+  
+--- 83,93 ----
+  # proper place unless a majordomo.cf file exists in whcih case the
+  # majordomo.cf file will be used.
+  install-cf:
+! 	cp sample.cf $(W_BIN)/majordomo.cf
+  
+  install-man:
+! 	cp Doc/man/approve.1 @@PREFIX@@/man/man1
+! 	cp Doc/man/majordomo.8 @@PREFIX@@/man/man8
+  
+  install-shared: install-wrapper-shared install-scripts
+  

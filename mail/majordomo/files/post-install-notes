@@ -1,0 +1,31 @@
+Post-Install Notes for Majordomo v1.93
+======================================
+
+Before you can use Majordomo, you will need to complete a few steps
+manually:
+
+	- customize 'majordomo.cf' in your majordomo directory
+
+	- look at 'aliases.majordomo' in your majordomo directory for examples
+	  of how to create lists.  A test list (test-l) has been created and
+	  configured for you.  Be sure to remove this list if you do not
+	  want to use it for testing.
+
+	- substitute your own email address for "Postmaster" for the
+	  "majordomo-owner" alias.
+
+	- add 'aliases.majordomo' to your sendmail configuration.  This can
+	  be done by adding a line similar to the following to 
+	  /etc/sendmail.cf :
+
+	  OA/etc/aliases.majordomo (for 8.6.x Sendmail)
+	  
+	  O AliasFile=/etc/aliases,/etc/aliases.majordomo (for 8.7.x Sendmail)
+
+	  or a line similar to the following to your m4 macros file :
+
+	  define(`ALIAS_FILE',/etc/aliases,/etc/aliases.majordomo')
+
+
+Enjoy Majordomo!
+
