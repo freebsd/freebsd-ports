@@ -3,7 +3,7 @@ OpenOffice Build 641 Personal Install How-To
 Written by:	Matthias Rauch <mrauch@netbsd.org>
 		Martin Blapp <mbr@freebsd.org>
 
-OpenOffice has now been installed in ${PREFIX}/OpenOffice.org641.
+OpenOffice has now been installed in ${PREFIX}/OpenOffice.org1.0/
 
 Once that is done exit X11 and run it again as the user
 that you usually use. Then run "make install-user" and do
