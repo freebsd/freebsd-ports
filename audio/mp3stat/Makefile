@@ -24,18 +24,16 @@ MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 PORTDOCS=	README
 PLIST_FILES=	bin/mp3stat
 
+OPTIONS=	VORBIS "Ogg/Vorbis support" on
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITHOUT_VORBIS)
 MAKE_ARGS+=	VORBIS=""
 .else
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 .endif
-
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to compile without Ogg/Vorbis support,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITHOUT_VORBIS=yes\""
-	@${ECHO_MSG}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mp3stat ${PREFIX}/bin
@@ -44,4 +42,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
