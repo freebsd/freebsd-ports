@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	log_analysis
-PORTVERSION=	0.38
+PORTVERSION=	0.40
 CATEGORIES=	sysutils
-MASTER_SITES=	http://linux.umbc.edu/~mabzug1/
+MASTER_SITES=	http://lug.umbc.edu/~mabzug1/
 
 MAINTAINER=	petef@FreeBSD.org
 
