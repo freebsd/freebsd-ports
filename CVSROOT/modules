@@ -3978,6 +3978,7 @@ ldap-account-manager	ports/sysutils/ldap-account-manager
 ldap2dns	ports/net/ldap2dns
 ldapbrowser	ports/net/ldapbrowser
 ldapdiff	ports/net/ldapdiff
+ldapdns		ports/dns/ldapdns
 ldapsdk		ports/net/ldapsdk
 ldmud		ports/games/ldmud
 le		ports/editors/le
