@@ -6,27 +6,24 @@
 #
 
 PORTNAME=	wmcpuload
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.0
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
 DISTNAME=	WMCPULoad-${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
-ONLY_FOR_ARCHS=	i386
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_XPM=	yes
+
+MAN1=		wmcpuload.1
 
 .ifndef(NOPORTDOCS)
 post-install:
-	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 555 \
-		${PREFIX}/share/doc/${PORTNAME}
+	@${MKDIR} ${DOCSDIR}
 .for file in README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif # !NOPORTDOCS
 
