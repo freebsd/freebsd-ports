@@ -1,6 +1,6 @@
---- bin/pg_passwd/pg_passwd.c.orig	Sat Jan 31 19:09:26 1998
-+++ bin/pg_passwd/pg_passwd.c	Sat Jan 31 19:15:43 1998
-@@ -23,12 +23,16 @@
+--- bin/pg_passwd/pg_passwd.c.orig	Thu May 27 09:00:40 1999
++++ bin/pg_passwd/pg_passwd.c	Mon Jun 21 16:34:27 1999
+@@ -26,11 +26,15 @@
  
  #endif
  
@@ -9,17 +9,15 @@
 +#endif
 +
  char	   *comname;
- void		usage(FILE *stream);
- void		read_pwd_file(char *filename);
- void		write_pwd_file(char *filename, char *bkname);
--void		encrypt_pwd(char key[9], char salt[3], char passwd[14]);
--int			check_pwd(char key[9], char passwd[14]);
-+void		encrypt_pwd(char key[9], char salt[3], char passwd[_PASSWORD_LEN+1]);
-+int			check_pwd(char key[9], char passwd[_PASSWORD_LEN+1]);
- void		prompt_for_username(char *username);
- void		prompt_for_password(char *prompt, char *password);
+ static void	usage(FILE *stream);
+ static void	read_pwd_file(char *filename);
+ static void	write_pwd_file(char *filename, char *bkname);
+-static void	encrypt_pwd(char key[9], char salt[3], char passwd[14]);
++static void	encrypt_pwd(char key[9], char salt[3], char passwd[_PASSWORD_LEN+1]);
+ static void	prompt_for_username(char *username);
+ static void	prompt_for_password(char *prompt, char *password);
  
-@@ -148,7 +152,7 @@
+@@ -158,7 +162,7 @@
  
  		if (q != NULL)
  			*(q++) = '\0';
@@ -28,19 +26,19 @@
  		{
  			fprintf(stderr, "WARNING: %s: line %d: illegal password length.\n",
  					filename, npwds + 1);
-@@ -208,7 +212,7 @@
+@@ -222,7 +226,7 @@
  }
  
- void
+ static void
 -encrypt_pwd(char key[9], char salt[3], char passwd[14])
 +encrypt_pwd(char key[9], char salt[3], char passwd[_PASSWORD_LEN+1])
  {
  	int			n;
  
-@@ -242,9 +246,9 @@
- }
+@@ -254,9 +258,9 @@
  
- int
+ #ifdef NOT_USED
+ static int
 -check_pwd(char key[9], char passwd[14])
 +check_pwd(char key[9], char passwd[_PASSWORD_LEN+1])
  {
@@ -49,16 +47,16 @@
  	char		salt[3];
  
  	salt[0] = passwd[0];
-@@ -252,7 +256,7 @@
+@@ -264,7 +268,7 @@
  	salt[2] = '\0';
  	encrypt_pwd(key, salt, shouldbe);
  
 -	return strncmp(shouldbe, passwd, 13) == 0 ? 1 : 0;
 +	return strncmp(shouldbe, passwd, _PASSWORD_LEN) == 0 ? 1 : 0;
  }
+ #endif
  
- void
-@@ -326,7 +330,7 @@
+@@ -339,7 +343,7 @@
  	char		salt[3];
  	char		key[9],
  				key2[9];
