@@ -40,6 +40,8 @@ PATCH_DIST_STRIP= -p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pattern Extraction and Recognition Language + Japanese patches
 
+BROKEN=		Incomplete pkg-plist
+
 .include <bsd.port.pre.mk>
 
 HAS_CONFIGURE=		yes
