@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- idl/Makefile.in	2002/07/10 14:57:23	1.1
++++ idl/Makefile.in	2002/07/10 14:58:38
+@@ -180,7 +180,6 @@
+ idldir = $(datadir)/idl
+ 
+ idl_DATA = \
+-	gnome-panel.idl 	\
+ 	help-browser.idl	\
+ 	Terminal.idl
+ 

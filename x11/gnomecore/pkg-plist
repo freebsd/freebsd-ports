@@ -31,15 +31,12 @@ etc/CORBA/servers/gnome-terminal.gnorba
 etc/CORBA/servers/help-browser.gnorba
 etc/CORBA/servers/panel.gnorba
 etc/CORBA/servers/tasklist_applet.gnorba
-etc/appletsConf.sh
 etc/dockletsConf.sh
 etc/gnome/panel-config/panel
 etc/gnome/panel-config/panel.d/default/Applet_Config
 etc/gnome/panel-config/panel.d/default/panel
 etc/sound/events/mailcheck.soundlist
 etc/sound/events/panel.soundlist
-include/applet-widget.h
-include/gnome-panel.h
 include/status-docklet.h
 lib/libfish_applet.a
 lib/libfish_applet.so
@@ -47,9 +44,6 @@ lib/libfish_applet.so.5
 lib/libgen_util_applet.a
 lib/libgen_util_applet.so
 lib/libgen_util_applet.so.5
-lib/libpanel_applet.a
-lib/libpanel_applet.so
-lib/libpanel_applet.so.5
 lib/libpanel_status.a
 lib/libpanel_status.so
 lib/libpanel_status.so.5
@@ -866,7 +860,6 @@ share/gnome/help/tasklist_applet/eu/tasklist_applet.sgml
 share/gnome/help/tasklist_applet/eu/topic.dat
 share/gnome/hints/panel.hints
 share/gnome/idl/Terminal.idl
-share/gnome/idl/gnome-panel.idl
 share/gnome/idl/help-browser.idl
 share/gnome/mc/templates/Emacs.desktop
 share/gnome/mc/templates/Eterm.desktop
@@ -1136,13 +1129,7 @@ share/locale/wa/LC_MESSAGES/gnome-core.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-core.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-core.mo
 @dirrm share/gnome/pixmaps/tiles
-@dirrm share/gnome/pixmaps/splash
-@dirrm share/gnome/pixmaps/mailcheck
-@dirrm share/gnome/pixmaps/fish
-@dirrm share/gnome/panel
 @dirrm share/gnome/omf/gnome-core
-@dirrm share/gnome/mc/templates
-@dirrm share/gnome/mc
 @dirrm share/gnome/hints
 @dirrm share/gnome/help/tasklist_applet/eu/stylesheet-images
 @dirrm share/gnome/help/tasklist_applet/eu/figures
@@ -1223,8 +1210,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-core.mo
 @dirrm share/gnome/help/mailcheck_applet
 @dirrm share/gnome/help/lgpl/C/stylesheet-images
 @dirrm share/gnome/help/lgpl/C/figures
-@dirrm share/gnome/help/lgpl/C
-@dirrm share/gnome/help/lgpl
 @dirrm share/gnome/help/help-browser/wa
 @dirrm share/gnome/help/help-browser/uk
 @dirrm share/gnome/help/help-browser/no
@@ -1245,8 +1230,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-core.mo
 @dirrm share/gnome/help/help-browser
 @dirrm share/gnome/help/gpl/C/stylesheet-images
 @dirrm share/gnome/help/gpl/C/figures
-@dirrm share/gnome/help/gpl/C
-@dirrm share/gnome/help/gpl
 @dirrm share/gnome/help/gnome-terminal/no/stylesheet-images
 @dirrm share/gnome/help/gnome-terminal/no/figures
 @dirrm share/gnome/help/gnome-terminal/no
@@ -1267,8 +1250,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-core.mo
 @dirrm share/gnome/help/gnome-terminal/da
 @dirrm share/gnome/help/gnome-terminal/C/stylesheet-images
 @dirrm share/gnome/help/gnome-terminal/C/figures
-@dirrm share/gnome/help/gnome-terminal/C
-@dirrm share/gnome/help/gnome-terminal
 @dirrm share/gnome/help/gnome-feedback/no/stylesheet-images
 @dirrm share/gnome/help/gnome-feedback/no/figures
 @dirrm share/gnome/help/gnome-feedback/no
@@ -1298,8 +1279,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-core.mo
 @dirrm share/gnome/help/fish_applet
 @dirrm share/gnome/help/fdl/C/stylesheet-images
 @dirrm share/gnome/help/fdl/C/figures
-@dirrm share/gnome/help/fdl/C
-@dirrm share/gnome/help/fdl
 @dirrm share/gnome/help/desk-guide_applet/it/stylesheet-images
 @dirrm share/gnome/help/desk-guide_applet/it/figures
 @dirrm share/gnome/help/desk-guide_applet/it
@@ -1332,23 +1311,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-core.mo
 @dirrm share/gnome/help/clock_applet/C/figures
 @dirrm share/gnome/help/clock_applet/C
 @dirrm share/gnome/help/clock_applet
-@dirrm share/gnome/gnome-terminal/glade
-@dirrm share/gnome/gnome-terminal
-@dirrm share/gnome/gnome-about
-@dirrm share/gnome/apps/Utilities
-@dirrm share/gnome/apps/System
-@dirrm share/gnome/apps/Multimedia
-@dirrm share/gnome/apps/Internet
-@dirrm share/gnome/apps/Graphics
-@dirrm share/gnome/apps/Games
-@dirrm share/gnome/apps/Development
-@dirrm share/gnome/applets/Utility
-@dirrm share/gnome/applets/Network
-@dirrm share/gnome/applets/Multimedia
-@dirrm share/gnome/applets/Monitors
-@dirrm share/gnome/applets/Clocks
-@dirrm share/gnome/applets/Amusements
-@dirrm share/gnome/applets
 @dirrm share/doc/panel/panel
 @dirrm share/doc/panel
 @dirrm etc/gnome/panel-config/panel.d/default

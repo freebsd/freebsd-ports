@@ -61,18 +61,3 @@ share/locale/zh_CN/LC_MESSAGES/GConf.mo
 @dirrm include/gconf/1/gconf
 @dirrm include/gconf/1
 @dirrm etc/gconf/1
-@exec   /bin/mkdir -p %D/etc/gconf/gconf.xml.defaults/apps
-@exec   /bin/mkdir -p %D/etc/gconf/gconf.xml.defaults/schemas/apps
-@unexec /bin/rmdir    %D/lib/GConf 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir    %D/include/gconf 2>/dev/null || /usr/bin/true
-@unexec /bin/rm    -f %D/etc/gconf/gconf.xml.defaults/%%gconf.xml 2>/dev/null || true
-@unexec /bin/rm    -f %D/etc/gconf/gconf.xml.defaults/apps/%%gconf.xml 2>/dev/null || true
-@unexec /bin/rm    -f %D/etc/gconf/gconf.xml.defaults/schemas/%%gconf.xml 2>/dev/null || true
-@unexec /bin/rm    -f %D/etc/gconf/gconf.xml.defaults/schemas/apps/%%gconf.xml 2>/dev/null || true
-@unexec /bin/rmdir    %D/etc/gconf/schemas 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir    %D/etc/gconf/gconf.xml.mandatory 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir    %D/etc/gconf/gconf.xml.defaults/schemas/apps 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir    %D/etc/gconf/gconf.xml.defaults/schemas 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir    %D/etc/gconf/gconf.xml.defaults/apps 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir    %D/etc/gconf/gconf.xml.defaults 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir    %D/etc/gconf 2>/dev/null || /usr/bin/true

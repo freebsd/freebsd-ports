@@ -1,16 +1,54 @@
---- control-center/Makefile.in.orig	Tue Aug  1 22:42:01 2000
-+++ control-center/Makefile.in	Tue Aug  1 22:45:47 2000
-@@ -162,3 +162,3 @@
+
+$FreeBSD$
+
+--- control-center/Makefile.in.orig	Wed Jul 10 16:48:34 2002
++++ control-center/Makefile.in	Wed Jul 10 16:51:37 2002
+@@ -208,7 +208,7 @@
+ sys_in_files = gnomecc.desktop.in
+ sys_DATA = $(sys_in_files:.desktop.in=.desktop)
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = cappletConf.sh
-@@ -168,3 +168,3 @@
+ 
+ libcapplet_la_SOURCES = \
+@@ -218,7 +218,7 @@
+ 	$(CORBA_SRCLIST)
+ 
  
 -libcapplet_la_LDFLAGS = -version-info 0:0:0 -rpath $(libdir)
 +libcapplet_la_LDFLAGS = -version-info 5:0:0
  libcapplet_la_LIBADD = $(ORB_LIBS) -lm $(DL_LIB) $(GNORBA_LIBS)
-@@ -590,2 +590,3 @@
- 	    -e 's?\@ORB_LIBS\@?$(ORB_LIBS)?g' \
+ 
+ libcappletincludedir = $(includedir)/libcapplet1
+@@ -522,12 +522,10 @@
+ check: check-am
+ installcheck-am:
+ installcheck: installcheck-am
+-install-exec-am: install-libLTLIBRARIES install-binPROGRAMS \
+-		install-confexecDATA
++install-exec-am: install-binPROGRAMS
+ install-exec: install-exec-am
+ 
+-install-data-am: install-appiconDATA install-splashDATA install-sysDATA \
+-		install-libcappletincludeHEADERS
++install-data-am: install-appiconDATA install-splashDATA install-sysDATA
+ install-data: install-data-am
+ 
+ install-am: all-am
+@@ -546,7 +544,6 @@
+ 	$(mkinstalldirs)  $(DESTDIR)$(libdir) $(DESTDIR)$(bindir) \
+ 		$(DESTDIR)$(appicondir) $(DESTDIR)$(confexecdir) \
+ 		$(DESTDIR)$(splashdir) $(DESTDIR)$(sysdir) \
+-		$(DESTDIR)$(libcappletincludedir)
+ 
+ 
+ mostlyclean-generic:
+@@ -592,6 +589,7 @@
+ clean-libLTLIBRARIES maintainer-clean-libLTLIBRARIES \
+ uninstall-libLTLIBRARIES install-libLTLIBRARIES mostlyclean-compile \
+ distclean-compile clean-compile maintainer-clean-compile \
 +	    -e 's?\@VERSION\@?$(VERSION)?g' \
- 	    < $(srcdir)/cappletConf.sh.in > cappletConf.tmp \
+ mostlyclean-libtool distclean-libtool clean-libtool \
+ maintainer-clean-libtool mostlyclean-binPROGRAMS distclean-binPROGRAMS \
+ clean-binPROGRAMS maintainer-clean-binPROGRAMS uninstall-binPROGRAMS \

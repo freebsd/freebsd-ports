@@ -19,7 +19,8 @@ LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomelibs bonobo libglade gal
 USE_PYTHON=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
@@ -36,11 +37,8 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 post-extract:
 	@cd ${PORTSDIR}/math/gnumeric && ${MAKE} patch
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>

@@ -16,8 +16,6 @@ DIST_SUBDIR=	gnome
 MAINTAINER?=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
-LIB_DEPENDS+=	xml.5:${PORTSDIR}/textproc/libxml \
-		ORBit.2:${PORTSDIR}/devel/ORBit
 RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 
 USE_BZIP2=	yes
@@ -25,16 +23,12 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_IMLIB=	yes
-USE_ESOUND=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack gnomeprefix esound gtk12 imlib libxml orbit
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure libart_lgpl/configure
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
-		--disable-test-gnome \
-		--disable-gtk-doc \
-		--with-html-dir=${PREFIX}/share/doc
+CONFIGURE_ARGS=	--disable-test-gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
@@ -45,15 +39,10 @@ MAN1=		dns-helper.1 gconfigger.1 gnome-bug.1 gnome-config.1 \
 		libart-config.1 loadshlib.1 new-object.1
 MAN5=		gnome-mime.5
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
-
 post-patch:
-	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/gnome-config.in ${WRKSRC}/libgnome/gnome-util.c
 
 # need to make launched gnome-terminals appear in utmp/wtmp

@@ -1205,6 +1205,8 @@ share/locale/vi/LC_MESSAGES/evolution.mo
 share/locale/uk/LC_MESSAGES/evolution.mo
 share/locale/zh_CN/LC_MESSAGES/evolution.mo
 share/locale/zh_TW/LC_MESSAGES/evolution.mo
+@dirrm share/doc/evolution-cal-util
+@dirrm share/doc/evolution-cal-client
 @dirrm share/gnome/omf/evolution
 @dirrm share/gnome/libical-evolution/zoneinfo/Pacific
 @dirrm share/gnome/libical-evolution/zoneinfo/Indian

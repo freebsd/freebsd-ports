@@ -300,8 +300,8 @@ share/AbiSuite/icons/abiword_48.tif
 share/AbiSuite/icons/abiword_48.xpm
 %%GNOME:%%share/AbiSuite/icons/abiword_logo.xpm
 share/AbiSuite/templates/normal.awt
-%%GNOME:%%share/gnome/apps/Applications/abiword.desktop
-%%GNOME:%%share/gnome/pixmaps/abiword_48.png
+share/gnome/apps/Applications/abiword.desktop
+share/gnome/pixmaps/abiword_48.png
 @dirrm share/AbiSuite/templates
 @dirrm share/AbiSuite/icons
 @dirrm share/AbiSuite/fonts

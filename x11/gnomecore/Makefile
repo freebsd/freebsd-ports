@@ -15,18 +15,15 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER?=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gtkhtml.21:${PORTSDIR}/www/gtkhtml
-RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMECTRL=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack gnomeprefix gnomehier libcapplet libglade gnomeaudio \
+		libpanel
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--with-kde-datadir=${LOCALBASE}/share \
-		--with-gtkhtml=${X11BASE} \
-		--disable-gtk-doc
+CONFIGURE_ARGS=	--with-kde-datadir=${LOCALBASE}/share
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
@@ -40,11 +37,8 @@ MAN1=		deskguide_applet.1 gmenu.1 gnome-about.1 gnome-convert.1 \
 		session-properties-capplet.1 
 MAN5=		default.session.5
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>

@@ -171,7 +171,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-db.mo
 @dirrm share/gnome/help/gnome-db/C/images
 @dirrm share/gnome/help/gnome-db/C
 @dirrm share/gnome/help/gnome-db
-@dirrm share/gnome/apps/Applications
 @dirrm share/doc/gnomedb
 @dirrm include/libgnomedb-%%VERSION%%/gnome-db
 @dirrm include/libgnomedb-%%VERSION%%

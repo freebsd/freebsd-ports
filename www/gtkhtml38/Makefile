@@ -14,29 +14,23 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	glibwww.1:${PORTSDIR}/www/glibwww \
-		pspell.4:${PORTSDIR}/textproc/pspell \
-		gal.19:${PORTSDIR}/x11-toolkits/gal \
-		ghttp.1:${PORTSDIR}/www/libghttp
+LIB_DEPENDS=	pspell.4:${PORTSDIR}/textproc/pspell
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMECTRL=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack gnomeprefix gnomehier glibwww gal ghttp libcapplet
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ARGS=	--with-gconf=yes \
-		--disable-gtk-doc
+CONFIGURE_ARGS=	--with-gconf=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
-		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
-		 s|[(]datadir[)]/locale|(prefix)/share/locale|g'
 
 .include <bsd.port.mk>

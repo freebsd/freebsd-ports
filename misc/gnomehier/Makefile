@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomehier
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc gnome
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -16,6 +16,8 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+
+USE_X_PREFIX=	yes
 
 do-fetch:
 	@${DO_NADA}

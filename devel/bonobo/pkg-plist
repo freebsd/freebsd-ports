@@ -244,14 +244,10 @@ share/locale/uk/LC_MESSAGES/bonobo.mo
 share/locale/wa/LC_MESSAGES/bonobo.mo
 share/locale/zh_CN/LC_MESSAGES/bonobo.mo
 share/locale/zh_TW/LC_MESSAGES/bonobo.mo
-@dirrm share/gnome/ui
 @dirrm share/gnome/help/audio_ulaw/C/images
 @dirrm share/gnome/help/audio_ulaw/C
 @dirrm share/gnome/help/audio_ulaw
 @dirrm share/doc/bonobo/libefs
 @dirrm share/doc/bonobo/bonobo
 @dirrm share/doc/bonobo
-@dirrm lib/bonobo/plugin
 @dirrm include/gnome-1.0/bonobo
-@unexec /bin/rmdir %D/lib/bonobo/monikers 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/lib/bonobo 2>/dev/null || /usr/bin/true

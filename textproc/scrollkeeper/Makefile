@@ -33,6 +33,8 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_BISON=	yes
 USE_REINPLACE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack gnomehier
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share/gnome \
 		--with-omfdirs=${PREFIX}/share/gnome/omf
@@ -47,17 +49,13 @@ MAN7=	scrollkeeper.7
 MAN8=	scrollkeeper-preinstall.8 scrollkeeper-rebuilddb.8 \
 	scrollkeeper-update.8
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name Makefile.in | xargs ${REINPLACE_CMD} -e   \
-		's|[(]LN_S[)] -f -n|(LN_S) -f|g ; \
-		 s|[(]datadir[)]/locale|(prefix)/share/locale|g ; \
-		 s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
-		 s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g'
+		's|[(]LN_S[)] -f -n|(LN_S) -f|g'
 	@${REINPLACE_CMD} -e 's|/usr/share/locale|${PREFIX}/share/locale|g' \
 		${WRKSRC}/libs/scrollkeeper.h.in
-post-patch:
 	@${REINPLACE_CMD} -e 's|[%][%]PREFIX[%][%]|${PREFIX}|g' \
 		${WRKSRC}/cl/src/update.c
 	@${REINPLACE_CMD} -e 's|[%][%]LOCALBASE[%][%]|${LOCALBASE}|g' \

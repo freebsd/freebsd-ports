@@ -10,11 +10,6 @@ bin/ui-properties
 bin/url-properties
 bin/wm-properties-capplet
 etc/CORBA/servers/gnomecc.gnorba
-etc/cappletConf.sh
-include/libcapplet1/capplet-widget.h
-lib/libcapplet.a
-lib/libcapplet.so
-lib/libcapplet.so.5
 share/gnome/apps/Settings/Desktop/.directory
 share/gnome/apps/Settings/Desktop/background-properties.desktop
 share/gnome/apps/Settings/Desktop/theme-selector.desktop
@@ -130,7 +125,6 @@ share/gnome/help/control-center/eu/stylesheet-images/up.gif
 share/gnome/help/control-center/eu/stylesheet-images/warning.gif
 share/gnome/help/control-center/eu/topic.dat
 share/gnome/help/control-center/eu/usage.html
-share/gnome/idl/control-center.idl
 share/gnome/omf/control-center/control-center-C.omf
 share/gnome/omf/control-center/control-center-eu.omf
 share/gnome/pixmaps/ccsplash.png
@@ -177,7 +171,6 @@ share/locale/uk/LC_MESSAGES/control-center.mo
 share/locale/wa/LC_MESSAGES/control-center.mo
 share/locale/zh_CN/LC_MESSAGES/control-center.mo
 share/locale/zh_TW/LC_MESSAGES/control-center.mo
-@dirrm share/gnome/wm-properties
 @dirrm share/gnome/omf/control-center
 @dirrm share/gnome/help/control-center/C/stylesheet-images
 @dirrm share/gnome/help/control-center/C/figures
@@ -187,20 +180,6 @@ share/locale/zh_TW/LC_MESSAGES/control-center.mo
 @dirrm share/gnome/help/control-center/eu
 @dirrm share/gnome/help/control-center
 @dirrm share/gnome/control-center/UIOptions
-@dirrm share/gnome/control-center/Session
-@dirrm share/gnome/control-center/Peripherals
 @dirrm share/gnome/control-center/Multimedia
-@dirrm share/gnome/control-center/Documents
-@dirrm share/gnome/control-center/Desktop
-@dirrm share/gnome/control-center
 @dirrm share/gnome/apps/Settings/UIOptions
-@dirrm share/gnome/apps/Settings/Session
-@dirrm share/gnome/apps/Settings/Peripherals
 @dirrm share/gnome/apps/Settings/Multimedia
-@dirrm share/gnome/apps/Settings/Documents
-@dirrm share/gnome/apps/Settings/Desktop
-@dirrm share/gnome/apps/Settings
-@dirrm share/gnome/apps
-@dirrm include/libcapplet1
-@dirrm etc/CORBA/servers
-@dirrm etc/CORBA

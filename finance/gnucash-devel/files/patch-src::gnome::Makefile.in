@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/gnome/Makefile.in	2002/07/11 09:16:01	1.1
++++ src/gnome/Makefile.in	2002/07/11 09:16:10
+@@ -226,7 +226,7 @@
+   window-report.c
+ 
+ 
+-gnomeappdir = ${datadir}/gnome/apps/Applications
++gnomeappdir = ${datadir}/apps/Applications
+ 
+ gnomeapp_DATA = gnucash.desktop
+ 

@@ -32,16 +32,17 @@ WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abi
 USE_X_PREFIX=	yes
 USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_REINPLACE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12 gnomehier
 WANT_GNOME=	yes
 AUTOMAKE=	${WRKSRC}/autogen.sh && ${FIXME}
-CONFIGURE_ARGS=	--datadir=${PREFIX}/share
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 MAKEFILE=	GNUmakefile
-FIXME=		find ${WRKSRC} -name GNUmakefile.in | xargs ${PERL} -pi -e \
-		    's|\$$\(libdir\)/\@PACKAGE\@|\$$\(datadir\)/\@PACKAGE\@|g ; \
-		     s|\@DEFS\@|-I${WRKSRC}/../libiconv/include \@DEFS\@|g'
+FIXME=		find ${WRKSRC} -name GNUmakefile.in | xargs ${REINPLACE_CMD} -e \
+		    's|[(]libdir[)]/@PACKAGE@|(datadir)/@PACKAGE@|g ; \
+		     s|@DEFS@|-I${WRKSRC}/../libiconv/include @DEFS@|g' && ${TRUE}
 
 .if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
 .undef WITHOUT_GNOME
@@ -51,9 +52,12 @@ WITH_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+# bonobox bonobox_print gnomeui gal print vfs gdk_pixbuf
+
+.if ${HAVE_GNOME:Mgnomeprint}!="" && ${HAVE_GNOME:Mgal}!="" && ${HAVE_GNOME:Mgnomevfs}!=""
+USE_GNOME+=	gnomeprint gal gnomevfs
 CONFIGURE_ARGS+=--enable-gnome
+PKGNAMESUFFIX=	-gnome
 .endif
 
 post-patch:
@@ -68,11 +72,9 @@ pre-configure:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-.if defined(HAVE_GNOME)
 	@${INSTALL_DATA} ${WRKSRC}/src/pkg/linux/rpm/data/abiword.desktop \
 		${PREFIX}/share/gnome/apps/Applications/abiword.desktop
 	@${LN} -sf ${PREFIX}/share/AbiSuite/icons/abiword_48.png \
 		${PREFIX}/share/gnome/pixmaps/abiword_48.png
-.endif
 
 .include <bsd.port.post.mk>
