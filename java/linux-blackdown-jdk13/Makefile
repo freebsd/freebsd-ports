@@ -7,6 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/os/Linux/java/jdk/${DOWNLOAD_DIR}/ \
 		ftp://metalab.unc.edu/pub/linux/devel/lang/java/blackdown.org/${DOWNLOAD_DIR}/ \
@@ -19,10 +20,6 @@ MAINTAINER=	znerd@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
-
-EXTRACT_CMD=		# empty
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	# empty
 
 WRKSRC=		${WRKDIR}/j2sdk${PORTVERSION}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
@@ -41,8 +38,9 @@ APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JDK_VERSION}
 
 .include <bsd.port.pre.mk>
 
-post-fetch:
-	@${CHMOD} +x ${DISTDIR}/${DISTFILES}
+do-extract:
+	@${MKDIR} ${WRKDIR}
+	@cd ${WRKDIR} && ${TAIL} +400 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | ${BZIP2_CMD} -dc | ${TAR} xf -
 
 post-patch:
 	@${ECHO} -n ">> Removing unneeded files..."
@@ -61,5 +59,9 @@ do-install:
 	@${ECHO} -n ">> Registering with javavm..."
 	@${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-Blackdown-JDK${PORTVERSION}_${PORTREVISION}"
 	@${ECHO} " [ DONE ]"
+
+post-install:
+	@${ECHO} "Please read the license carefully before using this software."
+	@${ECHO} "See: ${APP_HOME}/LICENSE"
 
 .include <bsd.port.post.mk>
