@@ -3,7 +3,7 @@
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.33 1998/09/27 20:59:11 steve Exp $
+# $Id: Makefile,v 1.34 1998/09/30 13:24:39 tg Exp $
 
 DISTNAME=	WindowMaker-0.20.1
 PKGNAME=	windowmaker-0.20.1
@@ -37,6 +37,9 @@ DATAFILES=	WindowMaker-data.tar.gz
 
 post-extract:
 	cd ${WRKSRC}; ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} libPropList.tar.gz
+
+post-patch:
+	@perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c
 
 pre-configure:
 	@(cd ${WRKSRC}/libPropList && CC="${CC}" CXX="${CXX}" \

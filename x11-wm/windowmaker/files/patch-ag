@@ -1,0 +1,26 @@
+--- WPrefs.app/Paths.c.orig	Fri Oct  9 07:35:39 1998
++++ WPrefs.app/Paths.c	Fri Oct  9 07:37:46 1998
+@@ -82,10 +82,10 @@
+ 	    wwarning(_("bad value in option IconPath. Using default path list"));
+ 	addPathToList(panel->icoL, -1, "~/pixmaps");
+ 	addPathToList(panel->icoL, -1, "~/GNUstep/Library/Icons");
+-	addPathToList(panel->icoL, -1, "/usr/include/X11/pixmaps");
+-	addPathToList(panel->icoL, -1, "/usr/local/share/WindowMaker/Icons");
+-	addPathToList(panel->icoL, -1, "/usr/local/share/WindowMaker/Pixmaps");
+-	addPathToList(panel->icoL, -1, "/usr/share/WindowMaker/Icons");
++	addPathToList(panel->icoL, -1, "%%PREFIX%%/include/X11/pixmaps");
++	addPathToList(panel->icoL, -1, "%%PREFIX%%/share/WindowMaker/Icons");
++	addPathToList(panel->icoL, -1, "%%PREFIX%%/share/WindowMaker/Pixmaps");
++	addPathToList(panel->icoL, -1, "%%PREFIX%%/share/WindowMaker/Icons");
+     } else {
+ 	for (i=0; i<PLGetNumberOfElements(array); i++) {
+ 	    val = PLGetArrayElement(array, i);
+@@ -99,7 +99,7 @@
+ 	    wwarning(_("bad value in option PixmapPath. Using default path list"));
+ 	addPathToList(panel->pixL, -1, "~/pixmaps");
+ 	addPathToList(panel->pixL, -1, "~/GNUstep/Library/WindowMaker/Pixmaps");
+-	addPathToList(panel->pixL, -1, "/usr/local/share/WindowMaker/Pixmaps");
++	addPathToList(panel->pixL, -1, "%%PREFIX%%/share/WindowMaker/Pixmaps");
+     } else {
+ 	for (i=0; i<PLGetNumberOfElements(array); i++) {
+ 	    val = PLGetArrayElement(array, i);
