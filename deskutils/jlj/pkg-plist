@@ -1,5 +1,5 @@
 bin/jlj
 %%PORTDOCS%%share/doc/jlj/README
 share/examples/jlj/dot.livejournal.rc
-%%PORTDOCS%%@dirrm share/doc/jlj
 @dirrm share/examples/jlj
+%%PORTDOCS%%@dirrm share/doc/jlj
