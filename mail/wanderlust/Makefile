@@ -6,53 +6,58 @@
 #
 
 PORTNAME=	wanderlust
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.8.0.p2
 CATEGORIES=	mail elisp
-MASTER_SITES=	ftp://ftp.gohome.org/wl/stable/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/elisp/wl/stable/&,} \
-		ftp://ftp.jaist.ac.jp/pub/GNU/elisp/ftp.gohome.org/wl/stable/ \
-		http://www.jpl.org/elips/wl/stable/
-
+MASTER_SITES=	ftp://ftp.gohome.org/wl/beta/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/elisp/wl/beta/&,} \
+		ftp://ftp.jaist.ac.jp/pub/GNU/elisp/ftp.gohome.org/wl/beta/ \
+		http://www.jpl.org/elips/wl/beta/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	wl-${PORTVERSION}
+DISTNAME=	wl-${PORTVERSION:S/.p2/pre2/}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
 EMACS_PORT_NAME?=	emacs21
 
+MIMEUI_PORT_NAME?=	${MIMEUI_PRODUCT}
 .if (${EMACS_PORT_NAME} == "emacs21")
-MIMEUI_PORT_NAME=	${MIMEUI_PRODUCT}
-.else
-MIMEUI_PORT_NAME=	${MIMEUI_PRODUCT}-${EMACS_PORT_NAME}
+BITMAP_PORT_NAME=	bitmap
 .endif
+EMACS_W3M_PORT_NAME?=	emacs-w3m
+EMACS_W3M_LISP_FILE?=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/w3m/shimbun.el
 
 MIMEUI_PRODUCT=	semi
 MIMEUI_VERSION=	1.14
 MIMEUI_COOKIE=	${MIMEUI_PRODUCT}-${EMACS_PORT_NAME}-${MIMEUI_VERSION}.FreeBSD-packages
 
-# depends on semi
-BUILD_DEPENDS+=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MIMEUI_PORT_NAME}
-RUN_DEPENDS+=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MIMEUI_PORT_NAME}
+BUILD_DEPENDS=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MIMEUI_PORT_NAME}
+RUN_DEPENDS=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MIMEUI_PORT_NAME}
 
-.if defined(EMACS_PACKAGESDIR)
-ALL_TARGET=	package
-INSTALL_TARGET=	install-package
-UTILSDIR=	${EMACS_PACKAGESDIR}/lisp/wl
-STARTUPDIR=	${EMACS_PACKAGESDIR}/lisp/wl
+.if !defined(WITHOUT_X11) && !defined(WITHOUT_BITMAP) && defined(BITMAP_PORT_NAME)
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/bitmap/bitmap.el:${PORTSDIR}/editors/${BITMAP_PORT_NAME}
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if exists(${EMACS_W3M_LISP_FILE})
+BUILD_DEPENDS+=	${EMACS_W3M_LISP_FILE}:${PORTSDIR}/www/${EMACS_W3M_PORT_NAME}
+RUN_DEPENDS+=	${EMACS_W3M_LISP_FILE}:${PORTSDIR}/www/${EMACS_W3M_PORT_NAME}
+SHIMBUN=	""
 .else
-ALL_TARGET=	all info
-INSTALL_TARGET=	install install-info
+SHIMBUN=	"@comment "
+.endif
+
+ALL_TARGET?=	all info
+INSTALL_TARGET?=	install install-info
 INFODIR=	${PREFIX}/info
-UTILSDIR=	${EMACS_VERSION_SITE_LISPDIR}/wl
+UTILSDIR?=	${EMACS_VERSION_SITE_LISPDIR}/wl
 WL_LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/wl
 WL_ICONDIR=	${EMACS_LIBDIR_WITH_VER}/etc/wl/icons
-STARTUPDIR=	${EMACS_VERSION_SITE_LISPDIR}
-.endif
+STARTUPDIR?=	${EMACS_VERSION_SITE_LISPDIR}
 
 DIRSECTION=	"The Emacs editor and associated tools"
 PORTDOCDIR=	share/doc/wanderlust
-PORTDOCDIR_JA=share/doc/ja/wanderlust
+PORTDOCDIR_JA=	share/doc/ja/wanderlust
 DOCS=		README NEWS doc/wl.texi
 DOCS_JA=	README.ja NEWS.ja doc/wl-ja.texi
 SAMPLESDIR=	share/examples/wanderlust
@@ -64,7 +69,8 @@ PLIST_SUB+=	EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
 		DIRSECTION=${DIRSECTION} \
 		STARTUPDIR=${STARTUPDIR} \
 		WL_LISPDIR=${WL_LISPDIR} \
-		WL_ICONDIR=${WL_ICONDIR}
+		WL_ICONDIR=${WL_ICONDIR} \
+		SHIMBUN=${SHIMBUN}
 
 PLIST=		${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 MAKE_ARGS+=	EMACS=${EMACS_CMD} XEMACS=${EMACS_CMD} \
@@ -145,4 +151,4 @@ install-manifest:
 	@${INSTALL_DATA} ${WRKDIR}/${MANIFEST} ${PREFIX}/${EMACS_PACKAGESDIR}/pkginfo/
 	@${INSTALL_DATA} ${FILESDIR}/_pkg.el ${PREFIX}/${EMACS_PACKAGESDIR}/lisp/wl
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
