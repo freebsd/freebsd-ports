@@ -6877,6 +6877,7 @@ wemi-mule-current	ports/editors/wemi-mule-current
 wemi-xemacs-mule	ports/editors/wemi-xemacs-mule
 wemi-xemacs-mule-current	ports/editors/wemi-xemacs-mule-current
 wget		ports/ftp/wget
+wget+ipv6	ports/ftp/wget+ipv6
 what		src/usr.bin/what
 whatmask	ports/net/whatmask
 whereis		src/usr.bin/whereis
