@@ -35,6 +35,7 @@ MASTER_SITE_SUBDIR=	experimental/alpha/stages
 DISTNAME=	stage1-alpha-20030721
 .elif (${MACHINE_ARCH} == "i386")
 MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages/x86
+MASTER_SITE_SUBDIR+=	releases/historical/x86/${PORTVERSION}/stages/x86
 DISTNAME=	stage1-x86-20030910
 .elif (${MACHINE_ARCH} == "ia64")
 MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages/x86
