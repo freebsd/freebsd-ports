@@ -5786,6 +5786,7 @@ ruby-gdk_imlib	ports/graphics/ruby-gdk_imlib
 ruby-gdk_pixbuf	ports/graphics/ruby-gdk_pixbuf
 ruby-gdome	ports/textproc/ruby-gdome
 ruby-gemfinder	ports/devel/ruby-gemfinder
+ruby-gettext	ports/devel/ruby-gettext
 ruby-gimp	ports/graphics/ruby-gimp
 ruby-gnome	ports/x11/ruby-gnome
 ruby-gnuplot	ports/math/ruby-gnuplot
