@@ -1,6 +1,6 @@
---- setup.py.orig	Sun Mar 30 17:01:05 2003
-+++ setup.py	Sun Mar 30 17:01:20 2003
-@@ -18,9 +18,9 @@
+--- setup.py.orig	Sun Feb 29 11:31:48 2004
++++ setup.py	Sun Feb 29 11:32:09 2004
+@@ -18,10 +18,10 @@
      
      packages = ["BitTorrent"],
  
@@ -10,5 +10,7 @@
 -        "btdownloadcurses.py", "btcompletedirgui.py", "btlaunchmanycurses.py", 
 +        "btdownloadcurses.py", "btlaunchmanycurses.py", 
          "btmakemetafile.py", "btreannounce.py", "btrename.py", "btshowmetainfo.py",
-         "bttest.py"]
+         "bttest.py",
+-        'btmaketorrentgui.py', 'btcopyannounce.py', 'btsethttpseeds.py', 'bt-t-make.py' ]
++        'btcopyannounce.py', 'btsethttpseeds.py', 'bt-t-make.py' ]
      )
