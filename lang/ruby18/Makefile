@@ -7,6 +7,7 @@
 
 PORTNAME=	ruby${RUBY_R}
 PORTVERSION=	${RUBY_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=	http://www.ruby-lang.org/~knu/	# ${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	${RUBY_VER}
@@ -89,6 +90,7 @@ post-install:
 .if !empty(RUBY_R)
 	${LN} -fs ${IRB_WITH_SUFFIX} ${IRB_WITHOUT_SUFFIX}${RUBY_R}
 .endif
+	${LDCONFIG} -m ${LOCALBASE}/lib
 	${RUBY_WITH_SUFFIX} ${RUBY_FLAGS} -i -p \
 		-e 'if $$. == 1; ' \
 		-e ' if /^#!/; ' \
@@ -98,6 +100,8 @@ post-install:
 		-e ' end;' \
 		-e 'end' \
 		${IRB_WITH_SUFFIX}
+	${MKDIR} ${LOCALBASE}/lib/xemacs/site-lisp
+	${MKDIR} ${RUBY_ELISPDIR}
 	${MKDIR} ${RUBY_EXAMPLESDIR}
 	${MKDIR} ${RUBY_DOCDIR}
 .if !defined(NOPORTDOCS)
