@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xsane
-# Version required:		0.26
+# Version required:		0.30
 # Date created:			Fri Apr  8 00:18:29 MET DST 1999
 # Whom:				domi@saargate.de
 #
-# $Id: Makefile,v 1.4 1999/06/23 19:19:06 dirk Exp $
+# $Id: Makefile,v 1.5 1999/07/17 22:04:07 dirk Exp $
 #
 
-DISTNAME=	xsane-0.29
+DISTNAME=	xsane-0.30
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.wolfsburg.de/~rauch/sane/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
