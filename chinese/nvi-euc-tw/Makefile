@@ -3,7 +3,7 @@
 # Date created:		5 Apr 1997
 # Whom:			Jun-ichiro itojun Itoh &lt;itojun@itojun.org&gt;
 #
-# $Id: Makefile,v 1.3 1997/03/15 11:55:56 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1997/04/09 07:05:26 asami Exp $
 #
 
 # can't use PORTSDIR here, since we haven't included bsd.port.mk
@@ -14,7 +14,7 @@ COMMENT=	${.CURDIR}/pkg/COMMENT
 
 .include &lt;${.CURDIR}/../../editors/nvi/Makefile&gt;
 
-PKGNAME=	cn-nvi-euctw-1.79-970403-1000
+PKGNAME=	cn-nvi-euctw-1.79-970408
 CATEGORIES=	chinese editors
 
 MAINTAINER=	itojun@itojun.org
