@@ -1,54 +1,53 @@
 bin/Kaffe
 bin/kaffeh
-bin/pizza
-bin/pizzadoc
 bin/appletviewer
+bin/install-jar
 bin/jar
+bin/java
 bin/javac
 bin/javadoc
 bin/javakey
 bin/javap
 bin/jdb
+bin/kaffe
 bin/native2ascii
+bin/pizza
+bin/pizzadoc
+bin/report-kaffe-bug
 bin/rmic
 bin/rmiregistry
 bin/serialver
-bin/report-kaffe-bug
-bin/install-jar
-bin/kaffe
-bin/java
-include/kaffe/jtypes.h
-include/kaffe/native.h
-include/kaffe/jmalloc.h
-include/kaffe/jsyscall.h
-include/kaffe/jni.h
 include/kaffe/Arrays.h
 include/kaffe/java_lang_Object.h
 include/kaffe/java_lang_String.h
 include/kaffe/java_lang_Throwable.h
 include/kaffe/java_lang_Thread.h
 include/kaffe/java_lang_ThreadGroup.h
-lib/libkaffevm.so.1
-lib/libkaffevm.so
+include/kaffe/jtypes.h
+include/kaffe/jmalloc.h
+include/kaffe/jni.h
+include/kaffe/jsyscall.h
+include/kaffe/native.h
+lib/kaffe/libawt.so
+lib/kaffe/libawt.so.1
+lib/kaffe/libio.so
+lib/kaffe/libio.so.1
+lib/kaffe/libmanagement.so
+lib/kaffe/libmanagement.so.1
+lib/kaffe/libmath.so
+lib/kaffe/libmath.so.1
+lib/kaffe/libnative.so
+lib/kaffe/libnative.so.1
+lib/kaffe/libnet.so
+lib/kaffe/libnet.so.1
+lib/kaffe/libzip.so
+lib/kaffe/libzip.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-share/kaffe/lib/i386-freebsd2/libnative.so.1
-share/kaffe/lib/i386-freebsd2/libnative.so
-share/kaffe/lib/i386-freebsd2/libnet.so.1
-share/kaffe/lib/i386-freebsd2/libnet.so
-share/kaffe/lib/i386-freebsd2/libzip.so.1
-share/kaffe/lib/i386-freebsd2/libzip.so
-share/kaffe/lib/i386-freebsd2/libmath.so.1
-share/kaffe/lib/i386-freebsd2/libmath.so
-share/kaffe/lib/i386-freebsd2/libmanagement.so.1
-share/kaffe/lib/i386-freebsd2/libmanagement.so
-share/kaffe/lib/i386-freebsd2/libawt.so.1
-share/kaffe/lib/i386-freebsd2/libawt.so
-share/kaffe/Klasses.jar
-share/kaffe/pizza.jar
 share/kaffe/ENVIRONMENT
 share/kaffe/license.terms
+share/kaffe/Klasses.jar
+share/kaffe/pizza.jar
 @dirrm include/kaffe
-@dirrm share/kaffe/lib/i386-freebsd2
-@dirrm share/kaffe/lib
+@dirrm lib/kaffe
 @dirrm share/kaffe
