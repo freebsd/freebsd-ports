@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gthumb2
-PORTVERSION=	2.6.0.1
-PORTREVISION=	1
+PORTVERSION=	2.6.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
@@ -24,10 +23,12 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libgnomeprintui
 USE_LIBTOOL_VER=15
+INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+GCONF_SCHEMAS=	gthumb.schemas
 MAN1=		gthumb.1
 
 .include <bsd.port.pre.mk>
