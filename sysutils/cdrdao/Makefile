@@ -19,7 +19,7 @@ COMMENT=	Record CD-R[W]s in disk-at-once mode
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-WANT_GNOME=	yes
+#WANT_GNOME=	yes
 
 MAN1=		cdrdao.1
 
@@ -31,19 +31,19 @@ MAKE_ENV=	CCOM=${CC} COPTX="-DBSD_SCSI_SENSE_BUG"
 LIB_DEPENDS=		mp3lame.0:${PORTSDIR}/audio/lame
 .endif
 
-.if ${HAVE_GNOME:Mgnomelibs} != ""
-USE_GNOME=		gnomelibs
-LIB_DEPENDS+=		gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
-LIB_DEPENDS+=		gnomemm-1.2.10:${PORTSDIR}/x11-toolkits/gnome--
-CONFIGURE_ARGS=		--with-gtkmm-prefix=${X11BASE}
-PKGNAMESUFFIX?=		-gnome
-PLIST_SUB=		GNOME=""
-MAN1+=			gcdmaster.1
-.else
+#.if ${HAVE_GNOME:Mgnomelibs} != ""
+#USE_GNOME=		gnomelibs
+#LIB_DEPENDS+=		gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
+#LIB_DEPENDS+=		gnomemm-1.2.10:${PORTSDIR}/x11-toolkits/gnome--
+#CONFIGURE_ARGS=		--with-gtkmm-prefix=${X11BASE}
+#PKGNAMESUFFIX?=		-gnome
+#PLIST_SUB=		GNOME=""
+#MAN1+=			gcdmaster.1
+#.else
 CONFIGURE_ARGS=		--with-gtkmm-prefix=${NONEXISTENT}
 PLIST_SUB=		GNOME="@comment "
 _WITHOUT_GNOME=		yes
-.endif
+#.endif
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
