@@ -1480,6 +1480,7 @@ electric	ports/cad/electric
 electriceyes	ports/graphics/electriceyes
 electricfence	ports/devel/ElectricFence
 electricsheep	ports/x11/electricsheep
+elf		ports/devel/elf
 elf2aout	src/usr.sbin/elf2aout
 elf2exe		src/usr.sbin/elf2exe
 elfio		ports/devel/elfio
@@ -9220,6 +9221,7 @@ ytalk		ports/net/ytalk
 ytree		ports/misc/ytree
 yudit		ports/editors/yudit
 yuzu		ports/mail/yuzu
+z80-asm		ports/devel/z80-asm
 zangband	ports/games/zangband
 zclock		ports/x11-clocks/zclock
 zebedee		ports/security/zebedee
