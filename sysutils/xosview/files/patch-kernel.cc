@@ -26,7 +26,7 @@
  
  void
 -BSDGetSwapCtlInfo(int *totalp, int *freep) {
-+BSDGetSwapCtlInfo(long *totalp, long *freep) {
++BSDGetSwapCtlInfo(int64_t *totalp, int64_t *freep) {
    int	totalinuse, totalsize;
    int rnswap, nswap = swapctl(SWAP_NSWAP, 0, 0);
    struct swapent *swapiter;
