@@ -6,12 +6,12 @@
 #
 
 PORTNAME=		JUNOScript
-PORTVERSION=		5.2R2.3
+PORTVERSION=		5.3R2.4
 CATEGORIES=		net perl5
 MASTER_SITES=		https://download.juniper.net/public/junoscript/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=		p5-
-DISTNAME=		junoscript-${PORTVERSION}-domestic
+DISTNAME=		junoscript-perl-${PORTVERSION}-domestic
 
 MAINTAINER=		jesper@FreeBSD.org
 
@@ -92,7 +92,7 @@ MAN3=		JUNOS::Access.3 \
 IGNORE=		may not be automatically fetched due to licensing\
 		restrictions. You MUST manually fetch the ${DISTNAME}${EXTRACT_SUFX} file\
 		from http://www.juniper.net/support/junoscript/ or\
-		https://download.juniper.net/public/junoscript/5.2R1.4/junoscript-5.2R1.4-domestic.tar.gz\
+		https://download.juniper.net/public/junoscript/5.3R2.4/junoscript-perl-5.3R2.4-domestic.tar.gz\
 		- once ${DISTFILES} has been downloaded, move it to\
 		${DISTDIR} and then restart this build.
 .endif
