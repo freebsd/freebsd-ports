@@ -8,6 +8,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/	\
 		ftp://ftp.silug.org/pub/qt/		\
@@ -34,7 +35,8 @@ CONFIGURE_ARGS=	-system-libpng -system-libjpeg -system-libmng	\
 		-qt-imgfmt-png -qt-imgfmt-jpeg -qt-imgfmt-mng	\
 		-system-zlib -no-nas-sound -sm -qt-gif -thread	\
 		-no-fast ${XINERAMA} -no-g++-exceptions -no-stl	\
-		${CUPS} -shared -prefix ${PREFIX}
+		${CUPS} -shared -prefix ${PREFIX} -datadir ${DATADIR} \
+		-docdir ${DOCSDIR} -plugindir ${PREFIX}/lib/plugins
 
 .if defined(DEBUG)
 CONFIGURE_ARGS+= -debug
