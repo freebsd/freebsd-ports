@@ -27,4 +27,4 @@ then
 	echo "LIB_PATH = ${LIB_PATH}"
 fi
 
-exec "%%JAVA%%" -cp "${CLASS_PATH}" "-Djava.library.path=${LIB_PATH}" "-Dos.name=Linux" org.gudy.azureus2.ui.swt.Main "${@}"
+exec "%%JAVA%%" -cp "${CLASS_PATH}" "-Djava.library.path=${LIB_PATH}" "-Dos.name=Linux" "-Dazureus.config.path=${HOME}/.Azureus" "-Duser.dir=${HOME}/.Azureus" org.gudy.azureus2.ui.swt.Main "${@}"

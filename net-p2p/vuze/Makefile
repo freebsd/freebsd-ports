@@ -7,7 +7,7 @@
 
 PORTNAME=	azureus
 PORTVERSION=	2.2.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,9 +17,9 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A BitTorrent client written in Java
 
 BUILD_DEPENDS=	\
-		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk_${ECLIPSE_VERSION}/ws/gtk/swt-pi.jar:${PORTSDIR}/java/eclipse \
 		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk_${ECLIPSE_VERSION}/ws/gtk/swt.jar:${PORTSDIR}/java/eclipse
 RUN_DEPENDS=	\
+		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk_${ECLIPSE_VERSION}/ws/gtk/swt-pi.jar:${PORTSDIR}/java/eclipse \
 		${BUILD_DEPENDS}
 
 ONLY_FOR_ARCHS=	i386
