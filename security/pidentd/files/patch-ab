@@ -1,6 +1,6 @@
---- Makefile.orig	Mon Aug 12 06:08:06 1996
-+++ Makefile	Sat Aug 17 19:12:06 1996
-@@ -18,9 +18,9 @@
+--- Makefile.orig	Wed Jan 22 06:58:54 1997
++++ Makefile	Sun Mar  2 11:03:42 1997
+@@ -16,9 +16,9 @@
  MAKE=make
  
  # set this to 'in.' if you like Sun's prefix on internet daemons
@@ -12,23 +12,26 @@
  
  # set this to '/share' if your man pages are in /usr/share
  #SHARE=/share
-@@ -60,13 +60,13 @@
+@@ -57,14 +57,14 @@
+ # GDEFS=-DINCLUDE_EXTENSIONS -DINCLUDE_PROXY -DINCLUDE_CRYPT \
  #	-DSTRONG_LOG -DALLOW_FORMAT \
  #
- GDEFS=-DSTRONG_LOG -DALLOW_FORMAT \
+-GDEFS=-DINCLUDE_EXTENSIONS -DSTRONG_LOG -DALLOW_FORMAT \
 -	-DDPATH_CONFIG='\"$(CONFDIR)/identd.conf\"' \
++GDEFS=-DINCLUDE_EXTENSIONS -DSTRONG_LOG -DALLOW_FORMAT $(ADD_GDEFS) \
 +	-DPATH_CONFIG='\"$(CONFDIR)/identd.conf\"' \
  	-DPATH_DESKEY='\"$(CONFDIR)/identd.key\"'
  
  # GLIBS=-lident -ldes
- GLIBS=
+-GLIBS=
++GLIBS= $(ADD_GLIBS)
  
 -CFLAGS=-O
 +#CFLAGS=-O
  #LDFLAGS=-L$(DESTROOT)/lib
  
  all:
-@@ -527,18 +527,18 @@
+@@ -556,18 +556,18 @@
  	mv $@-t $@
  	chmod 755 $@
  
