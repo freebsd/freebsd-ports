@@ -30,10 +30,6 @@ CONFIGURE_ENV=	XMMS_CONFIG="${XMMS_CONFIG}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|<xml|<libxml/xml|g' ${WRKSRC}/configure
 
