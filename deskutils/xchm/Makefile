@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xchm
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.7
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,8 +14,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	pav@oook.cz
 COMMENT=	Windows HTML Help (.chm) viewer for UNIX
 
-LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel \
-		chm.0:${PORTSDIR}/misc/chmlib
+LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib \
+		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+CONFIGURE_ARGS=	--with-wx-config=${X11BASE}/bin/wxgtk2-2.4-config
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
