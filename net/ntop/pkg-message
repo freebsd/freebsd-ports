@@ -1,0 +1,29 @@
+----------------------------------------------------------------------------
+ntop has been installed, but is not quite ready to be used yet!
+
+You need to set an administrator password for ntop before it may be used.
+As root, execute the following command to set this password:
+
+  # ntop -A
+
+ntop may now be started.  The recommended method to do so is via the
+installed startup script.  As root, execute the following command:
+
+  # sh %%LOCALBASE%%/etc/rc.d/ntop.sh
+
+The recommended way to change startup flags for ntop is to edit this
+startup script.
+
+Note that the installed startup script will NOT be execute at system
+startup by default.  If you wish ntop to start when your system boots,
+you should make this script executable:
+
+  # chmod 555 %%LOCALBASE%%/etc/rc/ntop.sh
+
+			       NB!! NB!! NB!!
+In the past, ntop has been the subject of repeated security vulner-
+abilities, particularly relating to its web interface.  It is strongly
+suggested that you protect your ntop web interface via packet filters
+or TCP wrappers.
+
+----------------------------------------------------------------------------

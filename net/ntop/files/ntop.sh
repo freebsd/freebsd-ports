@@ -19,7 +19,7 @@ http_port='3000'
 https_port='3001'
 
 # Directory for ntop.access.log
-logdir='/var/log'
+logdir='%%LOGDIR%%/ntop.access.log'
 
 # Specify any additional arguments here - see ntop(8)
 additional_args='-E'
@@ -42,7 +42,7 @@ start)
   [ -d $logdir ] && touch ${logdir}/ntop.access.log \
     && chown $userid ${logdir}/ntop.access.log
   [ -d %%PREFIX%%/share/ntop ] && cd %%PREFIX%%/share/ntop
-  [ -x %%PREFIX%%/bin/ntop ] && %%PREFIX%%/bin/ntop $args \
+  [ -x %%PREFIX%%/bin/ntop ] && %%PREFIX%%/bin/ntop $args >/dev/null 2>&1 \
     && echo -n ' ntop'
   ;;
 stop)

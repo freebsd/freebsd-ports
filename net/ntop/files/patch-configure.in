@@ -1,6 +1,6 @@
---- configure.in.orig	Thu Dec 27 19:40:55 2001
-+++ configure.in	Thu Jan 24 11:02:57 2002
-@@ -799,12 +799,10 @@
+--- configure.in.orig	Fri May 31 12:09:35 2002
++++ configure.in	Mon Jun 24 14:25:15 2002
+@@ -826,12 +826,10 @@
  
  if test ".${GDBM_ROOT}" != .; then
    AC_MSG_CHECKING([for the GNU Database Manager Library gdbm (required package)])
@@ -11,12 +11,12 @@
         GDBM_ROOT=`cd ${GDBM_ROOT} && pwd`
 -       CORELIBS="${CORELIBS} -L$GDBM_ROOT -lgdbm"
 -       INCS="${INCS} -I$GDBM_ROOT"
-+       CORELIBS="${CORELIBS} -L$GDBM_ROOT/lib -lgdbm"
-+       INCS="${INCS} -I$GDBM_ROOT/include"
++       CORELIBS="${CORELIBS} -L${GDBM_ROOT}/lib -lgdbm"
++       INCS="${INCS} -I${GDBM_ROOT}/include"
         AC_DEFINE(HAVE_GDBM_H)
         AC_MSG_RESULT([found in $GDBM_ROOT])
    else
-@@ -873,16 +871,11 @@
+@@ -907,16 +905,11 @@
  dnl>
  dnl> user defined directory passed as option at configuration time
  dnl>
@@ -26,18 +26,18 @@
 -       test -r $GDCHART_ROOT/gdc.h &&
 -       test -r $GDCHART_ROOT/gd-1.8.3/libgd.a &&
 -       test -r $GDCHART_ROOT/gd-1.8.3/gd.h &&
--       test -r $GDCHART_ROOT/zlib-1.1.3/libz.a; then
+-       test -r $GDCHART_ROOT/zlib-1.1.4/libz.a; then
 +  if test 1; then
 +    if test -d $GDCHART_ROOT; then
           GDCHART_ROOT=`cd ${GDCHART_ROOT} && pwd`
--         MORELIBS="${MORELIBS} -L$GDCHART_ROOT -lgdchart -L$GDCHART_ROOT/gd-1.8.3 -lgd -L$GDCHART_ROOT/gd-1.8.3/libpng-1.0.8 -lpng -L$GDCHART_ROOT/zlib-1.1.3 -lz"
--         INCS="${INCS} -I$GDCHART_ROOT"
+-         MORELIBS="${MORELIBS} -L$GDCHART_ROOT -lgdchart -L$GDCHART_ROOT/gd-1.8.3 -lgd -L$GDCHART_ROOT/gd-1.8.3/libpng-1.2.1 -lpng -L$GDCHART_ROOT/zlib-1.1.4 -lz"
+-         INCS="${INCS} -I$GDCHART_ROOT -I$GDCHART_ROOT/zlib-1.1.4"
 +         MORELIBS="${MORELIBS} -L${prefix}/lib -lgdchart -lgd -lpng -lz"
 +         INCS="${INCS} -I${prefix}/include/gd"
           AC_DEFINE(HAVE_GDCHART)
+ 	 AC_DEFINE(HAVE_ZLIB)
           AC_MSG_RESULT([found in $GDCHART_ROOT])
-     else
-@@ -936,12 +929,10 @@
+@@ -971,12 +964,10 @@
  if test ".$ac_disable_openssl" = ".no"; then
    AC_MSG_CHECKING([for OpenSSL Library by Open SLL Project (optional package)])
    if test ".${OSSL_ROOT}" != .; then
@@ -48,8 +48,8 @@
           OSSL_ROOT=`cd ${OSSL_ROOT} && pwd`
 -         MORELIBS="${MORELIBS} -L$OSSL_ROOT -lssl"
 -         INCS="${INCS} -I$OSSL_ROOT"
-+         MORELIBS="${MORELIBS} -L$OSSL_ROOT/crypto -lssl"
-+         INCS="${INCS} -I$OSSL_ROOT/include"
++         MORELIBS="${MORELIBS} -L${OSSL_ROOT}/crypto -lssl"
++         INCS="${INCS} -I${OSSL_ROOT}/include"
           AC_DEFINE(HAVE_OPENSSL)
           AC_MSG_RESULT([found in $OSSL_ROOT])
      elif test -d $OSSL_ROOT &&
