@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.54.1
+PORTVERSION?=	0.55.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/ \
 		ftp://ftp.kaupp.cx/pub/xmame/ \
@@ -88,6 +88,8 @@ ALLDOCS=	${GENERALDOCS} ${PINMAMEDOCS}
 .endif
 
 # CPS-2 patches - this enables extra games in MAME.
+# Disabled 2001/09/18 - all CPS2shock releases are in xmame right now.
+.if 0
 .if ${MAMEMESS} == "mame"
 .if defined(WITH_CPS2) && ${WITH_CPS2} == "yes"
 CPS2VERSION=	20010711
@@ -97,6 +99,7 @@ PATCHFILES+=	${DISTNAME}-cps2-${CPS2VERSION}.patch.gz
 .else
 pre-everything::
 	@${ECHO_MSG} "===> If you want to compile MAME with CPS-2 support, use \"make WITH_CPS2=yes\""
+.endif
 .endif
 .endif
 
