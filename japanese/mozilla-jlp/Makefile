@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-jlp
 DISTNAME=	moz${PORTVERSION}-langjajp-tm0.1
 EXTRACT_SUFX=	.xpi
 
-MAINTAINER=	yatt@luna2.org
+MAINTAINER=	fortune@n.jpn.ph
 COMMENT=	Mozilla Japanese Language Pack (JLP)
 
 BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/regxpcom:${PORTSDIR}/www/${MOZILLA}
