@@ -3,7 +3,7 @@
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.48 1999/05/27 07:31:59 tg Exp $
+# $Id: Makefile,v 1.49 1999/05/27 21:52:21 jkh Exp $
 #
 
 DISTNAME=	imlib-1.9.4
@@ -17,24 +17,16 @@ LIB_DEPENDS=    png.3:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff34 \
 		gif.3:${PORTSDIR}/graphics/giflib \
-		gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/imlib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
+		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
-
-post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-	@${ECHO} '************************************************************'
-	@${ECHO} '*                                                          *'
-	@${ECHO} '*     If you want to use autoconf with imlib,              *'
-	@${ECHO} '*     Please copy imlib.m4 to /usr/local/share/aclocal     *'
-	@${ECHO} '*     by yourself, thanks.                                 *'
-	@${ECHO} '*                                                          *'
-	@${ECHO} '************************************************************'
 
 .include <bsd.port.mk>
