@@ -22,6 +22,7 @@ sbin/zoneserver
 %%PORTDOCS%%share/doc/maradns/en/misc/changelog.html
 %%PORTDOCS%%share/doc/maradns/en/misc/changelog.txt
 %%PORTDOCS%%share/doc/maradns/en/misc/credits.txt
+%%PORTDOCS%%share/doc/maradns/en/misc/download.html
 %%PORTDOCS%%share/doc/maradns/en/misc/faq.html
 %%PORTDOCS%%share/doc/maradns/en/misc/faq.txt
 %%PORTDOCS%%share/doc/maradns/en/misc/files.txt
