@@ -3,6 +3,7 @@ bin/bggen
 bin/vdcomp
 bin/xcmap
 bin/xvpictoppm
+lib/X11/xv_mgcsfx.sample
 share/doc/xv/README
 share/doc/xv/README.PNG
 share/doc/xv/epsf.ps
