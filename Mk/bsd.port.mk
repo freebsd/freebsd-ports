@@ -911,12 +911,12 @@ LIB_DEPENDS+=	X11.6:${PORTSDIR}/x11/XFree86-4-libraries
 
 # Don't change these!!!  These names are built into the _TARGET_USE macro,
 # there is no way to refer to them cleanly from within the macro AFAIK.
-EXTRACT_COOKIE?=	${WRKDIR}/.extract_done
-CONFIGURE_COOKIE?=	${WRKDIR}/.configure_done
-INSTALL_COOKIE?=	${WRKDIR}/.install_done
-BUILD_COOKIE?=		${WRKDIR}/.build_done
-PATCH_COOKIE?=		${WRKDIR}/.patch_done
-PACKAGE_COOKIE?=	${WRKDIR}/.package_done
+EXTRACT_COOKIE?=	${WRKDIR}/.extract_done.${PKGNAME}
+CONFIGURE_COOKIE?=	${WRKDIR}/.configure_done.${PKGNAME}
+INSTALL_COOKIE?=	${WRKDIR}/.install_done.${PKGNAME}
+BUILD_COOKIE?=		${WRKDIR}/.build_done.${PKGNAME}
+PATCH_COOKIE?=		${WRKDIR}/.patch_done.${PKGNAME}
+PACKAGE_COOKIE?=	${WRKDIR}/.package_done.${PKGNAME}
 
 # How to do nothing.  Override if you, for some strange reason, would rather
 # do something.
@@ -2027,7 +2027,7 @@ _PORT_USE: .USE
 .if !make(real-fetch) \
 	&& (!make(real-patch) || !defined(PATCH_CHECK_ONLY)) \
 	&& (!make(real-package) || !defined(PACKAGE_NOINSTALL))
-	@${TOUCH} ${TOUCH_FLAGS} ${WRKDIR}/.${.TARGET:S/^real-//}_done
+	@${TOUCH} ${TOUCH_FLAGS} ${WRKDIR}/.${.TARGET:S/^real-//}_done.${PKGNAME}
 .endif
 
 ################################################################
