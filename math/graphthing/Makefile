@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	graphthing
-PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTVERSION=	0.9.5
 CATEGORIES=	math
 MASTER_SITES=	http://graph.seul.org/
 
@@ -17,12 +16,14 @@ COMMENT=	A tool that allows you to create, manipulate and study graphs
 
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 
-USE_BISON=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gtk12
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USE_GNOME=	gnometarget gtk12
+USE_BISON=	yes
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+
+PLIST_FILES=	bin/graphthing bin/gt
 
 post-patch:
 	${REINPLACE_CMD} -e "s,\/usr\/include\/gtk-1.2\/gdk\/gdkkeysyms.h,," \
