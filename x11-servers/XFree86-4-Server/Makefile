@@ -7,7 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.3.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -35,7 +35,7 @@ COMMENT=	XFree86-4 X server and related programs
 	patch-compiler.h patch-os-support_Imakefile patch-bsd_Imakefile \
 	patch-freebsdPci.c patch-bus_Imakefile patch-xf86Sbus.h patch-loader.c \
 	patch-Sbus.c patch-elfloader.c patch-xfree86.cf patch-FreeBSD.cf \
-	patch-sunffb_Imakefile patch-xf86sym.c patch-xf86Events.c
+	patch-sunffb_Imakefile patch-xf86sym.c patch-xf86Events.c patch-ftfuncs.c
 EXTRA_PATCHES+=		${FILESDIR}/${pf}
 .endfor
 SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
