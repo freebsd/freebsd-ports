@@ -1,0 +1,10 @@
+--- MANIFEST.orig	Fri Feb 25 12:06:12 2005
++++ MANIFEST	Fri Feb 25 12:06:17 2005
+@@ -53,7 +53,6 @@
+ lib/Curses/UI/Radiobuttonbox.pm
+ lib/Curses/UI/Searchable.pm
+ lib/Curses/UI/TextEditor.pm
+-lib/Curses/UI/TextEditor.pm.orig
+ lib/Curses/UI/TextEntry.pm
+ lib/Curses/UI/TextViewer.pm
+ lib/Curses/UI/Tutorial.pod
