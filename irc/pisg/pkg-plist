@@ -1,3 +1,6 @@
+bin/pisg
+etc/pisg/pisg.cfg.sample
+lib/perl5/site_perl/%%PERL_VER%%/Pisg.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Common.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/HTMLGenerator.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/bxlog.pm
@@ -6,21 +9,39 @@ lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/Trillian.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/axur.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/zcbot.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/oer.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/dancer.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/eggdrop.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/energymech.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/irssi.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/mIRC.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/ircle.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/psybnc.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/virc98.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/infobot.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/grufti.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/mbot.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/winbot.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/muh.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/bobot.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/xchat.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/perlbot.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/pircbot.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/winbot.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Logfile.pm
+share/pisg/layout/darkgalaxy.css
+share/pisg/layout/default.css
+share/pisg/gfx/blue-h.png
+share/pisg/gfx/blue-v.png
+share/pisg/gfx/green-h.png
+share/pisg/gfx/green-v.png
+share/pisg/gfx/red-h.png
+share/pisg/gfx/red-v.png
+share/pisg/gfx/yellow-h.png
+share/pisg/gfx/yellow-v.png
+share/pisg/lang.txt
+@dirrm share/pisg/layout
+@dirrm share/pisg/gfx
+@dirrm share/pisg
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Pisg
-lib/perl5/site_perl/5.005/i386-freebsd/auto/Pisg/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Pisg
+@dirrm etc/pisg

@@ -6,16 +6,47 @@
 #
 
 PORTNAME=	pisg
-PORTVERSION=	0.36
+PORTVERSION=	0.39
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	pgl@instinct.org
+MAINTAINER=	mich@freebsdcluster.org
 
-PERL_CONFIGURE=	yes
+USE_REINPLACE=	YES
+USE_PERL5=	YES
+NO_BUILD=	YES
 
-MAN3PREFIX=	${LOCALBASE}/lib/perl5/${PERL_VERSION}
-MAN3=	Pisg.3 Pisg::Parser::Logfile.3 Pisg::Common.3 Pisg::HTMLGenerator.3
+pre-patch:
+	@${REINPLACE_CMD} -e 's|lang.txt|${PREFIX}/share/pisg/lang.txt|; \
+		s|layout/|${PREFIX}/share/pisg/layout/|' \
+		${WRKSRC}/modules/Pisg.pm
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/pisg
+
+do-install:
+	${MKDIR} ${PREFIX}/etc/pisg
+	${MKDIR} ${DATADIR}/layout
+	${MKDIR} ${DATADIR}/gfx
+	${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Pisg/Parser/Format
+	${INSTALL_DATA} ${WRKSRC}/pisg.cfg ${PREFIX}/etc/pisg/pisg.cfg.sample
+	${INSTALL_DATA} ${WRKSRC}/gfx/* ${DATADIR}/gfx
+	${INSTALL_DATA} ${WRKSRC}/layout/* ${DATADIR}/layout
+	${INSTALL_DATA} ${WRKSRC}/lang.txt ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/modules/Pisg.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
+	${INSTALL_DATA} ${WRKSRC}/modules/Pisg/*.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Pisg
+	${INSTALL_DATA} ${WRKSRC}/modules/Pisg/Parser/*.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Pisg/Parser
+	${INSTALL_DATA} ${WRKSRC}/modules/Pisg/Parser/Format/*.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Pisg/Parser/Format
+	${INSTALL_SCRIPT} ${WRKSRC}/pisg ${PREFIX}/bin
+
+post-install:
+.if !defined(BATCH)
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "###############################################################################"
+	@${ECHO_CMD} "# Please create a pisg config file in ${PREFIX}/etc/pisg                     #"
+	@${ECHO_CMD} "# A sample configuration file is installed as pisg.cfg.sample                 #"
+	@${ECHO_CMD} "# Remember to move gfx (${DATADIR}/gfx/) to HTML file destination. #"
+	@${ECHO_CMD} "###############################################################################"
+	@${ECHO_CMD}
+.endif
 
 .include <bsd.port.mk>
