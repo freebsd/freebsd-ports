@@ -1,0 +1,7 @@
+lib/im/leif/CannaLE.so
+%%WANT_XAUX%%lib/im/locale/ja/CannaLE/aux.so
+%%WANT_XAUX%%lib/im/locale/ja/CannaLE/auxmenu
+%%WANT_XAUX%%@dirrm lib/im/locale/ja/CannaLE
+%%WANT_XAUX%%@dirrm lib/im/locale/ja
+@unexec rmdir %D/lib/im/leif > /dev/null 2>&1 || true
+@unexec rmdir %D/lib/im/locale > /dev/null 2>&1 || true
