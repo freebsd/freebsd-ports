@@ -179,6 +179,8 @@ ezmlm-*			ports/mail/ezmlm-idx	no license--see
 f-prot-sig*		ports/security/f-prot-sig Free for personal use only
 f6kuzzzz.taz		ports/databases/libudbc	Downloading and redistribution
 						terms are unclear
+faac			ports/audio/faac	Restrictive copyright (do not
+						sell for profit)
 faad			ports/audio/faad	Restrictive copyright (do not
 						sell for profit)
 fasta2*			ports/biology/fasta	May not be sold or incorporated
