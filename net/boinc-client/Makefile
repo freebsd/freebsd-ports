@@ -35,15 +35,15 @@ BOINC_DATADIR=	${PREFIX}/boinc
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
-.endif
-
 .if ${OSVERSION} < 500000
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-api::boinc_api.C
 .endif
 
 post-patch:
+.if ${OSVERSION} < 500000
+	${PATCH} -d ${WRKSRC} <${FILESDIR}/extra-patch-client::gui_rpc_server.C
+	${PATCH} -d ${WRKSRC} <${FILESDIR}/extra-patch-client::net_xfer.C
+.endif
 	${CHMOD} +x ${WRKDIR}/boinc_public/configure
 
 do-build:
