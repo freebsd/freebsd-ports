@@ -6,32 +6,38 @@
 #
 
 PORTNAME=	dnetc
-PORTVERSION=	2.9007.489
-PORTREVISION=	0
+# Slave ports may try to override this
+PORTVERSION?=	2.9007.489
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/%SUBDIR%/ \
 		http://http.distributed.net/pub/dcti/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION:S/^/v/:R}
-DISTFILES=	dnetc${PORTVERSION:E}-freebsd-x86-elf.tar.gz
+# This is architecture dependent
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd-${ARCH:S/i386/x86/}-elf
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tim@bishnet.net
 COMMENT=	Distributed.net distributed computing project client
 
-WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd-x86-elf
+# This is architecture dependent
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd-${ARCH:S/i386/x86/}-elf
 
-ONLY_FOR_ARCHS=	i386
+# Slave ports may have set this
+ONLY_FOR_ARCHS?=	i386
 
 NO_BUILD=	yes
 
 BINDIR=		${PREFIX}/distributed.net
-LIBDIR=		${PREFIX}/etc/rc.d
 
 CLIENTUSER=	dnetc
 CLIENTGROUP=	${CLIENTUSER}
+CLIENTUID=	105
 
-SBINMODE=	700
 BINMODE=	700
+
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		dnetc.1
 
@@ -45,6 +51,15 @@ IGNORE=		"This port requires FreeBSD 3.X or greater."
 BROKEN=		"rc5des/dnetc conflict: Please deinstall all rc5des ports/packages first."
 .endif
 
+post-extract:
+	@${SED} -e 's#%%CLIENTUSER%%#${CLIENTUSER}#g' -e 's#%%CLIENTGROUP%%#${CLIENTGROUP}#' \
+		-e 's#%%CLIENTUID%%#${CLIENTUID}#g' ${MASTERDIR}/pkg-install > ${PKGINSTALL}
+	@${SED} -e 's#%%CLIENTUSER%%#${CLIENTUSER}#g' -e 's#%%CLIENTGROUP%%#${CLIENTGROUP}#' \
+		${MASTERDIR}/pkg-deinstall > ${PKGDEINSTALL}
+	@${SED} -e 's#%%BINDIR%%#${BINDIR}#' ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
+	@${SED} -e 's#%%BINDIR%%#${BINDIR}#' -e 's#%%CLIENTUSER%%#${CLIENTUSER}#g' \
+		${FILESDIR}/dnetc.sh > ${WRKDIR}/dnetc.sh
+
 do-configure:
 	@if [ ! -f ${PREFIX}/dnetc.ini ]; then \
 		${INSTALL} -c -m 644 ${FILESDIR}/dnetc.ini ${WRKSRC}; \
@@ -52,45 +67,26 @@ do-configure:
 
 pre-install:
 	@${ECHO} "==>  Creating custom user to run dnetc..."
-	${PKGINSTALL} ${PKGNAME} PRE-INSTALL "${CLIENTUSER}" "${CLIENTGROUP}"
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	@if [ ! -d ${BINDIR} ]; then \
+	if [ ! -d ${BINDIR} ]; then \
 		${MKDIR} ${BINDIR}; \
 	fi
-
-	${INSTALL} -c -m ${SBINMODE} -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKSRC}/dnetc ${BINDIR}
-
-	${SED} s#CHANGETHIS#${BINDIR}# < ${FILESDIR}/dnetc.sh > ${WRKSRC}/dnetc.sh.pathnames
-	${INSTALL} -c -m ${SBINMODE} ${WRKSRC}/dnetc.sh.pathnames ${LIBDIR}/dnetc.sh
-
-	${INSTALL_DATA} ${FILESDIR}/INFO ${BINDIR}
-
 	${CHOWN} ${CLIENTUSER}:${CLIENTGROUP} ${BINDIR}
 	${CHMOD} 775 ${BINDIR}
 
-	if [ ! -f ${BINDIR}/dnetc.sh ]; then \
-		${LN} -s ${LIBDIR}/dnetc.sh ${BINDIR}/dnetc.sh; \
-	fi
+	${INSTALL} -c -m ${BINMODE} -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKSRC}/dnetc ${BINDIR}
 
+	${INSTALL_DATA} ${FILESDIR}/INFO ${BINDIR}
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
-	${INSTALL} -c -m 644 -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKSRC}/dnetc.ini ${BINDIR}/dnetc.ini.default
+
+	${INSTALL_SCRIPT} ${WRKDIR}/dnetc.sh ${PREFIX}/etc/rc.d/dnetc.sh.sample
+
+	${INSTALL} -c -m 644 -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKSRC}/dnetc.ini ${BINDIR}/dnetc.ini.sample
 .if !exists(${BINDIR}/dnetc.ini)
-	@${ECHO} ""
-	@${ECHO} ""
-	@${ECHO} ""
-	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO} "! REMEMBER REMEMBER REMEMBER REMEMBER REMEMBER REMEMBER REMEMBER REMEMBER !"
-	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO} "           Don't forget to run '${BINDIR}/dnetc -config'                  "
-	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO} ""
-	@${ECHO} ""
-	@${ECHO} ""
-	${INSTALL} -c -m 644 -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKSRC}/dnetc.ini ${BINDIR}
+	${INSTALL} -c -m 644 -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKSRC}/dnetc.ini ${BINDIR}/dnetc.ini
+	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,6 +1,7 @@
 #!/bin/sh
 
-dir="CHANGETHIS"
+dir="%%BINDIR%%"
+user="%%CLIENTUSER%%"
 
 case "$1" in
 start)
@@ -26,10 +27,10 @@ start)
 	fi
 
 	echo -n " dnetc"
-	su -m dnetc -c "$dir/dnetc -quiet" 2>/dev/null >/dev/null &
+	su -m $user -c "$dir/dnetc -quiet" 2>/dev/null >/dev/null &
 	;;
 stop)
-	killall dnetc && echo -n " dnetc"
+	killall -u $user dnetc && echo -n " dnetc"
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
