@@ -1,7 +1,7 @@
 bin/mergeant
 share/doc/mergeant/C/topic.dat
 share/doc/mergeant/fr/topic.dat
-share/gnome/gnome/apps/Applications/mergeant.desktop
+share/gnome/apps/Applications/mergeant.desktop
 share/gnome/mergeant/dtd/mergeant.dtd
 share/gnome/mergeant/plugins/libPnetaddr.so
 share/gnome/mergeant/plugins/libPpicts.so
@@ -28,4 +28,10 @@ share/locale/tr/LC_MESSAGES/mergeant.mo
 @dirrm share/gnome/mergeant/plugins
 @dirrm share/gnome/mergeant/dtd
 @dirrm share/gnome/mergeant
+@dirrm share/doc/mergeant/fr/stylesheet-images
+@dirrm share/doc/mergeant/fr/images
+@dirrm share/doc/mergeant/fr
+@dirrm share/doc/mergeant/C/stylesheet-images
+@dirrm share/doc/mergeant/C/images
+@dirrm share/doc/mergeant/C
 @dirrm share/doc/mergeant

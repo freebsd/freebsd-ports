@@ -1,5 +1,5 @@
 --- configure.orig	Mon Sep  9 17:46:33 2002
-+++ configure	Sat Sep 14 19:12:39 2002
++++ configure	Sun Sep 15 02:43:36 2002
 @@ -7596,6 +7596,7 @@
  
  # This can be used to rebuild libtool when needed
@@ -8,7 +8,14 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -10071,7 +10072,7 @@
+@@ -10065,13 +10066,13 @@
+ 
+ MERGEANT_Pixmapdir=${datadir}/pixmaps/${PACKAGE}
+ 
+-MERGEANT_Appdir=${datadir}/gnome/apps/Applications
++MERGEANT_Appdir=${datadir}/apps/Applications
+ 
+ MERGEANT_DTDdir=${datadir}/${PACKAGE}/dtd
  
  MERGEANT_Plugdir=${datadir}/${PACKAGE}/plugins
  
