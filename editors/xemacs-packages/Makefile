@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xemacs-packages
-PORTVERSION=	8.1
+PORTVERSION=	8.2
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|kiri/xemacs|} \
 		${MASTER_SITE_XEMACS:S|%SUBDIR%|packages|}
@@ -25,21 +25,21 @@ DISTFILES=	\
 		cookie-1.14-pkg.tar.gz \
 		crisp-1.12-pkg.tar.gz \
 		debug-1.16-pkg.tar.gz \
-		dictionary-1.11-pkg.tar.gz \
+		dictionary-1.12-pkg.tar.gz \
 		dired-1.13-pkg.tar.gz \
 		docbookide-0.06-pkg.tar.gz \
-		ecb-1.06-pkg.tar.gz \
-		ecrypto-0.12-pkg.tar.gz \
-		edebug-1.17-pkg.tar.gz \
+		ecb-1.08-pkg.tar.gz \
+		ecrypto-0.13-pkg.tar.gz \
+		edebug-1.18-pkg.tar.gz \
 		ediff-1.47-pkg.tar.gz \
-		edit-utils-2.00-pkg.tar.gz \
+		edit-utils-2.02-pkg.tar.gz \
 		edt-1.12-pkg.tar.gz \
 		efs-1.29-pkg.tar.gz \
 		eieio-1.04-pkg.tar.gz \
 		elib-1.10-pkg.tar.gz \
 		emerge-1.09-pkg.tar.gz \
 		eshell-1.05-pkg.tar.gz \
-		ess-1.03-pkg.tar.gz \
+		ess-1.04-pkg.tar.gz \
 		eterm-1.13-pkg.tar.gz \
 		eudc-1.38-pkg.tar.gz \
 		footnote-1.15-pkg.tar.gz \
@@ -47,11 +47,11 @@ DISTFILES=	\
 		fortran-modes-1.02-pkg.tar.gz \
 		frame-icon-1.09-pkg.tar.gz \
 		fsf-compat-1.12-pkg.tar.gz \
-		games-1.13-pkg.tar.gz \
+		games-1.14-pkg.tar.gz \
 		gnats-1.15-pkg.tar.gz \
 		gnus-1.71-pkg.tar.gz \
 		haskell-mode-1.05-pkg.tar.gz \
-		hm--html-menus-1.20-pkg.tar.gz \
+		hm--html-menus-1.21-pkg.tar.gz \
 		ibuffer-1.08-pkg.tar.gz \
 		idlwave-1.28-pkg.tar.gz \
 		igrep-1.10-pkg.tar.gz \
@@ -68,13 +68,13 @@ DISTFILES=	\
 		mmm-mode-1.00-pkg.tar.gz \
 		net-utils-1.32-pkg.tar.gz \
 		ocaml-0.04-pkg.tar.gz \
-		os-utils-1.30-pkg.tar.gz \
+		os-utils-1.31-pkg.tar.gz \
 		pc-1.25-pkg.tar.gz \
 		pcl-cvs-1.64-pkg.tar.gz \
 		pcomplete-1.02-pkg.tar.gz \
 		perl-modes-1.04-pkg.tar.gz \
 		pgg-1.03-pkg.tar.gz \
-		prog-modes-1.73-pkg.tar.gz \
+		prog-modes-1.79-pkg.tar.gz \
 		ps-print-1.08-pkg.tar.gz \
 		psgml-1.40-pkg.tar.gz \
 		psgml-dtds-1.02-pkg.tar.gz \
@@ -82,7 +82,7 @@ DISTFILES=	\
 		reftex-1.28-pkg.tar.gz \
 		rmail-1.13-pkg.tar.gz \
 		ruby-modes-1.01-pkg.tar.gz \
-		sasl-1.12-pkg.tar.gz \
+		sasl-1.13-pkg.tar.gz \
 		scheme-1.13-pkg.tar.gz \
 		semantic-1.17-pkg.tar.gz \
 		sgml-1.08-pkg.tar.gz \
@@ -96,24 +96,24 @@ DISTFILES=	\
 		strokes-1.08-pkg.tar.gz \
 		supercite-1.19-pkg.tar.gz \
 		texinfo-1.24-pkg.tar.gz \
-		text-modes-1.60-pkg.tar.gz \
+		text-modes-1.61-pkg.tar.gz \
 		textools-1.14-pkg.tar.gz \
 		time-1.13-pkg.tar.gz \
 		tm-1.36-pkg.tar.gz \
 		tooltalk-1.13-pkg.tar.gz \
 		tpu-1.12-pkg.tar.gz \
-		tramp-1.12-pkg.tar.gz \
+		tramp-1.15-pkg.tar.gz \
 		vc-1.37-pkg.tar.gz \
 		vc-cc-1.21-pkg.tar.gz \
-		vhdl-1.16-pkg.tar.gz \
+		vhdl-1.17-pkg.tar.gz \
 		view-process-1.12-pkg.tar.gz \
 		viper-1.36-pkg.tar.gz \
 		vm-7.14-pkg.tar.gz \
 		w3-1.28-pkg.tar.gz \
-		x-symbol-1.04-pkg.tar.gz \
-		xemacs-base-1.77-pkg.tar.gz \
+		x-symbol-1.05-pkg.tar.gz \
+		xemacs-base-1.78-pkg.tar.gz \
 		xemacs-devel-1.55-pkg.tar.gz \
-		xslide-1.06-pkg.tar.gz \
+		xslide-1.07-pkg.tar.gz \
 		xslt-process-1.11-pkg.tar.gz \
 		zenirc-1.13-pkg.tar.gz
 DIST_SUBDIR=	xemacs
