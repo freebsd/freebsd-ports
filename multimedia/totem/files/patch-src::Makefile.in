@@ -1,0 +1,12 @@
+--- src/Makefile.in.orig	Thu Jan 13 13:03:04 2005
++++ src/Makefile.in	Thu Jan 13 13:04:42 2005
+@@ -236,7 +236,8 @@
+ 
+ totem_mozilla_viewer_LDADD = $(X_LIBS) $(EXTRA_GNOME_LIBS) $(XTEST_LIBS) $(RANDR_LIBS) $(NVTV_LIBS)
+ 
+-plugindir = $(libdir)/mozilla/plugins/
++@HAVE_MOZILLA_FALSE@plugindir =
++@HAVE_MOZILLA_TRUE@plugindir = $(libdir)/mozilla/plugins/
+ module_flags = -export_dynamic -avoid-version
+ 
+ vanity_SOURCES = \
