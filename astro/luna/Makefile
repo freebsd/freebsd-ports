@@ -3,7 +3,7 @@
 # Date created:		03 July 1996
 # Whom:			ABURAYER Rewsirow <rewsirow@ff.iij4u.or.jp>
 #
-# $Id: Makefile,v 1.2 1996/11/15 22:34:47 obrien Exp $
+# $Id: Makefile,v 1.3 1997/08/22 11:08:40 asami Exp $
 #
 
 DISTNAME=	luna19
@@ -22,6 +22,6 @@ PATCH_STRIP=	-p1
 
 post-extract:
 	@echo "===>  Removing object files for ${DISTNAME}"
-	@(cd ${WRKDIR}/luna19/iprintf; rm -fr *.o)
+	@(cd ${WRKDIR}/luna19/iprintf; ${RM} -fr *.o)
 
 .include <bsd.port.mk>
