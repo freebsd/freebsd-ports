@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tk
-PORTVERSION=	8.4a3
+PORTVERSION=	8.4a4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
 MAINTAINER=	dinoex@FreeBSD.org
 
@@ -54,11 +54,11 @@ MANN=	bell.n bind.n bindtags.n bitmap.n button.n canvas.n checkbutton.n \
 	chooseColor.n chooseDirectory.n clipboard.n colors.n console.n \
 	cursors.n destroy.n dialog.n entry.n event.n focus.n focusNext.n \
 	font.n frame.n getOpenFile.n grab.n grid.n keysyms.n image.n label.n \
-	listbox.n loadTk.n lower.n menu.n menubar.n menubutton.n message.n \
-	messageBox.n option.n optionMenu.n options.n pack-old.n pack.n \
-	palette.n photo.n place.n popup.n radiobutton.n raise.n scale.n \
-	scrollbar.n selection.n send.n spinbox.n text.n tk.n tkerror.n \
-	tkvars.n tkwait.n toplevel.n winfo.n wm.n
+	labelframe.n listbox.n loadTk.n lower.n menu.n menubar.n menubutton.n \
+	message.n messageBox.n option.n optionMenu.n options.n pack-old.n \
+	pack.n panedwindow.n palette.n photo.n place.n popup.n radiobutton.n \
+	raise.n scale.n scrollbar.n selection.n send.n spinbox.n text.n tk.n \
+	tkerror.n tkvars.n tkwait.n toplevel.n winfo.n wm.n
 
 # MLINKS generated via  awk '/ln/ {print "\t" $2,$3,"\\"}' unix/mkLinks
 MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
@@ -156,7 +156,9 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	FontId.3 Tk_PostscriptFontName.3 \
 	FreeXId.3 Tk_FreeXId.3 \
 	GeomReq.3 Tk_GeometryRequest.3 \
+	GeomReq.3 Tk_SetMinimumRequestSize.3 \
 	GeomReq.3 Tk_SetInternalBorder.3 \
+	GeomReq.3 Tk_SetInternalBorderEx.3 \
 	GetAnchor.3 Tk_GetAnchorFromObj.3 \
 	GetAnchor.3 Tk_GetAnchor.3 \
 	GetAnchor.3 Tk_NameOfAnchor.3 \
@@ -270,7 +272,6 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	SetOptions.3 Tk_GetOptionValue.3 \
 	SetOptions.3 Tk_GetOptionInfo.3 \
 	SetOptions.3 Tk_FreeConfigOptions.3 \
-	SetOptions.3 Tk_Offset.3 \
 	SetVisual.3 Tk_SetWindowVisual.3 \
 	StrictMotif.3 Tk_StrictMotif.3 \
 	TextLayout.3 Tk_ComputeTextLayout.3 \
@@ -302,7 +303,12 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	WindowId.3 Tk_IsTopLevel.3 \
 	WindowId.3 Tk_ReqWidth.3 \
 	WindowId.3 Tk_ReqHeight.3 \
-	WindowId.3 Tk_InternalBorderWidth.3 \
+	WindowId.3 Tk_MinReqWidth.3 \
+	WindowId.3 Tk_MinReqHeight.3 \
+	WindowId.3 Tk_InternalBorderLeft.3 \
+	WindowId.3 Tk_InternalBorderRight.3 \
+	WindowId.3 Tk_InternalBorderTop.3 \
+	WindowId.3 Tk_InternalBorderBottom.3 \
 	WindowId.3 Tk_Visual.3 \
 	WindowId.3 Tk_Depth.3 \
 	WindowId.3 Tk_Colormap.3 \
@@ -329,7 +335,6 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 .include <bsd.port.pre.mk>
 
 post-install:
-	@${RMDIR} ${PREFIX}/lib/tk${TK_VER}/msgs
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif

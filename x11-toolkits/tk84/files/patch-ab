@@ -20,15 +20,6 @@
  
  # Flags to pass to the linker
  LDFLAGS_DEBUG		= @LDFLAGS_DEBUG@
-@@ -203,7 +205,7 @@
- # Libraries to use when linking.  This definition is determined by the
- # configure script.
- LIBS = @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
--WISH_LIBS = $(TCL_LIB_SPEC) @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
-+WISH_LIBS = -L${PREFIX}/lib -ltcl${SHORT_TK_VER} @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
- 
- # The symbol below provides support for dynamic loading and shared
- # libraries.  See configure.in for a description of what it means.
 @@ -354,6 +356,8 @@
  	default.h ks_names.h tkPatch.h tk.h tkButton.h tkCanvas.h tkInt.h  \
  	tkPort.h tkScrollbar.h tkText.h
