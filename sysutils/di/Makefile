@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	di
-PORTVERSION=	3.7
+PORTVERSION=	3.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.gentoo.com/di/
 
@@ -18,9 +18,15 @@ MAN1=		di.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
+do-configure:
+	(cd ${WRKSRC}; \
+		CC="$(CC)" CFLAGS="$(CFLAGS)" \
+		LDFLAGS="$(LDFLAGS)" prefix="$(PREFIX)" ./Build config.h)
+
+do-build:
+	(cd ${WRKSRC}; \
+		CC="$(CC)" CFLAGS="$(CFLAGS)" \
+		LDFLAGS="$(LDFLAGS)" prefix="$(PREFIX)" ./Build)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/di ${PREFIX}/bin
