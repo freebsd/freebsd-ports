@@ -1,3 +1,9 @@
 bin/game_search_server_new
 bin/roomd_new
 bin/userd_new
+share/mythserver/db/orders.dat
+share/mythserver/db/users.dat
+share/mythserver/motd
+@dirrm share/mythserver/db
+@dirrm share/mythserver/log
+@dirrm share/mythserver
