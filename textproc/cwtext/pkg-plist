@@ -1,2 +1,5 @@
+bin/cwmm
 bin/cwpcm
 bin/cwtext
+%%PORTDOCS%%share/doc/cwtext/README
+%%PORTDOCS%%@dirrm share/doc/cwtext

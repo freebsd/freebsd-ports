@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cwtext
-PORTVERSION=	0.91
+PORTVERSION=	0.93
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,8 +26,12 @@ post-patch:
 		s,gcc,${CC} ${CFLAGS},g" ${WRKSRC}/${MAKEFILE}
 
 do-install:
-.for file in cwpcm cwtext
+.for file in cwmm cwpcm cwtext
 	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
 .endfor
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
