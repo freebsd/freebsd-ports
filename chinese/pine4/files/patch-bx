@@ -1,0 +1,35 @@
+--- pico/makefile.bsf.orig	Wed Aug 19 01:57:03 1998
++++ pico/makefile.bsf	Sun Apr  2 12:19:40 2000
+@@ -34,10 +34,10 @@
+ MAKE=        make
+ OPTIMIZE=    # -O
+ PROFILE=     # -pg
+-DEBUG=       -DDEBUG # -g
++###DEBUG=       -DDEBUG # -g
+ 
+ STDCFLAGS=	-DBSDI -DBSDI2 -DPOSIX -DJOB_CONTROL -DMOUSE
+-CFLAGS=         $(OPTIMIZE) $(PROFILE) $(DEBUG) $(EXTRACFLAGS) $(STDCFLAGS)
++CFLAGS+=         $(OPTIMIZE) $(PROFILE) $(DEBUG) $(EXTRACFLAGS) $(STDCFLAGS)
+ 
+ # switches for library building
+ LIBCMD=		ar
+--- pine/makefile.bsf.orig	Fri Aug 28 00:49:51 1998
++++ pine/makefile.bsf	Sun Apr  2 12:20:02 2000
+@@ -48,7 +48,7 @@
+ MAKE=        make
+ OPTIMIZE=    # -O
+ PROFILE=     # -pg
+-DEBUG=       -DDEBUG # -g
++#DEBUG=       -DDEBUG # -g
+ 
+ CCLIENTDIR=  ../c-client
+ PICODIR=     ../pico
+@@ -67,7 +67,7 @@
+              `cat $(CCLIENTDIR)/LDFLAGS`
+ 
+ STDCFLAGS=   -DBSDI -DSYSTYPE=\"BSF\" -DMOUSE
+-CFLAGS=      $(OPTIMIZE) $(PROFILE) $(DEBUG) $(EXTRACFLAGS) $(LDAPCFLAGS) \
++CFLAGS+=      $(OPTIMIZE) $(PROFILE) $(DEBUG) $(EXTRACFLAGS) $(LDAPCFLAGS) \
+ 	     $(STDCFLAGS)
+ 
+ OFILES=	addrbook.o adrbkcmd.o adrbklib.o args.o bldaddr.o context.o filter.o \

@@ -1,10 +1,10 @@
---- Makefile.orig	Sat Mar 11 14:41:18 2000
-+++ Makefile	Sat Mar 11 14:41:24 2000
+--- Makefile.orig	Wed Jan  5 13:50:05 2000
++++ Makefile	Sun Apr  2 11:37:04 2000
 @@ -1,6 +1,6 @@
  
  CC=gcc
 -CFLAG=-O2 -g -Iinclude
-+CFLAG+=-O2 -g -Iinclude
++CFLAG+=-Iinclude
  
  
  all: autob5 autogb hzlib 
