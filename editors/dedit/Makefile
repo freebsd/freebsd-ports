@@ -31,8 +31,6 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|dedit.ja.1||'
-	@find ${WRKSRC} -name "*.c" | xargs ${PERL} -pi -e \
-		's|<iconv.h>|<giconv.h>|g'
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/dedit.ja.1 ${MANPREFIX}/man/ja/man1/dedit.1

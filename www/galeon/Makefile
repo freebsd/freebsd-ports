@@ -56,14 +56,11 @@ post-extract:
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		 s|-liconv|-lgiconv|g ; s|iconv\.h|giconv.h|g' ${WRKSRC}/configure
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g'
-	@find ${WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e \
-		's|iconv\.h|giconv.h|g'
 	@${MKDIR} ${WRKSRC}/src/libnautilus
 
 post-configure:

@@ -31,10 +31,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-perl5=${PERL5} --with-libiconv=${LOCALBASE}
 
 post-patch:
-	# FreeBSD installs -lgiconv instead of -liconv. Patch configure.
-	${PERL} -pi -e 's/([^g])iconv.h/\1giconv.h/g;' \
-		-e 's/-liconv/-lgiconv/g' ${WRKSRC}/${CONFIGURE_SCRIPT} \
-		${WRKSRC}/libsock/util.c
 	# Remove the FORCE tag, which forced recompiling/relinking
 	# of the otherwise up-to-date files.
 	${PERL} -pi -e 's/: FORCE/:/;' -e 's/getopt.h//;' ${WRKSRC}/Makefile.in

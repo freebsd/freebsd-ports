@@ -24,8 +24,6 @@ pre-patch:
 	@${PERL} -pi -e 's|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		 s|`gtk-config --cflags`|`\$$GTK_CONFIG --cflags`|g ; \
 		 s|`gtk-config --libs`|`\$$GTK_CONFIG --libs`|g ; \
-		 s|<iconv.h>|<giconv.h>|g ; \
-		 s|-liconv|-lgiconv|g ; \
 		 s|DATADIRNAME}"|DATADIRNAME}/gnome"|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \

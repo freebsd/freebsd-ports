@@ -41,10 +41,6 @@ PLIST_SUB+=	ODBC="@comment "
 .endif
 
 post-patch:
-.for file in configure include/tds.h.in src/tds/iconv.c
-	@${PERL} -pi -e 's|<iconv.h>|<giconv.h>|g ; \
-		 s|-liconv|-lgiconv|g' ${WRKSRC}/${file}
-.endfor
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|/freetds.conf|/freetds.conf.dist|g ; \
 		 s|glib-config|\$$\(GLIB_CONFIG\)|g ; \

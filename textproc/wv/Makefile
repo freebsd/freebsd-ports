@@ -25,10 +25,4 @@ MAN1=	wvAbw.1 wvCleanLatex.1 wvDVI.1 wvHtml.1 wvLatex.1 wvMime.1 wvPDF.1 \
 	wvPS.1 wvRTF.1 wvSummary.1 wvText.1 wvVersion.1 wvWare.1 wvWml.1
 MLINKS=	wvWare.1 wvConvert.1
 
-pre-patch:
-	@${PERL} -pi -e 's|<iconv.h>|<giconv.h>|g ; \
-		 s|-liconv|-lgiconv|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name '*.[ch]' | xargs ${PERL} -pi -e \
-		's|"iconv.h"|"giconv.h"|g'
-
 .include <bsd.port.mk>

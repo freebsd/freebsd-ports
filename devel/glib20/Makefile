@@ -40,8 +40,6 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 MAN1=		glib-genmarshal.1 glib-mkenums.1
 
 pre-patch:
-	@find ${WRKSRC} -type f | xargs ${GREP} -l iconv.h | \
-		xargs ${PERL} -pi -e "s|iconv\.h|giconv.h|g"
 	@find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
 		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
 

@@ -21,8 +21,6 @@ USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|<iconv.h>|<giconv.h>|g ; \
-		 s|-liconv|-lgiconv|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

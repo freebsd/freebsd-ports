@@ -58,11 +58,8 @@ pre-everything::
 
 pre-patch:
 	@${PERL} -pi -e \
-		's|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		s|<iconv.h>|<giconv.h>|g ; \
-		s|-liconv|-lgiconv|g' ${WRKSRC}/configure
+		's|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@${PERL} -pi -e 's|gtk-config|${GTK_CONFIG:T}|g' ${WRKSRC}/xfce/setup.c
-	@${PERL} -pi -e 's|<iconv.h>|<giconv.h>|g' ${WRKSRC}/xfmenu/xfmenu.c
 	@${PERL} -pi -e 's|xfplay|internal|g' ${WRKSRC}/other/xfsoundrc.in
 
 .include <bsd.port.post.mk>

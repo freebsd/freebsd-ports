@@ -69,10 +69,7 @@ CONFIGURE_ARGS+=	--disable-gnome --disable-zvt
 post-patch:
 	@${PERL} -pi \
 		-e 's|-lpthread|${PTHREAD_LIBS}|g;' \
-		-e 's|iconv|giconv|;' \
 		${WRKSRC}/configure
-	@${PERL} -pi -e 's|iconv\.h|giconv.h|;' \
-		${WRKSRC}/src/common/jcode.c
 
 post-install:
 .if !defined(NOPORTDOCS)
