@@ -80,8 +80,8 @@ MAKE_ARGS+=	CONF_OPT_PERL="--enable-perlinterp"
 .endif
 
 .if defined(WITH_TCL)
-BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83
-LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
+BUILD_DEPENDS=	tclsh8.4:${PORTSDIR}/lang/tcl84
+LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 MAKE_ARGS+=	CONF_OPT_TCL="--enable-tclinterp"
 .endif
 
@@ -136,7 +136,7 @@ LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 
 pre-configure:
 	@(cd ${WRKSRC}; ${MAKE} distclean)
-	@${REINPLACE_CMD} -e 's|8\.2|8.3|; \
+	@${REINPLACE_CMD} -e 's|8\.2|8.4|; \
 		s|\$$gtk_config_prefix/bin/gtk-config|\$${GTK_CONFIG}|; \
 		s|\$$gtk_config_exec_prefix/bin/gtk-config|\$${GTK_CONFIG}|' \
 		${WRKSRC}/auto/configure
