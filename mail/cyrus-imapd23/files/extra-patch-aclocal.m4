@@ -1,8 +1,8 @@
 Index: aclocal.m4
 diff -u aclocal.m4.orig aclocal.m4
---- aclocal.m4.orig	Tue Nov 23 06:30:12 2004
-+++ aclocal.m4	Tue Nov 23 13:59:16 2004
-@@ -506,17 +506,22 @@
+--- aclocal.m4.orig	Wed Nov 24 03:55:40 2004
++++ aclocal.m4	Wed Nov 24 15:39:52 2004
+@@ -506,10 +506,11 @@
  	fi
  
  	saved_LIBS=$LIBS
@@ -16,9 +16,7 @@ diff -u aclocal.m4.orig aclocal.m4
  	    [db_create(NULL, NULL, 0);],
  	    BDB_LIBADD="$BDB_LIBADD -l$dbname"; dblib="berkeley"; dbname=db,
              dblib="no")
-+	    if test "$dblib" != "no"; then
-+	      break
-+	    fi
+@@ -517,7 +518,8 @@
            done
          if test "$dblib" = "no"; then
  	    LIBS="$saved_LIBS -ldb"
@@ -28,7 +26,7 @@ diff -u aclocal.m4.orig aclocal.m4
  	    [db_open(NULL, 0, 0, 0, NULL, NULL, NULL);],
  	    BDB_LIBADD="$BDB_LIBADD -ldb"; dblib="berkeley"; dbname=db,
              dblib="no")
-@@ -1819,9 +1824,12 @@
+@@ -1820,9 +1822,12 @@
  
      if test -n "$SNMP_LIBS" && test -n "$SNMP_PREFIX"; then
        CPPFLAGS="$CPPFLAGS -I${SNMP_PREFIX}/include"
@@ -42,7 +40,7 @@ diff -u aclocal.m4.orig aclocal.m4
        AC_MSG_RESULT(yes)
      else
        AC_MSG_RESULT(no)
-@@ -1847,7 +1855,7 @@
+@@ -1848,7 +1853,7 @@
      LIB_UCDSNMP=""
      if test "$with_snmp" != no; then
        AC_DEFINE(HAVE_UCDSNMP,1,[Do we have UCD-SNMP support?])
