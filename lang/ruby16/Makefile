@@ -47,9 +47,9 @@ CONFIGURE_ARGS+=	--enable-ipv6
 
 post-patch:
 	find ${WRKSRC} -name '*.orig' -delete
-	${RM} -f ${WRKSRC}/ext/gdbm/MANIFEST
-	${RM} -f ${WRKSRC}/ext/tcltklib/MANIFEST
-	${RM} -f ${WRKSRC}/ext/tk/MANIFEST
+.for d in Win32API gdbm tcltklib tk
+	${RM} -rf ${WRKSRC}/ext/${d}
+.endfor
 
 post-install:
 	strip ${RUBY}
