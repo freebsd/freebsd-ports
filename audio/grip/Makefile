@@ -7,7 +7,7 @@
 
 PORTNAME=	grip
 PORTVERSION=	3.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +17,7 @@ COMMENT=	GTK front-end to external cd rippers and audio encoders
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		curl.2:${PORTSDIR}/ftp/curl
+PATCH_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui vte
@@ -35,6 +36,8 @@ OPTIONS=	CDPARANOIA "Ripper: Enable cdparanoia support" on \
 		GOGO "Encoder: gogo: Install audio/gogo" off \
 		MP3ENCODE "Encoder: mp3encode: Install audio/mp3encode" off \
 		VORBIS "Encoder: oggenc: Install audio/vorbis-tools" off
+
+ISO_LOCALES=	de es fr pt_BR ru
 
 .include <bsd.port.pre.mk>
 
@@ -105,5 +108,10 @@ post-patch:
 		s|{"l3enc","-br %b %w %m","mp3"},|{"faac","-w -b %b %w -o %m", "m4a"},|; \
 		s|mp3encode|encode|' \
 		${WRKSRC}/src/gripcfg.c
+.for l in ${ISO_LOCALES}
+	@${MV} ${WRKSRC}/po/${l}.po ${WRKSRC}/po/_${l}.po
+	${LOCALBASE}/bin/iconv -f ISO-8859-15 -t UTF-8 \
+		${WRKSRC}/po/_${l}.po > ${WRKSRC}/po/${l}.po
+.endfor
 
 .include <bsd.port.post.mk>
