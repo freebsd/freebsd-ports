@@ -1,0 +1,34 @@
+share/tuxracer/courses/common/buttprint.rgb
+share/tuxracer/courses/common/buttstart.rgb
+share/tuxracer/courses/common/buttstop.rgb
+share/tuxracer/courses/common/cloudyback.rgb
+share/tuxracer/courses/common/cloudybottom.rgb
+share/tuxracer/courses/common/cloudyfront.rgb
+share/tuxracer/courses/common/cloudyleft.rgb
+share/tuxracer/courses/common/cloudyright.rgb
+share/tuxracer/courses/common/envmap.rgb
+share/tuxracer/courses/common/herring_standard.rgb
+share/tuxracer/courses/common/herringrunicon.rgb
+share/tuxracer/courses/common/ice.rgb
+share/tuxracer/courses/common/nightback.rgb
+share/tuxracer/courses/common/nightbottom.rgb
+share/tuxracer/courses/common/nightenv.rgb
+share/tuxracer/courses/common/nightfront.rgb
+share/tuxracer/courses/common/nightleft.rgb
+share/tuxracer/courses/common/nightright.rgb
+share/tuxracer/courses/common/nighttop.rgb
+share/tuxracer/courses/common/rock.rgb
+share/tuxracer/courses/common/shrub.rgb
+share/tuxracer/courses/common/snow.rgb
+share/tuxracer/courses/common/snowparticles.rgb
+share/tuxracer/courses/common/sunnyback.rgb
+share/tuxracer/courses/common/sunnybottom.rgb
+share/tuxracer/courses/common/sunnyfront.rgb
+share/tuxracer/courses/common/sunnyleft.rgb
+share/tuxracer/courses/common/sunnyright.rgb
+share/tuxracer/courses/common/sunnytop.rgb
+share/tuxracer/courses/common/tree.rgb
+share/tuxracer/courses/common/tree_barren.rgb
+@unexec %%MV%% %D/share/tuxracer_golf/common.old/*rgb %D/share/tuxracer/courses/common
+@dirrm share/tuxracer_golf/common.old
+@dirrm share/tuxracer_golf

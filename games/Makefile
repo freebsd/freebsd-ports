@@ -344,6 +344,7 @@
     SUBDIR += tuxkart
     SUBDIR += tuxpuck
     SUBDIR += tuxracer
+    SUBDIR += tuxracer_golf
     SUBDIR += tuxtype
     SUBDIR += tvp
     SUBDIR += twitch
