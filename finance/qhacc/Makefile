@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qhacc
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1a
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.ostrich-emulators.cx/qhacc/
 
