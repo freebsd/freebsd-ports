@@ -1,19 +1,16 @@
---- configure.orig	Sat Aug 14 03:29:05 1999
-+++ configure	Sat Oct 16 20:49:14 1999
-@@ -1084,10 +1084,10 @@
- ##  UID/GID as production oriented as a web server in NIS anyway.
- ##
- conf_user="nobody"
--conf_group="#-1"
-+conf_group="nogroup"
- conf_port="80"
+--- configure.orig	Mon Jan 17 16:53:17 2000
++++ configure	Sun Feb 20 15:43:26 2000
+@@ -1151,7 +1151,8 @@
+     conf_port="80"
+ fi
  conf_serveradmin="you@your.address"
 -conf_servername="new.host.name"
 +conf_servername="`$aux/buildinfo.sh -n %h%d`"
++#conf_servername="new.host.name"
  if [ "x$confadjust" = "x1" ]; then
      if [ -f /etc/passwd ]; then
-         for uid in nobody www daemon demon http httpd; do 
-@@ -1107,7 +1107,10 @@
+         if [ "x$conf_user" = "x" ]; then
+@@ -1175,7 +1176,10 @@
          conf_port="8080"
      fi
      conf_serveradmin="`$aux/buildinfo.sh -n %u@%h%d`"
@@ -25,7 +22,7 @@
  fi
   
  ##
-@@ -1153,8 +1156,8 @@
+@@ -1232,8 +1236,8 @@
      echo "       DEFAULT_PIDLOG: ${runtimedir_relative}${thetarget}.pid"
      echo "   DEFAULT_SCOREBOARD: ${runtimedir_relative}${thetarget}.scoreboard"
      echo "     DEFAULT_LOCKFILE: ${runtimedir_relative}${thetarget}.lock"
@@ -36,7 +33,7 @@
      echo "    TYPES_CONFIG_FILE: ${sysconfdir_relative}mime.types"
      echo "   SERVER_CONFIG_FILE: ${sysconfdir_relative}${thetarget}.conf"
      echo "   ACCESS_CONFIG_FILE: ${sysconfdir_relative}access.conf"
-@@ -1244,8 +1247,8 @@
+@@ -1330,8 +1334,8 @@
  echo "echo '-DDEFAULT_PIDLOG=\"${runtimedir_relative}${thetarget}.pid\"'" >>$src/apaci
  echo "echo '-DDEFAULT_SCOREBOARD=\"${runtimedir_relative}${thetarget}.scoreboard\"'" >>$src/apaci
  echo "echo '-DDEFAULT_LOCKFILE=\"${runtimedir_relative}${thetarget}.lock\"'" >>$src/apaci

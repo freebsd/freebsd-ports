@@ -1,11 +1,11 @@
---- src/support/Makefile.tmpl.orig	Tue Aug 10 09:37:18 1999
-+++ src/support/Makefile.tmpl	Sat Oct 16 18:41:00 1999
+--- src/support/Makefile.tmpl.orig	Thu Dec  9 11:19:48 1999
++++ src/support/Makefile.tmpl	Sun Feb 20 17:43:34 2000
 @@ -39,7 +39,7 @@
  	    -e 's%@LIBS_SHLIB@%$(LIBS_SHLIB)%g' && chmod a+x apxs
  
  suexec: suexec.o
--	$(CC) $(CFLAGS) suexec.o -o suexec $(LDFLAGS) $(LIBS)
-+	$(CC) $(CFLAGS) suexec.o -o suexec $(LDFLAGS) $(LIBS) -lutil
+-	$(CC) $(CFLAGS) -o suexec $(LDFLAGS) suexec.o $(LIBS)
++	$(CC) $(CFLAGS) -o suexec $(LDFLAGS) suexec.o $(LIBS) -lutil
  
  clean:
  	rm -f $(TARGETS) *.o

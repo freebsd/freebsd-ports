@@ -1,11 +1,11 @@
---- src/support/apxs.pl.orig	Thu Aug 19 22:57:08 1999
-+++ src/support/apxs.pl	Thu Aug 19 23:02:17 1999
-@@ -426,8 +426,7 @@
+--- src/support/apxs.pl.orig	Thu Dec 16 10:10:30 1999
++++ src/support/apxs.pl	Sun Feb 20 17:33:18 2000
+@@ -424,8 +424,7 @@
          my $t = $f;
          $t =~ s|^.+/([^/]+)$|$1|;
          if ($opt_i) {
--	    push(@cmds, "cp $f $CFG_LIBEXECDIR/$t");
--	    push(@cmds, "chmod 755 $CFG_LIBEXECDIR/$t");
+-            push(@cmds, "cp $f $CFG_LIBEXECDIR/$t");
+-            push(@cmds, "chmod 755 $CFG_LIBEXECDIR/$t");
 +	    push(@cmds, "install -c -m 555 -o root -g wheel $f $CFG_LIBEXECDIR/$t");
          }
  

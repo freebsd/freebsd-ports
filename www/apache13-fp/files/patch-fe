@@ -1,8 +1,8 @@
---- src/support/suexec.c.orig	Mon Jun 21 19:51:41 1999
-+++ src/support/suexec.c	Thu Sep  9 18:58:04 1999
-@@ -70,11 +70,35 @@
-  *
-  *
+--- src/support/suexec.c.orig	Tue Jan 11 13:47:59 2000
++++ src/support/suexec.c	Sun Feb 20 17:38:47 2000
+@@ -82,11 +82,35 @@
+  * info:   Normal activity message
+  * debug:  Self-explanatory
   */
 +/*
 + * "System" CGI modification 97.05.10 by Rick Franchuk (rickf@netnation.com)
@@ -36,7 +36,7 @@
  
  #include <stdarg.h>
  
-@@ -250,6 +274,7 @@
+@@ -262,6 +286,7 @@
      char *cmd;			/* command to be executed    */
      char cwd[AP_MAXPATH];	/* current working directory */
      char dwd[AP_MAXPATH];	/* docroot working directory */
@@ -44,7 +44,7 @@
      struct passwd *pw;		/* password entry holder     */
      struct group *gr;		/* group entry holder        */
      struct stat dir_info;	/* directory info holder     */
-@@ -404,6 +429,19 @@
+@@ -420,6 +445,19 @@
      }
  
      /*
@@ -64,7 +64,7 @@
       * Change UID/GID here so that the following tests work over NFS.
       *
       * Initialize the group access list for the target user,
-@@ -423,6 +461,14 @@
+@@ -439,6 +477,14 @@
      }
  
      /*
@@ -79,7 +79,7 @@
       * Get the current working directory, as well as the proper
       * document root (dependant upon whether or not it is a
       * ~userdir request).  Error out if we cannot get either one,
-@@ -453,10 +499,15 @@
+@@ -470,10 +516,16 @@
  	}
      }
  
@@ -87,15 +87,16 @@
 +     * This section must be commented out to work properly with
 +     * VirtualHosts running CGI in thier own directories.
 +     *
++
      if ((strncmp(cwd, dwd, strlen(dwd))) != 0) {
- 	log_err("command not in docroot (%s/%s)\n", cwd, cmd);
+ 	log_err("error: command not in docroot (%s/%s)\n", cwd, cmd);
  	exit(114);
      }
 +     */
  
      /*
       * Stat the cwd and verify it is a directory, or error out.
-@@ -502,6 +553,9 @@
+@@ -519,6 +571,9 @@
       * Error out if the target name/group is different from
       * the name/group of the cwd or the program.
       */
@@ -105,7 +106,7 @@
      if ((uid != dir_info.st_uid) ||
  	(gid != dir_info.st_gid) ||
  	(uid != prg_info.st_uid) ||
-@@ -513,6 +567,10 @@
+@@ -530,6 +585,10 @@
  		prg_info.st_uid, prg_info.st_gid);
  	exit(120);
      }
@@ -116,9 +117,9 @@
      /*
       * Error out if the program is not executable for the user.
       * Otherwise, she won't find any error in the logs except for
-@@ -524,6 +582,49 @@
-     }
- 
+@@ -551,6 +610,49 @@
+     umask(SUEXEC_UMASK);
+ #endif /* SUEXEC_UMASK */
      clean_env();
 +
 +#ifdef FPEXE

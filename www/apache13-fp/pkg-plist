@@ -2,15 +2,14 @@ bin/dbmmanage
 bin/htdigest
 bin/htpasswd
 etc/apache/access.conf.default
-@exec if [ ! -f %B/access.conf ]; then cp %D/%F %B/access.conf ; fi
+@exec if [ ! -f %B/access.conf ]; then cp %B/%f %B/access.conf ; fi
 etc/apache/httpd.conf.default
-@exec if [ ! -f %B/httpd.conf ]; then cp %D/%F %B/httpd.conf ; fi
 etc/apache/magic.default
-@exec if [ ! -f %B/magic ]; then cp %D/%F %B/magic ; fi
+@exec if [ ! -f %B/magic ]; then cp %B/%f %B/magic ; fi
 etc/apache/mime.types.default
-@exec if [ ! -f %B/mime.types ]; then cp %D/%F %B/mime.types ; fi
+@exec if [ ! -f %B/mime.types ]; then cp %B/%f %B/mime.types ; fi
 etc/apache/srm.conf.default
-@exec if [ ! -f %B/srm.conf ]; then cp %D/%F %B/srm.conf ; fi
+@exec if [ ! -f %B/srm.conf ]; then cp %B/%f %B/srm.conf ; fi
 etc/rc.d/apache.sh
 include/apache/alloc.h
 include/apache/ap.h
@@ -98,10 +97,28 @@ sbin/rotatelogs
 sbin/suexec
 share/doc/apache/apache_pb.gif
 @exec if [ ! -d %D/www/data/images ] ; then mkdir -p %D/www/data/images ; fi
-share/doc/apache/index.html
-@exec if [ ! -f %D/www/data/%f ]; then cp %D/%F %D/www/data/%f; fi
 @exec if [ ! -h %B/images ]; then (cd %B ; ln -s manual/images images); fi
 @unexec if [ -h %B/images ]; then rm -f %B/images; fi
+share/doc/apache/index.html.ca-dist
+share/doc/apache/index.html.cz-dist
+share/doc/apache/index.html.de-dist
+share/doc/apache/index.html.dk-dist
+share/doc/apache/index.html.ee-dist
+share/doc/apache/index.html.en-dist
+share/doc/apache/index.html.es-dist
+share/doc/apache/index.html.fr-dist
+share/doc/apache/index.html.it-dist
+share/doc/apache/index.html.ja.jis-dist
+share/doc/apache/index.html.ja.jis
+share/doc/apache/index.html.lu-dist
+share/doc/apache/index.html.nl-dist
+share/doc/apache/index.html.po.iso-pl
+share/doc/apache/index.html.po.iso-pl-dist
+share/doc/apache/index.html.pt-br
+share/doc/apache/index.html.pt-dist
+share/doc/apache/index.html.pt-br-dist
+share/doc/apache/index.html.se-dist
+@unexec rm -rf %B/index.html.??
 share/doc/apache/manual/LICENSE
 share/doc/apache/manual/bind.html
 share/doc/apache/manual/cgi_path.html
@@ -154,6 +171,7 @@ share/doc/apache/manual/misc/perf-dec.html
 share/doc/apache/manual/misc/perf-hp.html
 share/doc/apache/manual/misc/perf-tuning.html
 share/doc/apache/manual/misc/perf.html
+share/doc/apache/manual/misc/rewriteguide.html
 share/doc/apache/manual/misc/security_tips.html
 share/doc/apache/manual/misc/vif-info.html
 share/doc/apache/manual/misc/windoz_keepalive.html
@@ -211,6 +229,7 @@ share/doc/apache/manual/mod/mod_userdir.html
 share/doc/apache/manual/mod/mod_usertrack.html
 share/doc/apache/manual/mod/mod_vhost_alias.html
 share/doc/apache/manual/multilogs.html
+share/doc/apache/manual/netware.html
 share/doc/apache/manual/new_features_1_0.html
 share/doc/apache/manual/new_features_1_1.html
 share/doc/apache/manual/new_features_1_2.html
@@ -353,8 +372,7 @@ www/icons/uu.gif
 www/icons/uuencoded.gif
 www/icons/world1.gif
 www/icons/world2.gif
-@exec if [ ! -d /var/spool/apache ] ; then mkdir -p /var/spool/apache ; echo " change owner & group of /var/spool/apache to the owner & group the Apache Server uses in httpd.conf" ; fi
-@unexec rm -rf /var/spool/apache
+@exec mkdir -p %D/www/proxy
 @dirrm etc/apache
 @dirrm include/apache/xml
 @dirrm include/apache
@@ -370,10 +388,14 @@ www/icons/world2.gif
 @dirrm www/cgi-bin.default
 @dirrm www/icons/small
 @dirrm www/icons
+@dirrm www/proxy
 @dirrm www
 frontpage/%%FP_REV%%/LICENSE.TXT
-frontpage/%%FP_REV%%/change_server.sh
-frontpage/%%FP_REV%%/fp_install.sh
+frontpage/%%FP_REV%%/change_server.sh-dist
+@unexec rm -f %B/change_server.sh
+@unexec rm -f %B/change_server_results.txt
+frontpage/%%FP_REV%%/fp_install.sh-dist
+@unexec rm -f %B/fp_install.sh
 frontpage/%%FP_REV%%/frontpage.cnf
 @unexec if [ -f %B/%f.orig ] ; then rm -f %B/%f.orig ; fi
 frontpage/%%FP_REV%%/set_default_perms.sh
@@ -407,9 +429,6 @@ frontpage/%%FP_REV%%/admin/uninstal.htm
 frontpage/%%FP_REV%%/apache-fp/_vti_bin/fpexe
 frontpage/%%FP_REV%%/apache-fp/fp-patch-apache_1.3.3
 frontpage/%%FP_REV%%/apache-fp/fpexe.c
-frontpage/%%FP_REV%%/apache-fp/httpd
-frontpage/%%FP_REV%%/apache-fp/httpd.Compat
-@unexec rm %D/frontpage/%%FP_REV%%/apache-fp/suidkey*
 frontpage/%%FP_REV%%/bin/_vti_inf.htm
 frontpage/%%FP_REV%%/bin/fpsrvadm.exe
 frontpage/%%FP_REV%%/bin/postinfo.htm
@@ -560,3 +579,24 @@ frontpage/%%FP_REV%%/srcs/fp.suid.c
 @dirrm frontpage/%%FP_REV%%/srcs
 @dirrm frontpage/%%FP_REV%%
 @dirrm frontpage
+/usr/local/www/data
+/usr/local/www/data/images
+/usr/local/www/data/images/apache_pb.gif
+/usr/local/www/data/images/fplogo.gif
+/usr/local/www/data/images/powerlogo.gif
+/usr/local/www/data/index.html.ca
+/usr/local/www/data/index.html.cz
+/usr/local/www/data/index.html.de
+/usr/local/www/data/index.html.dk
+/usr/local/www/data/index.html.ee
+/usr/local/www/data/index.html.en
+/usr/local/www/data/index.html.es
+/usr/local/www/data/index.html.fr
+/usr/local/www/data/index.html.it
+/usr/local/www/data/index.html.ja.jis
+/usr/local/www/data/index.html.lu
+/usr/local/www/data/index.html.nl
+/usr/local/www/data/index.html.po.iso-pl
+/usr/local/www/data/index.html.pt
+/usr/local/www/data/index.html.pt-br
+/usr/local/www/data/index.html.se

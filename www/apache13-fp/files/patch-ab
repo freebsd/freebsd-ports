@@ -1,6 +1,6 @@
---- Makefile.tmpl.orig	Fri Aug 13 01:58:18 1999
-+++ Makefile.tmpl	Sat Nov 13 19:33:44 1999
-@@ -120,6 +120,7 @@
+--- Makefile.tmpl.orig	Tue Jan 11 13:47:41 2000
++++ Makefile.tmpl	Thu Feb 24 20:58:51 2000
+@@ -123,6 +123,7 @@
  runtimedir      = @runtimedir@
  logfiledir      = @logfiledir@
  proxycachedir   = @proxycachedir@
@@ -8,7 +8,7 @@
  
  libexecdir_relative   = @libexecdir_relative@
  
-@@ -255,9 +256,9 @@
+@@ -266,9 +267,9 @@
  	$(MKDIR) $(root)$(mandir)/man1
  	$(MKDIR) $(root)$(mandir)/man8
  	$(MKDIR) $(root)$(sysconfdir)
@@ -20,12 +20,12 @@
  	$(MKDIR) $(root)$(includedir)
  	$(MKDIR) $(root)$(includedir)/xml
  	$(MKDIR) $(root)$(runtimedir)
-@@ -313,19 +314,34 @@
+@@ -324,19 +325,34 @@
  			echo "$(INSTALL_DSO) $(TOP)/$(SRC)/$${mod} $(root)$(libexecdir)/$${file}"; \
  			$(INSTALL_DSO) $(TOP)/$(SRC)/$${mod} $(root)$(libexecdir)/$${file}; \
  			name=`$(TOP)/$(AUX)/fmn.sh $(TOP)/$(SRC)/$${mod}`; \
 +			if [ ".$$name" = .frontpage_module ]; then \
-+				echo "<IfDefine FRONTPAGE>" >>$(SRC)/.apaci.install.conf; \
++				echo "<IfDefine MOD_FP>" >>$(SRC)/.apaci.install.conf; \
 +			fi; \
  			echo dummy | awk '{ printf("LoadModule %-18s %s\n", modname, modpath); }' \
  			modname="$${name}" modpath="$(libexecdir_relative)$${file}" >>$(SRC)/.apaci.install.conf; \
@@ -50,7 +50,7 @@
 +				-e 's:[ 	]lib: mod_:' \
 +				-e 's:\.[soam].*$$:.c:'`; do \
 +			if [ ".$$mod" = .mod_frontpage.c ]; then \
-+				echo "<IfDefine FRONTPAGE>" >>$(SRC)/.apaci.install.conf; \
++				echo "<IfDefine MOD_FP>" >>$(SRC)/.apaci.install.conf; \
 +			fi; \
 +			echo "AddModule $$mod" >>$(SRC)/.apaci.install.conf; \
 +			if [ ".$$mod" = .mod_frontpage.c ]; then \
@@ -60,7 +60,7 @@
  	fi
  	@echo "<=== [programs]"
  
-@@ -394,6 +410,7 @@
+@@ -405,6 +421,7 @@
  	echo "$(INSTALL_SCRIPT) $(TOP)/$(SRC)/support/apachectl[*] $(root)$(sbindir)/$${apachectl}"; \
  	sed -e 's;PIDFILE=.*;PIDFILE=$(runtimedir)/$(TARGET).pid;' \
  		-e 's;HTTPD=.*;HTTPD=$(sbindir)/$(TARGET);' \
@@ -68,15 +68,15 @@
  		< $(TOP)/$(SRC)/support/apachectl > $(TOP)/$(SRC)/.apaci.install.tmp && \
  		$(INSTALL_SCRIPT) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sbindir)/$${apachectl}; \
  	echo "$(INSTALL_DATA) $(TOP)/$(SRC)/support/apachectl.8 $(root)$(mandir)/man8/$${apachectl}.8"; \
-@@ -441,25 +458,36 @@
+@@ -452,25 +469,31 @@
  #   icons and distributed CGI scripts.
  install-data:
  	@echo "===> [data: Installing initial data files]"
--	-@if [ -f $(root)$(htdocsdir)/index.html ]; then \
+-	-@if [ -f $(root)$(htdocsdir)/index.html ] || [ -f $(root)$(htdocsdir)/index.html.en ]; then \
 -		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(htdocsdir)/]"; \
 -	else \
 -		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(htdocsdir)/"; \
-+#	-@if [ -f $(root)$(htdocsdir)/index.html ]; then \
++#	-@if [ -f $(root)$(htdocsdir)/index.html ] || [ -f $(root)$(htdocsdir)/index.html.en ]; then \
 +#		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(htdocsdir)/]"; \
 +#	else \
 +		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(doc_prefix)/"; \
@@ -84,21 +84,18 @@
 -		(cd $(root)$(htdocsdir)/ && $(TAR) -xf -); \
 -		find $(root)$(htdocsdir)/ -type d -exec chmod a+rx {} \; ; \
 -		find $(root)$(htdocsdir)/ -type f -exec chmod a+r {} \; ; \
-+		(cd $(root)$(doc_prefix)/ && $(TAR) -xf -); \
-+		cat $(TOP)/htdocs/index.html | \
-+		sed -e 's;@@HOSTNAME@@;$(conf_servername);' \
-+		    > $(root)$(doc_prefix)/index.html ; \
-+		$(LN) -f $(root)$(doc_prefix)/apache_pb.gif $(root)$(doc_prefix)/manual/images; \
-+		find $(root)$(doc_prefix)/ -type d -exec chmod a+rx {} \; ; \
-+		find $(root)$(doc_prefix)/ -type f -exec chmod a+r {} \; ; \
-+#	fi
-+	if [ ! -d $(root)$(htdocsdir) ]; then \
-+		$(MKDIR) $(root)$(htdocsdir); \
-+		$(CP) -rp $(root)$(doc_prefix)/index.html $(root)$(htdocsdir); \
- 	fi
+-	fi
 -	-@if [ -f $(root)$(cgidir)/printenv ]; then \
 -		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
 -	else \
++		(cd $(root)$(doc_prefix)/ && $(TAR) -xf -); \
++		for lang in ca cz de dk ee en es fr it ja.jis lu nl po.iso-pl pt pt-br se; do \
++			mv $(root)$(doc_prefix)/index.html.$${lang} \
++			   $(root)$(doc_prefix)/index.html.$${lang}-dist ; \
++		done; \
++		find $(root)$(doc_prefix)/ -type d -exec chmod a+rx {} \; ; \
++		find $(root)$(doc_prefix)/ -type f -exec chmod a+r {} \; ; \
++#	fi
 +#	-@if [ -f $(root)$(cgidir)/printenv ]; then \
 +#		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
 +#	else \
@@ -111,13 +108,12 @@
 +			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(cgidir).default/$${script}"; \
 +			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(cgidir).default/$${script}; \
  		done; \
-+#	fi
 +	if [ ! -d $(root)$(cgidir) ]; then \
 +		$(CP) -rp $(root)$(cgidir).default $(root)$(cgidir); \
  	fi
  	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
  	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
-@@ -493,20 +521,24 @@
+@@ -504,28 +527,33 @@
  			-e 's;@@ServerRoot@@/icons;$(iconsdir);' \
  			-e 's;@@ServerRoot@@/cgi-bin;$(cgidir);' \
  			-e 's;@@ServerRoot@@/proxy;$(proxycachedir);' \
@@ -142,7 +138,16 @@
  			-e 's;Group #-1;Group $(conf_group);' \
  			-e 's;Port 80;Port $(conf_port);' \
 +			-e 's;@@MANUAL@@;$(doc_prefix);' \
-+			-e 's;@@HOSTNAME@@;$(conf_servername);' \
  			-e 's;ServerAdmin you@your.address;ServerAdmin $(conf_serveradmin);' \
  			-e 's;ServerName new.host.name;ServerName $(conf_servername);' \
  			> $(TOP)/$(SRC)/.apaci.install.tmp && \
+ 		echo "$(INSTALL_DATA) $(TOP)/conf/$${conf}-dist[*] $(root)$(sysconfdir)/$${target_conf}.default"; \
+ 		$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sysconfdir)/$${target_conf}.default; \
+ 		if [ ! -f "$(root)$(sysconfdir)/$${target_conf}" ]; then \
++		    if [ .$${target_conf} != .httpd.conf ] ; then \
+ 			echo "$(INSTALL_DATA) $(TOP)/conf/$${conf}-dist[*] $(root)$(sysconfdir)/$${target_conf}"; \
+ 			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sysconfdir)/$${target_conf}; \
++		    fi; \
+ 		else \
+ 			echo "[PRESERVING EXISTING CONFIG FILE: $(root)$(sysconfdir)/$${target_conf}]"; \
+ 		fi; \
