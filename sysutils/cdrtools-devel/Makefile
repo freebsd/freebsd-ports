@@ -3,7 +3,7 @@
 # Date created:         2 November 1997
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.9 1998/10/31 07:00:21 obrien Exp $
+# $Id: Makefile,v 1.10 1999/03/23 23:28:51 jmz Exp $
 #
 
 DISTNAME=	cdrecord-1.8a19
@@ -25,7 +25,6 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cdda2wav/OBJ/i386-freebsd-cc/cdda2wav \
 	 ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 ${PREFIX}/man/man1
-	@${INSTALL_MAN} ${WRKSRC}/cdrecord/cdda2wav.1 ${PREFIX}/man/man1
-	@cd /dev && ln -sf /dev/rworm0.ctl scgx
+	@${INSTALL_MAN} ${WRKSRC}/cdda2wav/cdda2wav.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
