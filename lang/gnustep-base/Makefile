@@ -66,7 +66,6 @@ EXTRA_PATCHES+=	${FILESDIR}/NSFileManager.m.patch
 .include <bsd.port.pre.mk>
 
 PATH:=	${PREFIX}/System/Tools:${PATH}
-TARGLIB!=	(cd ${PORTSDIR}/${GNUSTEP_OBJC_PORT} && make -V TARGLIB)
 
 post-build:
 .for i in ${MAKE_APPS}
