@@ -1,7 +1,14 @@
---- Makefile.in.orig	Sat Jan 27 02:29:09 2001
-+++ Makefile.in	Mon Jan 29 13:53:26 2001
-@@ -124,3 +124,3 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Tue Jan 15 19:38:13 2002
++++ Makefile.in	Tue Jan 15 19:42:04 2002
+@@ -125,7 +125,7 @@
+ 
+ NULL = 
  
 -SUBDIRS = libmedusa medusa-idled libmedusa-internal indexer msearch search-service gnome-vfs-module doc index-configuration tests
-+SUBDIRS = libmedusa medusa-idled libmedusa-internal indexer msearch search-service gnome-vfs-module doc tests
++SUBDIRS = libmedusa medusa-idled libmedusa-internal indexer msearch search-service gnome-vfs-module doc
+ 
+ bin_SCRIPTS = medusa-config
  
