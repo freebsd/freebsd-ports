@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.149 1998/06/30 13:22:32 ghelmer Exp $
+# $Id: Makefile,v 1.150 1998/07/02 06:44:39 tg Exp $
 #
 
     SUBDIR += 3dc
     SUBDIR += 3dpong
     SUBDIR += KnightCap
     SUBDIR += acm
+    SUBDIR += affenspiel
     SUBDIR += agm
     SUBDIR += an
     SUBDIR += angband
