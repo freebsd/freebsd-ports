@@ -31,6 +31,10 @@ MAN3=	ftw.3 regexp.3 scandir.3
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386" || ${OSVERSION} >= 502102
+BROKEN=		"Does not compile"
+.endif
+
 post-extract:
 	${CP} ${FILESDIR}/freebsd.sh ${WRKSRC}/hints
 
