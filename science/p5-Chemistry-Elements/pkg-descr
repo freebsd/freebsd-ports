@@ -1,0 +1,7 @@
+Chemistry::Elements provides an easy, object-oriented way to keep
+track of your chemical data. Using either the atomic number, chemical
+symbol, or element name you can construct an Element object.
+
+WWW: http://search.cpan.org/search?dist=Chemistry-Elements
+
+Seamus Venasse <svenasse@polaris.ca>
