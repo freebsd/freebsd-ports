@@ -364,6 +364,7 @@
     SUBDIR += sv-aspell
     SUBDIR += tclExpat
     SUBDIR += tdtd.el
+    SUBDIR += tei-guidelines-p3
     SUBDIR += tei-guidelines-p4
     SUBDIR += tex2im
     SUBDIR += texi2db
