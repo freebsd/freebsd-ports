@@ -1,0 +1,18 @@
+#!/bin/sh
+
+crypt_SRCS="crypt.c cryptLib.c"
+setuid_SRCS=setuid.c
+limit_SRCS=limit.c
+
+cd ${WRKSRC}/src
+
+for l in crypt setuid limit
+do
+	make INTERNALLIB=Y NOPROFILE=Y \
+		LIB=${l} SHLIB_MAJOR=1 SHLIB_MINOR=0 \
+		SRCS="`eval echo \\$${l}_SRCS`" -ECFLAGS \
+		CFLAGS="${CFLAGS} -I${PREFIX}/include/tcl${TCL_DVER} -DUSE_TCL_STUBS" \
+		LDADD="-L${PREFIX}/lib -ltclstub${TCL_VER} -lcrypt" \
+		-f bsd.lib.mk \
+	|| exit 1
+done

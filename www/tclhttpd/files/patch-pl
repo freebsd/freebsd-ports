@@ -1,0 +1,52 @@
+This  patch  adds a  way  to  add the  functionality  to  the server  by
+specifying  extra files  it should  source on  startup. Those  files can
+define  MIME  type handlers,  subtree  handlers  etc (see  the  server's
+documentation for what they can do -- very powerful stuff).
+
+According to the  software's author, Brent Welch, there  is currently no
+other  way  to extend  the  server  -- other  then  adding  code to  the
+httpd.tcl (or other files) directly. The tclhttpd.rc file is executed by
+a safe interpreter and so can not load any other files itself.
+
++++ bin/httpd.tcl	2000/05/16 23:09:50
+@@ -152,4 +152,5 @@
+         [list threads.arg      [cget threads]      {Number of worker threads (zero for non-threaded)}] \
+         [list library.arg      [cget library]      {Directory list where custom packages and auto loads are}] \
++        [list extrafiles.arg   [cget ExtraFiles]   {Extra files to source}] \
+ 	[list debug.arg	       0	        {If true, start interactive command loop}] \
+     ] \
+@@ -228,7 +229,9 @@
+     }
+ }
+-if ![catch {
++if {[catch {
+     setuid $Config(uid) $Config(gid)
+-}] {
++} e]}  {
++    Stderr "failed to suid to $Config(uid).$Config(gid): $e"
++} else {
+     Stderr "Running as user $Config(uid)"
+ }
+@@ -256,4 +259,6 @@
+     append error "\n$errorInfo"
+     error $error
++} else {
++    puts stderr "Sourced [file nativename $Config(main)] nicely"
+ }
+ 
++++ bin/httpdthread.tcl	2000/05/10 19:32:55
+@@ -142,2 +142,14 @@
+ }
+ 
++if {[info exists Config(extrafiles)]} {
++	puts stderr "Proceeding to source $Config(extrafiles)"
++	foreach f $Config(extrafiles) {
++		if {[catch "source $f" e]} {
++			puts stderr "Failed to source $f: $e"
++		} else {
++			puts stderr "Sourced $f ($e)."
++		}
++	}
++} else {
++	puts stderr "No extra files specified"
++}

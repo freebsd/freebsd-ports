@@ -1,0 +1,24 @@
+This is a pure-Tcl implementation of an HTTP protocol server. It runs as
+a script on  top of a vanilla Tcl interpreter  using tcllib scripts and,
+optionally, two binary libraries (crypt and limit).
+
+The Tcl I/O system provides  event-driven I/O facilities and a primitive
+that copies  data from one I/O  channel to another. The  server does the
+HTTP protocol handling  and then simply directs the I/O  system to blast
+data from  disk to  a network  socket. The  server has  suprisingly good
+performance because of Tcl's sophisticated I/O system.
+
+The HTTP protocol is perhaps the least interesting aspect of the server.
+The cool stuff is the framework for generating dynamic page content, and
+the support for  embedding the server directly  into legacy applications
+to "web-enable" them.
+
+A Tcl-based web  server is ideal for embedding because  Tcl was designed
+to support embedding into other  applications. The interpreted nature of
+Tcl  allows  dynamic  reconfiguration  of  the  server.  Once  the  core
+interface between the web server and the hosting application is defined,
+it  is  possible to  manage  the  web  server, upload  Safe-Tcl  control
+scripts, download logging information, and  otherwise debug the Tcl part
+of the application without restarting the hosting application.
+
+WWW: http://dev.scriptics.com/software/tclhttpd/

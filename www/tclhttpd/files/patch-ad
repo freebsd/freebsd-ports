@@ -1,0 +1,7 @@
+--- configure	Wed Apr 26 17:44:05 2000
++++ configure	Thu Apr 27 18:44:11 2000
+@@ -1850,3 +1850,3 @@
+ 	    MAKE_STATIC_LIB="\${STLIB_LD} \$@ \$(\$@_OBJECTS)"
+-	    MAKE_SHARED_LIB="\${SHLIB_LD} -o \$@ \$(\$@_OBJECTS) \${SHLIB_LDFLAGS} \${SHLIB_LD_LIBS}"
++	    MAKE_SHARED_LIB="\${SHLIB_LD} -o \$@ \$> \${SHLIB_LDFLAGS} \${SHLIB_LD_LIBS}"
+ 	    ;;

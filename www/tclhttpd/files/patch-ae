@@ -1,0 +1,16 @@
+--- bin/tclhttpd.rc	Mon Apr 24 21:39:19 2000
++++ bin/tclhttpd.rc	Fri Apr 28 19:23:21 2000
+@@ -24,2 +24,3 @@
+ foreach d [list \
++	[file join [Config home] ../share/tclhttpd3.0.3] \
+ 	[file join [Config home] ../htdocs] \
+@@ -36,3 +36,3 @@
+ 
+-Config uid		50
++Config uid		65534	;#	BSD's nobody
+ 
+@@ -45,3 +45,3 @@
+ 
+-Config gid		50
++Config gid		65534	;#	BSD's nobody group
+ 

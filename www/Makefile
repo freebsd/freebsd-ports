@@ -147,6 +147,7 @@
     SUBDIR += squidtimes
     SUBDIR += squirm
     SUBDIR += swish-e
+    SUBDIR += tclhttpd
     SUBDIR += thttpd
     SUBDIR += tidy
     SUBDIR += tinyproxy
