@@ -753,6 +753,7 @@
     SUBDIR += ruby-poll
     SUBDIR += ruby-property
     SUBDIR += ruby-racc
+    SUBDIR += ruby-rbbr
     SUBDIR += ruby-rbison
     SUBDIR += ruby-rbtree
     SUBDIR += ruby-robjectteam
