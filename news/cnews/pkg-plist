@@ -2,8 +2,14 @@
 @comment Basically just in.* and out.*    /var/news might be a symbolic link
 @comment and it might not exist yet :-(
 @exec ln -sf /usr/local/newsspool /var/news
+@unexec rm -f /usr/local/newsspool
 @exec mkdir -p /usr/local/newsspool/in.coming/bad
 @exec cd /usr/local/newsspool; mkdir -p out.going out.master out.nntp
+@rmdir /usr/local/newsspool/in.coming/bad
+@rmdir /usr/local/newsspool/in.coming
+@rmdir /usr/local/newsspool/out.going
+@rmdir /usr/local/newsspool/out.master
+@rmdir /usr/local/newsspool/out.nntp
 bin/checknews
 bin/cnewsdo
 bin/inews
