@@ -10,7 +10,8 @@ PORTVERSION=	2.3.11
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.qcc.ca/~charlesc/software/getmail-2.0/%SUBDIR%/
 
-MAINTAINER=	anders@hack.org
+MAINTAINER=	anders@andersa.net
+COMMENT=	POP3 mail retriever written in Python
 
 USE_PYTHON=	yes
 USE_REINPLACE=	yes

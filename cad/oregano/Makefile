@@ -10,7 +10,8 @@ PORTVERSION=	0.23
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.codefactory.se/pub/CodeFactory/software/oregano/
 
-MAINTAINER=	anders@hack.org
+MAINTAINER=	anders@andersa.net
+COMMENT=	Schematic capture and simulation of electrical circuits
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
