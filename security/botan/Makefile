@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	botan
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -40,8 +40,5 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g ; \
 		s,%%CFLAGS%%,${CFLAGS},g" ${WRKSRC}/${CONFIGURE_SCRIPT}
-
-post-install:
-	@${RM} -f ${PREFIX}/include/botan/botan
 
 .include <bsd.port.post.mk>
