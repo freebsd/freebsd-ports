@@ -137,6 +137,11 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Temp.pm:${PORTSD
 RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-PodParser
 .endif
 
+.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
+.if !defined(WITH_OPENSSL_BASE)
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+.endif
+
 pre-everything::
 .if !defined(WITH_BDB_VER)
 	@if ${LDCONFIG} -r | ${GREP} -qwE -e "-ldb(41|4)"; then \
