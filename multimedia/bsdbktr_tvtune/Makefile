@@ -19,4 +19,12 @@ ALL_TARGET=	bsdbktr_tvtune
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bsdbktr_tvtune ${PREFIX}/bin/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+ONLY_FOR_ARCHS=	i386
+.else
+ONLY_FOR_ARCHS=	alpha i386 ia64
+.endif
+
+.include <bsd.port.post.mk>
