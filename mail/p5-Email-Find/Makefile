@@ -7,6 +7,7 @@
 
 PORTNAME=	Email-Find
 PORTVERSION=	0.09
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
@@ -20,7 +21,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		Email::Find.3
+MAN3=		Email::Find.3 Email::Find::addrspec.3
 
 .include <bsd.port.mk>
