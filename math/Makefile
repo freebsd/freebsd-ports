@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.47 1998/08/09 23:55:27 steve Exp $
+# $Id: Makefile,v 1.48 1998/08/10 00:21:04 steve Exp $
 #
 
     SUBDIR += Scilab
@@ -12,6 +12,7 @@
     SUBDIR += fftpack
     SUBDIR += freefem
     SUBDIR += fudgit
+    SUBDIR += geg
     SUBDIR += gnuplot
     SUBDIR += hexcalc
     SUBDIR += lapack
