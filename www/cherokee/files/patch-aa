@@ -1,0 +1,43 @@
+--- src/cherokee.h.old	Fri Dec 28 07:39:11 2001
++++ src/cherokee.h	Tue May 14 14:49:35 2002
+@@ -28,11 +28,11 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <sys/types.h>
+ #include <netinet/in.h>
+ #include <sys/socket.h>
+ #include <sys/wait.h>
+ #include <sys/time.h>
+-#include <sys/types.h>
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+--- src/server.h.old	Fri Dec 28 07:25:54 2001
++++ src/server.h	Tue May 14 14:49:35 2002
+@@ -26,9 +26,9 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <netinet/in.h>
+-#include <sys/socket.h>
+ #include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
+ 
+ #include "configuration.h"
+ 
+--- src/socket.h.old	Thu Dec 27 05:49:07 2001
++++ src/socket.h	Tue May 14 14:49:35 2002
+@@ -26,8 +26,11 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/time.h>
++#include <unistd.h>
+ 
+ int __inline socket_ready_to_read (int socket);
+ 
