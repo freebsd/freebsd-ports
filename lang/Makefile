@@ -99,6 +99,7 @@
     SUBDIR += smalltalk
     SUBDIR += sml-mode.el
     SUBDIR += sml-nj
+    SUBDIR += sml-nj-devel
     SUBDIR += squeak1
     SUBDIR += squeak2
     SUBDIR += sr
