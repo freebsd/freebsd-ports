@@ -22,7 +22,9 @@ USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 do-install:
-	@${CP} -R ${WRKDIR}/Lila ${X11BASE}/share/xfwm4/themes/
-	@${CP} -R ${WRKDIR}/Lila-light ${X11BASE}/share/xfwm4/themes/
+	@${MKDIR} -p  ${PREFIX}/share/themes/Lila/xfwm4
+	@${MKDIR} -p  ${PREFIX}/share/themes/Lila-light/xfwm4
+	@${CP} -R ${WRKDIR}/Lila/ ${PREFIX}/share/themes/Lila/xfwm4
+	@${CP} -R ${WRKDIR}/Lila-light/ ${PREFIX}/share/themes/Lila-light/xfwm4
 
 .include <bsd.port.mk>
