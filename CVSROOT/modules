@@ -4963,6 +4963,7 @@ nikto		ports/security/nikto
 nil		ports/games/nil
 ninja		ports/irc/ninja
 nitpicker	ports/net/nitpicker
+njam		ports/games/njam
 njs		ports/lang/njs
 nl-aspell	ports/textproc/nl-aspell
 nl-ispell	ports/textproc/nl-ispell
