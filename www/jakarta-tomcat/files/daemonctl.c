@@ -4,7 +4,7 @@
  *
  * Daemon control program.
  *
- * $FreeBSD: /tmp/pcvs/ports/www/jakarta-tomcat/files/Attic/daemonctl.c,v 1.2 2002-04-03 19:49:27 znerd Exp $
+ * $FreeBSD: /tmp/pcvs/ports/www/jakarta-tomcat/files/Attic/daemonctl.c,v 1.3 2002-04-03 20:42:07 znerd Exp $
  */
 
 #include <assert.h>
@@ -17,10 +17,11 @@
 #include <syslog.h>
 #include <unistd.h>
 #include <sys/errno.h>
+#include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/uio.h>
 
-#define MAX_FILE_SIZE 32
+#define MAX_FILE_SIZE			32
 
 #define ERR_ILLEGAL_ARGUMENT				1
 #define ERR_PID_FILE_NOT_FOUND				2
@@ -33,6 +34,11 @@
 #define ERR_STDOUT_LOGFILE_OPEN				9
 #define ERR_STDERR_LOGFILE_OPEN				10
 #define ERR_FORK_FAILED						11
+#define ERR_STAT_JAVA_HOME					12
+#define ERR_JAVA_HOME_NOT_DIR				13
+#define ERR_STAT_JAVA_CMD					14
+#define ERR_JAVA_CMD_NOT_FILE				15
+#define ERR_JAVA_CMD_NOT_EXECUTABLE			16
 
 #define private static
 
@@ -236,6 +242,7 @@ void start(void) {
 	int result;
 	int stdoutLogFile;
 	int stderrLogFile;
+	struct stat sb;
 
 	/* Open and read the PID file */
 	file = openPIDFile();
@@ -255,7 +262,40 @@ void start(void) {
 
 	printf(" [ DONE ]\n");
 
-	/* XXX: printf(">> Checking for Java VM..."); */
+	printf(">> Checking for Java VM...");
+	result = stat("%%JAVA_HOME%%", &sb);
+	if (result != 0) {
+		printf(" [ FAILED ]\n");
+		fprintf(stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to stat %%JAVA_HOME%%: ");
+		perror(NULL);
+		exit(ERR_STAT_JAVA_HOME);
+	}
+	if (!S_ISDIR(sb.st_mode)) {
+		printf(" [ FAILED ]\n");
+		fprintf(stderr, "%%CONTROL_SCRIPT_NAME%%: Java home directory %%JAVA_HOME%% is not a directory.\n");
+		exit(ERR_JAVA_HOME_NOT_DIR);
+	}
+
+	result = stat("%%JAVA_HOME%%/%%JAVA_CMD%%", &sb);
+	if (result != 0) {
+		printf(" [ FAILED ]\n");
+		fprintf(stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to stat %%JAVA_HOME%%/%%JAVA_CMD%%: ");
+		perror(NULL);
+		exit(ERR_STAT_JAVA_CMD);
+	}
+	if (!S_ISREG(sb.st_mode)) {
+		printf(" [ FAILED ]\n");
+		fprintf(stderr, "%%CONTROL_SCRIPT_NAME%%: Java command %%JAVA_HOME%%/%%JAVA_CMD%% is not a regular file.\n");
+		exit(ERR_JAVA_CMD_NOT_FILE);
+	}
+	result = access("%%JAVA_HOME%%/%%JAVA_CMD%%", X_OK);
+	if (result != 0) {
+		printf(" [ FAILED ]\n");
+		fprintf(stderr, "%%CONTROL_SCRIPT_NAME%%: Java command %%JAVA_HOME%%/%%JAVA_CMD%% is not executable: ");
+		perror(NULL);
+		exit(ERR_JAVA_CMD_NOT_EXECUTABLE);
+	}
+	printf(" [ DONE ]\n");
 
 	printf(">> Starting %%APP_TITLE%%...");
 
