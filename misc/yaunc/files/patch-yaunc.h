@@ -1,10 +1,10 @@
 
 $FreeBSD$
 
---- my_hdrs.h.orig	Thu Mar 23 03:32:02 2000
-+++ my_hdrs.h	Sun Dec 22 16:33:44 2002
-@@ -34,8 +34,6 @@
- ssize_t Recvfrom(int, void *, size_t, int, struct sockaddr *, socklen_t *);
+--- yaunc.h.orig	Fri Mar 14 07:14:11 2003
++++ yaunc.h	Sun Apr 27 19:15:49 2003
+@@ -107,8 +107,6 @@
+ int Socket(int, int, int );
  
  /* other networking function */
 -int inet_pton(int, const char *, void *);
