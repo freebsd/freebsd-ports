@@ -1,0 +1,73 @@
+--- Makefile.orig	Thu Sep 27 20:20:30 2001
++++ Makefile	Sat May 25 21:55:54 2002
+@@ -5,13 +5,13 @@
+ #
+ #######################################################################
+ 
+-PREFIX = /local/www.people/personal/meurig/haskell/built/frantk
++#PREFIX = /local/www.people/personal/meurig/haskell/built/frantk
+ 
+ # where to install libHSFranTk.a library and friends
+-LIBDIR = $(PREFIX)
++LIBDIR = $(PREFIX)/lib/frantk
+ 
+ # where to install the FranTk interface files
+-IMPORTS = $(PREFIX)/imports
++IMPORTS = $(PREFIX)/lib/frantk/imports
+ 
+ 
+ # the library files to use - change for different version
+@@ -38,12 +38,12 @@
+ #
+ #######################################################################
+ 
+-CC = gcc
+-CC_OPTS = -O
+-CC_INC =  -I/usr/X11/include -I/usr/local/include
++#CC = gcc
++CC_OPTS = ${CFLAGS}
++CC_INC =  -I/usr/X11R6/include -I/usr/local/include/tk8.3 -I/usr/local/include/tcl8.3
+ 
+-GHC = ghc-5.00.2
+-GHC-PKG=ghc-pkg-5.00.2
++GHC = ghc
++GHC-PKG=ghc-pkg
+ 
+ #######################################################################
+ #
+@@ -81,8 +81,9 @@
+ 
+ all : $(LIBS)
+ 
++install :
+ 
+-install : libHSFranTk.a
++install_ghc : libHSFranTk.a
+ 	mkdir -p $(LIBDIR)
+ 	mkdir -p $(IMPORTS)
+ 	cp -p $(LIBS) $(LIBDIR)/
+@@ -150,13 +151,13 @@
+ 
+ # The directories containing the X11, Tcl and Tk (binary) libraries:
+ 
+-CCLIB = -L /usr/lib/X11 -L /usr/local/lib
++CCLIB = -L /usr/X11R6/lib/X11 -L /usr/local/lib
+ 
+ 
+ # the libraries required by Tcl/Tk:
+ 
+ #TCLREQ =  -ltk8.3 -ltcl8.3 -lX11 -lm -lsocket -lnsl -lintl -lw # (Solaris)
+-TCL_REQ  = -ltk8.3 -ltcl8.3 -lm -lc                   # (OSF/1+Linux)
++TCL_REQ  = -ltk83 -ltcl83 -lm -lc                   # (OSF/1+Linux)
+ 
+ 
+ hugs: TclHaskellSrc/TclPrim.so
+@@ -169,3 +170,8 @@
+ 			$(TCL_REQ)
+ 	$(RM) TclHaskellSrc/TclPrim.o
+ 
++install_hugs :
++	mkdir -p ${PREFIX}/lib/frantk/hugs/TclHaskellSrc
++	mkdir -p ${PREFIX}/lib/frantk/hugs/FranTkSrc
++	cp TclHaskellSrc/*.hs TclHaskellSrc/tclhaskell.o ${PREFIX}/lib/frantk/hugs/TclHaskellSrc
++	cp FranTkSrc/*.lhs FranTkSrc/*.hs ${PREFIX}/lib/frantk/hugs/FranTkSrc
