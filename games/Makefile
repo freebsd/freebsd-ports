@@ -332,6 +332,7 @@
     SUBDIR += phpua-hl
     SUBDIR += phpua-q3
     SUBDIR += phpua-ut
+    SUBDIR += phpua-ut2003
     SUBDIR += pinball
     SUBDIR += pipenightdreams
     SUBDIR += pmars
