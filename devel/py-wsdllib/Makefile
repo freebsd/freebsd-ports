@@ -16,6 +16,7 @@ DIST_SUBDIR=	wsdl4py-${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A library for using and manipulating WSDL files using Python
 
+BUILD_DEPENDS=	4xslt:${PORTSDIR}/textproc/py-4suite
 RUN_DEPENDS=	${PYXML} \
 		4xslt:${PORTSDIR}/textproc/py-4suite
 
