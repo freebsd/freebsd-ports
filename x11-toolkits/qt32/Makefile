@@ -8,7 +8,7 @@
 PORTNAME=	qt
 PORTVERSION=	2.2.3
 .if exists(${X11BASE}/lib/libXft.so) && !defined(NO_AA)
-PORTREVISION=	1
+PORTREVISION=	2
 .endif
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/

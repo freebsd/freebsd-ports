@@ -1,0 +1,23 @@
+diff -ur src/kernel/qfont.h src/kernel/qfont.h
+--- src/kernel/qfont.h	Wed Oct  4 13:48:48 2000
++++ src/kernel/qfont.h	Mon Oct  9 11:53:48 2000
+@@ -70,6 +70,9 @@
+ 		     ISO_8859_14, Latin8 = ISO_8859_14,
+ 		     ISO_8859_15, Latin9 = ISO_8859_15,
+ 		     KOI8R,
++		     KOI8U,
++		     CP_1251,
++		     PT_154,
+ 		     Set_Ja, Set_1 = Set_Ja,
+ 		     Set_Ko,
+ 		     Set_Th_TH,
+@@ -96,8 +99,7 @@
+ 		     KSC_5601,
+ 		     GB_2312,
+ 		     Big5,
+-		     TSCII,
+-		     KOI8U
++		     TSCII
+     };
+     enum StyleHint { Helvetica, Times, Courier, OldEnglish,  System, AnyStyle,
+ 		     SansSerif	= Helvetica,

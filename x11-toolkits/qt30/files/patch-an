@@ -1,0 +1,60 @@
+diff -ur src/kernel/qfont_x11.cpp src/kernel/qfont_x11.cpp
+--- src/kernel/qfont_x11.cpp	Wed Oct  4 13:48:48 2000
++++ src/kernel/qfont_x11.cpp	Mon Oct  9 11:59:36 2000
+@@ -324,6 +324,9 @@
+     { "ISO 8859-14", QFont::ISO_8859_14 },
+     { "ISO 8859-15", QFont::ISO_8859_15 },
+     { "KOI8-R", QFont::KOI8R },
++    { "KOI8-U", QFont::KOI8U },
++    { "CP 1251", QFont::CP_1251 },
++    { "PT 154", QFont::PT_154 },
+     { "eucJP", QFont::Set_Ja },
+     { "SJIS", QFont::Set_Ja },
+     { "JIS7", QFont::Set_Ja },
+@@ -337,7 +340,6 @@
+     { "Big5", QFont::Set_Big5 },
+     { "ta_TA.TSCII", QFont::TSCII },
+     { "TSCII", QFont::TSCII },
+-    { "KOI8-U", QFont::KOI8U },
+     { 0, /* anything */ QFont::ISO_8859_1 }
+ };
+ 
+@@ -513,6 +515,12 @@
+     } else if( strcmp( tokens[CharsetRegistry], "koi8" ) == 0 &&
+ 	       strcmp( tokens[CharsetEncoding], "u" ) == 0) {
+ 	fd->charSet = QFont::KOI8U;
++    } else if( qstrcmp( tokens[CharsetEncoding], "cp1251" ) == 0 ||
++  	       (qstrcmp( tokens[CharsetEncoding], "1251" ) == 0 ) ) {
++  	fd->charSet = QFont::CP_1251;
++    } else if( qstrcmp( tokens[CharsetEncoding], "cp154" ) == 0 ||
++  	       (qstrcmp( tokens[CharsetEncoding], "154" ) == 0 ) ) {
++  	fd->charSet = QFont::PT_154;
+     } else if( qstrcmp( tokens[CharsetRegistry], "tscii" ) == 0 &&
+ 	       qstrcmp( tokens[CharsetEncoding], "0" ) == 0 ) {
+ 	fd->charSet = QFont::TSCII;
+@@ -1424,11 +1432,23 @@
+        else
+ 	       exactMatch = FALSE;
+     } else if ( charSet() == KOI8U ) {
+-       if ( strcmp( tokens[CharsetRegistry], "koi8" ) == 0 &&
+-	    strcmp( tokens[CharsetEncoding], "u" ) == 0 )
++       if ( qstrcmp( tokens[CharsetRegistry], "koi8" ) == 0 &&
++	    qstrcmp( tokens[CharsetEncoding], "u" ) == 0 )
+ 	    score |= CharSetScore;
+ 	else
+ 	    exactMatch = FALSE;
++    } else if ( charSet() == CP_1251 ) {
++        if  (qstrcmp( tokens[CharsetEncoding], "cp1251" ) == 0 ||
++                qstrcmp( tokens[CharsetEncoding], "1251" ) == 0) 
++                  score |= CharSetScore;
++          else
++                  exactMatch = FALSE;
++    } else if ( charSet() == PT_154 ) {
++        if  (qstrcmp( tokens[CharsetEncoding], "cp154" ) == 0 ||
++                qstrcmp( tokens[CharsetEncoding], "154" ) == 0) 
++                  score |= CharSetScore;
++          else
++                  exactMatch = FALSE;
+     } else if ( qstrcmp( tokens[CharsetRegistry], "iso8859" ) == 0 &&
+ 		charSet() >= ISO_8859_1 && charSet() <= ISO_8859_15 ) {
+ 	int i = 0;
