@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ogle
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
