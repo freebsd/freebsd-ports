@@ -1,0 +1,6 @@
+bin/gpgme-config
+include/gpgme.h
+lib/libgpgme.a
+lib/libgpgme.so
+lib/libgpgme.so.3
+share/aclocal/gpgme.m4

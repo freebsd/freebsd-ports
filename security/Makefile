@@ -45,6 +45,7 @@
     SUBDIR += gnupg-idea
     SUBDIR += gpa
     SUBDIR += gpasman
+    SUBDIR += gpgme
     SUBDIR += gtkportscan
     SUBDIR += heimdal
     SUBDIR += hlfl
