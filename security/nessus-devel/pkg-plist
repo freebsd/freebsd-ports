@@ -2,6 +2,12 @@ etc/rc.d/nessusd.sh
 bin/nessus
 bin/nessus-mkcert-client
 bin/nessus-mkrand
+@unexec if cmp -s %D/etc/nessus/nessusd.conf.dist %D/etc/nessus/nessusd.conf; then rm -f %D/etc/nessus/nessusd.conf; fi
+@unexec if cmp -s %D/etc/nessus/nessusd.rules.dist %D/etc/nessus/nessusd.rules; then rm -f %D/etc/nessus/nessusd.rules; fi
+etc/nessus/nessusd.conf.dist
+etc/nessus/nessusd.rules.dist
+@exec if [ ! -f %D/etc/nessus/nessusd.conf ]; then cp %D/etc/nessus/nessusd.conf %D/etc/nessus/nessusd.conf; fi
+@exec if [ ! -f %D/etc/nessus/nessusd.rules ]; then cp %D/etc/nessus/nessusd.onf %D/etc/nessus/nessusd.onf; fi
 include/nessus/config.h
 include/nessus/includes.h
 include/nessus/nessus-devel.h
@@ -27,3 +33,4 @@ sbin/nessusd
 @exec mkdir -p %D/lib/nessus/plugins
 @unexec rmdir %D/lib/nessus/plugins 2>/dev/null || true
 @unexec rmdir %D/lib/nessus 2>/dev/null || true
+@exec if [ ! -f %D/var/CA/serverkey.pem ]; then %D/sbin/nessus-mkcert; fi
