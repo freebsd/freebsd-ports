@@ -45,8 +45,8 @@ DISTFILES+=	helpcontent_31_unix.tgz:help helpcontent_33_unix.tgz:help \
 		helpcontent_86_unix.tgz:help helpcontent_88_unix.tgz:help
 L10NHELPS=	helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
 		helpcontent_34_unix.tgz helpcontent_39_unix.tgz \
-		helpcontent_55_unix.tgz	\
 		helpcontent_46_unix.tgz helpcontent_49_unix.tgz \
+		helpcontent_55_unix.tgz	\
 		helpcontent_81_unix.tgz helpcontent_82_unix.tgz \
 		helpcontent_86_unix.tgz helpcontent_88_unix.tgz
 .endif
@@ -68,7 +68,7 @@ PKGNAMEPREFIX=		${LANG_PKGNAME}-
 .if defined(LANG_SUFFIX)
 PKGNAMESUFFIX?=		-${LANG_SUFFIX}
 .endif
-BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
+BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
 USE_GCC=3.2
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
@@ -79,7 +79,7 @@ CC=	gcc32
 CXX=	g++32
 .endif
 
-BUILD_DEPENDS+= ${JDKDIR}/bin/java:${PORTSDIR}/java/jdk14 \
+BUILD_DEPENDS+=	${JDKDIR}/bin/java:${PORTSDIR}/java/jdk14 \
 		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
@@ -119,7 +119,7 @@ LANG_EXT=		01
 .endif
 
 .if defined(ALL_LOCALIZED_LANGS)
-CONFIGURE_ARGS+=        --with-lang=ALL
+CONFIGURE_ARGS+=	--with-lang=ALL
 .endif
 
 .if defined(WITH_DEBUG)
