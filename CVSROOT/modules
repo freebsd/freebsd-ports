@@ -1741,6 +1741,7 @@ gcolor		ports/graphics/gcolor
 gcombust	ports/sysutils/gcombust
 gcompris	ports/games/gcompris
 gconf		ports/devel/gconf
+gconf-editor	ports/sysutils/gconf-editor
 gcore		src/usr.bin/gcore
 gctpc		ports/misc/gctpc
 gcvs		ports/devel/gcvs
