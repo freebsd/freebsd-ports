@@ -1,0 +1,12 @@
+R is a language which is not entirely unlike the S language developed
+at AT&T Bell Laboratories by Rick Becker, John Chambers and Allan
+Wilks.
+
+R is free software distributed under a GNU-style copyleft.
+
+This port has  most of the functionality in the first S book (the
+"Blue Book") and many of the applications.  In addition, a certain
+amount of functionality from the second S book (the "White Book")
+has been implemented.  In particular functioning versions of "lm"
+and "glm" and their associated "summary" and "anova" methods  are
+provided.
