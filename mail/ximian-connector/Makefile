@@ -7,6 +7,7 @@
 
 PORTNAME=	ximian
 PORTVERSION=	1.4.7.1
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://ftp.ximian.com/pub/source/evolution/
 PKGNAMESUFFIX=	-connector
@@ -25,7 +26,7 @@ WANT_OPENLDAP_VER=	21
 WANT_OPENLDAP_SASL=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnometarget
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -rpath ${X11BASE}/lib/evolution/${EVO_VERSION}"
 CONFIGURE_ARGS=	--with-openldap=${LOCALBASE} \
 		--with-static-ldap=no
 
