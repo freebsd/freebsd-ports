@@ -736,8 +736,11 @@ share/gnome/xbill/pixmaps/suse.xpm
 share/gnome/xbill/pixmaps/toaster.xpm
 share/gnome/xbill/pixmaps/turbolinux.xpm
 share/gnome/xbill/pixmaps/wingdows.xpm
-share/locale/bg/LC_MESSAGES/gnome-games.mo
+share/locale/am/LC_MESSAGES/gnome-games.mo
+share/locale/ar/LC_MESSAGES/gnome-games.mo
 share/locale/be/LC_MESSAGES/gnome-games.mo
+share/locale/bg/LC_MESSAGES/gnome-games.mo
+share/locale/bn/LC_MESSAGES/gnome-games.mo
 share/locale/ca/LC_MESSAGES/gnome-games.mo
 share/locale/cs/LC_MESSAGES/gnome-games.mo
 share/locale/da/LC_MESSAGES/gnome-games.mo
@@ -747,6 +750,7 @@ share/locale/en_GB/LC_MESSAGES/gnome-games.mo
 share/locale/es/LC_MESSAGES/gnome-games.mo
 share/locale/et/LC_MESSAGES/gnome-games.mo
 share/locale/eu/LC_MESSAGES/gnome-games.mo
+share/locale/fa/LC_MESSAGES/gnome-games.mo
 share/locale/fi/LC_MESSAGES/gnome-games.mo
 share/locale/fr/LC_MESSAGES/gnome-games.mo
 share/locale/ga/LC_MESSAGES/gnome-games.mo
@@ -757,6 +761,9 @@ share/locale/it/LC_MESSAGES/gnome-games.mo
 share/locale/ja/LC_MESSAGES/gnome-games.mo
 share/locale/ko/LC_MESSAGES/gnome-games.mo
 share/locale/lt/LC_MESSAGES/gnome-games.mo
+share/locale/lv/LC_MESSAGES/gnome-games.mo
+share/locale/mk/LC_MESSAGES/gnome-games.mo
+share/locale/mn/LC_MESSAGES/gnome-games.mo
 share/locale/ms/LC_MESSAGES/gnome-games.mo
 share/locale/nl/LC_MESSAGES/gnome-games.mo
 share/locale/nn/LC_MESSAGES/gnome-games.mo

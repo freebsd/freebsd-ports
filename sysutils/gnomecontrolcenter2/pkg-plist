@@ -129,6 +129,7 @@ share/locale/el/LC_MESSAGES/control-center-2.0.mo
 share/locale/en_GB/LC_MESSAGES/control-center-2.0.mo
 share/locale/es/LC_MESSAGES/control-center-2.0.mo
 share/locale/et/LC_MESSAGES/control-center-2.0.mo
+share/locale/fa/LC_MESSAGES/control-center-2.0.mo
 share/locale/fi/LC_MESSAGES/control-center-2.0.mo
 share/locale/fr/LC_MESSAGES/control-center-2.0.mo
 share/locale/ga/LC_MESSAGES/control-center-2.0.mo
@@ -154,6 +155,7 @@ share/locale/ro/LC_MESSAGES/control-center-2.0.mo
 share/locale/ru/LC_MESSAGES/control-center-2.0.mo
 share/locale/sk/LC_MESSAGES/control-center-2.0.mo
 share/locale/sl/LC_MESSAGES/control-center-2.0.mo
+share/locale/sq/LC_MESSAGES/control-center-2.0.mo
 share/locale/sv/LC_MESSAGES/control-center-2.0.mo
 share/locale/ta/LC_MESSAGES/control-center-2.0.mo
 share/locale/tr/LC_MESSAGES/control-center-2.0.mo
