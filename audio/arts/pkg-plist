@@ -1,3 +1,4 @@
+@comment files/links
 bin/artsc-config
 bin/artscat
 bin/artsd
@@ -130,3 +131,8 @@ lib/mcop/soundserver.mcopclass
 lib/mcop/soundserver.mcoptype
 lib/mcop/x11globalcomm.mcopclass
 lib/mcop/x11globalcomm.mcoptype
+@comment directories
+@dirrm lib/mcop/Arts
+@dirrm lib/mcop
+@dirrm include/artsc
+@dirrm include/arts
