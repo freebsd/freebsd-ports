@@ -1,5 +1,6 @@
 bin/xdelta
 include/xdelta.h
-lib/libxdelta.so.0.11
+lib/libxdelta.so.0.16.0
 lib/libxdelta.la
 lib/libxdelta.a
+man/man1/xdelta.1.gz
