@@ -195,6 +195,7 @@
     SUBDIR += p5-C-Scan
     SUBDIR += p5-Class-MethodMaker
     SUBDIR += p5-ConfigReader
+    SUBDIR += p5-Config-IniFiles
     SUBDIR += p5-Curses
     SUBDIR += p5-Data-Flow
     SUBDIR += p5-Data-ShowTable
@@ -219,7 +220,6 @@
     SUBDIR += p5-IO-stringy
     SUBDIR += p5-IPC-Shareable
     SUBDIR += p5-Include
-    SUBDIR += p5-IniConf
     SUBDIR += p5-Locale-Maketext
     SUBDIR += p5-Locale-PGetText
     SUBDIR += p5-Locale-gettext
