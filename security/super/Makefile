@@ -4,10 +4,10 @@
 # Date created:			  Fri Mar 18, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.5 1998/12/01 10:17:44 obrien Exp $
+# $Id: Makefile,v 1.6 1998/12/02 06:37:33 obrien Exp $
 #
 
-DISTNAME=	super-3.11.6
+DISTNAME=	super-3.11.8
 CATEGORIES=	security sysutils
 MASTER_SITES=	ftp://phobos.caltech.edu/users/will/  \
 		ftp://ftp.ucolick.org/pub/users/will/  \
