@@ -1,4 +1,0 @@
-bin/xgammon
-lib/X11/app-defaults/XGammon
-lib/X11/xgammon/xgammon.db
-@dirrm lib/X11/xgammon
