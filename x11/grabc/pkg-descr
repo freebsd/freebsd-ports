@@ -1,0 +1,11 @@
+grabc is s simple but very useful program to determine the color string in hex
+(or RGB components) by clicking on a pixel on the screen. While web browsing,
+lots of time you find a nice color and wonder what color is that! Well just
+use grabc!
+
+When this program is run, the mouse pointer is grabbed and changed to a cross
+hair and when the mouse is clicked, the color of the clicked pixel is written
+to stdout in hex prefixed with #. It will the R, G, B component also in the
+stderr.
+
+WWW: http://www.muquit.com/muquit/software/grabc/grabc.html
