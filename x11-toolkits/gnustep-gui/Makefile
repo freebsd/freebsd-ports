@@ -14,6 +14,7 @@ PORTVERSION=	0.7.6
 CATEGORIES=	x11-toolkits
 .if defined(GNUSTEP_GUI_DEVEL)
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
+PKGNAMESUFFIX?=	-devel
 .else
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
@@ -24,6 +25,9 @@ MAINTAINER=	dinoex@FreeBSD.org
 BUILD_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
 RUN_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
+.if defined(GNUSTEP_GUI_DEVEL)
+LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
+.endif
 
 BREAKS_IF_PEDANTIC=	yes
 .if defined(GNUSTEP_GUI_DEVEL)
