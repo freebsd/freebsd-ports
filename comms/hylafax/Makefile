@@ -36,7 +36,6 @@ CONFIGURE_ARGS+=--nointeractive
 .endif
 MAKE_ARGS+=	OPTIMIZER="" -EOPTIMIZER
 
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	ENVOPTS="${CFLAGS}"
 
@@ -75,10 +74,12 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${LOCALBASE} != /usr/local
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 post-patch:
 	${REINPLACE_CMD} -e 's^/usr/local^${LOCALBASE}^g' \
-		`find work/hylafax-4.1 -type f -print0 | \
-			xargs -0 fgrep -l --mmap /usr/local`
+		`find ${WRKSRC} -type f -print0 | \
+			xargs -0 ${GREP} -F -l --mmap /usr/local`
 .endif
 
 .include <bsd.port.post.mk>
