@@ -176,6 +176,7 @@
     SUBDIR += quelcom
     SUBDIR += radio
     SUBDIR += raproxy
+    SUBDIR += rawrec
     SUBDIR += rebler
     SUBDIR += replay
     SUBDIR += rio

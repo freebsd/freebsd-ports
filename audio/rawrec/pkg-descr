@@ -1,0 +1,5 @@
+rawrec provides a simple, minimalist way to record or play back raw audio
+data from the command line. It can work with files or standard IO, and so
+can provide a simple buffered shell audio interface for other programs.
+
+WWW: http://rawrec.sourceforge.net/
