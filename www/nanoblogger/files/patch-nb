@@ -1,0 +1,26 @@
+--- nb.orig	Thu Jul 15 16:06:32 2004
++++ nb	Thu Jul 15 16:08:43 2004
+@@ -1,4 +1,4 @@
+-#! /bin/bash
++#! /usr/bin/env bash
+ ############################################################
+ #  NanoBlogger 2.8 Copyright 2004 n1xt3r (Kevin R. Wood)   #
+ ############################################################
+@@ -7,7 +7,7 @@
+ VERSION="2.8"
+ 
+ # nanoblogger's install directory.
+-BASE_DIR=`dirname $0`
++BASE_DIR='%%PREFIX%%/share/nanoblogger'
+ 
+ # create a semi ISO 8601 formatted timestamp for archives
+ # used explicitly, please don't edit unless you know what you're doing.
+@@ -75,7 +75,7 @@
+ # loads global and user configurations
+ load_config(){
+ # always load global configs
+-. "$BASE_DIR"/nb.conf
++. %%PREFIX%%/etc/nb.conf
+ # check for user's .nb.conf in their home directory.
+ [ -f "$HOME/.nb.conf" ] && . "$HOME/.nb.conf"
+ # USR_BLOGDIR overrides BLOG_DIR
