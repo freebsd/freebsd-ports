@@ -1,0 +1,14 @@
+
+---  NOTICE ---
+xjump is set to use /var/games/xjump.record for its scorekeeping.
+However, due to security concerns, xjump is not installed setgid
+games, and thus cannot write this file.  In order to enable keeping
+scores, you will need to run these commands:
+
+	1) touch /var/games/xjump.record
+	2) chmod 664 /var/games/xjump.record
+	3) chmod 2755 ${PREFIX}/bin/xjump
+
+where ${PREFIX} is the prefix that xjump was installed under,
+which is usually /usr/X11R6.
+
