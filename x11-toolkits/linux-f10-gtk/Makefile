@@ -26,13 +26,13 @@ DIST_SUBDIR=	rpm
 EXTRACT_ONLY=
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
-PLIST=		${PKGDIR}/pkg-plist.${MACHINE_ARCH}
+PLIST?=		${PKGDIR}/pkg-plist.${MACHINE_ARCH}
 MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
 # Let's avoid hardcoding 'en' as the language.
 LANG=		en
 # Set the version of linux_base
-BASEVERSION=	7.1
+BASEVERSION?=	7.1
 RPM_MIRRORS=	\
 	ftp://ftp.redhat.com/pub/redhat/__DIR__/ \
 	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/__DIR__/ \
