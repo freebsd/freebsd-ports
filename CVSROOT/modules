@@ -7406,6 +7406,7 @@ ruby-gsl	ports/math/ruby-gsl
 ruby-gtk	ports/x11-toolkits/ruby-gtk
 ruby-gtk2	ports/x11-toolkits/ruby-gtk2
 ruby-hmac	ports/security/ruby-hmac
+ruby-html-fillinform	ports/textproc/ruby-html-fillinform
 ruby-html-parser	ports/textproc/ruby-html-parser
 ruby-htmlcompact	ports/textproc/ruby-htmlcompact
 ruby-htmlrepair	ports/textproc/ruby-htmlrepair
