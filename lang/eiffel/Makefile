@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.cm.cf.ac.uk/pub/Eiffel/SIG/Eiffel-S-1.3/BSD/
 DISTNAME=	eiffels13a
 EXTRACT_SUFX=	.freebsd.tar.gz
 
-MAINTAINER=	erich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/eiffel
 

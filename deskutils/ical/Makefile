@@ -10,7 +10,7 @@ PORTVERSION=	2.2
 CATEGORIES=	deskutils tk82
 MASTER_SITES=	http://www.research.digital.com/SRC/personal/Sanjay_Ghemawat/ical/icalbins/
 
-MAINTAINER=	erich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=    tk82.1:${PORTSDIR}/x11-toolkits/tk82
 

@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.informatik.tu-muenchen.de/pub/comp/graphics/mpeg/mplex/
 
-MAINTAINER=	erich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MAN1=		mplex.1
 
