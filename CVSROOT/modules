@@ -3397,6 +3397,7 @@ konverse	ports/net/konverse
 kopete		ports/net/kopete
 korelib		ports/devel/korelib
 kp		ports/misc/kp
+kplayer		ports/multimedia/kplayer
 kpovmodeler	ports/graphics/kpovmodeler
 kprof		ports/devel/kprof
 kpsk		ports/comms/kpsk
