@@ -11,7 +11,7 @@ CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/ui
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 ALL_TARGET=		SRCDIR=${WRKSRC} libcdk.so.1
 

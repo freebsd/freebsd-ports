@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 			ftp://ftp.infodrom.north.de/pub/Linux/Devel/dbview/
 MASTER_SITE_SUBDIR=	apps/database/proprietary
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 LIB_DEPENDS=		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

@@ -10,7 +10,7 @@ DISTNAME=	genius-0.4.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://ftp.5z.com/pub/genius/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore

@@ -12,7 +12,7 @@ MASTER_SITES=		http://plasma.gsfc.nasa.gov/Ssystem/ \
 			http://www.wam.umd.edu/~kamelkev/Ssystem/ \
 			http://www.wam.umd.edu/~kamelkev/
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg \
 			GL.14:${PORTSDIR}/graphics/Mesa3 \
