@@ -5,16 +5,11 @@
 # $FreeBSD$
 #
 
-#
-# Not all servers archie could find actually still have it.  Alas, some
-# servers only have the comp.sources.x version, with its distfile named
-# `part01.gz'.
-#
-
 PORTNAME=	xpostit
 PORTVERSION=	3.3.1
 CATEGORIES=	deskutils
-MASTER_SITES=	ftp://ftp.hrz.tu-darmstadt.de/pub/X11/R5contrib/
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
+		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
@@ -22,6 +17,5 @@ MAINTAINER=	joerg@FreeBSD.org
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/xpostit
-MAN1=		xpostit.1
 
 .include <bsd.port.mk>
