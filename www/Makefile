@@ -255,6 +255,7 @@
     SUBDIR += pruby
     SUBDIR += publicfile
     SUBDIR += py-HTMLgen
+    SUBDIR += py-websvcs
     SUBDIR += qdecoder
     SUBDIR += quanta
     SUBDIR += quixote
