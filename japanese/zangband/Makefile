@@ -19,7 +19,7 @@ JAPANESE=	yes
 JA_MASTER_SITE=	http://www.geocities.co.jp/SiliconValley-SanJose/9606/zg/
 ANGBANDLIB?= 	lib/jzangband
 ANGBANDBIN?= 	bin/jzangband
-JA_PLIST= 	PLIST.ja
+JA_PLIST= 	pkg-plist.ja
 MAKE_ARGS+=	JAPANESE_CFLAGS="-DJP -DEUC"
 
 .include "${MASTERDIR}/Makefile"
