@@ -14,6 +14,7 @@ bin/ps2ascii
 bin/ps2epsi
 bin/ps2pdf
 bin/wftopfa
+bin/ert
 man/man1/ps2ascii.1.gz
 man/man1/gs.1.gz
 man/man1/ps2pdf.1.gz
@@ -267,12 +268,17 @@ share/ghostscript/5.10vflib/doc/gs261j.jis
 share/ghostscript/5.10vflib/doc/gs261j.doc
 share/ghostscript/5.10vflib/doc/README.gs5.10-jpdf
 share/ghostscript/5.10vflib/doc/gdev10v.jis
-share/ghostscript/5.10vflib/doc/gdevep82.jis
 share/ghostscript/5.10vflib/doc/gdevlips4.euc
 share/ghostscript/5.10vflib/doc/gdevmjc.jis
 share/ghostscript/5.10vflib/doc/MJ700V2C.FAQ
 share/ghostscript/5.10vflib/doc/gdevdmpr.sj
 share/ghostscript/5.10vflib/doc/gdevnpdl.jis
+share/ghostscript/5.10vflib/doc/epag-3.01/FILES
+share/ghostscript/5.10vflib/doc/epag-3.01/gdevepag.txt
+share/ghostscript/5.10vflib/doc/epag-3.01/ert.txt
+share/ghostscript/5.10vflib/doc/epag-3.01/adjust.ps
+share/ghostscript/5.10vflib/doc/epag-3.01/gsepagif.sh
+share/ghostscript/5.10vflib/doc/epag-3.01/psprint
 share/ghostscript/5.10vflib/gs_btokn.ps
 share/ghostscript/5.10vflib/gs_ccfnt.ps
 share/ghostscript/5.10vflib/gs_cff.ps
@@ -394,6 +400,7 @@ share/ghostscript/5.10vflib/dmp_site.ps
 share/ghostscript/5.10vflib/escp_24.src
 share/ghostscript/5.10vflib/testpage.ps
 @dirrm share/ghostscript/5.10vflib/kanji
+@dirrm share/ghostscript/5.10vflib/doc/epag-3.01
 @dirrm share/ghostscript/5.10vflib/doc
 @dirrm share/ghostscript/5.10vflib/examples
 @dirrm share/ghostscript/5.10vflib
