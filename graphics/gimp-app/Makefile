@@ -3,7 +3,7 @@
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/19 03:36:27 erich Exp $
+# $Id: Makefile,v 1.2 1996/11/19 16:07:26 erich Exp $
 #
 
 DISTNAME=       gimp
@@ -15,12 +15,11 @@ DISTFILES=	gimp961001.tgz
 MAINTAINER=     erich@FreeBSD.org
 
 LIB_DEPENDS+=	png\\.0\\.[7-9]:${PORTSDIR}/graphics/png
-LIB_DEPENDS+=	jpeg\\.6\\.:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	tiff\\.3\\.:${PORTSDIR}/graphics/tiff
 LIB_DEPENDS+=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 USE_X11=	yes
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
