@@ -1,0 +1,11 @@
+--- examples/modules/Makefile.in.orig	Thu Jan  2 05:07:46 2003
++++ examples/modules/Makefile.in	Wed Jan 15 02:48:58 2003
+@@ -183,7 +183,7 @@
+ 	-no-undefined
+ 
+ regex_la_SOURCES = regex.c re.c
+-regex_la_LIBADD = ../../lib-src/library.la @LIBSNPRINTFV@
++regex_la_LIBADD = ../../lib-src/library.la
+ 
+ md5_la_SOURCES = md5.c
+ md5_la_LDFLAGS = -release $(VERSION) -module -no-undefined
