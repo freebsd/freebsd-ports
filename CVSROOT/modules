@@ -10273,6 +10273,7 @@ tcltls		ports/devel/tcltls
 tcltutor	ports/lang/tcltutor
 tclxml		ports/devel/tclxml
 tcm		ports/graphics/tcm
+tcmplex-panteltje	ports/multimedia/tcmplex-panteltje
 tcpblast	ports/benchmarks/tcpblast
 tcpcat		ports/net/tcpcat
 tcpdstat	ports/net/tcpdstat
