@@ -390,6 +390,7 @@
     SUBDIR += samplicator
     SUBDIR += satellite
     SUBDIR += scdp
+    SUBDIR += scli
     SUBDIR += scotty
     SUBDIR += scotty3
     SUBDIR += sdl_net
@@ -413,7 +414,6 @@
     SUBDIR += ssldump
     SUBDIR += sting
     SUBDIR += stone
-    SUBDIR += stools
     SUBDIR += suckblow
     SUBDIR += sup
     SUBDIR += svnc
