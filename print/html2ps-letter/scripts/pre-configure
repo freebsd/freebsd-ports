@@ -1,0 +1,7 @@
+#! /bin/sh
+
+perl -pi -e "s=!!PREFIX!!=$PREFIX=" ${WRKSRC}/install
+perl -pi -e "s=!!PERL5!!=/usr/local/bin/perl=" ${WRKSRC}/install
+perl -pi -e "s=!!PERL5!!=/usr/local/bin/perl=" ${WRKSRC}/html2ps
+
+exit 0

@@ -1,0 +1,9 @@
+--- html2ps.orig	Sun May 17 21:29:01 1998
++++ html2ps	Sun May 17 21:29:26 1998
+@@ -1,5 +1,5 @@
+ : # Use perl
+-eval 'exec perl -S $0 "$@"'
++eval 'exec !!PERL5!! -S $0 "$@"'
+   if $running_under_some_shell;
+ 
+ # This is html2ps version 1.0 beta1, an HTML-to-PostScript converter.
