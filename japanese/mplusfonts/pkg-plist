@@ -54,7 +54,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE_J
 %%PORTDOCS%%%%DOCSDIR%%/README_E
 %%PORTDOCS%%%%DOCSDIR%%/README_J
-%%PORTDOCS%%%%DOCSDIR%%/README_mplusj10
 @dirrm %%DOCSDIR%%
 @exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
 @exec cat  %D/%%DOCSDIR%%/fonts.alias >> %D/%%FONTSDIR%%/fonts.alias
