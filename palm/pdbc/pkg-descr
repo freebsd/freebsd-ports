@@ -1,0 +1,15 @@
+pdbc is a compiler that converts a source file into a Palm DataBase (PDB) file
+or Palm Resource (PRC) file.  The language the pdbc compiler understands is
+designed to be easy to understand and write.  Yet it is powerful enough to give
+the freedom to describe the binary content of the database records in a variety
+of ways.  It is also easy to generate the pdbc source file from another
+language (e.g.  Perl).
+
+In addition to the pdbc tool there is also pdbdec.  pdbdec is a decompiler
+which converts any PDB or PRC file into a pdbc source file.  This is useful to
+check the correctness of the pdbc generated file and to analyze other PDB
+files.
+
+pdbc and pdbdec are command line tools.
+
+WWW: http://obermuhlner.com/public/Projects/Palm/PDBC/

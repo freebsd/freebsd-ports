@@ -22,6 +22,7 @@
     SUBDIR += palmos-sdk
     SUBDIR += palmpower
     SUBDIR += pdbar
+    SUBDIR += pdbc
     SUBDIR += pilot-link
     SUBDIR += pilot_makedoc
     SUBDIR += pilrc
