@@ -9,8 +9,8 @@
 DISTNAME=	jls-0.1
 PKGNAME=	ja-ls-0.1
 CATEGORIES=	japanese
-MASTER_SITES=	http://www.freebsd.org/~shige/ports/ \
-		http://www.yuasa.kuis.kyoto-u.ac.jp/~shige/FreeBSD/programs/
+MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
+		http://www.freebsd.org/~shige/ports/
 
 MAINTAINER=	shige@FreeBSD.org
 
