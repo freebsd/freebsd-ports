@@ -7,11 +7,12 @@
 #
 
 PORTNAME=	pdftohtml
-PORTVERSION=	0.32b
+PORTVERSION=	0.33a
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://ports.tolkien.dk/pdftohtml/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_0_32b
+DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/}
 
 MAINTAINER=	boll@fork.dk
 
@@ -19,10 +20,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pdftohtml.bin ${PREFIX}/bin/pdftohtml
-	${INSTALL_PROGRAM} ${WRKSRC}/pdftops.bin ${PREFIX}/bin/pdftops
-post-install:
-	strip ${PREFIX}/bin/pdftohtml
-	strip ${PREFIX}/bin/pdftops
+	@${INSTALL_PROGRAM} ${WRKSRC}/pdftohtml ${PREFIX}/bin
 
 .include <bsd.port.mk>

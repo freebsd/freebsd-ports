@@ -1,0 +1,22 @@
+--- xpdf/Makefile.orig	Sun Apr 21 18:25:54 2002
++++ xpdf/Makefile	Tue Apr 23 23:02:09 2002
+@@ -9,16 +9,15 @@
+ 
+ SHELL = /bin/sh
+ 
+-prefix = /usr/local
+ srcdir = .
+ 
+ GOOSRCDIR = $(srcdir)/../goo
+ GOOLIBDIR = ../goo
+ 
+-CXXFLAGS = -g -O2 -DHAVE_CONFIG_H -I.. -I$(GOOSRCDIR) -I$(srcdir) 
++CXXFLAGS += -DHAVE_CONFIG_H -I.. -I$(GOOSRCDIR) -I$(srcdir) 
+ 
+-CC = gcc
+-CXX = c++
++CC ?= cc
++CXX ?= c++
+ AR = ar rc
+ RANLIB = ranlib
+ 
