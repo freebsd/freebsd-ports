@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	optparse
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://member.nifty.ne.jp/nokada/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,9 +18,9 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-DOCS_EN=	ChangeLog.html \
+DOCS_EN=	ChangeLog \
+		ChangeLog.html \
 		README.en \
-		optparse.en.rd \
 		optparse.html \
 		optparse.rlog \
 		rmi.html
