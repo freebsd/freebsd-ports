@@ -1,0 +1,17 @@
+--- mpg123.c.orig	Fri Jun 18 14:18:11 1999
++++ mpg123.c	Mon Feb 10 11:58:08 2003
+@@ -920,10 +920,10 @@
+ 
+ #if !defined(GENERIC)
+ {
+-     const char *term_type;
+-         term_type = getenv("TERM");
+-         if (!strcmp(term_type,"xterm"))
+-         {
++  const char *term_type;
++
++         if (((term_type = getenv("TERM")) != NULL)
++		&& (!strcmp(term_type,"xterm"))) {
+            fprintf(stderr, "\033]0;%s\007", filename);
+          }
+ }
