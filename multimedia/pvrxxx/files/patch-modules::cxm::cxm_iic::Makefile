@@ -1,0 +1,9 @@
+--- modules/cxm/cxm_iic/Makefile.orig	Fri Oct 15 20:55:23 2004
++++ modules/cxm/cxm_iic/Makefile	Fri Oct 15 20:55:43 2004
+@@ -2,5 +2,6 @@
+ KMOD	= cxm_iic
+ SRCS	= cxm_i2c.c cxm.h \
+ 	  opt_cxm.h bus_if.h device_if.h iicbb_if.h pci_if.h
++CFLAGS  += -I../../..
+ 
+ .include <bsd.kmod.mk>

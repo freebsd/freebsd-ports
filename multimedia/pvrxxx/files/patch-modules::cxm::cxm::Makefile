@@ -1,0 +1,9 @@
+--- modules/cxm/cxm/Makefile.orig	Fri Oct 15 20:53:47 2004
++++ modules/cxm/cxm/Makefile	Fri Oct 15 20:55:03 2004
+@@ -3,5 +3,6 @@
+ SRCS	= cxm.c cxm.h cxm_dec_fw.c cxm_enc_fw.c cxm_audio.c cxm_eeprom.c \
+ 	  cxm_ir.c cxm_tuner.c cxm_video.c opt_cxm.h \
+ 	  bus_if.h device_if.h iicbb_if.h pci_if.h vnode_if.h
++CFLAGS+= -I../../..
+ 
+ .include <bsd.kmod.mk>

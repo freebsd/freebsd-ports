@@ -104,6 +104,7 @@
     SUBDIR += p5-Video-Info
     SUBDIR += p5-Video-OpenQuicktime
     SUBDIR += ppm2fli
+    SUBDIR += pvr250
     SUBDIR += py-gstreamer
     SUBDIR += qdvdauthor
     SUBDIR += quark
