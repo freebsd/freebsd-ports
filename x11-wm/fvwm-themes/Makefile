@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	fvwm-themes
 DISTFILES=	fvwm-themes-base-${PORTVERSION}${EXTRACT_SUFX} \
 		fvwm-themes-extra-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	mkm@ieee.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Themes for the Fvwm2 window manager
 
 BUILD_DEPENDS=	fvwm2:${PORTSDIR}/x11-wm/fvwm2 \
