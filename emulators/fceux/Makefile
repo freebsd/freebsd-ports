@@ -7,6 +7,7 @@
 
 PORTNAME=	fceu
 PORTVERSION=	0.97.5
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://xodnizel.net/fceultra/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src

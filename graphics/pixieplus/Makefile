@@ -7,7 +7,7 @@
 
 PORTNAME=	pixieplus
 PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://people.fruitsalad.org/avleeuwen/distfiles/${PORTNAME}/
 

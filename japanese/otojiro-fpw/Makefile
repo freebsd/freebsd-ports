@@ -7,6 +7,7 @@
 
 PORTNAME=	otojiro-fpw
 PORTVERSION=	1.0.a
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/eijiro/ \
 		http://member.nifty.ne.jp/~satomii/freepwing/archive/

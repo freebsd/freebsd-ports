@@ -8,7 +8,7 @@
 
 PORTNAME=	ppl
 PORTVERSION=	0.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.unipr.it/pub/ppl/releases/%SUBDIR%/ \
 		http://www.cs.unipr.it/ppl/Download/ftp/releases/%SUBDIR%/

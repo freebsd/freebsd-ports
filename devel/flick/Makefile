@@ -7,6 +7,7 @@
 
 PORTNAME=	flick
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://flux.cs.utah.edu/flux/flick/2.1/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tar.gz

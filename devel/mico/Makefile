@@ -7,6 +7,7 @@
 
 PORTNAME=	mico
 PORTVERSION=	2.3.11
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mico.org/:src \
 		http://www.ciam.ru/~sem/FreeBSD/:docs

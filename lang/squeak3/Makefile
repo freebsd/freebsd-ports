@@ -7,7 +7,7 @@
 
 PORTNAME=	squeak
 PORTVERSION=	3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.5/ \
 		http://www-sor.inria.fr/~piumarta/squeak/unix/release/ \

@@ -13,6 +13,7 @@
 
 PORTNAME=	kaffe
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/v1.1.x-development/
 PKGNAMESUFFIX=	-devel

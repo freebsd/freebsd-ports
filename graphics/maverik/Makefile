@@ -8,6 +8,7 @@
 
 PORTNAME=	maverik
 PORTVERSION=	6.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://aig.cs.man.ac.uk/maverik/
 

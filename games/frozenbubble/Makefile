@@ -7,7 +7,7 @@
 
 PORTNAME=	frozenbubble
 PORTVERSION=	0.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://people.mandrakesoft.com/~gc/fb/ \
 		http://frozenbubble.free.fr/fb/

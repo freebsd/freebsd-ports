@@ -8,6 +8,7 @@
 
 PORTNAME=	stardict
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.cn.FreeBSD.org/pub/ported/
 PKGNAMEPREFIX=	zh-

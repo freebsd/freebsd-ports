@@ -7,6 +7,7 @@
 
 PORTNAME=	fpp
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlib.org/fortran/
 DISTNAME=	fdfpp

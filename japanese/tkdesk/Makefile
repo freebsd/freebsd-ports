@@ -7,6 +7,7 @@
 
 PORTNAME=	tkdesk
 PORTVERSION=	${VERSION}${VERSION_PL}
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fm tk42
 MASTER_SITES=	http://people.mainz.netsurf.de/~bolik/tkdesk/
 DISTNAME=	${PORTNAME}-${VERSION}

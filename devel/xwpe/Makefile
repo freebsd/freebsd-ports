@@ -8,6 +8,7 @@
 
 PORTNAME=	xwpe
 PORTVERSION=	1.5.29a
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.identicalsoftware.com/xwpe/ \

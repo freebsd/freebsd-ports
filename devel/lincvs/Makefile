@@ -7,6 +7,7 @@
 
 PORTNAME=	lincvs
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	http://ppprs1.phy.tu-dresden.de/~trogisch/lincvs/download/LinCVS/${PORTNAME}-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-0-generic-src

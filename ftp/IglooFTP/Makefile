@@ -7,6 +7,7 @@
 
 PORTNAME=	IglooFTP
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://littleigloo.org/pub/iglooftp/

@@ -7,6 +7,7 @@
 
 PORTNAME=	bforce
 PORTVERSION=	0.22.8
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://bforce.chbs.ru/
 

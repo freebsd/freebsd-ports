@@ -8,6 +8,7 @@
 
 PORTNAME=	pythoncad
 PORTVERSION=	10
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.pythoncad.org/releases/
 DISTNAME=	PythonCAD-DS1-R${PORTVERSION}

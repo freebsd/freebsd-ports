@@ -7,6 +7,7 @@
 
 PORTNAME=	olirc
 PORTVERSION=	0.0.38.a3.2
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://olirc.sourceforge.net/
 DISTNAME=	olirc-0.0.38-alpha-3.2

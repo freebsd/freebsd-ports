@@ -7,6 +7,7 @@
 
 PORTNAME=	gniffel
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	games gnome
 # mastersite disappeared in February 2002
 MASTER_SITES=	# http://www.informatik.fh-wiesbaden.de/~i820/downloads/

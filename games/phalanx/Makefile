@@ -7,6 +7,7 @@
 
 PORTNAME=	phalanx
 PORTVERSION=	22
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.math.muni.cz/pub/math/people/Dobes/ \
 		http://dusan.freeshell.org/phalanx/

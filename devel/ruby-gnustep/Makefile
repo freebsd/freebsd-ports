@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel ruby
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/libs/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

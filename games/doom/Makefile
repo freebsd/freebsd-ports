@@ -7,6 +7,7 @@
 
 PORTNAME=	doom
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES?=	ftp://ftp.idsoftware.com/idstuff/source/ \
 		ftp://ftp.stomped.com/pub/idmirror/idstuff/source/ \

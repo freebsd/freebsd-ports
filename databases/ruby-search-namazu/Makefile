@@ -7,7 +7,7 @@
 
 PORTNAME=	search-namazu
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://ftp.tietew.jp/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

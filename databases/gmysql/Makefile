@@ -7,6 +7,7 @@
 
 PORTNAME=	gmysql
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.loth.demon.co.uk/people/steved/projects/gmysql/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/

@@ -7,6 +7,7 @@
 
 PORTNAME=	nana
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.ntu.edu.au/pub/nana/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	scrollz
 PORTVERSION=	1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://scrollz.broken.com/source/ \
 		ftp://ftp.du.se/pub/mirrors/ScrollZ/source/

@@ -7,6 +7,7 @@
 
 PORTNAME=	logkit
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	http://www.apache.org/dist/avalon/${PORTNAME:S,-,/,}/binaries/
 PKGNAMEPREFIX=	avalon-

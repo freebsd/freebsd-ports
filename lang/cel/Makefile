@@ -7,6 +7,7 @@
 
 PORTNAME=	cel
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.redwoodsoft.com/cel/
 EXTRACT_SUFX=	.tgz

@@ -7,6 +7,7 @@
 
 PORTNAME=	wmusic
 PORTVERSION=	1.4.12
+PORTREVISION=	1
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://home.jtan.com/~john/wmusic/downloads/
 EXTRACT_SUFX=	-src.tar.gz

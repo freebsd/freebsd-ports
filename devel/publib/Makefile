@@ -7,6 +7,7 @@
 
 PORTNAME=	publib
 PORTVERSION=	0.32
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/p/publib/
 DISTNAME=	publib_0.32.orig

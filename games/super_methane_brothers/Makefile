@@ -7,6 +7,7 @@
 
 PORTNAME=	super_methane_brothers
 PORTVERSION=	1.4.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.methane.fsnet.co.uk/
 DISTNAME=	methane

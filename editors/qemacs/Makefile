@@ -7,6 +7,7 @@
 
 PORTNAME=	qemacs
 PORTVERSION=	0.3.p.12
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://fabrice.bellard.free.fr/qemacs/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p./pre/}

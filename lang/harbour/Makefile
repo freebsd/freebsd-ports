@@ -7,7 +7,7 @@
 
 PORTNAME=      harbour
 PORTVERSION=   0.43.2
-PORTREVISION=  0
+PORTREVISION=  1
 CATEGORIES=    lang
 MASTER_SITES=  ftp://ftp.jsd0.com/public/harbour/dgh/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	jakarta-struts
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	http://www.apache.org/dist/jakarta/struts/binaries/ \
 		http://apache.dnepr.net/jakarta/struts/binaries/

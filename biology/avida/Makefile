@@ -7,6 +7,7 @@
 
 PORTNAME=	avida
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://dllab.caltech.edu/avida/versions/
 

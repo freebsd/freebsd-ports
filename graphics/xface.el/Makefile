@@ -7,6 +7,7 @@
 
 PORTNAME=	xface.el
 PORTVERSION=	1.3.6.24
+PORTREVISION=	1
 CATEGORIES=	graphics elisp
 MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/ \
 		ftp://ftp.opaopa.org/pub/mirror/elisp/jpl/elisp/

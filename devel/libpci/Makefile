@@ -7,7 +7,7 @@
 
 PORTNAME=	libpci
 PORTVERSION=	2.1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kerneled.com/freebsd/ports/ \
 		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \

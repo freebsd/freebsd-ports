@@ -7,6 +7,7 @@
 
 PORTNAME=	openthreads
 PORTVERSION=	1.2d3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~yinjieh/
 DISTNAME=	OpenThreads-v1.2dev3-osg0.9.6

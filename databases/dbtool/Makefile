@@ -8,6 +8,7 @@
 
 PORTNAME=	dbtool
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.daemon.de/scip/Apps/dbtool/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	ecasound
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 

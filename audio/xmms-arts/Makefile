@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-arts
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://stukach.com/hosted/m.i.a/xmmsarts/
 DISTNAME=	${PORTNAME:S/-//}-${PORTVERSION}

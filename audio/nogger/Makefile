@@ -7,7 +7,7 @@
 
 PORTNAME=	nogger
 PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.efd.lth.se/~d00jkr/nogger/
 

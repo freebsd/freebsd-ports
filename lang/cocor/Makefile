@@ -7,6 +7,7 @@
 
 PORTNAME=	cocor
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.scifac.ru.ac.za/coco/
 DISTNAME=	cocorc17

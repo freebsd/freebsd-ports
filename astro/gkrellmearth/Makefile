@@ -8,6 +8,7 @@
 
 PORTNAME=	earth
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://www.geocities.com/saintdead/
 PKGNAMEPREFIX=	gkrellm

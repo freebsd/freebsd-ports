@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-liveice
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://star.arm.ac.uk/~spm/software/
 DISTNAME=	liveice-xmms

@@ -7,6 +7,7 @@
 
 PORTNAME=	roadmap
 PORTVERSION=	1.0.r6
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://roadmap.saignon.net/roadmap/
 MASTER_SITE_SUBDIR=	${PORTNAME}

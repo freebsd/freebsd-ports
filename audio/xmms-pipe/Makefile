@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-pipe
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://rooster.stanford.edu/~ben/xmmspipe/
 DISTNAME=	xmmspipe-${PORTVERSION}

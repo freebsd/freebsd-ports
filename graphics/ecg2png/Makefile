@@ -7,7 +7,7 @@
 
 PORTNAME=	ecg2png
 PORTVERSION=	0.30
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cardiothink.com/downloads/ecg2png/
 

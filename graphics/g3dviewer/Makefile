@@ -8,6 +8,7 @@
 
 PORTNAME=	g3dviewer
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://madsworld.exhome.de/downloads/
 

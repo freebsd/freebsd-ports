@@ -9,6 +9,7 @@
 
 PORTNAME=	crossgo32
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://sources.redhat.com/pub/crossgcc/

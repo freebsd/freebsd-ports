@@ -7,6 +7,7 @@
 
 PORTNAME=	arrow
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.uniovi.es/pub/unix/mail/
 DISTNAME=	Arrow_source-${PORTVERSION}

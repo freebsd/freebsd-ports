@@ -8,6 +8,7 @@
 
 PORTNAME=	ale
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://auricle.dyndns.org/ALE/download/
 PATCH_SITES=	http://auricle.dyndns.org/ALE/bugs/

@@ -7,6 +7,7 @@
 
 PORTNAME=		ttfonts-ja
 PORTVERSION=		1.2
+PORTREVISION=	1
 CATEGORIES=		japanese x11-fonts linux
 
 MAINTAINER=	trevor@FreeBSD.org

@@ -7,6 +7,7 @@
 
 PORTNAME=	icu
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://oss.software.ibm.com/developerworks/opensource/icu/project/download/${PORTVERSION}/
 EXTRACT_SUFX=   .tgz

@@ -7,7 +7,7 @@
 
 PORTNAME=	xglobe
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://www.cs.unc.edu/~scheuerm/xglobe/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	ifm
 PORTVERSION=	4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games tk84
 MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/mapping-tools/ \
 		ftp://www.plover.net/if-archive/mapping-tools/ \

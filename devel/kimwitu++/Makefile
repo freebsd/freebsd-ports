@@ -8,6 +8,7 @@
 
 PORTNAME=	kimwitu++
 PORTVERSION=	2.3.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://site.informatik.hu-berlin.de/kimwitu++/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	pgbash
 PORTVERSION=	7.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.psn.co.jp/PostgreSQL/pgbash/:pgsource \
 		${MASTER_SITE_GNU:S/$/:bashsrc/}

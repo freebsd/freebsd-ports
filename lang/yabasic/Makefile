@@ -7,6 +7,7 @@
 
 PORTNAME=	yabasic
 PORTVERSION=	2.730
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.yabasic.de/download/
 

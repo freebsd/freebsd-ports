@@ -8,6 +8,7 @@
 
 PORTNAME=	argouml
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://argouml.tigris.org/files/documents/4/0/argouml-0.14/
 DISTNAME=	ArgoUML-${PORTVERSION}

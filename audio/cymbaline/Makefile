@@ -8,7 +8,7 @@
 
 PORTNAME=	cymbaline
 PORTVERSION=	0.9r
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.silmarill.org/files/
 

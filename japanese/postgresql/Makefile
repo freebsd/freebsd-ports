@@ -7,6 +7,7 @@
 
 PORTNAME=	postgresql
 PORTVERSION=	6.5.3
+PORTREVISION=	1
 CATEGORIES=	japanese databases
 MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/dbms/PostgreSQL/ \
 		ftp://ftp.sra.co.jp/pub/cmd/postgres/${PORTVERSION}/ \

@@ -7,7 +7,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.10.91
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://lev.serebryakov.spb.ru/download/agenda/
 PKGNAMEPREFIX=	mipsel-linux-

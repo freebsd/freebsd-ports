@@ -7,6 +7,7 @@
 
 PORTNAME=	libexif
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://tam.0xfa.com/ruby-libexif/pkg/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

@@ -7,6 +7,7 @@
 
 PORTNAME=	myodbc
 PORTVERSION=	2.50.39
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.mysql.com/Downloads/MyODBC/ \
 		ftp://sunsite.dk/mirrors/mysql/Downloads/MyODBC/ \

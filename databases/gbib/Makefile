@@ -7,7 +7,7 @@
 
 PORTNAME=	gbib
 PORTVERSION=	0.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases editors gnome
 MASTER_SITES=	ftp://ftp.seul.org/pub/gbib/src/ \
 		http://www.unixpages.org/distfiles/

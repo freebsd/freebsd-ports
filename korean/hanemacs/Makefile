@@ -7,6 +7,7 @@
 
 PORTNAME=	hanemacs
 PORTVERSION=	19.34b.1
+PORTREVISION=	1
 CATEGORIES=	korean editors
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/ \
 		ftp://ftp.kaist.ac.kr/pub/hangul/editor/HanEmacs/ \

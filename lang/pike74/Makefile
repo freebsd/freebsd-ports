@@ -7,7 +7,7 @@
 
 PORTNAME=	pike74
 PORTVERSION=	7.4.31
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/ \

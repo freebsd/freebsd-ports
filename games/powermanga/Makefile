@@ -7,6 +7,7 @@
 
 PORTNAME=		powermanga
 PORTVERSION=		0.78
+PORTREVISION=	1
 CATEGORIES=		games
 MASTER_SITES=		http://www.tlk.fr/lesjeux/
 DISTNAME=		${PORTNAME}

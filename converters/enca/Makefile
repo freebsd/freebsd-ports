@@ -7,6 +7,7 @@
 
 PORTNAME=	enca
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	converters textproc russian ukrainian
 MASTER_SITES=	http://kf.fyz.fce.vutbr.cz/~yeti/Ftp/enca/
 

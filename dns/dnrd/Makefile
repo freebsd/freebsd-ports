@@ -7,7 +7,7 @@
 
 PORTNAME=       	dnrd
 PORTVERSION=		2.10
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=     	dns
 MASTER_SITES=   	http://users.zoominternet.net/~garsh/dnrd/archive/ \
 			http://www.netsw.org/net/ip/infoservice/dns/dnrd/

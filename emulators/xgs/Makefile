@@ -9,6 +9,7 @@
 
 PORTNAME=	xgs
 PORTVERSION=	0.50
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.inwards.com/xgs/ \
 		http://www.inwards.com/xgs/2mg/

@@ -7,6 +7,7 @@
 
 PORTNAME=	whups
 PORTVERSION=	0.0.1.020303
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	http://pompo.net/horde/whups/
 

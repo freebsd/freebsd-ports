@@ -7,7 +7,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	0.9.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.reptilelabour.com/software/files/chromium/
 DISTFILES=	${PORTNAME}-src-${PORTVERSION}.tar.gz \

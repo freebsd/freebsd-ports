@@ -7,6 +7,7 @@
 
 PORTNAME=	imlib
 PORTVERSION=	1.9.8.1
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 
 MAINTAINER=	taoka@FreeBSD.org

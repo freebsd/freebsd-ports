@@ -7,6 +7,7 @@
 
 PORTNAME=	nighthawk
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://jsno.leal.com.au/rel/unix_projects/

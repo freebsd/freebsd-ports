@@ -7,6 +7,7 @@
 
 PORTNAME=	jigdo
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://home.in.tum.de/~atterer/jigdo/
 

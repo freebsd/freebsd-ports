@@ -7,6 +7,7 @@
 
 PORTNAME=	jpeg
 PORTVERSION=	6b.15
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 
 MAINTAINER=	ports@FreeBSD.org

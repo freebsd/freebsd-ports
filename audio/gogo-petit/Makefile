@@ -7,6 +7,7 @@
 
 PORTNAME=	gogo
 PORTVERSION=	3.11
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://homepage1.nifty.com/herumi/soft/petit/ \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/

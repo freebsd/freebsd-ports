@@ -10,7 +10,7 @@
 
 PORTNAME=	libiodbc
 PORTVERSION=	3.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.iodbc.org/dist/
 

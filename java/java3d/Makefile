@@ -7,6 +7,7 @@
 
 PORTNAME=	java3d
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	java graphics
 MASTER_SITES=	ftp://ftp.tux.org/pub/java/java3d/${PORTVERSION}/i386/fcs/ \
 		ftp://metalab.unc.edu/pub/linux/devel/lang/java/blackdown.org/java3d/${PORTVERSION}/i386/fcs/

@@ -7,6 +7,7 @@
 
 PORTNAME=	aster
 PORTVERSION=	7.2.0
+PORTREVISION=	1
 CATEGORIES=	french cad python tk84
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-2

@@ -8,6 +8,7 @@
 
 PORTNAME=	liboop
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.ofb.net/liboop/
 

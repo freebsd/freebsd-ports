@@ -7,6 +7,7 @@
 
 PORTNAME=	swigruby
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.goto.info.waseda.ac.jp/~fukusima/ruby/
 DIST_SUBDIR=	ruby

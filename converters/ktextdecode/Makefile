@@ -6,6 +6,7 @@
 
 PORTNAME=	ktextdecode
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	converters kde
 MASTER_SITES=	http://webua.net/zavolzhsky/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}

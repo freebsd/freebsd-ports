@@ -7,6 +7,7 @@
 
 PORTNAME=		cle_base
 PORTVERSION=		0.9p1
+PORTREVISION=	1
 CATEGORIES=		chinese emulators linux
 MASTER_SITES=		\
 	ftp://cle.linux.org.tw/pub/CLE/stable/v0.9p1/i386/RedHat/RPMS/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	rbison
 PORTVERSION=	0.0.7
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.cs.umass.edu/~aseltine/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

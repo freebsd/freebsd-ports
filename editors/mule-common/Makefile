@@ -7,7 +7,7 @@
 
 PORTNAME=	mule-common
 PORTVERSION=	${MULE_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors japanese
 MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/ \
 		ftp://ftp.jaist.ac.jp/pub/GNU/mule/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	mopac
 PORTVERSION=	7.02
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ccl.net/pub/chemistry/software/SOURCES/FORTRAN/mopac7_sources/
 DISTNAME=	mopac7

@@ -7,6 +7,7 @@
 
 PORTNAME=	gogo
 PORTVERSION=	2.39b
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://homepage1.nifty.com/herumi/soft/gogo2/src/
 DISTNAME=	gogo239b

@@ -7,6 +7,7 @@
 
 PORTNAME=	tuxracer_golf
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.joeysmith.com/~milo/tuxracer/
 DISTNAME=	golf

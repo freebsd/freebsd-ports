@@ -7,7 +7,7 @@
 
 PORTNAME=	veepee
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel python gnome
 MASTER_SITES=	http://www.river-bank.demon.co.uk/software/
 DISTNAME=	VeePee-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkfig
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://k332.feld.cvut.cz/pub/local/lemming/gtkfig/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/

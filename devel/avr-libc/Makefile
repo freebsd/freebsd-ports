@@ -7,6 +7,7 @@
 
 PORTNAME=	avr-libc
 PORTVERSION=	2003.09.09
+PORTREVISION=	1
 CATEGORIES=	devel
 # Currently still snapshots, not yet officially released again.
 #MASTER_SITES=	${MASTER_SITE_SAVANNAH}

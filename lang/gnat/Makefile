@@ -15,6 +15,7 @@
 
 PORTNAME=	gnat
 PORTVERSION=	3.15p
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/:gnat \
 		${MASTER_SITE_LOCAL}:boot \

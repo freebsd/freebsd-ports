@@ -7,6 +7,7 @@
 
 PORTNAME=	wily
 PORTVERSION=	0.13.41
+PORTREVISION=	1
 CATEGORIES=	editors plan9
 MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/src/old/ \
 		ftp://ftp.math.tau.ac.il/pub/laden/wily/src/ \

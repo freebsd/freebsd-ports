@@ -7,6 +7,7 @@
 
 PORTNAME=	fastdnaml
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://geta.life.uiuc.edu:80/~gary/programs/fastDNAml/
 DISTNAME=	fastDNAml_${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	gkrellmss
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://web.wt.net/~billw/gkrellmss/
 

@@ -8,7 +8,7 @@
 
 PORTNAME=	genpak
 PORTVERSION=	0.26
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 MASTER_SITES=	http://www.bioinformatics.org/genpak/download/
 DISTNAME=	gp-${PORTVERSION}

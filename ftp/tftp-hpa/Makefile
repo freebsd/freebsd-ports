@@ -7,6 +7,7 @@
 
 PORTNAME=	tftp-hpa
 PORTVERSION=	0.34
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.kernel.org/pub/software/network/tftp/
 

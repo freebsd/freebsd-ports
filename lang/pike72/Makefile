@@ -7,7 +7,7 @@
 
 PORTNAME=	pike72
 PORTVERSION=	7.2.492
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
 		http://ftp.oav.net/pkg_freebsd/distfiles/ \

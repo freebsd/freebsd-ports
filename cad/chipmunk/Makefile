@@ -7,6 +7,7 @@
 
 PORTNAME=	chipmunk
 PORTVERSION=	5.62
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.cs.berkeley.edu/~lazzaro/chipmunk/pickup/sources/
 DISTFILES=	psys-1.58.tar.gz log-5.62.tar.gz netcmp-1.13.tar.gz \

@@ -8,6 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	2.7.2.3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}  \
 		ftp://ftp.gnu.org/gnu/libg++/  \

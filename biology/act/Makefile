@@ -7,6 +7,7 @@
 
 PORTNAME=	act
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://www.sanger.ac.uk/Software/ACT/v2/
 DISTNAME=	act_compiled_v2

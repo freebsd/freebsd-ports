@@ -7,6 +7,7 @@
 
 PORTNAME=	ooodict
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES+=	http://ftp.gwdg.de/pub/misc/openoffice/contrib/dictionaries/
 DISTFILES+=	${LANGDIST}

@@ -7,7 +7,7 @@
 
 PORTNAME=	ccmalloc
 PORTVERSION=	0.3.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.inf.ethz.ch/personal/biere/projects/ccmalloc/
 

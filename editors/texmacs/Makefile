@@ -7,6 +7,7 @@
 
 PORTNAME=	texmacs
 PORTVERSION=	1.0.2.5
+PORTREVISION=	1
 CATEGORIES=	editors print
 MASTER_SITES=	ftp://ftp.texmacs.org/pub/TeXmacs/targz/ \
 		ftp://ftp.texmacs.org/pub/TeXmacs/old-targz/

@@ -6,6 +6,7 @@
 
 PORTNAME=	wmget
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://amtrickey.net/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

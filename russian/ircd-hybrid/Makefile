@@ -7,6 +7,7 @@
 
 PORTNAME=	ircd
 PORTVERSION=	7.1
+PORTREVISION=	1
 CATEGORIES=	irc russian
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://rusunix.org/pub/FreeBSD/distfles/

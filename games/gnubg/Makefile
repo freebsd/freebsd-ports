@@ -7,6 +7,7 @@
 
 PORTNAME=	gnubg
 PORTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://triaez.kaisei.org/~kaoru/misc/%SUBDIR%/

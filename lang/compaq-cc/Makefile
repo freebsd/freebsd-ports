@@ -8,7 +8,7 @@
 
 PORTNAME=	compaq-cc
 PORTVERSION=	6.4.9.005.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.compaq.com/pub/products/C-CXX/linux/compaq_c/
 DISTFILES=	ccc-6.4.9.005-1.alpha.rpm libots-2.2.7-2.alpha.rpm

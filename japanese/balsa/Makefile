@@ -7,6 +7,7 @@
 
 PORTNAME=	balsa
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	japanese mail gnome
 MASTER_SITES=	ftp://ftp.critical.ne.jp/pub/balsa-ja/
 DISTNAME=	balsa-0.8.0-ja

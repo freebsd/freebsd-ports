@@ -7,6 +7,7 @@
 
 PORTNAME=	cdplayer.app
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://shawcable.linux.tucows.com/files/ \
 		http://linux.tucows.blueyonder.co.uk/files/

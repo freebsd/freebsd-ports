@@ -7,6 +7,7 @@
 
 PORTNAME=	xyaku
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://home.catv.ne.jp/pp/ginoue/software/xyaku/
 

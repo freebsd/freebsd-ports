@@ -7,6 +7,7 @@
 
 PORTNAME=	gbase
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	converters
 MASTER_SITES=	http://www.hibernaculum.net/download/
 

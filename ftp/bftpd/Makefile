@@ -7,6 +7,7 @@
 
 PORTNAME=	bftpd
 PORTVERSION=	1.0.24
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://bftpd.sourceforge.net/downloads/src/
 

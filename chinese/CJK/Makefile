@@ -7,6 +7,7 @@
 
 PORTNAME=	CJK
 PORTVERSION=	4.5.2
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/cjk/\
   		ftp://ftp.ffii.org/pub/cjk/

@@ -7,7 +7,7 @@
 
 PORTNAME=	BitchX
 PORTVERSION=	1.0c19
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES+=	irc gnome
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.bitchx.org/pub/BitchX/source/ \

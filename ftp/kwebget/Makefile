@@ -7,6 +7,7 @@
 
 PORTNAME=	kwebget
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	ftp kde
 MASTER_SITES=	http://www.kpage.de/download/
 DIST_SUBDIR=	KDE

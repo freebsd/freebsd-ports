@@ -7,6 +7,7 @@
 
 PORTNAME=	nqc
 PORTVERSION=	2.5.r3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.baumfamily.org/nqc/release/
 EXTRACT_SUFX=	.tgz

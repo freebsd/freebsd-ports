@@ -7,6 +7,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	2.03
+PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}

@@ -7,6 +7,7 @@
 
 PORTNAME=	fpc
 PORTVERSION=	1.0.10
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/FreeBSD/ \
 		http://planetmirror.com/pub/fpc/dist/FreeBSD/ \

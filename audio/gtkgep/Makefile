@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkgep
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://gtkgep.republika.pl/
 

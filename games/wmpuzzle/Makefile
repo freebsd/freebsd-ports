@@ -7,6 +7,7 @@
 
 PORTNAME=	wmpuzzle
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	games windowmaker afterstep
 MASTER_SITES=	http://www.godisch.de/debian/wmpuzzle/
 

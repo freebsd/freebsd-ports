@@ -7,6 +7,7 @@
 
 PORTNAME=	libdict
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://home.earthlink.net/~smela1/libdict/  \
 		http://home.earthlink.net/~smela1/	    \

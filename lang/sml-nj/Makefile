@@ -7,6 +7,7 @@
 
 PORTNAME=	smlnj
 PORTVERSION=	110.0.7
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/release/110.0.7/ \
 		ftp://rodin.stanford.edu/pub/smlnj/release/110.0.7/ \

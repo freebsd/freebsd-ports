@@ -8,6 +8,7 @@
 
 PORTNAME=	cybervrml97
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 # the master site really is SourceForge, but they only have version 1.1.0
 # MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}

@@ -7,6 +7,7 @@
 
 PORTNAME=	nag
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/nag/tarballs/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old

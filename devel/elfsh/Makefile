@@ -7,6 +7,7 @@
 
 PORTNAME=	elfsh
 PORTVERSION=	0.51b3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://elfsh.segfault.net/files/
 DISTNAME=	elfsh-0.51b3-portable

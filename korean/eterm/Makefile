@@ -7,6 +7,7 @@
 
 PORTNAME=	eterm
 PORTVERSION=	0.8.9
+PORTREVISION=	1
 CATEGORIES=	korean x11
 MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/ \
 		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/

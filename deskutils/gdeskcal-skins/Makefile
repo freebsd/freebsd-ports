@@ -7,6 +7,7 @@
 
 PORTNAME=	gdeskcal-skins
 PORTVERSION=	0.53
+PORTREVISION=	1
 CATEGORIES=	deskutils python gnome
 MASTER_SITES=	http://www.pycage.de/download/skins/gdeskcal/
 DISTNAME=

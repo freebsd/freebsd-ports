@@ -7,6 +7,7 @@
 
 PORTNAME=	wmshuffle
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	games windowmaker afterstep
 MASTER_SITES=	http://www.linuks.mine.nu/dockapp/ \
 		ftp://regency.nsu.ru/tmp/

@@ -7,6 +7,7 @@
 
 PORTNAME=	cube
 PORTVERSION=	2002.10.20
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://tunes.org/~eihrul/ \
 		http://www.idi.ntnu.no/~jonasf/cube/

@@ -7,6 +7,7 @@
 
 PORTNAME=	dbmetrix
 PORTVERSION=	0.1.9
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.tamos.net/pub/dbMetrix/ \
 		ftp://linux.gmu.edu/archive/dbMetrix/

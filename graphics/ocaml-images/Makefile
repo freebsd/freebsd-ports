@@ -8,7 +8,7 @@
 
 PORTNAME=	images
 PORTVERSION=	2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/caml-light/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-

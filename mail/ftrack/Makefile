@@ -7,7 +7,7 @@
 
 PORTNAME=	ftrack
 PORTVERSION=	3.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 # mastersite disappeared in August 2003
 MASTER_SITES=	# http://gonza.bizhost.ru/ports/

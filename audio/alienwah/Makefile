@@ -7,6 +7,7 @@
 
 PORTNAME=	alienwah
 PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/releases/alienwah/
 

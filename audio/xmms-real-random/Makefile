@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-real-random
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://kingleo.home.pages.at/development/stuff/
 DISTNAME=	real_random-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkabale
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.seindal.dk/pub/rene/
 

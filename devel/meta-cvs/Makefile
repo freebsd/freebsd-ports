@@ -7,6 +7,7 @@
 
 PORTNAME=	meta-cvs
 PORTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://users.footprints.net/~kaz/
 DISTNAME=	mcvs-${PORTVERSION}

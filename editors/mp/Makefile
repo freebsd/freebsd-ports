@@ -7,6 +7,7 @@
 
 PORTNAME=	mp
 PORTVERSION=	3.2.9
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://triptico.dhis.org/download/
 

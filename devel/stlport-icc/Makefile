@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	${MASTERPORTNAME}
-PORTREVISION=	2
+PORTREVISION=	3
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Adaptation of SGI's Standard Template Library for ICC

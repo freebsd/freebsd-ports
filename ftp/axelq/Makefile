@@ -8,6 +8,7 @@
 
 PORTNAME=	axelq
 PORTVERSION=	0.80
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://zephilia.dyndns.org/tsuki_yomi/axelq/releases/
 

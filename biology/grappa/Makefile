@@ -7,6 +7,7 @@
 
 PORTNAME=	grappa
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://www.cs.unm.edu/~moret/
 DISTNAME=	GRAPPA-1.03

@@ -7,6 +7,7 @@
 
 PORTNAME=	emacs20-dl-canna
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/dynamic-loading/emacs-canna/ \
 		${MASTER_SITE_PORTS_JP} 

@@ -7,6 +7,7 @@
 
 PORTNAME=	xfpovray
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.batse.msfc.nasa.gov/~mallozzi/home/software/xforms/src/ \
 		${MASTER_SITE_SUNSITE}

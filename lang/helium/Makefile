@@ -7,7 +7,7 @@
 
 PORTNAME=	helium
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.cs.uu.nl/helium/distr/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

@@ -7,6 +7,7 @@
 
 PORTNAME=	xenon
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://sydney.proximity.com.au/~ben/xenon/dist/ \
 		ftp://yankee.proximitygroup.com/pub/xenon/

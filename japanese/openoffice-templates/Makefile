@@ -7,6 +7,7 @@
 
 PORTNAME=	templates
 PORTVERSION=	1.1.0.20031010
+PORTREVISION=	1
 CATEGORIES=	japanese editors
 MASTER_SITES=	http://desktop.good-day.net/ooo11/
 PKGNAMEPREFIX=	ja-openoffice-

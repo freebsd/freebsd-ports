@@ -7,6 +7,7 @@
 
 PORTNAME=	snes9x
 PORTVERSION=	1.41.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.lysator.liu.se/snes9x/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}-src

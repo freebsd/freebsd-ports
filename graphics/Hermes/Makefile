@@ -7,6 +7,7 @@
 
 PORTNAME=	Hermes
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.clanlib.org/download/files/
 

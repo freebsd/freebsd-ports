@@ -8,6 +8,7 @@
 
 PORTNAME=	swftools
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.quiss.org/swftools/
 

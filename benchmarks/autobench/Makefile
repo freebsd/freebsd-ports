@@ -8,6 +8,7 @@
 
 PORTNAME=	autobench
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://www.xenoclast.org/autobench/downloads/
 

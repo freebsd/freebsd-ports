@@ -7,6 +7,7 @@
 
 PORTNAME=	bugseeker-demo
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	http://www.karmira.com/products/bugseeker2/download/
 DISTNAME=	bugseeker2demo

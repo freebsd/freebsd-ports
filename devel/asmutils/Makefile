@@ -7,6 +7,7 @@
 
 PORTNAME=	asmutils
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://linuxassembly.org/asmutils/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-kj
 PORTVERSION=	0.95
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.csse.monash.edu.au/~timf/
 DISTFILES=	kint_xmms-${PORTVERSION}.tar.gz

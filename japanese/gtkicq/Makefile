@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkicq
 PORTVERSION=	0.60
+PORTREVISION=	1
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://gtkicq.pn.org/pub/gtkicq/
 

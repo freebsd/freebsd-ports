@@ -8,6 +8,7 @@
 
 PORTNAME=	ray++
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mpa-garching.mpg.de/~martin/ray++/download/
 

@@ -8,6 +8,7 @@
 
 PORTNAME=	sdl_gfx
 PORTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ferzkopp.net/~aschiffler/Software/%SUBDIR%/
 MASTER_SITE_SUBDIR=	SDL_gfx-${PORTVERSION:R}

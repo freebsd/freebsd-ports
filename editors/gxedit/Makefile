@@ -7,6 +7,7 @@
 
 PORTNAME=	gxedit
 PORTVERSION=	1.23
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://mirrors.darkelf.net/GXedit/ \
 		http://www.linuxbox.com/~drow/GXedit/

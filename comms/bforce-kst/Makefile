@@ -7,6 +7,7 @@
 
 PORTNAME=	bforce
 PORTVERSION=	0.22.7.5
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://kst.spb.ru/bforce/
 PKGNAMESUFFIX=	-kst

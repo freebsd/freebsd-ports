@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	editors
 MASTER_SITES+=	http://openofficeorg.secsup.org/%SUBDIR%/ \
 		http://mirrors.sunsite.dk/openoffice/%SUBDIR%/ \

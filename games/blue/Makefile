@@ -7,6 +7,7 @@
 
 PORTNAME=	blue
 PORTVERSION=	2.9
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/bluemoon/
 DISTNAME=	bluemoon-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	re2c
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.tildeslash.org/re2c/ \
 		http://www.tobez.org/download/port-mirrors/devel/re2c/

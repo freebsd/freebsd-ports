@@ -7,6 +7,7 @@
 
 PORTNAME=	esecanna-module-vje30
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 		${MASTER_SITE_LOCAL}

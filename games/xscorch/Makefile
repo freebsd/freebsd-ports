@@ -7,6 +7,7 @@
 
 PORTNAME=	xscorch
 PORTVERSION=	0.1.15
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://chaos2.org/xscorch/ \
 		http://mirror.dok.org/xscorch/

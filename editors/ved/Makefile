@@ -7,6 +7,7 @@
 
 PORTNAME=	ved
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.berlios.de/pub/ved/
 

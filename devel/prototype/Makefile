@@ -8,6 +8,7 @@
 
 PORTNAME=	prototype
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.xs4all.nl/~carlo17/prototype/
 MASTER_SITE_SUBDIR=	${PORTNAME}

@@ -8,6 +8,7 @@
 
 PORTNAME=	iverilog
 PORTVERSION=	0.7.20031202
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/snapshots/
 DISTNAME=	verilog-20031202

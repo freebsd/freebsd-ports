@@ -7,6 +7,7 @@
 
 PORTNAME=	oilwar
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.2ndpoint.fi/projektit/filut/
 DISTNAME=	OilWar-${PORTVERSION}

@@ -6,6 +6,7 @@
 
 PORTNAME=	eyed3
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.travisshirk.net/eyeD3/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

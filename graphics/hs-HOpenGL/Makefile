@@ -7,6 +7,7 @@
 
 PORTNAME=	HOpenGL
 PORTVERSION=	1.04
+PORTREVISION=	1
 CATEGORIES=	graphics haskell
 MASTER_SITES=	http://haskell.cs.yale.edu/HOpenGL/releases/
 PKGNAMEPREFIX=	hs-

@@ -7,7 +7,7 @@
 
 PORTNAME=	swarm
 PORTVERSION=	2.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.santafe.edu/pub/swarm/src/swarm/
 

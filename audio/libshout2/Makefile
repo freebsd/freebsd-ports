@@ -7,7 +7,7 @@
 
 PORTNAME=	libshout2
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.icecast.org/files/libshout/

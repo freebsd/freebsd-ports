@@ -7,6 +7,7 @@
 
 PORTNAME=		vMac
 PORTVERSION=		0.1.9.3
+PORTREVISION=	1
 CATEGORIES=		emulators
 MASTER_SITES=		http://www.vmac.org/download/XWindows/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-src

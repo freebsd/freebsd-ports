@@ -7,6 +7,7 @@
 
 PORTNAME=	dancer-services
 PORTVERSION=	1.8.0.6.9
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://source.freenode.net/~asuffield/dancer/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}

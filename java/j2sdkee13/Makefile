@@ -7,7 +7,7 @@
 
 PORTNAME=	j2sdkee
 PORTVERSION=	1.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java
 MASTER_SITES=	# http://java.sun.com/j2ee/sdk_1.3/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-linux

@@ -7,6 +7,7 @@
 
 PORTNAME=	xracer
 PORTVERSION=	0.94
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://xracer.annexia.org/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xracer-data.tar.gz

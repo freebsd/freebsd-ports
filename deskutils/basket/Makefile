@@ -6,6 +6,7 @@
 
 PORTNAME=		basket
 PORTVERSION=		0.3.3
+PORTREVISION=	1
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://www.brueffer.de/distfiles/
 

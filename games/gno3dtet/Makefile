@@ -7,6 +7,7 @@
 
 PORTNAME=	gno3dtet
 PORTVERSION=	1.6.4
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	ftp://12.206.131.3/pub/gno3dtet/ \
 		http://www.eseb.net/ftp/gno3dtet/

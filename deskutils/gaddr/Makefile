@@ -7,6 +7,7 @@
 
 PORTNAME=	gaddr
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.cse.unl.edu/~cluening/gaddr/
 

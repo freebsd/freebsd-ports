@@ -7,7 +7,7 @@
 
 PORTNAME=	treeviewx
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	http://darwin.zoology.gla.ac.uk/~rpage/treeviewx/
 DISTNAME=	tv-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	ndtpd
 PORTVERSION=	3.1.5
+PORTREVISION=	1
 CATEGORIES=	japanese ipv6
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/ndtpd/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/net/ndtp/ndtpd/

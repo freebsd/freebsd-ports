@@ -7,6 +7,7 @@
 
 PORTNAME=	zangband
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES+=	games
 MASTER_SITES=	ftp://clockwork.dementia.org/angband/Variant/ZAngband/ \
 		ftp://ftp.sunet.se/pub/games/Angband/Variant/ZAngband/

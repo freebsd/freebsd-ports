@@ -7,6 +7,7 @@
 
 PORTNAME=	tiff
 PORTVERSION=	3.5.5
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 
 MAINTAINER=	taoka@FreeBSD.org

@@ -6,6 +6,7 @@
 
 PORTNAME=	six
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	games kde
 MASTER_SITES=	http://six.retes.hu/download/
 

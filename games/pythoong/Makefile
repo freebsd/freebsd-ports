@@ -7,6 +7,7 @@
 
 PORTNAME=	pythoong
 PORTVERSION=	0.99
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	http://perso.wanadoo.fr/christophe.cressend/tarballs/
 

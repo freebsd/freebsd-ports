@@ -7,6 +7,7 @@
 
 PORTNAME=	zthread
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cs.buffalo.edu/~crahen/projects/zthread/ \
 		${MASTER_SITE_SOURCEFORGE}

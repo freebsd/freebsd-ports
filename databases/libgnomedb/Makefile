@@ -7,6 +7,7 @@
 
 PORTNAME=	libgnomedb
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/libgnomedb/1.0

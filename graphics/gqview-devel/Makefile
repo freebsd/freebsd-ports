@@ -8,6 +8,7 @@
 
 PORTNAME=	gqview
 PORTVERSION=	1.3.8
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,12 +17,12 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Another gtk2-based graphic file viewer
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		iconv.3:${PORTSDIR}/converters/libiconv \
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

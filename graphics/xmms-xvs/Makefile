@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-xvs
 PORTVERSION=	0.1.0b1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://jgregor.ps.pl/software/xvs/download/
 DISTNAME=	xvs-${PORTVERSION}

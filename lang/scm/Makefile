@@ -7,6 +7,7 @@
 
 PORTNAME=	scm
 PORTVERSION=	5d9
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. OLD

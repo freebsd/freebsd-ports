@@ -7,6 +7,7 @@
 
 PORTNAME=	timidity++
 PORTVERSION=	2.11.3
+PORTREVISION=	1
 CATEGORIES+=	audio
 MASTER_SITES=	http://www.timidity.jp/dist/
 PKGNAMESUFFIX=	-${INTERFACE}

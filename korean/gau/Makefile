@@ -7,7 +7,7 @@
 
 PORTNAME=	gau
 PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	korean comms
 MASTER_SITES=	http://www.kr.freebsd.org/~hwang/gau/
 

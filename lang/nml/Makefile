@@ -7,6 +7,7 @@
 
 PORTNAME=	nml
 PORTVERSION=	0.92a
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://ropas.snu.ac.kr/n/ \
 		http://sparcs.kaist.ac.kr/~netj/n/ \

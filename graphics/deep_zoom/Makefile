@@ -8,6 +8,7 @@
 
 PORTNAME=	deep_zoom
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://members.rogers.com/rowley-c/deep_zoom/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	monkeybubble
 PORTVERSION=	0.1.9
+PORTREVISION=	1
 CATEGORIES=	games gnome
 #MASTER_SITES=	http://monkey-bubble.tuxfamily.org/ #OMG where did the website go?!?!
 MASTER_SITES=	${MASTER_SITE_LOCAL}

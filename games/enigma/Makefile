@@ -7,7 +7,7 @@
 
 PORTNAME=	enigma
 PORTVERSION=	0.81
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.rzuser.uni-heidelberg.de/~dheck/ \
 		${MASTER_SITE_SAVANNAH}	# savannah is locked temporarely

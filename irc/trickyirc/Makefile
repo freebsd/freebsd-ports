@@ -7,6 +7,7 @@
 
 PORTNAME=	trickyirc
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.leb.net/~troll/
 DISTNAME=	TrickyIRC-${PORTVERSION}

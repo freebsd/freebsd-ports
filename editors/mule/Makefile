@@ -8,7 +8,7 @@
 PORTNAME=	mule
 PORTVERSION=	${MULE_VERSION}
 PKGNAMESUFFIX=	${INPUT_METHOD}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	editors
 MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/ \
 		ftp://ftp.jaist.ac.jp/pub/GNU/mule/ \

@@ -6,6 +6,7 @@
 
 PORTNAME=	virt
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://vampiro.rshb.com.ru/pub/warez/virt/ \
 		ftp://ftp.treasury.ru/pub/unix/virt/

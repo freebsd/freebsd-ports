@@ -7,7 +7,7 @@
 
 PORTNAME=	jmode
 PORTVERSION=	0.6.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://downloads.sourceforge.jp/anthy/5467/
 

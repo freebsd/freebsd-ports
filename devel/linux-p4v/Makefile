@@ -7,7 +7,7 @@
 
 PORTNAME=		p4v
 PORTVERSION=		2003.1
-PORTREVISION=		48707
+PORTREVISION=		48708
 CATEGORIES=		devel linux
 MASTER_SITES=		http://www.perforce.com/downloads/perforce/r03.1/bin.linux72x86/
 PKGNAMEPREFIX=		linux-

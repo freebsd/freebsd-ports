@@ -7,6 +7,7 @@
 
 PORTNAME=	asis
 PORTVERSION=	3.15p
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	\
 	ftp://ftp.lip6.fr/pub/gnat/${PORTVERSION}/asis/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	pcre
 PORTVERSION=	4.33.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.henrik-motakef.de/freebsd-distfiles/
 MASTER_SITE_SUBDIR=	pcre-ocaml

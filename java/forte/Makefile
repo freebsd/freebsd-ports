@@ -7,7 +7,7 @@
 
 PORTNAME=	forte
 PORTVERSION=	3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/forte/ffj/buy.html
 DISTNAME=	ffj30_ce_ml

@@ -7,7 +7,7 @@
 
 PORTNAME=	ptex
 PORTVERSION=	3.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/ \
 		${MASTER_SITE_TEX_CTAN} \

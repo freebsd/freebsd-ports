@@ -7,6 +7,7 @@
 
 PORTNAME=	afsp
 PORTVERSION=	7.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.tsp.ece.mcgill.ca/pub/AFsp/
 DISTNAME=	AFsp-v7r1

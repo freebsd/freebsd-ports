@@ -7,6 +7,7 @@
 
 PORTNAME=	netbeans
 PORTVERSION=	3.5.1
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.netbeans.org/download/release351/night/build200307252351/
 

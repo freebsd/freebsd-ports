@@ -6,6 +6,7 @@
 
 PORTNAME=	cmt
 PORTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ladspa.org/download/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-sid
 PORTVERSION=	0.7.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.tnsp.org/xs-files/
 

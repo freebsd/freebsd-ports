@@ -7,6 +7,7 @@
 
 PORTNAME=	glg
 PORTVERSION=	0.2.a
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 #		http://glg.sourceforge.net/ \

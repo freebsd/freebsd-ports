@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	editors
 MASTER_SITES+=	ftp://openofficeorg.secsup.org/pub/software/openoffice/stable/%SUBDIR%/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice.org/stable/%SUBDIR%/ \

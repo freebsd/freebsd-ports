@@ -8,6 +8,7 @@
 
 PORTNAME=	sonice
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cyclooctane.com/sonice/release/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	gtksql
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://membres.lycos.fr/bbrox/GtkSQL/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	ftgl
 PORTVERSION=	2.04
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://homepages.paradise.net.nz/henryj/code/
 DISTNAME=	${PORTNAME:U}

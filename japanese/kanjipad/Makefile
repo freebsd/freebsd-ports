@@ -7,6 +7,7 @@
 
 PORTNAME=	kanjipad
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.gtk.org/pub/users/otaylor/kanjipad/
 

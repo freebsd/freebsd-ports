@@ -7,6 +7,7 @@
 
 PORTNAME=	waeijiro-fpw
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	japanese
 #MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/eijiro/
 MASTER_SITES=	http://www.dsl.gr.jp/~tf/pool/

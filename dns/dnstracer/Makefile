@@ -7,6 +7,7 @@
 
 PORTNAME=	dnstracer
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.mavetju.org/download/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	megapov
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://megapov.inetart.net/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_unix_s

@@ -7,7 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	2.97
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 #MASTER_SITES=   ftp://ftp.agendacomputing.com/pub/dev/snow/snap-02212000/src/
 MASTER_SITES=	${MASTER_SITE_LOCAL}

@@ -7,6 +7,7 @@
 
 PORTNAME=	tdir
 PORTVERSION=	1.18n
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://xtsl.free.fr/118n/
 DISTNAME=	traindir-${PORTVERSION}-src

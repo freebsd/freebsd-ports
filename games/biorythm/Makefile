@@ -7,6 +7,7 @@
 
 PORTNAME=	biorythm
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	astk
 PORTVERSION=	1.0.21
+PORTREVISION=	1
 CATEGORIES=	cad tk84
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 .if !defined(CLIENT_SEUL)

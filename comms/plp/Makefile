@@ -7,6 +7,7 @@
 
 PORTNAME=	plp
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.proudman51.freeserve.co.uk/psion/ \
 		${MASTER_SITE_LOCAL}

@@ -7,6 +7,7 @@
 
 PORTNAME=	gfax
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	comms print
 MASTER_SITES=	http://gfax.cowlug.org/
 

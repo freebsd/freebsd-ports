@@ -7,6 +7,7 @@
 
 PORTNAME=	cornerxmms
 PORTVERSION=	0.0.5
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-

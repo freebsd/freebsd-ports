@@ -8,6 +8,7 @@
 
 PORTNAME=	divxcalc
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://axljab.homelinux.org/software/divxcalc/
 

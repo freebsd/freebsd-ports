@@ -7,6 +7,7 @@
 
 PORTNAME=	gnat-glade
 PORTVERSION=	3.15p
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/glade/
 DISTNAME=	glade-${PORTVERSION}-src
