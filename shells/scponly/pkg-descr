@@ -1,13 +1,13 @@
-[From the README:]  "scponly" is an alternative 'shell' (of sorts) for system
-administrators who would like to provide access to remote users to both read
-and write local files without providing any remote execution priviledges.
-Functionally, it is best described as a wrapper to the "tried and true" ssh
-suite of applications.
+[Excerpted from the README:]  "scponly" is an alternative "shell" (of sorts)
+for system administrators who would like to provide access to remote users to
+both read and write local files without providing any remote execution
+privileges.  Functionally, it is best described as a wrapper to the
+tried-and-true ssh suite.
 
 scponly validates remote requests by examining the third argument passed to the
 shell upon login.  (The first argument is the shell itself, and the second is
--c.)  The only commands allowed are "scp" (for ssh1), "sftp-server" (for ssh2")
-and "ls".  Arguments to these commands are passed along unmolested.
+-c.)  The only commands allowed are "scp", "sftp-server" and "ls".  Arguments
+to these commands are passed along unmolested.
 
 WWW: http://www.sublimation.org/scponly/
 

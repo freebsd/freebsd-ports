@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scponly
-PORTVERSION=	2.4
+PORTVERSION=	3.4
 CATEGORIES=	shells
 MASTER_SITES=	http://www.sublimation.org/scponly/
 EXTRACT_SUFX=	.tgz
@@ -15,7 +15,6 @@ MAINTAINER=	mcglk@artlogix.com
 
 MAN8=	scponly.8
 
-post-install:
-	strip ${PREFIX}/sbin/scponly
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
