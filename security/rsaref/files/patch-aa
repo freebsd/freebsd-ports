@@ -1,0 +1,23 @@
+*** rsaref.h.bak	Fri Mar 25 22:01:49 1994
+--- rsaref.h	Sun Feb  2 22:30:11 1997
+***************
+*** 8,16 ****
+  #ifndef _RSAREF_H_
+  #define _RSAREF_H_ 1
+  
+! #include "md2.h"
+! #include "md5.h"
+! #include "des.h"
+  
+  #ifdef __cplusplus
+  extern "C" {
+--- 8,16 ----
+  #ifndef _RSAREF_H_
+  #define _RSAREF_H_ 1
+  
+! #include "_md2.h"
+! #include "_md5.h"
+! #include "_des.h"
+  
+  #ifdef __cplusplus
+  extern "C" {
