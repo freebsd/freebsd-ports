@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dl
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://kt-www.jaist.ac.jp/~ttate/ftp/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -29,16 +29,6 @@ DOCS_EN=	Changes README README.html
 CONFIGURE_ARGS+=	--with-asm
 .endif
 
-post-extract:
-	@${ECHO} "LIB= test" > ${WRKSRC}/test/Makefile
-	@${ECHO} "SHLIB_MAJOR= 1" >> ${WRKSRC}/test/Makefile
-	@${ECHO} "SHLIB_MINOR= 0" >> ${WRKSRC}/test/Makefile
-	@${ECHO} "SRCS= test.c" >> ${WRKSRC}/test/Makefile
-	@${ECHO} ".include <bsd.lib.mk>" >> ${WRKSRC}/test/Makefile
-
-post-patch:
-	${RUBY} -i -pe "gsub %r|'\.\./dl'|, %q|'dl'|" ${WRKSRC}/test/test.rb
-
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/h2rb ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
@@ -47,7 +37,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
 .endfor
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/test/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
 .endif
 
 .include <bsd.port.post.mk>
