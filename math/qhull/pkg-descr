@@ -1,0 +1,12 @@
+ Qhull computes convex hulls, Delaunay triangulations, halfspace
+intersections about a point, Voronoi diagrams, furthest-site Delaunay
+triangulations, and furthest-site Voronoi diagrams. It runs in 2-d,
+3-d, 4-d, and higher dimensions. It implements the Quickhull algorithm
+for computing the convex hull. Qhull handles roundoff errors from
+floating point arithmetic. It computes volumes, surface areas, and
+approximations to the convex hull.
+
+WWW: www.qhull.org
+
+- Eduard
+pusto@web.de

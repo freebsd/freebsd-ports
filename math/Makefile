@@ -169,6 +169,7 @@
     SUBDIR += py-numeric17
     SUBDIR += py-probstat
     SUBDIR += py-scientific
+    SUBDIR += qhull
     SUBDIR += qscanplot
     SUBDIR += rascal
     SUBDIR += rcalc

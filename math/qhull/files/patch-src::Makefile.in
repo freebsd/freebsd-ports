@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Fri Feb  6 16:33:23 2004
++++ src/Makefile.in	Wed Apr 28 23:37:31 2004
+@@ -198,7 +198,7 @@
+ 
+ # to:
+ docdir = $(prefix)/share/doc/$(PACKAGE)
+-examplesdir = $(docdir)/examples
++examplesdir = $(prefix)/share/examples/$(PACKAGE)
+ 
+ # which:
+ examples_DATA = \
