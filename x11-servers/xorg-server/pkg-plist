@@ -15,6 +15,8 @@ bin/mmapw
 %%SPARC64_NA%%bin/outw
 bin/pcitweak
 %%I386%%bin/scanpci
+bin/xorgcfg
+bin/xorgconfig
 lib/X11/Options
 lib/X11/XF86Config.98
 lib/X11/XF86Config.eg

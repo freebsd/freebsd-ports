@@ -7,7 +7,7 @@
 
 PORTNAME=	server
 PORTVERSION=	6.7.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/
 PKGNAMEPREFIX=	xorg-
@@ -36,7 +36,9 @@ MAN1=		Xorg.1 \
 		getconfig.1 \
 		gtf.1 \
 		kbd_mode.1 \
-		pcitweak.1
+		pcitweak.1 \
+		xorgcfg.1 \
+		xorgconfig.1
 MAN4=		citron.4 \
 		dynapro.4 \
 		elographics.4 \
