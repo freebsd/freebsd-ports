@@ -7,7 +7,7 @@
 
 PORTNAME=	trafshow
 PORTVERSION=	3.1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.sasknow.com/pub/trafshow/ \
