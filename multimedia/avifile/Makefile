@@ -69,6 +69,7 @@ PLIST_SUB+=	QT="@comment "
 .if ${ARCH} != "i386"
 WITHOUT_A52=yes
 WITHOUT_XVID=yes
+BROKEN=		"Does not compile on !i386"
 .endif
 
 # compilation optimizations
