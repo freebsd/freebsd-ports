@@ -1,0 +1,5 @@
+The Net::Divert module facilitates the use of divert
+sockets for packet alteration on FreeBSD and MacOSX.
+
+This module allows you to create a divert socket and then
+just supply a function that will deal with the incoming packets.
