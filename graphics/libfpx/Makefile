@@ -34,6 +34,12 @@ USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 USE_BZIP2=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	# Replacing references to <malloc.h> with <stdlib.h>
 	# Ignore the /dev/stderr warning below. (What a hack!)
@@ -43,4 +49,4 @@ post-patch:
 INSTALLS_SHLIB=	yes
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
