@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	flynn@energyhq.homeip.net
 
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
 
