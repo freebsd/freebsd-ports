@@ -1,0 +1,15 @@
+===================================================================
+RCS file: /cvs/src/src/ld/scripttempl/avr.sc,v
+retrieving revision 1.2
+retrieving revision 1.3
+diff -u -r1.2 -r1.3
+--- ld/scripttempl/avr.sc	2002/06/01 23:28:59	1.2
++++ ld/scripttempl/avr.sc	2004/05/08 21:52:56	1.3
+@@ -145,7 +145,6 @@
+   } ${RELOCATING+ > data}
+ 
+   .eeprom ${RELOCATING-0}:
+-	${RELOCATING+AT (ADDR (.text) + SIZEOF (.text) + SIZEOF (.data))}
+   {
+     *(.eeprom*)
+     ${RELOCATING+ __eeprom_end = . ; }
