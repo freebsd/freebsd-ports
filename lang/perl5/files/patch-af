@@ -1,8 +1,8 @@
 $FreeBSD$
 
---- Configure.ORIG	Mon Mar 19 05:03:33 2001
-+++ Configure	Tue Apr 10 20:31:56 2001
-@@ -296,7 +296,7 @@
+--- Configure.orig	Mon Mar 19 04:03:33 2001
++++ Configure	Fri Nov  1 14:58:06 2002
+@@ -296,7 +296,7 @@ cppflags=''
  ldflags=''
  lkflags=''
  locincpth=''
@@ -11,3 +11,12 @@ $FreeBSD$
  cf_email=''
  cf_by=''
  cf_time=''
+@@ -14940,7 +14940,7 @@ for i in \`$cc -v -c tmp.c 2>&1 $postpro
+ do
+ 	case "\$i" in
+ 	-D*) echo "\$i" | $sed 's/^-D//';;
+-	-A*) $test "$gccversion" && echo "\$i" | $sed 's/^-A\(.*\)(\(.*\))/\1=\2/';;
++	-A*) $test "$gccversion" && echo "\$i" | $sed 's/^-A//' | $sed 's/\(.*\)(\(.*\))/\1=\2/';;
+ 	esac
+ done
+ $rm -f try.c
