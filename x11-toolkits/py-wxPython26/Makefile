@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wxPython
-PORTVERSION=	2.4.1.2
-PORTREVISION=	1
+PORTVERSION=	2.4.2.4
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wxpython
@@ -17,12 +16,9 @@ DISTNAME=	${PORTNAME}Src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.ORG
 COMMENT=	Python bindings for the wxWindows/GTK GUI toolkit
 
-LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wxPython
-
-WX_CONFIG=	${X11BASE}/bin/wx-config
 
 USE_GMAKE=	yes
 USE_PYTHON=	yes
@@ -50,20 +46,16 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if exists(${WX_CONFIG})
-# detect if wxgtk was linked against gtk1 or gtk2
-DECISION_GTK_1_OR_2!=	${WX_CONFIG} --static --libs
-.else
-DECISION_GTK_1_OR_2=	""
-.endif
+.if !defined(WITH_GTK1)
+LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.4-config
 
-.if ${DECISION_GTK_1_OR_2:M*glib-2.0} != ""
-USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--enable-gtk2
 PYDISTUTILS_BUILDARGS+=	WXPORT=gtk2
 PYDISTUTILS_INSTALLARGS:=	${PYDISTUTILS_INSTALLARGS} ${PYDISTUTILS_BUILDARGS}
 .else
-USE_GNOME+=	gtk12
+LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk
+WX_CONFIG=	${X11BASE}/bin/wxgtk-2.4-config
 .endif
 
 .include <bsd.port.post.mk>
