@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	awstats
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,8 +17,8 @@ MAINTAINER=	mchopra@engmail.uwaterloo.ca
 NO_BUILD=	yes
 
 do-install:
-	@${MKDIR} ${PREFIX}/www/cgi-bin/db
 	@${MKDIR} ${PREFIX}/www/cgi-bin/lang
+	@${MKDIR} ${PREFIX}/www/cgi-bin/lib
 	@${MKDIR} ${PREFIX}/www/icons/browser
 	@${MKDIR} ${PREFIX}/www/icons/clock
 	@${MKDIR} ${PREFIX}/www/icons/cpu
@@ -27,8 +27,8 @@ do-install:
 	@${MKDIR} ${PREFIX}/www/icons/other
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf ${PREFIX}/www/cgi-bin/awstats.model.conf
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awstats.pl ${PREFIX}/www/cgi-bin/awstats.pl
-	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/db/* ${PREFIX}/www/cgi-bin/db
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/* ${PREFIX}/www/cgi-bin/lang
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lib/* ${PREFIX}/www/cgi-bin/lib
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/browser/* ${PREFIX}/www/icons/browser
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/clock/* ${PREFIX}/www/icons/clock
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/cpu/* ${PREFIX}/www/icons/cpu
@@ -39,8 +39,9 @@ do-install:
 	@${ECHO_CMD} "* Rename ${PREFIX}/www/cgi-bin/awstats.model.conf to awstats.conf to set up AWStats"
 	@${ECHO_CMD} "* Documentation has been installed in ${PREFIX}/share/doc/awstats"
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/images && ${CHMOD} -R a+rx ${DOCSDIR}
-	${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/images
+	${INSTALL_DATA} ${WRKSRC}/docs/images/* ${DOCSDIR}/images
+	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
