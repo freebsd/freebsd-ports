@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	filepp
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.cabaret.demon.co.uk/filepp/
 
