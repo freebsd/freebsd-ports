@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 #-
-# Copyright (c) 2000-2002 Dag-Erling Coïdan Smørgrav
+# Copyright (c) 2000-2003 Dag-Erling Coïdan Smørgrav
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -33,8 +33,8 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.7.4";
-my $COPYRIGHT	= "Copyright (c) 2000-2002 Dag-Erling Smørgrav. " .
+my $VERSION	= "2.7.5";
+my $COPYRIGHT	= "Copyright (c) 2000-2003 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
 # Constants
@@ -53,8 +53,9 @@ sub PATH_MAKE		{ "/usr/bin/make" }
 my $dbdir     = "/var/db/pkg";	# Package database directory
 my $index     = undef;		# Index file
 my $portsdir  = "/usr/ports";	# Ports directory
-my $tag	      = undef;		# cvs tag to use
-my $date      = undef;		# cvs date to use
+my $tag	      = undef;		# CVS tag to use
+my $date      = undef;		# CVS date to use
+my $release   = undef;		# OS release
 
 # Global flags
 my $anoncvs   = 0;		# Use anoncvs.FreeBSD.org
@@ -311,18 +312,22 @@ sub update_index() {
 
     $parent = $portsdir;
     $parent =~ s/\/*ports\/*$//;
-    if (! -f "ports/INDEX" || ! -d "ports/CVS") {
+    if (! -d "ports/CVS") {
 	cd($parent);
 	cvs("checkout", "-l", "ports")
 	    or bsd::errx(1, "error checking out the index file");
 	cd($portsdir);
     } else {
 	cd($portsdir);
-	cvs("update", "Makefile", "INDEX")
+	cvs("update", "-l")
 	    or bsd::errx(1, "error updating the index file");
     }
     cvs("update", "Mk")
 	or bsd::errx(1, "error updating the Makefiles");
+    $index = "$portsdir/INDEX-" . substr($release, 0, 1);
+    if (! -f $index) {
+	$index = "$portsdir/INDEX";
+    }
 }
 
 #
@@ -334,7 +339,7 @@ sub read_index() {
     my $line;			# Line from file
 
     return if ($have_index);
-    info("Reading index file");
+    info("Reading $index");
     sysopen(INDEX, $index, O_RDONLY)
 	or bsd::err(1, "can't open $index");
     while ($line = <INDEX>) {
@@ -1072,8 +1077,6 @@ MAIN:{
 	bsd::errx(1, "ports directory must be named 'ports'");
     }
 
-    $index = "$portsdir/INDEX";
-
     # 'package' implies 'build'
     if ($packages) {
 	$build = 1;
@@ -1099,6 +1102,7 @@ MAIN:{
     }
 
     # Step 1: update the ports index
+    $release = `uname -r`;
     update_index();
 
     # Step 2: build list of explicitly required ports
