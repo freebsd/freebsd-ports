@@ -3,8 +3,8 @@ bin/gtkspu
 bin/mpegcat
 share/GOPchop/pixmaps/about.xpm
 share/GOPchop/pixmaps/error.xpm
-share/locale/de/LC_MESSAGES/GOPchop.mo
-share/locale/en/LC_MESSAGES/GOPchop.mo
-share/locale/fr/LC_MESSAGES/GOPchop.mo
+%%NLS%%share/locale/de/LC_MESSAGES/GOPchop.mo
+%%NLS%%share/locale/en/LC_MESSAGES/GOPchop.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/GOPchop.mo
 @dirrm share/GOPchop/pixmaps
 @dirrm share/GOPchop
