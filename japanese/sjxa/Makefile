@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.sony.co.jp/pub/unsupported/src/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A X11 frontend of Japanese input method SJ3
 
+BROKEN=		"Does not compile"
+
 RUN_DEPENDS=	sj3serv:${PORTSDIR}/japanese/sj3
 
 USE_IMAKE=	yes
