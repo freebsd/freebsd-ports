@@ -69,6 +69,7 @@
     SUBDIR += nicetext
     SUBDIR += no-ispell
     SUBDIR += openjade
+    SUBDIR += p5-DelimMatch
     SUBDIR += p5-Spreadsheet-ParseExcel
     SUBDIR += p5-Spreadsheet-WriteExcel
     SUBDIR += p5-Text-CSV_XS

@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/auto/Text/DelimMatch/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/DelimMatch/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Text/DelimMatch.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Text/DelimMatch
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/DelimMatch
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Text 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Text 2>/dev/null || true
