@@ -480,7 +480,6 @@
     SUBDIR += rrdtool
     SUBDIR += rshell
     SUBDIR += rsync
-    SUBDIR += rtsp_proxy
     SUBDIR += ruby-drb
     SUBDIR += ruby-gserver
     SUBDIR += ruby-icmp
