@@ -39,7 +39,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db3-libs=${DB3_WRKSRC} \
 		--with-db3-includes=${DB3_WRKSRC} \
 		--enable-nss=no \
-		--enable-openssl=yes
+		--enable-openssl=yes \
+		--with-krb5=/usr
 
 EVO_VERSION=	1.4
 

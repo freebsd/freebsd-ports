@@ -1,6 +1,6 @@
---- configure.orig	Mon Mar 10 12:01:16 2003
-+++ configure	Thu Mar 13 01:31:35 2003
-@@ -11148,7 +11148,7 @@
+--- configure.orig	Sun Feb 22 10:49:35 2004
++++ configure	Sun Feb 22 10:52:58 2004
+@@ -11724,7 +11724,7 @@
  CPPFLAGS="$DB3_CFLAGS $CPPFLAGS"
  
  
@@ -9,7 +9,7 @@
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  if eval "test \"\${$as_ac_Header+set}\" = set"; then
-@@ -11341,9 +11341,9 @@
+@@ -11917,9 +11917,9 @@
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
  
@@ -22,7 +22,16 @@
  fi
  rm -f conftest.$ac_objext conftest.$ac_ext
  
-@@ -13495,10 +13495,10 @@
+@@ -13283,7 +13283,7 @@
+ 	LDFLAGS_save="$LDFLAGS"
+ 
+ 	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
+-	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
++	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi -lcrypt"
+ 	echo "$as_me:$LINENO: checking for Kerberos 5" >&5
+ echo $ECHO_N "checking for Kerberos 5... $ECHO_C" >&6
+ if test "${ac_cv_lib_kerberos5+set}" = set; then
+@@ -14068,10 +14068,10 @@
  Example: --with-nspr-libs=/usr/lib" >&2;}
     { (exit 1); exit 1; }; }
         				else
@@ -35,7 +44,7 @@
  			fi
  
  			echo "$as_me:$LINENO: checking for Mozilla nspr libraries" >&5
-@@ -16710,7 +16710,7 @@
+@@ -17454,7 +17454,7 @@
  idldir="$datadir/idl/evolution-$BASE_VERSION"
  
  
