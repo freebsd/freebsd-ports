@@ -1,0 +1,5 @@
+SAR is a command-line search and replace tool written in Perl. It supports
+regular expressions, multiple file search-and-replace, wildcards, writing
+out to a new file (rather than overwriting the modified file), and the
+code is well commented so you can make changes very easily.
+
