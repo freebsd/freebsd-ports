@@ -1,11 +1,11 @@
-# $Id: Makefile,v 1.36 1996/10/18 15:05:24 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/10/24 08:46:42 asami Exp $
 #
 
     SUBDIR += luna
-#    SUBDIR += stars
-#    SUBDIR += sunclock
-#    SUBDIR += xearth
-#    SUBDIR += xephem
-#    SUBDIR += xphoon
+    SUBDIR += stars
+    SUBDIR += sunclock
+    SUBDIR += xearth
+    SUBDIR += xephem
+    SUBDIR += xphoon
 
 .include <bsd.port.subdir.mk>

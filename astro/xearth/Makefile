@@ -3,11 +3,11 @@
 # Date created:         29 October 1995
 # Whom:                 piero
 #
-# $Id: Makefile,v 1.5 1995/10/01 21:53:49 roberto Exp $
+# $Id: Makefile,v 1.6 1996/03/29 05:28:13 asami Exp $
 #
 
 DISTNAME=	xearth-1.0
-CATEGORIES+=	x11
+CATEGORIES+=	astro x11
 MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/
 
 USE_IMAKE=	yes

@@ -3,12 +3,12 @@
 # Date created:         Thu Aug  1 09:10:22 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.2 1996/08/03 09:01:59 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/08/16 17:04:26 erich Exp $
 #
 
 DISTNAME=	xephem_2.7.1
 PKGNAME=	xephem-2.7.1
-CATEGORIES=	misc
+CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
 
 MAINTAINER=	erich@FreeBSD.org
