@@ -21,6 +21,8 @@ WRKSRC=		${WRKDIR}/EZFM-0.4
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
+BROKEN=		"Distfile changed: patches no longer apply"
+
 MAN1=		ezfm.1
 
 do-install:
