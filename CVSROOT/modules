@@ -7711,6 +7711,7 @@ tuxkart		ports/games/tuxkart
 tuxnes		ports/emulators/tuxnes
 tuxpuck		ports/games/tuxpuck
 tuxracer	ports/games/tuxracer
+tuxracer_golf	ports/games/tuxracer_golf
 tuxtype		ports/games/tuxtype
 tvark		ports/net/tvark
 tvguide		ports/misc/tvguide
