@@ -18,8 +18,6 @@ COMMENT=	GPL standalone Flash (TM) player
 
 LIB_DEPENDS=	flash.0:${.CURDIR}/../libflash
 
-BROKEN=		Master sites and distfile no longer available
-
 USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Player
