@@ -14,7 +14,7 @@ DISTNAME=	SDL_mixer-${PORTVERSION}
 MAINTAINER=	sobomax@altavista.net
 
 LIB_DEPENDS=  	SDL-1.1.2:${PORTSDIR}/devel/sdl-devel \
-		smpeg-0.3.0:${PORTSDIR}/graphics/smpeg \
+		smpeg.0:${PORTSDIR}/graphics/smpeg \
 		mikmod.2:${PORTSDIR}/audio/libmikmod
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
