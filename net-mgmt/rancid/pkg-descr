@@ -2,7 +2,7 @@ Rancid monitors a router's (or device's) configuration, including software
 and hardware (cards, serial numbers, etc), using CVS. Rancid currently 
 supports Bay routers, Cisco routers, Juniper routers, Catalyst switches, 
 Foundry switches, Redback NASs, ADC EZT3 muxes, MRTd (and thus likely IRRd), 
-Alteon switches, and HP procurve switches. 
+Alteon switches, HP procurve switches, Hitachi routers. 
 
 Rancid logs into each of the devices in a router table file, runs various 
 commands, chomps the output, and emails any differences ( sample) from 

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	rancid
-PORTVERSION=	2.2.2
-PORTREVISION=	4
+PORTVERSION=	2.3.r1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
+DISTNAME=	${PORTNAME}-2.3.rc1
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Really Awesome New Cisco confIg Differ
@@ -28,14 +28,22 @@ CONFIGURE_ARGS=			\
 
 MANPREFIX=	${PREFIX}/rancid
 
-MAN1=		lg_intro.1 par.1 do-diffs.1 alogin.1 blogin.1 clogin.1 \
-		control_rancid.1 create_cvs.1 rancid.1 rancid_intro.1 \
-		elogin.1 f10rancid.1 flogin.1 hlogin.1 hrancid.1 jlogin.1 \
-		jrancid.1 francid.1 cat5rancid.1 erancid.1 mrancid.1 xrancid.1
+MAN1=		alogin.1 blogin.1 cat5rancid.1 clogin.1 control_rancid.1 \
+		cssrancid.1 elogin.1 erancid.1 f10rancid.1 flogin.1 fnrancid.1 \
+		francid.1 hlogin.1 hrancid.1 htlogin.1 htrancid.1 jerancid.1 \
+		jlogin.1 jrancid.1 lg_intro.1 mrancid.1 nlogin.1 nrancid.1 \
+		nslogin.1 nsrancid.1 par.1 prancid.1 rancid-cvs.1 rancid-run.1 \
+		rancid.1 rancid_intro.1 rivlogin.1 rivrancid.1 tntlogin.1 \
+		tntrancid.1 xrancid.1 zrancid.1
 
-MAN5=		env.5 lg.conf.5 cloginrc.5 router.db.5
+MAN5=		lg.conf.5 cloginrc.5 rancid.conf.5 router.db.5
 
-CONFIG_FILES=	bin/env util/lg/lg.conf
+OLDCONFIG_FILE1=	bin/env
+OLDCONFIG_FILE2=	util/lg/lg.conf
+NEWCONFIG_FILES=	etc/rancid.conf etc/lg.conf
+
+pre-everything::
+	@ ${ECHO} "Make sure your rancid repository is quit before upgrading; disable rancid cron jobs"
 
 post-install:
 	@ ${SED} -e "s:%%INSTDIR%%:${PREFIX}/rancid:g" pkg-message >${PKGMESSAGE}
@@ -44,11 +52,24 @@ post-install:
 	@ ${CAT} ${PKGMESSAGE}
 	@ ${ECHO}
 .endif
-.for file in ${CONFIG_FILES}
-	@ if [ -f ${PREFIX}/rancid/${file}.dist ] ; then \
-	${ECHO} "WARNING: *** new ${file} file is installed as ${PREFIX}/rancid/${file}.dist"; \
-	${ECHO} "       : *** review ${file}.dist for new/deprecated switches or install in place ${file}";  \
+.for file in ${NEWCONFIG_FILES}
+	@ if [ -f ${PREFIX}/rancid/${file} ] ; then \
+	${ECHO} "WARNING: *** new ${file} file is installed as ${PREFIX}/rancid/${file}.sample"; \
+	${ECHO} "       : *** review ${file}.sample for new/deprecated switches or install in place ${file}";  \
 	fi
 .endfor
+	@ if [ -f ${PREFIX}/rancid/${OLDCONFIG_FILE1} ] ; then \
+	${ECHO} "WARNING: *** ${PREFIX}/rancid/${OLDCONFIG_FILE1} has been replaced with "; \
+	${ECHO} "       : *** ${PREFIX}/rancid/etc/rancid.conf. Merge from sample and old file "; \
+	fi
+	@ if [ -f ${PREFIX}/rancid/${OLDCONFIG_FILE2} ] ; then \
+	${ECHO} "WARNING: *** ${PREFIX}/rancid/${OLDCONFIG_FILE2} has been replaced with "; \
+	${ECHO} "       : *** ${PREFIX}/rancid/etc/lg.conf. Merge from sample and old file "; \
+	fi
+	@ if [ -f ${PREFIX}/rancid/${OLDCONFIG_FILE1} -o \
+	-f ${PREFIX}/rancid/${OLDCONFIG_FILE2} ] ; then \
+	${ECHO} "WARNING: *** New CVS Repository will be stored ${PREFIX}/rancid/var "; \
+	${ECHO} "       : *** Copy the repository if you want to keep the history "; \
+	fi
 
 .include <bsd.port.mk>
