@@ -1219,3 +1219,4 @@ security/lcrzoex|net/netwox|2004-08-01|The project has been renamed and port mov
 devel/autoconf|devel/autoconf253|2004-08-03|autotools cleanup
 devel/automake|devel/automake15|2004-08-03|autotools cleanup
 mail/balsa2|mail/balsa|2004-08-06|Balsa 2.x has been moved to the balsa port
+net/pdtpd|net/squall|2004-08-08|The project has been renamed
