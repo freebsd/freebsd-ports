@@ -26,6 +26,7 @@
     SUBDIR += domtools
     SUBDIR += ez-ipupdate
     SUBDIR += firedns
+    SUBDIR += geta
     SUBDIR += ghtool
     SUBDIR += h2n
     SUBDIR += hesiod
