@@ -12,7 +12,13 @@ MASTER_SITES=   http://home.flash.net/~marknu/less/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	less
 
-MAINTAINER=	ache@FreeBSD.org
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500003
+FORBIDDEN=      already is in the base system
+.endif
+
+MAINTAINER=     ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 MAN1=		less.1 lesskey.1
@@ -23,4 +29,4 @@ pre-patch:
 EXTRA_PATCHES=	${FILESDIR}/patch-ab
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
