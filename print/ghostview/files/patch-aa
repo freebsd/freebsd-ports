@@ -1,12 +1,13 @@
-*** misc.c.orig	Fri Oct 21 22:36:09 1994
---- misc.c	Fri Oct 21 22:36:20 1994
-***************
-*** 61,67 ****
-  #include <perror.h>
-  #else
-  extern int sys_nerr;
-- extern char *sys_errlist[];
-  #endif
-  
-  #include "Ghostview.h"
---- 61,66 ----
+--- misc.c.orig	Sat Jul 24 03:29:12 1993
++++ misc.c	Wed Jun  5 22:41:39 2002
+@@ -60,8 +60,9 @@
+ #ifdef VMS
+ #include <perror.h>
+ #else
++#ifndef __FreeBSD__
+ extern int sys_nerr;
+-extern char *sys_errlist[];
++#endif
+ #endif
+ 
+ #include "Ghostview.h"
