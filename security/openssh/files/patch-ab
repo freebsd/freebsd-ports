@@ -1,6 +1,6 @@
 --- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/Makefile.inc	Mon Oct 25 16:27:26 1999
-+++ Makefile.inc	Sun Nov 28 16:29:13 1999
-@@ -2,10 +2,13 @@
++++ Makefile.inc	Mon Nov 29 01:06:23 1999
+@@ -2,10 +2,14 @@
  
  .include <bsd.obj.mk>
  
@@ -10,6 +10,7 @@
 -.else
 +AFS?=		no
 +KERBEROS?=	no
++PAM?=		no
 +SKEY?=		no
 +TCP_WRAPPERS?=	yes
 +.if !defined(MAKEFILE_INC_FIRST_PASS)

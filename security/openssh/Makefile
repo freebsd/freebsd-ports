@@ -43,6 +43,12 @@ MAKE_ENV+=	AFS=yes
 .if defined(KERBEROS) && ${KERBEROS} == YES
 MAKE_ENV+=	KERBEROS=yes
 .endif
+.if exists(/usr/include/security/pam_modules.h)
+PAM?=		yes
+.else
+PAM=		no
+.endif
+MAKE_ENV+=	PAM=${PAM}
 .if defined(SKEY) && ${SKEY} == YES
 MAKE_ENV+=	SKEY=yes
 .endif
@@ -107,13 +113,25 @@ do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} -r ${DISTDIR}/${PKGNAME}/${DISTNAME} ${WRKDIR}
 	@${CP} ${FILESDIR}/strlcat.c ${FILESDIR}/strlcpy.c ${WRKSRC}/lib/
+	@${MKDIR} ${WRKSRC}/pam_ssh
+	@${CP} ${FILESDIR}/pam_ssh_Makefile ${WRKSRC}/pam_ssh/Makefile
+	@${CP} ${FILESDIR}/pam_ssh.c ${WRKSRC}/pam_ssh/
 
 post-patch:
-	@${PERL} -pi.orig -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/ssh.h
-	@${PERL} -pi.orig -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/sshd_config
+	@${PERL} -pi.orig -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/ssh.h \
+		${WRKSRC}/sshd_config ${WRKSRC}/pam_ssh/pam_ssh.c
 	@${PERL} -pi.openssl -e \
 	    's:^(\s*#\s*include\s+<)ssl(/\w+\.h>\s*)$$:$$1openssl$$2:g' \
 	    ${WRKSRC}/*.[ch]
+
+.if ${PAM} == yes
+PLIST=		${WRKDIR}/PLIST
+
+do-configure:
+	@${CP} ${PKGDIR}/PLIST ${PLIST}
+	@${ECHO} "@cwd /usr" >> ${PLIST}
+	@${ECHO} "lib/pam_ssh.so" >> ${PLIST}
+.endif
 
 post-install:
 .if !exists(${PREFIX}/etc/ssh_host_key)

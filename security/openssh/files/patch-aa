@@ -1,10 +1,15 @@
 --- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/Makefile	Mon Oct 25 16:27:26 1999
-+++ ./Makefile	Tue Nov 23 19:18:22 1999
-@@ -1,6 +1,7 @@
++++ Makefile	Mon Nov 29 01:07:28 1999
+@@ -1,8 +1,12 @@
  #	$OpenBSD: Makefile,v 1.5 1999/10/25 20:27:26 markus Exp $
  
  .include <bsd.own.mk>
 +.include "Makefile.inc"
  
  SUBDIR=	lib ssh sshd ssh-add ssh-keygen ssh-agent scp
++.if ${PAM} == yes
++SUBDIR+=	pam_ssh
++.endif
  
+ distribution:
+ 	install -C -o root -g wheel -m 0644 ${.CURDIR}/ssh_config \
