@@ -26,6 +26,7 @@ libexec/rep/%%GNUHOST%%/libtool
 libexec/rep/%%GNUHOST%%/rep_config.h
 libexec/rep/%%GNUHOST%%/rules.mk
 libexec/rep/%%VERSION%%/%%GNUHOST%%/DOC
+libexec/rep/%%VERSION%%/%%GNUHOST%%/emulate-gnu-tar
 libexec/rep/%%VERSION%%/%%GNUHOST%%/gdbm.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/gdbm.so
 libexec/rep/%%VERSION%%/%%GNUHOST%%/gettext.la
