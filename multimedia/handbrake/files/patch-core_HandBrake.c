@@ -1,14 +1,5 @@
 --- core/HandBrake.c.orig	Wed May 26 05:51:32 2004
-+++ core/HandBrake.c	Mon Nov 22 21:57:36 2004
-@@ -7,7 +7,7 @@
- #include "HBInternal.h"
-
- /* libavcodec */
--#include "ffmpeg/avcodec.h"
-+#include "avcodec.h"
-
- /* Local prototypes */
- static void HandBrakeThread( void * );
++++ core/HandBrake.c	Sun Dec 19 11:02:32 2004
 @@ -277,7 +277,8 @@
          img_resample_full_init( t->outWidth, t->outHeight,
                                  t->inWidth, t->inHeight,
