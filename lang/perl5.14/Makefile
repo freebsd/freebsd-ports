@@ -3,13 +3,13 @@
 # Date created:		16 April 1995
 # Whom:			markm
 #
-# $Id: Makefile,v 1.1.1.1 1995/04/17 06:02:33 asami Exp $
+# $Id: Makefile,v 1.2 1995/04/18 02:00:15 asami Exp $
 #
 
 DISTNAME=		perl5.001
 PKGNAME=		perl-5.001
-CATEGORIES+=		languages
-MASTER_SITES=		ftp://ftp.sun.ac.za/pub/gnu/
+CATEGORIES+=            languages development programming
+MASTER_SITES=           ftp://prep.ai.mit.edu/pub/gnu/ ftp://ftp.sun.ac.za/pub/gnu/
 EXTRACT_SUFX=		.tar.gz
 
 MAINTAINER=	markm@FreeBSD.ORG
