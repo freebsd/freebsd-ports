@@ -24,8 +24,8 @@ USE_REINPLACE=	yes
 WANT_GNOME=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-locale-dir=${LOCALBASE}/share/locale \
 		--disable-debug --disable-gnome --enable-threads
 
