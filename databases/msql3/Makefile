@@ -3,7 +3,7 @@
 # Date created:		December 17th 1996
 # Whom:			jfitz
 #
-# $Id: Makefile,v 1.24 1998/02/13 10:54:46 tg Exp $
+# $Id: Makefile,v 1.25 1998/02/27 11:42:55 obrien Exp $
 #
 
 DISTNAME=	msql-2.0.3
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www2.nerosworld.com/msql/ \
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BROKEN=yes
+BROKEN=	"PR 5868 : PLIST broken, not PREFIX clean"
 
 # Not free for commercial use.  Must create a user on the local system
 NO_PACKAGE=	YES
