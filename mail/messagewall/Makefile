@@ -34,11 +34,22 @@ pre-fetch:
 	@${ECHO} "	 The profile for the first recipient will be applied to all"
 	@${ECHO} "	 recipients of the message."
 	@${ECHO} ""
+	@${ECHO} "    -DWITH_ESMTP_SIZE_OPTION to allow messagewall to handle the"
+	@${ECHO} "	 size option in MAIL FROM: <foo@bar.com> SIZE=12345678 (RFC1870)"
+	@${ECHO} "	 This can safe a lot of bandwith, because it rejects any email,"
+	@${ECHO} "	 if message size is greater than max message size."
+	@${ECHO} ""
 
 # Patch from "Quentin Guernsey" <quentin@wingateweb.com>
 # for details see http://www.messagewall.org/cgi-bin/ezmlm-browse.cgi?command=showmsg&list=messagewall-discuss&month=200303&msgnum=921&threadid=lcjcimckfmdphlhpjjhn
 .if defined(MESSAGEWALL_ALLOW_MULT_RCPT)
 EXTRA_PATCHES+=	${PATCHDIR}/allow-multiple-recipients.patch
+.endif
+
+# Patch from "Michael Ranner" <mranner@inode.at>
+# for details see http://www.ranner.jawa.at/messagewall.php
+.if defined(WITH_ESMTP_SIZE_OPTION)
+EXTRA_PATCHES+=	${PATCHDIR}/esmtpsize.patch
 .endif
 
 post-patch:

@@ -1,0 +1,39 @@
+--- smtp.c.orig	Fri Jan 16 00:00:00 2004
++++ smtp.c	Fri Jan 16 00:04:04 2004
+@@ -394,6 +394,8 @@
+ 	int atsign;
+ 	int l;
+ 	int j;
++	int k;
++	long message_size;
+ 
+ 	if (outline.a == 0)
+ 		firestring_estr_alloc(&outline,SMTP_LINE_MAXLEN);
+@@ -582,6 +584,27 @@
+ 			fprintf(stderr,"{%d} (%d) SMTP/REJECT: MAIL path too long\n",process,client);
+ 			tls_client_write(client,SMTP_BADCHAR,sizeof(SMTP_BADCHAR) - 1);
+ 			return 0;
++		}
++
++		/*
++         * ESMPT SIZE patch (2004-01-16) from Michael Ranner <mranner@inode.at>
++		 * With this patch, messagewall handles the ESMTP SIZE option (RFC1870)
++		 * "MAIL FROM: <mranner@inode.at> SIZE=12345" like sendmail does.
++		 * This patch can help you to safe a lot of bandwith.
++		 */
++		k = firestring_estr_stristr(line,"size",l);
++
++		if (k > -1) {
++			k = firestring_estr_strchr(line,'=',k);
++			if ((k > -1) && (line->l > ++k)) {
++				message_size = strtol(&line->s[k],(char **)NULL,10);
++				if (message_size > max_message_size) {
++					fprintf(stderr,"{%d} (%d) SMTP/REJECT: esmtp size %d bytes, message too long\n",process,client,message_size);
++					tls_client_write(client,SMTP_MESSAGE_TOOLONG,sizeof(SMTP_MESSAGE_TOOLONG) + 1);
++				} else {
++					fprintf(stderr,"{%d} (%d) SMTP/STATUS: esmtp size %d bytes\n",process,client,message_size);
++				}
++			}
+ 		}
+ 
+ 		/*
