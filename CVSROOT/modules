@@ -2295,6 +2295,7 @@ its4		ports/security/its4
 iv		ports/x11-toolkits/iv
 iverilog	ports/cad/iverilog
 iwidgets	ports/x11-toolkits/iwidgets
+ixj		ports/comms/ixj
 ixlib		ports/devel/ixlib
 ja-ASCIIdates98-fpw	ports/japanese/ASCIIdates98-fpw
 ja-CGdic-fpw	ports/japanese/CGdic-fpw
