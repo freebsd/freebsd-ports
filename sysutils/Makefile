@@ -87,6 +87,7 @@
     SUBDIR += pslist
     SUBDIR += psmisc
     SUBDIR += pwgen
+    SUBDIR += qtpkg
     SUBDIR += rdate
     SUBDIR += rotate
     SUBDIR += rtty

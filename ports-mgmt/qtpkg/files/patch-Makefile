@@ -1,0 +1,25 @@
+
+$FreeBSD$
+
+--- Makefile	2001/01/23 16:32:54	1.1
++++ Makefile	2001/01/23 16:36:12
+@@ -9,13 +9,13 @@
+ 
+ CC	=	cc
+ CXX	=	c++
+-CFLAGS	=	-pipe -Wall -W -O2 -DNO_DEBUG
+-CXXFLAGS =	-pipe -Wall -W -O2 -DNO_DEBUG
+-INCPATH	=	-I/usr/local/include -I/usr/X11R6/include/qt2
++CFLAGS	+=	-pipe -Wall -W -DNO_DEBUG
++CXXFLAGS +=	-pipe -Wall -W -DNO_DEBUG
++INCPATH	=	-I$(LOCALBASE)/include -I$(X11BASE)/include/qt2
+ LINK	=	c++
+-LIBS	=	$(SUBLIBS) -L/usr/local/lib -L/usr/X11R6/lib -lqt2 -lXext -lX11 -lm
+-MOC	=	/usr/X11R6/bin/moc2
+-UIC	=	/usr/X11R6/bin/uic
++LIBS	=	$(SUBLIBS) -L$(LOCALBASE)/lib -L$(X11BASE)/lib -lqt2 -lXext -lX11 -lm -pthread
++MOC	=	$(X11BASE)/bin/moc2
++UIC	=	$(X11BASE)/bin/uic
+ 
+ TAR	=	tar -cf
+ GZIP	=	gzip -9f
