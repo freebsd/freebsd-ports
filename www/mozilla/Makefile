@@ -24,16 +24,11 @@ COMMENT=	The open source, standards compliant web browser
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		mng.1:${PORTSDIR}/graphics/libmng
+		png.5:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
 MOZILLA?=	mozilla
 MOZ_SUFX?=
-
-USE_GNOME=	gtk20 libidl
-
 LATEST_LINK=	${MOZILLA}
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 			--exclude */macbuild/*\
@@ -41,6 +36,7 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 			--exclude .cvsignore \
 			--exclude makefile.win \
 			--exclude MANIFEST
+USE_GNOME=	gtk20 libidl
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
@@ -49,6 +45,11 @@ USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
+MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin
+ALL_TARGET=	default
+FAKEDIR=	${WRKDIR}/fake
+MOZ_PIS_DIR=	${FAKEDIR}/lib/${MOZILLA}/init.d
+MOZ_PIS_SCRIPTS=	# No default
 CONFIGURE_ARGS=					\
 		--disable-auto-deps		\
 		--enable-chrome-format=jar	\
@@ -71,20 +72,17 @@ CONFIGURE_ARGS=					\
 		--enable-xinerama		\
 		--with-system-zlib		\
 		--with-system-jpeg=${LOCALBASE}	\
-		--with-system-mng=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-gssapi=/usr		\
 		--prefix=${FAKEDIR}		\
-		--with-pthreads
+		--with-pthreads			\
+		--enable-default-toolkit=gtk2
 
 PLIST=		${WRKDIR}/pkg-plist
 MOZ_EXTENSIONS=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-
-CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
-
 ESD_LIB=	libesd.so.2
 FREETYPE_LIB=	libfreetype.so.9
 PKGCONFIG_FILES=mozilla-gtkmozembed mozilla-js mozilla-xpcom \
@@ -96,9 +94,6 @@ JPI_LIST?=\
 	${LOCALBASE}/jdk1.4.1/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
 	${LOCALBASE}/diablo-jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
 	${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so
-
-# moz_pis
-MOZ_PIS_SCRIPTS=	# no default scripts
 
 OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 	CALENDAR "Enable the Calendar module" off \
@@ -115,6 +110,21 @@ OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500035
+IGNORE=	core dumps on ${ARCH} during post-build
+.endif
+
+.if exists(${LOCALBASE}/include/freetype/freetype.h)
+BROKEN=	You must upgrade your freetype port to 1.3.1_2 or higher before \
+	installing Mozilla.  If you have 1.3.1_2 installed, please remove \
+	${LOCALBASE}/include/freetype, then build Mozilla
+.endif
+
+.if defined(WITH_CALENDAR) && (defined(WITHOUT_MAILNEWS) || \
+	defined(WITHOUT_COMPOSER))
+BROKEN=	Calendar requires Composer and Mailnews support.
+.endif
+
 .if defined(WITH_CAIRO_RENDER)
 LIB_DEPENDS+=		svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
 BUILD_DEPENDS+=		${LOCALBASE}/include/cairo/cairo-xlib.h:${PORTSDIR}/graphics/cairo
@@ -126,6 +136,12 @@ CONFIGURE_ENV+=		MOZ_SVG_RENDERER_CAIRO=1
 CONFIGURE_ARGS+=	--enable-svg-renderer-libart \
 			--disable-svg-renderer-cairo
 CONFIGURE_ENV+=		MOZ_INTERNAL_LIBART_LGPL=1
+MAKE_ENV+=		MOZ_INTERNAL_LIBART_LGPL=1
+.if ${OSVERSION} < 500035
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-nsSVGLibartGlyphMetricsFT.cpp
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch2-nsSVGLibartGlyphMetricsFT.cpp
+.endif
 .endif
 
 .if !defined(WITHOUT_XFT)
@@ -145,11 +161,6 @@ CONFIGURE_ARGS+=--enable-debug \
 .else
 CONFIGURE_ARGS+=--disable-debug \
 		--enable-strip
-.endif
-
-.if defined(WITH_CALENDAR) && (defined(WITHOUT_MAILNEWS) || \
-	defined(WITHOUT_COMPOSER))
-BROKEN=	"Calendar requires Composer and Mailnews support."
 .endif
 
 # LDAP is only used by mail and news so disable both together
@@ -187,21 +198,9 @@ CONFIGURE_ARGS+=	--enable-calendar
 CONFIGURE_ARGS+=	--disable-composer
 .endif
 
-MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin \
-		MOZ_INTERNAL_LIBART_LGPL=1
-ALL_TARGET=	default
-FAKEDIR=	${WRKDIR}/fake
-MOZ_PIS_DIR=	${FAKEDIR}/lib/${MOZILLA}/init.d
-
 #.if ${ARCH} == "i386"
 #CONFIGURE_ARGS+=	--enable-reorder
 #.endif
-
-.if ${OSVERSION} < 500035 && !defined(WITH_CAIRO_RENDER)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-nsSVGLibartGlyphMetricsFT.cpp
-.else
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch2-nsSVGLibartGlyphMetricsFT.cpp
-.endif
 
 .if defined(WITH_SMB)
 USE_GNOME+=	gnomevfs2
@@ -214,25 +213,8 @@ CFLAGS+=		-O2
 CONFIGURE_ARGS+=	--enable-optimize=-O2
 .endif
 
-.if defined(WITH_MENU_ENTRY)
+.if !defined(WITHOUT_MENU_ENTRY)
 USE_GNOME+=	gnomehier desktopfileutils
-.endif
-
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500035
-IGNORE=	"core dumps on alpha during post-build"
-.endif
-
-.if exists(${LOCALBASE}/include/freetype/freetype.h)
-BROKEN="You must upgrade your freetype port to 1.3.1_2 or higher before installing Mozilla.  If you have 1.3.1_2 installed, please remove ${LOCALBASE}/include/freetype, then build Mozilla"
-.endif
-
-pre-everything::
-.if defined(WITH_CALENDAR)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Calendar is still beta software."
-	@${ECHO_MSG} "Use at your own risk."
-	@${ECHO_MSG} "http://mozilla.org/projects/calendar/"
-	@${ECHO_MSG} ""
 .endif
 
 post-patch:
@@ -323,7 +305,7 @@ pre-install:
 .if !defined(WITHOUT_MAILNEWS)
 	@${CP} -RL ${WRKSRC}/dist/bin/defaults/isp ${FAKEDIR}/lib/${MOZILLA}/defaults
 .endif
-.if defined(WITH_MENU_ENTRY)
+.if !defined(WITHOUT_MENU_ENTRY)
 	${ECHO_CMD} share/gnome/applications/mozilla.desktop >> ${PLIST}
 .endif
 	cd ${FAKEDIR}/lib/${MOZILLA} && ${FIND} -s * -type f -o -type l | \
@@ -377,7 +359,7 @@ do-install:
 	${CHMOD} 755 ${PREFIX}/include/${MOZILLA}
 	cd ${FAKEDIR}/include/mozilla && ${FIND} . | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/${MOZILLA}
-.if defined(WITH_MENU_ENTRY)
+.if !defined(WITHOUT_MENU_ENTRY)
 	${MKDIR} ${PREFIX}/share/gnome/applications
 	${INSTALL_DATA} ${WRKDIR}/mozilla.desktop \
 		${PREFIX}/share/gnome/applications
