@@ -39,6 +39,7 @@ MILTER_SOVER?=	3
 # Options to define Features:
 # SENDMAIL_WITHOUT_IPV6=yes
 # SENDMAIL_WITHOUT_MILTER=yes
+# SENDMAIL_WITHOUT_NIS=yes
 # SENDMAIL_WITHOUT_SHMEM=yes
 # SENDMAIL_WITH_TLS=yes
 # SENDMAIL_WITH_SMTPS=yes
@@ -245,6 +246,13 @@ PLIST_SUB+=	MILTER_SHARED="@comment "
 .endif
 .endif
 
+SED_SCRIPT=	-e "s;\`-pthread\';\`${PTHREAD_LIBS}\';" \
+		-e "s;\`-O\';\`${CFLAGS}\';"
+
+.if defined(SENDMAIL_WITHOUT_NIS)
+SED_SCRIPT+=	-e "s;-DNIS ;;"
+.endif
+
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/sm-client.sh \
 		> ${WRKSRC}/sm-client.sh
@@ -275,9 +283,7 @@ pre-configure:
 
 do-configure:
 	@${MV} ${WRKSRC}/devtools/OS/FreeBSD ${WRKSRC}/devtools/OS/FreeBSD.sed
-	${SED} -e "s;\`-pthread\';\`${PTHREAD_LIBS}\';" \
-		-e "s;\`-O\';\`${CFLAGS}\';" \
-		${WRKSRC}/devtools/OS/FreeBSD.sed \
+	${SED} ${SED_SCRIPT} ${WRKSRC}/devtools/OS/FreeBSD.sed \
 		> ${WRKSRC}/devtools/OS/FreeBSD
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
 		-e "s=%%LOCALBASE%%=${LOCALBASE}=g" \
