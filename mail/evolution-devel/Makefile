@@ -6,38 +6,36 @@
 #
 
 PORTNAME=	evolution
-PORTVERSION=	1.2.4
+PORTVERSION=	1.3.3
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://people.FreeBSD.org/~sobomax/:local
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2 \
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.3 \
 			sobomax/:local
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		db-3.1.17${EXTRACT_SUFX}:local
-DIST_SUBDIR=	gnome
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An integrated mail, calendar and address book distributed suite
 
-LIB_DEPENDS=	bonobo_conf.0:${PORTSDIR}/devel/bonobo-conf \
-		nss3.1:${PORTSDIR}/security/nss \
-		soup.6:${PORTSDIR}/devel/soup
+LIB_DEPENDS=	nss3.1:${PORTSDIR}/security/nss \
+		soup-2.0.0:${PORTSDIR}/devel/libsoup \
+		gtkhtml-3.0.1:${PORTSDIR}/www/gtkhtml3
 
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
 .endif
-RUN_DEPENDS=	gnome-spell-component-0.5:${PORTSDIR}/textproc/gnomespell \
-		gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
+RUN_DEPENDS=	${X11BASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnomespell-devel
 .if !defined(WITHOUT_PILOT)
-BUILD_DEPENDS+=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
-RUN_DEPENDS+=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
+LIB_DEPENDS+=	gpilotdconduit.2:${PORTSDIR}/palm/gnomepilot2
 .endif
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs gal gtkhtml
+USE_GNOME=	gnomeprefix gnomehack gnometarget
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -62,9 +60,9 @@ PLIST_SUB=	PILOT:="@comment "
 CONFIGURE_ENV=	CPPFLAGS="-I${DB3_WRKSRC} -I${LOCALBASE}/include" \
 		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 
-PLIST_SUB+=	VERSION=${PORTVERSION}
+PLIST_SUB+=	VERSION="1.3"
 
-MAN1=		evolution.1
+#MAN1=		evolution.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
@@ -81,7 +79,7 @@ DB3_CONFIGURE_ARGS=	--enable-compat185 \
 			--disable-dynamic \
 			--prefix=${PREFIX} \
 			--includedir=${PREFIX}/include/db3 \
-			--build=${ARCH}-unknown-freebsd${OSREL}
+			--target=${ARCH}-unknown-freebsd${OSREL}
 
 pre-configure:
 	@(cd ${DB3_WRKSRC} && \
