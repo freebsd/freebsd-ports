@@ -203,6 +203,7 @@
     SUBDIR += koffice-i18n-es
     SUBDIR += koffice-i18n-et
     SUBDIR += koffice-i18n-fa
+    SUBDIR += koffice-i18n-fi
     SUBDIR += koffice-i18n-it
     SUBDIR += koffice-i18n-lt
     SUBDIR += koffice-i18n-lv
