@@ -9,6 +9,7 @@ share/doc/isoqlog/AUTHORS
 share/doc/isoqlog/ChangeLog
 share/doc/isoqlog/COPYING
 share/doc/isoqlog/EnderUNIX
+share/doc/isoqlog/FAQ
 share/doc/isoqlog/INSTALL
 share/doc/isoqlog/NEWS
 share/doc/isoqlog/README
@@ -38,9 +39,11 @@ share/isoqlog/htmltemp/library/isoqlog.css
 share/isoqlog/lang/dutch
 share/isoqlog/lang/english
 share/isoqlog/lang/french
+share/isoqlog/lang/finnish
 share/isoqlog/lang/german
 share/isoqlog/lang/italian
 share/isoqlog/lang/norwegian
+share/isoqlog/lang/russian
 share/isoqlog/lang/polish
 share/isoqlog/lang/portuguese
 share/isoqlog/lang/spanish

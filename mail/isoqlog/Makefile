@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	isoqlog
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.enderunix.org/isoqlog/ \
-		http://www.trunix.org/isogloq/    \
+		http://www.trunix.org/projeler/isoqlog/ \
 		http://www.acikkod.org/softwares/
 
 MAINTAINER=	roots@enderunix.org
 COMMENT=	A MTA log analysis program supporting qmail, postfix, sendmail
 
 GNU_CONFIGURE=	YES
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	YES
 
 post-install:
