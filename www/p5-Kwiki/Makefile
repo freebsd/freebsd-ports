@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Kwiki
-PORTVERSION=	0.33
+PORTVERSION=	0.35
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Kwiki
@@ -35,7 +35,6 @@ MAN3=		Kwiki.3 \
 		Kwiki::Edit.3 \
 		Kwiki::Formatter.3 \
 		Kwiki::Files.3 \
-		Kwiki::Htaccess.3 \
 		Kwiki::Hub.3 \
 		Kwiki::Icons.3 \
 		Kwiki::Installer.3 \
@@ -49,7 +48,8 @@ MAN3=		Kwiki.3 \
 		Kwiki::Theme.3 Kwiki::Theme::Basic.3 \
 		Kwiki::Toolbar.3 \
 		Kwiki::Users.3 \
-		Kwiki::Widgets.3 \
+		Kwiki::WebFile.3 \
+		Kwiki::Widgets.3
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
