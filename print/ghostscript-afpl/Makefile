@@ -169,6 +169,7 @@ LIPS_SRCS=	${LIPS_NAME}.tar.gz
 
 # EPAG - additional driver for Epson ESC/Page printers
 # http://www.humblesoft.com/gdevepag.html
+# XXX FIXME
 EPAG=		epag
 EPAG_VERS=	3.09
 EPAG_NAME=	${EPAG}-${EPAG_VERS}
@@ -193,6 +194,7 @@ GDI_NAME=	Samsung-SmartGDI-all-GS
 GDI_SRCS=	${GDI_NAME}.orig.tar.gz
 
 # LXM3200 - additional driver for Lexmark 3200/Z12/Z22/Z31/Z32
+# XXX FIXME
 LXM3200=	lxm3200
 LXM3200_VERS=	20030501
 LXM3200_NAME=	${LXM3200}-tweaked-${LXM3200_VERS}
@@ -264,6 +266,7 @@ post-extract:
 # for EPAG driver
 	${ECHO_MSG} ">>>   extracting ${EPAG_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPAG_SRCS}
+	${LN} -sf ${EPAG_NAME} ${WRKSRC}/${EPAG}
 # for EPLASER driver
 	${ECHO_MSG} ">>>   extracting ${EPLASER_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPLASER_SRCS}
