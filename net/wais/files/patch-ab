@@ -1,0 +1,12 @@
+*** Makefile.orig	Mon Jan 30 01:41:08 1995
+--- Makefile	Mon Jan 30 01:41:12 1995
+***************
+*** 15,20 ****
+--- 15,21 ----
+  # 
+  # Revision 1.5  92/02/27  10:07:24  jonathan
+  # got rid of automatic setting of TOP.  Used Simon's approach instead.
++ 
+  # Revision 1.4  92/02/13  12:27:53  jonathan
+  # Removed references to seeker.
+  # 
