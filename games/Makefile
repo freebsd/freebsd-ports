@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.139 1998/05/18 09:14:56 tg Exp $
+# $Id: Makefile,v 1.140 1998/05/18 14:21:05 tg Exp $
 #
 
     SUBDIR += 3dc
@@ -128,6 +128,7 @@
     SUBDIR += xsokoban
     SUBDIR += xsol
     SUBDIR += xsoldier
+    SUBDIR += xspacewarp
     SUBDIR += xspringies
     SUBDIR += xtic
     SUBDIR += xtriangles
