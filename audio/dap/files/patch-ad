@@ -1,25 +1,24 @@
---- spkit/spkit/Makefile.linux.orig	Wed Aug  9 18:27:20 2000
-+++ spkit/spkit/Makefile.linux	Tue Jul  2 02:11:41 2002
-@@ -1,16 +1,19 @@
+--- spkit/spkit/Makefile.linux.orig	Fri Jul  5 06:10:23 2002
++++ spkit/spkit/Makefile.linux	Sun Jan  5 22:15:45 2003
+@@ -1,15 +1,18 @@
 -CC      = gcc
 -CXX     = g++
 +CC      ?= gcc
 +CXX     ?= g++
- FORMS   = ../../../xforms/FORMS
  SOUND   = ../../sound
  TOOLTIP = ../../tooltips
  BACKDIR = ../../bak/spkit/spkit
  MAINDIR = ../../main
  HOMEDIR = $(HOME)
 -X11DIR  = /usr/X11R6
--INCDIR  = -I. -I.. -I../.. -I$(SOUND) -I$(FORMS) -I$(MAINDIR) -I$(TOOLTIP) -I$(X11DIR)/include
+-INCDIR  = -I. -I.. -I../.. -I$(SOUND) -I$(XFORMS)/FORMS -I$(MAINDIR) -I$(TOOLTIP) -I$(X11DIR)/include
 -CCFLAGS = $(INCDIR) $(DEBUG) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
 +X11DIR  = ${X11BASE}
 +.if exists(${X11BASE}/include/X11/forms.h)
 +XFORMSINC = -I${X11BASE}/include/X11
 +.endif
-+INCDIR  = -I. -I.. -I../.. -I$(SOUND) -I$(FORMS) -I$(MAINDIR) -I$(TOOLTIP) -I$(X11DIR)/include ${XFORMSINC}
-+CCFLAGS += $(INCDIR) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
++INCDIR  = -I. -I.. -I../.. -I$(SOUND) -I$(XFORMS)/FORMS -I$(MAINDIR) -I$(TOOLTIP) -I$(X11DIR)/include ${XFORMSINC}
++CCFLAGS += $(INCDIR) $(DEBUG) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
  DEBUG   = -g3
 -OPTIM   = -O2
 +OPTIM   = ${CXXFLAGS}

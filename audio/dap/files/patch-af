@@ -1,14 +1,14 @@
---- sound/Makefile.linux.orig	Sun Jul  1 13:44:27 2001
-+++ sound/Makefile.linux	Sun Jul  1 13:45:00 2001
+--- sound/Makefile.linux.orig	Fri Jul  5 06:08:17 2002
++++ sound/Makefile.linux	Sun Jan  5 22:27:56 2003
 @@ -1,5 +1,5 @@
 -CC      = gcc
 -CXX     = g++
 +CC      ?= gcc
 +CXX     ?= g++
- FORMS   = ../../xforms/FORMS
  SPKIT   = ../spkit
  AUDIO   = ../libaudio
-@@ -9,9 +9,9 @@
+ AUDIOF  = ../libaudiofile
+@@ -8,9 +8,9 @@
  HOMEDIR = $(HOME)
  INCDIR  = -I. -I.. -I$(SPKIT) -I$(MAINDIR)
  LIBDIR  = -L$(SPKIT)/spkit -L$(AUDIO) -L$(AUDIOF)
