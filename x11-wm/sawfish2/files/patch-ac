@@ -1,9 +1,9 @@
---- configure.in.orig	Sun Jul  9 17:35:13 2000
-+++ configure.in	Tue Jul 11 12:54:41 2000
-@@ -57,7 +57,7 @@
+--- configure.in.orig	Wed Sep 20 22:27:00 2000
++++ configure.in	Thu Sep 21 15:47:11 2000
+@@ -56,7 +56,7 @@
+ 
  sawfishdir='${datadir}/sawfish'
  lispdir='${sawfishdir}/${version}/lisp'
- nokogiridir='${sawfishdir}/${version}/nokogiri'
 -localedir='${sawfishdir}/${version}/locale'
 +localedir='${datadir}/locale'
  sawfishexecdir='${libexecdir}/sawfish/${version}/${host_type}'

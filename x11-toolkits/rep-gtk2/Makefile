@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rep-gtk
-PORTVERSION=	0.13a
+PORTVERSION=	0.14
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		rep.9:${PORTSDIR}/lang/librep
+		rep.10:${PORTSDIR}/lang/librep
 .if !defined(WITHOUT_GNOME)
 LIB_DEPENDS+=	glade.4:${PORTSDIR}/devel/libglade \
 		gnome.4:${PORTSDIR}/x11/gnomelibs \

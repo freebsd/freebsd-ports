@@ -1,0 +1,10 @@
+--- build-info	2000/09/21 13:51:47	1.1
++++ build-info	2000/09/21 13:51:58
+@@ -13,7 +13,6 @@
+     || HOSTNAME=unknown
+ 
+ [ -n "$LOCALDOMAIN" ] \
+-    || LOCALDOMAIN=`dnsdomainname` \
+     || LOCALDOMAIN=`domainname` \
+     || LOCALDOMAIN=unknown
+ 

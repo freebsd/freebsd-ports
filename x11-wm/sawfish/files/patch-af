@@ -1,0 +1,11 @@
+--- scripts/Makefile.in	2000/09/21 13:09:15	1.1
++++ scripts/Makefile.in	2000/09/21 13:09:33
+@@ -34,7 +34,7 @@
+ SUBSTS := -e "s|__lispdir__|$(lispdir)|" \
+ 	  -e "s|__version__|$(version)|"
+ 
+-G_PIXMAP_DIR = $(GNOMEDIR)/share/pixmaps
++G_PIXMAP_DIR = $(GNOMEDIR)/share/gnome/pixmaps
+ 
+ %.jlc : %.jl
+ 	$(REP_ENVIRON) rep compiler -f compile-batch $<
