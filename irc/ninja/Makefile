@@ -3,12 +3,12 @@
 # Date created:	 	10 April 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1999/06/17 13:19:52 billf Exp $
+# $Id: Makefile,v 1.5 1999/06/19 08:25:49 cpiazza Exp $
 #
 
 DISTNAME= 	ninja-src
 PKGNAME=	ninja-1.1
-CATEGORIES=	net
+CATEGORIES=	irc
 MASTER_SITES=	http://ninja.pimped.org/
 
 MAINTAINER=	cpiazza@FreeBSD.org

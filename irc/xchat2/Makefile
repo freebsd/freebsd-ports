@@ -3,11 +3,11 @@
 # Date created:			17 Nov 1998
 # Whom:				Jim Mock <jim@phrantic.phear.net>
 #
-# $Id: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
+# $Id: Makefile,v 1.13 1999/06/21 01:53:27 cpiazza Exp $
 #
 
 DISTNAME=	xchat-0.9.9
-CATEGORIES=	net
+CATEGORIES=	irc
 MASTER_SITES=	http://xchat.linuxpower.org/files/ \
 		http://www.ozemail.com.au/~peterzelezny/xchat/ \
 		http://www.spyda.co.za/pub/linux/x11/irc/xchat/

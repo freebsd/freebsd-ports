@@ -3,11 +3,11 @@
 # Date created:		04 Apr 1998
 # Whom:			sec@42.org
 #
-# $Id: Makefile,v 1.2 1998/05/27 19:12:12 mph Exp $
+# $Id: Makefile,v 1.3 1998/12/16 00:12:46 jseger Exp $
 #
 
 DISTNAME=	sic-0.18a
-CATEGORIES=	net
+CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/irc/sic/
 EXTRACT_SUFX=	.tgz
 

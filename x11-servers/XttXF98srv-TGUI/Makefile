@@ -3,12 +3,12 @@
 # Date created:		25 October 1998
 # Whom:			NAKAJI Hiroyuki <nakaji@tutrp.tut.ac.jp>
 #
-# $Id: Makefile,v 1.5 1999/04/13 03:16:06 simokawa Exp $
+# $Id: Makefile,v 1.6 1999/05/17 15:19:51 sada Exp $
 #
 
 DISTNAME=	xc
 PKGNAME=	xtt-98TGUI-${VERSION}.${PATCHLEVEL}
-CATEGORIES=	x11
+CATEGORIES=	x11-servers
 
 MAINTAINER=	nakaji@tutrp.tut.ac.jp
 

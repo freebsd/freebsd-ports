@@ -3,12 +3,12 @@
 # Date created:		Mon Mar  8 10:10:42 EET 1999
 # Whom:			Martti Kuparinen <martti.kuparinen@ericsson.com>
 #
-# $Id: Makefile,v 1.4 1999/05/06 00:13:56 taoka Exp $
+# $Id: Makefile,v 1.5 1999/06/21 02:56:36 cpiazza Exp $
 #
 
 DISTNAME=	jdk118-doc
 PKGNAME=	jdk-doc-1.1.8
-CATEGORIES=	lang
+CATEGORIES=	java
 
 MAINTAINER=	martti.kuparinen@ericsson.com
 

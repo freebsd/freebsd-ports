@@ -3,11 +3,11 @@
 # Date created:         09 December 1998
 # Whom:                 Matthew Dillon <dillon@backplane.com>
 #
-# $Id: Makefile,v 1.9 1999/03/10 02:32:59 archie Exp $
+# $Id: Makefile,v 1.10 1999/03/22 06:40:16 archie Exp $
 #
 
 DISTNAME=	jikes-0.47
-CATEGORIES=	lang
+CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.whistle.com/pub/archie/misc/
 
 MAINTAINER=	dillon@backplane.com

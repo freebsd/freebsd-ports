@@ -3,12 +3,12 @@
 # Date created:				Jun 20th 1999
 # Whom:					Trolld
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/21 01:19:34 cpiazza Exp $
 #
 
 DISTNAME=	TrickyIRC-0.99
 PKGNAME=	trickyirc-0.99
-CATEGORIES=	net
+CATEGORIES=	irc
 MASTER_SITES=	http://www.leb.net/~troll/
 
 MAINTAINER=	troll@digitalspark.net

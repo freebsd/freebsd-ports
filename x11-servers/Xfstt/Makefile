@@ -3,11 +3,11 @@
 # Date created:		11 September 1998
 # Whom:			jabley@clear.co.nz
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/24 06:36:08 steve Exp $
 #
 
 DISTNAME=	Xfstt-0.9.10
-CATEGORIES=	x11
+CATEGORIES=	x11-servers
 MASTER_SITES=	$(MASTER_SITE_SUNSITE)
 MASTER_SITE_SUBDIR=	X11/fonts
 EXTRACT_SUFX=	.tgz

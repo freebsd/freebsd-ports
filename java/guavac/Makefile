@@ -3,11 +3,11 @@
 # Date created:        10 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.12 1999/05/04 12:00:21 asami Exp $
+# $Id: Makefile,v 1.13 1999/05/12 22:45:03 asami Exp $
 #
 
 DISTNAME=	guavac-1.2
-CATEGORIES=	lang
+CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.yggdrasil.com/pub/dist/devel/compilers/guavac/
 
 MAINTAINER=	nacai@iname.com

@@ -3,12 +3,12 @@
 # Date created:		1999/05/29
 # Whom:			Kensaku Masuda <greg@greg.rim.or.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/23 15:05:39 kuriyama Exp $
 #
 
 DISTNAME=	jsdk20-solaris2-sparc
 PKGNAME=	jsdk-2.0
-CATEGORIES=	lang
+CATEGORIES=	java
 MASTER_SITES=	
 EXTRACT_SUFX=	.tar.Z
 

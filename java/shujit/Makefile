@@ -3,11 +3,11 @@
 # Date created:		30 April 1999
 # Whom:			jake@checker.org
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/10 23:56:44 steve Exp $
+# $Id: Makefile,v 1.2 1999/06/14 16:57:33 steve Exp $
 #
 
 DISTNAME=	shujit-0.2.10
-CATEGORIES=	lang
+CATEGORIES=	java
 MASTER_SITES=	http://www.shudo.net/jit/dist/
 
 MAINTAINER=	jake@checker.org
