@@ -1,17 +1,26 @@
 bin/crimson
 share/pixmaps/crimson.png
 share/crimson/title.bmp
+share/crimson/Bepa-Roman.ttf
 share/crimson/levels/Anthill.lev
 share/crimson/levels/ArmsRace.lev
 share/crimson/levels/BeachRaid.lev
 share/crimson/levels/Foxhole.lev
+share/crimson/levels/General.lev
 share/crimson/levels/GreatBattle.lev
+share/crimson/levels/HeavyMetal.lev
 share/crimson/levels/IslandHoppers.lev
 share/crimson/levels/LankhValley.lev
 share/crimson/levels/LostFactories.lev
 share/crimson/levels/MountainDefense.lev
+share/crimson/levels/OmyarGorge.lev
 share/crimson/levels/Revelation.lev
 share/crimson/levels/Uprising.lev
+share/crimson/locale/de.dat
+share/crimson/locale/en.dat
+share/crimson/locale/fr.dat
+share/crimson/locale/pl.dat
+share/crimson/music/default.mid
 share/crimson/sound/ask.wav
 share/crimson/sound/clicked.wav
 share/crimson/sound/error.wav
@@ -23,5 +32,7 @@ share/crimson/default.tiles
 share/crimson/default.units
 @unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @dirrm share/crimson/levels
+@dirrm share/crimson/locale
+@dirrm share/crimson/music
 @dirrm share/crimson/sound
 @dirrm share/crimson
