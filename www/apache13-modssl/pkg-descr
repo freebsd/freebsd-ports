@@ -22,7 +22,7 @@
    o  Advanced pass-phrase handling for private keys
    o  X.509 certificate based authentication for both client and server
    o  Support for per-URL renegotiation of SSL handshake parameters
-   o  Support for explicit seeding of the PRNG with external sources
+   o  Support for explicit seeding of the PRNG from external sources
    o  Additional boolean-expression based access control facility
    o  Backward compatibility to other Apache SSL solutions
    o  Inter-process SSL session cache
