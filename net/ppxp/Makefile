@@ -4,7 +4,7 @@
 # Whom:			Norio Suzuki
 #			KUNISHIMA Takeo <kunishi@c.oka-pu.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.2 1999/01/02 20:27:41 sada Exp $
 #
 
 DISTNAME=	ppxp-0.98112523
@@ -32,6 +32,9 @@ LIB_DEPENDS+=	tcl80.1:${PORTSDIR}/lang/tcl80
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80 \
 		tclsh8.0:${PORTSDIR}/lang/tcl80
 .endif
+
+# depends on xforms
+ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/ppxp
 USE_GMAKE=	yes
