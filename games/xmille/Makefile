@@ -21,13 +21,7 @@ WRKSRC=		${WRKDIR}/Mille
 USE_IMAKE=	yes
 MAN1=		xmille.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile due to imake"
-.endif
-
 post-extract:
 	@${FIND} ${WRKSRC} -name '*.[ao]' -delete
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,11 +1,64 @@
 --- Imakefile.orig	Thu Apr  2 23:03:24 1992
-+++ Imakefile	Wed Jan 31 23:04:28 2001
-@@ -5,7 +5,7 @@
- /**/# Dana Chee
- /**/#
++++ Imakefile	Thu Dec  4 21:52:59 2003
+@@ -1,11 +1,11 @@
+-/**/#
+-/**/#
+-/**/# Imakefile for xmille (Mille Bourne game)
+-/**/#
+-/**/# Dana Chee
+-/**/#
++XCOMM #
++XCOMM #
++XCOMM # Imakefile for xmille (Mille Bourne game)
++XCOMM #
++XCOMM # Dana Chee
++XCOMM #
  #define IHaveSubdirs
 -#define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS) DEFINES=$(DEFINES)'
 +#define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS) $(DEFINES)'
  
  HEADERS = ui.h
  SRCS=	comp.c end.c extern.c init.c mille.c misc.c move.c print.c \
+@@ -18,26 +18,26 @@
+ SYS_LIBRARIES = -lm
+ SUBDIRS = control cards
+ 
+-/**/# 
+-/**/# This looks better with the timrom12 and timrom12b fonts supplied,
+-/**/# but if you don't wish to install it, just use fixed.
+-/**/#
+-/**/# if you do want to use the timrom fonts, then uncomment this line
+-/**/# and see the info below about font targets
+-/**/#
+-/**/#DEFINES =	-DDEFAULT_FONT=\"timrom12\" -DDEFAULT_FONTB=\"timrom12b\"
++XCOMM # 
++XCOMM # This looks better with the timrom12 and timrom12b fonts supplied,
++XCOMM # but if you don't wish to install it, just use fixed.
++XCOMM #
++XCOMM # if you do want to use the timrom fonts, then uncomment this line
++XCOMM # and see the info below about font targets
++XCOMM #
++XCOMM #DEFINES =	-DDEFAULT_FONT=\"timrom12\" -DDEFAULT_FONTB=\"timrom12b\"
+ DEFINES =	-DDEFAULT_FONT=\"fixed\" -DDEFAULT_FONTB=\"fixed\"
+ 
+ MakeSubdirs($(SUBDIRS))
+ 
+ ComplexProgramTarget(xmille)
+ 
+-/**/#
+-/**/# Otherwise, make these font targets (uncomment the following lines)
+-/**/#
+-/**/#FONTS = FontBaseObj(timrom12) FontBaseObj(timrom12b)
+-/**/#FONTINSTDIR = $(FONTDIR)/misc
+-/**/#FontTarget(timrom12)
+-/**/#FontTarget(tomrom12b)
+-/**/#all:: $(FONTS)
++XCOMM #
++XCOMM # Otherwise, make these font targets (uncomment the following lines)
++XCOMM #
++XCOMM #FONTS = FontBaseObj(timrom12) FontBaseObj(timrom12b)
++XCOMM #FONTINSTDIR = $(FONTDIR)/misc
++XCOMM #FontTarget(timrom12)
++XCOMM #FontTarget(tomrom12b)
++XCOMM #all:: $(FONTS)
+ 
