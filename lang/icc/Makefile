@@ -7,8 +7,8 @@
 
 PORTNAME=	icc
 PORTVERSION=	6.0.159
-PORTREVISION=	1
-CATEGORIES=	lang linux
+PORTREVISION=	2
+CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pu_6.0.159
 EXTRACT_SUFX=	.tar
@@ -24,9 +24,13 @@ NO_CDROM=	${RESTRICTED}
 ONLY_FOR_ARCHS=		i386
 
 USE_LINUX=		yes
+USE_REINPLACE=		yes
 NO_WRKSUBDIR=		yes
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
+
+MAN1=	icc.1
+MANPREFIX=	${PREFIX}/intel/compiler60/
 
 ICC_SITE=	http://www.intel.com/software/products/compilers/
 
@@ -35,7 +39,7 @@ ICC_SITE=	http://www.intel.com/software/products/compilers/
 ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	"Please manually download ${DISTFILES} from ${ICC_SITE}, e.g. from ${ICC_SITE}c60l/noncom.htm or from https://premier.intel.com/. Put it into ${DISTDIR} and run make again."
+IGNORE=	"Please manually download ${DISTFILES} from ${ICC_SITE}, e.g. from ${ICC_SITE}c60l/noncom.htm or from https://premier.intel.com/ (whichever has the file, to access premier.intel.com you have to register at http://www.intel.com/software/products/registrationcenter/index.htm). Put it into ${DISTDIR} and run make again."
 .endif
 
 post-extract:
@@ -52,7 +56,7 @@ post-extract:
 pre-patch:
 # Allow everyone to use it
 	@${CHMOD} a+rx ${WRKSRC}/opt
-# Remove unneded/unsafe access rights
+# Remove unneeded/unsafe access rights
 .for i in docs ia32/include ia32/lib
 	@${FIND} ${WRKSRC}/opt/intel/compiler60/${i} -type f -print0 | \
 		xargs -0 ${CHMOD} a-x,g-w
@@ -68,15 +72,26 @@ post-patch:
 # Correct some paths and patch some files
 .for i in ia32/bin/icc ia32/bin/icc.cfg ia32/bin/iccvars.csh \
 	ia32/bin/iccvars.sh ia32/bin/icpc ia32/bin/icpc.cfg docs/csupport
-	@${SED} 's@export -n IA32ROOT; unset IA32ROOT;@@g; s@-a "<INSTALLDIR>/compiler60/ia32/bin/icc" @@g; s@-a "<INSTALLDIR>/compiler60/ia32/bin/icpc" @@g; s@\<INSTALLDIR\>@${PREFIX}/intel@g; s@-tp p6@@; s@man -w@manpath -q@g; s:\<INSTALLTIMECOMBOPACKAGEID\>:${DISTNAME}:g' \
-		${WRKSRC}/opt/intel/compiler60/${i} \
-		>${WRKSRC}/opt/intel/compiler60/${i}.seded
-	@${MV} -f ${WRKSRC}/opt/intel/compiler60/${i}.seded \
+	@${REINPLACE_CMD} -i "" -e 's@export -n IA32ROOT; unset IA32ROOT;@@g; s@-a "<INSTALLDIR>/compiler60/ia32/bin/icc" @@g; s@-a "<INSTALLDIR>/compiler60/ia32/bin/icpc" @@g; s@\<INSTALLDIR\>@${PREFIX}/intel@g; s@-tp p6@@; s@man -w@manpath -q@g; s:\<INSTALLTIMECOMBOPACKAGEID\>:${DISTNAME}:g' \
 		${WRKSRC}/opt/intel/compiler60/${i}
 	@${CHMOD} 755 ${WRKSRC}/opt/intel/compiler60/${i}
 .endfor
 # Remove unneeded files
-	@${RM} ${WRKSRC}/opt/intel/compiler60/ia32/include/yvals.h.orig
+.for i in cwchar.orig yvals.h.orig algorithm bitset complex deque fstream \
+	fstream.h functional hash_map hash_set iomanip iomanip.h ios iosfwd \
+	iostream iostream.h istream iterator limits list locale map mathf.h \
+	memory numeric ostream queue set slist sstream stack stdexcept stl.h \
+	stream.h streambuf string strstream strstream.h utility valarray \
+	vector xcomplex xdebug xhash xiosbase xlocale xlocinfo xlocinfo.h \
+	xlocmes xlocmon xlocnum xloctime xmemory xstring xtree xutility ymath.h
+	@${RM} ${WRKSRC}/opt/intel/compiler60/ia32/include/${i}
+.endfor
+.for i in crtxi.o crtxn.o icrt.link libcprts.so libcprts.so.1 libimf.a \
+	libunwind.so libunwind.so.1
+	@${RM} -rf ${WRKSRC}/opt/intel/compiler60/ia32/lib/${i}
+.endfor
+	@${RM} ${WRKSRC}/opt/intel/compiler60/ia32/bin/uninstall \
+		${WRKSRC}/opt/intel/compiler60/ia32/bin/icc.orig
 .if defined(NOPORTDOCS)
 	@${RM} -rf ${WRKSRC}/opt/intel/compiler60/docs
 .endif
@@ -85,8 +100,13 @@ post-patch:
 	@${ECHO} -e "\n-Ulinux\n-U__linux__\n-U__linux\n\n-D__FreeBSD__=${ICCCFGVAL}\n-D__ELF__=1\n" >>${WRKSRC}/opt/intel/compiler60/ia32/bin/${i}
 	@${CHMOD} a-x,g-w ${WRKSRC}/opt/intel/compiler60/ia32/bin/${i}
 .endfor
+# C++ hack for ipcp
+	@${ECHO} -e "\n-I${PREFIX}/include/stlport\n-Qoption,ld,-CPLUSPLUS\n" >>${WRKSRC}/opt/intel/compiler60/ia32/bin/icpc.cfg
 	@cd ${WRKSRC}/opt/intel/compiler60/ia32/bin/ && ${LN} -s icc.cfg iccbin.cfg && ${LN} -s icpc.cfg icpcbin.cfg
 # \n-Qlocation,ld,/usr/bin\n\n-sox-\n
+# Fix (some) unresolved references in libcprts, libcxa and libunwind
+	@cd ${WRKSRC} && ${CC} -c ${FILESDIR}/*.c && \
+		${AR} q opt/intel/compiler60/ia32/lib/libcxa.a *.o
 # Some magic to be able to link
 	@${SED} 's:@@PREFIX@@:${PREFIX}:g' ${FILESDIR}/ld >${WRKSRC}/opt/intel/compiler60/ia32/bin/ld
 	@${CHMOD} 755 ${WRKSRC}/opt/intel/compiler60/ia32/bin/ld

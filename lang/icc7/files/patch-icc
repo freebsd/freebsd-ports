@@ -1,0 +1,24 @@
+--- opt/intel/compiler60/ia32/bin/icc.orig	Tue Aug  6 04:34:18 2002
++++ opt/intel/compiler60/ia32/bin/icc	Tue Aug  6 04:46:51 2002
+@@ -23,6 +23,21 @@
+ 
+ if [ $# != 0 ]
+ then
++ i=0
++ argc=$#
++ while [ $i -lt $argc ] ; do
++  val1=$1
++  shift
++  for s in .C .cc .cpp .cxx .c++; do
++   val2=${val1%$s}
++   if [ ${#val1} -gt ${#val2} ] ; then
++    echo "Please use icpc to compile C++ source."
++    exit 1
++   fi
++  done
++  set -- "$@" "$val1"
++  i=$(($i+1))
++ done
+  exec -a "<INSTALLDIR>/compiler60/ia32/bin/icc" <INSTALLDIR>/compiler60/ia32/bin/iccbin "$@";
+ else
+  exec -a "<INSTALLDIR>/compiler60/ia32/bin/icc" <INSTALLDIR>/compiler60/ia32/bin/iccbin;
