@@ -65,6 +65,10 @@ PKGMESSIN=	pkg-message.in
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not install on amd64"
+.endif
+
 .if defined(WITH_BLAS)
 LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
 .else
