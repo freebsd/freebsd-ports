@@ -7,7 +7,7 @@
 
 PORTNAME=	wmwave
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.schuermann.org/~dockapps/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/}

@@ -1,10 +1,8 @@
---- wmwave.c.orig	Fri Aug 20 09:44:21 1999
-+++ wmwave.c	Mon Jun 17 18:53:19 2002
-@@ -1,38 +1,21 @@
+--- wmwave.c.orig	Fri Aug 29 23:52:38 2003
++++ wmwave.c	Fri Aug 29 23:52:43 2003
+@@ -1,38 +1,23 @@
  /*
-+ * $Id$
-+ * 
-  * wmtop.c -- WindowMaker process view dock app
+- * wmtop.c -- WindowMaker process view dock app
 - * Derived by Carsten Schuermann   carsten@schuermann.org
 - * http://www.schuermann.org/~carsten
 - * from
@@ -12,6 +10,10 @@
 - * http://www.tanelorn.demon.co.uk
 - * who derived it 
 - * from code originally contained in wmsysmon by Dave Clark (clarkd@skynet.ca)
++ * $Id$
++ * 
++ * wmwave.c -- WindowMaker IEEE802.11 status dock app
++ *             based on wmtop.c from Dan Piponi
 + * 
   * This software is licensed through the GNU General Public License.
 - * $Log: wmwave.c,v $
@@ -38,6 +40,7 @@
 - *
 + * 
 + * Authors (in reverse chronological order):
++ * Hendrik Scholz <hscholz@raisdorf.net>
 + * Bruce M. Simpson <bms@spc.org>
 + * Carsten Schuermann <carsten@schuermann.org>
 + * Dan Piponi <dan@tanelorn.demon.co.uk>
@@ -52,7 +55,7 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <time.h>
-@@ -45,313 +28,389 @@
+@@ -45,313 +30,384 @@
  #include <limits.h>
  #include <errno.h>
  #include <signal.h>
@@ -95,16 +98,18 @@
 -char wmwave_mask_bits[64*64];
 -int wmwave_mask_width = 64;
 -int wmwave_mask_height = 64;
+-
+-#define WMWAVE_VERSION "0.4"
 +char            wmwave_mask_bits[64 * 64];
 +int             wmwave_mask_width = 64;
 +int             wmwave_mask_height = 64;
 +
 +#define WMWAVE_DEFAULT_INTERFACE	"wi0"
-+#define WMWAVE_VERSION			"0.4_FreeBSD"
++#define WMWAVE_VERSION			"0.4_FreeBSD-2"
 +
 +int             update_rate = 100000;
 +char            *ProgName;
-+char		*iface = WMWAVE_DEFAULT_INTERFACE;
++char			*iface = WMWAVE_DEFAULT_INTERFACE;
 +time_t          curtime;
 +time_t          prevtime;
 +int             mode = 0;	/* default: no card detected */
@@ -118,8 +123,6 @@
 +void            DrawBar(float percent, int dx, int dy);
 +void            DrawGreenBar(float percent, int dx, int dy);
  
--#define WMWAVE_VERSION "0.4"
--
 -int update_rate=100000;
 -
 -char *ProgName;
@@ -160,56 +163,74 @@
 -  tx = (float)((float)54 * ((float)percent / (float)100.0));
 -  copyXPMArea(67, 58, tx, 4, dx, dy);
 -  copyXPMArea(67, 43, 54-tx, 4, dx+tx, dy); 
--}
 +inline void
 +DrawGreenBar(float percent, int dx, int dy)
 +{
 +	int             tx;
- 
--inline void DrawRedDot() {
--  copyXPMArea(80, 65, 6, 6, 52, 5);
++
 +	tx = (float)((float)54 * ((float)percent / (float)100.0));
 +	copyXPMArea(67, 58, tx, 4, dx, dy);
 +	copyXPMArea(67, 43, 54 - tx, 4, dx + tx, dy);
  }
  
--inline void DrawYellowDot() {
--  copyXPMArea(86, 65, 6, 6, 52, 5);
+-inline void DrawRedDot() {
+-  copyXPMArea(80, 65, 6, 6, 52, 5);
 +inline void
 +DrawRedDot()
 +{
 +	copyXPMArea(80, 65, 6, 6, 52, 5);
  }
  
--inline void DrawGreenDot() {
--  copyXPMArea(92, 65, 6, 6, 52, 5);
+-inline void DrawYellowDot() {
+-  copyXPMArea(86, 65, 6, 6, 52, 5);
 +inline void
 +DrawYellowDot()
 +{
 +	copyXPMArea(86, 65, 6, 6, 52, 5);
  }
  
--inline void DrawEmptyDot() {
--  copyXPMArea(98, 65, 6, 6, 52, 5);
+-inline void DrawGreenDot() {
+-  copyXPMArea(92, 65, 6, 6, 52, 5);
 +inline void
 +DrawGreenDot()
 +{
 +	copyXPMArea(92, 65, 6, 6, 52, 5);
  }
  
--float min (float x, float y) {
--  if (x < y) {return x;}
--  else {return y;}
+-inline void DrawEmptyDot() {
+-  copyXPMArea(98, 65, 6, 6, 52, 5);
 +inline void
 +DrawEmptyDot()
 +{
 +	copyXPMArea(98, 65, 6, 6, 52, 5);
  }
  
- /*
-- * Find CPU times for all processes
+-float min (float x, float y) {
+-  if (x < y) {return x;}
+-  else {return y;}
++/*
 + * XXX: redefining min() to operate on floats is a bad idea;
 + * changed to _fmin().
++ */
++float
++_fmin(float x, float y)
++{
++	if (x < y) {
++		return x;
++	} else {
++		return y;
++	}
+ }
+ 
+ /*
+- * Find CPU times for all processes
++ * XXX: Fetch OS-specific wireless statistics.
++ * 
++ * These are: quality, signal, noise. On NetBSD, the 
++ * statistics kept on an AP-basis for the driver are valid.
++ * On FreeBSD, it is necessary to interrogate the WICACHE.
++ * For the purposes of keeping things simple, this code will only
++ * look at the first slot in the WICACHE table.
   */
 -void DisplayWireless(void) {
 -  FILE *wireless;   // File handle for /proc/net/wireless
@@ -263,7 +284,34 @@
 -	DrawGreenBar(0.0, 4, 55);
 -	break;
 -      };
--    }
++void
++DisplayWireless(void)
++{
++        struct ifreq             ifr;
++        struct wi_req            wireq;
++        struct wi_sigcache      *wisigsp;
++        int                     *wisigsnp, s, mode, err;
++	float  	                 link, level, noise;
++	enum {
++		MODE_NO_CARD = 0,
++		MODE_HAVE_CARD = 1
++	};
++
++    s = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
++    if (s == -1) 
++    	errx(errno, "socket");
++    bzero(&ifr, sizeof(ifr));
++    strncpy(ifr.ifr_name, iface, strlen(iface));
++    bzero(&wireq, sizeof(wireq));
++    wireq.wi_type = WI_RID_COMMS_QUALITY;
++    wireq.wi_len = WI_MAX_DATALEN;
++    ifr.ifr_data = (void *) &wireq;
++
++    err = ioctl(s, SIOCGWAVELAN, (caddr_t)&ifr);
++    if (err < 0) {
++		mode = MODE_NO_CARD;
++		goto draw;
+     }
 -  else {
 -    printf ("Wirless device /proc/net/wireless not found\nEnable radio networking and recompile your kernel\n");
 -    exit (0);
@@ -296,63 +344,13 @@
 -	if (strcmp(arg+1, "display")) {
 -	  usage();
 -	  exit(1);
-+float
-+_fmin(float x, float y)
-+{
-+	if (x < y) {
-+		return x;
-+	} else {
-+		return y;
- 	}
+-	}
 -	break;
 -      case 'g' :
 -	if (strcmp(arg+1, "geometry")) {
 -	  usage();
 -	  exit(1);
-+}
-+
-+/*
-+ * XXX: Fetch OS-specific wireless statistics.
-+ * 
-+ * These are: quality, signal, noise. On NetBSD, the 
-+ * statistics kept on an AP-basis for the driver are valid.
-+ * On FreeBSD, it is necessary to interrogate the WICACHE.
-+ * For the purposes of keeping things simple, this code will only
-+ * look at the first slot in the WICACHE table.
-+ */
-+void
-+DisplayWireless(void)
-+{
-+        struct ifreq             ifr;
-+        struct wi_req            wireq;
-+        struct wi_sigcache      *wisigsp;
-+        int                     *wisigsnp, s, mode, err;
-+	float  	                 link, level, noise;
-+	enum {
-+		MODE_NO_CARD = 0,
-+		MODE_HAVE_CARD = 1
-+	};
-+
-+        s = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
-+        if (s == -1) 
-+                errx(errno, "socket");
-+        bzero(&ifr, sizeof(ifr));
-+        strncpy(ifr.ifr_name, iface, strlen(iface));
-+        bzero(&wireq, sizeof(wireq));
-+        wireq.wi_type = WI_RID_READ_CACHE;
-+        wireq.wi_len = WI_MAX_DATALEN;
-+        ifr.ifr_data = (void *) &wireq;
-+
-+        err = ioctl(s, SIOCGWAVELAN, (caddr_t)&ifr);
-+        if (err < 0) {
-+		mode = MODE_NO_CARD;
-+		goto draw;
-+        }
-+        wisigsnp = (int *) &wireq.wi_val;
-+	if (*wisigsnp < 1) {
-+		mode = MODE_NO_CARD;
-+		goto draw;
- 	}
+-	}
 -	break;
 -      case 'v' :
 -	printversion();
@@ -364,10 +362,10 @@
 -	  i++;
 +
 +	mode = MODE_HAVE_CARD;
-+        wisigsp = (struct wi_sigcache *) (wisigsnp+1);
-+	link  = wisigsp->quality * 1.0;
-+	level = wisigsp->signal  * -1.0;
-+	noise = wisigsp->noise   * -1.0;
++	link = wireq.wi_val[0];
++	level = wireq.wi_val[1];
++	noise = wireq.wi_val[2];
++
 +draw:
 +	/*
 +	 * Print channel information, and signal ratio
@@ -382,9 +380,9 @@
 +		} else {
 +			DrawGreenDot();
 +		};
-+		BlitString("Link     ", 4, 18);
++		BlitString("Quality  ", 4, 18);
 +		DrawBar(_fmin((int)(link * 1.8), 100.0), 4, 27);
-+		BlitString("Level    ", 4, 32);
++		BlitString("Signal   ", 4, 32);
 +		DrawGreenBar(_fmin((int)(level * 0.3), 100.0), 4, 41);
 +		BlitString("Noise    ", 4, 46);
 +		DrawGreenBar(_fmin((int)(noise * 0.3), 100.0), 4, 55);
@@ -618,15 +616,6 @@
 -	    
 -	  }
 -    }
--}
--
--void BlitNum(int num, int x, int y) {
--  char buf[1024];
--  int newx=x;
--  
--  sprintf(buf, "%03i", num);
--  
--  BlitString(buf, newx, y);
 +void
 +BlitString(char *name, int x, int y)
 +{
@@ -653,8 +642,15 @@
 +
 +		}
 +	}
-+}
-+
+ }
+ 
+-void BlitNum(int num, int x, int y) {
+-  char buf[1024];
+-  int newx=x;
+-  
+-  sprintf(buf, "%03i", num);
+-  
+-  BlitString(buf, newx, y);
 +void
 +BlitNum(int num, int x, int y)
 +{
