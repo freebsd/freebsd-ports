@@ -1,5 +1,5 @@
---- abcde.orig	Mon Aug  5 16:56:33 2002
-+++ abcde	Mon Aug  5 16:53:52 2002
+--- abcde.orig	Mon Jan 28 00:44:02 2002
++++ abcde	Tue Feb 11 23:08:44 2003
 @@ -534,7 +534,7 @@
  				;;
  				12|13|14)
@@ -46,15 +46,6 @@
  	esac
  	RETURN=$?
  	if [ "$RETURN" != "0" ]; then
-@@ -886,7 +887,7 @@
- CDDBSUBMIT=freedb-submit@freedb.org
- HELLOINFO="$(whoami)@$(hostname)"
- INTERACTIVE=y
--CDROMREADERSYNTAX=cdparanoia
-+CDROMREADERSYNTAX=dagrab
- OUTPUTTYPE=ogg
- ENCODERSYNTAX=default
- OUTPUTFORMAT='${ARTISTFILE}/${TRACKFILE}.$OUTPUTTYPE'
 @@ -913,7 +914,8 @@
  ID3V2=id3v2
  CDPARANOIA=cdparanoia
@@ -105,7 +96,21 @@
  do
  	# Cut off the command-line options we just added in
  	X=$(echo $X | cut -d' ' -f2)
-@@ -1191,7 +1197,7 @@
+@@ -1184,14 +1190,20 @@
+ # We are now finished with the cdrom - it can be safely ejected. Note that
+ # abcde will not have completed yet.
+ if [ "$EJECTCD" = "y" ]; then
+-	$EJECT $EJECTOPTS $CDROM
++	# FreeBSD eject uses the EJECT environment variable to name the CDROM
++        # but in this script EJECT is in the envionment and names the program
++        eject=$EJECT
++	unset EJECT
++	# The FreeBSD eject needs "adc0" not "/dev/adc0c"
++	cd="$(echo $CDROM | sed -e 's=.*/==;s=[a-h]$==;')"
++	$eject $EJECTOPTS $cd
+ fi
+ ) | (
+ # Do the encoding, including parallelization of remote encoding
  # Figure out where each track is going to be encoded
  ENCODELOCATIONS="$(echo $REMOTEHOSTS | tr , ' ')"
  if [ "$MAXPROCS" != "0" ]; then

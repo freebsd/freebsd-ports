@@ -7,7 +7,7 @@
 
 PORTNAME=	abcde
 PORTVERSION=	2.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://frantica.lly.org/~rcw/abcde/
 DISTNAME= 	abcde_2.0.3.orig
@@ -36,6 +36,13 @@ RUN_DEPENDS+=   dagrab:${PORTSDIR}/audio/dagrab
 DAGRAB_MSG=	"Define WITH_DAGRAB to enable support for dagrab."
 .endif
 
+.if defined(WITH_EJECT)
+RUN_DEPENDS+=   eject:${PORTSDIR}/sysutils/eject
+.else
+EJECT_MSG=     "Define WITH_EJECT to enable auto-eject support."
+.endif
+
+
 pre-fetch:
 .if defined(DAGRAB_MSG)
 	@${ECHO_MSG} ${DAGRAB_MSG}
@@ -45,6 +52,11 @@ pre-fetch:
 	@${ECHO_MSG} ${CDDA2WAV_MSG}
 	@${ECHO_MSG} ""
 .endif
+.if defined(EJECT_MSG)
+	@${ECHO_MSG} ${EJECT_MSG}
+	@${ECHO_MSG} ""
+.endif
+
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/abcde ${PREFIX}/bin
