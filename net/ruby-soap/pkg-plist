@@ -5,8 +5,13 @@
 %%RUBY_SITELIBDIR%%/soap/charset.rb
 %%RUBY_SITELIBDIR%%/soap/driver.rb
 %%RUBY_SITELIBDIR%%/soap/element.rb
-%%RUBY_SITELIBDIR%%/soap/encoding.rb
+%%RUBY_SITELIBDIR%%/soap/encodingStyleHandler.rb
+%%RUBY_SITELIBDIR%%/soap/encodingStyleHandlerASPDotNet.rb
 %%RUBY_SITELIBDIR%%/soap/encodingStyleHandlerDynamic.rb
+%%RUBY_SITELIBDIR%%/soap/encodingStyleHandlerLiteral.rb
+%%RUBY_SITELIBDIR%%/soap/generator.rb
+%%RUBY_SITELIBDIR%%/soap/headerHandler.rb
+%%RUBY_SITELIBDIR%%/soap/mappingRegistry.rb
 %%RUBY_SITELIBDIR%%/soap/marshal.rb
 %%RUBY_SITELIBDIR%%/soap/namespace.rb
 %%RUBY_SITELIBDIR%%/soap/nqxmlDocument.rb
@@ -24,17 +29,28 @@
 %%RUBY_SITELIBDIR%%/soap/xmlparser.rb
 @dirrm %%RUBY_SITELIBDIR%%/soap
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/apacheClient.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/babelfish.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/babelfishVelociGen.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/digraph.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/hippo5tq.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/httpserver.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/hippo5tq2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/hippoClient.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/whois.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/whois2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ICD/IICD.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ICD/icd.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/SOAP::Lite.pl
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/iRAA.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/pocketSOAP.js
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/soap4r.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/soap4rApp.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/xmlrpc4r.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RWiki/rwikiClient.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RWiki/rwikiServer.cgi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/WSDemo/iSeminarService.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/WSDemo/server.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/WSDemo/subscription.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/README.txt
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/base.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/client4S4C1.3.rb
@@ -74,9 +90,14 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientApacheSOAP.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientASP.NET.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientBase.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientDelphi.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientEasySoap.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientFrontier.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientGLUE.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientMSSOAPToolkit2.0.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientMSSOAPToolkit3.0.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientOpenLink.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientPhalanx.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientSIMACE.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientSOAP4R.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientSOAP::Lite.rb
@@ -85,20 +106,27 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientSoapRMI.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientSpray2001.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientTclSOAP.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientWASP.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientWASPC.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientWhiteMesa.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientXMLBus.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientXMLRPC-EPI.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientZSI.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clienteSOAP.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientgSOAP.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientkSOAP.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/iSimonReg.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/interopResultBase.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/server.cgi
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/server.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/simonReg.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/test/interopR2
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/test/interop
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/test
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/WSDemo
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/RWiki
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/RAA
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/ICD
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap
 %%PORTDOCS%%%%RUBY_DOCDIR%%/soap/RELEASE_en.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/soap/rubyStyle.css
