@@ -1,5 +1,5 @@
---- configure.orig	Thu Sep 25 13:23:42 2003
-+++ configure	Thu Sep 25 13:23:52 2003
+--- configure.orig	Sat Sep 27 14:13:57 2003
++++ configure	Sat Sep 27 14:18:37 2003
 @@ -8173,7 +8173,7 @@
  echo $ECHO_N "checking to see if compiler understands -Werror... $ECHO_C" >&6
  
@@ -18,3 +18,12 @@
      true
    else
  
+@@ -9607,7 +9607,7 @@
+     :
+ fi
+ 
+-if test "$ac_cv_check_mcsc" == "yes"; then
++if test "$ac_cv_check_mcsc" = "yes"; then
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define HAVE_MAKECONTEXT $HAVE_MAKECONTEXT
