@@ -1,5 +1,5 @@
---- Makefile.PL.orig	Wed Nov 27 08:29:57 2002
-+++ Makefile.PL	Thu Apr  3 01:35:53 2003
+--- Makefile.PL.orig	Wed Nov 27 16:29:57 2002
++++ Makefile.PL	Sun Apr 13 02:25:57 2003
 @@ -6,46 +6,23 @@
  
  
@@ -55,7 +55,7 @@
  
  my $FCGI    = 0;   # set to 1 to build compatability with fastCGI
  
-@@ -61,16 +38,13 @@
+@@ -61,16 +38,14 @@
  push @INC, '-I/lib_root/ft2/include/freetype' if ($FT && $^O eq 'VMS');
  push @INC, '-I/X11' if ($XPM && $^O eq 'VMS');
  
@@ -70,8 +70,9 @@
 -$DEFINES    .= ' -DHAVE_JPEG' if $JPEG;
 -$DEFINES    .= ' -DHAVE_FT'   if $FT;
 -$DEFINES    .= ' -DHAVE_XPM'  if $XPM;
-++my $DEFINES = '-DHAVE_JPEG -DHAVE_TTF';
-++$DEFINES    .= ' -DHAVE_XPM' unless $^O eq 'MSWin32';
++my $DEFINES = '-DHAVE_JPEG -DHAVE_TTF';
++$DEFINES    .= ' -DHAVE_FT' if $FT;
++$DEFINES    .= ' -DHAVE_XPM' unless $^O eq 'MSWin32';
  $DEFINES    .= ' -DFCGI'      if $FCGI;
  
  WriteMakefile(
