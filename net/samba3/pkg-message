@@ -15,4 +15,7 @@ script:
   chmod 600 smbpasswd
 
 But the usage of it is deprecated.
+------------------------------------------------------------------------------
+NOTICE: *.tdb files have been moved from /var/run/samba/ to /var/db/samba/!
+NOTICE: Please, move them manually, if necessary, at least winbind_*.tdb.
 ******************************************************************************

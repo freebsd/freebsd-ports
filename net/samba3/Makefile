@@ -7,7 +7,7 @@
 
 PORTNAME=		samba
 PORTVERSION=		3.0.4
-PORTREVISION?=		0
+PORTREVISION?=		1
 PORTEPOCH?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -20,8 +20,7 @@ COMMENT?=		A free SMB and CIFS client and server for UNIX
 CONFLICTS?=		ja-samba-2.* samba-2.* sharity-light-1.*
 
 USE_ICONV=		yes
-GNU_CONFIGURE=		yes
-#USE_AUTOCONF_VER=	253
+USE_AUTOCONF_VER=	253
 
 LATEST_LINK?=		${PKGNAMEPREFIX}${PORTNAME}-3${PKGNAMESUFFIX}
 EXAMPLESDIR=		${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
@@ -32,7 +31,7 @@ VARDIR=			${DESTDIR}/var
 SAMBA_SPOOL?=		${VARDIR}/spool/samba
 SAMBA_LOGDIR=		${VARDIR}/log/samba
 SAMBA_RUNDIR=		${VARDIR}/run
-SAMBA_LOCKDIR=		${SAMBA_RUNDIR}/samba
+SAMBA_LOCKDIR?=		${VARDIR}/db/samba
 SAMBA_PRIVATE?=		${PREFIX}/private
 SAMBA_CONFDIR?=		${PREFIX}/etc
 SAMBA_SWATDIR=		${PREFIX}/share/swat
@@ -56,11 +55,10 @@ CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
 
 CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
 
-OPTIONS=	LDAP		"With LDAP support" on \
-		ADS		"With Active Directory support" on
-
 .if !defined(SAMBA_SUBPORT)
-OPTIONS+=	CUPS		"With CUPS printing support" on \
+OPTIONS=	LDAP		"With LDAP support" on \
+		ADS		"With Active Directory support" on \
+		CUPS		"With CUPS printing support" on \
 		WINBIND		"With WinBIND support" on \
 		ACL_SUPPORT	"With ACL support" off \
 		SYSLOG		"With Syslog support" off \
@@ -198,7 +196,7 @@ CONFIGURE_ARGS+=	--with-included-popt
 .endif
 
 # Common part
-.if !defined(WITHOUT_ADS)
+.if defined(WITH_ADS)
 WANT_LDAP=		yes
 WANT_KRB5=		yes
 CONFIGURE_ARGS+=	--with-ads
@@ -211,7 +209,7 @@ CONFIGURE_ARGS+=	--without-ads
 CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME}
 .elif defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
 CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME}
-.elif ( defined(MAKE_KERBEROS5) || ${OSVERSION} > 500105 ) && exists(/usr/lib/libkrb5.a)
+.elif ( defined(MAKE_KERBEROS5) || ${OSVERSION} > 500105 ) && exists(${DESTDIR}/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=	--with-krb5=${DESTDIR}/usr
 .else
 LIB_DEPENDS+=		krb5:${PORTSDIR}/security/heimdal

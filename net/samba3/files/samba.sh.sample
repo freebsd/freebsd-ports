@@ -63,7 +63,7 @@ samba_stop() {
 }
 
 nmbd_precmd() {
-    # XXX: Never delete winbindd_idmap.tdb and winbindd_cache.tdb
+    # XXX: Never delete winbindd_idmap, winbindd_cache and group_mapping
     if [ -d "%%SAMBA_LOCKDIR%%" ]; then
 	echo "Starting SAMBA: removing stale tdbs :"
 	for file in connections.tdb locking.tdb messages.tdb \

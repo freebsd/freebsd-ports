@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=		0
+PORTREVISION=		1
 PORTEPOCH=		0
 PKGNAMESUFFIX=		-libsmbclient
 
