@@ -187,6 +187,7 @@
     SUBDIR += op
     SUBDIR += opencdk
     SUBDIR += opensc
+    SUBDIR += opensc-esteid
     SUBDIR += openssh
     SUBDIR += openssh-askpass
     SUBDIR += openssh-portable
