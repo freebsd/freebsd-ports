@@ -8,10 +8,10 @@
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	1.3.131
+PORTVERSION=	1.6.0
 CATEGORIES=	print audio
-MASTER_SITES=	ftp://ftp.cs.uu.nl/pub/GNU/LilyPond/v1.3/ \
-		ftp://sca.uwaterloo.ca/pub/lilypond/v1.3/
+MASTER_SITES=	ftp://ftp.cs.uu.nl/pub/GNU/LilyPond/v1.6/ \
+		ftp://sca.uwaterloo.ca/pub/lilypond/v1.6/
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	The GNU music typesetter
@@ -19,35 +19,30 @@ COMMENT=	The GNU music typesetter
 BUILD_DEPENDS=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/teTeX
 LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
 
-BROKEN=		"needs bison 1.28 or earlier"
+MAN1=	abc2ly.1 as2text.1 convert-ly.1 etf2ly.1 lilypond.1 \
+	lilypond-book.1 ly2dvi.1 midi2ly.1 mup2ly.1 musedata2ly.1 pmx2ly.1
 
-GNU_CONFIGURE=	YES
-#CONFIGURE_ENV=	${MAKEINFO}="makeinfo --no-split"
-
-MAN1=	abc2ly.1 as2text.1 convert-ly.1 etf2ly.1 lilypond-book.1 \
-	lilypond.1 ly2dvi.1 midi2ly.1 musedata2ly.1 pmx2ly.1
-
+GNU_CONFIGURE=	yes
 USE_BISON=	yes
 USE_GMAKE=	YES
 USE_PYTHON=	YES
+USE_GCC=	2.95
+USE_REINPLACE=	yes
 MAKEFILE=	GNUmakefile
 
-INFO_FILES=	lilypond.info lilypond-internals.info
+INFO_FILES=		lilypond.info lilypond-internals.info
+CONFIGURE_ARGS+=	--with-kpathsea-include=${PREFIX}/include \
+			--with-kpathsea-lib=${PREFIX}/lib
 
 post-configure:
-	${PERL} -pi -e "s:^INFO_FILES:xxxINFO_FILES:g" \
+	${REINPLACE_CMD} -e "s:^INFO_FILES:xxxINFO_FILES:g" \
 		${WRKSRC}/Documentation/user/GNUmakefile
-#	${PERL} -pi -e "s:force:force --no-split:g" \
-#		${WRKSRC}/Documentation/user/GNUmakefile
 
 post-install:
-.for i in make stepmake config.make tfm.3 tfm.4 tfm.5
-	${RM} -rf ${PREFIX}/share/lilypond/${i}
-.endfor
-#.for i in ${INFO_FILES}
-#	install-info ${PREFIX}/info/${i} ${PREFIX}/info/dir
-#.endfor
-
-CONFIGURE_ARGS+=--disable-kpathsea
+	@cd ${WRKSRC}/input ; \
+	${MKDIR} ${PREFIX}/share/examples/lilypond ;\
+	${TAR} -chf - . | ${TAR} -xf - -C ${PREFIX}/share/examples/lilypond ;\
+	${FIND} ${PREFIX}/share/examples/lilypond -name "GNUmakefile" | xargs ${RM} ;\
+	${FIND} ${PREFIX}/share/examples/lilypond -name "out" | xargs ${RM} -rf ;\
 
 .include <bsd.port.mk>
