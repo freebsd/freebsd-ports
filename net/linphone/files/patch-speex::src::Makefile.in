@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- speex/src/Makefile.in.orig	Fri Jun 13 15:22:55 2003
++++ speex/src/Makefile.in	Fri Jun 13 15:22:56 2003
+@@ -70,7 +70,7 @@
+ OBJEXT = @OBJEXT@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ 
+-mandir = $(prefix)/share/man
++mandir = $(prefix)/man
+ AMTAR = @AMTAR@
+ AS = @AS@
+ AWK = @AWK@
