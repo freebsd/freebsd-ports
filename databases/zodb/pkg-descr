@@ -15,7 +15,7 @@ StandaloneZODB includes a standalone version of Zope Enterprise
 Objects (ZEO), a tool to distribute ZODB stores across a network.
 
 Author:   Barry A Warsaw <barry@zope.com> and a host of others
-WWW:      http://www.zope.org/Products/StandaloneZODB
+WWW:      http://www.zope.org/Products/StandaloneZODB/
 See also: http://amk.ca/zodb/guide/ (ZODB Programming Guide)
 
 -- Johann Visagie <wjv@FreeBSD.org>

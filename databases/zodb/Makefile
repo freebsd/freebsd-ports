@@ -9,7 +9,7 @@ PORTNAME=	zodb
 PORTVERSION=	1.0
 PORTEPOCH=	1
 CATEGORIES=	databases python
-MASTER_SITES=	http://www.zope.org/Products/StandaloneZODB/
+MASTER_SITES=	http://www.zope.org/Products/StandaloneZODB/1.0%20final/
 DISTNAME=	StandaloneZODB-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
