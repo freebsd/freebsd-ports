@@ -1,5 +1,5 @@
---- editkit/Makefile.orig	Sun Dec 15 02:50:09 2002
-+++ editkit/Makefile	Mon Mar 17 17:01:38 2003
+--- editkit/Makefile.orig	Wed Apr 30 09:24:13 2003
++++ editkit/Makefile	Wed Apr 30 09:26:32 2003
 @@ -12,10 +12,11 @@
  # TWOBUTN paste with button3 click, set selection with button3 drag
  # MINIMAL to remove bak files, /usr/share/edmtx and e**rc
@@ -10,17 +10,7 @@
  
 -SHARE_DIR=/usr/share/editkit
 -
--CFLAGS = -O2 -fomit-frame-pointer -pipe -Wall -DTHREED -DNOEDIT -DGREEK -DJUSTIFY -DSHARE_DIR="\"$(SHARE_DIR)\""
-+CFLAGS = -O2 $(INCLUDES) -fomit-frame-pointer -pipe -Wall -DTHREED -DNOEDIT -DGREEK -DJUSTIFY -DSHARE_DIR="\"$(SHARE_DIR)\""
+-CFLAGS = -O2 -fomit-frame-pointer -pipe -Wall -DTHREED -DGREEK -DJUSTIFY -DSHARE_DIR="\"$(SHARE_DIR)\""
++CFLAGS = -O2 $(INCLUDES) -fomit-frame-pointer -pipe -Wall -DTHREED -DGREEK -DJUSTIFY -DSHARE_DIR="\"$(SHARE_DIR)\""
  
  #CFLAGS = -O2 -fomit-frame-pointer -pipe -Wall -DMINIMAL -DTWOBUTN -DVERTCURS -DTLL
- 
-@@ -63,7 +64,7 @@
- 	if [ -x edt ]; then cp -f edt /usr/bin; fi
- 	if [ -x emt ]; then cp -f emt /usr/bin; fi
- 	if [ -x edx ]; then cp -f edx /usr/X11R6/bin; fi
--	if [ -x emx ]; then cp -f emx /usr/X11R6/bin; fi
-+	if [ -x emx ]; then cp -f emx $(PREFIX)/bin; fi
- 	mkdir -p $(SHARE_DIR)
- 	cp -f rc.example $(SHARE_DIR)/rc.common
- 	cp -f README $(SHARE_DIR)

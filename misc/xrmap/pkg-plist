@@ -201,7 +201,9 @@ share/rmap/anthems/yu.ant
 share/rmap/anthems/za.ant
 share/rmap/anthems/zm.ant
 share/rmap/anthems/zw.ant
+share/rmap/doc/Asia.rc
 share/rmap/doc/CHANGES
+share/rmap/doc/Europe.rc
 share/rmap/doc/EXAMPLE.rc
 share/rmap/doc/INSTALL
 share/rmap/doc/LICENSE
@@ -209,6 +211,7 @@ share/rmap/doc/MAPEDIT
 share/rmap/doc/README
 share/rmap/doc/README.midi
 share/rmap/doc/TODO
+share/rmap/doc/USA.rc
 share/rmap/doc/WARNING
 share/rmap/factbook/countrylisting.html
 share/rmap/factbook/extra/Ashmore_and_Cartier_Islands
@@ -2582,6 +2585,17 @@ share/rmap/picons/wheel.xpm
 share/rmap/picons/win.xpm
 share/rmap/postscript/macros.ps
 share/rmap/postscript/private.ps
+share/rmap/themes/buttons/b0.xpm.gz
+share/rmap/themes/buttons/b1.xpm.gz
+share/rmap/themes/buttons/b2.xpm.gz
+share/rmap/themes/cloudy
+share/rmap/themes/coffee
+share/rmap/themes/default
+share/rmap/themes/optional/clouds.xpm.gz
+share/rmap/themes/optional/coffee.xpm.gz
+share/rmap/themes/optional/landscape.xpm.gz
+share/rmap/themes/optional/sea.xpm.gz
+share/rmap/themes/sea
 @dirrm share/editkit
 @dirrm share/rmap/anthems
 @dirrm share/rmap/doc
@@ -2601,4 +2615,6 @@ share/rmap/postscript/private.ps
 @dirrm share/rmap/pdfmaps
 @dirrm share/rmap/picons
 @dirrm share/rmap/postscript
-@dirrm share/rmap
+@dirrm share/rmap/themes/buttons
+@dirrm share/rmap/themes/optional
+@dirrm share/rmap/themes
