@@ -3,11 +3,11 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.18 1998/01/09 04:45:42 itojun Exp $
+# $Id: Makefile,v 1.19 1998/01/14 01:17:14 itojun Exp $
 #
 
-DISTNAME=	samba-1.9.18p1
-PKGNAME=	samba-1.9.18.1
+DISTNAME=	samba-1.9.18p2
+PKGNAME=	samba-1.9.18.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/samba/
 

@@ -123,6 +123,7 @@ etc/smb.conf.default
 etc/codepages/codepage.437
 etc/codepages/codepage.850
 etc/codepages/codepage.852
+etc/codepages/codepage.866
 etc/codepages/codepage.932
 @exec mkdir %D/private ; if [ ! -f %D/private/smbpasswd ] ; then chown -R root.wheel %D/private ;  cat /etc/passwd | %D/bin/mksmbpasswd.sh > %D/private/smbpasswd ; chmod 500 %D/private ; chmod 600 %D/private/smbpasswd ; fi
 @exec mkdir -p /var/spool/samba ; chmod 1777 /var/spool/samba
