@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asmail
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	mail afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asmail/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shaping
 
-MAN1=	asmail.1x 
+MAN1=	asmail.1x
 MAN5=	asmailrc.5x
 
 post-patch:
