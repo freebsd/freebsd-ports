@@ -1,5 +1,5 @@
 # New ports collection makefile for:	pidentd
-# Version required:     2.8.2
+# Version required:     2.8.5
 # Date created:		19 Oct 1994
 # Whom:			torstenb
 #
