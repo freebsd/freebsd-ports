@@ -10,26 +10,11 @@ answset () {
 }
 
 yesno () {
-  answset YES "$1"
+  answset $1 "$2"
   while [ $answ = X ]; do
-    echo -n "$1 [YES] "
+    echo -n "$2 [$1] "
     read answ
     if [ X$answ = X ]; then answ="YES"; fi
-    case $answ in
-      y|yes|Y|YES) answ=YES;;
-      n|no|N|NO)   answ=NO;;
-      *) echo invalid answer
-      answ=X
-      ;;
-    esac
-  done
-}
-noyes() {
-  answset NO "$1"
-  while [ $answ = X ]; do
-    echo -n "$1 [NO] "
-    read answ
-    if [ X$answ = X ]; then answ="NO"; fi
     case $answ in
       y|yes|Y|YES) answ=YES;;
       n|no|N|NO)   answ=NO;;
@@ -155,25 +140,34 @@ cat <<END
  and files that you may be currently using.  This would only be required
  on a first time build.
 END
-yesno "Install xdm config?"
-if [ $answ = YES ]; then
-  echo "#define InstallXdmConfig	$answ" >> $F
+if [ -e /etc/X11/xdm/xdm-config ]; then
+    XDMDEFAULT=NO
+else
+    XDMDEFAULT=YES
 fi
-yesno "Install xinit config?"
-if [ $answ = YES ]; then
-  echo "#define InstallXinitConfig $answ" >> $F
+if [ -e /etc/X11/xinit/xinitrc ]; then
+    XINITDEFAULT=NO
+else
+    XINITDEFAULT=YES
+fi
+if [ -e /usr/X11R6/lib/X11/fs/config ]; then
+    XFSDEFAULT=NO
+else
+    XFSDEFAULT=YES
 fi
 
-yesno "Do you want to include support for the FontServer?"
+yesno $XDMDEFAULT "Install xdm config?"
+echo "#define InstallXdmConfig	$answ" >> $F
+yesno $XINITDEFAULT "Install xinit config?"
+echo "#define InstallXinitConfig $answ" >> $F
+
+yesno YES "Do you want to include support for the FontServer?"
+echo "#define  BuildFontServer $answ" >>$F
 if [ $answ = YES ]; then
-    echo "#define  BuildFontServer $answ" >>$F
-    yesno "Install xfs config?"
-    if [ $answ = YES ]; then
-      echo "#define InstallFSConfig $answ" >> $F
-    fi
-else
-    echo "#define  BuildFontServer $answ" >>$F
+    yesno $XFSDEFAULT "Install xfs config?"
     echo "#define InstallFSConfig $answ" >> $F
+else
+    echo "#define InstallFSConfig NO" >> $F
 fi
 
 
@@ -182,26 +176,26 @@ cat <<'END'
  fonts once, if this is a first time install you will want to build the
  fonts)
 END
-yesno "Build fonts?"
+yesno YES "Build fonts?"
 echo "#define BuildFonts		$answ" >> $F
 if [ $answ = YES ]; then
-  yesno "Build/install the 75dpi fonts?"
+  yesno YES "Build/install the 75dpi fonts?"
   echo "#define Build75DpiFonts	$answ" >> $F
-  yesno "Build/install the 100dpi fonts?"
+  yesno YES "Build/install the 100dpi fonts?"
   echo "#define Build100DpiFonts	$answ" >> $F
-  yesno "Build/install the Speedo fonts?"
+  yesno YES "Build/install the Speedo fonts?"
   echo "#define BuildSpeedoFonts	$answ" >> $F
-  yesno "Build/install the Type1 fonts?"
+  yesno YES "Build/install the Type1 fonts?"
   echo "#define BuildType1Fonts	$answ" >> $F
-  yesno "Build/install the CID fonts?"
+  yesno YES "Build/install the CID fonts?"
   echo "#define BuildCIDFonts	$answ" >> $F
-  yesno "Build/install the Cyrillic fonts?"
+  yesno YES "Build/install the Cyrillic fonts?"
   echo "#define BuildCyrillicFonts	$answ" >> $F
-  yesno "Build/install the Latin2 fonts?"
+  yesno YES "Build/install the Latin2 fonts?"
   echo "#define BuildLatin2Fonts	$answ" >> $F
 fi
 
-yesno "Build the servers with Extended input devices?"
+yesno YES "Build the servers with Extended input devices?"
 if [ $answ = NO ]; then
   echo "#define XInputDrivers mouse"  >> $F
 else
@@ -213,28 +207,28 @@ else
 #  fi
 fi
 
-yesno "Build PEX?"
+yesno YES "Build PEX?"
 if [ $answ = NO ]; then
   echo "#define BuildPexExt		NO" >> $F
 fi
-yesno "Build Xinerama?"
+yesno YES "Build Xinerama?"
 echo "#define BuildXinerama  $answ" >> $F
 
-yesno "Build XIE?"
+yesno YES "Build XIE?"
 if [ $answ = NO ]; then
   echo "#define BuildXIE		NO" >> $F
 fi
 echo
 
-yesno "Install application defaults files?"
+# XXX We may not want to default this to 'YES' if there are any app-default
+# files installed
+yesno YES "Install application defaults files?"
 if [ $answ = NO ]; then
   echo "#define InstallAppDefFiles      NO" >> $F
 fi
 
-yesno "Build static libraries in addition to shared libraries?"
-if [ $answ = YES ]; then
-  echo "#define ForceNormalLib		YES" >> $F
-fi
+yesno YES "Build static libraries in addition to shared libraries?"
+echo "#define ForceNormalLib		YES" >> $F
 
 if [ ${OSVERSION} -ge 300000 ]; then
 cat <<'END'
@@ -245,10 +239,8 @@ cat <<'END'
  some countries restrict the use of strong cryptography.
 
 END
-yesno "Build with Secure RPC?"
-if [ $answ = YES ]; then
-  echo "#define HasSecureRPC		YES" >> $F
-fi
+yesno YES "Build with Secure RPC?"
+echo "#define HasSecureRPC		YES" >> $F
 fi
 cat <<'END'
 
@@ -272,7 +264,7 @@ cat <<'END'
  the option controling this is contained the file xc/config/cf/xf86site.def.
 
 END
-yesno "Do you want to enable XDM-AUTHORIZATION-1 support?"
+yesno YES "Do you want to enable XDM-AUTHORIZATION-1 support?"
 cpwh=NO
 if [ $answ = YES ]; then
     WH=$WRKDIR/xc/lib/Xdmcp/Wraphelp.c
@@ -296,12 +288,8 @@ fi
 
 echo
 # no PAM support in XFree86-4 !
-#yesno "Do you want to compile with PAM support?"
-#if [ $answ = YES ]; then
-#  echo "#define	HasPam			YES"	>> $F
-#else
-#  echo "#define	HasPam			NO"	>> $F
-#fi
+#yesno YES "Do you want to compile with PAM support?"
+#echo "#define	HasPam			$answ"	>> $F
 
 echo
 echo
