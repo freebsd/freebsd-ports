@@ -9,7 +9,8 @@ PORTNAME=	nn
 PORTVERSION=	6.6.2
 PORTREVISION=	1
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.nndev.org/pub/nn-6.6/
+MASTER_SITES=	ftp://ftp.nndev.org/pub/nn-6.6/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jooji@nickelkid.com
