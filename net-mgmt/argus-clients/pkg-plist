@@ -1,0 +1,71 @@
+argus/COPYING
+argus/README
+bin/argusbug
+bin/ra
+bin/racount
+bin/ragator
+bin/ragraph
+bin/ragrep
+bin/rahistogram
+bin/rahosts
+bin/ramon
+bin/ranonymize
+bin/rapath
+bin/rapolicy
+bin/rarpwatch
+bin/raseq
+bin/rasort
+bin/rasrvstats
+bin/rastrip
+bin/ratop
+bin/raxml
+include/cons_def.h
+include/cons_out.h
+lib/argus_client.a
+lib/argus_common.a
+lib/argus_parse.a
+%%EXAMPLESDIR%%/Archive/argusarchive
+%%EXAMPLESDIR%%/Config/excel.rc
+%%EXAMPLESDIR%%/Config/policy.conf
+%%EXAMPLESDIR%%/Config/ragator.conf
+%%EXAMPLESDIR%%/Config/rarc
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/System/crontab
+%%EXAMPLESDIR%%/System/magic
+%%EXAMPLESDIR%%/Tools/ArgusPortNum.dat
+%%EXAMPLESDIR%%/Tools/Makefile
+%%EXAMPLESDIR%%/Tools/parsePortNum.c
+%%EXAMPLESDIR%%/Xml/ArgusRecord.biz
+%%EXAMPLESDIR%%/Xml/ArgusRecord.dtd
+%%EXAMPLESDIR%%/Xml/ArgusRecord.sox
+%%EXAMPLESDIR%%/Xml/ArgusRecord.xdr
+%%EXAMPLESDIR%%/Xml/ArgusRecord.xsd
+%%EXAMPLESDIR%%/Xml/ArgusRecordSample.xml
+%%EXAMPLESDIR%%/Xml/README
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/HOW-TO
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/html/man/hosts_access.5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/man/hosts_options.5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/man/ra.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/man/racount.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/man/ragator.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/man/ramon.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/man/rarc.5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/man/rasort.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/man/raxml.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/man/tcpd.8.html
+%%PORTDOCS%%%%DOCSDIR%%/html/man/tcpdump.1.html
+@dirrm %%EXAMPLESDIR%%/Xml
+@dirrm %%EXAMPLESDIR%%/Tools
+@dirrm %%EXAMPLESDIR%%/System
+@dirrm %%EXAMPLESDIR%%/Config
+@dirrm %%EXAMPLESDIR%%/Archive
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/man
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %D/argus/archive %D/argus >/dev/null 2>&1 || true

@@ -1,0 +1,11 @@
+--- configure~	Sat May 15 23:07:07 2004
++++ configure	Sat May 15 23:08:40 2004
+@@ -4025,7 +4025,7 @@
+ 
+       if test -d ${with_sasl}; then
+           ac_cv_sasl_where_lib=${with_sasl}/lib
+-          ac_cv_sasl_where_inc=${with_sasl}/include
++          ac_cv_sasl_where_inc=${with_sasl}/include/sasl
+ 
+           SASLFLAGS="-I$ac_cv_sasl_where_inc"
+           LIB_SASL="-L$ac_cv_sasl_where_lib"
