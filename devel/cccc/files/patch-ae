@@ -1,0 +1,19 @@
+--- cccc_stg.h.orig	Sun Aug 10 18:52:24 1997
++++ cccc_stg.h	Sun Jan 12 15:15:42 2003
+@@ -13,6 +13,7 @@
+ #include <string.h>
+ #include <iostream.h>
+ #include <strstream.h>
++#include <fstream.h>
+ 
+ class CCCC_String {
+   char *cptr;
+@@ -63,7 +64,7 @@
+   // we will deliberately read too many characters from the stream, 
+   // so the first thing we do is to mark our current position
+   streampos start=is.tellg();
+-  int state=is.rdstate();
++  istream::iostate state=is.rdstate();
+    
+   char buffer[MAX_IN_SIZE];
+   memset(buffer,0,MAX_IN_SIZE);
