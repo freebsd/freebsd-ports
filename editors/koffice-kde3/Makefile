@@ -39,4 +39,8 @@ LDCONFIG_DIRS+=		%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
+
 .include <bsd.port.post.mk>
