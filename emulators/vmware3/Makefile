@@ -75,6 +75,9 @@ setoptions:
 		-e 's;@@NETMASK@@;${VMNET_NETMASK};' \
 		${FILESDIR}/vmware.sh > ${WRKDIR}/vmware.sh
 
+	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
+		${FILESDIR}/vmware > ${WRKDIR}/vmware
+
 pre-install: setoptions
 	${INSTALL_MAN} ${WRKSRC}/man/man1/vmware.1 ${MANPREFIX}/man/man1
 	${MKDIR} ${VMDIR}/lib/modules
@@ -95,7 +98,7 @@ pre-install: setoptions
 		${INSTALL_SCRIPT} ${WRKSRC}/bin/$${i} ${VMDIR}/bin; \
 	done
 	${INSTALL_SCRIPT} -m 4555 ${WRKSRC}/bin/vmware ${VMDIR}/bin
-	${LN} -s ${VMDIR}/bin/vmware ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKDIR}/vmware ${PREFIX}/bin
 	${MKDIR} ${VMDIR}/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/config ${VMDIR}/lib
 	${MKDIR} ${VMDIR}/lib/floppies
