@@ -285,7 +285,6 @@
     SUBDIR += pscan
     SUBDIR += pwman
     SUBDIR += pxytest
-    SUBDIR += py-amkCrypto
     SUBDIR += py-cryptkit
     SUBDIR += py-fchksum
     SUBDIR += py-gnupg
