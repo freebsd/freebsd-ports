@@ -1,0 +1,11 @@
+This module provides functions to deal with IPv4/IPv6 addresses.  The
+module can be used as a class, allowing the user to instantiate IP
+objects, which can be single IP addresses, prefixes, or ranges of
+addresses.  There is also a procedural way of accessing most of the
+functions.  Most subroutines can take either IPv4 or IPv6 addresses
+transparently.
+
+WWW: http://search.cpan.org/search?dist=Net-IP
+
+- Kimura Fuyuki
+fuyuki@hadaly.org
