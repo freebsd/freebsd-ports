@@ -66,6 +66,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <mlist msgid="200407222031.25086.bugtraq@beyondsecurity.com">http://www.securityfocus.com/archive/1/369706</mlist>
       <url>http://www.samba.org/samba/whatsnew/samba-3.0.5.html</url>
       <url>http://www.samba.org/samba/whatsnew/samba-2.2.10.html</url>
+      <url>http://www.osvdb.org/8190</url>
+      <url>http://www.osvdb.org/8191</url>
+      <url>http://secunia.com/advisories/12130</url>
     </references>
     <dates>
       <discovery>2004-07-14</discovery>
@@ -233,6 +236,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <url>http://www.osvdb.org/6704</url>
+      <cvename>CAN-2004-0708</cvename>
+      <bid>10568</bid>
+      <url>http://secunia.com/advisories/11807</url>
     </references>
     <dates>
       <discovery>2004-05-04</discovery>
@@ -4108,10 +4114,97 @@ misc.c:
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=252198</url>
       <url>http://www.nd.edu/~jsmith30/xul/test/spoof.html</url>
       <url>http://secunia.com/advisories/12188</url>
+      <bid>10832</bid>
     </references>
     <dates>
       <discovery>2004-07-19</discovery>
       <entry>2004-07-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f9e3e60b-e650-11d8-9b0a-000347a4fa7d">
+    <topic>libPNG stack-based buffer overflow and other code concerns</topic>
+    <affects>
+      <package>
+        <name>png</name>
+        <range><le>1.2.5_7</le></range>
+      </package>
+      <package>
+        <name>linux-png</name>
+        <range><le>1.0.14_3</le></range>
+        <range><ge>1.2.*</ge><le>1.2.2</le></range>
+      </package>
+      <package>
+        <name>firefox</name>
+        <range><lt>0.9.3</lt></range>
+      </package>
+      <package>
+        <name>linux-mozilla</name>
+        <range><lt>1.7.2</lt></range>
+      </package>
+      <package>
+        <name>linux-mozilla-devel</name>
+        <range><lt>1.7.2</lt></range>
+      </package>
+      <package>
+        <name>mozilla</name>
+        <range><lt>1.7.2,2</lt></range>
+        <range><ge>1.8.*,2</ge><le>1.8.a2,2</le></range>
+      </package>
+      <package>
+        <name>mozilla-gtk1</name>
+        <range><lt>1.7.2</lt></range>
+      </package>
+      <package>
+        <name>netscape-{communicator,navigator}</name>
+        <range><le>4.78</le></range>
+      </package>
+      <package>
+        <name>linux-netscape-{communicator,navigator}</name>
+        <name>{ja,ko}-netscape-{communicator,navigator}-linux</name>
+        <range><le>4.8</le></range>
+      </package>
+      <package>
+        <name>{,ja-}netscape7</name>
+        <range><le>7.1</le></range>
+      </package>
+      <package>
+        <name>{de-,fr-,pt_BR-}netscape7</name>
+        <range><le>7.02</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Chris Evans has discovered multiple vulnerabilities in libpng,
+          which can be exploited by malicious people to compromise a
+          vulnerable system or cause a DoS (Denial of Service).</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="Pine.LNX.4.58.0408041840080.20655@sphinx.mythic-beasts.com">http://www.securityfocus.com/archive/1/370853</mlist>
+      <url>http://scary.beasts.org/security/CESA-2004-001.txt</url>
+      <url>http://www.osvdb.org/8312</url>
+      <url>http://www.osvdb.org/8313</url>
+      <url>http://www.osvdb.org/8314</url>
+      <url>http://www.osvdb.org/8315</url>
+      <url>http://www.osvdb.org/8316</url>
+      <cvename>CAN-2004-0597</cvename>
+      <cvename>CAN-2004-0598</cvename>
+      <cvename>CAN-2004-0599</cvename>
+      <certvu>388984</certvu>
+      <certvu>236656</certvu>
+      <certvu>160448</certvu>
+      <certvu>477512</certvu>
+      <certvu>817368</certvu>
+      <certvu>286464</certvu>
+      <url>http://secunia.com/advisories/12219</url>
+      <url>http://secunia.com/advisories/12232</url>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=251381</url>
+    </references>
+    <dates>
+      <discovery>2004-08-04</discovery>
+      <entry>2004-08-04</entry>
+      <modified>2004-08-05</modified>
     </dates>
   </vuln>
 </vuxml>
