@@ -1,11 +1,11 @@
---- Makefile.in.orig	Sun Jan  6 10:28:49 2002
-+++ Makefile.in	Sun Jan  6 10:31:22 2002
-@@ -18,7 +18,7 @@
- datadir = $(prefix)/@DATADIRNAME@
- # Previously I had:
- # datadir = @datadir@/sitecopy
+--- Makefile.in.orig	Sun Jan 27 23:37:40 2002
++++ Makefile.in	Sun Jan 27 23:37:45 2002
+@@ -15,7 +15,7 @@
+ bindir = @bindir@
+ mandir = @mandir@
+ man1dir = $(mandir)/man1
 -docdir = $(prefix)/doc/sitecopy
 +docdir = $(prefix)/share/doc/sitecopy
  localedir = $(datadir)/locale
- sc_datadir = $(datadir)/sitecopy
- 
+ datadir = @datadir@
+ pkgdatadir = $(datadir)/@PACKAGE@
