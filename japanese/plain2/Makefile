@@ -6,20 +6,31 @@
 #
 
 PORTNAME=	plain2
-PORTVERSION=	2.54
+PORTVERSION=	2.54.1
 CATEGORIES=	japanese textproc
-MASTER_SITES=	ftp://ftp.nec.co.jp/pub/packages/plain2/
+MASTER_SITES=	http://ftp.debian.or.jp/debian-jp/pool/main/p/plain2/
+DISTNAME=	${PORTNAME}_${PORTVERSION:R}p${PORTVERSION:E}.orig
 
-MAINTAINER=	ports@freebsd.org
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${PORTNAME}_${PORTVERSION:R}p${PORTVERSION:E}-4.1.diff.gz
+PATCH_DIST_STRIP=	-p1
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-ALL_TARGET=	plain2
+MAINTAINER=	ports@FreeBSD.org
 
-# Some hint for incorporating unofficial HTML support patch.
-# Currently it is not supported.
-#PATCH_SITES=	http://shika.aist-nara.ac.jp/products/DEST/plain2/
-#PATCHFILES=	plain2-2.53-html.94aug14.patch.gz
-#RUN_DEPENDS+=	tcsh:${PORTSDIR}/shells/tcsh
-#PATCH_DIST_STRIP=	-p2 -F 3
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}p${PORTVERSION:E}.orig
+BUILD_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}p${PORTVERSION:E}.orig/src
+
+USE_REINPLACE=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DBSD -DKANJI -DPICTURE -DHTML"
+ALL_TARGET=	${PORTNAME}
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|/usr/lib/plain2|${DATADIR}|g' ${BUILD_WRKSRC}/plain2.h
+
+do-install:
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/*.p2 ${DATADIR}
 
 .include <bsd.port.mk>
