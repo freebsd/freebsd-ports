@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	suckblow
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	net misc
 MASTER_SITES=	http://people.FreeBSD.org/~archie/distfiles/
 
