@@ -9,6 +9,7 @@ case "$1" in
 	stop)
 		/usr/bin/killall ddclient
 		echo -n ' ddclient'
+		;;
 	*)
 		echo ""
 		echo "Usage: `basename $0` { start | stop }"
