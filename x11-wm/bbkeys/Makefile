@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	stijn@win.tue.nl
 
-RUN_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
-
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
