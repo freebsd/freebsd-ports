@@ -2,7 +2,7 @@ include/slang.h
 include/slcurses.h
 lib/libslang.a
 lib/libslang.so
-lib/libslang.so.1.3
+lib/libslang.so.1.4
 share/doc/slang/1.4/COPYING
 share/doc/slang/1.4/COPYING.ART
 share/doc/slang/1.4/COPYING.GPL

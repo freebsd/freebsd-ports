@@ -1,7 +1,7 @@
---- configure.orig	Sun Apr 23 05:57:29 2000
-+++ configure	Thu Jul 20 20:11:29 2000
-@@ -1865,6 +1865,19 @@
-       ELF_LINK_CMD="\$(ELF_LINK)\$(ELFLIB_MAJOR)"
+--- configure.orig	Sun Aug 20 04:20:18 2000
++++ configure	Sun Aug 20 22:21:40 2000
+@@ -1906,6 +1906,19 @@
+       IEEE_CFLAGS="-ieee_with_no_inexact"
      fi
      ;;
 +  *freebsd* )
@@ -18,12 +18,12 @@
 +    fi
 +    ;;
    * )
-     echo "Note: ELF compiler for host_os=$host_os may be wrong"
-     ELF_CC="\$(CC)"
-@@ -2199,16 +2212,8 @@
+     IEEE_CFLAGS=""
+ esac
+@@ -2231,16 +2244,8 @@
  
  echo $ac_n "checking SLANG_VERSION""... $ac_c" 1>&6
- echo "configure:2202: checking SLANG_VERSION" >&5
+ echo "configure:2234: checking SLANG_VERSION" >&5
 -slang_version=`grep "^#define  *SLANG_VERSION " $srcdir/src/slang.h |
 -               awk '{ print $3 }'`
 -slang_major_version=`echo $slang_version |
