@@ -376,6 +376,7 @@
     SUBDIR += tifmerge
     SUBDIR += tkxanim
     SUBDIR += togl
+    SUBDIR += totem
     SUBDIR += transcode
     SUBDIR += truevision
     SUBDIR += txtmerge
