@@ -192,7 +192,10 @@ DICTS=	${LG}
 .endif
 
 .for DICO in ${DICTS}
-MASTER_SITES+=	ftp://ftp.gnu.org/gnu/aspell/dict/${DICO:S/-alt//}/:dict${DICO:S/-//}
+MASTER_SITES+=	ftp://ftp.gnu.org/gnu/aspell/dict/${DICO:S/-alt//}/:dict${DICO:S/-//}		\
+		http://gnu.mirror.mcgill.ca/aspell/dict/${DICO:S/-alt//}/:dict${DICO:S/-//}	\
+		http://mirrors.usc.edu/pub/gnu/aspell/dict/${DICO:S/-alt//}/:dict${DICO:S/-//}	\
+		ftp://ftp.sunsite.org.uk/package/gnu/aspell/dict/${DICO:S/-alt//}/:dict${DICO:S/-//}
 DISTFILES+=	aspell${VERDICT_${DICO:U}}${DICT_SUFFIX}:dict${DICO:S/-//}
 .endfor
 
