@@ -8,7 +8,8 @@
 PORTNAME=	sls
 PORTVERSION=	1.00
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.cse.psu.edu/pub/src/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dannyboy
 DISTNAME=       ${PORTNAME}
 
 MAINTAINER=	sec@42.org
