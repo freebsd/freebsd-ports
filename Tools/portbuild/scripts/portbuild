@@ -150,7 +150,7 @@ if [ ${found} != 1 ]; then
 fi
 
 # Set up desired uname version
-echo ${OSREL}-${BRANCH} > ${chroot}/usr/bin/UNAME_TARGET
+echo ${OSREL}-${BRANCH} > ${chroot}/usr/bin/UNAME_VERSION
 
 trap "cleanup ${chroot} ${noclean} ${error} \"${cleandirs}\" ${pkgname}" 1 2 3 9 10 11 15 
 
@@ -171,7 +171,7 @@ ln -sf ../a/ports ${chroot}/usr/ports
 mkdir -p ${chroot}/usr/src ${chroot}/usr/opt/doc
 
 mount -r ${master}:${pb}/${branch}/src ${chroot}/usr/src
-mount -r ${master}:${pb}/usr/opt/doc ${chroot}/usr/opt/doc
+mount -r ${master}:${pb}/${branch}/doc ${chroot}/usr/opt/doc
 
 mount -t devfs foo ${chroot}/dev
 
@@ -209,18 +209,6 @@ if [ ${arch} = "i386" ]; then
 	chroot ${chroot} /sbin/ldconfig -aout -m /usr/lib/compat/aout
 	chroot ${chroot} /sbin/ldconfig -aout -R
 fi
-
-# Install packages
-# XXX Fix once perl.tbz available
-for i in ${chroot}/packages/*.tbz ; do
-	chroot ${chroot} pkg_add /packages/`basename $i`
-done
-
-chroot ${chroot} /usr/local/bin/use.perl port
-
-# Don't record packages which will interfere with building versions of the
-# packages we just installed.
-rm -rf ${chroot}/var/db/pkg/*
 
 while [ $# -gt 0 ]; do
   if [ -f ${packages}/All/$1 ]; then
