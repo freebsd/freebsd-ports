@@ -14,7 +14,7 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
 
-LIB_DEPENDS=	uu.1:${PORTSDIR}/converters/uulib
+LIB_DEPENDS=	uu.2:${PORTSDIR}/converters/uulib
 
 USE_KDEBASE_VER=3
 USE_BZIP2=	yes
