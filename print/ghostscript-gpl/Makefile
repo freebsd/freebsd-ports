@@ -7,6 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	6.01
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs601/ \
 		ftp://ftp.cs.wisc.edu/ghost/aladdin/fonts/ \
