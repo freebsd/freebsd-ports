@@ -31,6 +31,8 @@ share/doc/ja/navi2ch/contrib/navi2ch-migemo.el
 %%LISPDIR%%/navi2ch/navi2ch-e21.elc
 %%LISPDIR%%/navi2ch/navi2ch-face.el
 %%LISPDIR%%/navi2ch/navi2ch-face.elc
+%%LISPDIR%%/navi2ch/navi2ch-futaba.el
+%%LISPDIR%%/navi2ch/navi2ch-futaba.elc
 %%LISPDIR%%/navi2ch/navi2ch-head.el
 %%LISPDIR%%/navi2ch/navi2ch-head.elc
 %%LISPDIR%%/navi2ch/navi2ch-history.el
