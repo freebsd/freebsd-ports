@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Archive.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Apache/Archive/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Archive/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Archive
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Apache/Archive
