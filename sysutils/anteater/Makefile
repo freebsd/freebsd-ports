@@ -7,21 +7,17 @@
 #
 
 PORTNAME=	anteater
-PORTVERSION=	0.4
+PORTVERSION=	0.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.profzone.ch/drzoom/anteater/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A MTA log analyzer
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-.include <bsd.port.pre.mk>
+MAN1=		anteater.1
 
-# You will still get configure errors on -STABLE
-#  if you set CXX to a GCC3 incarnation!
-.if ${OSVERSION} < 500035
-CONFIGURE_ARGS=	--enable-strstream
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
