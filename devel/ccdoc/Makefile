@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.joelinoff.com/ccdoc/ \
 DISTNAME=	ccdoc_v07a_src_taz
 EXTRACT_SUFX=	.exe
 
-MAINTAINER=	lonewolf@flame.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracting comments from C++ source and generating HTML
 
 WRKSRC=		${WRKDIR}/ccdoc_v07a
