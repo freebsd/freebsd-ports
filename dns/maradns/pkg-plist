@@ -1,7 +1,10 @@
 @comment $FreeBSD$
 bin/askmara
 etc/mararc.sample
-etc/rc.d/maradns.sh.sample
+etc/rc.d/maradns.sh
+etc/rc.d/zoneserver.sh
+etc/maradns/example_csv1
+@dirrm etc/maradns
 sbin/getzone
 sbin/maradns
 sbin/zoneserver
