@@ -49,6 +49,8 @@ share/gqmpeg/skins/mrclean/focus-rect-border-1.png
 share/gqmpeg/skins/mrclean/focus-rect-border-7b.png
 share/gqmpeg/skins/mrclean/item-ab-static.png
 share/gqmpeg/skins/mrclean/item-clear-load-aa.png
+share/gqmpeg/skins/mrclean/item-colon-15.png
+share/gqmpeg/skins/mrclean/item-colon-24.png
 share/gqmpeg/skins/mrclean/item-pda-minus.png
 share/gqmpeg/skins/mrclean/item-pda-random-static.png
 share/gqmpeg/skins/mrclean/item-pda-repeat-static.png
@@ -67,8 +69,6 @@ share/gqmpeg/skins/mrclean/skindata_flyby
 share/gqmpeg/skins/mrclean/skindata_menu
 share/gqmpeg/skins/mrclean/skindata_playlist
 share/gqmpeg/skins/mrclean/skindata_submenu
-share/gqmpeg/skins/mrclean/text-std-13.png
-share/gqmpeg/skins/mrclean/text-std-15-bold.png
 share/locale/cs/LC_MESSAGES/gqmpeg.mo
 share/locale/de/LC_MESSAGES/gqmpeg.mo
 share/locale/fi/LC_MESSAGES/gqmpeg.mo

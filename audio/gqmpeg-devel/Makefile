@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gqmpeg
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES+=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,6 +20,7 @@ RUN_DEPENDS=	mpg321:${PORTSDIR}/audio/mpg321
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 .endif
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 USE_LIBTOOL=	yes
@@ -47,11 +48,12 @@ pre-everything::
 .endif
 
 post-patch:
-	@find ${WRKSRC} -name 'Makefile.in*' | xargs ${PERL} -pi.orig -e \
-		's|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+	@${FIND} ${WRKSRC} -name 'Makefile.in*' | ${XARGS} ${REINPLACE_CMD} \
+		-E -e 's|(SUBDIRS[[:space:]]+=.*)intl|\1| ; \
+		s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ;'
 .if defined(WITH_MPG321)
-	@${PERL} -pi.orig -e \
-		's/^(#define MPG123_BINARY "mpg)123"/$${1}321"/' \
+	@${REINPLACE_CMD} -E -e \
+		's/^(#define MPG123_BINARY "mpg)123"/\1321"/' \
 		${WRKSRC}/src/io_mpg123.c
 .endif
 
