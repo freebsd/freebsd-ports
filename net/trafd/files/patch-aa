@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Feb  8 21:57:24 2000
-+++ Makefile	Tue Feb  8 21:34:45 2000
+--- Makefile.orig	Thu Nov 25 06:38:29 1999
++++ Makefile	Sat Feb 12 18:22:41 2000
 @@ -12,22 +12,22 @@
  #
  
@@ -47,3 +47,23 @@
  	-DPATH_TOSAVE=\"${PATH_TOSAVE}\"\
  	-DPATH_TRAFSTAT=\"${PATH_TRAFSTAT}\"\
  	-DPATH_TRAFSTAT_LOG=\"${PATH_TRAFSTAT_LOG}\"\
+@@ -69,10 +69,15 @@
+ 	install -c -o root -g ${GROUP} -m ${MODE} trafd/trafstop ${PATH_BINDIR}
+ 	install -c -o root -g ${GROUP} -m ${MODE} trafd/trafsave ${PATH_BINDIR}
+ 	install -c -o root -g ${GROUP} -m ${MODE} trafd/trafdump ${PATH_BINDIR}
+-	install -s -o root -g ${GROUP} -m ${MODE} trafstat/trafstat ${PATH_BINDIR}
+-	install -s -o root -g ${GROUP} -m ${MODE} trafstatd/trafstatd ${PATH_BINDIR}
+-	install -s -o root -g ${GROUP} -m ${MODE} traflog/traflog ${PATH_BINDIR}
+-	install -c -o root -g ${GROUP} -m ${MODE} traflog/traflog.format ${PATH_TRAFLOG_FMT}
++	${BSD_INSTALL_PROGRAM} trafd/trafd ${PATH_BINDIR}
++	${BSD_INSTALL_SCRIPT} trafd/trafstart ${PATH_BINDIR}
++	${BSD_INSTALL_SCRIPT} trafd/trafstop ${PATH_BINDIR}
++	${BSD_INSTALL_SCRIPT} trafd/trafsave ${PATH_BINDIR}
++	${BSD_INSTALL_SCRIPT} trafd/trafdump ${PATH_BINDIR}
++	${BSD_INSTALL_PROGRAM} trafstat/trafstat ${PATH_BINDIR}
++	${BSD_INSTALL_PROGRAM} trafstatd/trafstatd ${PATH_BINDIR}
++	${BSD_INSTALL_PROGRAM} traflog/traflog ${PATH_BINDIR}
++	${BSD_INSTALL_SCRIPT} traflog/traflog.format ${PATH_TRAFLOG_FMT}
+ 	@echo Done.
+ 
+ clean:
