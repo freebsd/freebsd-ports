@@ -1,0 +1,9 @@
+Cocoon is a servlet that allows you to separate web development in three
+different layers: content, style and logic.
+
+Cocoon does not aim to simplify the creation of web content: in fact, it
+is harder to create XML/XSL content than it is to use HTML from the
+beginning. The advantages come on the long run, on site management, update
+and refining.
+
+WWW: http://java.apache.org/cocoon/
