@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.58 1999/07/08 13:33:40 sheldonh Exp $
+# $Id: Makefile,v 1.59 1999/07/22 13:16:02 kris Exp $
 #
 
     SUBDIR += agrep
@@ -45,6 +45,7 @@
     SUBDIR += prag
     SUBDIR += py-mxTextTools
     SUBDIR += py-xml
+    SUBDIR += rand
     SUBDIR += rman
     SUBDIR += sar
     SUBDIR += sgmlformat
