@@ -15,6 +15,7 @@ MAINTAINER=	vsevolod@highsecure.ru
 COMMENT=	A Python XMPP library
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2:install
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
