@@ -1,9 +1,7 @@
 bin/inews
 bin/rnews
-etc/innd
-etc/inndstart
-etc/in.nnrpd
 etc/rc.news
+etc/rc.d/innd.sh
 include/inndcomm.h
 include/libinn.h
 include/qio.h
@@ -74,6 +72,9 @@ man/man8/innstat.8.gz
 man/man8/news-recovery.8.gz
 man/man8/newsrequeue.8.gz
 man/man8/tally.unwanted.8.gz
+sbin/innd
+sbin/inndstart
+sbin/in.nnrpd
 news/lib/overview.fmt
 news/lib/parsecontrol
 news/lib/send-ihave
@@ -146,6 +147,7 @@ news/bin/makehistory
 news/bin/newsrequeue
 news/bin/prunehistory
 news/bin/writelog
+news/bin/innmail
 news/bin/news.daily
 news/bin/scanlogs
 news/bin/expirerm

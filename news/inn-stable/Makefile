@@ -1,12 +1,12 @@
 # New ports collection makefile for:	inn
-# Version required:	1.5.1
+# Version required:	1.7.2
 # Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1)
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.23 1997/05/29 06:38:42 charnier Exp $
+# $Id: Makefile,v 1.24 1997/09/15 20:11:44 torstenb Exp $
 #
 
-DISTNAME=	inn-1.5.1sec2
+DISTNAME=	inn-1.7.2
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/
 
@@ -43,6 +43,8 @@ pre-configure:
 
 pre-install:
 	${MKDIR} ${PREFIX}/news
+	${MKDIR} -m 0755 ${PREFIX}/news/sbin && \
+		chown news.news ${PREFIX}/news/sbin
 
 update: build
 	@(cd ${WRKSRC} ; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} update)
@@ -56,12 +58,18 @@ post-install:
 	if [ -d /var/spool/news ] && [ ! -d /var/news ]; then \
 		${MKDIR} -m 0775 /var/spool/news/over.view; \
 		chown news.news /var/spool/news/over.view; \
+		${MKDIR} -m 0775 /var/spool/news/tmp; \
+		chown news.news /var/spool/news/tmp; \
 	else \
 		${MKDIR} -m 0775 /var/news/over.view; \
 		chown news.news /var/news/over.view; \
+		${MKDIR} -m 0775 /var/news/tmp; \
+		chown news.news /var/news/tmp; \
 	fi
 	${MKDIR} ${PREFIX}/news/locks
 	chown news.news ${PREFIX}/news/locks
 	chmod 0755 ${PREFIX}/news/locks
+	sed <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
+		s+!!PREFIX!!+${PREFIX}+g && chmod +x ${PREFIX}/etc/rc.d/innd.sh
 
 .include <bsd.port.mk>
