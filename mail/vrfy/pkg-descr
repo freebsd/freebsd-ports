@@ -1,0 +1,5 @@
+Verify mail address,is it exists. For example,
+
+% vrfy -n -vv kaz@kobe1995.net
+
+NAKAMURA Kazushi@KOBE	<mailto:kaz@kobe1995.net>

@@ -1,0 +1,16 @@
+--- Makefile~	Tue Oct  7 20:40:40 1997
++++ Makefile	Sun Sep 10 05:07:32 2000
+@@ -91,10 +91,10 @@
+ # With BIND 4.9.3 the getnet...() calls are in the resolver library.
+ # ----------------------------------------------------------------------
+ 
+-RES = -lsocket				#if defined(SCO) && default
++#RES = -lsocket				#if defined(SCO) && default
+ RES =
+-RES = ../res/libresolv.a
+-RES = -lresolv
++#RES = ../res/libresolv.a
++#RES = -lresolv
+ 
+ COMPLIB = ../compat/lib/lib44bsd.a
+ COMPLIB = -lnet
