@@ -17,12 +17,3 @@
  
  
  SRCS = xvkbd.c findwidget.c
-@@ -34,7 +34,7 @@
- 
- DEFINES = $(D_XAW3D) $(D_XTEST) $(D_I18N)
- 
--ComplexProgramTarget(xvkbd)
-+ComplexProgramTargetNoMan(xvkbd)
- 
- InstallAppDefaults(XVkbd)
- InstallAppDefaults(XVkbd-common)

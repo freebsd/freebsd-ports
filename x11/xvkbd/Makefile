@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	xvkbd
-PORTVERSION=	1.2
+PORTVERSION=	2.1
 CATEGORIES=	x11
 MASTER_SITES=	http://member.nifty.ne.jp/tsato/xvkbd/
 
 MAINTAINER=	roam@FreeBSD.org
+
+MAN1=		xvkbd.1
 
 .if	defined(WITH_ALL)
 WITH_XAW3D=	yes

@@ -1,7 +1,9 @@
 bin/xvkbd
 lib/X11/app-defaults/XVkbd
 lib/X11/app-defaults/XVkbd-common
+lib/X11/app-defaults/XVkbd-french
 lib/X11/app-defaults/XVkbd-german
 lib/X11/app-defaults/XVkbd-jisx6004
 lib/X11/app-defaults/XVkbd-latin1
 lib/X11/app-defaults/XVkbd-small
+lib/X11/app-defaults/XVkbd-swissgerman
