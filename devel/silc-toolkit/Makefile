@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	0.9.3
 CATEGORIES=	devel ipv6 net security
 MASTER_SITES=	http://www.silcnet.org/download/toolkit/sources/ \
 		ftp://ftp.silcnet.org/silc/toolkit/sources/ \
@@ -25,6 +24,7 @@ MAINTAINER=	lioux@FreeBSD.org
 RUN_DEPENDS=	silc:${PORTSDIR}/net/silc-client
 
 USE_BZIP2=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	glib12
