@@ -226,6 +226,7 @@
     SUBDIR += fnccheck
     SUBDIR += fnorb
     SUBDIR += fortran-utils
+    SUBDIR += fpc-gdb
     SUBDIR += fpc-gdbint
     SUBDIR += fpc-regexpr
     SUBDIR += fpp
