@@ -1,0 +1,11 @@
+--- ptyx.h.orig	Fri Jul 16 10:17:57 1993
++++ ptyx.h	Sat Apr 26 10:06:58 1997
+@@ -91,7 +91,7 @@
+ #ifdef hpux
+ #define	PTYCHAR2	"fedcba9876543210"
+ #else	/* !hpux */
+-#define	PTYCHAR2	"0123456789abcdef"
++#define	PTYCHAR2	"0123456789abcdefghijklmnopqrstuvwxyz"
+ #endif	/* !hpux */
+ #endif	/* !PTYCHAR2 */
+ 
