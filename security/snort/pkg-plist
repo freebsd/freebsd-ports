@@ -46,6 +46,7 @@ share/snort/oracle.rules
 share/snort/other-ids.rules
 share/snort/p2p.rules
 share/snort/policy.rules
+share/snort/pop2.rules
 share/snort/pop3.rules
 share/snort/porn.rules
 @unexec if [ -f %B/reference.config ] && cmp -s %B/reference.config %B/reference.config-sample; then rm -f %B/reference.config; fi
