@@ -92,6 +92,7 @@
     SUBDIR += gnomemimedata
     SUBDIR += gnomepm
     SUBDIR += gnomeuserdocs
+    SUBDIR += gnomeuserdocs2
     SUBDIR += gnomeutils
     SUBDIR += gnomeutils2
     SUBDIR += gnuls
