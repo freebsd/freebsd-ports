@@ -118,6 +118,7 @@
     SUBDIR += hlserver-opfor
     SUBDIR += hlserver-si
     SUBDIR += hlserver-svencoop
+    SUBDIR += hlserver-wizwars
     SUBDIR += icbm3d
     SUBDIR += icebreaker
     SUBDIR += ifm
