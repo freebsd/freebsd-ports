@@ -858,6 +858,7 @@ cdrdao		ports/sysutils/cdrdao
 cdroot		ports/sysutils/cdroot
 cdrtools	ports/sysutils/cdrtools
 cdrtools-devel	ports/sysutils/cdrtools-devel
+cedet		ports/devel/cedet
 celestia	ports/astro/celestia
 centericq	ports/net/centericq
 cfe		ports/misc/cfe
