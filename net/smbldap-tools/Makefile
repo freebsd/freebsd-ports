@@ -8,7 +8,7 @@
 PORTNAME=	smbldap-tools
 PORTVERSION=	0.8.6
 CATEGORIES=	net
-MASTER_SITES=	http://www.idealx.org/prj/samba/dist/
+MASTER_SITES=	http://samba.idealx.org/dist/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	flz@xbsd.org
