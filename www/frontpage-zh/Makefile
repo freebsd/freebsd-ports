@@ -10,9 +10,9 @@ CATEGORIES=	www chinese
 PKGNAMEPREFIX=	zh-
 
 MAINTAINER=	hetzels@westbend.net
+COMMENT=	Microsoft Frontpage Chinese Web Administration
 
 MD5_FILE=	${.CURDIR}/distinfo
-COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 

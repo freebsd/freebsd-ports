@@ -10,6 +10,7 @@ CATEGORIES=	www hebrew
 PKGNAMEPREFIX=	he-
 
 MAINTAINER=	hetzels@westbend.net
+COMMENT=	Microsoft Frontpage Hebrew Web Administration
 
 MD5_FILE=	${.CURDIR}/distinfo
 
