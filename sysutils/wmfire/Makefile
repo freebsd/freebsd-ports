@@ -8,7 +8,7 @@
 
 DISTNAME=	wmfire-0.0.3.9pre4
 PKGNAME=	wmfire-0.0.3.9
-CATEGORIES=	misc
+CATEGORIES=	sysutils
 MASTER_SITES=	http://www.zebra.net/~dm/wmfire/
 
 MAINTAINER=	jedgar@fxp.org
