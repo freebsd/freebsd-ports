@@ -1,6 +1,6 @@
---- display/TargetLabel.py.orig	Sat Oct 25 02:15:56 2003
-+++ display/TargetLabel.py	Sat Oct 25 02:21:05 2003
-@@ -76,7 +76,14 @@
+--- display/TargetLabel.py.orig	Tue Dec 30 13:26:48 2003
++++ display/TargetLabel.py	Tue Dec 30 13:27:20 2003
+@@ -90,7 +90,14 @@
  
  # determine the locale
  import commands

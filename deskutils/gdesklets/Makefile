@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	gdesklets
-PORTVERSION=	0.24.1
-PORTREVISION=	2
+PORTVERSION=	0.25.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.pycage.de/download/${PORTNAME}/
 DISTNAME=	gDesklets-${PORTVERSION}
 
-MAINTAINER=	mezz7@cox.net
+MAINTAINER=	klammer@webonaut.com
 COMMENT=	A framework for Gnome 2.x for desktop applets
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
