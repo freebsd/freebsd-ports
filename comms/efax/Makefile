@@ -29,7 +29,7 @@ post-build:
 		${WRKSRC}/fax
 
 post-install:
-	${CHOWN}	uucp.dialer ${PREFIX}/bin/efax
+	${CHOWN}	uucp:dialer ${PREFIX}/bin/efax
 	${CHMOD}	4755 ${PREFIX}/bin/efax
 	${INSTALL_DATA} ${WRKSRC}/efax.rc.sample ${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/efax.rc.sample.ja ${PREFIX}/etc
