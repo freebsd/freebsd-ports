@@ -7431,6 +7431,7 @@ shmap		ports/devel/shmap
 shntool		ports/audio/shntool
 shorten		ports/audio/shorten
 shout		ports/audio/shout
+show		ports/graphics/show
 showgrammar	ports/devel/showgrammar
 showimg		ports/graphics/showimg
 shtool		ports/devel/shtool
