@@ -9,7 +9,7 @@
  device_DATA = gnome-dev-printer.png gnome-dev-printer-network.png gnome-dev-printer-new.png
  
 -emblemdir = $(datadir)/icons/hicolor/48x48/emblems
-+emblemdir = $(prefix/$(DATADIRNAME)/icons/hicolor/48x48/emblems
++emblemdir = $(prefix)/$(DATADIRNAME)/icons/hicolor/48x48/emblems
  emblem_DATA = emblem-default.png emblem-paused.png
  
  pixmapdir = $(datadir)/pixmaps/gnome-cups-manager

@@ -19,6 +19,8 @@ share/gnome/pixmaps/gnome-cups-manager/printer-tray-stopped.png
 share/icons/hicolor/48x48/devices/gnome-dev-printer-network.png
 share/icons/hicolor/48x48/devices/gnome-dev-printer-new.png
 share/icons/hicolor/48x48/devices/gnome-dev-printer.png
+share/icons/hicolor/48x48/emblems/emblem-default.png
+share/icons/hicolor/48x48/emblems/emblem-paused.png
 share/locale/ca/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/cs/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/de/LC_MESSAGES/gnome-cups-manager.mo
