@@ -1,182 +1,7 @@
-%%HORDEDIR%%/css.php
-%%HORDEDIR%%/help.php
-%%HORDEDIR%%/index.php
-%%HORDEDIR%%/login.php
-%%HORDEDIR%%/maintenance.php
-%%HORDEDIR%%/menu.php
-%%HORDEDIR%%/problem.php
-%%HORDEDIR%%/status.php
-%%HORDEDIR%%/test.php
-%%HORDEDIR%%/lib/Auth/imap.php
-%%HORDEDIR%%/lib/Auth/ftp.php
-%%HORDEDIR%%/lib/Auth/ldap.php
-%%HORDEDIR%%/lib/Auth/mcal.php
-%%HORDEDIR%%/lib/Auth/sql.php
-%%HORDEDIR%%/lib/Cache/file.php
-%%HORDEDIR%%/lib/Category/sql.php
-%%HORDEDIR%%/lib/Maintenance.php
-%%HORDEDIR%%/lib/MIME/Viewer/default.php
-%%HORDEDIR%%/lib/MIME/Viewer/enscript.php
-%%HORDEDIR%%/lib/MIME/Viewer/excel.php
-%%HORDEDIR%%/lib/MIME/Viewer/msword.php
-%%HORDEDIR%%/lib/MIME/Viewer/php.php
-%%HORDEDIR%%/lib/MIME/Viewer/rar.php
-%%HORDEDIR%%/lib/MIME/Viewer/tgz.php
-%%HORDEDIR%%/lib/MIME/Viewer/vcard.php
-%%HORDEDIR%%/lib/MIME/Magic.php
-%%HORDEDIR%%/lib/MIME/Message.php
-%%HORDEDIR%%/lib/MIME/Part.php
-%%HORDEDIR%%/lib/MIME/Structure.php
-%%HORDEDIR%%/lib/MIME/Viewer.php
-%%HORDEDIR%%/lib/Prefs/ldap.php
-%%HORDEDIR%%/lib/Prefs/session.php
-%%HORDEDIR%%/lib/Prefs/sql.php
-%%HORDEDIR%%/lib/Perms/sql.php
-%%HORDEDIR%%/lib/Token/file.php
-%%HORDEDIR%%/lib/Token/sql.php
-%%HORDEDIR%%/lib/Auth.php
-%%HORDEDIR%%/lib/Browser.php
-%%HORDEDIR%%/lib/Cache.php
-%%HORDEDIR%%/lib/Category.php
-%%HORDEDIR%%/lib/Data.php
-%%HORDEDIR%%/lib/Group.php
-%%HORDEDIR%%/lib/Help.php
-%%HORDEDIR%%/lib/Horde.php
-%%HORDEDIR%%/lib/Identity.php
-%%HORDEDIR%%/lib/Lang.php
-%%HORDEDIR%%/lib/MIME.php
-%%HORDEDIR%%/lib/Menu.php
-%%HORDEDIR%%/lib/Perms.php
-%%HORDEDIR%%/lib/Prefs.php
-%%HORDEDIR%%/lib/Registry.php
-%%HORDEDIR%%/lib/Secret.php
-%%HORDEDIR%%/lib/Serialize.php
-%%HORDEDIR%%/lib/SessionCache.php
-%%HORDEDIR%%/lib/Text.php
-%%HORDEDIR%%/lib/Token.php
-%%HORDEDIR%%/lib/base.php
-%%HORDEDIR%%/lib/version.php
-%%HORDEDIR%%/graphics/administration.gif
-%%HORDEDIR%%/graphics/alerts/error.gif
-%%HORDEDIR%%/graphics/alerts/message.gif
-%%HORDEDIR%%/graphics/alerts/success.gif
-%%HORDEDIR%%/graphics/alerts/warning.gif
-%%HORDEDIR%%/graphics/data.gif
-%%HORDEDIR%%/graphics/hordebadge.gif
-%%HORDEDIR%%/graphics/keyboard.gif
-%%HORDEDIR%%/graphics/login.gif
-%%HORDEDIR%%/graphics/logout.gif
-%%HORDEDIR%%/graphics/mime/audio.gif
-%%HORDEDIR%%/graphics/mime/binary.gif
-%%HORDEDIR%%/graphics/mime/compressed.gif
-%%HORDEDIR%%/graphics/mime/csv.gif
-%%HORDEDIR%%/graphics/mime/deb.gif
-%%HORDEDIR%%/graphics/mime/encryption.gif
-%%HORDEDIR%%/graphics/mime/excel.gif
-%%HORDEDIR%%/graphics/mime/html.gif
-%%HORDEDIR%%/graphics/mime/image.gif
-%%HORDEDIR%%/graphics/mime/mail.gif
-%%HORDEDIR%%/graphics/mime/msword.gif
-%%HORDEDIR%%/graphics/mime/pdf.gif
-%%HORDEDIR%%/graphics/mime/php.gif
-%%HORDEDIR%%/graphics/mime/powerpoint.gif
-%%HORDEDIR%%/graphics/mime/signed.gif
-%%HORDEDIR%%/graphics/mime/text.gif
-%%HORDEDIR%%/graphics/prefs.gif
-%%HORDEDIR%%/graphics/problem.gif
-%%HORDEDIR%%/graphics/help.gif
-%%HORDEDIR%%/config/html.php.dist
-%%HORDEDIR%%/config/lang.php
-%%HORDEDIR%%/config/lang.php.dist
-%%HORDEDIR%%/config/mime_drivers.php.dist
-%%HORDEDIR%%/config/mime_mapping.php.dist
-%%HORDEDIR%%/config/motd.php.dist
-%%HORDEDIR%%/config/horde.php
-%%HORDEDIR%%/config/horde.php.dist
-%%HORDEDIR%%/config/horde.php.dist.orig
-%%HORDEDIR%%/config/html.php
-%%HORDEDIR%%/config/mime_drivers.php
-%%HORDEDIR%%/config/mime_mapping.php
-%%HORDEDIR%%/config/motd.php
-%%HORDEDIR%%/config/registry.php
-%%HORDEDIR%%/config/registry.php.dist
-%%HORDEDIR%%/config/registry.php.dist.orig
-%%HORDEDIR%%/templates/admin/user/add.inc
-%%HORDEDIR%%/templates/admin/user/list.inc
-%%HORDEDIR%%/templates/admin/user/noadd.inc
-%%HORDEDIR%%/templates/admin/user/nolist.inc
-%%HORDEDIR%%/templates/data/csvmap.inc
-%%HORDEDIR%%/templates/data/datemap.inc
-%%HORDEDIR%%/templates/horde/modules.inc
-%%HORDEDIR%%/templates/problem/javascript.inc
-%%HORDEDIR%%/templates/problem/problem.inc
-%%HORDEDIR%%/templates/help/footer.inc
-%%HORDEDIR%%/templates/help/header.inc
-%%HORDEDIR%%/templates/help/index.inc
-%%HORDEDIR%%/templates/help/menu.inc
-%%HORDEDIR%%/templates/maintenance/confirm_bottom.inc
-%%HORDEDIR%%/templates/maintenance/confirm_middle.inc
-%%HORDEDIR%%/templates/maintenance/confirm_top.inc
-%%HORDEDIR%%/templates/maintenance/javascript.inc
-%%HORDEDIR%%/templates/prefs/textarea.inc
-%%HORDEDIR%%/templates/prefs/checkbox.inc
-%%HORDEDIR%%/templates/prefs/end.inc
-%%HORDEDIR%%/templates/prefs/enum.inc
-%%HORDEDIR%%/templates/prefs/link.inc
-%%HORDEDIR%%/templates/prefs/number.inc
-%%HORDEDIR%%/templates/prefs/overview.inc
-%%HORDEDIR%%/templates/prefs/select.inc
-%%HORDEDIR%%/templates/prefs/text.inc
-%%HORDEDIR%%/templates/prefs/begin.inc
-%%HORDEDIR%%/templates/index/css.inc
-%%HORDEDIR%%/templates/index/floating_index.inc
-%%HORDEDIR%%/templates/index/frames_index.inc
-%%HORDEDIR%%/templates/index/notconfigured.inc
-%%HORDEDIR%%/templates/index/wap.inc
-%%HORDEDIR%%/templates/javascript/open_help_win.js
-%%HORDEDIR%%/templates/login/login.inc
-%%HORDEDIR%%/templates/login/user.inc
-%%HORDEDIR%%/templates/wml/login/login.inc
-%%HORDEDIR%%/templates/wml/login/user.inc
-%%HORDEDIR%%/templates/wml/common-footer.inc
-%%HORDEDIR%%/templates/wml/common-header.inc
-%%HORDEDIR%%/templates/wml/doctype.inc
-%%HORDEDIR%%/templates/common-header.inc
-%%HORDEDIR%%/templates/common-footer.inc
-%%HORDEDIR%%/scripts/db/mysql_drop.sql
-%%HORDEDIR%%/scripts/db/README
-%%HORDEDIR%%/scripts/db/category.sql
-%%HORDEDIR%%/scripts/db/mysql_create.sql
-%%HORDEDIR%%/scripts/db/auth.sql
-%%HORDEDIR%%/scripts/db/pgsql_create.sql
-%%HORDEDIR%%/scripts/db/prefs.sql
-%%HORDEDIR%%/scripts/horde-rsync.sh
-%%HORDEDIR%%/scripts/mime_mapping/Makefile
-%%HORDEDIR%%/scripts/mime_mapping/convert.pl
-%%HORDEDIR%%/scripts/mime_mapping/mime.types
-%%HORDEDIR%%/scripts/set_perms.sh
-%%HORDEDIR%%/scripts/set_perms.sh.orig
-%%HORDEDIR%%/scripts/SCRIPTS
-%%HORDEDIR%%/locale/cs_CZ/LC_MESSAGES/horde.mo
-%%HORDEDIR%%/locale/de_DE/LC_MESSAGES/horde.mo
-%%HORDEDIR%%/locale/el_GR/LC_MESSAGES/horde.mo
-%%HORDEDIR%%/locale/es_ES/LC_MESSAGES/horde.mo
-%%HORDEDIR%%/locale/en_EN/help.xml
-%%HORDEDIR%%/locale/fr_FR/LC_MESSAGES/horde.mo
-%%HORDEDIR%%/locale/it_IT/LC_MESSAGES/horde.mo
-%%HORDEDIR%%/locale/ko_KR/LC_MESSAGES/horde.mo
-%%HORDEDIR%%/locale/nl_NL/LC_MESSAGES/horde.mo
-%%HORDEDIR%%/locale/pl_PL/LC_MESSAGES/horde.mo
-%%HORDEDIR%%/locale/pt_BR/LC_MESSAGES/horde.mo
-%%HORDEDIR%%/locale/ru_koi/LC_MESSAGES/horde.mo
-%%HORDEDIR%%/locale/ru_win/LC_MESSAGES/horde.mo
-%%HORDEDIR%%/locale/sv_SE/LC_MESSAGES/horde.mo
-%%HORDEDIR%%/locale/zh_CN/LC_MESSAGES/horde.mo
-%%HORDEDIR%%/locale/zh_TW/LC_MESSAGES/horde.mo
-%%HORDEDIR%%/util/special_characters.php
-%%HORDEDIR%%/admin/user.php
+%%HORDEDIR%%/admin/css/find.php
 %%HORDEDIR%%/admin/css/graphics/color_picker.gif
-%%HORDEDIR%%/admin/css/templates/colorpicker/thumbT.gif
+%%HORDEDIR%%/admin/css/index.php
+%%HORDEDIR%%/admin/css/templates/colorpicker/behavior.js
 %%HORDEDIR%%/admin/css/templates/colorpicker/blue.gif
 %%HORDEDIR%%/admin/css/templates/colorpicker/boxbevel.gif
 %%HORDEDIR%%/admin/css/templates/colorpicker/colorspace.js
@@ -204,22 +29,166 @@
 %%HORDEDIR%%/admin/css/templates/colorpicker/thumbL.gif
 %%HORDEDIR%%/admin/css/templates/colorpicker/thumbR.gif
 %%HORDEDIR%%/admin/css/templates/colorpicker/thumbS.gif
-%%HORDEDIR%%/admin/css/templates/colorpicker/behavior.js
-%%HORDEDIR%%/admin/css/find.php
-%%HORDEDIR%%/admin/css/index.php
+%%HORDEDIR%%/admin/css/templates/colorpicker/thumbT.gif
+%%HORDEDIR%%/admin/user.php
+%%HORDEDIR%%/config/.htaccess
+%%HORDEDIR%%/config/horde.php
+%%HORDEDIR%%/config/horde.php.dist
+%%HORDEDIR%%/config/horde.php.dist.orig
+%%HORDEDIR%%/config/html.php
+%%HORDEDIR%%/config/html.php.dist
+%%HORDEDIR%%/config/lang.php
+%%HORDEDIR%%/config/lang.php.dist
+%%HORDEDIR%%/config/mime_drivers.php
+%%HORDEDIR%%/config/mime_drivers.php.dist
+%%HORDEDIR%%/config/mime_mapping.php
+%%HORDEDIR%%/config/mime_mapping.php.dist
+%%HORDEDIR%%/config/motd.php
+%%HORDEDIR%%/config/motd.php.dist
+%%HORDEDIR%%/config/registry.php
+%%HORDEDIR%%/config/registry.php.dist
+%%HORDEDIR%%/config/registry.php.dist.orig
+%%HORDEDIR%%/css.php
+%%HORDEDIR%%/graphics/administration.gif
+%%HORDEDIR%%/graphics/alerts/error.gif
+%%HORDEDIR%%/graphics/alerts/message.gif
+%%HORDEDIR%%/graphics/alerts/success.gif
+%%HORDEDIR%%/graphics/alerts/warning.gif
+%%HORDEDIR%%/graphics/data.gif
+%%HORDEDIR%%/graphics/help.gif
+%%HORDEDIR%%/graphics/home.gif
+%%HORDEDIR%%/graphics/keyboard.gif
+%%HORDEDIR%%/graphics/login.gif
+%%HORDEDIR%%/graphics/logout.gif
+%%HORDEDIR%%/graphics/mime/audio.gif
+%%HORDEDIR%%/graphics/mime/binary.gif
+%%HORDEDIR%%/graphics/mime/compressed.gif
+%%HORDEDIR%%/graphics/mime/csv.gif
+%%HORDEDIR%%/graphics/mime/deb.gif
+%%HORDEDIR%%/graphics/mime/encryption.gif
+%%HORDEDIR%%/graphics/mime/executable.gif
+%%HORDEDIR%%/graphics/mime/html.gif
+%%HORDEDIR%%/graphics/mime/image.gif
+%%HORDEDIR%%/graphics/mime/inf.gif
+%%HORDEDIR%%/graphics/mime/mail.gif
+%%HORDEDIR%%/graphics/mime/makefile.gif
+%%HORDEDIR%%/graphics/mime/msexcel.gif
+%%HORDEDIR%%/graphics/mime/msi.gif
+%%HORDEDIR%%/graphics/mime/msp.gif
+%%HORDEDIR%%/graphics/mime/mspowerpoint.gif
+%%HORDEDIR%%/graphics/mime/msword.gif
+%%HORDEDIR%%/graphics/mime/pdf.gif
+%%HORDEDIR%%/graphics/mime/php.gif
+%%HORDEDIR%%/graphics/mime/readme.gif
+%%HORDEDIR%%/graphics/mime/rpm.gif
+%%HORDEDIR%%/graphics/mime/script-asa.gif
+%%HORDEDIR%%/graphics/mime/script-asp.gif
+%%HORDEDIR%%/graphics/mime/setup.gif
+%%HORDEDIR%%/graphics/mime/signed.gif
+%%HORDEDIR%%/graphics/mime/source-c.gif
+%%HORDEDIR%%/graphics/mime/source-h.gif
+%%HORDEDIR%%/graphics/mime/source-java.gif
+%%HORDEDIR%%/graphics/mime/text.gif
+%%HORDEDIR%%/graphics/mime/unknown.gif
+%%HORDEDIR%%/graphics/mime/vcard.gif
+%%HORDEDIR%%/graphics/mime/xml.gif
+%%HORDEDIR%%/graphics/prefs.gif
+%%HORDEDIR%%/graphics/problem.gif
+%%HORDEDIR%%/help.php
+%%HORDEDIR%%/index.php
+%%HORDEDIR%%/javascript.php
+%%HORDEDIR%%/lib/.htaccess
+%%HORDEDIR%%/lib/Auth.php
+%%HORDEDIR%%/lib/Auth/ftp.php
+%%HORDEDIR%%/lib/Auth/imap.php
+%%HORDEDIR%%/lib/Auth/ldap.php
+%%HORDEDIR%%/lib/Auth/mcal.php
+%%HORDEDIR%%/lib/Auth/sql.php
+%%HORDEDIR%%/lib/Browser.php
+%%HORDEDIR%%/lib/Cache.php
+%%HORDEDIR%%/lib/Cache/file.php
+%%HORDEDIR%%/lib/Category.php
+%%HORDEDIR%%/lib/Category/sql.php
+%%HORDEDIR%%/lib/Data.php
+%%HORDEDIR%%/lib/Group.php
+%%HORDEDIR%%/lib/Help.php
+%%HORDEDIR%%/lib/Horde.php
+%%HORDEDIR%%/lib/Identity.php
+%%HORDEDIR%%/lib/Lang.php
+%%HORDEDIR%%/lib/MIME.php
+%%HORDEDIR%%/lib/MIME/Magic.php
+%%HORDEDIR%%/lib/MIME/Message.php
+%%HORDEDIR%%/lib/MIME/Part.php
+%%HORDEDIR%%/lib/MIME/Structure.php
+%%HORDEDIR%%/lib/MIME/Viewer.php
+%%HORDEDIR%%/lib/MIME/Viewer/deb.php
+%%HORDEDIR%%/lib/MIME/Viewer/default.php
+%%HORDEDIR%%/lib/MIME/Viewer/enscript.php
+%%HORDEDIR%%/lib/MIME/Viewer/msexcel.php
+%%HORDEDIR%%/lib/MIME/Viewer/mspowerpoint.php
+%%HORDEDIR%%/lib/MIME/Viewer/msword.php
+%%HORDEDIR%%/lib/MIME/Viewer/php.php
+%%HORDEDIR%%/lib/MIME/Viewer/rar.php
+%%HORDEDIR%%/lib/MIME/Viewer/rpm.php
+%%HORDEDIR%%/lib/MIME/Viewer/tgz.php
+%%HORDEDIR%%/lib/MIME/Viewer/vcard.php
+%%HORDEDIR%%/lib/MIME/Viewer/zip.php
+%%HORDEDIR%%/lib/Maintenance.php
+%%HORDEDIR%%/lib/Menu.php
+%%HORDEDIR%%/lib/Perms.php
+%%HORDEDIR%%/lib/Perms/sql.php
+%%HORDEDIR%%/lib/Prefs.php
+%%HORDEDIR%%/lib/Prefs/ldap.php
+%%HORDEDIR%%/lib/Prefs/session.php
+%%HORDEDIR%%/lib/Prefs/sql.php
+%%HORDEDIR%%/lib/Registry.php
+%%HORDEDIR%%/lib/Secret.php
+%%HORDEDIR%%/lib/Serialize.php
+%%HORDEDIR%%/lib/SessionCache.php
+%%HORDEDIR%%/lib/Text.php
+%%HORDEDIR%%/lib/Token.php
+%%HORDEDIR%%/lib/Token/file.php
+%%HORDEDIR%%/lib/Token/sql.php
+%%HORDEDIR%%/lib/base.php
+%%HORDEDIR%%/lib/version.php
+%%HORDEDIR%%/locale/.htaccess
+%%HORDEDIR%%/locale/cs_CZ/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/de_DE/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/el_GR/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/en_US/help.xml
+%%HORDEDIR%%/locale/es_ES/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/fi_FI/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/fr_FR/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/it_IT/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/ko_KR/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/nl_NL/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/no_BOK/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/pl_PL/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/pt_BR/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/ru_koi/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/ru_win/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/sv_SE/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/zh_CN/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/zh_TW/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/login.php
+%%HORDEDIR%%/maintenance.php
+%%HORDEDIR%%/menu.php
+%%HORDEDIR%%/po/.htaccess
 %%HORDEDIR%%/po/Makefile
 %%HORDEDIR%%/po/README
 %%HORDEDIR%%/po/README.WinToKoi
 %%HORDEDIR%%/po/WinToKoi.pl
 %%HORDEDIR%%/po/cs_CZ.po
 %%HORDEDIR%%/po/de_DE.po
+%%HORDEDIR%%/po/el_GR.po
 %%HORDEDIR%%/po/es_ES.po
 %%HORDEDIR%%/po/extract.pl
+%%HORDEDIR%%/po/fi_FI.po
 %%HORDEDIR%%/po/fr_FR.po
-%%HORDEDIR%%/po/el_GR.po
 %%HORDEDIR%%/po/it_IT.po
 %%HORDEDIR%%/po/ko_KR.po
 %%HORDEDIR%%/po/nl_NL.po
+%%HORDEDIR%%/po/no_BOK.po
 %%HORDEDIR%%/po/pl_PL.po
 %%HORDEDIR%%/po/pt_BR.po
 %%HORDEDIR%%/po/ru_koi.po
@@ -229,57 +198,109 @@
 %%HORDEDIR%%/po/xgettext.sh
 %%HORDEDIR%%/po/zh_CN.po
 %%HORDEDIR%%/po/zh_TW.po
+%%HORDEDIR%%/problem.php
+%%HORDEDIR%%/scripts/.htaccess
+%%HORDEDIR%%/scripts/SCRIPTS
+%%HORDEDIR%%/scripts/db/README
+%%HORDEDIR%%/scripts/db/auth.sql
+%%HORDEDIR%%/scripts/db/category.sql
+%%HORDEDIR%%/scripts/db/mysql_create.sql
+%%HORDEDIR%%/scripts/db/mysql_drop.sql
+%%HORDEDIR%%/scripts/db/pgsql_create.sql
+%%HORDEDIR%%/scripts/db/pgsql_drop.sql
+%%HORDEDIR%%/scripts/db/prefs.sql
+%%HORDEDIR%%/scripts/horde-rsync.sh
+%%HORDEDIR%%/scripts/mime_mapping/Makefile
+%%HORDEDIR%%/scripts/mime_mapping/convert.pl
+%%HORDEDIR%%/scripts/mime_mapping/mime.types
+%%HORDEDIR%%/scripts/set_perms.sh
+%%HORDEDIR%%/scripts/set_perms.sh.orig
+%%HORDEDIR%%/status.php
+%%HORDEDIR%%/templates/.htaccess
+%%HORDEDIR%%/templates/admin/user/add.inc
+%%HORDEDIR%%/templates/admin/user/list.inc
+%%HORDEDIR%%/templates/admin/user/noadd.inc
+%%HORDEDIR%%/templates/admin/user/nolist.inc
+%%HORDEDIR%%/templates/common-footer.inc
+%%HORDEDIR%%/templates/common-header.inc
+%%HORDEDIR%%/templates/data/csvmap.inc
+%%HORDEDIR%%/templates/data/datemap.inc
+%%HORDEDIR%%/templates/help/footer.inc
+%%HORDEDIR%%/templates/help/header.inc
+%%HORDEDIR%%/templates/help/index.inc
+%%HORDEDIR%%/templates/help/menu.inc
+%%HORDEDIR%%/templates/horde/modules.inc
+%%HORDEDIR%%/templates/index/css.inc
+%%HORDEDIR%%/templates/index/floating_index.inc
+%%HORDEDIR%%/templates/index/frames_index.inc
+%%HORDEDIR%%/templates/index/notconfigured.inc
+%%HORDEDIR%%/templates/index/wap.inc
+%%HORDEDIR%%/templates/javascript/open_help_win.js
+%%HORDEDIR%%/templates/login/login.inc
+%%HORDEDIR%%/templates/login/user.inc
+%%HORDEDIR%%/templates/maintenance/confirm_bottom.inc
+%%HORDEDIR%%/templates/maintenance/confirm_middle.inc
+%%HORDEDIR%%/templates/maintenance/confirm_top.inc
+%%HORDEDIR%%/templates/maintenance/javascript.inc
+%%HORDEDIR%%/templates/prefs/begin.inc
+%%HORDEDIR%%/templates/prefs/checkbox.inc
+%%HORDEDIR%%/templates/prefs/end.inc
+%%HORDEDIR%%/templates/prefs/enum.inc
+%%HORDEDIR%%/templates/prefs/link.inc
+%%HORDEDIR%%/templates/prefs/number.inc
+%%HORDEDIR%%/templates/prefs/overview.inc
+%%HORDEDIR%%/templates/prefs/select.inc
+%%HORDEDIR%%/templates/prefs/text.inc
+%%HORDEDIR%%/templates/prefs/textarea.inc
+%%HORDEDIR%%/templates/problem/javascript.inc
+%%HORDEDIR%%/templates/problem/problem.inc
+%%HORDEDIR%%/templates/wml/common-footer.inc
+%%HORDEDIR%%/templates/wml/common-header.inc
+%%HORDEDIR%%/templates/wml/doctype.inc
+%%HORDEDIR%%/templates/wml/login/login.inc
+%%HORDEDIR%%/templates/wml/login/user.inc
+%%HORDEDIR%%/test.php
+%%HORDEDIR%%/util/special_characters.php
 %%HORDESBIN%%/horde_set_perms.sh
 etc/horde/httpd.conf.horde
 %%PORTDOCS%%share/doc/horde/CHANGES
 %%PORTDOCS%%share/doc/horde/CODING_STANDARDS
+%%PORTDOCS%%share/doc/horde/CONTRIBUTING
 %%PORTDOCS%%share/doc/horde/COPYING
 %%PORTDOCS%%share/doc/horde/CREDITS
-%%PORTDOCS%%share/doc/horde/HELP
+%%PORTDOCS%%share/doc/horde/HACKING
 %%PORTDOCS%%share/doc/horde/INSTALL
-%%PORTDOCS%%share/doc/horde/LISTS
 %%PORTDOCS%%share/doc/horde/README
-%%PORTDOCS%%share/doc/horde/SOURCE
 %%PORTDOCS%%@dirrm share/doc/horde
-@dirrm %%HORDEDIR%%/lib/MIME/Viewer
-@dirrm %%HORDEDIR%%/lib/MIME
+@dirrm %%HORDEDIR%%/admin/css/graphics
+@dirrm %%HORDEDIR%%/admin/css/templates/colorpicker
+@dirrm %%HORDEDIR%%/admin/css/templates
+@dirrm %%HORDEDIR%%/admin/css
+@dirrm %%HORDEDIR%%/admin
+@dirrm %%HORDEDIR%%/config
+@dirrm %%HORDEDIR%%/graphics/alerts
+@dirrm %%HORDEDIR%%/graphics/mime
+@dirrm %%HORDEDIR%%/graphics
 @dirrm %%HORDEDIR%%/lib/Auth
 @dirrm %%HORDEDIR%%/lib/Cache
 @dirrm %%HORDEDIR%%/lib/Category
+@dirrm %%HORDEDIR%%/lib/MIME/Viewer
+@dirrm %%HORDEDIR%%/lib/MIME
 @dirrm %%HORDEDIR%%/lib/Prefs
 @dirrm %%HORDEDIR%%/lib/Perms
 @dirrm %%HORDEDIR%%/lib/Token
 @dirrm %%HORDEDIR%%/lib
-@dirrm %%HORDEDIR%%/graphics/alerts
-@dirrm %%HORDEDIR%%/graphics/mime
-@dirrm %%HORDEDIR%%/graphics
-@dirrm %%HORDEDIR%%/config
-@dirrm %%HORDEDIR%%/templates/admin/user
-@dirrm %%HORDEDIR%%/templates/admin
-@dirrm %%HORDEDIR%%/templates/data
-@dirrm %%HORDEDIR%%/templates/horde
-@dirrm %%HORDEDIR%%/templates/problem
-@dirrm %%HORDEDIR%%/templates/help
-@dirrm %%HORDEDIR%%/templates/prefs
-@dirrm %%HORDEDIR%%/templates/index
-@dirrm %%HORDEDIR%%/templates/javascript
-@dirrm %%HORDEDIR%%/templates/login
-@dirrm %%HORDEDIR%%/templates/maintenance/
-@dirrm %%HORDEDIR%%/templates/wml/login
-@dirrm %%HORDEDIR%%/templates/wml
-@dirrm %%HORDEDIR%%/templates
-@dirrm %%HORDEDIR%%/scripts/mime_mapping
-@dirrm %%HORDEDIR%%/scripts/db
-@dirrm %%HORDEDIR%%/scripts
 @dirrm %%HORDEDIR%%/locale/cs_CZ/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/cs_CZ
 @dirrm %%HORDEDIR%%/locale/de_DE/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/de_DE
 @dirrm %%HORDEDIR%%/locale/el_GR/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/el_GR
-@dirrm %%HORDEDIR%%/locale/en_EN
+@dirrm %%HORDEDIR%%/locale/en_US
 @dirrm %%HORDEDIR%%/locale/es_ES/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/es_ES
+@dirrm %%HORDEDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%HORDEDIR%%/locale/fi_FI
 @dirrm %%HORDEDIR%%/locale/fr_FR/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/fr_FR
 @dirrm %%HORDEDIR%%/locale/it_IT/LC_MESSAGES
@@ -288,6 +309,8 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/locale/ko_KR
 @dirrm %%HORDEDIR%%/locale/nl_NL/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/nl_NL
+@dirrm %%HORDEDIR%%/locale/no_BOK/LC_MESSAGES
+@dirrm %%HORDEDIR%%/locale/no_BOK
 @dirrm %%HORDEDIR%%/locale/pl_PL/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/pl_PL
 @dirrm %%HORDEDIR%%/locale/pt_BR/LC_MESSAGES
@@ -303,12 +326,24 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/locale/zh_TW/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/zh_TW
 @dirrm %%HORDEDIR%%/locale
+@dirrm %%HORDEDIR%%/scripts/db
+@dirrm %%HORDEDIR%%/scripts/mime_mapping
+@dirrm %%HORDEDIR%%/scripts
+@dirrm %%HORDEDIR%%/templates/admin/user
+@dirrm %%HORDEDIR%%/templates/admin
+@dirrm %%HORDEDIR%%/templates/data
+@dirrm %%HORDEDIR%%/templates/help
+@dirrm %%HORDEDIR%%/templates/horde
+@dirrm %%HORDEDIR%%/templates/index
+@dirrm %%HORDEDIR%%/templates/javascript
+@dirrm %%HORDEDIR%%/templates/login
+@dirrm %%HORDEDIR%%/templates/maintenance/
+@dirrm %%HORDEDIR%%/templates/prefs
+@dirrm %%HORDEDIR%%/templates/problem
+@dirrm %%HORDEDIR%%/templates/wml/login
+@dirrm %%HORDEDIR%%/templates/wml
+@dirrm %%HORDEDIR%%/templates
 @dirrm %%HORDEDIR%%/util
-@dirrm %%HORDEDIR%%/admin/css/graphics
-@dirrm %%HORDEDIR%%/admin/css/templates/colorpicker
-@dirrm %%HORDEDIR%%/admin/css/templates
-@dirrm %%HORDEDIR%%/admin/css
-@dirrm %%HORDEDIR%%/admin
 @dirrm %%HORDEDIR%%/po
 @dirrm %%HORDEDIR%%
 @dirrm etc/horde

@@ -1,47 +1,48 @@
---- config/horde.php.dist.orig	Tue Nov 27 13:36:00 2001
-+++ config/horde.php.dist	Tue Dec  4 21:37:30 2001
-@@ -78,7 +78,7 @@
+--- config/horde.php.dist.orig	Fri Dec 28 19:48:37 2001
++++ config/horde.php.dist	Thu Jan  3 17:01:56 2002
+@@ -83,12 +83,13 @@
+ 
+ /* Which users should be treated as administrators (root, super-user)
+  * by Horde? Example: $conf['auth']['admins'] = array('admin', 'john');
++ * N.B.: 'admin' is used by Jonah to fetch the news.
+  */
+-$conf['auth']['admins'] = array();
++$conf['auth']['admins'] = array('admin');
  
  // What backend should we use for authenticating users to Horde? Valid
  // options are currently 'imap', 'ldap', 'mcal', 'sql', and 'ftp'.
 -$conf['auth']['driver'] = '';
 +$conf['auth']['driver'] = 'imap';
  
- // An array holding any parameters that the Auth object will need to
- // function correctly. For IMAP, this is the server name, port,
-@@ -99,6 +99,10 @@
- 
- // What log driver should we use? Valid values are 'file', 'mcal',
- // 'sql', and 'syslog'.
-+// Warning: il you keep file, do not forget to add a line in your
-+// /etc/newsyslog.conf
-+// For example:
-+// /var/log/horde.log                      600  5     100  *     Z
- $conf['log']['type'] = 'file';
- 
- // What is the name of the log? For the 'file' driver, this is the
-@@ -106,7 +110,7 @@
- // and for sql it would be the table name to use. For the 'syslog'
- // driver it is the facility as a _constant_ (with no quotes), e.g.:
- // ... = LOG_LOCAL0;
+ /* An array holding any parameters that the Auth object will need to
+  * function correctly. For IMAP, this is the server name, port,
+@@ -119,8 +120,12 @@
+  * and for sql it would be the table name to use. For the 'syslog'
+  * driver it is the facility as a _constant_ (with no quotes), e.g.:
+  * ... = LOG_LOCAL0;
++ * Warning: il you keep file, do not forget to add a line in your
++ * /etc/newsyslog.conf
++ * For example:
++ * /var/log/horde.log		600  5     100  *     Z
+  */
 -$conf['log']['name'] = '/tmp/horde.log';
 +$conf['log']['name'] = '/var/log/horde.log';
  
- // What level of messages should we log? The values are LOG_EMERG,
- // LOG_ALERT, LOG_CRIT, LOG_ERR, LOG_WARNING, LOG_NOTICE, LOG_INFO,
-@@ -131,7 +135,7 @@
- // (meaning use system defaults and don't save any user preferences),
- // 'session' (preferences only persist during the login), 'ldap', 
- // and 'sql'.
+ /* What level of messages should we log? The values are LOG_EMERG,
+  * LOG_ALERT, LOG_CRIT, LOG_ERR, LOG_WARNING, LOG_NOTICE, LOG_INFO,
+@@ -148,7 +153,7 @@
+  * 'session' (preferences only persist during the login), 'ldap', 
+  * and 'sql'.
+  */
 -$conf['prefs']['driver'] = 'none';
 +$conf['prefs']['driver'] = 'sql';
  
- // Any parameters that the preferences driver needs. This includes
- // database or ldap server, username/password to connect with, etc.
-@@ -140,12 +144,12 @@
- // This is an example configuration for a MySQL preference backend.
- // The SQL script to setup the preference database is placed in
- // horde/scripts/db/prefs.sql.
+ /* Any parameters that the preferences driver needs. This includes
+  * database or ldap server, username/password to connect with, etc.
+@@ -159,12 +164,12 @@
+  * Be sure to set the prefs driver to 'sql' above if you use this
+  * configuration. 
+  */
 -// $conf['prefs']['params']['phptype'] = 'mysql';
 -// $conf['prefs']['params']['hostspec'] = 'localhost';
 -// $conf['prefs']['params']['username'] = 'horde';
@@ -55,5 +56,14 @@
 +$conf['prefs']['params']['database'] = 'horde';
 +$conf['prefs']['params']['table'] = 'horde_prefs';
  
+ 
+ /**
+@@ -216,7 +221,7 @@
+  * option; SMTP requires at least a server and a port (if nonstandard).
+  */
+ $conf['mailer']['params'] = array();
+-// $conf['mailer']['params'] = array('sendmail_path' => '/usr/lib/sendmail');
++// $conf['mailer']['params'] = array('sendmail_path' => '/usr/sbin/sendmail');
+ // $conf['mailer']['params'] = array('server' => 'smtp.example.com');
  
  /**

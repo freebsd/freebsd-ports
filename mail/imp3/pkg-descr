@@ -1,13 +1,9 @@
-IMP 3 is currently in heavy development. Features that have been added
+IMP 3 is the new stable version of IMP. Features that have been added
 include searching; a new, flexible preferences system; a hierarchical
 folder tree; and more.
 
 It requires PHP4. You should use it if you want to take advantage of
-PHP4s built-in session handling and improved speed; if you want access
-to features such as the interactive spell checker and folder searching;
-or if you want to contribute a major piece to the code.
-
-This code branch continues the trend of 2.2 by being slimmer, cleaner,
-and better designed code than the previous version.
+PHP4s built-in session handling and improved speed or if you want access
+to features such as the interactive spell checker and folder searching.
 
 WWW: http://www.horde.org/imp/

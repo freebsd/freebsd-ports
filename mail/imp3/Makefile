@@ -7,10 +7,10 @@
 
 PORTNAME=	imp
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/tarballs/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${PORTVERSION}-RC3
 
 MAINTAINER=	thierry@thomas.as
 
@@ -36,6 +36,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 # - NOCRYPT		: if crypto is restricted in your country;
 #
 # - WITHOUT_SSL		: if you have not installed c-client WITH_SSL;
+#
+# - WITH_VALID_CERT	: if you own a valid SSL certificate;
 #
 # - WITHOUT_TURBA	: if you do not want adressbooks;
 #
@@ -113,9 +115,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/aspell:${PORTSDIR}/textproc/aspell
 .endif
 
 NO_BUILD=	yes
-DOCS=		COPYING README docs/CHANGES docs/CREDITS \
-		docs/INSTALL docs/SECURITY docs/FEATURES \
-		docs/PACKAGES
+DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL
 CONFFILE=	conf.php filter.txt header.txt html.php menu.php \
 		mime_drivers.php motd.php prefs.php servers.php \
 		trailer.txt
@@ -164,6 +164,7 @@ pre-install:
 	    ${ECHO_MSG} "" ; \
 	    ${FALSE} ; \
 	fi
+.if !defined(BATCH)
 .if !defined(WITHOUT_SSL)
 	@if ! ${GREP} -q -e 'CCLIENT_SSLENABLED "yes"' ${PORTREV_H}; then \
 	    ${ECHO_MSG} "" ; \
@@ -171,6 +172,7 @@ pre-install:
 	    ${ECHO_MSG} "" ; \
 	    ${FALSE} ; \
 	fi
+.endif
 .endif
 .if !defined(WITHOUT_LDAP)
 .if defined(WITH_LDAP1)
@@ -238,7 +240,20 @@ do-install:
 .endfor
 	@${PERL} -pi -e "s:example.com:${HOSTNAME}:g" ${CONFDIR}/servers.php
 	@${PERL} -pi -e "s:%%LOCALBASE%%:${LOCALBASE}:g" ${CONFDIR}/mime_drivers.php
-	@${PERL} -pi -e "s:IMP_VERSION:IMP_VERSION . ' / ${SERVOS}':" ${IMPDIR}/compose.php
+	@${PERL} -pi -e "s:IMP_VERSION:IMP_VERSION . ' / ${SERVOS}':" \
+		${IMPDIR}/compose.php
+.if defined(WITHOUT_SSL)
+	@${PERL} -pi -e "s:%%PROTOCOL%%:imap:;s:%%IMAPPORT%%:143:" \
+		${CONFDIR}/servers.php
+.else
+	@${PERL} -pi -e "s:%%IMAPPORT%%:993:" ${CONFDIR}/servers.php
+.if defined(WITH_VALID_CERT)
+	@${PERL} -pi -e "s:%%PROTOCOL%%:imap/ssl:" ${CONFDIR}/servers.php
+.else
+	@${PERL} -pi -e "s:%%PROTOCOL%%:imap/ssl/novalidate-cert:" \
+		${CONFDIR}/servers.php
+.endif
+.endif
 .if !defined(WITHOUT_ASPELL)
 	@${PERL} -pi -e "s:\/\* BEGBSDASPELL::;s:ENDBSDASPELL \*\/::" \
 			${CONFDIR}/mime_drivers.php
@@ -274,6 +289,8 @@ do-install:
 # Provide a link to IMP from Turba
 .if !defined(WITHOUT_TURBA)
 	@${PERL} -pi -e "s://UNCOMMENTWHENINSTIMP::" ${TURBADIR}/config/conf.php
+	@${PERL} -pi -e "s:apps'] = array\(\):apps'] = array('turba'):" \
+		${CONFDIR}/conf.php
 .endif
 .if !defined(NOPORTDOCS)
 	@${PERL} -pi -e "s:/home/httpd/html/horde/imp:${IMPDIR}:g" ${WRKSRC}/docs/SECURITY

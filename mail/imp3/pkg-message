@@ -15,8 +15,8 @@ IMP requires an IMAP server. If you want to install one on this
 machine, you may install the ports mail/cyrus-imapd, or
 mail/imap-uw, or mail/courier-imap.
 
-Please refer to the file %%DOCSDIR%%/SECURITY
-on how to secure the IMP installation.
-It is at least recommended that you change the default database
-password used by horde and imp.
+To secure your installation, it is at least recommended that you change
+the default database password used by horde and imp.
+Then, you might change the 'session.save_path' setting in php.ini to a
+directory only readable and writeable by your webserver.
 ************************************************************************

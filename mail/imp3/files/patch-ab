@@ -1,5 +1,5 @@
 --- config/servers.php.dist.orig	Fri Jun 22 20:08:14 2001
-+++ config/servers.php.dist	Fri Nov 16 23:46:19 2001
++++ config/servers.php.dist	Tue Dec 18 23:08:00 2001
 @@ -31,7 +31,7 @@
   * is on.
   *
@@ -14,11 +14,13 @@
  $servers['imap'] = array(
      'name' => 'IMAP Server',
 -    'server' => 'imap.example.com',
+-    'protocol' => 'imap',
+-    'port' => 143,
+-    'folders' => 'mail/',
 +//  'server' => 'imap.example.com',
 +    'server' => 'localhost',
-     'protocol' => 'imap',
-     'port' => 143,
--    'folders' => 'mail/',
++    'protocol' => '%%PROTOCOL%%',
++    'port' => %%IMAPPORT%%,
 +    'folders' => 'Mail/',
      'namespace' => '',
      'maildomain' => 'example.com',
