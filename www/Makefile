@@ -106,6 +106,7 @@
     SUBDIR += galeon2
     SUBDIR += gallery
     SUBDIR += geeklog
+    SUBDIR += gforge
     SUBDIR += glibwww
     SUBDIR += gn
     SUBDIR += gnuinfo

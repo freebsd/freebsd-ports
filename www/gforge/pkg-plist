@@ -1,0 +1,825 @@
+%%ETC_DIR%%/local.inc-dist
+%%ETC_DIR%%/sample-apache.vhost-dist
+%%BACKEND_DIR%%/backend/zones/aliases.zone
+%%BACKEND_DIR%%/backend/zones/dns.zone
+%%BACKEND_DIR%%/backend/zones/httpd.conf.zone
+%%BACKEND_DIR%%/backend/zones/sendmail.cw.zone
+%%BACKEND_DIR%%/backend/shell/apache.sh
+%%BACKEND_DIR%%/backend/include.pl
+%%BACKEND_DIR%%/backend/DatabaseDump.pl
+%%BACKEND_DIR%%/cronjobs/mail/mailaliases.php
+%%BACKEND_DIR%%/cronjobs/mail/mailing_lists_create.php
+%%BACKEND_DIR%%/cronjobs/mail/README.txt
+%%BACKEND_DIR%%/cronjobs/cvs-cron/cvscreate.sh
+%%BACKEND_DIR%%/cronjobs/cvs-cron/cvs.php
+%%BACKEND_DIR%%/cronjobs/cvs-cron/grap.c
+%%BACKEND_DIR%%/cronjobs/cvs-cron/history_parse.php
+%%BACKEND_DIR%%/cronjobs/cvs-cron/ssh_create.php
+%%BACKEND_DIR%%/cronjobs/cvs-cron/usergroup.php
+%%BACKEND_DIR%%/cronjobs/stats_projects.inc
+%%BACKEND_DIR%%/cronjobs/stats_projects-backfill.php
+%%BACKEND_DIR%%/cronjobs/site_stats.php
+%%BACKEND_DIR%%/cronjobs/rotate_activity.php
+%%BACKEND_DIR%%/cronjobs/rating_stats.php
+%%BACKEND_DIR%%/cronjobs/project_weekly_metric.php
+%%BACKEND_DIR%%/cronjobs/project_weekly_metric-backfill.php
+%%BACKEND_DIR%%/cronjobs/project_cleanup.php
+%%BACKEND_DIR%%/cronjobs/massmail.php
+%%BACKEND_DIR%%/cronjobs/db_trove_maint.php
+%%BACKEND_DIR%%/cronjobs/db_stats_agg.php
+%%BACKEND_DIR%%/cronjobs/db_project_sums.php
+%%BACKEND_DIR%%/cronjobs/check_stale_tracker_items.php
+%%BACKEND_DIR%%/cronjobs/calculate_user_metric.php
+%%BACKEND_DIR%%/cronjobs/README
+%%BACKEND_DIR%%/cronjobs/README.root
+%%BACKEND_DIR%%/cronjobs/vacuum.php
+%%BACKEND_DIR%%/cronjobs/stats_site.inc
+%%BACKEND_DIR%%/monitor/systemdaemon
+%%BACKEND_DIR%%/monitor/check-system.pl
+%%BACKEND_DIR%%/utils/underworld-dummy/ssh_dump.pl
+%%BACKEND_DIR%%/utils/underworld-dummy/dns_conf.pl
+%%BACKEND_DIR%%/utils/underworld-dummy/dump_database.pl
+%%BACKEND_DIR%%/utils/underworld-dummy/ia64_dump.pl
+%%BACKEND_DIR%%/utils/underworld-dummy/mail_aliases.pl
+%%BACKEND_DIR%%/utils/underworld-dummy/mailing_lists_dump.pl
+%%BACKEND_DIR%%/utils/underworld-dummy/new_aliases.pl
+%%BACKEND_DIR%%/utils/underworld-dummy/aliases.zone
+%%BACKEND_DIR%%/utils/cvs1/cvscreate.sh
+%%BACKEND_DIR%%/utils/cvs1/cvstar_genlist.pl
+%%BACKEND_DIR%%/utils/cvs1/cvstar_superscript.pl
+%%BACKEND_DIR%%/utils/fixscripts/upgrade_bug_data.php
+%%BACKEND_DIR%%/utils/fixscripts/fix_image_data.php
+%%BACKEND_DIR%%/utils/fixscripts/tools_data_cleanup.php
+%%BACKEND_DIR%%/utils/fixscripts/fix_broken_uids.php
+%%BACKEND_DIR%%/utils/fixscripts/upgrade_filerelease_data.php
+%%BACKEND_DIR%%/utils/fixscripts/upgrade_forum_data.php
+%%BACKEND_DIR%%/utils/fixscripts/upgrade_task_data.php
+%%BACKEND_DIR%%/utils/ldap/ldap-check-replica
+%%BACKEND_DIR%%/utils/ldap/ldap-clean
+%%BACKEND_DIR%%/utils/ldap/ldap-del-user
+%%BACKEND_DIR%%/utils/ldap/ldap-dump
+%%BACKEND_DIR%%/utils/ldap/ldap-import
+%%BACKEND_DIR%%/utils/ldap/sql2ldif.pl
+%%BACKEND_DIR%%/utils/cvs.txt
+%%BACKEND_DIR%%/utils/new_aliases_parse.pl
+%%BACKEND_DIR%%/utils/missing_L10n.pl
+%%BACKEND_DIR%%/utils/mailing_lists_create.pl
+%%BACKEND_DIR%%/utils/sffingerd.c
+%%BACKEND_DIR%%/utils/include.pl
+%%BACKEND_DIR%%/utils/groupCreator
+%%BACKEND_DIR%%/utils/grap.c
+%%BACKEND_DIR%%/utils/sort_file.pl
+%%BACKEND_DIR%%/utils/default_page.php
+%%BACKEND_DIR%%/utils/decode_images.sh
+%%BACKEND_DIR%%/utils/ssh_create.pl
+%%BACKEND_DIR%%/utils/new_parse.pl
+%%DATADIR%%/contrib/autoconf/config.status
+%%DATADIR%%/contrib/autoconf/configure
+%%DATADIR%%/contrib/autoconf/configure.ac
+%%DATADIR%%/contrib/autoconf/local.inc
+%%DATADIR%%/contrib/autoconf/local.inc.in
+%%DATADIR%%/contrib/autoconf/sample-apache.vhost
+%%DATADIR%%/contrib/autoconf/sample-apache.vhost.in
+%%DATADIR%%/contrib/autoconf/README.configure
+%%DATADIR%%/contrib/userlist.README
+%%DATADIR%%/contrib/tracker-cc.patch
+%%DATADIR%%/contrib/tracker-cc.README
+%%DATADIR%%/contrib/gforge-3.0-php_path.patch
+%%DATADIR%%/contrib/gforge-3.0-local_config.patch
+%%DATADIR%%/contrib/userlist.patch
+%%DATADIR%%/contrib/gforge-3.0-cronjobs.patch
+%%DATADIR%%/contrib/cmd-line-prototype.tar.gz
+%%DATADIR%%/contrib/beta1_install_from_scratch_install.php
+%%DATADIR%%/contrib/beta1_install_from_scratch.txt
+%%DATADIR%%/contrib/gforge-3.0-init_sql.patch
+%%DATADIR%%/db/SQL_2.5/DefaultValues_2_5.sql
+%%DATADIR%%/db/SQL_2.5/SourceForge_2_5.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/sqlchanges20010511.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/artifact-conversion.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/artifact-convert-files.php
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/artifact-fkeys.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/artifact-man.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/sqlchanges20001209.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/sqlchanges20001214.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/sqlchanges20001220.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/sqlchanges20010109.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/sqlchanges20010112.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/sqlchanges20010126.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/sqlchanges20010206.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/sqlchanges20010301.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/sqlchanges20010304.NOTE
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/sqlchanges20010305.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/sqlchanges20010313.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/sqlchanges20010317.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/sqlchanges20010409.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/sqlchanges20010412.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/sqlchanges20010507.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/sqlchanges20010509.sql
+%%DATADIR%%/db/SQL_migrate-2.5-to-2.6/README
+%%DATADIR%%/db/SQL_2.6/user_rating.sql
+%%DATADIR%%/db/SQL_2.6/SourceForge.sql
+%%DATADIR%%/db/SQL_2.6/dbusers.sql
+%%DATADIR%%/db/SQL_2.6/languages.tab
+%%DATADIR%%/db/SQL_2.6/replicate.sh
+%%DATADIR%%/db/SQL_2.6/replication-master.sql
+%%DATADIR%%/db/SQL_2.6/replication-reset-master.sql
+%%DATADIR%%/db/SQL_2.6/replication-reset-slave.sql
+%%DATADIR%%/db/SQL_2.6/replication-slave.sql
+%%DATADIR%%/db/SQL_2.6/replication.plan
+%%DATADIR%%/db/SQL_2.6/trove_cat.tab
+%%DATADIR%%/db/SQL_2.6/DefaultValues.sql
+%%DATADIR%%/db/oci8port/pssonline/DefaultValues.sql
+%%DATADIR%%/db/oci8port/pssonline/Languages.sql
+%%DATADIR%%/db/oci8port/pssonline/SourceForge.sql
+%%DATADIR%%/db/oci8port/pssonline/database-oci8.php
+%%DATADIR%%/db/oci8port/pssonline/trove_defaults.sql
+%%DATADIR%%/db/oci8port/shaguo/SourceForge2.5_oci8.sql
+%%DATADIR%%/db/oci8port/shaguo/SourceForge2.5oci8-Trigger_auto.sql
+%%DATADIR%%/db/oci8port/shaguo/SourceForge2.5oci8-Trigger_er.sql
+%%DATADIR%%/db/oci8port/shaguo/database.php
+%%DATADIR%%/db/oci8port/shaguo/pgdb-convert.pl
+%%DATADIR%%/db/20030513.sql
+%%DATADIR%%/db/20030312.sql
+%%DATADIR%%/db/20030209.sql
+%%DATADIR%%/db/20030131.sql
+%%DATADIR%%/db/20030115.sql
+%%DATADIR%%/db/20030113.sql
+%%DATADIR%%/db/20030113-drops.sql
+%%DATADIR%%/db/20030112.sql
+%%DATADIR%%/db/20030109.sql
+%%DATADIR%%/db/20030107.sql
+%%DATADIR%%/db/20030105.sql
+%%DATADIR%%/db/20030102.sql
+%%DATADIR%%/db/20030102-drops.sql
+%%DATADIR%%/db/20021230.sql
+%%DATADIR%%/db/20021223.sql
+%%DATADIR%%/db/20021223-drops.sql
+%%DATADIR%%/db/20021216.sql
+%%DATADIR%%/db/20021215.sql
+%%DATADIR%%/db/20021214.sql
+%%DATADIR%%/db/20021213_doc_data-migrate.php
+%%DATADIR%%/db/20021213.sql
+%%DATADIR%%/db/20021212.sql
+%%DATADIR%%/db/20021125.sql
+%%DATADIR%%/db/20021124-3_gforge-debian-sf-sync.sql
+%%DATADIR%%/db/20021124-2_theming.sql
+%%DATADIR%%/db/20021124-1_drop_foundry.sql
+%%DATADIR%%/db/gforge3.sql
+%%DATADIR%%/db/gforge2.6.sql
+%%DATADIR%%/db/README
+%%WWW_ROOT%%/gforge/common/tracker/ArtifactsForUser.class
+%%WWW_ROOT%%/gforge/common/tracker/ArtifactCanned.class
+%%WWW_ROOT%%/gforge/common/tracker/ArtifactCategory.class
+%%WWW_ROOT%%/gforge/common/tracker/ArtifactFile.class
+%%WWW_ROOT%%/gforge/common/tracker/ArtifactFromID.class
+%%WWW_ROOT%%/gforge/common/tracker/ArtifactGroup.class
+%%WWW_ROOT%%/gforge/common/tracker/ArtifactResolution.class
+%%WWW_ROOT%%/gforge/common/tracker/ArtifactType.class
+%%WWW_ROOT%%/gforge/common/tracker/ArtifactTypes.class
+%%WWW_ROOT%%/gforge/common/tracker/Artifacts.class
+%%WWW_ROOT%%/gforge/common/tracker/ArtifactTypeFactory.class
+%%WWW_ROOT%%/gforge/common/tracker/ArtifactFactory.class
+%%WWW_ROOT%%/gforge/common/tracker/Artifact.class
+%%WWW_ROOT%%/gforge/common/pm/ProjectTask.class
+%%WWW_ROOT%%/gforge/common/pm/ProjectGroup.class
+%%WWW_ROOT%%/gforge/common/pm/ProjectGroupFactory.class
+%%WWW_ROOT%%/gforge/common/pm/ProjectCategory.class
+%%WWW_ROOT%%/gforge/common/pm/ProjectTaskFactory.class
+%%WWW_ROOT%%/gforge/common/pm/Validator.class
+%%WWW_ROOT%%/gforge/common/pm/ProjectTasksForUser.class
+%%WWW_ROOT%%/gforge/common/include/cvsweb/DirectoryHandler.class
+%%WWW_ROOT%%/gforge/common/include/cvsweb/ErrorHandler.class
+%%WWW_ROOT%%/gforge/common/include/cvsweb/FileHandler.class
+%%WWW_ROOT%%/gforge/common/include/cvsweb/RCSHandler.class
+%%WWW_ROOT%%/gforge/common/include/Group.class
+%%WWW_ROOT%%/gforge/common/include/Jabber.class
+%%WWW_ROOT%%/gforge/common/include/Permission.class
+%%WWW_ROOT%%/gforge/common/include/Plugin.class
+%%WWW_ROOT%%/gforge/common/include/PluginManager.class
+%%WWW_ROOT%%/gforge/common/include/User.class
+%%WWW_ROOT%%/gforge/common/include/account.php
+%%WWW_ROOT%%/gforge/common/include/database.php
+%%WWW_ROOT%%/gforge/common/include/ldap.php
+%%WWW_ROOT%%/gforge/common/include/session.php
+%%WWW_ROOT%%/gforge/common/include/timezones.php
+%%WWW_ROOT%%/gforge/common/include/utils.php
+%%WWW_ROOT%%/gforge/common/include/vars.php
+%%WWW_ROOT%%/gforge/common/include/GForge.class
+%%WWW_ROOT%%/gforge/common/include/Error.class
+%%WWW_ROOT%%/gforge/common/include/Stats.class
+%%WWW_ROOT%%/gforge/common/frs/FRSFile.class
+%%WWW_ROOT%%/gforge/common/frs/FRSPackage.class
+%%WWW_ROOT%%/gforge/common/frs/FRSRelease.class
+%%WWW_ROOT%%/gforge/common/forum/Forum.class
+%%WWW_ROOT%%/gforge/common/forum/ForumFactory.class
+%%WWW_ROOT%%/gforge/common/forum/ForumMessage.class
+%%WWW_ROOT%%/gforge/common/forum/ForumMessageFactory.class
+%%WWW_ROOT%%/gforge/common/forum/ForumsForUser.class
+%%WWW_ROOT%%/gforge/common/docman/Document.class
+%%WWW_ROOT%%/gforge/common/docman/DocumentFactory.class
+%%WWW_ROOT%%/gforge/common/docman/DocumentGroup.class
+%%WWW_ROOT%%/gforge/www/register/index.php
+%%WWW_ROOT%%/gforge/www/register/projectinfo.php
+%%WWW_ROOT%%/gforge/www/help/index.php
+%%WWW_ROOT%%/gforge/www/help/tracker.php
+%%WWW_ROOT%%/gforge/www/help/trove_cat.php
+%%WWW_ROOT%%/gforge/www/forum/admin/index.php
+%%WWW_ROOT%%/gforge/www/forum/include/ForumHTML.class
+%%WWW_ROOT%%/gforge/www/forum/index.php
+%%WWW_ROOT%%/gforge/www/forum/message.php
+%%WWW_ROOT%%/gforge/www/forum/monitor.php
+%%WWW_ROOT%%/gforge/www/forum/new.php
+%%WWW_ROOT%%/gforge/www/forum/save.php
+%%WWW_ROOT%%/gforge/www/forum/forum.php
+%%WWW_ROOT%%/gforge/www/export/patch_dump.php
+%%WWW_ROOT%%/gforge/www/export/nitf_sfforums.php
+%%WWW_ROOT%%/gforge/www/export/projhtml.php
+%%WWW_ROOT%%/gforge/www/export/projnews.php
+%%WWW_ROOT%%/gforge/www/export/rss_sfnewreleases.php
+%%WWW_ROOT%%/gforge/www/export/rss_sfnews.php
+%%WWW_ROOT%%/gforge/www/export/rss_sfprojects.php
+%%WWW_ROOT%%/gforge/www/export/rss_utils.inc
+%%WWW_ROOT%%/gforge/www/export/sf_forum_0.1.dtd
+%%WWW_ROOT%%/gforge/www/export/sf_forum_0.1.dtd.txt
+%%WWW_ROOT%%/gforge/www/export/sf_tracker_export.php
+%%WWW_ROOT%%/gforge/www/export/sf_tracker_export.xsd
+%%WWW_ROOT%%/gforge/www/export/trove_tree.php
+%%WWW_ROOT%%/gforge/www/export/trove_tree_0.1.dtd
+%%WWW_ROOT%%/gforge/www/export/index.php
+%%WWW_ROOT%%/gforge/www/top/index.php
+%%WWW_ROOT%%/gforge/www/top/mostactive.php
+%%WWW_ROOT%%/gforge/www/top/toplist.php
+%%WWW_ROOT%%/gforge/www/top/topusers.php
+%%WWW_ROOT%%/gforge/www/docman/admin/index.php
+%%WWW_ROOT%%/gforge/www/docman/include/doc_utils.php
+%%WWW_ROOT%%/gforge/www/docman/index.php
+%%WWW_ROOT%%/gforge/www/docman/new.php
+%%WWW_ROOT%%/gforge/www/docman/view.php
+%%WWW_ROOT%%/gforge/www/docman/display_doc.php
+%%WWW_ROOT%%/gforge/www/developer/diary.php
+%%WWW_ROOT%%/gforge/www/developer/index.php
+%%WWW_ROOT%%/gforge/www/developer/monitor.php
+%%WWW_ROOT%%/gforge/www/developer/rate.php
+%%WWW_ROOT%%/gforge/www/softwaremap/index.php
+%%WWW_ROOT%%/gforge/www/softwaremap/trove_list.php
+%%WWW_ROOT%%/gforge/www/snippet/submit.php
+%%WWW_ROOT%%/gforge/www/snippet/addversion.php
+%%WWW_ROOT%%/gforge/www/snippet/browse.php
+%%WWW_ROOT%%/gforge/www/snippet/delete.php
+%%WWW_ROOT%%/gforge/www/snippet/detail.php
+%%WWW_ROOT%%/gforge/www/snippet/download.php
+%%WWW_ROOT%%/gforge/www/snippet/index.php
+%%WWW_ROOT%%/gforge/www/snippet/package.php
+%%WWW_ROOT%%/gforge/www/snippet/snippet-er-diagram.sda
+%%WWW_ROOT%%/gforge/www/snippet/snippet-plan.txt
+%%WWW_ROOT%%/gforge/www/snippet/snippet_utils.php
+%%WWW_ROOT%%/gforge/www/snippet/add_snippet_to_package.php
+%%WWW_ROOT%%/gforge/www/admin/trove/trove_cat_add.php
+%%WWW_ROOT%%/gforge/www/admin/trove/trove_cat_edit.php
+%%WWW_ROOT%%/gforge/www/admin/trove/trove_cat_list.php
+%%WWW_ROOT%%/gforge/www/admin/add_language.php
+%%WWW_ROOT%%/gforge/www/admin/admin_table.php
+%%WWW_ROOT%%/gforge/www/admin/admin_utils.php
+%%WWW_ROOT%%/gforge/www/admin/admintabfiles.php
+%%WWW_ROOT%%/gforge/www/admin/approve-pending.php
+%%WWW_ROOT%%/gforge/www/admin/database.php
+%%WWW_ROOT%%/gforge/www/admin/edit_frs_filetype.php
+%%WWW_ROOT%%/gforge/www/admin/edit_frs_processor.php
+%%WWW_ROOT%%/gforge/www/admin/edit_frs_theme.php
+%%WWW_ROOT%%/gforge/www/admin/edit_supported_languages.php
+%%WWW_ROOT%%/gforge/www/admin/edittabfiles.php
+%%WWW_ROOT%%/gforge/www/admin/groupedit.php
+%%WWW_ROOT%%/gforge/www/admin/grouplist.php
+%%WWW_ROOT%%/gforge/www/admin/index.php
+%%WWW_ROOT%%/gforge/www/admin/loadtabfiles.php
+%%WWW_ROOT%%/gforge/www/admin/massmail-old.php
+%%WWW_ROOT%%/gforge/www/admin/massmail.php
+%%WWW_ROOT%%/gforge/www/admin/massmail_execute.php
+%%WWW_ROOT%%/gforge/www/admin/responses_admin.php
+%%WWW_ROOT%%/gforge/www/admin/search.php
+%%WWW_ROOT%%/gforge/www/admin/seetabfiles.php
+%%WWW_ROOT%%/gforge/www/admin/unsubscribe.php
+%%WWW_ROOT%%/gforge/www/admin/useredit.php
+%%WWW_ROOT%%/gforge/www/admin/userlist.php
+%%WWW_ROOT%%/gforge/www/admin/vhost.php
+%%WWW_ROOT%%/gforge/www/admin/editdouble.php
+%%WWW_ROOT%%/gforge/www/admin/editnotinbasetabfiles.php
+%%WWW_ROOT%%/gforge/www/admin/editnotranstabfiles.php
+%%WWW_ROOT%%/gforge/www/admin/edittranstabfiles.php
+%%WWW_ROOT%%/gforge/www/admin/gettabfiles.php
+%%WWW_ROOT%%/gforge/www/admin/seenotinbasetabfiles.php
+%%WWW_ROOT%%/gforge/www/admin/seenotranstabfiles.php
+%%WWW_ROOT%%/gforge/www/admin/seetranstabfiles.php
+%%WWW_ROOT%%/gforge/www/account/verify.php
+%%WWW_ROOT%%/gforge/www/account/change_email.php
+%%WWW_ROOT%%/gforge/www/account/change_pw.php
+%%WWW_ROOT%%/gforge/www/account/editsshkeys.php
+%%WWW_ROOT%%/gforge/www/account/first.php
+%%WWW_ROOT%%/gforge/www/account/index.php
+%%WWW_ROOT%%/gforge/www/account/login.php
+%%WWW_ROOT%%/gforge/www/account/logout.php
+%%WWW_ROOT%%/gforge/www/account/lostlogin.php
+%%WWW_ROOT%%/gforge/www/account/lostpw.php
+%%WWW_ROOT%%/gforge/www/account/pending-resend.php
+%%WWW_ROOT%%/gforge/www/account/register.php
+%%WWW_ROOT%%/gforge/www/account/setlang.php
+%%WWW_ROOT%%/gforge/www/account/unsubscribe.php
+%%WWW_ROOT%%/gforge/www/account/change_email-complete.php
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/tabs/topright.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/tabs/bottomleft.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/tabs/bottomright-inner.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/tabs/bottomright.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/tabs/topleft-dark.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/tabs/topleft-inner-dark.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/tabs/topleft-inner.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/tabs/topleft.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/tabs/topright-dark.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/tabs/topright-inner-dark.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/tabs/topright-inner.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/tabs/bottomleft-inner.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/forum20w.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/caret.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/cfolder15.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/check.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/cvs16b.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/docman16b.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/ftp16b.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/halfcheck.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/home16b.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/index.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/mail16b.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/mail16d.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/mail16w.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/manual16c.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/ofolder15.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/pencil.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/save.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/survey16b.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/trash-x.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/trash.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/write16w.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/xmail16w.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/taskman20g.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/taskman20w.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/tracker20g.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/tracker20w.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/forum20g.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/ic/msg.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/fr_login.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/fr_logout.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/fr_myaccount.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/fr_newaccount.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/login.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/logo.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/logout.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/myaccount.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/newaccount.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/t.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/t2.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/it_login.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/it_logout.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/it_myaccount.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/it_newaccount.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/images/clear.png
+%%WWW_ROOT%%/gforge/www/themes/gforge/Theme.class
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/forum20w.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/Bugs.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/Docs.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/Files.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/Forums.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/Homepage.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/Lists.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/News.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/Patches.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/Summary.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/Support.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/Surveys.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/Tasks.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/Tracker.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/caret.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/cfolder15.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/check.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/cvs16b.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/docman16b.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/ftp16b.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/halfcheck.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/home16b.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/index.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/mail16b.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/mail16d.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/manual16c.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/CVS.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/ofolder15.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/pencil.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/save.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/survey16b.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/taskman20g.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/trash-x.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/trash.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/taskman20w.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/tracker20g.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/tracker20w.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/forum20g.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/ic/Admin.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/proj/taskman16b.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/proj/docman16b.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/proj/ftp16b.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/proj/home16b.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/proj/mail16b.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/proj/mail16d.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/proj/manual16c.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/proj/notes16.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/proj/survey16b.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/proj/cvs16b.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/tabs/select.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/tabs/leftblenddeselect.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/tabs/leftblendselect.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/tabs/leftdeselect.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/tabs/leftselect.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/tabs/rightblenddeselect.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/tabs/rightblendselect.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/tabs/rightdeselect.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/tabs/rightselect.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/tabs/ruledeselect.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/tabs/ruleselect.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/tabs/deselect.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/clear.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/logo.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/logohover.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/point1.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/rateit.png
+%%WWW_ROOT%%/gforge/www/themes/osx/images/background.png
+%%WWW_ROOT%%/gforge/www/themes/osx/Theme.class
+%%WWW_ROOT%%/gforge/www/themes/osx/README
+%%WWW_ROOT%%/gforge/www/themes/index.php
+%%WWW_ROOT%%/gforge/www/search/index.php
+%%WWW_ROOT%%/gforge/www/scm/index.php
+%%WWW_ROOT%%/gforge/www/scm/controller.php
+%%WWW_ROOT%%/gforge/www/scm/controlleroo.php
+%%WWW_ROOT%%/gforge/www/scm/viewFile.php
+%%WWW_ROOT%%/gforge/www/images/ic/write16w.png
+%%WWW_ROOT%%/gforge/www/images/ic/cfolder15.png
+%%WWW_ROOT%%/gforge/www/images/ic/check.png
+%%WWW_ROOT%%/gforge/www/images/ic/cvs16b.png
+%%WWW_ROOT%%/gforge/www/images/ic/docman16b.png
+%%WWW_ROOT%%/gforge/www/images/ic/ftp16b.png
+%%WWW_ROOT%%/gforge/www/images/ic/halfcheck.png
+%%WWW_ROOT%%/gforge/www/images/ic/home16b.png
+%%WWW_ROOT%%/gforge/www/images/ic/index.png
+%%WWW_ROOT%%/gforge/www/images/ic/mail16b.png
+%%WWW_ROOT%%/gforge/www/images/ic/mail16d.png
+%%WWW_ROOT%%/gforge/www/images/ic/mail16w.png
+%%WWW_ROOT%%/gforge/www/images/ic/manual16c.png
+%%WWW_ROOT%%/gforge/www/images/ic/notes16.png
+%%WWW_ROOT%%/gforge/www/images/ic/ofolder15.png
+%%WWW_ROOT%%/gforge/www/images/ic/pencil.png
+%%WWW_ROOT%%/gforge/www/images/ic/save.png
+%%WWW_ROOT%%/gforge/www/images/ic/support16b.jpg
+%%WWW_ROOT%%/gforge/www/images/ic/survey16b.png
+%%WWW_ROOT%%/gforge/www/images/ic/taskman16b.png
+%%WWW_ROOT%%/gforge/www/images/ic/trash-x.png
+%%WWW_ROOT%%/gforge/www/images/ic/trash.png
+%%WWW_ROOT%%/gforge/www/images/ic/msg.png
+%%WWW_ROOT%%/gforge/www/images/ic/xmail16w.png
+%%WWW_ROOT%%/gforge/www/images/ic/forum20g.png
+%%WWW_ROOT%%/gforge/www/images/ic/forum20w.png
+%%WWW_ROOT%%/gforge/www/images/ic/taskman20g.png
+%%WWW_ROOT%%/gforge/www/images/ic/taskman20w.png
+%%WWW_ROOT%%/gforge/www/images/ic/tracker20g.png
+%%WWW_ROOT%%/gforge/www/images/ic/tracker20w.png
+%%WWW_ROOT%%/gforge/www/images/ic/caret.png
+%%WWW_ROOT%%/gforge/www/images/blank.png
+%%WWW_ROOT%%/gforge/www/images/clear.png
+%%WWW_ROOT%%/gforge/www/images/debian-sf-icon.png
+%%WWW_ROOT%%/gforge/www/images/favicon.ico
+%%WWW_ROOT%%/gforge/www/images/gantt.png
+%%WWW_ROOT%%/gforge/www/images/gforge.jpg
+%%WWW_ROOT%%/gforge/www/images/icon.png
+%%WWW_ROOT%%/gforge/www/images/msg.png
+%%WWW_ROOT%%/gforge/www/images/sf-for-debian.png
+%%WWW_ROOT%%/gforge/www/images/t.png
+%%WWW_ROOT%%/gforge/www/images/t2.png
+%%WWW_ROOT%%/gforge/www/tracker/include/ArtifactFileHtml.class
+%%WWW_ROOT%%/gforge/www/tracker/include/ArtifactHtml.class
+%%WWW_ROOT%%/gforge/www/tracker/include/ArtifactTypeHtml.class
+%%WWW_ROOT%%/gforge/www/tracker/reporting/index.php
+%%WWW_ROOT%%/gforge/www/tracker/admin/index.php
+%%WWW_ROOT%%/gforge/www/tracker/download.php
+%%WWW_ROOT%%/gforge/www/tracker/index.php
+%%WWW_ROOT%%/gforge/www/tracker/mod.php
+%%WWW_ROOT%%/gforge/www/tracker/browse.php
+%%WWW_ROOT%%/gforge/www/tracker/taskmgr.php
+%%WWW_ROOT%%/gforge/www/tracker/add.php
+%%WWW_ROOT%%/gforge/www/tracker/detail.php
+%%WWW_ROOT%%/gforge/www/survey/admin/survey_utils.php
+%%WWW_ROOT%%/gforge/www/survey/admin/add_survey.php
+%%WWW_ROOT%%/gforge/www/survey/admin/edit_question.php
+%%WWW_ROOT%%/gforge/www/survey/admin/edit_survey.php
+%%WWW_ROOT%%/gforge/www/survey/admin/index.php
+%%WWW_ROOT%%/gforge/www/survey/admin/show_questions.php
+%%WWW_ROOT%%/gforge/www/survey/admin/show_results.php
+%%WWW_ROOT%%/gforge/www/survey/admin/show_results_aggregate.php
+%%WWW_ROOT%%/gforge/www/survey/admin/show_results_comments.php
+%%WWW_ROOT%%/gforge/www/survey/admin/show_results_csv.php
+%%WWW_ROOT%%/gforge/www/survey/admin/show_results_individual.php
+%%WWW_ROOT%%/gforge/www/survey/admin/survey.sql
+%%WWW_ROOT%%/gforge/www/survey/admin/add_question.php
+%%WWW_ROOT%%/gforge/www/survey/index.php
+%%WWW_ROOT%%/gforge/www/survey/privacy.php
+%%WWW_ROOT%%/gforge/www/survey/rating_resp.php
+%%WWW_ROOT%%/gforge/www/survey/survey-er-diagram.sda
+%%WWW_ROOT%%/gforge/www/survey/survey.php
+%%WWW_ROOT%%/gforge/www/survey/survey_resp.php
+%%WWW_ROOT%%/gforge/www/survey/survey_utils.php
+%%WWW_ROOT%%/gforge/www/project/admin/vhost.php
+%%WWW_ROOT%%/gforge/www/project/admin/editgroupinfo.php
+%%WWW_ROOT%%/gforge/www/project/admin/editimages.php
+%%WWW_ROOT%%/gforge/www/project/admin/editpackages.php
+%%WWW_ROOT%%/gforge/www/project/admin/editrelease.php
+%%WWW_ROOT%%/gforge/www/project/admin/group_trove.php
+%%WWW_ROOT%%/gforge/www/project/admin/history.php
+%%WWW_ROOT%%/gforge/www/project/admin/index.php
+%%WWW_ROOT%%/gforge/www/project/admin/project_admin_utils.php
+%%WWW_ROOT%%/gforge/www/project/admin/qrs.php
+%%WWW_ROOT%%/gforge/www/project/admin/rmuser.php
+%%WWW_ROOT%%/gforge/www/project/admin/showreleases.php
+%%WWW_ROOT%%/gforge/www/project/admin/userpermedit.php
+%%WWW_ROOT%%/gforge/www/project/admin/userperms.php
+%%WWW_ROOT%%/gforge/www/project/admin/database.php
+%%WWW_ROOT%%/gforge/www/project/stats/index.php
+%%WWW_ROOT%%/gforge/www/project/stats/project_stats_utils.php
+%%WWW_ROOT%%/gforge/www/project/stats/stats_graph.php
+%%WWW_ROOT%%/gforge/www/project/index.php
+%%WWW_ROOT%%/gforge/www/project/showfiles.php
+%%WWW_ROOT%%/gforge/www/project/shownotes.php
+%%WWW_ROOT%%/gforge/www/project/memberlist.php
+%%WWW_ROOT%%/gforge/www/project/filemodule_monitor.php
+%%WWW_ROOT%%/gforge/www/pro/index.php
+%%WWW_ROOT%%/gforge/www/pro/reporting.jpg
+%%WWW_ROOT%%/gforge/www/pro/gforge-pro.png
+%%WWW_ROOT%%/gforge/www/pm/include/ProjectGroupHTML.class
+%%WWW_ROOT%%/gforge/www/pm/include/ProjectTaskHTML.class
+%%WWW_ROOT%%/gforge/www/pm/admin/index.php
+%%WWW_ROOT%%/gforge/www/pm/reporting/index.php
+%%WWW_ROOT%%/gforge/www/pm/add_task.php
+%%WWW_ROOT%%/gforge/www/pm/detail_task.php
+%%WWW_ROOT%%/gforge/www/pm/gantt.php
+%%WWW_ROOT%%/gforge/www/pm/ganttpage.php
+%%WWW_ROOT%%/gforge/www/pm/index.php
+%%WWW_ROOT%%/gforge/www/pm/mod_task.php
+%%WWW_ROOT%%/gforge/www/pm/task.php
+%%WWW_ROOT%%/gforge/www/pm/browse_task.php
+%%WWW_ROOT%%/gforge/www/pm/calendar.php
+%%WWW_ROOT%%/gforge/www/people/admin/index.php
+%%WWW_ROOT%%/gforge/www/people/createjob.php
+%%WWW_ROOT%%/gforge/www/people/editjob.php
+%%WWW_ROOT%%/gforge/www/people/editprofile.php
+%%WWW_ROOT%%/gforge/www/people/helpwanted-latest.php
+%%WWW_ROOT%%/gforge/www/people/index.php
+%%WWW_ROOT%%/gforge/www/people/people-er-diagram.sda
+%%WWW_ROOT%%/gforge/www/people/people_utils.php
+%%WWW_ROOT%%/gforge/www/people/skills_utils.php
+%%WWW_ROOT%%/gforge/www/people/viewjob.php
+%%WWW_ROOT%%/gforge/www/people/viewprofile.php
+%%WWW_ROOT%%/gforge/www/news/admin/index.php
+%%WWW_ROOT%%/gforge/www/news/admin/news_admin_utils.php
+%%WWW_ROOT%%/gforge/www/news/index.php
+%%WWW_ROOT%%/gforge/www/news/news_utils.php
+%%WWW_ROOT%%/gforge/www/news/submit.php
+%%WWW_ROOT%%/gforge/www/new/index.php
+%%WWW_ROOT%%/gforge/www/my/bookmark_add.php
+%%WWW_ROOT%%/gforge/www/my/bookmark_delete.php
+%%WWW_ROOT%%/gforge/www/my/bookmark_edit.php
+%%WWW_ROOT%%/gforge/www/my/diary.php
+%%WWW_ROOT%%/gforge/www/my/index.php
+%%WWW_ROOT%%/gforge/www/my/rmproject.php
+%%WWW_ROOT%%/gforge/www/mail/admin/index.php
+%%WWW_ROOT%%/gforge/www/mail/index.php
+%%WWW_ROOT%%/gforge/www/mail/mail_nav.php
+%%WWW_ROOT%%/gforge/www/mail/mail_utils.php
+%%WWW_ROOT%%/gforge/www/stats/users_graph.php
+%%WWW_ROOT%%/gforge/www/stats/i18n.php
+%%WWW_ROOT%%/gforge/www/stats/index.php
+%%WWW_ROOT%%/gforge/www/stats/lastlogins.php
+%%WWW_ROOT%%/gforge/www/stats/projects.php
+%%WWW_ROOT%%/gforge/www/stats/site_stats_utils.php
+%%WWW_ROOT%%/gforge/www/stats/views_graph.php
+%%WWW_ROOT%%/gforge/www/stats/graphs.php
+%%WWW_ROOT%%/gforge/www/squal/get_session_hash.php
+%%WWW_ROOT%%/gforge/www/include/languages/Latin.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Bulgarian.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Catalan.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Chinese.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Dutch.tab
+%%WWW_ROOT%%/gforge/www/include/languages/English.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Esperanto.tab
+%%WWW_ROOT%%/gforge/www/include/languages/French.tab
+%%WWW_ROOT%%/gforge/www/include/languages/German.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Greek.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Hebrew.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Indonesian.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Italian.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Japanese.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Korean.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Norwegian.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Polish.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Portuguese.tab
+%%WWW_ROOT%%/gforge/www/include/languages/PortugueseBrazilian.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Russian.tab
+%%WWW_ROOT%%/gforge/www/include/languages/SimplifiedChinese.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Spanish.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Swedish.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Thai.tab
+%%WWW_ROOT%%/gforge/www/include/languages/Base.tab
+%%WWW_ROOT%%/gforge/www/include/BaseLanguage.class
+%%WWW_ROOT%%/gforge/www/include/HTML_Graphs.php
+%%WWW_ROOT%%/gforge/www/include/Layout.class
+%%WWW_ROOT%%/gforge/www/include/bookmarks.php
+%%WWW_ROOT%%/gforge/www/include/browser.php
+%%WWW_ROOT%%/gforge/www/include/canned_responses.php
+%%WWW_ROOT%%/gforge/www/include/database-mysql.php
+%%WWW_ROOT%%/gforge/www/include/database-oci8.php
+%%WWW_ROOT%%/gforge/www/include/database-pgsql.php
+%%WWW_ROOT%%/gforge/www/include/exit.php
+%%WWW_ROOT%%/gforge/www/include/features_boxes.php
+%%WWW_ROOT%%/gforge/www/include/filechecks.php
+%%WWW_ROOT%%/gforge/www/include/graph_lib.php
+%%WWW_ROOT%%/gforge/www/include/help.php
+%%WWW_ROOT%%/gforge/www/include/html.php
+%%WWW_ROOT%%/gforge/www/include/logger.php
+%%WWW_ROOT%%/gforge/www/include/pre.php
+%%WWW_ROOT%%/gforge/www/include/proj_email.php
+%%WWW_ROOT%%/gforge/www/include/project_home.php
+%%WWW_ROOT%%/gforge/www/include/project_summary.php
+%%WWW_ROOT%%/gforge/www/include/snippet_caching.php
+%%WWW_ROOT%%/gforge/www/include/squal_exit.php
+%%WWW_ROOT%%/gforge/www/include/squal_pre.php
+%%WWW_ROOT%%/gforge/www/include/stats_function.php
+%%WWW_ROOT%%/gforge/www/include/tool_reports.php
+%%WWW_ROOT%%/gforge/www/include/trove.php
+%%WWW_ROOT%%/gforge/www/include/user_home.php
+%%WWW_ROOT%%/gforge/www/include/vote_function.php
+%%WWW_ROOT%%/gforge/www/include/LayoutSF.class
+%%WWW_ROOT%%/gforge/www/include/menuSF.php
+%%WWW_ROOT%%/gforge/www/404.php
+%%WWW_ROOT%%/gforge/www/tarballs.php
+%%WWW_ROOT%%/gforge/www/source.php
+%%WWW_ROOT%%/gforge/www/sendmessage.php
+%%WWW_ROOT%%/gforge/www/redir_ad.php
+%%WWW_ROOT%%/gforge/www/projects
+%%WWW_ROOT%%/gforge/www/index_std.php
+%%WWW_ROOT%%/gforge/www/index.php
+%%WWW_ROOT%%/gforge/www/download.php
+%%WWW_ROOT%%/gforge/www/dbimage.php
+%%WWW_ROOT%%/gforge/www/bugopolis.gif
+%%WWW_ROOT%%/gforge/www/users
+%%PORTDOCS%%%%DOCSDIR%%/architecture/stats/stats-process.sda
+%%PORTDOCS%%%%DOCSDIR%%/debian-guide.html
+%%PORTDOCS%%%%DOCSDIR%%/debian-installguidefornewbies.html
+%%PORTDOCS%%%%DOCSDIR%%/doc_utils.php
+%%PORTDOCS%%%%DOCSDIR%%/index.php
+%%PORTDOCS%%%%DOCSDIR%%/images/sflogo2-105a.png
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/Soap.README
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/side_wide/index.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/side_wide/project_help.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/side_wide/search.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/side_wide/snippet.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/side_wide/trove.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/getting_started.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/intro.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/project_functions/docman.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/project_functions/cvs.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/project_functions/file_releases.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/project_functions/forum.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/project_functions/index.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/project_functions/mailing_lists.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/project_functions/navigation.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/project_functions/news.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/project_functions/pm.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/project_functions/project_admin.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/project_functions/project_summary.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/project_functions/survey.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/project_functions/tracker.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/user_guide/user_functions/index.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/installation.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/introduction.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/navigation.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/contributions/coding_standards.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/contributions/howto_contribute.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/contributions/howto_documentation.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/contributions/howto_localization.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/contributions/howto_xhtml.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/contributions/templating.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/admin_guide/index.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/xdocs/admin_guide/navigation.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/maven.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/project.properties
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/project.xml
+%%PORTDOCS%%%%DOCSDIR%%/xdocs/generate_docs.sh
+%%PORTDOCS%%%%DOCSDIR%%/gforge-themes-HOWTO.html
+%%PORTDOCS%%%%DOCSDIR%%/migrating-to-gforge-HOWTO.html
+%%PORTDOCS%%%%DOCSDIR%%/webalizer-HOWTO.html
+@unexec rmdir %D/%%ETC_DIR%% 2>/dev/null || true
+@unexec rmdir %D/%%BACKEND_DIR%%/backend/zones 2>/dev/null || true
+@unexec rmdir %D/%%BACKEND_DIR%%/backend/shell 2>/dev/null || true
+@unexec rmdir %D/%%BACKEND_DIR%%/backend 2>/dev/null || true
+@unexec rmdir %D/%%BACKEND_DIR%%/cronjobs/mail 2>/dev/null || true
+@unexec rmdir %D/%%BACKEND_DIR%%/cronjobs/cvs-cron 2>/dev/null || true
+@unexec rmdir %D/%%BACKEND_DIR%%/cronjobs 2>/dev/null || true
+@dirrm %%BACKEND_DIR%%/monitor
+@dirrm %%BACKEND_DIR%%/utils/underworld-dummy
+@dirrm %%BACKEND_DIR%%/utils/cvs1
+@dirrm %%BACKEND_DIR%%/utils/fixscripts
+@dirrm %%BACKEND_DIR%%/utils/ldap
+@dirrm %%BACKEND_DIR%%/utils
+@unexec rmdir %D/%%BACKEND_DIR%% 2>/dev/null || true
+@dirrm %%DATADIR%%/contrib/autoconf
+@dirrm %%DATADIR%%/contrib
+@dirrm %%DATADIR%%/db/SQL_2.5
+@dirrm %%DATADIR%%/db/SQL_migrate-2.5-to-2.6
+@dirrm %%DATADIR%%/db/SQL_2.6
+@dirrm %%DATADIR%%/db/oci8port/pssonline
+@dirrm %%DATADIR%%/db/oci8port/shaguo
+@dirrm %%DATADIR%%/db/oci8port
+@dirrm %%DATADIR%%/db
+@dirrm %%DATADIR%%
+@dirrm %%WWW_ROOT%%/gforge/common/tracker
+@dirrm %%WWW_ROOT%%/gforge/common/pm
+@dirrm %%WWW_ROOT%%/gforge/common/include/cvsweb
+@dirrm %%WWW_ROOT%%/gforge/common/include
+@dirrm %%WWW_ROOT%%/gforge/common/frs
+@dirrm %%WWW_ROOT%%/gforge/common/forum
+@dirrm %%WWW_ROOT%%/gforge/common/docman
+@dirrm %%WWW_ROOT%%/gforge/common
+@dirrm %%WWW_ROOT%%/gforge/www/register
+@dirrm %%WWW_ROOT%%/gforge/www/help
+@dirrm %%WWW_ROOT%%/gforge/www/forum/admin
+@dirrm %%WWW_ROOT%%/gforge/www/forum/include
+@dirrm %%WWW_ROOT%%/gforge/www/forum
+@dirrm %%WWW_ROOT%%/gforge/www/export
+@dirrm %%WWW_ROOT%%/gforge/www/top
+@dirrm %%WWW_ROOT%%/gforge/www/docman/admin
+@dirrm %%WWW_ROOT%%/gforge/www/docman/include
+@dirrm %%WWW_ROOT%%/gforge/www/docman
+@dirrm %%WWW_ROOT%%/gforge/www/developer
+@dirrm %%WWW_ROOT%%/gforge/www/softwaremap
+@dirrm %%WWW_ROOT%%/gforge/www/snippet
+@dirrm %%WWW_ROOT%%/gforge/www/admin/trove
+@dirrm %%WWW_ROOT%%/gforge/www/admin
+@dirrm %%WWW_ROOT%%/gforge/www/account
+@dirrm %%WWW_ROOT%%/gforge/www/themes/gforge/images/tabs
+@dirrm %%WWW_ROOT%%/gforge/www/themes/gforge/images/ic
+@dirrm %%WWW_ROOT%%/gforge/www/themes/gforge/images
+@dirrm %%WWW_ROOT%%/gforge/www/themes/gforge
+@dirrm %%WWW_ROOT%%/gforge/www/themes/osx/images/ic
+@dirrm %%WWW_ROOT%%/gforge/www/themes/osx/images/proj
+@dirrm %%WWW_ROOT%%/gforge/www/themes/osx/images/tabs
+@dirrm %%WWW_ROOT%%/gforge/www/themes/osx/images
+@dirrm %%WWW_ROOT%%/gforge/www/themes/osx
+@dirrm %%WWW_ROOT%%/gforge/www/themes
+@unexec rmdir %D/%%WWW_ROOT%%/gforge/www/themes 2>/dev/null || true
+@dirrm %%WWW_ROOT%%/gforge/www/search
+@dirrm %%WWW_ROOT%%/gforge/www/scm
+@dirrm %%WWW_ROOT%%/gforge/www/images/ic
+@dirrm %%WWW_ROOT%%/gforge/www/images
+@dirrm %%WWW_ROOT%%/gforge/www/tracker/include
+@dirrm %%WWW_ROOT%%/gforge/www/tracker/reporting
+@dirrm %%WWW_ROOT%%/gforge/www/tracker/admin
+@dirrm %%WWW_ROOT%%/gforge/www/tracker
+@dirrm %%WWW_ROOT%%/gforge/www/survey/admin
+@dirrm %%WWW_ROOT%%/gforge/www/survey
+@dirrm %%WWW_ROOT%%/gforge/www/project/admin
+@dirrm %%WWW_ROOT%%/gforge/www/project/stats
+@dirrm %%WWW_ROOT%%/gforge/www/project
+@dirrm %%WWW_ROOT%%/gforge/www/pro
+@dirrm %%WWW_ROOT%%/gforge/www/pm/include
+@dirrm %%WWW_ROOT%%/gforge/www/pm/admin
+@dirrm %%WWW_ROOT%%/gforge/www/pm/reporting
+@dirrm %%WWW_ROOT%%/gforge/www/pm
+@dirrm %%WWW_ROOT%%/gforge/www/people/admin
+@dirrm %%WWW_ROOT%%/gforge/www/people
+@dirrm %%WWW_ROOT%%/gforge/www/news/admin
+@dirrm %%WWW_ROOT%%/gforge/www/news
+@dirrm %%WWW_ROOT%%/gforge/www/new
+@dirrm %%WWW_ROOT%%/gforge/www/my
+@dirrm %%WWW_ROOT%%/gforge/www/mail/admin
+@dirrm %%WWW_ROOT%%/gforge/www/mail
+@dirrm %%WWW_ROOT%%/gforge/www/stats
+@dirrm %%WWW_ROOT%%/gforge/www/squal
+@dirrm %%WWW_ROOT%%/gforge/www/include/languages
+@dirrm %%WWW_ROOT%%/gforge/www/include
+@dirrm %%WWW_ROOT%%/gforge/www
+@unexec rmdir %D/%%WWW_ROOT%%/gforge || true
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/architecture/stats
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/architecture
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xdocs/xdocs/admin_guide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xdocs/xdocs/contributions
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xdocs/xdocs/user_guide/project_functions
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xdocs/xdocs/user_guide/side_wide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xdocs/xdocs/user_guide/user_functions
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xdocs/xdocs/user_guide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xdocs/xdocs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xdocs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
