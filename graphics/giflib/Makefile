@@ -3,12 +3,12 @@
 # Date created:		03 May 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/09/19 01:22:38 steve Exp $
+# $Id: Makefile,v 1.4 1998/11/11 05:37:18 asami Exp $
 #
 
 DISTNAME=	giflib-3.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.ccil.org/~esr/giflib/
+MASTER_SITES=	http://earthspace.net/~esr/giflib/
 
 MAINTAINER=	tg@FreeBSD.ORG
 
