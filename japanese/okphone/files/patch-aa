@@ -95,3 +95,14 @@
 +	for i in ${DIRS} ; do \
 +		cd $$i ; make MFLAGS="${MFLAGS}" $@ ; cd .. ; \
 +	done
+--- ./client/sw/Makefile.org	Fri Dec 15 01:30:11 1989
++++ ./client/sw/Makefile	Wed Feb  7 20:57:50 1996
+@@ -1,7 +1,7 @@
+ # $Header: Makefile,v 1.2 87/10/18 19:18:02 tachi Exp $
+ 
+ #CFLAGS= -g -pg
+-CFLAGS= -O
++CFLAGS+=
+ objs= winit.o wcreate.o woutput.o wredraw.o wput.o wclear.o wbox.o wbell.o\
+ 	tosjis.o
+ srcs= winit.c wcreate.c woutput.c wredraw.c wput.c wclear.c wbox.c wbell.c\
