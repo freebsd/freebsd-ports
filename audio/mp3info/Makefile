@@ -12,7 +12,7 @@ MASTER_SITES=		ftp://bimbo.hive.no/pub/mp3info/ \
 			${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/editors
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CPPFLAGS="${CFLAGS}"

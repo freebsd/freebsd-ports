@@ -11,7 +11,7 @@ CATEGORIES=		converters
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/c++
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 MAKEFILE=		makefile.unx
 ALL_TARGET=		lib

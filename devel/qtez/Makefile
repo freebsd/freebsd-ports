@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://qtez.zax.net/qtez-extras/
 #EXTRACT_SUFX=	tar.gz
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 USE_QT=		yes
 USE_GMAKE=	yes

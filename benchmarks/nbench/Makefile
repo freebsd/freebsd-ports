@@ -13,7 +13,7 @@ MASTER_SITES=		ftp://ftp.tux.org/pub/tux/mayer/ \
 			${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/benchmark
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 ALL_TARGET=
 

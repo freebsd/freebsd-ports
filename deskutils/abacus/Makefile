@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 PATCH_SITES=	http://people.FreeBSD.org/~steve/distfiles/
 PATCHFILES=	${PKGNAME}.patch.gz
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
 		tk82.1:${PORTSDIR}/x11-toolkits/tk82

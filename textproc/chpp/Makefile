@@ -10,7 +10,7 @@ DISTNAME=	chpp-0.3.5
 CATEGORIES=	textproc
 MASTER_SITES=	http://people.FreeBSD.org/~andy/distfiles/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share

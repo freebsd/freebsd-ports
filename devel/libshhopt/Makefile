@@ -11,7 +11,7 @@ PKGNAME=		libshhopt-1.1.6
 CATEGORIES=		devel
 MASTER_SITES=		http://home.sol.no/~sverrehu/pub-unix/files/
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 USE_GMAKE=		yes
 

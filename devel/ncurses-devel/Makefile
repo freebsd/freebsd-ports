@@ -13,7 +13,7 @@ MASTER_SITES=		${MASTER_SITE_GNU} \
 MASTER_SITE_SUBDIR=	ncurses
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} terminfo.src.gz
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 

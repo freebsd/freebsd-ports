@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	ftp://cantor.informatik.rwth-aachen.de/pub/unix/ \
 		http://www.moria.de/~michael/teapot/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=
 MAN1=		teapot.1
