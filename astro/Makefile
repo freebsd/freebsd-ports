@@ -6,6 +6,7 @@
     SUBDIR += glunarclock
     SUBDIR += luna
     SUBDIR += openuniverse
+    SUBDIR += p5-Astro-MoonPhase
     SUBDIR += p5-GPS
     SUBDIR += p5-Geo-METAR
     SUBDIR += pyweather
