@@ -1,0 +1,7 @@
+        cn2jp -- library for code translation between Chinese and Japanese
+        including Chinese {GB,Big5,HZ} and Japanese (EUC-Jis/Shift-Jis/Jis)
+
+                                Version 1.4, Aug 1, 1996
+
+                                Seke Wei
+                                (seke@sys.es.osaka-u.ac.jp)

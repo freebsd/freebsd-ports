@@ -1,0 +1,9 @@
+bin/b2g
+bin/b2j
+bin/g2b
+bin/g2j
+bin/j2b
+bin/j2g
+lib/libcn2jp.a
+share/cn2jp/README
+@dirrm share/cn2jp
