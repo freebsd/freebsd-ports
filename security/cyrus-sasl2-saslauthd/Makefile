@@ -7,7 +7,7 @@
 
 PORTNAME=	saslauthd
 PORTVERSION=	2.1.15
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -116,6 +116,7 @@ PLIST_SUB=	PREFIX=${PREFIX} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///}
 
 do-build:
+	@${RM} -f ${WRKSRC}/saslauthd/saslauthd.8
 	cd ${WRKSRC}/sasldb && ${MAKE}
 	cd ${WRKSRC}/saslauthd && ${MAKE}
 
