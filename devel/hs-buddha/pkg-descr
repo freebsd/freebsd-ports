@@ -1,0 +1,9 @@
+Buddha is a debugger for Haskell 98 programs. To be more precise, it is a
+declarative debugger. It presents the evaluation of a Haskell program as a
+series of function applications, rather than the more traditional stepwise
+presentation of debuggers for imperative languages.
+
+WWW: http://www.cs.mu.oz.au/~bjpop/buddha/
+
+-- Oliver Braun
+obraun@FreeBSD.org
