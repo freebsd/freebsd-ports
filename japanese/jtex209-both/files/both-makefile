@@ -1,0 +1,47 @@
+# Makefile for compilation of both NTT jTeX-1.52 and ascii jTeX1.7-p1.0.9F.
+
+all:
+	@(cd jtex-1.52; make all)
+	@(cd jtex1.7/ptex/ptex ; make )
+	@(cd jtex1.7/jtex/BibTeX ; make all)
+
+install:
+	@(cd jtex-1.52; make install)
+	@(cd jtex1.7/jtex/BibTeX ; make install)
+	@cp jtex1.7/ptex/ptex/ctex/initex /usr/local/bin/iniatex
+	@cp jtex1.7/ptex/ptex/ctex/ptex.pool /usr/local/share/tex/apool
+	@cp jtex1.7/ptex/ptex/ctex/virtex /usr/local/bin/viratex
+	@install -c -m 644 jtex1.7/macros/* /usr/local/share/tex/inputs
+	@install -c -m 644 jtex1.7/jmacros/* /usr/local/share/tex/ainputs
+	@install -c -m 644 jtex1.7/tfm/* /usr/local/share/tex/fonts
+	@install -c -m 644 jtex1.7/jfms/* /usr/local/share/tex/jfonts/jfms
+	@(cd jtex1.7/ptex/ptex/ctex ; make jplain.fmt jlplain.fmt)
+	@install -c -m 644 jtex1.7/ptex/ptex/ctex/jplain.fmt /usr/local/share/tex/aformats/ajtex.fmt
+	@install -c -m 644 jtex1.7/ptex/ptex/ctex/jlplain.fmt /usr/local/share/tex/aformats/ajlatex.fmt
+	@rm -f /usr/local/bin/ajtex /usr/local/bin/ajlatex
+	@ln /usr/local/bin/viratex /usr/local/bin/ajtex
+	@ln /usr/local/bin/viratex /usr/local/bin/ajlatex
+	@cd .. ;
+	@cp -p ./linkselect.sh /usr/local/share/tex/
+	@touch /usr/local/share/tex/BOTH
+
+reinstall:
+	@( \
+	cd jtex-1.52 ;\
+	cp JTeXfonts/dnpfonts/mincho/tfm/* /usr/local/share/tex/jfonts/mincho/ ;\
+	cp JTeXfonts/dnpfonts/gothic/tfm/* /usr/local/share/tex/jfonts/gothic/ ;\
+	cp JLaTeX/sty/* /usr/local/share/tex/ninputs/ \
+	)
+	@cp jtex1.7/macros/* /usr/local/share/tex/inputs	
+	@( \
+	  cd /usr/local/share/tex/  ; \
+	  tar xzf ${DISTDIR}/tfm-files.tar.Z ; \
+	  mv tfm-files/min*  jfonts/jfms/; \
+	  mv tfm-files/nmin*  jfonts/jfms/; \
+	  mv tfm-files/goth*  jfonts/jfms/; \
+	  mv tfm-files/ngoth*  jfonts/jfms/; \
+	  mv tfm-files/* fonts/ ; \
+	  rmdir tfm-files ; \
+	  cd fonts ; \
+	  tar xzf  ${FILESDIR}/tfm-add.tar.gz ; \
+	)

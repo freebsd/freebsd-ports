@@ -1,0 +1,33 @@
+*** jtex1.7/jtex/BibTeX/bst/generate.sh.orig	Thu Jun  6 21:29:34 1996
+--- jtex1.7/jtex/BibTeX/bst/generate.sh	Thu Jun  6 21:29:53 1996
+***************
+*** 1,14 ****
+  #!/bin/sh
+  #	use cpp
+! /lib/cpp -P -DJPLAIN jbtxbst.doc|sed -e '/^%/d' -e '/^$/d' >jplain.bst
+! /lib/cpp -P -DJALPHA jbtxbst.doc|sed -e '/^%/d' -e '/^$/d' >jalpha.bst
+! /lib/cpp -P -DJUNSRT jbtxbst.doc|sed -e '/^%/d' -e '/^$/d' >junsrt.bst
+! /lib/cpp -P -DJABBRV jbtxbst.doc|sed -e '/^%/d' -e '/^$/d' >jabbrv.bst
+! /lib/cpp -P -DJIPSJ  jbtxbst.doc|sed -e '/^%/d' -e '/^$/d' >jipsj.bst
+! /lib/cpp -P -DTIPSJ  jbtxbst.doc|sed -e '/^%/d' -e '/^$/d' >tipsj.bst
+! /lib/cpp -P -DTIEICE jbtxbst.doc|sed -e '/^%/d' -e '/^$/d' >tieice.bst
+! /lib/cpp -P -DJNAME  jbtxbst.doc|sed -e '/^%/d' -e '/^$/d' >jname.bst
+! /lib/cpp -P -DJORSJ  jbtxbst.doc|sed -e '/^%/d' -e '/^$/d' >jorsj.bst
+  #	use gawk 
+  #gawk -f cpp.awk JPLAIN >jplain.bst
+  #gawk -f cpp.awk JALPHA >jalpha.bst
+--- 1,14 ----
+  #!/bin/sh
+  #	use cpp
+! /usr/bin/cpp -P -DJPLAIN jbtxbst.doc|sed -e '/^%/d' -e '/^$/d' >jplain.bst
+! /usr/bin/cpp -P -DJALPHA jbtxbst.doc|sed -e '/^%/d' -e '/^$/d' >jalpha.bst
+! /usr/bin/cpp -P -DJUNSRT jbtxbst.doc|sed -e '/^%/d' -e '/^$/d' >junsrt.bst
+! /usr/bin/cpp -P -DJABBRV jbtxbst.doc|sed -e '/^%/d' -e '/^$/d' >jabbrv.bst
+! /usr/bin/cpp -P -DJIPSJ  jbtxbst.doc|sed -e '/^%/d' -e '/^$/d' >jipsj.bst
+! /usr/bin/cpp -P -DTIPSJ  jbtxbst.doc|sed -e '/^%/d' -e '/^$/d' >tipsj.bst
+! /usr/bin/cpp -P -DTIEICE jbtxbst.doc|sed -e '/^%/d' -e '/^$/d' >tieice.bst
+! /usr/bin/cpp -P -DJNAME  jbtxbst.doc|sed -e '/^%/d' -e '/^$/d' >jname.bst
+! /usr/bin/cpp -P -DJORSJ  jbtxbst.doc|sed -e '/^%/d' -e '/^$/d' >jorsj.bst
+  #	use gawk 
+  #gawk -f cpp.awk JPLAIN >jplain.bst
+  #gawk -f cpp.awk JALPHA >jalpha.bst

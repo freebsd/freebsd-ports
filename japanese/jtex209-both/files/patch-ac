@@ -1,0 +1,52 @@
+*** jtex-1.52/jtex/Makefile.orig	Sat Jun  1 12:20:40 1996
+--- jtex-1.52/jtex/Makefile	Sat Jun  1 12:22:54 1996
+***************
+*** 142,152 ****
+  inrstex.fmt: 
+  	./initex inrstex \\dump
+  
+! jlatex.fmt: ${JTEXINPUTS}/jtexbase.tex
+  	TEXINPUTS="${JTEXINPUTS}:${LATEXINPUTS}:${TEXINPUTS}" TEXPOOL="." \
+  	./inijtex jlplain \\dump
+! 	mv jlplain.fmt jlatex.fmt
+! 	mv jlplain.log jlatex.log
+  
+  picplus.fmt: tex.fmt
+  	./initex \&./tex picplus \\dump
+--- 142,152 ----
+  inrstex.fmt: 
+  	./initex inrstex \\dump
+  
+! njlatex.fmt: ${JTEXINPUTS}/jtexbase.tex
+  	TEXINPUTS="${JTEXINPUTS}:${LATEXINPUTS}:${TEXINPUTS}" TEXPOOL="." \
+  	./inijtex jlplain \\dump
+! 	mv jlplain.fmt njlatex.fmt
+! 	mv jlplain.log njlatex.log
+  
+  picplus.fmt: tex.fmt
+  	./initex \&./tex picplus \\dump
+***************
+*** 158,168 ****
+  	mv jsplain.fmt jslitex.fmt
+  	mv jsplain.log jslitex.log
+  
+! jtex.fmt: ${JTEXINPUTS}/jtexbase.tex
+  	TEXINPUTS="${JTEXINPUTS}:${TEXINPUTS}" TEXPOOL="." \
+  	./inijtex jplain \\dump
+! 	mv jplain.fmt jtex.fmt
+! 	mv jplain.log jtex.log
+  
+  # Texinfo changes the escape character from `\' to `@'.
+  texinfo.fmt: tex.fmt
+--- 158,168 ----
+  	mv jsplain.fmt jslitex.fmt
+  	mv jsplain.log jslitex.log
+  
+! njtex.fmt: ${JTEXINPUTS}/jtexbase.tex
+  	TEXINPUTS="${JTEXINPUTS}:${TEXINPUTS}" TEXPOOL="." \
+  	./inijtex jplain \\dump
+! 	mv jplain.fmt njtex.fmt
+! 	mv jplain.log njtex.log
+  
+  # Texinfo changes the escape character from `\' to `@'.
+  texinfo.fmt: tex.fmt
