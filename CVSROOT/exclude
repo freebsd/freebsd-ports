@@ -57,6 +57,3 @@
 
 # Dictionaries should have no extra noise in them
 ^src/share/dict/*
-
-# Temporary while OpenSSL cleanup happens
-^src/crypto/openssl/
