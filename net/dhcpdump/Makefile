@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=      dhcpdump
-PORTVERSION=   1.2
-CATEGORIES=    net
-MASTER_SITES=  http://www.mavetju.org/download/
+PORTNAME=	dhcpdump
+PORTVERSION=	1.3
+CATEGORIES=	net
+MASTER_SITES=	http://www.mavetju.org/download/
 
-MAINTAINER=    edwin@mavetju.org
+MAINTAINER=	edwin@mavetju.org
 
 MAN1=		dhcpdump.1
 
