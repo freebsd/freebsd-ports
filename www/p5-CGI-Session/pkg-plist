@@ -41,5 +41,5 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/Session/.packlist
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/CGI 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/Session
-@unexec %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/mach/auto/CGI 2>/dev/null || true
