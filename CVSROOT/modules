@@ -1010,6 +1010,7 @@ cvslines	ports/devel/cvslines
 cvsmail		ports/mail/cvsmail
 cvsmapfs	ports/devel/cvsmapfs
 cvspadm		ports/devel/cvspadm
+cvsplot		ports/devel/cvsplot
 cvsps		ports/devel/cvsps
 cvsstat		ports/devel/cvsstat
 cvsup		ports/net/cvsup
