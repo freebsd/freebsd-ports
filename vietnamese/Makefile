@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += vnxfonts
     SUBDIR += vntex
 
     SUBDIR += libviet
