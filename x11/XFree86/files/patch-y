@@ -1,0 +1,18 @@
+--- lib/font/Type1/spaces.c.orig	Tue Apr  2 03:37:02 2002
++++ lib/font/Type1/spaces.c	Tue Apr  2 03:57:38 2002
+@@ -38,6 +38,7 @@
+ :h3.Include Files
+ */
+ /* $XFree86: xc/lib/font/Type1/spaces.c,v 3.0.6.2 1998/10/04 15:22:56 hohndel Exp $ */
++#include "X11/Xos.h"
+ #include "objects.h"
+ #include "spaces.h"
+ #include "paths.h"
+@@ -45,7 +46,6 @@
+ #include "fonts.h"
+ #include "arith.h"
+ #include "trig.h"
+-#include "X11/Xos.h"
+ 
+ static void FindFfcn();
+ static void FindIfcn();

@@ -1,0 +1,16 @@
+--- programs/Xserver/include/misc.h.orig	Tue Apr  2 04:43:50 2002
++++ programs/Xserver/include/misc.h	Tue Apr  2 04:44:43 2002
+@@ -158,11 +158,11 @@
+ 
+ #define min(a, b) (((a) < (b)) ? (a) : (b))
+ #define max(a, b) (((a) > (b)) ? (a) : (b))
+-#if !defined(AMOEBA) && !defined(__EMX__)
++#if !defined(AMOEBA) && !defined(__EMX__) && !defined(__FreeBSD__)
+ #ifndef abs
+ #define abs(a) ((a) > 0 ? (a) : -(a))
+ #endif
+-#else /* AMOEBA || __EMX__ */
++#else /* AMOEBA || __EMX__ || __FreeBSD__ */
+ /* abs() is a function, not a macro; include the file declaring
+  * it in case we haven't done that yet.
+  */  
