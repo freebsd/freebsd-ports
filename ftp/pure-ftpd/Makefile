@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pureftpd
@@ -88,8 +87,8 @@ pre-fetch:
 	@${ECHO} "WITH_MYSQL=1          - Support for users in MySQL databases;"
 	@${ECHO} "WITH_LANG=lang        - enable compilation of language \
 		support, lang is one of"
-	@${ECHO} "  english, german, romanian, french, polish, spanish, dutch,"
-	@${ECHO} "  italian, brazilian-portuguese, danish, slovak or korean."
+	@${ECHO} "  english, german, romanian, french, french-funny, polish, spanish,"
+	@${ECHO} "  dutch, italian, brazilian-portuguese, danish, slovak or korean."
 	@${ECHO}
 
 post-install:
