@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Mar  7 00:44:28 2002
-+++ Makefile	Thu Mar  7 00:52:39 2002
+--- Makefile.orig	Mon Oct 21 17:31:33 2002
++++ Makefile	Mon Oct 21 17:37:34 2002
 @@ -1,20 +1,20 @@
 -GTK_INCLUDE = `gtk-config --cflags`
 -GTK_LIB = `gtk-config --libs`
@@ -13,12 +13,12 @@
  
  
 -FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE)
-+CFLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE)
++CFLAGS+= -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE)
  LIBS = $(GTK_LIB) $(IMLIB_LIB)
  LFLAGS = -shared
  
 -CC = gcc $(CFLAGS) $(FLAGS)
-+CC ?= gcc $(CFLAGS) $(FLAGS)
++CC ?= gcc $(CFLAGS)
  
  OBJS = gkrellshoot.o
  
@@ -28,7 +28,7 @@
  
  clean:
  	rm -f *.o core *.so* *.bak *~
-@@ -22,21 +22,9 @@
+@@ -22,17 +22,7 @@
  gkrellshoot.o: gkrellshoot.c
  
  install:
@@ -39,17 +39,23 @@
 -	elif [ -d /usr/local/lib/gkrellm/plugins/ ] ; then \
 -		install -c -s -m 644 gkrellshoot.so /usr/local/lib/gkrellm/plugins/ ; \
 -	elif [ -d /usr/lib/gkrellm/plugins/ ] ; then \
--		install -c -s -m 644 gkrellshoot.so /usr/lib/gkrellm/plugins/ ; \
+-        	install -c -s -m 644 gkrellshoot.so /usr/lib/gkrellm/plugins/ ; \
 -	else \
 -		install -D -c -s -m 644 gkrellshoot.so /usr/lib/gkrellm/plugins/gkrellshoot.so ; \
 -	fi
 +	install -c -s gkrellshoot.so ${PREFIX}/libexec/gkrellm/plugins
+ userinstall:
+ 	if [ -d $(HOME)/.gkrellm/plugins/ ] ; then \
+ 		install -C -s -m 644 gkrellshoot.so $(HOME)/.gkrellm/plugins/ ; \
+@@ -41,9 +31,6 @@
+ 	fi
  
  uninstall:
 -	rm -f /usr/lib/gkrellm/plugins/gkrellshoot.so
 -	rm -f /usr/share/gkrellm/plugins/gkrellshoot.so
 -	rm -f /usr/local/lib/gkrellm/plugins/gkrellshoot.so
 -	rm -f /usr/lib/gkrellm/plugins/gkrellshoot.so
+-	rm -f $(HOME)/.gkrellm/plugins/gkrellshoot.so
 +	rm -f $(PLUGIN_DIR)/gkrellshoot.so
  
-+all:	gkrellshoot.so
++all:   gkrellshoot.so
