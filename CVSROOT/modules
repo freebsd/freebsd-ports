@@ -5264,6 +5264,7 @@ prc-tools-gcc	ports/palm/prc-tools-gcc
 prcs		ports/devel/prcs
 prefix		src/usr.sbin/prefix
 premail		ports/mail/premail
+preview-latex	ports/print/preview-latex
 primes		src/games/primes
 printenv	src/usr.bin/printenv
 printf		src/usr.bin/printf
