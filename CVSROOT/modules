@@ -8637,6 +8637,7 @@ pt-webalizer-pt_BR	ports/portuguese/webalizer-pt_BR
 pt-webalizer-pt_PT	ports/portuguese/webalizer-pt_PT
 pth		ports/devel/pth
 ptkei		ports/games/ptkei
+ptlink-ircd	ports/irc/ptlink-ircd
 ptoc		ports/lang/ptoc
 ptypes		ports/devel/ptypes
 publib		ports/devel/publib
