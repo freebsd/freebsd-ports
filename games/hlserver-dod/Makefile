@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	dod
-PORTVERSION=	2.1
-MASTER_SITES=	http://www.redphive.org/files/ \
-		ftp://ftp.dod-europe.com/dod/dod/2.1/linux/ \
-		ftp://ftp.dodfrance.com/dod/dod/2.1/linux/ \
-		ftp://209.239.96.42/ \
-		ftp://gamefiles.blueyonder.co.uk/blueyondergames/halflife/modifications/dayofdefeat/patches/linux/
+PORTVERSION=	3.0
+MASTER_SITES=	http://mirror.redphive.org/ \
+		ftp://files.recongamer.com/games/action/half-life/mods/dayofdefeat/ \
+		ftp://213.186.36.148/ \
+		ftp://ftp.skynet.be/games/dod/ \
+		ftp://ftp.dod-europe.com/dod/dod/${PORTVERSION}/linux/ \
+		ftp://ftp.euroserv.com/pub/halflife/ \
+		ftp://ftp.dodfrance.com/dod/dod/${PORTVERSION}/linux/ \
+		ftp://213.187.219.201/dod/linux/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}_full
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
