@@ -22,6 +22,7 @@ etc/rc.d/snort.sh
 %%PORTDOCS%%%%DOCSDIR%%/README.UNSOCK
 %%PORTDOCS%%%%DOCSDIR%%/README.WIN32
 %%PORTDOCS%%%%DOCSDIR%%/README.alert_order
+%%PORTDOCS%%%%DOCSDIR%%/README.asn1
 %%PORTDOCS%%%%DOCSDIR%%/README.csv
 %%PORTDOCS%%%%DOCSDIR%%/README.database
 %%PORTDOCS%%%%DOCSDIR%%/README.event_queue
@@ -54,7 +55,9 @@ etc/rc.d/snort.sh
 %%DATADIR%%/icmp.rules
 %%DATADIR%%/imap.rules
 %%DATADIR%%/info.rules
-%%DATADIR%%/local.rules
+@unexec if [ -f %B/local.rules ] && cmp -s %B/local.rules %B/local.rules-sample; then rm -f %B/local.rules; fi
+%%DATADIR%%/local.rules-sample
+@exec [ -f %B/local.rules ] || cp %B/%f %B/local.rules
 %%DATADIR%%/misc.rules
 %%DATADIR%%/multimedia.rules
 %%DATADIR%%/mysql.rules

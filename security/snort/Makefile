@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/
 
@@ -15,17 +15,25 @@ COMMENT=	Lightweight network intrusion detection system
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
-#OPTIONS=	FLEXRESP "Flexible response to events" off \
-#		MYSQL "Enable MySQL support" off \
-#		ODBC "Enable ODBC support" off \
-#		POSTGRESQL "Enable PostgreSQL support" off
+OPTIONS=	FLEXRESP "Flexible response to events" off \
+		MYSQL "Enable MySQL support" off \
+		ODBC "Enable ODBC support" off \
+		POSTGRESQL "Enable PostgreSQL support" off
 
 USE_GPG=	yes
 SIG_SUFFIX=	.asc
 USE_REINPLACE=	yes
+USE_RC_SUBR=	yes
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+MAN8=		snort.8
+DOCS=		ChangeLog doc/AUTHORS doc/BUGS doc/CREDITS doc/FAQ doc/NEWS \
+		doc/README* doc/TODO doc/USAGE doc/snort_manual.pdf
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_FLEXRESP)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
@@ -60,37 +68,25 @@ LDFLAGS+=		-lssl -lcrypto
 CONFIGURE_ARGS+=	--with-postgresql=no
 .endif
 
-MAN8=	snort.8
-DOCS=	ChangeLog doc/AUTHORS doc/BUGS doc/CREDITS doc/FAQ doc/NEWS \
-	doc/README* doc/TODO doc/USAGE doc/snort_manual.pdf
-
-USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
-
 post-patch:
 	${REINPLACE_CMD} "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/src/snort.c
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/snort.sh > ${WRKDIR}/snort.sh
 
-pre-configure:
-	@${ECHO} ""
-	@${ECHO} "Set WITH_FLEXRESP, WITH_MYSQL, WITH_ODBC or WITH_POSTGRESQL"
-	@${ECHO} "to get additional support."
-	@${ECHO} ""
-
 post-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/rules/*.rules ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/etc/classification.config \
-		${DATADIR}/classification.config-sample
-	[ -f ${DATADIR}/classification.config ] || \
-	    ${CP} ${DATADIR}/classification.config-sample \
-	    	${DATADIR}/classification.config
-	${INSTALL_DATA} ${WRKSRC}/etc/reference.config \
-		${DATADIR}/reference.config-sample
-	[ -f ${DATADIR}/reference.config ] ||  \
-	    ${CP} ${DATADIR}/reference.config-sample ${DATADIR}/reference.config
 	${INSTALL_SCRIPT} -m 751 ${WRKDIR}/snort.sh ${PREFIX}/etc/rc.d/snort.sh
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/rules/[^l]*.rules ${DATADIR}
+.for f in local.rules
+	${INSTALL_DATA} ${WRKSRC}/rules/${f} ${DATADIR}/${f}-sample
+	[ -f ${DATADIR}/${f} ] || \
+	    ${INSTALL_DATA} ${WRKSRC}/rules/${f} ${DATADIR}/${f}
+.endfor
+.for f in classification.config reference.config
+	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${DATADIR}/${f}-sample
+	[ -f ${DATADIR}/${f} ] || \
+	    ${INSTALL_DATA} ${WRKSRC}/etc/${f} ${DATADIR}/${f}
+.endfor
 .for f in snort.conf unicode.map threshold.conf
 	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}-sample
 	[ -f ${PREFIX}/etc/${f} ] || \
@@ -102,4 +98,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
