@@ -1,0 +1,24 @@
+--- Config/Configure_application.sh.orig	Thu Feb 10 05:05:40 2000
++++ Config/Configure_application.sh	Thu Dec  7 19:20:18 2000
+@@ -274,8 +274,8 @@
+ # Optimize & debug:
+ # Include DEBUG code?
+ if [ "`$Ask 'Do you want to compile with DEBUG code included?' 'y'`" != "n" ]; then
+-	debug="-DDEBUG -g"
+-	optimize="-O2"
++	debug="-DDEBUG"
++#	optimize="-O2"
+ 
+ 	# Use NANA debugging library?
+ 	if [ "`$Ask '  Use the NANA debugging library? (probably only usable for GCC)' 'n'`" != "n" ]; then
+@@ -283,9 +283,8 @@
+ 		extralibs="$extralibs -lnana"
+ 	fi
+ 
+-else
+ 	# Default: full optimization:
+-	optimize="-O2 -fomit-frame-pointer"
++	optimize=""
+ 	optimize=`$Ask 'What optimization flags do you want to use?' "$optimize"`
+ fi
+ 

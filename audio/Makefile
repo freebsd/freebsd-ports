@@ -59,6 +59,7 @@
     SUBDIR += gqmpeg
     SUBDIR += gramofile
     SUBDIR += grip
+    SUBDIR += gsi
     SUBDIR += gsm
     SUBDIR += holyshout
     SUBDIR += icecast

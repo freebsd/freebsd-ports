@@ -1,0 +1,18 @@
+--- ../gsi/lib/gsisynth/Makefile	Wed Feb  2 19:04:23 2000
++++ ./lib/gsisynth/Makefile	Thu Dec  7 18:59:21 2000
+@@ -23,13 +23,13 @@
+ STATIC_LIB	= libgsisynth.a
+ DYNAMIC_LIB	= libgsisynth.so
+ LIB_NAME	= $(LIBGSISYNTH)
+-VERSION		= .0.1
++VERSION		= .0
+ LIB_OBJS	= gsisynth.o midi_control.o api/synth_null.o api/synth_oss.o api/synth_oss_opl.o api/synth_oss_gus.o api/synth_ultra.o api/synth_pcm.o api/midi_control_null.o api/midi_control_oss.o api/midi_control_ultra.o
+ 
+ 
+ INCLUDES	= -I../../include
+ 
+-WARN		= -Wall -Wstrict-prototypes
++WARN		= -Wall #-Wstrict-prototypes
+ 
+ MY_CFLAGS	= $(CFLAGS) $(DEBUG) $(OPTIMIZE) $(WARN) $(SYSCONFIG_THREADS_CFLAGS)
+ 

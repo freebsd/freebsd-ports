@@ -1,0 +1,20 @@
+From the home page:
+     GSI is an easy to use audio system which can be used over a network
+     and which gives applications, through a very simple API, sample
+     playing with stereo, 3D, doppler effects, music playing (MIDI, HMP,
+     MUS), cd playing and ejecting/changing.
+
+     GSI also contains a separately usable sound/music
+     loading/saving/format conversion library libgsif
+     (au/aiff/voc/wav/raw, midi/hmp/mus), although saving/format
+     conversion is not completely done.
+
+     GSI runs on any unix system that has generic /dev/audio (8000Hz mono
+     mulaw), OSS, ultrasound project drivers, or NAS (well, it did once, I
+     need to update the NAS stuff), e.g. Linux, OpenBSD and FreeBSD. CD
+     playing is dependant on the OS' ioctl's and structs so that probably
+     works on linux/*BSD only (solaris may work, as it seems to use the
+     same ioctl's/structs as linux).
+
+License:  2-clause BSD-style for code / public domain for headers
+WWW:      http://www.xs4all.nl/~whs/gsi/gsi.html

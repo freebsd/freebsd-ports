@@ -1,0 +1,6 @@
+Don't forget to place a line in /etc/services, like this:
+
+gsi_server      9000/tcp                        # Shared 3d sound server
+
+if you want to be able to run the server over a network.
+[ note the security implications, see the documentation ]

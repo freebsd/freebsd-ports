@@ -1,0 +1,18 @@
+--- ../gsi/Config/Choose.sh	Wed Jan  5 09:32:05 2000
++++ ./Config/Choose.sh	Thu Dec  7 18:59:20 2000
+@@ -7,15 +7,6 @@
+ 
+ prompt=$1
+ default=$2
+-if [ "$default" != "" ]; then
+-	default="[$default]"
+-fi
+-if [ "`echo '\c'`" != "" ]; then
+-	echo -e "$prompt $default \c"	>/dev/tty
+-else
+-	echo -ne "$prompt $default "	>/dev/tty
+-fi
+-#echo -e $prompt [$default] >/dev/tty
+ read answer
+ if [ "$answer" = "" ]; then
+ 	echo $2

@@ -1,0 +1,20 @@
+--- ../gsi/lib/gsimixer/Makefile	Wed Feb  2 19:03:43 2000
++++ ./lib/gsimixer/Makefile	Thu Dec  7 18:59:21 2000
+@@ -23,7 +23,7 @@
+ STATIC_LIB	= libgsimixer.a
+ DYNAMIC_LIB	= libgsimixer.so
+ LIB_NAME	= $(LIBGSIMIXER)
+-VERSION		= .0.1
++VERSION		= .0
+ LIB_OBJS	= gsimixer.o
+ 
+ 
+@@ -31,7 +31,7 @@
+ 
+ INCLUDES	= -I../../include
+ 
+-WARN		= -Wall -Wstrict-prototypes
++WARN		= -Wall #-Wstrict-prototypes
+ 
+ MY_CFLAGS	= $(CFLAGS) $(DEBUG) $(OPTIMIZE) $(WARN) $(SYSCONFIG_THREADS_CFLAGS)
+ 

@@ -1,0 +1,20 @@
+--- ../gsi/lib/gsimidi_pcm/Makefile	Wed Feb  2 19:03:27 2000
++++ ./lib/gsimidi_pcm/Makefile	Thu Dec  7 18:59:21 2000
+@@ -23,7 +23,7 @@
+ STATIC_LIB	= libgsimidi_pcm.a
+ DYNAMIC_LIB	= libgsimidi_pcm.so
+ LIB_NAME	= $(LIBGSIMIDI_PCM)
+-VERSION		= .2.0
++VERSION		= .2
+ LIB_SRCS	= patchgram.c patchlex.c
+ LIB_OBJS	= debug.o midi.o midiparse.o mididata.o input/midifile.o \
+ 		init.o input/midiin.o match.o volume.o instrum.o error.o \
+@@ -33,7 +33,7 @@
+ INSTRUM_DIR	= $(SHRDIR)/share/gsi/gsimidi_pcm
+ INSTRUM_MAP	= $(INSTRUM_DIR)/patch.mp
+ 
+-DEBUG_FLAGS	= -DKPMIDI_DEBUG -Wall -Wstrict-prototypes
++DEBUG_FLAGS	= -DKPMIDI_DEBUG -Wall #-Wstrict-prototypes
+ #OTHER_FLAGS	= -DPOSIX_REALTIME -DREPLACED_GUS_C
+ #OUTPUT_SRCS	= output/gsi.c
+ #OUTPUT_OBJS	= output/gsi.o

@@ -1,0 +1,24 @@
+--- ../gsi/server/Makefile	Wed Feb  2 19:01:15 2000
++++ ./server/Makefile	Thu Dec  7 18:59:21 2000
+@@ -23,7 +23,7 @@
+ 
+ DEFINES		=
+ 
+-WARN		= -Wall -Wstrict-prototypes
++WARN		= -Wall #-Wstrict-prototypes
+ 
+ CFLAGS		= $(DEBUG) $(OPTIMIZE) $(WARN)
+ 
+@@ -96,12 +96,6 @@
+ 	@echo
+ 	@echo "Installing the server:"
+ 	cp $(GSI_SERVER) $(INSTALL_FILE)
+-	@echo
+-	@echo "Don't forget to place a line in /etc/services, like this:"
+-	@echo "gsi_server      9000/tcp                        # Shared 3d sound server"
+-	@echo "if you want to be able to run the server over a network."
+-	@echo "[ note the security implications, see the documentation ]"
+-
+ 
+ install.man: $(MANDIR)/man8/gsi_server.8 $(MANDIR)/man5/gsi.conf.5
+ 

@@ -1,0 +1,20 @@
+--- ../gsi/lib/gsipcm/Makefile	Wed Feb  2 19:04:05 2000
++++ ./lib/gsipcm/Makefile	Thu Dec  7 18:59:21 2000
+@@ -23,7 +23,7 @@
+ STATIC_LIB	= libgsipcm.a
+ DYNAMIC_LIB	= libgsipcm.so
+ LIB_NAME	= $(LIBGSIPCM)
+-VERSION		= .0.1
++VERSION		= .0
+ LIB_OBJS	= gsipcm.o
+ 
+ 
+@@ -31,7 +31,7 @@
+ 
+ INCLUDES	= -I../../include
+ 
+-WARN		= -Wall -Wstrict-prototypes
++WARN		= -Wall #-Wstrict-prototypes
+ 
+ MY_CFLAGS	= $(CFLAGS) $(DEBUG) $(OPTIMIZE) $(WARN) $(SYSCONFIG_THREADS_CFLAGS)
+ 
