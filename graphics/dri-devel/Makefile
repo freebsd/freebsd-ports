@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	dri
-PORTVERSION=	5.1.p1
+PORTVERSION=	5.1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	anholt/dri-devel
 DISTFILES=	${PORTNAME}-20031209.tar.bz2	\
-		Mesa-newtree-20031209.tar.bz2
+		Mesa-newtree-5.1.tar.bz2
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	OpenGL hardware acceleration drivers snapshot for XFree86
