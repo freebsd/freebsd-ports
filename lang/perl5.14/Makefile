@@ -80,6 +80,10 @@ INCLUDEDIR=	/usr/include
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502100
+PKGMESSAGE=	${PKGDIR}/.not-here
+.endif
+
 MAN1=	a2p.1 c2ph.1 dprofpp.1 enc2xs.1 find2perl.1 h2ph.1 h2xs.1 \
 	libnetcfg.1 perl.1 perl5004delta.1 perl5005delta.1 \
 	perl561delta.1 perl56delta.1 perl570delta.1 perl571delta.1 \
