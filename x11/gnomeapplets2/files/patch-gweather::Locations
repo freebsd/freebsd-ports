@@ -1,0 +1,35 @@
+
+$FreeBSD$
+
+--- gweather/Locations.orig	Wed May 15 00:32:46 2002
++++ gweather/Locations	Tue May 21 19:00:43 2002
+@@ -1588,7 +1588,7 @@
+ 
+ [EU]
+ name=Europe
+-states=AB OS BE BA BG CZ HR CY DK EE FI FR MK DE GI GR HU IE IS IT LV LT LU MT MD NL NO PL PT RO RU SK SI SP SE CH TR UK YU
++states=AB OS BE BA BG CZ HR CY DK EE FI FR MK DE GI GR HU IE IS IT LV LT LU MT MD NL NO PL PT RO RU SK SI SP SE CH TR UA UK YU
+ 
+ [EU_AB]
+ name=Albania
+@@ -1857,6 +1857,20 @@
+ loc50=Yakutsk UEEE ------ ---
+ loc51=Yekaterinburg USSS ------ ---
+ loc52=Yuzhno-Sakhalinsk UHSS ------ ---
++
++[EU_UA]
++name=Ukraine
++loc0=Kiev UKBB ------ ---
++loc1=Donetsk UKCC ------ ---
++loc2=Dnepropetrovsk UKDD ------ ---
++loc3=Krivoy\\ Rog UKDR ------ ---
++loc4=Simferopol UKFF ------ ---
++loc5=Kharkov UKHH ------ ---
++loc6=Ivano-frankovsk UKLI ------ ---
++loc7=Lvov UKLL ------ ---
++loc8=Rovno UKLR ------ ---
++loc9=Uzhgorod UKLU ------ ---
++loc10=Odessa UKOO ------ ---
+ 
+ [EU_SK]
+ name=Slovakia
