@@ -7204,6 +7204,7 @@ symlinks	ports/sysutils/symlinks
 synaesthesia	ports/graphics/synaesthesia
 syncal		ports/palm/syncal
 syncmal		ports/palm/syncmal
+synergy 	ports/sysutils/synergy
 sysconftool	ports/devel/sysconftool
 syslog-ng	ports/sysutils/syslog-ng
 systemg		ports/x11-fm/systemg
