@@ -64,6 +64,9 @@ do-build:
 	@${ECHO_MSG} "This port does everything in the install step."
 	@${ECHO_MSG} "The build step is a no-op."
 
+pre-install:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/check_conflicts
+
 do-install:
 	@${RM} -rf ${WRKSRC}/${TARGET}
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \

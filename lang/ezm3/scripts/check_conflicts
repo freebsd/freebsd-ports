@@ -1,0 +1,15 @@
+#! /bin/sh
+# Check for shared libraries left over from another Modula-3 port.
+
+libdir=${PREFIX}/lib/m3/${TARGET}
+
+case "`echo ${libdir}/lib*.so*`" in
+"${libdir}/lib*.so*")
+    exit 0;;
+*)
+    echo ""
+    echo "You have some Modula-3 shared libraries in ${libdir}"
+    echo "which conflict with ezm3.  Please use pkg_delete to remove other"
+    echo "versions of Modula-3, such as \"modula-3*\" and \"pm3-*\"."
+    exit 1;;
+esac
