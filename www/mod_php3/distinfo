@@ -1,6 +1,6 @@
 MD5 (apache_1.3.9.tar.gz) = 880af89251943c67e3614bf2ffb89b32
 MD5 (php-3.0.12.tar.gz) = 0d3b9517f8af17f1cd8c994d6fa26dd7
-MD5 (mod_ssl-2.4.1-1.3.9.tar.gz) = 5de641374eb4a3e513b78a4208c4beb5
+MD5 (mod_ssl-2.4.2-1.3.9.tar.gz) = e30f679aeb4e24f1c4d4cefc6fb10c39
 MD5 (php_configure.diff) = 69d8e2e6d49d9e37aab6e8d9765bcb1d
 MD5 (php_gd.c.diff) = da5f001772417a1a65711be55f1cd38c
 MD5 (php_php3_gd.h.diff) = d9da6e7fecafc5a57dcd320a943c22fd
