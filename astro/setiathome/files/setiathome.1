@@ -37,7 +37,7 @@ and will pick up where it left off.
 requires about 0.5\ MBytes of disk space in it's working directory, and about
 12\ MBytes of memory. If you have ample physical memory, it's work load
 should be almost undetectable.
-.Pp
+.Ss Starting setiathome
 This port to FreeBSD includes a start-up script (usually found in
 .Pa /usr/local/etc/rc.d/setiathome.sh )
 that starts
@@ -48,7 +48,35 @@ directory
 and lets you register with or log in to
 .Tn SETI@home
 by calling it with the argument
-.Li register .
+.Ar register .
+.Ss Setting up setiathome manually
+If you'd like to run
+.Nm
+on a SMP system, and therefor would like to run multiple
+.Nm
+processes at once, or would like it to run under a different user ID than
+.Sq nobody ,
+you have to set up one or more suitable working directories yourself.
+.Pp
+For each
+.Nm
+instance you'd like to run, create a directory, make it owned by the user
+you'd like to run
+.Nm
+as, and run
+.Ic setiathome -login
+in that directory.
+.Pp
+Then, arrange for
+.Nm
+to be started automatically.  You can easily do so by adding a line similiar
+to
+.Bd -ragged -offset indent
+.Li */10 * * * * cd 
+.Va working directory 
+.Li && Nm -email >/dev/null
+.Ed
+to the user's crontab.
 .Sh OPTIONS
 .Bl -tag -width indent
 .It Fl login
