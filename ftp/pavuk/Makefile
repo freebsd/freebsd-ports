@@ -19,6 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
+USE_REINPLACE=	yes
 WANT_GTK=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -39,11 +40,11 @@ CONFIGURE_ARGS+=	--disable-gtk
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's|-pthread -DHAVE_MT|${PTHREAD_CFLAGS} -DHAVE_MT|g ; \
+	@${REINPLACE_CMD} -e 's|-pthread -DHAVE_MT|${PTHREAD_CFLAGS} -DHAVE_MT|g ; \
 		 s|-pthread|${PTHREAD_LIBS}|g ; \
 		 s|-lpthreads|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@find  ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$$\(datadir\)/icons|\$$\(pkgdatadir\)/icons|g'
+	@find  ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
+		's|\$$(datadir)/icons|\$$(pkgdatadir)/icons|g'
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pavuk_authinfo.sample ${PREFIX}/etc

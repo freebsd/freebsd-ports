@@ -20,6 +20,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
+USE_REINPLACE=	yes
 USE_GTK=	yes
 USE_ESOUND=	yes
 USE_GMAKE=	yes
@@ -37,11 +38,11 @@ PORTDOCS=	FAQ FAQ.de FAQ.es FAQ.fr FAQ.gr INSTALL INSTALL.de \
 		INSTALL.pt_BR LICENSE NAMES THANKS TROUBLES
 
 post-patch:
-	@${PERL} -pi -e 's|CXXFLAGS="-O."|CXXFLAGS=\$$CXXFLAGS|g ; \
+	@${REINPLACE_CMD} -e 's|CXXFLAGS="-O."|CXXFLAGS=\$$CXXFLAGS|g ; \
 		 s|OS_CXXFLAGS="-pthread"|OS_CXXFLAGS="${PTHREAD_CFLAGS}"|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${PERL} -pi -e 's| DOC||g' ${WRKSRC}/Makefile.in
-	@${PERL} -pi -e 's|-not|\\!|g' ${WRKSRC}/share/Makefile.in
+	@${REINPLACE_CMD} -e 's| DOC||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-not|\\!|g' ${WRKSRC}/share/Makefile.in
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/DOC/nt.1 ${MANPREFIX}/man/man1

@@ -14,15 +14,16 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		muddleftpd.1 ftpwho.1 mudpasswd.1
 
 post-patch:
-	@${PERL} -pi -e 's|^NEWMALLOC|#NEWMALLOC|g' ${WRKSRC}/Makefile.defs
-	@${PERL} -pi -e 's|"/etc|"${PREFIX}/etc|g' ${WRKSRC}/defaults.h
-	@${PERL} -pi -e 's|#include <malloc.h>||g' ${WRKSRC}/src/ftpd.h
+	@${REINPLACE_CMD} -e 's|^NEWMALLOC|#NEWMALLOC|g' ${WRKSRC}/Makefile.defs
+	@${REINPLACE_CMD} -e 's|"/etc|"${PREFIX}/etc|g' ${WRKSRC}/defaults.h
+	@${REINPLACE_CMD} -e 's|#include <malloc.h>||g' ${WRKSRC}/src/ftpd.h
 
 pre-configure:
 	@${CHMOD} -f u+x ${WRKSRC}/configure

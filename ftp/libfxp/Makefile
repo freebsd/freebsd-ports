@@ -13,17 +13,18 @@ MASTER_SITES=	http://millweed.com/projects/libfxp/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 CFLAGS+=	-I. -Ilibmillweed
 
 post-patch:
 .for file in Makefile libmillweed/Makefile
-	@${PERL} -pi -e "s,^CC,#CC,g ; \
+	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; \
 		s,^CFLAGS,#CFLAGS,g ; \
 		s,^PREFIX,#PREFIX,g" ${WRKSRC}/${file}
 .endfor
 	@(cd ${WRKSRC} ; \
 	  ${GREP} -l -R malloc.h * | xargs \
-	  ${PERL} -pi -e "s|malloc.h|stdlib.h|g")
+	  ${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|g")
 
 .include <bsd.port.mk>
