@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.36 2004/01/07 06:41:26 marcus Exp $
+# $Id: portlint.pl,v 1.38 2004/01/22 20:01:54 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 5;
-my $micro = 6;
+my $micro = 7;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -320,7 +320,7 @@ if ($committer) {
 			&perror("FATAL: $fullname: empty file and should be removed. ".
 				    "If it still needs to be there, put a dummy comment ".
 					"to state that the file is intentionally left empty.");
-		} elsif (-d && scalar(my @x = <$_/{*,.?*}>) <= 1) { 
+		} elsif (-d && scalar(my @x = <$_/{*,.?*}>) <= 1) {
 			&perror("FATAL: $fullname: empty directory should be removed.");
 		} elsif (/^\./) {
 			&perror("Warning: $fullname: dotfiles are not preferred. ".
@@ -441,7 +441,9 @@ if ($committer) {
 			}
 			else {
 				if (!$entries{$_}) {
-					&perror("FATAL: file $filename not in CVS.");
+					&perror("FATAL: file $filename not in CVS.")
+						unless (eval { /$ENV{'PL_CVS_IGNORE'}/, 1 } &&
+							/$ENV{'PL_CVS_IGNORE'}/);
 				}
 				elsif ($entries{$_} eq 'D') {
 					&perror("FATAL: file $filename is a directory in CVS.");
@@ -660,7 +662,7 @@ sub checkplist {
 				"please use USE_LIBTOOL in Makefile if possible");
 		}
 
-		if ($_ =~ m|^lib/lib[^\/]+\.so(\.\d+)?$| && 
+		if ($_ =~ m|^lib/lib[^\/]+\.so(\.\d+)?$| &&
 			$makevar{INSTALLS_SHLIB} eq '') {
 			&perror("WARN: $file [$.]: installing shared libraries, ".
 				"please define INSTALLS_SHLIB as appropriate");
@@ -1075,7 +1077,7 @@ sub checkmakefile {
 		&perror("FATAL: $file [$lineno]: use of NO_CHECKSUM discouraged. ".
 			"it is intended to be a user variable.");
 	}
-	
+
 	#
 	# whole file: PKGNAME
 	#
@@ -1117,8 +1119,9 @@ sub checkmakefile {
 	my %cmdnames = ();
 	print "OK: checking direct use of command names.\n" if ($verbose);
 	foreach my $i (qw(
-awk basename cat chmod chown cp echo expr false file find gmake grep gzcat
-ldconfig ln md5 mkdir mv patch perl rm rmdir ruby sed sh touch tr which xargs xmkmf
+awk basename brandelf cat chmod chown cp cpio dialog echo expr false file find
+gmake grep gzcat ldconfig ln md5 mkdir mv objcopy paste patch pax perl printf
+rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 	)) {
 		$cmdnames{$i} = "\$\{\U$i\E\}";
 	}
@@ -1128,6 +1131,7 @@ ldconfig ln md5 mkdir mv patch perl rm rmdir ruby sed sh touch tr which xargs xm
 	$cmdnames{'install'} = '${INSTALL_foobaa}';
 	$cmdnames{'python'} = '${PYTHON_CMD}';
 	$cmdnames{'strip'} = '${STRIP_CMD}';
+	$cmdnames{'unzip'} = '${UNZIP_CMD}';
 	foreach my $i (qw(aclocal autoconf autoheader automake autoreconf autoupdate autoscan ifnames libtool libtoolize)) {
 		$autocmdnames{$i} = "\$\{" . ( ( $i !~ /auto|aclocal|libtool/ ) ? "AUTO" : "" ) . "\U$i\E\}";
 	}
@@ -1136,7 +1140,7 @@ ldconfig ln md5 mkdir mv patch perl rm rmdir ruby sed sh touch tr which xargs xm
 	# note that we leave the command as is, since we need to check the
 	# use of echo itself.
 	$j = $whole;
-	$j =~ s/([ \t][\@\-]{0,2})(echo|\$[\{\(]ECHO[\}\)]|\$[\{\(]ECHO_MSG[\}\)])[ \t]+("(\\'|\\"|[^"])*"|'(\\'|\\"|[^'])*')[ \t]*;?(\n?)/$1$2;$3/g; #"
+	$j =~ s/([ \t][\@\-]{0,2})(echo|\$[\{\(]ECHO[\}\)]|\$[\{\(]ECHO_MSG[\}\)])[ \t]+(?:"(?:\\'|\\"|[^"])*"|'(?:\\'|\\"|[^'])*')[ \t]*;?(\n?)/$1$2;$3/g; #"
 	# ignore variables names in .for loops, but not what's at the end
 	# of the for loop
 	$j =~ s/(\.for +)([^ ]*)( .*)/$1$3/;
@@ -1153,6 +1157,7 @@ ldconfig ln md5 mkdir mv patch perl rm rmdir ruby sed sh touch tr which xargs xm
 				&& $curline !~ /^RESTRICTED(.)?=[^\n]+$i/m
 				&& $curline !~ /^NO_PACKAGE(.)?=[^\n]+$i/m
 				&& $curline !~ /^NO_CDROM(.)?=[^\n]+$i/m
+				&& $curline !~ /^MAINTAINER(.)?=[^\n]+$i/m
 				&& $curline !~ /^CATEGORIES(.)?=[^\n]+$i/m
 				&& $curline !~ /^#.+$/m
 				&& $curline !~ /^COMMENT(.)?=[^\n]+$i/m) {
@@ -1176,6 +1181,7 @@ ldconfig ln md5 mkdir mv patch perl rm rmdir ruby sed sh touch tr which xargs xm
 				&& $lm !~ /^RESTRICTED(.)?=[^\n]+($i\d*)/m
 				&& $lm !~ /^NO_PACKAGE(.)?=[^\n]+($i\d*)/m
 				&& $lm !~ /^NO_CDROM(.)?=[^\n]+($i\d*)/m
+				&& $lm !~ /^MAINTAINER(.)?=[^\n]+($i\d*)/m
 				&& $lm !~ /^CATEGORIES(.)?=[^\n]+($i\d*)/m
 				&& $lm !~ /^#.+$/m
 				&& $lm !~ /^COMMENT(.)?=[^\n]+($i\d*)/m) {
@@ -1390,17 +1396,17 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 			"not by \"$1=\".") unless ($masterport);
 	}
 	if ($newport) {
-		print "OK: checking for existence of PORTREVISION in new port.\n" 
+		print "OK: checking for existence of PORTREVISION in new port.\n"
 			if ($verbose);
 		if ($tmp =~ /^PORTREVISION(.)?=/m) {
-			&perror("WARN: $file: new ports should not set PORTREVISION.");	
+			&perror("WARN: $file: new ports should not set PORTREVISION.");
 		}
 	}
 	if ($newport) {
-		print "OK: checking for existence of PORTEPOCH in new port.\n" 
+		print "OK: checking for existence of PORTEPOCH in new port.\n"
 			if ($verbose);
 		if ($tmp =~ /^PORTEPOCH(.)?=/m) {
-			&perror("WARN: $file: new ports should not set PORTEPOCH.");	
+			&perror("WARN: $file: new ports should not set PORTEPOCH.");
 		}
 	}
 	print "OK: checking CATEGORIES.\n" if ($verbose);
@@ -1417,7 +1423,7 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 		" if nothing seems apropriate.");
 	}
 
-	if ($committer && $makevar{'.CURDIR'} =~ m'ports/([^/]+)/[^/]+/?$') {
+	if ($committer && $makevar{'.CURDIR'} =~ m'${portsdir}/([^/]+)/[^/]+/?$') {
 		if ($cat[0] ne $1 && $makevar{PKGCATEGORY} ne $1 ) {
 			&perror("FATAL: $file: category \"$1\" must be listed first");
 		}
@@ -1430,7 +1436,7 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 		$port_lang = $lang_pref{$cat[0]};
 		shift @cat;
 	}
-	
+
 	# skip further if more language specific ones follow.
 	if (@cat && grep($_ eq $cat[0], @lang_cat)) {
 		&perror("WARN: $file: multiple language specific categories detected. ".
@@ -1454,7 +1460,7 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 	if (2 <= @cat) {
 		# skip the first one that we know is _not_ language specific.
 		shift @cat;
-	
+
 		# any language specific one after non language specific ones?
 		foreach my $cat (@cat) {
 			if (grep($_ eq $cat, @lang_cat)) {
@@ -1595,12 +1601,12 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 		if (opendir(DIR, ".")) {
 			my @tgz = grep(/\.tgz$/, readdir(DIR));
 			closedir(DIR);
-	
+
 			if (@tgz) {
 				my $tgz = (2 <= @tgz)
 				? '{' . join(',', @tgz) . '}'
 				: $tgz[0];
-				
+
 				&perror("WARN: be sure to remove $portdir/$tgz ".
 				"before committing the port.");
 			}
@@ -1705,7 +1711,7 @@ MAINTAINER COMMENT
 
 	# NOTE: EXEC_DEPENDS is obsolete, so it should not be listed.
 	@linestocheck = qw(
-EXTRACT_DEPENDS LIB_DEPENDS PATCH_DEPENDS BUILD_DEPENDS RUN_DEPENDS 
+EXTRACT_DEPENDS LIB_DEPENDS PATCH_DEPENDS BUILD_DEPENDS RUN_DEPENDS
 FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 	);
 

@@ -7,10 +7,10 @@
 .Dt PORTLINT 1
 .Sh NAME
 .Nm portlint
-.Nd a verifier for port directory
+.Nd a verifier for port directories
 .Sh SYNOPSIS
 .Nm portlint
-.Op Fl abchvtNV
+.Op Fl abchvtACNV
 .Op Fl M Ar ENV
 .Op Fl B Ar n
 .Op Ar dir
@@ -35,8 +35,6 @@ especially when checking complex
 .Pp
 .Sy Options
 .Bl -tag -width Fl
-.It Fl A
-Turn on all additional checks.
 .It Fl a
 Perform additional checks for extra files, such as
 .Pa scripts/*
@@ -47,12 +45,9 @@ Warn the use of
 .Pa $(VARIABLE) .
 Some of the committers prefer
 .Pa ${VARIABLE}
-instead of 
+instead of
 .Pa $(VARIABLE) ,
 even though they are semantically same.
-.It Fl C
-Pedantic committer flag.  This is equivalent to
-.Fl abct .
 .It Fl c
 Committer flag.
 It will add several checks useful only for committers.
@@ -65,6 +60,11 @@ Be verbose.
 Show the progress report for items that are being checked.
 .It Fl t
 Nit pick about use of spaces.
+.It Fl A
+Turn on all additional checks.
+.It Fl C
+Pedantic committer flag.  This is equivalent to
+.Fl abct .
 .It Fl N
 New port flag.
 Adds several checks specific to newly submitted port.
@@ -77,7 +77,7 @@ Set make variables to
 .Pa ENV
 (ex. PORTSDIR=/usr/ports.work).
 .It Fl B Ar n
-Set the number of contiguous blank lines allowed in 
+Set the number of contiguous blank lines allowed in
 .Pa Makefile
 to
 .Ar n .
@@ -118,6 +118,20 @@ and obey/ignore the result.
 This type of messages are used in verbose mode
 .Pq Fl v .
 .El
+.Sh ENVIRONMENT
+The following environment variables affect the execution of
+.Nm :
+.Bl -tag -width ".Ev PL_CVS_IGNORE"
+.It Ev PL_CVS_IGNORE
+Set to a Perl-compatible regular expression, of patterns
+to ignore when checking to see if files are in the CVS
+repository.  For example,
+.Li '^\ed+$|^pr-patch$' .
+.It Ev PORTSDIR
+The fully-qualified path to the ports tree.
+For example,
+.Dq Li /usr/ports .
+.El
 .Sh FILES
 .Bl -tag -width bsd.port.mkxx -compact
 .It Pa bsd.port.mk
@@ -149,7 +163,7 @@ environment variable.
 and
 .An Yoshishige Arai Aq ryo2@on.rim.or.jp .
 .Pp
-Many people has contributed patches and comments/suggestions.
+Many people have contributed patches and comments/suggestions.
 .Sh BUGS
 .Nm
 is not a magic wand, as described above.
