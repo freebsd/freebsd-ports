@@ -29,11 +29,12 @@ COMMENT=	The Apache Group's Portability Library
 LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
 
 USE_ICONV=	yes
-WANT_AUTOCONF_VER=	253
+USE_AUTOCONF_VER=	257
 USE_PERL5=		yes
 USE_GMAKE=		yes
 USE_LIBTOOL_VER=	15
 LIBTOOLFILES=		# none
+USE_AUTOMAKE_VER=	17
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
 WRKSRC=	${WRKDIR}
@@ -44,6 +45,13 @@ APR_UTIL_CONF_ARGS=	--with-apr=../apr-${PORTVERSION} \
 
 .include <bsd.port.pre.mk>
 
+<<<<<<< Makefile
+#.if ${OSVERSION} < 500000
+#BROKEN=		"Configure fails on 4.x"
+#.endif
+
+=======
+>>>>>>> 1.37
 .if defined(APR_UTIL_WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--disable-threads
 APR_UTIL_CONF_ARGS+=	--disable-threads
@@ -75,6 +83,8 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-db4
 PKGNAMESUFFIX=	-db4
 .endif
 .endif
+
+LIBTOOL_M4=${LOCALBASE}/share/aclocal/libtool${USE_LIBTOOL_VER}.m4
 
 pre-extract:
 	@${ECHO_MSG} ""
@@ -117,14 +127,15 @@ post-extract:
 	${LN} -s apr-util-APU_0_9_BRANCH apr-util-${PORTVERSION}
 
 pre-configure:
-	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${SCRIPTS_ENV} ./buildconf
+	${DO_NADA}
+
+run-autotools:
+	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${SCRIPTS_ENV} AUTOCONF=${AUTOCONF} AUTOHEADER=${AUTOHEADER} LIBTOOL_M4=${LIBTOOL_M4} ${SH} ./buildconf
 	cd ${WRKDIR}/apr-util-${PORTVERSION} ; \
 	${RM} -fr xml/expat
 	cd ${WRKDIR}/apr-util-${PORTVERSION} ; \
-		${SH} ./buildconf \
+		${SETENV} ${SCRIPTS_EV} AUTOCONF=${AUTOCONF} AUTOHEADER=${AUTOHEADER} LIBTOOL_M4=${LIBTOOL_M4} ${SH} ./buildconf \
 		--with-apr=../apr-${PORTVERSION}
-
-run-autotools:
 	cd ${WRKDIR}/apr-${PORTVERSION}; \
 		${SETENV} ${SCRIPTS_ENV} ${SH} ./configure ${CONFIGURE_ARGS}
 	cd ${WRKDIR}/apr-util-${PORTVERSION}; \
@@ -141,5 +152,17 @@ do-build:
 do-install:
 	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE} install
 	cd ${WRKDIR}/apr-util-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE} install
+
+debug_autoconf:
+	@echo "LIBTOOL: ${LIBTOOL_VERSION}" 
+	@echo "AUTOCONF: dev ${dev_acver} cur ${cur_acver} use ${use_acver}" 
+	@echo "AUTOMAKE: dev ${dev_amver} cur ${cur_amver} use ${use_amver}" 
+	@echo "AUTOCONF_DIR: ${AUTOCONF_DIR}"
+	@echo "BUILD_DEPENDS: ${BUILD_DEPENDS}"
+	@echo "ACLOCAL_DIR: ${ACLOCAL_DIR}"
+	@echo "LIBTOOLFILES: ${LIBTOOLFILES}"
+	@echo "LIBTOOL_SHAREDIR: ${LIBTOOL_SHAREDIR}" 
+	@echo "LIBTOOL_LIBEXECDIR: ${LIBTOOL_LIBEXECDIR}" 
+	@echo "LIBTOOL_M4: ${LIBTOOL_M4}" 
 
 .include <bsd.port.post.mk>
