@@ -8,6 +8,7 @@
     SUBDIR += bfe
     SUBDIR += bochs
     SUBDIR += bsvc
+    SUBDIR += cinc
     SUBDIR += cingb
     SUBDIR += cpmemu
     SUBDIR += cpmtools
