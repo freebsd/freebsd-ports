@@ -1,0 +1,10 @@
+Jython is an implementation of the high-level, dynamic,
+object-oriented language Python seamlessly integrated
+with the Java platform. The predecessor to Jython,
+JPython, is certified as 100% Pure Java. Jython is
+freely available for both commercial and non-commercial
+use and is distributed with source code.
+
+WWW: http://www.jython.org/
+
+- Hye Shik Chang, a.k.a. "Perky"
