@@ -12,7 +12,8 @@ MASTER_SITES=	ftp://www.qvwm.org/pub/qvwm/
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
+		Imlib.5:${PORTSDIR}/graphics/imlib
 
 USE_IMAKE=	yes
 MAN1=		qvwm.1
