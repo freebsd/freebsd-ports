@@ -18,15 +18,13 @@ COMMENT=	A clone of the classic game Missile Command
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-BROKEN=		Incomplete pkg-plist
-
 USE_SDL=	mixer sdl
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_TARGET=
-MAN6=		penguin-command.6
+MAN6=		penguin-command.6 penguin-command.ja.6
 
 post-patch:
 	${REINPLACE_CMD} 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g' \
