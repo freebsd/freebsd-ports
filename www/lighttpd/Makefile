@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.3.11
+PORTVERSION=	1.3.12
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 				http://dl.fkb.wormulon.net/lighttpd/ \
@@ -33,7 +33,7 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl
 .endif
 
-MAN1=		lighttpd.1
+MAN1=		lighttpd.1 spawn-fcgi.1
 
 pre-everything::
 .if !defined(WITHOUT_OPENSSL)
