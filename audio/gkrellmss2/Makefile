@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gkrellmss
-PORTVERSION=	2.3
-PORTREVISION=	3
+PORTVERSION=	2.6
 CATEGORIES=	audio
 MASTER_SITES=	http://web.wt.net/~billw/gkrellmss/
 
@@ -15,31 +14,40 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A plugin for GKrellM with a VU meter showing left/right channel audio
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
-LIB_DEPENDS=	gdk_pixbuf_xlib.2:${PORTSDIR}/graphics/gdk-pixbuf
-LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
+LIB_DEPENDS=	fftw3.3:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 LATEST_LINK=	gkrellmss2
+
 USE_X_PREFIX=	yes
+USE_GNOME=	esound gtk20
+USE_GCC=	3.4
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	esound imlib
-USE_XPM=	yes
+MAKE_ENV=	LOCALEDIR="${PREFIX}/share/locale"
 
 PORTDOCS=	Changelog README Themes
-PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmss.so
+PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmss.so \
+		share/locale/ru/LC_MESSAGES/gkrellm-gkrellmss.mo
 
-MAKE_ENV+=	PLUGIN_INSTALLDIR=${PREFIX}/libexec/gkrellm2/plugins \
-		INSTALLDIR=${PREFIX}/libexec/gkrellm2/plugins \
-		LOCALEDIR=${PREFIX}/share/locale \
-		FFTW_LIB_DIR=-L${LOCALBASE}/lib \
-		enable_nls=1
+post-patch:
+	@${REINPLACE_CMD} -e 's|= -O2|=|g ; \
+		 s|= gcc|+=|g' ${WRKSRC}/src/Makefile
 
-post-install:
+do-configure:
+	@${ECHO_CMD} "" > ${WRKSRC}/src/configure.h
+	@${ECHO_CMD} "#define HAVE_ESOUND 1" >> ${WRKSRC}/src/configure.h
+	@${ECHO_CMD} "#define HAVE_FFTW3 1" >> ${WRKSRC}/src/configure.h
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/src/gkrellmss.so \
+		${PREFIX}/libexec/gkrellm2/plugins/gkrellmss.so
+	${INSTALL_DATA} ${WRKSRC}/po/ru.mo \
+		${PREFIX}/share/locale/ru/LC_MESSAGES/gkrellm-gkrellmss.mo
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
 
