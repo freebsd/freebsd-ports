@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysql
-PORTVERSION=	2.4.5
+PORTVERSION=	2.5.1
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://www.tmtm.org/mysql/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -35,8 +35,10 @@ INSTALL_TARGET=	site-install
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
-	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_MODDOCDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README.ja ${RUBY_MODDOCDIR}/ja/
+	${INSTALL_DATA} ${WRKSRC}/README.html ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/tommy.css ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README_ja.html ${RUBY_MODDOCDIR}/ja/
+	${LN} -fs ../tommy.css ${RUBY_MODDOCDIR}/ja/
 .endif
 
 .include <bsd.port.mk>
