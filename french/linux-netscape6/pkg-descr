@@ -1,10 +1,9 @@
-C'est la suite du navigateur Netscape, avec éditeur de HTML et lecteur du
-courrier électronique et de Usenet.  L'utilisation de la version pour Linux
-permet utiliser des plugins pour Linux.  Les plugins Java et de Macromedia sont
-disponibles. Le messager instantané d'AOL est omis (veuillez voir le
-ports/net/aim).  Les paquets de région de la France et des Etats-Unis, le
-gestionnaire de sécurité, le correcteur orthographique, et le <<talkback>>
-sont disponibles en cette port.
+Ceci est la suite du navigateur Netscape, avec éditeur de pages HTML et lecteur
+de courrier électronique et de nouvelles.  L'utilisation de la version pour Linux
+permet utiliser des plugins pour Linux.  Les plugins Java et de Macromedia, les
+localisations France et Etats-Unis, le gestionnaire de sécurité, le correcteur
+orthographique et l'analyseur de problèmes sont disponibles dans ce port.  Le
+messager instantané d'AOL est omis (veuillez voir le port ports/net/aim).
 
 Pour l'usage avec le plugin Java, linux_base-61 ou linux_base-62
 (pas linux_base-7) sont recommandés.
@@ -14,9 +13,9 @@ WWW: http://home.netscape.com/fr/browsers/6/
 This is a Linux version of the Netscape suite (Web browser, HTML editor, mail
 user agent and news reader).  Using the Linux version on FreeBSD allows use of
 Linux versions of plugins.  Many plugins are available as Linux binaries.  The
-Sun Java and Macromedia Flash plugins are available in this port.  AOL Instant
-Messenger is omitted (see ports/net/aim).  The French and U.S. regional packs,
-personal security manager, spell-checker, and talkback are available.
+Sun Java and Macromedia Flash plugins, the French and U.S. regional packs,
+personal security manager, spell-checker, and talkback are available in this
+port.  AOL Instant Messenger is omitted (see ports/net/aim).
 
 For use with the Java plugin, linux_base-61 or linux_base-62 are
 recommended (not linux_base-7).

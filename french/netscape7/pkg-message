@@ -5,11 +5,11 @@
 * simultaneously.  Both use $HOME/.mozilla for preferences, but some
 * configuration files may be incompatible.
 
-* D'AVERTISSEMENT *************************************************************
+* AVERTISSEMENT ***************************************************************
 *    Les utilisateurs devraient sauvegarder leurs fichiers de signet
-* (bookmarks.html).  Il y a eu des rapports que cette fichier peut
+* (bookmarks.html).  Il y a eu des rapports signalant que ce fichier peut
 * être détruit la première fois Netscape 6 est exécuté.
 *    Il peut également y avoir des problèmes quand on lance Mozilla et Netscape
-* simultanément.  Tous les deux utilisent $$HOME/.mozilla pour des préférences,
+* simultanément.  Tous les deux utilisent $$HOME/.mozilla pour les préférences,
 * mais certains des fichiers de configuration peut être incompatibles.
 *******************************************************************************
