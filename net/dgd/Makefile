@@ -12,12 +12,6 @@ CATEGORIES=	net lang games
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd|} \
 		ftp://ftp.dworkin.nl/pub/dgd/ \
 		ftp://ftp.imaginary.com/pub/LPC/servers/DGD/
-.ifdef (WITH_NETWORKING)
-PATCH_SITES=		ftp://noname.franken.de/pub/dgd/
-PATCHFILES=		Network-1-DGD-1.2p3-patch.gz
-PATCH_DIST_STRIP=	-p1
-PATCH_STRIP=		-p0 -F 3
-.endif
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Dworkin's Generic Driver (network server)
@@ -25,13 +19,21 @@ COMMENT=	Dworkin's Generic Driver (network server)
 NO_CDROM=	"no distribution to corporate environment"
 RESTRICTED=	"license required for commercial use"
 
+OPTIONS=	NETWORKING	"With networking kfuns"	off
+
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/dgd/src
 PATCH_WRKSRC=	${WRKDIR}/dgd
 ALL_TARGET=	install
 USE_REINPLACE=	yes
 
+.include <bsd.port.pre.mk>
+
 .ifdef (WITH_NETWORKING)
+PATCH_SITES=		ftp://noname.franken.de/pub/dgd/
+PATCHFILES=		Network-1-DGD-1.2p3-patch.gz
+PATCH_DIST_STRIP=	-p1
+PATCH_STRIP=		-p0 -F 3
 PLIST_SUB+=	NETWORKING=""
 .else
 PLIST_SUB+=	NETWORKING="@comment "
@@ -74,10 +76,10 @@ do-install:
 post-install:
 	# Need a temporary directory for certain files
 	${MKDIR} ${DATADIR}/tmp
-	# Run package install script
+	# Run package installation script
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} \
 		POST-INSTALL
 	# Set mudlib ownership
 	-@${CHOWN} -h -R mud:mud ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
