@@ -50,3 +50,6 @@
 
 # Treat the TrustedBSD Web site just as the FreeBSD Web site.
 ^projects/trustedbsd/www/
+
+# Dictionaries should have no extra noise in them
+^src/share/dict/*
