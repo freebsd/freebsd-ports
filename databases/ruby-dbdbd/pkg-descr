@@ -1,0 +1,8 @@
+dbdbd is a tool for reading and writing simple flat-text data files. A
+dbdbd data file has record per line, plus optional comments, and can be
+edited by hand as well as manipulated with dbdbd. In fact, the main goal
+of dbdbd is to provide a semi-automated alternative to ad hoc
+text-parsing scripts, in a way that still allows for the option of
+editing data files by hand when desired.
+
+WWW: http://knossos.shu.edu/dblack/dbdbd/
