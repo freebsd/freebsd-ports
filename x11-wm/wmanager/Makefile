@@ -8,40 +8,35 @@
 PORTNAME=	wmanager
 PORTVERSION= 	0.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://heuss.techfak.uni-bielefeld.de/www/mtessmer/wmanager/
+MASTER_SITES=	http://kassandra.techfak.uni-bielefeld.de/mtessmer/wmanager/
 EXTRACT_SUFX=	.src.tar.bz2
 
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk/
 
-USE_QT=		yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_NEWGCC=	yes
+USE_QT=		yes
+USE_GMAKE=	yes
 MAKE_ENV=	prefix=${PREFIX}
 
-WRKSRC=		${WRKDIR}/wmanager
-
 do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/wmanager ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/wmanager
-	@${INSTALL_DATA} ${WRKSRC}/.wmanagerrc ${PREFIX}/share/wmanager/wmanagerrc_sample
-	@${INSTALL_DATA} ${WRKSRC}/.xinitrc ${PREFIX}/share/wmanager/xinitrc_sample
-	@${INSTALL_DATA} ${WRKSRC}/FAQ ${PREFIX}/share/wmanager/
-	@${INSTALL_DATA} ${WRKSRC}/HISTORY ${PREFIX}/share/wmanager/
-	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/wmanager/
-	@${INSTALL_DATA} ${WRKSRC}/NEWS ${PREFIX}/share/wmanager/
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/wmanager/
-	@${INSTALL_DATA} ${WRKSRC}/TODO ${PREFIX}/share/wmanager/
+	${INSTALL_DATA} ${WRKSRC}/.wmanagerrc ${PREFIX}/share/wmanager/wmanagerrc_sample
+	${INSTALL_DATA} ${WRKSRC}/.xinitrc ${PREFIX}/share/wmanager/xinitrc_sample
+.for file in FAQ HISTORY INSTALL NEWS README TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/wmanager
+.endfor
 	@${ECHO}
 	@${ECHO} "Docs have been installed in ${PREFIX}/share/wmanager/."
 	@${ECHO} "You are advised to have a look at the sample .wmanagerrc"
 	@${ECHO} "and .xinitrc's available there."
 	@${ECHO}
-
 .endif
-	@${INSTALL_PROGRAM} ${WRKSRC}/wmanager ${PREFIX}/bin
 
 .include <bsd.port.mk>
