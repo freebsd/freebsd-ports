@@ -1,0 +1,48 @@
+--- c/pfe/lib/p_calc_name.cc.orig	Fri Aug 29 19:10:33 2003
++++ c/pfe/lib/p_calc_name.cc	Fri Aug 29 19:29:19 2003
+@@ -98,14 +98,14 @@
+ #define DEFINE_CALC_NAME_FMT_OPTION(type, explain)	\
+ {							\
+ 	#type "_fmt",					\
+-	name_strings::##type##_fmt,			\
++	name_strings::type##_fmt,			\
+ 	"Specify the format of " explain		\
+ }
+ 
+ #define DEFINE_CALC_NAME_LIT_OPTION(type, explain)	\
+ {							\
+ 	#type "_lit",					\
+-	name_strings::##type##_lit,			\
++	name_strings::type##_lit,			\
+ 	"Specify the string for " explain		\
+ }
+ 
+@@ -333,7 +333,7 @@
+ #define DEFINE_CALC_NAME_FUNCTION(type)					\
+   char *pg_state::calc_##type##_name(const char *basic_name)		\
+   {									\
+-	return calc_name(names.formats[name_strings::##type##_fmt],	\
++	return calc_name(names.formats[name_strings::type##_fmt],	\
+ 			 basic_name);					\
+   }
+ 
+@@ -346,7 +346,7 @@
+ 									    \
+ 	calc_scoped_name(&scname,					    \
+ 			 parent_ref,					    \
+-			 names.formats[name_strings::##type##_scoped_fmt]); \
++			 names.formats[name_strings::type##_scoped_fmt]); \
+ 	cast_add_scope_name(&scname,					    \
+ 			    base_name,					    \
+ 			    null_template_arg_array);			    \
+@@ -715,8 +715,8 @@
+ 		++calc_name_data.count;					 \
+ 	} while (0)
+ 
+-#define NAME_LITERAL_STR(type) names.literals[name_strings::##type##_lit].str
+-#define NAME_LITERAL_LEN(type) names.literals[name_strings::##type##_lit].len
++#define NAME_LITERAL_STR(type) names.literals[name_strings::type##_lit].str
++#define NAME_LITERAL_LEN(type) names.literals[name_strings::type##_lit].len
+ 
+ /*
+  * An internal auxiliary.  `calc_name_module' locates the names of the AOI

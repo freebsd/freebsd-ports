@@ -1,0 +1,15 @@
+--- c/pfe/fluke/pg_fluke.cc.orig	Fri Aug 29 20:18:40 2003
++++ c/pfe/fluke/pg_fluke.cc	Fri Aug 29 20:19:02 2003
+@@ -33,9 +33,9 @@
+ 
+ pg_fluke::pg_fluke()
+ {
+-#define NAME_FORMAT(type)      names.formats[name_strings::##type##_fmt]
+-#define NAME_LITERAL_STR(type) names.literals[name_strings::##type##_lit].str
+-#define NAME_LITERAL_LEN(type) names.literals[name_strings::##type##_lit].len
++#define NAME_FORMAT(type)      names.formats[name_strings::type##_fmt]
++#define NAME_LITERAL_STR(type) names.literals[name_strings::type##_lit].str
++#define NAME_LITERAL_LEN(type) names.literals[name_strings::type##_lit].len
+ 	
+ 	/* Should define them all... */
+ 	NAME_FORMAT(server_func) =		"%I%_server%_%s";

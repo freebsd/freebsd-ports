@@ -1,0 +1,11 @@
+--- runtime/headers/flick/pres/corba.h.orig	Sat Aug 30 00:57:33 2003
++++ runtime/headers/flick/pres/corba.h	Sat Aug 30 00:58:17 2003
+@@ -186,7 +186,7 @@
+ 
+ #define corba_except(name)					\
+ typedef flick_system_exception name;				\
+-name *##name##__alloc();
++name *name##__alloc();
+ 
+ /*
+  * Here are the standard CORBA system exception.

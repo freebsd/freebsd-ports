@@ -1,0 +1,117 @@
+--- fe/mig/parser.y.orig	Sat Aug 30 00:44:37 2003
++++ fe/mig/parser.y	Sat Aug 30 00:49:45 2003
+@@ -755,46 +755,55 @@
+ 			|	error {
+ 					ParseError("`;' expected");
+ 				}
++			;
+ 
+ EqualOrError	 	:	syEqual
+ 			|	error {
+ 					ParseError("`=' expected");
+ 				}
++			;
+ 
+ CommaOrError	 	:	syComma
+ 			|	error {
+ 					ParseError("`,' expected");
+ 				}
++			;
+ 
+ LParenOrError	 	:	syLParen
+ 			|	error {
+ 					ParseError("`(' expected");
+ 				}
++			;
+ 
+ RParenOrError	 	:	syRParen
+ 			|	error {
+ 					ParseError("`)' expected");
+ 				}
++			;
+ 
+ LBrackOrError	 	:	syLBrack
+ 			|	error {
+ 					ParseError("`[' expected");
+ 				}
++			;
+ 
+ RBrackOrError	 	:	syRBrack
+ 			|	error {
+ 					ParseError("`]' expected");
+ 				}
++			;
+ 
+ OfOrError	 	:	syOf
+ 			|	error {
+ 					ParseError("`of' expected");
+ 				}
++			;
+ 
+ ColonOrError	 	:	syColon
+ 			|	error {
+ 					ParseError("`:' expected");
+ 				}
++			;
+ 
+ IPCFlagOrError          :	syIPCFlag { $$ = $1; }
+ 			|	error {
+@@ -803,6 +812,7 @@
+ 						    "found"));
+ 					$$ = flNone;
+ 				}
++			;
+ 
+ IdentifierOrError       :	syIdentifier { $$ = $1; }
+ 			|	error {
+@@ -810,41 +820,49 @@
+ 					$$ = flick_asprintf("_error %d_%d_",
+ 							    lineno, tokenpos);
+ 				}
++			;
+ 
+ IdentifierOrEmptyError  :	syIdentifier { $$ = $1; }
+ 			|	error {
+ 					ParseError("identifier expected");
+ 					$$ = "";
+ 				}
++			;
+ 
+ IdentifierOrNULLError   :	syIdentifier { $$ = $1; }
+ 			|	error {
+ 					ParseError("identifier expected");
+ 					$$ = strNULL;
+ 				}
++			;
+ 
+ NumberOrError   	:	syNumber { $$ = $1; }
+ 			|	error {
+ 					ParseError("number expected");
+ 					$$ = 0;
+ 				}
++			;
+ 
+-StringOrNULLError       	:	syString { $$ = $1; }
++StringOrNULLError      	:	syString { $$ = $1; }
+ 			|	error {
+ 					ParseError("string expected");
+ 					$$ = strNULL;
+ 				}
++			;
++
+ QStringOrError       	:	syQString { $$ = $1; }
+ 			|	error {
+ 					ParseError("quoted string expected");
+ 					$$ = "\"<error>\"";
+ 				}
++			;
+ 
+ FileNameOrError       	:	syFileName { $$ = $1; }
+ 			|	error {
+ 					ParseError("filename expected");
+ 					$$ = "error.error";
+ 				}
++			;
+ 
+ LookString		:	/* empty */
+ 				{ LookString(); }

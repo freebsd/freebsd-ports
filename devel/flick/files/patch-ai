@@ -1,0 +1,19 @@
+--- fe/newcorba/parser.yy.orig	Sat Aug 30 00:52:20 2003
++++ fe/newcorba/parser.yy	Sat Aug 30 00:55:05 2003
+@@ -305,6 +305,8 @@
+ 		  ParseError("expecting identifier");
+ 		  $$ = 0;
+ 		}
++		;
++
+ scoped_name	: ID {
+ 		  $$ = FindLocalName($1);
+ 		}
+@@ -1058,6 +1060,7 @@
+ 			  ParseError("invalid type"); 
+ 			  $$ = MakeAoiType(kSLONG); 
+ 			}
++			;
+ 
+ param_type_spec	: base_type_spec {$$ = $1;}
+ 		| string_type {$$ = $1;}

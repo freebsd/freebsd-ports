@@ -1,0 +1,15 @@
+--- c/pfe/sun/pg_sun.cc.orig	Sat Aug 30 00:39:35 2003
++++ c/pfe/sun/pg_sun.cc	Sat Aug 30 00:39:56 2003
+@@ -50,9 +50,9 @@
+ 
+ pg_sun::pg_sun()
+ {
+-#define NAME_FORMAT(type)      names.formats[name_strings::##type##_fmt]
+-#define NAME_LITERAL_STR(type) names.literals[name_strings::##type##_lit].str
+-#define NAME_LITERAL_LEN(type) names.literals[name_strings::##type##_lit].len
++#define NAME_FORMAT(type)      names.formats[name_strings::type##_fmt]
++#define NAME_LITERAL_STR(type) names.literals[name_strings::type##_lit].str
++#define NAME_LITERAL_LEN(type) names.literals[name_strings::type##_lit].len
+ 	
+ 	/*
+ 	 * Override some of the format strings for Sun RPC-style presentations.

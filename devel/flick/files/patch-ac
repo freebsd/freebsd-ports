@@ -1,0 +1,15 @@
+--- c/pfe/libcorba/pg_corba.cc.orig	Fri Aug 29 19:45:24 2003
++++ c/pfe/libcorba/pg_corba.cc	Fri Aug 29 19:45:46 2003
+@@ -25,9 +25,9 @@
+ 
+ pg_corba::pg_corba()
+ {
+-#define NAME_FORMAT(type)      names.formats[name_strings::##type##_fmt]
+-#define NAME_LITERAL_STR(type) names.literals[name_strings::##type##_lit].str
+-#define NAME_LITERAL_LEN(type) names.literals[name_strings::##type##_lit].len
++#define NAME_FORMAT(type)      names.formats[name_strings::type##_fmt]
++#define NAME_LITERAL_STR(type) names.literals[name_strings::type##_lit].str
++#define NAME_LITERAL_LEN(type) names.literals[name_strings::type##_lit].len
+ 	
+ 	/*
+ 	 * CORBA does not specify the names of server skeletons nor the names
