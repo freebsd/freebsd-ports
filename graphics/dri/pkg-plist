@@ -9,4 +9,4 @@ lib/modules/dri/radeon_dri.so
 lib/modules/dri/savage_dri.so
 lib/modules/dri/sis_dri.so
 %%I386%%lib/modules/dri/tdfx_dri.so
-lib/modules/dri/unichrome_dri.so
+%%I386%%lib/modules/dri/unichrome_dri.so
