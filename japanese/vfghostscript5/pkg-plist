@@ -64,10 +64,17 @@ share/ghostscript/5.10vflib/doc/gdevmjc-0.8/README.mje
 share/ghostscript/5.10vflib/doc/gdevmjc-0.8/README.noz
 share/ghostscript/5.10vflib/doc/gdevmjc-0.8/MJ700V2C.FAQ
 share/ghostscript/5.10vflib/doc/gdevmjc-0.8/cpem.doc
+share/ghostscript/5.10vflib/doc/gdevnpdl.jis 
 share/ghostscript/5.10vflib/doc/gdevrpdl.doc 
 share/ghostscript/5.10vflib/doc/gs261j.doc
 share/ghostscript/5.10vflib/doc/gs261j.jis
 share/ghostscript/5.10vflib/doc/gs_statd.dif
+share/ghostscript/5.10vflib/doc/epag-3.08/FILES
+share/ghostscript/5.10vflib/doc/epag-3.08/gdevepag.txt
+share/ghostscript/5.10vflib/doc/epag-3.08/ert.txt
+share/ghostscript/5.10vflib/doc/epag-3.08/adjust.ps
+share/ghostscript/5.10vflib/doc/epag-3.08/gsepagif.sh
+share/ghostscript/5.10vflib/doc/epag-3.08/psprint
 share/ghostscript/5.10vflib/doc/helpers.txt
 share/ghostscript/5.10vflib/doc/hershey.txt
 share/ghostscript/5.10vflib/doc/history1.txt
@@ -393,6 +400,7 @@ share/ghostscript/fonts/z003034l.afm
 share/ghostscript/fonts/z003034l.pfb
 share/ghostscript/fonts/z003034l.pfm
 @dirrm share/ghostscript/5.10vflib/doc/gdevmjc-0.8
+@dirrm share/ghostscript/5.10vflib/doc/epag-3.08
 @dirrm share/ghostscript/5.10vflib/doc
 @dirrm share/ghostscript/5.10vflib/examples
 @dirrm share/ghostscript/5.10vflib/kanji
