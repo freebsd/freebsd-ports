@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	divxcalc
-PORTVERSION=	0.4
+PORTVERSION=	0.4a
 CATEGORIES=	graphics
 MASTER_SITES=	http://members.ams.chello.nl/r.slooten2/divxcalc/
 
