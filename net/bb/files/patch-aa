@@ -1,23 +1,20 @@
---- src/Makefile.freebsd.orig	Sun Nov 17 19:03:26 1996
-+++ src/Makefile.freebsd	Sun Nov 17 19:04:10 1996
-@@ -1,19 +1,5 @@
--SHELL = /bin/sh
+--- src/Makefile.freebsd.orig	Mon Dec 16 16:08:16 1996
++++ src/Makefile.freebsd	Sun Dec 22 13:38:43 1996
+@@ -1,6 +1,6 @@
+ SHELL = /bin/sh
 -MAKE = make
 -CC = gcc
--
--# FLAGS REQUIRED FOR PORTING
--# SUNOS 4.1.4, HPUX 10.0, and LINUX NEED NOTHING DEFINED
--# EXCEPT MAYBE THE OPTIMIZER
--# CFLAGS=-O
--# LIBS=
--
--# SOLARIS
--#CFLAGS=-DBZERO -O
--#LIBS = -ll -lnsl -lsocket	# SOLARIS NEEDS THIS
--
++MAKE?= make
++CC?= gcc
+ 
+ # FLAGS REQUIRED FOR PORTING
+ # SUNOS 4.1.4, HPUX 10.0, and LINUX NEED NOTHING DEFINED
+@@ -13,7 +13,7 @@
+ #LIBS = -ll -lnsl -lsocket	# SOLARIS NEEDS THIS
+ 
  # FREEBSD NEEDS SPECIAL ZOMBIE HANDLING
 -CFLAGS=-DZOMBIE -O
 +CFLAGS+=-DZOMBIE
  
- all: bb bbd touchtime
+ all: bb bbd bbnet touchtime
  
