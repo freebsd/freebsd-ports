@@ -63,6 +63,7 @@
     SUBDIR += libranlib
     SUBDIR += linalg
     SUBDIR += linpack
+    SUBDIR += linux-relview
     SUBDIR += matrix
     SUBDIR += metis
     SUBDIR += mtl
