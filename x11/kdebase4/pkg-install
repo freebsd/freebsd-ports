@@ -7,7 +7,7 @@ if [ "$2" != "POST-INSTALL" ]; then
         exit 0
 fi
 
-kdmrcscript=%%PREFIX%%/etc/rc.d/kdm.sh
+kdmrcscript=%%PREFIX%%/etc/rc.d/genkdmconf.sh
 
 if [ -f $kdmrcscript ]; then
 	sh -c "$kdmrcscript"
