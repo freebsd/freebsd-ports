@@ -37,6 +37,7 @@ pref("browser.cache.memory_cache_size", 3000);
 pref("browser.cache.disk_cache_size", 5000);
 pref("browser.ncols", 0);
 pref("browser.installcmap", false);
+pref("browser.drag_out_of_frame_style", 1);
 pref("mail.signature_file", "~/.signature");
 pref("mail.default_fcc", "~/nsmail/Sent");
 pref("news.default_fcc", "~/nsmail/Sent");
@@ -142,7 +143,7 @@ pref("font.name.monospace.x-user-def", "adobe-courier-iso8859-1");
 
 pref("font.name.serif.x-western", "adobe-times-iso8859-1");
 pref("font.name.sans-serif.x-western", "adobe-helvetica-iso8859-1");
-pref("font.name.monospace.x-western", "ms-gothic-iso8859-1");
+pref("font.name.monospace.x-western", "adobe-courier-iso8859-1");
 
 pref("font.name.serif.zh-CN", "isas-song ti-gb2312.1980-0");
 pref("font.name.sans-serif.zh-CN", "isas-song ti-gb2312.1980-0");
