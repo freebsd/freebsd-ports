@@ -5238,6 +5238,7 @@ mysql-gui	ports/databases/mysql-gui
 mysql-navigator	ports/databases/mysql-navigator
 mysql2pgsql	ports/databases/mysql2pgsql
 mysql323-client	ports/databases/mysql323-client
+mysql323-scripts	ports/databases/mysql323-scripts
 mysql323-server	ports/databases/mysql323-server
 mysql40-client	ports/databases/mysql40-client
 mysql40-scripts	ports/databases/mysql40-scripts
