@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Crypt-IDEA
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erwin@lansing.dk
 
 RESTRICTED=	"Crypto; export-controlled"
 
