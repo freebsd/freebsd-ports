@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	6.0.a605
+PORTVERSION=	6.0.a609
 CATEGORIES=	editors
-MASTER_SITES=	http://a1376.g.akamai.net/7/1376/2064/OpenOffice605/anoncvs.openoffice.org/download/OpenOffice605/
-DISTNAME=	oo_605_src
+MASTER_SITES=	http://a1580.g.akamai.net/7/1580/2064/OpenOffice609/anoncvs.openoffice.org/download/OpenOffice609/
+DISTNAME=	oo_609_src
+DISTFILES=	oo_609_src${EXTRACT_SUFX} solenv609_linuxintel${EXTRACT_SUFX}
 
 MAINTAINER=	obrien@FreeBSD.org
 
