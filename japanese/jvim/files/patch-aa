@@ -1,5 +1,5 @@
 --- ./src/makefile.junx.orig	Mon Jul  3 05:54:33 1995
-+++ ./src/makefile.junx	Fri Oct 31 14:53:29 1997
++++ ./src/makefile.junx	Wed Oct  4 02:10:05 2000
 @@ -15,12 +15,12 @@
  #
  #>>>>> choose Japanese Kanji code
@@ -39,7 +39,14 @@
  		'CC = gcc -O2 -Wall'
  
  # for FreeBSD before 2.0.5R, 'LIBS = -ltermcap -lcompat' may be needed.
-@@ -368,13 +375,13 @@
+@@ -362,19 +369,19 @@
+ 
+ #>>>>> choose options for install
+ ### Name of target
+-JVIM  = jvim
++JVIM  = jvim2
+ JCAT  = jcat
+ JFOLD = jfold
  JGREP = jgrep
  
  ### Prefix for location of files

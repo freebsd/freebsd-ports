@@ -85,6 +85,9 @@ FEPLIBS!=	echo ${FEPLIBS} | sed 's%^%-lonew${INPUT_METHOD} %'
 FEPOBJS=	feponew.o
 ###
 .endif
+PLIST_SUB+=     HAS_JVIM3RC=""
+.else
+PLIST_SUB+=     HAS_JVIM3RC="@comment "
 .endif
 
 post-extract:
@@ -102,11 +105,18 @@ do-build:
 
 do-install:
 	cd ${WRKSRC}/src; make -f ${MAKEFILE} install
+	${LN} -sf ${PREFIX}/bin/jvim3 ${PREFIX}/bin/jvim
 	if [ -e ${PREFIX}/etc/jvim3rc ]; then \
 		${MV} ${PREFIX}/etc/jvim3rc ${PREFIX}/etc/jvim3rc.bak; \
 	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/src/grep/grep ${PREFIX}/bin/jgrep
+.if defined(INPUT_METHOD)
+.if defined(DIRECT_CANNA)
+	${ECHO} "set fepctrl" > ${PREFIX}/etc/jvim3rc
+.else
 	${ECHO} "set fepctrl onewredraw" > ${PREFIX}/etc/jvim3rc
+.endif
+.endif
 .if !defined(NOPORTDOCS)
 .if defined(PORT_DOCDIR)
 	${MKDIR} ${PORT_DOCDIR}
