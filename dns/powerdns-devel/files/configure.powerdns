@@ -11,10 +11,14 @@ if [ "${POWERDNS_OPTIONS}" ]; then
 else
 	dialog --title "configuration options" --clear \
 				--checklist "\n\
-Please select desired options:" -1 -1 3 \
+Please select desired options:" -1 -1 7 \
 PostgreSQL	"PostgreSQL driver" ON \
-MySQL		"MySQL driver" OFF \
-OpenLDAP	"OpenLDAP backend" OFF \
+MySQL323	"MySQL 3.23 driver" OFF \
+MySQL40		"MySQL 4.0 driver" OFF \
+MySQL41		"MySQL 4.1 driver" OFF \
+OpenLDAP20	"OpenLDAP 2.0 backend" OFF \
+OpenLDAP21	"OpenLDAP 2.1 backend" OFF \
+OpenLDAP22	"OpenLDAP 2.2 backend" OFF \
 2> /tmp/checklist.tmp.$$
 
         retval=$?
@@ -42,11 +46,29 @@ while [ "$1" ]; do
 		\"PostgreSQL\")
 			echo WITH_POSTGRESQL_DRIVER=YES
 			;;
-		\"MySQL\")
+		\"MySQL323\")
 			echo WITH_MYSQL_DRIVER=YES
+			echo MYSQL_PORT?=databases/mysql323-client
 			;;
-		\"OpenLDAP\")
+		\"MySQL40\")
+			echo WITH_MYSQL_DRIVER=YES
+			echo MYSQL_PORT?=databases/mysql40-client
+			;;
+		\"MySQL41\")
+			echo WITH_MYSQL_DRIVER=YES
+			echo MYSQL_PORT?=databases/mysql41-client
+			;;
+		\"OpenLDAP20\")
 			echo WITH_LDAP=YES
+			echo LDAP_PORT?=net/openldap20-client
+			;;
+		\"OpenLDAP21\")
+			echo WITH_LDAP=YES
+			echo LDAP_PORT?=net/openldap21-client
+			;;
+		\"OpenLDAP22\")
+			echo WITH_LDAP=YES
+			echo LDAP_PORT?=net/openldap22-client
 			;;
 		\"nothing\"|true)
 			;;

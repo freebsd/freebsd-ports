@@ -21,7 +21,6 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--with-modules="${CONFIGURE_MODULES} pipe" \
 			--with-dynmodules=""
 #			--enable-debug
-LDAP_PORT?=	net/openldap20-client
 
 # use user config if possible
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
@@ -44,7 +43,8 @@ CONFIGURE_ARGS+=	--disable-pgsql
 .endif
 
 .if defined(WITH_MYSQL_DRIVER)
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+MYSQL_PORT?=	databases/mysql323-client
+LIB_DEPENDS+=	mysqlclient:${PORTSDIR}/${MYSQL_PORT}
 CONFIGURE_ARGS+=	--enable-mysql
 CONFIGURE_MODULES+=	"gmysql"
 .else
@@ -85,6 +85,7 @@ PLIST_SUB+=		RECURSOR="@comment "
 
 .if defined(WITH_LDAP)
 USE_GCC=3.2
+LDAP_PORT?=	net/openldap20-client
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/${LDAP_PORT}
 LIB_DEPENDS+=	lber.2:${PORTSDIR}/${LDAP_PORT}
 CONFIGURE_MODULES+=	"ldap"
