@@ -695,6 +695,7 @@
     SUBDIR += twhttpd
     SUBDIR += twig
     SUBDIR += twiki
+    SUBDIR += typo3
     SUBDIR += udmsearch
     SUBDIR += ump
     SUBDIR += urchin5
