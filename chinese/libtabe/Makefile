@@ -16,7 +16,7 @@ LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db
 
 WRKSRC=		${WRKDIR}/libtabe
 USE_XLIB=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
