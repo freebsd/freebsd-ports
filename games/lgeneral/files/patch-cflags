@@ -1,0 +1,9 @@
+--- src/Makefile.in	Thu Aug 15 04:40:49 2002
++++ src/Makefile.in	Tue Aug 26 21:07:10 2003
+@@ -102,5 +102,5 @@
+ campaign.o strat_map.o ai.o engine.o ai_group.o
+ lgeneral_DEPENDENCIES = 
+-CFLAGS = @CFLAGS@
++CFLAGS += @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
