@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stklos
-PORTVERSION=	0.55
+PORTVERSION=	0.58
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,7 +28,7 @@ PLIST_SUB=	VERSION="${PORTVERSION}" \
 		INFOSECTION="${INFOSECTION}" \
 		INFOENTRY="${INFOENTRY}"
 
-MAN1=		stklos-compile.1 stklos-config.1 stklos.1
+MAN1=		stklos-compile.1 stklos-config.1 stklos-genlex.1 stklos.1
 
 INFOSECTION=	The Algorithmic Language Scheme
 INFOENTRY=	* STklos: (stklos).	The successor of the STk Scheme interpreter
