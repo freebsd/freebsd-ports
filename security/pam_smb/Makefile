@@ -5,35 +5,38 @@
 # $FreeBSD$
 
 PORTNAME=	pam_smb
-PORTVERSION=	1.1.6
+PORTVERSION=	1.9.9
 CATEGORIES=	security
-MASTER_SITES=   ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
-		ftp://ring.asahi-net.or.jp/pub/net/samba/%SUBDIR%/ \
-		ftp://samba.anu.edu.au/pub/samba/%SUBDIR%/ \
-		ftp://de.samba.org/pub/mirror/samba/%SUBDIR%/ \
-		ftp://se.samba.org/pub/samba/%SUBDIR%/ \
-		ftp://ftp.sunet.se/pub/unix/utilities/samba/%SUBDIR%/
-MASTER_SITE_SUBDIR=pam_smb
+MASTER_SITES=   http://www.csn.ul.ie/~airlied/pam_smb/devel/
 
 MAINTAINER=	nsayer@FreeBSD.org
 
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
-MAKE_ENV+=	PREFIX=${PREFIX}
+STARTUP_SCRIPT=	pam_smbd.sh.sample
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${PERL} -pi -e s%CONFDIR%\"${PREFIX}/etc\"% ${WRKSRC}/pam_read_conf.c
-	${PERL} -pi -e s%CONFDIR%\"${PREFIX}/etc\"% ${WRKSRC}/pam_smb_auth.c
+	${PERL} -pi -e s,%%PREFIX%%,${PREFIX}, ${WRKSRC}/pamsmbd/pam_read_conf.c
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/pam_smb_auth.so ${PREFIX}/lib
-	${INSTALL_DATA} ${FILESDIR}/pam_smb.conf.sample ${PREFIX}/etc
+	${INSTALL_PROGRAM} ${WRKSRC}/pamsmbd/pamsmbd ${PREFIX}/sbin/
+	${INSTALL_DATA} ${WRKSRC}/pamsmbm/pam_smb_auth.so ${PREFIX}/lib/
+	${MKDIR} ${PREFIX}/share/doc/pam_smb/
+	${INSTALL_DATA} ${WRKSRC}/BUGS ${PREFIX}/share/doc/pam_smb/
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/pam_smb/
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/pam_smb/
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/pam_smb/
+	${INSTALL_DATA} ${WRKSRC}/TODO ${PREFIX}/share/doc/pam_smb/
+	${INSTALL_DATA} ${WRKSRC}/pam_smb.conf.example ${PREFIX}/etc/
+	${INSTALL_DATA} ${WRKSRC}/pam_smb.conf.example2 ${PREFIX}/etc/
+	${INSTALL_SCRIPT} ${FILESDIR}/${STARTUP_SCRIPT} ${PREFIX}/etc/rc.d/
+	${PERL} -pi -e s,%%PREFIX%%,${PREFIX}, ${PREFIX}/etc/rc.d/${STARTUP_SCRIPT}
 
 post-install:
-	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${PKGMESSAGE}
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
