@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qpopper
-PORTVERSION=	4.0.4
-PORTREVISION=	1
+PORTVERSION=	4.0.5
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
@@ -17,7 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 .if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
 PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
-PATCHFILES=	qpopper4.0.4-ipv6-20020502.diff.gz
+PATCHFILES=	qpopper4.0.5-ipv6-20030313.diff.gz
 PATCH_DIST_STRIP=	-p1
 .endif
 
@@ -27,7 +26,7 @@ COMMENT=	Berkeley POP 3 server (now maintained by Qualcomm)
 USE_AUTOCONF=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-lmd -lutil -L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	LIBS="-lcrypt -lmd -lutil -L${LOCALBASE}/lib" \
 		OS_DEFS="-DSETPROCTITLE ${OS_DEFS}"
 CONFIGURE_ARGS=	--enable-apop=${PREFIX}/etc/qpopper/pop.auth \
 		--enable-nonauth-file=${POPUSERS_FILE} \
@@ -125,7 +124,8 @@ CONFIGURE_ARGS+=	--with-pam=pop3
 # with poppassd support.
 .if defined(WITH_POPPASSD)
 CONFIGURE_ARGS+=	--enable-poppassd
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-password::poppassd.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-password::poppassd.c \
+		${FILESDIR}/extra-patch-password::auth_user.c
 EPOPPASSD=	""
 .else
 EPOPPASSD=	"@comment "
