@@ -40,14 +40,16 @@ BLAST_EXE=	bl2seq blast blastall blastcl3 blastclust blastpgp copymat \
 X11_EXE=	Nentrez Psequin ddv entrez2 netentcf udv
 
 # and these are the man pages we have
-
 MAN1=		Nentrez.1 Psequin.1 asn2asn.1 asn2ff.1 asn2gb.1 asn2xml.1 asndhuff.1 \
-		asntool.1 bl2seq.1 blast.1 blastall.1 blastcl3.1 blastclust.1 \
-		blastpgp.1 cdscan.1 checksub.1 copymat.1 ddv.1 debruijn.1 entrcmd.1 \
-		entrez2.1 errhdr.1 fa2htgs.1 fastacmd.1 findspl.1 fmerge.1 formatdb.1 \
-		gbseqget.1 getfeat.1 getmesh.1 getpub.1 gil2bin.1 idfetch.1 impala.1 \
-		indexpub.1 makemat.1 makeset.1 megablast.1 netentcf.1 rpsblast.1 \
-		seedtop.1 tbl2asn.1 udv.1 vecscreen.1
+		asntool.1 blast.1 blastclust.1 cdscan.1 checksub.1 copymat.1 ddv.1 \
+		debruijn.1 entrcmd.1 entrez2.1 errhdr.1 fa2htgs.1 fastacmd.1 findspl.1 \
+		fmerge.1 formatdb.1 gbseqget.1 getfeat.1 getmesh.1 getpub.1 gil2bin.1 \
+		idfetch.1 indexpub.1 makemat.1 makeset.1 netentcf.1 rpsblast.1 \
+		tbl2asn.1 udv.1 vecscreen.1
+
+MLINKS=		blast.1 bl2seq.1 blast.1 blastall.1 blast.1 blastcl3.1 \
+		blast.1 blastpgp.1 blast.1 impala.1 blast.1 megablast.1 \
+		blast.1 seedtop.1
 
 # the ncbi-toolkit provides a shell script to drive the build
 # and we use it
