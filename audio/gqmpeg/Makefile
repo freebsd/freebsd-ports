@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lyngbol@candid.dk
 
+LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 USE_X_PREFIX=	yes
