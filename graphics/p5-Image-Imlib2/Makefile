@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-Imlib2
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Image
@@ -20,5 +20,18 @@ LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2
 PERL_MODBUILD=	yes
 
 MAN3=		Image::Imlib2.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	CHANGES
+EXAMPLES=	examples/benchmark.pl examples/benchmark.txt examples/maeda.pl
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+.endif
 
 .include <bsd.port.mk>
