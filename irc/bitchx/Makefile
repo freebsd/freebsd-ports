@@ -66,13 +66,16 @@ CONFIGURE_ARGS+=--enable-sound
 USE_IPV6=	yes
 CONFIGURE_ARGS+=--enable-ipv6
 .endif
+
 .if defined(WITH_TCL)
 BUILD_DEPENDS+=	${LOCALBASE}/include/tcl8.3/tcl.h:${PORTSDIR}/lang/tcl83
 CONFIGURE_ARGS+=--with-tcl \
 		--with-tcl-libs=${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3"
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3
+ONLY_FOR_ARCHS= i386
 .endif
+
 .if defined(WITH_SOCKS5)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 CONFIGURE_ARGS+=	--with-socks5=${LOCALBASE}
