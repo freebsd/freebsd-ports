@@ -35,9 +35,6 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
-__FBSDID("$FreeBSD: /tmp/pcvs/ports/textproc/sed_inplace/src/Attic/process.c,v 1.4 2002-10-19 10:32:36 sobomax Exp $");
-
 #ifndef lint
 static const char sccsid[] = "@(#)process.c	8.6 (Berkeley) 4/20/94";
 #endif
