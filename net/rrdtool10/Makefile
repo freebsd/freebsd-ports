@@ -36,6 +36,12 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 CONFIGURE_ARGS+=	--with-latin2
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64 (needs to build shared libraries with -fPIC)"
+.endif
+
 pre-extract:
 .if !defined(WITH_LATIN2)
 	@${ECHO_MSG} ""
@@ -51,4 +57,4 @@ post-install:
 	@${ECHO_MSG} "############################################################################"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
