@@ -7,7 +7,7 @@
 
 PORTNAME=	arpwatch
 PORTVERSION=	2.1.a11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
 		ftp://ftp.ee.lbl.gov/
@@ -18,7 +18,6 @@ COMMENT=	Monitor arp & rarp requests
 
 CONFLICTS=	arpwatch-devel-2.*
 
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet
