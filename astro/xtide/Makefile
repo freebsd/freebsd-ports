@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	xtide
-PORTVERSION=	2.2.2
+PORTVERSION=	2.4
 CATEGORIES=	astro
-MASTER_SITES=	ftp://ftp.flaterco.com/xtide/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} harmonics.world.gz
+MASTER_SITES=	ftp://bel-marduk.unh.edu/xtide/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} harmonics.txt.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	patseal@hyperhost.net
 
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 
-IGNOREFILES=	harmonics.world.gz
+IGNOREFILES=	harmonics.txt.gz
 
 USE_XPM=	yes
 USE_X_PREFIX=	yes
@@ -25,7 +25,7 @@ MAN1=	xtide.1 tide.1
 MANCOMPRESSED=	no
 
 post-extract:
-	@${GZCAT} ${DISTDIR}/harmonics.world.gz > ${WRKSRC}/harmonics
+	@${GZCAT} ${DISTDIR}/harmonics.txt.gz > ${WRKSRC}/harmonics
 
 post-patch:
 	@${PERL} -pi -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/TideContext.cc
