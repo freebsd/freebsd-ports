@@ -23,6 +23,7 @@
     SUBDIR += fox-devel
     SUBDIR += freeglut
     SUBDIR += fxscintilla
+    SUBDIR += fxscintilla-fox10
     SUBDIR += gai
     SUBDIR += gal
     SUBDIR += gal2

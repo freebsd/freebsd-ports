@@ -21,7 +21,7 @@ COMMENT=	Ruby extension module to use FOX, aka FXRuby
 LIB_DEPENDS=	FOX-1.0.0:${PORTSDIR}/x11-toolkits/fox \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		fxscintilla.11:${PORTSDIR}/x11-toolkits/fxscintilla
+		fxscintilla.16:${PORTSDIR}/x11-toolkits/fxscintilla-fox10
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
