@@ -206,6 +206,7 @@
     SUBDIR += wxgtk2-unicode-contrib
     SUBDIR += wxmozilla
     SUBDIR += xbae
+    SUBDIR += xclass
     SUBDIR += xclasses
     SUBDIR += xenophilia
     SUBDIR += xenostep

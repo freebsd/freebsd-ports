@@ -1,0 +1,10 @@
+The xclass library is a C++ GUI toolkit for the X windows environment. 
+It consists of a set of basic components (widgets), as well as more 
+complex ones like commonly used dialog boxes and such. The components 
+have the MS Windows-95/98 look and feel.
+
+This is not "Xclasses".
+
+WWW:  http://sourceforge.net/projects/xclass/
+
+Patrick Gardella
