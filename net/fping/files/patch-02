@@ -55,7 +55,7 @@
 -                     printf("%s: Version %s $Date: 1997/01/08 20:29:33 $\n",argv[0], VERSION);
 -                     printf("%s: comments to fping@networking.Stanford.EDU\n",argv[0]);
 +                     printf("%s: FreeBSD port based on Version %s $Date: 1997/01/08 20:29:33 $\n",argv[0], VERSION);
-+                     printf("%s: comments to obrien@FreeBSD.org or fping@networking.Stanford.EDU\n",argv[0]);
++                     printf("%s: comments to fping@networking.Stanford.EDU\n",argv[0]);
                       exit(0);
  	   case 'f': 
  #ifdef ENABLE_F_OPTION
