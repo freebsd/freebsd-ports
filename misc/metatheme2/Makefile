@@ -12,8 +12,8 @@ MASTER_SITES=	ftp://ftp.helixcode.com/pub/metatheme/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	gtkhtml.5:${PORTSDIR}/www/gtkhtml \
-		gal.1:${PORTSDIR}/x11-toolkits/gal \
+LIB_DEPENDS=	gtkhtml.6:${PORTSDIR}/www/gtkhtml \
+		gal.3:${PORTSDIR}/x11-toolkits/gal \
 		gnet.0:${PORTSDIR}/net/gnet
 
 USE_X_PREFIX=	yes
