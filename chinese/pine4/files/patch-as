@@ -1,5 +1,29 @@
 --- pico/search.c.orig	Fri Jun 26 05:48:14 1998
-+++ pico/search.c	Tue Aug  4 12:42:15 1998
++++ pico/search.c	Wed Aug 19 10:45:20 1998
+@@ -127,9 +127,9 @@
+     /* ask the user for the text of a pattern */
+     while(1){
+ 	 if (gmode & MDREPLACE)
+-	   status = srpat("Search", defpat, repl_mode);
++	   status = srpat("搜尋", defpat, repl_mode);
+ 	 else
+-	   status = readpattern("Search");
++	   status = readpattern("搜尋");
+ 
+ 	    switch(status){
+ 	      case TRUE:                         /* user typed something */
+@@ -138,9 +138,9 @@
+ 	      case HELPCH:			/* help requested */
+ 		if(Pmaster)
+ 		  (*Pmaster->helper)(Pmaster->search_help,
+-				     "Help for Searching", 1);
++				     "搜尋的輔助說明", 1);
+ 		else
+-		  pico_help(SearchHelpText, "Help for Searching", 1);
++		  pico_help(SearchHelpText, "搜尋的輔助說明", 1);
+ 	      case (CTRL|'L'):			/* redraw requested */
+ 		refresh(FALSE, 1);
+ 		update();
 @@ -165,7 +165,7 @@
  	        break;
  	      default:

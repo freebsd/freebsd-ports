@@ -1,16 +1,20 @@
 # New ports collection makefile for:	pine
 # http://www.washington.edu/pine/
-# Version required:     4.02
+# Version required:     4.02A
 # Date created:		15 July 1998
 # Whom:			Liang Tai-hwa <avatar@www.mmlab.cse.yzu.edu.tw>
 #
-# $Id: Makefile,v 1.24 1998/07/21 13:45:58 asami Exp $
+# $Id: Makefile,v 1.6 1998/08/09 00:51:22 steve Exp $
 #
 
 DISTNAME=       pine4.02
-PKGNAME=        zh-pine-4.02
+PKGNAME=        zh-pine-4.02a
 CATEGORIES=     chinese mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${DISTNAME}A.patch
+PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	avatar@www.mmlab.cse.yzu.edu.tw
 
@@ -23,7 +27,7 @@ do-build:
 
 do-install:
 	${INSTALL} ${COPY} -o ${LIBOWN} -g ${LIBGRP} -m ${LIBMODE} \
-		${WRKSRC}/bin/libpico.so.1.3 ${PREFIX}/lib/libpico.so.1.3
+		${WRKSRC}/bin/libpico.so.2.0 ${PREFIX}/lib/libpico.so.2.0
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pico ${PREFIX}/bin/pico
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pilot ${PREFIX}/bin/pilot
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pine ${PREFIX}/bin/pine
@@ -40,6 +44,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} -d ${PREFIX}/share/doc/pine
 	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} \
+			${PREFIX}/share/doc/pine \
 			${PREFIX}/share/doc/pine/tech-notes
 	${INSTALL_DATA} ${WRKSRC}/doc/brochure.txt ${PREFIX}/share/doc/pine
 	${INSTALL_DATA} ${WRKSRC}/doc/tech-notes.txt ${PREFIX}/share/doc/pine

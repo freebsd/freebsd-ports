@@ -1,5 +1,5 @@
---- pine/mailview.c.orig	Fri Jul 17 15:10:35 1998
-+++ pine/mailview.c	Tue Aug  4 12:42:18 1998
+--- pine/mailview.c.orig	Wed Aug 19 10:37:26 1998
++++ pine/mailview.c	Wed Aug 19 10:45:24 1998
 @@ -140,8 +140,8 @@
  static struct key view_keys[] = 
         {HELP_MENU,
@@ -104,7 +104,7 @@
  	scrollargs.keys.menu	= &view_keymenu;
  	scrollargs.keys.what    = save_what;
  	setbitmap(scrollargs.keys.bitmap);
-@@ -1190,7 +1190,7 @@
+@@ -1196,7 +1196,7 @@
      /*---- format and copy envelope ----*/
      if(ps_global->full_header)
        q_status_message(SM_INFO, 0, 3,
@@ -113,7 +113,7 @@
  
      HD_INIT(&h, ps_global->VAR_VIEW_HEADERS, ps_global->view_all_except,
  	    FE_DEFAULT);
-@@ -1229,7 +1229,7 @@
+@@ -1235,7 +1235,7 @@
  	    if(append_file_name)
  	      fs_give((void **)&append_file_name);
  
@@ -122,7 +122,7 @@
  			      error_description(errno));
  	    return(0);
  	}
-@@ -1523,7 +1523,7 @@
+@@ -1529,7 +1529,7 @@
    write_error:
  
      if(!(flgs & FM_DISPLAY))
@@ -131,7 +131,7 @@
  			decode_err ? decode_err : error_description(errno));
  
      return(0);
-@@ -1853,8 +1853,8 @@
+@@ -1865,8 +1865,8 @@
      char prompt[256], tmp[MAILTMPLEN];
      int  rc, flags, local_h;
      static ESCKEY_S launch_opts[] = {
@@ -142,7 +142,7 @@
  	{-2, 0, NULL, NULL},
  	{-2, 0, NULL, NULL},
  	{0, 'u', "U", "editURL"},
-@@ -1875,7 +1875,7 @@
+@@ -1887,7 +1887,7 @@
  	else{
  	    launch_opts[5].ch = -1;
  	    if(!local_h){
@@ -151,7 +151,7 @@
  			   'y', 0, NO_HELP, WT_SEQ_SENSITIVE) == 'y'){
  		    /* Prompt for the displayer? */
  		    tmp[0] = '\0';
-@@ -1919,7 +1919,7 @@
+@@ -1931,7 +1931,7 @@
  				}
  				else{
  				    q_status_message1(SM_ORDER | SM_DING, 2, 2,
@@ -160,7 +160,7 @@
  						     error_description(errno));
  				    continue;
  				}
-@@ -1948,8 +1948,8 @@
+@@ -1960,8 +1960,8 @@
        return(1);
  
      while(1){
@@ -171,7 +171,7 @@
  		(handle->type == URL) ? "\"" : "",
  		(handle->type == URL) ? handle->h.url.path : "",
  		(handle->type == URL)
-@@ -2414,11 +2414,11 @@
+@@ -2426,11 +2426,11 @@
  	mode = PIPE_RESET | PIPE_USER ;
  	if(syspipe = open_system_pipe(cmd, NULL, NULL, mode)){
  	    close_system_pipe(&syspipe);
@@ -185,7 +185,7 @@
      }
      else if(f = url_local_handler(handle->h.url.path)){
  	if((*f)(handle->h.url.path) > 1)
-@@ -2426,7 +2426,7 @@
+@@ -2438,7 +2438,7 @@
      }
      else
        q_status_message1(SM_ORDER, 2, 2,
@@ -194,7 +194,7 @@
  			handle->h.url.path);
      
      return(rv);
-@@ -2746,7 +2746,7 @@
+@@ -2758,7 +2758,7 @@
      }
      else
        q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -203,7 +203,7 @@
  
      if(outgoing)
        mail_free_envelope(&outgoing);
-@@ -2810,7 +2810,7 @@
+@@ -2822,7 +2822,7 @@
  	else if(errstr)
  	  q_status_message(SM_ORDER|SM_DING, 3, 3, errstr);
  	else
@@ -212,7 +212,7 @@
  
  	break;
  
-@@ -2833,7 +2833,7 @@
+@@ -2845,7 +2845,7 @@
  	    if(uid_val != ps_global->mail_stream->uid_validity){
  		/* Complain! */
  		q_status_message(SM_ORDER|SM_DING, 3, 3,
@@ -221,7 +221,7 @@
  	    }
  
  	    if(uid){
-@@ -2849,7 +2849,7 @@
+@@ -2861,7 +2861,7 @@
  
  		if(i > mn_get_total(ps_global->msgmap))
  		  q_status_message(SM_ORDER, 2, 3,
@@ -230,7 +230,7 @@
  	    }
  	    else if(search){
  		/*
-@@ -2870,9 +2870,9 @@
+@@ -2882,9 +2882,9 @@
  		if(i = any_lflagged(ps_global->msgmap, MN_SLCT)){
  		    extern long zoom_index();
  
@@ -243,7 +243,7 @@
  		    /* Zoom the index! */
  		    zoom_index(ps_global, ps_global->msgmap);
  		}
-@@ -3011,9 +3011,9 @@
+@@ -3023,9 +3023,9 @@
  
  	    if(auth && *auth != '*')
  	      q_status_message1(SM_ORDER, 3, 3,
@@ -256,7 +256,7 @@
  
  	    /*
  	     * At this point our structure should contain the
-@@ -3098,7 +3098,7 @@
+@@ -3110,7 +3110,7 @@
  
  		if(i > mn_get_total(ps_global->msgmap))
  		  q_status_message(SM_ORDER, 2, 3,
@@ -265,7 +265,7 @@
  	    }
  
  	    break;
-@@ -3177,7 +3177,7 @@
+@@ -3189,7 +3189,7 @@
      }
      else
        q_status_message1(SM_ORDER | SM_DING, 0, 3,
@@ -274,7 +274,7 @@
  
      return(1);
  }
-@@ -3204,7 +3204,7 @@
+@@ -3216,7 +3216,7 @@
      dprint(2, (debugfile, "-- bogus url \"%s\": %s\n",
  	       url ? url : "<NULL URL>", reason));
      if(url)
@@ -283,7 +283,7 @@
  			(void *) (strchr(url, ':') - url), url, reason);
  
      return(0);
-@@ -3344,7 +3344,7 @@
+@@ -3356,7 +3356,7 @@
  
    write_error:
      if(style == QStatus)
@@ -292,7 +292,7 @@
  			error_description(errno));
  
      return(1);
-@@ -3594,7 +3594,7 @@
+@@ -3606,7 +3606,7 @@
  		gf_set_so_writec(&tmp_pc, df_store);
  		if(errstr = dfilter(display_filter, tmp_store, tmp_pc, NULL)){
  		    q_status_message1(SM_ORDER | SM_DING, 3, 3,
@@ -301,7 +301,7 @@
  		    rv = FHT_WRTERR;
  		}
  		else{
-@@ -3606,7 +3606,7 @@
+@@ -3618,7 +3618,7 @@
  	    }
  	    else{
  		q_status_message1(SM_ORDER | SM_DING, 3, 3,
@@ -310,7 +310,7 @@
  		rv = FHT_WRTERR;
  	    }
  	}
-@@ -3631,7 +3631,7 @@
+@@ -3643,7 +3643,7 @@
  	    if(errstr = gf_pipe(tmp_gc, final_pc)){
  		rv = FHT_WRTERR;
  		q_status_message1(SM_ORDER | SM_DING, 3, 3,
@@ -319,7 +319,7 @@
  	    }
  	}
  
-@@ -3770,7 +3770,7 @@
+@@ -3782,7 +3782,7 @@
  	format_newsgroup_string("Newsgroups: ", e->newsgroups, prefix, pc);
  	if(e->ngbogus)
  	  q_status_message(SM_ORDER, 0, 3,
@@ -328,7 +328,7 @@
      }
  
      if((which & FE_FOLLOWUPTO) && e->followup_to)
-@@ -4394,7 +4394,7 @@
+@@ -4406,7 +4406,7 @@
      }
  
      if(!sparms->bar.title)
@@ -337,7 +337,7 @@
  
      if(sparms->bar.style == TitleBarNone)
        sparms->bar.style = MsgTextPercent;
-@@ -4543,7 +4543,7 @@
+@@ -4555,7 +4555,7 @@
  	}
  
  	if(first_view && num_display_lines >= get_scroll_text_lines())
@@ -346,7 +346,7 @@
  			    
  
  	force      = 0;		/* may not need to next time around */
-@@ -4659,7 +4659,7 @@
+@@ -4671,7 +4671,7 @@
  	    whereis_pos.row = 0;
              if(sparms->help.text == NO_HELP || ps_global->nr_mode){
                  q_status_message(SM_ORDER, 0, 5,
@@ -355,7 +355,7 @@
                  break;
              }
  
-@@ -4698,12 +4698,12 @@
+@@ -4710,12 +4710,12 @@
  		cur_top_line -= scroll_lines;
  		if(cur_top_line <= 0){
  		    cur_top_line = 0;
@@ -370,7 +370,7 @@
  				STYLE_NAME(sparms));
              break;
  
-@@ -4717,12 +4717,12 @@
+@@ -4729,12 +4729,12 @@
  		cur_top_line += scroll_lines;
  
  		if(cur_top_line + num_display_lines >= get_scroll_text_lines())
@@ -385,7 +385,7 @@
  				STYLE_NAME(sparms));
  
              break;
-@@ -4739,11 +4739,11 @@
+@@ -4751,11 +4751,11 @@
  		    cur_top_line++;
  		    if(cur_top_line + num_display_lines
  						   >= get_scroll_text_lines())
@@ -399,7 +399,7 @@
  				    STYLE_NAME(sparms));
  	    }
  
-@@ -4760,11 +4760,11 @@
+@@ -4772,11 +4772,11 @@
  		if(cur_top_line){
  		    cur_top_line--;
  		    if(cur_top_line == 0)
@@ -413,7 +413,7 @@
  				    STYLE_NAME(sparms));
  	    }
  
-@@ -4795,7 +4795,7 @@
+@@ -4807,7 +4807,7 @@
  		}
  
  		q_status_message(SM_ORDER, 0, 1,
@@ -422,7 +422,7 @@
  	    }
  
  	    break;
-@@ -4825,7 +4825,7 @@
+@@ -4837,7 +4837,7 @@
  		}
  
  		q_status_message(SM_ORDER, 0, 1,
@@ -431,7 +431,7 @@
  	    }
  
  	    break;
-@@ -4844,7 +4844,7 @@
+@@ -4856,7 +4856,7 @@
  		    break;
  
  		  case -1 :
@@ -440,7 +440,7 @@
  		    break;
  
  		  default :
-@@ -4931,14 +4931,14 @@
+@@ -4943,14 +4943,14 @@
  		  q_status_message(SM_ORDER, 0, 3, tmp_20k_buf);
  		else
  		  q_status_message2(SM_ORDER, 0, 3,
@@ -459,7 +459,7 @@
  
              break; 
  
-@@ -4994,7 +4994,7 @@
+@@ -5006,7 +5006,7 @@
  			      break;
  
  			    case -1 :
@@ -468,7 +468,7 @@
  			      break;
  
  			    default :
-@@ -5239,13 +5239,13 @@
+@@ -5251,13 +5251,13 @@
      int         rc, flags;
      static char search_string[MAX_SEARCH+1] = { '\0' };
      static ESCKEY_S word_search_key[] = { { 0, 0, "", "" },
@@ -485,7 +485,7 @@
      help = NO_HELP;
      nsearch_string[0] = '\0';
  
-@@ -5260,13 +5260,13 @@
+@@ -5272,13 +5272,13 @@
              continue;
          }
  	else if(rc == 10){
@@ -501,7 +501,7 @@
  	    cursor_pos->row = max(get_scroll_text_lines() - 1, 0);
  	    cursor_pos->col = 0;
  	    return(cursor_pos->row);
-@@ -6055,10 +6055,10 @@
+@@ -6069,10 +6069,10 @@
  	    if(*msg_p[0])
  	      for(i = 0; i < msg_q; i++)
  		q_status_message2(SM_ORDER, 3, 4,
@@ -514,7 +514,7 @@
  	}
  	else{
  	    SCROLL_S sargs;
-@@ -6069,7 +6069,7 @@
+@@ -6083,7 +6083,7 @@
  	    memset(&sargs, 0, sizeof(SCROLL_S));
  	    sargs.text.text  = f;
  	    sargs.text.src   = FileStar;
