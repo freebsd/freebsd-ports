@@ -9,7 +9,7 @@
 
 PORTNAME=	wu-ftpd
 PORTVERSION=	2.6.1
-PORTREVISION=   3
+PORTREVISION=   4
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/
 
