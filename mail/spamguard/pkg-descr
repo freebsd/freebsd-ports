@@ -1,0 +1,13 @@
+Nearly all of today's mail system administrators face spam as their
+first threat. Because of this, EnderUNIX team has written this small
+application to automagically monitor malicious spammer activity in
+your mail server logs.
+
+spamGuard is written purely in C, to stop spammers hanging around.
+The program supports nearly all mostly used MTAs; qmail (both
+multilog and splogger), sendmail and Postfix.
+
+
+WWW: http://www.enderunix.org/spamguard
+- EnderUNIX SDT @ Turkey
+core _AT_ enderunix.org

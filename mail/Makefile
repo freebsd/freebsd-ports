@@ -334,6 +334,7 @@
     SUBDIR += spamass-milter
     SUBDIR += spambnc
     SUBDIR += spamd
+    SUBDIR += spamguard
     SUBDIR += spamoracle
     SUBDIR += spamprobe
     SUBDIR += spamstats
