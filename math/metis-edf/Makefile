@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	metis-edf
-PORTVERSION=	3.1
+PORTVERSION=	4.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1.noarch
@@ -26,8 +26,12 @@ FFLAGS?=	-O2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+PROGS=		kmetis onmetis.exe pmetis
+
+MACHINEARCH=	${ARCH}
+
 post-patch:
-.if ${MACHINE_ARCH} != "i386"
+.if ${MACHINEARCH} != "i386"
 	@${FIND} ${WRKSRC} -type f -name "*.c" -o -name "*.h" | ${XARGS}	\
 		${REINPLACE_CMD} -e "s|long int|int|g"				\
 			-e "s|long|int|g"					\
@@ -40,7 +44,7 @@ do-install:
 	@${CP} ${WRKSRC}/CONFIG/onmetis.in ${WRKSRC}/onmetis
 	@${REINPLACE_CMD} -e "s#HOME_METIS#${PREFIX}/bin#" ${WRKSRC}/onmetis
 	${INSTALL_SCRIPT} ${WRKSRC}/onmetis ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/onmetis.exe ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${PROGS:S|^|${WRKSRC}/|} ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/libmetis.a ${PREFIX}/lib
 
 post-install:

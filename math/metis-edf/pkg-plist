@@ -1,5 +1,7 @@
+bin/kmetis
 bin/onmetis
 bin/onmetis.exe
+bin/pmetis
 lib/libmetis.a
 %%PORTDOCS%%%%DOCSDIR%%/manual.ps
 %%PORTDOCS%%%%EXAMPLESDIR%%/fort.81
