@@ -1,0 +1,10 @@
+--- Makefile.am.orig	Tue Jan  7 13:18:10 2003
++++ Makefile.am	Tue Jan  7 13:18:14 2003
+@@ -8,6 +8,6 @@
+ 
+ include $(top_srcdir)/Makefile.am.common
+ 
+-SUBDIRS = include src man sample
++SUBDIRS = include src man
+ 
+ EXTRA_DIST = Makefile.am.common

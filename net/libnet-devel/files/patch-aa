@@ -1,0 +1,22 @@
+--- configure.in.orig	Mon Aug  5 17:26:03 2002
++++ configure.in	Tue Jan  7 13:30:32 2003
+@@ -134,8 +134,8 @@
+     AC_DEFINE(LIBNET_BSD_BYTE_SWAP)
+     AC_DEFINE(HAVE_SOCKADDR_SA_LEN)
+     LIBNET_CONFIG_DEFINES="-DLIBNET_BSDISH_OS -DLIBNET_BSD_BYTE_SWAP -DHAVE_SOCKADDR_SA_LEN"
+-    AC_MSG_RESULT(Note: support/bpf-lkm/etherspoof contains the lkm source required to spoof ethernet frames)
+-    ln -sf FreeBSD support/bpf-lkm/etherspoof
++dnl    AC_MSG_RESULT(Note: support/bpf-lkm/etherspoof contains the lkm source required to spoof ethernet frames)
++dnl    ln -sf FreeBSD support/bpf-lkm/etherspoof
+     ;;
+ 
+ *netbsd*)
+@@ -219,7 +219,7 @@
+ esac
+ 
+ AC_OUTPUT(Makefile man/Makefile src/Makefile include/Makefile \
+-    include/libnet/Makefile sample/Makefile version.h include/libnet.h \
++    include/libnet/Makefile version.h include/libnet.h \
+     libnet-config, chmod +x libnet-config)
+ 
+ AC_MSG_RESULT(Please note this is libnet 1.1.x.  Any code written for 1.0.x\
