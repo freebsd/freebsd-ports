@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nickle
-PORTVERSION=	2.45
+PORTVERSION=	2.46
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nickle.org/release/
 
