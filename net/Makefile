@@ -732,6 +732,7 @@
     SUBDIR += ysm
     SUBDIR += ytalk
     SUBDIR += zebra
+    SUBDIR += zebra-pj
     SUBDIR += zebra-server
     SUBDIR += ztelnet
 

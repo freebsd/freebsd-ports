@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net/zebra-pj/files/Attic/zebractl.sh,v 1.8 2002-08-04 20:04:50 sumikawa Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/zebra-pj/files/Attic/zebractl.sh,v 1.9 2003-06-13 23:05:15 sumikawa Exp $
 #
 # zebra start/stop script by "Andreas Klemm <andreas@FreeBSD.ORG>"
 #
