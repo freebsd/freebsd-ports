@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rawdog
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	news python
 MASTER_SITES=	http://offog.org/files/
 
