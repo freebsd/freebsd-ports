@@ -1,6 +1,6 @@
 
-# $Id: Makefile,v 1.3 1994/10/04 23:33:34 pst Exp $
+# $Id: Makefile,v 1.1 1994/10/06 01:16:49 jkh Exp $
 #
-SUBDIR=	gnuplot
+SUBDIR=	gnuplot oleo
 
 .include <bsd.port.subdir.mk>
