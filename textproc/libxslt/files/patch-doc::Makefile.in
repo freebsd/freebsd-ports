@@ -1,12 +1,9 @@
-
-$FreeBSD$
-
---- doc/Makefile.in	2001/07/30 13:29:13	1.1
-+++ doc/Makefile.in	2001/07/30 13:29:34
-@@ -99,7 +99,7 @@
- XSLT_LIBDIR = @XSLT_LIBDIR@
- XSLT_LIBS = @XSLT_LIBS@
+--- doc/Makefile.in.orig	Fri Aug 23 08:37:53 2002
++++ doc/Makefile.in	Sat Aug 24 02:44:18 2002
+@@ -123,7 +123,7 @@
  
+ 
+ # The name of the module.
 -DOC_MODULE = libxslt-$(VERSION)
 +DOC_MODULE = libxslt
  
