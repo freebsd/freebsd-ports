@@ -1,3 +1,5 @@
+@unexec if cmp -s %D/%%MMDIR%%/Mailman/mm_cfg.py %D/%%MMDIR%%/Mailman/mm_cfg.py.dist; then rm -f %D/%%MMDIR%%/Mailman/mm_cfg.py; fi
+@unexec rm -f %D/%%MMDIR%%/Mailman/mm_cfg.pyc
 @exec mkdir -p %D/%%MMDIR%%/archives/private && chmod 2770 %D/%%MMDIR%%/archives/private
 @exec mkdir -p %D/%%MMDIR%%/archives/public && chmod 2775 %D/%%MMDIR%%/archives/public
 @exec mkdir -p %D/%%MMDIR%%/archives && chmod 2775 %D/%%MMDIR%%/archives
@@ -169,9 +171,8 @@
 %%MMDIR%%/Mailman/aliases.pyc
 %%MMDIR%%/Mailman/htmlformat.py
 %%MMDIR%%/Mailman/htmlformat.pyc
-%%MMDIR%%/Mailman/mm_cfg.py
 %%MMDIR%%/Mailman/mm_cfg.py.dist
-%%MMDIR%%/Mailman/mm_cfg.pyc
+@exec [ -f %B/mm_cfg.py ] || cp %B/%f %B/mm_cfg.py
 %%MMDIR%%/Mailman/pythonlib/StringIO.py
 %%MMDIR%%/Mailman/pythonlib/StringIO.pyc
 %%MMDIR%%/Mailman/pythonlib/__init__.py
@@ -312,7 +313,6 @@
 @dirrm %%MMDIR%%/Mailman/Cgi
 @dirrm %%MMDIR%%/Mailman/Bouncers
 @dirrm %%MMDIR%%/Mailman/Archiver
-@dirrm %%MMDIR%%/Mailman
 %%PORTDOCS%%@dirrm share/doc/mailman
 @unexec rmdir %D/%%MMDIR%%/spam 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/qfiles 2>/dev/null || true
@@ -322,4 +322,5 @@
 @unexec rmdir %D/%%MMDIR%%/archives/public 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/archives/private 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/archives 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/Mailman 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/ 2>/dev/null || true

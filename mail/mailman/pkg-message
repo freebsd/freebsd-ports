@@ -1,12 +1,19 @@
----------------------------------------------------------------------------
-All related binaries have been installed in %%MAILMANDIR%%/bin.
+----------------------------------------------------------------------------
+Mailman has been installed, but is not quite ready to be used yet!
+You need to configure both Mailman and your MTA to integrate with each
+other.  At the very least, you'll have to create some aliases.
 
 See %%DOCSDIR%%/INSTALL for post-installation instructions,
-with "prefix" being "%%MAILMANDIR%%".
+with "prefix" being "%%MAILMANDIR%%".  You may also find README
+files with MTA-specific hints in %%DOCSDIR%%.
 
-A sample entry for Apache's httpd.conf to enable use of Mailman's web
-interface:
+The entire Mailman installation resides under %%MAILMANDIR%%.
+The command-line scripts necessary to administer Mailman have been
+installed in %%MAILMANDIR%%/bin.
+
+You'll need to add at least the following to Apache's httpd.conf to
+activate Mailman's web interface.  (Remember to restart your httpd!)
 
   ScriptAlias /mailman/ "%%MAILMANDIR%%/cgi-bin/"
   Alias /pipermail/ "%%MAILMANDIR%%/archives/public/"
----------------------------------------------------------------------------
+----------------------------------------------------------------------------

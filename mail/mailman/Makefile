@@ -7,7 +7,7 @@
 
 PORTNAME=	mailman
 PORTVERSION=	2.0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
@@ -25,6 +25,8 @@ CONFIGURE_ARGS=	--prefix=${MAILMANDIR} \
 		--with-mail-gid=${MAIL_GID} --with-cgi-gid=${CGI_GID}
 USE_PYTHON=	yes
 
+.include <bsd.port.pre.mk>
+
 # These variables may be tweaked if required.  However, it is recommended
 # that the USERID and GROUPID not be changed.
 #
@@ -34,7 +36,8 @@ GROUPNAME?=	${USERNAME}
 GROUPID?=	${USERID}
 MMDIR?=		mailman
 
-# The default value of '1' for MAIL_GID works with sendmail.  If you're using
+# Getting the value of MAIL_GID right is crucial to getting Mailman to work
+# with your MTA.  By default, this port works with sendmail.  If you're using
 # an alternative MTA installed from ports, you should set MAIL_GID at build
 # time according to the following table.  (Please contact this port's
 # maintainer if you can fill in the blanks, or to report mistakes!)
@@ -44,7 +47,15 @@ MMDIR?=		mailman
 # Postfix | 65534    | <shamrock@cypherpunks.to>
 # Qmail   | ???      |
 #
+.if ${OSVERSION} >= 450000
+MAIL_GID?=	26
+.else
 MAIL_GID?=	1
+.endif
+
+# By default, this port works with the current port of Apache.  If your WWW
+# server executes CGI scripts under a different GID, you'll have to set this
+# at build time.
 CGI_GID?=	80
 
 MAILMANDIR=	${PREFIX}/${MMDIR}
@@ -71,10 +82,11 @@ post-configure:
 pre-build:
 .if !defined(BATCH)
 	@ ${ECHO_MSG} "-------------------------------------------------------"
-	@ ${ECHO_MSG} "  If you're using an alternative MTA (not Sendmail),"
-	@ ${ECHO_MSG} "  you may have to set MAIL_GID to the gid under which"
-	@ ${ECHO_MSG} "  your MTA is executing.  See the comments in the"
-	@ ${ECHO_MSG} "  port's Makefile for further information."
+	@ ${ECHO_MSG} "  If you're using an alternative MTA (not Sendmail)"
+	@ ${ECHO_MSG} "  OR an older version of Sendmail, you may have to"
+	@ ${ECHO_MSG} "  set MAIL_GID to the gid under which your MTA is"
+	@ ${ECHO_MSG} "  executing.  See the comments in the port's"
+	@ ${ECHO_MSG} "  Makefile for further information."
 	@ ${ECHO_MSG} "-------------------------------------------------------"
 .endif
 
@@ -94,4 +106,4 @@ post-install:
 	@ ${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
