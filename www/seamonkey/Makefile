@@ -12,25 +12,19 @@ PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.b1/b1/}/source
-DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.b1/b1/}${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}-source-${PORTVERSION:S/.b1/b1/}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		freetype-config:${PORTSDIR}/print/freetype2
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		mng.1:${PORTSDIR}/graphics/libmng \
-		freetype.9:${PORTSDIR}/print/freetype2
+		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
 MOZILLA?=	mozilla-devel
 MOZ_SUFX?=	-devel
-
-USE_GNOME=	gtk20 libidl
-
 LATEST_LINK=	${MOZILLA}
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 			--exclude */macbuild/*\
@@ -38,6 +32,7 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 			--exclude .cvsignore \
 			--exclude makefile.win \
 			--exclude MANIFEST
+USE_GNOME=	gtk20 libidl
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
@@ -46,6 +41,12 @@ USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
+ALL_TARGET=	default
+FAKEDIR=	${WRKDIR}/fake
+SCRIPTS_DIR=	${FAKEDIR}/lib/${MOZILLA}
+MOZ_PIS_DIR=	${SCRIPTS_DIR}/init.d
+MOZ_PIS_SCRIPTS=	S50cleanhome
+MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin
 CONFIGURE_ARGS=					\
 		--disable-auto-deps		\
 		--enable-chrome-format=jar	\
@@ -68,26 +69,23 @@ CONFIGURE_ARGS=					\
 		--enable-xinerama		\
 		--with-system-zlib		\
 		--with-system-jpeg=${LOCALBASE}	\
-		--with-system-mng=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-gssapi=/usr		\
 		--prefix=${FAKEDIR}		\
 		--with-pthreads			\
-		--enable-application=suite
+		--enable-application=suite 	\
+		--enable-xft 			\
+		--disable-freetype2 		\
+		--enable-default-toolkit=gtk2
 
 PLIST=		${WRKDIR}/pkg-plist
 MOZ_EXTENSIONS=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-
-CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
 
 ESD_LIB=	libesd.so.2
 FREETYPE_LIB=	libfreetype.so.9
-PKGCONFIG_FILES=mozilla-gtkmozembed mozilla-js \
-		mozilla-xpcom mozilla-nspr \
-		mozilla-nss mozilla-plugin
+PKGCONFIG_FILES=mozilla-gtkmozembed mozilla-js mozilla-xpcom \
+		mozilla-nspr mozilla-nss mozilla-plugin
 
 # JPI stuff.  List paths to Java Plug-ins here in the order to try.
 JPI_LIST?=\
@@ -96,12 +94,7 @@ JPI_LIST?=\
 	${LOCALBASE}/diablo-jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
 	${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so
 
-SCRIPTS_DIR=		${FAKEDIR}/lib/${MOZILLA}
-MOZ_PIS_SCRIPTS=	S50cleanhome
-MOZ_PIS_DIR=		${SCRIPTS_DIR}/init.d
-
-OPTIONS=XFT "Enable Xft font anti-aliasing" on \
-	CALENDAR "Enable the Calendar module" off \
+OPTIONS=CALENDAR "Enable the Calendar module" off \
 	MAILNEWS "Enable Mail and News modules" on \
 	COMPOSER "Enable the HTML Composer module" on \
 	DEBUG "Enable debugging (i.e. gdb) support" off \
@@ -110,21 +103,38 @@ OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 	JAVASCRIPT_DEBUGGER "Enable the DTD and JavaScript debuggers" off \
 	OPTIMIZED_CFLAGS "Enable -O2 optimizations" off \
 	SMB "Enable smb:// URI support using gnomevfs" off \
-	MENU_ENTRY "Add mozilla-devel to the GNOME menu" on
+	MENU_ENTRY "Add mozilla-devel to the GNOME menu" on \
+	CAIRO "Enable Cairo-specific Canvas features" off
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "alpha"
-BROKEN=		"Does not compile on ia64 or alpha"
+BROKEN=		Does not compile on ${ARCH}
+.endif
+
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500035
+IGNORE=		core dumps on ${ARCH} during post-build
+.endif
+
+.if exists(${X11BASE}/lib/X11/fonts/mozilla/fonts.dir)
+BROKEN=		Mozilla${MOZ_SUFX} and Xft2 render the mozilla-fonts \
+		illegibly. Please remove the mozilla-fonts package
+.endif
+
+.if defined(WITH_CALENDAR) && (defined(WITHOUT_MAILNEWS) || \
+	defined(WITHOUT_COMPOSER))
+BROKEN=		Calendar requires Composer and Mailnews support.
 .endif
 
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4
 .endif
 
-.if defined(WITH_CAIRO_RENDER)
+.if defined(WITH_CAIRO_RENDER) || defined(WITH_CAIRO)
 LIB_DEPENDS+=		svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
+.endif
 
+.if defined(WITH_CAIRO_RENDER)
 CONFIGURE_ARGS+=	--enable-svg-renderer-cairo \
 			--disable-svg-renderer-libart
 CONFIGURE_ENV+=		MOZ_SVG_RENDERER_CAIRO=1
@@ -132,30 +142,20 @@ CONFIGURE_ENV+=		MOZ_SVG_RENDERER_CAIRO=1
 CONFIGURE_ARGS+=	--enable-svg-renderer-libart \
 			--disable-svg-renderer-cairo
 CONFIGURE_ENV+=		MOZ_INTERNAL_LIBART_LGPL=1
+MAKE_ENV+=		MOZ_INTERNAL_LIBART_LGPL=1
 .endif
 
-.if !defined(WITHOUT_XFT)
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-CONFIGURE_ARGS+=--enable-xft --disable-freetype2
-.if exists(${X11BASE}/lib/X11/fonts/mozilla/fonts.dir)
-BROKEN=		Mozilla${MOZ_SUFX} and Xft2 render the mozilla-fonts \
-		illegibly. Please remove the mozilla-fonts package.
-.endif
-.else
-CONFIGURE_ARGS+=--disable-xft
+.if defined(WITH_CAIRO)
+CONFIGURE_ARGS+=	--enable-cairo
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/cairo"
 .endif
 
 .if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=--enable-debug \
-		--disable-strip
+CONFIGURE_ARGS+=	--enable-debug \
+			--disable-strip
 .else
-CONFIGURE_ARGS+=--disable-debug \
-		--enable-strip
-.endif
-
-.if defined(WITH_CALENDAR) && (defined(WITHOUT_MAILNEWS) || \
-	defined(WITHOUT_COMPOSER))
-BROKEN=	"Calendar requires Composer and Mailnews support."
+CONFIGURE_ARGS+=	--disable-debug \
+			--enable-strip
 .endif
 
 # LDAP is only used by mail and news so disable both together
@@ -190,13 +190,6 @@ CONFIGURE_ARGS+=	--enable-calendar
 CONFIGURE_ARGS+=	--disable-composer
 .endif
 
-MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin \
-		MOZ_INTERNAL_LIBART_LGPL=1
-ALL_TARGET=	default
-FAKEDIR=	${WRKDIR}/fake
-SCRIPTS_DIR=	${FAKEDIR}/lib/${MOZILLA}
-MOZ_PIS_DIR=	${SCRIPTS_DIR}/init.d
-
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS+=	--enable-reorder
 .endif
@@ -214,16 +207,8 @@ CFLAGS:=		-O ${CFLAGS:N-O*:N-m*}
 CONFIGURE_ENV+=		WITH_OPTIMIZE=-O
 .endif
 
-.if defined(WITH_MENU_ENTRY)
+.if !defined(WITHOUT_MENU_ENTRY)
 USE_GNOME+=	gnomehier
-.endif
-
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500035
-IGNORE=	"core dumps on alpha during post-build"
-.endif
-
-.if exists(${LOCALBASE}/include/freetype/freetype.h)
-BROKEN="You must upgrade your freetype port to 1.3.1_2 or higher before installing Mozilla.  If you have 1.3.1_2 installed, please remove ${LOCALBASE}/include/freetype, then build Mozilla"
 .endif
 
 post-patch:
@@ -258,15 +243,9 @@ post-patch:
 			s|mozilla-nspr|mozilla-nspr${MOZ_SUFX}|g' \
 			${WRKSRC}/build/unix/$${pcfile}.pc.in; \
 	done
-	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g ; \
-		s|%%PREFIX%%|${PREFIX}|g' \
-		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
-	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g' \
-		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		< ${FILESDIR}/mozilla-devel.desktop.in > \
 		${WRKDIR}/mozilla-devel.desktop
-
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
@@ -283,8 +262,7 @@ pre-install:
 	${TOUCH} -f ${PLIST}
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} install
-	${MKDIR} ${SCRIPTS_DIR}
-	${MKDIR} ${MOZ_PIS_DIR}
+	${MKDIR} ${SCRIPTS_DIR} ${MOZ_PIS_DIR}
 	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
 		${FAKEDIR}/bin/mozilla \
 		${FAKEDIR}/bin/mozilla-config
@@ -310,7 +288,7 @@ pre-install:
 .if !defined(WITHOUT_MAILNEWS)
 	@${CP} -RL ${WRKSRC}/dist/bin/defaults/isp ${FAKEDIR}/lib/${MOZILLA}/defaults
 .endif
-.if defined(WITH_MENU_ENTRY)
+.if !defined(WITHOUT_MENU_ENTRY)
 	 ${ECHO_CMD} share/gnome/applications/mozilla-devel.desktop >> ${PLIST}
 .endif
 	cd ${FAKEDIR}/lib/${MOZILLA} && ${FIND} -s * -type f -o -type l | \
@@ -362,16 +340,10 @@ do-install:
 	${CHMOD} 755 ${PREFIX}/include/${MOZILLA}
 	cd ${FAKEDIR}/include/${MOZILLA} && ${FIND} . | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/${MOZILLA}
-.if defined(WITH_MENU_ENTRY)
+.if !defined(WITHOUT_MENU_ENTRY)
 	${MKDIR} ${PREFIX}/share/gnome/applications
 	${INSTALL_DATA} ${WRKDIR}/mozilla-devel.desktop \
 		${PREFIX}/share/gnome/applications
-.endif
-
-post-install:
-	@${CHMOD} -R u-w ${PREFIX}/lib/${MOZILLA}/components
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
 .include <bsd.port.post.mk>
