@@ -8,6 +8,7 @@
     SUBDIR += SWIG
     SUBDIR += SpecTcl
     SUBDIR += a2dev
+    SUBDIR += adabroker
     SUBDIR += amulet
     SUBDIR += asis
     SUBDIR += asl
