@@ -17,7 +17,8 @@ USE_BISON=	yes
 USE_REINPLACE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CC/d ; /^CFLAGS/d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/^CC/d ; /^CFLAGS/d ; /dfasyn/d' \
+		 ${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mairix ${PREFIX}/bin
