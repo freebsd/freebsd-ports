@@ -224,6 +224,7 @@ if ($check_id != 0) {
     }
     if ($failed) {
 	print "\n";
+	unlink("$LAST_FILE.$id");
 	exit(1);
     }
 }
