@@ -13,5 +13,5 @@ Examples:
 	input:	gb2ps -b 3 -e 5 cm9208a.hz cm
 	output:	PS program cm from page 3 to page 5.
 
-then you can print out the chinese document by sending the PS output
+then you can print out the Chinese document by sending the PS output
 to your PS printer.

@@ -1,11 +1,11 @@
 The BYTE benchmark suite tests several aspects of system performance.
 
-An article, which describes the concepts and helps understand the results 
+An article which describes the concepts and helps understand the results 
 can be found in the doc directory (/usr/local/lib/bytebench/doc if you use 
 a PREFIX of /usr/local).
 
 This benchmark is quite prominent among Linux users, and there is a patched 
-version available from some web suite, from where results are made available, 
+version available from some web suite from where results are made available, 
 too.
 
 Since they offer some results of non-Linux systems for comparison, they might 

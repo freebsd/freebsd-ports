@@ -1,8 +1,8 @@
 cxterm is a xterm replacement with Chinese (Simple/GB and Complex/Big5)
 support.  This version of cxterm is derived from the X11R6 xterm, and thus
-has simular capabilities.
+has similar capabilities.
 
-Note, if you are a new user, or not quite understand X resources or X font
+Note, if you are a new user, or do not quite understand X resources or X font
 paths, etc., simply use the command "CXterm".
 
 

@@ -1,5 +1,5 @@
-SPICE is a general-purpose circuit simulation program for nonlinear dc,
-nonlinear transient, and linear ac analyses. Circuits may contain resistors,
+SPICE is a general-purpose circuit simulation program for nonlinear DC,
+nonlinear transient, and linear AC analyses. Circuits may contain resistors,
 capacitors, inductors, mutual inductors, independent voltage and current
 sources, four types of dependent sources, lossless and lossy transmission
 lines (two separate implementations), switches, uniform distributed RC

@@ -1,14 +1,14 @@
-ACS is a general purpose circuit simulator.  It performs nonlinear
-dc and transient analyses, fourier analysis, and ac analysis
+ACS is a general-purpose circuit simulator.  It performs nonlinear
+DC and transient analyses, Fourier analysis, and AC analysis
 linearized at an operating point.  It is fully interactive and
 command driven.  It can also be run in batch mode or as a server.
-The output is produced as it simulates.  Spice compatible models
+The output is produced as it simulates.  Spice-compatible models
 for the MOSFET (level 1 and 2) and diode are included in this
 release.
 
 Since it is fully interactive, it is possible to make changes and
 re-simulate quickly.  The interactive design makes it well suited
-to the typical iterative design process used it optimizing a circuit
+to the typical iterative design process used in optimizing a circuit
 design.  It is also well suited to undergraduate teaching where
 Spice in batch mode can be quite intimidating.  This version, while
 still officially in beta test, should be stable enough for basic

@@ -1,5 +1,5 @@
-bg5ps is a Python script that generates Postscript from Chinese Big5 encoded
-file. You have to specify the TTF font path (default: ~/.bg5ps.conf).
+bg5ps is a Python script that generates Postscript from a Chinese Big5
+encoded file. You have to specify the TTF font path (default: ~/.bg5ps.conf).
 
 bg5ps -fp fontpath -fn fontname
       -o [1|0] -e [1|0]

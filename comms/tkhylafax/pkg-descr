@@ -2,7 +2,7 @@ tkhylafax is a tcl/tk interface to Sam Leffler's HYLAFAX package
 
 features:
 	o Batching fax destinations
-	o Builtin faxnumber database
+	o Built-in fax number database
 	o Fast cover sheet generation 
 	o Cover sheet preview
 	o Cover sheet ONLY transmission option

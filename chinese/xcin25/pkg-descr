@@ -1,15 +1,14 @@
-    Thanks to Mr. Edward Der-Hua Liu and others who developed the xcin
-system.  With the wonderful program, we can do a lot of operation with
-Chinese under  X-window in the UN*X world.  As time goes on, more  and 
-more  people use it,  and more and more comments appear.  The  package
-upgraded  with  time but it seems that  the  install  process  is  not 
-convenient  and  self-consistent.  These  confuse  a  lot  of  people, 
-especially for new users in the UN*X world. We often see the `Big FAQs' 
-about  xcin  such  as `how  can  I install the Chinese  fonts' or `the 
-cj2cin  command  not  found' or `the  crxvt  terminal is too big!!' or 
-something  appears  in  the newsgroup again and again.  In  fact, such 
-problems  are easy to modify.  Beasuse I really like this program  and 
-feel that I may do something to improve this package, so I try my best 
-to  re-write  the  Makefiles  and  auto-configuration programs of this 
-package to try  to  solve  these troubles.  This comes the  `xcin-2.3' 
-project. 
+Thanks to Mr. Edward Der-Hua Liu and others who developed the xcin
+system. With the wonderful program, we can do a lot of operations with
+Chinese under the X Window System in the UN*X world. As time goes on,
+more and more people use it, and more and more comments appear. The
+package hs been upgraded with time but it seems that the install process
+is not convenient and self-consistent. These confuse a lot of people,
+especially for new users in the UN*X world. We often see the `Big FAQs'
+about xcin such as `how can I install the Chinese fonts' or `the cj2cin
+command not found' or `the crxvt terminal is too big!!' or something
+appears in the newsgroup again and again. In fact, such problems are
+easy to remedy. Because I really like this program and feel that I may
+do something to improve this package, I try my best to re-write the
+Makefiles and auto-configuration programs of this package to try to
+solve these troubles. This comes the `xcin-2.3' project.
