@@ -15,12 +15,12 @@ COMMENT=	XML toolkit implementing XSLT 1.0, XPath 1.0 and DOM Level2
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
-# If WITH_DISABLE_META is defined sablot will not output the META html tag
-#WITH_DISABLE_META=	yes
-
-# Define WITH_ICONV_TYPECAST to typecast the second parameter
-# of iconv to char**
-#WITH_ICONV_TYPECAST=	yes
+OPTIONS=	DISABLE_META "Do not output the META html tag" off \
+		ICONV_TYPECAST "Use iconv typecast" off \
+		DOM "Use DOM" on \
+		DOCUMENT_ERRORS "Allow document errors" on \
+		CHECK_LEAKS "Enable memory leaks checking" off \
+		DEBUGGER "Enable debugger" off
 
 INSTALLS_SHLIB=	yes
 
@@ -38,7 +38,7 @@ MAN1=	sabcmd.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_ADDING_META)
+.if defined(WITH_DISABLE_META)
 CONFIGURE_ARGS+=	--disable-adding-meta
 .endif
 
@@ -73,6 +73,7 @@ post-patch:
 	@${PERL} -pi -e \
 	's!(?<=libsablot_la_LDFLAGS = -version-info )(\d+):(\d+):\1!${SHLIB_MAJOR}:$$1:${SHLIB_MAJOR}!;' \
 		${WRKSRC}/src/engine/Makefile.in
+	@${PERL} -pi -e 's!se // !! if $$. = 407' ${WRKSRC}/src/engine/base.h
 .if defined(NOPORTDOCS)
 	@${PERL} -pi -e 's!(?<=SUBDIRS = )(.*)!man!' ${WRKSRC}/doc/Makefile.in
 .endif
