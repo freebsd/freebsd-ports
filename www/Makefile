@@ -100,6 +100,7 @@
     SUBDIR += tidy
     SUBDIR += tinyproxy
     SUBDIR += transproxy
+    SUBDIR += udmsearch
     SUBDIR += w3
     SUBDIR += w3c-httpd
     SUBDIR += w3m
