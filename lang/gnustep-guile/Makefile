@@ -8,8 +8,8 @@
 PORTNAME=	gnustep
 PORTVERSION=	0.6.6
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
-		ftp://ftp.peanuts.org/Mirrors/GNUstep/gnustep/core/
+MASTER_SITES=	http://ftp.codefactory.se/pub/gnu/gstep/ \
+		http://planetmirror.com/pub/gnustep/core/
 DISTNAME=	gstep-core-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
