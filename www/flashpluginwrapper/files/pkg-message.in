@@ -1,13 +1,10 @@
-To use the flash plugin wrapper, you first need to copy the linux flash
-plugin into your mozilla directory:
+If you are using a Mozilla browser, you first need to copy the linux
+flash plugin into the mozilla plugins directory:
 
 # cp %%LOCALBASE%%/lib/flash/libflashplayer.so \
-    %%X11BASE%%/lib/mozilla/plugins/libflashplayer_linux.so
+    %%X11BASE%%/lib/browser_plugins/libflashplayer_linux.so
 # cp %%LOCALBASE%%/lib/flash/ShockwaveFlash.class \
-    %%X11BASE%%/lib/mozilla/plugins/
-
-(Note, if you are using mozilla-devel, the destination directories will be
-different)
+    %%X11BASE%%/lib/browser_plugins/
 
 Next, change the Mozilla startup script, %%X11BASE%%/bin/mozilla
 to have:

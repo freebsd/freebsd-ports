@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	petef
 
 MAINTAINER=	petef@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/flash/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin \
-		mozilla:${PORTSDIR}/www/mozilla
+RUN_DEPENDS=	${LOCALBASE}/lib/flash/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin
 
 USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
