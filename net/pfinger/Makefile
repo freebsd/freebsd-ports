@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.xelia.ch/pub/unix/ \
 
 MAINTAINER=	ijliao@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
@@ -23,6 +24,6 @@ MAN5=	fingerconf.5
 MAN8=	in.fingerd.8
 
 post-patch:
-	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/src/configfile.c
+	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/src/configfile.c
 
 .include <bsd.port.mk>
