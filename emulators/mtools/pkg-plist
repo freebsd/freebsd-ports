@@ -20,7 +20,6 @@ bin/mmount
 bin/mmove
 bin/mpartition
 bin/mrd
-bin/mread
 bin/mren
 bin/mshowfat
 bin/mtools
