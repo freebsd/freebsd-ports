@@ -268,6 +268,7 @@
     SUBDIR += p5-TeX-Hyphen
     SUBDIR += p5-Text-Autoformat
     SUBDIR += p5-Text-Balanced
+    SUBDIR += p5-Text-BibTeX
     SUBDIR += p5-Text-Bind
     SUBDIR += p5-Text-CSV
     SUBDIR += p5-Text-CSV_XS
