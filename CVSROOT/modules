@@ -7303,6 +7303,7 @@ q3server-ut	ports/games/q3server-ut
 q3server-wfa	ports/games/q3server-wfa
 qadsl		ports/net/qadsl
 qbrew		ports/misc/qbrew
+qc--		ports/lang/qc--
 qcad		ports/cad/qcad
 qcc		ports/games/qcc
 qcl		ports/emulators/qcl
