@@ -8,7 +8,7 @@
 PORTNAME=	rname
 PORTVERSION=	1.0
 CATEGORIES=	misc
-MASTER_SITES=	http://ringwraith.online.bg/~roam/devel/sys/rname/
+MASTER_SITES=	http://ringwraith.online.bg/~roam/devel/sysutils/rname/
 
 MAINTAINER=	roam@FreeBSD.org
 
