@@ -116,7 +116,7 @@ DLTEST=112887-04.tar
 	@${ECHO} mounted on ${CD_MOUNTPT}.  If you wish to install from
 	@${ECHO} this CD-ROM, please run 
 	@${ECHO}
-	@${ECHO}        make -USE_CDROM
+	@${ECHO}        make USE_CDROM=YES
 	@${ECHO}
 	@${ECHO} Otherwise please unmount the CD-ROM.
 	@${ECHO}
