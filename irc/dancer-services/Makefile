@@ -15,11 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	The IRC services (nickserv, chanserv, etc.) for dancer-ircd
 
-BROKEN=		"Configure fails"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-21
-
-BUILD_DEPENDS+=		${LOCALBASE}/bin/autoconf:${PORTSDIR}/devel/autoconf
+BUILD_DEPENDS+=		${LOCALBASE}/bin/autoconf:${PORTSDIR}/devel/autoconf \
+			${LOCALBASE}/bin/automake:${PORTSDIR}/devel/automake
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
