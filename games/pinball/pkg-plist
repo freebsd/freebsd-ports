@@ -62,13 +62,10 @@ include/pinball/TextureUtil.h
 include/pinball/TransformVisitor.h
 include/pinball/Visitor.h
 include/pinball/pinconfig.h
-lib/pinball/libModuleProfessor.a
 lib/pinball/libModuleProfessor.so
 lib/pinball/libModuleProfessor.so.0
-lib/pinball/libModuleTest.a
 lib/pinball/libModuleTest.so
 lib/pinball/libModuleTest.so.0
-lib/pinball/libModuleTux.a
 lib/pinball/libModuleTux.so
 lib/pinball/libModuleTux.so.0
 lib/pinball/libemilia_addon.a
@@ -122,3 +119,6 @@ lib/pinball/libemilia_pin.a
 @dirrm %%DATADIR%%/tux
 @dirrm %%DATADIR%%/professor
 @dirrm %%DATADIR%%
+@unexec rm -f %D/lib/pinball/libModuleTux.la
+@unexec rm -f %D/lib/pinball/libModuleProfessor.la
+@unexec rm -f %D/lib/pinball/libModuleTest.la
