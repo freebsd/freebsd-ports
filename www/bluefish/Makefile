@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bluefish
-PORTVERSION= 	0.4
+PORTVERSION= 	0.5
 CATEGORIES=	www editors
 MASTER_SITES=	http://bluefish.openoffice.nl/download/ \
 		http://student.wau.nl/~olivier/bluefish/download/
