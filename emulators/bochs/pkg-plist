@@ -4,7 +4,6 @@ lib/bochs/bios/BIOS-bochs-990925a
 lib/bochs/bochsrc.sample
 share/doc/bochs/3rdparty.license.html
 share/doc/bochs/DOS.html
-share/doc/bochs/LICENSE
 share/doc/bochs/Linux.html
 share/doc/bochs/Minix.html
 share/doc/bochs/OldWindows95.html
@@ -24,7 +23,6 @@ share/doc/bochs/guestNT.html
 share/doc/bochs/index.html
 share/doc/bochs/install.html
 share/doc/bochs/instrumentation.html
-share/doc/bochs/licensing.html
 share/doc/bochs/mtools.html
 share/doc/bochs/sound.html
 share/doc/bochs/undercon.gif
