@@ -7235,6 +7235,7 @@ pmars		ports/games/pmars
 pmf		ports/net/pmf
 pmk		ports/devel/pmk
 pmw		ports/x11-toolkits/pmw
+pnews		ports/www/pnews
 png		ports/graphics/png
 png2html	ports/graphics/png2html
 png2ico		ports/graphics/png2ico
