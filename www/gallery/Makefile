@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gallery
-PORTVERSION=	1.4.0.1
+PORTVERSION=	1.4.0.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.0.1/-pl1/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.[0-9]\.([0-9]+)$/-pl\1/}
 
 MAINTAINER=	jamie@hermans.ca
 COMMENT=	Gallery is a slick web based photo album written using PHP

@@ -152,7 +152,7 @@
 %%GALLERYDIR%%/layout/navigator.inc
 %%GALLERYDIR%%/layout/navphoto.inc
 %%GALLERYDIR%%/layout/searchdraw.inc
-%%GALLERYDIR%%/locale/cs_CZ/LC_MESSAGES/gallery.mo
+%%GALLERYDIR%%/locale/bg_BG/LC_MESSAGES/gallery.mo
 %%GALLERYDIR%%/locale/da_DK/LC_MESSAGES/gallery.mo
 %%GALLERYDIR%%/locale/de_DE/LC_MESSAGES/gallery.mo
 %%GALLERYDIR%%/locale/en_GB/LC_MESSAGES/gallery.mo
@@ -161,13 +161,16 @@
 %%GALLERYDIR%%/locale/fr_CA/LC_MESSAGES/gallery.mo
 %%GALLERYDIR%%/locale/fr_FR/LC_MESSAGES/gallery.mo
 %%GALLERYDIR%%/locale/he_IL/LC_MESSAGES/gallery.mo
+%%GALLERYDIR%%/locale/hu_HU/LC_MESSAGES/gallery.mo
 %%GALLERYDIR%%/locale/is_IS/LC_MESSAGES/gallery.mo
 %%GALLERYDIR%%/locale/it_IT/LC_MESSAGES/gallery.mo
 %%GALLERYDIR%%/locale/ja_JP/LC_MESSAGES/gallery.mo
+%%GALLERYDIR%%/locale/ko_KR/LC_MESSAGES/gallery.mo
 %%GALLERYDIR%%/locale/lt_LT/LC_MESSAGES/gallery.mo
 %%GALLERYDIR%%/locale/nl_NL/LC_MESSAGES/gallery.mo
 %%GALLERYDIR%%/locale/no_NO/LC_MESSAGES/gallery.mo
 %%GALLERYDIR%%/locale/pl_PL/LC_MESSAGES/gallery.mo
+%%GALLERYDIR%%/locale/pt_BR/LC_MESSAGES/gallery.mo
 %%GALLERYDIR%%/locale/pt_PT/LC_MESSAGES/gallery.mo
 %%GALLERYDIR%%/locale/ru_RU.koi8r/LC_MESSAGES/gallery.mo
 %%GALLERYDIR%%/locale/ru_RU/LC_MESSAGES/gallery.mo
@@ -187,8 +190,9 @@
 %%GALLERYDIR%%/platform/fs_unix.php
 %%GALLERYDIR%%/platform/fs_win32.php
 %%GALLERYDIR%%/po/CREDITS
+%%GALLERYDIR%%/po/bg_BG-gallery.po
+%%GALLERYDIR%%/po/copyright.txt
 %%GALLERYDIR%%/po/create_po_template.sh
-%%GALLERYDIR%%/po/cs_CZ-gallery.po
 %%GALLERYDIR%%/po/da_DK-gallery.po
 %%GALLERYDIR%%/po/de_DE-gallery.po
 %%GALLERYDIR%%/po/en_GB-gallery.po
@@ -198,14 +202,17 @@
 %%GALLERYDIR%%/po/fr_FR-gallery.po
 %%GALLERYDIR%%/po/gallery.pot
 %%GALLERYDIR%%/po/he_IL-gallery.po
+%%GALLERYDIR%%/po/hu_HU-gallery.po
 %%GALLERYDIR%%/po/is_IS-gallery.po
 %%GALLERYDIR%%/po/it_IT-gallery.po
 %%GALLERYDIR%%/po/ja_JP-gallery.po
+%%GALLERYDIR%%/po/ko_KR-gallery.po
 %%GALLERYDIR%%/po/lt_LT-gallery.po
 %%GALLERYDIR%%/po/make_mo_files.sh
 %%GALLERYDIR%%/po/nl_NL-gallery.po
 %%GALLERYDIR%%/po/no_NO-gallery.po
 %%GALLERYDIR%%/po/pl_PL-gallery.po
+%%GALLERYDIR%%/po/pt_BR-gallery.po
 %%GALLERYDIR%%/po/pt_PT-gallery.po
 %%GALLERYDIR%%/po/remove_obsolete.pl
 %%GALLERYDIR%%/po/ru_RU-gallery.po
@@ -251,6 +258,8 @@
 %%GALLERYDIR%%/slideshow.php
 %%GALLERYDIR%%/slideshow_low.php
 %%GALLERYDIR%%/sort_album.php
+%%GALLERYDIR%%/tools/g1-report.css
+%%GALLERYDIR%%/tools/g1-report.php
 %%GALLERYDIR%%/upgrade_album.php
 %%GALLERYDIR%%/upgrade_users.php
 %%GALLERYDIR%%/user_preferences.php
@@ -259,6 +268,7 @@
 %%GALLERYDIR%%/view_comments.php
 %%GALLERYDIR%%/view_photo.php
 %%GALLERYDIR%%/view_photo_properties.php
+@dirrm %%GALLERYDIR%%/tools
 @dirrm %%GALLERYDIR%%/setup
 @dirrm %%GALLERYDIR%%/po
 @dirrm %%GALLERYDIR%%/platform
@@ -280,6 +290,8 @@
 @dirrm %%GALLERYDIR%%/locale/ru_RU
 @dirrm %%GALLERYDIR%%/locale/pt_PT/LC_MESSAGES
 @dirrm %%GALLERYDIR%%/locale/pt_PT
+@dirrm %%GALLERYDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%GALLERYDIR%%/locale/pt_BR
 @dirrm %%GALLERYDIR%%/locale/pl_PL/LC_MESSAGES
 @dirrm %%GALLERYDIR%%/locale/pl_PL
 @dirrm %%GALLERYDIR%%/locale/no_NO/LC_MESSAGES
@@ -288,12 +300,16 @@
 @dirrm %%GALLERYDIR%%/locale/nl_NL
 @dirrm %%GALLERYDIR%%/locale/lt_LT/LC_MESSAGES
 @dirrm %%GALLERYDIR%%/locale/lt_LT
+@dirrm %%GALLERYDIR%%/locale/ko_KR/LC_MESSAGES
+@dirrm %%GALLERYDIR%%/locale/ko_KR
 @dirrm %%GALLERYDIR%%/locale/ja_JP/LC_MESSAGES
 @dirrm %%GALLERYDIR%%/locale/ja_JP
 @dirrm %%GALLERYDIR%%/locale/it_IT/LC_MESSAGES
 @dirrm %%GALLERYDIR%%/locale/it_IT
 @dirrm %%GALLERYDIR%%/locale/is_IS/LC_MESSAGES
 @dirrm %%GALLERYDIR%%/locale/is_IS
+@dirrm %%GALLERYDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%GALLERYDIR%%/locale/hu_HU
 @dirrm %%GALLERYDIR%%/locale/he_IL/LC_MESSAGES
 @dirrm %%GALLERYDIR%%/locale/he_IL
 @dirrm %%GALLERYDIR%%/locale/fr_FR/LC_MESSAGES
@@ -310,8 +326,8 @@
 @dirrm %%GALLERYDIR%%/locale/de_DE
 @dirrm %%GALLERYDIR%%/locale/da_DK/LC_MESSAGES
 @dirrm %%GALLERYDIR%%/locale/da_DK
-@dirrm %%GALLERYDIR%%/locale/cs_CZ/LC_MESSAGES
-@dirrm %%GALLERYDIR%%/locale/cs_CZ
+@dirrm %%GALLERYDIR%%/locale/bg_BG/LC_MESSAGES
+@dirrm %%GALLERYDIR%%/locale/bg_BG
 @dirrm %%GALLERYDIR%%/locale
 @dirrm %%GALLERYDIR%%/layout
 @dirrm %%GALLERYDIR%%/js
