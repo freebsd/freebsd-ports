@@ -1,38 +1,29 @@
 # New ports collection makefile for:    dri
-# Date created:		08 Nov 2003
+# Date created:		8 Nov 2003
 # Whom:			anholt@FreeBSD.org
 #
 # $FreeBSD$
 #
 
 PORTNAME=	dri
-PORTVERSION=	4.3.0
+PORTVERSION=	5.0.2
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_XFREE}
-MASTER_SITE_SUBDIR=	${PORTVERSION}
-DISTFILES=	X430src-1.tgz \
-		X430src-2.tgz \
-		X430src-3.tgz
+MASTER_SITES=	${MASTER_SITE_XORG}
+DISTFILES=	X11R6.7.0-src1.tar.gz \
+		X11R6.7.0-src3.tar.gz
 
 MAINTAINER=	anholt@FreeBSD.org
-COMMENT=	OpenGL hardware acceleration drivers for XFree86
+COMMENT=	OpenGL hardware acceleration drivers for the DRI
 
-.for pf in \
-	patch-GL-Imakefile \
-	patch-radeondri \
-	patch-r200_vtxtmp_x86.S \
-	patch-radeon_vtxtmp_x86.S \
-	patch-dri_util.c
-EXTRA_PATCHES+=		${FILESDIR}/${pf}
-.endfor
+EXTRA_PATCHES+=		${CF_PATCHES}
 
 ONLY_FOR_ARCHS=		i386 alpha
 
 XBUILD_DIRS=		lib/GL
 XINSTALL_DIRS=		lib/GL/mesa/src/drv
 
-.include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
+.include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
 .include <bsd.port.pre.mk>
 .if ${ARCH} == i386
 PLIST_SUB+=	I386=""
