@@ -22,7 +22,7 @@
  #CFLAGS = -O		# SUN etc ...
  #CFLAGS = -O -traditional -DPOSIX	# 386bsd (gcc 1.X)
 -#CFLAGS = -O -DPOSIX	# Netbsd (gcc 2.X), Linux
-+CFLAGS = -O2 -DPOSIX	# Netbsd (gcc 2.X), Linux
++CFLAGS += -DPOSIX	# Netbsd (gcc 2.X), Linux
  #CFLAGS = -O -bsd	# NeXT
  #CFLAGS = -O -DMSDOS -DPOSIX	# DJGCC (gcc 2.X)
  #CFLAGS = -O -DSYSV	# SysV
