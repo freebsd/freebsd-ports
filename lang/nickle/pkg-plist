@@ -61,4 +61,5 @@ include/nickle/value.h
 @dirrm %%DATADIR%%/examples/turtle/
 @dirrm %%DATADIR%%/examples/smlng
 @dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%
+@unexec /bin/rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrm include/nickle
