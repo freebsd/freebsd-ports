@@ -1,0 +1,23 @@
+include/c-client/dummy.h
+include/c-client/env.h
+include/c-client/env_unix.h
+include/c-client/fdstring.h
+include/c-client/flstring.h
+include/c-client/fs.h
+include/c-client/ftl.h
+include/c-client/imap4r1.h
+include/c-client/linkage.c
+include/c-client/linkage.h
+include/c-client/mail.h
+include/c-client/misc.h
+include/c-client/nl.h
+include/c-client/nntp.h
+include/c-client/osdep.h
+include/c-client/pop3.h
+include/c-client/rfc822.h
+include/c-client/smtp.h
+include/c-client/tcp.h
+lib/libc-client4.a
+lib/libc-client4.so.7
+lib/libc-client4.so
+@dirrm include/c-client
