@@ -14,8 +14,6 @@ DISTNAME=	metalist-${PORTVERSION}
 MAINTAINER=	autrijus@autrijus.org
 COMMENT=	A Chinese port of Slash-Like Automatic Storytelling Homepage system
 
-BROKEN=		"Does not compile/install"
-
 BUILD_DEPENDS=	${LOCALBASE}/bin/safe_mysqld:${PORTSDIR}/databases/mysql323-server \
 		${SITE_PERL}/Bundle/Slash.pm:${PORTSDIR}/www/p5-Bundle-Slash \
 		${SITE_PERL}/Test/Harness.pm:${PORTSDIR}/devel/p5-Test-Harness \
@@ -24,11 +22,20 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 
 LIB_PERL=	${LOCALBASE}/lib/perl5/${PERL_VER}
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
-
 DOCS=		README README.metalist INSTALL
+
+CONFLICTS=	slash
 
 post-install:
 	@${SED} s!%%LOCALBASE%%!${LOCALBASE}!g ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+pre-everything::
+.if ${PERL_LEVEL} < 500601
+BROKEN=        metalist only supports the ports versions of Perl.
+BROKEN+=If you have installed a Perl port, and are getting this message,
+BROKEN+=please make sure you have given the command \'use.perl port\'
+.endif # ${PERL_LEVEL} < 500601
+
+.include <bsd.port.post.mk>
