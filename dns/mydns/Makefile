@@ -7,7 +7,7 @@
 
 PORTNAME=	mydns
 PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns databases
 MASTER_SITES=	http://mydns.bboy.net/download/
 
@@ -31,6 +31,14 @@ DOCS=		AUTHORS COPYING ChangeLog NEWS QUICKSTART.mysql QUICKSTART.postgres READM
 
 .include <bsd.port.pre.mk>
 
+.if defined (WITH_ALIAS)
+CONFIGURE_ARGS+=--enable-alias
+.endif
+
+.if defined (WITH_OPENSSL)
+CONFIGURE_ARGS+=--with-openssl
+.endif
+
 .if defined (WITH_PGSQL)
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+=--without-mysql
@@ -46,6 +54,15 @@ LIB_DEPENDS+=	mysqlclient.14:${PORTSDIR}/databases/mysql41-client
 LIB_DEPENDS+=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
 .endif
 .endif
+
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "      WITH_PGSQL=yes          Build with PostgreSQL support"
+	@${ECHO} "      WITH_ALIAS=yes          Enable server side aliases"
+	@${ECHO} "      WITH_OPENSSL=yes        Enable OpenSSL (needed if MySQL is linked with OpenSSL"
+	@${ECHO} ""
 
 post-install:
 	@${SED} 's|%%%PREFIX%%%|${PREFIX}|g' < ${FILESDIR}/mydns.sh > ${WRKSRC}/mydns.sh
