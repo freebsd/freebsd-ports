@@ -1,7 +1,0 @@
-This library implements a set of tools for processing XML documents,
-as well as working with XML-like structures in Erlang. The main
-attraction so far is a single-pass, highly customizable XML processor.
-Other components are an export/translation facility and an XPATH
-query engine.
-
-WWW: http://sowap.sourceforge.net/sowap2.html
