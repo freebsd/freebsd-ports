@@ -623,6 +623,7 @@
     SUBDIR += subversion
     SUBDIR += swarm
     SUBDIR += swigruby
+    SUBDIR += sysconftool
     SUBDIR += t1lib
     SUBDIR += tcl-memchan
     SUBDIR += tcl-neo

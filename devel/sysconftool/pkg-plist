@@ -1,0 +1,8 @@
+bin/sysconftoolize
+bin/sysconftoolcheck
+share/automake14/aclocal/sysconftool.m4
+share/sysconftool/sysconftool
+share/sysconftool/sysconftoolize.pl
+share/sysconftool/sysconftoolcheck
+share/sysconftool/sysconftoolize.am
+@dirrm share/sysconftool
