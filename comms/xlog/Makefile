@@ -21,9 +21,13 @@ MAN1=		xlog.1
 .include <bsd.port.mk>
 
 .if defined(WITH_HAMLIB)
-LIB_DEPENDS=    hamlib-1.1.4.1:${PORTSDIR}/comms/hamlib
+LIB_DEPENDS=    hamlib:${PORTSDIR}/comms/hamlib
 CONFIGURE_ARGS+=        --enable-hamlib
 PLIST_SUB+=     HAMLIB=""
-CONFIGURE_ENV=	PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
-MAKE_ENV=	PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
+USE_PKGCONFIG=	yes
+.endif
+
+pre-extract:
+.if !defined(WITH_HAMLIB)
+	@${ECHO_MSG} "You can enable hamlib support for Xlog by defining WITH_HAMLIB"
 .endif
