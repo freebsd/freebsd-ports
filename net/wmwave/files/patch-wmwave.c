@@ -1,5 +1,5 @@
---- wmwave.c.orig	Fri Aug 20 14:44:21 1999
-+++ wmwave.c	Tue May 21 11:05:44 2002
+--- wmwave.c.orig	Fri Aug 20 09:44:21 1999
++++ wmwave.c	Mon Jun 17 18:53:19 2002
 @@ -1,38 +1,21 @@
  /*
 + * $Id$
@@ -52,7 +52,7 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <time.h>
-@@ -45,313 +28,394 @@
+@@ -45,313 +28,389 @@
  #include <limits.h>
  #include <errno.h>
  #include <signal.h>
@@ -80,13 +80,8 @@
 +#include <netinet/ip.h>
 +#include <netinet/ip_var.h>
 +#include <arpa/inet.h>
-+#include <osreldate.h>
 +
-+#if __FreeBSD_version >= 500015
 +#include <dev/wi/if_wavelan_ieee.h>
-+#else
-+#include <machine/if_wavelan_ieee.h>
-+#endif
  
  #include <X11/Xlib.h>
  #include <X11/xpm.h>
@@ -100,8 +95,6 @@
 -char wmwave_mask_bits[64*64];
 -int wmwave_mask_width = 64;
 -int wmwave_mask_height = 64;
--
--#define WMWAVE_VERSION "0.4"
 +char            wmwave_mask_bits[64 * 64];
 +int             wmwave_mask_width = 64;
 +int             wmwave_mask_height = 64;
@@ -125,6 +118,8 @@
 +void            DrawBar(float percent, int dx, int dy);
 +void            DrawGreenBar(float percent, int dx, int dy);
  
+-#define WMWAVE_VERSION "0.4"
+-
 -int update_rate=100000;
 -
 -char *ProgName;
