@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hunch
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 CATEGORIES=	security
 MASTER_SITES=	http://web.cs.cmu.edu/~dpelleg/download/
 
