@@ -123,12 +123,14 @@ include/botan/whrlpool.h
 include/botan/x917_rng.h
 include/botan/x919_mac.h
 include/botan/xtea.h
+include/opencl
 @dirrm include/botan
 lib/libbotan.a
 lib/libbotan-%%PORTVERSION%%.so
 lib/libbotan-1.0.so
 lib/libbotan-1.so
 lib/libbotan.so
+lib/libopencl.so
 share/doc/botan-%%PORTVERSION%%/api.ps
 share/doc/botan-%%PORTVERSION%%/api.tex
 share/doc/botan-%%PORTVERSION%%/authors.txt
