@@ -1,1 +1,5 @@
-MD5 (squid-1.1.3-src.tar.gz) = e5687bc711b53c74323f06a52c1cd971
+MD5 (squid/squid-1.1.4-src.tar.gz) = 547d7424af78e16bb74435093eef2aeb
+MD5 (squid/ftpget.c.patch) = 8b0b2a43c2ac6b2674a111efe9248e40
+MD5 (squid/icp.c.patch) = 75dfd4b30822c549b857acc5929a73e8
+MD5 (squid/ipcache.c.patch) = 0e6f55edeb835ae277e8bbc4c3b91803
+MD5 (squid/neighbors.c.patch) = 71f7ad22709093672200eb29b7057c05
