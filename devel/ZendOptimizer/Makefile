@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZendOptimizer
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.5
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd${VER}-i386
 
@@ -28,7 +28,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 IGNORE=		"This port is for FreeBSD 4 or above"
 .else
 .if ${OSVERSION} < 500000
-VER=		4.0
+VER=		4.3
 .else
 VER=		5.1
 .endif
@@ -48,7 +48,7 @@ and place it in ${DISTDIR}.\n
 .if ${PHP_VER} == 4
 ZEND_PATH=	4.3.x
 .else
-ZEND_PATH=	5.0.0
+ZEND_PATH=	5.0.x
 .endif
 
 PLIST_SUB+=	ZEND_PATH=${ZEND_PATH}
