@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION= 	2.1.15
-PORTREVISION=	2
+PORTVERSION= 	2.1.16
+#PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/cyrus-mail/&,}
 
 PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
-PATCHFILES=	${DISTNAME}-ipv6-20030819.diff.gz
+PATCHFILES=	${DISTNAME}-ipv6-20031121.diff.gz
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
