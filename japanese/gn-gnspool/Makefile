@@ -11,7 +11,7 @@ CATEGORIES=	japanese news
 MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/misc/gn/
 DISTNAME=	gn-${PORTVERSION}
 
-MAINTAINER=	seiken@ARGV.AC
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Simple Japanese Newsreader with Local Spool Support
 
 # The program ``configure'' sometimes issue questions and
