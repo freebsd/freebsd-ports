@@ -7,6 +7,7 @@
 
 PORTNAME=	GD
 PORTVERSION=	1.41
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	GD
@@ -15,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl5 interface to Gd Graphics Library
 
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd1.2:${PORTSDIR}/graphics/gd
 
 PERL_CONFIGURE=	yes
 USE_REINPLACE=	yes
@@ -26,7 +27,7 @@ MAN3=		GD.3
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's,@@LOCALBASE@@,${LOCALBASE},g' \
-		-e 's,@@LOCALBASE@@,${LOCALBASE},g' \
+		-e 's,@@X11BASE@@,${X11BASE},g' \
 		${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

@@ -6,7 +6,7 @@
 
 PORTNAME=	http-analyze
 PORTVERSION=	2.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.rent-a-guru.de/pub/http-analyze2.01/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	todd@thisisa.com
 COMMENT=	A fast Log-Analyzer for web servers
 
 BUILD_DEPENDS=	gif2png:${PORTSDIR}/graphics/gif2png
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
 
 MAN1=		http-analyze.1
 

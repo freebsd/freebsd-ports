@@ -8,6 +8,7 @@
 
 PORTNAME=	genpak
 PORTVERSION=	0.26
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://www.bioinformatics.org/genpak/download/
 DISTNAME=	gp-${PORTVERSION}
@@ -16,8 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GP is a set of small utilities to manipulate DNA sequences
 
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
-		png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
 
 USE_GMAKE=	yes
 MAKE_ENV=	GMAKE="${GMAKE}" MANPREFIX="${MANPREFIX}"

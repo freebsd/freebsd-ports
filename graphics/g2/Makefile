@@ -7,7 +7,7 @@
 
 PORTNAME=	g2
 PORTVERSION=	0.40
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/graphics
@@ -15,11 +15,11 @@ MASTER_SITE_SUBDIR=	libs/graphics
 MAINTAINER=	billf@FreeBSD.org
 COMMENT=	An easy to use, portable and powerful 2D graphics library
 
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=  CFLAGS="${CFLAGS} -I${PREFIX}/include/gd"
+CONFIGURE_ENV=  CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
 do-build:
 	cd ${WRKSRC} ; make depend ; make

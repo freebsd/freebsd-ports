@@ -34,7 +34,7 @@ PLIST_SUB+=	TCL="@comment "
 .endif
 
 .if defined(WITH_RIGMATRIX)
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
 CONFIGURE_ARGS+=	--with-rigmatrix
 PLIST_SUB+=	RIGMATRIX=""
 .else

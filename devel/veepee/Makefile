@@ -7,7 +7,7 @@
 
 PORTNAME=	veepee
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python gnome
 MASTER_SITES=	http://www.river-bank.demon.co.uk/software/
 DISTNAME=	VeePee-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	VeePee-${PORTVERSION}
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A user orientated scripting environment for embedding in applications
 
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
 
 USE_GNOME=	gnomelibs
 USE_XLIB=	yes

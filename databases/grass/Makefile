@@ -7,6 +7,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	5.0.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://grass.itc.it/grass5/source/ \
@@ -20,7 +21,7 @@ POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		gd.2:${PORTSDIR}/graphics/gd \
+		gd.4:${PORTSDIR}/graphics/gd2 \
 		fftw.2:${PORTSDIR}/math/fftw \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		freetype.9:${PORTSDIR}/print/freetype2 \

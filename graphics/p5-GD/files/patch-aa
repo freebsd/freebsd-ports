@@ -15,9 +15,9 @@
 -my $TTF     = lc prompt('Build FreeType support?','y') eq 'y';
 -my $XPM     = $^O !~ /^freebsd|MSWin32$/ && lc prompt('Build XPM support?','y') eq 'y';
 -my $GIF		= lc prompt('Build GIF support (for patched versions of gd)?','n') eq 'y';
-+my @INC     = qw(-I@@LOCALBASE@@/include -I@@LOCALBASE@@/include/gd -I@@LOCALBASE@@/include/freetype -I@@X11BASE@@/include -I@@X11BASE@@/include/X11); 
++my @INC     = qw(-I@@LOCALBASE@@/include/gd -I@@LOCALBASE@@/include/freetype -I@@LOCALBASE@@/include -I@@X11BASE@@/include/X11 -I@@X11BASE@@/include); 
 +my @LIBPATH = qw(-L@@LOCALBASE@@/lib -L@@X11BASE@@/lib);
-+my @LIBS    = qw(-lfreetype -ljpeg -lgd -lpng -lz);
++my @LIBS    = qw(-lfreetype -ljpeg -lgd1 -lpng -lz);
  
  my $FCGI    = 0;   # set to 1 to build compatability with fastCGI
  
