@@ -11456,6 +11456,7 @@ xbat		ports/games/xbat
 xbatt		ports/sysutils/xbatt
 xbattbar	ports/sysutils/xbattbar
 xbattle		ports/games/xbattle
+xbelld		ports/x11/xbelld
 xbill		ports/games/xbill
 xbindkeys	ports/x11/xbindkeys
 xbindkeys_config	ports/x11/xbindkeys_config
