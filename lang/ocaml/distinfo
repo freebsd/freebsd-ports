@@ -1,4 +1,2 @@
-MD5 (ocaml-3.07.tar.gz) = 2dd038055f5e1350078ad81270411b78
-SIZE (ocaml-3.07.tar.gz) = 2537449
-MD5 (ocaml-3.07-patch2.diffs) = f91d1f1e531f77011bd554817dbbc12a
-SIZE (ocaml-3.07-patch2.diffs) = 42799
+MD5 (ocaml-3.08.0.tar.gz) = c6ef478362295c150101cdd2efcd38e0
+SIZE (ocaml-3.08.0.tar.gz) = 2458425
