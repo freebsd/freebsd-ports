@@ -28,6 +28,8 @@ INFO=		lilypond lilypond-internals \
 
 CONFLICTS=	lilypond-2.*
 
+BROKEN=		"Build fails"
+
 #INSTALLS_SHLIB not needed for phyton library midi.so
 
 GNU_CONFIGURE=	yes
