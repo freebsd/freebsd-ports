@@ -1,5 +1,5 @@
---- Makefile	Mon Nov 17 02:32:09 1997
-+++ Makefile.new	Fri Dec 14 21:08:26 2001
+--- Makefile.orig	Mon Nov 17 02:32:09 1997
++++ Makefile	Sat Mar 13 21:18:05 2004
 @@ -19,11 +19,10 @@
  #          
  
@@ -11,7 +11,7 @@
 -OPTIMIZER  = -O
 -CFLAGS     =  $(OPTIMIZER) $(PLUGIN_DEFINES)
 +CC         ?= gcc
-+CFLAGS     +=  $(PLUGIN_DEFINES)
++CFLAGS     +=  $(PLUGIN_DEFINES) -fPIC
  
  SRC= sidplug.c npunix.c 
  OBJ= sidplug.o npunix.o
