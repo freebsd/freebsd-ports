@@ -8,7 +8,8 @@
 PORTNAME=	redland-bindings
 PORTVERSION=	0.9.18.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://librdf.org/dist/source/
+MASTER_SITES=	http://librdf.org/dist/source/ \
+		http://librdf.org/dist/source/old/
 
 MAINTAINER=	russell@rucus.ru.ac.za
 COMMENT=	Language bindings for the Redland package
