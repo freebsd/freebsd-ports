@@ -36,6 +36,7 @@
     SUBDIR += p5-IO-Zlib
     SUBDIR += p5-Mac-Macbinary
     SUBDIR += parchive
+    SUBDIR += pear-Archive_Tar
     SUBDIR += pkzip
     SUBDIR += ppunpack
     SUBDIR += py-bzip2
