@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	1.020
-PORTREVISION=	3
+PORTVERSION=	1.030
 CATEGORIES=	sysutils
 MASTER_SITES=	http://telia.dl.sourceforge.net/sourceforge/webadmin/ \
 		http://www.webmin.com/updates/
@@ -24,17 +23,8 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	bind8-1.020-6.wbm.gz \
-		file-1.020-4.wbm.gz \
-		lpadmin-1.020-6.wbm.gz \
-		majordomo-1.020-2.wbm.gz \
-		mysql-1.020-2.wbm.gz \
-		net-1.020-5.wbm.gz \
-		postgresql-1.020-2.wbm.gz \
-		quota-1.020-3.wbm.gz \
-		status-1.020-4.wbm.gz \
-		usermin-1.020-4.wbm.gz \
-		webmin-1.020-1.wbm.gz
+WEBMIN_MODULES=	firewall-1.030-1.wbm.gz \
+		sshd-1.030-1.wbm.gz
 
 WEBMIN_THEMES=
 
