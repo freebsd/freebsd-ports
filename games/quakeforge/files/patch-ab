@@ -1,5 +1,17 @@
---- configure.in.orig	Thu Mar 30 17:32:37 2000
-+++ configure.in	Thu Mar 30 17:32:45 2000
+
+$FreeBSD$
+
+--- configure.in.orig	Sun Feb 27 13:26:03 2000
++++ configure.in	Wed Jan 24 23:42:29 2001
+@@ -210,7 +210,7 @@
+    fi
+    save_CPPFLAGS="$CPPFLAGS"
+    CPPFLAGS="$CPPFLAGS $SDL_CFLAGS"
+-   AC_CHECK_HEADER(SDL/SDL.h, HAS_SDL=yes, HAS_SDL=no)
++   AC_CHECK_HEADER(SDL.h, HAS_SDL=yes, HAS_SDL=no)
+    CPPFLAGS="$save_CPPFLAGS"
+ fi
+ 
 @@ -335,7 +335,7 @@
  dnl Make sure -lpthread works (for SDL)
  if test "x$HAS_SDL" = xyes; then
