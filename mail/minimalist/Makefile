@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	minimalist
-PORTVERSION=	2.4
+PORTVERSION=	2.5.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mml.org.ua/LIST/ \
 		http://www.giovannelli.it/~gmarco/files/
