@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Archive files using LZSS and Huffman compression (.lzh files)
 
+FORBIDDEN=	http://vuxml.freebsd.org/a2ffb627-9c53-11d8-9366-0020ed76ef5a.html
+
 MAN1=		lha.1
 MANLANG=	ja
 PLIST_FILES=	bin/lha
