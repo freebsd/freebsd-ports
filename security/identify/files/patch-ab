@@ -1,5 +1,5 @@
 --- identify.c.orig	Tue Feb  2 01:51:57 1993
-+++ identify.c	Fri Apr  2 10:57:28 1999
++++ identify.c	Sun Oct 20 17:53:44 2002
 @@ -11,7 +11,7 @@
  #include <stdio.h>
  #include <signal.h>
@@ -113,6 +113,15 @@
        case 'R':
  	if (!argv[i][2])
  	  reject_flag = 1;
+@@ -200,7 +173,7 @@
+     {
+       /* In child, let's fork again so we can forget about this child */
+       if (fork())
+-	_exit();
++	_exit(0);
+     }
+     else
+     {
 @@ -241,13 +214,13 @@
      }
    }
