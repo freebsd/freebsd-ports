@@ -55,6 +55,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include/sasl
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
+INSTALLS_SHLIB=	yes
+ 
 BINS=		bin/ldapadd \
 		bin/ldapdelete \
 		bin/ldapmodify \
