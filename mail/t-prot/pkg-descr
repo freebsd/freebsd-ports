@@ -1,0 +1,14 @@
+This program is a filter which shall improve the readability for messages
+(emails and posts) by *hiding* some annoying parts, including:
+- mailing list footers
+- excessive quoting 
+- overlong signatures
+- Outlook-style "TOFU" (text above - full quote below)
+- squeeze sequences of blank lines or punctuation
+
+Its primary mode of operation is a display filter in MUA (it has special
+support for Mutt), but it can also be used in MTA/MDA - e.g. for immediately
+bouncing "improper" messages.
+
+Author:	Jochen Striepe <t-prot@tolot.escape.de>
+WWW:	http://www.escape.de/users/tolot/mutt/

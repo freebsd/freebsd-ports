@@ -432,6 +432,7 @@
     SUBDIR += sylpheed-gtk2
     SUBDIR += sympa
     SUBDIR += sympa-elixus
+    SUBDIR += t-prot
     SUBDIR += teapop
     SUBDIR += teapop-devel
     SUBDIR += thunderbird
