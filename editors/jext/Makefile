@@ -20,6 +20,7 @@ RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
 
 WRKSRC=		${WRKDIR}
 USE_XLIB=	yes
+USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 JAVAVM?=	${LOCALBASE}/bin/javavm
@@ -27,8 +28,8 @@ JAVAVM?=	${LOCALBASE}/bin/javavm
 INSTSBDR=	${PREFIX}/share/java/jext
 
 do-configure:
-	@${PERL} -pi -e 's|%%JAVAVM%%|${JAVAVM}|g ; \
-			 s|%%JEXT_HOME%%|${INSTSBDR}|g'	${WRKSRC}/bin/jext
+	@${REINPLACE_CMD} -e 's|%%JAVAVM%%|${JAVAVM}|g ; \
+		s|%%JEXT_HOME%%|${INSTSBDR}|g'	${WRKSRC}/bin/jext
 
 do-install:
 	@${MKDIR} ${INSTSBDR}

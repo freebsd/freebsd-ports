@@ -39,6 +39,7 @@ NO_CDROM=	'Must be downloaded direct from Sun via www interface'
 CD_MOUNTPT=	'/cdrom'
 IS_INTERACTIVE=	yes
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 DIST_SUBDIR=	staroffice52
 WRKSRC=		${WRKDIR}/office52
 TMPDIR=		${WRKDIR}/tmp
@@ -179,7 +180,7 @@ do-extract:
 .endif
 
 post-configure:
-	@${PERL} -pi.orig -e 's|DefaultDestPath = "office52";|DefaultDestPath = "${PREFIX}/office52";|' ${WRKSRC}/setup.ins
+	@${REINPLACE_CMD} -e 's|\(DefaultDestPath = \)"office52";|\1"${PREFIX}/office52";|' ${WRKSRC}/setup.ins
 
 do-install:
 .if !defined(DISPLAY) || ${DISPLAY} == ""
