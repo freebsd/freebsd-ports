@@ -6269,6 +6269,7 @@ tcl81		ports/lang/tcl81
 tcl81-thread	ports/lang/tcl81-thread
 tcl82		ports/lang/tcl82
 tcl83		ports/lang/tcl83
+tcl84		ports/lang/tcl84
 tclExpat	ports/textproc/tclExpat
 tclX80		ports/lang/tclX80
 tclX82		ports/lang/tclX82
@@ -6387,6 +6388,7 @@ tk80		ports/x11-toolkits/tk80
 tk81		ports/x11-toolkits/tk81
 tk82		ports/x11-toolkits/tk82
 tk83		ports/x11-toolkits/tk83
+tk84		ports/x11-toolkits/tk84
 tkcon		ports/devel/tkcon
 tkcron		ports/misc/tkcron
 tkcvs		ports/devel/tkcvs
