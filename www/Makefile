@@ -88,6 +88,7 @@
     SUBDIR += linux-netscape47-communicator
     SUBDIR += linux-netscape47-navigator
     SUBDIR += linux-netscape6
+    SUBDIR += linux-opera
     SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += lynx-ssl
