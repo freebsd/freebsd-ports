@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	hope
-PORTVERSION=	0.0
-PORTREVISION=	2
+PORTVERSION=	1.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.soi.city.ac.uk/~ross/Hope/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Hope is lazy interpriter for HOPE applicative language
-
-BROKEN=		"Checksum mismatch"
 
 .if defined(WITH_DOCS)
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX \
