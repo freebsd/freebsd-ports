@@ -21,6 +21,13 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 LATEST_LINK=	gkrellmms2
 WRKSRC=		${WRKDIR}/gkrellmms
 
+PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmms.so \
+		share/locale/da/LC_MESSAGES/gkrellmms.mo \
+		share/locale/es/LC_MESSAGES/gkrellmms.mo \
+		share/locale/fr/LC_MESSAGES/gkrellmms.mo \
+		share/locale/nl/LC_MESSAGES/gkrellmms.mo \
+		share/locale/ru/LC_MESSAGES/gkrellmms.mo
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 

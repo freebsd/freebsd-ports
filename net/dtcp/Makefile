@@ -29,6 +29,9 @@ MANCOMPRESSED=	yes
 RC_SCRIPTS=	${PREFIX}/etc/rc.d/dtcpc.sh ${PREFIX}/etc/rc.d/dtcps.sh
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} RUBY=${RUBY}
 
+PLIST_FILES=	sbin/dtcpauth sbin/dtcpc sbin/dtcps \
+		etc/rc.d/dtcpc.sh etc/rc.d/dtcps.sh
+
 pre-everything::
 .if !defined(DTCP_CLIENT_ONLY)
 	@${ECHO_MSG} ""
