@@ -43,7 +43,8 @@ GNOME_HTML_DIR?=	${PREFIX}/share/doc
 gnomeprefix_CONFIGURE_ARGS=--localstatedir=${PREFIX}/share/gnome \
 			   --datadir=${PREFIX}/share/gnome \
 			   --with-html-dir=${GNOME_HTML_DIR} \
-			   --disable-gtk-doc
+			   --disable-gtk-doc \
+			   --with-gconf-source=xml::${PREFIX}/etc/gconf/gconf.xml.defaults
 gnomeprefix_USE_GNOME_IMPL=gnomehier
 
 gnomeaudio_RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio
