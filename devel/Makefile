@@ -19,7 +19,6 @@
     SUBDIR += agenda-static-libs
     SUBDIR += ald
     SUBDIR += allegro
-    SUBDIR += amulet
     SUBDIR += anjuta
     SUBDIR += apr-devel
     SUBDIR += arch
