@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	fine
-PKGNAME=	fine-2.1
+DISTNAME=	fine2.3
+PKGNAME=	fine-2.3
 CATEGORIES=	editors
 MASTER_SITES=	ftp://razor.fer.uni-lj.si/pub/software/bojank/fine/
 
@@ -15,14 +15,8 @@ MAINTAINER=	cpiazza@FreeBSD.org
 
 USE_NEWGCC=	yes
 USE_GMAKE=	yes
-USE_QT=		yes
+USE_QT2=	yes
 WRKSRC=		${WRKDIR}/fine
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400004
-BROKEN=		'This program needs NEWGCC but links with QT, which is built with an old version.'
-.endif
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/fine
@@ -32,4 +26,4 @@ do-install:
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/fine ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

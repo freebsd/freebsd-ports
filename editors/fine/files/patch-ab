@@ -1,6 +1,6 @@
---- fine.C.orig	Fri May  7 03:08:12 1999
-+++ fine.C	Tue Aug 17 17:46:57 1999
-@@ -172,7 +172,7 @@
+--- fine.C.orig	Fri Oct 29 04:02:09 1999
++++ fine.C	Fri Nov 26 13:12:09 1999
+@@ -227,7 +227,7 @@
  
    if (sc == NULL)
    { sc = new QBinaryTree<Configuration>(shortcut);
@@ -9,7 +9,7 @@
      f = fopen(s,"rt");
      if (f != NULL) 
      { while (!feof(f))
-@@ -181,7 +181,7 @@
+@@ -236,7 +236,7 @@
           }
         fclose(f);
         } else QMessageBox::warning(ed,"Couldn't find main configuration file",
@@ -18,7 +18,7 @@
      }
  
    sysmenu = new QMenuBar(this,"Editor System Main Menu");
-@@ -370,7 +370,7 @@
+@@ -430,7 +430,7 @@
    if (ptrsc != NULL)
    {  sh = ptrsc->Element();
        s = new char[strlen(getenv("HOME"))+strlen(sh.filename)+200];
@@ -27,7 +27,7 @@
        w->editor()->readConfig(s);
        delete [] s;
        }
-@@ -410,7 +410,7 @@
+@@ -470,7 +470,7 @@
          printf("\nTemplate file:%s, Compiler:%s, Previewer:%s",defsc.filename,
            (defsc.compiler != NULL? defsc.compiler:"(null)"),
  	     (defsc.previewer != NULL? defsc.previewer:"(null)"));
@@ -36,7 +36,7 @@
          ed->readConfig(s);
          ed->repaint();
          fflush(stdout);
-@@ -461,14 +461,14 @@
+@@ -517,14 +517,14 @@
   { if (ptrsc != NULL) Delete(sc,ptrsc->Element());
      sc->Insert(*scw);
      ptrsc = sc->Locate(*scw);
