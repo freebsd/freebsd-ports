@@ -11,7 +11,12 @@ CATEGORIES=	shells
 MASTER_SITES=   ftp://ftp.astron.com/pub/tcsh/
 DISTNAME=	tcsh-6.09
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=     ports@FreeBSD.org
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 500001
+FORBIDDEN=      "tcsh is already in the base system"
+.endif
 
 Y2K=		ftp://ftp.astron.com/pub/tcsh/Y2K
 
@@ -40,4 +45,4 @@ post-install:
 	  ${ECHO} ${PREFIX}/bin/tcsh) > /etc/shells
 	@${RM} /etc/shells.bak
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
