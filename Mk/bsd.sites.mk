@@ -89,6 +89,35 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/www.gnome.org/%SUBDIR%/ \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/
 
+MASTER_SITE_ISC+=	\
+	ftp://ftp.isc.org/isc/%SUBDIR%/ \
+	ftp://gd.tuwien.ac.at/infosys/servers/isc/%SUBDIR%/ \
+	ftp://ftp.ciril.fr/pub/isc/%SUBDIR%/ \
+	ftp://ftp.grolier.fr/pub/isc/%SUBDIR%/ \
+	ftp://ftp.funet.fi/pub/mirrors/ftp.isc.org/isc/%SUBDIR%/ \
+	ftp://ftp.freenet.de/pub/ftp.isc.org/isc/%SUBDIR%/ \
+	ftp://ftp.fsn.hu/pub/isc/%SUBDIR%/ \
+	ftp://ftp.kyushu-u.ac.jp/pub/Net/isc/%SUBDIR%/ \
+	ftp://ftp.iij.ad.jp/pub/network/isc/%SUBDIR%/ \
+	ftp://ftp.dti.ad.jp/pub/net/isc/%SUBDIR%/ \
+	ftp://ftp.u-aizu.ac.jp/pub/net/isc/%SUBDIR%/ \
+	ftp://ftp.linux.lv/pub/software/isc/%SUBDIR%/ \
+	ftp://ftp.task.gda.pl/mirror/ftp.isc.org/isc/%SUBDIR%/ \
+	ftp://ftp.cdu.elektra.ru/pub/unix/isc/%SUBDIR%/ \
+	ftp://ftp.si.uniovi.es/mirror/isc/%SUBDIR%/ \
+	ftp://ftp.sunet.se/pub/network/isc/%SUBDIR%/ \
+	ftp://ftp.chl.chalmers.se/pub/unix/network/isc/%SUBDIR%/ \
+	ftp://unix.hensa.ac.uk/mirrors/ftp.isc.org/isc/%SUBDIR%/ \
+	ftp://ftp.epix.net/pub/isc/%SUBDIR%/ \
+	ftp://ftp.nominum.com/pub/isc/%SUBDIR%/ \
+	ftp://ftp.nerdc.ufl.edu/pub/mirrors/ftp.isc.org/isc/%SUBDIR%/ \
+	ftp://ftp.ripe.net/mirrors/sites/ftp.isc.org/isc/%SUBDIR%/ \
+	ftp://ftp.nl.uu.net/pub/mirrors/ftp.isc.org/%SUBDIR%/ \
+	ftp://ftp.pop-mg.com.br/pub/isc/%SUBDIR%/ \
+	ftp://ftp.ntua.gr/pub/net/isc/isc/%SUBDIR%/ \
+	ftp://ftp.ulak.net.tr/pub/networking/isc/%SUBDIR%/ \
+	ftp://ftp.metu.edu.tr/pub/mirrors/ftp.isc.org/%SUBDIR%/
+
 MASTER_SITE_GNU+=	\
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
 	ftp://gatekeeper.dec.com/pub/GNU/%SUBDIR%/ \

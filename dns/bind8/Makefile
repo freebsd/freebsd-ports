@@ -13,10 +13,8 @@
 PORTNAME=	bind
 PORTVERSION=	8.3.3
 CATEGORIES?=	net
-MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/${PORTVERSION}/ \
-		ftp://ftp.epix.net/pub/isc/bind/src/${PORTVERSION}/ \
-		ftp://ftp.nominum.com/pub/isc/bind/src/${PORTVERSION}/ \
-		ftp://ftp.grolier.fr/pub/isc/bind/src/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_ISC}
+MASTER_SITE_SUBDIR=	bind/src/${PORTVERSION}
 
 DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
 DIST_SUBDIR=	bind-${PORTVERSION}
