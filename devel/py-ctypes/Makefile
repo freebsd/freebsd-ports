@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ctypes
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.6.3
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%/,ctypes/:pyctypes,g} \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%/,perky/:libffi,g}
@@ -41,6 +40,7 @@ post-patch:
 		-e 's|\(libraries=\["ffi"\]\)|\1,library_dirs=["${LIBFFIWRKSRC}/.libs"]|' \
 		-e 's|\(Extension(.*\)$$|\1 define_macros=[("ffi_type_schar", \
 		"ffi_type_sint8"), ("ffi_type_sshort","ffi_type_sint16")],|' \
+		-e 's|define_macros=\[.*CAN_PASS_BY_VALUE.*\],||' \
 		${WRKSRC}/setup.py
 	${REINPLACE_CMD} -e 's,\(alpha\*-.*-osf.*\)),\1 | alpha*-*-freebsd*),' \
 		${LIBFFIWRKSRC}/configure
