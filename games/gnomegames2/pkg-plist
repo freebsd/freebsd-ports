@@ -1,3 +1,4 @@
+bin/GnomeScott
 bin/freecell
 bin/gnobots
 bin/gnome-stones
@@ -12,7 +13,7 @@ include/gdkcardimage/gdk-card-image.h
 lib/libgdkcardimage.a
 lib/libgdkcardimage.la
 lib/libgdkcardimage.so
-lib/libgdkcardimage.so.0.30
+lib/libgdkcardimage.so.0.99
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/gnome/apps/Games/freecell.desktop
@@ -31,23 +32,69 @@ share/gnome/games/gnomine.Biiiig.scores
 share/gnome/games/gnomine.Custom.scores
 share/gnome/games/gnomine.Medium.scores
 share/gnome/games/gnomine.Tiny.scores
+share/gnome/games/gnothello.b1.scores
+share/gnome/games/gnothello.b2.scores
+share/gnome/games/gnothello.b3.scores
+share/gnome/games/gnothello.w1.scores
+share/gnome/games/gnothello.w2.scores
+share/gnome/games/gnothello.w3.scores
 share/gnome/games/gyahtzee.scores
 share/gnome/games/mahjongg.scores
 share/gnome/games/same-gnome.scores
 share/gnome/gnome-stones/default.caves
+share/gnome/gnome-stones/gnomekoban.caves
 share/gnome/gnome-stones/tutorial.caves
+share/gnome/gnome-stones/objects/libgnome-stones.a
+share/gnome/gnome-stones/objects/libgnome-stones.la
+share/gnome/gnome-stones/objects/libgnome-stones.so
+share/gnome/gnome-stones/objects/libgnome-stones.so.0
+share/gnome/gnome-stones/objects/libgnomekoban.a
+share/gnome/gnome-stones/objects/libgnomekoban.la
+share/gnome/gnome-stones/objects/libgnomekoban.so
+share/gnome/gnome-stones/objects/libgnomekoban.so.0
+share/gnome/help/aisleriot/C/camelot-goal.gif
+share/gnome/help/aisleriot/C/camelot.html
+share/gnome/help/aisleriot/C/canfield.html
+share/gnome/help/aisleriot/C/clock-rules.gif
+share/gnome/help/aisleriot/C/clock.html
+share/gnome/help/aisleriot/C/docbook.css
+share/gnome/help/aisleriot/C/doublets.html
+share/gnome/help/aisleriot/C/eagle-wing.html
+share/gnome/help/aisleriot/C/fortunes.html
+share/gnome/help/aisleriot/C/glossary.html
+share/gnome/help/aisleriot/C/gpl.html
+share/gnome/help/aisleriot/C/index.html
+share/gnome/help/aisleriot/C/intro.html
+share/gnome/help/aisleriot/C/klondike.html
+share/gnome/help/aisleriot/C/odessa.html
+share/gnome/help/aisleriot/C/osmosis.html
+share/gnome/help/aisleriot/C/pileon.html
+share/gnome/help/aisleriot/C/spider.html
+share/gnome/help/aisleriot/C/topic.dat
+share/gnome/help/aisleriot/C/yukon.html
 share/gnome/help/gnobots/C/index.html
 share/gnome/help/gnobots/C/topic.dat
-share/gnome/pixmaps/cards/Background.xpm
-share/gnome/pixmaps/cards/Baize.xpm
-share/gnome/pixmaps/cards/Cardback1.xpm
-share/gnome/pixmaps/cards/Cardback2.xpm
-share/gnome/pixmaps/cards/Cardback3.xpm
-share/gnome/pixmaps/cards/Cardback4.xpm
-share/gnome/pixmaps/cards/Cardback5.xpm
-share/gnome/pixmaps/cards/Pictures.xpm
-share/gnome/pixmaps/cards/Ranks.xpm
-share/gnome/pixmaps/cards/Suits.xpm
+share/gnome/pixmaps/cards/backs/beige.png
+share/gnome/pixmaps/cards/backs/face.png
+share/gnome/pixmaps/cards/backs/grey.png
+share/gnome/pixmaps/cards/backs/rods.png
+share/gnome/pixmaps/cards/honors/bonded.png
+share/gnome/pixmaps/cards/honors/xpat.png
+share/gnome/pixmaps/cards/jokers/gnome.png
+share/gnome/pixmaps/cards/ranks/bold-09x14.png
+share/gnome/pixmaps/cards/ranks/fine-07x12.png
+share/gnome/pixmaps/cards/slots/hand.png
+share/gnome/pixmaps/cards/slots/plain.png
+share/gnome/pixmaps/cards/suits/knuth-09x10.png
+share/gnome/pixmaps/cards/suits/knuth-15x19.png
+share/gnome/pixmaps/cards/suits/knuth-18x21.png
+share/gnome/pixmaps/cards/suits/knuth-21x25.png
+share/gnome/pixmaps/cards/suits/xpat-11x11.png
+share/gnome/pixmaps/cards/suits/xpat-15x15.png
+share/gnome/pixmaps/cards/suits/xpat-21x21.png
+share/gnome/pixmaps/cards/suits/xpat-41x41.png
+share/gnome/pixmaps/cards/baize.png
+share/gnome/pixmaps/cards/splash.png
 share/gnome/pixmaps/gnobots/aieee.png
 share/gnome/pixmaps/gnobots/cows.png
 share/gnome/pixmaps/gnobots/eggs.png
@@ -56,6 +103,7 @@ share/gnome/pixmaps/gnobots/mice.png
 share/gnome/pixmaps/gnobots/robots.png
 share/gnome/pixmaps/gnobots/windows.png
 share/gnome/pixmaps/gnobots/yahoo.png
+share/gnome/pixmaps/gnome-mahjongg.png
 share/gnome/pixmaps/gnome-stones/amoeba.png
 share/gnome/pixmaps/gnome-stones/boulder.png
 share/gnome/pixmaps/gnome-stones/butterfly.png
@@ -70,7 +118,14 @@ share/gnome/pixmaps/gnome-stones/frame.png
 share/gnome/pixmaps/gnome-stones/gnome.png
 share/gnome/pixmaps/gnome-stones/title.png
 share/gnome/pixmaps/gnome-stones/wall.png
-share/gnome/pixmaps/gnothello/tiles.png
+share/gnome/pixmaps/gnothello.png
+share/gnome/pixmaps/gnothello/blend.png
+share/gnome/pixmaps/gnothello/classic.png
+share/gnome/pixmaps/gnothello/flipblend.png
+share/gnome/pixmaps/gnothello/metal.png
+share/gnome/pixmaps/gnothello/metal2.png
+share/gnome/pixmaps/gnothello/shrink.png
+share/gnome/pixmaps/gnothello/woodtrim.png
 share/gnome/pixmaps/mahjongg/default.png
 share/gnome/pixmaps/mahjongg/seta.png
 share/gnome/pixmaps/same-gnome/blink-sync.png
@@ -83,26 +138,41 @@ share/gnome/pixmaps/gnome-gnobots.png
 share/gnome/pixmaps/gnome-gyahtzee.png
 share/gnome/pixmaps/gnome-stones.png
 share/gnome/sol-games/camelot.scm
+share/gnome/sol-games/canfield.scm
+share/gnome/sol-games/clock.scm
+share/gnome/sol-games/doublets.scm
+share/gnome/sol-games/eagle_wing.scm
+share/gnome/sol-games/fortunes.scm
 share/gnome/sol-games/freecell.scm
 share/gnome/sol-games/klondike.scm
 share/gnome/sol-games/odessa.scm
 share/gnome/sol-games/osmosis.scm
+share/gnome/sol-games/pileon.scm
 share/gnome/sol-games/sol.scm
 share/gnome/sol-games/spider.scm
+share/gnome/sol-games/yukon.scm
 share/locale/cs/LC_MESSAGES/gnome-games.mo
 share/locale/da/LC_MESSAGES/gnome-games.mo
 share/locale/de/LC_MESSAGES/gnome-games.mo
 share/locale/es/LC_MESSAGES/gnome-games.mo
+share/locale/fi/LC_MESSAGES/gnome-games.mo
 share/locale/fr/LC_MESSAGES/gnome-games.mo
 share/locale/ga/LC_MESSAGES/gnome-games.mo
 share/locale/it/LC_MESSAGES/gnome-games.mo
 share/locale/ja/LC_MESSAGES/gnome-games.mo
 share/locale/ko/LC_MESSAGES/gnome-games.mo
 share/locale/no/LC_MESSAGES/gnome-games.mo
+share/locale/pl/LC_MESSAGES/gnome-games.mo
 share/locale/pt/LC_MESSAGES/gnome-games.mo
 @dirrm include/gdkcardimage
 @dirrm share/gnome/help/gnobots/C
 @dirrm share/gnome/help/gnobots
+@dirrm share/gnome/pixmaps/cards/backs
+@dirrm share/gnome/pixmaps/cards/honors
+@dirrm share/gnome/pixmaps/cards/jokers
+@dirrm share/gnome/pixmaps/cards/ranks
+@dirrm share/gnome/pixmaps/cards/slots
+@dirrm share/gnome/pixmaps/cards/suits
 @dirrm share/gnome/pixmaps/cards
 @dirrm share/gnome/pixmaps/gnobots
 @dirrm share/gnome/pixmaps/gnome-stones
@@ -110,4 +180,5 @@ share/locale/pt/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/pixmaps/mahjongg
 @dirrm share/gnome/pixmaps/same-gnome
 @dirrm share/gnome/sol-games
+@dirrm share/gnome/gnome-stones/objects
 @dirrm share/gnome/gnome-stones
