@@ -1,17 +1,26 @@
 #!/bin/sh
+
 if [ "$2" != "DEINSTALL" ]; then
   exit 0
 fi
-FONTDIR=${PKG_PREFIX}/lib/X11/fonts/TrueType
-cd ${FONTDIR}
 
-# Restore fonts.dir
-sed -e '/ -ar-/d' -e '/ -arphic-/d' fonts.dir > fonts.dir.tmp
-numfonts=$(echo $(cat fonts.dir.tmp | wc -l) - 1 | bc)
-echo ${numfonts} > fonts.dir
-sed -e 1d fonts.dir.tmp >> fonts.dir
-rm -f fonts.dir.tmp
+PKGNAME=$1
+PREFIX=${PKG_PREFIX}
+TTFM=${PKG_PREFIX}/bin/ttfm.sh
 
-# Restore fonts.alias
-sed -e '/^-ar-/d' -e '/^-arphic-/d' fonts.alias > fonts.alias.tmp
-mv -f fonts.alias.tmp fonts.alias
+FONTDIR=${PREFIX}/share/fonts/TrueType
+FONTS="bkai00mp.ttf bsmi00lp.ttf gbsn00lp.ttf gkai00mp.ttf"
+DEFAULTMING="default_ming-big5-0.ttf default_ming-gb2312.1980-0.ttf"
+DEFAULTKAI="default_kai-big5-0.ttf default_kai-gb2312.1980-0.ttf"
+
+if [ -r $FONTDIR/$PKGNAME ]; then
+    for i in `cat $FONTDIR/$PKGNAME`; do
+        for f in $FONTS $DEFAULTMING $DEFAULTKAI; do
+            $TTFM --remove $i $f
+        done
+    done
+fi
+
+rm -f $FONTDIR/$PKGNAME
+
+exit 0
