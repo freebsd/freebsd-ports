@@ -1,0 +1,11 @@
+--- FWF.tmpl.orig	Wed Feb 10 20:06:18 1999
++++ FWF.tmpl	Wed Feb 10 20:06:27 1999
+@@ -82,7 +82,7 @@
+ 	You probably won't need to edit these...
+ ------------------------------------------------------------------------*/
+ 
+-IMAKE_DEFINES = -DAvoidNullMakeCommand
++#IMAKE_DEFINES = -DAvoidNullMakeCommand
+ 
+ ARMERGE = ar r
+ PROJECTDIR = $(TOP)
