@@ -1,8 +1,0 @@
-This is Intels Fortran compiler, it is set up to produce native FreeBSD binaries.
-
-There are some problems:
-a) when linking with libc_r, program won't work
-b) unstable with Pentium III optimization flag
-c) sometimes slower than ifc version 7.x :(
-
-WWW: http://www.intel.com/software/products/compilers/flin

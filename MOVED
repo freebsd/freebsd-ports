@@ -789,3 +789,4 @@ x11-toolkits/xrender|x11/libXrender|2004-01-24|moved to x11 category
 net/py-rrdtool||2004-01-28|mastersite disappeared and functionality exists in net/py-rrdtool_lgpl
 graphics/sketch|graphics/skencil|2004-01-28|Project renamed
 devel/linux-atk|accessibility/linux-atk|2004-01-29|new category
+lang/ifc8||2004-01-31|should be updated in ifc
