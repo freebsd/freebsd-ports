@@ -4236,7 +4236,6 @@ p5-Data-HexDump	ports/devel/p5-Data-HexDump
 p5-Data-JavaScript	ports/lang/p5-Data-JavaScript
 p5-Data-ShowTable	ports/devel/p5-Data-ShowTable
 p5-Date-Calc	ports/devel/p5-Date-Calc
-p5-Date-Chinese	ports/chinese/p5-Date-Chinese
 p5-Date-DayOfWeek	ports/devel/p5-Date-DayOfWeek
 p5-Date-Handler	ports/math/p5-Date-Handler
 p5-Date-Leapyear	ports/devel/p5-Date-Leapyear
@@ -7265,6 +7264,7 @@ zh-netscape47-navigator	ports/chinese/netscape47-navigator
 zh-nvi-big5	ports/chinese/nvi-big5
 zh-nvi-euc-cn	ports/chinese/nvi-euc-cn
 zh-nvi-euc-tw	ports/chinese/nvi-euc-tw
+zh-p5-Date-Chinese	ports/chinese/p5-Date-Chinese
 zh-pine4	ports/chinese/pine4
 zh-pyDict	ports/chinese/pyDict
 zh-qe		ports/chinese/qe
