@@ -1,5 +1,5 @@
---- ./conserver/cons.h	Sat Nov 22 20:11:48 1997
-+++ ./conserver/cons.h	Sat Aug 23 17:40:11 1997
+--- conserver/cons.h.orig	Sun Apr 19 05:10:22 1998
++++ conserver/cons.h	Mon Apr 20 11:52:25 1998
 @@ -54,5 +54,5 @@
  #endif
  #if !defined(HAVE_UWAIT)
@@ -35,6 +35,13 @@
 +#if defined(sun) || defined(NEXT2) || defined(SUN5) || defined(PTX) || defined(IRIX5) || defined(FREEBSD)
  #define SIGRETS	void
  #else
+@@ -267,5 +267,5 @@
+  */
+ #if !defined(HAVE_SETSOCKOPT)
+-#define HAVE_SETSOCKOPT	(defined(sun)||defined(PTX))
++#define HAVE_SETSOCKOPT	(defined(sun)||defined(PTX)||defined(FREEBSD))
+ #endif
+ 
 @@ -273,5 +273,5 @@
   */
  #if !defined(HAVE_STRERROR)
