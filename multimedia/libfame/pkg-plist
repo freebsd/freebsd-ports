@@ -27,5 +27,5 @@ include/fame_syntax_mpeg4.h
 include/fame_version.h
 lib/libfame.a
 lib/libfame.so
-lib/libfame.so.10
+lib/libfame-0.9.so.0
 share/aclocal/libfame.m4
