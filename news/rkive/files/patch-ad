@@ -1,0 +1,11 @@
+--- rkive.c.orig	Sun Jun 20 13:07:44 1999
++++ rkive.c	Sun Jun 20 13:08:02 1999
+@@ -700,7 +700,7 @@
+ struct group_archive *ng;
+ {
+    long clock;
+-   long time();
++   time_t time();
+    char *ctime();
+    
+    char logbuf[BUFSIZ];

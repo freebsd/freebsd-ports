@@ -1,0 +1,11 @@
+--- news_arc.c.orig	Sun Jun 20 13:06:45 1999
++++ news_arc.c	Sun Jun 20 13:07:05 1999
+@@ -855,7 +855,7 @@
+     int seqnum;
+     int zfill;
+ {
+-    long time();
++    time_t time();
+     struct tm *localtime();
+ 
+     long clk;
