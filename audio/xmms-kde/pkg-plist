@@ -1,6 +1,6 @@
-lib/libxmmskde.la
-lib/libxmmskde.so
-lib/libxmmskde.so.1
+lib/kde3/libxmmskde.la
+lib/kde3/libxmmskde.so
+lib/kde3/libxmmskde.so.1
 share/apps/kicker/applets/xmms-kde.desktop
 share/apps/xmms-kde/aluminum25.rc
 share/apps/xmms-kde/aluminum25.tgz
@@ -27,7 +27,42 @@ share/apps/xmms-kde/wm60x26.tgz
 share/apps/xmms-kde/wm63x42.rc
 share/apps/xmms-kde/wm63x42.tgz
 share/apps/xmms-kde/xmms-kderc
+share/apps/xmms-kde/aqua42.rc
+share/apps/xmms-kde/eazel.rc
+share/apps/xmms-kde/hpliquid70x42.rc
+share/apps/xmms-kde/liquid.rc
+share/apps/xmms-kde/liquid42.rc
+share/apps/xmms-kde/murphy1.rc
+share/apps/xmms-kde/murphy2.rc
+share/apps/xmms-kde/murphy3.rc
+share/apps/xmms-kde/murphys1.rc
+share/apps/xmms-kde/murphys2.rc
+share/apps/xmms-kde/murphys3.rc
+share/apps/xmms-kde/no-ones-laughing.rc
+share/apps/xmms-kde/point_reyes_green.rc
+share/apps/xmms-kde/tiny2.rc
+share/apps/xmms-kde/tinyblueish.rc
+share/apps/xmms-kde/water42.rc
+share/apps/xmms-kde/white.rc
+share/apps/xmms-kde/aqua42.tgz
+share/apps/xmms-kde/eazel.tgz
+share/apps/xmms-kde/hpliquid70x42.tgz
+share/apps/xmms-kde/liquid.tgz
+share/apps/xmms-kde/liquid42.tgz
+share/apps/xmms-kde/murphy1.tgz
+share/apps/xmms-kde/murphy2.tgz
+share/apps/xmms-kde/murphy3.tgz
+share/apps/xmms-kde/murphys1.tgz
+share/apps/xmms-kde/murphys2.tgz
+share/apps/xmms-kde/murphys3.tgz
+share/apps/xmms-kde/no-ones-laughing.tgz
+share/apps/xmms-kde/point_reyes_green.tgz
+share/apps/xmms-kde/tiny2.tgz
+share/apps/xmms-kde/tinyblueish.tgz
+share/apps/xmms-kde/water42.tgz
+share/apps/xmms-kde/white.tgz
+share/doc/HTML/en/xmmskde/index.cache.bz2
+share/doc/HTML/en/xmmskde/index.docbook
+share/doc/HTML/en/xmmskde/themes.txt
+share/doc/HTML/en/xmmskde/common
 @dirrm share/apps/xmms-kde
-@dirrm share/apps/kicker/applets
-@dirrm share/apps/kicker
-@unexec rmdir %D/share/apps 2>/dev/null || true
