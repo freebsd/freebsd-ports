@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	proxyper
-PORTVERSION=	341
+PORTVERSION=	341b
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/proxyper/ \
 		http://http.distributed.net/pub/dcti/proxyper/
@@ -14,6 +14,9 @@ DISTNAME=	proxyper${PORTVERSION}-freebsd-x86
 
 MAINTAINER=	tim@bishnet.net
 COMMENT=	The official distributed.net v2 personal proxy
+
+# There's a "b" suffix on the version, but not the directory
+WRKSRC=		${WRKDIR}/proxyper${PORTVERSION:S/b$//}-freebsd-x86
 
 USE_REINPLACE=	yes
 
