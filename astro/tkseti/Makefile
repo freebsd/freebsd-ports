@@ -19,9 +19,9 @@ NO_BUILD=	yes
 
 do-install:
 	${MKDIR} ${PREFIX}/share/doc/tkseti
-	${INSTALL_SCRIPT} ${WRKDIR}/tkseti ${PREFIX}/bin
-	${INSTALL_DATA}	${WRKDIR}/DOC ${PREFIX}/share/doc/tkseti/DOC
-	${INSTALL_DATA} ${WRKDIR}/README ${PREFIX}/share/doc/tkseti/README
+	${INSTALL_SCRIPT} ${WRKSRC}/tkseti ${PREFIX}/bin
+	${INSTALL_DATA}	${WRKSRC}/DOC ${PREFIX}/share/doc/tkseti/DOC
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/tkseti/README
 
 post-install:
 	@${ECHO} "Please read the documentation for tkseti located in"
