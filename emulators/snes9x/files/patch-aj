@@ -1,6 +1,6 @@
---- netplay.cpp.orig	Fri Oct 13 18:44:41 2000
-+++ netplay.cpp	Fri Oct 13 18:56:53 2000
-@@ -682,22 +682,24 @@
+--- NETPLAY.CPP.orig	Fri Jul 25 23:20:20 2003
++++ NETPLAY.CPP	Sat Aug  9 01:16:22 2003
+@@ -719,22 +719,24 @@
          return;
      }
      char fname [L_tmpnam];
