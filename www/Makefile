@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.74 1998/05/03 20:51:46 mph Exp $
+# $Id: Makefile,v 1.75 1998/05/09 10:30:27 ache Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
+    SUBDIR += WebMagick
     SUBDIR += analog
     SUBDIR += apache
     SUBDIR += apache-current
