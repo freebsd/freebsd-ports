@@ -1,6 +1,6 @@
 # New ports collection makefile for:   drweb_sendmail
 # Date created:        14 August 2001
-# Whom:                Anton Voronin <anton@urc.ac.ru>
+# Whom:                Anton Voronin <anton@chelcom.ru>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	security mail
 MASTER_SITES=   http://drweb.spb.ru/download/unix/
 DISTNAME=       drweb-clients-${PORTVERSION}-sources
 
-MAINTAINER=	anton@urc.ac.ru
+MAINTAINER=	anton@chelcom.ru
 
 RUN_DEPENDS=    ${LOCALBASE}/etc/rc.d/drweb-0.sh:${PORTSDIR}/security/drwebd
 
