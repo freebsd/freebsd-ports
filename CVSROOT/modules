@@ -4859,6 +4859,7 @@ pips820_3300	ports/print/pips820_3300
 pips820ug	ports/print/pips820ug
 pips880		ports/print/pips880
 pips900		ports/print/pips900
+pips920		ports/print/pips920
 pipsecd		ports/net/pipsecd
 pisces		ports/cad/pisces
 pixmap		ports/graphics/pixmap
