@@ -19,6 +19,8 @@ COMMENT=	ICQ2000 protocol implementation
 LIB_DEPENDS=	gtkmm:${PORTSDIR}/x11-toolkits/gtk-- \
 		icq2000.5:${PORTSDIR}/net/libicq2000
 
+BROKEN=		"Does not build"
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
@@ -37,10 +39,6 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not build on FreeBSD 4.x"
-.endif
 
 .if ${HAVE_GNOME:Mlibcapplet}!="" || defined(WITH_GNOME)
 USE_GNOME+=	libcapplet
