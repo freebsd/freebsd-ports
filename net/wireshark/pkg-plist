@@ -1,4 +1,4 @@
-%%CAPINFO%%
+%%CAPINFOS%%
 bin/dftest
 %%EDITCAP%%
 %%ETHEREAL%%
@@ -32,32 +32,32 @@ lib/libethereal.so.0
 lib/libwiretap.a
 lib/libwiretap.so
 lib/libwiretap.so.0
-share/ethereal/AUTHORS-SHORT
-share/ethereal/capinfo.html
-share/ethereal/diameter/dictionary.dtd
-share/ethereal/diameter/dictionary.xml
-share/ethereal/diameter/mobileipv4.xml
-share/ethereal/diameter/nasreq.xml
-share/ethereal/diameter/sunping.xml
-share/ethereal/editcap.html
-share/ethereal/ethereal-filter.html
-share/ethereal/ethereal.html
-share/ethereal/help/capture_filters.txt
-share/ethereal/help/capturing.txt
-share/ethereal/help/display_filters.txt
-share/ethereal/help/faq.txt
-share/ethereal/help/getting_started.txt
-share/ethereal/help/overview.txt
-share/ethereal/help/toc
-share/ethereal/help/well_known.txt
-share/ethereal/idl2eth.html
-share/ethereal/manuf
-share/ethereal/mergecap.html
-share/ethereal/tethereal.html
-share/ethereal/text2pcap.html
+%%DATADIR%%/AUTHORS-SHORT
+%%DATADIR%%/capinfos.html
+%%DATADIR%%/diameter/dictionary.dtd
+%%DATADIR%%/diameter/dictionary.xml
+%%DATADIR%%/diameter/imscxdx.xml
+%%DATADIR%%/diameter/mobileipv4.xml
+%%DATADIR%%/diameter/nasreq.xml
+%%DATADIR%%/diameter/sunping.xml
+%%DATADIR%%/editcap.html
+%%DATADIR%%/ethereal-filter.html
+%%DATADIR%%/ethereal.html
+%%DATADIR%%/help/capture_filters.txt
+%%DATADIR%%/help/capturing.txt
+%%DATADIR%%/help/display_filters.txt
+%%DATADIR%%/help/faq.txt
+%%DATADIR%%/help/getting_started.txt
+%%DATADIR%%/help/overview.txt
+%%DATADIR%%/help/toc
+%%DATADIR%%/idl2eth.html
+%%DATADIR%%/manuf
+%%DATADIR%%/mergecap.html
+%%DATADIR%%/tethereal.html
+%%DATADIR%%/text2pcap.html
 @dirrm lib/ethereal/plugins/%%PORTVERSION%%
 @dirrm lib/ethereal/plugins
 @dirrm lib/ethereal
-@dirrm share/ethereal/diameter
-@dirrm share/ethereal/help
-@dirrm share/ethereal
+@dirrm %%DATADIR%%/diameter
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ethereal
-PORTVERSION=	0.10.6
-PORTREVISION=	1
+PORTVERSION=	0.10.8
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/all-versions/ \
 		ftp://gd.tuwien.ac.at/infosys/security/ethereal/all-versions/ \
@@ -15,7 +14,7 @@ MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/all-versions/ \
 		ftp://ftp.mirrors.wiretapped.net/pub/security/packet-capture/ethereal/all-versions/ \
 		http://www.mirrors.wiretapped.net/pub/security/packet-capture/ethereal/all-versions/
 
-MAINTAINER=	billf@FreeBSD.org
+MAINTAINER=	marcus@FreeBSD.org
 COMMENT?=	A powerful network analyzer/capture tool
 
 USE_PERL5_BUILD=yes
@@ -24,7 +23,7 @@ WANT_GNOME=	yes
 CONFIGURE_ARGS+=	--program-transform-name=""
 INSTALLS_SHLIB=	yes
 
-.for x in capinfo editcap idl2eth mergecap text2pcap
+.for x in capinfos editcap idl2eth mergecap text2pcap
 .if defined(LITE)
 PLIST_SUB+=		${x:U}="@comment $x not installed"
 CONFIGURE_ARGS+=	--enable-$x=no

@@ -1,5 +1,5 @@
---- capture.c.orig	Thu Jul 22 00:23:01 2004
-+++ capture.c	Thu Jul 22 00:23:15 2004
+--- capture_loop.c.orig	Thu Jul 22 00:23:01 2004
++++ capture_loop.c	Thu Jul 22 00:23:15 2004
 @@ -126,7 +126,7 @@
   * XXX - the various BSDs appear to define BSD in <sys/param.h>; we don't
   * want to include it if it's not present on this platform, however.
