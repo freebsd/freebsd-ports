@@ -712,6 +712,7 @@
     SUBDIR += ruby-avl
     SUBDIR += ruby-bsearch
     SUBDIR += ruby-byaccr
+    SUBDIR += ruby-cache
     SUBDIR += ruby-calendar
     SUBDIR += ruby-cvs
     SUBDIR += ruby-date2
