@@ -9,7 +9,7 @@
 PORTNAME=	rot
 PORTVERSION=	1.2
 CATEGORIES=	textproc
-MASTER_SITES=	http://wuarchive.wustl.edu/languages/c/unix-c/utils/
+MASTER_SITES=	ftp://custom.lab.unb.br/pub/unix-c/utils/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
