@@ -33,6 +33,7 @@
     SUBDIR += diveintopython
     SUBDIR += drscheme
     SUBDIR += dylan
+    SUBDIR += ecl
     SUBDIR += egcs
     SUBDIR += eiffel
     SUBDIR += elisp-manual

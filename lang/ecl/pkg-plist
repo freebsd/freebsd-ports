@@ -1,0 +1,29 @@
+bin/ecl
+bin/ecl-config
+lib/ecl/BUILD-STAMP
+lib/ecl/cmp.fas
+lib/ecl/dpp
+lib/ecl/h/config.h
+lib/ecl/h/cs.h
+lib/ecl/h/ecl-cmp.h
+lib/ecl/h/ecl.h
+lib/ecl/h/eval.h
+lib/ecl/h/external.h
+lib/ecl/h/lwp.h
+lib/ecl/h/number.h
+lib/ecl/h/object.h
+lib/ecl/h/page.h
+lib/ecl/h/stacks.h
+lib/ecl/h/unify.h
+lib/ecl/h/gc.h
+lib/ecl/h/gc_local_alloc.h
+lib/ecl/h/gc_typed.h
+lib/ecl/h/gc_config_macros.h
+lib/ecl/h/gc_pthread_redirects.h
+lib/ecl/h/leak_detector.h
+lib/ecl/help.doc
+lib/ecl/libecl.a
+lib/ecl/libecl.so
+lib/ecl/sysfun.lsp
+@dirrm lib/ecl/h
+@dirrm lib/ecl
