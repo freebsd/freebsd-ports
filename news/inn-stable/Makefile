@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	inn
-SNAPSHOT=	20020609
+#SNAPSHOT!=	date -j -f%s `date '+%s - 86400' | bc` +%Y%m%d
+SNAPSHOT=	20020620
 PORTVERSION=	2.3.${SNAPSHOT}
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/snapshots/
