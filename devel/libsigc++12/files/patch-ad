@@ -1,11 +1,11 @@
---- sigc++/config/Makefile.in	Thu Jan 20 03:40:58 2000
-+++ sigc++/config/Makefile.in	Thu Jan 27 23:34:37 1994
-@@ -81,7 +81,7 @@
+--- sigc++/config/Makefile.in.orig	Tue Aug  6 16:14:37 2002
++++ sigc++/config/Makefile.in	Tue Aug  6 16:16:36 2002
+@@ -82,7 +82,7 @@
  
  EXTRA_DIST = sigc++config.h.in
  
--includedir = $(libdir)/sigc++/include
-+includedir = $(prefix)/include
- include_HEADERS = sigc++config.h 
+-includedir = $(libdir)/sigc++-1.0/include
++includedir = $(prefix)/include/sigc++-1.0
+ include_HEADERS = sigc++config.h
  mkinstalldirs = $(SHELL) $(top_srcdir)/scripts/mkinstalldirs
  CONFIG_HEADER = sigc++config.h
