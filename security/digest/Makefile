@@ -2,33 +2,38 @@
 # Date created:				2001-03-09
 # Whom:					trevor
 #
-# $NetBSD: Makefile,v 1.4 2001/03/07 23:03:19 kim Exp $
+# $NetBSD: Makefile,v 1.37 2003/07/17 22:52:13 grant Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	digest
-PORTVERSION=	20010807
-PORTREVISION=	2
+PORTVERSION=	${VERSION}
 CATEGORIES=	security sysutils
 MASTER_SITES=	#
 DISTFILES=
-EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	MD5/SHA-1/RIPEMD-160 checksumming utility
+MAINTAINER=	eikemeier@fillmore-labs.com
+COMMENT=	Message digest wrapper utility
 
-MAKE_ENV+=	BINDIR=${LOCALBASE}/bin MANDIR=${LOCALBASE}/man/man
-MAKE_ARGS=	VERSION="${PORTVERSION}"
-MANCOMPRESSED=	yes
+GNU_CONFIGURE=	yes
+NO_WRKSUBDIR=	yes
+
 MAN1=		digest.1
-PLIST=		${WRKDIR}/pkg-plist
-WRKSRC=		${WRKDIR}
 
-do-extract:
-	${MKDIR} ${WRKSRC}
-	cd ${FILESDIR} && pax -r -w * ${WRKSRC}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-pre-install:
-	${ECHO_CMD} bin/digest > ${PLIST}
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+VERSION!=	${AWK} -F "'" '/^PACKAGE_VERSION=/ {print $$2}' \
+		${FILESDIR}/configure
+
+post-extract:
+	@${CP} -Rp ${FILESDIR}/* ${WRKSRC}
+	@${CHMOD} +x ${WRKSRC}/configure
+
+test: build
+	@${ECHO} "No news is good news"
+	@cd ${WRKSRC} && ${SETENV} DIGESTDIR=${WRKSRC} ${SH} ./regress.sh
+	@${ECHO} "All tests completed"
+
+.include <bsd.port.post.mk>

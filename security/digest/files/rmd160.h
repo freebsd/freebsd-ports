@@ -1,4 +1,4 @@
-/*	$NetBSD: rmd160.h,v 1.2 2000/07/07 10:47:06 ad Exp $	*/
+/*	$NetBSD: rmd160.h,v 1.2 2002/12/21 04:06:15 schmonz Exp $	*/
 
 /********************************************************************\
  *
@@ -23,9 +23,6 @@
 
 #ifndef _RMD160_H_
 #define _RMD160_H_
-
-#include <sys/cdefs.h>
-#include <sys/types.h>
 
 typedef struct {
 	u_int32_t	state[5];	/* state (ABCDE) */
