@@ -20,6 +20,8 @@ PKGMESSAGE=	${.CURDIR}/pkg-message
 
 USE_GHOSTSCRIPT_RUN=	yes
 
+BROKEN=		"Fails to patch"
+
 pre-fetch:
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
 	@${ECHO} ""
