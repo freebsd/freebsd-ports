@@ -37,7 +37,7 @@ APACHECTL?=	${LOCALBASE}/sbin/apachectl
 APR_LIB?=	${LOCALBASE}/lib/
 APR_INCLUDE?=	${LOCALBASE}/include/apr-0/
 APACHE_MODULES?= libexec/apache/
-APR_SRC?=	${PORTSDIR}/devel/apr/work/apr-?\.?\.?/
+APR_SRC?=	${WRKDIRPREFIX}${PORTSDIR}/devel/apr/work/apr-?\.?\.?/
 LIBTOOL?=	${LOCALBASE}/bin/libtool
 AUTOCONF?=	${LOCALBASE}/bin/autoconf
 
