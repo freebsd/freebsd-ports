@@ -34,4 +34,4 @@ lib/pkgconfig/zzip-zlib-config.pc
 lib/pkgconfig/zziplib.pc
 lib/pkgconfig/zzipwrap.pc
 @dirrm include/zzip
-@unexec rmdir $D/lib/pkgconfig 2>/dev/null || true
+@unexec rmdir %D/lib/pkgconfig 2>/dev/null || true
