@@ -7,6 +7,6 @@ MD5 (xv/longname.patch) = 04f2f162a2f66c8eca6bd6e2e1e9777d
 MD5 (xv/mp-tiff-patch) = 012a8562ed300db3174cfee95b13d18c
 MD5 (xv/pdf.patch) = 3c8806b4ce221f268f1cc257201ca0b7
 MD5 (xv/png-1.2d-fix.patch) = 672f2f82c94828d91b6929ed87139937
-MD5 (xv/png-1.2d.patch) = 8c2126618f1f9925fbb60499581d58c5
+MD5 (xv/xv-png-1.2d.patch) = 37a80e90ee07c94010af8a128f98788d
 MD5 (xv/xv-3.10a.JPEG-patch) = bd3ac79fa805319f583ccd382bdc825d
 MD5 (xv/xv-3.10a.TIFF-patch) = 305f2f0273368bb6e029c3f212a14249
