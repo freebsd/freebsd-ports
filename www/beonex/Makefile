@@ -111,7 +111,7 @@ post-build:
 .endif
 	(cd ${WRKSRC}/dist/bin && \
 		${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
-		${ECHO_CMD} skin,install,select,classic/1.0 >> \
+		${ECHO_CMD} skin,install,select,modern/1.0 >> \
 			chrome/installed-chrome.txt; \
 		${ECHO_CMD} locale,install,select,en-US >> \
 			chrome/installed-chrome.txt; \
