@@ -7,17 +7,23 @@
 
 PORTNAME=	marumoji-fonts
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://mlnews.com/marumoji/src/ \
 		${MASTER_SITE_LOCAL} \
 		ftp://ftp.lavender.org/pub/x11/fonts/
 MASTER_SITE_SUBDIR=	yoichi
-DISTFILES=	maru14.pcf.gz maru16.pcf.gz maru18.pcf.gz \
+DISTFILES=	maru14.bdf.v13.gz maru18.bdf.v10.gz \
 		7x14maru.bdf.gz 7x14rkmaru.bdf.gz \
+		m18to16.sed \
 		8x16maru.bdf.gz 8x16rkmr.bdf.gz \
 		9x18maru.bdf.gz 9x18rkmr.bdf.gz
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yoichi@FreeBSD.org
+
+BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold \
+		mkitalic:${PORTSDIR}/x11-fonts/mkitalic
 
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
@@ -30,38 +36,28 @@ BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
-BDFFONTS=	7x14maru.bdf.gz 7x14rkmaru.bdf.gz 8x16maru.bdf.gz \
-		8x16rkmr.bdf.gz 9x18maru.bdf.gz 9x18rkmr.bdf.gz
-FONTSIZE=	7x14 8x16 9x18
+EXTRACT_CMD=		${CP}
+EXTRACT_BEFORE_ARGS=	-p
+EXTRACT_AFTER_ARGS=	${WRKDIR}
+
+MAKE_ENV=	FONTSDIR=${FONTSDIR}
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
-do-extract:
-	@${MKDIR} ${WRKDIR}
-.for i in ${BDFFONTS}
-	@${CP} ${DISTDIR}/${i} ${WRKDIR}
-	@${GUNZIP_CMD} ${WRKDIR}/${i}
-.endfor
-	@${MV} ${WRKDIR}/7x14rkmaru.bdf ${WRKDIR}/7x14rkmr.bdf
+post-extract:
+	@${MV} ${WRKDIR}/maru14.bdf.v13.gz ${WRKDIR}/maru14.bdf.gz
+	@${MV} ${WRKDIR}/maru18.bdf.v10.gz ${WRKDIR}/maru18.bdf.gz
+	@${CP} ${FILESDIR}/Makefile.in ${WRKDIR}/Makefile
+	@(cd ${WRKDIR}; ${GUNZIP_CMD} *.gz)
 
-do-build:
-.for i in ${FONTSIZE}
-	(cd ${WRKSRC} ; \
-	bdftopcf ${i}maru.bdf > ${i}maru.pcf ; ${GZIP_CMD} ${i}maru.pcf; \
-	bdftopcf ${i}rkmr.bdf > ${i}rkmr.pcf ; ${GZIP_CMD} ${i}rkmr.pcf )
-.endfor
-
-do-install:
-	${MKDIR} ${PREFIX}/${FONTSDIR}
-	(cd ${DISTDIR} ; ${INSTALL_DATA} maru14.pcf.gz maru16.pcf.gz maru18.pcf.gz ${PREFIX}/${FONTSDIR})
-.for i in ${FONTSIZE}
-	(cd ${WRKSRC} ; ${INSTALL_DATA} ${i}maru.pcf.gz ${i}rkmr.pcf.gz ${PREFIX}/${FONTSDIR})
-.endfor
-	mkfontdir ${PREFIX}/${FONTSDIR}
-	${MKDIR} ${PREFIX}/share/doc/marumoji-fonts
-	${INSTALL_DATA} ${FILESDIR}/LICENSE ${PREFIX}/share/doc/marumoji-fonts
-
+pre-build:
+	@(cd ${WRKDIR}; ${SED} -f m18to16.sed < maru18.bdf > maru16.bdf)
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGREQ} ${PKGNAME} INSTALL
+
+post-install:
+	@(cd ${PREFIX}/${FONTSDIR}; mkfontdir)
+	${MKDIR} ${PREFIX}/share/doc/marumoji-fonts
+	${INSTALL_DATA} ${FILESDIR}/LICENSE ${PREFIX}/share/doc/marumoji-fonts
 
 .include <bsd.port.post.mk>
