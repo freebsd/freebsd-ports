@@ -53,19 +53,37 @@ LINPROCFS!=	/sbin/mount | /usr/bin/grep ^linprocfs | ${AWK} '{print $1}'
 PROCFS!=	/sbin/mount | /usr/bin/grep ^procfs | ${AWK} '{print $1}'
 
 pre-fetch:
-.if ${LINPROCFS} && ${PROCFS}
+.if ${PROCFS}
 	@${ECHO}
-	@${ECHO} Check if procfs and linprocfs is running: YES
+	@${ECHO} Check if procfs is running: YES
 .else
 	@${ECHO} -----------------------------------------------------------
+	@${ECHO} Check if procfs is running: NO
 	@${ECHO}
-	@${ECHO} Staroffice setup needs a running procfs and linprocfs,
-	@${ECHO} which may not be activated on your system. Please read the
-	@${ECHO} procfs\(5\) and linprocfs\(5\) manpages and ensure the
-	@${ECHO} the following lines are in /etc/fstab:
+	@${ECHO} Staroffice setup needs a running procfs file system.
+	@${ECHO} It seems that procfs is not mounted on your system.  Please
+	@${ECHO} read the procfs\(5\) manpage and ensure the the following
+	@${ECHO} line is in /etc/fstab, and that the procfs file 
+	@${ECHO} system is mounted:
 	@${ECHO}
-	@${ECHO} linproc /compat/linux/proc linprocfs rw 0 0
 	@${ECHO} proc /proc procfs rw 0 0
+	@${ECHO}
+	@${ECHO} -----------------------------------------------------------
+	@${FALSE}
+.endif
+.if ${LINPROCFS}
+	@${ECHO} Check if linprocfs is running: YES
+.else
+	@${ECHO} -----------------------------------------------------------
+	@${ECHO} Check if linprocfs is running: NO
+	@${ECHO}
+	@${ECHO} Staroffice setup needs a running procfs and linprocfs.
+	@${ECHO} It seems that linprocfs is not mounted on your system. 
+	@${ECHO} Please read the linprocfs\(5\) manpage and ensure the
+	@${ECHO} the following line is in /etc/fstab, and that the
+	@${ECHO} linprocfs file system is mounted:
+	@${ECHO}
+	@${ECHO} linproc	/compat/linux/proc	linprocfs	rw 0 0
 	@${ECHO}
 	@${ECHO} -----------------------------------------------------------
 	@${FALSE}
@@ -76,9 +94,8 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} Staroffice depends on a scripting fix for
 	@${ECHO} /usr/src/sys/i386/linux/linux_sysvec.c
-	@${ECHO} \(revision 1.55.2.1 or higher\)
 	@${ECHO}
-	@${ECHO} Please upgrade to FreeBSD 4.1
+	@${ECHO} Please upgrade to FreeBSD 4.1 or later.
 	@${ECHO}
 	@${FALSE}
 .endif
@@ -101,6 +118,19 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} Please mount the Sun StarOffice 5.2 CDROM
 	@${ECHO} onto ${CD_MOUNTPT} and run make again.
+	@${ECHO}
+	@${FALSE}
+.endif
+.else
+.if exists(/cdrom/linux/office52/setup)
+	@${ECHO}
+	@${ECHO} It seems that you have a Sun StarOffice 5.2 CDROM
+	@${ECHO} mounted on ${CD_MOUNTPT}.  If you wish to install from
+	@${ECHO} this CD-ROM, please run 
+	@${ECHO}
+	@${ECHO}        make -DWITH_CDROM
+	@${ECHO}
+	@${ECHO} Otherwise please unmount the CD-ROM.
 	@${ECHO}
 	@${FALSE}
 .endif
@@ -165,7 +195,7 @@ do-install:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" TEMP=${TMPDIR} LD_LIBRARY_PATH=${LD_PATH} ${LINUXBASE}/bin/sh -c '${WRKSRC}/setup /net'
 	@if [ -f ${PREFIX}/office52/program/setup ]; then \
 		${ECHO} ; \
-		${ECHO} Ignore the error-message. StarOffice5.2 has been installed ; \
+		${ECHO} Ignore the error message. StarOffice5.2 has been installed ; \
 		${ECHO} successfully on your system. ; \
 		${ECHO} ; \
 	else \
@@ -188,9 +218,16 @@ post-install:
 	@${SED} -e 's%DefaultDestPath = "${PREFIX}/office52%DefaultDestPath = "office52%' \
 	    < ${INSTDB.INS}.orig > ${INSTDB.INS}
 	@${RM} ${INSTDB.INS}.orig
+	@${ECHO} StarOffice has been installed successfully.  Prior to use,
+	@${ECHO} each user must change to this directory and run 'make install-user'.
 
 install-user:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" ${LINUXBASE}/bin/sh -c \
 		${PREFIX}/office52/program/setup
+	@${ECHO} StarOffice has been installed successfully.  In order to use
+	@${ECHO} it, add the path ${HOME}/office52 to your PATH environment
+	@${ECHO} variable, and start the program with
+	@${ECHO} 
+	@${ECHO} '      ' soffice \&
 
 .include <bsd.port.post.mk>
