@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.erlang.org/pub/download/     \
 		http://erlang.stacken.kth.se/download/ \
 		http://www.csd.uu.se/ftp/mirror/erlang/download/
 DISTNAME=	otp_src_R9B-1
+DIST_SUBDIR=	erlang
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ERLANG_MAN} ${ERLANG_DOCS}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -25,32 +26,30 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A functional programming language from Ericsson
 
 # Set JAVABINDIR to where you have javac, if different from below
-JAVABINDIR?=	${LOCALBASE}/jdk1.3.1/bin
-JAVAPORT?=	${JAVABINDIR}/javac:${PORTSDIR}/java/jdk13
-
-.if !exists(${JAVABINDIR}/java)
-WITHOUT_JAVA=	yes
-.endif
-
-CONFIGURE_TARGET=	# Empty
-
-# Don't clutter up /usr/ports/distfiles with all distfiles (including patches)
-DIST_SUBDIR=	erlang
+JAVABINDIR?=	${LOCALBASE}/jdk1.4.1/bin
+JAVAPORT?=	${JAVABINDIR}/javac:${PORTSDIR}/java/jdk14
 
 ERLANG_MAN=     otp_man_R9B-1.tar.gz
 .if !defined(NOPORTDOCS)
 ERLANG_DOCS=	otp_html_R9B-1.tar.gz
 .endif
 
-.if !defined(WITHOUT_X11)
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
-.endif
-
 USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
+CONFIGURE_TARGET=	# Empty
 CONFIGURE_ARGS+=	--enable-threads --enable-hipe
+
+.if !defined(WITHOUT_X11)
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if !exists(${JAVABINDIR}/java)
+WITHOUT_JAVA=	yes
+.endif
 
 .if !defined(WITHOUT_JAVA)
 # The Java applications that are part of the Erlang distribution are
@@ -67,7 +66,20 @@ BUILD_DEPENDS+=  ${JAVAPORT}
 CONFIGURE_ENV+= PATH=${PATH}:${JAVABINDIR}
 MAKE_ENV+=      PATH=${PATH}:${JAVABINDIR}
 SCRIPT_ENV+=    PATH=${PATH}:${JAVABINDIR}
+
 .endif
+
+# The man-pages are put (in spite of FreeBSD's port convention) in a private
+# subdir. This is to avoid cluttering up the man page name space. Also the
+# Erlang man pages are more of internal documentation using the man format than
+# actual system man pages. (erl.1 and epmd.1 perhaps being the exception).
+
+NOMANCOMPRESS=	yes
+
+MAN1PREFIX=	${PREFIX}/lib/erlang
+MAN3PREFIX=	${PREFIX}/lib/erlang
+MAN4PREFIX=	${PREFIX}/lib/erlang
+MAN6PREFIX=	${PREFIX}/lib/erlang
 
 # Workaround for a ./configure recursion bug which leads to INSTALL being
 # set to "../../../../[...]"
@@ -143,20 +155,7 @@ post-install:
 	@${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-lib-erlang
 	@cd ${WRKDIR} ; ex < ex.script
 
-# The man-pages are put (in spite of FreeBSD's port convention) in a
-# private subdir. This is to avoid cluttering up the man page name
-# space. Also the Erlang man pages are more of internal documentation
-# using the man format than actual system man pages. (The erl.1 and
-# epmd.1 perhaps being the exception).
-
-NOMANCOMPRESS=	yes
-
-MAN1PREFIX=	${PREFIX}/lib/erlang
-MAN3PREFIX=	${PREFIX}/lib/erlang
-MAN4PREFIX=	${PREFIX}/lib/erlang
-MAN6PREFIX=	${PREFIX}/lib/erlang
-
 .include "Makefile.lib"
 .include "Makefile.man"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
