@@ -1,0 +1,20 @@
+diff -u -r tnm/generic/tnmUtil.c tnm/generic/tnmUtil.c
+--- ../tnm/generic/tnmUtil.c	Tue Aug  6 17:20:38 1996
++++ ../tnm/generic/tnmUtil.c	Sat Mar  1 20:45:12 1997
+@@ -400,7 +400,7 @@
+     if (hostEntry) {
+ 	struct sockaddr_in *caddr;
+ 	caddr = (struct sockaddr_in *) Tcl_GetHashValue(hostEntry);
+-	addr->sin_addr.s_addr = caddr->sin_addr.s_addr;
++	addr->sin_addr.s_addr = ntohl(caddr->sin_addr.s_addr);
+ 	return TCL_OK;
+     }
+     
+@@ -425,6 +425,7 @@
+ 	memcpy((char *) &addr->sin_addr, (char *) &hostaddr, 4);
+     } 
+ 
++    addr->sin_addr.s_addr = ntohl(addr->sin_addr.s_addr);
+     return TCL_OK;
+ }
+ 
