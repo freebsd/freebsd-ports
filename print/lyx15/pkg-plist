@@ -5,15 +5,18 @@ share/locale/de/LC_MESSAGES/lyx.mo
 share/locale/es/LC_MESSAGES/lyx.mo
 share/locale/fi/LC_MESSAGES/lyx.mo
 share/locale/fr/LC_MESSAGES/lyx.mo
+share/locale/hu/LC_MESSAGES/lyx.mo
 share/locale/nl/LC_MESSAGES/lyx.mo
 share/locale/no/LC_MESSAGES/lyx.mo
 share/locale/sv/LC_MESSAGES/lyx.mo
+share/locale/tr/LC_MESSAGES/lyx.mo
 share/lyx/CREDITS
 share/lyx/bind/cua.bind
 share/lyx/bind/emacs.bind
 share/lyx/bind/math.bind
 share/lyx/bind/menus.bind
 share/lyx/bind/menus_de.bind
+share/lyx/bind/menus_hu.bind
 share/lyx/bind/xemacs.bind
 share/lyx/chkconfig.ltx
 share/lyx/clipart/platypus.eps
@@ -42,11 +45,11 @@ share/lyx/examples/Minipage.lyx
 share/lyx/examples/TableExamples.lyx
 share/lyx/examples/aa_head.lyx
 share/lyx/examples/aa_paper.lyx
-share/lyx/examples/ams-test.lyx
 share/lyx/examples/amsart-test.lyx
 share/lyx/examples/amsbook-test.lyx
 share/lyx/examples/example_lyxified.lyx
 share/lyx/examples/example_raw.lyx
+share/lyx/examples/landslide.lyx
 share/lyx/images/amssymb.xbm
 share/lyx/images/amssymb.xpm
 share/lyx/images/psnfss1.xbm
@@ -65,12 +68,14 @@ share/lyx/kbd/czech.kmap
 share/lyx/kbd/francais.kmap
 share/lyx/kbd/french.kmap
 share/lyx/kbd/german-2.kmap
+share/lyx/kbd/german-3.kmap
 share/lyx/kbd/german.kmap
 share/lyx/kbd/greek.kmap
 share/lyx/kbd/iso8859-1.cdef
 share/lyx/kbd/iso8859-2.cdef
 share/lyx/kbd/iso8859-7.cdef
 share/lyx/kbd/magyar-2.kmap
+share/lyx/kbd/magyar-3.kmap
 share/lyx/kbd/magyar.kmap
 share/lyx/kbd/polish.kmap
 share/lyx/kbd/portuges.kmap
@@ -93,6 +98,7 @@ share/lyx/layouts/amsmaths.inc
 share/lyx/layouts/article.layout
 share/lyx/layouts/book.layout
 share/lyx/layouts/dinbrief.layout
+share/lyx/layouts/ejour2.layout
 share/lyx/layouts/foils.layout
 share/lyx/layouts/iletter.layout
 share/lyx/layouts/letter.layout
@@ -102,6 +108,10 @@ share/lyx/layouts/obsolete.inc
 share/lyx/layouts/paper.layout
 share/lyx/layouts/report.layout
 share/lyx/layouts/revtex.layout
+share/lyx/layouts/scr.inc
+share/lyx/layouts/scrartcl.layout
+share/lyx/layouts/scrbook.layout
+share/lyx/layouts/scrreprt.layout
 share/lyx/layouts/slides.layout
 share/lyx/layouts/stdclass.inc
 share/lyx/layouts/stdlayouts.inc
@@ -113,6 +123,19 @@ share/lyx/layouts/stdstruct.inc
 share/lyx/lyxrc
 share/lyx/lyxrc.defaults
 share/lyx/packages.lst
+share/lyx/reLyX/BUGS
+share/lyx/reLyX/BasicLyX.pm
+share/lyx/reLyX/CHANGES
+share/lyx/reLyX/CleanTeX.pm
+share/lyx/reLyX/LastLyX.pm
+share/lyx/reLyX/MakePreamble.pm
+share/lyx/reLyX/README
+share/lyx/reLyX/ReadCommands.pm
+share/lyx/reLyX/RelyxTable.pm
+share/lyx/reLyX/Text/TeX.pm
+share/lyx/reLyX/reLyX.pod
+share/lyx/reLyX/reLyXmain.pl
+share/lyx/reLyX/syntax.default
 share/lyx/templates/aapaper.lyx
 share/lyx/templates/dinbrief.lyx
 share/lyx/templates/iletter.lyx
@@ -120,6 +143,7 @@ share/lyx/templates/latex_letter.lyx
 share/lyx/templates/linuxdoctemplate.lyx
 share/lyx/templates/revtex.lyx
 share/lyx/templates/slides.lyx
+share/lyx/tex/ejour2.cls
 share/lyx/tex/iletter.cls
 share/lyx/tex/revtex.cls
 share/lyx/textclass.lst
@@ -130,6 +154,8 @@ share/lyx/textclass.lst
 @dirrm share/lyx/images
 @dirrm share/lyx/kbd
 @dirrm share/lyx/layouts
+@dirrm share/lyx/reLyX/Text
+@dirrm share/lyx/reLyX
 @dirrm share/lyx/templates
 @dirrm share/lyx/tex
 @dirrm share/lyx
