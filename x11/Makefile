@@ -107,6 +107,7 @@
     SUBDIR += powershell
     SUBDIR += props
     SUBDIR += qrash
+    SUBDIR += randrext
     SUBDIR += rox-wallpaper
     SUBDIR += ruby-X11
     SUBDIR += ruby-gnome
