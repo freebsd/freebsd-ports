@@ -1,5 +1,5 @@
---- config/cf/FreeBSD.cf.orig	Tue Jan 14 18:52:12 2003
-+++ config/cf/FreeBSD.cf	Sun Oct 12 16:14:27 2003
+--- config/cf/FreeBSD.cf	Tue Jan 14 21:52:12 2003
++++ config/cf/FreeBSD.cf	Sun Nov  2 13:21:24 2003
 @@ -162,11 +162,11 @@
   *    ld: warning: libXThrStub.so.6, needed by libX11.so, not found
   */
@@ -59,6 +59,15 @@
  # define HasX86Support          YES
  # define HasMMXSupport		YES
  # define Has3DNowSupport	YES
+@@ -299,7 +308,7 @@
+ 
+ #ifndef SharedLibraryLoadFlags
+ #if UseElfFormat
+-#define SharedLibraryLoadFlags	-shared -rpath $(USRLIBDIRPATH)
++#define SharedLibraryLoadFlags	-shared -Wl,-rpath$(USRLIBDIRPATH)
+ #else
+ #define SharedLibraryLoadFlags	-Bshareable -R $(USRLIBDIRPATH)
+ #endif
 @@ -455,10 +464,8 @@
  #ifdef i386Architecture
  #define ServerExtraDefines GccGasOption XFree86ServerDefines
