@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	scout
-PORTVERSION=	0.70
+PORTVERSION=	0.86
 CATEGORIES=	www
-MASTER_SITES=	http://www.cus.org.uk/~dom/distfiles/
+MASTER_SITES=	ftp://sid.joedog.org/pub/scout/ \
+	http://www.cus.org.uk/~dom/distfiles/scout/
 
 MAINTAINER=	d.marks@student.umist.ac.uk
 
@@ -17,7 +18,7 @@ CONFIGURE_ARGS+=	--disable-shared --enable-static
 MAN1=		scout.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/scout ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/scout.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/scout ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/doc/scout.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
