@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.xfce.org/archive/xfce4-rc2/src/ \
 DISTNAME=	xffm-icons-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 icon themes for the xffm file manager
 
 USE_X_PREFIX=	yes
