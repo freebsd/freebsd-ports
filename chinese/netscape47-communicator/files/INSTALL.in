@@ -1,0 +1,18 @@
+#!/bin/sh
+CLASSDIR=@NDIR@/java/classes
+XLOCALEDIR=@X11BASE@/lib/X11/locale/zh_TW.Big5
+
+if [ "$2" = "POST-INSTALL" ]; then
+  exit 0;
+fi
+
+#
+# Backup font.properties.zh_GB2312, font.properties.zh_TW_Big5,
+# and XLC_LOCALE.
+#
+if [ "$2" = "PRE-INSTALL" ]; then
+  cp -f ${CLASSDIR}/font.properties.zh_GB2312 ${CLASSDIR}/font.properties.zh_GB2312.orig
+  cp -f ${CLASSDIR}/font.properties.zh_TW_Big5 ${CLASSDIR}/font.properties.zh_TW_Big5.orig
+  cp -f ${XLOCALEDIR}/XLC_LOCALE ${XLOCALEDIR}/XLC_LOCALE.orig
+fi
+
