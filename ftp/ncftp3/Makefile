@@ -43,12 +43,12 @@ do-install:
 	@cd ${WRKSRC}/bin ; ${INSTALL_PROGRAM} \
 		ncftpbatch ncftpget ncftpls ncftpput ncftpbookmarks \
 		${PREFIX}/bin
-	@cd ${PREFIX}/bin && ${LN} ncftpbatch ncftpspooler
-	@${INSTALL_DATA} ${WRKSRC}/Strn/libStrn.so.1 ${PREFIX}/lib/${LIBSTRN}
-	@cd ${PREFIX}/lib && ${LN} -sf ${LIBSTRN} libStrn.so
-	@cd ${WRKSRC} && ${INSTALL_DATA} libncftp/${LIBNCFTP} sio/${LIBSIO} \
+	@cd ${PREFIX}/bin && ${LN} -f ncftpbatch ncftpspooler
+	@cd ${WRKSRC} && ${INSTALL_DATA} \
+		Strn/${LIBSTRN} libncftp/${LIBNCFTP} sio/${LIBSIO} \
 		${PREFIX}/lib
 	@cd ${PREFIX}/lib \
+		&& ${LN} -sf ${LIBSTRN} libStrn.so \
 		&& ${LN} -sf ${LIBNCFTP} libncftp.so \
 		&& ${LN} -sf ${LIBSIO} libsio.so
 	@${INSTALL_MAN} ${WRKSRC}/doc/man/ncftp.1 ${PREFIX}/man/man1/ncftp3.1
