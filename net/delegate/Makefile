@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://etlport.etl.go.jp/pub/DeleGate/
 
 MAINTAINER=	max@FreeBSD.org
 
+#FORBIDDEN=	"Remote buffer overflow yielding setuid nobody shell"
+
 MAKE_ENV=	PATH=$${PATH}:.
 
 .if defined(BATCH)
