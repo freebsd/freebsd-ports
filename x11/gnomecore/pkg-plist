@@ -46,6 +46,8 @@ lib/libpanel_applet.so.4
 lib/libpanel_status.a
 lib/libpanel_status.so
 lib/libpanel_status.so.4
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/gnome/applets/Amusements/.directory
 share/gnome/applets/Amusements/fish_applet.desktop
 share/gnome/applets/Clocks/.directory
