@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.55 1997/05/23 08:02:50 tg Exp $
+# $Id: Makefile,v 1.56 1997/05/24 13:16:59 jfitz Exp $
 #
 
     SUBDIR += SWIG
     SUBDIR += autoconf
+    SUBDIR += automake
     SUBDIR += bcc
     SUBDIR += boehm-gc
     SUBDIR += cflow
