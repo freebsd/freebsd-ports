@@ -11,5 +11,7 @@ default):
 
 imap	auth	required	pam_unix.so			try_first_pass
 imap	account	required	pam_unix.so			try_first_pass
+imap	session	required	pam_unix.so			try_first_pass
 pop3	auth	required	pam_unix.so			try_first_pass
 pop3	account	required	pam_unix.so			try_first_pass
+pop3	session	required	pam_unix.so			try_first_pass

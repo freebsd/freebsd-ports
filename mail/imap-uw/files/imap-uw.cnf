@@ -1,0 +1,34 @@
+HOME= .
+RANDFILE = $ENV::HOME/.rnd
+
+[ req ]
+default_bits = 1024
+encrypt_key = yes
+distinguished_name = req_dn
+x509_extensions = cert_type
+
+[ req_dn ]
+countryName = Country Name (2 letter code)
+countryName_default             = NO
+countryName_min                 = 2
+countryName_max                 = 2
+
+stateOrProvinceName             = State or Province Name (full name)
+stateOrProvinceName_default     = Some-State
+
+localityName                    = Locality Name (eg, city)
+
+0.organizationName              = Organization Name (eg, company)
+0.organizationName_default      = FooBar Inc.
+
+organizationalUnitName          = Organizational Unit Name (eg, section)
+#organizationalUnitName_default =
+
+0.commonName                    = Common Name (FQDN of your server)
+
+1.commonName                    = Common Name (default)
+1.commonName_value              = localhost
+
+[ cert_type ]
+nsCertType = server
+

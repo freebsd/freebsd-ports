@@ -6,18 +6,24 @@
 #
 
 PORTNAME=	imap
-PORTVERSION=	0104051333
+PORTVERSION=	0104101757
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
+		ftp://ftp.nuug.no/pub/anders/distfiles/%SUBDIR%/ \
+		http://www.freenix.no/~anders/%SUBDIR%/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/mail/%SUBDIR%/ \
 		http://mirror.nucba.ac.jp/mirror/imap/%SUBDIR%/ \
 		ftp://ftp.uni-halle.de/pub/mail/pine/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
+.if defined(WITH_DRAC)
+PKGNAMESUFFIX=	-uw-drac
+.else
 PKGNAMESUFFIX=	-uw
+.endif
 DISTNAME=	imap-2001.BETA.SNAP-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.Z imap-utils.tar.Z
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	anders@fix.no
 
 LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 .if defined(WITH_DRAC)
@@ -75,7 +81,6 @@ post-install:
 	@${ECHO}
 	@${ECHO} "Remember to recompile and reinstall your cclient port with SSL support too, if"
 	@${ECHO} "you had it installed without SSL support."
-	@${ECHO}
 	@${ECHO} "================================================================================"
 .endif
 
