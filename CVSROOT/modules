@@ -4258,6 +4258,7 @@ keychain	ports/security/keychain
 keylaunch	ports/x11/keylaunch
 keynote		ports/security/keynote
 keyprint	ports/security/keyprint
+kf		ports/net/kf
 kfile-plugins	ports/misc/kfile-plugins
 kfreerings	ports/games/kfreerings
 kftpgrabber	ports/ftp/kftpgrabber
