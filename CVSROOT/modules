@@ -8516,6 +8516,7 @@ relaydb		ports/mail/relaydb
 remarp		ports/net-mgmt/remarp
 remind		ports/deskutils/remind
 renamedlgplugins	ports/misc/renamedlgplugins
+renattach	ports/mail/renattach
 renderext	ports/x11/renderext
 renderpark	ports/graphics/renderpark
 reoback		ports/sysutils/reoback
