@@ -9,7 +9,7 @@ PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	radius
-DISTNAME=       radius-1.0
+DISTNAME=       radius-1.1
 
 MAINTAINER=	lance@merlin.net.ua
 COMMENT=	GNU RADIUS server
