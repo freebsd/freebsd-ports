@@ -710,7 +710,7 @@ pre-everything::
 	@${ECHO_MSG} "Take a careful look into the Makefile in order"
 	@${ECHO_MSG} "to learn how to tune mplayer towards you personal preferences!"
 	@${ECHO_MSG} "For example,"
-	@${ECHO_MSG} "make WITH_GTK1
+	@${ECHO_MSG} "make WITH_GTK1"
 	@${ECHO_MSG} "builds MPlayer with GTK1-GUI support."
 
 .if !defined(WITHOUT_GUI)
