@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gorua
-PORTVERSION=	0.13d
+PORTVERSION=	0.14
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.unixuser.org/~haruyama/software/goRua/
 DISTNAME=	goRua-${PORTVERSION}
@@ -29,7 +29,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/goRua_cache_clean.rb ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/new_2ch_bbsmenu.rb ${PREFIX}/bin
 
-	${INSTALL_DATA} ${WRKSRC}/color_table.rb ${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/goRua_color_table.rb ${RUBY_SITELIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/connect2ch.rb ${RUBY_SITELIBDIR}
 
 .if !defined(NOPORTDOCS)
