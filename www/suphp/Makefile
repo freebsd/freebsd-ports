@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	suphp
-PORTVERSION=	0.5
-PORTREVISION=	2
+PORTVERSION=	0.5.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/
 
@@ -27,6 +26,9 @@ APACHE_USER?=	${WWWOWN}
 MIN_UID?=	80
 MIN_GID?=	80
 WITH_SETID_MODE?=	owner
+MYPORTDOCS=	apache/CONFIG apache/INSTALL apache/README apache/LICENSE \
+		LICENSE	INSTALL README
+LANG=		en de
 
 CONFIGURE_ARGS+=	--with-php=${PHP_PATH} \
 			--with-logfile=${LOG_PATH}/suphp.log \
@@ -48,7 +50,7 @@ CONFIGURE_ARGS+=	--disable-checkuid
 .if defined(WITHOUT_CHECKGID)
 CONFIGURE_ARGS+=	--disable-checkgid
 .endif
-## WITH_SETID_MODE: Mode to use for setting UID/GID.
+##   WITH_SETID_MODE: Mode to use for setting UID/GID.
 CONFIGURE_ARGS+=	--enable-setid=${WITH_SETID_MODE}
 
 .include <bsd.port.pre.mk>
@@ -69,7 +71,12 @@ pre-everything::
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${CP} -Rfp ${WRKSRC}/doc/* ${DOCSDIR}
+.for l in ${LANG}
+	@${MKDIR} ${DOCSDIR}/${l}/apache
+.       for f in ${MYPORTDOCS}
+	@${CP} -Rfp ${WRKSRC}/doc/${l}/${f} ${DOCSDIR}/${l}/${f}
+.       endfor
+.endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
