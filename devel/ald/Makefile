@@ -19,4 +19,10 @@ MAN8=		ald.8
 PLIST_FILES=	bin/ald
 ONLY_FOR_ARCHS=	i386
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Broken by make(1) changes on FreeBSD >= 5.x"
+.endif
+
+.include <bsd.port.post.mk>
