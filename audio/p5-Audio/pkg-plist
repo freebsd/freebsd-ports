@@ -7,6 +7,8 @@ bin/pplay
 %%SITE_PERL%%/mach/auto/Audio/Play/autosplit.ix
 %%SITE_PERL%%/mach/auto/Audio/Data/Data.so
 %%SITE_PERL%%/mach/auto/Audio/Data/Data.bs
+%%SITE_PERL%%/mach/auto/Audio/Data/autosplit.ix
+%%SITE_PERL%%/mach/auto/Audio/Data/solve_polynomial.al
 %%SITE_PERL%%/mach/auto/Audio/.packlist
 %%SITE_PERL%%/mach/Tk/Scope.pm
 %%SITE_PERL%%/mach/Audio/typemap
