@@ -2100,6 +2100,7 @@ gdesklets	ports/deskutils/gdesklets
 gdesklets-calendar	ports/deskutils/gdesklets-calendar
 gdesklets-clock	ports/x11-clocks/gdesklets-clock
 gdesklets-cornerxmms	ports/audio/gdesklets-cornerxmms
+gdesklets-countdown	ports/x11-clocks/gdesklets-countdown
 gdesklets-goodweather	ports/astro/gdesklets-goodweather
 gdesklets-imapmail	ports/mail/gdesklets-imapmail
 gdesklets-multitail	ports/sysutils/gdesklets-multitail
