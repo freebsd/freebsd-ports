@@ -48,9 +48,24 @@ lib/scons/SCons/Optik/option.pyo
 lib/scons/SCons/Optik/option_parser.py
 lib/scons/SCons/Optik/option_parser.pyc
 lib/scons/SCons/Optik/option_parser.pyo
-lib/scons/SCons/Options.py
-lib/scons/SCons/Options.pyc
-lib/scons/SCons/Options.pyo
+lib/scons/SCons/Options/BoolOption.py
+lib/scons/SCons/Options/BoolOption.pyc
+lib/scons/SCons/Options/BoolOption.pyo
+lib/scons/SCons/Options/EnumOption.py
+lib/scons/SCons/Options/EnumOption.pyc
+lib/scons/SCons/Options/EnumOption.pyo
+lib/scons/SCons/Options/ListOption.py
+lib/scons/SCons/Options/ListOption.pyc
+lib/scons/SCons/Options/ListOption.pyo
+lib/scons/SCons/Options/PackageOption.py
+lib/scons/SCons/Options/PackageOption.pyc
+lib/scons/SCons/Options/PackageOption.pyo
+lib/scons/SCons/Options/PathOption.py
+lib/scons/SCons/Options/PathOption.pyc
+lib/scons/SCons/Options/PathOption.pyo
+lib/scons/SCons/Options/__init__.py
+lib/scons/SCons/Options/__init__.pyc
+lib/scons/SCons/Options/__init__.pyo
 lib/scons/SCons/Platform/__init__.py
 lib/scons/SCons/Platform/__init__.pyc
 lib/scons/SCons/Platform/__init__.pyo
@@ -282,6 +297,9 @@ lib/scons/SCons/Tool/rmic.pyo
 lib/scons/SCons/Tool/sgiar.py
 lib/scons/SCons/Tool/sgiar.pyc
 lib/scons/SCons/Tool/sgiar.pyo
+lib/scons/SCons/Tool/sgic++.py
+lib/scons/SCons/Tool/sgic++.pyc
+lib/scons/SCons/Tool/sgic++.pyo
 lib/scons/SCons/Tool/sgicc.py
 lib/scons/SCons/Tool/sgicc.pyc
 lib/scons/SCons/Tool/sgicc.pyo
@@ -332,6 +350,7 @@ lib/scons/SCons/exitfuncs.pyo
 @dirrm lib/scons/SCons/Script
 @dirrm lib/scons/SCons/Scanner
 @dirrm lib/scons/SCons/Platform
+@dirrm lib/scons/SCons/Options
 @dirrm lib/scons/SCons/Optik
 @dirrm lib/scons/SCons/Node
 @dirrm lib/scons/SCons
