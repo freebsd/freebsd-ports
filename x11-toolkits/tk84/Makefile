@@ -43,6 +43,10 @@ CONFIGURE_ARGS+=	--enable-threads
 PKGNAMESUFFIX?=		-threads
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_TK84_MAN)
+
 MAN1=	wish.1
 MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
 	CanvTxtInfo.3 Clipboard.3 ClrSelect.3 ConfigWidg.3 ConfigWind.3 \
@@ -344,7 +348,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	text.n tk_textCut.n \
 	text.n tk_textPaste.n
 
-.include <bsd.port.pre.mk>
+.endif
 
 pre-everything::
 	@if ${TEST} -e "${NONEXISTENT}"; then ${ECHO_MSG} "=== Aborted, please remove ${NONEXISTENT}"; exit 1; fi
@@ -356,6 +360,10 @@ post-patch:
 post-configure:
 	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}${PORTSDIR}=$${WRKDIRPREFIX}${PORTSDIR}=' \
 		${WRKSRC}/tkConfig.sh
+.if defined(WITHOUT_TK84_MAN)
+	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
+		${WRKSRC}/Makefile
+.endif
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}/

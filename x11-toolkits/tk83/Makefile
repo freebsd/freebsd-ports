@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.3.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits tk83
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -36,6 +36,10 @@ NOPRECIOUSMAKEVARS=	Too many _MLINKS for README.html
 TCL83_PORT?=	lang/tcl83
 USE_REINPLACE=	YES
 MANCOMPRESSED=	no
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TK83_MAN)
 
 MAN1=	wish.1
 MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
@@ -319,11 +323,15 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	palette.n tk_bisque.n \
 	popup.n tk_popup.n
 
-.include <bsd.port.pre.mk>
+.endif
 
 post-configure:
 	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}${PORTSDIR}=$${WRKDIRPREFIX}${PORTSDIR}=' \
 		${WRKSRC}/tkConfig.sh
+.if !defined(WITH_TK83_MAN)
+	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
+		${WRKSRC}/Makefile
+.endif
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}/
