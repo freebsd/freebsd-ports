@@ -63,6 +63,12 @@ CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -L${LOCALBASE}/lib -I${LOCALBASE}/include" 
 
 MAN1=		povray.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+BROKEN=		"Does not compile on i386"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's+@PREFIX@+${PREFIX}+g;' ${WRKSRC}/povray.ini
 	@${REINPLACE_CMD} -e 's+%INSTALLDIR%+${PREFIX}/share/${PORTNAME}-${PORTVERSION}+g;' ${WRKSRC}/povray.conf
@@ -83,4 +89,4 @@ do-install:
 post-install:
 	@${SED} -e 's,/usr/local,${PREFIX},g' ${DESCR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
