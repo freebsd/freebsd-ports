@@ -8,7 +8,8 @@
 PORTNAME=	naim
 PORTVERSION=	0.11.3
 CATEGORIES=	net
-MASTER_SITES=	http://www.acm.rpi.edu/~n/dev.n.ml.org/
+MASTER_SITES=	http://rpi-acm.org/~n/dev.n.ml.org/ \
+		http://www.acm.rpi.edu/~n/dev.n.ml.org/
 
 MAINTAINER=	rtdean@cytherianage.net
 
