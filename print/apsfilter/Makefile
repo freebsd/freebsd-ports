@@ -79,7 +79,7 @@ RUN_DEPENDS+=	acroread5:${PORTSDIR}/print/acroread5
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS+=	dvips:${PORTSDIR}/print/teTeX
 RUN_DEPENDS+=	wmf2eps:${PORTSDIR}/graphics/libwmf
-RUN_DEPENDS+=	sk2ps:${PORTSDIR}/graphics/sketch
+RUN_DEPENDS+=	sk2ps:${PORTSDIR}/graphics/skencil
 RUN_DEPENDS+=	tgif:${PORTSDIR}/graphics/tgif-nls
 RUN_DEPENDS+=	transfig:${PORTSDIR}/print/transfig
 .else
