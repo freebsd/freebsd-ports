@@ -7,7 +7,7 @@
 
 PORTNAME=	net-snmp
 PORTVERSION=	5.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
@@ -81,10 +81,10 @@ post-patch:
 	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/aclocal.m4
 
 post-install:
-	@( cd ${PREFIX}/bin && strip ${BIN} )
-	@( cd ${PREFIX}/sbin && strip ${SBIN} )
-	@( cd ${PREFIX}/include/net-snmp && ${CHMOD} 644 * )
-	@( cd ${PREFIX}/share/snmp/mibs && ${CHMOD} 644 * )
+	@( cd ${PREFIX}/bin && ${STRIP_CMD} ${BIN} )
+	@( cd ${PREFIX}/sbin && ${STRIP_CMD} ${SBIN} )
+	@${FIND} ${PREFIX}/include/net-snmp ${PREFIX}/share/snmp/mibs -type f \
+		| ${XARGS} ${CHMOD} 644
 	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/snmpd.sh.sample ${PREFIX}/etc/rc.d
 	@if [ ! -f ${STARTUP_FILE} ]; then \
 		${ECHO} "Creating ${PREFIX}/etc/rc.d/snmpd.sh startup file."; \
