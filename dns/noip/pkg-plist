@@ -1,5 +1,5 @@
 bin/noip2
 etc/rc.d/noip.sh
-%%PORTDOCS%%share/doc/noip/README.FIRST
-%%PORTDOCS%%share/doc/noip/COPYING
-%%PORTDOCS%%@dirrm share/doc/noip
+%%PORTDOCS%%%%DOCSDIR%%/README.FIRST
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

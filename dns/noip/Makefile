@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	noip
-PORTVERSION=	2.0.12
+PORTVERSION=	2.1.0
 CATEGORIES=	dns
 MASTER_SITES=	http://www.no-ip.com/client/linux/
 
@@ -26,9 +26,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/noip2 ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/noip.sh ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/README.FIRST ${PREFIX}/share/doc/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/COPYING ${PREFIX}/share/doc/${PORTNAME}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README.FIRST ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/COPYING ${DOCSDIR}
 .endif
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" ${PKGMESSAGE} | ${SED} "s|%%WRKSRC%%|${WRKSRC}|g"
 

@@ -8,9 +8,8 @@ PW=/usr/sbin/pw
 ECHO=echo
 USER=noip
 GROUP=${USER}
-
-if [ -f ${PKG_PREFIX}/etc/no-ip.conf ]; then
-    ${ECHO} "To delete noip configuration permanently: rm ${PKG_PREFIX}/etc/no-ip.conf"
+if [ -f ${PKG_PREFIX}/etc/no-ip2.conf ]; then
+    ${ECHO} "To delete noip configuration permanently: rm ${PKG_PREFIX}/etc/no-ip2.conf"
 fi
 if ${PW} usershow "${USER}" 2>/dev/null 1>&2; then
     ${ECHO} "To delete noip user permanently: ${PW} userdel ${USER}"
