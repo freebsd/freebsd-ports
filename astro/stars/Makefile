@@ -3,10 +3,10 @@
 # Date created:		10 Jul 1996
 # Whom:			searle
 #
-# $Id: Makefile,v 1.6 1998/07/27 23:23:36 asami Exp $
+# $Id: Makefile,v 1.7 1998/08/05 09:30:43 asami Exp $
 #
 
-DISTNAME=	stars-1.0-ss-10.10
+DISTNAME=	stars-1.0-ss-10.20
 PKGNAME=	stars-1.0
 CATEGORIES=	astro
 MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/X11/Demos/stars-1.0/ \
