@@ -1,12 +1,12 @@
 # New ports collection makefile for:	teTeX
-# Version required:	1.0.6
+# Version required:	1.0.7
 # Date created:		5 December 1996
 # Whom:			Bernd Rosauer <br@netland.inka.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	teTeX-1.0.6
+DISTNAME=	teTeX-1.0.7
 CATEGORIES=	print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/1.0/distrib/sources/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -49,8 +49,8 @@ NOMAN1=		MakeTeXPK.1 access.1 afm2tfm.1 allcm.1 allec.1 allneeded.1 \
 		tftopl.1 tie.1 vftovp.1 virmf.1 virmpost.1 viromega.1 \
 		virtex.1 vptovf.1 weave.1 xdvi.1
 
-TETEX_SRC=	teTeX-src-1.0.6.tar.gz
-TETEX_TEXMF=	teTeX-texmf-1.0.tar.gz
+TETEX_SRC=	teTeX-src-1.0.7.tar.gz
+TETEX_TEXMF=	teTeX-texmf-1.0.1.tar.gz
 LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
 TEXMF_TREE=	${PREFIX}/share/texmf
