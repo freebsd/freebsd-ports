@@ -7,12 +7,12 @@
 
 PORTNAME=	xpenguins
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://xpenguins.seul.org/ \
 		http://www.chrisburkert.de/download/unix/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		xpenguins-daemon-1.0.tar.gz
+		xpenguins-daemon-1.1.tar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	lyngbol@wheel.dk
@@ -26,6 +26,6 @@ MAN1=		xpenguins.1
 
 post-install:
 	/usr/bin/umask 0222 && \
-	${TAR} zx --no-same-owner -f ${DISTDIR}/xpenguins-daemon-1.0.tar.gz -C ${DATADIR}/themes
+	${TAR} zx --no-same-owner -f ${DISTDIR}/xpenguins-daemon-1.1.tar.gz -C ${DATADIR}/themes
 
 .include <bsd.port.mk>
