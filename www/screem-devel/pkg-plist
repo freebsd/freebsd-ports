@@ -27,7 +27,6 @@ share/gnome/applications/screem.desktop
 share/gnome/help/screem/C/figures/dummy.png
 share/gnome/help/screem/C/legal.xml
 share/gnome/help/screem/C/screem.xml
-share/gnome/mc/templates/screem.desktop
 share/gnome/mime-info/screem.mime
 share/gnome/omf/screem/screem-C.omf
 share/gnome/pixmaps/screem.png
@@ -71,19 +70,26 @@ share/gnome/screem/syntax/xml.screem.syntax
 share/gnome/screem/ui/screem-css-window-ui.xml
 share/gnome/screem/ui/screem-window-ui.xml
 share/locale/az/LC_MESSAGES/screem.mo
+share/locale/cs/LC_MESSAGES/screem.mo
 share/locale/da/LC_MESSAGES/screem.mo
 share/locale/de/LC_MESSAGES/screem.mo
-share/locale/es_ES/LC_MESSAGES/screem.mo
+share/locale/el/LC_MESSAGES/screem.mo
+share/locale/es/LC_MESSAGES/screem.mo
 share/locale/fr/LC_MESSAGES/screem.mo
 share/locale/it/LC_MESSAGES/screem.mo
 share/locale/ja/LC_MESSAGES/screem.mo
+share/locale/ko/LC_MESSAGES/screem.mo
+share/locale/nb/LC_MESSAGES/screem.mo
 share/locale/no/LC_MESSAGES/screem.mo
 share/locale/pl/LC_MESSAGES/screem.mo
 share/locale/pt_BR/LC_MESSAGES/screem.mo
 share/locale/ru/LC_MESSAGES/screem.mo
+share/locale/sk/LC_MESSAGES/screem.mo
 share/locale/sv/LC_MESSAGES/screem.mo
 share/locale/tr/LC_MESSAGES/screem.mo
 share/locale/uk/LC_MESSAGES/screem.mo
+share/locale/vi/LC_MESSAGES/screem.mo
+share/locale/zh_CN/LC_MESSAGES/screem.mo
 share/screem/pixmaps/add-link-16.png
 share/screem/pixmaps/add-link-24.png
 share/screem/pixmaps/add_column-16.png
@@ -120,6 +126,7 @@ share/screem/pixmaps/optionmenu.xpm
 share/screem/pixmaps/paragraphs.png
 share/screem/pixmaps/pre.xpm
 share/screem/pixmaps/radiobutton.xpm
+share/screem/pixmaps/resources.png
 share/screem/pixmaps/screem_site.png
 share/screem/pixmaps/site_preview.png
 share/screem/pixmaps/site_structure-48.png
@@ -151,6 +158,7 @@ share/screem/pixmaps/tr.xpm
 @dirrm share/gnome/screem/glade
 @dirrm share/gnome/screem/dtd
 @dirrm share/gnome/screem
+@dirrm share/gnome/omf/screem
 @dirrm share/gnome/pixmaps/screem/splash
 @dirrm share/gnome/pixmaps/screem
 @dirrm share/gnome/help/screem/C/figures
