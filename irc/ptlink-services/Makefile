@@ -5,21 +5,29 @@
 # $FreeBSD$
 #
 
-PORTNAME=       Services
-PORTVERSION=    2.25.1
-CATEGORIES=     irc
-MASTER_SITES=   ftp://ftp.sunsite.dk/projects/ptlink/services2/
-PKGNAMEPREFIX=  PTlink-
-DISTNAME=       PTlink.${PORTNAME}${PORTVERSION}
+PORTNAME=	Services
+PORTVERSION=	2.25.1
+PORTREVISION=	1
+CATEGORIES=	irc
+MASTER_SITES=	ftp://ftp.sunsite.dk/projects/ptlink/services2/ \
+		http://www.rootxs.org/pub/FreeBSD/distfiles/
+PKGNAMEPREFIX=	PTlink-
+DISTNAME=	PTlink.${PORTNAME}${PORTVERSION}
 
-MAINTAINER=     dennis@rootxs.org
-COMMENT=        PTlink IRC services
+PATCH_DIST_STRIP=	-p1
 
-GNU_CONFIGURE=  yes
-USE_GMAKE=      yes
+MAINTAINER=	dennis@rootxs.org
+COMMENT=	PTlink IRC services
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_PERL5=	yes
+
+SYSCONFDIR=	${PREFIX}/etc/ptlink
+CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR}
 
 post-install:
-	@${MV} ${PREFIX}/etc/example.conf ${PREFIX}/etc/services.conf.sample
-	@${SED} 's,%%PREFIX%%,${PREFIX},g' < ${PKGMESSAGE}
+	@${INSTALL_DATA} ${FILESDIR}/*.sample ${SYSCONFDIR}
+	@${SED} 's,%%SYSCONFDIR%%,${SYSCONFDIR},g' < ${PKGMESSAGE}
 
 .include <bsd.port.mk>
