@@ -1,0 +1,73 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/Gen.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/Inet.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/TCP.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/TCP/Server.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/UDP.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/UNIX.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/UNIX/Server.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/BINMODE.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/EOF.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/FETCH.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/FILENO.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/GETC.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/Gen.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/Gen.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/PRINTF.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/READ.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/READLINE.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/RECV.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/STORE.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/TIEHANDLE.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/TIESCALAR.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/WRITE.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/_findxopt.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/_getxopt.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/_setxopt.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/accept.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/bind.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/delparam.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/didlisten.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/fcntl.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/fhvec.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/fileno.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/format_addr.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/format_local_addr.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/format_remote_addr.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/getfh.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/getlines.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/getropt.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/getsopt.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/ioctl.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/listen.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/new_from_fh.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/select.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/sendto.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/setdebug.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/setparam.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/setropt.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/setsopt.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen/unbind.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Inet/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Inet/bind.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Inet/setdebug.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Inet/unbind.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/UDP/PRINT.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/UDP/READLINE.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/UDP/_setbuf_unbuf.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/UDP/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/UNIX/PRINT.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/UNIX/READLINE.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/UNIX/_setbuf_unbuf.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/UNIX/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/UNIX/bind.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/UNIX/setdebug.al
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/TCP 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/UNIX 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Gen 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Inet 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/UDP 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/UNIX 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
