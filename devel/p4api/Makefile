@@ -25,14 +25,14 @@ NO_WRKSUBDIR=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
-VERSION=	02.2
-REVISION=	0
 PLATFORM=	freebsd4
 TAR_FILES=	p4api.tar
 .else
 IGNORE=		"Unsupported platform, sorry."
 .endif
 
+VERSION=	03.1
+REVISION=	0
 DOCVER=		${VERSION:S/.//}
 
 do-install:
