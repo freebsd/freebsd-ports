@@ -4,8 +4,6 @@ bin/radlast
 bin/raduse
 bin/radping
 bin/radgrep
-bin/radscm
-bin/radsession
 bin/radtest
 bin/builddbm
 sbin/radauth
@@ -40,7 +38,6 @@ etc/raddb/menus/menu2
 etc/rc.d/gnu-radius.sh
 share/gnu-radius/boot.scm
 share/gnu-radius/ttl.scm
-share/gnu-radius/guile-procedures.txt
 info/radius.info
 info/radius.info-1
 info/radius.info-2
