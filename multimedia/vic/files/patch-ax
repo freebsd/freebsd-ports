@@ -1,0 +1,11 @@
+--- p64/mkhuff.cc.orig	Sun Nov 28 19:24:42 1999
++++ p64/mkhuff.cc	Sun Nov 28 19:25:49 1999
+@@ -45,6 +45,8 @@
+ extern "C" {
+ int getopt(int, char * const *, const char *);
+ }
++#else
++#include <unistd.h>
+ #endif
+ #define HUFFSTRINGS
+ #include "p64-huff.h"

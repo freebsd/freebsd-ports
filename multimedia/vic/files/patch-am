@@ -1,6 +1,6 @@
---- grabber-x11.cc.orig	Thu Sep  9 06:57:14 1999
-+++ grabber-x11.cc	Wed Sep  8 21:31:27 1999
-@@ -0,0 +1,1398 @@
+--- grabber-x11.cc.orig	Sun Nov 28 19:11:13 1999
++++ grabber-x11.cc	Sun Nov 28 19:59:33 1999
+@@ -0,0 +1,1402 @@
 +/*
 + * Copyright (c) 1998 Luigi Rizzo
 + * grabber-x11.cc for vic
@@ -49,6 +49,7 @@
 +#include <X11/Xutil.h>
 +#include <X11/Xatom.h>
 +#include <X11/cursorfont.h>
++#include <X11/extensions/XShm.h>
 +#include <tk.h>
 +/*** #include "sized_types.h" ***/
 +
@@ -162,8 +163,8 @@
 +
 +
 +	uint8 *rgb2y_ ;
-+	int8 *rgb2u_ ;
-+	int8 *rgb2v_ ;
++	uint8 *rgb2u_ ;
++	uint8 *rgb2v_ ;
 +
 +        ximage_t *ximage_ ;
 +
@@ -591,6 +592,10 @@
 +    return 1;
 +}
 +
++extern "C" {
++extern void VidUtil_DestroyXImage(Display *dpy, ximage_t *ximage);
++};
++
 +/*
 + * initialization of frame grabber...
 + */
@@ -691,7 +696,6 @@
 +
 +extern "C" {
 +extern void VidUtil_Init(Display *dpy);
-+extern void VidUtil_DestroyXImage(Display *dpy, ximage_t *ximage);
 +
 +#ifdef UNUSED /* not yet... */
 +static int

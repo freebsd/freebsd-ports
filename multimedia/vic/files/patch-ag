@@ -85,13 +85,10 @@
  	int encode(const VideoFrame*, const u_int8_t *crvec);
  	int command(int argc, const char*const* argv);
  	void encode_blk(const short* blk, const char* lm);
-@@ -208,6 +209,16 @@
- 	for (int q = 0; q < 32; ++q) {
- 		llm_[q] = 0;
- 		clm_[q] = 0;
-+	}
-+}
-+
+@@ -211,6 +212,16 @@
+ 	}
+ }
+ 
 +H261Encoder::~H261Encoder()
 +{
 +	for (int q = 0; q < 32; ++q) {
@@ -99,6 +96,18 @@
 +			delete llm_[q];
 +		if (clm_[q] != 0)
 +			delete clm_[q];
- 	}
- }
++	}
++}
++
+ H261PixelEncoder::H261PixelEncoder() : H261Encoder(FT_YUV_CIF)
+ {
+ 	quant_required_ = 0;
+@@ -631,7 +642,7 @@
+ 	if (q < 8) {
+ 		register int cmin = 0, cmax = 0;
+ 		register short* bp = lblk;
+-		register i, j;
++		register int i, j;
  
+ 		// Y U and V blocks
+ 		for (i = 6; --i >= 0; ) {
