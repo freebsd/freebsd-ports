@@ -1,16 +1,16 @@
 # New ports collection makefile for:	inform
-# Version required:			6.15 (Library: 6/8)
+# Version required:			6.21 (Library: 6/9)
 # Date created:				28 June 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1999/05/01 12:34:18 jseger Exp $
+# $Id: Makefile,v 1.5 1999/05/02 19:11:30 mharo Exp $
 #
 
-DISTNAME=	inform-6.15
+DISTNAME=	inform-6.21
 CATEGORIES=	games
 MASTER_SITES=  	ftp://ftp.gmd.de/if-archive/infocom/compilers/inform6/source/ \
 		ftp://ftp.gmd.de/if-archive/infocom/compilers/inform6/library/
-DISTFILES=	inform615_source.zip inform_library68.zip
+DISTFILES=	inform621_source.zip inform_library69.zip
 
 MAINTAINER=	mph@freebsd.org
 
@@ -19,12 +19,10 @@ MASTER_SITES+=	ftp://ftp.gmd.de/if-archive/infocom/compilers/inform6/manuals/
 DISTFILES+=	designers_manual_html.zip
 .endif
 
-BROKEN=		fetch
-
 DIST_SUBDIR=	inform
 NO_WRKSUBDIR=	yes
 
-EXTRACT_ONLY=	inform615_source.zip
+EXTRACT_ONLY=	inform621_source.zip
 USE_ZIP=	yes
 
 # I can hardly believe it, but the ".c" and ".h" extensions are
@@ -47,16 +45,15 @@ post-extract:
 post-install:
 	@${MKDIR} ${PREFIX}/share/inform
 	@(cd ${PREFIX}/share/inform && \
-		unzip -qq ${DISTDIR}/${DIST_SUBDIR}/inform_library68.zip)
-.for file in English Grammar Parser Verblib linklpa linklv parserm verblibm
+		unzip -qq ${DISTDIR}/${DIST_SUBDIR}/inform_library69.zip)
+.for file in English Grammar Parser Verblib infix linklpa linklv parserm \
+		verblibm
 	@${MV} ${PREFIX}/share/inform/${file} ${PREFIX}/share/inform/${file}.h
 	@ chmod ${SHAREMODE} ${PREFIX}/share/inform/${file}.h
 	@ chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/inform/${file}.h
 .endfor
 	@${LN} -s Verblib.h ${PREFIX}/share/inform/VerbLib.h
-	@ chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/inform/VerbLib.h \
-		${PREFIX}/share/inform/Relnote
-	@ chmod ${SHAREMODE} ${PREFIX}/share/inform/Relnote
+	@ chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/inform/VerbLib.h
 .if !defined(NOPORTDOCS)
 	@ (umask 222 && unzip -qq -d ${PREFIX}/share/doc \
 		${DISTDIR}/${DIST_SUBDIR}/designers_manual_html.zip)
