@@ -14,7 +14,7 @@ MAINTAINER=	david@usermode.org
 
 GNU_CONFIGURE=	yes
 
-QT_VERSION?=	2
+QT_VERSION?=	3
 
 .if ${QT_VERSION} == "3"
 USE_QT_VER=	3
