@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	radius-basic
-PORTVERSION=	3.6B
-PORTREVISION=	1
+PORTVERSION=	3.6B1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.merit.edu/radius/releases/
-DISTNAME=	radius.3.6B.basic
+DISTNAME=	radius.${PORTVERSION}.basic
 
 MAINTAINER=	ports@FreeBSD.org
 
