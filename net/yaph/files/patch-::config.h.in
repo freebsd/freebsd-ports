@@ -1,0 +1,9 @@
+--- config.h.in.old	Sat Jun 14 15:05:50 2003
++++ config.h.in	Sat Jun 14 15:06:04 2003
+@@ -9,3 +9,6 @@
+ /* C++ compiler supports template repository */
+ #undef HAVE_TEMPLATE_REPOSITORY
+ 
++/* PREFIX needed in init.c */
++#undef PREFIX
++

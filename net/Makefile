@@ -724,6 +724,7 @@
     SUBDIR += xsmbrowser
     SUBDIR += xtraceroute
     SUBDIR += xwhois
+    SUBDIR += yaph
     SUBDIR += yaz
     SUBDIR += yaz++
     SUBDIR += ymessenger
