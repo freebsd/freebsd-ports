@@ -647,8 +647,6 @@ bsd_man		src/usr.bin/man
 bsd_patch	src/usr.bin/patch
 bsd_uucp	src/usr.bin/uucp
 bsd_whatis	src/usr.bin/whatis
-bsdi-netscape47-communicator	ports/www/bsdi-netscape47-communicator
-bsdi-netscape47-navigator	ports/www/bsdi-netscape47-navigator
 bsdproxy	ports/net/bsdproxy
 bsdsar		ports/sysutils/bsdsar
 bsh		ports/java/bsh
@@ -2948,8 +2946,6 @@ ja-libjcode	ports/japanese/libjcode
 ja-libjconv	ports/japanese/libjconv
 ja-libslang	ports/japanese/libslang
 ja-linux-JM	ports/japanese/linux-JM
-ja-linux-netscape47-communicator	ports/japanese/linux-netscape47-communicator
-ja-linux-netscape47-navigator	ports/japanese/linux-netscape47-navigator
 ja-netscape7	ports/japanese/netscape7
 ja-linux_locale	ports/japanese/linux_locale
 ja-lipsf	ports/japanese/lipsf
@@ -3016,12 +3012,6 @@ ja-ndtpd	ports/japanese/ndtpd
 ja-ne		ports/japanese/ne
 ja-nethack32	ports/japanese/nethack32
 ja-nethack34	ports/japanese/nethack34
-ja-netscape-fonts		ports/japanese/netscape-fonts
-ja-netscape3.language		ports/japanese/netscape3.language
-ja-netscape4-communicator	ports/japanese/netscape4-communicator
-ja-netscape4-navigator		ports/japanese/netscape4-navigator
-ja-netscape47-communicator	ports/japanese/netscape47-communicator
-ja-netscape47-navigator		ports/japanese/netscape47-navigator
 ja-netscape48-communicator	ports/japanese/netscape48-communicator
 ja-netscape48-navigator		ports/japanese/netscape48-navigator
 ja-netype	ports/japanese/netype
@@ -3555,8 +3545,6 @@ ko-htexp	ports/korean/htexp
 ko-johabfonts	ports/korean/johabfonts
 ko-kaistfonts	ports/korean/kaistfonts
 ko-kde3-i18n	ports/korean/kde3-i18n
-ko-linux-netscape47-communicator	ports/korean/linux-netscape47-communicator
-ko-linux-netscape47-navigator	ports/korean/linux-netscape47-navigator
 ko-linux_locale	ports/korean/linux_locale
 ko-linuxdoc-sgml	ports/korean/linuxdoc-sgml
 ko-mizifont	ports/korean/mizifont
@@ -3566,11 +3554,6 @@ ko-mplayer-fonts	ports/korean/mplayer-fonts
 ko-msdosfs	ports/korean/msdosfs
 ko-mule-freewnn	ports/korean/mule-freewnn
 ko-munhwafonts-cid	ports/korean/munhwafonts-cid
-ko-netscape3	ports/korean/netscape3
-ko-netscape4-communicator	ports/korean/netscape4-communicator
-ko-netscape4-navigator		ports/korean/netscape4-navigator
-ko-netscape47-communicator	ports/korean/netscape47-communicator
-ko-netscape47-navigator		ports/korean/netscape47-navigator
 ko-nh2ps	ports/korean/nh2ps
 ko-nhpf		ports/korean/nhpf
 ko-nhppf	ports/korean/nhppf
@@ -4019,8 +4002,6 @@ linux-libaudiofile	ports/audio/linux-libaudiofile
 linux-libglade	ports/devel/linux-libglade
 linux-libxml	ports/textproc/linux-libxml
 linux-mozilla	ports/www/linux-mozilla
-linux-netscape47-communicator	ports/www/linux-netscape47-communicator
-linux-netscape47-navigator	ports/www/linux-netscape47-navigator
 linux-openmotif	ports/x11-toolkits/linux-openmotif
 linux-opera	ports/www/linux-opera
 linux-phoenix	ports/www/linux-phoenix
@@ -4741,12 +4722,6 @@ netsaint	ports/net/netsaint
 netsaint-plugins	ports/net/netsaint-plugins
 netscape-remote	ports/www/netscape-remote
 netscape-wrapper	ports/www/netscape-wrapper
-netscape3	ports/www/netscape3
-netscape3-gold	ports/www/netscape3-gold
-netscape4-communicator	ports/www/netscape4-communicator
-netscape4-navigator	ports/www/netscape4-navigator
-netscape47-communicator	ports/www/netscape47-communicator
-netscape47-navigator	ports/www/netscape47-navigator
 netscape48-communicator	ports/www/netscape48-communicator
 netscape48-navigator	ports/www/netscape48-navigator
 netscape7	ports/www/netscape7
@@ -6827,7 +6802,6 @@ ru-fortuneru	ports/russian/fortuneru
 ru-gd		ports/russian/gd
 ru-kde3-i18n	ports/russian/kde3-i18n
 ru-mtc		ports/russian/mtc
-ru-netscape4	ports/russian/netscape4.language
 ru-openoffice	ports/russian/openoffice
 ru-p5-XML-Parser-encodings	ports/russian/p5-XML-Parser-encodings
 ru-p5-cyrillic	ports/russian/p5-cyrillic
@@ -9037,8 +9011,6 @@ zh-kde3-i18n-CN	ports/chinese/kde3-i18n-zh_CN
 zh-kde3-i18n-TW	ports/chinese/kde3-i18n-zh_TW
 zh-libtabe	ports/chinese/libtabe
 zh-linux-gtk	ports/chinese/linux-gtk
-zh-linux-netscape47-communicator	ports/chinese/linux-netscape47-communicator
-zh-linux-netscape47-navigator	ports/chinese/linux-netscape47-navigator
 zh-lunar	ports/chinese/lunar
 zh-metalist	ports/chinese/metalist
 zh-mkisofs	ports/chinese/mkisofs
@@ -9049,8 +9021,6 @@ zh-mplayer-fonts	ports/chinese/mplayer-fonts
 zh-mule-freewnn	ports/chinese/mule-freewnn
 zh-muni		ports/chinese/muni
 zh-mutt		ports/chinese/mutt
-zh-netscape47-communicator	ports/chinese/netscape47-communicator
-zh-netscape47-navigator	ports/chinese/netscape47-navigator
 zh-nvi-big5	ports/chinese/nvi-big5
 zh-nvi-euc-cn	ports/chinese/nvi-euc-cn
 zh-nvi-euc-tw	ports/chinese/nvi-euc-tw
