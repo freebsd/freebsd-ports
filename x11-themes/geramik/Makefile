@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	geramik
-PORTVERSION=	0.17
-PORTREVISION=	1
+PORTVERSION=	0.24
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.kde-look.org/content/files/ \
 		http://distfiles.towardex.com/
@@ -15,8 +14,6 @@ DISTNAME=	3952-Geramik-${PORTVERSION}
 
 MAINTAINER=	haesu@TowardEX.com
 COMMENT=	A Keramik KDE styled theme for GTK
-
-BROKEN=		"Bad pkg-plist"
 
 WRKSRC=		${WRKDIR}/Geramik-${PORTVERSION}
 
