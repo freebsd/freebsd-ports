@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	botan
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.6
 PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	http://files.randombit.net/botan/
@@ -40,7 +40,6 @@ PORTDOCS=	*
 CONFIGURE_ARGS+=	--noauto
 PLIST_SUB+=	OS_4="@comment "
 .else
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include::mem_pool.h-gcc295
 PLIST_SUB+=	OS_4=""
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
