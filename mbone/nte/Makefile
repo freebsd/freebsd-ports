@@ -3,7 +3,7 @@
 # Date created:				5 September 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.3 1996/11/26 11:21:25 asami Exp $
+#   $Id: Makefile,v 1.4 1996/12/16 16:50:53 fenner Exp $
 #
 
 DISTNAME=	nt.1.5a23
@@ -26,13 +26,16 @@ USE_X11=	yes
 # Pass this on to our child
 MAKE_ENV=	TK_SRC=${TK_SRC}
 
+.include <bsd.port.mk>
+
 #DISGUSTING HACK ALERT
 #Although nte includes an hsearch.c for those who don't have it in
 # libc, there's no way to get the default Makefile to build it.
 # So we build it here.
-pre-build:	work/freebsd/hsearch.o
+#This is below the .include <bsd.port.mk> since variable names in
+# targets or dependencies are evaluated when they are read so
+# bsd.port.mk must have defined ${WRKSRC} already.
+pre-build:	${WRKSRC}/freebsd/hsearch.o
 
-work/freebsd/hsearch.o:	work/src/hsearch.c
-		${CC} -Iwork/src ${CFLAGS} -c -o $@ work/src/hsearch.c
-
-.include <bsd.port.mk>
+${WRKSRC}/freebsd/hsearch.o:	${WRKSRC}/src/hsearch.c
+		${CC} -I${WRKSRC}/src ${CFLAGS} -c -o $@ ${WRKSRC}/src/hsearch.c
