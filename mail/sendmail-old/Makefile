@@ -165,6 +165,8 @@ mailer.conf:
 	-e "s=^send-mail[ 	]*/.*$$=send-mail	${SENDMAIL}=" \
 	-e "s=^mailq[ 	]*/.*$$=mailq		${SENDMAIL}=" \
 	-e "s=^newaliases[ 	]*/.*$$=newaliases	${SENDMAIL}=" \
+	-e "s=^hoststat[ 	]*/.*$$=hoststat	${SENDMAIL}=" \
+	-e "s=^purgestat[ 	]*/.*$$=purgestat	${SENDMAIL}=" \
 	 ${DESTDIR}/etc/mail/mailer.conf > ${DESTDIR}/etc/mail/mailer.conf.new
 	${MV} ${DESTDIR}/etc/mail/mailer.conf.new \
 		${DESTDIR}/etc/mail/mailer.conf
