@@ -5,6 +5,12 @@ info/conduits.info
 info/conduits.info-1
 info/conduits.info-2
 @exec install-info %D/info/conduits.info %D/info/dir
+lib/libpconn.a
+lib/libpconn.so
+lib/libpconn.so.0
+lib/libpdb.a
+lib/libpdb.so
+lib/libpdb.so.0
 share/locale/cs/LC_MESSAGES/coldsync.mo
 share/locale/de/LC_MESSAGES/coldsync.mo
 share/locale/fr/LC_MESSAGES/coldsync.mo

@@ -13,8 +13,11 @@ MASTER_SITES=	http://www.coldsync.org/download/
 MAINTAINER=	arensb+freebsd-ports@ooblick.com
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i "" -E
+
+INSTALLS_SHLIB=	yes
 
 GNU_CONFIGURE=	yes
 
