@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Array-Window
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Array
@@ -22,4 +22,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Array::Window.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} <= 500800
+RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif
+
+.include <bsd.port.post.mk>
