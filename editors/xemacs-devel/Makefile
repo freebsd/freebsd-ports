@@ -55,6 +55,13 @@ ALL_TARGET=	all dist
 
 PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
+.include <bsd.port.pre.mk>
+
+# Undump and malloc do not behave on amd64 at the moment
+.if ${ARCH} == "amd64"
+CONFIGURE_ARGS+= --with-system-malloc --pdump 
+.endif
+
 pre-fetch:
 #.if !defined(WANT_GTK)
 #	@${ECHO_MSG} "If you want to use GTK, please set the environment variable WANT_GTK "
@@ -122,4 +129,4 @@ post-install::
 #	@${ECHO_MSG} "to ${PORTNAME}${PKGNAMESUFFIX}-${XEMACS_VER}."
 #.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -80,6 +80,11 @@ PKGDIR=		${.CURDIR}/../../editors/xemacs-devel-mule
 
 PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
+# Undump and malloc do not behave on amd64 at the moment
+.if ${ARCH} == "amd64"
+CONFIGURE_ARGS+= --with-system-malloc --pdump 
+.endif
+
 pre-fetch:
 .if defined(WITHOUT_X11)
 	@${ECHO_MSG} ""

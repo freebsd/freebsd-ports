@@ -87,6 +87,11 @@ PKGDIR=		${.CURDIR}/../../editors/xemacs21-mule
 
 PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
+# Undump and malloc do not behave on amd64 at the moment
+.if ${ARCH} == "amd64"
+CONFIGURE_ARGS+= --with-system-malloc --pdump 
+.endif
+
 pre-fetch:
 .if !defined(WANT_GTK)
 	@${ECHO_MSG} "If you want to use GTK, please set the environment variable WANT_GTK and recompile."
