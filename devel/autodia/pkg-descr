@@ -1,0 +1,11 @@
+AutoDia is a modular application that parses source code or data (if a
+handler is available) and produces an XML document in Dia format,
+essentially a Dia diagram autocreation package. The diagrams its creates
+are standard UML diagrams showing dependancies, superclasses, packages,
+classes and inheritances, as well as the methods, etc of each class.
+
+AutoDia supports any language that a Handler has been written for -
+currently this is Perl (pretty good) and C++ (handles simple C++). Adding
+a handler is easy - read the DEVELOP file for details.
+
+WWW: http://droogs.org/autodia/

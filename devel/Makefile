@@ -36,6 +36,7 @@
     SUBDIR += atk
     SUBDIR += atlas
     SUBDIR += autoconf
+    SUBDIR += autodia
     SUBDIR += autogen
     SUBDIR += automake
     SUBDIR += avltree
