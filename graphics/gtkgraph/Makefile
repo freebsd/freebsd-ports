@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gtkgraph
-# Version required:			0.6.0
+# Version required:			0.6.1
 # Date created:				12 October 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gtkgraph-0.6.0
+DISTNAME=	gtkgraph-0.6.1
 CATEGORIES=	math
 MASTER_SITES=	http://gtkgraph.linuxbox.com/
 
@@ -27,6 +27,6 @@ CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib"
 
 pre-configure:
-	${PERL} -pi.orig -e 's|-O2|${CFLAGS}|' ${WRKSRC}/configure
+	@${PERL} -pi.orig -e 's|-O2|${CFLAGS}|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
