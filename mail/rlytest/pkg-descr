@@ -6,11 +6,10 @@ relay massive amounts of junk email.  A host that allows third-party
 relay should IMMEDIATELY be secured, disconnected, or shunned as a
 menace to the Internet.
 
-See http://www.unicom.com/sw/#rlytest for mor information.
+See http://www.unicom.com/sw/rlytest for more information.
 
-rlytest was written by Chip Rosenthal, and is featured at
-http://maps.vix.com/tsi/ and http://www.badrelay.org/.
+pxytest was written by Chip Rosenthal.
 
-- Paul Chvostek <paul@it.ca>
+- Paul Chvostek <paul+ports@it.ca>
 
-WWW: http://www.unicom.com/sw/#rlytest
+WWW: http://www.unicom.com/sw/rlytest
