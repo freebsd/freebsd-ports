@@ -1,0 +1,5 @@
+#!/bin/sh
+if [ $2 = "DEINSTALL" ]; then
+  echo "Package $1 cannot be removed -- to do so will render your system useless."
+  exit 1
+fi

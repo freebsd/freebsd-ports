@@ -1,0 +1,5 @@
+This package will allow you to upgrade your 4.0R system to
+4-stable, so you can compile and use all ports in ports-current.
+
+Satoshi
+asami@freebsd.org
