@@ -8600,6 +8600,7 @@ team		ports/misc/team
 teamspeak_client	ports/audio/teamspeak_client
 teamspeak_server	ports/audio/teamspeak_server
 teapop		ports/mail/teapop
+teapop-devel	ports/mail/teapop-devel
 teapot		ports/deskutils/teapot
 ted		ports/editors/ted
 teg		ports/games/teg
