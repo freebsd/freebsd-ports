@@ -35,5 +35,6 @@ do-patch:
 	@${PERL} -pi.orig -e 's:^install.*:install\: rdesktop:g' ${WRKSRC}/Makefile
 	@${PERL} -pi.orig -e 's:^.*\(INSTALL\) rdp-srvr.*::g' ${WRKSRC}/Makefile
 	@${PERL} -pi.orig -e 's:<endian.h>:<machine/endian.h>:g' ${WRKSRC}/rdesktop.h
+	@${PATCH} ${PATCH_ARGS} < files/patch-aa
 
 .include <bsd.port.mk>
