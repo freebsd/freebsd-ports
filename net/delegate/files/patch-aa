@@ -1,17 +1,9 @@
---- src/lock.c.orig	Tue Aug  4 09:13:18 1998
-+++ src/lock.c	Thu Nov 19 18:17:09 1998
-@@ -18,6 +18,7 @@
- History:
- 	970403	extracted from cache.c
- //////////////////////////////////////////////////////////////////////#*/
-+#include <errno.h>
- #include <stdio.h>
- #include <sys/types.h>
- extern double Time();
-@@ -112,6 +113,22 @@
- 			rcode = 0;
+--- src/lock.c.orig	Mon Mar 15 19:24:15 1999
++++ src/lock.c	Sun Apr 18 15:26:15 1999
+@@ -136,6 +136,22 @@
  			break;
  		}
+ 
 +#ifdef EWOULDBLOCK
 +		/*
 +		 * Only retry the lock if it was busy.  Other
@@ -31,7 +23,7 @@
  		remain = timeout - elapsed;
  		if( remain <= 0 )
  			break;
-@@ -122,6 +139,13 @@
+@@ -146,6 +162,13 @@
  
  			start = Time();
  			rcode = callFuncTimeout(remain/1000,-1,func,fd);
