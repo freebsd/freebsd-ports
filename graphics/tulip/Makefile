@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system dedicated to the visualization of huge graphs
 
+LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+
 USE_BZIP2=	yes
 USE_QT_VER=	3
 QT_NONSTANDARD=	yes
