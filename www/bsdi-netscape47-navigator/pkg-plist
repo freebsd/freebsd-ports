@@ -8,8 +8,60 @@ lib/netscape/Netscape.ad
 lib/netscape/README
 lib/netscape/XKeysymDB
 lib/netscape/bookmark.htm
+lib/netscape/java/classes/aix/font.properties
+lib/netscape/java/classes/aix/font.properties.cs
+lib/netscape/java/classes/aix/font.properties.hu
+lib/netscape/java/classes/aix/font.properties.ja
+lib/netscape/java/classes/aix/font.properties.ko
+lib/netscape/java/classes/aix/font.properties.pl
+lib/netscape/java/classes/aix/font.properties.ru
+lib/netscape/java/classes/aix/font.properties.zh
+lib/netscape/java/classes/aix/font.properties.zh_TW
+lib/netscape/java/classes/awt.properties
+lib/netscape/java/classes/font.properties
+lib/netscape/java/classes/font.properties.cs
+lib/netscape/java/classes/font.properties.el
+lib/netscape/java/classes/font.properties.hu
+lib/netscape/java/classes/font.properties.ja
+lib/netscape/java/classes/font.properties.ko
+lib/netscape/java/classes/font.properties.lt
+lib/netscape/java/classes/font.properties.lv
+lib/netscape/java/classes/font.properties.pl
+lib/netscape/java/classes/font.properties.ru
+lib/netscape/java/classes/font.properties.tr
+lib/netscape/java/classes/font.properties.zh
+lib/netscape/java/classes/font.properties.zh_GB2312
+lib/netscape/java/classes/font.properties.zh_TW
+lib/netscape/java/classes/font.properties.zh_TW_Big5
+lib/netscape/java/classes/font.properties.zh_TW_CNS11643
+lib/netscape/java/classes/hpux/font.properties
+lib/netscape/java/classes/hpux/font.properties.bg
+lib/netscape/java/classes/hpux/font.properties.cs
+lib/netscape/java/classes/hpux/font.properties.el
+lib/netscape/java/classes/hpux/font.properties.hr
+lib/netscape/java/classes/hpux/font.properties.hu
+lib/netscape/java/classes/hpux/font.properties.ja
+lib/netscape/java/classes/hpux/font.properties.ko
+lib/netscape/java/classes/hpux/font.properties.pl
+lib/netscape/java/classes/hpux/font.properties.ro
+lib/netscape/java/classes/hpux/font.properties.ru
+lib/netscape/java/classes/hpux/font.properties.sk
+lib/netscape/java/classes/hpux/font.properties.sl
+lib/netscape/java/classes/hpux/font.properties.tr
+lib/netscape/java/classes/hpux/font.properties.zh_GB2312
+lib/netscape/java/classes/hpux/font.properties.zh_TW_Big5
+lib/netscape/java/classes/hpux/font.properties.zh_TW_CNS11643
 lib/netscape/java/classes/ifc11.jar
 lib/netscape/java/classes/iiop10.jar
+lib/netscape/java/classes/irix/font.properties
+lib/netscape/java/classes/irix/font.properties.cs
+lib/netscape/java/classes/irix/font.properties.el
+lib/netscape/java/classes/irix/font.properties.hu
+lib/netscape/java/classes/irix/font.properties.ja
+lib/netscape/java/classes/irix/font.properties.ko
+lib/netscape/java/classes/irix/font.properties.zh_GB2312
+lib/netscape/java/classes/irix/font.properties.zh_TW_Big5
+lib/netscape/java/classes/irix/font.properties.zh_TW_CNS11643
 lib/netscape/java/classes/jae40.jar
 lib/netscape/java/classes/java40.jar
 lib/netscape/java/classes/jio40.jar
@@ -91,6 +143,9 @@ lib/netscape/vreg
 @dirrm lib/netscape/nethelp/netscape/collabra
 @dirrm lib/netscape/nethelp/netscape
 @dirrm lib/netscape/nethelp
+@dirrm lib/netscape/java/classes/irix
+@dirrm lib/netscape/java/classes/hpux
+@dirrm lib/netscape/java/classes/aix
 @dirrm lib/netscape/java/classes
 @dirrm lib/netscape/java
 @dirrm lib/netscape
