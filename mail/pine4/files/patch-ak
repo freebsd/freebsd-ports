@@ -1,7 +1,7 @@
-*** imap/Makefile.orig	Mon Nov  4 16:21:06 2002
---- imap/Makefile	Tue Nov 26 03:08:33 2002
+*** imap/Makefile.orig	Mon Jul 14 18:35:29 2003
+--- imap/Makefile	Fri Sep  5 01:44:20 2003
 ***************
-*** 425,440 ****
+*** 453,468 ****
   	$(TOOLS)/$@ "$(LN)" src/ansilib c-client
   	$(TOOLS)/$@ "$(LN)" src/charset c-client
   	$(TOOLS)/$@ "$(LN)" src/osdep/$(SYSTEM) c-client
@@ -18,7 +18,7 @@
   
   OSTYPE:
   	@echo Building c-client for $(BUILDTYPE)...
---- 425,440 ----
+--- 453,468 ----
   	$(TOOLS)/$@ "$(LN)" src/ansilib c-client
   	$(TOOLS)/$@ "$(LN)" src/charset c-client
   	$(TOOLS)/$@ "$(LN)" src/osdep/$(SYSTEM) c-client
