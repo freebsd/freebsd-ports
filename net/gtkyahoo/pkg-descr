@@ -1,0 +1,13 @@
+This is GTK-based client for Yahoo! Messenger.  This client is far superior,
+imho, to the Java client, which can not be invoked by apprunner, and whose DNS
+seems frequently broken.
+
+The first time you run this program it will create a config file and ask you
+to edit it.  Enter your Yahoo user ID and password in the config file, run
+gtkyahoo again and you're online.
+
+WWW: http://www.unixtools.org/gtkyahoo/
+WWW: http://messenger.yahoo.com/
+
+- dannyman
+dannyman@dannyland.org ( http://www.dannyland.org/~dannyman/ )
