@@ -2,6 +2,7 @@ bin/gpg-agent
 bin/gpg2
 bin/gpgconf
 bin/gpgsm
+bin/gpgsm-gencert.sh
 bin/gpgv2
 bin/kbxutil
 %%WITH_OPENSC%%bin/scdaemon
