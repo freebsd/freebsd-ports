@@ -35,6 +35,7 @@ RUN_DEPENDS+=	${PREFIX}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
 		${PREFIX}/share/sgml/docbook:${PORTSDIR}/textproc/docbook
 
 USE_REINPLACE=	yes
+USE_PERL5_RUN=	yes
 
 MAN1=		instant.1 sgmlfmt.1
 MAN5=		transpec.5
