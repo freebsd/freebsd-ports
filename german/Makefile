@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.5 1997/12/30 23:29:57 wosch Exp $
+# $Id: Makefile,v 1.6 1998/07/13 00:14:04 steve Exp $
 #
 
+    SUBDIR += BBBike
     SUBDIR += dict
     SUBDIR += manpages
     SUBDIR += phone
