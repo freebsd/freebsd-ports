@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	ttyrec
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	misc
 MASTER_SITES=	http://namazu.org/~satoru/ttyrec/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 do-install:
 .for file in ttyrec ttyplay
