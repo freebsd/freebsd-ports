@@ -9,14 +9,26 @@ PORTNAME=	logsurfer
 PORTVERSION=	1.5a
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.cert.dfn.de/pub/tools/audit/logsurfer/ \
-		ftp://ftp.tuwien.ac.at/infosys/security/dfn/tools/audit/logsurfer/ \
-		ftp://ftp.uni-magdeburg.de/pub/mirror/ftp.cert.dfn.de/tools/audit/logsurfer/
+		ftp://ftp.tuwien.ac.at/infosys/security/dfn/tools/audit/logsurfer/
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	shanee@augusta.de
 
 GNU_CONFIGURE=	YES
+CONFIGURE_ARGS+=	--with-etc-dir=${PREFIX}/etc
+
 MAN1=		logsurfer.1
 MAN4=		logsurfer.conf.4
+
+post-install:
+	@${MKDIR} ${PREFIX}/share/examples/logsurfer
+	${INSTALL_DATA} ${WRKSRC}/config-examples/README \
+		${PREFIX}/share/examples/logsurfer
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ChangeLog README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
