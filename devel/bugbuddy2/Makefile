@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bugbuddy
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/bug-buddy
