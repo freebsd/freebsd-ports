@@ -114,6 +114,7 @@
     SUBDIR += sl
     SUBDIR += sokoban
     SUBDIR += sol
+    SUBDIR += speak
     SUBDIR += spellcast
     SUBDIR += speyes
     SUBDIR += spider
