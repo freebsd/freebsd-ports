@@ -2,7 +2,7 @@
 lib/nn
 lib/news/inews
 bin/nn
-bin/nnusages
+bin/nnusage
 bin/nngrab
 bin/nnstats
 bin/nncheck
