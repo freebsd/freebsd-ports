@@ -1,0 +1,11 @@
+--- share/src/fpc-1.0.10/ide/compiler/Makefile.fpc.old	Fri Jan 16 00:23:44 2004
++++ share/src/fpc-1.0.10/ide/compiler/Makefile.fpc	Fri Jan 16 00:25:03 2004
+@@ -18,7 +18,7 @@
+ fpcdir=../..
+ 
+ [prerules]
+-COMPILERDIR=$(FPCDIR)/compiler
++COMPILERDIR=../../compiler
+ 
+ # Use 1.0.2 and 1.0.4 require -Ca to generate simple ppu
+ ifneq ($(findstring 1.0.2,$(FPC_VERSION)),)

@@ -51,6 +51,7 @@
     SUBDIR += flim113-emacs20
     SUBDIR += flim113-mule
     SUBDIR += flim113-xemacs21-mule
+    SUBDIR += fpc-ide
     SUBDIR += fte
     SUBDIR += gate
     SUBDIR += gedit-plugins

@@ -1,0 +1,16 @@
+bin/fp
+lib/fpc/%%PORTVERSION%%/ide/cvsco.tdf
+lib/fpc/%%PORTVERSION%%/ide/cvsdiff.tdf
+lib/fpc/%%PORTVERSION%%/ide/cvsup.tdf
+lib/fpc/%%PORTVERSION%%/ide/fp.ans
+lib/fpc/%%PORTVERSION%%/ide/gplprog.pt
+lib/fpc/%%PORTVERSION%%/ide/gplunit.pt
+lib/fpc/%%PORTVERSION%%/ide/grep.tdf
+lib/fpc/%%PORTVERSION%%/ide/program.pt
+lib/fpc/%%PORTVERSION%%/ide/tpgrep.tdf
+lib/fpc/%%PORTVERSION%%/ide/unit.pt
+%%DOCSDIR%%/readme.ide
+@dirrm %%DOCSDIR%%
+@dirrm lib/fpc/%%PORTVERSION%%/ide
+@dirrm lib/fpc/%%PORTVERSION%%
+@dirrm lib/fpc
