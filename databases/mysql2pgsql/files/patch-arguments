@@ -1,0 +1,11 @@
+--- mysql2pgsql.old	Sat Jun 23 16:12:18 2001
++++ mysql2pgsql	Sat Jun 23 16:11:51 2001
+@@ -49,7 +49,7 @@
+ 		exit 1;
+ 	} else {
+ 		$dump="$ARGV[1]";
+-		$database="$ARGV[1]";
++		$database="$ARGV[2]";
+ 	}
+ } else {
+ 	$dump="$ARGV[0]";
