@@ -8,6 +8,7 @@
 
 PORTNAME=	speex
 PORTVERSION=	1.1.6
+PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.speex.org/download/
 PKGNAMESUFFIX=	-devel
