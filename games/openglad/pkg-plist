@@ -1,0 +1,36 @@
+bin/openglad
+bin/openscen
+%%PORTDOCS%%%%DOCDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCDIR%%/COPYING
+%%PORTDOCS%%%%DOCDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCDIR%%/INSTALL
+%%PORTDOCS%%%%DOCDIR%%/NEWS
+%%PORTDOCS%%%%DOCDIR%%/README
+%%PORTDOCS%%%%DOCDIR%%/cheats.txt
+%%PORTDOCS%%%%DOCDIR%%/release-notes.txt
+%%PORTDOCS%%%%DOCDIR%%/scen.txt
+share/openglad/glad.hlp
+share/openglad/graphics.001
+share/openglad/levels.001
+share/openglad/openglad.cfg
+share/openglad/sound/blast1.wav
+share/openglad/sound/bolt1.wav
+share/openglad/sound/boom.wav
+share/openglad/sound/charge.wav
+share/openglad/sound/clang.wav
+share/openglad/sound/die1.wav
+share/openglad/sound/die2.wav
+share/openglad/sound/eat.wav
+share/openglad/sound/explode1.wav
+share/openglad/sound/faerie1.wav
+share/openglad/sound/fwip.wav
+share/openglad/sound/heal1.wav
+share/openglad/sound/money.wav
+share/openglad/sound/roar.wav
+share/openglad/sound/teleport.wav
+share/openglad/sound/twang.wav
+share/openglad/sound/yo.wav
+share/openglad/start.tex
+@dirrm share/openglad/sound
+@dirrm share/openglad
+%%PORTDOCS%%@dirrm %%DOCDIR%%

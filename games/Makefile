@@ -246,6 +246,7 @@
     SUBDIR += oneko
     SUBDIR += oneko-sakura
     SUBDIR += oonsoo
+    SUBDIR += openglad
     SUBDIR += pengpong
     SUBDIR += penguin-command
     SUBDIR += pentix
