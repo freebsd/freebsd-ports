@@ -1,8 +1,8 @@
-*** ../../wminet.app/wminet/Makefile.orig	Fri Dec 11 22:15:44 1998
---- ../../wminet.app/wminet/Makefile		Sun May 23 14:15:19 1999
+*** Makefile.orig	Sat Dec 12 12:15:44 1998
+--- Makefile	Sat Aug 12 00:34:24 2000
 ***************
 *** 1,19 ****
-  LIBDIR = -L/usr/X11R6/lib
+! LIBDIR = -L/usr/X11R6/lib
 ! LIBS   = -lXpm -lXext -lX11
 ! FLAGS = -O2
   OBJS =	wminet.o \
@@ -22,10 +22,10 @@
   clean::
   	for i in $(OBJS) ; do \
 --- 1,22 ----
-  LIBDIR = -L/usr/X11R6/lib
+! LIBDIR = -L${X11BASE}/lib
 ! LIBS   = -lXpm -lXext -lX11 -lkvm
 ! CFLAGS ?= -O2
-! CFLAGS += -I/usr/X11R6/include
+! CFLAGS += -I${X11BASE}/include
 ! CFLAGS += -DDEFAULT_WMINETRC="\"${PREFIX}/etc/wminetrc\""
   OBJS =	wminet.o \
   		../wmgeneral/wmgeneral.o \
@@ -35,10 +35,10 @@
   
   
   .c.o:
-! 	${CC} -I/usr/X11R6/share/include $(CFLAGS) -c -Wall $< -o $*.o
+! 	${CC} $(CFLAGS) -c $< -o $@
   
 ! $(PROG): $(OBJS)
-! 	${CC} $(CFLAGS) -o $@ $(OBJS) -lXext $(LIBDIR) $(LIBS)
+! 	${CC} $(CFLAGS) -o $@ $(OBJS) $(LIBDIR) $(LIBS)
   
 ! all:: $(PROG)
   
@@ -61,6 +61,6 @@
   	rm -f *~
   
   install:: wminet
-! 	install -c -g kmem -m 2755 -o root $(PROG) ${PREFIX}/bin
-! 	install -c -g wheel -m 644 -o root wminetrc ${PREFIX}/etc/wminetrc
+! 	${INSTALL} -c -g kmem -m 2755 -o root $(PROG) ${PREFIX}/bin
+! 	${INSTALL} -c -g wheel -m 644 -o root wminetrc ${PREFIX}/etc/wminetrc
 ! 
