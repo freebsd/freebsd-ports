@@ -1,11 +1,11 @@
---- configure.orig	Sat Oct 30 01:23:23 2004
-+++ configure	Sat Oct 30 01:24:26 2004
-@@ -12745,7 +12745,7 @@
+--- configure.orig	Fri Dec 31 14:10:44 2004
++++ configure	Fri Dec 31 14:12:12 2004
+@@ -24488,7 +24488,7 @@
  
  
  
--for ac_func in gethostname gettimeofday memchr memmove memset mkdir mkfifo munmap rmdir socket strcspn strerror strrchr strspn strstr strtol strtoul pow strcasecmp putenv strchr strpbrk strdup
-+for ac_func in gethostname gettimeofday memchr memmove memset mkdir mkfifo munmap rmdir socket strcspn strerror strrchr strspn strstr strtol strtoul pow strcasecmp putenv strchr strpbrk strdup getgrgid_r getpwuid_r
+-for ac_func in gethostname gettimeofday memchr memmove memset mkdir mkfifo munmap rmdir socket strcspn strerror strrchr strspn strstr strtol strtoul strcasecmp putenv strchr strpbrk strdup getgrgid_r getpwuid_r regcomp ftruncate select
++for ac_func in gethostname gettimeofday memchr memmove memset mkdir mkfifo munmap rmdir socket strcspn strerror strrchr strspn strstr strtol strtoul strcasecmp putenv strchr strpbrk strdup regcomp ftruncate select
  do
  as_ac_var=`echo "ac_cv_func_$ac_func" | $as_tr_sh`
  echo "$as_me:$LINENO: checking for $ac_func" >&5
