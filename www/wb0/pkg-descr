@@ -1,0 +1,9 @@
+This is a Web browser for the VGA console.  It can display pictures.
+It uses libjpeg, libpng, Lynx, and svgalib.
+
+If you have difficulties, try running it with the "m321" option.
+
+WWW:  http://atrey.karlin.mff.cuni.cz/~clock/twibright/wb0
+
+Trevor Johnson
+trevor@FreeBSD.org

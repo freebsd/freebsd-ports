@@ -213,6 +213,7 @@
     SUBDIR += w3m
     SUBDIR += w3m-ssl
     SUBDIR += w3mir
+    SUBDIR += wb0
     SUBDIR += wcol
     SUBDIR += web2ldap
     SUBDIR += web500gw
