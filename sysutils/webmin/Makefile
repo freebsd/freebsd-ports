@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	1.010
+PORTVERSION=	1.020
 CATEGORIES=	sysutils
 MASTER_SITES=	http://telia.dl.sourceforge.net/sourceforge/webadmin/ \
 		http://www.webmin.com/updates/
