@@ -3,7 +3,7 @@
 # Date created:         02 Aug 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
-# $Id: Makefile,v 1.4 1996/08/02 21:48:04 chuckr Exp $
+# $Id: Makefile,v 1.5 1996/08/09 21:53:06 chuckr Exp $
 #
 
 DISTNAME=	tkcvs-6.0
@@ -12,8 +12,7 @@ MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/NEW/
 
 MAINTAINER=	shanee@rabbit.augusta.de
 
-LIB_DEPENDS=	tcl75\\.1\\.:${PORTSDIR}/lang/tcl75 \
-		tk41\\.1\\.:${PORTSDIR}/x11/tk41
+LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 
 NO_BUILD=	yes
 
