@@ -187,6 +187,7 @@
     SUBDIR += wmpccard
     SUBDIR += wmtop
     SUBDIR += wmzazof
+    SUBDIR += x86info
     SUBDIR += xbatt
     SUBDIR += xbattbar
     SUBDIR += xcdroast

@@ -1,0 +1,18 @@
+--- Makefile.orig	Mon Oct 15 02:07:53 2001
++++ Makefile	Mon Oct 15 02:08:22 2001
+@@ -1,4 +1,4 @@
+-CFLAGS = -Wall -W -g -O2
++#CFLAGS = -Wall -W -g -O2
+ all: x86info
+ 
+ OBJS =\
+@@ -22,6 +22,9 @@
+ 
+ x86info: $(OBJS)
+ 	gcc -o x86info $(OBJS)
++
++.c.o:
++	gcc $(CFLAGS) -o $@ -c $<
+ 
+ clean:
+ 	rm -f *.o x86info
