@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	darkice
-PORTVERSION=	0.13
+PORTVERSION=	0.13.1
 CATEGORIES=	audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,6 @@ LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-lame-prefix=${LOCALBASE} \
 		--with-vorbis-prefix=${LOCALBASE}
 
@@ -29,6 +28,7 @@ MAN1=	darkice.1
 MAN5=	darkice.cfg.5
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		 s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
