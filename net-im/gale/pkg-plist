@@ -10,7 +10,6 @@ bin/gsub
 etc/gale/COPYING
 etc/gale/auth/trusted/ROOT
 include/gale/all.h
-include/gale/auth.h
 include/gale/client.h
 include/gale/compat.h
 include/gale/config.h
@@ -23,12 +22,15 @@ include/gale/misc.h
 include/gale/types.h
 include/oop-adns.h
 include/oop-glib.h
+include/oop-read.h
+include/oop-rl.h
+include/oop-tcl.h
 include/oop-www.h
 include/oop.h
 lib/libgale.a
 lib/libgale.la
 lib/libgale.so
-lib/libgale.so.11
+lib/libgale.so.12
 lib/liboop-adns.a
 lib/liboop-adns.la
 lib/liboop-adns.so
@@ -41,6 +43,10 @@ lib/liboop-rl.a
 lib/liboop-rl.la
 lib/liboop-rl.so
 lib/liboop-rl.so.0
+lib/liboop-tcl.a
+lib/liboop-tcl.la
+lib/liboop-tcl.so
+lib/liboop-tcl.so.0
 lib/liboop-www.a
 lib/liboop-www.la
 lib/liboop-www.so
@@ -50,10 +56,13 @@ lib/liboop.la
 lib/liboop.so
 lib/liboop.so.3
 sbin/gksign
-@dirrm include/gale
-@dirrm etc/gale/auth/trusted
-@dirrm etc/gale/auth/private
-@dirrm etc/gale/auth/local
+@exec mkdir -m 1777 %D/etc/gale/auth/cache
+@exec mkdir -m 1777 %D/etc/gale/auth/local
+@exec mkdir -m 755 %D/etc/gale/auth/private
 @dirrm etc/gale/auth/cache
+@dirrm etc/gale/auth/local
+@dirrm etc/gale/auth/private
+@dirrm etc/gale/auth/trusted
 @dirrm etc/gale/auth
 @dirrm etc/gale
+@dirrm include/gale
