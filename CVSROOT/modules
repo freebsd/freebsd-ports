@@ -433,6 +433,7 @@ aspathtree	ports/net/aspathtree
 aspell		ports/textproc/aspell
 aspostit	ports/deskutils/aspostit
 asprint		ports/print/asprint
+asr10		ports/converters/asr10
 asr-manpages	ports/misc/asr-manpages
 asr-utils	ports/sysutils/asr-utils
 asterisk	ports/net/asterisk
