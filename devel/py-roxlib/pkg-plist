@@ -29,6 +29,8 @@ lib/ROX-Lib2/Help/python/rox.saving.html
 lib/ROX-Lib2/Help/python/rox.tasks.html
 lib/ROX-Lib2/MakeDist
 lib/ROX-Lib2/Messages/dist
+lib/ROX-Lib2/Messages/fr.gmo
+lib/ROX-Lib2/Messages/fr.po
 lib/ROX-Lib2/Messages/it.gmo
 lib/ROX-Lib2/Messages/it.po
 lib/ROX-Lib2/Messages/update-po
