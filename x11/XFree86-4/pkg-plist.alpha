@@ -1488,6 +1488,8 @@ lib/libXp.a
 lib/libXp.so
 lib/libXp.so.6
 lib/libXss.a
+lib/libXThrStub.so
+lib/libXThrStub.so.6
 lib/libXt.a
 lib/libXt.so
 lib/libXt.so.6
