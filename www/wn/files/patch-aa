@@ -67,8 +67,8 @@
    * Enter the complete path of your root data directory here.
    */
   
-! #define WN_LOGFILE	"/usr/local/wnlogs/wn.log"
-! #define WN_ERRLOGFILE	"/usr/local/wnlogs/wn-err.log"
+! #define WN_LOGFILE	"/usr/local/wn/wnlogs/run.log"
+! #define WN_ERRLOGFILE	"/usr/local/wn/wnlogs/err.log"
   
   /*
    * Full path of the file you want to use for a log file and the

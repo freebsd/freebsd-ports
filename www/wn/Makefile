@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.10 1996/03/25 23:16:32 adam Exp $
+# $Id: Makefile,v 1.11 1996/05/26 17:31:55 adam Exp $
 #
 
 DISTNAME=       wn-1.12.7
@@ -18,7 +18,7 @@ pre-patch:
 	@cp ${WRKSRC}/config.h.dist ${WRKSRC}/config.h
 
 post-install:
-	@mkdir -p ${PREFIX}/wn
+	@mkdir -p ${PREFIX}/wn/wnlogs
 	@cp -PR ${WRKSRC}/docs ${WRKSRC}/images ${PREFIX}/wn
 	@install -c -o bin -g bin  ${WRKSRC}/bin/wn ${PREFIX}/libexec
 	@install -c -o bin -g bin  ${WRKSRC}/bin/swn ${PREFIX}/sbin

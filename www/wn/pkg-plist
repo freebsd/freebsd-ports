@@ -6,5 +6,6 @@ bin/wndex
 wn/docs
 wn/images
 wn/index
+wn/wnlogs
 @cwd ./wn
 @exec ../sbin/wndex -r
