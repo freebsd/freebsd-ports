@@ -4405,6 +4405,7 @@ libdnet		ports/net/libdnet
 libdockapp	ports/x11-wm/libdockapp
 libds		ports/devel/libds
 libdsp		ports/devel/libdsp
+libdts		ports/multimedia/libdts
 libdv		ports/multimedia/libdv
 libdvbpsi	ports/multimedia/libdvbpsi
 libdvdcss	ports/multimedia/libdvdcss
