@@ -1,14 +1,17 @@
 bin/gcompris
 etc/sound/events/gcompris.soundlist
 share/gnome/apps/Games/gcompris.desktop
+share/gnome/gcompris/data/wordsgame/wordslevel1.de
 share/gnome/gcompris/data/wordsgame/wordslevel1.en
 share/gnome/gcompris/data/wordsgame/wordslevel1.es
 share/gnome/gcompris/data/wordsgame/wordslevel1.fr
 share/gnome/gcompris/data/wordsgame/wordslevel1.it
+share/gnome/gcompris/data/wordsgame/wordslevel2.de
 share/gnome/gcompris/data/wordsgame/wordslevel2.en
 share/gnome/gcompris/data/wordsgame/wordslevel2.es
 share/gnome/gcompris/data/wordsgame/wordslevel2.fr
 share/gnome/gcompris/data/wordsgame/wordslevel2.it
+share/gnome/gcompris/data/wordsgame/wordslevelmax.de
 share/gnome/gcompris/data/wordsgame/wordslevelmax.en
 share/gnome/gcompris/data/wordsgame/wordslevelmax.es
 share/gnome/gcompris/data/wordsgame/wordslevelmax.fr
@@ -150,8 +153,8 @@ share/gnome/pixmaps/gnome-compris.png
 share/gnome/sounds/gcompris/bonus.wav
 share/gnome/sounds/gcompris/crash.wav
 share/gnome/sounds/gcompris/gobble.wav
-share/gnome/sounds/gcompris/laughter.wav
 share/gnome/sounds/gcompris/life.wav
+share/locale/de/LC_MESSAGES/gcompris.mo
 share/locale/es/LC_MESSAGES/gcompris.mo
 share/locale/fr/LC_MESSAGES/gcompris.mo
 share/locale/it/LC_MESSAGES/gcompris.mo
