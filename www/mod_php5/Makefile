@@ -51,7 +51,7 @@ Y2K=		http://www.php.net/y2k.php3
 
 PHP_DISTDIR=	version4/downloads
 
-VERSION_APACHE=	1.3.9
+VERSION_APACHE=	1.3.11
 VERSION_PHP=	4.0b2
 
 NO_LATEST_LINK=	yes
