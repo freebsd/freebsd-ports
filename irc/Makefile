@@ -86,6 +86,7 @@
     SUBDIR += tr-ircd
     SUBDIR += trickyirc
     SUBDIR += undernet-ircu
+    SUBDIR += unreal
     SUBDIR += weechat
     SUBDIR += xaric
     SUBDIR += xchat
