@@ -1,0 +1,20 @@
+The PEAR::HTML_Page2 package provides a simple interface for generating an 
+XHTML compliant page:
+  * supports virtually all HTML doctypes, from HTML 2.0 through XHTML 1.1 and 
+    XHTML Basic 1.0 plus preliminary support for XHTML 2.0
+  * namespace support
+  * global language declaration for the document
+  * line ending styles
+  * full META tag support
+  * support for stylesheet declaration in the head section
+  * support for script declaration in the head section
+  * support for linked stylesheets and scripts
+  * full support for header link tags
+  * body can be a string, object with toHtml or toString methods or an array
+    (can be combined)
+
+Ideas for use:
+  * Use to validate the output of a class for XHTML compliance
+  * Quick prototyping using PEAR packages is now a breeze.
+
+WWW: http://pear.php.net/package/HTML_Page2/
