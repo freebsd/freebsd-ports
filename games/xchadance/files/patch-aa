@@ -1,5 +1,5 @@
---- makefile.orig	Mon Mar  7 22:10:46 1994
-+++ makefile	Fri Feb 19 08:58:24 1999
+--- makefile.orig	Mon Mar  7 07:10:46 1994
++++ makefile	Sun Jun 20 15:11:51 1999
 @@ -1,6 +1,7 @@
  CC	= gcc 
 -CFLAGS	= -Wall -O
@@ -15,7 +15,7 @@
  
  install	:
 -	cp xchadance $(BINDIR)
-+	install -s xchadance $(BINDIR)
++	install -c -s xchadance $(BINDIR)
  
  
  xchadance	: xchadance.o chadata.o
