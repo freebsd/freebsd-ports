@@ -163,6 +163,7 @@ share/doc/apache/manual/handler.html.en
 share/doc/apache/manual/handler.html.html
 share/doc/apache/manual/handler.html.ja.jis
 share/doc/apache/manual/header.html
+share/doc/apache/manual/howto/auth.html
 share/doc/apache/manual/howto/cgi.html.en
 share/doc/apache/manual/howto/cgi.html.html
 share/doc/apache/manual/howto/cgi.html.ja.jis
@@ -263,7 +264,9 @@ share/doc/apache/manual/mod/mod_cern_meta.html
 share/doc/apache/manual/mod/mod_cgi.html
 share/doc/apache/manual/mod/mod_cookies.html
 share/doc/apache/manual/mod/mod_digest.html
-share/doc/apache/manual/mod/mod_dir.html
+share/doc/apache/manual/mod/mod_dir.html.en
+share/doc/apache/manual/mod/mod_dir.html.html
+share/doc/apache/manual/mod/mod_dir.html.ja.jis
 share/doc/apache/manual/mod/mod_dld.html
 share/doc/apache/manual/mod/mod_env.html.en
 share/doc/apache/manual/mod/mod_env.html.html
@@ -336,6 +339,7 @@ share/doc/apache/manual/server-wide.html.en
 share/doc/apache/manual/server-wide.html.fr
 share/doc/apache/manual/server-wide.html.html
 share/doc/apache/manual/server-wide.html.ja.jis
+share/doc/apache/manual/sitemap.html
 share/doc/apache/manual/sourcereorg.html
 share/doc/apache/manual/stopping.html.en
 share/doc/apache/manual/stopping.html.fr

@@ -1,5 +1,5 @@
---- conf/httpd.conf-dist.orig	Fri Oct  5 22:40:04 2001
-+++ conf/httpd.conf-dist	Wed Oct 17 18:16:27 2001
+--- conf/httpd.conf-dist.orig	Wed Jan  9 10:05:31 2002
++++ conf/httpd.conf-dist	Fri Jan 25 15:07:51 2002
 @@ -95,6 +95,9 @@
  #ResourceConfig conf/srm.conf
  #AccessConfig conf/access.conf
@@ -93,32 +93,33 @@
  
  #
  # Optionally add a line containing the server version and virtual host
-@@ -768,13 +804,17 @@
-     # For example, the PHP 3.x module (not part of the Apache distribution - see
-     # http://www.php.net) will typically use:
+@@ -765,6 +801,21 @@
+     # AddType allows you to tweak mime.types without actually editing it, or to
+     # make certain files to be certain types.
      #
--    #AddType application/x-httpd-php3 .php3
--    #AddType application/x-httpd-php3-source .phps
++    # For example, the PHP 3.x module (not part of the Apache distribution - see
++    # http://www.php.net) will typically use:
++    #
 +    <IfModule mod_php3.c>
-+	AddType application/x-httpd-php3 .php3
-+	AddType application/x-httpd-php3-source .php3s
++      AddType application/x-httpd-php3 .php3
++      AddType application/x-httpd-php3-source .php3s
 +    </IfModule>
-     #
-     # And for PHP 4.x, use:
-     #
--    #AddType application/x-httpd-php .php
--    #AddType application/x-httpd-php-source .phps
++    #
++    # And for PHP 4.x, use:
++    #
 +    <IfModule mod_php4.c>
-+	AddType application/x-httpd-php .php
-+	AddType application/x-httpd-php-source .phps
++      AddType application/x-httpd-php .php
++      AddType application/x-httpd-php-source .phps
 +    </IfModule>
- 
++
      AddType application/x-tar .tgz
  
-@@ -984,3 +1024,14 @@
+     #
+@@ -972,4 +1023,15 @@
+ #    ServerName dummy-host.example.com
  #    ErrorLog logs/dummy-host.example.com-error_log
  #    CustomLog logs/dummy-host.example.com-access_log common
- #</VirtualHost>
++#</VirtualHost>
 +
 +# This Virtual Host makes it so FrontPage will display pages from the
 +# root web.  When multiple Listen directives are specified, Frontpage
@@ -129,4 +130,4 @@
 +#<VirtualHost _default_:80>
 +#    ServerAdmin webmaster@@@HOSTNAME@@
 +#    ServerName @@HOSTNAME@@
-+#</VirtualHost>
+ #</VirtualHost>

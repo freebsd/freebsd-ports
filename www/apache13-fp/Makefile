@@ -7,8 +7,7 @@
 
 PORTNAME=	apache
 PKGNAMESUFFIX=	_fp
-PORTVERSION=	1.3.22
-PORTREVISION=	1
+PORTVERSION=	1.3.23
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://www.freebsd.org/gifs/ \
@@ -37,7 +36,7 @@ MAINTAINER=	hetzels@westbend.net
 
 APACHE=		${DISTNAME}${EXTRACT_SUFX}
 
-RUN_DEPENDS=	${LOCALBASE}/frontpage/bin/owsadm.exe:${PORTSDIR}/www/frontpage
+RUN_DEPENDS=	${LOCALBASE}/frontpage/version5.0/bin/owsadm.exe:${PORTSDIR}/www/frontpage
 
 .ifndef WITHOUT_LIBEXPAT
 LIB_DEPENDS+=	expat.2:${PORTSDIR}/textproc/expat2

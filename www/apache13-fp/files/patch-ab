@@ -1,5 +1,5 @@
---- Makefile.tmpl.orig	Sat Oct  6 17:01:09 2001
-+++ Makefile.tmpl	Thu Oct 18 12:39:52 2001
+--- Makefile.tmpl.orig	Wed Nov 28 09:02:12 2001
++++ Makefile.tmpl	Fri Jan 25 14:48:40 2002
 @@ -127,6 +127,7 @@
  runtimedir      = @runtimedir@
  logfiledir      = @logfiledir@
@@ -61,7 +61,7 @@
  	fi
  	@echo "<=== [programs]"
  
-@@ -410,6 +426,7 @@
+@@ -411,6 +427,7 @@
  	echo "$(INSTALL_SCRIPT) $(TOP)/$(SRC)/support/apachectl[*] $(root)$(sbindir)/$${apachectl}"; \
  	sed -e 's;PIDFILE=.*;PIDFILE=$(runtimedir)/$(TARGET).pid;' \
  		-e 's;HTTPD=.*;HTTPD=$(sbindir)/$(TARGET);' \
@@ -69,7 +69,7 @@
  		< $(TOP)/$(SRC)/support/apachectl > $(TOP)/$(SRC)/.apaci.install.tmp && \
  		$(INSTALL_SCRIPT) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sbindir)/$${apachectl}; \
  	echo "$(INSTALL_DATA) $(TOP)/$(SRC)/support/apachectl.8 $(root)$(mandir)/man8/$${apachectl}.8"; \
-@@ -457,15 +474,15 @@
+@@ -459,15 +476,15 @@
  #   icons and distributed CGI scripts.
  install-data:
  	@echo "===> [data: Installing initial data files]"
@@ -93,7 +93,7 @@
  	-@if [ -d $(TOP)/htdocs/manual ]; then \
  		echo "Copying tree $(TOP)/htdocs/manual -> $(root)/$(manualdir)/"; \
  		(cd $(TOP)/htdocs/manual/ && $(TAR) $(TAROPT) - *) |\
-@@ -473,17 +490,17 @@
+@@ -475,17 +492,17 @@
  		find $(root)$(manualdir)/ -type d -exec chmod a+rx {} \; ; \
  		find $(root)$(manualdir)/ -type f -print | xargs chmod a+r ; \
  	fi
@@ -117,7 +117,7 @@
  	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
  	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
  	(cd $(root)$(iconsdir)/ && $(TAR) -xf -); \
-@@ -517,42 +534,46 @@
+@@ -519,15 +536,17 @@
  			-e 's;@@ServerRoot@@/icons;$(iconsdir);' \
  			-e 's;@@ServerRoot@@/cgi-bin;$(cgidir);' \
  			-e 's;@@ServerRoot@@/proxy;$(proxycachedir);' \
@@ -139,11 +139,7 @@
  			-e 's;conf/magic;$(sysconfdir)/magic;' \
  			-e 's;conf/mime\.types;$(sysconfdir)/mime.types;' \
  			-e 's;User nobody;User $(conf_user);' \
--			-e 's;Group #-1;Group $(conf_group);' \
-+			-e 's;Group \"#-1\";Group $(conf_group);' \
- 			-e 's;Port 80;Port $(conf_port);' \
- 			-e 's;ServerAdmin you@your.address;ServerAdmin $(conf_serveradmin);' \
- 			-e 's;ServerName new.host.name;ServerName $(conf_servername);' \
+@@ -539,23 +558,25 @@
  			> $(TOP)/$(SRC)/.apaci.install.tmp && \
  		echo "$(INSTALL_DATA) $(TOP)/conf/$${conf}-dist[*] $(root)$(sysconfdir)/$${target_conf}.default"; \
  		$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sysconfdir)/$${target_conf}.default; \
