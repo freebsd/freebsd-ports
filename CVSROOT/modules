@@ -299,6 +299,7 @@ alz2zip		ports/archivers/alz2zip
 amanda-client	ports/misc/amanda-client
 amanda-server	ports/misc/amanda-server
 amap		ports/security/amap
+amarok		ports/audio/amarok
 amaterus	ports/x11-wm/amaterus
 amavis-perl	ports/security/amavis-perl
 amavisd		ports/security/amavisd
