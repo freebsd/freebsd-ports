@@ -7927,6 +7927,7 @@ postfix1	ports/mail/postfix1
 postfix20	ports/mail/postfix20
 postfixadmin	ports/mail/postfixadmin
 postgis		ports/databases/postgis
+postgis-jdbc	ports/databases/postgis-jdbc
 postgresql-contrib	ports/databases/postgresql-contrib
 postgresql-devel	ports/databases/postgresql-devel
 postgresql-docs	ports/databases/postgresql-docs
@@ -9259,6 +9260,7 @@ slisp		ports/lang/slisp
 slmon		ports/sysutils/slmon
 slnr		ports/news/slnr
 sloccount	ports/misc/sloccount
+slony1		ports/databases/slony1
 sloth		ports/sysutils/sloth
 slrn		ports/news/slrn
 slrnconf	ports/news/slrnconf
