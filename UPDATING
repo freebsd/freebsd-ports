@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041028:
+  AFFECTS: users of net/netatalk
+  AUTHOR: marcus@FreeBSD.org
+
+  Please note that the handling of the default type/creator has changed with
+  2.0.1. As a side effect, users upgrading from earlier versions, including
+  2.0.0, will have to remove the default type/creator from the
+  AppleVolumes.System file. The install process will not modify this file
+  automatically. Please remove the line starting with '.         "????"'
+  manually.
+
+  This text was taken from the Netatalk 2.0.1 release notes at
+  https://sourceforge.net/project/shownotes.php?release_id=278320.
+
 20041027:
   AFFECTS: users of games/pcgen
   AUTHOR: hq@FreeBSD.org
