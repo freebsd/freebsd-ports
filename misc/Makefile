@@ -1,6 +1,11 @@
-# $Id: Makefile,v 1.176 1998/12/02 20:08:56 billf Exp $
+# $Id: Makefile,v 1.177 1998/12/07 02:22:02 asami Exp $
 #
 
+    SUBDIR += 221upgrade
+    SUBDIR += 222upgrade
+    SUBDIR += 225upgrade
+    SUBDIR += 227upgrade
+    SUBDIR += 30upgrade
     SUBDIR += acron
     SUBDIR += amanda
     SUBDIR += amanda24
