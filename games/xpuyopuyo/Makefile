@@ -18,6 +18,8 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GTK=	yes
 USE_AUTOCONF=	yes
+WANT_GNOME=	yes
+
 MAN6=		xpuyopuyo.6
 
 .include <bsd.port.pre.mk>
@@ -30,7 +32,6 @@ CONFIGURE_ARGS+=--with-libmikmod-prefix=${LOCALBASE}
 
 .if defined(HAVE_GNOME)
 USE_GNOME=	yes
-WANT_GNOME=	yes
 .else
 CONFIGURE_ARGS+=--without-gnome
 .endif
