@@ -1,15 +1,26 @@
---- milter-sender/install.sh.bak	Mon Aug 25 14:36:47 2003
-+++ milter-sender/install.sh	Sun Sep  7 12:12:40 2003
-@@ -26,10 +26,10 @@
+--- milter-sender/install.sh.orig	Mon Aug 25 14:36:47 2003
++++ milter-sender/install.sh	Sun Sep  7 14:35:00 2003
+@@ -18,19 +18,17 @@
+ chgrp ${GROUP} ${STATEDIR}
+ 
+ cp -f ${MILTER} ${BINDIR}
+-chown ${USER} ${BINDIR}/${MILTER}
+-chgrp ${GROUP} ${BINDIR}/${MILTER}
++#chown ${USER} ${BINDIR}/${MILTER}
++#chgrp ${GROUP} ${BINDIR}/${MILTER}
+ 
+ chgrp ${GROUP} ${MAILDIR} ${MAILDIR}/access.* ${MAILDIR}/aliases.*
+ 
  
  case `uname -s` in
  *BSD*)
 -	RC="/usr/local/etc/rc.d/${MILTER}.sh"
+-	if [ ! -f $RC ]; then
 +	RC="/usr/local/etc/rc.d/${MILTER}.sh-dist"
- 	if [ ! -f $RC ]; then
  		cp ${MILTER}.sh $RC
 -		chmod 540 $RC
+-	fi
 +		chmod 640 $RC
- 	fi
  	;;
  Linux*)
+ 	if [ -d '/etc/rc.d/init.d' ]; then

@@ -1,5 +1,5 @@
---- milter-sender/milter-sender.sh.bak	Tue Sep  2 21:12:30 2003
-+++ milter-sender/milter-sender.sh	Sun Sep  7 12:09:08 2003
+--- milter-sender/milter-sender.sh.orig	Tue Sep  2 21:12:30 2003
++++ milter-sender/milter-sender.sh	Sun Sep  7 14:28:41 2003
 @@ -10,15 +10,14 @@
  # BEFORE:  mail
  # KEYWORD: FreeBSD NetBSD
@@ -24,7 +24,7 @@
  
  ##########################################################################
  #	Nothing to be configured below this point.
-@@ -64,11 +63,10 @@
+@@ -64,31 +63,29 @@
  start()
  {
  	NAME=`basename "$PROGRAM"`
@@ -36,8 +36,11 @@
 +		echo " milter-sender:FAILED"
  		return
  	fi
- 
-@@ -78,17 +76,16 @@
+-
++	rm -f ${PREFIX}/lib/milter-sender/socket
+ 	# Start the program in the background from a sub-shell
+ 	# so that process will appear in the ps output immediately.
+ 	sh -c "$PROGRAM $OPTIONS &"
  
  	pid=`getpid "$PROGRAM"`
  	if [ X"$pid" = X ]; then
