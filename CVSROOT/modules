@@ -1444,6 +1444,7 @@ flash		ports/shells/flash
 flashplayer	ports/graphics/flashplayer
 flashplugin	ports/www/flashplugin
 flashplugin-mozilla	ports/www/flashplugin-mozilla
+flawfinder	ports/security/flawfinder
 flexbackup	ports/sysutils/flexbackup
 fli2gif		ports/graphics/fli2gif
 flick		ports/devel/flick
