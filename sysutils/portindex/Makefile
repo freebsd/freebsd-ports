@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	portindex
-PORTVERSION=	12
+PORTVERSION=	13
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.oook.cz/bsd/distfiles/
+MASTER_SITES=	http://people.tecnik93.com/~radim/distfiles/
 DISTNAME=	bsdportsutils-${PORTVERSION}
 
 MAINTAINER=	hsn@netmag.cz
