@@ -7,6 +7,7 @@
 
 PORTNAME=	opendx
 PORTVERSION=	4.1.3
+PORTREVISION=	1
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.research.ibm.com/dx/srcDownload/srcArchive/ \
 	        http://opendx.npaci.edu/source/
