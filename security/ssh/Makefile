@@ -9,7 +9,7 @@
 #
 
 PORTNAME=	ssh
-PORTVERSION=	1.2.31
+PORTVERSION=	1.2.32
 PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.tokyonet.ad.jp/pub/security/ssh/old/ \
