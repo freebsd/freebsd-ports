@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- db.c.orig	Wed Aug 13 18:25:16 2003
-+++ db.c	Fri Oct 17 11:27:30 2003
+--- db.c.orig	Tue Dec  2 17:12:56 2003
++++ db.c	Fri Jan 30 01:47:34 2004
 @@ -32,7 +32,7 @@
  #include <asterisk/options.h>
  #include <asterisk/astdb.h>

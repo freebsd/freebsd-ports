@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	0.5.0
-PORTREVISION=	3
+PORTVERSION=	0.7.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -30,8 +29,8 @@ USE_OPENLDAP=	yes
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		MKDIR="${MKDIR}" \
-		PWLIBDIR=${WRKDIR}/../../../devel/pwlib/work/pwlib \
-		OPENH323DIR=${WRKDIR}/../../../net/openh323/work/openh323 \
+		PWLIBDIR=${WRKDIRPREFIX}${PORTSDIR}/devel/pwlib/work/pwlib \
+		OPENH323DIR=${WRKDIRPREFIX}${PORTSDIR}/net/openh323/work/openh323 \
 		OSVERSION=${OSVERSION} \
 		CXX="${CXX}"
 

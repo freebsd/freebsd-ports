@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- pbx/Makefile.orig	Tue Aug 19 19:42:30 2003
-+++ pbx/Makefile	Fri Oct 17 14:21:00 2003
+--- pbx/Makefile.orig	Sun Oct 26 20:50:49 2003
++++ pbx/Makefile	Fri Jan 30 01:47:34 2004
 @@ -16,7 +16,7 @@
  PBX_LIBS=pbx_config.so pbx_wilcalu.so pbx_spool.so     # pbx_gtkconsole.so pbx_kdeconsole.so
  
@@ -16,8 +16,8 @@ $FreeBSD$
  endif
  
  install: all
--	for x in $(PBX_LIBS); do $(INSTALL) -m 755 $$x $(MODULES_DIR) ; done
-+	for x in $(PBX_LIBS); do $(BSD_INSTALL_PROGRAM) $$x $(MODULES_DIR) ; done
+-	for x in $(PBX_LIBS); do $(INSTALL) -m 755 $$x $(DESTDIR)$(MODULES_DIR) ; done
++	for x in $(PBX_LIBS); do $(BSD_INSTALL_PROGRAM) $$x $(DESTDIR)$(MODULES_DIR) ; done
  
  depend: .depend
  

@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- channels/chan_h323.c	2003/10/19 06:39:00	1.1
-+++ channels/chan_h323.c	2003/10/19 06:52:18
+--- channels/chan_h323.c.orig	Tue Jan 13 11:24:26 2004
++++ channels/chan_h323.c	Fri Jan 30 01:47:34 2004
 @@ -54,6 +54,7 @@
  #include <fcntl.h>
  #include <netdb.h>

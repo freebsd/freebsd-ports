@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- apps/app_intercom.c.orig	Wed Aug 13 18:25:16 2003
-+++ apps/app_intercom.c	Fri Oct 17 11:27:30 2003
+--- apps/app_intercom.c.orig	Wed Oct 22 06:10:24 2003
++++ apps/app_intercom.c	Fri Jan 30 01:52:03 2004
 @@ -29,7 +29,7 @@
  #ifdef __linux__
  #include <linux/soundcard.h>
- #else
--#include <soundcard.h>
+ #elif defined(__FreeBSD__)
+-#include <machine/soundcard.h>
 +#include <sys/soundcard.h>
+ #else
+ #include <soundcard.h>
  #endif
- #include <netinet/in.h>
- 

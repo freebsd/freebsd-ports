@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- codecs/ilbc/Makefile	2003/10/17 09:04:00	1.1
-+++ codecs/ilbc/Makefile	2003/10/17 09:04:09
+--- codecs/ilbc/Makefile.orig	Sun Apr 27 21:13:11 2003
++++ codecs/ilbc/Makefile	Fri Jan 30 01:47:34 2004
 @@ -1,4 +1,4 @@
 -CFLAGS+= -fPIC -O3
 +CFLAGS+= -fPIC

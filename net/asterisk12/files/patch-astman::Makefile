@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- astman/Makefile	2003/10/17 09:43:08	1.1
-+++ astman/Makefile	2003/10/17 09:43:31
+--- astman/Makefile.orig	Sat Oct 25 20:27:53 2003
++++ astman/Makefile	Fri Jan 30 01:47:34 2004
 @@ -8,7 +8,7 @@
  install:
  	if [ "$(TARGET)" != "none" ]; then \
  		for x in $(TARGET); do \
--			install -m 755 $$x $(ASTSBINDIR)/astman; \
-+			$(BSD_INSTALL_PROGRAM) $$x $(ASTSBINDIR)/astman; \
+-			install -m 755 $$x $(DESTDIR)$(ASTSBINDIR)/astman; \
++			$(BSD_INSTALL_PROGRAM) $$x $(DESTDIR)$(ASTSBINDIR)/astman; \
  		done ; \
  	fi
  
