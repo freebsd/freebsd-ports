@@ -4,6 +4,7 @@
     SUBDIR += bjorb
     SUBDIR += bro
     SUBDIR += bugs
+    SUBDIR += calife
     SUBDIR += cfs
     SUBDIR += checkpassword
     SUBDIR += chrootuid
