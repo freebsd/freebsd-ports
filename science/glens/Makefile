@@ -8,6 +8,7 @@
 
 PORTNAME=	glens
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://virtual.theo.phys.ulg.ac.be/
 
@@ -15,16 +16,22 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/lib/libglui.a:${PORTSDIR}/devel/glui
 
+USE_REINPLACE=	yes
 USE_MESA=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include" \
-		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -lstdc++"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-glui=${X11BASE}
 
-.if !defined(NOPORTDOCS)
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
+
+post-patch:
+	@${REINPLACE_CMD} 's|-O6||g' ${WRKSRC}/configure
+
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/cfg ${EXAMPLESDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}/cfg
+	${INSTALL_DATA} ${WRKSRC}/cfg/*.cgf ${EXAMPLESDIR}/cfg
 .endif
 
 .include <bsd.port.mk>
