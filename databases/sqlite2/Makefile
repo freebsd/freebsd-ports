@@ -12,11 +12,9 @@
 # SQLITE_WITH_TCL83 and SQLITE_WITH_TCL84.
 
 PORTNAME=	sqlite
-PORTVERSION=	2.8.15
-PORTREVISION=	1
+PORTVERSION=	2.8.16
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SQL database engine in a C library w/ Tcl wrapper
@@ -69,8 +67,6 @@ ALL_TARGET=	all
 #.endif
 
 INSTALLS_SHLIB=	YES
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
