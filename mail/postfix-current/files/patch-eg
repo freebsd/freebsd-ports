@@ -1,5 +1,5 @@
-*** ./sendmail/sendmail.c.orig	Tue Mar 14 10:42:06 2000
---- ./sendmail/sendmail.c	Thu Jun  1 22:47:24 2000
+*** ./src/sendmail/sendmail.c.orig	Tue Mar 14 10:42:06 2000
+--- ./src/sendmail/sendmail.c	Thu Jun  1 22:47:24 2000
 ***************
 *** 57,59 ****
   /*	The path name of the \fBsendmail.cf\fR file. Postfix configuration
