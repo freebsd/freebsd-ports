@@ -182,6 +182,12 @@ PLIST_SUB+=	CTF=""
 PLIST_SUB+=	CTF="@comment "
 .endif
 
+.if defined(WITH_CTF_MAPS)
+PLIST_SUB+=	CTFMAPS=""
+.else
+PLIST_SUB+=	CTFMAPS="@comment "
+.endif
+
 .if defined(WITH_SHAREWARE_DATA)
 PLIST_SUB+=	SHAREWARE=""
 .else
