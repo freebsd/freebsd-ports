@@ -8,7 +8,7 @@
 PORTNAME=		py-HTMLgen
 PORTVERSION= 		2.1
 CATEGORIES=		www python
-MASTER_SITES=		http://starship.skyport.net/crew/friedrich/
+MASTER_SITES=		ftp://ftp.python.org/pub/python/contrib-09-Dec-1999/Network/
 DISTNAME=		HTMLgen
 
 MAINTAINER=		nectar@FreeBSD.org
