@@ -1,1 +1,5 @@
-GNOME support utilities.
+A collection of utilities for the GNOME desktop.
+Included are an X color selector, a gtk-enhaned
+version of dialog(1), GUIs for less(1), uname(1),
+df(1), find(1), an applet for dict(1), and many
+other such applications.
