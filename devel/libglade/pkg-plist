@@ -1,0 +1,17 @@
+bin/libglade-config
+bin/libglade-xgettext
+etc/libgladeConf.sh
+include/glade/glade.h
+include/glade/glade-xml.h
+include/glade/glade-build.h
+include/glade/glade-widget-tree.h
+lib/libglade.a
+lib/libglade.so
+lib/libglade.so.1
+lib/libglade-gnome.a
+lib/libglade-gnome.so
+lib/libglade-gnome.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+share/aclocal/libglade.m4
+@dirrm include/glade
