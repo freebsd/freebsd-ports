@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	FreeBSD-Portindex
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	http://www.infracaninophile.co.uk/portindex/
 PKGNAMEPREFIX=	p5-
@@ -31,7 +31,7 @@ MAN1=		find-updated.1 cache-init.1 cache-update.1 portindex.1
 .include <bsd.port.pre.mk>
 
 ##
-## Needs a recent version of perl, preferably 5.8.5, but 5.6.1 should work
+## Needs a recent version of perl, preferably 5.8.6, but 5.6.1 should work
 ##
 .if ${PERL_LEVEL} < 500601
 IGNORE=		Port requires perl 5.6.x or (preferably) later.  Install lang/perl5.8 and try again
