@@ -1,5 +1,5 @@
---- gcc-2.95.2/Makefile.in.orig	Tue Jun 22 18:44:42 1999
-+++ gcc-2.95.2/Makefile.in	Tue Aug 29 17:54:58 2000
+--- gcc-2.95.3/Makefile.in.orig	Tue Jun 22 18:44:42 1999
++++ gcc-2.95.3/Makefile.in	Tue Aug 29 17:54:58 2000
 @@ -689,7 +689,6 @@
  	install-itcl \
  	install-ld \

@@ -41,6 +41,7 @@ include/g++-3/parsestream.h
 include/g++-3/pfstream.h
 include/g++-3/procbuf.h
 include/g++-3/stdiostream.h
+include/g++-3/sstream
 include/g++-3/stream.h
 include/g++-3/streambuf.h
 include/g++-3/strfile.h
@@ -226,7 +227,7 @@ lib/gcc-lib/sh-rtems/2.95.2/include/README
 lib/gcc-lib/sh-rtems/2.95.2/cc1
 lib/gcc-lib/sh-rtems/2.95.2/collect2
 lib/gcc-lib/sh-rtems/2.95.2/specs
-lib/gcc-lib/sh-rtems/2.95.2/cpp
+lib/gcc-lib/sh-rtems/2.95.2/cpp0
 lib/gcc-lib/sh-rtems/2.95.2/libgcc.a
 lib/gcc-lib/sh-rtems/2.95.2/m2/libgcc.a
 lib/gcc-lib/sh-rtems/2.95.2/m3e/libgcc.a

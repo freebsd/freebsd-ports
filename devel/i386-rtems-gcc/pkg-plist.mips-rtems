@@ -138,6 +138,7 @@ include/g++-3/stl_tempbuf.h
 include/g++-3/stl_tree.h
 include/g++-3/stl_uninitialized.h
 include/g++-3/stl_vector.h
+include/g++-3/sstream
 include/g++-3/stream.h
 include/g++-3/streambuf.h
 include/g++-3/strfile.h
@@ -190,92 +191,92 @@ info/gcc.info-8
 info/gcc.info-9
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
-lib/gcc-lib/mips-rtems/2.95.2/cc1
-lib/gcc-lib/mips-rtems/2.95.2/cc1plus
-lib/gcc-lib/mips-rtems/2.95.2/collect2
-lib/gcc-lib/mips-rtems/2.95.2/cpp
-lib/gcc-lib/mips-rtems/2.95.2/crtbegin.o
-lib/gcc-lib/mips-rtems/2.95.2/crtend.o
-lib/gcc-lib/mips-rtems/2.95.2/el/crtbegin.o
-lib/gcc-lib/mips-rtems/2.95.2/el/crtend.o
-lib/gcc-lib/mips-rtems/2.95.2/el/libgcc.a
-lib/gcc-lib/mips-rtems/2.95.2/el/libstdc++.a
-lib/gcc-lib/mips-rtems/2.95.2/el/mips3/crtbegin.o
-lib/gcc-lib/mips-rtems/2.95.2/el/mips3/crtend.o
-lib/gcc-lib/mips-rtems/2.95.2/el/mips3/libgcc.a
-lib/gcc-lib/mips-rtems/2.95.2/el/mips3/libstdc++.a
-lib/gcc-lib/mips-rtems/2.95.2/include/README
-lib/gcc-lib/mips-rtems/2.95.2/include/exception
-lib/gcc-lib/mips-rtems/2.95.2/include/float.h
-lib/gcc-lib/mips-rtems/2.95.2/include/iso646.h
-lib/gcc-lib/mips-rtems/2.95.2/include/limits.h
-lib/gcc-lib/mips-rtems/2.95.2/include/new
-lib/gcc-lib/mips-rtems/2.95.2/include/new.h
-lib/gcc-lib/mips-rtems/2.95.2/include/proto.h
-lib/gcc-lib/mips-rtems/2.95.2/include/stdarg.h
-lib/gcc-lib/mips-rtems/2.95.2/include/stdbool.h
-lib/gcc-lib/mips-rtems/2.95.2/include/stddef.h
-lib/gcc-lib/mips-rtems/2.95.2/include/syslimits.h
-lib/gcc-lib/mips-rtems/2.95.2/include/typeinfo
-lib/gcc-lib/mips-rtems/2.95.2/include/va-alpha.h
-lib/gcc-lib/mips-rtems/2.95.2/include/va-arc.h
-lib/gcc-lib/mips-rtems/2.95.2/include/va-c4x.h
-lib/gcc-lib/mips-rtems/2.95.2/include/va-clipper.h
-lib/gcc-lib/mips-rtems/2.95.2/include/va-h8300.h
-lib/gcc-lib/mips-rtems/2.95.2/include/va-i860.h
-lib/gcc-lib/mips-rtems/2.95.2/include/va-i960.h
-lib/gcc-lib/mips-rtems/2.95.2/include/va-m32r.h
-lib/gcc-lib/mips-rtems/2.95.2/include/va-m88k.h
-lib/gcc-lib/mips-rtems/2.95.2/include/va-mips.h
-lib/gcc-lib/mips-rtems/2.95.2/include/va-mn10200.h
-lib/gcc-lib/mips-rtems/2.95.2/include/va-mn10300.h
-lib/gcc-lib/mips-rtems/2.95.2/include/va-pa.h
-lib/gcc-lib/mips-rtems/2.95.2/include/va-ppc.h
-lib/gcc-lib/mips-rtems/2.95.2/include/va-pyr.h
-lib/gcc-lib/mips-rtems/2.95.2/include/va-sh.h
-lib/gcc-lib/mips-rtems/2.95.2/include/va-sparc.h
-lib/gcc-lib/mips-rtems/2.95.2/include/va-spur.h
-lib/gcc-lib/mips-rtems/2.95.2/include/va-v850.h
-lib/gcc-lib/mips-rtems/2.95.2/include/varargs.h
-lib/gcc-lib/mips-rtems/2.95.2/libgcc.a
-lib/gcc-lib/mips-rtems/2.95.2/libstdc++.a
-lib/gcc-lib/mips-rtems/2.95.2/mips3/crtbegin.o
-lib/gcc-lib/mips-rtems/2.95.2/mips3/crtend.o
-lib/gcc-lib/mips-rtems/2.95.2/mips3/libgcc.a
-lib/gcc-lib/mips-rtems/2.95.2/mips3/libstdc++.a
-lib/gcc-lib/mips-rtems/2.95.2/single/crtbegin.o
-lib/gcc-lib/mips-rtems/2.95.2/single/crtend.o
-lib/gcc-lib/mips-rtems/2.95.2/single/el/crtbegin.o
-lib/gcc-lib/mips-rtems/2.95.2/single/el/crtend.o
-lib/gcc-lib/mips-rtems/2.95.2/single/el/libgcc.a
-lib/gcc-lib/mips-rtems/2.95.2/single/el/libstdc++.a
-lib/gcc-lib/mips-rtems/2.95.2/single/el/mips3/crtbegin.o
-lib/gcc-lib/mips-rtems/2.95.2/single/el/mips3/crtend.o
-lib/gcc-lib/mips-rtems/2.95.2/single/el/mips3/libgcc.a
-lib/gcc-lib/mips-rtems/2.95.2/single/el/mips3/libstdc++.a
-lib/gcc-lib/mips-rtems/2.95.2/single/libgcc.a
-lib/gcc-lib/mips-rtems/2.95.2/single/libstdc++.a
-lib/gcc-lib/mips-rtems/2.95.2/single/mips3/crtbegin.o
-lib/gcc-lib/mips-rtems/2.95.2/single/mips3/crtend.o
-lib/gcc-lib/mips-rtems/2.95.2/single/mips3/libgcc.a
-lib/gcc-lib/mips-rtems/2.95.2/single/mips3/libstdc++.a
-lib/gcc-lib/mips-rtems/2.95.2/soft-float/crtbegin.o
-lib/gcc-lib/mips-rtems/2.95.2/soft-float/crtend.o
-lib/gcc-lib/mips-rtems/2.95.2/soft-float/el/crtbegin.o
-lib/gcc-lib/mips-rtems/2.95.2/soft-float/el/crtend.o
-lib/gcc-lib/mips-rtems/2.95.2/soft-float/el/libgcc.a
-lib/gcc-lib/mips-rtems/2.95.2/soft-float/el/libstdc++.a
-lib/gcc-lib/mips-rtems/2.95.2/soft-float/el/mips3/crtbegin.o
-lib/gcc-lib/mips-rtems/2.95.2/soft-float/el/mips3/crtend.o
-lib/gcc-lib/mips-rtems/2.95.2/soft-float/el/mips3/libgcc.a
-lib/gcc-lib/mips-rtems/2.95.2/soft-float/el/mips3/libstdc++.a
-lib/gcc-lib/mips-rtems/2.95.2/soft-float/libgcc.a
-lib/gcc-lib/mips-rtems/2.95.2/soft-float/libstdc++.a
-lib/gcc-lib/mips-rtems/2.95.2/soft-float/mips3/crtbegin.o
-lib/gcc-lib/mips-rtems/2.95.2/soft-float/mips3/crtend.o
-lib/gcc-lib/mips-rtems/2.95.2/soft-float/mips3/libgcc.a
-lib/gcc-lib/mips-rtems/2.95.2/soft-float/mips3/libstdc++.a
-lib/gcc-lib/mips-rtems/2.95.2/specs
+lib/gcc-lib/mips-rtems/2.95.3/cc1
+lib/gcc-lib/mips-rtems/2.95.3/cc1plus
+lib/gcc-lib/mips-rtems/2.95.3/collect2
+lib/gcc-lib/mips-rtems/2.95.3/cpp0
+lib/gcc-lib/mips-rtems/2.95.3/crtbegin.o
+lib/gcc-lib/mips-rtems/2.95.3/crtend.o
+lib/gcc-lib/mips-rtems/2.95.3/el/crtbegin.o
+lib/gcc-lib/mips-rtems/2.95.3/el/crtend.o
+lib/gcc-lib/mips-rtems/2.95.3/el/libgcc.a
+lib/gcc-lib/mips-rtems/2.95.3/el/libstdc++.a
+lib/gcc-lib/mips-rtems/2.95.3/el/mips3/crtbegin.o
+lib/gcc-lib/mips-rtems/2.95.3/el/mips3/crtend.o
+lib/gcc-lib/mips-rtems/2.95.3/el/mips3/libgcc.a
+lib/gcc-lib/mips-rtems/2.95.3/el/mips3/libstdc++.a
+lib/gcc-lib/mips-rtems/2.95.3/include/README
+lib/gcc-lib/mips-rtems/2.95.3/include/exception
+lib/gcc-lib/mips-rtems/2.95.3/include/float.h
+lib/gcc-lib/mips-rtems/2.95.3/include/iso646.h
+lib/gcc-lib/mips-rtems/2.95.3/include/limits.h
+lib/gcc-lib/mips-rtems/2.95.3/include/new
+lib/gcc-lib/mips-rtems/2.95.3/include/new.h
+lib/gcc-lib/mips-rtems/2.95.3/include/proto.h
+lib/gcc-lib/mips-rtems/2.95.3/include/stdarg.h
+lib/gcc-lib/mips-rtems/2.95.3/include/stdbool.h
+lib/gcc-lib/mips-rtems/2.95.3/include/stddef.h
+lib/gcc-lib/mips-rtems/2.95.3/include/syslimits.h
+lib/gcc-lib/mips-rtems/2.95.3/include/typeinfo
+lib/gcc-lib/mips-rtems/2.95.3/include/va-alpha.h
+lib/gcc-lib/mips-rtems/2.95.3/include/va-arc.h
+lib/gcc-lib/mips-rtems/2.95.3/include/va-c4x.h
+lib/gcc-lib/mips-rtems/2.95.3/include/va-clipper.h
+lib/gcc-lib/mips-rtems/2.95.3/include/va-h8300.h
+lib/gcc-lib/mips-rtems/2.95.3/include/va-i860.h
+lib/gcc-lib/mips-rtems/2.95.3/include/va-i960.h
+lib/gcc-lib/mips-rtems/2.95.3/include/va-m32r.h
+lib/gcc-lib/mips-rtems/2.95.3/include/va-m88k.h
+lib/gcc-lib/mips-rtems/2.95.3/include/va-mips.h
+lib/gcc-lib/mips-rtems/2.95.3/include/va-mn10200.h
+lib/gcc-lib/mips-rtems/2.95.3/include/va-mn10300.h
+lib/gcc-lib/mips-rtems/2.95.3/include/va-pa.h
+lib/gcc-lib/mips-rtems/2.95.3/include/va-ppc.h
+lib/gcc-lib/mips-rtems/2.95.3/include/va-pyr.h
+lib/gcc-lib/mips-rtems/2.95.3/include/va-sh.h
+lib/gcc-lib/mips-rtems/2.95.3/include/va-sparc.h
+lib/gcc-lib/mips-rtems/2.95.3/include/va-spur.h
+lib/gcc-lib/mips-rtems/2.95.3/include/va-v850.h
+lib/gcc-lib/mips-rtems/2.95.3/include/varargs.h
+lib/gcc-lib/mips-rtems/2.95.3/libgcc.a
+lib/gcc-lib/mips-rtems/2.95.3/libstdc++.a
+lib/gcc-lib/mips-rtems/2.95.3/mips3/crtbegin.o
+lib/gcc-lib/mips-rtems/2.95.3/mips3/crtend.o
+lib/gcc-lib/mips-rtems/2.95.3/mips3/libgcc.a
+lib/gcc-lib/mips-rtems/2.95.3/mips3/libstdc++.a
+lib/gcc-lib/mips-rtems/2.95.3/single/crtbegin.o
+lib/gcc-lib/mips-rtems/2.95.3/single/crtend.o
+lib/gcc-lib/mips-rtems/2.95.3/single/el/crtbegin.o
+lib/gcc-lib/mips-rtems/2.95.3/single/el/crtend.o
+lib/gcc-lib/mips-rtems/2.95.3/single/el/libgcc.a
+lib/gcc-lib/mips-rtems/2.95.3/single/el/libstdc++.a
+lib/gcc-lib/mips-rtems/2.95.3/single/el/mips3/crtbegin.o
+lib/gcc-lib/mips-rtems/2.95.3/single/el/mips3/crtend.o
+lib/gcc-lib/mips-rtems/2.95.3/single/el/mips3/libgcc.a
+lib/gcc-lib/mips-rtems/2.95.3/single/el/mips3/libstdc++.a
+lib/gcc-lib/mips-rtems/2.95.3/single/libgcc.a
+lib/gcc-lib/mips-rtems/2.95.3/single/libstdc++.a
+lib/gcc-lib/mips-rtems/2.95.3/single/mips3/crtbegin.o
+lib/gcc-lib/mips-rtems/2.95.3/single/mips3/crtend.o
+lib/gcc-lib/mips-rtems/2.95.3/single/mips3/libgcc.a
+lib/gcc-lib/mips-rtems/2.95.3/single/mips3/libstdc++.a
+lib/gcc-lib/mips-rtems/2.95.3/soft-float/crtbegin.o
+lib/gcc-lib/mips-rtems/2.95.3/soft-float/crtend.o
+lib/gcc-lib/mips-rtems/2.95.3/soft-float/el/crtbegin.o
+lib/gcc-lib/mips-rtems/2.95.3/soft-float/el/crtend.o
+lib/gcc-lib/mips-rtems/2.95.3/soft-float/el/libgcc.a
+lib/gcc-lib/mips-rtems/2.95.3/soft-float/el/libstdc++.a
+lib/gcc-lib/mips-rtems/2.95.3/soft-float/el/mips3/crtbegin.o
+lib/gcc-lib/mips-rtems/2.95.3/soft-float/el/mips3/crtend.o
+lib/gcc-lib/mips-rtems/2.95.3/soft-float/el/mips3/libgcc.a
+lib/gcc-lib/mips-rtems/2.95.3/soft-float/el/mips3/libstdc++.a
+lib/gcc-lib/mips-rtems/2.95.3/soft-float/libgcc.a
+lib/gcc-lib/mips-rtems/2.95.3/soft-float/libstdc++.a
+lib/gcc-lib/mips-rtems/2.95.3/soft-float/mips3/crtbegin.o
+lib/gcc-lib/mips-rtems/2.95.3/soft-float/mips3/crtend.o
+lib/gcc-lib/mips-rtems/2.95.3/soft-float/mips3/libgcc.a
+lib/gcc-lib/mips-rtems/2.95.3/soft-float/mips3/libstdc++.a
+lib/gcc-lib/mips-rtems/2.95.3/specs
 mips-rtems/bin/gcc
 mips-rtems/include/_G_config.h
 mips-rtems/include/_ansi.h
@@ -410,19 +411,19 @@ mips-rtems/lib/soft-float/mips3/libg.a
 mips-rtems/lib/soft-float/mips3/libiberty.a
 mips-rtems/lib/soft-float/mips3/libm.a
 mips-rtems/lib/soft-float/mips3/libstdc++.a.2.10.0
-@dirrm lib/gcc-lib/mips-rtems/2.95.2/include
-@dirrm lib/gcc-lib/mips-rtems/2.95.2/soft-float/mips3
-@dirrm lib/gcc-lib/mips-rtems/2.95.2/soft-float/el/mips3
-@dirrm lib/gcc-lib/mips-rtems/2.95.2/soft-float/el
-@dirrm lib/gcc-lib/mips-rtems/2.95.2/soft-float
-@dirrm lib/gcc-lib/mips-rtems/2.95.2/single/mips3
-@dirrm lib/gcc-lib/mips-rtems/2.95.2/single/el/mips3
-@dirrm lib/gcc-lib/mips-rtems/2.95.2/single/el
-@dirrm lib/gcc-lib/mips-rtems/2.95.2/single
-@dirrm lib/gcc-lib/mips-rtems/2.95.2/mips3
-@dirrm lib/gcc-lib/mips-rtems/2.95.2/el/mips3
-@dirrm lib/gcc-lib/mips-rtems/2.95.2/el
-@dirrm lib/gcc-lib/mips-rtems/2.95.2
+@dirrm lib/gcc-lib/mips-rtems/2.95.3/include
+@dirrm lib/gcc-lib/mips-rtems/2.95.3/soft-float/mips3
+@dirrm lib/gcc-lib/mips-rtems/2.95.3/soft-float/el/mips3
+@dirrm lib/gcc-lib/mips-rtems/2.95.3/soft-float/el
+@dirrm lib/gcc-lib/mips-rtems/2.95.3/soft-float
+@dirrm lib/gcc-lib/mips-rtems/2.95.3/single/mips3
+@dirrm lib/gcc-lib/mips-rtems/2.95.3/single/el/mips3
+@dirrm lib/gcc-lib/mips-rtems/2.95.3/single/el
+@dirrm lib/gcc-lib/mips-rtems/2.95.3/single
+@dirrm lib/gcc-lib/mips-rtems/2.95.3/mips3
+@dirrm lib/gcc-lib/mips-rtems/2.95.3/el/mips3
+@dirrm lib/gcc-lib/mips-rtems/2.95.3/el
+@dirrm lib/gcc-lib/mips-rtems/2.95.3
 @dirrm lib/gcc-lib/mips-rtems
 @dirrm lib/gcc-lib
 @dirrm mips-rtems/include/machine
