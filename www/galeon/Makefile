@@ -28,7 +28,7 @@ HEADERS_SUFX=
 .if ${WITH_MOZILLA}=="mozilla-devel"
 MOZILLA=	${WITH_MOZILLA}
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.6a"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.6b"
 .else
 MOZILLA=	mozilla
 HEADERS_SUFX=
