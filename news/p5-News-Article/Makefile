@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	News-Article
-PORTVERSION=	1.21
+PORTVERSION=	1.27
 CATEGORIES=	news perl5
-MASTER_SITES=	http://www.erlenstar.demon.co.uk/perl/ \
-		http://www.gelemna.org/ports/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	News
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	croyle@gelemna.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Object for handling Usenet articles in mail or news form
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/NNTP.pm:${PORTSDIR}/net/p5-Net \
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/NNTP.pm:${PORTSDIR}/net/p5-Net \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/PGP/Sign.pm:${PORTSDIR}/security/p5-PGP-Sign
 
 PERL_CONFIGURE=	yes
