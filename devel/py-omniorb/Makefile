@@ -16,6 +16,8 @@ DISTNAME=	omniORBpy-${PORTVERSION}
 MAINTAINER=	ak03@gte.com
 COMMENT=	Python bindings for omniORB4, a CORBA 2.6 ORB
 
+BROKEN=		"Does not compile"
+
 LIB_DEPENDS=	omniORB4.0:${PORTSDIR}/devel/omniORB
 RUN_DEPENDS=	omniidl:${PORTSDIR}/devel/omniORB
 # parts of omniORB4 source tree is required to build omniORBpy;

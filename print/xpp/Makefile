@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	cups
 MAINTAINER=	doconnor@gsoft.com.au
 COMMENT=	GUI print front-end for CUPS
 
+BROKEN=		"Does not compile"
+
 LIB_DEPENDS=	cups:${PORTSDIR}/print/cups \
 		fltk:${PORTSDIR}/x11-toolkits/fltk
 

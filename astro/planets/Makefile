@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An orbital simulator
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 
 USE_GMAKE=	yes

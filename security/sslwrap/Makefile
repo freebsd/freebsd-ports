@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ZGabor@CoDe.HU
 COMMENT=	Another SSL Wrapper application, which uses SSLEay/OpenSSL
 
+BROKEN=		"Does not compile"
+
 USE_OPENSSL=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}

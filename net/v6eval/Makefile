@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.tahi.org/release/v6eval/
 MAINTAINER=	tanaka@tahi.org
 COMMENT=	IPv6 Conformance Test Platform
 
+BROKEN=		"Does not compile"
+
 RUN_DEPENDS=	${SITE_PERL}/Expect.pm:${PORTSDIR}/lang/p5-Expect
 
 USE_PERL5=	yes

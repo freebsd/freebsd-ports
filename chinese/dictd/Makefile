@@ -15,6 +15,8 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-index.c \
 		${.CURDIR}/files/patch-dictfmt.c \
 		${.CURDIR}/files/patch-Makefile.in
 
+BROKEN=		"Does not compile"
+
 pre-install:
 	${ECHO} "bin/dictfmt" > ${PLIST}
 	${CAT} ${MASTERDIR}/pkg-plist >> ${PLIST}

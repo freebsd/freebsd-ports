@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	rssh@cki.ipri.kiev.ua
 COMMENT=	A parallel language "Synchronization Resources"
 
+BROKEN=		"Does not compile"
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	prefix
 NO_WRKSUBDIR=	yes

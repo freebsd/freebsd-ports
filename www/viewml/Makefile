@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.viewml.com/pub/viewml/
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An open source web browser targeted at the embedded platforms
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		wwwzip.1:${PORTSDIR}/www/libwww

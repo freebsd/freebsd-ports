@@ -15,6 +15,8 @@ DISTNAME=	xorg-1
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	An xterm that speaks Vietnamese
 
+BROKEN=		"Does not compile"
+
 USE_IMAKE=	yes
 
 .include <bsd.port.pre.mk>

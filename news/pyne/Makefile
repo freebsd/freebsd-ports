@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.yikesstation.freeserve.co.uk/pyne/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 offline Newsreader/Emailer
 
+BROKEN=		"Does not compile"
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk
 
 USE_REINPLACE=	yes

@@ -14,6 +14,8 @@ DISTFILES=	wamcc2.22.tar.Z prg.tar.Z
 MAINTAINER=	ports@FreeBSD.Org
 COMMENT=	Prolog-to-C translator from Inria
 
+BROKEN=		"Does not compile"
+
 DIST_SUBDIR=	wamcc
 NO_WRKSUBDIR=	yes
 

@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://scwm.mit.edu/pub/scwm/
 MAINTAINER=	nakai@FreeBSD.org
 COMMENT=	Scheme configurable window manager
 
+BROKEN=		"Does not compile"
+
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	${X11BASE}/share/scwm/pixmaps/Animator.xpm:${PORTSDIR}/graphics/scwm-icons
 

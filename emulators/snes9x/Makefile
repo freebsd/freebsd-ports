@@ -14,6 +14,8 @@ DISTNAME=	s9xs137c
 MAINTAINER=	green@FreeBSD.org
 COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
 
+BROKEN=		"Does not compile"
+
 .if ${MACHINE_ARCH} == i386
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 .elif ${MACHINE_ARCH} == alpha

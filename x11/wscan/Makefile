@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 802.11 wireless visual signal strength meter
 
+BROKEN=		"Does not compile"
+
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 WRKSRC=		$(WRKDIR)/wscan

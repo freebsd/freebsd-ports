@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	masini@uniroma3.it
 COMMENT=	A 2-d electronic device simulator
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	f2c:${PORTSDIR}/lang/f2c
 
 .include <bsd.port.pre.mk>

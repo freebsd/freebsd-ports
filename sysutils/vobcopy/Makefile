@@ -13,6 +13,8 @@ MASTER_SITES=	http://lpn.rnbhq.org/download/
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Decrypts and copies DVD .vob files
 
+BROKEN=		"Does not compile"
+
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 USE_BZIP2=	yes
