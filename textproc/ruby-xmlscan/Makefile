@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmlscan
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.blue.sky.or.jp/atelier/ruby/xmlscan/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
