@@ -31,6 +31,7 @@
     SUBDIR += epplets
     SUBDIR += evilwm
     SUBDIR += expocity
+    SUBDIR += fbcmd
     SUBDIR += fbdesk
     SUBDIR += fbpager
     SUBDIR += fluxbox
