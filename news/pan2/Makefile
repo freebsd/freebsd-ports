@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	pan
-PORTVERSION=	0.8.1b5
-PORTREVISION=	1
+PORTVERSION=	0.8.1b6
 CATEGORIES=	news gnome
 MASTER_SITES=	http://download.superpimp.org/pan/${PORTVERSION}/
-DISTNAME=	pan-0.8.1beta5
+DISTNAME=	pan-0.8.1beta6
 
 MAINTAINER=	ade@FreeBSD.org
 
