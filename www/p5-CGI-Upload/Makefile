@@ -12,7 +12,7 @@ MASTER_SITES=  ${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=    CGI
 PKGNAMEPREFIX= p5-
 
-MAINTAINER=    ports-freebsd@FreeBSDsecurity.com
+MAINTAINER=    ports@FreeBSD.org
 COMMENT=       CGI class for handling browser file uploads
 
 BUILD_DEPENDS= ${SITE_PERL}/HTTP/BrowserDetect.pm:${PORTSDIR}/www/p5-HTTP-BrowserDetect \
