@@ -15,7 +15,7 @@ DISTFILES=		chess-2.0b3.tar.bz2 \
 			sounds.tar.bz2 \
 			pieces.tar.bz2
 
-MAINTAINER=		steffen.mazanek@unibw-muenchen.de
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Play chess with emacs
 
 RUN_DEPENDS=		gnuchess:${PORTSDIR}/games/gnuchess
