@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	tmetric
-PORTVERSION=	v0.99
+PORTVERSION=	v0.5
+PORTEPOCH=	1
 CATEGORIES=	benchmarks net
-MASTER_SITES=	http://netgraft.com/downloads/tmetric/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	http://michael.bacarella.com/software/tmetric/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mbac@nyct.net
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
 HAS_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
 
