@@ -6,31 +6,30 @@
 #
 
 PORTNAME=	robodoc
-PORTVERSION=	3.1e
+PORTVERSION=	3.2.2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.xs4all.nl/~rfsber/Robo/
-DISTFILES=	${PORTNAME}.tgz
+MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-FETCH_BEFORE_ARGS+= -b
-WRKSRC=		${WRKDIR}/Robodoc
+GNU_CONFIGURE=	yes	
 MAKEFILE=	makefile
-USE_GMAKE=	yes
+
 MAN1=		robodoc.1
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/Source/robodoc ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/Docs/robodoc.1 ${PREFIX}/man/man1
+post-install:
+	@${MKDIR} ${PREFIX}/share/examples/robodoc/C
+	${INSTALL_DATA} ${WRKSRC}/Examples/C/* \
+		${PREFIX}/share/examples/robodoc/C
+	@${MKDIR} ${PREFIX}/share/examples/robodoc/CPP
+	${INSTALL_DATA} ${WRKSRC}/Examples/CPP/* \
+		${PREFIX}/share/examples/robodoc/CPP
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/robodoc
-.for DOC in example.c general.m4 main.css robodoc.html robodoc.m4 \
-	    stoc.html stoc.m4 tocgen.m4
-	@${INSTALL_DATA} ${WRKSRC}/Docs/${DOC} ${PREFIX}/share/robodoc
+	@${MKDIR} ${PREFIX}/share/doc/robodoc
+.for file in AUTHORS ChangeLog NEWS README Docs/main.css Docs/robodoc.html
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/robodoc
 .endfor
-	@${ECHO}
-	@${ECHO} "Docs installed in ${PREFIX}/share/robodoc."
-	@${ECHO}
 .endif
 
 .include <bsd.port.mk>

@@ -1,10 +1,22 @@
 bin/robodoc
-share/robodoc/example.c
-share/robodoc/general.m4
-share/robodoc/main.css
-share/robodoc/robodoc.html
-share/robodoc/robodoc.m4
-share/robodoc/stoc.html
-share/robodoc/stoc.m4
-share/robodoc/tocgen.m4
-@dirrm share/robodoc
+share/doc/robodoc/AUTHORS
+share/doc/robodoc/ChangeLog
+share/doc/robodoc/NEWS
+share/doc/robodoc/README
+share/doc/robodoc/main.css
+share/doc/robodoc/robodoc.html
+share/examples/robodoc/C/makefile
+share/examples/robodoc/C/prog1.c
+share/examples/robodoc/C/prog1.c.html
+share/examples/robodoc/C/prog2.c
+share/examples/robodoc/C/prog2.c.html
+share/examples/robodoc/CPP/makefile
+share/examples/robodoc/CPP/masterindex.html
+share/examples/robodoc/CPP/muppets.cpp
+share/examples/robodoc/CPP/muppets.cpp.html
+share/examples/robodoc/CPP/muppets.h
+share/examples/robodoc/CPP/muppets.h.html
+@dirrm share/examples/robodoc/CPP
+@dirrm share/examples/robodoc/C
+@dirrm share/examples/robodoc
+@dirrm share/doc/robodoc
