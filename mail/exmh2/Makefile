@@ -3,7 +3,7 @@
 # Date released:		1 Jan 97
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.14 1997/08/12 05:58:47 peter Exp $
+# $Id: Makefile,v 1.15 1997/08/12 06:37:36 peter Exp $
 #
 
 DISTNAME=	exmh-2.0zeta
@@ -25,9 +25,10 @@ MAINTAINER=	peter@FreeBSD.org
 
 DIST_SUBDIR=	${PKGNAME}
 
-# Uses wish8.0 if present (major speed improvement), else it depends on
-# the tk4.1 port.  The glue for this is at the end of the file due to
-# bmake quirks.
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
+BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
+WISH=		wish8.0
+TCLSH=		tclsh8.0
 
 # exmh is pretty useless without this, but it's not needed to build it.
 RUN_DEPENDS+=	repl:${PORTSDIR}/mail/mh
@@ -45,7 +46,7 @@ RUN_DEPENDS+=	mmencode:${PORTSDIR}/mail/metamail
 MAN1=		exmh.1
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} \
+	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} TCLSH=${TCLSH} \
 		WISH=${PREFIX}/bin/${WISH} WRKSRC=${WRKSRC} \
 		FILESDIR=${FILESDIR} ${SH} ${SCRIPTDIR}/build
 
@@ -54,14 +55,3 @@ do-install:
 		WRKSRC=${WRKSRC} ${SH} ${SCRIPTDIR}/install
 
 .include <bsd.port.mk>
-
-# Must come after bsd.port.mk since .if is expanded on the first pass
-# before $PREFIX is defined.
-
-.if exists($(PREFIX)/bin/wish8.0)
-WISH=		wish8.0
-.else
-RUN_DEPENDS=	wish4.1:${PORTSDIR}/x11/tk41
-WISH=		wish4.1
-.endif
-
