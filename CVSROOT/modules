@@ -1447,7 +1447,6 @@ evg		ports/www/evg
 evilbar		ports/audio/evilbar
 evilwm		ports/x11-wm/evilwm
 evolution	ports/mail/evolution
-evolution-devel	ports/mail/evolution-devel
 evolvotron	ports/graphics/evolvotron
 eweather	ports/x11/eweather
 ewipe		ports/misc/ewipe
