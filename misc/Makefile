@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.177 1998/12/07 02:22:02 asami Exp $
+# $Id: Makefile,v 1.178 1998/12/17 23:43:17 asami Exp $
 #
 
     SUBDIR += 221upgrade
@@ -61,6 +61,7 @@
     SUBDIR += sls
     SUBDIR += sma
     SUBDIR += splitvt
+    SUBDIR += tcb
     SUBDIR += team
     SUBDIR += tet
     SUBDIR += tkcron
