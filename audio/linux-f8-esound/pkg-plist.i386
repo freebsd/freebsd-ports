@@ -1,0 +1,24 @@
+usr/bin/esd
+usr/bin/esdcat
+usr/bin/esdctl
+usr/bin/esddsp
+usr/bin/esdfilt
+usr/bin/esdloop
+usr/bin/esdmon
+usr/bin/esdplay
+usr/bin/esdrec
+usr/bin/esdsample
+usr/doc/esound-0.2.14/AUTHORS
+usr/doc/esound-0.2.14/COPYING
+usr/doc/esound-0.2.14/ChangeLog
+usr/doc/esound-0.2.14/INSTALL
+usr/doc/esound-0.2.14/NEWS
+usr/doc/esound-0.2.14/README
+usr/doc/esound-0.2.14/TIPS
+usr/doc/esound-0.2.14/TODO
+usr/doc/esound-0.2.14/esound.sgml
+usr/lib/libesd.so.0
+usr/lib/libesd.so.0.2.14
+usr/lib/libesddsp.so.0
+usr/lib/libesddsp.so.0.2.14
+@dirrm /usr/doc/esound-0.2.14

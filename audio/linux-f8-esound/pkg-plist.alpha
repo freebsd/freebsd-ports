@@ -1,0 +1,26 @@
+etc/esd.conf
+usr/bin/esd
+usr/bin/esdcat
+usr/bin/esdctl
+usr/bin/esddsp
+usr/bin/esdfilt
+usr/bin/esdloop
+usr/bin/esdmon
+usr/bin/esdplay
+usr/bin/esdrec
+usr/bin/esdsample
+usr/doc/esound-0.2.17
+usr/doc/esound-0.2.17/AUTHORS
+usr/doc/esound-0.2.17/COPYING
+usr/doc/esound-0.2.17/ChangeLog
+usr/doc/esound-0.2.17/INSTALL
+usr/doc/esound-0.2.17/NEWS
+usr/doc/esound-0.2.17/README
+usr/doc/esound-0.2.17/TIPS
+usr/doc/esound-0.2.17/TODO
+usr/doc/esound-0.2.17/esound.sgml
+usr/lib/libesd.so.0
+usr/lib/libesd.so.0.2.17
+usr/lib/libesddsp.so.0
+usr/lib/libesddsp.so.0.2.17
+@dirrm /usr/doc/esound-0.2.14
