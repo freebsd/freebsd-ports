@@ -1,27 +1,32 @@
 # ports collection makefile for:	AliceSoft System 3.5 on X
 # Version required:	BETA
-# Date created:		12 Nov 1998
+# Date created:		24 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
 # $Id$
 #
 
-DISTNAME=	xsystem35-BETA-19981024
-PKGNAME=	xsystem-3.5-19981024
+DISTNAME=	xsystem35-BETA-19981114
+PKGNAME=	xsystem-3.5-19981114
 CATEGORIES=	emulators
 MASTER_SITES=	http://ryo1207.aist-nara.ac.jp/unitbase/xsys35/down/
 
-MAINTAINER=	flathill@flathill.gr.jp
+MAINTAINER=	flathill@FreeBSD.ORG
 
-BUILD_DEPENDS=	${X11BASE}/lib/libgtk.a:${PORTSDIR}/x11-toolkits/gtk
+LIB_DEPENDS+=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
 
 USE_X_PREFIX=	YES
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+pre-build:
+.if !defined(CDROM_NO_TRKIND)
+	@${ECHO_MSG} "if your CD-ROM drive complains like 'CDIOCPLAYTRACKS: Invalid argument'"
+	@${ECHO_MSG} "at playing CDDA, try: make CDROM_NO_TRKIND=yes"
+	@${ECHO_MSG} "this may workaround problem."
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xsystem35 ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/XSystem35.ad ${PREFIX}/lib/X11/app-defaults
-	${MV} ${PREFIX}/lib/X11/app-defaults/XSystem35.ad ${PREFIX}/lib/X11/app-defaults/XSystem35
 
 post-install:
 	strip ${PREFIX}/bin/xsystem35
@@ -32,12 +37,13 @@ post-install:
 		${PREFIX}/share/doc/ja/xsystem35; \
 	)
 	${MKDIR} ${PREFIX}/share/examples/xsystem35
+	${INSTALL_DATA} ${WRKSRC}/xsys35rc.sample ${PREFIX}/share/examples/xsystem35
 	@(cd ${WRKDIR}/${DISTNAME}/contrib; \
 	${INSTALL_SCRIPT} instgame ${PREFIX}/share/examples/xsystem35; \
 	${INSTALL_DATA} README.TXT atlach.inf diabo.inf katsumi.inf kichiku.inf miko.inf ningen.inf oudou.inf panyo.inf rance4.inf toushin2.inf zero.inf \
 		${PREFIX}/share/examples/xsystem35; \
 	)
-	${CAT} ${PKGDIR}/MESSAGE
 .endif
+	${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
