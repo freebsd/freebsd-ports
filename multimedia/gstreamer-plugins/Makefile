@@ -98,11 +98,15 @@ post-configure:
 	@${ECHO_CMD} "CC=${CC}" >> \
 		${WRKSRC}/gst-libs/ext/ffmpeg/ffmpeg/config.mak
 
-post-install:
-# register plugins
-	@${X11BASE}/bin/gst-register 2>/dev/null
-
 .include <bsd.port.pre.mk>
+
+post-install:
+.if ${ARCH} == "ia64"
+# register plugins
+	@-${X11BASE}/bin/gst-register 2>/dev/null
+.else
+	@${X11BASE}/bin/gst-register 2>/dev/null
+.endif
 
 # Fix build on ia64.  This patch breaks other archs, so include it
 # conditionally
