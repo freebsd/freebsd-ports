@@ -4036,6 +4036,7 @@ latex		ports/print/latex
 latex-beamer	ports/print/latex-beamer
 latex-caption	ports/print/latex-caption
 latex-keystroke	ports/print/latex-keystroke
+latex-layouts	ports/print/latex-layouts
 latex-mathabx	ports/print/latex-mathabx
 latex-mk	ports/misc/latex-mk
 latex-pgf	ports/print/latex-pgf
