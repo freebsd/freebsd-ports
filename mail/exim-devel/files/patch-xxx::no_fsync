@@ -1,0 +1,103 @@
+diff -udrN src.orig/accept.c src/accept.c
+--- src.orig/accept.c	Thu Sep  6 15:25:28 2001
++++ src/accept.c	Thu Sep  6 15:28:03 2001
+@@ -2140,7 +2140,7 @@
+ anything until the terminating dot line is sent. */
+ 
+ if (fflush(data_file) == EOF || ferror(data_file) ||
+-    fsync(fileno(data_file)) < 0 || (accept_ferror)(fin))
++    (perform_fsync && fsync(fileno(data_file))) < 0 || (accept_ferror)(fin))
+   {
+   char *msg_errno = strerror(errno);
+   BOOL input_error = (accept_ferror)(fin) != 0;
+diff -udrN src.orig/deliver.c src/deliver.c
+--- src.orig/deliver.c	Thu Sep  6 15:25:28 2001
++++ src/deliver.c	Thu Sep  6 15:29:22 2001
+@@ -578,7 +578,8 @@
+   {
+   BOOL return_output = FALSE;
+   struct stat statbuf;
+-  fsync(addr->return_file);
++  if (perform_fsync)
++    fsync(addr->return_file);
+ 
+   /* If there is no output, do nothing. */
+ 
+@@ -1580,7 +1581,7 @@
+ 
+   /* Ensure the journal file is pushed out to disc. */
+ 
+-  if (fsync(journal_fd) < 0)
++  if (perform_fsync && fsync(journal_fd) < 0)
+     log_write(0, LOG_MAIN|LOG_PANIC, "failed to fsync journal: %s",
+       strerror(errno));
+   }
+diff -udrN src.orig/globals.c src/globals.c
+--- src.orig/globals.c	Thu Sep  6 15:25:28 2001
++++ src/globals.c	Thu Sep  6 15:24:49 2001
+@@ -494,6 +494,7 @@
+ BOOL   parse_allow_group      = FALSE;
+ BOOL   parse_found_group      = FALSE;
+ char  *percent_hack_domains   = NULL;
++BOOL   perform_fsync          = TRUE;
+ char  *pid_file_path          = PID_FILE_PATH
+ 			  "\0<--------------Space to patch pid_file_path->";
+ BOOL   preserve_message_logs  = FALSE;
+diff -udrN src.orig/globals.h src/globals.h
+--- src.orig/globals.h	Thu Sep  6 15:25:28 2001
++++ src/globals.h	Thu Sep  6 15:41:35 2001
+@@ -364,6 +364,7 @@
+ extern BOOL   parse_allow_group;      /* Allow group syntax */
+ extern BOOL   parse_found_group;      /* In the middle of a group */
+ extern char  *percent_hack_domains;   /* Local domains for which '% operates */
++extern BOOL   perform_fsync;          /* Use fsync() to flush to disk */
+ extern char  *pid_file_path;          /* For writing daemon pids */
+ extern BOOL   preserve_message_logs;  /* Save msglog files */
+ extern char  *primary_hostname;       /* Primary name of this computer */
+diff -udrN src.orig/readconf.c src/readconf.c
+--- src.orig/readconf.c	Thu Sep  6 15:25:28 2001
++++ src/readconf.c	Thu Sep  6 15:24:19 2001
+@@ -81,6 +81,7 @@
+   { "finduser_retries",         opt_int,         &finduser_retries },
+   { "forbid_domain_literals",   opt_bool,        &forbid_domain_literals },
+   { "freeze_tell_mailmaster",   opt_bool,        &freeze_tell_mailmaster },
++  { "fsync",			opt_bool,        &perform_fsync },
+   { "gecos_name",               opt_stringptr,   &gecos_name },
+   { "gecos_pattern",            opt_stringptr,   &gecos_pattern },
+   { "headers_check_syntax",     opt_bool,        &headers_check_syntax },
+diff -udrN src.orig/spool_out.c src/spool_out.c
+--- src.orig/spool_out.c	Thu Sep  6 15:25:28 2001
++++ src/spool_out.c	Thu Sep  6 15:29:51 2001
+@@ -277,7 +277,7 @@
+ just pushes it out of C, and fclose() doesn't guarantee to do the write
+ either. That's just the way Unix works... */
+ 
+-if (fsync(fileno(f)) < 0)
++if (perform_fsync && fsync(fileno(f)) < 0)
+   return spool_write_error(where, errmsg, "sync", temp_name, f);
+ 
+ /* Get the size of the file, and close it. */
+diff -udrN src.orig/transports/appendfile.c src/transports/appendfile.c
+--- src.orig/transports/appendfile.c	Thu Sep  6 15:25:28 2001
++++ src/transports/appendfile.c	Thu Sep  6 15:31:40 2001
+@@ -2556,7 +2556,7 @@
+ /* Force out the remaining data to check for any errors; some OS don't allow
+ fsync() to be called for a FIFO. */
+ 
+-if (yield == OK && !isfifo && fsync(fd) < 0) yield = DEFER;
++if (perform_fsync && yield == OK && !isfifo && fsync(fd) < 0) yield = DEFER;
+ 
+ /* Handle error while writing the file. Control should come here directly after
+ the error, with the reason in errno. In the case of expansion failure in prefix
+diff -udrN src.orig/transports/smtp.c src/transports/smtp.c
+--- src.orig/transports/smtp.c	Thu Sep  6 15:25:28 2001
++++ src/transports/smtp.c	Thu Sep  6 15:31:55 2001
+@@ -1462,7 +1462,7 @@
+ 
+     /* Ensure the journal file is pushed out to disc. */
+ 
+-    if (fsync(journal_fd) < 0)
++    if (perform_fsync && fsync(journal_fd) < 0)
+       log_write(0, LOG_MAIN|LOG_PANIC, "failed to fsync journal: %s",
+         strerror(errno));
+     }
