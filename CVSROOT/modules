@@ -6131,6 +6131,7 @@ ruby-htmlsplit	ports/textproc/ruby-htmlsplit
 ruby-http-access	ports/www/ruby-http-access
 ruby-icmp	ports/net/ruby-icmp
 ruby-iconv	ports/converters/ruby-iconv
+ruby-image_size	ports/graphics/ruby-image_size
 ruby-imlib2	ports/graphics/ruby-imlib2
 ruby-interbase	ports/databases/ruby-interbase
 ruby-intl	ports/devel/ruby-intl
