@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.070
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -25,7 +25,7 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	acl-1.070-1.wbm.gz \
+WEBMIN_MODULES=	acl-1.070-5.wbm.gz \
 		custom-1.070-4.wbm.gz \
 		fetchmail-1.070-1.wbm.gz \
 		init-1.070-1.wbm.gz \
