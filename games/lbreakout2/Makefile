@@ -18,7 +18,8 @@ LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-highscore-path=/var/games
+CONFIGURE_ARGS=	--with-highscore-path=/var/games \
+		--with-doc-path=${PREFIX}/share/doc
 CONFIGURE_ENV=	SDL_CONFIG=${LOCALBASE}/bin/sdl11-config \
 		LDFLAGS=-L${LOCALBASE}/lib
 USE_REINPLACE=	yes
@@ -28,6 +29,9 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's/if .*lbreakout2.hscr/if false/' \
 		${WRKSRC}/src/Makefile.in
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's/ docs / /g' ${WRKSRC}/src/Makefile.in
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/empty.hscr ${DATADIR}
