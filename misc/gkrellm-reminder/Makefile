@@ -25,8 +25,14 @@ PLIST_FILES=	libexec/gkrellm/plugins/reminder.so
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Does not compile on amd64 or ia64 (needs -fPIC)"
+.endif
+
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/reminder.so \
 		${PREFIX}/libexec/gkrellm/plugins
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
