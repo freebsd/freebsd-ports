@@ -18,16 +18,11 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 DATAFILES=	FAQ FORMAT GET-IMAGE HELP HISTORY LIST MANUAL QUASI88
 
-pre-patch:
 .if !defined(WITH_SOUND)
+pre-everything:
 	@ ${ECHO} "You can make quasi88 use sound by defining WITH_SOUND"
 .else
-	@ ${CP} ${FILESDIR}/patch-aa ${PATCHDIR}
-.endif
-
-post-patch:
-.if defined(WITH_SOUND)
-	@ ${RM} ${PATCHDIR}/patch-aa
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-aa
 .endif
 
 do-install:
