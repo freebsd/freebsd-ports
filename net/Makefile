@@ -474,6 +474,7 @@
     SUBDIR += rdist6
     SUBDIR += redir
     SUBDIR += relay
+    SUBDIR += rfbproxy
     SUBDIR += rinetd
     SUBDIR += ripetools
     SUBDIR += rmsg
