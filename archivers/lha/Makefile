@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	lha
-PORTVERSION=	1.14f
+PORTVERSION=	1.14g
 CATEGORIES=	archivers
 MASTER_SITES=	http://www2m.biglobe.ne.jp/~dolphin/lha/prog/ \
 		ftp://ftp.win.ne.jp/pub/misc/
-DISTNAME=	lha-114f
+DISTNAME=      	${PORTNAME}-${PORTVERSION:S/.//}
 
 MAINTAINER=	ache@FreeBSD.org
 
