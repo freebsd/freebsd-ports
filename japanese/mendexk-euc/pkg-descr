@@ -1,0 +1,7 @@
+The program mendex is a index formatter for Japanese, has
+the compatibility with makeindex.
+
+The mendex installed using this package supports EUC code.
+
+- Makoto WATANABE
+watanabe@zlab.phys.nagoya-u.ac.jp
