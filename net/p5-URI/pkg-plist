@@ -1,3 +1,4 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/URI/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/URI/_server.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/WithBase.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/_login.pm
@@ -30,4 +31,6 @@ lib/perl5/site_perl/%%PERL_VER%%/URI/https.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/_userpass.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/_query.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/URI
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/URI/file
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/URI
