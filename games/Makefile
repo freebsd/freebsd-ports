@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.218 1999/08/01 03:31:14 cpiazza Exp $
+# $Id: Makefile,v 1.219 1999/08/01 04:16:23 cpiazza Exp $
 #
 
     SUBDIR += 3dc
@@ -57,6 +57,7 @@
     SUBDIR += gnushogi
     SUBDIR += golddig
     SUBDIR += gtkballs
+    SUBDIR += hex
     SUBDIR += icbm3d
     SUBDIR += ifm
     SUBDIR += imaze
