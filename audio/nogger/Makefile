@@ -21,6 +21,7 @@ LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
 
 .if ${OSVERSION} >= 500113
 BROKEN=	"just makes a humming noise"
+IGNORE=	${BROKEN}
 .endif
 
 PLIST_FILES=	bin/nogger
