@@ -41,5 +41,6 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/lib/sendmail,/usr/sbin/sendmail," \
 		${WRKSRC}/lib/LWP/Protocol/mailto.pm
+	@${RM} ${WRKSRC}/lib/LWP/Protocol/mailto.pm.bak
 
 .include <bsd.port.mk>
