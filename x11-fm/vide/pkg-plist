@@ -1,4 +1,0 @@
-bin/pauseme
-bin/vide
-share/gnome/vide/vide%%VERSION%%.txt
-@dirrm share/gnome/vide

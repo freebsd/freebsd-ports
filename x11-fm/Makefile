@@ -25,7 +25,6 @@
     SUBDIR += tkdesk
     SUBDIR += twander
     SUBDIR += velocity
-    SUBDIR += vide
     SUBDIR += worker
     SUBDIR += workplace
     SUBDIR += x-files
