@@ -1,0 +1,15 @@
+--- doc/Makefile.in.orig	Tue Jan 20 04:29:52 2004
++++ doc/Makefile.in	Thu Mar  4 19:01:46 2004
+@@ -51,12 +51,9 @@
+ 	$(INSTALL) -d $(DESTDIR)$(man1dir)
+ 	$(INSTALL) -d $(DESTDIR)$(man5dir)
+ 	$(INSTALL) -d $(DESTDIR)$(man7dir)
+-	$(INSTALL) -d $(DESTDIR)$(docdir)
+ 	$(INSTALL) ctrlproxy.1 $(DESTDIR)$(man1dir)
+ 	$(INSTALL) ctrlproxyrc.5 $(DESTDIR)$(man5dir)
+ 	$(INSTALL) $(MOD_MANPAGES) $(DESTDIR)$(man7dir)
+-	$(INSTALL) ctrlproxy.pdf $(DESTDIR)$(docdir)
+-	$(INSTALL) ctrlproxy.html $(DESTDIR)$(docdir)
+ else
+ 	@echo
+ 	@echo "---------------------------------------------------------------"
