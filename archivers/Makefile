@@ -61,6 +61,7 @@
     SUBDIR += unrar
     SUBDIR += untar
     SUBDIR += unzip
+    SUBDIR += wzip
     SUBDIR += xdms
     SUBDIR += xpk
     SUBDIR += zip
