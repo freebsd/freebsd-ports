@@ -5,7 +5,7 @@ programmer intervention.  Those of you familiar with the DBI will be right at
 home.  Some of the designs come from the Java JAXP specification (SAX part),
 only without the javaness.
 
-WWW: http://search.cpan.org/search?dist=XML-SAX-Expat
+WWW: http://search.cpan.org/dist/XML-SAX-Expat/
 
 -- Sergey Skvortsov
 skv@FreeBSD.org
