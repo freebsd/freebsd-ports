@@ -1,0 +1,18 @@
+Xtet42 is a one or two player version of T*tris. The game was written
+by Hugo Eide Gunnarsen in 1991. The game is very fun and very
+addictive. It is also astonishingly pretty to be an old X11-game.
+
+In january 1999 I picked up the code to get rid of a few bugs and
+limitations that annoyed me. I also converted the build-mechanism to
+GNU autoconf.
+
+The result is xtet42-2.21.
+
+Please report bugs to : Steinar Hamre <steinarh@pvv.ntnu.no>
+
+---
+
+Homepage: http://www.pvv.ntnu.no/~oyvindmo/xtet42
+Distfile : xtet42-2.21.tar.gz (38kb)
+
+- ported to FreeBSD by Gianmarco (gmarco@giovannelli.it)

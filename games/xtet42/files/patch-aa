@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Mon Feb 15 00:36:53 1999
++++ Makefile.in	Mon Feb 15 00:41:28 1999
+@@ -24,7 +24,7 @@
+ libdir = @libdir@
+ localstatedir = @localstatedir@
+ mandir = @mandir@
+-hiscoredir = $(localstatedir)/$(PACKAGE)
++hiscoredir =  $(PREFIX)/lib/X11/$(PACKAGE)
+ 
+ _Ver		= $(VERSION)
+ _Lock		= $(hiscoredir)/.xtet42.lock
+@@ -37,6 +37,8 @@
+ 	-D_Hiscore=\"$(_Hiscore)\" 	-D_Hione=\"$(_Hione)\" \
+ 	-D_Log=\"$(_Log)\" -D_Ver=\"$(_Ver)\"
+ 
++
++all: xtet42
+ 
+ xtet42: $(OBJS)
+ 	$(CC) $(LDFLAGS) -o xtet42 $(OBJS)
