@@ -40,6 +40,7 @@
     SUBDIR += gtop
     SUBDIR += guitar
     SUBDIR += healthd
+    SUBDIR += heat
     SUBDIR += idled
     SUBDIR += ipsc
     SUBDIR += lavaps
