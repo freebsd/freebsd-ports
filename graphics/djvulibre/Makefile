@@ -42,12 +42,6 @@ CONFIGURE_ENV+=	CXX=${CXX} \
 CONFIGURE_ARGS+=--disable-djview
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 pre-everything::
 	@${ECHO_MSG} "You can enable additional compilation optimizations"
@@ -82,4 +76,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
