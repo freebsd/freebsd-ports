@@ -5481,6 +5481,7 @@ p5-Text-Query	ports/textproc/p5-Text-Query
 p5-Text-Query-SQL	ports/databases/p5-Text-Query-SQL
 p5-Text-Quoted	ports/textproc/p5-Text-Quoted
 p5-Text-Reflow	ports/textproc/p5-Text-Reflow
+p5-Text-Reform	ports/textproc/p5-Text-Reform
 p5-Text-Repository	ports/textproc/p5-Text-Repository
 p5-Text-SimpleTemplate	ports/textproc/p5-Text-SimpleTemplate
 p5-Text-Tabs+Wrap	ports/textproc/p5-Text-Tabs+Wrap
