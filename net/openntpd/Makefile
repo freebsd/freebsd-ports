@@ -8,14 +8,15 @@
 PORTNAME=	openntpd
 PORTVERSION=	0.2p1
 CATEGORIES=	net
-MASTER_SITES=	http://www.zip.com.au/~dtucker/openntpd/
+MASTER_SITES=	http://www.zip.com.au/~dtucker/openntpd/ \
+		http://dtucker.freeshell.org/openntpd/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-pre1
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	OpenBSD's Network Time Protocol daemon
 
 USE_RC_SUBR=	yes
-GNU_CONFIGRUE=	yes
+GNU_CONFIGURE=	yes
 
 MAN5=		ntpd.conf.5
 MAN8=		ntpd.8
