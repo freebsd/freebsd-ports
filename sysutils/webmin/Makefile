@@ -7,6 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.180
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -25,7 +26,8 @@ USE_PERL5=	yes
 USE_RC_SUBR=    yes
 USE_REINPLACE=	yes
 
-WEBMIN_MODULES=	sendmail-1.180-1.wbm.gz
+WEBMIN_MODULES=	ldap-useradmin-1.180-1.wbm.gz \
+		sendmail-1.180-1.wbm.gz
 WEBMIN_THEMES=
 
 post-extract:
@@ -58,10 +60,6 @@ post-patch:
 		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/local/bin/perl@#!${PERL}@"
 	@${FIND} ${WRKSRC} -name "*.orig" -print | ${XARGS} ${RM}
 	@${FIND} ${WRKSRC} -name "*.bak" -print | ${XARGS} ${RM}
-# we may have 2 levels of empty directories which cause the plist generation
-# system to fail
-	@${FIND} ${WRKSRC} -type d -empty -print | ${XARGS} ${RMDIR}
-	@${FIND} ${WRKSRC} -type d -empty -print | ${XARGS} ${RMDIR}
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/webmin
@@ -75,6 +73,9 @@ do-install:
 post-install:
 	@cd ${WRKSRC} ; ${FIND} * -type f -o -type l | ${SORT} | ${AWK} \
 		'{ print "lib/webmin/" $$1 }' > ${WRKDIR}/PLIST.lib-webmin
+	@cd ${WRKSRC} ; ${FIND} * -type d -empty | ${SORT} -r | ${AWK} \
+		'{ print "lib/webmin/" $$1 }' | ${SED} -e 's#^#@exec mkdir -p %D/#g' \
+		>> ${WRKDIR}/PLIST.lib-webmin
 	@cd ${WRKSRC} ; ${FIND} * -type d | ${SORT} -r | ${AWK} \
 		'{ print "lib/webmin/" $$1 }' | ${SED} -e 's/^/@dirrm /g' \
 		>> ${WRKDIR}/PLIST.lib-webmin
