@@ -1,6 +1,4 @@
-@cwd /usr/X11R6
 bin/fvwm95
-@cwd /usr/X11R6
 bin/xpmroot
 lib/libfvwm95.a
 lib/X11/fvwm95/FvwmAudio
