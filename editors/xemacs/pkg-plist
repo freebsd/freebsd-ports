@@ -125,6 +125,7 @@ lib/xemacs-%%XEMACS_VER%%/etc/gnudoit.1
 lib/xemacs-%%XEMACS_VER%%/etc/gnuserv.1
 lib/xemacs-%%XEMACS_VER%%/etc/gnuserv.README
 lib/xemacs-%%XEMACS_VER%%/etc/gray1.xbm
+lib/xemacs-%%XEMACS_VER%%/etc/gtkrc
 lib/xemacs-%%XEMACS_VER%%/etc/idd/drop
 lib/xemacs-%%XEMACS_VER%%/etc/idd/dropmsk
 lib/xemacs-%%XEMACS_VER%%/etc/ms-kermit
@@ -1057,11 +1058,9 @@ lib/xemacs-%%XEMACS_VER%%/lisp/mule/arabic.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/auto-autoloads.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/auto-autoloads.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/canna-leim.el
-lib/xemacs-%%XEMACS_VER%%/lisp/mule/canna-leim.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/chinese.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/chinese.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/custom-load.el
-lib/xemacs-%%XEMACS_VER%%/lisp/mule/custom-load.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/cyrillic.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/cyrillic.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/english.el
@@ -1103,7 +1102,6 @@ lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-misc.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-tty-init.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-tty-init.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-x-init.el
-lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-x-init.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/thai-xtis-chars.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/thai-xtis-chars.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/thai-xtis.el
