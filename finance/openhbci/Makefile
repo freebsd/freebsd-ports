@@ -15,7 +15,6 @@ MAINTAINER=		heiner@bilch.com
 COMMENT=	HBCI is a bank-independent homebanking standard
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ENV+=		CXXFLAGS=-pedantic
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=		yes
 
