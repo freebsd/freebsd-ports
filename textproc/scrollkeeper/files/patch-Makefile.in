@@ -1,14 +1,21 @@
-
-$FreeBSD$
-
---- Makefile.in	2001/04/20 16:15:31	1.1
-+++ Makefile.in	2001/04/20 16:15:45
-@@ -106,7 +106,7 @@
- 
- EXTRA_DIST = scrollkeeper.spec COPYING-DOCS
+--- Makefile.in.orig	Wed Mar 28 06:22:13 2001
++++ Makefile.in	Tue Apr  3 11:13:37 2001
+@@ -108,4 +108,2 @@
  
 -scrollkeeperdocdir = $(datadir)/doc/scrollkeeper-$(VERSION)
-+scrollkeeperdocdir = $(datadir)/doc/scrollkeeper
- scrollkeeperdoc_DATA = COPYING-DOCS
+-scrollkeeperdoc_DATA = COPYING-DOCS
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -114,3 +112,3 @@
+ CONFIG_CLEAN_FILES =  scrollkeeper.spec
+-DATA =  $(scrollkeeperdoc_DATA)
++DATA = 
+ 
+@@ -353,3 +351,3 @@
+ 
+-install-data-am: install-scrollkeeperdocDATA
++install-data-am:
+ install-data: install-data-recursive
+@@ -367,3 +365,2 @@
+ installdirs-am:
+-	$(mkinstalldirs)  $(DESTDIR)$(scrollkeeperdocdir)
+ 
