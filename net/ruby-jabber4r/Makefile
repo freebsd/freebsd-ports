@@ -24,6 +24,16 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 DOCS=		LICENSE.txt README doc
 EXAMPLES=	examples/*
 
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 1.8
+MASTER_SITES=	http://rubyforge.org/download.php/220/
+DISTNAME=	${PORTNAME}_ruby_1.8-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}_ruby_1.8
+.endif
+
+PLIST_MODDOCDIR=	share/doc/${RUBY_NAME}/${RUBY_MODNAME}
+
 post-extract:
 	${RM} ${WRKSRC}/lib/jabber4r/LICENSE.txt
 
@@ -43,6 +53,10 @@ do-install:
 .for f in ${EXAMPLES}
 	${CP} -R ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
 .endfor
+	cd ${WRKSRC} && \
+	${FIND} doc -type f|sort|${SED} 's:^:${PLIST_MODDOCDIR}/:' >> ${TMPPLIST}; \
+	${FIND} doc -type d|sort -r|${SED} 's:^:@dirrm ${PLIST_MODDOCDIR}/:'>> ${TMPPLIST}
+	${ECHO_CMD} '@dirrm ${PLIST_MODDOCDIR}'>> ${TMPPLIST}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
