@@ -54,4 +54,7 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/apaci/libperl.so ${PREFIX}/libexec/apache
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
+post-deinstall:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
+
 .include <bsd.port.post.mk>

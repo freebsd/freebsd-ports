@@ -1,0 +1,57 @@
+#!/bin/sh
+#
+# Try to de-activate mod_perl in the installed httpd.conf and warn
+# if this fails.
+#
+# $FreeBSD$
+#
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+	exit 0
+fi
+
+TMPDIR=${TMPDIR:=/tmp}
+PKG_TMPDIR=${PKG_TMPDIR:=${TMPDIR}}
+
+apxscmd=${PKG_PREFIX}/sbin/apxs
+tmpdir=${PKG_TMPDIR}/deinstmod_perl.$$
+
+if [ ! -x ${apxscmd} ]; then
+	echo Can\'t find the apxs program: ${apxscmd}.
+	exit 1
+fi
+
+confdir=`${apxscmd} -q SYSCONFDIR`
+
+if [ ! -d ${confdir} ]; then
+	echo Can\'t find Apache conf dir: ${confdir}
+	exit 1
+fi
+
+if [ -f ${confdir}/httpd.conf ]; then
+	conffile=httpd.conf
+fi
+if [ -f ${confdir}/httpd.conf.default ]; then
+	conffile="${conffile} httpd.conf.default"
+fi
+if [ -z "${conffile}" ]; then
+	echo Can\'t find either of ${confdir}/httpd.conf or
+	echo ${confdir}/httpd.conf.default.
+	exit 1
+fi
+
+if ! mkdir ${tmpdir}; then
+	echo Can\'t create temporary directory: ${tmpdir}
+	exit 1
+fi
+
+for i in ${conffile}; do
+	awk '{if (!/^LoadModule perl_module/ && !/^AddModule mod_perl.c/) \
+	    print $0}' < ${confdir}/$i > ${tmpdir}/$i
+	echo Updating $i in config dir: ${confdir}
+	cat ${tmpdir}/$i > ${confdir}/$i
+done
+
+rm -rf ${tmpdir}
+
+exit 0
