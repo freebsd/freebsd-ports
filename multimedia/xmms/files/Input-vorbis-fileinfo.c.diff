@@ -1,0 +1,19 @@
+--- Input/vorbis/fileinfo.c.orig	Thu Feb  5 02:42:36 2004
++++ Input/vorbis/fileinfo.c	Thu Feb  5 02:43:19 2004
+@@ -455,6 +455,7 @@
+ 	gchar *description, *version, *isrc, *copyright, *organization;
+ 	gchar *location;
+ 	gchar *rg_track_gain, *rg_album_gain, *rg_track_peak, *rg_album_peak;
++	gchar *cfilename;
+ 
+ 	gint time, minutes, seconds, bitrate, rate, channels, filesize, i;
+ 
+@@ -916,7 +917,7 @@
+ 	gtk_entry_set_text(GTK_ENTRY(isrc_entry), isrc);
+ 	gtk_entry_set_text(GTK_ENTRY(location_entry), location);
+ #endif
+-	gchar *cfilename=xmms_charset_recode_fsout(vte.filename,0,NULL);
++	cfilename=xmms_charset_recode_fsout(vte.filename,0,NULL);
+ 	if (cfilename) {
+ 	    gtk_entry_set_text(GTK_ENTRY(filename_entry), cfilename);
+ 	    g_free(cfilename);
