@@ -1039,6 +1039,7 @@
     SUBDIR += rudiments
     SUBDIR += rvi
     SUBDIR += rvm
+    SUBDIR += safestr
     SUBDIR += scandoc
     SUBDIR += scons
     SUBDIR += sdl12

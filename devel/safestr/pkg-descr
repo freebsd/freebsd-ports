@@ -1,0 +1,19 @@
+Safe C String Library v0.9.6 (June 11, 2003)
+
+The goal of the SafeStr library is to provide a rich string-handling library
+for C that has safe semantics yet interoperates with legacy library code in
+a straightforward manner. Additionally, porting code that uses standard C
+string handling should be straightforward. The library should work on all
+modern Unix-like platforms, as well as any 32-bit Microsoft Windows OS.
+
+The overt security goals of the library are as follows:
+
+   1. Buffer overflows should not be possible when using the API.
+   2. Format string problems should be impossible when using the API.
+   3. The API should be capable of tracking whether strings are "trusted",
+      a la Perl's taint mode.
+
+The API is meant to provide rich functionality and be easy to use, all the while
+improving security. 
+
+WWW: http://www.zork.org/safestr/
