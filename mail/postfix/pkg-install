@@ -34,12 +34,12 @@ yesno() {
 }
 
 if [ x"$2" = xPRE-INSTALL ]; then
-    if pw groupshow "${group}" 2>/dev/null; then
+    if /usr/sbin/pw groupshow "${group}" 2>/dev/null; then
         echo "You already have a group \"${group}\", so I will use it."
     else
         echo "You need a group \"${group}\"."
         if yesno "Would you like me to create it" y; then
-            pw groupadd ${group} -h - || exit
+            /usr/sbin/pw groupadd ${group} -h - || exit
             echo "Done."
         else
             echo "Please create it, and try again."
@@ -47,12 +47,12 @@ if [ x"$2" = xPRE-INSTALL ]; then
         fi
     fi
 
-    if pw groupshow "${group2}" 2>/dev/null; then
+    if /usr/sbin/pw groupshow "${group2}" 2>/dev/null; then
         echo "You already have a group \"${group2}\", so I will use it."
     else
         echo "You need a group \"${group2}\"."
         if yesno "Would you like me to create it" y; then
-            pw groupadd ${group2} -h - || exit
+            /usr/sbin/pw groupadd ${group2} -h - || exit
             echo "Done."
         else
             echo "Please create it, and try again."
@@ -60,12 +60,12 @@ if [ x"$2" = xPRE-INSTALL ]; then
         fi
     fi
 
-    if pw user show "${user}" 2>/dev/null; then
+    if /usr/sbin/pw user show "${user}" 2>/dev/null; then
         echo "You already have a user \"${user}\", so I will use it."
     else
         echo "You need a user \"${user}\"."
         if yesno "Would you like me to create it" y; then
-            pw useradd ${user} -g ${group} -h - -d /nonexistent \
+            /usr/sbin/pw useradd ${user} -g ${group} -h - -d /nonexistent \
                 -s /nonexistent -c "Postfix Mail System" || exit
             echo "Done."
         else
