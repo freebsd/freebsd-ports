@@ -288,6 +288,7 @@ lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/libstdc++.a
 @dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netinet
 @dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netipx
 @dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netns
+@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/machine
 @dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/rpc
 @dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/security
 @dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/sys
