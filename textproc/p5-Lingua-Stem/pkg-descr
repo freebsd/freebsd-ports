@@ -1,0 +1,17 @@
+Lingua::Stem - Stemming of words
+
+This routine applies stemming algorithms to its parameters, returning the
+stemmed words as appropriate to the selected locale.
+
+Currently supported locales are:
+
+      EN          - English (also EN-US and EN-UK)
+      DA          - Danish
+      DE          - German
+      GL          - Galician
+      IT          - Italian
+      NO          - Norwegian
+      PT          - Portuguese
+      SV          - Swedish
+
+WWW: http://search.cpan.org/~snowhare/Lingua-Stem-0.61/lib/Lingua/Stem.pm
