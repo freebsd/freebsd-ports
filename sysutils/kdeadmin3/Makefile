@@ -31,7 +31,4 @@ LDCONFIG_DIRS+=	%%PREFIX%%/lib/kde3
 
 .include <bsd.port.pre.mk>
 
-pre-configure::
-	${REINPLACE_CMD} -e 's@-pedantic @@g' ${WRKSRC}/configure
-
 .include <bsd.port.post.mk>
