@@ -1,5 +1,3 @@
-%%PYTHON_SITELIBDIR%%/irclib.py
-%%PYTHON_SITELIBDIR%%/irclib.pyc
 share/doc/irclib/index.html
 share/doc/irclib/indices.html
 share/doc/irclib/ircbot.Channel.html
@@ -21,3 +19,7 @@ share/examples/irclib/irccat
 share/examples/irclib/irccat2
 share/examples/irclib/servermap
 share/examples/irclib/testbot.py
+@cwd %%LOCALBASE%%
+%%PYTHON_SITELIBDIR%%/irclib.py
+%%PYTHON_SITELIBDIR%%/irclib.pyc
+%%PYTHON_SITELIBDIR%%/irclib.pyo

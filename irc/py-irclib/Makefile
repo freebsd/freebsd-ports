@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	irclib
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	irc python
 MASTER_SITES=	http://joel.rosdahl.net/hacks/ \
-		http://www3.kr.freebsd.org/~perky/distfiles/ \
-		http://www2.freebsd-kr.org/distfiles/ \
-		ftp://ftp2.python.or.kr/pub/FreeBSD/ports/distfiles/
+		http://fallin.lv/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	perky@python.or.kr
+MAINTAINER=	perky@fallin.lv
 
 USE_PYTHON=	yes
 
@@ -23,6 +21,7 @@ EXAMPLEFILES=	ircbot.py irccat irccat2 servermap testbot.py
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/irclib.py* ${PYTHON_SITELIBDIR}/
