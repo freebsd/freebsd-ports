@@ -8,7 +8,7 @@
 
 DISTNAME=	rsynth-2.0
 CATEGORIES=	audio
-MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis
+MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/
 
 EXEC_DEPENDS=	auvoxware:${PORTSDIR}/audio/nas
 
