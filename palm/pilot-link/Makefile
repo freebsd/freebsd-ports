@@ -3,10 +3,10 @@
 # Date created:         November, 1997
 # Whom:                 Paul Traina <pst@freebsd.org>
 #
-# $Id: Makefile,v 1.19 1998/09/25 10:05:00 asami Exp $
+# $Id: Makefile,v 1.20 1998/09/29 11:22:30 jseger Exp $
 
-DISTNAME=	pilot-link.0.8.13
-PKGNAME=	pilot-link-0.8.13
+DISTNAME=	pilot-link.0.9.0
+PKGNAME=	pilot-link-0.9.0
 CATEGORIES=	comms pilot tk80
 MASTER_SITES=	ftp://ryeham.ee.ryerson.ca/pub/PalmOS/
 
@@ -14,15 +14,14 @@ MAINTAINER=	dima@freebsd.org
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
-BROKEN=		package
-
 USE_PERL5=	yes
 PREFIX=		${LOCALBASE}/pilot
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-perl5=${LOCALBASE}/bin/perl5
+CONFIGURE_ARGS=	--with-perl5=${PERL5}
 
 MAN1=		dlpsh.1 ietf2datebook.1 install-datebook.1 \
 		install-memo.1 install-user.1 pilot-xfer.1 \
 		read-ical.1
+MAN7=		pilot-link.7
 
 .include <bsd.port.mk>
