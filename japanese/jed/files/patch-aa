@@ -1,0 +1,32 @@
+--- configure.orig	Tue Jul 20 20:22:45 1999
++++ configure	Sat Feb  5 23:49:47 2000
+@@ -2580,7 +2580,8 @@
+ # the other directories may have a better chance of containing a more recent
+ # version.
+ 
+-JD_Search_Dirs="$JD_Search_Dirs \
++JD_Search_Dirs="${prefix}/include/slang,${prefix}/lib \
++                $JD_Search_Dirs \
+                 $includedir,$libdir \
+                 /usr/local/include,/usr/local/lib \
+ 		/usr/include,/usr/lib \
+@@ -3176,12 +3177,17 @@
+ 	cd \$(OBJDIR); \$(COMPILE_CMD) \$(SRCDIR)/vterm.c
+ "
+ 
+-
++if test "$ac_cv_xlocale" = yes; then
+ PROGRAM_OBJECT_RULES="$PROGRAM_OBJECT_RULES
+ \$(OBJDIR)/xterm.o : \$(SRCDIR)/xterm.c \$(DOT_O_DEPS) \$("xterm"_O_DEP)
+ 	cd \$(OBJDIR); \$(COMPILE_CMD) -DX_LOCALE \$(SRCDIR)/xterm.c
+ "
+-
++else
++PROGRAM_OBJECT_RULES="$PROGRAM_OBJECT_RULES
++\$(OBJDIR)/xterm.o : \$(SRCDIR)/xterm.c \$(DOT_O_DEPS) \$("xterm"_O_DEP)
++	cd \$(OBJDIR); \$(COMPILE_CMD) \$(SRCDIR)/xterm.c
++"
++fi
+ 
+ PROGRAM_OBJECT_RULES="$PROGRAM_OBJECT_RULES
+ \$(OBJDIR)/gpmmouse.o : \$(SRCDIR)/gpmmouse.c \$(DOT_O_DEPS) \$("gpmmouse"_O_DEP)

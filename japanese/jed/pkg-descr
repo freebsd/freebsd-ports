@@ -1,0 +1,22 @@
+JED is a highly customizable text editor offering most of
+the commonly used features of EMACS without the proportions
+of EMACS.  The default configuration uses EMACS keystrokes,
+though WordStar keystrokes are available, and most any
+keystrokes can be programmed.n  JED is customizable and
+programmable in the language S-Lang, which can look like
+Forth or C, depending on your preferences.
+
+WWW:	http://space.mit.edu/~davis/jed.html
+
+See /usr/local/lib/jed/doc/jed-j.doc about Japanese support.
+For the latest information, take a look at:
+
+	http://kondara.sdri.co.jp/~kikutani/jed.html
+
+Japanese translation of JED documents can be found at:
+
+	http://www.dsl.tutics.tut.ac.jp/~kawamoto/jed/jed.html
+
+Have fun!
+
+Akinori MUSHA aka knu <knu@idaemons.org>

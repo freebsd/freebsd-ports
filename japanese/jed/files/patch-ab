@@ -1,0 +1,22 @@
+--- lib/jed.rc~	Tue Jul 20 20:22:46 1999
++++ lib/jed.rc	Thu Feb  3 19:15:23 2000
+@@ -166,6 +166,19 @@
+                         % that are continued onto the next line.
+ %---------------------------------------------------------------------------
+ 
++%---------------------------------------------------------------------------
++% Ruby-mode
++%---------------------------------------------------------------------------
++
++% amount of space to indent within block.
++variable ruby_indent_level = 2;
++
++% Load ruby mode when openning .rb' files.
++autoload("ruby_mode", "ruby");
++add_mode_for_extension ("ruby", "rb");
++
++%---------------------------------------------------------------------------
++
+ #ifdef MSDOS XWINDOWS MSWINDOWS
+ % Alt-key handling.  Setting this variable controls how the
+ % Alt key is handled.  By default it is set to 27 (Ascii ESCAPE).  This means
