@@ -1,0 +1,4 @@
+etc/gseen.conf
+lib/eggdrop/gseen.so
+share/eggdrop/language/gseen.de.lang
+share/eggdrop/language/gseen.en.lang

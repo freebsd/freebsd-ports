@@ -22,6 +22,7 @@
     SUBDIR += erc
     SUBDIR += ezbounce
     SUBDIR += gruftistats
+    SUBDIR += gseen.mod
     SUBDIR += hybserv
     SUBDIR += icbirc
     SUBDIR += iip
