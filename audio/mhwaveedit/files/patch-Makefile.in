@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Fri Apr 19 22:08:26 2002
++++ src/Makefile.in	Fri Apr 19 22:08:46 2002
+@@ -171,7 +171,7 @@
+ 	  if test -f $$p \
+ 	  ; then \
+ 	    p1=`echo "$$p1" | sed -e 's,^.*/,,'`; \
+-	    f=`echo $$p1|sed '$(transform);s/$$/$(EXEEXT)/'`; \
++	    f=`echo $$p1|sed 's/$$/$(EXEEXT)/'`; \
+ 	   echo " $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) $$p $(DESTDIR)$(bindir)/$$f"; \
+ 	   $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) $$p $(DESTDIR)$(bindir)/$$f; \
+ 	  else :; fi; \

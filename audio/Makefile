@@ -119,6 +119,7 @@
     SUBDIR += lopster
     SUBDIR += mad
     SUBDIR += maplay
+    SUBDIR += mhwaveedit
     SUBDIR += midimountain
     SUBDIR += mikmod
     SUBDIR += mixer.app
