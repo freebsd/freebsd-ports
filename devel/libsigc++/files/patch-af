@@ -1,0 +1,11 @@
+--- sigc-config.in	Thu Jan 13 07:23:16 2000
++++ sigc-config.in	Mon Jan 31 10:34:45 2000
+@@ -220,7 +220,7 @@
+ if test "@libdir@" != /usr/lib ; then
+   libs="-L@libdir@"
+ fi
+-af_cflags="$af_cflags -I@libdir@/sigc++/include $includes"
++af_cflags="$af_cflags $includes"
+ af_libs="$libs -lsigc @THREAD_LIB@ $af_libs"
+ 
+ 
