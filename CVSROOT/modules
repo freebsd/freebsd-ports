@@ -4156,6 +4156,7 @@ nntpbtr		ports/news/nntpbtr
 nntpcache	ports/news/nntpcache
 no-ispell	ports/textproc/no-ispell
 no-login	ports/sysutils/no-login
+noattach	ports/mail/noattach
 nocol		ports/net/nocol
 nohup		src/usr.bin/nohup
 nologin		src/sbin/nologin
