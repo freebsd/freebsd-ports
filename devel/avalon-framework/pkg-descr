@@ -1,0 +1,20 @@
+Apache Avalon provides a complete platform for component programming including
+a core framework, utilities, tools, components and containers. By using key
+design patterns such as Inversion of Control (IoC) and Seperation of Concerns
+(SoC), Avalon achieves a number of advantages over traditional object oriented
+programming frameworks:
+
+  * No implementation lock
+  * Low coupling between components
+  * Component lifecycle management
+  * Configuration management and easy to use API
+  * Component meta-data framework and tools
+  * Service dependecy management
+  * Embeddable containers for standalone, J2EE and web environments
+
+The Avalon Framework API and Implementation consists of interfaces that define
+relationships between commonly used application components, best-of-practice
+pattern enforcements, and several lightweight convenience implementations of
+the generic components.
+
+WWW:	http://avalon.apache.org/framework/
