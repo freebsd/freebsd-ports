@@ -643,6 +643,7 @@
     SUBDIR += spread
     SUBDIR += spread-j
     SUBDIR += ssldump
+    SUBDIR += ssltunnel-client
     SUBDIR += ssltunnel-server
     SUBDIR += sting
     SUBDIR += stone
