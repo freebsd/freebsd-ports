@@ -1,0 +1,33 @@
+--- gtkcommrc	Mon Mar 27 15:10:49 2000
++++ res/gtkcommrc	Sun Apr  2 21:54:18 2000
+@@ -18,7 +18,7 @@
+ #   chown root gtkcomm; chgrp uucp gtkcomm; chmod 2755 gtkcomm
+ # 물론 /var/lock directory의 permission도 적절하게 설정되어 있어야
+ # 합니다.
+-#DoLock                 TRUE
++#DoLock                 FALSE
+ 
+ # telnet 명령어
+ #TelnetCommand          "telnet -8 -e ''"
+@@ -35,8 +35,8 @@
+ # 버튼등에 쓰이는 폰트는 gtkrc파일에서 설정해주십시요.
+ # 형식은 "english_font_name,hangul_font_name"
+ # 여기에서 한글 폰트의 폭이 영문폰트폭의 두배이여야합니다.
+-#TermFontName "-*-fixed-medium-r-*--16-*-*-*-*-80-iso8859-1,\
+-#             -*-gulim-medium-r-normal--16-*-*-*-*-160-ksc5601.1987-0"
++TermFontName "-sony-fixed-medium-r-*--16-*-*-*-*-80-iso8859-1,\
++             -*-gulim-medium-r-normal--16-*-*-*-*-160-ksc5601.1987-0"
+ 
+ # prevent ^G -> beep translation
+ # if you want really silent environment,
+@@ -70,8 +70,8 @@
+ #TermISelFG             "0.90 0.50 0.70"   # iselect foreground
+ 
+ # terminal normal foreground/background
+-#TermNormFG             7
+-#TermNormBG             4
++TermNormFG             0
++TermNormBG             7
+ 
+ # 굵은 문자 속성 사용?
+ #TermUseBold            TRUE

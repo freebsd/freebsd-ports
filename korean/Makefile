@@ -16,6 +16,7 @@
     SUBDIR += fvwm95
     SUBDIR += gau
     SUBDIR += gtk10
+    SUBDIR += gtkcomm
     SUBDIR += h2ps
     SUBDIR += han
     SUBDIR += hanIM
