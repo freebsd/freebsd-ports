@@ -3,7 +3,7 @@
 # Date created:         14 May 1999
 # Whom:                 shanee@augusta.de
 #
-# $Id $
+# $FreeBSD$
 #
 
 DISTNAME=       tclmidi-3.1
