@@ -1,32 +1,32 @@
---- Makefile.orig	Mon Jul 12 11:55:33 1999
-+++ Makefile	Mon Jul 12 12:55:57 1999
-@@ -56,15 +56,16 @@
+--- Makefile.orig	Wed Feb  9 09:59:09 2000
++++ Makefile	Wed Feb  9 11:12:59 2000
+@@ -57,17 +57,18 @@
  #OPTIONS += -DHAVE_GETOPT_H
  
  # You may need to touch PREFIX, CC and CFLAGS.
 -PREFIX = /usr/local
 -INSTALL_PROGRAM = install -c -m 555 -o bin -g bin
 -INSTALL_MAN = install -c -m 444 -o bin -g bin
--
--RM      = rm -f
--CC      = gcc
--CFLAGS  = -O2 -Wall $(OPTIONS)
--LDFLAGS = -s
--LIBS    += #-lresolv
 +#PREFIX = /usr/local
 +#INSTALL_PROGRAM = install -c -m 555 -o bin -g bin
 +#INSTALL_MAN = install -c -m 444 -o bin -g bin
-+
+ 
+ # Some make's don't define this.
+-RM      = rm -f
 +#RM      = rm -f
+ 
+ # Should be OK for GNU gcc.
+-CC      = gcc
+-CFLAGS  = -O2 -Wall $(OPTIONS)
+-LDFLAGS = -s
 +#CC      = gcc
 +#CFLAGS  = -O2 -Wall $(OPTIONS)
 +CFLAGS  += $(OPTIONS)
 +#LDFLAGS = -s
-+#LIBS    += #-lresolv
  
- # You shouldn't need to touch anything below this.
- all:		tproxy
-@@ -85,7 +86,7 @@
+ # For using BIND resolver instead of system resolver.
+ #LIBS    += -lresolv	# Really old Linux has this.
+@@ -96,7 +97,7 @@
  	$(RM) tproxy
  
  install:	tproxy
