@@ -12,3 +12,4 @@ lib/muttzilla/tin
 etc/muttzilla.conf
 share/doc/muttzilla/INSTALL
 @dirrm lib/muttzilla
+@dirrm share/doc/muttzilla
