@@ -25,7 +25,6 @@
     SUBDIR += sliderule
     SUBDIR += teapot
     SUBDIR += wmpinboard
-    SUBDIR += wpeople
     SUBDIR += xinvest
     SUBDIR += xmaddressbook
     SUBDIR += xmdiary
