@@ -24,19 +24,21 @@ EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -
 EXTRACT_CMD_R= ${GZIP_CMD}
 
 GCC_VERSION!=	${CC} --version
+JDK13DIR?=	${LOCALBASE}/jdk1.3.1
+JAVAVM=		${JDK13DIR}/bin/java
 
 BUILD_DEPENDS=	stlport:${PORTSDIR}/devel/stlport
 BUILD_DEPENDS+= bison:${PORTSDIR}/devel/bison
 BUILD_DEPENDS+= gmake:${PORTSDIR}/devel/gmake
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
-BUILD_DEPENDS+=	pth:${PORTSDIR}/devel/pth
+BUILD_DEPENDS+=	pth-config:${PORTSDIR}/devel/pth
 
 GNU_CONFIGURE=	yes
 WRKSRC=	${WRKDIR}/oo_641_src/config_office
 
 CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX} \
-			--with-jdk-home=${PREFIX}/jdk1.3.1
+			--with-jdk-home=${JDK13DIR}
 
 .include <bsd.port.pre.mk>
 
