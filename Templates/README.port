@@ -11,7 +11,7 @@
 %%COMMENT%%
 <p><hr>
 
-<p>Please read the file "<a href="pkg/DESCR">pkg/DESCR</a>" for a
+<p>Please read the "<a href="%%DESCR%%">description file</a>" for a
 longer description.
 
 <p>Go to the <a href="%%TOP%%/README.html">top of the ports tree</a> for

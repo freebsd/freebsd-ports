@@ -103,6 +103,14 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 # BROKEN_ELF	- Port doesn't build on ELF machines.
 # BROKEN		- Port is broken.
 #
+# In addition to RESTRICTED or NO_CDROM, if only a subset of distfiles
+# or patchfiles have redistribution restrictions, set the following
+# to the list of such files.
+#
+# RESTRICTED_FILES - List of files that cannot be redistributed
+#				  (default: "${DISTFILES} ${PATCHFILES}" if RESTRICTED
+#				  or NO_CDROM is set, empty otherwise).
+#
 # This variable is a boolean, so you don't need to set it to the reason.
 #
 # IS_INTERACTIVE - Set this if your port needs to interact with the user
@@ -584,6 +592,28 @@ EXTRACT_SUFX?=			.tar.gz
 PACKAGES?=		${PORTSDIR}/packages
 TEMPLATES?=		${PORTSDIR}/Templates
 
+.if defined(NEWLAYOUT)
+.if (!defined(PATCHDIR) && exists(${MASTERDIR}/patches)) || \
+	(!defined(PKGDIR) && exists(${MASTERDIR}/pkg)) || \
+	(!defined(MD5_FILE) && exists(${MASTERDIR}/files/md5))
+pre-everything::
+	@${ECHO} "Error: your port uses an old layout.  Please update it to match this bsd.port.mk."
+	@${FALSE}
+.endif
+PATCHDIR?=		${MASTERDIR}/files
+FILESDIR?=		${MASTERDIR}/files
+SCRIPTDIR?=		${MASTERDIR}/scripts
+PKGDIR?=		${MASTERDIR}
+.else
+.if exists(${MASTERDIR}/pkg-comment) || exists(${MASTERDIR}/pkg-descr) || \
+	exists(${MASTERDIR}/pkg-plist) || exists(${MASTERDIR}/distinfo)
+pre-everything::
+	@${ECHO} "Error: your port uses the new layout.  Please update bsd.port.mk to match the port."
+	@${FALSE}
+.endif
+.endif
+
+# delete from here when NEWLAYOUT is default
 .if exists(${MASTERDIR}/patches.${ARCH}-${OPSYS})
 PATCHDIR?=		${MASTERDIR}/patches.${ARCH}-${OPSYS}
 .elif exists(${MASTERDIR}/patches.${OPSYS})
@@ -623,6 +653,7 @@ PKGDIR?=		${MASTERDIR}/pkg.${ARCH}
 .else
 PKGDIR?=		${MASTERDIR}/pkg
 .endif
+# delete to here when NEWLAYOUT is default
 
 .if defined(USE_IMAKE)
 USE_X_PREFIX=	yes
@@ -818,7 +849,7 @@ LIB_DEPENDS+=			dps.0:${PORTSDIR}/x11/dgs
 LIB_DEPENDS+=			GL.14:${PORTSDIR}/graphics/Mesa3
 .endif
 XAWVER=					6
-PKG_IGNORE_DEPENDS?=	'(XFree86-3\.3\.6|Motif-2\.1\.10)'
+PKG_IGNORE_DEPENDS?=	'(XFree86-3\.3\.6_1|Motif-2\.1\.10)'
 .else
 .if defined(USE_IMAKE)
 BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake-4
@@ -922,7 +953,12 @@ MD5?=			/usr/bin/md5
 .else
 MD5?=			md5
 .endif
+.if defined(NEWLAYOUT)
+MD5_FILE?=		${MASTERDIR}/distinfo
+.endif
+# delete from here when NEWLAYOUT is default
 MD5_FILE?=		${FILESDIR}/md5
+# delete to here when NEWLAYOUT is default
 
 MAKE_FLAGS?=	-f
 MAKEFILE?=		Makefile
@@ -1024,14 +1060,26 @@ SCRIPTS_ENV+=	${INSTALL_MACROS}
 .undef NO_PACKAGE
 .endif
 
+.if defined(NEWLAYOUT)
+COMMENT?=		${PKGDIR}/pkg-comment
+DESCR?=			${PKGDIR}/pkg-descr
+PLIST?=			${PKGDIR}/pkg-plist
+PKGINSTALL?=	${PKGDIR}/pkg-install
+PKGDEINSTALL?=	${PKGDIR}/pkg-deinstall
+PKGREQ?=		${PKGDIR}/pkg-req
+PKGMESSAGE?=	${PKGDIR}/pkg-message
+.endif
+
+# delete from here when NEWLAYOUT is default
 COMMENT?=	${PKGDIR}/COMMENT
 DESCR?=		${PKGDIR}/DESCR
 PLIST?=		${PKGDIR}/PLIST
-TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
 PKGINSTALL?=		${PKGDIR}/INSTALL
 PKGDEINSTALL?=		${PKGDIR}/DEINSTALL
 PKGREQ?=			${PKGDIR}/REQ
 PKGMESSAGE?=		${PKGDIR}/MESSAGE
+# delete to here when NEWLAYOUT is default
+TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
 
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_DELETE?=	/usr/sbin/pkg_delete
@@ -1540,6 +1588,7 @@ ignorelist:
 .if defined(RESTRICTED)
 clean-restricted:	delete-distfiles delete-package
 clean-restricted-list: delete-distfiles-list delete-package-list
+RESTRICTED_FILES?=	${DISTFILES} ${PATCHFILES}
 .else
 clean-restricted:
 clean-restricted-list:
@@ -1548,6 +1597,7 @@ clean-restricted-list:
 .if defined(NO_CDROM)
 clean-for-cdrom:	delete-distfiles delete-package
 clean-for-cdrom-list:	delete-distfiles-list delete-package-list
+RESTRICTED_FILES?=	${DISTFILES} ${PATCHFILES}
 .else
 clean-for-cdrom:
 clean-for-cdrom-list:
@@ -2276,9 +2326,9 @@ distclean: pre-distclean clean delete-distfiles
 .if !target(delete-distfiles)
 delete-distfiles:
 	@${ECHO_MSG} "===>  Deleting distfiles for ${PKGNAME}"
-	@(if [ "X${DISTFILES}${PATCHFILES}" != "X" -a -d ${_DISTDIR} ]; then \
+	@(if [ "X${RESTRICTED_FILES}" != "X" -a -d ${_DISTDIR} ]; then \
 		cd ${_DISTDIR}; \
-		for file in ${DISTFILES} ${PATCHFILES}; do \
+		for file in ${RESTRICTED_FILES}; do \
 			${RM} -f $${file}; \
 			dir=$${file%/*}; \
 			if [ "$${dir}" != "$${file}" ]; then \
@@ -2294,8 +2344,8 @@ delete-distfiles:
 .if !target(delete-distfiles-list)
 delete-distfiles-list:
 	@${ECHO} "# ${PKGNAME}"
-	@if [ "X${DISTFILES}${PATCHFILES}" != "X" ]; then \
-		for file in ${DISTFILES} ${PATCHFILES}; do \
+	@if [ "X${RESTRICTED_FILES}" != "X" ]; then \
+		for file in ${RESTRICTED_FILES}; do \
 			${ECHO} "[ -f ${_DISTDIR}/$$file ] && (${ECHO} deleting ${_DISTDIR}/$$file; ${RM} -f ${_DISTDIR}/$$file)"; \
 			dir=$${file%/*}; \
 			if [ "$${dir}" != "$${file}" ]; then \
@@ -2824,8 +2874,9 @@ ${.CURDIR}/README.html:
 	@${CAT} ${TEMPLATES}/README.port | \
 		${SED} -e 's%%PORT%%'`${ECHO} ${.CURDIR} | ${SED} -e 's.*/\([^/]*/[^/]*\)$$\1'`'g' \
 			-e 's%%PKG%%${PKGNAME}g' \
-			-e '/%%COMMENT%%/r${PKGDIR}/COMMENT' \
+			-e '/%%COMMENT%%/r${COMMENT}' \
 			-e '/%%COMMENT%%/d' \
+			-e 's%%DESCR%%'"`${ECHO} ${DESCR} | ${SED} -e 's${.CURDIR}/'`"'' \
 			-e 's%%BUILD_DEPENDS%%'"`cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} pretty-print-build-depends-list`"'' \
 			-e 's%%RUN_DEPENDS%%'"`cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} pretty-print-run-depends-list`"'' \
 			-e 's%%TOP%%'"`${ECHO} ${CATEGORIES} | ${SED} -e 'sa .*aa' -e 'sa[^/]*a..ag'`"'/..' \
