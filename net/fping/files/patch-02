@@ -1,5 +1,5 @@
---- fping.c.orig	Mon Jan 21 01:06:30 2002
-+++ fping.c	Sun Jul  7 22:12:31 2002
+--- fping.c.orig	Mon Jan 21 02:06:30 2002
++++ fping.c	Sat Oct 25 21:33:01 2003
 @@ -42,7 +42,6 @@
   * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
   * WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
@@ -8,7 +8,24 @@
  
  #ifndef _NO_PROTO
  #if !__STDC__ && !defined( __cplusplus ) && !defined( FUNCPROTO ) \
-@@ -112,6 +111,10 @@
+@@ -67,7 +66,7 @@
+ 
+ /*** autoconf includes ***/
+ 
+-
++#include <sys/types.h>
+ #include <stdio.h>
+ #include <errno.h>
+ #include <time.h>
+@@ -88,7 +87,6 @@
+ #include <string.h>
+ #include <stddef.h>
+ 
+-#include <sys/types.h>
+ #include <sys/time.h>
+ #include <sys/socket.h>
+ 
+@@ -112,6 +110,10 @@
  #include <arpa/inet.h>
  #include <netdb.h>
  
@@ -19,7 +36,7 @@
  /* RS6000 has sys/select.h */
  #ifdef HAVE_SYS_SELECT_H
  #include <sys/select.h>
-@@ -246,13 +249,13 @@
+@@ -246,13 +248,13 @@
       struct timeval       last_send_time;     /* time of last packet sent */
       int                  num_sent;           /* number of ping packets sent */
       int                  num_recv;           /* number of pings received */
@@ -37,7 +54,7 @@
       int                  total_time_i;       /* sum of response times */
       int                  *resp_times;        /* individual response times */
  #if defined( DEBUG ) || defined( _DEBUG )
-@@ -482,7 +485,7 @@
+@@ -482,7 +484,7 @@
  
  	}/* IF */
  
@@ -46,7 +63,7 @@
  	ident = getpid() & 0xFFFF;
  
  	verbose_flag = 1;
-@@ -823,6 +826,7 @@
+@@ -823,6 +825,7 @@
  
  		while( fgets( line, 132, ping_file ) )
  		{
@@ -54,7 +71,7 @@
  			if( sscanf( line, "%s", host ) != 1 )
  				continue;
  			
-@@ -1503,7 +1507,6 @@
+@@ -1503,7 +1506,6 @@
  	memset( buffer, 0, ping_pkt_size * sizeof( char ) );
  	icp = ( FPING_ICMPHDR* )buffer;
  
@@ -62,7 +79,7 @@
  #ifndef IPV6
  	icp->icmp_type = ICMP_ECHO;
  	icp->icmp_code = 0;
-@@ -1512,6 +1515,8 @@
+@@ -1512,6 +1514,8 @@
  	icp->icmp_id = ident;
  
  	pdp = ( PING_DATA* )( buffer + SIZE_ICMP_HDR );
@@ -71,7 +88,7 @@
  	pdp->ping_ts = h->last_send_time;
  	pdp->ping_count = h->num_sent;
  
-@@ -1523,6 +1528,8 @@
+@@ -1523,6 +1527,8 @@
  	icp->icmp6_id = ident;
  
  	pdp = ( PING_DATA* )( buffer + SIZE_ICMP_HDR );
@@ -80,7 +97,7 @@
  	pdp->ping_ts = h->last_send_time;
  	pdp->ping_count = h->num_sent;
  
-@@ -1611,6 +1618,9 @@
+@@ -1611,6 +1617,9 @@
  
  	result = recvfrom_wto( s, buffer, sizeof(buffer), &response_addr, select_time );
  
@@ -90,7 +107,7 @@
  	if( result < 0 )
  		return 0;	/* timeout */
    
-@@ -1625,7 +1635,7 @@
+@@ -1625,7 +1634,7 @@
  
  	ip = ( struct ip* )buffer;
  #ifndef IPV6
@@ -99,7 +116,7 @@
  	/* The alpha headers are decidedly broken.
  	 * Using an ANSI compiler, it provides ip_vhl instead of ip_hl and
  	 * ip_v.  So, to get ip_hl, we mask off the bottom four bits.
-@@ -1633,7 +1643,7 @@
+@@ -1633,7 +1642,7 @@
  	hlen = ( ip->ip_vhl & 0x0F ) << 2;
  #else
  	hlen = ip->ip_hl << 2;
@@ -108,7 +125,7 @@
  	if( result < hlen + ICMP_MINLEN )
  #else
  	if( result < sizeof(FPING_ICMPHDR) )
-@@ -1690,7 +1700,6 @@
+@@ -1690,7 +1699,6 @@
  	h = table[n];
  
  	/* received ping is cool, so process it */
