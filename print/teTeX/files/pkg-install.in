@@ -1,66 +1,20 @@
+#!/bin/sh
 # $FreeBSD$
 
-GREP=/usr/bin/grep
-SED=/usr/bin/sed
-WITH_DVIPSK="%%WITH_DVIPSK%%"
-SUFFIX=tetex
-MKTEXLSR=%%MKTEXLSR%%
+MODE=%%MODE%%
+TETEX_MODESW=%%TETEX_MODESW%%
 
 case $2 in
 POST-INSTALL)
-	if [ ! -f %%TEXMFCNF%% ]; then
-		cp %%TEXMFCNF%%.${SUFFIX} %%TEXMFCNF%%
-		echo "Notice: installing %%TEXMFCNF%%.${SUFFIX} -> %%TEXMFCNF%%."
-		%%MKTEXLSR%%
-	elif ${SED} q < %%TEXMFCNF%% | ${GREP} original > /dev/null 2>&1; then
-		cp %%TEXMFCNF%%.${SUFFIX} %%TEXMFCNF%%
-		echo "Notice: installing %%TEXMFCNF%%.${SUFFIX} -> %%TEXMFCNF%%."
-		%%MKTEXLSR%%
-	else
-		echo "Notice: %%TEXMFCNF%% is not installed."
-		echo "        Merge from %%TEXMFCNF%%.${SUFFIX} manually."
-	fi
-
-	case "${WITH_DVIPSK}" in
-	"")	exit 0 ;;
+	case ${MODE} in
+	tetex)	;;
+	*)	${TETEX_MODESW} changedefault ${MODE} ;;
 	esac
 
-	if [ ! -f %%DVIPSKCNF%% ]; then
-		cp %%DVIPSKCNF%%.${SUFFIX} %%DVIPSKCNF%%
-		echo "Notice: installing %%DVIPSKCNF%%.${SUFFIX} -> %%DVIPSKCNF%%."
-		%%MKTEXLSR%%
-	elif ${SED} q < %%TEXMFCNF%% | ${GREP} "public domain" > /dev/null 2>&1; then
-		cp %%DVIPSKCNF%%.${SUFFIX} %%DVIPSKCNF%%
-		echo "Notice: installing %%DVIPSKCNF%%.${SUFFIX} -> %%DVIPSKCNF%%."
-		%%MKTEXLSR%%
-	else
-		echo "Notice: %%DVIPSKCNF%% is not installed."
-		echo "        Merge from %%DVIPSKCNF%%.${SUFFIX} manually."
-	fi
-;;
+	${TETEX_MODESW} default dvips  forceinstall
+	${TETEX_MODESW} default dvipdfm forceinstall
+	${TETEX_MODESW} default xdvi forceinstall
+	;;
 DEINSTALL)
-	if [ -f %%TEXMFCNF%% ]; then
-		if ${SED} q < %%TEXMFCNF%% | ${GREP} original > /dev/null 2>&1; then
-			rm -f %%TEXMFCNF%%
-			echo "Notice: %%TEXMFCNF%% is removed."
-		else
-			echo "Notice: %%TEXMFCNF%% is NOT removed."
-			echo "        Remove manually."
-		fi
-	fi
-
-	case "${WITH_DVIPSK}" in
-	"")	exit 0 ;;
-	esac
-
-	if [ -f %%DVIPSKCNF%% ]; then
-		if ${SED} q < %%DVIPSKCNF%% | ${GREP} "public domain" > /dev/null 2>&1; then
-			rm -f %%DVIPSKCNF%%
-			echo "Notice: %%DVIPSKCNF%% is removed."
-		else
-			echo "Notice: %%DVIPSKCNF%% is NOT removed."
-			echo "        Remove manually."
-		fi
-	fi
-;;
+	;;
 esac
