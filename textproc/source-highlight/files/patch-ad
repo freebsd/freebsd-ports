@@ -1,0 +1,11 @@
+--- src/lib/fileutil.cc.orig	Tue Aug 17 13:11:13 2004
++++ src/lib/fileutil.cc	Tue Aug 17 13:11:41 2004
+@@ -41,7 +41,7 @@
+   // we open it as binary otherwise we may experience problems under
+   // Windows system: when we fread, the number of char read can be
+   // less then char_count, and thus we'd get an error...
+-  ifstream file (fileName.c_str (), ios_base::binary);
++  ifstream file (fileName.c_str (), ios::binary);
+   if (! file.is_open () )
+     file_error ("Error operning", fileName);
+   else
