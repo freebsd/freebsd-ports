@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.2.0a2
+PORTVERSION=	2.2.0a3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://samba.anu.edu.au/pub/samba/%SUBDIR%/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://se.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/unix/utilities/samba/%SUBDIR%/
 MASTER_SITE_SUBDIR= alpha
-DISTNAME=       samba-2.2.0-alpha2
+DISTNAME=       samba-2.2.0-alpha3
 
 MAINTAINER=	dwcjr@inethouston.net
 
@@ -42,13 +42,13 @@ CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
-MAN1=		findsmb.1 make_smbcodepage.1 make_unicodemap.1 \
-		nmblookup.1 smbclient.1 smbcontrol.1 smbrun.1 \
+MAN1=		findsmb.1 make_smbcodepage.1 rpcclient.1 make_unicodemap.1 \
+		nmblookup.1 smbcacls.1 smbclient.1 smbcontrol.1 smbrun.1 \
 		smbsh.1 smbstatus.1 smbtar.1 testparm.1 \
 		testprns.1 wbinfo.1
 MAN5=		lmhosts.5 smb.conf.5 smbpasswd.5
 MAN7=		samba.7
-MAN8=		nmbd.8 rpcclient.8 smbd.8 smbmnt.8 smbmount.8 \
+MAN8=		nmbd.8 smbd.8 smbmnt.8 smbmount.8 \
 		smbpasswd.8 smbspool.8 smbumount.8 swat.8 winbindd.8
 
 post-install:
@@ -102,7 +102,7 @@ post-install:
 			${WRKDIR}/${DISTNAME}/docs/history ; do		\
 		${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba ;		\
 	done
-	for i in faq htmldocs textdocs yodldocs ; do			\
+	for i in faq htmldocs textdocs ; do			\
 		${MKDIR} ${PREFIX}/share/doc/samba/$$i ;		\
 		for j in ${WRKDIR}/${DISTNAME}/docs/$$i/* ; do		\
 			if [ $$j != ${WRKDIR}/${DISTNAME}/docs/htmldocs/using_samba ] ; then \
