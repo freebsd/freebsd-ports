@@ -5864,6 +5864,7 @@ ratpoison	ports/x11-wm/ratpoison
 rats		ports/security/rats
 rawboot		src/sys/i386/boot/rawboot
 rawio		ports/benchmarks/rawio
+rawrec		ports/audio/rawrec
 ray		src/sys/dev/ray
 ray++		ports/graphics/ray++
 raycontrol	src/usr.sbin/raycontrol
