@@ -3,11 +3,11 @@
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
-# $Id: Makefile,v 1.1.1.1 1996/04/24 05:09:40 pst Exp $
+# $Id: Makefile,v 1.2 1996/04/24 18:31:23 pst Exp $
 #
 
-PKGNAME=	socks5-0.12
-DISTNAME=	socks5-beta-0.12
+PKGNAME=	socks5-0.15.3
+DISTNAME=	socks5-beta-0.15.3-exportable
 CATEGORIES+=	net security
 MASTER_SITES=	ftp://ftp.nec.com/pub/socks/socks5/
 
