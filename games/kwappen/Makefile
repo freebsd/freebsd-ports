@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kwappen
-PORTVERSION=	1.1.4
-PORTREVISION=	2
+PORTVERSION=	1.1.5
 CATEGORIES=	games kde
 MASTER_SITES=	http://www.lcs-chemie.de/
 
@@ -15,7 +14,6 @@ COMMENT=	KDE board game
 
 USE_KDELIBS_VER=	3
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GMAKE=		yes
 
 .include <bsd.port.mk>
