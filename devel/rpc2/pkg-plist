@@ -10,11 +10,11 @@ include/rpc2/se.h
 include/rpc2/sftp.h
 lib/libfail.a
 lib/libfail.so
-lib/libfail.so.1
+lib/libfail.so.4
 lib/librpc2.a
 lib/librpc2.so
-lib/librpc2.so.2
+lib/librpc2.so.4
 lib/libse.a
 lib/libse.so
-lib/libse.so.1
+lib/libse.so.4
 @dirrm include/rpc2
