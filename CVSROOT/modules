@@ -1612,6 +1612,7 @@ flowscan	ports/net/flowscan
 fltk		ports/x11-toolkits/fltk
 fluctuate	ports/biology/fluctuate
 fluxbox		ports/x11-wm/fluxbox
+fluxbox-devel	ports/x11-wm/fluxbox-devel
 fluxconf	ports/x11-wm/fluxconf
 flvw		ports/x11-toolkits/flvw
 flwm		ports/x11-wm/flwm
