@@ -16,6 +16,8 @@ COMMENT=	2nd generation incarnation of the CD Index - audio metadata
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
+CONFLICTS=	musicbrainz-*
+
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_REINPLACE=	yes

@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	2nd generation incarnation of the CD Index - audio metadata
 
+CONFLICTS=	libmusicbrainz-*
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
