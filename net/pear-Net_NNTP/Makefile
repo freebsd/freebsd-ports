@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_NNTP
-PORTVERSION=	0.9.3
+PORTVERSION=	0.10.0
 CATEGORIES=	net news www pear
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
