@@ -4708,6 +4708,7 @@ libghthash	ports/devel/libghthash
 libghttp	ports/www/libghttp
 libgii		ports/devel/libgii
 libgksu		ports/sysutils/libgksu
+libgksuui	ports/sysutils/libgksuui
 libglade	ports/devel/libglade
 libglade-java	ports/devel/libglade-java
 libglade2	ports/devel/libglade2
