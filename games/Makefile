@@ -216,6 +216,7 @@
     SUBDIR += lexter
     SUBDIR += lgeneral
     SUBDIR += lgeneral-data
+    SUBDIR += libggz
     SUBDIR += libshhcards
     SUBDIR += lincity
     SUBDIR += linux-nwserver
