@@ -1,0 +1,14 @@
+#!/bin/sh
+
+GSVER=6.01
+GSDIR=${PKG_PREFIX}/share/ghostscript
+FONTMAP=${GSDIR}/${GSVER}/lib/Fontmap.GS
+FONTMAPTMP=${FONTMAP}.tmp
+
+# Run just once.
+if [ "x$2" != "xDEINSTALL" ]; then
+  exit 0
+fi
+
+sed -e "/^\/MOE.*/d" ${FONTMAP} > ${FONTMAPTMP}
+mv -f ${FONTMAPTMP} ${FONTMAP}

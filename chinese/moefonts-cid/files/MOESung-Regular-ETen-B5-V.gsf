@@ -1,0 +1,16 @@
+/MOESung-Regular-ETen-B5-V
+/MOESung-Regular (MOESung-Regular)
+/ETen-B5-V (CMap/ETen-B5-V)
+
+1 index /CMap resourcestatus
+{pop pop pop}
+{runlibfile} ifelse
+/CMap findresource
+
+3 1 roll
+1 index /CIDFont resourcestatus
+{pop pop pop}
+{runlibfile} ifelse
+/CIDFont findresource
+
+[ exch ] composefont pop

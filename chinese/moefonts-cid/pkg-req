@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ "$2" != "INSTALL" ]; then
+  exit 0
+fi
+
+if [ ! -f /usr/local/share/ghostscript/6.01/lib/Fontmap.GS ]; then
+  echo ===
+  echo You do not have Ghostscript 6.01 installed!
+  echo
+  echo This port is specifically for version 6.01 or later, for
+  echo it fixes many bugs wrt. CIDFonts.
+  echo ===
+fi
