@@ -1,0 +1,14 @@
+--- include/structs.h.orig	Sun Jan  5 19:59:46 1997
++++ include/structs.h	Wed Sep 17 14:29:59 1997
+@@ -562,7 +562,11 @@
+   char write_buf[MAX_BUF];
+   char **info;
+   unsigned char infolines,infochars; /* How big the info-array is */
++#if defined(__FreeBSD__)
++  char password[40];
++#else
+   char password[16]; /* 2 (seed) + 11 (crypted) + 1 (EOS) + 2 (safety) = 16 */
++#endif
+ #ifdef SAVE_INTERVAL
+   time_t last_save_time;
+ #endif /* SAVE_INTERVAL */

@@ -1,11 +1,28 @@
---- include/config.h.orig	Mon Jan  6 01:59:44 1997
-+++ include/config.h	Sat Jan 25 12:38:37 1997
-@@ -499,7 +499,7 @@
- /* CF 0.91.6 - SAVE_PLAYER now standard part of game */
+--- include/config.h.orig	Sun Jan  5 19:59:44 1997
++++ include/config.h	Wed Sep 17 15:46:08 1997
+@@ -188,6 +188,7 @@
+  */
+ 
+ /* #define EXPLORE_MODE */
++#define EXPLORE_MODE
+ 
+ /****************************************************************************/
+ /* Patch: NOT_PERMADEATH                Author: Charles Henrich             */
+@@ -286,7 +287,7 @@
+ #ifndef LOGFILE
+ #define LOGFILE "/tmp/cross.log"
+ #endif
+-/*#define NO_ADD*/
++#define NO_ADD
+ /* #define ONE_PLAYER_PR_UID */
+ 
+ /*
+@@ -500,7 +501,7 @@
  /*#define SAVE_PLAYER*/
  
--/* #define SAVE_HOMEDIR */
-+#define SAVE_HOMEDIR
- /* #define LOCK_PLAYER */
+ /* #define SAVE_HOMEDIR */
+-/* #define LOCK_PLAYER */
++#define LOCK_PLAYER
  #define USE_CHECKSUM
  /* #define ENABLE_CHECKSUM */ /* Will be default in distant future versions */
+ 

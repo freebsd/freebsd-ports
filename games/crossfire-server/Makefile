@@ -3,7 +3,7 @@
 # Date created:         So  27 Okt 1996 12:25:55 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.15 1997/05/29 09:40:30 andreas Exp $
+# $Id: Makefile,v 1.16 1997/07/18 05:04:10 asami Exp $
 #
 
 DISTNAME=	crossfire-0.93.0
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ra.pyramid.com/pub/crossfire/ \
 DISTFILES=	${CF_SOURCES} ${CF_DOC} ${CF_MAPS} ${CF_SOUNDS} \
 		${CF_ARCH} ${CF_CLSERV}
 
-MAINTAINER=	andreas@klemm.gtn.com
+MAINTAINER=	andreas@FreeBSD.ORG
 
 BUILD_DEPENDS=	rplay:${PORTSDIR}/audio/rplay
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
@@ -37,7 +37,7 @@ CF_MAPS=	crossfire-0.93.0.maps.tar.gz
 CF_DOC=		crossfire-0.93.0.doc.tar.gz	# crossfire doc ready for use
 CF_SOUNDS=	crossfire-0.92.7.sounds.tar.gz	# no newer sounds available
 .if ${WANT_CF_ARCH} == YES || ${WANT_CF_ARCH} == yes
-CF_ARCH=	crossfire-0.93.0.arch.tar.gz	# only for rebuild of doc
+CF_ARCH=	crossfire-0.93.5.arch.tar.gz	# only for rebuild of doc
 .endif
 #CF_CLSERV=	eutl.tar.gz			# only for client/server
 CFDIR=		${PREFIX}/crossfire	# crossfire base directory
@@ -57,8 +57,6 @@ post-install:
 	@${CP} -r ${WRKDIR}/crossfire-0.93.0-doc/* ${CFDIR}/doc
 	@touch ${PREFIX}/crossfire/lib/bookarch
 	@chmod 664 ${PREFIX}/crossfire/lib/bookarch
-	@touch ${PREFIX}/crossfire/lib/shutdown
-	@chmod 664 ${PREFIX}/crossfire/lib/shutdown
 	@touch ${PREFIX}/crossfire/lib/forbid
 	@chmod 664 ${PREFIX}/crossfire/lib/forbid
 	@touch ${PREFIX}/crossfire/lib/players/.keep_me  
@@ -67,20 +65,5 @@ post-install:
 	@chmod 0664 ${PREFIX}/crossfire/lib/highscore
 	@/usr/sbin/chown games.games ${PREFIX}/bin/crossfire
 	@chmod 6555 ${PREFIX}/bin/crossfire
-	@echo ""
-	@echo "======================================================"
-	@echo "===== ATTENTION BEFORE PLAYING ======================="
-	@echo "======================================================"
-	@echo "Create a players directory before playing crossfire,  "
-	@echo "otherwise crossfire cannot save your player character !"
-	@echo "Type the following command as user in your login directory:"
-	@echo ""
-	@echo "        $ mkdir players"
-	@echo ""
-	@echo "Read the docu, which is available in Postscript and HTML"
-	@echo "format in the directory ${CFDIR}/doc"
-	@echo "It is a good idea to install a WWW Browser like Mosaic"
-	@echo "and to set some bookmarks that point to the different"
-	@echo "files."
 
 .include <bsd.port.mk>
