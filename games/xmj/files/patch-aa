@@ -1,0 +1,8 @@
+--- Imakefile.orig	Fri May  5 23:46:04 1989
++++ Imakefile	Wed Nov  1 10:31:43 2000
+@@ -4,4 +4,4 @@
+            OBJS = bicons.o cicons.o cicons1.o cicons2.o cicons3.o cicons4.o \
+ 		  cicons5.o event.o icons.o mj.o nicons.o
+ 
+-ComplexProgramTarget(xmj)
++ComplexProgramTargetNoMan(xmj)
