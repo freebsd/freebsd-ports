@@ -222,6 +222,7 @@ libdata/pkgconfig/gdk-x11-2.0.pc
 libdata/pkgconfig/gtk+-2.0.pc
 libdata/pkgconfig/gtk+-x11-2.0.pc
 share/aclocal/gtk-2.0.m4
+share/locale/am/LC_MESSAGES/gtk20.mo
 share/locale/ar/LC_MESSAGES/gtk20.mo
 share/locale/az/LC_MESSAGES/gtk20.mo
 share/locale/be/LC_MESSAGES/gtk20.mo

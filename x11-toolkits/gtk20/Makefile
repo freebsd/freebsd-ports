@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION=	2.0.8
-PORTREVISION=	1
+PORTVERSION=	2.0.9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/2.0,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
@@ -38,7 +37,8 @@ USE_GNOMENG=	yes
 USE_GNOME=	gnomehack
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--enable-static
+CONFIGURE_ARGS=	--enable-static \
+		--with-xinput=xfree
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 			  -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -46,10 +46,6 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 PLIST_SUB=	GTK_VERSION="2.0.0"
 
 MAN1=		gdk-pixbuf-csource.1
-
-.if defined(WITH_XINPUT)
-CONFIGURE_ARGS+=	--with-xinput=xfree
-.endif
 
 post-extract:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${GREP} -l lgmodule | \
