@@ -1,7 +1,7 @@
 #!/bin/sh -
 #
 #	pre-configure script for Elm port to FreeBSD 2.0
-#	$Id: pre-configure,v 1.15 1996/12/22 06:53:00 obrien Exp $
+#	$Id: pre-configure,v 1.16 1996/12/23 06:08:21 ache Exp $
 
 PortsDir=$PORTSDIR
   CurDir=$CURDIR
@@ -20,12 +20,11 @@ cppstdin='/usr/bin/cpp'
 cppminus=''
 d_getopt='define'
 d_memcpy='define'
-d_mkdir='define'
 d_rename='define'
 d_symlink='define'
 d_whoami='undef'
-d_poll='undef'
-d_inttypes='undef'
+d_poll='define'
+d_inttypes='define'
 d_nointtypes='undef'
 n='-n'
 c=''
@@ -62,7 +61,6 @@ mv='/bin/mv'
 cp='/bin/cp'
 tail=''
 tr='/usr/bin/tr'
-mkdir=''
 sort=''
 uniq=''
 grep='/usr/bin/grep'
@@ -78,6 +76,7 @@ ispell
 line
 lint
 lp
+locale
 lpr
 mailx
 metamail
@@ -148,7 +147,7 @@ compress='/usr/bin/compress'
 execmail=''
 libswanted='intl nls'
 noaddlib='yes'
-c_date='Mon Dec 23 07:44:59 MSK 1996'
+c_date='Wed Apr  7 21:35:37 MSD 1999'
 d_ascii='undef'
 d_broke_ctype='undef'
 d_calendar='define'
@@ -163,7 +162,7 @@ d_domname='define'
 d_usegetdom='undef'
 d_errlst='define'
 d_flock='define'
-d_dotlock='undef'
+d_dotlock='define'
 d_fcntlock='undef'
 has_flock='define'
 has_fcntl='define'
@@ -185,7 +184,6 @@ d_msgcat='define'
 d_usenls='undef'
 d_mallocvoid='define'
 d_mboxedit='define'
-d_mime='define'
 metamail_path='none'
 defencoding=''
 d_8bitmime='define'
@@ -231,7 +229,6 @@ tempnamo=''
 tempnamc=''
 d_termio='undef'
 d_termios='define'
-d_useembed='define'
 d_utimbuf='define'
 d_vfork='define'
 defbatsub='no subject (file transmission)'
@@ -251,7 +248,7 @@ i_unistd='define'
 i_utime='define'
 i_sysutime='undef'
 lib="${PREFIX}/lib"
-libc='/usr/lib/libc.so.3.0'
+libc='/usr/lib/libc.so'
 linepr='/usr/bin/lp'
 maildir='/var/mail'
 mailer='/usr/sbin/sendmail'
@@ -283,7 +280,7 @@ nametype='bsd'
 d_passnames='define'
 d_berknames='define'
 d_usgnames='undef'
-passcat='cat /etc/passwd'
+# passcat='cat /etc/passwd'
 rmttape='unknown-remote-tape-unit'
 roff='/usr/bin/troff'
 roffopts=''
@@ -298,9 +295,11 @@ xencf=''
 xenlf=''
 d_xenix='undef'
 d_bsd='define'
+locale='/usr/share/locale'
 d_pgp='define'
 pgp="${PREFIX}/bin/pgp"
 pgp_path="${PREFIX}/bin/pgp"
+special_path='/usr/local/bin'
 d_remailer='define'
 finger='/usr/bin/finger'
 finger_path='/usr/bin/finger'
