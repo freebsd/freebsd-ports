@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cvsync
-PORTVERSION=	0.21.1
+PORTVERSION=	0.23.3
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://www.daemon-systems.org/cvsync/ \
+MASTER_SITES=	ftp://ftp.daemon-systems.org/pub/cvsync/ \
 		ftp://ftp.allbsd.org/pub/cvsync/
 
 MAINTAINER=	hrs@FreeBSD.org
