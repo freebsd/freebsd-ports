@@ -57,7 +57,7 @@ CONFIGURE_ODBC=		--with-odbc
 # Honors JAVA_HOME if you have it set, and don't want the dependency.
 .if defined(WITH_JDBC)
 JAVA_HOME?=	${LOCALBASE}/jdk1.1.8
-BUILD_DEPENDS=	${JAVA_HOME}/bin/javac:${PORTSDIR}/java/jdk
+BUILD_DEPENDS+=	${JAVA_HOME}/bin/javac:${PORTSDIR}/java/jdk
 SCRIPTS_ENV+=	JAVA_HOME=${JAVA_HOME}
 .endif
 
