@@ -19,6 +19,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
+ONLY_FOR_ARCHS=	i386
+
 PLIST_FILES=	lib/xmms/Input/libwma.so
 
 .include <bsd.port.mk>
