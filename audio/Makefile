@@ -93,10 +93,10 @@
     SUBDIR += wmcdplay
     SUBDIR += wmmixer
     SUBDIR += wmmp3
-    SUBDIR += wmsound
     SUBDIR += wmtune
     SUBDIR += workman
     SUBDIR += wsoundprefs
+    SUBDIR += wsoundserver
     SUBDIR += x11amp
     SUBDIR += xamp
     SUBDIR += xcd
