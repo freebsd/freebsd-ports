@@ -24,6 +24,10 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 502000
+BROKEN=		"Does not compile"
+.endif
+
 .if ${OSVERSION} >= 500000
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-*
 
