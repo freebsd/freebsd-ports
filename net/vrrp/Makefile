@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	vrrpd
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	net
-
-BROKEN=	"Do not build until MAINTAINER fixes licensing issues"
 
 MASTER_SITES=	ftp://ftp.vrrp.net/pub/vrrpd/ \
 		ftp://ftp.tecc.co.uk/pub/vrrpd/
 
 MAINTAINER=	minosh@engineer.com
 
+.if	!defined(NOPORTDOCS)
+post-install:
+		${MKDIR} ${PREFIX}/share/doc/vrrp
+		${INSTALL_DATA} ${WRKSRC}/FAQ ${WRKSRC}/doc/* ${PREFIX}/share/doc/vrrp
+.endif
 .include <bsd.port.mk>
