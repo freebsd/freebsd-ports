@@ -1,0 +1,4 @@
+bin/esmtp
+etc/esmtprc.sample
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

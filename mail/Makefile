@@ -51,6 +51,7 @@
     SUBDIR += emh-emacs20
     SUBDIR += emh-xemacs21-mule
     SUBDIR += emil
+    SUBDIR += esmtp
     SUBDIR += evolution
     SUBDIR += exact
     SUBDIR += exim
