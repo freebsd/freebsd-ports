@@ -117,6 +117,7 @@ OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 
 .if defined(WITH_CAIRO_RENDER)
 LIB_DEPENDS+=		svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
+BUILD_DEPENDS+=		${LOCALBASE}/include/cairo/cairo-xlib.h:${PORTSDIR}/graphics/cairo
 
 CONFIGURE_ARGS+=	--enable-svg-renderer-cairo \
 			--disable-svg-renderer-libart
