@@ -3,48 +3,6 @@ $FreeBSD$
 
 --- configure.orig	Thu Jan 10 12:57:53 2002
 +++ configure	Thu Jan 10 12:59:14 2002
-@@ -8560,7 +8560,7 @@
- #line 8561 "configure"
- #include "confdefs.h"
- #include <stdlib.h>
--#include <iconv.h>
-+#include <giconv.h>
- int main() {
- iconv_t cd = iconv_open("","");
-        iconv(cd,NULL,NULL,NULL,NULL);
-@@ -8577,12 +8577,12 @@
- rm -f conftest*
-     if test "$am_cv_func_iconv" != yes; then
-       am_save_LIBS="$LIBS"
--      LIBS="$LIBS -liconv"
-+      LIBS="$LIBS -lgiconv"
-       cat > conftest.$ac_ext <<EOF
- #line 8583 "configure"
- #include "confdefs.h"
- #include <stdlib.h>
--#include <iconv.h>
-+#include <giconv.h>
- int main() {
- iconv_t cd = iconv_open("","");
-          iconv(cd,NULL,NULL,NULL,NULL);
-@@ -8620,7 +8620,7 @@
- #include "confdefs.h"
- 
- #include <stdlib.h>
--#include <iconv.h>
-+#include <giconv.h>
- extern
- #ifdef __cplusplus
- "C"
-@@ -8658,7 +8658,7 @@
-   fi
-   LIBICONV=
-   if test "$am_cv_lib_iconv" = yes; then
--    LIBICONV="-liconv"
-+    LIBICONV="-lgiconv"
-   fi
-   
- 
 @@ -9608,7 +9608,7 @@
    withval="$with_help_prefix"
    GNC_HELPDIR="$with_help_prefix/gnome/help/gnucash"
