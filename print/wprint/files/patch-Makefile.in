@@ -1,0 +1,13 @@
+--- etc/Makefile.in.orig	Tue Oct 15 17:09:45 2002
++++ etc/Makefile.in	Tue Oct 15 17:12:13 2002
+@@ -165,8 +165,8 @@
+ 
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(DESTDIR)/etc
+-	$(INSTALL_DATA) $(srcdir)/wprint.conf $(DESTDIR)/etc/wprint.conf
++	$(mkinstalldirs) $(sysconfdir)
++	$(INSTALL_DATA) $(srcdir)/wprint.conf $(sysconfdir)
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

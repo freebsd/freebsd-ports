@@ -1,0 +1,12 @@
+bin/wprint
+etc/wprint.conf
+share/wprint/COURR_SE.TTF
+share/wprint/COURR_SE.TXT
+share/wprint/README.test
+share/wprint/netscape.ps
+share/wprint/news.eo.gif
+share/wprint/search.eo.gif
+share/wprint/test.html
+share/wprint/test.sh
+share/wprint/wprint-test.conf
+@dirrm share/wprint

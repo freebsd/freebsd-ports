@@ -182,6 +182,7 @@
     SUBDIR += txtbdf2ps
     SUBDIR += virtualpaper
     SUBDIR += wmlpq
+    SUBDIR += wprint
     SUBDIR += xdvi
     SUBDIR += xdvik
     SUBDIR += xmbibtex

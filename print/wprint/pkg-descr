@@ -1,0 +1,7 @@
+World Print - Mozilla/HtmlDoc/Netscape Postscript Filter
+
+Wprint is a filter for Mozilla (Galeon, etc.), Htmldoc, and Netscape
+PostScript output that uses TrueType fonts to allow the printing of pages
+written in Unicode, Big5, KOI8, SJIS, the ISO- 8859* charsets, and others.
+
+WWW: http://www.esperanto.org.uy/programoj/angle/wprint.html
