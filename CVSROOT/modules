@@ -2729,6 +2729,7 @@ hamlib		ports/comms/hamlib
 hammerhead	ports/sysutils/hammerhead
 happydoc	ports/devel/happydoc
 haproxy		ports/net/haproxy
+hapy		ports/devel/hapy
 harvest		ports/www/harvest
 hashish		ports/security/hashish
 hawk		ports/net/hawk
