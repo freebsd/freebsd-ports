@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	popa3d
-PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.5.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.openwall.com/popa3d/ \
 		ftp://ftp.openwall.com/pub/projects/popa3d/ \
@@ -24,6 +23,9 @@ PLIST=		${WRKDIR}/.PLIST.more
 CFLAGS+=	-DPREFIX=${PREFIX}
 .if defined(SMTP_AFTER_POP3)
 EXTRA_PATCHES+=	${FILESDIR}/pop-before-sendmail.patch
+PLIST_SUB+=	SMTP_AFTER_POP3=""
+.else
+PLIST_SUB+=	SMTP_AFTER_POP3="@comment "
 .endif
 
 pre-configure:
@@ -33,7 +35,6 @@ pre-configure:
 	@${ECHO_CMD} "@dirrm empty" >>${PLIST}
 .endif
 .if defined(SMTP_AFTER_POP3)
-	@${ECHO_CMD} "%%PORTDOCS%%share/doc/popa3d/POPAUTH" >>${PLIST}
 	@${ECHO_CMD} "@cwd ${CFDIR}" >>${PLIST}
 	@${ECHO_CMD} "hack/popauth.m4" >>${PLIST}
 .endif
