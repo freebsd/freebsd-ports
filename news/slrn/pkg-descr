@@ -4,4 +4,4 @@ nice interface.
 It now supports SSL (compile with -DWITH_SSL) and IPv6 (but that part is still
 under development)
 
-http://slrn.sourceforge.net/
+WWW: http://slrn.sourceforge.net/
