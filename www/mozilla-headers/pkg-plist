@@ -7,9 +7,6 @@ include/mozilla/ProxyJNI.h
 include/mozilla/VerReg.h
 include/mozilla/bool.h
 include/mozilla/cdefs.h
-include/mozilla/cmtclist.h
-include/mozilla/cmtcmn.h
-include/mozilla/cmtjs.h
 include/mozilla/comi18n.h
 include/mozilla/csid.h
 include/mozilla/domstubs.h
@@ -99,7 +96,6 @@ include/mozilla/libmng_types.h
 include/mozilla/mcom_db.h
 include/mozilla/mdb.h
 include/mozilla/merrors.h
-include/mozilla/messages.h
 include/mozilla/mimecont.h
 include/mozilla/mimecth.h
 include/mozilla/mimehdrs.h
@@ -120,9 +116,7 @@ include/mozilla/net.h
 include/mozilla/netCore.h
 include/mozilla/netscape_javascript_JSException.h
 include/mozilla/netscape_javascript_JSObject.h
-include/mozilla/newproto.h
 include/mozilla/ni_pixmp.h
-include/mozilla/nlslayer.h
 include/mozilla/nntpCore.h
 include/mozilla/npapi.h
 include/mozilla/npupp.h
@@ -896,9 +890,6 @@ include/mozilla/nsIObserverList.h
 include/mozilla/nsIObserverService.h
 include/mozilla/nsIOrderIdFormater.h
 include/mozilla/nsIOutputStream.h
-include/mozilla/nsIPSMComponent.h
-include/mozilla/nsIPSMSocketInfo.h
-include/mozilla/nsIPSMUIHandler.h
 include/mozilla/nsIPageSequenceFrame.h
 include/mozilla/nsIParser.h
 include/mozilla/nsIParserFilter.h
@@ -1404,7 +1395,6 @@ include/mozilla/nsPIWindowRoot.h
 include/mozilla/nsPIWindowWatcher.h
 include/mozilla/nsPIXPIManagerCallbacks.h
 include/mozilla/nsPIXPIStubHook.h
-include/mozilla/nsPSMShimLayer.h
 include/mozilla/nsParseMailbox.h
 include/mozilla/nsParser.h
 include/mozilla/nsParserCIID.h
@@ -1568,11 +1558,6 @@ include/mozilla/prmon.h
 include/mozilla/prmwait.h
 include/mozilla/prnetdb.h
 include/mozilla/prolock.h
-include/mozilla/protocol.h
-include/mozilla/protocolf.h
-include/mozilla/protocolnspr20.h
-include/mozilla/protocolport.h
-include/mozilla/protocolshr.h
 include/mozilla/prpdce.h
 include/mozilla/prprf.h
 include/mozilla/prproces.h
@@ -1589,8 +1574,6 @@ include/mozilla/prtypes.h
 include/mozilla/prvrsion.h
 include/mozilla/prwin16.h
 include/mozilla/rdf.h
-include/mozilla/rsrcids.h
-include/mozilla/ssmdefs.h
 include/mozilla/stopwatch.h
 include/mozilla/sysmacros_md.h
 include/mozilla/tree.h
