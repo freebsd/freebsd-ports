@@ -30,6 +30,7 @@
     SUBDIR += blender
     SUBDIR += blender-devel
     SUBDIR += bmeps
+    SUBDIR += bugle
     SUBDIR += cadubi
     SUBDIR += camediaplay
     SUBDIR += chbg
