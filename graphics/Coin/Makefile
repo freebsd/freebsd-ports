@@ -7,7 +7,7 @@
 
 PORTNAME=	Coin
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.coin3d.org/pub/coin/src/
 
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ 3D graphics library based on the Open Inventor 2.1 API
 
 BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
-LIB_DEPENDS=	simage.22:${PORTSDIR}/graphics/simage \
+LIB_DEPENDS=	simage.26:${PORTSDIR}/graphics/simage \
 		openal.0:${PORTSDIR}/audio/openal
 
 USE_REINPLACE=	yes
