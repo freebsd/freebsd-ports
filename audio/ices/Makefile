@@ -27,6 +27,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
+USE_BZIP2=	yes
 
 WRKSRC=		${WRKDIR}/ices
 
