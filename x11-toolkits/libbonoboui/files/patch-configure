@@ -8,11 +8,3 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -9285,6 +9286,7 @@
- 		  libbonobo-2.0 >= 2.0.0 \
- 		  libgnome-2.0 >= 1.116.0 \
- 		  bonobo-activation-2.0 >= 1.0.0 \
-+		  libxml-2.0 >= 2.0 \
- 		  gconf-2.0 >= 1.1.9 gtk+-2.0 >= 2.0.2"
- 
-   succeeded=no
