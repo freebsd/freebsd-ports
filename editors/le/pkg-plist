@@ -1,5 +1,4 @@
 bin/le
-share/doc/le/COPYING
 share/doc/le/FEATURES
 share/doc/le/HISTORY
 share/doc/le/NEWS
@@ -12,5 +11,5 @@ share/le/colors-green
 share/le/colors-white
 share/le/le.hlp
 share/le/syntax
-@dirrm share/doc/le
 @dirrm share/le
+@dirrm share/doc/le
