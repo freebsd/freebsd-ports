@@ -6,11 +6,10 @@
 #
 
 PORTNAME=       milter-sender
-PORTVERSION=    0.51
-PORTREVISION=   1
+PORTVERSION=    0.55
 CATEGORIES=     mail
 MASTER_SITES=   http://www.snert.com/Software/download/
-DISTFILES=      libsnert-1.32.tgz milter-sender-${PORTVERSION}.tgz
+DISTFILES=      libsnert-1.33.tgz milter-sender-${PORTVERSION}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=        Real-time sender address verification, based on Milter API
@@ -40,7 +39,7 @@ CFLAGS+=        ${PTHREAD_CFLAGS}
 LDFLAGS+=       ${PTHREAD_LIBS}
 
 DOCS= CHANGES.TXT index.shtml style.css mailto.js \
-      license-body.html LICENSE.TXT milter-sender.mc
+      license-body.html LICENSE.TXT
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+= LDFLAGS="${LDFLAGS}"

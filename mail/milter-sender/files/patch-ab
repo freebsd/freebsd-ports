@@ -1,33 +1,51 @@
---- install.sh.in.orig	Mon Mar  1 12:59:54 2004
-+++ install.sh.in	Sat Mar  6 12:21:24 2004
-@@ -17,21 +17,23 @@
- chown ${USER} ${STATEDIR}
- chgrp ${GROUP} ${STATEDIR}
+--- install.sh.in.orig	Thu Apr  1 00:44:46 2004
++++ install.sh.in	Fri Jun  4 06:38:29 2004
+@@ -13,38 +13,22 @@
+ MAILDIR="@with_sendmail@"
+ MILTER_CF="@milter_cf@"
+ 
+-if [ ! -d ${STATEDIR} ]; then
+-	mkdir -p ${STATEDIR}
+-fi
+-chown ${USER} ${STATEDIR}
+-chgrp ${GROUP} ${STATEDIR}
++install -d -o ${USER} -g ${GROUP} -m 755 ${STATEDIR}
+ 
+ RC="${STARTUP_DIR}/${MILTER}${STARTUP_EXT}"
+-if [ ! -f $RC ]; then
+-	cp ${MILTER}.sh $RC
+-	chmod 540 $RC
++${BSD_INSTALL_SCRIPT} ${MILTER}.sh $RC.sample
++[ ! -f $RC ] && cp $RC.sample $RC
+ 
+-	case `uname -s` in
+-	Linux*)
+-		chkconfig --add ${MILTER}
+-		;;
+-	SunOS*)
+-		# Does SunOS have a chkconfig like tool?	
+-		ln -s $RC /etc/rc2.d/S70${MILTER}
+-		ln -s $RC /etc/rcS.d/K30${MILTER}
+-		;;
+-	esac
+-fi
++${BSD_INSTALL_PROGRAM} ${MILTER} ${SBINDIR}
  
 -cp -f ${MILTER} ${SBINDIR}
--cp -f ${MILTER}.mc ${MAILDIR}/${MILTER}.mc.sample
-+install -C -s ${MILTER} ${SBINDIR}
-+install -C ${MILTER}.mc ${MAILDIR}/${MILTER}.mc.sample
+-chmod 550 ${SBINDIR}/${MILTER}
++${BSD_INSTALL_DATA} ${MILTER}.mc ${MAILDIR}/${MILTER}.mc.sample
 +[ ! -f ${MAILDIR}/${MILTER}.mc ] && cp ${MAILDIR}/${MILTER}.mc.sample ${MAILDIR}/${MILTER}.mc
  
--./milter-sender help=1 >${MILTER_CF}.sample
+-cp -f ${MILTER}.mc ${MAILDIR}/${MILTER}.mc.sample
 +./milter-sender help=1 | sed 's|^MilterSocket=.*|MilterSocket=unix:/var/spool/milter-sender/socket|' >${MILTER_CF}.sample
 +[ ! -f ${MILTER_CF} ] && cp ${MILTER_CF}.sample ${MILTER_CF}
  
+-./milter-sender help=1 >${MILTER_CF}.sample
+-
 -chmod g+r ${MAILDIR} ${MAILDIR}/access.* ${MAILDIR}/aliases.* ${MILTER_CF}.sample*
 -chgrp ${GROUP} ${MAILDIR} ${MAILDIR}/access.* ${MAILDIR}/aliases.* ${MILTER_CF}.sample*
-+chmod g+r ${MAILDIR}/access.* ${MAILDIR}/aliases.* ${MILTER_CF}.sample*
-+chgrp ${GROUP} ${MAILDIR}/access.* ${MAILDIR}/aliases.* ${MILTER_CF}.sample*
++chgrp ${GROUP} ${MAILDIR}/access.db ${MAILDIR}/aliases.db ${MILTER_CF} ${MILTER_CF}.sample
++chmod g+r ${MAILDIR}/access.db ${MAILDIR}/aliases.db ${MILTER_CF} ${MILTER_CF}.sample
  
- case `uname -s` in
- *BSD*)
- 	RC="${prefix}/etc/rc.d/${MILTER}.sh"
--	if [ ! -f $RC ]; then
-+#        if [ ! -f $RC ]; then
- 		cp ${MILTER}.sh $RC
- 		chmod 540 $RC
--	fi
-+#        fi
- 	;;
- Linux*)
- 	if [ -d '/etc/rc.d/init.d' ]; then
+ echo '***************************************************************'
+ echo
