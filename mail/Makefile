@@ -50,6 +50,7 @@
     SUBDIR += ecartis
     SUBDIR += elm
     SUBDIR += elm+ME
+    SUBDIR += elmo
     SUBDIR += emh
     SUBDIR += emh-emacs20
     SUBDIR += emh-xemacs21-mule
