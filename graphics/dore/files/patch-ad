@@ -1,0 +1,148 @@
+*** mk.stdx.orig	Thu Jan 12 14:14:12 1995
+--- mk.stdx	Sat Feb 18 20:07:09 1995
+***************
+*** 24,33 ****
+  #
+  
+  # DORE_LOC is the full pathname of directory containing the dore directory
+! DORE_LOC=
+  
+  # DORE_OBJTYPE is the machine object type
+! DORE_OBJTYPE=
+  
+  # DORE_LIB_NAME specifies the name of the library to be created
+  DORE_LIB_NAME=libdore.a
+--- 24,33 ----
+  #
+  
+  # DORE_LOC is the full pathname of directory containing the dore directory
+! DORE_LOC= ${PREFIX}/lib
+  
+  # DORE_OBJTYPE is the machine object type
+! DORE_OBJTYPE= i386
+  
+  # DORE_LIB_NAME specifies the name of the library to be created
+  DORE_LIB_NAME=libdore.a
+***************
+*** 38,51 ****
+  
+  # Link options when combining .o's
+  LD=ld
+! LDFLAGS=-r -s
+  
+  # Archive options
+  AR=ar
+! ARFLAGS=q
+  
+  # DORE_LIBTOC specifies how to create a table of contents for a library 
+! DORE_LIBTOC=ar ts
+  
+  # Name of system module from doresys_config to be included in build
+  DORE_SYSTEM=stdx
+--- 38,51 ----
+  
+  # Link options when combining .o's
+  LD=ld
+! LDFLAGS=-r
+  
+  # Archive options
+  AR=ar
+! ARFLAGS=qc
+  
+  # DORE_LIBTOC specifies how to create a table of contents for a library 
+! DORE_LIBTOC=ranlib
+  
+  # Name of system module from doresys_config to be included in build
+  DORE_SYSTEM=stdx
+***************
+*** 70,86 ****
+  DORE_FONTTYPE=default_type
+  
+  # Install directory for fonts and error message file used by Dore
+! DORE_DATADIR=/usr/dore/data
+  
+  # 
+  # Installing Dore
+  #
+  
+  # Install directory for Dore library
+! DORE_LIBDIR=/usr/lib
+  
+  # Install directory for user include files
+! DORE_INCDIR=/usr/include
+  
+  ######################################################################
+  SHELL=/bin/sh
+--- 70,86 ----
+  DORE_FONTTYPE=default_type
+  
+  # Install directory for fonts and error message file used by Dore
+! DORE_DATADIR=${PREFIX}/lib/dore/data
+  
+  # 
+  # Installing Dore
+  #
+  
+  # Install directory for Dore library
+! DORE_LIBDIR=${PREFIX}/lib
+  
+  # Install directory for user include files
+! DORE_INCDIR=${PREFIX}/include
+  
+  ######################################################################
+  SHELL=/bin/sh
+***************
+*** 90,96 ****
+  
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  
+! dore:	compile library
+  
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  
+--- 90,103 ----
+  
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  
+! all: dore
+! 
+! dore:	pre-make compile library data prep-for-examples
+! 
+! pre-make:
+! 	mkdir -p ${DORE_DATADIR}
+! 	mkdir -p ${DORE_LIBDIR}
+! 	mkdir -p ${DORE_INCDIR}
+  
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  
+***************
+*** 170,175 ****
+--- 177,184 ----
+  
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  
++ install: install_dore install_data install_example
++ 
+  install_dore: check_doreloc  
+  	@ echo "Installing Dore' library and include files..."
+  	@ if [ -n "$(DORE_LIBDIR)"  ]; then			\
+***************
+*** 331,336 ****
+--- 340,356 ----
+  
+  
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
++ 
++ prep-for-examples:
++ 	@( cd examples/generic; ${MAKE} )
++ 	@( cd examples/util; ${MAKE} )
++ 	@( cd examples/programs/simple; ${MAKE} )
++ 
++ install_example:
++ 	@install -c -m 755 -s examples/programs/simple/render ${PREFIX}/bin/dore_example
++ 	@echo "Ok, look at ${PREFIX}/bin/dore_example for an example of"
++ 	@echo "Dore in action.  You may also wish to look in the work/dore/examples"
++ 	@echo "directory for more dore examples."
+  
+  FORCE_IT:
+  

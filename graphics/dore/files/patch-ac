@@ -1,0 +1,19 @@
+*** src/device_config/stdx11/dcm/makefile.orig	Mon Feb 13 00:14:44 1995
+--- src/device_config/stdx11/dcm/makefile	Mon Feb 13 00:14:53 1995
+***************
+*** 15,21 ****
+  # EXPRESS OR IMPLIED.
+  
+  SHELL = /bin/sh
+! CCCOM = $(CC) $(CFLAGS) -DERRCHK -DXLIB_ILLEGAL_ACCESS -I${DORE_LOC}/dore/include -I${ROOT}/usr/local/X11/include -I${ROOT}/usr/include
+  LDCOM = $(LD) $(LDFLAGS)
+  ARCOM = $(AR) $(ARFLAGS)
+  SRC_PATH = $(DORE_LOC)/dore/src/device_config/stdx11/dcm
+--- 15,21 ----
+  # EXPRESS OR IMPLIED.
+  
+  SHELL = /bin/sh
+! CCCOM = $(CC) $(CFLAGS) -DERRCHK -DXLIB_ILLEGAL_ACCESS -I${DORE_LOC}/dore/include -I${ROOT}/usr/local/X11 -I${ROOT}/usr/include
+  LDCOM = $(LD) $(LDFLAGS)
+  ARCOM = $(AR) $(ARFLAGS)
+  SRC_PATH = $(DORE_LOC)/dore/src/device_config/stdx11/dcm

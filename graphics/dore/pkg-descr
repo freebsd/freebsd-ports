@@ -1,0 +1,13 @@
+Dore is a powerful three-dimensional graphics library that includes such
+features as:
+
+       -   a choice of rendering styles, from dynamic to photorealistic
+       -   advanced  graphics  features including shadows, transparency
+	   and reflections
+       -   ease of use
+       -   extendability
+       -   portability, platform independence
+       -   X11 Window support
+
+See the Docs subdirectory of the unpacked port (make extract; cd work) for
+more information.
