@@ -1,7 +1,7 @@
+bin/gnunet-check
 bin/gnunet-download
 bin/gnunet-gtk
 bin/gnunet-insert
-bin/gnunet-insert-multi
 bin/gnunet-search
 bin/gnunet-stats
 bin/gnunetd
