@@ -1400,6 +1400,7 @@ lib/%%PYTHON_VERSION%%/test/data/msg_19.txt
 lib/%%PYTHON_VERSION%%/test/data/msg_20.txt
 lib/%%PYTHON_VERSION%%/test/data/msg_21.txt
 lib/%%PYTHON_VERSION%%/test/data/msg_22.txt
+lib/%%PYTHON_VERSION%%/test/data/msg_23.txt
 lib/%%PYTHON_VERSION%%/test/double_const.py
 lib/%%PYTHON_VERSION%%/test/double_const.pyc
 lib/%%PYTHON_VERSION%%/test/double_const.pyo
@@ -1827,6 +1828,9 @@ lib/%%PYTHON_VERSION%%/test/test_mmap.pyo
 lib/%%PYTHON_VERSION%%/test/test_mutants.py
 lib/%%PYTHON_VERSION%%/test/test_mutants.pyc
 lib/%%PYTHON_VERSION%%/test/test_mutants.pyo
+lib/%%PYTHON_VERSION%%/test/test_netrc.py
+lib/%%PYTHON_VERSION%%/test/test_netrc.pyc
+lib/%%PYTHON_VERSION%%/test/test_netrc.pyo
 lib/%%PYTHON_VERSION%%/test/test_new.py
 lib/%%PYTHON_VERSION%%/test/test_new.pyc
 lib/%%PYTHON_VERSION%%/test/test_new.pyo
@@ -2232,10 +2236,6 @@ share/emacs/site-lisp/python-mode.el
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/embed/demo.c
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/embed/importexc.c
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/embed/loop.c
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/extend/README
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/extend/make_clean
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/extend/make_shared
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/extend/make_static
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/imputil/importers.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/md5test/README
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/md5test/foo
@@ -2560,7 +2560,6 @@ share/emacs/site-lisp/python-mode.el
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/metaclasses
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/md5test
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/imputil
-%%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/extend
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/embed
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/curses
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/comparisons
