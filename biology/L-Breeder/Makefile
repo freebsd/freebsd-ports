@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dyeske@yahoo.com
 
-LIB_DEPENDS=	wx_gtk_gl.2:${PORTSDIR}/x11-toolkits/wxgtk
+LIB_DEPENDS=	wx_gtk-2.2_gl.2:${PORTSDIR}/x11-toolkits/wxgtk
 
 WRKSRC=		${WRKDIR}/LBreeder/LBreeder
 PATCH_WRKSRC=	${WRKDIR}/LBreeder
