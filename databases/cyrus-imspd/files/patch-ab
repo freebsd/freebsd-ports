@@ -5,7 +5,7 @@
  #define MAX_BUF 4096
  
 -#include <sasl.h>
-+#include <sasl/sasl.h>
++#include <sasl1/sasl.h>
  
  /* a file buffer structure
   */

@@ -1,12 +1,12 @@
 @unexec if [ -f /var/run/pwcheck.pid ] ; then %D/etc/rc.d/pwcheck.sh stop ; echo " stopped." ; fi
 etc/rc.d/pwcheck.sh
-include/sasl/hmac-md5.h
-include/sasl/md5.h
-include/sasl/md5global.h
-include/sasl/sasl.h
-include/sasl/saslplug.h
-include/sasl/saslutil.h
-@dirrm include/sasl
+include/sasl1/hmac-md5.h
+include/sasl1/md5.h
+include/sasl1/md5global.h
+include/sasl1/sasl.h
+include/sasl1/saslplug.h
+include/sasl1/saslutil.h
+@dirrm include/sasl1
 %%JAVASASL%%lib/libjavasasl.a
 %%JAVASASL%%lib/libjavasasl.so
 %%JAVASASL%%lib/libjavasasl.so.1

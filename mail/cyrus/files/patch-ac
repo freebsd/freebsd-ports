@@ -5,7 +5,7 @@
      LIB_SASL="-L$sasldir/lib -lsasl"
      
 -    SASLFLAGS="-I$sasldir/include"
-+    SASLFLAGS="-I$sasldir/include/sasl"
++    SASLFLAGS="-I$sasldir/include/sasl1"
          
    fi
  

@@ -5,7 +5,7 @@
  #include "dispatch.h"
  
 -#include <sasl.h>
-+#include <sasl/sasl.h>
++#include <sasl1/sasl.h>
  
  #ifndef HAVE_GETDTABLESIZE
  #define getdtablesize() 32

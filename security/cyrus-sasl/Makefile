@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	1.5.27
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		http://www.surf.org.uk/downloads/ \
@@ -51,7 +51,7 @@ AUTOMAKE_ARGS=	--add-missing --include-deps
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-plugindir=${PREFIX}/lib/sasl \
 		--with-dbpath=${PREFIX}/etc/sasldb \
-		--includedir=${PREFIX}/include/sasl \
+		--includedir=${PREFIX}/include/sasl1 \
 		--enable-static \
 		--enable-login \
 		--with-pwcheck=/var/pwcheck \

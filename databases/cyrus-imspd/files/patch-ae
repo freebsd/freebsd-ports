@@ -5,7 +5,7 @@
  #endif
  
 -#include <sasl.h>
-+#include <sasl/sasl.h>
++#include <sasl1/sasl.h>
  
  #ifdef HAVE_SSL
  #include <openssl/lhash.h>

@@ -6,8 +6,8 @@
  #ifdef USE_SASL_AUTH
 -#include <sasl.h>
 -#include <saslutil.h>
-+#include <sasl/sasl.h>
-+#include <sasl/saslutil.h>
++#include <sasl1/sasl.h>
++#include <sasl1/saslutil.h>
  #endif
  
   /*

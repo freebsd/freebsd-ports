@@ -50,7 +50,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(WITH_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
-CPPFLAGS+=	-I${LOCALBASE}/include/sasl
+CPPFLAGS+=	-I${LOCALBASE}/include/sasl1
 .endif
 
 .if defined(WITH_ODBC)
