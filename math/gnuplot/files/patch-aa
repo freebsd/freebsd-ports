@@ -1,49 +1,15 @@
---- configure.orig	Thu Jan 14 14:43:23 1999
-+++ configure	Sun Sep  5 14:04:35 1999
-@@ -3871,8 +3871,8 @@
- fi
+--- term.h.orig Fri Sep 10 17:50:52 1999
++++ term.h      Fri Sep 10 17:52:28 1999
+@@ -270,9 +270,9 @@
  
- if test "$with_gd" != no; then
--  echo $ac_n "checking for gdImageCreate in -lgd""... $ac_c" 1>&6
--echo "configure:3876: checking for gdImageCreate in -lgd" >&5
-+  echo $ac_n "checking for gdImageCreate in -lgd-old""... $ac_c" 1>&6
-+echo "configure:3876: checking for gdImageCreate in -lgd-old" >&5
- gp_save_TERMLIBS="$TERMLIBS"
-   gp_tr_lib=HAVE_LIB`echo gd | sed -e 's/[^a-zA-Z0-9_]/_/g' \
-     -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
-@@ -3880,7 +3880,7 @@
-   yes|no)
-     gp_lib_list="";;
-   *)
--    gp_lib_path=`echo $with_gd | sed -e 's%/libgd\.a$%%'`
-+    gp_lib_path=`echo $with_gd | sed -e 's%/libgd-old\.a$%%'`
-     gp_lib_prefix=`echo $gp_lib_path | sed 's%/lib$%%'`
-     gp_lib_list="$gp_lib_prefix $gp_lib_prefix/lib $gp_lib_path"
- esac
-@@ -3888,7 +3888,7 @@
-   TERMLIBS="`test x${ac_dir} != x && echo -L${ac_dir}` $gp_save_TERMLIBS"
-   ac_lib_var=`echo gd'_'gdImageCreate | sed 'y%./+-%__p_%'`
- ac_save_LIBS="$LIBS"
--LIBS="$TERMLIBS $TERMXLIBS -lgd      $LIBS"
-+LIBS="$TERMLIBS $TERMXLIBS -lgd-old      $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 3894 "configure"
- #include "confdefs.h"
-@@ -3913,7 +3913,7 @@
- rm -f conftest*
- LIBS="$ac_save_LIBS"
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
--      TERMLIBS="$TERMLIBS -lgd"; break
-+      TERMLIBS="$TERMLIBS -lgd-old"; break
- else
-       TERMLIBS="$gp_save_TERMLIBS"
- fi
-@@ -3930,7 +3930,7 @@
- echo "configure:3931: checking for gd.h" >&5
- ac_safe=`echo "gd.h" | sed 'y%./+-%__p_%'`
- gp_save_CPPFLAGS="$CPPFLAGS"
--for ac_dir in '' /usr/local/include $gp_lib_prefix $gp_lib_prefix/include ; do
-+for ac_dir in '' /usr/local/include/gd-old $gp_lib_prefix $gp_lib_prefix/include ; do
-   CPPFLAGS="$gp_save_CPPFLAGS `test x${ac_dir} != x && echo -I${ac_dir}`"
-   cat > conftest.$ac_ext <<EOF
- #line 3937 "configure"
+ /* NOTE THAT GIF REQUIRES A SEPARATE LIBRARY : see term/gif.trm */
+ /* GIF format. */
+-#ifdef HAVE_LIBGD
+-# include "gif.trm"
+-#endif
++/* #ifdef HAVE_LIBGD */
++/* # include "gif.trm" */
++/* #endif */
+ 
+ /* #include "grass.trm" /* geographical info system */
+ #include "hp26.trm"            /* HP2623A and probably others */

@@ -24,6 +24,12 @@ CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
 		--with-gd=${LOCALBASE}/lib \
 		--with-gnu-readline --with-lasergnu --with-png
 
+pre-configure:
+	$(SED) -e "s%@CPPFLAGS@%-I$(LOCALBASE)/include -I$(X11BASE)/include%" \
+	< $(WRKSRC)/Makefile.in > $(WRKDIR)/tmp-makefile.in
+	$(CP) $(WRKDIR)/tmp-makefile.in $(WRKSRC)/Makefile.in
+
+
 MAN1=		gnuplot.1 lasergnu.1
 
 .include <bsd.port.mk>
