@@ -193,28 +193,28 @@ lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-tiff.so
 lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-wbmp.so
 lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-xbm.so
 lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-xpm.so
-lib/gtk-2.0/immodules/%%GTK_VERSION%%/im-am-et.so
-lib/gtk-2.0/immodules/%%GTK_VERSION%%/im-cyrillic-translit.so
-lib/gtk-2.0/immodules/%%GTK_VERSION%%/im-hangul.so
-lib/gtk-2.0/immodules/%%GTK_VERSION%%/im-inuktitut.so
-lib/gtk-2.0/immodules/%%GTK_VERSION%%/im-ipa.so
-lib/gtk-2.0/immodules/%%GTK_VERSION%%/im-thai-broken.so
-lib/gtk-2.0/immodules/%%GTK_VERSION%%/im-ti-er.so
-lib/gtk-2.0/immodules/%%GTK_VERSION%%/im-ti-et.so
-lib/gtk-2.0/immodules/%%GTK_VERSION%%/im-viqr.so
-lib/gtk-2.0/immodules/%%GTK_VERSION%%/im-xim.so
-lib/libgdk-x11-1.3.a
-lib/libgdk-x11-1.3.so
-lib/libgdk-x11-1.3.so.14
-lib/libgdk_pixbuf-1.3.a
-lib/libgdk_pixbuf-1.3.so
-lib/libgdk_pixbuf-1.3.so.14
-lib/libgdk_pixbuf_xlib-1.3.a
-lib/libgdk_pixbuf_xlib-1.3.so
-lib/libgdk_pixbuf_xlib-1.3.so.14
-lib/libgtk-x11-1.3.a
-lib/libgtk-x11-1.3.so
-lib/libgtk-x11-1.3.so.14
+lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-am-et.so
+lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-cyrillic-translit.so
+lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-hangul.so
+lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-inuktitut.so
+lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-ipa.so
+lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-thai-broken.so
+lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-ti-er.so
+lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-ti-et.so
+lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-viqr.so
+lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-xim.so
+lib/libgdk-x11-2.0.a
+lib/libgdk-x11-2.0.so
+lib/libgdk-x11-2.0.so.0
+lib/libgdk_pixbuf-2.0.a
+lib/libgdk_pixbuf-2.0.so
+lib/libgdk_pixbuf-2.0.so.0
+lib/libgdk_pixbuf_xlib-2.0.a
+lib/libgdk_pixbuf_xlib-2.0.so
+lib/libgdk_pixbuf_xlib-2.0.so.0
+lib/libgtk-x11-2.0.a
+lib/libgtk-x11-2.0.so
+lib/libgtk-x11-2.0.so.0
 libdata/pkgconfig/gdk-2.0.pc
 libdata/pkgconfig/gdk-pixbuf-2.0.pc
 libdata/pkgconfig/gdk-pixbuf-xlib-2.0.pc
@@ -225,6 +225,7 @@ share/aclocal/gtk-2.0.m4
 share/locale/az/LC_MESSAGES/gtk20.mo
 share/locale/ca/LC_MESSAGES/gtk20.mo
 share/locale/cs/LC_MESSAGES/gtk20.mo
+share/locale/cy/LC_MESSAGES/gtk20.mo
 share/locale/da/LC_MESSAGES/gtk20.mo
 share/locale/de/LC_MESSAGES/gtk20.mo
 share/locale/el/LC_MESSAGES/gtk20.mo
@@ -274,9 +275,8 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 @dirrm share/themes/Default/gtk-2.0-key
 @dirrm share/themes/Default/gtk-2.0
 @dirrm share/themes/Default
-@dirrm lib/gtk-2.0/immodules/%%GTK_VERSION%%
-@dirrm lib/gtk-2.0/immodules
 @dirrm lib/gtk-2.0/%%GTK_VERSION%%/loaders
+@dirrm lib/gtk-2.0/%%GTK_VERSION%%/immodules
 @dirrm lib/gtk-2.0/%%GTK_VERSION%%
 @dirrm lib/gtk-2.0
 @dirrm include/gtk-2.0/gtk

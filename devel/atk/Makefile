@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	atk
-PORTVERSION=	0.12
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta2
 #MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 #		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
 #		http://www.ameth.org/gimp/%SUBDIR%/ \
@@ -19,11 +19,12 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	glib-1.3.14:${PORTSDIR}/devel/glib13
+LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20
 
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION=	1.3.14
+PORTVERSION=	2.0.0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-beta,} \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-beta2,} \
 		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
 		http://www.ameth.org/gimp/%SUBDIR%/ \
@@ -20,8 +20,8 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	atk.12:${PORTSDIR}/devel/atk \
-		pango.0:${PORTSDIR}/x11-toolkits/pango \
+LIB_DEPENDS=	atk-1.0.0:${PORTSDIR}/devel/atk \
+		pango-1.0.0:${PORTSDIR}/x11-toolkits/pango \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
@@ -33,7 +33,9 @@ USE_XPM=	yes
 USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ARGS=	--enable-static
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
+			  -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 PLIST_SUB=	GTK_VERSION="${PORTVERSION}"

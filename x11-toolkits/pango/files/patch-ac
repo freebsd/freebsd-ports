@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Wed Jul 18 15:25:57 2001
-+++ Makefile.in	Wed Jul 18 15:26:20 2001
-@@ -101,7 +101,7 @@
- VERSION = @VERSION@
- XFT_LIBS = @XFT_LIBS@
+--- Makefile.in.orig	Mon Mar 11 12:16:33 2002
++++ Makefile.in	Mon Mar 11 12:24:58 2002
+@@ -116,7 +116,7 @@
+ YACC = @YACC@
+ ms_librarian = @ms_librarian@
  
 -SUBDIRS = pango modules examples docs tools tests
-+SUBDIRS = pango modules examples tools tests
++SUBDIRS = pango modules examples docs tools
  
- EXTRA_DIST =  	pango.spec.in		pango.pc.in		pangox.pc.in		pangoxft.pc.in		pangoft2.pc.in		pango-uninstalled.pc.in			pangox-uninstalled.pc.in		pangoxft-uninstalled.pc.in		pangoft2-uninstalled.pc.in		TODO.xml		README.win32
- 
+ EXTRA_DIST = \
+ 	pango.spec.in	\

@@ -38,6 +38,7 @@
     SUBDIR += gtk12
     SUBDIR += gtk12-apireference
     SUBDIR += gtk13
+    SUBDIR += gtk20
     SUBDIR += gtkada
     SUBDIR += gtkbe
     SUBDIR += gtkextra
