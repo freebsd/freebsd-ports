@@ -8562,6 +8562,7 @@ pocketreader	ports/textproc/pocketreader
 poedit		ports/editors/poedit
 poink		ports/net/poink
 pointless	ports/misc/pointless
+policyd		ports/mail/policyd
 polygraph	ports/benchmarks/polygraph
 polypaudio	ports/audio/polypaudio
 polypuzzle	ports/games/polypuzzle
