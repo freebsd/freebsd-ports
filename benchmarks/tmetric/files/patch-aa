@@ -10,8 +10,7 @@
  	$(CC) $(LIBS) $(LDFLAGS) $(OBJ) -o $(OUTPUT)
  
  install: $(OUTPUT)
--	$(INSTALL) $(OUTPUT) $(BINDIR)
-+	$(INSTALL) -m 4755 $(OUTPUT) $(BINDIR)
+	$(INSTALL) $(OUTPUT) $(BINDIR)
  	$(INSTALL) $(MANPAGE) $(MANDIR)
  
  clean:
