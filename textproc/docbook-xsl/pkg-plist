@@ -1249,6 +1249,11 @@ share/xsl/docbook/params/verbatim.properties.xml
 share/xsl/docbook/params/xep.extensions.xml
 share/xsl/docbook/params/xref.properties.xml
 share/xsl/docbook/params/xref.with.number.and.title.xml
+share/xsl/docbook/template/ChangeLog
+share/xsl/docbook/template/README
+share/xsl/docbook/template/biblioentry.xsl
+share/xsl/docbook/template/testtemplate.xml
+share/xsl/docbook/template/titlepage.xsl
 share/xsl/docbook/xhtml/ChangeLog
 share/xsl/docbook/xhtml/admon.xsl
 share/xsl/docbook/xhtml/autoidx.xsl
@@ -1300,6 +1305,7 @@ share/xsl/docbook/xhtml/toc.xsl
 share/xsl/docbook/xhtml/verbatim.xsl
 share/xsl/docbook/xhtml/xref.xsl
 @dirrm share/xsl/docbook/xhtml
+@dirrm share/xsl/docbook/template
 @dirrm share/xsl/docbook/params
 @dirrm share/xsl/docbook/manpages
 @dirrm share/xsl/docbook/lib
