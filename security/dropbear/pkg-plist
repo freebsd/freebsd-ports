@@ -1,3 +1,4 @@
+bin/dbclient
 bin/dropbearkey
 bin/dropbearconvert
 etc/rc.d/dropbear.sh.sample
