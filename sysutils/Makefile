@@ -129,6 +129,7 @@
     SUBDIR += p5-SyslogScan
     SUBDIR += p5-Unix-ConfigFile
     SUBDIR += p5-Unix-Syslog
+    SUBDIR += p5-User
     SUBDIR += paicc
     SUBDIR += pdumpfs
     SUBDIR += penv
