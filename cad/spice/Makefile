@@ -10,7 +10,6 @@ PORTVERSION=	3f5.2
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ic.eecs.berkeley.edu/pub/Spice3/:sources	\
 		ftp://ic.eecs.berkeley.edu/pub/Spice3/um.3f3.ps/:docs
-EXTRACT_SUFX=	.tar.Z
 DISTFILES=	sp3f4.kit${EXTRACT_SUFX}:sources	\
 		cp.ps:docs toc.ps:docs doc.ps:docs
 DIST_SUBDIR=	spice
