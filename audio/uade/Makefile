@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	xmms-uade
-PORTVERSION=	0.80-pre3-antiwar
+PORTVERSION=	0.80
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ee.tut.fi/%7Eheikki/uade/
-DISTFILES=	uade-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES=	uade-${PORTVERSION}-pre3-antiwar${EXTRACT_SUFX}
 
 MAINTAINER=	mbr@FreeBSD.org
 
@@ -30,6 +31,6 @@ CONFIGURE_ARGS=	--prefix=${X11BASE}/lib/xmms \
 
 CONFIGURE_ENV=	SYSCFLAGS='${CFLAGS}'
 
-WRKSRC=		${WRKDIR}/uade-${PORTVERSION}
+WRKSRC=		${WRKDIR}/uade-${PORTVERSION}-pre3-antiwar
 
 .include <bsd.port.mk>
