@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gringotts
-PORTVERSION=	0.5.9
+PORTVERSION=	0.7.0
 CATEGORIES=	security
 MASTER_SITES=	http://devel.pluto.linux.it/projects/Gringotts/current/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -20,15 +20,16 @@ LIB_DEPENDS=	mcrypt.7:${PORTSDIR}/security/libmcrypt \
 
 USE_BZIP2=	yes
 USE_LIBTOOL=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS+=	--disable-env-check
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-WANT_GNOME=	yes
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mgnomehier}!=""
+USE_GNOME+=	gnomehier
 .else
 
 post-patch:
