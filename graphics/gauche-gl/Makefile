@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gl
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gauche
@@ -20,7 +20,6 @@ COMMENT=	OpenGL binding for Gauche
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-WRKSRC=		${WRKDIR}/Gauche-${PORTNAME}
 USE_MESA=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -37,6 +36,10 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
+.for info in gauche-gl-refe.info gauche-gl-refj.info
+	${GZCAT} ${WRKSRC}/doc/${info}.gz >${PREFIX}/info/${info}
+	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
+.endfor
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
 	${MKDIR} ${DOCSDIR}
