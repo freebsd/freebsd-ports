@@ -26,4 +26,8 @@ cd ${MOZDIR} || exit 1
 ./run-mozilla.sh ${REGXPCOM} || true
 ./run-mozilla.sh ${REGCHROME} || true
 
+if [ ! -d %%PREFIX%%/lib/browser_plugins ]; then
+    mkdir -p %%PREFIX%%/lib/browser_plugins
+fi
+
 exit 0
