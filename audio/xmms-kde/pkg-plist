@@ -28,3 +28,6 @@ share/apps/xmms-kde/wm63x42.rc
 share/apps/xmms-kde/wm63x42.tgz
 share/apps/xmms-kde/xmms-kderc
 @dirrm share/apps/xmms-kde
+@dirrm share/apps/kicker/applets
+@dirrm share/apps/kicker
+@unexec rmdir %D/share/apps 2>/dev/null || true
