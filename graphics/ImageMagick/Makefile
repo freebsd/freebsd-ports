@@ -17,7 +17,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
 		ftp://ftp.planetmirror.com/pub/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/X11/graphics/%SUBDIR%/ \
-		ftp://zoffy.asahi-net.or.jp/pub/graphics/%SUBDIR%/ \
 		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/%SUBDIR%/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/graphics/%SUBDIR%/ \
 		ftp://ftp.kddlabs.co.jp/graphics/%SUBDIR%/ \
