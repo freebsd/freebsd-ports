@@ -3,13 +3,13 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.3 1996/02/16 10:38:03 asami Exp $
+# $Id: Makefile,v 1.4 1996/09/06 13:41:02 erich Exp $
 #
 
 DISTNAME=	cu-sudo.v1.5
 PKGNAME=	sudo-1.5
-CATEGORIES+=	sysutils
-MASTER_SITES=	ftp://freestuff.cs.colorado.edu//pub/sysadmin/sudo/
+CATEGORIES=	security
+MASTER_SITES=	ftp://freestuff.cs.colorado.edu/pub/sysadmin/sudo/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	erich@rrnet.com
