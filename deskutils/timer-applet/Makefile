@@ -7,15 +7,23 @@
 
 PORTNAME=	timer-applet
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	timerapplet
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	jylefort@brutele.be
 COMMENT=	Timer applet for the Gnome panel
+
+RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/gtk-events/clicked.wav:${PORTSDIR}/audio/gnomeaudio2
 
 USE_GNOME=	gnomehack gnomeprefix gnometarget gnomepanel
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/share/sounds|${X11BASE}/share/gnome/sounds|' \
+		${WRKSRC}/src/timer-applet.c
 
 .include <bsd.port.mk>
