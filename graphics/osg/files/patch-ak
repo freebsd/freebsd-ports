@@ -5,7 +5,7 @@
  TARGET_LOADER_FILES = osgPlugins/osgdb_jpg.so
  
 -LIBS = -ljpeg
-+LIBS = -ljpeg -L/usr/local/lib -rpath /usr/local/lib
++LIBS = -ljpeg -L$(LOCALBASE)/lib -rpath $(LOCALBASE)/lib
  C++FLAGS += -I. -I../../../include
  LDFLAGS += -L../../../lib
  
