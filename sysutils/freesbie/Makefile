@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freesbie
-PORTVERSION=	0.0.20030705
+PORTVERSION=	0.0.20031113
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.stud.uni-karlsruhe.de/~uedc/freesbie/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.0.//}
