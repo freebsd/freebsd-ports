@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 thepish
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/18 15:17:21 thepish Exp $
+# $Id: Makefile,v 1.22 1998/08/30 03:10:14 thepish Exp $
 #
 
 DISTNAME=       netscape-communicator-4.5
@@ -13,6 +13,7 @@ DISTFILES=      communicator-v45b1-export.x86-unknown-freebsd.tar.gz
 
 MAINTAINER=     thepish@FreeBSD.ORG
 
+NO_LATEST_LINK=	yes
 WRKSRC=         ${WRKDIR}/communicator-v45b1.x86-unknown-freebsd
 NO_BUILD=       Yes
 
