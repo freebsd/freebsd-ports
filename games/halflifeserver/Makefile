@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hlds
-PORTVERSION=	3.1.1.0
+PORTVERSION=	3.1.1.1
 CATEGORIES=	games linux
 DISTNAME=	hlds_l_${PORTVERSION:S/.//g}_full
 
@@ -29,8 +29,7 @@ HLDSDIR=	/usr/games/hlds_l/
 SORT?=		/usr/bin/sort
 
 # files which should be installed with executables perms
-EXECUTABLES=	hltv hlds hlds_run libSteamValidateUserIDTickets.so \
-		libhlwon.so
+EXECUTABLES=	hltv hlds hlds_run
 
 .include <bsd.port.pre.mk>
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

@@ -1,5 +1,8 @@
-%%PORTDOCS%%%%HLDSDIR%%EULA.TXT
+%%PORTDOCS%%%%HLDSDIR%%EULA.txt
 %%PORTDOCS%%%%HLDSDIR%%HLTV-Readme.txt
+%%HLDSDIR%%core_i386.so
+%%HLDSDIR%%cstrike/dlls/cs_i386.so
+%%HLDSDIR%%director_i386.so
 %%HLDSDIR%%dmc/cl_dlls/client.dll
 %%HLDSDIR%%dmc/delta.lst
 %%HLDSDIR%%dmc/dlls/dmc_i386.so
@@ -383,6 +386,7 @@
 %%HLDSDIR%%dmc/sprites/zerogxplode.spr
 %%HLDSDIR%%dmc/titles.txt
 %%HLDSDIR%%engine_i386.so
+%%HLDSDIR%%filesystem_stdio_i386.so
 %%HLDSDIR%%hlds
 %%HLDSDIR%%hlds_run
 %%HLDSDIR%%hltv
@@ -391,7 +395,7 @@
 %%HLDSDIR%%libSteamValidateUserIDTickets.so
 %%HLDSDIR%%libhlwon.so
 %%PORTDOCS%%%%HLDSDIR%%linuxreadme.txt
-%%PORTDOCS%%%%HLDSDIR%%readme.txt
+%%HLDSDIR%%proxy_i386.so
 %%HLDSDIR%%ricochet/cl_dlls/client.dll
 %%HLDSDIR%%ricochet/delta.lst
 %%HLDSDIR%%ricochet/dlls/ricochet_i386.so
@@ -465,7 +469,6 @@
 %%HLDSDIR%%ricochet/sprites/hud.txt
 %%HLDSDIR%%ricochet/sprites/weapon_disc.txt
 %%HLDSDIR%%ricochet/titles.txt
-%%HLDSDIR%%sierra.inf
 %%HLDSDIR%%tfc/cl_dlls/client.dll
 %%HLDSDIR%%tfc/decals.wad
 %%HLDSDIR%%tfc/delta.lst
@@ -624,7 +627,7 @@
 %%HLDSDIR%%tfc/sound/weapons/asscan4.wav
 %%HLDSDIR%%tfc/tfc.wad
 %%HLDSDIR%%tfc/tfc2.wad
-%%PORTDOCS%%%%HLDSDIR%%tfc/tfstats/readme.txt
+%%HLDSDIR%%tfc/tfstats/readme.txt
 %%HLDSDIR%%tfc/tfstats/tfc.2fort.rul
 %%HLDSDIR%%tfc/tfstats/tfc.cz2.rul
 %%HLDSDIR%%tfc/tfstats/tfc.rock2.rul
@@ -634,7 +637,7 @@
 %%HLDSDIR%%tfc/tfstats/tfstats_l
 %%HLDSDIR%%tfc/valve.rc
 %%HLDSDIR%%valve/cl_dlls/client.dll
-%%PORTDOCS%%%%HLDSDIR%%valve/credits.txt
+%%HLDSDIR%%valve/credits.txt
 %%HLDSDIR%%valve/decals.wad
 %%HLDSDIR%%valve/delta.lst
 %%HLDSDIR%%valve/dlls/hl_i386.so
@@ -678,6 +681,7 @@
 %%HLDSDIR%%valve/maps/undertow.bsp
 %%HLDSDIR%%valve/pak0.pak
 %%HLDSDIR%%valve/server.cfg
+%%HLDSDIR%%valve/sierra.inf
 %%HLDSDIR%%valve/skill.cfg
 %%HLDSDIR%%valve/sprites/camera.spr
 %%HLDSDIR%%valve/sprites/iflagblue.spr
@@ -691,7 +695,7 @@
 %%HLDSDIR%%valve/sprites/tile.spr
 %%HLDSDIR%%valve/sprites/voiceicon.spr
 %%HLDSDIR%%valve/valve.rc
-%%HLDSDIR%%valve/woncomm.lst
+%%HLDSDIR%%valve/valvecomm.lst
 %%HLDSDIR%%valve/xeno.wad
 @dirrm %%HLDSDIR%%valve/sprites
 @dirrm %%HLDSDIR%%valve/maps
@@ -738,7 +742,6 @@
 @dirrm %%HLDSDIR%%ricochet/events
 @dirrm %%HLDSDIR%%ricochet/dlls
 @dirrm %%HLDSDIR%%ricochet/cl_dlls
-@dirrm %%HLDSDIR%%ricochet
 @dirrm %%HLDSDIR%%dmc/sprites
 @dirrm %%HLDSDIR%%dmc/sound/weapons
 @dirrm %%HLDSDIR%%dmc/sound/player
@@ -752,6 +755,7 @@
 @dirrm %%HLDSDIR%%dmc/events
 @dirrm %%HLDSDIR%%dmc/dlls
 @dirrm %%HLDSDIR%%dmc/cl_dlls
+@dirrm %%HLDSDIR%%cstrike/dlls
 @unexec rmdir %D/%%HLDSDIR%%valve/SAVE 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%valve/logs 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%tfc/SAVE 2>/dev/null || true
@@ -764,6 +768,7 @@
 @unexec rmdir %D/%%HLDSDIR%%tfc 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%ricochet 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%dmc 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%cstrike 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%% 2>/dev/null || echo "If you are permanently removing this port and its mods, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%`` to remove any configuration files and logs left." | fmt
 @mode 0444
 @exec grep -E "^/%%HLDSDIR%%$" %D/etc/ld.so.conf >/dev/null || ( echo /%%HLDSDIR%% >> %D/etc/ld.so.conf ; %%LDCONFIG%% )
