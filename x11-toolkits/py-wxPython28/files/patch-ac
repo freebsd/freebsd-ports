@@ -1,6 +1,9 @@
---- setup.py.orig	Thu Dec 20 18:33:42 2001
-+++ setup.py	Sun Jan 20 11:00:24 2002
-@@ -111,6 +111,16 @@
+
+$FreeBSD$
+
+--- setup.py.orig	Fri Jan 10 06:24:53 2003
++++ setup.py	Tue Jan 14 21:02:25 2003
+@@ -159,6 +159,16 @@
  
  
  #----------------------------------------------------------------------
@@ -17,15 +20,92 @@
  # Check for build flags on the command line
  #----------------------------------------------------------------------
  
-@@ -277,9 +287,10 @@
+@@ -382,7 +392,7 @@
+ 
+     if WXPORT == 'gtk':
+         WXPLAT = '__WXGTK__'
+-        portcfg = os.popen('gtk-config --cflags', 'r').read()[:-1]
++        portcfg = os.popen(gtk_config + ' --cflags', 'r').read()[:-1]
+     elif WXPORT == 'gtk2':
+         WXPLAT = '__WXGTK__'
+         GENDIR = 'gtk' # no code differences so use the same generated sources
+@@ -402,6 +412,7 @@
                 ]
      libdirs = []
      libs = []
 +    libs.extend(sys_libs)
  
-     cflags = os.popen(WX_CONFIG + ' --cxxflags', 'r').read()[:-1] + ' ' + \
--             os.popen('gtk-config --cflags', 'r').read()[:-1]
-+             os.popen(gtk_config + ' --cflags', 'r').read()[:-1]
-     cflags = string.split(cflags)
+     Verify_WX_CONFIG()
  
-     lflags = os.popen(WX_CONFIG + ' --libs', 'r').read()[:-1]
+@@ -633,8 +644,8 @@
+ if not GL_ONLY and BUILD_OGL:
+     msg('Preparing OGL...')
+     location = 'contrib/ogl'
+-    OGLLOC = opj(location, 'contrib/src/ogl')
+-    OGLINC = opj(location, 'contrib/include')
++    OGLLOC = opj(location, '../../../contrib/src/ogl')
++    OGLINC = opj(location, '../../../contrib/include')
+ 
+     swig_files = ['ogl.i', 'oglbasic.i', 'oglshapes.i', 'oglshapes2.i',
+                   'oglcanvas.i']
+@@ -682,9 +693,9 @@
+ if not GL_ONLY and BUILD_STC:
+     msg('Preparing STC...')
+     location = 'contrib/stc'
+-    STCLOC = opj(location, 'contrib/src/stc')
+-    STCINC = opj(location, 'contrib/include')
+-    STC_H =  opj(location, 'contrib/include/wx/stc')
++    STCLOC = opj(location, '../../../contrib/src/stc')
++    STCINC = opj(location, '../../../contrib/include')
++    STC_H =  opj(location, '../../../contrib/include/wx/stc')
+ 
+     if IN_CVS_TREE:
+         # Check if gen_iface needs to be run for the wxSTC sources
+@@ -826,8 +837,8 @@
+ if not GL_ONLY and BUILD_XRC:
+     msg('Preparing XRC...')
+     location = 'contrib/xrc'
+-    XMLLOC = opj(location, 'contrib/src/xrc')
+-    XMLINC = opj(location, 'contrib/include')
++    XMLLOC = opj(location, '../../../contrib/src/xrc')
++    XMLINC = opj(location, '../../../contrib/include')
+ 
+     swig_files = ['xrc.i']
+ 
+@@ -915,8 +926,8 @@
+ if not GL_ONLY and BUILD_GIZMOS:
+     msg('Preparing GIZMOS...')
+     location = 'contrib/gizmos'
+-    GIZMOLOC = opj(location, 'contrib/src/gizmos')
+-    GIZMOINC = opj(location, 'contrib/include')
++    GIZMOLOC = opj(location, '../../../contrib/src/gizmos')
++    GIZMOINC = opj(location, '../../../contrib/include')
+ 
+     swig_files = ['gizmos.i']
+ 
+@@ -993,8 +1004,8 @@
+ if not GL_ONLY and BUILD_CANVAS:
+     msg('Preparing CANVAS...')
+     location = 'contrib/canvas'
+-    CANVASLOC = opj(location, 'contrib/src/canvas')
+-    CANVASINC = opj(location, 'contrib/include')
++    CANVASLOC = opj(location, '../../../contrib/src/canvas')
++    CANVASINC = opj(location, '../../../contrib/include')
+ 
+     swig_files = ['canvas.i']
+ 
+@@ -1032,10 +1043,10 @@
+ if not GL_ONLY and BUILD_ART2D:
+     msg('Preparing ART2D...')
+     location = 'contrib/art2d'
+-    ART2DLOC = opj(location, 'modules/canvas/src')
+-    ART2DINC = opj(location, 'modules/canvas/include')
+-    EXPATLOC = opj(location, 'modules/expat')
+-    EXPATINC = opj(location, 'modules/expat/include')
++    ART2DLOC = opj(location, '../../../modules/canvas/src')
++    ART2DINC = opj(location, '../../../modules/canvas/include')
++    EXPATLOC = opj(location, '../../../modules/expat')
++    EXPATINC = opj(location, '../../../modules/expat/include')
+ 
+     swig_files = ['art2d.i',
+                   'art2d_misc.i',
