@@ -15,6 +15,10 @@ lib/xcdroast-0.98/bin/cddbtool
 lib/xcdroast-0.98/bin/rmtool
 lib/xcdroast-0.98/bin/vrfytool
 lib/xcdroast-0.98/bin/wavplay
+lib/xcdroast-0.98/bin/mkisofs
+lib/xcdroast-0.98/bin/cdrecord
+lib/xcdroast-0.98/bin/cdda2wav
+lib/xcdroast-0.98/bin/readcd
 @dirrm lib/xcdroast-0.98/bin
 @dirrm lib/xcdroast-0.98/icons
 @dirrm lib/xcdroast-0.98/lang
