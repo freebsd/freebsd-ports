@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/mozilla:configure
 
 USE_X_PREFIX=	yes
 
+NO_LATEST_LINK=	yes
+
 MAINDIR=	${.CURDIR}/../mozilla
 MKFILE!=	/usr/bin/basename ${MAKEFILE}
 PORTVERSION!=	${PORTVERSION}
@@ -32,10 +34,10 @@ CPIOOWN=	-R ${INCOWN}:${INCGRP}
 .endif
 
 do-install:
-	-${RM} -fr ${PREFIX}/include/mozilla
-	${MKDIR} ${PREFIX}/include/mozilla
-	${CHMOD} 755 ${PREFIX}/include/mozilla
+	-${RM} -fr ${PREFIX}/include/mozilla-devel
+	${MKDIR} ${PREFIX}/include/mozilla-devel
+	${CHMOD} 755 ${PREFIX}/include/mozilla-devel
 	cd ${WRKSRC}/dist/include && ${FIND} . | \
-		cpio -pdm -L ${CPIOOWN} ${PREFIX}/include/mozilla
+		cpio -pdm -L ${CPIOOWN} ${PREFIX}/include/mozilla-devel
 
 .include <bsd.port.mk>

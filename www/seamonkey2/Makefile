@@ -18,6 +18,8 @@ DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.rc/rc/}${EXTRACT_SUFX} \
 
 MAINTAINER=	gnome@FreeBSD.org
 
+NO_LATEST_LINK=	yes
+
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -118,10 +120,10 @@ post-build:
 		${XARGS} ${RMDIR} 2> /dev/null || ${TRUE}
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/mozilla
-	${CHMOD} 755 ${PREFIX}/lib/mozilla
+	${MKDIR} ${PREFIX}/lib/mozilla-devel
+	${CHMOD} 755 ${PREFIX}/lib/mozilla-devel
 	cd ${WRKSRC}/dist/bin && ${FIND} . | \
-		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/mozilla
+		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/mozilla-devel
 	${INSTALL_SCRIPT} ${WRKSRC}/mozilla ${PREFIX}/bin
 	${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/i386/ns600/libjavaplugin_oji.so \
 		${PREFIX}/lib/mozilla/plugins/libjavaplugin_oji.so
