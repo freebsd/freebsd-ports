@@ -15,7 +15,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console based mail client with POP3/IMAP/SMAP support
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
