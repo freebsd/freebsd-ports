@@ -8,7 +8,7 @@
 
 PORTNAME=	wxmozilla
 PORTVERSION=	0.5.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,16 +22,10 @@ LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack gnometarget
 WXGTK_CONFIG?=	${X11BASE}/bin/wxgtk2-2.4-config
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--with-wx-config=${WXGTK_CONFIG} --enable-python
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
