@@ -94,6 +94,7 @@
     SUBDIR += lp_solve
     SUBDIR += matrix
     SUBDIR += maxima
+    SUBDIR += mbasecalc
     SUBDIR += metis
     SUBDIR += metis-edf
     SUBDIR += mpexpr
