@@ -22,7 +22,23 @@ CONFIGURE_ENV=	CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+WANT_GNOME=	yes
+USE_LIBTOOL_VER=13
 CONFLICTS=	libshout-1.0.7
+USE_REINPLACE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mpkgconfig}!=""
+USE_GNOME+=	pkgconfig
+PLIST_SUB+=	WITH_PKGCONFIG=""
+.else
+CONFIGURE_ARGS+=--disable-pkgconfig
+PLIST_SUB+=	WITH_PKGCONFIG="@comment "
+.endif
+
+post-configure:
+	@ ${REINPLACE_CMD} -e "s|pkgconfigdir =.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g" \
+		${WRKSRC}/Makefile
+
+.include <bsd.port.post.mk>
