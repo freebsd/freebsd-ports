@@ -1,4 +1,4 @@
-The cvsweb.cgi is a WWW CGI script that allows remote users to browse
+FreeBSD-CVSweb is a WWW CGI script that allows remote users to browse
 a CVS repository tree via web.  It can display the revision history of
 a file, as well as diffs between revisions and downloading the whole
 file.
@@ -10,5 +10,5 @@ Ken Coar <Ken.Coar@Golux.Com>, then Akinori MUSHA <knu@FreeBSD.org>
 brought it back to the FreeBSD community and made further
 improvements.
 
-WWW:	http://www.FreeBSD.org/cgi/cvsweb.cgi/projects/cvsweb/
+WWW:	http://www.FreeBSD.org/projects/cvsweb.html
 Author:	the FreeBSD Project
