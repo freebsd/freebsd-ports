@@ -21,8 +21,9 @@ LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
 USE_XLIB=	yes
 
-# comment out the next line if you don't want the X version of JED.
+.if !defined(NO_XJED)
 XJED=	xjed
+.endif
 
 DIST_SUBDIR=	jed
 GNU_CONFIGURE=  yes

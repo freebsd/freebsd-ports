@@ -129,8 +129,32 @@ lib/jed/lib/wmenu.sl
 lib/jed/lib/wordstar.hlp
 lib/jed/lib/wordstar.sl
 lib/jed/lib/yankpop.sl
+share/doc/jed/README
+share/doc/jed/abbrev.txt
+share/doc/jed/color.txt
+share/doc/jed/dfa.txt
+share/doc/jed/edt.txt
+share/doc/jed/emacs.txt
+share/doc/jed/fold.txt
+share/doc/jed/hooks.txt
+share/doc/jed/jed_faq.txt
+share/doc/jed/jedfuns.txt
+share/doc/jed/mouse.txt
+share/doc/jed/pc-keys.txt
+share/doc/jed/program.txt
+share/doc/jed/rgrep.txt
+share/doc/jed/rmail.txt
+share/doc/jed/script.txt
+share/doc/jed/slangfun.txt
+share/doc/jed/syntax.txt
+share/doc/jed/undo.txt
+share/doc/jed/wjed.txt
+share/doc/jed/wordstar.txt
+share/doc/jed/xjed.txt
+share/doc/jed/yankpop.txt
 @dirrm lib/jed/bin
 @dirrm lib/jed/lib/tm
 @dirrm lib/jed/lib
 @dirrm lib/jed/doc
 @dirrm lib/jed
+@dirrm share/doc/jed
