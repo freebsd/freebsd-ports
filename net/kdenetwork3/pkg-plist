@@ -306,6 +306,8 @@ share/apps/kppp/Provider/Taiwan/HiNet
 share/apps/kppp/Provider/Taiwan/SeedNet
 share/apps/kppp/Provider/Ukraine/.directory
 share/apps/kppp/Provider/Ukraine/Adamant
+share/apps/kppp/Provider/Ukraine/IPTelecom
+share/apps/kppp/Provider/Ukraine/NuVse
 share/apps/kppp/Provider/United_Kingdom/.directory
 share/apps/kppp/Provider/United_Kingdom/Demon%032Green%0322120666
 share/apps/kppp/Provider/United_Kingdom/Demon%032Purple%0322121666
@@ -586,6 +588,8 @@ share/apps/kppp/Rules/Switzerland/Swisscom_Remote.rst
 share/apps/kppp/Rules/Switzerland/Swisscom_Surf.rst
 share/apps/kppp/Rules/TEMPLATE
 share/apps/kppp/Rules/Turkey/Turk_Telekom_Internet.rst
+share/apps/kppp/Rules/Ukraine/IPTelecom_hourly.rst
+share/apps/kppp/Rules/Ukraine/NuVse_hourly.rst
 share/apps/kppp/Rules/Ukraine/TEMPLATE.uk
 share/apps/kppp/Rules/Ukraine/Utel_Unet.rst
 share/apps/kppp/Rules/United_Kingdom/BirminghamCable_Local.rst
@@ -806,6 +810,20 @@ share/services/kxmlrpcd.desktop
 share/services/lan.protocol
 share/services/rlan.protocol
 %%KTALKD%%share/sounds/ktalkd.wav
+@unexec /bin/rmdir %D/share/sounds 2>/dev/null || true
+@unexec /bin/rmdir %D/share/applnk/Settings/Networks 2>/dev/null || true
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor
 @dirrm share/doc/HTML/en/lisa
 @dirrm share/doc/HTML/en/ktalkd
 @dirrm share/doc/HTML/en/ksirc
@@ -817,6 +835,8 @@ share/services/rlan.protocol
 @dirrm share/doc/HTML/en/kmail
 @dirrm share/doc/HTML/en/kit
 @dirrm share/doc/HTML/en/kdict
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
 @dirrm share/apps/lisa
 @dirrm share/apps/ksirc/pics/emoticons
 @dirrm share/apps/ksirc/pics
@@ -890,6 +910,7 @@ share/services/rlan.protocol
 @dirrm share/apps/kppp
 @dirrm share/apps/konqueror/dirtree/remote
 @dirrm share/apps/konqueror/dirtree
+@dirrm share/apps/konqueror
 @dirrm share/apps/knode/pics
 @dirrm share/apps/knode/icons/hicolor/32x32/actions
 @dirrm share/apps/knode/icons/hicolor/32x32
@@ -910,6 +931,8 @@ share/services/rlan.protocol
 @dirrm share/apps/kit/icons/hicolor
 @dirrm share/apps/kit/icons
 @dirrm share/apps/kit
+@dirrm share/apps/kicker/applets
+@dirrm share/apps/kicker
 @dirrm share/apps/kdict/icons/hicolor/32x32/actions
 @dirrm share/apps/kdict/icons/hicolor/32x32
 @dirrm share/apps/kdict/icons/hicolor/22x22/actions
@@ -919,4 +942,11 @@ share/services/rlan.protocol
 @dirrm share/apps/kdict/icons/hicolor
 @dirrm share/apps/kdict/icons
 @dirrm share/apps/kdict
+@dirrm share/apps/kconf_update
+@dirrm share/applnk/Utilities
+@dirrm share/applnk/Settings/System
+@dirrm share/applnk/Settings/Personalization
+@dirrm share/applnk/Settings
+@dirrm share/applnk/Internet
+@dirrm share/applnk/.hidden
 @dirrm include/mimelib

@@ -563,8 +563,6 @@ lib/kde3/plugins/designer/kdewidgets.la
 lib/kde3/plugins/designer/kdewidgets.so
 lib/kde3/plugins/styles/highcolor.la
 lib/kde3/plugins/styles/highcolor.so
-%%KERAMIK%%lib/kde3/plugins/styles/keramik.la
-%%KERAMIK%%lib/kde3/plugins/styles/keramik.so
 lib/kde3/plugins/styles/kthemestyle.la
 lib/kde3/plugins/styles/kthemestyle.so
 lib/kde3/plugins/styles/light.la
@@ -3191,9 +3189,9 @@ share/servicetypes/renamedlgplugin.desktop
 share/servicetypes/scriptinterface.desktop
 @exec /bin/mkdir -p %D/share/icons/hicolor/22x22/actions/kde
 @exec /bin/mkdir -p %D/share/icons/hicolor/32x32/actions/kde
-@dirrm share/servicetypes
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/actions/kde || true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/actions/kde || true
 @dirrm share/services/kded
-@dirrm share/services
 @dirrm share/mimelnk/video
 @dirrm share/mimelnk/text
 @dirrm share/mimelnk/multipart
@@ -3215,10 +3213,8 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/icons/hicolor/32x32/mimetypes
 @dirrm share/icons/hicolor/32x32/filesystems
 @dirrm share/icons/hicolor/32x32/devices
-@dirrm share/icons/hicolor/32x32/actions/kde
 @dirrm share/icons/hicolor/32x32/actions
 @dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/22x22/actions/kde
 @dirrm share/icons/hicolor/22x22/actions
 @dirrm share/icons/hicolor/22x22
 @dirrm share/icons/hicolor/16x16/mimetypes
@@ -3228,15 +3224,12 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/icons/hicolor/16x16/actions
 @dirrm share/icons/hicolor/16x16
 @dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/doc/HTML/en/kspell
 @dirrm share/doc/HTML/en/common
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
 @dirrm share/config/ui
 @dirrm share/config/colors
-@dirrm share/config
-@dirrm share/autostart
 @dirrm share/apps/kstyle/themes
 @dirrm share/apps/kstyle/pixmaps/riscos
 @dirrm share/apps/kstyle/pixmaps
@@ -3364,7 +3357,6 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/apps/kate/syntax
 @dirrm share/apps/kate
 @dirrm share/apps/LICENSES
-@dirrm share/apps
 @dirrm lib/kde3/plugins/styles
 @dirrm lib/kde3/plugins/designer
 @dirrm lib/kde3/plugins
@@ -3379,3 +3371,4 @@ share/servicetypes/scriptinterface.desktop
 @dirrm include/kabc
 @dirrm include/dom
 @dirrm include/arts
+@dirrm etc/rc.d

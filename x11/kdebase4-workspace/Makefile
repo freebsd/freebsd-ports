@@ -6,20 +6,18 @@
 #
 
 PORTNAME=	kdebase
-PORTVERSION=	${KDE_DIST_VERSION}
-PORTREVISION=	1
+PORTVERSION=	3.0.5
+PORTREVISION=	0
 CATEGORIES?=	x11 kde
-MASTER_SITES=	${MASTER_SITE_KDE_kde} \
-		${MASTER_SITE_LOCAL_keramik}
+MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2:kde \
-		${PORTNAME}-keramik-${KERAMIK_DATE}.tar.bz2:keramik
 DIST_SUBDIR=	KDE
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.bz2
 
 MAINTAINER?=	kde@FreeBSD.org
 
-BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS+=	xgettext:${PORTSDIR}/devel/gettext \
+		${LOCALBASE}/bin/autoconf:${PORTSDIR}/devel/autoconf\
+		${LOCALBASE}/bin/automake:${PORTSDIR}/devel/automake
 
 USE_KDELIBS_VER=3
 USE_XPM=	yes
@@ -30,9 +28,6 @@ CONFIGURE_ENV+=	RUN_KAPPFINDER=no
 CONFIGURE_ARGS+=--with-xdmdir=${X11BASE}/lib/X11/xdm \
 		--without-ldap --disable-closure
 USE_GMAKE=	yes
-KERAMIK_DATE=	20021008.1942
-
-MASTER_SITE_LOCAL_keramik=${MASTER_SITE_LOCAL:S@%SUBDIR%/@alane/:keramik@g}
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
@@ -66,17 +61,6 @@ post-extract:
 	@${ECHO} "#!/bin/sh" > ${WRKSRC}/mkpamserv
 	@${ECHO} "exit 0" >> ${WRKSRC}/mkpamserv
 
-.if defined(WITH_KERAMIK)
-PLIST_SUB+=	KERAMIK=""
-KERAMIK_TARBALL=${PORTNAME}-keramik-${KERAMIK_DATE}.tar.bz2
-pre-patch:
-	@cd ${WRKSRC};\
-	${BZCAT} ${DISTDIR}/${DIST_SUBDIR}/${KERAMIK_TARBALL} | ${TAR} xf -;\
-	${CAT} ${FILESDIR}/keramik-patch-* | ${PATCH} ${PATCH_ARGS}
-.else
-PLIST_SUB+=	KERAMIK="@comment "
-.endif # !defined(WITH_KERAMIK)
-
 post-patch:
 	@${PERL} -pi -e "s@Exec=ee@Exec=ElectricEyes@g" \
 		${WRKSRC}/kappfinder/apps/Graphics/ElectricEyes.desktop
@@ -94,9 +78,5 @@ post-install:
 	${CHMOD} u+s ${PREFIX}/bin/kcheckpass
 	${CHGRP} kmem ${PREFIX}/bin/ksysguardd && \
 		${CHMOD} g+s ${PREFIX}/bin/ksysguardd
-.if defined(WITH_KERAMIK)
-	@if test -f ${PKGMESSAGE}; then \
-		${ECHO}; ${CAT} ${PKGMESSAGE}; ${ECHO}; fi
-.endif # defined(WITH_KERAMIK)
 
 .include <bsd.port.post.mk>
