@@ -1,0 +1,11 @@
+--- src/common.makefile.in.orig	Mon Nov  3 00:47:20 2003
++++ src/common.makefile.in	Mon Nov  3 00:47:37 2003
+@@ -224,7 +224,7 @@
+ 
+ cxx_flags    = $(strip $(CXX) $(1) -c $< -o $@)
+ cxx_incl     = $(call cxx_flags,$(1) $(CXXFREETYPE) $(CXXICONV) $(CXXGUILE) \
+-  $(CPPFLAGS) $(CXXFLAGS)) 
++  $(CPPFLAGS) $(CXXFLAGS)$(CXXXWINDOW)) 
+ cxx_incl_sys = $(call cxx_flags,$(1) $(CXXFREETYPE) $(CXXICONV) $(CXXGUILE) \
+   $(CPPFLAGS) $(DASH_I_DASH) $(2) $(CXXFLAGS))
+ 
