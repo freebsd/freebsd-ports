@@ -1,0 +1,68 @@
+
+This is the last major component of the quake utilities to be released.  To
+be honest, I have been a little reticent to release this because most of the
+actual qc code is basically rather embarassing crap.  The time never became
+available to even give it a good top to bottom going over.  I never spent
+any quality engineering time on my parts, American wrote a lot of qc code,
+and even Romero has a bit of work in there.  It is a mess.  If you look
+through the code and occasionally think "This is stupid!", you are probably
+right...
+
+The compiler itself can be drastically sped up by just replacing the symbol
+searches with binary trees or hashing.  We remotely compile on our alpha, so
+it hasn't been a big enough issue for me to do it, but as the code size
+grows and grows it will be done sooner or later.
+
+The resulting code is horribly nieve and space ineficient (twleve bytes /
+instruction).  If common subexpression removal was added, the instruction
+count could probably be cut nearly in half.  I would have liked to have done
+a better job at this, but this was my first compiler front end, and I had a
+ton of other things fighting for my time.  The next one will turn out
+better. (wow, I'm making a lot of excuses here, aren't I?)
+
+Qcc also performs some other maintenence functions for us, like rebuildinng
+all the brush models and making pak files, but those functions are only
+usefull if you have created all new data for everything.  models.qc and
+sprites.qc don't actually generate any code, they are just parsed by
+modelgen and spritegen and included for completeness.
+
+
+To modify the quake program code, set up a new game directory parallel with
+id1, and containing a "progs" subdirectory.  Copy all the .qc files and
+progs.src into that, and just run qcc from that directory.  That will
+compile all of the files listed in progs.src and (if there aren't any
+errors) generate a new progs.dat file in the parent directory.
+
+As a simple test, open the client.qc file, go to the ClientObituary function
+at the end, and change some of the messages.
+
+The directory structure will look something like:
+
+/quake/quake.exe
+/quake/id1/
+/quake/mygame/progs.dat
+/quake/mygame/progs/progs.src
+/quake/mygame/progs/world.qc
+/quake/mygame/progs/client.qc
+/quake/mygame/progs/... etc ...
+
+Run quake with "-game mygame", which will cause quake to look for data in
+the mygame directory before falling back to id1.  In this example, it will
+find the new progs.dat from mygame, and take everything else from id1.  You
+can type "path" at the quake console to verify the current search order of
+directories and pak files.  THIS WILL ONLY WORK WITH A REGISTERED VERSION OF
+QUAKE.
+
+The header qcc.h has the language spec and some documentation, but I'm not
+positive if it is all current.
+
+The only documentation for the various builtin functions I can offer is the
+source code used by quake.  See builtin.c.  Some of them are required to do
+things outside the scope of the qc world, and some are just there for speed
+reasons.
+
+PLEASE don't ask me questions about all this!
+
+
+John Carmack
+
