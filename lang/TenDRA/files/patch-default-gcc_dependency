@@ -1,0 +1,7 @@
+--- src/lib/env/common/default.orig	Tue May 13 01:35:23 2003
++++ src/lib/env/common/default	Tue May 13 01:35:42 2003
+@@ -55,3 +55,4 @@
+ 
+ /* Extra information */
+ 
+++FLAG			"-f<TENDRA_MACHDIR>/include/gcc_dependency.h"

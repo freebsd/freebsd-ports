@@ -1,0 +1,17 @@
+Index: src/lib/machines/freebsd/80x86/include/gcc_dependency.h
+===================================================================
+RCS file: /usr/home/stefan/tendra/cvsup/tendra/src/lib/machines/freebsd/80x86/include/gcc_dependency.h,v
+retrieving revision 1.1
+diff -c -u -r1.1 gcc_dependency.h
+--- src/lib/machines/freebsd/80x86/include/gcc_dependency.h	18 Feb 2003 07:35:09 -0000	1.1
++++ src/lib/machines/freebsd/80x86/include/gcc_dependency.h	25 Feb 2003 10:32:53 -0000
+@@ -17,4 +17,9 @@
+ 
+ #pragma TenDRA unknown directive warning
+ 
++/* Work around __aligned() */
++#ifndef	__aligned
++#define	__aligned(x)	/* nothing */
++#endif
++
+ #endif /* __FREEBSD_GCC_DEPENDENCY_H__ */
