@@ -1,0 +1,3 @@
+This perl module provides a simple interface to the tedious bit manipulation
+involved when handling IP address calculations. It also helps by performing
+range comparisons between subnets as well as other frequently used functions.
