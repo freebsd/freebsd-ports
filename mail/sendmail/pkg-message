@@ -2,7 +2,7 @@
 If you update your configuration from 8.11.x you need to install an
 additional config file: /etc/mail/submit.cf, you can generate it
 by calling the target 'submit.cf', submit.mc will be installed too.
-$ make submit.cf
+/usr/ports/mail/sendmail$ make submit.cf
 
 you should add in /etc/make.conf:
 SENDMAIL_CF_DIR=	%%PREFIX%%/share/sendmail/cf
@@ -14,16 +14,15 @@ To activate all sendmail processes see:
 %%PREFIX%%/etc/rc.d/sendmail.sh.sample
 
 To deliver all local mail to your mailhub, edit the last line of submit.mc:
-FEATURE(`msp','mailhub.do.main`)dnl
+FEATURE(`msp','[mailhub.do.main]`)dnl
 
-and set your flags in /etc/rc.conf:
+in FreeBSD-RELEASE < 4.6 set your flags in /etc/rc.conf:
 sendmail_flags="-L sm-msp-queue -Ac -q1m"
 
-You can delete /etc/mail/sendmail.cf when you don't need a daemon listen.
 To update your configuration look at %%PREFIX%%/share/sendmail/cf/README.
 ---------------------------------------------------
 To activate sendmail as your default mailer, call the target 'mailer.conf':
-$ make mailer.conf
+/usr/ports/mail/sendmail$ make mailer.conf
 
 Your '/etc/mail/mailer.conf' should look like this:
 #
@@ -33,7 +32,8 @@ sendmail	%%PREFIX%%/sbin/sendmail
 send-mail	%%PREFIX%%/sbin/sendmail
 mailq		%%PREFIX%%/sbin/sendmail
 newaliases	%%PREFIX%%/sbin/sendmail
+hoststat	%%PREFIX%%/sbin/sendmail
+purgestat	%%PREFIX%%/sbin/sendmail
 
 You may also need to update /etc/rc.conf.
 ---------------------------------------------------
-
