@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	6.0.2.1
+PORTVERSION=	6.0.2.6
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
@@ -73,11 +73,9 @@ CONFIGURE_ARGS+=	--without-threads
 # Faster, but poor quality
 .if defined(WITHOUT_IMAGEMAGICK_16BIT_PIXEL)
 CONFIGURE_ARGS+=	--with-quantum-depth=8
-PLIST_SUB+=		Q8=''
-PLIST_SUB+=		Q16='@comment '
+PLIST_SUB+=		QBIT='Q8'
 .else
-PLIST_SUB+=		Q8='@comment '
-PLIST_SUB+=		Q16=''
+PLIST_SUB+=		QBIT='Q16'
 .endif
 
 # Produce standard (small) GIFs
@@ -210,10 +208,7 @@ USE_XLIB=		yes
 MAN1+=			animate.1 display.1 import.1
 PLIST_SUB+=		X11=''
 .if !defined(WITHOUT_IMAGEMAGICK_MPEG2)
-CONFIGURE_ARGS+=	--with-mpeg2
-LIB_DEPENDS+=		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
-.else
-CONFIGURE_ARGS+=	--without-mpeg2
+RUN_DEPENDS+=		mpeg2encode:${PORTSDIR}/multimedia/mpeg2codec
 .endif
 .endif
 
