@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    SUBDIR += MailScanner
+    SUBDIR += MailScanner-devel
     SUBDIR += abook
     SUBDIR += adcomplain
     SUBDIR += aileron
@@ -135,7 +137,6 @@
     SUBDIR += mailman
     SUBDIR += mailmgr
 #   SUBDIR += mailman-devel
-    SUBDIR += mailscanner
     SUBDIR += mailsync
     SUBDIR += mailx
     SUBDIR += mairix
