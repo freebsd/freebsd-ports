@@ -106,6 +106,7 @@
     SUBDIR += kdegames11
     SUBDIR += kdegames2
     SUBDIR += klondike
+    SUBDIR += kpuzzle
     SUBDIR += krogue
     SUBDIR += krubik
     SUBDIR += ktamaga
