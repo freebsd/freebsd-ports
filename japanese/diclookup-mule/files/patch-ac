@@ -1,0 +1,10 @@
+--- lib/Makefile.org	Sat Feb 20 20:15:09 1999
++++ lib/Makefile	Sat Feb 20 20:15:15 1999
+@@ -1,6 +1,6 @@
+ EMACS = mule
+ 
+-LISPDIR = /usr/local/lib/mule/site-lisp
++LISPDIR = /usr/local/share/mule/19.34/site-lisp
+ 
+ RM = rm -f
+ 
