@@ -1,9 +1,0 @@
-#!/bin/sh
-# $FreeBSD$
-
-if [ "x$1" = "xINSTALL" -o "x$2" = "xINSTALL" ]; then
-  if [ -f ${PKG_PREFIX}/etc/redhat-release ]; then
-    echo "linux_base-debian can't be installed into the redhat base"
-    exit 1
-  fi
-fi
