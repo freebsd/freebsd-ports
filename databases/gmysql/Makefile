@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gmysql
-# Version required:	0.3.1
+# Version required:	0.3.2
 # Date created:		Sun Nov 15 22:07:12 CET 1998
 # Whom:			Dirk Froemberg <ibex@physik.TU-Berlin.DE>
 #
-# $Id: Makefile,v 1.5 1999/01/18 15:37:54 dirk Exp $
+# $Id: Makefile,v 1.6 1999/02/12 11:57:56 dirk Exp $
 #
 
-DISTNAME=	gmysql-0.3.1
+DISTNAME=	gmysql-0.3.2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.loth.demon.co.uk/gmysql/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
