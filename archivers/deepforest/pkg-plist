@@ -10,6 +10,8 @@ JDE/DeepForest/docs/Japanese/README.sjis
 JDE/DeepForest/install.sh
 bin/DeepForest.app
 %%PIXMAP_PATH%%/DeepForest.xpm
+@unexec rmdir %D/share/WindowMaker/Pixmaps 2>/dev/null || true
+@unexec rmdir %D/share/WindowMaker 2>/dev/null || true
 @dirrm JDE/DeepForest/docs/English
 @dirrm JDE/DeepForest/docs/Japanese
 @dirrm JDE/DeepForest/docs
