@@ -30,15 +30,15 @@ EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty
 
 WRKSRC=		${WRKDIR}/j2sdk1.4.0
-PLIST_SUB+=	TARGET_PREFIX=${TARGET_DIR:S/^${PREFIX}\///}
+PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
-DL_JDK_VERSION=	1.4.0-beta
-INSTALL_JDK_VERSION=	1.4.0b1
+DL_JDK_VERSION=	1.4.0-beta3
+INSTALL_JDK_VERSION=	1.4.0b3
 ONLY_FOR_ARCHS=	i386
 TARGET_DIR?=	${PREFIX}/${PKGBASE}${PORTVERSION}
-DOWNLOAD_URL?=	http://java.sun.com/j2se/1.4/#linux
+DOWNLOAD_URL?=	http://java.sun.com/j2se/1.4/\#linux
 PORTTITLE=	Java 2 Development Kit ${INSTALL_JDK_VERSION} for Linux
 
 .include <bsd.port.pre.mk>
