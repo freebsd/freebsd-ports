@@ -1,5 +1,3 @@
 bin/jless
 bin/jlesskey
 bin/jlessecho
-man/man1/jless.1.gz
-man/man1/jlesskey.1.gz

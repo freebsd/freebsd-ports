@@ -8,8 +8,6 @@ info/dvips.info-3
 info/dvips.info-4
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/dvips.info %D/info/dir
-man/man1/dvips.1.gz
-man/man1/afm2tfm.1.gz
 @exec for i in base/asex.enc base/psfonts.map config/config.ps ; do if [ -f %D/share/texmf/dvips/$i ] ; then mv %D/share/texmf/dvips/$i %D/share/texmf/dvips/$i.bak ; fi ; done
 share/texmf/dvips/base/asex.enc
 share/texmf/dvips/base/cmfonts.map

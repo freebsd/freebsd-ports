@@ -1,6 +1,5 @@
 bin/lynx
 etc/lynx.cfg
-man/man1/lynx.1.gz
 lib/lynx_help/about_lynx.html
 lib/lynx_help/lynx_url_support.html
 lib/lynx_help/Lynx_users_guide.html

@@ -3,7 +3,7 @@
 # Date created:		5 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.13 1996/12/03 13:08:17 obrien Exp $
+# $Id: Makefile,v 1.14 1997/09/14 21:35:26 max Exp $
 #
 
 DISTNAME=	nkf-1.62
@@ -13,8 +13,10 @@ MASTER_SITES=	http://www.sfc.wide.ad.jp/~max/FreeBSD/ports/distfiles/
 
 MAINTAINER=	max@FreeBSD.ORG
 
+MAN1=		nkf.1
+
 post-extract:
-	@echo "===>  Installing custom Makefile for ${DISTNAME}"
+	@${ECHO} "===>  Installing custom Makefile for ${DISTNAME}"
 	@(${CP} ${FILESDIR}/Makefile ${WRKSRC})
 
 .include <bsd.port.mk>
