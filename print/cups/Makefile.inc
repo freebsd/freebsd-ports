@@ -30,6 +30,7 @@ DISTNAME=	cups-${CUPS_VERSION}-${CUPS_REVISION}-source
 DISTFILES=	${DISTNAME}.tar.bz2
 WRKSRC=		${WRKDIR}/cups-${CUPS_VERSION}
 
+USE_PERL5=	yes
 USE_BZIP2=	yes
 #Breaks build.. USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
