@@ -1,0 +1,16 @@
+--- Makefile.orig	Wed Jul 25 22:10:15 2001
++++ Makefile	Mon Aug 27 14:16:26 2001
+@@ -12,10 +12,9 @@
+ # for aiding packaging
+ DESTDIR =
+ 
+-CC := gcc
+-GTKFLAGS := $(shell gtk-config --cflags)
+-IMLIBFLAGS := $(shell imlib-config --cflags-gdk)
+-CFLAGS := $(CFLAGS) -fPIC -Wall $(GTKFLAGS) $(IMLIBFLAGS)
++GTKFLAGS = `${GTK_CONFIG} --cflags`
++IMLIBFLAGS = `${IMLIB_CONFIG} --cflags-gdk`
++CFLAGS += -fPIC -Wall $(GTKFLAGS) $(IMLIBFLAGS)
+ LDFLAGS := -shared -Wl
+ INST_DIR := $(DESTDIR)/usr/lib/gkrellm/plugins
+ .PHONY: clean install
