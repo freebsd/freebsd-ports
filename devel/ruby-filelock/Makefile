@@ -8,7 +8,8 @@
 PORTNAME=	filelock
 PORTVERSION=	0.2
 CATEGORIES=	devel ruby
-MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/contrib/
+MASTER_SITES=	${MASTER_SITE_RUBY}
+MASTER_SITE_SUBDIR=	contrib
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
