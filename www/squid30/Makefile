@@ -7,6 +7,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	\
 	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -20,7 +21,30 @@ EXTRACT_SUFX=	.tar.bz2
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=
+PATCHFILES=	squid-2.5.STABLE4-reconfigure_message.patch \
+		squid-2.5.STABLE4-digest_auth_pwchange.patch \
+		squid-2.5.STABLE4-redirect_login_space.patch \
+		squid-2.5.STABLE4-fqdnnegcache.patch \
+		pam_auth-2.2.patch \
+		squid-2.5.STABLE4_auth_param_doc.patch \
+		squid-2.5.STABLE4-errorpages.patch \
+		squid-2.5.STABLE4-error_load_text.patch \
+		squid-2.5.STABLE4-xpi_mime.patch \
+		squid-2.5.STABLE4-size_overflow.patch \
+		squid-2.5.STABLE4-extacl_auth_loop.patch \
+		squid-2.5.STABLE4-squid_ldap_group.patch \
+		squid-2.5.STABLE4-positive_dns_ttl.patch \
+		squid-2.5.STABLE4-gopherhtml.patch \
+		squid-2.5.STABLE4-netroute.patch \
+		squid-2.5.STABLE4-synflood.patch \
+		squid-2.5.STABLE4-fqdn.patch \
+		squid-2.5.STABLE4-connect_cleanup.patch \
+		squid-2.5.STABLE4-pconn_post.patch \
+		squid-2.5.STABLE4-ftp_put.patch \
+		squid-2.5.STABLE4-pconn-load.patch \
+		squid-2.5.STABLE4-icon_urls.patch \
+		squid-2.5.STABLE4-redirector_access.patch \
+		squid-2.5.STABLE4-pconn-lifo.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	adrian@freebsd.org
@@ -83,7 +107,7 @@ MAN8=	pam_auth.8 squid_unix_group.8 squid.8
 #CONFIGURE_ARGS+= --enable-htcp
 #  - Enable Forw/Via database
 #CONFIGURE_ARGS+= --enable-forw-via-db
-#  - Use Cache Digests - see http://squid.nlanr.net/Squid/FAQ/FAQ-16.html
+#  - Use Cache Digests - see http://www.squid-cache.org/Doc/FAQ/FAQ-16.html
 #CONFIGURE_ARGS+= --enable-cache-digests
 #  - Select language for Error pages (see errors dir)
 #CONFIGURE_ARGS+= --enable-err-language=lang
@@ -107,6 +131,9 @@ MAN8=	pam_auth.8 squid_unix_group.8 squid.8
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/doc/squid.8
+	# Prevent installation of .orig files by deleting them.
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 post-install:
 #	I don't think many people use the pinger nowadays, and if you
@@ -125,12 +152,12 @@ post-install:
 .endfor
 	@if [ ! -d ${PREFIX}/squid/logs ]; then			\
 		${MKDIR} ${PREFIX}/squid/logs;		  	\
-		${CHOWN} nobody:nogroup ${PREFIX}/squid/logs;   \
 	fi
+#		${CHOWN} nobody:nogroup ${PREFIX}/squid/logs;   \
 	@if [ ! -d ${PREFIX}/squid/cache ]; then		\
 		${MKDIR} ${PREFIX}/squid/cache;			\
-		${CHOWN} nobody:nogroup ${PREFIX}/squid/cache;  \
 	fi
+#		${CHOWN} nobody:nogroup ${PREFIX}/squid/cache;  \
 	@if [ ! -f ${PREFIX}/etc/rc.d/squid.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/squid.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/squid.sh ${PREFIX}/etc/rc.d/squid.sh; \
