@@ -1,0 +1,660 @@
+diff -u -N ../old/HPscan-co.ad ./HPscan-co.ad
+--- ../old/HPscan-co.ad	Thu Jan  1 01:00:00 1970
++++ ./HPscan-co.ad	Thu Mar  7 21:21:14 1996
+@@ -0,0 +1,46 @@
++HPscan*canvas.translations: #override\n\
++		<Key>:			input() \n\
++		<Motion>:		input() \n\
++		<BtnDown>:		input() \n\
++		<BtnUp>:		input()
++HPscan*preview.label:			Preview
++HPscan*zoom.label:			Zoom
++HPscan*scan.label:			Scan
++HPscan*quit.label:			Quit
++HPscan*resolution.label:		Resolution
++HPscan*resolutionVal.borderWidth:	0
++HPscan*message.horizDistance: 		40
++HPscan*message.borderWidth:		0
++HPscan*filenamelabel.label: 		Filename:
++HPscan*filenamelabel.borderWidth:	0
++! Should be canvas.width - 90
++HPscan*filename.width:			210
++HPscan*canvas.width:			300
++
++HPscan*intensityLabel.label:		Intensity:
++HPscan*intensityLabel.borderWidth:	0
++HPscan*intensityVal.borderWidth:	0
++HPscan*intensityScrollbar.width:	120
++HPscan*intensityScrollbar.height:	15
++HPscan*intensityScrollbar.minimumThumb:	8
++HPscan*intensityScrollbar.topOfThumb:	0.5
++
++HPscan*contrastLabel.label:		Contrast: 
++HPscan*contrastLabel.borderWidth:	0
++HPscan*contrastVal.borderWidth:		0
++HPscan*contrastScrollbar.width:		120
++HPscan*contrastScrollbar.height:	15
++HPscan*contrastScrollbar.minimumThumb:	8
++HPscan*contrastScrollbar.topOfThumb:	0.5
++
++! some color stuff
++HPscan*form.background:			cornsilk
++HPscan*canvas.background:		gainsboro
++HPscan*controlform.background:		light cyan
++HPscan*controlform*Label.background:	light cyan
++HPscan*resolution*background:		lavender
++HPscan*Command.background:		navajowhite
++HPscan*quit.background:			red
++HPscan*quit.foreground:			yellow
++HPscan*Scrollbar.background:		misty rose
++HPscan*filename*background:		misty rose
+diff -u -N ../old/HPscan.ad ./HPscan.ad
+--- ../old/HPscan.ad	Thu Jan  1 01:00:00 1970
++++ ./HPscan.ad	Thu Mar  7 18:26:56 1996
+@@ -0,0 +1,34 @@
++HPscan*canvas.translations: #override\n\
++		<Key>:			input() \n\
++		<Motion>:		input() \n\
++		<BtnDown>:		input() \n\
++		<BtnUp>:		input()
++HPscan*preview.label:			Preview
++HPscan*zoom.label:			Zoom
++HPscan*scan.label:			Scan
++HPscan*quit.label:			Quit
++HPscan*resolution.label:		Resolution
++HPscan*resolutionVal.borderWidth:	0
++HPscan*message.horizDistance: 		40
++HPscan*message.borderWidth:		0
++HPscan*filenamelabel.label: 		Filename:
++HPscan*filenamelabel.borderWidth:	0
++! Should be canvas.width - 90
++HPscan*filename.width:			210
++HPscan*canvas.width:			300
++
++HPscan*intensityLabel.label:		Intensity:
++HPscan*intensityLabel.borderWidth:	0
++HPscan*intensityVal.borderWidth:	0
++HPscan*intensityScrollbar.width:	120
++HPscan*intensityScrollbar.height:	15
++HPscan*intensityScrollbar.minimumThumb:	8
++HPscan*intensityScrollbar.topOfThumb:	0.5
++
++HPscan*contrastLabel.label:		Contrast: 
++HPscan*contrastLabel.borderWidth:	0
++HPscan*contrastVal.borderWidth:		0
++HPscan*contrastScrollbar.width:		120
++HPscan*contrastScrollbar.height:	15
++HPscan*contrastScrollbar.minimumThumb:	8
++HPscan*contrastScrollbar.topOfThumb:	0.5
+diff -u -N ../old/Imakefile ./Imakefile
+--- ../old/Imakefile	Wed Mar  6 13:25:47 1996
++++ ./Imakefile	Thu Mar  7 21:22:07 1996
+@@ -12,3 +12,5 @@
+            OBJS = main.o scsi.o scanner.o scl.o gui.o colour.o Plain.o
+ 
+ ComplexProgramTarget(hpscan)
++InstallAppDefaults(HPscan)
++InstallAppDefaultsLong(HPscan-co,HPscan-color)
+diff -u -N ../old/colour.c ./colour.c
+--- ../old/colour.c	Wed Mar  6 13:25:47 1996
++++ ./colour.c	Thu Mar  7 16:41:36 1996
+@@ -149,6 +149,10 @@
+     int r_best, g_best, b_best;
+     unsigned long pix_best;
+ 
++    if (r > 255) r = 255;
++    if (g > 255) g = 255;
++    if (b > 255) b = 255;
++
+     if(screendepth == 1)
+     {
+ 	if(r+g+b >= 3*128)
+@@ -186,9 +190,15 @@
+     else /* > 8 bit */
+     {
+ 	if(r == 255 && g == 255 && b == 255)
++	{   
+ 	    pix_best = white;
++	    r_best = g_best = b_best = 255;
++	}
+ 	else if(r == 0 && g == 0 && b == 0)
++	{
+ 	    pix_best = black;
++	    r_best = g_best = b_best = 0;
++	}
+ 	else
+ 	{
+ 	    r_best = ((r + 4) / 8) * 8;
+diff -u -N ../old/gui.c ./gui.c
+--- ../old/gui.c	Wed Mar  6 13:25:47 1996
++++ ./gui.c	Thu Mar  7 23:28:40 1996
+@@ -16,6 +16,7 @@
+ #include <X11/StringDefs.h>
+ #include <X11/Intrinsic.h>
+ #include <X11/Shell.h>
++#include <X11/Xaw/Simple.h>
+ #include <X11/Xaw/Command.h>
+ #include <X11/Xaw/Label.h>
+ #include <X11/Xaw/Form.h>
+@@ -24,16 +25,21 @@
+ #include <X11/Xaw/SimpleMenu.h>
+ #include <X11/Xaw/SmeBSB.h>
+ #include <X11/Xaw/SmeLine.h>
++#include <X11/Xaw/Scrollbar.h>
+ #include "Plain.h"
+ 
+ #include "gui.h"
+ #include "colour.h"
+ #include "scl.h"
+ 
++#include "hpscan.icon"
++
+ static Widget shell, form, controlform, canvas;
+ static Widget previewb, zoomb, scanb, quitb;
+ static Widget resolutionl, resolutionb, resolutionm, messagel;
+ static Widget filenamel, filenamet;
++static Widget intensitylabel, intensityscr, intensityval;
++static Widget contrastlabel, contrastscr, contrastval;
+ 
+ static XtAppContext app;
+ Display *display;
+@@ -43,18 +49,48 @@
+ int screendepth;
+ static GC image_gc;
+ static Colormap cmap;
++static Atom delwin;  /* the delete window atom */
+ 
+-static int canvas_width = 300;
++static int canvas_width;
+ static int canvas_height;
+ 
+ static int resolution_list[] = {75, 100, 150, 200, 300, 400, 600};
+ 
++static int min_intensity, max_intensity, min_contrast, max_contrast;
++static int intensity, contrast;
++
+ static char *fallback[] = {
+     "*.canvas.translations: #override\\n\
+        <Key>:		input() \\n\
+        <Motion>:	input() \\n\
+        <BtnDown>:	input() \\n\
+-       <BtnUp>:		input() \\n",
++       <BtnUp>:		input() ",
++    "*.preview.label:			Preview",
++    "*.zoom.label:			Zoom",
++    "*.scan.label:			Scan",
++    "*.quit.label:			Quit",
++    "*.resolution.label:		Resolution",
++    "*.resolutionVal.borderWidth:	0",
++    "*.message.horizDistance: 		40",
++    "*.message.borderWidth:		0",
++    "*.filenamelabel.label: 		Filename:",
++    "*.filenamelabel.borderWidth:	0",
++    "*.filename.width:			210",
++    "*.canvas.width:			300",
++    "*.intensityLabel.label:		Intensity:",
++    "*.intensityLabel.borderWidth:	0",
++    "*.intensityVal.borderWidth:	0",
++    "*.intensityScrollbar.width:	120",
++    "*.intensityScrollbar.height:	15",
++    "*.intensityScrollbar.minimumThumb:	8",
++    "*.intensityScrollbar.topOfThumb:	0.5",
++    "*.contrastLabel.label:		Contrast: ",
++    "*.contrastLabel.borderWidth:	0",
++    "*.contrastVal.borderWidth:		0",
++    "*.contrastScrollbar.width:		120",
++    "*.contrastScrollbar.height:	15",
++    "*.contrastScrollbar.minimumThumb:	8",
++    "*.contrastScrollbar.topOfThumb:	0.5",
+     (char *)0
+ };
+ 
+@@ -71,8 +107,11 @@
+ static void scan(Widget w, XtPointer client, XtPointer call);
+ static void quit(Widget w, XtPointer client, XtPointer call);
+ static void resolution(Widget w, XtPointer client, XtPointer call);
++static void movethumb(Widget w, XtPointer client, XtPointer call);
++static void scrollthumb(Widget w, XtPointer client, XtPointer call);
+ 
+-static struct raw_image *do_scan(int l, int t, int w, int h, int res,int type);
++static struct raw_image *do_scan(int l, int t, int w, int h, int res,
++				 int intensity, int contrast, int type);
+ static XImage *make_image(struct raw_image *raw);
+ static int gamma_correct(int input);
+ static void find_box(struct raw_image *raw);
+@@ -82,6 +121,14 @@
+ static void adjust_box(int edge, int x, int y);
+ static void set_message(char *message);
+ 
++static void actionHook(Widget w, XtPointer cld, String name, XEvent *xev,
++		       String *params, Cardinal *num_params);
++static void GlobalProtoHandler(Widget w, XEvent *xev, String *p, Cardinal *n);
++
++static XtActionsRec actions[] = { {"GlobalProtoHandler", GlobalProtoHandler}};
++
++#define TransTableMessage  "<Message>WM_PROTOCOLS : GlobalProtoHandler()"
++
+ static int scanner_to_canvas_x(int x);
+ static int scanner_to_canvas_y(int y);
+ static int canvas_to_scanner_x(int x);
+@@ -118,20 +165,34 @@
+ {
+     Widget w;
+     Widget colourmap_widgets[2];
+-    int i;
++    int i, lo, hi;
+     char buf[20];
++    XtActionHookId ahid;
++    XWMHints *wmhints;
+ 
+     scanner_fd = fd;
+ 
+     shell = 
+-	XtVaAppInitialize(&app, "Scanner", 0, 0, &argc, argv, fallback,
++	XtVaAppInitialize(&app, "HPscan", 0, 0, &argc, argv, fallback,
+ 			  (String)0);
+ 
++    ahid = XtAppAddActionHook(app, actionHook, NULL);
++  
+     display = XtDisplay(shell);
+     screen = XtScreen(shell);
+     screendepth = DefaultDepthOfScreen(screen);
+     root = RootWindowOfScreen(screen);
+-    
++
++    /* Get various values from the scanner for later processing. */
++    GetMinIntensity(scanner_fd, &min_intensity);
++    GetMaxIntensity(scanner_fd, &max_intensity);
++    intensity = (max_intensity - min_intensity) / 2 + min_intensity;
++    GetMinContrast(scanner_fd, &min_contrast);
++    GetMaxContrast(scanner_fd, &max_contrast);
++    contrast = (max_contrast - min_contrast) / 2 + min_contrast;
++    GetMaxXExtentDecipoints(scanner_fd, &scanner_width);
++    GetMaxYExtentDecipoints(scanner_fd, &scanner_height);
++
+     form = 
+ 	XtVaCreateManagedWidget("form", formWidgetClass, shell,
+ 				(String)0);
+@@ -144,14 +205,12 @@
+ 
+     previewb = 
+ 	XtVaCreateManagedWidget("preview", commandWidgetClass, controlform,
+-				XtNlabel, "Preview",
+ 				(String)0);
+     XtAddCallback(previewb, XtNcallback, preview, (XtPointer)False);
+ 
+     zoomb = 
+ 	XtVaCreateManagedWidget("zoom", commandWidgetClass, controlform,
+ 				XtNfromHoriz, previewb,
+-				XtNlabel, "Zoom",
+ 				XtNsensitive, False,
+ 				(String)0);
+     XtAddCallback(zoomb, XtNcallback, preview, (XtPointer)True);
+@@ -159,7 +218,6 @@
+     scanb = 
+ 	XtVaCreateManagedWidget("scan", commandWidgetClass, controlform,
+ 				XtNfromHoriz, zoomb,
+-				XtNlabel, "Scan",
+ 				XtNsensitive, False,
+ 				(String)0);
+     XtAddCallback(scanb, XtNcallback, scan, (XtPointer)0);
+@@ -167,7 +225,6 @@
+     quitb = 
+ 	XtVaCreateManagedWidget("quit", commandWidgetClass, controlform,
+ 				XtNfromHoriz, scanb,
+-				XtNlabel, "Quit",
+ 				(String)0);
+     XtAddCallback(quitb, XtNcallback, quit, (XtPointer)0);
+ 
+@@ -176,7 +233,6 @@
+ 				controlform,
+ 				XtNfromVert, previewb,
+ 				XtNmenuName, "resolutionmenu",
+-				XtNlabel, "Resolution",
+ 				(String)0);
+     resolutionm =
+ 	XtVaCreatePopupShell("resolutionmenu", simpleMenuWidgetClass,
+@@ -197,7 +253,7 @@
+    
+     sprintf(buf, "%d dpi", final_resolution);
+     resolutionl =
+-	XtVaCreateManagedWidget("resolution", labelWidgetClass, controlform,
++	XtVaCreateManagedWidget("resolutionVal", labelWidgetClass, controlform,
+ 				XtNfromHoriz, resolutionb,
+ 				XtNfromVert, previewb,
+ 				XtNlabel, buf,
+@@ -206,46 +262,103 @@
+     messagel =
+ 	XtVaCreateManagedWidget("message", labelWidgetClass, controlform,
+ 				XtNfromHoriz, resolutionl,
+-				XtNhorizDistance, 40,
+ 				XtNfromVert, previewb,
+-				/*         Scan failed   fits in the space */
+-				XtNlabel, "           ",
++				/*         Out of memory!  fits in the space */
++				XtNlabel, "              ",
+ 				(String)0);
+ 
+     filenamel =
+ 	XtVaCreateManagedWidget("filenamelabel", labelWidgetClass, controlform,
+ 				XtNfromVert, resolutionb,
+-				XtNlabel, "Filename:",
+ 				(String)0);
+ 
+     filenamet =
+ 	XtVaCreateManagedWidget("filename", asciiTextWidgetClass, controlform,
+ 				XtNfromHoriz, filenamel,
+ 				XtNfromVert, resolutionb,
+-				XtNwidth, canvas_width - 90, /* XXX */
+ 				XtNstring, "image.ppm",
+ 				XtNeditType, XawtextEdit,
+ 				(String)0);
+ 
+-    /* Create the preview area */
++    intensitylabel =
++	XtVaCreateManagedWidget("intensityLabel", labelWidgetClass,
++				controlform,
++				XtNfromVert, filenamel,
++				(String)0);
+ 
+-    GetMaxXExtentDecipoints(scanner_fd, &scanner_width);
+-    GetMaxYExtentDecipoints(scanner_fd, &scanner_height);
++    sprintf(buf, "%5d", intensity);
++    intensityval =
++	XtVaCreateManagedWidget("intensityVal", labelWidgetClass,
++				controlform,
++				XtNfromHoriz, intensitylabel,
++				XtNfromVert, filenamel,
++				XtNlabel, buf,
++				(String)0);
+ 
+-    canvas_height = canvas_width * ((double)scanner_height / scanner_width);
++    intensityscr =
++	XtVaCreateManagedWidget("intensityScrollbar", scrollbarWidgetClass,
++				controlform,
++				XtNfromHoriz, intensityval,
++				XtNfromVert, filenamel,
++				XtNorientation, XtorientHorizontal,
++				(String)0);
++
++    XtAddCallback(intensityscr, "jumpProc", movethumb, (XtPointer)&intensity);
++    XtAddCallback(intensityscr, "scrollProc", scrollthumb,
++		  (XtPointer)&intensity);
++
++    contrastlabel =
++	XtVaCreateManagedWidget("contrastLabel", labelWidgetClass,
++				controlform,
++				XtNfromVert, intensitylabel,
++				(String)0);
++
++    sprintf(buf, "%5d", contrast);
++    contrastval =
++	XtVaCreateManagedWidget("contrastVal", labelWidgetClass,
++				controlform,
++				XtNfromHoriz, contrastlabel,
++				XtNfromVert, intensitylabel,
++				XtNlabel, buf,
++				(String)0);
++
++    contrastscr =
++	XtVaCreateManagedWidget("contrastScrollbar", scrollbarWidgetClass,
++				controlform,
++				XtNfromHoriz, contrastval,
++				XtNfromVert, intensitylabel,
++				XtNorientation, XtorientHorizontal,
++				(String)0);
++
++    XtAddCallback(contrastscr, "jumpProc", movethumb, (XtPointer)&contrast);
++    XtAddCallback(contrastscr, "scrollProc", scrollthumb,
++		  (XtPointer)&contrast);
++
++    /* Create the preview area */
+ 
+     canvas =
+ 	XtVaCreateManagedWidget("canvas", plainWidgetClass, form,
+-				XtNwidth, canvas_width,
+-				XtNheight, canvas_height,
+ 				XtNfromVert, controlform,
++				XtNheight, 1,
+ 				(String)0);
++    XtVaGetValues(canvas,
++		  XtNwidth, &canvas_width,
++		  (String)0);
++    /*
++     * The width value is settable via a resource, the height value is
++     * derived from it according to the scanner's aspect ratio.
++     */
++    canvas_height = canvas_width * ((double)scanner_height / scanner_width);
++    XtVaSetValues(canvas,
++		  XtNheight, canvas_height,
++		  (String)0);
++
+     XtAddCallback(canvas, "exposeCallback", redraw, (XtPointer)0);
+     XtAddCallback(canvas, "inputCallback", input, (XtPointer)0);
+     XtVaGetValues(canvas, XtNvisual, &visual, (String)0);
+ 
+     XtRealizeWidget(shell);
+-    
++
+     /* Set up colour map etc */
+ 
+     colourmap_widgets[0] = canvas;
+@@ -259,6 +372,25 @@
+     XSetForeground(display, image_gc, colour_match(0, 0, 0, 0, 0, 0));
+     XSetBackground(display, image_gc, colour_match(255, 255, 255, 0, 0, 0));
+ 
++    /* Make the `delete' window manager function happy. */
++    delwin = XInternAtom(display, "WM_DELETE_WINDOW", False);  
++    XSetWMProtocols(display, XtWindow(shell), &delwin, 1);
++    XtAppAddActions(app, actions, 1);
++    XtOverrideTranslations(shell, XtParseTranslationTable(TransTableMessage));
++
++    /* Now finally, tell the WM about our icon wishes. */
++    if((wmhints = XAllocWMHints()) == NULL)
++	XtError("Out of memory.");
++    wmhints->flags = IconPixmapHint;
++    wmhints->icon_pixmap = XCreateBitmapFromData(display, XtWindow(shell),
++						 hpscan_bits,
++						 hpscan_width, hpscan_height);
++    XmbSetWMProperties(display, XtWindow(shell),
++		       "HPscan", "HPscan",
++		       argv, argc,
++		       NULL, wmhints, NULL);
++    XFree(wmhints);
++
+     XtAppMainLoop(app);
+ }
+ 
+@@ -420,7 +552,13 @@
+     prev_resolution = (canvas_width * 720) / prev_width;
+ 
+     raw = do_scan(prev_left, prev_top, prev_width, prev_height,
+-		  prev_resolution, 5);
++		  prev_resolution, intensity, contrast, 5);
++    if (raw == 0)
++	{
++	    set_message("Out of memory!");
++	    return;
++	}
++
+     prev_pixwidth = raw->width;
+     prev_pixheight = raw->height;
+ 
+@@ -441,6 +579,8 @@
+     XtSetSensitive(zoomb, image != 0);
+     XtSetSensitive(scanb, image != 0);
+ 
++    free(raw->data);
++
+     redraw(canvas, 0, 0);
+ }
+ 
+@@ -458,7 +598,7 @@
+ 
+     raw = 
+ 	do_scan(box_left, box_top, box_right-box_left+1, box_bottom-box_top+1,
+-		final_resolution, 5);
++		final_resolution, intensity, contrast, 5);
+ 
+     /* Write it out as a ppm file (nice and easy!) */
+ 
+@@ -474,9 +614,12 @@
+ 
+ 	fprintf(f, "P6\n%d %d\n255\n", raw->width, raw->height);
+ 	fwrite(raw->data, 1, raw->linebytes * raw->height, f);
++	free(raw->data);
+ 
+ 	fclose(f);
+     }
++    else
++	set_message("Out of memory!");
+ 
+ }
+ 
+@@ -503,17 +646,82 @@
+     XtVaSetValues(resolutionl, XtNlabel, buf, (String)0);
+ }
+ 
++/*
++ * Move the thumb of a scrollbar, update the according value as we go.
++ */
++
++static void movethumb(Widget w, XtPointer client, XtPointer call)
++{
++    char buf[20];
++    float percent = *(float *)call;
++    int *val_p = (int *)client;
++
++    if (percent > 1.0)
++	percent = 1.0;
++    else if (percent < 0.0)
++	percent = 0.0;
++
++    if (val_p == &intensity) {
++	*val_p = (max_intensity - min_intensity) * percent + min_intensity;
++	sprintf(buf, "%5d", *val_p);
++	XtVaSetValues(intensityval,
++		      XtNlabel, buf,
++		      (String)0);
++    } else if (val_p = &contrast) {
++	*val_p = (max_contrast - min_contrast) * percent + min_contrast;
++	sprintf(buf, "%5d", *val_p);
++	XtVaSetValues(contrastval,
++		      XtNlabel, buf,
++		      (String)0);
++    } else
++	XtAppError(app, "unknown client in movethumb()");
++}
++
++/*
++ * Almost the same as above, but called by the scrollProc callback.
++ */
++
++static void scrollthumb(Widget w, XtPointer client, XtPointer call)
++{
++    char buf[20];
++    int position = (int)call;
++    int *val_p = (int *)client;
++    float shown, topofthumb;
++
++    XtVaGetValues(w,
++		  XtNshown, &shown,
++		  XtNtopOfThumb, &topofthumb,
++		  (String)0);
++    topofthumb -= 0.0001 * (float)position;
++    if (topofthumb < 0.0) topofthumb = 0.0;
++    else if (topofthumb > 1.0) topofthumb = 1.0;
++    XawScrollbarSetThumb(w, topofthumb, shown);
++
++    if (val_p == &intensity) {
++	*val_p = (max_intensity - min_intensity) * topofthumb + min_intensity;
++	sprintf(buf, "%5d", *val_p);
++	XtVaSetValues(intensityval,
++		      XtNlabel, buf,
++		      (String)0);
++    } else if (val_p = &contrast) {
++	*val_p = (max_contrast - min_contrast) * topofthumb + min_contrast;
++	sprintf(buf, "%5d", *val_p);
++	XtVaSetValues(contrastval,
++		      XtNlabel, buf,
++		      (String)0);
++    } else
++	XtAppError(app, "unknown client in movethumb()");
++}
++
+ /* 
+  * Perform a scan, returning an XImage (return struct is statically allocated).
+  */
+ 
+-static struct raw_image *do_scan(int l, int t, int w, int h, int res, int type)
++static struct raw_image *do_scan(int l, int t, int w, int h, int res,
++				 int intensity, int contrast, int type)
+ {
+     static struct raw_image raw;
+ 
+-    if(raw.data)
+-	free(raw.data);
+-
+     SetXPositionDecipoints(scanner_fd, l);
+     SetYPositionDecipoints(scanner_fd, t);
+     SetXExtentDecipoints(scanner_fd, w);
+@@ -525,6 +733,9 @@
+     SetXResolution(scanner_fd, res);
+     SetYResolution(scanner_fd, res);
+ 
++    SetIntensity(scanner_fd, intensity);
++    SetContrast(scanner_fd, contrast);
++
+     GetPixelsPerLine(scanner_fd, &raw.width);
+     GetLinesPerScan(scanner_fd, &raw.height);
+     GetBytesPerLine(scanner_fd, &raw.linebytes);
+@@ -758,6 +969,24 @@
+ 
+     (*((CoreClassPart *)labelWidgetClass)->expose)(messagel, 0, 0);
+     XFlush(display);
++}
++
++
++/*
++ * Window manager legacy.
++ */
++
++static void 
++actionHook(Widget w, XtPointer cld, String name, XEvent *xev,
++	   String *params, Cardinal *num_params)
++{
++}
++
++static void GlobalProtoHandler(Widget w, XEvent *xev, String *p, Cardinal *n)
++{
++  if (xev->xclient.data.l[0] == delwin) {
++    if (w == shell) exit(EXIT_SUCCESS); else XtPopdown(w);
++  }
+ }
+ 
+ /* 
+diff -u -N ../old/hpscan.icon ./hpscan.icon
+--- ../old/hpscan.icon	Thu Jan  1 01:00:00 1970
++++ ./hpscan.icon	Thu Mar  7 23:22:09 1996
+@@ -0,0 +1,21 @@
++#define hpscan_width 50
++#define hpscan_height 30
++static unsigned char hpscan_bits[] = {
++   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x64, 0x54, 0x55, 0x55, 0x55,
++   0x55, 0x01, 0x6a, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0x00, 0x64, 0x55, 0x55,
++   0x55, 0x55, 0x55, 0x01, 0x62, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0x00, 0x34,
++   0x55, 0x55, 0x55, 0x55, 0x55, 0x01, 0xb2, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa,
++   0x00, 0x30, 0x55, 0x55, 0x55, 0x55, 0x55, 0x01, 0x32, 0x20, 0x80, 0xaa,
++   0xaa, 0xaa, 0x00, 0x18, 0x00, 0x00, 0x55, 0x55, 0x55, 0x01, 0xfa, 0x87,
++   0x3f, 0xaa, 0xaa, 0xaa, 0x00, 0xf8, 0x8f, 0x7f, 0x54, 0x55, 0x55, 0x01,
++   0x18, 0x8c, 0x61, 0xaa, 0xaa, 0xaa, 0x00, 0x0c, 0x86, 0x61, 0x54, 0x55,
++   0x55, 0x01, 0x0c, 0xc6, 0x30, 0xaa, 0xaa, 0xaa, 0x00, 0x0c, 0xc6, 0x30,
++   0x01, 0x00, 0x00, 0x00, 0x0c, 0xc6, 0x30, 0x00, 0x00, 0x00, 0x00, 0x06,
++   0xc3, 0x30, 0xfc, 0xff, 0xff, 0x01, 0x06, 0x63, 0x18, 0xfe, 0xff, 0xff,
++   0x01, 0x06, 0xe3, 0x1f, 0x07, 0x00, 0x00, 0x00, 0x06, 0xe3, 0x0f, 0x03,
++   0x00, 0x00, 0x00, 0x00, 0x60, 0x40, 0x03, 0xef, 0xf9, 0x00, 0xaa, 0x32,
++   0x2a, 0x9f, 0xef, 0xfb, 0x01, 0x54, 0x35, 0x55, 0xbe, 0x01, 0x9b, 0x01,
++   0xaa, 0xb2, 0x2a, 0xb0, 0xe1, 0x9b, 0x01, 0x54, 0x31, 0x55, 0xb0, 0xe1,
++   0x9b, 0x01, 0xaa, 0x9a, 0x2a, 0xb0, 0x61, 0x9b, 0x01, 0x54, 0x59, 0x95,
++   0x9f, 0xef, 0x9b, 0x01, 0xaa, 0x9a, 0xaa, 0x1f, 0xef, 0x9b, 0x01, 0x00,
++   0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
