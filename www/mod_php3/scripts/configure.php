@@ -166,7 +166,7 @@ USE_OPENSSL=	RSA
 BUILD_DEPENDS+=	mm-config:\${PORTSDIR}/devel/mm \\
 		\${PREFIX}/lib/libmm.a:\${PORTSDIR}/devel/mm
 
-VERSION_MODSSL=	2.6.3
+VERSION_MODSSL=	2.6.4
 
 CONFIGURE_ARGS+=--enable-module=ssl \\
 		--enable-module=define
