@@ -1,4 +1,9 @@
 #!/bin/sh
+#
+# pdispatch <branch> <command> <package.tgz> [<args> ...]
+#
+# Choose a random machine from ${buildroot}/ulist and dispatch the
+# job to it via the ptimeout script.
 
 # wait 12 hours maximum
 timeout=43200
