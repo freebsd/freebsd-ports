@@ -1,0 +1,13 @@
+--- etc/afpd/nls/Makefile.orig	Sat Dec 12 12:01:06 1998
++++ etc/afpd/nls/Makefile	Mon Mar  1 03:48:48 1999
+@@ -13,8 +13,8 @@
+ 	${CC} ${CFLAGS} ${LDFLAGS} makecode.o -o makecode
+ 
+ install: 
+-	-mkdir ${RESDIR}/nls
+-	${INSTALL} -m 644 maccode.* ${RESDIR}/nls
++	-mkdir ${RESDIR}/nls/netatalk
++	${INSTALL} -m 644 maccode.* ${RESDIR}/nls/netatalk
+ 
+ clean:
+ 	rm -f *.o

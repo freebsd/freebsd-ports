@@ -1,0 +1,21 @@
+--- libatalk/Makefile.orig	Mon Mar  8 09:20:40 1999
++++ libatalk/Makefile	Mon Mar  8 09:22:00 1999
+@@ -1,8 +1,15 @@
+-ALL=	asp dsi atp nbp adouble util compat # cnid
++ALL=	asp dsi atp nbp adouble util compat
+ LIBS=	asp/asplib atp/atplib nbp/nbplib adouble/adoublelib \
+-	dsi/dsilib util/utillib compat/compatlib # cnid/cnidlib
++	dsi/dsilib util/utillib compat/compatlib
+ PLIBS=	asp/asplib_p atp/atplib_p nbp/nbplib_p adouble/adoublelib_p \
+-	dsi/dsilib_p util/utillib_p compat/compatlib_p # cnid/cnidlib_p
++	dsi/dsilib_p util/utillib_p compat/compatlib_p
++
++.if defined(USE_CNID)
++ALL+=	cnid
++LIBS+=	cnid/cnidlib
++PLIBS+=	cnid/cnidlib_p
++.endif
++
+ TAGSFILE=tags
+ CC=cc
+ INSTALL=install

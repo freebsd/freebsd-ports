@@ -1,8 +1,8 @@
---- man/man8/afpd.8.orig	Tue May 20 19:35:43 1997
-+++ man/man8/afpd.8	Tue Nov 24 03:49:13 1998
+--- man/man8/afpd.8.orig	Mon Mar  1 02:20:38 1999
++++ man/man8/afpd.8	Mon Mar  1 04:05:53 1999
 @@ -1,108 +1,59 @@
 -.TH AFPD 8 "25 Jan 1994" "netatalk 1.3"
-+.TH AFPD 8 "07 Sep 1998" "netatalk 1.4b2/asun 2.1.0"
++.TH AFPD 8 "23 Feb 1999" "netatalk 1.4b2/asun 2.1.3"
 +
  .SH NAME
  afpd \- AppleTalk Filing Protocol daemon
@@ -190,7 +190,7 @@
  .TP
  .B \-G
  .TP
-@@ -144,50 +103,191 @@
+@@ -144,50 +103,246 @@
  .B \-C
  .TP
  .B \-A
@@ -253,23 +253,24 @@
 +authentication (using the \fBTwoWayRandNum\fR method).
 +.TP
 +\fB\-\fR[\fBno\fR]\fBafskrb\fR
-+Allow (do not allow) logins using AFS Kerberos. Whether this option is
-+available depends on both the server and the client (using the \fBAFS
-+Kerberos\fR method).
++Allow (do not allow) logins using AFS Kerberos (using the \fBAFS Kerberos\fR
++method). Whether this option is available depends on both how \fBnetatalk\fR
++was compiled and the client.
 +.TP
 +\fB\-\fR[\fBno\fR]\fBkrbiv\fR
-+Allow (do not allow) logins using Kerberos IV. Whether this option is
-+available depends on both the server and the client (using the 
-+\fBKerberos\ IV\fR method).
++Allow (do not allow) logins using Kerberos IV (using the 
++\fBKerberos\ IV\fR method). Whether this option is
++available depends on both how \fBnetatalk\fR was compiled and the client. 
++.TP
++\fB\-authall\fR
++Allow \fBNoUserAuthent\fR, \fBCleartxt\fR, \fBAFS Kerberos\fR, and
++\fBKerberos\ IV\fR authentication methods (default).
 +.TP
 +\fB\-\fR[\fBno\fR]\fBsetpassword\fR
 +Allow (do not allow) the user to change her or his password.
 +.TP
 +\fB\-\fR[\fBno\fR]\fBsavepassword\fR
 +Allow (do not allow) the client to save the password locally.
-+.TP
-+\fB\-authall\fR
-+Allow all available authentication methods.
 +.TP
 +\fB\-defaultvol\fR \fIfile\fR
 +Specifies an alternate location of the default volume specification file
@@ -285,6 +286,10 @@
 +.TP
 +\fB\-\fR[\fBno\fR]\fBuservol\fR
 +Read (do not read) the user's volume specification file.
++.TP
++\fB\-nlspath\fR \fIpath\fR
++When using a code page for file name translation (see below), prefix the file
++name with \fIpath\fR. Default is ``:RESDIR:/nls/netatalk''.
 +.TP
 +\fB\-guestname\fR \fIusername\fR
 +User \fIusername\fR as the user id for guest access.
@@ -324,11 +329,61 @@
 +.RS
 +.sp
 +.I pathname
-+[\fIvolumename\fR]
++[\fIvolumename\fR] [\fBcasefold=\fIcasefold\fR] [\fBcodepage=\fIfile\fR]
++[\fBoptions=\fIoptions\fR] [\fBdbpath=\fIpath to ID database\fR]
++[\fBaccess=\fIuser,@group,...\fR] [\fBpassword=\fIpassword\fR]
 +.sp
 +.RE
 +If \fIvolumename\fR is unspecified, the last component of
 +\fIpathname\fR is used.  No two volumes may have the same name.  
++.RE
++.sp
++The optional \fBcasefold\fR parameter specifies how the caseness of file
++names should be handled:
++.TP
++\fBtolower\fR
++converts filenames for all files created from the client to lowercase;
++existing mixed-case filenames are ignored.
++.TP
++\fBtoupper\fR
++converts filenames for all files created from the client to uppercase;
++existing mixed-case filenames are ignored.
++.TP
++\fBxlatelower\fR
++make filenames appear in lowercase on the client, and in uppercase in the
++file system.
++.TP
++\fBxlateupper\fR
++make filenames appear in uppercase on the client, and in lowercase in the
++file system.
++.LP
++The optional \fBcodepage\fR parameter determines the code page file to be
++used for filename translation. By default, no translation takes place. By
++default (see \fB-nlspath\fR, above), the code page filename is prefixed with
++\fB:RESDIR:/nls/netatalk\fR, which contains a number of code pages
++suitable for use with \fBnetatalk\fR.
++.LP
++The optional \fBoptions\fR parameter may take one or more of:
++.TP
++\fBprodos\fR
++Mark volume as ProDOS compatible.
++.TP
++\fBcrlf\fR
++Convert line endings of all files of type ``TEXT'' between CR (Mac) and LF
++(Unix).
++.TP
++\fBnoadouble\fR
++Don't create ``.AppleDouble'' directory unless the client stores a resource
++fork.
++.LP
++The optional \fBaccess\fR parameter lists users and groups which are to be
++allowed access to the volume. Group names must be prefixed with ``@.''
++.LP
++The optional \fBdbpath\fR sets the path to the File ID database for this
++volume. By default, the database is stored in the volume's root directory.
++.LP
++The optional \fBpassword\fR sets a volume password which the client needs to
++supply before being able to access the volumes.
 +.LP
 +An extension mapping is formatted as follows:
 +.RS
@@ -414,7 +469,7 @@
  .LP
  If a user renames a folder that has an application as its progeny, the
  .B APPL
-@@ -195,16 +295,16 @@
+@@ -195,16 +350,16 @@
  that double-clicking on one of the application's documents will no
  longer launch the application. The
  .B APPL
@@ -435,7 +490,7 @@
  .LP
  It is not possible to move directories between devices.
  .LP
-@@ -221,7 +321,7 @@
+@@ -221,7 +376,7 @@
  so that his home directory is no longer offered, he will no longer be able
  to edit his
  .B $HOME/AppleVolumes
@@ -444,7 +499,7 @@
  .LP
  Unix files beginning with `.' are not accessible from the mac.
  .LP
-@@ -252,8 +352,11 @@
+@@ -252,8 +407,11 @@
  synchronization locks use the
  .BR flock (2)
  interface.  This interface is not usually ``NFS-aware''.
@@ -456,7 +511,7 @@
  .B :ETCDIR:/AppleVolumes.default
  list of default volumes to mount
  .TP 20
-@@ -262,6 +365,14 @@
+@@ -262,6 +420,14 @@
  .TP 20
  .B $HOME/AppleVolumes
  user's list of volumes to mount

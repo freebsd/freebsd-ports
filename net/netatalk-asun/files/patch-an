@@ -1,0 +1,34 @@
+--- etc/afpd/volume.c.orig	Tue Mar  2 01:40:57 1999
++++ etc/afpd/volume.c	Tue Mar  2 01:40:21 1999
+@@ -159,13 +159,29 @@
+ {
+     struct vol	*volume;
+     int		vlen;
++    char	p[PATH_MAX];
+ 
+-    if ( name == NULL || *name == '\0' ) {
++    if ( name != NULL && name[0] != '\0') {
++    	strncpy( p, name, 27+1 );
++    } else {
+ 	if (( name = strrchr( path, '/' )) == NULL ) {
+ 	    return -1;	/* Obviously not a fully qualified path */
+ 	}
+-	name++;
++
++	strncpy( p, path, PATH_MAX );
++	name = p + (name - path);
++	/* Find last non-empty component */
++	while ( name != NULL && ( name[1] == '\0' || name[1] == '/' )) {
++	    name[0] = '\0';
++	    name = strrchr( p, '/' );
++	}
++	if ( name == NULL ) {
++	    strcpy( p, "(root)" );
++	} else {
++	    memmove( p, name + 1, strlen( name )+1 );
++	}
+     }
++    name = p;
+ 
+     for ( volume = volumes; volume; volume = volume->v_next ) {
+ 	if ( strcasecmp( volume->v_name, name ) == 0 ) {

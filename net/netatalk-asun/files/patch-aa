@@ -1,8 +1,7 @@
---- Makefile.orig	Mon Sep 28 21:48:41 1998
-+++ Makefile	Tue Nov 24 14:19:18 1998
+--- Makefile.orig	Sun Feb  7 12:15:46 1999
++++ Makefile	Mon Mar  8 09:42:21 1999
 @@ -1,15 +1,15 @@
--# Root of installation. Subdirectories will be ${DESTDIR}/etc,
-+TARGETS=	atalk
+ # Root of installation. Subdirectories will be ${DESTDIR}/etc,
  # ${DESTDIR}/bin, and ${DESTDIR}/lib.
 -DESTDIR=/usr/local/atalk
 +DESTDIR=${PREFIX}
@@ -20,7 +19,15 @@
  # for configuration files (AppleVolumes.system, etc.)
  ETCDIR=$(DESTDIR)/etc
  # for include files
-@@ -29,16 +29,16 @@
+@@ -27,22 +27,27 @@
+ #MANDIR=/usr/man
+ 
+ # Location of the Berkeley v2 db library and include files. 
+-#DB2DIR=/usr/local/BerkeleyDB
++.if defined(USE_CNID)
++DB2DIR=${PREFIX}
++.endif
+ 
  # Location of the DES library and include files. Comment this out if you
  # don't want Randnum Exchange and 2-Way Randnum Exchange as allowable UAMs 
  # for afpd. We expect libdes.a in $DESDIR/lib and des.h in $DESDIR/include.
@@ -36,17 +43,28 @@
  # Location of PAM support library and include files. Comment this out
  # if you don't want to enable PAM support
 -PAMDIR=/usr
+-
++## FreeBSD's PAM modules currently only support auth; session and account
++## are also required.
++#.if exists(/usr/lib/libpam.a)
 +#PAMDIR=/usr
- 
++#.endif
   
  # Location of the AFS and Kerberos libraries and include files.  Uncomment
-@@ -74,7 +74,8 @@
+ # and edit these if you want to include AFS or Kerberos support in afpd
+@@ -77,12 +82,13 @@
  	    ETCDIR="${ETCDIR}" LIBDIR="${LIBDIR}" INCDIR="${INCDIR}" \
  	    DESTDIR="${DESTDIR}" MANDIR="${MANDIR}" \
- 	    TCPWRAPDIR="${TCPWRAPDIR}" PAMDIR="${PAMDIR}" \
+ 	    TCPWRAPDIR="${TCPWRAPDIR}" PAMDIR="${PAMDIR}" DB2DIR="${DB2DIR}" \
 -	    AFSDIR="${AFSDIR}" KRBDIR="${KRBDIR}" DESDIR="${DESDIR}" $@
 +	    AFSDIR="${AFSDIR}" KRBDIR="${KRBDIR}" DESDIR="${DESDIR}" \
 +	    OPTOPTS="${CFLAGS}" $@
  
  FRC:
  
+ SYS=sunos ultrix solaris
+-VERSION=`date +%y%m%d`
++VERSION="netatalk-1.4b2+asun-2.1.3"
+ DISTDIR=../netatalk-${VERSION}
+ 
+ sysclean : FRC

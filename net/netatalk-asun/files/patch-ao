@@ -1,0 +1,14 @@
+--- include/atalk/adouble.h.orig	Sun Feb  7 12:15:38 1999
++++ include/atalk/adouble.h	Mon Mar  8 09:19:34 1999
+@@ -86,7 +86,11 @@
+ /* version info */
+ #define AD_VERSION1	0x00010000
+ #define AD_VERSION2	0x00020000
++#if defined(USE_CNID)
++#define AD_VERSION	AD_VERSION2
++#else
+ #define AD_VERSION	AD_VERSION1
++#endif
+ 
+ /* sizes of relevant entry bits */
+ #define AD_HEADER_LEN   26  /* everything up to the first entry header */
