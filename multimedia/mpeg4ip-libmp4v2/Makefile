@@ -28,6 +28,10 @@ INSTALL_WRKSRC=	${WRKSRC}/lib/mp4v2
 
 .include <bsd.port.pre.mk>
 
+.if exists(${LOCALBASE}/include/systems.h)
+BROKEN=	"Please remove older version of faad before attempting to build ${PORTNAME}"
+.endif
+
 .if ${OSVERSION} < 502110
 USE_GCC=	3.4
 .endif
