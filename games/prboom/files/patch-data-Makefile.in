@@ -1,0 +1,11 @@
+--- data/Makefile.in.orig	Sun Apr  1 02:14:06 2001
++++ data/Makefile.in	Sun Jun 10 16:49:16 2001
+@@ -91,7 +91,7 @@
+ VERSION = @VERSION@
+ ac_aux_dir = @ac_aux_dir@
+ 
+-waddir = $(datadir)/games/doom
++waddir = $(datadir)/doom
+ wad_DATA = prboom.wad
+ EXTRA_DIST = prboom.wad
+ mkinstalldirs = $(SHELL) $(top_srcdir)/autotools/mkinstalldirs

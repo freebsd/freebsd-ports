@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sun Apr  1 02:14:08 2001
++++ src/Makefile.in	Sun Jun 10 16:44:19 2001
+@@ -97,7 +97,7 @@
+ 
+ SUBDIRS = SDL POSIX
+ 
+-gamesdir = $(prefix)/games
++gamesdir = $(prefix)/bin
+ EXTRA_PROGRAMS = prboom-game-server
+ games_PROGRAMS = prboom @BUILD_SERVER@
+ 

@@ -181,6 +181,7 @@
     SUBDIR += pmars
     SUBDIR += powerpak
     SUBDIR += pp
+    SUBDIR += prboom
     SUBDIR += ptkei
     SUBDIR += pyching
     SUBDIR += pysol

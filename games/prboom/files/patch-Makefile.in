@@ -1,0 +1,26 @@
+--- Makefile.in.orig	Fri Jun 29 03:30:25 2001
++++ Makefile.in	Fri Jun 29 03:31:24 2001
+@@ -167,23 +167,8 @@
+ 	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
+ 
+ install-docDATA: $(doc_DATA)
+-	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(docdir)
+-	@list='$(doc_DATA)'; for p in $$list; do \
+-	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(docdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(docdir)/$$p; \
+-	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(docdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(docdir)/$$p; \
+-	  fi; fi; \
+-	done
+ 
+ uninstall-docDATA:
+-	@$(NORMAL_UNINSTALL)
+-	list='$(doc_DATA)'; for p in $$list; do \
+-	  rm -f $(DESTDIR)$(docdir)/$$p; \
+-	done
+ 
+ # This directory's subdirectories are mostly independent; you can cd
+ # into them and run `make' without going through this Makefile.
