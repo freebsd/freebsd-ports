@@ -22,7 +22,7 @@ CFLAGS	+=	-DSWAP
 .endif
 
 LDADD	+=	-L${.CURDIR}/../../hdf/src -ldf
-LDFLAGS	+=	-L. -l${LIB} ${LDADD}
+LDFLAGS	+=	-L. ${LDADD}
 
 afterinstall:
 	install -c -o root -g wheel -m 444 hdf2netcdf.h local_nc.h \
