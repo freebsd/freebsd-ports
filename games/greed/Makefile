@@ -9,6 +9,7 @@ PORTNAME=	greed
 PORTVERSION=	3.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.tuxedo.org/~esr/greed/
+PKGNAMESUFFIX=	-game
 
 MAINTAINER=	mark@kyne.com.au
 
