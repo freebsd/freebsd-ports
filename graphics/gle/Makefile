@@ -18,6 +18,7 @@ MAINTAINER=	dgilbert@velocet.ca
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	"LIBS=-L${X11BASE}/lib -lXext ${PTHREAD_LIBS}"
@@ -30,7 +31,7 @@ MAN3=		gle.3gle gleExtrusion.3gle gleHelicoid.3gle gleLathe.3gle \
 
 post-patch:
 .for file in ex_angle.c ex_cut_round.c ex_raw.c extrude.c round_cap.c segment.c texgen.c
-	@${PERL} -pi -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/src/${file}
+	@${REINPLACE_CMD} -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/src/${file}
 .endfor
 
 .include <bsd.port.mk>

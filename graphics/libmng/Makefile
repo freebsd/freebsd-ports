@@ -17,6 +17,8 @@ MAINTAINER=	mi@aldan.algebra.com
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		lcms.1:${PORTSDIR}/graphics/lcms
 
+USE_REINPLACE=	yes
+
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ARGS+=	-j2
 
@@ -26,7 +28,7 @@ MAN3=		libmng.3
 MAN5=		mng.5 jng.5
 
 post-patch:
-	test ! -e ${PREFIX}/include/lcms.h || ${PERL} -pi -e \
+	test ! -e ${PREFIX}/include/lcms.h || ${REINPLACE_CMD} -e \
 		's%lcms/lcms.h%lcms.h%' ${WRKSRC}/libmng_types.h
 
 post-install:

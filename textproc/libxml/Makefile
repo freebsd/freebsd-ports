@@ -18,11 +18,12 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 pre-patch:
-	@find ${WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name "*.[ch]" | xargs ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
 
 .include <bsd.port.mk>

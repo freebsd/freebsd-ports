@@ -20,6 +20,7 @@ LIB_DEPENDS=	IDL-2.0:${PORTSDIR}/devel/libIDL \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS= --disable-indent
@@ -29,7 +30,7 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 pre-patch:
 	@find ${WRKSRC} -type f | xargs ${GREP} -l LINC_THREADSAFE | \
-		xargs ${PERL} -pi -e 's|LINC_THREADSAFE|G_THREADS_ENABLED|g'
+		xargs ${REINPLACE_CMD} -e 's|LINC_THREADSAFE|G_THREADS_ENABLED|g'
 
 post-install:
 	@${ECHO_CMD} "ORBIIOPIPv4=0" > ${PREFIX}/etc/orbit2rc.default
