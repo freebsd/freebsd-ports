@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-Cover
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel
@@ -34,6 +34,7 @@ MAN3=		Devel::Cover.3 \
 		Devel::Cover::Pod.3 \
 		Devel::Cover::Report::Html.3 \
 		Devel::Cover::Report::Html_basic.3 \
+		Devel::Cover::Report::Html_minimal.3 \
 		Devel::Cover::Report::Html_subtle.3 \
 		Devel::Cover::Report::Text.3 \
 		Devel::Cover::Report::Text2.3 \
@@ -46,8 +47,12 @@ MAN1=		cover.1 gcov2perl.1
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
+		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 .if ${PERL_LEVEL} < 500601
 IGNORE=		Needs 5.6.1 or better
+.endif
 .endif
 
 .include <bsd.port.post.mk>

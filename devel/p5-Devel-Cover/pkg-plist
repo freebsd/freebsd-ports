@@ -15,6 +15,7 @@ bin/gcov2perl
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Pod.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Html.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Html_basic.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Html_minimal.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Html_subtle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Text.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Text2.pm
