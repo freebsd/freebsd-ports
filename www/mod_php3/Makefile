@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mod_php
+PORTNAME=	mod_php3
 PORTVERSION= 	3.0.18
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.php.net/pub/${PHP_DISTDIR}/ \
