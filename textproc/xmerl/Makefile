@@ -7,7 +7,7 @@
 
 PORTNAME=	xmerl
 PORTVERSION=	0.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sowap
@@ -22,12 +22,6 @@ USE_GMAKE=	yes
 
 XMERL_DOCS=	README.html changes.txt xpath-grammar.txt xslt-example.dtd xslt-example.xls
 
-post-extract:
-	@${MV} ${WRKSRC}/inc ${WRKSRC}/include
-
-post-patch:
-	@${RM} ${WRKSRC}/src/*.orig
-
 do-install:
 	@${MKDIR} ${DOCSDIR}
 	@for FILE in ${XMERL_DOCS}; do \
@@ -36,7 +30,7 @@ do-install:
 
 	@${MKDIR} ${PREFIX}/lib/erlang/lib/xmerl
 
-	@for FILE in ebin include priv src; do \
+	@for FILE in ebin inc priv src; do \
 		${MKDIR} ${PREFIX}/lib/erlang/lib/xmerl/$${FILE}; \
 		${CP} -r ${WRKSRC}/$${FILE}/* \
 			${PREFIX}/lib/erlang/lib/xmerl/$${FILE}; \

@@ -14,8 +14,8 @@ lib/erlang/lib/xmerl/ebin/xmerl_xpath.beam
 lib/erlang/lib/xmerl/ebin/xmerl_xpath_parse.beam
 lib/erlang/lib/xmerl/ebin/xmerl_xpath_pred.beam
 lib/erlang/lib/xmerl/ebin/xmerl_xpath_scan.beam
-lib/erlang/lib/xmerl/include/xmerl.hrl
-lib/erlang/lib/xmerl/include/xmerl_xlink.hrl
+lib/erlang/lib/xmerl/inc/xmerl.hrl
+lib/erlang/lib/xmerl/inc/xmerl_xlink.hrl
 lib/erlang/lib/xmerl/priv/testdata/a_and_c.xml
 lib/erlang/lib/xmerl/priv/testdata/all_well.xml
 lib/erlang/lib/xmerl/priv/testdata/femdygnsprognos.xml
@@ -59,6 +59,6 @@ lib/erlang/lib/xmerl/src/xmerl_xpath_scan.erl
 @dirrm lib/erlang/lib/xmerl/src
 @dirrm lib/erlang/lib/xmerl/priv/testdata
 @dirrm lib/erlang/lib/xmerl/priv
-@dirrm lib/erlang/lib/xmerl/include
+@dirrm lib/erlang/lib/xmerl/inc
 @dirrm lib/erlang/lib/xmerl/ebin
 @dirrm lib/erlang/lib/xmerl
