@@ -1,0 +1,23 @@
+@unexec if cmp -s %D/etc/fonts/local.conf %D/etc/fonts/local.conf.arkpandora; then rm -f %D/etc/fonts/local.conf; fi
+etc/fonts/local.conf.arkpandora
+@exec [ ! -f %B/local.conf ] && cp %B/%f %B/local.conf
+%%FONTSDIR%%/COPYRIGHT.TXT
+%%FONTSDIR%%/AerialBdIt.ttf
+%%FONTSDIR%%/AerialBd.ttf
+%%FONTSDIR%%/AerialIt.ttf
+%%FONTSDIR%%/AerialMonoBdIt.ttf
+%%FONTSDIR%%/AerialMonoBd.ttf
+%%FONTSDIR%%/AerialMonoIt.ttf
+%%FONTSDIR%%/AerialMono.ttf
+%%FONTSDIR%%/Aerial.ttf
+%%FONTSDIR%%/TymesBd.ttf
+%%FONTSDIR%%/Tymes.ttf
+%%FONTSDIR%%/VerandaBdIt.ttf
+%%FONTSDIR%%/VerandaBd.ttf
+%%FONTSDIR%%/VerandaIt.ttf
+%%FONTSDIR%%/Veranda.ttf
+%%FONTSDIR%%/fonts.dir
+@unexec /bin/rm %D/%%FONTSDIR%%/fonts.scale
+@unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
+@dirrm %%FONTSDIR%%
+@exec %%X11BASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true

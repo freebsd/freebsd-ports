@@ -10,6 +10,7 @@
     SUBDIR += XFree86-4-fontEncodings
     SUBDIR += XFree86-4-fontScalable
     SUBDIR += Xg
+    SUBDIR += arkpandora
     SUBDIR += artwiz-aleczapka
     SUBDIR += artwiz-fonts
     SUBDIR += bdfresize
