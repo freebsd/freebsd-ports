@@ -85,6 +85,7 @@
     SUBDIR += gnustep-objc
     SUBDIR += gprolog
     SUBDIR += guile
+    SUBDIR += harbour
     SUBDIR += helium
     SUBDIR += hope
     SUBDIR += huc
