@@ -1,0 +1,6 @@
+#!/bin/sh
+# Force printing non-quote(escaped) instead of \xxx 
+
+LC_CTYPE=en_US.ISO8859-1
+export LC_CTYPE
+
