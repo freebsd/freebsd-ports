@@ -1,6 +1,0 @@
-Videogen is a small and handy utility that generates XFree86 and/or fbset
-(Linux framebuffer device) "Modelines" which tell your video card what
-signals to send to your monitor.  Videogen is designed to provide the best
-refresh rate your hardware supports, but if you do not want to drive your
-monitor to the edge, just use lower specs than the actual capabilities of
-your hardware.

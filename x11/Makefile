@@ -174,7 +174,6 @@
     SUBDIR += tycoon
     SUBDIR += user-selector-applet
     SUBDIR += vdesk
-    SUBDIR += videogen
     SUBDIR += wdm
     SUBDIR += wmappl
     SUBDIR += wmblob
