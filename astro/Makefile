@@ -4,6 +4,7 @@
     SUBDIR += SETIsupport
     SUBDIR += dgpsip
     SUBDIR += ephem
+    SUBDIR += gkrellmearth
     SUBDIR += gkrellmoon
     SUBDIR += glunarclock
     SUBDIR += jday
