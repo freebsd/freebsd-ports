@@ -7,7 +7,7 @@
 
 PORTNAME=	apache+mod_perl
 PORTVERSION=	${VERSION_APACHE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD:S/$/:apache/} \
 		${MASTER_SITE_PERL_CPAN:S/$/Apache\/:modperl/}
@@ -146,10 +146,14 @@ MAN3=	Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
 		Apache::RegistryLoader.3 Apache::StatINC.3 Apache::Include.3 \
 		Apache::PerlSections.3 cgi_to_mod_perl.3 \
 		mod_perl_cvs.3 mod_perl_method_handlers.3 mod_perl_traps.3 \
-		mod_perl_tuning.3 Apache::MyConfig.3
+		mod_perl_tuning.3
 
 MAN8=	ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 \
 		${SUEXEC_MAN}
+
+.if ${PERL_LEVEL} >= 500800
+MAN3+=		Apache::MyConfig.3
+.endif
 
 post-extract:
 	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
@@ -159,6 +163,10 @@ pre-configure:
 	@ cd ${WRKSRC_MODPERL}; \
 	${PERL5} Makefile.PL EVERYTHING=1 APACHE_SRC=../apache_${VERSION_APACHE}\
 		USE_APACI=1 PREP_HTTPD=1 DO_HTTPD=1
+
+post-configure:
+	@cd ${WRKSRC_MODPERL}/ && \
+		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 
 pre-build:
 	@ cd ${WRKSRC_MODPERL}; \
