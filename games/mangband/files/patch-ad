@@ -1,0 +1,52 @@
+--- common/net-unix.c.orig	Sat Nov 22 10:47:36 1997
++++ common/net-unix.c	Wed Dec 30 18:12:07 1998
+@@ -2461,11 +2461,14 @@
+ #ifdef UNIX_SOCKETS
+    strcpy(name, "localhost");
+ #else
++    struct hostent      *he;
++#if 0
+     struct hostent	*he, *xpilot_he, tmp;
+     int			xpilot_len;
+     char		*alias, *dot;
+     char		xpilot_hostname[MAXHOSTNAMELEN];
+     static const char	xpilot[] = "xpilot";
++#endif
+ #ifdef VMS
+     char                vms_inethost[MAXHOSTNAMELEN]   = "UCX$INET_HOST";
+     char                vms_inetdomain[MAXHOSTNAMELEN] = "UCX$INET_DOMAIN";
+@@ -2473,7 +2476,7 @@
+     char                vms_domain[MAXHOSTNAMELEN];
+     int                 namelen;
+ #endif
+-
++#if 0
+     xpilot_len = strlen(xpilot);
+ 
+     /* Make a wild guess that a "xpilot" hostname or alias is in this domain */
+@@ -2484,7 +2487,7 @@
+ 	    xpilot_he = &tmp;
+ 	}
+     }
+-
++#endif
+     gethostname(name, size);
+     if ((he = gethostbyname(name)) == NULL) {
+ 	return;
+@@ -2534,7 +2537,7 @@
+ 	    return;
+ 	}
+     }
+-
++#if 0
+     /*
+      * If a "xpilot" host is found compare if it's this one.
+      * and if so, make the local name as "xpilot.*"
+@@ -2573,6 +2576,7 @@
+ 	}
+ 	/* NOT REATCHED */
+     }
++#endif
+ #endif
+ } /* GetLocalHostName */
+ 

@@ -1,0 +1,38 @@
+--- config.h.orig	Wed Oct 21 09:45:08 1998
++++ config.h	Wed Dec 30 17:23:11 1998
+@@ -75,7 +75,7 @@
+ /*
+  * OPTION: Use the POSIX "termios" methods in "main-gcu.c"
+  */
+-/* #define USE_TPOSIX */
++#define USE_TPOSIX
+ 
+ /*
+  * OPTION: Use the "termio" methods in "main-gcu.c"
+@@ -103,7 +103,7 @@
+  * OPTION: Use the "curs_set()" call in "main-gcu.c".
+  * Hack -- This option will not work on most BSD machines
+  */
+-#ifdef SYS_V
++#if defined(SYS_V) || defined(__FreeBSD__)
+ # define USE_CURS_SET
+ #endif
+ 
+@@ -504,7 +504,7 @@
+ /*
+  * OPTION: Have the server respond to commands typed in on its tty.
+  */
+-#define SERVER_CONSOLE
++/* #define SERVER_CONSOLE */
+ 
+ /*
+  * OPTION: Enable a method to control the server from an external program.
+@@ -566,7 +566,7 @@
+ /*
+  * OPTION: Attempt to prevent all "cheating"
+  */
+-/* #define VERIFY_HONOR */
++#define VERIFY_HONOR
+ 
+ 
+ /*
