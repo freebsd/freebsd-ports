@@ -288,7 +288,7 @@ post-extract:
 	done
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/../external/gpc/
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/../external/gpc/
-	@${MAKE} extract-mozilla
+	@${MAKE} extract-mozilla WRKDIRPREFIX=""
 	@${RM} ${WRKSRC}/../moz/zipped/*.zip
 .if defined(L10NHELP)
 	@${ECHO_MSG} "===>  Extracting L10NHELP sub project"
@@ -298,7 +298,7 @@ post-extract:
 .endif
 
 post-patch:
-	@${MAKE} patch-mozilla
+	@${MAKE} patch-mozilla WRKDIRPREFIX=""
 .if defined(WITH_TTF_BYTECODE_ENABLED)
 	@if [ "`echo ${PATCHDIR}/optpatch-*`" != "${PATCHDIR}/optpatch-*" ]; then \
 		${ECHO_MSG} "===>  Applying additional TTF bytecode patches for ${PKGNAME}" ; \
@@ -350,10 +350,10 @@ extract-mozilla:
 	@${CP} ${PORTSDIR}/www/mozilla/pkg-descr ${WRKDIR}/mozilla
 	@${CP} ${PORTSDIR}/www/mozilla/pkg-plist ${WRKDIR}/mozilla
 .endif
-	@cd ${WRKDIR}/mozilla && ${MAKE} extract
+	@cd ${WRKDIR}/mozilla && ${MAKE} extract WRKDIRPREFIX=""
 
 patch-mozilla:
-	@cd ${WRKDIR}/mozilla && ${MAKE} patch
+	@cd ${WRKDIR}/mozilla && ${MAKE} patch WRKDIRPREFIX=""
 
 build-mozilla:
 .if ! exists(${WRKDIR}/FREEBSDGCCIinc.zip)
@@ -367,12 +367,12 @@ build-mozilla:
 .endif
 .if defined(USE_GCC)
 .if ${USE_GCC} == 3.1
-	@cd ${WRKDIR}/mozilla && ${MAKE} CXX=${CXX} CC=${CC} CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build
+	@cd ${WRKDIR}/mozilla && ${MAKE} CXX=${CXX} CC=${CC} CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build WRKDIRPREFIX=""
 .else
-	@cd ${WRKDIR}/mozilla && ${MAKE} CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build
+	@cd ${WRKDIR}/mozilla && ${MAKE} CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build WRKDIRPREFIX=""
 .endif
 .else
-	@cd ${WRKDIR}/mozilla && ${MAKE} CFLAGS="${CFLAGS}" build
+	@cd ${WRKDIR}/mozilla && ${MAKE} CFLAGS="${CFLAGS}" build WRKDIRPREFIX=""
 .endif
 	@${CP} ${FILESDIR}/zipmoz.sh ${WRKDIR}
 	@${CHMOD} 755 ${WRKDIR}/zipmoz.sh
