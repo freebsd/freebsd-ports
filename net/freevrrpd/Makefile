@@ -7,6 +7,7 @@
 
 PORTNAME=	freevrrpd
 PORTVERSION=	0.8.7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.bsdshell.net/download/
 
@@ -19,7 +20,7 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 post-patch:
-	cd ${WRKSRC}; ${SED} -i.bak -e s/varargs/stdarg/ *.h 
+	cd ${WRKSRC}; ${SED} -i.bak -e s/varargs/stdarg/ *.h
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/freevrrpd ${PREFIX}/sbin
