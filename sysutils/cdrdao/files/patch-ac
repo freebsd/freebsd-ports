@@ -1,66 +1,198 @@
---- configure.orig	Wed Oct 27 01:13:45 1999
-+++ configure	Fri Jun 23 08:40:42 2000
-@@ -2592,6 +2592,8 @@
-   { echo "configure: error: No PCCTS installation detected." 1>&2; exit 1; }
- fi
- 
-+# Disable xcdrdao feature (temporary)
-+if false ; then
- # Check whether --with-gtkmm-prefix or --without-gtkmm-prefix was given.
- if test "${with_gtkmm_prefix+set}" = set; then
-   withval="$with_gtkmm_prefix"
-@@ -2869,8 +2871,8 @@
-   
-   
-   rm -f conf.gtkmmtest
--
--
-+# End Disable xcdrdao feature (temporary)
-+fi
- 
- 
- if test "$use_scglib" = default; then
-@@ -2897,7 +2899,7 @@
-   scsi_if_src=ScsiIf-lib.cc
-   
-   case "$host" in
--    *-freebsd3* | *-freebsd4*)
-+    *-freebsd3* | *-freebsd4* | *-freebsd5*)
- 			       scsilib_libs="$scsilib_libs -lcam"
- 			       ;;
-   esac
-@@ -2913,7 +2915,7 @@
- 	       scsi_if_src="ScsiIf-linux.cc sg_err.cc"
- 	       ;;
-     
--    *-freebsd3* | *-freebsd4*)
-+    *-freebsd3* | *-freebsd4* | *-freebsd5*)
- 			       scsi_if_src="ScsiIf-freebsd-cam.cc"
- 			       scsilib_libs="-lcam"
- 			       ;;
-@@ -2945,7 +2947,7 @@
- esac
- 
- case "$host" in
--  *-linux-*)
-+  *-linux-* | *-freebsd*)
- 	     sound_if_src=SoundIF-linux.cc
- 	     ;;
- 
---- xdao/SoundIF-linux.cc.orig	Wed Oct 27 01:13:46 1999
-+++ xdao/SoundIF-linux.cc	Wed Oct 27 03:37:23 1999
-@@ -31,7 +31,14 @@
-  *
-  */
- 
-+# if defined(__FreeBSD__)
-+#include <machine/soundcard.h>
-+# if !defined(SNDCTL_DSP_CHANNELS)
-+#   define SNDCTL_DSP_CHANNELS SNDCTL_DSP_STEREO
-+# endif
-+# else 
- #include <linux/soundcard.h>
-+# endif
- 
- #include <stdio.h>
- #include <assert.h>
+diff -rc ../old/cdrdao-1.1.4/configure ./configure
+*** ../old/cdrdao-1.1.4/configure	Sun Aug 27 13:37:08 2000
+--- ./configure	Fri Oct 20 10:32:47 2000
+***************
+*** 3234,3239 ****
+--- 3234,3240 ----
+    
+    
+  
++ xdao=no
+  
+  if test $xdao != xdao; then
+    xdao=
+***************
+*** 3263,3269 ****
+    scsi_if_src=ScsiIf-lib.cc
+    
+    case "$host" in
+!     *-freebsd3* | *-freebsd4*)
+  			       scsilib_libs="$scsilib_libs -lcam"
+  			       ;;
+    esac
+--- 3264,3270 ----
+    scsi_if_src=ScsiIf-lib.cc
+    
+    case "$host" in
+!     *-freebsd3* | *-freebsd4* | *-freebsd5*)
+  			       scsilib_libs="$scsilib_libs -lcam"
+  			       ;;
+    esac
+***************
+*** 3279,3285 ****
+  	       scsi_if_src="ScsiIf-linux.cc sg_err.cc"
+  	       ;;
+      
+!     *-freebsd3* | *-freebsd4*)
+  			       scsi_if_src="ScsiIf-freebsd-cam.cc"
+  			       scsilib_libs="-lcam"
+  			       ;;
+--- 3280,3286 ----
+  	       scsi_if_src="ScsiIf-linux.cc sg_err.cc"
+  	       ;;
+      
+!     *-freebsd3* | *-freebsd4* | *-freebsd5*)
+  			       scsi_if_src="ScsiIf-freebsd-cam.cc"
+  			       scsilib_libs="-lcam"
+  			       ;;
+***************
+*** 3311,3317 ****
+  esac
+  
+  case "$host" in
+!   *-linux-*)
+  	     sound_if_src=SoundIF-linux.cc
+  	     ;;
+  
+--- 3312,3318 ----
+  esac
+  
+  case "$host" in
+!   *-linux-* | *-freebsd*)
+  	     sound_if_src=SoundIF-linux.cc
+  	     ;;
+  
+diff -rc ../old/cdrdao-1.1.4/scsilib/include/scg/scsireg.h ./scsilib/include/scg/scsireg.h
+*** ../old/cdrdao-1.1.4/scsilib/include/scg/scsireg.h	Sat Apr 15 02:54:35 2000
+--- ./scsilib/include/scg/scsireg.h	Fri Oct 20 10:32:22 2000
+***************
+*** 244,255 ****
+  
+  #if	defined(_BIT_FIELDS_LTOH)	/* Intel byteorder */
+  
+! struct scsi_mode_page_header {
+  	Ucbit	p_code		: 6;
+  	Ucbit	res		: 1;
+  	Ucbit	parsave		: 1;
+  	u_char	p_len;
+! };
+  
+  /*
+   * This is a hack that allows mode pages without
+--- 244,255 ----
+  
+  #if	defined(_BIT_FIELDS_LTOH)	/* Intel byteorder */
+  
+! /*struct scsi_mode_page_header {
+  	Ucbit	p_code		: 6;
+  	Ucbit	res		: 1;
+  	Ucbit	parsave		: 1;
+  	u_char	p_len;
+! };*/
+  
+  /*
+   * This is a hack that allows mode pages without
+***************
+*** 262,273 ****
+  
+  #else					/* Motorola byteorder */
+  
+! struct scsi_mode_page_header {
+  	Ucbit	parsave		: 1;
+  	Ucbit	res		: 1;
+  	Ucbit	p_code		: 6;
+  	u_char	p_len;
+! };
+  
+  /*
+   * This is a hack that allows mode pages without
+--- 262,273 ----
+  
+  #else					/* Motorola byteorder */
+  
+! /*struct scsi_mode_page_header {
+  	Ucbit	parsave		: 1;
+  	Ucbit	res		: 1;
+  	Ucbit	p_code		: 6;
+  	u_char	p_len;
+! };*/
+  
+  /*
+   * This is a hack that allows mode pages without
+diff -rc ../old/cdrdao-1.1.4/scsilib/libscg/scg/scsireg.h ./scsilib/libscg/scg/scsireg.h
+*** ../old/cdrdao-1.1.4/scsilib/libscg/scg/scsireg.h	Sat Apr 15 02:54:50 2000
+--- ./scsilib/libscg/scg/scsireg.h	Fri Oct 20 10:32:22 2000
+***************
+*** 244,255 ****
+  
+  #if	defined(_BIT_FIELDS_LTOH)	/* Intel byteorder */
+  
+! struct scsi_mode_page_header {
+  	Ucbit	p_code		: 6;
+  	Ucbit	res		: 1;
+  	Ucbit	parsave		: 1;
+  	u_char	p_len;
+! };
+  
+  /*
+   * This is a hack that allows mode pages without
+--- 244,255 ----
+  
+  #if	defined(_BIT_FIELDS_LTOH)	/* Intel byteorder */
+  
+! /*struct scsi_mode_page_header {
+  	Ucbit	p_code		: 6;
+  	Ucbit	res		: 1;
+  	Ucbit	parsave		: 1;
+  	u_char	p_len;
+! };*/
+  
+  /*
+   * This is a hack that allows mode pages without
+***************
+*** 262,273 ****
+  
+  #else					/* Motorola byteorder */
+  
+! struct scsi_mode_page_header {
+  	Ucbit	parsave		: 1;
+  	Ucbit	res		: 1;
+  	Ucbit	p_code		: 6;
+  	u_char	p_len;
+! };
+  
+  /*
+   * This is a hack that allows mode pages without
+--- 262,273 ----
+  
+  #else					/* Motorola byteorder */
+  
+! /*struct scsi_mode_page_header {
+  	Ucbit	parsave		: 1;
+  	Ucbit	res		: 1;
+  	Ucbit	p_code		: 6;
+  	u_char	p_len;
+! };*/
+  
+  /*
+   * This is a hack that allows mode pages without
+diff -rc ../old/cdrdao-1.1.4/xdao/SoundIF-linux.cc ./xdao/SoundIF-linux.cc
+*** ../old/cdrdao-1.1.4/xdao/SoundIF-linux.cc	Sun Aug 27 13:37:11 2000
+--- ./xdao/SoundIF-linux.cc	Fri Oct 20 10:32:22 2000
+***************
+*** 34,40 ****
+--- 34,47 ----
+   *
+   */
+  
++ # if defined(__FreeBSD__)
++ #include <machine/soundcard.h>
++ # if !defined(SNDCTL_DSP_CHANNELS)
++ #   define SNDCTL_DSP_CHANNELS SNDCTL_DSP_STEREO
++ # endif
++ # else 
+  #include <linux/soundcard.h>
++ # endif
+  
+  #include <stdio.h>
+  #include <assert.h>

@@ -5,18 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=		cdrdao
-PORTVERSION=		1.1.3
-CATEGORIES=		audio
-MASTER_SITES=		http://www.ping.de/sites/daneb/
-EXTRACT_SUFX=		.src.tar.gz
+PORTNAME=	cdrdao
+PORTVERSION=	1.1.4
+CATEGORIES=	audio
+MASTER_SITES=	http://www.ping.de/sites/daneb/
+EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=		futatuki@debug.gr.jp
+MAINTAINER=	futatuki@debug.gr.jp
 
-BUILD_DEPENDS=		antlr:${PORTSDIR}/devel/pccts\
-			dlg:${PORTSDIR}/devel/pccts
+BUILD_DEPENDS=	antlr:${PORTSDIR}/devel/pccts\
+		dlg:${PORTSDIR}/devel/pccts
 
-WRKSRC=         	${WRKDIR}/cdrdao-1.1.3
+WRKSRC=		${WRKDIR}/cdrdao-1.1.4
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -24,10 +24,10 @@ MAN1=		cdrdao.1
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS= 	--disable-gtkmmtest
+CONFIGURE_ARGS=	--disable-gtkmmtest
 
 .if defined(WITHOUT_SCGLIB) && ${OSVERSION} > 300000
-CONFIGURE_ARGS+= 	--without-scglib
+CONFIGURE_ARGS+=	--without-scglib
 .endif
 
 .if !defined(WITH_PTHREADS) && ${OSVERSION} > 320000
@@ -42,14 +42,14 @@ pre-fetch:
 .if ${MACHINE_ARCH} == "alpha"
 post-extract:
 	@(cd ${WRKSRC}/scsilib/RULES; \
-	  ln -sf i386-freebsd-cc.rul alpha-freebsd-cc.rul)
+	  ${LN} -sf i386-freebsd-cc.rul alpha-freebsd-cc.rul)
 .endif
 
 post-install:
-	strip $(PREFIX)/bin/cdrdao
+	strip ${PREFIX}/bin/cdrdao
 	@${MKDIR} ${PREFIX}/share/doc/cdrdao
 .for i in COPYING CREDITS INSTALL README README.FreeBSD README.PlexDAE \
-	Release-1.1.0 Release-1.1.2 Release-1.1.3
+	Release-1.1.0 Release-1.1.2 Release-1.1.3 Release-1.1.4
 	@${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/cdrdao/
 .endfor
 	@${CAT} ${PKGMESSAGE}
