@@ -61,6 +61,7 @@
     SUBDIR += p5-Crypt-DES
     SUBDIR += p5-Crypt-IDEA
     SUBDIR += p5-Digest-MD5
+    SUBDIR += p5-GnuPG-Interface
     SUBDIR += p5-MD5
     SUBDIR += p5-Net-SSLeay
     SUBDIR += p5-PGP
