@@ -866,6 +866,7 @@ cdrtools	ports/sysutils/cdrtools
 cdrtools-cjk	ports/sysutils/cdrtools-cjk
 cdrtools-devel	ports/sysutils/cdrtools-devel
 cedet		ports/devel/cedet
+cedet-emacs20	ports/devel/cedet-emacs20
 celestia	ports/astro/celestia
 centericq	ports/net/centericq
 cfe		ports/misc/cfe
