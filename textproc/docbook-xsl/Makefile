@@ -7,6 +7,7 @@
 
 PORTNAME=	docbook-xsl
 PORTVERSION=	1.61.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= docbook
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${XMLDIR}/docbook/catalog:${PORTSDIR}/textproc/docbook-xml \
 XMLDIR=		${LOCALBASE}/share/xml
 INSTDIR=	${PREFIX}/share/xsl/docbook
 COPYDIRS=	common fo extensions html htmlhelp images \
-		javahelp lib manpages params xhtml
+		javahelp lib manpages params template xhtml
 
 NO_BUILD=	yes
 
