@@ -240,6 +240,7 @@
     SUBDIR += xisola
     SUBDIR += xjewel
     SUBDIR += xjig
+    SUBDIR += xjump
     SUBDIR += xjumpjump
     SUBDIR += xkobo
     SUBDIR += xkoules
