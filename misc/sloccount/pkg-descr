@@ -1,0 +1,23 @@
+SLOCCount can count physical SLOC for a wide number of languages. It can
+gracefully handle awkward situations in many languages, for example, it can
+determine the syntax used in different assembly language files and adjust
+appropriately, it knows about Python's use of string constants as comments,
+and it can handle various Perl oddities (e.g., perlpods, here documents, and
+Perl's __END__ marker). It even has a "generic" SLOC counter that you may be
+able to use count the SLOC of other languages (depending on the language's
+syntax). 
+
+SLOCCount can also take a large list of files and automatically categorize
+them using a number of different heuristics. The heuristics automatically
+determine if a file is a source code file or not, and if so, which language
+it's written in. It will even examine file headers to attempt to accurately
+determine the file's true type. As a result, you can analyze large systems
+completely automatically. 
+
+Finally, SLOCCount has some report-generating tools to collect the data
+generated, and then present it in several different formats and sorted
+different ways. The report-generating tool can also generate simple tab-
+separated files so data can be passed on to other analysis tools (such as
+spreadsheets and database systems). 
+
+WWW: http://www.dwheeler.com/sloccount/
