@@ -1101,6 +1101,7 @@ cons-test	ports/devel/cons-test
 conserver	ports/comms/conserver
 conserver-com	ports/comms/conserver-com
 consolehm	ports/sysutils/consolehm
+contact-lookup-applet	ports/mail/contact-lookup-applet
 contool		ports/sysutils/contool
 convertall	ports/math/convertall
 convmv		ports/converters/convmv
