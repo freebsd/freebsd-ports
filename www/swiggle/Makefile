@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	swiggle
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTVERSION=	0.3.3
 CATEGORIES=	www
 MASTER_SITES=	http://homepage.univie.ac.at/l.ertl/swiggle/files/ \
 		http://www.daemon.li/distfiles/
@@ -21,11 +20,14 @@ USE_REINPLACE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/Makefile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/swiggle ${PREFIX}/bin
 
 post-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
