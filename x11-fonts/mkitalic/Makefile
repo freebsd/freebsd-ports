@@ -19,8 +19,10 @@ USE_PERL5=	yes
 USE_X_PREFIX=	yes
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/mkitalic
 NO_WRKSUBDIR=	yes
-NO_BUILD=	yes
 USE_BZIP2=	yes
+
+do-build:
+	${PERL} -pi.orig -e 's|^#!/usr/bin/perl|#! ${PERL}|' ${WRKSRC}/mkitalic
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mkitalic ${PREFIX}/bin
