@@ -1,0 +1,15 @@
+--- ../../src/Makefile.in.old	Mon Nov 22 20:31:59 1999
++++ ../../src/Makefile.in	Mon Nov 22 20:32:37 1999
+@@ -55,9 +55,9 @@
+ 	$(INSTALL_PROGRAM) -s -o root -g uucp -m 4755 $(PROG1) $(bindir)/$(PROG1)
+ 	$(INSTALL_PROGRAM) -s -o root -g uucp -m 4755 $(PROG2) $(bindir)/$(PROG2)
+ 	$(INSTALL_PROGRAM) -s -o root -g uucp -m 4755 $(PROG3) $(bindir)/$(PROG3)
+-	$(INSTALL_PROGRAM) -o root -g bin -m 444 $(MAN1) $(mandir)/$(MAN1)
+-	$(INSTALL_PROGRAM) -o root -g bin -m 444 $(MAN2) $(mandir)/$(MAN2)
+-	$(INSTALL_PROGRAM) -o root -g bin -m 444 $(MAN3) $(mandir)/$(MAN3)
++	${INSTALL_MAN} $(MAN1) $(mandir)/$(MAN1)
++	${INSTALL_MAN} $(MAN2) $(mandir)/$(MAN2)
++	${INSTALL_MAN} $(MAN3) $(mandir)/$(MAN3)
+ depend: .depend
+ .depend:
+ 	mkdep $(SRCS1)
