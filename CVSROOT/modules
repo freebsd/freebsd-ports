@@ -911,6 +911,7 @@ clisp-hyperspec	ports/devel/clisp-hyperspec
 cln		ports/math/cln
 clo++		ports/devel/clo++
 clockspeed	ports/sysutils/clockspeed
+clockspeed-conf	ports/sysutils/clockspeed-conf
 clog		ports/net/clog
 clustalw	ports/biology/clustalw
 clusterit	ports/net/clusterit
