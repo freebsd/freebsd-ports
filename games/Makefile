@@ -264,6 +264,7 @@
     SUBDIR += sokoban
     SUBDIR += sol
     SUBDIR += solarwolf
+    SUBDIR += sopwith
     SUBDIR += spacearyarya
     SUBDIR += speak
     SUBDIR += spellcast
