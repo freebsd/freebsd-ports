@@ -1,6 +1,6 @@
 # New ports collection makefile for:	x-files
 # Date created:		14 April 1998
-# Whom:			Donald J. Maddox <dmaddox@conterra.com>
+# Whom:			Donald J. Maddox <dmaddox@sc.rr.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	x11-fm tk82
 MASTER_SITES=   http://www.hut.fi/~mkivinie/X-Files/data/
 DISTNAME=	X-Files-${PORTVERSION}
 
-MAINTAINER=     dmaddox@conterra.com
+MAINTAINER=     dmaddox@sc.rr.com
 
 BUILD_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
