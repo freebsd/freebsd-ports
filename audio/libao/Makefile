@@ -7,6 +7,7 @@
 
 PORTNAME=	libao
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://home.student.utwente.nl/t.vanklaveren/distfiles/ \
 		http://www.vorbis.com/files/beta4/unix/
