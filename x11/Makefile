@@ -18,6 +18,7 @@
     SUBDIR += accessx
     SUBDIR += apwal
     SUBDIR += aterm
+    SUBDIR += bbappconf
     SUBDIR += bbrun
     SUBDIR += bbuname
     SUBDIR += bgrot
