@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkseti
-PORTVERSION=	1.46
+PORTVERSION=	2.12
 CATEGORIES=	astro tk82
 MASTER_SITES=	http://www.cuug.ab.ca/~macdonal/tkseti/
 
