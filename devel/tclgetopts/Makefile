@@ -9,7 +9,8 @@
 DISTNAME=	tclGetOpts
 PKGNAME=	tclGetOpts-1.0
 CATEGORIES=	devel tcl76 tcl80 tcl82
-MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/devel/
+MASTER_SITES= ftp://ftp.neosoft.com/languages/tcl/sorted/packages-7.6/devel/ \
+	      http://www.neosoft.com/tcl/ftparchive/sorted/packages-7.6/devel/
 
 MAINTAINER=	mi@aldan.algebra.com
 
