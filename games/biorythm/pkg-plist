@@ -1,0 +1,5 @@
+bin/biorythm
+share/doc/biorythm/CREDITS
+share/doc/biorythm/ChangeLog
+share/doc/biorythm/README
+@dirrm share/doc/biorythm
