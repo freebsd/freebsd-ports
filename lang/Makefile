@@ -53,6 +53,7 @@
     SUBDIR += gcc30
     SUBDIR += gcc31
     SUBDIR += gcc32
+    SUBDIR += gcc33
     SUBDIR += gcl
     SUBDIR += gforth
     SUBDIR += ghc
