@@ -16,7 +16,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	glib-1.3.2:${PORTSDIR}/devel/glib13
+LIB_DEPENDS=	glib-1.3.6:${PORTSDIR}/devel/glib13
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
