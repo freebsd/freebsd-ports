@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	lua
-PORTVERSION=	4.0
-PORTREVISION=	1
+PORTVERSION=	5.0
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
+MASTER_SITES=	http://www.lua.org/ftp/ \
+		ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
 		ftp://csg.uwaterloo.ca/pub/lhf/lua/ \
 		ftp://ftp.ntua.gr/pub/lang/lua/ \
 		ftp://ftp.uni-trier.de/pub/languages/lua/ \
@@ -18,27 +18,26 @@ MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
 MAINTAINER=	richard@homemail.com
 COMMENT=	Small, compilable scripting language providing easy access to C code
 
-MAN1=		luac.1
-WRKSRC=		${WRKDIR}/lua
+USE_REINPLACE=	yes
+MAN1=		lua.1 luac.1
 
-do-install:
-	@ ${MKDIR} ${PREFIX}/share/doc/lua
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/lua ${PREFIX}/bin
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/luac ${PREFIX}/bin
-	@ ${INSTALL_MAN} ${WRKSRC}/doc/luac.1 ${PREFIX}/man/man1/luac.1
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/idx.html ${PREFIX}/share/doc/lua
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/index.html ${PREFIX}/share/doc/lua
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/luac.html ${PREFIX}/share/doc/lua
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/manual.html ${PREFIX}/share/doc/lua
-	@ ${INSTALL_DATA} ${WRKSRC}/include/lua.h ${PREFIX}/include
-	@ ${INSTALL_DATA} ${WRKSRC}/include/luadebug.h ${PREFIX}/include
-	@ ${INSTALL_DATA} ${WRKSRC}/include/lualib.h ${PREFIX}/include
-	@ ${INSTALL_DATA} ${WRKSRC}/include/lauxlib.h ${PREFIX}/include
-	@ ${INSTALL_DATA} ${WRKSRC}/lib/liblua.a ${PREFIX}/lib
-	@ ${INSTALL_DATA} ${WRKSRC}/lib/liblualib.a ${PREFIX}/lib
+do-configure:
+	${REINPLACE_CMD} \
+		-e 's|^\(MYCFLAGS=\).*$$|\1 ${CFLAGS}|' \
+		-e 's|^\(LOADLIB=\).*$$|\1 -DUSE_DLOPEN=1|' \
+		-e 's|^\(CC=\).*$$|\1 ${CC}|' \
+		-e 's|^\(STRIP=\).*$$|\1 ${STRIP_CMD}|' \
+		-e 's|^\(INSTALL_ROOT=\).*$$|\1 ${PREFIX}|' \
+		-e 's|^\(INSTALL_EXEC=\).*$$|\1 ${INSTALL_PROGRAM}|' \
+		-e 's|^\(INSTALL_DATA=\).*$$|\1 ${INSTALL_DATA}|' \
+		-e 's|^#\(USERCONF.*READLINE.*\)$$|\1|' \
+		-e 's|^\(EXTRA_LIBS=\).*$$|\1 -lm -lreadline -lhistory -lncurses|' \
+		${WRKSRC}/config
 
 post-install:
-	@strip ${PREFIX}/bin/lua
-	@strip ${PREFIX}/bin/luac
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html *.gif ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

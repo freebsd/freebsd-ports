@@ -2,12 +2,12 @@ bin/lua
 bin/luac
 include/lauxlib.h
 include/lua.h
-include/luadebug.h
 include/lualib.h
 lib/liblua.a
 lib/liblualib.a
-share/doc/lua/idx.html
-share/doc/lua/index.html
+share/doc/lua/logo.gif
+share/doc/lua/lua.html
 share/doc/lua/luac.html
 share/doc/lua/manual.html
+share/doc/lua/readme.html
 @dirrm share/doc/lua

@@ -19,4 +19,3 @@ compiles unmodified in all known platforms. The implementation goals are
 simplicity, efficiency, portability, and low embedding cost. 
 
 WWW: http://www.lua.org/
-WWW: http://www.tecgraf.puc-rio.br/lua/
