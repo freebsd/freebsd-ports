@@ -1,0 +1,11 @@
+--- udbcsdk/examples/udbctest.c.orig	Mon Oct 22 23:38:29 2001
++++ udbcsdk/examples/udbctest.c	Mon Oct 22 23:38:37 2001
+@@ -19,7 +19,7 @@
+ 
+ #include <stdio.h>
+ #include <string.h>
+-#include "libudbc.h"
++#include <libudbc.h>
+ 
+ #define MAXCOLS		32
+ 

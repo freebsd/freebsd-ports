@@ -1,0 +1,18 @@
+ From udbc.doc:
+
+    WHAT IS UDBC?
+
+    UDBC is OpenLink's acronym for Universal DataBase Connectivity.
+
+    In short, UDBC is the merge between the X/Open - SAG interface and
+    the Microsoft ODBC interface for client database applications.
+
+    UDBC was developped to enable software engineers to rapidly develop
+    database independent applications without being concerned about issues
+    like portability, network programming and database specific interfacing
+    problems.
+
+WWW: http://www.openlinksw.com/
+
+- Grosbein
+eugen@grosbein.pp.ru
