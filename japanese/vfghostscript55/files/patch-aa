@@ -1,5 +1,5 @@
-*** unix-gcc.mak.orig	Fri Feb 13 20:37:31 1998
---- unix-gcc.mak	Fri Feb 13 20:38:22 1998
+*** unix-gcc.mak.orig	Wed Jul 15 21:55:59 1998
+--- unix-gcc.mak	Wed Jul 15 21:57:23 1998
 ***************
 *** 213,219 ****
   # XLDFLAGS can be set from the command line.
@@ -141,7 +141,7 @@
   	$(SETMOD) kfvflib $(kfvflib_)
   	$(ADDMOD) kfvflib -oper zkfVFlib
 ! 	$(ADDMOD) kfvflib -ps kfvflib
-  	$(ADDMOD) kfvflib -lib VFlib
+! 	$(ADDMOD) kfvflib -lib VFlib
   
   zkfvflib.$(OBJ): zkfvflib.c 
   
@@ -152,9 +152,9 @@
   	$(SETMOD) kfvflib $(kfvflib_)
   	$(ADDMOD) kfvflib -oper zkfVFlib
 ! 	$(ADDMOD) kfvflib -ps kfvflib kfvfbm
-  	$(ADDMOD) kfvflib -lib VFlib
-+ ## VFlib without freetype
-+ #	$(ADDMOD) kfvflib -lib ttf    
+! 	$(ADDMOD) kfvflib -lib VFlib2
+! ## VFlib without freetype
+! 	$(ADDMOD) kfvflib -lib ttf    
   
   zkfvflib.$(OBJ): zkfvflib.c 
 + 	${CC} ${CFLAGS} -I${PREFIX}/include/ -c zkfvflib.c
