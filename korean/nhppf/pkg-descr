@@ -1,0 +1,11 @@
+nhppf-1.2
+---------
+
+This program makes you can print hangul homepages with Netscape 3.0x,
+in Unix with Ghostscript. 
+
+It use HLaTeX-0.95 PostScript Type1 font set, so it can print all
+Hangul and Hanja character of KS C 5601, except symbols.
+
+--
+Ports by Choi Jun Ho <junker@jazz.snu.ac.kr>
