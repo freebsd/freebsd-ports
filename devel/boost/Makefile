@@ -38,6 +38,10 @@ DOCFILES=	*.css *.gif *.htm *.html *.jpeg *.jpg *.png
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502102
+FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
+.endif
+
 .if ${ARCH} == alpha
 BJAM=		${WRKSRC}/tools/build/jam_src/bin.freebsdaxp/bjam
 .elif ${ARCH} == sparc64
