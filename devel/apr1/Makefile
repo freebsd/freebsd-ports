@@ -14,33 +14,48 @@ DISTFILES=	apr_${PORTVERSION}.tar.gz apr-util_20020725223700.tar.gz
 
 MAINTAINER=	rooneg@electricjellyfish.net
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
-		libtool:${PORTSDIR}/devel/libtool
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
+BUILD_DEPENDS+=	libtool:${PORTSDIR}/devel/libtool
+LIB_DEPENDS+=	expat.4:${PORTSDIR}/textproc/expat2 \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
-GNU_CONFIGURE=	yes
+WANT_AUTOCONF_VER=	253
 
-USE_PERL5=	yes
+USE_PERL5=		yes
+USE_GMAKE=		yes
+GNU_CONFIGURE=		yes
+
 WRKSRC=	${WRKDIR}
 
+APR_CONF_ENV=	${CONFIGURE_ENV} \
+		CONFIG_SHELL=/bin/sh
+
+APR_UTIL_CONF_ENV=${CONFIGURE_ENV} \
+		CONFIG_SHELL=/bin/sh \
+		CPPFLAGS="-I${PREFIX}/include" \
+		LDFLAGS="-L${PREFIX}/lib"
+
+APR_UTIL_CONF_ARGS=	--with-apr=../apr/ --with-expat=${PREFIX}
+
 pre-fetch:
-	@${SH} pkg-install apr PRE-INSTALL
+	${SH} pkg-install apr PRE-INSTALL
 
 pre-configure:
-	@(cd ${WRKDIR}/apr/ && ./buildconf)
-	@(cd ${WRKDIR}/apr-util/ && ./buildconf)
+	cd ${WRKDIR}/apr; ./buildconf
+	cd ${WRKDIR}/apr-util; ./buildconf
 
 do-configure:
-	@(cd ${WRKDIR}/apr/ && ./configure --prefix=${PREFIX})
-	@(cd ${WRKDIR}/apr-util/ && ${ENV} CPPFLAGS=-I${PREFIX}/include LDFLAGS=-L${PREFIX}/lib ./configure --prefix=${PREFIX} --with-apr=../apr/ --with-expat=${PREFIX})
+	cd ${WRKDIR}/apr; \
+		${SETENV} ${APR_CONF_ENV} ./configure ${CONFIGURE_ARGS}
+	cd ${WRKDIR}/apr-util; \
+		${SETENV} ${APR_UTIL_CONF_ENV} \
+		./configure ${CONFIGURE_ARGS} ${APR_UTIL_CONF_ARGS} 
 
 do-build:
-	@(cd ${WRKDIR}/apr/ && make)
-	@(cd ${WRKDIR}/apr-util/ && make)
+	cd ${WRKDIR}/apr; ${SETENV} ${MAKE_ENV} make
+	cd ${WRKDIR}/apr-util; ${SETENV} ${MAKE_ENV} make
 
 do-install:
-	@(cd ${WRKDIR}/apr/ && make install)
-	(cd ${WRKDIR}/apr-util/ && make install)
+	cd ${WRKDIR}/apr; ${SETENV} ${MAKE_ENV} make install
+	cd ${WRKDIR}/apr-util; ${SETENV} ${MAKE_ENV} make install
 
 .include <bsd.port.mk>
