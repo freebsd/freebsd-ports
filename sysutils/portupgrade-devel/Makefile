@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20010921
+PORTVERSION=	20010922
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
 MASTER_SITE_SUBDIR=	knu
-DISTNAME=	pkgtools-${PORTVERSION:S/a$//}
+DISTNAME=	pkgtools-${PORTVERSION}
 
 #PATCH_SITES=	${MASTER_SITES}
 #PATCHFILES=	pkgtools-${PORTVERSION}.patch.gz
@@ -28,6 +28,7 @@ USE_RUBY=	yes
 RUBY_SHEBANG_FILES=	\
 		${WRKSRC}/pkg_fetch \
 		${WRKSRC}/pkg_glob \
+		${WRKSRC}/pkgdb \
 		${WRKSRC}/pkgdepfix \
 		${WRKSRC}/portcvsweb \
 		${WRKSRC}/portsclean \
@@ -40,13 +41,17 @@ NO_BUILD=	yes
 MAN1=		pkg_deinstall.1 \
 		pkg_fetch.1 \
 		pkg_glob.1 \
+		pkg_which.1 \
 		pkgdepfix.1 \
 		portcvsweb.1 \
+		ports_glob.1 \
 		portsclean.1 \
 		portsdb.1 \
 		portupgrade.1 \
 		portversion.1
-MLINKS=		portupgrade.1 portinstall.1
+MLINKS=		pkgdb.1 pkg_which.1 \
+		portupgrade.1 portinstall.1 \
+		portsdb.1 ports_glob.1
 MANCOMPRESSED=	yes
 
 DOCS=		ChangeLog README
@@ -57,7 +62,6 @@ post-patch:
 .for f in pkgdb.rb pkgtools.rb
 	${RUBY} -i~ -pe 'sub %r:/usr/local:, "${LOCALBASE}"' ${WRKSRC}/${f}
 .endfor
-	${RUBY} -i~ -pe 'sub!(/(make_cmdline\(portdir, .-V PKGNAME 2>\&1.)\}/, "\\1)}")' ${WRKSRC}/portupgrade
 
 do-install:
 	cd ${WRKSRC} && ${RUBY} install.rb
