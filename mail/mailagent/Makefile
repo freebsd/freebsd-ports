@@ -3,7 +3,7 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.15 1997/05/24 13:17:10 jfitz Exp $
+# $Id: Makefile,v 1.16 1997/05/25 18:29:05 max Exp $
 #
 
 DISTNAME=		mailagent-3.0@56
@@ -26,14 +26,14 @@ CONFIGURE_ARGS=		-dres \
 			-Dutmp='/var/run/utmp' \
 			-Dprefix='${PREFIX}' -Dmansrc='${PREFIX}/man/man1' \
 			-Dnotifypatches='false'
-MAKE_ENV=	PATH=${PERLPATH}:/bin:/sbin:/usr/bin:/usr/sbin
+MAKE_ENV=	PATH=${PERLPATH}:${PATH}
 INSTALL_TARGET=	install install.man
 
-MAN1=			edusers.1 mailagent.1 maildist.1  \
-			maillist.1 mailpatch.1 package.1
 # Note that mailhelp.1 is intentionally left uncompressed as it is referred
 # from several other man pages with .so macro.
-PERLPATH!=	dirname `which perl5.004`
+MAN1=			edusers.1 mailagent.1 maildist.1  \
+			maillist.1 mailpatch.1 package.1
+PERLPATH?=		${PREFIX}/bin
 
 pre-extract:
 	@if [ `/bin/sh -c umask` != 0022 ]; then \
