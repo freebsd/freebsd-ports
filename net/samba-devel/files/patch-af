@@ -1,0 +1,9 @@
+--- script/updatesmbpasswd.sh.orig	Sat May  4 16:50:45 1996
++++ script/updatesmbpasswd.sh	Wed Feb 10 01:21:05 1999
+@@ -1,5 +1,5 @@
+ #!/bin/sh
+-nawk 'BEGIN {FS=":"} 
++awk 'BEGIN {FS=":"} 
+ {
+ 	if( $0 ~ "^#" ) {
+ 		print $0
