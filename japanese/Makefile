@@ -296,6 +296,7 @@
     SUBDIR += perl5
     SUBDIR += pgp.language
     SUBDIR += php_doc
+    SUBDIR += phpgroupware
     SUBDIR += pine
     SUBDIR += plain2
     SUBDIR += plan
