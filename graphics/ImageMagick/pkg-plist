@@ -1,4 +1,4 @@
-lib/libMagick.so.3.9
+lib/libMagick.so.3.10
 @exec ldconfig -m %D/lib
 lib/libMagick.a
 @exec ranlib %D/%F
