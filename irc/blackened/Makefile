@@ -1,39 +1,23 @@
 # New ports collection makefile for:	Blackened IRC client
-# Version required:	1.6.2
+# Version required:	1.7.0
 # Date created:		11 Jun 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
-# $Id: Makefile,v 1.2 1999/06/19 09:13:39 cpiazza Exp $
+# $Id: Makefile,v 1.3 1999/06/28 02:20:06 billf Exp $
 #
 
-DISTNAME=	blackened-1.6.2
+DISTNAME=	blackened-1.7.0
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.blackened.com/pub/irc/blackened/ \
-		http://www.cana.net/~acme/blackened/ \
 		http://www.psn.net/~andrews/blackened/
 
 MAINTAINER=	andrews@technologist.com
 
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PKGNAME}
+VERSION=	1.7.0
+PLIST_SUB=	VERSION=${VERSION}
 
-# blackened's ircserv/ircflush/wserv might conflict with those of
-# other clients... also want to change the symlink...
-do-build:
-	@(cd ${WRKSRC} && make prefix="${PREFIX}" \
-	INSTALL_IRCSERV="${PREFIX}/bin/blackened-ircserv" \
-	INSTALL_IRCFLUSH="${PREFIX}/bin/blackened-ircflush" \
-	INSTALL_WSERV="${PREFIX}/bin/blackened-wserv" \
-	INSTALL_LINK="${PREFIX}/bin/blackened" \
-	IRCLIB="${PREFIX}/share/blackened")
-
-do-install:
-	@(cd ${WRKSRC} && make prefix="${PREFIX}" \
-	INSTALL_IRCSERV="${PREFIX}/bin/blackened-ircserv" \
-	INSTALL_IRCFLUSH="${PREFIX}/bin/blackened-ircflush" \
-	INSTALL_WSERV="${PREFIX}/bin/blackened-wserv" \
-	INSTALL_LINK="${PREFIX}/bin/blackened" \
-	IRCLIB="${PREFIX}/share/blackened" \
-	install)
+MAKE_ENV=	prefix=${PREFIX}
 
 .include <bsd.port.mk>
