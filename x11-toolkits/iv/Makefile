@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	tanimura@FreeBSD.org
 
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
+
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 

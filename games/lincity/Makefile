@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/linux/games/
 
 MAINTAINER=	ports@FreeBSD.org
 
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
+
 USE_XLIB=	yes
 ALL_TARGET=	freebsd
 MAN6=		lincity.6
