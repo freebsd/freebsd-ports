@@ -378,6 +378,7 @@
     SUBDIR += rt2
     SUBDIR += ruboard
     SUBDIR += ruby-borges
+    SUBDIR += ruby-div
     SUBDIR += ruby-fcgi
     SUBDIR += ruby-google
     SUBDIR += ruby-http-access

@@ -1,0 +1,127 @@
+%%RUBY_SITELIBDIR%%/div.rb
+%%RUBY_SITELIBDIR%%/div/div.rb
+%%RUBY_SITELIBDIR%%/div/login.rb
+%%RUBY_SITELIBDIR%%/div/tofusession.rb
+%%RUBY_SITELIBDIR%%/tofu/cgicontext.rb
+%%RUBY_SITELIBDIR%%/tofu/mock.rb
+%%RUBY_SITELIBDIR%%/tofu/proxy.rb
+%%RUBY_SITELIBDIR%%/tofu/ring.rb
+%%RUBY_SITELIBDIR%%/tofu/tofu.rb
+%%RUBY_SITELIBDIR%%/tofu/tofulet.rb
+@dirrm %%RUBY_SITELIBDIR%%/tofu
+@dirrm %%RUBY_SITELIBDIR%%/div
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/amida/amida.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/amida/amida.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/amida/amida_base.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/amida/amida_div.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/amida/amida_field.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/amida/base.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/amida/tofu-runner.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/RAA.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/app.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/banner.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/base.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/config.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/counter.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/counter.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/div-cgi.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/div.linux.rc
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/divd.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/enquete-div.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/enquete.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/enquete.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/frame-div.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/hako-div.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/hako.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/hako.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/hotlinks-div.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/hotpage.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/iRAA.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/login.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/login.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/mbox-div.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/mbox.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/mbox.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/news.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/paper-div.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/paper.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/paper.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/raa-div.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/reminder-div.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/reminder-tk.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/reminder.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/reminder.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/rist.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/rwiki-div.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/todo-div.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/todo.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/todo.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/tofu-app.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app/tofu-sample.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/first/base.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/first/sum.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/first/tofu-runner.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/first/yourapp.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hako/base.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hako/hako-div.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hako/hako.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hako/hako.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hako/yourapp.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/login/base.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/login/flogin.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/login/login.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/login/tofu-runner.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/login/ylogin.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/login/yourapp.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ring/tofu-runner.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/base.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/login.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/rw-app.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/rw-div.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/rw-edit.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/rw-login.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/rw-proxy.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/rw-view.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/rwiki-div.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/rwiki.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/rwtodo.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/rwtodo.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/site/amazon.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/site/rwiki.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/site/section.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/theme-div.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/theme.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/tofu-runner.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki/yourapp.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/saifu/base.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/saifu/dbiu.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/saifu/login.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/saifu/login.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/saifu/saifu.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/saifu/saifu.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/saifu/saifu.sql
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/saifu/saifud.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/saifu/tofu-runner.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/saifu/yourapp.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/saifu
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rwiki/site
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rwiki
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/ring
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/login
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/hako
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/first
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/app
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/amida
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Div.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/request.gif
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/request.obj
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/response.gif
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/response.obj
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/yfd01.gif
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/yfd01.obj
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/yfd02.gif
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/yfd02.obj
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/yfd03.gif
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/yfd03.obj
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
