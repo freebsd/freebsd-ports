@@ -1,25 +1,26 @@
---- bash_completion.orig	Wed Mar 31 19:45:32 2004
-+++ bash_completion	Sat Jun  5 16:53:42 2004
-@@ -31,14 +31,14 @@
+--- bash_completion.orig	Mon Oct 25 10:10:30 2004
++++ bash_completion	Mon Oct 25 10:12:35 2004
+@@ -31,14 +31,15 @@
  if [ -n "${FUNCNAME:-}" ]; then
  	# we're being sourced from within a function, so we can't use
  	# 'declare', as this will create local variables within a function
--	BASH_COMPLETION=${BASH_COMPLETION:-/etc/bash_completion} 2>/dev/null
--	BASH_COMPLETION_DIR=${BASH_COMPLETION_DIR:=/etc/bash_completion.d} \
-+	BASH_COMPLETION=${BASH_COMPLETION:-/usr/local/etc/bash_completion} 2>/dev/null
-+	BASH_COMPLETION_DIR=${BASH_COMPLETION_DIR:=/usr/local/etc/bash_completion.d} \
+-	BASH_COMPLETION="${BASH_COMPLETION:-/etc/bash_completion}" 2>/dev/null
+-	BASH_COMPLETION_DIR="${BASH_COMPLETION_DIR:=/etc/bash_completion.d}" \
++	BASH_COMPLETION="${BASH_COMPLETION:-/usr/local/etc/bash_completion}" \
++	  2>/dev/null
++	BASH_COMPLETION_DIR="${BASH_COMPLETION_DIR:=/usr/local/etc/bash_completion.d}" \
  	  2>/dev/null
  else
--	declare -r BASH_COMPLETION=${BASH_COMPLETION:-/etc/bash_completion} \
-+	declare -r BASH_COMPLETION=${BASH_COMPLETION:-/usr/local/etc/bash_completion} \
+-	declare -r BASH_COMPLETION="${BASH_COMPLETION:-/etc/bash_completion}" \
++	declare -r BASH_COMPLETION="${BASH_COMPLETION:-/usr/local/etc/bash_completion}" \
  	  2>/dev/null
  	declare -r \
--	  BASH_COMPLETION_DIR=${BASH_COMPLETION_DIR:=/etc/bash_completion.d} \
-+	  BASH_COMPLETION_DIR=${BASH_COMPLETION_DIR:=/usr/local/etc/bash_completion.d} \
+-	  BASH_COMPLETION_DIR="${BASH_COMPLETION_DIR:=/etc/bash_completion.d}"\
++	  BASH_COMPLETION_DIR="${BASH_COMPLETION_DIR:=/usr/local/etc/bash_completion.d}"\
  	  2>/dev/null
  fi
  
-@@ -1056,7 +1056,7 @@
+@@ -1131,7 +1132,7 @@
  	else
  		len=${#cur}
  		idx=0
@@ -28,7 +29,7 @@
  			if [[ "$cur" == "${pval:0:$len}" ]]; then
  				COMPREPLY[$idx]="$pval:"
  				idx=$(($idx+1))
-@@ -1132,7 +1132,7 @@
+@@ -1207,7 +1208,7 @@
  	fi
  	len=${#cur}
  	idx=0
