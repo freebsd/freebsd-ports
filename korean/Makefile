@@ -66,6 +66,7 @@
     SUBDIR += pgp.language
     SUBDIR += pinetreefonts
     SUBDIR += texinfo
+    SUBDIR += unfonts-ttf
     SUBDIR += uniksc
     SUBDIR += unzip
 

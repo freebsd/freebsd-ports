@@ -1,0 +1,9 @@
+Un-series fonts (GPL'd) are made by UN Koaunghi (who painstakingly
+scanned, converted to outlines and hand-hinted them all) and PARK
+Won-Kyu. They're originally made as PS fonts to use with Korean
+TeX/LaTeX/OmegaLambda (HLaTeX [1]) by UN Koaunghi in the late 1990's.
+Recently, PARK Won-kyu converted them to truetype fonts and added
+GSUB tables to one of them (UnBatang) for the full support of
+Korean script with Korean letters (Hangul Jamos : U+1100).
+
+WWW: http://chem.skku.ac.kr/~wkpark/project/font/UnFonts/
