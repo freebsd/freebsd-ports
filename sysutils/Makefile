@@ -100,6 +100,7 @@
     SUBDIR += gtoaster
     SUBDIR += gtop
     SUBDIR += gupsc
+    SUBDIR += hammerhead
     SUBDIR += healthd
     SUBDIR += httplog
     SUBDIR += idled

@@ -1,0 +1,5 @@
+bin/hammerhead
+etc/hammerhead/hh.conf
+etc/hammerhead/root.scn
+etc/hammerhead/post.scn
+@dirrm etc/hammerhead
