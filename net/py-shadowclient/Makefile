@@ -1,27 +1,33 @@
-# New ports collection makefile for:	BitTorrent
-# Date created:		Sun Mar 16 06:34:12 UTC 2003
+# New ports collection makefile for:	TheSHAD0W's BitTorrent client
+# Date created:		Mon Mar  1 02:04:13 UTC 2004
 # Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	BitTorrent
-PORTVERSION=	3.3
-PORTREVISION=	1
+PORTNAME=	shadowclient
+PORTVERSION=	5.8.10
 CATEGORIES?=	net python
-MASTER_SITES=	http://bitconjurer.org/BitTorrent/
+MASTER_SITES=	http://home.elp.rr.com/tur/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-#DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
+DISTNAME=	BitTorrent-experimental-S-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
-COMMENT?=	A peer-to-peer tool for distributing files written in Python
+COMMENT?=	TheSHAD0W's experimental BitTorrent client
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
 USE_SIZE=	yes
+WRKSRC=		${WRKDIR}/bittorrent-CVS-shadowsclient
+
+CONFLICTS=	py-bittorrent-*
 
 DOC_FILES=	BUILD.windows.txt INSTALL.unix.txt LICENSE.txt \
+		FAQ.txt IMPORTANT-multitracker-readme.txt \
+		README-Psyco.txt README-experimental.txt \
+		ipranges.portugal.txt multitracker-spec.txt \
+		multitracker/README.txt todo.txt webseed-spec.txt \
 		README.txt credits.txt
 
 # required for GUI
