@@ -13,17 +13,13 @@ MASTER_SITES=	http://samba.org/picturebook/
 DISTNAME=	capture
 EXTRACT_SUFX=  .tgz
 
-MAINTAINER=	roberto@FreeBSD.org
+MAINTAINER=	freebsd-ports@FreeBSD.org
 COMMENT=	SONY VAIO camera capture utility
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GNOME=	imlib
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
 
 post-build:
 	cd ${WRKSRC}; \

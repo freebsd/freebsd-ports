@@ -1,5 +1,5 @@
---- ../picturebook.old/capture.c	Mon Dec 25 19:01:43 2000
-+++ capture.c	Mon Dec 25 19:03:16 2000
+--- capture.c.old	Thu Jul 27 02:15:05 2000
++++ capture.c	Thu Oct 16 07:21:39 2003
 @@ -39,7 +39,7 @@
  	}
  }
@@ -9,6 +9,63 @@
  {
  	spic_shutdown(0);
  	_exit(1);
+@@ -47,31 +47,31 @@
+ 
+ static void usage(void)
+ {
+-	printf("
+-VAIO PCG-C1XS capture program
+-Copyright 2000 tridge@linuxcare.com
+-For the latest version see http://samba.org/picturebook/
+-
+-capture <options>
+-  -o outfile       set output filename
+-  -q quality       set compressed image quality (1-10  default 8)
+-  -P               capture as a PPM file
+-  -V captime       capture an avi video for the specified number of seconds
+-  -O               turn off camera afterwards
+-  -4               use 1:4 sub-sampling
+-  -s               go into \"snap\" mode
+-  -r rate          set framerate in frames per second
+-  -j               display input from jogger/buttons etc
+-  --brightness=n   set brightness
+-  --contrast=n     set contrast
+-  --hue=n          set hue
+-  --color=n        set color
+-  --sharpness=n    set sharpness
+-  --agc=n          set agc
+-  --picture=n      set picture
+-  --explode=fname  explode a AVI file into frame.*
+-  -h               show usage
+-
++	printf("\
++VAIO PCG-C1XS capture program\
++Copyright 2000 tridge@linuxcare.com\
++For the latest version see http://samba.org/picturebook/\
++\
++capture <options>\
++  -o outfile       set output filename\
++  -q quality       set compressed image quality (1-10  default 8)\
++  -P               capture as a PPM file\
++  -V captime       capture an avi video for the specified number of seconds\
++  -O               turn off camera afterwards\
++  -4               use 1:4 sub-sampling\
++  -s               go into \"snap\" mode\
++  -r rate          set framerate in frames per second\
++  -j               display input from jogger/buttons etc\
++  --brightness=n   set brightness\
++  --contrast=n     set contrast\
++  --hue=n          set hue\
++  --color=n        set color\
++  --sharpness=n    set sharpness\
++  --agc=n          set agc\
++  --picture=n      set picture\
++  --explode=fname  explode a AVI file into frame.*\
++  -h               show usage\
++\
+ ");
+ 
+ }
 @@ -81,6 +81,7 @@
  
  static char *short_options = "to:hPV:4Odvr:sjq:";
