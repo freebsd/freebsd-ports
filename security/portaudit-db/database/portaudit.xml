@@ -776,4 +776,31 @@ This file is in the public domain.
       <modified>2004-08-12</modified>
     </dates>
   </vuln>
+
+  <vuln vid="65a17a3f-ed6e-11d8-aff1-00061bc2ad93">
+    <topic>jftpgw remote syslog format string vulnerability</topic>
+    <affects>
+      <package>
+        <name>jftpgw</name>
+        <range><lt>0.13.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Remote authenticated users can execute arbitrary code by
+	  passing a malicious string containing format specifiers.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0448</cvename>
+      <bid>10438</bid>
+      <url>http://secunia.com/advisories/11732</url>
+      <url>http://www.debian.org/security/2004/dsa-510</url>
+    </references>
+    <dates>
+      <discovery>2004-05-29</discovery>
+      <entry>2004-08-13</entry>
+    </dates>
+  </vuln>
+
 </vuxml>
