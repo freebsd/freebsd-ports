@@ -190,6 +190,7 @@ post-patch:
 		${WRKSRC}/lib/ASTK/init.tcl
 	@${RM} ${WRKSRC}/lib/ASTK/init.tcl.orig
 	@${RM} ${WRKSRC}/share/tkselecteur.tcl.orig
+	@${RM} ${WRKSRC}/lib/ASTK/astkrc/outils.orig
 .endif
 
 do-install:

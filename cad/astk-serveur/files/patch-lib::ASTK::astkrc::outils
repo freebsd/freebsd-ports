@@ -1,0 +1,22 @@
+--- lib/ASTK/astkrc/outils.orig	Mon Jun 23 08:42:59 2003
++++ lib/ASTK/astkrc/outils	Mon Aug 18 21:27:52 2003
+@@ -13,3 +13,19 @@
+ ext : comm com0 com1 com2
+ dist : on
+ #
++nom : Gmsh
++cmde : TOOLS_DIR/gmsh (@F)
++ext : geo pos
++dist : on
++#
++# Gibi2000 is not yet implemented (currently for EDF internal use only)
++#nom : Gibi
++#cmde : TOOLS_DIR/gibi (@F)
++#ext : datg
++#dist : off
++#
++nom : Grace
++cmde : TOOLS_DIR/xmgrace (@F)
++ext : dat
++dist : on
++#
