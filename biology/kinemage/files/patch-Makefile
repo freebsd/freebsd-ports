@@ -1,0 +1,22 @@
+--- Makefile.orig	Mon Dec  4 20:47:11 2000
++++ Makefile	Mon Dec  4 20:50:43 2000
+@@ -4,7 +4,7 @@
+ # rpm -i ...rpm   (to install each in turn, where ...rpm is downloaded file
+ # for Linux, try:                                                               
+ # CFLAGS =  -I/usr/X11R6/LessTif/Motif2.0/include
+-CFLAGS = -g  -I/usr/X11R6/LessTif/Motif2.0/include
++CFLAGS += -I/usr/X11R6/include
+ # for SGI use:
+ # CFLAGS = -I/usr/include/X11
+ # CFLAGS =  -g -I/usr/include/X11
+@@ -30,7 +30,9 @@
+ # for linux with Motif installed, try:
+ # LIBS = -L/usr/X11/lib -lXm -lXt -lX11
+ # for Linux, try:
+-LIBS = -L/usr/X11R6/LessTif/Motif2.0/lib -L/usr/X11R6/lib -lXm -lXt -lX11
++# LIBS = -L/usr/X11R6/LessTif/Motif2.0/lib -L/usr/X11R6/lib -lXm -lXt -lX11
++# For FreeBSD:
++LIBS = -L/usr/X11R6/lib -lXm -lXt -lX11
+ 
+ # ------------------------------------------------------------------------
+ 

@@ -6,36 +6,30 @@
 #
 
 PORTNAME=	kinemage
-PORTVERSION=	4.2
-CATEGORIES=     biology linux
-MASTER_SITES=	ftp://kinemage.biochem.duke.edu/LINUXprograms/ \
-		ftp://ftp.ebi.ac.uk/pub/databases/pdb/pub/xternal_software/kinemage/LINUX/ \
-		ftp://ftp.pdb.bnl.gov/pub/xternal_software/kinemage/LINUX/
-DISTNAME=	MAGE_4_2.LINUX
-EXTRACT_SUFX=	.Z
+PORTVERSION=	5.79
+CATEGORIES=	biology
+# There is no distfile to fetch here, just a dir of badly formatted sources
+#MASTER_SITES=	ftp://kinemage.biochem.duke.edu/OPEN_SOURCE/
+#MASTER_SITE_SUBDIR=	MAGE_001120
+# I've repackaged their sources for now and Will Andrews <will@freebsd.org>
+# is hosting
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	will
+DISTNAME=	mage-001120
 
-MAINTAINER=     frankch@waru.life.nthu.edu.tw
+MAINTAINER=	jeremy@external.org
 
-BUILD_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base
-RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
-ONLY_FOR_ARCHS=	i386
+USE_MOTIF=	YES
 
-NO_WRKSUBDIR=	YES
-NO_BUILD=	YES
+ALL_TARGET=	mage
 
-.include <bsd.port.pre.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
-STRIP=
-.endif
-
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
-	@/usr/bin/uncompress ${WRKDIR}/${DISTFILES}
+# When the time comes to use the actual master site, this snippet
+# will replace the carriage returns with newlines
+# perl -i -pe 's/\r/\n/g' ${WRKSRC}/*
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKDIR}/MAGE_4_2.LINUX ${PREFIX}/bin/kinemage
+	@${INSTALL_PROGRAM} ${WRKSRC}/mage ${PREFIX}/bin/kinemage
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
