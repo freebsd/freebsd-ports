@@ -1,0 +1,8 @@
+xfed is a program that will let you edit X fonts (.bdf files).  It
+originates in the pre-R3 days and has been modified by lots of people
+along the way.  This version is taken from
+
+ftp.cs.orst.edu:pub/src/X11R4/contrib/clients/xfed
+
+- Satoshi
+asami@cs.berkeley.edu
