@@ -20,5 +20,6 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=		adasockets-config.1
+INFO=		adasockets
 
 .include <bsd.port.mk>
