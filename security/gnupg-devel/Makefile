@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	1.9.3
-PORTREVISION=	1
+PORTVERSION=	1.9.10
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/gnupg
@@ -18,14 +17,13 @@ COMMENT=	Prerelease package of GnuPG extensions for GnuPG 2.0
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libassuan.a:${PORTSDIR}/security/libassuan
 LIB_DEPENDS=	gcrypt.12:${PORTSDIR}/security/libgcrypt \
-		ksba.11:${PORTSDIR}/security/libksba \
+		ksba.13:${PORTSDIR}/security/libksba \
 		pth.20:${PORTSDIR}/devel/pth
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		dirmngr:${PORTSDIR}/security/dirmngr
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=# empty
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 INSTALLS_SHLIB=	yes
@@ -44,6 +42,14 @@ PLIST_SUB+=	WITH_OPENSC=""
 .else
 CONFIGURE_ARGS+=	--disable-scdaemon
 PLIST_SUB+=	WITH_OPENSC="@comment "
+.endif
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
 .endif
 
 pre-configure:

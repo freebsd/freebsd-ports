@@ -1,11 +1,11 @@
---- configure.orig	Mon May  3 18:34:49 2004
-+++ configure	Mon May  3 18:35:25 2004
-@@ -15887,7 +15887,7 @@
+--- configure.orig	Wed Aug  4 17:06:25 2004
++++ configure	Wed Aug  4 17:07:15 2004
+@@ -17232,7 +17232,7 @@
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
  
 -eval "$as_ac_var=no"
 +eval "$as_ac_var=yes"
  fi
- rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
- fi
+ rm -f conftest.err conftest.$ac_objext \
+       conftest$ac_exeext conftest.$ac_ext

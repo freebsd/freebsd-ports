@@ -1,10 +1,14 @@
 bin/gpg-agent
 bin/gpg2
+bin/gpgconf
 bin/gpgsm
 bin/gpgv2
 bin/kbxutil
 %%WITH_OPENSC%%bin/scdaemon
-lib/gnupg/gpg-protect-tool
+bin/watchgnupg
+libexec/gpg-protect-tool
+sbin/addgnupghome
 share/gnupg/options.skel
+%%NLS%%share/locale/de/LC_MESSAGES/gnupg2.mo
+%%NLS%%@dirrm share/locale/de/LC_MESSAGES
 @dirrm share/gnupg
-@dirrm lib/gnupg
