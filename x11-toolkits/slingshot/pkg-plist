@@ -12,6 +12,8 @@ lib/libsspkg.a
 lib/libsspkg.sa.1
 lib/libsspkg.so
 lib/libsspkg.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/SlingShot/README
 share/doc/SlingShot/appA.ps
 share/doc/SlingShot/appB.ps
@@ -21,5 +23,5 @@ share/doc/SlingShot/appE.ps
 share/doc/SlingShot/ch1.ps
 share/doc/SlingShot/ch2.ps
 share/doc/SlingShot/ch3.ps
-@dirrm include/sspkg
 @dirrm share/doc/SlingShot
+@dirrm include/sspkg
