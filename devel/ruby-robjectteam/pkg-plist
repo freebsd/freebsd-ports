@@ -75,3 +75,4 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/implicit_inheritance
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/flight
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/composite
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
