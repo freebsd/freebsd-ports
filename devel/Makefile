@@ -778,6 +778,7 @@
     SUBDIR += p5-IPC-Locker
     SUBDIR += p5-IPC-MM
     SUBDIR += p5-IPC-Run
+    SUBDIR += p5-IPC-Run3
     SUBDIR += p5-IPC-ShareLite
     SUBDIR += p5-IPC-Shareable
     SUBDIR += p5-IPC-SharedCache
