@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	algebra
-PORTVERSION=	0.55
+PORTVERSION=	0.56
 CATEGORIES=	math ruby
 MASTER_SITES=	http://blade.nagaokaut.ac.jp/~sinara/ruby/math/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,6 +20,9 @@ NO_BUILD=	yes
 
 DOCS_EN=	doc/*.txt	doc/*.rd	doc/*.html
 DOCS_JA=	doc-jp/*.txt	doc-jp/*.rd	doc-jp/*.html
+
+post-extract:
+	${RM} ${WRKSRC}/test1.rb ${WRKSRC}/m-index-*.rb
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.rb ${RUBY_SITELIBDIR}/
