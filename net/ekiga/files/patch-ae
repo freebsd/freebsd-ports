@@ -1,17 +1,17 @@
-*** src/webcam.h.orig	Thu Jul 26 11:43:17 2001
---- src/webcam.h	Thu Jul 26 11:43:47 2001
+*** src/webcam.h.orig	Mon Aug 20 07:55:24 2001
+--- src/webcam.h	Mon Aug 20 07:55:51 2001
 ***************
-*** 22,28 ****
---- 22,33 ----
-  
+*** 23,29 ****
+--- 23,34 ----
   #include <fcntl.h>
   #include <unistd.h>
+  
 + #ifdef __linux__
   #include <linux/videodev.h>
 + #endif
 + #ifdef __FreeBSD__
 + #include <machine/ioctl_meteor.h>
 + #endif
+  
   #include <sys/ioctl.h>
   #include <gtk/gtk.h>
-  #include <gdk/gdk.h>

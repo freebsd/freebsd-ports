@@ -1,10 +1,10 @@
-*** src/audio.h.orig	Thu Jul 26 11:42:22 2001
---- src/audio.h	Thu Jul 26 11:42:51 2001
+*** src/audio.h.orig	Fri Aug 17 20:08:26 2001
+--- src/audio.h	Mon Aug 20 07:54:33 2001
 ***************
-*** 20,26 ****
---- 20,32 ----
-  #ifndef _AUDIO_H_
+*** 21,27 ****
+--- 21,33 ----
   #define _AUDIO_H_
+  
   
 + #ifdef __linux__
   #include <linux/soundcard.h>
@@ -13,6 +13,6 @@
 + #include <machine/soundcard.h>
 + #endif
 + 
+  
+  
   #include <sys/ioctl.h>
-  #include <unistd.h>
-  #include <fcntl.h>
