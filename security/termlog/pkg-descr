@@ -1,5 +1,5 @@
 Termlog is a system terminal I/O and key logging program. Termlog is
-capable of performing realtime synchronous monitoring and logging
+capable of performing synchronous monitoring and logging
 of multiple system ttys. It is designed to allow paranoid or
 otherwise curious system administrators to monitor I/O between
 themselves and connected clients.
