@@ -1,0 +1,53 @@
+
+$FreeBSD$
+
+--- src/drivers/Makefile	2002/12/11 00:24:46	1.1
++++ src/drivers/Makefile	2002/12/11 01:31:15
+@@ -20,24 +20,32 @@
+ 
+ all: $(MODULE).ko
+ 
+-mwave.o: smapi.h 3780i.h tp3780i.h 
++mwave.o: smapi.h 3780i.h tp3780i.h bus_if.h device_if.h isa_if.h
+ 
+-tp3780i.o: smapi.h tp3780i.h 3780i.h mwavepub.h
++tp3780i.o: smapi.h tp3780i.h 3780i.h mwavepub.h bus_if.h device_if.h isa_if.h
+ 
+-3780i.o: 3780i.h smapi.h
++3780i.o: 3780i.h smapi.h bus_if.h device_if.h isa_if.h
+ 
+-smapi.o: smapi.h 
++smapi.o: smapi.h bus_if.h device_if.h isa_if.h
++
++bus_if.h::
++	awk -f /usr/src/sys/tools/makeobjops.awk /usr/src/sys/kern/bus_if.m -h
++
++device_if.h::
++	awk -f /usr/src/sys/tools/makeobjops.awk /usr/src/sys/kern/device_if.m -h
++
++isa_if.h::
++	awk -f /usr/src/sys/tools/makeobjops.awk /usr/src/sys/isa/isa_if.m -h
+ 
+ $(MWAVE_OBJS): mwavedd.h
+ 
+ $(MODULE).ko: $(MODULE).kld
+-	gensetdefs $(MODULE).kld
+-	$(CC) $(CFLAGS) -c setdef0.c
+-	$(CC) $(CFLAGS) -c setdef1.c
+-	$(LD) -Bshareable $(LDFLAGS) -o $@ setdef0.o $(MODULE).kld setdef1.o
++	touch export_syms
++	awk -f /usr/src/sys/conf/kmod_syms.awk $(MODULE).kld export_syms | xargs -J% objcopy % $(MODULE).kld
++	$(LD) -Bshareable  -d -warn-common -o $@ $(MODULE).kld
+ 
+ $(MODULE).kld: $(MWAVE_OBJS)
+-	$(LD) $(LDFLAGS) -r -o $@ $(MWAVE_OBJS)
++	$(LD)  -d -warn-common -r -d -o $@ $(MWAVE_OBJS)
+ 
+ 
+ ###
+@@ -51,4 +59,4 @@
+ 
+ unload:; kldunload $(MODULE)
+ 
+-clean distclean:; -rm -f *.o *.ver *~ *.kld *.ko setdef?.c setdefs.h
++clean distclean:; -rm -f *.o *.ver *~ *.kld *.ko setdef?.c setdefs.h bus_if.h device_if.h isa_if.h

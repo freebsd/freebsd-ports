@@ -7,7 +7,7 @@
 
 PORTNAME=	mwavem-fbsd
 PORTVERSION=	1.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://www-126.ibm.com/pub/acpmodem/ \
 		http://www.escape.com/~simonw/
@@ -39,6 +39,10 @@ LTHREADVERSION=	3
 LTHREADVERSION=	3
 .endif
 LIB_DEPENDS=	lthread.${LTHREADVERSION}:${PORTSDIR}/devel/linuxthreads
+
+.if ${OSVERSION} >= 500000
+EXTRA_PATCHES!= ${ECHO_CMD} ${PKGDIR}/files.5/patch-*
+.endif
 
 pre-build:
 	${REINPLACE_CMD} -e "s@ /modules@ ${PREFIX}/share/mwavem@g" \
