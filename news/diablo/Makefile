@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.openusenet.org/diablo/download/
 DISTNAME=	${PKGNAME}-REL
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	xmake:${PORTSDIR}/devel/xmake
 
