@@ -1,5 +1,5 @@
---- configure.orig	Mon Feb 15 04:20:06 1999
-+++ configure	Sun Dec  5 07:03:17 1999
+--- configure.orig	Mon Feb 15 03:20:06 1999
++++ configure	Thu May  9 01:24:55 2002
 @@ -14,9 +14,9 @@
  ac_help="$ac_help
    --enable-gcc            allow use of gcc if available"
@@ -114,8 +114,9 @@
      # The main Tix library
      #
 -    eval "TIX_LIB_FILE=libtix${TCL_SHARED_LIB_SUFFIX}"
+-    TIX_MAKE_LIB="\${SHLIB_LD} -o ${TIX_LIB_FILE} \${OBJS} ${SHLIB_LD_LIBS}"
 +    eval "TIX_LIB_FILE=libtix${LIB_VERSION}.so.1"
-     TIX_MAKE_LIB="\${SHLIB_LD} -o ${TIX_LIB_FILE} \${OBJS} ${SHLIB_LD_LIBS}"
++    TIX_MAKE_LIB="\${SHLIB_LD} -o ${TIX_LIB_FILE} \${OBJS} ${SHLIB_LD_LIBS} -L${PREFIX}/lib -L\${X11BASE}/lib -lX11 -ltk82"
  
      # The Tcl SAM library
      #
