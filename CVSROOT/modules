@@ -6512,6 +6512,7 @@ py-ao		ports/audio/py-ao
 py-asv		ports/textproc/py-asv
 py-biopython	ports/biology/py-biopython
 py-bittorrent	ports/net/py-bittorrent
+py-bsddb	ports/databases/py-bsddb
 py-bsddb3	ports/databases/py-bsddb3
 py-bzip2	ports/archivers/py-bzip2
 py-cdb	ports/databases/py-cdb
