@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
+    echo "$0: Cannot determine the PREFIX" >&2
+    exit 1
+fi
+
+case "$1" in
+start)
+	if [ -x ${PREFIX}/sbin/spelld ]; then
+# Uncomment to disallow access from outside
+#                /sbin/ipfw -q add 7001 deny tcp from any to any 7001
+		su -f -m nobody -c "exec ${PREFIX}/sbin/spelld &" > /dev/null 2>&1 && echo -n ' spelld'
+	fi
+	;;
+stop)
+	killall spelld && echo -n ' spelld'
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	;;
+esac
+
+exit 0

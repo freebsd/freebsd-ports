@@ -1,6 +1,7 @@
 etc/mnogosearch/indexer.conf-dist
 etc/mnogosearch/search.htm-dist
 etc/mnogosearch/spelld.conf-dist
+etc/rc.d/spelld.sh-dist
 include/udm_agent.h
 include/udm_alias.h
 include/udm_boolean.h
