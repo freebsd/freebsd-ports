@@ -1,11 +1,11 @@
---- server/dhcps.8.orig	Mon Apr 21 11:44:13 1997
-+++ server/dhcps.8	Mon Apr 21 11:44:49 1997
-@@ -36,7 +36,7 @@
- "binding".
+--- server/dhcps.8.orig	Fri Jan  1 05:28:25 1999
++++ server/dhcps.8	Sun Feb  7 11:30:56 1999
+@@ -37,7 +37,7 @@
  .B dhcps
  manages these with files, /etc/dhcpdb.pool and /etc/dhcpdb.bind
--(/var/db/dhcpdb.bind for BSD/OS).  It is possible to change these path
-+(/var/db/dhcpdb.bind for BSD/OS and FreeBSD).  It is possible to change these path
- with command line option.
+ (/var/db/dhcpdb.bind for BSD/OS and FreeBSD).  It is possible to change
+-these path with command line option.
++this path with command line options.
  .LP
  Also
+ .B dhcps

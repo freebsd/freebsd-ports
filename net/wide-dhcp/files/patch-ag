@@ -1,18 +1,14 @@
---- relay/Makefile.FreeBSD.orig	Wed Sep 10 18:10:42 1997
-+++ relay/Makefile.FreeBSD	Sat Dec  5 03:08:30 1998
-@@ -2,13 +2,14 @@
+--- relay/Makefile.FreeBSD.orig	Fri Jan  1 02:25:43 1999
++++ relay/Makefile.FreeBSD	Sun Feb  7 10:56:47 1999
+@@ -4,13 +4,13 @@
+ CFLAGS = -O2 -I. -I../server
+ LDFLAGS =
  
- CC = cc
- CFLAGS += -O -I. -I../server
--LDFLAGS = -lkvm
--SBIN =		/usr/local/sbin
--LIBEXEC = 	/usr/local/libexec
--MAN =		/usr/local/man
-+#LDFLAGS = -lkvm
+-PREFIX =	/usr/local
 +#PREFIX =	/usr/local
-+SBIN =		${PREFIX}/sbin
-+LIBEXEC = 	${PREFIX}/libexec
-+MAN =		${PREFIX}/man
+ SBIN =		${PREFIX}/sbin
+ LIBEXEC = 	${PREFIX}/libexec
+ MAN =		${PREFIX}/man
  CP =		/bin/cp
  RM =		/bin/rm
 -GZIP =		/usr/bin/gzip

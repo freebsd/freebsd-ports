@@ -1,16 +1,14 @@
---- server/Makefile.FreeBSD.orig	Fri Jan 30 01:03:57 1998
-+++ server/Makefile.FreeBSD	Sat Dec  5 03:04:13 1998
-@@ -4,12 +4,13 @@
- CC = cc
- CFLAGS += -O -I. #-DMAC_FILTER #-DCOMPAT_RFC1541 #-DNOICMPCHK
- LDFLAGS = -lkvm
--SBIN =		/usr/local/sbin
--LIBEXEC =	/usr/local/libexec
--MAN =		/usr/local/man
+--- server/Makefile.FreeBSD.orig	Tue Jan 26 02:13:13 1999
++++ server/Makefile.FreeBSD	Sun Feb  7 10:54:41 1999
+@@ -5,13 +5,13 @@
+ CFLAGS = -O2 -I. #-DMAC_FILTER #-DCOMPAT_RFC1541 #-DNOICMPCHK
+ LDFLAGS =
+ 
+-PREFIX =	/usr/local
 +#PREFIX =	/usr/local
-+SBIN =		${PREFIX}/sbin
-+LIBEXEC =	${PREFIX}/libexec
-+MAN =		${PREFIX}/man
+ SBIN =		${PREFIX}/sbin
+ LIBEXEC =	${PREFIX}/libexec
+ MAN =		${PREFIX}/man
  CP =		/bin/cp
  RM =		/bin/rm
 -GZIP =		/usr/bin/gzip

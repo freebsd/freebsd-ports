@@ -1,28 +1,6 @@
---- client/dhcpc_subr.c.orig	Wed Sep  9 17:06:39 1998
-+++ client/dhcpc_subr.c	Sat Dec  5 02:52:57 1998
-@@ -64,6 +64,12 @@
- #ifdef __osf__
- #include <net/pfilt.h>
- #endif
-+#ifdef __FreeBSD__
-+#include <osreldate.h>
-+#if (__FreeBSD_version == 199702) || (__FreeBSD_version >= 300000)
-+#include <net/if_var.h>
-+#endif
-+#endif
- #include <netinet/in.h>
- #include <netinet/in_systm.h>
- #include <netinet/if_ether.h>
-@@ -71,6 +77,8 @@
- #include <netinet/ip.h>
- #include <netinet/udp.h>
- #include <arpa/inet.h>
-+#include <arpa/nameser.h>
-+#include <resolv.h>
- #ifdef VIP
- #include <netinet/vip.h>
- #endif
-@@ -165,6 +173,8 @@
+--- client/dhcpc_subr.c.orig	Fri Jan  1 06:21:08 1999
++++ client/dhcpc_subr.c	Sun Feb  7 10:46:25 1999
+@@ -170,6 +170,8 @@
  
  int config_if();
  void set_route();
@@ -31,21 +9,12 @@
  void make_decline();
  void make_release();
  Long generate_xid();
-@@ -1856,6 +1866,10 @@
-   register char *cp = m_rtmsg.m_space;
-   register int l;
+@@ -3221,4 +3223,41 @@
  
-+  if (!ISSET(param->got_option, ROUTER) ||
-+      param->router == NULL || param->router->addr == NULL)
-+    return;
+   buf += OPTLEN(buf) + 1;
+   return(0);
++}
 +
-   bzero(&so_dst, sizeof(struct sockaddr));
-   bzero(&so_mask, sizeof(struct sockaddr));
-   bzero(&so_gate, sizeof(struct sockaddr));
-@@ -1898,6 +1912,45 @@
- 
- #endif
- 
 +void
 +set_resolv(param)
 +struct dhcp_param *param;
@@ -53,14 +22,10 @@
 +  FILE *fp;
 +  int i;
 +
-+  if (param == NULL) {
-+    return;
-+  }
-+
 +  /*
 +   * set resolv.conf
 +   */
-+  if (param->dns_server != NULL) {
++  if (param && param->dns_server != NULL) {
 +    if (param->dns_server->num && param->dns_server->addr != NULL) {
 +      unlink(_PATH_RESCONF);
 +      if ((fp = fopen(_PATH_RESCONF, "w")) == NULL) {
@@ -68,9 +33,10 @@
 +      }
 +      if (param->dns_domain != NULL)
 +        fprintf(fp, "domain %s\n", param->dns_domain);
-+      for (i = 0; i < param->dns_server->num; i++) {
-+        fprintf(fp,"nameserver %s\n",inet_ntoa(param->dns_server->addr[i]));
-+      }
++	  if (param->dns_server->addr)
++        for (i = 0; i < param->dns_server->num; i++) {
++          fprintf(fp,"nameserver %s\n",inet_ntoa(param->dns_server->addr[i]));
++        }
 +      fclose(fp);
 +    }
 +  }
@@ -80,11 +46,8 @@
 +set_hostname(param)
 +struct dhcp_param *param;
 +{
-+  if (param->hostname != NULL) {
++  if (param && param->hostname != NULL) {
 +    sethostname(param->hostname,strlen(param->hostname));
 +  }
 +  return;
-+}
- 
- void
- make_decline(lsbuf, reqspecp)
+ }
