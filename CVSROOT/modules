@@ -7594,6 +7594,7 @@ p5-Statistics-Contingency	ports/math/p5-Statistics-Contingency
 p5-Statistics-Descriptive	ports/math/p5-Statistics-Descriptive
 p5-Statistics-Distributions	ports/math/p5-Statistics-Distributions
 p5-Statistics-LTU	ports/math/p5-Statistics-LTU
+p5-Statistics-Lite	ports/math/p5-Statistics-Lite
 p5-Statistics-OLS	ports/math/p5-Statistics-OLS
 p5-Statistics-Table-F	ports/math/p5-Statistics-Table-F
 p5-Storable	ports/devel/p5-Storable
