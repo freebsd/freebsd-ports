@@ -1,6 +1,6 @@
---- krogue/rogue/rogue.h	Tue Aug 31 12:38:17 1999
-+++ krogue/rogue/rogue.h.new	Sun Nov 21 22:08:57 1999
-@@ -26,7 +26,7 @@
+--- krogue/rogue/rogue.h.orig	Fri May 12 00:58:55 2000
++++ krogue/rogue/rogue.h	Fri Feb  2 04:03:05 2001
+@@ -28,7 +28,7 @@
  extern const char *cmd_q;
  extern struct obj *item_o;
  
@@ -9,10 +9,3 @@
  #define transl(x) _i18n(x)
  
  #define NOTHING		((unsigned short)     0)
-@@ -449,4 +449,4 @@
- #ifdef __cplusplus
- }
- #endif
--#endif
-+#endif
-

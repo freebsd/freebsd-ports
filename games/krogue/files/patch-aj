@@ -1,5 +1,5 @@
---- krogue/kcmdr.cpp.orig	Sun Oct 10 09:33:41 1999
-+++ krogue/kcmdr.cpp	Wed Dec 15 15:28:50 1999
+--- krogue/kcmdr.cpp.orig	Sun Apr 16 18:42:28 2000
++++ krogue/kcmdr.cpp	Fri Feb  2 03:14:53 2001
 @@ -36,26 +36,26 @@
    {'m', ASK_DIR, 0, NULL},
    {'s', 0, 0, NULL},
@@ -38,27 +38,3 @@
    {CMD_WIZ, 0, 0, NULL},
    {CMD_QUIT, 0, 0, NULL},
    {CMD_INV, 0, 0, NULL},
-@@ -213,9 +213,9 @@
-   {
-     for (i=0; i<NCMD; i++)
-     {
--      if (r_cmdtable[i].cmd==k->ascii())
-+      if (r_cmdtable[i].thecmd==k->ascii())
-       {
--        ccmd=r_cmdtable[i].cmd;
-+        ccmd=r_cmdtable[i].thecmd;
- 	cmd_ask=r_cmdtable[i].ask;
- 	cmd_q=r_cmdtable[i].q;
- 	cmd_mask=r_cmdtable[i].mask;
-@@ -226,9 +226,9 @@
-     {
-       if (::wizard)
-         for (i=0; i<NWIZCMD; i++)
--	  if (wiz_cmdtable[i].cmd==k->ascii())
-+	  if (wiz_cmdtable[i].thecmd==k->ascii())
- 	  {
--            ccmd=wiz_cmdtable[i].cmd;
-+            ccmd=wiz_cmdtable[i].thecmd;
- 	    cmd_ask=wiz_cmdtable[i].ask;
- 	    cmd_q=wiz_cmdtable[i].q;
- 	    cmd_mask=wiz_cmdtable[i].mask;
