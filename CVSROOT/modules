@@ -550,7 +550,6 @@ bitmap-emacs20	ports/editors/bitmap-emacs20
 bitmap-fonts	ports/x11-fonts/bitmap-fonts
 bitmap-mule	ports/editors/bitmap-mule
 bitstream-vera	ports/x11-fonts/bitstream-vera
-bittorrent	ports/net/bittorrent
 bjfilter360	ports/print/bjfilter360
 bjfilter850	ports/print/bjfilter850
 bjfilter850ug	ports/print/bjfilter850ug
