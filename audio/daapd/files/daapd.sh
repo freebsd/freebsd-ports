@@ -12,7 +12,7 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-daapd_enable="NO"
+daapd_enable=${daapd_enable-"NO"}
 daapd_flags=""
 
 . %%RC_SUBR%%
