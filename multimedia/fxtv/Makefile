@@ -19,21 +19,25 @@ COMMENT=	X-based TV Display and Capture Application (for use with bt848 driver)
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
-# This program does not actually require the programs below unless you
-#   use audio/video recording and/or playback and save to a non-raw format.
-#RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
-#		mpg123:${PORTSDIR}/audio/mpg123 \
-#		mpeg_musicin:${PORTSDIR}/audio/mpegaudio \
-#		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
-#		mplex:${PORTSDIR}/multimedia/mplex
-
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 MAKE_FLAGS=	-e
 MAN1=		fxtv.1
 
+OPTIONS=	EXTRA "Extra programs required to record/playback/save" off
+
 .include <bsd.port.pre.mk>
+
+# This program does not actually require the programs below unless you
+#   use audio/video recording and/or playback and save to a non-raw format.
+.if defined(WITH_EXTRA)
+RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox \
+		mpg123:${PORTSDIR}/audio/mpg123 \
+		mpeg_musicin:${PORTSDIR}/audio/mpegaudio \
+		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
+		mplex:${PORTSDIR}/multimedia/mplex
+.endif
 
 pre-everything::
 .if ${OSVERSION} < 500000
