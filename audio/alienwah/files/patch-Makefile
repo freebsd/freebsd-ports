@@ -1,40 +1,40 @@
---- Makefile.orig      Sun Jan  6 18:34:24 2002
-+++ Makefile   Mon May 13 01:20:42 2002
+--- Makefile.orig	Sun Jan  6 18:34:24 2002
++++ Makefile	Mon May 13 01:20:42 2002
 @@ -1,25 +1,16 @@
  # parts taken from ladspa-sdk src/makefile
-
--INCLUDES      =       -I/usr/local/include
--#LIBRARIES    =       -ldl -lm
--CFLAGS                =       $(INCLUDES) -Wall -Werror -O3 -fPIC
--CXXFLAGS      =       $(CFLAGS)
-+CXXFLAGS      +=      -I${LOCALBASE}/include
- PLUGINS               =       aw.so
--CC            =       cc
--CPP           =       c++
-
+ 
+-INCLUDES	=	-I/usr/local/include
+-#LIBRARIES	=	-ldl -lm
+-CFLAGS		=	$(INCLUDES) -Wall -Werror -O3 -fPIC
+-CXXFLAGS	=	$(CFLAGS)
++CXXFLAGS	+=	-I${LOCALBASE}/include
+ PLUGINS		=	aw.so
+-CC		=	cc
+-CPP		=	c++
+ 
  ###############################################################################
  #
  # RULES TO BUILD PLUGINS FROM C OR C++ CODE
  #
-
+ 
 -%.so: %.c
--      $(CC) $(CFLAGS) -c $*.c
--      $(LD) -o $*.so $*.o -shared
+-	$(CC) $(CFLAGS) -c $*.c
+-	$(LD) -o $*.so $*.o -shared
 -
  %.so: %.cpp
--      $(CPP) $(CXXFLAGS) -c $*.cpp
--      $(CPP) -o $*.so $*.o -shared
-+      $(CXX) $(CXXFLAGS) -c $*.cpp
-+      $(CXX) -o $*.so $*.o -shared
-
+-	$(CPP) $(CXXFLAGS) -c $*.cpp
+-	$(CPP) -o $*.so $*.o -shared
++	$(CXX) $(CXXFLAGS) -c $*.cpp
++	$(CXX) -o $*.so $*.o -shared
+ 
  ###############################################################################
  #
 @@ -29,7 +20,7 @@
  all: $(PLUGINS)
-
+ 
  install:
--      cp aw.so /usr/local/lib/ladspa/
-+      cp aw.so ${LOCALBASE}/lib/ladspa/
-
+-	cp aw.so /usr/local/lib/ladspa/
++	cp aw.so ${LOCALBASE}/lib/ladspa/
+ 
  clean:
-       -rm -f *.o *.so
+ 	-rm -f *.o *.so
