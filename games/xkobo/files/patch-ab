@@ -1,5 +1,5 @@
 --- xlwin.C.orig	Wed Mar 13 17:34:46 1996
-+++ xlwin.C	Wed Mar 25 20:16:00 1998
++++ xlwin.C	Tue May 25 12:01:08 1999
 @@ -21,6 +21,10 @@
   */
  
@@ -33,3 +33,46 @@
          if (disp == NULL){
              fprintf(stderr, "xlwin: can't open display\n");
              exit(1);
+@@ -125,12 +143,6 @@
+ 
+     XSelectInput(disp,w,mask);
+     mask = -1;
+-
+-    XWMHints wmhint;
+-    icon = XCreateBitmapFromData(disp, w, icon_bitmap, 64, 64);
+-    wmhint.icon_pixmap = icon;
+-    wmhint.flags = IconPixmapHint;
+-    XSetWMHints(disp, w, &wmhint);
+ }
+ 
+ void win::map()
+@@ -154,6 +166,29 @@
+     Atom wm_delete_window;
+     wm_delete_window = XInternAtom(disp, "WM_DELETE_WINDOW", False);
+     XSetWMProtocols(disp, w, &wm_delete_window, 1);
++}
++
++void win::set_wm_hints(int argc, char *argv[])
++{
++    XWMHints *wmhint = XAllocWMHints();
++    if (wmhint) {
++        icon = XCreateBitmapFromData(disp, w, icon_bitmap, 64, 64);
++        wmhint->icon_pixmap = icon;
++        wmhint->window_group = w;
++        wmhint->flags = IconPixmapHint | WindowGroupHint;
++        XSetWMHints(disp, w, wmhint);
++        XFree(wmhint);
++    }
++    
++    XClassHint *classhint = XAllocClassHint();
++    if (classhint) {
++        classhint->res_name = "xkobo";
++        classhint->res_class = "XKobo";
++        XSetClassHint(disp, w, classhint);
++        XFree(classhint);
++    }
++
++    XSetCommand(disp, w, argv, argc);
+ }
+ 
+ void win::hold_size()
