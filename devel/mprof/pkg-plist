@@ -1,3 +1,0 @@
-@comment $FreeBSD$
-bin/mprof
-lib/libc_mp.a

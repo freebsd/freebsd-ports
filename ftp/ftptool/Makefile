@@ -23,6 +23,8 @@ USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/Ftptool4.6
 
 MAN1=		ftptool.1
+PLIST_FILES=	bin/ftptool lib/help/ftptool.info
+PLIST_DIRS=	lib/X11/ftptool
 
 # Because lex.l is broken, lex.c is taken from old FreeBSD 1.1 port
 
