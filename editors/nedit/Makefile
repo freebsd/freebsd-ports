@@ -12,10 +12,11 @@ MASTER_SITES=	ftp://ftp.nedit.org/pub/v5_3/ \
 		ftp://ftp.nedit.org/pub/contrib/misc/ \
 		http://www.nedit.org/ftp/v5_3/ \
 		http://www.nedit.org/ftp/contrib/misc/
-DISTFILES=	nedit-5.3-source.tar.gz nedit.app-defaults
+DISTFILES=	nedit-5.3-source.tar.bz2 nedit.app-defaults
 
 MAINTAINER=	deischen@freebsd.org
 
+USE_BZIP2=	yes
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
