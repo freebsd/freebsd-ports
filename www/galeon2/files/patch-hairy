@@ -715,18 +715,19 @@ $FreeBSD$
 +END_GNOME_DECLS
 +
 +#endif /* NAUTILUS_VIEW_H */
---- src/Makefile.in	2002/03/13 20:55:18	1.1
-+++ src/Makefile.in	2002/03/13 20:56:15
-@@ -165,7 +165,7 @@
- CXXLD = $(CXX)
- LINK = $(LIBTOOL) --mode=link $(CXXLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
+--- src/Makefile.in.orig	Sun Apr 21 18:18:11 2002
++++ src/Makefile.in	Sun Apr 21 18:21:12 2002
+@@ -184,7 +184,8 @@
+ NAUTILUS_VIEW_SRC = \
+ 	galeon-nautilus-view.c \
+ 	galeon-nautilus-view.h \
+-	eel-gtk-macros.h
++	eel-gtk-macros.h \
++	nautstub.c
  
--NAUTILUS_VIEW_SRC =  	galeon-nautilus-view.c 	galeon-nautilus-view.h 	eel-gtk-macros.h
-+NAUTILUS_VIEW_SRC =  	galeon-nautilus-view.c 	galeon-nautilus-view.h 	eel-gtk-macros.h nautstub.c
  
- 
- @ENABLE_NAUTILUS_VIEW_TRUE@NAUTILUS_VIEW_SRC_TO_COMPILE = $(NAUTILUS_VIEW_SRC)
-@@ -244,7 +244,8 @@
+ @ENABLE_NAUTILUS_VIEW_TRUE@NAUTILUS_VIEW_SRC_TO_COMPILE = @ENABLE_NAUTILUS_VIEW_TRUE@$(NAUTILUS_VIEW_SRC)
+@@ -399,7 +400,8 @@
  @ENABLE_NAUTILUS_VIEW_TRUE@window.$(OBJEXT) window_callbacks.$(OBJEXT) \
  @ENABLE_NAUTILUS_VIEW_TRUE@window_notifiers.$(OBJEXT) xbel.$(OBJEXT) \
  @ENABLE_NAUTILUS_VIEW_TRUE@xlink.$(OBJEXT) \

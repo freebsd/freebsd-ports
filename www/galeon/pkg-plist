@@ -79,6 +79,7 @@ share/gnome/galeon/Fullscreen.png
 share/gnome/galeon/Insecure.png
 share/gnome/galeon/Secure.png
 share/gnome/galeon/about_logo.png
+share/gnome/galeon/autoscroll.xpm
 share/gnome/galeon/babelfish.png
 share/gnome/galeon/bookmarks.glade
 share/gnome/galeon/bookmarks.png
@@ -135,6 +136,7 @@ share/gnome/galeon/new_item_small.xpm
 share/gnome/galeon/new_separator.xpm
 share/gnome/galeon/new_separator_small.xpm
 share/gnome/galeon/preferences.glade
+share/gnome/galeon/print-preview.glade
 share/gnome/galeon/print.glade
 share/gnome/galeon/programs.png
 share/gnome/galeon/prompts.glade
@@ -270,6 +272,7 @@ share/gnome/galeon/themes/Remembrance/empty.png
 share/gnome/galeon/toc.css
 share/gnome/galeon/toolbars.png
 share/gnome/galeon/windows.png
+share/gnome/help/galeon-manual/C/LEGALNOTICE.html
 share/gnome/help/galeon-manual/C/aboutbook.html
 share/gnome/help/galeon-manual/C/apx-authors.sgml
 share/gnome/help/galeon-manual/C/apx-bugs.sgml
@@ -344,6 +347,18 @@ share/gnome/help/galeon-manual/C/prefs-handlers.html
 share/gnome/help/galeon-manual/C/prefs-rendering.html
 share/gnome/help/galeon-manual/C/prefs-user-interface.html
 share/gnome/help/galeon-manual/C/statusbar.html
+share/gnome/help/galeon-manual/C/stylesheet-images/caution.gif
+share/gnome/help/galeon-manual/C/stylesheet-images/home.gif
+share/gnome/help/galeon-manual/C/stylesheet-images/important.gif
+share/gnome/help/galeon-manual/C/stylesheet-images/next.gif
+share/gnome/help/galeon-manual/C/stylesheet-images/note.gif
+share/gnome/help/galeon-manual/C/stylesheet-images/prev.gif
+share/gnome/help/galeon-manual/C/stylesheet-images/tip.gif
+share/gnome/help/galeon-manual/C/stylesheet-images/toc-blank.gif
+share/gnome/help/galeon-manual/C/stylesheet-images/toc-minus.gif
+share/gnome/help/galeon-manual/C/stylesheet-images/toc-plus.gif
+share/gnome/help/galeon-manual/C/stylesheet-images/up.gif
+share/gnome/help/galeon-manual/C/stylesheet-images/warning.gif
 share/gnome/help/galeon-manual/C/tabbed-browsing.html
 share/gnome/help/galeon-manual/C/toolbar.html
 share/gnome/oaf/GNOME_Galeon_Automation.oaf
