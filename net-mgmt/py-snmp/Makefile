@@ -16,17 +16,12 @@ DISTNAME=	pysnmp-${PORTVERSION}
 MAINTAINER=	perky@fallin.lv
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
 EXAMPLESDIR=	${PREFIX}/share/examples/py-snmp
 DOCSDIR=	${PREFIX}/share/doc/py-snmp
-SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
-
-do-build:
-	${SETUP_CMD} build
-
-do-install:
-	${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
 
 .if !defined(NOPORTDOCS)
+post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 	${MKDIR} ${DOCSDIR}
