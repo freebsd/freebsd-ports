@@ -1,0 +1,17 @@
+diff -urN ../fvwm95-2.0.43a-Autoconf.orig/modules/FvwmForm/FvwmForm.c ./modules/FvwmForm/FvwmForm.c
+--- ../fvwm95-2.0.43a-Autoconf.orig/modules/FvwmForm/FvwmForm.c	Sun Nov 22 04:58:25 1998
++++ ./modules/FvwmForm/FvwmForm.c	Sun Nov 22 04:59:35 1998
+@@ -20,7 +20,13 @@
+ #include <X11/cursorfont.h>
+ #define XK_MISCELLANY
+ #include <X11/keysymdef.h>
++
++#ifdef __FreeBSD__
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
++
+ #include <string.h>
+ #include <sys/types.h>
+ #include <sys/time.h>

@@ -1,0 +1,12 @@
+diff -urN ../fvwm95-2.0.43a-Autoconf.orig/icons/Makefile.in ./icons/Makefile.in
+--- ../fvwm95-2.0.43a-Autoconf.orig/icons/Makefile.in	Sun Nov 22 04:52:28 1998
++++ ./icons/Makefile.in	Sun Nov 22 04:59:33 1998
+@@ -2,7 +2,7 @@
+ SHELL=/bin/sh
+ 
+ prefix=@prefix@
+-icon_dir=@prefix@/icons
++icon_dir=@prefix@/lib/X11/fvwm95/pixmaps
+ 
+ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@

@@ -1,0 +1,23 @@
+diff -urN ../fvwm95-2.0.43a-Autoconf.orig/fvwm/icons.c ./fvwm/icons.c
+--- ../fvwm95-2.0.43a-Autoconf.orig/fvwm/icons.c	Sun Nov 22 04:58:41 1998
++++ ./fvwm/icons.c	Sun Nov 22 04:59:47 1998
+@@ -88,6 +88,9 @@
+   /* figure out the icon window size */
+   if (!(tmp_win->flags & NOICON_TITLE)||(tmp_win->icon_p_height == 0))
+     {
++      if (tmp_win->icon_name == NULL)
++        tmp_win->icon_name = tmp_win->name;
++                 
+       tmp_win->icon_t_width = XTextWidth(Scr.IconFont.font,
+ 					 tmp_win->icon_name, 
+                                          strlen(tmp_win->icon_name));
+@@ -328,6 +331,9 @@
+ 
+   if (Tmp_win->icon_w == (int)NULL)
+     return;
++
++  if (Tmp_win->icon_name == NULL)
++   Tmp_win->icon_name = Tmp_win->name;
+   
+   Tmp_win->icon_t_width = XTextWidth(Scr.IconFont.font,Tmp_win->icon_name, 
+ 				     strlen(Tmp_win->icon_name));

@@ -1,11 +1,11 @@
---- utils/Makefile.in.orig	Sat Feb  1 14:14:12 1997
-+++ utils/Makefile.in	Sat Feb  1 14:15:12 1997
-@@ -12,7 +12,7 @@
- fvwm_dir=${prefix}/lib/X11/${fvwm_name}
+diff -urN ../fvwm95-2.0.43a-Autoconf.orig/configure.in ./configure.in
+--- ../fvwm95-2.0.43a-Autoconf.orig/configure.in	Sun Nov 22 04:58:50 1998
++++ ./configure.in	Sun Nov 22 04:59:55 1998
+@@ -183,6 +183,7 @@
+ #-------------------------------------------------------------------
  
- INSTALL=@INSTALL@
--INSTALL_PROGRAM=@INSTALL_PROGRAM@
-+INSTALL_PROGRAM=@INSTALL@ -m 555
- RM=@RM@
- 
- SCRIPTS=fvwmrc_convert quantize_pixmaps
+ AC_SUBST(LIBS)
++AC_SUBST(INSTALL_MAN)
+ AC_SUBST(x_libraries)
+ AC_SUBST(x_includes)
+ AC_SUBST(fvwm_icons)
