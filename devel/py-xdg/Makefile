@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xdg
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ahze
+MASTER_SITES=	http://www.freedesktop.org/~lanius/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
@@ -21,10 +20,11 @@ USE_PYDISTUTILS=yes
 USE_REINPLACE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g ; \
-		s|/usr/share|/usr/share:${X11BASE}/share|g' \
-		${WRKSRC}/xdg/BaseDirectory.py
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g ; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/xdg/IconTheme.py
+	@${REINPLACE_CMD} -e \
+		's|/etc|${PREFIX}/etc|g ; \
+		s|%%X11BASE%%|${X11BASE}|g ; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g' \
+			${WRKSRC}/xdg/BaseDirectory.py \
+			${WRKSRC}/xdg/IconTheme.py
 
 .include <bsd.port.mk>
