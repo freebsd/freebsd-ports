@@ -264,6 +264,7 @@
     SUBDIR += portscanner
     SUBDIR += portsentry
     SUBDIR += ppgen
+    SUBDIR += proxycheck
     SUBDIR += proxytunnel
     SUBDIR += pscan
     SUBDIR += pwman
