@@ -14,7 +14,11 @@ MASTER_SITE_SUBDIR=	phpwiki
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A PHP WikiWikiWeb
 
+.if defined(WITH_APACHE2)
+RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/${PHP4_PORT}
+.else
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/${PHP4_PORT}
+.endif
 
 NO_BUILD=	YES
 PHP4_PORT?=	www/mod_php4
