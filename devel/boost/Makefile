@@ -50,6 +50,9 @@ WITH_PYTHON=	IMPLIED_BY_PYSTE
 # -DWITH_PYTHON on the command line or use the devel/boost-python
 # slave port.
 #
+# To build Pyste, the Boost.Python code generator use -DWITH_PYSTE
+# (this implies -DWITH_PYTHON).
+#
 .if defined(WITH_PYTHON)
 PKGNAMESUFFIX=	-python
 USE_PYTHON=	2.3+
@@ -68,6 +71,7 @@ PLIST_SUB+=	BOOST_PYSTE="@comment "
 .endif
 .else
 PLIST_SUB+=	BOOST_PYTHON="@comment "
+PLIST_SUB+=	BOOST_PYSTE="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
