@@ -11,6 +11,9 @@
 # dbus_enable="YES"
 #
 
+dbus_enable=${dbus_enable-"NO"}
+dbus_flags=${dbus_flags-"--system"}
+
 . %%RC_SUBR%%
 
 name=dbus
@@ -26,8 +29,6 @@ stop_postcmd()
     rm -f $pidfile
 }
 
-[ -z "$dbus_enable" ]	&& dbus_enable="NO"
-[ -z "$dbus_flags" ]	&& dbus_flags="--system"
 
 load_rc_config ${name}
 run_rc_command "$1"
