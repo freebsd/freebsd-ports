@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Shorten
-PORTVERSION=	1.88
+PORTVERSION=	1.91
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -40,7 +40,7 @@ MAN3=		WWW::Shorten.3 \
 		WWW::Shorten::V3.3 \
 		WWW::Shorten::qURL.3
 
-DOCS=		AUTHORS Artistic COPYING CREDITS ChangeLog Changes \
+DOCS=		AUTHORS Artistic COPYING CREDITS ChangeLog.SPOON Changes \
 		INSTALL LICENCE MANIFEST MANIFEST.SKIP META.yml \
 		README SIGNATURE
 EXAMPLES=	shorten shortenrc
@@ -63,7 +63,8 @@ test:
 .if ${PERL_LEVEL} < 500600
 post-patch:
 	@${PERL} -pi -e 's/^our ([\$$\@]\w+)/use vars qw($$1); $$1/;' \
-		     -e '$$_ = "" if /5.006/;' \
+		     -e '$$_ = "" if /use 5.006/;' \
+		     -e '$$_ = "" if /use warnings/;' \
 		 $$(${FIND} ${WRKSRC} -name '*.pm')
 .endif
 
