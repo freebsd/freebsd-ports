@@ -4098,6 +4098,7 @@ jaxen		ports/java/jaxen
 jaxup		ports/textproc/jaxup
 jbidwatcher	ports/misc/jbidwatcher
 jbigkit		ports/graphics/jbigkit
+jboss-mailservices	ports/mail/jboss-mailservices
 jboss2		ports/java/jboss2
 jboss3		ports/java/jboss3
 jboss4		ports/java/jboss4
