@@ -10607,6 +10607,7 @@ tnt		ports/devel/tnt
 tochnog		ports/cad/tochnog
 togl		ports/graphics/togl
 tolua		ports/lang/tolua
+tolua4		ports/lang/tolua4
 tome		ports/games/tome
 toolame		ports/audio/toolame
 topaz		ports/math/topaz
