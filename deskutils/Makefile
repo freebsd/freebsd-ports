@@ -21,6 +21,7 @@
     SUBDIR += gnomepim
     SUBDIR += gnotime
     SUBDIR += gtimer
+    SUBDIR += gworkspace
     SUBDIR += ical
     SUBDIR += ithought
     SUBDIR += jlj
