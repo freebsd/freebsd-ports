@@ -7,6 +7,7 @@
 
 PORTNAME=	emiclock
 PORTVERSION=	2.0.2
+PORTREVISIOIN=	1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.noge.com/pub/EmiClock/X11/
 
@@ -20,14 +21,17 @@ USE_IMAKE=	yes
 MAN1=		emiclock.1
 
 LANGRES=	resources/R6/EUC/EmiClock.ad
-LANGDIR=	$(X11BASE)/lib/X11/ja_JP.EUC/app-defaults
+LANGDIR=	$(X11BASE)/lib/X11/ja_JP.eucJP/app-defaults
+LANGDIR2=	$(X11BASE)/lib/X11/ja_JP.EUC/app-defaults
 EMICLOCKDIR=	$(X11BASE)/lib/X11/EmiClock
 COPYRIGHTS=	COPYRIGHT COPYRIGHT.en
 
 pre-install:
 	@if [ ! -d $(EMICLOCKDIR) ] ; then ${MKDIR} $(EMICLOCKDIR); fi
 	@if [ ! -d $(LANGDIR) ] ; then ${MKDIR} $(LANGDIR); fi
+	@if [ ! -d $(LANGDIR2) ] ; then ${MKDIR} $(LANGDIR2); fi
 	cd $(WRKSRC); ${INSTALL_DATA} -c -m 0444 $(LANGRES) $(LANGDIR)/EmiClock
+	cd $(WRKSRC); ${INSTALL_DATA} -c -m 0444 $(LANGRES) $(LANGDIR2)/EmiClock
 	cd $(WRKSRC); ${INSTALL_DATA} -c -m 0444 $(COPYRIGHTS) $(EMICLOCKDIR)
 #	cd $(WRKSRC); make install.man
 
