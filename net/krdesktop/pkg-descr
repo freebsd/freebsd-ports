@@ -1,5 +1,6 @@
-This is a cvs snapshot of krdesktop, a rdesktop GUI.
+A KDE GUI that allows the user to connect to VNC servers
+and windows terminal servers, both win2k and NT4
 
 WWW: http://krazykiwi.homeip.net/netwizard/krdesktop/
 
-- Matt Douhan et al. <matt@athame.co.uk>
+Matt Douhan <matt@athame.co.uk>

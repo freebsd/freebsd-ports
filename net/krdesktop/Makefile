@@ -5,14 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	krdesktop
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net kde
 MASTER_SITES=	http://krazykiwi.homeip.net/netwizard/krdesktop/
 DISTNAME=	${PORTNAME:S/kr/KR/}-${PORTVERSION}
 
 MAINTAINER=	matt@athame.co.uk
 
-RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop-devel
+RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop-devel \
+		vncviewer:${PORTSDIR}/net/vnc
 
 USE_KDELIBS_VER=3
 NO_WRKSUBDIR=   yes
