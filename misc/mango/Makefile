@@ -55,6 +55,6 @@ do-configure:
 	qmake mango.pro)
 
 pre-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/mango
+	@${INSTALL_PROGRAM} ${WRKSRC}/mango ${PREFIX}/bin
 
 .include <bsd.port.mk>
