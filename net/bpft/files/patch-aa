@@ -1,5 +1,5 @@
-*** Makefile.orig	Wed Oct 30 12:38:00 1996
---- Makefile	Fri Mar 19 23:42:26 1999
+*** Makefile.orig	Wed Oct 30 13:38:00 1996
+--- Makefile	Wed Jan  5 15:41:25 2000
 ***************
 *** 11,16 ****
 --- 11,17 ----
@@ -48,7 +48,7 @@
 ! 	install -s -o root -g $(GROUP) -m $(MODE) trafstatd/trafstatd $(PATH_BINDIR)
 ! 	install -s -o root -g $(GROUP) -m $(MODE) traflog/traflog $(PATH_BINDIR)
   	install -c -o root -g $(GROUP) -m $(MODE) traflog/traflog.format $(PATH_TRAFLOG_FMT)
-  	install -s -o root -g $(GROUP) -m $(MODE) trafshow/trafshow $(PATH_BINDIR)
+! 	install -s -o root -g $(GROUP) -m $(MODE) trafshow/trafshow $(PATH_BINDIR)
 ! 	install -c -m 644 trafshow/trafshow.1 $(PATH_MANDIR)
   	@echo Done.
   
@@ -73,8 +73,8 @@
 ! 	install -s -o root -g $(GROUP) -m $(MODE) trafstatd/trafstatd $(PATH_SBINDIR)
 ! 	install -s -o root -g $(GROUP) -m $(MODE) traflog/traflog   $(PATH_BINDIR)
   	install -c -o root -g $(GROUP) -m $(MODE) traflog/traflog.format $(PATH_TRAFLOG_FMT)
-  	install -s -o root -g $(GROUP) -m $(MODE) trafshow/trafshow $(PATH_BINDIR)
-! 	install -c -m 644 trafshow/trafshow.1                       $(PATH_MANDIR)
+! 	install -s -o root -g $(GROUP) -m $(MODE) trafshow/trafshow $(PATH_BINDIR)/trafshow2
+! 	install -c -m 644 trafshow/trafshow.1                       $(PATH_MANDIR)/trafshow2.1
   	@echo Done.
   
   clean:

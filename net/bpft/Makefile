@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	oddbjorn@tricknology.org
 
-MAN1=		trafshow.1
+MAN1=		trafshow2.1
 
 post-install:
 .if !defined(NOPORTDOCS)
