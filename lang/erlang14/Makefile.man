@@ -13,8 +13,7 @@ MAN1=	epmd.1 \
 	start_webtool.1 \
 	werl.1
 
-MAN3=	CORBA_Environment_alloc.3 \
-	CosEventChannelAdmin.3 \
+MAN3=	CosEventChannelAdmin.3 \
 	CosEventChannelAdmin_ConsumerAdmin.3 \
 	CosEventChannelAdmin_EventChannel.3 \
 	CosEventChannelAdmin_ProxyPullConsumer.3 \
@@ -179,6 +178,8 @@ MAN3=	CORBA_Environment_alloc.3 \
 	httpd_util.3 \
 	i.3 \
 	ic.3 \
+	ic_c_protocol.3 \
+	ic_clib.3 \
 	inet.3 \
 	init.3 \
 	instrument.3 \
@@ -200,8 +201,10 @@ MAN3=	CORBA_Environment_alloc.3 \
 	megaco.3 \
 	megaco_codec_meas.3 \
 	megaco_codec_transform.3 \
+	megaco_encoder.3 \
 	megaco_flex_scanner.3 \
 	megaco_tcp.3 \
+	megaco_transport.3 \
 	megaco_udp.3 \
 	megaco_user.3 \
 	memsup.3 \
@@ -233,6 +236,7 @@ MAN3=	CORBA_Environment_alloc.3 \
 	nteventlog.3 \
 	odbc.3 \
 	orber.3 \
+	orber_diagnostics.3 \
 	orber_ifr.3 \
 	orber_tc.3 \
 	orddict.3 \
