@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	yahoo
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1
 CATEGORIES=	net
 MASTER_SITES=	http://yahoo-transport-2.jabberstudio.org/
 PKGNAMEPREFIX=	jabber-
@@ -19,6 +19,8 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_GLIB=	yes
 USE_GMAKE=	yes
+
+WRKSRC=		${WRKDIR}/yahoo-transport-2
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/yahoo-transport.so ${PREFIX}/lib/jabber/
