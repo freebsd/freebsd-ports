@@ -4080,6 +4080,7 @@ kate-plugins	ports/editors/kate-plugins
 katoob		ports/arabic/katoob
 kavmilter	ports/mail/kavmilter
 kawa		ports/lang/kawa
+kazehakase	ports/www/kazehakase
 kb2mb2		ports/x11/kb2mb2
 kbarcode	ports/graphics/kbarcode
 kbear		ports/ftp/kbear
