@@ -7,7 +7,7 @@
 
 PORTNAME=	kdevelop
 PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTREVISION?=	1
 CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/2.2.2/src
@@ -62,7 +62,7 @@ pre-configure:
 .for AM in automake aclocal
 	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
 .endfor
-	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
+	cd ${WRKSRC} ; env PATH=${WRKSRC}/auto-bin:$$PATH \
 		${GMAKE} -f Makefile.cvs
 
 pre-build:
