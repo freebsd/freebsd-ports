@@ -149,6 +149,7 @@
     SUBDIR += pythoong
     SUBDIR += qcc
     SUBDIR += qix
+    SUBDIR += qkmj
     SUBDIR += qstat
     SUBDIR += quakeforge
     SUBDIR += quakeserver
