@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# Configure MH
+#
+top=$3
+cd $top/conf
+make
+./mhconfig FreeBSD
+cd ..
+make clean
