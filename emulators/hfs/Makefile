@@ -1,5 +1,6 @@
 DISTNAME=	hfs0_37
 MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
+CATEGORIES+=	utilities
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

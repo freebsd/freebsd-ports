@@ -6,5 +6,6 @@
 
 DISTNAME=	acs016
 MASTER_SITES=	ftp://ee.rochester.edu/pub/acs/
+CATEGORIES+=	cad
 
 .include <bsd.port.mk>

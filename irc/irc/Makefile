@@ -3,11 +3,12 @@
 # Date created:		23 August 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.2 1994/09/13 06:34:53 jkh Exp $
+# $Id: Makefile,v 1.3 1995/02/11 01:44:28 torstenb Exp $
 #
 
 DISTNAME=	irc2.8.21
 MASTER_SITES=	ftp://cs-ftp.bu.edu/irc/servers/
+CATEGORIES+=	networking
 
 pre-install:
 	mkdir -p ${PREFIX}/bin

@@ -5,6 +5,7 @@
 # Changed:		ats, Nov 16, 1994
 #
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/
+CATEGORIES+=	comms
 DISTNAME=	cku190
 EXTRACT_SUFX=	.tar.gz
 NO_WRKSUBDIR=

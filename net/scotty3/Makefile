@@ -3,7 +3,7 @@
 # Date created:		18 Februar 1995
 # Whom:			gena
 #
-# $Id: Makefile,v 1.1.1.1 1995/02/21 17:07:49 jkh Exp $
+# $Id: Makefile,v 1.2 1995/02/21 17:22:00 jkh Exp $
 #
 
 DISTNAME=	scotty-1.2.0
@@ -12,6 +12,7 @@ DISTFILES=	scotty-1.2.0.tar.gz scotty-1.2.0-1.2.1.diff.gz \
 
 EXTRACT_ONLY=	scotty-1.2.0.tar.gz
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/tkined/
+CATEGORIES+=	networking
 HAS_CONFIGURE=  yes
 GNU_CONFIGURE=  yes
 USE_GMAKE=	yes

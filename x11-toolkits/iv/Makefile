@@ -3,7 +3,7 @@
 # Date created:		23.sept.1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.2 1994/11/01 03:30:02 pst Exp $
+# $Id: Makefile,v 1.3 1994/11/15 03:19:35 adam Exp $
 #
 
 EXTRACT_SUFFIX=	.tar.Z
@@ -19,6 +19,7 @@ pre-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
 	    mkdir -p ${DISTDIR}/${DISTNAME} ; \
 	    ${MAKE} MASTER_SITES=ftp://interviews.stanford.edu/pub/ \
+CATEGORIES+=	x11
 		DISTDIR=${DISTDIR}/${DISTNAME} DISTNAME=${VERSION} fetch ; \
 	    mv ${DISTDIR}/${DISTNAME}/${VERSION}${EXTRACT_SUFFIX} \
 		${DISTDIR}/${DISTFILES} ; \

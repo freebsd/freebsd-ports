@@ -3,11 +3,12 @@
 # Date created:		25 October 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/25 00:10:39 jkh Exp $
+# $Id: Makefile,v 1.2 1995/01/12 02:41:11 ache Exp $
 #
 
 DISTNAME=       m4-1.4
 MASTER_SITES=   ftp://gatekeeper.dec.com/pub/GNU/ ftp://prep.ai.mit.edu/pub/gnu/
+CATEGORIES+=	development programming
 CONFIGURE_ARGS= --program-prefix=g --prefix=${PREFIX}
 GNU_CONFIGURE=yes
 

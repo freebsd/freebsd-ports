@@ -13,6 +13,7 @@ DISTNAME=	emu-1.31
 WRKSRC=		${WRKDIR}/emu
 USE_IMAKE=	yes
 MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
+CATEGORIES+=	x11
 # NO_INSTALL_MANPAGES=	yes
 IS_INTERACTIVE=	yes
 MAINTAINER=	me@FreeBSD.org

@@ -5,6 +5,7 @@
 #
 DISTNAME=	yale-tftpd-3.0
 MASTER_SITES=	ftp://ftp.cisco.com/pub/
+CATEGORIES+=	networking
 NO_WRKSUBDIR=
 
 .include <bsd.port.mk>

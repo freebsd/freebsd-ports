@@ -4,6 +4,7 @@
 # Whom:			pst
 #
 MASTER_SITES=	ftp://ftp.ics.uci.edu/pub/mh/tar/
+CATEGORIES+=	mail
 DISTNAME=	mh-6.8.3
 EXTRACT_SUFX=	.tar.Z
 

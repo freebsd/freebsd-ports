@@ -3,6 +3,7 @@
 DISTNAME=	pfe099
 DISTFILES=	pfe-0.9.9.tar.gz
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/languages/forth/
+CATEGORIES+=	languages
 
 pre-install:
 	@mkdir -p ${PREFIX}/bin

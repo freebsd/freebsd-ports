@@ -2,6 +2,7 @@ DISTNAME=	jetpack
 DISTFILES=	jetpack.tar.Z
 USE_IMAKE=	yes
 MASTER_SITES=	ftp://qiclab.scn.rain.com/pub/games/
+CATEGORIES+=	games
 MAKE_FLAGS=	PREFIX=${PREFIX} -f
 
 .include <bsd.port.mk>

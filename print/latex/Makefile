@@ -4,6 +4,7 @@ DISTNAME=	latex
 EXEC_DEPENDS=	tex:${PORTSDIR}/print/tex
 FTPGET=		${FILESDIR}/ftpget
 WRKDIR=		${.CURDIR}/work
+CATEGORIES+=	printing
 BUILD_COOKIE=	${WRKDIR}/.build_done
 
 #other equivalent sites: ftp.shsu.edu ftp.dante.de

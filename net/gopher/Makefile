@@ -3,11 +3,12 @@
 # Date created:		11 Dec 1994
 # Whom:			ats
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/23 01:24:26 torstenb Exp $
+# $Id: Makefile,v 1.1.1.1 1994/12/12 00:44:48 ats Exp $
 #
 
 DISTNAME=	gopher2.1
 MASTER_SITES=	ftp://boombox.micro.umn.edu/pub/gopher/Unix/
+CATEGORIES+=	networking
 EXTRACT_SUFX=	.tar.Z
 NCFTPFLAGS?=	-P -N
 USE_GMAKE=	yes

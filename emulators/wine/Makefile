@@ -5,6 +5,7 @@
 
 DISTNAME=       Wine-950302
 MASTER_SITES=   ftp://sunsite.unc.edu/pub/Linux/ALPHA/wine/ \
+CATEGORIES+=	utilities x11 emulation
 		ftp://aris.com/pub/linux/ALPHA/Wine/development/ \
 		ftp://tsx-11.mit.edu/pub/linux/ALPHA/Wine/development/ \
 		ftp://ftp.funet.fi/pub/OS/Linux/ALPHA/Wine/ \

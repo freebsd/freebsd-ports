@@ -9,6 +9,7 @@
 DISTNAME=	olvwm4
 USE_IMAKE=	yes
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
+CATEGORIES+=	x11
 EXTRACT_SUFX=	.tar.Z
 DISTFILES=	olvwm4.tar.Z olvwm4.Patch01.Z
 EXTRACT_ONLY=	olvwm4.tar.Z

@@ -3,12 +3,13 @@
 # Date created:         7 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.2 1994/11/06 16:26:30 ache Exp $
+# $Id: Makefile,v 1.1.1.1 1994/11/07 17:29:02 ache Exp $
 #
 
 DISTNAME=       fspclient.0.0-h+
 EXTRACT_SUFX=   .tar.z
 MASTER_SITES=   ftp://ftp.robots.ox.ac.uk/pub/ox.src/fspclient/
+CATEGORIES+=	networking
 WRKSRC=		${WRKDIR}/fspclient
 GNU_CONFIGURE=	YES
 

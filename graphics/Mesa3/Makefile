@@ -3,11 +3,12 @@
 # Date created:         Tue Feb  7 12:02:49  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.3 1995/03/15 17:02:53 hsu Exp $
+# $Id: Makefile,v 1.4 1995/03/16 08:40:01 hsu Exp $
 #
 
 DISTNAME=       Mesa-1.1.2beta
 MASTER_SITES=   ftp://iris.ssec.wisc.edu/pub/misc/
+CATEGORIES+=	graphics
 WRKSRC=		${WRKDIR}/Mesa
 USE_GMAKE=
 ALL_TARGET=	freebsd

@@ -7,6 +7,7 @@
 DISTNAME=	tkinfo-0.6
 EXTRACT_SUFX=  .tar.Z
 MASTER_SITES=	ftp://ptolemy.eecs.berkeley.edu/pub/misc/
+CATEGORIES+=	x11
 EXEC_DEPENDS=	wish:${PORTSDIR}/x11/tk
 
 .include <bsd.port.mk>

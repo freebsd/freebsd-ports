@@ -1,6 +1,7 @@
 DISTNAME=	a2ps
 DISTFILES=	a2ps.V4.3.tar.gz
 MASTER_SITES=	ftp://ftp.imag.fr/archive/postscript/
+CATEGORIES+=	printing
 NO_WRKSUBDIR=	yes
 
 pre-install:

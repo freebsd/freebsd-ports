@@ -3,11 +3,12 @@
 # Date created:		16 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.2 1994/11/11 02:25:54 gpalmer Exp $
+# $Id: Makefile,v 1.3 1995/01/15 05:32:30 gpalmer Exp $
 #
 
 DISTNAME=	smail-3.1.29.1
 MASTER_SITES=	ftp://ftp.uu.net/networking/mail/smail/
+CATEGORIES+=	mail
 .if !exists(/usr/local/bin/bash)
 DEPENDS=	${PORTSDIR}/shells/bash
 .endif

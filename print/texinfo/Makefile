@@ -3,6 +3,7 @@ DISTNAME=	texinfo
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
 MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/macros/eplain/doc/ \
 		ftp://ftp.tex.ac.uk/tex-archive/fonts/latex/tfm/
+CATEGORIES+=	printing
 EXTRACT_ONLY=
 NO_WRKSUBDIR=	yes
 

@@ -1,6 +1,7 @@
 DISTNAME=	mgetty-0.22
 DISTFILES=	mgetty+sendfax-0.22.tar.gz
 MASTER_SITES=	ftp://hpsystem2.informatik.tu-muenchen.de/pub/comp/networking/communication/modem/mgetty/
+CATEGORIES+=	comms
 MAKE_FLAGS=	CC=cc spool=/var/spool LDFLAGS=-lutil prefix=${PREFIX} -f
 USE_GMAKE=	yes
 IS_INTERACTIVE= yes

@@ -3,10 +3,11 @@
 # Date created:		15 March 1995
 # Whom:			Nobuhiro Yasutomi
 #
-# $Id: Makefile,v 1.1.1.1 1995/03/15 07:03:49 asami Exp $
+# $Id: Makefile,v 1.2 1995/03/24 11:11:38 asami Exp $
 #
 DISTNAME=	EmiClock-1.0.2
 MASTER_SITES=	ftp://theta.iis.u-tokyo.ac.jp/pub1/X/contrib/applications/
+CATEGORIES+=	x11
 MAINTAINER=	asami@FreeBSD.ORG
 USE_IMAKE=	yes
 PKGNAME=	emiclock-1.0.2

@@ -7,6 +7,7 @@
 DISTNAME=	dgd-lpmud
 DISTFILES=	sim-2.4.5.tar.gz 2.4.5.tar.gz
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/ \
+CATEGORIES+=	networking
 		ftp://ftp.lysator.liu.se/pub/lpmud/mudlibs/other/
 NCFTPFLAGS=	-P
 

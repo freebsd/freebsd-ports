@@ -1,5 +1,6 @@
 DISTNAME=	mtools-2.0.7
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
+CATEGORIES+=	utilities
 
 MAKE_FLAGS=	PREFIX=${PREFIX}
 MAKEFILE=

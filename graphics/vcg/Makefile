@@ -4,6 +4,7 @@
 DISTNAME=	vcg.1.30
 DISTFILES=	vcg.1.30.r3.17.tgz
 MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/graphics/vcg/
+CATEGORIES+=	graphics
 
 pre-patch:
 	@mkdir -p ${WRKSRC}/preconf/X11ccFreeBSD

@@ -1,6 +1,7 @@
 DISTNAME=	xjewel-1.6
 DISTFILES=	xjewel-1.6.tar.z
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
+CATEGORIES+=	games
 USE_IMAKE=	yes
 
 pre-install:

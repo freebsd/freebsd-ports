@@ -1,6 +1,7 @@
 DISTNAME=	p2c-1.21alpha-07.Dec.93
 DISTFILES=	p2c-1.21alpha2.tar.gz
 MASTER_SITES=	ftp://src.doc.ic.ac.uk/gnu/hurd/
+CATEGORIES+=	languages
 
 pre-install:
 	@mkdir -p ${PREFIX}/bin
