@@ -157,6 +157,7 @@
     SUBDIR += rayshade
     SUBDIR += ruby-gd
     SUBDIR += ruby-libpng
+    SUBDIR += ruby-ming
     SUBDIR += ruby-opengl
     SUBDIR += sane
     SUBDIR += sced
