@@ -1,0 +1,20 @@
+--- ../generic/tclPosixStr.c~  Fri Oct 11 05:58:40 1996
++++ ../generic/tclPosixStr.c   Tue Nov  7 09:11:13 2000
+@@ -336,7 +336,7 @@
+ #ifdef ENXIO
+       case ENXIO: return "ENXIO";
+ #endif
+-#ifdef EOPNOTSUPP
++#if defined(EOPNOTSUPP) && (EOPNOTSUPP != ENOTSUP)
+ 	case EOPNOTSUPP: return "EOPNOTSUPP";
+ #endif
+ #ifdef EPERM
+@@ -783,7 +783,7 @@
+ #ifdef ENXIO
+ 	case ENXIO: return "no such device or address";
+ #endif
+-#ifdef EOPNOTSUPP
++#if defined(EOPNOTSUPP) && (EOPNOTSUPP != ENOTSUP)
+ 	case EOPNOTSUPP: return "operation not supported on socket";
+ #endif
+ #ifdef EPERM
