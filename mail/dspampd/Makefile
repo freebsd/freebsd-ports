@@ -80,11 +80,11 @@ EXTRA_PATCHES=	${FILESDIR}/lpatch-dspampd_system_users.diff
 .endif
 
 .ifdef(WITH_CLAMAV)
-RUN_DEPENDS+=	${LOCALBASE}/etc/clamav.conf:${PORTSDIR}/security/clamav
+RUN_DEPENDS+=	${LOCALBASE}/etc/clamd.conf:${PORTSDIR}/security/clamav
 .endif
 
 .ifdef(WITH_CLAMAV_DEVEL)
-RUN_DEPENDS+=	${LOCALBASE}/etc/clamav.conf:${PORTSDIR}/security/clamav-devel
+RUN_DEPENDS+=	${LOCALBASE}/etc/clamd.conf:${PORTSDIR}/security/clamav-devel
 .endif
 
 .ifdef(WITH_CLAMAV) || defined(WITH_CLAMAV_DEVEL)
