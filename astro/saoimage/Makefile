@@ -20,6 +20,8 @@ ALL_TARGET=	${OPSYS}
 
 MAN1=		saoimage.1
 
+PLIST_FILES=	bin/saoimage etc/imtoolrc.sample
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/saoimage ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/imtoolrc ${PREFIX}/etc/imtoolrc.sample
