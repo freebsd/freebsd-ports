@@ -10,4 +10,5 @@ lib/xemacs/site-lisp/sdic.el
 lib/xemacs/site-lisp/sdicf-client.el
 lib/xemacs/site-lisp/sdicf.el
 lib/xemacs/site-lisp/stem.el
-@dirrm share/dict
+@dirrm lib/xemacs/site-lisp
+@dirrm lib/xemacs
