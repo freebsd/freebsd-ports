@@ -1,0 +1,12 @@
+************************************************************************
+
+For the impatient: You can get a result just in two steps!
+
+1. Install textproc/libxslt.
+
+2. Run the command below.
+
+    $ xsltproc %%PREFIX%%/share/xsl/resume/output/us-html.xsl \
+               %%PREFIX%%/share/examples/resume/example1.xml
+
+************************************************************************
