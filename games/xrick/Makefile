@@ -17,7 +17,7 @@ COMMENT=	A clone of Rick Dangerous
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-NO_PACKAGE=	Copyright status of the graphics and sounds is uncertain
+RESTRICTED=	Copyright status of the graphics and sounds is uncertain
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
