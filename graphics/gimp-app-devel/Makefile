@@ -1,22 +1,22 @@
 # New ports collection makefile for:    Gimp
-# Version required:     0.99.14
+# Version required:     0.99.17
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.15 1997/12/16 23:25:34 erich Exp $
+# $Id: Makefile,v 1.16 1997/12/18 20:40:15 erich Exp $
 #
 
 MAJOR=	0
 MINOR=	99
-MICRO=	16
+MICRO=	17
 
 VERSION=		${MAJOR}.${MINOR}.${MICRO}
 MM_VERSION= ${MAJOR}.${MINOR}
 
 DISTNAME=   gimp-${VERSION}
 DISTFILES=	${DISTNAME}.tar.gz
-DISTFILES+=	gimp-data-min-${MM_VERSION}.tar.gz \
-            gimp-data-extras-${MM_VERSION}.tar.gz
+DISTFILES+=	gimp-data-min-${MM_VERSION}a.tar.gz \
+            gimp-data-extras-${MM_VERSION}a.tar.gz
 
 CATEGORIES=     graphics
 MASTER_SITES=   ftp://ftp.gimp.org/pub/gimp/0.99/${VERSION}/ \
@@ -44,17 +44,12 @@ DATASTUFF=  brushes palettes gradients patterns
 
 post-install:
 	mkdir -p ${PREFIX}/share/gimp/;
-	cd ${WRKDIR}/gimp-data-min-${MM_VERSION}; \
+	cd ${WRKDIR}/gimp-data-min-${MM_VERSION}a; \
 	tar -cf - --exclude '*Makefile*' ${DATASTUFF} |\
 	(cd ${PREFIX}/share/gimp/; tar -xvf -)
-	cd ${WRKDIR}/gimp-data-extras-${MM_VERSION}; \
+	cd ${WRKDIR}/gimp-data-extras-${MM_VERSION}a; \
 	tar -cf - --exclude '*Makefile*' ${DATASTUFF} |\
 	(cd ${PREFIX}/share/gimp/; tar -xvf -)
-
-post-extract:
-	rm -f ${WRKSRC}/plug-ins/gimptcl/scripts/consolio \
-		${WRKSRC}/plug-ins/gimptcl/scripts/pdb_help \
-		${WRKSRC}/plug-ins/gimptcl/scripts/stained_glass
 
 .include <bsd.port.mk>
 
