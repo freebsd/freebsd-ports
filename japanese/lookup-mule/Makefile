@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	lookup
-PORTVERSION=	1.2
-PKGNAMESUFFIX?=	-mule
+PORTVERSION=	1.3
+PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 CATEGORIES=	japanese elisp
-MASTER_SITES=	http://openlab.ring.gr.jp/lookup/DIST/
+MASTER_SITES=	http://download.sourceforge.net/lookup/
 
 MAINTAINER=	taoka@FreeBSD.org
 
@@ -18,37 +18,25 @@ RUN_DEPENDS+=	eblook:${PORTSDIR}/japanese/eblook
 FILESDIR=	${.CURDIR}/../lookup-mule/files
 PKGDIR=		${.CURDIR}/../lookup-mule/pkg
 PLIST=		${.CURDIR}/pkg/PLIST
-PATCHDIR=	${.CURDIR}/patches
-EMACS?=		mule
+EMACS_PORT_NAME?=	mule
 
-.if (${EMACS} == "xemacs")
+.if (${EMACS_PORT_NAME} == "xemacs21-mule")
 EMACSDIR=	${PREFIX}/lib/xemacs/site-packages
 ELISPDIR=	${EMACSDIR}/lisp/lookup
 PORTINFODIR=	${EMACSDIR}/info
 MANIFEST=	MANIFEST.lookup
 .else
-EMACSDIR=	${PREFIX}/share/emacs/site-lisp
+EMACSDIR=	${PREFIX}/share/${EMACS_NAME}/site-lisp
 ELISPDIR=	${EMACSDIR}/lookup
 PORTINFODIR=	${PREFIX}/info
 .endif
-NO_BUILD=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS= --with-emacs=${EMACS_CMD} \
+		--with-lispdir=${ELISPDIR} \
+		--infodir=${PORTINFODIR}
 
-do-install:
-	${MKDIR} ${ELISPDIR} ${PORTINFODIR};
-	${INSTALL_DATA} ${WRKSRC}/lisp/*.el ${ELISPDIR}
-	${RM} ${ELISPDIR}/lookup-compile.el
-	${SED} -e 's,@VERSION@,${PORTVERSION},' -e 's,@pkgemacsdir@,${ELISPDIR},' \
-		${WRKSRC}/lisp/lookup-vars.el.in > ${ELISPDIR}/lookup-vars.el
-	${INSTALL_DATA} ${WRKSRC}/texi/lookup.info* ${PORTINFODIR}
-	${INSTALL_DATA} ${WRKSRC}/texi/lookup-guide.info ${PORTINFODIR}
-.if (${EMACS} != "xemacs")
-	install-info ${PORTINFODIR}/lookup.info ${PORTINFODIR}/dir
-	install-info ${PORTINFODIR}/lookup-guide.info ${PORTINFODIR}/dir
-.endif
-	${SED} -e 's,%%ELISPDIR%%,${ELISPDIR},' ${FILESDIR}/lookup-startup.el.tmpl > ${ELISPDIR}/../lookup-startup.el
-
-.if (${EMACS} == "xemacs")
 post-install:
+.if (${EMACS_PORT_NAME} == "xemacs")
 	${RM} -f ${WRKDIR}/${MANIFEST}
 	emacsdir=`${ECHO} ${EMACSDIR} | ${SED} -e "s;^${PREFIX}/;;"`; \
 	${CAT} ${PLIST} | ${GREP} -e "^$${emacsdir}" | \

@@ -5,21 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=	lookup
-PORTVERSION=	1.2
-PKGNAMESUFFIX=	-emacs20
-CATEGORIES=	japanese elisp
-MASTER_SITES=	# empty
-DISTFILES=	# empty
-
-MAINTAINER=	taoka@FreeBSD.org
-
 RUN_DEPENDS=	${PREFIX}/share/emacs/site-lisp/bitmap/bitmap.el:${PORTSDIR}/editors/bitmap-emacs20 \
-		${PREFIX}/share/emacs/site-lisp/lookup/lookup.el:${PORTSDIR}/japanese/lookup-mule
 
-NO_BUILD=	yes
+MASTERDIR=	${.CURDIR}/../lookup-mule
+EMACS_PORT_NAME=	emacs20
 
-do-install:	# empty
-
-.include <bsd.port.mk>
-
+.include	"${MASTERDIR}/Makefile"
