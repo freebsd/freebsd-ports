@@ -51,6 +51,7 @@
     SUBDIR += lsdb
     SUBDIR += lsdb-emacs20
     SUBDIR += mdbtools
+    SUBDIR += memcached
     SUBDIR += mergeant
     SUBDIR += metakit
     SUBDIR += mird

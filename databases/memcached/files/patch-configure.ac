@@ -1,0 +1,23 @@
+--- configure.ac.orig	Mon Jul 21 23:03:01 2003
++++ configure.ac	Mon Jul 21 23:03:38 2003
+@@ -20,9 +20,20 @@
+ 	AC_MSG_RESULT(yes)
+ fi
+ 
++AC_ARG_WITH(libevent,[  --with-libevent=PREFIX  Prefix where libevent is installed], libevent_prefix="$withval", libevent_prefix="")
++LIBEVENT_LDFLAGS="-L$libevent_prefix/lib"
++LIBEVENT_CFLAGS="-I$libevent_prefix/include"
++
++LDFLAGS="$LIBEVENT_LDFLAGS"
++CFLAGS="$LIBEVENT_CFLAGS"
++LDADD="$LIBEVENT_LDFLAGS"
++
+ LIBEVENT_URL=http://www.monkey.org/~provos/libevent/
+ AC_CHECK_LIB(event, event_set, ,
+ 	[AC_MSG_ERROR(libevent is required.  You can get it from $LIBEVENT_URL)])
++
++AC_SUBST(LIBEVENT_LDFLAGS)
++AC_SUBST(LIBEVENT_CFLAGS)
+ 
+ AC_CONFIG_FILES(Makefile)
+ AC_OUTPUT

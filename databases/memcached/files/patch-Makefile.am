@@ -1,0 +1,11 @@
+--- Makefile.am.orig	Mon Jul 21 23:04:08 2003
++++ Makefile.am	Mon Jul 21 23:04:18 2003
+@@ -5,6 +5,7 @@
+ DIST_SUBDIRS = website api
+ EXTRA_DIST = website api
+ 
+-CFLAGS=-g -O2 -static -DNDEBUG
++CFLAGS=-g -O2 -static -DNDEBUG @LIBEVENT_CFLAGS@
++LDFLAGS=@LIBEVENT_LDFLAGS@
+ 
+ 
