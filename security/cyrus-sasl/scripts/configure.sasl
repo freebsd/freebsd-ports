@@ -47,10 +47,10 @@ else
 		SET_MYSQL="OFF"
 	fi
 
-	#Perfer LDAP2 over LDAP1
+	#Prefer LDAP2 over LDAP1
 	SET_LDAP1="OFF"
 	SET_LDAP2="OFF"
-	if [ "${WITH_LDAP2}" -o -f ${PREFIX}/lib/libldap.so.2 -a -f ${PREFIX}/lib/liblber.so.2 ] ; then
+	if [ "${WITH_LDAP2}" -o -f ${PREFIX}/lib/libldap-2.2.so -a -f ${PREFIX}/lib/liblber-2.2.so ] ; then
 		SET_LDAP2="ON"
 	elif [ "${WITH_LDAP1}" -o -f ${PREFIX}/lib/libldap.so.1 -a -f ${PREFIX}/lib/liblber.so.1 ]; then
 		SET_LDAP1="ON"
@@ -155,8 +155,8 @@ while [ "$1" ]; do
 				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 				exit 1
 			fi
-			echo "LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap20-client"
-			echo "LIB_DEPENDS+=	lber.2:\${PORTSDIR}/net/openldap20-client"
+			echo "LIB_DEPENDS+=	ldap-2.2:\${PORTSDIR}/net/openldap22-client"
+			echo "LIB_DEPENDS+=	lber-2.2:\${PORTSDIR}/net/openldap22-client"
 			echo "CONFIGURE_ARGS+=	--with-ldap=\${PREFIX}"
 			LDAP_REQ=ldap
 			OPENLDAP=1
