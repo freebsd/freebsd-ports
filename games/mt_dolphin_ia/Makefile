@@ -19,6 +19,7 @@ LIB_DEPENDS=		mt_client.0:${PORTSDIR}/games/libmt_client
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
 USE_GNOME=		glib20 libxml2
+USE_GETOPT_LONG=	yes
 
 CONFIGURE_ARGS=		--with-libmt_client=${LOCALBASE}	\
 			--with-libmaitretarot=${LOCALBASE}
