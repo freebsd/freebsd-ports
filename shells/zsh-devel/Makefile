@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zsh
-PORTVERSION=	3.1.7.p1
+PORTVERSION=	3.1.7.p2
 CATEGORIES=	shells
 MASTER_SITES=	http://people.FreeBSD.org/~knu/ports/distfiles/ \
 		ftp://ftp.zsh.org/%SUBDIR%/ \
