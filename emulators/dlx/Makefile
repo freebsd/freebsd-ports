@@ -4,14 +4,13 @@
 # Date created:			  Mon Dec 23, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1998/12/30 04:27:21 obrien Exp $
 #
 
 DISTNAME=	dlx
 PKGNAME=	dlx-2.0
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://max.stanford.edu/pub/hennessy-patterson.software/   \
-		ftp://ftp.cs.keio.ac.jp/pub/arch/hennessy-patterson.software/
+MASTER_SITES=	ftp://max.stanford.edu/pub/hennessy-patterson.software/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=     obrien@FreeBSD.org
