@@ -3,7 +3,7 @@
 # Date created:				7 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.9 1998/09/22 22:55:55 asami Exp $
+# $Id: Makefile,v 1.10 1998/10/04 02:17:24 steve Exp $
 #
 
 DISTNAME=	workplace-1.0.a3
@@ -13,12 +13,12 @@ MASTER_SITES=	http://www2.osk.3web.ne.jp/~hideki70/src/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	gtk.1:${PORTSDIR}/x11-toolkits/gtk
+LIB_DEPENDS=	gtk10.1:${PORTSDIR}/x11-toolkits/gtk10
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/gtk10" \
-		LIBS="-L${LOCALBASE}/lib"
+		LIBS="-L${LOCALBASE}/lib" 
 
 pre-configure:
 	@ ${RM} ${WRKSRC}/config.cache
