@@ -1,6 +1,6 @@
 bin/spin
 bin/xspin
-bin/xspin323.tcl
+bin/xspin324.tcl
 share/doc/spin/Doc/Book.Ch6.add
 share/doc/spin/Doc/Book.Errata
 share/doc/spin/Doc/Book.answers
@@ -107,11 +107,15 @@ share/doc/spin/HTML/unless.html
 share/doc/spin/HTML/xr.html
 share/doc/spin/HTML/xs.html
 share/doc/spin/Test/README.tests
+share/doc/spin/Test/abp
 share/doc/spin/Test/erathostenes
 share/doc/spin/Test/hello
 share/doc/spin/Test/leader
+share/doc/spin/Test/leader.ltl
 share/doc/spin/Test/leader2
 share/doc/spin/Test/loops
+share/doc/spin/Test/pathfinder
+share/doc/spin/Test/peterson
 share/doc/spin/Test/pftp
 share/doc/spin/Test/priorities
 share/doc/spin/Test/snoopy
