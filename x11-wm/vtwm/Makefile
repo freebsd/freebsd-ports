@@ -12,6 +12,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.visi.com/users/hawkeyd/X/
 
 MAINTAINER=	bmah@freebsd.org
+COMMENT=	Twm with a virtual desktop and optional Motif-like features
 
 USE_IMAKE=	yes
 USE_XPM=	yes
