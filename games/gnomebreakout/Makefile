@@ -13,15 +13,11 @@ DISTNAME=	gnome-breakout-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
-RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
-
-USE_X_PREFIX=	YES
-GNU_CONFIGURE=	YES
+USE_X_PREFIX=	yes
+USE_GNOME=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome/ \
-		--datadir=${PREFIX}/share/gnome
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
