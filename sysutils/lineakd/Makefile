@@ -6,30 +6,41 @@
 #
 
 PORTNAME=	lineakd
-PORTVERSION=	0.4.p3
+PORTVERSION=	0.7.2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=lineak
-DISTNAME=	${PORTNAME}-0.4pre3
 
 MAINTAINER=	kay_lehmann@web.de
 COMMENT=	Lineakd is a daemon which enables special keys on internet keyboards
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
-
-USE_BISON=	yes
 USE_GMAKE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${X11BASE}/lib ${PTHREAD_LIBS}"
+USE_REINPLACE=	yes
 
-CFLAGS+=	-I${X11BASE}/include
-
-.include <bsd.port.pre.mk>
-
-EXTRA_PATCHES=  ${FILESDIR}/extra-patch-lineakd.c-4
-
-.if ${OSVERSION} >= 500000
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-lineakd.c-5
+.if defined(WITHOUT_XOSD)
+CONFIGURE_ARGS+=	--with-xosd=no
+.else
+LIB_DEPENDS+=	xosd.4:${PORTSDIR}/misc/xosd
 .endif
 
-.include <bsd.port.post.mk>
+PORTDOCS=	README TODO AUTHORS
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread||' ${WRKSRC}/lineakd/Makefile.in
+	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/lineakd.conf.example ${EXAMPLESDIR}
+
+.include <bsd.port.mk>

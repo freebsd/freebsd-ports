@@ -1,15 +1,11 @@
---- src/lineakd.h.orig	Wed Aug 28 04:43:19 2002
-+++ src/lineakd.h	Tue May 13 10:56:23 2003
-@@ -127,6 +127,12 @@
- #define VOLMUTE_VALUE 0
- #define MAX_VOLUME 100
- 
-+/* we need this for freebsd */
-+#if defined (__FreeBSD__)
-+#define CDROMEJECT	CDIOCEJECT	/*_IO('c', 107)*/
-+#define CDROMCLOSETRAY  CDIOCCLOSE
-+#endif
-+
- /* we might need this .. oss emulation under BSD */
- #if defined (__NetBSD__) || defined (__OpenBSD__)
- #define SOUND_IOCTL(a,b,c)      _oss_ioctl(a,b,c)
+--- lineakd/cdromctrl.cpp.orig	Wed Nov 19 13:45:39 2003
++++ lineakd/cdromctrl.cpp	Wed Nov 19 13:46:41 2003
+@@ -23,7 +23,7 @@
+ #include <sys/ioctl.h>
+ #if defined (__FreeBSD__)
+ 	# include <sys/cdio.h>
+-	#define CDROMEJECT CDIOEJECT /*_IO('c',107)*/
++	#define CDROMEJECT CDIOCEJECT /*_IO('c',107)*/
+ 	#define CDROMCLOSETRAY CDIOCCLOSE
+ #else
+ 	#include <linux/cdrom.h> /* linux specific?!! */
