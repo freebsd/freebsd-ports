@@ -13,7 +13,8 @@ MASTER_SITE_SUBDIR=	stable/sources/gtop
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore
+LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore \
+		gtop.1:${PORTSDIR}/devel/libgtop
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
