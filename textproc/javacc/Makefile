@@ -16,7 +16,7 @@ COMMENT=	Compiler compiler for Java; includes tools for building syntax trees
 
 FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
-USE_JAVA=	1.1+
+USE_JAVA=	yes
 USE_REINPLACE=	yes
 FETCH_CMD=	${LOCALBASE}/bin/wget
 NO_BUILD=	yes
@@ -31,9 +31,7 @@ do-configure:
 do-install:
 	${MKDIR} ${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/bin/lib/javacc.jar ${JAVAJARDIR}
-	for f in "${WRKSRC}/bin/j*"; do \
-		${INSTALL_SCRIPT} $$f ${PREFIX}/bin; \
-	done
+	cd ${WRKSRC}/bin/ && ${INSTALL_SCRIPT} javacc jjdoc jjtree ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
