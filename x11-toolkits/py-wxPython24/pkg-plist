@@ -6,6 +6,9 @@ lib/python1.5/site-packages/wxPython/__init__.pyo
 lib/python1.5/site-packages/wxPython/__version__.py
 lib/python1.5/site-packages/wxPython/__version__.pyc
 lib/python1.5/site-packages/wxPython/__version__.pyo
+lib/python1.5/site-packages/wxPython/calendar.py
+lib/python1.5/site-packages/wxPython/calendar.pyc
+lib/python1.5/site-packages/wxPython/calendar.pyo
 lib/python1.5/site-packages/wxPython/clip_dnd.py
 lib/python1.5/site-packages/wxPython/clip_dnd.pyc
 lib/python1.5/site-packages/wxPython/clip_dnd.pyo
@@ -51,6 +54,9 @@ lib/python1.5/site-packages/wxPython/demo/GenericButtons.pyo
 lib/python1.5/site-packages/wxPython/demo/GridCustTable.py
 lib/python1.5/site-packages/wxPython/demo/GridCustTable.pyc
 lib/python1.5/site-packages/wxPython/demo/GridCustTable.pyo
+lib/python1.5/site-packages/wxPython/demo/GridEnterHandler.py
+lib/python1.5/site-packages/wxPython/demo/GridEnterHandler.pyc
+lib/python1.5/site-packages/wxPython/demo/GridEnterHandler.pyo
 lib/python1.5/site-packages/wxPython/demo/GridHugeTable.py
 lib/python1.5/site-packages/wxPython/demo/GridHugeTable.pyc
 lib/python1.5/site-packages/wxPython/demo/GridHugeTable.pyo
@@ -94,12 +100,17 @@ lib/python1.5/site-packages/wxPython/demo/Threads.pyo
 lib/python1.5/site-packages/wxPython/demo/XMLtreeview.py
 lib/python1.5/site-packages/wxPython/demo/XMLtreeview.pyc
 lib/python1.5/site-packages/wxPython/demo/XMLtreeview.pyo
+lib/python1.5/site-packages/wxPython/demo/bitmaps/01c.gif
+lib/python1.5/site-packages/wxPython/demo/bitmaps/10s.gif
+lib/python1.5/site-packages/wxPython/demo/bitmaps/12h.gif
+lib/python1.5/site-packages/wxPython/demo/bitmaps/13d.gif
 lib/python1.5/site-packages/wxPython/demo/bitmaps/Calend.bmp
 lib/python1.5/site-packages/wxPython/demo/bitmaps/DbDec.bmp
 lib/python1.5/site-packages/wxPython/demo/bitmaps/DbInc.bmp
 lib/python1.5/site-packages/wxPython/demo/bitmaps/Dec.bmp
 lib/python1.5/site-packages/wxPython/demo/bitmaps/Inc.bmp
 lib/python1.5/site-packages/wxPython/demo/bitmaps/Pt.bmp
+lib/python1.5/site-packages/wxPython/demo/bitmaps/backgrnd.png
 lib/python1.5/site-packages/wxPython/demo/bitmaps/copy.bmp
 lib/python1.5/site-packages/wxPython/demo/bitmaps/image.bmp
 lib/python1.5/site-packages/wxPython/demo/bitmaps/image.gif
@@ -127,6 +138,7 @@ lib/python1.5/site-packages/wxPython/demo/data/pic2.bmp
 lib/python1.5/site-packages/wxPython/demo/data/stc.h
 lib/python1.5/site-packages/wxPython/demo/data/tables.htm
 lib/python1.5/site-packages/wxPython/demo/data/test.htm
+lib/python1.5/site-packages/wxPython/demo/data/tips.txt
 lib/python1.5/site-packages/wxPython/demo/data/widgetTest.htm
 lib/python1.5/site-packages/wxPython/demo/demo.py
 lib/python1.5/site-packages/wxPython/demo/demo.pyc
@@ -137,12 +149,23 @@ lib/python1.5/site-packages/wxPython/demo/demoMainLoop.pyo
 lib/python1.5/site-packages/wxPython/demo/hangman.py
 lib/python1.5/site-packages/wxPython/demo/hangman.pyc
 lib/python1.5/site-packages/wxPython/demo/hangman.pyo
+lib/python1.5/site-packages/wxPython/demo/paper.xml
 lib/python1.5/site-packages/wxPython/demo/pyTree.py
 lib/python1.5/site-packages/wxPython/demo/pyTree.pyc
 lib/python1.5/site-packages/wxPython/demo/pyTree.pyo
+lib/python1.5/site-packages/wxPython/demo/quotes.xml
+lib/python1.5/site-packages/wxPython/demo/redemo.py
+lib/python1.5/site-packages/wxPython/demo/redemo.pyc
+lib/python1.5/site-packages/wxPython/demo/redemo.pyo
 lib/python1.5/site-packages/wxPython/demo/run.py
 lib/python1.5/site-packages/wxPython/demo/run.pyc
 lib/python1.5/site-packages/wxPython/demo/run.pyo
+lib/python1.5/site-packages/wxPython/demo/viewer.py
+lib/python1.5/site-packages/wxPython/demo/viewer.pyc
+lib/python1.5/site-packages/wxPython/demo/viewer.pyo
+lib/python1.5/site-packages/wxPython/demo/viewer_basics.py
+lib/python1.5/site-packages/wxPython/demo/viewer_basics.pyc
+lib/python1.5/site-packages/wxPython/demo/viewer_basics.pyo
 lib/python1.5/site-packages/wxPython/demo/widgetTest.py
 lib/python1.5/site-packages/wxPython/demo/widgetTest.pyc
 lib/python1.5/site-packages/wxPython/demo/widgetTest.pyo
@@ -152,6 +175,9 @@ lib/python1.5/site-packages/wxPython/demo/wxButton.pyo
 lib/python1.5/site-packages/wxPython/demo/wxCalendar.py
 lib/python1.5/site-packages/wxPython/demo/wxCalendar.pyc
 lib/python1.5/site-packages/wxPython/demo/wxCalendar.pyo
+lib/python1.5/site-packages/wxPython/demo/wxCalendarCtrl.py
+lib/python1.5/site-packages/wxPython/demo/wxCalendarCtrl.pyc
+lib/python1.5/site-packages/wxPython/demo/wxCalendarCtrl.pyo
 lib/python1.5/site-packages/wxPython/demo/wxCheckBox.py
 lib/python1.5/site-packages/wxPython/demo/wxCheckBox.pyc
 lib/python1.5/site-packages/wxPython/demo/wxCheckBox.pyo
@@ -173,6 +199,9 @@ lib/python1.5/site-packages/wxPython/demo/wxDialog.pyo
 lib/python1.5/site-packages/wxPython/demo/wxDirDialog.py
 lib/python1.5/site-packages/wxPython/demo/wxDirDialog.pyc
 lib/python1.5/site-packages/wxPython/demo/wxDirDialog.pyo
+lib/python1.5/site-packages/wxPython/demo/wxDragImage.py
+lib/python1.5/site-packages/wxPython/demo/wxDragImage.pyc
+lib/python1.5/site-packages/wxPython/demo/wxDragImage.pyo
 lib/python1.5/site-packages/wxPython/demo/wxEditor.py
 lib/python1.5/site-packages/wxPython/demo/wxEditor.pyc
 lib/python1.5/site-packages/wxPython/demo/wxEditor.pyo
@@ -266,6 +295,9 @@ lib/python1.5/site-packages/wxPython/demo/wxSlider.pyo
 lib/python1.5/site-packages/wxPython/demo/wxSpinButton.py
 lib/python1.5/site-packages/wxPython/demo/wxSpinButton.pyc
 lib/python1.5/site-packages/wxPython/demo/wxSpinButton.pyo
+lib/python1.5/site-packages/wxPython/demo/wxSpinCtrl.py
+lib/python1.5/site-packages/wxPython/demo/wxSpinCtrl.pyc
+lib/python1.5/site-packages/wxPython/demo/wxSpinCtrl.pyo
 lib/python1.5/site-packages/wxPython/demo/wxSplitterWindow.py
 lib/python1.5/site-packages/wxPython/demo/wxSplitterWindow.pyc
 lib/python1.5/site-packages/wxPython/demo/wxSplitterWindow.pyo
@@ -320,7 +352,6 @@ lib/python1.5/site-packages/wxPython/grid.pyo
 lib/python1.5/site-packages/wxPython/html.py
 lib/python1.5/site-packages/wxPython/html.pyc
 lib/python1.5/site-packages/wxPython/html.pyo
-lib/python1.5/site-packages/wxPython/htmlcmodule.so
 lib/python1.5/site-packages/wxPython/htmlhelp.py
 lib/python1.5/site-packages/wxPython/htmlhelp.pyc
 lib/python1.5/site-packages/wxPython/htmlhelp.pyo
@@ -421,6 +452,9 @@ lib/python1.5/site-packages/wxPython/sizers.pyo
 lib/python1.5/site-packages/wxPython/stattool.py
 lib/python1.5/site-packages/wxPython/stattool.pyc
 lib/python1.5/site-packages/wxPython/stattool.pyo
+lib/python1.5/site-packages/wxPython/utils.py
+lib/python1.5/site-packages/wxPython/utils.pyc
+lib/python1.5/site-packages/wxPython/utils.pyo
 lib/python1.5/site-packages/wxPython/windows.py
 lib/python1.5/site-packages/wxPython/windows.pyc
 lib/python1.5/site-packages/wxPython/windows.pyo
@@ -434,10 +468,10 @@ lib/python1.5/site-packages/wxPython/wx.py
 lib/python1.5/site-packages/wxPython/wx.pyc
 lib/python1.5/site-packages/wxPython/wx.pyo
 lib/python1.5/site-packages/wxPython/wxcmodule.so
+@dirrm lib/python1.5/site-packages/wxPython/demo/bitmaps
+@dirrm lib/python1.5/site-packages/wxPython/demo/data
+@dirrm lib/python1.5/site-packages/wxPython/demo
 @dirrm lib/python1.5/site-packages/wxPython/lib/editor
 @dirrm lib/python1.5/site-packages/wxPython/lib/sizers
 @dirrm lib/python1.5/site-packages/wxPython/lib
-@dirrm lib/python1.5/site-packages/wxPython/demo/data
-@dirrm lib/python1.5/site-packages/wxPython/demo/bitmaps
-@dirrm lib/python1.5/site-packages/wxPython/demo
 @dirrm lib/python1.5/site-packages/wxPython

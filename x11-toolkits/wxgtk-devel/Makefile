@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wxgtk
-PORTVERSION= 	2.1.15
+PORTVERSION= 	2.1.16
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/ \
 		http://netfx-2000.linux.tucows.com/files/x11/dev/ \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	py-wxPython
-PORTVERSION=	2.1.15
+PORTVERSION=	2.1.16
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://alldunn.com/wxPython/dist/ \
 		http://www.nectar.com/distfiles/
@@ -28,7 +28,6 @@ INSTALL_TARGET=	install-freebsd
 
 TARGETDIR=	${PREFIX}/lib/python1.5/site-packages/wxPython
 HELPERLIBDIR=	${PREFIX}/lib
-HTMLSRC=	${WRKSRC}/../modules/html
 
 do-configure:
 	${SED} 	-e "s:%CFLAGS%:${CFLAGS} `gtk12-config --cflags`:"   \
@@ -38,17 +37,5 @@ do-configure:
 		-e "s:%CXX%:${CXX}:" -e "s:%WRKSRC%:${WRKSRC}:"      \
 		${FILESDIR}/build.local > ${WRKSRC}/../build.local
 	cd ${WRKSRC} && ../distrib/build.py
-	cd ${HTMLSRC} && ../../distrib/build.py
-# XXX  The modification time on a file is wrong.  If we don't do
-# something, then we'll have to depend upon SWIG.
-	${TOUCH} ${WRKSRC}/gtk/grid.cpp ${WRKSRC}/gtk/grid.py
-
-post-build:
-	@(cd ${HTMLSRC}; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
-
-post-install:
-	@(cd ${HTMLSRC}; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install)
 
 .include <bsd.port.mk>

@@ -63,6 +63,7 @@ include/wx/filefn.h
 include/wx/filesys.h
 include/wx/font.h
 include/wx/fontdlg.h
+include/wx/fontenc.h
 include/wx/fontenum.h
 include/wx/fontmap.h
 include/wx/fontutil.h
