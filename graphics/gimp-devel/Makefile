@@ -7,6 +7,7 @@
 
 PORTNAME=	gimp
 PORTVERSION=	2.0.pre2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -66,8 +67,10 @@ PLIST_SUB+=		PYTHON:="@comment "
 
 .if defined(WITHOUT_PRINT)
 CONFIGURE_ARGS+=	--disable-print
+PLIST_SUB+=		PRINT="@comment "
 .else
 LIB_DEPENDS+=		gimpprint.2:${PORTSDIR}/print/gimp-print
+PLIST_SUB+=		PRINT=""
 .endif
 
 .include <bsd.port.pre.mk>
