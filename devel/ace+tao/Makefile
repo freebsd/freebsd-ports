@@ -7,6 +7,7 @@
 
 PORTNAME?=	ace+tao
 PORTVERSION?=	${ACE_VERSION}+${TAO_VERSION}
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://deuce.doc.wustl.edu/pub/previous_versions/ \
 		http://deuce.doc.wustl.edu/old_distribution/ \
@@ -129,21 +130,28 @@ test:
 
 do-install:
 	@${ECHO_MSG} "Installing ACE headers into ${PREFIX}/include/ace"; \
-	${MKDIR} ${PREFIX}/include/ace || ${TRUE}; cd ${ACE_ROOT}; \
+	cd ${ACE_ROOT}; \
+	${FIND} ace -not -name .shobj -type d -exec \
+		${MKDIR} ${PREFIX}/include/\{\} \; ; \
 	${FIND} ace -type f \( -name "*.h" -o -name "*.i" -o -name "*.inl" \
-		-o -name "*.cpp" \) -not -name "config-*.h" -exec \
-		${INSTALL_DATA} \{\} ${PREFIX}/include/ace/ \;
+		-o -name "*.cpp" \) \( -not -name "config-*.h" \
+		-o -name config-all.h -o -name config-lite.h -o \
+		-name config-posix.h -o -name config-g++-common.h \) -exec \
+			${INSTALL_DATA} \{\} ${PREFIX}/include/\{\} \;
 .if !defined(WITHOUT_TAO)
 	@${ECHO_MSG} "Installing TAO headers into ${PREFIX}/include/tao"; \
-	${MKDIR} ${PREFIX}/include/tao || ${TRUE}; cd ${TAO_ROOT}; \
+	cd ${TAO_ROOT}; \
+	${FIND} tao -not -name .shobj -not -name diffs -type d -exec \
+		${MKDIR} ${PREFIX}/include/\{\} \; ; \
 	${FIND} tao -type f \( -name "*.h" -o -name "*.i" -o -name "*.inl" \
 		-o -name "*.idl" -o -name "*.pidl" -o -name "*.cpp" \) -exec \
-		${INSTALL_DATA} \{\} ${PREFIX}/include/tao \;
-	@${MKDIR} ${PREFIX}/include/orbsvcs || ${TRUE}; \
+		${INSTALL_DATA} \{\} ${PREFIX}/include/\{\} \; ; \
 	cd ${TAO_ROOT}/orbsvcs; \
+	${FIND} orbsvcs -not -name .shobj -type d -exec \
+		${MKDIR} ${PREFIX}/include/\{\} \; ; \
 	${FIND} orbsvcs -type f \( -name "*.h" -o -name "*.i" -o -name "*.inl" \
 		-o -name "*.idl" -o -name "*.pidl" -o -name "*.cpp" \) -exec \
-		${INSTALL_DATA} \{\} ${PREFIX}/include/orbsvcs \;
+		${INSTALL_DATA} \{\} ${PREFIX}/include/\{\} \;
 .endif
 
 	@${ECHO_MSG} "Installing libraries into ${PREFIX}/lib"; \
