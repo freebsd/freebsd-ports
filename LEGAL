@@ -191,7 +191,9 @@ uzap.tar.gz             ports/editors/uzap      Restrictive copyright
 vbsd407e.tar.Z		ports/security/vscan	Commercial software
 vice-*			ports/emulators/vice	ROMs are copyrighted by
 						Commodore Business Machines
+vje30/vje-delta-3.0-*	ports/japanese/vje30	Commercial software
 webcopy.tgz		ports/www/webcopy	Don't sell for profit
+wxg/ja-wxg-1.0b-1.tgz	ports/japanese/wxg	Redistribution not allowed
 xbarcode-*.tar.gz	ports/graphics/xbarcode	Must not be sold
 xev*.tar.gz		ports/games/xbat	Possible copyright infringement
 xgs-*			ports/emulators/xgs	Contains ROM (C) by Apple
