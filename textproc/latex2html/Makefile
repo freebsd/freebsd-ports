@@ -7,6 +7,7 @@
 
 PORTNAME=	latex2html
 PORTVERSION=	99.2b8
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/${PORTNAME}
@@ -30,6 +31,8 @@ CONFIGURE_ARGS=	--with-perl=${PERL} \
 		--disable-gif \
 		--libdir=${DATADIR}
 
+MAN1=	latex2html.1
+
 MSG_FILE=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -52,6 +55,7 @@ patch-message:
 post-install: install-docs display-message
 
 install-docs:
+	${INSTALL_MAN} ${FILESDIR}/latex2html.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
