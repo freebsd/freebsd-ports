@@ -1,44 +1,6 @@
---- configure.orig	Wed Feb 10 13:40:08 1999
-+++ configure	Mon Mar  1 21:06:00 1999
-@@ -775,53 +775,55 @@
- set dummy gtk-config; ac_word=$2
- echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
- echo "configure:778: checking for $ac_word" >&5
--if eval "test \"`echo '$''{'ac_cv_prog_GTKCONFIG'+set}'`\" = set"; then
-+if eval "test \"`echo '$''{'ac_cv_prog_GTK_CONFIG'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
--  if test -n "$GTKCONFIG"; then
--  ac_cv_prog_GTKCONFIG="$GTKCONFIG" # Let the user override the test.
-+  if test -n "$GTK_CONFIG"; then
-+  ac_cv_prog_GTK_CONFIG="$GTK_CONFIG" # Let the user override the test.
- else
-   IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS="${IFS}:"
-   for ac_dir in $PATH; do
-     test -z "$ac_dir" && ac_dir=.
-     if test -f $ac_dir/$ac_word; then
--      ac_cv_prog_GTKCONFIG="found"
-+      ac_cv_prog_GTK_CONFIG="found"
-       break
-     fi
-   done
-   IFS="$ac_save_ifs"
--  test -z "$ac_cv_prog_GTKCONFIG" && ac_cv_prog_GTKCONFIG="missing"
-+  test -z "$ac_cv_prog_GTK_CONFIG" && ac_cv_prog_GTK_CONFIG="missing"
- fi
- fi
--GTKCONFIG="$ac_cv_prog_GTKCONFIG"
--if test -n "$GTKCONFIG"; then
--  echo "$ac_t""$GTKCONFIG" 1>&6
-+GTK_CONFIG="$ac_cv_prog_GTK_CONFIG"
-+if test -n "$GTK_CONFIG"; then
-+  echo "$ac_t""$GTK_CONFIG" 1>&6
- else
-   echo "$ac_t""no" 1>&6
- fi
- 
--if test $GTKCONFIG = "missing"; then
-+if test $GTK_CONFIG = "missing"; then
+--- configure.orig	Wed Mar 31 16:37:29 1999
++++ configure	Thu Apr 15 12:46:24 1999
+@@ -809,11 +809,13 @@
  echo "configure: warning: cant find gtk-config" 1>&2
  echo "-------------------------------------------------"
  echo " GTK+ doesnt seam to be installed on this system"
@@ -49,50 +11,21 @@
  echo "-------------------------------------------------"
  exit 0
  else
--GTK_PREFIX=`gtk-config --version|cut -b 1,2,3`
-+GTK_PREFIX=`${GTK_CONFIG} --version|cut -b 1,2,3`
- if test $GTK_PREFIX = "1.0"; then
- GTK_TYPE='GTK_STABLE'
- else
--if test `gtk-config --version|cut -d. -f3` -lt 13; then
-+if test `${GTK_CONFIG} --version|cut -d. -f3` -lt 13; then
- echo "----------------------------------------------------"
--echo " Your version of GTK+, `gtk-config --version` is to old for Xwhois."
-+echo " Your version of GTK+, `${GTK_CONFIG} --version` is to old for Xwhois."
- echo "----------------------------------------------------"
- exit 0
- fi
- GTK_TYPE='GTK_DEVEL'
- fi
- 
--echo "building xwhois for gtk+ version... `gtk-config --version`"
-+echo "building xwhois for gtk+ version... `${GTK_CONFIG} --version`"
- fi
- 
- if test "$program_transform_name" = s,x,x,; then
-@@ -878,13 +880,13 @@
- PACKAGE=xwhois
- VERSION=0.3.3
- 
--XWHOIS_SERVERS='$(prefix)/lib/xwhois/xwhois.servers'
-+XWHOIS_SERVERS='$(prefix)/share/xwhois/xwhois.servers'
+-GTK_PREFIX=`gtk-config --version`
++GTK_PREFIX=`$GTK_CONFIG --version`
+ x=`echo $GTK_PREFIX|cut -d. -f1`
+ y=`echo $GTK_PREFIX|cut -d. -f2`
+ z=`echo $GTK_PREFIX|cut -d. -f3`
+@@ -895,10 +897,10 @@
+ XWHOIS_SERVERS='$(prefix)/share/xwhois/xwhois.servers'
  
  
 -INCLUDES="-I. `gtk-config --cflags`"
-+INCLUDES="-I. `${GTK_CONFIG} --cflags`"
++INCLUDES="-I. `$GTK_CONFIG --cflags`"
  
  
 -LIBS=`gtk-config --libs`
-+LIBS=`${GTK_CONFIG} --libs`
++LIBS=`$GTK_CONFIG --libs`
  
  DEFINES='-DSTD -DHAVE_SNPRINTF -DXWHOIS_SERVERS=\"$(XWHOIS_SERVERS)\" -D$(GTK_TYPE)'
  
-@@ -1619,7 +1621,7 @@
- s%@AUTOHEADER@%$AUTOHEADER%g
- s%@MAKEINFO@%$MAKEINFO%g
- s%@SET_MAKE@%$SET_MAKE%g
--s%@GTKCONFIG@%$GTKCONFIG%g
-+s%@GTK_CONFIG@%$GTK_CONFIG%g
- s%@GTK_TYPE@%$GTK_TYPE%g
- s%@host@%$host%g
- s%@host_alias@%$host_alias%g

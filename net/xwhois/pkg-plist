@@ -3,7 +3,6 @@ share/xwhois/xwhois.servers
 share/xwhois/pixmaps/xwhois.xpm
 share/doc/xwhois/README
 share/doc/xwhois/TODO
-share/doc/xwhois/COPYING
 share/doc/xwhois/ChangeLog
 @dirrm share/xwhois/pixmaps
 @dirrm share/xwhois
