@@ -8,7 +8,7 @@
 PORTNAME=	openal
 PORTVERSION= 	20000908
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.openal.org/
+MASTER_SITES=	ftp://ftp.openal.org/pub/openal/
 
 MAINTAINER=	ports@FreeBSD.org
 
