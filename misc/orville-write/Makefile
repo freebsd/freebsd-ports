@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	orville-write
-PORTVERSION=	2.53
+PORTVERSION=	2.54
 CATEGORIES=	misc
-MASTER_SITES=	http://www.wwnet.net/~janc/software/
+MASTER_SITES=	http://unixpapa.com/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced replacement for write/mesg
