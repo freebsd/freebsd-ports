@@ -7,7 +7,7 @@
 
 PORTNAME=	cppadvio
 PORTVERSION=	2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel net
 MASTER_SITES=	http://okmij.org/ftp/packages/ \
 		${MASTER_SITE_LOCAL}
@@ -22,10 +22,6 @@ USE_GMAKE=	yes
 USE_GCC=	2.95
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-BROKEN=		"Does not compile on alpha 4.x"
-.endif
 
 post-patch:
 	@( cd ${WRKSRC}; ${MV} c++ c++.orig; \
