@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sun Jul 18 22:23:22 1999
-+++ Makefile.in	Sun Sep 12 01:52:44 1999
-@@ -29,11 +29,11 @@
+--- Makefile.in.orig	Mon Oct 18 13:27:18 1999
++++ Makefile.in	Fri Nov 12 17:45:17 1999
+@@ -32,26 +32,24 @@
  		LIBS="$(LIBS)" \
  		"DEFS=$(PROG_DEFS)" \
  		"CC=$(CC)" \
@@ -14,3 +14,20 @@
  	; done
  
  install:
+ 	for i in $(DAEMONDIR) $(BINDIR) $(MANDIR)/man5 $(MANDIR)/man8 ; do \
+ 	   test -d $$i || mkdir -p $$i ; done
+ 	$(INSTALL_CMD) -m 755 xinetd/xinetd $(DAEMONDIR)
+-	$(INSTALL_CMD) -m 755 xinetd/itox $(DAEMONDIR)
+-	$(INSTALL_CMD) -m 755 xinetd/xconv.pl $(DAEMONDIR)
++	$(INSTALL_CMD) -m 755 xinetd/xconv.pl $(prefix)/bin/xconv
+ 	$(INSTALL_CMD) -m 644 xinetd/xinetd.conf.man $(MANDIR)/man5/xinetd.conf.5
+ 	$(INSTALL_CMD) -m 644 xinetd/xinetd.log.man $(MANDIR)/man8/xinetd.log.8
+ 	$(INSTALL_CMD) -m 644 xinetd/xinetd.man $(MANDIR)/man8/xinetd.8
+-	$(INSTALL_CMD) -m 644 xinetd/itox.8 $(MANDIR)/man8/itox.8
+ 	@echo "You must put your xinetd.conf in /etc/xinetd.conf"
+ 	@echo "There is a sample config file in xinetd/sample.conf and you can"
+-	@echo "use xconv.pl to convert your old inetd.conf file to an xinetd format"
++	@echo "use xconv to convert your old inetd.conf file to an xinetd format"
+ 
+ distclean: clean
+ 	rm -f config.cache config.log Makefile config.status xinetd/itox
