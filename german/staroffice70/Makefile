@@ -1,5 +1,5 @@
-# New ports collection makefile for: StarOffice 6.0
-# Date created:		03 October 2001
+# New ports collection makefile for: StarOffice 7.0 german
+# Date created:		08 Januar 2004
 # Whom:                 Martin Blapp
 #
 # $FreeBSD$
