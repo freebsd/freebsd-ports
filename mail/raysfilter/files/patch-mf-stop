@@ -1,0 +1,44 @@
+--- mf-stop.orig	Thu Mar  8 13:45:31 2001
++++ mf-stop	Tue Dec 17 17:08:38 2002
+@@ -44,18 +44,18 @@
+ # First look for a 'mf-start' process with filter name in
+ # command-line.
+ 
+-FILTER_START_PID=`ps -ef | grep 'mf-start' | grep $FILTER \
++FILTER_START_PID=`ps -af | grep 'mf-start' | grep $FILTER \
+                  | grep -v 'grep' \
+-                 | awk '{print $2}'`
++                 | awk '{print $1}'`
+ 
+ # Failing that (e.g. on Linux, process is swapped out to disk so command-
+ # line parameters are not shown) look for any 'mf-start' process.
+ 
+ if [ -z "$FILTER_START_PID" ]
+ then
+-   FILTER_START_PID=`ps -ef | grep 'mf-start' \
++   FILTER_START_PID=`ps -af | grep 'mf-start' \
+                     | grep -v 'grep' \
+-                    | awk '{print $2}'`
++                    | awk '{print $1}'`
+ fi
+ 
+ # If found a 'mf-start' process, kill it.
+@@ -70,10 +70,10 @@
+ # Now stop the filter itself, when no messages are in progress or
+ # after MAX_WAIT seconds, whichever is quickest.
+ 
+-FILTER_PID=`ps -ef | grep $FILTER \
++FILTER_PID=`ps -af | grep $FILTER \
+            | grep -v 'mf-start' \
+            | grep -v $0 | grep -v 'grep' \
+-           | awk '{print $2}'`
++           | awk '{print $1}'`
+ if [ -n "$FILTER_PID" ]
+ then
+    while [ $WORKING -eq 1 ]
+@@ -109,4 +109,5 @@
+ fi
+ 
+ exit 
++
+ 
