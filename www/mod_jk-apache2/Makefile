@@ -12,4 +12,6 @@ PORTEPOCH=	0
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	Apache2 JK module for connecting to Tomcat using AJP1X
 
+BROKEN=		"Does not build"
+
 .include "${MASTERDIR}/Makefile"
