@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.177 1998/12/24 05:51:20 imp Exp $
+# $Id: Makefile,v 1.178 1998/12/24 07:23:57 steve Exp $
 #
 
     SUBDIR += 3dc
@@ -24,6 +24,7 @@
     SUBDIR += crafty
     SUBDIR += crafty-open-large
     SUBDIR += crafty-open-medium
+    SUBDIR += crafty-open-rock
     SUBDIR += crafty-open-small
     SUBDIR += crossfire
     SUBDIR += dontspace
