@@ -3,7 +3,7 @@
 # Date created:		31 Mar 1998
 # Whom:			eivind/dima/jseger
 #
-# $Id: Makefile,v 1.26 1998/07/22 11:50:31 asami Exp $
+# $Id: Makefile,v 1.27 1998/10/15 01:16:23 jseger Exp $
 #
 
 DISTNAME=	unix-19980429
@@ -24,9 +24,9 @@ MAKE_ENV=	NO_SECURITY=1 MOZ_MEDIUM=1 MOZILLA_CLIENT=1 NO_MDUPDATE=1 \
 	BUILD_OPT=1 NO_NETSCAPE_STATIC=1 LD_LIBRARY_PATH=${LOCALBASE}/lib
 REQUIRES_MOTIF=	yes
 
-OSNAME=	`uname -s`
-OSVER=	`uname -r | ${SED} 's/-.*//'`
-OBJDIR=	${WRKSRC}/dist/${OSNAME}${OSVER}_OPT.OBJ
+.include <bsd.port.pre.mk>
+
+OBJDIR=	${WRKSRC}/dist/${OPSYS}${OSREL}_OPT.OBJ
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/mozilla/bin
@@ -40,4 +40,4 @@ do-install:
 	@strip ${PREFIX}/lib/mozilla/bin/moz-export
 	@chown -R bin.bin ${PREFIX}/lib/mozilla
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

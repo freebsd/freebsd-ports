@@ -3,7 +3,7 @@
 # Date created:		30 May 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.12 1998/09/25 09:52:44 asami Exp $
+# $Id: Makefile,v 1.13 1998/10/15 14:31:45 jseger Exp $
 #
 
 DISTNAME=	pygtk-0.5.2
@@ -17,8 +17,8 @@ MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 
 MAINTAINER=	ports@FreeBSD.ORG
 
+.include <bsd.port.pre.mk>
 
-OSVERSION!=     sysctl -n kern.osreldate
 .if ${OSVERSION} >= 300000
 BROKEN=         python
 .endif
@@ -41,4 +41,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/pygtk
 .endif
 
-.include <bsd.port.mk>
+BROKEN=		gtk
+
+.include <bsd.port.post.mk>

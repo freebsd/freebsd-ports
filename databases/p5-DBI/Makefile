@@ -3,7 +3,7 @@
 # Date created:				October 17th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.16 1998/09/16 12:48:16 vanilla Exp $
+# $Id: Makefile,v 1.17 1998/10/12 04:04:28 jseger Exp $
 #
 
 DISTNAME=	DBI-1.02
@@ -18,7 +18,8 @@ BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/RPC/pServer.pm:${PORTSD
 
 USE_PERL5=	YES
 
-OSVERSION!=     sysctl -n kern.osreldate
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 300000
 BROKEN=         perl
 .endif
@@ -37,4 +38,4 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 # Date created:		2 May 1998
 # Whom:                 dbader@eece.unm.edu
 #
-# $Id: Makefile,v 1.4 1998/10/13 23:15:30 jseger Exp $
+# $Id: Makefile,v 1.5 1998/10/13 23:18:37 jseger Exp $
 #
 
 DISTNAME=	mpich-1.1.1
@@ -12,7 +12,8 @@ MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 
 MAINTAINER=	dbader@eece.unm.edu
 
-OSVERSION!=     sysctl -n kern.osreldate
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 300000
 BROKEN=         MOUNT_NFS undeclared
 .endif
@@ -166,4 +167,4 @@ MAN4=		CLOG_Finalize.4 CLOG_Init.4 CLOG_Output.4 \
 		MPE_Stop_log.4 MPE_TagsEnd.4 MPE_Update.4 MPE_Wtime.4
 INSTALL_TARGET=	install PREFIX=$(PREFIX)/mpich
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

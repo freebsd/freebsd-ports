@@ -4,7 +4,7 @@
 # Date created:				03 Mar 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.11 1998/10/12 15:04:35 jseger Exp $
+# $Id: Makefile,v 1.12 1998/11/10 16:33:07 obrien Exp $
 #
 
 DISTNAME=	libstdc++-2.8.1.1
@@ -19,10 +19,11 @@ BUILD_DEPENDS=	gcc28:${PORTSDIR}/lang/gcc28 \
 RUN_DEPENDS=	gcc28:${PORTSDIR}/lang/gcc28 \
 		g++28:${PORTSDIR}/lang/gcc28
 
+.include <bsd.port.pre.mk>
+
 CC=		gcc28
 CXX=		g++28
-ARE_WE_ELF!=	text -x /usr/bin/objformat && /usr/bin/objformat || echo aout
-.if ${ARE_WE_ELF} == "elf"
+.if ${PORTOBJFORMAT} == "elf"
 GNUHOST=        i386-unknown-freebsdelf${OSREL}
 .else
 GNUHOST=        i386-unknown-freebsd${OSREL}
@@ -49,4 +50,4 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/osfcn.h  \
 		${PREFIX}/${GCC28DIR}/include/g++
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

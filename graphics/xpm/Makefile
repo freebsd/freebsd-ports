@@ -3,7 +3,7 @@
 # Date created:		14 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.19 1998/10/04 20:45:48 jkh Exp $
+# $Id: Makefile,v 1.20 1998/10/05 04:03:38 jkh Exp $
 #
 
 DISTNAME=       xpm-3.4k
@@ -16,10 +16,12 @@ USE_IMAKE=	yes
 
 MAN1=		cxpm.1 sxpm.1
 
+.include <bsd.port.pre.mk>
+
 post-install:
-	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
-		${LN} -sf libXpm.so.4.11 ${PREFIX}/lib/libXpm.so; \
-	fi
+.if ${PORTOBJFORMAT} == "aout"
+	${LN} -sf libXpm.so.4.11 ${PREFIX}/lib/libXpm.so
+.endif
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

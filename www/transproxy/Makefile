@@ -15,10 +15,11 @@ MAINTAINER=	peter@FreeBSD.ORG
 
 ALL_TARGET=	tproxy
 
+.include <bsd.port.pre.mk>
+
 # This has only been tested with -current, although it might work if you
 # can get the ipfilter package to build on a 2.2.x system. YMMV.
 # ftp://cheops.anu.edu.au/pub/net/firewall/ip-filter/
-OSVERSION!=	sysctl -n kern.osreldate
 .if ${OSVERSION} < 300000
 BROKEN=		"transproxy requires ipfilter, available in 3.0 or later"
 .endif
@@ -26,4 +27,4 @@ BROKEN=		"transproxy requires ipfilter, available in 3.0 or later"
 do-install:
 	cd ${WRKSRC}; ${INSTALL_PROGRAM} ${WRKSRC}/tproxy ${PREFIX}/sbin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

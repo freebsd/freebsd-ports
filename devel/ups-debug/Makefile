@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.3 1998/08/17 11:22:36 jseger Exp $
+# $Id: Makefile,v 1.5 1998/09/16 20:48:34 obrien Exp $
 #
 
 DISTNAME=	ups-3.32
@@ -19,7 +19,8 @@ PATCH_SITES=	http://www.concerto.demon.co.uk/UPS/
 
 MAINTAINER=     obrien@FreeBSD.org
 
-OSVERSION!=	sysctl -n kern.osreldate
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 300000
 BROKEN=	"During build: Libvar_addrs[0] is not constant"
 .endif
@@ -28,4 +29,4 @@ USE_GMAKE=	yes
 ALL_TARGET=	ups
 MAN1=		ups.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 # Date created:         Nov 26 1997
 # Whom:                 msmith@FreeBSD.org
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/26 07:49:35 msmith Exp $
+# $Id: Makefile,v 1.2 1998/08/16 13:13:02 jseger Exp $
 #
 
 DISTNAME=	linux_kdump-1.0
@@ -14,7 +14,8 @@ MAINTAINER=	msmith@FreeBSD.org
 
 BUILD_DEPENDS=	/compat/linux/usr/bin/cpp:${PORTSDIR}/devel/linux_devel
 
-OSVERSION!=	sysctl -n kern.osreldate
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 300000
 BROKEN=	"During build fails makesyscalls"
 .endif
@@ -26,4 +27,4 @@ BROKEN=		"requires kernel source present in /sys"
 BROKEN=		"requires ktrace source present in /usr/src/usr.bin/ktrace"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 # Date created:		22 December 1996
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.10 1998/10/05 03:17:10 steve Exp $
+# $Id: Makefile,v 1.11 1998/10/12 03:21:40 jseger Exp $
 #
 
 DISTNAME=       PGPLOT-2.08
@@ -18,7 +18,8 @@ LIB_DEPENDS=    pgplot.5:${PORTSDIR}/graphics/pgplot
 USE_PERL5=	yes
 ALL_TARGET=	dynamic
 
-OSVERSION!=     sysctl -n kern.osreldate
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 300000
 BROKEN=         depends on pgplot
 .endif
@@ -34,4 +35,4 @@ post-install:
 	@(cd ${WRKSRC}; ${INSTALL_DATA} LICENSE test* \
 		${PREFIX}/share/doc/pgperl)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

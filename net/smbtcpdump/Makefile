@@ -4,7 +4,7 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/02 18:30:18 obrien Exp $
+# $Id: Makefile,v 1.2 1998/10/14 01:22:00 jseger Exp $
 #
 
 DISTNAME=	tcpdump-3.2.1
@@ -18,7 +18,8 @@ PATCHFILES=	tcpdump-3.2.1-smb-diffs.gz
 
 MAINTAINER=	obrien@FreeBSD.org
 
-OSVERSION!=     sysctl -n kern.osreldate
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 300000
 BROKEN=         T_GID undeclared
 .endif
@@ -31,4 +32,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpdump ${PREFIX}/sbin/smbtcpdump
 	${INSTALL_MAN} ${WRKSRC}/tcpdump.1 ${PREFIX}/man/man1/smbtcpdump.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

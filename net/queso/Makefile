@@ -5,7 +5,7 @@
 # Whom:				  Wu Ching-hong <woju@freebsd.ee.ntu.edu.tw>
 # 				  and David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1998/10/24 23:31:27 obrien Exp $
 #
 
 DISTNAME=	queso-980922
@@ -17,8 +17,9 @@ DISTFILES=	queso-980922.tar.gz
 
 MAINTAINER=	woju@freebsd.ee.ntu.edu.tw
 
-OSVERSION!=	sysctl -n kern.osreldate
 GNU_CONFIGURE=  yes
+
+.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 300004
 DISTFILES+=	libpcap-0.4.tar.Z
@@ -34,4 +35,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Documentation.txt ${PREFIX}/share/doc/queso
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

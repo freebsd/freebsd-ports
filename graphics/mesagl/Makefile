@@ -3,7 +3,7 @@
 # Date created:         Tue Feb  7 12:02:49  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.28 1998/09/26 23:33:10 steve Exp $
+# $Id: Makefile,v 1.29 1998/10/01 02:17:42 jseger Exp $
 #
 
 DISTNAME=       MesaLib-3.0
@@ -19,6 +19,18 @@ WRKSRC=		${WRKDIR}/Mesa-3.0
 
 USE_X_PREFIX=	yes
 LIBS=		libMesaGL libMesaGLU
+
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+ALL_TARGET=	freebsd-elf
+SHLIB_VERSION=	14
+GLUT_VERSION=	3
+.else
+ALL_TARGET=	freebsd
+SHLIB_VERSION=	14.0
+GLUT_VERSION=	3.7
+.endif
 
 do-install:
 .for file in ${LIBS}
@@ -38,14 +50,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/GL/* ${PREFIX}/include/GL
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
-ALL_TARGET=	freebsd-elf
-SHLIB_VERSION=	14
-GLUT_VERSION=	3
-.else
-ALL_TARGET=	freebsd
-SHLIB_VERSION=	14.0
-GLUT_VERSION=	3.7
-.endif
+.include <bsd.port.post.mk>
