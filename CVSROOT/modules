@@ -1595,6 +1595,7 @@ fpp		ports/devel/fpp
 fr-abispell-fr-FR	ports/french/abispell-fr-FR
 fr-aspell       ports/french/aspell
 fr-daCode	ports/french/daCode
+fr-facturier	ports/french/facturier
 fr-gfaim	ports/french/gfaim
 fr-ispell	ports/french/ispell
 fr-jdictionary-fre-hun	ports/french/jdictionary-fre-hun
