@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Thu Apr 25 22:34:32 2002
-+++ configure	Thu Apr 25 22:35:04 2002
-@@ -5335,6 +5335,7 @@
+--- configure.orig	Fri May 17 18:08:30 2002
++++ configure	Fri May 17 18:09:02 2002
+@@ -7480,6 +7480,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -11,47 +11,62 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -7005,7 +7006,7 @@
+@@ -12030,14 +12031,14 @@
  
- CC="$_save_cc"
+ LIBNAUTILUS_LIBS="`$PKG_CONFIG --libs $LIBNAUTILUS_MODULES`"
  
--LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lgtksuperwin"
-+LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lstdc++ -lgtksuperwin"
- _mozilla_gtk_super_win_libs=
- echo $ac_n "checking for gdk_superwin_get_type in -lgtksuperwin""... $ac_c" 1>&6
- echo "configure:7012: checking for gdk_superwin_get_type in -lgtksuperwin" >&5
-@@ -7048,7 +7049,7 @@
- fi
+-LIBNAUTILUS_IDL_INCLUDES="`$PKG_CONFIG --variable=idldir $LIBNAUTILUS_MODULES | $srcdir/add-include-prefix`"
++LIBNAUTILUS_IDL_INCLUDES="`$PKG_CONFIG --variable=idldir $LIBNAUTILUS_MODULES | xargs -n1 echo -n ' -I '`"
  
+ CORE_MODULES="eel-2.0 librsvg-2.0 bonobo-activation-2.0 libbonobo-2.0 libbonoboui-2.0 esound gnome-desktop-2.0 $EXTRA_CORE_MODULES"
+ CORE_CFLAGS="`$PKG_CONFIG --cflags $CORE_MODULES` $x_cflags"
  
--LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lgtkembedmoz $_mozilla_xpcom_libs"
-+LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lstdc++ -lgtkembedmoz $_mozilla_xpcom_libs"
- _mozilla_gtk_moz_embed_libs=
- echo $ac_n "checking for gtk_moz_embed_get_type in -lgtkembedmoz""... $ac_c" 1>&6
- echo "configure:7055: checking for gtk_moz_embed_get_type in -lgtkembedmoz" >&5
-@@ -7057,7 +7058,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lgtkembedmoz  $LIBS"
-+LIBS="-lgtkembedmoz  -lgtksuperwin $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 7063 "configure"
- #include "confdefs.h"
-@@ -9141,7 +9142,7 @@
- fi
+ CORE_LIBS="`$PKG_CONFIG --libs $CORE_MODULES` $CDDA_LIBS $FAM_LIBS $LIBJPEG $x_libs"
  
- if test x$SCROLLKEEPER_CONFIG = xno; then
--  { echo "configure: error: Couldn't find scrollkeeper-config" 1>&2; exit 1; }
-+  echo "configure: warning: Couldn't find scrollkeeper-config" 1>&2
- fi
+-CORE_IDL_INCLUDES="`$PKG_CONFIG --variable=idldir $CORE_MODULES | $srcdir/add-include-prefix`"
++CORE_IDL_INCLUDES="`$PKG_CONFIG --variable=idldir $CORE_MODULES | xargs -n1 echo -n ' -I '`"
  
- 
-@@ -12061,6 +12062,7 @@
- s%@MOZILLA_COMPONENT_RPATH_FLAGS@%$MOZILLA_COMPONENT_RPATH_FLAGS%g
- s%@MOZILLA_COMPONENT_LDFLAGS@%$MOZILLA_COMPONENT_LDFLAGS%g
- s%@MOZILLA_COMPONENT_LIBS@%$MOZILLA_COMPONENT_LIBS%g
-+s%@MOZILLA_LIB_PLACE@%$_mozilla_lib_place%g
- s%@BUILD_MOZILLA_COMPONENT_TRUE@%$BUILD_MOZILLA_COMPONENT_TRUE%g
- s%@BUILD_MOZILLA_COMPONENT_FALSE@%$BUILD_MOZILLA_COMPONENT_FALSE%g
- s%@MOZILLA_PROFILES_CFLAGS@%$MOZILLA_PROFILES_CFLAGS%g
+ COMPONENT_MODULES="eel-2.0 libbonoboui-2.0 gnome-vfs-module-2.0"
+ COMPONENT_CFLAGS="`$PKG_CONFIG --cflags $COMPONENT_MODULES`"
+@@ -12746,9 +12747,9 @@
+ s,@ORBIT_CONFIG@,$ORBIT_CONFIG,;t t
+ s,@ORBIT_IDL@,$ORBIT_IDL,;t t
+ s,@ORBIT_CFLAGS@,$ORBIT_CFLAGS,;t t
+-s,@ORBIT_LIBS@,$ORBIT_LIBS,;t t
++s~@ORBIT_LIBS@~$ORBIT_LIBS~;t t
+ s,@ALL_CFLAGS@,$ALL_CFLAGS,;t t
+-s,@ALL_LIBS@,$ALL_LIBS,;t t
++s~@ALL_LIBS@~$ALL_LIBS~;t t
+ s,@GETTEXT_PACKAGE@,$GETTEXT_PACKAGE,;t t
+ s,@ALLOCA@,$ALLOCA,;t t
+ s,@USE_NLS@,$USE_NLS,;t t
+@@ -12799,23 +12800,23 @@
+ s,@HAVE_JW_FALSE@,$HAVE_JW_FALSE,;t t
+ s,@HAVE_JW@,$HAVE_JW,;t t
+ s,@MEDUSA_CFLAGS@,$MEDUSA_CFLAGS,;t t
+-s,@MEDUSA_LIBS@,$MEDUSA_LIBS,;t t
++s~@MEDUSA_LIBS@~$MEDUSA_LIBS~;t t
+ s,@LIBPNG@,$LIBPNG,;t t
+ s,@LIBJPEG@,$LIBJPEG,;t t
+ s,@GIMPHWRAPBOX_CFLAGS@,$GIMPHWRAPBOX_CFLAGS,;t t
+ s,@LIBNAUTILUS_CFLAGS@,$LIBNAUTILUS_CFLAGS,;t t
+-s,@LIBNAUTILUS_LIBS@,$LIBNAUTILUS_LIBS,;t t
++s~@LIBNAUTILUS_LIBS@~$LIBNAUTILUS_LIBS~;t t
+ s,@LIBNAUTILUS_IDL_INCLUDES@,$LIBNAUTILUS_IDL_INCLUDES,;t t
+ s,@CORE_CFLAGS@,$CORE_CFLAGS,;t t
+-s,@CORE_LIBS@,$CORE_LIBS,;t t
++s~@CORE_LIBS@~$CORE_LIBS~;t t
+ s,@CORE_IDL_INCLUDES@,$CORE_IDL_INCLUDES,;t t
+ s,@COMPONENT_CFLAGS@,$COMPONENT_CFLAGS,;t t
+-s,@COMPONENT_LIBS@,$COMPONENT_LIBS,;t t
++s~@COMPONENT_LIBS@~$COMPONENT_LIBS~;t t
+ s,@MUSIC_COMPONENT_CFLAGS@,$MUSIC_COMPONENT_CFLAGS,;t t
+-s,@MUSIC_COMPONENT_LIBS@,$MUSIC_COMPONENT_LIBS,;t t
++s~@MUSIC_COMPONENT_LIBS@~$MUSIC_COMPONENT_LIBS~;t t
+ s,@DISABLE_DEPRECATED_CFLAGS@,$DISABLE_DEPRECATED_CFLAGS,;t t
+ s,@CAPPLET_CFLAGS@,$CAPPLET_CFLAGS,;t t
+-s,@CAPPLET_LIBS@,$CAPPLET_LIBS,;t t
++s~@CAPPLET_LIBS@~$CAPPLET_LIBS~;t t
+ s,@GCONFTOOL@,$GCONFTOOL,;t t
+ s,@GCONF_SCHEMA_CONFIG_SOURCE@,$GCONF_SCHEMA_CONFIG_SOURCE,;t t
+ s,@GCONF_SCHEMA_FILE_DIR@,$GCONF_SCHEMA_FILE_DIR,;t t
