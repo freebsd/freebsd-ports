@@ -23,6 +23,7 @@ include/at-spi-1.0/libspi/listener.h
 include/at-spi-1.0/libspi/relation.h
 include/at-spi-1.0/libspi/remoteobject.h
 include/at-spi-1.0/libspi/selection.h
+include/at-spi-1.0/libspi/stateset.h
 include/at-spi-1.0/libspi/table.h
 include/at-spi-1.0/libspi/text.h
 include/at-spi-1.0/libspi/value.h

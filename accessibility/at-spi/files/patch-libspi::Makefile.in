@@ -1,8 +1,17 @@
 
 $FreeBSD$
 
---- libspi/Makefile.in	2002/04/12 11:14:12	1.1
-+++ libspi/Makefile.in	2002/04/12 11:14:54
+--- libspi/Makefile.in.orig	Fri Apr 26 16:03:02 2002
++++ libspi/Makefile.in	Fri Apr 26 17:30:41 2002
+@@ -140,7 +140,7 @@
+ 
+ libspiincludedir = $(includedir)/at-spi-1.0/libspi
+ 
+-libspiinclude_HEADERS =  	Accessibility.h			accessible.h			eventlistener.h			action.h			application.h			base.h				component.h			editabletext.h			hyperlink.h			hypertext.h			image.h				keystrokelistener.h		keymasks.h			libspi.h			listener.h			relation.h			remoteobject.h			selection.h			table.h				text.h				value.h
++libspiinclude_HEADERS =  	Accessibility.h			accessible.h			eventlistener.h			action.h			application.h			base.h				component.h			editabletext.h			hyperlink.h			hypertext.h			image.h				keystrokelistener.h		keymasks.h			libspi.h			listener.h			relation.h			remoteobject.h			selection.h			stateset.h		table.h				text.h				value.h
+ 
+ 
+ IDL_OUT = Accessibility.h Accessibility-stubs.c Accessibility-skels.c Accessibility-common.c
 @@ -160,7 +160,7 @@
  orbittypelibdir = $(libdir)/orbit-2.0
  orbittypelib_LTLIBRARIES = Accessibility_module.la
