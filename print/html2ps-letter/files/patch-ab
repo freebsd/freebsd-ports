@@ -1,12 +1,21 @@
 --- html2ps.orig	Sat Aug  9 20:59:05 1997
-+++ html2ps	Mon Jul 19 21:55:04 1999
++++ html2ps	Fri Sep 10 00:00:25 1999
 @@ -1,5 +1,5 @@
  : # Use perl
 -eval 'exec perl -S $0 "$@"'
-+eval 'exec /usr/bin/perl5 -S $0 "$@"'
++eval 'exec !!PERL5!! -S $0 "$@"'
    if $running_under_some_shell;
  
  # This is html2ps version 1.0 beta1, an HTML-to-PostScript converter.
+@@ -26,7 +26,7 @@
+ # Set the name of the global configuration file. See the installation notes
+ # and manual page for more details on configuration files.
+ 
+-$globrc='/opt/tdb/lib/html2ps/html2psrc';
++$globrc='!!PREFIX!!/lib/html2ps/html2psrc';
+ 
+ $conf=<<'EOR';
+ @html2ps {
 @@ -4072,6 +4072,7 @@
        $URL=$url;
        unless($url=~m|://|) {
