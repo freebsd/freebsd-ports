@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	d.marks@students.umist.ac.uk
+MAINTAINER=	d.marks@student.umist.ac.uk
 
 LIB_DEPENDS=	id3-3.7.13:${PORTSDIR}/audio/id3lib \
 		vorbis.2:${PORTSDIR}/audio/libvorbis

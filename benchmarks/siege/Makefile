@@ -11,7 +11,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.armstrong.com/pub/siege/ \
 		http://nerf-herder.net/siege/
 
-MAINTAINER=	d.marks@students.umist.ac.uk
+MAINTAINER=	d.marks@student.umist.ac.uk
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl=/usr --disable-shared

@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.insecure.org/nmap/dist/  \
 DISTNAME=	nmap-${PORTVERSION:S/.b/BETA/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	d.marks@students.umist.ac.uk
+MAINTAINER=	d.marks@student.umist.ac.uk
 
 .include <bsd.port.pre.mk>
 
