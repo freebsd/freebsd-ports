@@ -23,7 +23,6 @@ lib/gcc-lib/avr/3.0/include/README
 lib/gcc-lib/avr/3.0/include/fixed
 @unexec install-info --delete %D/info/cpp.info %D/info/dir
 @unexec install-info --delete %D/info/gcc.info %D/info/dir
-@unexec install-info --delete %D/info/c-tree.info %D/info/dir
 @unexec install-info --delete %D/info/cppinternals.info %D/info/dir
 info/cpp.info
 info/cpp.info-1
@@ -71,7 +70,6 @@ info/gcc.info-8
 info/gcc.info-9
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
-@exec install-info %D/info/c-tree.info %D/info/dir
 @exec install-info %D/info/cppinternals.info %D/info/dir
 @dirrm lib/gcc-lib/avr/3.0/avr3
 @dirrm lib/gcc-lib/avr/3.0/avr4
