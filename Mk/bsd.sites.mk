@@ -49,12 +49,15 @@ MASTER_SITE_COMP_SOURCES+=	\
 	ftp://rtfm.mit.edu/pub/usenet/comp.sources.%SUBDIR%/
 
 MASTER_SITE_GNOME+=	\
-	ftp://gnome.eazel.com/pub/gnome/%SUBDIR%/ \
 	ftp://ftp.yggdrasil.com/mirrors/site/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
+	ftp://ftp.sourceforge.net/pub/mirrors/gnome/%SUBDIR%/ \
+	ftp://gnome.eazel.com/pub/GNOME/%SUBDIR%/ \
+	ftp://ftp.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
+	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/
 	ftp://ftp.sunet.se/pub/X11/GNOME/%SUBDIR%/ \
-	ftp://fr2.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
 	ftp://ftp.dit.upm.es/linux/gnome/%SUBDIR%/ \
-	ftp://sunsite.uio.no/pub/GNOME/%SUBDIR%/ \
+	ftp://ftp.tr.gnome.org/pub/GNOME/%SUBDIR%/ \
+	ftp://ftp.no.gnome.org/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.dataplus.se/pub/linux/gnome/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,}
