@@ -1,10 +1,12 @@
-lib/libglib.so.1.0
 lib/libglib.la
+lib/libglib.so.1.0
+lib/libglib.so
 lib/libglib.a
 include/glib.h
 include/glibconfig.h
 lib/libgdk.la
 lib/libgdk.so.1.0
+lib/libgdk.so
 lib/libgdk.a
 include/gdk/gdk.h
 include/gdk/gdkcursors.h
@@ -21,6 +23,7 @@ include/gdk/gxid_proto.h
 include/gdk/gdkx.h
 lib/libgtk.la
 lib/libgtk.so.1.0
+lib/libgtk.so
 lib/libgtk.a
 include/gtk/gtk.h
 include/gtk/gtkaccelerator.h
