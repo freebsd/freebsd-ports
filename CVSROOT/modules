@@ -7453,6 +7453,7 @@ pinball		ports/games/pinball
 pine-pgp-filters	ports/mail/pine-pgp-filters
 pine4		ports/mail/pine4
 pinentry	ports/security/pinentry
+pinentry-qt	ports/security/pinentry-qt
 pinfo		ports/misc/pinfo
 pinstall	ports/devel/pinstall
 pipebench	ports/benchmarks/pipebench
