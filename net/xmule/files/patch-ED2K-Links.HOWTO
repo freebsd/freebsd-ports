@@ -1,0 +1,44 @@
+--- ED2K-Links.HOWTO.orig	Thu Mar  4 12:46:20 2004
++++ ED2K-Links.HOWTO	Tue Mar  9 21:21:16 2004
+@@ -14,7 +14,7 @@
+ 	the mentioned directory:
+ 
+ 	[Protocol]
+-	exec=/usr/local/bin/ed2k "%u"
++	exec=/usr/X11R6/bin/xmule-ed2k-handler "%u"
+ 	protocol=ed2k
+ 	input=none
+ 	output=none
+@@ -39,12 +39,12 @@
+ 	create xmule_submit.sh with this content:
+ 
+ 	#!/bin/sh
+-	/usr/local/bin/ed2k "ed2k://$1";
++	xmule-ed2k-handler "ed2k://$1";
+ 
+ 	now edit (as root) /etc/opera6rc or as non-root ~/.opera/opera6.ini:
+ 
+ 	[Trusted Applications]
+-	ed2k=/usr/local/bin/xmule_submit.sh
++	ed2k=/usr/X11R6/bin/xmule_submit.sh
+ 
+ 	[User Prefs]
+ 	TrustedExternalURLProtocols=ed2k
+@@ -59,7 +59,7 @@
+ 	TrustedExternalURLProtocols=ed2k
+ 
+ 	in [Trusted Applications]
+-	ed2k=/path/to/ed2k ed2k://%u 
++	ed2k=/usr/X11R6/bin/xmule-ed2k-handler ed2k://%u 
+ 
+ (Credits: ender)
+ 
+@@ -96,7 +96,7 @@
+ 
+ 	-create a file called "ed2k.cmd" with the following content:
+ 
+-	ed2k ed2k:$URI_DATA
++	xmule-ed2k-handler ed2k:$URI_DATA
+ 
+ 	[do this with your favorite text-editor, the file doesn't have to be executable]
+ 

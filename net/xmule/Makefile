@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmule
-PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTVERSION=	1.7.4c
 CATEGORIES=	net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmule
@@ -24,7 +23,6 @@ USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehier \
 		gnomehack \
-		gtk20 \
 		gnomeprefix
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -43,18 +41,17 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|(Linux)|FreeBSD/\1|' \
 		${WRKSRC}/src/*.cpp
-# remove ^M
+# update documentation with correct prefix
 	@${REINPLACE_CMD} -E \
-		-e 's|||' \
-		${WRKSRC}/src/MD5Sum.cpp
-# do not install a generic named ed2k binary 
-	@${REINPLACE_CMD} -E \
-		-e 's|^(bin_PROGRAMS.+)ed2k|\1|' \
-		${WRKSRC}/src/Makefile.in
-# update documentation regarding aforementioned change
-	@${REINPLACE_CMD} -E \
-		-e 's|/usr/local/bin/ed2k|${PREFIX}/bin/${PORTNAME}-ed2k-handler|' \
+		-e 's|/usr/X11R6/(bin/${PORTNAME}-ed2k-handler)|${PREFIX}/\1|' \
 		${WRKSRC}/ED2K-Links.HOWTO
+# use BSD_INSTALL_* macros
+	@${REINPLACE_CMD} -E \
+		-e 's|cp -f|${INSTALL_DATA}|' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -E \
+		-e 's|cp -p|${INSTALL_DATA}|' \
+		${WRKSRC}/po/Makefile.in.in
 
 pre-configure:
 	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | \
@@ -62,12 +59,10 @@ pre-configure:
 		${REINPLACE_CMD} -E \
 		-e 's!^(AUTOCONF|AUTOHEADER|AUTOMAKE|ACLOCAL).*$$!\1=${TRUE}!'
 
-post-build:
-# build the generic named ed2k binary
-# it will installed in an adhoc fashion
-	@cd ${BUILD_WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ed2k
-
 post-install:
+# install xmule binary
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} \
+		${PREFIX}/bin
 # do not install a generic named ed2k binary
 # install it under a more specific name
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/ed2k \
