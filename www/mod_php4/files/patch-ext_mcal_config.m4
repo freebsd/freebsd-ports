@@ -6,7 +6,7 @@
    PHP_EXTENSION(mcal,$ext_shared)
 +  cat >> confdefs.h <<\EOF
 +/* Interfaces to callbacks in libmcal */
-+#include "/usr/local/include/mcal/mcal.h"
++#include <mcal/mcal.h>
 +void cc_searched (unsigned long cal_uid) {}
 +void cc_fetched(const CALEVENT *event) {}
 +void cc_login(const char **user, const char **pwd) {}
