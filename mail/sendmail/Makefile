@@ -18,6 +18,7 @@ COMMENT=	Reliable, highly configurable mail transfer agent with utilities
 
 CONFLICTS?=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.*
 CONFLICTS+=	sendmail-8.11.* sendmail-*-8.11.* sendmail+*-8.11.*
+CONFLICTS+=	sendmail-8.12.* sendmail-*-8.12.* sendmail+*-8.12.*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site
