@@ -1,10 +1,13 @@
-share/Choices/MIME-icons/video_mpeg.xpm
+share/Choices/MIME-icons/application.xpm
 share/Choices/MIME-icons/application_pdf.xpm
 share/Choices/MIME-icons/application_postscript.xpm
+share/Choices/MIME-icons/application_x-bzip-compressed-tar.xpm
+share/Choices/MIME-icons/application_x-bzip.xpm
 share/Choices/MIME-icons/application_x-class-file.xpm
 share/Choices/MIME-icons/application_x-compressed-postscript.xpm
+share/Choices/MIME-icons/application_x-compressed-tar.xpm
 share/Choices/MIME-icons/application_x-deb.xpm
-share/Choices/MIME-icons/application_x-gunzip.xpm
+share/Choices/MIME-icons/application_x-gzip.xpm
 share/Choices/MIME-icons/application_x-jar-file.xpm
 share/Choices/MIME-icons/application_x-rpm.xpm
 share/Choices/MIME-icons/application_x-staroffice.xpm
@@ -34,8 +37,9 @@ share/Choices/MIME-icons/text_x-java.xpm
 share/Choices/MIME-icons/text_x-lyx.xpm
 share/Choices/MIME-icons/text_x-python.xpm
 share/Choices/MIME-icons/video.xpm
-share/Choices/MIME-icons/application.xpm
+share/Choices/MIME-icons/video_mpeg.xpm
 share/Choices/MIME-info/Standard
+share/Choices/MIME-info/gnome-vfs.mime
 share/Choices/MIME-types/application_postscript
 share/Choices/MIME-types/text
 @dirrm share/Choices/MIME-types
