@@ -21,7 +21,7 @@
 
 #include <sys/ioctl.h>
 
-#include <machine/soundcard.h>
+#include <sys/soundcard.h>
 #include "proto.h"
 #include "getargs.h"
 #include "hplay.h"
