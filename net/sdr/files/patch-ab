@@ -1,5 +1,5 @@
---- sdr/src/Makefile.template.orig	Tue May 25 16:27:44 1999
-+++ sdr/src/Makefile.template	Thu Nov  4 11:05:39 1999
+--- ../src/Makefile.template.orig	Tue May 25 16:27:44 1999
++++ ../src/Makefile.template	Thu Nov  4 11:05:39 1999
 @@ -88,7 +88,7 @@
  $(SDR_UI_FILES): tcl2c
  
