@@ -4,6 +4,7 @@ include/libetpan/charconv.h
 include/libetpan/chash.h
 include/libetpan/cinthash.h
 include/libetpan/clist.h
+include/libetpan/generic_cache.h
 include/libetpan/imapdriver.h
 include/libetpan/imapdriver_cached.h
 include/libetpan/mail.h
@@ -21,6 +22,8 @@ include/libetpan/mailimf_types_helper.h
 include/libetpan/mailimf_write.h
 include/libetpan/mailmbox.h
 include/libetpan/mailmbox_types.h
+include/libetpan/mailmessage.h
+include/libetpan/mailmessage_types.h
 include/libetpan/mailmh.h
 include/libetpan/mailmime.h
 include/libetpan/mailmime_content.h
@@ -39,6 +42,7 @@ include/libetpan/mailsmtp_helper.h
 include/libetpan/mailsmtp_socket.h
 include/libetpan/mailsmtp_ssl.h
 include/libetpan/mailsmtp_types.h
+include/libetpan/mailstorage.h
 include/libetpan/mailstream.h
 include/libetpan/mailstream_helper.h
 include/libetpan/mailstream_low.h
@@ -46,6 +50,7 @@ include/libetpan/mailstream_socket.h
 include/libetpan/mailstream_ssl.h
 include/libetpan/mailstream_types.h
 include/libetpan/mailthread.h
+include/libetpan/mailthread_types.h
 include/libetpan/mboxdriver.h
 include/libetpan/mboxdriver_cached.h
 include/libetpan/mhdriver.h
