@@ -7,69 +7,65 @@ bin/arm-aout-g++
 bin/arm-aout-gcc
 bin/arm-aout-protoize
 bin/arm-aout-unprotoize
-bin/gcov
+bin/arm-aout-cpp
+bin/arm-aout-gcov
 include/ansidecl.h
-include/bfd.h
-include/bfdlink.h
-lib/gcc-lib/arm-aout/2.95.2/SYSCALLS.c.X
-lib/gcc-lib/arm-aout/2.95.2/be/fpu/libgcc.a
-lib/gcc-lib/arm-aout/2.95.2/be/libgcc.a
-lib/gcc-lib/arm-aout/2.95.2/cc1
-lib/gcc-lib/arm-aout/2.95.2/cc1plus
-lib/gcc-lib/arm-aout/2.95.2/collect2
-lib/gcc-lib/arm-aout/2.95.2/cpp
-lib/gcc-lib/arm-aout/2.95.2/fpu/libgcc.a
-lib/gcc-lib/arm-aout/2.95.2/include/README
-lib/gcc-lib/arm-aout/2.95.2/include/assert.h
-lib/gcc-lib/arm-aout/2.95.2/include/exception
-lib/gcc-lib/arm-aout/2.95.2/include/fixed
-lib/gcc-lib/arm-aout/2.95.2/include/float.h
-lib/gcc-lib/arm-aout/2.95.2/include/iso646.h
-lib/gcc-lib/arm-aout/2.95.2/include/limits.h
-lib/gcc-lib/arm-aout/2.95.2/include/new
-lib/gcc-lib/arm-aout/2.95.2/include/new.h
-lib/gcc-lib/arm-aout/2.95.2/include/proto.h
-lib/gcc-lib/arm-aout/2.95.2/include/stdarg.h
-lib/gcc-lib/arm-aout/2.95.2/include/stdbool.h
-lib/gcc-lib/arm-aout/2.95.2/include/stddef.h
-lib/gcc-lib/arm-aout/2.95.2/include/syslimits.h
-lib/gcc-lib/arm-aout/2.95.2/include/typeinfo
-lib/gcc-lib/arm-aout/2.95.2/include/va-alpha.h
-lib/gcc-lib/arm-aout/2.95.2/include/va-arc.h
-lib/gcc-lib/arm-aout/2.95.2/include/va-c4x.h
-lib/gcc-lib/arm-aout/2.95.2/include/va-clipper.h
-lib/gcc-lib/arm-aout/2.95.2/include/va-h8300.h
-lib/gcc-lib/arm-aout/2.95.2/include/va-i860.h
-lib/gcc-lib/arm-aout/2.95.2/include/va-i960.h
-lib/gcc-lib/arm-aout/2.95.2/include/va-m32r.h
-lib/gcc-lib/arm-aout/2.95.2/include/va-m88k.h
-lib/gcc-lib/arm-aout/2.95.2/include/va-mips.h
-lib/gcc-lib/arm-aout/2.95.2/include/va-mn10200.h
-lib/gcc-lib/arm-aout/2.95.2/include/va-mn10300.h
-lib/gcc-lib/arm-aout/2.95.2/include/va-pa.h
-lib/gcc-lib/arm-aout/2.95.2/include/va-ppc.h
-lib/gcc-lib/arm-aout/2.95.2/include/va-pyr.h
-lib/gcc-lib/arm-aout/2.95.2/include/va-sh.h
-lib/gcc-lib/arm-aout/2.95.2/include/va-sparc.h
-lib/gcc-lib/arm-aout/2.95.2/include/va-spur.h
-lib/gcc-lib/arm-aout/2.95.2/include/va-v850.h
-lib/gcc-lib/arm-aout/2.95.2/include/varargs.h
-lib/gcc-lib/arm-aout/2.95.2/le/fpu/libgcc.a
-lib/gcc-lib/arm-aout/2.95.2/le/libgcc.a
-lib/gcc-lib/arm-aout/2.95.2/libgcc.a
-lib/gcc-lib/arm-aout/2.95.2/specs
-lib/gcc-lib/arm-aout/2.95.2/libbfd.a
-lib/gcc-lib/arm-aout/2.95.2/libiberty.a
-lib/gcc-lib/arm-aout/2.95.2/libopcodes.a
+lib/gcc-lib/arm-aout/%%GCC_REV%%/SYSCALLS.c.X
+lib/gcc-lib/arm-aout/%%GCC_REV%%/be/fpu/libgcc.a
+lib/gcc-lib/arm-aout/%%GCC_REV%%/be/libgcc.a
+lib/gcc-lib/arm-aout/%%GCC_REV%%/cc1
+lib/gcc-lib/arm-aout/%%GCC_REV%%/cc1plus
+lib/gcc-lib/arm-aout/%%GCC_REV%%/collect2
+lib/gcc-lib/arm-aout/%%GCC_REV%%/cpp0
+lib/gcc-lib/arm-aout/%%GCC_REV%%/fpu/libgcc.a
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/README
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/assert.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/exception
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/fixed
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/float.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/iso646.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/limits.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/new
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/new.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/proto.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/stdarg.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/stdbool.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/stddef.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/syslimits.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/typeinfo
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-alpha.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-arc.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-c4x.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-clipper.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-h8300.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-i860.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-i960.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-m32r.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-m88k.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-mips.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-mn10200.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-mn10300.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-pa.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-ppc.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-pyr.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-sh.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-sparc.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-spur.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/va-v850.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/include/varargs.h
+lib/gcc-lib/arm-aout/%%GCC_REV%%/le/fpu/libgcc.a
+lib/gcc-lib/arm-aout/%%GCC_REV%%/le/libgcc.a
+lib/gcc-lib/arm-aout/%%GCC_REV%%/libgcc.a
+lib/gcc-lib/arm-aout/%%GCC_REV%%/specs
 @dirrm arm-aout/bin
 @dirrm arm-aout
-@dirrm lib/gcc-lib/arm-aout/2.95.2/include
-@dirrm lib/gcc-lib/arm-aout/2.95.2/be/fpu
-@dirrm lib/gcc-lib/arm-aout/2.95.2/be
-@dirrm lib/gcc-lib/arm-aout/2.95.2/le/fpu
-@dirrm lib/gcc-lib/arm-aout/2.95.2/le
-@dirrm lib/gcc-lib/arm-aout/2.95.2/fpu
-@dirrm lib/gcc-lib/arm-aout/2.95.2
+@dirrm lib/gcc-lib/arm-aout/%%GCC_REV%%/include
+@dirrm lib/gcc-lib/arm-aout/%%GCC_REV%%/be/fpu
+@dirrm lib/gcc-lib/arm-aout/%%GCC_REV%%/be
+@dirrm lib/gcc-lib/arm-aout/%%GCC_REV%%/le/fpu
+@dirrm lib/gcc-lib/arm-aout/%%GCC_REV%%/le
+@dirrm lib/gcc-lib/arm-aout/%%GCC_REV%%/fpu
+@dirrm lib/gcc-lib/arm-aout/%%GCC_REV%%
 @dirrm lib/gcc-lib/arm-aout
 @dirrm lib/gcc-lib
 @dirrm lib
