@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+include/xxl.h
+lib/libxxl.a
+lib/libxxl.so
+lib/libxxl.so.1
