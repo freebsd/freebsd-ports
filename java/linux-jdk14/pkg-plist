@@ -544,7 +544,6 @@
 %%T%%/bin/java_vm
 %%T%%/bin/ControlPanel
 %%T%%/bin/HtmlConverter
-%%T%%/bin/.java_wrapper.rej
 %%T%%/demo/applets/Animator/audio/0.au
 %%T%%/demo/applets/Animator/audio/1.au
 %%T%%/demo/applets/Animator/audio/2.au
