@@ -1,0 +1,19 @@
+*** slush.c-	Fri May  7 03:31:04 1999
+--- slush.c	Fri May  7 03:31:14 1999
+***************
+*** 34,40 ****
+  #include <signal.h>
+  #include <string.h>
+  #include <stdlib.h>
+! #include <getopt.h>
+  #include <termios.h>
+  #include <pwd.h>
+  #include <sys/ioctl.h>
+--- 34,40 ----
+  #include <signal.h>
+  #include <string.h>
+  #include <stdlib.h>
+! /* #include <getopt.h> */
+  #include <termios.h>
+  #include <pwd.h>
+  #include <sys/ioctl.h>

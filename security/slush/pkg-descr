@@ -1,0 +1,7 @@
+slush                  SSL remote shell
+
+slush is a simple telnet-like application which communicates over a 
+secure SSL channel. It uses X509 certificates for authentication and
+can be compiled with tcp wrappers support (service name "slushd").
+
+slush is *alpha* software. Use it at your own risk.

@@ -1,0 +1,120 @@
+*** slushd.c.orig	Tue Apr  6 05:14:04 1999
+--- slushd.c	Sat May  8 23:53:40 1999
+***************
+*** 40,46 ****
+  #include <ctype.h>
+  #include <stdlib.h>
+  #include <netdb.h>
+! #include <getopt.h>
+  #include <pwd.h>
+  #include <grp.h>
+  #include <fcntl.h>
+--- 40,46 ----
+  #include <ctype.h>
+  #include <stdlib.h>
+  #include <netdb.h>
+! #include <libutil.h>
+  #include <pwd.h>
+  #include <grp.h>
+  #include <fcntl.h>
+***************
+*** 51,56 ****
+--- 51,57 ----
+  #include <sys/stat.h>
+  #include <sys/ioctl.h>
+  #include <sys/file.h>
++ 
+  #ifdef HAVE_UNISTD_H
+  #include <unistd.h>	  /* fork, execvp, exit */
+  #endif
+***************
+*** 654,711 ****
+  void log_uwtmp(struct passwd *pw, struct in_addr *i, char *tty, int is_logout)
+  {
+  	struct utmp ut;
+- 	int wtmp;
+- 	int lock;
+  	
+  	tty = strrchr(tty, '/');
+  	if (tty == NULL)
+  	{
+  		syslog(LOG_ERR, "Can't determine basename of tty");
+! 		exit(3);
+  	}
+  	tty++;
+  	
+- 	utmpname(_PATH_UTMP);
+- 	setutent();
+- 	memset(&ut, 0, sizeof(ut));
+  
+! 	if (ut.ut_id[0] == 0)
+! 		strncpy(ut.ut_id, tty + 3, sizeof(ut.ut_id));
+  
+- 	if (!is_logout)
+- 		strncpy(ut.ut_user, pw->pw_name, sizeof(ut.ut_user));
+- 	
+  	strncpy(ut.ut_line, tty, sizeof(ut.ut_line) - 1);
+! 	ut.ut_line[sizeof(ut.ut_line) - 1] = 0;
+! 	
+! 	ut.ut_time = time(NULL);
+! 	ut.ut_type = is_logout?DEAD_PROCESS:USER_PROCESS;
+! 	ut.ut_pid = getpid();
+  
+- 	strncpy(ut.ut_host, hostname, sizeof(ut.ut_host) - 1);
+- 	ut.ut_host[sizeof(ut.ut_host) - 1] = 0;
+  	
+! 	memcpy(&ut.ut_addr, i, sizeof(ut.ut_addr));
+! 
+! 	pututline(&ut);
+! 	endutent();
+! 
+! 	lock = open(_PATH_WTMPLOCK, O_CREAT|O_WRONLY, 0660);
+! 	if (lock == -1)
+! 		ioerror("open");
+! 		
+! 	if (flock(lock, LOCK_EX) == -1)
+! 		ioerror("flock");
+! 		
+! 	wtmp = open(_PATH_WTMP, O_APPEND|O_WRONLY);
+! 	if (wtmp == -1)
+! 		ioerror("open");
+! 		
+! 	write(wtmp, (char *)&ut, sizeof(ut));
+! 	close(wtmp);
+! 
+! 	flock(lock, LOCK_UN);
+! 	close(lock);
+  }
+  
+  /* Retrieve client X509 certificate and test authentication */
+--- 655,684 ----
+  void log_uwtmp(struct passwd *pw, struct in_addr *i, char *tty, int is_logout)
+  {
+  	struct utmp ut;
+  	
+  	tty = strrchr(tty, '/');
+  	if (tty == NULL)
+  	{
+  		syslog(LOG_ERR, "Can't determine basename of tty");
+! 		return;
+  	}
+  	tty++;
++ 
+  	
+  
+! 	if(is_logout) {
+! 		logout(tty);
+! 		return;
+! 	}
+  
+  	strncpy(ut.ut_line, tty, sizeof(ut.ut_line) - 1);
+! 	strncpy(ut.ut_name, pw->pw_name, sizeof(ut.ut_name)-1);
+! 	strncpy(ut.ut_host, inet_ntoa(*i), sizeof(ut.ut_host) - 1);
+! 	ut.ut_time = time(0);
+! 	login(&ut);
+  
+  	
+! 	return;
+  }
+  
+  /* Retrieve client X509 certificate and test authentication */
