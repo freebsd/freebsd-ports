@@ -303,6 +303,7 @@ anteater	ports/sysutils/anteater
 anthy		ports/japanese/anthy
 antipolix	ports/games/antipolix
 antiword	ports/textproc/antiword
+antlr		ports/devel/antlr
 anubis		ports/mail/anubis
 aoi		ports/graphics/aoi
 aolserver	ports/www/aolserver
