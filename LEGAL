@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.59 1997/02/02 01:34:01 obrien Exp $
+# $Id: LEGAL,v 1.60 1997/02/20 21:30:18 obrien Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -39,6 +39,12 @@ dgd/2.4.5-for-1.0.37.tgz ports/net/dgd-lpmud	No monetary gain. No point in
 						restrictions on distribution.
 						Source tarball may go on CDROM.
 dgd/net-*		ports/net/dgd-net	Same as dgd
+dnews3			ports/news/dnews	Only free for schools and
+						universities, but they have to
+						register as well. 4 weeks of
+						free trial for everybody.
+						We currently ask for permission
+						to put a package on the CD-ROM.
 fwtk-*			ports/security/fwtk	No redistribution allowed
 glimpse-*		ports/misc/glimpse	Don't sell for profit
 giftool-*		ports/graphics/giftool	Don't redistribute for profit
