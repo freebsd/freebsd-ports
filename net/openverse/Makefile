@@ -10,7 +10,7 @@ CATEGORIES=	net tk82
 MASTER_SITES=	http://www.openverse.com/files/OpenVerse/
 DISTNAME=	${PORTNAME}-0.8-7
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A visual chat program written in Tcl/Tk
 
 RUN_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82 \
