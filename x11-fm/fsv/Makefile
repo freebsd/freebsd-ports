@@ -25,4 +25,10 @@ CONFIGURE_ARGS=	--with-GL-prefix=${X11BASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 or ia64"
+.endif
+
+.include <bsd.port.post.mk>
