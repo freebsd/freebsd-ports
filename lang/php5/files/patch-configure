@@ -1,6 +1,6 @@
---- configure.orig	Tue Jul 15 00:32:50 2003
-+++ configure	Tue Jul 15 01:44:37 2003
-@@ -620,6 +620,8 @@
+--- configure.orig	Mon Dec 22 10:01:56 2003
++++ configure	Mon Dec 22 10:19:16 2003
+@@ -622,6 +622,8 @@
  ac_help="$ac_help
    --enable-gd-jis-conv      GD: Enable JIS-mapped Japanese font support."
  ac_help="$ac_help
@@ -8,8 +8,8 @@
 +ac_help="$ac_help
    --with-gettext[=DIR]    Include GNU gettext support."
  ac_help="$ac_help
-   --with-gmp              Include GNU MP support"
-@@ -29376,6 +29378,31 @@
+   --with-gmp[=DIR]        Include GNU MP support"
+@@ -29640,6 +29642,31 @@
  
  
  
@@ -41,7 +41,7 @@
  
  
  
-@@ -29528,7 +29555,7 @@
+@@ -29792,7 +29819,7 @@
                   libgd/gd_io_file.c libgd/gd_ss.c libgd/gd_io_ss.c libgd/gd_png.c libgd/gd_jpeg.c \
                   libgd/gdxpm.c libgd/gdfontt.c libgd/gdfonts.c libgd/gdfontmb.c libgd/gdfontl.c \
                   libgd/gdfontg.c libgd/gdtables.c libgd/gdft.c libgd/gdcache.c libgd/gdkanji.c \
@@ -50,7 +50,7 @@
                   libgd/xbm.c"
  
    for ac_func in fabsf floorf
-@@ -29603,6 +29630,11 @@
+@@ -29867,6 +29894,11 @@
    fi
  
    
@@ -61,8 +61,8 @@
 +  
    if test "$PHP_JPEG_DIR" != "no"; then
  
-     for i in /usr /usr/local $PHP_JPEG_DIR; do
-@@ -31314,6 +31346,9 @@
+     for i in $PHP_JPEG_DIR /usr/local /usr; do
+@@ -31580,6 +31612,9 @@
  
    cat >> confdefs.h <<\EOF
  #define HAVE_GD_BUNDLED 1
@@ -72,7 +72,7 @@
  EOF
  
    cat >> confdefs.h <<\EOF
-@@ -31364,6 +31399,14 @@
+@@ -31634,6 +31669,14 @@
      GDLIB_CFLAGS="$GDLIB_CFLAGS -DJISX0208"
    fi
  
@@ -87,7 +87,7 @@
  else
  
   if test "$PHP_GD" != "no"; then
-@@ -35713,6 +35756,137 @@
+@@ -35985,6 +36028,137 @@
      esac
    done
  
@@ -223,20 +223,9 @@
 +  done
 +
    echo $ac_n "checking for gdCacheCreate in -lgd""... $ac_c" 1>&6
- echo "configure:35718: checking for gdCacheCreate in -lgd" >&5
+ echo "configure:35990: checking for gdCacheCreate in -lgd" >&5
  ac_lib_var=`echo gd'_'gdCacheCreate | sed 'y%./+-%__p_%'`
-@@ -57066,8 +57240,8 @@
-   
-   echo $ac_n "checking Oracle version""... $ac_c" 1>&6
- echo "configure:59505: checking Oracle version" >&5
--  if test -s "$ORACLE_DIR/orainst/unix.rgs"; then
--  	ORACLE_VERSION=`grep '"ocommon"' $ORACLE_DIR/orainst/unix.rgs | sed 's/  */:/g' | cut -d: -f 6 | cut -c 2-4`
-+  if test -s "$ORACLE_DIR/ocommon/install/partial.prd"; then
-+  	ORACLE_VERSION=`grep '"ocommon"' $ORACLE_DIR/ocommon/install/partial.prd | sed 's/  */:/g' | cut -d: -f 6 | cut -c 2-4`
- 	test -z "$ORACLE_VERSION" && ORACLE_VERSION=7.3
-   elif test -f $ORACLE_DIR/lib/libclntsh.$SHLIB_SUFFIX_NAME.9.0; then
-     ORACLE_VERSION=9.0
-@@ -58359,6 +58533,102 @@
+@@ -60181,6 +60355,102 @@
  	    
  
    if test "$ext_shared" = "yes"; then
@@ -339,7 +328,7 @@
      ORACLE_SHARED_LIBADD="-lnlsrtl3 $ORACLE_SHARED_LIBADD"
      if test -n "$ORACLE_DIR/lib"; then
        
-@@ -77889,29 +78159,6 @@
+@@ -79683,29 +79953,6 @@
    else
      
    
@@ -369,7 +358,7 @@
    case ct in
    c|c_r|pthread*) ;;
    *) 
-@@ -77935,52 +78182,7 @@
+@@ -79729,52 +79976,7 @@
  
      
    
@@ -423,10 +412,21 @@
    
      
    save_old_LDFLAGS=$LDFLAGS
-@@ -78126,38 +78328,6 @@
- 
-     
-   
+@@ -79909,38 +80111,6 @@
+   c|c_r|pthread*) ;;
+   *) 
+       LIBS="-ltcl $LIBS" 
+-   ;;
+-  esac
+-
+-
+-    fi
+-   ;;
+-  esac
+-
+-
+-    
+-  
 -else
 -  echo "$ac_t""no" 1>&6
 -
@@ -448,29 +448,6 @@
 -  c|c_r|pthread*) ;;
 -  *) 
 -      LIBS="-lsybtcl $LIBS" 
--   ;;
--  esac
--
--
--    fi
--   ;;
--  esac
--
--
--    
--  
- fi
+    ;;
+   esac
  
-   
-@@ -89822,10 +89992,7 @@
- CXXFLAGS="$CXXFLAGS $standard_libtool_flag"
- 
- all_targets='$(OVERALL_TARGET) $(PHP_MODULES) $(PHP_CLI_TARGET)'
--install_targets="install-sapi install-modules $install_pear install-build install-headers install-programs"
--if test "$PHP_SAPI" != "cgi"; then
--  install_targets="$PHP_INSTALL_CLI_TARGET $install_targets"
--fi
-+install_targets="install-sapi $PHP_INSTALL_CLI_TARGET install-modules $install_pear install-build install-headers install-programs"
- 
- 
-   PHP_VAR_SUBST="$PHP_VAR_SUBST all_targets"

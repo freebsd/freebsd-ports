@@ -20,8 +20,8 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	5.0.0.a3
-PORTREVISION=	2
+PORTVERSION=	5.0.0.a4
+PORTREVISION=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/:release \
 		http://it.php.net/distributions/:release \
@@ -48,7 +48,7 @@ DISTNAME=	php-${PORTVERSION:S/.a/a/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:rc
 
 MAINTAINER?=	sysadmin@alexdupre.com
-COMMENT=	PHP Scripting Language (Apache Module and CLI)
+COMMENT?=	PHP Scripting Language (Apache Module and CLI)
 .if defined(WITHOUT_APACHE)
 .if defined(WITHOUT_CLI)
 COMMENT=	PHP Common Gateway Interface
@@ -65,6 +65,7 @@ USE_BZIP2=	yes
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_BISON=	yes
+USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--enable-versioning \
 		--enable-memory-limit \
@@ -106,7 +107,11 @@ CONFLICTS=	php5-5* php5-cli-5* php5-cgi-5*
 CONFLICTS+=	php4-4* php4-cli-4* mod_php4-4* php4-cgi-4*
 
 .if defined(WITHOUT_APACHE)
+.if defined(WITHOUT_CLI)
 CONFIGURE_ARGS+=--enable-discard-path
+.else
+CONFIGURE_ARGS+=--disable-cgi
+.endif
 PLIST_SUB+=	APACHE="@comment "
 .else
 PLIST_SUB+=	APACHE=""
@@ -130,11 +135,11 @@ SAPI_FILE=	"bin/php"
 
 ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DB4 DBASE DBX DOM \
 		EXIF FILEPRO FTP GD GDBM GETTEXT GMP ICONV IMAP INTERBASE \
-		INIFILE MBSTRING MCAL MCVE MCRYPT MHASH MIME MING MNOGOSEARCH \
+		INIFILE MBSTRING MCVE MCRYPT MHASH MIME MING MNOGOSEARCH \
 		MYSQL NCURSES OPENLDAP OPENSSL ORACLE PCNTL PCRE PDFLIB POSIX \
 		POSTGRESQL PSPELL READLINE RECODE SESSION SHMOP SIMPLEXML SNMP \
-		SOCKETS SQLITE SYBASEDB SYBASECT SYSVSEM SYSVSHM TOKENIZER \
-		UNIXODBC WDDX XML XMLRPC XSL YAZ YP ZLIB
+		SOCKETS SQLITE SYBASEDB SYBASECT SYSVSEM SYSVSHM TIDY \
+		TOKENIZER UNIXODBC WDDX XML XMLRPC XSL YAZ YP ZLIB
 
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt}) || defined(WITHOUT_${opt})
@@ -174,6 +179,11 @@ SCRIPTS_ENV+=	SEL_OPTIONS="${SEL_OPTIONS}" \
 
 .if exists(${WRKDIR}/Makefile.inc)
 .include "${WRKDIR}/Makefile.inc"
+.endif
+
+.if !defined(WITHOUT_CLI) && !defined(WITHOUT_PEAR)
+WITH_PCRE=	yes
+WITH_XML=	yes
 .endif
 
 .if defined(WITH_CDB) || defined(WITH_DB4) || defined(WITH_GDBM) || defined(WITH_INIFILE)
@@ -326,11 +336,6 @@ CONFIGURE_ARGS+=--with-interbase=${LOCALBASE}/firebird
 CONFIGURE_ARGS+=--enable-mbstring
 .endif
 
-.if defined(WITH_MCAL)
-LIB_DEPENDS+=	mcal.0:${PORTSDIR}/misc/libmcal
-CONFIGURE_ARGS+=--with-mcal=${LOCALBASE}
-.endif
-
 .if defined(WITH_MCVE)
 LIB_DEPENDS+=	mcve.3:${PORTSDIR}/devel/libmcve
 CONFIGURE_ARGS+=--with-mcve=${LOCALBASE}
@@ -462,6 +467,11 @@ CONFIGURE_ARGS+=--enable-sysvsem
 CONFIGURE_ARGS+=--enable-sysvshm
 .endif
 
+.if defined(WITH_TIDY)
+LIB_DEPENDS+=	tidy-0.99.0:${PORTSDIR}/www/tidy-lib
+CONFIGURE_ARGS+=--with-tidy=${LOCALBASE}
+.endif
+
 .if defined(WITH_TOKENIZER)
 CONFIGURE_ARGS+=--enable-tokenizer
 .endif
@@ -531,8 +541,7 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 .endif
 
-PLIST_SUB+=	SAPI_FILE=${SAPI_FILE} \
-		EXT_DIR=${EXT_DIR}
+PLIST_SUB+=	SAPI_FILE=${SAPI_FILE}
 
 .if ${OSVERSION} < 400014 || defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--disable-ipv6
@@ -579,6 +588,8 @@ pre-patch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
 
 post-patch:
+	@${REINPLACE_CMD} -e "s|orainst/unix.rgs|ocommon/install/partial.prd|g" \
+		${WRKSRC}/configure
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/pear/scripts/pearcmd.php > ${WRKSRC}/pear/scripts/pear
 
@@ -603,11 +614,6 @@ pre-configure:
 .if defined(WITH_GD) && !defined(WITH_LZW)
 	@${ECHO_CMD} "To enable LZW-compressed GIF support in GD define the WITH_LZW knob."
 	@${ECHO_CMD} ""
-.endif
-.if !defined(WITHOUT_CLI) && !defined(WITHOUT_PEAR) && (!defined(WITH_PCRE) || !defined(WITH_XML))
-	@${ECHO_CMD} "PEAR requires PCRE and XML extensions."
-	@${ECHO_CMD} "Define the WITHOUT_PEAR knob or enable these extensions."
-	@${FALSE}
 .endif
 .if !defined(WITHOUT_APACHE) && !defined(WITHOUT_CLI)
 	@${ECHO_CMD} "You are building the Apache Module and the Command Line Interpreter of PHP."
@@ -662,8 +668,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-recommended ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKDIR}/php.conf ${PREFIX}/etc
-	@${TOUCH} ${PREFIX}/lib/php/${EXT_DIR}/.php
-	@${TOUCH} ${PREFIX}/include/php/ext/xml/expat/.php
 .if !defined(WITHOUT_APACHE)
 	@${ECHO_CMD} "*****************************************************************************"
 	@${ECHO_CMD} ""
