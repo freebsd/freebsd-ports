@@ -24,6 +24,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/games/quake3/q3ded:${Q3SERVER_PORT}
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
+USE_PERL5=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
 .if (${PORTNAME}==ra3)
