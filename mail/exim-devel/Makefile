@@ -1,9 +1,9 @@
 # New ports collection makefile for:	exim
-# Version required:	2.02
+# Version required:	2.05
 # Date created:		23 June 1996
 # Whom:			axl@iafrica.com
 #
-# $Id: Makefile,v 1.14 1998/10/07 10:49:31 markm Exp $
+# $Id: Makefile,v 1.15 1998/10/08 14:31:03 markm Exp $
 #
 
 DISTNAME=	exim-2.05
