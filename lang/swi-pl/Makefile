@@ -35,6 +35,10 @@ PLIST_SUB+=	BITS=64
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-configure
 .endif
 
+.if ${ARCH} != "i386"
+BROKEN=		"Broken pkg-plist"
+.endif
+
 post-install:
 .for f in pl plld plrc
 	@${STRIP_CMD} ${PREFIX}/lib/${DISTNAME}/bin/${ARCH}-${OPSYS:L}/$f
