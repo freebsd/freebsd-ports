@@ -6,10 +6,10 @@ bin/etags
 bin/xxd
 @comment bin/ex
 @comment bin/gex
-@comment bin/gview
+bin/gview
 bin/gvim
-@comment bin/rgview
-@comment bin/rgvim
+bin/rgview
+bin/rgvim
 bin/rview
 bin/rvim
 @comment bin/view
