@@ -1,0 +1,11 @@
+--- mixerControls.c.orig	Sat Sep  7 16:58:58 2002
++++ mixerControls.c	Sat Sep  7 16:59:43 2002
+@@ -11,7 +11,7 @@
+ #include "mixerControls.h"
+ #include "muuztypes.h"
+ #ifdef __FreeBSD__
+-#include <machine/soundcard.h>
++#include <sys/soundcard.h>
+ #endif /* __FreeBSD__ */
+ #include "copyright.h"
+ #include "errMessage.h"
