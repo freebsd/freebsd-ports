@@ -1,0 +1,18 @@
+bin/kismet
+bin/kismet_client
+bin/kismet_drone
+bin/kismet_server
+etc/ap_manuf
+etc/client_manuf
+@unexec if cmp -s %D/etc/kismet.conf %D/etc/kismet.conf.sample; then rm -f %D/etc/kismet.conf; fi
+etc/kismet.conf.sample
+@unexec if cmp -s %D/etc/kismet_drone.conf %D/etc/kismet_drone.conf.sample; then rm -f %D/etc/kismet_drone.conf; fi
+etc/kismet_drone.conf.sample
+@unexec if cmp -s %D/etc/kismet_ui.conf %D/etc/kismet_ui.conf.sample; then rm -f %D/etc/kismet_ui.conf; fi
+etc/kismet_ui.conf.sample
+share/kismet/wav/alert.wav
+share/kismet/wav/junk_traffic.wav
+share/kismet/wav/new_network.wav
+share/kismet/wav/traffic.wav
+@dirrm share/kismet/wav
+@dirrm share/kismet

@@ -63,6 +63,7 @@
     SUBDIR += irrtoolset
     SUBDIR += isic
     SUBDIR += junipoll
+    SUBDIR += kismet
     SUBDIR += knowlan
     SUBDIR += libsmi
     SUBDIR += mbrowse
