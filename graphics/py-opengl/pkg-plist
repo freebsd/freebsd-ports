@@ -1,140 +1,190 @@
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/da/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/da/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/da/dots.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/da/dots.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/MandelImage.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/MandelImage.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/OglSurface/1crn.face
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/OglSurface/1crn.pdb
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/OglSurface/1crn.vert
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/OglSurface/1crn.xyzr
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/OglSurface/Geometry.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/OglSurface/Geometry.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/OglSurface/NumericPDB.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/OglSurface/NumericPDB.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/OglSurface/OglFrame.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/OglSurface/OglFrame.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/OglSurface/README
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/OglSurface/test.ppm
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/OglSurface/triangle.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/OglSurface/triangle.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/PILNumeric.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/PILNumeric.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/README
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/image.ppm
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/texturesurf.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/texturesurf.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/texturesurf2.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/texturesurf2.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/tile.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/tile.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/Images/cowbaby.ppm
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/Images/textile.ppm
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/README
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/att_obj.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/att_obj.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/attention.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/attention.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/compass.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/compass.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/cursor.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/cursor.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/objex.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/objex.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/oglpm.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/oglpm.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/ogltex.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/ogltex.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/renderer.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/renderer.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/room.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/room.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/sropengl.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/sropengl.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/tablet.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/tablet.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/trees.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/trees.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/Line.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/Line.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/arraytest.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/arraytest.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/checker.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/checker.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/cone.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/cone.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/conechecker.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/conechecker.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/conesave.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/conesave.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/demo.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/demo.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/first.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/first.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/fog.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/fog.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/logo.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/logo.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/lorentz.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/lorentz.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/pick.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/pick.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/poly.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/poly.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/text.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom/text.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/GL/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/GL/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/GL/glconst.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/GL/glconst.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/GL/wglconst.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/GL/wglconst.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/GLU/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/GLU/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/GLU/gluconst.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/GLU/gluconst.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/GLUT/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/GLUT/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/GLUT/glutconst.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/GLUT/glutconst.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Tk/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Tk/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Tk/freebsd%%OSMAJOR%%-tk8.3/Togl.so
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Tk/freebsd%%OSMAJOR%%-tk8.3/pkgIndex.tcl
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/doc/license.txt
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/doc/readme.txt
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/doc/releasenotes.txt
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/doc/todo.txt
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/freebsd%%OSMAJOR%%/_glu.so
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/freebsd%%OSMAJOR%%/_glu_num.so
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/freebsd%%OSMAJOR%%/_glut.so
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/freebsd%%OSMAJOR%%/_opengl.so
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/freebsd%%OSMAJOR%%/_opengl_num.so
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/freebsd%%OSMAJOR%%/openglutil.so
-lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/freebsd%%OSMAJOR%%/openglutil_num.so
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/freebsd%%OSMAJOR%%
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/doc
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Tk/freebsd%%OSMAJOR%%-tk8.3
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Tk
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/GLUT
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/GLU
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/GL
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/tom
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner/Images
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/srenner
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek/OglSurface
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/dek
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo/da
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Demo
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/__init__.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/da/__init__.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/da/__init__.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/da/__init__.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/da/dots.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/da/dots.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/da/dots.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/MandelImage.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/MandelImage.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/MandelImage.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface/1crn.face
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface/1crn.pdb
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface/1crn.vert
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface/1crn.xyzr
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface/Geometry.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface/Geometry.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface/Geometry.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface/NumericPDB.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface/NumericPDB.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface/NumericPDB.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface/OglFrame.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface/OglFrame.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface/OglFrame.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface/README
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface/test.ppm
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface/triangle.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface/triangle.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface/triangle.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/PILNumeric.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/PILNumeric.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/PILNumeric.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/README
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/__init__.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/__init__.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/__init__.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/image.ppm
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/texturesurf.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/texturesurf.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/texturesurf.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/texturesurf2.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/texturesurf2.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/texturesurf2.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/tile.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/tile.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/tile.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/Images/cowbaby.ppm
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/Images/textile.ppm
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/README
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/att_obj.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/att_obj.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/att_obj.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/attention.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/attention.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/attention.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/compass.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/compass.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/compass.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/cursor.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/cursor.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/cursor.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/objex.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/objex.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/objex.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/oglpm.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/oglpm.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/oglpm.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/ogltex.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/ogltex.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/ogltex.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/renderer.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/renderer.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/renderer.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/room.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/room.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/room.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/sropengl.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/sropengl.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/sropengl.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/tablet.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/tablet.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/tablet.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/trees.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/trees.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/trees.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/Line.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/Line.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/Line.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/__init__.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/__init__.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/__init__.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/arraytest.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/arraytest.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/arraytest.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/checker.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/checker.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/checker.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/cone.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/cone.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/cone.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/conechecker.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/conechecker.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/conechecker.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/conesave.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/conesave.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/conesave.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/demo.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/demo.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/demo.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/first.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/first.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/first.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/fog.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/fog.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/fog.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/logo.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/logo.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/logo.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/lorentz.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/lorentz.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/lorentz.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/pick.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/pick.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/pick.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/poly.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/poly.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/poly.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/text.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/text.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom/text.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/GL/__init__.py
+%%PYTHON_SITELIBDIR%%/OpenGL/GL/__init__.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/GL/__init__.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/GL/glconst.py
+%%PYTHON_SITELIBDIR%%/OpenGL/GL/glconst.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/GL/glconst.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/GL/wglconst.py
+%%PYTHON_SITELIBDIR%%/OpenGL/GL/wglconst.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/GL/wglconst.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/GLU/__init__.py
+%%PYTHON_SITELIBDIR%%/OpenGL/GLU/__init__.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/GLU/__init__.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/GLU/gluconst.py
+%%PYTHON_SITELIBDIR%%/OpenGL/GLU/gluconst.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/GLU/gluconst.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/GLUT/__init__.py
+%%PYTHON_SITELIBDIR%%/OpenGL/GLUT/__init__.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/GLUT/__init__.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/GLUT/glutconst.py
+%%PYTHON_SITELIBDIR%%/OpenGL/GLUT/glutconst.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/GLUT/glutconst.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Tk/__init__.py
+%%PYTHON_SITELIBDIR%%/OpenGL/Tk/__init__.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/Tk/__init__.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/Tk/freebsd%%OSMAJOR%%-tk8.3/Togl.so
+%%PYTHON_SITELIBDIR%%/OpenGL/Tk/freebsd%%OSMAJOR%%-tk8.3/pkgIndex.tcl
+%%PYTHON_SITELIBDIR%%/OpenGL/__init__.py
+%%PYTHON_SITELIBDIR%%/OpenGL/__init__.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/__init__.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/doc/license.txt
+%%PYTHON_SITELIBDIR%%/OpenGL/doc/readme.txt
+%%PYTHON_SITELIBDIR%%/OpenGL/doc/releasenotes.txt
+%%PYTHON_SITELIBDIR%%/OpenGL/doc/todo.txt
+%%PYTHON_SITELIBDIR%%/OpenGL/dynload/__init__.py
+%%PYTHON_SITELIBDIR%%/OpenGL/dynload/__init__.pyc
+%%PYTHON_SITELIBDIR%%/OpenGL/dynload/__init__.pyo
+%%PYTHON_SITELIBDIR%%/OpenGL/dynload/freebsd%%OSMAJOR%%/_glu.so
+%%PYTHON_SITELIBDIR%%/OpenGL/dynload/freebsd%%OSMAJOR%%/_glu_num.so
+%%PYTHON_SITELIBDIR%%/OpenGL/dynload/freebsd%%OSMAJOR%%/_glut.so
+%%PYTHON_SITELIBDIR%%/OpenGL/dynload/freebsd%%OSMAJOR%%/_opengl.so
+%%PYTHON_SITELIBDIR%%/OpenGL/dynload/freebsd%%OSMAJOR%%/_opengl_num.so
+%%PYTHON_SITELIBDIR%%/OpenGL/dynload/freebsd%%OSMAJOR%%/openglutil.so
+%%PYTHON_SITELIBDIR%%/OpenGL/dynload/freebsd%%OSMAJOR%%/openglutil_num.so
+@dirrm %%PYTHON_SITELIBDIR%%/OpenGL/dynload/freebsd%%OSMAJOR%%
+@dirrm %%PYTHON_SITELIBDIR%%/OpenGL/dynload
+@dirrm %%PYTHON_SITELIBDIR%%/OpenGL/doc
+@dirrm %%PYTHON_SITELIBDIR%%/OpenGL/Tk/freebsd%%OSMAJOR%%-tk8.3
+@dirrm %%PYTHON_SITELIBDIR%%/OpenGL/Tk
+@dirrm %%PYTHON_SITELIBDIR%%/OpenGL/GLUT
+@dirrm %%PYTHON_SITELIBDIR%%/OpenGL/GLU
+@dirrm %%PYTHON_SITELIBDIR%%/OpenGL/GL
+@dirrm %%PYTHON_SITELIBDIR%%/OpenGL/Demo/tom
+@dirrm %%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner/Images
+@dirrm %%PYTHON_SITELIBDIR%%/OpenGL/Demo/srenner
+@dirrm %%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek/OglSurface
+@dirrm %%PYTHON_SITELIBDIR%%/OpenGL/Demo/dek
+@dirrm %%PYTHON_SITELIBDIR%%/OpenGL/Demo/da
+@dirrm %%PYTHON_SITELIBDIR%%/OpenGL/Demo
+@dirrm %%PYTHON_SITELIBDIR%%/OpenGL
