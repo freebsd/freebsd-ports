@@ -9164,6 +9164,7 @@ py-pcap	ports/net/py-pcap
 py-period	ports/devel/py-period
 py-pexpect	ports/misc/py-pexpect
 py-plex		ports/devel/py-plex
+py-pmock	ports/devel/py-pmock
 py-posix1e	ports/security/py-posix1e
 py-pow		ports/security/py-pow
 py-pqueue	ports/devel/py-pqueue
