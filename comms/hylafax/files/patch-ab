@@ -1,32 +1,27 @@
-This patch prepared by Julian Stacey <jhs@FreeBSD.Org
-
-Make this a BATCH compilable port, instead of IS_INTERACTIVE
-
-Warning before removing or renaming this patch,
-consult this code segment in ../Makefile:
-	.if !exists(patches/patch-aa)
-	IS_INTERACTIVE= yes  
-	.endif
-
-*** configure	Sat May 20 16:30:29 1995
---- configure	Sat May 20 16:58:58 1995
-***************
-*** 2889,2895 ****
-  	fi
-  	checkForExecutable $PATH_SENDMAIL
-  	checkForExecutable $PATH_GETTY
-! 	printConfig; prompt "Are these ok [yes]?"; read ok
-  	test -z "$ok" && ok=yes
-  	case "$ok" in
-  	[1-9]|1[0-7])	promptForParameter $ok;;
---- 2889,2898 ----
-  	fi
-  	checkForExecutable $PATH_SENDMAIL
-  	checkForExecutable $PATH_GETTY
-! 	printConfig
-! 	ok=yes	
-! 	echo "If you do not like this config, uncomment next prompt line in configure."
-! 	# prompt "Are these ok [yes]?"; read ok
-  	test -z "$ok" && ok=yes
-  	case "$ok" in
-  	[1-9]|1[0-7])	promptForParameter $ok;;
+--- ./configure.org	Tue Nov 26 15:20:17 1996
++++ ./configure	Wed May 28 21:55:16 1997
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/local/bin/bash
+ #	$Id: configure,v 1.401 1996/11/23 17:28:45 sam Rel $
+ #
+ # HylaFAX Facsimile Software
+@@ -239,7 +241,7 @@
+ test -d /usr/ucb && PATH=$PATH:/usr/ucb			# Sun and others
+ test -d /usr/contrib/bin && PATH=$PATH:/usr/contrib/bin	# BSDi
+ test -d /usr/5bin && PATH=/usr/5bin:$PATH:/usr/etc	# Sun and others
+-test -d /usr/local/bin && PATH=/usr/local/bin:$PATH	# for GNU stuff
++test -d /usr/local/bin && PATH=$PATH:/usr/local/bin	# for GNU stuff
+ PATH=$PATH:$OPATH
+ 
+ POSIXLY_CORRECT=1; export POSIXLY_CORRECT		# disable GNU extensions
+@@ -3928,7 +3930,8 @@
+ 	printConfig
+ 	checkForExecutable $PATH_SENDMAIL
+ 	checkForExecutable $PATH_GETTY
+-	prompt "Are these ok [yes]?"; read ok
++#	prompt "Are these ok [yes]?"; read ok
++	ok=yes
+ 	test -z "$ok" && ok=yes
+ 	case "$ok" in
+ 	[1-9]|1[0-9])	promptForParameter $ok;;

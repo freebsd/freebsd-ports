@@ -1,0 +1,9 @@
+#! /bin/sh 
+# hylafax startup example. 
+# be sure to initialize the followings: 
+#   server: /usr/local/sbin/faxsetup 
+#   modems: /usr/local/sbin/faxaddmodem 
+#   incoming calls: /etc/ttys 
+if [ -x /usr/local/sbin/faxq ]; then 
+	/usr/local/sbin/faxq && echo -n ' hylafax' 
+fi
