@@ -1,9 +1,10 @@
 bin/poedit
+share/poedit/help.zip
+share/poedit/resources.zip
+@dirrm share/poedit
+share/locale/cs/LC_MESSAGES/poedit.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/poedit.mo
 %%GNOME:%%share/gnome/apps/Development/poedit.desktop
 %%GNOME:%%share/gnome/mime-info/poedit.keys
 %%GNOME:%%share/gnome/mime-info/poedit.mime
 %%GNOME:%%share/gnome/pixmaps/poedit.xpm
-%%GNOME:%%share/gnome/poedit/help.zip
-%%GNOME:%%share/gnome/poedit/resources.zip
-%%GNOME:%%share/gnome/locale/cs/LC_MESSAGES/poedit.mo
-%%GNOME:%%@dirrm share/gnome/poedit
