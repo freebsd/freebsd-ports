@@ -384,53 +384,53 @@ share/groff/%%GROFF_VERSION%%/tmac/tty.tmac
 share/groff/%%GROFF_VERSION%%/tmac/www.tmac
 share/groff/site-tmac/man.local
 share/groff/site-tmac/mdoc.local
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/README.mom
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/elvis_syntax
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/grnexmpl.g
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/grnexmpl.me
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/grnexmpl.ps
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/letter.mom
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/letter.ps
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/macros.mom
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/macros.ps
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/penguin.ps
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/typeset.mom
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/typeset.ps
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/typewrite.mom
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/typewrite.ps
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/webpage.ms
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/examples/webpage.ps
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/appendices.html
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/cover.html
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/definitions.html
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/docelement.html
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/docprocessing.html
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/goodies.html
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/headfootpage.html
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/inlines.html
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/intro.html
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/letters.html
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/rectoverso.html
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/reserved.html
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/toc.html
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/typemacdoc.html
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/typesetting.html
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/html/momdoc/using.html
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/meintro.me
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/meintro.ps
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/meref.me
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/meref.ps
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/pic.ms
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/pic.ps
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/ChangeLog.jp
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/NEWS
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/PROBLEMS
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/README
-%%PORTDOCS%%share/doc/groff/%%GROFF_VERSION%%/README.jp
-%%PORTDOCS%%@dirrm share/doc/groff/%%GROFF_VERSION%%/examples
-%%PORTDOCS%%@dirrm share/doc/groff/%%GROFF_VERSION%%/html/momdoc
-%%PORTDOCS%%@dirrm share/doc/groff/%%GROFF_VERSION%%/html
-%%PORTDOCS%%@dirrm share/doc/groff/%%GROFF_VERSION%%
+%%PORTDOCS%%%%DOCSDIR%%/examples/README.mom
+%%PORTDOCS%%%%DOCSDIR%%/examples/elvis_syntax
+%%PORTDOCS%%%%DOCSDIR%%/examples/grnexmpl.g
+%%PORTDOCS%%%%DOCSDIR%%/examples/grnexmpl.me
+%%PORTDOCS%%%%DOCSDIR%%/examples/grnexmpl.ps
+%%PORTDOCS%%%%DOCSDIR%%/examples/letter.mom
+%%PORTDOCS%%%%DOCSDIR%%/examples/letter.ps
+%%PORTDOCS%%%%DOCSDIR%%/examples/macros.mom
+%%PORTDOCS%%%%DOCSDIR%%/examples/macros.ps
+%%PORTDOCS%%%%DOCSDIR%%/examples/penguin.ps
+%%PORTDOCS%%%%DOCSDIR%%/examples/typeset.mom
+%%PORTDOCS%%%%DOCSDIR%%/examples/typeset.ps
+%%PORTDOCS%%%%DOCSDIR%%/examples/typewrite.mom
+%%PORTDOCS%%%%DOCSDIR%%/examples/typewrite.ps
+%%PORTDOCS%%%%DOCSDIR%%/examples/webpage.ms
+%%PORTDOCS%%%%DOCSDIR%%/examples/webpage.ps
+%%PORTDOCS%%%%DOCSDIR%%/html/momdoc/appendices.html
+%%PORTDOCS%%%%DOCSDIR%%/html/momdoc/cover.html
+%%PORTDOCS%%%%DOCSDIR%%/html/momdoc/definitions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/momdoc/docelement.html
+%%PORTDOCS%%%%DOCSDIR%%/html/momdoc/docprocessing.html
+%%PORTDOCS%%%%DOCSDIR%%/html/momdoc/goodies.html
+%%PORTDOCS%%%%DOCSDIR%%/html/momdoc/headfootpage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/momdoc/inlines.html
+%%PORTDOCS%%%%DOCSDIR%%/html/momdoc/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/momdoc/letters.html
+%%PORTDOCS%%%%DOCSDIR%%/html/momdoc/rectoverso.html
+%%PORTDOCS%%%%DOCSDIR%%/html/momdoc/reserved.html
+%%PORTDOCS%%%%DOCSDIR%%/html/momdoc/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/momdoc/typemacdoc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/momdoc/typesetting.html
+%%PORTDOCS%%%%DOCSDIR%%/html/momdoc/using.html
+%%PORTDOCS%%%%DOCSDIR%%/meintro.me
+%%PORTDOCS%%%%DOCSDIR%%/meintro.ps
+%%PORTDOCS%%%%DOCSDIR%%/meref.me
+%%PORTDOCS%%%%DOCSDIR%%/meref.ps
+%%PORTDOCS%%%%DOCSDIR%%/pic.ms
+%%PORTDOCS%%%%DOCSDIR%%/pic.ps
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.jp
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/PROBLEMS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.jp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/momdoc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm share/doc/groff
 @exec mkdir -p %D/lib/groff/site-tmac
 @dirrm lib/groff/site-tmac
