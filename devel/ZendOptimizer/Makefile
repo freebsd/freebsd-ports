@@ -7,6 +7,7 @@
 
 PORTNAME=	ZendOptimizer
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}-FreeBSD${VER}-i386
 
@@ -47,11 +48,12 @@ and place it in ${DISTDIR}.\n
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
+	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}/Optimizer/php-4.3.x
 	${INSTALL_DATA} ${WRKSRC}/data/4_3_x_comp/ZendOptimizer.so \
-		${PREFIX}/lib/php/${PHP_EXT_DIR}/ZendOptimizer.so
+		${PREFIX}/lib/php/${PHP_EXT_DIR}/Optimizer/php-4.3.x/ZendOptimizer.so
+	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}/Optimizer_TS/php-4.3.x
 	${INSTALL_DATA} ${WRKSRC}/data/4_3_x_comp/TS/ZendOptimizer.so \
-		${PREFIX}/lib/php/${PHP_EXT_DIR}/ZendOptimizer_TS.so
+		${PREFIX}/lib/php/${PHP_EXT_DIR}/Optimizer_TS/php-4.3.x/ZendOptimizer.so
 	${INSTALL_DATA} ${WRKSRC}/data/ZendExtensionManager.so \
 		${PREFIX}/lib/php/${PHP_EXT_DIR}
 	${INSTALL_DATA} ${WRKSRC}/data/ZendExtensionManager_TS.so \
