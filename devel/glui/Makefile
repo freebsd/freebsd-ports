@@ -15,8 +15,9 @@ DISTNAME=	glui_v2_1_beta
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GLUT-based C++ user interface library
 
-USE_MESA=	yes
+LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
 
+USE_GL=		yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	# empty
