@@ -1,0 +1,4 @@
+bin/cal
+etc/cal/calcol
+etc/cal/caldat
+man/man1/cal.1.gz

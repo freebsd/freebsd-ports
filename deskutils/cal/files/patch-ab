@@ -1,0 +1,29 @@
+*** cal.c	Thu Dec 28 05:43:12 1995
+--- /home/andy/ports/cal/src/source/cal.c	Sat Jun 22 15:47:26 1996
+***************
+*** 128,133 ****
+--- 128,137 ----
+  #define stricmp(a,b) strcasecmp(a,b) /* case-insensitive string comparison */
+  #endif
+  
++ #ifdef __FreeBSD__        /* Make FreeBSD compatible with stricmp() */
++ #define stricmp(a,b) strcasecmp(a,b) /* case-insensitive string comparison */
++ #endif
++ 
+  #ifdef __ZTC__            /* make Zortech compatible with stricmp() */
+  #define stricmp(a,b) strcmpl(a,b) /* case-insensitive string comparison */
+  #endif /* __ZTC__ */
+***************
+*** 1090,1096 ****
+--- 1094,1104 ----
+         strcpy(str, file);
+         if ((fp = fopen(str, mode)) == NULL) {
+            /* If still not found then look in a lib directory */
++ #ifdef PREFIX
++           strcpy(str, PREFIX "/etc/cal/");
++ #else
+            strcpy(str, "/usr/lib/");
++ #endif
+            strcat(str,file);
+            fp = fopen(str, mode);
+            }
