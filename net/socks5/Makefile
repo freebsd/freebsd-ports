@@ -3,11 +3,11 @@
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
-# $Id: Makefile,v 1.22 1999/01/06 03:59:14 obrien Exp $
+# $Id: Makefile,v 1.23 1999/01/06 04:49:29 imp Exp $
 #
 
-DISTNAME=	socks5-v1.0r8
-PKGNAME=	socks5-1.0.8
+DISTNAME=	socks5-v1.0r9
+PKGNAME=	socks5-1.0.9
 CATEGORIES=	net security
 EXTRACT_SUFX=	.tar.gz
 
