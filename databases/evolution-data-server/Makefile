@@ -7,6 +7,7 @@
 
 PORTNAME=	evolution-data-server
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2
@@ -50,6 +51,18 @@ USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-openldap=yes
 .else
 CONFIGURE_ARGS+=--with-openldap=no
+.endif
+
+.if ${OSVERSION} >= 500000 && !defined(NO_KERBEROS) && \
+	exists(/usr/lib/libkrb5.so)
+CONFIGURE_ARGS+=	--with-krb5=/usr
+.else
+LIB_DEPENDS+=		krb5:${PORTSDIR}/security/heimdal
+.if defined(HEIMDAL_HOME)
+CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME} --with-krb5-includes=${HEIMDAL_HOME}/include
+.else
+CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
+.endif
 .endif
 
 pre-everything::
