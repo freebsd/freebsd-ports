@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	milter-sender
-PORTVERSION=	0.57
+PORTVERSION=	0.58
 CATEGORIES=	mail
 MASTER_SITES=	http://www.snert.com/Software/download/
-DISTFILES=	libsnert-1.34.tgz milter-sender-${PORTVERSION}.tgz
+DISTFILES=	libsnert-1.36.tgz milter-sender-${PORTVERSION}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time sender address verification, based on Milter API
@@ -73,11 +73,5 @@ post-install:
 	${INSTALL_DATA} *.gif *.png ${DOCSDIR}/Img
 .endif
 	@${CAT} ${PKGMESSAGE}
-
-post-deinstall:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Do not forget to delete the filter description from /etc/mail/YOUR-CONF.mc"
-	@${ECHO_MSG} "and rebuild sendmail.cf file!"
-	@${ECHO_MSG} ""
 
 .include <bsd.port.post.mk>
