@@ -30,6 +30,12 @@ MAN1=		elk.1
 CPPFLAGS=	-I${LOCALBASE}/include/libelf -I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build"
+.endif
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/elk.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
@@ -39,4 +45,4 @@ post-install:
 	@${CHOWN} -R ${SHAREMODE}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
