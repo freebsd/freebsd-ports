@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	utf8locale
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	misc
 MASTER_SITES= 	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~perky/distfiles/
@@ -14,10 +14,14 @@ MASTER_SITE_SUBDIR=	perky
 
 MAINTAINER=	perky@FreeBSD.org
 
-LANGS=		en_US ko_KR ja_JP ru_RU zh_CN zh_TW
+LANGS=		af_ZA bg_BG cs_CZ da_DK de_AT de_CH de_DE el_GR en_AU en_CA \
+		en_GB en_NZ en_US es_ES et_EE fi_FI fr_BE fr_CA fr_FR hr_HR \
+		hu_HU is_IS it_IT ja_JP ko_KR nl_BE nl_NL no_NO pl_PL pt_BR \
+		pt_PT ro_RO ru_RU sk_SK sl_SI sv_SE tr_TR uk_UA zh_CN zh_TW
 BASELOCALEDIR=	${DESTDIR}/usr/share/locale
 PLIST_SUB=	BASELOCALEDIR=${BASELOCALEDIR} \
 		LANGS="${LANGS}"
+PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
 
@@ -26,6 +30,16 @@ _HAVE_SWIDTH!=	${GREP} _CTYPE_SW ${DESTDIR}/usr/include/ctype.h 2>/dev/null \
 .if empty(_HAVE_SWIDTH)
 PKGNAMESUFFIX=	-without-swidth
 .endif
+
+pre-install:
+	-@${RM} -f ${PLIST}
+.for lang in ${LANGS}
+.for cate in LC_COLLATE LC_CTYPE LC_MESSAGES LC_MONETARY LC_NUMERIC LC_TIME
+	@${ECHO} "share/locale/${lang}.UTF-8/${cate}" >> ${PLIST}
+.endfor
+	@${ECHO} "@dirrm share/locale/${lang}.UTF-8" >> ${PLIST}
+.endfor
+	@${CAT} ${.CURDIR}/pkg-plist >> ${PLIST}
 
 post-install:
 .for lang in ${LANGS}
