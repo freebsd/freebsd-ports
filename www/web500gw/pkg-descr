@@ -6,7 +6,7 @@ This is an HTTP-to-LDAP gateway:
 |________|          |__________|______|          |________|(        |________|
                       web500gw                     ldapd   (
 
-WWW: http://www.tu-chemnitz.de/web500gw/
+WWW: http://web500gw.sourceforge.net/
 
 Author:  Frank.Richter@hrz.tu-chemnitz.de
 
