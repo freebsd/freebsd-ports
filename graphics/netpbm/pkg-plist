@@ -136,6 +136,7 @@ bin/pnmtoddif
 bin/pnmtofiasco
 bin/pnmtofits
 bin/pnmtojbig
+bin/pnmtojpeg
 bin/pnmtopalm
 bin/pnmtoplainpnm
 bin/pnmtopng
@@ -179,7 +180,6 @@ bin/ppmtoeyuv
 bin/ppmtogif
 bin/ppmtoicr
 bin/ppmtoilbm
-bin/ppmtojpeg
 bin/ppmtoleaf
 bin/ppmtolj
 bin/ppmtomap
