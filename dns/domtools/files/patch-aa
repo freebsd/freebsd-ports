@@ -1,5 +1,5 @@
---- Makefile.old	Wed Aug 16 23:22:00 2000
-+++ Makefile	Wed Aug 16 23:23:05 2000
+--- Makefile.orig      Tue Nov 21 15:24:13 2000
++++ Makefile   Thu Jun 26 17:32:28 2003
 @@ -35,12 +35,12 @@
  # This directory is created, below, if it doesn't exist.
  #	"bin" will put it in $LDEST/bin.
@@ -42,12 +42,12 @@
  #GAWKPROG=awk			# BSDI, Linux
  #GAWKPROG=/usr/local/bin/awk
  
-@@ -233,7 +233,7 @@
+@@ -234,7 +234,7 @@
  		# (Very important for BIND 8 users, because zone file format changed)
  		# No, we don't want the sticky (text) bit set on this directory.
  		-if test $(ZONECACHEWANTED) -eq 1; then \
 -			$(INSTALL) -m 777 $(CHOWNOPT) -g $(GROUP) -d $(PDEST)/$(ZONEDIR); \
 +			$(INSTALL) -m 1777 $(CHOWNOPT) -g $(GROUP) -d $(PDEST)/$(ZONEDIR); \
- 			rm -f $(PDEST)/$(ZONEDIR)/* > /dev/null 2>&1; \
+ 			cd $(PDEST)/$(ZONEDIR) && rm -f * > /dev/null 2>&1; \
  		fi
  		for i in $(LIBS); do \
