@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.46 1996/03/20 22:31:15 jdp Exp $
+# $Id: Makefile,v 1.47 1996/04/12 08:30:51 asami Exp $
 #
 
     SUBDIR += Gofer
@@ -33,5 +33,6 @@
     SUBDIR += tcl75
     SUBDIR += tclX
     SUBDIR += tclX74
+    SUBDIR += tclX75
 
 .include <bsd.port.subdir.mk>
