@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- embedding/config/basebrowser-unix	2001/12/26 07:19:52	1.1
-+++ embedding/config/basebrowser-unix	2001/12/26 07:24:15
+--- embedding/config/basebrowser-unix.orig	Wed Nov 21 00:21:59 2001
++++ embedding/config/basebrowser-unix	Tue Jan 15 15:26:55 2002
 @@ -119,6 +119,7 @@
  
  ; layout
@@ -11,3 +11,22 @@ $FreeBSD$
  components/libgklayout.so                   
  components/libhtmlpars.so                 
  components/libgkview.so                   
+@@ -196,12 +197,12 @@
+ components/unicharutil.xpt
+ components/libchardet.so
+ ; optional - on english only systems
+-; components/libucvja.so for japanese
+-; components/libucvko.so for korean
+-; components/libucvcn.so for simplified chinese
+-; components/libucvtw.so for traditional chinese
+-; components/libucvtw2.so for traditional chinese
+-; components/libucvibm.so for ibm
++components/libucvja.so
++components/libucvko.so
++components/libucvcn.so
++components/libucvtw.so
++components/libucvtw2.so
++components/libucvibm.so
+ 
+ 
+ res/language.properties
