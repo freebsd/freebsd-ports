@@ -970,6 +970,7 @@
     SUBDIR += ruby-racc
     SUBDIR += ruby-rbbr
     SUBDIR += ruby-rbison
+    SUBDIR += ruby-rbprof
     SUBDIR += ruby-rbtree
     SUBDIR += ruby-robjectteam
     SUBDIR += ruby-rreadline
