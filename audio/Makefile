@@ -48,6 +48,7 @@
     SUBDIR += easytag
     SUBDIR += ecasound
     SUBDIR += ecawave
+    SUBDIR += ermixer
     SUBDIR += esound
     SUBDIR += extace
     SUBDIR += faad
