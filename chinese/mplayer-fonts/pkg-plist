@@ -234,3 +234,5 @@ share/mplayer/fonts/gb2312-ming/gbsn00lp24/runme-dbcs
 @dirrm share/mplayer/fonts/gb2312-ming/gbsn00lp24
 @dirrm share/mplayer/fonts/gb2312-ming/gbsn00lp16
 @dirrm share/mplayer/fonts/gb2312-ming
+@dirrm share/mplayer/fonts
+@dirrm share/mplayer
