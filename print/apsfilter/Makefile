@@ -35,8 +35,8 @@ MAKE_ENV+=      NO_X=true
 # define WITH_GHOSTSCRIPT_AFP1=yes for AFPL Postscript interpreter
 # instead of GNU one
 #
-.if defined(WITH_GHOSTSCRIPT_AFP1)
-GSPORT?=	print/ghostscript-afp1
+.if defined(WITH_GHOSTSCRIPT_AFPL)
+GSPORT?=	print/ghostscript-afpl
 .else
 GSPORT?=	print/ghostscript-gnu
 .endif
@@ -134,7 +134,7 @@ PAPERSIZE?=letter
 pre-fetch:
 .if !defined(WITH_GHOSTSCRIPT_AFP1)
 	@${ECHO} ""
-	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFP1=yes to use"
+	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
 	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
 	@${ECHO} ""
 .endif
