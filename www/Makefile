@@ -555,6 +555,7 @@
     SUBDIR += p5-WWW-Search-Google
     SUBDIR += p5-WWW-Shorten
     SUBDIR += p5-WWW-Wikipedia
+    SUBDIR += p5-WebService-Bloglines
     SUBDIR += p5-ldap-abook
     SUBDIR += p5-libapreq
     SUBDIR += p5-libapreq-static
