@@ -1,0 +1,92 @@
+--- Makefile	Thu Jan 15 02:16:07 1998
++++ Makefile	Sun Mar 21 18:04:04 1999
+@@ -1,46 +1,54 @@
+-#CC     = gcc
+-#CFLAGS = -Wall -DPOSIX
++PREFIX?=		/usr/local
+ 
+-CC= cc
+-CFLAGS = -v -DPOSIX
++AR=				/usr/bin/ar
++CC=				/usr/bin/cc
++INSTALL=		/usr/bin/install
++LN=				/bin/ln
++RANLIB=			/usr/bin/ranlib
++
++CFLAGS=			-DPOSIX -O
++LDFLAGS=
++
++INST_INCDIR=	$(PREFIX)/include
++INST_LIBDIR=	$(PREFIX)/lib
++INST_MANDIR=	$(PREFIX)/man
++
++SHLIB_VERSION	= 1
++SHLIB_CFLAGS	= -fpic -DPIC
++SHLIB_LDFLAGS	= -shared
++SHLIB_TGT		= $(INST_LIBDIR)/libgetline.so.$(SHLIB_VERSION)
++SHLIB_TGT_SPEC	= -Wl,-h$(SHLIB_TGT)
++
++all: libgetline.a libgetline.so.$(SHLIB_VERSION)
++
++# try this after installing to check the installed static library
++testgl: libgetline.a testgl.o
++	$(CC) $(LDFLAGS) $(CFLAGS) -o testgl testgl.o -L$(INST_MANDIR) -lgetline
+ 
+-LDFLAGS= 
+-INSTALL_PATH=/usr/local
+-INST_LIBDIR=$(INSTALL_PATH)/lib
+-INST_MANDIR=$(INSTALL_PATH)/man
+-
+-# UDK 
+-SHLIB_CFLAGS= -Kpic
+-SHLIB_LDFLAGS= -G
+-SHLIB_TGT=$(INST_LIBDIR)/libgetline.so
+-SHLIB_TGT_SPEC=-Wl,-h$(SHLIB_TGT)
+-
+-testgl: libgetline.a testgl.o shared
+-	$(CC) $(LDFLAGS) $(CFLAGS) -o testgl testgl.o -L. -lgetline
++testgl.o: testgl.c getline.h
+ 
+ libgetline.a: getline.o
+-	ar cr libgetline.a getline.o
+-	-ranlib libgetline.a
+-
+-shared: testgl_sh
++	$(AR) cr libgetline.a getline.o
++	-$(RANLIB) libgetline.a
+ 
+-testgl_sh: libgetline.so testgl.o
+-	$(CC) $(LDFLAGS) $(CFLAGS) -o testgl_sh testgl.o -L. -lgetline
++getline.o: getline.c getline.h
+ 
+-libgetline.so: getline_sh.o
+-	$(CC) $(SHLIB_LDFLAGS) $(SHLIB_TGT_SPEC) -o libgetline.so getline_sh.o
++libgetline.so.1: getline.So
++	$(CC) $(SHLIB_LDFLAGS) $(SHLIB_TGT_SPEC) -o libgetline.so.1 getline.So
+ 
+-getline_sh.o:
+-	$(CC) -c $(LDFLAGS) $(CFLAGS) $(SHLIB_CFLAGS) -o getline_sh.o getline.c
++getline.So: getline.c getline.h
++	$(CC) -c $(LDFLAGS) $(CFLAGS) $(SHLIB_CFLAGS) -o getline.So getline.c
+ 
+ clean:
+-	rm -f *.o *.a *.so testgl testgl_sh
++	rm -f testgl *.o *.So *.a *.so.1
+ 
+ install:
+-	[ -d $(INST_LIBDIR) ] || mkdir $(INST_LIBDIR)
+-	[ -d $(INST_MANDIR) ] || mkdir $(INST_MANDIR)
+-	[ -d $(INST_MANDIR)/man3 ] || mkdir $(INST_MANDIR)/man3
+-	cp libgetline.a  $(INST_LIBDIR) && chmod 644 $(INST_LIBDIR)/libgetline.a
+-	cp libgetline.so $(INST_LIBDIR) && chmod 444 $(INST_LIBDIR)/libgetline.so
+-	cp getline.3 $(INST_MANDIR)/man3
+-        
++	[ -d $(INST_LIBDIR) ] || $(INSTALL) -d $(INST_LIBDIR)
++	$(INSTALL) -c -g bin -o bin -m 644 libgetline.a libgetline.so.1 \
++		$(INST_LIBDIR)
++	$(LN) -fs $(INST_LIBDIR)/libgetline.so.$(SHLIB_VERSION) \
++		 $(INST_LIBDIR)/libgetline.so
++	[ -d $(INST_MANDIR)/man3 ] || $(INSTALL) -d $(INST_MANDIR)/man3
++	$(INSTALL) -c -g bin -o bin -m 644 getline.3 $(INST_MANDIR)/man3
++	[ -d $(INST_INCDIR) ] || $(INSTALL) -d $(INST_INCDIR)
++	$(INSTALL) -c -g bin -o bin -m 644 getline.h $(INST_INCDIR)
