@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cook
-PORTVERSION=	2.16
+PORTVERSION=	2.17
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} http://www.canb.auug.org.au/~millerp/cook/
@@ -16,7 +16,6 @@ MAINTAINER=	jasone@freebsd.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
-USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 
