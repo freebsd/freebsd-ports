@@ -382,6 +382,7 @@
     SUBDIR += punkbuster-data
     SUBDIR += pvm
     SUBDIR += pvm++
+    SUBDIR += pxe
     SUBDIR += py-adns
     SUBDIR += py-fngrab
     SUBDIR += py-ipy

@@ -1,0 +1,7 @@
+This is a PXE daemon, which you can use to set up a networked boot menu for
+netbooting client machines (FreeBSD, Linux, Windows, etc.) that support &
+utilize Intel's Preboot eXecution Environment (PXE).
+
+WWW: http://www.kano.org.uk/projects/pxe/
+
+- Anders Nordby <anders@FreeBSD.org>

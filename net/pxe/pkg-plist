@@ -1,0 +1,7 @@
+sbin/pxe
+etc/pxe.conf.sample
+%%PORTDOCS%%share/doc/pxe/Changes
+%%PORTDOCS%%share/doc/pxe/INSTALL
+%%PORTDOCS%%share/doc/pxe/LICENCE
+%%PORTDOCS%%share/doc/pxe/README
+%%PORTDOCS%%@dirrm share/doc/pxe
