@@ -9,7 +9,7 @@
 DISTNAME=       baekmuk-0.9.1
 PKGNAME=	ko-baekmukfonts-bdf-0.9.1
 CATEGORIES=	korean x11-fonts
-MASTER_SITES=	ftp://ftp.mizi.co.kr/pub/baekmuk/
+MASTER_SITES=	http://www.FreeBSD.org/~sada/distfiles/
 
 MAINTAINER=	cjh@kr.freebsd.org
 
