@@ -15,6 +15,8 @@ MASTER_SITES=	http://firestuff.org/projects/ \
 MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	A library to make string handling easier in C
 
+BROKEN=		"Installs libraries into /usr/lib"
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	PREFIX="${PREFIX}"
 INSTALLS_SHLIB=	yes
@@ -57,13 +59,7 @@ MAN3=		firestring_chomp.3 firestring_chug.3 \
 		firestring_strncpy.3 firestring_trim.3 \
 		firestring_vfprintf.3 libfirestring.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Installs into /usr/lib"
-.endif
-
 pre-configure:
 	@-${RM} ${WRKSRC}/firemake/*.orig
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
