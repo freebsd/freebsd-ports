@@ -1,0 +1,214 @@
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/compiler/CodeGenerator.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/compiler/IDLCompiler.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/compiler/SkelGenerator.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/compiler/StubGenerator.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/compiler/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/naming/CosNaming/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/naming/NamingService.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/naming/NamingContext.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/naming/BindingIterator.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/naming/CosNaming.idl
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/naming/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/naming/CosNaming_skel/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/interface_repository/IntRep_skel/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/interface_repository/IFR.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/interface_repository/IntRep.idl
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/interface_repository/IntRepImpl.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/interface_repository/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/interface_repository/IntRep/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/CORBA.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/TypeCode.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/IIOPAcceptor.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/Nudger.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/Limits.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/Acceptor.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/Any.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/BOA.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/Connection.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/DII.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/DSI.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/EventHandler.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/Fixed.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/GIOP.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/GIOPClient.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/GIOPClientManager.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/GIOPClientWorker.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/GIOPClientWorkerReactive.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/GIOPClientWorkerThreaded.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/GIOPConnectionHandler.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/GIOPServer.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/GIOPServerWorker.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/GIOPServerWorkerReactive.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/GIOPServerWorkerThreaded.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/IIOP.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/IIOPConnection.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/IIOPProtocol.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/IOP.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/InterfaceRepository.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/OctetStream.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/Protocol.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/Reactor.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/SelectReactor.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/ThreadPoolQueue.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/ThreadSpecificData.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/TkReactor.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/TypeManager.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/Util.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/condvar.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/fnorb_thread.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/uuid.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb/null_thread.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/parser/Declarator.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/parser/IDLParser.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/parser/Prefix.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/parser/Stack.py
+lib/%%PYTHON_VERSION%%/site-packages/Fnorb/parser/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/bisonmodule.so
+lib/%%PYTHON_VERSION%%/site-packages/cdrmodule.so
+etc/fnorb.cfg.sample
+share/doc/fnorb/ANNOUNCE
+share/doc/fnorb/CHANGES
+share/doc/fnorb/README
+share/doc/fnorb/LICENSE.HTML
+share/doc/fnorb/Fnorb-Guide/Fnorb-Guide.html
+share/doc/fnorb/Fnorb-Guide/index.html
+share/doc/fnorb/Fnorb-Guide/node1.html
+share/doc/fnorb/Fnorb-Guide/node10.html
+share/doc/fnorb/Fnorb-Guide/node11.html
+share/doc/fnorb/Fnorb-Guide/node12.html
+share/doc/fnorb/Fnorb-Guide/node13.html
+share/doc/fnorb/Fnorb-Guide/node14.html
+share/doc/fnorb/Fnorb-Guide/node15.html
+share/doc/fnorb/Fnorb-Guide/node16.html
+share/doc/fnorb/Fnorb-Guide/node17.html
+share/doc/fnorb/Fnorb-Guide/node18.html
+share/doc/fnorb/Fnorb-Guide/node19.html
+share/doc/fnorb/Fnorb-Guide/node2.html
+share/doc/fnorb/Fnorb-Guide/node20.html
+share/doc/fnorb/Fnorb-Guide/node21.html
+share/doc/fnorb/Fnorb-Guide/node22.html
+share/doc/fnorb/Fnorb-Guide/node23.html
+share/doc/fnorb/Fnorb-Guide/node24.html
+share/doc/fnorb/Fnorb-Guide/node25.html
+share/doc/fnorb/Fnorb-Guide/node26.html
+share/doc/fnorb/Fnorb-Guide/node27.html
+share/doc/fnorb/Fnorb-Guide/node28.html
+share/doc/fnorb/Fnorb-Guide/node29.html
+share/doc/fnorb/Fnorb-Guide/node3.html
+share/doc/fnorb/Fnorb-Guide/node30.html
+share/doc/fnorb/Fnorb-Guide/node31.html
+share/doc/fnorb/Fnorb-Guide/node32.html
+share/doc/fnorb/Fnorb-Guide/node33.html
+share/doc/fnorb/Fnorb-Guide/node34.html
+share/doc/fnorb/Fnorb-Guide/node35.html
+share/doc/fnorb/Fnorb-Guide/node36.html
+share/doc/fnorb/Fnorb-Guide/node37.html
+share/doc/fnorb/Fnorb-Guide/node38.html
+share/doc/fnorb/Fnorb-Guide/node39.html
+share/doc/fnorb/Fnorb-Guide/node4.html
+share/doc/fnorb/Fnorb-Guide/node40.html
+share/doc/fnorb/Fnorb-Guide/node41.html
+share/doc/fnorb/Fnorb-Guide/node42.html
+share/doc/fnorb/Fnorb-Guide/node43.html
+share/doc/fnorb/Fnorb-Guide/node44.html
+share/doc/fnorb/Fnorb-Guide/node45.html
+share/doc/fnorb/Fnorb-Guide/node46.html
+share/doc/fnorb/Fnorb-Guide/node47.html
+share/doc/fnorb/Fnorb-Guide/node48.html
+share/doc/fnorb/Fnorb-Guide/node49.html
+share/doc/fnorb/Fnorb-Guide/node5.html
+share/doc/fnorb/Fnorb-Guide/node50.html
+share/doc/fnorb/Fnorb-Guide/node51.html
+share/doc/fnorb/Fnorb-Guide/node52.html
+share/doc/fnorb/Fnorb-Guide/node53.html
+share/doc/fnorb/Fnorb-Guide/node54.html
+share/doc/fnorb/Fnorb-Guide/node55.html
+share/doc/fnorb/Fnorb-Guide/node56.html
+share/doc/fnorb/Fnorb-Guide/node57.html
+share/doc/fnorb/Fnorb-Guide/node58.html
+share/doc/fnorb/Fnorb-Guide/node59.html
+share/doc/fnorb/Fnorb-Guide/node6.html
+share/doc/fnorb/Fnorb-Guide/node60.html
+share/doc/fnorb/Fnorb-Guide/node61.html
+share/doc/fnorb/Fnorb-Guide/node62.html
+share/doc/fnorb/Fnorb-Guide/node63.html
+share/doc/fnorb/Fnorb-Guide/node64.html
+share/doc/fnorb/Fnorb-Guide/node7.html
+share/doc/fnorb/Fnorb-Guide/node8.html
+share/doc/fnorb/Fnorb-Guide/node9.html
+share/doc/fnorb/Fnorb-Guide/Fnorb-Guide.css
+share/doc/fnorb/Fnorb-Guide/contents_motif.gif
+share/doc/fnorb/Fnorb-Guide/cross_ref_motif.gif
+share/doc/fnorb/Fnorb-Guide/img1.gif
+share/doc/fnorb/Fnorb-Guide/next_motif.gif
+share/doc/fnorb/Fnorb-Guide/next_motif_gr.gif
+share/doc/fnorb/Fnorb-Guide/previous_motif.gif
+share/doc/fnorb/Fnorb-Guide/previous_motif_gr.gif
+share/doc/fnorb/Fnorb-Guide/up_motif.gif
+share/doc/fnorb/Fnorb-Guide/up_motif_gr.gif
+share/doc/fnorb/Fnorb-Guide.pdf
+share/doc/fnorb/Fnorb-Guide.ps
+share/fnorb/script/__init__.py
+share/fnorb/script/cpp.py
+share/fnorb/script/fnaming
+share/fnorb/script/fnendian
+share/fnorb/script/fnfeed
+share/fnorb/script/fngen
+share/fnorb/script/fnidl
+share/fnorb/script/fnidl.py
+share/fnorb/script/fnifr
+share/fnorb/script/fnior
+share/fnorb/script/fnlogger
+share/fnorb/script/fnmetrics
+share/fnorb/script/fnmkior
+share/fnorb/script/fnoptions
+share/fnorb/script/fnping
+share/fnorb/examples/naming/Thermometer.idl
+share/fnorb/examples/naming/client.py
+share/fnorb/examples/naming/README
+share/fnorb/examples/naming/server.py
+share/fnorb/examples/misc/Example.idl
+share/fnorb/examples/misc/client.py
+share/fnorb/examples/misc/server.py
+share/fnorb/examples/misc/README
+share/fnorb/examples/unions/Unions.idl
+share/fnorb/examples/unions/client.py
+share/fnorb/examples/unions/README
+share/fnorb/examples/unions/server.py
+share/fnorb/examples/hello-world/HelloWorld.idl
+share/fnorb/examples/hello-world/README
+share/fnorb/examples/hello-world/client.py
+share/fnorb/examples/hello-world/server.py
+share/fnorb/examples/threaded/HelloWorld.idl
+share/fnorb/examples/threaded/README
+share/fnorb/examples/threaded/client.py
+share/fnorb/examples/threaded/server.py
+share/fnorb/examples/tkinter/TicToc.idl
+share/fnorb/examples/tkinter/client.py
+share/fnorb/examples/tkinter/server.py
+share/fnorb/examples/tkinter/README
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/compiler
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/naming/CosNaming
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/naming/CosNaming_skel
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/naming
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/interface_repository/IntRep_skel
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/interface_repository/IntRep
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos/interface_repository
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/parser
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb
+@dirrm share/doc/fnorb/Fnorb-Guide
+@dirrm share/doc/fnorb
+@dirrm share/fnorb/script
+@dirrm share/fnorb/examples/naming
+@dirrm share/fnorb/examples/misc
+@dirrm share/fnorb/examples/unions
+@dirrm share/fnorb/examples/hello-world
+@dirrm share/fnorb/examples/threaded
+@dirrm share/fnorb/examples/tkinter
+@dirrm share/fnorb/examples
+@dirrm share/fnorb
