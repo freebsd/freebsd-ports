@@ -35,7 +35,7 @@ post-configure:
 	${REINPLACE_CMD} -e 's/ po / /' ${WRKSRC}/Makefile
 .endif
 
-BUILD_PERL=	yes, for documentation
+USE_PERL5_BUILD=yes, for documentation
 
 .include <bsd.port.pre.mk>
 
