@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${RUBY_GNOME_DISTNAME}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	mezz7@cox.net
+MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	Ruby bindings for the GStreamer framework
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2

@@ -10,7 +10,7 @@ PORTVERSION=	0.05
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://download.qballcow.nl/programs/gcursor/
 
-MAINTAINER=	mezz7@cox.net
+MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A mouse cursor theme selector for GNOME
 
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xcursor.pc:${PORTSDIR}/x11/XFree86-4-libraries

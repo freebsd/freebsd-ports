@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://members.chello.nl/~h.lai/gnome-clipboard-daemon/
 
-MAINTAINER=	mezz7@cox.net
+MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A program that keeps the content of your X clipboard in memory
 
 PLIST_FILES=	bin/gnome-clipboard-daemon
