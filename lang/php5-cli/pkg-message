@@ -2,7 +2,7 @@
 
 You have installed the php4-cli package.
 
-Have a look at the php-cli-dev port if you need additional extensions
+Have a look at the php4-cli port if you need additional extensions
 other than ctype, MySQL, PCRE, POSIX, session, tokenizer, XML and ZLIB.
 
 You can find it at
