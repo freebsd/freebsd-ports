@@ -5,11 +5,7 @@
 # $FreeBSD$
 #
 
-# Upgrading this port is not possible at this time because it has
-# extensive implications for the entire ports system. It will be
-# upgraded as soon as possible. Thanks.
-
-PORTNAME=	autoconf213
+PORTNAME=	autoconf
 PORTVERSION=	2.13.000227
 PORTREVISION=	5
 CATEGORIES=	devel
@@ -23,12 +19,15 @@ COMMENT=	Automatically configure source code on many Un*x platforms (legacy 2.13
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
+BUILD_VERSION=	213
+PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
+LATEST_LINK=	autoconf${BUILD_VERSION}
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CONFIG_SHELL=${SH}
-CONFIGURE_ENV+=	M4=${LOCALBASE}/bin/gm4
-CONFIGURE_ARGS=	--program-suffix=213
+CONFIGURE_ENV=	CONFIG_SHELL=${SH} M4=${LOCALBASE}/bin/gm4
+CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 WRKSRC=		${WRKDIR}/autoconf
 
 .if defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
@@ -45,16 +44,16 @@ post-patch:
 	@${RM} ${WRKSRC}/*.info* >/dev/null 2>&1 || true
 
 post-install:
-	@${CHMOD} +x ${PREFIX}/share/autoconf213/config.*
+	@${CHMOD} +x ${PREFIX}/share/autoconf${BUILD_VERSION}/config.*
 	@${INSTALL_SCRIPT} ${WRKSRC}/install-sh \
-		${PREFIX}/share/autoconf213
-	@-${RM} -fr ${PREFIX}/libexec/autoconf213
-	${MKDIR} ${PREFIX}/libexec/autoconf213
+		${PREFIX}/share/autoconf${BUILD_VERSION}
+	@-${RM} -fr ${PREFIX}/libexec/autoconf${BUILD_VERSION}
+	${MKDIR} ${PREFIX}/libexec/autoconf${BUILD_VERSION}
 .for i in autoconf autoheader autoreconf autoscan autoupdate ifnames
-	${LN} -sf ${PREFIX}/bin/${i}213 \
-		${PREFIX}/libexec/autoconf213/${i}
+	${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} \
+		${PREFIX}/libexec/autoconf${BUILD_VERSION}/${i}
 .endfor
-	install-info ${PREFIX}/info/autoconf213.info \
+	install-info ${PREFIX}/info/autoconf${BUILD_VERSION}.info \
 		${PREFIX}/info/dir
 
 .include <bsd.port.mk>

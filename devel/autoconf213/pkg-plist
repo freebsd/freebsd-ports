@@ -1,33 +1,33 @@
-bin/autoconf213
-bin/autoheader213
-bin/autoreconf213
-bin/autoscan213
-bin/autoupdate213
-bin/ifnames213
-@unexec install-info --delete %D/info/autoconf213.info %D/info/dir
-info/autoconf213.info
-@exec install-info %D/info/autoconf213.info %D/info/dir
-libexec/autoconf213/autoconf
-libexec/autoconf213/autoheader
-libexec/autoconf213/autoreconf
-libexec/autoconf213/autoscan
-libexec/autoconf213/autoupdate
-libexec/autoconf213/ifnames
-share/autoconf213/acconfig.h
-share/autoconf213/acfunctions
-share/autoconf213/acgeneral.m4
-share/autoconf213/acheaders
-share/autoconf213/acidentifiers
-share/autoconf213/acmakevars
-share/autoconf213/acoldnames.m4
-share/autoconf213/acprograms
-share/autoconf213/acspecific.m4
-share/autoconf213/autoconf.m4
-share/autoconf213/autoconf.m4f
-share/autoconf213/autoheader.m4
-share/autoconf213/autoheader.m4f
-share/autoconf213/config.guess
-share/autoconf213/config.sub
-share/autoconf213/install-sh
-@dirrm libexec/autoconf213
-@dirrm share/autoconf213
+bin/autoconf%%BUILD_VERSION%%
+bin/autoheader%%BUILD_VERSION%%
+bin/autoreconf%%BUILD_VERSION%%
+bin/autoscan%%BUILD_VERSION%%
+bin/autoupdate%%BUILD_VERSION%%
+bin/ifnames%%BUILD_VERSION%%
+@unexec install-info --delete %D/info/autoconf%%BUILD_VERSION%%.info %D/info/dir
+info/autoconf%%BUILD_VERSION%%.info
+@exec install-info %D/info/autoconf%%BUILD_VERSION%%.info %D/info/dir
+libexec/autoconf%%BUILD_VERSION%%/autoconf
+libexec/autoconf%%BUILD_VERSION%%/autoheader
+libexec/autoconf%%BUILD_VERSION%%/autoreconf
+libexec/autoconf%%BUILD_VERSION%%/autoscan
+libexec/autoconf%%BUILD_VERSION%%/autoupdate
+libexec/autoconf%%BUILD_VERSION%%/ifnames
+share/autoconf%%BUILD_VERSION%%/acconfig.h
+share/autoconf%%BUILD_VERSION%%/acfunctions
+share/autoconf%%BUILD_VERSION%%/acgeneral.m4
+share/autoconf%%BUILD_VERSION%%/acheaders
+share/autoconf%%BUILD_VERSION%%/acidentifiers
+share/autoconf%%BUILD_VERSION%%/acmakevars
+share/autoconf%%BUILD_VERSION%%/acoldnames.m4
+share/autoconf%%BUILD_VERSION%%/acprograms
+share/autoconf%%BUILD_VERSION%%/acspecific.m4
+share/autoconf%%BUILD_VERSION%%/autoconf.m4
+share/autoconf%%BUILD_VERSION%%/autoconf.m4f
+share/autoconf%%BUILD_VERSION%%/autoheader.m4
+share/autoconf%%BUILD_VERSION%%/autoheader.m4f
+share/autoconf%%BUILD_VERSION%%/config.guess
+share/autoconf%%BUILD_VERSION%%/config.sub
+share/autoconf%%BUILD_VERSION%%/install-sh
+@dirrm libexec/autoconf%%BUILD_VERSION%%
+@dirrm share/autoconf%%BUILD_VERSION%%

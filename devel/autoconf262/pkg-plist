@@ -1,53 +1,58 @@
-bin/autoconf257
-bin/autoheader257
-bin/autom4te257
-bin/autoreconf257
-bin/autoscan257
-bin/autoupdate257
-bin/ifnames257
-share/autoconf257/Autom4te/General.pm
-share/autoconf257/Autom4te/Struct.pm
-share/autoconf257/Autom4te/XFile.pm
-share/autoconf257/INSTALL
-share/autoconf257/autoconf/autoconf.m4
-share/autoconf257/autoconf/autoconf.m4f
-share/autoconf257/autoconf/autoheader.m4
-share/autoconf257/autoconf/autoscan.m4
-share/autoconf257/autoconf/autotest.m4
-share/autoconf257/autoconf/autoupdate.m4
-share/autoconf257/autoconf/c.m4
-share/autoconf257/autoconf/fortran.m4
-share/autoconf257/autoconf/functions.m4
-share/autoconf257/autoconf/general.m4
-share/autoconf257/autoconf/headers.m4
-share/autoconf257/autoconf/lang.m4
-share/autoconf257/autoconf/libs.m4
-share/autoconf257/autoconf/oldnames.m4
-share/autoconf257/autoconf/programs.m4
-share/autoconf257/autoconf/specific.m4
-share/autoconf257/autoconf/status.m4
-share/autoconf257/autoconf/types.m4
-share/autoconf257/autom4te.cfg
-share/autoconf257/autoscan/autoscan.list
-share/autoconf257/autotest/autotest.m4
-share/autoconf257/autotest/autotest.m4f
-share/autoconf257/autotest/general.m4
-share/autoconf257/config.guess
-share/autoconf257/config.sub
-share/autoconf257/elisp-comp
-share/autoconf257/install-sh
-share/autoconf257/m4sugar/m4sh.m4
-share/autoconf257/m4sugar/m4sh.m4f
-share/autoconf257/m4sugar/m4sugar.m4
-share/autoconf257/m4sugar/m4sugar.m4f
-share/autoconf257/m4sugar/version.m4
-share/autoconf257/mdate-sh
-share/autoconf257/missing
-share/autoconf257/mkinstalldirs
-@dirrm share/autoconf257/m4sugar
-@dirrm share/autoconf257/autotest
-@dirrm share/autoconf257/autoscan
-@dirrm share/autoconf257/autoconf
-@dirrm share/autoconf257/Autom4te
-@dirrm share/autoconf257
-@unexec rmdir %D/info 2>/dev/null || true
+bin/autoconf%%BUILD_VERSION%%
+bin/autoheader%%BUILD_VERSION%%
+bin/autom4te%%BUILD_VERSION%%
+bin/autoreconf%%BUILD_VERSION%%
+bin/autoscan%%BUILD_VERSION%%
+bin/autoupdate%%BUILD_VERSION%%
+bin/ifnames%%BUILD_VERSION%%
+@unexec install-info --delete %D/info/autoconf%%BUILD_VERSION%%.info %D/info/dir
+@unexec install-info --delete %D/info/standards%%BUILD_VERSION%%.info %D/info/dir
+info/autoconf%%BUILD_VERSION%%.info
+info/standards%%BUILD_VERSION%%.info
+@exec install-info %D/info/autoconf%%BUILD_VERSION%%.info %D/info/dir
+@exec install-info %D/info/standards%%BUILD_VERSION%%.info %D/info/dir
+share/autoconf%%BUILD_VERSION%%/Autom4te/General.pm
+share/autoconf%%BUILD_VERSION%%/Autom4te/Struct.pm
+share/autoconf%%BUILD_VERSION%%/Autom4te/XFile.pm
+share/autoconf%%BUILD_VERSION%%/INSTALL
+share/autoconf%%BUILD_VERSION%%/autoconf/autoconf.m4
+share/autoconf%%BUILD_VERSION%%/autoconf/autoconf.m4f
+share/autoconf%%BUILD_VERSION%%/autoconf/autoheader.m4
+share/autoconf%%BUILD_VERSION%%/autoconf/autoscan.m4
+share/autoconf%%BUILD_VERSION%%/autoconf/autotest.m4
+share/autoconf%%BUILD_VERSION%%/autoconf/autoupdate.m4
+share/autoconf%%BUILD_VERSION%%/autoconf/c.m4
+share/autoconf%%BUILD_VERSION%%/autoconf/fortran.m4
+share/autoconf%%BUILD_VERSION%%/autoconf/functions.m4
+share/autoconf%%BUILD_VERSION%%/autoconf/general.m4
+share/autoconf%%BUILD_VERSION%%/autoconf/headers.m4
+share/autoconf%%BUILD_VERSION%%/autoconf/lang.m4
+share/autoconf%%BUILD_VERSION%%/autoconf/libs.m4
+share/autoconf%%BUILD_VERSION%%/autoconf/oldnames.m4
+share/autoconf%%BUILD_VERSION%%/autoconf/programs.m4
+share/autoconf%%BUILD_VERSION%%/autoconf/specific.m4
+share/autoconf%%BUILD_VERSION%%/autoconf/status.m4
+share/autoconf%%BUILD_VERSION%%/autoconf/types.m4
+share/autoconf%%BUILD_VERSION%%/autom4te.cfg
+share/autoconf%%BUILD_VERSION%%/autoscan/autoscan.list
+share/autoconf%%BUILD_VERSION%%/autotest/autotest.m4
+share/autoconf%%BUILD_VERSION%%/autotest/autotest.m4f
+share/autoconf%%BUILD_VERSION%%/autotest/general.m4
+share/autoconf%%BUILD_VERSION%%/config.guess
+share/autoconf%%BUILD_VERSION%%/config.sub
+share/autoconf%%BUILD_VERSION%%/elisp-comp
+share/autoconf%%BUILD_VERSION%%/install-sh
+share/autoconf%%BUILD_VERSION%%/m4sugar/m4sh.m4
+share/autoconf%%BUILD_VERSION%%/m4sugar/m4sh.m4f
+share/autoconf%%BUILD_VERSION%%/m4sugar/m4sugar.m4
+share/autoconf%%BUILD_VERSION%%/m4sugar/m4sugar.m4f
+share/autoconf%%BUILD_VERSION%%/m4sugar/version.m4
+share/autoconf%%BUILD_VERSION%%/mdate-sh
+share/autoconf%%BUILD_VERSION%%/missing
+share/autoconf%%BUILD_VERSION%%/mkinstalldirs
+@dirrm share/autoconf%%BUILD_VERSION%%/m4sugar
+@dirrm share/autoconf%%BUILD_VERSION%%/autotest
+@dirrm share/autoconf%%BUILD_VERSION%%/autoscan
+@dirrm share/autoconf%%BUILD_VERSION%%/autoconf
+@dirrm share/autoconf%%BUILD_VERSION%%/Autom4te
+@dirrm share/autoconf%%BUILD_VERSION%%

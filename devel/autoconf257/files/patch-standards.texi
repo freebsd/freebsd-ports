@@ -1,0 +1,19 @@
+--- doc/standards.texi.orig	Sun Jun  1 18:52:56 2003
++++ doc/standards.texi	Sun Jun  1 18:54:00 2003
+@@ -1,6 +1,6 @@
+ \input texinfo @c -*-texinfo-*-
+ @c %**start of header
+-@setfilename standards.info
++@setfilename standards257.info
+ @settitle GNU Coding Standards
+ @c This date is automagically updated when you save this file:
+ @set lastupdate November 23, 2002
+@@ -8,7 +8,7 @@
+ 
+ @dircategory GNU organization
+ @direntry
+-* Standards: (standards).        GNU coding standards.
++* Standards257: (standards257).        GNU coding standards.
+ @end direntry
+ 
+ @c @setchapternewpage odd

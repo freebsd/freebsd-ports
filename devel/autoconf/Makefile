@@ -19,38 +19,20 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		help2man:${PORTSDIR}/misc/help2man
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
+LATEST_LINK=	autoconf
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CONFIG_SHELL=${SH}
-CONFIGURE_ENV+=	M4=${LOCALBASE}/bin/gm4
+CONFIGURE_ENV=	CONFIG_SHELL=${SH} M4=${LOCALBASE}/bin/gm4
+CONFIGURE_ARGS=	--without-lispdir
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-.if exists(${LOCALBASE}/bin/emacs)
-PLIST_SUB+=	EMACS="" EMACSDIR=share/emacs
-.elif exists(${LOCALBASE}/bin/xemacs)
-PLIST_SUB+=	EMACS="" EMACSDIR=lib/xemacs
-.else
-PLIST_SUB+=	EMACS="@comment " EMACSDIR=""
-.endif
+GENERIC_TOOLS=	config.guess config.sub	elisp-comp install-sh mdate-sh \
+		missing mkinstalldirs
 
-GENERIC_TOOLS=	config.guess	\
-		config.sub	\
-		elisp-comp	\
-		install-sh	\
-		mdate-sh	\
-		missing		\
-		mkinstalldirs
-
-MAN1=		autoconf.1	\
-		autoheader.1	\
-		autom4te.1	\
-		autoreconf.1	\
-		autoscan.1	\
-		autoupdate.1	\
-		config.guess.1	\
-		config.sub.1	\
-		ifnames.1
+MAN1=		autoconf.1 autoheader.1 autom4te.1 autoreconf.1	autoscan.1 \
+		autoupdate.1 config.guess.1 config.sub.1 ifnames.1
 
 .if defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
 pre-everything::
