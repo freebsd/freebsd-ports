@@ -8943,6 +8943,7 @@ xfce4-mcs-plugins	ports/sysutils/xfce4-mcs-plugins
 xfce4-minicmd-plugin	ports/sysutils/xfce4-minicmd-plugin
 xfce4-mixer	ports/audio/xfce4-mixer
 xfce4-netload-plugin	ports/sysutils/xfce4-netload-plugin
+xfce4-notes	ports/deskutils/xfce4-notes
 xfce4-panel	ports/x11-wm/xfce4-panel
 xfce4-panel-themes	ports/misc/xfce4-panel-themes
 xfce4-print	ports/print/xfce4-print
