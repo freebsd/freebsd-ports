@@ -1,3 +1,4 @@
-jdk1.1.8/lib/i386/green_threads/libshujit.so
-jdk1.1.8/shujit/README
-@dirrm jdk1.1.8/shujit
+lib/shujit/libshujit.so
+share/shujit/README
+@dirrm share/shujit
+@dirrm lib/shujit
