@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kbirthday
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://www.gfai.de/~jaham/download/ \
 		http://freshmeat.net/redir/kbirthday/32531/url_tgz/
