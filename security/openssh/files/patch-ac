@@ -1,5 +1,5 @@
---- includes.h.orig	Fri Apr 14 06:30:31 2000
-+++ includes.h	Sat May 13 12:12:41 2000
+--- includes.h.orig	Sat Jan 26 17:44:22 2002
++++ includes.h	Fri Mar  8 20:59:17 2002
 @@ -24,12 +24,12 @@
  #include <sys/select.h>
  #include <sys/param.h>
@@ -22,7 +22,7 @@
  #include <stdio.h>
  #include <ctype.h>
  #include <errno.h>
-@@ -65,5 +64,30 @@
+@@ -62,5 +61,46 @@
   * client program.  Socketpairs do not seem to work on all systems.
   */
  #define USE_PIPES 1
@@ -50,6 +50,22 @@
 +	int64_t		__ss_align;	/* force desired structure storage alignment */
 +	char		__ss_pad2[_SS_PAD2SIZE];
 +};
++
++/* defines for comatibility with older FreeBSD releases */
++#ifndef	SHUT_RD
++#define	SHUT_RD		0
++#endif
++#ifndef	SHUT_WR
++#define	SHUT_WR		1
++#endif
++#ifndef	SHUT_RDWR
++#define	SHUT_RDWR	2
++#endif
++
++#ifndef INET_ADDRSTRLEN
++#define	INET_ADDRSTRLEN	46
++#endif
++
 +#endif
  
  #endif				/* INCLUDES_H */
