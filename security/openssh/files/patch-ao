@@ -1,13 +1,14 @@
 --- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/sshd_config	Thu Nov 11 17:58:39 1999
 +++ ./sshd_config	Tue Nov 23 19:31:58 1999
-@@ -2,11 +2,11 @@
+@@ -3,11 +3,11 @@
  
  Port 22
  ListenAddress 0.0.0.0
 -HostKey /etc/ssh_host_key
 +HostKey __PREFIX__/etc/ssh_host_key
  ServerKeyBits 768
- LoginGraceTime 600
+-LoginGraceTime 600
++LoginGraceTime 30
  KeyRegenerationInterval 3600
 -PermitRootLogin yes
 +PermitRootLogin no 
