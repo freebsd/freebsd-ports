@@ -21,6 +21,7 @@
     SUBDIR += enfle
     SUBDIR += eterm-bg
     SUBDIR += fbm
+    SUBDIR += flashplayer
     SUBDIR += fli2gif
     SUBDIR += fly
     SUBDIR += fnlib
