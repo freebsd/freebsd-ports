@@ -1,5 +1,5 @@
 --- Makefile.PL.orig	Tue Mar 12 22:07:07 2002
-+++ Makefile.PL	Mon Sep  9 21:28:36 2002
++++ Makefile.PL	Sun Feb 22 10:05:56 2004
 @@ -9,14 +9,32 @@
  # FP extensions 5.0 from Martin Blapp <mbr@freebsd.org>
  #
@@ -38,30 +38,36 @@
      print "If you don't know, enter the word 'findit'. I will try to look\n";
      print "for you... but it will take a few minutes.\n";
      print "Your choice: ";
-@@ -109,20 +127,28 @@
+@@ -109,20 +127,33 @@
      $errorlog="$serverroot/$errorlog";
      print "$errorlog\n";
  }
 -print "DocumentRoot: $documentroot\n";
-+$documentroot =~ s/"$//;
-+$documentroot =~ s/^"//;
-+print "DocumentRoot_unresolved: ($documentroot)\n";
-+$documentroot = realpath($documentroot);
-+print "DocumentRoot: ($documentroot)\n";
- 
+-
 -$_=`ls -dln $documentroot|cut -c 17-30`;
 -if (/^(\d*)(\s*)(\d*)/) {
 -    $uid=$1; $gid=$3;
 -    print "Content uid $uid, gid $gid\n";
-+($dev,$ino,$mode,$nlink,$uid,$gid,$rdev,$size,$atime,$mtime,
-+$ctime,$blksize,$blocks) = stat $documentroot;
++$documentroot =~ s/"$//;
++$documentroot =~ s/^"//;
++print "DocumentRoot_unresolved: ($documentroot)\n";
++$documentroot_resolved = realpath($documentroot);
++if (-d $documentroot_resolved) {
++	$documentroot = $documentroot_resolved;
++	($dev,$ino,$mode,$nlink,$uid,$gid,$rdev,$size,$atime,$mtime,
++	$ctime,$blksize,$blocks) = stat $documentroot;
 +
-+if ($dev != 0 && $ino != 0) {
-+	print "Content uid $uid, gid $gid\n";
++	if ($dev != 0 && $ino != 0) {
++	} else {
++		print "Could not get UID and GID of DocumentRoot\n";
++		exit;
++	}
 +} else {
-+	print "Could not get UID and GID of DocumentRoot\n";
-+	exit;
++	$uid = 80;
++	$gid = 80;
  }
++print "DocumentRoot: ($documentroot)\n";
++print "Content uid $uid, gid $gid\n";
  
  #
  # Check the user for sanity
@@ -74,7 +80,7 @@
  } else { $defaultid=99; }
  
  if ($uid < $defaultid) {
-@@ -158,11 +183,40 @@
+@@ -158,11 +189,40 @@
  $_=~ s|\$\(fpexec_logexec\)|$errorlog|;
  $_=~ s|\$\(fpexec_userdir\)|$userdir|;
  $_=~ s|\$\(fpexec_docroot\)|$documentroot|;
