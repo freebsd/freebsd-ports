@@ -1,0 +1,12 @@
+--- kpsk/server/server-main.C.orig	Mon Oct 21 22:07:45 2002
++++ kpsk/server/server-main.C	Wed Oct 23 07:11:02 2002
+@@ -18,6 +18,9 @@
+  * mutex operations for accesing en-/decoder classes from en/decoding
+  *   thread and from user interface thread (==interface functions)
+  */
++#ifdef __FreeBSD__
++#include <sys/types.h>
++#endif
+ 
+ #include <sys/mman.h>
+ 
