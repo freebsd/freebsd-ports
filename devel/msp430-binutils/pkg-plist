@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/devel/msp430-binutils/pkg-plist,v 1.3 2003-06-25 11:16:23 lev Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/devel/msp430-binutils/pkg-plist,v 1.4 2003-08-12 08:49:48 lev Exp $
 %%BINUTILS_TARG%%/bin/addr2line
 %%BINUTILS_TARG%%/bin/ar
 %%BINUTILS_TARG%%/bin/as
@@ -187,6 +187,36 @@
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x413.xn
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x413.xr
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x413.xu
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xE423.x
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xE423.xbn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xE423.xn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xE423.xr
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xE423.xu
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xE425.x
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xE425.xbn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xE425.xn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xE425.xr
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xE425.xu
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xE427.x
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xE427.xbn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xE427.xn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xE427.xr
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xE427.xu
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xW423.x
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xW423.xbn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xW423.xn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xW423.xr
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xW423.xu
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xW425.x
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xW425.xbn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xW425.xn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xW425.xr
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xW425.xu
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xW427.x
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xW427.xbn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xW427.xn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xW427.xr
+%%BINUTILS_TARG%%/lib/ldscripts/msp430xW427.xu
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x435.x
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x435.xbn
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x435.xn
