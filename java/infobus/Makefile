@@ -11,7 +11,7 @@ CATEGORIES=	java
 DISTNAME=	ib12
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	noway@nohow.demon.co.uk
+MAINTAINER=	java@freebsd.org
 COMMENT=	Enables dynamic exchange of data between JavaBeans(TM)
 
 RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk11 \
