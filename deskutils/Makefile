@@ -26,6 +26,7 @@
     SUBDIR += gnotime
     SUBDIR += goats
     SUBDIR += gtimer
+    SUBDIR += gtodo
     SUBDIR += gucharmap
     SUBDIR += gworkspace
     SUBDIR += ical
