@@ -6,10 +6,9 @@
 #
 
 PORTNAME=		Lingua-EN-Sentence
-PORTVERSION=		0.21
+PORTVERSION=		0.22
 CATEGORIES=		textproc perl5
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Lingua
+MASTER_SITES=		http://www.cpan.org/authors/id/S/SH/SHLOMOY/
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
