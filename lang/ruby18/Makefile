@@ -8,17 +8,19 @@
 PORTNAME=	ruby${RUBY_R}
 PORTVERSION=	${RUBY_PORTVERSION}
 CATEGORIES=	lang ruby ipv6
-MASTER_SITES=	http://www.ruby-lang.org/~knu/	# ${MASTER_SITE_RUBY}
-MASTER_SITE_SUBDIR=	${RUBY_VER}
+MASTER_SITES=	${MASTER_SITE_RUBY}
+MASTER_SITE_SUBDIR=	snapshots
 DISTNAME=	${RUBY_DISTNAME}
 DIST_SUBDIR=	ruby
 
-PATCH_SITES=	http://www.ruby-lang.org/~knu/ \
-		http://www.iDaemons.org/distfiles/
-PATCHFILES=	${RUBY_PATCHFILES}
-PATCH_DIST_STRIP=	-p1
+#PATCH_SITES=	${MASTER_SITE_RUBY}
+#PATCH_SITE_SUBDIR=	snapshots
+#PATCHFILES=	${RUBY_PATCHFILES}
+#PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org
+
+USE_BZIP2=	yes
 
 RUBY_VER=	1.7
 
@@ -116,17 +118,17 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/curses/hello.rb ${WRKSRC}/ext/curses/rain.rb ${WRKSRC}/ext/curses/view.rb ${RUBY_EXAMPLESDIR}/curses
 	${MKDIR} ${RUBY_EXAMPLESDIR}/pty
 	${INSTALL_DATA} ${WRKSRC}/ext/pty/expect_sample.rb ${WRKSRC}/ext/pty/script.rb ${WRKSRC}/ext/pty/shl.rb ${RUBY_EXAMPLESDIR}/pty
+	${INSTALL_DATA} ${WRKSRC}/COPYING* ${RUBY_DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/LEGAL ${RUBY_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README* ${RUBY_DOCDIR}
+	${MKDIR} ${RUBY_DOCDIR}/digest
+	${INSTALL_DATA} ${WRKSRC}/ext/digest/digest.txt* ${RUBY_DOCDIR}/digest
 	${MKDIR} ${RUBY_DOCDIR}/etc
 	${INSTALL_DATA} ${WRKSRC}/ext/etc/etc.txt* ${RUBY_DOCDIR}/etc
-	${MKDIR} ${RUBY_DOCDIR}/md5
-	${INSTALL_DATA} ${WRKSRC}/ext/md5/md5.txt* ${RUBY_DOCDIR}/md5
 	${MKDIR} ${RUBY_DOCDIR}/pty
 	${INSTALL_DATA} ${WRKSRC}/ext/pty/README* ${RUBY_DOCDIR}/pty
 	${MKDIR} ${RUBY_DOCDIR}/readline
-	${INSTALL_DATA} ${WRKSRC}/ext/readline/README ${RUBY_DOCDIR}/readline
-	${MKDIR} ${RUBY_DOCDIR}/sha1
-	${INSTALL_DATA} ${WRKSRC}/ext/sha1/sha1.txt* ${RUBY_DOCDIR}/sha1
+	${INSTALL_DATA} ${WRKSRC}/ext/readline/README* ${RUBY_DOCDIR}/readline
 	${CP} -R ${WRKSRC}/doc/* ${RUBY_DOCDIR}/
 .endif
 	@${CAT} ${PKGMESSAGE}
