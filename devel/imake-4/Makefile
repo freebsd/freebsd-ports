@@ -28,6 +28,10 @@ USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${X_WINDOW_SYSTEM:L} != xfree86-4
+IGNORE=		is part of XFree86-4
+.endif
+
 .if ${OSVERSION} < 500000
 LATEST_LINK=	imake4
 .else
