@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	spread
-PORTVERSION=	3.15.2
+PORTVERSION=	3.16.1
 CATEGORIES=	net perl5 java
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	sada
+MASTER_SITE_SUBDIR=	petef
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joshua@roughtrade.net
 
 .if defined(WITH_JAVA_LIB)
-BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk
+BUILD_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/javac:${PORTSDIR}/java/jdk
 .endif
 
 MAKEFILE=	FreeBSD_makefile
@@ -27,16 +27,16 @@ MAN3=	SP_connect.3 SP_disconnect.3 SP_equal_group_ids.3 SP_error.3 \
 	SP_scat_multicast.3 SP_scat_receive.3
 
 USE_PERL5=	yes
-NO_PACKAGE=	"User and group needs to be created"
 INSTALLS_SHLIB=	yes
+PKGMESSAGE=	${WRKSRC}/license.txt
 
-JAVASUBDIR=	jdk1.1.8
+JDK_VERSION?=    1.1.8
+JAVASUBDIR=	jdk${JDK_VERSION}
 JAVADIR=	${PREFIX}/${JAVASUBDIR}
-JAVALIBDIR=	${JAVADIR}/lib
-DOCDIR=		${PREFIX}/share/doc/${PORTNAME}
+JAVALIBDIR=	${PREFIX}/share/java/classes
 
 .if defined(WITH_JAVA_LIB)
-PLIST_SUB+=	JAVALIB='' JAVALIBDIR=${JAVASUBDIR}/lib
+PLIST_SUB+=	JAVALIB='' JAVALIBDIR=share/java/classes
 .if defined(NOPORTDOCS)
 PLIST_SUB+=	JAVALIB_DOCS='@comment '
 .else
@@ -50,26 +50,36 @@ MAKE_ARGS+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+.for f in configuration.c auth-ip.c auth-pword.c docs/spread.1 docs/spmonitor.1
+	@${PERL} -pi -e 's,/etc/spread,${PREFIX}/etc/spread,g' ${WRKSRC}/${f}
+.endfor
+
 post-build:
-	(cd ${WRKSRC}/perl/Spread-3.15.2-1.03; ${PERL} Makefile.PL; ${MAKE})
+	(cd ${WRKSRC}/perl/Spread; ${PERL} Makefile.PL; ${MAKE})
 .if defined(WITH_JAVA_LIB)
 	(cd ${WRKSRC}/java; ${JAVADIR}/bin/javac \
 	splib_src/*.java -d ./)
 .endif
 
+pre-install:
+	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
 do-install:
-	@${SH} ${SCRIPTDIR}/createusergroup
 	${INSTALL_PROGRAM} ${WRKSRC}/spread ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/flooder ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/monitor ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/user ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tuser ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/spflooder ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/spmonitor ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/spuser ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/sptuser ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/libsp.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/libtsp.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/sp.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/sample.spread.conf ${PREFIX}/etc/spread.conf.example
+	${INSTALL_DATA} ${WRKSRC}/sp_func.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/sp_events.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/sample.spread.conf ${PREFIX}/etc/spread.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/sample.spread.access_ip ${PREFIX}/etc/spread.access_ip.sample
 	${INSTALL_MAN} ${WRKSRC}/docs/spread.1 ${PREFIX}/man/man1
-	(cd ${WRKSRC}/perl/Spread-3.15.2-1.03 && ${MAKE} install)
+	(cd ${WRKSRC}/perl/Spread && ${MAKE} install)
 	${GZIP_CMD} ${GZIP} ${LOCALBASE}/lib/perl5/${PERL_VERSION}/man/man3/Spread.3
 .if defined(WITH_JAVA_LIB)
 	${INSTALL} -d -o root -g wheel -m 0755 ${JAVALIBDIR}/${PORTNAME}
@@ -79,26 +89,28 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/${f} ${PREFIX}/man/man3
 .endfor
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -o root -g wheel -m 0755 ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/Readme.txt ${DOCDIR}
-	${INSTALL} -d -o root -g wheel -m 0755 ${DOCDIR}/perl
-	${INSTALL_DATA} ${WRKSRC}/perl/Spread-3.15.2-1.03/README ${DOCDIR}/perl
-	${INSTALL_DATA} ${WRKSRC}/perl/Spread-3.15.2-1.03/test.pl ${DOCDIR}/perl
+	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Readme.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}/LICENSE
+	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}/perl
+	${INSTALL_DATA} ${WRKSRC}/perl/Spread/README ${DOCSDIR}/perl
+	${INSTALL_DATA} ${WRKSRC}/perl/Spread/test.pl ${DOCSDIR}/perl
 .if defined(WITH_JAVA_LIB)
-	${INSTALL} -d -o root -g wheel -m 0755 ${DOCDIR}/java
-	${INSTALL_DATA} ${WRKSRC}/java/readme.txt ${DOCDIR}/java
-	${INSTALL_DATA} ${WRKSRC}/java/Flooder.java ${DOCDIR}/java
-	${INSTALL_DATA} ${WRKSRC}/java/User.java ${DOCDIR}/java
-	${INSTALL} -d -o root -g wheel -m 0755 ${DOCDIR}/java/html
-	${INSTALL} -d -o root -g wheel -m 0755 ${DOCDIR}/java/html/spread
-	${INSTALL_DATA} ${WRKSRC}/java/docs/*.html ${DOCDIR}/java/html
-	${INSTALL_DATA} ${WRKSRC}/java/docs/stylesheet.css ${DOCDIR}/java/html
-	${INSTALL_DATA} ${WRKSRC}/java/docs/spread/*.html ${DOCDIR}/java/html/spread
+	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}/java
+	${INSTALL_DATA} ${WRKSRC}/java/readme.txt ${DOCSDIR}/java
+	${INSTALL_DATA} ${WRKSRC}/java/recThread.java ${DOCSDIR}/java
+	${INSTALL_DATA} ${WRKSRC}/java/Flooder.java ${DOCSDIR}/java
+	${INSTALL_DATA} ${WRKSRC}/java/User.java ${DOCSDIR}/java
+	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}/java/html
+	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}/java/html/spread
+	${INSTALL_DATA} ${WRKSRC}/java/docs/*.html ${DOCSDIR}/java/html
+	${INSTALL_DATA} ${WRKSRC}/java/docs/stylesheet.css ${DOCSDIR}/java/html
+	${INSTALL_DATA} ${WRKSRC}/java/docs/spread/*.html ${DOCSDIR}/java/html/spread
 .endif
 .endif
-	@${ECHO} "================================================================================"
-	@${ECHO} "NB: Create the directory /var/run/spread, with write permissions for the spread"
-	@${ECHO} "user/group. The spread daemon will chroot there, and fail if it can't."
-	@${ECHO} "================================================================================"
+	@${CAT} ${PKGMESSAGE}
+
+post-install:
+	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
