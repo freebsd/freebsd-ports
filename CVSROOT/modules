@@ -6983,6 +6983,7 @@ siphon		ports/security/siphon
 sirc		ports/irc/sirc
 sircd		ports/irc/sircd
 sis		ports/cad/sis
+sisc		ports/lang/sisc
 sitecopy	ports/www/sitecopy
 sitescooper	ports/palm/sitescooper
 sixpack		ports/databases/sixpack
