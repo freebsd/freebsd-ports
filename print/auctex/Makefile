@@ -21,11 +21,12 @@ ALL_TARGET=	all contrib
 INSTALL_TARGET=	install install-contrib
 MAKE_ARGS+=	lispdir=${PREFIX}/${LISPDIR}
 PLIST_SUB+=	LISPDIR=${LISPDIR}
+USE_REINPLACE=	yes
 
 # adjust a hardcoded '/usr/local' string
 post-patch:
 	@${ECHO_MSG} "===>  Substituting hardcoded '/usr/local' paths"
-	${PERL} -wpi -e 's?/usr/local?${PREFIX}?g' ${WRKSRC}/tex.el
+	${REINPLACE_CMD} -e 's?/usr/local?${PREFIX}?g' ${WRKSRC}/tex.el
 
 post-install:
 .if !defined(NOPORTDOCS)
