@@ -31,6 +31,7 @@ Amaya/amaya/MathMLP.PRS
 Amaya/amaya/MathMLT.TRA
 Amaya/amaya/MathMLTX.TRA
 Amaya/amaya/TextFile.STR
+Amaya/amaya/TextFile.conf
 Amaya/amaya/TextFileP.PRS
 Amaya/amaya/TextFilePL.PRS
 Amaya/amaya/TextFilePP.PRS
@@ -156,7 +157,6 @@ Amaya/doc/amaya/Math.html
 Amaya/doc/amaya/Numbering.html
 Amaya/doc/amaya/Printing.html
 Amaya/doc/amaya/Publishing.html
-Amaya/doc/amaya/Registry.html
 Amaya/doc/amaya/Searching.html
 Amaya/doc/amaya/Selecting.html
 Amaya/doc/amaya/SpellChecking.html
