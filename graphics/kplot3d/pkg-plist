@@ -1,5 +1,6 @@
 bin/kplot3d
 share/applnk/Applications/kplot3d.kdelnk
+share/apps/kplot3d/pics/intro.jpg
 share/doc/HTML/en/kplot3d/index-1.html
 share/doc/HTML/en/kplot3d/index-2.html
 share/doc/HTML/en/kplot3d/index-3.html
@@ -11,3 +12,5 @@ share/icons/kplot3d.xpm
 share/icons/mini/kplot3d.xpm
 share/locale/ru/LC_MESSAGES/kplot3d.mo
 @dirrm share/doc/HTML/en/kplot3d
+@dirrm share/apps/kplot3d/pics
+@dirrm share/apps/kplot3d

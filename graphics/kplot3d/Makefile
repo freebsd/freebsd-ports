@@ -1,21 +1,28 @@
 # New ports collection makefile for:	kplot3d
-# Version required:			0.69
+# Version required:			0.70
 # Date created:				30 October 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kplot3d-0.69
+DISTNAME=	kplot3d-0.70
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://members.xoom.com/kplot3d/
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=	jedgar@FreeBSD.org
 
 LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11
 
 FETCH_BEFORE_ARGS=	-b  # members.xoom.com is broken
 USE_QT=		yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400004
+BROKEN=		"Obsolete compiler"
+.endif
 
 .include <bsd.port.mk>
