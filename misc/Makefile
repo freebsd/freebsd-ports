@@ -258,6 +258,7 @@
     SUBDIR += peq
     SUBDIR += pg
     SUBDIR += pinfo
+    SUBDIR += pipebench
     SUBDIR += pl-sms
     SUBDIR += porteasy
     SUBDIR += portell
