@@ -1,0 +1,70 @@
+#!/usr/bin/perl
+# pnohang: executes command ($4-) with output in file ($3)
+# kills command if no output within $1 seconds with message in $2
+# usage: pnohang timeout file command args ...
+
+require "ctime.pl";
+
+if ($#ARGV < 3) {
+  print "usage: pnohang timeout outfile message command [args...]\n";
+  exit 1;
+}
+
+$timeout=$ARGV[0];
+$outfile=$ARGV[1];
+$message=$ARGV[2];
+splice(@ARGV, 0, 3);
+$pid=$$;
+#print "timeout is ", $timeout, "\n";
+#print "outfile is ", $outfile, "\n";
+#print "message is ", $message, "\n";
+#print "arguments are ", "@ARGV", "\n";
+if ($pid1 = fork) {
+  if ($pid2 = fork) {
+    local $SIG{TERM} = 'IGNORE';
+    # parent
+    #print 'child pids are ', $pid1, ' ', $pid2, "\n";
+    $child=wait;
+    $status=$?;
+    #print "exited child is $child, status is $status\n";
+    if ($pid1 = $child) {
+      #print "killing process $pid2 (second child)\n";
+      kill 'TERM', $pid2;
+    }
+    else {
+      #print "killing process $pid1 (first child)\n";
+      kill 'TERM', $pid1;
+    }
+    # exit status in upper 8 bits, killed signal (if any) in lower 8 bits
+    exit (($status >> 8) | ($status & 0xff)) ;
+  }
+  else {
+    # second child
+    for (;;) {
+      #local $^W = 0;
+      $now = time;
+      sleep $timeout;
+      ($dev, $ino, $mode, $nlink, $uid, $gid, $rdev, $size, $atime, $mtime, $ctime, $blksize, $blocks)
+	  = stat($outfile);
+      if ($now > $mtime) {
+#        system "logger -t pnohang killing @ARGV $message, pid $pid since no output in $timeout seconds";
+        print "pnohang: killing @ARGV ($message, pid $pid1 and $pid) since no output in $timeout seconds since ", &ctime($now);
+	print "ps jgx before the signal\n";
+	system "ps jgxww";
+        sleep 1; # give it a chance to output message
+        kill 'TERM' => -$pid1;
+	sleep 1;
+        kill 'TERM' => -$pid;
+	sleep 1;
+	print "ps jgx after the signal\n";
+	system "ps jgxww";
+        exit 1;
+      }
+    }
+  }
+}
+else {
+  # first child
+  #print "executing @ARGV\n";
+  exec "@ARGV >$outfile 2>&1";
+}
