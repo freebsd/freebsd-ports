@@ -21,9 +21,9 @@
 +and
 +.I gc_cpp.h
 +will probably be found in
-+.I /usr/local/include,
++.I %%PREFIX%%/include,
 +and the library in
-+.I /usr/local/lib.
++.I %%PREFIX%%/lib.
 +.LP
 +This library has been compiled as drop-in replacements
 +for malloc and free (which is to say, all malloc
