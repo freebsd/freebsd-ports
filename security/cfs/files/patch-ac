@@ -1,21 +1,8 @@
---- ssh.1.orig	Sat Jan  1 04:35:00 1994
-+++ ssh.1	Sun Sep 20 17:59:46 1998
-@@ -1,14 +1,14 @@
- .TH SSH 1 ""
- .SH NAME
--ssh - (somewhat) secure CFS shell
-+cfssh - (somewhat) secure CFS shell
- .SH SYNOPSIS
--.B ssh
-+.B cfssh
- \fIdirectory\fP
- .SH DESCRIPTION
--\fBssh\fP uses \fBcattach\fP(1) to associate the encrypted
-+\fBcfssh\fP uses \fBcattach\fP(1) to associate the encrypted
- \fIdirectory\fP (previously created with \fBcmkdir\fP(1)) with a
- randomly selected name.  Once the correct passphrase is provided,
--\fBssh\fP invokes a new shell with the random directory in /crypt as its
-+\fBcfssh\fP invokes a new shell with the random directory in /crypt as its
- working directory.
- When the shell exits, the temporary attach name is deleted with
- cdetach(1).
+--- cfssh.orig	Mon May 22 20:56:00 2000
++++ cfssh	Mon May 22 20:56:11 2000
+@@ -1,4 +1,4 @@
+-#!/bin/ksh
++#!/bin/sh
+ 
+ if [ -z "$1" ]; then
+ 	echo Usage: cfssh directory
