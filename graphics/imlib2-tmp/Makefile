@@ -3,7 +3,7 @@
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.29 1998/09/15 11:57:41 asami Exp $
+# $Id: Makefile,v 1.30 1998/09/17 00:50:47 asami Exp $
 #
 
 DISTNAME=	imlib-1.7
@@ -16,8 +16,8 @@ MAINTAINER=	vanilla@FreeBSD.ORG
 
 LIB_DEPENDS=    png.2:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34 \
-		gif\\.3\\.:${PORTSDIR}/graphics/giflib \
+		tiff34.1:${PORTSDIR}/graphics/tiff34 \
+		gif.3:${PORTSDIR}/graphics/giflib \
 		gtk11\\.1\\.:${PORTSDIR}/x11-toolkits/gtk11
 
 USE_GMAKE=	yes

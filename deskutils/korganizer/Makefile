@@ -3,7 +3,7 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.7 1998/08/25 10:04:56 asami Exp $
+# $Id: Makefile,v 1.8 1998/09/15 11:45:49 asami Exp $
 #
 
 DISTNAME=	korganizer-0.9
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR= unstable/apps/office
 
 MAINTAINER=	hanspb@persbraten.vgs.no
 
-LIB_DEPENDS=	gif\\.[23]\\.:${PORTSDIR}/graphics/giflib \
+LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		kdecore\\.1\\.:${PORTSDIR}/x11/kdelibs \
 		kdeui\\.1\\.:${PORTSDIR}/x11/kdelibs
