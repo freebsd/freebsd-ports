@@ -1728,6 +1728,11 @@ enigmail	ports/mail/enigmail
 enigmail-thunderbird	ports/mail/enigmail-thunderbird
 enjoympeg	ports/multimedia/enjoympeg
 enlightenment	ports/x11-wm/enlightenment
+enlightenment-docs	ports/x11-wm/enlightenment-docs
+enlightenment-theme-BlueSteel	ports/x11-themes/enlightenment-theme-BlueSteel
+enlightenment-theme-BrushedMetal-Tigert	ports/x11-themes/enlightenment-theme-BrushedMetal-Tigert
+enlightenment-theme-Ganymede	ports/x11-themes/enlightenment-theme-Ganymede
+enlightenment-theme-ShinyMetal	ports/x11-themes/enlightenment-theme-ShinyMetal
 enscribe	ports/audio/enscribe
 enscript-a4	ports/print/enscript-a4
 enscript-letter	ports/print/enscript-letter
