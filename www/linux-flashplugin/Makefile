@@ -16,8 +16,6 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The official Macromedia Flash Player for Linux Netscape and Opera
 
-BROKEN=		"Playback not working anymore, reason unknown."
-
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 NO_CDROM=	"Redistribution not allowed"
