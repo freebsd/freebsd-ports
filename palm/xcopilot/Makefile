@@ -10,7 +10,7 @@ PORTVERSION=	0.6.6
 CATEGORIES=	palm emulators
 MASTER_SITES=	http://xcopilot.cuspy.com/build/
 
-MAINTAINER=	ports@quack.kfu.com
+MAINTAINER=	ports@freebsd.org
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
