@@ -38,9 +38,7 @@ MAN1=		balsa.1
 
 post-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		 s|-liconv|-lgiconv|g ; s|iconv_open|libiconv_open|g ; \
-		 s|([^g])iconv.h|\1giconv.h|g' \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' \
 			${WRKSRC}/configure ${WRKSRC}/libmutt/configure
 	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \

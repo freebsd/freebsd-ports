@@ -23,7 +23,4 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgiconv -lgnugetopt"
 
-post-patch:
-	@${PERL} -pi -e "s/iconv.h/giconv.h/g" ${WRKSRC}/configure
-
 .include <bsd.port.mk>

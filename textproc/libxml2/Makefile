@@ -49,8 +49,5 @@ pre-extract:
 pre-patch:
 	@find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
 		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
-	@cd ${WRKSRC} && ${PERL} -pi -e \
-		's|([^g])iconv.h|\1giconv.h|g ; s|-liconv|-lgiconv|g' \
-			configure include/libxml/encoding.h
 
 .include <bsd.port.mk>

@@ -70,8 +70,6 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
-	@find ${WRKSRC} -type f -name "*.[ch]" | xargs ${GREP} -l '[^g]iconv.h' | \
-		xargs ${PERL} -pi -e 's|(["<])iconv.h|\1giconv.h|g'
 	@find ${WRKSRC} -type f -name "*.[ch]" | xargs ${GREP} -l '<db.h>' | \
 		xargs ${PERL} -pi -e 's|<db.h>|<db3/db.h>|g'
 

@@ -35,9 +35,7 @@ INSTALL_CMD=	/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}
 
 post-patch:
 .for file in configure libgphoto2_port/configure
-	@${PERL} -pi -e 's|<iconv.h>|<giconv.h>|g ; \
-		 s|-liconv|-lgiconv|g ; \
-		 s|-g -Wall||g' ${WRKSRC}/${file}
+	@${PERL} -pi -e 's|-g -Wall||g' ${WRKSRC}/${file}
 .endfor
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\@INSTALL\@|${INSTALL_CMD}|g ; \

@@ -40,7 +40,5 @@ post-patch:
 	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
-	@find ${WRKSRC}/src -name "*.[ch]" | xargs ${PERL} -pi -e \
-		's|\<iconv.h\>|\<giconv.h\>|g'
 
 .include <bsd.port.mk>

@@ -31,8 +31,4 @@ LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 CONFIGURE_ARGS+=	--with-ncurses=${LOCALBASE}
 .endif
 
-pre-patch:
-	@${PERL} -pi -e 's|<iconv.h>|<giconv.h>|g ; \
-		 s|-liconv|-lgiconv|g' ${WRKSRC}/configure
-
 .include <bsd.port.post.mk>

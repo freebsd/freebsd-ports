@@ -27,9 +27,6 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:
-.for file in config.h.in configure libbase/styconf0.h
-	@${PERL} -pi -e "s,iconv.h,giconv.h,g" ${WRKSRC}/${file}
-.endfor
 .for file in config.h.in libbase/styconf0.h libbase/gstream.c
 	@${PERL} -pi -e "s,ICONV_H,GICONV_H,g" ${WRKSRC}/${file}
 .endfor

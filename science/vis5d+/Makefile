@@ -34,11 +34,6 @@ CONFIGURE_ARGS=	--enable-gtk --enable-threads --with-mesa --with-netcdf \
 		--with-mixkit=${LOCALBASE}/lib/libmix.a --with-x
 INSTALLS_SHLIB=	yes
 
-post-patch:
-.for file in configure intl/gettextP.h
-	@${PERL} -pi -e "s,iconv.h,giconv.h,g" ${WRKSRC}/${file}
-.endfor
-
 pre-build:
 	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
 
