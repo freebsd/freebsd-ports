@@ -1,5 +1,5 @@
---- configure.orig	Fri Oct 18 20:16:40 2002
-+++ configure	Fri Oct 18 20:23:32 2002
+--- configure.orig	Thu May 30 07:20:57 2002
++++ configure	Thu Nov 20 16:11:23 2003
 @@ -886,7 +886,7 @@
  if test $debug = "yes"; then
  	CFLAGS="-g -O"
@@ -9,6 +9,15 @@
  fi
  CFLAGS="-Wall $CFLAGS"
  export CFLAGS
+@@ -1842,7 +1842,7 @@
+ fi
+ 
+ 
+-for ac_hdr in sched.h sys/sched.h machine/cpufunc.h sys/types.h machine/pio.h machine/sysarch.h sys/cpuvar.h
++for ac_hdr in sched.h machine/cpufunc.h sys/types.h machine/pio.h machine/sysarch.h sys/cpuvar.h
+ do
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
 @@ -2902,6 +2902,7 @@
  
  	echo $ac_n "checking for your mounted filesystem table""... $ac_c" 1>&6
