@@ -1,13 +1,11 @@
-diff -ur work.orig/sablevm-native-library-1.0.6/src/Makefile.in work/sablevm-native-library-1.0.6/src/Makefile.in
---- work.orig/sablevm-native-library-1.0.6/src/Makefile.in	Wed Aug 14 22:32:02 2002
-+++ work/sablevm-native-library-1.0.6/src/Makefile.in	Sun Aug 18 10:24:12 2002
-@@ -94,8 +94,7 @@
- 	java-io \
- 	java-lang \
- 	java-net \
--	java-util \
--	gnu-java-awt-peer-gtk
-+	java-util
+--- work/sablevm-native-library-1.0.6/src/Makefile.in.orig	Wed Feb 19 22:40:03 2003
++++ work/sablevm-native-library-1.0.6/src/Makefile.in	Sat Feb 22 20:01:14 2003
+@@ -77,7 +77,7 @@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
  
- subdir = src
+-SUBDIRS =  	include 	jni-include 	classpath 	fdlibm 	java-io 	java-lang 	java-net 	java-util 	gnu-java-awt-peer-gtk
++SUBDIRS =  	include 	jni-include 	classpath 	fdlibm 	java-io 	java-lang 	java-net 	java-util
+ 
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../src/include/config.h
