@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	dgd
-PORTVERSION=	1.2
+PORTVERSION=	1.2p1
 CATEGORIES=	net lang
-MASTER_SITES=	ftp://ftp.imaginary.com/pub/LPC/servers/DGD/ \
-		ftp://ftp.dworkin.nl/pub/dgd/ \
+MASTER_SITES=	ftp://ftp.dworkin.nl/pub/dgd/ \
+		ftp://ftp.imaginary.com/pub/LPC/servers/DGD/ \
 		ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/ \
 		ftp://ftp.veda.is/pub/mud/dgd/ \
 		ftp://ftp.dreamlabs.com/pub/mud/dgd/
@@ -19,7 +19,7 @@ PATCH_SITES=	ftp://ftp.imaginary.com/pub/LPC/servers/DGD/patches/ \
 		ftp://ftp.veda.is/pub/mud/dgd/patches/ \
 		ftp://ftp.dreamlabs.com/pub/mud/dgd/patches/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glewis@FreeBSD.org
 
 NO_CDROM=	"no distribution to corporate environment"
 RESTRICTED=	"license required for commercial use"
