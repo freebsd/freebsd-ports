@@ -9962,6 +9962,7 @@ translate	ports/misc/translate
 transproxy	ports/www/transproxy
 tree		ports/sysutils/tree
 treecc		ports/lang/treecc
+treeline	ports/deskutils/treeline
 treepuzzle	ports/biology/treepuzzle
 treeviewx	ports/biology/treeviewx
 treewm		ports/x11-wm/treewm
