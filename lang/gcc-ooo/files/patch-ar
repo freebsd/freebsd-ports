@@ -1,12 +1,15 @@
 --- gcc/config/freebsd.h.orig	Mon Nov 22 22:17:32 1999
-+++ gcc/config/freebsd.h	Sat Dec 18 14:42:03 1999
-@@ -48,13 +48,23 @@
++++ gcc/config/freebsd.h	Fri Feb  4 05:29:31 2000
+@@ -48,13 +48,26 @@
  #undef WORD_SWITCH_TAKES_ARG
  #define WORD_SWITCH_TAKES_ARG(STR) (FBSD_WORD_SWITCH_TAKES_ARG(STR))
  
 +/* Place spaces around this string.  We depend on string splicing to produce
 +   the final CPP_PREDEFINES value.  */
-+#define CPP_FBSD_PREDEFINES " -Dunix -D__FreeBSD__ -Asystem(unix) -Asystem(FreeBSD) "
++#define FBSD_CPP_PREDEFINES " -Dunix -D__FreeBSD__ -Asystem(unix) -Asystem(bsd) -Asystem(FreeBSD) "
++
++#undef CPP_PREDEFINES
++#define CPP_PREDEFINES  FBSD_CPP_PREDEFINES
 +
  /* Provide a CPP_SPEC appropriate for FreeBSD.  We just deal with the GCC 
     option `-posix', and PIC issues.  */

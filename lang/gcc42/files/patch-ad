@@ -1,21 +1,20 @@
---- gcc/config/i386/freebsd-aout.h.orig	Tue Jun  1 17:02:37 1999
-+++ gcc/config/i386/freebsd-aout.h	Mon Jun 14 14:11:20 1999
-@@ -32,12 +36,10 @@
- #include "i386/perform.h"
+--- gcc/config/i386/freebsd-aout.h.orig	Sun Jan 30 23:28:05 2000
++++ gcc/config/i386/freebsd-aout.h	Fri Feb  4 05:19:16 2000
+@@ -31,12 +31,7 @@
  
  /* This goes away when the math-emulator is fixed */
--#undef TARGET_DEFAULT
+ #undef TARGET_DEFAULT
 -#define TARGET_DEFAULT \
 -  (MASK_80387 | MASK_IEEE_FP | MASK_FLOAT_RETURNS | MASK_NO_FANCY_MATH_387)
+-
+-#undef CPP_PREDEFINES
+-#define CPP_PREDEFINES "-Dunix -D__FreeBSD__\
+- -Asystem(unix) -Asystem(bsd) -Asystem(FreeBSD)"
 +#define TARGET_CPU_DEFAULT 0400		/* TARGET_NO_FANCY_MATH_387 */
- 
- #undef CPP_PREDEFINES
--#define CPP_PREDEFINES "-Dunix -Di386 -D__FreeBSD__ -Asystem(unix) -Asystem(FreeBSD) -Acpu(i386) -Amachine(i386)"
-+#define CPP_PREDEFINES "-Di386 -Acpu(i386) -Amachine(i386)" CPP_FBSD_PREDEFINES
  
  /* Like the default, except no -lg.  */
  #define LIB_SPEC "%{!shared:%{!pg:-lc}%{pg:-lc_p}}"
-@@ -87,14 +89,6 @@
+@@ -84,14 +79,6 @@
     necessary when compiling PIC code.  */
  
  #define JUMP_TABLES_IN_TEXT_SECTION 1
@@ -30,7 +29,7 @@
  
  /* i386 freebsd still uses old binutils that don't insert nops by default
     when the .align directive demands to insert extra space in the text
-@@ -105,19 +99,18 @@
+@@ -102,19 +89,18 @@
  
  /* Profiling routines, partially copied from i386/osfrose.h.  */
  
@@ -53,7 +52,7 @@
        fprintf (FILE, "\tcall mcount\n");				\
      }									\
  }
-@@ -135,6 +128,7 @@
+@@ -132,6 +118,7 @@
  
  #define TYPE_ASM_OP	".type"
  #define SIZE_ASM_OP	".size"
@@ -61,7 +60,7 @@
  
  /* The following macro defines the format used to output the second
     operand of the .type assembler directive.  Different svr4 assemblers
-@@ -144,6 +138,12 @@
+@@ -141,6 +128,12 @@
  
  #define TYPE_OPERAND_FMT	"@%s"
  
@@ -74,9 +73,12 @@
  /* Write the extra assembler code needed to declare a function's result.
     Most svr4 assemblers don't require any special declaration of the
     result value, but there are exceptions.  */
-@@ -245,3 +245,5 @@
+@@ -242,6 +235,8 @@
  #define STARTFILE_SPEC  \
    "%{shared:c++rt0.o%s} \
     %{!shared:%{pg:gcrt0.o%s}%{!pg:%{static:scrt0.o%s}%{!static:crt0.o%s}}}"
 +
 +#define MD_STARTFILE_PREFIX "/usr/lib/aout/"
+ 
+ /* Define this so we can compile MS code for use with WINE.  */
+ #define HANDLE_PRAGMA_PACK_PUSH_POP
