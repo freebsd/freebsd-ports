@@ -12,9 +12,11 @@ MASTER_SITES=	http://fredrik.hubbe.net/plugger/ \
 		ftp://ftp.netscape.com/pub/sdk/plugin/unix/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} unix-sdk-3.0b5.tar.Z
 
-MAINTAINER=	sachs@cs.williams.edu
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/netscape/plugins:${PORTSDIR}/www/netscape47-navigator
+
+BROKEN_ELF=	"Needs a.out c++rt0.o file"
 
 MAN7=		plugger.7
 MANCOMPRESSED=	no
