@@ -13,7 +13,6 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	kris@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	#empty
 
 do-install:
