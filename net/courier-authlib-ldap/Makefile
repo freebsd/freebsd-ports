@@ -147,6 +147,11 @@ post-patch:
 		${WRKSRC}/userdb/Makefile.in
 	@${REINPLACE_CMD} -e 's|DEFAULTOPTIONS=""|DEFAULTOPTIONS="wbnodsn=1"|' \
 		${WRKSRC}/authdaemonrc.in
+	@${REINPLACE_CMD} -e 's|conftest.lock|/tmp/courier-authlib.locktest|g' \
+		${WRKSRC}/liblock/locktest.c
+
+post-configure:
+	@${RM} -f /tmp/courier-authlib.locktest
 
 post-install:
 	${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
