@@ -24,6 +24,10 @@ USE_PERL5_BUILD=yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 .if ${PORTOBJFORMAT} == "elf"
 GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
 .else
