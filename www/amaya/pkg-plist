@@ -12,6 +12,8 @@ Amaya/amaya/HTML.fr
 Amaya/amaya/HTML.trans
 Amaya/amaya/HTMLP.PRS
 Amaya/amaya/HTMLPBW.PRS
+Amaya/amaya/HTMLPL.PRS
+Amaya/amaya/HTMLPLL.PRS
 Amaya/amaya/HTMLPLP.PRS
 Amaya/amaya/HTMLPLPUS.PRS
 Amaya/amaya/HTMLPP.PRS
@@ -19,6 +21,8 @@ Amaya/amaya/HTMLPPUS.PRS
 Amaya/amaya/HTMLT.TRA
 Amaya/amaya/HTMLTT.TRA
 Amaya/amaya/HTMLTX.TRA
+Amaya/amaya/HTMLUSL.PRS
+Amaya/amaya/HTMLUSLL.PRS
 Amaya/amaya/MathML.STR
 Amaya/amaya/MathML.en
 Amaya/amaya/MathML.fr
@@ -28,9 +32,14 @@ Amaya/amaya/MathMLT.TRA
 Amaya/amaya/MathMLTX.TRA
 Amaya/amaya/TextFile.STR
 Amaya/amaya/TextFileP.PRS
+Amaya/amaya/TextFilePL.PRS
 Amaya/amaya/TextFilePP.PRS
 Amaya/amaya/TextFilePPUS.PRS
 Amaya/amaya/TextFileT.TRA
+Amaya/amaya/TextFileUSL.PRS
+Amaya/amaya/XLink.STR
+Amaya/amaya/XLinkP.PRS
+Amaya/amaya/XLinkT.TRA
 Amaya/applis/bin/amaya
 @exec ln -sf %D/%F %D/bin/amaya
 @unexec rm -f %D/bin/amaya
@@ -90,6 +99,7 @@ Amaya/doc/Icons/Link.gif
 Amaya/doc/Icons/NumList.gif
 Amaya/doc/Icons/OList.gif
 Amaya/doc/Icons/Plugin.gif
+Amaya/doc/Icons/Print.gif
 Amaya/doc/Icons/ProfilesMenu.gif
 Amaya/doc/Icons/ProxyMenu.gif
 Amaya/doc/Icons/PublishMenu.gif
