@@ -1,0 +1,5 @@
+bin/gnewtellium
+share/gnewtellium/pixmaps/gnewtellium.xpm
+@dirrm share/gnewtellium/pixmaps
+@dirrm share/gnewtellium
+
