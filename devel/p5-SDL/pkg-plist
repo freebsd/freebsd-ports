@@ -1,30 +1,34 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL_perl/SDL_perl.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL_perl/SDL_perl.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL_perl/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Cursor.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/TTFont.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Color.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Timer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL_perl/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL_perl/SDL_perl.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL_perl/SDL_perl.so
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/App.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Music.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Cdrom.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Color.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Console.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Constants.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Cursor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Event.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Font.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Mixer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Music.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/OpenGL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/OpenGL/Model.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/OpenGL/Cube.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Mixer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/OpenGL/Constants.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Palette.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Rect.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Shell.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Sound.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Surface.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Rect.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Palette.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Console.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Cdrom.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/FontTool.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Font.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Shell.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/GraphicTool.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/TTFont.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Timer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tool/Font.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tool/Graphic.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL_perl.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL_perl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SDL/OpenGL
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tool
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SDL

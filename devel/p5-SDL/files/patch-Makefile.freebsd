@@ -1,0 +1,19 @@
+--- Makefile.freebsd.orig	Thu Jan  1 02:38:22 2004
++++ Makefile.freebsd	Thu Jan  1 02:38:54 2004
+@@ -1,6 +1,7 @@
+ #!/usr/bin/env perl 
+ 
+ use strict;
++use Config;
+ use ExtUtils::MakeMaker;
+ 
+ #
+@@ -96,7 +97,7 @@
+ 
+ my %options = (
+     'NAME'	=> 'SDL_perl',
+-    'VERSION_FROM' => 'SDL.pm', 
++    'VERSION_FROM' => 'lib/SDL.pm', 
+     'LIBS'	=> [ join( " ",	"$sdl_libs", 
+ 			map { $ext{$_}{exists} ? "-l$_" : '' } (sort keys %ext),
+ 			)
