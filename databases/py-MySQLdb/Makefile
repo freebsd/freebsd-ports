@@ -5,12 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	py-MySQLdb
+PORTNAME=	MySQLdb
 PORTVERSION=	1.0.0
 PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mysql-python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	MySQL-python-${PORTVERSION}
 
 MAINTAINER=	marcus@corp.grupos.com.br
@@ -20,13 +21,16 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 USE_MYSQL=		yes
 
-OPTIONS=	MYSQLCLIENT_R "Use mysqlclient_r lib" off \
-		MYSQLSSL "Use SSL support" off \
-		MYSQLCRYPTO "Use CRYPTO support" off
+CONFLICTS=	py*-MySQLdb-devel-*
 
-PORTDOCS=		MANIFEST README
-
-.include <bsd.port.pre.mk>
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "	WITH_MYSQLCLIENT_R=yes	Use mysqlclient_r lib"
+	@${ECHO} "	WITH_MYSQLSSL=yes	Use SSL support"
+	@${ECHO} "	WITH_MYSQLCRYPTO=yes	Use CRYPTO support"
+	@${ECHO} ""
 
 .if defined(WITH_MYSQLCLIENT_R)
 MAKE_ENV+=	mysqlclient="mysqlclient_r"
@@ -48,6 +52,8 @@ MAKE_ENV+=	mysqloptlibs=""
 .endif
 .endif
 
+PORTDOCS=		MANIFEST README
+
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
@@ -56,4 +62,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
