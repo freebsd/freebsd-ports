@@ -16,6 +16,7 @@ COMMENT=	Linux Infared Remote Control
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
+USE_XLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-driver=any --disable-manage-devices
