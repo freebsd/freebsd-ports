@@ -1,7 +1,7 @@
-share/dict/web-fpw/web/data/honmon
 share/dict/web-fpw/catalogs
-share/doc/web-fpw/README
+share/dict/web-fpw/web/data/honmon
 @dirrm share/dict/web-fpw/web/data
 @dirrm share/dict/web-fpw/web
 @dirrm share/dict/web-fpw
+share/doc/web-fpw/readme
 @dirrm share/doc/web-fpw
