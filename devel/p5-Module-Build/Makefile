@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Build
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module
@@ -42,6 +42,24 @@ MAN3=		Module::Build.3 \
 		Module::Build::Platform::darwin.3 \
 		Module::Build::Platform::os2.3
 
+PERL_CONFIGURE=		yes
+CONFIGURE_SCRIPT?=	Build.PL
+ALL_TARGET?=
+PL_BUILD?=		Build
+CONFIGURE_ARGS+= \
+	install_path=lib="${PREFIX}/${SITE_PERL_REL}" \
+	install_path=arch="${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}" \
+	install_path=script="${PREFIX}/bin" \
+	install_path=bin="${PREFIX}/bin" \
+	install_path=libdoc="${MAN3PREFIX}/man/man3" \
+	install_path=bindoc="${MAN1PREFIX}/man/man1"
+
+do-build:
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} ${MAKE_ARGS} ${ALL_TARGET})
+
+do-install:
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} ${MAKE_ARGS} ${INSTALL_TARGET})
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} > 500600
@@ -51,5 +69,4 @@ BUILD_DEPENDS+=	${SITE_PERL}/ExtUtils/ParseXS.pm:${PORTSDIR}/devel/p5-ExtUtils-P
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 .endif
 
-.include "inc.build.mk"
 .include <bsd.port.post.mk>
