@@ -1,2 +1,3 @@
 bin/biew
 share/biew/biew.hlp
+@dirrm share/biew

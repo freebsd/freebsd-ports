@@ -26,6 +26,10 @@ MAKE_ARGS+=	"CSYSFLAGS=-D__FreeBSD_version=${OSVERSION} -I${LOCALBASE}/include"
 MAKE_ARGS+=	"OSLDEF=-L${LOCALBASE}/lib"
 .endif
 
+post-patch:
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" \
+		${WRKSRC}/lib/sysdep/generic/unix/os_dep.c
+
 pre-build:
 	 ${LN} -sf ${WRKSRC}/makefile ${WRKSRC}/Makefile
 
@@ -40,8 +44,8 @@ post-build:
 	${LN} -sf ../tools/lzss/lzss ./;./biewhlp biewhlp.prj)
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/biew ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/biew ${PREFIX}/bin
 	@ ${MKDIR} ${PREFIX}/share/biew
-	@ ${INSTALL_DATA} ${WRKSRC}/hlp/biew.hlp ${PREFIX}/share/biew
+	${INSTALL_DATA} ${WRKSRC}/hlp/biew.hlp ${PREFIX}/share/biew
 
 .include <bsd.port.post.mk>
