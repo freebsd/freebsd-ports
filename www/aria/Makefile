@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aria
-PORTVERSION=	0.10.2.t4
+PORTVERSION=	0.10.2.t5
 CATEGORIES=	www
 MASTER_SITES=	http://rabien.virtualave.net/linux/storage/sources/ \
 		http://aria.rednoah.com/storage/sources/
