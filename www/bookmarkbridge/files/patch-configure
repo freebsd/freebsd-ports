@@ -1,0 +1,11 @@
+--- configure.marco.orig	Sun Jan 25 21:11:32 2004
++++ configure	Sun Jan 25 21:12:38 2004
+@@ -5536,7 +5536,7 @@
+ 
+ 
+ 
+-CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS -I/usr/include/libxml2"
++CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS -I/usr/local/include/libxml2"
+ # Check whether --enable-shared or --disable-shared was given.
+ if test "${enable_shared+set}" = set; then
+   enableval="$enable_shared"

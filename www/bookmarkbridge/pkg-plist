@@ -1,0 +1,27 @@
+bin/bookmarkbridge
+share/bookmarkbridge/about_bookmarkbridge.html
+share/bookmarkbridge/bookmarkbridge_settings.html
+share/bookmarkbridge/bookmarkbridgelogosmall.png
+share/bookmarkbridge/bookmarkbridges_web_sites.html
+share/bookmarkbridge/command_line_operation.html
+share/bookmarkbridge/compiling_bookmarkbridge_from_source.html
+share/bookmarkbridge/configuration_files.html
+share/bookmarkbridge/end_user_license_agreement.html
+share/bookmarkbridge/hacking_bookmarkbridge_source.html
+share/bookmarkbridge/index.html
+share/bookmarkbridge/installing_bookmarkbridge.html
+share/bookmarkbridge/main_screen.png
+share/bookmarkbridge/merging_your_bookmarks.html
+share/bookmarkbridge/obtaining_help.html
+share/bookmarkbridge/online_help.html
+share/bookmarkbridge/running_bookmarkbridge_for_the_first_time.html
+share/bookmarkbridge/settings_screen.png
+share/bookmarkbridge/source_code_roadmap.html
+share/bookmarkbridge/system_requirements.html
+share/bookmarkbridge/the_main_window.html
+share/bookmarkbridge/theory_of_operation.html
+share/bookmarkbridge/view_bookmarks.png
+share/bookmarkbridge/viewing_your_bookmarks.html
+share/bookmarkbridge/where_to_find_bookmarkbridge.html
+share/bookmarkbridge/why_bookmarkbridge_is_free.html
+@dirrm share/bookmarkbridge
