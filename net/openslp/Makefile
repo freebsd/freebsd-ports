@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openslp
-PORTVERSION=	1.0.8a
-PORTREVISION=	1
+PORTVERSION=	1.0.9a
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openslp
@@ -20,7 +19,7 @@ USE_OPENSSL=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/openslp \
-				--localstatedir=/var
+		--localstatedir=/var
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .if defined(WITH_SLP_SECURITY)
@@ -34,17 +33,17 @@ CONFIGURE_ARGS+=	--enable-async-api
 INSTALLS_SHLIB=	yes
 
 post-extract:
-	(cd ${WRKSRC}; \
+	@(cd ${WRKSRC}; \
 		${FIND} doc -type f -path '*/CVS/*' -delete; \
 		${FIND} doc -type d -name CVS -delete)
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/slpd.sh.sample \
-		> ${WRKSRC}/slpd.sh.sample
+	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" \
+		${FILESDIR}/slpd.sh.sample > ${WRKSRC}/slpd.sh.sample
 
 post-install:
 .for FILE in slp.conf slp.reg slp.spi
 	${INSTALL_DATA} ${WRKSRC}/etc/${FILE} ${PREFIX}/etc/openslp/${FILE}.default
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/slpd.sh.sample ${PREFIX}/etc/rc.d/slpd.sh.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/slpd.sh.sample ${PREFIX}/etc/rc.d/001slpd.sh.sample
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	(cd ${INSTALL_WRKSRC}/doc; \
