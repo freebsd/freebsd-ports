@@ -31,13 +31,3 @@
  #endif
      }
  
---- configure.orig	Thu Dec  5 16:31:39 2002
-+++ configure	Wed Jan 22 11:51:50 2003
-@@ -4206,6 +4206,7 @@
- if test -r /usr/include/soundcard.h \
- 	-o -r /usr/include/linux/soundcard.h \
- 	-o -r /usr/include/machine/soundcard.h \
-+	-o -r /usr/include/sys/soundcard.h \
- 	-o -r /usr/include/audio.h \
- 	-o "x$ac_cv_header_windows_h" = "xyes" \
-         -o "$HOSTTYPE" = "macintosh"; then
