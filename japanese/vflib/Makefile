@@ -3,66 +3,33 @@
 # Date created:		10 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.12 1998/03/20 14:54:43 itojun Exp $
+# $Id: Makefile,v 1.13 1998/06/28 08:29:15 asami Exp $
 #
 
-DISTNAME=	VFlib-2.22-PL8
-PKGNAME=	ja-vflib-2.22.10
+DISTNAME=	VFlib-2.23-PL1
+PKGNAME=	ja-vflib-2.23.1
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://gull.se.hiroshima-u.ac.jp/pub/VFlib/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} watanabe-vf.tar.Z
-
-PATCH_SITES=	http://itohws03.ee.noda.sut.ac.jp/~matsuda/VFlib-FT/ \
-		${MASTER_SITES}
-PATCHFILES=	VFlib-2.22-Patch9 VFlib-2.22-Patch10 VFlib-FT1.0-PL2.diff.gz
+MASTER_SITES=	ftp://gull.se.hiroshima-u.ac.jp/pub/TypeHack/
+DISTFILES=	TypeHack-19980625.tar.gz watanabe-vf.tar.Z
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
-LIB_DEPENDS=	ttf\\.1\\.0:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	ttf\\.2\\.0:${PORTSDIR}/print/freetype
 
-BROKEN=		left behind by freetype upgrade
+EXTRACT_ONLY=	TypeHack-19980625.tar.gz
+WRKSRC=		${WRKDIR}/TypeHack-19980625/VFlib2-2.23.1
+GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-WRKSRC=		${WRKDIR}/VFlib-2.22pl8
-MAKE_ENV=	PREFIX=${PREFIX} FREETYPEINCDIR=${FREETYPEINCDIR} \
-		FREETYPELIBDIR=${FREETYPELIBDIR}
-FREETYPEINCDIR=	${PREFIX}/include
-FREETYPELIBDIR=	${PREFIX}/lib
-
-do-patch:
-	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
-	@${CAT} ${DISTDIR}/VFlib-2.22-Patch9 ${DISTDIR}/VFlib-2.22-Patch10 | \
-		${PATCH} ${PATCH_DIST_ARGS:S/${WRKSRC}/&\/src/}
-	@${GZCAT} ${DISTDIR}/VFlib-FT1.0-PL2.diff.gz | ${PATCH} ${PATCH_DIST_ARGS}
-	@if [ "`echo ${PATCHDIR}/patch-*`" = "${PATCHDIR}/patch-*" ]; then \
-		${ECHO_MSG} "===>   Ignoring empty patch directory"; \
-	else \
-		${ECHO_MSG} "===>  Applying ${OPSYS} patches for ${PKGNAME}" ; \
-		for i in ${PATCHDIR}/patch-*; do \
-			case $$i in \
-				*.orig|*.rej|*~) \
-					${ECHO_MSG} "===>   Ignoring patchfile $$i" ; \
-					;; \
-				*) \
-					${PATCH} ${PATCH_ARGS} < $$i; \
-					;; \
-			esac; \
-		done; \
-	fi;
-
-do-build:
-	@(cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${MAKE})
-	@(cd ${WRKSRC}/tools; ${XMKMF}; ${SETENV} ${MAKE_ENV} ${MAKE})
-
-do-install:
-	${MKDIR} ${PREFIX}/lib/VFlib
-	@(cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET})
+post-install:
 	@(cd ${WRKSRC}/tools; \
-	  ${INSTALL_PROGRAM} fmtest disol kban ktest vfperf vftest \
-	    ${PREFIX}/lib/VFlib)
+	    ${INSTALL_SCRIPT} fmtest disol kban vfperf vftest ${PREFIX}/bin)
+	${MKDIR} ${PREFIX}/share/doc/VFlib2-2.23.1
 	@(cd ${WRKSRC}; \
-	  ${CP} -R doc jTeX COPYING README.txt.JP_EUC vfontcap \
-	    vfontcap.bdf vfontcap.comp2 ${PREFIX}/lib/VFlib)
+	  ${CP} -R doc COPYING COPYING.LIB README.txt.JP_EUC \
+	    ${PREFIX}/share/doc/VFlib2-2.23.1)
+	@(cd ${WRKSRC}; \
+	  ${CP} -R jTeX ${PREFIX}/share/VFlib/2.23.1)
 	${MKDIR} ${PREFIX}/share/fonts/watanabe_font
 	tar -C ${PREFIX}/share/fonts/watanabe_font \
 	  -xzf ${DISTDIR}/watanabe-vf.tar.Z
