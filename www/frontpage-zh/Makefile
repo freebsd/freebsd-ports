@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	frontpage
+CATEGORIES=	chinese www
 PKGNAMEPREFIX=	zh-
-CATEGORIES=	www chinese
 
 MAINTAINER=	hetzels@westbend.net
 
@@ -16,11 +16,10 @@ COMMENT=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-
 FP_LANG=	chp chs cht
 FP_LANGUAGE=	Chinese
 FP_LCID=	1028 2052 3076
-NO_FP_LCID=	yes
+NO_FP_LCID_SUB=	yes
 
 MASTERDIR=	${.CURDIR}/../frontpage-ar
 
