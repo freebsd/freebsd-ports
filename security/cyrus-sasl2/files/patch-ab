@@ -1,18 +1,21 @@
---- configure.in.orig	Mon May 20 19:02:49 2002
-+++ configure.in	Mon May 20 19:21:53 2002
-@@ -66,8 +66,9 @@
+--- configure.in.orig	Wed May 22 20:49:46 2002
++++ configure.in	Thu May 23 16:52:07 2002
+@@ -66,8 +66,12 @@
  dnl check for -R, etc. switch
  CMU_GUESS_RUNPATH_SWITCH
  dnl let's just link against local.  otherwise we never find anything useful.
 -CPPFLAGS="-I/usr/local/include ${CPPFLAGS}"
 -CMU_ADD_LIBPATH("/usr/local/lib")
-+CPPFLAGS="-I${OPENSSLINC} -I${OPENSSLINC}/openssl ${CPPFLAGS}"
++CPPFLAGS="-I${OPENSSLINC}/openssl ${CPPFLAGS}"
++if test "${OPENSSLINC}" != "/usr/include" ; then
++  CPPFLAGS="-I${OPENSSLINC} ${CPPFLAGS}"
++fi
 +CMU_ADD_LIBPATH("${OPENSSLLIB}")
 +CMU_ADD_LIBPATH("${LOCALBASE}/lib")
  
  AM_DISABLE_STATIC
  
-@@ -122,8 +123,6 @@
+@@ -122,8 +126,6 @@
  
    AC_SUBST(JAVA_INCLUDES)
    AC_MSG_RESULT(JAVA_INCLUDES)
@@ -21,7 +24,7 @@
  fi
  
  AM_CONDITIONAL(SAMPLE, test "$enable_sample" = yes)
-@@ -149,11 +148,13 @@
+@@ -149,11 +151,13 @@
  	AC_CHECK_HEADER(db.h,
  			AC_CHECK_LIB(db-3, db_create, SASL_DB_LIB="-ldb-3";
  			   dblib="berkeley",
@@ -36,7 +39,7 @@
  			dblib="no")
  	;;
    gdbm)
-@@ -175,11 +176,13 @@
+@@ -175,11 +179,13 @@
  	AC_CHECK_HEADER(db.h,
  			AC_CHECK_LIB(db-3, db_create, SASL_DB_LIB="-ldb-3";
  			   dblib="berkeley",
@@ -51,7 +54,7 @@
  			dblib="no")
  	if test "$dblib" = no; then
  	  dnl How about ndbm?
-@@ -229,6 +232,13 @@
+@@ -229,6 +235,13 @@
    berkeley)
      SASL_DB_BACKEND="db_${dblib}.lo"
      AC_DEFINE(SASL_BERKELEYDB)
@@ -65,7 +68,7 @@
      ;;
    *)
      AC_MSG_WARN([Disabling SASL authentication database support])
-@@ -534,12 +544,16 @@
+@@ -534,12 +547,16 @@
    fi
  
    if test "$with_des" != no; then
