@@ -1,0 +1,16 @@
+--- include/ttydrv.h~	Thu Mar 30 21:26:44 2000
++++ include/ttydrv.h	Sat Jun 17 00:03:21 2000
+@@ -11,4 +11,5 @@
+ #ifdef HAVE_NCURSES_H
+ # include <ncurses.h>
++# undef trace
+ #elif defined(HAVE_CURSES_H)
+ # include <curses.h>
+--- console/ncurses.c~	Sat Jun 17 01:39:59 2000
++++ console/ncurses.c	Sat Jun 17 01:34:56 2000
+@@ -30,4 +30,5 @@
+ #ifdef HAVE_NCURSES_H
+ # include <ncurses.h>
++# undef trace
+ #else
+ # ifdef HAVE_CURSES_H
