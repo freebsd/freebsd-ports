@@ -18,6 +18,7 @@ NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 INSTDIR?=	${PORTNAME}-${PORTVERSION}
 PLIST_SUB=	INSTDIR=${INSTDIR}
+BROKEN=		"CSS probem."
 
 do-install:
 	@ cd ${WRKSRC} && INSTDIR=${PREFIX}/${INSTDIR} ${PYTHON_CMD} viewcvs-install
