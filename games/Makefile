@@ -500,7 +500,6 @@
     SUBDIR += xpilotmon
     SUBDIR += xpipeman
     SUBDIR += xpired
-    SUBDIR += xpuyo
     SUBDIR += xpuyopuyo
     SUBDIR += xpuzzletama
     SUBDIR += xpyraminx

@@ -1,4 +1,0 @@
-bin/xpuyo
-lib/X11/app-defaults/Xpuyo
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
