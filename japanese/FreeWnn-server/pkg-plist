@@ -1,5 +1,5 @@
 @cwd /usr/local
-lib/wnn/ja_JP/dic/usr
+@exec mkdir -p %D/lib/wnn/ja_JP/dic/usr
 lib/wnn/ja_JP/dic/pubdic/bio.dic
 lib/wnn/ja_JP/dic/pubdic/chimei.dic
 lib/wnn/ja_JP/dic/pubdic/computer.dic
@@ -85,6 +85,17 @@ lib/wnn/lt_LN/uumrc
 lib/wnn/lt_LN/rk/2A_CTRL
 lib/wnn/lt_LN/rk/2B_LATIN
 lib/wnn/lt_LN/rk/mode
+@dirrm lib/wnn/lt_LN/rk
+@dirrm lib/wnn/lt_LN
+@dirrm lib/wnn/ja_JP/dic/wnncons
+@dirrm lib/wnn/ja_JP/dic/usr
+@dirrm lib/wnn/ja_JP/dic/src
+@dirrm lib/wnn/ja_JP/dic/pubdic
+@dirrm lib/wnn/ja_JP/dic
+@dirrm lib/wnn/ja_JP/rk.vi
+@dirrm lib/wnn/ja_JP/rk
+@dirrm lib/wnn/ja_JP
+@dirrm lib/wnn
 bin/Wnn4/jserver
 bin/Wnn4/uum
 bin/Wnn4/wnnstat
@@ -96,6 +107,7 @@ bin/Wnn4/dtoa
 bin/Wnn4/atod
 bin/Wnn4/atof
 bin/Wnn4/wnntouch
+@dirrm bin/Wnn4
 @cwd /usr/X11R6
 lib/libwnn.a
 include/wnn/jllib.h
@@ -106,6 +118,7 @@ include/wnn/commonhd.h
 include/wnn/cplib.h
 include/wnn/config.h
 include/wnn/msg.h
+@dirrm include/wnn
 man/man1/uum.1.gz
 man/man1/jserver.1.gz
 man/man1/wnnkill.1.gz
