@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pxtools
-PORTVERSION=	0.0.5
+PORTVERSION=	0.0.6
 CATEGORIES=	databases
 MASTER_SITES=	http://www.kneschke.de/projekte/pxtools/download/
 
