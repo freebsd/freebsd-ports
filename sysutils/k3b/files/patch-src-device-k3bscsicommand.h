@@ -1,5 +1,5 @@
 --- src/device/k3bscsicommand.h.orig	Wed Jan 21 11:20:11 2004
-+++ src/device/k3bscsicommand.h	Sun Aug 22 15:28:36 2004
++++ src/device/k3bscsicommand.h	Sun Jan  2 09:30:08 2005
 @@ -17,9 +17,27 @@
  #define _K3B_SCSI_COMMAND_H_
  

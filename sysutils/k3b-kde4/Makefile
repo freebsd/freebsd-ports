@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	k3b
-PORTVERSION=	0.11.17
-PORTREVISION=	1
+PORTVERSION=	0.11.18
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	A CD/DVD recording GUI for KDE
-
-EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
 
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		cdrdao:${PORTSDIR}/sysutils/cdrdao
@@ -47,4 +44,10 @@ post-install:
 showinfo:
 	more ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+PKGMESSAGE=	${PKGDIR}/pkg-message5
+.endif
+
+.include <bsd.port.post.mk>

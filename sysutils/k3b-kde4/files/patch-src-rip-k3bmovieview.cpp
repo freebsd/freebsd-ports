@@ -1,5 +1,5 @@
 --- src/rip/k3bmovieview.cpp.orig	Fri Feb  6 12:08:51 2004
-+++ src/rip/k3bmovieview.cpp	Sun Aug 22 15:28:36 2004
++++ src/rip/k3bmovieview.cpp	Sun Jan  2 09:30:08 2005
 @@ -223,8 +223,11 @@
      }
  
