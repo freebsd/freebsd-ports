@@ -1,0 +1,33 @@
+*** src/loaders/it_load.c.orig	Wed Sep 10 12:13:18 2003
+--- src/loaders/it_load.c	Wed Sep 10 12:11:36 2003
+***************
+*** 327,340 ****
+  
+  #define BUILD_ENV(X) { \
+  	    fread (&env, 1, sizeof (env), f); \
+! 	    xxih[i].##X##ei.flg = env.flg & IT_ENV_ON ? XXM_ENV_ON : 0; \
+! 	    xxih[i].##X##ei.flg |= env.flg & IT_ENV_LOOP ? XXM_ENV_LOOP : 0; \
+! 	    xxih[i].##X##ei.flg |= env.flg & IT_ENV_SLOOP ? XXM_ENV_SUS : 0; \
+! 	    xxih[i].##X##ei.npt = env.num; \
+! 	    xxih[i].##X##ei.sus = env.slb; \
+! 	    xxih[i].##X##ei.sue = env.sle; \
+! 	    xxih[i].##X##ei.lps = env.lpb; \
+! 	    xxih[i].##X##ei.lpe = env.lpe; \
+  	    if (env.num) xx##X##e[i] = calloc (4, env.num); \
+  	    for (j = 0; j < env.num; j++) { \
+  		L_ENDIAN16 (env.node[j].x); \
+--- 327,340 ----
+  
+  #define BUILD_ENV(X) { \
+  	    fread (&env, 1, sizeof (env), f); \
+! 	    xxih[i].X##ei.flg = env.flg & IT_ENV_ON ? XXM_ENV_ON : 0; \
+! 	    xxih[i].X##ei.flg |= env.flg & IT_ENV_LOOP ? XXM_ENV_LOOP : 0; \
+! 	    xxih[i].X##ei.flg |= env.flg & IT_ENV_SLOOP ? XXM_ENV_SUS : 0; \
+! 	    xxih[i].X##ei.npt = env.num; \
+! 	    xxih[i].X##ei.sus = env.slb; \
+! 	    xxih[i].X##ei.sue = env.sle; \
+! 	    xxih[i].X##ei.lps = env.lpb; \
+! 	    xxih[i].X##ei.lpe = env.lpe; \
+  	    if (env.num) xx##X##e[i] = calloc (4, env.num); \
+  	    for (j = 0; j < env.num; j++) { \
+  		L_ENDIAN16 (env.node[j].x); \

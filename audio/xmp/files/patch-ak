@@ -1,0 +1,36 @@
+*** src/xmms/plugin.c.orig	Wed Sep 10 14:13:18 2003
+--- src/xmms/plugin.c	Wed Sep 10 14:13:31 2003
+***************
+*** 558,564 ****
+  	gtk_object_set_data(GTK_OBJECT(xmp_conf_window), #w, w);	\
+  	gtk_widget_show(w);						\
+  	gtk_box_pack_start(GTK_BOX(vbox6), w, TRUE, TRUE, 0);		\
+! 	if (xmp_cfg.##o == 1)						\
+  		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w), TRUE); \
+  }
+  
+--- 558,564 ----
+  	gtk_object_set_data(GTK_OBJECT(xmp_conf_window), #w, w);	\
+  	gtk_widget_show(w);						\
+  	gtk_box_pack_start(GTK_BOX(vbox6), w, TRUE, TRUE, 0);		\
+! 	if (xmp_cfg.o == 1)						\
+  		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w), TRUE); \
+  }
+  
+***************
+*** 658,664 ****
+  	if (!cfg)
+  		cfg = xmms_cfg_new();
+  
+! #define CFGWRITEINT(x) xmms_cfg_write_int (cfg, "XMP", #x, xmp_cfg.##x)
+  
+  	CFGWRITEINT (mixing_freq);
+  	CFGWRITEINT (force8bit);
+--- 658,664 ----
+  	if (!cfg)
+  		cfg = xmms_cfg_new();
+  
+! #define CFGWRITEINT(x) xmms_cfg_write_int (cfg, "XMP", #x, xmp_cfg.x)
+  
+  	CFGWRITEINT (mixing_freq);
+  	CFGWRITEINT (force8bit);
