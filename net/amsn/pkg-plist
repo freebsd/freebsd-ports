@@ -446,7 +446,6 @@ lib/msn/skins/default/pixmaps/prefhist2.gif
 lib/msn/skins/default/pixmaps/prefhist3.gif
 lib/msn/skins/default/pixmaps/donline.xpm
 lib/msn/skins/default/pixmaps/amsn.xbm
-lib/msn/skins/default/pixmaps/notifyoffline_1.gif
 lib/msn/skins/default/pixmaps/loganim.gif
 lib/msn/skins/default/pixmaps/butsmile.gif
 lib/msn/skins/default/pixmaps/notifico.gif
@@ -464,6 +463,7 @@ lib/msn/skins/default/pixmaps/away.gif
 lib/msn/skins/default/pixmaps/typing.gif
 lib/msn/skins/default/pixmaps/notifyoffline.gif
 lib/msn/skins/default/pixmaps/notifyonline.gif
+lib/msn/skins/default/pixmaps/notifyplugins.gif
 lib/msn/skins/default/pixmaps/dlunch.xpm
 lib/msn/skins/default/pixmaps/notinlist.gif
 lib/msn/skins/default/pixmaps/preffont.gif
@@ -492,7 +492,6 @@ lib/msn/skins/default/pixmaps/prefalerts.gif
 lib/msn/skins/default/pixmaps/unread.gif
 lib/msn/skins/default/pixmaps/prefprofile.gif
 lib/msn/skins/default/pixmaps/daway.xpm
-lib/msn/skins/default/pixmaps/notifyonline_1.gif
 lib/msn/skins/default/pixmaps/prefstatus.gif
 lib/msn/skins/default/pixmaps/logolinmsn.gif
 lib/msn/skins/default/pixmaps/back.gif
@@ -513,9 +512,6 @@ lib/msn/skins/default/pixmaps/logomacmsn.gif
 lib/msn/skins/default/pixmaps/busy.gif
 lib/msn/skins/default/pixmaps/dhidden.xpm
 lib/msn/skins/default/pixmaps/notifclose.gif
-lib/msn/skins/default/pixmaps/butsend2.gif
-lib/msn/skins/default/pixmaps/butsend3.gif
-lib/msn/skins/default/pixmaps/notifystate_1.gif
 lib/msn/skins/default/pixmaps/preflook.gif
 lib/msn/skins/default/pixmaps/download.gif
 lib/msn/skins/default/pixmaps/amsnmask.xbm
@@ -530,6 +526,7 @@ lib/msn/README
 lib/msn/migmd5.tcl
 lib/msn/smileys.tcl
 lib/msn/ctadverts.tcl
+lib/msn/chatwindow.tcl
 lib/msn/notes.tcl
 lib/msn/automsg.tcl
 lib/msn/remote.help
@@ -563,7 +560,9 @@ lib/msn/plugins/traydock/README
 lib/msn/plugins/traydock/configure
 lib/msn/plugins/traydock/Makefile.in
 lib/msn/plugins/traydock/config.h.in
+lib/msn/plugins/traydock/libtray.so
 lib/msn/plugins/traydock/tray.c
+lib/msn/plugins/traydock/tray.o
 lib/msn/plugins/plugins.txt
 lib/msn/plugins/gtkdock.c
 lib/msn/plugins/gtkdock.h
@@ -659,6 +658,10 @@ lib/msn/plugins/BWidget-1.7.0/progressdlg.tcl
 lib/msn/plugins/BWidget-1.7.0/scrollframe.tcl
 lib/msn/plugins/BWidget-1.7.0/buttonbox.tcl
 lib/msn/plugins/BWidget-1.7.0/utils.tcl
+lib/msn/plugins/emotes/emotes.tcl
+lib/msn/plugins/emotes/plugininfo.xml
+lib/msn/plugins/Nudge/Nudge.tcl
+lib/msn/plugins/Nudge/plugininfo.xml
 lib/msn/plugins/winflash/README
 lib/msn/plugins/winflash/flash.cpp
 lib/msn/plugins/winflash/flash.dll
@@ -672,10 +675,12 @@ lib/msn/plugins/tclCarbonNotification/critcl.tcl
 lib/msn/plugins/tclCarbonNotification/pkgIndex.tcl
 lib/msn/plugins/tclCarbonNotification/Darwin-ppc/critcl.tcl
 lib/msn/plugins/tclCarbonNotification/Darwin-ppc/tclCarbonNotification.dylib
-lib/msn/plugins/applescript/display_and_send.scpt
 lib/msn/plugins/applescript/mail-bugreport.scpt
-lib/msn/plugins/applescript/itunes.tcl
+lib/msn/plugins/applescript/ae.tcl
 lib/msn/plugins/winico05.dll
+lib/msn/plugins/winutils/winutils.cpp
+lib/msn/plugins/winutils/winutils.dll
+lib/msn/plugins/winutils/winutils.h
 lib/msn/plugins/tclAE2.0/Contents/MacOS/tclAE2.0.dylib
 lib/msn/plugins/tclAE2.0/Contents/Resources/aelegacy.tcl
 lib/msn/plugins/tclAE2.0/Contents/Resources/InfoPlist.strings
@@ -712,14 +717,17 @@ lib/msn/amsn
 @dirrm lib/msn/plugins/BWidget-1.7.0/lang
 @dirrm lib/msn/plugins/BWidget-1.7.0
 @dirrm lib/msn/plugins/base64
+@dirrm lib/msn/plugins/emotes
 @dirrm lib/msn/plugins/http2.4
 @dirrm lib/msn/plugins/icons
+@dirrm lib/msn/plugins/Nudge
 @dirrm lib/msn/plugins/sha1
 @dirrm lib/msn/plugins/tclCarbonNotification/Darwin-ppc
 @dirrm lib/msn/plugins/tclCarbonNotification
 @dirrm lib/msn/plugins/tclzlib
 @dirrm lib/msn/plugins/traydock
 @dirrm lib/msn/plugins/winflash
+@dirrm lib/msn/plugins/winutils
 @dirrm lib/msn/plugins/applescript
 @dirrm lib/msn/plugins/linphone
 @dirrm lib/msn/plugins/tclAE2.0/Contents/MacOS
