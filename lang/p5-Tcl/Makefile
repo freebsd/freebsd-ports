@@ -22,4 +22,10 @@ CONFIGURE_ARGS+=	--tclsh tclsh8.4
 
 MAN3=		Tcl.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
+.endif
+
+.include <bsd.port.post.mk>
