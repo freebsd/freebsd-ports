@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/graphics
 
-MAINTAINER=	ijliao@csie.nctu.edu.tw
+MAINTAINER=	ijliao@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/T1-1.0.1
 

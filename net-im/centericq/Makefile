@@ -10,7 +10,7 @@ PORTVERSION=	3.13.3
 CATEGORIES=	net
 MASTER_SITES=	http://download.konst.org.ua/
 
-MAINTAINER=	ijliao@csie.nctu.edu.tw
+MAINTAINER=	ijliao@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 400010

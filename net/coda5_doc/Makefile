@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/doc/
 DISTNAME=	coda-doc-5.2.0-1
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ijliao@csie.nctu.edu.tw
+MAINTAINER=	ijliao@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/usr
 

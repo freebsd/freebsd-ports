@@ -10,7 +10,7 @@ PORTVERSION=	0.4.21
 CATEGORIES=	games net
 MASTER_SITES=	http://www.bnetd.org/files/
 
-MAINTAINER=	ijliao@csie.nctu.edu.tw
+MAINTAINER=	ijliao@FreeBSD.org
 
 MAN1=		bnchat.1 bnetd.1 bnftp.1 bnpass.1
 MAN5=		bnetd.conf.5 bntext.5
