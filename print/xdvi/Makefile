@@ -27,6 +27,18 @@ IS_INTERACTIVE=	yes
 
 MAN1=		xdvi.1
 
+post-configure:
+	@${PERL} -pi -e "s=distclean::=distclean:=g" ${WRKSRC}/Makefile
+
+pre-install:
+	@if ls /var/db/pkg/ | grep -qi ^tetex; then\
+	${ECHO_MSG} "*** WARNING ***";\
+	${ECHO_MSG} "This port conflicts with teTeX!  If you have already installed";\
+	${ECHO_MSG} "teTeX, you may want to backup the xdvi and MakeTeXPK commands.";\
+	${ECHO};\
+	${ECHO_MSG} "To cancel or suspend installation, press control-C or control-Z.";\
+        for i in 1 2 3 4 5; do ${ECHO} -n ; sleep 1; done; fi
+
 do-install:
 	@${MKDIR} ${PREFIX}/man/man1
 	@${MKDIR} ${PREFIX}/bin

@@ -7,3 +7,5 @@ keystrokes to move within the file, xdvi provides buttons on the right
 side of the window, which are synonymous with various sequences of
 keystrokes.  xdvi is also able to show PostScript<tm> specials if
 Ghostscript is installed on your system.
+
+The commands from this port overwrite those from teTeX.
