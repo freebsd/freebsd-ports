@@ -1,9 +1,10 @@
 # New ports collection makefile for:    ispell
+# http://fmg-www.cs.ucla.edu/fmg-members/geoff/ispell.html
 # Version required:     3.1.20
 # Date created:         6 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.20 1997/04/29 10:53:47 asami Exp $
+# $Id: Makefile,v 1.21 1997/08/13 23:29:52 jmz Exp $
 #
 
 DISTNAME=	ispell-3.1
