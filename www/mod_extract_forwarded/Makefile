@@ -8,7 +8,7 @@
 PORTNAME=	mod_extract_forwarded
 PORTVERSION=	1.2
 CATEGORIES=	www
-MASTER_SITES=	http://web.systhug.com/mod_extract_forwarded/ \
+MASTER_SITES=	http://web.warhound.org/mod_extract_forwarded/ \
 		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	anders@FreeBSD.org
