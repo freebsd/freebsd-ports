@@ -1,0 +1,20 @@
+--- ../scp/source/player/player.scp.orig	Sun Jul 21 00:30:27 2002
++++ ../scp/source/player/player.scp	Sun Jul 21 00:30:28 2002
+@@ -62,7 +62,7 @@
+ // directories
+ ////////////////////////
+ 
+-#ifdef LINUX
++#if defined(LINUX) || defined(FREEBSD)
+ 
+ Directory GID_DIR_KDE2
+     ParentID        = PREDEFINED_HOMEDIR;
+@@ -701,7 +701,7 @@
+         Name = "gnomeappplayer.zip";
+ End
+ 
+-#ifdef LINUX
++#if defined(LINUX) || defined(FREEBSD)
+ 
+ File GID_FILE_EXTRA_KDEAPPPLAYER
+         Dir             = GID_DIR_KDE2_SHARE_APPLNK_STAR;
