@@ -77,9 +77,6 @@ BASE_FLAVOR=	gcc32dbg
 .if ${ARCH} == amd64
 IGNORE=		Autoconf breakage due to x86_64 vs amd64
 .endif
-.if ${OSVERSION} < 500000
-BROKEN=		Does not build on 4.x
-.endif
 
 PLIST_SUB+=	BASE_FLAVOR=${BASE_FLAVOR}
 PLIST_SUB+=	GLOBUS_BASE=${GLOBUS_BASE}/
