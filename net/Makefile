@@ -90,6 +90,7 @@
     SUBDIR += etherboot
     SUBDIR += ethereal
     SUBDIR += ettercap
+    SUBDIR += eudc-emacs20
     SUBDIR += everybuddy
     SUBDIR += fidelio
     SUBDIR += firetalk
