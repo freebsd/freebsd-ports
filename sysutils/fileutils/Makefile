@@ -17,7 +17,7 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 # Global variables
 #
 
-LIB_DEPEND=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
