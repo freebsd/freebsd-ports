@@ -1,0 +1,11 @@
+If you would like to use more archivers that this
+program supports, install the following ports:
+
+archivers/zip
+archivers/unzip
+archivers/bzip2
+archivers/rar
+archivers/unrar
+archivers/unace
+archivers/unarj
+archivers/rpm
