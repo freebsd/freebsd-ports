@@ -8,7 +8,7 @@
 PORTNAME=	ooodict
 PORTVERSION=	1.1
 CATEGORIES+=	editors
-MASTER_SITES+=	http://dict.progbits.com/
+MASTER_SITES+=	http://ftp.gwdg.de/pub/misc/openoffice/contrib/dictionaries/
 DISTFILES+=	${LANGDIST}
 
 MAINTAINER=     openoffice@FreeBSD.org
