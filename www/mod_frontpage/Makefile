@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_frontpage
-PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTVERSION=	1.6
 CATEGORIES=	www
 MASTER_SITES=	http://people.freebsd.org/~mbr/distfiles/
 
@@ -19,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/${AP_PORT}
 
 .include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCHS= i386
+PKGMESSAGE=	pkg-message
 
 INSTALL_FILE=	${INSTALL} -c -m 555 -o bin -g bin
 PKG_PREFIX=	${PREFIX}
@@ -42,5 +41,8 @@ AP_LIBEXEC?=	${PREFIX}/libexec/apache
 .endif
 
 PERL_CONFIGURE= yes
+
+post-install:
+		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
