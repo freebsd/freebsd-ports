@@ -6,5 +6,3 @@ lib/libXpm.a
 lib/libXpm.so.5
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-man/man1/cxpm.1.gz
-man/man1/sxpm.1.gz
