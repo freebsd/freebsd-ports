@@ -236,6 +236,7 @@
     SUBDIR += ruby-devel-logger
     SUBDIR += ruby-log4r
     SUBDIR += ruby-quota
+    SUBDIR += runit
     SUBDIR += safecat
     SUBDIR += samefile
     SUBDIR += sarah

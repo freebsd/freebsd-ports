@@ -1,0 +1,12 @@
+runit is daemontools replacement:
+- service supervision
+- clean process state
+- reliable logging facility
+- fast system bootup and shutdown
+- packaging friendly
+- small code size
+
+It can optionally replace init(8) as process 1.
+
+Author:	Gerrit Pape <pape@smarden.org>
+WWW:	http://smarden.org/runit/
