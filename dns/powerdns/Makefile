@@ -30,6 +30,12 @@ MAN8=		pdns_control.8 pdns_server.8 zone2sql.8
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/pdns.sh.sample
 LIBMAP_CONF=	/etc/libmap.conf
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+BROKEN=	Doesn't compile on FreeBSD 6.0
+.endif
+
 # use user config if possible
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
@@ -83,8 +89,6 @@ PLIST_SUB+=		RECURSOR=""
 .else
 PLIST_SUB+=		RECURSOR="@comment "
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if defined(POWERDNS_WITH_RECURSOR)
 .if exists(/usr/include/ucontext.h) && ${OSVERSION} >= 500000
