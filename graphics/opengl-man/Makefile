@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	opengl-man
-PORTVERSION=	657
+PORTVERSION=	657.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www2.cons.org/freebsd-distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	cracauer
+DISTNAME=	opengl-man-657-plusmissing
+
 MAINTAINER=	cracauer@cons.org
 COMMENT=	Section 3 manpages for OpenGL: gl, glx, glu, gle, glut
 
@@ -143,7 +145,23 @@ MAN3=	glDisable.3 glDisableClientState.3 glEdgeFlag.3 \
 	glutSpaceballRotateFunc.3 glutSpecialFunc.3 glutSpecialUpFunc.3 \
 	glutStrokeCharacter.3 glutStrokeWidth.3 glutSwapBuffers.3 \
 	glutTabletButtonFunc.3 glutTabletMotionFunc.3 glutTimerFunc.3 \
-	glutUseLayer.3 glutVisibilityFunc.3 glutWarpPointer.3
+	glutUseLayer.3 glutVisibilityFunc.3 glutWarpPointer.3 \
+	glAccum.3 glAlphaFunc.3 glAreTexturesResident.3 glArrayElement.3 \
+	glBegin.3 glBindTexture.3 glBitmap.3 glBlendColorEXT.3 glBlendFunc.3 \
+	glCallList.3 glCallLists.3 glClear.3 glClearAccum.3 glClearColor.3 \
+	glClearDepth.3 glClearIndex.3 glClearStencil.3 glClipPlane.3 \
+	glColor3b.3 glColor3bv.3 glColor3d.3 glColor3dv.3 glColor3f.3 \
+	glColor3fv.3 glColor3i.3 glColor3iv.3 glColor3s.3 glColor3sv.3 \
+	glColor3ub.3 glColor3ubv.3 glColor3ui.3 glColor3uiv.3 glColor3us.3 \
+	glColor3usv.3 glColor4b.3 glColor4bv.3 glColor4d.3 glColor4dv.3 \
+	glColor4f.3 glColor4fv.3 glColor4i.3 glColor4iv.3 glColor4s.3 \
+	glColor4sv.3 glColor4ub.3 glColor4ubv.3 glColor4ui.3 glColor4uiv.3 \
+	glColor4us.3 glColor4usv.3 glColorMask.3 glColorMaterial.3 \
+	glColorPointer.3 glCopyPixels.3 glCopyTexImage1D.3 glCopyTexImage2D.3 \
+	glCopyTexSubImage1D.3 glCopyTexSubImage2D.3 glCullFace.3 \
+	glDeleteLists.3 glDeleteTextures.3 glDepthFunc.3 glDepthMask.3 \
+	glDepthRange.3 glDrawArrays.3 glDrawBuffer.3 glDrawElements.3 \
+	glDrawPixels.3 glEnd.3
 
 do-install:
 	@for file in ${MAN3} ; do \
