@@ -1,5 +1,6 @@
 bin/freetype-config
-include/freetype2/freetype/cache/ftcchunk.h
+include/freetype2/freetype/cache/ftccache.h
+include/freetype2/freetype/cache/ftccmap.h
 include/freetype2/freetype/cache/ftcglyph.h
 include/freetype2/freetype/cache/ftcimage.h
 include/freetype2/freetype/cache/ftcmanag.h
@@ -42,6 +43,8 @@ include/freetype2/freetype/internal/ftstream.h
 include/freetype2/freetype/internal/internal.h
 include/freetype2/freetype/internal/pcftypes.h
 include/freetype2/freetype/internal/psaux.h
+include/freetype2/freetype/internal/psglobal.h
+include/freetype2/freetype/internal/pshints.h
 include/freetype2/freetype/internal/psnames.h
 include/freetype2/freetype/internal/sfnt.h
 include/freetype2/freetype/internal/t1types.h
@@ -53,7 +56,7 @@ include/freetype2/freetype/tttags.h
 include/ft2build.h
 lib/libfreetype.a
 lib/libfreetype.so
-lib/libfreetype.so.7
+lib/libfreetype.so.8
 @dirrm include/freetype2/freetype/internal
 @dirrm include/freetype2/freetype/config
 @dirrm include/freetype2/freetype/cache
