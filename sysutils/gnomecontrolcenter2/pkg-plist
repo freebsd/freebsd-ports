@@ -283,6 +283,7 @@ share/locale/tr/LC_MESSAGES/control-center.mo
 share/locale/uk/LC_MESSAGES/control-center.mo
 share/locale/wa/LC_MESSAGES/control-center.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/control-center.mo
+share/locale/zh_CN/LC_MESSAGES/control-center.mo
 share/locale/zh_TW/LC_MESSAGES/control-center.mo
 @dirrm share/gnome/wm-properties
 @dirrm share/gnome/omf/control-center
