@@ -152,7 +152,7 @@ post-install:
 	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
 	if [ ! -f ${STARTUP_SCRIPT} ]; then \
 		${ECHO} "Installing ${STARTUP_SCRIPT} startup file."; \
-		${INSTALL_SCRIPT} ${FILESDIR}/mule.sh ${STARTUPSCRIPT}; \
+		${INSTALL_SCRIPT} ${FILESDIR}/mule.sh ${STARTUP_SCRIPT}; \
 	fi
 
 post-package:
