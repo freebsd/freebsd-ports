@@ -15,6 +15,7 @@ MASTER_SITES=	http://download.adobe.com/pub/adobe/acrobatreader/unix/5.x/ \
 .include <bsd.port.pre.mk>
 DISTNAME=	linux-5010
 DIST_SUBDIR=	acroread
+RESTRICTED=	"Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html"
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	View, distribute and print PDF documents

@@ -14,6 +14,7 @@ DISTNAME=	AdobeReader_enu-7.0.0-1.i386.rpm
 EXTRACT_SUFX=
 DIST_SUBDIR=	acroread
 EXTRACT_ONLY=
+RESTRICTED=	"Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html"
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	View, distribute and print PDF documents
