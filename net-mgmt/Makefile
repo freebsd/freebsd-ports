@@ -113,6 +113,7 @@
     SUBDIR += packit
     SUBDIR += pancho
     SUBDIR += php4-snmp
+    SUBDIR += php5-snmp
     SUBDIR += pixilate
     SUBDIR += pmacct
     SUBDIR += portmon
