@@ -1,14 +1,9 @@
 --- Imakefile.orig	Tue Dec  3 12:25:43 2002
 +++ Imakefile	Wed Dec 18 21:25:38 2002
-@@ -2,7 +2,7 @@
+@@ -21,3 +21,2 @@
  
- /* Fairly important stuff */
+-#define DebugSymbols YES
  
--#define OptimizationLevel -O4
-+#define OptimizationLevel -O
- #define DoWall NO
- 
- #define BuildShared YES
 @@ -45,10 +45,10 @@
  #define TiffIncLoc /usr/local/include
  #define TiffLibLoc /usr/local/lib
