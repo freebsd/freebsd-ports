@@ -3,10 +3,10 @@
 # Date created:         5 October 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.3 1996/11/11 10:11:52 max Exp $
+# $Id: Makefile,v 1.4 1996/12/03 13:07:58 obrien Exp $
 #
 
-DISTNAME=       elv18src
+DISTNAME=       elvis-1.8
 PKGNAME=        jp-elvis-1.8.4
 CATEGORIES=    japanese editors
 MASTER_SITES=   ftp://ftp.cs.pdx.edu/pub/elvis/
