@@ -1,25 +1,17 @@
---- Makefile.in.orig	Wed Jul 17 09:39:02 2002
-+++ Makefile.in	Tue Dec 17 21:24:13 2002
-@@ -93,7 +93,12 @@
- RANLIB = @RANLIB@
- STRIP = @STRIP@
+--- Makefile.in.orig	Fri Nov  7 23:43:47 2003
++++ Makefile.in	Fri Nov  7 23:46:09 2003
+@@ -153,8 +153,12 @@ target_vendor = @target_vendor@
  
--SUBDIRS = . bin compiler blitz random src lib manual testsuite examples benchmarks demos
+ AUTOMAKE_OPTIONS = foreign
+ 
+-SUBDIRS = bin compiler blitz random src lib testsuite \
+-	examples benchmarks doc manual
 +ifndef NOPORTDOCS
-+DOCS = manual
++DOCS = doc manual
 +endif
 +
-+SUBDIRS = . bin compiler blitz random src lib $(DOCS)
-+
- VERSION = @VERSION@
- am__include = @am__include@
- am__quote = @am__quote@
-@@ -405,7 +410,7 @@
++SUBDIRS = bin compiler blitz random src lib  $(DOCS)
++	
  
- info-am:
  
--install-data-am: install-demoDATA
-+install-data-am:
- 
- install-exec-am:
- 
+ EXTRA_DIST = LEGAL LICENSE README.binutils README-VS.NET Blitz-VS.NET.zip \

@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	blitz++
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	math
-MASTER_SITES=	http://www.oonumerics.org/blitz/download/releases/
-DISTNAME=	blitz-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	blitz
+DISTNAME=	Blitz++-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ class library for scientific computing
@@ -22,6 +23,9 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-cxx=gcc --enable-optimize --disable-debug
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
+
+INFO=		blitz
+DOCSDIR=	${PREFIX}/share/doc/blitz
 
 post-patch:
 	@${FIND} ${WRKSRC}/manual -name "Makefile.in" | ${XARGS} \
