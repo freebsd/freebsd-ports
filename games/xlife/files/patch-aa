@@ -1,0 +1,85 @@
+--- ./data.h.org	Thu Mar 21 13:47:04 1991
++++ ./data.h	Wed Mar 15 22:09:46 1995
+@@ -21,7 +21,7 @@
+  */
+ 
+ extern int sys_nerr, errno;
+-extern char *sys_errlist[];
++/* extern char *sys_errlist[]; */
+ #define SYSERR sys_errlist[(errno > sys_nerr? 0 : errno)]
+ 
+ GLOBAL Display *disp;
+--- ./cellbox.h.org	Thu Mar 21 13:46:28 1991
++++ ./cellbox.h	Wed Mar 15 22:09:46 1995
+@@ -32,6 +32,8 @@
+ #define MAXOFF		8192	/* max # cells we can change to off per move */
+ #define BOXSIZE         8
+ 
++/* to avoid conflict with system function in unistd.h */
++#define link xlife_link
+ extern cellbox *link();
+ extern cellbox *head;
+ extern cellbox *freep;
+--- ./defs.h.org	Thu Mar 21 14:21:18 1991
++++ ./defs.h	Wed Mar 15 22:09:45 1995
+@@ -29,7 +29,8 @@
+ #include <X11/keysym.h>
+ #include <X11/keysymdef.h>
+ 
+-#define DIR "/afs/andrew/usr0/games/lib/xlife/"
++/* Defined in Imakefile */
++/* #define DIR "/afs/andrew/usr0/games/lib/xlife/" */
+ #define NORMALFONT "8x13"
+ #define BOLDFONT "8x13bold"
+ #define FONTHEIGHT 13
+--- ./Imakefile.org	Thu Mar 28 07:58:48 1991
++++ ./Imakefile	Wed Mar 15 22:13:08 1995
+@@ -2,9 +2,10 @@
+ 
+ /* #define ManSuffix n /* For sites where administrators have messed with this */
+ 
+-PROGRAMS	= xlife oldpconv collect 
++PROGRAMS	= xlife lifeconv oldpconv collect 
+ 
+-XLIFEPATSDIR	= /afs/andrew.cmu.edu/usr0/games/lib/xlife
++XLIFEPATSDIR	= $(LIBDIR)/xlife
++EXTRA_DEFINES   = -DDIR=\"$(XLIFEPATSDIR)\"
+ 
+ SRCS1 =  \
+ 	button.c\
+@@ -42,26 +43,21 @@
+ 	resize.o\
+ 	utils.o
+ 
+-SRCS2 = \
+-	lifeconv.c
+-
+-OBJS2 = \
+-	lifeconv.o
+-
+-SRCS3 = \
+-	collect.c
+-
+-OBJS3 = \
+-	collect.o
+-
+ AllTarget($(PROGRAMS))
+ 
+ ComplexProgramTarget_1(xlife, $(XLIB),)
+-ComplexProgramTarget_2(lifeconv,,)
+-ComplexProgramTarget_3(collect,,)
++NormalProgramTarget(lifeconv,oldpconv.o,,,)
++InstallProgram(lifeconv,$(BINDIR))
++NormalProgramTarget(collect,collect.o,,,)
++InstallProgram(collect,$(BINDIR))
+ NormalProgramTarget(oldpconv,oldpconv.o,,,)
++InstallProgram(oldpconv,$(BINDIR))
+ 
+ install.patterns:
++	if [ -d $(XLIFEPATSDIR) ]; then \
++	  set +x; \
++	else (set -x; mkdirhier $(XLIFEPATSDIR)); \
++	fi
+ 	@case '${MFLAGS}' in *[i]*) set +e;; esac; \
+ 	for i in patterns//**/* ; do \
+ 		(set -x; $(INSTALL) -c $(INSTDATFLAGS) $$i $(XLIFEPATSDIR)); \
