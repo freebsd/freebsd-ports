@@ -1,0 +1,17 @@
+--- Makefile.orig	Sat Apr  8 00:51:27 2000
++++ Makefile	Mon Jul  2 21:51:07 2001
+@@ -1,10 +1,9 @@
+ # Makefile for wmScoreBoard
+ 
+-CC      = gcc
+-CFLAGS  = -g -O2 -Wall
+-INCDIR  = -I/usr/X11R6/include/X11 -I/usr/X11R6/include
+-LIBDIR  = -L/usr/X11R6/lib
+-DESTDIR = /usr/X11R6
++CFLAGS  += -g -Wall
++INCDIR  = -I${X11BASE}/include/X11 -I${X11BASE}/include
++LIBDIR  = -L${X11BASE}/lib
++DESTDIR = $(PREFIX)
+ 
+ # for linux
+ LIBS = -lXpm -lX11 -lXext

@@ -1,0 +1,7 @@
+bin/GrabScores.excite
+bin/wmScoreBoard
+%%PORTDOCS%%share/doc/wmScoreBoard/BUGS
+%%PORTDOCS%%share/doc/wmScoreBoard/CHANGES
+%%PORTDOCS%%share/doc/wmScoreBoard/HINTS
+%%PORTDOCS%%share/doc/wmScoreBoard/README
+%%PORTDOCS%%@dirrm share/doc/wmScoreBoard

@@ -179,6 +179,7 @@
     SUBDIR += videotext
     SUBDIR += viz
     SUBDIR += whichman
+    SUBDIR += wmScoreBoard
     SUBDIR += wmcp
     SUBDIR += wmmand
     SUBDIR += wmpal
