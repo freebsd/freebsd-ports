@@ -62,7 +62,8 @@ post-extract:
 .if !defined(WITHOUT_COMPILER_LINKS)
 	@${SED} -e 's|%%CCACHE_COMPILERS%%|${CCACHE_COMPILERS}|; \
 		s|%%PREFIX%%|${PREFIX}|; s|%%CCLINKDIR%%|${CCLINKDIR}|; \
-		s|%%LOCALBASE%%|${LOCALBASE}|' \
+		s|%%LOCALBASE%%|${LOCALBASE}|; \
+		s|%%ICCPREFIX%%|${LOCALBASE}/intel_cc_80/bin|' \
 		${FILESDIR}/${HOWTO}.in > ${WRKDIR}/${HOWTO}
 	@${SED} -e 's|%%HOWTO%%|${HOWTO}|; \
 		s|%%DOCSDIR%%|${DOCSDIR}|' \
