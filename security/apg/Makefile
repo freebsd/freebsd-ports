@@ -8,7 +8,9 @@
 PORTNAME=	apg
 PORTVERSION=	2.1.0
 CATEGORIES=	security
-MASTER_SITES=	http://www.adel.nursat.kz/apg/download/
+MASTER_SITES=	http://www.adel.nursat.kz/apg/download/ \
+		${MASTER_SITE_PACKETSTORM}
+MASTER_SITE_SUBDIR=	UNIX/misc
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	"An automated password generator"

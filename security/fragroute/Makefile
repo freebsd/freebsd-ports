@@ -9,7 +9,9 @@ PORTNAME=	fragroute
 PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	security net
-MASTER_SITES=	http://monkey.org/~dugsong/fragroute/
+MASTER_SITES=	http://monkey.org/~dugsong/fragroute/ \
+		${MASTER_SITE_PACKETSTORM}
+MASTER_SITE_SUBDIR=	UNIX/security
 
 MAINTAINER=	dominic.marks@btinternet.com
 COMMENT=	A tool for intercepting, modifying and rewriting egress traffic

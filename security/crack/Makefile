@@ -11,7 +11,9 @@ PORTNAME=	crack
 PORTVERSION=	5.0
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/unix/pwdutils/crack/ \
-		ftp://ftp.cert.dfn.de/pub/tools/password/Crack/
+		ftp://ftp.cert.dfn.de/pub/tools/password/Crack/ \
+		${MASTER_SITE_PACKETSTORM}	
+MASTER_SITE_SUBDIR=	Crackers/crack
 DISTNAME=	${PORTNAME}${PORTVERSION}	
 
 MAINTAINER=	ports@FreeBSD.org
