@@ -95,7 +95,6 @@ share/aspell/viscii.dat
 %%PORTDOCS%%share/doc/aspell/manual.tex
 %%PORTDOCS%%share/doc/aspell/manual2.lyx
 @dirrm include/pspell
-@dirrm share/aspell
 @dirrm %%PORTDOCS%%share/doc/aspell/dev-html
 @dirrm %%PORTDOCS%%share/doc/aspell/dev-text
 @dirrm %%PORTDOCS%%share/doc/aspell/man-html
