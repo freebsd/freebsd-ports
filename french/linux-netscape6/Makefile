@@ -6,6 +6,8 @@
 # $FreeBSD$
 #
 
+PORTVERSION=	6.2.1
+PORTREVISION=	2
 CATEGORIES=	french www linux
 
 DISTFILES=	browser.xpi \
