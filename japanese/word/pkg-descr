@@ -1,0 +1,17 @@
+A Free Japanese word processor which is distributed in GPL2.
+
+At first, you should
+
+ % cp /usr/local/share/examples/ja-word/.wordfontrc $HOME
+  (without X-TT server)
+
+ % cp /usr/local/share/examples/ja-word/richo.wordfontrc $HOME/.wordfontrc
+ and edit $HOME/.wordfontrc
+  (with X-TT server)
+
+For detail, read /usr/local/share/doc/ja-word/README (in Japanese).
+
+WWW: http://www2.famille.ne.jp/~mituiwa/#word
+
+- SADA Kenji
+sada@FreeBSD.org
