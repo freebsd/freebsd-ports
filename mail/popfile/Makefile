@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	popfile
-PORTVERSION=	0.21.0
+PORTVERSION=	0.21.1
 #PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}
 
 PATCH_SITES=	http://home.jp.FreeBSD.org/~matusita/distfiles/
-PATCHFILES=	popfile-0.21.0-apop.patch
+PATCHFILES=	popfile-${PORTVERSION}-apop.patch
 
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=Automatic mail classification tool, acts as a POP3 proxy
@@ -48,7 +48,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 .if defined(WITH_POPFILE_JAPANESE)
 RUN_DEPENDS+=	${SITE_PERL}/jcode.pl:${PORTSDIR}/japanese/p5-jcode.pl
-PATCHFILES+=	popfile-0.21.0-use-jcode.pl.patch
+PATCHFILES+=	popfile-${PORTVERSION}-use-jcode.pl.patch
 .endif
 .endif
 
