@@ -3,7 +3,7 @@
 # Date created:				29 Jul 1998
 # Whom:					rom
 #
-# $Id: Makefile,v 1.19 1999/01/31 12:00:52 obrien Exp $
+# $Id: Makefile,v 1.20 1999/02/22 02:49:33 steve Exp $
 #
 
 DISTNAME= 	gIDE-0.0.14
@@ -22,8 +22,8 @@ USE_X_PREFIX=   yes
 USE_GMAKE= 	yes
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
-		GTK_CONFIG="${X11BASE}/bin/gtk11d-config" \
-		GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config" \
+		GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
+		GLIB_CONFIG="${LOCALBASE}/bin/glib12-config" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		gide.1
