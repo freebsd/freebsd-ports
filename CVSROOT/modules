@@ -4909,6 +4909,7 @@ newkind		ports/games/newkind
 newlfs		src/sbin/newlfs
 newmail		ports/mail/newmail
 newmat		ports/math/newmat
+newpg		ports/security/newpg
 newscache	ports/news/newscache
 newsfetch	ports/news/newsfetch
 newsfish	ports/news/newsfish
