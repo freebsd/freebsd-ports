@@ -18,4 +18,4 @@ lib/libxmlwrapp.so.4
 %%XSLT%%lib/libxsltwrapp.a
 %%XSLT%%lib/libxsltwrapp.so
 %%XSLT%%lib/libxsltwrapp.so.1
-lib/pkgconfig/xmlwrapp.pc
+libdata/pkgconfig/xmlwrapp.pc
