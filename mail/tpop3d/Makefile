@@ -31,9 +31,9 @@ USE_PERL5=	yes
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-auth-other \
-		--enable-tcp-wrappers \
-		--with-mailspool-directory=/var/mail
+CONFIGURE_ARGS+=	--enable-auth-other \
+			--enable-tcp-wrappers \
+			--with-mailspool-directory=/var/mail
 
 .if defined(WITH_PERLAUTH)
 CONFIGURE_ARGS+=	--enable-auth-perl
