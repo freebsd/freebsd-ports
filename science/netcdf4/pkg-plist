@@ -11,7 +11,6 @@ lib/libnetcdf.so.1
 lib/libnetcdf_c++.a
 lib/libnetcdf_c++.so
 lib/libnetcdf_c++.so.1
-%%PORTDOCS%%%%DOCSDIR%%/COMPATIBILITY
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
