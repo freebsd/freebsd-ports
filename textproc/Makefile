@@ -44,6 +44,7 @@
     SUBDIR += fribidi
     SUBDIR += gaspell
     SUBDIR += gdict
+    SUBDIR += gdome2
     SUBDIR += glimpse
     SUBDIR += gmat
     SUBDIR += grap
