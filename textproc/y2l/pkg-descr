@@ -1,0 +1,10 @@
+The Yacc to LaTeX utility takes (hopefully) any yacc source file,
+and derives an Extended Backus-Naur Form (EBNF) description from
+it. This EBNF is written out as LaTeX source. The output is a LaTeX
+"longtable" environment, that can be included in any LaTeX document,
+typically using an \input{} statement.
+
+WWW: http://www.alchar.org/~aedil/Projects/y2l.html
+
+-- Ying-Chieh Liao
+   ijliao@FreeBSD.org
