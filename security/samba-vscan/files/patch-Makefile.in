@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Fri Feb 27 13:07:34 2004
++++ Makefile.in	Fri Feb 27 13:07:11 2004
+@@ -42,7 +42,7 @@
+ BINDIR		= @SAMBA_BINDIR@
+ SBINDIR		= @SAMBA_SBINDIR@
+ 
+-LIBDIR		= @SAMBA_LIBDIR@
++LIBDIR		= $(prefix)/lib/samba
+ VFSLIBDIR	= @SAMBA_VFSLIBDIR@
+ PDBLIBDIR	= @SAMBA_PDBLIBDIR@
+ RPCLIBDIR	= @SAMBA_RPCLIBDIR@
+@@ -184,8 +184,6 @@
+ 	@echo "to $(DESTDIR)$(VFSLIBDIR) with $(INSTALLPERMS)"
+ 	@$(INSTALLCMD) -m $(INSTALLPERMS) $(patsubst ${builddir}/%.$(SHLIBEXT),%.$(SHLIBEXT),$(wildcard ${builddir}/*.$(SHLIBEXT))) $(DESTDIR)$(VFSLIBDIR)
+ 	@echo ""
+-	@echo "NOTE: the corresponding configuration file(s) must be copied manually!"
+-	@echo "The default location is /etc/samba. See INSTALL for details!"
+ 
+ # Misc targets
+ clean:

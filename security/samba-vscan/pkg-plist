@@ -1,0 +1,18 @@
+etc/samba-vscan/vscan-clamav.conf
+etc/samba-vscan/vscan-fprotd.conf
+etc/samba-vscan/vscan-icap.conf
+etc/samba-vscan/vscan-kavp.conf
+etc/samba-vscan/vscan-mks32.conf
+etc/samba-vscan/vscan-oav.conf
+etc/samba-vscan/vscan-sophos.conf
+etc/samba-vscan/vscan-trend.conf
+lib/samba/vscan-clamav.so
+lib/samba/vscan-fprotd.so
+lib/samba/vscan-icap.so
+lib/samba/vscan-kavp.so
+lib/samba/vscan-mksd.so
+lib/samba/vscan-oav.so
+lib/samba/vscan-sophos.so
+lib/samba/vscan-trend.so
+@unexec rmdir %D/lib/samba 2>/dev/null || true
+@dirrm etc/samba-vscan

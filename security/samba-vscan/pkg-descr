@@ -1,0 +1,8 @@
+samba-vscan is a proof-of-concept module for Samba, which uses the VFS
+(virtual file system) features of Samba 2.2.x/3.0 to provide an
+on-access Samba anti-virus. Of course, Samba has to be compiled with
+VFS support. It currently works only with FRISK F-Prot Daemon,
+Kaspersky AntiVirus, mks32, OpenAntiVirus ScannerDaemon, Sophos Sweep,
+Symantec AntiVirus Engine (via ICAP) or Trend Micro.
+
+WWW: http://www.openantivirus.org/projects.php
