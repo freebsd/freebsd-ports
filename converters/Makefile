@@ -35,6 +35,7 @@
     SUBDIR += p5-Convert-UU
     SUBDIR += p5-Convert-UUlib
     SUBDIR += p5-MIME-Base64
+    SUBDIR += p5-String-Multibyte
     SUBDIR += p5-Text-Iconv
     SUBDIR += p5-Unicode-Map
     SUBDIR += p5-Unicode-Map8
