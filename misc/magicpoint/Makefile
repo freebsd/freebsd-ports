@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 MAINTAINER?=	mita@FreeBSD.org
 
 LIB_DEPENDS+=	png.4:${PORTSDIR}/graphics/png
+RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
 USE_FREETYPE=	yes
