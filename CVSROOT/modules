@@ -6289,6 +6289,7 @@ p5-Text-ParagraphDiff	ports/textproc/p5-Text-ParagraphDiff
 p5-Text-Query	ports/textproc/p5-Text-Query
 p5-Text-Query-SQL	ports/databases/p5-Text-Query-SQL
 p5-Text-Quoted	ports/textproc/p5-Text-Quoted
+p5-Text-RecordParser	ports/textproc/p5-Text-RecordParser
 p5-Text-Reflow	ports/textproc/p5-Text-Reflow
 p5-Text-Reform	ports/textproc/p5-Text-Reform
 p5-Text-Repository	ports/textproc/p5-Text-Repository
