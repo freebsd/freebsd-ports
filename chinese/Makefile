@@ -13,6 +13,7 @@
     SUBDIR += bg5ps
     SUBDIR += big5con
     SUBDIR += big5fs
+    SUBDIR += bitchx
     SUBDIR += c2t
     SUBDIR += celvis
     SUBDIR += chinput
