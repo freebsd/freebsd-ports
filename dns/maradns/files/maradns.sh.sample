@@ -7,7 +7,10 @@ fi
 
 case "$1" in
 start)
-	[ -x ${PREFIX}/sbin/maradns ] && ${PREFIX}/sbin/maradns > /var/log/maradns.log & && echo -n ' maradns'
+	if [ -x ${PREFIX}/sbin/maradns ]; then
+		${PREFIX}/sbin/maradns > /var/log/maradns.log &
+		echo -n ' maradns'
+	fi;
 	;;
 stop)
 	killall maradns && echo -n ' maradns'
