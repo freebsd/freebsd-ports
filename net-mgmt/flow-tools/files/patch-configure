@@ -1,17 +1,11 @@
---- configure.in	2003/04/03 19:46:23
-+++ configure.in	2003/04/03 19:51:51
-@@ -1,12 +1,12 @@
- dnl Process this file with autoconf to produce a configure script.
- AC_INIT(lib/bit1024.c)
- 
--AC_PREFIX_DEFAULT(/usr/local/netflow)
-+AC_PREFIX_DEFAULT(/usr/local)
- 
- AM_INIT_AUTOMAKE(flow-tools, 0.66)
+--- configure.in.orig	Wed Dec  3 22:18:15 2003
++++ configure.in	Wed Jul  7 15:03:57 2004
+@@ -6,7 +6,7 @@
+ AM_INIT_AUTOMAKE(flow-tools, 0.67)
  AM_CONFIG_HEADER(lib/ftconfig.h:lib/ftconfig.h.in) 
  
 -CFLAGS="-g -Wall"
-+CFLAGS+="-g -Wall"
++dnl CFLAGS="-g -Wall"
  
  dnl Checks for programs.
  AC_PROG_CC

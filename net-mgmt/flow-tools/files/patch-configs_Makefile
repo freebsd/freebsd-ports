@@ -1,5 +1,5 @@
---- configs/Makefile.am	2003/04/03 18:24:08
-+++ configs/Makefile.am	2003/04/03 18:42:23
+--- configs/Makefile.am.orig	Mon Nov 24 23:01:37 2003
++++ configs/Makefile.am	Wed Jul  7 14:57:09 2004
 @@ -1,6 +1,6 @@
 -ftsymdir=$(localstatedir)/sym
 +ftsymdir=$(localstatedir)/share/flow-tools
@@ -7,11 +7,11 @@
  
 -ftcfgdir=$(localstatedir)/cfg
 +ftcfgdir=$(localstatedir)/etc/flow-tools
- ftcfg_DATA = map.cfg tag.cfg filter.cfg stat.cfg mask.cfg
+ ftcfg_DATA = map.cfg tag.cfg filter.cfg stat.cfg mask.cfg xlate.cfg
  
---- configs/Makefile.in	2003/04/03 18:24:08
-+++ configs/Makefile.in	2003/04/03 18:38:09
-@@ -114,10 +114,10 @@
+--- configs/Makefile.in.orig	Wed Dec  3 22:20:08 2003
++++ configs/Makefile.in	Wed Jul  7 14:58:41 2004
+@@ -117,10 +117,10 @@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
@@ -21,6 +21,6 @@
  
 -ftcfgdir = $(localstatedir)/cfg
 +ftcfgdir = $(localstatedir)/etc/flow-tools
- ftcfg_DATA = map.cfg tag.cfg filter.cfg stat.cfg mask.cfg
+ ftcfg_DATA = map.cfg tag.cfg filter.cfg stat.cfg mask.cfg xlate.cfg
  subdir = configs
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
