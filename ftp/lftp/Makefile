@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.9
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
+MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/ \
+		ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
 		ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/old/ \
 		http://the.wiretapped.net/mirrors/lftp/ \
 		http://the.wiretapped.net/mirrors/lftp/old/ \
@@ -22,7 +23,6 @@ MASTER_SITES=	ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
 		ftp://ftp.bme.hu/packages/lftp/old/ \
 		ftp://ftp.tuwien.ac.at/infosys/browsers/ftp/lftp/ \
 		ftp://ftp.tuwien.ac.at/infosys/browsers/ftp/lftp/old/ \
-		ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/ \
 		ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/old/ \
 		ftp://mirror.widexs.nl/pub/lftp/ \
 		ftp://mirror.widexs.nl/pub/lftp/old/ \
