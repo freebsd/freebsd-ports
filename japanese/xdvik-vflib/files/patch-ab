@@ -1,5 +1,5 @@
---- texk/xdvik/Makefile.in.orig	Thu Apr  8 21:47:48 1999
-+++ texk/xdvik/Makefile.in	Thu Apr  8 21:48:39 1999
+--- xdvik-22.02.orig/texk/xdvik/Makefile.in.orig	Thu Apr  8 21:47:48 1999
++++ xdvik-22.02/texk/xdvik/Makefile.in	Thu Apr  8 21:48:39 1999
 @@ -65,7 +65,7 @@
    paper.o tategaki.o vfontmap.o \
    $(ALLOCA)

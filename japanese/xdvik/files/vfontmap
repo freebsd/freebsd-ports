@@ -1,12 +1,26 @@
+## ---- start of defaults ----
+#dg		goth	# for NTT
+#dm		min		# for NTT
 
-min		min     # for ASCII
-nmin	min     # for ASCII
-goth	goth    # for ASCII
-ngoth	goth    # for ASCII
+#ngoth	goth	# for ASCII
+#tgoth	goth	# for ASCII
+#goth	goth	# for ASCII
+#nmin	min		# for ASCII
+#tmin	min		# for ASCII
+#min	min		# for ASCII
+## ---- end of defaults ----
 
-dm		min     # for NTT
-dg		goth    # for NTT
+## ---- other ----
+#mgoth	maru
+#fmin	fmin
+#fgoth	goth
 
-mgoth	maru
-fmin	fmin
-fgoth	goth
+## ---- tate fonts ----
+#tmin    tmin     # for ASCII
+#tgoth   tgoth    # for ASCII
+
+## ---- not use pTeX TFM (VF) ----
+#rml     min
+#gbm     goth
+#rmlv    tmin
+#gbmv    tgoth
