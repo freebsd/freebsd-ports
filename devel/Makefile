@@ -441,6 +441,7 @@
     SUBDIR += tclreadline
     SUBDIR += tcltls
     SUBDIR += templ
+    SUBDIR += tide
     SUBDIR += titano
     SUBDIR += tkcon
     SUBDIR += tkcvs

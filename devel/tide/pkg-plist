@@ -1,0 +1,46 @@
+bin/tide
+t3x/r6/classes/config.cls
+t3x/r6/classes/config.dir
+t3x/r6/classes/editor.cls
+t3x/r6/classes/editor.dir
+t3x/r6/classes/filebox.cls
+t3x/r6/classes/filebox.dir
+t3x/r6/classes/form.cls
+t3x/r6/classes/form.dir
+t3x/r6/classes/menu.cls
+t3x/r6/classes/menu.dir
+t3x/r6/classes/prompt.cls
+t3x/r6/classes/prompt.dir
+t3x/r6/classes/tblio.cls
+t3x/r6/classes/tblio.dir
+t3x/r6/classes/vedit.cls
+t3x/r6/classes/vedit.dir
+t3x/r6/doc/tide.sd
+t3x/r6/doc/tools.sd
+t3x/r6/tide.rc
+t3x/r6/tide/default.cs
+t3x/r6/tide/examples/apfel.t
+t3x/r6/tide/examples/fac.t
+t3x/r6/tide/examples/hello.t
+t3x/r6/tide/examples/hello2.t
+t3x/r6/tide/examples/hello3.t
+t3x/r6/tide/examples/permute.t
+t3x/r6/tide/examples/primes.t
+t3x/r6/tide/examples/ttt.t
+t3x/r6/tide/helpfile
+t3x/r6/tide/monochrm.cs
+t3x/r6/tide/tide
+@exec echo 'config:t3x,iostream,string,ttyctl' >>%D/t3x/r6/classes/CLASSNDX
+@exec echo 'editor:t3x,string' >>%D/t3x/r6/classes/CLASSNDX
+@exec echo 'tblio:t3x,string,iostream' >>%D/t3x/r6/classes/CLASSNDX
+@exec echo 'filebox:t3x,string,system,ttyctl' >>%D/t3x/r6/classes/CLASSNDX
+@exec echo 'form:t3x,ttyctl,menu,prompt' >>%D/t3x/r6/classes/CLASSNDX
+@exec echo 'menu:t3x,string,ttyctl' >>%D/t3x/r6/classes/CLASSNDX
+@exec echo 'prompt:t3x,string,ttyctl' >>%D/t3x/r6/classes/CLASSNDX
+@exec echo 'vedit:t3x,string,ttyctl,editor' >>%D/t3x/r6/classes/CLASSNDX
+@exec sh -c 'if ! grep -q tools.sd %D/t3x/r6/doc/sdv-config; then echo "file		=	tools.sd [THE T3XTOOLS CLASSES]">>%D/t3x/r6/doc/sdv-config; fi'
+@exec sh -c 'if ! grep -q tide.sd %D/t3x/r6/doc/sdv-config; then echo "file		=	tide.sd [TIDE DOCUMENTATION]" >>%D/t3x/r6/doc/sdv-config; fi'
+@unexec cp %D/t3x/r6/doc/sdv-config %D/t3x/r6/sdv.tmp && grep -v 'tools\.sd' %D/t3x/r6/sdv.tmp | grep -v 'tide\.sd' >%D/t3x/r6/doc/sdv-config && rm -f %D/t3x/r6/sdv.tmp
+@unexec sed -e '/^config:/,/^vedit:/d' <%D/t3x/r6/classes/CLASSNDX >%D/t3x/ndx.tmp && mv %D/t3x/ndx.tmp %D/t3x/r6/classes/CLASSNDX
+@dirrm t3x/r6/tide/examples
+@dirrm t3x/r6/tide
