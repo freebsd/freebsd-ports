@@ -5069,6 +5069,7 @@ m68k-rtems-gcc	ports/devel/m68k-rtems-gcc
 m68k-rtems-gdb	ports/devel/m68k-rtems-gdb
 m68k-rtems-objc	ports/devel/m68k-rtems-objc
 mDNSResponder	ports/net/mDNSResponder
+mac		ports/audio/mac
 mac-robber	ports/security/mac-robber
 macopix		ports/games/macopix
 macutils	ports/archivers/macutils
