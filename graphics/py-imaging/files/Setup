@@ -1,0 +1,4 @@
+*noconfig*
+
+_imaging _imaging.c decode.c encode.c map.c display.c path.c -IlibImaging libImaging/libImaging.a -I${PREFIX}/include -L${PREFIX}/lib -ljpeg -lz
+_tkinter _tkinter.c Tk/tkImaging.c tkappinit.c -DWITH_APPINIT -DWITH_PIL -IlibImaging -I${X11BASE}/include -I${PREFIX}/include/tcl8.0 -I${PREFIX}/include/tk8.0 -L${PREFIX}/lib -ltk80 -ltcl80 -L${X11BASE}/lib -lX11 -lc

@@ -1,0 +1,18 @@
+--- Makefile.in.orig	Sun Jul 19 16:34:24 1998
++++ Makefile.in	Wed Nov  4 10:00:01 1998
+@@ -25,13 +25,13 @@
+ 
+ DEFS=		@DEFS@
+ 
+-LIBS=		@LIBS@ @LIBM@
++LIBS=		@LDFLAGS@ @LIBS@ @LIBM@
+ 
+ # --------------------------------------------------------------------
+ # Other things that are customizable but not by configure
+ 
+ INCLDIR=	$(srcdir)/.
+-JPEGINCLUDE=	/usr/local/include
++JPEGINCLUDE=	@prefix@/include
+ OPT=		@OPT@
+ #OPT=		-g
+ CFLAGS=		$(OPT) -I$(INCLDIR) -I$(JPEGINCLUDE) $(DEFS)
