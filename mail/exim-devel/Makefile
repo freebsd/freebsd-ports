@@ -1,18 +1,18 @@
 # New ports collection makefile for:	exim
-# Version required:	3.03
+# Version required:	3.10
 # Date created:		23 June 1996
 # Whom:			markm@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	exim-3.03
+DISTNAME=	exim-3.11
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/ \
 		ftp://ftp.quite.net/pub/exim/ \
 		http://www.exim.org/ftp/ \
 		ftp://ftp.is.co.za/networking/mail/transport/exim/
-DISTFILES=	exim-3.03.tar.gz exim-texinfo-3.00.tar.gz
+DISTFILES=	exim-3.11.tar.gz exim-texinfo-3.10.tar.gz
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
@@ -70,7 +70,7 @@ do-configure:
 	    > ${WRKSRC}/src/configure.default
 	${CP} ${FILESDIR}/eximon.conf ${WRKSRC}/Local
 	cd ${WRKSRC}/doc && \
-	for i in ../../exim-texinfo-3.00/doc/* ; do \
+	for i in ../../exim-texinfo-3.10/doc/* ; do \
 		${LN} -sf $$i ; \
 	done
 
