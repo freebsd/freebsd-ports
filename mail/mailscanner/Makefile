@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.26.8
-PORTREVISION=	1
+PORTVERSION=	4.27.7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	MailScanner-${PORTVERSION}-${PATCHLEVEL}
@@ -138,7 +137,7 @@ do-install:
 	#
 	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/etc && ${FIND} reports -type d -exec \
-		mkdir ${DATADIR}/{} \;
+		${MKDIR} ${DATADIR}/{} \;
 	cd ${WRKSRC}/etc && ${FIND} reports -type f ! -name "*.orig" -exec \
 		${INSTALL_DATA} {} ${DATADIR}/{}.sample \;
 	${CHMOD} -R ${BINMODE} ${DATADIR}/reports
@@ -164,7 +163,7 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD.port ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOC_FILES} ${DOCSDIR}
 	cd ${WRKSRC}/docs && \
-		${FIND} * -type d -exec mkdir ${DOCSDIR}/{} \; && \
+		${FIND} * -type d -exec ${MKDIR} ${DOCSDIR}/{} \; && \
 		${FIND} * -type f ! -name "*.orig" -exec \
 			${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 .endif
