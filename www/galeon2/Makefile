@@ -33,7 +33,7 @@ MOZILLA=	${WITH_MOZILLA}
 HEADERS_SUFX=	-devel
 MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.4a"
 .else
-MOZILLA=	mozilla
+MOZILLA=	mozilla-gtk2
 HEADERS_SUFX=
 .endif
 .endif
