@@ -2,6 +2,7 @@ sbin/pure-mrtginfo
 sbin/pure-ftpd
 sbin/pure-ftpwho
 sbin/pure-uploadscript
+sbin/pure-quotacheck
 bin/pure-statsdecode
 bin/pure-pw
 bin/pure-pwconvert
@@ -22,6 +23,7 @@ etc/pure-ftpd.conf.sample
 %%PORTDOCS%%share/doc/pure-ftpd/README.MySQL
 %%PORTDOCS%%share/doc/pure-ftpd/README.Netfilter
 %%PORTDOCS%%share/doc/pure-ftpd/THANKS
+%%PORTDOCS%%share/doc/pure-ftpd/poweredby.jpg
 %%PORTDOCS%%@dirrm share/doc/pure-ftpd
 share/examples/pure-ftpd/xml_python_processors.txt
 share/examples/pure-ftpd/pam/pure-ftpd
