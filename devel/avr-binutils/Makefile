@@ -21,6 +21,9 @@ WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--target=avr
+.if (${MACHINE_ARCH} == "amd64")
+CONFIGURE_ARGS+=	--host=x86_64-portbld-freebsd${OSREL}
+.endif
 USE_LIBTOOL_VER=	13
 LIBTOOLFILES=	configure bfd/configure binutils/configure etc/configure \
 		gas/configure gprof/configure intl/configure ld/configure \
