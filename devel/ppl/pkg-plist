@@ -1,5 +1,4 @@
 include/ppl.hh
 lib/libppl.a
-lib/libppl.la
 lib/libppl.so
 lib/libppl.so.1

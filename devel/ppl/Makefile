@@ -8,24 +8,32 @@
 
 PORTNAME=	ppl
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.cs.unipr.it/pub/ppl/releases/${PORTVERSION}/ \
-		http://www.cs.unipr.it/ppl/Download/ftp/releases/${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.cs.unipr.it/pub/ppl/releases/%SUBDIR%/ \
+		http://www.cs.unipr.it/ppl/Download/ftp/releases/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
-USE_LIBTOOL=	yes
-USE_GCC=	3.1
-GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-cxxflags="${CXXFLAGS}"
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--disable-debugging \
+		--enable-optimization \
+		--with-cflags="${CFLAGS}" \
+		--with-cxxflags="${CXXFLAGS}" \
+		--with-gmp-includes="${LOCALBASE}/include" \
+		--with-gmp-dir="${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
-post-install:
-	@${RMDIR} ${PREFIX}/lib/ppl
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OSVERSION} < 500035
+#BROKEN=		"Does not build"
+.endif
+
+.include <bsd.port.post.mk>
