@@ -15,8 +15,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	fuyuki@mj.0038.net
 
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
-
+USE_JAVA=	1.1+
 NO_BUILD=	yes
 
 JAVALIBDIR=	${PREFIX}/share/java/classes
