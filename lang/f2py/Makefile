@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	f2py
-PORTVERSION=	2.39.235.1693
+PORTVERSION=	2.45.241.1926
 CATEGORIES=	lang python
 MASTER_SITES=	http://cens.ioc.ee/projects/f2py2e/2.x/
 DISTNAME=	${PORTNAME:U}-${PORTVERSION:R}_${PORTVERSION:E}
@@ -16,8 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fortran to Python Interface Generator
 
 RUN_DEPENDS=	${PYNUMERIC}
-
-BROKEN=		Size mismatch
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
