@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		acpica-unix-20030523.tar.gz
 NO_WRKSUBDIR=	yes
 
-MAINTAINER=	iwasaki@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Some utilities for Intel ACPICA (Debugger, ASL Compiler and etc.).
 
 .include <bsd.port.pre.mk>
