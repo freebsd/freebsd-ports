@@ -8,7 +8,7 @@
 PORTNAME=	ipw
 PORTVERSION=	3.3.a
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_FREEBSD}
+MASTER_SITES=	http://www.mjhb.com/ipw/
 DISTNAME=	ipw
 
 MAINTAINER=	ports@freebsd.org
