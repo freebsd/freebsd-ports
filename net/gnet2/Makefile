@@ -16,7 +16,7 @@ LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12
 
 GLIB_CONFIG=	${LOCALBASE}/bin/glib12-config
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
 
 .include <bsd.port.mk>

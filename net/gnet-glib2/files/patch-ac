@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Mon Feb 28 18:47:45 2000
++++ src/Makefile.in	Mon Feb 28 18:48:34 2000
+@@ -93,7 +93,7 @@
+ 
+ lib_LTLIBRARIES = libgnet.la
+ 
+-libgnet_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE)
++libgnet_la_LDFLAGS =  	-version-info 0:0:0 
+ 
+ 
+ libgnet_la_SOURCES =  	gnet.c				gnet-private.c			inetaddr.c			mcast.c				tcp.c				udp.c

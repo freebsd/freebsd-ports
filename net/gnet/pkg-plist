@@ -4,10 +4,9 @@ include/gnet/inetaddr.h
 include/gnet/mcast.h
 include/gnet/tcp.h
 include/gnet/udp.h
-lib/libgnet-0.1.so
-lib/libgnet-0.1.so.9
 lib/libgnet.a
-lib/libgnet.la
+lib/libgnet.so
+lib/libgnet.so.0
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/aclocal/gnet.m4
