@@ -11,7 +11,7 @@ CATEGORIES=	net comms
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=kris
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lyndon@atg.aciworldwide.com
 
 USE_BZIP2=	yes
 
