@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gedit
-PORTVERSION=	2.8.2
-PORTREVISION=	1
+PORTVERSION=	2.8.3
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.8
@@ -28,8 +27,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier \
 		libgnomeprintui libgnomeui eel2 gtksourceview desktopfileutils
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-PLIST_SUB=	VERSION="2.8" \
-		POVERSION="2.6"
+PLIST_SUB=	VERSION="2.8"
 
 MAN1=		gedit.1
 GCONF_SCHEMAS=	gedit.schemas
