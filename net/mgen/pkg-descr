@@ -1,0 +1,16 @@
+The Multi-Generator (MGEN) is open source software by the Naval Research
+Laboratory (NRL) PROTocol Engineering Advanced Networking (PROTEAN)
+Research Group.  MGEN provides the ability to perform IP network
+performance tests and measurements using UDP/IP traffic (TCP is currently
+being developed).
+The toolset generates real-time traffic patterns so that the network can
+be loaded in a variety of ways.  The generated traffic can also be
+received and logged for analyses.  Script files are used to drive the
+generated loading patterns over the course of time. These script files can
+be used to emulate the traffic patterns of unicast and/or multicast UDP/IP
+applications.  The receive portion of this tool set can be scripted to
+dynamically join and leave IP multicast groups.  MGEN log data can be used
+to calculate performance statistics on throughput, packet loss rates,
+communication delay, and more.
+
+WWW: http://mgen.pf.itd.nrl.navy.mil/
