@@ -1,0 +1,15 @@
+gonvert is a conversion utility that allows conversion between many units
+like CGS, Ancient, Imperial with many categories like length, mass,
+numbers, etc. All units converted values shown at once as you type. Easy
+to add/change your own units.
+
+Features:
+
+   - 38 categories, 698 units.
+   - All units converted values shown at once as you type. 
+   - Descriptions for many units. 
+   - Sort Units or values. 
+   - Fully OPEN source so that you can add your own custom calculations
+     and descriptions. 
+
+WWW: http://webhome.idirect.com/~tekatch/anthony/ucu/
