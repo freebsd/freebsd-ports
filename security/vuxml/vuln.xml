@@ -48,7 +48,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
         <name>mod_php</name>
         <name>mod_php4</name>
-	<range><ge>4</ge><lt>4.3.10</lt></range>
+	<range><ge>4</ge><lt>4.3.10,1</lt></range>
       </package>
       <package>
         <name>php5</name>
@@ -77,10 +77,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
        <url>http://secunia.com/advisories/13481/</url>
        <cvename>CAN-2004-1019</cvename>
        <cvename>CAN-2004-1065</cvename>
+      <url>http://www.php.net/release_4_3_10.php</url>
+      <url>http://www.hardened-php.net/advisories/012004.txt</url>
     </references>
     <dates>
       <discovery>2004-12-16</discovery>
       <entry>2004-12-17</entry>
+      <modified>2004-12-18</modified>
     </dates>
   </vuln>
 
