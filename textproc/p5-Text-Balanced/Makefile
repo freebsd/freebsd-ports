@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Balanced
-PORTVERSION=	1.89
+PORTVERSION=	1.91
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -18,6 +18,5 @@ COMMENT=	Text::Balanced - extract delimited text sequences from strings
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::Balanced.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
