@@ -23,13 +23,11 @@ share/autogen/conftest.tpl
 share/autogen/fsm-macro.tpl
 share/autogen/fsm-trans.tpl
 share/autogen/fsm.tpl
-share/autogen/libopts-19.0.10.tar.gz
+share/autogen/libopts-19.2.10.tar.gz
 share/autogen/optcode.tpl
 share/autogen/opthead.tpl
 share/autogen/options.tpl
-share/autogen/options_h.tpl
 share/autogen/optlib.tpl
 share/autogen/optmain.tpl
-share/autogen/schemedef.scm
 share/autogen/stdoptions.def
 @dirrm share/autogen
