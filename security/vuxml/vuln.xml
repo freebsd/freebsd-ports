@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="338d1723-5f03-11d9-92a7-000bdb1444a4">
+    <topic>horde -- XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>horde</name>
+	<name>horde-php5</name>
+	<range><gt>3.*</gt><lt>3.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An Hyperdose Security Advisory reports:</p>
+	<blockquote cite="http://lists.horde.org/archives/announce/2005/000159.html">
+	  <p>Horde contains two XSS attacks that can be exploited
+	    through GET requests.  Once exploited, these requests
+	    could be used to execute any javascript commands in the
+	    context of that user, potentially including but not
+	    limited to reading and deleting email, and stealing auth
+	    tokens.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>12255</bid>
+      <mlist msgid="1105593825.8638@mx249a.mysite4now.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110564059322774</mlist>
+      <mlist>http://lists.horde.org/archives/announce/2005/000159.html</mlist>
+    </references>
+    <dates>
+      <discovery>2005-01-04</discovery>
+      <entry>2005-01-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2b2b333b-6bd3-11d9-95f8-000a95bc6fae">
     <topic>mc -- multiple vulnerabilities</topic>
     <affects>
