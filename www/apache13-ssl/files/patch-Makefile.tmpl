@@ -1,6 +1,6 @@
---- Makefile.tmpl.orig	Mon Apr 28 15:32:12 2003
-+++ Makefile.tmpl	Wed Oct 22 22:59:14 2003
-@@ -270,10 +270,10 @@
+--- Makefile.tmpl.orig	Fri Feb 20 23:40:50 2004
++++ Makefile.tmpl	Mon Dec 13 21:59:00 2004
+@@ -226,10 +226,10 @@
  	$(MKDIR) $(root)$(mandir)/man1
  	$(MKDIR) $(root)$(mandir)/man8
  	$(MKDIR) $(root)$(sysconfdir)
@@ -13,7 +13,7 @@
  	$(MKDIR) $(root)$(includedir)
  	$(MKDIR) $(root)$(includedir)/xml
  	$(MKDIR) $(root)$(runtimedir)
-@@ -459,33 +459,29 @@
+@@ -415,33 +415,29 @@
  #   icons and distributed CGI scripts.
  install-data:
  	@echo "===> [data: Installing initial data files]"
@@ -60,7 +60,7 @@
  	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
  	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
  	(cd $(root)$(iconsdir)/ && $(TAR) -xf -); \
-@@ -506,7 +502,7 @@
+@@ -462,7 +458,7 @@
  		if [ ".$(TARGET)" = .httpd ]; then \
  			target_prefix=""; \
  		else \
@@ -69,7 +69,7 @@
  		fi; \
  		(echo "##"; \
  		 echo "## $${target_conf} -- Apache HTTP server configuration file"; \
-@@ -524,10 +520,10 @@
+@@ -480,10 +476,10 @@
  			-e 's;logs/accept\.lock;$(runtimedir)/$(TARGET).lock;' \
  			-e 's;logs/apache_runtime_status;$(runtimedir)/$(TARGET).scoreboard;' \
  			-e 's;logs/httpd\.pid;$(runtimedir)/$(TARGET).pid;' \
@@ -84,25 +84,35 @@
  			-e 's;conf/magic;$(sysconfdir)/magic;' \
  			-e 's;conf/srm.conf;$(sysconfdir)/srm.conf;' \
  			-e 's;conf/access.conf;$(sysconfdir)/access.conf;' \
-@@ -539,8 +535,8 @@
+@@ -495,21 +491,22 @@
  			-e 's;ServerAdmin you@your.address;ServerAdmin $(conf_serveradmin);' \
  			-e 's;ServerName new.host.name;ServerName $(conf_servername);' \
  			> $(TOP)/$(SRC)/.apaci.install.tmp && \
 -		echo "$(INSTALL_DATA) $(TOP)/conf/$${conf}-dist[*] $(root)$(sysconfdir)/$${target_conf}.default"; \
 -		$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sysconfdir)/$${target_conf}.default; \
-+		echo "$(INSTALL_DATA) $(TOP)/conf/$${conf}-dist[*] $(root)$(sysconfdir)/$${target_conf}-dist"; \
-+		$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sysconfdir)/$${target_conf}-dist; \
- 		if [ ! -f "$(root)$(sysconfdir)/$${target_conf}" ]; then \
- 			echo "$(INSTALL_DATA) $(TOP)/conf/$${conf}-dist[*] $(root)$(sysconfdir)/$${target_conf}"; \
- 			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sysconfdir)/$${target_conf}; \
-@@ -549,8 +545,8 @@
+-		if [ ! -f "$(root)$(sysconfdir)/$${target_conf}" ]; then \
+-			echo "$(INSTALL_DATA) $(TOP)/conf/$${conf}-dist[*] $(root)$(sysconfdir)/$${target_conf}"; \
+-			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sysconfdir)/$${target_conf}; \
++			mkdir -p $(root)$(EXAMPLESDIR) ; \
++			echo "$(INSTALL_DATA) $(TOP)/conf/$${conf}-dist[*] $(root)$(EXAMPLESDIR)/$${target_conf}-dist"; \
++			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(EXAMPLESDIR)/$${target_conf}-dist; \
++			if [ ! -f "$(root)$(sysconfdir)/$${target_conf}" ]; then \
++			   echo "$(INSTALL_DATA) $(root)$(EXAMPLESDIR)/$${target_conf}-dist $(root)$(sysconfdir)/$${target_conf}"; \
++			   $(INSTALL_DATA) $(root)$(EXAMPLESDIR)/$${target_conf}-dist $(root)$(sysconfdir)/$${target_conf}; \
+ 		else \
+ 			echo "[PRESERVING EXISTING CONFIG FILE: $(root)$(sysconfdir)/$${target_conf}]"; \
  		fi; \
  	done
  	-@for conf in mime.types magic; do \
 -		echo "$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}.default"; \
 -		$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}.default; \
-+		echo "$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}-dist"; \
-+		$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}-dist; \
++		mkdir -p $(root)$(EXAMPLESDIR) ; \
++		echo "$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(EXAMPLESDIR)/$${conf}-dist"; \
++		$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(EXAMPLESDIR)/$${conf}-dist; \
  		if [ ! -f "$(root)$(sysconfdir)/$${conf}" ]; then \
- 			echo "$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}"; \
- 			$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}; \
+-			echo "$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}"; \
+-			$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}; \
++			$(INSTALL_DATA) $(root)$(EXAMPLESDIR)/$${conf}-dist $(root)$(sysconfdir)/$${conf}; \
+ 		else \
+ 			echo "[PRESERVING EXISTING CONFIG FILE: $(root)$(sysconfdir)/$${conf}]"; \
+ 		fi; \
