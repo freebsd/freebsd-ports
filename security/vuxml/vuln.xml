@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6b4b0b3f-8127-11d9-a9e7-0001020eed82">
+    <topic>postgresql -- multiple buffer overflows in PL/PgSQL
+      parser</topic>
+    <affects>
+      <package>
+	<name>postgresql</name>
+	<name>postgresql-server</name>
+	<name>ja-postgresql</name>
+	<range><lt>7.4.8</lt></range>
+	<range><gt>8.*</gt><lt>8.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PL/PgSQL parser in postgresql is vulnerable to several
+	  buffer overflows.  These could be exploited by a remote
+	  attacker to execute arbitrary code with the permissions of
+	  the postgresql server by running a specially crafted
+	  query.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0247</cvename>
+      <url>http://archives.postgresql.org/pgsql-committers/2005-02/msg00049.php</url>
+    </references>
+    <dates>
+      <discovery>2005-02-07</discovery>
+      <entry>2005-02-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fdad8a87-7f94-11d9-a9e7-0001020eed82">
     <topic>awstats -- multiple vulnerabilities</topic>
     <affects>
