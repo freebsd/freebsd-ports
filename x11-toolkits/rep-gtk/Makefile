@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/rep-gtk
-DIST_SUBDIR=	gnome
+#DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
