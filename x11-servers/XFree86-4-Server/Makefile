@@ -168,11 +168,15 @@ pre-install:
 	${MKDIR} ${PREFIX}/lib/X11/kernel
 .endif
 
-post-install:
-	strip ${PREFIX}/bin/XFree86
+post-build:
+	@${RM} ${PKGMESSAGE}
 .if ${BuildXF86DRM} == "YES"
-	@(cd ${.CURDIR}; ${CAT} pkg-message pkg-message-drm > ${PKGMESSAGE})
-	@${SED} -e s,/usr/X11R6,${PREFIX}, ${PKGMESSAGE}
+	@${CAT} ${.CURDIR}/pkg-message-drm > ${PKGMESSAGE}
 .endif
+	@${CAT} ${.CURDIR}/pkg-message >> ${PKGMESSAGE}
+
+post-install:
+	@${SED} -e s,/usr/X11R6,${PREFIX}, ${PKGMESSAGE}
+	strip ${PREFIX}/bin/XFree86
 
 .include <bsd.port.post.mk>
