@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.20 1995/07/01 09:19:52 asami Exp $
+# $Id: Makefile,v 1.21 1995/07/03 22:28:15 torstenb Exp $
 #
 # RESTRICTED: xmcd (needs Motif, xmcd itself isn't restricted)
 #
@@ -9,6 +9,7 @@
    SUBDIR += maplay
    SUBDIR += nas
    SUBDIR += playmidi
+   SUBDIR += radio
    SUBDIR += rplay
    SUBDIR += rsynth
    SUBDIR += s3mod
