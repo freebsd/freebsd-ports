@@ -22,7 +22,8 @@ LIB_DEPENDS=	faac.0:${PORTSDIR}/audio/faac \
 		id3tag.2:${PORTSDIR}/audio/libid3tag \
 		a52.0:${PORTSDIR}/audio/liba52 \
 		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2	\
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
+		mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 
 USE_GNOME=	\
 		gtk20 \
@@ -96,11 +97,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-lib::sdp::sdp_decode.c
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-player::src::codec::mp3::mp3_file.cpp
 .else
 USE_GCC=	3.4
-.endif
-
-# XXX - temporary fix, not suitable for binaries
-.if ${ARCH} == "amd64"
-CFLAGS+=	-fPIC -DPIC
 .endif
 
 ###
