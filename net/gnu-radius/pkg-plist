@@ -14,18 +14,17 @@ etc/raddb/dict/ascend.vs
 etc/raddb/dict/cisco
 etc/raddb/dict/compat
 etc/raddb/dict/livingston
+etc/raddb/dict/standard
 etc/raddb/dict/tunnel
 etc/raddb/dict/usr
 etc/raddb/dict/voip
 etc/raddb/dictionary
 etc/raddb/hints
 etc/raddb/huntgroups
-etc/raddb/menus/menu1
-etc/raddb/menus/menu2
 etc/raddb/naslist
 etc/raddb/nastypes
+etc/raddb/nas.rc
 etc/raddb/realms
-etc/raddb/rewrite
 etc/raddb/sqlserver
 etc/raddb/users
 etc/rc.d/gnu-radius.sh
@@ -45,10 +44,11 @@ sbin/radiusd
 share/locale/es/LC_MESSAGES/radius.mo
 share/locale/pl/LC_MESSAGES/radius.mo
 share/locale/ru/LC_MESSAGES/radius.mo
-share/radius/boot.scm
-share/radius/ttl.scm
 %%GUILE%%share/radius/guile-procedures.txt
-@dirrm etc/raddb/menus
+share/radius/1.2/scheme/boot.scm
+share/radius/1.2/scheme/ttl.scm
+share/radius/1.2/rewrite/checknas.rw
+share/radius/1.2/rewrite/log-hook.rw
 @dirrm etc/raddb/dict
 @dirrm etc/raddb
 @unexec rm -f /var/run/radiusd.pid
