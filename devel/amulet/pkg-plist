@@ -1,10 +1,12 @@
 bin/gilt
 bin/agate
-lib/libamulet.so.3.0
-lib/libamulet-release.so.3.0
+lib/libamulet.so
+lib/libamulet.so.3
+lib/libamulet-release.so
+lib/libamulet-release.so.3
 lib/libamulet-release.a
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R %B
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R %B
 include/am_inc.h
 include/amulet.h
 include/amulet/am_io.h

@@ -3,7 +3,7 @@
 # Date created:		3 June 1995
 # Whom:			roberto
 #
-# $Id: Makefile,v 1.7 1998/06/27 05:18:48 asami Exp $
+# $Id: Makefile,v 1.8 1998/10/12 18:36:24 jseger Exp $
 #
 
 DISTNAME=	dlmalloc
@@ -14,8 +14,6 @@ DISTFILES=	malloc-2.6.4.c
 
 MAINTAINER=	roberto@FreeBSD.ORG
 
-BROKEN_ELF=	yes
-
 NO_WRKSUBDIR=   yes
 
 do-extract:
@@ -25,6 +23,6 @@ do-extract:
 	${CP} -p ${FILESDIR}/Makefile ${WRKDIR}
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
