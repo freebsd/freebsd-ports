@@ -15,10 +15,13 @@ bin/grads2nc_with_gphys
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_fft.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_grads_io.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/gphys_grib_io.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_io.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_io_common.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_netcdf_io.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/grads_gridded.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/grib.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/grib_params.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/grid.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/netcdf_convention.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/subsetmapping.rb
@@ -26,6 +29,7 @@ bin/grads2nc_with_gphys
 %%RUBY_SITELIBDIR%%/numru/gphys/varray.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/varraycomposite.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/varraygrads.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/varraygrib.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/varraynetcdf.rb
 @dirrm %%RUBY_SITELIBDIR%%/numru/gphys
 @unexec rmdir %D/%%RUBY_SITELIBDIR%%/numru 2>/dev/null || true
@@ -41,7 +45,9 @@ bin/grads2nc_with_gphys
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/test_ep_flux.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.ctl
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.grib
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.nc
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.packed.withmiss.nc
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/cira86.dat
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sample/ep_flux
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sample
