@@ -1,5 +1,5 @@
---- configure	Mon Oct 27 00:55:34 1997
-+++ configure	Wed Jul 29 22:30:53 1998
+--- configure.orig	Mon Oct 27 00:55:34 1997
++++ configure	Sun Jan 24 15:54:23 1999
 @@ -992,9 +992,9 @@
  qt_libdir=NO
  for i in $qt_libdirs;
@@ -12,12 +12,3 @@
        qt_libdir=$i
        break 2
      fi
-@@ -1711,7 +1711,7 @@
-     if test "$OS_TYPE" = "FreeBSD" ; then
-       OS_TYPE="BSD"
-     fi
--    CFLAGS="-O6 -ffast-math -fomit-frame-pointer -DNO_BYTE_SWAPPING ${CFLAGS_ARCH}"
-+    CFLAGS="-O2 -m486 -pipe -ffast-math -fomit-frame-pointer -DNO_BYTE_SWAPPING ${CFLAGS_ARCH}"
-     ;;
- 
-   SunOS)
