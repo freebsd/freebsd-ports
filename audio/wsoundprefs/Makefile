@@ -3,10 +3,10 @@
 # Date created:        12 December 1998
 # Whom:                gljohns@bellsouth.net
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/26 03:10:52 steve Exp $
+# $Id: Makefile,v 1.2 1999/01/28 10:14:03 asami Exp $
 #
 
-DISTNAME=	WSoundPrefs-0.9.1
+DISTNAME=	WSoundPrefs-0.9.3
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
 
