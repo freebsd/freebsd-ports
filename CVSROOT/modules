@@ -631,7 +631,6 @@ bozohttpd	ports/www/bozohttpd
 bpatch		ports/editors/bpatch
 bpl+		ports/comms/bpl+
 br-aspell	ports/textproc/br-aspell
-br-ispell	ports/textproc/br-ispell
 brandelf	src/usr.bin/brandelf
 bricons		ports/x11/bricons
 british-ispell	ports/textproc/british-ispell
@@ -2766,6 +2765,7 @@ iso12083	ports/textproc/iso12083
 iso8879		ports/textproc/iso8879
 isoqlog		ports/mail/isoqlog
 ispell		ports/textproc/ispell
+ispell-pt_BR	ports/portuguese/ispell-pt_BR
 isreal		ports/graphics/isreal
 isync		ports/mail/isync
 it-aspell	ports/textproc/it-aspell
