@@ -27,15 +27,17 @@ MULE_SLAVE=	yes
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
-.if defined(MULE_SLAVE)
 BUILD_DEPENDS=	${PREFIX}/lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel:${PORTSDIR}/editors/xemacs-packages \
 		${PREFIX}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-mule-packages \
 		${BUILD_INPUT_METHOD}
+.if defined(MULE_SLAVE)
 RUN_DEPENDS=	${PREFIX}/lib/xemacs-${XEMACS_VER}/lisp/x-win-xfree86.elc:${PORTSDIR}/editors/xemacs${XEMACS_MAJOR_VER}-mule-common \
 		${PREFIX}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-mule-packages
+.else
+RUN_DEPENDS=	${PREFIX}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-mule-packages
+.endif
 LIB_DEPENDS=	compface.1:${PORTSDIR}/mail/faces \
 		${LIB_INPUT_METHOD}
-.endif
 
 CONFIGURE_ARGS?=${XEMACS_ARCH} \
 		--prefix=${PREFIX} \
