@@ -4,3 +4,8 @@ graphically. Hosts and links change in size with traffic. Color coded
 protocols display. It supports ethernet, fddi, ppp and slip devices. 
 It can filter traffic to be shown, and can read traffic from a
 file as well as live from the network.
+
+WWW: http://etherape.sourceforge.net/
+
+- Pete
+petef@databits.net
