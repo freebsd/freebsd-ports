@@ -23,5 +23,5 @@
 +	$AT{'headings'} = ['Date'];
 +	$AT{'getCommand'} = 'at -c %JOBID% |';
 +	$AT{'parseJobList'} = 
-+		sub { my @a = split(/\s+/, $_[0]); ("$a[0] $a[1]", $a[4]) } ;
++		sub { my @a = split(/\s+/, $_[0]); ($a[4], "$a[0] $a[1]") } ;
  }
