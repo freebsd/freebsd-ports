@@ -17,6 +17,8 @@ RUN_DEPENDS=	php:${PORTSDIR}/lang/php4 \
 		rrdtool:${PORTSDIR}/net/rrdtool \
 		net-snmp-config:${PORTSDIR}/net-mgmt/net-snmp
 
+IGNORE=		uses an unregistered uid/gid.
+
 USE_MYSQL=	yes
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
