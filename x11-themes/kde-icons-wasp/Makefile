@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wasp
-PORTVERSION=	2.5.5
+PORTVERSION=	2.6.1
 MASTER_SITES=	http://pyavitz.home.comcast.net/kde/
 DISTNAME=	Wasp.SVG.Icons-v${PORTVERSION}
 
