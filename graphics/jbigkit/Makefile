@@ -3,7 +3,7 @@
 # Date created:		19 November 1996
 # Whom:			mi
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/12/23 07:12:28 tg Exp $
 #
 
 DISTNAME=	jbigkit-0.9
@@ -14,7 +14,7 @@ MAINTAINER=	mi@aldan.ziplink.net
 
 # Yes, CCFLAGS, not CFLAGS! -mi
 MAKE_FLAGS=	CCFLAGS="${CFLAGS}" CC="${CC}"
-WRKSRC=	work/jbigkit
+WRKSRC= ${WRKDIR}/jbigkit
 MAN1=	jbgtopbm.1 pbmtojbg.1
 MAN5=	pbm.5
 
