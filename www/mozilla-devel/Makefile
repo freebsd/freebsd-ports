@@ -6,13 +6,13 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.8.a6
+PORTVERSION=	1.8.b1
 PORTREVISION?=	0
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.a6/a6/}/source
-DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.a6/a6/}${EXTRACT_SUFX}
+MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.b1/b1/}/source
+DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.b1/b1/}${EXTRACT_SUFX}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
@@ -22,8 +22,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		nspr4.1:${PORTSDIR}/devel/nspr
+		freetype.9:${PORTSDIR}/print/freetype2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -97,6 +96,10 @@ JPI_LIST?=\
 	${LOCALBASE}/diablo-jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
 	${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so
 
+SCRIPTS_DIR=		${FAKEDIR}/lib/${MOZILLA}
+MOZ_PIS_SCRIPTS=	S50cleanhome
+MOZ_PIS_DIR=		${SCRIPTS_DIR}/init.d
+
 OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 	CALENDAR "Enable the Calendar module" off \
 	MAILNEWS "Enable Mail and News modules" on \
@@ -104,7 +107,6 @@ OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 	DEBUG "Enable debugging (i.e. gdb) support" off \
 	LDAP "Enable LDAP support for Mailnews" on \
 	CHATZILLA "Enable the Chatzilla IRC module" on \
-	XMLTERM "Enable the XMLTerm module" on \
 	JAVASCRIPT_DEBUGGER "Enable the DTD and JavaScript debuggers" off \
 	OPTIMIZED_CFLAGS "Enable -O2 optimizations" off \
 	SMB "Enable smb:// URI support using gnomevfs" off
@@ -169,9 +171,6 @@ CONFIGURE_ARGS+=	--enable-ldap --enable-mailnews
 .if !defined(WITHOUT_CHATZILLA)
 MOZ_EXTENSIONS:=	${MOZ_EXTENSIONS},irc
 .endif
-.if !defined(WITHOUT_XMLTERM)
-MOZ_EXTENSIONS:=	${MOZ_EXTENSIONS},xmlterm
-.endif
 CONFIGURE_ARGS+=	--enable-extensions=${MOZ_EXTENSIONS}
 
 .if defined(WITH_JAVASCRIPT_DEBUGGER)
@@ -194,6 +193,8 @@ MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin \
 		MOZ_INTERNAL_LIBART_LGPL=1
 ALL_TARGET=	default
 FAKEDIR=	${WRKDIR}/fake
+SCRIPTS_DIR=	${FAKEDIR}/lib/${MOZILLA}
+MOZ_PIS_DIR=	${SCRIPTS_DIR}/init.d
 
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS+=	--enable-reorder
@@ -206,8 +207,10 @@ CONFIGURE_ARGS+=--disable-gnomevfs
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=		-O2
-CONFIGURE_ARGS+=	--enable-optimize=-O2
+CFLAGS:=		-O2 -fno-strict-aliasing ${CFLAGS:N-O*}
+.else
+CFLAGS:=		-O ${CFLAGS:N-O*:N-m*}
+CONFIGURE_ENV+=		WITH_OPTIMIZE=-O
 .endif
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
@@ -216,15 +219,6 @@ IGNORE=	"core dumps on alpha during post-build"
 
 .if exists(${LOCALBASE}/include/freetype/freetype.h)
 BROKEN="You must upgrade your freetype port to 1.3.1_2 or higher before installing Mozilla.  If you have 1.3.1_2 installed, please remove ${LOCALBASE}/include/freetype, then build Mozilla"
-.endif
-
-pre-everything::
-.if defined(WITH_CALENDAR)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Calendar is still beta software."
-	@${ECHO_MSG} "Use at your own risk."
-	@${ECHO_MSG} "http://mozilla.org/projects/calendar/"
-	@${ECHO_MSG} ""
 .endif
 
 post-patch:
@@ -280,6 +274,8 @@ pre-install:
 	${TOUCH} -f ${PLIST}
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} install
+	${MKDIR} ${SCRIPTS_DIR}
+	${MKDIR} ${MOZ_PIS_DIR}
 	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
 		${FAKEDIR}/bin/mozilla \
 		${FAKEDIR}/bin/mozilla-config
@@ -299,6 +295,9 @@ pre-install:
 	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/browser_plugins 2>/dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} lib/${MOZILLA}/mozilla >> ${PLIST}
 	${ECHO_CMD} lib/${MOZILLA}/mozilla-config >> ${PLIST}
+.for ii in ${MOZ_PIS_SCRIPTS}
+	${INSTALL_SCRIPT} ${FILESDIR}/moz_pis_${ii} ${MOZ_PIS_DIR}/${ii}
+.endfor
 .if !defined(WITHOUT_MAILNEWS)
 	@${CP} -RL ${WRKSRC}/dist/bin/defaults/isp ${FAKEDIR}/lib/${MOZILLA}/defaults
 .endif
@@ -323,6 +322,12 @@ do-install:
 	${INSTALL_SCRIPT} ${FAKEDIR}/bin/mozilla-config ${PREFIX}/lib/${MOZILLA}
 	cd ${FAKEDIR}/lib/${MOZILLA} && ${FIND} . | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/${MOZILLA}
+	for pcfile in ${PKGCONFIG_FILES}; do \
+		${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
+			${WRKSRC}/build/unix/$${pcfile}.pc; \
+		${INSTALL_DATA} ${WRKSRC}/build/unix/$${pcfile}.pc \
+			${PREFIX}/libdata/pkgconfig/$${pcfile}${MOZ_SUFX}.pc ; \
+	done
 	${INSTALL_SCRIPT} ${WRKSRC}/${MOZILLA} ${PREFIX}/bin
 	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then \
 		${LN} -sf ${PREFIX}/bin/${MOZILLA} ${PREFIX}/bin/mozilla ; \
@@ -340,12 +345,6 @@ do-install:
 			fi; \
 		done; \
 	fi
-	for pcfile in ${PKGCONFIG_FILES}; do \
-		${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
-			${WRKSRC}/build/unix/$${pcfile}.pc; \
-		${INSTALL_DATA} ${WRKSRC}/build/unix/$${pcfile}.pc \
-			${PREFIX}/libdata/pkgconfig/$${pcfile}${MOZ_SUFX}.pc ; \
-	done
 	-${RM} -fr ${PREFIX}/include/${MOZILLA}
 	${MKDIR} ${PREFIX}/include/${MOZILLA}
 	${CHMOD} 755 ${PREFIX}/include/${MOZILLA}
