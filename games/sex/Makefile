@@ -16,4 +16,7 @@ MAINTAINER=	freebsd@spatula.net
 MAN6=		sex.6
 MANCOMPRESSED=	yes
 
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>
