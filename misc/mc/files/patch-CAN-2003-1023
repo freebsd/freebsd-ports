@@ -1,0 +1,39 @@
+--- vfs/direntry.c.orig	2002-12-25 21:21:43.000000000 -0500
++++ vfs/direntry.c	2004-01-21 09:38:53.000000000 -0500
+@@ -375,21 +375,31 @@ vfs_s_resolve_symlink (vfs *me, vfs_s_en
+ 
+     /* Convert absolute paths to relative ones */
+     if (*linkname == PATH_SEP) {
+-	char *p, *q;
++	char *p, *q, *r, *end;
+ 
+ 	for (p = path, q = entry->ino->linkname; *p == *q; p++, q++);
+ 	while (*(--q) != PATH_SEP);
+ 	q++;
++	r = buf;
++	end = buf + MC_MAXPATHLEN;
+ 	for (;; p++) {
+ 	    p = strchr (p, PATH_SEP);
+ 	    if (!p) {
+-		strcat (buf, q);
++		size_t len = strlen (q);
++
++		if (r + len >= end)
++		  break;
++
++		memcpy (r, q, len + 1);
++		linkname = buf;
+ 		break;
+ 	    }
+-	    strcat (buf, "..");
+-	    strcat (buf, PATH_SEP_STR);
++
++	    if (r + sizeof (".." PATH_SEP_STR) > end)
++		break;
++	    memcpy (r, ".." PATH_SEP_STR, sizeof (".." PATH_SEP_STR) - 1);
++	    r += sizeof (".." PATH_SEP_STR) - 1;
+ 	}
+-	linkname = buf;
+     }
+ 
+     return (MEDATA->find_entry) (me, entry->dir, linkname, follow - 1, 0);
