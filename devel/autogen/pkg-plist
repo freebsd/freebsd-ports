@@ -4,18 +4,17 @@ bin/columns
 bin/getdefs
 include/options.h
 @unexec install-info --delete %D/info/autogen.info %D/info/dir
-@unexec install-info --delete %D/info/snprintfv.info %D/info/dir
 info/autogen.info
-info/snprintfv.info
 @exec install-info %D/info/autogen.info %D/info/dir
+@unexec install-info --delete %D/info/snprintfv.info %D/info/dir
+info/snprintfv.info
 @exec install-info %D/info/snprintfv.info %D/info/dir
 lib/libguileopts.a
 lib/libguileopts.so
 lib/libguileopts.so.0
 lib/libopts.a
 lib/libopts.so
-lib/libopts.so.15
-lib/libsnprintfv.a
+lib/libopts.so.18
 lib/libsnprintfv.so
 lib/libsnprintfv.so.1
 share/aclocal/autoopts.m4
@@ -28,6 +27,7 @@ share/autogen/conftest.tpl
 share/autogen/fsm-macro.tpl
 share/autogen/fsm-trans.tpl
 share/autogen/fsm.tpl
+share/autogen/libopts-18.1.9.tar.gz
 share/autogen/optcode.tpl
 share/autogen/opthead.tpl
 share/autogen/options.tpl
