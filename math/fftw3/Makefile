@@ -10,9 +10,7 @@ PORTVERSION=	3.0.1
 PORTREVISION?=	4
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ 		\
-		http://www.fftw.org/ 			\
-		ftp://theory.lcs.mit.edu/pub/fftw/	\
-		ftp://pm.cse.rmit.edu.au/pub/dsp/fftw/
+		http://www.fftw.org/
 PKGNAMESUFFIX=	${FFTW3_PKGNAMESUFFIX}
 DISTNAME=	fftw-${PORTVERSION}
 
