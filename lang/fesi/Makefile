@@ -8,8 +8,8 @@
 PORTNAME=	fesi
 PORTVERSION=	1.1.5
 CATEGORIES=	lang java
-MASTER_SITES=	http://home.worldcom.ch/jmlugrin/fesi/
-DISTNAME=	fesikit
+MASTER_SITES=	http://www.lugrin.ch/fesi/
+DISTNAME=	fesikit-${PORTVERSION}
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
