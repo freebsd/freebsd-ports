@@ -7,12 +7,13 @@
 
 PORTNAME=	enscript-${PAPERSIZE}
 PORTVERSION=	1.6.4
+PORTREVISION=	1
 CATEGORIES+=	print
 MASTER_SITES=	http://people.ssh.com/mtr/genscript/
 DISTNAME=	enscript-${PORTVERSION}
 
 MAINTAINER?=	ports@FreeBSD.org
-COMMENT=	ASCII-to-PostScript filter
+COMMENT=	ASCII to PostScript filter
 
 # Work around configure issue
 CC=
