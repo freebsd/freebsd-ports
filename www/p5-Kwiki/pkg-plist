@@ -21,6 +21,7 @@ bin/kwiki
 %%SITE_PERL%%/Kwiki/Plugin.pm
 %%SITE_PERL%%/Kwiki/Preferences.pm
 %%SITE_PERL%%/Kwiki/Registry.pm
+%%SITE_PERL%%/Kwiki/Status.pm
 %%SITE_PERL%%/Kwiki/Template.pm
 %%SITE_PERL%%/Kwiki/Template/TT2.pm
 %%SITE_PERL%%/Kwiki/Theme.pm
