@@ -1,0 +1,14 @@
+Support for the Alcatel Speedtouch USB device. This driver is GPL except
+for the file that is downloaded from the Alcatel site.  This file is
+restricted, specifically in terms of distribution.  See
+http://www.alcatel.com/consumer/dsl/disclaimer_lx.htm.
+
+
+Thanks to
+
+  Benoit Papillault, who made the linux driver.
+  Jorgen Lundman and Jon Barlow for their help and their time
+  porting the driver to *BSD.
+  And also all the contributors i forget. 
+
+WWW:	http://www.xsproject.org/speedtouch/
