@@ -66,6 +66,12 @@ DOC_ja_JP=	QuickStart.txt QuickUsage.txt guide-1.html guide-2.html \
 		guide-7.html guide-8.html guide-9.html guide-10.html \
 		guide-11.html guide.html Answers.txt Report.txt
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Coredump during build on ia64"
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -exec ${RM} -f '{}' ';'
 	@${PERL} -pi -e 's/^CFLAGS/#$$&/' ${WRKSRC}/configure
@@ -88,4 +94,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/console/xppxp/README ${PREFIX}/share/doc/xppxp
 	csh ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
