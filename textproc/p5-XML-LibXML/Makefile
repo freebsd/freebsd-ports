@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-LibXML
-PORTVERSION=	1.54
+PORTVERSION=	1.56
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -28,11 +28,11 @@ MAN3=		XML::LibXML.3 XML::LibXML::Attr.3 XML::LibXML::Boolean.3 \
 		XML::LibXML::CDATASection.3 XML::LibXML::Comment.3 \
 		XML::LibXML::DOM.3 XML::LibXML::Document.3 \
 		XML::LibXML::DocumentFragment.3 XML::LibXML::Dtd.3 \
-		XML::LibXML::Element.3 \
-		XML::LibXML::Literal.3 XML::LibXML::Namespace.3 \
-		XML::LibXML::Node.3 XML::LibXML::NodeList.3 \
-		XML::LibXML::Number.3 XML::LibXML::SAX.3 \
+		XML::LibXML::Element.3 XML::LibXML::Literal.3 \
+		XML::LibXML::Namespace.3 XML::LibXML::Node.3 \
+		XML::LibXML::NodeList.3 XML::LibXML::Number.3 XML::LibXML::PI.3 \
+		XML::LibXML::Parser.3 XML::LibXML::SAX.3 \
 		XML::LibXML::SAX::Builder.3 XML::LibXML::SAX::Generator.3 \
-		XML::LibXML::SAX::Parser.3 XML::LibXML::Text.3
+		XML::LibXML::Text.3
 
 .include <bsd.port.mk>
