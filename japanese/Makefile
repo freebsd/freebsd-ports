@@ -193,7 +193,6 @@
     SUBDIR += lipsf
     SUBDIR += lookup
     SUBDIR += lookup-emacs20
-    SUBDIR += lookup-mule
     SUBDIR += lookup-xemacs
     SUBDIR += lsd-fpw
     SUBDIR += lynx
