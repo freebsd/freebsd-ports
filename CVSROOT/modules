@@ -7202,6 +7202,7 @@ py-milter	ports/mail/py-milter
 py-mimelib	ports/mail/py-mimelib
 py-ming		ports/graphics/py-ming
 py-mpz		ports/math/py-mpz
+py-mt		ports/www/py-mt
 py-musicbrainz	ports/audio/py-musicbrainz
 py-mx-base	ports/lang/py-mx-base
 py-mx-experimental	ports/devel/py-mx-experimental
