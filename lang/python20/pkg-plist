@@ -591,6 +591,7 @@ lib/%%PYTHON_VERSION%%/knee.pyo
 lib/%%PYTHON_VERSION%%/lib-dynload/_cursesmodule.so
 lib/%%PYTHON_VERSION%%/lib-dynload/audioop.so
 lib/%%PYTHON_VERSION%%/lib-dynload/binascii.so
+lib/%%PYTHON_VERSION%%/lib-dynload/bsddbmodule.so
 lib/%%PYTHON_VERSION%%/lib-dynload/cPickle.so
 lib/%%PYTHON_VERSION%%/lib-dynload/cStringIO.so
 lib/%%PYTHON_VERSION%%/lib-dynload/dbmmodule.so
@@ -598,7 +599,6 @@ lib/%%PYTHON_VERSION%%/lib-dynload/dlmodule.so
 lib/%%PYTHON_VERSION%%/lib-dynload/fpectlmodule.so
 lib/%%PYTHON_VERSION%%/lib-dynload/fpetestmodule.so
 lib/%%PYTHON_VERSION%%/lib-dynload/imageop.so
-@comment lib/%%PYTHON_VERSION%%/lib-dynload/linuxaudiodev.so
 lib/%%PYTHON_VERSION%%/lib-dynload/md5module.so
 lib/%%PYTHON_VERSION%%/lib-dynload/newmodule.so
 lib/%%PYTHON_VERSION%%/lib-dynload/nismodule.so
@@ -1030,6 +1030,7 @@ lib/%%PYTHON_VERSION%%/test/output/test_largefile
 lib/%%PYTHON_VERSION%%/test/output/test_linuxaudiodev
 lib/%%PYTHON_VERSION%%/test/output/test_long
 lib/%%PYTHON_VERSION%%/test/output/test_longexp
+lib/%%PYTHON_VERSION%%/test/output/test_mailbox
 lib/%%PYTHON_VERSION%%/test/output/test_math
 lib/%%PYTHON_VERSION%%/test/output/test_md5
 lib/%%PYTHON_VERSION%%/test/output/test_mimetools
@@ -1264,6 +1265,9 @@ lib/%%PYTHON_VERSION%%/test/test_long.pyo
 lib/%%PYTHON_VERSION%%/test/test_longexp.py
 lib/%%PYTHON_VERSION%%/test/test_longexp.pyc
 lib/%%PYTHON_VERSION%%/test/test_longexp.pyo
+lib/%%PYTHON_VERSION%%/test/test_mailbox.py
+lib/%%PYTHON_VERSION%%/test/test_mailbox.pyc
+lib/%%PYTHON_VERSION%%/test/test_mailbox.pyo
 lib/%%PYTHON_VERSION%%/test/test_math.py
 lib/%%PYTHON_VERSION%%/test/test_math.pyc
 lib/%%PYTHON_VERSION%%/test/test_math.pyo

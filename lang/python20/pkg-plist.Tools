@@ -35,6 +35,7 @@ lib/%%PYTHON_VERSION%%/Tools/faqwiz/faqconf.py
 lib/%%PYTHON_VERSION%%/Tools/faqwiz/faqcust.py
 lib/%%PYTHON_VERSION%%/Tools/faqwiz/faqw.py
 lib/%%PYTHON_VERSION%%/Tools/faqwiz/faqwiz.py
+lib/%%PYTHON_VERSION%%/Tools/freeze/.cvsignore
 lib/%%PYTHON_VERSION%%/Tools/freeze/README
 lib/%%PYTHON_VERSION%%/Tools/freeze/bkfile.py
 lib/%%PYTHON_VERSION%%/Tools/freeze/checkextensions.py

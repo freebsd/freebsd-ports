@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	python
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	lang python
-MASTER_SITES=	http://www.python.org/ftp/python/2.0/ \
-		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/2.0/
+MASTER_SITES=	http://www.python.org/ftp/python/2.0.1/ \
+		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/2.0.1/
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER?=	tg@FreeBSD.org
@@ -131,7 +131,7 @@ post-install:
 .endif
 .if !defined(WITHOUT_DEMO)
 	@${MKDIR} ${DEMODIR}
-	@cd ${WRKSRC}/Demo; tar -c --exclude='*CVS*' -f - * | \
+	@cd ${WRKSRC}/Demo; tar -c --exclude='*CVS*' -f - [M-z]* | \
 		(cd ${DEMODIR}; tar xf -)
 .endif
 
