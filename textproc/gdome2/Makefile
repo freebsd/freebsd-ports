@@ -15,9 +15,7 @@ COMMENT=	Gnome DOM Engine
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
-BROKEN=		Missing dependencies, will be removed after Feb 2
-
-USE_GNOME=	glib12 gnomehack
+USE_GNOME=	glib20 gnomehack
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" CPPFLAGS="-I${LOCALBASE}/include"
