@@ -1,26 +1,33 @@
-bin/browse
+@comment $FreeBSD$
+bin/mDNSBrowse
+bin/mDNSPublish
 bin/mDNSResponder
-bin/publish
-include/howl-0.6.1/corby/buffer.h
-include/howl-0.6.1/corby/channel.h
-include/howl-0.6.1/corby/corby.h
-include/howl-0.6.1/corby/dll.h
-include/howl-0.6.1/corby/message.h
-include/howl-0.6.1/corby/object.h
-include/howl-0.6.1/corby/orb.h
-include/howl-0.6.1/rendezvous/dll.h
-include/howl-0.6.1/rendezvous/rendezvous.h
-include/howl-0.6.1/salt/address.h
-include/howl-0.6.1/salt/assert.h
-include/howl-0.6.1/salt/dll.h
-include/howl-0.6.1/salt/log.h
-include/howl-0.6.1/salt/salt.h
-include/howl-0.6.1/salt/socket.h
-include/howl-0.6.1/salt/verrno.h
-include/howl-0.6.1/salt/vstdlib.h
-include/howl-0.6.1/salt/vstring.h
-include/howl-0.6.1/salt/vtime.h
-include/howl-0.6.1/salt/vtypes.h
+include/howl-%%VERSION%%/corby/buffer.h
+include/howl-%%VERSION%%/corby/channel.h
+include/howl-%%VERSION%%/corby/corby.h
+include/howl-%%VERSION%%/corby/dll.h
+include/howl-%%VERSION%%/corby/message.h
+include/howl-%%VERSION%%/corby/object.h
+include/howl-%%VERSION%%/corby/orb.h
+@dirrm include/howl-%%VERSION%%/corby
+include/howl-%%VERSION%%/rendezvous/dll.h
+include/howl-%%VERSION%%/rendezvous/rendezvous.h
+@dirrm include/howl-%%VERSION%%/rendezvous
+include/howl-%%VERSION%%/salt/address.h
+include/howl-%%VERSION%%/salt/assert.h
+include/howl-%%VERSION%%/salt/dll.h
+include/howl-%%VERSION%%/salt/interface.h
+include/howl-%%VERSION%%/salt/log.h
+include/howl-%%VERSION%%/salt/salt.h
+include/howl-%%VERSION%%/salt/signal.h
+include/howl-%%VERSION%%/salt/socket.h
+include/howl-%%VERSION%%/salt/time.h
+include/howl-%%VERSION%%/salt/verrno.h
+include/howl-%%VERSION%%/salt/vstdlib.h
+include/howl-%%VERSION%%/salt/vstring.h
+include/howl-%%VERSION%%/salt/vtypes.h
+@dirrm include/howl-%%VERSION%%/salt
+@dirrm include/howl-%%VERSION%%
 lib/libcorby.a
 lib/libcorby.la
 lib/libcorby.so
@@ -43,7 +50,3 @@ share/howl/help/salt-summary.html
 share/howl/help/salt.html
 @dirrm share/howl/help
 @dirrm share/howl
-@dirrm include/howl-0.6.1/salt
-@dirrm include/howl-0.6.1/rendezvous
-@dirrm include/howl-0.6.1/corby
-@dirrm include/howl-0.6.1
