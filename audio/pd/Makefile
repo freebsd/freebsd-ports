@@ -17,12 +17,6 @@ COMMENT=	Pure Data, a MIDI-capable real-time audio processor/synthesizer
 LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83 \
 		tk83:${PORTSDIR}/x11-toolkits/tk83
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -ltk83 -ltcl83"
@@ -92,4 +86,4 @@ do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/../extra && pax -r -w * ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
