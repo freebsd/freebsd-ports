@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.7.14";
+my $VERSION	= "2.7.15";
 my $COPYRIGHT	= "Copyright (c) 2000-2004 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
@@ -45,6 +45,7 @@ sub REQ_IMPLICIT	{ 2 }
 sub CVS_PASSFILE	{ "%%PREFIX%%/share/porteasy/cvspass" }
 
 sub PATH_CVS		{ "/usr/bin/cvs" }
+sub PATH_FETCH		{ "/usr/bin/fetch" }
 sub PATH_LDCONFIG	{ "/sbin/ldconfig" }
 sub PATH_MAKE		{ "/usr/bin/make" }
 
@@ -317,9 +318,9 @@ sub ecks() {
 }
 
 #
-# Update the index file
+# Update the root of the ports tree
 #
-sub update_index() {
+sub update_root() {
 
     my $parent;		# Parent directory
 
@@ -328,12 +329,12 @@ sub update_index() {
     if (! -d "ports/CVS") {
 	cd($parent);
 	cvs("checkout", "-l", "ports")
-	    or bsd::errx(1, "error checking out the index file");
+	    or bsd::errx(1, "error checking out the root of the ports tree");
 	cd($portsdir);
     } else {
 	cd($portsdir);
 	cvs("update", "-l")
-	    or bsd::errx(1, "error updating the index file");
+	    or bsd::errx(1, "error updating the root of the ports tree");
     }
     if ($packages && ! -d "$portsdir/packages") {
 	mkdir("$portsdir/packages", 0777)
@@ -341,11 +342,29 @@ sub update_index() {
     }
     cvs("update", "Mk", "Templates", "Tools")
 	or bsd::errx(1, "error updating the ports infrastructure");
-    $index = "$portsdir/INDEX-" . substr($release, 0, 1);
+    $moved = "$portsdir/MOVED";
+}
+
+#
+# Update the index
+#
+sub update_index() {
+
+    my $ifn;			# Index file name
+
+    $ifn = capture(\&cmd, ("make", "-f$portsdir/Makefile", "-VINDEXFILE"));
+    if ($update) {
+	info("Retrieving $ifn");
+	cmd(&PATH_FETCH, $verbose ? "-mv" : "-m", "-o$portsdir/$ifn.www",
+	    "http://www.freebsd.org/ports/$ifn");
+    }
+    $index = "$portsdir/$ifn.www";
+    if (! -f $index) {
+	$index = "$portsdir/$ifn";
+    }
     if (! -f $index) {
 	$index = "$portsdir/INDEX";
     }
-    $moved = "$portsdir/MOVED";
 }
 
 #
@@ -357,6 +376,7 @@ sub read_index() {
     my $line;			# Line from file
 
     return if ($have_index);
+    update_index();
     info("Reading $index");
     sysopen(INDEX, $index, O_RDONLY)
 	or bsd::err(1, "can't open $index");
@@ -1177,9 +1197,9 @@ MAIN:{
 	bsd::errx(1, "No CVS root, please use the -r option or set \$CVSROOT");
     }
 
-    # Step 1: update the ports index
+    # Step 1: update the ports tree infrastructure
     $release = `uname -r`;
-    update_index();
+    update_root();
 
     # Step 2: build list of explicitly required ports
     foreach my $arg (@ARGV) {
