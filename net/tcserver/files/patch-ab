@@ -1,6 +1,6 @@
 --- tcserver.cfg-dist.orig	Mon Jun 12 16:29:03 2000
-+++ tcserver.cfg-dist	Tue Jun 20 11:56:29 2000
-@@ -1,12 +1,8 @@
++++ tcserver.cfg-dist	Fri Sep  8 12:19:20 2000
+@@ -1,12 +1,10 @@
  [config]
  
 -CONTENT_DIR=content
@@ -15,3 +15,5 @@
 -LOGGING_DIR=logs
 +LOGGING_DIR=__LOG_DIR__
  LOGGING=yes
++
++PID_FILE=__PID_DIR__/tcserver.pid

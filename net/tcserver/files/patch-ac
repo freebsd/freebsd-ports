@@ -1,5 +1,5 @@
 --- scripts/tcserver.init.orig	Wed Apr 12 01:22:35 2000
-+++ scripts/tcserver.init	Tue Jun 20 11:59:40 2000
++++ scripts/tcserver.init	Fri Sep  8 12:29:55 2000
 @@ -15,14 +15,14 @@
  # ============================================================================
  
@@ -18,3 +18,11 @@
  
  if [ ! -f $BIN ]; then
  	echo "$BIN not found.  TeraCAST not started"
+@@ -44,6 +44,7 @@
+ 	kill `cat $PIDFILE` >/dev/null 2>&1
+ 	sleep 1
+ 	kill -9 `cat $PIDFILE` >/dev/null 2>&1
++	rm -f $PIDFILE
+ 	;;
+ 
+ 'restart')
