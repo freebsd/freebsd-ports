@@ -1,0 +1,13 @@
+Fluctuate fits the model which has a single population which has been growing
+(or shrinking) according to an exponential growth law.  It estimates 4Nu and
+g, where N is the effective population size, u is the neutral mutation rate
+per site, and g is the growth rate of the population.
+
+Fluctuate forms part of the Lamarc (Likelihood Analysis with Metropolis
+Algorithm using Random Coalescence) suite.  See:
+
+  http://evolution.genetics.washington.edu/lamarc.html
+
+WWW:    http://evolution.genetics.washington.edu/lamarc/fluctuate.html
+
+-- Johann Visagie <wjv@FreeBSD.org>

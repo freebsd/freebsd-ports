@@ -1,0 +1,4 @@
+bin/fluctuate
+%%PORTDOCS%%share/doc/fluctuate/errors.doc
+%%PORTDOCS%%share/doc/fluctuate/fluctuate.doc
+%%PORTDOCS%%@dirrm share/doc/fluctuate
