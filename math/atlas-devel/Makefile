@@ -50,7 +50,11 @@ post-patch:
 	@(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/alpha-patch)
 .endif
 
-PICFLAG!=	${MAKE} -f bsd.lib.mk -V PICFLAG
+.if ${MACHINE_ARCH} == "sparc64"
+PICFLAG?=	-fPIC 
+.else
+PICFLAG?=	-fpic
+.endif
 
 ANSWER_i386?=	${PRINTF} "\n\n\n\n\n\n\n\n\n\n"
 ANSWER_ia64?=	${PRINTF} "\n\n\n2\n\n\n\n\nf77\n-O2 -static\n\n"
