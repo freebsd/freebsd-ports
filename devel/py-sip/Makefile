@@ -6,6 +6,7 @@
 
 PORTNAME=	sip
 PORTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/sip/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
