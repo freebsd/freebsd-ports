@@ -1,5 +1,14 @@
 --- ../thot/Makefile.in.orig	Wed Nov 19 05:41:49 1997
-+++ ../thot/Makefile.in	Sun Sep 26 23:08:12 1999
++++ ../thot/Makefile.in	Sun Oct  3 23:42:28 1999
+@@ -14,7 +14,7 @@
+           -I@top_srcdir@/drawlib -I@top_srcdir@/drawlib/f
+ LDFLAGS = @LDFLAGS@ -L../indexlib -L../drawlib -L../tablelib -L../thotlib -L..
+ LIBS	= -lThotIndex -lThotDraw -lThotTable -lThotEditor @IMGLIBS@ \
+-          $(MOTIF_LIBRARIES) -lXm $(X_LIBS) -lXt -lXext $(X_PRE_LIBS) \
++          %%MOTIFLIB%% -lXm $(X_LIBS) -lXt -lXext $(X_PRE_LIBS) \
+ 	  -lX11 $(X_EXTRA_LIBS) @LIBS@ @EXTRA_LIBS@ -lm
+ 
+ prefix = @prefix@
 @@ -27,6 +27,7 @@
  CONFIGFILES= \
      XKeysymDB  thot.ini  thot.color  thot.pattern  thot.keyboard \

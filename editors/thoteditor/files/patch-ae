@@ -1,5 +1,5 @@
 --- ../Makefile.in.orig	Wed Oct  8 04:13:58 1997
-+++ ../Makefile.in	Sat Sep 25 13:24:41 1999
++++ ../Makefile.in	Sun Oct  3 23:44:16 1999
 @@ -17,6 +17,7 @@
  
  SUBDIRS	= tools tablelib thotlib batch drawlib indexlib thot amaya
