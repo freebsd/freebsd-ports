@@ -8,7 +8,7 @@
 PORTNAME=	tcptrace
 PORTVERSION=	5.2.1
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://jarok.cs.ohiou.edu/software/tcptrace/files/5.2.1/
+MASTER_SITES=	http://www.tcptrace.org/download/
 DISTNAME=	tcptrace.5.2.1
 
 MAINTAINER=	fenner@FreeBSD.org
