@@ -91,6 +91,7 @@
     SUBDIR += macipgw
     SUBDIR += mars_nwe
     SUBDIR += micq
+    SUBDIR += mopd
     SUBDIR += mpd
     SUBDIR += mpich
     SUBDIR += mrt
