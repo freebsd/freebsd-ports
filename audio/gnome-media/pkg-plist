@@ -7,6 +7,8 @@ share/gnome/apps/Multimedia/gmix.desktop
 share/gnome/apps/Multimedia/gtcd.desktop
 share/gnome/apps/Multimedia/vumeter.desktop
 share/gnome/cddb-submit-methods
+share/gnome/pixmaps/gnome-mixer.png
+share/gnome/pixmaps/gnome-vumeter.png
 share/gnome/pixmaps/tcd/cdrom.xpm
 share/gnome/pixmaps/tcd/eject.xpm
 share/gnome/pixmaps/tcd/ff.xpm
@@ -17,10 +19,12 @@ share/gnome/pixmaps/tcd/play.xpm
 share/gnome/pixmaps/tcd/prev_t.xpm
 share/gnome/pixmaps/tcd/rw.xpm
 share/gnome/pixmaps/tcd/stop.xpm
+share/locale/cs/LC_MESSAGES/gnome-media.mo
 share/locale/da/LC_MESSAGES/gnome-media.mo
 share/locale/de/LC_MESSAGES/gnome-media.mo
 share/locale/en_GB/LC_MESSAGES/gnome-media.mo
 share/locale/es/LC_MESSAGES/gnome-media.mo
+share/locale/et/LC_MESSAGES/gnome-media.mo
 share/locale/fi/LC_MESSAGES/gnome-media.mo
 share/locale/fr/LC_MESSAGES/gnome-media.mo
 share/locale/ga/LC_MESSAGES/gnome-media.mo
@@ -30,7 +34,10 @@ share/locale/ja/LC_MESSAGES/gnome-media.mo
 share/locale/ko/LC_MESSAGES/gnome-media.mo
 share/locale/nl/LC_MESSAGES/gnome-media.mo
 share/locale/no/LC_MESSAGES/gnome-media.mo
+share/locale/pl/LC_MESSAGES/gnome-media.mo
 share/locale/pt/LC_MESSAGES/gnome-media.mo
-share/locale/ru_RU/LC_MESSAGES/gnome-media.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-media.mo
+share/locale/ru/LC_MESSAGES/gnome-media.mo
+share/locale/sv/LC_MESSAGES/gnome-media.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gnome-media.mo
 @dirrm share/gnome/pixmaps/tcd/

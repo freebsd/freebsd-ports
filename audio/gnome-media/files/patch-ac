@@ -12,16 +12,17 @@
  
  
  bin_PROGRAMS = vumeter
---- gmix/Makefile.in.orig	Sat Feb 27 09:22:00 1999
-+++ gmix/Makefile.in	Wed Mar  3 12:37:46 1999
-@@ -116,11 +116,11 @@
- ZVT_LIBS = @ZVT_LIBS@
+--- gmix/Makefile.in.orig	Wed Sep 22 03:11:25 1999
++++ gmix/Makefile.in	Fri Sep 24 11:55:02 1999
+@@ -123,12 +123,12 @@
+ cxxflags_set = @cxxflags_set@
  l = @l@
  
 -Audiodir = $(datadir)/gnome/apps/Multimedia
 +Audiodir = $(datadir)/apps/Multimedia
+ pixmapdir = $(datadir)/pixmaps
  
- EXTRA_DIST = README TODO NEWS gmix.desktop
+ EXTRA_DIST = README TODO NEWS gmix.desktop gnome-mixer.png
  
 -INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		$(GNOME_INCLUDEDIR)
 +INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		$(GNOME_INCLUDEDIR)
