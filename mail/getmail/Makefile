@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	getmail
-PORTVERSION=	4.2.4
+PORTVERSION=	4.2.5
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.qcc.ca/~charlesc/software/getmail-4/%SUBDIR%/
 MASTER_SITE_SUBDIR=	old-versions
