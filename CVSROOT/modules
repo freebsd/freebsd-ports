@@ -7401,7 +7401,6 @@ shapelib	ports/devel/shapelib
 shared-mime-info	ports/misc/shared-mime-info
 sharefonts	ports/x11-fonts/sharefonts
 sharity-light	ports/net/sharity-light
-shc		ports/misc/shc
 shlock		ports/sysutils/shlock
 shmap		ports/devel/shmap
 shntool		ports/audio/shntool
