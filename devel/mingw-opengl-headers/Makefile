@@ -7,23 +7,14 @@
 PORTNAME=	opengl
 PORTVERSION=	20011229
 CATEGORIES=	devel graphics
-MASTER_SITES=	ftp://ftp.unina.it/pub/pcibm/microsoft/MSLFILES/ \
-		ftp://ftp.clinet.fi/.3/ftp.microsoft.com/Softlib/MSLFILES/ \
-		ftp://ftp.task.gda.pl/mirror/ftp.cdrom.com/pub/idgames2/telefragged/gamedesign/rust/quake2/level_editors/patches_utilities/ \
-		ftp://ftp.esan.inet.co.th/pub/DRIVERS/VGA/AGP/3DLABS/PERMEDIA/WIN95/ \
-		ftp.unina.it/pub/Pcibm/microsoft/MSLFILES/ \
-		ftp.cyf-kr.edu.pl/pub/mirror/Microsoft/SoftLib/MSLFILES/ \
-		ftp.wiwi.uni-marburg.de/pub/mirror/ftp.microsoft.com/Softlib/MSLFILES/ \
-		ftp.demon.net/pub/mirrors/idgames/telefragged/gamedesign/rust/quake2/level_editors/patches_utilities/ \
-		ftp.utbm.fr/pub/pc/microsoft/Softlib/MSLFILES/ \
-		ftp.ntua.gr/pub/pc/microsoft/softlib/MSLFILES/
+MASTER_SITES=	ftp://ftp.microsoft.com/Softlib/MSLFILES/
 PKGNAMEPREFIX=	mingw-
 PKGNAMESUFFIX=	-headers
-DISTNAME=	OPENGL95
+DISTNAME=	OpenGL95
 EXTRACT_SUFX=	.EXE
 DIST_SUBDIR=	mingw
 
-MAINTAINER=	doc@lublin.t1.pl
+MAINTAINER=	dotz@irc.pl
 COMMENT=	OpenGL headers from Microsoft(TM) for Windows development with Mingw
 
 BUILD_DEPENDS=	mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt
