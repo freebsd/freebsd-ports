@@ -11,8 +11,8 @@ CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GNOME application for developing ".pot" files used with GNU Gettext
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A GNOME application for creating GNU gettext translation files
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gnomevfs2 libgnomeui
