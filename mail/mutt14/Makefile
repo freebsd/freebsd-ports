@@ -109,7 +109,8 @@ post-install:
 	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
 		${PREFIX}/share/doc/mutt
 .if defined(WITH_DOCS)
-	env MANMODE=0755 ${INSTALL_MAN} -d ${PREFIX}/share/doc/mutt/html
+	${INSTALL} ${COPY} -o ${MANOWN} -g ${MANGRP} -m 0755 \
+	    -d ${PREFIX}/share/doc/mutt/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/mutt/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.latin1 ${PREFIX}/share/doc/mutt
 .endif
