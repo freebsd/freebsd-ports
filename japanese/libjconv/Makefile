@@ -20,6 +20,7 @@ MAINTAINER=	knu@FreeBSD.org
 LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv
 RUN_DEPENDS=	${LOCALBASE}/libexec/iconv/iso-2022-jp.so:${PORTSDIR}/converters/iconv-extra
 
+MAKE_ARGS=	NOPROFILE=true
 INSTALLS_SHLIB=	yes
 
 post-patch:
