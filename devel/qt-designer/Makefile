@@ -16,6 +16,7 @@ LIB_DEPENDS+=	qt2.4:${PORTSDIR}/x11-toolkits/qt23
 MASTERDIR=	${.CURDIR}/../../x11-toolkits/qt23
 
 CONFLICTS=	qt-3.*
+BROKEN=		"fails to install"
 
 WRKSRC=		${WRKDIR}/qt-${PORTVERSION}
 PATCH_WRKSRC=	${WRKSRC}
