@@ -10,6 +10,3 @@ I suggest that you add the following to httpd.conf:
 
     Alias /phpldapadmin/ "%%PREFIX%%/%%PLADIR%%/"
 
-You will need a version of PHP with LDAP functionality enabled,
-which is not the default.  If necessary, enable the 'OPENLDAP'
-option in the PHP port's configuration screen and reinstall.
