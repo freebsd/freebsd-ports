@@ -14,7 +14,7 @@ DISTFILES=
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/mozilla:build \
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/mozilla-vendor:build \
 		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	${MAKE} -V LIB_DEPENDS -f ${MAINDIR}/${MKFILE}
@@ -22,7 +22,9 @@ RUN_DEPENDS=	${MAKE} -V RUN_DEPENDS -f ${MAINDIR}/${MKFILE}
 
 USE_X_PREFIX=	yes
 
-MAINDIR=	${.CURDIR}/../mozilla
+LATEST_LINK=	mozilla-embedded-vendor
+PLIST=		${WRKSRC}/pkg-plist
+MAINDIR=	${.CURDIR}/../mozilla-vendor
 MKFILE!=	/usr/bin/basename ${MAKEFILE}
 PORTVERSION!=	${PORTVERSION}
 PORTREVISION!=	${PORTREVISION}
@@ -37,12 +39,20 @@ do-build:
 	@(cd ${WRKSRC}/dist/Embed; \
 	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ../bin/regxpcom; \
 	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ../bin/regchrome)
-	@find ${WRKSRC}/dist/Embed -name "*.so" | xargs strip
+	@${FIND} ${WRKSRC}/dist/Embed -name "*.so" | ${XARGS} ${STRIP_CMD}
+
+pre-install:
+	${TOUCH} -f ${PLIST}
+	cd ${WRKSRC}/dist/Embed && ${FIND} -s * -type f -o -type l | \
+		${SED} -e ':^:lib/mozilla-embedded-vendor/:' >> ${PLIST} \
+		&& ${FIND} -d * -type f | \
+		${SED} -e 's:^:@dirrm lib/mozilla-embedded-vendor/:' >> ${PLIST}
+	${ECHO_CMD} @dirrm lib/mozilla-embedded-vendor >> ${PLIST}
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/mozilla-embedded
-	${CHMOD} 755 ${PREFIX}/lib/mozilla-embedded
+	${MKDIR} ${PREFIX}/lib/mozilla-embedded-vendor
+	${CHMOD} 755 ${PREFIX}/lib/mozilla-embedded-vendor
 	cd ${WRKSRC}/dist/Embed && ${FIND} . | \
-		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/mozilla-embedded
+		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/mozilla-embedded-vendor
 
 .include <bsd.port.mk>

@@ -2,5 +2,5 @@
 #
 # $FreeBSD$
 
-cd @PREFIX@/lib/mozilla
+cd @PREFIX@/lib/mozilla-vendor
 exec ./mozilla "$@"

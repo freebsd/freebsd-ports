@@ -22,6 +22,7 @@ RUN_DEPENDS=	${MAKE} -V RUN_DEPENDS -f ${MAINDIR}/${MKFILE}
 
 USE_X_PREFIX=	yes
 
+PLIST=		${WRKSRC}/pkg-plist
 MAINDIR=	${.CURDIR}/../mozilla
 MKFILE!=	/usr/bin/basename ${MAKEFILE}
 PORTVERSION!=	${PORTVERSION}
@@ -37,7 +38,15 @@ do-build:
 	@(cd ${WRKSRC}/dist/Embed; \
 	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ../bin/regxpcom; \
 	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ../bin/regchrome)
-	@find ${WRKSRC}/dist/Embed -name "*.so" | xargs strip
+	@${FIND} ${WRKSRC}/dist/Embed -name "*.so" | ${XARGS} ${STRIP_CMD}
+
+pre-install:
+	${TOUCH} -f ${PLIST}
+	cd ${WRKSRC}/dist/Embed && ${FIND} -s * -type f -o -type l | \
+		${SED} -e ':^:lib/mozilla-embedded/:' >> ${PLIST} \
+		&& ${FIND} -d * -type f | \
+		${SED} -e 's:^:@dirrm lib/mozilla-embedded/:' >> ${PLIST}
+	${ECHO_CMD} @dirrm lib/mozilla-embedded >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/mozilla-embedded

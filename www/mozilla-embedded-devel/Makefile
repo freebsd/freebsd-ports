@@ -22,8 +22,8 @@ RUN_DEPENDS=	${MAKE} -V RUN_DEPENDS -f ${MAINDIR}/${MKFILE}
 
 USE_X_PREFIX=	yes
 
-NO_LATEST_LINK=	yes
-
+LATEST_LINK=	mozilla-embedded-devel
+PLIST=		${WRKSRC}/pkg-plist
 MAINDIR=	${.CURDIR}/../mozilla-devel
 MKFILE!=	/usr/bin/basename ${MAKEFILE}
 PORTVERSION!=	${PORTVERSION}
@@ -39,7 +39,15 @@ do-build:
 	@(cd ${WRKSRC}/dist/Embed; \
 	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ../bin/regxpcom; \
 	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ../bin/regchrome)
-	@find ${WRKSRC}/dist/Embed -name "*.so" | xargs strip
+	@${FIND} ${WRKSRC}/dist/Embed -name "*.so" | ${XARGS} ${STRIP_CMD}
+
+pre-install:
+	${TOUCH} -f ${PLIST}
+	cd ${WRKSRC}/dist/Embed && ${FIND} -s * -type f -o -type l | \
+		${SED} -e ':^:lib/mozilla-embedded-devel/:' >> ${PLIST} \
+		&& ${FIND} -d * -type f | \
+		${SED} -e 's:^:@dirrm lib/mozilla-embedded-devel/:' >> ${PLIST}
+	${ECHO_CMD} @dirrm lib/mozilla-embedded-devel >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/mozilla-embedded-devel

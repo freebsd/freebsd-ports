@@ -14,11 +14,13 @@ DISTFILES=
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/mozilla:configure
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/mozilla-vendor:configure
 
 USE_X_PREFIX=	yes
 
-MAINDIR=	${.CURDIR}/../mozilla
+LATEST_LINK=	mozilla-headers-vendor
+PLIST=		${WRKSRC}/pkg-plist
+MAINDIR=	${.CURDIR}/../mozilla-vendor
 MKFILE!=	/usr/bin/basename ${MAKEFILE}
 PORTVERSION!=	${PORTVERSION}
 PORTREVISION!=	${PORTREVISION}
@@ -31,11 +33,19 @@ ALL_TARGET=	export
 CPIOOWN=	-R ${INCOWN}:${INCGRP}
 .endif
 
+pre-install:
+	${TOUCH} -f ${PLIST}
+	cd ${WRKSRC}/dist/include && ${FIND} -s * -type f -o -type l | \
+		${SED} -e ':^:include/mozilla-vendor/:' >> ${PLIST} \
+		&& ${FIND} -d * -type f | \
+		${SED} -e 's:^:@dirrm include/mozilla-vendor/:' >> ${PLIST}
+	${ECHO_CMD} @dirrm include/mozilla-vendor >> ${PLIST}
+
 do-install:
-	-${RM} -fr ${PREFIX}/include/mozilla
-	${MKDIR} ${PREFIX}/include/mozilla
-	${CHMOD} 755 ${PREFIX}/include/mozilla
+	-${RM} -fr ${PREFIX}/include/mozilla-vendor
+	${MKDIR} ${PREFIX}/include/mozilla-vendor
+	${CHMOD} 755 ${PREFIX}/include/mozilla-vendor
 	cd ${WRKSRC}/dist/include && ${FIND} . | \
-		cpio -pdm -L ${CPIOOWN} ${PREFIX}/include/mozilla
+		cpio -pdm -L ${CPIOOWN} ${PREFIX}/include/mozilla-vendor
 
 .include <bsd.port.mk>

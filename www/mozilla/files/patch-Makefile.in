@@ -1,25 +1,22 @@
-
-$FreeBSD$
-
---- Makefile.in	2001/12/25 21:00:23	1.1
-+++ Makefile.in	2001/12/26 06:40:16
-@@ -64,8 +64,7 @@
- DIRS = $(NSPRPUB_DIR) \
+--- Makefile.in.orig	Thu May 30 20:39:07 2002
++++ Makefile.in	Wed Aug 28 13:55:32 2002
+@@ -70,8 +70,7 @@
  	$(tier_0_dirs) \
  	$(tier_1_dirs) \
+ 	$(tier_2_dirs) \
 -	$(tier_9_dirs) \
 -	$(NULL)
 +	$(tier_9_dirs)
  
- ifdef MOZ_LDAP_XPCOM
- DIRS += directory/c-sdk/ldap
-@@ -81,7 +80,8 @@
+ ifdef GC_LEAK_DETECTOR
+ DIRS += gc/boehm
+@@ -90,7 +89,8 @@
  DIRS += $(tier_98_dirs)
  endif
  
 -DIRS	+= $(tier_99_dirs)
 +DIRS	+= $(tier_99_dirs) \
-+	    $(NULL)
++		$(NULL)
  
  #
  # tier 0 - base build config dirs
