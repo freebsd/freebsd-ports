@@ -510,6 +510,7 @@
     SUBDIR += opentop
     SUBDIR += openzz
     SUBDIR += orbitcpp
+    SUBDIR += oskit
     SUBDIR += ossp-al
     SUBDIR += ossp-cfg
     SUBDIR += ossp-ex
