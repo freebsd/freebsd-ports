@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	raggle
-PORTVERSION=	0.2.4
+PORTVERSION=	0.3.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.raggle.org/files/
 
@@ -26,8 +26,13 @@ DOCS=		AUTHORS BUGS COPYING ChangeLog README TODO doc/*
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/raggle ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/raggle.1 ${MAN1PREFIX}/man/man1
-	@${MKDIR} ${DATADIR}/extras ${DATADIR}/themes
-	${INSTALL_DATA} ${WRKSRC}/extras/* ${DATADIR}/extras
+	@${MKDIR} ${DATADIR}/themes ${DATADIR}/extras/web_ui/images \
+		${DATADIR}/extras/web_ui/inc ${DATADIR}/extras/win32
+	${INSTALL_DATA} ${WRKSRC}/extras/*.rb ${DATADIR}/extras
+	${INSTALL_DATA} ${WRKSRC}/extras/web_ui/*.html ${DATADIR}/extras/web_ui
+	${INSTALL_DATA} ${WRKSRC}/extras/web_ui/images/* ${DATADIR}/extras/web_ui/images
+	${INSTALL_DATA} ${WRKSRC}/extras/web_ui/inc/* ${DATADIR}/extras/web_ui/inc
+	${INSTALL_DATA} ${WRKSRC}/extras/win32/* ${DATADIR}/extras/win32
 	${INSTALL_DATA} ${WRKSRC}/themes/* ${DATADIR}/themes
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
