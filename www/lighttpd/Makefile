@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.3.6
-PORTREVISION=	1
+PORTVERSION=	1.3.7
 CATEGORIES=	www
 MASTER_SITES=	http://jan.kneschke.de/projects/lighttpd/download/ \
 				http://dl.fkb.wormulon.net/lighttpd/ \
