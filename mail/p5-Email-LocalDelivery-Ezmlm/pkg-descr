@@ -1,0 +1,3 @@
+This module delivers RFC822 messages into ezmlm-style archive folders.
+
+WWW: http://search.cpan.org/dist/Email-LocalDelivery-Ezmlm
