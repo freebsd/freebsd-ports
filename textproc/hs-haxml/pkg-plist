@@ -16,6 +16,7 @@ bin/Xtract
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Pretty.hi
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Types.hi
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Validate.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Verbatim.hi
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Wrappers.hi
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Xml2Haskell.hi
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml.hi
@@ -36,6 +37,7 @@ bin/Xtract
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Pretty.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Types.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Validate.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Verbatim.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Wrappers.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Xml2Haskell.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Xtract/Combinators.hi
@@ -61,6 +63,7 @@ bin/Xtract
 %%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Pretty.html
 %%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Types.html
 %%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Validate.html
+%%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Verbatim.html
 %%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Wrappers.html
 %%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Xml2Haskell.html
 %%PORTDOCS%%share/doc/haxml/HaXml/Text.XML.HaXml.Xtract.Combinators.html
@@ -124,7 +127,6 @@ bin/Xtract
 %%PORTDOCS%%share/doc/haxml/HaXml/haskell_icon.gif
 %%PORTDOCS%%share/doc/haxml/HaXml/index.html
 %%PORTDOCS%%share/doc/haxml/Haskell2Xml.html
-%%PORTDOCS%%share/doc/haxml/LICENSE
 %%PORTDOCS%%share/doc/haxml/Xml2Haskell.html
 %%PORTDOCS%%share/doc/haxml/Xtract.html
 %%PORTDOCS%%share/doc/haxml/brubeck.gif
