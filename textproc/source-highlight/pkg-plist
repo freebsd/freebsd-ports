@@ -2,10 +2,10 @@ bin/cpp2html
 bin/java2html
 bin/source-highlight
 bin/source-highlight-cgi
+bin/src-hilite-lesspipe.sh
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.html
 %%PORTDOCS%%%%DOCSDIR%%/Hello.css
 %%PORTDOCS%%%%DOCSDIR%%/Hello.java
 %%PORTDOCS%%%%DOCSDIR%%/Hello.java.html
@@ -35,11 +35,14 @@ bin/source-highlight-cgi
 %%PORTDOCS%%%%DOCSDIR%%/source-highlight.html
 %%PORTDOCS%%%%DOCSDIR%%/startapp.cc.html
 %%PORTDOCS%%%%DOCSDIR%%/test.js.html
+%%PORTDOCS%%%%DOCSDIR%%/test.lua.html
+%%PORTDOCS%%%%DOCSDIR%%/test.ml.html
 %%PORTDOCS%%%%DOCSDIR%%/test.php3.html
 %%PORTDOCS%%%%DOCSDIR%%/test.pl.html
 %%PORTDOCS%%%%DOCSDIR%%/test.pm.html
 %%PORTDOCS%%%%DOCSDIR%%/test.py.html
 %%PORTDOCS%%%%DOCSDIR%%/test.rb.html
+%%PORTDOCS%%%%DOCSDIR%%/test.sml.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml.css
 %%DATADIR%%/tags.j2h
 %%DATADIR%%/tags2.j2h
