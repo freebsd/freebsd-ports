@@ -19,8 +19,6 @@ USE_QT_VER=	3
 NO_BUILD=	yes
 TMAKE_BIN=	progen tmake
 
-BROKEN=		"Checksum mismatch"
-
 do-install:
 	@${MKDIR} ${PREFIX}/share/tmake
 	@cd ${WRKSRC}/lib; tar cf - * | (cd ${PREFIX}/share/tmake && tar xf -)
