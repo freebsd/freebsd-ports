@@ -50,6 +50,7 @@
     SUBDIR += glibstdc++28
     SUBDIR += gnat
     SUBDIR += gnat-doc-html
+    SUBDIR += gnat-doc-info
     SUBDIR += gnat-glade
     SUBDIR += gnomebasic
     SUBDIR += gnustep-base
