@@ -36,7 +36,7 @@ post-extract:
 do-install:
 	${MKDIR} ${RUBY_SITELIBDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/optparse.rb ${RUBY_SITELIBDIR}/
-	${INSTALL_DATA} ${WRKSRC}/optparse/*.rb${f} ${RUBY_SITELIBDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/optparse/*.rb ${RUBY_SITELIBDIR}/${PORTNAME}/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}/ja
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
