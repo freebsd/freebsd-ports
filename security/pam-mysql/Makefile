@@ -19,6 +19,12 @@ USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if !exists(/usr/include/security/_pam_types.h) && ${OSVERSION} >= 500031
+BROKEN=		"Does not work with OpenPAM (yet)"
+.endif
+
 post-patch:
 	@cd ${WRKSRC} && ${GMAKE} clean
 
@@ -40,4 +46,4 @@ post-install:
 	@${ECHO} "for info on how to set up."
 	@${ECHO} "================================================================================"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
