@@ -41,7 +41,4 @@ PLIST_SUB+=	WITH_XMMS=""
 PLIST_SUB+=	WITH_XMMS="@comment "
 .endif
 
-pre-build:
-	${PERL} -pi -e "s@gcc@${CC}@g" ${WRKSRC}/Makefile
-
 .include <bsd.port.mk>

@@ -24,15 +24,24 @@ EXTRACT_BEFORE_ARGS=	-q -aa
 WRKSRC=		${WRKDIR}/pygoogle
 EXAMPLESDIR=	${PREFIX}/share/examples/py-google
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 # www/py-websvcs has an incompatible version of SOAP.py
 	@${MV} ${WRKSRC}/SOAP.py ${WRKSRC}/SOAPgoogle.py
+.if ${OSVERSION} < 500036
 	@cd ${WRKSRC}; for f in *.py; do \
 		${PERL} -pi -e 's,import SOAP,import SOAPgoogle as SOAP,g' $$f; \
 	done
+	@${PERL} -pi -e 's,.*extra_path.*,,g' ${WRKSRC}/setup.py
+.else
+	@cd ${WRKSRC}; for f in *.py; do \
+		${SED} -i "" -e 's,import SOAP,import SOAPgoogle as SOAP,g' $$f; \
+	done
+	@${SED} -i.orig -e 's,.*extra_path.*,,g' ${WRKSRC}/setup.py
+.endif
 	@${MKDIR} ${WRKSRC}/tests
 	@${MV} ${WRKSRC}/*test*.py ${WRKSRC}/tests
-	@${PERL} -pi -e 's,.*extra_path.*,,g' ${WRKSRC}/setup.py
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -41,4 +50,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

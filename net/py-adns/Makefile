@@ -20,9 +20,17 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 
+.include <bsd.port.pre.mk>
+
 post-patch:
+.if ${OSVERSION} < 500036
 	@${PERL} -pi -e 's|^(include_dirs = ).*$$|\1\["${LOCALBASE}/include"\]|g; \
 		s|^(library_dirs = ).*$$|\1\["${LOCALBASE}/lib"\]|g' \
 		${WRKSRC}/setup.py
+.else
+	@${SED} -i.orig -e 's|^\(include_dirs = \).*$$|\1\["${LOCALBASE}/include"\]|g' \
+		-e 's|^\(library_dirs = \).*$$|\1\["${LOCALBASE}/lib"\]|g' \
+		${WRKSRC}/setup.py
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

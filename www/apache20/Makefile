@@ -28,9 +28,10 @@ WITH_MPM?=	prefork # or worker, perchild (neither of them still has a problem on
 HTTP_PORT?=	80
 
 GNU_CONFIGURE=	yes
+USE_PERL5=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-layout=FreeBSD \
-		--with-perl=${PERL} \
+		--with-perl=${PERL5} \
 		--enable-so \
 		--with-mpm=${WITH_MPM} \
 		--with-port=${HTTP_PORT} \
