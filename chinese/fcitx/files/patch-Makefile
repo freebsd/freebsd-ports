@@ -1,18 +1,17 @@
---- Makefile.orig	Thu Jan  1 21:11:24 2004
-+++ Makefile	Thu Jan  1 21:14:40 2004
+--- Makefile.orig	Mon Dec 29 09:10:25 2003
++++ Makefile	Thu Jan  8 23:49:23 2004
 @@ -1,12 +1,12 @@
  CC = gcc
  
--CFLAGS= -O2 -fno-strength-reduce
-+CFLAGS= -O2 -fno-strength-reduce -DSIGUNUSED=32
+-CFLAGS= -O2 -fno-strength-reduce -Wall -D_USE_XFT
++CFLAGS= -O2 -fno-strength-reduce -DSIGUNUSED=32 -Wall -D_USE_XFT
  
--INC =  -I/usr/X11R6/include -I.
-+INC =  -I${LOCALBASE}/include -I${X11BASE}/include -I.
+ INC = `xft-config --cflags`
  
- SRC = main.c ime.c KeyList.c AddPhraseWindow.c IC.c InputWindow.c MainWindow.c MyErrorsHandlers.c punc.c py.c PYFA.c pyParser.c pyMapTable.c SetLocale.c tools.c wbx.c window.c xim.c qw.c sp.c py-2.c
+ SRC = IC.c py.c ime.c InputWindow.c KeyList.c main.c MainWindow.c MyErrorsHandlers.c punc.c pyMapTable.c pyParser.c PYFA.c sp.c SetLocale.c tools.c ui.c wbx.c xim.c 
  
--LIB = -L/usr/X11R6/lib -lX11
-+LIB = -L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 -liconv
+-LIB = `xft-config --libs`
++LIB = `xft-config --libs` -liconv
  
  OBJ = $(SRC:.c=.o)
  

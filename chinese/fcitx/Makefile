@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	fcitx
-PORTVERSION=	1.8.5
+PORTVERSION=	2.0.1
 CATEGORIES=	chinese x11
-MASTER_SITES=	http://www.fcitx.org/
+MASTER_SITES=	http://www.fcitx.org/download/
 EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	dryice@liu.com.cn
@@ -20,13 +20,15 @@ USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 
+post-extract:
+	cd ${BUILD_WRKSRC}; ${MAKE} clean
+
 post-patch:
 	@${REINPLACE_CMD} -e 's#usr/share#${LOCALBASE}/share#g' ${WRKSRC}/Makefile ${WRKSRC}/ime.h
 	@${REINPLACE_CMD} -e 's#usr/bin#${LOCALBASE}/bin#g' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's#zh_CN.GB2312#zh_CN.EUC#g' ${WRKSRC}/window.c
+	@${REINPLACE_CMD} -e 's#zh_CN.GB2312#zh_CN.EUC#g' ${WRKSRC}/ui.c
 	@${REINPLACE_CMD} -e 's#zh_CN.gb2312#zh_CN.EUC#g' ${WRKSRC}/xim.c
-	@${REINPLACE_CMD} -e 's#zh_CN.GBK#zh_CN.EUC#g' ${WRKSRC}/tools.c
-	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' ${WRKSRC}/IMdkit/lib/IMConn.c
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' ${WRKSRC}/IMdkit/lib/IMConn.c ${WRKSRC}/ui.c
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
