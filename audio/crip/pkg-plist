@@ -1,0 +1,4 @@
+bin/crip
+bin/editcomment
+bin/wav_find_beginning
+bin/wav_find_end
