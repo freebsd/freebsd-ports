@@ -23,6 +23,7 @@ lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/FileLock.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/FileLock.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/FileLock.pyo
 lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/LICENSE
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/README
 lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/__init__.pyo
@@ -88,6 +89,7 @@ lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/ODMG.pyo
 lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Parser.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Parser.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Parser.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/README
 lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Timezone.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Timezone.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Timezone.pyo
@@ -123,8 +125,15 @@ lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/testticks.pyo
 lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/timegm.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/timegm.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/timegm.pyo
-lib/%%PYTHON_VERSION%%/site-packages/mx/Doc/mxExtensions.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Doc/eGenix-mx-Extensions.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Doc/mxBeeBase.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Doc/mxDateTime.html
 lib/%%PYTHON_VERSION%%/site-packages/mx/Doc/mxLicense.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Doc/mxProxy.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Doc/mxQueue.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Doc/mxStack.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Doc/mxTextTools.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Doc/mxTools.html
 lib/%%PYTHON_VERSION%%/site-packages/mx/LICENSE
 lib/%%PYTHON_VERSION%%/site-packages/mx/Log.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/Log.pyc
@@ -169,6 +178,7 @@ lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/LICENSE
 lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/Proxy.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/Proxy.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/Proxy.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/README
 lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/__init__.pyo
@@ -190,6 +200,7 @@ lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/COPYRIGHT
 lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/Doc/mxLicense.html
 lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/Doc/mxQueue.html
 lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/LICENSE
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/README
 lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/__init__.pyo
@@ -266,6 +277,7 @@ lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/pytag.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/pytag.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/pytag.pyo
 lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/LICENSE
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/README
 lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/TextTools.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/TextTools.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/TextTools.pyo
@@ -293,6 +305,7 @@ lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/LICENSE
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/NewBuiltins.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/NewBuiltins.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/NewBuiltins.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/README
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/Tools.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/Tools.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/Tools.pyo
