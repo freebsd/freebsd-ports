@@ -1,13 +1,13 @@
 # New ports collection makefile for:	py-gtk
-# Version required:			0.6.3
+# Version required:			0.6.2
 # Date created:				09/14/1999
 # Whom:					nectar@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pygtk-0.6.3
-PKGNAME=	py-gtk-0.6.3
+DISTNAME=	gnome-python-1.0.4
+PKGNAME=	py-gtk-0.6.2
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 		ftp://ftp.gimp.org/pub/gtk/python/ \
@@ -22,13 +22,14 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12                  \
 		Imlib.5:${PORTSDIR}/graphics/imlib
 RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python
 
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+GTK_CONFIG=	${X11BASE}/bin/gtk12-config
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	GTK_CONFIG=${GTK_CONFIG}
 CONFIGURE_ARGS=	--with-python=python1.5
 PLIST_COMPLETE= ${PKGDIR}/PLIST
 
+WRKSRC=		${WRKDIR}/${DISTNAME}/pygtk
 EG_SRC_DIR=	${WRKSRC}/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gtk
 
