@@ -158,6 +158,9 @@ close(ENTRIES);
 $directory = $ARGV[0];
 shift @ARGV;
 
+$cvsroot=$ENV{'CVSROOT'} || "/home/ncvs";
+$directory =~ s,^$cvsroot[/]+,,;
+
 if ($directory =~ /src\//) {
 	$check_id = 1;
 }
