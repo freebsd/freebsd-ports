@@ -3,7 +3,7 @@
 # Date created:		18 Mar 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.4 1996/09/12 00:39:41 jdp Exp $
+# $Id: Makefile,v 1.5 1996/09/27 02:26:41 jdp Exp $
 #
 
 DISTNAME=	modula-3-3.6
@@ -64,7 +64,6 @@ temp_prefix=	${WRKDIR}/installed
 late_builds=	m3configvars
 
 post-extract:
-	@${DO_NADA}
 .if !empty(have_boot)
 	@echo "Copying bootstrap modula-3 compiler from ${have_boot}"
 	@/bin/sh ${SCRIPTDIR}/copy_files ${FILESDIR}/T.boot installed \
@@ -75,6 +74,8 @@ post-extract:
 	@/bin/sh ${SCRIPTDIR}/copy_files ${FILESDIR}/T.gcc m3cc \
 	    ${have_gcc} ${WRKDIR}
 .endif
+	@cd ${WRKDIR}/m3cc/gcc; \
+	    chmod +x config.sub configure move-if-change
 
 do-build:
 	@test -d ${temp_prefix}/bin || mkdir -p ${temp_prefix}/bin
