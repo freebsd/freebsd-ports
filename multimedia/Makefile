@@ -17,7 +17,6 @@
     SUBDIR += emovix
     SUBDIR += enjoympeg
     SUBDIR += ffmpeg
-    SUBDIR += ffmpeg045
     SUBDIR += fxtv
     SUBDIR += gmencoder
     SUBDIR += goggles
