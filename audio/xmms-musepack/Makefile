@@ -21,12 +21,12 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL_VER=	13
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Does not compile on amd64 or ia64 (needs -fPIC)"
-.endif
+post-patch:
+	${REINPLACE_CMD} -e "s,gcc,${CC} ${CFLAGS} -fPIC," ${WRKSRC}/Makefile
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/lib/xmms/Input/xmms-mpegplus-1.8.0.so
