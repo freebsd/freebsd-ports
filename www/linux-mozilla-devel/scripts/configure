@@ -16,9 +16,9 @@ echo "browser langenus regus xpcom" > /tmp/checklist.tmp.$$;
 Choose which components of Mozilla to download and install. \n\
 Press the space bar to toggle selections." -1 -1 6 \
 "deflenus"	"American English profile defaults (8 kB)"		ON \
-"inspector"	"DOM inspector (150 kB)"				ON \
-"mail"		"Mozilla Mail and News (1824 kB)"			ON \
-"psm"		"Personal Security Manager--recommended (768 kB)"	ON \
+"inspector"	"DOM inspector (124 kB)"				ON \
+"mail"		"Mozilla Mail and News (2000 kB)"			ON \
+"psm"		"Personal Security Manager--recommended (816 kB)"	ON \
 "talkback"	"sends crash logs to Mozilla staff (832 kB)"		ON \
 "venkman"	"JavaScript debugger (224 kB)"				ON \
 2>> /tmp/checklist.tmp.$$
