@@ -18,24 +18,25 @@
 * MM_DIR [mailman]
   Mailman will be installed in ${PREFIX}/${MM_DIR}
 
-* MAIL_GID [26]
-  The group id under which your MTA performs mail delivery
+* MAIL_GID [mailnull]
+  The group name or id under which your MTA performs mail delivery
 
     Getting the value of MAIL_GID right is crucial to getting Mailman to work
     with your MTA.  By default this port works with sendmail.  If you're
     using an alternative MTA installed from ports, you should set MAIL_GID at
-    build time according to the following table.  (Please contact this port's
-    maintainer if you wish to fill in the blanks or report mistakes!)
+    build time according to the following table.  You may use either the
+    group name or the numerical GID.  (Please contact this port's maintainer
+    if you wish to fill in the blanks or report mistakes!)
 
-    ----------------------------------------------
-    MTA     | MAIL_GID | Submitted by
-    Exim    | 65534    | <wjv>
-    Postfix | 65534    | <shamrock@cypherpunks.to>
-    Qmail   | ???      |
-    ----------------------------------------------
+    ----------------------------------------------------
+    MTA     | MAIL_GID       | Submitted by
+    Exim    | nobody (65534) | <wjv@FreeBSD.org>
+    Postfix | nobody (65534) | <shamrock@cypherpunks.to>
+    Qmail   | ???            |
+    ----------------------------------------------------
 
-* CGI_GID [80]
-  The group id under which your web server executes CGI scripts
+* CGI_GID [www]
+  The group name or id under which your web server executes CGI scripts
 
     By default, this port works with the current port of Apache2.  If your
     WWW server executes CGI scripts under a different GID, you'll have to

@@ -7,6 +7,7 @@
 
 PORTNAME=	mailman
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
@@ -16,10 +17,11 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wjv@FreeBSD.org
 
+RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
 .if defined(WITH_APACHE13)
-RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
+RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
 .else
-RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache2
+RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache2
 .endif
 .if defined(WITH_CHINESE)
 RUN_DEPENDS+=	${PYTHONPREFIX_LIBDIR}/encodings/chinesecn/__init__.py:${PORTSDIR}/chinese/pycodec
@@ -27,11 +29,11 @@ RUN_DEPENDS+=	${PYTHONPREFIX_LIBDIR}/encodings/chinesecn/__init__.py:${PORTSDIR}
 
 HAS_CONFIGURE=	yes
 USE_PYTHON=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--prefix=${MAILMANDIR} --with-python=${PYTHON_CMD} \
 		--with-username=${MM_USERNAME} \
 		--with-groupname=${MM_GROUPNAME} \
 		--with-mail-gid=${MAIL_GID} --with-cgi-gid=${CGI_GID}
-PKGOPTS=	${FILESDIR}/pkg-opts
 
 .include <bsd.port.pre.mk>
 
@@ -45,11 +47,11 @@ MM_GROUPNAME?=	${MM_USERNAME}
 MM_GROUPID?=	${MM_USERID}
 MM_DIR?=	mailman
 .if ${OSVERSION} >= 450000
-MAIL_GID?=	26
+MAIL_GID?=	mailnull
 .else
-MAIL_GID?=	1
+MAIL_GID?=	daemon
 .endif
-CGI_GID?=	80
+CGI_GID?=	www
 IMGDIR=		www/icons
 #
 # End of user-configurable variables.
@@ -58,6 +60,7 @@ MAILMANDIR=	${PREFIX}/${MM_DIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+PKGOPTS=	${FILESDIR}/pkg-opts
 PLIST_SUB+=	MMDIR=${MM_DIR} IMGDIR=${IMGDIR}
 
 options:
@@ -71,6 +74,10 @@ post-extract:
 	   ${ECHO_MSG} 'Perform a "make options" to see a list of available installation options.'; \
 	   ${ECHO_MSG} '-------------------------------------------------------------------------')
 .endif
+
+post-patch:
+	@ ${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#g' \
+	  ${WRKSRC}/Mailman/Defaults.py.in
 
 pre-configure:
 # Mailman's configure script needs the "mailman" user/group to exist, so
