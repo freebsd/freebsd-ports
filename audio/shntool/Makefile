@@ -11,15 +11,14 @@ CATEGORIES=	audio
 MASTER_SITES=	http://shnutils.freeshell.org/shntool/source/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
-EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	fenner@FreeBSD.Org
 COMMENT=	Multi-purpose .wav/.shn processing utility
 
+RUN_DEPENDS=	shorten:${PORTSDIR}/audio/shorten
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-
-RUN_DEPENDS=	shorten:${PORTSDIR}/audio/shorten
 
 MAN1=		shntool.1
 
