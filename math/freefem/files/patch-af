@@ -1,0 +1,11 @@
+--- adapt/s_inters.cxx.orig	Fri Feb 18 11:50:38 2000
++++ adapt/s_inters.cxx	Fri Feb 18 11:50:50 2000
+@@ -20,7 +20,7 @@
+ #include  <v_t1_dl.hxx>
+ #include  <t_t1_dl.hxx>
+ 
+-extern t_vecinos(Vertice_T1*,Triangulo_T1_dlist&);
++extern int t_vecinos(Vertice_T1*,Triangulo_T1_dlist&);
+  
+ void busca_inters(Vertice_T1_dlist* Lsommet) {
+      

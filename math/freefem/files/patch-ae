@@ -1,0 +1,13 @@
+--- adapt/filter.cxx.orig	Fri Feb 18 11:46:33 2000
++++ adapt/filter.cxx	Fri Feb 18 11:46:57 2000
+@@ -28,8 +28,8 @@
+ extern int mshopt(Triangulo_T1*,const int&);
+ int mshsu(Triangulo_T1_dlist*, Arista_T1_dlist*, Triangulo_T1_dlist*,
+           Triangulo_T1_dlist*,Vertice_T1*, Metrica, int,Mallado_T0*,CAD*,int);
+-extern t_vecinos(Vertice_T1*,Triangulo_T1_dlist&);          
+-extern t_local(Vertice_T1*,Triangulo_T1_dlist&);
++extern int t_vecinos(Vertice_T1*,Triangulo_T1_dlist&);          
++extern int t_local(Vertice_T1*,Triangulo_T1_dlist&);
+ void   mshreg0(Triangulo_T1_dlist*, Vertice_T1*,Scalar,Scalar,Mallado_T0*);
+ void   mshreg1(Triangulo_T1_dlist*, Vertice_T1*,Scalar,Mallado_T0*,Scalar,
+                int,Scalar,Frontera_T1*);

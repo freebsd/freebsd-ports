@@ -1,0 +1,11 @@
+--- adapt/agibbs.cxx.orig	Fri Feb 18 11:44:33 2000
++++ adapt/agibbs.cxx	Fri Feb 18 11:44:49 2000
+@@ -454,7 +454,7 @@
+   integer i__1, i__2;
+ 
+   /* Local variables */
+-  static flag_;
++  static integer flag_;
+   static integer i, j, k, p, s, h0, i1, l0, i2;
+ /*    extern  Subroutine  int adp_gibbs1_(); */
+   static integer lg;
