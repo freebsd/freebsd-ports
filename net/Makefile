@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.80 1996/10/24 08:32:08 jfitz Exp $
+# $Id: Makefile,v 1.81 1996/11/07 12:18:37 asami Exp $
 #
 
     SUBDIR += archie
@@ -33,7 +33,6 @@
     SUBDIR += samba
     SUBDIR += scotty
     SUBDIR += slirp
-    SUBDIR += speak_freely
     SUBDIR += sup
     SUBDIR += telnetx
     SUBDIR += tintin++
