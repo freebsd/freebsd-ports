@@ -7521,6 +7521,7 @@ ruby-usersguide	ports/lang/ruby-usersguide
 ruby-vorbisfile	ports/audio/ruby-vorbisfile
 ruby-webrick	ports/www/ruby-webrick
 ruby-webunit	ports/www/ruby-webunit
+ruby-xmlconfigfile	ports/textproc/ruby-xmlconfigfile
 ruby-xmlparser	ports/textproc/ruby-xmlparser
 ruby-xmlrpc	ports/net/ruby-xmlrpc
 ruby-xmlscan	ports/textproc/ruby-xmlscan
