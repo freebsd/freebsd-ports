@@ -1,0 +1,8 @@
+#Japanese PDF resources
+cidToUnicode Adobe-Japan1 /usr/X11R6/share/xpdf/japanese/Adobe-Japan1.cidToUnicode
+unicodeMap   ISO-2022-JP  /usr/X11R6/share/xpdf/japanese/ISO-2022-JP.unicodeMap
+unicodeMap   EUC-JP  /usr/X11R6/share/xpdf/japanese/EUC-JP.unicodeMap
+unicodeMap   Shift-JIS  /usr/X11R6/share/xpdf/japanese/Shift-JIS.unicodeMap
+cMapDir      Adobe-Japan1 /usr/local/share/ghostscript/Resource/CMap
+toUnicodeDir  /usr/local/share/ghostscript/Resource/CMap
+displayCIDFontX Adobe-Japan1    '-alias-fixed-medium-r-normal--%s-*-*-*-c-*-jisx0208.1983-0' ISO-2022-JP
