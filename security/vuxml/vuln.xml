@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2c5757f4-88bf-11d9-8720-0007e900f87b">
+    <topic>sup -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>sup</name>
+	<range><lt>2.0.20050226</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Debian Security Advisory reports:</p>
+	<blockquote cite="http://www.securityfocus.com/advisories/6874">
+	  <p>jaguar@felinemenace.org discovered a format string
+	    vulnerability in sup, a set of programs to synchronize
+	    collections of files across a number of machines,
+	    whereby a remote attacker could potentially cause
+	    arbitrary code to be executed with the privileges
+	    of the supfilesrv process (this process does not run
+	    automatically by default). </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0451</cvename>
+      <url>http://www.securityfocus.com/advisories/6874</url>
+      <url>http://www.securityfocus.com/bid/10571</url>
+    </references>
+    <dates>
+      <discovery>2004-06-19</discovery>
+      <entry>2005-02-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d022754d-8839-11d9-aa18-0001020eed82">
     <topic>mozilla -- insecure temporary directory vulnerability</topic>
     <affects>
