@@ -1,0 +1,14 @@
+
+Pathalias computes the shortest	paths  and  corresponding
+routes from one host (computer system) to all other known,
+reachable hosts.  Pathalias reads host-to-host  connectiv-
+ity  information  on standard input or in the named files,
+and writes a list of host-route pairs on the standard out-
+put.
+
+pathalias, written by steve bellovin and peter honeyman, is in the
+public domain, and may be used by any person or organization, in
+any way and for any purpose.
+
+- ported and bugfixed
+dirk,meyer@dinoex.sub.org
