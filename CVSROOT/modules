@@ -7551,6 +7551,7 @@ xmms-volnorm	ports/audio/xmms-volnorm
 xmms-xvs	ports/graphics/xmms-xvs
 xmold		ports/x11/xmold
 xmolwt		ports/biology/xmolwt
+xmon		ports/x11/xmon
 xmorph		ports/graphics/xmorph
 xmotd		ports/x11/xmotd
 xmountains	ports/graphics/xmountains
