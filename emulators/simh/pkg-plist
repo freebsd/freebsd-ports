@@ -1,10 +1,15 @@
+bin/altair
+bin/eclipse
+bin/h316
 bin/nova
 bin/pdp1
+bin/pdp10
+bin/pdp11
+bin/pdp15
 bin/pdp4
 bin/pdp7
 bin/pdp8
 bin/pdp9
-bin/pdp11
-bin/pdp15
+bin/s3
 share/doc/sim/simh_doc.txt
 @dirrm share/doc/sim
