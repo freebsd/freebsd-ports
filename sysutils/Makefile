@@ -14,6 +14,7 @@
     SUBDIR += cd-write
     SUBDIR += cdrecord
     SUBDIR += cfengine
+    SUBDIR += clockspeed
     SUBDIR += comconsole
     SUBDIR += consolehm 
     SUBDIR += contool

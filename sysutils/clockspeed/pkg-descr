@@ -1,0 +1,16 @@
+clockspeed uses a hardware tick counter to compensate for a persistently
+fast or slow system clock. Given a few time measurements from a reliable
+source, it computes and then eliminates the clock skew.
+
+sntpclock checks another system's NTP clock, and prints the results in a
+format suitable for input to clockspeed. sntpclock is the simplest
+available NTP/SNTP client.
+
+taiclock and taiclockd form an even simpler alternative to SNTP. They
+are suitable for precise time synchronization over a local area network,
+without the hassles and potential security problems of an NTP server.
+
+This version of clockspeed can use the Pentium RDTSC tick counter or the
+Solaris gethrtime() nanosecond counter.
+
+WWW: http://cr.yp.to/clockspeed.html

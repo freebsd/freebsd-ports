@@ -1,0 +1,29 @@
+--- clockspeed.c.orig	Fri Jun 16 23:37:32 2000
++++ clockspeed.c	Fri Jun 16 23:38:10 2000
+@@ -83,7 +83,7 @@
+   if (deriv <= 0) return;
+   if (deriv > 200000000) return; /* 5Hz ticks? be serious */
+ 
+-  fd = open_trunc("etc/atto.tmp");
++  fd = open_trunc("etc/clockspeed/atto.tmp");
+   if (fd == -1) return;
+ 
+   buf[0] = 0;
+@@ -119,7 +119,7 @@
+   if (fsync(fd) == -1) { close(fd); return; }
+   if (close(fd) == -1) return; /* NFS stupidity */
+ 
+-  rename("etc/atto.tmp","etc/atto"); /* if it fails, bummer */
++  rename("etc/clockspeed/atto.tmp","etc/clockspeed/atto"); /* if it fails, bummer */
+ }
+ 
+ void main()
+@@ -136,7 +136,7 @@
+   if (chdir(auto_home) == -1) _exit(1);
+   umask(033);
+ 
+-  if (open_read("etc/atto") == 0) {
++  if (open_read("etc/clockspeed/atto") == 0) {
+     r = read(0,buf,sizeof buf);
+     if (r == sizeof buf)
+       deriv = nano(buf);

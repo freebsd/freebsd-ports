@@ -1,0 +1,1 @@
+Uses a hardware tick counter to compensate for deviant system clock

@@ -1,0 +1,44 @@
+--- Makefile.orig	Fri Jun 16 22:21:58 2000
++++ Makefile	Fri Jun 16 22:23:28 2000
+@@ -293,10 +293,10 @@
+ 	chmod 400 shar
+ 
+ sntpclock: \
+-load sntpclock.o ip.o libtai.a strerr.a substdio.a error.a str.a fs.a \
++load sntpclock.o ip.o strerr.a substdio.a error.a str.a fs.a \
+ socket.lib
+-	./load sntpclock ip.o libtai.a strerr.a substdio.a error.a \
+-	str.a fs.a  `cat socket.lib`
++	./load sntpclock ip.o strerr.a substdio.a error.a \
++	str.a fs.a  `cat socket.lib` -ltai
+ 
+ sntpclock.0: \
+ sntpclock.1
+@@ -406,10 +406,10 @@
+ 	./compile taia_unpack.c
+ 
+ taiclock: \
+-load taiclock.o ip.o libtai.a strerr.a substdio.a error.a str.a fs.a \
++load taiclock.o ip.o strerr.a substdio.a error.a str.a fs.a \
+ socket.lib
+-	./load taiclock ip.o libtai.a strerr.a substdio.a error.a \
+-	str.a fs.a  `cat socket.lib`
++	./load taiclock ip.o strerr.a substdio.a error.a \
++	str.a fs.a  `cat socket.lib` -ltai
+ 
+ taiclock.0: \
+ taiclock.1
+@@ -421,10 +421,10 @@
+ 	./compile taiclock.c
+ 
+ taiclockd: \
+-load taiclockd.o libtai.a strerr.a substdio.a error.a str.a \
++load taiclockd.o strerr.a substdio.a error.a str.a \
+ socket.lib
+-	./load taiclockd libtai.a strerr.a substdio.a error.a \
+-	str.a  `cat socket.lib`
++	./load taiclockd strerr.a substdio.a error.a \
++	str.a  `cat socket.lib` -ltai
+ 
+ taiclockd.0: \
+ taiclockd.1
