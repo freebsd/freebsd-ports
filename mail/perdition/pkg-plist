@@ -18,10 +18,10 @@ lib/libjain.a
 %%BDB%%lib/libperditiondb_bdb.so
 %%BDB%%lib/libperditiondb_bdb.la
 %%BDB%%lib/libperditiondb_bdb.a
-%%DAEMONMAP%%libperditiondb_daemon.so.0
-%%DAEMONMAP%%libperditiondb_daemon.so
-%%DAEMONMAP%%libperditiondb_daemon.la
-%%DAEMONMAP%%libperditiondb_daemon.a
+%%DAEMONMAP%%lib/libperditiondb_daemon.so.0
+%%DAEMONMAP%%lib/libperditiondb_daemon.so
+%%DAEMONMAP%%lib/libperditiondb_daemon.la
+%%DAEMONMAP%%lib/libperditiondb_daemon.a
 %%GDBM%%lib/libperditiondb_gdbm.so.0
 %%GDBM%%lib/libperditiondb_gdbm.so
 %%GDBM%%lib/libperditiondb_gdbm.la
