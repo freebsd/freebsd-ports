@@ -6,26 +6,21 @@
 #
 
 PORTNAME=	openal
-PORTVERSION=	20020217
+PORTVERSION=	20020329fbsd
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.openal.org/pub/openal/
+MASTER_SITES=	http://math.smsu.edu/~erik/files/fbsd/\
+		http://smluc.org/~erik/\
+		http://csc.smsu.edu/~greenwald/
+
 
 MAINTAINER=	erik@smluc.org
 
-WRKSRC=		${WRKDIR}/tmp/${PORTNAME}/linux
-
-USE_AUTOCONF=	yes
-INSTALLS_SHLIB=	yes
-
-post-patch:
-	@${PERL} -pi -e 's|autoconf|${AUTOCONF}|; \
-		s|autoheader|${AUTOHEADER}|' ${WRKSRC}/autogen.sh
-
-pre-configure:
-	@cd ${WRKSRC} && ${SH} autogen.sh
+WRKSRC=		${WRKDIR}/${PORTNAME}/linux
+GNU_CONFIGURE=  yes
+USE_GMAKE=	yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/openal.info ${PREFIX}/info
-	@install-info ${PREFIX}/info/openal.info ${PREFIX}/info/dir
+	install-info ${PREFIX}/info/openal.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
