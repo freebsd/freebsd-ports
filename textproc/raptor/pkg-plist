@@ -1,8 +1,7 @@
 bin/rapper
 bin/raptor-config
-include/ntriples.h
 include/raptor.h
 lib/libraptor.a
 lib/libraptor.so
-lib/libraptor.so.0
+lib/libraptor.so.1
 libdata/pkgconfig/raptor.pc

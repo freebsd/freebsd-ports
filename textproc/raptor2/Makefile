@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	raptor
-PORTVERSION=	0.9.12
+PORTVERSION=	1.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.redland.opensource.ac.uk/dist/source/
