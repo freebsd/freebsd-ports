@@ -1,6 +1,6 @@
---- util/pty/getpty.c.orig	Fri Feb  6 19:46:42 1998
-+++ util/pty/getpty.c	Mon Apr  5 14:00:07 1999
-@@ -21,13 +21,26 @@
+--- util/pty/getpty.c.orig	Wed Jan  9 14:28:37 2002
++++ util/pty/getpty.c	Thu Jan 10 21:30:40 2002
+@@ -24,13 +24,26 @@
  #include "libpty.h"
  #include "pty-int.h"
  
@@ -17,19 +17,19 @@
 +#define PTYCHARS2	"0123456789abcdef"
 +#endif
 +
- long pty_getpty (fd, slave, slavelength)
-     int slavelength;
-     int *fd; char *slave;
+ long
+ ptyint_getpty_ext(int *fd, char *slave, int slavelength, int do_grantpt)
  {
--    char *cp;
++    int ptynum;
 +    char *cp1, *cp2;
+ #if !defined(HAVE__GETPTY) && !defined(HAVE_OPENPTY)
+-    char *cp;
      char *p;
 -    int i,ptynum;
-+    int ptynum;
      struct stat stb;
      char slavebuf[1024];
- #ifdef HAVE__GETPTY
-@@ -109,14 +122,14 @@
+ #endif
+@@ -115,14 +128,14 @@
  	strncpy(slave, slavebuf, slavelength);
  	return 0;
      } else {

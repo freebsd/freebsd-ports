@@ -63,10 +63,10 @@ lib/libk5crypto.so
 lib/libk5crypto.so.3
 lib/libkadm5clnt.a
 lib/libkadm5clnt.so
-lib/libkadm5clnt.so.4
+lib/libkadm5clnt.so.5
 lib/libkadm5srv.a
 lib/libkadm5srv.so
-lib/libkadm5srv.so.4
+lib/libkadm5srv.so.5
 lib/libkdb5.a
 lib/libkdb5.so
 lib/libkdb5.so.3
