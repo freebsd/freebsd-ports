@@ -1,24 +1,24 @@
 # New ports collection makefile for:	xicq
-# Version required:			23 June 1998
+# Version required:			12 July 1998
 # Date created:				29 June 1998
 # Whom:					scrappy
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/29 18:39:26 scrappy Exp $
+# $Id: Makefile,v 1.2 1998/07/02 06:46:32 asami Exp $
 #
 
-DISTNAME=	xicq-062398-snapshot
-PKGNAME=	xicq-062398
+DISTNAME=	xicq-071298-snapshot.src
+PKGNAME=	xicq-071298
 CATEGORIES=	net
 MASTER_SITES=	http://www.xtrophy.dk/xicq/
 
 MAINTAINER=	scrappy@freebsd.org
 
-WRKSRC=		${WRKDIR}/xicq-062398-snapshot
+WRKSRC=		${WRKDIR}/xicq-071298
 
 USE_GMAKE=	yes
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/bin/xicq ${PREFIX}/bin
+		${INSTALL_PROGRAM} ${WRKSRC}/src/xicq/main ${PREFIX}/bin/xicq
 		${MKDIR} ${PREFIX}/share/examples/xicq
 .for file in contact config
 		${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/examples/xicq
