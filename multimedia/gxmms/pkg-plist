@@ -1,0 +1,14 @@
+libdata/bonobo/servers/GNOME_gxmmsApplet.server
+libexec/gxmms_applet
+share/gnome/gnome-2.0/ui/GNOME_gxmmsApplet.xml
+share/gnome/gxmms/gxmms.png
+share/gnome/gxmms/gxmms_eject.png
+share/gnome/gxmms/gxmms_next.png
+share/gnome/gxmms/gxmms_play_pause.png
+share/gnome/gxmms/gxmms_prev.png
+share/gnome/gxmms/gxmms_stop.png
+share/gnome/pixmaps/gxmms_mini.png
+share/locale/ca/LC_MESSAGES/gxmms.mo
+share/locale/es/LC_MESSAGES/gxmms.mo
+share/locale/fr/LC_MESSAGES/gxmms.mo
+@dirrm share/gnome/gxmms
