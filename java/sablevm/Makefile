@@ -18,12 +18,12 @@ COMMENT=	Java VM created by McGill University's Sable Research Group
 
 BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
-		ffi:${PORTSDIR}/devel/libffi \
-		ltdl:${PORTSDIR}/devel/libltdl15
+		ffi:${PORTSDIR}/devel/libffi
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
+USE_LIBLTDL=	yes
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 CONFIGURE_ENV=	CFLAGS="-I${PREFIX}/include -L${PREFIX}/lib"
