@@ -16,11 +16,12 @@ DISTNAME=       jpegsrc.v${PORTVERSION}
 MAINTAINER=	jseger@FreeBSD.org
 
 WRKSRC=         ${WRKDIR}/jpeg-6b
+
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
-CONFIGURE_ENV=	LIBTOOL=${LIBTOOL}
+
 MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
-USE_LIBTOOL=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)

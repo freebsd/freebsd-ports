@@ -3,6 +3,13 @@ bin/djpeg
 bin/jpegtran
 bin/rdjpgcom
 bin/wrjpgcom
+include/jconfig.h
+include/jerror.h
+include/jmorecfg.h
+include/jpeglib.h
+lib/libjpeg.a
+lib/libjpeg.so
+lib/libjpeg.so.9
 share/doc/jpeg/README
 share/doc/jpeg/coderules.doc
 share/doc/jpeg/filelist.doc
@@ -12,12 +19,4 @@ share/doc/jpeg/libjpeg.doc
 share/doc/jpeg/structure.doc
 share/doc/jpeg/usage.doc
 share/doc/jpeg/wizard.doc
-include/jconfig.h
-include/jerror.h
-include/jmorecfg.h
-include/jpeglib.h
-lib/libjpeg.a
-lib/libjpeg.la
-lib/libjpeg.so
-lib/libjpeg.so.9
 @dirrm share/doc/jpeg
