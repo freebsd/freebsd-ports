@@ -19,7 +19,6 @@ share/xml/dtdparse/catalog
 @exec %%MKCATALOG%% -c %D/share/xml/catalog -q install dtdparse
 share/xml/dtdparse/dtd.dtd
 @dirrm share/xml/dtdparse
-@unexec rmdir %D/share/xml 2>/dev/null || true
 share/examples/dtdparse/sample.dtd
 share/examples/dtdparse/sample.mod
 share/examples/dtdparse/simple-inline.mod
