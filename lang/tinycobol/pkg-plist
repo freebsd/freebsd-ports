@@ -1,15 +1,16 @@
 bin/htcobol
-lib/libhtcobol.a
-lib/libhtcobol2.a
-share/htcobol/htcobolpp
 share/htcobol/htcobolrc
+lib/libhtcobol.so.0.59.0
+lib/libhtcobol.so
+lib/libhtcobol.so.0
+share/htcobol/htcobolpp
 share/htcobol/copybooks/screen.cpy
-@dirrm share/htcobol/copybooks
-@dirrm share/htcobol
 share/doc/tinycobol/Comments.old.txt
 share/doc/tinycobol/Compiler-Overview.txt
 share/doc/tinycobol/GAS.asm-i386.Info.txt
 share/doc/tinycobol/ProgramHeaders.Info.txt
 share/doc/tinycobol/VarStructure.Info.txt
 share/doc/tinycobol/compiler-design-future.txt
+@dirrm share/htcobol/copybooks
 @dirrm share/doc/tinycobol
+@dirrm share/htcobol
