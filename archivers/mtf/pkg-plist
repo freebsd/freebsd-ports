@@ -1,0 +1,3 @@
+bin/mtf
+%%PORTDOCS%%share/doc/mtf/README
+%%PORTDOCS%%@dirrm share/doc/mtf
