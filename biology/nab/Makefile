@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nab
-PORTVERSION=	4.5.3
+PORTVERSION=	4.6
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.scripps.edu/pub/case/ \
 		http://www.scripps.edu/case/ \
@@ -60,7 +60,6 @@ post-patch:
 pre-install:
 	@cd ${WRKSRC}/src && \
 		${SETENV} PREFIX=${PREFIX} ${MAKE} beforerealinstall
-	@${CP} ${WRKSRC}/config.h ${WRKSRC}/include/
 
 do-install:
 	@-${MKDIR} ${PREFIX}/share/nab
@@ -79,8 +78,12 @@ do-install:
 		${CHMOD} -R ugo+rX-w nab)
 	@-(cd ${PREFIX}/share/nab && ${LN} -sf ../NDB coords)
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/*     ${PREFIX}/bin
-	${INSTALL_DATA}    ${WRKSRC}/include/* ${PREFIX}/share/nab/include
-	${INSTALL_DATA} ${WRKSRC}/lib/*     ${PREFIX}/lib
+.for f in ${INCS}
+	${INSTALL_DATA}    ${WRKSRC}/include/${f} ${PREFIX}/include
+	@-(cd ${PREFIX}/share/nab/include && ${LN} -sf ${PREFIX}/include/${f} .)
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/config.h ${PREFIX}/share/nab/include
+	${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/lib
 	@-cd ${WRKSRC}/doc && ${GZIP_CMD} ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/doc/nab.1.gz ${PREFIX}/man/man1
 .for f in ${BINARIES}
