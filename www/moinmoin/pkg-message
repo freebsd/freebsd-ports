@@ -1,0 +1,7 @@
+=============================================
+ You can configure detail options at
+ ${PREFIX}/share/moin/cgi-bin/moin_config.py
+
+ And, you may need graphics/py-gdchart port
+ to use chart extension.
+=============================================

@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	moinmoin
-PORTVERSION=	0.10
-PORTREVISION=	2
+PORTVERSION=	0.11
 CATEGORIES=	www python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES= 	http://twiki.org/p/pub/TWiki/TWikiDrawPlugin/ \
+		${MASTER_SITE_SOURCEFORGE} \
+		http://fallin.lv/distfiles/
 MASTER_SITE_SUBDIR=	moin
 DISTNAME=	moin-${PORTVERSION}
+DISTFILES=	${DISTNAME}.tgz twikidraw.jar
+EXTRACT_ONLY=	${DISTNAME}.tgz
 
 MAINTAINER=	perky@fallin.lv
 
@@ -20,50 +23,53 @@ PLIST_SUB+=	PYTHON_SITELIB=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||}
 
 CGIUSER?=	moinmoin
 CGIUSERID?=	192
-SUID_WRAPPER=	moin
-
-WIKI_WRKSRC=	${WRKSRC}/MoinMoin/wiki-moinmoin
-CGI_TARGET=	${PREFIX}/www/cgi-bin/moin
-CGI_FILES=	${SUID_WRAPPER} moin.cgi moin_config.py data
-CONTENT_TARGET=	${PREFIX}/www/data/moin
-CONTENT_FILES=	PythonPowered.gif default.css img moinmoin.gif index.html
+CGIROOT=	${PREFIX}/www/cgi-bin
+HTDOCSROOT=	${PREFIX}/www/data
+MOINDIR=	${PREFIX}/share/moin
 SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
 
 do-configure:
 	@# Add the username, uid, group and gid
 	${SH} ${FILESDIR}/configure.sh ${CGIUSER} ${CGIUSERID}
 
+post-patch:
+	@# Tweak configuration
+	${SED} -e 's|^url_prefix =.*$$|url_prefix="/moin"|g' \
+		${WRKSRC}/wiki/cgi-bin/moin_config.py > \
+		${WRKSRC}/wiki/cgi-bin/moin_config.py.default
+
 do-build:
 	${SETUP_CMD} build
 	@# Compile setuid wrapper
-	${CC} ${CFLAGS} -o ${WIKI_WRKSRC}/${SUID_WRAPPER} \
+	${CC} ${CFLAGS} -o ${WRKDIR}/moin \
 		-DPYTHON_PATH='"${PYTHON_CMD}"' \
-		-DSCRIPT_PATH='"${CGI_TARGET}/moin.cgi"' \
+		-DMOIN_PREFIX='"${MOINDIR}"' \
 		${FILESDIR}/wrapper.c
 
 do-install:
-	@# Install MoinMoin library
+	@# Install MoinMoin
 	${SETUP_CMD} install
+	${INSTALL_DATA} ${DISTDIR}/twikidraw.jar ${MOINDIR}/htdocs/applets/TWikiDrawPlugin/
 
-	@# Install CGI files and set permissions
-	${MKDIR} ${CGI_TARGET}/data/backup
-	cd ${WIKI_WRKSRC} && ${CP} -Rp ${CGI_FILES} ${CGI_TARGET}/
-	${CHOWN} -R ${CGIUSER}:${CGIUSER} ${CGI_TARGET}/data \
-		${CGI_TARGET}/${SUID_WRAPPER}
-	${CHMOD} -R u+rw,go-wxs ${CGI_TARGET}/data
-	${CHMOD} 4555 ${CGI_TARGET}/${SUID_WRAPPER}
+	@# Install Wrapper
+	${MKDIR} ${CGIROOT}
+	${INSTALL_PROGRAM} ${WRKDIR}/moin ${CGIROOT}/
+	${CHMOD} 4555 ${CGIROOT}/moin
 
-	@# Install content files
-	${MKDIR} ${CONTENT_TARGET}
-	cd ${WIKI_WRKSRC} && ${CP} -Rp ${CONTENT_FILES} ${CONTENT_TARGET}/
+	@# Arrange Permissions
+	${MKDIR} ${MOINDIR}/data/backup
+	${CHMOD} -R u+rw,go-wxs ${MOINDIR}/data
+	${CHOWN} -R ${CGIUSER}:${CGIUSER} ${CGIROOT}/moin ${MOINDIR}/data
 
-	@# Patch configurations
-	${SED} -e 's|moin\.cgi|/cgi-bin/moin/moin|g' \
-		${CONTENT_TARGET}/index.html >${CONTENT_TARGET}/index.html.tmp
-	${CAT} ${CONTENT_TARGET}/index.html.tmp >${CONTENT_TARGET}/index.html
-	${SED} -e 's|^url_prefix =.*$$|url_prefix="/moin/"|g' \
-		${CGI_TARGET}/moin_config.py >${CGI_TARGET}/moin_config.py.tmp
-	${CAT} ${CGI_TARGET}/moin_config.py.tmp >${CGI_TARGET}/moin_config.py
-	${RM} -f ${CONTENT_TARGET}/index.html.tmp ${CGI_TARGET}/moin_config.py.tmp
+	@# Create symbolic links and copy defaults
+	${TEST} -f ${MOINDIR}/cgi-bin/moin_config.py || \
+		${CP} ${MOINDIR}/cgi-bin/moin_config.py.default \
+			${MOINDIR}/cgi-bin/moin_config.py
+	${TEST} -d ${MOINDIR}/data/text || \
+		${LN} -sf ${MOINDIR}/data/text.default ${MOINDIR}/data/text
+	-${LN} -sf ${MOINDIR}/htdocs ${HTDOCSROOT}/moin
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
