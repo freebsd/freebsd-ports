@@ -1,1 +1,9 @@
-A template framework for PHP
+php_templates is an extension to PHP language which provides
+easier and faster work with templates files.
+This engine works much faster than any existing template library
+written in PHP.
+
+WWW: http://sourceforge.net/projects/php-templates/
+
+- Alex Dupre
+sysadmin@alexdupre.com

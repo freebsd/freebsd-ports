@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	php_templates-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sysadmin@alexdupre.com
 
 BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf \
@@ -33,10 +33,12 @@ post-extract:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/phpize
 
 do-install:
-	@${INSTALL} ${WRKSRC}/modules/templates.so \
-		${LOCALBASE}/lib/php/20010901
+	@${MKDIR} ${PREFIX}/lib/php/20010901
+	@${INSTALL_DATA} ${WRKSRC}/modules/templates.so \
+		${PREFIX}/lib/php/20010901
 
 post-install:
-	@${SED} s!%%LOCALBASE%%!${LOCALBASE}!g ${PKGMESSAGE}
+	@${SED} "s!%%LOCALBASE%%!${LOCALBASE}!g;s!%%PREFIX%%!${PREFIX}!g" \
+		${PKGMESSAGE}
 
 .include <bsd.port.mk>
