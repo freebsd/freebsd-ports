@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	i2p
-PORTVERSION=	0.5.0.1
+PORTVERSION=	0.5.0.5
 CATEGORIES=	net java security
 MASTER_SITES=	http://dev.i2p.net/i2p/
 
@@ -53,6 +53,7 @@ DOC_DIRS=	\
 		freenet/ \
 		index-files/ \
 		net/ \
+		org/ \
 		resources/
 PORTDOCS=	${DOC_FILES} \
 		${DOC_DIRS}
