@@ -92,6 +92,9 @@ pre-install:
 .if !defined(OPENSSL_IN_BASE)
 	@${CAT} ${PKGDIR}/pkg-plist.des >> ${PLIST}
 .endif
+.if !exists(/usr/include/ifaddrs.h)
+	@${ECHO} include/ifaddrs.h >> ${PLIST}
+.endif
 
 # awful hack to avoid running automake after patching configure
 pre-configure:
