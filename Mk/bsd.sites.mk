@@ -254,20 +254,16 @@ MASTER_SITE_REDHAT_LINUX+= \
 #	http://<server>/archives/%SUBDIR%/
 #	ftp://<server>/pub/%SUBDIR%/
 #
-# MirrorNavi redirects requests to the nearest server from the client
-# using HTTP redirection (301) which "fetch -A" does not follow.
-# If you want to use this, set FETCH_CMD to something other than
-# "fetch -A".  It is also a good idea to check out the URL just to
-# see which mirror site it suggests.
+# {www,ftp}.dnsbalance.ring.gr.jp redirects requests to one of the
+# least busy servers at the moment at the DNS lookup level. (safe to
+# use with "fetch -A")
 #
-# 	http://www.mirrornavi.com/ring/archives/%SUBDIR%/
-#
-# DNSBalance redirects requests to the least busy server at the moment
-# at the DNS lookup level. (safe to use with "fetch -A")
+# {www,ftp}.t.ring.gr.jp redirects requests to one of the nearest
+# servers at the DNS lookup level. (safe to use with "fetch -A")
 #
 MASTER_SITE_RINGSERVER+=	\
 	ftp://ftp.dnsbalance.ring.gr.jp/pub/%SUBDIR%/ \
-	http://www.dnsbalance.ring.gr.jp/archives/%SUBDIR%/
+	http://www.t.ring.gr.jp/archives/%SUBDIR%/
 
 MASTER_SITE_RUBY+= \
 	ftp://ftp.iij.ad.jp/pub/lang/ruby/%SUBDIR%/ \
