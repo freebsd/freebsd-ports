@@ -267,11 +267,6 @@ CONFIGURE_ARGS+=	--enable-spamassassin=${LOCALBASE}/bin/spamc \
 			--enable-spam-threshold=${SPAM_THRESHOLD}
 .endif
 
-# autoconf and automake can remove our patches to the configure scripts.
-
-post-patch:
-	@${FIND} ${WRKSRC} -type f -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e 's,@(ACLOCAL|AUTO(MAKE|CONF|HEADER))@,/usr/bin/true,'
-
 #
 # This port doesn't honour PREFIX, it honours vpopmail's home directory.
 # Since we create vpopmail if it doesn't exist, we set it so that it
