@@ -4,7 +4,7 @@
 # Date created:		October 21st 1996
 # Whom:			jfitz
 #
-# $Id: Makefile,v 1.15 1999/03/15 02:01:27 steve Exp $
+# $Id: Makefile,v 1.16 1999/05/19 21:33:41 ache Exp $
 #
 
 DISTNAME=       analog3.3
@@ -16,7 +16,7 @@ MASTER_SITES=   http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://www.monash.edu.au/mirror/analog/ \
 		http://analog.gsp.com/ \
 		http://analog.technomancer.com/ \
-		ftp://ftp.netcasting.net/pub/packages/analog \
+		ftp://ftp.netcasting.net/pub/packages/analog/ \
 		ftp://download.netvision.net.il/pub/mirrors/analog/ \
 		ftp://mabuse.phil.uni-passau.de/pub/mirrors/analog/
 
