@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kakasi
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://kakasi.namazu.org/pub/kakasi/stable/
 
@@ -14,19 +14,20 @@ MAINTAINER=	max@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
-MANLANG=		ja
-MAN1=			kakasi.1
+MANLANG=	ja
+MAN1=		kakasi.1
 INSTALLS_SHLIB=	yes
 
-DOCS=		ChangeLog.lib JISYO README.BeOS README.OS2 README.lib \
-		README.wakati kakasi.1 kakasi.cat
+DOCS=		NEWS README README-ja TODO \
+		doc/ChangeLog.lib doc/JISYO \
+		doc/README.lib doc/README.wakati
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/kakasi.1 ${PREFIX}/man/${MANLANG}/man1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/kakasi
+	${MKDIR} ${DOCSDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/$f ${PREFIX}/share/doc/kakasi
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif
 

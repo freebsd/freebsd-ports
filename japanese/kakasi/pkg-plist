@@ -8,15 +8,15 @@ include/libkakasi.h
 lib/libkakasi.a
 lib/libkakasi.la
 lib/libkakasi.so
-lib/libkakasi.so.2
+lib/libkakasi.so.3
 share/doc/kakasi/ChangeLog.lib
 share/doc/kakasi/JISYO
-share/doc/kakasi/README.BeOS
-share/doc/kakasi/README.OS2
+share/doc/kakasi/NEWS
+share/doc/kakasi/README
+share/doc/kakasi/README-ja
 share/doc/kakasi/README.lib
 share/doc/kakasi/README.wakati
-share/doc/kakasi/kakasi.1
-share/doc/kakasi/kakasi.cat
+share/doc/kakasi/TODO
 @dirrm share/doc/kakasi
 share/kakasi/itaijidict
 share/kakasi/kanwadict
