@@ -21,6 +21,13 @@ lib/libepix.a
 %%DATADIR%%/tutorial/contrib/CartesianCoord.cc
 %%DATADIR%%/tutorial/contrib/CoordAxis.cc
 %%DATADIR%%/tutorial/contrib/CoordSystem.cc
+%%DATADIR%%/tutorial/contrib/DoubleLogCoord.cc
+%%DATADIR%%/tutorial/contrib/Hatch.cc
+%%DATADIR%%/tutorial/contrib/LinearAxis.cc
+%%DATADIR%%/tutorial/contrib/LogaritmicAxis.cc
+%%DATADIR%%/tutorial/contrib/Makefile
+%%DATADIR%%/tutorial/contrib/PicCommand.cc
+%%DATADIR%%/tutorial/contrib/SingleLogCoord.cc
 @dirrm %%DATADIR%%/tutorial/contrib
 @dirrm %%DATADIR%%/samples
 @dirrm %%DATADIR%%/notes
