@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Berkeley POP 3 server (now maintained by Qualcomm)
 
 .if !defined(WITHOUT_SSL)
