@@ -172,6 +172,7 @@
     SUBDIR += netrek-BRMH-bin
     SUBDIR += netrek-COW3-bin
     SUBDIR += netris
+    SUBDIR += newvox
     SUBDIR += oneko
     SUBDIR += oneko-sakura
     SUBDIR += oonsoo
