@@ -3,21 +3,18 @@ bin/xminicom
 bin/runscript
 bin/ascii-xfr
 etc/minicom/minicom.users
-share/locale/cs/LC_MESSAGES/minicom.mo
-share/locale/es/LC_MESSAGES/minicom.mo
-share/locale/fi/LC_MESSAGES/minicom.mo
-share/locale/fr/LC_MESSAGES/minicom.mo
-share/locale/hu/LC_MESSAGES/minicom.mo
-share/locale/ja/LC_MESSAGES/minicom.mo
-share/locale/pl/LC_MESSAGES/minicom.mo
-share/locale/pt_BR/LC_MESSAGES/minicom.mo
-share/locale/ru/LC_MESSAGES/minicom.mo
-@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/cs 2>/dev/null || true
-@unexec rmdir %D/share/locale/fi 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl 2>/dev/null || true
+%%NLS%%share/locale/cs/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/es/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/minicom.mo
+%%NLS%%@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/* 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale 2>/dev/null || true
 @exec /usr/sbin/chown uucp %D/etc/minicom
 @unexec rmdir %D/etc/minicom 2>/dev/null || true
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS

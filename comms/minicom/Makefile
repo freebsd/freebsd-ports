@@ -20,6 +20,15 @@ RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz \
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/.src//}
 USE_REINPLACE=	yes
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE} \
+			--without-included-gettext
+PLIST_SUB+=	NLS=""
+.endif
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-dfl-baud=57600 \
 			--sysconfdir=${PREFIX}/etc/minicom \
@@ -36,6 +45,8 @@ post-patch:
 	${REINPLACE_CMD} -e "s@/usr/local/bin/@${LOCALBASE}/bin/@; \
 		s@/sz@/lsz@;s@/sb@/lsb@;s@/sx@/lsx@;s@/rz@/lrz@; \
 		s@/rb@/lrb@;s@/rx@/lrx@" ${WRKSRC}/src/rwconf.c
+	${REINPLACE_CMD} -E -e "s@^(SUBDIRS = .*) intl@\1@" \
+		${WRKSRC}/Makefile.in
 
 pre-configure:
 .if !defined(BATCH)
