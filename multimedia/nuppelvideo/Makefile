@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/.(.)$/\1/}
 MAINTAINER=	steve@sohara.org
 COMMENT=	A very low CPU usage VCR/DVR application
 
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
