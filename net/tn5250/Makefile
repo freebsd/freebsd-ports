@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tn5250
-PORTVERSION=	0.16.0
+PORTVERSION=	0.16.1
 CATEGORIES=	net
 MASTER_SITES=	http://cvs.cleveland.lug.net/downloads/tn5250/
 
