@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	easytag
-PORTVERSION=	0.25
+PORTVERSION=	0.27
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,8 +16,12 @@ MAINTAINER=	d.marks@student.umist.ac.uk
 COMMENT=	Tag editor for MP3 and OGG files
 
 LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
-		vorbis.2:${PORTSDIR}/audio/libvorbis
+		vorbis.2:${PORTSDIR}/audio/libvorbis \
+		FLAC.5:${PORTSDIR}/audio/flac
 
+MAN1=		easytag.1
+
+USE_BZIP2=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CONFIG_SHELL="${SH}" \
