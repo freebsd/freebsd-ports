@@ -1,12 +1,12 @@
 # New ports collection makefile for:	wml
-# Version required:	1.4.5
+# Version required:	1.4.7
 # Date created:		09-Sep-1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.10 1997/12/02 14:05:58 rse Exp $
+# $Id: Makefile,v 1.11 1997/12/09 16:11:05 rse Exp $
 #
 
-DISTNAME=	wml-1.4.5
+DISTNAME=	wml-1.4.7
 CATEGORIES=	www lang
 MASTER_SITES=	http://www.engelschall.com/sw/wml/distrib/ \
 		ftp://ftp.engelschall.com/sw/wml/
