@@ -1,5 +1,6 @@
-lib/libdict.so.2
 lib/libdict.a
+lib/libdict.so
+lib/libdict.so.2
 lib/libdict_p.a
 include/dict/dict.h
 include/dict/hashtable.h
@@ -13,6 +14,8 @@ share/doc/libdict/avl_insert.dvi
 share/doc/libdict/avl_insert.pdf
 share/doc/libdict/empty.dvi
 share/doc/libdict/empty.pdf
+share/doc/libdict/libdict.html
 share/doc/libdict/treap_insert.dvi
 share/doc/libdict/treap_insert.pdf
-share/doc/libdict/libdict.html
+@dirrm include/dict 
+@dirrm share/doc/libdict/
