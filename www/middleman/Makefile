@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	middleman
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	middle-man
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ponomarew@oberon.net
-COMMENT=	Middleman is a robust proxy server
+COMMENT=	A robust proxy server
 
-WRKSRC=		${WRKDIR}/middleman
-
+WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
