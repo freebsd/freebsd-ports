@@ -1,1 +1,5 @@
+weedns_sc is the "Skeleton Client" to the whyI (WeedNS, yi.org)
+dynamic Domain Name Service (DNS). It allows updating your IP and maintenance
+(add, change, remove) of other DNS records for your yi.org subdomain.
 
+WWW: http://www.weedns.com/
