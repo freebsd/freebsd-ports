@@ -21,6 +21,7 @@ Amaya/amaya/HTMLPLPUS.PRS
 Amaya/amaya/HTMLPP.PRS
 Amaya/amaya/HTMLPPUS.PRS
 Amaya/amaya/HTMLT.TRA
+Amaya/amaya/HTMLT11.TRA
 Amaya/amaya/HTMLTT.TRA
 Amaya/amaya/HTMLTX.TRA
 Amaya/amaya/HTMLUSL.PRS
@@ -45,6 +46,13 @@ Amaya/amaya/XLink.STR
 Amaya/amaya/XLinkP.PRS
 Amaya/amaya/XLinkT.TRA
 Amaya/amaya/XLink.en
+Amaya/amaya/XML.STR
+Amaya/amaya/XMLP.PRS
+Amaya/amaya/XMLPL.PRS
+Amaya/amaya/XMLPP.PRS
+Amaya/amaya/XMLPPUS.PRS
+Amaya/amaya/XMLT.TRA
+Amaya/amaya/XMLUSL.PRS
 Amaya/amaya/amaya.png
 Amaya/amaya/annot.gif
 Amaya/amaya/annotorp.gif
@@ -212,6 +220,7 @@ Amaya/doc/amaya/HTML-elements/structure.html
 Amaya/doc/amaya/HTML.html
 Amaya/doc/amaya/ImageMaps.html
 Amaya/doc/amaya/ImageMaps.html.fr
+Amaya/doc/amaya/Index.html
 Amaya/doc/amaya/Keyboard.html
 Amaya/doc/amaya/Keyboard.html.fr
 Amaya/doc/amaya/Links.html
@@ -245,6 +254,7 @@ Amaya/doc/amaya/Tables.html.fr
 Amaya/doc/amaya/Transform.html
 Amaya/doc/amaya/Views.html
 Amaya/doc/amaya/Views.html.fr
+Amaya/doc/amaya/index.css
 Amaya/fonts/Families.list
 Amaya/fonts/fonts.dir
 Amaya/fonts/icones.ff
