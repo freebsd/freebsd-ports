@@ -3,6 +3,7 @@ downloading, saving, and manipulation of images from several
 different digital camera models, or from the local harddrive.
 
 gtkam supports a wide array of digital camera models.  
-Visit http://www.gphoto.org/cameras.html for an updated list.
+Visit http://www.gphoto.org/proj/libgphoto2/support.php for
+an updated list.
 
-WWW: http://www.gphoto.org/gphoto2/
+WWW: http://www.gphoto.org/proj/gtkam/
