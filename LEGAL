@@ -190,6 +190,7 @@ mypaedia		ports/japanese/mypaedia-fpw The original dictionary is not free
 mysqlman		ports/databases/mysqlman Not redistributable, license 
 						agreement required
 myth2_demo		ports/games/myth2_demo	Has no license.
+netbeans		ports/java/netbeans	Restrictive copyright.
 netpbm			ports/graphics/netpbm	Not allowed to sell.
 netscape-*-us-*		ports/www/netscape*	Crypto; export-controlled
 netshow-*		ports/multimedia/netshow	Commercial software
