@@ -7,6 +7,7 @@
 
 PORTNAME=	varconf
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.worldforge.org/pub/worldforge/libs/varconf/ \
 		http://purple.worldforge.org/wf/downloads/libs/varconf/
@@ -16,14 +17,16 @@ COMMENT=	A Configuration System for the STAGE Server
 
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^doc_DATA = .*|#&|g' \
-		-e 's|\(^pkgconfigdir =\) .*|\1 ${PREFIX}/libdata/pkgconfig|g' \
+	@${REINPLACE_CMD} -e 's|^doc_DATA = .*|#&|g ; \
+		s|\(^pkgconfigdir =\) .*|\1 ${PREFIX}/libdata/pkgconfig|g ; \
+		s|\$$(mkinstalldirs) \$$(DESTDIR)\$$(docdir)$$|| ; \
+		s|\$$(mkinstalldirs) \$$(DESTDIR)\$$(docdir) |\$$(mkinstalldirs)|g' \
 		${WRKSRC}/Makefile.in
 
 post-install:
