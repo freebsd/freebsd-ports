@@ -1,1 +1,3 @@
 bin/crawl
+%%PORTDOCS%%share/examples/crawl/crawl.conf
+%%PORTDOCS%%@dirrm share/examples/crawl
