@@ -1,5 +1,5 @@
-*** webmagick.in.bak	Tue Mar 24 07:45:45 1998
---- webmagick.in	Thu May 21 02:06:06 1998
+*** webmagick.in.orig	Tue Mar 24 07:45:45 1998
+--- webmagick.in	Thu May 21 02:35:08 1998
 ***************
 *** 249,255 ****
   # Name of per-directory rc file
@@ -17,3 +17,42 @@
   
   
   # File naming
+***************
+*** 1584,1590 ****
+  		# Save run status (source files and montage options)
+  		#
+  		writePerlIndexFiles();
+! 		writeJavaScriptIndexFiles();
+              }
+  
+  	    # Clear error flag
+--- 1584,1592 ----
+  		# Save run status (source files and montage options)
+  		#
+  		writePerlIndexFiles();
+! 		if( $opt_javascript ) {
+! 		    writeJavaScriptIndexFiles();
+! 		}
+              }
+  
+  	    # Clear error flag
+***************
+*** 1860,1865 ****
+--- 1862,1868 ----
+  
+      # ----- Output Top JavaScript Index File (usually "indexjs.html") -------
+      #
++     if( $opt_javascript ) {
+      open( INDEX, ">$fileNames{'jsDirIndex'}")
+  	|| die("$0: Failed to open file $fileNames{'jsDirIndex'} for output\n$@\n");
+      print( INDEX "<HTML>\n" );
+***************
+*** 1873,1878 ****
+--- 1876,1882 ----
+      print( INDEX "</SCRIPT>\n" );
+      print( INDEX "</HTML>\n" );
+      close( INDEX );
++     }
+  
+  
+      # ----- Output Frame Directory File (usally ".indexdir.html") ------
