@@ -16,9 +16,23 @@ DISTNAME=	PyChart-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create high quality Encapsulated Postscript, PDF, or PNG charts
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
+RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+
+pre-fetch:
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO} ""
+.endif
 
 .include <bsd.port.mk>
