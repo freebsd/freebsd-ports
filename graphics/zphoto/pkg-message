@@ -4,12 +4,14 @@
  sh or bash:
   $ ZPHOTO_TEMPLATE_DIR=%%PREFIX%%/share/zphoto/templates/en (english)
   $ ZPHOTO_TEMPLATE_DIR=%%PREFIX%%/share/zphoto/templates/ja (japanese)
-  $ ZPHOTO_FONT=%%PREFIX%%/share/zphoto/fonts/Techno.fdb
+  $ ZPHOTO_TEMPLATE_DIR=%%PREFIX%%/share/zphoto/templates/all (both)
+  $ ZPHOTO_FONT=%%PREFIX%%/share/zphoto/fonts/EfontSerifB.fdb
   $ export ZPHOTO_TEMPLATE_DIR ZPHOTO_FONT
 
  csh or tcsh:
   % setenv ZPHOTO_TEMPLATE_DIR %%PREFIX%%/share/zphoto/templates/en (english)
   % setenv ZPHOTO_TEMPLATE_DIR %%PREFIX%%/share/zphoto/templates/ja (japanese)
-  % setenv ZPHOTO_FONT %%PREFIX%%/share/zphoto/fonts/Techno.fdb
+  % setenv ZPHOTO_TEMPLATE_DIR %%PREFIX%%/share/zphoto/templates/all (both)
+  % setenv ZPHOTO_FONT %%PREFIX%%/share/zphoto/fonts/EfontSerifB.fdb
 
 ******************************************************************************
