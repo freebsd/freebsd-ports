@@ -7,7 +7,7 @@
 
 PORTNAME?=	qt
 PORTVERSION?=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/ \
 		ftp://ftp.chg.ru/pub/X11/qt/source/
@@ -126,7 +126,8 @@ do-build:
 	(cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} opengl/qgl.o opengl/qgl_x11.o opengl/moc_qgl.o)
 	${MV} ${WRKSRC}/lib/libqt2.so.4 ${WRKSRC}/lib/libqt2-real.so.4
 	${PERL} -pi.orig -e "s@		xml/qdom.o@xml/qdom.o opengl/qgl.o opengl/qgl_x11.o opengl/moc_qgl.o@g; \
-			     s@SYSCONF_LIBS_OPENGL =@SYSCONF_LIBS_OPENGL= ${PTHREAD_LIBS} -lGL -lGLU -lXmu@g" ${WRKSRC}/src/Makefile
+			     s@SYSCONF_LIBS_OPENGL =@SYSCONF_LIBS_OPENGL= ${PTHREAD_LIBS} -lGL -lGLU -lXmu@g ; \
+			     s@soname,lib[\\$$]\(TARGET\)\.so\.[\\$$]\(VER_MAJ\)@soname,libqtgl.so.4@g" ${WRKSRC}/src/Makefile
 	(cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} all)
 	${CP} ${WRKSRC}/lib/libqt2.so.4 ${WRKSRC}/lib/libqtgl.so.4
 	${CP} ${WRKSRC}/lib/libqt2-real.so.4 ${WRKSRC}/lib/libqt2.so.4
