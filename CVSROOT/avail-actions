@@ -4,4 +4,5 @@
 # -i commands for the same module in the modules file.
 #
 mkmodules CVSROOT avail
+echo "Rebuilding mail alias."
 mkavail
