@@ -128,6 +128,7 @@ $ENV{WITH_OPENSSL_BASE} = 'yes';
 
 my %pkgname;
 my %pkgorigin;
+my %masterdir;
 my %pkgmntnr;
 
 sub wanted {
@@ -145,13 +146,14 @@ sub wanted {
         $File::Find::prune = 1;
         if (-f "$File::Find::name/Makefile") {
             my @makevar = readfrom $File::Find::name,
-              $make, '-VPKGORIGIN', '-VPKGNAME', '-VMAINTAINER';
+              $make, '-VPKGORIGIN', '-VPKGNAME', '-VMAINTAINER', '-VMASTERDIR';
 
-            if ($#makevar == 2 && $makevar[1]) {
+            if ($#makevar == 3 && $makevar[1]) {
                 $pkgorigin{$1} = $makevar[0]
                   if $1 ne $makevar[0];
                 $pkgname{$1} = $makevar[1];
                 $pkgmntnr{$1} = $makevar[2];
+                $masterdir{$1} = $makevar[3];
             }
         }
     }
@@ -169,14 +171,16 @@ else {
           readfrom "$portsdir/$category", $make, '-VSUBDIR';
         foreach (map "$category/$_", @ports) {
             -f "$portsdir/$_/Makefile" || next;
-            my @makevar = readfrom "$portsdir/$_",
-              $make, '-VPKGORIGIN', '-VPKGNAME', '-VMAINTAINER';
 
-            next if $#makevar != 2 || ! $makevar[1];
+            my @makevar = readfrom "$portsdir/$_",
+              $make, '-VPKGORIGIN', '-VPKGNAME', '-VMAINTAINER', '-VMASTERDIR';
+
+            next if $#makevar != 3 || ! $makevar[1];
             $pkgorigin{$_} = $makevar[0]
               if $_ ne $makevar[0];
             $pkgname{$_} = $makevar[1];
             $pkgmntnr{$_} = $makevar[2];
+            $masterdir{$_} = $makevar[3];
         }
     }
 }
@@ -243,20 +247,53 @@ if (!$useindex) {
 }
 
 my %revision;
-my %author;
+
+sub parsemakefile {
+    my ($portdir) = @_;
+    my ($r, $d, $a);
+
+    open MAKEFILE, "<$portdir/Makefile";
+    while (<MAKEFILE>) {
+        if (m'\$FreeBSD\: [^\$ ]+,v (\d+(?:\.\d+)+) (\d{4}(?:[/-]\d{2}){2} \d{2}(?::\d{2}){2}) (\w+) [\w ]+\$') {
+            ($r, $d, $a) = ($1, $2, $3);
+        }
+    }
+    close MAKEFILE;
+
+    return ($r, $d, $a);
+}
 
 sub getauthors {
     my ($ports) = @_;
+
+    my %author;
     foreach my $origin (keys %{$ports}) {
         if (!$revision{$origin}) {
-            open MAKEFILE, "<$portsdir/$origin/Makefile";
-            while (<MAKEFILE>) {
-               if (m'\$FreeBSD\: [^\$ ]+,v (\d+(?:\.\d+)+) \d{4}(?:[/-]\d{2}){2} \d{2}(?::\d{2}){2} (\w+) [\w ]+\$') {
-                   $revision{$origin} = $1;
-                   $author{$origin} = $2;
-               }
-           }
-           close MAKEFILE
+            my ($r, $d, $a) = parsemakefile "$portsdir/$origin";
+            push @{$revision{$origin}}, $r;
+            push @{$author{$origin}}, $a;
+            if ($masterdir{$origin} ne "$portsdir/$origin") {
+                ($r, $d, $a) = parsemakefile $masterdir{$origin};
+                push @{$revision{$origin}}, $r;
+                push @{$author{$origin}}, $a;
+            }
+        }
+
+    }
+
+    return %author;
+}
+
+sub printlog {
+    my ($fh, $portdir, $r) = @_;
+
+    if ($cvsblame && -d "$portsdir/CVS") {
+        my @cvslog = readfrom $portdir,
+          $cvs, '-R', 'log', '-N', '-r' . ($r ? $r : '.'), 'Makefile';
+        foreach (@cvslog) {
+            my $in_log = /^-{28}$/ ... /^(-{28}|={77})$/;
+            print $fh "   | $_\n"
+              if ($in_log && $in_log != 1 && $in_log !~ /E0$/);
         }
     }
 }
@@ -267,16 +304,15 @@ sub blame {
     if (%{$ports}) {
         foreach my $origin (sort keys %{$ports}) {
             print $fh "- *$origin* <$pkgmntnr{$origin}>: $ports->{$origin}\n";
-            if ($cvsblame && -d "$portsdir/$origin/CVS") {
-                my @cvslog = readfrom "$portsdir/$origin",
-                  $cvs, '-R', 'log', '-N', '-r' . ($revision{$origin} ? $revision{$origin} : '.'), 'Makefile';
-                foreach (@cvslog) {
-                    my $in_log = /^-{28}$/ ... /^(-{28}|={77})$/;
-                    print $fh "   | $_\n"
-                      if ($in_log && $in_log != 1 && $in_log !~ /E0$/);
-                }
-                print $fh "\n";
+            printlog $fh, "$portsdir/$origin", $revision{$origin}[0];
+            if ($masterdir{$origin} ne "$portsdir/$origin") {
+                my $master = $masterdir{$origin};
+                $master =~ s/^$portsdir\///o;
+                while ($master =~ s/(^|\/)[^\/]+\/\.\.(?:\/|$)/$1/) {}
+                print $fh "  (master: $master)\n";
+                printlog $fh, $masterdir{$origin}, $revision{$origin}[1];
             }
+            print $fh "\n";
         }
         print $fh "\n";
     }
@@ -290,8 +326,10 @@ sub template {
         if length $portlist > 35;
 
     my %cclist;
+    my %author = getauthors $ports;
+
     if ($cc_author) {
-        foreach (map $author{$_}, keys %{$ports}) {
+        foreach (map @{$author{$_} ? $author{$_} : []}, keys %{$ports}) {
             $cclist{"$_\@FreeBSD.org"} = 1
                 if $_;
         }
@@ -339,19 +377,15 @@ sub mail {
 
 my $tmpl;
 
-getauthors \%pkgorigin;
 $tmpl = template $h_from, $rcpt_orig, $h_replyto, \%pkgorigin;
 mail $tmpl, $rcpt_orig, \%pkgorigin;
 
-getauthors \%backwards;
 $tmpl = template $h_from, $rcpt_vers, $h_replyto, \%backwards;
 mail $tmpl, $rcpt_vers, \%backwards;
 
-getauthors \%watched;
 $tmpl = template $h_from, $rcpt_watch, $h_replyto, \%watched;
 mail $tmpl, $rcpt_watch, \%watched;
 
-getauthors \%watchedm;
 $tmpl = template $h_from, $rcpt_watch, $h_replyto, \%watchedm;
 mail $tmpl, $rcpt_watchm, \%watchedm;
 
@@ -363,6 +397,7 @@ To: %%RCPT%%
 CC: %%CC%%
 Reply-To: %%REPLYTO%%
 Subject: Ports with a broken PKGORIGIN: %%SUBJECT%%
+X-FreeBSD-Chkversion: PKGORIGIN
 
 ** The following ports have an incorrect PKGORIGIN **
 
@@ -371,12 +406,15 @@ Subject: Ports with a broken PKGORIGIN: %%SUBJECT%%
  portupgrade to work correctly. Wrong PKGORIGINs are often caused by a
  wrong order of CATEGORIES after a repocopy.
 
+ Please fix any errors as soon as possible.
+
 .
 From: %%FROM%%
 To: %%RCPT%%
 CC: %%CC%%
 Reply-To: %%REPLYTO%%
 Subject: Ports with version numbers going backwards: %%SUBJECT%%
+X-FreeBSD-Chkversion: backwards
 
 ** The following ports have a version number that sorts before a previous one **
 
@@ -386,11 +424,14 @@ Subject: Ports with version numbers going backwards: %%SUBJECT%%
  more information. Tools that won't work include pkg_version, portupgrade
  and portaudit. A common error is an accidental deletion of PORTEPOCH.
 
+ Please fix any errors as soon as possible.
+
 .
 From: %%FROM%%
 To: %%RCPT%%
 Reply-To: %%REPLYTO%%
 Subject: Version changes in your watched ports: %%SUBJECT%%
+X-FreeBSD-Chkversion: vwatch
 
 ** The following ports have changed version numbers **
 
@@ -402,6 +443,7 @@ From: %%FROM%%
 To: %%RCPT%%
 Reply-To: %%REPLYTO%%
 Subject: Maintainer changes in your watched ports: %%SUBJECT%%
+X-FreeBSD-Chkversion: mwatch
 
 ** The following ports have changed maintainers **
 
