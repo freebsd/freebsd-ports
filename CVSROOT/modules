@@ -2201,6 +2201,7 @@ googolplex	ports/net/googolplex
 gopchop		ports/multimedia/gopchop
 gopher		ports/net/gopher
 gorm		ports/devel/gorm
+gossip		ports/net/gossip
 gotmail		ports/mail/gotmail
 gozer		ports/graphics/gozer
 gpa		ports/security/gpa
@@ -4019,6 +4020,7 @@ lookout		ports/mail/lookout
 lopster		ports/audio/lopster
 loserjabber	ports/deskutils/loserjabber
 lostirc		ports/irc/lostirc
+loudmouth	ports/net/loudmouth
 lout		ports/print/lout
 lpe		ports/editors/lpe
 lplayer		ports/audio/lplayer
