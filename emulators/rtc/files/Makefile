@@ -28,7 +28,9 @@
 SYS?=		/sys
 NOMAN=		YES
 KMOD=		rtc
+.if ${OSVERSION} < 500002
 KMODDEPS=	linux
+.endif
 CDEV_MAJOR?=	202
 DEVNAME= 	${KMOD}
 SRCS=		rtc.c rtc_linux.c vnode_if.h
