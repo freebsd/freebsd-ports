@@ -66,7 +66,6 @@
     SUBDIR += mkisofs
     SUBDIR += moefonts-cid
     SUBDIR += moettf
-    SUBDIR += mozilla-tclp
     SUBDIR += mplayer-fonts
     SUBDIR += mule-freewnn
     SUBDIR += muni

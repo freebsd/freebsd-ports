@@ -1,7 +1,0 @@
-#!/bin/sh
-
-LANG=zh_TW.Big5; export LANG
-LD_PRELOAD=/usr/lib/libxpg4.so.2; export LD_PRELOAD
-
-cd @PREFIX@/lib/mozilla
-exec ./mozilla "$@"
