@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	gimageview
-PORTVERSION=	0.2.11
+PORTVERSION=	0.2.13
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkmmviewer
 
 MAINTAINER=	katsu@iec.hiroshima-u.ac.jp
+COMMENT=	Yet another GTK+ based image viewer
 
 LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
