@@ -7,6 +7,7 @@
 
 PORTNAME=	mplayerxp
 PORTVERSION=	0.1.9
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,6 +40,14 @@ DIRS_TO_CREATE= etc/mplayerxp \
 		lib/mplayerxp/wine
 
 .include <bsd.port.pre.mk>
+
+# XXX - fibmap_mplayerxp is not compiled in -CURRENT
+# this issue has to be investigated
+.if ${OSVERSION} >= 500000
+PLIST_SUB+=	FIBMAP="@comment "
+.else
+PLIST_SUB+=	FIBMAP=""
+.endif
 
 # add this after <bsd.port.pre.mk> so that we inherit /etc/make.conf
 CONFIGURE_ARGS+= --with-extralibdir=${LOCALBASE}/lib \
