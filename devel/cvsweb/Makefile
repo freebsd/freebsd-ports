@@ -66,7 +66,7 @@ do-install:
 	cd ${WRKSRC}/icons && ${INSTALL_DATA} * ${PREFIX}/${ICONSDIR}/cvsweb/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/cvsweb
-	cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog INSTALL README README.knu TODO TODO.knu ${PREFIX}/share/doc/cvsweb/
+	cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog INSTALL README README.FreeBSD TODO TODO.FreeBSD ${PREFIX}/share/doc/cvsweb/
 .endif
 
 post-install:
