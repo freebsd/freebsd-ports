@@ -234,6 +234,7 @@ lib/ghostscript/fonts/putbi.gsf
 lib/ghostscript/fonts/putr.gsf
 lib/ghostscript/fonts/putri.gsf
 lib/ghostscript/fonts/pzdr.afm
+lib/ghostscript/fonts/pzdr.gsf
 lib/ghostscript/fonts/s050000l.afm
 lib/ghostscript/fonts/s050000l.pfb
 lib/ghostscript/fonts/s050000l.pfm
