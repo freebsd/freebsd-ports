@@ -29,8 +29,8 @@ OPTIONS=	PCRE "With PCRE support" off
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Coredump during build on amd64 and ia64"
+.if ${ARCH} == "ia64"
+BROKEN=		"Coredump during build on ia64"
 .endif
 
 .if defined(WITH_PCRE)

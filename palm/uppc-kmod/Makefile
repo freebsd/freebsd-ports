@@ -18,10 +18,6 @@ MAN4=		uppc.4
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes
 
-.if ${MACHINE_ARCH:L} == "amd64"
-BROKEN=		"kernel modules are not available on this platform yet"
-.endif
-
 .if !exists(/usr/src/sys/dev/usb/usb.h)
 IGNORE=		"Requires kernel source (/usr/src/sys) to build"
 .endif

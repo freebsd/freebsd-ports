@@ -31,8 +31,8 @@ CONFIGURE_ARGS+=--with-rubydir=${RUBY_SITELIBDIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" && ${ARCH} != "sparc64"
-BROKEN=		"Does not compile on !i386 and !sparc64"
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not compile on ia64"
 .endif
 
 post-install:
