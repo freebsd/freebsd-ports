@@ -34,7 +34,6 @@
     SUBDIR += g-gcl
     SUBDIR += gn
     SUBDIR += grail
-    SUBDIR += gwstat
     SUBDIR += harvest
     SUBDIR += hotjava
     SUBDIR += htmlpp
