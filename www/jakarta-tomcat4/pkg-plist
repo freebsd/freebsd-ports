@@ -1,3 +1,9 @@
+@comment $FreeBSD$
+@unexec if cmp -s %D/%%T%%/conf/server.xml %D/%%T%%/conf/server.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/server.xml; fi
+@unexec if cmp -s %D/%%T%%/conf/web.xml %D/%%T%%/conf/web.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/web.xml; fi
+@unexec if cmp -s %D/%%T%%/conf/server-noexamples.xml.config %D/%%T%%/conf/server-noexamples.xml.config.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/server-noexamples.xml.config; fi
+@unexec if cmp -s %D/%%T%%/conf/tomcat-users.xml %D/%%T%%/conf/tomcat-users.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/tomcat-users.xml; fi
+@unexec if cmp -s %D/%%T%%/conf/catalina.policy %D/%%T%%/conf/catalina.policy.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/catalina.policy; fi
 bin/tomcat4ctl
 etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/logs/stdout.log
@@ -892,11 +898,11 @@ etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/webapps/ROOT/tomcat.gif
 %%T%%/webapps/ROOT/tomcat-power.gif
 %%T%%/webapps/manager/WEB-INF/web.xml
-%%T%%/conf/server.xml
-%%T%%/conf/web.xml
-%%T%%/conf/server-noexamples.xml.config
-%%T%%/conf/tomcat-users.xml
-%%T%%/conf/catalina.policy
+%%T%%/conf/server.xml.%%CONF_EXT%%
+%%T%%/conf/web.xml.%%CONF_EXT%%
+%%T%%/conf/server-noexamples.xml.config.%%CONF_EXT%%
+%%T%%/conf/tomcat-users.xml.%%CONF_EXT%%
+%%T%%/conf/catalina.policy.%%CONF_EXT%%
 %%T%%/common/lib/jndi.jar
 %%T%%/common/lib/jta-spec1_0_1.jar
 %%T%%/common/lib/tyrex-0.9.7.0.jar
@@ -959,7 +965,13 @@ etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/RELEASE-NOTES-4.0.4.txt
 %%T%%/RELEASE-NOTES-4.0.2.txt
 %%T%%/RELEASE-NOTES-4.0.2-B2.txt
-man/man1/tomcat4ctl.1
+@exec mkdir %D/%%T%%/common/classes || true
+@exec mkdir %D/%%T%%/classes || true
+@exec mkdir %D/%%T%%/temp || true
+@exec mkdir %D/%%T%%/server/classes || true
+@exec mkdir %D/%%T%%/work || true
+@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/
+@unexec rmdir %D/%%T%%/conf 2>/dev/null || true
 @dirrm %%T%%/logs
 @dirrm %%T%%/webapps/tomcat-docs/appdev/sample/src/mypackage
 @dirrm %%T%%/webapps/tomcat-docs/appdev/sample/src
@@ -1072,7 +1084,6 @@ man/man1/tomcat4ctl.1
 @dirrm %%T%%/webapps/manager/WEB-INF
 @dirrm %%T%%/webapps/manager
 @dirrm %%T%%/webapps
-@dirrm %%T%%/conf
 @dirrm %%T%%/common/lib
 @dirrm %%T%%/common/classes
 @dirrm %%T%%/common
@@ -1084,4 +1095,4 @@ man/man1/tomcat4ctl.1
 @dirrm %%T%%/server/classes
 @dirrm %%T%%/server
 @dirrm %%T%%/work
-@dirrm %%T%%
+@unexec rmdir %D/%%T%% 2>/dev/null || true
