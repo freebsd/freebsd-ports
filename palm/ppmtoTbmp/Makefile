@@ -17,6 +17,12 @@ LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
 USE_REINPLACE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CFLAGS =.*|CFLAGS += -I${LOCALBASE}/include|g; \
 		s|^LDLIBS =|LDLIBS = -L${LOCALBASE}/lib|g" ${WRKSRC}/Makefile
@@ -32,4 +38,4 @@ do-install:
 	${MKDIR} ${PREFIX}/share/ppmtoTbmp
 	${INSTALL_DATA} ${WRKSRC}/q?.map ${PREFIX}/share/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

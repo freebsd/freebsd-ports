@@ -27,6 +27,10 @@ CONFIGURE_ARGS+=--enable-php_screw=shared
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/php4/bsd.php.mk"
 
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "To achieve real security, define your own encryption"

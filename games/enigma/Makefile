@@ -32,7 +32,13 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 
 MAN6=		enigma.6
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-install:
 	@${CAT} pkg-message
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

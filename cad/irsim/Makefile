@@ -19,8 +19,14 @@ MAN1=		irsim.1
 MAN3=		irsim-analyzer.3
 MAN5=		netchange.5
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 # othewise patch will complain
 post-extract:
 	@${FIND} ${WRKSRC} -name RCS | ${XARGS} ${RM} -rf
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

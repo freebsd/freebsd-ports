@@ -52,6 +52,10 @@ MAN1=		cccp.1 m68k-palmos-g++.1 m68k-palmos-gcc.1 \
 
 CFLAGS:=	${CFLAGS:C/-m[-=0-9a-z]*//g}
 
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-extract:
 	@(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTNAME}.tar.gz ${EXTRACT_AFTER_ARGS})
 

@@ -34,6 +34,12 @@ CONFIGURE_ENV=	CPPFLAGS=-I${X11BASE}/include \
 
 MAN6=		exult.6
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/exult ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
@@ -55,4 +61,4 @@ post-install:
 	@${ECHO_MSG} "* Please, read ${DOCSDIR}/README for additional information"
 	@${ECHO_MSG} "******************************************************************************"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

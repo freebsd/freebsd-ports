@@ -24,6 +24,12 @@ USE_MOTIF=	yes
 USE_IMAKE=	yes
 MAN1=		xhtml.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/XHTML.ad
 
@@ -33,4 +39,4 @@ do-build:
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

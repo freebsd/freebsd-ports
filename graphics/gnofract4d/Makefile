@@ -24,10 +24,16 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-compile-warnings=no
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^CXXFLAGS =.* -D|CXXFLAGS = @CXXFLAGS@ -D|g ; \
 		 s|gnofract4d_helpdir)/images|gnofract4d_helpdir)|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
