@@ -13,7 +13,8 @@ MASTER_SITES=	http://8ne.sakura.ne.jp:20008/chika/unitbase/xsys35/down/
 MAINTAINER=	sf@FreeBSD.org
 COMMENT=	AliceSoft System 3.5/3.6/3.8/3.9 on X Window System
 
-LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_AUTOCONF_VER=	259
 USE_LIBTOOL_VER=	15
@@ -25,6 +26,7 @@ USE_REINPLACE=	yes
 
 PKGMESSAGE=	${WRKSRC}/MESSAGE
 
+DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 PATCHES=	pastel.diff
 
 .include <bsd.port.pre.mk>
@@ -86,9 +88,9 @@ pre-configure:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/instgame ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/ja/xsystem35
+	@${MKDIR} ${PREFIX}/${DOCSDIR}
 	(cd ${WRKSRC}/doc;\
-		${INSTALL_MAN} * ${PREFIX}/share/doc/ja/xsystem35)
+		${INSTALL_MAN} * ${PREFIX}/${DOCSDIR})
 .endif
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/xsys35rc.sample ${EXAMPLESDIR}
