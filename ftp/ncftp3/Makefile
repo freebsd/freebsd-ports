@@ -4,7 +4,7 @@
 # Date created:         4 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.53 1998/08/13 23:25:16 ache Exp $
+# $Id: Makefile,v 1.54 1998/08/13 23:26:43 ache Exp $
 #
 
 DISTNAME=	ncftp-3.0beta14-src
@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 GNU_CONFIGURE=	yes
 MAN1=		ncftp3.1 ncftpbatch.1 ncftpget.1 ncftpls.1 ncftpput.1
 MAN3=		Strn.3
-NO_LATEST_LINK=	yes
 
 post-patch:
 	@${MV} ${WRKSRC}/ncftp/pref.h ${WRKSRC}/ncftp/pref.h.in
