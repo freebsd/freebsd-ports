@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	osh
-PORTVERSION=	040216
+PORTVERSION=	040421
 CATEGORIES=	shells
 MASTER_SITES=	http://jneitzel.sdf1.org/osh/src/
 
