@@ -21,6 +21,7 @@ MAINTAINER?=	refugee@vt.edu
 COMMENT?=	UNIX/X11 port of the Multi Arcade Machine Emulator (MAME)
 
 USE_BZIP2=	yes
+USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
