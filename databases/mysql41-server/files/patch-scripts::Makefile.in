@@ -1,6 +1,6 @@
---- scripts/Makefile.in.orig	Tue Mar  2 12:24:51 2004
-+++ scripts/Makefile.in	Tue Mar  2 12:25:28 2004
-@@ -203,25 +203,7 @@
+--- scripts/Makefile.in.orig	Fri May 28 21:38:37 2004
++++ scripts/Makefile.in	Mon May 31 15:14:31 2004
+@@ -276,26 +276,7 @@
  vio_dir = @vio_dir@
  vio_libs = @vio_libs@
  
@@ -22,12 +22,13 @@
 -			mysql_tableinfo \
 -			mysqld_multi \
 -			make_win_src_distribution \
+-			make_win_binary_distribution \
 -			mysql_create_system_tables
 +bin_SCRIPTS =
  
  
  EXTRA_SCRIPTS = make_binary_distribution.sh \
-@@ -254,7 +236,7 @@
+@@ -329,7 +310,7 @@
  			mysqlbug
  
  
@@ -36,7 +37,7 @@
  
  # mysqlbug should be distributed built so that people can report build
  # failures with it.
-@@ -510,8 +492,6 @@
+@@ -605,8 +586,6 @@
  
  all: fill_help_tables.sql make_win_src_distribution make_binary_distribution make_sharedlib_distribution
  

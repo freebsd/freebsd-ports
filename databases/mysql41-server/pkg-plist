@@ -2,6 +2,7 @@ bin/comp_err
 bin/isamchk
 bin/isamlog
 bin/my_print_defaults
+bin/myisam_ftdump
 bin/myisamchk
 bin/myisamlog
 bin/myisampack
@@ -140,6 +141,7 @@ share/mysql/my-huge.cnf
 share/mysql/my-large.cnf
 share/mysql/my-medium.cnf
 share/mysql/my-small.cnf
+share/mysql/mysql-%%VER%%.spec
 share/mysql/mysql-log-rotate
 share/mysql/mysql.server
 share/mysql/norwegian-ny/errmsg.sys
