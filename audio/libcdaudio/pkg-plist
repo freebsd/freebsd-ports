@@ -3,4 +3,5 @@ include/cdaudio.h
 lib/libcdaudio.a
 lib/libcdaudio.so
 lib/libcdaudio.so.1
+libdata/pkgconfig/libcdaudio.pc
 share/aclocal/libcdaudio.m4
