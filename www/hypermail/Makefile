@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hypermail
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.landfield.com/hypermail/dist/
 

@@ -1,6 +1,8 @@
---- docs/Makefile.in.orig	Sat May 26 14:33:01 2001
-+++ docs/Makefile.in	Sat May 26 14:33:40 2001
-@@ -38,11 +38,13 @@
+$FreeBSD$
+
+--- docs/Makefile.in.orig	Sun May 28 12:43:28 2000
++++ docs/Makefile.in	Tue Nov 20 17:30:25 2001
+@@ -38,11 +38,14 @@
  	$(INSTALL_PROG) -c -m 0644 hmrc.4 $(mandir)/man4
  
  install.html:
@@ -8,7 +10,7 @@
  	@(if [ ! -d $(htmldir) ]; then mkdir -p $(htmldir); fi)
  	$(INSTALL_PROG) -c -m 0644 hr.yellow.gif $(htmldir)
  	$(INSTALL_PROG) -c -m 0644 hypermail.gif $(htmldir)
--	$(INSTALL_PROG) -c -m 0644 hypermail.html $(htmldir)
+ 	$(INSTALL_PROG) -c -m 0644 hypermail.html $(htmldir)
 +	$(INSTALL_PROG) -c -m 0644 hypermail-faq.html $(htmldir)
  	$(INSTALL_PROG) -c -m 0644 customizing.html $(htmldir)
  	$(INSTALL_PROG) -c -m 0644 hmrc.html $(htmldir)

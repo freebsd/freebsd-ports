@@ -6,4 +6,5 @@ bin/rdmsg
 %%PORTDOCS%%share/doc/hypermail/hr.yellow.gif
 %%PORTDOCS%%share/doc/hypermail/hypermail-faq.html
 %%PORTDOCS%%share/doc/hypermail/hypermail.gif
+%%PORTDOCS%%share/doc/hypermail/hypermail.html
 %%PORTDOCS%%@dirrm share/doc/hypermail
