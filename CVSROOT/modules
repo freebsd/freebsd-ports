@@ -1916,6 +1916,7 @@ gal2		ports/x11-toolkits/gal2
 galaxis		ports/games/galaxis
 gale		ports/net/gale
 galeon		ports/www/galeon
+galeon2		ports/www/galeon2
 gallery		ports/www/gallery
 games		src/games
 games_crimson	ports/games/crimson
