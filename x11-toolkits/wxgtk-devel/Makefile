@@ -7,15 +7,15 @@
 
 PORTNAME=	wxgtk
 PORTVERSION=	2.4.2
-PORTREVISION=	2
+PORTREVISION?=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/
 MASTER_SITE_SUBDIR=	wxwindows
 DISTNAME=	wxGTK-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The wxWindows GUI toolkit with GTK+ bindings (unstable version)
+MAINTAINER?=	ports@FreeBSD.org
+COMMENT?=	The wxWindows GUI toolkit with GTK+ bindings (unstable version)
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
