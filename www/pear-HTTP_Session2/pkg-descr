@@ -4,4 +4,4 @@ session data using DB package. It introduces new methods
 like isNew(), useCookies(), setExpire(), setIdle(),
 isExpired(), isIdled() and others.
 
-WWW: http://pear.php.net/package-info.php?package=HTTP_Session
+WWW: http://pear.php.net/package/HTTP_Session/
