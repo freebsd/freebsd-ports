@@ -1,18 +1,18 @@
---- Makefile.orig	Wed Dec 25 15:43:50 1996
-+++ Makefile	Mon Mar 22 23:12:48 1999
-@@ -71,8 +71,9 @@
+--- Makefile.orig	Sat Dec 20 10:57:08 1997
++++ Makefile	Mon May 22 18:38:56 2000
+@@ -74,8 +74,9 @@
  #CC=cc
  #COPT=-O -DNOT_ANSI_C -DPROTOTYPES=0
  # for gcc, use
 -CC=gcc
--COPT=-O2 -DPROTOTYPES=1 -DNOTDEF
+-COPT=-O2 -DPROTOTYPES=1
 +CC?=gcc
 +CFLAGS?=-O2
-+CFLAGS+=-DPROTOTYPES=1 -DNOTDEF
++CFLAGS+=-DPROTOTYPES=1
  
  #1B: paths:
- BINDIR=/usr/local/bin
-@@ -193,12 +194,18 @@
+ #some peple like /usr/local/sbin instead of /usr/local/etc
+@@ -217,12 +218,18 @@
  ## not sure what to do for NeXT.  I think this works:
  #CFLAGS=$(COPT) -posix -D_BSD -DANYPORT -I$(RINCLUDES)
  
