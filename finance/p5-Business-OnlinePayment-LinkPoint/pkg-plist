@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment/LinkPoint.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/LinkPoint/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/LinkPoint/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/LinkPoint
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/LinkPoint
