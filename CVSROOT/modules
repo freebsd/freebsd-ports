@@ -6627,6 +6627,7 @@ p5-Devel-Profiler	ports/devel/p5-Devel-Profiler
 p5-Devel-Size	ports/devel/p5-Devel-Size
 p5-Devel-SmallProf	ports/devel/p5-Devel-SmallProf
 p5-Devel-StackTrace	ports/devel/p5-Devel-StackTrace
+p5-Devel-StealthDebug	ports/devel/p5-Devel-StealthDebug
 p5-Devel-Symdump	ports/devel/p5-Devel-Symdump
 p5-Devel-Trace	ports/devel/p5-Devel-Trace
 p5-Devel-ptkdb	ports/devel/p5-Devel-ptkdb
