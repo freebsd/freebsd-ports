@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	custom-${EMACS_PORT}
+PORTNAME=	custom
 PORTVERSION=	${CUSTOM_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.dina.kvl.dk/pub/Staff/Per.Abrahamsen/custom/ \
 		ftp://ftp.win.ne.jp/pub/word/elisp/
-DISTNAME=	custom-${CUSTOM_VER}
+PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	shige@FreeBSD.org
 
@@ -24,29 +24,17 @@ CUSTOM_ELS=	cus-edit.el cus-face.el custom.el \
 PORTCLASS?=	master
 
 .if (${PORTCLASS} == "master")
-EMACS_NAME=	emacs
-EMACS_PORT=	emacs
-EMACS_VER=	19.34
-EMACS_LIBDIR=	share/${EMACS_NAME}
-HAVE_COMMON_PORT= NO
+EMACS_PORT_NAME=	emacs
 .endif
 
-.if defined(EMACS_PORT)
-EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
-BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
-.if defined(HAVE_COMMON_PORT) && (${HAVE_COMMON_PORT} == "YES")
-RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}-common
-.else
-RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
-.endif
-SCRIPTS_ENV=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER}
-PLIST_SUB=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
-		CUSTOMDOCDIR=${CUSTOMDOCDIR}
-MAKE_FLAGS=	EMACS=${EMACS_CMD}
-.else
+PLIST_SUB=	CUSTOMDOCDIR=${CUSTOMDOCDIR}
+
+.include <bsd.port.pre.mk>
+
+.if !defined(EMACS_PORT_NAME)
 .BEGIN:
 	@${ECHO} "Error: Bad port."
-	@${ECHO} "You must define EMACS_NAME, EMACS_PORT, EMACS_VER, EMACS_LIBDIR."
+	@${ECHO} "You must define EMACS_PORT_NAME."
 	@${FALSE}
 .endif
 
@@ -54,15 +42,15 @@ MAKE_FLAGS=	EMACS=${EMACS_CMD}
 do-install:
 	@for i in ${CUSTOM_ELS} ; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i} \
-			${PREFIX}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/ ; \
+			${LOCALBASE}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/ ; \
 		${INSTALL_DATA} ${WRKSRC}/$${i}c \
-			${PREFIX}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/ ; \
+			${LOCALBASE}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/ ; \
 	done
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/${CUSTOMDOCDIR}
+	@${MKDIR} ${LOCALBASE}/${CUSTOMDOCDIR}
 	@for i in ChangeLog TODO ; do \
-		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/${CUSTOMDOCDIR} ; \
+		${INSTALL_DATA} ${WRKSRC}/$${i} ${LOCALBASE}/${CUSTOMDOCDIR} ; \
 	done
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

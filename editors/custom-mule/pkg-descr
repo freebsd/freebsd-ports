@@ -19,7 +19,7 @@ How to use:
 	M-x customize
 
 Installed at:
-	${PREFIX}/share/mule/19.34/site-lisp/
+	${LOCALBASE}/share/mule/19.34/site-lisp/
 
 WWW: http://www.dina.kvl.dk/~abraham/custom/
 

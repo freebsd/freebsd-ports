@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bitmap-${EMACS_PORT_NAME}
+PORTNAME=	bitmap
 PORTVERSION=	${BITMAP_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/bitmap/
 DISTNAME=	bitmap-mule-${BITMAP_VER}
+PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	shige@FreeBSD.org
 
@@ -24,29 +25,30 @@ EMACS_PORT_NAME=	emacs20
 # target name for make build
 ALL_TARGET=	elc
 
-EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
-BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT_NAME} \
-		uncompface:${PORTSDIR}/mail/faces
-RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT_NAME} \
-		${BITMAP_FONT}:${PORTSDIR}/x11-fonts/bitmap-font
-SCRIPTS_ENV=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
-		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER}
-PLIST_SUB=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
-		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER} \
-		BITMAPDOCDIR=${BITMAPDOCDIR}
-MAKE_FLAGS=	EMACS=${EMACS_CMD}
+BUILD_DEPENDS=	uncompface:${PORTSDIR}/mail/faces
+RUN_DEPENDS=	${BITMAP_FONT}:${PORTSDIR}/x11-fonts/bitmap-font
+PLIST_SUB=	BITMAPDOCDIR=${BITMAPDOCDIR}
 
+.include <bsd.port.pre.mk>
+
+.if defined(EMACS_PORT_NAME)
 # depends on apel
-BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
-RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
+.else
+.BEGIN:
+	@${ECHO} "Error: Bad port."
+	@${ECHO} "You must define EMACS_PORT_NAME."
+	@${FALSE}
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/${BITMAPDOCDIR}
+	@${MKDIR} ${LOCALBASE}/${BITMAPDOCDIR}
 	@(cd ${WRKSRC} ; \
 	for i in ChangeLog NEWS README.* ; do \
-		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/${BITMAPDOCDIR}/ ; \
+		${INSTALL_DATA} ${WRKSRC}/$${i} ${LOCALBASE}/${BITMAPDOCDIR}/ ; \
 	done)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
