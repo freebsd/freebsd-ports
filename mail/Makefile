@@ -353,6 +353,7 @@
     SUBDIR += qmail-ldap
     SUBDIR += qmail-mysql
     SUBDIR += qmail-notify
+    SUBDIR += qmail-qfilter
     SUBDIR += qmail-remove
     SUBDIR += qmail-scanner
     SUBDIR += qmail-smtp_auth+tls

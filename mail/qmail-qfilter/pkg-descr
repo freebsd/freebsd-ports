@@ -1,0 +1,6 @@
+This program allows the body of a message to be filtered through 
+a series of filters before being passed to the real qmail-queue program,
+and injected into the qmail queue.
+
+Author:	Bruce Guenter <bruceg@em.ca>
+WWW:	http://untroubled.org/qmail-qfilter/
