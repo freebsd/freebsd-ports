@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bash-completion
-PORTVERSION=	20040101
+PORTVERSION=	20040214
 CATEGORIES=	shells
 MASTER_SITES=	http://www.caliban.org/files/bash/
 
@@ -15,11 +15,21 @@ COMMENT=	Programmable completion library for Bash 2.04 and up
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
+.if defined(WITH_GSED)
+RUN_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed
+.endif
+
 WRKSRC=		${WRKDIR}/bash_completion
 NO_BUILD=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_FILES=	etc/bash_completion
+
+pre-everything::
+	@${ECHO}
+	@${ECHO} "You can build ${PKGNAME} with the following options:"
+	@${ECHO} "WITH_GSED	use GNU sed to enable additional completions"
+	@${ECHO}
 
 pre-patch:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message >${PKGMESSAGE}
