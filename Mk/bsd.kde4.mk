@@ -33,11 +33,6 @@ USE_QT_VER=		2
 pre-everything::
 	@${ECHO} ">>> Warning:  this port needs to be updated as it uses the old-style USE_QT variable!"
 .endif # defined(USE_QT)
-.if defined(USE_QT2)
-USE_QT_VER=		2
-pre-everything::
-	@${ECHO} ">>> Warning:  this port needs to be updated as it uses the old-style USE_QT2 variable!"
-.endif # defined(USE_QT2)
 
 # tagged MASTER_SITE_KDE_kde
 kmaster=				${MASTER_SITE_KDE:S@%/@%/:kde@g}
