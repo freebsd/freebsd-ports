@@ -7,6 +7,7 @@
 
 PORTNAME=	Email-MIME
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
@@ -35,6 +36,7 @@ RUN_DEPENDS+=	${SITE_PERL}/MIME/Words.pm:${PORTSDIR}/mail/p5-MIME-Tools
 .if ${PERL_LEVEL} <= 500503
 post-patch:
 	${PERL} -pi -e '$$_ = "" if /require 5.006;/;' \
+		    -e '$$_ = "" if /use warnings/;' \
 		    -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' \
 		${WRKSRC}/MIME.pm
 .endif
