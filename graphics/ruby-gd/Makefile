@@ -7,6 +7,7 @@
 
 PORTNAME=	GD
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://kirara.prec.kyoto-u.ac.jp/~tam/GD/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
