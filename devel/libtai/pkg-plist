@@ -1,0 +1,10 @@
+bin/easter
+bin/leapsecs
+bin/nowutc
+bin/yearcal
+lib/%%LIBFILE%%.a
+lib/%%LIBFILE%%.so
+lib/%%LIBFILE%%.so.%%LIBVERSION%%
+@mode 0644
+etc/leapsecs.dat
+@mode

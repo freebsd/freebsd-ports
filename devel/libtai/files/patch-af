@@ -1,0 +1,15 @@
+--- leapsecs.3.orig	Fri Jun 16 22:44:24 2000
++++ leapsecs.3	Fri Jun 16 22:44:47 2000
+@@ -52,10 +52,10 @@
+ 
+ .B leapsecs_read
+ reads the leap-second table from
+-.BR /etc/leapsecs.dat .
++.BR %%PREFIX%%/etc/leapsecs.dat .
+ It returns 0 on success, -1 on error.
+ If
+-.B /etc/leapsecs.dat
++.B %%PREFIX%%/etc/leapsecs.dat
+ does not exist,
+ .B leapsecs_read
+ treats it as an empty file.

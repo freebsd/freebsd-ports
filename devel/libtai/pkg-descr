@@ -1,0 +1,19 @@
+libtai supports two time scales: (1) TAI64, covering a few hundred
+billion years with 1-second precision; (2) TAI64NA, covering the same
+period with 1-attosecond precision. Both scales are defined in terms of
+TAI, the current international real time standard.
+
+libtai provides an internal format for TAI64, struct tai, designed for
+fast time manipulations. The tai_pack() and tai_unpack() routines
+convert between struct tai and a portable 8-byte TAI64 storage format.
+libtai provides similar internal and external formats for TAI64NA.
+
+libtai provides struct caldate to store dates in year-month-day form. It
+can convert struct caldate, under the Gregorian calendar, to a modified
+Julian day number for easy date arithmetic.
+
+This version of libtai requires a UNIX system with gettimeofday(). It
+will be easy to port to other operating systems with compilers
+supporting 64-bit arithmetic.
+
+WWW: http://cr.yp.to/libtai.html
