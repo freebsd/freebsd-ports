@@ -13,12 +13,14 @@ MASTER_SITES=	http://www.gizmodrome.com/
 
 MAINTAINER=	ijliao@FreeBSD.org
 
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
 ALL_TARGET=	${PORTNAME}
 
 do-install:
-	${INSTALL} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
 	${CP} ${WRKSRC}/quickstart.txt ${PREFIX}/share/doc/${PORTNAME}
