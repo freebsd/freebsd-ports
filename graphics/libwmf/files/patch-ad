@@ -1,6 +1,6 @@
---- libdib/Makefile.in.orig	Tue Jul 13 10:14:28 1999
-+++ libdib/Makefile.in	Fri May 26 01:36:43 2000
-@@ -28,25 +28,32 @@
+--- libdib/Makefile.in.orig	Tue Jul 13 22:14:28 1999
++++ libdib/Makefile.in	Tue May 30 19:22:58 2000
+@@ -28,25 +28,29 @@
  
  SHELL = /bin/sh
  
@@ -13,34 +13,34 @@
      dibtoxpm.o
  
 -all: libdib.a test_dibtoxpm
-+all: libdib.a libdib.so.0 test_dibtoxpm
++all: libdib.a libdib.so.1 test_dibtoxpm
  
  libdib.a:  $(MYOBJECTS)
  	$(AR) rc libdib.a $(MYOBJECTS)
  	$(RANLIB) libdib.a 
  
-+libdib.so.0:  $(MYOBJECTS:S/o$/so/g)
-+	$(CC) -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,$@ -o $@ $(MYOBJECTS:S/o$/so/g) $(LIBS)
-+	ln -sf libdib.so.0 libdib.so
++libdib.so.1:  $(MYOBJECTS:.o=.so)
++	$(CC) -shared -Wl,-soname,$@ -o $@ $(MYOBJECTS:.o=.so) $(LIBS)
++	ln -sf libdib.so.1 libdib.so
 +
  test_dibtoxpm:  libdib.a test_dibtoxpm.o
  	$(CC) $(LDFLAGS) -o test_dibtoxpm test_dibtoxpm.o -ldib
  
- %.o: %.c
- 	$(CC) $(CFLAGS) -c $*.c
- 
+-%.o: %.c
+-	$(CC) $(CFLAGS) -c $*.c
+-
 +.c.so:
-+	$(CC) -fpic -DPIC $(CFLAGS) -c $(.IMPSRC) -o $(.TARGET)
++	$(CC) $(CFLAGS) -fPIC -DPIC -o $@ -c $<
 +       
  clean:
  	rm -rf *.o *.a test_dibtoxpm a.out core
  
-@@ -60,6 +67,8 @@
+@@ -60,6 +64,8 @@
  install: all installdirs
  	$(INSTALL_DATA) dibtoxpm.h $(INCLUDEDIR)/dibtoxpm.h
  	$(INSTALL_DATA) libdib.a @libdir@/libdib.a
-+	$(INSTALL_DATA) libdib.so.0 @libdir@/libdib.so.0
-+	ln -sf libdib.so.0 @libdir@/libdib.so
++	$(INSTALL_DATA) libdib.so.1 @libdir@/libdib.so.1
++	ln -sf libdib.so.1 @libdir@/libdib.so
  
  
  #  DO  NOT  DELETE THIS LINE -- make depend depends on it.

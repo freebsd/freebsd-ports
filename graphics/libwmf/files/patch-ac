@@ -1,6 +1,6 @@
---- libxfig/Makefile.in.orig	Tue Jul 13 10:16:20 1999
-+++ libxfig/Makefile.in	Fri May 26 01:11:08 2000
-@@ -28,22 +28,29 @@
+--- libxfig/Makefile.in.orig	Tue Jul 13 22:16:20 1999
++++ libxfig/Makefile.in	Tue May 30 19:22:25 2000
+@@ -28,21 +28,25 @@
  
  SHELL = /bin/sh
  
@@ -13,31 +13,29 @@
  	fileops.o
  
 -all: libxfig.a 
-+all: libxfig.a libxfig.so.0
++all: libxfig.a libxfig.so.1
  
  libxfig.a:  $(MYOBJECTS)
  	$(AR) rc libxfig.a $(MYOBJECTS)
  	$(RANLIB) libxfig.a 
  
-+libxfig.so.0:  $(MYOBJECTS:S/o$/so/g)
-+	$(CC) -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,$@ -o $@ $(MYOBJECTS:S/o$/so/g) $(LIBS)
-+	ln -sf libxfig.so.0 libxfig.so
+-%.o: %.c
+-	$(CC) $(CFLAGS) -c $*.c
++libxfig.so.1:  $(MYOBJECTS:.o=.so)
++	$(CC) -shared -Wl,-soname,$@ -o $@ $(MYOBJECTS:.o=.so) $(LIBS)
++	ln -sf libxfig.so.1 libxfig.so
 +
- %.o: %.c
- 	$(CC) $(CFLAGS) -c $*.c
- 
 +.c.so:
-+	$(CC) -fpic -DPIC $(CFLAGS) -c $(.IMPSRC) -o $(.TARGET)
-+
++	$(CC) $(CFLAGS) -fPIC -DPIC -o $@ -c $<
+ 
  clean:
  	rm -rf *.o *.a core
- 
-@@ -52,6 +59,8 @@
+@@ -52,6 +56,8 @@
  
  install: all installdirs
  	$(INSTALL_DATA) libxfig.a @libdir@/libxfig.a
-+	$(INSTALL_DATA) libxfig.so.0 @libdir@/libxfig.so.0
-+	ln -sf libxfig.so.0 @libdir@/libxfig.so
++	$(INSTALL_DATA) libxfig.so.1 @libdir@/libxfig.so.1
++	ln -sf libxfig.so.1 @libdir@/libxfig.so
  
  installdirs:
  	$(MKINSTALLDIRS) @libdir@ \
