@@ -9,11 +9,12 @@ PORTNAME=	fontCyrillic
 PORTVERSION=	4.2.0
 PORTREVISION=   4
 CATEGORIES=	x11-fonts
-MASTER_SITES=   ${MASTER_SITE_XFREE} \
-		http://koi8.pp.ru/dist/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=   ${MASTER_SITE_XFREE:S/$/:x/} \
+		http://koi8.pp.ru/dist/:xrus
+MASTER_SITE_SUBDIR=	${PORTVERSION}:x
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=      X${PORTVERSION:S/.//g}src-2.tgz xrus-2.3.1-xf4-bdf.tgz
+DISTFILES=      X${PORTVERSION:S/.//g}src-2.tgz:x \
+		xrus-2.3.1-xf4-bdf.tgz:xrus
 
 MAINTAINER=	anholt@freebsd.org
 
