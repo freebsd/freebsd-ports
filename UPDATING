@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050319:
+  AFFECTS: users of databases/postgresql7[34]-server
+  AUTHOR: girgen@FreeBSD.org
+
+  The startup script has been merged from 8.0 to 7.3 and 7.4. Hence,
+  to start the PostgreSQL server at boot time (regardless of version),
+  add the following to /etc/rc.conf:
+
+  postgresql_enable=yes
+
 20050318:
   AFFECTS: users of x11-wm/blackbox, boxtools, bbkeys and bbpager
   AUTHOR: A.J.Caines@halplant.com
