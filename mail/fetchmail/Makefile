@@ -24,7 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/python1.5/site-packages/_tkinter.so:${PORTSDIR}/x1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-OPIE --enable-RPA --enable-POP2 --enable-SDPS \
-		--enable-nls
+		--enable-nls --with-hesiod=no
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
