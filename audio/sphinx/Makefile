@@ -19,7 +19,7 @@ INSTALLS_SHLIB=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_GMAKE=	yes
 
-BROKEN=		"audio read error"
+IGNORE=		"audio read error"
 
 # contains i386 sound code
 ONLY_FOR_ARCHS=	i386

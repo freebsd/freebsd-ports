@@ -52,7 +52,7 @@ ALL_TARGET=	depend all
 .include <bsd.port.pre.mk>
 
 .if ${XFREE86_VERSION} > 3
-BROKEN=		"Requires XFree86 3.3.* - will not work with XFree86 4.*"
+IGNORE=		"Requires XFree86 3.3.* - will not work with XFree86 4.*"
 .endif
 
 pre-build:

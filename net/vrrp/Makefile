@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.vrrp.net/pub/vrrpd/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		"The maintainer considers this an incomplete implementation of RFC2338"
+IGNORE=		"The maintainer considers this an incomplete implementation of RFC2338"
 
 .if	!defined(NOPORTDOCS)
 post-install:

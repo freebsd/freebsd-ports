@@ -20,7 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500007
-BROKEN=		"Needs Perl 5.6.0 for Math::BigFloat"
+IGNORE=		"Needs Perl 5.6.0 for Math::BigFloat"
 .endif
 
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
