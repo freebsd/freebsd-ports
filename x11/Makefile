@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.146 1997/08/04 20:45:51 joerg Exp $
+# $Id: Makefile,v 1.147 1997/08/11 08:55:36 tg Exp $
 #
 
     SUBDIR += FWF
@@ -14,10 +14,10 @@
     SUBDIR += camltk41
     SUBDIR += ctwm
     SUBDIR += dclock
-    SUBDIR += enlightenment
-    SUBDIR += etlfonts
     SUBDIR += emiclock
     SUBDIR += emu
+    SUBDIR += enlightenment
+    SUBDIR += etlfonts
     SUBDIR += fbsd-icons
     SUBDIR += filerunner
     SUBDIR += freefonts

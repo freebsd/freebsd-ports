@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.75 1997/07/20 17:36:24 max Exp $
+# $Id: Makefile,v 1.76 1997/08/12 15:43:06 itojun Exp $
 #
 
     SUBDIR += Canna
@@ -83,7 +83,7 @@
     SUBDIR += vfxdvi
     SUBDIR += w3
     SUBDIR += weblint97
-    SUBDIR += xshodo
     SUBDIR += xdvi
+    SUBDIR += xshodo
 
 .include <bsd.port.subdir.mk>
