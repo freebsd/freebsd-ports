@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	stlfilt
-PORTVERSION=	20040221
+PORTVERSION=	20041602
 CATEGORIES=	devel
 MASTER_SITES=	http://www.bdsoft.com/dist/
 DISTNAME=	g${PORTNAME}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	barner@gmx.de
 COMMENT=	An STL Error Message Decryptor for C++
 
 EXTRACT_CMD=	${TAR}
