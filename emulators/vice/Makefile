@@ -29,8 +29,10 @@ USE_GCC=	3.2
 .if defined(VICE_WITH_GNOME)
 USE_GNOME=	gnomelibs
 CONFIGURE_ARGS=	--enable-gnomeui
+CONFLICTS?=	vice-1.*
 .else
 CONFIGURE_ARGS=	--with-xaw3d
+CONFLICTS?=	vice-gnome-1.*
 .endif
 
 INFO=		vice
