@@ -1082,6 +1082,8 @@ OPTIONSFILE?=	${PORT_DBDIR}/${UNIQUENAME}/options
 _OPTIONSFILE!=	${ECHO_CMD} "${OPTIONSFILE}"
 .if defined(OPTIONS)
 .	if defined(PACKAGE_BUILDING) || (defined(BATCH) && !exists(${_OPTIONSFILE}))
+WITHOUT:=
+WITH:=
 .	if defined(OPTIONS)
 REALOPTIONS=${OPTIONS:C/".*"//g}
 .	for O in ${REALOPTIONS}
