@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.reptilelabour.com/software/files/chromium/
 DISTFILES=	${PORTNAME}-src-${PORTVERSION}.tar.gz \
 		${PORTNAME}-data-${PORTVERSION}.tar.gz
 
-MAINTAINER=	anholt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An arcade-style, top-scrolling space shooter
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
