@@ -7,6 +7,7 @@
 
 PORTNAME=	healthd
 PORTVERSION=	0.6.9
+PORTREVISION=	1
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://healthd.thehousleys.net/
 
@@ -32,6 +33,10 @@ CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 post-install:
+	@if [ ! -f ${PREFIX}/etc/rc.d/healthd.sh.sample ]; then \
+		${ECHO} "Installing ${PREFIX}/etc/rc.d/healthd.sh.sample startup file."; \
+		${INSTALL_SCRIPT} -m 751 ${WRKSRC}/healthd.sh ${PREFIX}/etc/rc.d/healthd.sh.sample; \
+	fi
 	@if [ ! -f ${PREFIX}/etc/rc.d/healthd.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/healthd.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${WRKSRC}/healthd.sh ${PREFIX}/etc/rc.d/healthd.sh; \
