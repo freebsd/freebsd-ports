@@ -20,6 +20,7 @@
     SUBDIR += fastdnaml
     SUBDIR += flip
     SUBDIR += fluctuate
+    SUBDIR += garlic
     SUBDIR += genpak
     SUBDIR += gff2ps
     SUBDIR += gperiodic

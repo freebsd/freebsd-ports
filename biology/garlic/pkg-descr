@@ -1,0 +1,12 @@
+Free, open source molecular viewer and editor for
+protein structure, DNA structure, PDB, molecular rendering,
+biological macromolecule.
+Atoms may be drawn as spheres of different sizes.
+Bonds may be drawn as cylindrical sticks, conical sticks or as curved surfaces.
+Five types of slab are available: planar, spherical,
+semi-spherical, cylindrical and semi-cylindrical.
+The slab position and thickness are visible in a small window.
+Atomic bonds as well as atoms are treated as independent drawable objects.
+and more!
+
+WWW: http://ccp14.semo.edu/ccp/web-mirrors/garlic/garlic/
