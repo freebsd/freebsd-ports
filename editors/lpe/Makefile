@@ -1,31 +1,25 @@
 # New ports collection makefile for:	lpe
-# Version required:	1.1.8
+# Version required:	1.2.1
 # Date created:		12 April 1999
-# Whom:			Chris Piazza <cpiazza@home.net>
+# Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1999/04/19 04:06:52 steve Exp $
+# $Id: Makefile,v 1.3 1999/04/22 23:11:08 mharo Exp $
 #
 
-DISTNAME=     	lpe-1.1.9
+DISTNAME=     	lpe-1.2.1
 CATEGORIES=	editors
 MASTER_SITES=	http://cdsmith.twu.net/lpe/
 
-MAINTAINER=	cpiazza@home.net
+MAINTAINER=	cpiazza@FreeBSD.org
 
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
+		intl.1:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-ltermcap"
 
 MAN1=	lpe.1
-
-post-patch:
-	@${SED} -e s#__PREFIX__#${PREFIX}#g ${WRKSRC}/options.h > ${WRKSRC}/options.h.new
-	@${MV} -f ${WRKSRC}/options.h.new ${WRKSRC}/options.h
-
-do-install:
-	${MKDIR} ${PREFIX}/lib/lpe
-	${INSTALL_PROGRAM} ${WRKSRC}/lpe ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/*.so ${PREFIX}/lib/lpe
-	${INSTALL_MAN} ${WRKSRC}/lpe.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

@@ -1,0 +1,10 @@
+--- minibuf.c.orig	Sat Apr 24 15:33:25 1999
++++ minibuf.c	Thu Jun 17 22:46:21 1999
+@@ -15,6 +15,7 @@
+ #include <dirent.h>
+ #include <unistd.h>
+ #include <sys/stat.h>
++#include <sys/syslimits.h>
+ 
+ #include "lpe.h"
+ #include "input.h"
