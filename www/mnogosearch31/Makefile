@@ -21,9 +21,12 @@ INSTALLS_SHLIB= yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-shared \
-		--enable-charset-guesser \
 		--sysconfdir=${PREFIX}/etc/mnogosearch \
 		--localstatedir=/var/mnogosearch
+
+.if defined(WITH_MNOGO_GUESSER)
+CONFIGURE_ARGS+= --enable-charset-guesser
+.endif
 
 .if defined(WITH_MNOGO_PGSQL)
 LIB_DEPENDS=		pq.2:${PORTSDIR}/databases/postgresql7
