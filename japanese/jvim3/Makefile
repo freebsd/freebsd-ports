@@ -3,7 +3,7 @@
 # Date created:         97/10/30
 # Whom:                 Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/10/20 15:52:55 kuriyama Exp $
 #
 
 DISTNAME=	vim
@@ -17,6 +17,8 @@ MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
 
 LIB_DEPENDS=	${LIB_INPUT_METHOD}
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
+
+BROKEN=		fetch
 
 PATCHDIR=	${.CURDIR}/../jvim3/patches
 FILESDIR=	${.CURDIR}/../jvim3/files
