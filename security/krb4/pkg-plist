@@ -100,3 +100,4 @@ sbin/kdb_init
 sbin/kdb_util
 sbin/ksrvutil
 sbin/kstash
+@dirrm include/ss
