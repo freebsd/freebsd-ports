@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.11 1995/03/03 08:26:28 jkh Exp $
+# $Id: Makefile,v 1.12 1995/03/29 19:29:57 ats Exp $
 #
 # broken: uemacs, mastersite never reachable in three weeks
-#
-SUBDIR=	axe emacs jove mule vile xemacs xvile
+# broken: mule, its patches don't apply properly.  And it should
+# probably be in ports/japanese anyway! :-)
+SUBDIR=	axe emacs jove vile xemacs xvile
 
 .include <bsd.port.subdir.mk>
