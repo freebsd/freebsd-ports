@@ -3,7 +3,7 @@
 # Date created:		14 August 1999
 # Whom:			Dominik Rothert <dr@domix.de>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/08/22 22:07:25 cpiazza Exp $
 #
 
 DISTNAME=	tirc-1.2
@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.domix.de/fbsd/ports/distfiles/
 MAINTAINER=	dr@domix.de
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	"--with-ansi-colours"
 MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX}"
 MAN1=		tirc.1
 
