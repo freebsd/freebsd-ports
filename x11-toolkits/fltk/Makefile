@@ -40,6 +40,10 @@ CONFIGURE_ENV=	CXXFLAGS=-DUSE_XUNICODE
 _PORTVERSION+=	${VERSION}
 .endif
 
+.if defined(WITH_THREADS)
+CONFIGURE_ARGS+=--enable-threads
+.endif
+
 VERSION=	1.1.3
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
@@ -58,5 +62,9 @@ MAN3=		fltk.3
 post-extract:
 	cd ${WRKSRC} && ${LN} -s ${X11BASE}/include/xunicode
 .endif
+
+pre-everything::
+	@${ECHO_MSG} "===>  You can enable threads support by defining WITH_THREADS"
+	@${ECHO_MSG} "===>"
 
 .include <bsd.port.mk>
