@@ -29,6 +29,9 @@ vpopmail/doc/man_html/vdeluser.html
 vpopmail/doc/man_html/vpasswd.html
 vpopmail/doc/man_html/vpopbull.html
 vpopmail/doc/man_html/vsetuserquota.html
+vpopmail/etc/inc_deps
+vpopmail/etc/lib_deps
+@unexec if [ -f %D/vpopmail/etc/tcp.smtp -a ! -s %D/vpopmail/etc/tcp.smtp ]; then rm -f %D/vpopmail/etc/tcp.smtp; fi
 vpopmail/include/config.h
 vpopmail/include/vauth.h
 vpopmail/include/vpopmail.h

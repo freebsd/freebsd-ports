@@ -1,5 +1,5 @@
---- configure.old	Wed Jul  4 17:14:16 2001
-+++ configure	Wed Jul  4 17:14:54 2001
+--- configure.old	Fri Nov  2 20:50:19 2001
++++ configure	Fri Nov  2 20:50:35 2001
 @@ -1613,16 +1613,6 @@
  rm -f vpopusername 
  
@@ -17,27 +17,30 @@
  open_smtp_cur="$vpopmaildir/etc/open-smtp"
  open_smtp_tmp="$vpopmaildir/etc/open-smtp.tmp"
  open_smtp_lok="$vpopmaildir/etc/open-smtp.lock"
-@@ -1658,7 +1648,6 @@
+@@ -1658,7 +1648,7 @@
    
          if test "$tcpserver_file" = ""
          then
 -	    echo "127.:allow,RELAYCLIENT=\"\"" > "$vpopmaildir"/etc/tcp.smtp
++	    echo "127.:allow,RELAYCLIENT=\"\"" > "$VCFGDIR"/tcp.smtp
      	    tcpserver_file="$vpopmaildir"/etc/tcp.smtp
  	
              echo "configure: warning: Unable to find your tcpserver relay file." 1>&2
-@@ -1873,7 +1862,6 @@
+@@ -1873,7 +1863,7 @@
          fi
  		auth_libs="-L$sqllibdir -lmysqlclient -lz"
  
 -		echo "-L$vpopmaildir/lib -lvpopmail -L$sqllibdir -lmysqlclient -lz" > $vpopmaildir/etc/lib_deps
++		echo "-L$vpopmaildir/lib -lvpopmail -L$sqllibdir -lmysqlclient -lz" > $VCFGDIR/lib_deps
  		
          ;;
  *)
-@@ -2007,14 +1995,12 @@
+@@ -2007,14 +1997,14 @@
  		authlib=
  		
  		auth_inc="-Icdb"
 -		echo "-L$vpopmaildir/lib -lvpopmail" > $vpopmaildir/etc/lib_deps
++		echo "-L$vpopmaildir/lib -lvpopmail" > $VCFGDIR/lib_deps
  		
          ;;
  *)
@@ -45,6 +48,7 @@
  esac
  
 -echo "-I$vpopmaildir/include" > $vpopmaildir/etc/inc_deps
++echo "-I$vpopmaildir/include" > $VCFGDIR/inc_deps
  
  # Check whether --enable-roaming-users or --disable-roaming-users was given.
  if test "${enable_roaming_users+set}" = set; then

@@ -7,7 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	4.9.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/vpopmail/
 
@@ -21,6 +21,10 @@ RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 
+VCFGDIR?=	${WRKDIR}/vcfg
+VCFGFILES?=	inc_deps lib_deps tcp.smtp
+
+CONFIGURE_ENV+=	VCFGDIR="${VCFGDIR}"
 CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 		--enable-tcprules-bin=${LOCALBASE}/bin/tcprules \
 		--enable-tcpserver-file=${PREFIX}/vpopmail/etc/tcp.smtp
@@ -32,8 +36,11 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 #
 # WITH_PASSWD   - allow authentication off /etc/passwd
 # WITH_MYSQL	- allow authentitation via mysql
+# WITH_MYSQL_LARGE_SITE - enables large site layout
 # WITH_APOP     - allow apop authentication
 # WITHOUT_ROAMING - disallow roaming users
+# WITH_IP_ALIAS - enables IP aliasing
+# WITH_DELIVER_FILTER - enables the experimental vdelivermail filter
 #
 # Set these to the values you'd prefer
 #
@@ -103,10 +110,21 @@ LIB_DEPENDS+=		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 CONFIGURE_ARGS+=	--enable-mysql=y \
 			--enable-sqlincdir=${LOCALBASE}/include/mysql \
 			--enable-sqllibdir=${LOCALBASE}/lib/mysql
+.if defined(WITH_MYSQL_LARGE_SITE)
+CONFIGURE_ARGS+=	--enable-large-site=y
+.endif
 .endif
 
 .if defined(DEFAULT_DOMAIN)
 CONFIGURE_ARGS+=	--enable-default-domain=${DEFAULT_DOMAIN}
+.endif
+
+.if defined(WITH_IP_ALIAS)
+CONFIGURE_ARGS+=	--enable-ip-alias-domains=y
+.endif
+
+.if defined(WITH_DELIVER_FILTER)
+CONFIGURE_ARGS+=	--enable-deliver-filter=y
 .endif
 
 #
@@ -128,8 +146,18 @@ pre-configure:
 	${PERL} -pi -e "s/(#define MYSQL_DATABASE.*)vpopmail(.*)/\$$1${WITH_MYSQL_DB}\$$2/" ${WRKSRC}/vmysql.h
 .endif
 .endif
+	${MKDIR} ${VCFGDIR}
 
 post-install:
 	${CHMOD} o-rwx ${PREFIX}/vpopmail/bin ${PREFIX}/vpopmail/lib
+	${MKDIR} ${PREFIX}/vpopmail/etc
+	if [ ! -f "${PREFIX}/vpopmail/etc/tcp.smtp" ]; then \
+		if [ -f "${VCFGDIR}/tcp.smtp" ]; then \
+			${INSTALL_DATA} ${VCFGDIR}/tcp.smtp ${PREFIX}/vpopmail/etc/; \
+		else \
+			${TOUCH} ${PREFIX}/vpopmail/etc/tcp.smtp; \
+		fi; \
+	fi
+	${INSTALL_DATA} ${VCFGDIR}/inc_deps ${VCFGDIR}/lib_deps ${PREFIX}/vpopmail/etc/
 
 .include <bsd.port.mk>
