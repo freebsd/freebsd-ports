@@ -5,7 +5,7 @@
  	    LD_FLAGS=""
  	    LD_SEARCH_FLAGS=""
 -	    TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.0'
-+	    TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.1'
++	    TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.2'
  	
  else
    echo "$ac_t""no" 1>&6
