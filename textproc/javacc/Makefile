@@ -16,6 +16,8 @@ COMMENT=	Compiler compiler for Java; includes tools for building syntax trees
 
 FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
+BROKEN=		Does not build
+
 USE_JAVA=	1.1+
 USE_REINPLACE=	yes
 FETCH_CMD=	${LOCALBASE}/bin/wget
