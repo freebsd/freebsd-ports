@@ -235,7 +235,6 @@
     SUBDIR += snobol
     SUBDIR += spidermonkey
     SUBDIR += spl
-    SUBDIR += squeak2
     SUBDIR += squeak3
     SUBDIR += sr
     SUBDIR += stackless_python
