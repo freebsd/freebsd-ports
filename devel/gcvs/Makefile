@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcvs
-PORTVERSION=	1.0b5
-PORTREVISION=	1
+PORTVERSION=	1.0rc1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cvsgui
@@ -38,8 +37,4 @@ MAN8=		cvsbug.8
 #USE_AUTOMAKE_VER=	14
 #USE_AUTOCONF_VER=	213
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} > 500030
-BROKEN=		conflicts with /usr/include/unistd.h
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- make_configure.orig	Mon Feb  4 12:03:12 2002
-+++ make_configure	Tue Feb  5 18:49:58 2002
+--- make_configure.orig	Thu Nov  7 19:42:00 2002
++++ make_configure	Fri Dec 20 19:23:07 2002
 @@ -1,14 +1,14 @@
 -aclocal
 -autoheader
@@ -11,8 +11,8 @@
  for subdir in $list
  do
  	echo making $subdir/Makefile.in
--	automake --gnu $subdir/Makefile
-+	automake14 --gnu $subdir/Makefile
+-	automake --add-missing --gnu $subdir/Makefile
++	automake14 --add-missing --gnu $subdir/Makefile
  done
  
 -autoconf 
