@@ -1,7 +1,7 @@
-*** src/support/log_server_status.orig	Thu Oct 23 00:30:46 1997
---- src/support/log_server_status	Fri Nov 21 23:05:50 1997
+*** src/support/log_server_status.orig	Tue Mar 31 16:53:50 1998
+--- src/support/log_server_status	Tue Apr 21 17:18:10 1998
 ***************
-*** 63,72 ****
+*** 67,76 ****
   #
   require 'sys/socket.ph';
   
@@ -12,7 +12,7 @@
   
   sub tcp_connect
   {
---- 63,72 ----
+--- 67,76 ----
   #
   require 'sys/socket.ph';
   
@@ -24,7 +24,7 @@
   sub tcp_connect
   {
 ***************
-*** 89,99 ****
+*** 93,103 ****
   ### Main
   
   {
@@ -36,7 +36,7 @@
   	if ($res) {
   		print OUT "$time:-1:-1:-1:-1:$res\n";
   		exit 1;
---- 89,99 ----
+--- 93,103 ----
   ### Main
   
   {

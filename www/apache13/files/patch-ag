@@ -1,7 +1,7 @@
-*** conf/httpd.conf-dist.orig	Wed Feb  4 22:42:29 1998
---- conf/httpd.conf-dist	Fri Feb 20 13:36:27 1998
+*** conf/httpd.conf-dist.orig	Wed Apr  1 17:16:39 1998
+--- conf/httpd.conf-dist	Tue Apr 21 23:43:19 1998
 ***************
-*** 34,40 ****
+*** 42,48 ****
   #  suggested workaround is to create a user www and use that user.
   
   User nobody
@@ -9,7 +9,7 @@
   
   # ServerAdmin: Your address, where problems with the server should be
   # e-mailed.
---- 34,40 ----
+--- 42,48 ----
   #  suggested workaround is to create a user www and use that user.
   
   User nobody
@@ -18,106 +18,53 @@
   # ServerAdmin: Your address, where problems with the server should be
   # e-mailed.
 ***************
-*** 47,53 ****
-  # mounted filesystem then please read the LockFile documentation,
-  # you will save yourself a lot of trouble.
+*** 86,92 ****
+  # The location of the access logfile (Common Logfile Format).
+  # If this does not start with /, ServerRoot is prepended to it.
   
-! ServerRoot @@ServerRoot@@
+! CustomLog logs/access_log common
   
-  # BindAddress: You can support virtual hosts with this option. This option
-  # is used to tell the server which IP address to listen to. It can either
---- 47,53 ----
-  # mounted filesystem then please read the LockFile documentation,
-  # you will save yourself a lot of trouble.
+  # If you would like to have an agent and referer logfile uncomment the
+  # following directives.
+--- 86,92 ----
+  # The location of the access logfile (Common Logfile Format).
+  # If this does not start with /, ServerRoot is prepended to it.
   
-! ServerRoot /usr/local/etc/apache
+! #CustomLog logs/access_log common
   
-  # BindAddress: You can support virtual hosts with this option. This option
-  # is used to tell the server which IP address to listen to. It can either
+  # If you would like to have an agent and referer logfile uncomment the
+  # following directives.
 ***************
-*** 59,79 ****
-  # ErrorLog: The location of the error log file. If this does not start
-  # with /, ServerRoot is prepended to it.
+*** 97,103 ****
+  # If you prefer a single logfile with access, agent and referer information
+  # (Combined Logfile Format) you can use the following directive.
   
-! ErrorLog logs/error_log
-  
-  # TransferLog: The location of the transfer log file. If this does not
-  # start with /, ServerRoot is prepended to it.
-  
-! TransferLog logs/access_log
+! #CustomLog logs/access_log combined
   
   # PidFile: The file the server should log its pid to
-! PidFile logs/httpd.pid
+  PidFile logs/httpd.pid
+--- 97,103 ----
+  # If you prefer a single logfile with access, agent and referer information
+  # (Combined Logfile Format) you can use the following directive.
   
-  # ScoreBoardFile: File used to store internal server process information.
+! CustomLog logs/access_log combined
+  
+  # PidFile: The file the server should log its pid to
+  PidFile logs/httpd.pid
+***************
+*** 106,112 ****
   # Not all architectures require this.  But if yours does (you'll know because
   # this file is created when you run Apache) then you *must* ensure that
   # no two invocations of Apache share the same scoreboard file.
-! ScoreBoardFile logs/apache_status
+! ScoreBoardFile logs/apache_runtime_status
   
   # The LockFile directive sets the path to the lockfile used when Apache
   # is compiled with either USE_FCNTL_SERIALIZED_ACCEPT or
---- 59,81 ----
-  # ErrorLog: The location of the error log file. If this does not start
-  # with /, ServerRoot is prepended to it.
-  
-! ErrorLog /var/log/httpd-error.log
-  
-  # TransferLog: The location of the transfer log file. If this does not
-  # start with /, ServerRoot is prepended to it.
-  
-! TransferLog /var/log/httpd-access.log
-! 
-! #LogFormat "%h %l %u %t \"%r\" %s %b \"%{Referer}i\" \"%{User-Agent}i\""
-  
-  # PidFile: The file the server should log its pid to
-! PidFile /var/run/httpd.pid
-  
-  # ScoreBoardFile: File used to store internal server process information.
+--- 106,112 ----
   # Not all architectures require this.  But if yours does (you'll know because
   # this file is created when you run Apache) then you *must* ensure that
   # no two invocations of Apache share the same scoreboard file.
-! ScoreBoardFile /var/run/apache_runtime_status
+! #ScoreBoardFile logs/apache_runtime_status
   
   # The LockFile directive sets the path to the lockfile used when Apache
   # is compiled with either USE_FCNTL_SERIALIZED_ACCEPT or
-***************
-*** 172,178 ****
-  
-  # To enable the cache as well, edit and uncomment the following lines:
-  
-! #CacheRoot @@ServerRoot@@/proxy
-  #CacheSize 5
-  #CacheGcInterval 4
-  #CacheMaxExpire 24
---- 174,180 ----
-  
-  # To enable the cache as well, edit and uncomment the following lines:
-  
-! #CacheRoot /usr/local/etc/apache/proxy
-  #CacheSize 5
-  #CacheGcInterval 4
-  #CacheMaxExpire 24
-***************
-*** 196,205 ****
-   
-  #<VirtualHost host.some_domain.com>
-  #ServerAdmin webmaster@host.some_domain.com
-! #DocumentRoot /www/docs/host.some_domain.com
-  #ServerName host.some_domain.com
-! #ErrorLog logs/host.some_domain.com-error_log
-! #TransferLog logs/host.some_domain.com-access_log
-  #</VirtualHost>
-  
-  
---- 198,207 ----
-   
-  #<VirtualHost host.some_domain.com>
-  #ServerAdmin webmaster@host.some_domain.com
-! #DocumentRoot /usr/local/www/host.some_domain.com/data
-  #ServerName host.some_domain.com
-! #ErrorLog /var/log/host.some_domain.com-error_log
-! #TransferLog /var/log/host.some_domain.com-access_log
-  #</VirtualHost>
-  
-  

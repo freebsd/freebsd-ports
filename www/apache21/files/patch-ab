@@ -1,0 +1,133 @@
+*** Makefile.tmpl.orig	Tue Apr 14 23:17:36 1998
+--- Makefile.tmpl	Tue Apr 21 23:48:17 1998
+***************
+*** 207,218 ****
+  	$(MKDIR) $(mandir)/man1
+  	$(MKDIR) $(mandir)/man8
+  	$(MKDIR) $(sysconfdir)
+! 	$(MKDIR) $(datadir)/htdocs
+  	$(MKDIR) $(datadir)/icons
+! 	$(MKDIR) $(datadir)/cgi-bin
+  	$(MKDIR) $(localstatedir)/$(localstatesubdir_logs)
+  	$(MKDIR) $(localstatedir)/$(localstatesubdir_run)
+! 	$(MKDIR) $(localstatedir)/proxy
+  	$(MKDIR) $(includedir)
+  	@echo "<=== [mktree]"
+  
+--- 207,218 ----
+  	$(MKDIR) $(mandir)/man1
+  	$(MKDIR) $(mandir)/man8
+  	$(MKDIR) $(sysconfdir)
+! 	$(MKDIR) $(datadir)/data.default
+  	$(MKDIR) $(datadir)/icons
+! 	$(MKDIR) $(datadir)/cgi-bin.default
+  	$(MKDIR) $(localstatedir)/$(localstatesubdir_logs)
+  	$(MKDIR) $(localstatedir)/$(localstatesubdir_run)
+! 	$(MKDIR) $(datadir)/proxy
+  	$(MKDIR) $(includedir)
+  	@echo "<=== [mktree]"
+  
+***************
+*** 311,327 ****
+  install-docroot:
+  	@echo "===> [docroot: Installing initial DocumentRoot files]"
+  	-(cd $(ROOT)/htdocs/ && $(TAR) cf - *) |\
+! 	 (cd $(datadir)/htdocs/ && $(TAR) xf -)
+! 	-find $(datadir)/htdocs/ -type d -exec chmod a+rx {} \;
+! 	-find $(datadir)/htdocs/ -type f -exec chmod a+r {} \;
+  	-(cd $(ROOT)/icons/ && $(TAR) cf - *) |\
+  	 (cd $(datadir)/icons/ && $(TAR) xf -)
+  	-find $(datadir)/icons/ -type d -exec chmod a+rx {} \;
+  	-find $(datadir)/icons/ -type f -exec chmod a+r {} \;
+  	-(cd $(ROOT)/cgi-bin/ && $(TAR) cf - *) |\
+! 	 (cd $(datadir)/cgi-bin/ && $(TAR) xf -)
+! 	-find $(datadir)/cgi-bin/ -type d -exec chmod a+rx {} \;
+! 	-find $(datadir)/cgi-bin/ -type f -exec chmod a+r {} \;
+  	@echo "<=== [docroot]"
+  
+  #   create the initial configuration by providing default files
+--- 311,333 ----
+  install-docroot:
+  	@echo "===> [docroot: Installing initial DocumentRoot files]"
+  	-(cd $(ROOT)/htdocs/ && $(TAR) cf - *) |\
+! 	 (cd $(datadir)/data.default/ && $(TAR) xf -)
+! 	-find $(datadir)/data.default/ -type d -exec chmod a+rx {} \;
+! 	-find $(datadir)/data.default/ -type f -exec chmod a+r {} \;
+! 	if [ ! -d $(datadir)/data ]; then \
+! 		$(CP) -Rp $(datadir)/data.default $(datadir)/data; \
+! 	fi
+  	-(cd $(ROOT)/icons/ && $(TAR) cf - *) |\
+  	 (cd $(datadir)/icons/ && $(TAR) xf -)
+  	-find $(datadir)/icons/ -type d -exec chmod a+rx {} \;
+  	-find $(datadir)/icons/ -type f -exec chmod a+r {} \;
+  	-(cd $(ROOT)/cgi-bin/ && $(TAR) cf - *) |\
+! 	 (cd $(datadir)/cgi-bin.default/ && $(TAR) xf -)
+! 	-find $(datadir)/cgi-bin.default/ -type d -exec chmod a+rx {} \;
+! 	-find $(datadir)/cgi-bin.default/ -type f -exec chmod a+r {} \;
+! 	if [ ! -d $(datadir)/cgi-bin ]; then \
+! 		$(CP) -Rp $(datadir)/cgi-bin.default $(datadir)/cgi-bin; \
+! 	fi
+  	@echo "<=== [docroot]"
+  
+  #   create the initial configuration by providing default files
+***************
+*** 335,351 ****
+  		 echo ""; \
+  		 cat $(ROOT)/conf/$$conf-dist ) |\
+      	sed -e '/# LoadModule/r .install.conf' \
+!     	    -e 's;@@ServerRoot@@/htdocs;$(datadir)/htdocs;' \
+!     	    -e 's;@@ServerRoot@@/htdocs;$(datadir)/htdocs;' \
+          	-e 's;@@ServerRoot@@/icons;$(datadir)/icons;' \
+          	-e 's;@@ServerRoot@@/cgi-bin;$(datadir)/cgi-bin;' \
+!         	-e 's;@@ServerRoot@@/proxy;$(localstatedir)/proxy;' \
+          	-e 's;@@ServerRoot@@;$(prefix);' \
+          	-e 's;logs/accept.lock;$(localstatedir)/$(localstatesubdir_run)/httpd.lock;' \
+          	-e 's;logs/apache_status;$(localstatedir)/$(localstatesubdir_run)/httpd.scoreboard;' \
+          	-e 's;logs/httpd.pid;$(localstatedir)/$(localstatesubdir_run)/httpd.pid;' \
+!         	-e 's;logs/access_log;$(localstatedir)/$(localstatesubdir_logs)/access_log;' \
+!         	-e 's;logs/error_log;$(localstatedir)/$(localstatesubdir_logs)/error_log;' \
+          	>.install.tmp && \
+  		echo "$(INSTALL_DATA) .install.tmp $(sysconfdir)/$$conf.default"; \
+  		$(INSTALL_DATA) .install.tmp $(sysconfdir)/$$conf.default; \
+--- 341,356 ----
+  		 echo ""; \
+  		 cat $(ROOT)/conf/$$conf-dist ) |\
+      	sed -e '/# LoadModule/r .install.conf' \
+! 	    -e 's;@@ServerRoot@@/htdocs;$(datadir)/data;' \
+          	-e 's;@@ServerRoot@@/icons;$(datadir)/icons;' \
+          	-e 's;@@ServerRoot@@/cgi-bin;$(datadir)/cgi-bin;' \
+! 		-e 's;@@ServerRoot@@/proxy;$(datadir)/proxy;' \
+          	-e 's;@@ServerRoot@@;$(prefix);' \
+          	-e 's;logs/accept.lock;$(localstatedir)/$(localstatesubdir_run)/httpd.lock;' \
+          	-e 's;logs/apache_status;$(localstatedir)/$(localstatesubdir_run)/httpd.scoreboard;' \
+          	-e 's;logs/httpd.pid;$(localstatedir)/$(localstatesubdir_run)/httpd.pid;' \
+! 		-e 's;logs/access_log;$(localstatedir)/$(localstatesubdir_logs)/httpd-access.log;' \
+! 		-e 's;logs/error_log;$(localstatedir)/$(localstatesubdir_logs)/httpd-error.log;' \
+          	>.install.tmp && \
+  		echo "$(INSTALL_DATA) .install.tmp $(sysconfdir)/$$conf.default"; \
+  		$(INSTALL_DATA) .install.tmp $(sysconfdir)/$$conf.default; \
+***************
+*** 356,363 ****
+  			echo "[PRESERVING EXISTING CONFIG FILE: $(sysconfdir)/$$conf]"; \
+  		fi; \
+  	done
+! 	$(CP) $(ROOT)/conf/mime.types $(sysconfdir)/mime.types
+! 	$(CP) $(ROOT)/conf/magic $(sysconfdir)/magic
+  	@echo "<=== [config]"
+  
+  
+--- 361,374 ----
+  			echo "[PRESERVING EXISTING CONFIG FILE: $(sysconfdir)/$$conf]"; \
+  		fi; \
+  	done
+! 	$(INSTALL_DATA) $(ROOT)/conf/mime.types $(sysconfdir)/mime.types.default
+! 	if [ ! -f "$(sysconfdir)/mime.types" ]; then \
+! 		$(INSTALL_DATA) $(ROOT)/conf/mime.types $(sysconfdir)/mime.types; \
+! 	fi
+! 	$(INSTALL_DATA) $(ROOT)/conf/magic $(sysconfdir)/magic.default
+! 	if [ ! -f "$(sysconfdir)/magic" ]; then \
+! 		$(INSTALL_DATA) $(ROOT)/conf/magic $(sysconfdir)/magic; \
+! 	fi
+  	@echo "<=== [config]"
+  
+  
