@@ -7,11 +7,10 @@
 
 PORTNAME=	fox
 PORTVERSION=	${MAJORVER}.${SHVER}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
-		ftp://ftp.cfdrc.com/pub/FOX/ \
-		ftp://SunSITE.Informatik.RWTH-Aachen.DE/pub/Linux/fox/ \
 		http://fresh.t-systems-sfr.com/unix/src/misc/
 
 MAINTAINER?=	ports@FreeBSD.org
