@@ -70,6 +70,7 @@
     SUBDIR += libgdamm
     SUBDIR += libgnomedb
     SUBDIR += libiodbc
+    SUBDIR += libmemcache
     SUBDIR += libodbc++
     SUBDIR += libsdb
     SUBDIR += libudbc
