@@ -47,8 +47,7 @@ pre-install:
 
 do-install:
 	${CP} ${FILESDIR}/Makefile ${PREFIX}/lib/lmbench
-	rm ${WRKSRC}/scripts/*.orig
-	tar -C ${WRKSRC} -cf - Results bin scripts | \
+	tar --exclude \*.orig -C ${WRKSRC} -cf - Results bin scripts | \
 	  tar -C ${PREFIX}/lib/lmbench -xf -
 .for man in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/doc/${man} ${PREFIX}/man/man1
