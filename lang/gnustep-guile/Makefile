@@ -10,6 +10,9 @@ PORTVERSION=	1.1.4
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	libs
+.if defined(WITHOUT_X11)
+PKGNAMESUFFIX?=		-nox11
+.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep interface to the GUILE scheme interpreter
@@ -32,12 +35,13 @@ PLIST_SUB+=	GUILE_VER="${GUILE_VER}"
 MAN1=	greg.1
 
 .if defined(WITHOUT_X11)
-PKGNAMESUFFIX?=		-nox11
 USE_GNUSTEP_BASE=	yes
 PLIST_SUB+=		USEX11="@comment "
+CONFLICTS?=		gnustep-guile-1.*
 .else
 USE_GNUSTEP_BACK=	yes
 PLIST_SUB+=		USEX11=""
+CONFLICTS?=		gnustep-guile-nox11-1.*
 .endif
 
 .include <bsd.port.pre.mk>
