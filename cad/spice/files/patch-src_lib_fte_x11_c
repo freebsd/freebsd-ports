@@ -1,5 +1,5 @@
---- src/lib/fte/x11.c.orig	Thu Jul 17 10:55:00 2003
-+++ src/lib/fte/x11.c	Thu Jul 17 11:39:05 2003
+--- src/lib/fte/x11.c.orig	Wed Apr 14 21:44:56 1993
++++ src/lib/fte/x11.c	Sun Aug 15 19:06:31 2004
 @@ -120,7 +120,10 @@
  	/* "invert" works better than "xor" for B&W */
  
@@ -30,11 +30,7 @@
  initcolors(graph)
      GRAPH *graph;
  {
-@@ -805,11 +808,13 @@
- {
- 
- 	GRAPH *graph = (GRAPH *) client_data;
-+	Widget w;
+@@ -805,8 +808,9 @@
  
  	/* Iplots are done asynchronously */
  	DEVDEP(graph).isopen = 0;
@@ -45,7 +41,7 @@
  
  }
  
-@@ -945,7 +950,8 @@
+@@ -942,7 +946,8 @@
  	            1 << ConnectionNumber(display);
  
  	      /* block on ConnectionNumber and request->fp */
@@ -55,7 +51,7 @@
  
  	      /* handle X events first */
  	      if (readfds & (1 << ConnectionNumber(display))) {
-@@ -998,7 +1004,8 @@
+@@ -995,7 +1000,8 @@
  
  }
  
