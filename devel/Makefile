@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.40 1997/01/09 12:40:00 asami Exp $
+# $Id: Makefile,v 1.41 1997/01/25 09:09:57 obrien Exp $
 #
 
     SUBDIR += SWIG
@@ -9,6 +9,7 @@
     SUBDIR += cutils
     SUBDIR += cxref
     SUBDIR += dmake
+    SUBDIR += fdd
     SUBDIR += gcc11
     SUBDIR += gdb
     SUBDIR += gdbtk
