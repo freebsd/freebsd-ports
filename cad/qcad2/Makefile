@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	qcad
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	cad
-MASTER_SITES=	http://download.sourceforge.net/qcad/
+MASTER_SITES=	http://www.qcad.org/archives/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	will@FreeBSD.org
@@ -16,7 +16,7 @@ MAINTAINER=	will@FreeBSD.org
 USE_XLIB=	yes
 MAKE_ENV=	CC="${CXX}"
 USE_QT2=	yes
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 QCADDIR=	${PREFIX}/lib/qcad
 QCADDOCDIR=	${PREFIX}/share/doc/qcad
