@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.16 2003/08/16 20:36:50 marcus Exp $
+# $Id: portlint.pl,v 1.18 2003/10/26 21:24:08 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 4;
-my $micro = 4;
+my $micro = 5;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -444,9 +444,21 @@ sub checkplist {
 		if ($_ =~ /^\@/) {
 			if ($_ =~ /^\@(cwd|cd)[ \t]+(\S+)/) {
 				$curdir = $2;
-			} elsif ($_ =~ /^\@unexec[ \t]+rmdir/) {
+			} elsif ($_ =~ /^\@unexec[ \t]+rm[ \t]/) {
+				if ($_ !~ /%D/) {
+				&perror("WARN: pkg-plist:$. use \"%D\" to specify prefix.");
+				}
 				if ($_ !~ /true$/) {
-				&perror("WARN: use \"\@dirrm\" ".
+				&perror("WARN: pkg-plist:$. add \"2>&1 ".
+					">/dev/null || true\" ".
+					"to \"\@unexec rm\".");
+				}
+			} elsif ($_ =~ /^\@unexec[ \t]+rmdir/) {
+				if ($_ !~ /%D/) {
+				&perror("WARN: pkg-plist:$. use \"%D\" to specify prefix.");
+				}
+				if ($_ !~ /true$/) {
+				&perror("WARN: pkg-plist:$. use \"\@dirrm\" ".
 					"instead of \"\@unexec rmdir\".");
 				}
 			} elsif ($_ =~ /^\@exec[ \t]+scrollkeeper-install[ \t]+-q\s+(\S+)\s+.+$/) {
@@ -543,6 +555,9 @@ sub checkplist {
 
 		if ($_ =~ /^(\%\%PORTDOCS\%\%)?share\/doc\//) {
 			&perror("WARN: $file $.: consider using DOCSDIR macro");
+			$sharedocused++;
+		} elsif ($_ =~ /^(\%\%PORTDOCS\%\%)?\%\%DOCSDIR\%\%/) {
+			$sharedocused++;
 		}
 
 		if ($_ =~ /^share\/examples\//) {
@@ -844,6 +859,16 @@ sub checkmakefile {
 	}
 
 	#
+	# whole file: USE_* as a user-settable option
+	#
+	print "OK: checking for USE_* as a user-settable option.\n" if ($verbose);
+	while ($whole =~ /\n\s*\.\s*(?:el)?if[^\n]*?\b(\w*USE_)(\w+)(?\![^\n]*\n#?\.error)/g) {
+		&perror("WARN: is $1$2 a user-settable option? ".
+			"Consider using WITH_$2 instead.")
+		if ($1.$2 ne 'USE_GCC');
+	}
+
+	#
 	# whole file: NO_CHECKSUM
 	#
 	$whole =~ s/\n#[^\n]*/\n/g;
@@ -875,6 +900,9 @@ sub checkmakefile {
 		}
 	}
 	print "OK: checking for use of NOPORTDOCS.\n" if ($verbose);
+	if ($whole =~ /NOPORTSDOC/) {
+		&perror("WARN: NOPORTSDOC found. Do you mean NOPORTDOCS?");
+	}
 	if ($sharedocused && $whole !~ /defined\(NOPORTDOCS\)/
 	 && $whole !~ m#(\$[\{\(]PREFIX[\}\)]|$localbase)/share/doc#) {
 		&perror("WARN: use \".if !defined(NOPORTDOCS)\" to wrap ".
@@ -1117,6 +1145,12 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 	if (@cat == 0) {
 		&perror("FATAL: CATEGORIES left blank. set it to \"misc\"".
 		" if nothing seems apropriate.");
+	}
+
+	if ($committer && $makevar{'.CURDIR'} =~ m'/([^/]+)/[^/]+/?$') {
+		if ($cat[0] ne $1) {
+			&perror("FATAL: category \"$1\" must be listed first");
+		}
 	}
 
 #MICHAEL: can these three lang cat checks be combined?
@@ -1728,6 +1762,7 @@ sub checkextra {
 
 	$str = "\n" . $str if ($str !~ /^\n/);
 	$str =~ s/\n#[^\n]*/\n/g;
+	$str =~ s/\n\.[^\n]+/\n/g;
 	$str =~ s/\n\n+/\n/g;
 	$str =~ s/^\s+//;
 	$str =~ s/\s+$//;
@@ -1793,7 +1828,7 @@ sub checkearlier {
 
 	print "OK: checking items that has to appear earlier.\n" if ($verbose);
 	foreach my $i (@varnames) {
-		if ($str =~ /\n$i[?+]?=/) {
+		if ($str =~ /\n$i\??=/) {
 			&perror("WARN: \"$i\" has to appear earlier in $file.");
 		}
 	}
