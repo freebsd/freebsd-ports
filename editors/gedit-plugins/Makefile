@@ -13,9 +13,9 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Plugins for gedit2
+COMMENT=	Plugins for gedit
 
-BUILD_DEPENDS=	gedit:${PORTSDIR}/editors/gedit2
+BUILD_DEPENDS=	gedit:${PORTSDIR}/editors/gedit
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes

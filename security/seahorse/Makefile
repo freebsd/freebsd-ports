@@ -37,8 +37,8 @@ OPTIONS=	GEDIT "Enable the gedit plug-in" on
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GEDIT)
-BUILD_DEPENDS+=	gedit:${PORTSDIR}/editors/gedit2
-RUN_DEPENDS+=	gedit:${PORTSDIR}/editors/gedit2
+BUILD_DEPENDS+=	gedit:${PORTSDIR}/editors/gedit
+RUN_DEPENDS+=	gedit:${PORTSDIR}/editors/gedit
 PLIST_SUB+=	GEDIT=""
 .else
 PLIST_SUB+=	GEDIT="@comment "

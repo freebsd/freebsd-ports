@@ -60,8 +60,8 @@
     SUBDIR += fpc-ide
     SUBDIR += fte
     SUBDIR += gate
+    SUBDIR += gedit
     SUBDIR += gedit-plugins
-    SUBDIR += gedit2
     SUBDIR += ghex2
     SUBDIR += glimmer
     SUBDIR += gmanedit
