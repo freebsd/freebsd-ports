@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.version6.net/misc/
 
-MAINTAINER=	osa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nserver for the Nokia 9000 and 9110 Communicator
 # Original site http://www.users.globalnet.co.uk/~syrinx/9110/nserver.html
 # doesn't exist anymore
