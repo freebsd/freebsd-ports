@@ -28,13 +28,7 @@ USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
 
-.if !defined(PICFLAG)
-.if ${MACHINE_ARCH} == "sparc64"
-PICFLAG=-fPIC
-.else
-PICFLAG=-fpic
-.endif
-.endif
+PICFLAG!= ${MAKE} -f bsd.lib.mk -V PICFLAG 
 
 pre-patch:
 	@${INSTALL_DATA} ${WRKSRC}/setup/Rules.linux ${WRKSRC}/Rules.make
