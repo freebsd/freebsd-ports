@@ -1,3 +1,0 @@
-bin/tiff2png
-%%PORTDOCS%%share/doc/tiff2png/README
-%%PORTDOCS%%@dirrm share/doc/tiff2png
