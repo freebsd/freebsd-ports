@@ -131,11 +131,10 @@ lib/libvdkdclock.a
 lib/libvdkdclock.la
 lib/libvdkdclock.so
 lib/libvdkdclock.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/locale/da/LC_MESSAGES/vdkbuilder.mo
 share/locale/de/LC_MESSAGES/vdkbuilder.mo
 share/locale/it/LC_MESSAGES/vdkbuilder.mo
+share/pixmaps/vdkb.png
 share/vdkb/res/AUTHORS
 share/vdkb/res/COPYING
 share/vdkb/res/ChangeLog
@@ -166,6 +165,7 @@ share/vdkb/res/tutor2.htm
 share/vdkb/res/tutor3.htm
 share/vdkb/res/tutor4.htm
 share/vdkb/res/vdkapp.htm
+share/vdkb/res/vdkb.png
 share/vdkb/res/vdkbide.defaults
 share/vdkb/res/vdkbmaker.gif
 share/vdkb/res/vdkbrc
@@ -178,5 +178,6 @@ share/vdkb/res/vdkobject.htm
 share/vdkb/res/vdkpaned.htm
 share/vdkb/res/vdkscrolled.htm
 share/vdkb/res/wi1.gif
+@dirrm include/vdkb
 @dirrm share/vdkb/res
 @dirrm share/vdkb

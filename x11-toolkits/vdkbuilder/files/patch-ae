@@ -1,0 +1,11 @@
+--- vdkbuilder/vdkb_menuitem.cc.orig	Sat Sep 16 14:35:09 2000
++++ vdkbuilder/vdkb_menuitem.cc	Sat Sep 16 14:36:14 2000
+@@ -808,7 +808,7 @@
+ bool
+ VDKBMenuItem::OnToggleBydata(VDKObject*)
+ {
+-  SetPropValue(GLYPH_BYDATA, bydata->Checked ? "yes" : "no");
++  SetPropValue(GLYPH_BYDATA, (char*)(bydata->Checked ? "yes" : "no"));
+   inspector->FormNeedToBeChanged();
+   return true;
+ }
