@@ -15,12 +15,12 @@ MASTER_SITE_SUBDIR=	contrib
 DISTFILES=	# later
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	# none
-EXTRACT_AFTER_ARGS=	> ${WRKSRC}/idea.c
 
 MAINTAINER=	dinoex@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
 
+EXTRACT_AFTER_ARGS=	> ${WRKSRC}/idea.c
 RESTRICTED=	"IDEA is Patented in the USA and many European countries"
 
 NO_WRKSUBDIR=	yes
