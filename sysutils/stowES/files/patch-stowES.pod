@@ -1,0 +1,11 @@
+--- stowES.pod.orig	Sat Mar 17 18:03:45 2001
++++ stowES.pod	Sat Mar 17 18:04:05 2001
+@@ -583,7 +583,7 @@
+ You may store any option you would write on the command line in a config
+ file. These options are pushed before the arguments you gave on the
+ command line, so you can overwrite options given in a config file.
+-Standard configs may be placed in "/etc/stowESrc" and/or "~/.stowESrc".
++Standard configs may be placed in "%%PREFIX%%/etc/stowESrc" and/or "~/.stowESrc".
+ 
+ The system wide configuration file is read first.
+ 

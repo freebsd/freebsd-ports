@@ -1,0 +1,10 @@
+stowES (stow Enhancement Script) is a Perl script which tries to ease the
+use of the "stow" packaging program and software which can be compiled
+and installed with autoconf. It automates the compilation and installation
+of software packages by calling tar, configure, make, and stow with the
+appropriate arguments.  Furthermore it helps maintaining your installed
+software by creating library dependencies and checksums, and providing
+various search functions. It is also possible to create tar-archives out
+of your installed packages.
+
+WWW: http://www.inf.tu-dresden.de/~al10/stowES/

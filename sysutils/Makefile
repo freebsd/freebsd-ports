@@ -111,6 +111,7 @@
     SUBDIR += stat
     SUBDIR += stmpclean
     SUBDIR += stow
+    SUBDIR += stowES
     SUBDIR += su2
     SUBDIR += symlinks
     SUBDIR += syslog-ng

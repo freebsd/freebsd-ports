@@ -1,0 +1,11 @@
+--- stowES.in.orig	Sat Mar 17 17:57:20 2001
++++ stowES.in	Sat Mar 17 18:00:33 2001
+@@ -90,7 +90,7 @@
+ my %ParamConfigure;
+ my %ParamMake;
+ 
+-my @rcFiles = ('/etc/stowESrc', '~/.stowESrc');
++my @rcFiles = ('%%PREFIX%%/etc/stowESrc', '~/.stowESrc');
+ my @ConfigFiles = ();  # config-files given by the user
+ 
+ my %Progs = ( make     => 'make', 
