@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	info_to_html
-PORTVERSION=	0.9
+PORTVERSION=	0.9.5
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://www.mons.net/software/
 
