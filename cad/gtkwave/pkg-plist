@@ -1,6 +1,9 @@
 @comment $FreeBSD$
 bin/gtkwave
 bin/vcd2lxt
+lib/gtkwave/reader_hhh.a
+lib/gtkwave/reader_hhh.so
+lib/gtkwave/reader_hhh.so.0
 lib/gtkwave/reader_lxt.a
 lib/gtkwave/reader_lxt.so
 lib/gtkwave/reader_lxt.so.0
@@ -10,6 +13,7 @@ lib/gtkwave/reader_out.so.0
 lib/gtkwave/reader_vcd.a
 lib/gtkwave/reader_vcd.so
 lib/gtkwave/reader_vcd.so.0
+@dirrm lib/gtkwave
 %%PORTDOCS%%%%DOCSDIR%%/data_format.png
 %%PORTDOCS%%%%DOCSDIR%%/edit_menu.png
 %%PORTDOCS%%%%DOCSDIR%%/file_menu.png
@@ -35,33 +39,32 @@ lib/gtkwave/reader_vcd.so.0
 %%PORTDOCS%%%%DOCSDIR%%/w9.png
 %%PORTDOCS%%%%DOCSDIR%%/wps.png
 %%PORTDOCS%%%%DOCSDIR%%/zoom_submenu.png
-%%PORTDOCS%%share/examples/gtkwave/agonynan_bccom.vcd.gz
-%%PORTDOCS%%share/examples/gtkwave/pci.vcd.gz
-%%PORTDOCS%%share/examples/gtkwave/simple.vcd
-%%PORTDOCS%%share/examples/gtkwave/sram.vcd.gz
-share/gtkwave/pixmaps/add_signals.xpm
-share/gtkwave/pixmaps/insert_trace.xpm
-share/gtkwave/pixmaps/menu_16.xpm
-share/gtkwave/pixmaps/next_page.xpm
-share/gtkwave/pixmaps/prev_page.xpm
-share/gtkwave/pixmaps/stock_cut.xpm
-share/gtkwave/pixmaps/stock_first.xpm
-share/gtkwave/pixmaps/stock_last.xpm
-share/gtkwave/pixmaps/stock_left.xpm
-share/gtkwave/pixmaps/stock_open_16.xpm
-share/gtkwave/pixmaps/stock_paste.xpm
-share/gtkwave/pixmaps/stock_redo.xpm
-share/gtkwave/pixmaps/stock_redo_16.xpm
-share/gtkwave/pixmaps/stock_right.xpm
-share/gtkwave/pixmaps/stock_undo.xpm
-share/gtkwave/pixmaps/stock_zoom_1.xpm
-share/gtkwave/pixmaps/stock_zoom_fit.xpm
-share/gtkwave/pixmaps/stock_zoom_in.xpm
-share/gtkwave/pixmaps/stock_zoom_out.xpm
-share/gtkwave/pixmaps/time_16.xpm
-share/gtkwave/pixmaps/vcd_mime.xpm
-@dirrm share/gtkwave/pixmaps
-@dirrm share/gtkwave
-%%PORTDOCS%%@dirrm share/examples/gtkwave
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/gtkwave
+%%EXAMPLESDIR%%/agonynan_bccom.vcd.gz
+%%EXAMPLESDIR%%/pci.vcd.gz
+%%EXAMPLESDIR%%/simple.vcd
+%%EXAMPLESDIR%%/sram.vcd.gz
+@dirrm %%EXAMPLESDIR%%
+%%DATADIR%%/pixmaps/insert_trace.xpm
+%%DATADIR%%/pixmaps/menu_16.xpm
+%%DATADIR%%/pixmaps/next_page.xpm
+%%DATADIR%%/pixmaps/prev_page.xpm
+%%DATADIR%%/pixmaps/stock_cut.xpm
+%%DATADIR%%/pixmaps/stock_first.xpm
+%%DATADIR%%/pixmaps/stock_last.xpm
+%%DATADIR%%/pixmaps/stock_left.xpm
+%%DATADIR%%/pixmaps/stock_open_16.xpm
+%%DATADIR%%/pixmaps/stock_paste.xpm
+%%DATADIR%%/pixmaps/stock_redo.xpm
+%%DATADIR%%/pixmaps/stock_redo_16.xpm
+%%DATADIR%%/pixmaps/stock_right.xpm
+%%DATADIR%%/pixmaps/stock_undo.xpm
+%%DATADIR%%/pixmaps/stock_zoom_1.xpm
+%%DATADIR%%/pixmaps/stock_zoom_fit.xpm
+%%DATADIR%%/pixmaps/stock_zoom_in.xpm
+%%DATADIR%%/pixmaps/stock_zoom_out.xpm
+%%DATADIR%%/pixmaps/time_16.xpm
+%%DATADIR%%/pixmaps/vcd_mime.xpm
+%%DATADIR%%/pixmaps/wave_alert.xpm
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%

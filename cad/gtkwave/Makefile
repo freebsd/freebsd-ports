@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	gtkwave
-PORTVERSION=	2.0.0.p3
+PORTVERSION=	2.0.0.p4
 PORTEPOCH=	2
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.cs.man.ac.uk/pub/amulet/gtkwave/2.0/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	watchman@ludd.luth.se
 COMMENT=	Electronic Waveform Viewer
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
@@ -28,16 +28,19 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${PREFIX}/lib/gtkwave
 
+DOCS=		doc/*.html doc/*.png doc/*.ps
+EXAMPLES=	examples/*.gz examples/*.vcd
+
 post-patch:
 	@${GREP} -lR "heapsort" ${WRKSRC}/src | ${XARGS} \
 		${REINPLACE_CMD} -e "s/heapsort/hsort/g"
 
 post-install:
+	@${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/doc ; ${INSTALL_DATA} *.png *.ps *.html ${DOCSDIR})
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples ; ${INSTALL_DATA} *.gz *.vcd ${EXAMPLESDIR})
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
