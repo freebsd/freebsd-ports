@@ -1,0 +1,16 @@
+NTE is a shared text editor designed for use on the Mbone.   It is
+not a word processor  and it is not a whiteboard - if you want  a
+whiteboard, wb from LBL is a much better whiteboard.
+
+Using NTE can be very interactive - unless you lock a block of
+text, anyone else in your session can edit that text or delete it.
+This is intentional. Many people can (if they wish) edit the same
+document simultaneously. Many people can even edit the same block
+of text simultaneously, but if  more than one person tries to edit
+the same line at one time, a conflict will occur, which results in
+only one of the changes being preserved.
+
+In general, it is up to you how you use NTE.  You must develop
+human protocols to be able to collaborate, even in face-to-face
+meetings, and NTE is no exception.  It will work well if you
+cooperate, and not if you don't.

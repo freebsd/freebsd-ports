@@ -1,0 +1,5 @@
+if [ ! -d ${WRKSRC}/freebsd ]; then
+	mkdir ${WRKSRC}/freebsd
+fi
+cat ${WRKSRC}/src/Makefile.template ${FILESDIR}/Makefile.freebsd > ${WRKSRC}/freebsd/Makefile
+cp ${FILESDIR}/Makefile.work ${WRKSRC}/Makefile

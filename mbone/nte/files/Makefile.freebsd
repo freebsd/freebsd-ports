@@ -1,0 +1,15 @@
+CC=cc
+INCLUDES=-I${LOCALBASE}/include -I${X11BASE}/include -I${TK_SRC}/generic
+LIB_DIR=${LOCALBASE}/lib
+LIBS=-L${LIB_DIR} -ltk41 -ltcl75 -lm -L${X11BASE}/lib -lX11
+CFLAGS+=-ggdb $(INCLUDES) -DFREEBSD -DPROTOTYPES -DHAVE_NO_VALUES_H -DHAVE_LIMITS_H -DHAVE_UNISTD_H -DMAXINT=INT_MAX -DDEFINED_ERRLIST
+# for search.h
+CFLAGS+=-I../src
+
+OBJS+=hsearch.o
+
+install:	all
+	install -c -s -m 755 -o bin -g bin nt ${PREFIX}/bin
+
+clean:
+	rm *.o *.tcl *.ehtml tcl2c

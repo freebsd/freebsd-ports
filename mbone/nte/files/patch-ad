@@ -1,0 +1,11 @@
+--- src/qfdes/qfDES-memory.c.orig	Thu Oct 31 14:39:50 1996
++++ src/qfdes/qfDES-memory.c	Thu Oct 31 14:41:52 1996
+@@ -12,7 +12,7 @@
+ 
+ #include <stdio.h>
+ #include <memory.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <ctype.h>
+ #include "qfDES.h"
+ 

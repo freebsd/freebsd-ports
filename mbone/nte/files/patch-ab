@@ -1,0 +1,20 @@
+--- src/Makefile.template.orig	Thu Oct 31 14:35:42 1996
++++ src/Makefile.template	Thu Oct 31 14:36:23 1996
+@@ -168,13 +168,13 @@
+ 	$(CC) $(CFLAGS) -c libs.c
+ 
+ ../src/help/blocks.ehtml: text2html ../src/help/blocks.html
+-	text2html < ../src/help/blocks.html > ../src/help/blocks.ehtml
++	./text2html < ../src/help/blocks.html > ../src/help/blocks.ehtml
+ ../src/help/bindings.ehtml: text2html ../src/help/bindings.html
+-	text2html < ../src/help/bindings.html > ../src/help/bindings.ehtml
++	./text2html < ../src/help/bindings.html > ../src/help/bindings.ehtml
+ ../src/help/menus.ehtml: text2html ../src/help/menus.html
+-	text2html < ../src/help/menus.html > ../src/help/menus.ehtml
++	./text2html < ../src/help/menus.html > ../src/help/menus.ehtml
+ ../src/help/xresources.ehtml: text2html ../src/help/xresources.html
+-	text2html < ../src/help/xresources.html > ../src/help/xresources.ehtml
++	./text2html < ../src/help/xresources.html > ../src/help/xresources.ehtml
+ 
+ 
+ 
