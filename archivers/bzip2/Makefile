@@ -4,7 +4,7 @@
 # Date created:		19 Nov 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.7 1998/10/30 07:52:12 tg Exp $
+# $Id: Makefile,v 1.8 1998/11/03 07:05:20 obrien Exp $
 #
 
 DISTNAME=	bzip2-0.9.0c
@@ -15,11 +15,12 @@ MAINTAINER=	obrien@FreeBSD.org
 
 FETCH_BEFORE_ARGS=	-b
 MAN1=		bzip2.1
-MLINKS=		bzip2.1 bunzip2.1
+MLINKS=		bzip2.1 bunzip2.1 bzip2.1 bzcat.1 bzip2.1 bzip2recover.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bzip2 ${PREFIX}/bin
 	${LN} -sf ${PREFIX}/bin/bzip2 ${PREFIX}/bin/bunzip2
+	${LN} -sf ${PREFIX}/bin/bzip2 ${PREFIX}/bin/bzcat
 	${INSTALL_PROGRAM} ${WRKSRC}/bzip2recover ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/libbz2.a ${PREFIX}/lib
 	${INSTALL_MAN} ${WRKSRC}/bzip2.1 ${PREFIX}/man/man1
