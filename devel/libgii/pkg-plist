@@ -18,7 +18,6 @@ include/ggi/input/lin_kbd.h
 include/ggi/input/xwin.h
 include/ggi/internal/gii-dl.h
 include/ggi/internal/gii.h
-include/ggi/internal/gii_debug.h
 include/ggi/keyboard.h
 include/ggi/system.h
 lib/ggi/filter/keytrans.la
