@@ -16,7 +16,7 @@ DISTNAME=	fp-freebsd-ws-${PORTVERSION}
 MAINTAINER=	tim@bishnet.net
 COMMENT=	F-Prot Antivirus for BSD Workstations
 
-BUILD_DEPENDS=	${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww
 
 NO_PACKAGE=	Free for personal use only
 NO_CDROM=	Free for personal use only
