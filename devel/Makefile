@@ -443,6 +443,7 @@
     SUBDIR += pcl-cvs-emacs
     SUBDIR += pcl-cvs-emacs20
     SUBDIR += pcre
+    SUBDIR += pear
     SUBDIR += pedisassem
     SUBDIR += perforce
     SUBDIR += perltidy

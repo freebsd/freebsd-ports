@@ -1,0 +1,111 @@
+%%PEARDIR%%/Archive/Tar.php
+%%PEARDIR%%/Benchmark/Iterate.php
+%%PEARDIR%%/Benchmark/Timer.php
+%%PEARDIR%%/Cache/Container/db.php
+%%PEARDIR%%/Cache/Container/dbx.php
+%%PEARDIR%%/Cache/Container/file.php
+%%PEARDIR%%/Cache/Container/phplib.php
+%%PEARDIR%%/Cache/Container/shm.php
+%%PEARDIR%%/Cache/Error.php
+%%PEARDIR%%/Cache/Container.php
+%%PEARDIR%%/Cache/DB.php
+%%PEARDIR%%/Cache/Function.php
+%%PEARDIR%%/Cache/Graphics.php
+%%PEARDIR%%/Cache/Output.php
+%%PEARDIR%%/Cache/OutputCompression.php
+%%PEARDIR%%/Console/Getopt.php
+%%PEARDIR%%/Crypt/CBC.php
+%%PEARDIR%%/Crypt/HCEMD5.php
+%%PEARDIR%%/Date/Calc.php
+%%PEARDIR%%/Date/Human.php
+%%PEARDIR%%/DB/common.php
+%%PEARDIR%%/DB/ibase.php
+%%PEARDIR%%/DB/ifx.php
+%%PEARDIR%%/DB/msql.php
+%%PEARDIR%%/DB/mssql.php
+%%PEARDIR%%/DB/mysql.php
+%%PEARDIR%%/DB/oci8.php
+%%PEARDIR%%/DB/odbc.php
+%%PEARDIR%%/DB/pgsql.php
+%%PEARDIR%%/DB/storage.php
+%%PEARDIR%%/DB/sybase.php
+%%PEARDIR%%/File/Find.php
+%%PEARDIR%%/File/Passwd.php
+%%PEARDIR%%/File/SearchReplace.php
+%%PEARDIR%%/HTML/Common.php
+%%PEARDIR%%/HTML/Form.php
+%%PEARDIR%%/HTML/IT.php
+%%PEARDIR%%/HTML/ITX.php
+%%PEARDIR%%/HTML/IT_Error.php
+%%PEARDIR%%/HTML/Page.php
+%%PEARDIR%%/HTML/Processor.php
+%%PEARDIR%%/HTML/Select.php
+%%PEARDIR%%/HTML/Table.php
+%%PEARDIR%%/HTTP/Compress.php
+%%PEARDIR%%/Image/Remote.php
+%%PEARDIR%%/Log/composite.php
+%%PEARDIR%%/Log/file.php
+%%PEARDIR%%/Log/mcal.php
+%%PEARDIR%%/Log/Observer.php
+%%PEARDIR%%/Log/sql.php
+%%PEARDIR%%/Log/syslog.php
+%%PEARDIR%%/Mail/RFC822.php
+%%PEARDIR%%/Mail/sendmail.php
+%%PEARDIR%%/Mail/smtp.php
+%%PEARDIR%%/Math/Fraction.php
+%%PEARDIR%%/Math/Util.php
+%%PEARDIR%%/Net/Curl.php
+%%PEARDIR%%/Net/Dig.php
+%%PEARDIR%%/Net/SMTP.php
+%%PEARDIR%%/Net/Socket.php
+%%PEARDIR%%/Numbers/Roman.php
+%%PEARDIR%%/Payment/Verisign.php
+%%PEARDIR%%/PEAR/Common.php
+%%PEARDIR%%/PEAR/Installer.php
+%%PEARDIR%%/PEAR/Packager.php
+%%PEARDIR%%/PEAR/Uploader.php
+%%PEARDIR%%/Schedule/At.php
+%%PEARDIR%%/XML/Parser.php
+%%PEARDIR%%/build/pear.m4
+%%PEARDIR%%/build/fastgen.sh
+%%PEARDIR%%/build/library.mk
+%%PEARDIR%%/build/ltlib.mk
+%%PEARDIR%%/build/mkdep.awk
+%%PEARDIR%%/build/program.mk
+%%PEARDIR%%/build/rules.mk
+%%PEARDIR%%/build/rules_common.mk
+%%PEARDIR%%/build/rules_pear.mk
+%%PEARDIR%%/build/dynlib.mk
+%%PEARDIR%%/build/shtool
+%%PEARDIR%%/build/dynlib.m4
+%%PEARDIR%%/build/acinclude.m4
+%%PEARDIR%%/Cache.php
+%%PEARDIR%%/DB.php
+%%PEARDIR%%/HTTP.php
+%%PEARDIR%%/Log.php
+%%PEARDIR%%/Mail.php
+%%PEARDIR%%/PEAR.php
+@dirrm %%PEARDIR%%/Archive
+@dirrm %%PEARDIR%%/Benchmark
+@dirrm %%PEARDIR%%/Cache/Container
+@dirrm %%PEARDIR%%/Cache
+@dirrm %%PEARDIR%%/Console
+@dirrm %%PEARDIR%%/Crypt
+@dirrm %%PEARDIR%%/Date
+@dirrm %%PEARDIR%%/DB
+@dirrm %%PEARDIR%%/File
+@dirrm %%PEARDIR%%/HTML
+@dirrm %%PEARDIR%%/HTTP
+@dirrm %%PEARDIR%%/Image
+@dirrm %%PEARDIR%%/Log
+@dirrm %%PEARDIR%%/Mail
+@dirrm %%PEARDIR%%/Math
+@dirrm %%PEARDIR%%/Net
+@dirrm %%PEARDIR%%/Numbers
+@dirrm %%PEARDIR%%/Payment
+@dirrm %%PEARDIR%%/PEAR
+@dirrm %%PEARDIR%%/Schedule
+@dirrm %%PEARDIR%%/XML
+@dirrm %%PEARDIR%%/build
+@dirrm %%PEARDIR%%
+@unexec mv %D/lib/php.DIST_PHP %D/lib/php || true

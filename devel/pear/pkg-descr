@@ -1,0 +1,20 @@
+PEAR is a code repository for PHP extensions and PHP library code
+inspired by TeX's CTAN and Perl's CPAN.
+
+The purpose of PEAR is:
+
+	* to provide a consistent means for library code authors to
+	  share their code with other developers;
+
+	* to give the PHP community an infrastructure for sharing code;
+
+	* to define standards that help developers write portable and
+	  reusable code;
+
+	* to provide tools for code maintenance and distribution.
+
+PEAR comes bundled with PHP4. However, since it is a rapidly evolving
+target, not everyone who has a workable version of PHP4 has a recent
+enough PEAR installation.
+
+WWW: http://pear.php.net/
