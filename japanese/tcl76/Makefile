@@ -3,7 +3,7 @@
 # Date created:		
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/03/02 13:01:24 asami Exp $
 #
 
 DISTNAME=	tcl7.6p2
@@ -40,6 +40,8 @@ pre-build:
 pre-install:
 	${MKDIR} ${PREFIX}/lib/tcl7.6jp
 	cd ${WRKSRC} && ${MAKE} -f Makefile.lib install PREFIX=${PREFIX}
+
+post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
 
 test:
