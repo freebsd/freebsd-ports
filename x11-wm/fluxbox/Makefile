@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 .if defined(WITH_REMEMBER)
 PATCH_SITES=    http://www.bugfactory.org/~gav/fluxbox/
 PATCH_DIST_STRIP=   -p1
-PATCHFILES+=	remember-0.1.14.gz
+PATCHFILES+=	remember-0.1.14-4.gz
 .endif
 
 MAINTAINER=	hendrik@scholz.net
