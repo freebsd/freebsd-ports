@@ -1,33 +1,28 @@
---- saferpay/Makefile.orig	Thu Sep  6 00:19:01 2001
-+++ saferpay/Makefile	Thu Sep  6 00:21:22 2001
-@@ -1,47 +1,35 @@
+--- saferpay/Makefile.orig	Thu Aug  8 15:59:09 2002
++++ saferpay/Makefile	Tue Feb 18 17:28:00 2003
+@@ -1,45 +1,37 @@
 -PREFIX = /usr
--SSLEAYDIR = SSLeay-0.9.0
--SSLEAY = $(SSLEAYDIR)-patch1
+-SSLVERSION = openssl-0.9.6c
+-SSLEAYDIR = ../$(SSLVERSION)
 -
++PREFIX = %%PREFIX%%
+ 
  all:
--	make SSLeay
--	cp ./ssl/$(SSLEAYDIR)/libssl.a ./ssl
--	cp ./ssl/$(SSLEAYDIR)/libcrypto.a ./ssl
+-
 -	make -f idpapp.mk
 -	cp ./out/libidpapp.s* $(PREFIX)/lib
 -	make -f saferpay.mk
 -	cp idpapi.h ./out
 -	cp idperrc.h ./out
 -	cp ./out/settings.template ./out/settings.xml
--
--SSLeay:
--	cd ssl; gunzip -c $(SSLEAY).tar.gz > $(SSLEAY).tar; tar xf $(SSLEAY).tar; cd $(SSLEAYDIR); perl Configure linux-elf; make; cd ..; cd ..; 
 +	gmake -f idpapp.mk -C saferpay
 +	gmake -f saferpay.mk -C saferpay
  
  clean:
 -	make -f idpapp.mk clean
 -	make -f saferpay.mk clean
--	-rm -R ssl/$(SSLEAYDIR)
--	-rm ssl/$(SSLEAY).tar;
-+	gmake -f idpapp.mk -C saferpay clean
-+	gmake -f saferpay.mk -C saferpay clean
++	gmake -f idpapp.mk clean
++	gmake -f saferpay.mk clean
  
  xs: all
 -	perl -e 'system("cd perl/MessageObject\nperl Makefile.PL\nmake");'
@@ -38,31 +33,35 @@
 +	perl -e 'system("cd saferpay/perl/ConfigurationSetup\nperl Makefile.PL\nmake");'
  
  testxs:
--	make -C perl/ConfigurationSetup test
--	make -C perl/MessageFactory test
-+	gmake -C saferpay/perl/ConfigurationSetup test
-+	gmake -C saferpay/perl/MessageFactory test
+-	perl -e 'system("cd perl/ConfigurationSetup\nmake test");'
+-	perl -e 'system("cd perl/MessageFactory\nmake test");'
++	perl -e 'system("cd saferpay/perl/ConfigurationSetup\nmake test");'
++	perl -e 'system("cd saferpay/perl/MessageFactory\nmake test");'
  
  installxs:
--	make -C perl/ConfigurationSetup install
--	make -C perl/MessageFactory install
--	make -C perl/MessageObject install
-+	gmake -C saferpay/perl/ConfigurationSetup install
-+	gmake -C saferpay/perl/MessageFactory install
-+	gmake -C saferpay/perl/MessageObject install
+-	perl -e 'system("cd perl/ConfigurationSetup\nmake install");'
+-	perl -e 'system("cd perl/MessageFactory\nmake install");'
+-	perl -e 'system("cd perl/MessageObject\nmake install");'
++	perl -e 'system("cd saferpay/perl/ConfigurationSetup\nmake install");'
++	perl -e 'system("cd saferpay/perl/MessageFactory\nmake install");'
++	perl -e 'system("cd saferpay/perl/MessageObject\nmake install");'
  
  cleanxs:
--	make -C perl/ConfigurationSetup clean
--	make -C perl/MessageFactory clean
--	make -C perl/MessageObject clean
+-	perl -e 'system("cd perl/ConfigurationSetup\nmake clean");'
+-	perl -e 'system("cd perl/MessageFactory\nmake clean");'
+-	perl -e 'system("cd perl/MessageObject\nmake clean");'
+-	
+-testmk:
+-	echo "SSLVERSION: $(SSLVERSION)"
+-	echo "SSLEAYDIR: $(SSLEAYDIR)"
 -
 -
 -
 -
 -
-+	gmake -C saferpay/perl/ConfigurationSetup clean
-+	gmake -C saferpay/perl/MessageFactory clean
-+	gmake -C saferpay/perl/MessageObject clean
++	perl -e 'system("cd saferpay/perl/ConfigurationSetup\nmake clean");'
++	perl -e 'system("cd saferpay/perl/MessageFactory\nmake clean");'
++	perl -e 'system("cd saferpay/perl/MessageObject\nmake clean");'
 +
 +install:
 +	install -C saferpay/out/libidpapp.so.1.0.0 $(PREFIX)/lib/libidpapp.so.1

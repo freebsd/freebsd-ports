@@ -18,8 +18,8 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageObjec
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageObject/MessageObject.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/soplex/saferpay/MessageObject.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageObject/autosplit.ix
-lib/perl5/5.00503/man/man3/soplex::saferpay::MessageFactory.3
-lib/perl5/5.00503/man/man3/soplex::saferpay::MessageObject.3
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/../man/man3/soplex::saferpay::MessageFactory.3.gz
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/../man/man3/soplex::saferpay::MessageObject.3.gz
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/ConfigurationSetup
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageObject
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/soplex/saferpay/MessageFactory
