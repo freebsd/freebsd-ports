@@ -1,16 +1,19 @@
-diff -c -N ../faces/Faces.ad ./Faces.ad
-*** ../faces/Faces.ad	Mon Jul  1 03:25:46 1991
---- ./Faces.ad	Tue Dec 10 19:07:26 1996
+*** faces/Makefile.in.orig	Tue Mar  5 21:07:46 2002
+--- faces/Makefile.in	Tue Mar  5 21:08:06 2002
 ***************
-*** 13,17 ****
-  faces.displayHostname:		false
+*** 116,122 ****
   
-  faces.audioSupport:		false
-! faces.audioCommand:		play
-  faces.bellAudioFile:
---- 13,17 ----
-  faces.displayHostname:		false
+  bin_PROGRAMS = faces
   
-  faces.audioSupport:		false
-! faces.audioCommand:		rplay
-  faces.bellAudioFile:
+! @DNSLOOKUP_TRUE@resolv = -lresolv
+  faces_LDADD = @GTK_LIBS@ $(INTLLIBS) @X_LIBS@ \
+  	-lX11 -L../compface -lcompface $(resolv)
+  
+--- 116,122 ----
+  
+  bin_PROGRAMS = faces
+  
+! #@DNSLOOKUP_TRUE@resolv = -lresolv
+  faces_LDADD = @GTK_LIBS@ $(INTLLIBS) @X_LIBS@ \
+  	-lX11 -L../compface -lcompface $(resolv)
+  

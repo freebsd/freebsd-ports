@@ -1,22 +1,23 @@
-This is the third general release of a "faces" server for monitoring a
-list visually. Typically this is a list of incoming mail messages, jobs
-in the print queue or users on a system.
+This is the fourth general release of a "faces" server for monitoring a
+list visually. Typically this is a list of incoming mail messages.
+
+Faces has three different modes of operation:
+
+ (a) The default will monitor for new mail. By default, only the last ten
+     messages are displayed.
+
+ (b) You can monitor the whole of a mail file. The open window will
+     automatically adjust it's size to correctly show the face icons.
+
+ (c) Custom monitoring. You can specify a program or shell script to run.
+
+     There are lots of good examples that have already been written and
+     these can be downloaded from:
+     ftp://ftp.cs.indiana.edu/pub/faces/picons/src/
 
 Included with this release, is the ability to include a face image with
 your mail message using an X-Face header line (plus continuation lines).
 Faces expects this line to be in a certain compressed format, and
-uncompresses it, and displays that image on-the-fly. There is also an
-option to automatically update the faces database with this new image.
+uncompresses it, and displays that image on-the-fly.
 
 Audio capabilities are also provided as a conditional compilation option.
-
-By default, after every sixty seconds, faces will recheck the mail file or
-the print queue. If the mail spool file has changed size, it will produce a
-chain of records for which it has face icons.
-
-This release contains graphical interfaces for NeWS, SunView, X11 and XView.
-
-Faces is based on the AT&T v8 face server called vismon, but is not derived
-from vismon sources. With the previous version came vismon compatibility.
-Note that resulted in a few changes from the way faces v1.1 worked.
-See the manual pages for more details.
