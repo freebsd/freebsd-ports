@@ -25,6 +25,7 @@ CONFLICTS=	ja-ptex-*
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 PLIST_SUB+=	X11BITS=""
+CONFLICTS+=	xdvi-*
 .else
 PLIST_SUB+=	X11BITS="@comment "
 .endif
