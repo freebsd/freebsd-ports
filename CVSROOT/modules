@@ -1913,6 +1913,7 @@ gail		ports/x11-toolkits/gail
 gaim		ports/net/gaim
 gal		ports/x11-toolkits/gal
 gal2		ports/x11-toolkits/gal2
+galax		ports/textproc/galax
 galaxis		ports/games/galaxis
 gale		ports/net/gale
 galeon		ports/www/galeon
