@@ -1,5 +1,7 @@
 MD5 (webmin-1.170.tar.gz) = 418a62c76b8ba4e0c9532e654167c49c
 SIZE (webmin-1.170.tar.gz) = 7833477
+MD5 (bandwidth-1.170-1.wbm.gz) = bc32af20b754a96722443937197d6ce3
+SIZE (bandwidth-1.170-1.wbm.gz) = 12789
 MD5 (sshd-1.170-1.wbm.gz) = c8c7c96d4dcfe6425c66e2637fd340a8
 SIZE (sshd-1.170-1.wbm.gz) = 63052
 MD5 (status-1.170-1.wbm.gz) = eb437cda535bb6c054a5e12946fbd80b
