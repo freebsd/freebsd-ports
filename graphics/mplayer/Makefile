@@ -132,7 +132,7 @@ CONFIGURE_ARGS+=	--enable-live \
 			--with-livelibdir=${LOCALBASE}/live
 RUN_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
 BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
- .endif
+.endif
 
 .if defined(WITH_XANIM)
 BUILD_DEPENDS+=	xanim:${PORTSDIR}/graphics/xanim
