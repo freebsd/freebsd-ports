@@ -1,0 +1,11 @@
+--- src/defines.h	Sun Dec 22 22:20:16 1996
++++ /home/andy/tmp/wrk/src/defines.h	Thu May 21 22:10:31 1998
+@@ -23,7 +23,7 @@
+ 
+ /***** Change this, or use -c on the command line to specify it *****/
+ 
+-#define SERVER_ROOT "/usr/local/boa"
++#define SERVER_ROOT "/usr/local/www"
+ 
+ /***** Various stuff that you may want to tweak, but probably shouldn't *****/
+ 

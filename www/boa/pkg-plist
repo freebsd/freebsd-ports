@@ -1,0 +1,17 @@
+sbin/boa
+share/doc/boa/Changelog
+share/doc/boa/Gnu_License
+share/doc/boa/README
+share/doc/boa/biblio.html
+share/doc/boa/details.html
+share/doc/boa/details.txt
+share/doc/boa/logos.html
+share/doc/boa/newboa7.gif
+share/doc/boa/poweredbyboa.gif
+share/doc/boa/readme.html
+share/doc/boa/readme.txt
+share/doc/boa/todo.txt
+share/examples/boa/boa.conf
+share/examples/boa/mime.types
+@dirrm share/doc/boa
+@dirrm share/examples/boa
