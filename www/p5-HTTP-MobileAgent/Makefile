@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-MobileAgent
-PORTVERSION=	0.18
+PORTVERSION=	0.21
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTTP
@@ -23,11 +23,13 @@ PM_DEPENDS=	${SITE_PERL}/HTTP/Headers.pm:${PORTSDIR}/www/p5-libwww
 PERL_CONFIGURE=	yes
 
 MAN3=		HTTP::MobileAgent.3 \
+		HTTP::MobileAgent::AirHPhone.3 \
 		HTTP::MobileAgent::Display.3 \
 		HTTP::MobileAgent::DoCoMo.3 \
 		HTTP::MobileAgent::EZweb.3 \
 		HTTP::MobileAgent::JPhone.3 \
-		HTTP::MobileAgent::NonMobile.3
+		HTTP::MobileAgent::NonMobile.3 \
+		HTTP::MobileAgent::Vodafone.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
