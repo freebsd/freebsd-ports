@@ -6,6 +6,7 @@
 
 DISTNAME=	dgd-1.0.9
 DISTFILES=	${DISTNAME}.tar.gz
+CATEGORIES=	networking
 
 # changed from PATCHFILES so it won't confuse bsd.port.mk
 PATCH_FILES=	1.0.9-1.0.9.1.gz

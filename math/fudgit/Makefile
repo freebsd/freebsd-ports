@@ -3,11 +3,12 @@
 # Date created:         17 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.4 1995/04/11 02:00:55 jmz Exp $
+# $Id: Makefile,v 1.5 1995/04/22 11:30:07 asami Exp $
 #
 
 DISTNAME=	Fudgit_2.41
 PKGNAME=	Fudgit-2.41
+CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.physics.mcgill.ca/pub/Fudgit/
 DISTFILES=	fudgit_2.41.tar.gz
 
