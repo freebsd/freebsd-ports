@@ -262,6 +262,7 @@
     SUBDIR += qix
     SUBDIR += qkmj
     SUBDIR += qstat
+    SUBDIR += quake2forge
     SUBDIR += quakeforge
     SUBDIR += quakeserver
     SUBDIR += race

@@ -1,0 +1,58 @@
+bin/quake2
+%%SVGA:%%lib/quake2/ref_soft.so
+%%SVGA:%%lib/quake2/ref_soft.la
+%%SDL:%%lib/quake2/ref_softsdl.so
+%%SDL:%%lib/quake2/ref_softsdl.la
+%%SDLGL:%%lib/quake2/ref_sdlgl.so
+%%SDLGL:%%lib/quake2/ref_sdlgl.la
+%%GL:%%lib/quake2/ref_glx.so
+%%GL:%%lib/quake2/ref_glx.la
+%%GL:%%lib/quake2/ref_tdfx.so
+%%GL:%%lib/quake2/ref_tdfx.la
+lib/quake2/ref_softx.so
+lib/quake2/ref_softx.la
+lib/quake2/baseq2/game.so
+lib/quake2/baseq2/game.la
+lib/quake2/ctf/game.so
+lib/quake2/ctf/game.la
+%%PORTDOCS%%share/doc/quake2/README.axp
+%%PORTDOCS%%share/doc/quake2/README.install
+%%PORTDOCS%%share/doc/quake2/README.linux
+%%PORTDOCS%%share/doc/quake2/README.sdl
+%%PORTDOCS%%share/doc/quake2/README.solaris
+%%PORTDOCS%%share/doc/quake2/TODO-ctf.txt
+%%PORTDOCS%%share/doc/quake2/changes-ctf.txt
+%%PORTDOCS%%share/doc/quake2/changes.txt
+%%PORTDOCS%%share/doc/quake2/joystick.txt
+%%PORTDOCS%%share/doc/quake2/readme.txt
+%%PORTDOCS%%share/doc/quake2/ctf/admin.gif
+%%PORTDOCS%%share/doc/quake2/ctf/adminset.gif
+%%PORTDOCS%%share/doc/quake2/ctf/automac.gif
+%%PORTDOCS%%share/doc/quake2/ctf/ghost.jpg
+%%PORTDOCS%%share/doc/quake2/ctf/grapple.jpg
+%%PORTDOCS%%share/doc/quake2/ctf/layout.jpg
+%%PORTDOCS%%share/doc/quake2/ctf/mainctf_back.jpg
+%%PORTDOCS%%share/doc/quake2/ctf/menu.gif
+%%PORTDOCS%%share/doc/quake2/ctf/q2ctf.html
+%%PORTDOCS%%share/doc/quake2/ctf/say_team.gif
+%%PORTDOCS%%share/doc/quake2/ctf/stats.jpg
+%%PORTDOCS%%share/doc/quake2/ctf/tech1.gif
+%%PORTDOCS%%share/doc/quake2/ctf/tech2.gif
+%%PORTDOCS%%share/doc/quake2/ctf/tech3.gif
+%%PORTDOCS%%share/doc/quake2/ctf/tech4.gif
+%%PORTDOCS%%@dirrm share/doc/quake2/ctf
+%%PORTDOCS%%@dirrm share/doc/quake2
+@dirrm lib/quake2/baseq2
+@dirrm lib/quake2/xatrix
+@dirrm lib/quake2/rogue
+@dirrm lib/quake2/ctf
+@dirrm lib/quake2
+@unexec rm %D/share/quake2/baseq2/config.cfg 2>/dev/null || true
+@unexec rm %D/share/quake2/ctf/config.cfg 2>/dev/null || true
+@unexec rm %D/share/quake2/rogue/config.cfg 2>/dev/null || true
+@unexec rm %D/share/quake2/xatrix/config.cfg 2>/dev/null || true
+@unexec rmdir %D/share/quake2/baseq2 2>/dev/null || true
+@unexec rmdir %D/share/quake2/ctf 2>/dev/null || true
+@unexec rmdir %D/share/quake2/rogue 2>/dev/null || true
+@unexec rmdir %D/share/quake2/xatrix 2>/dev/null || true
+@unexec rmdir %D/share/quake2 2>/dev/null || true

@@ -1,0 +1,21 @@
+--- src/Makefile.am.orig	Thu Oct 31 20:08:06 2002
++++ src/Makefile.am	Thu Oct 31 20:11:19 2002
+@@ -79,15 +79,15 @@
+ #ref_glx_la_CFLAGS = $(std_cflags) -fPIC @X_CFLAGS@ @OPENGL_CFLAGS@
+ ref_glx_la_CFLAGS = $(std_cflags) -fPIC @X_CFLAGS@
+ #ref_glx_la_LDADD = @X_PRE_LIBS@ @X_LIBS@ @XTRA_LIBS@ @X_EXTRA_LIBS@ @OPENGL_LIBS@ @DL_LIBS@
+-ref_glx_la_LDADD = @X_PRE_LIBS@ @X_LIBS@ @XTRA_LIBS@ @X_EXTRA_LIBS@ @DL_LIBS@
++ref_glx_la_LDADD = @X_PRE_LIBS@ @X_LIBS@ @XTRA_LIBS@ @X_EXTRA_LIBS@ @DL_LIBS@ @OPENGL_LIBS@
+ ref_glx_la_LDFLAGS = $(module_ldflags)
+ endif
+ 
+ # ref_tdfx
+ if BUILD_TDFX
+ ref_tdfx_la_SOURCES = $(REF_GL_COMMON) rw_in_svgalib.c gl_fxmesa.c
+-ref_tdfx_la_CFLAGS = $(std_cflags) -fPIC @SVGALIB_CFLAGS@
+-ref_tdfx_la_LDADD = @SVGALIB_LIBS@
++ref_tdfx_la_CFLAGS = $(std_cflags) -fPIC @SVGALIB_CFLAGS@ @OPENGL_CFLAGS@
++ref_tdfx_la_LDADD = @SVGALIB_LIBS@ @OPENGL_LIBS@
+ ref_tdfx_la_LDFLAGS = $(module_ldflags)
+ endif
+ 
