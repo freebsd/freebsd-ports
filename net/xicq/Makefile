@@ -8,7 +8,7 @@
 PORTNAME=	xicq
 PORTVERSION=	19980712	
 CATEGORIES=	net
-MASTER_SITES=	http://www.xtrophy.dk/xicq/
+MASTER_SITES=	http://projekt.pinknet.cz/ftp/ICQ/linux/Xicq/
 DISTNAME=	xicq-071298-snapshot.src
 
 MAINTAINER=	scrappy@FreeBSD.org
