@@ -70,6 +70,10 @@ CONFDIR=	${PREFIX}/etc/click/conf
 BROKEN=		"Does not compile on alpha 4.x"
 .endif
 
+.if ${OSVERSION} >= 503001
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/click
 	@${STRIP_CMD} ${PREFIX}/bin/click-align
