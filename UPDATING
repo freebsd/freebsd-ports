@@ -6,6 +6,12 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040625:
+  AFFECTS: users of ftp/pure-ftpd
+
+  Pure-ftpd must be enabled in rc.conf now. Add this to your /etc/rc.conf:
+  pureftpd_enable="YES"
+
 20040622:
   AFFECTS: users of net/openslp
 
