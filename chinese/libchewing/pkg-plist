@@ -4,17 +4,18 @@ include/chewing/chewingio.h
 include/chewing/chewingutil.h
 include/chewing/dict.h
 include/chewing/global.h
+include/chewing/hanyupinying.h
 include/chewing/hash.h
 include/chewing/userphrase.h
 include/chewing/zuin.h
 lib/libchewing.a
 lib/libchewing.so
-lib/libchewing.so.1
+lib/libchewing.so.2
 libdata/pkgconfig/chewing.pc
-share/chewing/ch_index.dat
-share/chewing/dict.dat
-share/chewing/fonetree.dat
-share/chewing/ph_index.dat
-share/chewing/us_freq.dat
+%%DATADIR%%/ch_index.dat
+%%DATADIR%%/dict.dat
+%%DATADIR%%/fonetree.dat
+%%DATADIR%%/ph_index.dat
+%%DATADIR%%/us_freq.dat
 @dirrm include/chewing
-@dirrm share/chewing
+@dirrm %%DATADIR%%
