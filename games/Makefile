@@ -276,6 +276,7 @@
     SUBDIR += linux-nwnclient
     SUBDIR += linux-nwserver
     SUBDIR += linux-q3ademo
+    SUBDIR += linux-spheresofchaos-demo
     SUBDIR += linux-steam
     SUBDIR += lm-solve
     SUBDIR += ltris
