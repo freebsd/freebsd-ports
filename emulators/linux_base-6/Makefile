@@ -125,9 +125,6 @@ REMOVE_FILES=		/bin/df /bin/su /etc/exports /etc/group \
 NEEDLOADLINK=		true
 .endif
 
-do-patch:
-	@${DO_NADA}
-
 pre-install:
 #
 # Handle the loading of the linux loadable kernel module if
