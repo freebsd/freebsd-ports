@@ -1,0 +1,14 @@
+--- Makefile.in.orig	Tue Mar  9 23:59:49 2004
++++ Makefile.in	Tue Mar  9 23:59:54 2004
+@@ -55,8 +55,9 @@
+ 
+ install: all
+ 	@mkdir -p @bindir@
+-	@mkdir -p @datadir@/{applications,locale,pixmaps}
+-	@cp -f src/{ed2k,xmule} @bindir@
++	@mkdir -p @datadir@/applications
++	@mkdir -p @datadir@/locale
++	@mkdir -p @datadir@/pixmaps
+ 	@cd po && $(MAKE) install
+ 	@cp -f xmule.desktop @datadir@/applications
+ 	@cp -f xmule.xpm @datadir@/pixmaps
