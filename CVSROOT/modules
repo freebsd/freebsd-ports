@@ -4270,6 +4270,7 @@ mpmf20		ports/audio/mpmf20
 mppdec		ports/audio/mppdec
 mpqc		ports/science/mpqc
 mpqc-mpich	ports/science/mpqc-mpich
+mprime		ports/math/mprime
 mprof		ports/devel/mprof
 mpt		ports/audio/mpt
 mq3		ports/audio/mq3
