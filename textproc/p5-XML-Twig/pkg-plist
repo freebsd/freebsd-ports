@@ -1,4 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Twig/.packlist
+bin/xml_grep
+bin/xml_pp
+bin/xml_spellcheck
 %%SITE_PERL%%/XML/Twig.pm
+%%SITE_PERL%%/XML/Twig/XPath.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Twig/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Twig
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@dirrm %%SITE_PERL%%/XML/Twig
 @unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
