@@ -32,6 +32,9 @@ KRB5_KRB4_COMPAT?=	YES
 
 .if !defined(KRB5_KRB4_COMPAT) || ${KRB5_KRB4_COMPAT} == "NO"
 CONFIGURE_ARGS+=	--without-krb4
+PLIST_SUB+=		KRB4="@comment "
+.else
+PLIST_SUB+=		KRB4=""
 .endif
 
 .if defined(KRB5_HOME)
@@ -47,7 +50,10 @@ INFO_FILES=		krb425.info krb5-admin.info krb5-admin.info-1 \
 
 MAN1=			krb5-send-pr.1 kpasswd.1 v5passwd.1 klist.1 kinit.1 \
 			kdestroy.1 ksu.1 sclient.1 rsh.1 rcp.1 rlogin.1     \
-			v4rcp.1 ftp.1 telnet.1 kerberos.1 kvno.1
+			ftp.1 telnet.1 kerberos.1 kvno.1
+.if defined(KRB5_KRB4_COMPAT) && ${KRB5_KRB4_COMPAT} != "NO"
+MAN1+=			v4rcp.1
+.endif
 MAN5=			kdc.conf.5 krb5.conf.5 .k5login.5
 MAN8=			krb5kdc.8 kadmin.8 kadmin.local.8 kdb5_util.8 \
 			ktutil.8 kadmind.8 kprop.8 kpropd.8 sserver.8 \
