@@ -7,6 +7,7 @@
 
 PORTNAME=	mad
 PORTVERSION=	0.13.0b
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.mars.org/pub/mpeg/
@@ -16,10 +17,16 @@ MAINTAINER=	jason@mastaler.com
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
+PLIST_SUB+=     PORTVERSION="${PORTVERSION}"
+
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+INSTALLS_SHLIB= yes
 LIBTOOLFILES=	configure libmad/configure
-CONFIGURE_ARGS=	--disable-debugging --enable-sso --enable-accuracy
+CONFIGURE_ARGS=	--enable-shared \
+		--disable-debugging \
+		--enable-sso \
+		--enable-accuracy
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
