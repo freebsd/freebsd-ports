@@ -1,0 +1,19 @@
+PVM++: A C++-Library for PVM
+
+This library provides an easy way to program the widely used parallel
+programming library PVM, which works in homogenous and heterogenous
+network environments. 
+
+Features :
+
+  - Easy sending and receiving of messages in heterogenous networks. 
+  - Full STL-integration. 
+  - Easy installation with configure-script on all UN*X platforms. 
+  - Easy access to all task and host information. 
+  - Message handlers are supported. 
+  - Messages can be automatically unpacked on arrival. 
+
+WWW: http://pvm-plus-plus.sourceforge.net/
+
+-- Ying-Chieh Liao
+   ijliao@FreeBSD.org

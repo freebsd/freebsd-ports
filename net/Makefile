@@ -226,6 +226,7 @@
     SUBDIR += priss
     SUBDIR += proxy
     SUBDIR += pvm
+    SUBDIR += pvm++
     SUBDIR += queso
     SUBDIR += radius
     SUBDIR += radiusclient
