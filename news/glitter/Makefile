@@ -7,14 +7,13 @@
 
 PORTNAME=	glitter
 PORTVERSION=	1.0.b.1
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://mews.org.uk/glitter/\
 		ftp://ftp.gregnet.net/pub/FreeBSD/ports/news/glitter/
 DISTNAME=	${PORTNAME}-1.0beta1
 
 MAINTAINER=	greg@gregnet.net
-
-BROKEN=		"Does not package correctly"
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
@@ -27,5 +26,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .if defined(HAVE_GNOME)
 USE_GNOME=	yes
 .endif
+
+pre-patch:
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>
