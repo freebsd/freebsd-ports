@@ -1,0 +1,69 @@
+$FreeBSD$
+
+--- ../ecos/host/libcdl/configure~	Wed Feb 12 18:22:31 2003
++++ ../ecos/host/libcdl/configure	Sat Feb 21 19:13:54 2004
+@@ -1968,64 +1968,6 @@
+ 		{ echo "configure: error: ${tclconfig}/tclConfig.sh does not define TCL_LIB_SPEC" 1>&2; exit 1; }
+ 	    fi
+ 	    ecos_LIBS="${ecos_LIBS} ${TCL_LIB_SPEC}"
+-
+-	    	    possibles=`echo ${possibles} | sed -e 's,tcl,tk,g'`
+-	    
+-    tkconfig=""
+-    for i in ${possibles}; do
+-        if test -r "$i/"tkConfig.sh""; then
+-            tkconfig=$i
+-            break
+-        fi
+-    done
+-
+-	    if test \! -r "${tkconfig}/tkConfig.sh" ; then
+-		{ echo "configure: error: unable to locate Tk config file tkConfig.sh" 1>&2; exit 1; }
+-	    else
+-		. ${tkconfig}/tkConfig.sh
+-		if test -z "${TK_INC_DIR}" ; then
+-		    if test "${TK_PREFIX}" = "/usr" ; then
+-			ecos_tk_includes="${TK_XINCLUDES}"
+-		    else
+-			ecos_tk_includes="-I${TK_PREFIX}/include ${TK_XINCLUDES}"
+-		    fi
+-		else
+-		    ecos_tk_includes="-I${TK_INC_DIR} ${TK_XINCLUDES}"
+-		fi
+-
+-				if test -z "${TK_LIB_SPEC}" -a "${with_tcl_version+set}" = set ; then
+-		    
+-    libtk=""
+-    for i in ${possibles}; do
+-        if test -r "$i/"libtk${with_tcl_version}.a""; then
+-            libtk=$i
+-            break
+-        fi
+-    done
+-
+-		    if test -r "${libtk}/libtk${with_tcl_version}.a" ; then
+-			TK_LIB_SPEC="-L${libtk} -ltk${with_tcl_version}"
+-		    fi
+-		fi
+-		if test -z "${TK_LIB_SPEC}" ; then
+-		    
+-    libtk=""
+-    for i in ${possibles}; do
+-        if test -r "$i/"libtk.a""; then
+-            libtk=$i
+-            break
+-        fi
+-    done
+-
+-		    if test -r "${libtk}/libtk.a" ; then
+-			TK_LIB_SPEC="-L${libtk} -ltk"
+-		    fi
+-		fi
+-		if test -z "${TK_LIB_SPEC}" ; then
+-		    { echo "configure: error: ${tkconfig}/tkConfig.sh does not define TK_LIB_SPEC" 1>&2; exit 1; }
+-		fi
+-		ecos_tk_libs="${TK_LIB_SPEC} ${TK_LIBS}"
+-	    fi
+ 	fi
+     fi
+ 
