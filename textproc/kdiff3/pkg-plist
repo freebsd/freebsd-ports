@@ -1,23 +1,30 @@
 bin/kdiff3
-share/doc/HTML/en/kdiff3/index.html
-share/doc/HTML/en/kdiff3/triple_diff.png
+lib/kde3/libkdiff3part.la
+lib/kde3/libkdiff3part.so
+share/applnk/Development/kdiff3.desktop
+share/apps/kdiff3/kdiff3_shell.rc
+share/apps/kdiff3part/kdiff3_part.rc
+share/doc/HTML/en/kdiff3/common
+share/doc/HTML/en/kdiff3/dirbrowser.png
+share/doc/HTML/en/kdiff3/dirmergebig.png
+share/doc/HTML/en/kdiff3/index.cache.bz2
+share/doc/HTML/en/kdiff3/index.docbook
+share/doc/HTML/en/kdiff3/iteminfo.png
+share/doc/HTML/en/kdiff3/letter_by_letter.png
+share/doc/HTML/en/kdiff3/merge_current.png
+share/doc/HTML/en/kdiff3/new.png
+share/doc/HTML/en/kdiff3/open_dialog.png
 share/doc/HTML/en/kdiff3/screenshot_diff.png
 share/doc/HTML/en/kdiff3/screenshot_merge.png
+share/doc/HTML/en/kdiff3/triple_diff.png
 share/doc/HTML/en/kdiff3/white_space.png
-share/doc/HTML/en/kdiff3/letter_by_letter.png
-share/doc/HTML/en/kdiff3/open_dialog.png
-share/doc/HTML/en/kdiff3/dirmergebig.png
-share/doc/HTML/en/kdiff3/dirmergedocs.html
-share/doc/HTML/en/kdiff3/bigscreenshot.html
-share/doc/HTML/en/kdiff3/dirbrowser.png
-share/doc/HTML/en/kdiff3/iteminfo.png
-share/doc/HTML/en/kdiff3/new.png
-share/doc/HTML/en/kdiff3/merge_current.png
-share/applnk/Utilities/kdiff3.desktop
-share/icons/locolor/32x32/apps/kdiff3.png
-share/icons/locolor/16x16/apps/kdiff3.png
-share/icons/hicolor/32x32/apps/kdiff3.png
 share/icons/hicolor/16x16/apps/kdiff3.png
-share/apps/kdiff3/kdiff3ui.rc
+share/icons/hicolor/32x32/apps/kdiff3.png
+share/icons/locolor/16x16/apps/kdiff3.png
+share/icons/locolor/32x32/apps/kdiff3.png
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+share/services/kdiff3part.desktop
 @dirrm share/doc/HTML/en/kdiff3
+@dirrm share/apps/kdiff3part
 @dirrm share/apps/kdiff3
