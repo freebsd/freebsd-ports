@@ -75,7 +75,7 @@ PLIST_TOOLS=	${PKGDIR}/pkg-plist.Tools
 #
 .if !defined(WITHOUT_DEMO)
 PLIST_DEMO=	${PKGDIR}/pkg-plist.Demo
-DEMODIR=	${PREFIX}/share/examples/python
+DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 .endif
 
 post-configure:
@@ -111,10 +111,10 @@ PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 
 pre-install:
 .for platform in ${PLATFORMS}
-	${MKDIR} ${PREFIX}/lib/${PYTHON_VERSION}/${platform}
+	${MKDIR} ${PYTHON_LIBDIR}/${platform}
 .for file in FCNTL.py IN.py SOCKET.py TERMIOS.py regen
-	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/${file} \
-		${PREFIX}/lib/${PYTHON_VERSION}/${platform}/
+	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/${file} 
+		${PYTHON_LIBDIR}/${platform}
 .endfor
 .endfor
 	@sort -r -o ${PLIST} ${PLIST_GMP} ${PLIST_TOOLS} ${PLIST_DEMO} ${PKGDIR}/pkg-plist
