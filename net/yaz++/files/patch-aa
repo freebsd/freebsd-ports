@@ -1,0 +1,11 @@
+--- include/yaz++/proxy.h.orig	Tue Nov 26 14:02:58 2002
++++ include/yaz++/proxy.h	Tue Nov 26 14:03:06 2002
+@@ -13,7 +13,7 @@
+ 
+ /// Private class
+ class YAZ_EXPORT Yaz_ProxyClient : public Yaz_Z_Assoc {
+-    friend Yaz_Proxy;
++    friend class Yaz_Proxy;
+     Yaz_ProxyClient(IYaz_PDU_Observable *the_PDU_Observable);
+     ~Yaz_ProxyClient();
+     void recv_Z_PDU(Z_APDU *apdu);
