@@ -1,0 +1,36 @@
+*** SIZES.2	Wed Apr 23 16:26:42 1997
+--- SIZES	Wed Apr 23 16:36:49 1997
+***************
+*** 10,16 ****
+  *     ISYBYL = 1 IF MOPAC IS TO BE USED IN THE SYBYL PACKAGE, =0 OTHERWISE
+  *     SEE ALSO NMECI, NPULAY AND MESP AT THE END OF THIS FILE
+  *                                                                       
+!       PARAMETER (MAXHEV=30, MAXLIT=30)
+        PARAMETER (MAXTIM=3600, MAXDMP=3600)
+        PARAMETER (ISYBYL=0)
+  *                                                                       
+--- 10,16 ----
+  *     ISYBYL = 1 IF MOPAC IS TO BE USED IN THE SYBYL PACKAGE, =0 OTHERWISE
+  *     SEE ALSO NMECI, NPULAY AND MESP AT THE END OF THIS FILE
+  *                                                                       
+!       PARAMETER (MAXHEV=50, MAXLIT=50)
+        PARAMETER (MAXTIM=3600, MAXDMP=3600)
+        PARAMETER (ISYBYL=0)
+  *                                                                       
+***************
+*** 32,38 ****
+  *     MAXHES         AREA OF HESSIAN MATRIX                             
+  *     MAXALL         LARGER THAN MAXORB OR MAXPAR.
+  ************************************************************************
+!       PARAMETER (VERSON=7.01D0)
+        PARAMETER (NUMATM=MAXHEV+MAXLIT)
+        PARAMETER (MAXORB=4*MAXHEV+MAXLIT)
+        PARAMETER (MAXPAR=3*NUMATM)
+--- 32,38 ----
+  *     MAXHES         AREA OF HESSIAN MATRIX                             
+  *     MAXALL         LARGER THAN MAXORB OR MAXPAR.
+  ************************************************************************
+!       PARAMETER (VERSON=7.02D0)
+        PARAMETER (NUMATM=MAXHEV+MAXLIT)
+        PARAMETER (MAXORB=4*MAXHEV+MAXLIT)
+        PARAMETER (MAXPAR=3*NUMATM)

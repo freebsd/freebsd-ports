@@ -1,0 +1,10 @@
+This is a port of MOPAC7, semi-empirical (MNDO, AM1, PM3, MINDO/3) 
+molecular orbital calculation. 
+Public domain version of MOPAC93. 
+
+This port uses Linux patch. 
+
+Minematsu makes FreeBSD patchs, and Miyamoto is porting them.
+And enlarging max atoms as  MAXHEV=50 & MAXLIT=50.
+--
+rmiya
