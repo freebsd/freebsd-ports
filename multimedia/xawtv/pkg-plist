@@ -83,6 +83,8 @@ share/xawtv/uhf.list
 @dirrm share/xawtv
 @cwd %%X11BASE%%
 lib/X11/app-defaults/MoTV
+lib/X11/app-defaults/Xawtv
+lib/X11/app-defaults/mtt
 lib/X11/de/app-defaults/MoTV
 lib/X11/it/app-defaults/MoTV
 @dirrm lib/X11/it/app-defaults
