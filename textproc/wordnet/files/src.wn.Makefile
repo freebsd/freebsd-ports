@@ -5,7 +5,7 @@ CFLAGS+=	-DUNIX -DDEFAULTPATH="\"${PREFIX}/share/WordNet-${VER}\"" \
 		-DDEFAULTBIN="\"${PREFIX}/bin\""
 
 CFLAGS+=	-I${.CURDIR}/../../include
-LDADD+=		-L../lib -lwn1
+LDADD+=		-L../lib -lwn2
 
 BINDIR=		${PREFIX}/bin
 

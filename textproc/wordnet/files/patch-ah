@@ -1,0 +1,86 @@
+--- src/lib/morph.c	Tue Jul 15 10:41:55 2003
++++ src/lib/morph.c	Tue Feb 17 15:50:51 2004
+@@ -45,27 +45,28 @@
+ static char msgbuf[256];
+ 
+-#define NUMPREPS	15
+ 
+ static struct {
+     char *str;
+     int strlen;
+-} prepositions[NUMPREPS] = {
+-    "to", 2,
+-    "at", 2,
+-    "of", 2,
+-    "on", 2,
+-    "off", 3,
+-    "in", 2,
+-    "out", 3,
+-    "up", 2,
+-    "down", 4,
+-    "from", 4,
+-    "with", 4,
+-    "into", 4,
+-    "for", 3,
+-    "about", 5,
+-    "between", 7,
++} prepositions[] = {
++    { "to", 2 },
++    { "at", 2 },
++    { "of", 2 },
++    { "on", 2 },
++    { "off", 3 },
++    { "in", 2 },
++    { "out", 3 },
++    { "up", 2 },
++    { "down", 4 },
++    { "from", 4 },
++    { "with", 4 },
++    { "into", 4 },
++    { "for", 3 },
++    { "about", 5 },
++    { "between", 7 }
+ };
+ 
++#define NUMPREPS	sizeof(prepositions)/sizeof(prepositions[0])
++
+ static FILE *exc_fps[NUMPARTS + 1];
+ 
+@@ -207,5 +208,6 @@
+ 		strncpy(word, str + st_idx, end_idx - st_idx);
+ 		word[end_idx - st_idx] = '\0';
+-		if(tmp = morphword(word, pos))
++		tmp = morphword(word, pos);
++		if(tmp)
+ 		    strcat(searchstr,tmp);
+ 		else
+@@ -215,5 +217,6 @@
+ 	    }
+ 	    
+-	    if(tmp = morphword(strcpy(word, str + st_idx), pos)) 
++	    tmp = morphword(strcpy(word, str + st_idx), pos);
++	    if(tmp)
+ 		strcat(searchstr,tmp);
+ 	    else
+@@ -248,6 +251,5 @@
+     char *tmp, tmpbuf[WORDBUF], *end;
+     
+-    sprintf(retval,"");
+-    sprintf(tmpbuf, "");
++    retval[0] = tmpbuf[0] = '\0';
+     end = "";
+     
+@@ -343,5 +345,4 @@
+     static char line[WORDBUF], *beglp, *endlp;
+     char *excline;
+-    int found = 0;
+ 
+     if (exc_fps[pos] == NULL)
+@@ -385,5 +386,6 @@
+     last = strrchr(s, '_');
+     if (rest != last) {		/* more than 2 words */
+-	if (lastwd = morphword(last + 1, NOUN)) {
++	lastwd = morphword(last + 1, NOUN);
++	if (lastwd) {
+ 	    strncpy(end, rest, last - rest + 1);
+ 	    end[last-rest+1] = '\0';

@@ -8,11 +8,11 @@ include/WordNet-%%VER%%/wnglobal.h
 include/WordNet-%%VER%%/wnhelp.h
 include/WordNet-%%VER%%/wnrtl.h
 include/WordNet-%%VER%%/wntypes.h
-lib/libwn1.a
-lib/libwn1.so.7
-lib/libwn1.so
-lib/libtclwn1.so.7
-lib/libtclwn1.so
+lib/libwn2.a
+lib/libwn2.so.0
+lib/libwn2.so
+lib/libtclwn2.so.0
+lib/libtclwn2.so
 lib/tcl%%TCL_DVER%%/Wordnet/pkgIndex.tcl
 share/WordNet-%%VER%%/adj.exc
 share/WordNet-%%VER%%/adv.exc

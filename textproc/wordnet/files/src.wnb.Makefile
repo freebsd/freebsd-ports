@@ -1,5 +1,5 @@
 PREFIX?=	/usr/local
-TCL_DVER?=	8.3
+TCL_DVER?=	8.4
 TCL_VER=	${TCL_DVER:S/.//g}
 TCL_INCDIR?=	${PREFIX}/include/tcl${TCL_DVER}
 
@@ -8,15 +8,15 @@ CFLAGS+=	-DUNIX -DDEFAULTPATH="\"${PREFIX}/share/WordNet-${VER}\"" \
 
 CFLAGS+=	-I${.CURDIR}/../../include -I$(TCL_INCDIR)
 
-LDADD=		-L../lib -lwn1 -L${PREFIX}/lib -ltcl${TCL_VER} -ltk${TCL_VER}
+LDADD=		-L../lib -lwn2 -L${PREFIX}/lib -ltcl${TCL_VER} -ltk${TCL_VER}
 
-SHLIB_NAME=	libtclwn1.so.7
+SHLIB_NAME=	libtclwn2.so.0
 SRCS=		stubs.c
 
 all: pkgIndex.tcl
 
 pkgIndex.tcl:
-	echo "package ifneeded Wordnet 1.7 [list load \
+	echo "package ifneeded Wordnet ${VER} [list load \
 		[file join ${PREFIX}/lib ${SHLIB_NAME}] Wordnet]" \
 			> pkgIndex.tcl
 
