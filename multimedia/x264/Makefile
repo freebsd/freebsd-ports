@@ -7,6 +7,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.0.20041029
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/contrib/ \
 		http://ftp.snt.utwente.nl/pub/software/videolan/contrib/
@@ -23,11 +24,15 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	default
+SHLIB_VER=	0
 CFLAGS+=	-DSYS_FREEBSD
+INSTALLS_SHLIB=	yes
 
 PLIST_FILES=	bin/x264 \
 		include/x264.h \
-		lib/libx264.a
+		lib/libx264.a \
+		lib/libx264.so \
+		lib/libx264.so.${SHLIB_VER}
 
 OPTIONS=	DEBUG "Enable Debugging" Off \
 		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off
@@ -56,11 +61,14 @@ CFLAGS+=	-O2 -funroll-loops
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CFLAGS%%|${CFLAGS} ${CPPFLAGS}|; \
+		s|%%SHLIB_VER%%|${SHLIB_VER}|; \
 		s|-lm|${LDFLAGS} -lm|' ${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/x264 ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/x264.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libx264.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libx264.so.${SHLIB_VER} ${PREFIX}/lib
+	${LN} -sf libx264.so.${SHLIB_VER} ${PREFIX}/lib/libx264.so
 
 .include <bsd.port.post.mk>
