@@ -393,6 +393,7 @@ asprint		ports/print/asprint
 asr-manpages	ports/misc/asr-manpages
 asr-utils	ports/sysutils/asr-utils
 astime		ports/x11-clocks/astime
+astk-client	ports/cad/astk-client
 astk-serveur	ports/cad/astk-serveur
 astrolog	ports/misc/astrolog
 astyle		ports/devel/astyle
