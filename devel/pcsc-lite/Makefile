@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.1.2.b.3
+PORTVERSION=	1.1.2.b.4
 CATEGORIES=	devel security
 MASTER_SITES=	http://ludovic.rousseau.free.fr/softwares/muscle/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b./beta/}
@@ -14,13 +14,14 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b./beta/}
 MAINTAINER=	toni@soth.at
 COMMENT=	A smartcard development library
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.b.3//}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.b.4//}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES+=	build/aclocal.m4
 
 INSTALLS_SHLIB=	yes
+CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=--enable-debug \
 		--enable-syslog \
 		--enable-runpid=/var/run/pcscd.pid \
