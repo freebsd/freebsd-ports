@@ -1,5 +1,6 @@
 bin/ufmcontrol
 include/libufm.h
+inclue/nls.h
 lib/libufm.a
 lib/libufm.so.1
 lib/libufm.so
