@@ -5,7 +5,7 @@ for this program to work.  Shows current users diskusage in
 kilobytes.  Assumes user's home directory is /home/$USER and 
 that user's mail directory is /var/mail/$USER
 
-WWW: http://www.thinblue.net/freebsd/
+WWW: http://www.maske.org/support/unix/apps/diskusage/
 
 - Douglas A. Maske
-  <maske@freebsd.radioslost.com>
+  <maske@maske.org>
