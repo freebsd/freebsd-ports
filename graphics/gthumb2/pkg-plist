@@ -17,6 +17,13 @@ share/gnome/help/gthumb/C/license.html
 share/gnome/help/gthumb/C/ln7.html
 share/gnome/help/gthumb/C/shortcuts.html
 share/gnome/help/gthumb/C/topic.dat
+share/gnome/help/gthumb/ru/authors.html
+share/gnome/help/gthumb/ru/bugs.html
+share/gnome/help/gthumb/ru/index.html
+share/gnome/help/gthumb/ru/license.html
+share/gnome/help/gthumb/ru/ln10.html
+share/gnome/help/gthumb/ru/shortcuts.html
+share/gnome/help/gthumb/ru/topic.dat
 share/gnome/mime-info/gthumb.keys
 share/gnome/oaf/GNOME_GThumb_Viewer.oaf
 share/gnome/pixmaps/gthumb.png
@@ -31,7 +38,10 @@ share/locale/nl/LC_MESSAGES/gthumb.mo
 share/locale/pt_BR/LC_MESSAGES/gthumb.mo
 share/locale/ru/LC_MESSAGES/gthumb.mo
 share/locale/sv/LC_MESSAGES/gthumb.mo
+@exec mkdir -p %D/share/gnome/help/gthumb/ru/images 2>/dev/null || true
 @exec mkdir -p %D/share/gnome/help/gthumb/C/images 2>/dev/null || true
+@dirrm share/gnome/help/gthumb/ru/images
+@dirrm share/gnome/help/gthumb/ru
 @dirrm share/gnome/help/gthumb/C/images
 @dirrm share/gnome/help/gthumb/C
 @dirrm share/gnome/help/gthumb
