@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Regexp-Common
-PORTVERSION=	0.05
+PORTVERSION=	0.07
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Regexp
@@ -17,6 +17,7 @@ MAINTAINER=	tobez@FreeBSD.org
 PERL_CONFIGURE=	yes
 
 MAN3=		Regexp::Common.3 \
+		Regexp::Common::URI.3 \
 		Regexp::Common::balanced.3 \
 		Regexp::Common::comment.3 \
 		Regexp::Common::delimited.3 \

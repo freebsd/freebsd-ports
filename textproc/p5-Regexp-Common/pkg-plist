@@ -1,5 +1,6 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Regexp/Common/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/Regexp/Common.pm
+lib/perl5/site_perl/%%PERL_VER%%/Regexp/Common/URI.pm
 lib/perl5/site_perl/%%PERL_VER%%/Regexp/Common/balanced.pm
 lib/perl5/site_perl/%%PERL_VER%%/Regexp/Common/comment.pm
 lib/perl5/site_perl/%%PERL_VER%%/Regexp/Common/delimited.pm
