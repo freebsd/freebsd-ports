@@ -1197,6 +1197,7 @@ eeprom		src/usr.sbin/eeprom
 efancylauncher	ports/x11/efancylauncher
 egcs		ports/lang/egcs
 ehnt		ports/net/ehnt
+eieio		ports/devel/eieio
 eiffel		ports/lang/eiffel
 eispack		ports/math/eispack
 eject		ports/sysutils/eject
