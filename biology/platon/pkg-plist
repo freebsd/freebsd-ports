@@ -3,7 +3,7 @@ bin/pluton
 share/doc/platon/TEST/ABSORB_EXAMPLE/s588a.hkl.gz
 share/doc/platon/TEST/ABSORB_EXAMPLE/s588a.hkp.gz
 share/doc/platon/TEST/ABSORB_EXAMPLE/s588a.ins
-share/doc/platon/TEST/ABSORB_EXAMPLE/s588a.lis.gz
+share/doc/platon/TEST/ABSORB_EXAMPLE/s588a.lis
 @dirrm share/doc/platon/TEST/ABSORB_EXAMPLE
 share/doc/platon/TEST/ABSTOMPA_EXAMPLE/s555b.hkl.gz
 share/doc/platon/TEST/ABSTOMPA_EXAMPLE/s555b.hkp.gz

@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	platon
-PORTVERSION=	1999.04.07
+PORTVERSION=	2000.04.26
 CATEGORIES=	biology
 MASTER_SITES=	ftp://xraysoft.chem.ruu.nl/pub/unix/
 DISTNAME=	platon
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
-
-BROKEN='MD5 checksum error'
 
 # PLATON may be used free of charge by the academic community under
 # the condition that it is not redistributed for a current & fresh copy.
