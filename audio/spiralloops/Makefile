@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spiralloops
-PORTVERSION=	0.0.1
+PORTVERSION=	2.0.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.pawfal.org/SpiralLoops/dload/
 DISTNAME=	SpiralLoops-${PORTVERSION}
@@ -25,7 +25,7 @@ USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 post-patch:
-	${PERL} -pi -e "s:-ldl::g" ${WRKSRC}/Makefile.in
+	${PERL} -pi -e "s:-ldl::g; s:^CFLAGS:XCFLAGS:g; s:^CXXFLAGS:XCXXFLAGS:g; s:usr/X11R6:${PREFIX}:g" ${WRKSRC}/Makefile.in
 	${PERL} -pi -e 's|-O3|${PTHREAD_CFLAGS}|g ; \
 			s|CFLAGS =|CFLAGS +=|g ; \
 			s|CXXFLAGS=|CXXFLAGS+=|g ; \
@@ -44,9 +44,9 @@ pre-install:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/SpiralLoops ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/${DOCDIR}
+	${MKDIR} ${DOCSDIR}
 .for i in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 .include <bsd.port.mk>
