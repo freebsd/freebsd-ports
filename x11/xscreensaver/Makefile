@@ -3,7 +3,7 @@
 # Date created:         10 July 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.7 1998/01/23 01:58:21 jseger Exp $
+# $Id: Makefile,v 1.8 1998/03/10 01:35:45 jseger Exp $
 #
 
 DISTNAME=	xscreensaver-2.16
@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	applications
 MAINTAINER=	jseger@FreeBSD.ORG
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+
+BROKEN=		build
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-shadow --without-motif
