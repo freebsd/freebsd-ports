@@ -9,16 +9,6 @@
      OBJCC="$OBJCC -Wall"
      # supposedly gcc 3.4 will have "-Wdeclaration-after-statement"
      # and then perhaps we can do without -pedantic?
-@@ -15346,9 +15346,6 @@
- fi
- echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
--if test $ac_cv_lib_pthread_pthread_create = yes; then
--  GL_LIBS="-lpthread"
--fi
- 
-     fi
- 
 @@ -19014,13 +19011,13 @@
  # Now that we know whether we have Gnome, we can decide where the XML
  # config files get installed.
