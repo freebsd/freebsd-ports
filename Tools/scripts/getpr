@@ -8,17 +8,22 @@
 use strict; 
 
 my $pr = shift;
+my $user = shift;
 
 if ($pr eq "") {
-	print STDERR "getpr prnum\n";
+	print STDERR "getpr prnum [username]\n";
 	exit 1
+}
+
+if ($user ne "") {
+	$user = "$user@";
 }
 
 # get the PR off of freefall
 
 open(D, "> $pr") or die "$pr: $!";
 open(PATCH, "> pr-patch") or die "pr-patch: $!";
-open(PR, " ssh freefall query-pr -F $pr | ") or die $!;
+open(PR, " ssh ${user}freefall.freebsd.org query-pr -F $pr | ") or die $!;
 
 my $fix = "";
 my $infix = 0;
