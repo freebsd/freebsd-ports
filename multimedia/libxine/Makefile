@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.0.r2
-PORTREVISION=	5
+PORTVERSION=	1.0.r3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	lib
-DISTNAME=	${PORTNAME}-lib-1-rc2
+DISTNAME=	${PORTNAME}-lib-1-rc3a
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
@@ -21,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
 LIB_DEPENDS=	FLAC.5:${PORTSDIR}/audio/flac \
 		a52.0:${PORTSDIR}/audio/liba52 \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
-		mad.2:${PORTSDIR}/audio/mad \
+		mad.2:${PORTSDIR}/audio/libmad \
 		speex.2:${PORTSDIR}/audio/speex \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		intl.5:${PORTSDIR}/devel/gettext \
@@ -34,7 +33,7 @@ GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnometarget
 USE_GMAKE=	yes
-USE_MESA=	yes
+USE_GL=		yes
 USE_SDL=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread -I${X11BASE}/include" \
@@ -42,7 +41,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread -
 		THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}" \
 		X_EXTRA_LIBS="-lGL -lGLU -lXext -lX11 -lm"
-CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32
+CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 --enable-ipv6
 INSTALLS_SHLIB=	yes
 
 MAN1=		xine-config.1
