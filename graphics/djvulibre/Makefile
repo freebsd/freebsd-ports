@@ -38,6 +38,7 @@ CONFIGURE_ENV+=	CXX=${CXX} \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		QTLIBS="-L${X11BASE}/lib -lqt-mt"
+CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 .else
 CONFIGURE_ARGS+=--disable-djview
 .endif
