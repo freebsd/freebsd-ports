@@ -14,7 +14,7 @@ DISTNAME=	WebSVN_${PORTVERSION:S/.//}
 MAINTAINER=	ychsiao@ychsiao.idv.tw
 COMMENT=	Subversion repository web frontend
 
-USE_PHP=	yes
+USE_PHP=	pcre zlib
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/WebSVN
 
@@ -26,6 +26,10 @@ do-install:
 	${MKDIR} ${PREFIX}/${WEBSVNDIR}
 	${CP} -R ${WRKSRC}/* ${PREFIX}/${WEBSVNDIR}
 	${CHOWN} -R www:www ${PREFIX}/${WEBSVNDIR}
+	${CP} ${PREFIX}/${WEBSVNDIR}/include/distconfig.inc ${PREFIX}/${WEBSVNDIR}/include/config.inc
 	${FIND} ${PREFIX}/${WEBSVNDIR} -type f | ${XARGS} ${CHMOD} 644
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

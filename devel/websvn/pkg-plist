@@ -9,6 +9,7 @@ www/data/WebSVN/form.php
 www/data/WebSVN/include/bugtraq.inc
 www/data/WebSVN/include/command.inc
 www/data/WebSVN/include/configclass.inc
+www/data/WebSVN/include/config.inc
 www/data/WebSVN/include/distconfig.inc
 www/data/WebSVN/include/feedcreator.class.php
 www/data/WebSVN/include/setup.inc
