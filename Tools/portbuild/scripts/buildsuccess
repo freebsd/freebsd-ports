@@ -27,6 +27,3 @@ portloc=$(grep "^$pkgname|" ${index} | cut -f 2 -d \| | sed s,/usr/ports/,,)
 cd ${pb}/${arch}/${branch}
 grep -v "^${portloc}|" failure > failure.new
 mv failure.new failure
-
-grep -v "^${portloc}|" newfailure > newfailure.new
-mv newfailure.new newfailure
