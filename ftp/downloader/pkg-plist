@@ -1,18 +1,26 @@
+bin/d4x
 bin/nt
+share/d4x/d4x_aqua.png
 share/d4x/ftpsearch.xml
+share/d4x/nt-gray.png
+share/d4x/nt-mini.xpm
+share/d4x/nt-wm.png
+share/d4x/nt.desktop
+share/d4x/nt.png
+share/d4x/nt.wmconfig
+share/d4x/nt.xpm
 share/d4x/sounds/add.wav
 share/d4x/sounds/complete.wav
 share/d4x/sounds/dnd.wav
 share/d4x/sounds/fail.wav
 share/d4x/sounds/finish.wav
 share/d4x/sounds/startup.wav
-share/d4x/themes/glass.xml
 share/d4x/themes/glass/dnd1.png
 share/d4x/themes/glass/dnd2.png
+share/d4x/themes/glass.xml
 share/d4x/themes/glass2/dnd1.png
 share/d4x/themes/glass2/dnd2.png
 share/d4x/themes/glass2.xml
-share/d4x/themes/old_theme.xml
 share/d4x/themes/old_theme/buttons/add.png
 share/d4x/themes/old_theme/buttons/clearlist.png
 share/d4x/themes/old_theme/buttons/clipboardadd.png
@@ -31,6 +39,9 @@ share/d4x/themes/old_theme/buttons/speedhigh.png
 share/d4x/themes/old_theme/buttons/speedlow.png
 share/d4x/themes/old_theme/buttons/speedmedium.png
 share/d4x/themes/old_theme/buttons/stop.png
+share/d4x/themes/old_theme/dnd1.png
+share/d4x/themes/old_theme/dnd2.png
+share/d4x/themes/old_theme/dndmini.png
 share/d4x/themes/old_theme/queue/complete.png
 share/d4x/themes/old_theme/queue/failed.png
 share/d4x/themes/old_theme/queue/paused.png
@@ -39,25 +50,22 @@ share/d4x/themes/old_theme/queue/runbad.png
 share/d4x/themes/old_theme/queue/runpart.png
 share/d4x/themes/old_theme/queue/stopwait.png
 share/d4x/themes/old_theme/queue/wait.png
-share/d4x/themes/old_theme/dnd1.png
-share/d4x/themes/old_theme/dnd2.png
-share/d4x/themes/old_theme/dndmini.png
+share/d4x/themes/old_theme.xml
 share/d4x/themes/tooltip.xml
 %%PORTDOCS%%share/doc/d4x/FAQ
 %%PORTDOCS%%share/doc/d4x/FAQ.de
 %%PORTDOCS%%share/doc/d4x/FAQ.es
 %%PORTDOCS%%share/doc/d4x/FAQ.fr
 %%PORTDOCS%%share/doc/d4x/FAQ.gr
-%%PORTDOCS%%share/doc/d4x/INSTALL
-%%PORTDOCS%%share/doc/d4x/INSTALL.de
-%%PORTDOCS%%share/doc/d4x/INSTALL.es
-%%PORTDOCS%%share/doc/d4x/INSTALL.fr
-%%PORTDOCS%%share/doc/d4x/INSTALL.gr
-%%PORTDOCS%%share/doc/d4x/INSTALL.he
-%%PORTDOCS%%share/doc/d4x/INSTALL.pl
-%%PORTDOCS%%share/doc/d4x/INSTALL.pt_BR
 %%PORTDOCS%%share/doc/d4x/LICENSE
-%%PORTDOCS%%share/doc/d4x/NAMES
+%%PORTDOCS%%share/doc/d4x/README
+%%PORTDOCS%%share/doc/d4x/README.de
+%%PORTDOCS%%share/doc/d4x/README.en
+%%PORTDOCS%%share/doc/d4x/README.es
+%%PORTDOCS%%share/doc/d4x/README.gr
+%%PORTDOCS%%share/doc/d4x/README.pl
+%%PORTDOCS%%share/doc/d4x/README.pt_BR
+%%PORTDOCS%%share/doc/d4x/README.ru
 %%PORTDOCS%%share/doc/d4x/THANKS
 %%PORTDOCS%%share/doc/d4x/TROUBLES
 share/locale/bg/LC_MESSAGES/d4x.mo
@@ -69,11 +77,10 @@ share/locale/it/LC_MESSAGES/d4x.mo
 share/locale/ru/LC_MESSAGES/d4x.mo
 share/locale/uk/LC_MESSAGES/d4x.mo
 %%PORTDOCS%%@dirrm share/doc/d4x
-@dirrm share/d4x/themes/old_theme/buttons
 @dirrm share/d4x/themes/old_theme/queue
+@dirrm share/d4x/themes/old_theme/buttons
 @dirrm share/d4x/themes/old_theme
 @dirrm share/d4x/themes/glass2
 @dirrm share/d4x/themes/glass
 @dirrm share/d4x/themes
 @dirrm share/d4x/sounds
-@dirrm share/d4x
