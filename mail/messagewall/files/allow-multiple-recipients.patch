@@ -1,0 +1,33 @@
+--- smtp.c-orig	Fri Oct 18 10:24:16 2002
++++ smtp.c	Tue Mar 25 13:57:37 2003
+@@ -629,20 +629,17 @@
+ 
+ 		/* 
+ 		 * check that we have recipient space
++		 * Patch from  Quentin Guernsey <quentin@wingateweb.com>
++		 * Applied by Douglas K. Rand <rand@meridian-enviro.com>
++		 * Which allows multiple recipients, but applies the profile of
++		 * the first recipient to all recipients.
++		 * See http://www.messagewall.org/cgi-bin/ezmlm-browse.cgi?command=showthread&list=messagewall-discuss&month=200303&threadid=lcjcimckfmdphlhpjjhn
+ 		 */
+-		if (clients[client].can_relay == 1) {
+-			if (clients[client].num_to == max_rcpt) {
+-				fprintf(stderr,"{%d} (%d) SMTP/REJECT: too many RCPT\n",process,client);
+-				SMTP_RESET
+-				tls_client_write(client,SMTP_MAXRCPT,sizeof(SMTP_MAXRCPT) - 1);
+-				return 0;
+-			}
+-		} else {
+-			if (clients[client].num_to == 1) {
+-				fprintf(stderr,"{%d} (%d) SMTP/TEMPORARY: external host attempted multiple recipient delivery, asked for one at a time\n",process,client);
+-				tls_client_write(client,SMTP_ONLYONE,sizeof(SMTP_ONLYONE) - 1);
+-				return 0;
+-			}
++		if (clients[client].num_to == max_rcpt) {
++			fprintf(stderr,"{%d} (%d) SMTP/REJECT: too many RCPT\n",process,client);
++			SMTP_RESET
++			tls_client_write(client,SMTP_MAXRCPT,sizeof(SMTP_MAXRCPT) - 1);
++			return 0;
+ 		}
+ 
+ 		/*
