@@ -8,7 +8,7 @@
 PORTNAME=	flux
 PORTVERSION=	0.4.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.copyleft.no/projects/flux/ \
+MASTER_SITES=	ftp://ftp.copyleft.no/projects/fluxlib/ \
 		ftp://ftp.styx.net/projects/flux/
 
 MAINTAINER=	ports@FreeBSD.org
