@@ -28,7 +28,6 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
 .endif
 
-PLIST=		${WRKDIR}/pkg-plist
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 WRKSRC=		${WRKDIR}/control/make
@@ -291,18 +290,16 @@ pre-install:
 .endif
 
 do-install:
-	${RM} -f ${PLIST}
-	${TOUCH} ${PLIST}
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
 	cd ${JDKIMAGEDIR} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 	${FIND} -s ${JDKIMAGEDIR} -not -type d | \
-	  ${SED} -ne 's#${JDKIMAGEDIR}#jdk${JDK_VERSION}#p' >> ${PLIST}
+	  ${SED} -ne 's#${JDKIMAGEDIR}#jdk${JDK_VERSION}#p' >> ${TMPPLIST}
 .if defined(WITH_DEBUG)
 	cd ${JDKIMAGEDIR_G} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 	${FIND} -s ${JDKIMAGEDIR_G} -not -type d | \
-	  ${SED} -ne 's#${JDKIMAGEDIR_G}#jdk${JDK_VERSION}#p' >> ${PLIST}
+	  ${SED} -ne 's#${JDKIMAGEDIR_G}#jdk${JDK_VERSION}#p' >> ${TMPPLIST}
 .endif
 	${INSTALL_DATA} ${FILESDIR}/cacerts \
 		${PREFIX}/jdk${JDK_VERSION}/jre/lib/security/cacerts
@@ -311,9 +308,9 @@ do-install:
 		${PREFIX}/jdk${JDK_VERSION}/jre/javaws/cacerts
 .endif
 	@${FIND} -s -d ${PREFIX}/jdk${JDK_VERSION} -type d | \
-	  ${SED} -ne 's#^${PREFIX}/#@dirrm #p' >> ${PLIST}
-	@${ECHO_MSG} "@exec ${LOCALBASE}/bin/registervm ${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}" >> ${PLIST}
-	@${ECHO_MSG} "@unexec ${LOCALBASE}/bin/unregistervm ${PREFIX}/jdk${JDK_VERSION}/bin/java" >> ${PLIST}
+	  ${SED} -ne 's#^${PREFIX}/#@dirrm #p' >> ${TMPPLIST}
+	@${ECHO_MSG} "@exec ${LOCALBASE}/bin/registervm ${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}" >> ${TMPPLIST}
+	@${ECHO_MSG} "@unexec ${LOCALBASE}/bin/unregistervm ${PREFIX}/jdk${JDK_VERSION}/bin/java" >> ${TMPPLIST}
 
 post-install:
 .if !defined(MINIMAL)
