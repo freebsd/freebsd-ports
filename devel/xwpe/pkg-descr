@@ -1,7 +1,7 @@
 xwpe is a X-window programming environment designed for UNIX systems.
 It is similar to 'Borland C++' MS-DOS programming IDE environment.
 
-xwpe supports man compilers, linkers, and debuggers, so you are not tied to
+xwpe supports many compilers, linkers, and debuggers, so you are not tied to
 any particular set of tools.  There is both a curses and X11 interface
 (the later with mouse support).
 
