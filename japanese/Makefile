@@ -38,6 +38,7 @@
     SUBDIR += ee
     SUBDIR += elisa10x8
     SUBDIR += elisa8x8
+    SUBDIR += elisp-manual
     SUBDIR += elvis
     SUBDIR += emacs-manual
     SUBDIR += emacs20-dl-canna
