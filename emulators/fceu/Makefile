@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fceultra
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	gibbon@cocoa.freemail.ne.jp
+MAINTAINER=	xcas@cox.net
 COMMENT=	A portable NES/Famicom emulator based on Bero's original FCE
 
 USE_SDL=	sdl
