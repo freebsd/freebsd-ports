@@ -16,6 +16,8 @@ MAINTAINER=	morishita@skywing.org
 MASTERDIR=	${.CURDIR}/../../net/gaim
 MD5_FILE=	${.CURDIR}/distinfo
 
+BROKEN=		"Japanese patch not yet released"
+
 CONFLICTS=	gaim-*
 
 .include "${MASTERDIR}/Makefile"
