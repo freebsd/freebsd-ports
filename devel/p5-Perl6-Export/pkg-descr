@@ -1,0 +1,4 @@
+This module prototypes the Perl 6 'exported' and 'exportable' traits
+in Perl 5.
+
+WWW: http://search.cpan.org/~dconway/Perl6-Export-0.07/
