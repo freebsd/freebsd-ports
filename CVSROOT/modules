@@ -6637,6 +6637,7 @@ ru-FAQ		doc/ru_RU.KOI8-R/books/faq
 ru-X11		ports/russian/X.language
 ru-apache13	ports/russian/apache13
 ru-apache13-modssl	ports/russian/apache13-modssl
+ru-aspell	ports/russian/aspell
 ru-cyrproxy	ports/russian/cyrproxy
 ru-elm		ports/russian/elm.language
 ru-fortuneru	ports/russian/fortuneru
