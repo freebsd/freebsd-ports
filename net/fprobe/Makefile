@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fprobe
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,14 +16,12 @@ COMMENT=	Tool that collects network traffic data
 
 MAN1=		fprobe.1
 
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		 ${WRKSRC}/configure
 
 post-install:
