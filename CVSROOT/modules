@@ -3958,6 +3958,7 @@ kmovisto	ports/science/kmovisto
 kmplayer	ports/multimedia/kmplayer
 kmyirc		ports/irc/kmyirc
 knews		ports/news/knews
+knewsticker-scripts	ports/misc/knewsticker-scripts
 knights		ports/games/knights
 knocker		ports/security/knocker
 knoda		ports/databases/knoda
