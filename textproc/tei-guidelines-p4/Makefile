@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.tei-c.org/Guidelines2/
 PKGNAMESUFFIX=	-guidelines
 DISTNAME=	p4html
 
-MAINTAINER=	henrik.motakef@web.de
+MAINTAINER=	ports@henrik-motakef.de
 COMMENT=	TEI's Guidelines for Electronic Text Encoding and Interchange
 
 NO_BUILD=	yes
