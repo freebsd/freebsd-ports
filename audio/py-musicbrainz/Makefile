@@ -6,33 +6,45 @@
 #
 
 PORTNAME=	musicbrainz
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.0.b1
+PORTEPOCH=	1
 CATEGORIES=	audio python
-MASTER_SITES=	# none
+MASTER_SITES=	http://icepick.info/projects/python-musicbrainz/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	# none
+DISTNAME=	python-${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	MusicBrainz bindings for Python
 
-EXTRACT_DEPENDS=	${NONEXISTENT}:${LIBMUSICBRAINZ_PORTDIR}:patch
+BUILD_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
+RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	musicbrainz.4:${LIBMUSICBRAINZ_PORTDIR}
 
 LIBMUSICBRAINZ_PORTDIR=	${PORTSDIR}/audio/libmusicbrainz
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+EXAMPLES=	cd2trm.py findartist.py getcdtracklengths.py cdid.py \
+		findtrack.py gettrm.py cdlookup.py generatetrm.py \
+		fileinfolookup.py getalbum.py
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_BUILDARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-IGNORE=		Distfile needs to catch up with libmusicbrainz
-DEPRECATED=	${IGNORE}
-EXPIRATION_DATE=2004-08-20
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/musicbrainz.py \
+		%%PYTHON_SITELIBDIR%%/musicbrainz.pyc \
+		%%PYTHON_SITELIBDIR%%/musicbrainz.pyo
 
-.include <bsd.port.pre.mk>
+.ifndef(NOPORTDOCS)
+PLIST_FILES+=	${EXAMPLES:S/^/%%EXAMPLESDIR%%\//}
+PLIST_DIRS=	%%EXAMPLESDIR%%
+.endif
 
-do-extract:
-	${MKDIR} ${WRKDIR}
-	${LN} -fs `cd ${LIBMUSICBRAINZ_PORTDIR}; ${MAKE} -V WRKSRC`/python ${WRKSRC}
+post-install:
+.ifndef(NOPORTDOCS)
+		${MKDIR} ${EXAMPLESDIR}
+.for i in ${EXAMPLES}
+		${INSTALL_SCRIPT} ${WRKSRC}/examples/${i} ${EXAMPLESDIR}
+.endfor
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
