@@ -1,5 +1,5 @@
 --- newsfetch.c.orig	Thu Jul 23 18:28:56 1998
-+++ newsfetch.c	Wed Dec  1 13:56:52 1999
++++ newsfetch.c	Fri Jan 26 23:41:22 2001
 @@ -7,6 +7,7 @@
  
   
@@ -42,15 +42,3 @@
  
  	/* two file descriptor are for portability among diff systems */
  	createFd(socket_id, socket_fp);
-
---- newsfetch.1.orig	Tue Apr 14 20:04:25 1998
-+++ newsfetch.1	Wed Dec  1 13:29:35 1999
-@@ -5,7 +5,7 @@
- .SH SYNOPSIS
- .B newsfetch
- .BI
--hostname
-+hostname[:port]
- [
- .BI \-clsyvV
- ]

@@ -1,8 +1,9 @@
 --- Makefile.orig	Mon Apr 13 18:09:54 1998
-+++ Makefile	Fri May  8 02:09:12 1998
++++ Makefile	Fri Jan 26 23:44:25 2001
 @@ -1,14 +1,16 @@
- CC = gcc
+-CC = gcc
 -CFLAGS = 
++#CC = gcc
 +#CFLAGS = 
  
  #Uncomment this if you do not want status meter
@@ -25,5 +26,5 @@
  install:
 -	cp newsfetch /usr/local/bin
 -	cp newsfetch.1 /usr/man/man1
-+	$(INSTALL_PROGRAM) newsfetch $(PREFIX)/bin
-+	$(INSTALL_MAN) newsfetch.1 $(PREFIX)/man/man1
++	${BSD_INSTALL_PROGRAM} newsfetch ${PREFIX}/bin
++	${BSD_INSTALL_MAN} newsfetch.1 ${PREFIX}/man/man1
