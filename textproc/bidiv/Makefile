@@ -1,6 +1,6 @@
 # New ports collection makefile for:    bidiv
 # Date created:		06 Jan 2003
-# Whom:			Yonatan <Yonatan@xpert.com>
+# Whom:			Yonatan <onatan@gmail.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.ivrix.org.il/pub/ivrix/src/cmdline/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Yonatan@xpert.com
+MAINTAINER=	onatan@gmail.com
 COMMENT=	A bidirectional text filter
 
 LIB_DEPENDS=	fribidi.0:${PORTSDIR}/converters/fribidi

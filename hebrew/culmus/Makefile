@@ -1,6 +1,6 @@
 # Ports collection makefile for:  culmus
 # Date created:			  11 Apr 2003
-# Whom:				  Yonatan <Yonatan@xpert.com>
+# Whom:				  Yonatan <onatan@gmail.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	hebrew
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	yonatan@xpert.com
+MAINTAINER=	onatan@gmail.com
 COMMENT=	Free Hebrew Type1 fonts
 
 BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}

@@ -1,6 +1,6 @@
 # Ports collection makefile for:  xspy
 # Date created:			  Jan 11 2003
-# Whom:				  Yonatan <Yonatan@xpert.com>
+# Whom:				  Yonatan <onatan@gmail.com>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.0c
 CATEGORIES=	security
 MASTER_SITES=	http://www.acm.vt.edu/~jmaxwell/programs/xspy/
 
-MAINTAINER=	Yonatan@xpert.com
+MAINTAINER=	onatan@gmail.com
 COMMENT=	A utility for monitoring keystrokes on remote X servers
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

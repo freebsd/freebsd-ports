@@ -1,6 +1,6 @@
 # Ports collection makefile for:  hmap
 # Date created:			  29 Apr 2003
-# Whom:				  Yonatan <Yonatan@xpert.com>
+# Whom:				  Yonatan <onatan@gmail.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://ujeni.murkyroc.com/hmap/code/current/	\
 		http://wwwcsif.cs.ucdavis.edu/~leed/hmap/code/current/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	Yonatan@xpert.com
+MAINTAINER=	onatan@gmail.com
 COMMENT=	Web server fingerprinting utility
 
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python

@@ -1,6 +1,6 @@
 # Ports collection makefile for:  pft
 # Date created:			  21 July 2004
-# Whom:				  Yonatan <Yonatan@xpert.com>
+# Whom:				  Yonatan <onatan@gmail.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.phenoelit.de/hp/
 DISTNAME=	libPJL-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Yonatan@xpert.com
+MAINTAINER=	onatan@gmail.com
 COMMENT=	Printer Job Language library and tool
 
 NO_WRKSUBDIR=	yes

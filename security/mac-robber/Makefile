@@ -1,6 +1,6 @@
 # Ports collection makefile for:  mac-robber
 # Date created:			  Jan 12 2003
-# Whom:				  Yonatan <Yonatan@xpert.com>
+# Whom:				  Yonatan <onatan@gmail.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	Yonatan@xpert.com
+MAINTAINER=	onatan@gmail.com
 COMMENT=	A tool for listing Modify, Access, Create timestamps from files
 
 do-build:

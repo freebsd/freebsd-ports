@@ -1,6 +1,6 @@
 # Ports collection makefile for:  memdump
 # Date created:			  16 June 2004
-# Whom:				  Yonatan <Yonatan@xpert.com>
+# Whom:				  Yonatan <onatan@gmail.com>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.porcupine.org/forensics/
 
-MAINTAINER=	yonatan@xpert.com
+MAINTAINER=	onatan@gmail.com
 COMMENT=	Forensic utility for memory-dumping
 
 .include <bsd.port.pre.mk>

@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	yonatan@xpert.com
+MAINTAINER=	onatan@gmail.com
 COMMENT=	A simple interface to low level networking routines
 
 GNU_CONFIGURE=	yes
