@@ -1,0 +1,27 @@
+--- ../../work/cocktail-9309//./front/src/Makefile	Tue Feb 15 14:23:34 1994
++++ ./front/src/Makefile	Wed Mar 31 22:44:53 2004
+@@ -41,10 +41,10 @@
+ 	make -f MakefileM2C LIB=$(MLIB)
+ 
+ Scanner.md Scanner.mi:	input.rex
+-	rex -d input.rex;
++	$(REX) -d input.rex;
+ 
+ Parser.md Parser.mi:	input.lalr
+-	lalr -b -d input.lalr;
++	$(LALR) -b -d input.lalr;
+ 
+ install:	ErrorTab $(LIB)/lalr
+ 	install -c -m 644 ErrorTab $(LIB)/lalr
+@@ -65,9 +65,9 @@
+ 
+ lalrId:	input.rex
+ 	echo SCANNER lalrId | cat - input.rex | \
+-	sed 's/\(RETURN.*Ident\)/yyEcho; IO.WriteNl (IO.StdOutput); \1/' | \
++	$(SED) 's/\(RETURN.*Ident\)/yyEcho; IO.WriteNl (IO.StdOutput); \1/' | \
+ 	$(BIN).sparc.t/rex -sd;
+-	sed 's/@/lalrId/' < ../../front/src/Id.mi > lalrIdDrv.mi
++	$(SED) 's/@/lalrId/' < ../../front/src/Id.mi > lalrIdDrv.mi
+ 	echo p lalrIdDrv | mc -d $(MLIB)
+ 	mv lalrIdDrv lalrId
+ 

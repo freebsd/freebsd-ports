@@ -1,0 +1,42 @@
+--- ../../work/cocktail-9309//./specs/Makefile	Sun Apr  4 18:01:21 2004
++++ ./specs/Makefile	Wed Mar 31 22:35:07 2004
+@@ -0,0 +1,39 @@
++
++.include "Makefile.inc"
++
++ROOTDIR = ../
++
++
++all:	testc
++
++testc:
++	cd c/ada	&& $(MAKE) -i LIB=$(LIB) INCDIR=$(INCDIR)
++	cd c/c		&& $(MAKE) -i LIB=$(LIB) INCDIR=$(INCDIR)
++	cd c/cpp	&& $(MAKE) -i LIB=$(LIB) INCDIR=$(INCDIR)
++	cd c/modula2	&& $(MAKE) -i LIB=$(LIB) INCDIR=$(INCDIR)
++	cd c/modula2.ell	&& $(MAKE) -i LIB=$(LIB) INCDIR=$(INCDIR)
++	cd c/sather	&& $(MAKE) -i LIB=$(LIB) INCDIR=$(INCDIR)
++	cd c/sql	&& $(MAKE) -i LIB=$(LIB) INCDIR=$(INCDIR)
++	cd c/oberon2	&& $(MAKE) -i LIB=$(LIB) INCDIR=$(INCDIR)
++	cd c/minilax	&& $(MAKE) -i LIB=$(LIB) INCDIR=$(INCDIR) minilax
++	cd c/wag	&& $(MAKE) -i LIB=$(LIB) INCDIR=$(INCDIR) minilax
++
++clean:
++	-cd c/ada		&& $(MAKE) clean
++	-cd c/c			&& $(MAKE) clean
++	-cd c/cpp		&& $(MAKE) clean
++	-cd c/modula2		&& $(MAKE) clean
++	-cd c/modula2.ell	&& $(MAKE) clean
++	-cd c/sather		&& $(MAKE) clean
++	-cd c/sql		&& $(MAKE) clean
++	-cd c/oberon2		&& $(MAKE) clean
++	-cd c/minilax		&& $(MAKE) clean
++	-cd c/wag		&& $(MAKE) clean
++	-cd modula/ada		&& $(MAKE) clean
++	-cd modula/modula2	&& $(MAKE) clean
++	-cd modula/modula2.ell	&& $(MAKE) clean
++	-cd modula/modula3	&& $(MAKE) clean
++	-cd modula/oberon	&& $(MAKE) clean
++	-cd modula/pascal	&& $(MAKE) clean
++	-cd modula/minilax	&& $(MAKE) clean
++	-cd modula/wag		&& $(MAKE) clean

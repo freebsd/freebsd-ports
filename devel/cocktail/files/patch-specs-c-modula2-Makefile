@@ -1,0 +1,36 @@
+--- ../../work/cocktail-9309//./specs/c/modula2/Makefile	Tue Feb 15 14:28:29 1994
++++ ./specs/c/modula2/Makefile	Wed Mar 31 23:02:48 2004
+@@ -1,7 +1,3 @@
+-LIB	= $(HOME)/lib
+-INCDIR	= $(LIB)/include
+-CFLAGS	= -I$(INCDIR)
+-CC	= cc
+ 
+ ParserDrv:	ParserDrv.o Scanner.o Parser.o
+ 	$(CC) $(CFLAGS) ParserDrv.o Scanner.o Parser.o $(LIB)/libreuse.a -o ParserDrv
+@@ -10,13 +6,13 @@
+ 	lpp -cxzj modula.pars;
+ 
+ modula.rex:	modula.scan Scanner.rpp
+-	rpp < modula.scan > modula.rex;
++	$(RPP) < modula.scan > modula.rex;
+ 
+ Scanner.h Scanner.c:	modula.rex
+-	rex -cd modula.rex;
++	$(REX) -cd modula.rex;
+ 
+ Parser.h Parser.c ParserDrv.c:	Parser.lalr
+-	lalr -c -d -p Parser.lalr;
++	$(LALR) -c -d -p Parser.lalr;
+ 
+ ParserDrv.o:	Parser.h Scanner.h
+ Parser.o:	Parser.h Scanner.h
+@@ -28,7 +24,4 @@
+ clean:
+ 	rm -f core *.[hco] _Debug ParserDrv modula.rex Parser.lalr Scanner.rpp
+ 
+-.SUFFIXES:	.c .o
+-
+-.c.o:
+-	$(CC) $(CFLAGS) -c $*.c
++.include "../../Makefile.inc" 

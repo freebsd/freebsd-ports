@@ -1,0 +1,33 @@
+--- ../../work/cocktail-9309//./mtc/make/Makefile	Tue Feb 15 14:24:53 1994
++++ ./mtc/make/Makefile	Wed Mar 31 22:47:12 2004
+@@ -26,10 +26,10 @@
+ 	sh -c "if test ! -d $(LIB)/makemake; then mkdir -p $(LIB)/makemake; else true; fi"
+ 
+ Scanner.md Scanner.mi:	modula.rex
+-	rex -d modula.rex;
++	$(REX) -d modula.rex;
+ 
+ Parser.md Parser.mi:	modula.ell
+-	ell -di modula.ell;
++	$(ELL) -di modula.ell;
+ 
+ m2c:	$(SRCM) $(GEN)
+ 	make sources M2FLAGS="-c -d../../reuse/src" -f MakefileC
+@@ -38,9 +38,9 @@
+ 
+ modId:	modula.rex
+ 	echo SCANNER modId | cat - modula.rex | \
+-	sed 's/\(RETURN.*Ident\)/yyEcho; IO.WriteNl (IO.StdOutput); \1/' | \
+-	$(BIN).t/rex -sd;
+-	sed 's/@/modId/' < ../../front/src/Id.mi > modIdDrv.mi
++	$(SED) 's/\(RETURN.*Ident\)/yyEcho; IO.WriteNl (IO.StdOutput); \1/' | \
++	$(REX) -sd;
++	$(SED) 's/@/modId/' < ../../front/src/Id.mi > modIdDrv.mi
+ 	echo p modIdDrv | mc -d ../../reuse/src
+ 	mv modIdDrv modId
+ 
+@@ -60,3 +60,4 @@
+ 
+ CLEAN:	clean
+ 	rm -f [A-Z]*.[hc] Parser.m? Scanner.m? GetImports
++.include "../../Makefile.inc" 

@@ -1,0 +1,48 @@
+--- ../../work/cocktail-9309//./y2l/src/Makefile	Tue Feb 15 14:29:16 1994
++++ ./y2l/src/Makefile	Wed Mar 31 23:13:47 2004
+@@ -1,26 +1,28 @@
+-BIN	= $(HOME)/bin
+-OPT	= -O
+-CC	= cc
+-REUSE	= ../../reuse/c
+-CFLAGS	= -w -I$(REUSE) $(OPT)
++
++.include "../../Makefile.inc"
++
++ROOTDIR = ../..
++CFLAGS  += -I$(INCDIRC)
++CLIBS   += $(REUSELIBC)
++
+ OBJS	= y2l.o Parser.o Scanner.o Tables.o
+ SOURCES	= Scanner.h Scanner.c Parser.h Parser.c
+ 
+ # targets
+ 
+ y2l:	$(OBJS)
+-	$(CC) -o y2l $(CFLAGS) $(OBJS) $(REUSE)/libreuse.a
++	$(CC) -o y2l $(CFLAGS) $(OBJS) $(CLIBS)
+ 
+ sources:	$(SOURCES)
+ 
+ Scanner.h Scanner.c:	yacc.rex
+-	rex -cd yacc.rex;
++	$(REX)	-cd yacc.rex;
+ 
+ Parser.h Parser.c:	yacc.lalr
+-	lalr -b -c -d yacc.lalr;
++	$(LALR)  -b -c -d yacc.lalr;
+ 
+ install:	y2l
+-	install -c -s -m 755 y2l $(BIN)
++	install -c -s -m 755 y2l $(DESTBIN)
+ 
+ lint:	y2l.c Parser.c Scanner.c Tables.c
+ 	lint -I$(REUSE) -b -u *.c
+@@ -43,7 +45,3 @@
+ man:
+ 	nroff -man y2l.1
+ 
+-.SUFFIXES:	.c .o
+-
+-.c.o:
+-	$(CC) $(CFLAGS) -c $*.c
