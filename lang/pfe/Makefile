@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pfe
-PORTVERSION=	0.32.91
-PORTREVISION=	1
+PORTVERSION=	0.32.94
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,10 +14,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of ANSI Forth
 
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	#
+USE_PERL5_BUILD=	yes
+USE_GNOME=	gnometarget lthack
 USE_GMAKE=	yes
-MAKE_ARGS=      mandir=/usr/local/man
+USE_LIBTOOL_VER=	13
+LIBTOOLFILES=	pfe/configure
+LIBTOOLFLAGS=	# none
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+
 MAN1=        pfe.1 pfe-config.1
 
 .include <bsd.port.mk>
