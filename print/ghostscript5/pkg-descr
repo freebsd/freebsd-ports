@@ -1,23 +1,18 @@
-This is Aladdin Ghostscript, the non-GPL version that comes with a licence
-different from the GPL. Read the file PUBLIC in the work/gsX.Y directory or
-in ${PREFIX}/share/ghostscript/X.Y/doc/PUBLIC after installation for details !
+Ghostscript is the name of a set of software that provides:
 
-Ghostscript is the well-known PostScript interpreter which is available for
-all common and most esoteric platforms and supports many different printers
-and some displays.
+	- An interpreter for the PostScript (TM) language, and
 
-Official ghostscript homepage, see:
-	http://www.cs.wisc.edu/~ghost/index.html
+	- A set of C procedures (the Ghostscript library) that implement
+the graphics capabilities that appear as primitive operations in the
+PostScript language.
 
-This FreeBSD port includes two useful add-on packages:
-	o Support for HP DeskJet 670, 690, 850, 855, 870, 890, 1100 and 1600,
-	  see announcement on
-		 http://www.erdw.ethz.ch/~bonk/hp850/hp850.html
-	o Support for pdfencrypt, see description on
-	  	http://www.ozemail.com.au/~geoffk/pdfencrypt/
-		
-Thomas Merz has written a Ghostscript manual in PDF format:
-	http://www.cs.wisc.edu/~ghost/merz.html
+Aladdin Ghostscript and GNU Ghostscript come with NO WARRANTY and NO
+SUPPORT.  
 
-The manual is also available in German language, see:
-	http://www.muc.de/~tm/free/free.html
+Also included with this package is the hpdj driver written by Martin
+Lottermoser with defaults for a Deskjet 560C. See the man page for
+gs-hpdj(1) for details.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+PostScript is a trademark of Adobe Systems, Incorporated.
