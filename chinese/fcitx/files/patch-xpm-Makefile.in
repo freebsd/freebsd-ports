@@ -1,0 +1,11 @@
+--- xpm/Makefile.in.orig	Mon Jan 17 20:56:42 2005
++++ xpm/Makefile.in	Wed Feb 23 12:25:47 2005
+@@ -147,7 +147,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-xpmdir = $(pkgdatadir)/xpm
++xpmdir =
+ xpm_DATA = 
+ EXTRA_DIST = $(xpm_DATA)
+ all: all-am
