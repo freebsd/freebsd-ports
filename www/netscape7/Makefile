@@ -90,7 +90,7 @@ DISTFILES?=	browser.xpi \
 		talkback.xpi \
 		xpcom.xpi
 .if exists(${WRKDIRPREFIX}${.CURDIR}/work/netscape-installer/xpi/components.conf)
-DISTFILES!= ${CAT} ${WRKDIRPREFIX}${.CURDIR}/work/netscape-installer/xpi/components.conf
+DISTFILES!=${CAT} ${WRKDIRPREFIX}${.CURDIR}/work/netscape-installer/xpi/components.conf
 .endif
 
 checksum:
