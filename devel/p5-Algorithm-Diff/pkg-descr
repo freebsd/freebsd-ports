@@ -1,0 +1,9 @@
+Algorithm::Diff is a perl module that provides an interface to compute
+the difference between two files, two strings, or any other two lists
+of things.  It uses an intelligent algorithm similar/identical to the
+one used by classical Unix diff(1).  It is guaranteed to find the
+*smallest possible* set of differences.
+
+Author: Ned Konz <perl@bike-nomad.com>
+
+--will

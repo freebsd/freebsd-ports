@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Algorithm/Diff/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Algorithm/Diff.pm
+lib/perl5/site_perl/%%PERL_VER%%/Algorithm/DiffOld.pm
+lib/perl5/site_perl/%%PERL_VER%%/Algorithm/cdiff.pl
+lib/perl5/site_perl/%%PERL_VER%%/Algorithm/diff.pl
+lib/perl5/site_perl/%%PERL_VER%%/Algorithm/diffnew.pl
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Algorithm/Diff
