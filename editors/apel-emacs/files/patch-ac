@@ -1,0 +1,11 @@
+--- APEL-MK.orig	Wed Dec 22 13:14:21 1999
++++ APEL-MK	Wed May 10 23:45:36 2000
+@@ -41,7 +41,7 @@
+       ;; Make "emu" subdirectory.
+       "emu"
+     ;; Don't make "emu" subdirectory.
+-    ""))
++    "emu"))
+ 
+ ;; The directories where APEL and EMU modules will be installed.
+ ;; These two variables will be generated from other variables above.
