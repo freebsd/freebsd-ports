@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	luma
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	sysutils net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +15,7 @@ MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	A graphical tool for accessing and managing LDAP servers
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_ldap.so:${PORTSDIR}/net/py-ldap2 \
-		pyuic:${PORTSDIR}/x11-toolkits/py-qt \
-		${PYTHON_SITELIBDIR}/mx/TextTools/__init__.py:${PORTSDIR}/lang/py-mx-base
+		pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
@@ -25,7 +24,10 @@ WANTS_OPENLDAP_VER=	2.1
 NO_BUILD=	yes
 
 INSTALLCMD=	install.py
-INSTALLARGS=	--prefix=${LOCALBASE}
+INSTALLARGS=	--prefix=${PREFIX}
+
+post-extract:
+	${FIND} ${WRKSRC} \( -name '.#*' -o -name '*~*' \) -delete
 
 do-install:
 	@(cd ${INSTALL_WRKSRC}; ${PYTHON_CMD} ${INSTALLCMD} ${INSTALLARGS})
