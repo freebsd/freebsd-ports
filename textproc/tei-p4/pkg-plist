@@ -56,4 +56,3 @@ share/sgml/tei/p4/catalog
 @exec %%MKCATALOG%% -q install %%DTD_NAME%%/%%DTD_VERSION%%
 @dirrm share/sgml/tei/p4/
 @unexec rmdir %D/share/sgml/tei 2>/dev/null || true
-@unexec rmdir %D/share/sgml 2>/dev/null || true
