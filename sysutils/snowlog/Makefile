@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	snowlog
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://home.kcore.de/~kiza/software/snowlog/download/
 
