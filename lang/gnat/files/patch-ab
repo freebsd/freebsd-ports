@@ -16,12 +16,3 @@
  #else
  #define LIB_SPEC \
    "%{!shared: \
-@@ -186,7 +191,7 @@
-    done.  */
- 
- #undef	LINK_SPEC
--#define LINK_SPEC "-m elf_i386 %{shared:-shared} \
-+#define LINK_SPEC "%{shared:-shared} \
-   %{!shared: \
-     %{!ibcs: \
-       %{!static: \
