@@ -26,6 +26,7 @@
     SUBDIR += docbook-410
     SUBDIR += docbook-xml
     SUBDIR += docproj
+    SUBDIR += dsssl-docbook-cygnus
     SUBDIR += dsssl-docbook-modular
     SUBDIR += dtd-catalogs
     SUBDIR += eruby

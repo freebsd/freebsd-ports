@@ -1,0 +1,9 @@
+--- stylesheets.cat~	Mon Nov 30 16:45:05 1998
++++ stylesheets.cat	Tue Sep 12 22:06:51 2000
+@@ -1,3 +1,3 @@
+-PUBLIC "UNREGISTERED::Cygnus Solutions//Docbook Style Sheet for HTML//EN" stylesheets/dbtohtml.dsl
+-PUBLIC "UNREGISTERED::Cygnus Solutions//Docbook Generic Style Sheet//EN" stylesheets/bosak-db3.dsl
+-PUBLIC "UNREGISTERED::Cygnus Solutions//Docbook Modular Style Sheet//EN" stylesheets/cygnus-both.dsl
++PUBLIC "-//Cygnus Solutions//Docbook Style Sheet for HTML//EN" dbtohtml.dsl
++PUBLIC "-//Cygnus Solutions//Docbook Generic Style Sheet//EN" bosak-db3.dsl
++PUBLIC "-//Cygnus Solutions//Docbook Modular Style Sheet//EN" cygnus-both.dsl

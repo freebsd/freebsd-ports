@@ -1,0 +1,5 @@
+#!/bin/sh
+
+for f in ${DB_DATA}; do
+    env LANG=C perl -pi -e 's/%%PREFIX%%/$ENV{PREFIX}/g' ${WRKSRC}/${f}
+done
