@@ -1,0 +1,16 @@
+--- server/ArgusModeler.c~	Fri Mar  9 16:47:00 2001
++++ server/ArgusModeler.c	Fri Apr  6 17:08:28 2001
+@@ -694,5 +694,5 @@
+          if ((vlan = (struct ArgusVlanStruct *) ArgusCalloc (1, sizeof(struct ArgusVlanStruct))) != NULL) {
+             vlan->type   = ARGUS_VLAN_DSR;
+-            vlan->length = sizeof(vlan);
++            vlan->length = sizeof(*vlan);
+             flowstr->VlanDSRBuffer = vlan;
+          }
+@@ -1510,4 +1510,6 @@
+ #endif
+ 
++      bzero ((char *)ArgusThisFlow, sizeof(*ArgusThisFlow));
++      ArgusThisHash = 0;
+       ArgusThisIpHdr = ip;
+  
