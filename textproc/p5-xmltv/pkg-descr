@@ -1,0 +1,12 @@
+[ excerpt from developer's website ]
+
+XMLTV is a set of programs to process TV (tvguide) listings and
+manage your TV viewing. It stores the listings in an XML-based
+format.
+
+The idea is to separate out the backend (getting the listings) from
+the frontend (displaying them for the user), and to implement useful
+operations like picking out your favourite programmes as filters
+that read and write XML documents.
+
+WWW: http://xmltv.sourceforge.net/
