@@ -6,26 +6,46 @@
 #
 
 PORTNAME=	camserv
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 PORTEPOCH=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://cserv.sourceforge.net/old/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	cserv
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	q@uni.de
 COMMENT=	Camserv is a free program to do streaming video via the web
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Imlib2.2:${PORTSDIR}/graphics/imlib2 \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		ltdl.4:${PORTSDIR}/devel/libltdl
 
 USE_X_LIB=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+USE_AUTOCONF_VER=253
 
+#CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${X11BASE}/include/gtk12 -I${X11BASE}/include/gdk-pixbuf-1.0 \
 		-I${LOCALBASE}/include/glib12" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=--enable-static=no
+
+.if exists(/usr/include/dev/bktr/ioctl_bt848.h)
+post-patch:
+	${REINPLACE_CMD} -e 's#machine/\(ioctl_bt848.h\)#dev/bktr/\1#' \
+		${WRKSRC}/camserv/video_fbsd_bttv.c \
+		${WRKSRC}/configure.in
+.endif
+
+.if exists(/usr/include/machine/ioctl_bt848.h) || \
+	exists(/usr/include/dev/bktr/ioctl_bt848.h)
+PLIST_SUB+=	BKTR=""
+.else
+PLIST_SUB+=	BKTR="@comment "
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -33,16 +53,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/javascript.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502104
-BROKEN=		"Does not compile"
-.endif
-  
-.if ${OSVERSION} < 500000
-ONLY_FOR_ARCHS=	i386
-.else
-ONLY_FOR_ARCHS=	alpha i386 ia64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -8,3 +8,13 @@
  #include <machine/ioctl_bt848.h>
  #include <machine/ioctl_meteor.h>
  #include <signal.h>
+@@ -644,7 +644,7 @@
+   if( !fbttv_dev->autobright || --fbttv_dev->autoleft > 0 )
+     return 0;
+ 
+   totmean = camserv_get_pic_mean( width, height, picbuf, 1, 0, 0, 
+-				  width, height );
++				  width-1, height-1 );
+   if( totmean < (256 / 2) - 10 || totmean > (256 / 2) + 10 ) {
+     newbright = fbttv_dev->brightness;
+     if( totmean > (256 / 2) + 10 ){
