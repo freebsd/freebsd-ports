@@ -2676,6 +2676,7 @@ iozone		ports/benchmarks/iozone
 iozone21	ports/benchmarks/iozone21
 ip6_int		ports/net/ip6_int
 ipa		ports/sysutils/ipa
+ipaudit		ports/net/ipaudit
 ipcad		ports/net/ipcad
 ipcalc		ports/net/ipcalc
 ipcheck		ports/net/ipcheck
