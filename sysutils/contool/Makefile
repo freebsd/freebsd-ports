@@ -3,7 +3,7 @@
 # Date created:         2 Dec 1996
 # Whom:                 nsayer@quack.kfu.com
 #
-# $Id: Makefile,v 1.6 1998/09/21 22:15:58 steve Exp $
+# $Id: Makefile,v 1.7 1998/10/21 00:57:37 steve Exp $
 #
 
 DISTNAME=	contool-3.3a
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.kfu.com/pub/
 
 MAINTAINER=	nsayer@quack.kfu.com
 
-LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview-lib
+LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 NO_CDROM=	"source code cannot be sold, nor can you incorporate the source code into a product which is subsequently sold"
 NO_WRKSUBDIR=	yes

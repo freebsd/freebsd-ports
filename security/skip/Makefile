@@ -3,7 +3,7 @@
 # Date created:         		26 November 1997
 # Whom:                 		Archie L. Cobbs <archie@whistle.com>
 #
-# $Id: Makefile,v 1.5 1999/02/03 06:57:16 archie Exp $
+# $Id: Makefile,v 1.6 1999/02/26 01:01:19 archie Exp $
 
 DISTNAME=		skip-1.0
 CATEGORIES=		security
@@ -20,9 +20,9 @@ EXTRACT_SUFX=		tar.Z
 
 MAINTAINER=		archie@whistle.com
 
-BUILD_DEPENDS=	${X11BASE}/lib/libxview.a:${PORTSDIR}/x11-toolkits/xview-lib \
-		${X11BASE}/lib/X11/config/XView.cf:${PORTSDIR}/x11-toolkits/xview-config
-LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview-lib
+BUILD_DEPENDS=	${X11BASE}/lib/libxview.a:${PORTSDIR}/x11-toolkits/xview \
+		${X11BASE}/lib/X11/config/XView.cf:${PORTSDIR}/x11-toolkits/xview
+LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 # The SKIP code is restricted from export from the United States and Canada.
 # See the file doc/00README for legal details.

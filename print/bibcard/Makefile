@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.6 1998/09/21 22:15:57 steve Exp $
+# $Id: Makefile,v 1.7 1998/10/20 01:48:29 steve Exp $
 #
 
 DISTNAME=	bibcard.6.4
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@NUXI.com
 
-LIB_DEPENDS=    xview.3:${PORTSDIR}/x11-toolkits/xview-lib
+LIB_DEPENDS=    xview.3:${PORTSDIR}/x11-toolkits/xview
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
@@ -26,7 +26,6 @@ pre-configure:
 		>> ${WRKSRC}/Imakefile
 	@${ECHO} "EXTRA_DEFINES= -DHAVE_STRCASECMP -DHAVE_STRSTR"  \
 		>> ${WRKSRC}/Imakefile
-	@/bin/ln -f ${WRKSRC}/bibcard.1 ${WRKSRC}/bibcard.man
+	@${LN} -f ${WRKSRC}/bibcard.1 ${WRKSRC}/bibcard.man
 
 .include <bsd.port.mk>
-

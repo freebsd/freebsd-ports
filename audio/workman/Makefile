@@ -3,7 +3,7 @@
 # Date created:         25 Now 1995
 # Whom:                 Donald Burr <d_burr@ix.netcom.com>
 #
-# $Id: Makefile,v 1.8 1998/10/11 07:31:38 jseger Exp $
+# $Id: Makefile,v 1.9 1998/10/13 03:30:30 jseger Exp $
 #
 
 DISTNAME=       WorkMan-1.3a
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	applications/WorkMan
 
 MAINTAINER=	d_burr@ix.netcom.com
 
-LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview-lib
+LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/workman
 USE_IMAKE=	yes
