@@ -1,6 +1,7 @@
-In the great tradition of bc and dc, a new console-based calculator
-application is born! rpc is a full-screen RPN calculator program
-based on the curses library. It works like some of the more popular
-reverse-polish-notation calculators available on the market today.
+RPC is a full-screen console-based RPN calculator that uses the curses
+library.  Its operation is similar to that of modern HP calculators,
+but data entry has been optimized for efficiency on a PC keyboard.  Its
+features include extensive scientific calculator functionality, command
+completion, and a visible interactive stack.
 
 WWW: http://www.eecs.umich.edu/~pelzlpj/rpc/
