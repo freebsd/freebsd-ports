@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	jabber4r
-PORTVERSION=	0.4.0
+PORTVERSION=	0.6.0
 CATEGORIES=	net ruby
-MASTER_SITES=	http://rubyforge.org/download.php/5/
+MASTER_SITES=	http://rubyforge.org/download.php/376/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
@@ -24,17 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 DOCS=		LICENSE.txt README doc
 EXAMPLES=	examples/*
 
-BROKEN=		"Broken pkg-plist"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-15
-
 .include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} == 1.8
-MASTER_SITES=	http://rubyforge.org/download.php/220/
-DISTNAME=	${PORTNAME}_ruby_1.8-${PORTVERSION}
-WRKSRC=		${WRKDIR}/${PORTNAME}_ruby_1.8
-.endif
 
 PLIST_MODDOCDIR=	share/doc/${RUBY_NAME}/${RUBY_MODNAME}
 
