@@ -24,6 +24,8 @@ CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^1].*
 LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
+LATEST_LINK=	${PORTNAME}2
+
 USE_RC_SUBR=	YES
 
 USE_OPENSSL=	yes
