@@ -14,7 +14,7 @@ DISTNAME=	xemacs-${XEMACS_VER:S/-b/./}
 #DISTFILES=	${DISTNAME}.11${EXTRACT_SUFX}
 DIST_SUBDIR=	xemacs
 
-MAINTAINER=	gj@FreeBSD.org
+MAINTAINER=	anray@inet.ua
 COMMENT=	This port tracks the development (GAMMA) version of the XEmacs text editor
 
 NOT_FOR_ARCHS=	sparc64
@@ -31,7 +31,7 @@ USE_XPM=	yes
 
 XEMACS_MAJOR_VER?=	21
 XEMACS_REL=		${XEMACS_MAJOR_VER}.5
-XEMACS_VER=		${XEMACS_MAJOR_VER}.5-b17
+XEMACS_VER=		${XEMACS_MAJOR_VER}.5-b18
 XEMACS_ARCH=		${CONFIGURE_TARGET}
 
 WRKSRC=		${WRKDIR}/xemacs-${XEMACS_VER:S/-b/./}
