@@ -3,13 +3,13 @@
 # Date created:		22 Aug 1996
 # Whom:			pst@freebsd.org
 #
-# $Id: Makefile,v 1.6 1999/01/27 07:41:07 fenner Exp $
+# $Id: Makefile,v 1.7 1999/03/11 21:47:09 scrappy Exp $
 #
 
 DISTNAME=	id-utils-3.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	id
+MASTER_SITE_SUBDIR=	id-utils
 
 MAINTAINER=	pst@FreeBSD.ORG
 
