@@ -1,7 +1,7 @@
---- ipv6calc.h.in.orig	Wed Jan 30 19:22:13 2002
-+++ ipv6calc.h.in	Wed Jan 30 19:25:11 2002
-@@ -20,6 +20,7 @@
- #define PROGRAM_COPYRIGHT "(P) & (C) 2001-2002 by Peter Bieringer <pb@bieringer.de>\n published under GNU GPL"
+--- ipv6calc.h.in.orig	Wed Feb 27 09:51:19 2002
++++ ipv6calc.h.in	Wed Feb 27 09:50:48 2002
+@@ -19,6 +19,7 @@
+ #define PROGRAM_COPYRIGHT "(P) & (C) 2001-2002 by Peter Bieringer <pb (at) bieringer.de>\n published under GNU GPL"
  
  /* global includes */
 +#include <sys/types.h>

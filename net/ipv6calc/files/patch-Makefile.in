@@ -1,25 +1,34 @@
---- Makefile.in.orig	Thu Jan 24 17:01:10 2002
-+++ Makefile.in	Wed Jan 30 15:47:31 2002
-@@ -8,11 +8,9 @@
+--- Makefile.in.orig	Mon Feb 25 16:40:18 2002
++++ Makefile.in	Tue Feb 26 18:06:30 2002
+@@ -9,16 +9,13 @@
+ #
  
  # Compiler and Linker Options
- #COPTS = -O2 -Wall -g		# old one
 -COPTS = -O2 -Wall -g -ansi	# ANSI compatible
-+COPTS = -ansi -I${LOCALBASE}/include	# ANSI compatible
++COPTS = -Wall -ansi	# ANSI compatible
  
--CFLAGS	= $(COPTS)
--
+-CFLAGS	= $(COPTS) -Igetopt/
++CFLAGS	+= $(COPTS) -I${LOCALBASE}/include
+ 
 -CC	= gcc
-+CFLAGS	+= $(COPTS)
  
- #OBJS = ipv6calc.o addr_to_compressed.o addr_to_uncompressed.o addr_to_fulluncompressed.o addr_to_ifinet6.o addr_to_ip6int.o ifinet6_to_compressed.o  libipv6calc.o addr_to_base85.o librfc1924.o base85_to_addr.o librfc1884.o libmac.o libeui64.o mac_to_eui64.o eui64_to_privacy.o librfc3041.o showinfo.o ipv6types.o
- OBJS = ipv6calc.o addr_to_compressed.o addr_to_uncompressed.o addr_to_fulluncompressed.o addr_to_ifinet6.o addr_to_ip6int.o ifinet6_to_compressed.o  libipv6calc.o addr_to_base85.o librfc1924.o base85_to_addr.o librfc1884.o libmac.o libeui64.o mac_to_eui64.o eui64_to_privacy.o librfc3041.o showinfo.o libipv6addr.o
-@@ -25,7 +23,7 @@
- $(OBJS):	ipv6calc.h libipv6addr.h librfc1884.h
+ OBJS = ipv6calc.o addr_to_compressed.o addr_to_uncompressed.o addr_to_fulluncompressed.o addr_to_ifinet6.o addr_to_ip6int.o addr_to_bitstring.o ifinet6_to_compressed.o  libipv6calc.o addr_to_base85.o librfc1924.o base85_to_addr.o librfc1884.o libmac.o libeui64.o mac_to_eui64.o eui64_to_privacy.o librfc3041.o showinfo.o libipv6addr.o librfc2874.o libhelp.o librfc1886.o
  
- ipv6calc:	$(OBJS)
--		$(CC) -o ipv6calc $(OBJS) -lcrypto
+-GETOBJS = getopt/getopt.o getopt/getopt1.o
+-
+ all:		ipv6calc
+ 
+ .c.o:
+@@ -26,9 +23,9 @@
+ 
+ $(OBJS):	ipv6calc.h libipv6addr.h librfc1884.h librfc2874.h addr_to_fulluncompressed.h base85_to_addr.h addr_to_base85.h addr_to_ifinet6.h libeui64.h libmac.h librfc3041.h addr_to_bitstring.h addr_to_ip6int.h eui64_to_privacy.h libhelp.h mac_to_eui64.h addr_to_compressed.h addr_to_uncompressed.h ifinet6_to_compressed.h libipv6addr.h librfc1924.h showinfo.h librfc1886.h
+ 
+-ipv6calc:	$(OBJS) getopt-make
+-		$(CC) -o ipv6calc $(OBJS) $(GETOBJS) -lcrypto
+-		$(CC) -o ipv6calc-static $(OBJS) $(GETOBJS) -lcrypto -static
++ipv6calc:	$(OBJS)
 +		$(CC) -o ipv6calc $(OBJS) -lcrypto -lgnugetopt -L${LOCALBASE}/lib
++		$(CC) -o ipv6calc-static $(OBJS) -lgnugetopt -lcrypto -static -L${LOCALBASE}/lib
  
  distclean:
  		make clean
