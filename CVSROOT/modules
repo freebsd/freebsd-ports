@@ -3921,6 +3921,7 @@ krdesktop	ports/net/krdesktop
 krename		ports/sysutils/krename
 kripp		ports/security/kripp
 kronolith	ports/deskutils/kronolith
+krosswordplayer	ports/games/krosswordplayer
 krss		ports/deskutils/krss
 krusader	ports/x11-fm/krusader
 kseg		ports/math/kseg
