@@ -7,6 +7,7 @@
 
 PORTNAME=	Test-Reporter
 PORTVERSION=	1.25
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -21,7 +22,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN1=		cpantest.1
-MAN3=		Test::Reporter.3
+MAN3=		Test::Reporter.3 \
+		Test::Reporter::Date::Format.3 \
+		Test::Reporter::Mail::Util.3 \
+		Test::Reporter::Time::Zone.3
 
 .include <bsd.port.pre.mk>
 
