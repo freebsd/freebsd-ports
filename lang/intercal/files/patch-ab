@@ -1,12 +1,15 @@
---- perpetrate.c.orig	Fri Dec 11 11:32:40 1998
-+++ perpetrate.c	Fri Dec 11 11:33:10 1998
-@@ -56,7 +56,9 @@
- extern int yyparse(void);
- 
- /* getopt declaration */
-+#ifndef __FreeBSD__
- int getopt(int, char**, char*);
-+#endif
- 
- /* compilation options */
- bool compile_only; 	/* just compile into C, don't run the linker */
+*** perpetrate.c.old	Fri Dec 18 04:59:39 1998
+--- perpetrate.c	Mon Nov  1 00:29:16 1999
+***************
+*** 55,62 ****
+--- 55,64 ----
+  /* function created by yacc */
+  extern int yyparse(void);
+  
++ #ifndef __FreeBSD__
+  /* getopt declaration */
+  int getopt(int, char**, char*);
++ #endif
+  
+  /* compilation options */
+  bool compile_only; 	/* just compile into C, don't run the linker */
