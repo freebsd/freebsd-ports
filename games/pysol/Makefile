@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pysol
-PORTVERSION=	4.10
+PORTVERSION=	4.20
 CATEGORIES=	games
 MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/pysol/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${CARDSETS}${EXTRACT_SUFX}
@@ -23,7 +23,7 @@ NO_BUILD=	yes
 
 MAN6=	pysol.6
 
-CARDSETS=	pysol-cardsets-3.40
+CARDSETS=	pysol-cardsets-${PORTVERSION}
 
 .if !defined(WITH_SOUND)
 post-extract:
