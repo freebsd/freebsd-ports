@@ -766,7 +766,7 @@ MANCOMPRESSED?=	yes
 MANCOMPRESSED?=	no
 .endif
 
-.if defined(USE_BZIP2)
+.if defined(USE_BZIP2) && ${OSVERSION} < 500021
 BUILD_DEPENDS+=		bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 .if defined(USE_ZIP)
