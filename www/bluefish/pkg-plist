@@ -3,5 +3,8 @@ lib/bluefish/php3_functions
 lib/bluefish/ssi_functions
 lib/bluefish/rxml_functions
 share/doc/bluefish/README
+share/locale/de/LC_MESSAGES/bluefish.mo
+share/locale/da/LC_MESSAGES/bluefish.mo
+share/locale/fr/LC_MESSAGES/bluefish.mo
 @dirrm lib/bluefish
 @dirrm share/doc/bluefish

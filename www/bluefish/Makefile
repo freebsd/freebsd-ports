@@ -1,12 +1,12 @@
 # New ports collection makefile for:   bluefish
-# Version required:		0.3.4
+# Version required:		0.3.5
 # Date created:			25 July 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bluefish-0.3.4
+DISTNAME=	bluefish-0.3.5
 CATEGORIES=	www editors
 MASTER_SITES=	http://bluefish.linuxbox.com/download/ \
 		http://student.wau.nl/~olivier/bluefish/download/ \
@@ -20,9 +20,11 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
-USE_X_PREFIX=  yes
-GNU_CONFIGURE= yes
-CONFIGURE_ENV= GTK_CONFIG="${GTK_CONFIG}"
+USE_GMAKE=	yes
+USE_X_PREFIX= 	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-install-location="${X11BASE}/lib/bluefish"
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 post-install:
 	@strip ${PREFIX}/bin/bluefish
