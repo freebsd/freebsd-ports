@@ -1,0 +1,11 @@
+--- lib-src/Makefile.in.orig	Sun Apr  4 13:04:19 1999
++++ lib-src/Makefile.in	Sun Apr  4 13:04:48 1999
+@@ -364,7 +364,7 @@
+ 	$(CC) ${ALL_CFLAGS} ${srcdir}/cvtmail.c $(LOADLIBES) -o cvtmail
+ 
+ fakemail: ${srcdir}/fakemail.c ../src/config.h
+-	$(CC) ${ALL_CFLAGS} ${srcdir}/fakemail.c $(LOADLIBES) -o fakemail
++	$(CC) ${ALL_CFLAGS} ${srcdir}/fakemail.c $(LOADLIBES) -lcompat -o fakemail
+ 
+ yow: ${srcdir}/yow.c ../src/paths.h
+ 	$(CC) ${ALL_CFLAGS} ${srcdir}/yow.c $(LOADLIBES) -o yow
