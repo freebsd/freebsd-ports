@@ -3,7 +3,7 @@
 # Date created:		5 March 1997
 # Whom:			Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.4 1998/04/17 23:26:24 mph Exp $
+# $Id: Makefile,v 1.5 1998/08/05 09:31:01 asami Exp $
 #
 
 DISTNAME=	xpat2-1.04
@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	games/solitaires
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	mph@freebsd.org
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=	yes
 MAN6=		xpat2.6
