@@ -17,15 +17,20 @@ COMMENT=	Chinese GB2312,BIG5 code input server
 LATEST_LINK=	zh-chinput3
 USE_XLIB=	yes
 USE_GNOME=	gtk12 imlib
+USE_REINPLACE=	yes
 
 MSG_FILE=	${.CURDIR}/pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502102
-FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD-4.x/Alpha"
 .endif
+
+pre-build:
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|-lc_r|${PTHREAD_CFLAGS} ${PTHREAD_LIBS}|'
 
 post-install:
 	@${SED} -e 's,%%X11BASE%%,${X11BASE},g' ${MSG_FILE} > ${PKGMESSAGE}
