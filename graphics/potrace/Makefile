@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	potrace
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://potrace.sourceforge.net/download/
 
@@ -31,6 +31,8 @@ CONFIGURE_ARGS+=	--disable-compress
 CONFIGURE_ARGS+=	--enable-metric
 .endif
 
+PORTDOCS=	potrace.ps potrace.pdf
+
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You may define the following build options:"
@@ -39,5 +41,13 @@ pre-everything::
 	@${ECHO} "    WITH_METRIC      Enable use of metric units (centimeters) as default"
 	@${ECHO} "    A4               Enable use of A4 as the default papersize"
 	@${ECHO} ""
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${DOCSDIR}/potrace.${doc}
+.endfor
+.endif
 
 .include <bsd.port.mk>
