@@ -112,6 +112,7 @@
     SUBDIR += maildrop
     SUBDIR += mailfilter
     SUBDIR += mailfmt
+    SUBDIR += mailfront
     SUBDIR += mailgraph
     SUBDIR += mailman
 #   SUBDIR += mailman-devel
