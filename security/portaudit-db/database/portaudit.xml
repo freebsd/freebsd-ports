@@ -59,6 +59,7 @@ This file is in the public domain.
       <url>http://www.mplayerhq.hu/</url>
       <url>http://www.securityfocus.com/archive/1/359029</url>
       <url>http://www.securityfocus.com/archive/1/359025</url>
+      <cvename>CAN-2004-0386</cvename>
     </references>
     <dates>
       <discovery>2004-03-29</discovery>
@@ -70,4 +71,30 @@ This file is in the public domain.
     <cancelled superseded="1a448eb7-6988-11d8-873f-0020ed76ef5a"/>
   </vuln>
 
+  <vuln vid="4aec9d58-ce7b-11d8-858d-000d610a3b12">
+    <cancelled superseded="c63936c1-caed-11d8-8898-000d6111a684"/>
+  </vuln>
+
+  <vuln vid="c63936c1-caed-11d8-8898-000d6111a684">
+    <topic>SSLtelnet remote format string vulnerability</topic>
+    <affects>
+      <package>
+        <name>SSLtelnet</name>
+        <range><le>0.13_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>SSLtelnet contains a format string vulnerability
+           that could allow remote code execution.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="FB24803D1DF2A34FA59FC157B77C970502D684B7@idserv04.idef.com">http://lists.freebsd.org/pipermail/freebsd-ports/2004-June/013878.html</mlist>
+    </references>
+    <dates>
+      <discovery>2003-04-03</discovery>
+      <entry>2004-06-30</entry>
+    </dates>
+  </vuln>
 </vuxml>
