@@ -1,5 +1,7 @@
 lib/libsocket++.a
+lib/libsocket++_p.a
 lib/libsocket++.so.1.10
+lib/libsocket++.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 include/Fork.h
