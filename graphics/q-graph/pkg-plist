@@ -1,0 +1,10 @@
+bin/graphed
+bin/graphed2
+%%DATADIR%%/etc/README-Graph
+%%DATADIR%%/lib/graph.q
+%%DATADIR%%/lib/graphed.q
+%%DATADIR%%/lib/graphed.tcl
+%%EXAMPLESDIR%%/G
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/dijkstra.q
+@dirrm %%EXAMPLESDIR%%
