@@ -1,8 +1,10 @@
 portlint makes a small set of sanity checks for port directory.
 
-usage: portlint [-avN] [port_directory]
-	-a	additional check for scripts/* and pkg/*
-	-b	warn $(VARIABLE)
-	-c	committer mode
-	-v	verbose mode
-	-N	writing a new port
+usage: portlint [-abctvN] [-B#] [port_directory]
+        -a      additional check for scripts/* and pkg/*
+        -b      warn $(VARIABLE)
+        -c      committer mode
+        -v      verbose mode
+        -t      nit pick about use of spaces
+        -N      writing a new port
+        -B#     allow # contiguous blank lines (default: 1 line)

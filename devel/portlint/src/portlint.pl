@@ -17,20 +17,21 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.16 2000/04/16 22:39:57 mharo Exp $
+# $Id: portlint.pl,v 1.28.2.1 2000/04/24 02:12:36 mharo Exp $
 #
 
-use vars qw/ $opt_a $opt_b $opt_c $opt_h $opt_v $opt_N $opt_B $opt_V /;
+use vars qw/ $opt_a $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
 use Getopt::Std;
 #use strict;
 
 my ($err, $warn);
-my ($extrafile, $parenwarn, $committer, $verbose, $newport);
+my ($extrafile, $parenwarn, $committer, $verbose, $usetabs, $newport);
 my $contblank;
 my $portdir;
+my $makeenv;
 
 $err = $warn = 0;
-$extrafile = $parenwarn = $committer = $verbose = $newport = 0;
+$extrafile = $parenwarn = $committer = $verbose = $usetabs = $newport = 0;
 $contblank = 1;
 $portdir = '.';
 
@@ -45,7 +46,6 @@ sub s { '[ \t]'; }
 my $l = &l;
 my $r = &r;
 my $s = &s;
-
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -71,11 +71,13 @@ my $re_lang_pref = '(' . join('|', @lang_pref) . ')';
 my ($prog) = ($0 =~ /([^\/]+)$/);
 sub usage {
 	print STDERR <<EOF;
-usage: $prog [-abcvN] [-B#] [port_directory]
+usage: $prog [-abctvN] [-B#] [port_directory]
 	-a	additional check for scripts/* and pkg/*
 	-b	warn \$(VARIABLE)
 	-c	committer mode
 	-v	verbose mode
+	-t	nit pick about use of spaces
+	-M	set make variables (ex. PORTSDIR=/usr/ports.work)
 	-N	writing a new port
 	-B#	allow # contiguous blank lines (default: $contblank line)
 EOF
@@ -88,7 +90,7 @@ sub version {
 }
 
 
-getopts('abchvNB:V');
+getopts('abchtvBM:N:V');
 
 &usage if $opt_h;
 &version if $opt_V;
@@ -97,7 +99,9 @@ $parenwarn = 1 if $opt_b;
 $committer = 1 if $opt_c;
 $verbose = 1 if $opt_v;
 $newport = 1 if $opt_N;
+$usetabs = 1 if $opt_t;
 $contblank = $opt_B if $opt_B;
+$makeenv = $opt_M;
 
 $portdir = $ARGV[0] ? $ARGV[0] : '.';
 
@@ -137,6 +141,28 @@ if ($verbose) {
 if (! -d $portdir) {
 	print STDERR "FATAL: invalid directory $portdir specified.\n";
 	exit 1;
+}
+
+chdir "$portdir" || die "$portdir: $!";
+
+# get make vars
+my $cmd = "make $makeenv MASTER_SITE_BACKUP=''";
+my @varlist =  (split(/\s+/, <<EOF));
+PORTNAME PORTVERSION PKGNAME PKGNAMEPREFIX PKGNAMESUFFIX
+DISTNAME DISTFILES CATEGORIES MASTERDIR MAINTAINER MASTER_SITES
+WRKDIR WRKSRC NO_WRKSUBDIR PATCHDIR SCRIPTDIR FILESDIR PKGDIR
+COMMENT DESCR PLIST MD5_FILE .CURDIR
+EOF
+
+for (@varlist) {
+	$cmd .= " -V $_";
+}
+my %makevar;
+my $i = 0;
+for (split(/\n/, `$cmd`)) {
+	print "OK: makevar: $varlist[$i] = $_\n" if ($verbose);
+	$makevar{$varlist[$i]} = $_;
+	$i++;
 }
 
 #
@@ -232,13 +258,12 @@ EOF
 #
 # check for files.
 #
-my @checker = ('pkg/COMMENT', 'pkg/DESCR', 'Makefile', 'files/md5');
-my %checker = ('pkg/COMMENT', 'checkdescr', 'pkg/DESCR', 'checkdescr',
-		'Makefile', 'checkmakefile', 'files/md5', 'TRUE');
+my @checker = ($makevar{COMMENT}, $makevar{DESCR}, 'Makefile', $makevar{MD5_FILE});
+my %checker = ($makevar{COMMENT}, 'checkdescr', $makevar{DESCR}, 'checkdescr',
+		'Makefile', 'checkmakefile', $makevar{MD5_FILE}, 'TRUE');
 if ($extrafile) {
-	foreach my $i ((<$portdir/scripts/*>, <$portdir/pkg/*>)) {
+	foreach my $i ((<scripts/*>, <pkg/*>)) {
 		next if (! -T $i);
-		$i =~ s/^$portdir\///;
 		next if (defined $checker{$i});
 		if ($i =~ /pkg\/PLIST$/
 		 || ($multiplist && $i =~ /pkg\/PLIST/)) {
@@ -250,16 +275,15 @@ if ($extrafile) {
 		}
 	}
 }
-foreach my $i (<$portdir/patches/patch-??>) {
+foreach my $i (<patches/patch-??>) {
 	next if (! -T $i);
-	$i =~ s/^$portdir\///;
 	next if (defined $checker{$i});
 	push(@checker, $i);
 	$checker{$i} = 'checkpatch';
 }
 foreach my $i (@checker) {
 	print "OK: checking $i.\n";
-	if (! -f "$portdir/$i") {
+	if (! -f "$i") {
 		&perror("FATAL: no $i in \"$portdir\".");
 	} else {
 		my $proc = $checker{$i};
@@ -271,16 +295,16 @@ foreach my $i (@checker) {
 	}
 }
 if ($committer) {
-	if (scalar(@_ = <$portdir/work/*>) || -d "$portdir/work") {
+	if (scalar(@_ = <work/*>) || -d "work") {
 		&perror("FATAL: be sure to cleanup $portdir/work ".
 			"before committing the port.");
 	}
-	if (scalar(@_ = <$portdir/*/*~>) || scalar(@_ = <$portdir/*~>)) {
+	if (scalar(@_ = <*/*~>) || scalar(@_ = <*~>)) {
 		&perror("FATAL: for safety, be sure to cleanup ".
 			"editor backup files before committing the port.");
 	}
-	if (scalar(@_ = <$portdir/*/*.orig>) || scalar(@_ = <$portdir/*.orig>)
-	 || scalar(@_ = <$portdir/*/*.rej>) || scalar(@_ = <$portdir/*.rej>)) {
+	if (scalar(@_ = <*/*.orig>) || scalar(@_ = </*.orig>)
+	 || scalar(@_ = <*/*.rej>) || scalar(@_ = <*.rej>)) {
 		&perror("FATAL: for safety, be sure to cleanup ".
 			"patch backup files before committing the port.");
 	}
@@ -297,14 +321,14 @@ exit $err;
 #
 sub checkdescr {
 	my($file) = @_;
-	my(%maxchars) = ('pkg/COMMENT', 70, 'pkg/DESCR', 80);
-	my(%maxlines) = ('pkg/COMMENT', 1, 'pkg/DESCR', 24);
-	my(%errmsg) = ('pkg/COMMENT', "must be one-liner.",
-			  'pkg/DESCR',	"exceeds $maxlines{'pkg/DESCR'} ".
+	my(%maxchars) = ($makevar{COMMENT}, 70, $makevar{DESCR}, 80);
+	my(%maxlines) = ($makevar{COMMENT}, 1, $makevar{DESCR}, 24);
+	my(%errmsg) = ($makevar{COMMENT}, "must be one-liner.",
+			  $makevar{DESCR},	"exceeds $maxlines{$makevar{DESCR}} ".
 					"lines, make it shorter if possible.");
 	my($longlines, $linecnt, $tmp) = (0, 0, "");
 
-	open(IN, "< $portdir/$file") || return 0;
+	open(IN, "< $file") || return 0;
 	while (<IN>) {
 		$linecnt++;
 		$longlines++ if ($maxchars{$file} < length(chomp($_)));
@@ -325,8 +349,22 @@ sub checkdescr {
 			"other local characters.  $file should be ".
 			"plain ascii file.");
 	}
+	if ($file =~ m/DESCR/ && $tmp =~ m,http://,) {
+		my $has_url = 0;
+		my $has_www = 0;
+		foreach my $line (grep($_ =~ "http://", split(/\n+/, $tmp))) {
+			$has_url = 1;
+			if ($line =~ m,WWW:[ \t]+http://,) {
+				$has_www = 1;
+			}
+		}
+
+		if ($has_url && ! $has_www) {
+			&perror("FATAL: $file: contains a URL but no WWW:");
+		}
+	}
 	if ($file =~ m/COMMENT/) {
-		if (($tmp !~ /^[0-9A-Z].*$/) || ($tmp =~ m/\.$/)) {
+		if (($tmp !~ /^["0-9A-Z]/) || ($tmp =~ m/\.$/)) {
 			&perror("WARN: pkg/COMMENT should begin with a capital, and end without a period");
 		}
 	}
@@ -348,7 +386,7 @@ sub checkplist {
 	my(@unexec_info) = ();
 	my(@infofile) = ();
 
-	open(IN, "< $portdir/$file") || return 0;
+	open(IN, "< $file") || return 0;
 	while (<IN>) {
 		if ($_ =~ /[ \t]+\n?$/) {
 			&perror("WARN: $file $.: whitespace before end ".
@@ -515,7 +553,7 @@ sub checkpathname {
 	my($file) = @_;
 	my($whole);
 
-	open(IN, "< $portdir/$file") || return 0;
+	open(IN, "< $file") || return 0;
 	$whole = '';
 	while (<IN>) {
 		$whole .= $_;
@@ -528,7 +566,7 @@ sub checklastline {
 	my($file) = @_;
 	my($whole);
 
-	open(IN, "< $portdir/$file") || return 0;
+	open(IN, "< $file") || return 0;
 	$whole = '';
 	while (<IN>) {
 		$whole .= $_;
@@ -549,13 +587,13 @@ sub checkpatch {
 	my($file) = @_;
 	my($whole);
 
-	if (-z "$portdir/$file") {
+	if (-z "$file") {
 		&perror("FATAL: $file has no content. should be removed ".
 			"from repository.");
 		return;
 	}
 
-	open(IN, "< $portdir/$file") || return 0;
+	open(IN, "< $file") || return 0;
 	$whole = '';
 	while (<IN>) {
 		$whole .= $_;
@@ -581,10 +619,12 @@ sub checkmakefile {
 	my $bogusdistfiles = 0;
 	my @varnames = ();
 	my($portname, $portversion, $distfiles, $distname, $extractsufx) = ('', '', '', '', '');
+	my $masterport = 0;
+	my $slaveport = 0;
 	my($realwrksrc, $wrksrc, $nowrksubdir) = ('', '', '');
 	my(@mman, @pman);
 
-	open(IN, "< $portdir/$file") || return 0;
+	open(IN, "< $file") || return 0;
 	$rawwhole = '';
 	$tmp = 0;
 	while (<IN>) {
@@ -595,6 +635,17 @@ sub checkmakefile {
 		if ($_ =~ /^        /) {	# 8 spaces here!
 			&perror("WARN: $file $.: use tab (not space) to make ".
 				"indentation");
+		}
+		if ($usetabs) {
+			if (m/^[A-Za-z0-9_-]+.?= /) {
+				if (m/[?+]=/) {
+					&perror("WARN: $file $.: use a tab (not space) after a ".
+						"variable name");
+				} else {
+					&perror("FATAL: $file $.: use a tab (not space) after a ".
+						"variable name");
+				}
+			}
 		}
 #
 # I'm still not very convinced, for using this kind of magical word.
@@ -672,7 +723,6 @@ sub checkmakefile {
 		&perror("FATAL: PKGNAME is obsoleted by PORTNAME, ".
 			"PORTVERSION, PKGNAMEPREFIX and PKGNAMESUFFIX.");
 	}
-
 
 	#
 	# whole file: IS_INTERACTIVE/NOPORTDOCS
@@ -753,6 +803,18 @@ EOF
 	&abspathname($whole, $file);
 
 	#
+	# slave port check
+	#
+	my $masterdir = $makevar{MASTERDIR};
+	if ($masterdir ne '' && $masterdir ne $makevar{'.CURDIR'}) {
+		$slaveport = 1;
+		print "OK: checking master port in $masterdir.\n" if ($verbose);
+		if (! -e "$masterdir/Makefile") {
+			&perror("WARN: unable to locate master port in $masterdir");
+		}
+	}
+
+	#
 	# break the makefile into sections.
 	#
 	$tmp = $rawwhole;
@@ -795,14 +857,12 @@ EOF
 			print "OK: \"$j\" seen in $file.\n" if ($verbose);
 		}
 	}
-	foreach my $i (@linestocheck) {
-		if ($i =~ m/Version [rR]equired/) {
-			&perror("FATAL: Version required is no longer needed in the comment section of $file.");
-		}
+	if ($tmp =~ m/Version [rR]equired/) {
+		&perror("WARN: Version required is no longer needed in the comment section of $file.");
 	}
 	my $tmp2 = "";
 	for (split(/\n/, $tmp)) {
-		$tmp2 = $_ if (m/$rcsidstr/);
+		$tmp2 .= $_ if (m/\$$rcsidstr/);
 	}
 	if ($tmp2 !~ /#(\s+)\$$rcsidstr([^\$]*)\$$/) {
 
@@ -847,38 +907,38 @@ EOF
 	# check the order of items.
 	&checkorder('PORTNAME', $tmp, split(/\s+/, <<EOF));
 PORTNAME PORTVERSION CATEGORIES MASTER_SITES MASTER_SITE_SUBDIR
-PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES EXTRACT_ONLY
+PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES DIST_SUBDIR
+EXTRACT_ONLY
 EOF
 
 	# check the items that has to be there.
 	$tmp = "\n" . $tmp;
 	print "OK: checking PORTNAME/PORTVERSION.\n" if ($verbose);
 	if ($tmp !~ /\nPORTNAME(.)?=/) {
-		&perror("FATAL: PORTNAME has to be there.");
+		&perror("FATAL: PORTNAME has to be there.") unless ($slaveport && $makevar{PORTNAME} ne '');
 	}
 	if ($1 ne '') {
-		&perror("WARN: PORTNAME has be set by \"=\", ".
-			"not by \"$1=\".");
+		&perror("WARN: PORTNAME has to be set by \"=\", ".
+			"not by \"$1=\".") unless ($masterport);
 	}
 	if ($tmp !~ /\nPORTVERSION(.)?=/) {
-		&perror("FATAL: PORTVERSION has to be there.");
+		&perror("FATAL: PORTVERSION has to be there.") unless ($slaveport && $makevar{PORTVERSION} ne '');
 	}
 	if ($1 ne '') {
-		&perror("WARN: PORTVERSION has be set by \"=\", ".
-			"not by \"$1=\".");
+		&perror("WARN: PORTVERSION has to be set by \"=\", ".
+			"not by \"$1=\".") unless ($masterport);
 	}
 	print "OK: checking CATEGORIES.\n" if ($verbose);
-#MICHAEL: do we want to use [^\n] here?
-	if ($tmp !~ /\nCATEGORIES(.)?=[ \t]*([^\n]*)/) {
-		&perror("FATAL: CATEGORIES has to be there.");
+	if ($tmp !~ /\nCATEGORIES(.)?=[ \t]*/) {
+		&perror("FATAL: CATEGORIES has to be there.") unless ($slaveport && $makevar{CATEGORIES} ne '');
 	}
-	@cat = split(/\s+/, $2);
 	$i = $1;
 	if ($i ne '' && $i =~ /[^?+]/) {
 		&perror("WARN: CATEGORIES should be set by \"=\", \"?=\", or \"+=\", ".
-			"not by \"$i=\".");
+			"not by \"$i=\".") unless ($masterport);
 	}
 
+	@cat = split(/\s+/, $makevar{CATEGORIES});
 	if (@cat == 0) {
 		&perror("FATAL: CATEGORIES left blank. set it to \"misc\"".
 		" if nothing seems apropriate.");
@@ -924,26 +984,14 @@ EOF
 	}
 
 	# check the URL
-	if ($tmp =~ /\nMASTER_SITES[+?]?=[ \t]*([^\n]*)\n/
-	 && $1 !~ /^[ \t]*$/) {
+	if (($tmp =~ /\nMASTER_SITES[+?]?=[ \t]*([^\n]*)\n/
+	 && $1 !~ /^[ \t]*$/) || ($makevar{MASTER_SITES} ne '')) {
 		print "OK: seen MASTER_SITES, sanity checking URLs.\n"
 			if ($verbose);
 		my @sites = split(/\s+/, $1);
 		foreach my $i (@sites) {
 			if ($i =~ m#^\w+://#) {
-				if ($i !~ m#/$#) {
-					&perror("FATAL: URL \"$i\" should ".
-						"end with \"/\".");
-				}
-				if ($i =~ m#://[^/]*:/#) {
-					&perror("FATAL: URL \"$i\" contains ".
-						"extra \":\".");
-				}
-				if ($osname == 'FreeBSD' && $i =~ m#(www.freebsd.org)/~.+/#i) {
-					&perror("WARN: URL \"$i\", ".
-						"$1 should be ".
-						"people.FreeBSD.org");
-				}
+				&urlcheck($i);
 				unless (&is_predefined($i)) {
 					print "OK: URL \"$i\" ok.\n"
 						if ($verbose);
@@ -959,8 +1007,10 @@ EOF
 
 	# check DISTFILES and related items.
 	$distfiles = $1 if ($tmp =~ /\nDISTFILES[+?]?=[ \t]*([^\n]+)\n/);
-	$portname = $1 if ($tmp =~ /\nPORTNAME[+?]?=[ \t]*([^\n]+)\n/);
-	$portversion = $1 if ($tmp =~ /\nPORTVERSION[+?]?=[ \t]*([^\n]+)\n/);
+	#$portname = $1 if ($tmp =~ /\nPORTNAME[+?]?=[ \t]*([^\n]+)\n/);
+	#$portversion = $1 if ($tmp =~ /\nPORTVERSION[+?]?=[ \t]*([^\n]+)\n/);
+	$portname = $makevar{PORTNAME};
+	$portversion = $makevar{PORTVERSION};
 	$distname = $1 if ($tmp =~ /\nDISTNAME[+?]?=[ \t]*([^\n]+)\n/);
 	$extractsufx = $1 if ($tmp =~ /\nEXTRACT_SUFX[+?]?=[ \t]*([^\n]+)\n/);
 
@@ -1051,7 +1101,7 @@ EOF
 	}
 
 	if ($committer) {
-		if (opendir(DIR, $portdir)) {
+		if (opendir(DIR, ".")) {
 			my @tgz = grep(/\.tgz$/, readdir(DIR));
 			closedir(DIR);
 	
@@ -1119,7 +1169,7 @@ EOF
 	if ($tmp =~ /\nMAINTAINER\??=[^\n]+/) {
 		$tmp =~ s/\nMAINTAINER\??=[^\n]+//;
 	} elsif ($whole !~ /\nMAINTAINER[?]?=/) {
-		&perror("FATAL: no MAINTAINER listed in $file.");
+		&perror("FATAL: no MAINTAINER listed in $file.") unless ($slaveport && $makevar{MAINTAINER} ne '');
 	}
 	$tmp =~ s/\n\n+/\n/g;
 
@@ -1577,4 +1627,23 @@ sub is_predefined {
 	undef;
 }
 
+sub urlcheck {
+	my ($url) = @_;
+	if ($url !~ m#^\w+://#) {
+		&perror("WARN: \"$url\" doesn't appear to be a URL to me.");
+	}
+	if ($url !~ m#/$#) {
+		&perror("FATAL: URL \"$url\" should ".
+			"end with \"/\".");
+	}
+	if ($url =~ m#://[^/]*:/#) {
+	&perror("FATAL: URL \"$url\" contains ".
+				"extra \":\".");
+	}
+	if ($osname == 'FreeBSD' && $url =~ m#(www.freebsd.org)/~.+/#i) {
+		&perror("WARN: URL \"$url\", ".
+			"$1 should be ".
+			"people.FreeBSD.org");
+	}
+}
 sub TRUE {1;}
