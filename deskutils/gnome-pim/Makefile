@@ -28,5 +28,8 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+.for file in vcc.y vobject.c
+	@${PERL} -pi -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/libversit/${file}
+.endfor
 
 .include <bsd.port.mk>
