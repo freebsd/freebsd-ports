@@ -1172,6 +1172,7 @@ dictd-database	ports/net/dictd-database
 diction		ports/misc/diction
 dictionary	ports/textproc/dictionary
 didentd		ports/security/didentd
+diehard		ports/math/diehard
 diff		src/gnu/usr.bin/diff
 diff-mode.el	ports/textproc/diff-mode.el
 diff3		src/gnu/usr.bin/diff3
