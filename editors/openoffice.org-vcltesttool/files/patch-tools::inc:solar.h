@@ -18,12 +18,3 @@
  #define __DELETE(n) delete[]
  #else
  #define __DELETE(n) delete[n]
-@@ -149,7 +149,7 @@
- 
- /*** misc. macros to leverage platform and compiler differences ********/
- 
--#if (defined ALPHA && !defined WNT) || defined IRIX || defined SOLARIS || defined HPUX || defined NETBSD
-+#if (defined ALPHA && !defined WNT) || defined IRIX || defined SOLARIS || defined HPUX || defined NETBSD || defined FREEBSD
- #define __DELETE(n) delete[]
- #else
- #define __DELETE(n) delete[n]
