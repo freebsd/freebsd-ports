@@ -16,8 +16,6 @@ COMMENT=	MIDI-capable synthesizer for X
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-BROKEN=		"Does not patch on 4.x, does not compile on 5.x (bad C++ code); will be removed after Feb 2"
-
 GNU_CONFIGURE=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
@@ -35,7 +33,8 @@ post-patch:
 			s|CFLAGS =|CFLAGS +=|g ; \
 			s|CXXFLAGS=|CXXFLAGS+=|g ; \
 			s|-lm|${PTHREAD_LIBS} -lm|g ; \
-			s|/usr/X11R6|${X11BASE}|g' < ${ii}.orig > ${ii}
+			s|/usr/X11R6|${X11BASE}|g' < ${WRKSRC}/${ii}.orig \
+			> ${WRKSRC}/${ii}
 .endfor
 # Use as a plugin to SpiralLoops 2.0.0 results in "Can't open audio driver."
 .if defined(PLUGIN)
