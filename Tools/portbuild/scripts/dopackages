@@ -1,0 +1,219 @@
+#!/bin/sh
+
+# configurable variables
+pb=/a/asami/portbuild
+user=asami
+
+usage () {
+  echo "usage: [-nobuild] [-noindex] [-noduds] [-nocvsup] branch"
+  exit 1
+}
+
+scripts=${pb}/scripts
+lock=${pb}/lock
+
+umask 002
+export PORTSDIR=${pb}/usr/ports
+
+me=$(hostname -s)
+
+echo "Subject: $me package building logs"
+echo
+echo "Called with arguments: "${1+"$@"}
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/X11R6/bin
+
+if [ $# = 0 ]; then
+  usage
+fi
+
+if [ -e ${lock} ]; then
+  echo "Skipped since lock file exists"
+  exit 1
+fi
+
+touch ${lock}
+
+nobuild=0
+noindex=0
+noduds=0
+nocvsup=0
+
+# optional arguments
+while [ $# -gt 1 ]; do
+  case "x$1" in
+    x-nobuild)
+      nobuild=1
+      ;;
+    x-noindex)
+      noindex=1
+      ;;
+    x-noduds)
+      noduds=1
+      ;;
+    x-nocvsup)
+      nocvsup=1
+      ;;
+    *)
+      usage
+      ;;
+  esac
+  shift
+done
+
+# mandatory argument
+branch=$1
+if [ "x$branch" != x3 -a "x$branch" != x4 ]; then
+  usage
+fi
+
+cd ${pb}/usr/ports
+if [ "$nocvsup" = 0 ]; then
+  echo "================================================"
+  echo "running cvsup"
+  echo "================================================"
+  su ${user} -c 'cvsup -g -L 1 /etc/supfile.cvsup'
+  echo "================================================"
+  echo "running cvs update"
+  echo "================================================"
+  su ${user} -c 'cvs -q update -d -P'
+  echo "================================================"
+  echo "running make checksubdirs"
+  echo "================================================"
+  make checksubdirs 
+fi
+
+# generate new Makefile
+if [ "$noindex" = 0 ]; then
+  echo "================================================"
+  echo "generating index"
+  echo "================================================"
+  echo -n "started at "
+  date
+  ${scripts}/makeindex ${branch} || exit 1
+  echo -n "ended at "
+  date
+  echo $(wc -l <INDEX) "lines in INDEX"
+  chown ${user} INDEX
+fi
+make parallel > ../../${branch}/Makefile
+
+if [ "$noduds" = 0 ]; then
+  echo "================================================"
+  echo "generating duds"
+  echo "================================================"
+  echo -n "started at "
+  date
+  ${scripts}/makeduds ${branch}
+  echo -n "ended at "
+  date
+  echo $(wc -l < ${pb}/${branch}/duds) "items in duds"
+  echo "duds diff:"
+  diff ${pb}/${branch}/duds.old ${pb}/${branch}/duds
+  cp -p ${pb}/${branch}/duds ${pb}/${branch}/duds.old
+fi
+
+echo "================================================"
+echo "running cvs update on /usr/opt/doc"
+echo "================================================"
+cd ${pb}/usr/opt/doc
+su ${user} -c 'cvs -q update -d -P'
+
+echo "================================================"
+echo "setting up nodes"
+echo "================================================"
+echo -n "started at "
+date
+for node in $(awk '{print $1}' ${pb}/mlist); do
+  echo "setting up $node"
+  scp -p -a $scripts/setupnode $node:$scripts
+  ssh -n $node $scripts/setupnode $me $pb $branch &
+done
+wait
+echo -n "ended at "
+date
+
+cd ${pb}
+if [ "$nobuild" = 0 ]; then
+  rm -rf bak/distfiles
+  mv -f distfiles bak
+  mkdir distfiles
+  chown -R ${user} distfiles
+  cd ${pb}/${branch}/bak
+  rm -rf errors logs packages old-errors
+  cd ${pb}/${branch}
+  mv -f errors logs packages old-errors make.* bak
+  mkdir -p errors logs packages/All
+  chown -R ${user} errors logs packages 
+  cp -p tarballs/XFree86-3.3.3.1.tgz packages/All
+  cp -p tarballs/Motif-*.tgz packages/All
+  count=$(awk '{sum+=$2}END{print sum+NR/2}' ${pb}/mlist)
+  cd ${pb}/${branch}/packages/All
+  echo "================================================"
+  echo "building packages (phase 1)"
+  echo "================================================"
+  echo -n "started at "
+  date
+  make -k -j$count -f ../../Makefile > ../../make.0 2>&1 </dev/null
+  echo -n "ended at "
+  date
+  echo $(ls -1 ${pb}/${branch}/packages/All | wc -l) "packages built"
+  echo $(echo $(du -sk ${pb}/${branch}/packages | awk '{print $1}') / 1024 | bc) "MB of packages"
+  echo $(echo $(du -sk ${pb}/distfiles | awk '{print $1}') / 1024 | bc) "MB of distfiles"
+  cd ${pb}/${branch}
+  if grep -q 'ptimeout: killing' make.0; then
+    echo "The following port(s) timed out:"
+    grep 'ptimeout: killing' make.0 | sed -e 's/^.*ptimeout:/ptimeout:/'
+  fi
+  cp -rp errors old-errors
+  cd ${pb}/${branch}/old-errors
+  ${pb}/scripts/processlogs
+  cd ${pb}/${branch}/packages/All
+  echo "================================================"
+  echo "building packages (phase 2)"
+  echo "================================================"
+  echo -n "started at "
+  date
+  make -k -j$count -f ../../Makefile > ../../make.1 2>&1 </dev/null
+  echo -n "ended at "
+  date
+  echo $(ls -1 ${pb}/${branch}/packages/All | wc -l) "packages built"
+  echo $(echo $(du -sk ${pb}/${branch}/packages | awk '{print $1}') / 1024 | bc) "MB of packages"
+  echo $(echo $(du -sk ${pb}/distfiles | awk '{print $1}') / 1024 | bc) "MB of distfiles"
+  cd ${pb}/${branch}
+  if grep -q 'ptimeout: killing' make.1; then
+    echo "The following port(s) timed out:"
+    grep 'ptimeout: killing' make.1 | sed -e 's/^.*ptimeout:/ptimeout:/'
+  fi
+  cd ${pb}/${branch}/old-errors
+  new=""
+  for i in *.log; do
+    if [ ! -f ../errors/$i ]; then
+      new="$new $(basename $i .log)"
+    fi
+  done
+  if [ "x$new" != "x" ]; then
+    echo "The following ports didn't build the first time around: $new"
+  fi
+  cd ${PORTSDIR}
+  echo "================================================"
+  echo "creating restricted list"
+  echo "================================================"
+  echo -n "started at "
+  date
+  make ECHO_MSG=/usr/bin/true clean-restricted-list > ${pb}/${branch}/restricted.sh
+  echo -n "ended at "
+  date
+  echo $(grep -c '^#' ${pb}/${branch}/restricted.sh) "ports in ${pb}/${branch}/restricted.sh"
+  echo "================================================"
+  echo "creating cdrom list"
+  echo "================================================"
+  echo -n "started at "
+  date
+  make ECHO_MSG=/usr/bin/true clean-for-cdrom-list > ${pb}/${branch}/cdrom.sh
+  echo -n "ended at "
+  date
+  echo $(grep -c '^#' ${pb}/${branch}/cdrom.sh) "ports in ${pb}/${branch}/cdrom.sh"
+fi
+
+rm -f ${lock}
