@@ -448,6 +448,7 @@
     SUBDIR += py-coro
     SUBDIR += py-functional
     SUBDIR += py-game
+    SUBDIR += py-grouch
     SUBDIR += py-htmlkit
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
