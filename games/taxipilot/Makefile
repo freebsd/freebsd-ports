@@ -13,12 +13,22 @@ MASTER_SITE_SUBDIR=	taxipilot
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Spacetaxi clone
 
-LIB_DEPENDS=	noatun.3:${PORTSDIR}/multimedia/kdemultimedia3
+LIB_DEPENDS=	artsmodules.0:${PORTSDIR}/multimedia/kdemultimedia3
 
 USE_KDELIBS_VER=	3
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+WANT_AUTOCONF_VER=	253
+USE_AUTOCONF=	yes
+USE_AUTOHEADER=	yes
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's| -pedantic||g ; \
+		 s|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/aclocal.m4
+
 .include "${PORTSDIR}/x11/kde3/Makefile.kde"
 .include <bsd.port.post.mk>
