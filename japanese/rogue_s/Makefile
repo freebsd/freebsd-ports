@@ -29,7 +29,6 @@ BUILD_DEPENDS=  nkf:${PORTSDIR}/japanese/nkf
 WRKSRC=		${WRKDIR}/rogue_s
 MAKEFILE=	Makefile.nix
 ALL_TARGET=	rogue
-NO_CDROM=	yes
 
 MAN6=		rogue_s.6
 MANLANG=	ja
