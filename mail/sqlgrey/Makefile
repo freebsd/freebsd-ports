@@ -38,8 +38,9 @@ SGY_GROUPNAME?=	${SGY_USERNAME}
 ETCDIR?=	etc/sqlgrey
 
 SUB_FILES=	pkg-install
-SUB_LIST=	ETCDIR=${ETCDIR} ETCFILES="${ETCFILES}" USER=${SGY_USERNAME} GROUP=${SGY_GROUPNAME}
-PLIST_SUB=	${SUB_LIST} TOUCH=${TOUCH}
+MY_SUB_LIST=	ETCDIR=${ETCDIR} ETCFILES="${ETCFILES}" USER=${SGY_USERNAME} GROUP=${SGY_GROUPNAME}
+SUB_LIST=	${MY_SUB_LIST}
+PLIST_SUB=	TOUCH=${TOUCH} ${MY_SUB_LIST}
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
@@ -67,12 +68,12 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/etc/${i} ${PREFIX}/${ETCDIR}/${i}.dist
 	@[ "${i}" = "sqlgrey.conf" ] || ${TOUCH} ${PREFIX}/${ETCDIR}/${i}.local
 	@[ -f ${PREFIX}/${ETCDIR}/${i} ] || ${INSTALL_DATA} ${WRKSRC}/etc/${i} ${PREFIX}/${ETCDIR}/${i}
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
-.endfor
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
