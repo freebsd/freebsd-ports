@@ -7,7 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.3.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -126,6 +126,7 @@ MAN4+=		glint.4 \
 
 .if ${ARCH} == i386
 PLIST_SUB+=	I386=""
+MAN1+=		scanpci.1
 MAN4+=		apm.4 \
 		chips.4 \
 		cirrus.4 \
