@@ -9638,6 +9638,7 @@ wmgrabimage	ports/graphics/wmgrabimage
 wmhm		ports/sysutils/wmhm
 wmicons		ports/graphics/wmicons
 wminet		ports/sysutils/wminet
+wminfo		ports/misc/wminfo
 wmitime		ports/x11-clocks/wmitime
 wmix		ports/audio/wmix
 wmjulia		ports/misc/wmjulia
