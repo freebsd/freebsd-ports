@@ -110,6 +110,7 @@
     SUBDIR += libshhcards
     SUBDIR += lincity
     SUBDIR += linuxdoom
+    SUBDIR += ltris
     SUBDIR += madbomber
     SUBDIR += maelstrom
     SUBDIR += mangband

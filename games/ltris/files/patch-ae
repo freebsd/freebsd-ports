@@ -1,0 +1,13 @@
+--- configure.orig	Thu Oct 19 17:58:15 2000
++++ configure	Thu Oct 19 17:59:38 2000
+@@ -1322,8 +1322,8 @@
+ 
+ 
+ 
+-sdir=$datadir/games/ltris
+-hdir=/var/lib/games/ltris
++sdir=$datadir/ltris
++hdir=/var/games/ltris
+ inst_flag="-DSRC_DIR=\\\"$sdir/\\\""
+ hi_inst_flag="-DHI_DIR=\\\"$hdir/\\\""
+ 
