@@ -1,0 +1,29 @@
+PVR-250/350 - Nearly done!
+
+If you haven't patched /usr/src/sys/dev/iicbus/iicbb.c yet, and
+rebuild a new kernel, and rebooted, these are the following steps:
+
+    - Run "make patch-iicbb". This will enable cxm to use the i2c bus.
+    - Add this to your kernel configuration file:
+	    DEVICE	iicbus
+	    DEVICE	iicbb
+    - Rebuild your kernel.
+    - Reboot.
+
+Next step is to load the drivers:
+    - Run "kldload cxm_iic"
+    - Run "kldload cxm"
+
+Check your console (or /var/log/messages if you're running X) and
+you should see something like:
+
+    cxm0: <Conexant iTVC15 MPEG Coder> mem ... irq ... at device ... on pci ...
+    cxm_iic0: <Conexant iTVC15 / iTVC16 I2C cnotroller> on cxm0
+    iicbb0: <I2C bit-banging driver> on cxm_iic0
+    cxm0: Philips FI1236M K2 Tuner
+    cxm0: SAA7115 rev 1 video decoder
+    cxm0: MSP3435G-B6 audio decoder
+    cxm0: IR Remote
+
+To test the card, either do "cat /dev/bktr0 > filename.mpg" (FreeBSD
+4.x) or "cat /dev/cxm0 > filename.mpg" (FreeBSD 5.x).
