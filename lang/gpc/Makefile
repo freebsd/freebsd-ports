@@ -31,6 +31,6 @@ PLIST_SUB=	GNUHOST=${GNUHOST}
 CONFIGURE_ARGS=	--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${GNUHOST}/2.8.1/include/g++
 
 post-extract:
-	@(${CP} -R ${WRKDIRPREFIX}${PORTSDIR}/lang/gcc28/work/gcc-2.8.1/* ${WRKSRC})
+	@(${CP} -R ${WRKDIRPREFIX}${.CURDIR}/../../lang/gcc28/work/gcc-2.8.1/* ${WRKSRC})
 
 .include <bsd.port.post.mk>
