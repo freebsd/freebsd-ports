@@ -15,14 +15,14 @@ MAINTAINER=	kuriyama@FreeBSD.org
 WRKSRC=		${WRKDIR}/asclock-xlib
 USE_XPM=	YES
 
-.include <bsd.port.pre.mk>
-
 .if defined(BATCH)
 USE_IMAKE=	YES
 .else
 USE_X_PREFIX=	YES
 HAS_CONFIGURE=	YES
 .endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@(cd ${WRKSRC}; \
