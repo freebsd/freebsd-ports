@@ -3367,6 +3367,7 @@ libstand	src/lib/libstand
 libstdc++	src/gnu/lib/libstdc++
 libstocks	ports/devel/libstocks
 libstrfunc	ports/devel/libstrfunc
+libstroke	ports/devel/libstroke
 libsvm		ports/science/libsvm
 libsx		ports/x11/libsx
 libtacplus	src/lib/libtacplus
