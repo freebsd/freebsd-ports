@@ -1052,6 +1052,7 @@
     SUBDIR += php5-pear
     SUBDIR += php5-readline
     SUBDIR += php5-shmop
+    SUBDIR += php5-sysvmsg
     SUBDIR += phptags
     SUBDIR += physfs
     SUBDIR += picasm
