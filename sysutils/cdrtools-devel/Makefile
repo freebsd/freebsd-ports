@@ -6,9 +6,9 @@
 #
 
 PORTNAME?=	cdrtools
-CDRTLSVERSION=	2.01a27
+CDRTLSVERSION=	2.01a28
 PORTVERSION?=	${CDRTLSVERSION}
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/

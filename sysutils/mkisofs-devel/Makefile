@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	mkisofs
-PORTVERSION=	2.01a27
+PORTVERSION=	2.01a28
+PORTREVISION=	0
 CATEGORIES=	sysutils
 
 COMMENT=	Create iso9660/Rock Ridge/Joliet filesystems
