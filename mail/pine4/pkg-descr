@@ -6,7 +6,7 @@ needs of "power users" as well.  Pine uses Internet message protocols
 
 Besides Pine this package includes the Pico editor, the Pilot file browser
 and also the IMAPv4r1 daemon and POP2/POP3 servers (these daemons are not
-built by default).
+built by default -- please use the "imap-uw" port for this).
 
 An optional configuration file "pine.conf" can be put into /usr/local/etc 
 to set system wide defaults.  The format of this file is identical to the 
@@ -18,5 +18,5 @@ pgpencode, and pgpsign.
 
 Pine on WWW: http://www.cac.washington.edu/pine/
 
-- Adrian Penisoara (Ady)
+Adrian Penisoara (Ady)
 pine@freebsd.ady.ro

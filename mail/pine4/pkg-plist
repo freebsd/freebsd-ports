@@ -1,7 +1,7 @@
 bin/pico
 bin/pilot
 bin/pine
-lib/libpico.so.1.3
+lib/libpico.so.2.0
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
 bin/pgpencrypt

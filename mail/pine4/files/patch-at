@@ -1,0 +1,82 @@
+*** pine/pine.hlp.orig	Wed Jul 22 01:04:04 1998
+--- pine/pine.hlp	Wed Aug 12 22:17:10 1998
+***************
+*** 750,758 ****
+  
+   executable     &lt;Unix search path&gt;/pine
+   persnl cfg     ~/.pinerc
+!  global cfg     /usr/local/lib/pine.conf
+!  fixed cfg      /usr/local/lib/pine.conf.fixed
+!  local help     /usr/local/lib/pine.info
+  
+   interrupted    ~/.pine-interrupted-mail
+   debug          ~/.pine-debugN
+--- 750,758 ----
+  
+   executable     &lt;Unix search path&gt;/pine
+   persnl cfg     ~/.pinerc
+!  global cfg     /usr/local/etc/pine.conf
+!  fixed cfg      /usr/local/etc/pine.conf.fixed
+!  local help     /usr/local/etc/pine.info
+  
+   interrupted    ~/.pine-interrupted-mail
+   debug          ~/.pine-debugN
+***************
+*** 1137,1145 ****
+  this link now to send a message to it:<BR>
+  <A HREF="X-Pine-Gripe:_LOCAL_ADDRESS_?local"><!--#echo var="_LOCAL_FULLNAME_"--></A><P>
+  <!--chtml endif-->
+! <!--chtml if [ -r /usr/local/lib/pine.info ]-->
+  <HR WIDTH="75%">Local Support Contacts:<P>
+! <!--#include file="/usr/local/lib/pine.info"-->
+  <HR WIDTH="75%">
+  <!--chtml endif-->
+  <P> 
+--- 1137,1145 ----
+  this link now to send a message to it:<BR>
+  <A HREF="X-Pine-Gripe:_LOCAL_ADDRESS_?local"><!--#echo var="_LOCAL_FULLNAME_"--></A><P>
+  <!--chtml endif-->
+! <!--chtml if [ -r /usr/local/etc/pine.info ]-->
+  <HR WIDTH="75%">Local Support Contacts:<P>
+! <!--#include file="/usr/local/etc/pine.info"-->
+  <HR WIDTH="75%">
+  <!--chtml endif-->
+  <P> 
+***************
+*** 1226,1232 ****
+  <OL>
+    <LI> <A HREF="#intro">Introduction</A>
+    <LI> <A HREF="#pine_help">Pine Help</A>
+! <!--chtml if [ -r /usr/local/lib/pine.info ]-->
+    <LI> <A HREF="#local_support">Local Support Contacts</A>
+  <!--chtml endif-->
+    <LI> <A HREF="#giving_cmds">Giving Commands in Pine</A>
+--- 1226,1232 ----
+  <OL>
+    <LI> <A HREF="#intro">Introduction</A>
+    <LI> <A HREF="#pine_help">Pine Help</A>
+! <!--chtml if [ -r /usr/local/etc/pine.info ]-->
+    <LI> <A HREF="#local_support">Local Support Contacts</A>
+  <!--chtml endif-->
+    <LI> <A HREF="#giving_cmds">Giving Commands in Pine</A>
+***************
+*** 1333,1341 ****
+  at your site.)
+  
+  
+! <!--chtml if [ -r /usr/local/lib/pine.info ]-->
+  <H2><A NAME="local_support">Local Support Contacts</A></H2>
+! <!--#include file="/usr/local/lib/pine.info"-->
+  <!--chtml endif-->
+  
+  <H2><A NAME="giving_cmds">Giving Commands in Pine</A></H2>
+--- 1333,1341 ----
+  at your site.)
+  
+  
+! <!--chtml if [ -r /usr/local/etc/pine.info ]-->
+  <H2><A NAME="local_support">Local Support Contacts</A></H2>
+! <!--#include file="/usr/local/etc/pine.info"-->
+  <!--chtml endif-->
+  
+  <H2><A NAME="giving_cmds">Giving Commands in Pine</A></H2>
