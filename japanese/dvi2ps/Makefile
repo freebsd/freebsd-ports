@@ -21,6 +21,8 @@ LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 MAN1=		dvi2ps.1
 MANLANG=	"" ja
 
+IGNORE=		is obsolete and no longer supported with teTeX 3.0
+
 .include <bsd.port.pre.mk>
 
 post-patch:
