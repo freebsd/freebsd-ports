@@ -1,7 +1,0 @@
---- maker/__fork.c.orig	Tue Jun  3 22:56:42 1997
-+++ maker/__fork.c	Sun Oct 29 22:32:55 2000
-@@ -1,3 +1,4 @@
-+#include <sys/types.h>
- #include <sys/wait.h>
- 
- INHERENT_fork(){ return 1; }
