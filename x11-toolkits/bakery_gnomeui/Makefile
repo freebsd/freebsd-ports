@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bakery_gnomeui
-PORTVERSION=	1.3.2
+PORTVERSION=	2.0.0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bakery
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	bakery
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A Bakery C++ Application Framework extention for GNOME
 
-LIB_DEPENDS=	bakery-1.3:${PORTSDIR}/x11-toolkits/bakery \
+LIB_DEPENDS=	bakery-2.0:${PORTSDIR}/x11-toolkits/bakery \
 		gnomeuimm-2.0:${PORTSDIR}/x11-toolkits/libgnomeuimm
 
 USE_X_PREFIX=	yes

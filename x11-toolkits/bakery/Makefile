@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bakery
-PORTVERSION=	1.3.11
+PORTVERSION=	2.0.0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=	A C++ Application Framework for use with Gtkmm
 LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2 \
 		gconfmm-2.0:${PORTSDIR}/devel/gconfmm \
 		glademm-2.0:${PORTSDIR}/devel/libglademm \
-		xml\\+\\+-0.1:${PORTSDIR}/textproc/libxml++
+		xml\\+\\+-1.0:${PORTSDIR}/textproc/libxml++
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
