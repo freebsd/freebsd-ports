@@ -7775,6 +7775,7 @@ php5-pear	ports/devel/php5-pear
 php5-pgsql	ports/databases/php5-pgsql
 php5-readline	ports/devel/php5-readline
 php5-recode	ports/converters/php5-recode
+php5-shmop	ports/devel/php5-shmop
 php5-sqlite	ports/databases/php5-sqlite
 php5-sybase	ports/databases/php5-sybase
 php5-sybase_ct	ports/databases/php5-sybase_ct
