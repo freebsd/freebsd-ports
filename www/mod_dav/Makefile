@@ -18,6 +18,7 @@ COMMENT=	An Apache module that provides DAV capabilities
 # This port will work with the following version of Apache and anything newer.
 APACHE_VERSION=	1.3.6
 
+PKGINSTALL=	${WRKSRC}/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
 PKGMESSAGE=	${WRKSRC}/pkg-message
 PLIST_FILES=	etc/apache/apache.conf.mod_dav libexec/apache/libdav.so
@@ -52,9 +53,10 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/apache.conf.mod_dav ${PREFIX}/etc/apache
 
 post-install:
+	@${SED} -e 's+%%APXS%%+${APXS}+ ; s+%%WWWOWN%%+${WWWOWN}+ ; s+%%WWWGRP%%+${WWWGRP}+' \
+	 ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 .if !defined(PACKAGE_BUILDING)
-	@${SETENV} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} PKG_PREFIX=${PREFIX} \
-	 ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 	@${SED} -e 's+%%PREFIX%%+${PREFIX}+' ${FILESDIR}/pkg-message.in \
 	 > ${PKGMESSAGE}
