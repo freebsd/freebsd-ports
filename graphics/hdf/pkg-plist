@@ -77,8 +77,6 @@ include/vgint.h
 lib/libdf.a
 lib/libdf.so
 lib/libdf.so.1
-lib/libdf_p.a
 lib/libmfhdf.a
 lib/libmfhdf.so
 lib/libmfhdf.so.2
-lib/libmfhdf_p.a

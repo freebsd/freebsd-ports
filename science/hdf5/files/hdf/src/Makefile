@@ -5,6 +5,8 @@ LIB=df
 # uncomment the line below to avoid building static libraries
 #INTERNALLIB=YES
 LIBDIR=${PREFIX}/lib
+# comment out the line below to build the profile libs
+NOPROFILE=yes
 
 SHLIB_MAJOR=1
 SHLIB_MINOR=0
