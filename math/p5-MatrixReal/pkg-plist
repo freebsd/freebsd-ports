@@ -1,6 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/Math/MatrixReal.pm
-lib/perl5/site_perl/%%PERL_VER%%/Math/Kleene.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/MatrixReal/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/MatrixReal
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Math 2>/dev/null || true
+%%SITE_PERL%%/Math/Kleene.pod
+%%SITE_PERL%%/Math/MatrixReal.pm
+%%SITE_PERL%%/Math/funcs.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MatrixReal/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MatrixReal
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Math 2>/dev/null || true
