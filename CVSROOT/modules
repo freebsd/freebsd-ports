@@ -4271,7 +4271,7 @@ mount_umap	src/sbin/mount_umap
 mount_umapfs	src/sbin/mount_umapfs
 mount_union	src/sbin/mount_union
 mount_unionfs	src/sbin/mount_unionfs
-mountd		src/sbin/mountd
+mountd		src/usr.sbin/mountd
 mouseclock	ports/x11-clocks/mouseclock
 moused		src/usr.sbin/moused
 movemail	ports/mail/movemail
@@ -4524,7 +4524,7 @@ nextboot	src/sbin/i386/nextboot
 nfbtrans	ports/textproc/nfbtrans
 nfs		src/sys/nfs
 nfsclient	src/sys/nfsclient
-nfsd		src/sbin/nfsd
+nfsd		src/usr.sbin/nfsd
 nfsiod		src/sbin/nfsiod
 nfsstat		src/usr.bin/nfsstat
 ngctl		src/usr.sbin/ngctl
