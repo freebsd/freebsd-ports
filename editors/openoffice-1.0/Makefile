@@ -24,8 +24,6 @@ BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
 LIB_DEPENDS+=	pth.14:${PORTSDIR}/devel/pth
 
-BROKEN=		'Work in progress -- does build - but does not start yet'
-
 USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_BISON=	yes
@@ -54,13 +52,51 @@ CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 .include <bsd.port.pre.mk>
 
 pre-fetch:
+.if ${OSVERSION} > 500034 || ${OSVERSION} < 500034
+	@${ECHO}
+	@${ECHO} OS-VERSION ${OSVERSION}
+	@${ECHO}
+	@${ECHO} Openoffice is currently broken on CURRENT and does
+	@${ECHO} not yet work with GCC 3.1
+	@${ECHO}
+	@${ECHO} It also does not work without some important
+	@${ECHO} libc_r gcc fixes.
+	@${ECHO}
+	@${FALSE}
+.endif
+.if ${OSVERSION} < 450002
+	@${ECHO}
+	@${ECHO} OS-VERSION ${OSVERSION}
+	@${ECHO}
+	@${ECHO} Openoffice need some important libc_r and
+	@${ECHO} gcc fixes to build. Please upgrade.
+	@${FALSE}
+.endif
 .if ${GCC_VERSION}!="2.95.2" && ${GCC_VERSION}!="2.95.3" && ${GCC_VERSION}!="2.95.4"
 	@ ${ECHO}
 	@ ${ECHO} Openoffice requires gcc 2.95.2 or better
 	@ ${ECHO}
 	@ ${FALSE}
 .endif
+	@${ECHO}
+	@${ECHO} NOTICE:
+	@${ECHO}
+	@${ECHO} To build Openoffice, you should have a lot
+	@${ECHO} of free diskspace \(~ 6GB\) and you should
+	@${ECHO} be an experienced port builder. This port
+	@${ECHO} has beta quality and does not yet work as
+	@${ECHO} stable as it should.
+	@${ECHO}
 pre-extract:
+	@${ECHO}
+	@${ECHO} Openoffice needs a larger stack- and
+	@${ECHO} datasize to build. Check your limit
+	@${ECHO} settings and add this to your KERNEL
+	@${ECHO} configuration if necessary:
+	@${ECHO}
+	@${ECHO} options	MAXDSIZ="(1024*1024*1024)"
+	@${ECHO} options	MAXSSIZ="(256*1024*1024)"
+	@${ECHO}
 .if !defined(DISPLAY) || ${DISPLAY} == ""
 	@ ${ECHO}
 	@ ${ECHO} Cannot open display; please check your DISPLAY variable.
