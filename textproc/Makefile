@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.37 1999/01/09 08:52:07 asami Exp $
+# $Id: Makefile,v 1.38 1999/01/18 03:36:43 steve Exp $
 #
 
     SUBDIR += agrep
@@ -9,6 +9,7 @@
     SUBDIR += docproj
     SUBDIR += dsssl-docbook-modular
     SUBDIR += glimpse
+    SUBDIR += grap
     SUBDIR += gxditview
     SUBDIR += htdig
     SUBDIR += html
