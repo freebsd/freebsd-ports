@@ -47,10 +47,14 @@ RUN_DEPENDS=	gabber:${PORTSDIR}/net/gabber \
 NO_BUILD=	yes
 USE_PYTHON=	yes
 
-.if defined(WITH_MOZILLA_DEVEL)
-RUN_DEPENDS+=	${X11BASE}/lib/mozilla-devel/run-mozilla.sh:${PORTSDIR}/www/mozilla-devel
+.if !defined(WITH_MOZILLA)
+RUN_DEPENDS+=	${X11BASE}/lib/mozilla/run-mozilla.sh:${PORTSDIR}/www/mozilla
+.else
+.if ${WITH_MOZILLA}=="mozilla-vendor" || ${WITH_MOZILLA}=="mozilla-devel"
+RUN_DEPENDS+=	${X11BASE}/lib/${WITH_MOZILLA}/run-mozilla.sh:${PORTSDIR}/www/${WITH_MOZILLA}
 .else
 RUN_DEPENDS+=	${X11BASE}/lib/mozilla/run-mozilla.sh:${PORTSDIR}/www/mozilla
+.endif
 .endif
 
 do-install:	# empty
