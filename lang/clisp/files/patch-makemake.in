@@ -1,0 +1,11 @@
+--- src/makemake.in.orig	Thu May 27 10:43:39 2004
++++ src/makemake.in	Tue Feb 15 21:23:34 2005
+@@ -1550,7 +1550,7 @@
+ echol "exec_prefix = ${EXEC_PREFIX}"
+ echol "bindir  = \$(exec_prefix)${NEXT_}bin"
+ echol "shared  = \$(prefix)${NEXT_}share"
+-echol "mandir  = \$(shared)${NEXT_}man"
++echol "mandir  = \$(prefix)${NEXT_}man"
+ echol "docdir  = \$(shared)${NEXT_}doc"
+ case "$fsstnd" in
+   suse)

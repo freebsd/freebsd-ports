@@ -15,6 +15,9 @@ GPL. You may distribute commercial applications compiled with CLISP,
 see file COPYRIGHT in the CLISP distribution.
 
 The user interface comes in German, English, French and Spanish, and 
-can be change at run time.   
+can be changed at run time.   
 
-WWW: http://clisp.cons.org/
+WWW: http://clisp.sourceforge.net/
+
+- Jakub Rehor
+jakub@rehor.net
