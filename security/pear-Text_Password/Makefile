@@ -12,6 +12,8 @@ CATEGORIES=	security www pear
 MAINTAINER=	bra@fsn.hu
 COMMENT=	PEAR random password creator
 
+BROKEN=		Incomplete pkg-plist
+
 USE_PHP=	yes
 WANT_PHP_PEAR=	yes
 
