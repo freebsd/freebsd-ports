@@ -1,7 +1,8 @@
 bin/micq
+%%PORTDOCS%%share/doc/micq/icq091.txt
+%%PORTDOCS%%share/doc/micq/icqv7.txt
 share/micq/bg.i18n
 share/micq/br.i18n
-share/micq/cn.i18n
 share/micq/de.i18n
 share/micq/en.i18n
 share/micq/en_fun.i18n
@@ -17,7 +18,6 @@ share/micq/ru.i18n
 share/micq/se.i18n
 share/micq/uk.i18n
 share/micq/yu.i18n
-%%PORTDOCS%%share/doc/micq/icq091.txt
-%%PORTDOCS%%share/doc/micq/icqv7.txt
-@dirrm share/micq
+share/micq/zh_CN.i18n
 %%PORTDOCS%%@dirrm share/doc/micq
+@dirrm share/micq

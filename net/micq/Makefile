@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	micq
-PORTVERSION=	0.4.8.9
-PORTREVISION=	0
+PORTVERSION=	0.4.9.4
 CATEGORIES=	net
-MASTER_SITES=	http://micq.org/source/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/9/pl9/}
+MASTER_SITES=	http://micq.org/source/ \
+		http://micq.alpha345.com/source/ \
+		http://http.bg.micq.org/source/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		micq.1
 MAN5=		micqrc.5
