@@ -1,5 +1,6 @@
 bin/lbdbq
 bin/lbdb-fetchaddr
+bin/lbdb_dotlock
 bin/nodelist2lbdb
 libexec/fetchaddr
 libexec/lbdb-munge

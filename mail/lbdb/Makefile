@@ -18,6 +18,6 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=--libdir=${PREFIX}/libexec
 USE_GMAKE=	YES
 
-MAN1=		nodelist2lbdb.1 lbdbq.1 lbdb-fetchaddr.1
+MAN1=		nodelist2lbdb.1 lbdbq.1 lbdb-fetchaddr.1 lbdb_dotlock.1
 
 .include <bsd.port.mk>
