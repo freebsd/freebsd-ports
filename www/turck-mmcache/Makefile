@@ -16,14 +16,12 @@ COMMENT=	An opcode cache for PHP with encoder and loader
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
+USE_PHP=	yes
 USE_PHPIZE=	yes
 
 CONFIGURE_ARGS=	--enable-mmcache=shared
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
 
 post-patch:
 	@${REINPLACE_CMD} 's|ALIGN|MMALIGN|g' ${WRKSRC}/mm.c ${WRKSRC}/mmcache.c
@@ -49,4 +47,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

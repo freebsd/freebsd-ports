@@ -13,13 +13,12 @@ CATEGORIES=	archivers www pear
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR tar file management class
 
-BUILD_DEPENDS=	pear:${PORTSDIR}/lang/php4
-RUN_DEPENDS=	${BUILD_DEPENDS}
+USE_PHP=	yes
+WANT_PHP_PEAR=	yes
 
 FILES=		Archive/Tar.php
 DOCS=		Archive_Tar.txt
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/php4/bsd.php.mk"
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>

@@ -28,16 +28,12 @@ MYADMDIR?=	www/data/phpMyAdmin
 PHP_SUFX=	php3
 EXTRA_PATCHES=	files/fix-libraries::display_tbl.lib.php3 files/fix-tbl_relation.php3
 .else
+USE_PHP=	yes
 PHP_SUFX=	php
 EXTRA_PATCHES=	files/fix-libraries::display_tbl.lib.php files/fix-tbl_relation.php
 .endif
 
 PLIST_SUB+=	MYADMDIR=${MYADMDIR} PHP_SUFX=${PHP_SUFX}
-
-.include <bsd.port.pre.mk>
-.if !defined(WITH_PHP3)
-.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
-.endif
 
 post-patch:
 	@${MV} ${WRKSRC}/config.inc.${PHP_SUFX} ${WRKSRC}/config.inc.${PHP_SUFX}.sample
@@ -50,4 +46,4 @@ do-install:
 			then ${MKDIR} ${PREFIX}/${MYADMDIR}$${0#${WRKSRC}}; \
 			else ${INSTALL_DATA} $$0 ${PREFIX}/${MYADMDIR}$${0#${WRKSRC}}; fi'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

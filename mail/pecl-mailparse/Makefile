@@ -17,10 +17,10 @@ RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 
 IS_INTERACTIVE=	'need to build php4 with mbstring support.'
 
+USE_PHP=	yes
 USE_PHPIZE=	yes
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/php4/bsd.php.mk"
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 
 .if exists(${LOCALBASE}/bin/php-config)

@@ -16,15 +16,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PHP Extension to help debugging a PHP script
 
+USE_PHP=	yes
 USE_PHPIZE=	yes
 WITH_PHP_MOD=	yes
 
 CONFIGURE_ARGS=	--enable-php_dyn=shared
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
 
 post-build:
 	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%PHP_EXT_DIR%%|${PHP_EXT_DIR}|g" \
@@ -42,4 +40,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

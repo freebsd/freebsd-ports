@@ -21,6 +21,7 @@ COMMENT=	The PHP compiling template engine
 WRKSRC=	${WRKDIR}/Smarty-${PORTVERSION}
 
 NO_BUILD=	yes
+USE_PHP=	yes
 WANT_PHP_WEB=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -28,8 +29,6 @@ MSG_SRC=	${FILESDIR}/pkg-message
 
 MSG_SUB=	DATADIR=${DATADIR} LOCALBASE=${LOCALBASE}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/php4/bsd.php.mk"
 do-install:
 	@${MKDIR} ${DATADIR}
 .for f in Config_File.class.php Smarty.class.php Smarty_Compiler.class.php debug.tpl
@@ -59,4 +58,4 @@ post-install:
 		${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
