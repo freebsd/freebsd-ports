@@ -114,8 +114,8 @@ do-install:
 	    ${CP} -p ${APACHE_CONF} ${APACHE_CONF}.beforeHorde ; \
 	    ${PERL} -pi -e "s:php_value auto_prepend_file:# php_value auto_prepend_file:g" ${APACHE_CONF} ; \
 	    ${PERL} -pi -e "s:${HORDEDIR}/phplib:${PHP_LIB}:g" ${APACHE_CONF} ; \
-	    ${ECHO} "# Horde's include directory" >> ${APACHE_CONF} ; \
-	    ${ECHO} "Include ${HORDE_INC}" >> ${APACHE_CONF} ; \
+	    ${ECHO_CMD} "# Horde's include directory" >> ${APACHE_CONF} ; \
+	    ${ECHO_CMD} "Include ${HORDE_INC}" >> ${APACHE_CONF} ; \
 	fi)
 	@${CHOWN} -R www:www ${HORDEDIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}

@@ -70,7 +70,7 @@ do-install:
 	@(cd ${ZOPEBASEDIR} && ${PYTHON_CMD} wo_pcgi.py)
 	@(cd ${ZOPEBASEDIR} && \
 		${MV} Zope.cgi Zope.cgi.orig ; \
-		${ECHO} "#! ${CGIBINDIR}/pcgi-wrapper" > Zope.cgi ; \
+		${ECHO_CMD} "#! ${CGIBINDIR}/pcgi-wrapper" > Zope.cgi ; \
 		${CAT} Zope.cgi.orig >> Zope.cgi ; \
 		${RM} Zope.cgi.orig )
 	@(cd ${ZOPEBASEDIR}/pcgi/Test && ${RM} *.o)

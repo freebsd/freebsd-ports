@@ -20,8 +20,8 @@ ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
 post-patch:
-	@${ECHO} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
-	@${ECHO} "${CC} -s" > ${WRKSRC}/conf-ld
-	@${ECHO} "${PREFIX}" > ${WRKSRC}/conf-home
+	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
+	@${ECHO_CMD} "${CC} -s" > ${WRKSRC}/conf-ld
+	@${ECHO_CMD} "${PREFIX}" > ${WRKSRC}/conf-home
 
 .include <bsd.port.mk>

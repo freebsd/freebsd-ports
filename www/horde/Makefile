@@ -104,13 +104,13 @@ do-install:
 	    (if [ ! -f ${MIMETYPES}.beforeHorde ] ; then \
 		${ECHO} "===> Updating mime.types..." ; \
 		${CP} -p ${MIMETYPES} ${MIMETYPES}.beforeHorde ; \
-		${ECHO} "" >> ${MIMETYPES} ; \
-		${ECHO} "# Added by Horde to support php3" >> ${MIMETYPES} ; \
+		${ECHO_CMD} "" >> ${MIMETYPES} ; \
+		${ECHO_CMD} "# Added by Horde to support php3" >> ${MIMETYPES} ; \
 		(if ! ${GREP} -q x-httpd-php3 ${MIMETYPES} ; then \
-		    ${ECHO} "application/x-httpd-php		phtml pht php php3" >> ${MIMETYPES} ; \
-		    ${ECHO} "application/x-httpd-php3	php3.none" >> ${MIMETYPES} ; \
+		    ${ECHO_CMD} "application/x-httpd-php		phtml pht php php3" >> ${MIMETYPES} ; \
+		    ${ECHO_CMD} "application/x-httpd-php3	php3.none" >> ${MIMETYPES} ; \
 		fi) ; \
-		${ECHO} "# End of Horde's additions." >> ${MIMETYPES} ; \
+		${ECHO_CMD} "# End of Horde's additions." >> ${MIMETYPES} ; \
 	    fi) ; \
 	fi)
 .endif

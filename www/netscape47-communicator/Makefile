@@ -70,7 +70,7 @@ NETSCAPE_DIST_SUBDIR?=	communicator/english/${BROWSER_VER}/unix/${NETSCAPE_DIST_
 NETSCAPE_DIST_TAG?=	x86-unknown-freebsd # | x86-unknown-linux2.2 | x86-bsdi-bsd2 | alpha-dec-osf4.0
 
 BROWSER_VER=	${PORTVERSION}
-BROWSER_V!=	${ECHO} ${BROWSER_VER} | sed -e 's/\.//'
+BROWSER_V!=	${ECHO_CMD} ${BROWSER_VER} | sed -e 's/\.//'
 INFILE_HEAD?=	'Communicator,4.76.0.20001006'
 NO_AUTOADMIN=	'Not available'
 NO_FORTIFY=	'No need for this version'

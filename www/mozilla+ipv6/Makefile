@@ -76,8 +76,8 @@ post-build:
 		${FILESDIR}/mozilla.sh >${WRKSRC}/mozilla
 	@(cd ${WRKSRC}/dist/bin; \
 	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
-	  ${ECHO} skin,install,select,classic/1.0 >> chrome/installed-chrome.txt; \
-	  ${ECHO} locale,install,select,en-US >> chrome/installed-chrome.txt; \
+	  ${ECHO_CMD} skin,install,select,classic/1.0 >> chrome/installed-chrome.txt; \
+	  ${ECHO_CMD} locale,install,select,en-US >> chrome/installed-chrome.txt; \
 	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome)
 	@/usr/bin/find ${WRKSRC}/dist/bin -type d | /usr/bin/sort -r | \
 		/usr/bin/xargs ${RMDIR} 2> /dev/null || ${TRUE}

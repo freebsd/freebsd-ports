@@ -28,19 +28,19 @@ post-patch:
 		${WRKSRC}/wb0.c
 
 pre-install:
-	${ECHO} bin/wb0 > ${PLIST}
+	${ECHO_CMD} bin/wb0 > ${PLIST}
 .if !defined(NOPORTDOCS)
 .for i in ${DOCS}
-	${ECHO} ${DOCDIR}/${i} >> ${PLIST}
+	${ECHO_CMD} ${DOCDIR}/${i} >> ${PLIST}
 .endfor
-	${ECHO} ${DOCDIR}/wb0.config.README >> ${PLIST}
-	${ECHO} @dirrm ${DOCDIR} >> ${PLIST}
+	${ECHO_CMD} ${DOCDIR}/wb0.config.README >> ${PLIST}
+	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
 .endif
-	${ECHO} etc/wb0.config >> ${PLIST}
+	${ECHO_CMD} etc/wb0.config >> ${PLIST}
 	for i in `find ${PREFIX}/share/wb0 -type f`; \
-		do ${ECHO} share/wb0/`${BASENAME} $${i}` >> ${PLIST}; \
+		do ${ECHO_CMD} share/wb0/`${BASENAME} $${i}` >> ${PLIST}; \
 	done
-	${ECHO} @dirrm share/wb0 >> ${PLIST}
+	${ECHO_CMD} @dirrm share/wb0 >> ${PLIST}
 
 post-install:
 .if !defined(NOPORTDOCS)

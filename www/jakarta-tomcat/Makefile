@@ -26,6 +26,6 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/tomcat.sh /usr/local/etc/rc.d
 
 post-install:
-	@${ECHO} "etc/rc.d/tomcat.sh" >> ${TMPPLIST}
+	@${ECHO_CMD} "etc/rc.d/tomcat.sh" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

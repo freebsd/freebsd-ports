@@ -32,10 +32,10 @@ do-install:
 post-install:
 	@cd ${WRKSRC}/doc && \
 		for a in `/usr/bin/find . -type f | ${SED} -e 's:^\./::g'` ; \
-			do ${ECHO} share/doc/kannel/$$a >> ${TMPPLIST} ; done
-	@${ECHO} "@dirrm share/doc/kannel/arch" >> ${TMPPLIST}
-	@${ECHO} "@dirrm share/doc/kannel/userguide" >> ${TMPPLIST}
-	@${ECHO} "@dirrm share/doc/kannel" >> ${TMPPLIST}
+			do ${ECHO_CMD} share/doc/kannel/$$a >> ${TMPPLIST} ; done
+	@${ECHO_CMD} "@dirrm share/doc/kannel/arch" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm share/doc/kannel/userguide" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm share/doc/kannel" >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
