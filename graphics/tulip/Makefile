@@ -7,40 +7,40 @@
 #
 
 PORTNAME=	tulip
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	graphics
-MASTER_SITES=	http://dept-info.labri.fr/~auber/projects/tulip/x345/tulip-${PORTVERSION}/
+MASTER_SITES=	http://dept-info.labri.fr/~auber/projects/tulip/x345/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system dedicated to the visualization of huge graphs
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png:${PORTSDIR}/graphics/png \
-		gnugetopt:${PORTSDIR}/devel/libgnugetopt
-
-USE_REINPLACE=	yes
-USE_MESA=	yes
 USE_QT_VER=	3
-CFLAGS+=	-DHAVE_DECL_GETOPT
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt -lcompat"
+QT_NONSTANDARD=	yes
+USE_REINPLACE=	yes
+USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--with-qt-includes=${QT_PREFIX}/include \
+		--with-qt-libraries=${QT_PREFIX}/lib \
+		--with-extra-libs=${LOCALBASE}/lib
 INSTALLS_SHLIB=	yes
 
+CPPFLAGS=	-I${LOCALBASE}/include -I${PREFIX}/include \
+		-I${QT_PREFIX}/include -DHAVE_DECL_GETOPT
+LDFLAGS=	-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib \
+		-ljpeg -L${QT_PREFIX}/lib -lcompat
+
+post-extract:
+	@${FIND} ${WRKSRC} -name "moc_*" -delete
+
 post-patch:
-	@${REINPLACE_CMD} -e "s|-lqt|-lqt-mt|" ${WRKSRC}/configure
-	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
-		-e "s|malloc\.h|stdlib.h|"
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
-		-e "s|-ldl||" -e "s|-lpthread|${PTHREAD_LIBS}|"
-
-post-configure:
-	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} \
-		-e "s|-D_GETOPT_H||"
-
-pre-build:
-	@(cd ${WRKSRC} && ${GMAKE} clean)
+	@${REINPLACE_CMD} -e 's| -O2 -pipe||g' ${WRKSRC}/configure
+	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|malloc\.h|stdlib.h|g'
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-ldl||g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g'
 
 .include <bsd.port.mk>

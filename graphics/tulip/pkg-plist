@@ -1,9 +1,73 @@
 bin/Tulip
 bin/tlprender
-lib/libtlp.a
-lib/libtlp.la
-lib/libtlp.so
-lib/libtlp.so.0
+bin/tulip-config
+include/tulip/Bezier.h
+include/tulip/Cluster.h
+include/tulip/Clustering.h
+include/tulip/Color.h
+include/tulip/Colors.h
+include/tulip/ColorsProxy.h
+include/tulip/Coord.h
+include/tulip/EpsFunction.h
+include/tulip/ExportModule.h
+include/tulip/FanError.h
+include/tulip/GlFonts.h
+include/tulip/GlGraph.h
+include/tulip/GlGraphStrategy.h
+include/tulip/GlLines.h
+include/tulip/Glyph.h
+include/tulip/GraphIterator.h
+include/tulip/IdManager.h
+include/tulip/ImportModule.h
+include/tulip/Int.h
+include/tulip/IntProxy.h
+include/tulip/Iterator.h
+include/tulip/Layout.h
+include/tulip/LayoutProxy.h
+include/tulip/MetaGraph.h
+include/tulip/MetaGraphProxy.h
+include/tulip/MethodFactory.h
+include/tulip/Metric.h
+include/tulip/MetricProxy.h
+include/tulip/Observable.h
+include/tulip/Plugin.h
+include/tulip/PluginContext.h
+include/tulip/PluginLoader.h
+include/tulip/PluginLoaderTxt.h
+include/tulip/PluginProgress.h
+include/tulip/Property.h
+include/tulip/PropertyProxy.h
+include/tulip/PropertyProxyContainer.h
+include/tulip/Reflect.h
+include/tulip/Selection.h
+include/tulip/SelectionProxy.h
+include/tulip/Size.h
+include/tulip/Sizes.h
+include/tulip/SizesProxy.h
+include/tulip/StlIterator.h
+include/tulip/String.h
+include/tulip/StringProxy.h
+include/tulip/SubGraph.h
+include/tulip/SuperGraph.h
+include/tulip/SuperGraphAbstract.h
+include/tulip/SuperGraphImpl.h
+include/tulip/SuperGraphView.h
+include/tulip/TemplateFactory.h
+include/tulip/TlpTools.h
+include/tulip/TulipPlugin.h
+include/tulip/TypeConverter.h
+include/tulip/Types.h
+include/tulip/WithParameter.h
+include/tulip/cxx/PropertyProxy.cxx
+include/tulip/cxx/PropertyProxyContainer.cxx
+include/tulip/cxx/Reflect.cxx
+include/tulip/cxx/TemplateFactory.cxx
+lib/libtulip-ogl.a
+lib/libtulip-ogl.so
+lib/libtulip-ogl.so.0
+lib/libtulip.a
+lib/libtulip.so
+lib/libtulip.so.0
 lib/tlp/bitmaps/Fonts.bmp
 lib/tlp/bitmaps/but1.xpm
 lib/tlp/bitmaps/but2.xpm
@@ -42,6 +106,7 @@ lib/tlp/plugins/import/smallworld.so
 lib/tlp/plugins/import/tlp.so
 lib/tlp/plugins/layout/circular.so
 lib/tlp/plugins/layout/conetree.so
+lib/tlp/plugins/layout/conetreeextended.so
 lib/tlp/plugins/layout/gem.so
 lib/tlp/plugins/layout/generalgraph.so
 lib/tlp/plugins/layout/generalgraph3d.so
@@ -49,12 +114,11 @@ lib/tlp/plugins/layout/generalgraphbox.so
 lib/tlp/plugins/layout/random.so
 lib/tlp/plugins/layout/springelectrical.so
 lib/tlp/plugins/layout/sugiyama.so
-lib/tlp/plugins/layout/tree3d.so
 lib/tlp/plugins/layout/treeleaf.so
 lib/tlp/plugins/layout/treemap.so
 lib/tlp/plugins/layout/treeradial.so
-lib/tlp/plugins/layout/treewalker.so
-lib/tlp/plugins/layout/treewalkerbox.so
+lib/tlp/plugins/layout/treereingold.so
+lib/tlp/plugins/layout/treereingoldextended.so
 lib/tlp/plugins/layout/tutte.so
 lib/tlp/plugins/metric/arity.so
 lib/tlp/plugins/metric/barycenter.so
@@ -82,22 +146,6 @@ lib/tlp/plugins/selection/spanningdag.so
 lib/tlp/plugins/selection/spanningtree.so
 lib/tlp/plugins/sizes/AutoSize.so
 lib/tlp/plugins/sizes/fittolabels.so
-lib/tlp/samples/gml/GeneralPlanarGraph.gml
-lib/tlp/samples/gml/dag50nodes.gml
-lib/tlp/samples/gml/pussar.gml
-lib/tlp/samples/matrix/ex1.mat
-lib/tlp/samples/posets/posTest.pst
-lib/tlp/samples/tlp/CrossReduc.Demo.tlp
-lib/tlp/samples/tlp/MetaGraph.tlp
-lib/tlp/samples/tlp/SimpleCurve.Demo.tlp
-lib/tlp/samples/tlp/Tree_11259_Nodes.demo.tlp
-lib/tlp/samples/tlp/Web.labri.Demo.tlp
-lib/tlp/samples/tlp/graphSimple.144.245.tlp
-@dirrm lib/tlp/samples/tlp
-@dirrm lib/tlp/samples/posets
-@dirrm lib/tlp/samples/matrix
-@dirrm lib/tlp/samples/gml
-@dirrm lib/tlp/samples
 @dirrm lib/tlp/plugins/sizes
 @dirrm lib/tlp/plugins/selection
 @dirrm lib/tlp/plugins/metric
@@ -109,3 +157,6 @@ lib/tlp/samples/tlp/graphSimple.144.245.tlp
 @dirrm lib/tlp/plugins/clustering
 @dirrm lib/tlp/plugins
 @dirrm lib/tlp/bitmaps
+@dirrm lib/tlp
+@dirrm include/tulip/cxx
+@dirrm include/tulip
