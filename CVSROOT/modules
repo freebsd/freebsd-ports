@@ -5096,6 +5096,7 @@ p5-Date-Pcalc	ports/devel/p5-Date-Pcalc
 p5-Date-Roman	ports/devel/p5-Date-Roman
 p5-Date-Simple	ports/devel/p5-Date-Simple
 p5-DateConvert	ports/devel/p5-DateConvert
+p5-DateTime-LeapSecond	ports/devel/p5-DateTime-LeapSecond
 p5-DelimMatch	ports/textproc/p5-DelimMatch
 p5-Devel-Constants	ports/devel/p5-Devel-Constants
 p5-Devel-DProf	ports/devel/p5-Devel-DProf
