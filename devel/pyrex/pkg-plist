@@ -9,6 +9,7 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/DebugFlags.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/DebugFlags.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Errors.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Errors.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Errors.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/ExprNodes.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/ExprNodes.pyc
@@ -104,6 +105,7 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Plex/Regexps.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Plex/Regexps.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Plex/Regexps.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Scanners.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Plex/Scanners.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Plex/Scanners.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Plex/Timing.py
@@ -151,6 +153,7 @@ bin/pyrexc
 %%PORTDOCS%%%%EXAMPLESDIR%%/callback/cheesefinder.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/callback/cheesefinder.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/callback/run_cheese.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/embed/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/embed/Makefile.msc
 %%PORTDOCS%%%%EXAMPLESDIR%%/embed/Makefile.msc.static
 %%PORTDOCS%%%%EXAMPLESDIR%%/embed/Makefile.unix
