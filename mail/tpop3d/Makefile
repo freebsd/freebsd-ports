@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.ex-parrot.com/~chris/tpop3d/
 MAINTAINER=	chris@shagged.org
 COMMENT=	Virtual-domain capable POP3 server supporting MySQL auth
 
+USE_REINPLACE=  yes
+
 # mysql authentication
 .if !defined(WITHOUT_MYSQL)
 USE_MYSQL=		yes
@@ -54,9 +56,9 @@ MAN5=		tpop3d.conf.5
 MAN8=		tpop3d.8
 
 post-patch:
-	@${PERL} -pi -e 's,^CFLAGS =, CFLAGS = \@CFLAGS\@,' \
+	@${REINPLACE_CMD} 's,^CFLAGS =, CFLAGS = \@CFLAGS\@,' \
 		${WRKSRC}/Makefile.in
-	@${PERL} -pi -e 's,/etc/tpop3d,${PREFIX}/etc/tpop3d,g' \
+	@${REINPLACE_CMD} 's,/etc/tpop3d,${PREFIX}/etc/tpop3d,g' \
 		${WRKSRC}/tpop3d.conf.5 ${WRKSRC}/tpop3d.8
 
 post-install:
