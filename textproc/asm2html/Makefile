@@ -8,7 +8,8 @@
 PORTNAME=	asm2html
 PORTVERSION=	1.4
 CATEGORIES=	textproc
-MASTER_SITES=	http://virtus.ath.cx/asm2html/
+MASTER_SITES=	http://virtus.ath.cx/asm2html/ \
+		http://asm2html.kerneled.com
 
 MAINTAINER=	tuxsuximus@hotmail.com
 COMMENT=	Converts NASM syntax assembly code to HTML code
