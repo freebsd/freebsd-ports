@@ -41,7 +41,7 @@ HTML_DOC_FILES=	distcc.html distcc-1.html distcc-2.html distcc-3.html \
 
 pre-fetch:
 .if !defined(WITHOUT_GNOME)
-	@${ECHO_MSG} "Building with GNOME-based monitor. To disabled this, press"
+	@${ECHO_MSG} "Building with GNOME-based monitor. To disable this, press"
 	@${ECHO_MSG} "Ctrl+C now and restart with 'make WITHOUT_GNOME=yes'."
 	@${ECHO_MSG} ""
 .else
