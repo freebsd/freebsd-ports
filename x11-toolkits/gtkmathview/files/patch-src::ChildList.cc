@@ -1,12 +1,10 @@
---- src/ChildList.cc.orig	Wed Jul 23 16:15:50 2003
-+++ src/ChildList.cc	Wed Jul 23 16:17:12 2003
-@@ -20,6 +20,9 @@
- // http://www.cs.unibo.it/helm/mml-widget, or send a mail to
+--- src/ChildList.cc.orig	Sun Jul 27 02:06:29 2003
++++ src/ChildList.cc	Sun Jul 27 02:06:46 2003
+@@ -21,6 +21,7 @@
  // <luca.padovani@cs.unibo.it>
  
-+#ifdef __FreeBSD__
-+#include <assert.h>
-+#endif
  #include <config.h>
++#include <assert.h>
  
  #include "ChildList.hh"
+ 
