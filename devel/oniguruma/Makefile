@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oniguruma
-PORTVERSION=	2.2.6
+PORTVERSION=	2.2.8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.geocities.jp/kosako1/oniguruma/archive/ \
 		${MASTER_SITE_RUBY}
