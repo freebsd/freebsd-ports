@@ -59,6 +59,7 @@
     SUBDIR += hexcalc
     SUBDIR += it++
     SUBDIR += jacal
+    SUBDIR += jama
     SUBDIR += javanns
     SUBDIR += kseg
     SUBDIR += lapack
