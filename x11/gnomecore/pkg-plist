@@ -9,6 +9,7 @@ bin/gnome-help-caller
 bin/gnome-hint
 bin/gnome-hint-properties-capplet
 bin/gnome-info2html
+bin/gnome-libice-check
 bin/gnome-login-check
 bin/gnome-man2html
 bin/gnome-panel-properties-capplet
@@ -763,6 +764,7 @@ share/locale/ja/LC_MESSAGES/gnome-core.mo
 share/locale/ko/LC_MESSAGES/gnome-core.mo
 share/locale/lt/LC_MESSAGES/gnome-core.mo
 share/locale/nl/LC_MESSAGES/gnome-core.mo
+share/locale/nn/LC_MESSAGES/gnome-core.mo
 share/locale/no/LC_MESSAGES/gnome-core.mo
 share/locale/pl/LC_MESSAGES/gnome-core.mo
 share/locale/pt/LC_MESSAGES/gnome-core.mo
