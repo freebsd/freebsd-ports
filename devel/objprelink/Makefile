@@ -9,7 +9,7 @@ PORTNAME=	objprelink
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	devel kde
-MASTER_SITES=	http://www.research.att.com/~leonb/objprelink/ \
+MASTER_SITES=	http://leon.bottou.com/objprelink/ \
 		${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=     binutils/releases
 DISTFILES=	objprelink.c.gz binutils-${BINUTILS_VER}.tar.bz2
