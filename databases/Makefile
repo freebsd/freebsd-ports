@@ -252,6 +252,7 @@
     SUBDIR += postgresql-libpq++
     SUBDIR += postgresql-libpqxx
     SUBDIR += postgresql-odbc
+    SUBDIR += postgresql-plpython
     SUBDIR += postgresql-plruby
     SUBDIR += postgresql-pltcl
     SUBDIR += postgresql-relay
