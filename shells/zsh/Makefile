@@ -26,6 +26,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} zsh-${PORTVERSION}-doc${EXTRACT_SUFX}
 MAINTAINER=	will@FreeBSD.org
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 
 ZSH_VER=	${PORTVERSION}
 ZSHFUNC_SUBDIR=	share/zsh/${ZSH_VER}/functions
@@ -51,7 +52,7 @@ PLIST_SUB+=	NO_STATIC=""
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's!\$\(htmldir\)!\$\(prefix\)/share/doc/zsh!' \
+	@${REINPLACE_CMD} -e 's|\$$(htmldir)|\$$(prefix)/share/doc/zsh|' \
 		${WRKSRC}/Doc/Makefile.in
 
 post-build:
