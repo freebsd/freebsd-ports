@@ -1,0 +1,23 @@
+This is a package of libraries to use the FreeType library from the
+perl language. It contains following pieces.
+
+<FreeType.xs> This is a simple caller of the FreeType library. It has
+same API as the FreeType library, so please read a manual of that to
+understand how to use this.
+
+<FreeTypeWrapper.pm> This is a simple wrapper of FreeType.xs to use
+the FreeType library from perl with easy, perl-like API.
+
+<ftinfo.pl> This is a dumper of a lot of information in each TrueType
+fonts. This convert them as human readable strings.
+
+<mkttfdir.pl> This is a maker of fonts.dir by parsing TTF and TTC
+fils. It has special handler for DynaLab fonts, so it make good
+fonts.dir automatically. And it detects what language's fonts are
+contained in it by looking at code_page_range field in os2 table, so
+it makes right entries.
+
+See also <http://www.io.com/~kazushi/xtt/#perlftlib>
+
+Note that ftinfo core-dumps with a signal 11 in case using
+perl5.00502. :-)
