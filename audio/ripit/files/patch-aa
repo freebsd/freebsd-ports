@@ -1,6 +1,6 @@
---- ripit-orig.pl	Sun Sep 23 14:12:08 2001
-+++ ripit.pl	Sun Sep 23 14:12:09 2001
-@@ -9,41 +9,43 @@
+--- ripit.pl.orig	Sat Aug 25 18:20:06 2001
++++ ripit.pl	Fri May 24 14:16:20 2002
+@@ -9,41 +9,47 @@
  #		Create an M3U file
  #
  # Options:
@@ -12,6 +12,7 @@
 +#	--halt			- powers off the machine when finished
 +#				  if your configuration supports it
 +#	--bitrate [rate]	- Encode MP3 at this bitrate 
++#	--quality [value]	- Encode Ogg at this quality setting
  #	--year [year]		- Tag MP3 with this year (included as CDDB
  #				  does not store this information)
 -#       --genre [genre]		- Overrides CDDB genre, e.g. rock,funk
@@ -26,13 +27,17 @@
 +#	--numcpu [cpus]		- Number of parallel encoders to run
  #
  # Version 2.0 20/08/01 - Simon Quinn
++# Ripping via FreeBSD's "dd" command - Lars Eggert <larse@isi.edu>
++# May use Ogg's -q quality option - Øyvind Møll <oyvindmo@initio.no>
  #
- # Usage: ripit.pl [--halt] [--bitrate rate] [--year year] [--genre genre]
+-# Usage: ripit.pl [--halt] [--bitrate rate] [--year year] [--genre genre]
 -#                 [--device cddevice] [--encopt options] [--encoder encoder]
-+#		  [--device cddevice] [--encopt options] [--encoder encoder]
- #		  [--cdripper cdripper] [--cdopt options] [--outputdir dir] 
+-#		  [--cdripper cdripper] [--cdopt options] [--outputdir dir] 
 -#	 	  [start_track]
-+#		  [--numcpu cpus] [start_track]
++# Usage: ripit.pl [--halt] [--bitrate rate] [--quality value] [--year year]
++#		  [--genre genre] [--device cddevice] [--encopt options]
++#		  [--encoder encoder] [--cdripper cdripper] [--cdopt options]
++#		  [--outputdir dir] [--numcpu cpus] [start_track]
  ####################################################################
  #
  # User configurable variables
@@ -40,21 +45,24 @@
  
  $cddev 		= "/dev/cdrom";		# CD Audio device
 -$outputdir 	= "/tmp/cdrip/";	# Where the MP3s should go, 
-+$outputdir 	= "/tmp/cdrip/";	# Where the MP3s should go,
- 					# must have trailing /
+-					# must have trailing /
++$outputdir 	= "/tmp/cdrip";		# Where the MP3s should go
  $bitrate	= 160;			# Bitrate for MP3s
 -$encoder	= 0; 			# 0 - Lame, 1 - OggVorbis
++$quality	= 0;			# Quality setting for Ogg
 +$encoder	= 0; 			# 0 - Lame, 1 - Gogo, 2 - OggVorbis
  $encopt		= "";			# options for mp3 encoder
  $cdripper	= 0;			# 0 - dagrab,
  					# 1 - cdparanoia, 2 - cdda2wav,
- 					# 3 - tosha, 4 - cdd
+-					# 3 - tosha, 4 - cdd
++					# 3 - tosha, 4 - cdd,
++					# 5 - dd (FreeBSD-4.4 and higher)
  $cdopt		= "";			# options for cdaudio ripper
 +$numcpu		= 1;			# Number of parallel encoders to run
  
  $CDDB_HOST	= "freedb.freedb.org";  # set cddb host
  $CDDB_PORT	= 8880;                 # set cddb port
-@@ -77,6 +79,9 @@
+@@ -77,6 +83,9 @@
  $nocddbinfo	= 1;    # Assume no CDDB info exists
  $trackselection = "";   # Passed from command line
  
@@ -64,7 +72,15 @@
  ####################################################
  # Do the following:
  #  1. Get command line parameters
-@@ -98,11 +103,16 @@
+@@ -91,6 +100,7 @@
+ # Get the parameters from the command line
+ if ( ! &GetOptions("halt" => \$haltonfinish, 
+                   "bitrate=i" => \$bitrate,
++                  "quality=i" => \$quality,
+ 		  "year=i" => \$year,
+ 		  "genre=s" => \$genre,
+ 		  "device=s" => \$cddev,
+@@ -98,11 +108,16 @@
  		  "encoder=i" => \$encoder,
  		  "cdripper=i" => \$cdripper,
  		  "cdopt=s" => \$cdopt,
@@ -73,18 +89,28 @@
 +		  "outputdir=s" => \$outputdir,
 +		  "numcpu=i" => \$numcpu ) ) {
 +   print "
-+Usage: ripit.pl [--halt] [--bitrate rate] [--year year]
++Usage: ripit.pl [--halt] [--bitrate rate] [--quality value] [--year year]
                  [--device cddevice] [--encopt options] [--encoder encoder]
  		[--cdripper cdripper] [--cdopt options] [--outputdir dir] 
 -		[start_track]\n";
 +		[--numcpu cpus] [start_track]
-+Rippers: 0 - dagrab, 1 - cdparanoia, 2 - cdda2wav, 3 - tosha, 4 - cdd
++Rippers: 0 - dagrab, 1 - cdparanoia, 2 - cdda2wav, 3 - tosha, 4 - cdd, 5 - dd
 +Encoders: 0 - Lame, 1 - Gogo, 2 - OggVorbis
 +";
     exit 1;
  }
  
-@@ -132,8 +142,8 @@
+@@ -110,6 +125,9 @@
+         print STDERR "Warning: year is not Y2K compliant - $year\n";
+ }
+ 
++# Make sure outputdir ends with a slash
++$outputdir =~ s/(.*)\/?/$1\//;
++
+ if ($haltonfinish == 1) {print "Will halt machine when finished.\n";}
+ 
+ # Get starting track parameter if it has been given
+@@ -132,8 +150,8 @@
  &create_dirs();				# Create directories MP3 files
  &rip_cd();				# Rip, Encode & Tag
  
@@ -95,7 +121,7 @@
  
  &create_m3u();			# Create the M3U file for the MP3 files
  
-@@ -157,6 +167,10 @@
+@@ -157,6 +175,10 @@
  
  exit;
  
@@ -106,7 +132,15 @@
  #
  # Create the track selection from the parameters passed
  # on the command line
-@@ -336,31 +350,37 @@
+@@ -280,7 +302,6 @@
+ #
+ sub create_dirs {
+   # Directory created will be: /outputdir/Artist - Album/
+-  # The value must end in /
+ 
+   $mp3dir = $outputdir.$artist." - ".$album."/";
+ 
+@@ -336,31 +357,37 @@
      $riptrackname = &get_trackname($_, $tracklist[$_ - 1]);
      $riptrackno = $_;
  
@@ -148,7 +182,7 @@
        }
      }
      elsif ($cdripper == 4) {
-@@ -369,6 +389,7 @@
+@@ -369,9 +396,37 @@
        $cdd_dev =~ s/c$//;
        if (system("cdd -t $riptrackno -q -f $cdd_dev - 2>/dev/null | sox -t cdr -x - \"$riptrackname.rip\"")) {
          &printflush(RIPLOG,"cdd failed on $tracklist[$_ - 1]\n");
@@ -156,7 +190,37 @@
          die "cdd failed on $tracklist[$_ - 1]";
        }
      }
-@@ -381,11 +402,13 @@
++    elsif ($cdripper == 5) {
++      # Rip via FreeBSD's "dd" command and the associated CDDA devices
++      # under /dev. Requires 4.4-RELEASE or higher.
++      my $cdd_dev = $cddev;
++      if ($cdd_dev =~ /^\/dev\/(.*)/) { $cdd_dev = $1; }
++      die "dd extraction only works with ATAPI devices" unless $cddev =~ /acd/;
++      # See if the device corresponding to the track already exists...
++      my $trackdev = $cdd_dev;
++      $trackdev =~ s/(.*)c/$1/;
++      $trackdev .= "t$riptrackno";
++      unless (-e "/dev/$trackdev") {
++	# ...no, it doesn't. Create it.
++	&printflush(RIPLOG, "CDDA track device /dev/$trackdev, doesn't ".
++		    "exist, creating...\n");
++	my $cwd = `pwd`;
++	chdir "/dev";
++	system("sh MAKEDEV $trackdev") == 0 or die "cannot make $trackdev";
++	chdir $cwd;
++      }
++      # Ready to extract the data. Also do endian conversion.
++      if (system("dd if=/dev/$trackdev conv=swab bs=2352 ".
++		 "of=\"$riptrackname.rip\" 2> /dev/null")) {
++	&printflush(RIPLOG,"dd failed on $tracklist[$_ - 1]\n");
++        kill 1, @encoders;
++	die "cannot rip track $riptrackno";
++      }
++    }
+     else {
+       die "No CD Ripper defined";
+     }
+@@ -381,11 +436,13 @@
      rename "$riptrackname.rip","$riptrackname.wav";
  
      &printflush(RIPLOG,"Rip complete $tracklist[$_ - 1]\n");
@@ -174,7 +238,7 @@
      }
  
    }
-@@ -407,25 +430,33 @@
+@@ -407,24 +464,37 @@
      $riptrackno = $_;
      $ncount++;
   
@@ -201,18 +265,23 @@
        $enc = "lame $encopt -S -b $bitrate --tt \"$tracklist[$_ - 1]\" --ta \"$artist\" --tl \"$album\" --ty \"$year\" --tg \"$genre\" --tn $riptrackno --add-id3v2 \"$riptrackname.wav\" \"$riptrackname.mp3\"";
      }
      elsif ($encoder == 1) {
+-      $enc = "oggenc $encopt -b $bitrate -t \"$tracklist[$_ - 1]\" -a \"$artist\" -l \"$album\" -d \"$year\" -N $riptrackno -o \"$riptrackname.ogg\" \"$riptrackname.wav\"";
 +      $enc = "gogo \"$riptrackname.wav\" \"$riptrackname.mp3\" $encopt -b $bitrate";
 +    }
 +    elsif ($encoder == 2) {
-       $enc = "oggenc $encopt -b $bitrate -t \"$tracklist[$_ - 1]\" -a \"$artist\" -l \"$album\" -d \"$year\" -N $riptrackno -o \"$riptrackname.ogg\" \"$riptrackname.wav\"";
-     }
++      if ($quality > 0) {
++	$oggenc_quality_option = "-q $quality";
++      } else {
++	$oggenc_quality_option = "-b $bitrate";
++      }
++      $enc = "oggenc $encopt $oggenc_quality_option -t \"$tracklist[$_ - 1]\" -a \"$artist\" -l \"$album\" -d \"$year\" -N $riptrackno -o \"$riptrackname.ogg\" \"$riptrackname.wav\"";
++    }
 +    else {
 +      die "No encoder defined";
-+    }
+     }
  
      if ( ! system("$enc >$enclog 2>&1 </dev/null")) {
-  
-@@ -438,7 +469,8 @@
+@@ -438,7 +508,8 @@
        &printflush(RIPLOG,"MP3 Encoder Failed on $tracklist[$_ - 1]\n");
        die "MP3 Encoder Failed on $tracklist[$_ - 1]";
      }
@@ -222,7 +291,7 @@
    }
    exit ;
  }
-@@ -452,10 +484,10 @@
+@@ -452,10 +523,10 @@
    $file="$artist.m3u";
    if ($use_underscore == 1) { $file =~ s/ /_/g; }
  
