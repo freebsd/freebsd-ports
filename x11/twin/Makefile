@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	twin
 MAINTAINER=	samy@kerneled.com
 COMMENT=	A text-mode window manager and terminal emulator
 
+BROKEN=		"Missing autoconf dependency"
+
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 USE_BISON=	yes
