@@ -5697,6 +5697,7 @@ p5-Text-Metaphone	ports/textproc/p5-Text-Metaphone
 p5-Text-PDF	ports/print/p5-Text-PDF
 p5-Text-Query	ports/textproc/p5-Text-Query
 p5-Text-Query-SQL	ports/databases/p5-Text-Query-SQL
+p5-Text-Reflow	ports/textproc/p5-Text-Reflow
 p5-Text-Repository	ports/textproc/p5-Text-Repository
 p5-Text-SimpleTemplate	ports/textproc/p5-Text-SimpleTemplate
 p5-Text-Template	ports/textproc/p5-Text-Template
