@@ -6,17 +6,23 @@
 #
 
 PORTNAME=	utf8locale
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	misc
-MASTER_SITES= 	${MASTER_SITE_LOCAL}
+MASTER_SITES= 	${MASTER_SITE_LOCAL} \
+		http://people.freebsd.org/~perky/distfiles/
 MASTER_SITE_SUBDIR=	perky
 
 MAINTAINER=	perky@FreeBSD.org
 
-LANGS=		en_US ko_KR ja_JP
+LANGS=		en_US ko_KR ja_JP ru_RU zh_CN zh_TW
 BASELOCALEDIR=	${DESTDIR}/usr/share/locale
 PLIST_SUB=	BASELOCALEDIR=${BASELOCALEDIR} \
 		LANGS="${LANGS}"
+
+_HAVE_SWIDTH!=	grep _CTYPE_SW ${DESTDIR}/usr/include/ctype.h || true
+.if empty(_HAVE_SWIDTH)
+PKGNAMESUFFIX=	-without-swidth
+.endif
 
 post-install:
 .for lang in ${LANGS}
