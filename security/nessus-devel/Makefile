@@ -38,8 +38,15 @@ CONFIGURE_ARGS+=--disable-gtk
 CONFIGURE_ARGS+=	--sharedstatedir=${PREFIX}/etc/nessus/com \
 			--localstatedir=${PREFIX}/etc/nessus/var 
 
-MAN1=		nessus.1
+MAN1=		nessus.1 nessus-mkrand.1
 MAN8=		nessusd.8 nessus-adduser.8 nessus-mkcert.8 nessus-rmuser.8
+
+post-patch::
+	@${PERL} -pi.fbsd -e 's,strcasestr,ne_strcasestr,g' \
+		${WRKSRC}/nessus/html_graph_output.c
+	@${PERL} -pi.fbsd -e 's,strcasestr,ne_strcasestr,g' \
+		${WRKSRC}/nessus/xml_output_ng.c
+
 
 post-install:
 .if ! defined(BATCH)
