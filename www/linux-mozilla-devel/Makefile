@@ -8,6 +8,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi/
@@ -40,6 +41,7 @@ USE_XLIB=	yes
 USE_LINUX=	yes
 WRKSRC=	${WRKDIR}/xpi
 INSTALL_DIR=	${PREFIX}/lib/linux-mozilla
+PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 STARTUP_CMD=	linux-mozilla
 
@@ -59,30 +61,38 @@ do-configure:
 	${ECHO} -n "cd "		>>${WRKDIR}/${STARTUP_CMD}
 	${ECHO} ${INSTALL_DIR}		>>${WRKDIR}/${STARTUP_CMD}
 	${ECHO} "exec ./mozilla"	>>${WRKDIR}/${STARTUP_CMD}
+	${ECHO} "#!/bin/sh"					>${WRKDIR}/linkfarm
+	${ECHO} "# Run this after installing Netscape plugins."	>>${WRKDIR}/linkfarm
+	${ECHO} "cd ${PREFIX}/lib/linux-mozilla/plugins"	>>${WRKDIR}/linkfarm
+	${ECHO} -n "${FIND} ../../netscape-linux/plugins/*"	>>${WRKDIR}/linkfarm
+	${ECHO} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
+	${ECHO} -n "${FIND} ../../linux-netscape6/plugins"	>>${WRKDIR}/linkfarm
+	${ECHO} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
 
 pre-install:
 	${ECHO} bin/${STARTUP_CMD} > ${PLIST}
+	${ECHO} "@unexec ${FIND} ${PREFIX}/lib/linux-mozilla/plugins -type l \
+		-exec ${RM} {} \;" >> ${PLIST}
 	cd ${WRKSRC}/bin; for i in `find * \! -type d | sort`; do \
 		${ECHO} lib/linux-mozilla/$${i} >> ${PLIST}; \
 	done
-	${ECHO} lib/linux-mozilla/plugins/libflashplayer.so >> ${PLIST}
-	${ECHO} lib/linux-mozilla/plugins/ShockwaveFlash.class >> ${PLIST}
 	cd ${WRKSRC}/bin; \
 	for i in `find -d * -type d`; do \
 		${ECHO} @dirrm lib/linux-mozilla/$${i} >> ${PLIST}; \
 	done
+	${ECHO} lib/linux-mozilla/linkfarm >> ${PLIST}
+	${ECHO} "@exec ${PREFIX}/lib/linux-mozilla/linkfarm" >> ${PLIST}
 	${ECHO} @dirrm lib/linux-mozilla >> ${PLIST}
 
 do-install:
 	${MKDIR} ${INSTALL_DIR}
 	${CP} -Rp ${WRKSRC}/bin/* ${INSTALL_DIR}
-# These links are broken if the linux-flashplugin package is not installed.
-	cd ${PREFIX}/lib/linux-mozilla/plugins \
-	&& ${LN} -s ../../netscape-linux/plugins/libflashplayer.so \
-	&& ${LN} -s ../../netscape-linux/plugins/ShockwaveFlash.class
 	${INSTALL_SCRIPT} ${WRKDIR}/${STARTUP_CMD} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/linkfarm ${PREFIX}/lib/linux-mozilla/
 
 post-install:
+	${SED} -e 's:PREFIX:${PREFIX}:g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
+	- ${PREFIX}/lib/linux-mozilla/linkfarm
 	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
