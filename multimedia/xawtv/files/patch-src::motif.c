@@ -20,4 +20,3 @@
  #include <X11/Xlib.h>
  #include <X11/Intrinsic.h>
  #include <Xm/Xm.h>
-

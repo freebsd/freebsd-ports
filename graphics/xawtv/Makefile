@@ -5,12 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=       xawtv
-PORTVERSION=	3.70
-CATEGORIES=     graphics
-MASTER_SITES=   http://bytesex.org/xawtv/
+PORTNAME=	xawtv
+PORTVERSION=	3.72
+CATEGORIES=	graphics
+MASTER_SITES=	http://bytesex.org/xawtv/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
-WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
 MAINTAINER=	lehmann@ans-netz.de
 
@@ -18,6 +17,8 @@ LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
+USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
