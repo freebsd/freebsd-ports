@@ -18,7 +18,7 @@ MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/MySQL-3.23/ \
 		ftp://ftp.gwdg.de/pub/misc/mysql/Downloads/MySQL-3.23/
 DISTFILES=	mysql-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sysadmin@alexdupre.com
 COMMENT?=	Multithreaded SQL database (server)
 
 WRKSRC=		${WRKDIR}/mysql-${PORTVERSION}
