@@ -8,8 +8,7 @@
 
 DISTNAME=       pysol-3.00
 CATEGORIES=	games
-MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/ \
-		http://wildsau.idv.uni-linz.ac.at/mfx/download/beta/
+MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/pysol/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${CARDSETS}${EXTRACT_SUFX}
 
 MAINTAINER=	tg@FreeBSD.org
