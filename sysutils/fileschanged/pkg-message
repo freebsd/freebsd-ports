@@ -1,0 +1,9 @@
+************************************************************************
+
+    For correct work of FILESCHANGED, you must configure File Alteration
+    Monitor (/usr/ports/devel/fam)
+
+    Read /usr/ports/devel/fam/pkg-message or run:
+    pkg_info -Dx fam | more
+
+************************************************************************
