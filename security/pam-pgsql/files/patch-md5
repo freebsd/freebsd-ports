@@ -1,0 +1,97 @@
+This patch replaces calls to mhash library with direct calls into -lmd,
+greatly simplifying things...
+
+--- pam_pgsql.c	Wed Apr 18 16:47:57 2001
++++ pam_pgsql.c	Wed Jan  9 14:46:01 2002
+@@ -14,5 +14,7 @@
+ #include <syslog.h>
+ #include <ctype.h>
+-#include <mhash.h>
++#include <sys/types.h>
++#include <unistd.h>
++#include <md5.h>
+ #include <time.h>
+ #include <libpq-fe.h>
+@@ -336,32 +336,7 @@
+             s = strdup(crypt(pass, crypt_make_salt()));
+             break;
+-        case PW_MD5: {
+-                char *buf;
+-                int buf_size;
+-                MHASH handle;
+-                unsigned char *hash;
+-
+-                handle = mhash_init(MHASH_MD5);
+-
+-                if(handle == MHASH_FAILED) {
+-                    SYSLOG("could not initialize mhash library!");
+-                } else {
+-                    int i; 
+-
+-                    mhash(handle, pass, strlen(pass));
+-                    hash = mhash_end(handle);
+-
+-                    buf_size = (mhash_get_block_size(MHASH_MD5) * 2)+1;
+-                    buf = (char *)malloc(buf_size);
+-                    bzero(buf, buf_size);
+-
+-                    for(i = 0; i < mhash_get_block_size(MHASH_MD5); i++) {
+-                        /* should be safe */
+-                        sprintf(&buf[i * 2], "%.2x", hash[i]);
+-                    }
+-                    s = buf;
+-                }
+-            }
+-            break;
++        case PW_MD5:
++	    s = MD5Data(pass, strlen(pass), NULL);
++	    break;
+         case PW_CLEAR:
+         default:
+@@ -416,35 +391,15 @@
+                 }
+                 break;
+-            case PW_MD5: {
+-                char *buf;
+-                int buf_size;
+-                MHASH handle;
+-                unsigned char *hash;
+-
+-                handle = mhash_init(MHASH_MD5);
+-
+-                if(handle == MHASH_FAILED) {
+-                    SYSLOG("could not initialize mhash library!");
+-                } else {
+-                    int i; 
+-
+-                    mhash(handle, passwd, strlen(passwd));
+-                    hash = mhash_end(handle);
+-
+-                    buf_size = (mhash_get_block_size(MHASH_MD5) * 2)+1;
+-                    buf = (char *)malloc(buf_size);
+-                    bzero(buf, buf_size);
+-
+-                    for(i = 0; i < mhash_get_block_size(MHASH_MD5); i++) {
+-                        sprintf(&buf[i * 2], "%.2x", hash[i]);
+-                    }
+-
+-                    if(strcmp(buf, stored_pw) == 0)
+-                        rc = PAM_SUCCESS;
+-
+-                    free(buf);
+-                }
+-            }
+-            break;
++            case PW_MD5:
++		if(strlen(stored_pw) != 32) {
++		    SYSLOG("stored password has invalid length.");
++		} else {
++                    char *hash;
++		    hash = MD5Data(passwd, strlen(passwd), NULL);
++                    if(strcmp(hash, stored_pw) == 0)
++			rc = PAM_SUCCESS;
++		    free(hash);
++		}
++		break;
+         }
+     }
