@@ -1,0 +1,10 @@
+tRNAscan-SE was written in the PERL (version 5.0) script language.
+Input consists of DNA or RNA sequences in FASTA format.  tRNA
+predictions are output in standard tabular or ACeDB format.
+tRNAscan-SE does no tRNA detection itself, but instead combines the
+strengths of three independent tRNA prediction programs by negotiating
+the flow of information between them, performing a limited amount of
+post-processing, and outputting the results in one of several
+formats.
+
+WWW: http://www.genetics.wustl.edu/eddy/software/

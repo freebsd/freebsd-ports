@@ -44,6 +44,7 @@
     SUBDIR += seaview
     SUBDIR += seqio
     SUBDIR += sim4
+    SUBDIR += tRNAscan-SE
     SUBDIR += t_coffee
     SUBDIR += tinker
     SUBDIR += treeviewx

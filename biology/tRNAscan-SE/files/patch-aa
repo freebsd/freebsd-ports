@@ -1,0 +1,35 @@
+--- Makefile.orig	Sat Oct  7 00:16:41 2000
++++ Makefile	Thu Dec 20 17:26:37 2001
+@@ -19,10 +19,11 @@
+ ## (this could be 'perl5' or otherwise on some systems)
+ PERLBIN = perl
+ 
++prefix  = ${PREFIX}
+ ## where you want things installed
+-BINDIR  = $(HOME)/bin
+-LIBDIR  = $(HOME)/lib/tRNAscan-SE
+-MANDIR  = $(HOME)/man
++BINDIR  = $(prefix)/bin
++LIBDIR  = $(prefix)/share/tRNAscan-SE
++MANDIR  = $(prefix)/man
+ 
+ ## NOTE !!  If you later manually move the location of 
+ ## binaries or data files in the BINDIR or LIBDIR directories,
+@@ -106,7 +107,7 @@
+ 
+ MPOBJ = mpviterbi.o mp-dbviterbi.o
+ 
+-all: 	$(PROGS) tRNAscanSE setpaths
++all: 	$(PROGS) tRNAscanSE
+ 
+ covels-SE:  $(OBJ) scan_main.o
+ 	$(CC) $(CFLAGS) $(RFLAGS) -o covels-SE scan_main.o $(OBJ) $(LIBS)
+@@ -178,7 +179,7 @@
+ 	@echo ""
+ 	@rm -f testrun.out
+ 	@echo "tRNAscan-SE -d -y -o testrun.out Demo/F22B7.fa"
+-	@if tRNAscan-SE -d -y -o testrun.out Demo/F22B7.fa; \
++	@if ./tRNAscan-SE -d -y -o testrun.out Demo/F22B7.fa; \
+ 	then echo ""; \
+ 	else echo "tRNAscan-SE did NOT complete properly."; fi
+ 	@if diff testrun.out testrun.ref; \
