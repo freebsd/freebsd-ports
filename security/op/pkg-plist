@@ -1,4 +1,6 @@
+@comment $FreeBSD$
 bin/op
 etc/op.access.sample
-share/doc/op/README
-share/doc/op/op.paper
+%%PORTDOCS%%%%DOCDIR%%/README
+%%PORTDOCS%%%%DOCDIR%%/op.paper
+%%PORTDOCS%%@dirrm %%DOCDIR%%
