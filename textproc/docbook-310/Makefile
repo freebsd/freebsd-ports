@@ -5,20 +5,19 @@
 #
 # Based heavily on work by jfieber
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/14 22:30:42 nik Exp $
+# $Id: Makefile,v 1.2 1999/05/03 12:13:48 kuriyama Exp $
 #
 
 DISTNAME=	docbk31
 PKGNAME=	docbook-3.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/docbook/3.1/
-EXTRACT_SUFX=	.zip
 
-MAINTAINER=	nclayton@FreeBSD.ORG
+MAINTAINER=	nik@FreeBSD.ORG
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879
 
+USE_ZIP=	yes
 NO_MTREE=       yes
 EXTRACT_ONLY=	# empty
 NO_BUILD=       yes
