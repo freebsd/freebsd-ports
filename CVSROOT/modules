@@ -7694,6 +7694,7 @@ php4-dio	ports/devel/php4-dio
 php4-dtc	ports/lang/php4-dtc
 php4-filepro	ports/databases/php4-filepro
 php4-gd		ports/graphics/php4-gd
+php4-gettext	ports/devel/php4-gettext
 php4-horde	ports/lang/php4-horde
 php4-iconv	ports/converters/php4-iconv
 php4-interbase	ports/databases/php4-interbase
