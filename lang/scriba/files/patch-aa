@@ -1,13 +1,13 @@
---- Makefile.orig	Wed Dec 27 19:52:16 2000
-+++ Makefile	Fri Jan 12 18:34:19 2001
+--- Makefile.orig	Wed Dec 27 03:52:16 2000
++++ Makefile	Mon Feb 16 16:06:00 2004
 @@ -1,8 +1,8 @@
  CC=cc
  LDOPTIONS=-shared
  LD=ld
 -CCFLAGS=
 -LIBS=-lm -ldl -lpthread
-+CCFLAGS=$(CFLAGS)
-+LIBS=-lm -lc_r
++CCFLAGS=$(CFLAGS) $(PTHREAD_CFLAGS)
++LIBS=-lm $(PTHREAD_LIBS)
  OBJS=builder.o conftree.o dynlolib.o execute.o\
       expression.o filesys.o getopt.o lexer.o match.o\
       memory.o myalloc.o options.o reader.o report.o sym.o\
