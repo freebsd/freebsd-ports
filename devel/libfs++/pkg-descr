@@ -1,0 +1,5 @@
+libfs++ is a small c++ library which provides a file_iterator class, which
+makes it very easy to iterate through all files in a directory and its
+subdirectories.
+
+WWW: http://bluebat.dnsalias.org/software/libfs++/
