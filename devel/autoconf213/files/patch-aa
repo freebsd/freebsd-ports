@@ -1,5 +1,27 @@
---- Makefile.in.orig	Tue Jan  5 08:27:16 1999
-+++ Makefile.in	Sat Jan 23 23:29:33 1999
+--- Makefile.in.orig	Sun Feb 27 11:18:10 2000
++++ Makefile.in	Mon Mar 18 21:10:20 2002
+@@ -68,7 +68,7 @@
+ DISTFILES = AUTHORS COPYING ChangeLog ChangeLog.1 INSTALL \
+ 	Makefile.in NEWS README TODO $(M4FILES) \
+ 	acconfig.h acfunctions acheaders acidentifiers \
+-	acmakevars acprograms autoconf.info* \
++	acmakevars acprograms autoconf213.info* \
+ 	autoconf.sh autoconf.texi install.texi \
+ 	autoheader.sh autoscan.pl autoreconf.sh autoupdate.sh ifnames.sh \
+ 	config.guess config.sub configure configure.in \
+@@ -106,10 +106,10 @@
+ autoconf.m4f: autoconf.m4 acgeneral.m4 acspecific.m4 acoldnames.m4
+ autoheader.m4f: autoheader.m4 acgeneral.m4 acspecific.m4 acoldnames.m4
+ 
+-info: autoconf.info @standards_info@ INSTALL
++info: autoconf213.info
+ 
+ # Use --no-split to avoid creating filenames > 14 chars.
+-autoconf.info: autoconf.texi install.texi
++autoconf213.info: autoconf.texi install.texi
+ 	$(MAKEINFO) -I$(srcdir) $(srcdir)/autoconf.texi --no-split --output=$@
+ 
+ INSTALL: install.texi
 @@ -141,7 +141,7 @@
  
  install: all $(M4FILES) acconfig.h installdirs install-info
@@ -9,7 +31,7 @@
  	done
  	for i in $(M4FROZEN); do \
  	  $(INSTALL_DATA) $$i $(acdatadir)/$$i; \
-@@ -150,9 +150,9 @@
+@@ -150,16 +150,16 @@
  	  $(INSTALL_DATA) $(srcdir)/$$i $(acdatadir)/$$i; \
  	done
  	-if test -f autoscan; then \
@@ -21,3 +43,20 @@
  	$(INSTALL_DATA) $(srcdir)/$$i $(acdatadir)/$$i; \
  	done; \
  	else :; fi
+ 
+ # Don't cd, to avoid breaking install-sh references.
+ install-info: info installdirs
+-	if test -f autoconf.info; then \
++	if test -f autoconf213.info; then \
+ 	  for i in *.info*; do \
+ 	    $(INSTALL_DATA) $$i $(infodir)/$$i; \
+ 	  done; \
+@@ -174,7 +174,7 @@
+ 	  rm -f $(bindir)/`echo $$p|sed '$(transform)'`; \
+ 	done
+ 	rm -fr $(acdatadir)
+-	cd $(infodir) && rm -f autoconf.info*
++	cd $(infodir) && rm -f autoconf213.info*
+ 	if test -f standards.info || test -f $(srcdir)/standards.info; \
+ 	then cd $(infodir) && rm -f standards.info*; fi
+ 
