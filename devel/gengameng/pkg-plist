@@ -1,0 +1,10 @@
+lib/libgengameng.so.2
+lib/libgengameng.so
+lib/libgengameng.a
+include/gengameng/Couple.h
+include/gengameng/GameEngine.h
+include/gengameng/PixmapArray.h
+include/gengameng/PixmapLoadError.h
+include/gengameng/Sprite.h
+include/gengameng/goodies.h
+@dirrm include/gengameng
