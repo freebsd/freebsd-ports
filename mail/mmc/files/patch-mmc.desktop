@@ -1,0 +1,11 @@
+
+$FreeBSD$
+
+--- mmc.desktop	2001/01/25 16:11:12	1.1
++++ mmc.desktop	2001/01/25 16:11:28
+@@ -4,4 +4,4 @@
+ Exec=mmc
+ Terminal=0
+ Type=Internet
+-
++Icon=mmc-logo.png
