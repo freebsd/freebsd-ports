@@ -17,19 +17,19 @@ share/imcom/LogHandler.py
 share/imcom/Preferences.py
 share/imcom/SocketWrapper.py
 share/imcom/VCardTags.py
-%%PORTDOCS%%share/doc/imcom/advanced.html
-%%PORTDOCS%%share/doc/imcom/commands.html
-%%PORTDOCS%%share/doc/imcom/download.html
-%%PORTDOCS%%share/doc/imcom/imcomrc.html
-%%PORTDOCS%%share/doc/imcom/news.html
-%%PORTDOCS%%share/doc/imcom/template.html
-%%PORTDOCS%%share/doc/imcom/whatis.html
-%%PORTDOCS%%share/doc/imcom/CONTRIBUTORS
-%%PORTDOCS%%share/doc/imcom/LICENSE
-%%PORTDOCS%%share/doc/imcom/README
-%%PORTDOCS%%share/doc/imcom/README.autostatus
-%%PORTDOCS%%share/doc/imcom/TODO
-%%PORTDOCS%%share/doc/imcom/WHATSNEW
+%%PORTDOCS%%%%DOCSDIR%%/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/commands.html
+%%PORTDOCS%%%%DOCSDIR%%/download.html
+%%PORTDOCS%%%%DOCSDIR%%/imcomrc.html
+%%PORTDOCS%%%%DOCSDIR%%/news.html
+%%PORTDOCS%%%%DOCSDIR%%/template.html
+%%PORTDOCS%%%%DOCSDIR%%/whatis.html
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.autostatus
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/WHATSNEW
 @dirrm share/imcom/modules
 @dirrm share/imcom
-%%PORTDOCS%%@dirrm share/doc/imcom
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

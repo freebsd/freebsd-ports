@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	imcom
-PORTVERSION=	1.31
+PORTVERSION=	1.32
 CATEGORIES=	net
 MASTER_SITES=	http://nafai.dyndns.org/files/
 
