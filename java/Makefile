@@ -92,6 +92,7 @@
     SUBDIR += netcomponents
     SUBDIR += netrexx
     SUBDIR += openjit
+    SUBDIR += orion
     SUBDIR += proguard
     SUBDIR += sablevm
     SUBDIR += shujit
