@@ -1,117 +1,84 @@
-*** scripts/makefile.std.orig	Fri Jul 31 17:15:22 1998
---- scripts/makefile.std	Tue Jan 19 15:53:48 1999
-***************
-*** 2,19 ****
-  # Copyright (C) 1995 Guy Eric Schalnat, Group 42, Inc.
-  # For conditions of distribution and use, see copyright notice in png.h
-  
-  # where make install puts libpng.a and png.h
-! prefix=/usr/local
-  
-  # Where the zlib library and include files are located
-  #ZLIBLIB=/usr/local/lib
-  #ZLIBINC=/usr/local/include
-! ZLIBLIB=../zlib
-! ZLIBINC=../zlib
-  
-! CC=cc
-! CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=5
-! LDFLAGS=-L. -L$(ZLIBLIB) -lpng -lz -lm
-  
-  #RANLIB=echo
-  RANLIB=ranlib
---- 2,29 ----
-  # Copyright (C) 1995 Guy Eric Schalnat, Group 42, Inc.
-  # For conditions of distribution and use, see copyright notice in png.h
-  
-+ # read libpng.txt or png.h to see why PNGMAJ is 2.  You should not
-+ # have to change it.
-+ PNGMAJ = 2
-+ .if (${PORTOBJFORMAT} == "elf")
-+ PNGVER = $(PNGMAJ)
-+ .else
-+ PNGMIN = 1
-+ PNGVER = $(PNGMAJ).$(PNGMIN)
-+ .endif
-+ 
-  # where make install puts libpng.a and png.h
-! prefix=${PREFIX}
-  
-  # Where the zlib library and include files are located
-  #ZLIBLIB=/usr/local/lib
-  #ZLIBINC=/usr/local/include
-! #ZLIBLIB=../zlib
-! #ZLIBINC=../zlib
-  
-! #CC=cc
-! CFLAGS+=-I.
-! LDFLAGS+=-L. -lpng -lz -lm -static
-  
-  #RANLIB=echo
-  RANLIB=ranlib
-***************
-*** 22,33 ****
-  	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
-  	pngwtran.o pngmem.o pngerror.o pngpread.o
-  
-! all: libpng.a pngtest
-  
-  libpng.a: $(OBJS)
-  	ar rc $@  $(OBJS)
-  	$(RANLIB) $@
-  
-  pngtest: pngtest.o libpng.a
-  	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
-  
---- 32,55 ----
-  	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
-  	pngwtran.o pngmem.o pngerror.o pngpread.o
-  
-! .SUFFIXES: .c .so .o
-! 
-! .c.so:
-! 	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
-! 
-! all: libpng.a libpng.so.${PNGVER}
-  
-  libpng.a: $(OBJS)
-  	ar rc $@  $(OBJS)
-  	$(RANLIB) $@
-  
-+ libpng.so.${PNGVER}: $(OBJS:S/o$/so/g)
-+ .if (${PORTOBJFORMAT} == "elf")
-+ 	${CC} -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,$@ -o $@ $(OBJS:S/o$/so/g) -lz -lm
-+ .else
-+ 	${CC} -shared -Wl,-x -Wl,-assert -Wl,pure-text -o $@ $(OBJS:S/o$/so/g) -lz -lm
-+ .endif
-+ 
-  pngtest: pngtest.o libpng.a
-  	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
-  
-***************
-*** 37,48 ****
-  install: libpng.a
-  	-@mkdir $(prefix)/include
-  	-@mkdir $(prefix)/lib
-! 	cp png.h $(prefix)/include
-! 	cp pngconf.h $(prefix)/include
-! 	chmod 644 $(prefix)/include/png.h
-! 	chmod 644 $(prefix)/include/pngconf.h
-! 	cp libpng.a $(prefix)/lib
-! 	chmod 644 $(prefix)/lib/libpng.a
-  
-  clean:
-  	rm -f *.o libpng.a pngtest pngout.png
---- 59,70 ----
-  install: libpng.a
-  	-@mkdir $(prefix)/include
-  	-@mkdir $(prefix)/lib
-! 	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} png.h pngconf.h $(prefix)/include
-! 	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} libpng.a libpng.so.${PNGVER} $(prefix)/lib
-! 	ln -sf libpng.so.${PNGVER} $(prefix)/lib/libpng.so
-! 	ranlib $(prefix)/lib/libpng.a
-! 	${INSTALL} -c -m ${MANMODE} -o ${MANOWN} -g ${MANGRP} libpng.3 libpngpf.3 $(prefix)/man/man3
-! 	${INSTALL} -c -m ${MANMODE} -o ${MANOWN} -g ${MANGRP} png.5 $(prefix)/man/man5
-  
-  clean:
-  	rm -f *.o libpng.a pngtest pngout.png
+--- scripts/makefile.std.orig	Fri Jul 31 23:15:22 1998
++++ scripts/makefile.std	Sat Jan 23 14:08:51 1999
+@@ -2,18 +2,30 @@
+ # Copyright (C) 1995 Guy Eric Schalnat, Group 42, Inc.
+ # For conditions of distribution and use, see copyright notice in png.h
+ 
++# read libpng.txt or png.h to see why PNGMAJ is 2.  You should not
++# have to change it.
++# I bump PNGMAJ to 3, because imlib can't work with png 1.0.2.
++# I should bump PNGMAJ for ports depend.
++PNGMAJ = 3
++.if (${PORTOBJFORMAT} == "elf")
++PNGVER = $(PNGMAJ)
++.else
++PNGMIN = 0
++PNGVER = $(PNGMAJ).$(PNGMIN)
++.endif
++
+ # where make install puts libpng.a and png.h
+-prefix=/usr/local
++prefix=${PREFIX}
+ 
+ # Where the zlib library and include files are located
+ #ZLIBLIB=/usr/local/lib
+ #ZLIBINC=/usr/local/include
+-ZLIBLIB=../zlib
+-ZLIBINC=../zlib
++#ZLIBLIB=../zlib
++#ZLIBINC=../zlib
+ 
+-CC=cc
+-CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=5
+-LDFLAGS=-L. -L$(ZLIBLIB) -lpng -lz -lm
++#CC=cc
++CFLAGS+=-I.
++LDFLAGS+=-L. -lpng -lz -lm -static
+ 
+ #RANLIB=echo
+ RANLIB=ranlib
+@@ -22,12 +34,24 @@
+ 	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
+ 	pngwtran.o pngmem.o pngerror.o pngpread.o
+ 
+-all: libpng.a pngtest
++.SUFFIXES: .c .so .o
++
++.c.so:
++	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
++
++all: libpng.a libpng.so.${PNGVER}
+ 
+ libpng.a: $(OBJS)
+ 	ar rc $@  $(OBJS)
+ 	$(RANLIB) $@
+ 
++libpng.so.${PNGVER}: $(OBJS:S/o$/so/g)
++.if (${PORTOBJFORMAT} == "elf")
++	${CC} -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,$@ -o $@ $(OBJS:S/o$/so/g) -lz -lm
++.else
++	${CC} -shared -Wl,-x -Wl,-assert -Wl,pure-text -o $@ $(OBJS:S/o$/so/g) -lz -lm
++.endif
++
+ pngtest: pngtest.o libpng.a
+ 	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
+ 
+@@ -37,12 +61,12 @@
+ install: libpng.a
+ 	-@mkdir $(prefix)/include
+ 	-@mkdir $(prefix)/lib
+-	cp png.h $(prefix)/include
+-	cp pngconf.h $(prefix)/include
+-	chmod 644 $(prefix)/include/png.h
+-	chmod 644 $(prefix)/include/pngconf.h
+-	cp libpng.a $(prefix)/lib
+-	chmod 644 $(prefix)/lib/libpng.a
++	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} png.h pngconf.h $(prefix)/include
++	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} libpng.a libpng.so.${PNGVER} $(prefix)/lib
++	ln -sf libpng.so.${PNGVER} $(prefix)/lib/libpng.so
++	ranlib $(prefix)/lib/libpng.a
++	${INSTALL} -c -m ${MANMODE} -o ${MANOWN} -g ${MANGRP} libpng.3 libpngpf.3 $(prefix)/man/man3
++	${INSTALL} -c -m ${MANMODE} -o ${MANOWN} -g ${MANGRP} png.5 $(prefix)/man/man5
+ 
+ clean:
+ 	rm -f *.o libpng.a pngtest pngout.png
