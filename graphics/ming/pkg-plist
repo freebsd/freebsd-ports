@@ -30,9 +30,8 @@ include/ming/blocks/rect.h
 include/ming/blocks/sound.h
 include/ming/blocks/sprite.h
 include/ming/blocks/swf.h
-include/ming/c++/ming.h
+include/ming/mingpp.h
 @dirrm include/ming/blocks
-@dirrm include/ming/c++
 @dirrm include/ming
 lib/libming.a
 lib/libming.so

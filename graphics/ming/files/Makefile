@@ -50,6 +50,7 @@ INCS=		blocklist.h \
 		fill.h \
 		libming.h \
 		ming.h \
+		mingpp.h \
 		movie.h \
 		movieclip.h \
 		position.h \
@@ -80,7 +81,7 @@ beforeinstall: _includeinstall
 _includeinstall: pre-_includeinstall
 
 pre-_includeinstall:
-	mkdir -p ${DESTDIR}${INCDIR}/blocks ${DESTDIR}${INCDIR}/c++
+	mkdir -p ${DESTDIR}${INCDIR}/blocks
 
 beforeinstall:
 	${INSTALL} -C -o ${INCOWN} -g ${INCGRP} -m ${INCMODE} \
@@ -91,5 +92,3 @@ beforeinstall:
 		${.CURDIR}/blocks/character.h ${.CURDIR}/blocks/libswf.h \
 		${.CURDIR}/blocks/method.h ${.CURDIR}/blocks/output.h \
 		${.CURDIR}/blocks/rect.h  ${INCDIR}/blocks/
-	${INSTALL} -C -o ${INCOWN} -g ${INCGRP} -m ${INCMODE} \
-		${.CURDIR}/c++/ming.h ${INCDIR}/c++/
