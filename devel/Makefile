@@ -134,6 +134,7 @@
     SUBDIR += cmake
     SUBDIR += cocktail
     SUBDIR += codecrusader
+    SUBDIR += codeville
     SUBDIR += codeworker
     SUBDIR += colorer
     SUBDIR += commoncpp
