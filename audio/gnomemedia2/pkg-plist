@@ -179,6 +179,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
 @dirrm share/gnome/pixmaps/gnome-cd
 @dirrm share/gnome/gnome-sound-recorder/ui
 @dirrm share/gnome/gnome-sound-recorder
+@dirrm share/gnome/gnome-media-2.0/interfaces
+@dirrm share/gnome/gnome-media-2.0/icons
 @dirrm share/gnome/gnome-media-2.0
 @dirrm share/gnome/help/gnome-volume-control/C/figures
 @dirrm share/gnome/help/gnome-volume-control/C
