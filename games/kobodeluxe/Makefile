@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kobodeluxe
-PORTVERSION=	0.4.p7
+PORTVERSION=	0.4.p8
 CATEGORIES=	games
 MASTER_SITES=	http://olofson.net/skobo/download/ \
 		http://olofson.net/download/
