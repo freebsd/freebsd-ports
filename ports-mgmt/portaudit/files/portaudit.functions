@@ -36,25 +36,29 @@ portaudit_confs()
 	portaudit_dir=${portaudit_dir:-"%%DATABASEDIR%%"}
 	portaudit_filename=${portaudit_filename:-"auditfile.tbz"}
 
-	FETCH_ENV=
-	FETCH_CMD="fetch -1am"
-	FETCH_BEFORE_ARGS=
-	FETCH_AFTER_ARGS=
+	FETCH_ENV=${FETCH_ENV:-}
+	FETCH_CMD=${FETCH_CMD:-"/usr/bin/fetch -1am"}
+	FETCH_BEFORE_ARGS=${FETCH_BEFORE_ARGS:-}
+	FETCH_AFTER_ARGS=${FETCH_AFTER_ARGS:-}
 
-	MASTER_SITE_LOCAL="
-		${MASTER_SITE_LOCAL}
+	MASTER_SITES=${MASTER_SITES:-"
 		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
 		ftp://ftp.se.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
+		ftp://ftp.dk.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
+		ftp://ftp.cz.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
+		ftp://ftp1.ro.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
 		ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
-		ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
+		ftp://ftp.at.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
 		ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
 		ftp://ftp.tw.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
-		"
+		http://public.planetmirror.com/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
+	"}
+	MASTER_SITE_SUBDIR=${MASTER_SITE_SUBDIR:-"eik"}
 
-	MASTER_SITE_SUBDIR=eik
+	MASTER_SITE_BACKUP=${MASTER_SITE_BACKUP:-"http://people.freebsd.org/~eik/portaudit/"}
 
 	#MASTER_SORT_REGEX="\.uk[.\/]"
-	MASTER_SORT_REGEX="#"
+	MASTER_SORT_REGEX=${MASTER_SORT_REGEX:-"#"}
 
 	if [ -r %%PREFIX%%/etc/portaudit.conf ]; then
 		. %%PREFIX%%/etc/portaudit.conf
@@ -63,27 +67,28 @@ portaudit_confs()
 
 extract_auditfile()
 {
-	tar -jxOf "${portaudit_dir}/${portaudit_filename}" auditfile
+	%%BZIP2_CMD%% -dc -- "${portaudit_dir}/${portaudit_filename}" | \
+		/usr/bin/tar -xOf - auditfile
 }
 
 checksum_auditfile()
 {
 	chksum1=`extract_auditfile |
-		sed -nEe '$s/^#CHECKSUM: *MD5 *([0-9a-f]{32})$/\1/p'`
-	chksum2=`extract_auditfile | sed -e '$d' | md5`
+		/usr/bin/sed -nEe '$s/^#CHECKSUM: *MD5 *([0-9a-f]{32})$/\1/p'`
+	chksum2=`extract_auditfile | /usr/bin/sed -e '$d' | /sbin/md5`
 	[ "${chksum1}" = "${chksum2}" ];
 }
 
 getcreated_auditfile()
 {
 	extract_auditfile |
-		sed -nEe '1s/^#CREATED: *([0-9]{4})-?([0-9]{2})-?([0-9]{2}).*$/\1\2\3/p'
+		/usr/bin/sed -nEe '1s/^#CREATED: *([0-9]{4})-?([0-9]{2})-?([0-9]{2}).*$/\1\2\3/p'
 }
 
 checkexpiry_auditfile()
 {
 	created=`getcreated_auditfile`
-	expiry=`date -u -v-$1d '+%Y%m%d'`
+	expiry=`/bin/date -u -v-$1d '+%Y%m%d'`
 	[ "${created}" -ge "${expiry}" ];
 }
 
@@ -126,7 +131,7 @@ portaudit_prerequisites()
 
 audit_installed()
 {
-	extract_auditfile | awk -F\| "
+	extract_auditfile | /usr/bin/awk -F\| "
 		BEGIN { vul=0 }
 		/^(#|\$)/ { next }
 		{
@@ -153,15 +158,18 @@ audit_installed()
 fetch_locations()
 {
 	# site sort order is not overly smart
-	echo "${MASTER_SITE_LOCAL}" | sed -e 'y/ 	/\n\n/' | awk "
+	echo ${MASTER_SITES} | /usr/bin/tr -s ' \t' '\n' | /usr/bin/awk "
 		BEGIN { IGNORECASE=1; srand() }
 		/^$/ { next }
 		{
 			if (\$0 ~ /${MASTER_SORT_REGEX}/ ) rank=0; else rank=rand()
 			gsub(/%SUBDIR%/, \"${MASTER_SITE_SUBDIR}\")
-			print rank \"\\t\" \$0
+			print \$0 \"\\t\" rank
 		}
-	" | sort -n | cut -f 2
+	" | /usr/bin/sort -n -k 2 | /usr/bin/cut -f 1
+	if [ -n "${MASTER_SITE_BACKUP}" ]; then
+		echo "${MASTER_SITE_BACKUP}"
+	fi
 }
 
 fetch_auditfile()
@@ -169,22 +177,25 @@ fetch_auditfile()
 	rc=1
 
 	if [ ! -d "${portaudit_dir}" ]; then
-		mkdir -p "${portaudit_dir}"
+		if ! /bin/mkdir -p "${portaudit_dir}"; then
+			echo "Couldn't create ${portaudit_dir}, try running portaudit -F as root"
+			return 1
+		fi
 	fi
 	if [ ! -w "${portaudit_dir}" ]; then
-		echo "Couldn't write to ${portaudit_dir}"
+		echo "Couldn't write to ${portaudit_dir}, try running portaudit -F as root"
 		return 1
 
 	fi
 	cd "${portaudit_dir}"
 	if [ -r "${portaudit_filename}" ]; then
-		cp "${portaudit_filename}" "${portaudit_filename}.old"
+		/bin/cp "${portaudit_filename}" "${portaudit_filename}.old"
 	fi
 
 	for site in `fetch_locations`; do
 		echo ">> Attempting to fetch from ${site}."
-		args="${site}/${portaudit_filename}"
-		env ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} ${args} ${FETCH_AFTER_ARGS}
+		args="${site}${portaudit_filename}"
+		/usr/bin/env ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} ${args} ${FETCH_AFTER_ARGS}
 		if [ $? -ne 0 ]; then
 			echo "Couldn't fetch database."
 		elif [ ! -f "${portaudit_dir}/${portaudit_filename}" ] ; then
@@ -193,6 +204,7 @@ fetch_auditfile()
 			echo "fetched database corrupt."
 		elif ! checkexpiry_auditfile 7; then
 			echo "fetched database too old."
+			rc=0
 		else
 			echo "new database installed."
 			rc=0
@@ -201,12 +213,14 @@ fetch_auditfile()
         done
         if [ -f "${portaudit_filename}.old" ]; then
         	if [ ${rc} -eq 0 ]; then
-			rm -f "${portaudit_filename}.old"
+			/bin/rm -f "${portaudit_filename}.old"
 		else
-			mv -f "${portaudit_filename}.old" "${portaudit_filename}"
+			/bin/mv -f "${portaudit_filename}.old" "${portaudit_filename}"
 			echo "old database restored."
 		fi
 	fi
-	chmod a=r "${portaudit_filename}"
+	if [ -f "${portaudit_filename}" ]; then
+		/bin/chmod a=r "${portaudit_filename}"
+	fi
 	return ${rc}
 }

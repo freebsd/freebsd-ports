@@ -28,7 +28,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd February 21, 2004
+.Dd March 11, 2004
 .Os FreeBSD
 .Dt PORTAUDIT \&1 "FreeBSD ports collection"
 .
@@ -60,12 +60,12 @@ to check if security advisories for any installed packages exist. Note that a
 current ports tree (or any local copy of the ports tree) is not required for
 operation.
 .Pp
-This package also installs two scripts into %%PREFIX%%/periodic that regularly
-update this database and include the report of vulnerable packages in the
-daily security report.
+This package also installs two scripts into %%PREFIX%%/etc/periodic that
+regularly update this database and include the report of vulnerable packages
+in the daily security report.
 .Pp
 If you have a vulnerable package installed, you are advised to update or
-deinstalled it immediately.
+deinstall it immediately.
 .
 .
 .Sh OPTIONS
@@ -110,15 +110,16 @@ Print a vulnerability report for all installed packages:
 .Xr ports 7 ,
 .Xr periodic 8 ,
 .Xr periodic.conf 5 ,
-.Li Aq http://www.freebsd.org/security/#adv .
+.Li Aq http://people.freebsd.org/~eik/portaudit/ ,
+.Li Aq http://www.freebsd.org/security/#adv ,
 .Li Aq http://www.vuxml.org/ .
 .
 .
 .Sh CAVEATS
 .
-.Nm
-is in develpoment and should currently not be relied upon
-as an extensive security auditing tool.
+The format of
+.Pa %%DATABASEDIR%%/auditfile.tbz
+might change.
 .
 .
 .Sh BUGS

@@ -4,9 +4,6 @@ database of published security vulnerabilities.
 After installation it will update this security database automatically and 
 include its reports in the output of the daily security run.
 
-Since this system is in development it can currently not be relied upon as an 
-extensive security auditing tool.
-
 If you have found a vulnerability not listed in the database, please contact 
 the FreeBSD Security Officer <security-officer@FreeBSD.org>. Refer to
 
@@ -14,6 +11,6 @@ the FreeBSD Security Officer <security-officer@FreeBSD.org>. Refer to
 
 for more information.
 
-WWW: http://sourceforge.net/projects/portaudit/
+WWW: http://people.freebsd.org/~eik/portaudit/
 
 Oliver Eikemeier <eik@FreeBSD.org>

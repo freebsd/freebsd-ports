@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portaudit
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3
 CATEGORIES=	security
 DISTFILES=
 
@@ -36,17 +36,18 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/sysutils/pkg_install-devel
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 420001 || ${OSVERSION} >= 500000 && ${OSVERSION} < 500014
-IGNORE=		"You need tar with bzip support to run portaudit"
+.if defined(BZIP2DEPENDS)
+RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 
 do-build:
-.for f in portaudit-cmd.sh portaudit.sh fetchaudit.sh portaudit.functions portaudit.1
+.for f in portaudit-cmd.sh portaudit.sh fetchaudit.sh portaudit.functions portaudit.1 portaudit.conf
 	@${SED} -e "s|%%DATADIR%%|${DATADIR}|g" \
 		-e "s|%%DATABASEDIR%%|${DATABASEDIR}|g" \
 		-e "s|%%PREFIX%%|${PREFIX}|g" \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		-e "s|%%PORTVERSION%%|${PORTVERSION}|g" \
+		-e "s|%%BZIP2_CMD%%|${BZIP2_CMD}|g" \
 		${FILESDIR}/${f} > ${WRKDIR}/${f}
 .endfor
 
@@ -66,6 +67,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/fetchaudit.sh ${PERIODICDIR}/daily/330.fetchaudit
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKDIR}/portaudit.functions ${DATADIR}
+	@${INSTALL_DATA} ${WRKDIR}/portaudit.conf ${PREFIX}/etc/portaudit.conf.sample
 	@${MKDIR} ${DATABASEDIR}
 
 post-install:
