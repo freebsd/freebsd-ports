@@ -9,7 +9,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	2
+#PORTREVISION=	0
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.emaillab.org/mutt/1.4/ \
 		http://my.reset.jp/~iwashita/mutt/distfiles/ \
@@ -24,21 +24,15 @@ DIST_SUBDIR=	mutt
 MAINTAINER=	iwashita@cqmail.net
 COMMENT=	Text-based mail client (Japanised Version)
 
-FORBIDDEN=	http://people.freebsd.org/~eik/portaudit/67c05283-5d62-11d8-80e3-0020ed76ef5a.html
-
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
+RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
-.if !defined(WITH_GETTEXT)
 USE_GETTEXT=	yes
-.else
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
-.endif
 .if defined(WITH_MUTT_CYRUS_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
-RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
-VERSION=	1.4.1
+VERSION=	1.4.2.1
 JP_VERSION=	1
 MANUALVERSION=	1.4
 
@@ -51,7 +45,7 @@ USE_AUTOMAKE_VER=	14
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include -I${LOCALBASE}/include/slang"
+CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include -I${LOCALBASE}/include/slang" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--without-wc-funcs \
@@ -61,9 +55,6 @@ CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
 		--with-docdir=${DOCSDIR} \
 		--enable-pop --enable-imap \
 		--enable-default-japanese
-.if defined(WITH_GETTEXT)
-CONFIGURE_ARGS+=	--with-included-gettext
-.endif
 .if defined(WITH_MUTT_CYRUS_SASL)
 CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .endif
@@ -76,7 +67,6 @@ DIFFDIR=	${WRKDIR}/${DISTNAME}-ja.${JP_VERSION}
 DIFFNAME=	patch-${VERSION}.tt.ja.${JP_VERSION}
 
 pre-patch:
-	(cd ${DIFFDIR}; ${PATCH} < ${FILESDIR}/prepatch-aa)
 	(cd ${WRKSRC}; ${PATCH} -p1 < ${DIFFDIR}/${DIFFNAME})
 
 pre-configure:
