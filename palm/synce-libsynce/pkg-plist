@@ -4,6 +4,7 @@ include/synce_ini.h
 include/synce_log.h
 include/synce_socket.h
 include/synce_types.h
+include/synce_vector_template.h
 lib/libsynce.a
 lib/libsynce.la
 lib/libsynce.so

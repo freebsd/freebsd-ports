@@ -5,13 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	synce-rra
-PORTVERSION=	0.8.9
+PORTVERSION=	0.9.0
 CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
-
-PATCH_SITES=	http://sam.stral.net/freebsd/
-PATCHFILES=	librra-synce-kde-0.7-freebsd.diff
 
 MAINTAINER=	boris@brooknet.com.au
 COMMENT=	Remote Replication Agent Connection protocol library
@@ -30,9 +27,14 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-libsynce=${LOCALBASE}
 INSTALLS_SHLIB=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|stdint.h|sys/types.h|' \
-		${WRKSRC}/lib/generator.h ${WRKSRC}/lib/recurrence_internal.h \
-		${WRKSRC}/lib/rrac.h
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Werror||g' \
+		${WRKSRC}/lib/Makefile.in
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' ${WRKSRC}/lib/rrac.h \
+		${WRKSRC}/lib/generator.h
+.endif
+
+.include <bsd.port.post.mk>

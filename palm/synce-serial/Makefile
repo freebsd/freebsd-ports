@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	synce-serial
-PORTVERSION=	0.8
+PORTVERSION=	0.9.0
 CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
@@ -17,7 +17,5 @@ MAN8=		synce-serial-config.8 synce-serial-start.8 synce-serial-abort.8
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
-INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
