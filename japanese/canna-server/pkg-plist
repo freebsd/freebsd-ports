@@ -109,16 +109,16 @@ lib/canna/sample/vje.canna
 lib/canna/sample/vje.iroha
 lib/libRKC.a
 lib/libRKC.so
-lib/libRKC.so.1.0
+lib/libRKC.so.1
 lib/libRKC16.a
 lib/libRKC16.so
-lib/libRKC16.so.1.0
+lib/libRKC16.so.1
 lib/libcanna.a
 lib/libcanna.so
-lib/libcanna.so.1.0
+lib/libcanna.so.1
 lib/libcanna16.a
 lib/libcanna16.so
-lib/libcanna16.so.1.0
+lib/libcanna16.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 sbin/cannakill
