@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.tmda.net/releases/%SUBDIR%/ \
 		http://www.us.tmda.net/releases/%SUBDIR%/ \
 		http://tmda.mirrors.summersault.com/releases/%SUBDIR%/ \
 		http://mirrors.standblue.net/tmda.net/releases/%SUBDIR%/ \
+		http://www.de.tmda.net/releases/%SUBDIR%/ \
+		http://www.pl.tmda.net/releases/%SUBDIR%/ \
 		http://www.au.tmda.net/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 EXTRACT_SUFX=	.tgz
