@@ -2,6 +2,7 @@ bin/dc_gui
 %%PORTDOCS%%share/doc/dctc-gui/COPYING
 %%PORTDOCS%%share/doc/dctc-gui/ChangeLog
 %%PORTDOCS%%share/doc/dctc-gui/README
+%%PORTDOCS%%share/doc/dctc-gui/TODO
 share/gnome/help/dc_gui/C/index.html
 share/gnome/help/dc_gui/C/topic.dat
 share/locale/nl/LC_MESSAGES/dc_gui.mo
