@@ -1,0 +1,11 @@
+--- timidity/timidity.c.orig	Sat Sep 18 15:39:51 1999
++++ timidity/timidity.c	Sat Sep 18 15:40:21 1999
+@@ -2444,7 +2444,7 @@
+ {
+     int i;
+     static int drums[] = DEFAULT_DRUMCHANNELS;
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) && !defined(__alpha__)
+     fp_except_t fpexp;
+ 
+     fpexp = fpgetmask();

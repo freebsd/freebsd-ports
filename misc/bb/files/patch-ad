@@ -1,0 +1,11 @@
+--- mikunix/mikmod.h.orig	Sun Sep 19 10:54:10 1999
++++ mikunix/mikmod.h	Sun Sep 19 10:54:27 1999
+@@ -45,7 +45,7 @@
+ #define mikbannerdriver \
+ " - Sun/Solaris driver by Valtteri Vuorikoski <vuori@sci.fi>\n"
+ 
+-#elif defined(__alpha)
++#elif defined(__alpha) && !defined(__FreeBSD__)
+ #define mikbannerdriver \
+ " - AudioFile driver by Roine Gustafsson <e93_rog@e.kth.se>\n"
+ 
