@@ -4,6 +4,8 @@ from WHOIS data and send a notice. Built-in rate controls prevent flooding
 an admin even when his machines are scanning at high rates. Runs as a
 non-privileged cron job to not interfere with the HTTP daemon's operation.
 
+WWW: http://web.cs.cmu.edu/~dpelleg/hunch.html
+
 -- Dan Pelleg
 
 daniel+hunch@pelleg.org
