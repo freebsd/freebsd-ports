@@ -210,7 +210,6 @@
     SUBDIR += icqnix
     SUBDIR += icukrell
     SUBDIR += imcom
-    SUBDIR += ip-tun
     SUBDIR += ip6_int
     SUBDIR += ipcad
     SUBDIR += ipcalc
