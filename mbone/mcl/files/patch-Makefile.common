@@ -1,0 +1,33 @@
+--- Makefile.common.orig	Tue Jul 22 19:37:39 2003
++++ Makefile.common	Tue Oct 14 15:04:38 2003
+@@ -24,11 +24,15 @@
+ ifeq (${SYSTEM},SunOS)
+ 	OS = solaris
+ endif
++ifeq (${SYSTEM},FreeBSD)
++	OS = freebsd
++endif
+ #
+ # and the old way (e.g. if the above lines do not work!)
+ #
+ #OS = linux
+ #OS = solaris
++#OS = freebsd
+ 
+ 
+ # Do you want/need extended memory debugging?
+@@ -59,6 +63,14 @@
+ 	#
+ 	CC = /opt/SUNWspro/bin/CC
+ 	LD = /opt/SUNWspro/bin/CC 
++endif
++ifeq (${OS},freebsd)
++	OSFLAGS = -DFREEBSD -I/usr/include/g++
++	# Which compiler?
++	# NB: use -Wall for compilation warnings with gcc
++	#
++	CC = g++ -Wall
++	LD = g++ -Wall
+ endif
+ 
+ 

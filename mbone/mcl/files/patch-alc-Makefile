@@ -1,0 +1,16 @@
+--- src/alc/Makefile.orig	Tue Jul 22 19:42:18 2003
++++ src/alc/Makefile	Wed Oct 15 17:21:25 2003
+@@ -36,6 +36,13 @@
+ 	LIBRARIES = -lc -lm -lsocket -lnsl -L/usr/ucblib -lucb -lpthread
+ endif
+ 
++ifeq (${OS},freebsd)
++	# FreeBSD version
++	BINDIR = ../../bin/freebsd
++	LDPC_BINDIR = ../../../ldpc/bin/freebsd
++	LIBRARIES = -lm -pthread
++endif
++
+ 
+ ###### Other Variables ######
+ 

@@ -2,6 +2,7 @@
 #
 
     SUBDIR += imm
+    SUBDIR += mcl
     SUBDIR += nte
     SUBDIR += rat
     SUBDIR += rat30

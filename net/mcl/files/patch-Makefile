@@ -1,0 +1,13 @@
+--- Makefile.orig	Tue Jul 22 19:37:39 2003
++++ Makefile	Tue Oct 14 11:55:56 2003
+@@ -5,8 +5,8 @@
+ # We need the GNU make tool, on some systems it is called
+ # gmake, on others make is an alias to gmake. Choose one...
+ #
+-MAKE = make
+-#MAKE = gmake
++#MAKE = make
++MAKE = gmake
+ 
+ 
+ # A phony target is one that is not really the name of a file.
