@@ -153,6 +153,12 @@ do_edit()
 {
   local rc
 
+  OPTIONS_DIR="${OPTIONS_FILE%/*}"
+  if [ ! -d "$OPTIONS_DIR" ] && ! $MKDIR "$OPTIONS_DIR"; then
+    echo ">> config: Can't create $OPTIONS_DIR." 2>&1
+    return 1
+  fi
+
   if [ -n "$OPTIONS_OVERRIDE" ]; then
     OVERRIDE="$OPTIONS_DEFAULT"
   elif [ "$CURDIR" != `$REALPATH "$MASTERDIR"` ]; then
