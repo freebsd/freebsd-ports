@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.26 1998/07/21 13:45:07 vanilla Exp $
+# $Id: Makefile,v 1.27 1998/07/21 14:54:53 asami Exp $
 #
 
+    SUBDIR += CJK
     SUBDIR += Wnn
     SUBDIR += bg5ps
     SUBDIR += big5con
