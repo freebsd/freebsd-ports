@@ -18,7 +18,8 @@ COMMENT=	Online presence and instant messaging server
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-libiconv-prefix=${LOCALBASE} \
 		--enable-storage='${STORAGE}' \
-		--enable-authreg='${AUTHREG}'
+		--enable-authreg='${AUTHREG}' \
+		--enable-debug
 
 STORAGE+=	fs
 AUTHREG+=	anon pipe
