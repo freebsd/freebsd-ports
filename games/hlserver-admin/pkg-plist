@@ -1,0 +1,189 @@
+%%HLDSDIR%%/Admin/README
+%%HLDSDIR%%/Admin/config/Samples/ips.ini
+%%HLDSDIR%%/Admin/config/Samples/maps.ini
+%%HLDSDIR%%/Admin/config/Samples/models.ini
+%%HLDSDIR%%/Admin/config/Samples/users.ini
+%%HLDSDIR%%/Admin/config/Samples/wordlist.txt
+%%HLDSDIR%%/Admin/config/admin_help.cfg
+%%HLDSDIR%%/Admin/config/metamod.ini
+%%HLDSDIR%%/Admin/config/plugin.ini
+%%HLDSDIR%%/Admin/config/server.cfg
+%%HLDSDIR%%/Admin/dlls/admin_MM_i386.so
+%%HLDSDIR%%/Admin/dlls/amx_admin.so
+%%HLDSDIR%%/Admin/dlls/metamod_i386.so
+%%HLDSDIR%%/Admin/docu/Manual.html
+%%HLDSDIR%%/Admin/docu/admin2_50.pdf
+%%HLDSDIR%%/Admin/docu/admin_permission_levels.txt
+%%HLDSDIR%%/Admin/docu/adminmmod_commands.txt
+%%HLDSDIR%%/Admin/docu/adminmod_accesslevel.txt
+%%HLDSDIR%%/Admin/docu/adminmod_inifiles.txt
+%%HLDSDIR%%/Admin/docu/adminmod_variables.txt
+%%HLDSDIR%%/Admin/docu/amx_error_codes.txt
+%%HLDSDIR%%/Admin/docu/html/About_Admin_Mod/Intrducing_Admin_Mod.htm
+%%HLDSDIR%%/Admin/docu/html/About_Admin_Mod/What_this_document_covers.htm
+%%HLDSDIR%%/Admin/docu/html/Admin_Etc/Admin_Mod_Erata.htm
+%%HLDSDIR%%/Admin/docu/html/Admin_Mod_2_50.htm
+%%HLDSDIR%%/Admin/docu/html/Admin_Mod_Reference/Access_Levels_and_Respective_Admin_Commands.htm
+%%HLDSDIR%%/Admin/docu/html/Admin_Mod_Reference/Admin_Mod_Commands.htm
+%%HLDSDIR%%/Admin/docu/html/Admin_Mod_Reference/Admin_Mod_Configuration_Variables_(CVARs).htm
+%%HLDSDIR%%/Admin/docu/html/Admin_Mod_Reference/Error_Codes.htm
+%%HLDSDIR%%/Admin/docu/html/Admin_Mod_Reference/Frequently_Asked_Questions_(FAQ).htm
+%%HLDSDIR%%/Admin/docu/html/Admin_Mod_Reference/Materials_for_reference_when_installing,_configring_and_using_Admin_Mod.htm
+%%HLDSDIR%%/Admin/docu/html/Geting_Ready_to_Install/Introductory_Information.htm
+%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/1st_Time_Linux_Install.htm
+%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/How_to_Use_Bots_with_MetaMod_(AM_2.50).htm
+%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Linux_Upgrade_Install.htm
+%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Setting_up_server.cfg_and_the_ini_files.htm
+%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Setting_up_your_ips.ini_file.htm
+%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Setting_up_your_maps.ini_file.htm
+%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Setting_up_your_models.ini_file.htm
+%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Setting_up_your_plugin.ini_file.htm
+%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Setting_up_your_users.ini_file.htm
+%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Settinng_up_yout_server.cfg_file.htm
+%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/The_Admin_Mod_Configuration_Files.htm
+%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Default_Windows_Installation_of_Admin_Mod.htm
+%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Linux_Installation_Information.htm
+%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Linux_Passwords.htm
+%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Manual_Installation_-_Walk-Through.htm
+%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Running_the_Installation_Script.htm
+%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Uninstalling_Admin_Mod.htm
+%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Unzipping_Admin_Mod_the_Right_Way.htm
+%%HLDSDIR%%/Admin/docu/html/Scripting_Basics/A_Beginner_s_Guide_to_Scripting.htm
+%%HLDSDIR%%/Admin/docu/html/Scripting_Basics/Compiling_Admin_Mod_Scripts_101.htm
+%%HLDSDIR%%/Admin/docu/html/Scripting_Basics/Compiling_by_hand.htm
+%%HLDSDIR%%/Admin/docu/html/Setting_up_Clients_to_Use_Admin_Mod/Client_configuration_via_setinfo_commands.htm
+%%HLDSDIR%%/Admin/docu/html/What_s_New_in_version_2.50_.htm
+%%HLDSDIR%%/Admin/docu/html/_blank.htm
+%%HLDSDIR%%/Admin/docu/html/bsscdht1.js
+%%HLDSDIR%%/Admin/docu/html/bsscdht2.js
+%%HLDSDIR%%/Admin/docu/html/bsscdht3.js
+%%HLDSDIR%%/Admin/docu/html/bsscnav1.gif
+%%HLDSDIR%%/Admin/docu/html/bsscnav2.gif
+%%HLDSDIR%%/Admin/docu/html/bsscnav3.gif
+%%HLDSDIR%%/Admin/docu/html/bsscnav4.gif
+%%HLDSDIR%%/Admin/docu/html/bsscnav5.gif
+%%HLDSDIR%%/Admin/docu/html/bsscnav6.gif
+%%HLDSDIR%%/Admin/docu/html/bsscnav7.gif
+%%HLDSDIR%%/Admin/docu/html/bsscnav8.gif
+%%HLDSDIR%%/Admin/docu/html/bsscnbar.js
+%%HLDSDIR%%/Admin/docu/html/bssctab0.gif
+%%HLDSDIR%%/Admin/docu/html/bssctab1.gif
+%%HLDSDIR%%/Admin/docu/html/bssctab2.gif
+%%HLDSDIR%%/Admin/docu/html/bssctab3.gif
+%%HLDSDIR%%/Admin/docu/html/bssctab4.gif
+%%HLDSDIR%%/Admin/docu/html/bssctab5.gif
+%%HLDSDIR%%/Admin/docu/html/bssctab6.gif
+%%HLDSDIR%%/Admin/docu/html/bssctoc1.gif
+%%HLDSDIR%%/Admin/docu/html/bssctoc2.gif
+%%HLDSDIR%%/Admin/docu/html/bssctoc3.gif
+%%HLDSDIR%%/Admin/docu/html/bssctoc4.gif
+%%HLDSDIR%%/Admin/docu/html/default.css
+%%HLDSDIR%%/Admin/docu/html/default_ns.css
+%%HLDSDIR%%/Admin/docu/html/eHelp.xml
+%%HLDSDIR%%/Admin/docu/html/ehlpdht1.js
+%%HLDSDIR%%/Admin/docu/html/ehlpdht2.js
+%%HLDSDIR%%/Admin/docu/html/ehlpdht3.js
+%%HLDSDIR%%/Admin/docu/html/ehlpdht4.js
+%%HLDSDIR%%/Admin/docu/html/ehlpdht5.js
+%%HLDSDIR%%/Admin/docu/html/ehlpdht6.js
+%%HLDSDIR%%/Admin/docu/html/ehlpdht7.js
+%%HLDSDIR%%/Admin/docu/html/ehlpdhtm.js
+%%HLDSDIR%%/Admin/docu/html/ftsbody.htm
+%%HLDSDIR%%/Admin/docu/html/ftsdhtml.htm
+%%HLDSDIR%%/Admin/docu/html/ftsform.htm
+%%HLDSDIR%%/Admin/docu/html/image1.jpg
+%%HLDSDIR%%/Admin/docu/html/image10.gif
+%%HLDSDIR%%/Admin/docu/html/image11.gif
+%%HLDSDIR%%/Admin/docu/html/image13.gif
+%%HLDSDIR%%/Admin/docu/html/image15.gif
+%%HLDSDIR%%/Admin/docu/html/image16.gif
+%%HLDSDIR%%/Admin/docu/html/image17.gif
+%%HLDSDIR%%/Admin/docu/html/image18.gif
+%%HLDSDIR%%/Admin/docu/html/image19.gif
+%%HLDSDIR%%/Admin/docu/html/image5.gif
+%%HLDSDIR%%/Admin/docu/html/image6.gif
+%%HLDSDIR%%/Admin/docu/html/image7.gif
+%%HLDSDIR%%/Admin/docu/html/image8.gif
+%%HLDSDIR%%/Admin/docu/html/image9.gif
+%%HLDSDIR%%/Admin/docu/html/index.ftp
+%%HLDSDIR%%/Admin/docu/html/index.hhc
+%%HLDSDIR%%/Admin/docu/html/index.hhc.zip
+%%HLDSDIR%%/Admin/docu/html/index.hhk
+%%HLDSDIR%%/Admin/docu/html/index.hhk.zip
+%%HLDSDIR%%/Admin/docu/html/index.hhs
+%%HLDSDIR%%/Admin/docu/html/index.hhs.zip
+%%HLDSDIR%%/Admin/docu/html/index.html
+%%HLDSDIR%%/Admin/docu/html/index_csh.html
+%%HLDSDIR%%/Admin/docu/html/navframe.htm
+%%HLDSDIR%%/Admin/docu/html/navpane1.htm
+%%HLDSDIR%%/Admin/docu/html/navpane2.htm
+%%HLDSDIR%%/Admin/docu/html/nsdnsfix.htm
+%%HLDSDIR%%/Admin/docu/html/nsdnsfix.jar
+%%HLDSDIR%%/Admin/docu/html/tabframe.htm
+%%HLDSDIR%%/Admin/docu/html/tocdhtml.htm
+%%HLDSDIR%%/Admin/docu/html/toclist.htm
+%%HLDSDIR%%/Admin/docu/html/webhelp.cab
+%%HLDSDIR%%/Admin/docu/html/webhelp.jar
+%%HLDSDIR%%/Admin/docu/html/webhelp.res
+%%HLDSDIR%%/Admin/docu/html/webhelp.zip
+%%HLDSDIR%%/Admin/docu/html/webhelp0.cab
+%%HLDSDIR%%/Admin/docu/html/webhelp0.zip
+%%HLDSDIR%%/Admin/docu/html/webhelp4.js
+%%HLDSDIR%%/Admin/install_admin
+%%HLDSDIR%%/Admin/instscr.sed
+%%HLDSDIR%%/Admin/scripting/binaries/admin.amx
+%%HLDSDIR%%/Admin/scripting/binaries/plugin_CS.amx
+%%HLDSDIR%%/Admin/scripting/binaries/plugin_TFC.amx
+%%HLDSDIR%%/Admin/scripting/binaries/plugin_base.amx
+%%HLDSDIR%%/Admin/scripting/binaries/plugin_chat.amx
+%%HLDSDIR%%/Admin/scripting/binaries/plugin_cheat.amx
+%%HLDSDIR%%/Admin/scripting/binaries/plugin_fun.amx
+%%HLDSDIR%%/Admin/scripting/binaries/plugin_hldsld_mapvote.amx
+%%HLDSDIR%%/Admin/scripting/binaries/plugin_message.amx
+%%HLDSDIR%%/Admin/scripting/binaries/plugin_retribution.amx
+%%HLDSDIR%%/Admin/scripting/binaries/plugin_spawn.amx
+%%HLDSDIR%%/Admin/scripting/compiler/sc
+%%HLDSDIR%%/Admin/scripting/examples/admin.sma
+%%HLDSDIR%%/Admin/scripting/examples/compile.sh
+%%HLDSDIR%%/Admin/scripting/examples/compile_all.sh
+%%HLDSDIR%%/Admin/scripting/examples/plugin_CS.sma
+%%HLDSDIR%%/Admin/scripting/examples/plugin_TFC.sma
+%%HLDSDIR%%/Admin/scripting/examples/plugin_base.sma
+%%HLDSDIR%%/Admin/scripting/examples/plugin_chat.sma
+%%HLDSDIR%%/Admin/scripting/examples/plugin_cheat.sma
+%%HLDSDIR%%/Admin/scripting/examples/plugin_fun.sma
+%%HLDSDIR%%/Admin/scripting/examples/plugin_hldsld_mapvote.sma
+%%HLDSDIR%%/Admin/scripting/examples/plugin_message.sma
+%%HLDSDIR%%/Admin/scripting/examples/plugin_retribution.sma
+%%HLDSDIR%%/Admin/scripting/examples/plugin_spawn.sma
+%%HLDSDIR%%/Admin/scripting/include/admin.inc
+%%HLDSDIR%%/Admin/scripting/include/adminlib.inc
+%%HLDSDIR%%/Admin/scripting/include/console.inc
+%%HLDSDIR%%/Admin/scripting/include/core.inc
+%%HLDSDIR%%/Admin/scripting/include/fixed.inc
+%%HLDSDIR%%/Admin/scripting/include/plugin.inc
+%%HLDSDIR%%/Admin/scripting/include/string.inc
+%%HLDSDIR%%/Admin/scripting/myscripts/compile.sh
+%%HLDSDIR%%/Admin/scripting/myscripts/compile_all.sh
+%%HLDSDIR%%/Admin/tools/make_pass
+@dirrm %%HLDSDIR%%/Admin/tools
+@dirrm %%HLDSDIR%%/Admin/scripting/myscripts
+@dirrm %%HLDSDIR%%/Admin/scripting/include
+@dirrm %%HLDSDIR%%/Admin/scripting/examples
+@dirrm %%HLDSDIR%%/Admin/scripting/compiler
+@dirrm %%HLDSDIR%%/Admin/scripting/binaries
+@dirrm %%HLDSDIR%%/Admin/scripting
+@dirrm %%HLDSDIR%%/Admin/docu/html/Setting_up_Clients_to_Use_Admin_Mod
+@dirrm %%HLDSDIR%%/Admin/docu/html/Scripting_Basics
+@dirrm %%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration
+@dirrm %%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50
+@dirrm %%HLDSDIR%%/Admin/docu/html/Geting_Ready_to_Install
+@dirrm %%HLDSDIR%%/Admin/docu/html/Admin_Mod_Reference
+@dirrm %%HLDSDIR%%/Admin/docu/html/Admin_Etc
+@dirrm %%HLDSDIR%%/Admin/docu/html/About_Admin_Mod
+@dirrm %%HLDSDIR%%/Admin/docu/html
+@dirrm %%HLDSDIR%%/Admin/docu
+@dirrm %%HLDSDIR%%/Admin/dlls
+@dirrm %%HLDSDIR%%/Admin/config/Samples
+@dirrm %%HLDSDIR%%/Admin/config
+@dirrm %%HLDSDIR%%/Admin
