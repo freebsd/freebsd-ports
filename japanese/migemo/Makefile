@@ -29,7 +29,11 @@ RUN_DEPENDS+=	${RUBY_SITELIBDIR}/romkan.rb:${PORTSDIR}/japanese/ruby-romkan \
 CONFIGURE_ARGS+=--with-rubydir=${RUBY_SITELIBDIR}
 
 post-install:
+.if defined(EMACS_PORT_NAME)
+	@${CAT} ${PKGMESSAGE}
+.else
 	@${MKDIR} -p ${DOCSDIR}
 	@${MV} ${PREFIX}/share/migemo/migemo.ja.html ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

@@ -26,8 +26,4 @@ PLIST_SUB=	MIGEMO="@comment " ELISP=""
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/migemo.el ${PREFIX}/${EMACS_LIBDIR}/site-lisp
 	${INSTALL_DATA} ${WRKSRC}/migemo.elc ${PREFIX}/${EMACS_LIBDIR}/site-lisp
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include "${MASTERDIR}/Makefile"
