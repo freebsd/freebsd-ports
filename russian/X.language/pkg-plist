@@ -1,5 +1,19 @@
-lib/X11/nls/nls.alias
-lib/X11/nls/ru_SU.KOI8-R
+lib/X11/fonts/Type1/arial8.pfb
+lib/X11/fonts/Type1/arialbd8.pfb
+lib/X11/fonts/Type1/arialbi8.pfb
+lib/X11/fonts/Type1/ariali8.pfb
+lib/X11/fonts/Type1/cokoi8b.pfb
+lib/X11/fonts/Type1/cokoi8bi.pfb
+lib/X11/fonts/Type1/cokoi8i.pfb
+lib/X11/fonts/Type1/cokoi8n.pfb
+lib/X11/fonts/Type1/cour8.pfb
+lib/X11/fonts/Type1/courbd8.pfb
+lib/X11/fonts/Type1/courbi8.pfb
+lib/X11/fonts/Type1/couri8.pfb
+lib/X11/fonts/Type1/times8.pfb
+lib/X11/fonts/Type1/timesbd8.pfb
+lib/X11/fonts/Type1/timesbi8.pfb
+lib/X11/fonts/Type1/timesi8.pfb
 lib/X11/fonts/cyrillic/100dpi/crox1c.pcf.gz
 lib/X11/fonts/cyrillic/100dpi/crox1cb.pcf.gz
 lib/X11/fonts/cyrillic/100dpi/crox1cbo.pcf.gz
@@ -133,3 +147,5 @@ lib/X11/fonts/cyrillic/misc/koi8x13.pcf.gz
 lib/X11/fonts/cyrillic/misc/koi9x15.pcf.gz
 lib/X11/fonts/cyrillic/misc/koinil2.pcf.gz
 lib/X11/fonts/cyrillic/xrus.info
+lib/X11/nls/nls.alias
+lib/X11/nls/ru_SU.KOI8-R
