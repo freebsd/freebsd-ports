@@ -8,6 +8,7 @@
     SUBDIR += collections
     SUBDIR += cos
     SUBDIR += cryptix-jce
+    SUBDIR += forte
     SUBDIR += gnu-regexp
     SUBDIR += guavac
     SUBDIR += infobus
