@@ -13,6 +13,7 @@
     SUBDIR += gnome-look
     SUBDIR += gob
     SUBDIR += gtk--
+    SUBDIR += gtk-Mac2-theme
     SUBDIR += gtk-engines
     SUBDIR += gtk-engines-collection
     SUBDIR += gtk10

@@ -1,0 +1,11 @@
+--- Theme/Makefile.in.orig	Tue Jun 13 13:13:54 2000
++++ Theme/Makefile.in	Tue Jun 13 13:14:13 2000
+@@ -79,7 +79,7 @@
+ EXTRA_DIST = makemakefile.sh
+ dummy = 
+ SUBDIRS = gtk
+-themedir = $(datadir)/themes/Clean
++themedir = $(datadir)/themes/Mac2
+ theme_DATA = ICON.png README.html  
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
