@@ -16,6 +16,10 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 GNU_CONFIGURE=	yes
 
+pre-patch:
+	@${PERL} -pi.orig -e "s@malloc.h@stdlib.h@g" \
+        ${WRKSRC}/CfgFileParser.cc
+
 post-install:
 	@ ${MKDIR} ${PREFIX}/share/colortail
 	@ ${INSTALL_DATA} ${WRKSRC}/example-conf/conf* ${PREFIX}/share/colortail/

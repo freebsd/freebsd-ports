@@ -29,6 +29,10 @@ DIST_SUBDIR=	astrolog
 ALL_TARGET=	astrolog
 NO_WRKSUBDIR=	yes
 
+pre-patch:
+	@${PERL} -pi.orig -e "s@malloc.h@stdlib.h@g" \
+	${WRKSRC}/astrolog.h ${WRKSRC}/placalc.h
+
 do-install:
 	-@${MKDIR} ${PREFIX}/lib/astrolog
 	cd ${DISTDIR}/${DIST_SUBDIR} && \

@@ -19,6 +19,9 @@ LIB_DEPENDS=		aa.1:${PORTSDIR}/graphics/aalib
 MAKEFILE=		makefile
 GNU_CONFIGURE=		yes
 
+pre-patch:
+	${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e "s@#include +<malloc.h>@#include <stdlib.h>@g"
+
 pre-build:
 	@ cd ${WRKSRC}/mikunix; make
 
