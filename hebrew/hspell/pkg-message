@@ -8,6 +8,9 @@ or set this in /etc/rc.conf:
 font8x16=iso08-8x16.fnt
 
 Then, it would be wise to install bidiv from %%PORTSDIR%%/textproc/bidiv
-and run hspell like this:
+and run Hspell:
 
 hspell file.txt | bidiv
+
+Plus, Hspell can use Ispell as a slave (option -i or executable hspell-i).
+Ispell can be found in %%PORTSDIR%%/textproc/ispell .
