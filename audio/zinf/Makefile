@@ -5,21 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=	freeamp
-PORTVERSION=	2.1.1
-PORTREVISION=	4
+PORTNAME=	zinf
+PORTVERSION=	2.2.0
 CATEGORIES=	audio
-MASTER_SITES=	http://www.freeamp.org/download/src/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	musicbrainz.1:${PORTSDIR}/audio/musicbrainz \
+LIB_DEPENDS=	musicbrainz.2:${PORTSDIR}/audio/musicbrainz \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		ttf.4:${PORTSDIR}/print/freetype
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_BZIP2=	yes
 USE_GTK=	yes
 WANT_ESOUND=	yes
 USE_GMAKE=	yes
@@ -79,8 +77,8 @@ pre-extract:
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/sdr/plugins
-	${INSTALL_DATA} ${FILESDIR}/sdr2.plugin.S100.audio.rtp.mpa.freeamp \
+	${INSTALL_DATA} ${FILESDIR}/sdr2.plugin.S100.audio.rtp.mpa.zinf \
 		${PREFIX}/etc/sdr/plugins
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/freeamp
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/zinf
 
 .include <bsd.port.post.mk>

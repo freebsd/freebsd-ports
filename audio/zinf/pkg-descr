@@ -1,10 +1,9 @@
-FreeAmp is an Open Source effort to build the best digital audio 
-player available.  In the interest of supporting the free software 
-community, while at the same time fostering the growth of the online 
-delivery of music, EMusic.com, THE Source for Downloadable Music, is 
-funding both the FreeAmp.org domain and the efforts of the FreeAmp 
-team.
+The Zinf audio player is a simple, but powerful audio player for Linux and
+Win32. It supports MP3, Ogg/Vorbis, WAV and Audio CD playback, with a powerful
+music browser, theme support and a download manager. 
 
-WWW: http://www.freeamp.org/
+It is based on the FreeA*p audio player which was developed by EMusic. The
+FreeA*p project was discontinued due to a trademark conflict and EMusic being
+acquired by Vivendi.
 
-Roman Shterenzon <roman@xpert.com>
+WWW: http://www.zinf.org/
