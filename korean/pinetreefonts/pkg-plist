@@ -1,16 +1,16 @@
-lib/X11/fonts/misc/ptpB08.pcf.gz
-lib/X11/fonts/misc/ptpB10.pcf.gz
-lib/X11/fonts/misc/ptpB12.pcf.gz
-lib/X11/fonts/misc/ptpB14.pcf.gz
-lib/X11/fonts/misc/ptpB18.pcf.gz
-lib/X11/fonts/misc/ptpB24.pcf.gz
-lib/X11/fonts/misc/ptpR08.pcf.gz
-lib/X11/fonts/misc/ptpR10.pcf.gz
-lib/X11/fonts/misc/ptpR12.pcf.gz
-lib/X11/fonts/misc/ptpR14.pcf.gz
-lib/X11/fonts/misc/ptpR18.pcf.gz
-lib/X11/fonts/misc/ptpR24.pcf.gz
-lib/X11/fonts/misc/ptptB14.pcf.gz
-lib/X11/fonts/misc/pttpB14.pcf.gz
-@exec cd %D/lib/X11/fonts/misc ; mkfontdir
-@unexec cd %D/lib/X11/fonts/misc ; mkfontdir
+lib/X11/fonts/local/ptpB08.pcf.gz
+lib/X11/fonts/local/ptpB10.pcf.gz
+lib/X11/fonts/local/ptpB12.pcf.gz
+lib/X11/fonts/local/ptpB14.pcf.gz
+lib/X11/fonts/local/ptpB18.pcf.gz
+lib/X11/fonts/local/ptpB24.pcf.gz
+lib/X11/fonts/local/ptpR08.pcf.gz
+lib/X11/fonts/local/ptpR10.pcf.gz
+lib/X11/fonts/local/ptpR12.pcf.gz
+lib/X11/fonts/local/ptpR14.pcf.gz
+lib/X11/fonts/local/ptpR18.pcf.gz
+lib/X11/fonts/local/ptpR24.pcf.gz
+lib/X11/fonts/local/ptptB14.pcf.gz
+lib/X11/fonts/local/pttpB14.pcf.gz
+@exec cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir
+@unexec cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir
