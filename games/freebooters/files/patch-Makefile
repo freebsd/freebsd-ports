@@ -1,0 +1,80 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Thu Aug 12 14:09:30 2004
++++ Makefile	Wed Sep 29 23:53:01 2004
+@@ -1,16 +1,18 @@
+ CXX=g++
+-CXXFLAGS=-g -O2 -Wall `sdl-config --cflags`
++CXXFLAGS=-g -O2 -Wall `sdl11-config --cflags`
+ CXXSOURCES=menu.cc nation.cc freebooters.cc readdata.cc harbour.cc market.cc good.cc world.cc gamemenus.cc sdl_setup.cc player.cc ship.cc seabattle.cc nutship.cc sprite.cc replacecol.cc combatant.cc shots.cc splash.cc gameplay.cc tools.cc savegame.cc
+ SO_CXXSOURCES=tools.cc menu.cc nation.cc justbattle.cc readdata.cc harbour.cc market.cc good.cc world.cc gamemenus.cc sdl_setup.cc player.cc ship.cc seabattle.cc nutship.cc sprite.cc replacecol.cc combatant.cc shots.cc splash.cc gameplay.cc savegame.cc
+ OBJECTS=$(CXXSOURCES:.cc=.o)
+ SO_OBJECTS=$(SO_CXXSOURCES:.cc=.o)
+ INCLUDE=
+-LDLIBS=`sdl-config --libs` -lSDL_mixer -lSDL_ttf -lSDL_image -lm
++LDLIBS=`sdl11-config --libs` -lSDL_mixer -lSDL_ttf -lSDL_image -lm
+ PROGNAME1=freebooters
+ PROGNAME2=buccaneer
+-BININSTALLPREFIX=/usr/local/
+-DATAINSTALLPREFIX=/usr/local/
+-MANDIR=/usr/share/man/
++BININSTALLPREFIX=${PREFIX}
++DATAINSTALLPREFIX=${PREFIX}
++MANDIR=${PREFIX}/man
++INST_DATA=install -m 644 -o root -g wheel
++INST_BIN=install -s -m 755 -o root -g wheel
+ 
+ .PHONY: clean install
+ 
+@@ -30,27 +32,22 @@
+ 	rm -f *~
+ 
+ install:
+-	mkdir -p $(DATAINSTALLPREFIX)share/games/freebooters/harbours/
+-	mkdir -p $(DATAINSTALLPREFIX)share/games/freebooters/graphics/
+-	mkdir -p $(DATAINSTALLPREFIX)share/games/freebooters/sprites/
+-	mkdir -p $(DATAINSTALLPREFIX)share/games/freebooters/sound/
+-	mkdir -p $(BININSTALLPREFIX)share/doc/freebooters/
+-	install ./data/freebooters.conf /etc
+-	install ./graphics/*jpg $(DATAINSTALLPREFIX)share/games/freebooters/graphics
+-	install ./data/harbours/[a-z]* $(DATAINSTALLPREFIX)share/games/freebooters/harbours
+-	install ./data/gameplay-parameters.conf $(DATAINSTALLPREFIX)share/games/freebooters
+-	install ./sprites/*png $(DATAINSTALLPREFIX)share/games/freebooters/sprites
+-	install ./sound/[a-z]* $(DATAINSTALLPREFIX)share/games/freebooters/sound
+-	install ./doc/[a-z]* $(BININSTALLPREFIX)share/doc/freebooters
+-	install ./doc/[AB]* $(BININSTALLPREFIX)share/doc/freebooters
+-	install ./doc/CO* $(BININSTALLPREFIX)share/doc/freebooters
+-	install ./doc/ch* $(BININSTALLPREFIX)share/doc/freebooters
+-	install ./doc/[D-Z]* $(BININSTALLPREFIX)share/doc/freebooters
+-	install ./vera.ttf $(DATAINSTALLPREFIX)share/games/freebooters
+-	install ./$(PROGNAME1) $(BININSTALLPREFIX)bin
+-	install ./$(PROGNAME2) $(BININSTALLPREFIX)bin
+-	install ./freebooters.6 $(MANDIR)man6
+-	install ./buccaneer.6 $(MANDIR)man6
++	mkdir -p $(DATAINSTALLPREFIX)/share/freebooters/harbours/
++	mkdir -p $(DATAINSTALLPREFIX)/share/freebooters/graphics/
++	mkdir -p $(DATAINSTALLPREFIX)/share/freebooters/sprites/
++	mkdir -p $(DATAINSTALLPREFIX)/share/freebooters/sound/
++	mkdir -p $(BININSTALLPREFIX)/share/doc/freebooters/
++	$(INST_DATA) ./data/freebooters.conf $(DATAINSTALLPREFIX)/etc/freebooters.conf.dist
++	$(INST_DATA) ./graphics/*jpg $(DATAINSTALLPREFIX)/share/freebooters/graphics
++	$(INST_DATA) ./data/harbours/[a-z]* $(DATAINSTALLPREFIX)/share/freebooters/harbours
++	$(INST_DATA) ./data/gameplay-parameters.conf $(DATAINSTALLPREFIX)/share/freebooters
++	$(INST_DATA) ./sprites/*png $(DATAINSTALLPREFIX)/share/freebooters/sprites
++	$(INST_DATA) ./sound/[a-z]* $(DATAINSTALLPREFIX)/share/freebooters/sound
++	$(INST_DATA) ./vera.ttf $(DATAINSTALLPREFIX)/share/freebooters
++	$(INST_BIN) ./$(PROGNAME1) $(BININSTALLPREFIX)/bin
++	$(INST_BIN) ./$(PROGNAME2) $(BININSTALLPREFIX)/bin
++	$(INST_DATA) ./freebooters.6 $(MANDIR)/man6
++	$(INST_DATA) ./buccaneer.6 $(MANDIR)/man6
+ 
+ uninstall:
+ 	rm -rf $(DATAINSTALLPREFIX)share/games/freebooters/
+@@ -58,4 +55,4 @@
+ 	rm -f $(BININSTALLPREFIX)bin/$(PROGNAME1)
+ 	rm -f $(BININSTALLPREFIX)bin/$(PROGNAME2)
+ 	rm -f $(MANDIR)man6/buccaneer.6
+-	rm -f $(MANDIR)man6/freebooters.6
+\ No newline at end of file
++	rm -f $(MANDIR)man6/freebooters.6
