@@ -12,6 +12,7 @@
 %%ADODB_DIR%%/adodb-fbsql.inc.php
 %%ADODB_DIR%%/adodb-firebird.inc.php
 %%ADODB_DIR%%/adodb-ibase.inc.php
+%%ADODB_DIR%%/adodb-informix.inc.php
 %%ADODB_DIR%%/adodb-lib.inc.php
 %%ADODB_DIR%%/adodb-mssql.inc.php
 %%ADODB_DIR%%/adodb-mysql.inc.php
