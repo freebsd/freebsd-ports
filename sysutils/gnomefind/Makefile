@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomefind
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnome-find
@@ -17,19 +16,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical version of the GNU "find" utility
 
 USE_X_PREFIX=	yes
-USE_XPM=	yes
-USE_GNOME=	yes
+USE_GNOME=	gnomehack gnomeprefix libglade
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-lgnuregex -L${LOCALBASE}/lib"
 
 MAN1=		gnome-find.1
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+post-patch:
+	@${GREP} -lR "<regex\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|<regex\.h>|<gnuregex.h>|g'
 
 .include <bsd.port.mk>
