@@ -65,6 +65,7 @@
     SUBDIR += cvsup-without-gui
     SUBDIR += cvsupit
     SUBDIR += dante
+    SUBDIR += darkstat
     SUBDIR += datapipe
     SUBDIR += dctc
     SUBDIR += dctc-gui

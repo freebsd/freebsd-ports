@@ -1,0 +1,8 @@
+Darkstat is an ntop-workalike network statistics gatherer. Built to be faster
+and smaller than ntop, it uses libpcap to capture network traffic and serves up
+Web page reports of statistics such as data transferred by host, port, and
+protocol. It also has a neat bandwidth usage graph.
+
+WWW:	http://members.optushome.com.au/darkmoon7/net/darkstat.html
+
+-- Anders Nordby <anders@FreeBSD.org>
