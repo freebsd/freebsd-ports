@@ -1,8 +1,6 @@
 bin/crafty
 lib/crafty/books.bin
-share/doc/crafty/crafty.doc.ascii
-share/doc/crafty/crafty.doc.ps
-share/doc/crafty/crafty.faq
-share/doc/crafty/read.me
-@dirrm share/doc/crafty
+%%PORTDOCS%%share/doc/crafty/crafty.doc.ascii
+%%PORTDOCS%%share/doc/crafty/crafty.doc.ps
+%%PORTDOCS%%@dirrm share/doc/crafty
 @dirrm lib/crafty

@@ -1,43 +1,5 @@
---- Makefile.orig	Fri Feb  8 18:48:49 2002
+--- Makefile	Wed Oct 23 23:42:03 2002
 +++ Makefile	Sat Sep  7 16:05:47 2002
-@@ -21,7 +21,7 @@
- #     SGI        {SGI Workstation running Irix (SYSV/R4) Unix}
- #     SUN        {Sun SparcStation running Solaris (SYSV/R4) Unix}
- #     SUN_GCC    {Sun SparcStation running Solaris but using gcc
--#     FreeBSD    {80X86 architecture running FreeBSD (Unix)}
-+#     FreeBSD    {80X86/Alpha architecture running FreeBSD (Unix)}
- #     NetBSD     {multi-architecture running NetBSD (Unix)}
- #     Cygwin     {80X86 running Cygwin under Win32 (Unix)}
- #   
-@@ -142,16 +142,25 @@
- 		asm='X86.o' \
- 		crafty-make
- 
--freebsd:
-+freebsd-i386:
- 	$(MAKE) target=FreeBSD \
--		CC=gcc CXX='$$(CC)' \
--		CFLAGS='$(CFLAGS) -fomit-frame-pointer -m486 -O3 -Wall' \
-+		CC='$(CC)' CXX='$(CXX)' \
-+		CFLAGS='$(CFLAGS)' \
- 		LDFLAGS='$(LDFLAGS)' \
- 		opt='$(opt) -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
- 		     -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST' \
- 		asm=X86-elf.o \
- 		crafty-make
- 
-+# This should work for non-i386 FreeBSD (e.g. Alpha)
-+freebsd-generic:
-+	$(MAKE) target=FreeBSD \
-+		CC='$(CC)' CXX='$(CXX)' \
-+		CFLAGS='$(CFLAGS)' \
-+		LDFLAGS='$(LDFLAGS)' \
-+		opt='$(opt) -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS -DFAST' \
-+		crafty-make
-+
- freebsd-pgcc:
- 	$(MAKE) target=FreeBSD \
- 		CC=gcc CXX='$$(CC)' \
 @@ -368,7 +377,7 @@
  		crafty
  
