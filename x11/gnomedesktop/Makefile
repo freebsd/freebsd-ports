@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomedesktop
-PORTVERSION=	1.5.14
+PORTVERSION=	1.5.17
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta3
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta4
 DISTNAME=	gnome-desktop-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -23,7 +23,7 @@ USE_XPM=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome2 \
 		--datadir=${PREFIX}/share/gnome2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -37,6 +37,6 @@ pre-patch:
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g ; \
-		 s|\$\(datadir\)/gnome|\$\(datadir\)|g'
+		 s|\$\(datadir\)/gnome/|\$\(datadir\)/|g'
 
 .include <bsd.port.mk>
