@@ -1,15 +1,17 @@
---- Makefile.in.ORIG	Mon Feb 10 17:45:33 1997
-+++ Makefile.in	Mon Feb 10 17:47:04 1997
-@@ -55,7 +55,7 @@
+--- Makefile.in.orig	Thu Sep 17 16:59:45 1998
++++ Makefile.in	Thu Sep 17 17:06:00 1998
+@@ -55,7 +55,9 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
  
  # Directory in which to install the include file tcl.h:
 -INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include
 +INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)
++GENERIC_INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)/generic
++UNIX_INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)/unix
  
  # Top-level directory in which to install manual entries:
  MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
-@@ -73,7 +73,7 @@
+@@ -73,7 +75,7 @@
  
  # To change the compiler switches, for example to change from -O
  # to -g, change the following line:
@@ -18,7 +20,33 @@
  
  # To disable ANSI-C procedure prototypes reverse the comment characters
  # on the following lines:
-@@ -389,7 +389,7 @@
+@@ -305,6 +307,9 @@
+ 	rm -f ${TCL_LIB_FILE}
+ 	@MAKE_LIB@
+ 	$(RANLIB) ${TCL_LIB_FILE}
++.if ${PORTOBJFORMAT}X == elfX
++	ln -sf ${TCL_LIB_FILE} `echo ${TCL_LIB_FILE} | sed 's/\.so.*$$/.so/'`
++.endif
+ 
+ tclsh: ${TCLSH_OBJS} ${TCL_LIB_FILE}
+ 	${CC} @LD_FLAGS@ ${TCLSH_OBJS} @TCL_BUILD_LIB_SPEC@ ${LIBS} \
+@@ -366,7 +371,7 @@
+ 	cd dltest; if test -f configure; then ./configure; else \
+ 	    $(DLTEST_DIR)/configure; fi
+ 
+-install: install-binaries install-libraries install-man
++install: install-binaries install-libraries
+ 
+ # Note: before running ranlib below, must cd to target directory because
+ # some ranlibs write to current directory, and this might not always be
+@@ -385,15 +390,19 @@
+ 	@echo "Installing $(TCL_LIB_FILE)"
+ 	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
+ 	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
++.if ${PORTOBJFORMAT}X == elfX
++	@(cd $(LIB_INSTALL_DIR); ln -sf ${TCL_LIB_FILE} `echo ${TCL_LIB_FILE} | sed 's/\.so.*$$/.so/'`)
++.endif
+ 	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
  	@echo "Installing tclsh"
  	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
  	@echo "Installing tclConfig.sh"
@@ -27,7 +55,36 @@
  
  install-libraries:
  	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
-@@ -423,30 +423,38 @@
+-		$(SCRIPT_INSTALL_DIR) ; \
++		$(SCRIPT_INSTALL_DIR) $(GENERIC_INCLUDE_INSTALL_DIR) \
++		$(UNIX_INCLUDE_INSTALL_DIR) ; \
+ 	    do \
+ 	    if [ ! -d $$i ] ; then \
+ 		echo "Making directory $$i"; \
+@@ -402,13 +411,20 @@
+ 		else true; \
+ 		fi; \
+ 	    done;
+-	@echo "Installing tcl.h"
+-	@$(INSTALL_DATA) $(GENERIC_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
++	@echo "Installing libraries, tcl.h and other headers"
+ 	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c; \
+ 	    do \
+ 	    echo "Installing $$i"; \
+ 	    $(INSTALL_DATA) $$i $(SCRIPT_INSTALL_DIR); \
+ 	    done;
++	@echo "Installing $(TOP_DIR)unix/tclUnixPort.h"
++	@$(INSTALL_DATA) $(TOP_DIR)/unix/tclUnixPort.h $(UNIX_INCLUDE_INSTALL_DIR)
++	@for i in $(GENERIC_DIR)/*.h ; \
++		do \
++		echo "Installing $$i"; \
++		$(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
++		done;
++	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
+ 
+ install-man:
+ 	@for i in $(MAN_INSTALL_DIR) $(MAN1_INSTALL_DIR) $(MAN3_INSTALL_DIR) $(MANN_INSTALL_DIR) ; \
+@@ -423,30 +439,38 @@
  	@cd $(TOP_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
