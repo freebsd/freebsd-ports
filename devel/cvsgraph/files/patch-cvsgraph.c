@@ -1,12 +1,10 @@
---- work/cvsgraph-1.0.1/cvsgraph.c	2001/03/14 08:40:07	1.1
-+++ work/cvsgraph-1.0.1/cvsgraph.c	2001/03/14 08:40:45
-@@ -67,7 +67,9 @@
+--- cvsgraph.c.orig	Wed Mar 14 20:12:02 2001
++++ cvsgraph.c	Wed Mar 14 20:11:38 2001
+@@ -30,7 +30,6 @@
  #include <fcntl.h>
  #include <regex.h>
  #include <errno.h>
-+#ifndef __FreeBSD__
- #include <getopt.h>
-+#endif
-  
- #include <gd.h>
- #include <gdfontt.h>
+-#include <getopt.h>
+ #include <ctype.h>
+ #include <time.h>
+ 
