@@ -6,7 +6,7 @@
  	$(SRC2) $(SRC1) $(OTHERLIBS) -lsocket -lnsl
 +
 +EXE=	Nentrez Psequin \
-+		asn2fast asn2ff asndhuff asntool \
++		asn2fast asn2ff asn2xml asndhuff asntool \
 +		bl2seq blast.REAL blastall blastcl3 blastclust blastpgp \
 +		cdscan checksub copymat \
 +		ddv dosimple \
