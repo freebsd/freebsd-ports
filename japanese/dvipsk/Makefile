@@ -75,6 +75,8 @@ post-install:
 	    ${INSTALL_DATA} $$i ${TEXDIR}/latex209/dvips ; \
 	  done \
 	)
+# rebuild tex ls-R file
+	mktexlsr
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/dvips
 	@for i in ${DOCS} ; do \

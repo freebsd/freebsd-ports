@@ -120,3 +120,5 @@ share/doc/dvips/dvips.help
 @dirrm share/texmf/tex/latex209/dvips
 @dirrm share/texmf/tex/latex209
 @dirrm share/doc/dvips
+@exec mktexlsr
+@unexec mktexlsr
