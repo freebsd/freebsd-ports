@@ -1,10 +1,15 @@
 bin/ksubeditor
 share/applnk/Applications/ksubeditor.desktop
 share/apps/ksubeditor/ksubeditorui.rc
-share/doc/HTML/en/ksubeditor/common
-share/doc/HTML/en/ksubeditor/index.cache.bz2
-share/doc/HTML/en/ksubeditor/index.docbook
 share/icons/locolor/16x16/apps/ksubeditor.png
 share/icons/locolor/32x32/apps/ksubeditor.png
-@dirrm share/doc/HTML/en/ksubeditor
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
 @dirrm share/apps/ksubeditor
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
