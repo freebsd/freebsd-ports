@@ -6,7 +6,7 @@ if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/jabberd\.sh\$"); then
 fi
 
 USER="jabber"
-RUNDIR="/var/tmp"
+RUNDIR="/var/jabberd/pid"
 HOSTNAME=`/bin/hostname`
 
 test -x ${PREFIX}/bin/jabberd || exit 1
@@ -14,14 +14,24 @@ test -x ${PREFIX}/bin/jabberd || exit 1
 export PATH=/sbin:/bin:/usr/bin:${PREFIX}/bin:${PREFIX}/sbin
 umask 077
 
-echo -n " jabberd"
 cd ${RUNDIR} || exit
 
-case ${1:-start} in
+case "$1" in
 start)
-    su -f -m ${USER} -c "jabberd" ;;
-
+    su -f -m ${USER} -c ${PREFIX}/bin/jabberd &
+    echo -n ' jabberd'
+    ;;
 stop)
-    killall -SIGKILL -u ${USER} jabberd;
-    rm -f ${RUNDIR}/jabber.pid;
+    killall -u ${USER} jabberd c2s resolver router s2s sm
+    for file in c2s resolver router s2s sm
+      do
+      rm -f ${RUNDIR}/$file.pid
+    done
+    echo -n ' jabberd'
+    ;;
+*)
+    echo "Usage: `basename $0` {start|stop}" >&2
+    ;;
 esac
+
+exit 0
