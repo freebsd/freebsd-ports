@@ -606,6 +606,7 @@ bfilter		ports/net/bfilter
 bforce		ports/comms/bforce
 bforce-kst	ports/comms/bforce-kst
 bftpd		ports/ftp/bftpd
+bg-aspell	ports/textproc/bg-aspell
 bg-ooodict-BG	ports/editors/ooodict-bg_BG
 bglibs		ports/devel/bglibs
 bgpq		ports/net-mgmt/bgpq
@@ -2094,6 +2095,7 @@ g-wrap		ports/devel/g-wrap
 g2		ports/graphics/g2
 g2c		ports/devel/g2c
 g3dviewer	ports/graphics/g3dviewer
+ga-aspell	ports/textproc/ga-aspell
 gaa		ports/devel/gaa
 gabber		ports/net/gabber
 gaddr		ports/deskutils/gaddr
@@ -2357,6 +2359,7 @@ gkrellweather	ports/misc/gkrellweather
 gkrellweather2	ports/misc/gkrellweather2
 gkx86info	ports/misc/gkx86info
 gl-117		ports/games/gl-117
+gl-aspell	ports/textproc/gl-aspell
 gl2ps		ports/print/gl2ps
 glabels		ports/deskutils/glabels
 glacier		ports/mail/glacier
@@ -2921,6 +2924,7 @@ hpl		ports/benchmarks/hpl
 hpoj		ports/graphics/hpoj
 hppsmtools	ports/graphics/hppsmtools
 hptools		ports/devel/hptools
+hr-aspell	ports/textproc/hr-aspell
 hr-ooodict-HR	ports/editors/ooodict-hr_HR
 hs-HOpenGL	ports/graphics/hs-HOpenGL
 hs-alex		ports/devel/hs-alex
@@ -3049,6 +3053,7 @@ icqlib0		ports/net/icqlib0
 icqnix		ports/net/icqnix
 icu		ports/devel/icu
 icu2		ports/devel/icu2
+id-aspell	ports/textproc/id-aspell
 id-utils	ports/devel/id-utils
 id3ed		ports/audio/id3ed
 id3el		ports/audio/id3el
@@ -3186,6 +3191,7 @@ irsim		ports/cad/irsim
 irssi		ports/irc/irssi
 irssistats	ports/irc/irssistats
 isakmpd		ports/security/isakmpd
+is-aspell	ports/textproc/is-aspell
 isc-dhcp3-client	ports/net/isc-dhcp3-client
 isc-dhcp3-devel	ports/net/isc-dhcp3-devel
 isc-dhcp3-relay	ports/net/isc-dhcp3-relay
@@ -4943,6 +4949,7 @@ mhc-emacs20	ports/deskutils/mhc-emacs20
 mhc-xemacs21-mule	ports/deskutils/mhc-xemacs21-mule
 mhonarc		ports/www/mhonarc
 mhwaveedit	ports/audio/mhwaveedit
+mi-aspell	ports/textproc/mi-aspell
 mico		ports/devel/mico
 micq		ports/net/micq
 micro_httpd	ports/www/micro_httpd
@@ -5239,6 +5246,7 @@ mrsidviewer	ports/graphics/mrsidviewer
 mrt		ports/net/mrt
 mrtg		ports/net-mgmt/mrtg
 mrtg-ping-probe	ports/net/mrtg-ping-probe
+ms-aspell	ports/textproc/ms-aspell
 mscompress	ports/archivers/mscompress
 msend		ports/net/msend
 mserver		ports/comms/mserver
@@ -8785,6 +8793,7 @@ skill		ports/sysutils/skill
 skip		ports/security/skip
 skribe		ports/textproc/skribe
 sl		ports/games/sl
+sl-aspell	ports/textproc/sl-aspell
 slash		ports/www/slash
 slashem-tty	ports/games/slashem-tty
 slay		ports/sysutils/slay
