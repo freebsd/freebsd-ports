@@ -224,7 +224,9 @@ pre-configure:
 
 post-configure:
 	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\
-	${REINPLACE_CMD} -e "s,%%FTPUSERS%%,$$FTPUSERS," \
+	${REINPLACE_CMD} -e "s,%%FTPUSERS%%,$$FTPUSERS, ; \
+			s,%%WWWOWN%%,${WWWOWN}, ; \
+			s,%%WWWGRP%%,${WWWGRP}, " \
 			${WRKSRC}/docs/conf/httpd-std.conf
 
 pre-install:

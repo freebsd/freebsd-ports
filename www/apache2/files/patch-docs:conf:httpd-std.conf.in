@@ -15,8 +15,8 @@
  #
 -User nobody
 -Group #-1
-+User www
-+Group www
++User %%WWWOWN%%
++Group %%WWWGRP%%
  </IfModule>
  </IfModule>
  
