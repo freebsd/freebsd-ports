@@ -8,7 +8,9 @@ OpenSSH is a version of Secure Shell based upon a much less encumbered
 SSH version 1.2.12, which has a BSD-style license.  Maintained by the
 OpenBSD project, this is the most free and secure SSH implementation
 in the world.  OpenSSH supports SSH protocol version 1.5 and has all
-known bugs from SSH fixed.
+known bugs from SSH fixed, and even some unknown ones :)
+
+WWW: http://www.openssh.com/
 
 - Brian Feldman
 green@FreeBSD.org

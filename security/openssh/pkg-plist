@@ -11,4 +11,3 @@ man/man1/ssh-keygen.1.gz
 man/man1/ssh.1.gz
 man/man8/sshd.8.gz
 sbin/sshd
-@exec if [ ! -f %D/etc/ssh_host_key ]; then echo "Generating a secret host key..."; %D/bin/ssh-keygen -N "" -f %D/etc/ssh_host_key; fi
