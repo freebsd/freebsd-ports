@@ -1,14 +1,5 @@
 --- source/Makefile.in.orig	Thu May  2 20:02:26 2002
 +++ source/Makefile.in	Fri May  3 10:04:22 2002
-@@ -51,7 +51,7 @@
- CONFIGFILE = $(CONFIGDIR)/smb.conf
- LMHOSTSFILE = $(CONFIGDIR)/lmhosts
- DRIVERFILE = $(CONFIGDIR)/printers.def
--PASSWD_PROGRAM = /bin/passwd
-+PASSWD_PROGRAM = /usr/bin/passwd
- # This is where smbpasswd et al go
- PRIVATEDIR = @privatedir@
- 
 @@ -82,7 +82,7 @@
  PASSWD_FLAGS = -DPASSWD_PROGRAM=\"$(PASSWD_PROGRAM)\" -DSMB_PASSWD_FILE=\"$(SMB_PASSWD_FILE)\" -DTDB_PASSWD_FILE=\"$(TDB_PASSWD_FILE)\"
  FLAGS1 = $(CFLAGS) @FLAGS1@ -Iinclude -I$(srcdir)/include -I$(srcdir)/ubiqx -I$(srcdir)/smbwrapper $(CPPFLAGS) -DLOGFILEBASE=\"$(LOGFILEBASE)\"
