@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tkinfo
-# Version required:     1.8
+# Version required:     2.1
 # Date created:         16 Jan 1995
-# Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
+# Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.13 1997/06/23 07:45:57 tg Exp $
+# $Id: Makefile,v 1.14 1997/09/29 07:44:08 tg Exp $
 #
 
-DISTNAME=	tkinfo-1.8
+DISTNAME=	tkinfo-2.1
 CATEGORIES=	misc tk80
 MASTER_SITES=	http://math-www.uni-paderborn.de/~axel/tkinfo/
 
