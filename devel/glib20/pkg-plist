@@ -1,16 +1,15 @@
-bin/glib-config
-include/glib/glib.h
-include/glib/glibconfig.h
-include/glib/gmodule.h
-lib/libglib11.a
-lib/libglib11.la
-lib/libglib11.so
-lib/libglib11.so.0.0
-lib/libgmodule11.a
-lib/libgmodule11.la
-lib/libgmodule11.so
-lib/libgmodule11.so.0.3
+bin/glib11d-config
+include/glib11d/glib.h
+include/glib11d/glibconfig.h
+include/glib11d/gmodule.h
+lib/libglib11d.a
+lib/libglib11d.la
+lib/libglib11d.so
+lib/libglib11d.so.1
+lib/libgmodule11d.a
+lib/libgmodule11d.la
+lib/libgmodule11d.so
+lib/libgmodule11d.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-share/aclocal/glib.m4
-@dirrm include/glib
+@dirrm include/glib11d
