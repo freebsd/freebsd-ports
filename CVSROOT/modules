@@ -2101,6 +2101,7 @@ gdesklets-multitail	ports/sysutils/gdesklets-multitail
 gdesklets-psi_displaypackage	ports/deskutils/gdesklets-psi_displaypackage
 gdesklets-psi_themes	ports/deskutils/gdesklets-psi_themes
 gdesklets-recentlyused	ports/deskutils/gdesklets-recentlyused
+gdesklets-rssgrab	ports/net/gdesklets-rssgrab
 gdesklets-sensor-psi_cpu	ports/sysutils/gdesklets-sensor-psi_cpu
 gdesklets-sensor-psi_disk	ports/sysutils/gdesklets-sensor-psi_disk
 gdesklets-sensor-psi_externalinterval	ports/deskutils/gdesklets-sensor-psi_externalinterval
