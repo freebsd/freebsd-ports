@@ -33,6 +33,8 @@ MANCOMPRESSED=	no
 SVNREPOS?=	/home/svn/repos
 APXS=		${LOCALBASE}/sbin/apxs
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_MOD_DAV_SVN)
 WITH_APACHE2_APR=	yes
 CONFIGURE_ARGS+= \
@@ -186,4 +188,4 @@ post-deinstall:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
