@@ -1,11 +1,8 @@
-share/locale/fr/LC_MESSAGES/Giram.mo
-share/locale/es/LC_MESSAGES/Giram.mo
-bin/povfront
 bin/giram
-libexec/giram/plug-ins/Spheres
+bin/povfront
 libexec/giram/plug-ins/Box
 libexec/giram/plug-ins/Rotate
-share/doc/giram/Tutorial
+libexec/giram/plug-ins/Spheres
 share/doc/giram/SampleScenes/Cone.pov
 share/doc/giram/SampleScenes/Disc.pov
 share/doc/giram/SampleScenes/Giram.pov
@@ -28,6 +25,9 @@ share/doc/giram/SampleScenes/superel3.pov
 share/doc/giram/SampleScenes/test.pov
 share/doc/giram/SampleScenes/torus.pov
 share/doc/giram/SampleScenes/Giram.gsf
+share/doc/giram/Tutorial
+share/locale/fr/LC_MESSAGES/Giram.mo
+share/locale/es/LC_MESSAGES/Giram.mo
 @dirrm share/doc/giram/SampleScenes
 @dirrm share/doc/giram
 @dirrm libexec/giram/plug-ins
