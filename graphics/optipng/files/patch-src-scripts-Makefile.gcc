@@ -1,0 +1,43 @@
+--- src/scripts/Makefile.gcc.orig	Mon May 12 22:11:56 2003
++++ src/scripts/Makefile.gcc	Wed Jul  9 13:29:49 2003
+@@ -1,21 +1,25 @@
+ # ** OptiPNG
+ # ** Quick and dirty makefile for GCC
+ 
++CC?=	gcc
++CFLAGS?=	-pipe -O2 -g
++CP?=	cp
++
+ all: optipng
+ 
+ optipng: optipng.o opngio.o opngreduc.o cbitset.o \
+   wildargs.o libpng.a libz.a
+-	gcc -s -o optipng optipng.o opngio.o opngreduc.o cbitset.o \
++	${CC} ${CFLAGS} -o optipng optipng.o opngio.o opngreduc.o cbitset.o \
+ 	  wildargs.o libpng.a libz.a
+ 
+ .c.o: #png.h opng.h
+-	gcc -c -O2 -I../lib-cos/zlib -I../lib-cos/libpng -Wall $*.c
++	${CC} ${CFLAGS} -c -I../lib-cos/zlib -I../lib-cos/libpng -Wall $*.c
+ 
+ cbitset.o: cbitset.c cbitset.h
+-	gcc -c -O2 -Wall $*.c
++	${CC} ${CFLAGS} -c -Wall $*.c
+ 
+ wildargs.o: xtra/wildargs.c
+-	gcc -c -O2 xtra/wildargs.c
++	${CC} ${CFLAGS} -c xtra/wildargs.c
+ 
+ libpng.a: ../lib-cos/libpng/libpng.a
+ 	cp ../lib-cos/libpng/libpng.a libpng.a
+@@ -24,7 +28,8 @@
+ 	cp ../lib-cos/zlib/libz.a libz.a
+ 
+ ../lib-cos/libpng/libpng.a: ../lib-cos/zlib/libz.a
+-	cd ../lib-cos/libpng; ${MAKE} -f scripts/makefile.gcc; cd ../../src
++	cd ../lib-cos/libpng; ${MAKE} CFLAGS="-I../zlib ${CFLAGS}" -f scripts/makefile.freebsd libpng.a; cd ../../src
+ 
+ ../lib-cos/zlib/libz.a:
+-	cd ../lib-cos/zlib; ./configure; ${MAKE}; cd ../../src
++# gcc 2.95 seems to break when using -O w/ x86.  Force -O2 over -O0.
++	cd ../lib-cos/zlib; ./configure; ${MAKE} CFLAGS="${CFLAGS} -O2"; cd ../../src
