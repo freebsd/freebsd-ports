@@ -12,7 +12,5 @@ of this library is to build a standard API for coroutines and implement it for
 as many architectures as possible. Currently on the i386 architecture is
 supported.
 
-WWW: http://themen01.exit.de/user/member/froese/
-
-- Kelly
-kbyanc@posi.net
+  -Kelly
+   kbyanc@posi.net

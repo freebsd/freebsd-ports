@@ -5,18 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=	libcoro
-PORTVERSION=	1.0.3
-CATEGORIES=	devel
-MASTER_SITES=	http://themen01.exit.de/user/member/froese/coro/
-DISTNAME=	coro-${PORTVERSION}
+PORTNAME=		libcoro
+PORTVERSION=		1.0.3
+CATEGORIES=		devel
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	kbyanc
+DISTNAME=		coro-${PORTVERSION}
 
-MAINTAINER=	kbyanc@posi.net
+MAINTAINER=		kbyanc@posi.net
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=		i386
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--arch arch/x86-freebsd
+HAS_CONFIGURE=		yes
+CONFIGURE_ARGS=		--arch arch/x86-freebsd
 
 MAN2=			coro.2
 
