@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netcdf
-PORTVERSION=	3.5.b6
+PORTVERSION=	3.5.b8
 CATEGORIES=	math
 MASTER_SITES=	ftp://unidata.ucar.edu/pub/netcdf/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/}
