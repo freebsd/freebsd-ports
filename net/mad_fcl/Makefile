@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mad_fcl
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.atm.tut.fi/mad/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}_src
@@ -26,6 +25,12 @@ DOC_FILES=	fdt-example.xml flute-sdp-example.sdp
 
 PORTDOCS=	${DOC_FILES} README.TXT
 PLIST_FILES=	bin/flute
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 502120
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-alclib_defines.h
+.endif
 
 pre-patch:
 	# Fixing the end-of-lines:
@@ -47,4 +52,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README.TXT ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
