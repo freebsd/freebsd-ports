@@ -1,0 +1,42 @@
+--- ../berkeleydb/db-3.2.9.patch.orig	Mon Jun 11 16:09:22 2001
++++ ../berkeleydb/db-3.2.9.patch	Tue Mar  5 17:13:09 2002
+@@ -43,3 +43,39 @@
+   
+   CC=		@MAKEFILE_CC@
+   CCLINK=		@MAKEFILE_CCLINK@
++--- misc/build/db-3.2.9/dist/configure.orig	Sat Nov 24 14:56:48 2001
+++++ misc/build/db-3.2.9/dist/configure	Sat Nov 24 14:57:32 2001
++@@ -995,6 +995,7 @@
++ 	   CPPFLAGS="-D_REENTRANT $CPPFLAGS";;
++ mpeix*)	   CPPFLAGS="-D_POSIX_SOURCE -D_SOCKET_SOURCE $CPPFLAGS"
++ 	   LIBS="-lsocket -lsvipc $LIBS";;
+++freebsd*)   optimize_def="-O";;
++ osf*)	   CPPFLAGS="-D_REENTRANT $CPPFLAGS";;
++ *qnx)	   cat >> confdefs.h <<\EOF
++ #define HAVE_QNX 1
++@@ -1795,6 +1796,7 @@
++ 	case "$host_os" in
++ 	solaris*)	JINCSUBDIRS="solaris";;
++ 	linux*)		JINCSUBDIRS="linux genunix";;
+++	freebsd*)	JINCSUBDIRS="freebsd solaris linux genunix";;
++ 	*)		JINCSUBDIRS="genunix";;
++ 	esac
++ 
++--- misc/build/db-3.2.9/dist/ltconfig.orig	Sat Nov 24 14:56:10 2001
+++++ misc/build/db-3.2.9/dist/ltconfig	Sat Nov 24 14:56:34 2001
++@@ -1194,11 +1194,12 @@
++ 
++   freebsd*)
++     if echo __ELF__ | $CC -E - | grep __ELF__ >/dev/null; then
++-      archive_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname -o $lib'
++-      archive_expsym_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
++-    else
++       archive_cmds='$LD -Bshareable $libobjs $deplibs $linkopts -o $lib'
++       # can we support soname and/or expsyms with a.out? -oliva
+++    else
+++      archive_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname -o $lib'
+++      archive_expsym_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
+++      need_version=no
++     fi
++     ;;
++ 
