@@ -6,33 +6,52 @@
 #
 
 PORTNAME= 	imake
-PORTVERSION= 	1.0
+PORTVERSION= 	4.0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.6/source/ \
-		ftp://ftp.freesoftware.com/pub/XFree86/3.3.6/source/ \
-		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-3.3.6/source/ \
-		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/3.3.6/source/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.6/source/
-DISTNAME=	X336src-1
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/4.0/source/ \
+		ftp://ftp.freesoftware.com/pub/XFree86/4.0/source/ \
+		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-4.0/source/ \
+		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/4.0/source/ \
+		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/4.0/source/
+DISTFILES=	X400src-1.tgz
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 MANUAL_PACKAGE_BUILD=	installs/removes files also in the XFree86 port
 
-PREFIX=		${X11BASE}
+PREFIX?=	${X11BASE}
 DIST_SUBDIR=	xc
 WRKSRC=		${WRKDIR}/xc/config
-MAN1=		imake.1 lndir.1 makedepend.1 xmkmf.1 makestrs.1 \
-		makeg.1 mkdirhier.1
+MTREE_FILE=	/etc/mtree/BSD.x11.dist
+.if !defined(NO_INSTALL_MANPAGES)
+MAN1=		imake.1 lndir.1 makedepend.1 makeg.1 makestrs.1 \
+		mkdirhier.1 pswrap.1 revpath.1 xmkmf.1
 MANCOMPRESSED=	yes
 INSTALL_TARGET=	install install.man
-MTREE_FILE=	/etc/mtree/BSD.x11.dist
-
-do-configure:
-	@${ECHO} > ${WRKSRC}/cf/host.def
-	@(cd ${WRKDIR}/xc; \
-	  ${MAKE} Makefile.boot ; \
-	  ${MAKE} -f xmakefile SUBDIRS="include config" VerifyOS Makefiles includes)
+.else
+INSTALL_TARGET=	install
+.endif
+# Followings are configration variables for XFree86 Systems.
+HasSecureRPC?=	YES
+HasXdmAuth?=	YES
+HasPam?=	YES
+BuildPexExt?=	YES
+BuildXinerama?=	YES
+BuildXIE?=	YES
+BuildAoutLibraries?=	NO
+# End of XFree86 configrations
+SCRIPTS_ENV+=	OSVERSION=${OSVERSION} \
+		PREFIX=${PREFIX} \
+		X11BASE=${X11BASE} \
+		WRKDIR=${WRKDIR} \
+		DISTDIR=${DISTDIR} \
+		FILESDIR=${FILESDIR} \
+		HasSecureRPC=${HasSecureRPC} \
+		HasXdmAuth=${HasXdmAuth} \
+		HasPam=${HasPam} \
+		BuildPexExt=${BuildPexExt} \
+		BuildXinerama=${BuildXinerama} \
+		BuildXIE=${BuildXIE} \
+		BuildAoutLibraries=${BuildAoutLibraries}
 
 .include <bsd.port.mk>

@@ -80,6 +80,7 @@
     SUBDIR += idle
     SUBDIR += ilu
     SUBDIR += imake
+    SUBDIR += imake-4
     SUBDIR += jam
     SUBDIR += kdbg
     SUBDIR += kdbg-i18n

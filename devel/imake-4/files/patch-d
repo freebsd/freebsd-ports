@@ -1,0 +1,30 @@
+--- cf/FreeBSD.cf.orig	Thu Feb 17 18:09:43 2000
++++ cf/FreeBSD.cf	Sat Mar 18 19:42:06 2000
+@@ -336,14 +336,14 @@
+ /* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
+ #ifndef DefaultGcc2i386Opt
+ #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
+-#define DefaultGcc2i386Opt -O2
++#define DefaultGcc2i386Opt
+ #endif
+ #endif
+ 
+ #ifdef i386Architecture
+ # define OptimizedCDebugFlags DefaultGcc2i386Opt
+ #else
+-# define OptimizedCDebugFlags -O
++# define OptimizedCDebugFlags
+ #endif
+ 
+ #ifndef PreIncDir
+@@ -463,8 +463,9 @@
+ /*
+  * A hack to work around an optimisation problem with the compiler on
+  * FreeBSD 4.0-current in late 1999/early 2000.
++ * (and FreeBSD 5.0-current in early 2000)
+  */
+-#if OSMajorVersion == 4 && OSMinorVersion == 0 && OSTeenyVersion == 0
++#if (OSMajorVersion == 4 || OSMajorVersion == 5) && OSMinorVersion == 0 && OSTeenyVersion == 0
+ #define FreeBSDGccOptBug
+ #endif
+ 
