@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qinx
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.usermode.org/code/
 
