@@ -12,11 +12,13 @@ DISTNAME=	unicode
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for using UTF-8 as input encoding
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
@@ -28,9 +30,10 @@ PLIST_SUB+=	CJK=""
 PLIST_SUB+=	CJK="@comment "
 .endif
 
-TEXMF?=		share/texmf
+TEXMFLOCAL=	share/texmf-local
+TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-CLASSDIR=	${TEXMF}/tex/latex/${PORTNAME:S/^latex-//}
+CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
 CLASS_FILES=	ucs.sty utf8.def ucsencs.def
