@@ -1,4 +1,4 @@
-OpenOffice.org Build 1.0.1 Personal Install How-To
+OpenOffice.org Build 1.0.2 Personal Install How-To
 
 Written by:	Martin Blapp <mbr@freebsd.org>
 
@@ -8,30 +8,21 @@ ${PREFIX}/OpenOffice.org1.0/
 1 User installation
 -------------------
 
-1.1 OO.org installed from the ports collection
+Just type "openoffice" after you have successfully
+installed the package. If there is no installed
+OO.org dir in hour homedir, you'll be prompted to
+install some files and choose a installed JDK.
+The setup installs a "OpenOffice.org1.0.2" folder
+in your homedir.
 
-Once this is done you have to run "make install-user" as the
-user you like to use OO.org and choose a standard workstation
-installation.
+If the setup tells you there is already an installed
+version, you may look at the file ".sversionrc" in
+your homedir. In this file OpenOffice and StarOffice
+have both a line for each version which is installed.
+After removing the problematic line you should be able to
+install again.
 
-1.2 OO.org installed as package
-
-If you have just installed OO.org as package, there is no
-"make install-user" option available. Instead you'll have
-to run as the user you like to use OO.org:
-
-"${PREFIX}/bin/openoffice-setup" and choose a standard workstation
-installation.
-
-2 JDK-Installation
-------------------
-
-If OO.org asks you to choose the Java JDK during
-"make install-user", you must choose the linux jdk1.3.1.
-Native FreeBSD jdk1.3.1 does not work yet with FreeBSD
-OO.org does ignore it.
-
-3 Start OO.org
+2 Start OO.org
 --------------
 
 There are some wrappers installed for fast startup.
@@ -49,20 +40,31 @@ ${PREFIX}/bin/openoffice-spadmin
 ${PREFIX}/bin/openoffice-sweb
 ${PREFIX}/bin/openoffice-swriter
 
-4 Setup problems
-----------------
+OO.org does need $LANG to be set to a suitable value.
+If it is not already set, a default value is chosen.
+Some old X-Servers before XFree86 4.2 do not like the
+western locale with Euro symbol (ISO_8859-15).
+You should ignore the waring message then or upgrade to
+to a more recent X-server.
+
+If you have chosen US-ASCII as locale, you cannot load
+and save documents with special characters and these
+characters are also not available in swriter and scalc.
+
+3 Setup problems (> 4.7-RELEASE only)
+-------------------------------------
 
 If the setup complains about a missing file "setup.ins",
-it's time to upgrade your FreeBSD system to the lastest
+it's time to upgrade your FreeBSD system to the latest
 version. You will encounter this bug only if your OS is
-older than FreeBSD 4.7-RELEASE. 4.6-RELEASE and
-4.6.2-RELEASE are still affected.
+older than FreeBSD 4.7-RELEASE.
 
-5 Crashes in URL-location bar
------------------------------
+4 Crashes in URL-location bar (> 4.7-RELEASE only)
+--------------------------------------------------
 
 OO.org can crash if you enter a non existing path
 or URL in the location bar. To fix these crashes
-you need a uncommitted system patch for rtld:
+you need the following patch. You will see this
+bug only if your OS is older than FreeBSD 4.7-RELEASE.
 
 http://people.freebsd.org/~mbr/ooo/rtld-symlookup.diff
