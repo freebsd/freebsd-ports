@@ -1,0 +1,5 @@
+bin/bbappconf
+share/bbtools/README.bbappconf
+share/bbtools/bbappconf.bb
+share/bbtools/bbappconf.nobb
+@dirrm share/bbtools

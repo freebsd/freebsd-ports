@@ -1,0 +1,9 @@
+bbappconf makes it possible to set some options for the windows blackbox opens,
+like:
+
+    * on which desktop they should open
+    * if it should be displayed without titlebar
+    * if it should be sticky
+    * position size of windows
+
+WWW: http://bbtools.windsofstorm.net/
