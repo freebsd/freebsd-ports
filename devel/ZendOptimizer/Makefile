@@ -27,7 +27,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 # Check for FreeBSD version
 .if ${OSVERSION} < 400000 || ${OSVERSION} > 499999
-BROKEN=		"This port is for FreeBSD 4 only"
+IGNORE=		"This port is for FreeBSD 4 only"
 .else
 # Check for ZendOptimizer sources
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
