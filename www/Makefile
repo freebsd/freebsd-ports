@@ -194,7 +194,6 @@
     SUBDIR += p5-HTML-Tree
     SUBDIR += p5-HTTP-GHTTP
     SUBDIR += p5-HTTPD-Tools
-    SUBDIR += p5-Image-Size
     SUBDIR += p5-ParallelUA
     SUBDIR += p5-Template-Toolkit
     SUBDIR += p5-WWW-Babelfish
