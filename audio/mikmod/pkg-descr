@@ -1,6 +1,13 @@
-This is a mod player which uses ncurses as a UI. It can play S3M, XM, MOD, 
-MTM, STM, ULT, and UNI module types.
-It uses the Open Sound System, and has features like sample interpolation,
-random mod playing, and supports playing compressed modules. (Note: its
-playing of compressed modules is OK, providing they don't have spaces in
-their names...)
+MikMod is a portable modules player originally written by
+of Jean-Paul Mikkers (MikMak) for DOS. It has 
+subsequently been hacked by many hands and now runs on 
+many platforms, this particular distribution intended
+to compile fairly painlessly in a Unix (Linux) environment.
+It uses the OSS /dev/dsp driver including in all recent 
+kernels for output, and will also write wav files. 
+Supported file formats include mod, stm, s3m, mtm, xm,
+and it.  The player uses ncurses for console output and
+supports transparent loading from gzip/pkzip/zoo archives
+and the loading/saving of playlists.
+Full source included, use of this library for music/sound 
+effects in your own programs is encouraged!
