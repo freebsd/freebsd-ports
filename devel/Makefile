@@ -710,6 +710,7 @@
     SUBDIR += ruby-mock
     SUBDIR += ruby-ncurses
     SUBDIR += ruby-pcsc-lite
+    SUBDIR += ruby-poll
     SUBDIR += ruby-property
     SUBDIR += ruby-racc
     SUBDIR += ruby-rbison
