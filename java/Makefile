@@ -56,7 +56,6 @@
     SUBDIR += mmake
     SUBDIR += netrexx
     SUBDIR += openjit
-    SUBDIR += perltools
     SUBDIR += shujit
     SUBDIR += tya
     SUBDIR += xalan-j
