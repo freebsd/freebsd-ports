@@ -1,34 +1,5 @@
-emacs-w3m is a simple interface program of w3m for Emacs.
-
-Before using emacs-w3m, you must set following elisp to your own
-.emacs file.
-
-(autoload 'w3m "w3m" "Interface for w3m on Emacs." t)
-
-If you want to use emacs-w3m on Wanderlust, set following elisp to
-your own .emacs file.
-
-(setq mime-setup-enable-inline-html nil)
-(eval-after-load "mime-view"
-  '(progn
-     (autoload 'mime-w3m-preview-text/html "mime-w3m")
-     (ctree-set-calist-strictly
-      'mime-preview-condition
-      '((type . text)
-        (subtype . html)
-	(body . visible)
-	(body-presentation-method . mime-w3m-preview-text/html)))
-     (set-alist 'mime-view-type-subtype-score-alist
-		'(text . html) 3)))
-
-And if you want to use emacs-w3m on Mew, set following elisp to
-your own .mew file.
-
-(require 'mew-w3m)
-(setq mew-prog-html '(mew-mime-text/html-w3m nil nil))
-
+Emacs-w3m is a simple interface program of w3m for Emacs.
 
 WWW: http://namazu.org/~tsuchiya/emacs-w3m/
-
 --
 MANTANI Nobutaka <nobutaka@nobutaka.com>
