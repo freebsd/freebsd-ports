@@ -1,12 +1,12 @@
-*** pine/makefile.bsf.orig	Tue Sep 10 14:39:15 2002
---- pine/makefile.bsf	Sat Feb  7 20:14:42 2004
+*** pine/makefile.bsf.orig	Mon Nov 24 22:47:28 2003
+--- pine/makefile.bsf	Sat May 22 14:31:22 2004
 ***************
 *** 67,73 ****
                `cat $(CCLIENTDIR)/LDFLAGS`
   
   STDCFLAGS=   -DBSDI -DSYSTYPE=\"BSF\" -DMOUSE
 ! CFLAGS=      $(OPTIMIZE) $(PROFILE) $(DEBUG) $(EXTRACFLAGS) $(LDAPCFLAGS) \
-  	     $(STDCFLAGS)
+  	     $(LOCALPINECFLAGS) $(STDCFLAGS)
   
   OFILES=	addrbook.o adrbkcmd.o adrbklib.o args.o bldaddr.o context.o filter.o \
 --- 67,73 ----
@@ -14,6 +14,6 @@
   
   STDCFLAGS=   -DBSDI -DSYSTYPE=\"BSF\" -DMOUSE
 ! CFLAGS+=      $(OPTIMIZE) $(PROFILE) $(DEBUG) $(EXTRACFLAGS) $(LDAPCFLAGS) \
-  	     $(STDCFLAGS)
+  	     $(LOCALPINECFLAGS) $(STDCFLAGS)
   
   OFILES=	addrbook.o adrbkcmd.o adrbklib.o args.o bldaddr.o context.o filter.o \
