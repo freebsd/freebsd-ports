@@ -1,0 +1,15 @@
+The following documentation has been installed:
+
+    info 'Exim Overview'	-> Overview of Exim
+    info Exim			-> Exim Specification (User Guide)
+    info 'Exim Filtering'	-> Exim Filter Specification (for end-users)
+
+Postscript, PDF, HTML and plain text versions of these documents, as well
+as a comprehensive FAQ list, are available on the Exim web site:
+
+	http://www.exim.org/
+
+To activate Exim:
+
+1) Create exim/configure from exim/configure.sample .
+2) Use the rc.d/exim/sh script to start the Exim daemon .
