@@ -13,7 +13,7 @@
   # BIN_DIR variable, you would uncomment the following line
   # or add your own line.
   #
-! BIN_DIR       =       /usr/local/bin
+! BIN_DIR       =       $(PREFIX)/bin
 ! OPT =         -O -s
 ! CLIENT =      rdist6
   
@@ -33,8 +33,8 @@
   #
   # Site specific Man Page configuration.
   #
-! MAN_1_DIR	= /usr/local/man/man1
-! MAN_8_DIR	= /usr/local/man/man8
+! MAN_1_DIR	= $(PREFIX)/man/man1
+! MAN_8_DIR	= $(PREFIX)/man/man8
 ! MAN_OWNER	= bin
 ! MAN_GROUP	= bin
   #MAN_MODE	= 644
