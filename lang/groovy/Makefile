@@ -13,6 +13,8 @@ MASTER_SITES=	http://dist.codehaus.org/groovy/distributions/
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Agile dynamic language for the JVM
 
+BROKEN=		Incomplete pkg-plist
+
 USE_REINPLACE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+

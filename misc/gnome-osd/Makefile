@@ -13,6 +13,8 @@ MASTER_SITES=	http://telecom.inescporto.pt/~gjc/gnome-osd/
 MAINTAINER=	jylefort@brutele.be
 COMMENT=	An On-Screen-Display infrastructure using Pango text rendering
 
+BROKEN=		Incomplete pkg-plist
+
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack pygnome2

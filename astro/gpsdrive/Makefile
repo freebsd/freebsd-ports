@@ -19,6 +19,8 @@ COMMENT=	A GPS navigation system
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GETOPT_LONG=yes
 USE_GETTEXT=	yes
 USE_PERL5=	yes
