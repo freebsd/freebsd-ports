@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	1.3.13
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-alpha2,} \
 		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
