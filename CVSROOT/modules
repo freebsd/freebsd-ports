@@ -5904,6 +5904,7 @@ ports_x11_wm	ports/x11-wm
 portscanner	ports/security/portscanner
 portsentry	ports/security/portsentry
 portupgrade	ports/sysutils/portupgrade
+posadis		ports/net/posadis
 pose		ports/palm/pose
 postal		ports/benchmarks/postal
 poster		ports/print/poster
