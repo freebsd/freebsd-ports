@@ -3,7 +3,7 @@
 # Date created:			2 Jun 1997
 # Whom:				Ruslan Shevchenko <rssh@satori.ipri.kiev.ua>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/26 11:28:36 max Exp $
+# $Id: Makefile,v 1.2 1997/06/29 09:27:18 obrien Exp $
 #
 
 DISTNAME=	sr
