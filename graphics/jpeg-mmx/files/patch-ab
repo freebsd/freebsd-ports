@@ -1,5 +1,14 @@
---- configure.orig	Wed Apr 22 20:32:48 1998
-+++ configure	Wed Apr 22 20:33:09 1998
+--- configure.orig	Sat Mar 21 14:08:57 1998
++++ configure	Wed Mar 22 09:28:33 2000
+@@ -1529,7 +1529,7 @@
+ 
+ if test "x$LTSHARED" != xno  -o  "x$LTSTATIC" != xno; then
+   USELIBTOOL="yes"
+-  LIBTOOL="./libtool"
++  LIBTOOL="/usr/local/bin/libtool"
+   O="lo"
+   A="la"
+   LN='$(LIBTOOL) --mode=link $(CC)'
 @@ -1647,7 +1647,7 @@
  # Extract the library version ID from jpeglib.h.
  echo $ac_n "checking libjpeg version number""... $ac_c" 1>&6
