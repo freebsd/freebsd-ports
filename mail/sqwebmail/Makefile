@@ -7,7 +7,7 @@
 
 PORTNAME=	sqwebmail
 PORTVERSION=	4.0.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -54,6 +54,10 @@ IMAGEURL?=	${WEBDATASUBDIR}
 # set WITH_MAXMSGSIZE to max size of messages (including attachments)
 # set WITH_MAXARGSIZE to max size of a text message (excluding attachments)
 # set WITH_MAXFORMARGSIZE to max size of attachments
+# 
+# set WITH_CHARSET=chset,chset,... to enable charsets.
+# Set it to "all" will enable all unicode charset mappings.
+# For available charsets just type "iconv -l"
 
 CACHEDIR?=	/var/sqwebmail/cache
 CACHEOWNER?=	bin
@@ -182,6 +186,14 @@ CONFIGURE_ARGS+=	--with-maxargsize=${WITH_MAXARGSIZE}
 
 .if defined(WITH_MAXFORMARGSIZE)
 CONFIGURE_ARGS+=	--with-maxformargsize=${WITH_MAXFORMARGSIZE}
+.endif
+
+.if defined(WITH_CHARSET)
+.if ${WITH_CHARSET:U} == ALL
+CONFIGURE_ARGS+=	--enable-unicode
+.else
+CONFIGURE_ARGS+=	--enable-unicode=${WITH_CHARSET}
+.endif
 .endif
 
 MAN1=		maildirmake.1
