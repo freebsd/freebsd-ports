@@ -31,6 +31,8 @@ INSTALLS_SHLIB=	yes
 WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--enable-shared
+MAKE_ENV=	LANG=C	# prevent bison 1.33 w/ gettext 0.10.35 from coredumping
+MAKE_ARGS=	-j3
 MAN1=		ruby${_RUBY_SUFFIX}.1
 
 .include <bsd.port.pre.mk>
