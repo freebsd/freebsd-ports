@@ -7,7 +7,7 @@
 
 PORTNAME=	OpenEXR
 PORTVERSION=	1.0.5
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://savannah.nongnu.org/download/openexr/${PORTNAME}.pkg/${PORTVERSION}/
 
@@ -18,6 +18,8 @@ USE_GCC=	3.1+
 USE_LIBTOOL=	YES
 GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
+
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -46,7 +48,7 @@ pre-everything::
 	@${ECHO_CMD} ===================================================
 .endif
 .else
-CONFIGURE_ARGS+=--with-fltk-config=/usr/bin/false --without-x
+CONFIGURE_ARGS+=--with-fltk-config=${FALSE} --without-x
 PLIST_SUB+=	WITH_FLTK="@comment "
 .endif
 
