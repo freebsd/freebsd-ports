@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://net.doit.wisc.edu/~plonka/FlowScan/
 DISTFILES=	FlowScan-${PORTVERSION}.tar.gz
 
-MAINTAINER=	lyngbol@wheel.dk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Processes IP flows recorded in cflowd-format raw flow files
 
 BUILD_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh \
