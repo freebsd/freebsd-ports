@@ -1,5 +1,6 @@
 bin/longplayer
 bin/lplayer
+%%DATADIR%%/images/add5.png
 %%DATADIR%%/images/genre-disabled.png
 %%DATADIR%%/images/genre.png
 %%DATADIR%%/images/go.png
@@ -19,6 +20,7 @@ bin/lplayer
 %%DATADIR%%/images/ratedown32.png
 %%DATADIR%%/images/rateup.png
 %%DATADIR%%/images/rateup32.png
+%%DATADIR%%/images/refresh.png
 %%DATADIR%%/images/stop.png
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
