@@ -44,7 +44,7 @@ footer() {
 #
 # Create "default" output, sorted on portname
 #
-header "<th>Port</th><th>Package</th><th>Broken</th><th>Last</th><th>Count</th>"
+header "<th>Port</th><th>Package</th><th>Broken</th><th>Last</th><th>#</th>"
 
 sort -r -n -k 4 -t \| failure > newfailure
 IFS='|'
@@ -58,8 +58,8 @@ while read dir name ver date last count; do
 #    echo "<td><a href=\"mailto:$6\">$6</a></td>" >> $of
 #    echo "<td>" >> $of
 
-    alphadate=$(date -jf %s ${date})
-    alphalast=$(date -jf %s ${last})
+    alphadate=$(date -jf %s ${date} "+%F %T")
+    alphalast=$(date -jf %s ${last} "+%F %T")
     echo "<td>${alphadate}</td>" >> $of
     echo "<td>${alphalast}</td>" >> $of
     echo "<td>$count</td>" >> $of
