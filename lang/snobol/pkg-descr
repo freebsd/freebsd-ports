@@ -1,22 +1,13 @@
-This is GNU Awk 3.0.4. It should be upwardly compatible with the Bell
-Labs research version of awk.  It is almost completely compliant with
-the 1993 POSIX 1003.2 standard for awk. (See the note below about POSIX.)
+0.99.4 release of ``The Macro Implementation of SNOBOL4 in C''
 
-Patches 1 through 4 just fix bugs -- see NEWS and ChangeLog for details.
+This is a free port of the original SIL (SNOBOL4 Implementation
+Language) macro version of SNOBOL4 (developed at Bell Labs) with
+the C language as target, http://www.snobol4.com/snobol4-0.99.4.tar.gz.
 
-See the file INSTALL for installation instructions.
-
-Known problems are given in the PROBLEMS file.  Work to be done is
-described briefly in the FUTURES file.  Verified ports are listed in
-the PORTS file.  Changes in this version are summarized in the NEWS file.
-Please read the LIMITATIONS and ACKNOWLEDGMENT files.
-
-Read the file POSIX for a discussion of how the standard says comparisons
-should be done vs. how they really should be done and how gawk does them.
-  
-To format the documentation with TeX, use at least version 2.151 of
-texinfo.tex. There is a usable copy of texinfo.tex in the doc directory.
-
-The Info file now comes with the distribution.
-
-The man page is up to date.
+SNOBOL4, while known primarily as a string language excels at any
+task involving symbolic manipulations.  It provides run time typing,
+garbage collection, user data types, on the fly compilation.  It's
+primary weakness is it's simple syntax, and lack of "structured
+programming" constructs.  However some consider the spareness of
+SNOBOL4 syntax a strength when compared to some "modern" agglomerations
+such as perl.
