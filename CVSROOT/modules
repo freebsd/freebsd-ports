@@ -1512,6 +1512,7 @@ fribidi		ports/textproc/fribidi
 frink		ports/devel/frink
 frodo		ports/emulators/frodo
 from		src/usr.bin/from
+frontpage	ports/www/frontpage
 frotz		ports/games/frotz
 fsck		src/sbin/fsck
 fsck_ext2fs	ports/sysutils/fsck_ext2fs
