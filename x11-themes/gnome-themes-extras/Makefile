@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-themes-extras
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
@@ -31,5 +32,7 @@ PLIST_SUB=	GTK_VERSION="2.4.0"
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		"/^themedir =.*metacity-1$$/s|themes|gnome/themes|"
+	${REINPLACE_CMD} -e 's|Wasp Smooth|Wasp|g' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

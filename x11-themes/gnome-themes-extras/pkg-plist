@@ -1,5 +1,4 @@
 lib/gtk-2.0/%%GTK_VERSION%%/engines/libindustrial.so
-lib/gtk-2.0/%%GTK_VERSION%%/engines/libsmooth.so
 share/gnome/themes/Amaranth/metacity-1/left-side.png
 share/gnome/themes/Amaranth/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Amaranth/metacity-1/right-side.png
