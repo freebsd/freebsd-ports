@@ -21,6 +21,8 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=Browser, HTML editor, mail and news client for use with Linux plugins
 
 RUN_DEPENDS=	\
+	${LINUXBASE}/usr/lib/libjpeg.so.62.0.0:${PORTSDIR}/graphics/linux-jpeg \
+	${LINUXBASE}/usr/lib/libpng.so.2.1.0.14:${PORTSDIR}/graphics/linux-png \
 	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
 NO_BUILD=	yes
