@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static --with-zlib
 USE_PERL5_BUILD=yes
 MAKE_ENV=	objformat=${PORTOBJFORMAT}
+INSTALLS_SHLIB=	yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/modules/expat/xmlparse/xmlparse.h \
