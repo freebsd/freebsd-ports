@@ -456,6 +456,7 @@
     SUBDIR += st
     SUBDIR += stlport
     SUBDIR += str
+    SUBDIR += strace
     SUBDIR += styx
     SUBDIR += swarm
     SUBDIR += swigruby
