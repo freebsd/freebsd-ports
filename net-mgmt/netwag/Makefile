@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netwag
-PORTVERSION=	5.21.0
+PORTVERSION=	5.23.0
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www.laurentconstantin.com/common/netw/${PORTNAME}/download/v5/ \
 		http://membres.lycos.fr/lauconstantin/common/netw/${PORTNAME}/download/v5/ \
@@ -29,6 +29,7 @@ PLIST_SUB+=	SHORTPORTVERSION=${SHORTPORTVERSION}
 
 do-configure:
 		@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
+			 -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 			${WRKSRC}/config.dat
 		cd ${WRKSRC}; ${SH} ./genemake
 

@@ -1,14 +1,23 @@
 
 $FreeBSD$
 
---- config.dat.orig	Wed Aug 11 17:49:39 2004
-+++ config.dat	Wed Aug 11 17:49:54 2004
-@@ -4,7 +4,7 @@
+--- config.dat.orig	Mon Aug 30 20:51:57 2004
++++ config.dat	Wed Sep  1 11:54:21 2004
+@@ -7,7 +7,7 @@
  
  ##########################################################################
- ### installation prefix directory of netwib [should not need to be modified]
--NETWIBDEF_INSTPREFIX=/usr/local
-+NETWIBDEF_INSTPREFIX=%%PREFIX%%
+ ### installation prefix directory of netwox
+-NETWOXDEF_INSTPREFIX=/usr/local
++NETWOXDEF_INSTPREFIX=%%LOCALBASE%%
+ 
+ ### installation destination directory of netwox
+ NETWOXDEF_INSTDESTDIR=""
+@@ -18,7 +18,7 @@
  
  ##########################################################################
- ### installation destination directory [should not need to be modified]
+ ### directories where netwag will be installed
+-NETWAGDEF_INSTPREFIX=/usr/local
++NETWAGDEF_INSTPREFIX=%%PREFIX%%
+ NETWAGDEF_INSTBIN=${NETWAGDEF_INSTPREFIX}/bin
+ NETWAGDEF_INSTMAN=${NETWAGDEF_INSTPREFIX}/man
+ NETWAGDEF_INSTMAN1=${NETWAGDEF_INSTMAN}/man1
