@@ -33,6 +33,7 @@ include/vamos/geometry/Texture_Image.h
 include/vamos/geometry/Three_Matrix.h
 include/vamos/geometry/Three_Vector.h
 include/vamos/geometry/Two_Point.h
+include/vamos/geometry/XML_Parser.h
 include/vamos/track/Road_Segment.h
 include/vamos/track/Strip_Track.h
 include/vamos/track/Track.h
@@ -53,9 +54,14 @@ lib/libvamos-track.so.0
 lib/libvamos-world.a
 lib/libvamos-world.so
 lib/libvamos-world.so.0
+%%DATADIR%%/cars/F1-1967-arm.ac
 %%DATADIR%%/cars/F1-1967-interior.ac
+%%DATADIR%%/cars/F1-1967-stator.ac
+%%DATADIR%%/cars/F1-1967-wishbone.ac
 %%DATADIR%%/cars/F1-1967.ac
 %%DATADIR%%/cars/F1-1967.xml
+%%DATADIR%%/cars/F1-stator.ac
+%%DATADIR%%/cars/F1-wishbone.ac
 %%DATADIR%%/cars/F1.ac
 %%DATADIR%%/cars/F1.xml
 %%DATADIR%%/cars/GT-interior.ac
@@ -68,6 +74,8 @@ lib/libvamos-world.so.0
 %%DATADIR%%/cars/wheel.ac
 %%DATADIR%%/controls/clutch-wheel.xml
 %%DATADIR%%/controls/default-controls.xml
+%%DATADIR%%/controls/keyboard.xml
+%%DATADIR%%/controls/mouse.xml
 %%DATADIR%%/controls/stick.xml
 %%DATADIR%%/controls/throttle-wheel.xml
 %%DATADIR%%/sounds/crash.wav
@@ -112,6 +120,7 @@ lib/libvamos-world.so.0
 %%DATADIR%%/textures/sky_top.png
 %%DATADIR%%/textures/speedometer-face.png
 %%DATADIR%%/textures/square-mask.png
+%%DATADIR%%/textures/square-mirror-frame.png
 %%DATADIR%%/textures/steering-wheel.png
 %%DATADIR%%/textures/tachometer-face.png
 %%DATADIR%%/textures/tachometer-leds.png
