@@ -375,7 +375,6 @@ ar-openoffice-1.0	ports/editors/openoffice-1.0-ar
 ar-openoffice-1.1	ports/arabic/openoffice-1.1
 arc		ports/archivers/arc
 arcexplorer	ports/databases/arcexplorer
-arch		ports/devel/arch
 archie		ports/net/archie
 archie.el	ports/net/archie.el
 archivemail	ports/mail/archivemail
