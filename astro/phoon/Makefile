@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	_20jan
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Phoon displays the phase of the moon
+COMMENT=	Displays the phase of the moon
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes

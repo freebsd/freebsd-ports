@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	jackit
 DISTNAME=		jack-audio-connection-kit-${PORTVERSION}
 
 MAINTAINER=		ports@FreeBSD.org
-COMMENT=		JACK is a low-latency audio server
+COMMENT=		A low-latency audio server
 
 BUILD_DEPENDS=		doxygen:${PORTSDIR}/devel/doxygen
 LIB_DEPENDS=		portaudio.0:${PORTSDIR}/audio/portaudio \
