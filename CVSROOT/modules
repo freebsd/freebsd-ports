@@ -6785,6 +6785,7 @@ virt		ports/games/virt
 virtualpaper	ports/print/virtualpaper
 vis		src/usr.bin/vis
 vis2u		ports/vietnamese/vis2u
+vis5d+		ports/science/vis5d+
 visualos	ports/emulators/visualos
 viz		ports/misc/viz
 vlc		ports/graphics/vlc
