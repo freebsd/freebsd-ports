@@ -1,0 +1,11 @@
+--- smtpclient_errno.c.orig	Wed Aug  1 15:09:39 2001
++++ smtpclient_errno.c	Wed Aug  1 15:11:36 2001
+@@ -91,7 +91,7 @@ char *errorstr(int errnum)
+ #else
+ 	static char buffer[50];
+ 	if (errnum < 0 || errnum >= sys_nerr)  {
+-	    sprintf(buffer, "ERR-UNKNOWN (%d)", errnum);
++	    snprintf(buffer, (sizeof(buffer) - 1), "ERR-UNKNOWN (%d)", errnum);
+ 	    return(buffer);
+ 	}
+ 	return(sys_errlist[errnum]);

@@ -179,6 +179,7 @@
     SUBDIR += smail
     SUBDIR += smapi
     SUBDIR += smtpd
+    SUBDIR += smtpclient
     SUBDIR += smtpfeed
     SUBDIR += smunge
     SUBDIR += solidpop3d
