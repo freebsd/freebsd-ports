@@ -3,7 +3,7 @@
 # Date created:		17 March 1997
 # Whom:			davidn@blaze.net.au
 #
-# $Id: Makefile,v 1.4 1998/07/14 23:36:30 jseger Exp $
+# $Id: Makefile,v 1.5 1998/08/07 23:56:10 asami Exp $
 #
 
 DISTNAME=	mxv-v1.10-source
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/audio/mxv/
 MAINTAINER=	davidn@blaze.net.au
 
 BUILD_DEPENDS=	${LOCALBASE}/interviews/bin/FREEBSD/ivmkmf:${PORTSDIR}/x11-toolkits/iv
+
+BROKEN_ELF=	depends on broken iv port
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
