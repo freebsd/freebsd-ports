@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- panel--/applet-main.gen_h	2002/07/18 11:26:49	1.1
++++ panel--/applet-main.gen_h	2002/07/18 11:29:40
+@@ -31,9 +31,9 @@
+   Applet_Main(const Gtk::string &app_id,
+ 	      const Gtk::string &app_version,
+ 	      int argc, char **argv,
+-	      struct poptOption *options = 0,
+-	      unsigned int flags = 0,
+-	      poptContext *return_ctx = 0);
++	      struct poptOption *options,
++	      unsigned int flags,
++	      poptContext *return_ctx);
+ 
+   ~Applet_Main();
+ 
