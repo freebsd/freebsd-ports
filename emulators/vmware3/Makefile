@@ -17,7 +17,7 @@ DISTFILES=	VMware-workstation-${PORTVERSION}${EXTRACT_SUFX}:vmware \
 
 # Feel free to post your questions/reports/suggestions on this port to
 # freebsd-emulation mailing list with the following maintainer address CC'ed.
-MAINTAINER=	mbr@freebsd.org
+MAINTAINER=	orlando.bassotto@ieo-research.it
 COMMENT=	A virtual machine emulator - a full PC in a window
 
 RUN_DEPENDS=	${LINUXBASE}/dev/rtc:${PORTSDIR}/emulators/rtc
