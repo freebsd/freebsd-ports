@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	zwiki
-PORTVERSION=	0.27.1
+PORTVERSION=	0.29.0
 CATEGORIES=	www zope
-MASTER_SITES=	http://www.zope.org/Members/simon/ZWiki/ \
-		http://zwiki.org/releases/
+MASTER_SITES=	http://zwiki.org/releases/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	ZWiki-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -22,20 +21,16 @@ USE_PYTHON=	yes
 DIST_SUBDIR=	zope
 
 ZOPEPRODUCTNAME=	ZWiki
-ZOPEPRODUCTDIR=		lib/python/Products
 
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
-CPIO=		cpio --quiet -pdum -R
 
 do-build:
-	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	@ ${CHMOD} -R og+rX ${WRKSRC}/
-	@ ${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
-	@ cd ${WRKSRC} && ${FIND} * \! -name \*.zexp \
-	  | ${CPIO} ${BINOWN}:${BINGRP} \
-	  ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
+	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
+	@${CHMOD} -R og+rX ${WRKSRC}/
+	@${CP} -R ${WRKSRC} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
 
 post-install:
 .if !defined(BATCH)
