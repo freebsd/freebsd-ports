@@ -27,7 +27,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
-USE_GTK=	yes
+USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 
 MAN1=		sylpheed-claws.1
@@ -38,10 +38,10 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" 
 		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 .if defined(WITH_PIXBUF) || defined(WITH_ALL)
-LIB_DEPENDS+=		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+USE_GNOME+=		gdkpixbuf
 CONFIGURE_ARGS+=	--disable-imlib
 .else
-USE_IMLIB=		yes
+USE_GNOME+=		imlib
 CONFIGURE_ARGS+=	--disable-gdk-pixbuf
 .endif
 .if defined(WITH_GPGME) || defined(WITH_ALL)

@@ -17,7 +17,7 @@ COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 
@@ -29,10 +29,10 @@ CONFIGURE_ARGS=	--enable-ipv6 --prefix=${PREFIX} --with-included-gettext \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PIXBUF)
-LIB_DEPENDS+=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+USE_GNOME+=	gdkpixbuf
 CONFIGURE_ARGS+=--disable-imlib
 .else
-USE_IMLIB=	yes
+USE_GNOME+=	imlib
 CONFIGURE_ARGS+=--disable-gdk-pixbuf
 .endif
 .if defined(WITH_GPGME)
