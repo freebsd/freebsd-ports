@@ -1,18 +1,14 @@
---- configure.orig	Sun Mar 18 12:20:41 2001
-+++ configure	Thu Mar 29 10:08:26 2001
-@@ -3106,3 +3106,3 @@
-   CATOBJEXT=.mo
--		   DATADIRNAME=lib
-+		   DATADIRNAME=share
+
+$FreeBSD$
+
+--- configure.orig	Fri Aug 24 11:05:06 2001
++++ configure	Tue Sep 11 18:16:08 2001
+@@ -2552,6 +2552,8 @@
+   echo "$as_me:2552: result: no" >&5
+ echo "${ECHO_T}no" >&6
  fi
-@@ -12107,6 +12107,6 @@
-       esac
--  case "$ac_given_INSTALL" in
--        [/$]*) INSTALL="$ac_given_INSTALL" ;;
--        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
--        esac
-+#  case "$ac_given_INSTALL" in
-+#        [/$]*) INSTALL="$ac_given_INSTALL" ;;
-+#        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
-+#        esac
++CPPLAGS="$save_CPPFLAGS"
++CFLAGS="$CFLAGS -I${LOCALBASE}/include"
+ rm -f conftest*
  
+ echo "$as_me:2557: checking for minix/config.h" >&5
