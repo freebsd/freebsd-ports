@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.221 1999/07/18 06:15:58 asami Exp $
+# $Id: Makefile,v 1.222 1999/07/31 04:09:27 asami Exp $
 #
 
     SUBDIR += 221upgrade
@@ -96,6 +96,7 @@
     SUBDIR += viz
     SUBDIR += wmcp
     SUBDIR += wmmand
+    SUBDIR += wmstock
     SUBDIR += wmweather
     SUBDIR += xd
     SUBDIR += xdelta
