@@ -8,7 +8,7 @@
 PORTNAME=	irssi
 PORTVERSION=	0.8.6
 PORTREVISION?=	1
-CATEGORIES+=	irc ipv6	# `+=' is for slave ports
+CATEGORIES+=	irc	# `+=' is for slave ports
 MASTER_SITES=	http://irssi.org/files/
 
 MAINTAINER?=	vanilla@FreeBSD.org
