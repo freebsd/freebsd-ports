@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	elm+ME
-PORTVERSION=	2.4.96${PATCHLEVEL}
-PORTREVISION=	1
+PORTVERSION=	${ELM_VERSION}.${ELM_REVISION}${ELM_PATCHLEVEL}
 CATEGORIES=	mail
-DISTNAME=	${PORTNAME:S/+ME//}-${PORTVERSION:R}ME+${PORTVERSION:E:S|${PATCHLEVEL}||}
+DISTNAME=	elm-${ELM_VERSION}ME+${ELM_REVISION}
 
 # here are the main repositories.
 MASTER_SITES=	ftp://ftp.ozone.fmi.fi/KEH/ \
@@ -25,10 +24,9 @@ MASTER_SITES+=	ftp://ftp.lip6.fr/pub/unix/mail/elm-me/ \
 # MASTER_SITES+=	ftp://ftp.unina.it/pub/Unix/pkgs/network/mail/elm-me+/ \
 # 		ftp://ftp.rge.com/pub/mail/elm/elm-2.4ME+/ \
 # 		ftp://ftp.uni-trier.de/pub/unix/network/mail/elm-me+/
+
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${DISTNAME:S/+/+PL/}a.patch.gz \
-		${DISTNAME:S/+/+PL/}b.patch.gz
-PATCHLEVEL=	b
+PATCHFILES=	# see below.
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	cyrille.lefevre@laposte.net
@@ -56,9 +54,6 @@ CONFIGURE_ARGS=	-S -P ${PREFIX}
 MAKE_ENV=	MJ="FORMATTER=groff FORMATTER_OPTS=-Tlatin1"
 ALL_TARGET=	all documentation
 
-# hack! don't know why but it's needed.
-MAKEFILE=	Makefile
-
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/%%SHLIB_SUBDIR%%
 
@@ -73,6 +68,20 @@ MLINKS=		frm.1 nfrm.1	newmail.1 wnewmail.1
 
 # Local variables
 #
+
+ELM_VERSION=	2.4
+ELM_REVISION=	98
+ELM_PATCHLEVEL=	b
+
+ELM_PATCHDONE=	false
+.for level in a b c d e f
+.if ${ELM_PATCHDONE} == false
+PATCHFILES+=	${DISTNAME:S/+/+PL/}${level}.patch.gz
+.endif
+.if ${ELM_PATCHLEVEL} == ${level}
+ELM_PATCHDONE=	true
+.endif
+.endfor
 
 # evaluation should be protected 'til extraction to avoid noisy messages.
 SO_REV=		$$([ -f ${WRKSRC}/hdrs/patchlevel.h ] && \
