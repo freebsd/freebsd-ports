@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.1.3
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -20,7 +19,7 @@ MASTER_SITE_SUBDIR=	. old related/postfix
 DISTNAME=	postfix-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dwcjr@FreeBSD.org
+MAINTAINER=	khera@kciLink.com
 
 MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
 	postfix.1 postkick.1 postlock.1 postlog.1 postmap.1 postqueue.1 \
@@ -32,6 +31,9 @@ MAN5=	access.5 aliases.5 canonical.5 pcre_table.5 regexp_table.5 \
 MAN8=	bounce.8 cleanup.8 defer.8 error.8 flush.8 lmtp.8 local.8 \
 	master.8 nqmgr.8 pickup.8 pipe.8 qmgr.8 qmqpd.8 showq.8 smtp.8 \
 	smtpd.8 spawn.8 trivial-rewrite.8 virtual.8
+
+CONF1=	main.cf master.cf access aliases canonical pcre_table regexp_table \
+	relocated transport virtual
 
 .if !defined(DEBUG)
 MAKEFILEFLAGS+=	DEBUG=
@@ -79,11 +81,10 @@ do-install:
 	 sample_directory=${PREFIX}/etc/postfix \
 	 readme_directory=${READMEDIR}
 
-	@${INSTALL_DATA} ${WRKSRC}/conf/main.cf \
-		${PREFIX}/etc/postfix/sample-main.cf
-
-	@${INSTALL_DATA} ${WRKSRC}/conf/master.cf \
-		${PREFIX}/etc/postfix/sample-master.cf
+.for file in ${CONF1}
+	${INSTALL_DATA} ${WRKSRC}/conf/${file} \
+		${PREFIX}/etc/postfix/sample-${file}
+.endfor
 
 	@${INSTALL_SCRIPT} \
 		${WRKSRC}/auxiliary/rmail/rmail \

@@ -83,12 +83,15 @@ if [ x"$2" = xPRE-INSTALL ]; then
 fi
 
 if [ x"$2" = xPOST-INSTALL ]; then
-        if [ ! -f ${PKG_PREFIX}/etc/postfix/main.cf ]; then
-                cp ${PKG_PREFIX}/etc/postfix/sample-main.cf ${PKG_PREFIX}/etc/postfix/main.cf
-        fi
-        if [ ! -f ${PKG_PREFIX}/etc/postfix/master.cf ]; then
-                cp ${PKG_PREFIX}/etc/postfix/sample-master.cf ${PKG_PREFIX}/etc/postfix/master.cf
-        fi
+	CONF1="main.cf master.cf access aliases canonical pcre_table \
+	regexp_table relocated transport virtual"
+
+	for file in $CONF1
+	do
+	        if [ ! -f ${PKG_PREFIX}/etc/postfix/$file ]; then
+        	        cp ${PKG_PREFIX}/etc/postfix/sample-$file ${PKG_PREFIX}/etc/postfix/$file
+	        fi
+	done
 
 	sh ${PKG_PREFIX}/etc/postfix/post-install tempdir=/tmp \
 	 config_directory=${PKG_PREFIX}/etc/postfix \
