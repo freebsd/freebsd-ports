@@ -25,4 +25,3 @@ to %%ZOPEBASEDIR%%/Products.
 You might have to add the following lines to your zope.conf 
 products %%ZOPEBASEDIR%%/Products
 products $INSTANCE/Products
-

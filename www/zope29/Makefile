@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.7.0
-PORTREVISION=	1
+PORTVERSION=	2.7.1
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}
@@ -22,6 +21,7 @@ USE_PYTHON=	yes
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 DIST_SUBDIR=	zope
+WRKSRC=		${WRKDIR}/${DISTNAME}-0
 
 # Note: the notes that follow reflect the decisions of prior maintainers
 # of this port. IOW, don't blame me if you don't like the way it's done.
@@ -55,6 +55,7 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 CONFIG_SUB=	ZOPEBASEDIR=${ZOPEBASEDIR} \
 		ZOPE_USER=${ZOPE_USER} \
 		ZOPEINSTANCEDIR=${ZOPEINSTANCEDIR}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if defined(BATCH)
 ISBATCH=	-u admin:test123
@@ -68,11 +69,14 @@ post-patch:
 
 post-install:
 	@${MV} ${ZOPEBASEDIR}/skel/etc/zope.conf.in ${ZOPEBASEDIR}/skel/etc/zope.conf.sample.in
-	@${SED} ${CONFIG_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} pkg-message
+	@${SED} ${CONFIG_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} < ${FILESDIR}/pkg-message.in \
+		> ${PKGMESSAGE}
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/zope.sh > ${PREFIX}/etc/rc.d/zope.sh
 	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/zope.sh
 	@${MKDIR} ${ZOPEBASEDIR}/Products
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 instance:
 	@${ZOPEBASEDIR}/bin/mkzopeinstance.py -d ${ZOPEINSTANCEDIR} ${ISBATCH}
