@@ -437,7 +437,6 @@
     SUBDIR += xjman
     SUBDIR += xjman-3
     SUBDIR += xjtext
-    SUBDIR += xklock
     SUBDIR += xmsgsaver
     SUBDIR += xnetmaj
     SUBDIR += xpdf
