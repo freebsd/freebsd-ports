@@ -18,6 +18,8 @@ RUN_DEPENDS=	${SITE_PERL}/HTTP/Request/Common.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
 
+BROKEN=		"Unfetchable"
+
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 NO_BUILD=	yes
