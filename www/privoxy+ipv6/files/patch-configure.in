@@ -1,0 +1,141 @@
+-- Patch by Lars Eggert <larse@isi.edu> USC Information Sciences Institute
+--- configure.in.orig	Fri Feb 20 17:15:20 2003
++++ configure.in	Fri Feb 20 17:15:51 2003
+@@ -726,137 +726,6 @@
+ AC_SUBST(PTHREAD_ONLY)
+
+ dnl =================================================================
+-dnl Support for thread-safe versions of gethostbyaddr, gethostbyname,
+-dnl gmtime and localtime
+-dnl =================================================================
+-
+-dnl Next line needed to find the gethost*_r functions on Solaris
+-AC_CHECK_LIB(nsl, gethostbyname)
+-
+-AC_CHECK_FUNC(gethostbyaddr_r, [
+-  AC_MSG_CHECKING([signature of gethostbyaddr_r])
+-  AC_TRY_COMPILE([
+-#   include <netdb.h>
+-  ], [
+-    struct hostent *h, *hp;
+-    char *a, *b;
+-    int l, bl, t, e;
+-    (void) gethostbyaddr_r(a, l, t, h, b, bl, &hp, &e)
+-  ], [
+-    AC_DEFINE(HAVE_GETHOSTBYADDR_R_8_ARGS)
+-    AC_MSG_RESULT([8 args])
+-  ], [
+-    AC_TRY_COMPILE([
+-#     include <netdb.h>
+-    ], [
+-      struct hostent *h;
+-      char *a, *b;
+-      int l, bl, t, e;
+-      (void) gethostbyaddr_r(a, l, t, h, b, bl, &e)
+-    ], [
+-      AC_DEFINE(HAVE_GETHOSTBYADDR_R_7_ARGS)
+-      AC_MSG_RESULT([7 args])
+-    ], [
+-      AC_TRY_COMPILE([
+-#       include <netdb.h>
+-      ], [
+-        struct hostent_data *d;
+-        struct hostent *h;
+-        char a,
+-        int l, t;
+-        (void) gethostbyaddr_r(a, l, t, h, d)
+-      ], [
+-        AC_DEFINE(HAVE_GETHOSTBYADDR_R_5_ARGS)
+-        AC_MSG_RESULT([5 args])
+-      ], [
+-        AC_MSG_RESULT(unrecognised)
+-      ])
+-    ])
+-  ])
+-], [
+-  AC_MSG_RESULT(no)
+-])
+-
+-AC_CHECK_FUNC(gethostbyname_r, [
+-  AC_MSG_CHECKING([signature of gethostbyname_r])
+-  AC_TRY_COMPILE([
+-#   include <netdb.h>
+-  ], [
+-    struct hostent *h, *r;
+-    char *n, *b;
+-    int bl, e;
+-    (void) gethostbyname_r(n, h, b, bl, &r, &e)
+-  ], [
+-    AC_DEFINE(HAVE_GETHOSTBYNAME_R_6_ARGS)
+-    AC_MSG_RESULT([6 args])
+-  ], [
+-    AC_TRY_COMPILE([
+-#     include <netdb.h>
+-    ], [
+-      struct hostent *h;
+-      char *n, *b;
+-      int bl, e;
+-      (void) gethostbyname_r(n, h, b, bl, &e)
+-    ], [
+-      AC_DEFINE(HAVE_GETHOSTBYNAME_R_5_ARGS)
+-      AC_MSG_RESULT([5 args])
+-    ], [
+-      AC_TRY_COMPILE([
+-#       include <netdb.h>
+-      ], [
+-        struct hostent_data *d;
+-        struct hostent *h;
+-        char *n,
+-        (void) gethostbyname_r(n, h, d)
+-      ], [
+-        AC_DEFINE(HAVE_GETHOSTBYNAME_R_3_ARGS)
+-        AC_MSG_RESULT([3 args])
+-      ], [
+-        AC_MSG_RESULT(unrecognised)
+-      ])
+-    ])
+-  ])
+-], [
+-  AC_MSG_RESULT(no)
+-])
+-
+-AC_CHECK_FUNC(gmtime_r, [
+-  AC_MSG_CHECKING([signature of gmtime_r])
+-  AC_TRY_COMPILE([
+-#   include <time.h>
+-  ], [
+-    struct time *t;
+-    struct tm *tm;
+-    (void) gmtime_r(t, tm)
+-  ], [
+-    AC_MSG_RESULT(ok)
+-    AC_DEFINE(HAVE_GMTIME_R)
+-  ], [
+-    AC_MSG_RESULT(unrecognised)
+-  ])
+-], [
+-  AC_MSG_RESULT(no)
+-])
+-
+-AC_CHECK_FUNC(localtime_r, [
+-  AC_MSG_CHECKING([signature of localtime_r])
+-  AC_TRY_COMPILE([
+-#   include <time.h>
+-  ], [
+-    struct time *t;
+-    struct tm *tm;
+-    (void) localtime_r(t, tm)
+-  ], [
+-    AC_MSG_RESULT(ok)
+-    AC_DEFINE(HAVE_LOCALTIME_R)
+-  ], [
+-    AC_MSG_RESULT(unrecognised)
+-  ])
+-], [
+-  AC_MSG_RESULT(no)
+-])
+-
+-dnl =================================================================
+ dnl Solaris specific
+ dnl FIXME: Not tested on Solaris yet...
+ dnl ISFIXED: Have tested it on Solaris, but there are other ways to
