@@ -1,0 +1,27 @@
+--- Makefile.orig	Tue Aug  8 14:28:27 1995
++++ Makefile	Sat Jun 14 18:19:04 1997
+@@ -7,9 +7,9 @@
+ #If the ar command fails on your system, consult the ar manpage
+ #for your system. 
+ 
+-CC=gcc 
+-AR=ar
+-CFLAGS=-O
++#CC=gcc 
++#AR=ar
++#CFLAGS=-O
+ LIBS=-L./ -lgd -lm
+ 
+ all: libgd.a gddemo giftogd webgif
+@@ -32,3 +32,11 @@
+ clean:
+ 	rm -f *.o *.a gddemo giftogd 
+ 
++install:
++	install -cs -o bin -g bin gddemo giftogd webgif ${PREFIX}/bin
++	install -c -o bin -g bin libgd.a ${PREFIX}/lib
++	install -c -o bin -g bin gd.h gdfonts.h ${PREFIX}/include/gd
++	install -c -o bin -g bin gdfontt.h gdfontmb.h ${PREFIX}/include/gd
++	install -c -o bin -g bin gdfontl.h gdfontg.h ${PREFIX}/include/gd
++	install -c -o bin -g bin index.html ${PREFIX}/share/examples/gd
++	install -c -o bin -g bin demoin.gif ${PREFIX}/share/examples/gd
