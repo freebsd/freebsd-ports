@@ -9,7 +9,7 @@ share/locale/nl/LC_MESSAGES/gramps.mo
 share/locale/nb/LC_MESSAGES/gramps.mo
 share/locale/it/LC_MESSAGES/gramps.mo
 share/locale/hu/LC_MESSAGES/gramps.mo
-share/locale/fr_FR/LC_MESSAGES/gramps.mo
+share/locale/fr/LC_MESSAGES/gramps.mo
 share/locale/fi/LC_MESSAGES/gramps.mo
 share/locale/es/LC_MESSAGES/gramps.mo
 share/locale/eo/LC_MESSAGES/gramps.mo
@@ -21,6 +21,7 @@ share/gnome/omf/gramps/gramps-manual-hu.omf
 share/gnome/omf/gramps/gramps-manual-fr.omf
 share/gnome/omf/gramps/gramps-manual-de.omf
 share/gnome/omf/gramps/gramps-manual-C.omf
+share/gnome/gramps.desktop
 share/gnome/gramps/tools.png
 share/gnome/gramps/styles.glade
 share/gnome/gramps/srcsel.glade
