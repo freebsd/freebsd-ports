@@ -1,0 +1,9 @@
+GTK+-2.0 Hangul Input Module
+
+Input method of gtk-2.0 widget. To select this modules, click
+right button in gtk20 text widget and select "Input Methods" -
+"Hangul" (not KSC5601).
+
+--
+CHOI Junho <cjh@FreeBSD.org>
+WWW: http://imhangul.kldp.net
