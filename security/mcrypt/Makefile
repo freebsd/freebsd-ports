@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	mcrypt
-PORTVERSION=	2.5.6
-PORTREVISION=	1
+PORTVERSION=	2.5.13
 CATEGORIES=    	security
 MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/ \
 		ftp://mcrypt.hellug.gr/pub/mcrypt/ \
@@ -17,7 +16,7 @@ MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/ \
 
 MAINTAINER=	trevor@FreeBSD.org
 
-LIB_DEPENDS=	mcrypt.6:${PORTSDIR}/security/libmcrypt/ \
+LIB_DEPENDS=	mcrypt.7:${PORTSDIR}/security/libmcrypt/ \
 		mhash.2:${PORTSDIR}/security/mhash/ \
 		intl.2:${PORTSDIR}/devel/gettext
 
