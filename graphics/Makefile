@@ -135,6 +135,7 @@
     SUBDIR += py-opengl
     SUBDIR += qcread
     SUBDIR += qiv
+    SUBDIR += quickpics
     SUBDIR += qvplay
     SUBDIR += rayshade
     SUBDIR += sane
