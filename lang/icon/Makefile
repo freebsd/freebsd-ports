@@ -1,9 +1,9 @@
 # New ports collection makefile for:    icon
 # Version required:     9.3
 # Date created:         05 April 1995
-# Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
+# Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.9 1997/10/31 21:54:47 jseger Exp $
+# $Id: Makefile,v 1.10 1997/11/04 04:12:09 asami Exp $
 #
 
 DISTNAME=       unix
