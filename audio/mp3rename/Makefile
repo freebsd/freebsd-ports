@@ -14,10 +14,7 @@ MAINTAINER=	janssen@rendo.dekooi.nl
 
 FETCH_BEFORE_ARGS=	-b
 
-MAN1=		mp3rename.1
-MANCOMPRESSED=	yes
-
-post-install:
-	strip ${PREFIX}/bin/mp3rename
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/mp3rename $(PREFIX)/bin/mp3rename
 
 .include <bsd.port.mk>
