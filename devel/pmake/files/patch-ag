@@ -1,0 +1,8 @@
+--- customs/sigList.c.orig	Thu Nov 12 16:43:25 1998
++++ customs/sigList.c	Thu Nov 12 16:43:54 1998
+@@ -20,4 +20,5 @@
+ #endif /* not lint */
+ 
++#include    <sys/types.h>
+ #include    <sys/signal.h>
+ 

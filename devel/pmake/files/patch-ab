@@ -1,0 +1,11 @@
+--- lib/sprite/strsignal.c.orig	Thu Nov 12 10:47:48 1998
++++ lib/sprite/strsignal.c	Thu Nov 12 10:48:36 1998
+@@ -23,7 +23,7 @@
+ 
+ #ifndef _sys_siglist	/* SVR4 has strsignal() */
+ 
+-#ifndef hpux
++#if !defined(hpux) && !defined(__FreeBSD__)
+ extern char *sys_siglist[];
+ #endif /* hpux */
+ 
