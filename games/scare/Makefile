@@ -16,13 +16,15 @@ COMMENT=	ADRIFT-compatible interactive games interpreter
 
 USE_ZIP=	yes
 
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
 BINFILES=	scare
 
 .if defined(WITH_XGLK)
 PKGNAMESUFFIX=	-glk
 
-BUILD_DEPENDS=	${X11BASE}/lib/libxglk.a:${PORTSDIR}/games/xglk
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	${X11BASE}/lib/libxglk.a:${PORTSDIR}/games/xglk
+RUN_DEPENDS+=	${X11BASE}/lib/libxglk.a:${PORTSDIR}/games/xglk
 
 ALL_TARGET=	all glkscare
 
