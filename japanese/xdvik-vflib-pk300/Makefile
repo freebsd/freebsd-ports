@@ -8,6 +8,7 @@
 RUN_DEPENDS=	${LOCALBASE}/share/texmf/fonts/pk/${MF_MODE}/pk${BDPI}:${PORTSDIR}/japanese/ptex-pkfonts${BDPI}
 
 FONTTYPE=	pkfont
+USEPK_MODE=	cx
 BDPI=		300
 SHRINK=		6
 MASTERDIR=	${.CURDIR}/../xdvik-vflib

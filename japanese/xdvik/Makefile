@@ -100,8 +100,8 @@ DOCS=		FAQ xdvi.icon CHANGES.xdvik-jp \
 #  ${PREFIX}/libexec/xdviprint, any kind of program can be used.
 # ******************
 FONTTYPE?=	metafont
-USEPK_MODE?=	preview
-MAKETEX_MODE?=	ljfour
+USEPK_MODE?=	cx
+MAKETEX_MODE?=	cx
 SHRINK?=	6
 BDPI?=		300
 DVIPS?=		dvips
