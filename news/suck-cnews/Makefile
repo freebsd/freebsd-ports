@@ -10,4 +10,8 @@ MASTERDIR=	${.CURDIR}/../suck
 NEWSBIN?=	${PREFIX}/libexec/cnews
 NEWSCTL?=	${PREFIX}/news/lib
 
+.if exists(${.CURDIR}/Makefile.local)
+.include "${.CURDIR}/Makefile.local"
+.endif
+
 .include "${MASTERDIR}/Makefile"
