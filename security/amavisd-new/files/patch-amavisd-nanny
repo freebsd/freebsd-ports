@@ -1,0 +1,11 @@
+--- amavisd-nanny.orig	Wed Aug 11 02:39:16 2004
++++ amavisd-nanny	Mon Aug 16 11:41:56 2004
+@@ -61,7 +61,7 @@
+ # main program starts here
+   $SIG{INT} = sub { die "\n" };
+   my($env) = BerkeleyDB::Env->new(
+-    '-Home'=>'/var/amavis/db', '-Flags'=> DB_INIT_CDB | DB_INIT_MPOOL);
++    '-Home'=>'%%AMAVISDIR%%/db', '-Flags'=> DB_INIT_CDB | DB_INIT_MPOOL);
+   defined $env or die "BDB no env: $BerkeleyDB::Error $!";
+   my($db) = BerkeleyDB::Hash->new(
+     '-Filename'=>'nanny.db', '-Env'=>$env );
