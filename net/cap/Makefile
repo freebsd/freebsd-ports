@@ -3,7 +3,7 @@
 # Date created:			09 Nov 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: porting.sgml,v 1.16 1996/03/21 14:15:01 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/12/01 12:08:47 max Exp $
 #
 
 DISTNAME=	cap60.pl100
@@ -24,8 +24,6 @@ PATCH_SITES=	ftp://ftp-ns.rutgers.edu/pub/cap/cap.patches/ \
 		ftp://munnari.OZ.AU/mac/cap.patches/
 PATCHFILES=	cap60.patch193 cap60.patch194 cap60.patch195 cap60.patch196 \
 		cap60.patch197 cap60.patch198
-
-MAINTAINER=	max@FreeBSD.ORG
 
 NO_CDROM=	"Don't sell for profit"
 WRKSRC=		${WRKDIR}/cap60
