@@ -7,11 +7,10 @@
 
 PORTNAME=	thunderbird
 PORTVERSION=	1.0
-PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION:S/.rc/rc/}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.rc/rc/}-source
+MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
@@ -123,6 +122,8 @@ post-patch:
 		${WRKSRC}/js/src/Makefile.in
 	@${REINPLACE_CMD} -E -e 's|libesd\.so\.[0-9]+|${ESD_LIB}|g' \
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
+	@${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.no|g' \
+		${WRKSRC}/gfx/src/gtk/nsDeviceContextSpecG.cpp
 	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/ ; \
 		/dom.disable_window_open_feature.toolbar/s/false/true/' \
 		${WRKSRC}/modules/libpref/src/init/all.js \
@@ -132,10 +133,10 @@ post-patch:
 		${WRKSRC}/configure \
 		${WRKSRC}/intl/uconv/native/nsNativeUConvService.cpp \
 		${WRKSRC}/xpcom/io/nsNativeCharsetUtils.cpp
-	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION:S/.rc//}|g ; \
+	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}|g ; \
 		s|%%X11BASE%%|${X11BASE}|g' \
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
-	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION:S/.rc//}|g' \
+	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}|g' \
 		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
 	@${SED} -e 's|@THUNDERBIRD_ICON@|${THUNDERBIRD_ICON}|' \
 		< ${FILESDIR}/thunderbird.desktop.in > ${WRKDIR}/thunderbird.desktop
@@ -160,15 +161,16 @@ pre-install:
 		Makefile ${MAKE_ARGS} install
 .for ii in mac win
 .for jj in / .jar
-	@${RM} -rf ${FAKEDIR}/lib/${PORTNAME}/lib/${PORTNAME}-${PORTVERSION:S/.rc//}/chrome/en-${ii}${jj}
+	@${RM} -rf ${FAKEDIR}/lib/${PORTNAME}/lib/${PORTNAME}-${PORTVERSION}/chrome/en-${ii}${jj}
 .endfor
 .endfor
 	@${RM} -fr ${FAKEDIR}/share/idl ${FAKEDIR}/include
 .for ii in thunderbird thunderbird-config
 	@${ECHO_CMD} bin/${ii} >> ${PLIST}
 .endfor
+	@${MKDIR} ${FAKEDIR}/${LOCAL_SUBDIR}/lib/${PORTNAME}-${PORTVERSION}/defaults
 	@${CP} -RL ${WRKSRC}/dist/bin/defaults/isp \
-		${FAKEDIR}/${LOCAL_SUBDIR}/lib/${PORTNAME}-${PORTVERSION:S/.rc//}/defaults
+		${FAKEDIR}/${LOCAL_SUBDIR}/lib/${PORTNAME}-${PORTVERSION}/defaults
 	@cd ${FAKEDIR} && ${FIND} * ! -type d | ${SORT} >> ${PLIST}; \
 	${FIND} * -type d -empty | ${SORT} | ${SED} -e \
 		"s:^:@exec ${MKDIR} %D/:" -e "s:$$: || true:" >> ${PLIST}; \
@@ -201,11 +203,11 @@ post-install:
 		${PERL} -pi -e 's|${FAKEDIR}|${PREFIX}|g'
 .if defined(WITH_NEW_ICON)
 	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/thunderbird/default.xpm \
-		${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION:S/.rc//}/chrome/icons/default/default.xpm
+		${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/chrome/icons/default/default.xpm
 	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/thunderbird/mozicon50.xpm \
-		${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION:S/.rc//}/chrome/icons/default/messengerWindow.xpm
+		${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/chrome/icons/default/messengerWindow.xpm
 	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/thunderbird/mozicon50.xpm \
-	${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION:S/.rc//}/chrome/icons/default/messengerWindow16.xpm
+	${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/chrome/icons/default/messengerWindow16.xpm
 .endif # defined(WITH_NEW_ICON)
 	${INSTALL_DATA} ${THUNDERBIRD_ICON_SRC} ${PREFIX}/share/gnome/pixmaps/${THUNDERBIRD_ICON}
 	${INSTALL_DATA} ${WRKDIR}/thunderbird.desktop ${PREFIX}/share/gnome/applications
