@@ -1,11 +1,11 @@
---- Makefile.orig	Sat Mar 25 17:16:58 2000
-+++ Makefile	Sat Apr 29 13:06:05 2000
-@@ -27,14 +27,14 @@
+--- Makefile.orig	Sun Oct 22 11:26:06 2000
++++ Makefile	Thu Nov  9 01:29:29 2000
+@@ -28,14 +28,14 @@
  #
  # Pick your C++ compiler. 
  #
 -CC=g++
-+#CC=g++
++CC?=g++
  #CC=gcc
  
  #
@@ -18,16 +18,33 @@
  
  #
  # Define the FLEX processor
-@@ -46,7 +46,7 @@
+@@ -47,24 +47,25 @@
  # Use this to define the default device driver name
  # for serial port connections.
  #
 -DEFAULT_SERIAL_NAME = "/dev/ttyS0"
 +DEFAULT_SERIAL_NAME = "/dev/cuaa0"
  
+ # installation information
+-BINDIR=/usr/local/bin
+-MANDIR=/usr/local/man/man1
++PREFIX?=/usr/local
++BINDIR=$(PREFIX)/bin
++MANDIR=$(PREFIX)/man/man1
+ MANEXT=1
+ 
  
  # other commands
-@@ -58,7 +58,7 @@
+-LD=$(CC)
+-CP=cp -f
+-MKDIR=mkdir
+-MV=mv -f
+-RM=rm -f
++LD?=$(LD)
++CP?=cp -f
++MKDIR?=mkdir
++MV?=mv -f
++RM?=rm -f
  
  IFLAGS=-Iplatform -Ircxlib -Inqc -Icompiler
  WFLAGS=-Wall -Wstrict-prototypes -Wmissing-prototypes
@@ -36,3 +53,17 @@
  
  OBJ = $(NQCOBJ) $(COBJ) $(RCXOBJ) $(POBJ)
  
+@@ -106,10 +107,10 @@
+ 	$(MKDIR) bin
+ 
+ bin/nqc : compiler/parse.cpp $(OBJ)
+-	$(LD) -o $@ $(OBJ)
++	$(CC) -o $@ $(OBJ) -lstdc++
+ 
+-bin/mkdata : mkdata/mkdata.cpp nqc/SRecord.cpp
+-	$(LD) -o bin/mkdata -Inqc/ -Iplatform/ mkdata/mkdata.cpp nqc/SRecord.cpp
++bin/mkdata : mkdata/mkdata.o nqc/SRecord.o
++	$(CC) -o bin/mkdata mkdata/mkdata.o nqc/SRecord.o -lstdc++
+ 
+ #
+ # clean up stuff

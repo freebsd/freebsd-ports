@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	nqc
-PORTVERSION=	2.1.r2
+PORTVERSION=	2.2.r2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.enteract.com/~dbaum/nqc/release/
 
-MAINTAINER=	kbyanc@posi.net
+MAINTAINER=	kbyanc@FreeBSD.org
 
 MAN1=		nqc.1
 
