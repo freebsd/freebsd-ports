@@ -70,6 +70,7 @@ share/gnome/gthumb/albumthemes/BlueStripes/index.gthtml
 share/gnome/gthumb/albumthemes/BlueStripes/left.png
 share/gnome/gthumb/albumthemes/BlueStripes/next.png
 share/gnome/gthumb/albumthemes/BlueStripes/prev.png
+share/gnome/gthumb/albumthemes/BlueStripes/preview.png
 share/gnome/gthumb/albumthemes/BlueStripes/right.png
 share/gnome/gthumb/albumthemes/BlueStripes/thumbnail.gthtml
 share/gnome/gthumb/albumthemes/BlueStripes/top.png
@@ -84,6 +85,7 @@ share/gnome/gthumb/albumthemes/Classic/index.gthtml
 share/gnome/gthumb/albumthemes/Classic/left.png
 share/gnome/gthumb/albumthemes/Classic/next.png
 share/gnome/gthumb/albumthemes/Classic/prev.png
+share/gnome/gthumb/albumthemes/Classic/preview.png
 share/gnome/gthumb/albumthemes/Classic/right.png
 share/gnome/gthumb/albumthemes/Classic/thumbnail.gthtml
 share/gnome/gthumb/albumthemes/Classic/top.png
@@ -96,6 +98,7 @@ share/gnome/gthumb/albumthemes/ClassicClips/index.gthtml
 share/gnome/gthumb/albumthemes/ClassicClips/left.png
 share/gnome/gthumb/albumthemes/ClassicClips/next.png
 share/gnome/gthumb/albumthemes/ClassicClips/prev.png
+share/gnome/gthumb/albumthemes/ClassicClips/preview.png
 share/gnome/gthumb/albumthemes/ClassicClips/right.png
 share/gnome/gthumb/albumthemes/ClassicClips/thumbnail.gthtml
 share/gnome/gthumb/albumthemes/ClassicClips/top.png
@@ -107,6 +110,7 @@ share/gnome/gthumb/albumthemes/Clean/image.gthtml
 share/gnome/gthumb/albumthemes/Clean/index.gthtml
 share/gnome/gthumb/albumthemes/Clean/left.png
 share/gnome/gthumb/albumthemes/Clean/left_arrow.png
+share/gnome/gthumb/albumthemes/Clean/preview.png
 share/gnome/gthumb/albumthemes/Clean/right.png
 share/gnome/gthumb/albumthemes/Clean/right_arrow.png
 share/gnome/gthumb/albumthemes/Clean/thumbnail.gthtml
@@ -121,6 +125,7 @@ share/gnome/gthumb/albumthemes/NeatRound/index.gthtml
 share/gnome/gthumb/albumthemes/NeatRound/left.png
 share/gnome/gthumb/albumthemes/NeatRound/next.png
 share/gnome/gthumb/albumthemes/NeatRound/prev.png
+share/gnome/gthumb/albumthemes/NeatRound/preview.png
 share/gnome/gthumb/albumthemes/NeatRound/right.png
 share/gnome/gthumb/albumthemes/NeatRound/thumbnail.gthtml
 share/gnome/gthumb/albumthemes/NeatRound/top.png
@@ -133,6 +138,7 @@ share/gnome/gthumb/albumthemes/NeatSquare/index.gthtml
 share/gnome/gthumb/albumthemes/NeatSquare/left.png
 share/gnome/gthumb/albumthemes/NeatSquare/next.png
 share/gnome/gthumb/albumthemes/NeatSquare/prev.png
+share/gnome/gthumb/albumthemes/NeatSquare/preview.png
 share/gnome/gthumb/albumthemes/NeatSquare/right.png
 share/gnome/gthumb/albumthemes/NeatSquare/thumbnail.gthtml
 share/gnome/gthumb/albumthemes/NeatSquare/top.png
@@ -174,6 +180,7 @@ share/locale/ca/LC_MESSAGES/gthumb.mo
 share/locale/cs/LC_MESSAGES/gthumb.mo
 share/locale/da/LC_MESSAGES/gthumb.mo
 share/locale/de/LC_MESSAGES/gthumb.mo
+share/locale/en_CA/LC_MESSAGES/gthumb.mo
 share/locale/en_GB/LC_MESSAGES/gthumb.mo
 share/locale/es/LC_MESSAGES/gthumb.mo
 share/locale/fr/LC_MESSAGES/gthumb.mo
