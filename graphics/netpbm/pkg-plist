@@ -8,6 +8,8 @@ bin/bmptopnm
 bin/bmptoppm
 bin/brushtopbm
 bin/cmuwmtopbm
+bin/ddbugtopbm
+bin/escp2topbm
 bin/eyuvtoppm
 bin/fiascotopnm
 bin/fitstopnm
@@ -31,6 +33,7 @@ bin/macptopbm
 bin/manweb
 bin/mdatopbm
 bin/mgrtopbm
+bin/mrftopbm
 bin/mtvtoppm
 bin/neotoppm
 bin/palmtopnm
@@ -74,6 +77,7 @@ bin/pbmtobbnbg
 bin/pbmtocmuwm
 bin/pbmtoepsi
 bin/pbmtoepson
+bin/pbmtoescp2
 bin/pbmtog3
 bin/pbmtogem
 bin/pbmtogo
@@ -82,8 +86,10 @@ bin/pbmtolj
 bin/pbmtoln03
 bin/pbmtolps
 bin/pbmtomacp
+bin/pbmtomatrixorbital
 bin/pbmtomda
 bin/pbmtomgr
+bin/pbmtomrf
 bin/pbmtonokia
 bin/pbmtopgm
 bin/pbmtopi3
@@ -270,6 +276,9 @@ bin/yuvtoppm
 bin/zeisstopnm
 include/bitio.h
 include/colorname.h
+include/mallocvar.h
+include/nstring.h
+include/shhopt.h
 include/pam.h
 include/pammap.h
 include/pbm.h
@@ -277,12 +286,9 @@ include/pbmfont.h
 include/pgm.h
 include/pm.h
 include/pm_config.h
-include/pm_nstring.h
-include/pm_shhopt.h
 include/pnm.h
 include/ppm.h
 include/ppmcmap.h
-include/ppmdraw.h
 include/ppmfloyd.h
 lib/libnetpbm.a
 lib/libnetpbm.so
