@@ -10,7 +10,7 @@ PORTVERSION=	20030704
 CATEGORIES=	print
 MASTER_SITES=	#
 
-MAINTAINER=	gasp@ridcully.dnsalias.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foomatic database engine
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
