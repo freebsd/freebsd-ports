@@ -7,6 +7,7 @@ bin/pyalamode
 bin/pycrust
 bin/pyshell
 bin/pywrap
+bin/xrced
 %%PYTHON_SITELIBDIR%%/wx/__init__.py
 %%PYTHON_SITELIBDIR%%/wx/__init__.pyc
 %%PYTHON_SITELIBDIR%%/wx/__init__.pyo
@@ -121,6 +122,9 @@ bin/pywrap
 %%PYTHON_SITELIBDIR%%/wx/lib/floatbar.py
 %%PYTHON_SITELIBDIR%%/wx/lib/floatbar.pyc
 %%PYTHON_SITELIBDIR%%/wx/lib/floatbar.pyo
+%%PYTHON_SITELIBDIR%%/wx/lib/floatcanvas.py
+%%PYTHON_SITELIBDIR%%/wx/lib/floatcanvas.pyc
+%%PYTHON_SITELIBDIR%%/wx/lib/floatcanvas.pyo
 %%PYTHON_SITELIBDIR%%/wx/lib/gridmovers.py
 %%PYTHON_SITELIBDIR%%/wx/lib/gridmovers.pyc
 %%PYTHON_SITELIBDIR%%/wx/lib/gridmovers.pyo
@@ -142,9 +146,15 @@ bin/pywrap
 %%PYTHON_SITELIBDIR%%/wx/lib/layoutf.py
 %%PYTHON_SITELIBDIR%%/wx/lib/layoutf.pyc
 %%PYTHON_SITELIBDIR%%/wx/lib/layoutf.pyo
+%%PYTHON_SITELIBDIR%%/wx/lib/maskedctrl.py
+%%PYTHON_SITELIBDIR%%/wx/lib/maskedctrl.pyc
+%%PYTHON_SITELIBDIR%%/wx/lib/maskedctrl.pyo
 %%PYTHON_SITELIBDIR%%/wx/lib/maskededit.py
 %%PYTHON_SITELIBDIR%%/wx/lib/maskededit.pyc
 %%PYTHON_SITELIBDIR%%/wx/lib/maskededit.pyo
+%%PYTHON_SITELIBDIR%%/wx/lib/maskednumctrl.py
+%%PYTHON_SITELIBDIR%%/wx/lib/maskednumctrl.pyc
+%%PYTHON_SITELIBDIR%%/wx/lib/maskednumctrl.pyo
 %%PYTHON_SITELIBDIR%%/wx/lib/mixins/__init__.py
 %%PYTHON_SITELIBDIR%%/wx/lib/mixins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/wx/lib/mixins/__init__.pyo
@@ -166,6 +176,9 @@ bin/pywrap
 %%PYTHON_SITELIBDIR%%/wx/lib/mvctree.py
 %%PYTHON_SITELIBDIR%%/wx/lib/mvctree.pyc
 %%PYTHON_SITELIBDIR%%/wx/lib/mvctree.pyo
+%%PYTHON_SITELIBDIR%%/wx/lib/newevent.py
+%%PYTHON_SITELIBDIR%%/wx/lib/newevent.pyc
+%%PYTHON_SITELIBDIR%%/wx/lib/newevent.pyo
 %%PYTHON_SITELIBDIR%%/wx/lib/popupctl.py
 %%PYTHON_SITELIBDIR%%/wx/lib/popupctl.pyc
 %%PYTHON_SITELIBDIR%%/wx/lib/popupctl.pyo
@@ -400,6 +413,8 @@ bin/pywrap
 %%PYTHON_SITELIBDIR%%/wxPython/demo/FancyText.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/FileBrowseButton.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/FileBrowseButton.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/FloatCanvas.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/FloatCanvas.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/FontEnumerator.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/FontEnumerator.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/GenericButtons.py
@@ -564,6 +579,7 @@ bin/pywrap
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/testtable.txt
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/tips.txt
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/widgetTest.htm
+%%PYTHON_SITELIBDIR%%/wxPython/demo/data/world.dat
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/wxPackage.html
 %%PYTHON_SITELIBDIR%%/wxPython/demo/demo.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/demo.pyc
@@ -629,6 +645,8 @@ bin/pywrap
 %%PYTHON_SITELIBDIR%%/wxPython/demo/wxEditor.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/wxFileDialog.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/wxFileDialog.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/wxFileDialog_Save.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/wxFileDialog_Save.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/wxFileHistory.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/wxFileHistory.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/wxFindReplaceDialog.py
@@ -679,6 +697,8 @@ bin/pywrap
 %%PYTHON_SITELIBDIR%%/wxPython/demo/wxMVCTree.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/wxMask.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/wxMask.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/wxMaskedNumCtrl.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/wxMaskedNumCtrl.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/wxMenu.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/wxMenu.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/wxMessageDialog.py
@@ -930,6 +950,9 @@ bin/pywrap
 %%PYTHON_SITELIBDIR%%/wxPython/lib/floatbar.py
 %%PYTHON_SITELIBDIR%%/wxPython/lib/floatbar.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/lib/floatbar.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/lib/floatcanvas.py
+%%PYTHON_SITELIBDIR%%/wxPython/lib/floatcanvas.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/lib/floatcanvas.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/lib/gridmovers.py
 %%PYTHON_SITELIBDIR%%/wxPython/lib/gridmovers.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/lib/gridmovers.pyo
@@ -951,9 +974,15 @@ bin/pywrap
 %%PYTHON_SITELIBDIR%%/wxPython/lib/layoutf.py
 %%PYTHON_SITELIBDIR%%/wxPython/lib/layoutf.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/lib/layoutf.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/lib/maskedctrl.py
+%%PYTHON_SITELIBDIR%%/wxPython/lib/maskedctrl.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/lib/maskedctrl.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/lib/maskededit.py
 %%PYTHON_SITELIBDIR%%/wxPython/lib/maskededit.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/lib/maskededit.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/lib/maskednumctrl.py
+%%PYTHON_SITELIBDIR%%/wxPython/lib/maskednumctrl.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/lib/maskednumctrl.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/lib/mixins/__init__.py
 %%PYTHON_SITELIBDIR%%/wxPython/lib/mixins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/lib/mixins/__init__.pyo
@@ -975,6 +1004,9 @@ bin/pywrap
 %%PYTHON_SITELIBDIR%%/wxPython/lib/mvctree.py
 %%PYTHON_SITELIBDIR%%/wxPython/lib/mvctree.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/lib/mvctree.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/lib/newevent.py
+%%PYTHON_SITELIBDIR%%/wxPython/lib/newevent.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/lib/newevent.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/lib/popupctl.py
 %%PYTHON_SITELIBDIR%%/wxPython/lib/popupctl.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/lib/popupctl.pyo
