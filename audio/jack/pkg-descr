@@ -1,0 +1,13 @@
+JACK is a low-latency audio server, written for POSIX conformant 
+operating systems. It can connect a number of different applications 
+to an audio device, as well as allowing them to share audio between 
+themselves. Its clients can run in their own processes (ie. as normal 
+applications), or can they can run within the JACK server (ie. as a 
+"plugin"). 
+
+JACK was designed from the ground up for professional audio work, and 
+its design focuses on two key areas: synchronous execution of all 
+clients, and low latency operation. 
+
+WWW:	http://jackit.sourceforge.net/
+Author:	Paul Davis
