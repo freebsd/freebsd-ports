@@ -20,4 +20,7 @@ DIST_SUBDIR=	icon
 NO_WRKSUBDIR=	true
 ALL_TARGET=	Icon Icon-iconc
 
+do-configure:
+	(cd ${WRKSRC}; ${MAKE} Configure name=intel_freebsd)
+
 .include <bsd.port.mk>

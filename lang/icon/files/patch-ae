@@ -8,15 +8,15 @@
 +install:
 +	@bin/patchstr bin/iconc ${PREFIX}/share/icon/
 +	@bin/patchstr bin/icont ${PREFIX}/bin/iconx
-+	install -c -s -g bin -o bin -m 755 bin/iconc ${PREFIX}/bin/iconc
-+	install -c -s -g bin -o bin -m 755 bin/icont ${PREFIX}/bin/icont
-+	install -c -s -g bin -o bin -m 755 bin/iconx ${PREFIX}/bin/iconx
-+	install -c -s -g bin -o bin -m 755 bin/patchstr ${PREFIX}/bin/patchstr
++	${BSD_INSTALL_PROGRAM} bin/iconc ${PREFIX}/bin/iconc
++	${BSD_INSTALL_PROGRAM} bin/icont ${PREFIX}/bin/icont
++	${BSD_INSTALL_PROGRAM} bin/iconx ${PREFIX}/bin/iconx
++	${BSD_INSTALL_PROGRAM} bin/patchstr ${PREFIX}/bin/patchstr
 +	@mkdir -p ${PREFIX}/share/icon
-+	install -c -g bin -o bin -m 644 bin/dlrgint.o ${PREFIX}/share/icon/dlrgint.o
-+	install -c -g bin -o bin -m 644 bin/rt.a ${PREFIX}/share/icon/rt.a
-+	install -c -g bin -o bin -m 644 bin/rt.db ${PREFIX}/share/icon/rt.db
-+	install -c -g bin -o bin -m 644 bin/rt.h ${PREFIX}/share/icon/rt.h
++	${BSD_INSTALL_DATA} bin/dlrgint.o ${PREFIX}/share/icon/dlrgint.o
++	${BSD_INSTALL_DATA} bin/rt.a ${PREFIX}/share/icon/rt.a
++	${BSD_INSTALL_DATA} bin/rt.db ${PREFIX}/share/icon/rt.db
++	${BSD_INSTALL_DATA} bin/rt.h ${PREFIX}/share/icon/rt.h
  # Entries beyond this point are for use at Arizona only.
  #   *** Do not delete the line above; it is used in trimming Makefiles
  #   for distribution ***
