@@ -23,6 +23,7 @@ PKGNAME=	${DISTNAME}.${PATCHLEVEL}
 WRKSRC=		${WRKDIR}/dgd/src
 
 pre-fetch:
+	@mkdir -p ${WRKDIR}
 	@ln -fs ${.CURDIR}/ncftprc ${WRKDIR}/.ncftprc
 
 pre-patch:
