@@ -8,8 +8,8 @@
 PORTNAME=	newscache
 PORTVERSION=	0.99.22
 CATEGORIES=	news
-MASTER_SITES=	http://www.infosys.tuwien.ac.at/NewsCache/download/ \
-		http://members.aon.at/hstraub/linux/
+MASTER_SITES=	http://members.aon.at/hstraub/linux/newscache/ \
+		http://www.infosys.tuwien.ac.at/NewsCache/download/
 DISTNAME=	NewsCache-${PORTVERSION}
 
 MAINTAINER=	freebsdports@arved.de
