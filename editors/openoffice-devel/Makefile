@@ -20,7 +20,7 @@ MASTER_SITES+=	http://projects.imp.ch/openoffice/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTFILES+=	oo_${PORTVERSION}_src_${SNAPDATE}.tar.bz2 \
 		gpc231.tar.Z:gpc patch-openoffice-mozilla101-2002-10-14:moz \
-		mozilla-vendor-1.0.2.tgz:moz
+		mozilla-vendor-1.0.2a.tgz:moz
 .if defined(L10NHELP)
 DISTFILES+=	${L10NHELP:S/$/:help/}
 .endif
@@ -430,7 +430,7 @@ fix-gnomewrappers:
 extract-mozilla:
 .if ! exists(${WRKDIR}/mozilla/Makefile)
 	@${ECHO_MSG} "===>  Extracting mozilla sub project"
-	@cd ${WRKDIR} && tar -xzf ${DISTDIR}/${DIST_SUBDIR}/mozilla-vendor-1.0.2.tgz
+	@cd ${WRKDIR} && tar -xzf ${DISTDIR}/${DIST_SUBDIR}/mozilla-vendor-1.0.2a.tgz
 .endif
 	@cd ${WRKDIR}/mozilla && ${MAKE} extract WRKDIRPREFIX=""
 
