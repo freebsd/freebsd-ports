@@ -6501,6 +6501,7 @@ ppp		src/usr.sbin/ppp
 ppp-nt		ports/net/ppp-nt
 pppctl		src/usr.sbin/pppctl
 pppd		src/usr.sbin/pppd
+pppload		ports/net/pppload
 pppoa		ports/net/pppoa
 pppoed		src/libexec/pppoed
 pppstats	src/usr.sbin/pppstats
