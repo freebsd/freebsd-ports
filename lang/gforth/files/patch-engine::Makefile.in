@@ -1,0 +1,12 @@
+--- engine/Makefile.in.orig	Sun Mar  9 16:06:46 2003
++++ engine/Makefile.in	Tue Mar  9 14:47:19 2004
+@@ -72,7 +72,8 @@
+ XCFLAGS	= @CFLAGS@
+ XDEFINES = @DEFS@
+ SWITCHES = $(XCFLAGS) $(XDEFINES)
+-ENGINE_FLAGS = @ENGINE_FLAGS@ -fno-defer-pop -fcaller-saves
++#use -fno-inline to avoid register problems with asinh, atanh on gcc-3.3 on 386
++ENGINE_FLAGS = @ENGINE_FLAGS@ -fno-defer-pop -fcaller-saves -fno-inline
+ DEBUGFLAG = @DEBUGFLAG@
+ CFLAGS	= $(DEBUGFLAG) -I$(srcdir)/../arch/$(machine) -I. -O2 -Wall $(SWITCHES) -DDEFAULTPATH=\"$(FORTHPATH)\"
+ CFLAGS2	= $(DEBUGFLAG) -I$(srcdir)/../arch/$(machine) -I. -O2 -Wall $(SWITCHES) -DDEFAULTPATH=\"$(FORTHPATH)\"

@@ -7,7 +7,7 @@
 
 PORTNAME=	gforth
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gforth
@@ -15,7 +15,10 @@ MASTER_SITE_SUBDIR=	gforth
 MAINTAINER=	cyrille.lefevre@laposte.net
 COMMENT=	Fast and portable Forth system
 
-ONLY_FOR_ARCHS=	i386 amd64 ia64
+# BROKEN=	0.6.2 runtime does Segmentation Fault at compilation time !
+#		so, no update is planned right now... sorry.
+
+#ONLY_FOR_ARCHS=	i386 amd64 ia64
 
 # Global variables
 #
@@ -24,17 +27,37 @@ STRIP=		#none
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+CONFIGURE_ENV=	CFLAGS=${CFLAGS:N-O*:N-f*}
+MAKE_ENV=	CFLAGS=${CFLAGS:N-O*:N-f*}
 ALL_TARGET=	all info
-PLIST_SUB=	PORTVERSION="${PORTVERSION}"
+PLIST_SUB=	PORTVERSION="${PORTVERSION}" \
+		EMACS_DIR="${EMACS_DIR:S,^${PREFIX}/,,}" \
+		FORTH_DIR="${FORTH_DIR:S,^${PREFIX}/,,}" \
+		LIB_DIR="${LIB_DIR:S,^${PREFIX}/,,}" \
+		WORDSIZE=${WORDSIZE} BYTEORDER=${BYTEORDER}
 
 MAN1=		gforth.1
 
 # Local variables
 #
 
+.if ${MACHINE_ARCH} == i386
+WORDSIZE=32
+.else
+WORDSIZE=64
+.endif
+
+.if ${MACHINE_ARCH} == sparc64
+BYTEORDER=b
+.else
+BYTEORDER=l
+.endif
+
 DOC_FILES=	AUTHORS BUGS Benchres COPYING COPYING.DOC \
 		INSTALL INSTALL.BINDIST NEWS README \
 		NEWS.vmgen README.vmgen ToDo
+
+LIB_DIR=	${PREFIX}/lib/${PKGBASE}
 
 EMACS_FILES=	gforth.el
 EMACS_DIR=	${PREFIX}/share/emacs/site-lisp
@@ -42,8 +65,8 @@ EMACS_DIR=	${PREFIX}/share/emacs/site-lisp
 EMPTY_FILES=	siteinit.fs
 FORTH_DIR=	${DATADIR}/site-forth
 
-EMPTY_DIRS=	4stack 6502 8086 avr c165 generic h8 hppa \
-		ia64 m68k misc power sharc shboom sparc
+EMPTY_DIRS=	generic hppa ia64 m68k power sparc
+EMPTY_DIRS+=	4stack 6502 8086 avr c165 h8 misc sharc shboom
 ARCH_DIR=	${DATADIR}/${PORTVERSION}/arch
 
 # Post-extract
