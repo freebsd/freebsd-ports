@@ -3,12 +3,12 @@
 # Date created:				September 10th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1997/09/13 17:46:55 jfitz Exp $
 #
 
 DISTNAME=	Data-ShowTable-3.3
 PKGNAME=	p5-Data-ShowTable-3.3
-CATEGORIES=	misc perl5
+CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
 
