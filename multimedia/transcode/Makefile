@@ -107,6 +107,14 @@ WITH_LZO=	yes
 WITH_DIVX5=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/libjpeg-mmx.so)
+WITH_JPEGMMX=	yes
+.endif
+
+.if defined(WITH_JPEGMMX)
+WITH_NASM=	yes
+.endif
+
 .if defined(WITH_LIBTHEORA)
 LIB_DEPENDS+=	theora.0:${PORTSDIR}/graphics/libtheora
 .else
@@ -119,6 +127,14 @@ PLIST_SUB+=	WITH_IMAGEMAGICK=""
 .else
 CONFIGURE_ARGS+=	--with-magick-mods=no
 PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
+.endif
+
+.if defined(WITH_JPEGMMX)
+LIB_DEPENDS+=	jpeg-mmx.62:${PORTSDIR}/graphics/jpeg-mmx
+
+PLIST_SUB+=	WITH_JPEGMMX=""
+.else
+PLIST_SUB+=	WITH_JPEGMMX="@comment "
 .endif
 
 .if defined(WITH_NASM)
@@ -249,6 +265,10 @@ pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can enable extra optimizations by defining WITH_OPTIMIZED_CFLAGS."
+.endif
+.if !defined(WITH_JPEGMMX)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can enable JPEG with MMX by defining WITH_JPEGMMX."
 .endif
 .if !defined(WITH_LIBTHEORA)
 	@${ECHO_MSG}
