@@ -3,7 +3,7 @@
 # Date created:        10 August 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.22 1998/11/16 16:12:57 vanilla Exp $
+# $Id: Makefile,v 1.23 1998/11/23 18:21:39 vanilla Exp $
 #
 
 DISTNAME=	icewm-0.9.18
@@ -34,12 +34,12 @@ ICEOPTION+=	--with-imlib --with-gnome
 
 pre-patch:
 .if defined(TITLE_BOTTOM)
-	${CP} ${FILESDIR}/patch-titlebottom ${PATCHDIR}/patch-ac
+	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-titlebottom
 .else
-	${CP} ${FILESDIR}/patch-titletop ${PATCHDIR}/patch-ac
+	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-titletop
 .endif
 .if defined(GNOME)
-	${CP} ${FILESDIR}/patch-gnome ${PATCHDIR}
+	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-gnome
 .endif
 
 do-configure:
