@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	python
-PORTVERSION=	1.6
+PORTVERSION=	2.0
 CATEGORIES=	lang python
-MASTER_SITES=	http://www.python.org/1.6/
-DISTNAME=	Python-${PORTVERSION}
+MASTER_SITES=	http://www.pythonlabs.com/products/python2.0/downloads/
+DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	tg@FreeBSD.org
 
 DIST_SUBDIR=	python
+WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fpectl
 CONFIGURE_ENV=	OPT="${CFLAGS}"
@@ -22,7 +23,7 @@ PLIST=		${WRKDIR}/PLIST
 MAN1=		python.1
 
 USE_PYTHON=	yes
-PYTHON_VERSION=	python1.6
+PYTHON_VERSION=	python2.0
 PYTHON_NO_DEPENDS=	yes
 
 #
@@ -36,9 +37,11 @@ SETUP_FILE=	Setup
 #
 LIBC_R!=	/sbin/ldconfig -r | grep c_r || true
 .if (${LIBC_R} != "") && !defined(WITHOUT_THREADS)
-CONFIGURE_ARGS+=	--with-thread
+CONFIGURE_ARGS+=	--with-threads
 CFLAGS+=		-D_THREAD_SAFE
 CONFIGURE_ENV+=		LDFLAGS="-pthread ${LDFLAGS}"
+.else
+CONFIGURE_ARGS+=	--without-threads
 .endif
 
 #
@@ -64,10 +67,6 @@ PLIST_GMP=	${PKGDIR}/pkg-plist.gmp
 .if !defined(WITHOUT_TOOLS)
 PLIST_TOOLS=	${PKGDIR}/pkg-plist.Tools
 .endif
-
-post-extract:
-	cd ${WRKSRC}/Lib && ${SH} ${FILESDIR}/plat-freebsd4.sh
-	cd ${WRKSRC}/Lib && ${SH} ${FILESDIR}/plat-freebsd5.sh
 
 post-configure:
 	${CP} ${FILESDIR}/${SETUP_FILE} ${WRKSRC}/Modules/Setup
@@ -97,20 +96,20 @@ PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 pre-install:
 .for platform in ${PLATFORMS}
 	${MKDIR} ${PREFIX}/lib/${PYTHON_VERSION}/${platform}
-	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/*                    \
+.for file in FCNTL.py IN.py SOCKET.py TERMIOS.py regen
+	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/${file} \
 		${PREFIX}/lib/${PYTHON_VERSION}/${platform}/
+.endfor
 .endfor
 	@sort -r -o ${PLIST} ${PLIST_GMP} ${PLIST_TOOLS} ${PKGDIR}/pkg-plist
 
 post-install:
 	strip ${PREFIX}/bin/python
-	@${MKDIR} ${PREFIX}/share/doc/python
 	@${MKDIR} ${PREFIX}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el ${PREFIX}/share/emacs/site-lisp
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/python
 	@${MKDIR} ${PREFIX}/lib/${PYTHON_VERSION}/site-packages
 .if !defined(WITHOUT_TOOLS)
-	@cd ${WRKSRC}; tar cf - Tools | \
+	@cd ${WRKSRC}; tar -c --exclude='*CVS*' -f - Tools | \
 		(cd ${PREFIX}/lib/${PYTHON_VERSION}; tar xf -)
 .endif
 
