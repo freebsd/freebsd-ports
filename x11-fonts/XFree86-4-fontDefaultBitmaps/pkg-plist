@@ -113,4 +113,3 @@ lib/X11/fonts/misc/olgl10.pcf.gz
 lib/X11/fonts/misc/olgl12.pcf.gz
 lib/X11/fonts/misc/olgl14.pcf.gz
 lib/X11/fonts/misc/olgl19.pcf.gz
-@dirrm lib/X11/fonts/misc

@@ -461,32 +461,26 @@ lib/modules/fonts/libxtt.a
 @unexec rm -f %D/lib/X11/xinit
 @unexec rm -f %D/lib/X11/xsm
 @dirrm lib/X11/x11perfcomp
-@unexec rm -f %D/lib/X11/xkb/compiled
-@dirrm lib/X11/xkb/compat
-@dirrm lib/X11/xkb/geometry/digital
-@dirrm lib/X11/xkb/geometry/sgi
-@dirrm lib/X11/xkb/geometry
-@dirrm lib/X11/xkb/keycodes/digital
-@dirrm lib/X11/xkb/keycodes/sgi
-@dirrm lib/X11/xkb/keycodes
-@dirrm lib/X11/xkb/keymap/digital
-@dirrm lib/X11/xkb/keymap/sgi
-@dirrm lib/X11/xkb/keymap/sun
-@dirrm lib/X11/xkb/keymap
-@dirrm lib/X11/xkb/rules
-@dirrm lib/X11/xkb/semantics
-@dirrm lib/X11/xkb/symbols/digital
-@dirrm lib/X11/xkb/symbols/fujitsu
 @dirrm lib/X11/xkb/symbols/hp
 @dirrm lib/X11/xkb/symbols/macintosh
-@dirrm lib/X11/xkb/symbols/nec
 @dirrm lib/X11/xkb/symbols/sgi
-@dirrm lib/X11/xkb/symbols/sony
-@dirrm lib/X11/xkb/symbols/sun
 @dirrm lib/X11/xkb/symbols/xfree68
-@dirrm lib/X11/xkb/symbols
 @dirrm lib/X11/xkb/types
-@dirrm lib/X11/xkb
+@dirrm lib/X11/locale/armscii-8
+@dirrm lib/X11/locale/en_US.UTF-8
+@dirrm lib/X11/locale/georgian-academy
+@dirrm lib/X11/locale/georgian-ps
+@dirrm lib/X11/locale/ibm-cp1133
+@dirrm lib/X11/locale/iso8859-10
+@dirrm lib/X11/locale/iso8859-14
+@dirrm lib/X11/locale/iso8859-15
+@dirrm lib/X11/locale/koi8-u
+@dirrm lib/X11/locale/mulelao-1
+@dirrm lib/X11/locale/vi_VN.tcvn
+@dirrm lib/X11/locale/vi_VN.viscii
+@dirrm lib/modules/fonts
+@dirrm lib/modules/codeconv
+@dirrm include/bitmaps
 @cwd /etc
 X11/app-defaults/Beforelight
 X11/app-defaults/Bitmap
@@ -549,20 +543,8 @@ X11/xdm/xdm-config
 X11/xinit/xinitrc
 X11/xsm/system.xsm
 @unexec rm -f %D/X11/xdm/authdir
-@unexec rmdir %D/X11/app-defaults
-@unexec rmdir %D/X11/lbxproxy
-@unexec rmdir %D/X11/proxymngr
-@unexec rmdir %D/X11/rstart/commands/x11r6
-@unexec rmdir %D/X11/rstart/commands
-@unexec rmdir %D/X11/rstart/contexts
-@unexec rmdir %D/X11/rstart
-@unexec rmdir %D/X11/twm
 @unexec rmdir %D/X11/xdm/pixmaps
-@unexec rmdir %D/X11/xdm
-@unexec rmdir %D/X11/xinit
-@unexec rmdir %D/X11/xsm
 @cwd /var
 db/xkb/README
 @unexec rmdir %D/db/xdm
 @unexec rmdir %D/db/xkb
-

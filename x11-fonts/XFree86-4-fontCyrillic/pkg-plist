@@ -69,4 +69,3 @@ lib/X11/fonts/cyrillic/koi6x13.pcf.gz
 lib/X11/fonts/cyrillic/koi8x13.pcf.gz
 lib/X11/fonts/cyrillic/koi9x15.pcf.gz
 lib/X11/fonts/cyrillic/koinil2.pcf.gz
-@dirrm lib/X11/fonts/cyrillic
