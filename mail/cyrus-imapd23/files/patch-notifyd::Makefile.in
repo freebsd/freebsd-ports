@@ -1,0 +1,13 @@
+Index: notifyd/Makefile.in
+diff -u notifyd/Makefile.in.orig notifyd/Makefile.in
+--- notifyd/Makefile.in.orig	Wed Nov 12 13:02:10 2003
++++ notifyd/Makefile.in	Fri Feb 13 18:41:07 2004
+@@ -79,7 +79,7 @@
+ all: notifyd
+ 
+ install:
+-	$(INSTALL) -m 755 notifyd $(DESTDIR)$(service_path)
++	$(INSTALL) -s -m 755 notifyd $(DESTDIR)$(service_path)
+ 
+ OBJS= notifyd.o notify_null.o notify_log.o notify_mailto.o notify_zephyr.o
+ 

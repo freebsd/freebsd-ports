@@ -1,8 +1,17 @@
 Index: imap/Makefile.in
 diff -u imap/Makefile.in.orig imap/Makefile.in
---- imap/Makefile.in.orig	Tue Jul 15 00:56:08 2003
-+++ imap/Makefile.in	Fri Jul 18 00:35:34 2003
-@@ -241,13 +241,13 @@
+--- imap/Makefile.in.orig	Wed Nov 12 13:02:01 2003
++++ imap/Makefile.in	Fri Feb 13 18:36:00 2004
+@@ -135,7 +135,7 @@
+ 	$(srcdir)/../install-sh -d ${DESTDIR}$(service_path)
+ 	for file in $(PROGS); \
+ 	do \
+-		$(INSTALL) -m 755 $$file $(DESTDIR)$(service_path) || exit 1; \
++		$(INSTALL) -s -m 755 $$file $(DESTDIR)$(service_path) || exit 1; \
+ 	done
+ 	ln -f $(DESTDIR)$(service_path)/pop3d $(DESTDIR)$(service_path)/pop3proxyd
+ 
+@@ -242,13 +242,13 @@
  	$(CC) $(LDFLAGS) -o mupdate \
  	 $(SERVICETHREAD) mupdate.o mupdate-slave.o mupdate-client.o \
  	 mutex_pthread.o tls.o libimap.a \
