@@ -1,25 +1,25 @@
 bin/x3270
 bin/x3270if
-lib/X11/fonts/misc/3270.pcf.gz
-lib/X11/fonts/misc/3270b.pcf.gz
-lib/X11/fonts/misc/3270-12.pcf.gz
-lib/X11/fonts/misc/3270-12b.pcf.gz
-lib/X11/fonts/misc/3270-20.pcf.gz
-lib/X11/fonts/misc/3270-20b.pcf.gz
-lib/X11/fonts/misc/3270d.pcf.gz
-lib/X11/fonts/misc/3270h.pcf.gz
-lib/X11/fonts/misc/3270gt8.pcf.gz
-lib/X11/fonts/misc/3270gt12.pcf.gz
-lib/X11/fonts/misc/3270gt12b.pcf.gz
-lib/X11/fonts/misc/3270gt16.pcf.gz
-lib/X11/fonts/misc/3270gt16b.pcf.gz
-lib/X11/fonts/misc/3270gt24.pcf.gz
-lib/X11/fonts/misc/3270gt24b.pcf.gz
-lib/X11/fonts/misc/3270gt32.pcf.gz
-lib/X11/fonts/misc/3270gt32b.pcf.gz
+lib/X11/fonts/local/3270.pcf.gz
+lib/X11/fonts/local/3270b.pcf.gz
+lib/X11/fonts/local/3270-12.pcf.gz
+lib/X11/fonts/local/3270-12b.pcf.gz
+lib/X11/fonts/local/3270-20.pcf.gz
+lib/X11/fonts/local/3270-20b.pcf.gz
+lib/X11/fonts/local/3270d.pcf.gz
+lib/X11/fonts/local/3270h.pcf.gz
+lib/X11/fonts/local/3270gt8.pcf.gz
+lib/X11/fonts/local/3270gt12.pcf.gz
+lib/X11/fonts/local/3270gt12b.pcf.gz
+lib/X11/fonts/local/3270gt16.pcf.gz
+lib/X11/fonts/local/3270gt16b.pcf.gz
+lib/X11/fonts/local/3270gt24.pcf.gz
+lib/X11/fonts/local/3270gt24b.pcf.gz
+lib/X11/fonts/local/3270gt32.pcf.gz
+lib/X11/fonts/local/3270gt32b.pcf.gz
 lib/X11/x3270/ibm_hosts
-@exec /bin/chmod u+w /usr/X11R6/lib/X11/fonts/misc /usr/X11R6/lib/X11/fonts/misc/fonts.dir
-@exec /usr/X11R6/bin/mkfontdir /usr/X11R6/lib/X11/fonts/misc
-@exec /bin/chmod u=rwx,go=rx /usr/X11R6/lib/X11/fonts/misc
-@exec /bin/chmod a=r /usr/X11R6/lib/X11/fonts/misc/fonts.dir
+@exec /bin/chmod u+w /usr/X11R6/lib/X11/fonts/local /usr/X11R6/lib/X11/fonts/local/fonts.dir
+@exec /usr/X11R6/bin/mkfontdir /usr/X11R6/lib/X11/fonts/local
+@exec /bin/chmod u=rwx,go=rx /usr/X11R6/lib/X11/fonts/local
+@exec /bin/chmod a=r /usr/X11R6/lib/X11/fonts/local/fonts.dir
 @dirrm lib/X11/x3270
