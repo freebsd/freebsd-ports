@@ -1,4 +1,9 @@
 #!/bin/sh
+if [ ! -d $HOME/.netscape ]; then
+	mkdir -m 700 $HOME/.netscape
+	cp @RDIR@/preferences.js $HOME/.netscape
+	chmod 644 $HOME/.netscape/preferences.js
+fi
 export LANG=ja_JP.EUC
 export LC_ALL=${LANG}
 export LC_CTYPE=${LANG}

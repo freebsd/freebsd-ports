@@ -3,20 +3,22 @@
 # Date created:		13 Mar 1998
 # Whom:			sada
 #
-# $Id: Makefile,v 1.7 1998/11/16 19:52:58 sada Exp $
+# $Id: Makefile,v 1.8 1998/11/17 17:20:54 sada Exp $
 #
 
 DISTNAME=	ja-netscape-${BROWSER}
 CATEGORIES=	japanese www
-MASTER_SITES=	http://www.bres.tsukuba.ac.jp/~yohta/netscape/
-DISTFILES?=	communicator-ja-euc-v407-export.generic-generic-generic.tar.gz
+MASTER_SITES=	http://www.bres.tsukuba.ac.jp/~yohta/netscape/ \
+		${RESOURCE_SITES}
+DISTFILES?=	${EXTRACT_ONLY} ${RESOURCE_FILE}
 
-MAINTAINER=	sada@freebsd.org
+MAINTAINER=	sada@FreeBSD.ORG
 
 RUN_DEPENDS?= \
 	${PREFIX}/bin/${BROWSER}:${PORTSDIR}/www/netscape4-${BROWSER_NAME} \
-	${FONT_DEPEND}
+	${PKG_DBDIR}/ja-netscape-fonts-1.0:${PORTSDIR}/japanese/netscape-fonts
 
+EXTRACT_ONLY=	communicator-ja-euc-v407-export.generic-generic-generic.tar.gz
 MAN1=		ja-${BROWSER_NAME}.1
 MANLANG=	ja
 NO_BUILD=	yes
@@ -38,19 +40,19 @@ MAKESCRIPT=	${SED} -e "s;@X11BASE@;${X11BASE};g" \
 MANDIR=		${MANPREFIX}/man/${MANLANG}
 MANFILE?=	${FILESDIR}/${MAN1}
 PLIST_SUB=	NSUBDIR=${NSUBDIR} BROWSER=${BROWSER} LANG=${LANG}
-FONT_DEPEND= \
-	${PKG_DBDIR}/ja-netscape-fonts-1.0:${PORTSDIR}/japanese/netscape-fonts
+# Below two lines could be overwritten,
+# and you could create new ja-netscape4 with new resource.
+RESOURCE_FILE?= ja-netscape-resource-${BROWSER_VERSION}.gz
+RESOURCE_SITES?= http://www.rr.iij4u.or.jp/~sada/distfiles/ \
+		http://www.freebsd.org/~sada/distfiles/
 
 .SILENT:
 
+post-extract:
+	${GZCAT} ${DISTDIR}/${RESOURCE_FILE} >${WRKSRC}/Netscape
+
 do-configure:
 	${MAKESCRIPT} ${FILESDIR}/start.sh.in >${WRKDIR}/start.sh
-.if defined(USE_16DOT_FONT)
-	${MAKESCRIPT} ${WRKSRC}/Netscape.ad-ja_euc >${WRKSRC}/Netscape
-.else
-	${MAKESCRIPT} ${WRKSRC}/Netscape.ad-ja_euc \
-	| ${SED} -f ${FILESDIR}/14dot.sed >${WRKSRC}/Netscape
-.endif
 
 do-install:
 	${INSTALL_DATA} ${FILESDIR}/preferences.js ${NDIR}
