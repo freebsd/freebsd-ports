@@ -28,7 +28,7 @@ MAKE_ENV+=	CC=${CC} PCFLAGS="${CFLAGS}" TCLVERSION="${TCL_VERSION}"
 PLIST_SUB+=	SOVERSION=${SOVERSION} \
 		EXAMPLESDIR="${EXAMPLESDIR:S,${PREFIX}/,,}"
 
-.if !defined(WITHOUT_PYTHON)
+.if defined(WITH_PYTHON)
 PYTHONSUFFIX=	-${PYTHON_PKGNAMEPREFIX:S/-//}
 BUILD_DEPENDS+=	${PYDISTUTILS}
 USE_PYTHON=	yes
@@ -38,7 +38,7 @@ PLIST_SUB+=	PYTHONOPT=""
 PLIST_SUB+=	PYTHONOPT="@comment "
 .endif
 
-.if !defined(WITHOUT_TCL)
+.if defined(WITH_TCL)
 TCLSUFFIX=	-${TCL_NODOT}
 LIB_DEPENDS+=	${TCL_NODOT}:${PORTSDIR}/lang/${TCL_NODOT}
 MAKE_ENV+=	WITH_TCL=yes
@@ -62,7 +62,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's,^\(SONAME=\).*,\1${SOVERSION},g' \
 		${WRKSRC}/configure
 
-.if !defined(WITHOUT_PYTHON)
+.if defined(WITH_PYTHON)
 post-build:
 	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} ${FILESDIR}/setup.py build
 
