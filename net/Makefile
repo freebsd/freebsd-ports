@@ -214,6 +214,7 @@
     SUBDIR += kio_fish
     SUBDIR += kmsn
     SUBDIR += konverse
+    SUBDIR += kopete
     SUBDIR += kxicq2
     SUBDIR += lam
     SUBDIR += lambdamoo
