@@ -1,0 +1,5 @@
+This is version 0.06 of the Perl 5 File::Sync module.
+
+It provides Perl interfaces to the Unix sync(2) and POSIX.1b fsync(2)
+system calls. The fsync() call is needed for putting messages into
+qmail maildirs, and sync() is included for completeness.
