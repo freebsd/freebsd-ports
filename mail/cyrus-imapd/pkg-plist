@@ -14,8 +14,6 @@ cyrus/bin/pop3d
 cyrus/bin/reconstruct
 cyrus/bin/syncnews
 cyrus/bin/timsieved
-etc/imap/mailboxes
-etc/imapd.conf
 etc/imapd.conf.dist
 etc/inetd.conf.cyrus
 include/cyrus/acl.h
