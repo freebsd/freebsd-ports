@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openal
-PORTVERSION=	20040816
+PORTVERSION=	20050202
 CATEGORIES=	audio
 MASTER_SITES=	http://math.smsu.edu/~erik/files/fbsd/\
 		http://www.smluc.org/~erik/files/fbsd/
@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/linux
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
+USE_GNOME=	pkgconfig
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 
