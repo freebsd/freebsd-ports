@@ -90,7 +90,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <cvename>CAN-2004-0640</cvename>
-      <url>http://www.idefense.com/application/poi/display?id=114&type=vulnerabilities</url>
+      <url>http://www.idefense.com/application/poi/display?id=114&amp;type=vulnerabilities</url>
     </references>
     <dates>
       <discovery>2003-04-03</discovery>
