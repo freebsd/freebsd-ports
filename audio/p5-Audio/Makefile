@@ -24,8 +24,8 @@ MAN3=		Audio::Play.3 Audio::Data.3
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
+.if ${PERL_LEVEL} < 500600
+IGNORE=		Port requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
