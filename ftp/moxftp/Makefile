@@ -3,7 +3,7 @@
 # Date created:		19 December 1994
 # Whom:			janek
 #
-# $Id: Makefile,v 1.5 1995/04/17 07:59:05 asami Exp $
+# $Id: Makefile,v 1.6 1995/04/22 12:30:11 asami Exp $
 #
 
 DISTNAME=	moxftp-2.2
@@ -12,7 +12,8 @@ MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
 EXTRACT_SUFX=	.tar.Z
 
 HAS_CONFIGURE=	yes
-PREFIX=	/usr/X11R6
+USE_X11=	yes
+STRIP=
 
 # CONFIGURE_ARGS set to :
 #	motif - for motif version, (not tested!!!)
@@ -24,9 +25,9 @@ CONFIGURE_ARGS=	athena
 
 #DEPENDS=	${PORTSDIR}/x11/Xaw3d
 
-.include <bsd.port.mk>
-
-do-install:
-	mkdir -p ${PREFIX}/man/man1
+post-install:
+	strip ${PREFIX}/bin/xftp
 	install -c -m 0444 ${WRKSRC}/xftp.man ${PREFIX}/man/man1/xftp.1
-	gzip -9n ${PREFIX}/man/man1/xftp.1
+	gzip -9nf ${PREFIX}/man/man1/xftp.1
+
+.include <bsd.port.mk>
