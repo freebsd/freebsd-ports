@@ -7,6 +7,14 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20040717:
+  AFFECTS: users of net/openldap2[12]{,-sasl}-client
+
+  OpenLDAP version 2.2 is now the default. To upgrade all ports do
+    portupgrade -rfo net/openldap22-client openldap-client       
+  (or a similar command for the SASL variant). If you do not want to
+  upgrade, add the line `WANT_OPENLDAP_VER?=21' to /etc/make.conf
+
+20040717:
   AFFECTS: users of mail/exim on FreeBSD 5.x
 
   The default location of the startup script has been changed to
