@@ -1,0 +1,5 @@
+bin/big5con
+bin/big5fld
+etc/big5con.cfg
+lib/fonts/taipei16.bdf.gz
+lib/fonts/8x16.bdf.gz
