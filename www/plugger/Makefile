@@ -7,7 +7,7 @@
 
 PORTNAME=	plugger
 PORTVERSION=	5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www audio graphics multimedia
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/
 
@@ -30,6 +30,15 @@ post-patch:
 		-e 's|LD=gcc|LD=${CC}|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/X11R6/|${X11BASE}|g' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|oowriter|openoffice-1.1-swriter|g' \
+		-e 's|oocalc|openoffice-1.1-scalc|g' \
+		-e 's|ooimpress|openoffice-1.1-simpress|g' \
+		-e 's|oodraw|openoffice-1.1-sdraw|g' \
+		-e 's|oomath|openoffice-1.1-smath|g' \
+		${WRKSRC}/pluggerrc
+	@${REINPLACE_CMD} -e \
+	's|/usr/X11R6/lib/xscreensaver|${X11BASE}/bin/xscreensaver-hacks|g' \
+		${WRKSRC}/pluggerrc
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
