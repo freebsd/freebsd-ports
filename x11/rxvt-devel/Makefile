@@ -10,6 +10,7 @@
 
 PORTNAME=	rxvt-devel
 PORTVERSION=	2.7.6
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/%SUBDIR%/ \
 		ftp://mason.primenet.com.au/pub/rxvt/%SUBDIR%/ \
