@@ -79,7 +79,6 @@
     SUBDIR += py-wxPython
     SUBDIR += qt145
     SUBDIR += qt2-static
-    SUBDIR += qt22
     SUBDIR += qt23
     SUBDIR += rep-gtk
     SUBDIR += ruby-fltk
