@@ -1,5 +1,5 @@
 # New ports collection makefile for:    Gimp
-# Version required:     1.1.11
+# Version required:     1.1.15
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
@@ -23,7 +23,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		png.3:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-VERSION=	1.1.14
+VERSION=	1.1.15
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
@@ -38,7 +38,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		gimp.1 gimptool.1
-MAN3=		gpc.3
 MAN5=		gimprc.5
 
 .include <bsd.port.mk>
