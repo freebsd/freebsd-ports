@@ -89,6 +89,7 @@
     SUBDIR += iwidgets
     SUBDIR += jx
     SUBDIR += lesstif
+    SUBDIR += libXmu
     SUBDIR += libXt
     SUBDIR += libbonoboui
     SUBDIR += libbonobouimm
