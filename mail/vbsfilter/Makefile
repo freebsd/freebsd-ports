@@ -64,7 +64,7 @@ do-build:	${CTARGETS}
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vbsfilter-${PORTVERSION} \
 		${PREFIX}/libexec/vbsfilter
-	${INSTALL_DATA} ${WRKSRC}/vbsfilter.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/vbsfilter.sh \
 		${PREFIX}/etc/rc.d/vbsfilter.sh.sample
 
 .include <bsd.port.post.mk>
