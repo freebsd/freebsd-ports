@@ -6,16 +6,20 @@
 #
 
 PORTNAME=	newsgrab
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.3
 CATEGORIES=	news
 MASTER_SITES=	http://phunkbros.dk/newsgrab/
 
 MAINTAINER=	petef@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/News/NNTPClient.pm:${PORTSDIR}/news/p5-NNTPClient
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/News/NNTPClient.pm:${PORTSDIR}/news/p5-NNTPClient \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
 
 NO_BUILD=	yes
 USE_PERL5=	yes
+
+post-patch:
+	@${PERL} -pi -e 's,^#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/newsgrab.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/newsgrab.pl ${PREFIX}/bin/newsgrab
