@@ -3,12 +3,13 @@
 # Date created:        28 October 1996
 # Whom:                simonm@dcs.gla.ac.uk
 #
-# $Id: Makefile,v 1.7 1998/06/11 02:44:04 mph Exp $
+# $Id: Makefile,v 1.8 1998/08/05 09:30:52 asami Exp $
 #
 
-DISTNAME=	cgoban-1.9.2
+DISTNAME=	cgoban-1.9.5
 CATEGORIES=	games
-MASTER_SITES=	ftp://igs.nuri.net/Go/igs_clients/Unix/
+MASTER_SITES=	http://www.hevanet.com/wms/comp/cgoban/ \
+		ftp://igs.joyjoy.net/Go/igs_clients/Unix/
 
 MAINTAINER=	simonm@dcs.gla.ac.uk
 
