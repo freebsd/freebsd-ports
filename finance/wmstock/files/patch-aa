@@ -1,34 +1,28 @@
---- testqt.pl.orig	Sun Aug  1 19:46:56 1999
-+++ testqt.pl	Sun Aug  1 19:48:47 1999
-@@ -1,11 +1,11 @@
+--- getquote	Sun May 14 13:28:49 2000
++++ getquote.new	Sat May 20 01:37:30 2000
+@@ -1,6 +1,6 @@
  #!/usr/bin/perl
  	
--	$wget_loc = `which wget`;
-+	$wget_loc = `which fetch`;
- 	chop $wget_loc;
+-	$wget_loc = "wget";
++	$wget_loc = "fetch";
  
- 	if (!$wget_loc) 
- 	{
--		die "testqt.pl:: Could not find wget.  If it is not in your path please add it to your path.  If it is not installed please install it.\n";
-+		die "testqt.pl:: Could not find fetch.  If it is not in your path please add it to your path.  If it is not installed please install it.\n";
- 	}
+ 	# used to have some "which" here, replaced it..
  
- 	$home = (getpwuid($<))[7];
-@@ -78,7 +78,7 @@
+@@ -77,7 +77,7 @@
  	#
  
  	$tempfile = "stock.tmp.$$";
 -	$wget_args = " --cache=off --tries 0 -q -O $home/.wmstock/$tempfile \"$URL\"";
 +	$wget_args = " -p -o $home/.wmstock/$tempfile \"$URL\"";
  	$command = $wget_loc.$wget_args;
- 	system "$wget_loc$wget_args";
- 	sleep(3);
-@@ -115,7 +115,7 @@
+ 	$result = system ("$wget_loc$wget_args");
+ 	if ($result != 0) {
+@@ -118,7 +118,7 @@
          $version = $_[0];
- 	$vtempfile = ".newest";
+ 	$vtempfile = "newest";
          $vers_url="http://www.mattfischer.com/wmstock/src/$vtempfile";
 -	$wget_args = " --cache=off --tries 0 -q -O $home/.wmstock/$vtempfile \"$vers_url\"";
 +	$wget_args = " -p -o $home/.wmstock/$vtempfile \"$vers_url\"";
+ 
          $command = $wget_loc.$wget_args;
  
- 	print "Please wait while I check for a new version.\n";
