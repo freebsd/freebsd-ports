@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	umix
-PORTVERSION=	0.5
-PORTREVISION=	2
+PORTVERSION=	1.0.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,11 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced tool for adjusting soundcard mixers, replacement for aumix
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
-
+USE_GETOPT_LONG=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		umix.1
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|="/etc"|="$${prefix}/etc"|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
