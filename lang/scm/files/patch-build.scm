@@ -22,7 +22,7 @@
  		       oname (string-append oname "~"))
      (and (batch:try-command parms
 -			    "cc" "-o" oname
-+			    "%%CC%%" "-o" oname
++			    "%%CC%%" "-o" oname "-export-dynamic"
  			    (must-be-first
  			     '("-nostartfiles"
  			       "pre-crt0.o" "crt0.o"
