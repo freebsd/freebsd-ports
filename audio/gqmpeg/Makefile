@@ -20,7 +20,14 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 USE_LIBTOOL=	yes
+WANT_GNOME=	yes
 
 MAN1=		gqmpeg.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
+.endif
+
+.include <bsd.port.post.mk>
