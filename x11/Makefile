@@ -72,6 +72,7 @@
     SUBDIR += kdelibs3
     SUBDIR += keylaunch
     SUBDIR += kgamma
+    SUBDIR += libICE
     SUBDIR += libX11
     SUBDIR += libXau
     SUBDIR += libXtrans
