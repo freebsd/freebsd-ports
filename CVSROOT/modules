@@ -6323,6 +6323,7 @@ p5-Expect	ports/lang/p5-Expect
 p5-Exporter-Lite	ports/devel/p5-Exporter-Lite
 p5-ExtUtils-CBuilder	ports/devel/p5-ExtUtils-CBuilder
 p5-ExtUtils-Depends	ports/devel/p5-ExtUtils-Depends
+p5-ExtUtils-MakeMaker	ports/devel/p5-ExtUtils-MakeMaker
 p5-ExtUtils-ParseXS	ports/devel/p5-ExtUtils-ParseXS
 p5-ExtUtils-PkgConfig	ports/devel/p5-ExtUtils-PkgConfig
 p5-ExtUtils-XSBuilder	ports/devel/p5-ExtUtils-XSBuilder
