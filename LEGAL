@@ -81,6 +81,10 @@ dnews3			ports/news/dnews	Only free for schools and
 						We currently ask for permission
 						to put a package on the CD-ROM.
 eijiro*.txt		ports/japanes/eijiro-fpw The original dictionary is not free
+fasta2*			ports/biology/fasta	May not be sold or incorporated
+						into a commercial product
+fasta3*			ports/biology/fasta3	May not be sold or incorporated
+						into a commercial product
 fmsx-*			ports/emulators/fmsx	Unclear legal status of
 						distributed ROMs.
 fnorb-*			ports/devel/fnorb	Cannot use commercially
