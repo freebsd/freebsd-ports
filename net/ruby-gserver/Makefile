@@ -8,7 +8,7 @@
 PORTNAME=	gserver
 PORTVERSION=	1.1
 CATEGORIES=	net ruby
-MASTER_SITES=	http://www.rogare.com/downloads/Ruby/
+MASTER_SITES=	http://www.rogare.com/downloads/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	GServer
 DIST_SUBDIR=	ruby
