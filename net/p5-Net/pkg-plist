@@ -1,20 +1,20 @@
-lib/perl5/site_perl/%%PERL_VER%%/Net/Cmd.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Config.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Domain.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTP/A.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTP/E.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTP/I.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTP/L.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTP/dataconn.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/NNTP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Netrc.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/POP3.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/SMTP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Time.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/libnet.cfg
-lib/perl5/site_perl/%%PERL_VER%%/Net/libnetFAQ.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/.packlist
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/FTP
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
+%%SITE_PERL%%/Net/Cmd.pm
+%%SITE_PERL%%/Net/Config.pm
+%%SITE_PERL%%/Net/Domain.pm
+%%SITE_PERL%%/Net/FTP.pm
+%%SITE_PERL%%/Net/FTP/A.pm
+%%SITE_PERL%%/Net/FTP/E.pm
+%%SITE_PERL%%/Net/FTP/I.pm
+%%SITE_PERL%%/Net/FTP/L.pm
+%%SITE_PERL%%/Net/FTP/dataconn.pm
+%%SITE_PERL%%/Net/NNTP.pm
+%%SITE_PERL%%/Net/Netrc.pm
+%%SITE_PERL%%/Net/POP3.pm
+%%SITE_PERL%%/Net/SMTP.pm
+%%SITE_PERL%%/Net/Time.pm
+%%SITE_PERL%%/Net/libnet.cfg
+%%SITE_PERL%%/Net/libnetFAQ.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Net/FTP
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
