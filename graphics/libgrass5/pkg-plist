@@ -1,13 +1,13 @@
-include/gis.h
-include/datetime.h
-include/gisdefs.h
-include/site.h
-include/P_site.h
-include/P_datetime.h
-include/libgrass.h
-include/imagery.h
-include/imagedefs.h
-lib/libgrass5.so.2
-lib/libgrass5.so
-lib/libgrass5.la
+include/libgrass5/P_datetime.h
+include/libgrass5/P_site.h
+include/libgrass5/datetime.h
+include/libgrass5/gis.h
+include/libgrass5/gisdefs.h
+include/libgrass5/imagedefs.h
+include/libgrass5/imagery.h
+include/libgrass5/libgrass.h
+include/libgrass5/site.h
 lib/libgrass5.a
+lib/libgrass5.so
+lib/libgrass5.so.3
+@dirrm include/libgrass5
