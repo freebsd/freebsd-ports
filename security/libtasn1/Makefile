@@ -17,18 +17,20 @@ MASTER_SITE_SUBDIR=	alpha/gnutls/libtasn1
 MAINTAINER=	sergei@kolobov.com
 COMMENT=	ASN.1 structure parser library
 
-.if !exists(/usr/include/getopt.h)
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lgnugetopt
-.endif
-
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 DOCS=		AUTHORS NEWS README THANKS doc/asn1.ps doc/asn1.tex doc/fdl.tex
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500041
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lgnugetopt
+.endif
 
 post-patch:
 .for file in asn1Coding.c asn1Decoding.c asn1Parser.c
@@ -43,4 +45,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
