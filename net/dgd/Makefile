@@ -9,6 +9,7 @@ PORTNAME=	dgd
 PORTVERSION=	1.2
 CATEGORIES=	net lang
 MASTER_SITES=	ftp://ftp.imaginary.com/pub/LPC/servers/DGD/ \
+		ftp://ftp.dworkin.nl/pub/dgd/ \
 		ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/ \
 		ftp://ftp.veda.is/pub/mud/dgd/ \
 		ftp://ftp.dreamlabs.com/pub/mud/dgd/
