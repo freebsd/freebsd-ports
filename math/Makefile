@@ -56,6 +56,7 @@
     SUBDIR += pygist
     SUBDIR += rcalc
     SUBDIR += ruby-bigfloat
+    SUBDIR += ruby-bitvector
     SUBDIR += sc
     SUBDIR += scigraphica
     SUBDIR += siag
