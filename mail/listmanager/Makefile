@@ -15,6 +15,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} help.tar.gz listmanager.8 ack
 
 MAINTAINER=	ports@FreeBSD.org
 
+FORBIDDEN=	"Buffer overflow yielding uid root"
+
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKDIR}
