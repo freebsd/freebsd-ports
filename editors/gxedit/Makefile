@@ -9,9 +9,8 @@ PORTNAME=	gxedit
 PORTVERSION=	1.23
 PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	http://mirrors.darkelf.net/GXedit/ \
-		http://www.linuxbox.com/~drow/GXedit/
-DISTNAME=	GXedit${PORTVERSION}
+MASTER_SITES=	http://www.cyberspace.org/~elfguy00/
+DISTNAME=	GXedit-${PORTVERSION}
 
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	A simple GTK+ editor
