@@ -1,0 +1,15 @@
+This module implements an XML diff producing XML output.  Both input and
+output are DOM documents, as implemented by XML::LibXML.
+
+The diff format used by XML::DifferenceMarkup is meant to be
+human-readable (i.e.  simple, as opposed to short) - basically the diff
+is a subset of the input trees, annotated with instruction element nodes
+specifying how to convert the source tree to the target by inserting and
+deleting nodes.  To prevent name colisions with input trees, all added
+elements are in a namespace http://www.locus.cz/XML/DifferenceMarkup
+(the diff will fail on input trees which already use that namespace).
+
+WWW: http://search.cpan.org/dist/XML-DifferenceMarkup/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
