@@ -42,10 +42,10 @@ pre-configure:
 		${ECHO_MSG} "libobjc.so not found, please update your gcc"; \
 		${FALSE}; \
 	fi; \
-	if test `${LDCONFIG} -r | grep libobjc.so | wc -l` -eq 0; then \
+	if test `${LDCONFIG} -r | ${GREP} libobjc.so | wc -l` -eq 0; then \
 		${ECHO_MSG} "trying to fix ldconfig.hints"; \
 		${LDCONFIG} -f "${WRKDIR}/ldconfig.hints" -m "${TARGLIB}";\
-		if test `${LDCONFIG} -f "${WRKDIR}/ldconfig.hints" -r | grep libobjc.so | wc -l` -eq 0; then \
+		if test `${LDCONFIG} -f "${WRKDIR}/ldconfig.hints" -r | ${GREP} libobjc.so | wc -l` -eq 0; then \
 			${ECHO_MSG} "libobjc.so not in path"; \
 			${FALSE}; \
 		fi; \

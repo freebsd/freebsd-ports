@@ -10,7 +10,7 @@ CATEGORIES=	x11-toolkits
 MAINTAINER=	dinoex@FreeBSD.org
 
 WITH_GNUSTEP_XDPS=	yes
-MASTERDIR?=	${.CURDIR}/../gnustep-back
+MASTERDIR=	${.CURDIR}/../gnustep-back
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
