@@ -8,8 +8,7 @@
 PORTNAME=	mpmf20
 PORTVERSION=	1.01
 CATEGORIES=	audio
-MASTER_SITES=	http://www.world.co.uk/sba/ \
-		http://www.acc.umu.se/~markush/
+MASTER_SITES=	http://www.world.co.uk/sba/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
