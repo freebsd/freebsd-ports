@@ -1,12 +1,5 @@
 --- filter/pstops.c	Tue May 28 15:04:50 2002
 +++ /home/alane/sw/src/cups/filter/pstops.c	Thu Jun 27 12:31:45 2002
-@@ -1,5 +1,5 @@
- /*
-- * "$Id: pstops.c,v 1.83 2002/05/28 19:04:50 mike Exp $"
-+ * "$Id: pstops.c,v 1.85 2002/06/27 16:31:45 mike Exp $"
-  *
-  *   PostScript filter for the Common UNIX Printing System (CUPS).
-  *
 @@ -60,8 +60,8 @@
  #define LAYOUT_RLBT	2	/* Right to left, bottom to top */
  #define LAYOUT_RLTB	3	/* Right to left, top to bottom */

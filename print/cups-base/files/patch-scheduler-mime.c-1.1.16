@@ -6,13 +6,6 @@ retrieving revision 1.14
 diff -u -3 -r1.12 -r1.14
 --- scheduler/mime.c	2002/05/16 13:45:02	1.12
 +++ scheduler/mime.c	2002/08/23 01:33:46	1.14
-@@ -1,5 +1,5 @@
- /*
-- * "$Id: mime.c,v 1.12 2002/05/16 13:45:02 mike Exp $"
-+ * "$Id: mime.c,v 1.14 2002/08/23 01:33:46 mike Exp $"
-  *
-  *   MIME database file routines for the Common UNIX Printing System (CUPS).
-  *
 @@ -502,17 +502,20 @@
      filter = lineptr;
  
