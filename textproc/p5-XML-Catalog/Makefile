@@ -17,12 +17,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resolve public identifiers and remap system identifiers
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/${PERL_VER}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_VER}/URI/URL.pm:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/URI/URL.pm:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl
 PERL_CONFIGURE=	yes
 
 MAN3=		XML::Catalog.3
