@@ -15,6 +15,12 @@ DISTNAME=	finger-1.37
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU version of finger
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+BROKEN=		does not compile on 5.x
+.endif
+
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	server
 
@@ -27,4 +33,4 @@ post-install:
 	@${ECHO_CMD} "GNU.finger.server.hostname" > ${PREFIX}/etc/fingerdir/serverhost.sample
 	@${ECHO_CMD} "mail.spool.server.hostname" > ${PREFIX}/etc/fingerdir/mailhost.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
