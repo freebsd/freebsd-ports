@@ -14,16 +14,15 @@ DISTNAME=	DansGuardian-${PORTVERSION:R}-${PORTVERSION:E}.source
 MAINTAINER=	fcash@bigfoot.com
 COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid:install \
-		${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT}:install
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid \
+		${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT}
 
 WRKSRC=		${WRKDIR}/DansGuardian-${PORTVERSION:R}-${PORTVERSION:E}
 
-CONFLICTS=	dansguardian*
+CONFLICTS=	dansguardian-2.6*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--bindir=/sbin/ \
+CONFIGURE_ARGS=	--bindir=/sbin/ \
 		--sysconfdir=/etc/dansguardian/ \
 		--sysvdir=/etc/rc.d/ \
 		--mandir=/man/ \
