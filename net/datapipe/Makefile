@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/unsupported/ \
 		http://http.distributed.net/pub/dcti/unsupported/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Bind a local port and connect it to a remote socket
 
 PLIST_FILES=	bin/datapipe
