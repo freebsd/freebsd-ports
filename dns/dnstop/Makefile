@@ -5,17 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	dnstop
-PORTVERSION=	20021030
+PORTVERSION=	20021125
 CATEGORIES=	net
 MASTER_SITES=	http://dnstop.measurement-factory.com/src/
-DISTFILES=	dnstop.c Makefile
-DIST_SUBDIR=	dnstop
 
 MAINTAINER=	fenner@FreeBSD.Org
 
-EXTRACT_CMD=		${CP}
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	.
 NO_WRKSUBDIR=	true
 
 do-install:
