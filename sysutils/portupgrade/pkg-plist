@@ -1,6 +1,8 @@
 etc/rc.d/000.pkgtools.sh
 @exec /bin/mkdir -p %D/lib/compat/pkg
 @unexec /bin/rmdir %D/lib/compat/pkg 2>/dev/null || true
+sbin/make_describe_pass1
+sbin/make_describe_pass2
 sbin/pkg_deinstall
 sbin/pkg_fetch
 sbin/pkg_glob
@@ -22,6 +24,9 @@ sbin/portversion
 %%RUBY_SITELIBDIR%%/ports.rb
 %%RUBY_SITELIBDIR%%/portsdb.rb
 %%RUBY_SITELIBDIR%%/tsort.rb
+@unexec if cmp -s %D/etc/pkgtools.conf %D/etc/pkgtools.conf.sample; then rm -f %D/etc/pkgtools.conf; fi
+etc/pkgtools.conf.sample
+@exec [ ! -f %B/pkgtools.conf ] && cp %B/%f %B/pkgtools.conf
 share/zsh/site-functions/_pkg_deinstall
 share/zsh/site-functions/_pkg_fetch
 share/zsh/site-functions/_pkg_glob

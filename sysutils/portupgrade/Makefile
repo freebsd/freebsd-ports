@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20011015
+PORTVERSION=	20011024
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -70,6 +70,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/tcsh/* ${EXAMPLESDIR}/tcsh/
 	# Remove old database
 	${RM} -f /var/db/pkg/pkgdb.byfile.db
+	if [ ! -f ${PREFIX}/etc/pkgtools.conf ]; then \
+		${CP} -p ${PREFIX}/etc/pkgtools.conf.sample ${PREFIX}/etc/pkgtools.conf; \
+	fi
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for f in ${DOCS}
