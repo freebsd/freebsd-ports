@@ -15,7 +15,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/pilrc-${PORTVERSION}
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
 do-install:
