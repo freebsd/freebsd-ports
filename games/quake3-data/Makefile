@@ -18,7 +18,7 @@ COMMENT=	Quake 3 for Linux .pk3 files
 
 # Make this a BUILD_ rather than a RUN_DEPEND so that it can create the
 # directory hierarchy for us.
-RUN_DEPENDS=	${LOCALBASE}/usr/games/quake3/q3ded:${PORTSDIR}/games/q3server
+RUN_DEPENDS=	${LINUXBASE}/usr/games/quake3/q3ded:${PORTSDIR}/games/q3server
 
 PLIST_FILES=	usr/games/quake3/baseq3/pak0.pk3
 ONLY_FOR_ARCHS=	i386
