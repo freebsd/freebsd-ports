@@ -135,6 +135,7 @@
     SUBDIR += xquote
     SUBDIR += xtail
     SUBDIR += xtar
+    SUBDIR += yaunc
     SUBDIR += ytree
 
 .include <bsd.port.subdir.mk>
