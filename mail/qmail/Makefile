@@ -3,7 +3,7 @@
 # Date created:		25 May 1998
 # Whom:			Mario S F Ferreira <lioux@gns.com.br> et al.
 #
-# $Id: Makefile,v 1.2 1998/07/18 20:10:35 hoek Exp $
+# $Id: Makefile,v 1.3 1998/07/24 03:32:51 hoek Exp $
 #
 
 DISTNAME=	qmail-1.03
@@ -22,6 +22,8 @@ MASTER_SITES=	ftp://koobera.math.uic.edu/pub/software/ \
 #		patch-qmail-smtpd.gz
 
 MAINTAINER=	lioux@gns.com.br
+
+BROKEN=		gid conflict
 
 # A normal qmail installation puts everything into /var/qmail/.
 # If you want to install to /usr/local/, then "/usr/local/qmail" is
