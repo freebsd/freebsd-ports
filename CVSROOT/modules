@@ -5515,6 +5515,7 @@ rosegarden	ports/audio/rosegarden
 rot		ports/textproc/rot
 rotate		ports/sysutils/rotate
 rotfl		ports/lang/rotfl
+rotix		ports/textproc/rotix
 route		src/sbin/route
 route6d		src/usr.sbin/route6d
 routed		src/sbin/routed
