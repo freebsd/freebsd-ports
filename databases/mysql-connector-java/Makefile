@@ -8,17 +8,8 @@
 PORTNAME=	mysql-connector-java
 PORTVERSION=	3.0.16
 CATEGORIES=	databases java
-MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/Connector-J/ \
-		http://www.softagency.co.jp/MySQL/Downloads/Connector-J/ \
-		ftp://sunsite.dk/mirrors/mysql/Downloads/Connector-J/ \
-		http://mysql.mediatraffic.fi/Downloads/Connector-J/ \
-		ftp://filepile.tiscali.de/mirror/mysql/Downloads/Connector-J/ \
-		http://mirrors.tilian.co.uk/mysql.com/Downloads/Connector-J/ \
-		ftp://ftp.rtfm.no/pub/mysql/Downloads/Connector-J/ \
-		http://www.mysql.cz/Downloads/Connector-J/ \
-		ftp://ftp.u-paris10.fr/mysql.com/Downloads/Connector-J/ \
-		http://mysql.proserve.nl/Downloads/Connector-J/ \
-		ftp://ftp.free.fr/pub/MySQL/Downloads/Connector-J/
+MASTER_SITES=	${MASTER_SITE_MYSQL}
+MASTER_SITE_SUBDIR=	Connector-J
 DISTNAME=	${PORTNAME}-${PORTVERSION}-ga
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
