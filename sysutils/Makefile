@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.55 1998/12/20 21:15:22 jseger Exp $
+# $Id: Makefile,v 1.56 1998/12/27 18:06:51 sada Exp $
 #
 
     SUBDIR += LPRng
@@ -15,6 +15,7 @@
     SUBDIR += daemontools
     SUBDIR += doconfig
     SUBDIR += gnomeadmin
+    SUBDIR += gnomecontrolcenter
     SUBDIR += glload
     SUBDIR += gtar
     SUBDIR += gtop
