@@ -17,6 +17,7 @@
     SUBDIR += bricons
     SUBDIR += buttonbox
     SUBDIR += decurs
+    SUBDIR += deskmenu
     SUBDIR += dgs
     SUBDIR += dxpc
     SUBDIR += dynamag
