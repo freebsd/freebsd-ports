@@ -10,7 +10,7 @@ PORTVERSION=	${JDK_VERSION}.${JDK_REVISION}
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-
-DISTNAME=	j2sdk-${JDK_VERSION:S/./_/g}_${JDK_REVISION}-linux-${ARCH}
+DISTNAME=	j2sdk-${JDK_VERSION:S/./_/g}_${JDK_REVISION}-linux-i586
 EXTRACT_SUFX=	.bin
 
 MAINTAINER=	znerd@FreeBSD.org
@@ -35,17 +35,17 @@ PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 NO_BUILD=	yes
 USE_LINUX=	yes
 JDK_VERSION=	1.3.1
-JDK_REVISION=	03
+JDK_REVISION=	04
 ONLY_FOR_ARCHS=	i386
 TARGET_DIR?=	${PREFIX}/${PKGBASE}${JDK_VERSION}
-DOWNLOAD_URL?=	http://java.sun.com/Download5?config-file=j2sdk-1_3_1_03.config&platform=linux-i386
+DOWNLOAD_URL?=	http://java.sun.com/Download5?config-file=j2sdk-${JDK_VERSION:S/./_/g}_${JDK_REVISION}.config&platform=linux-i586&Download=download
 
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	You must manually fetch the Java 2 Development Kit ${PORTVERSION} \
-	archive (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, \
-	download the "Linux GNUZIP Tar shell script" into ${DISTDIR} and \
+IGNORE=	You must manually fetch the Java 2 Development Kit ${PORTVERSION}\
+	archive (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL},\
+	download the "Linux GNUZIP Tar shell script" into ${DISTDIR} and\
 	then run make again
 .endif
 
