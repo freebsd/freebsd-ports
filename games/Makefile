@@ -56,6 +56,7 @@
     SUBDIR += frotz
     SUBDIR += galaxis
     SUBDIR += garith
+    SUBDIR += gcompris
     SUBDIR += gemdropx
     SUBDIR += glasteroids
     SUBDIR += gleyes
