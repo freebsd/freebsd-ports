@@ -5,18 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=	kappa20
-PORTVERSION=	0.394
-PORTREVISION=	1
+PORTNAME=	k20fonts
+PORTVERSION=	0.395
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://kappa.allnet.ne.jp/20dot.fonts/
+MASTER_SITES=	http://khdd.net/20dot.fonts/:kappa20 \
+		http://downloads.sourceforge.jp/x-tt/5194/:ayu20
 DISTNAME=	Kappa20-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:kappa20 \
+		${AYUDISTNAME}${AYU_SUFFIX}:ayu20
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	X11 20-dot kanji font 'kappa font'
+MAINTAINER=	ginga-freebsd@ginganet.org
+COMMENT=	X11 20-dot kanji font 'Kappa20dot + ayu font'
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
+AYUDISTNAME=	ayu20gothic-1.4
+AYU_SUFFIX=	.tar.gz
 
 BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkitalic
 
@@ -33,16 +37,19 @@ MAKE_ARGS=	FONTSDIR="${FONTSDIR}"
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
 post-extract:
+	(cd ${WRKSRC} ; ${TAR} xpzf ${DISTDIR}/${AYUDISTNAME}${AYU_SUFFIX})
 	(cd ${WRKSRC} ; ${MV} Makefile Makefile.dist)
 	${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
+	${CP} ${FILESDIR}/fonts.alias.ayu ${WRKSRC}/
+
+pre-build:
+	(cd ${WRKSRC} ; ${SH} makebdf.sh)
 
 post-install:
 	@(cd ${PREFIX}/${FONTSDIR} ; mkfontdir)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/ja/${PORTNAME}
 	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/README ${PREFIX}/share/doc/ja/${PORTNAME}/README.euc-jp
-#	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-#	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/pcf/fonts.alias.kappa ${PREFIX}/share/doc/${PORTNAME}/
 .endif
 
 .include <bsd.port.post.mk>
