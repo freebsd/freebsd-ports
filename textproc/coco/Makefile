@@ -3,7 +3,7 @@
 # Date created:		7 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.30 1997/09/10 08:49:44 asami Exp $
+# $Id: Makefile,v 1.31 1998/10/07 08:11:31 asami Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -101,7 +101,7 @@ post-install:
 	if [ ! -f ${STARTUP_SCRIPT} ]; then \
 		${ECHO} "Installing ${STARTUP_SCRIPT} startup file."; \
 		${ECHO} '#!/bin/sh' > ${STARTUP_SCRIPT}; \
-		${ECHO} 'echo -n " Mule"' >> ${STARTUP_SCRIPT}; \
+		${ECHO} '#echo -n " Mule"' >> ${STARTUP_SCRIPT}; \
 		${ECHO} 'if [ -d /var/run/emacs/lock ]; then' >> ${STARTUP_SCRIPT}; \
 		${ECHO} '     rm -f /var/run/emacs/lock/*' >> ${STARTUP_SCRIPT}; \
 		${ECHO} "else" >> ${STARTUP_SCRIPT}; \
