@@ -1,0 +1,4 @@
+bin/mavbiff
+share/doc/mavbiff/dot-mavbiffrc
+share/doc/mavbiff/README
+@dirrm share/doc/mavbiff

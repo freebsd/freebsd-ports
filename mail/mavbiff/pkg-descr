@@ -1,0 +1,7 @@
+mavbiff consist of a window with a list of mailboxes in it. If mail
+arrives in one of them, the button of the mailbox will change colour.
+Pressing that button will popup the mailbox to the front.
+
+Author: Edwin Groothuis, edwin@mavetju.org
+
+WWW: http://www.mavetju.org/unix/general.php

@@ -96,6 +96,7 @@
     SUBDIR += mailx
     SUBDIR += majorcool
     SUBDIR += majordomo
+    SUBDIR += mavbiff
     SUBDIR += mboxgrep
     SUBDIR += mbx2mbox
     SUBDIR += mess822
