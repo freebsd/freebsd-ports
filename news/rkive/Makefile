@@ -9,7 +9,7 @@
 DISTNAME=	rkive3.1
 PKGNAME=	rkive-3.1
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.sterling.com/rkive/
+MASTER_SITES=	ftp://ftp.vmunix.org/pub/misc/rkive/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	torstenb@FreeBSD.org
