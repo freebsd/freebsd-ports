@@ -18,11 +18,12 @@ CONFIGURE_ARGS=	--enable-sound --enable-vidmode --enable-dga
 USE_XLIB=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
+USE_REINPLACE=	yes
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 
 pre-configure:
-	@${PERL} -pi.orig -e 's:-lpthread:${PTHREAD_LIBS}:g' \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
 
 do-install:
