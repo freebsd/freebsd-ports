@@ -1,6 +1,24 @@
---- makefile.inc.orig	Fri Mar  3 04:02:14 2000
-+++ makefile.inc	Mon Mar 20 18:43:11 2000
-@@ -121,7 +121,7 @@
+--- makefile.inc.orig	Fri Apr 14 15:02:39 2000
++++ makefile.inc	Tue Apr 18 00:26:11 2000
+@@ -78,14 +78,14 @@
+ # screen library to use: SLANG/CURSES/VT100
+ #
+ 
+-USE_SLANG = y
+-#USE_CURSES = y
++#USE_SLANG = y
++USE_CURSES = y
+ #USE_VT100 = y
+ 
+ #
+ 
+ USE_SELECT = y	# system has select() call?
+-#USE_MOUSE = y	# try to use mouse (doesnot work yet)
++USE_MOUSE = y	# try to use mouse (doesnot work yet)
+ 
+ 
+ HOST=unix
+@@ -130,7 +130,7 @@
  ##############################################################################
  ifdef CONFIG_I386
  MACHINE=i386
@@ -9,7 +27,7 @@
  endif
  ifdef CONFIG_I486
  MACHINE=i386
-@@ -151,14 +151,14 @@
+@@ -160,14 +160,14 @@
  # If you do not have GNU development system, modify RM CC LD variables       #
  ##############################################################################
  RM=rm -f

@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	biew
-PORTVERSION=	5.01
+PORTVERSION=	5.04
 CATEGORIES=	editors
 MASTER_SITES=	ftp://biew.sourceforge.net/pub/biew/5.x/src/ \
 		http://download.sourceforge.net/biew/
-DISTNAME=	${PORTNAME}-501
+DISTNAME=	${PORTNAME}-504
 
 MAINTAINER=	ports@FreeBSD.org
 

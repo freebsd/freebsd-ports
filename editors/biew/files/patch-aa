@@ -1,11 +1,11 @@
---- lib/sysdep/generic/unix/os_dep.c.orig	Fri Mar  3 11:08:20 2000
-+++ lib/sysdep/generic/unix/os_dep.c	Sat Mar  4 14:35:49 2000
-@@ -46,7 +46,7 @@
+--- lib/sysdep/generic/unix/os_dep.c.orig	Fri Apr 14 15:02:21 2000
++++ lib/sysdep/generic/unix/os_dep.c	Mon Apr 17 23:40:15 2000
+@@ -29,7 +29,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
  
- char * __get_help_name(void)
- {
--	return "/usr/lib/biew/biew.hlp";
-+	return "%%PREFIX%%/share/biew/biew.hlp";
- }
+-#define LIBDIR "/usr/lib"
++#define LIBDIR "%%PREFIX%%/share/biew"
  
- static void cleanup(int sig)
+ static char _ini_name[FILENAME_MAX + 1];
+ static char _rc_dir_name[FILENAME_MAX + 1];
