@@ -3,6 +3,8 @@ bin/sfddiff
 %%PORTDOCS%%share/doc/pfaedit/AA-Comparison.html
 %%PORTDOCS%%share/doc/pfaedit/AmbrosiaFV-bm.png
 %%PORTDOCS%%share/doc/pfaedit/AmbrosiaFV.png
+%%PORTDOCS%%share/doc/pfaedit/Anna.gif
+%%PORTDOCS%%share/doc/pfaedit/Antigone.gif
 %%PORTDOCS%%share/doc/pfaedit/BitmapView.png
 %%PORTDOCS%%share/doc/pfaedit/C1.png
 %%PORTDOCS%%share/doc/pfaedit/C10.png
@@ -134,11 +136,13 @@ bin/sfddiff
 %%PORTDOCS%%share/doc/pfaedit/privatekey.png
 %%PORTDOCS%%share/doc/pfaedit/privatekeymenu.png
 %%PORTDOCS%%share/doc/pfaedit/problems.html
+%%PORTDOCS%%share/doc/pfaedit/quotations.html
 %%PORTDOCS%%share/doc/pfaedit/scripting.html
 %%PORTDOCS%%share/doc/pfaedit/serif.png
 %%PORTDOCS%%share/doc/pfaedit/serif2.png
 %%PORTDOCS%%share/doc/pfaedit/setwidth.png
 %%PORTDOCS%%share/doc/pfaedit/sfd.html
+%%PORTDOCS%%share/doc/pfaedit/sfddiff.html
 %%PORTDOCS%%share/doc/pfaedit/sfdformat.html
 %%PORTDOCS%%share/doc/pfaedit/splash.png
 %%PORTDOCS%%share/doc/pfaedit/splinefont.html
