@@ -3,6 +3,7 @@ bin/clamscan
 bin/clamdscan
 bin/freshclam
 bin/sigtool
+etc/clamav.conf
 %%CLAMAV-MILTER:%%sbin/clamav-milter
 sbin/clamd
 include/clamav.h
