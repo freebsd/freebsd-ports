@@ -11,7 +11,7 @@ CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/evolution
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	sobomax@FreeBSD.org
 
 BROKEN=		"Build failures with bonobo-0.31"
 
