@@ -74,7 +74,9 @@
     SUBDIR += pm3-base
     SUBDIR += pm3-forms
     SUBDIR += pm3-gui
+    SUBDIR += pm3-m3tk
     SUBDIR += pm3-net
+    SUBDIR += pm3-netobj
     SUBDIR += ptoc
     SUBDIR += python
     SUBDIR += python+ipv6
