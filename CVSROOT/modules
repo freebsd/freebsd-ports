@@ -3836,6 +3836,7 @@ libtasn1	ports/security/libtasn1
 libtecla	ports/devel/libtecla
 libtool13	ports/devel/libtool13
 libtool14	ports/devel/libtool14
+libtool15	ports/devel/libtool15
 libtre		ports/textproc/libtre
 libudbc		ports/databases/libudbc
 libukcprog	ports/devel/libukcprog
