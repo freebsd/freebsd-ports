@@ -2380,6 +2380,7 @@ gdb53-act	ports/devel/gdb53-act
 gdb6		ports/devel/gdb6
 gdbm		ports/databases/gdbm
 gdbmods		ports/devel/gdbmods
+gdc		ports/lang/gdc
 gdcalc		ports/math/gdcalc
 gdchart		ports/graphics/gdchart
 gdeskcal	ports/deskutils/gdeskcal
