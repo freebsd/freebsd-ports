@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsync
-PORTVERSION=	0.19.2
+PORTVERSION=	0.19.4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.daemon-systems.org/cvsync/ \
 		ftp://ftp.allbsd.org/pub/cvsync/
@@ -15,6 +15,13 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A portable CVS repository synchronization utility
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
+
+MAN1=		cvscan.1 cvsync.1 cvsyncd.1 rcscan.1 rcscmp.1
+
+post-configure:
+	${REINPLACE_CMD} -e "s/^#	$${INSTALL}/	$${INSTALL}/" \
+	  ${WRKSRC}/mk/prog.mk
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
