@@ -16,6 +16,7 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 
+BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		artsc.0:${PORTSDIR}/audio/arts \
 		fam.0:${PORTSDIR}/devel/fam \
