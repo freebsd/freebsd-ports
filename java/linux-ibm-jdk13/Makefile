@@ -7,14 +7,14 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
-PORTREVISION=	3 # Service Release 13a : cx130-20020124
+PORTREVISION=	0 # cxia32131-20020302
 CATEGORIES=	java
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-ibm-
-DISTNAME=	IBMJava2-SDK-13
+DISTNAME=	IBMJava2-SDK-131
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	znerd@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
@@ -24,7 +24,7 @@ PLIST_SUB+=	TARGET_PREFIX=${TARGET_PREFIX:S/^${PREFIX}\///}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
-JDK_VERSION=	1.3.0
+JDK_VERSION=	1.3.1
 ONLY_FOR_ARCHS=	i386
 TARGET_PREFIX?=	${PREFIX}/${PKGBASE}${PORTVERSION}
 LINUX_SH?=	${LINUXBASE}/bin/sh
@@ -32,8 +32,7 @@ LINUX_SH?=	${LINUXBASE}/bin/sh
 NO_CDROM=	"License doesn\'t allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
 
-XARGS=		xargs
-FIND=		find
+DOWNLOAD_URL=	http://www6.software.ibm.com/dl/dklx130/dklx130-i?S_PKG=ia32ww
 
 .if defined(WITH_JAPANESE_FONTS)
 PLIST_SUB+=	JAPANESE=""
@@ -50,7 +49,7 @@ IGNORE=	"You can not legally distribute binaries"
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=You must manually fetch the IBM Java SDK ${JDK_VERSION} for Linux archive (${DISTNAME}${EXTRACT_SUFX}) from http://www6.software.ibm.com/dl/dklx130/dklx130-p, place it in ${DISTDIR} and then run make again.
+IGNORE=You must manually fetch the IBM Java SDK ${JDK_VERSION} for Linux archive (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again.
 .endif
 
 post-patch:
