@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CalculiX
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	ccx_${PORTVERSION}.src.tar.gz cgx_${PORTVERSION}.tar.gz
@@ -24,11 +24,11 @@ COMMENT=	A Three-Dimensional Structural Finite Element Program
 
 # These are required to build Crunchix (ccx)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libspooles.a:${PORTSDIR}/math/spooles \
-		${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/arpack \
-		${LOCALBASE}/lib/libf77blas.a:${PORTSDIR}/math/atlas
+		${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/arpack
+LIB_DEPENDS=    atlas.1:${PORTSDIR}/math/atlas
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_MESA=	yes
+USE_GL=	yes
 USE_REINPLACE=	yes
 BLAS_LIBS=	-lf77blas -latlas
 BROWSER?=	mozilla
@@ -55,12 +55,13 @@ pre-build:
 	s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' \
 		${WRKSRC}/cgx_${PORTVERSION}/src/Makefile
 	@${REINPLACE_CMD} -e 's+%%DOCSDIR%%+${DOCSDIR}+g; \
-	s+"netscape"+"${BROWSER}"+ ; \
+	s+"mozilla"+"${BROWSER}"+ ; \
 	s+"ghostview"+"${PSVIEWER}"+ ;' \
 		${WRKSRC}/cgx_${PORTVERSION}/src/cgx.h
 
 do-build:
 	@(cd ${WRKSRC}/ccx_${PORTVERSION}/src; ${SETENV} ${MAKE_ENV} $(MAKE) )
+	@(cd ${WRKSRC}/libSNL/src; ${SETENV} ${MAKE_ENV} $(MAKE) )
 	@(cd ${WRKSRC}/cgx_${PORTVERSION}/src; ${SETENV} ${MAKE_ENV} $(MAKE) )
 
 do-install:
@@ -77,7 +78,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/cgx_${PORTVERSION}/doc/cgx/* \
 	  ${DOCSDIR}/cgx
 	@${INSTALL_DATA} ${WRKSRC}/ccx_${PORTVERSION}/doc/*.ps ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/cgx_${PORTVERSION}/doc/*.ps ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKDIR}/cgx.ps ${DOCSDIR}
 	@${GZIP_CMD} ${DOCSDIR}/*.ps
 .endif
 .ifdef WITH_EXAMPLES
