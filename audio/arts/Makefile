@@ -23,17 +23,47 @@ LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
 		glib:${PORTSDIR}/devel/glib20 \
 		vorbis:${PORTSDIR}/audio/libvorbis
 
+WANT_GNOME=	yes
 USE_QT_VER=	3
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 QTCPPFLAGS+=	-L${LOCALBASE}/lib
+USE_REINPLACE=	yes
 DO_NOT_COMPILE+=gmcop
 
 CFLAGS+=	-DHAVE_VASPRINTF
 CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+OPTIONS=	ESD "Enable esound support" off \
+		NAS "Enable NAS support" off
 
-.include <bsd.port.mk>
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_ESD)
+USE_GNOME+=	esound
+.endif
+
+.if defined(WITH_NAS)
+LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
+.endif
+
+pre-configure:
+.if defined(WITHOUT_ESD)
+	${REINPLACE_CMD} -e 's|arts_libesd_include=yes|arts_libesd_include=no|g' \
+		${WRKSRC}/configure
+.endif
+
+.if defined(WITH_NAS)
+	${REINPLACE_CMD} \
+		-e 's|LIBS="-laudio  $$LIBS"|LIBS="-laudio -lm -lXt -lXau $$LIBS"|g' \
+			${WRKSRC}/configure
+.elseif defined(WITHOUT_NAS)
+	${REINPLACE_CMD} \
+		-e 's|ac_cv_lib_audio_AuOpenServer=yes|ac_cv_lib_audio_AuOpenServer=no|g' \
+			${WRKSRC}/configure
+.endif
+
+.include <bsd.port.post.mk>
