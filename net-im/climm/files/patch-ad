@@ -1,0 +1,20 @@
+--- util_ui.c.orig	Tue Jan 23 11:49:05 2001
++++ util_ui.c	Wed Jan 24 22:09:24 2001
+@@ -102,7 +102,7 @@
+    assert( 2048 >= strlen( str ) );
+    
+    va_start( args, str );
+-   vsprintf( buf, str, args );
++   vsnprintf( buf, sizeof(buf), str, args );
+    k = write( fd, buf, strlen( buf ) );
+    if ( k != strlen( buf ) )
+    {
+@@ -292,7 +292,7 @@
+    
+    va_start( args, str );
+ #ifndef CURSES_UI
+-   vsprintf( buf, str, args );
++   vsnprintf( buf, sizeof(buf), str, args );
+    str2 = buf;
+    while ( (void *) NULL != ( str1 = strchr( str2, '\x1b' ) ) )
+    {

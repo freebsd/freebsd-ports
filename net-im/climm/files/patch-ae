@@ -1,0 +1,24 @@
+--- icq_response.c.orig	Tue Jan 23 11:49:05 2001
++++ icq_response.c	Wed Jan 24 22:07:40 2001
+@@ -871,19 +871,12 @@
+       }
+       *tmp = 0;
+       char_conv ("wc",data);
+-// temporaryy fix to buffer overflow
+-// should be solved better -mc
+-//      strcpy (url_desc,data);
+-      url_desc[0] = '\0';
+-      strncat(url_desc,data,sizeof(url_data)-1);
++      strlcpy(url_desc,data,sizeof(url_data));
+ 
+       tmp++;
+       data = tmp;
+       char_conv ("wc",data);
+-// same apllies here --mc
+-//      strcpy (url_data,data);
+-      url_data[0] = '\0';
+-      strncat (url_data,data,sizeof(url_data)-1);
++      strlcpy(url_data,data,sizeof(url_data));
+ 
+ // and again
+ //      sprintf (message,"Description: %s \n                          URL: %s",url_desc,url_data);  

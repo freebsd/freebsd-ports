@@ -1,0 +1,11 @@
+--- mreadline.c.orig	Tue Jan 23 11:49:05 2001
++++ mreadline.c	Wed Jan 24 22:01:31 2001
+@@ -359,7 +359,7 @@
+               break;
+            }
+         }
+-	sprintf (s, "%s %s/", message_cmd,
++	snprintf (s, sizeof(s), "%s %s/", message_cmd,
+ 		tab_array[tab_pointer]);
+ 	clen = cpos = strlen (s);
+ 	R_undraw();

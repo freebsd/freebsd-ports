@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	micq
-PORTVERSION=	0.4.6
+PORTVERSION=	0.4.6.1
 CATEGORIES=	net
-MASTER_SITES=   ftp://micq.chatzone.org/pub/micq/V${PORTVERSION}/
+MASTER_SITES=   http://micq.ukeer.de/source/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/1/p1/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@freebsd.org
 
-FORBIDDEN=	"Remote buffer overflow"
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.1/-p1/}/src
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/micq ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 		${MKDIR} ${PREFIX}/share/doc/micq
-		${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/micq
-		${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${PREFIX}/share/doc/micq
+		${INSTALL_DATA} ${WRKSRC}/../README ${PREFIX}/share/doc/micq
+		${INSTALL_DATA} ${WRKSRC}/../CHANGELOG ${PREFIX}/share/doc/micq
 .endif
 
 .include <bsd.port.mk>
