@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dvdauthor
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,6 +23,7 @@ USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LDFLAGS="-L${LOCALBASE}/lib"
+MAN1=	dvdauthor.1 spumux.1
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -31,6 +32,9 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${PREFIX}/share/doc/dvdauthor
 	${INSTALL_DATA} ${WRKSRC}/iso639.txt ${PREFIX}/share/doc/dvdauthor
 	${INSTALL_DATA} ${WRKSRC}/menu.txt ${PREFIX}/share/doc/dvdauthor
+	for i in dvdauthor ex-title examples index manpages spumux; do \
+		${INSTALL_DATA} ${WRKSRC}/doc/$$i.html ${PREFIX}/share/doc/dvdauthor; \
+	done
 .endif
 
 .include <bsd.port.mk>
