@@ -31,13 +31,11 @@ TRUE=		/usr/bin/true
 
 MAN8=		ssmtp.8
 
-.if defined(WITH_USERPREFS)
+.if !defined(WITHOUT_USERPREFS)
 CFLAGS+=	-DUSERPREFS
-.else
 pre-everything::
-	@${ECHO_CMD} 'If you want to let your users set their own revalias address,'
-	@${ECHO_CMD} 'please define WITH_USERPREFS (they just have to put their mail'
-	@${ECHO_CMD} 'address in ~/.ssmtprc).'
+	@${ECHO_CMD} "If you don't want to let your users set their own revalias address"
+	@${ECHO_CMD} "(in ~/.ssmtprc), please define WITHOUT_USERPREFS."
 .endif
 
 post-configure:
