@@ -18,7 +18,7 @@ MAINTAINER=	marcus@FreeBSD.org
 LIB_DEPENDS=	db3.2:${PORTSDIR}/databases/db3
 .endif
 .if defined(WITH_SRVLOC)
-LIB_DEPENDS=	slp.1:${PORTSDIR}/net/openslp
+LIB_DEPENDS+=	slp.1:${PORTSDIR}/net/openslp
 .endif
 .if !exists(/usr/include/tcpd.h)
 LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
