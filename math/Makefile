@@ -138,6 +138,7 @@
     SUBDIR += ploticus
     SUBDIR += plplot
     SUBDIR += pspp
+    SUBDIR += py-fpconst
     SUBDIR += py-gato
     SUBDIR += py-gnuplot
     SUBDIR += py-gsl
