@@ -4,8 +4,9 @@ in albums which are automatically sorted chronologically. An easy to use
 interface is provided to connect to your camera and preview images and download
 and/or delete them.
 
-Digikam also includes a very flexible plugin architecture. Install the 
-graphics/digikamplugins port to extend Digikam's features.
+Digikam also uses the very flexible Kipi plugin architecture. Install the 
+graphics/kipi-plugins and graphics/digikamimageplugins ports to extend 
+Digikam's features.
 
 WWW: http://digikam.sourceforge.net/
 
