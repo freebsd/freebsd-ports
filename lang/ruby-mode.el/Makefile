@@ -17,6 +17,9 @@ COMMENT=	Emacs lisp modules for the Ruby language
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
 
 USE_RUBY=	yes
+RUBY_VER=	1.8
+RUBY_NO_BUILD_DEPENDS=	yes
+RUBY_NO_RUN_DEPENDS=	yes
 
 WRKSRC=		${WRKDIR}/elisp
 NO_BUILD=	yes
