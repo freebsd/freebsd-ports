@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/wmhm/wmhm
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400000
-BROKEN=		'wmhm requires intpm which is only available in 4.0-CURRENT."
+BROKEN=		'wmhm requires intpm which is only available in 4.0-CURRENT'
 .endif
 
 .include <bsd.port.post.mk>
