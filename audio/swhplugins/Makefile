@@ -15,12 +15,12 @@ DISTNAME=	swh-plugins-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Steve Harris' huge Collection of LADSPA Plugins
 
-# includes assember code
-ONLY_FOR_ARCHS=	i386
-
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		fftw.2:${PORTSDIR}/math/fftw
+
+# includes assember code
+ONLY_FOR_ARCHS=	i386
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
