@@ -7,12 +7,12 @@
 
 PORTNAME=	scummvm
 PORTVERSION=	0.6.0
-CATEGORIES=	games emulators
+CATEGORIES=	emulators games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	alexander@trull.com
-COMMENT=	Free implementation of LucasArts S.C.U.M.M. interpreter
+COMMENT=	Graphical Adventure Game Virtual Machine
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
