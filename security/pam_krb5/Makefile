@@ -8,18 +8,19 @@
 PORTNAME=		pam_krb5
 PORTVERSION=		1.3.r7
 CATEGORIES=		security
-MASTER_SITES=		http://unc.dl.sourceforge.net/sourceforge/pam-krb5/ \
-			http://umn.dl.sourceforge.net/sourceforge/pam-krb5/ \
-			http://twtelecom.dl.sourceforge.net/sourceforge/pam-krb5/ \
-			http://aleron.dl.sourceforge.net/sourceforge/pam-krb5/ \
-			http://easynews.dl.sourceforge.net/sourceforge/pam-krb5/ \
-			http://switch.dl.sourceforge.net/sourceforge/pam-krb5/ \
-			http://cesnet.dl.sourceforge.net/sourceforge/pam-krb5/ \
-			http://flow.dl.sourceforge.net/sourceforge/pam-krb5/ \
-			http://easynews.dl.sourceforge.net/sourceforge/pam-krb5/ \
-			http://keihanna.dl.sourceforge.net/sourceforge/pam-krb5/ \
-			http://heanet.dl.sourceforge.net/sourceforge/pam-krb5/ \
+MASTER_SITE_SOURCEFORGE+=	http://unc.dl.sourceforge.net/%SUBDIR%/ \
+			http://umn.dl.sourceforge.net/%SUBDIR%/ \
+			http://twtelecom.dl.sourceforge.net/%SUBDIR%/ \
+			http://aleron.dl.sourceforge.net/%SUBDIR%/ \
+			http://easynews.dl.sourceforge.net/%SUBDIR%/ \
+			http://switch.dl.sourceforge.net/%SUBDIR%/ \
+			http://cesnet.dl.sourceforge.net/%SUBDIR%/ \
+			http://flow.dl.sourceforge.net/%SUBDIR%/ \
+			http://keihanna.dl.sourceforge.net/%SUBDIR%/ \
+			http://heanet.dl.sourceforge.net/%SUBDIR%/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			http://www.komquats.com/distfiles/
+MASTER_SITE_SUBDIR=	sourceforge/${PORTNAME:S/_/-/}
 DISTNAME=		${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=		cy@FreeBSD.org
@@ -27,6 +28,7 @@ COMMENT=	A Pluggable Authentication Module for Kerberos 5
 
 MAN8=			pam_krb5.8
 
+USE_SIZE=		yes
 USE_PERL5=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
