@@ -1,11 +1,20 @@
 *******************************************************************************
-This is a development release and should not be considered stable.
-If you want stable use version 0.1.14.
-This is one version of many to come before a stable 1.0.0 release.
-Check out the RoadMap on http://fluxbox.sourceforge.net/roadmap.php
-for more information about upcoming versions.
+This is a development release and should not be considered stable. If you want
+stable use version 0.1.14, please use x11-wm/fluxbox instead.
 
-ATTENTION: As of 0.9.6 the shell script 'startfluxbox-devel' has been added.
-           It should be executed instead of fluxbox itself from
-           ~/.xinitrc or ~/.xsession.
+This is one version of many to come before a stable 1.0.0 release. Check out the
+RoadMap on http://fluxbox.sourceforge.net/roadmap.php for more information about
+upcoming versions.
+
+ATTENTION: Now, the -devel has been removed and the CONFLICTS to x11-wm/fluxbox
+	   has been added. The x11-wm/fluxbox-devel is stable enough to use
+	   daily and we doubt someone will install both fluxbox and
+	   fluxbox-devel.
+
+	   Since the '-devel' suffix has been removed, you should either use
+	   fluxbox-generate_menu to regenerate the menu or edit your
+	   ~/.fluxbox/menu to remove the -devel suffix.
+
+	   As of 0.9.6 the shell script 'startfluxbox' has been added. It should
+	   be executed instead of fluxbox itself from ~/.xinitrc or ~/.xsession.
 *******************************************************************************
