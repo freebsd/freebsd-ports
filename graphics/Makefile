@@ -117,6 +117,7 @@
     SUBDIR += gstreamer-plugins
     SUBDIR += gsubedit
     SUBDIR += gthumb
+    SUBDIR += gthumb2
     SUBDIR += gtkdps
     SUBDIR += gtkfig
     SUBDIR += gtkgraph
