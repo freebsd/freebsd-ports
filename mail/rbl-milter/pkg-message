@@ -1,12 +1,12 @@
 The start/stop script has been placed in $PREFIX/etc/rc.d/rbl-milter.sh
- XRun the program now with the start command to get rbl-milter running.
-By Xdefault, it uses the relays found at relays.ordb.org but you can
-change that Xby modifying the script.  It accepts multiple -d commands
-for multiple Xsite checks.
+Run the program now with the start command to get rbl-milter running.
+By default, it uses the relays found at relays.ordb.org but you can
+change that by modifying the script.  It accepts multiple -d commands
+for multiple site checks.
 
 Note that you will need to edit the proper sendmail.mc file in your
-/etc/mail Xdirectory so that sendmail will pass mail to rbl-milter.  If
-you have not Xdone this before, do the following:
+/etc/mail directory so that sendmail will pass mail to rbl-milter.
+If you have not done this before, do the following:
 
   cd /etc/mail
   cp -p freebsd.mc `hostname`.mc
@@ -22,4 +22,4 @@ and rebuild it
   make restart
 
 By default, the INPUT_MAIL_FILTER line will ignore the filter if
-rbl-milter Xis not running.
+rbl-milter is not running.
