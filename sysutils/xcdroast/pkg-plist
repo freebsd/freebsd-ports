@@ -1,4 +1,4 @@
-bin/xcdrgtk
+bin/xcdroast
 lib/xcdroast-0.98/icons/burnproof.gif
 lib/xcdroast-0.98/icons/cddblogo.gif
 lib/xcdroast-0.98/icons/dialog_default.png
@@ -19,6 +19,7 @@ lib/xcdroast-0.98/bin/mkisofs
 lib/xcdroast-0.98/bin/cdrecord
 lib/xcdroast-0.98/bin/cdda2wav
 lib/xcdroast-0.98/bin/readcd
+lib/xcdroast-0.98/bin/xcdrwrap
 @dirrm lib/xcdroast-0.98/bin
 @dirrm lib/xcdroast-0.98/icons
 @dirrm lib/xcdroast-0.98/lang
