@@ -4,6 +4,7 @@
 bin/dltest
 bin/isql
 bin/iusql
+bin/odbc_config
 bin/odbcinst
 %%GUI:%%bin/odbctest
 etc/odbc.ini
