@@ -1,0 +1,8 @@
+*
+* Files have been installed in
+* %%PREFIX%%/%%PHPUADIR%%
+*
+* Goto "http://your.url/%%APPNAME%%/install.php" to complete installing this package
+*
+* Don't forget to install the modules needed to administrate the game you're hosting
+*
