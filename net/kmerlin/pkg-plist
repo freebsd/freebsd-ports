@@ -1,7 +1,9 @@
 bin/kmerlin
-bin/kmerlin_client
-share/applnk/Internet/kmerlin.desktop
-share/apps/kmerlin/icons/hicolor/16x16/actions/chat.png
+share/doc/HTML/en/kmerlin/index.cache.bz2
+share/doc/HTML/en/kmerlin/index.docbook
+share/doc/HTML/en/kmerlin/common
+share/nls/POSIX
+share/nls/en_US.US-ASCII
 share/apps/kmerlin/icons/hicolor/16x16/actions/hotmail.png
 share/apps/kmerlin/icons/hicolor/16x16/actions/kmaway.png
 share/apps/kmerlin/icons/hicolor/16x16/actions/kmback.png
@@ -10,17 +12,10 @@ share/apps/kmerlin/icons/hicolor/16x16/actions/kmlunch.png
 share/apps/kmerlin/icons/hicolor/16x16/actions/kmoffline.png
 share/apps/kmerlin/icons/hicolor/16x16/actions/kmonline.png
 share/apps/kmerlin/icons/hicolor/16x16/actions/kmphone.png
+share/apps/kmerlin/icons/hicolor/16x16/actions/chat.png
 share/apps/kmerlin/icons/hicolor/22x22/actions/hotmail.png
 share/apps/kmerlin/icons/hicolor/22x22/actions/kmaway.png
 share/apps/kmerlin/icons/hicolor/22x22/actions/kmoffline.png
-share/apps/kmerlin/kmerlinchatui.rc
-share/apps/kmerlin/kmerlinui.rc
-share/apps/kmerlin/pics/chat.png
-share/apps/kmerlin/pics/info.png
-share/apps/kmerlin/pics/network.png
-share/apps/kmerlin/pics/penguin.png
-share/apps/kmerlin/pics/top.png
-share/apps/kmerlin/smilies/README
 share/apps/kmerlin/smilies/angel.png
 share/apps/kmerlin/smilies/angry.png
 share/apps/kmerlin/smilies/bat.png
@@ -52,6 +47,7 @@ share/apps/kmerlin/smilies/musical_note.png
 share/apps/kmerlin/smilies/omg.png
 share/apps/kmerlin/smilies/phone.png
 share/apps/kmerlin/smilies/present.png
+share/apps/kmerlin/smilies/README
 share/apps/kmerlin/smilies/regular.png
 share/apps/kmerlin/smilies/rose.png
 share/apps/kmerlin/smilies/sad.png
@@ -67,11 +63,13 @@ share/apps/kmerlin/smilies/ugly.png
 share/apps/kmerlin/smilies/whatchutalkingabout_smile.png
 share/apps/kmerlin/smilies/wilted_rose.png
 share/apps/kmerlin/smilies/wink.png
-share/doc/HTML/en/kmerlin/common
-share/doc/HTML/en/kmerlin/index.cache.bz2
-share/doc/HTML/en/kmerlin/index.docbook
-share/icons/locolor/16x16/apps/kmerlin.png
-share/icons/locolor/32x32/apps/kmerlin.png
+share/apps/kmerlin/pics/info.png
+share/apps/kmerlin/pics/network.png
+share/apps/kmerlin/pics/top.png
+share/apps/kmerlin/pics/penguin.png
+share/apps/kmerlin/pics/chat.png
+share/apps/kmerlin/kmerlinui.rc
+share/apps/kmerlin/kmerlinchatui.rc
 share/locale/ar/LC_MESSAGES/kmerlin.mo
 share/locale/ca/LC_MESSAGES/kmerlin.mo
 share/locale/de/LC_MESSAGES/kmerlin.mo
@@ -82,7 +80,9 @@ share/locale/nb/LC_MESSAGES/kmerlin.mo
 share/locale/nl/LC_MESSAGES/kmerlin.mo
 share/locale/zh-CN/LC_MESSAGES/kmerlin.mo
 share/locale/zh-TW/LC_MESSAGES/kmerlin.mo
-@comment directories
+share/icons/locolor/32x32/apps/kmerlin.png
+share/icons/locolor/16x16/apps/kmerlin.png
+share/applnk/Internet/kmerlin.desktop
 @dirrm share/doc/HTML/en/kmerlin
 @dirrm share/apps/kmerlin/icons/hicolor/16x16/actions
 @dirrm share/apps/kmerlin/icons/hicolor/16x16
@@ -93,4 +93,3 @@ share/locale/zh-TW/LC_MESSAGES/kmerlin.mo
 @dirrm share/apps/kmerlin/smilies
 @dirrm share/apps/kmerlin/pics
 @dirrm share/apps/kmerlin
-@unexec rmdir %D/share/applnk/Internet 2>/dev/null || true
