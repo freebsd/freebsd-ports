@@ -1,0 +1,6 @@
+SCMxx is a data exchange utility for certain Siemens mobile phone models.
+Data types handled include logo bitmaps, MIDI files, vCalendars,
+address books, phonebook entries and SMS. Support for phones includes the
+S25, C35i, S35i, M35i, C45, S45, ME45 and SL45 models.
+
+WWW: http://www.hendrik-sattler.de/scmxx/
