@@ -1,12 +1,12 @@
 # New ports collection makefile for:   guavac
-# Version required:    0.3.1
+# Version required:    1.0
 # Date created:        10 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1997/06/30 09:43:12 max Exp $
+# $Id: Makefile,v 1.5 1997/06/30 10:19:35 max Exp $
 #
 
-DISTNAME=	guavac-0.3.1
+DISTNAME=	guavac-1.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://summit.stanford.edu/pub/guavac/ \
 		ftp://ftp.Germany.EU.net/pub/programming/languages/java/guavac/\
