@@ -15,7 +15,4 @@ The procedures it takes is shown as follows:
 
 The usage can be shown by running it without arguments or with a -h.
 
-Portversion, which provides better comparison algorithm and
-functionality than pkg_version(1), is also included.
-
 Author:	Akinori MUSHA <knu@FreeBSD.org>
