@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-CGI-Session
 # Date created:				12 June 2002
-# Whom:					Erwin Lansing <erwin@lansing.dk>
+# Whom:					Erwin Lansing <erwin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Perl extension for persistent session management
 
 PERL_CONFIGURE=	yes

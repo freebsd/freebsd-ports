@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-Apache-AntiSpam
 # Date created:				11 June 2002
-# Whom:					Erwin Lansing <erwin@lansing.dk>
+# Whom:					Erwin Lansing <erwin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	AntiSpam filter for web pages
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \

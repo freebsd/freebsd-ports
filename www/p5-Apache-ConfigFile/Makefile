@@ -1,6 +1,6 @@
 # New ports collection makefile for:    p5-Apache-ConfigFile
 # Date created:				January 24th 2003
-# Whom:	      				Erwin Lansing <erwin@lansing.dk>
+# Whom:	      				Erwin Lansing <erwin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/N/NW/NWIGER
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Apache::ConfigFile - Parse Apache style httpd.conf configuration files
 
 PERL_CONFIGURE=	yes

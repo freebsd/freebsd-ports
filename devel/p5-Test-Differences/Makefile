@@ -1,6 +1,6 @@
 # New ports collection makefile for:    p5-Test-Differences
 # Date created:				January 28th 2003
-# Whom:	      				Erwin Lansing <erwin@lansing.dk>
+# Whom:	      				Erwin Lansing <erwin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Test::Differences - Test strings and data structures for differences
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff

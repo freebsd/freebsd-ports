@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Perl5 module to guess file type like file(1)
 
 PERL_CONFIGURE=	YES

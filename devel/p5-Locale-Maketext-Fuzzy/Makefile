@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-Locale-Maketext-Fuzzy
 # Date created:				Mon April 14th, 2003
-# Whom:					Erwin Lansing <erwin@lansing.dk>
+# Whom:					Erwin Lansing <erwin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Locale
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Locale::Maketext::Fuzzy - Maketext from already interpolated strings
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \

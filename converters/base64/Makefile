@@ -11,7 +11,7 @@ CATEGORIES=	converters
 MASTER_SITES=	http://www.fourmilab.ch/webtools/base64/ \
 		http://dl.droso.net/ports/
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Simple program to convert binary files to base64
 
 GNU_CONFIGURE=	yes

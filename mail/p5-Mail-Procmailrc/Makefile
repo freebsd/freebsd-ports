@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	A Perl OO interface to procmail rc files
 
 PERL_CONFIGURE=	YES

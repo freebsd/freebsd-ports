@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-Mail-RBL
 # Date created:				July 24th 2002
-# Whom:	      				Erwin Lansing <erwin@lansing.dk>
+# Whom:	      				Erwin Lansing <erwin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Perl extension to access RBL-style host verification services
 
 PERL_CONFIGURE=	yes

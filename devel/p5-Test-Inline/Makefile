@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-Test-Inline
 # Date created:				Mon Sep 12
-# Whom:					Erwin Lansing <erwin@lansing.dk>
+# Whom:					Erwin Lansing <erwin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Test::Inline - Inlining your tests next to the code being tested
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/Harness.pm:${PORTSDIR}/devel/p5-Test-Harness

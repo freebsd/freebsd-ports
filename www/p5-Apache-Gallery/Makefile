@@ -1,6 +1,6 @@
 # New ports collection makefile for:    p5-Apache-Gallery
 # Date created:				October 24 2002
-# Whom:	      				Erwin Lansing <erwin@lansing.dk>
+# Whom:	      				Erwin Lansing <erwin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITES=	http://apachegallery.dk/download/ \
 MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Apache::Gallery - mod_perl handler to create an image gallery
 
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2

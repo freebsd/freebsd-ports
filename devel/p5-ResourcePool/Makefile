@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MW/MWS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	A generic way to use connection caching for any kind of resources
 
 PERL_CONFIGURE=	YES

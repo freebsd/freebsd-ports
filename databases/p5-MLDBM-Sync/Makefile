@@ -1,6 +1,6 @@
 # New ports collection makefile for:    p5-MLDBM-Sync
 # Date created:                         May 29th, 2002
-# Whom:                                 erwin@lansing.dk
+# Whom:                                 erwin@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MLDBM
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	MLDBM::Sync - safe concurrent access to MLDBM databases
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM
