@@ -362,6 +362,7 @@
     SUBDIR += p5-Net-CIDR
     SUBDIR += p5-Net-DLookup
     SUBDIR += p5-Net-DNS
+    SUBDIR += p5-Net-DNS-SEC
     SUBDIR += p5-Net-DNS-ZoneFile
     SUBDIR += p5-Net-Daemon
     SUBDIR += p5-Net-Dict
