@@ -7,7 +7,7 @@
 
 PORTNAME=	valgrind
 PORTVERSION=	352
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rabson.org/
 PKGNAMESUFFIX=	-snapshot
