@@ -30,7 +30,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|[\$$]CFLAGS -pthread|\$$CFLAGS|g ; \
 		 s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g ; \
-		 s|[\$$]LDFLAGS -pthread|\$$LDFLAGS ${PTHREAD_LIBS}|g' \
+		 s|[\$$]LDFLAGS -pthread|\$$LDFLAGS ${PTHREAD_LIBS}|g ; \
+		 s|-lcipher||g' \
 			${WRKSRC}/config/freebsd
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/config/gnu-flags
 
