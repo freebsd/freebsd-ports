@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	courier-authlib
-PORTVERSION=	0.54
-PORTREVISION=	2
+PORTVERSION=	0.55
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -27,16 +27,18 @@ USE_LIBLTDL=	yes
 #
 # options available:
 #
-# WITHOUT_PAM:			Don't build in PAM support
-# WITH_VPOPMAIL:		Build in vpopmail support
-# WITH_MYSQL:			Build in mysql support
-# WITH_POSTGRESQL:		Build in postgresql support
-# WITH_LDAP:			Build in ldap support with openldap
-# WITH_GDBM:			Use gdbm files instead of bdb
 # WITH_MAILUSER:		The user running authlib
 # WITH_MAILGROUP:		The group running authlib
-# WITHOUT_AUTHUSERDB:		Don't build in authuserdb
+# WITH_SYSLOG_FACILITY:		The syslogfacility to use
 #
+
+OPTIONS=	PAM		"Build with PAM support"		on \
+		VPOPMAIL	"Build in vpopmail support"		off \
+		MYSQL		"Build in mysql support"		off \
+		POSTGRESQL	"Build in postgresql support"		off \
+		LDAP		"Build in ldap support with openldap"	off \
+		GDBM		"Use gdbm files instead of bdb"		off \
+		AUTHUSERDB	"Build with authuserdb"			on
 
 VPOPMAILDIR?=	${LOCALBASE}/vpopmail
 
@@ -50,11 +52,17 @@ CONFIGURE_ARGS=	--without-authshadow \
 		--enable-unicode \
 		--enable-ltdl-install=no
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SYSLOG_FACILITY)
+CONFIGURE_ARGS+=--with-syslog=${WITH_SYSLOG_FACILITY}
+.endif
+
 .if defined(WITH_GDBM)
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
-CONFIGURE_ARGS+=	--with-db=gdbm
+CONFIGURE_ARGS+=--with-db=gdbm
 .else
-CONFIGURE_ARGS+=	--with-db=db
+CONFIGURE_ARGS+=--with-db=db
 .endif
 
 .if !defined(WITH_VPOPMAIL)
@@ -116,9 +124,6 @@ CONFIGURE_ARGS+=--with-mailuser=${WITH_MAILUSER}
 .if defined(WITH_MAILGROUP)
 CONFIGURE_ARGS+=--with-mailgroup=${WITH_MAILGROUP}
 .endif
-
-
-.include <bsd.port.pre.mk>
 
 RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
