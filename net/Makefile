@@ -416,7 +416,7 @@
     SUBDIR += p5-Net
     SUBDIR += p5-Net-AIM
     SUBDIR += p5-Net-AOLIM
-    SUBDIR += p5-Net-BGP4
+    SUBDIR += p5-Net-BGP
     SUBDIR += p5-Net-CIDR
     SUBDIR += p5-Net-DLookup
     SUBDIR += p5-Net-DNS
