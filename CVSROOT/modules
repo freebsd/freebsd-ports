@@ -7748,6 +7748,7 @@ superlu		ports/math/superlu
 surf		ports/math/surf
 surfraw		ports/www/surfraw
 susv2		ports/misc/susv2
+susv3		ports/misc/susv3
 sv-aspell	ports/textproc/sv-aspell
 sv-ooodict-SE	ports/editors/ooodict-sv_SE
 svg2swf		ports/graphics/svg2swf
