@@ -24,7 +24,7 @@
 +	$(CC) -c $(INCLUDE) $(CFLAGS) $(CADD) -o $@ $<
 +
 +$(SHLIBOBJECTS): %.lo: %.c $(HEADERLINKS)
- 	$(CC) -c $(INCLUDE) $(CFLAGS) $(CFLAGS_SHLIB) $(CADD) -o $@ $<
+ 	$(CC) -c $(INCLUDES) $(CFLAGS) $(CFLAGS_SHLIB) $(CADD) -o $@ $<
  
  MAJ = $(NETPBM_MAJOR_RELEASE)
  MIN = $(NETPBM_MINOR_RELEASE)

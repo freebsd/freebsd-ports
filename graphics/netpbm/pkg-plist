@@ -39,9 +39,12 @@ bin/pamchannel
 bin/pamcut
 bin/pamdeinterlace
 bin/pamdice
+bin/pamedge
 bin/pamendian
 bin/pamfile
+bin/pamflip
 bin/pamfunc
+bin/pamlookup
 bin/pamoil
 bin/pamseq
 bin/pamslice
@@ -202,6 +205,7 @@ bin/ppmshadow
 bin/ppmshift
 bin/ppmspread
 bin/ppmtoacad
+bin/ppmtoarbtxt
 bin/ppmtobmp
 bin/ppmtoeyuv
 bin/ppmtogif
@@ -231,6 +235,7 @@ bin/ppmtoxpm
 bin/ppmtoyuv
 bin/ppmtoyuvsplit
 bin/ppmtv
+bin/ppmwheel
 bin/psidtopgm
 bin/pstopnm
 bin/qrttoppm
