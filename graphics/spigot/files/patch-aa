@@ -1,0 +1,15 @@
+--- Makefile.orig	Wed Nov 29 03:48:20 1995
++++ Makefile	Sat Dec 20 14:36:25 1997
+@@ -1,9 +1,9 @@
+-DESTDIR?=/usr/local
++PREFIX?=/usr/local
+ 
+ all:
+ 	echo "Nothing to make."
+ 
+ install:
+-	cp libspigot.a ${DESTDIR}/lib/libspigot.a
++	cp libspigot.a ${PREFIX}/lib/libspigot.a
+ 	ranlib libspigot.a
+-	cp spigot_saa7191.h /usr/local/include
++	cp spigot_saa7191.h ${PREFIX}/include
