@@ -19,6 +19,12 @@ USE_GMAKE=	yes
 USE_QT2=	yes
 WRKSRC=		${WRKDIR}/fine
 
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_ARCH} == "alpha"
+CFLAGS+=	-O0
+.endif
+
 do-install:
 	@${MKDIR} ${PREFIX}/share/fine
 	${INSTALL_DATA} ${WRKSRC}/.editor ${PREFIX}/share/fine/editor
@@ -27,4 +33,4 @@ do-install:
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/fine ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
