@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dylan
-PORTVERSION=	2.3.9
+PORTVERSION=	2.3.10
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.gwydiondylan.org/pub/gd/src/                 \
 		ftp://ftp.gwydiondylan.org/pub/gd/FreeBSD/             \
@@ -27,13 +27,12 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	housel@acm.org
 COMMENT=	CMU Gwydion project interpreter and compiler for the Dylan language
 
-BROKEN=		"Bad pkg-plist"
-
+LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 RUN_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--srcdir=$(WRKSRC) --enable-debug
+CONFIGURE_ARGS=	--srcdir=$(WRKSRC) --enable-debug --with-gc-prefix=$(PREFIX)
 CONFIGURE_ENV=	D2C="$(WRKDIR)/d2c -p$(WRKSRC)/d2c/compiler/platforms.descr"
 
 PLIST_SUB=	DYLANVER="${PORTVERSION}" DYLANARCH="x86-freebsd-elf-gcc"
@@ -61,6 +60,7 @@ USE_GNOME+=	gtk12
 PLIST_SUB+=	GTK_ONLY=""
 .else
 PLIST_SUB+=	GTK_ONLY="@comment "
+CONFIGURE_ARGS+=--without-gtk
 .endif
 
 post-extract:
