@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2003.03.03
+PORTVERSION=	2003.03.22
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
@@ -41,7 +41,8 @@ UsageEnvironment=	\
 		UsageEnvironment/include/Boolean.hh \
 		UsageEnvironment/include/HashTable.hh \
 		UsageEnvironment/include/UsageEnvironment.hh \
-		UsageEnvironment/include/UsageEnvironment_version.hh
+		UsageEnvironment/include/UsageEnvironment_version.hh \
+		UsageEnvironment/include/strDup.hh
 
 groupsock=		\
 		groupsock/include/GroupEId.hh \
@@ -64,6 +65,7 @@ liveMedia=		\
 		liveMedia/include/FramedFilter.hh \
 		liveMedia/include/FramedSource.hh \
 		liveMedia/include/GSMAudioRTPSink.hh \
+		liveMedia/include/H261VideoRTPSource.hh \
 		liveMedia/include/H263plusVideoRTPSink.hh \
 		liveMedia/include/H263plusVideoRTPSource.hh \
 		liveMedia/include/HTTPSink.hh \
