@@ -1,3 +1,1 @@
 bin/pgpdump
-%%PORTDOCS%%share/doc/pgpdump/README
-%%PORTDOCS%%@dirrm share/doc/pgpdump
