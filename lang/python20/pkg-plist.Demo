@@ -106,6 +106,7 @@ share/examples/%%PYTHON_VERSION%%/scripts/unbirthday.py
 share/examples/%%PYTHON_VERSION%%/scripts/update.py
 share/examples/%%PYTHON_VERSION%%/scripts/wh.py
 share/examples/%%PYTHON_VERSION%%/sgi/README
+share/examples/%%PYTHON_VERSION%%/sgi/al/.cvsignore
 share/examples/%%PYTHON_VERSION%%/sgi/al/README
 share/examples/%%PYTHON_VERSION%%/sgi/al/alwatch.py
 share/examples/%%PYTHON_VERSION%%/sgi/al/broadcast.py
@@ -131,6 +132,7 @@ share/examples/%%PYTHON_VERSION%%/sgi/cd/listcd.py
 share/examples/%%PYTHON_VERSION%%/sgi/cd/playcd.py
 share/examples/%%PYTHON_VERSION%%/sgi/cd/recvcd.py
 share/examples/%%PYTHON_VERSION%%/sgi/cd/sendcd.py
+share/examples/%%PYTHON_VERSION%%/sgi/flp/.cvsignore
 share/examples/%%PYTHON_VERSION%%/sgi/flp/tcache.fd
 share/examples/%%PYTHON_VERSION%%/sgi/flp/tcache.py
 share/examples/%%PYTHON_VERSION%%/sgi/flp/test_cb.fd
@@ -152,6 +154,7 @@ share/examples/%%PYTHON_VERSION%%/sgi/sv/burstcapt.py
 share/examples/%%PYTHON_VERSION%%/sgi/sv/contcapt.py
 share/examples/%%PYTHON_VERSION%%/sgi/sv/rgbgrab.py
 share/examples/%%PYTHON_VERSION%%/sgi/sv/simpleinput.py
+share/examples/%%PYTHON_VERSION%%/sgi/video/.cvsignore
 share/examples/%%PYTHON_VERSION%%/sgi/video/DisplayVideoIn.py
 share/examples/%%PYTHON_VERSION%%/sgi/video/Dsend.py
 share/examples/%%PYTHON_VERSION%%/sgi/video/LiveVideoIn.py
