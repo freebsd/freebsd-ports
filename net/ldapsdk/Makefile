@@ -1,12 +1,12 @@
 # New ports collection makefile for:	perldap
 # Version required:	1.1b
 # Date created:	17 May 1999
-# Whom:		paul
+# Whom:		paul@freebsd.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/25 22:44:25 paul Exp $
 #
 
-DISTNAME=	ldapsdk_19980531
+DISTNAME=	ldapsdk_12311998
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/directory/c-sdk/ldap/
 
@@ -18,11 +18,6 @@ USE_GMAKE=	yes
 
 MAKE_ENV+=	MOZILLA_CLIENT=1 NO_MDUPDATE=1 MOZ_LDAP_SDK=1
 ALL_TARGET=		build
-
-#MAN1=
-#MANCOMPRESSED=	yes
-
-#.include <bsd.port.pre.mk>
 
 OBJDIR=	${WRKSRC}/dist/${OPSYS}${OSREL}_DBG.OBJ
 INSTALL_DIR= ${PREFIX}/mozilla/directory
