@@ -66,6 +66,7 @@
     SUBDIR += msql
     SUBDIR += myodbc
     SUBDIR += mysql++
+    SUBDIR += mysql-connector-java
     SUBDIR += mysql-editor
     SUBDIR += mysql-gui
     SUBDIR += mysql-jdbc-mm
