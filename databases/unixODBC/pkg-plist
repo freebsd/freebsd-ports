@@ -43,8 +43,6 @@ lib/libodbcinst.a
 lib/libodbcinst.so
 lib/libodbcinst.so.1
 %%GUI:%%lib/libodbcinstQ.a
-%%GUI:%%lib/libodbcinstQ.so
-%%GUI:%%lib/libodbcinstQ.so.1
 lib/libodbcminiS.a
 lib/libodbcminiS.so
 lib/libodbcminiS.so.1
