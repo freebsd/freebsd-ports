@@ -33,4 +33,7 @@ CONFIGURE_ARGS?= \
 pre-configure:
 	@${ECHO} ${CONFIGURE_ARGS}
 
+pre-clean:
+	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
+
 .include <bsd.port.mk>
