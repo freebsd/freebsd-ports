@@ -110,7 +110,7 @@ share/locale/sv/LC_MESSAGES/gnome-print.mo
 share/locale/tr/LC_MESSAGES/gnome-print.mo
 share/locale/uk/LC_MESSAGES/gnome-print.mo
 share/locale/wa/LC_MESSAGES/gnome-print.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-print.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-print.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-print.mo
 @dirrm share/gnome/gnome-print/profiles
 @dirrm share/gnome/gnome-print
