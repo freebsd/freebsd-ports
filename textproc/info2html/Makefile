@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://wolfram.schneider.org/src/
 
-MAINTAINER=	wosch@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translate GNU info files into HTML pages
 
 MAN1=		info2html.1

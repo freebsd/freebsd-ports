@@ -13,7 +13,7 @@ MASTER_SITES=	${UNROFF_SITE}/dist/ \
 DISTNAME=	${PORTNAME}-1.0
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PATCH1} ${PATCH2}
 
-MAINTAINER=	wosch@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A programmable troff translator with backend for HTML
 
 RUN_DEPENDS=	elk:${PORTSDIR}/lang/elk
