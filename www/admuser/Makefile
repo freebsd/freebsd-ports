@@ -21,4 +21,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/etc/admuser \
 		--enable-language=English \
 		--enable-cgidir=${PREFIX}/www/cgi-bin \
 
+BROKEN=		"Install fails"
+
 .include <bsd.port.mk>
