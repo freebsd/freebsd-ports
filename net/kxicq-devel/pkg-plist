@@ -1,0 +1,96 @@
+bin/kxicq
+share/applnk/Internet/kxicq2.desktop
+share/apps/kxicq2/pics/config_away.png
+share/apps/kxicq2/pics/config_chat.png
+share/apps/kxicq2/pics/config_color.png
+share/apps/kxicq2/pics/config_deny.png
+share/apps/kxicq2/pics/config_ignore.png
+share/apps/kxicq2/pics/config_initial.png
+share/apps/kxicq2/pics/config_main.png
+share/apps/kxicq2/pics/config_message.png
+share/apps/kxicq2/pics/config_network.png
+share/apps/kxicq2/pics/config_profile.png
+share/apps/kxicq2/pics/config_security.png
+share/apps/kxicq2/pics/config_sound.png
+share/apps/kxicq2/pics/config_text.png
+share/apps/kxicq2/pics/icq/available.xpm
+share/apps/kxicq2/pics/icq/away.xpm
+share/apps/kxicq2/pics/icq/contactsms.xpm
+share/apps/kxicq2/pics/icq/dnd.xpm
+share/apps/kxicq2/pics/icq/exit.xpm
+share/apps/kxicq2/pics/icq/ffc.xpm
+share/apps/kxicq2/pics/icq/file.xpm
+share/apps/kxicq2/pics/icq/groupdown.xpm
+share/apps/kxicq2/pics/icq/groupup.xpm
+share/apps/kxicq2/pics/icq/hideoffline.xpm
+share/apps/kxicq2/pics/icq/history.xpm
+share/apps/kxicq2/pics/icq/invisible.xpm
+share/apps/kxicq2/pics/icq/kxicqloggo.xpm
+share/apps/kxicq2/pics/icq/na.xpm
+share/apps/kxicq2/pics/icq/newmsg.xpm
+share/apps/kxicq2/pics/icq/nogroups.xpm
+share/apps/kxicq2/pics/icq/occupied.xpm
+share/apps/kxicq2/pics/icq/offline.xpm
+share/apps/kxicq2/pics/icq/online.xpm
+share/apps/kxicq2/pics/icq/selectcolor.xpm
+share/apps/kxicq2/pics/icq/selecttext.xpm
+share/apps/kxicq2/pics/icq/send.xpm
+share/apps/kxicq2/pics/icq/showoffline.xpm
+share/apps/kxicq2/pics/icq/url.xpm
+share/apps/kxicq2/pics/icq/usegroups.xpm
+share/apps/kxicq2/pics/kxicq/available.xpm
+share/apps/kxicq2/pics/kxicq/away.xpm
+share/apps/kxicq2/pics/kxicq/contactsms.xpm
+share/apps/kxicq2/pics/kxicq/dnd.xpm
+share/apps/kxicq2/pics/kxicq/exit.xpm
+share/apps/kxicq2/pics/kxicq/ffc.xpm
+share/apps/kxicq2/pics/kxicq/file.xpm
+share/apps/kxicq2/pics/kxicq/groupdown.xpm
+share/apps/kxicq2/pics/kxicq/groupup.xpm
+share/apps/kxicq2/pics/kxicq/hideoffline.xpm
+share/apps/kxicq2/pics/kxicq/history.xpm
+share/apps/kxicq2/pics/kxicq/invisible.xpm
+share/apps/kxicq2/pics/kxicq/kxicqloggo.xpm
+share/apps/kxicq2/pics/kxicq/na.xpm
+share/apps/kxicq2/pics/kxicq/newmsg.xpm
+share/apps/kxicq2/pics/kxicq/nogroups.xpm
+share/apps/kxicq2/pics/kxicq/occupied.xpm
+share/apps/kxicq2/pics/kxicq/offline.xpm
+share/apps/kxicq2/pics/kxicq/online.xpm
+share/apps/kxicq2/pics/kxicq/selectcolor.xpm
+share/apps/kxicq2/pics/kxicq/selecttext.xpm
+share/apps/kxicq2/pics/kxicq/send.xpm
+share/apps/kxicq2/pics/kxicq/showoffline.xpm
+share/apps/kxicq2/pics/kxicq/url.xpm
+share/apps/kxicq2/pics/kxicq/usegroups.xpm
+share/locale/bg/LC_MESSAGES/kxicq2.mo
+share/locale/cs/LC_MESSAGES/kxicq2.mo
+share/locale/de/LC_MESSAGES/kxicq2.mo
+share/locale/fr/LC_MESSAGES/kxicq2.mo
+share/locale/ja/LC_MESSAGES/kxicq2.mo
+share/locale/nl/LC_MESSAGES/kxicq2.mo
+share/sounds/kxicq2/Auth.wav
+share/sounds/kxicq2/Chat.wav
+share/sounds/kxicq2/Contact.wav
+share/sounds/kxicq2/File.wav
+share/sounds/kxicq2/Message.wav
+share/sounds/kxicq2/Online.wav
+share/sounds/kxicq2/System.wav
+share/sounds/kxicq2/URL.wav
+@dirrm share/sounds/kxicq2
+@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl 2>/dev/null || true
+@unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ja 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale/bg/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/bg 2>/dev/null || true
+@dirrm share/apps/kxicq2/pics/kxicq
+@dirrm share/apps/kxicq2/pics/icq
+@dirrm share/apps/kxicq2/pics
+@dirrm share/apps/kxicq2
