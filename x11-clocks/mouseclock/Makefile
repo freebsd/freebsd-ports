@@ -3,11 +3,11 @@
 # Date created:		26 August 1997
 # Whom:			FURUSAWA, Kazuhisa <kazu@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.2 1997/09/09 11:19:58 asami Exp $
+# $Id: Makefile,v 1.3 1998/02/07 20:00:39 fenner Exp $
 #
 
 DISTNAME=	mouseclock-1.0
-CATEGORIES=	x11
+CATEGORIES=	x11-clock
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/clocks
 

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.221 1998/08/07 22:02:54 asami Exp $
+# $Id: Makefile,v 1.222 1998/08/07 22:17:47 asami Exp $
 #
 
     SUBDIR += FWF
@@ -8,21 +8,17 @@
     SUBDIR += afterstep
     SUBDIR += afterstep-devel
     SUBDIR += amiwm
-    SUBDIR += asclock
     SUBDIR += asfiles
     SUBDIR += auis
-    SUBDIR += bclock
     SUBDIR += blackbox
     SUBDIR += blast
     SUBDIR += blt
     SUBDIR += bricons
     SUBDIR += camltk41
     SUBDIR += ctwm
-    SUBDIR += dclock
     SUBDIR += dfm
     SUBDIR += dgs
     SUBDIR += dxpc
-    SUBDIR += emiclock
     SUBDIR += emu
     SUBDIR += enlightenment
     SUBDIR += eterm
@@ -50,9 +46,7 @@
     SUBDIR += libsx
     SUBDIR += lupe
     SUBDIR += lwm
-    SUBDIR += mlclock
     SUBDIR += mlvwm
-    SUBDIR += mouseclock
     SUBDIR += neXtaw
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
@@ -71,13 +65,10 @@
     SUBDIR += qt133
     SUBDIR += qt140
     SUBDIR += qvwm
-    SUBDIR += rclock
     SUBDIR += rxvt
     SUBDIR += sharefonts
     SUBDIR += slingshot
-    SUBDIR += swisswatch
     SUBDIR += sxpc
-    SUBDIR += t3d
     SUBDIR += tix
     SUBDIR += tk41
     SUBDIR += tk42
@@ -93,10 +84,8 @@
     SUBDIR += windowmaker
     SUBDIR += workplace
     SUBDIR += wm2
-    SUBDIR += wmtime
     SUBDIR += wmx
     SUBDIR += x3270
-    SUBDIR += xalarm
     SUBDIR += xaniroc
     SUBDIR += xantfarm
     SUBDIR += xautolock
@@ -105,7 +94,6 @@
     SUBDIR += xco
     SUBDIR += xcoloredit
     SUBDIR += xcolors
-    SUBDIR += xdaliclock
     SUBDIR += xdtm
     SUBDIR += xfce
     SUBDIR += xfed
