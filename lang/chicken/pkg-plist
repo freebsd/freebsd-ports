@@ -64,6 +64,9 @@ lib/libustuffed-chicken.so.0
 %%PORTDOCS%%%%DOCSDIR%%/manual.t2p
 %%PORTDOCS%%%%DOCSDIR%%/manual.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual--h.aux
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual--h.idx
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual--h.ilg
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual--h.ind
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-A.scm
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-G-1.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-G-1.ps
@@ -115,6 +118,7 @@ lib/libustuffed-chicken.so.0
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-5.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-50.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-51.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-52.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-6.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-7.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-8.html
