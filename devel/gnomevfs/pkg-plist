@@ -1,6 +1,5 @@
 bin/gnome-vfs-config
 etc/vfs/modules/default-modules.conf
-etc/vfs/modules/ssl-modules.conf
 etc/vfsConf.sh
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-application-registry.h
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-async-ops.h
