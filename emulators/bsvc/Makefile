@@ -3,15 +3,14 @@
 # Date created:		03-Mar-1997
 # Whom:			tenser
 #
-# $Id: Makefile,v 1.4 1997/04/20 13:19:01 wosch Exp $
+# $Id: Makefile,v 1.5 1998/04/04 13:14:19 jseger Exp $
 #
 
-DISTNAME=	bsvc-2.0-src
-PKGNAME=	bsvc-2.0
+DISTNAME=	bsvc-2.0
 CATEGORIES=	emulators tk41
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/emulators
-EXTRACT_SUFX=	.tar.z
+EXTRACT_SUFX=	-src.tar.z
 
 MAINTAINER=	tenser@spitfire.ecsel.psu.edu
 
