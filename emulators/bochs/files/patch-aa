@@ -1,9 +1,16 @@
---- .bochsrc.orig	Sun Nov 14 16:01:27 1999
-+++ .bochsrc	Mon Nov 22 17:44:06 1999
-@@ -84,4 +84,4 @@
- 
+
+$FreeBSD$
+
+--- .bochsrc.orig	Thu May 31 22:55:33 2001
++++ .bochsrc	Mon Jun  4 10:24:44 2001
+@@ -116,8 +116,8 @@
+ #   log: ./bochs.out
+ #   log: /dev/tty
+ #=======================================================================
 -#log: /dev/null
--log: ./bochs.out
+-log: bochsout.txt
 +log: /dev/null
-+#log: ./bochs.out
- keyboard_serial_delay: 200
++#log: bochsout.txt
+ 
+ #=======================================================================
+ # LOG CONTROLS

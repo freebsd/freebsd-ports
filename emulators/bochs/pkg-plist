@@ -1,6 +1,9 @@
 bin/bochs
 bin/bochs-bin
-share/bochs/bios/BIOS-bochs-990925a
+bin/bximage
+share/bochs/bios/BIOS-bochs-2-processors
+share/bochs/bios/BIOS-bochs-4-processors
+share/bochs/bios/BIOS-bochs-latest
 share/bochs/bios/VGABIOS-elpin-2.40
 share/bochs/bios/VGABIOS-elpin-LICENSE
 share/bochs/dot.bochsrc
@@ -30,6 +33,8 @@ share/bochs/font/vga.pcf.gz
 %%PORTDOCS%%share/doc/bochs/instrumentation.html
 %%PORTDOCS%%share/doc/bochs/mtools.html
 %%PORTDOCS%%share/doc/bochs/random.txt
+%%PORTDOCS%%share/doc/bochs/release-prep.txt
+%%PORTDOCS%%share/doc/bochs/smp-simulation.html
 %%PORTDOCS%%share/doc/bochs/sound.html
 %%PORTDOCS%%share/doc/bochs/undercon.gif
 %%PORTDOCS%%share/doc/bochs/whatisbochs.html
