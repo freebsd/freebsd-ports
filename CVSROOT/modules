@@ -8272,6 +8272,7 @@ uk-webalizer	ports/ukrainian/webalizer
 ul		src/usr.bin/ul
 umapfs		src/sys/fs/umapfs
 umatrix		ports/math/umatrix
+umbrello	ports/devel/umbrello
 umfpack		ports/math/umfpack
 umix		ports/audio/umix
 uml		ports/devel/uml
