@@ -1,0 +1,37 @@
+;; Chinese
+;;(load "its/erpin")
+;;(load "its/zhuyin")
+;;(load "its/quanjiao")
+;;(set-primary-environment 'chinese);;CHINESE
+
+;; Korean
+;;(if (boundp 'WNN);;KOREAN
+;;    (load "its/Korean"));;KOREAN
+;;(set-primary-environment 'korean);;KOREAN
+
+;; Japanese
+;;(set-primary-environment 'japanese);;JAPANESE
+
+;; For languages except Korean (kr-mule-wnn)
+(defun set-korean-environment ()
+  (setq *coding-category-iso-8-2* '*euc-korea*)
+
+  (set-coding-priority
+   '(*coding-category-iso-8-2*
+     *coding-category-iso-8-1*))
+
+  (set-default-file-coding-system '*iso-2022-kr*)
+
+  (if (boundp 'WNN)
+      (progn
+;;	(load "its/Korean");;not KOREAN
+	(set-default-wnn-environment 'kserver)))
+
+  (setq-default quail-current-package (assoc "hangul" quail-package-alist))
+  )
+
+;; Add System Info path '/usr/share/info' into Info-default-directory-list
+(setq Info-default-directory-list
+      (append (list
+	       "/usr/share/info"
+	       ) Info-default-directory-list)) 

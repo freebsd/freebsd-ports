@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.14 1997/06/04 09:12:03 asami Exp $
+# $Id: Makefile,v 1.15 1997/06/06 07:45:13 obrien Exp $
 #
 
     SUBDIR += Wnn
@@ -20,6 +20,7 @@
     SUBDIR += hpscat
     SUBDIR += johabfonts
     SUBDIR += linuxdoc-sgml
+    SUBDIR += mule-wnn4
     SUBDIR += netscape3
     SUBDIR += nh2ps
     SUBDIR += nhpf

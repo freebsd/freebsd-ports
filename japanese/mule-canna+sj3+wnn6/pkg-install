@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "$2" != "POST-INSTALL" ]; then exit 0; fi
+echo "####################################################################"
+echo "If you want to use 'SJ3' as a japanese input method, then you should"
+echo "insert the following two lines into ~/.emacs"
+echo ""
+echo "(load \"sj3-egg\")"
+echo "(setq egg-default-startup-file \"eggrc-sj3\")"
+echo "####################################################################"

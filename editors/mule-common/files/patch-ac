@@ -1,4 +1,4 @@
---- ./src/s/freebsd.h.org	Fri Nov  4 03:11:17 1994
+--- ../mule-2.3.org/src/s/freebsd.h.org	Fri Nov  4 03:11:17 1994
 +++ ./src/s/freebsd.h	Wed Aug  9 02:29:56 1995
 @@ -31,10 +31,10 @@
  

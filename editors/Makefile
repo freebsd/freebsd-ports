@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.41 1997/07/10 06:29:40 tg Exp $
+# $Id: Makefile,v 1.42 1997/09/03 19:39:15 gj Exp $
 #
 
     SUBDIR += asedit
@@ -12,6 +12,7 @@
     SUBDIR += joe
     SUBDIR += jove
     SUBDIR += mule
+    SUBDIR += mule-common
     SUBDIR += nedit
     SUBDIR += nvi
     SUBDIR += staroffice
