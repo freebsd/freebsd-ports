@@ -285,3 +285,33 @@ tkX/4.1.2/help/tk/widgets/tk_menuBar
 tkX/4.1.2/help/tk/widgets/tk_optionMenu
 tkX/4.1.2/help/tk/widgets/tk_popup
 tkX/4.1.2/help/tk/widgets/toplevel
+@dirrm tclX/7.5.2/help/tcl/variables
+@dirrm tclX/7.5.2/help/tcl/time
+@dirrm tclX/7.5.2/help/tcl/tclshell
+@dirrm tclX/7.5.2/help/tcl/strings
+@dirrm tclX/7.5.2/help/tcl/status
+@dirrm tclX/7.5.2/help/tcl/sockets
+@dirrm tclX/7.5.2/help/tcl/signals
+@dirrm tclX/7.5.2/help/tcl/processes
+@dirrm tclX/7.5.2/help/tcl/math
+@dirrm tclX/7.5.2/help/tcl/lists
+@dirrm tclX/7.5.2/help/tcl/libraries
+@dirrm tclX/7.5.2/help/tcl/keyedlists
+@dirrm tclX/7.5.2/help/tcl/intro
+@dirrm tclX/7.5.2/help/tcl/internation
+@dirrm tclX/7.5.2/help/tcl/filescan
+@dirrm tclX/7.5.2/help/tcl/files
+@dirrm tclX/7.5.2/help/tcl/events
+@dirrm tclX/7.5.2/help/tcl/debug
+@dirrm tclX/7.5.2/help/tcl/control
+@dirrm tclX/7.5.2/help/tcl
+@dirrm tclX/7.5.2/help
+@dirrm tclX/7.5.2
+@dirrm tclX/
+@dirrm tkX/4.1.2/help/tk/widgets
+@dirrm tkX/4.1.2/help/tk/images
+@dirrm tkX/4.1.2/help/tk/control
+@dirrm tkX/4.1.2/help/tk
+@dirrm tkX/4.1.2/help
+@dirrm tkX/4.1.2
+@dirrm tkX/
