@@ -1,4 +1,6 @@
 libexec/spamd
+libexec/spamlogd
 sbin/spamd-setup
+sbin/spamdb
 etc/rc.d/spamd.sh
 etc/spamd.conf.sample
