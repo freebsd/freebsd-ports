@@ -1,36 +1,29 @@
-# New ports collection makefile for:	revelation
-# Date created:		2004-08-10
-# Whom:			ports@c0decafe.net
+# New ports collection makefile for:	Revelation
+# Date created:				2004-08-10
+# Whom:					ports@c0decafe.net
 #
 # $FreeBSD$
 #
 
 PORTNAME=	revelation
-PORTVERSION=	0.3.4
-PORTREVISION=	2
+PORTVERSION=	0.4.0
 CATEGORIES=	security gnome
 MASTER_SITES=	ftp://oss.codepoet.no/revelation/
 
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	Password manager for the GNOME 2 desktop
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2\
-		${PYTHON_SITELIBDIR}/Crypto/test.py:${PORTSDIR}/security/py-pycrypto
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/test.py:${PORTSDIR}/security/py-pycrypto
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	pygnome2
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_GNOME=	pygnome2 gnomeprefix gnomehack desktopfileutils
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-USE_REINPLACE=	yes
 GCONF_SCHEMAS=	revelation.schemas
 
-post-patch:
-	@${REINPLACE_CMD} 's#share/#share/gnome/#g' \
-		${WRKSRC}/setup.py ${WRKSRC}/src/lib/__init__.py
-	@${REINPLACE_CMD} 's#sys\.prefix#"${PREFIX}"#g' \
-		${WRKSRC}/src/lib/__init__.py
-	@${REINPLACE_CMD} 's#/etc/#${PREFIX}/etc/#' \
-		${WRKSRC}/setup.py ${WRKSRC}/src/lib/data.py
+post-install:
+	-@update-desktop-database
 
 .include <bsd.port.mk>
