@@ -3,11 +3,11 @@
 # Date created:		8 Dec 1995
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1996/11/18 09:54:08 asami Exp $
+# $Id: Makefile,v 1.6 1997/08/30 15:44:34 max Exp $
 #
 
 DISTNAME=	tgif-3.0-p13
-PKGNAME=	jp-tgif-3.0.13
+PKGNAME=	ja-tgif-3.0.13
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/tgif

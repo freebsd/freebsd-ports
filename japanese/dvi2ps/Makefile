@@ -3,11 +3,11 @@
 # Date created:		15 Sep 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1996/12/30 08:23:07 max Exp $
+# $Id: Makefile,v 1.5 1997/07/13 18:49:15 max Exp $
 #
 
 DISTNAME=	dvi2ps-2.0j-gamma
-PKGNAME=	jp-dvi2ps-2.0g
+PKGNAME=	ja-dvi2ps-2.0g
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/
 

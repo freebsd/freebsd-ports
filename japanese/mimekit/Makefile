@@ -3,11 +3,11 @@
 # Date created:			9 April 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1996/11/11 10:12:26 max Exp $
+# $Id: Makefile,v 1.5 1997/05/07 23:40:58 max Exp $
 #
 
 DISTNAME=	mimekit1.6
-PKGNAME=	jp-mimekit-1.6
+PKGNAME=	ja-mimekit-1.6
 CATEGORIES=	japanese devel mail
 MASTER_SITES=	ftp://etlport.etl.go.jp/pub/ccipr/DeleGate/ \
 		ftp://ftp.iij.ad.jp/pub/mail/mime/

@@ -3,11 +3,11 @@
 # Date created:		28 March 1995
 # Whom:			Akito FUJITA <fujita@zoo.ncl.omron.co.jp>
 #
-# $Id: Makefile,v 1.7 1997/01/07 07:47:20 max Exp $
+# $Id: Makefile,v 1.8 1997/07/17 15:12:46 max Exp $
 #
 
 DISTNAME=	mh-6.8.3
-PKGNAME=	jp-mh-6.8.3
+PKGNAME=	ja-mh-6.8.3
 MASTER_SITES=	ftp://omrongw.wg.omron.co.jp/pub/net/mail/
 CATEGORIES=	japanese mail
 DISTFILES=	mh-6.8.3-JP.2c.tar.gz

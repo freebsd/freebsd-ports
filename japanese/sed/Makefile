@@ -3,11 +3,11 @@
 # Date created:		2 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.2 1995/04/07 05:48:11 asami Exp $
+# $Id: Makefile,v 1.3 1996/11/18 10:24:11 asami Exp $
 #
 
 DISTNAME=	sed-1.18
-PKGNAME=	jp-sed-1.18
+PKGNAME=	ja-sed-1.18
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GNU}
 

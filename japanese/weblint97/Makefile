@@ -3,11 +3,11 @@
 # Date created:		27 Jun 1997
 # Whom:			Takayuki Ariga <a00821@cc.hc.keio.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/07/20 16:41:58 max Exp $
 #
 
 DISTNAME=	weblint-97-0.12
-PKGNAME=	jp-weblint97-0.12
+PKGNAME=	ja-weblint97-0.12
 CATEGORIES=	japanese www
 MASTER_SITES=	ftp://ftp.win.or.jp/pub/network/www/weblint/ \
 		ftp://ftp.sra.co.jp/pub/cmd/ \

@@ -3,11 +3,11 @@
 # Date created:		
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.1.1.1 1997/03/02 13:02:06 asami Exp $
+# $Id: Makefile,v 1.2 1997/03/11 11:02:39 asami Exp $
 #
 
 DISTNAME=	tk4.2p2
-PKGNAME=	jp-tk-4.2
+PKGNAME=	ja-tk-4.2
 CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/ 
 

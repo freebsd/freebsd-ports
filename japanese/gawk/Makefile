@@ -3,11 +3,11 @@
 # Date created:		5 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.8 1996/11/11 10:11:53 max Exp $
+# $Id: Makefile,v 1.9 1996/11/18 10:23:33 asami Exp $
 #
 
 DISTNAME=	gawk-2.15.6
-PKGNAME=	jp-gawk-2.15.6
+PKGNAME=	ja-gawk-2.15.6
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GNU}
 

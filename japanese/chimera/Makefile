@@ -3,11 +3,11 @@
 # Date created:		26 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.4 1996/11/11 10:11:45 max Exp $
+# $Id: Makefile,v 1.5 1997/09/09 03:01:13 asami Exp $
 #
 
 DISTNAME=	chimera-1.65
-PKGNAME=	jp-chimera-1.65
+PKGNAME=	ja-chimera-1.65
 CATEGORIES=	japanese www
 MASTER_SITES=	ftp://ftp.cs.unlv.edu/pub/chimera/
 

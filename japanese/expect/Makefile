@@ -3,14 +3,14 @@
 # Date created:		10 March 1997
 # Whom:			taguchi
 #
-# $Id: Makefile,v 1.1.1.1 1997/03/11 11:52:41 asami Exp $
+# $Id: Makefile,v 1.2 1997/03/25 08:01:45 obrien Exp $
 #
 
 FILESDIR=	${.CURDIR}/../../lang/expect/files
 
 .include "${.CURDIR}/../../lang/expect/Makefile"
 
-PKGNAME=	jp-expect-5.22.0
+PKGNAME=	ja-expect-5.22.0
 CATEGORIES=	japanese
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp

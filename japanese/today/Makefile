@@ -3,11 +3,11 @@
 # Date created:		24 June 1996
 # Whom:			ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
 #
-# $Id: Makefile,v 1.3 1996/12/03 13:08:19 obrien Exp $
+# $Id: Makefile,v 1.4 1997/09/14 17:47:20 max Exp $
 #
 
 DISTNAME=	td210bs
-PKGNAME=	jp-today-2.10b
+PKGNAME=	ja-today-2.10b
 CATEGORIES=	japanese games
 MASTER_SITES=	ftp://ftp.waseda.ac.jp/pub/archive/fj.binaries.msdos/
 EXTRACT_SUFX=	.lzh

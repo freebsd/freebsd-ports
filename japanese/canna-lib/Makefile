@@ -4,11 +4,11 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.15 1997/07/13 18:49:14 max Exp $
+# $Id: Makefile,v 1.16 1997/07/17 15:12:45 max Exp $
 #
 
 DISTNAME=	Canna32p2
-PKGNAME=	jp-Canna-3.2.2
+PKGNAME=	ja-Canna-3.2.2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.nec.co.jp/pub/packages/Canna32/ \
 		ftp://ftp.cdrom.com/pub/japanese/titech/Canna32/

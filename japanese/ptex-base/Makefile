@@ -3,11 +3,11 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.17 1997/06/12 09:48:25 max Exp $
+# $Id: Makefile,v 1.18 1997/07/13 18:49:19 max Exp $
 #
 
 DISTNAME=	ptex3.1415.p2.1.4
-PKGNAME=	jp-ptex-2.1.4
+PKGNAME=	ja-ptex-2.1.4
 CATEGORIES=	japanese print
 MASTER_SITES=			ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/corresponding-sources/ \

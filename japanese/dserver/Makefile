@@ -3,11 +3,11 @@
 # Date created:		3 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1997/07/13 18:49:15 max Exp $
+# $Id: Makefile,v 1.5 1997/09/12 05:57:53 asami Exp $
 #
 
 DISTNAME=	dserver2.2betapl2
-PKGNAME=	jp-dserver-2.2.2
+PKGNAME=	ja-dserver-2.2.2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.pu-toyama.ac.jp/pub/misc/ \
 		ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/

@@ -3,11 +3,11 @@
 # Date created:			03 Feb 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: porting.sgml,v 1.16 1996/03/21 14:15:01 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1997/02/03 16:31:52 max Exp $
 #
 
 DISTNAME=	euc
-PKGNAME=	jp-cdrom2-1996.06.16
+PKGNAME=	ja-cdrom2-1996.06.16
 CATEGORIES=	japanese misc
 MASTER_SITES=	ftp://ftp.nerimadors.or.jp/pub/src/cdrom2/
 

@@ -3,11 +3,11 @@
 # Date created:		20 April 1997
 # Whom:			nkazushi@highway.or.jp
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/08/12 15:36:39 itojun Exp $
 #
 
 DISTNAME=	plain2-2.54
-PKGNAME=	jp-plain2-2.54
+PKGNAME=	ja-plain2-2.54
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.nec.co.jp/pub/packages/plain2/
 

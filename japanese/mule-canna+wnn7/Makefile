@@ -3,10 +3,10 @@
 # Date created:		7 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1 1997/09/10 08:50:35 asami Exp $
 #
 
-PKGNAME=	jp-mule-canna+wnn6-2.3
+PKGNAME=	ja-mule-canna+wnn6-2.3
 CATEGORIES=	japanese editors
 
 CANNA=		yes

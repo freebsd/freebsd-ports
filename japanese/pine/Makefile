@@ -3,11 +3,11 @@
 # Date created:		01 May 1996
 # Whom:			masafumi
 #
-# $Id: Makefile,v 1.10 1997/01/21 06:40:52 max Exp $
+# $Id: Makefile,v 1.11 1997/07/17 15:12:46 max Exp $
 #
 
 DISTNAME=	pine3.95
-PKGNAME=	jp-pine-3.95
+PKGNAME=	ja-pine-3.95
 CATEGORIES=	japanese mail
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.noc.titech.ac.jp/pub/tmp/aki/pine/pine3.95/
