@@ -15,6 +15,8 @@ DISTNAME=	CJK-LyX-${PORTVERSION}-src
 
 MAINTAINER=	cjh@FreeBSD.org
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
