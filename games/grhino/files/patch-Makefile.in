@@ -1,10 +1,12 @@
---- Makefile.in.orig	Sun Aug 17 04:11:08 2003
-+++ Makefile.in	Sun Aug 31 23:36:13 2003
-@@ -42,7 +42,7 @@
+--- Makefile.in.orig	Mon May  3 15:05:35 2004
++++ Makefile.in	Tue Dec 28 22:27:37 2004
+@@ -42,8 +42,8 @@
  docdir		= @docdir@
  etcdir		= @sysconfdir@
- localedir	= @datadir@/locale
+ datadir		= @datadir@
+-localedir	= @datadir@/locale
 -helpdir		= @datadir@/gnome/help/grhino
++localedir	= @prefix@/share/locale
 +helpdir		= @datadir@/help/grhino
  
  pattern_dir	= @datadir@/${PACKAGE}-${VERSION}/pattern
