@@ -34,6 +34,7 @@ PLIST_SUB=	VERSION="${PORTVERSION}" \
 		INFOSECTION="${INFOSECTION}"
 
 post-install:
+	${STRIP_CMD} ${PREFIX}/bin/gosh
 	-${PREFIX}/bin/gosh -u slib -e "(require 'logical)" -e "(exit 0)" > /dev/null 2>&1
 .if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${MANPREFIX}/man/man1/
