@@ -29,6 +29,12 @@ pre-everything::
 	@${ECHO_MSG} "====> If you want to enable optimizations, please define WITH_OPTIMIZED_CFLAGS"
 .endif
 
+post-patch:
+.for p in Makefile.in dvdread/Makefile.in src/Makefile.in
+	@${PERL} -pi -e 's|cd \$$\(top_srcdir\) && \$$\(AUTOMAKE\)|\#|; \
+		s|cd \$$\(srcdir\) && \$$\(ACLOCAL\)|\#|' ${WRKSRC}/${p}
+.endfor
+
 post-configure:
 	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
 
