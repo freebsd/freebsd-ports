@@ -17,7 +17,7 @@ DISTFILES=	${BIN_FILES} ${SBIN_FILES} ${MAN1:S/$/:man/}
 DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_PACKAGE=	Restricted distribution
 NO_CDROM=	Restricted distribution
