@@ -1,4 +1,4 @@
-@exec mkdir %D/share/texmf/fonts/source/public/cs
+@exec mkdir -p %D/share/texmf/fonts/source/public/cs
 bin/MakeTeXPK
 bin/access
 bin/allcm
