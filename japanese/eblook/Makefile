@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	eblook
-PORTVERSION=	1.5.1
-PORTREVISION=	2
+PORTVERSION=	1.6.1
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/eblook/dist/
 DIST_SUBDIR=	eb
@@ -15,23 +14,20 @@ DIST_SUBDIR=	eb
 MAINTAINER=	shige@FreeBSD.org
 COMMENT=	Interactive EB interface command for seraching words in electoric dictionaries
 
-DOCDIR=		share/doc/eblook
+LIB_DEPENDS=	eb.7:${PORTSDIR}/japanese/eb
 
-LIB_DEPENDS=    eb.7:${PORTSDIR}/japanese/eb
+GNU_CONFIGURE=		yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=		--with-eb-includes=${PREFIX}/include \
+			--with-eb-libraries=${PREFIX}/lib
 
-GNU_CONFIGURE=	yes
-USE_AUTOMAKE_VER=	14
-USE_AUTOCONF_VER=	213
-CONFIGURE_ARGS=	--with-eb-includes=${PREFIX}/include \
-		--with-eb-libraries=${PREFIX}/lib
-
-PLIST_SUB=	DOCDIR=${DOCDIR}
+INFO=		eblook
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/${DOCDIR}
-	@for i in AUTHORS COPYING ChangeLog NEWS README ; do \
-		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/${DOCDIR} ;\
+	${MKDIR} ${DOCSDIR}
+	for i in AUTHORS COPYING ChangeLog NEWS README ; do \
+		${INSTALL_DATA} ${WRKSRC}/$${i} ${DOCSDIR} ;\
 	done
 .endif
 
