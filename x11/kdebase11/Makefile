@@ -13,10 +13,6 @@ MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= Attic/old/1.1.2/distribution/tar/generic/source/bz2
 DIST_SUBDIR=	KDE
 
-PATCH_SITES=	ftp://ftp.kde.gr.jp/pub/kde/stable/latest/distribution/tar/generic/jp-patch/
-PATCHFILES=	kdebase-ja.19990823.diff.gz
-PATCH_DIST_STRIP=	-p1
-
 MAINTAINER=	kde@FreeBSD.org
 
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
