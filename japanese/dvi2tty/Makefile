@@ -3,7 +3,7 @@
 # Date created:			30 Mar. 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1996/09/17 15:06:35 max Exp $
+# $Id: Makefile,v 1.4 1996/09/20 22:44:41 max Exp $
 #
 
 DISTNAME=	dvi2tty5.0
@@ -24,7 +24,7 @@ PATCH_DIST_STRIP=	-p1
 do-install:
 	(for f in jdvi2tty disdvi ; do \
 	${INSTALL_PROGRAM} ${WRKSRC}/$$f ${PREFIX}/bin ; done)
-	${INSTALL_DATA} ${WRKSRC}/dvi2tty.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/dvi2tty.1 ${PREFIX}/man/man1
 	-ln -sf ${PREFIX}/bin/jdvi2tty ${PREFIX}/bin/dvi2tty
 .if !defined(NOMANCOMPRESS)
 	@gzip -9f ${PREFIX}/man/man1/dvi2tty.1
