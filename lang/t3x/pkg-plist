@@ -1,0 +1,80 @@
+@cwd /usr/local
+bin/s86
+bin/thelp
+bin/tx
+bin/txcm
+bin/txdump
+bin/txpc
+bin/txprint
+bin/txx
+man/cat7/t3x.0
+t3x/r6/bin/s86
+t3x/r6/bin/thelp
+t3x/r6/bin/tx
+t3x/r6/bin/txcg386
+t3x/r6/bin/txcg386e
+t3x/r6/bin/txcg86
+t3x/r6/bin/txcgexe
+t3x/r6/bin/txcm
+t3x/r6/bin/txdpf
+t3x/r6/bin/txdump
+t3x/r6/bin/txld
+t3x/r6/bin/txopt
+t3x/r6/bin/txpc
+t3x/r6/bin/txprint
+t3x/r6/bin/txtrn
+t3x/r6/bin/txx
+t3x/r6/classes/CLASSNDX
+t3x/r6/classes/char.cls
+t3x/r6/classes/char.dir
+t3x/r6/classes/iostream.cls
+t3x/r6/classes/iostream.dir
+t3x/r6/classes/memory.cls
+t3x/r6/classes/memory.dir
+t3x/r6/classes/r5c.cls
+t3x/r6/classes/string.cls
+t3x/r6/classes/string.dir
+t3x/r6/classes/system.cls
+t3x/r6/classes/system.dir
+t3x/r6/classes/t3x.dir
+t3x/r6/classes/tcode.cls
+t3x/r6/classes/tcode.dir
+t3x/r6/classes/ttyctl.cls
+t3x/r6/classes/ttyctl.dir
+t3x/r6/classes/xmem.cls
+t3x/r6/classes/xmem.dir
+t3x/r6/doc/BOOT.HOWTO
+t3x/r6/doc/Changes
+t3x/r6/doc/FAQ
+t3x/r6/doc/KNOWNBUGS
+t3x/r6/doc/LICENSE
+t3x/r6/doc/README
+t3x/r6/doc/README.docs
+t3x/r6/doc/T3X.html
+t3x/r6/doc/cgdesc.sd
+t3x/r6/doc/classes.sd
+t3x/r6/doc/compiler.sd
+t3x/r6/doc/formats.sd
+t3x/r6/doc/s86.sd
+t3x/r6/doc/sd.sd
+t3x/r6/doc/sdv-config
+t3x/r6/doc/t3xref.sd
+t3x/r6/doc/utilities.sd
+t3x/r6/dos.txrc
+t3x/r6/lib/dos_system.so
+t3x/r6/lib/dos_ttyctl.so
+t3x/r6/lib/dos_xmem.so
+t3x/r6/lib/libt3x.a
+t3x/r6/lib/system.so
+t3x/r6/lib/t3x.lib
+t3x/r6/lib/ttyctl.so
+t3x/r6/lib/xmem.so
+t3x/r6/system.txrc
+t3x/r6/txprint.rules
+@unexec rm -f %D/t3x/r6/classes/CLASSNDX-
+@dirrm t3x/r6/bin
+@dirrm t3x/r6/classes
+@dirrm t3x/r6/lib
+@dirrm t3x/r6/doc
+@dirrm t3x/r6
+@dirrm t3x
