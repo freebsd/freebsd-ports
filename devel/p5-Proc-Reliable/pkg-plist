@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/Proc/Reliable.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Proc/Reliable/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/Reliable/.packlist
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Proc 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Proc/Reliable
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Proc 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/Reliable
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc 2>/dev/null || true
