@@ -1,5 +1,10 @@
---- makedefc.in.orig	Sun Sep 14 12:02:18 2003
-+++ makedefc.in	Sun Sep 14 12:10:34 2003
+Index: makedefc.in
+===================================================================
+RCS file: /cvsroot/gcl/gcl/makedefc.in,v
+retrieving revision 1.15.6.3
+diff -u -d -b -B -r1.15.6.3 makedefc.in
+--- makedefc.in	10 Mar 2004 22:51:36 -0000	1.15.6.3
++++ makedefc.in	19 Jul 2004 13:19:14 -0000
 @@ -16,13 +16,18 @@
  prefix=@prefix@
  
