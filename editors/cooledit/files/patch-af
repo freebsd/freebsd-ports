@@ -1,6 +1,6 @@
---- widget/syntax.c.orig	Fri Jun 11 16:24:41 1999
-+++ widget/syntax.c	Sat Jun 12 08:30:33 1999
-@@ -729,7 +729,7 @@
+--- widget/syntax.c.orig	Tue Nov 30 02:34:27 1999
++++ widget/syntax.c	Wed Jan 26 18:36:26 2000
+@@ -590,7 +590,7 @@
      f = fopen (p, "r");
      if (f)
  	return f;
@@ -8,4 +8,4 @@
 +    strcpy (p, DATADIR "/cooledit/syntax/");
      strcat (p, filename);
      syntax_free (error_file_name);
-     error_file_name = strdup (p);
+     error_file_name = (char *) strdup (p);

@@ -1,15 +1,15 @@
---- editor/coolpython.c.orig	Fri Jun 11 16:24:42 1999
-+++ editor/coolpython.c	Sat Jun 12 08:30:33 1999
-@@ -1485,7 +1485,7 @@
+--- editor/coolpython.c.orig	Thu Jan 27 22:59:34 2000
++++ editor/coolpython.c	Thu Jan 27 23:00:34 2000
+@@ -1487,7 +1487,7 @@
      PyDict_SetItemString (d, "Mod3Mask", PyInt_FromLong ((long) Mod3Mask));
      PyDict_SetItemString (d, "Mod4Mask", PyInt_FromLong ((long) Mod4Mask));
      PyDict_SetItemString (d, "Mod5Mask", PyInt_FromLong ((long) Mod5Mask));
 -    PyDict_SetItemString (d, "LIBDIR", PyString_FromString (LIBDIR));
 +    PyDict_SetItemString (d, "DATADIR", PyString_FromString (DATADIR));
- }
  
- void coolpython_run_file (char *filename)
-@@ -1544,7 +1544,7 @@
+     PyDict_SetItemString (d, "Mod5Mask", PyInt_FromLong ((long) Mod5Mask));
+ 
+@@ -1569,7 +1569,7 @@
  import sys\n\
  sys.path.append('%s')\n\
  sys.path.append('%s%s')\n\
@@ -18,7 +18,7 @@
      e = PyRun_String (s, Py_file_input, name_space, name_space);
      if (!e) {
  	PyErr_Print ();
-@@ -1553,7 +1553,7 @@
+@@ -1578,7 +1578,7 @@
      }
      Py_DECREF (e);
      coolpython_constants (name_space);
