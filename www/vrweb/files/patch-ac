@@ -1,0 +1,10 @@
+--- src/harmony/Imakefile.orig	Fri Apr 17 12:39:50 1998
++++ src/harmony/Imakefile	Fri Apr 17 12:39:57 1998
+@@ -1,7 +1,6 @@
+ # src/harmony Imakefile
+ 
+ DIRS = \
+-  mesa \
+   ge3d \
+   vrml \
+   iicmviews \

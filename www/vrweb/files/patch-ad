@@ -1,0 +1,11 @@
+--- src/harmony/ge3d/mesa/ge3d_mesa.C.orig	Thu Apr 23 16:05:07 1998
++++ src/harmony/ge3d/mesa/ge3d_mesa.C	Thu Apr 23 16:05:30 1998
+@@ -131,7 +131,7 @@
+ #endif
+ 
+ /* #include <GL/glx.h> */
+-#include <mesa/GL/glu.h>
++#include <GL/glu.h>
+ 
+ #include <stdio.h>
+ #include <math.h>
