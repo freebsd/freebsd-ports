@@ -7591,6 +7591,7 @@ pxfonts		ports/print/pxfonts
 pxtools		ports/databases/pxtools
 pxytest		ports/security/pxytest
 py-4suite	ports/textproc/py-4suite
+py-GeoIP	ports/net/py-GeoIP
 py-HTMLgen	ports/www/py-HTMLgen
 py-HyperText	ports/textproc/py-HyperText
 py-MySQL	ports/databases/py-MySQL
