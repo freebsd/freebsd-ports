@@ -4580,6 +4580,7 @@ mpich		ports/net/mpich
 mplayer		ports/graphics/mplayer
 mplayer-fonts	ports/graphics/mplayer-fonts
 mplayer-skins	ports/graphics/mplayer-skins
+mplayerxp	ports/multimedia/mplayerxp
 mplex		ports/graphics/mplex
 mpmf20		ports/audio/mpmf20
 mpqc		ports/science/mpqc
