@@ -1425,6 +1425,7 @@ elisp-manual	ports/lang/elisp-manual
 elk		ports/lang/elk
 elm		ports/mail/elm
 elm+ME		ports/mail/elm+ME
+elmo		ports/mail/elmo
 elscreen	ports/misc/elscreen
 elvis		ports/editors/elvis
 em		ports/editors/em
