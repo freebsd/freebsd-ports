@@ -12,7 +12,7 @@ bin/snmpdelta
 bin/snmptable
 bin/snmpcheck
 bin/tkmib
-etc/rc.d/snmpd.sh
+etc/rc.d/snmpd.sh.sample
 include/ucd-snmp/asn1.h
 include/ucd-snmp/snmp_api.h
 include/ucd-snmp/snmp_client.h
@@ -20,10 +20,10 @@ include/ucd-snmp/snmp_impl.h
 include/ucd-snmp/snmp.h
 include/ucd-snmp/parse.h
 include/ucd-snmp/mib.h
+include/ucd-snmp/ucd-snmp-config.h
 @dirrm include/ucd-snmp
 lib/libsnmp.so
-@exec ln %D/lib/libsnmp.so %D/lib/libsnmp.so.3.5
-@unexec rm -f %D/lib/libsnmp.so.3.5
+lib/libsnmp.so.3.5
 sbin/snmpd
 sbin/snmptrapd
 share/examples/ucd-snmp/README
@@ -61,3 +61,5 @@ share/snmp/mibs/IPFWACC-MIB.txt
 @unexec rm -f %D/share/snmp/mibs/.index
 @dirrm share/snmp/mibs
 @dirrm share/snmp
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
