@@ -22,7 +22,7 @@ TARGET_DIR?=	${PREFIX}/share/doc/jdk${JDK_MAJOR_VER}
 WRKSRC=		${WRKDIR}/docs
 JDK_VERSION=	1.3.1
 JDK_MAJOR_VER=	${JDK_VERSION:R}
-DOWNLOAD_URL=	http://java.sun.com/j2se/${JDK_MAJOR_VER}/docs.html\#Download
+DOWNLOAD_URL=	http://java.sun.com/webapps/download/Display?BundleId=8717
 
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/PLIST
