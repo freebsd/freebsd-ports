@@ -1,0 +1,1156 @@
+--- libicq2000-0.1/libicq2000/sigslot.h.orig	Wed Feb 11 01:51:44 2004
++++ libicq2000-0.1/libicq2000/sigslot.h	Fri Aug 20 22:39:25 2004
+@@ -745,8 +745,8 @@
+ 	public:
+ 		_connection0()
+ 		{
+-			pobject = NULL;
+-			pmemfun = NULL;
++			this->pobject = NULL;
++			this->pmemfun = NULL;
+ 		}
+ 
+ 		_connection0(dest_type* pobject, void (dest_type::*pmemfun)())
+@@ -786,8 +786,8 @@
+ 	public:
+ 		_connection1()
+ 		{
+-			pobject = NULL;
+-			pmemfun = NULL;
++			this->pobject = NULL;
++			this->pmemfun = NULL;
+ 		}
+ 
+ 		_connection1(dest_type* pobject, void (dest_type::*pmemfun)(arg1_type))
+@@ -827,8 +827,8 @@
+ 	public:
+ 		_connection2()
+ 		{
+-			pobject = NULL;
+-			pmemfun = NULL;
++			this->pobject = NULL;
++			this->pmemfun = NULL;
+ 		}
+ 
+ 		_connection2(dest_type* pobject, void (dest_type::*pmemfun)(arg1_type, arg2_type))
+@@ -889,7 +889,7 @@
+ 			lock_block<mt_policy> lock(this);
+ 			_connection0<dest_type, mt_policy>* conn
+ 			    = new _connection0<dest_type, mt_policy>(pclass, pmemfun);
+-			m_connected_slots.push_back(conn);
++			this->m_connected_slots.push_back(conn);
+ 			pclass->signal_connect(this);
+ 		}
+ 
+@@ -897,15 +897,15 @@
+ 		{
+ 			lock_block<mt_policy> lock(this);
+ 			_sig_connection0<mt_policy>* conn = new _sig_connection0<mt_policy>(chainsig);
+-			m_connected_slots.push_back(conn);
++			this->m_connected_slots.push_back(conn);
+ 			chainsig.signal_connect(this);
+ 		}
+ 
+ 		void emit()
+ 		{
+ 			lock_block<mt_policy> lock(this);
+-			typename connections_list::const_iterator itNext, it = m_connected_slots.begin();
+-			typename connections_list::const_iterator itEnd = m_connected_slots.end();
++			typename _signal_base0< mt_policy >::connections_list::const_iterator itNext, it = this->m_connected_slots.begin();
++			typename _signal_base0< mt_policy >::connections_list::const_iterator itEnd = this->m_connected_slots.end();
+ 
+ 			while(it != itEnd)
+ 			{
+@@ -921,8 +921,8 @@
+ 		void operator()()
+ 		{
+ 			lock_block<mt_policy> lock(this);
+-			typename connections_list::const_iterator itNext, it = m_connected_slots.begin();
+-			typename connections_list::const_iterator itEnd = m_connected_slots.end();
++			typename _signal_base0< mt_policy >::connections_list::const_iterator itNext, it = this->m_connected_slots.begin();
++			typename _signal_base0< mt_policy >::connections_list::const_iterator itEnd = this->m_connected_slots.end();
+ 
+ 			while(it != itEnd)
+ 			{
+@@ -957,7 +957,7 @@
+ 			lock_block<mt_policy> lock(this);
+ 			_connection1<dest_type, arg1_type, mt_policy>* conn
+ 			    = new _connection1<dest_type, arg1_type, mt_policy>(pclass, pmemfun);
+-			m_connected_slots.push_back(conn);
++			this->m_connected_slots.push_back(conn);
+ 			pclass->signal_connect(this);
+ 		}
+ 
+@@ -965,15 +965,15 @@
+ 		{
+ 			lock_block<mt_policy> lock(this);
+ 			_sig_connection1<arg1_type, mt_policy>* conn = new _sig_connection1<arg1_type, mt_policy>(chainsig);
+-			m_connected_slots.push_back(conn);
++			this->m_connected_slots.push_back(conn);
+ 			chainsig.signal_connect(this);
+ 		}
+ 
+ 		void emit(arg1_type a1)
+ 		{
+ 			lock_block<mt_policy> lock(this);
+-			typename connections_list::const_iterator itNext, it = m_connected_slots.begin();
+-			typename connections_list::const_iterator itEnd = m_connected_slots.end();
++			typename _signal_base1<arg1_type, mt_policy>::connections_list::const_iterator itNext, it = this->m_connected_slots.begin();
++			typename _signal_base1<arg1_type, mt_policy>::connections_list::const_iterator itEnd = this->m_connected_slots.end();
+ 
+ 			while(it != itEnd)
+ 			{
+@@ -989,8 +989,8 @@
+ 		void operator()(arg1_type a1)
+ 		{
+ 			lock_block<mt_policy> lock(this);
+-			typename connections_list::const_iterator itNext, it = m_connected_slots.begin();
+-			typename connections_list::const_iterator itEnd = m_connected_slots.end();
++			typename _signal_base1<arg1_type, mt_policy>::connections_list::const_iterator itNext, it = this->m_connected_slots.begin();
++			typename _signal_base1<arg1_type, mt_policy>::connections_list::const_iterator itEnd = this->m_connected_slots.end();
+ 
+ 			while(it != itEnd)
+ 			{
+@@ -1025,7 +1025,7 @@
+ 			lock_block<mt_policy> lock(this);
+ 			_connection2<dest_type, arg1_type, arg2_type, mt_policy>* conn
+ 			    = new _connection2<dest_type, arg1_type, arg2_type, mt_policy>(pclass, pmemfun);
+-			m_connected_slots.push_back(conn);
++			this->m_connected_slots.push_back(conn);
+ 			pclass->signal_connect(this);
+ 		}
+ 
+@@ -1033,15 +1033,15 @@
+ 		{
+ 			lock_block<mt_policy> lock(this);
+ 			_sig_connection2<arg1_type, arg2_type, mt_policy>* conn = new _sig_connection2<arg1_type, arg2_type, mt_policy>(chainsig);
+-			m_connected_slots.push_back(conn);
++			this->m_connected_slots.push_back(conn);
+ 			chainsig.signal_connect(this);
+ 		}
+ 
+ 		void emit(arg1_type a1, arg2_type a2)
+ 		{
+ 			lock_block<mt_policy> lock(this);
+-			typename connections_list::const_iterator itNext, it = m_connected_slots.begin();
+-			typename connections_list::const_iterator itEnd = m_connected_slots.end();
++			typename _signal_base2<arg1_type, arg2_type, mt_policy>::connections_list::const_iterator itNext, it = this->m_connected_slots.begin();
++			typename _signal_base2<arg1_type, arg2_type, mt_policy>::connections_list::const_iterator itEnd = this->m_connected_slots.end();
+ 
+ 			while(it != itEnd)
+ 			{
+@@ -1057,8 +1057,8 @@
+ 		void operator()(arg1_type a1, arg2_type a2)
+ 		{
+ 			lock_block<mt_policy> lock(this);
+-			typename connections_list::const_iterator itNext, it = m_connected_slots.begin();
+-			typename connections_list::const_iterator itEnd = m_connected_slots.end();
++			typename _signal_base2<arg1_type, arg2_type, mt_policy>::connections_list::const_iterator itNext, it = this->m_connected_slots.begin();
++			typename _signal_base2<arg1_type, arg2_type, mt_policy>::connections_list::const_iterator itEnd = this->m_connected_slots.end();
+ 
+ 			while(it != itEnd)
+ 			{
+--- src/accountmanager.cc.orig	Fri Jul  9 02:52:48 2004
++++ src/accountmanager.cc	Fri Aug 20 22:39:25 2004
+@@ -47,7 +47,7 @@
+ 
+ void accountmanager::exec() {
+     dialogbox db;
+-    protocolname pname;
++    int pname;
+     icqconf::imaccount account;
+     int n, b, i, citem, action, pos;
+     set<hookcapab::enumeration> capab;
+@@ -75,15 +75,15 @@
+     for(fin = false; !fin; ) {
+ 	t.clear();
+ 
+-	for(pname = icq; pname != protocolname_size; (int) pname += 1) {
+-	    account = conf.getourid(pname);
++	for(pname = icq; pname != protocolname_size; pname += 1) {
++	    account = conf.getourid((protocolname)pname);
+ 
+ 	    if(pname != rss)
+-	    if(gethook(pname).enabled() || !account.empty()) {
+-		account = conf.getourid(pname);
+-		n = t.addnode(0, 0, 0, " " + conf.getprotocolname(pname) + " ");
+-		citem = ((int) (pname)+1) * 100;
+-		capab = gethook(pname).getCapabs();
++	    if(gethook((protocolname)pname).enabled() || !account.empty()) {
++		account = conf.getourid((protocolname)pname);
++		n = t.addnode(0, 0, 0, " " + conf.getprotocolname((protocolname)pname) + " ");
++		citem = (pname+1) * 100;
++		capab = gethook((protocolname)pname).getCapabs();
+ 
+ 		if(!account.empty()) {
+ 		    tmp = "";
+@@ -154,9 +154,9 @@
+ 	    pname = (protocolname) (citem/100-1);
+ 	    action = citem-(citem/100)*100;
+ 
+-	    spname = conf.getprotocolname(pname);
+-	    account = conf.getourid(pname);
+-	    abstracthook &hook = gethook(pname);
++	    spname = conf.getprotocolname((protocolname)pname);
++	    account = conf.getourid((protocolname)pname);
++	    abstracthook &hook = gethook((protocolname)pname);
+ 
+ 	    switch(action) {
+ 		case 1:
+@@ -190,7 +190,7 @@
+ 
+ 		case 8:
+ 		    if(!hook.online()) {
+-			account = icqconf::imaccount(pname);
++			account = icqconf::imaccount((protocolname)pname);
+ 		    } else {
+ 			face.status(_("You have to disconnect the service first!"));
+ 		    }
+@@ -215,9 +215,9 @@
+ 		    break;
+ 
+ 		case 10:
+-		    if(face.edit(tmp = conf.getawaymsg(pname),
++		    if(face.edit(tmp = conf.getawaymsg((protocolname)pname),
+ 		    spname + ": " + _("away message"))) {
+-			conf.setawaymsg(pname, tmp);
++			conf.setawaymsg((protocolname)pname, tmp);
+ 		    }
+ 		    break;
+ 
+--- src/centericq.cc.orig	Tue Jul 27 10:38:32 2004
++++ src/centericq.cc	Fri Aug 20 22:38:52 2004
+@@ -1,7 +1,7 @@
+ /*
+ *
+ * centericq core routines
+-* $Id: centericq.cc,v 1.192 2004/07/27 07:38:32 konst Exp $
++* $Id: centericq.cc,v 1.1 2004/08/20 19:30:53 root Exp root $
+ *
+ * Copyright (C) 2001-2003 by Konstantin Klyagin <konst@konst.org.ua>
+ *
+@@ -71,8 +71,8 @@
+ 	if(p)
+ 	if(rus = (((string) p).substr(0, 2) == "ru")) {
+ 	    conf.setcharsets("cp1251", "koi8-r");
+-	    for(protocolname pname = icq; pname != protocolname_size; (int) pname += 1)
+-		conf.setcpconvert(pname, true);
++	    for(int pname = icq; pname != protocolname_size; pname += 1)
++		conf.setcpconvert((protocolname)pname, true);
+ 	}
+ 
+ 	if(updateconf()) {
+@@ -118,20 +118,20 @@
+ }
+ 
+ bool centericq::checkpasswords() {
+-    protocolname pname;
++    int pname;
+     icqconf::imaccount ia;
+     bool r;
+ 
+     r = regmode = true;
+ 
+-    for(pname = icq; pname != protocolname_size; (int) pname += 1) {
+-	if(gethook(pname).enabled() && !gethook(pname).getCapabs().count(hookcapab::optionalpassword)) {
+-	    if(!(ia = conf.getourid(pname)).empty()) {
++    for(pname = icq; pname != protocolname_size; pname += 1) {
++	if(gethook((protocolname)pname).enabled() && !gethook((protocolname)pname).getCapabs().count(hookcapab::optionalpassword)) {
++	    if(!(ia = conf.getourid((protocolname)pname)).empty()) {
+ 		if(ia.password.empty()) {
+ 		    conf.setsavepwd(false);
+ 
+ 		    ia.password = face.inputstr("[" +
+-			conf.getprotocolname(pname) + "] " +
++			conf.getprotocolname((protocolname)pname) + "] " +
+ 			_("password: "), "", '*');
+ 
+ 		    if(ia.password.empty()) {
+@@ -150,10 +150,10 @@
+ }
+ 
+ void centericq::inithooks() {
+-    protocolname pname;
++    int pname;
+ 
+-    for(pname = icq; pname != protocolname_size; (int) pname += 1) {
+-	gethook(pname).init();
++    for(pname = icq; pname != protocolname_size; pname += 1) {
++	gethook((protocolname)pname).init();
+     }
+ }
+ 
+@@ -841,25 +841,25 @@
+ }
+ 
+ void centericq::rereadstatus() {
+-    protocolname pname;
++    int pname;
+     icqconf::imaccount ia;
+ 
+-    for(pname = icq; pname != protocolname_size; (int) pname += 1) {
+-	ia = conf.getourid(pname);
++    for(pname = icq; pname != protocolname_size; pname += 1) {
++	ia = conf.getourid((protocolname)pname);
+ 
+ 	if(!ia.empty()) {
+ 	    char cst;
+-	    imstatus st;
+-	    string fname = conf.getconfigfname((string) "status-" + conf.getprotocolname(pname));
++	    int st;
++	    string fname = conf.getconfigfname((string) "status-" + conf.getprotocolname((protocolname)pname));
+ 	    ifstream f(fname.c_str());
+ 
+ 	    if(f.is_open()) {
+ 		f >> cst, f.close(), f.clear();
+ 		unlink(fname.c_str());
+ 
+-		for(st = offline; st != imstatus_size; (int) st += 1) {
++		for(st = offline; st != imstatus_size; st += 1) {
+ 		    if(imstatus2char[st] == cst) {
+-			gethook(pname).setstatus(st);
++			gethook((protocolname)pname).setstatus((imstatus)st);
+ 			break;
+ 		    }
+ 		}
+@@ -1366,7 +1366,7 @@
+     fd_set rfds, wfds, efds;
+     struct timeval tv;
+     int hsockfd;
+-    protocolname pname;
++    int pname;
+ 
+     for(keypressed = fin = false; !keypressed && !fin; ) {
+ 	timer_keypress = lastkeypress();
+@@ -1381,8 +1381,8 @@
+ 	if(!regmode) {
+ 	    exectimers();
+ 
+-	    for(pname = icq; pname != protocolname_size; (int) pname += 1) {
+-		abstracthook &hook = gethook(pname);
++	    for(pname = icq; pname != protocolname_size; pname += 1) {
++		abstracthook &hook = gethook((protocolname)pname);
+ 
+ 		if(hook.online()) {
+ 		    hook.getsockets(rfds, wfds, efds, hsockfd);
+@@ -1400,8 +1400,8 @@
+ 	    keypressed = true;
+ 	    time(&timer_keypress);
+ 	} else {
+-	    for(pname = icq; pname != protocolname_size; (int) pname += 1) {
+-		abstracthook &hook = gethook(pname);
++	    for(pname = icq; pname != protocolname_size; pname += 1) {
++		abstracthook &hook = gethook((protocolname)pname);
+ 
+ 		if(hook.online())
+ 		if(hook.isoursocket(rfds, wfds, efds)) {
+@@ -1416,7 +1416,7 @@
+ }
+ 
+ void centericq::setauto(imstatus astatus) {
+-    protocolname pname;
++    int pname;
+     imstatus stcurrent;
+     static bool autoset = false;
+     bool nautoset, changed = false;
+@@ -1430,8 +1430,8 @@
+ 	nautoset = false;
+     }
+ 
+-    for(pname = icq; pname != protocolname_size; (int) pname += 1) {
+-	abstracthook &hook = gethook(pname);
++    for(pname = icq; pname != protocolname_size; pname += 1) {
++	abstracthook &hook = gethook((protocolname)pname);
+ 	stcurrent = hook.getstatus();
+ 
+ 	if(hook.logged())
+@@ -1443,7 +1443,7 @@
+ 	    default:
+ 		if(autoset && (astatus == available)) {
+ 		    face.log(_("+ [%s] status restored"),
+-			conf.getprotocolname(pname).c_str());
++			conf.getprotocolname((protocolname)pname).c_str());
+ 
+ 		    hook.restorestatus();
+ 		    nautoset = false;
+@@ -1458,7 +1458,7 @@
+ 			nautoset = changed = true;
+ 
+ 			face.log(_("+ [%s] automatically set %s"),
+-			    conf.getprotocolname(pname).c_str(),
++			    conf.getprotocolname((protocolname)pname).c_str(),
+ 			    astatus == away ? _("away") : _("n/a"));
+ 		    }
+ 		}
+@@ -1475,7 +1475,7 @@
+ #define MINCK0(x, y)       (x ? (y ? (x > y ? y : x) : x) : y)
+ 
+ void centericq::exectimers() {
+-    protocolname pname;
++    int pname;
+     int paway, pna;
+     bool fonline = false;
+ 
+@@ -1487,9 +1487,9 @@
+     *
+     */
+ 
+-    for(pname = icq; pname != protocolname_size; (int) pname += 1) {
+-	if(!conf.getourid(pname).empty() || (pname == rss)) {
+-	    abstracthook &hook = gethook(pname);
++    for(pname = icq; pname != protocolname_size; pname += 1) {
++	if(!conf.getourid((protocolname)pname).empty() || (pname == rss)) {
++	    abstracthook &hook = gethook((protocolname)pname);
+ 
+ 	    /*
+ 	    *
+@@ -1499,7 +1499,7 @@
+ 
+ 	    hook.exectimers();
+ 
+-	    if(timer_current-reconnect[pname].timer > reconnect[pname].period) {
++	    if(timer_current-reconnect[(protocolname)pname].timer > reconnect[(protocolname)pname].period) {
+ 		/*
+ 		*
+ 		* Any need to try auto re-connecting?
+@@ -1507,15 +1507,15 @@
+ 		*/
+ 
+ 		if(!hook.logged()) {
+-		    reconnect[pname].timer = timer_current;
++		    reconnect[(protocolname)pname].timer = timer_current;
+ 
+-		    if(reconnect[pname].period < 180)
+-			reconnect[pname].period += reconnect[pname].period/2;
++		    if(reconnect[(protocolname)pname].period < 180)
++			reconnect[(protocolname)pname].period += reconnect[(protocolname)pname].period/2;
+ 
+ 		    if(hook.online()) {
+ 			hook.disconnect();
+ 
+-		    } else if(conf.getstatus(pname) != offline) {
++		    } else if(conf.getstatus((protocolname)pname) != offline) {
+ 			if(conf.enoughdiskspace() && !manager.isopen()) {
+ 			    hook.connect();
+ 			}
+@@ -1523,7 +1523,7 @@
+ 		    }
+ 		} else {
+ 		    fonline = true;
+-		    reconnect[pname] = reconnectInfo();
++		    reconnect[(protocolname)pname] = reconnectInfo();
+ 		}
+ 	    }
+ 	}
+@@ -1581,8 +1581,8 @@
+ 
+ 	if(!conf.enoughdiskspace()) {
+ 	    if(fonline) {
+-		for(pname = icq; pname != protocolname_size; (int) pname += 1)
+-		    gethook(pname).disconnect();
++		for(pname = icq; pname != protocolname_size; pname += 1)
++		    gethook((protocolname)pname).disconnect();
+ 
+ 		face.log(_("! free disk space is less than 10k, going offline"));
+ 		face.log(_("! otherwise we can lose events and configuration"));
+--- src/hooks/abstracthook.cc.orig	Wed Jul 21 01:16:40 2004
++++ src/hooks/abstracthook.cc	Fri Aug 20 22:39:25 2004
+@@ -71,9 +71,9 @@
+ void abstracthook::setstatus(imstatus st) {
+     setautostatus(manualstatus = st);
+ 
+-    for(protocolname pname = icq; pname != protocolname_size; (int) pname += 1) {
+-	if(&gethook(pname) == this) {
+-	    conf.savestatus(pname, manualstatus);
++    for(int pname = icq; pname != protocolname_size; pname += 1) {
++	if(&gethook((protocolname)pname) == this) {
++	    conf.savestatus((protocolname)pname, manualstatus);
+ 	    break;
+ 	}
+     }
+--- src/icqconf.cc.orig	Sat Jul 31 13:47:05 2004
++++ src/icqconf.cc	Fri Aug 20 22:47:11 2004
+@@ -1,7 +1,7 @@
+ /*
+ *
+ * centericq configuration handling routines
+-* $Id: icqconf.cc,v 1.134 2004/07/31 10:47:05 konst Exp $
++* $Id: icqconf.cc,v 1.1 2004/08/20 19:30:53 root Exp root $
+ *
+ * Copyright (C) 2001-2004 by Konstantin Klyagin <konst@konst.org.ua>
+ *
+@@ -52,7 +52,7 @@
+ 
+     savepwd = mailcheck = fenoughdiskspace = true;
+ 
+-    for(protocolname pname = icq; pname != protocolname_size; (int) pname += 1) {
++    for(int pname = icq; pname != protocolname_size; pname += 1) {
+ 	chatmode[pname] = true;
+ 	cpconvert[pname] = entersends[pname] = nonimonline[pname] = false;
+     }
+@@ -376,7 +376,7 @@
+     string fname = getconfigfname("config"), buf, param, rbuf;
+     ifstream f(fname.c_str());
+     imaccount im;
+-    protocolname pname;
++    int pname;
+ 
+     if(f.is_open()) {
+ 	mailcheck = askaway = false;
+@@ -420,10 +420,10 @@
+ 		ptpmin = atoi(getword(buf, "-").c_str());
+ 		ptpmax = atoi(buf.c_str());
+ 	    } else {
+-		for(pname = icq; pname != protocolname_size; (int) pname += 1) {
+-		    buf = getprotocolname(pname);
++		for(pname = icq; pname != protocolname_size; pname += 1) {
++		    buf = getprotocolname((protocolname)pname);
+ 		    if(param.substr(0, buf.size()) == buf) {
+-			im = getourid(pname);
++			im = getourid((protocolname)pname);
+ 			im.read(rbuf);
+ 			setourid(im);
+ 		    }
+@@ -432,8 +432,8 @@
+ 	}
+ 
+ 	if(fromcharset.empty() && tocharset.empty())
+-	for(pname = icq; pname != protocolname_size; (int) pname += 1) {
+-	    if(getcpconvert(pname)) {
++	for(pname = icq; pname != protocolname_size; pname += 1) {
++	    if(getcpconvert((protocolname)pname)) {
+ 		fromcharset = "cp1251";
+ 		tocharset = "koi8-r";
+ 		break;
+@@ -473,26 +473,26 @@
+ 	    if(getaskaway()) f << "askaway" << endl;
+ 
+ 	    param = "";
+-	    for(protocolname pname = icq; pname != protocolname_size; (int) pname += 1)
+-		if(getchatmode(pname)) param += (string) " " + conf.getprotocolname(pname);
++	    for(int pname = icq; pname != protocolname_size; pname += 1)
++		if(getchatmode((protocolname)pname)) param += (string) " " + conf.getprotocolname((protocolname)pname);
+ 	    if(!param.empty())
+ 		f << "chatmode" << param << endl;
+ 
+ 	    param = "";
+-	    for(protocolname pname = icq; pname != protocolname_size; (int) pname += 1)
+-		if(getentersends(pname)) param += (string) " " + conf.getprotocolname(pname);
++	    for(int pname = icq; pname != protocolname_size; pname += 1)
++		if(getentersends((protocolname)pname)) param += (string) " " + conf.getprotocolname((protocolname)pname);
+ 	    if(!param.empty())
+ 		f << "entersends" << param << endl;
+ 
+ 	    param = "";
+-	    for(protocolname pname = icq; pname != protocolname_size; (int) pname += 1)
+-		if(getnonimonline(pname)) param += (string) " " + conf.getprotocolname(pname);
++	    for(int pname = icq; pname != protocolname_size; pname += 1)
++		if(getnonimonline((protocolname)pname)) param += (string) " " + conf.getprotocolname((protocolname)pname);
+ 	    if(!param.empty())
+ 		f << "nonimonline" << param << endl;
+ 
+ 	    param = "";
+-	    for(protocolname pname = icq; pname != protocolname_size; (int) pname += 1)
+-		if(getcpconvert(pname)) param += (string) " " + conf.getprotocolname(pname);
++	    for(int pname = icq; pname != protocolname_size; pname += 1)
++		if(getcpconvert((protocolname)pname)) param += (string) " " + conf.getprotocolname((protocolname)pname);
+ 	    if(!param.empty())
+ 		f << "convert" << param << endl;
+ 
+@@ -599,7 +599,7 @@
+     string tname = getconfigfname("sounds"), buf, suin, skey;
+     int n, ffuin, i;
+     icqcontact *c;
+-    imevent::imeventtype it;
++    int it;
+ 
+     typedef pair<imevent::imeventtype, string> eventsound;
+     vector<eventsound> soundnames;
+@@ -614,8 +614,8 @@
+     for(i = 0; i < clist.count; i++) {
+ 	c = (icqcontact *) clist.at(i);
+ 
+-	for(it = imevent::message; it != imevent::imeventtype_size; (int) it += 1) {
+-	    c->setsound(it, "");
++	for(it = imevent::message; it != imevent::imeventtype_size; it += 1) {
++	    c->setsound((imevent::imeventtype)it, "");
+ 	}
+     }
+ 
+@@ -690,20 +690,20 @@
+ 		    suin.erase(0, i+1);
+ 
+ 		    imcontact ic;
+-		    protocolname pname;
++		    int pname;
+ 
+-		    for(pname = icq; pname != protocolname_size && skey != getprotocolname(pname); (int) pname += 1);
++		    for(pname = icq; pname != protocolname_size && skey != getprotocolname((protocolname)pname); pname += 1);
+ 
+ 		    if(pname != protocolname_size) {
+ 			if(suin == "*") {
+ 			    for(i = 0; i < clist.count; i++) {
+ 				c = (icqcontact *) clist.at(i);
+ 
+-				if(c->getdesc().pname == pname) c->setsound(it, buf);
++				if(c->getdesc().pname == pname) c->setsound((imevent::imeventtype)it, buf);
+ 			    }
+ 			} else {
+-			    if(pname == icq) ic = imcontact(strtoul(suin.c_str(), 0, 0), pname);
+-				else ic = imcontact(suin, pname);
++			    if(pname == icq) ic = imcontact(strtoul(suin.c_str(), 0, 0), (protocolname)pname);
++				else ic = imcontact(suin, (protocolname)pname);
+ 
+ 			    c = clist.get(ic);
+ 			}
+@@ -713,7 +713,7 @@
+ 		c = clist.get(contactroot);
+ 	    }
+ 
+-	    if(c) c->setsound(it, buf);
++	    if(c) c->setsound((imevent::imeventtype)it, buf);
+ 	}
+ 
+ 	fi.close();
+@@ -1008,18 +1008,18 @@
+ }
+ 
+ imstatus icqconf::getstatus(protocolname pname) {
+-    imstatus st = available;
++    int st = available;
+     map<string, string>::iterator ia;
+     imaccount a = getourid(pname);
+ 
+     if((ia = a.additional.find("status")) != a.additional.end()) {
+ 	if(!ia->second.empty()) {
+-	    for(st = offline; st != imstatus_size && imstatus2char[st] != ia->second[0]; (int) st += 1);
++	    for(st = offline; st != imstatus_size && imstatus2char[st] != ia->second[0]; st += 1);
+ 	    if(st == imstatus_size) st = available;
+ 	}
+     }
+ 
+-    return st;
++    return (imstatus)st;
+ }
+ 
+ void icqconf::savestatus(protocolname pname, imstatus st) {
+@@ -1098,8 +1098,8 @@
+ 		<< "Written by Konstantin Klyagin." << endl
+ 		<< "Built-in protocols are:";
+ 
+-	    for(protocolname pname = icq; pname != protocolname_size; (int) pname += 1)
+-		if(gethook(pname).enabled()) cout << " " << conf.getprotocolname(pname);
++	    for(int pname = icq; pname != protocolname_size; pname += 1)
++		if(gethook((protocolname)pname).enabled()) cout << " " << conf.getprotocolname((protocolname)pname);
+ 
+ 	    cout << endl << endl
+ 		<< "This is free software; see the source for copying conditions.  There is NO" << endl
+@@ -1149,11 +1149,11 @@
+ 	}
+ 	cdest = imcontact(strtoul(dest.c_str(), 0, 0), icq);
+     } else {
+-	protocolname pname;
++	int pname;
+ 
+-	for(pname = icq; pname != protocolname_size; (int) pname += 1) {
+-	    if(getprotocolname(pname) == proto) {
+-		cdest = imcontact(dest, pname);
++	for(pname = icq; pname != protocolname_size; pname += 1) {
++	    if(getprotocolname((protocolname)pname) == proto) {
++		cdest = imcontact(dest, (protocolname)pname);
+ 		break;
+ 	    }
+ 	}
+@@ -1230,15 +1230,15 @@
+ }
+ 
+ void icqconf::externalstatuschange(char st, const string &proto) const {
+-    imstatus imst;
+-    protocolname pname;
++    int imst;
++    int pname;
+ 
+     if(st) {
+-	for(pname = icq; pname != protocolname_size; (int) pname += 1)
+-	    if(getprotocolname(pname) == proto)
++	for(pname = icq; pname != protocolname_size; pname += 1)
++	    if(getprotocolname((protocolname)pname) == proto)
+ 		break;
+ 
+-	for(imst = offline; imst != imstatus_size; (int) imst += 1)
++	for(imst = offline; imst != imstatus_size; imst += 1)
+ 	    if(imstatus2char[imst] == st)
+ 		break;
+ 
+@@ -1317,16 +1317,16 @@
+ 
+ void icqconf::initmultiproto(bool p[], string buf, bool excludenochat) {
+     string w;
+-    protocolname pname;
++    int pname;
+ 
+-    for(pname = icq; pname != protocolname_size; (int) pname += 1)
++    for(pname = icq; pname != protocolname_size; pname += 1)
+ 	p[pname] = buf.empty();
+ 
+     while(!(w = getword(buf)).empty()) {
+-	for(pname = icq; pname != protocolname_size; (int) pname += 1) {
+-	    if(getprotocolname(pname) == w) {
++	for(pname = icq; pname != protocolname_size; pname += 1) {
++	    if(getprotocolname((protocolname)pname) == w) {
+ 		if(excludenochat) {
+-		    p[pname] = !gethook(pname).getCapabs().count(hookcapab::nochat);
++		    p[pname] = !gethook((protocolname)pname).getCapabs().count(hookcapab::nochat);
+ 		} else {
+ 		    p[pname] = true;
+ 		}
+--- src/icqcontact.cc.orig	Fri Jul  9 02:52:48 2004
++++ src/icqcontact.cc	Fri Aug 20 22:39:25 2004
+@@ -48,8 +48,10 @@
+     finlist = true;
+     congratulated = false;
+ 
+-    for(ie = imevent::message; ie != imevent::imeventtype_size; (int) ie += 1)
+-	sound[ie] = "";
++    int int_ie;
++    for(int_ie = imevent::message; int_ie != imevent::imeventtype_size; int_ie += 1)
++	sound[(imevent::imeventtype)int_ie] = "";
++    ie = (imevent::imeventtype)int_ie;
+ 
+     cdesc = adesc;
+ 
+--- src/icqdialogs.cc.orig	Sat Jul 31 03:00:15 2004
++++ src/icqdialogs.cc	Fri Aug 20 22:39:25 2004
+@@ -174,13 +174,13 @@
+     imsearchparams ts;
+ 
+     if(subj != fsrss) {
+-	for(protocolname apname = icq; apname != protocolname_size; (int) apname += 1) {
++	for(int apname = icq; apname != protocolname_size; apname += 1) {
+ 	    if(subj == fschannel)
+-	    if(!gethook(apname).getCapabs().count(hookcapab::conferencing))
++	    if(!gethook((protocolname)apname).getCapabs().count(hookcapab::conferencing))
+ 		continue;
+ 
+-	    if(gethook(apname).logged() || apname == infocard) {
+-		penabled.push_back(apname);
++	    if(gethook((protocolname)apname).logged() || apname == infocard) {
++		penabled.push_back((protocolname)apname);
+ 	    }
+ 	}
+ 
+@@ -937,8 +937,8 @@
+     m.setwindow(textwindow(4, LINES-8, 20, LINES-4, conf.getcolor(cp_dialog_menu)));
+     m.idle = &menuidle;
+ 
+-    for(imgender i = genderUnspec; i != imgender_size; (int) i += 1) {
+-	m.additemf(0, (int) i, " %s", strgender(i));
++    for(int i = genderUnspec; i != imgender_size; i += 1) {
++	m.additemf(0, i, " %s", strgender((imgender)i));
+ 	if(i == f) m.setpos(m.getcount()-1);
+     }
+ 
+@@ -953,13 +953,13 @@
+     m.setwindow(textwindow(4, LINES-8, 18, LINES-3, conf.getcolor(cp_dialog_menu)));
+     m.idle = &menuidle;
+ 
+-    for(ICQ2000::AgeRange i = ICQ2000::RANGE_NORANGE; i <= ICQ2000::RANGE_60_ABOVE; (int) i += 1) {
+-	const char *p = stragerange(i);
++    for(int i = ICQ2000::RANGE_NORANGE; i <= ICQ2000::RANGE_60_ABOVE; i += 1) {
++	const char *p = stragerange((ICQ2000::AgeRange)i);
+ 
+ 	if(i == ICQ2000::RANGE_NORANGE)
+ 	    p = _("none");
+ 
+-	m.additemf(0, (int) i, " %s", p);
++	m.additemf(0, i, " %s", p);
+ 	if(i == r) m.setpos(m.getcount()-1);
+     }
+ 
+@@ -1071,14 +1071,14 @@
+ }
+ 
+ void icqface::multichange(bool conv[], bool newstate) {
+-    protocolname pname;
++    int pname;
+ 
+-    for(pname = icq; pname != protocolname_size; (int) pname += 1)
+-	if((!conf.getourid(pname).empty() || pname == rss) && conv[pname]) break;
++    for(pname = icq; pname != protocolname_size; pname += 1)
++	if((!conf.getourid((protocolname)pname).empty() || pname == rss) && conv[pname]) break;
+ 
+     if(pname == protocolname_size || !newstate) {
+-	for(pname = icq; pname != protocolname_size; (int) pname += 1)
+-	    if(!conf.getourid(pname).empty() || pname == rss)
++	for(pname = icq; pname != protocolname_size; pname += 1)
++	    if(!conf.getourid((protocolname)pname).empty() || pname == rss)
+ 		conv[pname] = newstate;
+     }
+ }
+@@ -1086,7 +1086,7 @@
+ bool icqface::updateconf(icqconf::regsound &s, icqconf::regcolor &c) {
+     bool finished, success, hasany;
+     int nopt, n, i, b, nconf, ncomm, aaway, ana, noth, nfeat, ncl;
+-    protocolname pname;
++    int pname;
+     string tmp, phidden;
+ 
+     string smtp = conf.getsmtphost() + ":" + i2str(conf.getsmtpport());
+@@ -1134,15 +1134,15 @@
+     bool chatmode[protocolname_size], conv[protocolname_size],
+ 	entersends[protocolname_size], nonimonline[protocolname_size];
+ 
+-    for(pname = icq; pname != protocolname_size; (int) pname += 1) {
+-	chatmode[pname] = conf.getchatmode(pname);
+-	entersends[pname] = conf.getentersends(pname);
+-	conv[pname] = conf.getcpconvert(pname);
+-	nonimonline[pname] = conf.getnonimonline(pname);
++    for(pname = icq; pname != protocolname_size; pname += 1) {
++	chatmode[pname] = conf.getchatmode((protocolname)pname);
++	entersends[pname] = conf.getentersends((protocolname)pname);
++	conv[pname] = conf.getcpconvert((protocolname)pname);
++	nonimonline[pname] = conf.getnonimonline((protocolname)pname);
+     }
+ 
+-    for(hasany = false, pname = icq; pname != protocolname_size && !hasany; (int) pname += 1)
+-	hasany = !conf.getourid(pname).empty();
++    for(hasany = false, pname = icq; pname != protocolname_size && !hasany; pname += 1)
++	hasany = !conf.getourid((protocolname)pname).empty();
+ 
+     dialogbox db;
+ 
+@@ -1184,10 +1184,10 @@
+ 
+ 	i = t.addnode(_(" Codepages conversion "));
+ 
+-	for(tmp = "", pname = icq; pname != protocolname_size; (int) pname += 1)
++	for(tmp = "", pname = icq; pname != protocolname_size; pname += 1)
+ 	if(conv[pname])
+-	if(!conf.getourid(pname).empty() || pname == rss)
+-	    tmp += conf.getprotocolname(pname) + " ";
++	if(!conf.getourid((protocolname)pname).empty() || pname == rss)
++	    tmp += conf.getprotocolname((protocolname)pname) + " ";
+ 
+ 	t.addleaff(i, 0, 26, _(" Switch to language preset : %s "), iconvlang->c_str());
+ 	t.addleaff(i, 0, 27, _(" Remote charset : %s "), convertfrom.c_str());
+@@ -1207,15 +1207,15 @@
+ 	t.addleaff(i, 0,  7, _(" Edit away message on status change : %s "), stryesno(askaway));
+ 
+ 	if(hasany) {
+-	    for(tmp = "", pname = icq; pname != protocolname_size; (int) pname += 1)
+-		if(chatmode[pname] && !conf.getourid(pname).empty())
+-		    tmp += conf.getprotocolname(pname) + " ";
++	    for(tmp = "", pname = icq; pname != protocolname_size; pname += 1)
++		if(chatmode[pname] && !conf.getourid((protocolname)pname).empty())
++		    tmp += conf.getprotocolname((protocolname)pname) + " ";
+ 
+ 	    t.addleaff(i, 0, 16, _(" Chat messaging mode for : %s"), tmp.c_str());
+ 
+-	    for(tmp = "", pname = icq; pname != protocolname_size; (int) pname += 1)
+-		if(entersends[pname] && !conf.getourid(pname).empty())
+-		    tmp += conf.getprotocolname(pname) + " ";
++	    for(tmp = "", pname = icq; pname != protocolname_size; pname += 1)
++		if(entersends[pname] && !conf.getourid((protocolname)pname).empty())
++		    tmp += conf.getprotocolname((protocolname)pname) + " ";
+ 
+ 	    t.addleaff(i, 0, 25, _(" Enter key sends message for : %s"), tmp.c_str());
+ 
+@@ -1225,8 +1225,8 @@
+ 
+ 	}
+ 
+-	for(tmp = "", pname = icq; pname != protocolname_size; (int) pname += 1)
+-	    if(nonimonline[pname]) tmp += conf.getprotocolname(pname) + " ";
++	for(tmp = "", pname = icq; pname != protocolname_size; pname += 1)
++	    if(nonimonline[pname]) tmp += conf.getprotocolname((protocolname)pname) + " ";
+ 
+ 	t.addleaff(i, 0, 29, _(" Always online non-IM contacts for : %s"), tmp.c_str());
+ 
+@@ -1272,7 +1272,7 @@
+ 			break;
+ 		    case 3:
+ 			if(hasany) selectproto(conv, spIMplusRSS); else
+-			    for(pname = icq; pname != protocolname_size; (int) pname += 1)
++			    for(pname = icq; pname != protocolname_size; pname += 1)
+ 				conv[pname] = !conv[pname];
+ 			break;
+ 		    case 4:
+@@ -1294,7 +1294,7 @@
+ 		    case 15: mailcheck = !mailcheck; break;
+ 		    case 16:
+ 			if(hasany) selectproto(chatmode); else
+-			    for(pname = icq; pname != protocolname_size; (int) pname += 1)
++			    for(pname = icq; pname != protocolname_size; pname += 1)
+ 				chatmode[pname] = !chatmode[pname];
+ 			break;
+ 
+@@ -1334,7 +1334,7 @@
+ 			break;
+ 		    case 25:
+ 			if(hasany) selectproto(entersends); else
+-			    for(pname = icq; pname != protocolname_size; (int) pname += 1)
++			    for(pname = icq; pname != protocolname_size; pname += 1)
+ 				entersends[pname] = !entersends[pname];
+ 			break;
+ 		    case 26:
+@@ -1388,13 +1388,13 @@
+ 		conf.setproxyconnect(proxyconnect);
+ 		conf.setcharsets(convertfrom, convertto);
+ 
+-		for(pname = icq; pname != protocolname_size; (int) pname += 1) {
+-		    conf.setchatmode(pname, chatmode[pname]);
+-		    conf.setentersends(pname, entersends[pname]);
+-		    conf.setnonimonline(pname, nonimonline[pname]);
++		for(pname = icq; pname != protocolname_size; pname += 1) {
++		    conf.setchatmode((protocolname)pname, chatmode[pname]);
++		    conf.setentersends((protocolname)pname, entersends[pname]);
++		    conf.setnonimonline((protocolname)pname, nonimonline[pname]);
+ 
+ 		    bool bconv = conv[pname] && (!convertfrom.empty() || !convertto.empty());
+-		    conf.setcpconvert(pname, bconv || !hasany);
++		    conf.setcpconvert((protocolname)pname, bconv || !hasany);
+ 		}
+ 
+ 		conf.setbidi(bidi);
+@@ -1426,17 +1426,17 @@
+     int i, protmax;
+     bool r, finished = false;
+ 
+-    protocolname pname;
++    int pname;
+     protocolname tempprots[protocolname_size];
+     bool aprots[protocolname_size];
+ 
+     i = 0;
+     memcpy(aprots, prots, sizeof(aprots));
+ 
+-    for(pname = icq; pname != protocolname_size; (int) pname += 1) {
++    for(pname = icq; pname != protocolname_size; pname += 1) {
+ 	if(mode == spnonIM) {
+ 	    if(pname != infocard)
+-	    if(!gethook(pname).getCapabs().count(hookcapab::nochat))
++	    if(!gethook((protocolname)pname).getCapabs().count(hookcapab::nochat))
+ 		continue;
+ 
+ 	    if(pname == livejournal)
+@@ -1445,19 +1445,19 @@
+ 	} else {
+ 	    if(mode != spIMplusRSS || pname != rss)
+ 	    if(pname != livejournal || mode == spIMonly) {
+-		if(gethook(pname).getCapabs().count(hookcapab::nochat))
++		if(gethook((protocolname)pname).getCapabs().count(hookcapab::nochat))
+ 		    continue;
+ 
+-		if(conf.getourid(pname).empty())
++		if(conf.getourid((protocolname)pname).empty())
+ 		    continue;
+ 
+ 	    }
+ 
+-	    if(!gethook(pname).enabled())
++	    if(!gethook((protocolname)pname).enabled())
+ 		continue;
+ 	}
+ 
+-	tempprots[i++] = pname;
++	tempprots[i++] = (protocolname)pname;
+     }
+ 
+     protmax = i;
+--- src/icqface.cc.orig	Thu Aug  5 20:19:43 2004
++++ src/icqface.cc	Fri Aug 20 22:39:25 2004
+@@ -205,16 +205,16 @@
+ 
+ void icqface::showtopbar() {
+     string buf;
+-    protocolname pname;
++    int pname;
+     icqconf::imaccount ia;
+ 
+-    for(pname = icq; pname != protocolname_size; (int) pname += 1) {
+-	ia = conf.getourid(pname);
++    for(pname = icq; pname != protocolname_size; pname += 1) {
++	ia = conf.getourid((protocolname)pname);
+ 
+ 	if(!ia.empty()) {
+ 	    buf += " ";
+-	    buf += conf.getprotocolname(pname) + ":";
+-	    buf += imstatus2char[gethook(pname).getstatus()];
++	    buf += conf.getprotocolname((protocolname)pname) + ":";
++	    buf += imstatus2char[gethook((protocolname)pname).getstatus()];
+ //            buf += ">";
+ 	}
+     }
+@@ -1305,7 +1305,7 @@
+ 
+ void icqface::makeprotocolmenu(verticalmenu &m) {
+     icqconf::imaccount ia;
+-    protocolname ipname;
++    int ipname;
+ 
+     static const string pitems[protocolname_size] = {
+ 	_(" [icq] ICQ network"),
+@@ -1320,11 +1320,11 @@
+ 	""
+     };
+ 
+-    for(ipname = icq; ipname != protocolname_size; (int) ipname += 1) {
+-	ia = conf.getourid(ipname);
++    for(ipname = icq; ipname != protocolname_size; ipname += 1) {
++	ia = conf.getourid((protocolname)ipname);
+ 
+ 	if(!ia.empty()) {
+-	    m.additem(0, ipname, pitems[ipname]);
++	    m.additem(0, (protocolname)ipname, pitems[ipname]);
+ 	}
+     }
+ }
+@@ -1336,20 +1336,21 @@
+ 
+     vector<imstatus> mst;
+     vector<imstatus>::iterator im;
+-    protocolname pname, onechoice;
++    int pname;
++    protocolname onechoice;
+ 
+     m.setwindow(textwindow(sizeWArea.x1, sizeWArea.y1, sizeWArea.x1+27,
+ 	sizeWArea.y1+9, conf.getcolor(cp_main_text)));
+ 
+     m.idle = &menuidle;
+ 
+-    for(protcount = 0, pname = icq; pname != protocolname_size; (int) pname += 1) {
+-	if(!conf.getourid(pname).empty()) {
++    for(protcount = 0, pname = icq; pname != protocolname_size; pname += 1) {
++	if(!conf.getourid((protocolname)pname).empty()) {
+ 	    protcount++;
+-	    onechoice = pname;
++	    onechoice = (protocolname)pname;
+ 	}
+ 
+-	alrlogged = alrlogged || gethook(pname).getstatus() != offline;
++	alrlogged = alrlogged || gethook((protocolname)pname).getstatus() != offline;
+     }
+ 
+     if(protcount < 2) {
+@@ -1372,15 +1373,15 @@
+     if(r = i) {
+ 	switch(choice) {
+ 	    case -1:
+-		for(pname = icq; pname != protocolname_size; (int) pname += 1)
+-		    if(!conf.getourid(pname).empty())
+-			pnames.push_back(pname);
++		for(pname = icq; pname != protocolname_size; pname += 1)
++		    if(!conf.getourid((protocolname)pname).empty())
++			pnames.push_back((protocolname)pname);
+ 		break;
+ 	    case -2:
+-		for(pname = icq; pname != protocolname_size; (int) pname += 1)
+-		    if(!conf.getourid(pname).empty())
+-		    if(gethook(pname).getstatus() != offline)
+-			pnames.push_back(pname);
++		for(pname = icq; pname != protocolname_size; pname += 1)
++		    if(!conf.getourid((protocolname)pname).empty())
++		    if(gethook((protocolname)pname).getstatus() != offline)
++			pnames.push_back((protocolname)pname);
+ 		break;
+ 	    default:
+ 		pnames.push_back((protocolname) choice);
+@@ -1658,9 +1659,9 @@
+ 
+     set<protocolname> ps;
+     if(cs == csvisible || cs == csinvisible) {
+-	for(protocolname pname = icq; pname != protocolname_size; (int) pname += 1)
+-	    if(gethook(pname).getCapabs().count(hookcapab::visibility))
+-		ps.insert(pname);
++	for(int pname = icq; pname != protocolname_size; pname += 1)
++	    if(gethook((protocolname)pname).getCapabs().count(hookcapab::visibility))
++		ps.insert((protocolname)pname);
+     }
+ 
+     lst.fillmenu(db.getmenu(), cs);
+--- src/icqgroup.cc.orig	Sat Nov 22 21:14:33 2003
++++ src/icqgroup.cc	Fri Aug 20 22:39:25 2004
+@@ -82,6 +82,6 @@
+     string oldname = name;
+     name = aname;
+ 
+-    for(protocolname pname = icq; pname != protocolname_size; (int) pname += 1)
+-	gethook(pname).renamegroup(oldname, name);
++    for(int pname = icq; pname != protocolname_size; pname += 1)
++	gethook((protocolname)pname).renamegroup(oldname, name);
+ }
+--- src/imevents.cc.orig	Sun Apr 11 19:32:28 2004
++++ src/imevents.cc	Fri Aug 20 22:39:25 2004
+@@ -62,11 +62,11 @@
+ }
+ 
+ imevent::imeventtype imevent::gettype() const {
+-    return type;
++    return (imevent::imeventtype)type;
+ }
+ 
+ imevent::imdirection imevent::getdirection() const {
+-    return direction;
++    return (imevent::imdirection)direction;
+ }
+ 
+ imcontact imevent::getcontact() const {
+@@ -111,14 +111,14 @@
+     if(rdbuf == "\f")
+ 	getstring(f, rdbuf);
+ 
+-    for(direction = incoming; direction != imdirection_size; (int) direction += 1)
++    for(direction = incoming; direction != imdirection_size; direction += 1)
+ 	if(sdirection[direction] == rdbuf) break;
+ 
+     getstring(f, rdbuf);
+     type = imeventtype_size;
+ 
+     if(rdbuf != "") {
+-	for(type = message; type != imeventtype_size; (int) type += 1)
++	for(type = message; type != imeventtype_size; type += 1)
+ 	    if(seventtype[type] == rdbuf) break;
+     }
+ 
+--- src/imevents.h.orig	Sat Feb 21 18:15:05 2004
++++ src/imevents.h	Fri Aug 20 22:39:25 2004
+@@ -30,8 +30,8 @@
+ 
+     protected:
+ 	imcontact contact;
+-	imeventtype type;
+-	imdirection direction;
++	int type;
++	int direction;
+ 	time_t senttimestamp;
+ 	time_t timestamp;
+ 
+--- src/imexternal.cc.orig	Sat Mar 20 18:49:08 2004
++++ src/imexternal.cc	Fri Aug 20 22:39:25 2004
+@@ -393,20 +393,20 @@
+ 
+ 	    if(param == "event") {
+ 		while(!(param = getword(buf)).empty()) {
+-		    for(imevent::imeventtype et = imevent::message; et != imevent::imeventtype_size; (int) et += 1) {
+-			if((param == geteventname(et))
++		    for(int et = imevent::message; et != imevent::imeventtype_size;  et += 1) {
++			if((param == geteventname((imevent::imeventtype)et))
+ 			|| (param == "all")) {
+-			    event.insert(et);
++			    event.insert((imevent::imeventtype)et);
+ 			}
+ 		    }
+ 		}
+ 
+ 	    } else if(param == "proto") {
+ 		while(!(param = getword(buf)).empty()) {
+-		    for(protocolname pname = icq; pname != protocolname_size; (int) pname += 1) {
+-			if((param == conf.getprotocolname(pname))
++		    for(int pname = icq; pname != protocolname_size; pname += 1) {
++			if((param == conf.getprotocolname((protocolname)pname))
+ 			|| (param == "all")) {
+-			    proto.insert(pname);
++			    proto.insert((protocolname)pname);
+ 			}
+ 		    }
+ 		}
