@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.xinetd.org/
 
 MAINTAINER=	vanilla@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	build
@@ -29,7 +30,7 @@ EXTRA_PATCHES!= ${ECHO_CMD} ${PKGDIR}/files.5/patch-*
 
 post-patch:
 	${FIND} ${WRKSRC}/libs/src -name Makefile.in | ${XARGS} \
-		${PERL} -pi -e 's!\@INSTALL\@!/bin/cp!; s!-m 640!!'
+		${REINPLACE_CMD} -e 's!\@INSTALL\@!/bin/cp!; s!-m 640!!'
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' < ${WRKSRC}/xinetd/xconfig.h \
 		> ${WRKSRC}/xinetd/xconfig.h.new
 	@${MV} ${WRKSRC}/xinetd/xconfig.h.new ${WRKSRC}/xinetd/xconfig.h
