@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.clark.net/~mcoletti/sdts/
 #		ftp://resdgw17.er.usgs.gov/pub/sdtsxx/
 
-MAINTAINER=	erik@habatech.no
+MAINTAINER=	ports@freebsd.org
 
 GNU_CONFIGURE=	yes
 
