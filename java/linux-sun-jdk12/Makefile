@@ -16,8 +16,6 @@ DISTNAME=	${PORTNAME}-${JDK_VERSION:S/./_/g}-linux-i586
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Sun Java Development Kit 1.2 for Linux
 
-EXTRACT_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
-BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}
