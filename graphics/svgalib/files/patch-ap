@@ -9,3 +9,12 @@
  LIBS = -lvga -lm
  
  #----------------------------------------------------------------------
+@@ -56,7 +56,7 @@
+ 	$(INSTALLPROG) $(UTILPROGS) $(UTILINSTALLDIR)
+ 
+ .depend:
+-	gcc -MM $(patsubst %.o,$(srcdir)/utils/%.c,$(OBJECTS)) >.depend
++	$(CC) $(INCLUDES) -MM $(patsubst %.o,$(srcdir)/utils/%.c,$(OBJECTS)) >.depend
+ 
+ #
+ # include a dependency file if one exists
