@@ -576,6 +576,7 @@
     SUBDIR += p4db
     SUBDIR += p4delta
     SUBDIR += p4v
+    SUBDIR += p5-AI-Pathfinding-AStar
     SUBDIR += p5-Agent
     SUBDIR += p5-Algorithm-Annotate
     SUBDIR += p5-Algorithm-Cluster
