@@ -122,7 +122,7 @@ pre-fetch:
 	@${ECHO} "      DB_DBA_PASSWORD=password        Password of database administrator"
 	@${ECHO} "      WITH_FASTCGI                    Use FastCGI instead of mod_perl"
 	@${ECHO} "      WITH_APACHE2                    Use Apache2 as the web server"
-	@${ECHO} "      UPGRADE                         Upgrade only, don't initialize DB"
+	@${ECHO} "      INITIAL_INSTALL                 Do initialize DB (for initial install only)"
 	@${ECHO} ""
 
 pre-install:
@@ -132,7 +132,7 @@ pre-install:
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/README ${RT_PATH}/README
 	@${INSTALL_SCRIPT} ${FILESDIR}/ap2mp2-fix.pl ${RT_PATH}/bin
-.if defined(UPGRADE)
+.if !defined(INITIAL_INSTALL)
 	@echo Upgrade of RT3 complete.
 .else
 	-@${PERL} $(RT_PATH)/sbin/rt-setup-database --force --action drop --dba ${DB_DBA_USER} --dba-password ${DB_DBA_PASSWORD}
