@@ -7,7 +7,7 @@
 
 PORTNAME=	libgnomeprint
 PORTVERSION=	1.112.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta4
@@ -24,8 +24,8 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome2 \
-		--datadir=${PREFIX}/share/gnome2
+CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
+		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
