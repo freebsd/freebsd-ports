@@ -97,6 +97,7 @@
     SUBDIR += libgnugetopt
     SUBDIR += libgtop
     SUBDIR += libmalloc
+    SUBDIR += libol
     SUBDIR += libshhmsg
     SUBDIR += libshhopt
     SUBDIR += libsigc++
