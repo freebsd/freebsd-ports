@@ -14,12 +14,21 @@ bin/html2wml
 %%PORTDOCS%%share/doc/html2wml/t/form.html
 %%PORTDOCS%%share/doc/html2wml/t/samples/inc_para.wml
 %%PORTDOCS%%share/doc/html2wml/t/samples/inc_prev.wml
-%%PORTDOCS%%share/doc/html2wml/t/samples/include.html
-%%PORTDOCS%%share/doc/html2wml/t/samples/links.html
 %%PORTDOCS%%share/doc/html2wml/t/samples/mix1.html
 %%PORTDOCS%%share/doc/html2wml/t/samples/mix2.html
 %%PORTDOCS%%share/doc/html2wml/t/samples/struct.html
-%%PORTDOCS%%share/doc/html2wml/t/samples/xtreme.html
+%%PORTDOCS%%share/doc/html2wml/t/samples/t-a.html
+%%PORTDOCS%%share/doc/html2wml/t/samples/t-anchor.html
+%%PORTDOCS%%share/doc/html2wml/t/samples/t-br.html
+%%PORTDOCS%%share/doc/html2wml/t/samples/t-double-tags.html
+%%PORTDOCS%%share/doc/html2wml/t/samples/t-extcharset.html
+%%PORTDOCS%%share/doc/html2wml/t/samples/t-frames.html
+%%PORTDOCS%%share/doc/html2wml/t/samples/t-img.html
+%%PORTDOCS%%share/doc/html2wml/t/samples/t-include.html
+%%PORTDOCS%%share/doc/html2wml/t/samples/t-nest.html
+%%PORTDOCS%%share/doc/html2wml/t/samples/t-no-tag.html
+%%PORTDOCS%%share/doc/html2wml/t/samples/t-special-chars.html
+%%PORTDOCS%%share/doc/html2wml/t/samples/t-urls.html
 %%PORTDOCS%%@dirrm share/doc/html2wml/t/samples
 %%PORTDOCS%%@dirrm share/doc/html2wml/t
 %%PORTDOCS%%@dirrm share/doc/html2wml
