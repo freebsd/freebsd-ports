@@ -22,7 +22,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		${X11BASE}/lib/libMrm.a:${PORTSDIR}/x11-toolkits/open-motif-devel
 .if !defined(WITHOUT_PLUGIN)
 LIB_DEPENDS=	glib12.3:$(PORTSDIR)/devel/glib12 \
-		gtk12.3:$(PORTSDIR)/x11-toolkits/gtk12 \
+		gtk12.2:$(PORTSDIR)/x11-toolkits/gtk12 \
 		nspr4.1:$(PORTSDIR)/devel/nspr
 .endif
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
