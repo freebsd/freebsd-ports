@@ -10,7 +10,8 @@ PORTNAME=	cless
 PORTVERSION=	290
 CATEGORIES=	chinese misc
 MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
-MAINTAINER=	obrien@FreeBSD.org
+
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-DHANZI # LDFLAGS=-s datadir=/usr/local/lib/less
