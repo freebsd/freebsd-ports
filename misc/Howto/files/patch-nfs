@@ -1,0 +1,369 @@
+--- NFS-HOWTO.sgml.orig	Sat Oct  3 01:30:40 1998
++++ NFS-HOWTO.sgml	Sat Oct  3 02:20:23 1998
+@@ -67,7 +67,7 @@
+ networking and the terms used.  If you don't recognize the terms you
+ can either go back and check the networking HOWTO, wing it, or get a
+ book about TCP/IP network administration to familiarize yourself with
+-TCP/IP.  That's a good idea anyway if you're administrating UNIX/Linux
++TCP/IP.  That's a good idea anyway if you're administrating UNIX
+ machines.  A very good book on the subject is <em>TCP/IP Network
+ Administration</em> by Craig Hunt, published by O'Reilly &amp;
+ Associates, Inc.  And after you've read it and understood it you'll
+@@ -96,7 +96,7 @@
+ skip ahead to the section on <ref id="nfs-client" name="setting up a
+ NFS client">
+ 
+-<p>If you need to set up a non-Linux box as server you will have to
++<p>If you need to set up a non-FreeBSD box as server you will have to
+ read the system manual(s) to discover how to enable NFS serving and
+ export of file systems through NFS.  There is a separate section in
+ this HOWTO on how to do it on many different systems.  After you have
+@@ -109,8 +109,8 @@
+ 
+ <sect1>The portmapper<label id="portmapper">
+ 
+-<p>The portmapper on Linux is called either <tt/portmap/ or
+-<tt/rpc.portmap/.  The man page on my system says it is a "DARPA port
++<p>The portmapper on FreeBSD is called <tt/portmap/.
++The man page on my system says it is a "DARPA port
+ to RPC program number mapper".  It is the first security holes you'll
+ open reading this HOWTO.  Description of how to close one of the holes
+ is in the <ref id="nfs-security" name="security section">.  Which I,
+@@ -157,24 +157,23 @@
+ use./ There is a separate section in this HOWTO about other Unixes
+ <tt/exports/ files.
+ 
+-<p>Now we're set to start mountd (or maybe it's called <tt/rpc.mountd/
+-and then nfsd (which could be called <tt/rpc.nfsd/).  They will both
++<p>Now we're set to start mountd
++and then nfsd.  They will both
+ read the exports file.  
+ 
+ <p>If you edit <tt>/etc/exports</tt> you will have to make sure nfsd
+ and mountd knows that the files have changed.  The traditonal way is
+-to run <tt/exportfs/.  Many Linux distributions lack a exportfs
+-program.  If you're exportfs-less you can install this script on your
++to run <tt/exportfs/.  FreeBSD lacks a exportfs
++program.  Yyou can install this script on your
+ machine:
+ 
+ <code>
+ #!/bin/sh
+-killall -HUP /usr/sbin/rpc.mountd
+-killall -HUP /usr/sbin/rpc.nfsd
++/bin/kill -HUP `/bin/cat /var/run/mountd.pid`
+ echo re-exported file systems
+ </code>
+ 
+-<p>Save it in, say, <tt>/usr/sbin/exportfs</tt>, and don't forget to
++<p>Save it in, say, <tt>/usr/local/sbin/exportfs</tt>, and don't forget to
+ <tt/chmod a+rx/ it.  Now, whenever you change your exports file, you
+ run exportfs after, as root.
+ 
+@@ -221,12 +220,8 @@
+ <sect>Setting up a NFS client<label id="nfs-client">
+ 
+ <p>First you will need a kernel with the NFS file system either
+-compiled in or available as a module.  This is configured before you
+-compile the kernel.  If you have never compiled a kernel before you
+-might need to check the kernel HOWTO and figure it out.  If you're
+-using a very cool distribution (like Red Hat) and you've never fiddled
+-with the kernel or modules on it (and thus ruined it ;-), nfs is
+-likely automagicaly available to you.
++compiled in or available as a module.  This is configured in the GENERIC
++FreeBSD kernel for you.
+ 
+ <p>You can now, at a root prompt, enter a appropriate mount command and
+ the file system will appear.  Continuing the example in the previous
+@@ -259,7 +254,7 @@
+ as this is required:
+ 
+ <code>
+-# device      mountpoint     fs-type     options	      dump fsckorder
++# Device      Mountpoint     FStype      Options	      Dump Pass#    
+ ...
+ eris:/mn/eris/local  /mnt    nfs	rsize=1024,wsize=1024 0	   0
+ ...
+@@ -294,7 +289,7 @@
+ <p>Picking up the previous example, this is now your fstab entry:
+ 
+ <code>
+-# device      mountpoint     fs-type    options                  dump fsckorder
++# Device      Mountpoint     FStype      Options	      Dump Pass#    
+ ...
+ eris:/mn/eris/local  /mnt    nfs	rsize=1024,wsize=1024,hard,intr 0 0
+ ...
+@@ -304,8 +299,8 @@
+ <sect1>Optimizing NFS<label id="optimizing">
+ 
+ <p>Normally, if no rsize and wsize options are specified NFS will read
+-and write in chunks of 4096 or 8192 bytes.  Some combinations of Linux
+-kernels and network cards cannot handle that large blocks, and it
++and write in chunks of 4096 or 8192 bytes.  Some 
++network cards cannot handle that large blocks, and it
+ might not be optimal, anyway.  So we'll want to experiment and find a
+ rsize and wsize that works and is as fast as possible.  You can test
+ the speed of your options with some simple commands.  Given the mount
+@@ -341,7 +336,7 @@
+ have different optimal sizes.  SunOS and Solaris is reputedly a lot
+ faster with 4096 byte blocks than with anything else.
+ 
+-<p>Newer Linux kernels (since 1.3 sometime) perform read-ahead for
++<p>Newer FreeBSD kernels (since 3.0) perform read-ahead for
+ rsizes larger or equal to the machine page size.  On Intel CPUs the
+ page size is 4096 bytes.  Read ahead will <em/significantly/ increase
+ the NFS read performance.  So on a Intel machine you will want 4096
+@@ -355,13 +350,13 @@
+ requests shall not be considered finished before the data written is
+ on a non-volatile medium (normally the disk).  This restricts the
+ write performance somewhat, asynchronous writes will speed NFS writes
+-up.  The Linux nfsd has never done synchronous writes since the Linux
++up.  The FreeBSD nfsd has never done synchronous writes since the FreeBSD
+ file system implementation does not lend itself to this, but on
+-non-Linux servers you can increase the performance this way with this
++non-FreeBSD servers you can increase the performance this way with this
+ in your exports file:
+ 
+ <code>
+-/dir	-async,access=linuxbox
++/dir	-async,access=freebsdbox
+ </code>
+ 
+ <p>or something similar.  Please refer to the exports man page on the
+@@ -587,10 +582,10 @@
+ servers root account.  In the NFSd man page there are several other
+ squash options listed so that you can decide to mistrust whomever you
+ (don't) like on the clients.  You also have options to squash any UID
+-and GID range you want to.  This is described in the Linux NFSd man
++and GID range you want to.  This is described in the FreeBSD NFSd man
+ page.
+ 
+-<p>root_squash is in fact the default with the Linux NFSd, to grant
++<p>root_squash is in fact the default with the FreeBSD NFSd, to grant
+ root access to a filesystem use <tt/no_root_squash/.
+ 
+ <p>Another important thing is to ensure that nfsd checks that all it's
+@@ -598,7 +593,7 @@
+ any old port on the client a user with no special privileges can run a
+ program that's is easy to obtain over the Internet. It talks nfs
+ protocol and will claim that the user is anyone the user wants to be.
+-Spooky.  The Linux nfsd does this check by default, on other OSes you
++Spooky.  The FreeBSD nfsd does this check by default, on other OSes you
+ have to enable this check yourself.  This should be described in the
+ nfsd man page for the OS.
+ 
+@@ -609,74 +604,9 @@
+ 
+ <p>The basic portmapper, in combination with nfsd has a design problem
+ that makes it possible to get to files on NFS servers without any
+-privileges.  Fortunately the portmapper Linux uses is relatively
+-secure against this attack, and can be made more secure by configuring
+-up access lists in two files.
++privileges.  Fortunately the portmapper FreeBSD uses is relatively
++secure against this attack.
+ 
+-<p>First we edit <tt>/etc/hosts.deny</tt>.  It should contain the line
+-
+-<code>
+-portmap: ALL
+-</code>
+-
+-which will deny access to <em/everyone/.  That's a bit drastic
+-perhaps, so we open it again by editing <tt>/etc/hosts.allow</tt>.
+-But first we need to figure out what to put in it.  It should
+-basically list all machines that should have access to your
+-portmapper.  On a run of the mill Linux system there are very few
+-machines that need any access for any reason.  The portmapper
+-administrates nfsd, mountd, ypbind/ypserv, pcnfsd, and 'r' services
+-like ruptime and rusers.  Of these only nfsd, mountd, ypbind/ypserv
+-and perhaps pcnfsd are of any consequence.  All machines that needs to
+-access services on your machine should be allowed to do that.  Let's
+-say that your machines address is 129.240.223.254 and that it lives on
+-the subnet 129.240.223.0 should have access to it (those are terms
+-introduced by the networking HOWTO, go back and refresh your memory if
+-you need to).  Then we write
+-
+-<code>
+-portmap: 129.240.223.0/255.255.255.0
+-</code>
+-
+-in <tt/hosts.allow/.  This is the same as the network address you give
+-to route and the subnet mask you give to ifconfig.  For the device
+-<tt/eth0/ on this machine <tt/ifconfig/ should show
+-
+-<code>
+-...
+-eth0      Link encap:10Mbps Ethernet  HWaddr 00:60:8C:96:D5:56
+-          inet addr:129.240.223.254  Bcast:129.240.223.255  Mask:255.255.255.0
+-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+-          RX packets:360315 errors:0 dropped:0 overruns:0
+-          TX packets:179274 errors:0 dropped:0 overruns:0
+-          Interrupt:10 Base address:0x320 
+-...
+-</code>
+-
+-and <tt/netstat -rn/ should show
+-
+-<code>
+-Kernel routing table
+-Destination     Gateway         Genmask         Flags Metric Ref Use    Iface
+-...
+-129.240.223.0   0.0.0.0         255.255.255.0   U     0      0   174412 eth0
+-...
+-</code>
+-
+-(Network address in first column).
+-
+-The <tt/hosts.deny/ and <tt/hosts.allow/ files are described in the
+-manual pages of the same names.
+-
+-<p><bf/IMPORTANT:/ Do <em/not/ put <em/anything/ but <em/IP NUMBERS/ in
+-the portmap lines of these files.  Host name lookups can indirectly
+-cause portmap activity which will trigger host name lookups which can
+-indirectly cause portmap activity which will trigger...
+-
+-<p>The above things should make your server tighter.  The only
+-remaining problem (Yeah, right!) is someone breaking root (or boot
+-MS-DOS) on a trusted machine and using that privilege to send requests
+-from a secure port as any user they want to be.
+ 
+ <sect1>NFS and firewalls<label id="security-firewalls">
+ 
+@@ -692,13 +622,13 @@
+ 
+ <sect1>Summary<label id="security-summary">
+ 
+-<p>If you use the hosts.allow/deny, root_squash, nosuid and privileged
++<p>If you use the nosuid and privileged
+ port features in the portmapper/nfs software you avoid many of the
+ presently known bugs in nfs and can almost feel secure about <em/that/
+ at least.  But still, after all that: When an intruder has access to
+ your network, s/he can make strange commands appear in your
+ <tt/.forward/ or mailbox file when <tt>/home</tt> or
+-<tt>/var/spool/mail</tt> are mounted over NFS.  For the same reason,
++<tt>/var/mail</tt> are mounted over NFS.  For the same reason,
+ you should never access your PGP private key over nfs.  Or at least
+ you should know the risk involved.  And now you know a bit of it.
+ 
+@@ -706,10 +636,10 @@
+ it's not totally unlikely that new bugs will be discovered, either in
+ the basic design or the implementation we use.  There might even be
+ holes known now, which someone is abusing.  But that's life.  To keep
+-abreast of things like this you should at least read the newsgroups
+-<htmlurl url="news:comp.os.linux.announce"
+-name="comp.os.linux.announce"> and <htmlurl
+-url="news:comp.security.announce" name="comp.security.announce"> at a
++abreast of things like this you should at least read the mailing lists
++<htmlurl url="mailto:freebsd-security@FreeBSD.org"
++name="freebsd-security@FreeBSD.org">
++at a
+ absolute minimum.
+ 
+ <sect>Mount Checklist
+@@ -761,10 +691,7 @@
+ 
+ <p><bf/Fix:/ Get the date set right.
+ 
+-<p>The HOWTO author recommends using NTP to synchronize clocks.  Since
+-there are export restrictions on NTP in the US you have to get NTP for
+-debian, redhat or slackware from
+-ftp://ftp.hacktic.nl/pub/replay/pub/linux or a mirror.
++<p>The HOWTO author recommends using NTP to synchronize clocks.
+ 
+ <item>The server can not accept a mount from a user that is in more
+ than 8 groups.
+@@ -774,93 +701,10 @@
+ 
+ </enum>
+ 
+-<sect>FAQs
+-
+-<p>This is the FAQ section.  Most of it was written by Alan Cox.
+-
+-<enum>
+-
+-  <item>I get a lot of 'stale nfs handle' errors when using Linux as
+-  a nfs server.
+-
+-  <p>This is caused by a bug in some oldish nfsd versions.  It is
+-  fixed in nfs-server2.2beta16 and later.
+-
+-  <item>When I try to mount a file system I get
+-
+-  <tscreen><verb>
+-  can't register with portmap: system error on send
+-  </verb></tscreen>
+-
+-  <p>You are probably using a Caldera system.  There is a bug in the
+-  rc scripts.  Please contact Caldera to obtain a fix.
+-
+-  <item>Why can't I execute a file after copying it to the NFS server?
+-
+-  <p>The reason is that nfsd caches open file handles for performance
+-  reasons (remember, it runs in user space). While nfsd has a file
+-  open (as is the case after writing to it), the kernel won't allow
+-  you to execute it. Nfsds newer than ~spring 95 release open files
+-  after a few seconds, older ones would cling to them for days.
+-
+-  <item>My NFS files are all read only
+-
+-  <p>The Linux NFS server defaults to read only. RTFM the ``exports''
+-  and nfsd manual pages. You will need to alter <tt>/etc/exports</tt>.
+-
+-  <item>I mount from a linux nfs server and while ls works I can't
+-  read or write files.
+-
+-  <p>On older versions of Linux you must mount a NFS servers with
+-  <tt/rsize=1024,wsize=1024/.
+-
+-  <item>I mount from a Linux NFS server with a block size of between
+-  3500-4000 and it crashes the Linux box regularly
+-
+-  <p>Basically don't do it then.
+-
+-  <item>Can Linux do NFS over TCP
+-
+-  <p>No, not at present.
+-
+-  <item>I get loads of strange errors trying to mount a machine from a
+-  Linux box.
+-
+-  <p>Make sure your users are in 8 groups or less. Older servers
+-  require this.
+-
+-  <item>When I reboot my machine it sometimes hangs when trying to
+-  unmount a hung NFS server.
+-
+-  <p>Do <bf/not/ unmount NFS servers when rebooting or halting, just
+-  ignore them, it will not hurt anything if you don't unmount them.
+-  The command is <tt/umount -avt nonfs/.
+-
+-  <item>Linux NFS clients are very slow when writing to Sun and BSD
+-  systems
+-
+-  <p>NFS writes are normally synchronous (you can disable this if you
+-  don't mind risking losing data). Worse still BSD derived kernels
+-  tend to be unable to work in small blocks. Thus when you write 4K of
+-  data from a Linux box in the 1K packets it uses BSD does this
+-
+-  <tscreen><verb>
+-	read 4K page
+-	alter 1K
+-	write 4K back to physical disk
+-	read 4K page
+-	alter 1K
+-	write 4K page back to physical disk
+-	etc..
+-  </verb></tscreen>
+-	
+-</enum>
+-
+-
+ <sect>Exporting filesystems
+ 
+ <p>The way to export filesytems with NFS is not completely consistent
+-across platforms of course.  In this case Linux and Solaris 2 are the
++across platforms of course.  In this case FreeBSD and Solaris 2 are the
+ deviants.  This section lists, superficially the way to do it on most
+ systems.  If the kind of system you have is not covered you must check
+ your OS man-pages.  Keywords are: nfsd, system administration tool, rc
