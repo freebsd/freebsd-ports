@@ -5,6 +5,7 @@ lib/zircon/gifs/ii.gif
 lib/zircon/gifs/key.gif
 lib/zircon/gifs/line.gif
 lib/zircon/gifs/lock.gif
+lib/zircon/gifs/log.gif
 lib/zircon/gifs/noii.gif
 lib/zircon/gifs/none.gif
 lib/zircon/gifs/nospeak.gif
@@ -46,6 +47,7 @@ lib/zircon/lib/Button.tcl
 lib/zircon/lib/Channel.tcl
 lib/zircon/lib/Chat.tcl
 lib/zircon/lib/Classes.tcl
+lib/zircon/lib/Consts.tcl
 lib/zircon/lib/Control.tcl
 lib/zircon/lib/DALnet.tcl
 lib/zircon/lib/Entry.tcl
@@ -72,6 +74,8 @@ lib/zircon/lib/Protect.tcl
 lib/zircon/lib/Server.tcl
 lib/zircon/lib/Service.tcl
 lib/zircon/lib/Sound.tcl
+lib/zircon/lib/Split.tcl
+lib/zircon/lib/Tags.tcl
 lib/zircon/lib/Topic.tcl
 lib/zircon/lib/Tracing.tcl
 lib/zircon/lib/Undernet.tcl
