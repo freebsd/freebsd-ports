@@ -55,7 +55,7 @@ LIB_DEPENDS+=	vorbis.0:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	VORBIS=""
 .else
 CONFIGURE_ARGS+=	--disable-vorbis
-PLIST_SUB+=	VORBIS="@comment"
+PLIST_SUB+=	VORBIS="@comment "
 .endif
 
 pre-everything::
@@ -73,5 +73,6 @@ post-install:
 	@${MKDIR} ${PREFIX}/etc/sdr/plugins
 	${INSTALL_DATA} ${FILESDIR}/sdr2.plugin.S100.audio.rtp.mpa.freeamp \
 		${PREFIX}/etc/sdr/plugins
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/freeamp
 
 .include <bsd.port.post.mk>
