@@ -52,8 +52,8 @@ CXXFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3 -malign-double
 .if defined(WITH_ICC)
 CC=		${LOCALBASE}/intel_cc_80/bin/icc
 CXX=		${LOCALBASE}/intel_cc_80/bin/icpc
-CFLAGS=		-O3 -tpp7 -xN -Vaxlib
-CXXFLAGS=	-O3 -tpp7 -xN -Vaxlib
+CFLAGS=		-O3 -tpp7 -axN -Vaxlib
+CXXFLAGS=	-O3 -tpp7 -axN -Vaxlib
 .endif
 
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
