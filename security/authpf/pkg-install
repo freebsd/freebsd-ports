@@ -63,12 +63,12 @@ check_group() {
     	echo ""
     	echo "You need a group '$name' whose ID number is $id"
     	if yesno "Would you like to create it automatically?" y; then
-	    pw groupadd -g $id -n $name
+	    pw groupadd -g $id -n $name -M proxy
 	    return 0
 	fi
     fi
     echo ""
-    echo "I was not able to add group 'authpf:*:63:' as pw reported:"
+    echo "I was not able to add group '$name:*:63:' as pw reported:"
     pw groupadd -g $id -n $name -N
     echo "Please correct this and try again!"
     echo ""
