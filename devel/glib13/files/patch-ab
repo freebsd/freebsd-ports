@@ -1,11 +1,11 @@
---- Makefile.in.orig	Wed Dec  9 09:02:44 1998
-+++ Makefile.in	Fri Dec 11 21:25:10 1998
-@@ -85,14 +85,12 @@
+--- Makefile.in.orig	Thu Dec 17 13:11:36 1998
++++ Makefile.in	Sat Dec 26 22:58:19 1998
+@@ -87,14 +87,12 @@
  RANLIB = @RANLIB@
  VERSION = @VERSION@
  
--SUBDIRS = gmodule docs
-+SUBDIRS = gmodule
+-SUBDIRS = gmodule gthread docs 
++SUBDIRS = gmodule gthread
  # alpha `automake' supports this better
  #SUBDIRS = . gmodule docs
  
@@ -18,7 +18,7 @@
  
  INCLUDES = -DG_LOG_DOMAIN=g_log_domain_glib @GLIB_DEBUG_FLAGS@
  
-@@ -106,9 +104,9 @@
+@@ -108,9 +106,9 @@
  	makefile.msc	\
  	glibconfig.h.win32
  
@@ -30,8 +30,8 @@
  		garray.c	\
  		gcache.c	\
  		gcompletion.c	\
-@@ -135,27 +133,25 @@
- 		gutils.c
+@@ -138,27 +136,25 @@
+ 		gmutex.c
  
  include_HEADERS = \
 -		glib.h
@@ -45,7 +45,7 @@
 -libglib_la_LDFLAGS = \
 -	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE)
 +libglib11d_la_LDFLAGS = \
-+	-version-info 1:0:0
++	-version-info 1:1:0
  
  noinst_PROGRAMS = testglib testgdate testgdateparser
 -testglib_LDADD = libglib.la
@@ -65,7 +65,7 @@
  LTLIBRARIES =  $(lib_LTLIBRARIES)
  
  
-@@ -163,8 +159,8 @@
+@@ -166,8 +162,8 @@
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
  LIBS = @LIBS@
@@ -75,8 +75,8 @@
 +libglib11d_la_OBJECTS =  garray.lo gcache.lo gcompletion.lo gdataset.lo \
  gdate.lo gerror.lo ghash.lo ghook.lo glist.lo gmain.lo giochannel.lo \
  giounix.lo gmem.lo gmessages.lo gnode.lo gprimes.lo gslist.lo gtimer.lo \
- gtree.lo grel.lo gstring.lo gstrfuncs.lo gscanner.lo gutils.lo
-@@ -172,15 +168,15 @@
+ gtree.lo grel.lo gstring.lo gstrfuncs.lo gscanner.lo gutils.lo \
+@@ -176,15 +172,15 @@
  
  testglib_SOURCES = testglib.c
  testglib_OBJECTS =  testglib.o
@@ -95,7 +95,7 @@
  testgdateparser_LDFLAGS = 
  SCRIPTS =  $(bin_SCRIPTS)
  
-@@ -188,7 +184,7 @@
+@@ -192,7 +188,7 @@
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
  LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
  LINK = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) $(LDFLAGS) -o $@
@@ -104,7 +104,7 @@
  
  HEADERS =  $(include_HEADERS)
  
-@@ -202,8 +198,8 @@
+@@ -206,8 +202,8 @@
  
  TAR = tar
  GZIP = --best
@@ -115,7 +115,7 @@
  
  all: all-recursive-am all-am
  
-@@ -244,7 +240,10 @@
+@@ -248,7 +244,10 @@
  	-rm -f config.h
  
  maintainer-clean-hdr:
@@ -127,7 +127,7 @@
  	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= ./config.status
  
  mostlyclean-libLTLIBRARIES:
-@@ -310,8 +309,8 @@
+@@ -314,8 +313,8 @@
  
  maintainer-clean-libtool:
  
@@ -138,7 +138,7 @@
  
  mostlyclean-noinstPROGRAMS:
  
-@@ -353,44 +352,6 @@
+@@ -357,44 +356,6 @@
  	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
  	done
  
@@ -183,7 +183,7 @@
  install-includeHEADERS: $(include_HEADERS)
  	@$(NORMAL_INSTALL)
  	$(mkinstalldirs) $(DESTDIR)$(includedir)
-@@ -530,13 +491,13 @@
+@@ -534,13 +495,13 @@
  all-recursive-am: config.h
  	$(MAKE) all-recursive
  
@@ -200,7 +200,7 @@
  
  install-exec: install-exec-recursive install-exec-am
  	@$(NORMAL_INSTALL)
-@@ -612,8 +573,7 @@
+@@ -616,8 +577,7 @@
  maintainer-clean-libtool mostlyclean-noinstPROGRAMS \
  distclean-noinstPROGRAMS clean-noinstPROGRAMS \
  maintainer-clean-noinstPROGRAMS uninstall-binSCRIPTS install-binSCRIPTS \
@@ -210,9 +210,9 @@
  install-includeHEADERS install-data-recursive uninstall-data-recursive \
  install-exec-recursive uninstall-exec-recursive installdirs-recursive \
  uninstalldirs-recursive all-recursive check-recursive \
---- gmodule/Makefile.in.orig	Wed Dec  9 09:02:46 1998
-+++ gmodule/Makefile.in	Fri Dec 11 21:07:16 1998
-@@ -99,30 +99,29 @@
+--- gmodule/Makefile.in.orig	Thu Dec 17 13:11:37 1998
++++ gmodule/Makefile.in	Sat Dec 26 22:51:58 1998
+@@ -101,30 +101,29 @@
  include_HEADERS = \
  		gmodule.h
  
@@ -229,7 +229,7 @@
  	@G_MODULE_LDFLAGS@ \
 -	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
 -	-release $(LT_RELEASE)
-+	-version-info 1:0:0
++	-version-info 1:1:0
  
 -libgmodule_la_LIBADD = @G_MODULE_LIBS@ # $(libglib)
 +libgmodule11d_la_LIBADD = @G_MODULE_LIBS@ # $(libglib)
@@ -257,7 +257,7 @@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../config.h
  CONFIG_CLEAN_FILES =  gmoduleconf.h
-@@ -133,17 +132,17 @@
+@@ -135,17 +134,17 @@
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
  LIBS = @LIBS@
@@ -282,7 +282,7 @@
  testgmodule_LDFLAGS = 
  CFLAGS = @CFLAGS@
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
-@@ -159,10 +158,10 @@
+@@ -161,10 +160,10 @@
  
  TAR = tar
  GZIP = --best
@@ -296,7 +296,7 @@
  
  .SUFFIXES:
  .SUFFIXES: .S .c .lo .o .s
-@@ -229,14 +228,14 @@
+@@ -231,14 +230,14 @@
  
  maintainer-clean-libtool:
  
@@ -317,7 +317,7 @@
  
  mostlyclean-noinstPROGRAMS:
  
-@@ -384,10 +383,10 @@
+@@ -386,10 +385,10 @@
  	  echo $$p; \
  	done
  
@@ -330,3 +330,74 @@
  	 if test -f $$p; then \
  	  echo "$(LIBTOOL)  --mode=install $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p"; \
  	  $(LIBTOOL)  --mode=install $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p; \
+--- gthread/Makefile.in.orig	Thu Dec 17 13:11:39 1998
++++ gthread/Makefile.in	Sat Dec 26 22:51:58 1998
+@@ -93,19 +93,18 @@
+ 		gthread-nspr.c		\
+ 		gthread-none.c
+ 
+-libglib = $(top_builddir)/libglib.la # -lglib
++libglib = $(top_builddir)/libglib11d.la # -lglib
+ 
+-lib_LTLIBRARIES = libgthread.la
++lib_LTLIBRARIES = libgthread11d.la
+ 
+-libgthread_la_SOURCES = gthread.c
+-libgthread_la_LDFLAGS = \
+-	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
+-	-release $(LT_RELEASE)
++libgthread11d_la_SOURCES = gthread.c
++libgthread11d_la_LDFLAGS = \
++	-version-info 1:1:0
+ 
+-libgthread_la_LIBADD = @G_THREAD_LIBS@
++libgthread11d_la_LIBADD = @G_THREAD_LIBS@
+ 
+ noinst_PROGRAMS = testgthread
+-testgthread_LDADD = ../libglib.la libgthread.la 
++testgthread_LDADD = ../libglib11d.la libgthread11d.la 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
+@@ -116,13 +115,13 @@
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-libgthread_la_DEPENDENCIES = 
+-libgthread_la_OBJECTS =  gthread.lo
++libgthread11d_la_DEPENDENCIES = 
++libgthread11d_la_OBJECTS =  gthread.lo
+ PROGRAMS =  $(noinst_PROGRAMS)
+ 
+ testgthread_SOURCES = testgthread.c
+ testgthread_OBJECTS =  testgthread.o
+-testgthread_DEPENDENCIES =  ../libglib.la libgthread.la
++testgthread_DEPENDENCIES =  ../libglib11d.la libgthread11d.la
+ testgthread_LDFLAGS = 
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+@@ -135,10 +134,10 @@
+ 
+ TAR = tar
+ GZIP = --best
+-SOURCES = $(libgthread_la_SOURCES) testgthread.c
+-OBJECTS = $(libgthread_la_OBJECTS) testgthread.o
++SOURCES = $(libgthread11d_la_SOURCES) testgthread.c
++OBJECTS = $(libgthread11d_la_OBJECTS) testgthread.o
+ 
+-all: Makefile $(LTLIBRARIES) $(PROGRAMS)
++all: Makefile $(LTLIBRARIES)
+ 
+ .SUFFIXES:
+ .SUFFIXES: .S .c .lo .o .s
+@@ -213,8 +212,8 @@
+ 
+ maintainer-clean-libtool:
+ 
+-libgthread.la: $(libgthread_la_OBJECTS) $(libgthread_la_DEPENDENCIES)
+-	$(LINK) -rpath $(libdir) $(libgthread_la_LDFLAGS) $(libgthread_la_OBJECTS) $(libgthread_la_LIBADD) $(LIBS)
++libgthread11d.la: $(libgthread11d_la_OBJECTS) $(libgthread11d_la_DEPENDENCIES)
++	$(LINK) -rpath $(libdir) $(libgthread11d_la_LDFLAGS) $(libgthread11d_la_OBJECTS) $(libgthread11d_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-noinstPROGRAMS:
+ 

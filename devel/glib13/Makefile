@@ -1,12 +1,12 @@
 # New ports collection makefile for:   glib11-devel
-# Version required:		1.1.7
+# Version required:		1.1.9
 # Date Created:			28 July 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.8 1998/12/11 08:39:47 asami Exp $
+# $Id: Makefile,v 1.9 1998/12/12 03:42:59 vanilla Exp $
 #
 
-DISTNAME=	glib-1.1.7
+DISTNAME=	glib-1.1.9
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.1/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.1/ \

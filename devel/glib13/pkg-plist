@@ -5,11 +5,15 @@ include/glib11d/gmodule.h
 lib/libglib11d.a
 lib/libglib11d.la
 lib/libglib11d.so
-lib/libglib11d.so.1
+lib/libglib11d.so.1.1
 lib/libgmodule11d.a
 lib/libgmodule11d.la
 lib/libgmodule11d.so
-lib/libgmodule11d.so.1
+lib/libgmodule11d.so.1.1
+lib/libgthread11d.a
+lib/libgthread11d.la
+lib/libgthread11d.so
+lib/libgthread11d.so.1.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @dirrm include/glib11d

@@ -1,5 +1,5 @@
---- glib-config.in.orig	Wed Sep 16 03:08:07 1998
-+++ glib-config.in	Fri Dec 11 21:43:37 1998
+--- glib-config.in.orig	Wed Dec 16 09:30:46 1998
++++ glib-config.in	Sat Dec 26 22:24:07 1998
 @@ -7,7 +7,7 @@
  usage()
  {
@@ -9,22 +9,28 @@
  Options:
  	[--prefix[=DIR]]
  	[--exec-prefix[=DIR]]
-@@ -83,15 +83,15 @@
- 	echo $exec_prefix
- fi
- if test "$echo_cflags" = "yes"; then
--	echo -I@libdir@/glib/include $includes
-+	echo $includes
+@@ -91,20 +91,20 @@
+ 	if test "$lib_gthread" = "yes"; then
+ 		cflags="$cflags @G_THREAD_CFLAGS@"
+ 	fi
+-	echo -I@libdir@/glib/include $includes $cflags
++	echo $includes $cflags
  fi
  if test "$echo_libs" = "yes"; then
- 	libs=""
+ 	libsp=""
+ 	libsa=""
  	if test "$lib_glib" = "yes"; then
--		libs="$libs -lglib"
-+		libs="$libs -lglib11d"
+-		libsp="$libsp -lglib"
++		libsp="$libsp -lglib11d"
+ 	fi
+ 	if test "$lib_gthread" = "yes"; then
+-		libsp="-lgthread $libsp"
++		libsp="-lgthread11d $libsp"
+ 		libsa="$libsa @G_THREAD_LIBS@"
  	fi
  	if test "$lib_gmodule" = "yes"; then
--		libs="@G_MODULE_LDFLAGS@ -lgmodule $libs @G_MODULE_LIBS@"
-+		libs="@G_MODULE_LDFLAGS@ -lgmodule11d $libs @G_MODULE_LIBS@"
+-		libsp="@G_MODULE_LDFLAGS@ -lgmodule $libsp"
++		libsp="@G_MODULE_LDFLAGS@ -lgmodule11d $libsp"
+ 		libsa="$libsa @G_MODULE_LIBS@"
  	fi
- 	echo "-L@libdir@ $libs"
- fi
+ 	echo -L@libdir@ $libsp $libsa
