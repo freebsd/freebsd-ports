@@ -34,6 +34,7 @@
     SUBDIR += deleted
     SUBDIR += detach
     SUBDIR += dim
+    SUBDIR += dirdiff
     SUBDIR += diskusage
     SUBDIR += doconfig
     SUBDIR += dvdtape
