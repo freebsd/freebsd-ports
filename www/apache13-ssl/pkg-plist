@@ -1,10 +1,11 @@
+bin/checkgid
 bin/dbmmanage
 bin/htdigest
 bin/htpasswd
 @unexec if cmp -s %D/etc/apache/access.conf %D/etc/apache/access.conf.default; then rm -f %D/etc/apache/access.conf; fi
 etc/apache/access.conf.default
 @exec [ -f %B/access.conf ] || cp %B/%f %B/access.conf
-@unexec if cmp -s %D/etc/apache/httpsd.conf %D/etc/apache/httpsd.conf.default; then rm -f %D/etc/apache/httpd.conf; fi
+@unexec if cmp -s %D/etc/apache/httpsd.conf %D/etc/apache/httpsd.conf.default; then rm -f %D/etc/apache/httpsd.conf; fi
 etc/apache/httpsd.conf.default
 @exec [ -f %B/httpsd.conf ] || cp %B/%f %B/httpsd.conf
 @unexec if cmp -s %D/etc/apache/magic %D/etc/apache/magic.default; then rm -f %D/etc/apache/magic; fi
