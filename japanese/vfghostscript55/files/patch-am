@@ -1,0 +1,21 @@
+--- zfile.c.orig	Sat Sep  2 05:32:15 2000
++++ zfile.c	Sat Sep  2 05:52:48 2000
+@@ -1,3 +1,7 @@
++/*
++Akira Tanaka <akr@jaist.ac.jp> modified for gs5.10-vflib-1.2. 1998/04/06
++*/
++
+ /* Copyright (C) 1989, 1995, 1996, 1997, 1998 Aladdin Enterprises.  All rights reserved.
+   
+   This file is part of GNU Ghostscript.
+@@ -20,10 +24,6 @@
+   affiliated with the Free Software Foundation or the GNU Project.  GNU
+   Ghostscript, as distributed by Aladdin Enterprises, does not require any
+   GNU software to build or run it.
+-/*
+-Akira Tanaka <akr@jaist.ac.jp> modified for gs5.10-vflib-1.2. 1998/04/06
+-*/
+-
+ */
+ 
+ /*$Id: zfile.c $ */

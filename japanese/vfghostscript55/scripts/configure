@@ -4,18 +4,9 @@
 
 if [ ! "X"${BATCH} = "X" ] ; then
 
-PRINTER_JAPAN=' mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips2p.dev lips3.dev lips4.dev lips4v.dev  bjc880j.dev epag.dev npdl.dev nx100f.dev nx100v.dev bj10v.dev bj10vh.dev dmprt.dev md2k.dev md5k.dev'
+PRINTER_JAPAN=' mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips2p.dev lips3.dev lips4.dev lips4v.dev  bjc880j.dev epag.dev npdl.dev nx100f.dev nx100v.dev bj10v.dev bj10vh.dev dmprt.dev md2k.dev md5k.dev lp3000c lp8000c lp8200c lp8500c'
 
-sed -e "s;XINCLUDE=-I/usr/local/X/include;XINCLUDE=-I/usr/X11R6/include;" \
-    -e "s;XLIBDIRS=-L/usr/X11/lib;XLIBDIRS=-L/usr/X11R6/lib;" \
-    -e "s;XLDFLAGS=;XLDFLAGS= -L/usr/local/lib;" \
-    -e "s;XLIBS=Xt;XLIBS=Xt ICE SM;" \
-    -e "s;^VFINCLUDE=;VFINCLUDE=-I/usr/local/include;" \
-    -e "s;^VFLIBDIRS=;VFLIBDIRS=-L/usr/local/lib;" \
-    -e "s;PVERSION=96;PVERSION=102;" \
-    -e "s;SHARE_ZLIB=0;SHARE_ZLIB=1;" \
-    -e "s;CC=gcc;CC=cc;" \
-    -e "s;DEVICE_DEVS15=pdfwrite.dev;DEVICE_DEVS15=pdfwrite.dev stcolor.dev st800.dev uniprint.dev ${PRINTER_JAPAN};" \
+sed -e "s;DEVICE_DEVS15=pdfwrite.dev;DEVICE_DEVS15=pdfwrite.dev stcolor.dev st800.dev uniprint.dev bmp16m.dev ${PRINTER_JAPAN};" \
     < ${WRKSRC}/unix-gcc.mak > ${WRKSRC}/unix-gcc.mak.bak && \
     mv ${WRKSRC}/unix-gcc.mak.bak ${WRKSRC}/unix-gcc.mak
 touch ${WRKSRC}/makefile
@@ -24,16 +15,7 @@ else
 
 # Define the directories for the X11 library files.
 # This can be null if these files are in the default linker search path.
-sed -e "s;XINCLUDE=-I/usr/local/X/include;XINCLUDE=-I/usr/X11R6/include;" \
-    -e "s;XLIBDIRS=-L/usr/X11/lib;XLIBDIRS=-L/usr/X11R6/lib;" \
-    -e "s;XLDFLAGS=;XLDFLAGS= -L/usr/local/lib;" \
-    -e "s;XLIBS=Xt;XLIBS=Xt ICE SM;" \
-    -e "s;^VFINCLUDE=;VFINCLUDE=-I/usr/local/include;" \
-    -e "s;^VFLIBDIRS=;VFLIBDIRS=-L/usr/local/lib;" \
-    -e "s;PVERSION=96;PVERSION=102;" \
-    -e "s;SHARE_ZLIB=0;SHARE_ZLIB=1;" \
-    -e "s;CC=gcc;CC=cc;" \
-    -e "s;^DEVICE_DEVS=.*;;" \
+sed -e "s;^DEVICE_DEVS=.*;;" \
     -e "s;^DEVICE_DEVS1=.*;DEVICE_DEVS1=;" \
     -e "s;^DEVICE_DEVS2=.*;DEVICE_DEVS2=;" \
     -e "s;^DEVICE_DEVS3=.*;DEVICE_DEVS3=;" \
@@ -111,6 +93,10 @@ Have fun with this new configuration style !     -andreas \n\n\
    "lp8000"   "Epson LP8000 laser printer" OFF \
    "st800"    "Epson Stylus 800 printer" ON \
    "stcolor"  "Epson Stylus Color" ON \
+   "lp3000c"  "Epson LP-3000C color laser printer" ON \
+   "lp8000c"  "Epson LP-8000C color laser printer" ON \
+   "lp8200c"  "Epson LP-8200C color laser printer" ON \
+   "lp8500c"  "Epson LP-8500C color laser printer" ON \
    "ibmpro"   "IBM 9-pin Proprinter" OFF \
    "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" OFF \
    "imagen"   "Imagen ImPress printers" OFF \
@@ -173,7 +159,7 @@ Have fun with this new configuration style !     -andreas \n\n\
    "bmpmono"  "Monochrome MS Windows .BMP file format" OFF \
    "bmp16"    "4-bit EGA/VGA .BMP file format" OFF \
    "bmp256"   "8-bit 256-color .BMP file format" OFF \
-   "bmp16m"   "24-bit .BMP file format" OFF \
+   "bmp16m"   "24-bit .BMP file format" ON \
    "cgmmono"  "Monochrome CGM -- LOW LEVEL OUTPUT ONLY" OFF \
    "cgm8"     "8-bit 256-color CGM -- DITTO" OFF \
    "cgm24"    "24-bit color CGM -- DITTO" OFF \
