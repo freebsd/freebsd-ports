@@ -1,28 +1,30 @@
 # New ports collection makefile for:	tcptrace
-# Version required:	3.2.5
+# Version required:	4.0.2
 # Date created:		3 March 1997
 # Whom:			fenner
 #
-# $Id: Makefile,v 1.1.1.1 1997/03/06 02:18:51 asami Exp $
+# $Id: Makefile,v 1.2 1997/04/30 03:18:07 asami Exp $
 #
 
-DISTNAME=	tcptrace-3.2.5
+DISTNAME=	tcptrace-4.0.2
 CATEGORIES=	net
-# this site uncompresses the file AND sends it with a .gz suffix
-#MASTER_SITES=	http://jarok.cs.ohiou.edu/software/tcptrace/files/
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-DISTFILES=	tcptrace_3.2.5.tar.gz
+MASTER_SITES=	http://jarok.cs.ohiou.edu/software/tcptrace/files/4.0.2/
+DISTFILES=	tcptrace.tar.gz
 
 MAINTAINER=	fenner@FreeBSD.ORG
 
-NO_WRKSUBDIR=	yes
-ALL_TARGET=	depend tcptrace
+WRKSRC=		${WRKDIR}/tcptrace
+ALL_TARGET=	tcptrace
+
+DOCFILES=	COPYRIGHT README README.tput_graphs
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcptrace ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/tcptrace
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/tcptrace
+.for file in ${DOCFILES}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/tcptrace
+.endfor
 .endif
 
 .include <bsd.port.mk>
