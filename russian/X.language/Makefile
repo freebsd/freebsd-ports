@@ -3,18 +3,20 @@
 # Date created:         31 Aug 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1995/12/13 10:57:52 ache Exp $
+# $Id: Makefile,v 1.5 1995/12/20 07:13:17 ache Exp $
 #
 
 PKGNAME=        ru-X11
 CATEGORIES+=    russian x11
+DISTNAME=       xrus_bin
+MASTER_SITES=   ftp://ftp.kiae.su/misc/fonts/cyrillic/xwindows/
+EXTRACT_SUFX=   .tgz
+WRKSRC=         ${WRKDIR}/cyrillic
 
 MAINTAINER=	ache@FreeBSD.ORG
 
 RUN_DEPENDS += ${X11BASE}/bin/xinit:${PORTSDIR}/x11/XFree86
 
-NO_EXTRACT=     YES
-NO_WRKDIR=      YES
 NO_CONFIGURE=   YES
 NO_PATCH=       YES
 NO_BUILD=       YES
@@ -23,9 +25,21 @@ USE_X11=        YES
 XLIB = ${X11BASE}/lib/X11
 INSTALL_DATA = ${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP}
 
-do-fetch:
-
+#Be careful to not delete embedded tab characters
 do-install:
+	-mv ${XLIB}/fonts/cyrillic ${XLIB}/fonts/cyrillic.old
+	-mkdir ${XLIB}/fonts/cyrillic
+	cd ${WRKSRC}; ${INSTALL_DATA} * ${XLIB}/fonts/cyrillic
+	if [ -f	/etc/XF86Config	]; then	\
+		grep -q	${XLIB}/fonts/cyrillic /etc/XF86Config || { \
+			cp /etc/XF86Config /etc/XF86Config.old; \
+			(echo "/^[ 	]*FontPath/i"; \
+			 echo "    FontPath	\"${XLIB}/fonts/cyrillic\""; \
+			 echo "."; echo "w"; echo "q"; ) > /tmp/ed.$$$$; \
+			ed - /etc/XF86Config < /tmp/ed.$$$$; \
+			rm -f /tmp/ed.$$$$; \
+		}; \
+	fi
 	${INSTALL_DATA} ${FILESDIR}/xmodmap ${XLIB}/xinit/.Xmodmap
 	if [ -d ${XLIB}/locale ] ; then \
 		if [ ! -d ${XLIB}/locale/koi8-r ] ; then \
