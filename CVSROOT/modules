@@ -935,6 +935,7 @@ clamav		ports/security/clamav
 clamav-devel	ports/security/clamav-devel
 clanbomber	ports/games/clanbomber
 clanlib		ports/devel/clanlib
+clanlib-devel	ports/devel/clanlib-devel
 claraocr	ports/graphics/claraocr
 clarence	ports/math/clarence
 clean		ports/sysutils/clean
