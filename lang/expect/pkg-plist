@@ -27,5 +27,8 @@ include/expect_tcl.h
 lib/expect5.26/pkgIndex.tcl
 lib/expect5.26/libexpect526.a
 lib/libexpect526.a
+lib/libexpect526.so
 lib/libexpect526.so.1.2
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm lib/expect5.26
