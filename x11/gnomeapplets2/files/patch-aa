@@ -1,6 +1,6 @@
---- configure.orig	Fri Sep 13 15:58:55 2002
-+++ configure	Wed Sep 18 01:18:40 2002
-@@ -6994,6 +6994,7 @@
+--- configure.orig	Mon Nov 18 18:04:37 2002
++++ configure	Wed Nov 20 02:25:38 2002
+@@ -5683,6 +5683,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,16 +8,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -10518,7 +10519,7 @@
-   echo "$as_me: failed program was:" >&5
- cat conftest.$ac_ext >&5
- CATOBJEXT=.mo
--	         DATADIRNAME=lib
-+	         DATADIRNAME=share
- fi
- rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
- 	      INSTOBJEXT=.mo
-@@ -10765,6 +10766,7 @@
+@@ -8771,6 +8772,7 @@
  *irix*) CDROM_HOST=irix; CDROM_LIBS="-lcdaudio -lmediad -lds";cd_device_path="/dev/cdrom";;
  *linux*) CDROM_HOST=linux;cd_device_path="/dev/cdrom";;
  *netbsd*) CDROM_HOST=netbsd;cd_device_path="/dev/rcd0";;
@@ -25,7 +16,7 @@
  *solaris*) CDROM_HOST=solaris;cd_device_path="/vol/dev/aliases/cdrom0";cdplayer_type_sun=true;;
  esac
  case "$host" in
-@@ -10817,6 +10819,20 @@
+@@ -8831,6 +8833,20 @@
    HAVE_LIBAPM_TRUE='#'
    HAVE_LIBAPM_FALSE=
  fi
@@ -34,7 +25,7 @@
 +  	HAVE_LIBAPM=no
 +
 +if test "x$HAVE_LIBAPM" = "xyes"; then
-+	HAVE_LIBAPM_TRUE=
++    	HAVE_LIBAPM_TRUE=
 +	HAVE_LIBAPM_FALSE='#'
 +else
 +    	HAVE_LIBAPM_TRUE='#'
@@ -43,22 +34,23 @@
 +	;;
 +  *-*-freebsd*)
 +  	build_battstat_applet=no
- 
+ 	
  	;;
    *-*-linux*)
-@@ -11494,13 +11510,13 @@
+@@ -9420,14 +9436,14 @@
  ACLOCAL="$ACLOCAL $ACLOCAL_FLAGS"
  
- cat >>confdefs.h <<EOF
+ cat >> confdefs.h <<EOF
 -#define GNOME_ICONDIR "${prefix}/share/pixmaps"
 +#define GNOME_ICONDIR "${datadir}/pixmaps"
  EOF
  
- #defined the below to enable help to work for applets
  
- cat >>confdefs.h <<EOF
+ #defined the below to enable help to work for applets 
+ 
+ cat >> confdefs.h <<EOF
 -#define DATADIR "${prefix}/share"
 +#define DATADIR "${datadir}"
  EOF
  
- cat >>confdefs.h <<EOF
+ cat >> confdefs.h <<EOF
