@@ -1,0 +1,12 @@
+--- test/go.run-test.orig	Thu Jan  1 12:15:21 2004
++++ test/go.run-test	Thu Jan  1 12:16:10 2004
+@@ -6,6 +6,9 @@
+ # $Header: /home/srilm/devel/test/RCS/go.run-test,v 1.10 2003/02/27 23:42:35 stolcke Exp $
+ #
+ 
++PATH=$PATH:$WRKSRC/bin:$WRKSRC/bin/i386
++export PATH
++
+ dir=$1
+ 
+ if [ -z "$MACHINE_TYPE" ]; then

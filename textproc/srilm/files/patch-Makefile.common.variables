@@ -1,0 +1,11 @@
+--- common/Makefile.common.variables.orig	Sat Feb 22 06:43:31 2003
++++ common/Makefile.common.variables	Thu Jan  1 02:57:25 2004
+@@ -52,7 +52,7 @@
+ DEMANGLE_FILTER = 2>&1 | c++filt
+ 
+ # Path to GNU awk; used in editing scripts 
+-GAWK = /usr/local/bin/gawk
++GAWK = /usr/bin/awk
+ 
+ # Include machine-type dependent variables
+ include $(SRILM)/common/Makefile.machine.$(MACHINE_TYPE)
