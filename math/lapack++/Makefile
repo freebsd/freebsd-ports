@@ -24,9 +24,25 @@ COMMENT=	Linear Algebra PACKage in C++, a wrapper for LAPACK
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 
 WRKSRC=		${WRKDIR}/Lapackpp1.1a
+USE_REINPLACE=	yes
+
+#ATLAS_BLAS
+#BLAS_LIB=	-lf77blas -latlas
+#LAPACK_LIB=	-lalapack -lcblas
+
+#Vanilla BLAS
+#BLAS_LIB=	-lblas
+#LAPACK_LIB=	-llapack
+
+#SMP version (KSE required)
+#BLAS_LIB=	-lptf77blas -latlas_r ${PTHREAD_LIBS}
+#LAPACK_LIB=	-lalapack_r -lptcblas ${PTHREAD_LIBS}
 
 post-patch:
 	@(cd ${WRKSRC} ; ${MV} makefile Makefile)
+	@${REINPLACE_CMD} -e 's+%%BLAS_LIB%%+${BLAS_LIB}+g;' \
+			-e 's+%%LAPACK_LIB%%+${LAPACK_LIB}+g;' \
+		${WRKSRC}/makefile.def
 
 do-install:
 .for i in libblas++ liblamatrix++ liblapack++
