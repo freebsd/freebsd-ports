@@ -1,8 +1,8 @@
---- features/org.eclipse.pde/build.xml.orig	Fri May 21 19:15:34 2004
-+++ features/org.eclipse.pde/build.xml	Thu Jun  3 00:36:05 2004
-@@ -116,6 +116,10 @@
+--- features/org.eclipse.pde/build.xml.orig	Sun Oct 17 22:15:27 2004
++++ features/org.eclipse.pde/build.xml	Sun Oct 17 22:17:56 2004
+@@ -114,6 +114,10 @@
  	</target>
- 	<target name="rootFileslinux_gtk_amd64">
+ 	<target name="rootFileslinux_motif_x86">
  	</target>
 +	<target name="rootFilesfreebsd_gtk_x86">
 +	</target>

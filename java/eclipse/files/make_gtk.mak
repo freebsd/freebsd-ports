@@ -54,6 +54,7 @@ ATKLIBS = `pkg-config --libs atk gtk+-2.0`
 GNOMECFLAGS = `pkg-config --cflags gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0`
 GNOMELIBS = `pkg-config --libs gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0`
 
+ifeq ($(BROWSER),mozilla)
 MOZILLACFLAGS = -O \
 	-fno-rtti	\
 	-Wall	\
@@ -61,14 +62,33 @@ MOZILLACFLAGS = -O \
 	-I$(JAVA_HOME)/include	\
 	-I$(JAVA_HOME)/include/bsd	\
 	-I$(JAVA_HOME)/include/freebsd \
-	-include $(MOZILLA_HOME)/include/mozilla/mozilla-config.h \
-	-I$(MOZILLA_HOME)/include/mozilla \
-	-I$(MOZILLA_HOME)/include/mozilla/xpcom \
-	-I$(MOZILLA_HOME)/include/mozilla/string \
-	-I$(MOZILLA_HOME)/include/mozilla/nspr \
-	-I$(MOZILLA_HOME)/include/mozilla/embed_base \
-	-I$(MOZILLA_HOME)/include/mozilla/gfx
-MOZILLALIBS = -L$(MOZILLA_HOME)/lib/mozilla -lgtkembedmoz -lxpcom
+	-include $(MOZILLA_HOME)/include/$(BROWSER)/mozilla-config.h \
+	-I$(MOZILLA_HOME)/include/$(BROWSER) \
+	-I$(MOZILLA_HOME)/include/$(BROWSER)/xpcom \
+	-I$(MOZILLA_HOME)/include/$(BROWSER)/string \
+	-I$(MOZILLA_HOME)/include/$(BROWSER)/nspr \
+	-I$(MOZILLA_HOME)/include/$(BROWSER)/embed_base \
+	-I$(MOZILLA_HOME)/include/$(BROWSER)/gfx
+else
+MOZILLACFLAGS = -O \
+	-fno-rtti	\
+	-Wall	\
+	-I./ \
+	-I$(JAVA_HOME)/include	\
+	-I$(JAVA_HOME)/include/bsd	\
+	-I$(JAVA_HOME)/include/freebsd \
+	-include $(MOZILLA_HOME)/lib/$(BROWSER)/include/$(BROWSER)-$(BROWSER_VER)/mozilla-config.h \
+	-I$(MOZILLA_HOME)/lib/$(BROWSER)/include/$(BROWSER)-$(BROWSER_VER) \
+	-I$(MOZILLA_HOME)/lib/$(BROWSER)/include/$(BROWSER)-$(BROWSER_VER)/xpcom \
+	-I$(MOZILLA_HOME)/lib/$(BROWSER)/include/$(BROWSER)-$(BROWSER_VER)/string \
+	-I$(MOZILLA_HOME)/lib/$(BROWSER)/include/$(BROWSER)-$(BROWSER_VER)/nspr \
+	-I$(MOZILLA_HOME)/lib/$(BROWSER)/include/$(BROWSER)-$(BROWSER_VER)/embed_base \
+	-I$(MOZILLA_HOME)/lib/$(BROWSER)/include/$(BROWSER)-$(BROWSER_VER)/gfx
+endif
+
+MOZILLALIBS = -L$(MOZILLA_HOME)/lib/$(BROWSER) \
+	-L$(MOZILLA_HOME)/lib/$(BROWSER)/lib/$(BROWSER)-$(BROWSER_VER) \
+	-lgtkembedmoz -lxpcom
 MOZILLALDFLAGS = -s
 
 SWT_OBJECTS		= swt.o callback.o
