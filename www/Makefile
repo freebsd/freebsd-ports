@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.35 1997/02/18 11:21:32 obrien Exp $
+# $Id: Makefile,v 1.36 1997/02/24 19:03:57 ache Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -37,5 +37,6 @@
     SUBDIR += weblint
     SUBDIR += wn
     SUBDIR += wwwcount
+    SUBDIR += wwwstat
 
 .include <bsd.port.subdir.mk>
