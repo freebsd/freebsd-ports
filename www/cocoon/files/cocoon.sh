@@ -19,7 +19,7 @@ rcvar=`set_rcvar`
 command=%%PREFIX%%/sbin/%%APP_NAME%%ctl
 command_args="$1"
 pidfile=%%PID_FILE%%
-procname=java
+procname=%%JAVA%%
 
 # set defaults
 
