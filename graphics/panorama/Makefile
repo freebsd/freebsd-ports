@@ -22,6 +22,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 
+BROKEN=		"Does not build"
+
 USE_BZIP2=	yes
 USE_BISON=	yes
 USE_GNOME=	gnometarget gtk12
@@ -38,10 +40,6 @@ CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not link render"
-.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile*" | ${XARGS} ${REINPLACE_CMD} -e \
