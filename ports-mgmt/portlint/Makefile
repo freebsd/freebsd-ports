@@ -1,9 +1,9 @@
 # New ports collection makefile for:	portlint
 # Version required:     (self contained)
 # Date created:		13 Jun 1997
-# Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
+# Whom:			Jun-ichiro itojun Hagino <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.21 1999/01/05 12:23:27 itojun Exp $
+# $Id: Makefile,v 1.22 1999/01/07 09:34:52 itojun Exp $
 #
 
 DISTNAME=       portlint-2.0
