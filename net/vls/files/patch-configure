@@ -1,0 +1,159 @@
+--- configure.in	Tue Mar 11 23:24:08 2003
++++ /tmp/vls/configure.in	Thu May  8 20:24:08 2003
+@@ -309,8 +309,17 @@
+ dnl
+ AC_ARG_ENABLE(dvd,
+ AC_HELP_STRING(--disable-dvd, DVD support (default enabled)))
++AC_ARG_WITH(dvdread,
++AC_HELP_STRING(--with-dvdread=[PATH], path to libdvdread))
+ if test x$enable_dvd != xno
+ then
++  if test "x$with_dvdread" != x
++  then
++    test_CFLAGS="-I${with_dvdread}/include"
++  fi
++  save_CPPFLAGS=$CPPFLAGS
++  save_CFLAGS=$CFLAGS
++  CPPFLAGS="$save_CPPFLAGS $test_CFLAGS $DVBINPUT_CCFLAGS"
+   AC_CHECK_HEADER(dvdread/dvd_reader.h,
+                   HAVE_LIBDVDREAD=1, HAVE_LIBDVDREAD=0)
+   if test ${HAVE_LIBDVDREAD} = 1
+@@ -318,16 +327,17 @@
+     if test ${SYS} != mingw32
+     then
+       PLUGINS="${PLUGINS} dvdreader"
+-      DVDREADER_LIB="${DVDREADER_LIB} -ldvdread"
++      DVDREADER_LIB="${DVDREADER_LIB} -ldvdread -L${with_dvdread}/lib"
+     else
+       BUILTINS="${BUILTINS} dvdreader"
+-      DVDREADER_LIB="${DVDREADER_LIB} -ldvdread -ldvdcss"
++      DVDREADER_LIB="${DVDREADER_LIB} -ldvdread -ldvdcss -L${with_dvdread}/lib"
+     fi
+   else
+     AC_MSG_ERROR([The development package for libdvdread is not installed.
+ Please install it and try again. Alternatively you can also configure with
+ --disable-dvd.])
+   fi
++  CPPFLAGS="$save_CPPFLAGS"
+ fi
+ 
+ dnl 
+@@ -343,7 +353,7 @@
+   AC_MSG_CHECKING(for libdvb headers in ${with_libdvb})
+     if test "x$with_libdvb" != x
+     then
+-      test_CFLAGS="-I${with_libdvb}"
++      test_CFLAGS="-I${with_libdvb}/include"
+     fi
+     save_CPPFLAGS=$CPPFLAGS
+     CPPFLAGS="$save_CPPFLAGS $test_CFLAGS $DVBINPUT_CCFLAGS"
+@@ -355,11 +365,11 @@
+     CPPFLAGS="$save_CPPFLAGS"
+ 
+     dnl Test for the lib existence
+-    if test -f "${with_libdvb}/libdvb.a"
++    if test -f "${with_libdvb}/lib/libdvb.a"
+     then
+       DVBINPUT_LIB="${DVBINPUT_LIB} -ldvb"
+-      DVBINPUT_DCFLAGS="${DVBINPUT_DCFLAGS} -I${with_libdvb}"
+-      DVBINPUT_LCFLAGS="${DVBINPUT_LCFLAGS} -L${with_libdvb}"
++      DVBINPUT_DCFLAGS="${DVBINPUT_DCFLAGS} -I${with_libdvb}/include"
++      DVBINPUT_LCFLAGS="${DVBINPUT_LCFLAGS} -L${with_libdvb}/lib"
+       PLUGINS="${PLUGINS} dvbinput dvbreader"
+     else
+       AC_MSG_ERROR([cannot find ${with_libdvb}/libdvb.a, make sure you compiled libdvb in ${with_libdvb}])
+@@ -422,7 +432,7 @@
+     save_CPPFLAGS=$CPPFLAGS
+     CPPFLAGS="$save_CPPFLAGS $test_CFLAGS"
+     AC_CHECK_HEADERS([dvbpsi/dvbpsi.h],[
+-      VLS_LIB="${VLS_LIB} -ldvbpsi"
++      VLS_LIB="${VLS_LIB} -ldvbpsi -L${with_dvbpsi}/lib"
+       CCFLAGS="${CCFLAGS} ${test_CFLAGS}"
+       DCFLAGS="${DCFLAGS} ${test_CFLAGS}"
+       ],[
+--- configure	Tue Mar 11 23:24:08 2003
++++ /tmp/vls/configure	Thu May  8 20:24:12 2003
+@@ -862,6 +862,7 @@
+ Optional Packages:
+   --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
+   --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
++  --with-dvdread=PATH     path to libdvdread
+   --with-libdvb=PATH      path to libdvb
+   --with-dvbpsi=PATH      libdvbpsi headers and libraries
+   --with-dvbpsi-tree=PATH libdvbpsi tree for static linking
+@@ -7096,8 +7097,21 @@
+   enableval="$enable_dvd"
+ 
+ fi;
++
++# Check whether --with-dvdread or --without-dvdread was given.
++if test "${with_dvdread+set}" = set; then
++  withval="$with_dvdread"
++
++fi;
+ if test x$enable_dvd != xno
+ then
++  if test "x$with_dvdread" != x
++  then
++    test_CFLAGS="-I${with_dvdread}/include"
++  fi
++  save_CPPFLAGS=$CPPFLAGS
++  save_CFLAGS=$CFLAGS
++  CPPFLAGS="$save_CPPFLAGS $test_CFLAGS $DVBINPUT_CCFLAGS"
+   if test "${ac_cv_header_dvdread_dvd_reader_h+set}" = set; then
+   echo "$as_me:$LINENO: checking for dvdread/dvd_reader.h" >&5
+ echo $ECHO_N "checking for dvdread/dvd_reader.h... $ECHO_C" >&6
+@@ -7239,10 +7253,10 @@
+     if test ${SYS} != mingw32
+     then
+       PLUGINS="${PLUGINS} dvdreader"
+-      DVDREADER_LIB="${DVDREADER_LIB} -ldvdread"
++      DVDREADER_LIB="${DVDREADER_LIB} -ldvdread -L${with_dvdread}/lib"
+     else
+       BUILTINS="${BUILTINS} dvdreader"
+-      DVDREADER_LIB="${DVDREADER_LIB} -ldvdread -ldvdcss"
++      DVDREADER_LIB="${DVDREADER_LIB} -ldvdread -ldvdcss -L${with_dvdread}/lib"
+     fi
+   else
+     { { echo "$as_me:$LINENO: error: The development package for libdvdread is not installed.
+@@ -7253,6 +7267,7 @@
+ --disable-dvd." >&2;}
+    { (exit 1); exit 1; }; }
+   fi
++  CPPFLAGS="$save_CPPFLAGS"
+ fi
+ 
+ # Check whether --enable-dvb or --disable-dvb was given.
+@@ -7272,7 +7287,7 @@
+ echo $ECHO_N "checking for libdvb headers in ${with_libdvb}... $ECHO_C" >&6
+     if test "x$with_libdvb" != x
+     then
+-      test_CFLAGS="-I${with_libdvb}"
++      test_CFLAGS="-I${with_libdvb}/include"
+     fi
+     save_CPPFLAGS=$CPPFLAGS
+     CPPFLAGS="$save_CPPFLAGS $test_CFLAGS $DVBINPUT_CCFLAGS"
+@@ -7428,11 +7443,11 @@
+ 
+     CPPFLAGS="$save_CPPFLAGS"
+ 
+-        if test -f "${with_libdvb}/libdvb.a"
++        if test -f "${with_libdvb}/lib/libdvb.a"
+     then
+       DVBINPUT_LIB="${DVBINPUT_LIB} -ldvb"
+-      DVBINPUT_DCFLAGS="${DVBINPUT_DCFLAGS} -I${with_libdvb}"
+-      DVBINPUT_LCFLAGS="${DVBINPUT_LCFLAGS} -L${with_libdvb}"
++      DVBINPUT_DCFLAGS="${DVBINPUT_DCFLAGS} -I${with_libdvb}/include"
++      DVBINPUT_LCFLAGS="${DVBINPUT_LCFLAGS} -L${with_libdvb}/lib"
+       PLUGINS="${PLUGINS} dvbinput dvbreader"
+     else
+       { { echo "$as_me:$LINENO: error: cannot find ${with_libdvb}/libdvb.a, make sure you compiled libdvb in ${with_libdvb}" >&5
+@@ -7785,7 +7800,7 @@
+ #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
+ _ACEOF
+ 
+-      VLS_LIB="${VLS_LIB} -ldvbpsi"
++      VLS_LIB="${VLS_LIB} -ldvbpsi -L${with_dvbpsi}/lib"
+       CCFLAGS="${CCFLAGS} ${test_CFLAGS}"
+       DCFLAGS="${DCFLAGS} ${test_CFLAGS}"
+ 

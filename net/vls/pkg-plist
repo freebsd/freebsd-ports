@@ -1,0 +1,8 @@
+bin/vls
+bin/vlsd
+etc/videolan/vls/vls.cfg
+lib/videolan/vls/dvdreader.so
+@dirrm lib/videolan/vls
+@dirrm lib/videolan
+@dirrm etc/videolan/vls
+@dirrm etc/videolan
