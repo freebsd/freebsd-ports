@@ -1203,6 +1203,7 @@ db4		ports/databases/db4
 db41		ports/databases/db41
 db41-nocrypto	ports/databases/db41-nocrypto
 db42		ports/databases/db42
+db42-nocrypto	ports/databases/db42-nocrypto
 dbXML		ports/databases/dbXML
 dbacl		ports/textproc/dbacl
 dbconnect	ports/databases/dbconnect
