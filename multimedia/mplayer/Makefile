@@ -15,8 +15,7 @@ MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		http://ftp.lug.udel.edu/MPlayer/releases/ \
 		ftp://ftp.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp2.mplayerhq.hu/MPlayer/releases/ \
-		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
-		http://www.rrr.de/~riggs/mplayer/
+		ftp://ftp.lug.udel.edu/MPlayer/releases/
 DISTNAME=	MPlayer-0.90pre10
 
 MAINTAINER=	riggs@rrr.de
