@@ -8,7 +8,7 @@
 PORTNAME=	rpm2cpio
 PORTVERSION=	1.0
 CATEGORIES=	misc
-MASTER_SITES=	http://www.eleves.ens.fr:8080/home/espel/
+MASTER_SITES=	http://www.iagora.com/~espel/
 DISTFILES=	${PORTNAME}
 
 MAINTAINER=	nox@jelal.kn-bremen.de

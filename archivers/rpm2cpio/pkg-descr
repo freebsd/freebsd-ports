@@ -8,3 +8,5 @@ required for it, since it uses the same library used to extract RPM's.
 in particular, it won't build on the HPsUX box i'm on.
 
 (this one needs just perl)
+
+WWW: http://www.iagora.com/~espel/
