@@ -1,0 +1,6 @@
+pfflowd converts OpenBSD PF status messages (sent via the pfsync interface) to
+Cisco NetFlow datagrams. These datagrams may be sent (via UDP) to a host of
+one's choice. Utilising the OpenBSD stateful packet filter infrastructure means
+that flow tracking is very fast and accurate.
+
+WWW: http://www.mindrot.org/pfflowd.html

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Enter the host to send the netflow datagrams to, the format
+# is IP:PORT (e.g 127.0.0.1:2055)
+host="127.0.0.1:2055"
+
+case "$1" in
+	start)
+		echo -n " pfflowd"
+		@@PREFIX@@/sbin/pfflowd -n ${host}
+		;;
+
+	stop)
+		if [ ! -f /var/run/pfflowd.pid ]; then
+			echo "pfflowd not running"
+			exit 64
+		fi
+		kill `cat /var/run/pfflowd.pid`
+		;;
+esac

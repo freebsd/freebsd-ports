@@ -465,6 +465,7 @@
     SUBDIR += pear-Net_URL
     SUBDIR += pen
     SUBDIR += perldap
+    SUBDIR += pfflowd
     SUBDIR += pfinger
     SUBDIR += phex
     SUBDIR += pim6dd
