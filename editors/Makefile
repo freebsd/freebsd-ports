@@ -172,6 +172,7 @@
     SUBDIR += textedit
     SUBDIR += the
     SUBDIR += thoteditor
+    SUBDIR += tpad
     SUBDIR += uemacs
     SUBDIR += uzap
     SUBDIR += ved
