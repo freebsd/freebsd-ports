@@ -6,19 +6,22 @@
 #
 
 PORTNAME=	mule-ucs
-PORTVERSION=	0.84
-PORTREVISION=	1
+PORTVERSION=	0.85.r3
 CATEGORIES=	converters elisp
-MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/Mule-UCS/ \
-		ftp://ftp.etl.go.jp/pub/mule/Mule-UCS/ \
-		ftp://ftp.kddlabs.co.jp/Japan/m17n.org/mule/Mule-UCS/ \
-		ftp://ftp.media.kyoto-u.ac.jp/mule/Mule-UCS/ \
-		ftp://ftp.nihon-u.ac.jp/pub/text/m17n/mule/Mule-UCS/
+MASTER_SITES=	${MASTER_SITE_M17N}
+MASTER_SITE_SUBDIR=	mule/Mule-UCS/test
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	Mule-UCS-${PORTVERSION}
+DISTNAME=	Mule-UCS-current
 
 MAINTAINER?=	okazaki@FreeBSD.org
 COMMENT?=	Universal encoding system for GNU Emacs 21
+
+MASTER_SITE_M17N+=	\
+		ftp://ftp.m17n.org/pub/%SUBDIR%/ \
+		ftp://ftp.etl.go.jp/pub/%SUBDIR%/ \
+		ftp://ftp.kddlabs.co.jp/Japan/m17n.org/%SUBDIR%/ \
+		ftp://ftp.media.kyoto-u.ac.jp/%SUBDIR%/ \
+		ftp://ftp.nihon-u.ac.jp/pub/text/m17n/%SUBDIR%/
 
 # This is a master port.
 PORTCLASS?=	master

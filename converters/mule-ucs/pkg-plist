@@ -64,6 +64,7 @@
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/ujisx0208.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/ujisx0212.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/uksc5601.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/ulao.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/usisheng.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/usupple.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/utibetan.el
