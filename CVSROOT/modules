@@ -10133,7 +10133,6 @@ xemacs-devel	ports/editors/xemacs-devel
 xemacs-devel-mule	ports/editors/xemacs-devel-mule
 xemacs-mule-packages	ports/editors/xemacs-mule-packages
 xemacs-packages		ports/editors/xemacs-packages
-xemacs21	ports/editors/xemacs21
 xemacs21-mule	ports/editors/xemacs21-mule
 xemeraldia	ports/games/xemeraldia
 xengine		ports/benchmarks/xengine
