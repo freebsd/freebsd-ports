@@ -7,7 +7,7 @@
 
 PORTNAME=	op
 PORTVERSION=	1.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/%SUBDIR%/ \
 		ftp://ftp.rge.com/pub/security/cerias/tools/%SUBDIR%/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/%SUBDIR%/ \
 		ftp://ftp.nask.pl/pub/mirror/coast.cs.purdue.edu/%SUBDIR%/
 MASTER_SITE_SUBDIR=	unix/sysutils/${PORTNAME}
 
-MAINTAINER=	cyrille.lefevre@laposte.net
+MAINTAINER=	scs@umich.edu
 COMMENT=	Allow others to run commands as root (like sudo but different)
 
 # Global variables
