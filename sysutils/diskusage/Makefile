@@ -10,7 +10,7 @@ PORTVERSION=	1.01
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://freebsd.radioslot.com/pub/FreeBSD/distfiles/
 
-MAINTAINER=	maske@freebsd.radioslost.com
+MAINTAINER=	ports@FreeBSD.Org
 
 MAN1=		diskusage.1
 MANCOMPRESSED=	yes
