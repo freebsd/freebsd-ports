@@ -15,7 +15,7 @@ DISTFILES=		${DISTNAME}.tar.gz \
 
 MAINTAINER=		brian@CSUA.Berkeley.EDU
 
-BUILD_DEPENDS=		${X11BASE}/lib/libsl.a:${PORTSDIR}/x11-toolkits/plib
+BUILD_DEPENDS=		${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 RUN_DEPENDS=		mpg123:${PORTSDIR}/audio/mpg123
 
 EXTRACT_ONLY=		${DISTNAME}.tar.gz
