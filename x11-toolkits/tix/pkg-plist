@@ -1,4 +1,4 @@
-bin/tixwish4.1.8.2
+bin/tixwish4.1.8.4
 @exec ln -s %D/%F %B/tixwish
 @unexec rm %B/tixwish
 include/tix.h
@@ -16,10 +16,10 @@ include/tix/generic/tixPort.h
 include/tix/generic/tixTList.h
 include/tix/unix/tixUnixInt.h
 include/tix/unix/tixUnixPort.h
-lib/libtix4182.so.1.2
-lib/libtix4182.so
-lib/libtixsam4182.so.1.2
-lib/libtixsam4182.so
+lib/libtix4184.so.1.2
+lib/libtix4184.so
+lib/libtixsam4184.so.1.2
+lib/libtixsam4184.so
 lib/tix4.1/bitmaps/act_fold.gif
 lib/tix4.1/bitmaps/act_fold.xbm
 lib/tix4.1/bitmaps/act_fold.xpm
