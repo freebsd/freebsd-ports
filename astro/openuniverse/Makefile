@@ -6,17 +6,18 @@
 #
 
 PORTNAME=		openuniverse
-PORTVERSION=		1.0beta3
+PORTVERSION=		1.0.b3
 CATEGORIES=		astro
 MASTER_SITES=		http://download.sourceforge.net/openuniverse/
+DISTNAME=		${PORTNAME}-1.0beta3
 
 MAINTAINER=		will@FreeBSD.org
 
-LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg \
-			GL.14:${PORTSDIR}/graphics/Mesa3
+LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_MESA=	yes
 
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib" \
