@@ -1,6 +1,7 @@
 #! /bin/sh
 
 [ "$2" = "POST-INSTALL" ] || exit 0
+[ "X${IS_INTERACTIVE}" != X ] || exit 0
 
 #
 # Make directories under /var.
@@ -51,7 +52,7 @@ fi
 if [ -f ${PKG_PREFIX}/etc/rc.d/ndtpd.sh ] ; then
     YESNO=YET
     while [ "${YESNO}" = YET ] ; do
-	echo -n "${PKG_PREFIX}/rc.d/ndtpd.sh already exists.  May I overwrite it? (y/[n]) "
+	echo -n "${PKG_PREFIX}/etc/rc.d/ndtpd.sh already exists.  May I overwrite it? (y/[n]) "
 	read LINE
 	case "X${LINE}" in
 	Xy|XY)
