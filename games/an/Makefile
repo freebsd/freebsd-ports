@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://suburbia.net/pub/rmj/ \
 		ftp://ftp.suburbia.net/pub/rmj/
 
-MAINTAINER=	proff@iq.org
+MAINTAINER=	ports@FreeBSD.Org
 
 MAKE_ENV+=	DEFS=-DDEFDICT=\\\"/usr/share/dict/words\\\"
 ALL_TARGET=	with-getopt
