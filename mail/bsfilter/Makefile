@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bsfilter
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.6
 CATEGORIES=	mail ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	bsfilter/10876
+MASTER_SITE_SUBDIR=	bsfilter/12638
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	info@otsune.com
@@ -20,12 +20,16 @@ RUN_DEPENDS=	${RUBY_ARCHLIBDIR}/gdbm.so:${PORTSDIR}/databases/ruby-gdbm
 NO_BUILD=	yes
 USE_RUBY=	yes
 
-OPTIONS=	MECAB "Use japanese/mecab" off \
-		KAKASI "Use japanese/kakasi" off
+OPTIONS=	CHASEN "Japanese Morphological Analysis Support" Off \
+		MECAB "Part-of-Speech and Morphological Analyzer(i386 only)" Off \
+		KAKASI "Language processing filter/converter" Off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MECAB)
+.if defined(WITH_CHASEN)
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/chasen.so:${PORTSDIR}/japanese/ruby-chasen
+.endif
+.if ${ARCH} == i386 && defined(WITH_MECAB)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/MeCab.so:${PORTSDIR}/japanese/ruby-mecab
 .endif
 .if defined(WITH_KAKASI)
@@ -43,5 +47,8 @@ do-install:
 	@${CP} -r ${WRKSRC}/${DIR} ${EXAMPLESDIR}/${DIR}
 .endfor
 .endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
