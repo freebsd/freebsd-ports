@@ -1,5 +1,5 @@
-# $Id: Makefile,v 1.4 1994/09/13 05:39:45 jkh Exp $
+# $Id: Makefile,v 1.5 1994/09/22 21:56:04 ache Exp $
 #
-SUBDIR= libmytinfo libncurses dialog
+SUBDIR= libmytinfo libncurses dialog mshell iozone
 
 .include <bsd.port.subdir.mk>
