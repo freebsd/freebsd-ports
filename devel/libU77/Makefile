@@ -8,7 +8,8 @@
 PORTNAME=	libU77
 PORTVERSION=	2.6
 CATEGORIES=	devel
-MASTER_SITES=	http://www.esc.auckland.ac.nz/People/Staff/Norris/src/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	trevor
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adds Fortran intrinsics missing from f2c
