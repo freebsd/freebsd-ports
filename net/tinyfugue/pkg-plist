@@ -21,7 +21,9 @@ lib/%%DISTNAME%%-lib/grep.tf
 lib/%%DISTNAME%%-lib/hanoi.tf
 lib/%%DISTNAME%%-lib/kb-bash.tf
 lib/%%DISTNAME%%-lib/kb-emacs.tf
+lib/%%DISTNAME%%-lib/kb-old.tf
 lib/%%DISTNAME%%-lib/kb-os2.tf
+lib/%%DISTNAME%%-lib/kb_badterm.tf
 lib/%%DISTNAME%%-lib/kbbind.tf
 lib/%%DISTNAME%%-lib/kbfunc.tf
 lib/%%DISTNAME%%-lib/kbregion.tf
@@ -58,7 +60,6 @@ lib/%%DISTNAME%%-lib/tick.tf
 lib/%%DISTNAME%%-lib/tintin.tf
 lib/%%DISTNAME%%-lib/tools.tf
 lib/%%DISTNAME%%-lib/tr.tf
-lib/%%DISTNAME%%-lib/updown.tf
 lib/%%DISTNAME%%-lib/watch.tf
 lib/%%DISTNAME%%-lib/world-q.tf
 lib/%%DISTNAME%%-lib/worldqueue.tf
