@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.46 1999/04/11 00:38:09 nectar Exp $
+# $Id: Makefile,v 1.47 1999/04/21 05:56:24 nectar Exp $
 #
 
 DISTNAME=       py152
@@ -25,7 +25,6 @@ MAKE_FLAGS=	'OPT=${CFLAGS}'
 INSTALL_TARGET=	install
 PLIST=		${WRKDIR}/PLIST
 MAN1=		python.1
-NO_LATEST_LINK=	yes
 
 #
 # The standard setup file
