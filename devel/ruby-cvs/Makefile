@@ -31,9 +31,9 @@ DOCS=	README TODO cvs.html diff.html tempdir.html
 
 do-build:
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${RUBY_RD} lib/cvs.rb > cvs.html
-	cd ${WRKSRC} && ${RUBY_RD} lib/diff.rb > diff.html
-	cd ${WRKSRC} && ${RUBY_RD} lib/tempdir.rb > tempdir.html
+	cd ${WRKSRC}; ${RUBY_RD} lib/cvs.rb > cvs.html
+	cd ${WRKSRC}; ${RUBY_RD} lib/diff.rb > diff.html
+	cd ${WRKSRC}; ${RUBY_RD} lib/tempdir.rb > tempdir.html
 .endif
 
 do-install:
