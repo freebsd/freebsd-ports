@@ -6,18 +6,13 @@
 #
 
 PORTNAME=	gd
-PORTVERSION=	2.0.28
-PORTREVISION=	1
+PORTVERSION=	2.0.33
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		${MASTER_SITE_RINGSERVER}
 MASTER_SITE_SUBDIR=	graphics/gd
 PKGNAMESUFFIX?=	${NOX11_SUFFIX}${PKGNAMESUFFIX2}
-
-PATCH_SITES+=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	dinoex
-PATCHFILES+=	gd-patch-2.0.28-2.0.33.gz
 
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	A graphics library for fast creation of images

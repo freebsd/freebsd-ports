@@ -1,6 +1,6 @@
---- gd.h.orig	Sat Jul 17 20:02:38 2004
-+++ gd.h	Wed Aug 25 13:38:59 2004
-@@ -278,6 +278,10 @@
+--- gd.h.orig	Sat Oct 30 14:54:58 2004
++++ gd.h	Fri Nov  5 20:47:19 2004
+@@ -291,6 +291,10 @@
     /* Deprecated in favor of gdImageCreateFromPngCtx */
  BGD_DECLARE(gdImagePtr) gdImageCreateFromPngSource (gdSourcePtr in);
  
@@ -11,9 +11,9 @@
  BGD_DECLARE(gdImagePtr) gdImageCreateFromGd (FILE * in);
  BGD_DECLARE(gdImagePtr) gdImageCreateFromGdCtx (gdIOCtxPtr in);
  BGD_DECLARE(gdImagePtr) gdImageCreateFromGdPtr (int size, void *data);
-@@ -517,6 +524,16 @@
- /* Best to free this memory with gdFree(), not free() */
- BGD_DECLARE(void *) gdImageJpegPtr (gdImagePtr im, int *size, int quality);
+@@ -591,6 +595,16 @@
+ BGD_DECLARE(void *) gdImageGifAnimAddPtr(gdImagePtr im, int *size, int LocalCM, int LeftOfs, int TopOfs, int Delay, int Disposal, gdImagePtr previm);
+ BGD_DECLARE(void *) gdImageGifAnimEndPtr(int *size);
  
 +#ifdef __FreeBSD__
 +BGD_DECLARE(void) gdImageLzw(gdImagePtr im, FILE *out);
@@ -28,7 +28,7 @@
  /* A custom data sink. For backwards compatibility. Use
  	gdIOCtx instead. */
  /* The sink function must return -1 on error, otherwise the number
-@@ -530,6 +547,10 @@
+@@ -604,6 +618,10 @@
    gdSink, *gdSinkPtr;
  
  BGD_DECLARE(void) gdImagePngToSink (gdImagePtr im, gdSinkPtr out);
