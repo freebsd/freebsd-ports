@@ -84,6 +84,11 @@ CONFIGURE_ARGS+=	--with-acl-support
 .endif
 .endif
 
+.if defined(WITH_LIBICONV)
+LIB_DEPENDS+=		iconv.3:${PORTSDIR}/converters/libiconv
+CONFIGURE_ARGS+=	--with-libiconv
+.endif
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
 MAN1=		findsmb.1 make_smbcodepage.1 make_unicodemap.1 nmblookup.1 \
