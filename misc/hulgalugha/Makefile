@@ -9,7 +9,7 @@ PORTNAME=	hulgalugha
 PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=	http://people.freebsd.org/~alfred/sources/hulgalugha/
-USE_BZIP2=	dongs
+USE_BZIP2=	yes
 
 MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	A very jerky text filter.

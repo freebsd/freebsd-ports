@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://people.freebsd.org/~alfred/sources/replay/
 DISTNAME=	replay-${PORTVERSION}
-USE_BZIP2=	dongs
+USE_BZIP2=	yes
 
 MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	A program that helps you fix a build interactively.
