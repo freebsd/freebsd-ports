@@ -91,7 +91,7 @@ while [ $# -gt 0 ]; do
   shift
 done
 
-scp -p ${master}:${buildroot}/buildscript ${chroot}
+scp -p ${master}:${buildroot}/scripts/buildscript ${chroot}
 
 #mount_procfs procfs ${chroot}/proc
 
