@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yank
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://home.ins.de/~m.hussmann/software/yank/
 
@@ -19,9 +19,9 @@ GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		GTK_CONFIG="${GTK_CONFIG}" \

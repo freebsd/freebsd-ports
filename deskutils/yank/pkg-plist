@@ -2,4 +2,12 @@ bin/yank
 share/gnome/apps/Applications/yank.desktop
 share/gnome/pixmaps/yank.png
 share/locale/de/LC_MESSAGES/yank.mo
+share/locale/ja/LC_MESSAGES/yank.mo
 share/locale/sv/LC_MESSAGES/yank.mo
+lib/yank/plugins/0.1.4/libPgp5.so.0
+lib/yank/plugins/0.1.4/libPgp5.so
+lib/yank/plugins/0.1.4/libPgp5.la
+lib/yank/plugins/0.1.4/libPgp5.a
+@dirrm lib/yank/plugins/0.1.4
+@dirrm lib/yank/plugins
+@dirrm lib/yank
