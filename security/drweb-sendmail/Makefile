@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	drweb_sendmail
-PORTVERSION=    4.26b
-PORTREVISION=   1
+PORTVERSION=    4.26c
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.drweb.ru/ftp/web_pub/
 DISTNAME=	drwebd-${PORTVERSION}-freebsd4
@@ -52,7 +51,8 @@ IGNORE= "depends on the Sendmail sources. Please place them somewhere first and 
 .endif
 
 post-extract:
-	cd ${WRKDIR}/${DISTNAME} && ${TAR} -xzf ${WRKDIR}/${DISTNAME}/${DISTNAME}.tar.gz clients/drwebdc clients/sendmail
+	cd ${WRKDIR}/${DISTNAME} && ${TAR} -xzf ${WRKDIR}/${DISTNAME}/${DISTNAME}.tar.gz clients/sendmail
+	cd ${WRKDIR}/${DISTNAME} && ${TAR} -xzf ${LOCALBASE}/drweb/drwebd_4.26c_update.tgz clients/drwebdc
 
 post-configure:
 	${MKDIR} ${WRKSRC}/libmilter ${WRKSRC}/libsmutil
