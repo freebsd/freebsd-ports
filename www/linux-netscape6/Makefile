@@ -35,7 +35,19 @@ MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSI
 		ftp://sunsite.tus.ac.jp/pub/archives/WWW/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.mirror.ac.uk/sites/ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.rediris.es/sites/ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/ \
-		ftp://ftp.ntua.gr/pub/www/Netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/
+		ftp://ftp.ntua.gr/pub/www/Netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
+		ftp://ftp.fct.unl.pt/.1/Netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
+		ftp://ftp.sunsite.auc.dk/disk3/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
+		ftp://ftp.skynet.be/mirror2/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
+		ftp://ftp.etse.urv.es/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
+		ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
+		ftp://sunfreeware.unam.mx/pub/Netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
+		ftp://ftp.fh-wolfenbuettel.de/pub/www/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
+		ftp://ftp.tu-darmstadt.de/pub/networking/www/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
+		ftp://ftp.uni-bremen.de/pub/mirrors/ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
+		ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
+		ftp://ftp.cyf-kr.edu.pl/pub/mirror/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
+		ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/
 DIST_SUBDIR=	netscape6/${NETSCAPE6_LANG}/${PORTVERSION}
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
