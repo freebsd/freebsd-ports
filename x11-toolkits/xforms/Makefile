@@ -17,7 +17,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mikeh@FreeBSD.ORG
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_XPM=	yes
 USE_IMAKE=	yes
