@@ -18,7 +18,7 @@ COMMENT=	Graphical toolkit for TCL
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/${TCL82_PORT}
 
-NO_LATEST_LINK=	yes
+LATEST_LINK=	tk82
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
@@ -307,9 +307,11 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 
 .endif
 
+TKBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
+
 post-configure:
 	${REINPLACE_CMD} \
-		-e 's=${WRKDIRPREFIX}${.CURDIR}=$${WRKDIRPREFIX}${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}=' \
+		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TKBASE}|' \
 		${WRKSRC}/tkConfig.sh
 .if !defined(WITH_TK82_MAN)
 	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
