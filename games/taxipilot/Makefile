@@ -10,7 +10,7 @@ CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	taxipilot
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Spacetaxi clone
 
 LIB_DEPENDS=	noatun.0:${PORTSDIR}/multimedia/kdemultimedia3
@@ -25,9 +25,7 @@ USE_REINPLACE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500028
-post-patch:
-	${REINPLACE_CMD} -e "s,#include <stdint.h>,," \
-		${WRKSRC}/taxipilot/timemanager.h
+BROKEN=		"Does not build on 4.x"
 .endif
 
 .include <bsd.port.post.mk>
