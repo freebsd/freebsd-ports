@@ -8463,6 +8463,7 @@ vcdtools	ports/multimedia/vcdtools
 vcg		ports/graphics/vcg
 vchat		ports/net/vchat
 vcheck		ports/ftp/vcheck
+vcp		ports/sysutils/vcp
 vdesk		ports/x11/vdesk
 vdk		ports/x11-toolkits/vdk
 vdkbuilder	ports/x11-toolkits/vdkbuilder
