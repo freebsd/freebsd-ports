@@ -1,0 +1,19 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/common/skip_ah.c work.new/skip/common/skip_ah.c
+--- skipsrc-1.0.orig/skip/common/skip_ah.c	Wed May 16 16:11:34 2001
++++ work.new/skip/common/skip_ah.c	Wed May 23 09:02:03 2001
+@@ -342,6 +342,7 @@
+ 	ip->ip_ttl = 0;
+ 	ip->ip_tos = 0;
+ 	ip->ip_off = 0;
++ 	ip->ip_id = htons(ip->ip_id);
+ 
+ 	/*
+ 	 * Compute the AH Data
+@@ -360,6 +361,7 @@
+ 	ip->ip_ttl = ip_ttl;
+ 	ip->ip_tos = ip_tos;
+ 	ip->ip_off = ip_off;
++ 	ip->ip_id = ntohs(ip->ip_id);
+ 
+ 	/*
+ 	 * Now, check if MAC is OK...
