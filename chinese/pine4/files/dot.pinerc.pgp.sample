@@ -5,12 +5,12 @@ feature-list=compose-send-offers-first-filter
 
 # This variable takes a list of programs that message text is piped into
 # after MIME decoding, prior to display.
-display-filters="-----BEGIN PGP" /usr/local/bin/pgpdecode
+display-filters="-----BEGIN PGP" @@PREFIX@@/bin/pgpdecode
 
 # This defines a program that message text is piped into before MIME
 # encoding, prior to sending
-sending-filters=/usr/local/bin/pgpsign,
-        /usr/local/bin/pgpencrypt _RECIPIENTS_
+sending-filters=@@PREFIX@@/bin/pgpsign,
+        @@PREFIX@@/bin/pgpencrypt _RECIPIENTS_
 
 # hook, to get rid of the sucking 'quoted printable' ;-))
 # enable-8bit-esmtp-negotiation

@@ -32,7 +32,7 @@ fi
 
 trap "rm -f $STDOUT $STDERR; exit" 0 1 2 15
 
-if [ -x /usr/local/bin/pgpv ]
+if [ -x @@PREFIX@@/bin/pgpv ]
 then
   pgpv 2>&1 > $STDOUT |tee $STDERR > /dev/tty
 else
