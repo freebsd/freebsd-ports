@@ -323,6 +323,7 @@
     SUBDIR += php4-ming
     SUBDIR += php5-exif
     SUBDIR += php5-gd
+    SUBDIR += php5-ming
     SUBDIR += phplot
     SUBDIR += picturebook
     SUBDIR += piddle
