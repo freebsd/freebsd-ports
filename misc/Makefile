@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.185 1999/02/22 01:35:14 billf Exp $
+# $Id: Makefile,v 1.186 1999/03/05 17:12:01 nectar Exp $
 #
 
     SUBDIR += 221upgrade
@@ -11,6 +11,7 @@
     SUBDIR += amanda24
     SUBDIR += astrolog
     SUBDIR += bb
+    SUBDIR += bbjd
     SUBDIR += chord
     SUBDIR += colorls
     SUBDIR += crosspad
