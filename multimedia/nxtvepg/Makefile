@@ -1,0 +1,40 @@
+# New ports collection makefile for:	nxtvepg-2.4.2
+# Date created:		07 Jan 2003
+# Whom:			Simon Barner <barner@gmx.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	nxtvepg
+PORTVERSION=	2.4.2
+CATEGORIES=	multimedia tcl83 tk83
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=${PORTNAME}
+
+MAINTAINER=	barner@gmx.de
+COMMENT=	Viewer for Nextview Electronic TV Programme Guide (needs bktr driver)
+
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
+
+USE_GMAKE=	yes
+USE_XLIB=	yes
+USE_X_PREFIX=	yes
+
+MAN1=		nxtvepg.1
+PORTDOCS=	README TODO CHANGES manual.html
+
+.include <bsd.port.pre.mk>
+
+post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/nxtvepg ${PREFIX}/bin
+	${INSTALL_DATA}    ${WRKSRC}/Nxtvepg.ad ${PREFIX}/lib/X11/app-defaults/Nxtvepg
+	${INSTALL_MAN}     ${WRKSRC}/nxtvepg.1 ${PREFIX}/man/man1
+
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.post.mk>
