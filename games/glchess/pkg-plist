@@ -1,0 +1,29 @@
+bin/glchess
+etc/glchessrc
+%%PORTDOCS%%share/doc/glchess/ChangeLog
+%%PORTDOCS%%share/doc/glchess/README
+%%PORTDOCS%%share/doc/glchess/TODO
+share/glchess/textures/1.rgb
+share/glchess/textures/2.rgb
+share/glchess/textures/3.rgb
+share/glchess/textures/4.rgb
+share/glchess/textures/5.rgb
+share/glchess/textures/6.rgb
+share/glchess/textures/7.rgb
+share/glchess/textures/8.rgb
+share/glchess/textures/a.rgb
+share/glchess/textures/b.rgb
+share/glchess/textures/black_board_texture.rgb
+share/glchess/textures/black_piece_texture.rgb
+share/glchess/textures/c.rgb
+share/glchess/textures/d.rgb
+share/glchess/textures/e.rgb
+share/glchess/textures/f.rgb
+share/glchess/textures/g.rgb
+share/glchess/textures/h.rgb
+share/glchess/textures/selected_piece_texture.rgb
+share/glchess/textures/white_board_texture.rgb
+share/glchess/textures/white_piece_texture.rgb
+@dirrm share/glchess/textures/
+@dirrm share/glchess
+%%PORTDOCS%%@dirrm share/doc/glchess
