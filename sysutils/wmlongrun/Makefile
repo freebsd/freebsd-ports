@@ -15,14 +15,9 @@ MAINTAINER=	pat@FreeBSD.org
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_XPM=	yes
+CONFIGURE_ARGS=	--program-prefix=""
 
 MAN1=		wmlongrun.1
-
-pre-patch:
-.for dir in src doc .
-	@${PERL} -pi -e 's|\@program_transform_name\@||' \
-		${WRKSRC}/${dir}/Makefile.in
-.endfor
 
 .ifndef(NOPORTDOCS)
 post-install:
