@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://gugod.org/pub/X/
 MAINTAINER=	gugod@gugod.org
 
 FONTFILES=	gugodclean.bdf
-PREFIX=		${X11BASE}
+USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
@@ -25,5 +25,6 @@ do-install:
 .for i in ${FONTFILES}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${XFONTDIR}
 .endfor
+	@cd ${XFONTDIR} ; mkfontdir
 
 .include <bsd.port.post.mk>
