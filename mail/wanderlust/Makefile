@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wanderlust
-PORTVERSION=	2.12.0
+PORTVERSION=	2.12.2
 CATEGORIES=	mail elisp
 MASTER_SITES=	ftp://ftp.gohome.org/wl/stable/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/elisp/wl/stable/&,} \
