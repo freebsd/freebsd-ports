@@ -23,6 +23,8 @@ MANCOMPRESSED=	maybe
 post-install:
 	@${ECHO} "Use the 'make upgrade' command to copy your old configuration"
 	@${ECHO} "files from /etc/uucp to the new location in ${PREFIX}/etc/uucp"
+	@${ECHO}
+	@${CAT} ${PKGMESSAGE}
 
 upgrade:
 	@${ECHO} "Copying old configuration files from /etc/uucp to ${PREFIX}/etc/uucp"

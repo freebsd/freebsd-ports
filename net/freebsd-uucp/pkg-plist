@@ -8,6 +8,9 @@ bin/uusched
 bin/uustat
 bin/uuto
 bin/uux
+etc/periodic/daily/340.uucp
+etc/periodic/daily/410.status-uucp
+etc/periodic/weekly/300.uucp
 etc/uucp/call.sample
 etc/uucp/config.sample
 etc/uucp/dial.sample
