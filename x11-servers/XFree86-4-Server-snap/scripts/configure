@@ -131,8 +131,10 @@ if [ $answ = YES ]; then
 	cpwh=$FILESDIR/Wraphelp.c
     else
 	echo "==> Wraphelp.c not found, DES support NOT enabled."
-	answ=NO
+	cpwh=NO
     fi
+else
+    cpwh=NO
 fi
 echo "#undef	HadXdmAuth"			>> $F
 echo "#define	HasXdmAuth		$answ"	>> $F
@@ -145,15 +147,19 @@ cat <<'END'
 
 END
 
-yesno "Do you want to add the Kerberos V4 support patches? [YES] "
-k4patch=$answ
-if [ $k4patch = YES ] ; then
-    echo
-    yesno "Do you want to enable Kerberos V4 support? [YES] "
-    echo "#undef	HasKrb4" >>$F
-    echo "#define	HasKrb4 $answ" >>$F
+if [ ! -f /usr/lib/libkrb.a ]; then
+    echo "No kerberos library in /usr/lib. Kerberos V4 support disabled."
+    k4patch=NO
+else
+    yesno "Do you want to add the Kerberos V4 support patches? [YES] "
+    k4patch=$answ
+    if [ $k4patch = YES ] ; then
+      echo
+      yesno "Do you want to enable Kerberos V4 support? [YES] "
+      echo "#undef	HasKrb4" >>$F
+      echo "#define	HasKrb4 $answ" >>$F
+    fi
 fi
-
 echo
 echo "End of configuration questions. No more user input required"
 echo
