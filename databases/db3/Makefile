@@ -10,7 +10,8 @@ PORTVERSION=	3.3.11
 PORTREVISION=	1
 PORTEPOCH?=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
+#MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
+MASTER_SITES=	ftp://sleepycat1.inetu.net/releases/
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
@@ -18,8 +19,8 @@ PATCH_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
 PATCHFILES=	patch.${PORTVERSION}.1 patch.${PORTVERSION}.2
 PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 
-MAINTAINER?=	matthias.andree@gmx.de
-COMMENT?=	The Berkeley DB package, revision 3.3
+MAINTAINER=	matthias.andree@gmx.de
+COMMENT=	The Berkeley DB package, revision 3.3
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
