@@ -11,6 +11,7 @@ saint/READMEs/README.SNMP
 saint/READMEs/CHANGES
 saint/READMEs/CHANGES-2.0
 saint/READMEs/CHANGES-2.1
+saint/READMEs/README.qaz
 saint/bin/gopher.saint
 saint/bin/cmsd.saint
 saint/bin/sadmind.saint
@@ -53,7 +54,6 @@ saint/bin/inn.saint
 saint/bin/login.saint
 saint/bin/pop3.sara
 saint/bin/ftp_bounce.saint
-saint/bin/.http.saint.swp
 saint/bin/ostype.saint
 saint/bin/printer.saint
 saint/bin/mountd.sara
@@ -73,15 +73,6 @@ saint/bin/nfs-chk
 saint/bin/yp-chk
 saint/bin/fping
 saint/bin/smurf.saint
-saint/config/passwd
-saint/config/paths.pl
-saint/config/paths.sh
-saint/config/saint.cf
-saint/config/services
-saint/config/version.pl
-saint/config/paths.pl.old
-saint/config/paths.sh.old
-saint/config/SNMP_communities.pl
 saint/perl/passwd.pl
 saint/html/auth/saint_auth_action.pl
 saint/html/auth/saint_auth_form.pl
@@ -153,6 +144,9 @@ saint/html/images/target_selection_button.gif
 saint/html/images/troubleshooting_button.gif
 saint/html/images/wwdsi_logo.gif
 saint/html/name.html
+saint/html/reporting/saintwriter/saintwriter_action.pl
+saint/html/reporting/saintwriter/saintwriter_form.pl
+saint/html/reporting/saintwriter/saintwriter_form_long.pl
 saint/html/reporting/analysis.pl
 saint/html/reporting/saint_info_OS.pl
 saint/html/reporting/saint_info_OSclass.pl
@@ -274,6 +268,7 @@ saint/html/tutorials/vulnerability/gopher_vulnerabilities.html
 saint/html/tutorials/vulnerability/http_Website_Pro.html
 saint/html/tutorials/vulnerability/ntop_server_vulnerability.html
 saint/html/tutorials/vulnerability/packet_flooding_problems.html
+saint/html/tutorials/vulnerability/Vulnerability_Exploits.html
 saint/include/netinet/if_ether.h
 saint/include/netinet/igmp.h
 saint/include/netinet/in.h
@@ -337,6 +332,7 @@ saint/perl/trust.pl
 saint/perl/cve.pl
 saint/perl/html.pl.patch
 saint/perl/text-output.pl
+saint/perl/saintwriter.pl
 saint/perllib/README
 saint/perllib/ctime.pl
 saint/perllib/getopts.pl
@@ -359,7 +355,6 @@ saint/saint
 saint/reconfig
 @dirrm saint/READMEs
 @dirrm saint/bin
-@dirrm saint/config
 @dirrm saint/html/auth
 @dirrm saint/html/admin
 @dirrm saint/html/data
@@ -367,6 +362,7 @@ saint/reconfig
 @dirrm saint/html/dots
 @dirrm saint/html/images/stoplights
 @dirrm saint/html/images
+@dirrm saint/html/reporting/saintwriter
 @dirrm saint/html/reporting
 @dirrm saint/html/running
 @dirrm saint/html/tutorials/vulnerability
@@ -382,5 +378,4 @@ saint/reconfig
 @dirrm saint/perllib
 @dirrm saint/scripts
 @dirrm saint/rules
-@dirrm saint/superior
 @dirrm saint
