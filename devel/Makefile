@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.12 1995/08/08 10:37:59 asami Exp $
+# $Id: Makefile,v 1.13 1995/10/03 09:36:17 asami Exp $
 #
 
     SUBDIR += bcc
@@ -6,6 +6,7 @@
     SUBDIR += cflow
     SUBDIR += dmake
     SUBDIR += gmake
+    SUBDIR += gperf
     SUBDIR += libdlmalloc
     BROKEN += libmalloc
     SUBDIR += m4
