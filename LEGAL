@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.64 1997/02/27 09:33:22 tg Exp $
+# $Id: LEGAL,v 1.65 1997/03/02 11:59:47 asami Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -67,6 +67,7 @@ radius-2.4.21		ports/net/radius	Restrictive copyright in
 						src/rlmadmin.c
 rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
 rman-2.4.tar.Z		ports/misc/rman		Restrictive copyright
+rsaref*			ports/security/{rsaref,ssh} Crypto; export-controlled
 rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
 scsh-0.4.4.tar.gz	ports/shells/scsh	The author requested not to
 						include the current version
