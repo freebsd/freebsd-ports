@@ -1,30 +1,34 @@
---- Makefile.orig	Fri Jun 28 00:03:45 1996
-+++ Makefile	Tue Jul  8 15:15:40 1997
+--- Makefile.orig	Wed Apr 15 11:49:24 1998
++++ Makefile	Wed Apr 15 11:50:42 1998
 @@ -17,7 +17,7 @@
  
  # You probably want to change this:
  #INSTROOT = ${HOME}
--INSTROOT = /depot/collections0/netpipes3.2
+-INSTROOT = /depot/collections0/netpipes4.0
 +INSTROOT = ${PREFIX}
  INSTBIN = ${INSTROOT}/bin
  INSTMAN = ${INSTROOT}/man
  
-@@ -46,8 +46,12 @@
- # (that system call is used by the -daemon argument to detach faucet from
- # the controlling terminal)
- 
-+# FreeBSD 2.1.0
-+CFLAGS += -DUSE_IOCTL $(CDEBUGFLAGS)
-+CC = gcc
-+
- # SunOS 4.1.4
--CFLAGS = -DUSE_IOCTL -DNO_MEMMOVE $(CDEBUGFLAGS)
-+#CFLAGS = -DUSE_IOCTL -DNO_MEMMOVE $(CDEBUGFLAGS)
+@@ -52,7 +52,7 @@
+ #CFLAGS = -DUSE_IOCTL -DNO_MEMMOVE -DNO_STRERROR $(CDEBUGFLAGS)
  
  # Linux
- #CFLAGS = -DUSE_IOCTL -DSYSV $(CDEBUGFLAGS)
-@@ -83,14 +87,9 @@
- 	${CC} ${CFLAGS} -o $@ ${GOBJS} ${LDLIBS}
+-CFLAGS = -DUSE_IOCTL -DPOSIX_SIG -DHAVE_INET_ATON $(CDEBUGFLAGS)
++#CFLAGS = -DUSE_IOCTL -DPOSIX_SIG -DHAVE_INET_ATON $(CDEBUGFLAGS)
+ 
+ # SGI
+ #CFLAGS = -DSYSV $(CDEBUGFLAGS)
+@@ -61,7 +61,7 @@
+ #CFLAGS = -DPOSIX_SIG $(CDEBUGFLAGS)
+ 
+ # FreeBSD
+-#CFLAGS = -DPOSIX_SIG $(CDEBUGFLAGS)
++CFLAGS = -DPOSIX_SIG $(CDEBUGFLAGS)
+ 
+ # AIX 4.1.4 and 3.2.5
+ #CFLAGS = -DPOSIX_SIG -DAIX $(CDEBUGFLAGS)
+@@ -103,14 +103,9 @@
+ 	${CC} ${CFLAGS} -o $@ ${EOBJS} ${LDLIBS}
  
  install : all
 -	[ -d ${INSTROOT} ] || mkdir ${INSTROOT}
@@ -40,4 +44,4 @@
 +	ln -f -s ${INSTBIN}/getpeername ${INSTBIN}/getsockname
  
  clean	:
- 	rm -f ${FOBJS} ${HOBJS} ${SOBJS} ${GOBJS}
+ 	rm -f ${FOBJS} ${HOBJS} ${SOBJS} ${GOBJS} ${TOBJS} ${EOBJS}
