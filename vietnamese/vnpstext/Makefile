@@ -3,12 +3,12 @@
 # Date created:         Sat Dec 7, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.2 1997/09/22 16:54:22 max Exp $
+# $Id: Makefile,v 1.3 1997/10/10 06:53:42 obrien Exp $
 #
 
 DISTNAME=	vnpstext
 PKGNAME=	vi-vnpstext-1.1
-CATEGORIES=	vietnamese
+CATEGORIES=	vietnamese print
 MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
 		ftp://ftp.monash.edu.au/pub/vietnam/unix/
 EXTRACT_SUFX=	.tar.Z

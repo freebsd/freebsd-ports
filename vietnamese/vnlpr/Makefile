@@ -3,12 +3,12 @@
 # Date created:		Sat Dec 7, 1996
 # Whom:			David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.3 1997/09/22 17:04:39 max Exp $
+# $Id: Makefile,v 1.4 1997/10/10 06:53:41 obrien Exp $
 #
 
 DISTNAME=	vnlpr
 PKGNAME=	vi-vnlpr-2.0
-CATEGORIES=	vietnamese
+CATEGORIES=	vietnamese print
 MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
 		ftp://ftp.monash.edu.au/pub/vietnam/unix/
 EXTRACT_SUFX=	.tar.Z
