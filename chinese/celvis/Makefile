@@ -9,12 +9,8 @@
 PORTNAME=	celvis
 PORTVERSION=	1.3
 CATEGORIES=	chinese editors
-MASTER_SITES=	ftp://ftp.edu.cn/pub/Chinese/
-#
-# switch to http://www.ifcss.org/ftp-pub/software/unix/editor/celvis-1.3.tar.gz
-#	if the distfile becomes unfetchable again.  Note this ver is slightly
-#	different.
-DISTNAME=	celvis
+MASTER_SITES=	http://ftp.ist.utl.pt/pub/ctan/language/chinese/chtex/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A vi/ex clone that speaks Chinese
