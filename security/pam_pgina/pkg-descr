@@ -1,0 +1,16 @@
+[ excerpt (with adaptations) from developer's WWW site ]
+
+This is the Unix daemon required for the pGina PAM plugin.
+
+We have developed this plugin to allow for authentication using
+PAM. This means you can authenticate your windows machines against
+an existing Unix user base without substantial changes!
+
+Just install the Unix daemon, and the pGina plugin on windows and
+your set!
+
+Sound too good to be true? It's not!
+
+As always, your mileage may vary.
+
+WWW: http://pgina.xpasystems.com/

@@ -1,0 +1,9 @@
+etc/pgina_pam/authasst.allow
+etc/pgina_pam/authasst.deny
+etc/pgina_pam/authasst.groups
+etc/pgina_pam/authasst.hosts
+etc/pgina_pam/authasst.users
+share/pgina_pam/make_cert.pl
+sbin/pgina_pam
+@dirrm share/pgina_pam
+@unexec rmdir %D/etc/pgina_pam 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/pgina_pam`` to remove any configuration files left." | fmt
