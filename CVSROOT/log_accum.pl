@@ -191,6 +191,11 @@ sub mlist_map {
     return 'cvs-user'         unless($dir =~ /^sys/);
     $dir =~ s,^sys/,,;
 
+# Note, this does not really work, it ends up dumping it in the LAST tree
+# the commit was done in, so for now, just dump it all in cvs-sys.
+# XXX
+    return 'cvs-sys';
+
     return 'cvs-sys_ddb'      if($dir =~ /^ddb/);
     return 'cvs-sys_fs'       if($dir =~ /^(fs)|(isofs)|(miscfs)|(nfs)|(ufs)/);
     return 'cvs-sys_i386'     if($dir =~ /^i386/);
