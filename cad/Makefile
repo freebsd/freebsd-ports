@@ -14,6 +14,7 @@
     SUBDIR += iverilog
     SUBDIR += kaskade
     SUBDIR += libgeda
+    SUBDIR += linux-eagle
     SUBDIR += magic
     SUBDIR += mars
     SUBDIR += oregano
