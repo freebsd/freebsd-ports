@@ -248,6 +248,5 @@ share/locale/de/LC_MESSAGES/xsltimportfilter.mo
 @dirrm share/doc/HTML/de/koffice
 @dirrm share/doc/HTML/de/kformula
 @dirrm share/doc/HTML/de/kchart
-@dirrm share/doc/HTML/de
 @dirrm share/apps/koffice/autocorrect
 @dirrm share/apps/koffice

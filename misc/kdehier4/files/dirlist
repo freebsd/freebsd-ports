@@ -195,10 +195,44 @@ share/config.kcfg
 @comment share/desktop-directories
 @comment share/doc/HTML/en/kate
 @comment -------------------------------------------------------------------
-@comment -- Documentation for additional kcontrol modules could go here.
+@comment -- Various language subdirs for application docs. KDE by default
+@comment -- only ships english docs, but some third party apps ship their
+@comment -- i18nized set.
 share/doc/HTML
+share/doc/HTML/cs
+share/doc/HTML/da
+share/doc/HTML/de
 share/doc/HTML/en
+@comment -------------------------------------------------------------------
+@comment -- Documentation for additional kcontrol modules could go here.
 share/doc/HTML/en/kcontrol
+share/doc/HTML/en_GB
+share/doc/HTML/es
+share/doc/HTML/et
+share/doc/HTML/eu
+share/doc/HTML/fi
+share/doc/HTML/fr
+share/doc/HTML/he
+share/doc/HTML/hr
+share/doc/HTML/hu
+share/doc/HTML/it
+share/doc/HTML/ja
+share/doc/HTML/ko
+share/doc/HTML/nl
+share/doc/HTML/pl
+share/doc/HTML/pt
+share/doc/HTML/pt_BR
+share/doc/HTML/ro
+share/doc/HTML/ru
+share/doc/HTML/sk
+share/doc/HTML/sl
+share/doc/HTML/sr
+share/doc/HTML/sv
+share/doc/HTML/tr
+share/doc/HTML/uk
+share/doc/HTML/xh
+share/doc/HTML/zh_CN
+share/doc/HTML/zh_TW
 @comment share/doc/HTML/en/kcontrol/arts
 @comment share/doc/HTML/en/kcontrol/background
 @comment share/doc/HTML/en/kcontrol/bell

@@ -51,4 +51,3 @@ share/locale/en_GB/LC_MESSAGES/thesaurus_tool.mo
 share/locale/en_GB/LC_MESSAGES/xsltexportfilter.mo
 share/locale/en_GB/LC_MESSAGES/xsltimportfilter.mo
 @dirrm share/doc/HTML/en_GB/kpresenter
-@dirrm share/doc/HTML/en_GB
