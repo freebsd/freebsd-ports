@@ -23,6 +23,7 @@
     SUBDIR += cjk-lyx
     SUBDIR += clibpdf
     SUBDIR += cmpsfont
+    SUBDIR += cups
     SUBDIR += detex
     SUBDIR += dvi2tty
     SUBDIR += dvi2xx

@@ -1,0 +1,18 @@
+--- data/Makefile.orig	Fri Jan  5 17:03:23 2001
++++ data/Makefile	Fri Jan  5 17:03:53 2001
+@@ -91,15 +91,6 @@
+ 	-$(MKDIR) $(DATADIR)/data
+ 	$(CHMOD) ugo+rx $(DATADIR)/data
+ 	$(INSTALL_DATA) $(DATAFILES) $(DATADIR)/data
+-	-if test "$(PAMDIR)" != ""; then \
+-		$(MKDIR) $(PAMDIR); \
+-		$(CHMOD) ugo+rx $(PAMDIR); \
+-		if test -f /lib/security/pam_unix.so; then \
+-			$(INSTALL_DATA) cups.suse $(PAMDIR)/cups; \
+-		else \
+-			$(INSTALL_DATA) cups.pam $(PAMDIR)/cups; \
+-		fi \
+-	fi
+ 
+ 
+ #
