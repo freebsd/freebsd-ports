@@ -1,0 +1,11 @@
+%%SITE_PERL%%/XML/Atom/Syndication.pm
+%%SITE_PERL%%/XML/Atom/Syndication/Document.pm
+%%SITE_PERL%%/XML/Atom/Syndication/Element.pm
+%%SITE_PERL%%/XML/Atom/Syndication/Characters.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom/Syndication/.packlist
+@dirrm %%SITE_PERL%%/XML/Atom/Syndication
+@unexec rmdir %D/%%SITE_PERL%%/XML/Atom 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom/Syndication
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
