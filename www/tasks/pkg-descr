@@ -1,0 +1,22 @@
+A web based, hierarchical task manager/to-do list/lightweight
+project manager.
+
+Features:
+
+    * Dynamic hierarchical view of your tasks - expand/collapse
+	tree using client side JavaScript
+    * Scheduling due dates and associating URLs with tasks.
+    * Full mobile version for easy access with a PDA.
+    * Localization in 16 languages.
+    * Daily e-mail reminders.
+    * iCalendar of your tasks (scheduled tasks can go into the
+	calendar or task list).
+    * Rich, responsive interface.
+    * Advanced search functionality.
+    * Graceful handling of data collisions.
+    * Includes blog posting (WordPress, b2, MoveableType) from a task.
+
+WWW: http://www.alexking.org/software/tasks/
+
+S.
+gioria@FreeBSD.ORG

@@ -549,6 +549,7 @@
     SUBDIR += swiggle
     SUBDIR += swish++
     SUBDIR += swish-e
+    SUBDIR += tasks
     SUBDIR += tclhttpd
     SUBDIR += tdiary
     SUBDIR += thttpd
