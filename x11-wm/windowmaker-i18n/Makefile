@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	beta/srcs
 MAINTAINER=	mac@jp.freebsd.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		gif.5:${PORTSDIR}/graphics/giflib \
+		ungif.5:${PORTSDIR}/graphics/libungif \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
@@ -38,11 +38,11 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 MAN1=	geticonset.1x getstyle.1x seticons.1x setstyle.1x \
 	wdwrite.1x wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x wsetfont.1x
 
-JA_CATALOGFILE=
+JA_CATALOGFILE=	WindowMaker-0.61.1ja1
 
 .if defined(JA_CATALOGFILE) && !empty(JA_CATALOGFILE)
 MASTER_SITES+=	ftp://muse.brain.riken.go.jp/pub/ja.po/
-DISTFILES+=	${JA_CATALOGFILE}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${JA_CATALOGFILE}${EXTRACT_SUFX}
 .endif
 
 .if defined(USE_GNOME)
