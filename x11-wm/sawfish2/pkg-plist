@@ -1,7 +1,7 @@
 bin/sawfish
 %%GNOME:%%bin/sawfish-capplet
 bin/sawfish-client
-bin/sawfish-themer
+%%GNOME:%%bin/sawfish-themer
 bin/sawfish-ui
 @unexec install-info --delete %D/info/sawfish.info %D/info/dir
 info/sawfish.info
@@ -71,7 +71,7 @@ share/gnome/pixmaps/sawfish.png
 %%GNOME:%%share/gnome/pixmaps/sawfish-shortcuts.png
 %%GNOME:%%share/gnome/pixmaps/sawfish-tooltips.png
 %%GNOME:%%share/gnome/pixmaps/sawfish-workspaces.png
-share/gnome/wm-properties/Sawfish.desktop
+%%GNOME:%%share/gnome/wm-properties/Sawfish.desktop
 share/locale/da/LC_MESSAGES/sawfish.mo
 share/locale/de/LC_MESSAGES/sawfish.mo
 share/locale/el/LC_MESSAGES/sawfish.mo
@@ -410,7 +410,7 @@ share/sawfish/%%VERSION%%/sounds/clicked.wav
 share/sawfish/%%VERSION%%/sounds/gameover.wav
 share/sawfish/%%VERSION%%/sounds/slide.wav
 share/sawfish/%%VERSION%%/sounds/toggled.wav
-share/sawfish/%%VERSION%%/themer.glade
+%%GNOME:%%share/sawfish/%%VERSION%%/themer.glade
 share/sawfish/%%VERSION%%/themes/absolute-e/README
 share/sawfish/%%VERSION%%/themes/absolute-e/README.gl
 share/sawfish/%%VERSION%%/themes/absolute-e/README.ja
