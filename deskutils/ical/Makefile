@@ -8,7 +8,11 @@
 PORTNAME=	ical
 PORTVERSION=	2.2
 CATEGORIES=	deskutils tk82
-MASTER_SITES=	http://www.research.digital.com/SRC/personal/Sanjay_Ghemawat/ical/icalbins/
+MASTER_SITES=	ftp://ftp.sco.com/skunkware/src/shellutil/ \
+		ftp://ftp.sunet.se/pub/vendor/sco/skunkware/src/shellutil/ \
+		ftp://ftp.netsw.org/netsw/X11/Tools/Desktop/ \
+		ftp://ftp.kddlabs.co.jp/sourceforge/ical/ \
+		ftp://ftp.sunsite.org.uk/Mirrors/ftp.sco.com/skunkware/src/shellutil/
 
 MAINTAINER=	ports@FreeBSD.org
 
