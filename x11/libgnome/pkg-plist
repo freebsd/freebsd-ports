@@ -152,6 +152,5 @@ share/locale/sv/LC_MESSAGES/gnome-libs.mo
 @dirrm include/libgnorba
 @dirrm include/zvt
 @dirrm share/gnome/games
-@dirrm share/gnome/html
 @dirrm share/gnome/pixmaps
 @dirrm share/gnome
