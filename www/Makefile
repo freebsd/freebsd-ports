@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.123 1999/03/31 06:27:07 taoka Exp $
+# $Id: Makefile,v 1.124 1999/04/12 16:49:28 dirk Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -7,7 +7,6 @@
     SUBDIR += analog
     SUBDIR += apache12
     SUBDIR += apache12-fp
-    SUBDIR += apache12-php3
     SUBDIR += apache13
     SUBDIR += apache13-fp
     SUBDIR += apache13-modssl
