@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040602:
+  AFFECTS: users of sysutils/mkisofs and sysutils/mkisofs-devel
+
+  sysutils/mkisofs and sysutils/mkisofs-devel were merged into
+  sysutils/cdrtools and sysutils/cdrtools-devel respectively.
+
+  To update them generate ("make index") or fetch ("make fetchindex") a
+  new INDEX/INDEX-5. Run "pkgdb -F" and unregister the mkisofs/-devel
+  port. Then forcefully update the cdrtools port and all of its
+  dependencies (e.g. "portupgrade -rf cdrtools"). After the update
+  it may be necessary to rerun "pkgdb -F" and resolve a stale
+  dependency to cdrtools.
+
 20040531:
   AFFECTS: users of lang/perl5.8
 
