@@ -31,7 +31,7 @@ CMAKE_DEFS=	-DVTK_WRAP_TCL:BOOL=ON \
 
 .include "${MASTERDIR}/Makefile"
 
-do-patch: patch-common
+post-patch: patch-common
 
 do-install: install-cnotice install-binaries install-libs
 	cd ${WRKSRC}/Wrapping/Tcl ; ${MAKE} install

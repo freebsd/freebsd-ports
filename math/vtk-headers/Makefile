@@ -13,7 +13,7 @@ MASTERDIR=	${.CURDIR}/../vtk
 
 .include "${MASTERDIR}/Makefile"
 
-do-patch:
+post-patch:
 #	@${REINPLACE_CMD} -E 's|^.*LOAD_CMAKE_EXTENSIONS|#|g' \
 #		${VTKSRCDIR}/VTKConfig.cmake.in ${VTKSRCDIR}/UseVTK.cmake.in
 	@${REINPLACE_CMD} -E 's|lib/vtk\)|lib\)|g ; s|lib/vtk/doxygen|share/vtk/doxygen| ; s|lib/vtk/testing/HeaderTesting.py|share/examples/vtk/Testing/Common/HeaderTesting.py| ; s|lib/vtk/testing|share/examples/vtk/Testing/Common/Tcl|g' \

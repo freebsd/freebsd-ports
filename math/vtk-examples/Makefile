@@ -17,6 +17,8 @@ PKGMESSAGE=	${.CURDIR}/pkg-message
 
 .include "${MASTERDIR}/Makefile"
 
+do-patch:
+
 do-build:
 
 do-install: install-cnotice

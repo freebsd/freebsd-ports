@@ -40,7 +40,7 @@ PLIST_SUB+=	VTK_PTH_LOCATION_DIR=${PYTHON_SITELIBDIR}
 
 .include "${MASTERDIR}/Makefile"
 
-do-patch: patch-common
+post-patch: patch-common
 
 do-install: install-cnotice install-binaries install-libs
 	@${ECHO_MSG} "Installing vtk site package to ${PREFIX}/lib/vtk/python ..."
