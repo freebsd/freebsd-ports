@@ -17,7 +17,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://www.iagora.com/~espel/sirc/ \
 		http://freebsd.simplenet.com/Downloads/
 
-MAINTAINER=	Doug@gorean.org
+MAINTAINER=	DougB@FreeBSD.org
 
 USE_PERL5=	yes
 
