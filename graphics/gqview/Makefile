@@ -14,12 +14,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Another gtk2-based graphic file viewer
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 USE_GETTEXT=	yes
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
