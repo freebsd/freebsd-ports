@@ -35,6 +35,7 @@ PLIST_SUB+=	ONIGURUMA="@comment "
 ONLY_FOR_ARCHS=	i386 alpha sparc64 amd64
 
 #USE_BZIP2=	yes
+USE_OPENSSL=	yes
 
 RUBY_VER=	1.8
 
@@ -92,12 +93,14 @@ OBSOLETED_MODULES=	bigfloat \
 			drb \
 			erb \
 			fileutils \
+			gserver \
 			openssl \
 			optparse \
 			racc-runtime \
 			rexml \
 			sha1 \
 			shell \
+			soap \
 			strscan \
 			syslog \
 			testunit \
