@@ -7,7 +7,7 @@
 
 PORTNAME=	healthd
 PORTVERSION=	0.7.6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://healthd.thehousleys.net/ \
 		http://healthd1.thehousleys.net/
@@ -38,6 +38,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .if ${OSVERSION} >= 500038
 RC_SUBR?=	/etc/rc.subr
+EXTRA_PATCHES=	files/healthd.sh-500038
 .else
 USE_RC_SUBR=	yes
 .endif
