@@ -1,6 +1,24 @@
---- configure.orig	Tue Oct 19 04:16:30 1999
-+++ configure	Tue Oct 26 11:46:41 1999
-@@ -971,9 +971,9 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon Jan 28 16:26:32 2002
++++ configure	Mon Jan 28 16:34:25 2002
+@@ -1260,10 +1260,10 @@
+ 
+ # The aliases save the names the user supplied, while $host etc.
+ # will get canonicalized.
+-test -n "$target_alias" &&
+-  test "$program_prefix$program_suffix$program_transform_name" = \
+-    NONENONEs,x,x, &&
+-  program_prefix=${target_alias}-
++#test -n "$target_alias" &&
++#  test "$program_prefix$program_suffix$program_transform_name" = \
++#    NONENONEs,x,x, &&
++#  program_prefix=${target_alias}-
+ 
+ # Extract the first word of "dc", so it can be a program name with args.
+ set dummy dc; ac_word=$2
+@@ -1580,9 +1580,9 @@
  
  # libtool versioning
  LT_RELEASE=$LIBGTOP_MAJOR_VERSION.$LIBGTOP_MINOR_VERSION
@@ -12,4 +30,4 @@
 +LT_AGE=0
  LT_VERSION_INFO='-version-info ${LT_CURRENT}:${LT_REVISION}:${LT_AGE}'
  
- 
+ if test x = y; then
