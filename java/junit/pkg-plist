@@ -100,6 +100,10 @@ share/doc/junit/src.jar
 %%PORTDOCS%%share/doc/junit/junit/tests/framework/AllTests.java
 %%PORTDOCS%%share/doc/junit/junit/tests/framework/AssertTest.class
 %%PORTDOCS%%share/doc/junit/junit/tests/framework/AssertTest.java
+%%PORTDOCS%%share/doc/junit/junit/tests/framework/ComparisonFailureTest.class
+%%PORTDOCS%%share/doc/junit/junit/tests/framework/ComparisonFailureTest.java
+%%PORTDOCS%%share/doc/junit/junit/tests/framework/DoublePrecisionAssertTest.class
+%%PORTDOCS%%share/doc/junit/junit/tests/framework/DoublePrecisionAssertTest.java
 %%PORTDOCS%%share/doc/junit/junit/tests/framework/Failure.class
 %%PORTDOCS%%share/doc/junit/junit/tests/framework/Failure.java
 %%PORTDOCS%%share/doc/junit/junit/tests/framework/InheritedTestCase.class
