@@ -9,28 +9,8 @@
  							 user);
  		} else
  			mc->mail_file = g_strdup (mc->mail_file);
---- applets/desk-guide/Makefile.in.orig	Tue May 23 04:25:59 2000
-+++ applets/desk-guide/Makefile.in	Fri May 26 15:21:53 2000
-@@ -141,7 +141,7 @@
- 
- SUBDIRS = help
- 
--INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)			-DVERSION=\""$(VERSION)"\"
-+INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)			-DVERSION=\""$(VERSION)"\"
- 
- 
- bin_PROGRAMS = deskguide_applet
 --- applets/fish/Makefile.in.orig	Tue May 23 04:26:04 2000
 +++ applets/fish/Makefile.in	Fri May 26 16:23:15 2000
-@@ -139,7 +139,7 @@
- gnomelocaledir = @gnomelocaledir@
- l = @l@
- 
--INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel					-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)			@PIXBUF_CFLAGS@
-+INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)			@PIXBUF_CFLAGS@
- 
- 
- SUBDIRS = help
 @@ -187,7 +187,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
@@ -42,15 +22,6 @@
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 --- applets/gen_util/Makefile.in.orig	Tue May 23 04:26:11 2000
 +++ applets/gen_util/Makefile.in	Fri May 26 16:23:39 2000
-@@ -141,7 +141,7 @@
- 
- SUBDIRS = help
- 
--INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel					-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)
-+INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)
- 
- 
- lib_LTLIBRARIES = libgen_util_applet.la
 @@ -181,7 +181,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
@@ -60,14 +31,3 @@
  libgen_util_applet_la_LIBADD = 
  libgen_util_applet_la_OBJECTS =  main.lo mailcheck.lo popcheck.lo \
  printer.lo clock.lo
---- applets/tasklist/Makefile.in.orig	Tue May 23 04:26:26 2000
-+++ applets/tasklist/Makefile.in	Fri May 26 15:24:07 2000
-@@ -141,7 +141,7 @@
- 
- SUBDIRS = help
- 
--INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(srcdir)/../desk-guide				-I$(top_builddir)/panel 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)			-DVERSION=\""$(VERSION)"\" 	@PIXBUF_CFLAGS@
-+INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(srcdir)/../desk-guide				-I$(top_builddir)/panel 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)			-DVERSION=\""$(VERSION)"\" 	@PIXBUF_CFLAGS@
- 
- 
- bin_PROGRAMS = tasklist_applet

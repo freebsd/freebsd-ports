@@ -1,14 +1,5 @@
 --- panel/Makefile.in.orig	Tue May 23 04:25:47 2000
 +++ panel/Makefile.in	Fri May 26 15:30:48 2000
-@@ -147,7 +147,7 @@
- 
- SUBDIRS = doc help
- 
--INCLUDES = -I. -I$(srcdir) 	-I$(top_srcdir)/intl 	-I$(top_builddir)/intl 	-I$(top_builddir)/panel 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(includedir) $(GNOME_INCLUDEDIR) $(ORB_CFLAGS) 	@PIXBUF_CFLAGS@
-+INCLUDES = -I. -I$(srcdir) 	-I$(top_srcdir)/intl 	-I$(top_builddir)/intl 	-I$(top_builddir)/panel 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-I$(includedir) $(GNOME_INCLUDEDIR) $(ORB_CFLAGS) 	@PIXBUF_CFLAGS@
- 
- 
- bin_PROGRAMS = panel gnome-panel-properties-capplet
 @@ -169,7 +169,7 @@
  libpanel_appletinclude_HEADERS =  	applet-widget.h			gnome-panel.h
  
@@ -36,23 +27,6 @@
  confexec_DATA = appletsConf.sh dockletsConf.sh
  
  panelgnorbadir = $(sysconfdir)/CORBA/servers
-@@ -219,13 +219,13 @@
- soundlistdir = $(sysconfdir)/sound/events
- soundlist_DATA = panel.soundlist
- 
--hintsdir = $(datadir)/gnome/hints
-+hintsdir = $(datadir)/hints
- hints_DATA = panel.hints
- 
- sysdir = $(datadir)/control-center/Desktop/
- sys_DATA = gnome-panel-properties.desktop
- 
--deskdir = $(datadir)/gnome/apps/Settings/Desktop/
-+deskdir = $(datadir)/apps/Settings/Desktop/
- desk_DATA = gnome-panel-properties.desktop
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h
-
 --- panel/foobar-widget.c.orig	Sat May  6 20:48:27 2000
 +++ panel/foobar-widget.c	Wed May 31 12:51:56 2000
 @@ -557,7 +557,7 @@
@@ -123,14 +97,3 @@
  		NULL };
  	int i;
  	char *p;
---- panel/doc/Makefile.in.orig	Tue May 23 04:25:49 2000
-+++ panel/doc/Makefile.in	Fri May 26 16:45:35 2000
-@@ -150,7 +150,7 @@
- CFLAGS = "`gnome-config --cflags gnomeui applets docklets`"
- LDFLAGS = "`gnome-config --libs gnomeui applets docklets`"
- 
--HTML_DIR = $(datadir)/gnome/html
-+HTML_DIR = $(datadir)/html
- 
- TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)
- 

@@ -14,13 +14,13 @@
  Known values for LIBRARY are:
  
 -    glib	(calls glib-config)
-+    glib	(calls glib12-config)
++    glib	(calls @GLIB_CONFIG@)
      idl         (to be used with orbit-idl)
      gnome
      gnomeui
      gnorba
 -    gtk		(calls gtk-config)
-+    gtk		(calls gtk12-config)
++    gtk		(calls @GTK_CONFIG@)
      gtkxmhtml	(only --libs)
      zvt		(only --libs)
  
@@ -41,14 +41,14 @@
      glib)
 -	the_libs="$the_libs `glib-config --libs`"
 -	the_flags="$the_flags `glib-config --cflags`"
-+	the_libs="$the_libs `glib12-config --libs`"
-+	the_flags="$the_flags `glib12-config --cflags`"
++	the_libs="$the_libs `@GLIB_CONFIG@ --libs`"
++	the_flags="$the_flags `@GLIB_CONFIG@ --cflags`"
  	;;
      gtk)
 -	the_libs="$the_libs `gtk-config --libs`"
 -	the_flags="$the_flags `gtk-config --cflags`"
-+	the_libs="$the_libs `gtk12-config --libs`"
-+	the_flags="$the_flags `gtk12-config --cflags`"
++	the_libs="$the_libs `@GTK_CONFIG@ --libs`"
++	the_flags="$the_flags `@GTK_CONFIG@ --cflags`"
  	;;
      gnome)
         	the_libs="$the_libs @GNOME_LIBDIR@ @GNOME_LIBS@"

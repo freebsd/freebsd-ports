@@ -1,14 +1,5 @@
 --- configure.orig	Fri May 19 14:49:06 2000
 +++ configure	Tue May 30 13:31:24 2000
-@@ -5101,7 +5101,7 @@
-   cat conftest.$ac_ext >&5
-   rm -rf conftest*
-   CATOBJEXT=.mo
--		   DATADIRNAME=lib
-+		   DATADIRNAME=share
- fi
- rm -f conftest*
- 		INSTOBJEXT=.mo
 @@ -6350,17 +6350,13 @@
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6

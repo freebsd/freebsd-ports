@@ -41,6 +41,13 @@ pre-extract:
 	@${ECHO} "You can add gnomepilot support by defining WITH_GNOMEPILOT"
 .endif
 
+post-extract:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+
 .if defined(WITH_GNOMEPILOT)
 post-install:
 	@${CAT} ${PKGDIR}/PLIST.pilot >> ${TMPPLIST}

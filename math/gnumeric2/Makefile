@@ -19,7 +19,7 @@ RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
 		python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	gnomeprint.9:${PORTSDIR}/print/gnomeprint \
 		glade.4:${PORTSDIR}/devel/libglade \
-		guile.6:${PORTSDIR}/lang/guile \
+		guile.9:${PORTSDIR}/lang/guile \
 		gnomeole2.0:${PORTSDIR}/devel/libole2 \
 		gb.0:${PORTSDIR}/lang/gnomebasic
 
@@ -40,5 +40,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 PLIST_SUB=	VERSION=${PORTVERSION}
+
+post-extract:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>

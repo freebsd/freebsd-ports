@@ -9,12 +9,3 @@
  confexec_DATA = gnumericConf.sh
  
  CLEANFILES = gnumericConf.sh
-@@ -169,7 +169,7 @@
- appicon_DATA = gnome-gnumeric.png                gnome-application-x-gnumeric.png                gnome-application-x-xls.png
- 
- 
--Applicationsdir = $(datadir)/gnome/apps/Applications
-+Applicationsdir = $(datadir)/apps/Applications
- Applications_DATA = gnumeric.desktop
- 
- Mimedir = $(datadir)/mime-info

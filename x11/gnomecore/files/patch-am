@@ -36,34 +36,3 @@
  };
  
  static struct poptOption cb_options [] = {
---- gnome-terminal/Makefile.in.orig	Tue May 23 04:25:29 2000
-+++ gnome-terminal/Makefile.in	Fri May 26 15:46:43 2000
-@@ -143,7 +143,7 @@
- 
- SUBDIRS = C de da es it no
- 
--INCLUDES =  	-I$(includedir)			-I$(top_srcdir)/intl		-I$(top_builddir)/intl		$(GNOME_INCLUDEDIR)		-DGNOMELOCALEDIR=\""$(datadir)/locale\""
-+INCLUDES =  	-I$(includedir)			-I$(top_srcdir)/intl		-I$(top_builddir)/intl		$(GNOME_INCLUDEDIR)		-DGNOMELOCALEDIR=\""$(prefix)/share/locale\""
- 
- 
- LDADD =  	$(GNOME_LIBDIR)						$(GNORBA_LIBS)						$(ORB_LIBS)						$(GNOMEUI_LIBS)						$(ZVT_LIBS)						$(INTLLIBS)
-@@ -167,7 +167,7 @@
- gnorbadir = $(sysconfdir)/CORBA/servers
- gnorba_DATA = gnome-terminal.gnorba
- 
--utildir = $(datadir)/gnome/apps/System
-+utildir = $(datadir)/apps/System
- util_DATA = gnome-terminal.desktop
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h
---- gnome-terminal/de/Makefile.in.orig	Tue May 23 04:25:31 2000
-+++ gnome-terminal/de/Makefile.in	Fri May 26 15:53:04 2000
-@@ -139,7 +139,7 @@
- gnomelocaledir = @gnomelocaledir@
- l = @l@
- 
--gnome_terminal_helpdir = $(datadir)/gnome/help/gnome-terminal/de
-+gnome_terminal_helpdir = $(datadir)/help/gnome-terminal/de
- 
- gnome_terminal_help_DATA =  	index.html			topic.dat
- 
