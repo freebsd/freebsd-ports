@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	typetools
-PORTVERSION=	1.80
+PORTVERSION=	1.97
 CATEGORIES=	print
 MASTER_SITES=	http://www.lcdf.org/type/
 DISTNAME=	lcdf-${PORTNAME}-${PORTVERSION}
@@ -18,14 +18,12 @@ COMMENT=	Tools for manipulating fonts
 BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-kpathsea=${LOCALBASE}
+
+MAN1=		cfftot1.1 mmafm.1 mmpfb.1 otfinfo.1 otftotfm.1 t1dotlessj.1 \
+		t1lint.1 t1testpage.1
+
 DATADIR=	${PREFIX}/share/lcdf-${PORTNAME}
 
-MAN1=	cfftot1.1 mmafm.1 mmpfb.1 otfinfo.1 otftotfm.1 t1lint.1 t1testpage.1
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Configure fails"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
