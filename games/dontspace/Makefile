@@ -3,21 +3,21 @@
 # Date created:         26-Apr-97
 # Whom:                 johnh@isi.edu
 #
-# $Id: Makefile,v 1.4 1998/02/21 22:37:55 fenner Exp $
+# $Id: Makefile,v 1.5 1998/08/07 23:56:20 asami Exp $
 #
 
 DISTNAME=       dontspace-1.2
-CATEGORIES=     games tk41
+CATEGORIES=     games tk80
 MASTER_SITES=   http://www.isi.edu/~johnh/SOFTWARE/JACOBY/
 
 MAINTAINER=     johnh@isi.edu
 
-RUN_DEPENDS=	wish4.1:${PORTSDIR}/x11-toolkits/tk41
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 GNU_CONFIGURE=  Yes
 CONFIGURE_ARGS= --bindir=${PREFIX}/bin --datadir=${PREFIX}/share/games \
 		--mandir=${PREFIX}/man
-CONFIGURE_ENV=  WISHX=${PREFIX}/bin/wish4.1
+CONFIGURE_ENV=  WISHX=${PREFIX}/bin/wish8.0
 MAN6=           dontspace.6
 
 .include <bsd.port.mk>
