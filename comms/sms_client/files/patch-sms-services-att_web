@@ -1,0 +1,11 @@
+--- sms/services/att_web.orig	Sat Oct  9 16:11:03 1999
++++ sms/services/att_web	Fri Jun 25 23:31:57 2004
+@@ -3,7 +3,7 @@
+ # --------------------------------------------------------------------
+ 
+ {
+-	SMS_url      = "http://www.mobile.att.net/mc/mc_pagersend.cgi"
++	SMS_url      = "http://www.mymmode.com/messagecenter/pagersend.cgi"
+ }
+ 
+ # --------------------------------------------------------------------

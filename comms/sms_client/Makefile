@@ -7,10 +7,9 @@
 
 PORTNAME=		sms_client
 PORTVERSION=		3.0.2
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		comms
-MASTER_SITES=		http://www.styx.demon.co.uk/archive/ \
-			http://www.smsclient.org/download/smsclient-3.0-testing/ \
+MASTER_SITES=		http://www.smsclient.org/download/smsclient-3.0-testing/ \
 			http://www.mirrors.wiretapped.net/security/host-monitoring/sms-client/
 
 MAINTAINER=		ports@FreeBSD.org
