@@ -1,0 +1,7 @@
+GPASM is the GNU Pic assembler, and can compile assembly files for 12c508
+and 16c84 microcontrollers family.
+
+WWW: http://gpasm.sourceforge.net/
+
+ -- Samuel Tardieu
+    sam@inf.enst.fr
