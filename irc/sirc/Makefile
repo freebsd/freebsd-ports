@@ -1,5 +1,4 @@
 # New ports collection makefile for: sirc
-# Version required:                  2.211
 # Date created:                      4 May 1998
 # Whom:                              Doug Barton <Doug@gorean.org>
 #
@@ -12,7 +11,8 @@
 #
 # SOCKS_SERVER= your.socks.proxy
 
-DISTNAME=	sirc-2.211
+PORTNAME=	sirc
+PORTVERSION=	2.211
 CATEGORIES=	irc
 MASTER_SITES=	http://www.iagora.com/~espel/sirc/ \
 		http://freebsd.simplenet.com/Downloads/

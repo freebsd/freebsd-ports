@@ -1,12 +1,12 @@
 # New ports collection makefile for: tircproxy
-# Version required:	0.4.3
 # Date created:		11 Aug 1999
 # Whom:			Eugeny Kuzakov <CoreDumped@CoreDumped.null.ru>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tircproxy-0.4.3
+PORTNAME=	tircproxy
+PORTVERSION=	0.4.3
 CATEGORIES=	irc
 MASTER_SITES=	http://www.mmedia.is/~bre/tircproxy/
 

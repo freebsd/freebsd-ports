@@ -1,12 +1,12 @@
 # New ports collection makefile for:    roxirc
-# Version required:     1.5
 # Date created:         Mar 15 1999
 # Whom:                 rox@fearme.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	roxirc-1.5
+PORTNAME=	roxirc
+PORTVERSION=	1.5
 CATEGORIES=	irc tk82
 MASTER_SITES=	http://roxirc.lighter.net/download/
 

@@ -1,19 +1,19 @@
 # New ports collection makefile for:	Irc Server
-# Version required:	2.10.3
 # Date created:		23 August 1994
 # Whom:			torstenb
 #
 # $FreeBSD$
 #
 
-DISTNAME=	irc2.10.3
-PKGNAME=	irc-2.10.3
+PORTNAME=	irc
+PORTVERSION=	2.10.3
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.funet.fi/pub/networking/services/irc/server/ \
 		ftp://ftp.irc.org/irc/server/ \
 		ftp://tau.ac.il/pub/unix/irc/server/ \
 		ftp://ftp.ut.ee/pub/unix/irc/server/ \
 		ftp://ftp.ntua.gr/pub/net/irc/server/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	torstenb@FreeBSD.org
