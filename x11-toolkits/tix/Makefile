@@ -3,13 +3,13 @@
 # Date created:		22 December 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.20 1998/11/14 09:43:31 asami Exp $
+# $Id: Makefile,v 1.21 1998/11/18 09:02:25 tg Exp $
 #
 
 DISTNAME=	Tix4.1.0.006
 PKGNAME=	tix-4.1.0.006
 CATEGORIES=	x11-toolkits tk80
-MASTER_SITES=	ftp://ftp.xpi.com/pub/ \
+MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/sorted/devel/ \
 		ftp://ftp.gwdg.de/pub/x11/tcl/ftp.xpi.com/ \
 		ftp://ftp.riken.go.jp/pub/lang/tcl/netsoft/sorted/packages-7.6/devel/
 
