@@ -180,7 +180,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/variable.security.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/variable.security.settings.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/variable.trusted.dir.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/variable.undefined.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/variable.use.sub.dirs.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/what.is.smarty.html
 %%PORTDOCS%%%%EXAMPLESDIR%%/configs/test.conf
