@@ -32,6 +32,47 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8091fcea-f35e-11d8-81b0-000347a4fa7d">
+    <topic>a2ps -- insecure command line argument handling</topic>
+    <affects>
+      <package>
+	<name>a2ps-a4</name>
+	<range><lt>4.13b_2</lt></range>
+      </package>
+      <package>
+	<name>a2ps-letter</name>
+	<range><lt>4.13b_2</lt></range>
+      </package>
+      <package>
+	<name>a2ps-letterdj</name>
+	<range><lt>4.13b_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Rudolf Polzer reports:</p>
+	<blockquote cite="http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/70618">
+	  <p>a2ps builds a command line for file() containing an
+	    unescaped version of the file name, thus might call
+	    external programs described by the file name.  Running a
+	    cronjob over a public writable directory a2ps-ing all
+	    files in it - or simply typing "a2ps *.txt" in /tmp - is
+	    therefore dangerous.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/70618</freebsdpr>
+      <bid>11025</bid>
+      <url>http://www.osvdb.org/9176</url>
+      <mlist msgid="e5312d6a040824040119840c7c@mail.gmail.com">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=109334851517137</mlist>
+    </references>
+    <dates>
+      <discovery>2004-08-18</discovery>
+      <entry>2004-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="746ca1ac-21ec-11d9-9289-000c41e2cdad">
     <topic>ifmail -- unsafe set-user-ID application</topic>
     <affects>
