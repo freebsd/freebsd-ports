@@ -6,7 +6,7 @@
 #
 
 PORTNAME=       jpeginfo
-PORTVERSION=    1.5a
+PORTVERSION=	1.6.0
 CATEGORIES=     graphics
 MASTER_SITES=   http://www.cc.jyu.fi/~tjko/src/
 
@@ -19,7 +19,7 @@ GNU_CONFIGURE=  yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-MAN1=           jpeginfo.1
+MAN1=		jpeginfo.1
 PLIST_FILES=	bin/jpeginfo
 
 .include <bsd.port.mk>
