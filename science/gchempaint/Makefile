@@ -5,12 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	gchempaint
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.4.1
 CATEGORIES=	science
-MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
-		http://jean.brefort.free.fr/info/gcp/download/
-MASTER_SITE_SUBDIR=	${PORTNAME}/unstable.pkg/${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	2D chemical structures editor for GNOME 2
