@@ -20,7 +20,6 @@ bin/packf
 bin/pgped
 bin/pgpshow
 bin/pick
-bin/popauth
 bin/prev
 bin/prompter
 bin/refile
@@ -53,8 +52,6 @@ lib/mh/mhl.headers
 lib/mh/mhn_defaults
 lib/mh/mtstailor
 lib/mh/packmbox
-lib/mh/popaka
-lib/mh/popwrd
 lib/mh/post
 lib/mh/rcvdist
 lib/mh/rcvdistcomps
@@ -68,12 +65,9 @@ lib/mh/scan.size
 lib/mh/scan.time
 lib/mh/scan.timely
 lib/mh/slocal
-lib/mh/spop
 lib/mh/spost
 lib/mh/tmac.h
 lib/mh/viamail
-lib/libmh.so
 lib/libmh.so.3.2
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-sbin/popd
