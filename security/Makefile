@@ -133,6 +133,7 @@
     SUBDIR += ike-scan
     SUBDIR += integrit
     SUBDIR += ipfmeta
+    SUBDIR += ipfw2dshield
     SUBDIR += isakmpd
     SUBDIR += its4
     SUBDIR += john

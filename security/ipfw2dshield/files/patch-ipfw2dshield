@@ -1,0 +1,12 @@
+--- ipfw2dshield.orig	Sat May 29 16:26:59 2004
++++ ipfw2dshield	Tue Jun  8 23:11:07 2004
+@@ -247,7 +247,8 @@
+ fi
+ 
+ # Suck in the config file.
+-rc=~/.$prog.rc
++rc=%%PREFIX%%/etc/$prog.rc
++[ -e ~/.$prog.rc ] && rc=~/.$prog.rc
+ [ -r $rc ] || bye "Permission denied: $rc"
+ . $rc
+ _logdir=$logdir

@@ -1,0 +1,27 @@
+--- Makefile.orig	Sat May 29 16:27:21 2004
++++ Makefile	Fri Jun 11 15:41:20 2004
+@@ -4,7 +4,8 @@
+ RMCMD	= rm -f
+ INSTALL = install
+ 
+-prefix	= /usr/local
++prefix  = ${PREFIX}
++etcdir	= $(prefix)/etc
+ sbindir	= $(prefix)/sbin
+ 
+ SUBDIRS	= ipaddr strpdate
+@@ -29,12 +30,12 @@
+ 	@for subdir in $(SUBDIRS); do (cd $$subdir && make install) ; done
+ 	@[ -d $(sbindir) ] || mkdir -vp $(sbindir)
+ 	$(INSTALL) -c -m 700 -o root $(PROGRAM) $(sbindir)
+-	$(INSTALL) -c -m 600 -o root $(RC) $(HOME)/.$(RC).sample
++	$(INSTALL) -c -m 600 -o root $(RC) $(etcdir)/$(RC).sample
+ 
+ uninstall:
+ 	@for subdir in $(SUBDIRS); do (cd $$subdir && make uninstall) ; done
+ 	-$(RMCMD) $(sbindir)/$(PROGRAM)
+-	-$(RMCMD) $(HOME)/.$(RC).sample
++	-$(RMCMD) $(etcdir)/$(RC).sample
+ 
+ clean:
+ 	-$(RMCMD) *~ *.bak

@@ -1,0 +1,4 @@
+ipfw2shield is a DShield client for ipfw logs, i.e., it inspects
+the firewall logs and can mail security reports to dshield.org
+
+WWW: http://www.dynamical-systems.org/ipfw/
