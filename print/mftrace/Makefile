@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mftrace
-PORTVERSION=	1.0.19
+PORTVERSION=	1.0.24
 CATEGORIES=	print
 MASTER_SITES=	http://www.xs4all.nl/~hanwen/mftrace/
 
@@ -28,11 +28,6 @@ PLIST=		${WRKDIR}/pkg-plist
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	mftrace.1
-
-pre-everything::
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD} Pausing ten seconds--press control-C to cancel build.
-	@sleep 10
 
 pre-install:
 	${RM} -f ${PLIST}
