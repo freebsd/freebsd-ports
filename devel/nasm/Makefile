@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	nasm
 MAINTAINER=	murray@FreeBSD.org
 COMMENT=	General-purpose multi-platform x86 assembler
 
-USE_BZ2=	yes
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 PLIST_SUB=	VERSION=${PORTVERSION}
 
