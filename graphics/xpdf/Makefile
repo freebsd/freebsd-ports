@@ -3,7 +3,7 @@
 # Date created:         02 Feb 1996
 # Whom:                 chuckr@glue.umd.edu
 #
-# $Id: Makefile,v 1.17 1998/12/06 23:36:04 obrien Exp $
+# $Id: Makefile,v 1.18 1998/12/07 00:40:18 obrien Exp $
 #
 
 DISTNAME=       xpdf-0.80
@@ -18,9 +18,11 @@ MAINTAINER=	chuckr@glue.umd.edu
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gzip --enable-japanese
-USE_X_PREFIX=	yes
+CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
+
 MAN1=		pdfimages.1 \
 		pdfinfo.1 \
 		pdftopbm.1 \
