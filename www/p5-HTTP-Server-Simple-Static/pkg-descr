@@ -1,0 +1,4 @@
+This mixin adds a method to serve static files from your
+HTTP::Server::Simple subclass.
+
+WWW: http://search.cpan.org/dist/HTTP-Server-Simple-Static
