@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xinetd
-PORTVERSION=	2.3.4
-PORTREVISION=	1
+PORTVERSION=	2.3.5
+PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	http://www.xinetd.org/
 
