@@ -1,6 +1,7 @@
 bin/flood
 %%EXAMPLESDIR%%/analyze-relative
 %%EXAMPLESDIR%%/analyze-relative-ramp
+%%EXAMPLESDIR%%/flood.dtd
 %%EXAMPLESDIR%%/relative-averages-time.awk
 %%EXAMPLESDIR%%/round-robin-dynamic.xml
 %%EXAMPLESDIR%%/round-robin-example.xml
@@ -9,4 +10,9 @@ bin/flood
 %%EXAMPLESDIR%%/round-robin-ssl.xml
 %%EXAMPLESDIR%%/round-robin-timed.xml
 %%EXAMPLESDIR%%/round-robin.xml
+%%PORTDOCS%%%%DOCSDIR%%/docbook/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/docbook/flood.xml
+%%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docbook
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
