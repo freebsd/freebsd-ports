@@ -4234,6 +4234,7 @@ no-ispell	ports/textproc/no-ispell
 no-login	ports/sysutils/no-login
 noattach	ports/mail/noattach
 nocol		ports/net/nocol
+nofgpg		ports/security/nofgpg
 nohup		src/usr.bin/nohup
 nologin		src/sbin/nologin
 nomarch		ports/archivers/nomarch
