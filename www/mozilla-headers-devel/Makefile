@@ -26,11 +26,15 @@ WRKSRC=		${WRKDIRPREFIX}${MAINDIR}/work/mozilla
 USE_GMAKE=	yes
 ALL_TARGET=	export
 
+.if defined(INCOWN) || defined(INCGRP)
+CPIOOWN=	-R ${INCOWN}:${INCGRP}
+.endif
+
 do-install:
 	-${RM} -fr ${PREFIX}/include/mozilla
 	${MKDIR} ${PREFIX}/include/mozilla
 	${CHMOD} 755 ${PREFIX}/include/mozilla
 	cd ${WRKSRC}/dist/include && ${FIND} . | \
-		cpio -pdm -L -R ${INCOWN}:${INCGRP} ${PREFIX}/include/mozilla
+		cpio -pdm -L ${CPIOOWN} ${PREFIX}/include/mozilla
 
 .include <bsd.port.mk>
