@@ -1,0 +1,13 @@
+bin/treewm
+bin/xprop-treewm
+bin/xkill-treewm
+share/treewm/pixmaps/close.xpm
+share/treewm/pixmaps/icon.xpm
+share/treewm/pixmaps/max1.xpm
+share/treewm/pixmaps/max2.xpm
+share/treewm/pixmaps/move.xpm
+share/treewm/pixmaps/none1.xpm
+share/treewm/pixmaps/none2.xpm
+share/treewm/pixmaps/resize.xpm
+@dirrm share/treewm/pixmaps
+@dirrm share/treewm
