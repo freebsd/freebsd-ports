@@ -7,11 +7,10 @@
 
 PORTNAME=	python
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
-MASTER_SITES=	http://www.python.org/ftp/python/${PORTVERSION}/ \
-		${MASTER_SITE_SOURCEFORGE} \
-		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/${PORTVERSION}/
-MASTER_SITE_SUBDIR=	python
+MASTER_SITES=	${MASTER_SITE_PYTHON}
+MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	perky@FreeBSD.org
@@ -86,7 +85,12 @@ pre-install:
 .endfor
 .endfor
 
+post-extract:
+	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
+		${WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.2
+
 post-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.2 ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el \
 		${PREFIX}/share/emacs/site-lisp
 	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}

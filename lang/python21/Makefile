@@ -7,12 +7,10 @@
 
 PORTNAME=	python
 PORTVERSION=	2.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang python
-MASTER_SITES=	http://www.python.org/ftp/python/${PORTVERSION}/ \
-		${MASTER_SITE_SOURCEFORGE} \
-		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/${PORTVERSION}/
-MASTER_SITE_SUBDIR=	python
+MASTER_SITES=	${MASTER_SITE_PYTHON}
+MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	perky@FreeBSD.org
@@ -29,6 +27,7 @@ MAN1=		${PYTHON_VERSION}.1
 USE_PYTHON=	yes
 PYTHON_VERSION=	python2.1
 PYTHON_NO_DEPENDS=	yes
+LATEST_LINK=	${PYTHON_VERSION:S/.//}
 
 #
 # If you don't want to use Python's thread module, you need to set
@@ -70,6 +69,10 @@ PLATFORMS=plat-freebsd2 plat-freebsd4 plat-freebsd5
 PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 .endif
 
+post-extract:
+	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
+		${WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.1
+
 pre-install:
 .for platform in ${PLATFORMS}
 	${MKDIR} ${PYTHONPREFIX_LIBDIR}/${platform}
@@ -80,6 +83,7 @@ pre-install:
 .endfor
 
 post-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.1 ${PREFIX}/bin
 	@${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/Misc/python.man \
 		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1

@@ -1,4 +1,5 @@
 bin/pydoc
+bin/pydoc2.2
 bin/python
 bin/%%PYTHON_VERSION%%
 include/%%PYTHON_VERSION%%/Python.h
