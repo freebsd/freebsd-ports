@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.103 1997/05/29 02:43:36 jfitz Exp $
+# $Id: Makefile,v 1.104 1997/05/30 20:13:39 jfitz Exp $
 #
 
     SUBDIR += archie
@@ -39,6 +39,7 @@
     SUBDIR += p5-Archie
     SUBDIR += p5-Net
     SUBDIR += p5-Net-DNS
+    SUBDIR += p5-Net-Whois
     SUBDIR += pcnfsd
     SUBDIR += pmf
     SUBDIR += radius
