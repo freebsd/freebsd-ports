@@ -3,12 +3,12 @@
 # Date created:        11 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.3 1998/11/23 08:37:27 asami Exp $
+# $Id: Makefile,v 1.4 1998/12/03 19:12:28 obrien Exp $
 #
 
 DISTNAME=	PortScanner-1.0
 PKGNAME=	portscanner-1.0
-CATEGORIES=	net security
+CATEGORIES=	security net
 MASTER_SITES=	http://www.ameth.org/~veilleux/ \
 		http://www.FreeBSD.org/~billf/
 
@@ -18,10 +18,10 @@ NO_WRKSUBDIR=	yes
 
 do-build:
 
-	@${CC} -o ${WRKSRC}/portscanner ${CFLAGS} ${WRKSRC}/portscanner.c
+	@ ${CC} -o ${WRKSRC}/portscanner ${CFLAGS} ${WRKSRC}/portscanner.c
 
 do-install:
 
-	${INSTALL_PROGRAM} ${WRKSRC}/portscanner ${PREFIX}/bin
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/portscanner ${PREFIX}/bin
 
 .include <bsd.port.mk>

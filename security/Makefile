@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.41 1999/01/18 04:22:04 steve Exp $
+# $Id: Makefile,v 1.42 1999/01/18 04:29:56 steve Exp $
 #
 
     SUBDIR += SSLeay
@@ -28,6 +28,7 @@
     SUBDIR += pgp
     SUBDIR += pgp5
     SUBDIR += pidentd
+    SUBDIR += portscanner
     SUBDIR += rsaref
     SUBDIR += sentry
     SUBDIR += skip
@@ -35,6 +36,7 @@
     SUBDIR += sniff
     SUBDIR += ssh
     SUBDIR += ssh2
+    SUBDIR += strobe
     SUBDIR += stunnel
     SUBDIR += sudo
     SUBDIR += super
