@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	logsurfer
-PORTVERSION=	1.5a
+PORTVERSION=	1.5b
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.cert.dfn.de/pub/tools/audit/logsurfer/%SUBDIR%/ \
 		ftp://ftp.tuwien.ac.at/infosys/security/dfn/tools/audit/logsurfer/%SUBDIR%/
