@@ -1,27 +1,15 @@
---- INSTALL.orig	Wed Jan 26 16:38:00 2000
-+++ INSTALL	Thu Mar  9 10:33:31 2000
-@@ -115,6 +115,8 @@
+--- INSTALL.orig	Thu May 23 13:00:47 2002
++++ INSTALL	Thu May 23 13:04:47 2002
+@@ -135,6 +135,8 @@
      if [ "$i" -a -f "$i" ] ; then
          if [ `uname -s` = "Linux" ] ; then
            size=`ls -lLn "$i" | ( read perm links owner group size date ; echo $size )`
-+        elif [ `uname -s` = "FreeBSD" ] ; then
-+          size=`ls -lL "$i" | ( read perm links owner group size date ; echo $size )`
++	elif [ `uname -s` = "FreeBSD" ] ; then
++	  size=`ls -lL "$i" | ( read perm links owner group size date ; echo $size )`
          else
            size=`ls -lLon "$i" | ( read perm links owner size date ; echo $size )`
          fi
-@@ -157,9 +159,9 @@
-    uid=`expr "$id_out" : 'uid=[0-9]*(\([^)]*\))'`
-    gid=`expr "$id_out" : '[^ ]* gid=[0-9]*(\([^)]*\))'`
-   if [ "$uid" = "root" ] ; then
--    ( cd "$1" ; tar xfo "$2" ; chown -R $uid . ; chgrp -R $gid . )
-+    ( cd "$1" ; tar --unlink -xof "$2" ; chown -R $uid . ; chgrp -R $gid . )
-   else
--    ( cd "$1" ; tar xfo "$2" )
-+    ( cd "$1" ; tar --unlink -xof "$2" )
-   fi
- }
- 
-@@ -490,7 +492,7 @@
+@@ -344,7 +346,7 @@
    SearchPlatformTar="$3"
    CustomPlatformTar="$4"
  
@@ -30,12 +18,3 @@
    ReadLicense=""
  
    PrintRequiredFree "$ReadTar" "$SearchTar" "$CustomTar" \
-@@ -563,7 +565,7 @@
-   *) ScriptDirectory="$CurrentDirectory"/"$ScriptDirectory" ;;
- esac
- 
--if [ "`type uname`" != "uname not found" ] ; then
-+if [ "`uname`" != "uname not found" ] ; then
-   OSname=`uname -s`
-   if [ "$OSname" = "AIX" ] ; then
-     OSrelease=`uname -a | ( read name host minor major foo ; echo $major.$minor )`
