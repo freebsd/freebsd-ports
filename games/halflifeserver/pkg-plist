@@ -219,7 +219,6 @@
 @dirrm %%HLDSDIR%%valve/events
 @dirrm %%HLDSDIR%%valve/dlls
 @dirrm %%HLDSDIR%%valve/cl_dlls
-@dirrm %%HLDSDIR%%valve
 @dirrm %%HLDSDIR%%tfc/tfstats
 @dirrm %%HLDSDIR%%tfc/sound/weapons
 @dirrm %%HLDSDIR%%tfc/sound/vox
@@ -246,8 +245,13 @@
 @dirrm %%HLDSDIR%%tfc/events
 @dirrm %%HLDSDIR%%tfc/dlls
 @dirrm %%HLDSDIR%%tfc/cl_dlls
-@dirrm %%HLDSDIR%%tfc
-@dirrm %%HLDSDIR%%
+@unexec rmdir %D/%%HLDSDIR%%tfc/SAVE 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%tfc/logs 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%valve/SAVE 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%valve/logs 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%tfc 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%valve 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%% 2>/dev/null || echo "If you are permanently removing this port and its mods, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%`` to remove any configuration files and logs left." | fmt
 @mode 0444
 @exec grep -E "^/%%HLDSDIR%%$" %D/etc/ld.so.conf >/dev/null || ( echo /%%HLDSDIR%% >> %D/etc/ld.so.conf ; %%LDCONFIG%% )
 @unexec grep -v -E "^/%%HLDSDIR%%$" %D/etc/ld.so.conf > %D/etc/ld.so.conf.bak; cmp -s %D/etc/ld.so.conf %D/etc/ld.so.conf.bak || ( cp %D/etc/ld.so.conf.bak %D/etc/ld.so.conf ; %%LDCONFIG%% ) ; rm %D/etc/ld.so.conf.bak
