@@ -6,6 +6,7 @@ bin/camllibr
 bin/camllex
 bin/camlyacc
 bin/camldebug
+bin/camlpro
 bin/mletags
 bin/camllorder
 bin/camlsearch
@@ -190,8 +191,5 @@ lib/caml-light/stdlibp.zo
 share/emacs/site-lisp/camldebug.el
 share/emacs/site-lisp/inf-caml.el
 share/emacs/site-lisp/caml.el
-share/emacs/site-lisp/caml.elc
-share/emacs/site-lisp/inf-caml.elc
-share/emacs/site-lisp/camldebug.elc
 share/emacs/site-lisp/caml-search.el
 @dirrm lib/caml-light
