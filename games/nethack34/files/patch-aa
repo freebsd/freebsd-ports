@@ -1,5 +1,5 @@
---- include/config.h.orig	Fri Mar 22 20:22:26 2002
-+++ include/config.h	Fri Mar 22 20:28:13 2002
+--- include/config.h.orig	Thu Mar 21 08:42:43 2002
++++ include/config.h	Tue Aug 13 05:41:47 2002
 @@ -122,7 +122,7 @@
   * would allow:
   *  xpmtoppm <x11tiles.xpm | pnmscale 1.25 | ppmquant 90 >x11tiles_big.xpm
@@ -30,7 +30,7 @@
  #    define HACKDIR "nethackdir"	/* nethack directory */
  #  else
 -#    define HACKDIR "/usr/games/lib/nethackdir"
-+#    define HACKDIR "%%PREFIX%%/lib/nethack"
++#    define HACKDIR "%%HACKDIR%%"
  #  endif
  # endif
  
