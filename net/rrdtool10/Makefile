@@ -38,6 +38,7 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/contrib/log2rrd/README ${PREFIX}/share/doc/rrdtool/README.log2rrd
 		${INSTALL_DATA} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/rrdtool
 .endif
+		${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 		for file in piped/RRDp.pm shared/RRDs.pm; do \
 			${INSTALL_DATA} ${WRKSRC}/perl-$$file ${PREFIX}/lib/perl5/site_perl/${PERL_VER}; \
 		done
