@@ -1,6 +1,14 @@
---- Makefile.tmpl.orig	Thu Jan  7 14:50:45 1999
-+++ Makefile.tmpl	Fri Jan 15 02:39:17 1999
-@@ -110,6 +110,7 @@
+--- Makefile.tmpl.orig	Tue Mar 16 03:38:46 1999
++++ Makefile.tmpl	Thu Mar 25 23:53:46 1999
+@@ -113,13 +113,14 @@
+ sysconfdir      = @sysconfdir@
+ datadir         = @datadir@
+ iconsdir        = $(datadir)/icons
+-htdocsdir       = $(datadir)/htdocs
++htdocsdir       = $(datadir)/data
+ cgidir          = $(datadir)/cgi-bin
+ includedir      = @includedir@
+ localstatedir   = @localstatedir@
  runtimedir      = @runtimedir@
  logfiledir      = @logfiledir@
  proxycachedir   = @proxycachedir@
@@ -8,76 +16,67 @@
  
  libexecdir_relative   = @libexecdir_relative@
  
-@@ -239,9 +240,9 @@
+@@ -249,9 +250,9 @@
  	$(MKDIR) $(root)$(mandir)/man1
  	$(MKDIR) $(root)$(mandir)/man8
  	$(MKDIR) $(root)$(sysconfdir)
--	$(MKDIR) $(root)$(datadir)/htdocs
+-	$(MKDIR) $(root)$(htdocsdir)
 +	$(MKDIR) $(root)$(doc_prefix)
- 	$(MKDIR) $(root)$(datadir)/icons
--	$(MKDIR) $(root)$(datadir)/cgi-bin
-+	$(MKDIR) $(root)$(datadir)/cgi-bin.default
+ 	$(MKDIR) $(root)$(iconsdir)
+-	$(MKDIR) $(root)$(cgidir)
++	$(MKDIR) $(root)$(cgidir).default
  	$(MKDIR) $(root)$(includedir)
  	$(MKDIR) $(root)$(runtimedir)
  	$(MKDIR) $(root)$(logfiledir)
-@@ -363,25 +364,33 @@
+@@ -379,26 +380,34 @@
  #   icons and distributed CGI scripts.
  install-data:
  	@echo "===> [data: Installing initial data files]"
--	-@if [ -f $(root)$(datadir)/htdocs/index.html ]; then \
--		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/htdocs/]"; \
+-	-@if [ -f $(root)$(htdocsdir)/index.html ]; then \
+-		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(htdocsdir)/]"; \
 -	else \
--		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(datadir)/htdocs/"; \
-+#        -@if [ -f $(root)$(datadir)/htdocs/index.html ]; then \
-+#                echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/htdocs/]"; \
-+#        else \
+-		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(htdocsdir)/"; \
++#       -@if [ -f $(root)$(htdocsdir)/index.html ]; then \
++#               echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(htdocsdir)/]"; \
++#       else \
 +		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(doc_prefix)/"; \
- 		(cd $(TOP)/htdocs/ && $(TAR) -hcf - *) |\
--		(cd $(root)$(datadir)/htdocs/ && $(TAR) -xf -); \
--		find $(root)$(datadir)/htdocs/ -type d -exec chmod a+rx {} \; ; \
--		find $(root)$(datadir)/htdocs/ -type f -exec chmod a+r {} \; ; \
--	fi
--	-@if [ -f $(root)$(datadir)/cgi-bin/printenv ]; then \
--		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/cgi-bin/]"; \
--	else \
-+		(cd $(root)$(doc_prefix)/ && $(TAR) xf -); \
+ 		(cd $(TOP)/htdocs/ && $(TAR) $(TAROPT) - *) |\
+-		(cd $(root)$(htdocsdir)/ && $(TAR) -xf -); \
+-		find $(root)$(htdocsdir)/ -type d -exec chmod a+rx {} \; ; \
+-		find $(root)$(htdocsdir)/ -type f -exec chmod a+r {} \; ; \
++		(cd $(root)$(doc_prefix)/ && $(TAR) -xf -); \
 +		find $(root)$(doc_prefix)/ -type d -exec chmod a+rx {} \; ; \
-+		find $(root)$(doc_prefix)/ -type f -exec chmod a+r {} \; ;
-+#        fi
-+	 if [ ! -d $(root)$(datadir)/data ]; then \
-+		$(LN) -sf $(root)$(doc_prefix) $(root)$(datadir)/data; \
-+	 fi
-+	 $(RM) $(root)$(datadir)/data.default
-+	 $(LN) -s $(root)$(doc_prefix) $(root)$(datadir)/data.default
-+#        -@if [ -f $(root)$(datadir)/cgi-bin/printenv ]; then \
-+#                echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/cgi-bin/]"; \
-+#        else \
++		find $(root)$(doc_prefix)/ -type f -exec chmod a+r {} \; ; \
++#       fi
++	if [ ! -d $(root)$(htdocsdir) ]; then \
++	       $(LN) -sf $(root)$(doc_prefix) $(root)$(htdocsdir); \
+ 	fi
+-	-@if [ -f $(root)$(cgidir)/printenv ]; then \
+-		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
+-	else \
++	$(RM) $(root)$(htdocsdir).default
++	$(LN) -s $(root)$(doc_prefix) $(root)$(htdocsdir).default
++#       -@if [ -f $(root)$(cgidir)/printenv ]; then \
++#               echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
++#       else \
  		for script in printenv test-cgi; do \
  			cat $(TOP)/cgi-bin/$${script} |\
  			sed -e 's;^#!/.*perl;#!$(PERL);' \
  			> $(TOP)/$(SRC)/.apaci.install.tmp; \
--			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(datadir)/cgi-bin/$${script}"; \
--			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(datadir)/cgi-bin/$${script}; \
--		done; \
-+			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(datadir)/cgi-bin.default/$${script}"; \
-+			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(datadir)/cgi-bin.default/$${script}; \
-+		done;
-+#        fi
-+	if [ ! -d $(root)$(datadir)/cgi-bin ]; then \
-+		$(LN) -sf $(root)$(datadir)/cgi-bin.default $(root)$(datadir)/cgi-bin; \
- 	fi
- 	@echo "Copying tree $(TOP)/icons/ -> $(root)$(datadir)/icons/"; \
- 	(cd $(TOP)/icons/ && $(TAR) -hcf - *) |\
-@@ -411,7 +420,7 @@
- 		 echo ""; \
- 		 cat $(TOP)/conf/$${conf}-dist ) |\
- 		 sed -e '/# LoadModule/r $(TOP)/$(SRC)/.apaci.install.conf' \
--			-e 's;@@ServerRoot@@/htdocs;$(datadir)/htdocs;' \
-+			-e 's;@@ServerRoot@@/htdocs;$(datadir)/data;' \
- 			-e 's;@@ServerRoot@@/icons;$(datadir)/icons;' \
- 			-e 's;@@ServerRoot@@/cgi-bin;$(datadir)/cgi-bin;' \
- 			-e 's;@@ServerRoot@@/proxy;$(proxycachedir);' \
-@@ -419,10 +428,10 @@
+-			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(cgidir)/$${script}"; \
+-			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(cgidir)/$${script}; \
++			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(cgidir).default/$${script}"; \
++			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(cgidir).default/$${script}; \
+ 		done; \
+-	fi
++#       fi
++	if [ ! -d $(root)$(cgidir) ]; then \
++		$(LN) -sf $(root)$(cgidir).default $(root)$(cgidir); \
++  	fi
+ 	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
+ 	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
+ 	(cd $(root)$(iconsdir)/ && $(TAR) -xf -); \
+@@ -436,10 +445,10 @@
  			-e 's;logs/accept.lock;$(runtimedir)/$(TARGET).lock;' \
  			-e 's;logs/apache_runtime_status;$(runtimedir)/$(TARGET).scoreboard;' \
  			-e 's;logs/httpd.pid;$(runtimedir)/$(TARGET).pid;' \

@@ -3,11 +3,11 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.68 1999/03/13 17:11:02 billf Exp $
+# $Id: Makefile,v 1.69 1999/03/13 17:57:44 billf Exp $
 #
 
-DISTNAME=       apache_1.3.4
-PKGNAME=        apache-1.3.4
+DISTNAME=       apache_1.3.6
+PKGNAME=        apache-1.3.6
 CATEGORIES=	www
 MASTER_SITES=   http://www.apache.org/dist/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
@@ -64,8 +64,8 @@ CFLAGS+= -O6 -fomit-frame-pointer
 
 CONFIGURE_ENV= OPTIM='${OPTIM}'
 
-MAN1=   ab.1 apachectl.1 dbmmanage.1 htdigest.1 htpasswd.1
-MAN8=   apxs.8 httpd.8 logresolve.8 rotatelogs.8
+MAN1= dbmmanage.1 htdigest.1 htpasswd.1
+MAN8= ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
