@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gauche
@@ -31,6 +31,7 @@ PLIST_SUB=	VERSION="`gauche-config -V`" \
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.scm ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/gtk-tutorial ${EXAMPLESDIR}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
