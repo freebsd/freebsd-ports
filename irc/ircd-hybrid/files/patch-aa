@@ -1,0 +1,63 @@
+--- configure.orig	Sat May 31 01:30:18 2003
++++ configure	Wed Jan  7 03:06:07 2004
+@@ -334,6 +334,12 @@
+ oldincludedir='/usr/include'
+ infodir='${prefix}/info'
+ mandir='${prefix}/man'
++moduledir='${prefix}/modules'
++automoduledir='${prefix}/modules/autoload'
++uhelpdir='${prefix}/help/users'
++ohelpdir='${prefix}/help/opers'
++messagedir='${prefix}/messages'
++logsdir='/var/log/ircd'
+ 
+ ac_prev=
+ for ac_option
+@@ -462,6 +468,24 @@
+   -mandir=* | --mandir=* | --mandi=* | --mand=* | --man=* | --ma=* | --m=*)
+     mandir=$ac_optarg ;;
+ 
++  -moduledir=* | --moduledir=*)
++  moduledir=$ac_optarg ;;
++
++  -automoduledir=* | --automoduledir=*)
++  automoduledir=$ac_optarg ;;
++
++  -uhelpdir=* | --uhelpdir=*)
++  uhelpdir=$ac_optarg ;;
++
++  -ohelpdir=* | --ohelpdir=*)
++  ohelpdir=$ac_optarg ;;
++
++  -logsdir=* | --logsdir=*)
++  logsdir=$ac_optarg ;;
++
++  -messagedir=* | --messagedir=*)
++  messagedir=$ac_optarg ;;
++
+   -nfp | --nfp | --nf)
+     # Obsolete; use --without-fp.
+     with_fp=no ;;
+@@ -653,7 +677,8 @@
+ 
+ # Be sure to have absolute paths.
+ for ac_var in bindir sbindir libexecdir datadir sysconfdir sharedstatedir \
+-              localstatedir libdir includedir oldincludedir infodir mandir
++              localstatedir libdir includedir oldincludedir infodir mandir \
++	      moduledir automoduledir uhelpdir ohelpdir messagedir logsdir
+ do
+   eval ac_val=$`echo $ac_var`
+   case $ac_val in
+@@ -8918,6 +8943,12 @@
+ s,@oldincludedir@,$oldincludedir,;t t
+ s,@infodir@,$infodir,;t t
+ s,@mandir@,$mandir,;t t
++s,@moduledir@,$moduledir,;t t
++s,@automoduledir@,$automoduledir,;t t
++s,@uhelpdir@,$uhelpdir,;t t
++s,@ohelpdir@,$ohelpdir,;t t
++s,@logsdir@,$logsdir,;t t
++s,@messagedir@,$messagedir,;t t
+ s,@build_alias@,$build_alias,;t t
+ s,@host_alias@,$host_alias,;t t
+ s,@target_alias@,$target_alias,;t t
