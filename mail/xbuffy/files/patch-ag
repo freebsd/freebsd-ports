@@ -1,0 +1,46 @@
+*** libdyn/dyn_put.c.orig	Fri Dec 10 14:56:04 1993
+--- libdyn/dyn_put.c	Wed Jun 21 16:43:13 1995
+***************
+*** 11,16 ****
+--- 11,17 ----
+   */
+  
+  #include <stdio.h>
++ #include <string.h>
+  
+  #include "dynP.h"
+  
+***************
+*** 34,40 ****
+       }
+       
+       if (obj->debug)
+! 	  fprintf(stderr, "dyn: get: Returning address %d + %d.\n",
+  		  obj->array, obj->el_size*num);
+       
+       return (DynPtr) obj->array + obj->el_size*num;
+--- 35,41 ----
+       }
+       
+       if (obj->debug)
+! 	  fprintf(stderr, "dyn: get: Returning address %p + %d.\n",
+  		  obj->array, obj->el_size*num);
+       
+       return (DynPtr) obj->array + obj->el_size*num;
+***************
+*** 67,73 ****
+       int ret;
+       
+       if (obj->debug)
+! 	  fprintf(stderr, "dyn: put: Writing %d bytes from %d to %d + %d\n",
+  		  obj->el_size, el, obj->array, index*obj->el_size);
+  
+       if ((ret = _DynResize(obj, index)) != DYN_OK)
+--- 68,74 ----
+       int ret;
+       
+       if (obj->debug)
+! 	  fprintf(stderr, "dyn: put: Writing %d bytes from %p to %p + %d\n",
+  		  obj->el_size, el, obj->array, index*obj->el_size);
+  
+       if ((ret = _DynResize(obj, index)) != DYN_OK)

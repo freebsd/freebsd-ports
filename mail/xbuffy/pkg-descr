@@ -1,0 +1,9 @@
+Basically, XBuffy (and Xmultibiff) is a XBiff-type program with a lot
+of new options.  With XBuffy you can watch multiple mailboxes.  When
+new mail arrives, you can have a pop up window showing the From: and
+Subject: lines.  You can also set it up to launch your favorite mail
+reader when you click on a box.  Currently. xbuffy is only capable of 
+watching mailboxes with the standard mailbox format (messages separated 
+with a From line).
+
+This is version 3.2.1.

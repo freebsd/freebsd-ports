@@ -1,0 +1,201 @@
+*** xbuffy.c.orig	Thu Mar 30 09:57:43 1995
+--- xbuffy.c	Wed Jun 21 18:51:45 1995
+***************
+*** 179,193 ****
+  void CheckBox(i)
+      int i;
+  {
+!     int num;
+!     char amt[MAX_STRING];
+      Arg args[5];
+      int nargs;
+-     static BoxInfo_t *tempNews = 0;
+      BoxInfo_t *currentBox;
+-     int found;
+-     static char *mailHeader = NULL;
+-     int headerSize;
+      Boolean beenTouched;
+      Boolean isIcon = FALSE;
+  
+--- 179,188 ----
+  void CheckBox(i)
+      int i;
+  {
+!     int num = 0;
+      Arg args[5];
+      int nargs;
+      BoxInfo_t *currentBox;
+      Boolean beenTouched;
+      Boolean isIcon = FALSE;
+  
+***************
+*** 276,283 ****
+      char amt[MAX_STRING];
+      char fmtString[MAX_STRING];
+      char *ptr;
+!    int offset;
+!     Boolean name, shortName;
+      Arg args[5];
+      int nargs;
+  
+--- 271,277 ----
+      char amt[MAX_STRING];
+      char fmtString[MAX_STRING];
+      char *ptr;
+!     int offset;
+      Arg args[5];
+      int nargs;
+  
+***************
+*** 439,445 ****
+      static XtIntervalId timerID;
+      static int rootH = 0;
+      static int rootW = 0;
+!     int number;
+      static Boolean firstTime = TRUE;
+      static DynObject mailHeaders;
+      static char *hdrPtr;
+--- 433,439 ----
+      static XtIntervalId timerID;
+      static int rootH = 0;
+      static int rootW = 0;
+!     int number = 0;
+      static Boolean firstTime = TRUE;
+      static DynObject mailHeaders;
+      static char *hdrPtr;
+***************
+*** 620,631 ****
+      XEvent *event;
+      Boolean *cont;
+  {
+-     char *command;
+      BoxInfo_t *currentBox;
+-     char *tmp;
+-     char buf[512];
+-     char *av[5];
+-     int ac = 0;
+  
+      currentBox = &boxInfo[i];
+  
+--- 614,620 ----
+***************
+*** 665,671 ****
+      char buffer[MAX_STRING];
+      char From[MAX_STRING], Subject[MAX_STRING];
+      register int count = 0;
+!     int status;
+      register Boolean in_header = FALSE;
+      struct stat f_stat;
+  
+--- 654,660 ----
+      char buffer[MAX_STRING];
+      char From[MAX_STRING], Subject[MAX_STRING];
+      register int count = 0;
+!     int status = UNKNOWN;
+      register Boolean in_header = FALSE;
+      struct stat f_stat;
+  
+***************
+*** 697,704 ****
+  
+      while (fgets(buffer, MAX_STRING - 2, fp) != 0)
+      {
+!        long CL;
+!        int has_CL;
+  
+          buffer[MAX_STRING - 1] = '\0';  /* just in case */
+          if ((strchr(buffer, '\n') == NULL) && (!feof(fp)))
+--- 686,693 ----
+  
+      while (fgets(buffer, MAX_STRING - 2, fp) != 0)
+      {
+!        long CL = 0L;
+!        int has_CL = FALSE;
+  
+          buffer[MAX_STRING - 1] = '\0';  /* just in case */
+          if ((strchr(buffer, '\n') == NULL) && (!feof(fp)))
+***************
+*** 836,842 ****
+      tempBox.type = BoxType;
+      tempBox.boxNum = nBoxes;
+  
+!     if (BoxType = NNTPBOX)
+      {
+          tempBox.articles = DynCreate(sizeof(Articles_t), 2);
+  #ifdef DEBUG
+--- 825,831 ----
+      tempBox.type = BoxType;
+      tempBox.boxNum = nBoxes;
+  
+!     if (BoxType == NNTPBOX)
+      {
+          tempBox.articles = DynCreate(sizeof(Articles_t), 2);
+  #ifdef DEBUG
+***************
+*** 902,908 ****
+  {
+      char *mailPath = 0;
+      char *boxes = 0;
+-     int pos = 0;
+      char *str = 0;
+  
+      /* get mail path */
+--- 891,896 ----
+***************
+*** 946,952 ****
+  {
+      char *newsPath = 0;
+      char *boxes = 0;
+-     int pos = 0;
+      char *str = 0;
+  
+      /* get nntp path */
+--- 934,939 ----
+***************
+*** 1023,1028 ****
+--- 1010,1016 ----
+              break;
+          case NONE:
+          case USR:
++ 	case UNDEF:
+              break;
+          }
+  
+***************
+*** 1039,1044 ****
+--- 1027,1033 ----
+              break;
+          case NONE:
+          case USR:
++ 	case UNDEF:
+              break;
+          }
+  
+***************
+*** 1100,1113 ****
+      };
+  
+  #endif
+-     FILE *boxes;
+      static Boolean mailArgs;
+      Widget form;
+-     Widget command;
+      int i;
+      char *check;
+      char name[MAX_STRING];
+-     Pixel bg, fg;
+      Arg args[5];
+      int nargs;
+      int pid;
+--- 1089,1099 ----
+***************
+*** 1223,1230 ****
+  #ifdef NNTP
+              else
+              {
+-                 int dummy;
+- 
+                  initBox(NEWstrdup(*argv), NNTPBOX, envPolltime, envHeadertime,
+                          UNDEF, data.command, data.audioCmd, NULL, data.origMode, data.nobeep,NULL,NULL);
+  
+--- 1209,1214 ----

@@ -1,0 +1,12 @@
+*** libdyn/dyn_realloc.c.orig	Fri Dec 10 14:56:05 1993
+--- libdyn/dyn_realloc.c	Wed Jun 21 16:46:32 1995
+***************
+*** 11,16 ****
+--- 11,17 ----
+   */
+  
+  #include <stdio.h>
++ #include <stdlib.h>
+  
+  #include "dynP.h"
+  

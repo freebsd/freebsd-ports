@@ -1,0 +1,4 @@
+@cwd /usr/X11R6
+@mode 755
+bin/xbuffy
+man/man1/xbuffy.1.gz

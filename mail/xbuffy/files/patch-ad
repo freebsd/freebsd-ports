@@ -1,0 +1,11 @@
+*** libdyn/dyn_create.c.orig	Fri Dec 10 14:56:02 1993
+--- libdyn/dyn_create.c	Wed Jun 21 16:39:16 1995
+***************
+*** 12,17 ****
+--- 12,18 ----
+   */
+  
+  #include <stdio.h>
++ #include <stdlib.h>
+  
+  #include "dynP.h"
