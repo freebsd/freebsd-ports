@@ -11,7 +11,6 @@
     SUBDIR += aterm
     SUBDIR += auto-tw-l10n
     SUBDIR += autoconvert
-    SUBDIR += bbsnet
     SUBDIR += bg5pdf
     SUBDIR += bg5ps
     SUBDIR += big5con
