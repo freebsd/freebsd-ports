@@ -1,0 +1,14 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/Fields/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Class/Fields.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/Fields/Attribs.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/Fields/Fuxor.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/Fields/Inherit.pm
+lib/perl5/site_perl/%%PERL_VER%%/base.pm
+lib/perl5/site_perl/%%PERL_VER%%/fields.pm
+lib/perl5/site_perl/%%PERL_VER%%/private.pm
+lib/perl5/site_perl/%%PERL_VER%%/protected.pm
+lib/perl5/site_perl/%%PERL_VER%%/public.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Class/Fields
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/Fields
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Class 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true

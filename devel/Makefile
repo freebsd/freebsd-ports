@@ -325,6 +325,7 @@
     SUBDIR += p5-Class-Data-Inheritable
     SUBDIR += p5-Class-Date
     SUBDIR += p5-Class-Delegation
+    SUBDIR += p5-Class-Fields
     SUBDIR += p5-Class-Loader
     SUBDIR += p5-Class-MethodMaker
     SUBDIR += p5-Class-Singleton
