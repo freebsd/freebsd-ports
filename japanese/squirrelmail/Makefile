@@ -7,7 +7,7 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION=	1.4.3a
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	japanese mail www
 
@@ -17,6 +17,8 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	info@otsune.com
 COMMENT=	A webmail system which accesses mail over IMAP with Japanese patch
+
+USE_GETTEXT=	YES
 
 CONFLICTS=	squirrelmail-1.*
 PATCHVERSION=	20041014
