@@ -21,7 +21,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${MODSSL_FILE}:mod_ssl \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${MODSSL_FILE} \
 		${MODACCEL_FILE} ${MODDEFLATE_FILE}
 
-.if defined(APACHE_WITH_IPV6) || make(makesum) || defined(FETCH_ALL)
+.if defined(WITH_APACHE_IPV6) || defined(APACHE_WITH_IPV6) || make(makesum) || defined(FETCH_ALL)
 PATCH_SITES+=	ftp://ftp.42.org/pub/orphan/ ${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	dinoex
 PATCHFILES+=	apache-1.3.31modssl-v6-20040514.diff.gz
@@ -128,8 +128,15 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 CONFIGURE_ARGS+=	--runtimedir=${APACHE_RELATIVE_RUNTIMEDIR}
 .endif
 
-.if defined(APACHE_WITHOUT_EXPAT)
+.if defined(WITHOUT_APACHE_EXPAT) || defined(APACHE_WITHOUT_EXPAT)
 CONFIGURE_ARGS+=	--disable-rule=EXPAT
+.else
+.if !defined(WITH_APACHE_INTERNAL_EXPAT) || ${WITH_APACHE_INTERNAL_EXPAT} != yes
+EXPAT_CONF+=	--disable-rule=EXPAT
+LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
+.else
+EXPAT_CONF+=	--enable-rule=EXPAT
+.endif
 .endif
 
 .if defined(APACHE_HARD_SERVER_LIMIT)
@@ -156,11 +163,14 @@ OPTIM+=		-DBUFFERED_LOGS
 .if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == yes
 CFLAGS+=	-O3
 .endif
+.if defined(WITH_APACHE_PERF_TUNING) && ${WITH_APACHE_PERF_TUNING} == yes
+CFLAGS+=	-O3
+.endif
 
-.if defined(APACHE_WITH_MODSNMP) || make(makesum) || defined(FETCH_ALL)
+.if defined(WITH_APACHE_MODSNMP) || defined(APACHE_WITH_MODSNMP) || make(makesum) || defined(FETCH_ALL)
 MODSNMP_DISTFILE=	${MODSNMP_FILE}:mod_snmp
 .endif
-.if defined(APACHE_WITH_MODSNMP)
+.if defined(WITH_APACHE_MODSNMP) || defined(APACHE_WITH_MODSNMP)
 CONFLICTS+=	apache+mod_ssl-1.* \
 		apache+mod_ssl+ipv6-1.* \
 		apache+mod_ssl+mod_accel-1.* \
@@ -187,11 +197,11 @@ PLIST_DIRS+=	%%DOCSDIR%%/snmp_agt %%DOCSDIR%% www/buckets www
 CONFLICTS+=	apache+mod_snmp*-1.*
 .endif
 
-.if defined(APACHE_WITH_MODACCEL) || make(makesum) || defined(FETCH_ALL)
+.if defined(WITH_APACHE_MODACCEL) || defined(APACHE_WITH_MODACCEL) || make(makesum) || defined(FETCH_ALL)
 MODACCEL_FILE=	mod_accel-${VERSION_MODACCEL}${EXTRACT_SUFX}
 MODACCEL_DISTFILE=	${MODACCEL_FILE}:mod_accel
 .endif
-.if defined(APACHE_WITH_MODACCEL)
+.if defined(WITH_APACHE_MODACCEL) || defined(APACHE_WITH_MODACCEL)
 CONFLICTS+=	apache+mod_ssl-1.* \
 		apache+mod_ssl+ipv6-1.* \
 		apache+mod_ssl+mod_snmp-1.* \
@@ -217,11 +227,11 @@ PLIST_FILES+=	libexec/apache/libaccel.so \
 CONFLICTS+=	apache+mod_accel*-1.*
 .endif
 
-.if defined(APACHE_WITH_MODDEFLATE) || make(makesum) || defined(FETCH_ALL)
+.if defined(WITH_APACHE_MODDEFLATE) || defined(APACHE_WITH_MODDEFLATE) || make(makesum) || defined(FETCH_ALL)
 MODDEFLATE_FILE=	mod_deflate-${VERSION_MODDEFLATE}${EXTRACT_SUFX}
 MODDEFLATE_DISTFILE=	${MODDEFLATE_FILE}:mod_deflate
 .endif
-.if defined(APACHE_WITH_MODDEFLATE)
+.if defined(WITH_APACHE_MODDEFLATE) || defined(APACHE_WITH_MODDEFLATE)
 CONFLICTS+=	apache+mod_ssl-1.* \
 		apache+mod_ssl+ipv6-1.* \
 		apache+mod_ssl+mod_snmp-1.* \
@@ -238,8 +248,8 @@ PLIST_FILES+=	%%DOCSDIR%%/mod/mod_deflate.html
 CONFLICTS+=	apache+mod_deflate*-1.*
 .endif
 
-.if defined(APACHE_WITH_IPV6)
-.if defined(APACHE_WITH_MODACCEL)
+.if defined(WITH_APACHE_IPV6) || defined(APACHE_WITH_IPV6)
+.if defined(WITH_APACHE_MODACCEL) || defined(APACHE_WITH_MODACCEL)
 BROKEN=		"mod_accel and ipv6 don't compile together"
 .endif
 
@@ -306,28 +316,28 @@ pre-fetch:
 	@${ECHO_MSG} "				children could become mixed together and your"
 	@${ECHO_MSG} "				web stats may be inaccurate."
 	@${ECHO_MSG} "				[default is no]"
-	@${ECHO_MSG} "  APACHE_PERF_TUNING=yes	CFLAGS optimization."
+	@${ECHO_MSG} "  WITH_APACHE_PERF_TUNING=yes	CFLAGS optimization."
 	@${ECHO_MSG} "				This setting may produce broken code and thus"
 	@${ECHO_MSG} "				is not recommended for production servers."
 	@${ECHO_MSG} "				[default is no]"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  APACHE_WITH_IPV6=yes		IPv6 support."
+	@${ECHO_MSG} "  WITH_APACHE_IPV6=yes		IPv6 support."
 	@${ECHO_MSG} "				This setting turns IPv6 support on."
 	@${ECHO_MSG} "				[default is no]"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  APACHE_WITH_MODSNMP=yes	mod_snmp support."
+	@${ECHO_MSG} "  WITH_APACHE_MODSNMP=yes	mod_snmp support."
 	@${ECHO_MSG} "				This setting turns support for SNMP on."
 	@${ECHO_MSG} "				[default is no]"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  APACHE_WITH_MODACCEL=yes	mod_accel support."
+	@${ECHO_MSG} "  WITH_APACHE_MODACCEL=yes	mod_accel support."
 	@${ECHO_MSG} "				This setting activates build of mod_accel."
 	@${ECHO_MSG} "				[default is no]"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  APACHE_WITH_MODDEFLATE=yes	mod_deflate support."
+	@${ECHO_MSG} "  WITH_APACHE_MODDEFLATE=yes	mod_deflate support."
 	@${ECHO_MSG} "				This setting activates build of mod_deflate."
 	@${ECHO_MSG} "				[default is no]"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  APACHE_WITHOUT_EXPAT=yes	don't compile in expat."
+	@${ECHO_MSG} "  WITHOUT_APACHE_EXPAT=yes	don't compile in expat."
 	@${ECHO_MSG} "				[default is no (expat is included)]"
 	@${ECHO_MSG} ""
 
@@ -336,7 +346,7 @@ post-extract:
 		${FILESDIR}/rcng.sh > ${WRKSRC}/rcng.sh
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/apache.sh \
 		> ${WRKSRC}/apache.sh
-.if defined(APACHE_WITH_MODSNMP)
+.if defined(WITH_APACHE_MODSNMP) || defined(APACHE_WITH_MODSNMP)
 	(cd ${WRKSRC}; ${TAR} xfz  ${DISTDIR}/${MODSNMP_FILE})
 .endif
 
@@ -344,13 +354,13 @@ pre-patch:
 	@cd ${WRKDIR}/mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE} \
 	&& ${ECHO_MSG} "===>  Applying mod_ssl-${VERSION_MODSSL} extension" \
 	&& ./configure --with-apache=../${DISTNAME} --expert
-.if defined(APACHE_WITH_MODACCEL)
+.if defined(WITH_APACHE_MODACCEL) || defined(APACHE_WITH_MODACCEL)
 	@cd ${WRKDIR}/mod_accel-${VERSION_MODACCEL} \
 	&& ${ECHO_MSG} "===>  Applying mod_accel-${VERSION_MODACCEL} extension" \
 	&& ./configure --with-apache=../${DISTNAME} --with-mod_randban --with-mod_freeze \
 	&& ${MAKE}
 .endif
-.if defined(APACHE_WITH_MODDEFLATE)
+.if defined(WITH_APACHE_MODDEFLATE) || defined(APACHE_WITH_MODDEFLATE)
 	@cd ${WRKDIR}/mod_deflate-${VERSION_MODDEFLATE} \
 	&& ${ECHO_MSG} "===>  Applying mod_deflate-${VERSION_MODDEFLATE} extension" \
 	&& ./configure --with-apache=../${DISTNAME} \
@@ -385,7 +395,7 @@ post-install:
 .else
 	${INSTALL_SCRIPT} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh.sample
 .endif
-.if defined(APACHE_WITH_MODSNMP)
+.if defined(WITH_APACHE_MODSNMP) || defined(APACHE_WITH_MODSNMP)
 	@${MKDIR} ${DATADIR}/buckets
 	@${CHOWN} www:www ${DATADIR}/buckets
 .endif
