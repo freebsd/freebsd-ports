@@ -12,10 +12,16 @@ MASTER_SITES=	http://www.inter7.com/devel/
 
 MAINTAINER=	roam@FreeBSD.org
 
-do-build:
-	@cd ${WRKSRC} && ${MAKE} autorespond
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 440003 || ${OSVERSION} >= 500000 && ${OSVERSION} < 500027
+CFLAGS+=	-DNEED_STRCASESTR
+.endif
+
+post-patch:
+	${PERL} -pi.fbsd -e "s/^(DEFS =.*)/\1 ${CFLAGS}/" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/autorespond ${PREFIX}/bin/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
