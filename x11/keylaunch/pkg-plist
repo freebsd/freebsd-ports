@@ -1,2 +1,3 @@
 bin/keylaunch
 share/examples/keylaunch/keylaunch.rc
+@dirrm share/examples/keylaunch
