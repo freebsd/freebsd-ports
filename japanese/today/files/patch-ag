@@ -1,0 +1,45 @@
+--- misc.c.orig	Fri Sep 19 20:27:37 1997
++++ misc.c	Fri Sep 19 20:23:43 1997
+@@ -11,12 +11,17 @@
+  *
+  */
+ 
++#ifdef __FreeBSD__
++  #include <unistd.h>
++#endif
+ #include "common.h"
+ #include "main.h"
+ #include "getfile.h"
+ #include "kyureki.h"
+ #include "misc.h"
+-
++#ifdef __FreeBSD__
++  #define strnicmp strncasecmp
++#endif
+ #ifndef INCLUDE_CALENDAR
+ #define	JULIAN	1720994
+ #define	MONTH	30.6001
+@@ -1105,7 +1110,11 @@
+ 				sprintf(pbuf, "%06d", getpid() >> 4);
+ 				pb = pbuf + strlen(pbuf) - 5;
+ #else /* #if defined(MSDOS) || defined(LSI_C) || defined(unix) */
++#ifndef __FreeBSD__
+ 				sprintf(pbuf, "%05d", getpid());
++#else
++				sprintf(pbuf, "%05ld", getpid());
++#endif
+ 				pb = pbuf;
+ #endif
+ 				for (i = 0; i < 5; i++) {
+@@ -1280,7 +1289,11 @@
+ 	buf = malloc(size);
+ 	if (buf == NULL) {
+ 		errprint("xmalloc", ERR_PANIC, "virtual memory exhausted, program stop.");
++#ifndef __FreeBSD__
+ 		terminate_program(TERM_MEMERROR, 0);
++#else
++		terminate_program(TERM_MEMERROR);
++#endif
+ 	}
+ 	return (buf);
+ }

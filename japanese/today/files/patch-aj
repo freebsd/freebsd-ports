@@ -1,0 +1,22 @@
+--- version.c.orig	Fri Sep 19 20:27:37 1997
++++ version.c	Fri Sep 19 20:23:43 1997
+@@ -28,6 +28,7 @@
+ const char	Version[] = "today " __DATE__ " version 2.10B (正式版)";
+ const char	RCSid[] ="$Id: version.c,v 1.1 1993/07/25 05:39:46 mori Exp $";
+ const char	UseLanguage[] =
++#if !defined(TRANS)
+ #if defined(human68k)
+ #if defined(__GNUC__)
+ 	"gcc version 1.00 Tool#1(68020) Based on 1.42";
+@@ -47,7 +48,10 @@
+ 					/* by Sun-4/470 SunOS4.1.1+JLE1.1.1 */
+ #endif
+ #endif
++#else
++        "gcc version 2.6.3";
++#endif
+ 
+ #ifdef TRANS
+-const char	Modify[] = "Modified for 機種名/OS名 by 移植者名";
++const char	Modify[] = "Modified for FreeBSD2.0.5R by pcs51674@asciinet.or.jp";
+ #endif
