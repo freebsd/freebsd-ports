@@ -3,6 +3,11 @@
 %%PYTHON_SITELIBDIR%%/korean/__init__.pyc
 %%PYTHON_SITELIBDIR%%/korean/c/__init__.py
 %%PYTHON_SITELIBDIR%%/korean/c/__init__.pyc
+%%PYTHON_SITELIBDIR%%/korean/c/_koco.so
+%%PYTHON_SITELIBDIR%%/korean/c/cp949.py
+%%PYTHON_SITELIBDIR%%/korean/c/cp949.pyc
+%%PYTHON_SITELIBDIR%%/korean/c/euc_kr.py
+%%PYTHON_SITELIBDIR%%/korean/c/euc_kr.pyc
 %%PYTHON_SITELIBDIR%%/korean/cp949.py
 %%PYTHON_SITELIBDIR%%/korean/cp949.pyc
 %%PYTHON_SITELIBDIR%%/korean/euc_kr.py
