@@ -6,7 +6,7 @@
  @settitle VIP
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* VIP: (vip).		A VI-emulation for Emacs.
++* VIP: (vip).			A VI-emulation for Emacs.
 +@end direntry
  
  @iftex
@@ -19,7 +19,7 @@
  @synindex pg cp
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* Emacs: (emacs).	The extensible self-documenting text editor.
++* Emacs: (emacs).		The extensible self-documenting text editor.
 +@end direntry
 +
  @c
@@ -33,7 +33,7 @@
  @setfilename ../info/viper
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* VIPER: (viper).	The new VI-emulation mode in Emacs-19.29.
++* VIPER: (viper).		The new VI-emulation mode in Emacs-19.29.
 +@end direntry
  
  @iftex
@@ -46,8 +46,8 @@
  @syncodeindex ky cp
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* Forms: (forms).	Emacs package for editing data bases
-+			by filling in forms.
++* Forms: (forms).		Emacs package for editing data bases
++				by filling in forms.
 +@end direntry
  @iftex
  @finalout
@@ -60,7 +60,7 @@
  @synindex pg cp
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* GNUS: (gnus).		The news reader GNUS.
++* GNUS: (gnus).			The news reader GNUS.
 +@end direntry
 +
  @iftex
@@ -74,7 +74,7 @@
  @c %**end of header
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* MH-E: (mh-e).		Emacs interface to the MH mail system.
++* MH-E: (mh-e).			Emacs interface to the MH mail system.
 +@end direntry
  
  @setchapternewpage odd
@@ -87,7 +87,7 @@
  
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* CL: (cl).		Partial Common Lisp support for Emacs Lisp.
++* CL: (cl).			Partial Common Lisp support for Emacs Lisp.
 +@end direntry
 +
 +
@@ -102,8 +102,8 @@
  @settitle Supercite Version 3.1 User's Manual
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* SC: (sc).		Supercite lets you cite parts of messages you're 
-+			replying to, in flexible ways.
++* SC: (sc).			Supercite lets you cite parts of messages
++				you're replying to, in flexible ways.
 +@end direntry
 +
  @iftex
@@ -117,7 +117,7 @@
  @settitle Dired Extra Version 2 User's Manual
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* Dired-X: (dired-x).	Dired Extra Features.
++* Dired-X: (dired-x).		Dired Extra Features.
 +@end direntry
 +
  @iftex
@@ -125,13 +125,14 @@
  @end iftex
 --- ./man/ediff.texi.org	Fri Jun 21 20:00:04 1996
 +++ ./man/ediff.texi	Tue May 20 01:26:29 1997
-@@ -10,6 +10,10 @@
+@@ -10,6 +10,11 @@
  @synindex vr cp
  @synindex fn cp
  @synindex pg cp
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* Ediff: (ediff).	A comprehensive visual interface to diff & patch.
++* Ediff: (ediff).		A comprehensive visual interface to diff
++				and patch.
 +@end direntry
  @iftex
  @finalout
@@ -144,8 +145,8 @@
  
 +@dircategory The Emacs editor and associated tools 
 +@direntry 
-+* CC mode: (ccmode).	The GNU Emacs mode for editing C, C++, Objective-C
-+			and Java code.
++* CC mode: (ccmode).		The GNU Emacs mode for editing C, C++,
++				Objective-C and Java code.
 +@end direntry
 +
  @comment !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

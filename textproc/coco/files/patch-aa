@@ -25,7 +25,7 @@
  @settitle VIP
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* VIP: (vip).		A VI-emulation for Emacs.
++* VIP: (vip).			A VI-emulation for Emacs.
 +@end direntry
  
  @iftex
@@ -38,7 +38,7 @@
  @synindex pg cp
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* Emacs: (emacs).	The extensible self-documenting text editor.
++* Emacs: (emacs).		The extensible self-documenting text editor.
 +@end direntry
 +
  @c
@@ -52,8 +52,8 @@
  @syncodeindex ky cp
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* Forms: (forms).	Emacs package for editing data bases
-+			by filling in forms.
++* Forms: (forms).		Emacs package for editing data bases
++				by filling in forms.
 +@end direntry
  @iftex
  @finalout
@@ -66,7 +66,7 @@
  
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* CL: (cl).		Partial Common Lisp support for Emacs Lisp.
++* CL: (cl).			Partial Common Lisp support for Emacs Lisp.
 +@end direntry
 +
 +
@@ -81,8 +81,8 @@
  @settitle Supercite Version 3.1 User's Manual
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* SC: (sc).		Supercite lets you cite parts of messages you're 
-+			replying to, in flexible ways.
++* SC: (sc).			Supercite lets you cite parts of messages
++				you're replying to, in flexible ways.
 +@end direntry
 +
  @iftex
@@ -96,7 +96,7 @@
  @settitle Dired Extra Version 2 User's Manual
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* Dired-X: (dired-x).	Dired Extra Features.
++* Dired-X: (dired-x).		Dired Extra Features.
 +@end direntry
 +
  @iftex
@@ -150,7 +150,7 @@
 +
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* GNUS: (gnus).		The news reader GNUS.
++* GNUS: (gnus).			The news reader GNUS.
 +@end direntry
 +
  @iftex

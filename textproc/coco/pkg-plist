@@ -25,11 +25,12 @@ man/man1/mule.1.gz
 @unexec install-info --delete %D/info/gnus %D/info/dir
 @unexec install-info --delete %D/info/cl %D/info/dir
 @unexec install-info --delete %D/info/sc %D/info/dir
+@unexec install-info --delete %D/info/dired-x %D/info/dir
 @unexec install-info --delete --section="The Emacs editor and associated tools" --entry="* Antenews-jp: (antenews-jp).	Version 19 Antenews. (Japanese)" %D/info/antenews-jp %D/info/dir
-@unexec install-info --delete --section="The Emacs editor and associated tools" --entry="* Mule: (mule).		Multilingual Enhancement to GNU Emacs." %D/info/mule %D/info/dir
-@unexec install-info --delete --section="The Emacs editor and associated tools" --entry="* Mule-jp: (mule-jp).	Multilingual Enhancement to GNU Emacs. (Japanese)" %D/info/mule-jp %D/info/dir
-@unexec install-info --delete --section="The Emacs editor and associated tools" --entry="* Egg-jp: (egg-jp).	Japanese/Chinese Inputting Method. (Japanese)" %D/info/egg-jp %D/info/dir
-@unexec install-info --delete --section="The Emacs editor and associated tools" --entry="* Canna-jp: (canna-jp).	Another Japanese Inputting Method. (Japanese)" %D/info/canna-jp %D/info/dir
+@unexec install-info --delete --section="The Emacs editor and associated tools" --entry="* Mule: (mule).			Multilingual Enhancement to GNU Emacs." %D/info/mule %D/info/dir
+@unexec install-info --delete --section="The Emacs editor and associated tools" --entry="* Mule-jp: (mule-jp).		Multilingual Enhancement to GNU Emacs. (Japanese)" %D/info/mule-jp %D/info/dir
+@unexec install-info --delete --section="The Emacs editor and associated tools" --entry="* Egg-jp: (egg-jp).		Japanese/Chinese Inputting Method. (Japanese)" %D/info/egg-jp %D/info/dir
+@unexec install-info --delete --section="The Emacs editor and associated tools" --entry="* Canna-jp: (canna-jp).		Another Japanese Inputting Method. (Japanese)" %D/info/canna-jp %D/info/dir
 @comment
 @comment emacs stuff
 @comment
@@ -108,11 +109,12 @@ info/terminology
 @exec install-info %D/info/gnus %D/info/dir
 @exec install-info %D/info/cl %D/info/dir
 @exec install-info %D/info/sc %D/info/dir
+@exec install-info %D/info/dired-x %D/info/dir
 @exec install-info --section="The Emacs editor and associated tools" --entry="* Antenews-jp: (antenews-jp).	Version 19 Antenews. (Japanese)" %D/info/antenews-jp %D/info/dir
-@exec install-info --section="The Emacs editor and associated tools" --entry="* Mule: (mule).		Multilingual Enhancement to GNU Emacs." %D/info/mule %D/info/dir
-@exec install-info --section="The Emacs editor and associated tools" --entry="* Mule-jp: (mule-jp).		Multilingual Enhancement to GNU Emacs. (Japanese)" %D/info/mule-jp %D/info/dir
-@exec install-info --section="The Emacs editor and associated tools" --entry="* Egg-jp: (egg-jp).		Japanese/Chinese Inputting Method. (Japanese)" %D/info/egg-jp %D/info/dir
-@exec install-info --section="The Emacs editor and associated tools" --entry="* Canna-jp: (canna-jp).		Another Japanese Inputting Method. (Japanese)" %D/info/canna-jp %D/info/dir
+@exec install-info --section="The Emacs editor and associated tools" --entry="* Mule: (mule).			Multilingual Enhancement to GNU Emacs." %D/info/mule %D/info/dir
+@exec install-info --section="The Emacs editor and associated tools" --entry="* Mule-jp: (mule-jp).			Multilingual Enhancement to GNU Emacs. (Japanese)" %D/info/mule-jp %D/info/dir
+@exec install-info --section="The Emacs editor and associated tools" --entry="* Egg-jp: (egg-jp).			Japanese/Chinese Inputting Method. (Japanese)" %D/info/egg-jp %D/info/dir
+@exec install-info --section="The Emacs editor and associated tools" --entry="* Canna-jp: (canna-jp).			Another Japanese Inputting Method. (Japanese)" %D/info/canna-jp %D/info/dir
 lib/mule/19.28/etc/3B-MAXMEM
 lib/mule/19.28/etc/AIX.DUMP
 lib/mule/19.28/etc/APPLE
