@@ -16,6 +16,8 @@ COMMENT=	Media player for KDE
 
 LIB_DEPENDS=    tag.4:${PORTSDIR}/audio/taglib
 
+EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
+
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
@@ -26,6 +28,7 @@ OPTIONS=	ARTS "aRts support" off \
 		GSTREAMER "GStreamer support" on \
 		XINE "xine support" off \
 		XMMS "XMMS visualizations" on \
+		LIBVISUAL "libvisual support" on \
 		OPENGL "OpenGL support" on \
 		AMAZON "Amazon cover fetching support" on
 
@@ -63,6 +66,14 @@ LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 PLIST_SUB+=	XMMS=""
 .endif
 
+.if defined(WITHOUT_LIBVISUAL)
+PLIST_SUB+=     LIBVISUAL="@comment "
+.else
+LIB_DEPENDS+=   visual.0:${PORTSDIR}/graphics/libvisual
+PLIST_SUB+=     LIBVISUAL=""
+
+.endif
+
 .if defined(WITHOUT_OPENGL)
 CONFIGURE_ARGS+=--without-opengl
 .endif
@@ -74,11 +85,20 @@ CONFIGURE_ARGS+=--without-amazon
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|xx||g' ${WRKSRC}/po/Makefile.in
+	@${REINPLACE_CMD} -e 's|SDL/SDL.h|SDL11/SDL.h|g' \
+		${WRKSRC}/amarok/src/vis/libvisual/libvisual.h
+	@${REINPLACE_CMD} -e 's|-lSDL|-lSDL-1.1 ${PTHREAD_LIBS}|g' \
+		${WRKSRC}/amarok/src/vis/libvisual/Makefile.in
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${TOUCH}
 
 post-configure:
 .if defined(WITHOUT_XMMS)
 	@${REINPLACE_CMD} -e '/XMMS /d' ${WRKSRC}/config.h
 	@${REINPLACE_CMD} -e 's/xmmswrapper//g' ${WRKSRC}/amarok/src/vis/Makefile
+.endif
+.if defined(WITHOUT_LIBVISUAL)
+	@${REINPLACE_CMD} -e '/LIBVISUAL /d' ${WRKSRC}/config.h
+	@${REINPLACE_CMD} -e 's/libvisual//g' ${WRKSRC}/amarok/src/vis/Makefile
 .endif
 
 .include <bsd.port.post.mk>
