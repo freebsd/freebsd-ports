@@ -1,0 +1,13 @@
+vQregister is a CGI which allows new email users to signup on your system.
+It is extremely configurable, and has many methods of operation.
+ * Configurable to allow random generation of passwords, which are
+   emailed to users.
+ * Redirect your users (ie, SqWebmail) after the signup process is
+   complete.
+ * Fully templacized HTML, and email output.
+
+WWW:	http://www.inter7.com/vqregister.html
+
+- Dan Caescu
+daniel@freebsd.ro
+dan_c@pellin.ro

@@ -369,6 +369,7 @@
     SUBDIR += vpopmail
     SUBDIR += vpopmail-stable
     SUBDIR += vqadmin
+    SUBDIR += vqregister
     SUBDIR += vrfy
     SUBDIR += wanderlust
     SUBDIR += wanderlust-emacs20

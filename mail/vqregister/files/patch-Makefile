@@ -1,0 +1,23 @@
+--- Makefile.orig	Fri Dec 12 17:04:17 2003
++++ Makefile	Fri Dec 12 17:07:04 2003
+@@ -2,16 +2,16 @@
+ # vol@inter7.com
+ #
+ 
+-VDIR = /home/vpopmail
++VDIR?= /home/vpopmail
+ CC = gcc
+ BIN = vqregister
+-DEFS = -I$(VDIR)/include -I/usr/local/mysql/include
++DEFS = -I$(VDIR)/include -I${LOCALBASE}/include/mysql
+ LINKDEFS =
+-LIBS = -L$(VDIR)/lib -lvpopmail -lcrypt -L/usr/local/mysql/lib/mysql -lmysqlclient
++LIBS = -L$(VDIR)/lib -lvpopmail -lcrypt -L${LOCALBASE}/lib/mysql -lmysqlclient
+ OBJS = main.o cgi.o template.o global.o misc.o config.o register.o password.o \
+        vpopmail.o db.o field.o badhosts.o
+ 
+-INSTALL_DIR = /usr/local/apache/cgi-bin/vqregister
++INSTALL_DIR = ${WWW_DIR}/cgi-bin/vqregister
+ INSTALL_BIN = vqregister.cgi
+ INSTALL_UID = vpopmail
+ INSTALL_GID = vchkpw
