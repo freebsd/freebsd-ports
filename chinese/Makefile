@@ -68,7 +68,6 @@
     SUBDIR += libtabe
     SUBDIR += libchewing
     SUBDIR += links
-    SUBDIR += linux-gtk
     SUBDIR += linux-mozillafirebird-zh_CN
     SUBDIR += linux-mozillafirebird-zh_TW
     SUBDIR += lunar
