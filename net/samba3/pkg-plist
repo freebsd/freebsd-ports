@@ -2,6 +2,7 @@ bin/smbclient
 bin/smbspool
 bin/testparm
 bin/testprns
+bin/smbcacls
 bin/smbstatus
 bin/smbcontrol
 bin/smbpasswd
@@ -20,6 +21,7 @@ etc/codepages/unicode_map.437
 etc/codepages/codepage.737
 etc/codepages/unicode_map.737
 etc/codepages/codepage.775
+etc/codepages/unicode_map.775
 etc/codepages/codepage.850
 etc/codepages/unicode_map.850
 etc/codepages/codepage.852
@@ -41,9 +43,12 @@ etc/codepages/unicode_map.ISO8859-1
 etc/codepages/unicode_map.ISO8859-2
 etc/codepages/unicode_map.ISO8859-5
 etc/codepages/unicode_map.ISO8859-7
+etc/codepages/unicode_map.ISO8859-9
+etc/codepages/unicode_map.ISO8859-13
+etc/codepages/unicode_map.ISO8859-15
 etc/codepages/codepage.857
 etc/codepages/unicode_map.857
-etc/codepages/unicode_map.ISO8859-9
+etc/codepages/unicode_map.KOI8-R
 etc/smb.conf.default
 sbin/smbd
 sbin/nmbd
@@ -89,19 +94,27 @@ share/doc/samba/faq/sambafaq.sgml
 share/doc/samba/faq/sambafaq.txt
 share/doc/samba/htmldocs/DOMAIN_MEMBER.html
 share/doc/samba/htmldocs/NT_Security.html
+share/doc/samba/htmldocs/Samba-HOWTO-Collection.html
+share/doc/samba/htmldocs/UNIX_INSTALL.html
 share/doc/samba/htmldocs/findsmb.1.html
 share/doc/samba/htmldocs/lmhosts.5.html
 share/doc/samba/htmldocs/make_smbcodepage.1.html
+share/doc/samba/htmldocs/msdfs_setup.html
 share/doc/samba/htmldocs/nmbd.8.html
 share/doc/samba/htmldocs/nmblookup.1.html
-share/doc/samba/htmldocs/rpcclient.8.html
+share/doc/samba/htmldocs/printer_driver2.html
+share/doc/samba/htmldocs/rpcclient.1.html
 share/doc/samba/htmldocs/samba-pdc-faq.html
 share/doc/samba/htmldocs/samba-pdc-howto.html
 share/doc/samba/htmldocs/samba.7.html
 share/doc/samba/htmldocs/smb.conf.5.html
+share/doc/samba/htmldocs/smbcacls.1.html
 share/doc/samba/htmldocs/smbclient.1.html
 share/doc/samba/htmldocs/smbcontrol.1.html
 share/doc/samba/htmldocs/smbd.8.html
+share/doc/samba/htmldocs/smbmnt.8.html
+share/doc/samba/htmldocs/smbmount.8.html
+share/doc/samba/htmldocs/smbumount.8.html
 share/doc/samba/htmldocs/smbpasswd.5.html
 share/doc/samba/htmldocs/smbpasswd.8.html
 share/doc/samba/htmldocs/smbrun.1.html
@@ -114,6 +127,7 @@ share/doc/samba/htmldocs/testparm.1.html
 share/doc/samba/htmldocs/testprns.1.html
 share/doc/samba/htmldocs/wbinfo.1.html
 share/doc/samba/htmldocs/wfw_slip.htm
+share/doc/samba/htmldocs/winbind.html
 share/doc/samba/htmldocs/winbindd.8.html
 share/doc/samba/textdocs/Application_Serving.txt
 share/doc/samba/textdocs/BROWSING-Config.txt
@@ -125,8 +139,6 @@ share/doc/samba/textdocs/DIAGNOSIS.txt
 share/doc/samba/textdocs/DNIX.txt
 share/doc/samba/textdocs/DOMAIN.txt
 share/doc/samba/textdocs/DOMAIN_CONTROL.txt
-share/doc/samba/textdocs/DOMAIN_MEMBER.txt
-share/doc/samba/textdocs/ENCRYPTION.txt
 share/doc/samba/textdocs/Faxing.txt
 share/doc/samba/textdocs/GOTCHAS.txt
 share/doc/samba/textdocs/HINTS.txt
@@ -135,11 +147,9 @@ share/doc/samba/textdocs/Imprints.txt
 share/doc/samba/textdocs/MIRRORS.txt
 share/doc/samba/textdocs/Macintosh_Clients.txt
 share/doc/samba/textdocs/NTDOMAIN.txt
-share/doc/samba/textdocs/NT_Security.txt
 share/doc/samba/textdocs/NetBIOS.txt
 share/doc/samba/textdocs/OS2-Client-HOWTO.txt
 share/doc/samba/textdocs/PRINTER_DRIVER.txt
-share/doc/samba/textdocs/PRINTER_DRIVER2.txt
 share/doc/samba/textdocs/PROFILES.txt
 share/doc/samba/textdocs/PROJECTS
 share/doc/samba/textdocs/Passwords.txt
@@ -157,7 +167,6 @@ share/doc/samba/textdocs/Speed2.txt
 share/doc/samba/textdocs/Support.txt
 share/doc/samba/textdocs/Tracing.txt
 share/doc/samba/textdocs/UNIX-SMB.txt
-share/doc/samba/textdocs/UNIX_INSTALL.txt
 share/doc/samba/textdocs/UNIX_SECURITY.txt
 share/doc/samba/textdocs/Win95.txt
 share/doc/samba/textdocs/WinNT.txt
@@ -168,31 +177,6 @@ share/doc/samba/textdocs/logo.ps
 share/doc/samba/textdocs/samba-pdc-faq.txt
 share/doc/samba/textdocs/samba-pdc-howto.txt
 share/doc/samba/textdocs/security_level.txt
-share/doc/samba/yodldocs/DOMAIN_MEMBER.yo
-share/doc/samba/yodldocs/NT_Security.yo
-share/doc/samba/yodldocs/findsmb.1.yo
-share/doc/samba/yodldocs/lmhosts.5.yo
-share/doc/samba/yodldocs/make_smbcodepage.1.yo
-share/doc/samba/yodldocs/nmbd.8.yo
-share/doc/samba/yodldocs/nmblookup.1.yo
-share/doc/samba/yodldocs/rpcclient.8.yo
-share/doc/samba/yodldocs/samba.7.yo
-share/doc/samba/yodldocs/smb.conf.5.yo
-share/doc/samba/yodldocs/smbclient.1.yo
-share/doc/samba/yodldocs/smbcontrol.1.yo
-share/doc/samba/yodldocs/smbd.8.yo
-share/doc/samba/yodldocs/smbpasswd.5.yo
-share/doc/samba/yodldocs/smbpasswd.8.yo
-share/doc/samba/yodldocs/smbrun.1.yo
-share/doc/samba/yodldocs/smbsh.1.yo
-share/doc/samba/yodldocs/smbspool.8.yo
-share/doc/samba/yodldocs/smbstatus.1.yo
-share/doc/samba/yodldocs/smbtar.1.yo
-share/doc/samba/yodldocs/swat.8.yo
-share/doc/samba/yodldocs/testparm.1.yo
-share/doc/samba/yodldocs/testprns.1.yo
-share/doc/samba/yodldocs/wbinfo.1.yo
-share/doc/samba/yodldocs/winbindd.8.yo
 share/doc/samba/README.swat
 share/examples/samba/simple/README
 share/examples/samba/simple/smb.conf
@@ -239,19 +223,27 @@ share/examples/samba/README
 share/swat/help/welcome.html
 share/swat/help/DOMAIN_MEMBER.html
 share/swat/help/NT_Security.html
+share/swat/help/Samba-HOWTO-Collection.html
+share/swat/help/UNIX_INSTALL.html
 share/swat/help/findsmb.1.html
 share/swat/help/lmhosts.5.html
 share/swat/help/make_smbcodepage.1.html
+share/swat/help/msdfs_setup.html
 share/swat/help/nmbd.8.html
 share/swat/help/nmblookup.1.html
-share/swat/help/rpcclient.8.html
+share/swat/help/printer_driver2.html
+share/swat/help/rpcclient.1.html
 share/swat/help/samba-pdc-faq.html
 share/swat/help/samba-pdc-howto.html
 share/swat/help/samba.7.html
 share/swat/help/smb.conf.5.html
+share/swat/help/smbcacls.1.html
 share/swat/help/smbclient.1.html
 share/swat/help/smbcontrol.1.html
 share/swat/help/smbd.8.html
+share/swat/help/smbmnt.8.html
+share/swat/help/smbmount.8.html
+share/swat/help/smbumount.8.html
 share/swat/help/smbpasswd.5.html
 share/swat/help/smbpasswd.8.html
 share/swat/help/smbrun.1.html
@@ -263,6 +255,7 @@ share/swat/help/swat.8.html
 share/swat/help/testparm.1.html
 share/swat/help/testprns.1.html
 share/swat/help/wbinfo.1.html
+share/swat/help/winbind.html
 share/swat/help/winbindd.8.html
 share/swat/images/globals.gif
 share/swat/images/home.gif
@@ -278,7 +271,6 @@ share/swat/include/header.html
 @dirrm share/doc/samba/faq
 @dirrm share/doc/samba/htmldocs
 @dirrm share/doc/samba/textdocs
-@dirrm share/doc/samba/yodldocs
 @dirrm share/doc/samba
 @dirrm share/examples/samba/simple
 @dirrm share/examples/samba/tridge
