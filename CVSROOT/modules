@@ -354,6 +354,7 @@ apg		ports/security/apg
 apinger		ports/net/apinger
 apotheke	ports/x11-fm/apotheke
 apr		ports/devel/apr
+apr-svn		ports/devel/apr-svn
 apsfilter	ports/print/apsfilter
 apwal		ports/x11/apwal
 aqmoney		ports/finance/aqmoney
