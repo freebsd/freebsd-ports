@@ -1,0 +1,65 @@
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -33,11 +33,11 @@
+ TOBJS=testpri.o
+ T2OBJS=testprilib.o
+ STATIC_LIBRARY=libpri.a
+-DYNAMIC_LIBRARY=libpri.so.1.0
++DYNAMIC_LIBRARY=libpri.so.1
+ STATIC_OBJS=pri.o q921.o prisched.o q931.o
+ DYNAMIC_OBJS=pri.lo q921.lo prisched.lo q931.lo
+-CFLAGS=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS)
+-INSTALL_PREFIX=
++CFLAGS+=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes $(ALERTING) $(LIBPRI_COUNTERS)
++INSTALL_PREFIX=$(PREFIX)
+ ifeq (${OSARCH},Linux)
+ LDCONFIG_FLAGS=-n
+ else
+@@ -62,20 +62,19 @@
+ 	@cvs update -d
+ 
+ install: $(STATIC_LIBRARY) $(DYNAMIC_LIBRARY)
+-	mkdir -p $(INSTALL_PREFIX)/usr/lib
+-	mkdir -p $(INSTALL_PREFIX)/usr/include
+-	install -m 644 libpri.h $(INSTALL_PREFIX)/usr/include
+-	install -m 755 $(DYNAMIC_LIBRARY) $(INSTALL_PREFIX)/usr/lib
+-	( cd $(INSTALL_PREFIX)/usr/lib ; ln -sf libpri.so.1 libpri.so )
+-	install -m 644 $(STATIC_LIBRARY) $(INSTALL_PREFIX)/usr/lib
+-	/sbin/ldconfig
++	mkdir -p $(INSTALL_PREFIX)/lib
++	mkdir -p $(INSTALL_PREFIX)/include
++	$(BSD_INSTALL_DATA) libpri.h $(INSTALL_PREFIX)/include
++	$(BSD_INSTALL_PROGRAM) $(DYNAMIC_LIBRARY) $(INSTALL_PREFIX)/lib
++	( cd $(INSTALL_PREFIX)/lib ; ln -sf libpri.so.1 libpri.so )
++	$(BSD_INSTALL_DATA) $(STATIC_LIBRARY) $(INSTALL_PREFIX)/lib
+ 
+ uninstall:
+ 	@echo "Removing Libpri"
+-	rm -f $(INSTALL_PREFIX)/usr/lib/libpri.so.1.0
+-	rm -f $(INSTALL_PREFIX)/usr/lib/libpri.so
+-	rm -f $(INSTALL_PREFIX)/usr/lib/libpri.a
+-	rm -f $(INSTALL_PREFIX)/usr/include/libpri.h
++	rm -f $(INSTALL_PREFIX)/lib/libpri.so.1
++	rm -f $(INSTALL_PREFIX)/lib/libpri.so
++	rm -f $(INSTALL_PREFIX)/lib/libpri.a
++	rm -f $(INSTALL_PREFIX)/include/libpri.h
+ 
+ pritest: pritest.o
+ 	$(CC) -o pritest pritest.o -L. -lpri -lzap $(CFLAGS)
+@@ -100,11 +99,11 @@
+ 
+ $(DYNAMIC_LIBRARY): $(DYNAMIC_OBJS)
+ 	$(CC) -shared -Wl,-soname,libpri.so.1 -o $@ $(DYNAMIC_OBJS)
+-	/sbin/ldconfig $(LDCONFIG_FLAGS) .
++	#/sbin/ldconfig $(LDCONFIG_FLAGS) .
+ 	ln -sf libpri.so.1 libpri.so
+ 
+ clean:
+-	rm -f *.o *.so *.lo *.so.1 *.so.1.0
++	rm -f *.o *.so *.lo *.so.1
+ 	rm -f testpri testprilib $(STATIC_LIBRARY) $(DYNAMIC_LIBRARY)
+ 	rm -f pritest pridump
+ 	rm -f .depend
