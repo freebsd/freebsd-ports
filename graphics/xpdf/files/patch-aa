@@ -1,13 +1,25 @@
---- Makefile.orig	Fri May 24 10:45:36 1996
-+++ Makefile	Wed May 29 13:21:40 1996
-@@ -21,8 +21,8 @@
- 	cd xpdf; $(MAKE) pdftops
- 
- install:
--	install -c xpdf/xpdf $(PREFIX)/bin
--	install -c xpdf/pdftops $(PREFIX)/bin
-+	install -c xpdf/xpdf $(X11BASE)/bin
-+	install -c xpdf/pdftops $(X11BASE)/bin
- 
- clean:
- 	cd goo; $(MAKE) clean
+*** Makefile.orig	Fri Nov 29 21:16:32 1996
+--- Makefile	Fri Nov 29 21:19:22 1996
+***************
+*** 21,30 ****
+  	cd xpdf; $(MAKE) pdftops
+  
+  install:
+! 	install -c xpdf/xpdf $(PREFIX)/bin
+! 	install -c xpdf/pdftops $(PREFIX)/bin
+! 	install -c xpdf.1 $(PREFIX)/man/man1
+! 	install -c pdftops.1 $(PREFIX)/man/man1
+  
+  clean:
+  	cd goo; $(MAKE) clean
+--- 21,30 ----
+  	cd xpdf; $(MAKE) pdftops
+  
+  install:
+! 	install -c xpdf/xpdf $(X11BASE)/bin
+! 	install -c xpdf/pdftops $(X11BASE)/bin
+! 	install -c xpdf.1 $(X11BASE)/man/man1
+! 	install -c pdftops.1 $(X11BASE)/man/man1
+  
+  clean:
+  	cd goo; $(MAKE) clean
