@@ -5656,6 +5656,7 @@ pngcrush	ports/graphics/pngcrush
 pngquant	ports/graphics/pngquant
 pnm2ppa		ports/print/pnm2ppa
 pnpinfo		src/usr.sbin/pnpinfo
+poc		ports/security/poc
 poedit		ports/editors/poedit
 polygraph	ports/benchmarks/polygraph
 pom		src/games/pom
