@@ -1,7 +1,7 @@
---- localsys.h.orig	Tue Apr  7 01:55:28 1998
-+++ localsys.h	Thu Nov 19 00:17:50 1998
-@@ -13,14 +13,14 @@
-  *	func_type  funcname __P((arglist));
+--- localsys.h.orig	Mon Feb 15 02:27:37 1999
++++ localsys.h	Thu Feb 18 11:09:40 1999
+@@ -13,13 +13,13 @@
+  *	func_type  funcname P__((arglist));
   */
  
 -#include "config.h"
@@ -11,27 +11,8 @@
  #include <fcntl.h>
  #include <pwd.h>
  #include <grp.h>
- 
-+#include "config.h"
 +
++#include "config.h"
+ 
  #ifdef HAVE_UNISTD_H
  #include <unistd.h>
- #endif
-@@ -192,7 +192,7 @@
- #endif
- 
- #ifndef _SVR4_SOURCE
--#ifndef Digital_UNIX
-+#if !(defined(Digital_UNIX) || (defined(BSD) && (BSD >= 199103)))
- extern int gethostname __P((char *, size_t size));
- #endif
- #endif
-@@ -254,7 +254,7 @@
- #endif
- 
- /* type returned by setgrent() */
--#ifdef Digital_UNIX
-+#if defined(Digital_UNIX) || (defined(BSD) && (BSD >= 199103))
- typedef int SETGRENT_T;
- #else
- typedef void SETGRENT_T;
