@@ -104,10 +104,8 @@ share/locale/zh_TW/LC_MESSAGES/scrollkeeper.mo
 @dirrm share/gnome/scrollkeeper/Templates
 @dirrm share/gnome/scrollkeeper
 @dirrm share/gnome/omf/scrollkeeper
-@unexec xmlcatalog --noout --del "%D/share/gnome/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd" %%LOCALBASE%%/share/xml/catalog 2>/dev/null || true
-@unexec cp -f %%LOCALBASE%%/share/xml/catalog.bak %%LOCALBASE%%/share/xml/catalog 2>/dev/null || true
-@unexec cp -f %%LOCALBASE%%/share/xml/docbook/catalog.bak %%LOCALBASE%%/share/xml/docbook/catalog 2>/dev/null || true
 @unexec rm -f /var/log/scrollkeeper.log 2>/dev/null || true
 @unexec rm -rf /var/db/scrollkeeper 2>/dev/null || true
+@unexec echo "If you are permantly removing this port, you should do a ``rm -rf %%LOCALBASE%%/share/sk/catalog %%LOCALBASE%%/share/sk/docbook/catalog`` to remove the XML catalogs that are left." | fmt
 @exec touch -f /var/log/scrollkeeper.log
 @exec mkdir -p /var/db/scrollkeeper

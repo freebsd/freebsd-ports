@@ -5,7 +5,7 @@
  XSLT_LIBS = @XSLT_LIBS@
  
 -CATALOG = $(sysconfdir)/xml/catalog
-+CATALOG = %%LOCALBASE%%/share/xml/catalog
++CATALOG = %%LOCALBASE%%/share/sk/catalog
  dtdsdir = $(datadir)/xml/scrollkeeper/dtds
  dtds_HEADERS = scrollkeeper-omf.dtd scrollkeeper-cl.dtd
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

@@ -1,5 +1,5 @@
 --- configure.orig	Wed Jul 24 22:26:07 2002
-+++ configure	Wed Oct  9 15:45:48 2002
++++ configure	Thu Jan 16 02:24:32 2003
 @@ -5299,6 +5299,7 @@
  
  # This can be used to rebuild libtool when needed
@@ -17,14 +17,13 @@
 -	if xmlcatalog /etc/xml/catalog "-//OASIS//DTD DocBook XML V4.1.2//EN" | grep "No entry" >/dev/null ; then
 +	echo $ac_n "checking for docbook-dtd42-xml""... $ac_c" 1>&6
 +echo "configure:6282: checking for docbook-dtd42-xml" >&5
-+	if test ! -f $LOCALBASE/share/xml/docbook/catalog ; then
++	if test ! -f $LOCALBASE/share/sk/docbook/catalog ; then
  		echo "* ERROR * "
  		echo " "
--		echo "Couldn't find the DocBook XML V4.1.2 DTD.  Please make sure that you have the docbook-dtd412-xml package installed. If it is installed, the package probably did not register the DTD in the catalog properly. Consult http://scrollkeeper.sourceforge.net/docbook.shtml for more information."
-+		echo "Couldn't find the DocBook XML V4.2 DTD.  Please make sure that you have the docbook-dtd412-xml package installed. If it is installed, the package probably did not register the DTD in the catalog properly. Consult http://scrollkeeper.sourceforge.net/docbook.shtml for more information."
+ 		echo "Couldn't find the DocBook XML V4.1.2 DTD.  Please make sure that you have the docbook-dtd412-xml package installed. If it is installed, the package probably did not register the DTD in the catalog properly. Consult http://scrollkeeper.sourceforge.net/docbook.shtml for more information."
  		echo " "
 -		{ echo "configure: error: DocBook XML V4.1.2 DTD not present in /etc/xml/catalog. Make sure docbook-dtd412-xml is installed and registers DTD in catalog." 1>&2; exit 1; }
-+		{ echo "configure: error: DocBook XML V4.2 DTD not present in $LOCALBASE/share/xml. Make sure docbook-dtd412-xml is installed and registers DTD in catalog." 1>&2; exit 1; }
++		{ echo "configure: error: DocBook XML V4.1.2 DTD not present in $LOCALBASE/share/sk. Make sure docbook-dtd412-xml is installed and registers DTD in catalog." 1>&2; exit 1; }
  	fi
  	echo "$ac_t""found" 1>&6
  	;;
