@@ -46,7 +46,6 @@ tomcat/doc/appdev/sample/build.bat
 tomcat/doc/appdev/sample/build.sh
 tomcat/doc/appdev/sample/build.xml
 tomcat/doc/appdev/sample/etc/web.xml
-tomcat/doc/appdev/sample/src/Hello.java
 tomcat/doc/appdev/sample/web/hello.jsp
 tomcat/doc/appdev/sample/web/images/tomcat.gif
 tomcat/doc/appdev/sample/web/index.html
@@ -78,16 +77,16 @@ tomcat/webapps/admin.war
 tomcat/webapps/examples.war
 tomcat/webapps/test.war
 @dirrm tomcat/webapps
+@dirrm tomcat/logs
+@dirrm tomcat/lib
 @dirrm tomcat/doc/uguide/images
 @dirrm tomcat/doc/uguide
 @dirrm tomcat/doc/appdev/sample/web/images
 @dirrm tomcat/doc/appdev/sample/web
 @dirrm tomcat/doc/appdev/sample/etc
-@dirrm tomcat/doc/appdev/sample/src
 @dirrm tomcat/doc/appdev/sample
 @dirrm tomcat/doc/appdev
 @dirrm tomcat/doc
-@dirrm tomcat/lib
 @dirrm tomcat/conf
 @dirrm tomcat/bin
 @dirrm tomcat
