@@ -1,0 +1,5 @@
+diff -uNr gs5.10-ori/cdj850.dev cdj850.dev
+--- gs5.10-ori/cdj850.dev	Thu Jan  1 09:00:00 1970
++++ cdj850.dev	Mon Mar 30 19:18:02 1998
+@@ -0,0 +1 @@
++-dev cdj850 -include page -obj gdevcd8.o gdevpcl.o

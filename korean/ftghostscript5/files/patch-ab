@@ -1,0 +1,17 @@
+diff -uNr gs5.10-ori/devs.mak devs.mak
+--- gs5.10-ori/devs.mak	Mon Mar 30 19:08:35 1998
++++ devs.mak	Mon Mar 30 19:18:43 1998
+@@ -742,8 +742,13 @@
+ 
+ cdeskjet_=gdevcdj.$(OBJ) $(HPPCL)
+ 
++cdeskjet8_=gdevcd8.$(OBJ) $(HPPCL)
++
+ cdeskjet.dev: $(cdeskjet_) page.dev
+ 	$(SETPDEV) cdeskjet $(cdeskjet_)
++
++cdj850.dev: $(cdeskjet8_) page.dev
++	$(SETPDEV) cdj850 $(cdeskjet8_)
+ 
+ cdjcolor.dev: $(cdeskjet_) page.dev
+ 	$(SETPDEV) cdjcolor $(cdeskjet_)
