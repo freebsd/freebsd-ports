@@ -7,7 +7,7 @@
 
 PORTNAME=	mailman
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
@@ -107,7 +107,7 @@ post-install:
 .endfor
 	@ ${CHGRP} -R ${MM_GROUPNAME} ${MAILMANDIR}
 	@ ${MKDIR} ${PREFIX}/${IMGDIR}
-.for imgfile in mailman.jpg PythonPowered.png gnu-head-tiny.jpg
+.for imgfile in mailman.jpg mm-icon.png PythonPowered.png
 	@ ${CP} ${MAILMANDIR}/icons/${imgfile} ${PREFIX}/${IMGDIR}
 .endfor
 	@ uudecode -p ${FILESDIR}/powerlogo.gif.uue > \

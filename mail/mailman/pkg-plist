@@ -9,8 +9,8 @@
 @exec mkdir -p %D/%%MMDIR%%/qfiles
 @exec mkdir -p %D/%%MMDIR%%/spam
 %%IMGDIR%%/PythonPowered.png
-%%IMGDIR%%/gnu-head-tiny.jpg
 %%IMGDIR%%/mailman.jpg
+%%IMGDIR%%/mm-icon.png
 %%IMGDIR%%/powerlogo.gif
 %%MMDIR%%/Mailman/Archiver/Archiver.py
 %%MMDIR%%/Mailman/Archiver/Archiver.pyc
