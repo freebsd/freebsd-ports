@@ -12,8 +12,8 @@ include/libexif-gtk/gtk-exif-entry-rational.h
 include/libexif-gtk/gtk-exif-entry-resolution.h
 include/libexif-gtk/gtk-exif-entry-version.h
 include/libexif-gtk/gtk-exif-entry.h
-@dirrm include/libexif-gtk
 lib/libexif-gtk.a
 lib/libexif-gtk.so
-lib/libexif-gtk.so.3
+lib/libexif-gtk.so.4
 libdata/pkgconfig/libexif-gtk.pc
+@dirrm include/libexif-gtk
