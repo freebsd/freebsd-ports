@@ -57,7 +57,9 @@ lib/gauche/%%VERSION%%/include/gc_pthread_redirects.h
 @dirrm lib/gauche/%%VERSION%%
 @dirrm lib/gauche
 lib/libgauche.a
+lib/libgauche.la
 lib/libgauche.so
+lib/libgauche.so.0
 share/gauche/%%VERSION%%/aclocal.m4
 share/gauche/%%VERSION%%/lib/binary/io.scm
 share/gauche/%%VERSION%%/lib/binary/pack.scm
