@@ -5,30 +5,37 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bfe
-PORTVERSION=	2mar2001
+PORTNAME=	bfe2
+PORTVERSION=	20030124
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.qzx.com/bfe/_download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	bfe
+DISTNAME=	bfe2-24jan2003
 
 MAINTAINER=	greid@FreeBSD.org
-COMMENT=	X11 GUI for the bochs debugger
+COMMENT=	X11 GUI for the bochs debugger (revision 2)
 
-LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 RUN_DEPENDS=	bochs:${PORTSDIR}/emulators/bochs
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
+CONFIGURE_SCRIPT=	configure.sh
+WRKSRC=		${WRKDIR}/bfe2
 
-WRKSRC=		${WRKDIR}/bfe
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
+		-e 's|%%CC%%|${CC}|' -e 's|%%CFLAGS%%|${CFLAGS}|' \
+		-e 's|gtk-config|${GTK_CONFIG}|' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
-pre-build:
-	${PERL} -pi -e "s@/usr/X11R6@${X11BASE}@g; \
-			s@/usr/local@${LOCALBASE}@g; \
-			s@-lforms@-lforms -lXpm@g; \
-			s@gcc@${CC}@g; s@-O2@${CFLAGS}@g" ${WRKSRC}/Makefile
+do-configure:
+	@cd ${WRKSRC} && ${SH} ${CONFIGURE_SCRIPT}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bfe ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bfe2 ${PREFIX}/bin
 	-@${MKDIR} ${PREFIX}/share/bfe
 	${INSTALL_DATA} ${WRKSRC}/README.bferc ${PREFIX}/share/bfe/bferc.sample
 	${INSTALL_DATA} ${WRKSRC}/README.bferc ${PREFIX}/share/bfe

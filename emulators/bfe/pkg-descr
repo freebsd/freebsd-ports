@@ -1,6 +1,7 @@
-Bochs Frontend is a graphical interface for X11 to the bochs x86 emulator.
+Bochs Frontend (bfe2) is a graphical interface for X11 to the
+bochs x86 emulator.
 
-WWW: http://www.qzx.com/bfe/
+WWW: http://bfe.sourceforge.net/
 
 - John
 jhb@FreeBSD.org
