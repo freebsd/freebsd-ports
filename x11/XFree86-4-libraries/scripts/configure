@@ -246,7 +246,8 @@ cat <<'END'
  will not be enabled if the kerberos libraries are unavailable.
 
 END
-yesno "Do you want to enable KerberosIV support? [YES] "
+#yesno "Do you want to enable KerberosIV support? [YES] "
+answ=NO
 cpkb=NO
 if [ $answ = YES ]; then
     LIBKRB=/usr/lib/libkrb.a
@@ -266,6 +267,11 @@ fi
 if [ $cpkb != NO ]; then
   echo "#define	HasKrb4		$answ"	>> $F
 fi
+
+# ELF detection
+test `sysctl -n kern.osreldate` -ge 300004 &&
+  test `objformat` = elf &&
+  echo "#define UseElfFormat		YES" >> $F
 
 echo
 echo "End of configuration questions. No more user input required"

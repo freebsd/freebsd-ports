@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.43 1998/08/05 09:31:39 asami Exp $
+# $Id: Makefile,v 1.44 1998/08/05 19:28:17 jmz Exp $
 #
 
 DISTNAME=	xc
@@ -60,6 +60,6 @@ pre-fetch:
 pre-install:
 	${MKDIR} /usr/X11R6
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
