@@ -5,7 +5,7 @@
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lintl  $LIBS"
-+LIBS="-L/usr/local/lib -lintl  $LIBS"
++LIBS="-L$LOCALBASE/lib -lintl  $LIBS"
  cat > conftest.$ac_ext <<EOF
  #line 2006 "configure"
  #include "confdefs.h"
@@ -34,7 +34,7 @@
  #include <$ac_hdr>
  EOF
 -ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
-+ac_try="$ac_cpp -I/usr/local/include conftest.$ac_ext >/dev/null 2>conftest.out"
++ac_try="$ac_cpp -I$LOCALBASE/include conftest.$ac_ext >/dev/null 2>conftest.out"
  { (eval echo configure:4183: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
  ac_err=`grep -v '^ *+' conftest.out`
  if test -z "$ac_err"; then
