@@ -14,10 +14,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An alternative to the OpenGL Utility Toolkit (GLUT) library
 
-USE_AUTOMAKE=	yes
+USE_AUTOMAKE_VER=	14
 USE_AUTOHEADER=	yes
 HAS_CONFIGURE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 USE_XLIB=	yes
 CONFIGURE_ARGS=	--x-includes=${X11BASE}/include			\

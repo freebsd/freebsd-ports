@@ -19,7 +19,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 USE_GNOME=	pkgconfig
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc/enca \

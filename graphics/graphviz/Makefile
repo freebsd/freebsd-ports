@@ -22,9 +22,9 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_XPM=	yes
 USE_GMAKE=	yes
-USE_AUTOMAKE=	yes
+USE_AUTOMAKE_VER=	14
 AUTOMAKE_ARGS=	--add-missing
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		TCLCONFIG=${LOCALBASE}/lib/tcl8.4/tclConfig.sh \

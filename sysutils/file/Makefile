@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	File - determine file type
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--enable-fsect-man5
 MAN1=		file.1
 MAN3=		libmagic.3

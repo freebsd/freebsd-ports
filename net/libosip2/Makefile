@@ -16,7 +16,7 @@ COMMENT=	A low layer of SIP implementation
 
 USE_GNOME=	gnometarget lthack
 USE_REINPLACE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CONFIGURE_ARGS=	--disable-debug --disable-trace
 INSTALLS_SHLIB=	yes

@@ -22,7 +22,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		xslt.2:${PORTSDIR}/textproc/libxslt
 
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 CONFIGURE_ENV=	OGG_PREFIX=${LOCALBASE}
 
 WRKSRC=		${WRKDIR}/icecast-${PORTVERSION}

@@ -19,7 +19,7 @@ COMMENT=	Library for high-performance 2D graphics
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 
 CONFLICTS=	libart-*
 

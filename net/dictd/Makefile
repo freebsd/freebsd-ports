@@ -23,7 +23,7 @@ MAN8=		dictd.8
 
 USE_REINPLACE=	yes
 USE_BISON=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
 		--without-local-zlib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

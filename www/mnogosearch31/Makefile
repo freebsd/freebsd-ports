@@ -19,7 +19,7 @@ RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 MAN1=		indexer.1
 MAN5=		indexer.conf.5
 
-USE_LIBTOOL=    yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB= yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS+=--enable-phrase \

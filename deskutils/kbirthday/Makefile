@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 
 # necesary to access the second master site by getting rid of the default switch -A
 FETCH_CMD ?=/usr/bin/fetch -Rr

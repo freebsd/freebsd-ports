@@ -20,7 +20,7 @@ DOCDIR=		share/doc/eblook
 LIB_DEPENDS=    eb.7:${PORTSDIR}/japanese/eb
 
 GNU_CONFIGURE=	yes
-USE_AUTOMAKE=	yes
+USE_AUTOMAKE_VER=	14
 CONFIGURE_ARGS=	--with-eb-includes=${PREFIX}/include \
 		--with-eb-libraries=${PREFIX}/lib
 

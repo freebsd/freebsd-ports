@@ -16,7 +16,7 @@ COMMENT=	Zeroconf/Rendezvous implementation
 ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

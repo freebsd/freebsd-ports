@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU diction and style
 
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 
 PLIST_FILES=	bin/diction bin/style share/diction/C share/diction/de \
 		share/diction/en

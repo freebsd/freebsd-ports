@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.nuclearelephant.com/projects/dspam/sources/
 MAINTAINER=	rob@debank.tv
 COMMENT=	A server-side bayesian spam filter
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

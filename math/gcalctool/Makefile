@@ -18,7 +18,7 @@ COMMENT=	A GNOME 2 calculator tool based on the old calctool for OpenWindows
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack lthack intlhack libgnomeui
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

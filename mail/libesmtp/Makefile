@@ -19,7 +19,7 @@ COMMENT=	A library for posting electronic mail
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_PERL5_BUILD=yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.latte.org/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple language for marking up text in a very expressive way
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX}"
 CONFIGURE_ARGS+=	--enable-shared
 

@@ -26,7 +26,7 @@ DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/libnasl
 
 USE_BISON=	YES
-USE_LIBTOOL=	YES
+USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--sharedstatedir=${PREFIX}/etc/nessus/com \
 		--localstatedir=${PREFIX}/etc/nessus/var
 

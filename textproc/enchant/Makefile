@@ -16,7 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Dictionary/spellchecking framework
 
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget glib20 lthack
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

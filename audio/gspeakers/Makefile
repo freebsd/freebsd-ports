@@ -20,7 +20,7 @@ RUN_DEPENDS=	spice3:${PORTSDIR}/cad/spice
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libxml2 gnomeprefix
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_REINPLACE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"

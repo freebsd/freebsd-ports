@@ -25,7 +25,7 @@ USE_GNOMENG=	yes
 USE_GNOME=	gtk12 libcapplet libxml gnomepanel orbit gdkpixbuf gnomelibs gnomeprint
 USE_BISON=	yes
 USE_BZIP2=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"	\
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"		\

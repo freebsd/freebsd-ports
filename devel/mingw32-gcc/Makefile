@@ -44,7 +44,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${GCCVERSION}
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--enable-languages=c,c++,f77,objc,java \
 		--with-gcc --with-gnu-ld --with-gnu-as \

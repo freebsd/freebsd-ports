@@ -22,7 +22,7 @@ LIB_DEPENDS=	Magick++.6:${PORTSDIR}/graphics/ImageMagick \
 		EMF.1:${PORTSDIR}/graphics/libemf
 
 USE_GNOME=	gnometarget pkgconfig
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--with-libemf-include=${LOCALBASE}/include/libEMF

@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier libglade gnomevfs
 GNOME_HTML_DIR=	${PREFIX}/share/doc/gal
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--enable-static --with-libiconv
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

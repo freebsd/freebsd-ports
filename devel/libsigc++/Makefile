@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	libsigc \
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Callback Framework for C++
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack
 

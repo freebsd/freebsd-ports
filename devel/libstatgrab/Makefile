@@ -20,7 +20,7 @@ COMMENT=	Provides a useful interface to system statistics
 DIST_SUBDIR=	i-scream
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_GNOME=	gnomehack pkgconfig lthack
 
 MAN3=		cpu_percent_usage.3 get_cpu_diff.3 get_cpu_totals.3 \

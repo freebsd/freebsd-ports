@@ -22,7 +22,7 @@ PLIST_FILES=	bin/cDonkey
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--with-berkeley-db="${LOCALBASE}/include/db3:${LOCALBASE}/lib"
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/cDonkey

@@ -21,7 +21,7 @@ COMMENT=	A file alteration monitor
 CFLAGS+=		-Wno-deprecated
 
 USE_AUTOMAKE_VER=15
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 

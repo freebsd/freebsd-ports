@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	A library providing routines for paper size management
 
-USE_LIBTOOL=	Yes
+USE_LIBTOOL_VER=13
 LIBTOOLFLAGS=	# None, we want the libtool archives
 INSTALLS_SHLIB=	Yes
 USE_GETOPT_LONG=Yes

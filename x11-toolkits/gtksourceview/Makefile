@@ -18,7 +18,7 @@ COMMENT=	A text widget that adds syntax highlighting to the GtkTextView widget
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnome libgnomeprintui
 CONFIGURE_ARGS=	--enable-compile-warnings=no

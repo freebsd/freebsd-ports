@@ -18,7 +18,7 @@ COMMENT=	A general-purpose tool for parameter handling in C++
 
 
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

@@ -26,7 +26,6 @@ USE_GTK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-mpqc
 
-USE_AUTOCONF=	yes
 USE_AUTOCONF_VER=	253
 
 pre-configure:

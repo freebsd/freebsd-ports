@@ -19,7 +19,7 @@ LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2 \
 		edb.1:${PORTSDIR}/databases/edb
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 

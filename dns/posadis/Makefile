@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	--disable-fam
 PLIST_SUB=	FAM="@comment "
 .endif
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes

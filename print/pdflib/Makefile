@@ -19,7 +19,7 @@ RESTRICTED=	"many odd restrictions on usage and distribution"
 
 LATEST_LINK?=	${PORTNAME}
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GNOME=	lthack
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

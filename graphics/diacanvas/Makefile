@@ -17,7 +17,7 @@ COMMENT=	A general drawing canvas from dia dialog editor
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 imlib gnomehack
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

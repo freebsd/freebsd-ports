@@ -16,7 +16,7 @@ COMMENT=	Utilities for accessing HFS+ filesystems
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 USE_AUTOMAKE_VER=	15
 AUTOMAKE_ARGS=		--add-missing

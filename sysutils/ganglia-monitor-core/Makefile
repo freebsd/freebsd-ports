@@ -29,7 +29,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 .if !defined (WITHOUT_GMETAD)
 CONFIGURE_ARGS+=	--with-gmetad
 .endif
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 .if defined (WITHOUT_GMETAD)
 PLIST_SUB+=	GMETAD="@comment "

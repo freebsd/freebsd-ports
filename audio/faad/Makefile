@@ -27,7 +27,7 @@ AUTOMAKE_ARGS=	--add-missing
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--program-transform-name='' --with-mp4v2

@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/all
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 CONFIGURE_ARGS=	--with-metakit=${LOCALBASE} \
 		--with-tcl=${LOCALBASE}/lib/tcl${TCL_VER} --enable-tcl \
 		--with-expat=${LOCALBASE} --enable-xml

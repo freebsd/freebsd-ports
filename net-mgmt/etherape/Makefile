@@ -17,7 +17,7 @@ COMMENT=	A graphical network traffic visualization tool for gnome
 
 USE_GETTEXT=	yes
 USE_GNOME=	libglade2 libgnomeui
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -23,7 +23,7 @@ LOGDIR?=	/var/log
 CONFLICTS=	gnu-radius-1.* openradius-0.* radiusd-cistron-1.*
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--prefix=${PREFIX} --quiet --with-logdir=${LOGDIR} \
 		--localstatedir=/var \
 		--disable-ltdl-install \

@@ -20,7 +20,7 @@ BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 OOPSVERSION=	1.5.23
 
 USE_SUBMAKE=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 CONFIGURE_ARGS?=--sbindir=${PREFIX}/sbin \
 		--sysconfdir=${PREFIX}/etc/oops \
 		--localstatedir=${OOPSVAR} \

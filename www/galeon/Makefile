@@ -38,7 +38,7 @@ HEADERS_SUFX=
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo libglade gnomevfs gnometarget
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla${HEADERS_SUFX}" \
 		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}" \

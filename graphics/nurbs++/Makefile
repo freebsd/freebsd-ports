@@ -16,7 +16,7 @@ MAINTAINER= 	ports@FreeBSD.org
 COMMENT=	A C++ library for representing curves or surfaces
 
 USE_REINPLACE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--program-transform-name="s/x/x/"
 INSTALLS_SHLIB=	yes
 

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	srm
 MAINTAINER=	kjones@antihackertoolkit.com
 COMMENT=	Secure rm, a utility which destroys file contents before unlinking
 
-USE_LIBTOOL=	YES
+USE_LIBTOOL_VER=13
 
 MAN1=		srm.1
 PLIST_FILES=	bin/srm

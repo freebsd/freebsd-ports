@@ -17,7 +17,7 @@ COMMENT=	Library to read digital camera file meta-data
 
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"

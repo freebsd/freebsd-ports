@@ -15,7 +15,7 @@ MASTER_SITES=	http://download.sourceforge.net/newsfish/ \
 MAINTAINER=	asaddi@philosophysw.com
 COMMENT=	Batch USENET news reader with filter capabilities
 
-USE_AUTOMAKE=	yes
+USE_AUTOMAKE_VER=	14
 USE_GMAKE=	yes
 
 MAN1=		newsfish.1

@@ -25,7 +25,7 @@ NO_LATEST_LINK=	yes
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes

@@ -19,7 +19,7 @@ COMMENT=	C++ class library of common digital signal processing functions
 
 WRKSRC=		${WRKDIR}/libdsp-src/${PORTNAME:S/dsp/DSP/}-${PORTVERSION}
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 LIBTOOLFILES=	# none
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" MKDIR="${MKDIR}" \

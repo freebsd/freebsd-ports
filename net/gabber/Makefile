@@ -23,7 +23,7 @@ LIB_DEPENDS=	gnomemm-1.2.10:${PORTSDIR}/x11-toolkits/gnome--
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget libglade gal
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 LIBTOOLFILES=	configure jabberoo/configure
 CONFIGURE_ENV+=	GNOME_LIBCONFIG_PATH="${LOCALBASE}/lib:${X11BASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \

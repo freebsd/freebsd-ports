@@ -20,7 +20,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 MODULES?=	/modules
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

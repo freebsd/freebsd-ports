@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack libbonobo gnomevfs2
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc/gsf \
 		--disable-gtk-doc --with-gnome --with-bz2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -20,7 +20,7 @@ LIB_DEPENDS=	wwwcore.1:${PORTSDIR}/www/libwww
 RUN_DEPENDS=	${SITE_PERL}/Frontier/Client.pm:${PORTSDIR}/net/p5-Frontier-RPC
 
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
 MAN1=	meerkat-app-list.1 xml-rpc-api2cpp.1 xmlrpc-c-config.1 \

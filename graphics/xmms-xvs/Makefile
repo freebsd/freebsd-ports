@@ -25,7 +25,7 @@ USE_BISON=	yes
 USE_GNOME=	gtk12 libxml2
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	XMMS_CONFIG="${XMMS_CONFIG}"
 
 .include <bsd.port.pre.mk>

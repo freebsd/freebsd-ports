@@ -21,7 +21,7 @@ BUILD_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
 USE_XLIB=	yes
 .endif
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
 STRIP=		# Nothing to be stripped.
 

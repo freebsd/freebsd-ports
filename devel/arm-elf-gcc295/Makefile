@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --enable-languages="c,c++,objc"
 CONFIGURE_ARGS+=	--with-cpu="${DEFAULT_CPU}"
 .endif
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 LIBTOOLFILES=	configure etc/configure gcc/configure libiberty/configure \
 		libobjc/configure texinfo/configure \
 		texinfo/testsuite/configure

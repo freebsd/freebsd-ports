@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.student.lu.se/~etn97ksi/sim_home/filer/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Hash Table
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

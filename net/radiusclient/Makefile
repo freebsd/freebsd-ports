@@ -16,7 +16,7 @@ MAINTAINER=	maurice@castro.aus.net
 COMMENT=	Client library and basic utilities for Radius authenticated login
 
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

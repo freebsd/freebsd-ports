@@ -21,7 +21,7 @@ LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile \
 
 USE_GNOME=	glib12
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes

@@ -21,7 +21,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_BZIP2=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	yes
 NO_CHECKSUM=	yes	# the tarball is created on the fly from CVS
 CONFIGURE_ARGS=	--prefix=${PREFIX}

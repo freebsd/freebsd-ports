@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net/jabber
 
 PLIST_FILES=	lib/jabber/aimtrans.so
 USE_GMAKE=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 
 CONFIGURE_ARGS+=	--with-jabberd=${PREFIX}/include/jabber
 

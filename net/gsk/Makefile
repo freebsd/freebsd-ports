@@ -19,7 +19,7 @@ COMMENT=	A C library for writing servers
 USE_GNOME=	glib12
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
 .if !defined(WITHOUT_OPENSSL)

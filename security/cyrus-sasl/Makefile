@@ -49,7 +49,7 @@ MAN8=		sasldblistusers.8 saslpasswd.8 saslauthd1.8
 USE_RC_SUBR=	YES
 
 USE_AUTOMAKE_VER=14
-USE_LIBTOOL=	YES
+USE_LIBTOOL_VER=13
 AUTOMAKE_ARGS=	--add-missing --include-deps
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \

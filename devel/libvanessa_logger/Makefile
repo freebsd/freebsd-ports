@@ -18,6 +18,6 @@ COMMENT=	Library that provides a generic logging layer
 MAN1=		vanessa_logger_sample.1
 
 INSTALLS_SHLIB= YES
-USE_LIBTOOL=	YES
+USE_LIBTOOL_VER=	13
 
 .include <bsd.port.mk>

@@ -32,7 +32,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${GCCVERSION}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--enable-languages=c --disable-nls
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}

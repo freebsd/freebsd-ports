@@ -15,7 +15,7 @@ MAINTAINER=	stijn@win.tue.nl
 COMMENT=	Configurator for the Blackbox window manager
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=

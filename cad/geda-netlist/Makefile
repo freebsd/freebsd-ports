@@ -20,7 +20,7 @@ LIB_DEPENDS=	geda.20:${PORTSDIR}/cad/libgeda \
 		guile.15:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	${LOCALBASE}/share/gEDA/sym:${PORTSDIR}/cad/geda-symbols
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_GNOME=	gtk12
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

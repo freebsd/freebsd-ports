@@ -15,7 +15,7 @@ COMMENT=		C and C++ that provides exception handling and asset management
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--without-threads
-USE_LIBTOOL=		yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=		yes
 
 .include <bsd.port.mk>

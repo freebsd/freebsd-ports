@@ -24,7 +24,7 @@ LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 USE_GL=		yes
 USE_GNOME=	gnometarget gtk12
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--disable-firewire

@@ -18,7 +18,7 @@ COMMENT=	Hierarchical Data Format library (from NCSA)
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 LIBTOOLFILES=	configure c++/configure
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-cxx --enable-production \

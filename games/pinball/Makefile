@@ -27,7 +27,7 @@ USE_SDL=	image mixer sdl
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_MESA=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}

@@ -21,6 +21,6 @@ PLIST_FILES=	lib/xmms/Input/libtfmx.so
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 
 .include <bsd.port.mk>

@@ -18,7 +18,7 @@ COMMENT=	First Person Shooter with many addons available
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 WANT_SDL=	yes

@@ -18,7 +18,7 @@ COMMENT=	Simple (at the moment) html editor based on GTK+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libxml2 libgtkhtml
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 
 MAN1=	erwin.1
 

@@ -18,7 +18,7 @@ COMMENT=	MikMod Sound Library
 
 USE_REINPLACE=	yes
 WANT_GNOME=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_GMAKE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 MAKE_ENV=	SHELL=/bin/sh

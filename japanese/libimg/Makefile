@@ -18,7 +18,7 @@ COMMENT=	Enhanced Tk adding support for many other Image formats
 BUILD_DEPENDS=	${LOCALBASE}/lib/tcl8.0jp/tclIndex:${PORTSDIR}/japanese/tcl80 \
 		${LOCALBASE}/lib/tk8.0jp/tk.tcl:${PORTSDIR}/japanese/tk80
 
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl${TCLVERSION}jp \
 		--with-tk=${PREFIX}/lib/tk${TKVERSION}jp \

@@ -17,7 +17,7 @@ COMMENT=	Simple/powerful/lightweight/secure/embed-able HTTP server
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 PREFIX=		${LOCALBASE}/wyvern
 CONFIGURE_ARGS=	--with-ssl=yes \
 		--with-ssl-includes="${OPENSSLINC}" \

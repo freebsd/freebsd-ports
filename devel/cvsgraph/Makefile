@@ -30,7 +30,7 @@ DOCS=		ChangeLog LICENSE README
 EXAMPLES=	cvsgraphwrapper.php3 mkimage.php3
 NOT_FOR_ARCHS=	alpha amd64 ia64
 PLIST=		${WRKDIR}/pkg-plist
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-freetype2-inc=${X11BASE}/include/freetype2/freetype \
 		--with-freetype2-lib=${X11BASE}/lib \

@@ -23,7 +23,7 @@ USE_REINPLACE=	yes
 USE_GNOME=	gnomelibs
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 
 .include <bsd.port.pre.mk>
 

@@ -14,7 +14,7 @@ COMMENT=	Prelude Network Intrusion Detection System librairies
 
 USE_REINPLACE=		yes
 USE_GMAKE=		yes
-USE_LIBTOOL=		yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=		yes
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc \
 			--program-prefix="" --localstatedir=/var

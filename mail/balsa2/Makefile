@@ -26,7 +26,7 @@ USE_PERL5=	yes
 USE_OPENSSL=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libgnomeprintui libgtkhtml
 GNU_CONFIGURE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--enable-threads \
 		--enable-gtkhtml \
 		--disable-more-warnings \

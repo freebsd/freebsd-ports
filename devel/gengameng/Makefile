@@ -15,7 +15,7 @@ COMMENT=	An SDL game engine library
 
 USE_SDL=	image sdl
 USE_REINPLACE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS+=	--program-prefix=""
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include" \

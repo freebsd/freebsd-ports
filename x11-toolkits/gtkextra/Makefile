@@ -18,7 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A useful widget set complementary to GTK+
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

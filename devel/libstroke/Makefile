@@ -16,7 +16,7 @@ COMMENT=	A stroke translation library
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

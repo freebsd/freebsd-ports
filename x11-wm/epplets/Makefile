@@ -26,7 +26,7 @@ USE_GNOME=	esound lthack
 USE_GL=		yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	EROOT="${X11BASE}/share/enlightenment" \
 		EBIN="${X11BASE}/bin" \
 		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \

@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--target=avr
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 LIBTOOLFILES=	configure bfd/configure binutils/configure etc/configure \
 		gas/configure gprof/configure intl/configure ld/configure \
 		libiberty/configure opcodes/configure

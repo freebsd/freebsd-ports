@@ -19,7 +19,7 @@ RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/mime/packages/freedesktop.org.xml:${PORTSDIR}/mi
 PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 
 USE_GNOME=	gtk20 pkgconfig libxml2 gnomevfs2
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 HAS_CONFIGURE=	yes
 
 MAN1=		rox.1

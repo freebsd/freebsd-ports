@@ -27,7 +27,7 @@ CONFIGURE_ARGS+=	--with-gdbm=${LOCALBASE} \
 NO_CDROM=	This software can not be sold.
 
 GNU_CONFIGURE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

@@ -19,7 +19,7 @@ MAINTAINER=	philip@FreeBSD.org
 COMMENT=	A simplistic GTK+ 2.x theme engine
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GNOME=	gnomehack gtk20
 
 THEME=		cleanice-theme-1.2.7

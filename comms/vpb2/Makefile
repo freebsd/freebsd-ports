@@ -15,8 +15,8 @@ MAINTAINER=	dyfet@gnu.org
 COMMENT=	User mode API for Voicetronix 4 port analog DSP telephony cards
 
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
-USE_AUTOCONF=	yes
+USE_LIBTOOL_VER=	13
+USE_AUTOCONF_VER=	213
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 

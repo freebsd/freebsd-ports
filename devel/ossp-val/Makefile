@@ -20,7 +20,7 @@ COMMENT=	OSSP val is a flexible name to value mapping library for C variables
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB= yes
 
 .include <bsd.port.pre.mk>

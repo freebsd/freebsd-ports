@@ -21,7 +21,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	A replacement ftp server for Un*x systems
 
-USE_AUTOCONF=   yes
+USE_AUTOCONF_VER=	213
 CONFIGURE_ARGS=	--enable-rfc931 --disable-pasvip --enable-opie \
 		--enable-noop --disable-numericuid  --enable-nlst-dirs \
 		--enable-ipv6 \

@@ -18,7 +18,7 @@ COMMENT=	XMMS Output plugin for crossfading between songs
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes

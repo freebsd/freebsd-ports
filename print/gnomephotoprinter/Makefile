@@ -19,6 +19,6 @@ COMMENT=	Gnome Photo Printer is intended for printing photos in an easy way
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui libglade2 libgnomeprintui gnomevfs2
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 
 .include <bsd.port.mk>

@@ -22,7 +22,7 @@ LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl \
 
 USE_GETOPT_LONG=	yes
 USE_GNOME=	glib20 gnomehack gnometarget libxml2 lthack
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--with-xml2-config=${LOCALBASE}/bin/xml2-config \
 		--with-curl-config=${LOCALBASE}/bin/curl-config \
 		--with-libwww-config=${LOCALBASE}/bin/libwww-config \

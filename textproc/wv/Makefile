@@ -21,7 +21,7 @@ RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
 USE_GETOPT_LONG=	yes
 USE_GNOME=	gnometarget pkgconfig
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-exporter --with-libwmf=${LOCALBASE}
 MAKEFILE=	GNUmakefile

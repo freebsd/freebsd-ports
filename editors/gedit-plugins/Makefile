@@ -21,7 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget lthack
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

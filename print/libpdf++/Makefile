@@ -23,7 +23,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	${LOCALBASE}/include/boost/any.hpp:${PORTSDIR}/devel/boost
 
-USE_AUTOMAKE=	yes
+USE_AUTOMAKE_VER=	14
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

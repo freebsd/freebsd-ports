@@ -29,7 +29,7 @@ USE_GNOME=	gnomehack \
 		gnomeprefix \
 		pkgconfig \
 		gconf2
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 USE_SIZE=	yes
 WANT_SDL=	yes

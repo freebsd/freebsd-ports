@@ -19,7 +19,7 @@ COMMENT=	Netscape cache browser
 
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
-USE_AUTOMAKE=	yes
+USE_AUTOMAKE_VER=	14
 AUTOMAKE_ARGS=	--include-deps
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

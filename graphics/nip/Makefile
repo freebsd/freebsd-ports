@@ -20,7 +20,7 @@ LIB_DEPENDS=	vips.0:${PORTSDIR}/graphics/vips \
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 

@@ -14,6 +14,6 @@ MASTER_SITE_SUBDIR=	emacs
 MAINTAINER=	amakawa@jp.FreeBSD.org
 COMMENT=	An introduction to Emacs Lisp programming
 
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 
 .include <bsd.port.mk>

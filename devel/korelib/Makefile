@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross-platform C++ library for developing modular applications
 
 USE_KDELIBS_VER=3
-USE_AUTOMAKE=	yes
+USE_AUTOMAKE_VER=	14
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes

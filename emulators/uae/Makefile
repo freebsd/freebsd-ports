@@ -16,7 +16,7 @@ COMMENT=	Amiga emulator
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 CONFIGURE_ARGS=	--enable-sound --enable-vidmode --enable-dga
 USE_XLIB=	yes
 USE_GNOME=	gtk12

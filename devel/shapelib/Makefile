@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://gdal.velocet.ca/pub/outgoing/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C API for reading and writing ArcView Shapefiles
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=	13
 LIBTOOLFILES=	# none
 ALL_TARGET=	lib
 INSTALLS_SHLIB=	yes

@@ -17,7 +17,7 @@ COMMENT=	A modular math parser
 
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
 MAN1=	spar.1

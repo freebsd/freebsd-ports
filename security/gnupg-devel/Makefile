@@ -24,7 +24,7 @@ RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		dirmngr:${PORTSDIR}/security/dirmngr
 		
 USE_AUTOCONF_VER=253
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

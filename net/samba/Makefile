@@ -29,8 +29,8 @@ CONFLICTS=	ja-samba-2.* samba-3.* sharity-light-1.*
 USE_BZIP2=	YES
 USE_SUBMAKE=	YES
 USE_GMAKE=	YES
-USE_LIBTOOL=	YES
-USE_AUTOCONF=	YES
+USE_LIBTOOL_VER=13
+USE_AUTOCONF_VER=	213
 
 # directories
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)

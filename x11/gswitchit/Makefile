@@ -21,7 +21,7 @@ RUN_DEPENDS=	${X11BASE}/lib/X11/xkb/rules/xfree86.xml:${PORTSDIR}/x11/XFree86-4-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomepanel
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

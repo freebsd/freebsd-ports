@@ -17,7 +17,7 @@ MAINTAINER=	k_nishizawa@anet.ne.jp
 COMMENT=	World wide web server benchmarking with SSL support
 
 USE_OPENSSL=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/WebStone${PORTVERSION}/src
 ALL_TARGET=	install

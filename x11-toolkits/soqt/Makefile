@@ -18,7 +18,7 @@ COMMENT=	Qt toolkit library for Coin
 LIB_DEPENDS=	Coin.41:${PORTSDIR}/graphics/Coin
 
 USE_QT_VER=	3
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV+=	QTDIR=${QT_PREFIX} CXXFLAGS="-pthread"
 CONFIGURE_ARGS+=	--with-pthread=yes --with-coin=${X11BASE}
 # avoid renaming of soqt-config and soqt-config.1

@@ -20,7 +20,7 @@ BUILD_DEPENDS=  ${LOCALBASE}/lib/libuclmmbase.a:${PORTSDIR}/devel/uclmmbase
 
 WRKSRC=		${WRKDIR}/vic-2.8ucl-1.1.3/vic
 
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 CONFIGURE_ARGS= -x-libraries=${PREFIX}/lib \

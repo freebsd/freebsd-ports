@@ -12,7 +12,7 @@ COMMENT=	X11 terminal emulator based on rxvt/xterm that supports traditional Chi
 
 EXTRA_PATCHES=  ${.CURDIR}/files/extra-patch-configure.in
 
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 CONFIGURE_ARGS=	--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \
 		--with-backspace=bs --without-terminfo \
