@@ -114,6 +114,7 @@
     SUBDIR += nana
     SUBDIR += nasm
     SUBDIR += ncurses
+    SUBDIR += newt
     SUBDIR += noweb
     SUBDIR += omniORB
     SUBDIR += p5-AppConfig

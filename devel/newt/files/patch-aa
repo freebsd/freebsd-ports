@@ -1,0 +1,7 @@
+--- grid.c	Mon Feb  8 11:41:47 1999
++++ grid.c.new	Sun Jan  9 01:15:24 2000
+@@ -1,4 +1,3 @@
+-#include <alloca.h>
+ #include <stdlib.h>
+ #include <string.h>
+ 

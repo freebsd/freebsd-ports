@@ -1,0 +1,39 @@
+# New ports collection makefile for:	newt
+# Version required:	0.50-13
+# Date created:		08 Jan 2000
+# Whom:			Will Andrews <andrews@technologist.com>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	newt-0.50-13
+PKGNAME=	newt-0.50.13
+CATEGORIES=	devel
+MASTER_SITES=	\
+	ftp://ftp.cdrom.com/pub/linux/redhat/redhat-6.1/SRPMS/SRPMS/ \
+	ftp://ftp.redhat.com/pub/redhat/redhat-6.1/SRPMS/SRPMS/ \
+	ftp://ftp.infomagic.com/pub/mirrors/linux/RedHat/redhat-6.1/SRPMS/SRPMS/
+EXTRACT_SUFX=	.src.rpm
+
+MAINTAINER=	andrews@technologist.com
+
+LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm \
+		python:${PORTSDIR}/lang/python \
+		${LOCALBASE}/include/popt.h:${PORTSDIR}/devel/popt
+
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/newt-0.50
+VERSION=	0
+MAKE_ENV+=	prefix=${PREFIX} VERSION=${VERSION} CC=${CC} PCFLAGS="${CFLAGS}"
+PLIST_SUB+=	VERSION="${VERSION}"
+CPIO?=		/usr/bin/cpio
+
+do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
+	@${LOCALBASE}/bin/rpm2cpio ${_DISTDIR}${DISTFILES} | (cd ${WRKDIR};${CPIO} -i)
+	@${TAR} xfz ${WRKSRC}.tar.gz -C ${WRKDIR}
+
+.include <bsd.port.mk>
