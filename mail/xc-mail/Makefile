@@ -19,6 +19,7 @@ LIB_DEPENDS=	Xclasses.1:${PORTSDIR}/x11-toolkits/xclasses
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 GNU_CONFIGURE=	yes
+ONLY_FOR_ARCHS=	arm i386
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
