@@ -5366,6 +5366,7 @@ p5-CGI-modules	ports/www/p5-CGI-modules
 p5-CGI.pm	ports/www/p5-CGI.pm
 p5-CGI_Lite	ports/www/p5-CGI_Lite
 p5-CSS-SAC	ports/textproc/p5-CSS-SAC
+p5-CSS-Tiny	ports/textproc/p5-CSS-Tiny
 p5-Cache-Cache	ports/devel/p5-Cache-Cache
 p5-Cache-Mmap	ports/devel/p5-Cache-Mmap
 p5-Carp-Assert	ports/devel/p5-Carp-Assert
@@ -5986,6 +5987,7 @@ p5-News-Newsrc	ports/news/p5-News-Newsrc
 p5-Nmap-Scanner	ports/security/p5-Nmap-Scanner
 p5-Number-Compare	ports/math/p5-Number-Compare
 p5-Number-Format	ports/textproc/p5-Number-Format
+p5-OAI-Harvester	ports/net/p5-OAI-Harvester
 p5-OLE-Storage_Lite	ports/devel/p5-OLE-Storage_Lite
 p5-ORBit	ports/devel/p5-ORBit
 p5-Object-MultiType	ports/devel/p5-Object-MultiType
@@ -6223,6 +6225,7 @@ p5-Text-Reform	ports/textproc/p5-Text-Reform
 p5-Text-Repository	ports/textproc/p5-Text-Repository
 p5-Text-Shellwords	ports/textproc/p5-Text-Shellwords
 p5-Text-SimpleTemplate	ports/textproc/p5-Text-SimpleTemplate
+p5-Text-Striphigh	ports/textproc/p5-Text-Striphigh
 p5-Text-Tabs+Wrap	ports/textproc/p5-Text-Tabs+Wrap
 p5-Text-Template	ports/textproc/p5-Text-Template
 p5-Text-Tmpl	ports/textproc/p5-Text-Tmpl
