@@ -360,6 +360,7 @@
     SUBDIR += sylpheed-claws
     SUBDIR += sylpheed-gtk2
     SUBDIR += sympa
+    SUBDIR += sympa-elixus
     SUBDIR += teapop
     SUBDIR += teapop-devel
     SUBDIR += tkrat2

@@ -1,0 +1,11 @@
+--- doc/man8/Makefile.orig	Tue Dec 30 16:15:12 2003
++++ doc/man8/Makefile	Tue Dec 30 16:15:19 2003
+@@ -7,7 +7,7 @@
+ 
+ .pod.8:
+ 	rm -f $@
+-	pod2man --section=8 --center="sympa $(SYMPA_VERSION)" --lax --release="$(SYMPA_VERSION)" $< $@
++	pod2man --section=8 --center="sympa $(SYMPA_VERSION)" --lax --release="$(SYMPA_VERSION)" $< > $@
+ 
+ all:	$(MAN8)
+ 
