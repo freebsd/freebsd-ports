@@ -6,10 +6,10 @@
 #
 
 PORTNAME=		cryptlib
-PORTVERSION=		3.1.b5
+PORTVERSION=		3.1
 CATEGORIES=		security
-MASTER_SITES=		ftp://ftp.franken.de/pub/crypt/cryptlib/beta/
-DISTNAME=		cl31beta05
+MASTER_SITES=		ftp://ftp.franken.de/pub/crypt/cryptlib/
+DISTNAME=		cl31
 EXTRACT_SUFX=		.zip
 
 MAINTAINER=		ports@FreeBSD.org
