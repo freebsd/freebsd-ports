@@ -7,28 +7,23 @@
 
 PORTNAME=	wmanager
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	trevor
-EXTRACT_SUFX=	-src.tar.bz2
+MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 window manager selector
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-USE_BZIP2=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmanager ${PREFIX}/bin
@@ -42,4 +37,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/.xinitrc ${EXAMPLESDIR}/xinitrc_sample
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
