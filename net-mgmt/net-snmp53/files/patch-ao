@@ -1,0 +1,11 @@
+--- agent/mibgroup/host/hr_filesys.c.orig	Wed Jan 17 19:09:48 2001
++++ agent/mibgroup/host/hr_filesys.c	Wed Jan 17 19:10:22 2001
+@@ -38,7 +38,7 @@
+ #include <stdlib.h>
+ #endif
+ 
+-#if defined(freebsd3) || defined(bsdi4)
++#if defined(freebsd3) || defined(bsdi4) || defined(freebsd4) || defined(freebsd5)
+ #if HAVE_GETFSSTAT
+ #if defined(MFSNAMELEN)
+ #define MOUNT_NFS	"nfs"

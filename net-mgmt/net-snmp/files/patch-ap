@@ -1,0 +1,11 @@
+--- man/Makefile.in.orig	Thu Jan 18 01:37:31 2001
++++ man/Makefile.in	Thu Jan 18 01:37:39 2001
+@@ -2,7 +2,7 @@
+ 
+ MAN1 = snmpcmd.1 snmpget.1 snmpset.1 snmpwalk.1 snmpbulkwalk.1 snmpbulkget.1 \
+ 	snmpgetnext.1 snmptest.1 snmpnetstat.1 snmptranslate.1 snmpstatus.1 \
+-	snmptrap.1 snmpdelta.1 snmptable.1 snmpusm.1 snmpinform.1 snmpdf.1
++	snmptrap.1 snmpdelta.1 snmptable.1 snmpusm.1 snmpinform.1 snmpdf.1 snmpconf.1
+ MAN1G = snmpd.1
+ MAN3 = snmp_agent_api.3 snmp_api.3 mib_api.3 snmp_sess_api.3 snmp_trap_api.3 \
+ 	snmp_alarm.3 snmp_close.3 snmp_free_pdu.3 snmp_open.3 snmp_read.3 \
