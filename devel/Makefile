@@ -104,6 +104,7 @@
     SUBDIR += cvslines
     SUBDIR += cvsmapfs
     SUBDIR += cvspadm
+    SUBDIR += cvsps
     SUBDIR += cvsstat
     SUBDIR += cvsutils
     SUBDIR += cvsweb

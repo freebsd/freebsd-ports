@@ -1,0 +1,21 @@
+--- Makefile.orig	Sat Feb  9 17:35:42 2002
++++ Makefile	Sat Feb  9 17:35:54 2002
+@@ -1,7 +1,7 @@
+ MAJOR=1
+ MINOR=3
+-CC=gcc
+-CFLAGS=-g -O2 -Wall -I. -DVERSION=\"$(MAJOR).$(MINOR)\"
++#CC=gcc
++CFLAGS+=-I. -DVERSION=\"$(MAJOR).$(MINOR)\"
+ OBJS=\
+ 	cbtcommon/debug.o\
+ 	cbtcommon/hash.o\
+@@ -9,7 +9,7 @@
+ 	cvsps.o
+ 
+ cvsps: $(OBJS)
+-	gcc -o cvsps $(OBJS)
++	${CC} -o cvsps $(OBJS)
+ 
+ install:
+ 	[ -d /usr/local/bin ] || mkdir -p /usr/local/bin
