@@ -7,6 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=    1.3.26
+PORTREVISION=   1
 CATEGORIES=	www
 MASTER_SITES=   http://www.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
@@ -25,7 +26,7 @@ MASTER_SITES=   http://www.apache.org/dist/httpd/ \
 		ftp://apache.nextpath.com/pub/apache/dist/httpd/
 DISTNAME=	apache_${PORTVERSION}
 
-PATCH_SITES=    http://www.apache.org/dist/httpd/patches/apply_to_1.3.26/
+#PATCH_SITES=    http://www.apache.org/dist/httpd/patches/apply_to_1.3.26/
 #PATCHFILES=
 #PATCH_DIST_ARGS= -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
 
