@@ -1,6 +1,15 @@
---- src/Makefile.in.orig	Sun Oct  6 16:42:26 2002
-+++ src/Makefile.in	Sun Oct  6 16:42:42 2002
-@@ -80,10 +80,6 @@
+--- src/Makefile.in.orig	Sun Oct  6 23:23:09 2002
++++ src/Makefile.in	Sun Oct  6 23:26:11 2002
+@@ -71,7 +71,7 @@
+ .c.@OBJEXT@:
+ 	$(CC) $(CFLAGS) $(DSO_PIC_CFLAGS) -c $< -o $@
+ 	
+-all:: $(LIBFILE) $(LIBMAJOR) $(LIBBASE)
++all:: $(LIBFILE) $(LIBBASE)
+ 
+ # 
+ # build the library and the various version links
+@@ -80,13 +80,9 @@
  	rm -f $@
  	$(MKSHLIB) $(OBJS) $(LIBS)
  
@@ -8,6 +17,35 @@
 -	rm -f  $@
 -	$(LN_S) $(LIBFILE) $(LIBMAJOR)
 -
- $(LIBBASE): $(LIBMAJOR)
+-$(LIBBASE): $(LIBMAJOR)
++$(LIBBASE): $(LIBFILE)
  	rm -f $@
- 	$(LN_S) $(LIBMAJOR) $(LIBBASE)
+-	$(LN_S) $(LIBMAJOR) $(LIBBASE)
++	$(LN_S) $(LIBFILE) $(LIBBASE)
+ 
+ $(OBJS): fcint.h $(HEADERS)
+ 
+@@ -102,19 +98,15 @@
+ # install library
+ #
+ 
+-install:: $(DESTDIR)$(LIBDIR)/$(LIB) $(DESTDIR)$(LIBDIR)/$(LIBMAJOR)
++install:: $(DESTDIR)$(LIBDIR)/$(LIBFILE)
+ install:: $(DESTDIR)$(LIBDIR)/$(LIBBASE)
+ 
+ $(DESTDIR)$(LIBDIR)/$(LIBFILE): $(LIBFILE)
+ 	$(INSTALL_PROGRAM) $< $(DESTDIR)$(LIBDIR)/$<
+ 
+-$(DESTDIR)$(LIBDIR)/$(LIBMAJOR): $(DESTDIR)$(LIBDIR)/$(LIBFILE)
+-	rm -f $(DESTDIR)$(LIBDIR)/$(LIBMAJOR)
+-	$(LN_S) $(LIBFILE) $(DESTDIR)$(LIBDIR)/$(LIBMAJOR)
+-
+-$(DESTDIR)$(LIBDIR)/$(LIBBASE): $(DESTDIR)$(LIBDIR)/$(LIBMAJOR)
++$(DESTDIR)$(LIBDIR)/$(LIBBASE): $(DESTDIR)$(LIBDIR)/$(LIBFILE)
+ 	rm -f $(DESTDIR)$(LIBDIR)/$(LIBBASE)
+-	$(LN_S) $(LIBMAJOR) $(DESTDIR)$(LIBDIR)/$(LIBBASE)
++	$(LN_S) $(LIBFILE) $(DESTDIR)$(LIBDIR)/$(LIBBASE)
+ 
+ clean::
+-	rm -f $(LIBFILE) $(LIBMAJOR) $(LIBBASE) $(OBJS)
++	rm -f $(LIBFILE) $(LIBBASE) $(OBJS)
