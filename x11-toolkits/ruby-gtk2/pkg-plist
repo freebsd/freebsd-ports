@@ -5,6 +5,7 @@
 %%RUBY_SITELIBDIR%%/gtk2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/README
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/alphatest.png
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/apple-red.png
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/appwindow.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/button_box.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/changedisplay.rb
@@ -14,6 +15,12 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/drawingarea.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/editable_cells.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/floppybuddy.gif
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/gnome-applets.png
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/gnome-calendar.png
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/gnome-foot.png
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/gnome-gimp.png
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/gnome-gmush.png
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/gnome-gsame.png
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/gtk-logo-rgb.gif
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/images.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/item_factory.rb
