@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://stampede.cs.berkeley.edu/pub/GridPix/
 
 MAINTAINER=	asami@FreeBSD.org
 
-BUILD_DEPENDS=	${X11BASE}/lib/libpnm.a:${PORTSDIR}/graphics/netpbm
+BUILD_DEPENDS=	${LOCALBASE}/lib/libpnm.a:${PORTSDIR}/graphics/netpbm
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 # create necessary directories -- don't want to depend on an http
