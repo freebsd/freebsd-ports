@@ -1,0 +1,11 @@
+sbin/checkgroups
+sbin/fetch-news
+sbin/leafnode
+sbin/leaftool
+sbin/texpire
+share/doc/leafnode+/Changes
+share/doc/leafnode+/FAQ
+share/doc/leafnode+/INSTALL
+share/doc/leafnode+/README
+share/doc/leafnode+/config.example
+@dirrm share/doc/leafnode+

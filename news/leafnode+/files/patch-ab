@@ -1,0 +1,423 @@
+--- Changes.orig	Tue Nov 10 03:50:24 1998
++++ Changes	Thu Nov 19 20:58:17 1998
+@@ -45,14 +45,14 @@
+    this option.
+  - Add "maxold", "maxlines" and "maxgroups" configuration
+    values to filter some hated news artcles.  "maxold"
+-   specifies the maximum dates of articles fetch should
++   specifies the maximum dates of articles fetch-news should
+    fetch from the upstream server in each group.  "maxlines"
+-   specifies the maximum number of lines of articles fetch
+-   should do so.  "maxgroups" specifies the maximum number
+-   of cross-posted news groups of articles fetch should do
+-   so.  See leafnode.8 also.
++   specifies the maximum number of lines of articles fetch-news
++   should get.  "maxgroups" specifies the maximum number
++   of cross-posted news groups of articles fetch-news should
++   get.  See leafnode.8 also.
+  - Change to use asynchronous transmission for looking for
+-   new articles in news groups.  It makes fetch faster.
++   new articles in news groups.  It makes fetch-news faster.
+  - Remove a chdirgroup call from getgroups().  I guess it
+    is a reason of saving an article to wrong news groups.
+  - Add preconnect and viahost ability to use SSH.
+--- FAQ.orig	Tue Nov 10 03:50:24 1998
++++ FAQ	Thu Nov 19 20:49:08 1998
+@@ -21,17 +21,17 @@
+ 3. How do I configure Leafnode+?
+ 
+ See the manual pages for information on how to configure Leafnode+.
+-Also, see the sample configuration file, "config.example", in the
+-Leafnode+ distribution.
++Also, see the sample configuration file, "config.example", in
++!!PREFIX!!/share/doc/leafnode+.
+ 
+ 
+ 4. How do I upgrade from Leafnode?
+ 
+ Upgrading is easy - Leafnode+ can be used as a direct replacement for
+ Leafnode.  However, Leafnode+ will write some additional files in the
+-LIBDIR defined when compiling Leafnode+, usually /usr/lib/leafnode.
+-Therefore, the UID under which Leafnode+ runs, usually root or news,
+-needs write access to this directory.
++LIBDIR defined when compiling Leafnode+, !!PREFIX!!/lib/leafnode.
++Therefore, the UID under which Leafnode+ runs, usually news, needs write
++access to this directory.
+ 
+ 
+ 5. Can I use Leafnode+ with multiple news servers?
+@@ -61,7 +61,7 @@
+ Most news reader software uses the NEWGROUPS command to learn about
+ the creation of new groups.  The Leafnode+ news server does not
+ support this command.  To check if new groups are available, see the
+-"groupinfo" file in your LIBDIR (usually /usr/lib/leafnode).
++"groupinfo" file in your LIBDIR (usually !!PREFIX!!/lib/leafnode).
+ 
+ 
+ 
+--- INSTALL.orig	Tue Nov 10 03:50:24 1998
++++ INSTALL	Thu Nov 19 21:08:41 1998
+@@ -7,7 +7,8 @@
+ 
+ 3. make installall
+ 
+-5. Edit $(LIBDIR)/config so server points to your upstream news server
++5. Edit !!PREFIX!!/lib/leafnode/config so the server points to your
++   upstream news server
+    (generally, your IP provider's).  Make sure $NNTPSERVER or
+    /etc/nntpserver points to your own host so clients will talk to
+    leafnode rather than try to go to the upstream server.
+@@ -15,31 +16,31 @@
+ 4. Set up a cron job (as user "news") to run texpire every night or
+    maybe every week.  Here is my crontab line, which runs nightly:
+ 
+-0 4 * * * /usr/local/sbin/texpire
++0 4 * * * !!PREFIX!!/sbin/texpire
+ 
+    I did "crontab -u news -e" as root to edit the crontab file, and
+    added this line.  Substituting "1" for the third "*", thus:
+ 
+-0 4 * * 1 /usr/local/sbin/texpire
++0 4 * * 1 !!PREFIX!!/sbin/texpire
+ 
+    tells cron to run texpire at 4am Monday morning.
+ 
+-5. Make sure fetch is run at the appropriate time.  If you have a
++5. Make sure fetch-news is run at the appropriate time.  If you have a
+    full-time link, run it out of cron (as "news" again), if not, run
+    it when your connection to the net is established.  If it is run as
+-   root, it will change user to "news".  I use PPP, and run fetch from
+-   /etc/ppp/ip-up.
++   root, it will change user to "news".
+ 
+-6. Edit /etc/inetd.conf so $(BINDIR)/leafnode is executed for incoming
+-   NNTP connections.  HUP inetd.  Here is my inetd.conf line:
++6. Edit /etc/inetd.conf so !!PREFIX!!/sbin/leafnode is executed for
++   incoming NNTP connections.  HUP inetd.  Here is my inetd.conf line:
+ 
+-nntp    stream  tcp     nowait  news    /usr/local/sbin/leafnode
++nntp    stream  tcp     nowait  news    !!PREFIX!!/sbin/leafnode
+ 
+    This starts leafnode for all connections on the nntp port.
+ 
+-7. Run fetch, then read news using an NNTP client (with $NNTPSERVER or
+-   /etc/nntpserver pointing to your own host), then run fetch again.
+-   The second run of fetch should pick up all the groups you read.
++7. Run fetch-news, then read news using an NNTP client (with $NNTPSERVER
++   or /etc/nntpserver pointing to your own host), then run fetch-news
++   again. The second run of fetch-news should pick up all the groups you
++   read.
+ 
+ Arnt Gulbrandsen <agulbra@troll.no>
+ Modified by Kazushi (Jam) Marukawa <jam@pobox.com>
+--- README.orig	Tue Nov 10 03:50:24 1998
++++ README	Thu Nov 19 21:07:08 1998
+@@ -8,7 +8,7 @@
+  - Leafnode is the NNTP server.  It talks to the normal news clients,
+    and stores readership data.
+ 
+- - Fetch is the NNTP news-gatherer.  It looks at the readership data
++ - Fetch-news is the NNTP news-gatherer.  It looks at the readership data
+    Leafnode stores, and selects what groups to pull news from.
+ 
+  - Texpire is responsible for deleting old and uninteresting news.  It
+@@ -16,8 +16,8 @@
+ 
+ Only groups that someone has been reading in the past week are fetched
+ from the upstream NNTP server.  When someone stops reading a group,
+-fetch will stop reading that group a week later, and when someone
+-starts reading a group, fetch will grab all the articles it can in
++fetch-news will stop reading that group a week later, and when someone
++starts reading a group, fetch-news will grab all the articles it can in
+ that group the next time it runs.
+ 
+ Here are Leafnode's distinguishing features:
+@@ -52,8 +52,8 @@
+ information file, and any more long-lived supporting files that may be
+ added in the future.
+ 
+-The binaries directory, /usr/local/sbin by default, contains the three
+-executable programs, texpire, fetch and leafnode.
++The binaries directory, !!PREFIX!!/sbin, contains the three
++executable programs, texpire, fetch-news and leafnode.
+ 
+ 
+ 			    TIPS & TRICKS!
+--- fetch.8.orig	Tue Nov 10 03:50:24 1998
++++ fetch.8	Thu Nov 19 21:01:21 1998
+@@ -10,10 +10,10 @@
+ .\"
+ .\" hilit19 is stupid: "
+ .SH NAME
+-fetch \- fetch news via NNTP
++fetch-news \- fetch news via NNTP
+ 
+ .SH SYNOPSIS
+-.B fetch [-v] [-x number] [-n] [-s [suck-file]]
++.B fetch-news [-v] [-x number] [-n] [-s [suck-file]]
+ 
+ .SH DESCRIPTION
+ .B Leafnode
+@@ -26,7 +26,7 @@
+ is intended to self-repair after problems, and to require no
+ manual maintenance.
+ .PP
+-.B Fetch
++.B Fetch-news
+ is the program which submits and retrieves new articles to or from the
+ upstream NNTP server.
+ 
+@@ -46,9 +46,9 @@
+ .TP
+ .I -n
+ Write server's information file after fetching from each group,
+-rather than updating it when fetch has finished with that server.
++rather than updating it when fetch-news has finished with that server.
+ It helps you if you are using unstable connection and get problems
+-of sudden disconnection.  But probably current fetch doesn't need
++of sudden disconnection.  But probably current fetch-news doesn't need
+ this option because codes are changed to check sudden disconnection.
+ .TP
+ .I "-s [suck-file]"
+@@ -58,11 +58,11 @@
+ See
+ .BR leafnode (8)
+ for the list of files affected, and for information on configuring
+-.B fetch.
++.B fetch-news.
+ 
+ .SH ALGORITHM
+ Here is a brief description of what
+-.B fetch
++.B fetch-news
+ does.
+ .PP
+ First, after connecting to the upstream NNTP server,
+@@ -81,18 +81,18 @@
+ (this step is most often optimized away).
+ .PP
+ Third,
+-.B fetch
++.B fetch-news
+ iterates over the list of newsgroups, performing a GROUP, an XOVER
+ and a number of ARTICLE commands for each group which has
+ been read during the past week.
+ 
+ .SH NOTES
+-.B Fetch
++.B Fetch-news
+ does not use NEWNEWS or XHDR.  NEWNEWS is not used because it is
+ often very expensive, XHDR is not used because its
+ implementation of some nntpds is slower than XOVER.
+-.B Fetch
+-use XOVER.  XOVER is used because to get informations in the
++.B Fetch-news
++uses XOVER.  XOVER is used because to get informations in the
+ article headers which are used to filter news articles.
+ .PP
+ After some experiments, I decided that it was better to fetch all the
+@@ -102,27 +102,27 @@
+ is not intended to be all things to all men, and I have sacrificed the
+ ability to read news from several upstream servers.
+ .PP
+-.B Fetch
++.B Fetch-news
+ happens to support local groups, even though the rest of
+ .B leafnode
+ doesn't.
+ .PP
+ The only way to control what newsgroups are accessible to local users
+ is to control what the upstream server lets
+-.B fetch
++.B fetch-news
+ read, and that will not keep out all crossposts (endemic in e.g. the
+ alt.sex groups).  If your site is big enough that you need to control
+ newsgroup access, consider using a news server which is designed for a
+ big site.
+ .PP
+-.B Fetch
++.B Fetch-news
+ sets its real and effective uid to "news", because almost all of the
+ problems I have had with
+ .B leafnode
+ are due to files which aren't writable for user news.
+ 
+ .SH BUGS
+-.B Fetch
++.B Fetch-news
+ ignores the "Also-Cancel" headers.  This needs to be
+ fixed, or news.answers will suffer.
+ .PP
+--- leafnode.8.orig	Tue Nov 10 03:50:24 1998
++++ leafnode.8	Thu Nov 19 20:56:15 1998
+@@ -74,18 +74,18 @@
+ .I must
+ be writable by user "news".
+ .PP
+-.I /usr/lib/leafnode/groupinfo
++.I !!PREFIX!!/lib/leafnode/groupinfo
+ contains the information about each USENET group.  In case of harm, it
+ is rebuilt by
+-.BR fetch (8).
++.BR fetch-news (8).
+ .PP
+-.I /usr/lib/leafnode/news-server-name
++.I !!PREFIX!!/lib/leafnode/news-server-name
+ contains the information about each USENET group on each news server.
+ In case of harm, it
+ is rebuilt by
+-.BR fetch (8).
++.BR fetch-news (8).
+ .PP
+-.I /usr/lib/leafnode/config
++.I !!PREFIX!!/lib/leafnode/config
+ contains the configuration parameters for
+ .B leafnode.
+ See CONFIGURATION below.
+@@ -106,12 +106,12 @@
+ .PP
+ .I /var/spool/news/out.going
+ contains local postings that
+-.BR fetch (8)
++.BR fetch-news (8)
+ is to pass to the upstream NNTP server.
+ .PP
+ .I /var/spool/news/failed.postings
+ contains local postings that the upstream server rejected.
+-.BR fetch (8)
++.BR fetch-news (8)
+ will create files in this directory, but none of the
+ .B leafnode
+ programs will delete anything in it.
+@@ -130,7 +130,7 @@
+ will touch the the relevant file when a LISTGROUP, XOVER, XHDR, STAT,
+ HEAD, BODY or ARTICLE command is issued immediately after a GROUP
+ command is issued, and
+-.BR fetch (8)
++.BR fetch-news (8)
+ will retrieve all new articles in all groups whose files have been
+ either
+ .IP
+@@ -147,7 +147,7 @@
+ 
+ .SH CONFIGURATION
+ All configuration is done using the file
+-.I /usr/lib/leafnode/config.
++.I !!PREFIX!!/lib/leafnode/config.
+ There is no GUI configuration tool yet.
+ .PP
+ The file is in the common UNIX format: One line per argument, white
+@@ -197,31 +197,31 @@
+ .in -5
+ .PP
+ "server" is used by
+-.BR fetch (8)
++.BR fetch-news (8)
+ to select what NNTP server to retrieve news from.  You can
+ specify several servers.  And you can add and decrease servers.
+ But at least one "server" is required.
+ .PP
+ "port" is used by
+-.BR fetch (8)
++.BR fetch-news (8)
+ to choose a port number to connect to the NNTP server.
+ .PP
+ "username" and "password" are used by
+-.BR fetch (8)
++.BR fetch-news (8)
+ to choose a user name and password to be authorized a
+ NNTP connection by the NNTP server.
+ .PP
+ "newsgroups" entries are used by
+-.BR fetch (8)
++.BR fetch-news (8)
+ to choose news groups which are feeded by the NNTP server.
+ .PP
+ "viahost" is used by
+-.BR fetch (8)
++.BR fetch-news (8)
+ to choose a host to connect to the NNTP server.  It is useful
+ to use ssh forwading ability.
+ .PP
+ "preconnect" is executed by
+-.BR fetch (8)
++.BR fetch-news (8)
+ before making a connection to the NNTP server.  It is used
+ for using ssh forwading ability.  Note: you shouldn't break
+ a line in the string.  You have to write as same as what you
+@@ -238,7 +238,7 @@
+ This parameter is mandatory.
+ .PP
+ "maxfetch" specifies the maximum number of articles
+-.BR fetch (8)
++.BR fetch-news (8)
+ should fetch from the upstream server in each group.  This limits the
+ size of the backlog a reader of a group will see when first
+ subscribing.  By default there is no limit, so a new reader will see
+@@ -251,26 +251,26 @@
+ initialfetch=3000 #again, don't use much space
+ .PP
+ "initialfetch" specifies the maximum number of articles
+-.BR fetch (8)
++.BR fetch-news (8)
+ should fetch from the upstream server in each group at the first
+ connection to the server.  By default there is no limit, so a
+ new reader will see all of the available postings.
+ .PP
+ "maxold" specifies the maximum dates of articles
+-.BR fetch (8)
++.BR fetch-news (8)
+ should fetch from the upstream server in each group.
+ By default there is 10 days limit, so a new reader will
+ see only new postings.
+ .PP
+ "maxlines" specifies the maximum number of lines of articles
+-.BR fetch (8)
++.BR fetch-news (8)
+ should fetch from the upstream server in each group.
+ By default there is no limit, so a new reader will
+ see all of the available postings.
+ .PP
+ "maxgroups" specifies the maximum number of cross-posted
+ news groups of articles
+-.BR fetch (8)
++.BR fetch-news (8)
+ should fetch from the upstream server in each group.
+ By default there is no limit, so a new reader will
+ see all of the available postings.
+@@ -302,7 +302,7 @@
+ .TP
+ .B IHAVE
+ Known but rejected.  See
+-.BR fetch (8).
++.BR fetch-news (8).
+ .TP
+ .B LAST
+ Moves the article pointer back by 1.
+@@ -331,7 +331,7 @@
+ .B POST
+ Post a new article.  Only scant syntax checking is performed.  The
+ article is sent to the upstream NNTP server by
+-.BR fetch (8).
++.BR fetch-news (8).
+ .TP
+ .B QUIT
+ Quit reading news.
+@@ -376,7 +376,7 @@
+ .SH SEE ALSO
+ .BR tcpd (8),
+ .BR hosts.allow (5),
+-.BR fetch (8),
++.BR fetch-news (8),
+ .BR texpire (8),
+ .BR checkgroups (8),
+ .B "RFC 977"
+--- texpire.8.orig	Tue Nov 10 03:50:24 1998
++++ texpire.8	Thu Nov 19 20:54:48 1998
+@@ -67,5 +67,5 @@
+ .BR tcpd (8),
+ .BR hosts.allow (5),
+ .BR leafnode (8),
+-.BR fetch (8),
++.BR fetch-news (8),
+ .B "RFC 977"
