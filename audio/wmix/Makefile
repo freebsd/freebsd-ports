@@ -6,18 +6,32 @@
 #
 
 PORTNAME=	wmix
-PORTVERSION=	2.20
+PORTVERSION=	3.1
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bogorodskiy@inbox.ru
 COMMENT=	An audio mixer for the WindowMaker dock with TV-like OSD
 
+USE_REINPLACE=	yes
 PLIST_FILES=	bin/wmix
-USE_XPM=	YES
-USE_X_PREFIX=	YES
+ALL_TARGET=	${PORTNAME}
+USE_XPM=	yes
+USE_X_PREFIX=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+
+PORTDOCS=	AUTHORS BUGS INSTALL NEWS README
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/wmix ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/wmix ${PREFIX}/bin
+
+post-install:
+.ifndef (NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
