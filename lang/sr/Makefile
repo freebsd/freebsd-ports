@@ -3,7 +3,7 @@
 # Date created:			2 Jun 1997
 # Whom:				Ruslan Shevchenko <rssh@satori.ipri.kiev.ua>
 #
-# $Id: Makefile,v 1.9 1996/12/12 05:08:32 max Exp $
+# $Id: Makefile,v 1.1.1.1 1997/06/26 11:28:36 max Exp $
 #
 
 DISTNAME=	sr
@@ -28,7 +28,7 @@ pre-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/sr/notes
-	${MKDIR} -p ${PREFIX}/share/doc/sr/ps
+	${MKDIR} ${PREFIX}/share/doc/sr/ps
 	${INSTALL_DATA} ${WRKSRC}/notes/* ${PREFIX}/share/doc/sr/notes
 	${INSTALL_DATA} ${WRKSRC}/ps/* ${PREFIX}/share/doc/sr/ps
 	${MKDIR} ${PREFIX}/share/examples/sr
