@@ -20,7 +20,7 @@ Y2K=		http://asg.web.cmu.edu/cyrus/imapd/y2k.html
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
-		pwcheck:${PORTSDIR}/security/cyrus-sasl
+		${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
