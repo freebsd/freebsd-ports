@@ -4,7 +4,10 @@ bin/wine
 bin/winebuild
 bin/wineclipsrv
 bin/winedbg
+bin/winelauncher
+bin/winemaker
 bin/wineserver
+bin/wineshelllink
 bin/wmc
 bin/wrc
 bin/regSet.sh
