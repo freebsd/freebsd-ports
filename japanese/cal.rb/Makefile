@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cal.rb
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	japanese deskutils
 MASTER_SITES=	http://aglaia.c.u-tokyo.ac.jp/~yamamoto/Script/Calendar/
 DISTFILES=	cal.rb Calendar.rb era_name
@@ -14,8 +14,6 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays a Japanese calendar
-
-BROKEN=		Checksum mismatch
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
