@@ -9320,6 +9320,7 @@ qcad		ports/cad/qcad
 qcad-partslib	ports/cad/qcad-partslib
 qcamview	ports/graphics/qcamview
 qcc		ports/games/qcc
+qccx		ports/games/qccx
 qcl		ports/emulators/qcl
 qconfirm	ports/mail/qconfirm
 qcread		ports/graphics/qcread
