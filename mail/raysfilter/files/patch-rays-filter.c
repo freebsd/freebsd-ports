@@ -1,5 +1,5 @@
 --- rays-filter.c.orig	Thu Mar  8 13:41:20 2001
-+++ rays-filter.c	Sat Jan 19 15:49:11 2002
++++ rays-filter.c	Wed Oct 27 15:38:15 2004
 @@ -65,8 +65,8 @@
  #include <sys/types.h>
  #include <unistd.h>
@@ -10,7 +10,18 @@
  #include "rays-filter.h"
  
  
-@@ -326,6 +326,7 @@
+@@ -219,8 +219,10 @@
+ #ifndef TRUE
+ #define FALSE  0
+ #define TRUE   1
++#ifndef __bool_true_false_are_defined
+ typedef int bool;
+ #endif
++#endif
+ 
+ /* Data Structures
+ **
+@@ -326,6 +328,7 @@
        syslog(LOG_INFO, "Cannot allocate memory for log file name\n");
     else
     {
@@ -18,7 +29,7 @@
        if (mktemp(priv->mlfi_fname) == NULL)
           syslog(LOG_INFO, "Cannot make name for log file\n");
        else
-@@ -334,6 +335,11 @@
+@@ -334,6 +337,11 @@
           if (priv->mlfi_fname == NULL)
              syslog(LOG_INFO, "Cannot open log file\n");
        }
