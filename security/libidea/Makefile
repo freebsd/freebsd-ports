@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/mirrors/ftp.psy.uq.oz.au/libeay/ \
 MAINTAINER=	jim@corebsd.or.id
 COMMENT=	IDEA block cipher library
 
-RESTRICTED=	"Crypto; export-controlled"
+RESTRICTED=	"Crypto; IDEA is a patented algorithm that requires proper licensing"
 
 WRKSRC=		${WRKDIR}/idea
 
