@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	gnupg-idea
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/%SUBDIR%/ \
 		http://www.gnupg.dk/contrib-dk/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/gnupg/&,}
 MASTER_SITE_SUBDIR=	contrib
-DISTFILES=	${CONTRIB:S|$|.c|}
+DISTFILES=	# later
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	# none
+EXTRACT_AFTER_ARGS=	> ${WRKSRC}/idea.c
 
 MAINTAINER=	dinoex@FreeBSD.org
 
@@ -40,8 +41,11 @@ pre-fetch:
 
 .if ${USA_RESIDENT} == NO || defined(MAKE_IDEA)
 CONTRIB=	idea rsa
+DISTFILES=	idea.c.gz rsa.c
+EXTRACT_ONLY=	idea.c.gz
 .else
 CONTRIB=	rsa
+DISTFILES=	rsa.c
 
 pre-fetch:
 	@${ECHO_MSG}
@@ -67,12 +71,14 @@ do-patch:
 do-build:
 .for i in ${CONTRIB}
 	${CC} ${CFLAGS} -o ${WRKSRC}/${i} ${WRKSRC}/${i}.c
-	${ECHO_CMD} "libexec/gnupg/${i}" >>${PLIST}
+	${ECHO_CMD} "lib/gnupg/${i}" >>${PLIST}
 .endfor
+	${ECHO_CMD} "@dirrm lib/gnupg" >>${PLIST}
 
 do-install:
+	${MKDIR} ${PREFIX}/lib/gnupg
 .for i in ${CONTRIB}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/libexec/gnupg/${i}
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/lib/gnupg/${i}
 .endfor
 
 .include <bsd.port.post.mk>
