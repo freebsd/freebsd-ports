@@ -14,7 +14,7 @@
  To get the same address,
  .B dhcpc
 -creates file named "/etc/dhcp_cache".  This file name could be
-+creates file named "/var/tmp/dhcp_cache".  This file name could be
++creates file named "/var/db/dhcp_cache".  This file name could be
  configured when it is compiled.  But it is required that the file must
  remains after the host reboot.  For example, the /tmp directory is not
  appropriate for this purpose.
@@ -45,7 +45,7 @@
  .PD 0
  .TP 20
 -.B /etc/dhcp_cache
-+.B /var/tmp/dhcp_cache
++.B /var/db/dhcp_cache
  The file to record previously assigned informations
 +.TP
 +.B /var/run/dhcpc.[interface name].pid
