@@ -67,6 +67,7 @@ svscan_start () {
 }
 
 svscan_stop_post () {
+	echo "Stopping svscan."
 	%%PREFIX%%/bin/svc -dx `/bin/ls -d $svscan_servicedir/* $svscan_servicedir/*/log 2>/dev/null`
 }
 
