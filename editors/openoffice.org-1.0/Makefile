@@ -58,7 +58,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
 BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake-4
+.if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
+.endif
 LIB_DEPENDS+=	pth.14:${PORTSDIR}/devel/pth
 
 USE_PERL5=	yes
@@ -83,6 +85,10 @@ LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/641/unxfbsd.pro/lib/
 DMAKE=		dmake debug="true"
 .else
 DMAKE=		dmake strip="true"
+.endif
+
+.if !defined(DISPLAY)
+DISPLAYHACK=localhost:1001
 .endif
 
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
@@ -220,32 +226,45 @@ do-build:
 	@${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
         @${RM} -f ${WRKDIR}/.Xvfb.pid
 .endif
+.if !defined(DISPLAY)
 	#
 	# This is a UGLY hack to not have to specify a X-Display.
 	#
 	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
+.endif
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
-	@cd ${WRKSRC}/.. && DISPLAY=localhost:1001 PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
+.if !defined(DISPLAY)
+	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAYHACK} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
 		tcsh -c 'source FreeBSDEnv.Set && ${DMAKE}'
 	@${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
+.else
+	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
+		tcsh -c 'source FreeBSDEnv.Set && ${DMAKE}'
+.endif
 
 pre-install:
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' < ${FILESDIR}/oo_setup.resp \
 	    > ${WRKSRC}/../instsetoo/unxfbsd.pro/01/normal/oo_setup.resp
 
 do-install:
+.if !defined(DISPLAY)
 	#
 	# UGLY hack to not have to specify a X-Display.
 	#
 	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
-		TEMP=${WRKDIR} DISPLAY=localhost:1001 \
+		TEMP=${WRKDIR} DISPLAY=${DISPLAYHACK} \
 		${WRKSRC}/../instsetoo/*.pro/01/normal/setup -r:oo_setup.resp
 	@${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
+.else
+	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
+		TEMP=${WRKDIR} DISPLAY=${DISPLAY} \
+		${WRKSRC}/../instsetoo/*.pro/01/normal/setup -r:oo_setup.resp
+.endif
 
 install-user:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" \
