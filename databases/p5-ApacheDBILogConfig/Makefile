@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dburr@FreeBSD.ORG
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VERSION}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VERSION}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 
 PERL_CONFIGURE=	yes

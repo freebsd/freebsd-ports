@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VERSION%%/Term/Screen.pm
-@dirrm lib/perl5/site_perl/%%PERL_VERSION%%/Term
-lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/auto/Term/Screen/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/auto/Term/Screen
-@dirrm lib/perl5/site_perl/%%PERL_VERSION%%/%%PERL_ARCH%%/auto/Term
+lib/perl5/site_perl/%%PERL_VER%%/Term/Screen.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Term
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/Screen/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/Screen
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term

@@ -20,7 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net/p5-SNMP_Session \
 		${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VERSION}/${PERL_ARCH}
+SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
 NO_PACKAGE=	"needs customization"
 USE_PERL5=	yes
 SCRIPTS_ENV+=	PERL5=${PERL5}
