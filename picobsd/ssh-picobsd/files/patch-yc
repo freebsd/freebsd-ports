@@ -1,0 +1,11 @@
+--- sshd.c.old	Sun Sep 30 12:33:14 2001
++++ sshd.c	Sun Sep 30 12:26:17 2001
+@@ -795,6 +795,8 @@
+ 	return ssh_main(ac, av);
+     if (!strcmp( av[0] + l - 3, "ssh"))
+ 	return ssh_main(ac, av);
++    if (!strcmp( av[0] + l - 4, "ssh1"))
++	return ssh_main(ac, av);
+     if (!strcmp( av[0] + l - 3, "scp"))
+ 	return scp_main(ac, av);
+   }
