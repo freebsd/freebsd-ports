@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	checkbot
-PORTVERSION= 	1.58
+PORTVERSION= 	1.62
 CATEGORIES=	www perl5
-MASTER_SITES=	http://www.xs4all.nl/~graaff/checkbot/ \
+MASTER_SITES=	http://degraaff.org/checkbot/ \
 		http://www.de.freebsd.org/~wosch/src/
 
 MAINTAINER=	wosch@FreeBSD.org
@@ -19,7 +19,6 @@ BUILD_DEPENDS=  ${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
 
 SITE_PERL=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
-FETCH_BEFORE_ARGS=	-b
 
 MAN1=		checkbot.1
 USE_PERL5=	YES
