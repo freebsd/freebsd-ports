@@ -76,9 +76,10 @@ DOCSDIR=	${PREFIX}/share/doc/bind9
 EXTRA_DOCSDIR=	share/doc/bind9-dlz
 EXTRA_FIX=	${WRKSRC}/configure
 DOCS=		README.txt bind_dlz.txt changelog.txt \
-		dlz_filesystem_driver.txt dlz_interface.txt \
-		dlz_mysql_driver.txt dlz_postgres_driver.txt \
-		dlz_stub_driver.txt sdlz_helper.txt sdlz_interface.txt
+		dlz_bdb_driver.txt dlz_filesystem_driver.txt \
+		dlz_interface.txt dlz_mysql_driver.txt \
+		dlz_postgres_driver.txt dlz_stub_driver.txt \
+		sdlz_helper.txt sdlz_interface.txt
 
 MAN1=	dig.1 host.1
 MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
