@@ -143,12 +143,14 @@ echo "	@touch ${PREFIX}/apsfilter/filter/.keep_me"
  echo "	@\${ECHO} \"========================================================\""
 if [ $TROFF ]
 then
- echo "	@\${ECHO} \"If you want to print troff files with apsfilter         \""
- echo "	@\${ECHO} \"then you have to install the grog utility               \""
+ echo "	@\${ECHO} \"If running FreeBSD < 4.0 and you want to print troff    \""
+ echo "	@\${ECHO} \"files then you have to install the grog utility         \""
  echo "	@\${ECHO} \"from the groff sources:                                 \""
  echo "	@\${ECHO} \"    cp /usr/src/contrib/groff/grog/grog.sh /usr/bin/grog\""
  echo "	@\${ECHO} \"    chmod 555 /usr/bin/grog                             \""
  echo "	@\${ECHO} \"--------------------------------------------------------\""
- echo "	@\${ECHO} \"*** Printer installation ***        \""
- echo "	@\${ECHO} \"    cd ${PREFIX}/apsfilter; ./SETUP \""
 fi
+ echo "	@\${ECHO} \"*** Printer installation ***               \""
+ echo "	@\${ECHO} \"    cd ${PREFIX}/apsfilter; ./SETUP        \""
+ echo "	@\${ECHO} \"*** Please note ***                        \""
+ echo "	@\${ECHO} \"    This is an apsfilter 5.1.5 Prerelease. \""
