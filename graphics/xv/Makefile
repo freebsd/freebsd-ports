@@ -7,7 +7,7 @@
 
 PORTNAME=	xv
 PORTVERSION=	3.10a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	graphics
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
 		${MASTER_SITE_LOCAL} \
@@ -20,7 +20,7 @@ MASTER_SITE_SUBDIR=	shige/xv
 #		These are modified for applying after jp-extension-patch.
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}${PORTVERSION:S/.//}-jp-extension-rev5.3.3.tar.gz \
-		jp-ext-bzip2.patch longname.patch pdf.patch mp-tiff-patch \
+		jp-ext-bzip2-1.1.patch longname.patch pdf.patch mp-tiff-patch \
 		xv-png-1.2d.patch xvpng-1.2d-fix3.patch
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:N*patch}
