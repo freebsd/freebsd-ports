@@ -7575,6 +7575,7 @@ sablotron	ports/textproc/sablotron
 safecat		ports/sysutils/safecat
 saferpay	ports/security/saferpay
 safesh		ports/security/safesh
+sagasu		ports/textproc/sagasu
 saint		ports/security/saint
 salias		ports/misc/salias
 sam		ports/editors/sam
