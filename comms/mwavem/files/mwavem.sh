@@ -17,7 +17,6 @@ case "$1" in
 			$0 start
             ;;
     stop  )
-		killall ${MWAVE_NAME}
             ;;
     start )
             echo -n ' modem'
