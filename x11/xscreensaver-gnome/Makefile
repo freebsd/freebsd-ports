@@ -5,54 +5,68 @@
 # $FreeBSD$
 #
 
-MAINDIR=	${.CURDIR}/../xscreensaver
-
 PORTNAME=	xscreensaver-gnome
-PORTVERSION!=	${MAKE} -V PORTVERSION -f ${MAINDIR}/${MAKEFILE}
-PORTREVISION!=	${MAKE} -V PORTREVISION -f ${MAINDIR}/${MAKEFILE}
-PORTEPOCH!=	${MAKE} -V PORTEPOCH -f ${MAINDIR}/${MAKEFILE}
+PORTVERSION=	4.05
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
-DISTFILES=
+MASTER_SITES=	http://www.jwz.org/xscreensaver/
+DISTNAME=	xscreensaver-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-FETCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11/xscreensaver:patch
-BUILD_DEPENDS!=	${MAKE} -V BUILD_DEPENDS -f ${MAINDIR}/${MAKEFILE}
-LIB_DEPENDS!=	${MAKE} -V LIB_DEPENDS -f ${MAINDIR}/${MAKEFILE}
-RUN_DEPENDS!=	${MAKE} -V RUN_DEPENDS -f ${MAINDIR}/${MAKEFILE}
-
-RUN_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
+LIB_DEPENDS=	gle.3:${PORTSDIR}/graphics/gle
 
 USE_X_PREFIX=	yes
+USE_XPM=	yes
+USE_MESA=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomehier gnomelibs libcapplet gdkpixbuf
 GNU_CONFIGURE=	yes
-OLD_CONFIGURE_ARGS!=	${MAKE} -V CONFIGURE_ARGS -f ${MAINDIR}/${MAKEFILE}
-CONFIGURE_ARGS=	${OLD_CONFIGURE_ARGS:N--without-gnome} --with-gnome
-CONFIGURE_ENV!=	${MAKE} -V CONFIGURE_ENV -f ${MAINDIR}/${MAKEFILE}
+CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
+		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks \
+		--with-configdir=${PREFIX}/share/xscreensaver/config \
+		--with-jpeg=${LOCALBASE} --without-motif --with-gnome
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		X_CFLAGS="-I${LOCALBASE}/include/gnome-xml"
 
-post-extract:
-	@${CP} -Rp ${WRKDIRPREFIX}${MAINDIR}/work/xscreensaver-${PORTVERSION} \
-		${WRKSRC}
-	@${RM} -f ${WRKSRC}/config.cache
+.if defined(XS_WITH_ALL_FORTUNES)
+CONFIGURE_ARGS+=	--with-fortune="/usr/games/fortune -sa"
+.endif
 
-do-build:
-	@cd ${WRKSRC}/driver && ${GMAKE} clean xscreensaver-demo \
-		screensaver-properties.desktop
+MAN1=   anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
+	blitspin.1 bouboule.1 boxed.1 braid.1 bsod.1 bubble3d.1 bubbles.1 \
+	bumps.1 cage.1 ccurve.1 circuit.1 compass.1 coral.1 critical.1 \
+	crystal.1 cubenetic.1 cynosure.1 dangerball.1 decayscreen.1 deco.1 \
+	deluxe.1 demon.1 discrete.1 distort.1 drift.1 engine.1 epicycle.1 \
+	euler2d.1 extrusion.1 fadeplot.1 flag.1 flame.1 flipscreen3d.1 flow.1 \
+	fluidballs.1 forest.1 galaxy.1 gears.1 gflux.1 glforestfire.1 \
+	glplanet.1 glsnake.1 gltext.1 goop.1 grav.1 greynetic.1 halo.1 helix.1 \
+	hopalong.1 hyperball.1 hypercube.1 ifs.1 imsmap.1 interference.1 \
+	jigsaw.1 juggle.1 julia.1 kaleidescope.1 kumppa.1 lament.1 laser.1 \
+	lavalite.1 lightning.1 lisa.1 lissie.1 lmorph.1 loop.1 maze.1 menger.1 \
+	moebius.1 moire.1 moire2.1 molecule.1 morph3d.1 mountain.1 munch.1 \
+	nerverot.1 noseguy.1 pedal.1 penetrate.1 penrose.1 petri.1 phosphor.1 \
+	pipes.1 polyominoes.1 pulsar.1 pyro.1 qix.1 queens.1 rd-bomb.1 \
+	ripples.1 rocks.1 rorschach.1 rotor.1 rotzoomer.1 rubik.1 sballs.1 \
+	shadebobs.1 sierpinski.1 sierpinski3d.1 slidescreen.1 slip.1 sonar.1 \
+	speedmine.1 sphere.1 spheremonics.1 spiral.1 spotlight.1 sproingies.1 \
+	squiral.1 stairs.1 starfish.1 starwars.1 stonerview.1 strange.1 \
+	superquadrics.1 swirl.1 t3d.1 thornbird.1 triangle.1 truchet.1 twang.1 \
+	vermiculate.1 vidwhacker.1 vines.1 wander.1 webcollage.1 \
+	whirlwindwarp.1 whirlygig.1 worm.1 xflame.1 xjack.1 xlyap.1 \
+	xmatrix.1 xrayswarm.1 xspirograph.1 xsublim.1 xteevee.1 zoom.1 \
+	endgame.1 \
+	xscreensaver-command.1 xscreensaver-demo.1 \
+	xscreensaver-getimage-file.1 xscreensaver-getimage-video.1 \
+	xscreensaver-getimage.1 xscreensaver-gl-helper.1 xscreensaver.1
 
-do-install:
-	@${INSTALL_DATA} ${WRKSRC}/utils/images/screensaver-*.xpm \
-		${PREFIX}/share/gnome/pixmaps
-	@${INSTALL_DATA} ${WRKSRC}/utils/images/logo-50.xpm \
-		${PREFIX}/share/gnome/pixmaps/xscreensaver.xpm
-	@${INSTALL_PROGRAM} ${WRKSRC}/driver/xscreensaver-demo \
-		${PREFIX}/bin/xscreensaver-gnome
-	@${INSTALL_SCRIPT} ${WRKSRC}/driver/screensaver-properties-capplet \
-		${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/driver/screensaver-properties.desktop \
-		${PREFIX}/share/gnome/apps/Settings/Desktop
-	@${INSTALL_DATA} ${WRKSRC}/driver/screensaver-properties.desktop \
-		${PREFIX}/share/gnome/control-center/Desktop
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD}  -e 's|malloc[.]h|stdlib.h|g' \
+		${WRKSRC}/hacks/glx/extrusion.c
 
 .include <bsd.port.mk>

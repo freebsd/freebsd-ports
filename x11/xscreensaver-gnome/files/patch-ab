@@ -1,0 +1,44 @@
+
+$FreeBSD$
+
+--- configure.orig	Tue Jun 11 12:09:04 2002
++++ configure	Thu Jul 18 15:09:54 2002
+@@ -12483,7 +12483,7 @@
+     pkg_check_version  gmodule-2.0  2.0.0
+     pkg_check_version   libxml-2.0  2.4.6
+     pkg_check_version libglade-2.0  1.99.0
+-    have_gtk="$ok"
++    have_gtk="no"
+ 
+     if test "$have_gtk" = yes; then
+       have_gtk2=yes
+@@ -13116,7 +13116,7 @@
+ 
+     # First check for XML 2.x.
+     #
+-    pkg_check_version libxml-2.0 2.4.6
++    pkg_check_version libxml 1.0
+ 
+     # If that didn't work (we don't have XML 2.x) and we *don't* have
+     # Gtk 2.x, then check to see if we have XML 1.x
+@@ -17491,13 +17491,13 @@
+ # Now that we know whether we have Gnome, we can decide where the XML
+ # config files get installed.
+ #
+-if test -z "$HACK_CONF_DIR" ; then
+-  if test -n "$GNOME_DATADIR" ; then
+-    HACK_CONF_DIR='${GNOME_DATADIR}/control-center/screensavers'
+-  else
+-    HACK_CONF_DIR='${prefix}/lib/xscreensaver/config'
+-  fi
+-fi
++#if test -z "$HACK_CONF_DIR" ; then
++#  if test -n "$GNOME_DATADIR" ; then
++#    HACK_CONF_DIR='${GNOME_DATADIR}/control-center/screensavers'
++#  else
++#    HACK_CONF_DIR='${prefix}/lib/xscreensaver/config'
++#  fi
++#fi
+ 
+ 
+ 

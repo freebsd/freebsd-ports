@@ -1,0 +1,17 @@
+
+$FreeBSD$
+
+--- driver/Makefile.in.orig	Tue Jun 11 12:09:07 2002
++++ driver/Makefile.in	Mon Aug  5 14:17:52 2002
+@@ -23,9 +23,9 @@
+ INTLTOOL_MERGE	= @INTLTOOL_MERGE@
+ 
+ GNOME_DATADIR	= @GNOME_DATADIR@
+-GNOME_CCDIR	= $(GNOME_DATADIR)/control-center/Desktop
++GNOME_CCDIR	= $(GNOME_DATADIR)/gnome/control-center/Desktop
+ GNOME_PANELDIR1 = $(GNOME_DATADIR)/gnome/apps/Settings/Desktop
+-GNOME_PANELDIR2	= $(GNOME_DATADIR)/applications
++GNOME_PANELDIR2	= $(GNOME_DATADIR)/gnome/applications
+ GNOME_PANELDIR	= @GNOME_PANELDIR@
+ GLADE_DATADIR	= @GLADE_DATADIR@
+ GNOME_BINDIR	= $(bindir)
