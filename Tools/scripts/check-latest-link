@@ -1,0 +1,72 @@
+#!/bin/sh
+#
+# Iterate over the ports collection, assemble the list of LATEST_LINKs and
+# then look for duplicates.  Send a nag-mail to the responsible maintainers.
+
+if [ -z "${PORTSDIR}" ]; then
+	PORTSDIR=/usr/ports
+fi
+
+if [ "$1" = "-nomail" ]; then
+	NOMAIL=1
+else
+	NOMAIL=0
+fi
+
+cd ${PORTSDIR}
+CATEGORIES=$(make -V SUBDIR)
+
+for cat in ${CATEGORIES}; do
+	cd ${PORTSDIR}/${cat}
+	dirs=$(make -V SUBDIR)
+	echo "==> ${cat}" 1>&2
+
+	make "PORTSDIR=${PORTSDIR}" "CATEGORY=${cat}" "DIRS=${dirs}" -k -j3 -f - << "EOF"
+all:	${DIRS:S/$/.portinfo/}
+
+.for d in ${DIRS}
+${d}.portinfo:
+	@cd ${PORTSDIR}/${CATEGORY}/${d}; make 'portinfo=$${NO_LATEST_LINK}| $${MAINTAINER} $${.CURDIR:S,${PORTSDIR}/,,} $${LATEST_LINK}' -V portinfo
+.endfor
+EOF
+done | grep '^|' > ${PORTSDIR}/.latest_link
+
+cd ${PORTSDIR}
+(awk '{print " " $4 "$"}' < .latest_link) | sort | uniq -d > .latest_dups
+
+grep -f .latest_dups .latest_link | sort -i -k4 > .latest_full
+
+maint=$(awk '{print $2}' < .latest_full | sort -ui | tr '\n' ',')
+
+(echo "Dear port maintainers,"
+  echo
+  echo "The following list includes ports maintained by you that have duplicate"
+  echo "LATEST_LINK values.  They should either be modified to use a unique"
+  echo "LATEST_LINK or suppressed using NO_LATEST_LINK, to avoid overwriting"
+  echo "each other in the packages/Latest directory.  If your ports conflict with"
+  echo "ports maintained by another person, please coordinate your efforts with"
+  echo "them."
+  echo
+  echo
+  echo "Thanks,"
+  echo "Kris \"Annoying Reminder Guy II\" Kennaway"
+
+  printf "%-20s %-30s %-20s\n"  "LATEST_LINK" "PORTNAME" "MAINTAINER"
+  echo "=========================================================================="
+  while read dummy i j k; do
+    printf "%-20s %-30s %-20s\n" $k $j $i
+  done < .latest_full
+
+  num=$(wc -l .latest_full | awk '{print $1}')
+  echo
+  echo "Total: $num ports") > .latest_mail
+
+if [ "${NOMAIL}" = "0" ]; then
+  for i in ${maint}; do
+    mail -s "Ports with duplicate LATEST_LINKS" $i < .latest_mail
+  done
+else
+  cat .latest_mail
+fi
+
+rm .latest_dups .latest_full .latest_link .latest_mail
