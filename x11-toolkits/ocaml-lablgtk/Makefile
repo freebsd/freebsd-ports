@@ -17,8 +17,6 @@ PKGNAMESUFFIX=	${SFXGL}${SFXGNOME}${SFXGLADE}
 MAINTAINER=	rk@ronald.org
 COMMENT=	An Objective Caml interface to gtk+
 
-BROKEN=		Incomplete pkg-plist
-
 BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml
 RUN_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml
 .if defined(WITHOUT_GL)
