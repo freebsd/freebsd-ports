@@ -1,26 +1,14 @@
-*** SRC/util.h.orig	Sat Nov 22 22:25:23 1997
---- SRC/util.h	Sat Nov 22 22:29:50 1997
+*** SRC/util.h.orig	Fri Aug  6 04:21:40 1999
+--- SRC/util.h	Thu Dec 16 03:32:32 1999
 ***************
-*** 2,10 ****
-  #define __SUPERLU_UTIL
-  
+*** 4,10 ****
+--- 4,12 ----
   #include <stdio.h>
   #include <stdlib.h>
-! #include <string.h>
-  #include <malloc.h>
-  #include <assert.h>
-  
-  /* Macros */
---- 2,13 ----
-  #define __SUPERLU_UTIL
-  
-  #include <stdio.h>
-+ #ifdef __STDC__
-  #include <stdlib.h>
-! #else
+  #include <string.h>
++ #ifndef __STDC__
   #include <malloc.h>
 + #endif
-+ #include <string.h>
   #include <assert.h>
   
   /* Macros */
