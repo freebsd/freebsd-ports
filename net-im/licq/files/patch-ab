@@ -1,46 +1,31 @@
---- plugins/qt-gui/acinclude.m4.in.orig	Mon Feb  7 23:35:22 2000
-+++ plugins/qt-gui/acinclude.m4.in	Mon Feb  7 23:37:10 2000
-@@ -63,7 +63,7 @@
+--- plugins/qt-gui/acinclude.m4.in.orig	Wed Mar 29 01:36:10 2000
++++ plugins/qt-gui/acinclude.m4.in	Wed Mar 29 01:37:07 2000
+@@ -72,7 +72,7 @@
        fi
  
        for qt_dir in $qt_library_dirs; do
 -        for qt_check_lib in $qt_dir/libqt.so.2; do
-+        for qt_check_lib in $qt_dir/libqt2.so.2; do
++        for qt_check_lib in $qt_dir/libqt2.so.3; do
            if test -r $qt_check_lib; then
              ac_qt_libraries=$qt_dir
              break 2
-@@ -84,7 +84,7 @@
+@@ -93,7 +93,7 @@
    fi
  
    dnl Check if we have the right lib
--  output=`eval "objdump -C -T $ac_cv_lib_qtlib/libqt.so* | grep QCString"`
-+  output=`eval "objdump -C -T $ac_cv_lib_qtlib/libqt2.so* | grep QCString"`
+-  output=`eval "strings $ac_cv_lib_qtlib/libqt.so | grep -l QCString"`
++  output=`eval "strings $ac_cv_lib_qtlib/libqt2.so | grep -l QCString"`
    if test -z "$output"; then
      AC_MSG_ERROR([The Qt lib directory
          $ac_cv_lib_qtlib
-@@ -132,6 +132,7 @@
-         /usr/X11/include/X11/qt \
-         /usr/X11R6/include \
-         /usr/X11R6/include/qt \
-+        /usr/X11R6/include/qt2 \
-         /usr/X11R6/include/X11/qt \
-         /usr/X11/lib/qt/include"
+@@ -196,8 +196,8 @@
  
-@@ -173,14 +174,14 @@
- [
-   AC_PATH_PROG(
-     MOC,
--    moc,
--    $QTDIR/bin/moc,
-+    moc2,
-+    $QTDIR/bin/moc2,
-     $QTDIR/bin:/usr/bin:/usr/X11R6/bin:/usr/lib/qt/bin:/usr/local/qt/bin:$PATH)
- 
-   AC_SUBST(MOC)
- 
-   if test -z "$QTDIR"; then
--    echo "** environment variable QTDIR is not set, moc might not be found"
-+    echo "** environment variable QTDIR is not set, moc2 might not be found"
-   fi
- ])
- 
+     AC_PATH_PROG(
+       MOC,
+-      moc,
+-      $QTDIR/bin/moc,
++      moc2,
++      $QTDIR/bin/moc2,
+       $QTDIR/bin:/usr/lib/qt2/bin:/usr/bin:/usr/X11R6/bin:/usr/lib/qt/bin:/usr/local/qt/bin:$PATH
+     )
+   else

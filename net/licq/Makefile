@@ -1,12 +1,12 @@
 # New ports collection makefile for:    licq
-# Version required:                     0.75.3a
+# Version required:                     0.81
 # Date created:                         2 July 1998
-# Whom:                                 Brian Feldman
+# Whom:                                 Brian Feldman & Matt Heckaman
 #
 # $FreeBSD$
 #
 
-DISTNAME=	licq-0.75.3a
+DISTNAME=	licq-0.81
 CATEGORIES=	net
 MASTER_SITES=	http://download.sourceforge.net/licq/ \
 		ftp://ftp.wibble.net/pub/licq/srcs/ \
@@ -17,16 +17,15 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 
 MAINTAINER=	green@FreeBSD.org
 
-BUILD_DEPENDS=  aclocal:${PORTSDIR}/devel/automake
+LIB_DEPENDS=	qt2.3:${PORTSDIR}/x11-toolkits/qt21
+BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake
 
-USE_QT2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
 USE_AUTOCONF=	yes
 USE_NEWGCC=     yes
 USE_PERL5=      yes
 
-DATANAME=       licq-data-1.5
+DATANAME=       licq-data-1.6
 DATAFILES=	${DATANAME}${EXTRACT_SUFX}
 DATADIR=	${WRKDIR}/${DATANAME}
 
