@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xclasses
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://trier.linux.de/pub/Xclasses/
 DISTNAME=	Xclasses-public-${PORTVERSION}.src
