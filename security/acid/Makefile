@@ -8,7 +8,7 @@
 PORTNAME=	acid
 PORTVERSION=	0.9.6b23
 CATEGORIES=	security
-MASTER_SITES=	http://www.andrew.cmu.edu/~rdanyliw/snort/
+MASTER_SITES=	http://www.andrew.cmu.edu/user/rdanyliw/snort/
 
 MAINTAINER=	possamai@xs4all.nl
 COMMENT=	Analysis Console for Intrusion Databases (ACID) with Snort and MySQL
