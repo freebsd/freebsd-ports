@@ -14,6 +14,7 @@ MAINTAINER=	kcwu@ck.tp.edu.tw
 
 USE_QT_VER=	2
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 
 pre-configure:
 	${REINPLACE_CMD} -e "s@\\$$\(QTDIR\)/include@${PREFIX}/include/qt2@" ${WRKSRC}/Makefile ${WRKSRC}/formula/Makefile
