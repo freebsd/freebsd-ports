@@ -43,7 +43,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/micq.7 ${MANPREFIX}/man/man7
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for ext in i18n logformat png txt xpm 
+.for ext in i18n logformat png txt xpm
 	${INSTALL_DATA} ${WRKSRC}/doc/*.${ext} ${DOCSDIR}
 .endfor
 .endif
