@@ -10,7 +10,7 @@ PORTVERSION=	0.8.3
 CATEGORIES=	security
 MASTER_SITES=	http://mhash.sourceforge.net/dl/
 
-MAINTAINER=	roam@orbitel.bg
+MAINTAINER=	roam@FreeBSD.org
 
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.gusnet.cx/proj/tcpcat/
 
-MAINTAINER=	roam@orbitel.bg
+MAINTAINER=	roam@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

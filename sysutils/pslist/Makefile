@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://mail.orbitel.bg/~roam/devel/sysutils/ \
 		http://ringwraith.online.bg/~roam/devel/sysutils/
 
-MAINTAINER=	roam@orbitel.bg
+MAINTAINER=	roam@FreeBSD.org
 
 NO_BUILD=	yes
 

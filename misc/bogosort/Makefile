@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.lysator.liu.se/~qha/bogosort/ \
 		ftp://l82.ryd.student.liu.se/pub/unix/bogosort/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	roam@orbitel.bg
+MAINTAINER=	roam@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
