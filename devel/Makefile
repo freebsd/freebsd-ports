@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.83 1997/11/03 10:04:54 tg Exp $
+# $Id: Makefile,v 1.84 1997/11/09 10:33:56 jraynard Exp $
 #
 
+    SUBDIR += ElectricFence
     SUBDIR += SWIG
     SUBDIR += SpecTcl
     SUBDIR += asl
