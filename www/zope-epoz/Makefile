@@ -12,7 +12,7 @@ MASTER_SITES=	http://mjablonski.zope.de/Epoz/releases/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	Epoz-${PORTVERSION}
 
-MAINTAINER=	kaeru@inigo-tech.com
+MAINTAINER=	yasi@yasi.to
 COMMENT=	A cross-browser-wysiwyg-editor for Zope/CMF
 
 USE_PYTHON=	yes
