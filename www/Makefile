@@ -161,6 +161,7 @@
     SUBDIR += mod_sed
     SUBDIR += mod_sequester
     SUBDIR += mod_snake
+    SUBDIR += mod_sqlinclude
     SUBDIR += mod_throttle
     SUBDIR += mod_ticket
     SUBDIR += mod_trigger

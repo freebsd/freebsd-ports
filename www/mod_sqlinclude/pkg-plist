@@ -1,0 +1,7 @@
+libexec/apache/mod_sqlinclude.so
+@exec %D/sbin/apxs -e -A -n sqlinclude %f
+@unexec %D/sbin/apxs -e -A -n sqlinclude %f
+%%PORTDOCS%%share/doc/mod_sqlinclude/CHANGES.txt
+%%PORTDOCS%%share/doc/mod_sqlinclude/README.txt
+%%PORTDOCS%%share/doc/mod_sqlinclude/TODO.txt
+%%PORTDOCS%%@dirrm share/doc/mod_sqlinclude
