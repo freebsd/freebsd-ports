@@ -2,3 +2,5 @@ MD5 (samba-2.2.9.tar.gz) = 49f9e41a1876c629ae9355ed7599047f
 SIZE (samba-2.2.9.tar.gz) = 5453486
 MD5 (samba-2.2.8a-freebsd-jail-patch-20040226.gz) = 2c036c89365a97a404dc6939c7ef99ec
 SIZE (samba-2.2.8a-freebsd-jail-patch-20040226.gz) = 3056
+MD5 (samba-2.2.9-browsing-hacks.diff) = 39f95cdb2f9833b4eec7a05000fe2cbf
+SIZE (samba-2.2.9-browsing-hacks.diff) = 59834

@@ -18,7 +18,13 @@ MASTER_SITE_SUBDIR=	. old-versions
 # Reworked/updated and portsified by anders@FreeBSD.org, 2003-11-08
 PATCH_SITES+=	ftp://totem.fix.no/pub/mirrors/misc/:smbjail \
 		ftp://ftp.nuug.no/pub/anders/distfiles/:smbjail
-PATCHFILES=	samba-2.2.8a-freebsd-jail-patch-20040226.gz:smbjail
+PATCHFILES+=	samba-2.2.8a-freebsd-jail-patch-20040226.gz:smbjail
+.endif
+
+.if defined(WITH_BROWSING_HACKS)
+PATCH_SITES+=	http://cell.sick.ru/~glebius/patches/ \
+		http://people.FreeBSD.org/~glebius/
+PATCHFILES+=	samba-2.2.9-browsing-hacks.diff
 .endif
 
 MAINTAINER=	ports@FreeBSD.org
