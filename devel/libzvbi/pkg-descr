@@ -1,0 +1,6 @@
+Routines to access raw VBI capture devices (currently the V4L and
+V4L2 API, and the *BSD bktr driver are supported), a versatile VBI
+bit slicer, decoders for various data services and basic search,
+render and export functions for Closed Caption and Teletext pages.
+
+WWW: http://zapping.sourceforge.net/doc/libzvbi/
