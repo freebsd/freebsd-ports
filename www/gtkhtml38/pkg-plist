@@ -86,10 +86,7 @@ include/libgtkhtml-3.0/gtkhtml/htmlundo.h
 lib/gtkhtml/libgnome-gtkhtml-editor-3.0.so
 lib/libgtkhtml-3.0.a
 lib/libgtkhtml-3.0.so
-lib/libgtkhtml-3.0.so.3
-lib/libgtkhtml-a11y-3.0.a
-lib/libgtkhtml-a11y-3.0.so
-lib/libgtkhtml-a11y-3.0.so.3
+lib/libgtkhtml-3.0.so.4
 libdata/bonobo/servers/GNOME_GtkHTML_Editor.server
 libdata/pkgconfig/libgtkhtml-3.0.pc
 share/gnome/gtkhtml-3.0/Editor.idl
