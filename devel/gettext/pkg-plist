@@ -27,6 +27,7 @@ lib/libasprintf.a
 lib/libasprintf.so
 lib/libasprintf.so.0
 lib/libgettextlib-%%VERSION%%.so
+lib/libgettextlib.a
 lib/libgettextlib.so
 lib/libgettextpo.a
 lib/libgettextpo.so
@@ -68,6 +69,16 @@ share/aclocal/ulonglong.m4
 share/aclocal/wchar_t.m4
 share/aclocal/wint_t.m4
 share/aclocal/xsize.m4
+%%DOCSDIR%%/csharpdoc/GNU_Gettext.html
+%%DOCSDIR%%/csharpdoc/GNU_Gettext_GettextResourceManager.html
+%%DOCSDIR%%/csharpdoc/GNU_Gettext_GettextResourceSet.html
+%%DOCSDIR%%/csharpdoc/begin.html
+%%DOCSDIR%%/csharpdoc/index.html
+%%DOCSDIR%%/csharpdoc/namespaces.html
+%%DOCSDIR%%/examples/config/csharpcomp.m4
+%%DOCSDIR%%/examples/config/csharpcomp.sh.in
+%%DOCSDIR%%/examples/config/csharpexec.m4
+%%DOCSDIR%%/examples/config/csharpexec.sh.in
 %%DOCSDIR%%/examples/config/gcj.m4
 %%DOCSDIR%%/examples/config/javacomp.m4
 %%DOCSDIR%%/examples/config/javacomp.sh.in
@@ -280,6 +291,7 @@ share/locale/zh_TW/LC_MESSAGES/gettext-tools.mo
 @dirrm %%DOCSDIR%%/javadoc1
 @dirrm %%DOCSDIR%%/examples/config
 @dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%/csharpdoc
 @dirrm %%DOCSDIR%%
 @dirrm libdata/gettext-tools
 @unexec rmdir %%LOCALBASE%%/share/locale/be/LC_MESSAGES 2>/dev/null || true

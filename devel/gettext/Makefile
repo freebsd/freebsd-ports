@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gettext
-PORTVERSION=	0.13.1
-PORTREVISION=	1
+PORTVERSION=	0.14.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gettext
@@ -15,9 +14,11 @@ MASTER_SITE_SUBDIR=	gettext
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU gettext package
 
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_ICONV=	yes
+LIBTOOLFILES=	autoconf-lib-link/configure gettext-runtime/configure \
+		gettext-runtime/libasprintf/configure gettext-tools/configure
+USE_LIBTOOL_VER=15
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	ACLOCAL="${TRUE}" \
 		AUTOCONF="${TRUE}" \
 		AUTOMAKE="${TRUE}" \
@@ -25,7 +26,8 @@ CONFIGURE_ENV=	ACLOCAL="${TRUE}" \
 		MAKEINFO="makeinfo --no-split" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--disable-csharp \
+		--mandir=${PREFIX}/man
 INSTALLS_SHLIB=	yes
 
 .if !defined(WITHOUT_GETTEXT_OPTIONS)
