@@ -1,5 +1,5 @@
---- Configure.orig	Sat Nov  8 03:22:10 1997
-+++ Configure	Sun Nov 30 14:07:58 1997
+--- Configure.orig	Thu Dec 25 11:47:24 1997
++++ Configure	Thu Feb 19 23:02:55 1998
 @@ -44,16 +44,16 @@
  #  be overwritten by any of the parameters saved in $config.
  #  For yes/no values, 0=no, 1=yes
@@ -20,12 +20,12 @@
  WEB_HEADER=			# Header for common site look
  WEB_FOOTER=			# Footer for common site look
  COOL_CF=			# Config file for this installation
-@@ -593,7 +593,7 @@
- [ -n "$ans" ] && WEB_FOOTER=$ans
- [ "$ans" = "none" ] && WEB_FOOTER=""
- 
--[ "$COOL_HELPFILE" ] || COOL_HELPFILE="/majorcool.htm"
-+[ "$COOL_HELPFILE" ] || COOL_HELPFILE="/majorcool.html"
- cat <<EOM
- 
- MajorCool needs to place it's Help file somewhere on the Web server.
+@@ -64,7 +64,7 @@
+ COOL_NAME="majordomo"		# MajorCool CGI program name
+ COOL_USERID="bin"		# User-id to install as
+ COOL_GROUPID="bin"		# Group-id to install as
+-COOL_HELPFILE=			# MajorCool HTML info file location
++COOL_HELPFILE=/majorcool.html	# MajorCool HTML info file location
+ COOL_SITEADDR="simple"		# The address lookup function to use
+ COOL_CREATECMD=			# Program to call on CREATE request
+ COOL_DELETECMD=			# Program to call on DELETE request
