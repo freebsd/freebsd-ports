@@ -1284,6 +1284,7 @@ dbmetrix	ports/databases/dbmetrix
 dbow		ports/databases/dbow
 dbs		ports/benchmarks/dbs
 dbtool		ports/databases/dbtool
+dbus		ports/devel/dbus
 dbview		ports/databases/dbview
 dc20ctrl	ports/graphics/dc20ctrl
 dc20pack	ports/graphics/dc20pack
