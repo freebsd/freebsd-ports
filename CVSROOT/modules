@@ -4049,6 +4049,7 @@ ja-ryaku-fpw	ports/japanese/ryaku-fpw
 ja-samba	ports/japanese/samba
 ja-samba3	ports/japanese/samba3
 ja-sazanami-ttf	ports/japanese/sazanami-ttf
+ja-scim-anthy	ports/japanese/scim-anthy
 ja-scim-tables	ports/japanese/scim-tables
 ja-scim-uim	ports/japanese/scim-uim
 ja-sed		ports/japanese/sed
