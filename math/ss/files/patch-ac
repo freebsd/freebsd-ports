@@ -1,0 +1,11 @@
+--- ss.h.orig	Sat Feb 12 02:09:57 1994
++++ ss.h	Fri Jan 24 17:57:20 1997
+@@ -651,7 +651,7 @@
+  * BSDI's BSD/386 is also missing it.
+  *	From: Mike Durian <durian@advtech.uswest.com> 8 Feb 1994.
+  */
+-#if defined(apollo) || defined (__bsdi__)
++#if defined(apollo) || defined (__bsdi__) || defined(__FreeBSD__)
+ #  define beep()	write(2, "\007", 1)
+ #endif
+ 
