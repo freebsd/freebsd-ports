@@ -1,0 +1,13 @@
+--- configure.in.orig	Tue Feb 19 21:44:00 2002
++++ configure.in	Wed Feb 20 22:03:39 2002
+@@ -17,8 +17,8 @@
+ AC_CHECK_HEADERS(unistd.h)
+ 
+ dnl installation & score path
+-inst_path="$prefix/games/grande"
+-score_path="/var/games"
++inst_path="$prefix/share/grande"
++score_path="$prefix/share/grande/score"
+ 
+ dnl check if installation was disabled
+ AC_ARG_ENABLE( install,

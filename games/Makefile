@@ -110,6 +110,7 @@
     SUBDIR += golddig
     SUBDIR += gomoku.app
     SUBDIR += gracer
+    SUBDIR += grande
     SUBDIR += greed
     SUBDIR += gru
     SUBDIR += gshisen
