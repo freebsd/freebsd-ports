@@ -45,6 +45,7 @@
     SUBDIR += cryptplug
     SUBDIR += cyrus-sasl
     SUBDIR += cyrus-sasl2
+    SUBDIR += cyrus-sasl2-saslauthd
     SUBDIR += ddos_scan
     SUBDIR += didentd
     SUBDIR += digest
