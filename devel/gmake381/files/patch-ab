@@ -4,7 +4,7 @@
  @c %**start of header
  @setfilename make.info
  @settitle GNU @code{make}
-+@dircategory Programming & development tools.
++@dircategory Programming & development tools
 +@direntry
 +* Gmake: (make).        	The GNU Make utility
 +@end direntry
