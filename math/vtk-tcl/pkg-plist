@@ -1,0 +1,64 @@
+bin/vtk
+bin/vtkWrapTcl
+lib/libvtkCommonTCL.so
+lib/libvtkCommonTCL.so.%%LIBVER%%
+lib/libvtkFilteringTCL.so
+lib/libvtkFilteringTCL.so.%%LIBVER%%
+lib/libvtkGraphicsTCL.so
+lib/libvtkGraphicsTCL.so.%%LIBVER%%
+lib/libvtkHybridTCL.so
+lib/libvtkHybridTCL.so.%%LIBVER%%
+lib/libvtkIOTCL.so
+lib/libvtkIOTCL.so.%%LIBVER%%
+lib/libvtkImagingTCL.so
+lib/libvtkImagingTCL.so.%%LIBVER%%
+lib/libvtkParallelTCL.so
+lib/libvtkParallelTCL.so.%%LIBVER%%
+lib/libvtkPatentedTCL.so
+lib/libvtkPatentedTCL.so.%%LIBVER%%
+lib/libvtkRenderingTCL.so
+lib/libvtkRenderingTCL.so.%%LIBVER%%
+lib/vtk/tcl/README
+lib/vtk/tcl/pkgIndex.tcl
+lib/vtk/tcl/vtk/vtk.tcl
+lib/vtk/tcl/vtkbase/vtkbase.tcl
+lib/vtk/tcl/vtkcommon/vtkcommon.tcl
+lib/vtk/tcl/vtkfiltering/vtkfiltering.tcl
+lib/vtk/tcl/vtkgraphics/vtkgraphics.tcl
+lib/vtk/tcl/vtkhybrid/vtkhybrid.tcl
+lib/vtk/tcl/vtkimaging/vtkimaging.tcl
+lib/vtk/tcl/vtkinteraction/Interactor.tcl
+lib/vtk/tcl/vtkinteraction/bindings-iw.tcl
+lib/vtk/tcl/vtkinteraction/bindings-rw.tcl
+lib/vtk/tcl/vtkinteraction/bindings.tcl
+lib/vtk/tcl/vtkinteraction/setget.tcl
+lib/vtk/tcl/vtkinteraction/vtkinteraction.tcl
+lib/vtk/tcl/vtkio/vtkio.tcl
+lib/vtk/tcl/vtkparallel/vtkparallel.tcl
+lib/vtk/tcl/vtkpatented/vtkpatented.tcl
+lib/vtk/tcl/vtkrendering/vtkrendering.tcl
+lib/vtk/tcl/vtktcl.c
+lib/vtk/tcl/vtktesting/backdrop.tcl
+lib/vtk/tcl/vtktesting/colors.tcl
+lib/vtk/tcl/vtktesting/grab.tcl
+lib/vtk/tcl/vtktesting/mccases.tcl
+lib/vtk/tcl/vtktesting/vtktesting.tcl
+%%DOCSDIR%%/README.html
+%%DOCSDIR%%/README.patented-classes
+%%DOCSDIR%%/vtkLogo.jpg
+@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+@dirrm lib/vtk/tcl/vtktesting
+@dirrm lib/vtk/tcl/vtkrendering
+@dirrm lib/vtk/tcl/vtkpatented
+@dirrm lib/vtk/tcl/vtkparallel
+@dirrm lib/vtk/tcl/vtkio
+@dirrm lib/vtk/tcl/vtkinteraction
+@dirrm lib/vtk/tcl/vtkimaging
+@dirrm lib/vtk/tcl/vtkhybrid
+@dirrm lib/vtk/tcl/vtkgraphics
+@dirrm lib/vtk/tcl/vtkfiltering
+@dirrm lib/vtk/tcl/vtkcommon
+@dirrm lib/vtk/tcl/vtkbase
+@dirrm lib/vtk/tcl/vtk
+@dirrm lib/vtk/tcl
+@unexec rmdir %D/lib/vtk 2>/dev/null || true
