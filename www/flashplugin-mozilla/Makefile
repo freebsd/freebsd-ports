@@ -16,6 +16,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	llwang@infor.org
 COMMENT=	A GPL standalone Flash (TM) plugin for Mozilla web browser
 
+BROKEN=		"Broken pkg-plist"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-17
+
 LIB_DEPENDS=	flash.0:${PORTSDIR}/graphics/libflash
 RUN_DEPENDS?=	mozilla:${PORTSDIR}/www/mozilla
 
