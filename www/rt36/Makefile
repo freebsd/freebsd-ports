@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	rt3
-PORTVERSION=    3.0.0
+PORTVERSION=    3.0.1
 CATEGORIES=     www
 MASTER_SITES=   http://www.fsck.com/pub/rt/release/
-WRKSRC=         ${WRKDIR}/rt-3-0-0
-DISTFILES=      rt-3-0-0.tar.gz
+WRKSRC=         ${WRKDIR}/rt-3-0-1
+DISTFILES=      rt-3-0-1.tar.gz
 
 MAINTAINER=     autrijus@autrijus.org
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
 BUILD_DEPENDS=  ${APXS}:${APACHE_PORT} \
-		${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
 		${ARCH_PERL}/Apache/Cookie.pm:${PORTSDIR}/www/p5-libapreq \
 		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI \
 		${SITE_PERL}/Apache/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
@@ -101,6 +100,7 @@ SITE_PERL:=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 ARCH_PERL=	${SITE_PERL}/${PERL_ARCH}/
 USE_PERL5=      yes
 RT_PATH?=       ${PREFIX}/rt3
+LAYOUT?=	RT3
 
 DB_DBA_USER?=	root
 DB_HOST?=	localhost
