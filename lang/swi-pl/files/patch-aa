@@ -1,0 +1,19 @@
+*** Makefile.in.orig	Fri Oct 25 17:26:43 1996
+--- Makefile.in	Fri Oct 25 17:26:32 1996
+***************
+*** 279,285 ****
+  		-$(INSTALL_DATA) $(PLBASE)/man/$(PL).$(mansec) $(mandir)
+  		-$(INSTALL_DATA) $(PLBASE)/man/chpl.$(mansec) $(mandir)
+  		-$(INSTALL_DATA) $(PLBASE)/man/plld.$(mansec) $(mandir)
+! 		-$(INSTALL_DATA) $(PLBASE)/man/readline.$(lmansec) $(lmandir)
+   
+  #
+  # runtime-only environment installation
+--- 279,285 ----
+  		-$(INSTALL_DATA) $(PLBASE)/man/$(PL).$(mansec) $(mandir)
+  		-$(INSTALL_DATA) $(PLBASE)/man/chpl.$(mansec) $(mandir)
+  		-$(INSTALL_DATA) $(PLBASE)/man/plld.$(mansec) $(mandir)
+! #		-$(INSTALL_DATA) $(PLBASE)/man/readline.$(lmansec) $(lmandir)
+   
+  #
+  # runtime-only environment installation
