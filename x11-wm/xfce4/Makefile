@@ -64,4 +64,8 @@ pre-patch:
 	@${PERL} -pi -e 's|gtk-config|${GTK_CONFIG:T}|g' ${WRKSRC}/xfce/setup.c
 	@${PERL} -pi -e 's|xfplay|internal|g' ${WRKSRC}/other/xfsoundrc.in
 
+post-install:
+	@${LN} -sf ${PREFIX}/share/xfce/help/html/images \
+		${PREFIX}/share/xfce/help/images
+
 .include <bsd.port.post.mk>
