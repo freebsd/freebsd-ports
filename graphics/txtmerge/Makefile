@@ -8,7 +8,7 @@
 PORTNAME=	txtmerge
 PORTVERSION=	1.01
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.cdrom.com/pub/unixfreeware/graphics/ \
+MASTER_SITES=	ftp://ftp.freesoftware.com/pub/unixfreeware/graphics/ \
 		ftp://ftp.math.bme.hu/pub/utils/xanim/ \
 		ftp://ftp.kddlabs.co.jp/pub/graphics/gifanim/
 DISTNAME=	txtmerge101

@@ -10,7 +10,7 @@ PORTVERSION=	3.39
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/spin/ \
 		ftp://www.netlib.org/spin/ \
-		ftp://wcarchive.cdrom.com/pub/netlib/spin/
+		ftp://ftp.freesoftware.com/pub/netlib/spin/
 DISTFILES=	spin339.tar.gz html.tar.gz
 
 MAINTAINER=	jhanna@home.com

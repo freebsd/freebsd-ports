@@ -9,7 +9,7 @@ PORTNAME=	perl
 PORTVERSION=	5.00502
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/src/5.0/ \
-		ftp://ftp.cdrom.com/pub/perl/CPAN/src/5.0/
+		ftp://ftp.freesoftware.com/pub/perl/CPAN/src/5.0/
 DISTNAME=	perl5.005_02
 
 MAINTAINER=	markm@FreeBSD.org
