@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	gpasm
-PORTVERSION=	0.8.10
+PORTVERSION=	0.9.5
 CATEGORIES=	devel
-MASTER_SITES=	http://gpasm.sourceforge.net/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sam@inf.enst.fr
 
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	DATADIR=${PREFIX}/share/gpasm
+CONFIGURE_ENV=	CC="cc -I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lgnugetopt"
 
 .if !defined(NOPORTDOCS)
 post-install:
