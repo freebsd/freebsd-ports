@@ -3,7 +3,7 @@
 # Date created:		15 July 1997
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.22 1999/01/18 02:41:07 steve Exp $
+# $Id: Makefile,v 1.23 1999/05/01 04:00:20 taoka Exp $
 #
 
 DISTNAME=	OMRONWnn6
@@ -27,6 +27,8 @@ NO_BUILD=	yes
 IS_INTERACTIVE=	yes
 
 do-fetch:
+	@${DO_NADA}
+fetch-list:
 	@${DO_NADA}
 
 # If ${.CURDIR}/work/.build_done (which will be ${BUILD_COOKIE}) exists,
