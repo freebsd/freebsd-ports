@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	smarty
-PORTVERSION=	2.3.1
+PORTVERSION=	2.4.2
 CATEGORIES=	www
 MASTER_SITES=	http://smarty.php.net/distributions/ \
 		http://smarty.php.net/distributions/manual/en/:manual
 DISTFILES=	Smarty-${PORTVERSION}${EXTRACT_SUFX}
 .if !defined(NOPORTDOCS)
-DISTFILES+=	Smarty-${PORTVERSION}-docs${EXTRACT_SUFX}:manual
+DISTFILES+=	Smarty-2.4.0-docs${EXTRACT_SUFX}:manual
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	zaa@ulstu.ru
 COMMENT=	The PHP compiling template engine
 
 RUN_DEPENDS=	php-config:${PORTSDIR}/www/mod_php4
