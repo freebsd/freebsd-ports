@@ -4,7 +4,7 @@ in the temporal logic CTL (Computational Tree Logic).
 
 One specifies the finite state system (finite automaton,
 Mealy machine, full adder circuit, ..) as a Kripke 
-structure in the SMV language and provides specificaations 
+structure in the SMV language and provides specifications 
 in CTL. The model checking algorithm allows to determine 
 if the Kripke structure fulfills the specifications.
 
