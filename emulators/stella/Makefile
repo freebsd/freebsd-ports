@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	stella
-PORTVERSION=	1.3
-PORTREVISION=	2
+PORTVERSION=	1.4
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,22 +20,22 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/src/build
 
-USE_XLIB=	yes
+USE_GCC=	3.3
+USE_GNOME=	pkgconfig
+USE_SDL=	sdl
 USE_GMAKE=	yes
 MAKEFILE=	makefile
-PLIST_SUB=	STELLA_BIN="${STELLA_BIN}"
+MAKE_ARGS=	CXX="${CXX}" LD="${CXX}" OPTIMIZATIONS="${CXXFLAGS}" \
+		SYS_INCLUDES="${CPPFLAGS}" LDFLAGS="" LDLIBS="${LDFLAGS}"
+ALL_TARGET=	linux-gl
 
-.if defined(WITHOUT_SDL)
-ALL_TARGET=	freebsd-x
-STELLA_BIN=	stella.x11
-.else
-USE_SDL=	sdl
-ALL_TARGET=	freebsd-sdl
-STELLA_BIN=	stella.sdl
-.endif
+CPPFLAGS=	`${SDL_CONFIG} --cflags` `pkg-config --cflags libpng12` \
+		-I${X11BASE}/include
+LDFLAGS=	`${SDL_CONFIG} --libs` `pkg-config --libs libpng12` \
+		-L${X11BASE}/lib
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/build/${STELLA_BIN} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/build/stella ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/src/emucore/stella.pro ${DATADIR}
 .if !defined(NOPORTDOCS)
