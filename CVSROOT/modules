@@ -1549,6 +1549,7 @@ eps2png		ports/graphics/eps2png
 epstool		ports/graphics/epstool
 erlang		ports/lang/erlang
 erlang-doc	ports/lang/erlang-doc
+ermixer		ports/audio/ermixer
 errata		src/release/texts ERRATA.TXT
 error		ports/devel/error
 eruby		ports/textproc/eruby
