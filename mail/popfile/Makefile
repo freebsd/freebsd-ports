@@ -7,7 +7,7 @@
 
 PORTNAME=	popfile
 PORTVERSION=	0.22.0
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,9 +16,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=Automatic mail classification tool, acts as a POP3 proxy
 
-# Since 1) DBD::SQLite RUN_DEPENDS on DBI and 2) Date::TimeDate is also
+# Since 1) DBD::SQLite2 RUN_DEPENDS on DBI and 2) Date::TimeDate is also
 # included in devel/p5-TimeDate, these modules is NOT listed here.
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite2.pm:${PORTSDIR}/databases/p5-DBD-SQLite2 \
 		${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset \
 		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
