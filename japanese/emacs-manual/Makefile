@@ -39,6 +39,12 @@ EXTRACT_ONLY+=	${ERRATA_FILE}.tgz
 EXTRA_PATCHES+=	${WRKDIR}/${ERRATA_FILE}
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		is broken: hangs during build
+.endif
+
 post-extract:
 	${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
 	${CP} ${FILESDIR}/PORT_TEXIFMT.MK ${WRKSRC}
@@ -66,4 +72,4 @@ post-build:
 post-install:
 	install-info ${PREFIX}/info/emacs-ja ${PREFIX}/info/dir
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
