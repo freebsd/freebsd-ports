@@ -1,0 +1,24 @@
+*** syncal.h.org	Mon Jan 20 21:44:20 2003
+--- syncal.h	Mon Jan 20 21:34:53 2003
+***************
+*** 20,25 ****
+--- 20,29 ----
+  #define DEFAULT_ALARM	(0)
+  
+  
++ #ifndef PI_AF_SLP
++ #define PI_AF_SLP 0x0051
++ #endif
++ 
+  /*
+   * These are the calendar file suffixes which indicate
+   * an ical dominant file and a Pilot dominant file respectively.
+***************
+*** 232,237 ****
+          *str_ndup( char *, int),
+          *str_bytestuff( char *, char *, char),
+          *str_byteunstuff( char *, char);
+- 
+- 
+- 
+--- 236,238 ----

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	syncal
-PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTVERSION=	0.8.7
 CATEGORIES=	palm comms deskutils
 MASTER_SITES=	http://hopf.math.nwu.edu/syncal/ \
 		ftp://ftp.Uni-Bielefeld.DE/pub/systems/FreeBSD/lkoeller/
@@ -17,13 +16,15 @@ MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS=	ical:${PORTSDIR}/deskutils/ical
 
+USE_REINPLACE=	yes
+
 NO_PACKAGE=	patches installed ical port
 
 MAN1=		syncal.1
 
 post-patch:
 .for file in Makefile user.tcl ical.patch
-	${PERL} -pi -e "s|\@\@PREFIX\@\@|${LOCALBASE}|g" ${WRKSRC}/${file}
+	${REINPLACE_CMD} -e "s|\@\@PREFIX\@\@|${LOCALBASE}|g" ${WRKSRC}/${file}
 .endfor
 
 # ical V2.2 needs a little patch, don't know how to do better

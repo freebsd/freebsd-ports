@@ -1,0 +1,46 @@
+*** syncal.c.org	Mon Jan 20 21:44:11 2003
+--- syncal.c	Mon Jan 20 21:41:26 2003
+***************
+*** 15,20 ****
+--- 15,21 ----
+  #include <stdio.h>
+  #include <stdlib.h>
+  #include <ctype.h>
++ #include <errno.h>
+  #include <sys/stat.h>
+  #include <sys/types.h>
+  #include <sys/signal.h>
+***************
+*** 1449,1455 ****
+  
+  
+  static void
+! create_uid( char * buf, recordid_t pil_id __attribute__((__unused)) )
+  {
+  #ifndef MAXHOSTNAMELEN
+  #define MAXHOSTNAMELEN	(64)
+--- 1450,1456 ----
+  
+  
+  static void
+! create_uid( char * buf, recordid_t pil_id )
+  {
+  #ifndef MAXHOSTNAMELEN
+  #define MAXHOSTNAMELEN	(64)
+***************
+*** 1720,1726 ****
+  }
+  
+  static void
+! syncal_timeout( int sig __attribute__((__unused)) )
+  {
+  	signal( SIGALRM, SIG_DFL);
+  	alarm( 0);
+--- 1721,1727 ----
+  }
+  
+  static void
+! syncal_timeout( int sig )
+  {
+  	signal( SIGALRM, SIG_DFL);
+  	alarm( 0);
