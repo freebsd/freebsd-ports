@@ -20,7 +20,7 @@ DISTFILES=	moe_kai.ttf moe_sung.ttf edustds1.exe edustds2.exe \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Three Chinese BIG5 TrueType fonts: Kai LiShu Sung SungExt
 
-BUILD_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
+EXTRACT_DEPENDS=unrar:${PORTSDIR}/archivers/unrar
 RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm
 
 USE_XLIB=	yes
