@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	drweb_sendmail
-PORTVERSION=    4.28
-PORTREVISION=	1
+PORTVERSION=    4.28.2
 CATEGORIES=	security mail
 MASTER_SITES=   http://drweb.spb.ru/download/unix/
 DISTNAME=       drweb-clients-${PORTVERSION}-sources
@@ -16,7 +15,7 @@ MAINTAINER=	anton@urc.ac.ru
 
 RUN_DEPENDS=    ${LOCALBASE}/etc/rc.d/drweb-0.sh:${PORTSDIR}/security/drwebd
 
-WRKSRC=         ${WRKDIR}/drwebdc-${PORTVERSION}-src/opt/drweb/clients/drwebdc
+WRKSRC=         ${WRKDIR}/${DISTNAME}/opt/drweb/clients/sources/drwebdc
 
 INST_PREFIX=	${PREFIX}/${PORTNAME}
 DOC_DIR=	${PREFIX}/share/doc/drweb-sendmail
@@ -56,19 +55,20 @@ post-patch:
 		s#!!!___EDIT_THIS___!!!#${RANDOM_NUMBER}#" \
 	    < drweb_smf.conf > ndrwsmf.conf && \
 	    mv ndrwsmf.conf drweb_smf.conf
+	${RM} -f ${WRKSRC}/lib/* ${WRKSRC}/src/*.o
 
 post-configure:
 	cd ${WRKSRC} && { \
-		${ECHO_CMD} ; \
-		${ECHO_CMD} ; \
+		${ECHO_CMD} y; \
+		${ECHO_CMD} y; \
 		${ECHO_CMD} n; \
 		${ECHO_CMD} n; \
 		${ECHO_CMD} n; \
 		${ECHO_CMD} n; \
-		${ECHO_CMD} ; \
-		${ECHO_CMD} ; \
+		${ECHO_CMD} y; \
+		${ECHO_CMD} n; \
 		${ECHO_CMD} ${CFLAGS} ; \
-		${ECHO_CMD} ; \
+		${ECHO_CMD} y; \
 	} | ./configure
 
 do-install:
