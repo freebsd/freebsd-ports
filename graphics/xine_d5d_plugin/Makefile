@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xine_d5d_plugin
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://worldzone.net/technology/captaincss/ \
 		http://debianlinux.net/
-DISTNAME=	d5d011
+DISTNAME=	d5d024
 EXTRACT_SUFX=	.txt
 
 MAINTAINER=	nobutaka@FreeBSD.org
