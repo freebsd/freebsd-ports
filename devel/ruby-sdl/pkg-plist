@@ -1,4 +1,5 @@
 %%RUBY_SITEARCHLIBDIR%%/sdl.so
+%%RUBY_SITELIBDIR%%/rubysdl_aliases.rb
 %%RUBY_SITELIBDIR%%/sdl.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/alpha.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/cdrom.rb
@@ -13,16 +14,20 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/playmod.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/plaympeg.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/playwave.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/randrect.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/rotate.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/sdlskk.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/sgetest.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/testgl.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/testsprite.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/transformblit.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/sdl
+%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/NEWS.en
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/README.en
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/rubysdl_const_list.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/rubysdl_doc.en.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/rubysdl_doc.en.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/ja/NEWS.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/ja/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/ja/rubysdl_doc.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/ja/rubysdl_doc.rd
