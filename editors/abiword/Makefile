@@ -54,11 +54,11 @@ PKGNAMESUFFIX=		-gnome
 GNOME_ENABLED=		yes
 .endif
 
-.if defined(WITH_GUCHARMAP) || exists(${X11BASE}/libdata/pkgconfig/gucharmap.pc)
-LIB_DEPENDS+=		gucharmap.3:${PORTSDIR}/misc/gucharmap
-.else
+#.if defined(WITH_GUCHARMAP) || exists(${X11BASE}/libdata/pkgconfig/gucharmap.pc)
+#LIB_DEPENDS+=		gucharmap.3:${PORTSDIR}/misc/gucharmap
+#.else
 CONFIGURE_ARGS+=	--disable-gucharmap
-.endif
+#.endif
 
 pre-everything::
 	@${ECHO_MSG} ""
