@@ -24,7 +24,8 @@ BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
 .if ! defined(NO_DES)
 USE_OPENSSL=	yes
-CONFIG_WITH_DES=	--with-des
+CONFIG_WITH_DES=	--with-des --with-des-header=openssl/des.h \
+		 	--with-des-ldflag=-lcrypto
 .endif
 .if ! defined(NO_GUI)
 BUILD_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
