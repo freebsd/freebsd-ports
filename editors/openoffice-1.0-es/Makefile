@@ -12,6 +12,6 @@ LANG_EXT=	34
 L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 
 LANG_CONFIGURE_ARG=	SPAN
-MASTERDIR=	${.CURDIR}/../openoffice
+MASTERDIR=	${.CURDIR}/../openoffice-1.0
 
 .include "${MASTERDIR}/Makefile"

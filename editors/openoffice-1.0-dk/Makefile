@@ -10,6 +10,6 @@ CATEGORIES=	editors
 LANG_PKGNAME=	dk
 LANG_EXT=	45
 LANG_CONFIGURE_ARG=	DAN
-MASTERDIR=	${.CURDIR}/../openoffice
+MASTERDIR=	${.CURDIR}/../openoffice-1.0
 
 .include "${MASTERDIR}/Makefile"

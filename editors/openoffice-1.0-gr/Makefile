@@ -10,6 +10,6 @@ CATEGORIES=	editors
 LANG_PKGNAME=	gr
 LANG_EXT=	30
 LANG_CONFIGURE_ARG=	GREEK
-MASTERDIR=	${.CURDIR}/../openoffice
+MASTERDIR=	${.CURDIR}/../openoffice-1.0
 
 .include "${MASTERDIR}/Makefile"
