@@ -6,8 +6,6 @@ bin/mico-ar
 bin/mico-c++
 bin/mico-cpp
 bin/mico-ld
-bin/mico-shc++
-bin/mico-shld
 bin/micod
 bin/nsadmin
 bin/nsd
