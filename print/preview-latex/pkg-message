@@ -3,6 +3,7 @@
 * to your own .emacs file. It adds autoload setting to  *
 * LaTeX-mode-hook.                                      *
 *                                                       *
-* (require 'preview-latex)                              *
+* (require 'tex-site)                                   *
+* (load "preview-latex")                                *
 *                                                       *
 *********************************************************
