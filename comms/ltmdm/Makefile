@@ -7,6 +7,7 @@
 
 PORTNAME=	ltmdm
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.dons.net.au/~darius/ \
 		http://www.csociety.org/~will/ \
@@ -53,4 +54,10 @@ do-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 500000
+do-patch:
+	@${CAT} files/current-fix | ${PATCH}
+.endif
+
+.include <bsd.port.post.mk>
