@@ -1,5 +1,5 @@
 --- xzx.config.orig	Sun Feb  8 22:17:34 1998
-+++ xzx.config	Wed Mar 11 15:38:12 1998
++++ xzx.config	Sat Mar 21 19:02:51 1998
 @@ -37,13 +37,13 @@
  /* #define REGISTERED /**/
  
@@ -17,8 +17,17 @@
  
  
  /*******************************************************************************
---- src/config.h.orig	Wed Mar 11 15:38:42 1998
-+++ src/config.h	Wed Mar 11 15:40:36 1998
+--- src/config.h.orig	Sun Feb  8 22:13:50 1998
++++ src/config.h	Sat Mar 21 19:03:50 1998
+@@ -30,7 +30,7 @@
+ /* $Id: config.h,v 1.2 1998/02/08 13:54:34 erik Rel $ */
+ 
+ #include <X11/keysym.h>
+-#include <endian.h>		/* Comment this out if your system doesn't have it! */
++/* #include <endian.h>		/* Comment this out if your system doesn't have it! */
+ 
+ /********************************************************************************
+  * General configuration
 @@ -179,7 +179,7 @@
  /* Byte order of your CPU.  Intel is little-endian, Sparc is big-endian. */
  #if !defined(LITTLE_ENDIAN) &&  !defined(BIG_ENDIAN)
