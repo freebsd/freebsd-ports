@@ -1,5 +1,5 @@
-*** makefile.old	Thu Aug  8 09:34:44 1991
---- makefile	Thu Jan  5 05:07:23 1995
+*** makefile.old	Tue Jul 16 17:52:08 1991
+--- makefile	Mon Jun  3 14:05:51 2002
 ***************
 *** 18,30 ****
   
@@ -61,8 +61,8 @@
   
   # install production zoo as "zoo"
 ! install:
-! 	$(INSTALL) $(COPY) $(STRIP) -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) $(TARGETS) $(DESTDIR)
-! 	$(INSTALL) -c -o $(BINOWN) -g $(BINGRP) -m 444 zoo.1 fiz.1 $(PREFIX)/man/man1
+! 	$(BSD_INSTALL_PROGRAM) $(TARGETS) $(DESTDIR)
+! 	$(BSD_INSTALL_MAN) zoo.1 fiz.1 $(PREFIX)/man/man1
   
   # executable targets
   TARGETS = zoo fiz
