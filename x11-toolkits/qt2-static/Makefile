@@ -12,6 +12,6 @@ MAINTAINER=	ports@freebsd.org
 
 WANT_STATIC=	yes
 
-MASTERDIR=	${.CURDIR}/../qt22
+MASTERDIR=	${.CURDIR}/../qt23
 
 .include        "${MASTERDIR}/Makefile"

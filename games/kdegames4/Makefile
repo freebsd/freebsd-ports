@@ -23,7 +23,7 @@ USE_AUTOCONF=	yes
 CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
 		--with-qt-libraries=${X11BASE}/lib \
 		--with-extra-libs=${LOCALBASE}/lib
-CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-lqt2" LIBQTFILE="libqt2" \
+CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-lqt2" \
 		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lgcc -lstdc++" \
 		CPPFLAGS="-I${LOCALBASE}/include -D_GETOPT_H"
 USE_GMAKE=	yes

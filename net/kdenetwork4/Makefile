@@ -24,12 +24,13 @@ USE_AUTOCONF=	yes
 CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
 		--with-qt-libraries=${X11BASE}/lib \
 		--with-extra-libs=${LOCALBASE}/lib
-CONFIGURE_ENV+=	LIBQT="-lqt2" MOC="${MOC}" LIBQTFILE="libqt2" \
-		CPPFLAGS="-I${LOCALBASE}/include -D_GETOPT_H -D_XOPEN_UNIX" \
+CONFIGURE_ENV+=	LIBQT="-lqt2" MOC="${MOC}" \
+		CPPFLAGS="-I/usr/include -D_PTH_H_ -D_PTH_PTHREAD_H_ -D_GETOPT_H -D_XOPEN_UNIX -I${LOCALBASE}/include" \
 		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lgcc -lstdc++"
 USE_GMAKE=	yes
 
 pre-configure:
 	${PERL} -pi -e "s:-lpthread:-pthread:g" ${WRKSRC}/knode/Makefile.in
+	${PERL} -pi -e "s@all_includes=\"@all_includes=\"-I/usr/include @g" ${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4
 
 .include <bsd.port.mk>

@@ -27,39 +27,17 @@ USE_NEWGCC=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-# Hack to make pthread support work correctly.
-.if exists(${X11BASE}/lib/libqt2-mt.so)
-.if exists(${X11BASE}/lib/libXThrStub.so)
-QTNAME=		qt2-mt
-.if ${OSVERSION} >= 500016
-PTHREAD_CFLAGS=
-PTHREAD_LIBS=	-lc_r
-.else
-PTHREAD_CFLAGS=	-D_THREAD_SAFE
-PTHREAD_LIBS=	-pthread
-.endif
-.else
-QTNAME=		qt2
-PTHREAD_CFLAGS=
-PTHREAD_LIBS=
-.endif
-.endif
-
-CFLAGS+=	${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
-LDFLAGS+=	${PTHREAD_LIBS}
-
 CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
 		--with-qt-libraries=${X11BASE}/lib \
 		--with-extra-libs=${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include -D_GETOPT_H ${PTHREAD_CFLAGS}" \
-		MOC="${MOC}" LIBQT="-l${QTNAME}" LIBQTFILE="lib${QTNAME}" \
-		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lgcc -lstdc++ ${PTHREAD_LIBS}" \
-		LDFLAGS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lgcc -lstdc++ ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	MOC="${MOC}" LIBQT="-lqt2" \
+		CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include -D_GETOPT_H" \
+		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lgcc -lstdc++"
 USE_GMAKE=	yes
 MAKE_ENV=	SOMAJOR="${SOMAJOR}" SOMINOR="${SOMINOR}"
 PLIST_SUB+=	LIBVER="${SOMAJOR}"
+
+.include <bsd.port.pre.mk>
 
 pre-fetch:
 .if ${OSVERSION} <= 410002
@@ -74,15 +52,9 @@ pre-fetch:
 .endif
 
 pre-configure:
-.for NUM in 1 3
-	(find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
-		"s@version-info ${NUM}:0@version-info ${SOMAJOR}:${SOMINOR}@g")
-.endfor
-
-post-configure:
-	@${CP} ${WRKSRC}/libtool ${WRKSRC}/libtool.orig
-	${SED} -e 's@\\\$$compiler_flags@\\\$$compiler_flags ${PTHREAD_LIBS}@g' ${WRKSRC}/libtool.orig \
-		> ${WRKSRC}/libtool
+	(find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi.orig -e \
+		"s@version-info 1:0@version-info ${SOMAJOR}:${SOMINOR}@g; \
+		 s@version-info 3:0@version-info ${SOMAJOR}:${SOMINOR}@g")
 
 post-install:
 .for LIB in DCOP kab kdecore kdesu kdeui kfile kformula kio kjs \
