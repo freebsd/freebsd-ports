@@ -1,0 +1,12 @@
+*** po/Makefile.orig	Sun Jun 15 18:46:16 2003
+--- po/Makefile	Thu Oct  2 11:13:18 2003
+***************
+*** 41,46 ****
+--- 41,47 ----
+  	rm -f whois.pot
+  
+  install: $(CATALOGS)
++ 	$(INSTALL) -d $(INSTALLNLSDIR)
+  	for n in $(CATALOGS); do \
+  	    l=`basename $$n .mo`; \
+  	    $(INSTALL) -m 755 -d $(INSTALLNLSDIR)/$$l; \

@@ -689,6 +689,7 @@
     SUBDIR += wais
     SUBDIR += wakeonlan
     SUBDIR += whatmask
+    SUBDIR += whois
     SUBDIR += wide-dhcp
     SUBDIR += wmlj
     SUBDIR += wmnd
