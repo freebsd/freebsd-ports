@@ -7702,6 +7702,7 @@ php4-mbstring	ports/converters/php4-mbstring
 php4-mcve	ports/devel/php4-mcve
 php4-mssql	ports/databases/php4-mssql
 php4-mysql	ports/databases/php4-mysql
+php4-ncurses	ports/devel/php4-ncurses
 php4-nms	ports/lang/php4-nms
 php4-odbc	ports/databases/php4-odbc
 php4-oracle	ports/databases/php4-oracle
