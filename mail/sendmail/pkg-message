@@ -17,6 +17,7 @@ and set your falgs in /etc/rc.conf:
 sendmail_flags="-L sm-msp-queue -Ac -q1m"
 
 You can delete /etc/mail/sendmail.cf when you don't need a daemon listen.
+To update your configuration look at %%PREFIX%%/share/sendmail/cf/README.
 ---------------------------------------------------
 To activate sendmail as your default mailer, call the target 'mailer.conf':
 $ make mailer.conf
