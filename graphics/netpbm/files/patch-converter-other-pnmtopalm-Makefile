@@ -1,0 +1,11 @@
+--- converter/other/pnmtopalm/Makefile.orig	Sat Sep 13 04:43:54 2003
++++ converter/other/pnmtopalm/Makefile	Tue Mar 30 07:05:24 2004
+@@ -7,6 +7,8 @@
+ 
+ include $(BUILDDIR)/Makefile.config
+ 
++LADD += -lm
++
+ BINARIES = palmtopnm pnmtopalm
+ SCRIPTS =
+ OBJECTS = $(BINARIES:%=%.o) palmcolormap.o

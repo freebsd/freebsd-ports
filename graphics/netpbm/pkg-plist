@@ -39,6 +39,7 @@ bin/neotoppm
 bin/palmtopnm
 bin/pamarith
 bin/pamchannel
+bin/pamcomp
 bin/pamcut
 bin/pamdeinterlace
 bin/pamdice
@@ -52,10 +53,14 @@ bin/pamoil
 bin/pampop9
 bin/pamscale
 bin/pamseq
+bin/pamsharpmap
+bin/pamsharpness
 bin/pamslice
 bin/pamstack
 bin/pamstretch
 bin/pamstretch-gen
+bin/pamsumm
+bin/pamsummcol
 bin/pamtohdiff
 bin/pamtohtmltbl
 bin/pamtopnm
@@ -170,6 +175,7 @@ bin/pnmsplit
 bin/pnmstitch
 bin/pnmtile
 bin/pnmtoddif
+bin/ppmtodjvurle
 bin/pnmtofiasco
 bin/pnmtofits
 bin/pnmtojbig
@@ -287,6 +293,8 @@ include/pbmfont.h
 include/pgm.h
 include/pm.h
 include/pm_config.h
+include/pm_gamma.h
+include/pm_system.h
 include/pnm.h
 include/ppm.h
 include/ppmcmap.h
