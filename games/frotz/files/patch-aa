@@ -1,5 +1,5 @@
---- Makefile	Fri Oct 17 20:11:10 1997
-+++ /home/andy/tmp/wrk/Makefile	Sat May 16 15:29:57 1998
+--- Makefile.orig	Fri Oct 17 16:11:10 1997
++++ Makefile	Sun Jun  7 18:26:02 1998
 @@ -1,7 +1,7 @@
  
  # Define your c compiler.  I recommend gcc if you've got it.
@@ -9,16 +9,17 @@
  
  # Define your optimization flags.  Most compilers understand -O and -O2,
  # Debugging (don't use)
-@@ -43,7 +43,7 @@
+@@ -43,7 +43,8 @@
  #                     have that option.
  #
  #DEFS = -DUSE_GETOPT_H -DCOLOR_SUPPORT -DEMACS_EDITING
 -DEFS =
-+DEFS = -DCOLOR_SUPPORT -DEMACS_EDITING -DUSE_NCURSES_H -DUSE_NOTHING
++DEFS = -DCOLOR_SUPPORT -DEMACS_EDITING -DUSE_NCURSES_H -DUSE_NOTHING \
++	-DUSE_UNISTD_H
  
  # This should point to the location of your curses or ncurses include file
  # if it's in a non-standard place.
-@@ -57,7 +57,7 @@
+@@ -57,7 +58,7 @@
  #CURSES = -lncurses
  #LIB = -L/5usr/lib
  LIB =
@@ -27,7 +28,7 @@
  
  # Nothing under this line should need to be changed.
  
-@@ -66,7 +66,7 @@
+@@ -66,7 +67,7 @@
            text.o ux_init.o ux_input.o ux_pic.o ux_screen.o ux_sample.o \
            ux_text.o variable.o
  
