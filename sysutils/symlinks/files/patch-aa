@@ -1,0 +1,29 @@
+--- symlinks.c.orig	Tue Oct 15 21:02:57 1996
++++ symlinks.c	Sat May 27 09:34:00 2000
+@@ -1,9 +1,6 @@
+ #include <unistd.h>
+-#ifndef _POSIX_SOURCE
+-#define _POSIX_SOURCE
+-#endif
+ #include <stdio.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <fcntl.h>
+ #include <sys/param.h>
+@@ -294,7 +291,7 @@
+ 	exit(1);
+ }
+ 
+-void main(int argc, char **argv)
++int main(int argc, char **argv)
+ {
+ 	static char path[PATH_MAX+2], cwd[PATH_MAX+2];
+ 	int dircount = 0;
+@@ -342,5 +339,5 @@
+ 	}
+ 	if (dircount == 0)
+ 		usage_error();
+-	exit (0);
++	return (0);
+ }

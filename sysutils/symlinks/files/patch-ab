@@ -1,0 +1,37 @@
+--- Makefile.orig	Sat May 27 12:26:39 2000
++++ Makefile	Sat May 27 12:38:59 2000
+@@ -1,13 +1,29 @@
+ # Makefile for symlinks
+- 
++
++CC?=		cc
++CFLAGS?=	-pipe -O
++COPY?=		-c
++STRIP?=		-s
++BINOWN?=	root
++BINGRP?=	wheel
++BINMODE?=	555
++MANOWN?=	root
++MANGRP?=	wheel
++MANMODE?=	444
++
++INSTALL_PROGRAM?= \
++	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
++INSTALL_MAN?= \
++	${INSTALL} ${COPY} -o ${MANOWN} -g ${MANGRP} -m ${MANMODE}             
++
+ all: symlinks
+ 
+ symlinks: symlinks.c
+-	gcc -Wall -Wstrict-prototypes -O2 -N -s -o symlinks symlinks.c
++	$(CC) $(CFLAGS) -o symlinks symlinks.c
+  
+ install: all symlinks.8
+-	install -m 755 -o root -g root symlinks /usr/local/bin
+-	install -m 644 -o root -g root symlinks.8 /usr/local/man/man8
++	@ ${INSTALL_PROGRAM} symlinks $(PREFIX)/bin
++	@ ${INSTALL_MAN} symlinks.8 $(PREFIX)/man/man8
+ 
+ clean:
+-	rm -f symlinks *.o core
++	@ rm -f symlinks *.o core
