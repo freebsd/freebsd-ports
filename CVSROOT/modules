@@ -3259,6 +3259,7 @@ libvanessa_logger	ports/devel/libvanessa_logger
 libvanessa_socket	ports/devel/libvanessa_socket
 libvgl		src/lib/libvgl
 libvorbis	ports/audio/libvorbis
+libudbc		ports/databases/libudbc
 libwmf		ports/graphics/libwmf
 libwmfun	ports/x11-wm/libwmfun
 libworkman	ports/audio/libworkman
