@@ -2274,6 +2274,7 @@ freebirth	ports/audio/freebirth
 freebooters	ports/games/freebooters
 freebsd-games	ports/games/freebsd-games
 freebsd-sha1	ports/sysutils/freebsd-sha1
+freebsd-sha256	ports/sysutils/freebsd-sha256
 freebsd-update	ports/security/freebsd-update
 freebsd-uucp	ports/net/freebsd-uucp
 freecell-solver	ports/games/freecell-solver
