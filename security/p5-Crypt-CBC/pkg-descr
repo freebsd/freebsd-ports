@@ -1,0 +1,5 @@
+This is Crypt::CBC, a Perl-only implementation of the cryptographic
+cipher block chaining mode (CBC).  In combination with a block
+cipher such as Crypt::DES or Crypt::IDEA, you can encrypt and
+decrypt messages of arbitrarily long length.  The encrypted messages
+are compatible with the encryption format used by B<SSLeay>.
