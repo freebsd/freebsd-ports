@@ -1,9 +1,0 @@
-bin/gmziq
-bin/jukebox
-bin/mziq
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/default.mz
-%%PORTDOCS%%%%DOCSDIR%%/example.mz
-%%PORTDOCS%%%%DOCSDIR%%/rcfile
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
