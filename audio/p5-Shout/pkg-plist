@@ -3,4 +3,8 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Shout/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Shout/Shout.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Shout/Shout.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Shout/autosplit.ix
+%%PORTDOCS%%share/examples/p5-Shout/example.pl
+%%PORTDOCS%%share/examples/p5-Shout/example2.pl
+%%PORTDOCS%%@dirrm share/examples/p5-Shout
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Shout
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PER_ARCH%%/auto/Shout 2>/dev/null || true

@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Shout
-PORTVERSION=	0.99
+PORTVERSION=	1.0
 CATEGORIES=	audio perl5
 MASTER_SITES=	http://developer.icecast.org/libshout/releases/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	leo@florida.sarang.net
 
-LIB_DEPENDS=	shout.1:${PORTSDIR}/audio/libshout
+LIB_DEPENDS=	shout.2:${PORTSDIR}/audio/libshout
 
 PERL_CONFIGURE=	yes
 
@@ -21,6 +21,14 @@ MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Shout.3
 
 pre-configure:
-	@(cd ${WRKSRC} && ${RM} example.pl example2.pl)
+	${MKDIR} ${WRKSRC}/examples
+	${MV} ${WRKSRC}/example.pl ${WRKSRC}/example2.pl ${WRKSRC}/examples
+
+post-install:
+.ifndef(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/* \
+		${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+.endif
 
 .include <bsd.port.mk>
