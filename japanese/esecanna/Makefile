@@ -7,11 +7,13 @@
 
 PORTNAME=	esecanna
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	knu
 DISTNAME=	${PORTNAME}_${PORTVERSION}
+DIST_SUBDIR=	esecanna
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Pseudo cannaserver which wraps some other input engines
@@ -19,9 +21,9 @@ COMMENT=	Pseudo cannaserver which wraps some other input engines
 USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
+CONFIGURE_ARGS=	--with-piddir="${PIDDIR}"
 
-DIST_SUBDIR=	esecanna
-
+PIDDIR=		/var/run/esecanna
 STARTER=	esecanna.sh
 DOCS=		CREDITS CHANGES.jp README.First.jp README.jp
 
@@ -48,6 +50,7 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/esecanna
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/esecanna/
 .endif
+	${MKDIR} ${PIDDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
