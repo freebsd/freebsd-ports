@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ganglia-webfrontend
-PORTVERSION=	2.5.4
+PORTVERSION=	2.5.5
 CATEGORIES=	sysutils net parallel www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ganglia
@@ -14,26 +14,41 @@ MASTER_SITE_SUBDIR=	ganglia
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	"Ganglia cluster monitor, web frontend"
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4 \
-		${LOCALBASE}/sbin/gmetad:${PORTSDIR}/sysutils/ganglia-monitor-core
+RUN_DEPENDS+=	${LOCALBASE}/sbin/gmetad:${PORTSDIR}/sysutils/ganglia-monitor-core
 
+PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB+=	WEBFRONTDIR="${WEBFRONTDIR}"
 NO_BUILD=	yes
 USE_REINPLACE=	yes
+USE_PHP=	yes
+WANT_PHP_MOD=	yes
 
 # The Ganglia Web Frontend port supports a number of options that may be
 # tweaked at buildtime.  Perform a "make options" to see more
 # information on these variables.
-WWWDOCROOT?=	www/data
-WEBFRONTURL?=	ganglia
+WEBFRONTDIR?=	www/ganglia
 WWWOWN?=	www
 WWWGRP?=	www
 
 # Set custom variables:
 #
-WEBFRONTDIR=	${WWWDOCROOT}/${WEBFRONTURL}
 PKGOPTS=	${FILESDIR}/pkg-opts
-EXCEPTFILES=	AUTHORS ChangeLog COPYING webfrontend.spec
+EXCEPTFILES=	AUTHORS ChangeLog COPYING addons webfrontend.spec
+
+pre-everything::
+	@${ECHO} ""
+	@${ECHO} "You have to configure PHP with GD support to allow "
+	@${ECHO} "the Ganglia Webfrontend draw some standard graphs.
+	@${ECHO} ""
+	@${ECHO} "If you have already compiled PHP without GD,"
+	@${ECHO} "press CTRL+C now and rebuild it before installing"
+	@${ECHO} "the Ganglia Webfrontend."
+	@${ECHO} ""
+
+pre-patch:
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		-e 's|%%WEBFRONTDIR%%|${WEBFRONTDIR}|g' \
+		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 options:
 	@ ${ECHO_MSG} "===>  Build options for ${PKGNAME}:"
@@ -60,9 +75,12 @@ do-install:
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${WEBFRONTDIR}
 	${INSTALL} -c -o ${WWWOWN} -g ${WWWGRP} \
 	    ${WRKSRC}/conf.php ${PREFIX}/${WEBFRONTDIR}/conf.php.sample
-	if [ ! -f ${PREFIX}/${WEBFRONTDIR}/conf.php ]; then \
+	@if [ ! -f ${PREFIX}/${WEBFRONTDIR}/conf.php ]; then \
 		${INSTALL} -c -o ${WWWOWN} -g ${WWWGRP} \
 		    ${WRKSRC}/conf.php ${PREFIX}/${WEBFRONTDIR} ;\
 	fi
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -12,7 +12,6 @@
 %%WEBFRONTDIR%%/header.php
 %%WEBFRONTDIR%%/host_view.php
 %%WEBFRONTDIR%%/index.php
-%%WEBFRONTDIR%%/info.php
 %%WEBFRONTDIR%%/meta_view.php
 %%WEBFRONTDIR%%/node_legend.html
 %%WEBFRONTDIR%%/physical_view.php
@@ -55,12 +54,12 @@
 %%WEBFRONTDIR%%/templates/default/physical_view.tpl
 %%WEBFRONTDIR%%/templates/default/show_node.tpl
 %%WEBFRONTDIR%%/templates/default/grid_tree.tpl
+@unexec if cmp -s %D/%%WEBFRONTDIR%%/conf.php %D/%%WEBFRONTDIR%%/conf.php.sample; then rm -f %D/%%WEBFRONTDIR%%/conf.php; fi
 %%WEBFRONTDIR%%/conf.php.sample
-%%WEBFRONTDIR%%/conf.php
-@dirrm %%WEBFRONTDIR%%/addons
+@exec [ -f %B/conf.php ] || cp %B/%f %B/conf.php
 @dirrm %%WEBFRONTDIR%%/templates/Rocks/images
 @dirrm %%WEBFRONTDIR%%/templates/Rocks
 @dirrm %%WEBFRONTDIR%%/templates/default/images
 @dirrm %%WEBFRONTDIR%%/templates/default
 @dirrm %%WEBFRONTDIR%%/templates
-@dirrm %%WEBFRONTDIR%%
+@unexec rmdir %D/%%WEBFRONTDIR%% 2>/dev/null || (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%WEBFRONTDIR%% and its contents manually.")
