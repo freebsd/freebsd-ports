@@ -2,7 +2,7 @@ TUND allows one to organize an IP over IP tunnel (IP packets are incapsulated
 into UDP ones). It works together with FreeBSD ipfw(8). It can be used
 for tunneling private networks behind NATD.
 
-WWW: http://www.chg.ru/~ks/tund
+WWW: http://www.chg.ru/~ks/tund/
 
 Sergey Kosyakov
 ks@itp.ac.ru

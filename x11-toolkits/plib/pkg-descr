@@ -12,7 +12,7 @@ SG  -- Some Standard Geometry functions (vector and
 SL  -- A Games-oriented Sound Library.
 SSG -- A Simple Scene Graph API built on top of OpenGL.
 
-WWW: http://www.woodsoup.org/projs/plib
+WWW: http://www.woodsoup.org/projs/plib/
 
 - Brian Buchanan
 brian@CSUA.Berkeley.EDU
