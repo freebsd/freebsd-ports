@@ -8,7 +8,8 @@
 PORTNAME=	utah-glx
 PORTVERSION=	0.9.1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/sobomax/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sobomax
 
 MAINTAINER=	3d@FreeBSD.org
 
