@@ -2,7 +2,7 @@ include/mcrypt.h
 lib/libmcrypt.a
 lib/libmcrypt.la
 lib/libmcrypt.so
-lib/libmcrypt.so.5
+lib/libmcrypt.so.6
 lib/libmcrypt/arcfour.la
 lib/libmcrypt/arcfour.so
 lib/libmcrypt/blowfish-compat.la
