@@ -11,8 +11,8 @@ info/sawfish.info-3
 info/sawfish.info-4
 info/sawfish.info-5
 @exec install-info --section="X11 window manager" --entry="* sawfish: (sawfish).           sawfish programming manual" %D/info/sawfish.info %D/info/dir
-libexec/rep/%%GNUHOST%%/sawfish/client.so
 libexec/rep/%%GNUHOST%%/sawfish/client.la
+libexec/rep/%%GNUHOST%%/sawfish/client.so
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/DOC
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/gradient.la
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/gradient.so
@@ -40,7 +40,6 @@ libexec/sawfish/%%VERSION%%/%%GNUHOST%%/x.so
 %%GNOME:%%share/gnome/apps/Settings/Sawfish/focus-properties.desktop
 %%GNOME:%%share/gnome/apps/Settings/Sawfish/match-properties.desktop
 %%GNOME:%%share/gnome/apps/Settings/Sawfish/maximize-properties.desktop
-%%GNOME:%%share/gnome/apps/Settings/Sawfish/meta-properties.desktop
 %%GNOME:%%share/gnome/apps/Settings/Sawfish/misc-properties.desktop
 %%GNOME:%%share/gnome/apps/Settings/Sawfish/move-properties.desktop
 %%GNOME:%%share/gnome/apps/Settings/Sawfish/placement-properties.desktop
@@ -53,7 +52,6 @@ libexec/sawfish/%%VERSION%%/%%GNUHOST%%/x.so
 %%GNOME:%%share/gnome/control-center/Sawfish/focus-properties.desktop
 %%GNOME:%%share/gnome/control-center/Sawfish/match-properties.desktop
 %%GNOME:%%share/gnome/control-center/Sawfish/maximize-properties.desktop
-%%GNOME:%%share/gnome/control-center/Sawfish/meta-properties.desktop
 %%GNOME:%%share/gnome/control-center/Sawfish/misc-properties.desktop
 %%GNOME:%%share/gnome/control-center/Sawfish/move-properties.desktop
 %%GNOME:%%share/gnome/control-center/Sawfish/placement-properties.desktop
@@ -73,6 +71,7 @@ share/gnome/pixmaps/sawfish-logo.png
 %%GNOME:%%share/gnome/pixmaps/sawfish-workspaces.png
 %%GNOME:%%share/gnome/wm-properties/Sawfish.desktop
 share/locale/az/LC_MESSAGES/sawfish.mo
+share/locale/bg/LC_MESSAGES/sawfish.mo
 share/locale/ca/LC_MESSAGES/sawfish.mo
 share/locale/cs/LC_MESSAGES/sawfish.mo
 share/locale/da/LC_MESSAGES/sawfish.mo
@@ -80,6 +79,8 @@ share/locale/de/LC_MESSAGES/sawfish.mo
 share/locale/el/LC_MESSAGES/sawfish.mo
 share/locale/en_GB/LC_MESSAGES/sawfish.mo
 share/locale/es/LC_MESSAGES/sawfish.mo
+share/locale/et/LC_MESSAGES/sawfish.mo
+share/locale/eu/LC_MESSAGES/sawfish.mo
 share/locale/fi/LC_MESSAGES/sawfish.mo
 share/locale/fr/LC_MESSAGES/sawfish.mo
 share/locale/ga/LC_MESSAGES/sawfish.mo
@@ -88,7 +89,10 @@ share/locale/hu/LC_MESSAGES/sawfish.mo
 share/locale/it/LC_MESSAGES/sawfish.mo
 share/locale/ja/LC_MESSAGES/sawfish.mo
 share/locale/ko/LC_MESSAGES/sawfish.mo
+share/locale/lv/LC_MESSAGES/sawfish.mo
+share/locale/ms/LC_MESSAGES/sawfish.mo
 share/locale/nl/LC_MESSAGES/sawfish.mo
+share/locale/nn/LC_MESSAGES/sawfish.mo
 share/locale/no/LC_MESSAGES/sawfish.mo
 share/locale/pl/LC_MESSAGES/sawfish.mo
 share/locale/pt/LC_MESSAGES/sawfish.mo
@@ -100,6 +104,7 @@ share/locale/sl/LC_MESSAGES/sawfish.mo
 share/locale/sv/LC_MESSAGES/sawfish.mo
 share/locale/tr/LC_MESSAGES/sawfish.mo
 share/locale/uk/LC_MESSAGES/sawfish.mo
+share/locale/vi/LC_MESSAGES/sawfish.mo
 share/locale/wa/LC_MESSAGES/sawfish.mo
 share/locale/zh_CN/LC_MESSAGES/sawfish.mo
 share/locale/zh_TW/LC_MESSAGES/sawfish.mo
@@ -187,6 +192,8 @@ share/sawfish/%%VERSION%%/lisp/sawfish/gtk/widgets/pair.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/gtk/widgets/pair.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/gtk/widgets/program.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/gtk/widgets/program.jlc
+share/sawfish/%%VERSION%%/lisp/sawfish/gtk/widgets/scheme-boolean.jl
+share/sawfish/%%VERSION%%/lisp/sawfish/gtk/widgets/scheme-boolean.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/ui/apply.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/ui/apply.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/ui/config.jl
@@ -205,8 +212,6 @@ share/sawfish/%%VERSION%%/lisp/sawfish/ui/shell.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/ui/shell.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/ui/slot.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/ui/slot.jlc
-share/sawfish/%%VERSION%%/lisp/sawfish/ui/user-level.jl
-share/sawfish/%%VERSION%%/lisp/sawfish/ui/user-level.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/ui/widgets/command.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/ui/widgets/command.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/ui/widgets/event.jl
@@ -404,6 +409,8 @@ share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/window-outline.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/window-outline.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/with-output.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/with-output.jlc
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/workarea.jl
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/workarea.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/viewport.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/viewport.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/window-anim.jl
