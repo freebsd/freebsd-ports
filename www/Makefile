@@ -72,6 +72,7 @@
     SUBDIR += dhttpd
     SUBDIR += dillo
 #    SUBDIR += djvuplugin
+    SUBDIR += drupal
     SUBDIR += eldav.el
     SUBDIR += elinks
     SUBDIR += emacs-w3m
