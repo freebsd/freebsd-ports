@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	migemo
-PORTVERSION=	0.22
+PORTVERSION=	0.3
+PORTEPOCH=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=   http://migemo.namazu.org/stable/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -24,34 +25,27 @@ RUN_DEPENDS=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/edit
 BUILD_DEPENDS=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
 RUN_DEPENDS=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
 .endif
-BUILD_DEPENDS+=	${NONEXISTENT}:${SKK_PORT_DIR}:extract
 
-USE_PERL5=	yes
 USE_AUTOMAKE=	yes
+USE_RUBY=	yes
+BUILD_DEPENDS+=	${RUBY_SITELIBDIR}/romkan.rb:${PORTSDIR}/japanese/ruby-romkan \
+		${RUBY_SITELIBDIR}/bsearch.rb:${PORTSDIR}/devel/ruby-bsearch
+RUN_DEPENDS+=	${RUBY_SITELIBDIR}/romkan.rb:${PORTSDIR}/japanese/ruby-romkan \
+		${RUBY_SITELIBDIR}/bsearch.rb:${PORTSDIR}/devel/ruby-bsearch
 
-CONFIGURE_ARGS=		--with-emacs=${EMACS_CMD}
+CONFIGURE_ARGS=		--with-rubydir=${RUBY_SITELIBDIR} --with-emacs=${EMACS_CMD}
 .if (${EMACS_PORT_NAME} == "xemacs21-mule")
 CONFIGURE_ARGS+=	--with-lispdir=${PREFIX}/${EMACS_LIBDIR}/site-lisp
 .endif
 
-SKK_PORT_DIR=	${PORTSDIR}/japanese/skk-jisyo
-
 .include <bsd.port.pre.mk>
 
-SKK_WRKSRC!=	cd ${SKK_PORT_DIR}; ${MAKE} -V WRKSRC
-
-post-extract:
-	${MKDIR} ${WRKSRC}/Lingua
-	${CP} ${WRKSRC}/Lingua-Romkan/Romkan.pm ${WRKSRC}/Lingua
-	${CP} ${SKK_WRKSRC}/jisyo/SKK-JISYO.L ${WRKSRC}
-
-post-build:
-	(cd ${WRKSRC}/Lingua-Romkan/; ${PERL} Makefile.PL; ${MAKE})
-
-pre-install:
-	(cd ${WRKSRC}/Lingua-Romkan/; ${MAKE} install)
+post-configure:
+	${RUBY} -i -pe 'sub /@list=/, "list="' ${WRKSRC}/${MAKEFILE}
 
 post-install:
+	@${MKDIR} ${PREFIX}/share/doc/migemo
+	@${MV} ${PREFIX}/share/migemo/migemo.ja.html ${PREFIX}/share/doc/migemo
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
