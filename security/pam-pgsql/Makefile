@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN} \
 MASTER_SITE_SUBDIR=	pool/non-US/main/p/pam-pgsql
 DISTFILES=	${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
 
-PATCHFILES=	pam-pgsql_${PORTVERSION}-5.diff.gz
+PATCHFILES=	${PORTNAME}_${PORTVERSION}-5.diff.gz
 PATCH_SITES=	${MASTER_SITES}
 
 MAINTAINER=	m@absolight.fr
@@ -33,7 +33,7 @@ MASTER_SITE_DEBIAN+=	http://ftp.au.debian.org/pub/debian-non-US/${MASTER_SITE_SU
 	ftp://ftp.bora.net/pub/linux/debian-non-US/${MASTER_SITE_SUBDIR}/
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-MAKE_ARGS+=	-j 2 FILESDIR=${FILESDIR}
+MAKE_ARGS+=	FILESDIR=${FILESDIR}
 
 post-install:
 	${CAT} ${PKGMESSAGE}
