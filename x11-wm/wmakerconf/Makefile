@@ -1,14 +1,14 @@
 # New ports collection makefile for:	wmakerconf
-# Version required:			2.4
+# Version required:			2.6.1
 # Date Created:				14 August 1999
 # Whom:					Dominik Rothert <dr@domix.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmakerconf-2.5
+DISTNAME=	wmakerconf-2.6.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://ulli.linuxbox.com/wmakerconf/
+MASTER_SITES=	http://ulli.linuxave.net/wmakerconf/
 
 MAINTAINER=	dr@domix.de
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker \
 		rpm:${PORTSDIR}/misc/rpm \
 		bunzip2:${PORTSDIR}/archivers/bzip2 \
 		wget:${PORTSDIR}/ftp/wget
-
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		Imlib.5:${PORTSDIR}/graphics/imlib \
 		PropList.2:${PORTSDIR}/devel/libPropList \
@@ -26,7 +25,6 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		png.3:${PORTSDIR}/graphics/png \
 		wraster.3:${PORTSDIR}/x11-wm/windowmaker \
 		wmfun.0:${PORTSDIR}/x11-wm/windowmaker
-
 BUILD_DEPENDS=	bunzip2:${PORTSDIR}/archivers/bzip2 \
 		wget:${PORTSDIR}/ftp/wget
 
