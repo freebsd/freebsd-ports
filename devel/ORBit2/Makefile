@@ -42,6 +42,6 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/orbit2rc ]; then \
 		${CP} -p ${PREFIX}/etc/orbit2rc.default ${PREFIX}/etc/orbit2rc ; \
 	fi
-	@${MKDIR} ${PREFIX}/lib/orbit-2.0
+	@${MKDIR} ${PREFIX}/lib/orbit-2.0/idl-backends
 
 .include <bsd.port.mk>
