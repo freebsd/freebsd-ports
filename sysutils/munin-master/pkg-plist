@@ -1,6 +1,6 @@
 bin/munin-cron
 etc/munin/munin.conf
-etc/munin/templates/logo.gif
+etc/munin/templates/logo.png
 etc/munin/templates/munin-domainview.tmpl
 etc/munin/templates/munin-nodeview.tmpl
 etc/munin/templates/munin-overview.tmpl
@@ -13,7 +13,6 @@ share/munin/munin-nagios
 share/munin/munin-update
 @unexec rmdir %D/www/data/munin 2>/dev/null || true
 @unexec rmdir %D/www/data 2>/dev/null || true
-@unexec rmdir %D/www 2>/dev/null || true
 @unexec rmdir %D/var/munin 2>/dev/null || true
 @unexec rmdir %D/var 2>/dev/null || true
 @unexec rmdir %D/share/munin 2>/dev/null || true
