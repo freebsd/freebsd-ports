@@ -7,7 +7,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	20010808
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
@@ -29,7 +29,7 @@ MAN5=	access.5 aliases.5 canonical.5 regexp_table.5 relocated.5 \
 	transport.5 virtual.5
 
 MAN8=	bounce.8 cleanup.8 defer.8 error.8 flush.8 lmtp.8 local.8 \
-	master.8 nqmgr.8 pickup.8 pipe.8 qmgr.8 showq.8 smtp.8 \
+	master.8 nqmgr.8 pickup.8 pipe.8 qmgr.8 qmqpd.8 showq.8 smtp.8 \
 	smtpd.8 spawn.8 trivial-rewrite.8 virtual.8
 
 CONF1=	access aliases canonical main.cf master.cf \
@@ -37,21 +37,27 @@ CONF1=	access aliases canonical main.cf master.cf \
 
 CONF2=	sample-aliases.cf sample-canonical.cf sample-debug.cf \
 	sample-filter.cf sample-flush.cf sample-local.cf sample-misc.cf \
+	sample-qmqpd.cf \
 	sample-rate.cf sample-regexp.cf sample-relocated.cf \
 	sample-resource.cf sample-rewrite.cf sample-smtp.cf \
 	sample-smtpd.cf sample-transport.cf sample-virtual.cf
 
 BIN1=	bounce cleanup error flush lmtp local master nqmgr pickup \
-	pipe qmgr showq smtp smtpd spawn trivial-rewrite virtual
+	pipe qmgr qmqpd showq smtp smtpd spawn trivial-rewrite virtual
 
 BIN2=	postalias postcat postconf postdrop postfix \
 	postkick postlock postlog postmap postsuper sendmail
+
+DOC1=	0README COMPATIBILITY DB_README DEBUG_README ETRN_README \
+	FILTER_README HISTORY INSTALL LDAP_README LICENSE LINUX_README \
+	LMTP_README MACOSX_README MYSQL_README PCRE_README PORTING \
+	QMQP_README RELEASE_NOTES SASL_README TODO ULTRIX_README UUCP_README \
+	VERP_README VIRTUAL_README 
 
 .if defined(NOPORTDOCS)
 PLIST_SUB+=	SUB_DOCS="@comment "
 .else
 PLIST_SUB+=	SUB_DOCS=""
-DOCDIR=		${PREFIX}/share/doc/postfix
 .endif
 
 .if !defined(DEBUG)
@@ -142,9 +148,12 @@ do-install:
 .endfor
 
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCDIR}
-	@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.gif ${DOCDIR} && \
-		${ECHO_MSG} "Installed HTML documentation in ${DOCDIR}"
+	@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCSDIR}
+	@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.gif ${DOCSDIR} && \
+		${ECHO_MSG} "Installed HTML documentation in ${DOCSDIR}"
+	@cd ${WRKSRC} && for i in ${DOC1} ; do \
+		${INSTALL_DATA} $$i ${DOCSDIR} ; done && \
+		${ECHO_MSG} "Installed text documentation in ${DOCSDIR}"
 .endif
 
 	@${ECHO_MSG} '--------------------------------------------------'
