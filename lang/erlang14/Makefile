@@ -3,7 +3,7 @@
 # Date created:		11 Dec 1998
 # Whom:			ruslan@shevchenko.kiev.ua
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/24 18:11:50 flathill Exp $
 #
 
 DISTNAME=	erlang-47.4.0.base
@@ -12,6 +12,8 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.erlang.org/download/
 
 MAINTAINER=	ruslan@shevchenko.kiev.ua
+
+BROKEN='single fetch site, which is currently behind a routing loop'
 
 WRKSRC=		${WRKDIR}/erlang-47.4.0
 
