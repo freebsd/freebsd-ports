@@ -1,0 +1,86 @@
+--- eject.c.orig	Mon Aug 21 18:49:55 2000
++++ eject.c	Mon Aug 21 19:00:45 2000
+@@ -43,8 +43,8 @@
+ extern int optind;
+ 
+ void usage(void);
+-int check_device(char *, char *);
+-int unmount_fs(char *, char *);
++int check_device(char *, char **);
++int unmount_fs(char *, char **);
+ int eject(char *, char *);
+ 
+ char *program = "eject";
+@@ -65,8 +65,8 @@
+ {
+     int ch;
+     int sts;
+-    char device[256], name[256];
+-    char err[256];
++    char *device, *name;
++    char *err;
+     char *defdev;
+ 
+     fflag = nflag = vflag = 0;
+@@ -95,18 +95,18 @@
+ 	if (argc == 0) {
+ 	    usage();
+ 	}
+-	strcpy(name, *argv);
++	name = strdup(*argv);
+     } else {
+-	strcpy(name, defdev);
++	name = strdup(defdev);
+     }    
+ 
+-    sts = check_device(name, device);
++    sts = check_device(name, &device);
+     if (sts < 0) {
+ 	perror(program);
+ 	exit(1);
+     }
+ 
+-    sts = unmount_fs(name, err);
++    sts = unmount_fs(name, &err);
+     if (sts < 0) {
+ 	perror(err);
+ 	exit(1);
+@@ -128,16 +128,17 @@
+ int
+ check_device(name, device)
+     char *name;
+-    char *device;
++    char **device;
+ {
+     int sts;
+     struct stat sb;
+ 
+-    sprintf(device, "/dev/r%sc", name);
++    if (asprintf(device, "/dev/%sc", name) == -1)
++	return sts;
+     if (vflag || nflag) {
+ 	printf("%s: using device %s\n", program, device);
+     }
+-    sts = stat(device, &sb);
++    sts = stat(*device, &sb);
+ 
+     return sts;
+ }
+@@ -155,7 +156,7 @@
+ int
+ unmount_fs(name, err)
+     char *name;
+-    char *err;
++    char **err;
+ {
+     int mnts;
+     struct statfs *mntbuf;
+@@ -221,7 +222,7 @@
+ 	    sts = 0;
+ 	}
+ 	if (sts < 0 && fflag == 0) {
+-	    sprintf(err, "%s: %s", program, mp->mntonname);
++	    asprintf(err, "%s: %s", program, mp->mntonname);
+ 	    return sts;
+ 	}
+ 	nextp = mp->next;
