@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.jabberstudio.org/files/jabberd2/
-DISTNAME=	${PORTNAME}-2.0s1
+DISTNAME=	${PORTNAME}-2.0s2
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	demon@FreeBSD.org
@@ -64,7 +64,7 @@ MAN8=		c2s.8 jabberd.8 resolver.8 router.8 s2s.8 sm.8
 pre-everything::
 	@${ECHO}
 	@${ECHO} "You can build Jabber with the following options:"
-	@${ECHO} "WITH_POSTGRESQL	use PostgreSQL for storage and authentication"
+	@${ECHO} "WITH_POSTGRESQL		use PostgreSQL for storage and authentication"
 	@${ECHO} "WITH_BDB		use Berkeley DB for storage and authentication"
 	@${ECHO} "WITH_MYSQL		use MySQL for storage and authentication"
 	@${ECHO} "WITH_LDAP		use LDAP for authentication"
