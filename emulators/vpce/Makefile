@@ -8,7 +8,7 @@
 PORTNAME=	vpce
 PORTVERSION=	0.3f
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.fortunecity.com/roswell/vanthal/10/
+MASTER_SITES=	http://www.geocities.com/SiliconValley/Way/3340/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}_freebsd
 EXTRACT_SUFX=	.tgz
 
