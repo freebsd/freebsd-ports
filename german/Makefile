@@ -8,6 +8,7 @@
     SUBDIR += ispell
     SUBDIR += ispell-alt
     SUBDIR += ispell-neu
+    SUBDIR += kde2-i18n
     SUBDIR += manpages
     SUBDIR += phone
     SUBDIR += staroffice5
