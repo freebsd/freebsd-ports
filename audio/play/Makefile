@@ -8,7 +8,7 @@
 PORTNAME=	play
 PORTVERSION=	1.0
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
+MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 
 MAINTAINER=	seiken@ARGV.AC
 

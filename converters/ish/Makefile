@@ -7,7 +7,7 @@
 PORTNAME=	ish
 PORTVERSION=	1.11
 CATEGORIES=	converters
-MASTER_SITES=	ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
+MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 
 MAINTAINER=	hosokawa@jp.FreeBSD.org
 

@@ -10,7 +10,7 @@ PORTVERSION=	1.94.1
 CATEGORIES=	mail elisp
 MASTER_SITES=	ftp://ftp.mew.org/pub/Mew/ \
 		ftp://ftp.kyushu-u.ac.jp/pub/Misc/mew/ \
-		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
+		${MASTER_SITE_PORTS_JP}
 DISTNAME=	mew-${PORTVERSION}
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp

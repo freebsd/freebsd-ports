@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://space.mit.edu/pub/davis/slrn/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-doc-j0.9.5.6-0.tar.gz
 
-PATCH_SITES=	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
+PATCH_SITES=	${MASTER_SITE_PORTS_JP}
 PATCHFILES= 	${PORTNAME}-${PORTVERSION}jp0.pat.gz
 PATCH_DIST_STRIP=-p1
 
