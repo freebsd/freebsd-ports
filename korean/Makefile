@@ -60,7 +60,7 @@
     SUBDIR += nhppf
     SUBDIR += nvi-euc-kr
     SUBDIR += nvi-iso-2022-kr
-    SUBDIR += openoffice
+    SUBDIR += openoffice-1.0
     SUBDIR += pgp.language
     SUBDIR += pinetreefonts
     SUBDIR += texinfo

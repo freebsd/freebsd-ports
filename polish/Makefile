@@ -10,7 +10,7 @@
     SUBDIR += koffice-i18n
     SUBDIR += libtlen
     SUBDIR += ooodict_PL
-    SUBDIR += openoffice
+    SUBDIR += openoffice-1.0
     SUBDIR += sms
 
 .include <bsd.port.subdir.mk>

@@ -16,7 +16,7 @@
     SUBDIR += med
     SUBDIR += netscape7
     SUBDIR += ooodict-fr_FR
-    SUBDIR += openoffice
+    SUBDIR += openoffice-1.0
     SUBDIR += php_doc
     SUBDIR += plgrenouille
     SUBDIR += staroffice52
