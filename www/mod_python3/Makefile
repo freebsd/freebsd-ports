@@ -37,7 +37,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's,LONG_LONG,long long,g' ${WRKSRC}/src/requestobject.c
 .endif
 
-.if !exists(${PREFIX}/etc/apache2/envvars.d)
+.if !exists(${PREFIX}/etc/apache2/envvars.d) && !defined(PACKAGE_BUILDING)
 BROKEN=		"Please upgrade your www/apache2 installation."
 .endif
 
