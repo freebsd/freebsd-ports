@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	6.50
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.fh-koblenz.de/pub/Ghostscript/aladdin/gs650/ \
 	ftp://ftp.fh-koblenz.de/pub/Ghostscript/aladdin/fonts/ \
