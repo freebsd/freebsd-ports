@@ -1,11 +1,11 @@
---- ./lib/Makefile.orig	Thu Nov 11 05:32:55 1999
-+++ ./lib/Makefile	Thu Nov 11 08:54:34 1999
+--- ./lib/Makefile.orig	Tue Nov 16 16:50:53 1999
++++ ./lib/Makefile	Tue Nov 16 16:52:01 1999
 @@ -4,7 +4,7 @@
  SRCS=   authfd.c authfile.c bufaux.c buffer.c canohost.c channels.c \
- 	cipher.c compat.c compress.c crc32.c deattack.c hostfile.c \
- 	log.c match.c mpaux.c nchan.c packet.c readpass.c rsa.c \
--	tildexpand.c ttymodes.c uidswap.c xmalloc.c
-+	tildexpand.c ttymodes.c uidswap.c xmalloc.c strlcpy.c
+ 	cipher.c compat.c compress.c crc32.c deattack.c fingerprint.c \
+ 	hostfile.c log.c match.c mpaux.c nchan.c packet.c readpass.c \
+-	rsa.c tildexpand.c ttymodes.c uidswap.c xmalloc.c
++	rsa.c strlcpy.c tildexpand.c ttymodes.c uidswap.c xmalloc.c
  
  NOPROFILE= yes
  NOPIC=	yes

@@ -21,7 +21,7 @@ CAT?=		/bin/cat
 DISTFILES!=	${CAT} ${FILESDIR}/distfiles
 
 CVS_CMD?=	cvs -z3
-CVS_DATE=	Mon Nov 15 01:30:17 EST 1999
+CVS_DATE=	Tue Nov 16 16:45:45 PST 1999
 CVS_SITE?=	anoncvs@anoncvs1.ca.openbsd.org:/cvs
 CRYPTOLIBS=	-L${PREFIX}/lib -lcrypto
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
