@@ -1,0 +1,5 @@
+The fcgi.py Python module handles communication with the FastCGI module of the
+Apache or Stronghold web server. You can make a pyton fastcgi script very easy
+with this module.
+
+WWW: http://alldunn.com/python/

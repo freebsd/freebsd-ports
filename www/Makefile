@@ -323,6 +323,7 @@
     SUBDIR += pruby
     SUBDIR += publicfile
     SUBDIR += py-HTMLgen
+    SUBDIR += py-fcgi
     SUBDIR += py-websvcs
     SUBDIR += pyweblib
     SUBDIR += qdecoder
