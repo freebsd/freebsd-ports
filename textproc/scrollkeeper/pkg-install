@@ -32,7 +32,7 @@ fi
 #
 # find the prefix for DocBook DTD
 #
-found=`find ${PREFIX}/ -follow -name docbookx.dtd 2> /dev/null`
+found=`find ${PREFIX}/share/ -follow -name docbookx.dtd 2> /dev/null`
 if [ "$found" = "" ] ; then
     echo could not locate docbookx.dtd for DocBook XML
     exit 1
@@ -103,7 +103,7 @@ xmlcatalog --noout --add "delegateURI" \
 # find the prefix for ISO DocBook entities
 #
 top=`dirname $docbookdir`
-found=`find ${PREFIX}/ -follow -iname "iso*amsb.ent" 2> /dev/null`
+found=`find ${PREFIX}/share/ -follow -iname "iso*amsb.ent" 2> /dev/null`
 if [ "$found" = "" ] ; then
     echo could not locate iso-amsb.ent of ISO DocBook entities
     exit 1
@@ -191,7 +191,7 @@ xmlcatalog --noout --add "delegatePublic" \
 # find the prefix for XSLT stylesheets
 #
 top=`dirname $docbookdir`
-found=`find ${PREFIX}/ -follow -name chunk.xsl 2> /dev/null`
+found=`find ${PREFIX}/share/ -follow -name chunk.xsl 2> /dev/null`
 if [ "$found" = "" ] ; then
     echo could not locate chunk-common.xsl of DocBook XSLT stylesheets
     exit 1
