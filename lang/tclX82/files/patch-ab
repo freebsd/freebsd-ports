@@ -1,20 +1,20 @@
---- ../tcl/unix/Makefile.in.orig	Sun Jun 16 07:39:09 1996
-+++ ../tcl/unix/Makefile.in	Thu Oct  9 09:49:19 1997
-@@ -85,7 +85,7 @@
+--- ../tcl/unix/Makefile.in.ORIG	Sun May  3 18:52:36 1998
++++ ../tcl/unix/Makefile.in	Sun May  3 18:53:16 1998
+@@ -124,7 +124,7 @@
  # If a link fails, purge the executable, as some systems leave invalid
  # executables around.
  #
--all: libtclx.a SHLIB_@BUILD_SHARED@ tcl checkup RUNTIME tclXtest runtest
-+all: libtclx.a SHLIB_@BUILD_SHARED@ tcl checkup RUNTIME
+-all: tcl checkup RUNTIME tclXtest
++all: tcl checkup RUNTIME
  
- tcl: tclXAppInit.o libtclx.a SHLIB_@BUILD_SHARED@
- 	${CC} ${LD_SWITCHES} tclXAppInit.o ${LDLIBS} -o tcl || \
-@@ -237,7 +237,7 @@
+ static:	tcl.static tclXtest.static
+ 
+@@ -173,7 +173,7 @@
  # unless we don't have them.
  #
- RUNTIME: tcl.tlib tcl.tndx tclx.tcl buildidx.tcl loadouster.tcl help.tmp \
+ RUNTIME: tcl.tlib tcl.tndx tclx.tcl buildidx.tcl autoload.tcl help.tmp \
 -         dltest.tmp checkup
 +         checkup
- 
- tcl.tlib: ${TLIB_SRCS}
+  
+ tcl.tlib: ${TLIB_SRCS} autoload.tcl
  	-rm -f tcl.tlib tcl.tndx

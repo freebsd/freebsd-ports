@@ -1,31 +1,31 @@
---- Config.mk.orig	Sun Jun 16 07:39:18 1996
-+++ Config.mk	Thu Oct  9 08:55:04 1997
-@@ -57,10 +57,10 @@
+--- Config.mk.ORIG	Sun May  3 18:41:27 1998
++++ Config.mk	Sun May  3 18:43:35 1998
+@@ -56,10 +56,10 @@
  # to ${TCL_LIB_SPEC}.
  # 
  
--TCL_SRC=${srcbasedir}/../tcl7.5
--TCL_BUILD=${bldbasedir}/../tcl7.5
+-TCL_SRC=${srcbasedir}/../tcl8.0
+-TCL_BUILD=${bldbasedir}/../tcl8.0
 -TCL_CONFIG=${TCL_BUILD}/unix/tclConfig.sh
 -TCL_LIB=${TCL_BUILD_LIB_SPEC}
-+TCL_SRC=${PREFIX}/include/tcl7.5
++TCL_SRC=${prefix}/include/tcl8.0
 +TCL_BUILD=
-+TCL_CONFIG=${PREFIX}/lib/tcl7.5/tclConfig.sh
++TCL_CONFIG=${prefix}/lib/tcl8.0/tclConfig.sh
 +TCL_LIB=${TCL_LIB_SPEC}
  
  #------------------------------------------------------------------------------
  # Unless configure is going to be run with --with-tk=NO, these defines must be
-@@ -69,10 +69,10 @@
- # neccessary to link with the Tk shared library (libtk4.1.so).  If you want to
+@@ -68,10 +68,10 @@
+ # neccessary to link with the Tk shared library (libtk8.0.so).  If you want to
  # use the installed Tk library, set TK_LIB to ${TK_LIB_SPEC}.
  
--TK_SRC=${srcbasedir}/../tk4.1
--TK_BUILD=${bldbasedir}/../tk4.1
+-TK_SRC=${srcbasedir}/../tk8.0
+-TK_BUILD=${bldbasedir}/../tk8.0
 -TK_CONFIG=${TK_BUILD}/unix/tkConfig.sh
 -TK_LIB=${TK_BUILD_LIB_SPEC}
-+TK_SRC=${PREFIX}/include/tk4.1
++TK_SRC=${prefix}/include/tk8.0
 +TK_BUILD=
-+TK_CONFIG=${PREFIX}/lib/tk4.1/tkConfig.sh
++TK_CONFIG=${prefix}/lib/tk8.0/tkConfig.sh
 +TK_LIB=${TK_LIB_SPEC}
  
  #------------------------------------------------------------------------------
