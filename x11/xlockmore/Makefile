@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.15
+PORTVERSION=	5.16
 CATEGORIES?=	x11
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/ \
 		http://www.tux.org/~bagleyd/latest/
@@ -71,5 +71,7 @@ CONFIGURE_ARGS+=	--disable-allow-root
 post-configure:
 	${REINPLACE_CMD} -e 's/-lXdpms//g' ${WRKSRC}/modes/Makefile
 .endif
+
+PLIST_FILES=	bin/xlock lib/X11/app-defaults/XLock
 
 .include <bsd.port.post.mk>
