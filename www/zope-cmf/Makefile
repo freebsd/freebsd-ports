@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	zope-cmf
-PORTVERSION=	1.4
+PORTVERSION=	1.4.2
 CATEGORIES=	www zope
 MASTER_SITES=	http://cmf.zope.org/download/CMF-${PORTVERSION}/
 DISTNAME=	CMF-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	filippo@widestore.net
 COMMENT=	The Zope Content Management Framework (CMF)
 
 USE_PYTHON=	yes

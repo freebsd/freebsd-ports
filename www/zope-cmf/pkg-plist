@@ -234,6 +234,8 @@
 %%ZOPEBASEDIR%%/lib/python/Products/CMFCore/tests/base/security.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFCore/tests/base/testcase.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFCore/tests/base/testcase.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFCore/tests/base/tidata.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFCore/tests/base/tidata.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFCore/tests/base/utils.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFCore/tests/base/utils.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFCore/tests/fake_skins/fake_skin/test1.py
