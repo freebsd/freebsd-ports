@@ -18,4 +18,4 @@ use NT4+SP3 or Win95+updates clients, set "encrypt passwords" parameter to
 yes and use smbpasswd [username] to use /usr/local/private/smbpasswd for
 authentication.
 
-FreeBSD Samba-devel port maintainer: Timur Bakeyev <timur@gnu.org>
+FreeBSD Samba3 port maintainer: Timur Bakeyev <timur@gnu.org>

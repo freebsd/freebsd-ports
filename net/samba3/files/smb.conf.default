@@ -3,8 +3,13 @@
 # here. Samba has a huge number of configurable options (perhaps too
 # many!) most of which are not shown in this example
 #
-# For a step by step guide on installing, configuring and using samba, 
-# read the Samba HOWTO Collection.
+# For a step to step guide on installing, configuring and using samba, 
+# read the Samba-HOWTO-Collection. This may be obtained from:
+#  http://www.samba.org/samba/docs/Samba-HOWTO-Collection.pdf
+#
+# Many working examples of smb.conf files can be found in the 
+# Samba-Guide which is generated daily and can be downloaded from: 
+#  http://www.samba.org/samba/docs/Samba-Guide.pdf
 #
 # Any line which starts with a ; (semi-colon) or a # (hash) 
 # is a comment and is ignored. In this example we will use a #
@@ -17,7 +22,7 @@
 #======================= Global Settings =====================================
 [global]
 
-# workgroup = NT-Domain-Name or Workgroup-Name, eg: REDHAT4
+# workgroup = NT-Domain-Name or Workgroup-Name, eg: MIDEARTH
    workgroup = MYGROUP
 
 # server string is the equivalent of the NT Description field
@@ -25,7 +30,7 @@
 
 # Security mode. Defines in which mode Samba will operate. Possible 
 # values are share, user, server, domain and ads. Most people will want 
-# user level security. See the HOWTO Collection for details.
+# user level security. See the Samba-HOWTO-Collection for details.
    security = user
 
 # This option is important for security. It allows you to restrict
@@ -162,6 +167,7 @@
 ;  delete user script = /usr/sbin/userdel %u
 ;  delete user from group script = /usr/sbin/deluser %u %g
 ;  delete group script = /usr/sbin/groupdel %g
+
 
 #============================ Share Definitions ==============================
 [homes]

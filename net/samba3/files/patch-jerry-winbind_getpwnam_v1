@@ -1,0 +1,66 @@
+Index: libsmb/samlogon_cache.c
+===================================================================
+--- libsmb/samlogon_cache.c	(revision 2082)
++++ libsmb/samlogon_cache.c	(working copy)
+@@ -106,9 +106,10 @@
+ 
+ /***********************************************************************
+  Store a NET_USER_INFO_3 structure in a tdb for later user 
++ username should be in UTF-8 format
+ ***********************************************************************/
+ 
+-BOOL netsamlogon_cache_store(TALLOC_CTX *mem_ctx, NET_USER_INFO_3 *user)
++BOOL netsamlogon_cache_store(TALLOC_CTX *mem_ctx, const char * username, NET_USER_INFO_3 *user)
+ {
+ 	TDB_DATA 	data;
+         fstring 	keystr;
+@@ -130,6 +131,14 @@
+ 	slprintf(keystr, sizeof(keystr), "%s", sid_string_static(&user_sid));
+ 
+ 	DEBUG(10,("netsamlogon_cache_store: SID [%s]\n", keystr));
++	
++	/* only Samba fills in the username, not sure why NT doesn't */
++	/* so we fill it in since winbindd_getpwnam() makes use of it */
++	
++	if ( !user->uni_user_name.buffer ) {
++		init_unistr2( &user->uni_user_name, username, STR_TERMINATE );
++		init_uni_hdr( &user->hdr_user_name, &user->uni_user_name );
++	}
+ 		
+ 	/* Prepare data */
+ 	
+Index: nsswitch/winbindd_pam.c
+===================================================================
+--- nsswitch/winbindd_pam.c	(revision 2082)
++++ nsswitch/winbindd_pam.c	(working copy)
+@@ -283,7 +283,7 @@
+ 	}
+ 	
+ 	if (NT_STATUS_IS_OK(result)) {
+-		netsamlogon_cache_store( cli->mem_ctx, &info3 );
++		netsamlogon_cache_store( cli->mem_ctx, name_user, &info3 );
+ 		wcache_invalidate_samlogon(find_domain_from_name(name_domain), &info3);
+ 
+ 		/* Check if the user is in the right group */
+@@ -538,7 +538,7 @@
+ 	}
+ 
+ 	if (NT_STATUS_IS_OK(result)) {
+-		netsamlogon_cache_store( cli->mem_ctx, &info3 );
++		netsamlogon_cache_store( cli->mem_ctx, name_user, &info3 );
+ 		wcache_invalidate_samlogon(find_domain_from_name(name_domain), &info3);
+ 		
+ 		if (!NT_STATUS_IS_OK(result = check_info3_in_group(mem_ctx, &info3, state->request.data.auth_crap.required_membership_sid))) {
+Index: auth/auth_domain.c
+===================================================================
+--- auth/auth_domain.c	(revision 2082)
++++ auth/auth_domain.c	(working copy)
+@@ -205,7 +205,7 @@
+ 	} else {
+ 		nt_status = make_server_info_info3(mem_ctx, user_info->internal_username.str, 
+ 						   user_info->smb_name.str, domain, server_info, &info3);
+-		netsamlogon_cache_store( mem_ctx, &info3 );
++		netsamlogon_cache_store( mem_ctx, user_info->smb_name.str, &info3 );
+ 	}
+ 
+ #if 0
