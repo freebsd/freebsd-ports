@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.17a
+PORTVERSION=	1.0.18
 PORTREVISION=	0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -23,6 +23,7 @@ MASTER_SITE_SUBDIR=	pureftpd
 MAINTAINER=	j@pureftpd.org
 COMMENT=	A small, easy to set up, fast and very secure FTP server
 
+USE_BZIP2=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--with-everything \
@@ -46,7 +47,6 @@ CONFIGURE_ARGS+=	--with-ldap
 # mysql support requested?
 .if defined(WITH_MYSQL)
 USE_MYSQL=		YES
-BROKEN_WITH_MYSQL=	41
 CONFIGURE_ARGS+=	--with-mysql
 .endif
 
@@ -108,8 +108,8 @@ pre-fetch:
 	@${ECHO_MSG} "WITH_LANG=lang        - Enable compilation of language support, lang is one of"
 	@${ECHO_MSG} "  english, german, romanian, french, french-funny, polish, spanish,"
 	@${ECHO_MSG} "  dutch, italian, brazilian-portuguese, danish, slovak, korean,"
-	@${ECHO_MSG} "  norwegian, swedish, russian, traditional-chinese, simplified-chinese"
-	@${ECHO_MSG} "  and czech."
+	@${ECHO_MSG} "  norwegian, swedish, russian, traditional-chinese, simplified-chinese,"
+	@${ECHO_MSG} "  hungarian, catalan and czech."
 	@${ECHO_MSG} ""
 
 post-patch:
