@@ -9,7 +9,7 @@ PORTNAME=	lp_solve
 PORTVERSION=	4.0
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.ics.ele.tue.nl/pub/lp_solve/
+MASTER_SITES=	# none
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
