@@ -3,7 +3,7 @@
 # Date created:		24 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.12 1996/12/01 01:23:22 obrien Exp $
+# $Id: Makefile,v 1.13 1998/10/14 03:21:40 jseger Exp $
 #
 
 DISTNAME=	xarchie-2.0.10
@@ -13,8 +13,7 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN_ELF=	yes
-
 USE_IMAKE=	yes
+USE_GMAKE=	yes
 
 .include <bsd.port.mk>
