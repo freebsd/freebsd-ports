@@ -21,12 +21,14 @@ include/gnokii/virtmodem.h
 lib/libgnokii.a
 lib/libgnokii.so
 lib/libgnokii.so.1
-lib/pkgconfig/gnokii.pc
+libdata/pkgconfig/gnokii.pc
 sbin/gnokiid
 sbin/mgnokiidev
+%%SMSD%%sbin/smsd
 %%PORTDOCS%%%%DOCSDIR%%/Bugs
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/DataCalls-QuickStart
+%%PORTDOCS%%%%DOCSDIR%%/gnokii.nol
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README-2110
 %%PORTDOCS%%%%DOCSDIR%%/README-3810
@@ -77,11 +79,20 @@ share/locale/cs/LC_MESSAGES/gnokii.mo
 share/locale/de/LC_MESSAGES/gnokii.mo
 share/locale/et/LC_MESSAGES/gnokii.mo
 share/locale/fi/LC_MESSAGES/gnokii.mo
+share/locale/fr/LC_MESSAGES/gnokii.mo
 share/locale/it/LC_MESSAGES/gnokii.mo
 share/locale/nl/LC_MESSAGES/gnokii.mo
 share/locale/pl/LC_MESSAGES/gnokii.mo
 share/locale/sk/LC_MESSAGES/gnokii.mo
 share/locale/sl/LC_MESSAGES/gnokii.mo
+%%SMSD%%share/smsd/action
+%%SMSD%%share/smsd/README
+%%SMSD%%share/smsd/libfile.so
+%%MSM%%share/smsd/libmysql.so
+%%MSM%%share/smsd/sms.tables.mysql.sql
+%%PGM%%share/smsd/libpq.so
+%%PGM%%share/smsd/sms.tables.pq.sql
+%%SMSD%%@dirrm share/smsd
 %%X11%%share/xgnokii/help/C
 %%X11%%share/xgnokii/help/POSIX
 %%X11%%share/xgnokii/help/en_US/COPYING

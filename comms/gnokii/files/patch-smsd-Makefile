@@ -1,0 +1,50 @@
+--- smsd/Makefile.orig	Fri Oct 10 22:38:59 2003
++++ smsd/Makefile	Fri Oct 10 22:41:33 2003
+@@ -21,14 +21,14 @@
+ SMSD_MAN=man/smsd.8
+ 
+ CFLAGS += -DMODULES_DIR=\"${libdir}/smsd\" $(PTHREAD_CFLAGS) \
+-	  $(shell $(GLIBCFLAGS))
++	  $(shell $(GLIBCFLAGS)) -I$(LOCALBASE)/include `glib-config --cflags`
+ 
+ LDLIBS += $(PTHREAD_LIBS) \
+ 	  $(shell $(GLIBLDLIBS))
+ 
+-LDLIBS += -s -rdynamic -L$(TOPDIR)/common -lgnokii -ldl
++# LDLIBS += -s -rdynamic -L$(TOPDIR)/common -lgnokii -ldl
+ # Some systems, eg. FreeBSD don't have libdl. Use this:
+-# LDLIBS += -s -rdynamic -L$(TOPDIR)/common -lgnokii
++LDLIBS += -s -rdynamic -L$(TOPDIR)/common -lgnokii
+ 
+ ifdef XPM_LIBS
+ 	LDLIBS +=$(XPM_LIBS)
+@@ -41,7 +41,7 @@
+ 
+ 
+ smsd: $(OBJS) $(TOPDIR)/common/libgnokii.so
+-	gcc $(LDFLAGS) $(OBJS) $(LDLIBS) -o $@
++	$(CC) $(LDFLAGS) $(OBJS) $(LDLIBS) -o $@
+ 
+ 
+ ### DB Modules
+@@ -50,17 +50,17 @@
+ 
+ # PostgreSQL support
+ libpq.so: smsd.h pq.c
+-	gcc -s -shared -o libpq.so $(CFLAGS) -I../include \
++	$(CC) -s -shared -o libpq.so $(CFLAGS) -I../include \
+ 	-I/usr/include/pgsql pq.c $(shell $(GLIBLDLIBS)) -lpq
+ 
+ # MySQL support
+ libmysql.so: smsd.h mysql.c
+-	gcc -s -shared -o libmysql.so $(CFLAGS) -I../include \
++	$(CC) -s -shared -o libmysql.so $(CFLAGS) -I../include \
+ 	$(shell mysql_config --cflags) mysql.c $(shell $(GLIBLDLIBS)) $(shell mysql_config --libs)
+ 
+ # File support
+ libfile.so: smsd.h file.c
+-	gcc -s -shared -o libfile.so $(CFLAGS) -I../include \
++	$(CC) -s -shared -o libfile.so $(CFLAGS) -I../include \
+         file.c $(shell $(GLIBLDLIBS))
+ 
+ ### End of DB Modules
