@@ -1,5 +1,5 @@
---- scripts/scrollkeeper-config.in.orig	Thu Mar 21 00:08:51 2002
-+++ scripts/scrollkeeper-config.in	Sat May 25 23:59:53 2002
+--- scripts/scrollkeeper-config.in.orig	Sun May 26 16:19:07 2002
++++ scripts/scrollkeeper-config.in	Sun May 26 16:19:13 2002
 @@ -4,7 +4,7 @@
  localstatedir=@localstatedir@
  partial_db_dir=@SCROLLKEEPER_PARTIAL_DB_DIR@

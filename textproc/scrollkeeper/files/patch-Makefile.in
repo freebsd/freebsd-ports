@@ -1,27 +1,21 @@
---- Makefile.in.orig	Sat May 25 22:59:08 2002
-+++ Makefile.in	Sat May 25 23:09:40 2002
-@@ -130,14 +130,12 @@
- 
- EXTRA_DIST = scrollkeeper.spec.in COPYING-DOCS TODO intltool-extract.in intltool-merge.in intltool-update.in scrollkeeper-spec.txt
+--- Makefile.in.orig	Wed Mar 28 06:22:13 2001
++++ Makefile.in	Tue Apr  3 11:13:37 2001
+@@ -108,4 +108,2 @@
  
 -scrollkeeperdocdir = $(datadir)/doc/scrollkeeper-$(VERSION)
 -scrollkeeperdoc_DATA = COPYING-DOCS
--scrollkeeper_localstate_dir = $(localstatedir)/lib/scrollkeeper
-+scrollkeeper_localstate_dir = $(localstatedir)/db/scrollkeeper
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = config.h
+@@ -114,3 +112,3 @@
  CONFIG_CLEAN_FILES =  scrollkeeper.spec
 -DATA =  $(scrollkeeperdoc_DATA)
-+DATA =
++DATA = 
  
- DIST_COMMON =  README ./stamp-h.in ABOUT-NLS AUTHORS COPYING ChangeLog \
- INSTALL Makefile.am Makefile.in NEWS TODO acconfig.h aclocal.m4 \
-@@ -393,7 +391,6 @@
- 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
- installdirs: installdirs-recursive
+@@ -353,3 +351,3 @@
+ 
+-install-data-am: install-scrollkeeperdocDATA
++install-data-am:
+ install-data: install-data-recursive
+@@ -367,3 +365,2 @@
  installdirs-am:
 -	$(mkinstalldirs)  $(DESTDIR)$(scrollkeeperdocdir)
  
- 
- mostlyclean-generic:
