@@ -20,7 +20,6 @@ LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 # includes assember code
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	13
@@ -30,6 +29,14 @@ CONFIGURE_ENV=	CPPFLAGS="-fPIC -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	 --with-libintl-prefix=${LOCALBASE}
 INSTALLS_SHLIB=	yes
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g ; \
