@@ -1,0 +1,12 @@
+JSAP: the Java-based Simple Argument Parser
+
+JSAP parses your command line and instantiates objects of types you specify
+based upon that command line. If you configure JSAP to expect an Integer on the
+command line, and the user does not provide a String that can be converted to
+an Integer, JSAP will alert your program to the fact that there was a problem
+with the command line. If JSAP indicates that your command line was
+successfully parsed, you are guaranteed an Integer when you request that
+parameter's value from your program. There's a pretty big (and growing) list of
+return types supported by JSAP.
+
+WWW:	http://http://www.martiansoftware.com/jsap/index.html
