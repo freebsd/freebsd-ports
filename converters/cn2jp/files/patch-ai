@@ -1,0 +1,13 @@
+--- lib/Makefile.orig	Tue Feb 27 09:43:29 1996
++++ lib/Makefile	Sun Oct 19 01:40:47 2003
+@@ -1,7 +1,8 @@
+ INCLUDE=
+ 
+-CC=cc
+-CFLAGS= -g -I../include -I. -L../lib -L.
++CC?=cc
++CFLAGS?=-O -pipe
++CFLAGS+= -g -I../lib -I. -L../lib -L.
+ 
+ SRC = lang-util.h lang-util.c py-tbl.c uzpj-tbl.c uzpj-util.c jp-util.h jp-util.c cn-util.c hz2gb.c gb2hz.c
+ OBJS = lang-util.o py-tbl.o uzpj-tbl.o uzpj-util.o jp-util.o cn-util.o hz2gb.o gb2hz.o

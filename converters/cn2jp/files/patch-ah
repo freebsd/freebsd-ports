@@ -1,0 +1,56 @@
+--- Makefile.orig	Tue Feb 27 06:35:44 1996
++++ Makefile	Sun Oct 19 01:43:20 2003
+@@ -1,7 +1,8 @@
+ INCLUDE=
+ 
+-CC=cc
+-CFLAGS= -g -I../lib -I. -L../lib -L.
++CC?=cc
++CFLAGS?=-O -pipe
++CFLAGS+= -g -I../lib -I. -L../lib -L.
+ 
+ SRC = README Makefile */*.c */*.h */*.tbl */Makefile */README
+ OBJS = big2jis/b2j-util.o big2jis/b2j_table.o \
+@@ -14,10 +15,11 @@
+ 	lib/py-tbl.o lib/uzpj-tbl.o lib/uzpj-util.o \
+ 	hz2gb.o gb2hz.o SINO.o jp-util2.o
+ 
+-all: makeall libcn2jp.a
++all: makeall libcn2jp.a libcn2jp.so
+ 
+ 
+ makeall:
++	cd table; make; cd ..
+ 	cd lib; make; cd ..
+ 	cd big2jis; make; cd ..
+ 	cd jis2big; make; cd ..
+@@ -28,21 +30,23 @@
+ 
+ libcn2jp.a:  $(OBJS)
+ 	rm -f libcn2jp.a
+-	ar r libcn2jp.a $(OBJS)
++	ar cru libcn2jp.a $(OBJS)
+ 	ranlib libcn2jp.a
+-	cp libcn2jp.a ../../../lib/libcn2jp.a
++
++libcn2jp.so: $(OBJS)
++	ld -o libcn2jp.so $(OBJS) -shared -soname libcn2jp.so
+ 
+ gb2hz.o: lib/gb2hz.c
+-	$(CC) -c lib/gb2hz.c
++	$(CC) $(CFLAGS) -c lib/gb2hz.c
+ 
+ hz2gb.o: lib/hz2gb.c
+-	$(CC) -c lib/hz2gb.c
++	$(CC) $(CFLAGS) -c lib/hz2gb.c
+ 
+ SINO.o: lib/SINO.c
+-	$(CC) -c lib/SINO.c
++	$(CC) $(CFLAGS) -c lib/SINO.c
+ 
+ jp-util2.o: lib/jp-util2.c
+-	$(CC) -c lib/jp-util2.c
++	$(CC) $(CFLAGS) -c lib/jp-util2.c
+ 
+ tar:
+ 	echo "Produce cn2jp`date '+%m%d'`.tar..."

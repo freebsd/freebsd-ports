@@ -1,0 +1,24 @@
+--- gb2jis/Makefile.orig	Tue Feb 27 09:44:34 1996
++++ gb2jis/Makefile	Sun Oct 19 01:39:44 2003
+@@ -1,7 +1,8 @@
+ INCLUDE=
+ 
+-CC=cc
+-CFLAGS= -g -I../lib -I. -L../lib -L.
++CC?=cc
++CFLAGS?=-O -pipe
++CFLAGS+= -g -I../lib -I. -L../lib -L.
+ 
+ SRC = g2j.c g2j_table.c g2j-util.c
+ OBJS = g2j.o g2j_table.o g2j-util.o
+@@ -13,8 +14,8 @@
+ 	$(CC) $(CFLAGS) -o g2j $(OBJS) -llang
+ 
+ g2j_table.c: gb2jis.tbl
+-	mktable gb2jis.tbl
+-	mktbl2c gb2jis.t g2j > g2j_table.c
++	../table/mktable gb2jis.tbl
++	../table/mktbl2c gb2jis.t g2j > g2j_table.c
+ 
+ tar:
+ 	echo "Produce g2j`date '+%m%d'`.tar..."
