@@ -1,0 +1,12 @@
+--- gtk+/gtk/gtkdialog.c~	Wed Feb 12 17:51:09 1997
++++ gtk+/gtk/gtkdialog.c	Fri Feb 28 14:08:35 1997
+@@ -71,5 +71,8 @@
+ GtkWidget*
+ gtk_dialog_new ()
+ {
+-  return GTK_WIDGET (gtk_type_new (gtk_dialog_get_type ()));
++  GtkWidget *t;
++  t =  GTK_WIDGET (gtk_type_new (gtk_dialog_get_type ()));
++  (GTK_WINDOW(t))->type = GTK_WINDOW_DIALOG;
++  return(t);
+ }
