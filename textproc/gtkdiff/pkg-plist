@@ -1,0 +1,4 @@
+bin/gtkdiff
+share/gnome/apps/Utilities/gtkdiff.desktop
+share/gtkdiff/gtkdiffrc
+@dirrm share/gtkdiff
