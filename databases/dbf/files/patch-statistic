@@ -1,0 +1,82 @@
+--- statistic.h	Fri Apr 16 07:36:47 2004
++++ statistic.h	Fri Apr 16 15:42:21 2004
+@@ -15,5 +15,4 @@
+ #include "endian.h"
+ 
+-char *get_db_version (int version);
+ void dbf_file_info (const struct DB_HEADER *db);
+ void dbf_field_stat (const struct DB_FIELD *header, int header_length);
+--- statistic.c	Fri Apr 16 07:36:47 2004
++++ statistic.c	Fri Apr 16 15:40:47 2004
+@@ -15,43 +15,37 @@
+ #include "dbf.h"
+ 
+ 
+-char *get_db_version (int version) {
+-	char *name;
++static const char *
++get_db_version (int version) {
++	static	char name[31];
+ 	
+ 	switch (version) {
+-		case 0x02:
+-			// without memo fields
+-			name = "FoxBase";
+-			break;
+-		case 0x03:
+-			// without memo fields
+-			name = "FoxBase+/dBASE III+";
+-			break;
+-		case 0x04:
+-			// without memo fields
+-			name = "dBASE IV";
+-			break;	
+-		case 0x05:
+-			// without memo fields
+-			name = "dBASE 5.0";
+-			break;	
+-		case 0x83:
+-			name = "FoxBase+/dBASE III+";
+-			break;		
+-		case 0x8B:
+-			name = "dBASE IV";
+-			break;			
+-		case 0x30:
+-			// without memo fields
+-			name = "Visual FoxPro";
+-			break;	
+-		case 0xF5:
+-			// with memo fields
+-			name = "FoxPro 2.0";
+-			break;		
++	case 0x02:
++		// without memo fields
++		return "FoxBase";
++	case 0x03:
++		// without memo fields
++		return "FoxBase+/dBASE III+";
++	case 0x04:
++		// without memo fields
++		return "dBASE IV";
++	case 0x05:
++		// without memo fields
++		return "dBASE 5.0";
++	case 0x83:
++		return "FoxBase+/dBASE III+";
++	case 0x8B:
++		return "dBASE IV";
++	case 0x30:
++		// without memo fields
++		return "Visual FoxPro";
++	case 0xF5:
++		// with memo fields
++		return "FoxPro 2.0";
++	default:
++		sprintf(name, "Unknown (code 0x%.2X)", version);
++		return name;
+ 	}
+-	
+-	return name;				
+ }
+ 
+ 
