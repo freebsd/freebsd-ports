@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.postal.mpt.go.jp/lzh/ \
 EXTRACT_SUFX=	.lzh
 DISTNAME=	ken_all
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	ports@freebsd.org
 
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		nkf:${PORTSDIR}/japanese/nkf

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.vector.co.jp/authors/VA001240/archive/ \
 MASTER_SITE_SUBDIR=	itojun
 DISTFILES=	mei153s.tgz mei153d.tgz
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	ports@freebsd.org
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 

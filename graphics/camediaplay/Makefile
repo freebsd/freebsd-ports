@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=   ftp://ftp.itojun.org/pub/digi-cam/C-400L/unix/ \
 		ftp://ftp.digipri.co.jp/pub/free-software/Olympus/C-400L/unix/
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	ports@freebsd.org
 
 WRKSRC=		${WRKDIR}/camediaplay/build
 HAS_CONFIGURE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=   ftp://ftp.foretune.co.jp/pub/tools/snooper/
 DISTNAME=	snooper-19991202
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	ports@freebsd.org
 
 WRKSRC=		${WRKDIR}/snooper/build
 HAS_CONFIGURE=	yes

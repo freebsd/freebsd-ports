@@ -8,7 +8,7 @@
 CATEGORIES=	chinese editors
 PKGNAMESUFFIX=	-euctw
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	ports@freebsd.org
 
 CONFIGURE_ARGS+=	--enable-multibyte=euc-tw --program-prefix=n
 

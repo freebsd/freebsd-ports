@@ -10,7 +10,7 @@ PORTVERSION=	19991202
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.itojun.org/pub/misc/
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	ports@freebsd.org
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/crosspad/build
