@@ -66,16 +66,9 @@ lib/webmin/apache/edit_dir.cgi
 lib/webmin/apache/edit_files.cgi
 lib/webmin/apache/edit_gdir.cgi
 lib/webmin/apache/edit_global.cgi
-lib/webmin/apache/edit_gmime.cgi
 lib/webmin/apache/edit_gmime_type.cgi
-lib/webmin/apache/edit_gnet.cgi
-lib/webmin/apache/edit_gproc.cgi
 lib/webmin/apache/edit_htaccess.cgi
-lib/webmin/apache/edit_valias.cgi
-lib/webmin/apache/edit_vcgi.cgi
-lib/webmin/apache/edit_vdoc.cgi
 lib/webmin/apache/edit_virt.cgi
-lib/webmin/apache/edit_vmime.cgi
 lib/webmin/apache/edit_vserv.cgi
 lib/webmin/apache/files_index.cgi
 lib/webmin/apache/find_htaccess.cgi
@@ -101,6 +94,8 @@ lib/webmin/apache/images/list_authgroups.gif
 lib/webmin/apache/images/list_authusers.gif
 lib/webmin/apache/images/recon.gif
 lib/webmin/apache/images/reconfig.gif
+lib/webmin/apache/images/show.gif
+lib/webmin/apache/images/show_list.gif
 lib/webmin/apache/images/type_header_0.gif
 lib/webmin/apache/images/type_header_1.gif
 lib/webmin/apache/images/type_header_10.gif
@@ -173,15 +168,13 @@ lib/webmin/apache/save_dir.cgi
 lib/webmin/apache/save_files.cgi
 lib/webmin/apache/save_global.cgi
 lib/webmin/apache/save_gmime_type.cgi
-lib/webmin/apache/save_gnet.cgi
-lib/webmin/apache/save_gproc.cgi
 lib/webmin/apache/save_htaccess.cgi
-lib/webmin/apache/save_valias.cgi
-lib/webmin/apache/save_vcgi.cgi
-lib/webmin/apache/save_vdoc.cgi
 lib/webmin/apache/save_virt.cgi
-lib/webmin/apache/save_vmime.cgi
 lib/webmin/apache/save_vserv.cgi
+lib/webmin/apache/show_dir.cgi
+lib/webmin/apache/show_files.cgi
+lib/webmin/apache/show_htaccess.cgi
+lib/webmin/apache/show_virt.cgi
 lib/webmin/apache/start.cgi
 lib/webmin/apache/stop.cgi
 lib/webmin/apache/virt_index.cgi
@@ -192,6 +185,7 @@ lib/webmin/bind8/config-hpux
 lib/webmin/bind8/config-redhat-linux
 lib/webmin/bind8/config-slackware-linux
 lib/webmin/bind8/config-solaris
+lib/webmin/bind8/config-solaris-7
 lib/webmin/bind8/config-suse-linux
 lib/webmin/bind8/config.info
 lib/webmin/bind8/create_master.cgi
@@ -331,12 +325,15 @@ lib/webmin/dfsadmin/help/dir.html
 lib/webmin/dfsadmin/help/dir.html.bak
 lib/webmin/dfsadmin/help/edit_share.html
 lib/webmin/dfsadmin/help/edit_share.html.bak
+lib/webmin/dfsadmin/help/index.html
+lib/webmin/dfsadmin/help/index.html.bak
 lib/webmin/dfsadmin/help/intro.html
 lib/webmin/dfsadmin/help/intro.html.bak
 lib/webmin/dfsadmin/help/kerberos.html
 lib/webmin/dfsadmin/help/kerberos.html.bak
 lib/webmin/dfsadmin/help/nfs.html
 lib/webmin/dfsadmin/help/nfs.html.bak
+lib/webmin/dfsadmin/help/public.html
 lib/webmin/dfsadmin/help/ro.html
 lib/webmin/dfsadmin/help/ro.html.bak
 lib/webmin/dfsadmin/help/root.html
@@ -647,6 +644,7 @@ lib/webmin/init/module.info
 lib/webmin/init/proc.html
 lib/webmin/init/reboot.cgi
 lib/webmin/init/save_action.cgi
+lib/webmin/init/save_local.cgi
 lib/webmin/init/shutdown.cgi
 lib/webmin/init/start_stop.cgi
 lib/webmin/lpadmin/cancel_job.cgi
@@ -985,9 +983,11 @@ lib/webmin/sendmail/access-lib.pl
 lib/webmin/sendmail/aliases-lib.pl
 lib/webmin/sendmail/config-debian-linux
 lib/webmin/sendmail/config-freebsd
+lib/webmin/sendmail/config-hpux
 lib/webmin/sendmail/config-redhat-linux
 lib/webmin/sendmail/config-slackware-linux
 lib/webmin/sendmail/config-solaris
+lib/webmin/sendmail/config-solaris-7
 lib/webmin/sendmail/config-suse-linux
 lib/webmin/sendmail/config.info
 lib/webmin/sendmail/del_mailq.cgi
@@ -1025,6 +1025,7 @@ lib/webmin/sendmail/images/list_mailq.gif
 lib/webmin/sendmail/images/list_masq.gif
 lib/webmin/sendmail/images/list_opts.gif
 lib/webmin/sendmail/images/list_relay.gif
+lib/webmin/sendmail/images/list_trusts.gif
 lib/webmin/sendmail/images/list_virtusers.gif
 lib/webmin/sendmail/images/mailers.gif
 lib/webmin/sendmail/images/mailq.gif
@@ -1032,6 +1033,7 @@ lib/webmin/sendmail/images/masq.gif
 lib/webmin/sendmail/images/opts.gif
 lib/webmin/sendmail/images/relay.gif
 lib/webmin/sendmail/images/sendmail.gif
+lib/webmin/sendmail/images/trusts.gif
 lib/webmin/sendmail/images/virtusers.gif
 lib/webmin/sendmail/index.cgi
 lib/webmin/sendmail/list_access.cgi
@@ -1045,6 +1047,7 @@ lib/webmin/sendmail/list_mailq.cgi
 lib/webmin/sendmail/list_masq.cgi
 lib/webmin/sendmail/list_opts.cgi
 lib/webmin/sendmail/list_relay.cgi
+lib/webmin/sendmail/list_trusts.cgi
 lib/webmin/sendmail/list_virtusers.cgi
 lib/webmin/sendmail/mailers-lib.pl
 lib/webmin/sendmail/module.info
@@ -1058,6 +1061,7 @@ lib/webmin/sendmail/save_mailer.cgi
 lib/webmin/sendmail/save_masq.cgi
 lib/webmin/sendmail/save_opts.cgi
 lib/webmin/sendmail/save_relay.cgi
+lib/webmin/sendmail/save_trusts.cgi
 lib/webmin/sendmail/save_virtuser.cgi
 lib/webmin/sendmail/sendmail-lib.pl
 lib/webmin/sendmail/start.cgi
@@ -1321,3 +1325,62 @@ lib/webmin/webmin/index.cgi
 lib/webmin/webmin/install_mod.cgi
 lib/webmin/webmin/module.info
 lib/webmin/webmin/webmin-lib.pl
+@dirrm etc/webmin
+@dirrm lib/webmin
+@dirrm lib/webmin/acl/images
+@dirrm lib/webmin/acl
+@dirrm lib/webmin/apache/images
+@dirrm lib/webmin/apache
+@dirrm lib/webmin/bind8/images
+@dirrm lib/webmin/bind8
+@dirrm lib/webmin/bsdexports/images
+@dirrm lib/webmin/bsdexports
+@dirrm lib/webmin/cron/images
+@dirrm lib/webmin/cron
+@dirrm lib/webmin/dfsadmin/help
+@dirrm lib/webmin/dfsadmin/images
+@dirrm lib/webmin/dfsadmin
+@dirrm lib/webmin/dnsadmin/help
+@dirrm lib/webmin/dnsadmin/images
+@dirrm lib/webmin/dnsadmin/images/.xvpics
+@dirrm lib/webmin/dnsadmin
+@dirrm lib/webmin/exports/images
+@dirrm lib/webmin/exports
+@dirrm lib/webmin/fdisk/images
+@dirrm lib/webmin/fdisk
+@dirrm lib/webmin/file/images
+@dirrm lib/webmin/file
+@dirrm lib/webmin/format/images
+@dirrm lib/webmin/format
+@dirrm lib/webmin/hpuxexports/images
+@dirrm lib/webmin/hpuxexports
+@dirrm lib/webmin/images
+@dirrm lib/webmin/inetd/images
+@dirrm lib/webmin/inetd
+@dirrm lib/webmin/init/images
+@dirrm lib/webmin/init
+@dirrm lib/webmin/lpadmin/images
+@dirrm lib/webmin/lpadmin
+@dirrm lib/webmin/mount/images
+@dirrm lib/webmin/mount
+@dirrm lib/webmin/pap/images
+@dirrm lib/webmin/pap
+@dirrm lib/webmin/proc/help
+@dirrm lib/webmin/proc/images
+@dirrm lib/webmin/proc
+@dirrm lib/webmin/quota/help
+@dirrm lib/webmin/quota/images
+@dirrm lib/webmin/quota
+@dirrm lib/webmin/samba/images
+@dirrm lib/webmin/samba
+@dirrm lib/webmin/sendmail/images
+@dirrm lib/webmin/sendmail
+@dirrm lib/webmin/software/images
+@dirrm lib/webmin/software
+@dirrm lib/webmin/squid/images
+@dirrm lib/webmin/squid
+@dirrm lib/webmin/useradmin/help
+@dirrm lib/webmin/useradmin/images
+@dirrm lib/webmin/useradmin
+@dirrm lib/webmin/webmin/images
+@dirrm lib/webmin/webmin
