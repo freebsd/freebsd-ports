@@ -18,4 +18,10 @@ USE_OPENSSL=	YES
 MAN8=		tund.8
 MANCOMPRESSED=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=		"Does not build on ia64 or sparc64"
+.endif
+
+.include <bsd.port.post.mk>
