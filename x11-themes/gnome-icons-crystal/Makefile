@@ -10,11 +10,10 @@
 # x11-themes/gnome-icons/bsd.gnome-icons.mk for it.
 
 PORTNAME=	crystal
-PORTVERSION=	1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	teams/art.gnome.org/themes/icon
-DISTNAME=	ICON-Crystal-SVG-For-Gnome
+MASTER_SITES=	http://files.customize.org/gicons/
+DISTNAME=	CrystalSVGforGnomeIcons1-2-0_1082838150
 
 MAINTAINER=	tmclaugh@sdf.lonestar.org
 COMMENT=	Crystal SVG Icons for Gnome
