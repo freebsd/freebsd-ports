@@ -1,27 +1,26 @@
 bin/ml-build
-bin/ml-makedepend
-bin/ml-yacc
-bin/ml-lex
 bin/ml-burg
+bin/ml-lex
+bin/ml-makedepend
 bin/ml-nlffigen
+bin/ml-yacc
 bin/sml
-smlnj/bin/.heap/sml.x86-bsd
-smlnj/bin/.heap/ml-yacc.x86-bsd
-smlnj/bin/.heap/ml-lex.x86-bsd
-smlnj/bin/.heap/ml-burg.x86-bsd
-smlnj/bin/.heap/ml-nlffigen.x86-bsd
-smlnj/bin/.run/run.x86-freebsd
 smlnj/bin/.arch-n-opsys
-smlnj/bin/.run-sml
+smlnj/bin/.heap/ml-burg.x86-bsd
+smlnj/bin/.heap/ml-lex.x86-bsd
+smlnj/bin/.heap/ml-nlffigen.x86-bsd
+smlnj/bin/.heap/ml-yacc.x86-bsd
+smlnj/bin/.heap/sml.x86-bsd
 smlnj/bin/.link-sml
+smlnj/bin/.run/run.x86-freebsd
+smlnj/bin/.run-sml
 smlnj/bin/ml-build
-smlnj/bin/ml-makedepend
-smlnj/bin/sml
-smlnj/bin/ml-yacc
-smlnj/bin/ml-lex
 smlnj/bin/ml-burg
+smlnj/bin/ml-lex
+smlnj/bin/ml-makedepend
 smlnj/bin/ml-nlffigen
-smlnj/lib/pathconfig
+smlnj/bin/ml-yacc
+smlnj/bin/sml
 smlnj/lib/SMLNJ-MLRISC/CM/x86-unix/ALPHA.cm
 smlnj/lib/SMLNJ-MLRISC/CM/x86-unix/Control.cm
 smlnj/lib/SMLNJ-MLRISC/CM/x86-unix/HPPA.cm
@@ -33,19 +32,27 @@ smlnj/lib/SMLNJ-MLRISC/CM/x86-unix/PPC.cm
 smlnj/lib/SMLNJ-MLRISC/CM/x86-unix/SPARC.cm
 smlnj/lib/basis.cm/CM/x86-unix/basis.cm
 smlnj/lib/burg-ext.cm/CM/x86-unix/burg-ext.cm
+smlnj/lib/c-int.cm/CM/x86-unix/c-int.cm
+smlnj/lib/c.cm/CM/x86-unix/c.cm
+smlnj/lib/ckit-lib.cm/CM/x86-unix/ckit-lib.cm
 smlnj/lib/dir-tool.cm/CM/x86-unix/dir-tool.cm
 smlnj/lib/grm-ext.cm/CM/x86-unix/grm-ext.cm
 smlnj/lib/html-lib.cm/CM/x86-unix/html-lib.cm
+smlnj/lib/inet-lib.cm/CM/x86-unix/inet-lib.cm
 smlnj/lib/lex-ext.cm/CM/x86-unix/lex-ext.cm
 smlnj/lib/make-tool.cm/CM/x86-unix/make-tool.cm
+smlnj/lib/memory.cm/CM/x86-unix/memory.cm
 smlnj/lib/ml-yacc-lib.cm/CM/x86-unix/ml-yacc-lib.cm
 smlnj/lib/mlburg-tool.cm/CM/x86-unix/mlburg-tool.cm
 smlnj/lib/mllex-tool.cm/CM/x86-unix/mllex-tool.cm
 smlnj/lib/mlyacc-tool.cm/CM/x86-unix/mlyacc-tool.cm
 smlnj/lib/noweb-tool.cm/CM/x86-unix/noweb-tool.cm
 smlnj/lib/nw-ext.cm/CM/x86-unix/nw-ext.cm
+smlnj/lib/pathconfig
 smlnj/lib/pickle-lib.cm/CM/x86-unix/pickle-lib.cm
 smlnj/lib/pp-lib.cm/CM/x86-unix/pp-lib.cm
+smlnj/lib/reactive-lib.cm/CM/x86-unix/reactive-lib.cm
+smlnj/lib/regexp-lib.cm/CM/x86-unix/regexp-lib.cm
 smlnj/lib/shell-tool.cm/CM/x86-unix/shell-tool.cm
 smlnj/lib/smlnj/CM/x86-unix/cm.cm
 smlnj/lib/smlnj/CM/x86-unix/cmb.cm
@@ -90,13 +97,6 @@ smlnj/lib/smlnj/viscomp/CM/x86-unix/sparc.cm
 smlnj/lib/smlnj/viscomp/CM/x86-unix/x86.cm
 smlnj/lib/smlnj-lib.cm/CM/x86-unix/smlnj-lib.cm
 smlnj/lib/unix-lib.cm/CM/x86-unix/unix-lib.cm
-smlnj/lib/inet-lib.cm/CM/x86-unix/inet-lib.cm
-smlnj/lib/regexp-lib.cm/CM/x86-unix/regexp-lib.cm
-smlnj/lib/reactive-lib.cm/CM/x86-unix/reactive-lib.cm
-smlnj/lib/ckit-lib.cm/CM/x86-unix/ckit-lib.cm
-smlnj/lib/memory.cm/CM/x86-unix/memory.cm
-smlnj/lib/c-int.cm/CM/x86-unix/c-int.cm
-smlnj/lib/c.cm/CM/x86-unix/c.cm
 @dirrm smlnj/bin/.heap
 @dirrm smlnj/bin/.run
 @dirrm smlnj/bin
@@ -109,6 +109,15 @@ smlnj/lib/c.cm/CM/x86-unix/c.cm
 @dirrm smlnj/lib/burg-ext.cm/CM/x86-unix
 @dirrm smlnj/lib/burg-ext.cm/CM
 @dirrm smlnj/lib/burg-ext.cm
+@dirrm smlnj/lib/c-int.cm/CM/x86-unix
+@dirrm smlnj/lib/c-int.cm/CM
+@dirrm smlnj/lib/c-int.cm
+@dirrm smlnj/lib/c.cm/CM/x86-unix
+@dirrm smlnj/lib/c.cm/CM
+@dirrm smlnj/lib/c.cm
+@dirrm smlnj/lib/ckit-lib.cm/CM/x86-unix
+@dirrm smlnj/lib/ckit-lib.cm/CM
+@dirrm smlnj/lib/ckit-lib.cm
 @dirrm smlnj/lib/dir-tool.cm/CM/x86-unix
 @dirrm smlnj/lib/dir-tool.cm/CM
 @dirrm smlnj/lib/dir-tool.cm
@@ -118,12 +127,18 @@ smlnj/lib/c.cm/CM/x86-unix/c.cm
 @dirrm smlnj/lib/html-lib.cm/CM/x86-unix
 @dirrm smlnj/lib/html-lib.cm/CM
 @dirrm smlnj/lib/html-lib.cm
+@dirrm smlnj/lib/inet-lib.cm/CM/x86-unix
+@dirrm smlnj/lib/inet-lib.cm/CM
+@dirrm smlnj/lib/inet-lib.cm
 @dirrm smlnj/lib/lex-ext.cm/CM/x86-unix
 @dirrm smlnj/lib/lex-ext.cm/CM
 @dirrm smlnj/lib/lex-ext.cm
 @dirrm smlnj/lib/make-tool.cm/CM/x86-unix
 @dirrm smlnj/lib/make-tool.cm/CM
 @dirrm smlnj/lib/make-tool.cm
+@dirrm smlnj/lib/memory.cm/CM/x86-unix
+@dirrm smlnj/lib/memory.cm/CM
+@dirrm smlnj/lib/memory.cm
 @dirrm smlnj/lib/ml-yacc-lib.cm/CM/x86-unix
 @dirrm smlnj/lib/ml-yacc-lib.cm/CM
 @dirrm smlnj/lib/ml-yacc-lib.cm
@@ -148,6 +163,12 @@ smlnj/lib/c.cm/CM/x86-unix/c.cm
 @dirrm smlnj/lib/pp-lib.cm/CM/x86-unix
 @dirrm smlnj/lib/pp-lib.cm/CM
 @dirrm smlnj/lib/pp-lib.cm
+@dirrm smlnj/lib/reactive-lib.cm/CM/x86-unix
+@dirrm smlnj/lib/reactive-lib.cm/CM
+@dirrm smlnj/lib/reactive-lib.cm
+@dirrm smlnj/lib/regexp-lib.cm/CM/x86-unix
+@dirrm smlnj/lib/regexp-lib.cm/CM
+@dirrm smlnj/lib/regexp-lib.cm
 @dirrm smlnj/lib/shell-tool.cm/CM/x86-unix
 @dirrm smlnj/lib/shell-tool.cm/CM
 @dirrm smlnj/lib/shell-tool.cm
@@ -181,26 +202,5 @@ smlnj/lib/c.cm/CM/x86-unix/c.cm
 @dirrm smlnj/lib/unix-lib.cm/CM/x86-unix
 @dirrm smlnj/lib/unix-lib.cm/CM
 @dirrm smlnj/lib/unix-lib.cm
-@dirrm smlnj/lib/inet-lib.cm/CM/x86-unix
-@dirrm smlnj/lib/inet-lib.cm/CM
-@dirrm smlnj/lib/inet-lib.cm
-@dirrm smlnj/lib/regexp-lib.cm/CM/x86-unix
-@dirrm smlnj/lib/regexp-lib.cm/CM
-@dirrm smlnj/lib/regexp-lib.cm
-@dirrm smlnj/lib/reactive-lib.cm/CM/x86-unix
-@dirrm smlnj/lib/reactive-lib.cm/CM
-@dirrm smlnj/lib/reactive-lib.cm
-@dirrm smlnj/lib/ckit-lib.cm/CM/x86-unix
-@dirrm smlnj/lib/ckit-lib.cm/CM
-@dirrm smlnj/lib/ckit-lib.cm
-@dirrm smlnj/lib/memory.cm/CM/x86-unix
-@dirrm smlnj/lib/memory.cm/CM
-@dirrm smlnj/lib/memory.cm
-@dirrm smlnj/lib/c-int.cm/CM/x86-unix
-@dirrm smlnj/lib/c-int.cm/CM
-@dirrm smlnj/lib/c-int.cm
-@dirrm smlnj/lib/c.cm/CM/x86-unix
-@dirrm smlnj/lib/c.cm/CM
-@dirrm smlnj/lib/c.cm
 @dirrm smlnj/lib
 @dirrm smlnj
