@@ -1,5 +1,5 @@
 # New ports collection makefile for:    linux_base
-# Version required:     5.2
+# Version required:     6.1
 # Date created:         Jul 7, 1999
 # Whom:                 marcel@FreeBSD.org
 #
@@ -7,78 +7,94 @@
 #
 
 DISTNAME=		linux_base
-PKGNAME=		linux_base-5.2
+PKGNAME=		linux_base-6.1
 CATEGORIES=		emulators
-MASTER_SITES=		\
-	ftp://ftp.cdrom.com/pub/linux/redhat/${STDDIR}/ \
-	ftp://ftp.redhat.com/redhat/${STDDIR}/ \
-	ftp://ftp.infomagic.com/pub/mirrors/linux/RedHat/${STDDIR}/ \
-	ftp://ftp.crc.ca/mirrors/by-site/ftp.redhat.com/redhat/${STDDIR}/ \
-	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/${STDDIR}/ \
-	ftp://mirror.nucba.ac.jp/mirror/redhat/${STDDIR}/ \
-	ftp://ftp.is.co.za/linux/distributions/redhat/${STDDIR}/ \
-	ftp://mirror.aarnet.edu.au/pub/linux/redhat/${STDDIR}/
+MASTER_SITES=		${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
 DISTFILES=		${RPM_SET1} ${RPM_LDCONFIG} ${RPM_SET2} \
 			${RPM_RPM} ${RPM_SET3}
+
+PATCH_SITES=		${RPM_MIRRORS:S/__DIR__/${UPDDIR}/g}
+PATCHFILES=		${UPDATES}
 
 MAINTAINER=		marcel@FreeBSD.org
 
 RUN_DEPENDS=		rpm:${PORTSDIR}/misc/rpm
 
-ONLY_FOR_ARCHS=		i386 alpha
+ONLY_FOR_ARCHS=		alpha i386
 DIST_SUBDIR=		rpm
 PREFIX=			/compat/linux
 EXTRACT_ONLY=
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
-PLIST=			${PKGDIR}/PLIST.${ARCH}
+PLIST=			${PKGDIR}/PLIST.${MACHINE_ARCH}
 
-STDDIR=			old-releases/redhat-5.2/${ARCH}/RedHat/RPMS
+RPM_MIRRORS=		\
+	ftp://ftp.cdrom.com/pub/linux/redhat/__DIR__/ \
+	ftp://ftp.redhat.com/redhat/__DIR__/ \
+	ftp://ftp.infomagic.com/pub/mirrors/linux/RedHat/__DIR__/ \
+	ftp://ftp.crc.ca/mirrors/by-site/ftp.redhat.com/redhat/__DIR__/ \
+	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/__DIR__/ \
+	ftp://mirror.nucba.ac.jp/mirror/redhat/__DIR__/ \
+	ftp://ftp.is.co.za/linux/distributions/redhat/__DIR__/ \
+	ftp://mirror.aarnet.edu.au/pub/linux/redhat/__DIR__/
+
+STDDIR=			redhat-6.1/${MACHINE_ARCH}/RedHat/RPMS
+UPDDIR=			updates/6.1/${MACHINE_ARCH}
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == "i386")
-LIBC5_COMPAT=		ld.so-1.9.5-8.i386.rpm \
-			libc-5.3.12-27.i386.rpm \
-			libg++-2.7.2.8-9.i386.rpm
+.if (${MACHINE_ARCH} == "i386")
+LIBC5_COMPAT=		ld.so-1.9.5-11.i386.rpm libc-5.3.12-31.i386.rpm
+RPM_BINUTILS=		binutils-2.9.1.0.23-6.i386.rpm
+RPM_GLIB=		glib-1.2.5-1.i386.rpm
+RPM_GLIBC=		glibc-2.1.2-11.i386.rpm
+RPM_LDCONFIG=		ldconfig-1.9.5-15.i386.rpm
+RPM_RPM=		rpm-3.0.3-2.i386.rpm
+RPM_X_LIBS=		XFree86-libs-3.3.5-3.i386.rpm
+UPDATES=		glib-1.2.6-2.i386.rpm
 .else
 LIBC5_COMPAT=
+RPM_BINUTILS=		binutils-2.9.1.0.23-7.alpha.rpm
+RPM_GLIB=		glib-1.2.6-2.alpha.rpm
+RPM_GLIBC=		glibc-2.1.2-17.alpha.rpm
+RPM_LDCONFIG=		ldconfig-1.9.5-16.alpha.rpm
+RPM_RPM=		rpm-3.0.3-6.alpha.rpm
+RPM_X_LIBS=		XFree86-libs-3.3.5-17.alpha.rpm
+UPDATES=
 .endif
 
 #
 # The file files/pkg-list lists all rpms that are installed by this port
 # versus all rpms installed by a minimal Redhat installation.
 #
-RPM_SET1=		setup-1.9.2-1.noarch.rpm \
-			filesystem-1.3.2-3.noarch.rpm \
-			basesystem-4.9-3.noarch.rpm
-RPM_LDCONFIG=		ldconfig-1.9.5-8.${ARCH}.rpm
-RPM_SET2=		glibc-2.0.7-29.${ARCH}.rpm \
-			termcap-9.12.6-11.noarch.rpm \
-			libtermcap-2.0.8-10.${ARCH}.rpm \
-			bash-1.14.7-13.${ARCH}.rpm \
-			ncurses-4.2-10.${ARCH}.rpm \
-			zlib-1.1.3-2.${ARCH}.rpm \
-			info-3.12-9.${ARCH}.rpm \
-			fileutils-3.16-10.${ARCH}.rpm \
-			grep-2.2-2.${ARCH}.rpm \
-			binutils-2.9.1.0.15-1.${ARCH}.rpm \
-			gd-1.3-3.${ARCH}.rpm \
-			gdbm-1.7.3-17.${ARCH}.rpm \
-			glib-1.0.6-3.${ARCH}.rpm \
+RPM_SET1=		setup-2.0.5-1.noarch.rpm \
+			filesystem-1.3.5-1.noarch.rpm \
+			basesystem-6.0-4.noarch.rpm
+RPM_SET2=		${RPM_GLIBC} \
+			termcap-9.12.6-15.${MACHINE_ARCH}.rpm \
+			libtermcap-2.0.8-18.${MACHINE_ARCH}.rpm \
+			bash-1.14.7-16.${MACHINE_ARCH}.rpm \
+			ncurses-4.2-25.${MACHINE_ARCH}.rpm \
+			zlib-1.1.3-5.${MACHINE_ARCH}.rpm \
+			info-3.12h-2.${MACHINE_ARCH}.rpm \
+			fileutils-4.0-8.${MACHINE_ARCH}.rpm \
+			grep-2.3-2.${MACHINE_ARCH}.rpm \
+			${RPM_BINUTILS} \
+			gd-1.3-5.${MACHINE_ARCH}.rpm \
+			gdbm-1.8.0-2.${MACHINE_ARCH}.rpm \
+			${RPM_GLIB} \
 			${LIBC5_COMPAT} \
-			libstdc++-2.8.0-14.${ARCH}.rpm \
-			sh-utils-1.16-14.${ARCH}.rpm \
-			readline-2.2.1-1.${ARCH}.rpm \
-			redhat-release-5.2-1.noarch.rpm
-RPM_RPM=		rpm-2.5.5-5.2.${ARCH}.rpm
-RPM_SET3=		setserial-2.14-4.${ARCH}.rpm \
-			slang-0.99.38-8.${ARCH}.rpm \
-			stat-1.5-8.${ARCH}.rpm \
-			tcsh-6.07.09-1.${ARCH}.rpm \
-			XFree86-libs-3.3.2.3-25.${ARCH}.rpm \
-			xpm-3.4j-3.${ARCH}.rpm
+			libstdc++-2.9.0-24.${MACHINE_ARCH}.rpm \
+			sh-utils-2.0-1.${MACHINE_ARCH}.rpm \
+			readline-2.2.1-5.${MACHINE_ARCH}.rpm \
+			redhat-release-6.1-1.noarch.rpm
+RPM_SET3=		setserial-2.15-2.${MACHINE_ARCH}.rpm \
+			slang-1.2.2-4.${MACHINE_ARCH}.rpm \
+			stat-1.5-11.${MACHINE_ARCH}.rpm \
+			tcsh-6.08.00-6.${MACHINE_ARCH}.rpm \
+			${RPM_X_LIBS} \
+			xpm-3.4k-1.${MACHINE_ARCH}.rpm
 
 DBPATH=			/var/lib/rpm
 RPMFLAGS=		--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
@@ -86,8 +102,9 @@ RPMFLAGS=		--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
 RPMDIR=			${DISTDIR}/${DIST_SUBDIR}
 
 REMOVE_DIRS=		/dev /home /root /tmp /var/tmp /usr/local /usr/tmp
-REMOVE_FILES=		/bin/df /bin/su /etc/exports /etc/group /etc/motd \
-			/etc/passwd /etc/printcap /etc/services /etc/protocols
+REMOVE_FILES=		/bin/df /bin/su /etc/exports /etc/group \
+			/etc/localtime /etc/motd /etc/passwd /etc/printcap \
+			/etc/services /etc/protocols
 
 .if ${OSVERSION} <= 320001
 #
@@ -104,6 +121,9 @@ REMOVE_FILES=		/bin/df /bin/su /etc/exports /etc/group /etc/motd \
 #
 NEEDLOADLINK=		true
 .endif
+
+do-patch:
+	@${DO_NADA}
 
 do-install:
 	@if [ -z "`kldstat -v | ${GREP} -E 'linux(aout|elf)'`" ]; then \
@@ -128,7 +148,6 @@ do-install:
 	@${CHMOD} 666 ${PREFIX}/dev/null
 .if defined(NEEDLOADLINK)
 	@${MKDIR} ${PREFIX}/compat
-	@${RM} -f ${PREFIX}/compat/linux
 	@${LN} -s / ${PREFIX}/compat/linux
 .endif
 #
@@ -154,6 +173,13 @@ do-install:
 	@for R in ${RPM_SET3}; do \
 		${ECHO} $$R; \
 		rpm -i ${RPMFLAGS} ${RPMDIR}/$$R; \
+	done
+#
+# Install updates
+#
+	@for R in ${PATCHFILES}; do \
+		${ECHO} $$R; \
+		rpm -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
 #
 # Install yp.conf as a hint to NIS users
