@@ -12,6 +12,12 @@ Ruby_Include=			bsd.ruby.mk
 Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 
 #
+# [variables that a user may define]
+#
+# RUBY_VER		- (See below)
+# RUBY_DEFAULT_VER	- Set to (e.g.) "1.7" if you want to refer to "ruby17" just as "ruby".
+# RUBY_ARCH		- (See below)
+#
 # [variables that each port can define]
 #
 # RUBY			- Set to full path of ruby.  If you set this, the values of the following variables are automatically obtained from the ruby executable: RUBY_VER, RUBY_VERSION, RUBY_NAME, RUBY_ARCH, RUBY_LIBDIR, RUBY_ARCHLIBDIR, RUBY_SITELIBDIR, and RUBY_SITEARCHLIBDIR.
@@ -31,7 +37,7 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_REQUIRE		- Set to a Ruby expression to evaluate before building the port.  The constant "Ruby" is set to the integer version number of ruby, and the result of the expression will be set to RUBY_PROVIDED, which is left undefined if the result is nil, false or a zero-length string.  Implies USE_RUBY.
 # RUBY_SHEBANG_FILES	- Specify the files which shebang lines you want to fix.
 #
-# [variables that each port should not define]
+# [variables that each port should not (re)define]
 #
 # RUBY_PKGNAMEPREFIX	- Common PKGNAMEPREFIX for ruby ports (default: ruby${RUBY_SUFFIX}-)
 # RUBY_VERSION		- Full version of ruby without preview/beta suffix in the form of `x.y.z' (see below for current value).
@@ -43,23 +49,24 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_WRKSRC		- WRKSRC for the ruby port.
 #
 # RUBY_SHLIBVER		- Major version of libruby (see below for current value).
-# RUBY_ARCH		- Directory name of architecture dependent libraries.
-# RUBY_SUFFIX		- Suffix for ruby binaries and directories.
-# _RUBY_SUFFIX		- String to be used as RUBY_SUFFIX.  Always ${RUBY_VER:S/.//}.
+# RUBY_ARCH		- Set to target architecture name. (e.g. i386-freebsdelf4.3)
+# RUBY_R		- Extra suffix only defined when RUBY_WITH_PTHREAD is defined. (_r)
+# RUBY_SUFFIX		- Suffix for ruby binaries and directories.  ${RUBY_R} or ${_RUBY_SUFFIX}.
+# _RUBY_SUFFIX		- String to be used as RUBY_SUFFIX.  Always ${RUBY_VER:S/.//}${RUBY_R}.
 # RUBY_WITHOUT_SUFFIX	- Always ${LOCALBASE}/bin/ruby.
 # RUBY_WITH_SUFFIX	- Always ${RUBY_WITHOUT_SUFFIX}${_RUBY_SUFFIX}.
 # RUBY_NAME		- Ruby's name with trailing suffix.
 #
-# RUBY_RD		- Set to full path of rd.
+# RUBY_RD		- Full path of rd executable.
 #
-# RUBY_PORT		- Set to port path of ruby without PORTSDIR.
-# RUBY_AMSTD_PORT	- Set to port path of ruby-amstd without PORTSDIR.
-# RUBY_RD_PORT		- Set to port path of rd without PORTSDIR.
+# RUBY_PORT		- Port path of ruby without PORTSDIR.
+# RUBY_AMSTD_PORT	- Port path of ruby-amstd without PORTSDIR.
+# RUBY_RD_PORT		- Port path of rd without PORTSDIR.
 #
-# DEPEND_LIBRUBY	- Set to LIB_DEPENDS entry for libruby.
-# DEPEND_RUBY		- Set to BUILD_DEPENDS/RUN_DEPENDS entry for ruby.
-# DEPEND_RUBY_AMSTD	- Set to BUILD_DEPENDS/RUN_DEPENDS entry for ruby-amstd.
-# DEPEND_RUBY_RD2	- Set to BUILD_DEPENDS entry for rd.
+# DEPEND_LIBRUBY	- LIB_DEPENDS entry for libruby.
+# DEPEND_RUBY		- BUILD_DEPENDS/RUN_DEPENDS entry for ruby.
+# DEPEND_RUBY_AMSTD	- BUILD_DEPENDS/RUN_DEPENDS entry for ruby-amstd.
+# DEPEND_RUBY_RD2	- BUILD_DEPENDS entry for rd.
 #
 # RUBY_LIBDIR		- Installation path for architecture independent libraries.
 # RUBY_ARCHLIBDIR	- Installation path for architecture dependent libraries.
@@ -93,24 +100,24 @@ _RUBY_SITEDIR!=		${_RUBY_CONFIG} 'puts C["sitedir"]'
 .else
 RUBY?=			${LOCALBASE}/bin/${RUBY_NAME}
 
-.if defined(RUBY_VER) && ${RUBY_VER} == 1.4
-RUBY_VERSION?=		1.4.6
-RUBY_SUFFIX?=		${_RUBY_SUFFIX}
-.elif defined(RUBY_VER) && ${RUBY_VER} == 1.7
+.if defined(RUBY_VER) && ${RUBY_VER} == 1.7
 RUBY_VERSION?=		1.7.1
 RUBY_SUFFIX?=		${_RUBY_SUFFIX}
-RUBY_PORT?=		lang/ruby-devel
+RUBY_PORT?=		lang/ruby${RUBY_R}-devel
 RUBY_WRKSRC?=		${WRKDIR}/ruby
 RUBY_DISTVERSION?=	${RUBY_VERSION}-alpha-2001.06.01
 #RUBY_DISTPATCHVERSION?=	${RUBY_DISTVERSION}-yyyy.mm.dd
 RUBY_PORTVERSION?=	${RUBY_VERSION}.a2001.06.01
 .else
 RUBY_VERSION?=		1.6.4
-RUBY_SUFFIX?=		# empty
+RUBY_SUFFIX?=		${RUBY_R}
 RUBY_DISTVERSION?=	${RUBY_VERSION}-preview5
 #RUBY_DISTPATCHVERSION?=	${RUBY_DISTVERSION}-yyyy.mm.dd
 RUBY_PORTVERSION?=	${RUBY_VERSION}.p5
 .endif
+
+RUBY_DEFAULT_VER?=	1.6
+RUBY_DEFAULT_SUFFIX?=	${RUBY_DEFAULT_VER:S/.//}
 
 RUBY_DISTVERSION?=	${RUBY_VERSION}
 RUBY_PORTVERSION?=	${RUBY_VERSION}
@@ -121,7 +128,7 @@ RUBY_DISTNAME?=		ruby-${RUBY_DISTVERSION}
 
 RUBY_WRKSRC?=		${WRKDIR}/ruby-${RUBY_VERSION}
 
-RUBY_ARCH?=		${ARCH}-freebsd${OSREL}
+RUBY_ARCH?=		${ARCH}-freebsd${OSREL}${RUBY_R}
 RUBY_NAME?=		ruby${RUBY_SUFFIX}
 
 _RUBY_SYSLIBDIR?=	${LOCALBASE}/lib
@@ -130,15 +137,27 @@ _RUBY_SITEDIR?=		${_RUBY_SYSLIBDIR}/ruby/site_ruby
 
 RUBY_VERSION_CODE?=	${RUBY_VERSION:S/.//g}
 RUBY_VER=		${RUBY_VERSION:R}
-_RUBY_SUFFIX=		${RUBY_VER:S/.//}
+_RUBY_SUFFIX=		${RUBY_VER:S/.//}${RUBY_R}
 
 RUBY_WITHOUT_SUFFIX?=	${LOCALBASE}/bin/ruby
 RUBY_WITH_SUFFIX?=	${RUBY_WITHOUT_SUFFIX}${_RUBY_SUFFIX}
 
 RUBY_PKGNAMEPREFIX?=	ruby${RUBY_SUFFIX}-	# could be rb${RUBY_SUFFIX}-
-RUBY_SHLIBVER?=		${_RUBY_SUFFIX}
+RUBY_SHLIBVER?=		${RUBY_VER:S/.//}
 
 CONFIGURE_TARGET?=	${RUBY_ARCH}
+
+.if defined(RUBY_WITH_PTHREAD)
+RUBY_CONFIGURE_ARGS+=	--with-libc_r=yes
+RUBY_R=			_r
+.else
+RUBY_CONFIGURE_ARGS+=	--with-libc_r=no
+RUBY_R=			# none
+.endif
+
+.if !empty(RUBY_SUFFIX)
+RUBY_CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
+.endif
 
 # Commands
 RUBY_RD?=		${LOCALBASE}/bin/rd2
@@ -179,6 +198,8 @@ PLIST_SUB+=		RUBY_VERSION="${RUBY_VERSION}" \
 			_RUBY_SUFFIX="${_RUBY_SUFFIX}" \
 			RUBY_SUFFIX="${RUBY_SUFFIX}" \
 			RUBY_NAME="${RUBY_NAME}" \
+			RUBY_R="${RUBY_R}" \
+			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}" \
 			${PLIST_RUBY_DIRS:S,DIR="${LOCALBASE}/,DIR=",}
 
 # require check

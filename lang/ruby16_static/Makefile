@@ -41,8 +41,15 @@ CONFIGURE_ENV=	XLDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS!=	cd ${_RUBY_PORTDIR} && ${MAKE} -V CONFIGURE_ARGS
 CONFIGURE_ARGS:=	${CONFIGURE_ARGS:N--enable-shared:M-*} \
 			--with-static-linked-ext=yes \
-			--with-libc_r=no \
 			--with-opt-dir="${LOCALBASE}"
+
+.if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
+IF_DEFAULT=	""
+.else
+IF_DEFAULT=	"@comment "
+.endif
+
+PLIST_SUB+=	IF_DEFAULT=${IF_DEFAULT}
 
 do-fetch:
 	@${DO_NADA}
@@ -65,6 +72,8 @@ do-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${RUBY_NAME} ${RUBY_WITH_SUFFIX}_s
-	${LN} -fs ${RUBY_WITH_SUFFIX}_s ${RUBY_WITHOUT_SUFFIX}_s
+.if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
+	${LN} -fs ruby${_RUBY_SUFFIX}_s ${RUBY_WITHOUT_SUFFIX}_s
+.endif
 
 .include <bsd.port.post.mk>
