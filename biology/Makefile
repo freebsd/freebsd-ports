@@ -33,6 +33,7 @@
     SUBDIR += psi88
     SUBDIR += py-biopython
     SUBDIR += rasmol
+    SUBDIR += recombine
     SUBDIR += seaview
     SUBDIR += sim4
     SUBDIR += tinker
