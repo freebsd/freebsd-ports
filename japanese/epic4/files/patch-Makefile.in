@@ -1,0 +1,37 @@
+--- epic4-0.9.9/source/Makefile.in.orig	Thu Aug 24 04:29:55 2000
++++ epic4-0.9.9/source/Makefile.in	Mon Dec  4 03:45:30 2000
+@@ -17,7 +17,7 @@
+ 	ircsig.o keys.o lastlog.o list.o log.o mail.o names.o network.o \
+ 	newio.o notice.o notify.o numbers.o output.o parse.o queue.o reg.o \
+ 	screen.o server.o status.o term.o timer.o vars.o who.o window.o \
+-	words.o @ALLOCA@
++	words.o kanji.o @ALLOCA@
+ 
+ INCLUDES = -I@srcdir@/../include -I../include
+ 
+@@ -96,7 +96,7 @@
+  ../include/history.h ../include/hook.h ../include/input.h \
+  ../include/output.h ../include/screen.h ../include/window.h \
+  ../include/lastlog.h ../include/status.h ../include/stack.h \
+- ../include/vars.h ../include/keys.h expr2.c expr.c
++ ../include/vars.h ../include/keys.h ../include/kanji.h expr2.c expr.c
+ alist.o: alist.c ../include/irc.h ../include/defs.h \
+  ../include/config.h ../include/irc_std.h ../include/debug.h \
+  ../include/alist.h ../include/ircaux.h ../include/output.h
+@@ -342,7 +342,7 @@
+  ../include/irc_std.h ../include/debug.h ../include/ircaux.h \
+  ../include/vars.h ../include/term.h ../include/screen.h \
+  ../include/window.h ../include/lastlog.h ../include/status.h \
+- ../include/output.h
++ ../include/output.h ../include/kanji.h
+ timer.o: timer.c ../include/irc.h ../include/defs.h \
+  ../include/config.h ../include/irc_std.h ../include/debug.h \
+  ../include/ircaux.h ../include/window.h ../include/lastlog.h \
+@@ -379,6 +379,7 @@
+  ../include/irc.h ../include/irc_std.h ../include/debug.h \
+  ../include/term.h ../include/screen.h ../include/window.h \
+  ../include/lastlog.h ../include/status.h ../include/ircaux.h
++kanji.o: kanji.c ../include/kanji.h
+ wterm.o: wterm.c ../include/irc.h ../include/defs.h \
+  ../include/config.h ../include/irc_std.h ../include/debug.h \
+  ../include/ircaux.h ../include/vars.h ../include/term.h \
