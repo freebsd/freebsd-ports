@@ -93,6 +93,7 @@
     SUBDIR += libgnomeprintui
     SUBDIR += libgnomeprintui20
     SUBDIR += libgnomeui
+    SUBDIR += libgnomeuimm
     SUBDIR += libgtkeditor
     SUBDIR += libj2dplot
     SUBDIR += libjparser
