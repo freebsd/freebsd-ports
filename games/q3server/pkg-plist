@@ -9,12 +9,13 @@
 %%Q3DIR%%baseq3/pak4.pk3
 %%Q3DIR%%baseq3/pak5.pk3
 %%Q3DIR%%baseq3/pak6.pk3
+%%Q3DIR%%baseq3/pak7.pk3
 %%Q3DIR%%missionpack/pak1.pk3
+%%Q3DIR%%missionpack/pak2.pk3
 %%Q3DIR%%q3ded
 %%Q3DIR%%quake3.x86
 @dirrm %%Q3DIR%%missionpack
 @dirrm %%Q3DIR%%baseq3
 %%PORTDOCS%%@dirrm %%Q3DIR%%Help
-@exec mkdir %D/%%Q3DIR%%
 @unexec rmdir %D/%%Q3DIR%%baseq3 2>/dev/null || true
 @unexec rmdir %D/%%Q3DIR%% 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -Rf ${PKG_PREFIX}/%%Q3DIR%%`` to remove any configuration files, *.pk3 files, and mods left." | fmt

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	q3ded
-PORTVERSION=	1.30
+PORTVERSION=	1.31
 CATEGORIES=	games linux
 MASTER_SITES=	http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/quake3/official/ \
 		ftp://ftp.idsoftware.com/idstuff/quake3/linux/ \
@@ -41,13 +41,14 @@ do-install:
 	@${INSTALL_DIR} ${PREFIX}/${Q3DIR}
 	@${INSTALL_DIR} ${PREFIX}/${Q3DIR}baseq3
 	@${INSTALL_DIR} ${PREFIX}/${Q3DIR}missionpack
-	@${INSTALL_DATA} ${WRKSRC}/baseq3/pak1.pk3 ${PREFIX}/${Q3DIR}baseq3
-	@${INSTALL_DATA} ${WRKSRC}/baseq3/pak2.pk3 ${PREFIX}/${Q3DIR}baseq3
-	@${INSTALL_DATA} ${WRKSRC}/baseq3/pak3.pk3 ${PREFIX}/${Q3DIR}baseq3
-	@${INSTALL_DATA} ${WRKSRC}/baseq3/pak4.pk3 ${PREFIX}/${Q3DIR}baseq3
-	@${INSTALL_DATA} ${WRKSRC}/baseq3/pak5.pk3 ${PREFIX}/${Q3DIR}baseq3
-	@${INSTALL_DATA} ${WRKSRC}/baseq3/pak6.pk3 ${PREFIX}/${Q3DIR}baseq3
-	@${INSTALL_DATA} ${WRKSRC}/missionpack/pak1.pk3 ${PREFIX}/${Q3DIR}missionpack
+.for basepak in 1 2 3 4 5 6 7
+	@${INSTALL_DATA} ${WRKSRC}/baseq3/pak${basepak}.pk3 \
+		${PREFIX}/${Q3DIR}baseq3
+.endfor
+.for mpak in 1 2
+	@${INSTALL_DATA} ${WRKSRC}/missionpack/pak${mpak}.pk3 \
+		${PREFIX}/${Q3DIR}missionpack
+.endfor
 	@${INSTALL} -c -o nobody -g nogroup -m 500 ${WRKSRC}/bin/x86/q3ded ${PREFIX}/${Q3DIR}
 	@${INSTALL} -c -o nobody -g nogroup -m 500 ${WRKSRC}/bin/x86/quake3.x86 ${PREFIX}/${Q3DIR}
 
@@ -55,10 +56,9 @@ post-install:
 .ifndef(NOPORTDOCS)
 	@${INSTALL_DIR} ${PREFIX}/${Q3DIR}Help
 	@${INSTALL_DATA} ${WRKSRC}/Help/Q3A_FAQ.html ${PREFIX}/${Q3DIR}Help
-	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/${Q3DIR}
-	@${INSTALL_DATA} ${WRKSRC}/Q3A_EULA.txt ${PREFIX}/${Q3DIR}
-	@${INSTALL_DATA} ${WRKSRC}/README-Id-7-26-01.html ${PREFIX}/${Q3DIR}
-	@${INSTALL_DATA} ${WRKSRC}/README-linux.txt ${PREFIX}/${Q3DIR}
+.for docs in INSTALL Q3A_EULA.txt README-Id-7-26-01.html README-linux.txt
+	@${INSTALL_DATA} ${WRKSRC}/${docs} ${PREFIX}/${Q3DIR}
+.endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
