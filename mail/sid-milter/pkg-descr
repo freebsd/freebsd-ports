@@ -1,0 +1,9 @@
+open source implementation of the Sender ID specification as defined
+by the Internet Engineering Task Force's (IETF) MARID Working Group
+(Mail Authorization Records in DNS).
+
+sid-milter implements the -core and -protocol specifications.
+Additionally, sid-milter implements the "SPF Classic" record protocol
+(v=spf1) as defined by the SPF community.
+
+WWW: http://sendmail.net/sid-milter/
