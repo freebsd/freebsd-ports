@@ -1,5 +1,5 @@
-LaTeX is TeX macro package written by ASCII.
+pLaTeX 2eis TeX macro package written by ASCII.
 
-This package is based on LaTeX2e <95/06>.
+This package is based on LaTeX2e <96/12/01>.
 
-This package can compile to use JIS, SJIS or Japanes-EUC.
+This package can compile to use JIS, SJIS or Japanese-EUC.

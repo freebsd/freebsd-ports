@@ -3,31 +3,30 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.11 1996/11/07 14:52:26 max Exp $
+# $Id: Makefile,v 1.12 1996/11/11 08:11:50 max Exp $
 #
 
 DISTNAME=	platex2e
-PKGNAME=	jp-platex2e-96.03
+PKGNAME=	jp-platex2e-97.02.01
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex2e/1996-03-05/ \
-		ftp://ftp.iij.ad.jp/pub/TeX/CTAN/systems/knuth/lib/ \
-		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/corresponding-sources/ \
-		ftp://ftp.riken.go.jp/pub/tex-archive/systems/knuth/lib/ 
-DISTFILES=	base-9512.tar.gz hyphen.tex.gz lib-6.9.tar.gz
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex2e/1997-02-01/ \
+		ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
+DISTFILES=	base-9612.tar.gz ecfonts-1.0.tar.gz
 
 MAINTAINER=	max@FreeBSD.ORG
 
 BUILD_DEPENDS=  ptex:${PORTSDIR}/japanese/ptex2
 RUN_DEPENDS=    ptex:${PORTSDIR}/japanese/ptex2
 
-WRKSRC=		${WRKDIR}/9603
-EXTRACT_ONLY=	base-9512.tar.gz
+WRKSRC=		${WRKDIR}/9702
+DIST_SUBDIR=	platex2e
+NO_BUILD=	yes
 
 pre-fetch:
 .if !defined(KANJI-CODE)
 	@echo "You can set KANJI-CODE value to JIS, SJIS or EUC."
 	@echo "Now JIS is used as default."
-.if !defined(BATCH)
+.if !defined(BATCH) && !defined(FOR_CDROM)
 	@echo -n "Is JIS OK? (y/n) ==> "
 	@(read ans; \
 	  case x"$$ans" in \
@@ -45,47 +44,40 @@ pre-fetch:
 KANJI-CODE=	JIS
 .endif
 .if ${KANJI-CODE} == JIS
-PLIB_FILE=	pl9603j.tar.gz
+PLIB_FILE=	pl9702j.tar.gz
 .elif ${KANJI-CODE} == SJIS
-PLIB_FILE=	pl9603s.tar.gz
+PLIB_FILE=	pl9702s.tar.gz
 .elif ${KANJI-CODE} == EUC
-PLIB_FILE=	pl9603e.tar.gz
+PLIB_FILE=	pl9702e.tar.gz
 .elifdef KANJI-CODE
 	@echo "Error: invalid value for KANJI-CODE: \"${KANJI-CODE}\""
 	@echo "Possible values are: JIS (default), SJIS, EUC."
 	@false
 .endif
+.if !defined(FOR_CDROM)
 DISTFILES+=	${PLIB_FILE}
-EXTRACT_ONLY+=	${PLIB_FILE}
-
-post-extract:
-	@${RM} ${WRKDIR}/base/hyphen.tex
-	@gzip -cd ${DISTDIR}/hyphen.tex.gz > ${WRKDIR}/base/hyphen.tex
-
-do-build:
-	@(cd ${PREFIX}/lib ; \
-	  tar zxf ${DISTDIR}/lib-6.9.tar.gz texmf/tex/latex2e/base)
-	@(cd ${WRKDIR}/base ; yes | initex unpack.ins ; initex latex.ltx)
-	@(cd ${WRKSRC} ; TEXINPUTS=".:${WRKDIR}/base" ; export TEXINPUTS ; \
-	  yes | iniptex plcore.ins ; iniptex platex.ltx) 
+.else
+DISTFILES+=	pl9702j.tar.gz pl9702s.tar.gz pl9702e.tar.gz
+.endif
+EXTRACT_ONLY=	${PLIB_FILE}
 
 do-install:
-	@${RM} -rf ${PREFIX}/lib/texmf/tex/latex2e/base/*
-	@${MKDIR} ${PREFIX}/lib/texmf/tex/latex2e/base
-	(cd ${WRKDIR}/base ; 						\
-	 for f in *.cls *.clo *.sty *.fd *.def *.ltx ; do 		\
-	   ${INSTALL_DATA} $$f ${PREFIX}/lib/texmf/tex/latex2e/base ; 	\
-	 done ;								\
-	 ${INSTALL_DATA} latex.fmt ${PREFIX}/lib/texmf/ini)
-	@${RM} -f ${PREFIX}/bin/latex
-	@ln -s ${PREFIX}/bin/virtex ${PREFIX}/bin/latex
+	@tar -C ${PREFIX}/lib/texmf/fonts/public -zx \
+	  -f ${DISTDIR}/${DIST_SUBDIR}/ecfonts-1.0.tar.gz
+	@tar -C ${PREFIX}/lib/texmf/tex/latex2e -zx \
+	  -f ${DISTDIR}/${DIST_SUBDIR}/base-9612.tar.gz
+	(cd ${PREFIX}/lib/texmf/tex/latex2e/base; \
+	  initex unpack.ins; \
+	  yes | initex ec.ins; \
+	  initex latex.ltx; \
+	  mv -f latex.fmt ${PREFIX}/lib/texmf/ini)
+	ln -fs ${PREFIX}/bin/virtex ${PREFIX}/bin/latex
 	@${MKDIR} ${PREFIX}/lib/texmf/tex/platex2e/base
-	(cd ${WRKSRC} ; 						\
-	 for f in *.cls *.clo *.sty *.fd *.def *.ltx *.cfg ; do 	\
-	   ${INSTALL_DATA} $$f ${PREFIX}/lib/texmf/tex/platex2e/base ; 	\
-	 done ;								\
-	 ${INSTALL_DATA} platex.fmt ${PREFIX}/lib/texmf/ini)
-	@${RM} -f ${PREFIX}/bin/platex
-	@ln -s ${PREFIX}/bin/virptex ${PREFIX}/bin/platex
+	@${CP} -R ${WRKSRC}/* ${PREFIX}/lib/texmf/tex/platex2e/base
+	(cd ${PREFIX}/lib/texmf/tex/platex2e/base; \
+	  iniptex plcore.ins; \
+	  iniptex platex.ltx; \
+	  mv -f platex.fmt ${PREFIX}/lib/texmf/ini)
+	ln -fs ${PREFIX}/bin/virptex ${PREFIX}/bin/platex
 
 .include <bsd.port.mk>
