@@ -1,4 +1,5 @@
 bin/libetpan-config
+include/libetpan/base64.h
 include/libetpan/carray.h
 include/libetpan/charconv.h
 include/libetpan/chash.h
