@@ -3,12 +3,12 @@
 # Date created:         4 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.37 1996/11/18 11:35:35 asami Exp $
+# $Id: Makefile,v 1.38 1997/01/09 11:58:47 ache Exp $
 #
 
 DISTNAME=       ncftp-2.4.2
 CATEGORIES=	net
-MASTER_SITES=   ftp://ftp.probe.net/pub/ncftp/
+MASTER_SITES=   ftp://ftp.ncftp.com/ncftp/
 
 MAINTAINER=	ache@FreeBSD.ORG
 
