@@ -6,7 +6,6 @@
 
 PORTNAME=	generic-haskell
 PORTVERSION=	1.23
-PORTCOMMENT=	The Generic Haskell compiler
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.uu.nl/research/projects/generic-haskell/compiler/beryl/
 DISTNAME=	gh-${PORTVERSION}-source

@@ -18,8 +18,6 @@ PATCHFILES=	j${PORTNAME}1.8p4-j1.1.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A clone of vi/ex, the standard UNIX editor, with Japanese patch
-
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 
 NO_WRKSUBDIR=	yes

@@ -13,8 +13,6 @@ DISTNAME=	shhcards-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Library for displaying game cards on X Window System
-
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 MAKEFILE=	${FILESDIR}/Makefile.lib

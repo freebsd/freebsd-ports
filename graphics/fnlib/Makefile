@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	enlightenment
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Fonts and font libraries necessary for Enlightenment
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes

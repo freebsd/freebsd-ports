@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.libpng.org/pub/png/src/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Converts TIFF images to PNG format
-
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png
 

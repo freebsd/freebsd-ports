@@ -15,8 +15,6 @@ DISTNAME=	weblint-97-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An internationalized HTML checker with japanese message(EUC-JP)
-
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/jcode.pl:${PORTSDIR}/japanese/jcode.pl
 
 WRKSRC=		${WRKDIR}/weblint-97

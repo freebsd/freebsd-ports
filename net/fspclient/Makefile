@@ -14,8 +14,6 @@ DISTNAME=	fspclient
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A client for the fsp service
-
 WRKSRC=		${WRKDIR}/fspclient
 GNU_CONFIGURE=	yes
 MAN1=		fsp.1

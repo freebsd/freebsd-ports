@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	DNS proxy that supports IPv6 <==> IPv4 record translation
-
 MAN8=		totd.8
 
 GNU_CONFIGURE=	YES

@@ -14,8 +14,6 @@ DISTNAME=	xvs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	X Visualization System, a plugin for XMMS
-
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2

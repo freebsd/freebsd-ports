@@ -8,7 +8,6 @@
 
 PORTNAME=	hypersrc
 PORTVERSION=	5.3.2
-PORTCOMMENT=	Source code browser
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.jimbrooks.org/hypersrc/%SUBDIR%/
 MASTER_SITE_SUBDIR=	latest old

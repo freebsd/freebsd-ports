@@ -14,8 +14,6 @@ MASTER_SITES=	ftp://ftp.cs.unipr.it/pub/ppl/releases/${PORTVERSION}/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The Parma Polyhedra Library
-
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 USE_LIBTOOL=	yes

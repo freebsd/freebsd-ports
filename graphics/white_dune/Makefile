@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}pl${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Graphical VRML97 Editor and animation tool
-
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 

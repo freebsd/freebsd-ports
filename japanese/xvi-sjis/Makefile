@@ -9,8 +9,6 @@ PKGNAMESUFFIX=	-sjis
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A portable multi-window 'vi', handles japanese SJIS
-
 MASTERDIR=	${.CURDIR}/../xvi-euc
 
 PATCHDIR=	${.CURDIR}/files

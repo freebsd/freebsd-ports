@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	devel/lang/assemblers
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Assembler for a variety of microcontrollers/-processors
-
 USE_REINPLACE=	yes
 
 MAN1=	asl.1 p2bin.1 p2hex.1 pbind.1 plist.1

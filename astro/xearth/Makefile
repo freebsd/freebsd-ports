@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR= applications
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Set the root window to the image of earth
-
 USE_IMAKE=	yes
 
 MAN1=		xearth.1

@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.netsoc.ucd.ie/flash/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A ncurses-based restriction shell
-
 .include <bsd.port.pre.mk>
 
 # outdated version of ncurses in non-CURRENT

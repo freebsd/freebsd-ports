@@ -17,8 +17,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A statistics/X11 based lisp interpreter
-
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}

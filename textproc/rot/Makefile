@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Rotates a file so that lines become columns and vice versa
-
 ALL_TARGET=	${PORTNAME}
 
 MAN1=	rot.1

@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The Dynamic Object Rendering Environment
-
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

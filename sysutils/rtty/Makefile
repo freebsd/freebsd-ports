@@ -13,8 +13,6 @@ EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Multiuser "tip"/"cu" replacement with logging
-
 EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh

@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	A high-level interface to the Compact Disc Database
-
 PERL_CONFIGURE=	yes
 
 MAN3=		CDDB.3

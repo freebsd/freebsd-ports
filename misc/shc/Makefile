@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A shell script "encoder"
-
 IGNORE=		"Produces broken binaries"
 
 USE_REINPLACE=	yes

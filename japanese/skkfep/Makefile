@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	SKK-like Kana-to-Kanji FrontEnd Processor
-
 RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:${PORTSDIR}/japanese/skk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

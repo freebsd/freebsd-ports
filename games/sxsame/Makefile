@@ -15,8 +15,6 @@ MASTER_SITES=   ftp://stardust.sfc.wide.ad.jp/pub/JG/JG-0.9.1/sources/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A tile-removing puzzle game for the X Window system
-
 USE_IMAKE=	yes
 USE_XPM=	yes
 INSTALL_TARGET=	install install.dir

@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	fenner
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The OpenLook props application
-
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/props

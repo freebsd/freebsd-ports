@@ -13,8 +13,6 @@ DISTNAME=	elk-3.0
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An embeddable Scheme interpreter
-
 USE_XLIB=	yes
 ALL_TARGET=	default
 MAN1=		elk.1

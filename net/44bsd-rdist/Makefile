@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	obrien
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The traditional 4.4BSD rdist
-
 USE_BZIP2=	yes
 
 NO_WRKSUBDIR=	yes

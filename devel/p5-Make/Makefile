@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Perl module implementing 'make' and script
-
 PERL_CONFIGURE=	yes
 
 MAN1=		perlmake.1

@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Indents and reformats Perl scripts to make them easier to read
-
 PERL_CONFIGURE=	yes
 
 MAN1=		perltidy.1

@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	libexif
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	GTK+ widgets to display/edit EXIF tags
-
 LIB_DEPENDS=	exif.8:${PORTSDIR}/graphics/libexif \
 		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
 

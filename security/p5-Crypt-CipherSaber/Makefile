@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jim@corebsd.or.id
 
-PORTCOMMENT=	Perl module providing an OO interface to CipherSaber encryption
-
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}

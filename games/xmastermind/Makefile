@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	games/strategy
 
 MAINTAINER=		ports@FreeBSD.org
 
-PORTCOMMENT=		Mastermind game for X Window System
-
 LIB_DEPENDS=		forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 USE_REINPLACE=		yes

@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A Web Interface to Majordomo
-
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	"Too many questions"

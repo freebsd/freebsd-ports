@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.jormas.com/~vesuri/xpk/ \
 
 MAINTAINER=     adamw@FreeBSD.org
 
-PORTCOMMENT=	The eXternal PacKer (XPK) library system
-
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 

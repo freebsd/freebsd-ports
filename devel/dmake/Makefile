@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}-src-export.all-unknown-all
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Another hyper make utility
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

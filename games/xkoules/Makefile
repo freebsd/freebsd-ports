@@ -15,8 +15,6 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Fast action arcade-style game for X Window
-
 .if ${MACHINE_ARCH} == "i386"
 PLIST_SUB=	SNDSRV:=""
 .else

@@ -5,7 +5,6 @@
 # $FreeBSD$
 #
 
-PORTCOMMENT=	Portable assembler for 16C84 series PICs
 PORTNAME=	picasm
 PORTVERSION=	1.05
 CATEGORIES=	devel

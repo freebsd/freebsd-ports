@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	ELF (Executable and Linkable Format) reader and producer
-
 WRKSRC=		${WRKDIR}/ELFIO/ELFIO
 MAKEFILE=	makefile
 USE_REINPLACE=	yes

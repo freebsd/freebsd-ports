@@ -13,8 +13,6 @@ MASTER_SITES=	http://homex.coolconnect.com/user/xkwang/gman/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A user-friendly graphical front end for the man system
-
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	ghostview:${PORTSDIR}/print/ghostview
 

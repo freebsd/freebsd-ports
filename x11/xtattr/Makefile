@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A tool for changing xterm attributes
-
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAN1=		xtattr.1
 MANCOMPRESSED=	maybe

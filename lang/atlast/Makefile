@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.fourmilab.ch/atlast/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Autodesk Threaded Language Application System Toolkit
-
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/atlast ${PREFIX}/bin
 .if !defined(NOPORTDOCS)

@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	apps/sound/players
 
 MAINTAINER=	ports@FreeBSD.Org
 
-PORTCOMMENT=	A wav player and recorder
-
 ONLY_FOR_ARCHS=	i386
 
 MAN1=		wavplay.1

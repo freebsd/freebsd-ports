@@ -15,8 +15,6 @@ DISTNAME=	Speex-${PORTVERSION:S/.b/beta/}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An open-source (LGPL) patent-free voice codec
-
 LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

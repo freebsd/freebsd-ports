@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A scientific plotting package
-
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 

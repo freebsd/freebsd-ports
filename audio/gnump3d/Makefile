@@ -17,8 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
-PORTCOMMENT=	A streaming server for MP3, OGG vorbis, and other streamable audio files
-
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes

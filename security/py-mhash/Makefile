@@ -16,8 +16,6 @@ DISTNAME=	python-mhash-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Python mhash module
-
 LIB_DEPENDS=	mhash:${PORTSDIR}/security/mhash
 
 USE_PYTHON=	yes
@@ -27,6 +25,5 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} build_ext ${PYDISTUTILS_BUILDARGS})
-
 
 .include <bsd.port.mk>

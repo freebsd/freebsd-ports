@@ -7,7 +7,6 @@
 
 PORTNAME=	gtk+hs
 PORTVERSION=	0.14.10
-PORTCOMMENT=	A GTK+ Binding for Haskell
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/gtk/
 PKGNAMEPREFIX=	hs-

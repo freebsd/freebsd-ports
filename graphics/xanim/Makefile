@@ -18,8 +18,6 @@ PATCHFILES=	xanim-2801-to-2802-patch.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Play most popular animation formats and show pictures
-
 .if (${MACHINE_ARCH} == "i386")
 EXTRA_FILES=	vid_cvid_2.1_freebsdELFx86.tgz \
 		vid_cyuv_1.0_freebsdELFx86.tgz \
@@ -42,7 +40,6 @@ PLIST_SUB+=	CODECS="@comment "
 USE_IMAKE=	yes
 MAN1=		xanim.1
 
-
 MAKE_ARGS+=	-j 2 # safe and helps even the single-CPU machines
 
 post-extract:
@@ -54,6 +51,5 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/*.readme ${DLLDIR}
 	${INSTALL_DATA} ${WRKDIR}/*.xa ${DLLDIR}
 .endif
-
 
 .include <bsd.port.mk>

@@ -14,8 +14,6 @@ DISTNAME=	tcsh-${PORTVERSION}.add2
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Japanese NLS catalog for TCSH. ("Generic Japanese" taste)
-
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 .include <bsd.port.pre.mk>

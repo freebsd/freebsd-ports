@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Utility for printing to HP (Laser,Desk)Jets using PCL rather than PS
-
 NO_BUILD=	YES
 
 do-install:

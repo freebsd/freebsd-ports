@@ -15,8 +15,6 @@ EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A Java scripting environment
-
 USE_JAVA=	1.1+
 NO_BUILD=	yes
 

@@ -14,8 +14,6 @@ DISTNAME=		${PORTNAME}
 
 MAINTAINER=		ports@FreeBSD.org
 
-PORTCOMMENT=		Atari "Missile Command" clone
-
 ALL_TARGET=
 WRKSRC=			${WRKDIR}/miscom
 MAN6=			miscom.6

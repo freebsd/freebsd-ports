@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.musikwissenschaft.uni-mainz.de/~ag/xfm/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The X File Manager
-
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_IMAKE=	yes

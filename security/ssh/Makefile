@@ -21,8 +21,6 @@ MASTER_SITES=	ftp://ftp.tokyonet.ad.jp/pub/security/ssh/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Secure shell client and server (remote login program)
-
 USE_AUTOCONF=	YES
 GNU_CONFIGURE=	YES
 USE_PERL5=	YES

@@ -12,8 +12,6 @@ DISTFILES=	${PORTNAME}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Fortran 77 semantic checking utility
-
 MAN1=		dcl2inc.1 ftnchek.1
 
 GNU_CONFIGURE=	yes

@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A program computes with real and complex numbers and matrices
-
 WRKSRC=		${WRKDIR}/${DISTNAME:R}/source
 
 USE_GNOMENG=	yes

@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	games/arcade
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Simple ncurses based pseudo-3D driving game
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DHAVE_RANDOM"

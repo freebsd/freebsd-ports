@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.uu.net/networking/news/readers/trn/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Threaded Read News newsreader
-
 RUN_DEPENDS=	munpack:${PORTSDIR}/converters/mpack
 
 WRKSRC=		${WRKDIR}/trn-3.6

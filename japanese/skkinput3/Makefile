@@ -7,7 +7,6 @@
 
 PORTNAME=	skkinput3
 PORTVERSION=	${SRCVERSION}.${PATCHLEVEL}
-PORTCOMMENT=	An SKK-like Japanese input method for X11
 CATEGORIES=	japanese x11
 MASTER_SITES=	http://downloads.sourceforge.jp/skkinput3/1504/
 DISTNAME=	skkinput-${SRCVERSION}_${PATCHLEVEL}

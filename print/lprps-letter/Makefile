@@ -15,12 +15,9 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	PostScript printer filter package supporting a bidirectional serial channel
-
 MAKE_FLAGS?=	PAPERSIZE=${PS} -f
 MAN1=		psrev.1 textps.1
 MAN8=		lprps.8 psif.8 psof.8
-
 
 PAPERSIZE?=	letter
 PS!=		echo ${PAPERSIZE} | awk '{print toupper($$1)}'

@@ -15,8 +15,6 @@ DISTNAME=	Time-modules-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A collection of functions to convert and use time variables in perl5
-
 PERL_CONFIGURE=	YES
 
 MAN3=		Time::CTime.3 \

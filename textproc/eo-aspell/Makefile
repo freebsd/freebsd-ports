@@ -9,8 +9,6 @@ PORTNAME=	eo-aspell
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Aspell with Esperanto dictionary
-
 MASTERDIR=	${.CURDIR}/../aspell
 
 ASPELL_EO=	jes

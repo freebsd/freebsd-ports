@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	QuickTime Utilities
-
 LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
 		quicktime:${PORTSDIR}/graphics/libquicktime \
 		gnugetopt:${PORTSDIR}/devel/libgnugetopt

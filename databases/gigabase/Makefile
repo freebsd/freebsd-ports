@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.garret.ru/~knizhnik/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	GigaBASE: Object-Relational Database Management System
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes

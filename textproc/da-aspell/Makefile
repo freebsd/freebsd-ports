@@ -9,8 +9,6 @@ PORTNAME=	da-aspell
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Aspell with Danish dictionary
-
 MASTERDIR=	${.CURDIR}/../aspell
 
 ASPELL_DA=	ja

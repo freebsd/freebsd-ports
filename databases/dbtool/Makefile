@@ -14,8 +14,6 @@ MASTER_SITES=	ftp://ftp.daemon.de/scip/Apps/dbtool/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Store and retrieve data in a key/value format in a hash database
-
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 .if defined(WITH_BERKELEY_DB)

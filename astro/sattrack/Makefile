@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	Real-time satellite tracking and orbit propagation program
-
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/SatTrack-${PORTVERSION}/src
 

@@ -16,8 +16,6 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Emacs lisp module for the PHP language
-
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

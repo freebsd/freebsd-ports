@@ -16,8 +16,6 @@ MASTER_SITE_SUBDIR=	librdf
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	RDF Parser Toolkit for Redland
-
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		expat.4:${PORTSDIR}/textproc/expat2 \
 		xmlparse.1:${PORTSDIR}/www/libwww

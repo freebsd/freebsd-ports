@@ -13,8 +13,6 @@ MASTER_SITES=	http://muse.seh.de/tosvcd/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	SVCD transcoder
-
 RUN_DEPNDS=	mpeg2enc:${PORTSDIR}/graphics/mjpegtools \
 		vcdimager:${PORTSDIR}/graphics/vcdimager
 

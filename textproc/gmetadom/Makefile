@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-0.0.3
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A Collection of DOM Implementations
-
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \

@@ -12,8 +12,6 @@ MASTER_SITES=	http://wwwinfo.cern.ch/asd/lhc++/export/share/CLHEP/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Object-oriented toolkit for particle physics applications by CERN
-
 WRKSRC=		${WRKDIR}/CLHEP
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

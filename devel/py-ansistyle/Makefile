@@ -15,8 +15,6 @@ DISTNAME=	ANSIStyle-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Add ANSI color capability to output streams
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

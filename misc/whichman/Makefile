@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	apps/doctools
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Approximate matching utilities to search for manpages and files
-
 MAN1=		whichman.1 ftff.1 ftwhich.1
 
 .include <bsd.port.mk>

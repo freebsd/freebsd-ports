@@ -13,8 +13,6 @@ DISTNAME=	wmMatrix-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A DockApp that runs a version of the xmatrix screenhack
-
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes

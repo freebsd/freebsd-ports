@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A Python library for RDF manipulation
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

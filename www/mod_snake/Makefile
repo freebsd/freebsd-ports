@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	modsnake
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A library to easily create flexible Apache modules
-
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT} \
 		${PYTHON_CMD}:${PYTHON_PORTSDIR}
 RUN_DEPENDS=	${BUILD_DEPENDS}

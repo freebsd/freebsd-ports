@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	devel/lang/fortran
 
 MAINTAINER=		ports@FreeBSD.org
 
-PORTCOMMENT=	Analyze the structure of a fortran77 program
-
 ALL_TARGET=
 MAN1=			flow.1
 

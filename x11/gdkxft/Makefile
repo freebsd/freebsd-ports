@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	An anti-aliased font support for gtk+
-
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_X_PREFIX=	yes

@@ -12,8 +12,6 @@ MASTER_SITES=	http://MeepZor.Com/packages/mod_sequester/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Apache module that controls access to the website using secure info
-
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 

@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Little puzzle game with monkey for X Window System
-
 WRKSRC=		${WRKDIR}/affenspiel
 USE_X_PREFIX=	yes
 

@@ -13,8 +13,6 @@ MASTER_SITES=	http://elektron.its.tudelft.nl/~hemmin98/axelq_releases/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A queue manager for the download accelerator axel
-
 RUN_DEPENDS=	axel:${PORTSDIR}/ftp/axel \
 		bash:${PORTSDIR}/shells/bash2
 

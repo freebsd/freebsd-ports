@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A tool which lets you draw Gantt charts
-
 ALL_TARGET=
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

@@ -13,8 +13,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	MOD player
-
 RESTRICTED=	"Non-redistributable beta"
 
 WRKSRC=		${WRKDIR}/tracker

@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A set of software tools for medical image processing
-
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

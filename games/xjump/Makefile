@@ -17,8 +17,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A simple X game where one tries to jump up as many levels as possible
-
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/g}
 
 USE_X_PREFIX=	yes

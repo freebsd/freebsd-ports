@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Perl5 module for file locking with flock
-
 PERL_CONFIGURE=	YES
 
 MAN3=		File::BasicFlock.3

@@ -13,8 +13,6 @@ MASTER_SITES=	http://helm.cs.unibo.it/mml-widget/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A GTK Widget to Render MathML Documents
-
 LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 		gnugetopt:${PORTSDIR}/devel/libgnugetopt \
 		t1:${PORTSDIR}/devel/t1lib \

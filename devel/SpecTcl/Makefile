@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Free drag-and-drop GUI builder for Tk and Java from Sun
-
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 USE_REINPLACE=	yes

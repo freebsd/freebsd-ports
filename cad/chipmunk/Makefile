@@ -20,8 +20,6 @@ DIST_SUBDIR=	chipmunk
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An electronic CAD system
-
 NO_WRKSUBDIR=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes

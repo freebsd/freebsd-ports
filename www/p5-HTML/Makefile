@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Perl5 module for writing HTML documents
-
 USE_PERL5=	yes
 
 NO_WRKSUBDIR=	yes

@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Logical game for X Window System
-
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 USE_X_PREFIX=	yes

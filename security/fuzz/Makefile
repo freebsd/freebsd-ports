@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	fuzz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Tool for testing software by bombarding the program with random data
-
 GNU_CONFIGURE=	yes
 
 MAN1=		fuzz.1

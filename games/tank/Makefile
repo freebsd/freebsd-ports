@@ -13,8 +13,6 @@ DISTFILES=	${DISTNAME}-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A 3-D network tank game that uses OpenGL/Mesa
-
 BUILD_DEPENDS=	${X11BASE}/lib/libaux.a:${PORTSDIR}/graphics/libaux
 
 USE_MESA=	yes

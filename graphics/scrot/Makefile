@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A screen capture utility that utilizes Imlib2
-
 LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib
 
 USE_X_PREFIX=	yes

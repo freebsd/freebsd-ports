@@ -17,8 +17,6 @@ DISTNAME=	dhcp-1.4.0p6
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Dynamic Host Configuration Protocol, WIDE-Implimentation
-
 MAKE_ENV=	OSTYPE=${OPSYS}
 
 MAN5=	dhcpdb.server.5 dhcpdb.pool.5 dhcpdb.relay.5

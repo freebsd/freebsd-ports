@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The Berkeley DB package, revision 2
-
 Y2K=		http://www.sleepycat.com/faq.html#A8
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix

@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	gadfly
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An SQL database written in Python
-
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/kjbuckets.so:${PORTSDIR}/devel/py-kjbuckets
 
 USE_PYTHON=	yes

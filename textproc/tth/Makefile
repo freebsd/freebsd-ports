@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A TeX to HTML translator
-
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu \
 		latex:${PORTSDIR}/print/teTeX \
 		ppmtogif:${PORTSDIR}/graphics/netpbm

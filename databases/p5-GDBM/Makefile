@@ -16,8 +16,6 @@ DISTNAME=	perl5.005_03
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-PORTCOMMENT=	Perl module to use the GNU Data Base Manager (gdbm)
-
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 
 PERL_CONFIGURE=	yes

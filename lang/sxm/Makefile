@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.malgil.com/sxm/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Another implementation of Scheme
-
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	all image Formlist

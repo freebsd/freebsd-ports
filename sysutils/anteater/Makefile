@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.profzone.ch/drzoom/anteater/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A MTA log analyzer
-
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>

@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.redterror.net/code/yaunc/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Yet Another uptimes.net client
-
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 MAN1=		yaunc.1

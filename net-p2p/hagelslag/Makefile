@@ -13,8 +13,6 @@ MASTER_SITES=	http://tiefighter.et.tudelft.nl/hagelslag/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A flexible command-line Gnutella implementation with advanced features
-
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 USE_REINPLACE=	yes

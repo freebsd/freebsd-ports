@@ -14,8 +14,6 @@ DISTFILES=	stars-1.0-ss-11.00.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Star field demo
-
 USE_X_PREFIX=	yes
 
 CC?=		cc

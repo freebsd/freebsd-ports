@@ -23,8 +23,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Open source LDAP client and server software
-
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 
 USE_AUTOCONF_VER=213

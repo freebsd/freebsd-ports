@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/star/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Unique standard tape archiver with many enhancements
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	MAKEPROG=${GMAKE} CCOM=${CC}

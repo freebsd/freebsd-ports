@@ -14,8 +14,6 @@ MASTER_SITES=	http://cyberelk.net/tim/data/patchutils/stable/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A small collection of programs that operate on patch files
-
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 USE_BZIP2=	yes

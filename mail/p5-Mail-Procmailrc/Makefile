@@ -16,8 +16,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A Perl OO interface to procmail rc files
-
 PERL_CONFIGURE=	YES
 
 .include <bsd.port.mk>

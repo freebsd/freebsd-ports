@@ -13,8 +13,6 @@ MASTER_SITES=	http://home.worldonline.dk/torsten/xpaint/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A simple paint program
-
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png
 

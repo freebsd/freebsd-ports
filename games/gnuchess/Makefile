@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	chess
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	"Classic" Gnu Chess
-
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

@@ -23,8 +23,6 @@ DISTFILES=	egcs-core-1.1.2${EXTRACT_SUFX} egcs-g++-1.1.2${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	EGCS enhanced version of the GNU compiler suite
-
 USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>

@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}-new
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Solitaire
-
 USE_IMAKE=	yes
 MAN6=		xsol.6
 

@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	contrib/srcs/utils
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Another WindowMaker load gauge
-
 USE_IMAKE=	yes
 USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes

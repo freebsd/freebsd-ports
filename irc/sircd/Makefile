@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The Smart IRC Daemon
-
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	LD="${CC}" \

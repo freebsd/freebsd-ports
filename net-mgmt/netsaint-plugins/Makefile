@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-1.2.9-4
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Plugins for netsaint
-
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/share/netsaint/sbin \

@@ -14,8 +14,6 @@ MASTER_SITES=	http://hocwp.free.fr/xbindkeys/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Allows you to launch shell commands under X with your keyboard
-
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \

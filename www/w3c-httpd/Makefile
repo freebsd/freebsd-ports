@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.w3.org/pub/httpd/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	WWW server from the W3 Consortium (W3C)
-
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/wais:build
 
 NO_WRKSUBDIR=	yes

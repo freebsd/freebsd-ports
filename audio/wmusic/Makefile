@@ -7,7 +7,6 @@
 
 PORTNAME=	wmusic
 PORTVERSION=	1.4.10
-PORTCOMMENT=	Remote control for xmms
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://home.jtan.com/~john/wmusic/downloads/
 

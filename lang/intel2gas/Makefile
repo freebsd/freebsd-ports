@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.niksula.cs.hut.fi/~mtiihone/intel2gas/
 
 MAINTAINER=	ports@FreeBSD.Org
 
-PORTCOMMENT=	Converts Intel assembly language (nasm) to AT&T syntax (gas)
-
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	CXX="${CXX}"
 

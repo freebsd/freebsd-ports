@@ -8,7 +8,6 @@
 
 PORTNAME=	cvsps
 PORTVERSION=	1.3.3
-PORTCOMMENT=	CVS patchsets
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cobite.com/cvsps/
 

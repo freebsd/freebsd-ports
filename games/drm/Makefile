@@ -15,8 +15,6 @@ EXTRACT_SUFX=		.tar.Z
 
 MAINTAINER=		ports@FreeBSD.org
 
-PORTCOMMENT=		Very simple tetris-style game
-
 ALL_TARGET=
 
 do-install:

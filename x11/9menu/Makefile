@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A simple menu patterened after plan9
-
 USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=		zcat

@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Perl5 module to convert dates between any two calendrical formats
-
 PERL_CONFIGURE=	YES
 
 MAN3=		Date::Convert.3

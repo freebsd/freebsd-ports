@@ -12,8 +12,6 @@ MASTER_SITES=	http://gdcd.undergrid.net/source_archive/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	CD player for the X Window System using the GIMP Tool Kit (GTK)
-
 BROKEN=		"Does not build"
 
 LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio

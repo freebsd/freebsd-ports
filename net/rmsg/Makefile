@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/tcpip/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A network messaging system
-
 WRKSRC=		${WRKDIR}/rmsg
 MAN1=		rmsg.1
 MAN8=		rmsgd.8

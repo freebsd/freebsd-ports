@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.zip.com.au/~erikd/libsndfile/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
-
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 

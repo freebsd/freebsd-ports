@@ -8,7 +8,6 @@
 
 PORTNAME=	cdict5
 PORTVERSION=	1.3
-PORTCOMMENT=	Chinese-English dictionary
 CATEGORIES=	chinese textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ijliao

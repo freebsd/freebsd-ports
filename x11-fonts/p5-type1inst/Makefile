@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A script that helps install Postscript fonts in X Window System
-
 USE_PERL5=	yes
 USE_XLIB=	yes
 NO_BUILD=	yes

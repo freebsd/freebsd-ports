@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An extensible Python module to parse simple text file formats like CSV
-
 USE_PYTHON=	yes
 
 ASV_BASEDIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages

@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.kaisersite.de/dfm/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	OS/2 - like Desktop-File-Manager for X Window System
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_REINPLACE=	yes

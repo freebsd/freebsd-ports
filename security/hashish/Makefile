@@ -16,8 +16,6 @@ DISTNAME=	${PORTNAME}-beta-0.4-src
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A file and string hashing utility
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
 LIB_DEPENDS=	wx_gtk:${PORTSDIR}/x11-toolkits/wxgtk-devel
 

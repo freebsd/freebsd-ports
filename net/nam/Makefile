@@ -13,8 +13,6 @@ DISTNAME=	nam-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The UCB/LBNL Network Animator
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
 

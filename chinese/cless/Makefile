@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A better pager utility (and it speaks Chinese)
-
 GNU_CONFIGURE=	yes
 CFLAGS+=	-DHANZI # LDFLAGS=-s datadir=/usr/local/lib/less
 MAN1=		cless.1 clesskey.1

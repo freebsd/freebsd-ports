@@ -13,8 +13,6 @@ MASTER_SITES=	http://users.erols.com/mballen/domc/src/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A light weight implementation of the DOM in ANSI C
-
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
 		mba:${PORTSDIR}/devel/libmba
 

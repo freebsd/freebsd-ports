@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.c
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	NetApps file system benchmark
-
 NO_WRKSUBDIR=	yes
 
 do-extract:

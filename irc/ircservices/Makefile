@@ -7,7 +7,6 @@
 
 PORTNAME=	ircservices
 PORTVERSION=	5.0.2
-PORTCOMMENT=	A system of IRC services for IRC networks
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.ircservices.za.net/pub/ircservices/ \
 		ftp://ftp.esper.net/ircservices/

@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.cse.iitk.ac.in/users/dbera/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Multi Threaded Wget
-
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 CFLAGS+=	-DHAS_HERROR -DHAVE_GETOPT_LONG -DHAVE_INET_NTOP -DHAVE_IPV6 \

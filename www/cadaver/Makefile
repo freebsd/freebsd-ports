@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.webdav.org/cadaver/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Commandline client for DAV
-
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		expat.4:${PORTSDIR}/textproc/expat2
 

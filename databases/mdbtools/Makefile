@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Utilities and libraries to export data from MS Access databases (.mdb)
-
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	glib12

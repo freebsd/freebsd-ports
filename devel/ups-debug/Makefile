@@ -17,8 +17,6 @@ DISTNAME=	ups-3.35-beta13
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Source level C debugger that runs under X11
-
 BROKEN=		"Does not build"
 
 GNU_CONFIGURE=	yes

@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.maradns.org/download/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A DNS server implementation with focus on security and simplicity
-
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 USE_BZIP2=	yes

@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.daemon.de/scip/Apps/pcre++/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A wrapper class around the pcre library
-
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 PCRE_CONFIG?=	${LOCALBASE}/bin/pcre-config

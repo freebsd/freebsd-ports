@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	X11/desktop
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A nifty set of desktop apps, including floating buttons
-
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 USE_IMAKE=	yes

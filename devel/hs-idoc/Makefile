@@ -6,7 +6,6 @@
 
 PORTNAME=	idoc
 PORTVERSION=	0.2.5
-PORTCOMMENT=	A No Frills Haskell Interface Documentation System
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/idoc/
 PKGNAMEPREFIX=	hs-

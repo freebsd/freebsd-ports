@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/3dpong/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	X Window 3D Pong game for 1 or 2 players with a ball and paddles
-
 MAKEFILE=	makefile
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

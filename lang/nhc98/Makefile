@@ -7,7 +7,6 @@
 PORTNAME=	nhc98
 PORTVERSION=	1.14a
 PORTREVISION=	1
-PORTCOMMENT=	A fully-fledged compiler for Haskell 98
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
 DISTNAME=	${PORTNAME}src-${PORTVERSION}

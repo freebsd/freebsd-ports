@@ -13,8 +13,6 @@ MASTER_SITES=	http://dosunix.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Manipulation of text files in a mixed DOS/Windows and Unix environment
-
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

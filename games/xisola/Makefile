@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Simple board game for X Window System
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes

@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	OCaml package manager
-
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 HAS_CONFIGURE=	yes

@@ -16,8 +16,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A server framework
-
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		guile.10:${PORTSDIR}/lang/guile
 .if !exists(/usr/bin/bzip2)

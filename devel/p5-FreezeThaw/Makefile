@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A module for converting Perl structures to strings and back
-
 PERL_CONFIGURE=	YES
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}

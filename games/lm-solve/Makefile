@@ -14,8 +14,6 @@ DISTNAME=	LM-Solve-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A Computerized Solver for Logic Mazes
-
 PERL_CONFIGURE=	yes
 
 MAN1=	lm-solve.1

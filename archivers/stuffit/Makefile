@@ -17,8 +17,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Stuffit Archive Creator and Expander
-
 NO_CDROM=	Shareware -- should not redistribute
 NO_PACKAGE=	Only unmodified original package can be distributed
 

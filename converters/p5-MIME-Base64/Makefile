@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Perl5 module for Base64 and Quoted-Printable encodings
-
 PERL_CONFIGURE=	YES
 
 MAN3=		MIME::Base64.3 \

@@ -16,8 +16,6 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-PORTCOMMENT=	Enables the ObjectTeams paradigm to the Ruby language
-
 USE_RUBY=	yes
 
 NO_BUILD=	yes

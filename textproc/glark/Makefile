@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Search text files for complex regular expressions
-
 USE_RUBY=	yes
 NO_BUILD=	yes
 

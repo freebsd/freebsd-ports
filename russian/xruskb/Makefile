@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/X11/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A keyboard layout switcher and indicator
-
 USE_X_PREFIX=	YES
 
 GNU_CONFIGURE=	YES

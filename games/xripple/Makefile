@@ -20,8 +20,6 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	X program to make bottom of screen ripple like a pool of water
-
 USE_IMAKE=	yes
 ALL_TARGET=	xripple
 

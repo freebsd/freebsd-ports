@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A program to convert mpeg2 and ac3 into DivX with ac3 audio
-
 LIB_DEPENDS=	mpeg2:${PORTSDIR}/graphics/libmpeg2 \
 		aviplay-0.7:${PORTSDIR}/graphics/avifile \
 		popt:${PORTSDIR}/devel/popt

@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.leo.org/pub/comp/general/graphics/mpeg/mplex/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Multiplexes MPEG component streams into system layers
-
 MAN1=		mplex.1
 
 do-install:

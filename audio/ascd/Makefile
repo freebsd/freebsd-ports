@@ -13,8 +13,6 @@ DISTFILES=	${DISTNAME}-src.tgz ${DATAFILES}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A dockable cd player for AfterStep or WindowMaker
-
 LIB_DEPENDS=	workman.1:${PORTSDIR}/audio/libworkman
 
 USE_IMAKE=	yes

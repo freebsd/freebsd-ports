@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	GTK-based color picker
-
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

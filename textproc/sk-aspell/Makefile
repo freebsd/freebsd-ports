@@ -9,8 +9,6 @@ PORTNAME=	sk-aspell
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Aspell with Slovak dictionary
-
 MASTERDIR=	${.CURDIR}/../aspell
 
 ASPELL_SK=	ano

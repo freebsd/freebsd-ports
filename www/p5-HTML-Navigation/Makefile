@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Perl module for creating generic HTML navigation bars
-
 BUILD_DEPENDS=	${SITE_PERL}/CGI/Base.pm:${PORTSDIR}/www/p5-CGI-modules \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}

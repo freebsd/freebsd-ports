@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Renders a vertical string on any PostScript document
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=	psmark.1

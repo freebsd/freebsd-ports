@@ -24,8 +24,6 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Clone of the Motif library mostly for linux-netscape4
-
 BUILD_DEPENDS=	${LINUXBASE}/usr/bin/cc:${PORTSDIR}/devel/linux_devtools-7
 
 USE_BZIP2=	yes

@@ -13,8 +13,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	ELF to a.out conversion tool by Jakub Jelinek and Pete Zaitcev
-
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 MAN1=		elftoaout.1
 

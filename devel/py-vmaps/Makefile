@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Python Arrays on mmap()
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

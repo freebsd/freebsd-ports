@@ -15,8 +15,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	More OO interface to pdflib_pl.pm
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/pdflib_pl.pm:${PORTSDIR}/print/pdflib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

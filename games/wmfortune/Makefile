@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.01.246.ne.jp/~m-sugano/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A dockapp that outputs fortune messages
-
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes

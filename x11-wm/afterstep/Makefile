@@ -16,8 +16,6 @@ DISTNAME=	AfterStep-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Window manager originally based on the Bowman NeXTSTEP clone
-
 RUN_DEPENDS=	asclock:${PORTSDIR}/x11-clocks/asclock
 
 NO_LATEST_LINK= yes

@@ -14,8 +14,6 @@ DISTNAME=	finger-1.37
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	GNU version of finger
-
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	server
 

@@ -9,8 +9,6 @@ PORTNAME=	no-aspell
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Aspell with Norwegian dictionary
-
 MASTERDIR=	${.CURDIR}/../aspell
 
 ASPELL_NO=	ja

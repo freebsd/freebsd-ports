@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Auto Nice Daemon
-
 USE_GMAKE=	yes
 ALL_TARGET=	# empty
 

@@ -22,8 +22,6 @@ DISTFILES=	${DISTNAME}.tar.gz  \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Converts Chinese GB (simple) encoded text to PostScript
-
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 WRKSRC=		${WRKDIR}/GB2PS
 

@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A quick way to visualize regularly spaced 4D data
-
 LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk \
 		ungif:${PORTSDIR}/graphics/libungif \
 		png:${PORTSDIR}/graphics/png

@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION:S/p/-pre/}-src
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	FXP (server-to-server FTP) client
-
 .include <bsd.port.pre.mk>
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \

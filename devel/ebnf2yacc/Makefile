@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	EBNF to YACC
-
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

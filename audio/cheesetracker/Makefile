@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.reduz.com.ar/cheesetracker/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An Impulse Tracker clone
-
 BUILD_DEPENDS=	${LOCALBASE}/share/automake14/automake/install-sh:${PORTSDIR}/devel/automake14
 LIB_DEPENDS=	sigc:${PORTSDIR}/devel/libsigc++ \
 		gtkmm:${PORTSDIR}/x11-toolkits/gtk--

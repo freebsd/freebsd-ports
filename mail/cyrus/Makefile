@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-imapd-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The cyrus mail server, supporting POP3, KPOP, and IMAP4 protocols
-
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
 		${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl

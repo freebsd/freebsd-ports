@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Produces a set of HTML/JPEG slides from a TeX or LaTeX source
-
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		dvips:${PORTSDIR}/print/teTeX \
 		convert:${PORTSDIR}/graphics/ImageMagick

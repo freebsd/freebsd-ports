@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Open Source Audio Library Project
-
 BUILD_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis \

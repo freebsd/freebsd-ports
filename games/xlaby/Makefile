@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Daemonic X Labyrinth played directly with the mouse pointer
-
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 MAN6=		xlaby.6

@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Commodore 64 "Crossroads"-like video game for X Window System
-
 USE_X_PREFIX=	yes
 
 do-install:

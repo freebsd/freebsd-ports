@@ -13,8 +13,6 @@ DISTNAME=	Mosaic-src-2.7b5
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A World Wide Web browser
-
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 

@@ -13,8 +13,6 @@ DISTNAME=	GutenMark_source_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Attractively formatting Project Gutenberg texts
-
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/GutenMark-source
 USE_GMAKE=	yes

@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.eterm.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A library of assorted spiffy things
-
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		Imlib2.1:${PORTSDIR}/graphics/imlib2
 

@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-ss-11.00
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Blast blows holes through windows
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_X_PREFIX=	yes
 MAN1=		blast.1

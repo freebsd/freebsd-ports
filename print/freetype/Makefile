@@ -19,8 +19,6 @@ MASTER_SITE_SUBDIR=	freetype1
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A free and portable TrueType font rendering engine
-
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

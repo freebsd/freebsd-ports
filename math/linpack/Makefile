@@ -14,8 +14,6 @@ DISTFILES=	${SRCS:.f=.f.gz}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Linear Algebra package
-
 LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
 
 INSTALLS_SHLIB=	yes

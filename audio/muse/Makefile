@@ -15,8 +15,6 @@ DISTNAME=	MuSE-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Multiple Streaming Engine
-
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		vorbis.2:${PORTSDIR}/audio/libvorbis \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt

@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	compiler/decompiler for Scriptable Network Graphics
-
 BUILD_DEPENDS=	${X11BASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0//}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Ispell module for pspell library
-
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 LIB_DEPENDS=	pspell.15:${PORTSDIR}/textproc/aspell
 

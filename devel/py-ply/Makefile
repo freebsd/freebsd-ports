@@ -13,8 +13,6 @@ MASTER_SITES=	http://systems.cs.uchicago.edu/ply/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Python Lex-Yacc
-
 USE_PYTHON=	yes
 NO_BUILD=	yes
 

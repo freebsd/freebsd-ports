@@ -7,7 +7,6 @@
 
 PORTNAME=	feh
 PORTVERSION=	1.2.2
-PORTCOMMENT=	An image viewer that utilizes Imlib2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 

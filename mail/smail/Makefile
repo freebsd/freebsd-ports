@@ -15,8 +15,6 @@ MASTER_SITES=	ftp://ftp.uu.net/networking/mail/smail/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A program used for receiving and delivering mail
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libident.a:${PORTSDIR}/security/libident
 .if !exists(/usr/include/tcpd.h)
 LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper

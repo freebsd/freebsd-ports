@@ -14,8 +14,6 @@ DISTNAME=	Klone${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Small, Lisp-like interpreted language
-
 WRKSRC=		${WRKDIR}/Klone
 
 do-configure:

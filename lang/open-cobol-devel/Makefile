@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An open-source COBOL compiler
-
 LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
 		iconv:${PORTSDIR}/converters/libiconv \
 		gnugetopt:${PORTSDIR}/devel/libgnugetopt \

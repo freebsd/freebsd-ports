@@ -30,7 +30,6 @@ PATCHFILES:=	${PATCHFILES:N6.1.${p}}
 
 MAINTAINER?=	obrien@FreeBSD.org
 
-PORTCOMMENT?=	Vi "workalike", with many additional features
 SLAVEDIRS=	editors/vim-lite
 
 .if defined(PACKAGE_BUILDING) && !defined(LITE)

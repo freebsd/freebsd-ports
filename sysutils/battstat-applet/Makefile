@@ -13,8 +13,6 @@ DISTNAME=	battstat_applet-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A laptop battery monitor utility for the GNOME panel
-
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix libpanel

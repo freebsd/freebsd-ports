@@ -13,8 +13,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	adamw@FreeBSD.org
 
-PORTCOMMENT=	A fuzzy clock WindowMaker dockapp
-
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src

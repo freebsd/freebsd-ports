@@ -15,8 +15,6 @@ DISTNAME=	AutoDia-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Automatic Dia XML - from Source Code and Data
-
 BUILD_DEPENDS=	${PERL_SITELIBDIR}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
 		${PERL_SITELIBDIR}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
 		${PERL_SITELIBDIR}/Inline/Java.pm:${PORTSDIR}/devel/p5-Inline-Java

@@ -15,8 +15,6 @@ DISTNAME=	pipsec-19991014
 
 MAINTAINER=	cy@FreeBSD.org
 
-PORTCOMMENT=	Simple IPSEC tunnel tool from Pierre Beyssac
-
 USE_OPENSSL=	YES
 
 ALL_TARGET=	pipsecd

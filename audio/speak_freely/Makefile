@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.fourmilab.ch/speakfree/unix/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Voice Communication Over Data Networks
-
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm
 
 UTILS=		sfspeaker sfmike sflwl sflaunch

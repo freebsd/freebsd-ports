@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Image-generator that uses ASCII input files to create PNGs/EDFs
-
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 GNU_CONFIGURE=	yes

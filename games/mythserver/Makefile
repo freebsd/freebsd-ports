@@ -13,8 +13,6 @@ DISTNAME=	metaserver2open
 
 MAINTAINER=	adamw@FreeBSD.org
 
-PORTCOMMENT=	Bungie.net MythII Metaserver Open Source
-
 USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

@@ -12,8 +12,6 @@ MASTER_SITES=	http://web.novalis.org/programs/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A dockapp that shows the load average as a flame
-
 WRKSRC=	${WRKDIR}/wmflame.app/${PORTNAME}
 USE_GMAKE=	yes
 USE_XPM=	yes

@@ -14,8 +14,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ctwm-images${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An extension to twm, with support for multiple virtual screens, etc
-
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 

@@ -15,8 +15,6 @@ DISTNAME=	pyrt-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Python Routeing Toolkit
-
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes

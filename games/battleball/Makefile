@@ -16,8 +16,6 @@ DISTNAME=	${PORTNAME}.${PORTVERSION:S/.//}.src
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	3D single/multiplayer military soccer game for X Window System
-
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 WRKSRC=		${WRKDIR}/battleball-2.1-src

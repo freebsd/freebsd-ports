@@ -17,8 +17,6 @@ PATCHFILES=	xmix-2.1.mixers.patch
 
 MAINTAINER=	ports@FreeBSD.Org
 
-PORTCOMMENT=	Mixer for X Window System
-
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/xmix
 

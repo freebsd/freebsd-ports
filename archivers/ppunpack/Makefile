@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Decompresses Amiga PowerPacker files
-
 RESTRICTED=	"No commercial redistribution"
 NO_CDROM=	${RESTRICTED}
 

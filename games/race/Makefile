@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://users.freebsd.org.uk/pub/foobar2k/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	OpenGL Racing Game
-
 LIB_DEPENDS=	SDL_mixer:${PORTSDIR}/audio/sdl_mixer \
 		SDL_image:${PORTSDIR}/graphics/sdl_image
 

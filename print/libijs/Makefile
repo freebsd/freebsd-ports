@@ -14,8 +14,6 @@ DIST_SUBDIR=	ghostscript
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	C library that supports plugin printer driver for Ghostscript
-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

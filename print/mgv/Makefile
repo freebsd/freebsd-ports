@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.trends.net/~mu/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A PostScript and PDF previewer
-
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_MOTIF=	yes

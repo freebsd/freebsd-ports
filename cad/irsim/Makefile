@@ -13,8 +13,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An event-driven logic-level simulator for MOS circuis
-
 USE_XLIB=	yes
 MAN1=		irsim.1
 MAN3=		irsim-analyzer.3

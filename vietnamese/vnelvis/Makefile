@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org
 
-PORTCOMMENT=	A vi clone that speaks Vietnamese
-
 BUILD_DEPENDS=  ${LOCALBASE}/lib/libviqr.a:${PORTSDIR}/vietnamese/libviet
 
 CFLAGS+=	-I${PREFIX}/include/viet

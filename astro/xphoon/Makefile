@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Set the root window to the moon in its current phase
-
 USE_IMAKE=	yes
 
 MAN1=		xphoon.1

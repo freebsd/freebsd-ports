@@ -10,8 +10,6 @@ CATEGORIES=	russian
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Aspell with Russian dictionary
-
 MASTERDIR=	${.CURDIR}/../../textproc/aspell
 
 ASPELL_RU=	da

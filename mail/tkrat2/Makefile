@@ -14,8 +14,6 @@ MASTER_SITES=	ftp://ftp.md.chalmers.se/pub/tkrat/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A mail user agent for X with a Tcl/Tk user interface
-
 LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83 \
 		tk83:${PORTSDIR}/x11-toolkits/tk83 \
 		c-client4.8:${PORTSDIR}/mail/cclient

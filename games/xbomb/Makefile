@@ -13,8 +13,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Minesweeper with a couple of grid types
-
 USE_X_PREFIX=	yes
 MAN6=		xbomb.6
 

@@ -20,8 +20,6 @@ EXTRACT_ONLY=	# extracted directly in install target
 NO_BUILD=	yes
 PLIST=		${PKGDIR}/pkg-plist.${RESOLUTION}
 
-PORTCOMMENT=	English PK fonts, for ghostscripts, xdvi and so on
-
 .if !defined(RESOLUTION)
 RESOLUTION=	300
 .else

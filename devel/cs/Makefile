@@ -14,8 +14,6 @@ DIST_SUBDIR=	cs/0.5-19990925
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Interactively examine C source code
-
 ALL_TARGET=	cs
 MAN1=		cs.1
 

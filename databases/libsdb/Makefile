@@ -8,7 +8,6 @@
 
 PORTNAME=	libsdb
 PORTVERSION=	0.5.1
-PORTCOMMENT=	Simple database library
 CATEGORIES=	databases
 MASTER_SITES=	ftp://siag.nu/pub/libsdb/ \
 		http://siag.nu/pub/libsdb/

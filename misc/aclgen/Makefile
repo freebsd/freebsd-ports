@@ -13,8 +13,6 @@ DISTNAME=	aclgen-202
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Optimize Cisco routers ip access lists
-
 NO_WRKSUBDIR=	YES
 
 MAN1=		aclgen.1

@@ -15,8 +15,6 @@ DISTNAME=	SDL_gui-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A Graphical User Interface library for SDL
-
 LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12 \
 		SDL_image:${PORTSDIR}/graphics/sdl_image \
 		SDL_ttf:${PORTSDIR}/graphics/sdl_ttf

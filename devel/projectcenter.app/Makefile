@@ -16,8 +16,6 @@ DISTNAME=	ProjectCenter-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-PORTCOMMENT=	A development environment for GNUstep
-
 .if defined(GNUSTEP_GUI_DEVEL)
 BUILD_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
 RUN_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back

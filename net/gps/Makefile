@@ -13,8 +13,6 @@ MASTER_SITES=	http://gps.sourceforge.net/release/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Ghost Port Scan
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 USE_REINPLACE=	yes

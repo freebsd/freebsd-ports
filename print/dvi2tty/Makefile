@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A dvi-file previewer for text only devices
-
 IGNOREFILES=	${DISTFILES}
 MAN1=		dvi2tty.1
 

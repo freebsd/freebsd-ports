@@ -13,8 +13,6 @@ DISTFILES=	xchada01.lzh
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Display a dancing girl "ChaCha."
-
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 MAKEFILE=	makefile

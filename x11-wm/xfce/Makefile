@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	CDE like desktop with GTK
-
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf

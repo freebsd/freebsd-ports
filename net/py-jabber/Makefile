@@ -16,8 +16,6 @@ DISTNAME=	jabber.py-${PORTVERSION}-1
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A Python Jabber library
-
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyexpat.so:${PORTSDIR}/textproc/py-expat
 
 USE_PYTHON=	yes

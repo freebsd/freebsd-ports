@@ -15,8 +15,6 @@ DISTNAME=	perlmenu.v4.0
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Perl5 module for displaying menus with Curses
-
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses
 
 USE_PERL5=	yes

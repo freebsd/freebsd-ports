@@ -14,8 +14,6 @@ DISTNAME=	SDL_gfx-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	SDL graphics drawing primitives and other support functions
-
 LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config

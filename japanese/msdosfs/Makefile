@@ -17,8 +17,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Mount a Microsoft FAT Japanese file system
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/msdosfs.ja
 
 .include <bsd.port.pre.mk>

@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	apps/asapm
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Laptop battery status display for X11
-
 ONLY_FOR_ARCHS=	i386
 
 USE_X_PREFIX=	yes

@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Perl module to convert between ASCII and Morse codes
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500007

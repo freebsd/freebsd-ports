@@ -13,8 +13,6 @@ DISTNAME=	tclX8.0.4
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Extended TCL
-
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix

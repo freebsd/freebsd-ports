@@ -13,8 +13,6 @@ MASTER_SITES=	http://people.debian.org/~kims/xclip/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An interface to X selections ("the clipboard") from the command line
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes
 

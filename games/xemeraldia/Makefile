@@ -17,8 +17,6 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A game of breaking blocks
-
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 

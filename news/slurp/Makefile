@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Passive NNTP client to retrieve Usenet articles from a remote server
-
 NO_WRKSUBDIR=	yes
 MAN1=		slurp.1
 

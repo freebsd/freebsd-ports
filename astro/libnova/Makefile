@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Astronomical Calculation Library
-
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 

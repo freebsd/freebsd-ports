@@ -19,8 +19,6 @@ PATCH_DIST_STRIP= -d ${WRKDIR}/${DISTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The Berkeley DB package, revision 3
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
 USE_REINPLACE=		yes

@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Approximate grep (fast approximate pattern-matching tool)
-
 ALL_TARGET=
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 

@@ -12,8 +12,6 @@ MASTER_SITES=	http://plib.sourceforge.net/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A portable library for joystick/sound/OpenGL GUI/3D math
-
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 USE_GMAKE=	yes

@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.cs.unlv.edu/pub/chimera/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	X/Athena World-Wide Web client
-
 NO_LATEST_LINK=	yes
 USE_IMAKE=	yes
 

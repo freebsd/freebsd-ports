@@ -7,7 +7,6 @@
 
 PORTNAME=	qmail-notify
 PORTVERSION=	0.93
-PORTCOMMENT=	Delayed delivery notification for qmail
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/qmail-notify/
 

@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Find quake servers
-
 RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 
 GNU_CONFIGURE=	yes

@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.geocities.com/tuorfa/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A command-line converter from RTF (Rich Text) to HTML
-
 USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

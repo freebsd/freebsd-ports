@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A commandline text rendering utility that creates images from arbitrary text
-
 LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib
 
 USE_X_PREFIX=	yes

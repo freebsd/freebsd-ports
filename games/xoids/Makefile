@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	X Window Asteroids style game with full color pixmaps
-
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN6=		xoids.6

@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/bbeta/}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Quine-McClusky process simplification tool
-
 NO_WRKSUBDIR=	yes
 
 do-build:

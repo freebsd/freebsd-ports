@@ -12,8 +12,6 @@ MASTER_SITES=	http://cr.yp.to/cdb/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A fast lookup database library & utilities
-
 ALL_TARGET=	it
 
 do-configure:

@@ -13,8 +13,6 @@ PKGNAMEPREFIX=		py-
 
 MAINTAINER=		ports@FreeBSD.org
 
-PORTCOMMENT=		Lightweight HTML/XHTML generator for Python
-
 USE_PYTHON=		yes
 WRKSRC=			${WRKDIR}/HyperText
 

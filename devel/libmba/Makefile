@@ -13,8 +13,6 @@ MASTER_SITES=	http://users.erols.com/mballen/libmba/src/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A collection of C modules potentially useful to any project
-
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
 SHLIB_MAJOR=	0

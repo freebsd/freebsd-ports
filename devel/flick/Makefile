@@ -13,8 +13,6 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The Flexible IDL Compiler Kit
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile

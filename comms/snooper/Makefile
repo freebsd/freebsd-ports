@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Serial line protocol analyzer (need two serial interfaces)
-
 WRKSRC=		${WRKDIR}/${PORTNAME}/build
 
 GNU_CONFIGURE=	yes

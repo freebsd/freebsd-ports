@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.xanadunet.net/ksmp3play/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An curses-based MP3 player
-
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 		smpeg:${PORTSDIR}/graphics/smpeg \
 		gnugetopt:${PORTSDIR}/devel/libgnugetopt

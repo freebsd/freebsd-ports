@@ -13,8 +13,6 @@ MASTER_SITES=	http://frost.flewid.de/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	UDS (Useful Development Stuff) Collection
-
 USE_REINPLACE=	yes
 USE_GCC=	3.1
 USE_GMAKE=	yes

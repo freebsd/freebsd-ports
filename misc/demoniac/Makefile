@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.calodox.org/demoniac/files/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A tool for exploring and animating graphics effects
-
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
 USE_REINPLACE=	yes

@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Generate maps in PDF format and place clickable objects on them
-
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/jaxml.py:${PORTSDIR}/textproc/py-jaxml \
 		${PYTHON_SITELIBDIR}/reportlab/pdfgen/canvas.py:${PORTSDIR}/print/py-reportlab \
 		${PYTHON_SITELIBDIR}/PIL/Image.py:${PORTSDIR}/graphics/py-imaging

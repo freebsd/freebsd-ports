@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_alpha
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A window manager for X, developed with speed, size, and style in mind
-
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes

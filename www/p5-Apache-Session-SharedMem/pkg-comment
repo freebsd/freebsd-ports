@@ -1,0 +1,1 @@
+Apache::Session extension that store session in shared memory

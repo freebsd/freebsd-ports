@@ -17,8 +17,6 @@ DISTNAME=	xview3.2p1-X11R6
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	X Window-System-based Visual/Integrated Environment for Workstations
-
 USE_IMAKE=	yes
 INSTALLS_SHLIB=	yes
 IMAKEINCLUDE=	"-I${X11BASE}/lib/X11/config -I${WRKSRC}/config"

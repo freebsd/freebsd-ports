@@ -13,8 +13,6 @@ DISTNAME=	rs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An object-oriented, extended version of the Scheme dialect of Lisp
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 HAS_CONFIGURE=	yes

@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://sources.redhat.com/pub/xconq/ \
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	A graphical multi-player strategy game and game design system
-
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 GNU_CONFIGURE=	yes

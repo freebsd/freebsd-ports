@@ -14,8 +14,6 @@ DISTNAME=	f77-freebsd.0.3
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Fortran 77 driver utility for f2c and gcc
-
 .ifdef GNU_CPP
 RUN_DEPENDS=	${PREFIX}/bin/f2c:${PORTSDIR}/lang/f2c
 .else

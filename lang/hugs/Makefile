@@ -7,7 +7,6 @@
 
 PORTNAME=	hugs98
 PORTVERSION=	200112
-PORTCOMMENT=	An interpreter for the functional programming language Haskell 98
 CATEGORIES=	lang
 MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/
 DISTNAME=	${PORTNAME}-${HUGS_DATE}

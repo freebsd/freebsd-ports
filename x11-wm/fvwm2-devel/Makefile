@@ -15,8 +15,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	cy@FreeBSD.org
 
-PORTCOMMENT=	Popular virtual window manager for X
-
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 .if defined(WITH_STROKE)

@@ -7,7 +7,6 @@
 
 PORTNAME=	socklog
 PORTVERSION=	0.10.1
-PORTCOMMENT=	Small and secure replacement for syslogd
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://smarden.org/socklog/
 

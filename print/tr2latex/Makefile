@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Convert a document from troff to LaTeX
-
 IGNOREFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAKEFILE=	Makefile.unix

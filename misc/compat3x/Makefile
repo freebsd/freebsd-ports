@@ -17,8 +17,6 @@ DIST_SUBDIR=	${ARCH}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A convenience package to install the compat3x libraries
-
 ONLY_FOR_ARCHS=	i386
 
 NO_WRKSUBDIR=	yes

@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A system information display tool
-
 USE_IMAKE=	yes
 MAN1=		xsysstats.1
 
