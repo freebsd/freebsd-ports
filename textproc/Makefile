@@ -79,6 +79,7 @@
     SUBDIR += p5-Text-FillIn
     SUBDIR += p5-Text-Filter
     SUBDIR += p5-Text-Filter-Chain
+    SUBDIR += p5-Text-FixedLength
     SUBDIR += p5-Text-Template
     SUBDIR += p5-XML-DOM
     SUBDIR += p5-XML-Parser
