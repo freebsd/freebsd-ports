@@ -19,6 +19,8 @@ LIB_DEPENDS=	wwwcore.1:${PORTSDIR}/www/libwww \
 
 USE_OPENSSL=	yes
 USE_AUTOCONF_VER=213
+USE_AUTOMAKE_VER=14
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
@@ -26,6 +28,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib \
 		-I${LOCALBASE}/include/w3c-libwww
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+pre-configure:
+	cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/libtool/libltdl
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
