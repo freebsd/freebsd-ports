@@ -17,6 +17,11 @@ RUN_DEPENDS=    ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SNMP.pm:${PORTS
 
 NO_BUILD=	YES
 
+pre-everything::
+.if !defined(WITH_PANCHO_LOGGING)
+	@${ECHO_MSG} "Type \"make WITH_PANCHO_LOGGING=yes\" if you want to enable logging."
+.endif
+
 pre-patch:
 	@${MV} ${WRKSRC}/pancho ${WRKSRC}/pancho.old
 	@${SED} -e '1,1s:/usr/bin/perl:${PERL5}:' \
