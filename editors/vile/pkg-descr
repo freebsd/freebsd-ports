@@ -1,0 +1,18 @@
+
+vile is a text editor which is extremely compatible with vi in terms of
+"finger feel".  in addition, it has extended capabilities in many areas,
+notably: 
+	multi-file editing and viewing
+	key rebinding (in addition to :map, :map!, and :abbr)
+	mouse support (in an xterm, or when built as xvile)
+	infinite undo
+	many additional operator commands
+	selection highlighting
+	rectangular operations
+	"next error" cursor positioning after compilation
+	full function- and arrow-key support
+	filename, command, internal mode and variable completion
+	auxiliary utilities for man page and C program syntax highlighting
+	built-in macro language
+	portability to all UNIX platforms, VMS, DOS.
+
