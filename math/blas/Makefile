@@ -3,7 +3,7 @@
 # Date created:         27 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.17 1998/07/08 11:54:51 scrappy Exp $
+# $Id: Makefile,v 1.18 1998/07/09 03:42:14 scrappy Exp $
 #
 
 DISTNAME=	blas
@@ -12,6 +12,7 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/blas/ \
 		ftp://www.hensa.ac.uk/mirrors/netlib/blas/ \
 		ftp://elib.zib-berlin.de/pub/blas/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
