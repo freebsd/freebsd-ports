@@ -1,0 +1,11 @@
+--- agen5/Makefile.in.orig	Mon Mar 12 00:04:41 2001
++++ agen5/Makefile.in	Mon Mar 12 00:04:58 2001
+@@ -97,7 +97,7 @@
+ ac_aux_dir = @ac_aux_dir@
+ 
+ SUBDIRS = test
+-INCLUDES = -I$(top_builddir)/autoopts -I$(top_srcdir)/autoopts 		-I$(top_builddir)/snprintfv -I$(top_srcdir)/snprintfv 		-I$(top_builddir) -I$(top_srcdir) -I. -I$(srcdir)
++INCLUDES = -I$(top_builddir)/autoopts -I$(top_srcdir)/autoopts 		-I$(top_builddir)/snprintfv -I$(top_srcdir)/snprintfv 		-I$(top_builddir) -I$(top_srcdir) -I. -I$(srcdir) `guile-config compile`
+ 
+ 
+ BLOCKOPT = subblock=exparg=arg_name,arg_desc,arg_optional,arg_list

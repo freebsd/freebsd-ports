@@ -22,6 +22,7 @@
     SUBDIR += asmutils
     SUBDIR += astyle
     SUBDIR += autoconf
+    SUBDIR += autogen
     SUBDIR += automake
     SUBDIR += avltree
     SUBDIR += avr-binutils
