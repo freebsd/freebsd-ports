@@ -5090,6 +5090,7 @@ py-MySQLdb	ports/databases/py-MySQLdb
 py-PyGreSQL	ports/databases/py-PyGreSQL
 py-SQLDict	ports/databases/py-SQLDict
 py-amkCrypto	ports/security/py-amkCrypto
+py-anygui	ports/x11-toolkits/py-anygui
 py-asv		ports/textproc/py-asv
 py-biopython	ports/biology/py-biopython
 py-bsddb3	ports/databases/py-bsddb3
