@@ -33,6 +33,7 @@ share/gnome/Moleskine/dialogs/find_dialog.glade
 share/gnome/Moleskine/dialogs/languages_dialog.glade
 share/gnome/Moleskine/dialogs/options_dialog.glade
 share/gnome/Moleskine/dialogs/replace_dialog.glade
+share/gnome/Moleskine/dialogs/replace_prompt_dialog.glade
 share/gnome/Moleskine/dialogs/search_dialog.glade
 share/gnome/Moleskine/images/moleskine-logo.jpeg
 share/gnome/Moleskine/images/moleskine.png
