@@ -1,19 +1,12 @@
-*** Makefile.in.orig	Thu Aug 22 08:07:39 1996
---- Makefile.in	Thu Aug 22 08:07:47 1996
+*** agrep/agrep.c.orig	Thu Aug 22 07:51:14 1996
+--- agrep/agrep.c	Thu Aug 22 07:51:27 1996
 ***************
-*** 34,40 ****
-  
-  CFLAGS		= @CFLAGS@ -O -DSTRUCTURED_QUERIES=1
-  ALL_CFLAGS      = $(CFLAGS) $(DEFS) -I$(INDEXSRC) -I$(AGREPSRC) -I$(TEMPLATESRC)/include
-! LINKFLAGS	= @LINKFLAGS@ -I$(INDEXSRC) -I$(AGREPSRC) -I$(TEMPLATESRC)/include
-  
-  .c.o:
-  		$(CC) -c $(ALL_CFLAGS) $<
---- 34,40 ----
-  
-  CFLAGS		= @CFLAGS@ -O -DSTRUCTURED_QUERIES=1
-  ALL_CFLAGS      = $(CFLAGS) $(DEFS) -I$(INDEXSRC) -I$(AGREPSRC) -I$(TEMPLATESRC)/include
-! LINKFLAGS	= -I$(INDEXSRC) -I$(AGREPSRC) -I$(TEMPLATESRC)/include
-  
-  .c.o:
-  		$(CC) -c $(ALL_CFLAGS) $<
+*** 3,8 ****
+--- 3,9 ----
+   * bgopal: (1993-4) added a library interface and removed some bugs: also
+   * selectively modified many routines to work with our text-compression algo.
+   */
++ #include <sys/types.h>
+  #include <sys/stat.h>
+  #include "agrep.h"
+  #include "checkfile.h"
