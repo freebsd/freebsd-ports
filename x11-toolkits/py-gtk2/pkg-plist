@@ -2,6 +2,9 @@ bin/pygtk-codegen-2.0
 include/pygtk-2.0/pygobject.h
 include/pygtk-2.0/pygtk/pygtk.h
 %%PYTHON_SITELIBDIR%%/gtk-2.0/atk.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.pyo
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/__init__.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/__init__.pyc
@@ -10,10 +13,6 @@ include/pygtk-2.0/pygtk/pygtk.h
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/compat.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/compat.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/compat.pyo
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/dsextras.py
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/dsextras.pyc
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/dsextras.pyo
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gl.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/glade.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/keysyms.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/keysyms.pyc
@@ -27,10 +26,6 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%PORTDOCS%%share/doc/py-gtk/MAPPING
 %%PORTDOCS%%share/doc/py-gtk/THREADS
 %%PORTDOCS%%share/examples/py-gtk/atk/atk-demo.py
-%%PORTDOCS%%share/examples/py-gtk/gl/README
-%%PORTDOCS%%share/examples/py-gtk/gl/cone.py
-%%PORTDOCS%%share/examples/py-gtk/gl/dots.py
-%%PORTDOCS%%share/examples/py-gtk/gl/gears.py
 %%PORTDOCS%%share/examples/py-gtk/glade/README
 %%PORTDOCS%%share/examples/py-gtk/glade/glade-demo.py
 %%PORTDOCS%%share/examples/py-gtk/glade/test.glade
@@ -79,6 +74,7 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/stock_browser.py
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/toolbar.py
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/treemodel.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/gtk-logo-rgb.gif
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/pygtk-demo.py
 %%PORTDOCS%%share/examples/py-gtk/simple/README
 %%PORTDOCS%%share/examples/py-gtk/simple/dnd.py
@@ -130,7 +126,6 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%PORTDOCS%%share/pygtk/2.0/defs/gtk-extrafuncs.defs
 %%PORTDOCS%%share/pygtk/2.0/defs/gtk-types.defs
 %%PORTDOCS%%share/pygtk/2.0/defs/gtk.defs
-%%PORTDOCS%%share/pygtk/2.0/defs/gtkgl.defs
 %%PORTDOCS%%share/pygtk/2.0/defs/libglade.defs
 %%PORTDOCS%%share/pygtk/2.0/defs/pango-types.defs
 %%PORTDOCS%%share/pygtk/2.0/defs/pango.defs
@@ -146,7 +141,6 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%PORTDOCS%%@dirrm share/examples/py-gtk/ide
 %%PORTDOCS%%@dirrm share/examples/py-gtk/gobject
 %%PORTDOCS%%@dirrm share/examples/py-gtk/glade
-%%PORTDOCS%%@dirrm share/examples/py-gtk/gl
 %%PORTDOCS%%@dirrm share/examples/py-gtk/atk
 %%PORTDOCS%%@dirrm share/examples/py-gtk
 %%PORTDOCS%%@dirrm share/doc/py-gtk
