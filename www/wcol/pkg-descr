@@ -1,0 +1,20 @@
+WcolE - WWW Collector 5th generation
+
+  Wcol is a prefetching proxy server for WWW.
+  WcolE is 5th generation of Wcol.
+
+  Informaion of Wcol is published by SHiKA project server.
+  http://shika.aist-nara.ac.jp/products/wcol/wcol.html
+
+  Wcol sample configuration file is  ${PREFIX}/etc/wcol.conf.sample
+  Wcol sample startup script is      ${PREFIX}/etc/rc.d/wcol.sh.sample
+  Wcol cache spool directory is      /var/spool/wcol
+  Wcol log directory is              /var/log/wcol.log
+  Wcol pid file is                   /var/run/wcol.pid
+
+  You should prepare wcol config file: ${PREFIX}/etc/wcol.conf
+
+  (*) default ${PREFIX} is /usr/local
+
+---
+Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>

@@ -1,0 +1,69 @@
+--- wcol.conf-dist.orig	Sat Sep 20 21:55:05 1997
++++ wcol.conf-dist	Mon Jul 13 03:48:00 1998
+@@ -46,7 +46,7 @@
+ #
+ #
+ 
+-LocalDomain .high-quality.com
++LocalDomain .mydomain
+ 
+ 
+ #
+@@ -58,7 +58,7 @@
+ #
+ 
+ FTPUser     anonymous
+-FTPPass     wcol-ftp@admin.hight-quality.com
++FTPPass     wcol-ftp@myhost.mydomain
+ 
+ 
+ 
+@@ -112,7 +112,7 @@
+ #       HTTPPort    8000
+ #
+ 
+-HTTPPort            9000
++HTTPPort    7128
+ 
+ 
+ #
+@@ -128,7 +128,7 @@
+ #       ICPPort    7130
+ #
+ 
+-ICPPort    3130
++ICPPort    7130
+ 
+ 
+ ######
+@@ -359,10 +359,10 @@
+ #       LogFile /var/tmp/wcol.log
+ #
+ 
+-LogFile     /var/tmp/wcol.log
++LogFile     /var/log/wcol.log
+ 
+ StateFile   /var/tmp/wcol.state
+-PidFile     /var/tmp/wcol.pid
++PidFile     /var/run/wcol.pid
+ 
+ 
+ 
+@@ -388,7 +388,7 @@
+ #
+ 
+ NumHandler      4
+-MaxHandler      8
++MaxHandler      4
+ 
+ 
+ NumPrompter     1
+@@ -417,7 +417,7 @@
+ #       CacheDir    /var/tmp/www-pool
+ #
+ 
+-CacheDir    /var/tmp/pool
++CacheDir    /var/spool/wcol
+ 
+ 
+ #

@@ -1,0 +1,65 @@
+--- Makefile.in.orig	Sat Sep 27 16:42:19 1997
++++ Makefile.in	Sun Jul 12 20:32:18 1998
+@@ -8,8 +8,9 @@
+ 
+ 
+ RM=rm -f
+-#CC=gcc -ansi
+-#CC=/opt/SUNWspro/SC4.0/bin/cc
++CC=cc
++WCOLDIR=@prefix@/wcol
++DEFAULT_POOLDIR?=/var/spool/wcol
+ 
+ #
+ # Compile Flag
+@@ -58,7 +58,11 @@
+ #
+ 
+ DEFS = @DEFS@ \
+-	-DDEFAULT_CONFIGFILE=\"/etc/wcol.conf\" \
++	-DDEFAULT_CONFIGFILE=\"@prefix@/etc/wcol.conf\" \
++	-DDEFAULT_LOGFILE=\"/var/log/wcol.log\" \
++	-DDEFAULT_PIDFILE=\"/var/run/wcol.pid\" \
++	-DDEFAULT_STATEFILE=\"/var/tmp/wcol.state\" \
++	-DDEFAULT_POOLDIR=\"${DEFAULT_POOLDIR}\" \
+ 	-DLOGGING_LOCALTIME \
+ 	-DMAX_REQUEST_QUEUE=2048 \
+ 	-DMAX_HANDLER=4  -DNUM_HANDLER=4 \
+@@ -95,7 +100,8 @@
+ JFILTER_OBJS = _jfilter.o
+ ICP_OBJS    = _icp.o socket.o hname.o msg.o base.o url.o mem.o sigs.o
+ PLIST_OBJS  = plist.o msg.o base.o url.o info.o mem.o misc.o \
+-    args.o rglobal.o accept.o pstate.o conv.o
++    args.o rglobal.o accept.o pstate.o conv.o \
++    reaper.o sigs.o ipc.o eqsort.o
+ 
+ OBJS = $(WCOL_OBJS) $(SSTATE_OBJS) $(HSTATE_OBJS) $(REAPER_OBJS) \
+     $(FTP_OBJS) $(PARSE_OBJS) $(JFILTER_OBJS) $(ICP_OBJS) $(PLIST_OBJS)
+@@ -150,6 +156,27 @@
+ allclean:
+ 	-$(MAKE) clean
+ 	$(RM) config.h Makefile config.cache config.status
++
++###
++install:
++	@if [ ! -d ${WCOLDIR} ]; then \
++	    mkdir ${WCOLDIR}; \
++	fi
++	@echo "install programs..."
++	${BSD_INSTALL_PROGRAM} ./hstate ${WCOLDIR}/hstate
++	${BSD_INSTALL_PROGRAM} ./icp ${WCOLDIR}/icp
++	${BSD_INSTALL_PROGRAM} ./jfilter ${WCOLDIR}/jfilter
++	${BSD_INSTALL_PROGRAM} ./parse ${WCOLDIR}/parse
++	${BSD_INSTALL_PROGRAM} ./plist ${WCOLDIR}/plist
++	${BSD_INSTALL_PROGRAM} ./reaper ${WCOLDIR}/reaper
++	${BSD_INSTALL_PROGRAM} ./scntl ${WCOLDIR}/scntl
++	${BSD_INSTALL_PROGRAM} ./sstate ${WCOLDIR}/sstate
++	${BSD_INSTALL_PROGRAM} ./wcol ${WCOLDIR}/wcol
++	@echo "install admin scripts..."
++	${BSD_INSTALL_SCRIPT} ../admin/killwcol ${WCOLDIR}/killwcol
++	${BSD_INSTALL_SCRIPT} ../admin/pool_walk ${WCOLDIR}/pool_walk
++	${BSD_INSTALL_SCRIPT} ../stat/log_report ${WCOLDIR}/log_report
++	${BSD_INSTALL_SCRIPT} ../stat/log_transition ${WCOLDIR}/log_transition
+ 
+ ###
+ ### dependency

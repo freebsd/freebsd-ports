@@ -1,0 +1,8 @@
+#!/bin/sh
+wcolspool=/var/spool/wcol
+wcol=/usr/local/wcol/wcol
+
+if [ -f $wcol ]; then
+	echo -n ' wcol'
+	$wcol >/dev/null 2>&1 &
+fi
