@@ -7,6 +7,7 @@
 
 PORTNAME=	qhacc
 PORTVERSION=	2.9.1
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,9 +29,6 @@ CONFIGURE_ARGS=	--enable-xml=yes \
 INSTALLS_SHLIB=	yes
 
 STRIP=		# none
-
-post-extract:
-	@${CP} -f ${FILESDIR}/xmlplugin.h ${WRKSRC}/plugins/xml
 
 post-patch:
 	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
