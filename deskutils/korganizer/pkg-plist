@@ -1,0 +1,39 @@
+bin/korganizer
+share/applnk/Applications/korganizer.kdelnk
+share/apps/korganizer/pics/1downarrow.xpm
+share/apps/korganizer/pics/1leftarrow.xpm
+share/apps/korganizer/pics/1rightarrow.xpm
+share/apps/korganizer/pics/1uparrow.xpm
+share/apps/korganizer/pics/2downarrow.xpm
+share/apps/korganizer/pics/2leftarrow.xpm
+share/apps/korganizer/pics/2rightarrow.xpm
+share/apps/korganizer/pics/2uparrow.xpm
+share/apps/korganizer/pics/3downarrow.xpm
+share/apps/korganizer/pics/3uparrow.xpm
+share/apps/korganizer/pics/bell.xpm
+share/apps/korganizer/pics/checkedbox.xpm
+share/apps/korganizer/pics/checkmark.xpm
+share/apps/korganizer/pics/emptybox.xpm
+share/apps/korganizer/pics/recur.xpm
+share/apps/korganizer/pics/smallcal.xpm
+share/apps/korganizer/toolbar/dayicon.xpm
+share/apps/korganizer/toolbar/monthicon.xpm
+share/apps/korganizer/toolbar/newevent.xpm
+share/apps/korganizer/toolbar/newrecurevent.xpm
+share/apps/korganizer/toolbar/todayicon.xpm
+share/apps/korganizer/toolbar/weekicon.xpm
+share/doc/HTML/en/korganizer/korganizer-1.html
+share/doc/HTML/en/korganizer/korganizer-2.html
+share/doc/HTML/en/korganizer/korganizer-3.html
+share/doc/HTML/en/korganizer/korganizer-4.html
+share/doc/HTML/en/korganizer/korganizer-5.html
+share/doc/HTML/en/korganizer/korganizer-6.html
+share/doc/HTML/en/korganizer/korganizer.html
+share/doc/HTML/en/korganizer/logotp3.gif
+share/icons/korganizer.xpm
+share/icons/mini/korganizer.xpm
+share/mimelnk/text/x-vcalendar.kdelnk
+@dirrm share/apps/korganizer/pics
+@dirrm share/apps/korganizer/toolbar
+@dirrm share/doc/HTML/en/korganizer
+@dirrm share/apps/korganizer
