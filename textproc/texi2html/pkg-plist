@@ -1,6 +1,3 @@
 bin/texi2html
-@unexec install-info --delete %D/info/texi2html.info %D/info/dir
-info/texi2html.info
-@exec install-info %D/info/texi2html.info %D/info/dir
-share/doc/texi2html/texi2html.html
-@dirrm share/doc/texi2html
+%%DOCSDIR%%/texi2html.html
+@dirrm %%DOCSDIR%%

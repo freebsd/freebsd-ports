@@ -1,11 +1,12 @@
---- Makefile.am.orig	Tue Jul 11 13:04:34 2000
-+++ Makefile.am	Thu Sep  7 21:52:29 2000
-@@ -8,7 +8,7 @@
-               MySimple.pm MySimple.pod version.texi
- info_TEXINFOS = texi2html.texi
- 
+--- doc/Makefile.am.orig
++++ doc/Makefile.am
+@@ -9,7 +9,7 @@
+ CLEANFILES = texi2html.ps texi2html.pdf texi2html.html \
+              texi2html.ascii
+ #
 -htmldir = $(prefix)/html
 +htmldir = $(prefix)/share/doc/texi2html
  html_DATA    = texi2html.html
  
- TEXI2HTML = texi2html
+ # use the script out of the distribution NOT
+
