@@ -69,6 +69,8 @@ share/aclocal/eb4.m4
 %%DOCSDIR%%/ebzip-06.html
 %%DOCSDIR%%/ebzip-07.html
 %%DOCSDIR%%/ebzip-08.html
+%%DOCSDIR%%/ebzip-09.html
+%%DOCSDIR%%/ebzip-10.html
 %%DOCSDIR%%/ebzip.html
 @dirrm %%DOCSDIR%%
 %%DATADIR%%/appendix/LIST
