@@ -33,7 +33,11 @@ include/wine/commctrl.h
 include/wine/commdlg.h
 include/wine/compobj.h
 include/wine/cpl.h
+include/wine/custcntl.h
 include/wine/d3d.h
+include/wine/d3d8.h
+include/wine/d3d8caps.h
+include/wine/d3d8types.h
 include/wine/d3dcaps.h
 include/wine/d3dtypes.h
 include/wine/d3dvec.inl
@@ -57,7 +61,13 @@ include/wine/imagehlp.h
 include/wine/imm.h
 include/wine/initguid.h
 include/wine/instance.h
+include/wine/lm.h
+include/wine/lmaccess.h
+include/wine/lmapibuf.h
+include/wine/lmbrowsr.h
 include/wine/lmcons.h
+include/wine/lmerr.h
+include/wine/lmwksta.h
 include/wine/lzexpand.h
 include/wine/mapi.h
 include/wine/mapicode.h
@@ -71,12 +81,14 @@ include/wine/mmreg.h
 include/wine/mmsystem.h
 include/wine/msacm.h
 include/wine/msacmdlg.h
+include/wine/mssip.h
 include/wine/msvcrt/conio.h
 include/wine/msvcrt/crtdbg.h
 include/wine/msvcrt/ctype.h
 include/wine/msvcrt/direct.h
 include/wine/msvcrt/dos.h
 include/wine/msvcrt/eh.h
+include/wine/msvcrt/errno.h
 include/wine/msvcrt/excpt.h
 include/wine/msvcrt/fcntl.h
 include/wine/msvcrt/io.h
@@ -104,6 +116,7 @@ include/wine/mswsock.h
 include/wine/nb30.h
 include/wine/nspapi.h
 include/wine/ntsecapi.h
+include/wine/ntstatus.h
 include/wine/oaidl.h
 include/wine/objbase.h
 include/wine/objidl.h
@@ -124,6 +137,7 @@ include/wine/pshpack8.h
 include/wine/ras.h
 include/wine/regstr.h
 include/wine/richedit.h
+include/wine/richole.h
 include/wine/rpc.h
 include/wine/rpcdce.h
 include/wine/rpcdcep.h
@@ -136,11 +150,13 @@ include/wine/shellapi.h
 include/wine/shlguid.h
 include/wine/shlobj.h
 include/wine/shlwapi.h
+include/wine/sipbase.h
 include/wine/sql.h
 include/wine/sqlext.h
 include/wine/sqltypes.h
 include/wine/storage.h
 include/wine/tapi.h
+include/wine/tchar.h
 include/wine/tlhelp32.h
 include/wine/unknwn.h
 include/wine/urlmon.h
@@ -171,6 +187,7 @@ include/wine/wine/obj_control.h
 include/wine/wine/obj_dataobject.h
 include/wine/wine/obj_dockingwindowframe.h
 include/wine/wine/obj_dragdrop.h
+include/wine/wine/obj_dragdrophelper.h
 include/wine/wine/obj_enumguid.h
 include/wine/wine/obj_enumidlist.h
 include/wine/wine/obj_errorinfo.h
@@ -210,6 +227,7 @@ include/wine/winsock.h
 include/wine/winsock2.h
 include/wine/winspool.h
 include/wine/winsvc.h
+include/wine/winternl.h
 include/wine/winuser.h
 include/wine/winver.h
 include/wine/wnaspi32.h
@@ -228,7 +246,6 @@ lib/wine/aviinfo.exe.so
 lib/wine/aviplay.exe.so
 lib/wine/bug_report.pl
 lib/wine/clock.exe.so
-lib/wine/cmdlgtst.exe.so
 lib/wine/comcat.dll.so
 lib/wine/comctl32.dll.so
 lib/wine/comdlg32.dll.so
@@ -263,14 +280,9 @@ lib/wine/joystick.drv.so
 lib/wine/kernel32.dll.so
 lib/wine/keyboard.dll.so
 lib/wine/krnl386.exe.so
-lib/wine/libgdi32.dll.so
-lib/wine/libkernel32.dll.so
 lib/wine/libntdll.dll.so
-lib/wine/libuser32.dll.so
 lib/wine/libwine.so
 lib/wine/libwine.so.1
-lib/wine/libwine_tsx11.so
-lib/wine/libwine_tsx11.so.1
 lib/wine/libwine_unicode.so
 lib/wine/libwine_unicode.so.1
 lib/wine/libwine_uuid.a
@@ -318,17 +330,14 @@ lib/wine/oledlg.dll.so
 lib/wine/olepro32.dll.so
 lib/wine/olesvr.dll.so
 lib/wine/olesvr32.dll.so
-lib/wine/osversioncheck.exe.so
 lib/wine/progman.exe.so
 lib/wine/psapi.dll.so
 lib/wine/qcap.dll.so
 lib/wine/quartz.dll.so
 lib/wine/rasapi16.dll.so
 lib/wine/rasapi32.dll.so
-lib/wine/regapi.exe.so
 lib/wine/regedit.exe.so
 lib/wine/regsvr32.exe.so
-lib/wine/regtest.exe.so
 lib/wine/riched32.dll.so
 lib/wine/rpcrt4.dll.so
 lib/wine/serialui.dll.so
@@ -357,7 +366,6 @@ lib/wine/user.exe.so
 lib/wine/user32.dll.so
 lib/wine/ver.dll.so
 lib/wine/version.dll.so
-lib/wine/view.exe.so
 lib/wine/w32skrnl.dll.so
 lib/wine/w32sys.dll.so
 lib/wine/wcmd.exe.so
@@ -379,7 +387,6 @@ lib/wine/winenas.drv.so
 lib/wine/winepath.exe.so
 lib/wine/wineps.dll.so
 lib/wine/wineps16.dll.so
-lib/wine/winetest.exe.so
 lib/wine/wing.dll.so
 lib/wine/winhelp.exe.so
 lib/wine/wininet.dll.so
@@ -403,9 +410,8 @@ lib/wine/winedefault.reg
 %%PORTDOCS%%share/doc/wine/AUTHORS
 %%PORTDOCS%%share/doc/wine/LICENSE
 %%PORTDOCS%%share/doc/wine/README
-%%PORTDOCS%%share/doc/wine/README.debugger
 %%PORTDOCS%%share/doc/wine/README.regapi
-%%PORTDOCS%%share/doc/wine/psdrv.reg
+%%PORTDOCS%%share/doc/wine/README.winedump
 %%PORTDOCS%%@dirrm share/doc/wine
 @unexec if [ -f %D/lib/wine/glu32.dll.so    ]; then rm %D/lib/wine/glu32.dll.so; fi
 @unexec if [ -f %D/lib/wine/opengl32.dll.so ]; then rm %D/lib/wine/opengl32.dll.so; fi
