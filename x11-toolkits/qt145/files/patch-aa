@@ -1,0 +1,45 @@
+--- configs/freebsd-g++-shared.orig	Tue Oct 10 00:37:00 2000
++++ configs/freebsd-g++-shared	Tue Oct 10 00:37:24 2000
+@@ -25,7 +25,7 @@
+ 
+ # Linking applications
+ SYSCONF_LINK		= g++
+-SYSCONF_LFLAGS		= 
++SYSCONF_LFLAGS		= %%CXXFLAGS%%
+ SYSCONF_LIBS		= -lxpg4
+ 
+ # Link flags shared objects
+@@ -40,15 +40,13 @@
+ #   - Usually needs to incorporate $(VER_MAJ) and $(VER_MIN)
+ #
+ SYSCONF_LINK_SHLIB	= g++
+-SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ).$(VER_MIN)
+-SYSCONF_LINK_LIB_SHARED	=  $(SYSCONF_LINK_SHLIB) -shared  \
++SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.3
++SYSCONF_LINK_LIB_SHARED	=  $(SYSCONF_LINK_SHLIB) -shared %%CXXFLAGS%% \
+ 				     $(LFLAGS) -o $(SYSCONF_LINK_TARGET_SHARED) \
+ 				     $(OBJECTS) $(OBJMOC) $(LIBS); \
+ 				 mv $(SYSCONF_LINK_TARGET_SHARED) $(DESTDIR); \
+ 				 cd $(DESTDIR); \
+-				 rm -f lib$(TARGET).so lib$(TARGET).so.$(VER_MAJ); \
+-				 ln -s $(SYSCONF_LINK_TARGET_SHARED) lib$(TARGET).so; \
+-				 ln -s $(SYSCONF_LINK_TARGET_SHARED) lib$(TARGET).so.$(VER_MAJ)
++				 ln -s $(SYSCONF_LINK_TARGET_SHARED) lib$(TARGET).so
+ 
+ # Linking static libraries
+ #   - Build the $(TARGET) library, eg. lib$(TARGET).a
+@@ -59,11 +57,11 @@
+ SYSCONF_LINK_LIB_STATIC	= rm -f $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) ; \
+ 				 $(SYSCONF_AR) $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) $(OBJECTS) $(OBJMOC) 
+ # Compiling application source
+-SYSCONF_CXXFLAGS	= -pipe -O2 -fno-strength-reduce
++SYSCONF_CXXFLAGS	= %%CXXFLAGS%% -fno-strength-reduce
+ # Compiling library source
+-SYSCONF_CXXFLAGS_LIB	= -O2 -fno-strength-reduce -fPIC
++SYSCONF_CXXFLAGS_LIB	= %%CXXFLAGS%% -fno-strength-reduce -fPIC
+ # Compiling shared-object source
+-SYSCONF_CXXFLAGS_SHOBJ	= -O2 -fno-strength-reduce -fPIC
++SYSCONF_CXXFLAGS_SHOBJ	= %%CXXFLAGS%% -fno-strength-reduce -fPIC
+ # Default link type (stati linking is still be used where required)
+ SYSCONF_LINK_LIB	= $(SYSCONF_LINK_LIB_SHARED)
+ SYSCONF_LINK_TARGET	= $(SYSCONF_LINK_TARGET_SHARED)
