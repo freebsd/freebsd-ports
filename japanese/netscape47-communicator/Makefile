@@ -1,9 +1,9 @@
 # New ports collection makefile for: Netscape browser with Japanese resources
-# Version required:	4.6
+# Version required:	4.6*
 # Date created:		13 Mar 1998
 # Whom:			sada
 #
-# $Id: Makefile,v 1.8 1999/05/21 01:17:29 sada Exp $
+# $Id: Makefile,v 1.9 1999/06/12 23:53:28 sada Exp $
 #
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
@@ -12,8 +12,11 @@ MAINTAINER=	sada@FreeBSD.ORG
 
 RUN_DEPENDS=	${PREFIX}/bin/${BROWSER}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape46-${BROWSER}
 
+FILESDIR=	${.CURDIR}/../netscape46-communicator/files
+PATCHDIR=	${.CURDIR}/../netscape46-communicator/patches
+
 BROWSER_CMD=	ja-${BROWSER}-46
-BROWSER_VERSION=	4.6
+BROWSER_VERSION=	4.61
 JAPANIZE_KIT=	communicator-ja-euc-v46-export.generic-generic-generic.tar.gz
 NETHELP=	nethelp-v451
 

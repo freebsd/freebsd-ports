@@ -3,14 +3,14 @@
 # Date created:		13 Mar 1998
 # Whom:			sada@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.22 1999/05/22 21:36:46 sada Exp $
+# $Id: Makefile,v 1.23 1999/06/12 23:53:22 sada Exp $
 #
 
 DISTNAME=	ja-netscape-${BROWSER}-${BROWSER_VERSION}
 CATEGORIES=	japanese www
-MASTER_SITES=	${PORTKIT_SITES} \
+MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		http://www.bres.tsukuba.ac.jp/~yohta/netscape/
-DISTFILES=	${JAPANIZE_KIT} ${PORTKIT}
+DISTFILES=	${JAPANIZE_KIT}
 
 MAINTAINER=	sada@FreeBSD.ORG
 
@@ -25,7 +25,6 @@ PKGINSTALL=	${WRKDIR}/INSTALL
 PLIST=		${.CURDIR}/pkg/PLIST
 PLIST_SUB=	NSUBDIR=${NSUBDIR} LANG=${LANG}
 WRKSRC=		${WRKDIR}/netscape-ja_euc
-FILESDIR?=	${.CURDIR}/files
 
 BROWSER?=	communicator
 BROWSER_BIN?=	${BROWSER}-${BROWSER_VERSION}.bin
@@ -43,24 +42,28 @@ MAKESCRIPT=	${SED} -e "s;@X11BASE@;${X11BASE};g" \
 MANDIR=		${MANPREFIX}/man/${MANLANG}
 NDIR=		${PREFIX}/${NSUBDIR}
 NSUBDIR?=	lib/netscape
-PORTKIT=	ja-netscape-portkit.1999.0613.tar.gz
-PORTKIT_DIR=	${WRKDIR}/portkit
-PORTKIT_SITES=	${MASTER_SITE_PORTS_JP} \
-		http://WWW.FreeBSD.ORG/~sada/distfiles/
 NETHELP?=	nethelp-v406
 
 .SILENT:
 
+post-patch:
+.if defined(PATCHDIRS)
+	for dir in ${PATCHDIRS}; do \
+		for patch in $$dir/patch-*; do \
+			${PATCH} ${PATCH_DIST_ARGS} < $$patch; \
+		done; \
+	done
+.endif
+
 do-configure:
-	${MAKESCRIPT} ${PORTKIT_DIR}/start.sh.in >${WRKDIR}/start.sh
-	${MAKESCRIPT} ${PORTKIT_DIR}/Netscape.${BROWSER}-${BROWSER_VERSION} \
-		>${WRKDIR}/Netscape
+	${MAKESCRIPT} ${MASTERDIR}/files/start.sh.in >${WRKDIR}/start.sh
+	${MAKESCRIPT} ${WRKSRC}/Netscape.ad-ja_euc >${WRKDIR}/Netscape
 	${MAKESCRIPT} ${MASTERDIR}/files/INSTALL >${PKGINSTALL}
-	${CP} ${PORTKIT_DIR}/about.${BROWSER}-${BROWSER_VERSION} ${WRKDIR}/about
-	${CP} ${WRKDIR}/about ${WRKDIR}/splash
+	${CP} ${WRKSRC}/about ${WRKDIR}/about
+	${CP} ${WRKSRC}/about ${WRKDIR}/splash
 
 do-install:
-	${INSTALL_DATA} ${PORTKIT_DIR}/preferences.js ${NDIR}
+	${INSTALL_DATA} ${MASTERDIR}/files/preferences.js ${NDIR}
 	${MKDIR} ${NDIR}/locale
 	${LN} -sf /usr/share/locale/en_US.ISO_8859-1 ${NDIR}/locale/${LANG}
 	${MKDIR} ${NDIR}/${LANG}
@@ -76,7 +79,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/start.sh ${PREFIX}/bin/${BROWSER_CMD}
 	${LN} -sf ${BROWSER_CMD} ${PREFIX}/bin/netscape
 	${MKDIR} ${MANDIR}/man1
-	${INSTALL_MAN} ${PORTKIT_DIR}/${MAN1} ${MANDIR}/man1
+	${INSTALL_MAN} ${MASTERDIR}/files/${MAN1} ${MANDIR}/man1
 
 post-install:
 	${SETENV} PKG_PREFIX=${PREFIX} \
