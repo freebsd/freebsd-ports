@@ -37,7 +37,7 @@ BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake-4
 PLIST=		${PKGDIR}/pkg-plist.viewer
 USE_XLIB=	yes
 post-build:
-	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/build_viewer
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/build_viewer
 .else
 pre-extract:
 	@${ECHO} ""
@@ -47,78 +47,78 @@ pre-extract:
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/share/tinker
-	${MKDIR} ${PREFIX}/share/tinker/params
-	${INSTALL_DATA} ${WRKDIR}/tinker/source/tinker.txt \
+	@${MKDIR} ${PREFIX}/share/tinker
+	@${MKDIR} ${PREFIX}/share/tinker/params
+	@${INSTALL_DATA} ${WRKDIR}/tinker/source/tinker.txt \
 ${PREFIX}/share/tinker
-	${INSTALL_DATA} ${WRKDIR}/tinker/params/* \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/params/* \
 ${PREFIX}/share/tinker/params
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/tinker
-	${MKDIR} ${PREFIX}/share/examples/tinker
-	${MKDIR} ${PREFIX}/share/tinker/bench
-	${MKDIR} ${PREFIX}/share/tinker/test
-	${INSTALL_DATA} ${WRKDIR}/tinker/doc/README \
+	@${MKDIR} ${PREFIX}/share/doc/tinker
+	@${MKDIR} ${PREFIX}/share/examples/tinker
+	@${MKDIR} ${PREFIX}/share/tinker/bench
+	@${MKDIR} ${PREFIX}/share/tinker/test
+	@${INSTALL_DATA} ${WRKDIR}/tinker/doc/README \
 ${PREFIX}/share/doc/tinker
-	${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.gz \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.gz \
 ${PREFIX}/share/doc/tinker
-	${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.pdf \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.pdf \
 ${PREFIX}/share/doc/tinker
-	${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.ps \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.ps \
 ${PREFIX}/share/doc/tinker
-	${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.txt \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.txt \
 ${PREFIX}/share/doc/tinker
-	${INSTALL_DATA} ${WRKDIR}/tinker/doc/release* \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/doc/release* \
 ${PREFIX}/share/doc/tinker
-	${INSTALL_DATA} ${WRKDIR}/tinker/example/README \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/example/README \
 ${PREFIX}/share/examples/tinker
-	${INSTALL_SCRIPT} ${WRKDIR}/tinker/example/clean.make \
+	@${INSTALL_SCRIPT} ${WRKDIR}/tinker/example/clean.make \
 ${PREFIX}/share/examples/tinker
-	${INSTALL_DATA} ${WRKDIR}/tinker/example/*.1st \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/example/*.1st \
 ${PREFIX}/share/examples/tinker
-	${INSTALL_DATA} ${WRKDIR}/tinker/example/*.boat \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/example/*.boat \
 ${PREFIX}/share/examples/tinker
-	${INSTALL_DATA} ${WRKDIR}/tinker/example/*.cell \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/example/*.cell \
 ${PREFIX}/share/examples/tinker
-	${INSTALL_DATA} ${WRKDIR}/tinker/example/*.chair \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/example/*.chair \
 ${PREFIX}/share/examples/tinker
-	${INSTALL_DATA} ${WRKDIR}/tinker/example/*.dat \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/example/*.dat \
 ${PREFIX}/share/examples/tinker
-	${INSTALL_DATA} ${WRKDIR}/tinker/example/*.dyn0 \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/example/*.dyn0 \
 ${PREFIX}/share/examples/tinker
-	${INSTALL_DATA} ${WRKDIR}/tinker/example/*.key \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/example/*.key \
 ${PREFIX}/share/examples/tinker
-	${INSTALL_DATA} ${WRKDIR}/tinker/example/*.log \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/example/*.log \
 ${PREFIX}/share/examples/tinker
-	${INSTALL_DATA} ${WRKDIR}/tinker/example/*.pdb \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/example/*.pdb \
 ${PREFIX}/share/examples/tinker
-	${INSTALL_DATA} ${WRKDIR}/tinker/example/*.xyz \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/example/*.xyz \
 ${PREFIX}/share/examples/tinker
-	${INSTALL_SCRIPT} ${WRKDIR}/tinker/example/*.run \
+	@${INSTALL_SCRIPT} ${WRKDIR}/tinker/example/*.run \
 ${PREFIX}/share/examples/tinker
-	${INSTALL_DATA} ${WRKDIR}/tinker/bench/README \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/bench/README \
 ${PREFIX}/share/tinker/bench
-	${INSTALL_DATA} ${WRKDIR}/tinker/bench/*.dyn0 \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/bench/*.dyn0 \
 ${PREFIX}/share/tinker/bench
-	${INSTALL_DATA} ${WRKDIR}/tinker/bench/*.log \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/bench/*.log \
 ${PREFIX}/share/tinker/bench
-	${INSTALL_DATA} ${WRKDIR}/tinker/bench/*.key \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/bench/*.key \
 ${PREFIX}/share/tinker/bench
-	${INSTALL_SCRIPT} ${WRKDIR}/tinker/bench/*.run \
+	@${INSTALL_SCRIPT} ${WRKDIR}/tinker/bench/*.run \
 ${PREFIX}/share/tinker/bench
-	${INSTALL_DATA} ${WRKDIR}/tinker/bench/*.xyz \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/bench/*.xyz \
 ${PREFIX}/share/tinker/bench
-	${INSTALL_DATA} ${WRKDIR}/tinker/bench/results* \
+	@${INSTALL_DATA} ${WRKDIR}/tinker/bench/results* \
 ${PREFIX}/share/tinker/bench
-	${INSTALL_DATA} ${WRKDIR}/tinker/test/* ${PREFIX}/share/tinker/test
+	@${INSTALL_DATA} ${WRKDIR}/tinker/test/* ${PREFIX}/share/tinker/test
 .endif
 
 .if defined(WANT_VIEWER)
-	${MKDIR} ${PREFIX}/share/tinker/rasmol
-	${INSTALL_PROGRAM} ${WRKDIR}/tinker/rasmol/tview-* ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${FILESDIR}/tview ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKDIR}/tinker/rasmol/rasmol.hlp \
+	@${MKDIR} ${PREFIX}/share/tinker/rasmol
+	@${INSTALL_PROGRAM} ${WRKDIR}/tinker/rasmol/tview-* ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${FILESDIR}/tview ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKDIR}/tinker/rasmol/rasmol.hlp \
 		${PREFIX}/share/tinker/rasmol
 
 .endif
