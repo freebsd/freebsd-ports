@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += abook
     SUBDIR += adcomplain
     SUBDIR += asmail
     SUBDIR += arrow
