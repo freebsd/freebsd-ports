@@ -75,9 +75,6 @@ lib/X11/etc/sun.termcap
 lib/X11/etc/sun.terminfo
 lib/X11/etc/xmodmap.std
 lib/X11/xserver/SecurityPolicy
-lib/libXfont.a
-lib/libXfont.so
-lib/libXfont.so.1
 lib/modules/codeconv/libARABIC.a
 lib/modules/codeconv/libARMSCII8.a
 lib/modules/codeconv/libBIG5.a
