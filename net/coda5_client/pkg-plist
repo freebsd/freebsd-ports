@@ -25,4 +25,3 @@ sbin/venus-setup
 sbin/volmunge
 sbin/vutil
 @dirrm etc/coda
-@dirrm lib/coda
