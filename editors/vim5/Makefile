@@ -7,23 +7,25 @@
 #
 
 PORTNAME?=	vim
-PORTVERSION=	5.7.30
+PORTVERSION=	5.8.a
 CATEGORIES?=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
-		ftp://ftp.nuxi.com/pub/vim/unix/ \
+		ftp://relay.nuxi.com/pub/vim/unreleased/unix/ \
+		ftp://relay.nuxi.com/pub/vim/unix/ \
 		ftp://ftp.freesoftware.com/pub/vim/unix/ \
 		ftp://ftp.vim.org/pub/vim/unix/  \
+		ftp://ftp.vim.org/pub/vim/unreleased/unix/  \
 		ftp://ftp.is.co.za/applications/editors/vim/  \
 		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unix/  \
 		ftp://ftp.progsoc.uts.edu.au/pub/vim/unix/
 #DISTNAME=	vim-${PORTVERSION:C/.[0-9]+$//g}
-DISTNAME=	vim-5.7
+DISTNAME=	vim-5.8a
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-rt${EXTRACT_SUFX}
 
 PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
-.for p in 01 02 03 04 05 06 07 08 10 12 13 14 15 16 17 18 19 20 21 22 23 24 25 27 28 29 30
-PATCHFILES+=	5.7.0${p}
-.endfor
+#.for p in 01 02 03 04 05 06 07 08 10 12 13 14 15 16 17 18 19 20 21 22 23 24 25 27 28 29 30
+#PATCHFILES+=	5.8.0${p}
+#.endfor
 
 MAINTAINER?=	obrien@FreeBSD.org
 
@@ -41,7 +43,7 @@ PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRI
 MAKE_ARGS+=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib --disable-pythoninterp"
 ALL_TARGET=	#
 PLIST_SUB=	VIM_VER=${DISTNAME:S/-//:S/.//}
-MAN1=		vim.1 vimtutor.1 xxd.1 ectags.1
+MAN1=		vim.1 vimtutor.1 xxd.1
 MLINKS=		vim.1 rvim.1  vim.1 rview.1  ectags.1 etags.1
 MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1
 
@@ -95,8 +97,6 @@ post-install:
 	test -e ${PREFIX}/bin/rgvim  || (cd ${PREFIX}/bin ; ${LN} -s vim rgvim)
 	test -e ${PREFIX}/bin/gview || (cd ${PREFIX}/bin ; ${LN} -s vim gview)
 	test -e ${PREFIX}/bin/rgview || (cd ${PREFIX}/bin ; ${LN} -s vim rgview)
-	@${RM} -f ${PREFIX}/man/man1/etags.1
-	@${MV} ${PREFIX}/man/man1/ctags.1 ${PREFIX}/man/man1/ectags.1
 	cd ${PREFIX} ;\
 	    find share/vim/${DISTNAME:S/-//:S/.//}/ -type f -o -type l	\
 	    	| sort \
