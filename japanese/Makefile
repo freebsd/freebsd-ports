@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.177 1999/01/04 21:00:12 sada Exp $
+# $Id: Makefile,v 1.178 1999/01/06 20:29:39 sada Exp $
 #
 
     SUBDIR += Canna
@@ -25,6 +25,8 @@
     SUBDIR += elisa10x8
     SUBDIR += elisa8x8
     SUBDIR += elvis
+    SUBDIR += emacs20-dl-canna
+    SUBDIR += emacs20-dl-wnn6
     SUBDIR += escpf
     SUBDIR += eterm
     SUBDIR += ewipe
