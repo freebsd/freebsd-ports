@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gqmpeg
-# Version required:	0.6.1
+# Version required:	0.6.2
 # Date Created:		28 Oct 1998
 # Whom:			Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.13 1999/05/16 23:34:14 steve Exp $
+# $Id: Makefile,v 1.14 1999/05/29 04:07:41 steve Exp $
 #
 
-DISTNAME=	gqmpeg-0.6.1
+DISTNAME=	gqmpeg-0.6.2
 CATEGORIES=	audio
 MASTER_SITES=	http://gqview.netpedia.net/ \
 		http://www.geocities.com/SiliconValley/Haven/5235/
