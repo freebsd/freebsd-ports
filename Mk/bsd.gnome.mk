@@ -24,18 +24,24 @@ Gnome_Include_MAINTAINER=	gnome@FreeBSD.org
 # As a result proper LIB_DEPENDS/RUN_DEPENDS will be added and CONFIGURE_ENV
 # and MAKE_ENV defined.
 
-_USE_GNOME_ALL=	gnomehack gnomeprefix gnomehier gnomeaudio esound libghttp \
-		glib12 gtk12 libxml gdkpixbuf imlib orbit gnomelibs \
-		gnomecanvas oaf gnomemimedata gconf gnomevfs libcapplet \
-		gnomeprint bonobo libgda gnomedb libglade gal glibwww gtkhtml \
-		gnometarget
-_USE_GNOME_ALL+=glib20 atk pango gtk20 linc libidl orbit2 libglade2 libxml2 \
-		libxslt libbonobo gconf2 gnomevfs2 gail \
+# non-version specific components
+_USE_GNOME_ALL=	gnomehack lthack gnomeprefix gnomehier esound gnomemimedata \
+				gnometarget pkgconfig intlhack
+
+# GNOME 1 components
+_USE_GNOME_ALL+=libghttp glib12 gtk12 libxml gdkpixbuf imlib orbit \
+		gnomelibs gnomecanvas oaf gconf gnomevfs libcapplet \
+		gnomeprint bonobo libgda gnomedb libglade gal glibwww \
+		gtkhtml pygtk pygnome
+
+# GNOME 2 components
+_USE_GNOME_ALL+=gnomeaudio glib20 atk pango gtk20 linc libidl orbit2 \
+		libglade2 libxml2 libxslt libbonobo gconf2 gnomevfs2 gail \
 		libgnomecanvas libartlgpl2 libgnomeprint libgnomeprintui \
 		libgnome libbonoboui libgnomeui atspi libgailgnome \
 		libgtkhtml gnomedesktop libwnck vte libzvt librsvg2 eel2 \
 		gnomepanel nautilus2 metacity gal2 gnomecontrolcenter2 libgda2 \
-		libgnomedb gtksourceview pkgconfig libgsf
+		libgnomedb gtksourceview libgsf pygtk2 pygnome2 gstreamerplugins
 
 SCROLLKEEPER_DIR=	/var/db/scrollkeeper
 gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -53,9 +59,11 @@ gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLA
 				's|-lpthread|${PTHREAD_LIBS}|g ; \
 				 s|DATADIRNAME=lib|DATADIRNAME=share|g'
 
+lthack_PRE_PATCH=	${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
+					'/^LIBTOOL_DEPS="$$ac_aux_dir\/ltmain.sh"$$/s|$$|; $$ac_aux_dir/ltconfig $$LIBTOOL_DEPS;|'
 
-gnomehier_RUN_DEPENDS=	${X11BASE}/share/gnome/.keep_me:${PORTSDIR}/misc/gnomehier
 gnomehier_DETECT=	${X11BASE}/share/gnome/.keep_me
+gnomehier_RUN_DEPENDS=	${gnomehier_DETECT}:${PORTSDIR}/misc/gnomehier
 
 GNOME_HTML_DIR?=	${PREFIX}/share/doc
 gnomeprefix_CONFIGURE_ENV=GTKDOC="false"
@@ -68,8 +76,8 @@ gnomeprefix_USE_GNOME_IMPL=gnomehier
 
 gnometarget_CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-gnomeaudio_RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio
 gnomeaudio_DETECT=	${X11BASE}/share/gnome/sounds/login.wav
+gnomeaudio_RUN_DEPENDS=	${gnomeaudio_DETECT}:${PORTSDIR}/audio/gnomeaudio2
 
 ESD_CONFIG?=		${LOCALBASE}/bin/esd-config
 esound_LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
@@ -140,9 +148,9 @@ oaf_MAKE_ENV=		OAF_CONFIG="${OAF_CONFIG}"
 oaf_DETECT=		${OAF_CONFIG}
 oaf_USE_GNOME_IMPL=	glib12 orbit libxml
 
-gnomemimedata_BUILD_DEPENDS=${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
-gnomemimedata_RUN_DEPENDS=${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
 gnomemimedata_DETECT=	${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc
+gnomemimedata_BUILD_DEPENDS=${gnomemimedata_DETECT}:${PORTSDIR}/misc/gnomemimedata
+gnomemimedata_RUN_DEPENDS=${gnomemimedata_DETECT}:${PORTSDIR}/misc/gnomemimedata
 gnomemimedata_USE_GNOME_IMPL=gnomehier pkgconfig
 
 GCONF_CONFIG?=		${X11BASE}/bin/gconf-config
@@ -203,6 +211,16 @@ glibwww_USE_GNOME_IMPL=	gnomelibs
 gtkhtml_LIB_DEPENDS=	gtkhtml-1.1.3:${PORTSDIR}/www/gtkhtml
 gtkhtml_DETECT=		${X11BASE}/etc/gtkhtmlConf.sh
 gtkhtml_USE_GNOME_IMPL=	glibwww gal libghttp libcapplet
+
+pygtk_DETECT=			${PYTHON_SITELIBDIR}/gtk-1.2/gtk.py
+pygtk_BUILD_DEPENDS=	${pygtk_DETECT}:${PORTSDIR}/x11-toolkits/py-gtk
+pygtk_RUN_DEPENDS=		${pygtk_DETECT}:${PORTSDIR}/x11-toolkits/py-gtk
+pygtk_USE_GNOME_IMPL=	gnomelibs gdkpixbuf libglade
+
+pygnome_DETECT=			${PYTHON_SITELIBDIR}/gtk-1.2/gnome/__init__.py
+pygnome_BUILD_DEPENDS=	${pygnome_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome
+pygnome_RUN_DEPENDS=	${pygnome_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome
+pygnome_USE_GNOME_IMPL=	gtkhtml pygtk
 
 glib20_LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20
 glib20_DETECT=		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc
@@ -266,7 +284,7 @@ libgnomecanvas_USE_GNOME_IMPL=	libglade2 libartlgpl2
 
 libartlgpl2_LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2
 libartlgpl2_DETECT=		${LOCALBASE}/libdata/pkgconfig/libart-2.0.pc
-libartlgpl1_USE_GNOME_IMPL=	pkgconfig
+libartlgpl2_USE_GNOME_IMPL=	pkgconfig
 
 libgnomeprint_LIB_DEPENDS=	gnomeprint-2-2.1:${PORTSDIR}/print/libgnomeprint
 libgnomeprint_DETECT=		${X11BASE}/libdata/pkgconfig/libgnomeprint-2.2.pc
@@ -292,8 +310,8 @@ atspi_LIB_DEPENDS=	spi.9:${PORTSDIR}/x11-toolkits/at-spi
 atspi_DETECT=		${X11BASE}/libdata/pkgconfig/cspi-1.0.pc
 atspi_USE_GNOME_IMPL=	gail libbonobo
 
-libgailgnome_RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/modules/libgail-gnome.so:${PORTSDIR}/x11-toolkits/libgail-gnome
 libgailgnome_DETECT=		${X11BASE}/libdata/pkgconfig/libgail-gnome.pc
+libgailgnome_RUN_DEPENDS=	${libgailgnome_DETECT}:${PORTSDIR}/x11-toolkits/libgail-gnome
 libgailgnome_USE_GNOME_IMPL=	libgnomeui atspi
 
 libgtkhtml_LIB_DEPENDS=	gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml
@@ -366,6 +384,26 @@ pkgconfig_RUN_DEPENDS=		pkg-config:${PORTSDIR}/devel/pkgconfig
 libgsf_LIB_DEPENDS=			gsf-1.9:${PORTSDIR}/devel/libgsf
 libgsf_DETECT=				${LOCALBASE}/libdata/pkgconfig/libgsf-gnome-1.pc
 libgsf_USE_GNOME_IMPL=		gnomevfs2 libbonobo
+
+pygtk2_DETECT=			${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py
+pygtk2_BUILD_DEPENDS=	${pygtk2_DETECT}:${PORTSDIR}/x11-toolkits/py-gtk2
+pygtk2_RUN_DEPENDS=		${pygtk2_DETECT}:${PORTSDIR}/x11-toolkits/py-gtk2
+pygtk2_USE_GNOME_IMPL=	libglade2
+
+pygnome2_DETECT=		${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py
+pygnome2_BUILD_DEPENDS=	${pygnome2_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome2
+pygnome2_RUN_DEPENDS=	${pygnome2_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome2
+pygnome2_USE_GNOME_IMPL=libgnomeprintui libgtkhtml gnomepanel libzvt nautilus2 pygtk2
+
+gstreamerplugins_LIB_DEPENDS=	gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins \
+								gstreamer-0.6:${PORTSDIR}/multimedia/gstreamer
+gstreamerplugins_DETECT=        ${X11BASE}/libdata/pkgconfig/gstreamer-play-0.6.pc
+gstreamerplugins_USE_GNOME_IMPL=        gconf2
+
+intlhack_BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool
+intlhack_PRE_PATCH=		${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} -e \
+						's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
+						 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";|'
 
 # End component definition section
 
@@ -517,7 +555,7 @@ CONFIGURE_TARGET=	${${component}_CONFIGURE_TARGET}
 .    endif
 
 .    if defined(${component}_PRE_PATCH)
-GNOME_PRE_PATCH+=	${${component}_PRE_PATCH}
+GNOME_PRE_PATCH+=	; ${${component}_PRE_PATCH}
 .    endif
 
 .  endif
@@ -528,7 +566,7 @@ GNOME_PRE_PATCH+=	${${component}_PRE_PATCH}
 USE_REINPLACE=	yes
 
 pre-patch:
-	@${GNOME_PRE_PATCH}
+	@${GNOME_PRE_PATCH:C/^;//1}
 .endif
 
 .if defined(WANT_GNOME)
