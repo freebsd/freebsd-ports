@@ -48,14 +48,14 @@
 + 
 + OFILES=		attach.o ansi.o basic.o bind.o browse.o buffer.o \
 + 		composer.o display.o file.o fileio.o line.o osdep.o \
-+ 		pico.o random.o region.o search.o spell.o tcap.o window.o word.o
++ 		pico.o random.o region.o search.o spell.o tcap.o window.o word.o hangul.o
 + 
 + # Lets be elite and not retype in the above
 + SOFILES=	${OFILES:.o=.so}
 + 
 + CFILES=		attach.c ansi.c basic.c bind.c browse.c buffer.c \
 + 		composer.c display.c file.c fileio.c line.c osdep.c \
-+ 		pico.c random.c region.c search.c spell.c tcap.c window.c word.c
++ 		pico.c random.c region.c search.c spell.c tcap.c window.c word.c hangul.c
 + 
 + HFILES=		estruct.h edef.h efunc.h ebind.h pico.h osdep.h
 + 
