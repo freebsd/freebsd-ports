@@ -7,22 +7,21 @@
 
 PORTNAME=	windowmaker
 PORTVERSION=	0.65.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	beta/srcs
 DISTNAME=	WindowMaker-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${DATAFILES}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		PropList.2:${PORTSDIR}/devel/libPropList \
 		intl.1:${PORTSDIR}/devel/gettext \
 		Hermes.1:${PORTSDIR}/graphics/Hermes
+RUN_DEPENDS=	${X11BASE}/share/WindowMaker/Themes/Checker.themed/style:${PORTSDIR}/graphics/wmicons
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -32,7 +31,7 @@ WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE} \
-		LIBS=-L${LOCALBASE}/lib \
+		LIBS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LINGUAS="${LINGUAS}"
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
@@ -45,8 +44,6 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 
 MAN1=		geticonset.1x getstyle.1x seticons.1x setstyle.1x wdwrite.1x \
 		wmaker.1x wmsetbg.1x wsetfont.1x wxcopy.1x wxpaste.1x
-
-DATAFILES=	WindowMaker-extra-0.1.tar.bz2
 
 .include <bsd.port.pre.mk>
 
@@ -65,17 +62,11 @@ pre-extract:
 .endif
 
 post-patch:
-	@perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c \
-		${WRKSRC}/WindowMaker/Defaults/*
-
-post-configure:
-	@cd ${WRKDIR}/WindowMaker-extra-0.1; \
-		./configure --prefix=${PREFIX}
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c
+	@${PERL} -pi -e "s|%%PERL%%|${PERL}|g" ${WRKSRC}/util/wm-oldmenu2new
 
 post-install:
-	@cd ${WRKDIR}/WindowMaker-extra-0.1; \
-		${MAKE} ${MAKE_ARGS} ${INSTALL_TARGET}
-	${MKDIR} ${PREFIX}/share/WindowMaker/Sounds
+	@${MKDIR} ${PREFIX}/share/WindowMaker/Sounds
 
 update-LINGUAS: extract
 	cd ${WRKSRC}/po && \

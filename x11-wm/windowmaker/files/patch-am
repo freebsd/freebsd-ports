@@ -1,0 +1,27 @@
+--- util/wm-oldmenu2new.orig	Wed Jan 20 21:39:18 1999
++++ util/wm-oldmenu2new	Wed Jan 20 21:39:29 1999
+@@ -112,7 +112,7 @@
+ # This is the interesting bit.  Edit the old style menu and
+ # convert into new style property-list menu.
+ #
+-perl - $T <<-'EOF' > $T-p
++%%PERL%% - $T <<-'EOF' > $T-p
+ 	$v=chr(22);
+ 	for (<>) {
+ 		push @foo,$_;
+@@ -127,6 +127,7 @@
+ 	for (@foo2) {
+ 		s/^(\s*)"([^"]*)"\s\s*END/\1),/;
+ 		s/^(\s*)"([^"]*)"\s\s*EXEC\s\s*(.*)$/\1($v\n\1"\2",$v\n\1EXEC,$v\n\1"\3"$v\n\1),/;
++		s/^(\s*)"([^"]*)"\s\s*SHEXEC\s\s*(.*)$/\1($v\n\1"\2",$v\n\1SHEXEC,$v\n\1"\3"$v\n\1),/;
+ 		push @foo,split "\n";
+ 	}
+ 	@foo2=();
+@@ -144,6 +145,7 @@
+ 	for (@foo) {
+ 		s/^(\s*)([^ 	]*)\s\s*END/\1),/;
+ 		s/^(\s*)([^ 	]*)\s\s*EXEC\s\s*(.*)$/\1($v\n\1"\2",$v\n\1EXEC,$v\n\1"\3"$v\n\1),/;
++		s/^(\s*)([^ 	]*)\s\s*SHEXEC\s\s*(.*)$/\1($v\n\1"\2",$v\n\1SHEXEC,$v\n\1"\3"$v\n\1),/;
+ 		push @foo2,split "\n";
+ 	}
+ 	@foo=();
