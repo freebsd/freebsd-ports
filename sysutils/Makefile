@@ -4,6 +4,7 @@
     SUBDIR += 3dm
     SUBDIR += LPRng
     SUBDIR += LPRngTool
+    SUBDIR += Tee
     SUBDIR += abck
     SUBDIR += afio
     SUBDIR += ah-tty
