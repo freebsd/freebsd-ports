@@ -8,6 +8,15 @@
  
  ############################################################################
  #
+@@ -40,7 +39,7 @@
+ #  See glob.c for all possibilities
+ #
+ # PAGESIZE=Letter
+-PAGESIZE=A4
++PAGESIZE?=A4
+ 
+ #
+ # Define your spooler type
 @@ -50,7 +49,6 @@
  SPOOL_TYPE=BSD_SPOOLER
  
