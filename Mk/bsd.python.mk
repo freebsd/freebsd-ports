@@ -25,12 +25,15 @@ Python_Include_MAINTAINER=	tg@FreeBSD.org
 #					distribution.
 #
 # PYTHON_LIBDIR:	Base of the python library tree
-#					default: ${LOCALBASE}/lib/python${PYVERSION}
+#					default: ${LOCALBASE}/lib/python${PYTHON_VERSION}
 #
 # PYTHON_PORTSDIR:	The source of your binary's port. Needed for the
 #					RUN_DEPENDS.
 #
 # PYTHON_PORTVERSION:	Version number suitable for ${PORTVERSION}.
+#
+# PYTHON_REL:		Version number in numerical format, to ease
+#					comparison in makefiles
 #
 # PYTHON_SITELIBDIR:	Location of the site-packages tree. Don't change,
 #					unless you know what you do.
@@ -66,28 +69,31 @@ PYTHON_PORTVERSION!=	(${PYTHON_VERSION} -c 'import string, sys; \
 # Python-2.0
 .if ${PYTHON_VERSION} == "python2.0"
 PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PORTSDIR}/lang/python
-PYXML=			${PYTHON_LIBDIR}/xml/xmllib.py:${PORTSDIR}/lang/python
+PYXML=			${PYTHON_LIBDIR}/xml/__init__.py:${PORTSDIR}/lang/python
 
 PYTHON_DISTFILE=	BeOpen-Python-2.0b1.tar.gz
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python-beta
+PYTHON_REL=			190
 PYTHON_WRKSRC=		${WRKDIR}/Python-2.0b1
 
 # Python-1.6
 .elif ${PYTHON_VERSION} == "python1.6"
 PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PORTSDIR}/misc/py-distutils
-PYXML=			${PYTHON_LIBDIR}/site-packages/xml/xmllib.py:${PORTSDIR}/textproc/py-xml
+PYXML=			${PYTHON_LIBDIR}/site-packages/xml/__init__.py:${PORTSDIR}/textproc/py-xml
 
 PYTHON_DISTFILE=	Python-1.6.tar.gz
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
+PYTHON_REL=			160
 PYTHON_WRKSRC=		${WRKDIR}/Python-1.6
 
 # Python-1.5
 .elif ${PYTHON_VERSION} == "python1.5"
 PYDISTUTILS=	${PYTHON_LIBDIR}/site-packages/distutils/core.py:${PORTSDIR}/misc/py-distutils
-PYXML=			${PYTHON_LIBDIR}/site-packages/xml/xmllib.py:${PORTSDIR}/textproc/py-xml
+PYXML=			${PYTHON_LIBDIR}/site-packages/xml/__init__.py:${PORTSDIR}/textproc/py-xml
 
 PYTHON_DISTFILE=	py152.tgz
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python15
+PYTHON_REL=			152
 PYTHON_WRKSRC=		${WRKDIR}/Python-1.5.2
 
 .else
