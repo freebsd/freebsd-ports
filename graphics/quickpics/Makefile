@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://area23.org/QuickPics/
 DISTNAME=	QuickPics-${PORTVERSION}
 
-MAINTAINER=	stever@transmission23.com
+MAINTAINER=	bifrost@kizmiaz.dis.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
