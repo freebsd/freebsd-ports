@@ -25,6 +25,7 @@
     SUBDIR += dadadodo
     SUBDIR += dico
     SUBDIR += dict
+    SUBDIR += dictionary
     SUBDIR += diff-mode.el
     SUBDIR += diffstat
     SUBDIR += diffutils

@@ -1,0 +1,35 @@
+# New ports collection makefile for:   dictionary
+# Date created:                23 March 2002
+# Whom:                        Kimura Fuyuki <fuyuki@mj.0038.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	dictionary
+PORTVERSION=	1.8
+CATEGORIES=	textproc net elisp
+MASTER_SITES=	http://me.in-berlin.de/~myrkr/dictionary/
+PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+
+MAINTAINER=	fuyuki@mj.0038.net
+
+EMACS_PORT_NAME?=	emacs21
+
+LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
+
+do-install:
+	${MKDIR} ${LISPDIR}
+.for i in connection.* dictionary-init.el dictionary.* link.*
+	${INSTALL_DATA} ${WRKSRC}/${i} ${LISPDIR}
+.endfor
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in README
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
