@@ -329,7 +329,6 @@
     SUBDIR += shinonome
     SUBDIR += sj3
     SUBDIR += skk
-    SUBDIR += skk-elisp
     SUBDIR += skk-jisyo
     SUBDIR += skk-jisyo-cdb
     SUBDIR += skk-tools
