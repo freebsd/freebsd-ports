@@ -13,8 +13,9 @@ CATEGORIES=		misc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-PATCH_SITES=		http://sourceforge.net/tracker/download.php?group_id=2973&amp;atid=302973&amp;file_id=63934&amp;aid=820963/
+PATCH_SITES=		http://sourceforge.net/tracker/download.php?group_id=2973&atid=302973&file_id=63934&aid=820963/
 PATCHFILES=		add_auction_by_url_also.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=		mph@FreeBSD.org
 COMMENT=		Bid monitor for eBay
