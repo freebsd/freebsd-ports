@@ -10,7 +10,7 @@ PORTVERSION=	0.3.9
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gpgme/
 
-MAINTAINER=	teramoto@comm.eng.osaka-u.ac.jp
+MAINTAINER=	markun@onohara.to
 
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
