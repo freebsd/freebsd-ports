@@ -27,7 +27,7 @@ MAN1=		scsh.1
 STRIP=
 
 .if !defined(NOPORTDOCS)
-PLIST=		${PKGDIR}/PLIST.doc
+PLIST=		${PKGDIR}/pkg-plist.doc
 .endif
 
 post-install:
