@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.32 1996/11/26 08:34:28 asami Exp $
+# $Id: Makefile,v 1.33 1996/12/19 22:34:52 fenner Exp $
 #
 
     SUBDIR += ImageMagick
@@ -24,6 +24,7 @@
     SUBDIR += netpbm
     SUBDIR += p5-Image-Size
     SUBDIR += pixmap
+    SUBDIR += pgplot
     SUBDIR += png
     SUBDIR += povray
     SUBDIR += spigot
