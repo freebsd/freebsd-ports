@@ -1,12 +1,12 @@
 # New ports collection makefile for:    ncftp2
-# Version required:     2.4.2
+# Version required:     2.4.3
 # Date created:         4 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.38 1997/01/09 11:58:47 ache Exp $
+# $Id: Makefile,v 1.39 1998/01/31 17:49:48 jseger Exp $
 #
 
-DISTNAME=       ncftp-2.4.2
+DISTNAME=       ncftp-2.4.3
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.ncftp.com/ncftp/
 
