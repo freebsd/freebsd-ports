@@ -13,6 +13,7 @@ sbin/htpasswd
 sbin/log_server_status
 sbin/logresolve
 sbin/rotatelogs
+man/man1/apachectl.1.gz
 man/man1/htpasswd.1.gz
 man/man8/httpd.8.gz
 www/icons/README
