@@ -27,15 +27,15 @@
 -    OPT_CRXVT_CFONT=taipei15
 -    OPT_CRXVT_EFONT=8x16
 +    if [ "$use_24_fonts" = '1' ]; then
-+    OPT_XCIN_CFONT=kc24
-+    OPT_XCIN_EFONT=12x24
-+    OPT_CRXVT_CFONT=kc24
-+    OPT_CRXVT_EFONT=12x24
++    OPT_XCIN_CFONT=kc24f
++    OPT_XCIN_EFONT=kc12x24
++    OPT_CRXVT_CFONT=kc24f
++    OPT_CRXVT_EFONT=kc12x24f
 +    else
-+    OPT_XCIN_CFONT=kc15
-+    OPT_XCIN_EFONT=8x15
-+    OPT_CRXVT_CFONT=kc15
-+    OPT_CRXVT_EFONT=8x15
++    OPT_XCIN_CFONT=kc15f
++    OPT_XCIN_EFONT=kc8x15
++    OPT_CRXVT_CFONT=kc15f
++    OPT_CRXVT_EFONT=kc8x15
 +    fi
      OPT_FONT_ET15=no
      OPT_FONT_ET24K=no
