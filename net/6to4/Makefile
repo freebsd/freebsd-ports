@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	6to4
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/pkgsrc/net/6to4/files/
-DISTFILES=	6to4\?rev=1.7\&content-type=text%2fplain \
-		6to4.8\?rev=1.5\&content-type=text%2fplain \
-		6to4.conf\?rev=1.2\&content-type=text%2fplain
+DISTFILES=	6to4\?rev=1.9\&content-type=text%2fplain \
+		6to4.8\?rev=1.6\&content-type=text%2fplain \
+		6to4.conf\?rev=1.3\&content-type=text%2fplain
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	fuyuki@hadaly.org

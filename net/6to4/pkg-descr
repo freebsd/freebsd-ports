@@ -7,4 +7,4 @@ routed back to you over IPv4 via (possibly) other 6to4 capable remote
 gateways. As such, IPv6-in-IPv4-encapsulated packets are accepted from
 all v4-hosts.
 
-WWW: http://www.netbsd.org/packages/net/6to4/files/6to4.html
+WWW: ftp://ftp.netbsd.org/pub/NetBSD/packages/pkgsrc/net/6to4/files/6to4.html
