@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.186 1998/02/16 15:30:06 steve Exp $
+# $Id: Makefile,v 1.187 1998/02/16 15:57:07 jseger Exp $
 #
 
     SUBDIR += FWF
@@ -60,7 +60,6 @@
     SUBDIR += slingshot
     SUBDIR += swisswatch
     SUBDIR += sxpc
-    SUBDIR += textedit
     SUBDIR += tix
     SUBDIR += tk41
     SUBDIR += tk42
