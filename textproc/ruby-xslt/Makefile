@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xslt
-PORTVERSION=	0.0.1
+PORTVERSION=	0.0.2
 CATEGORIES=	textproc ruby
 MASTER_SITES=	 http://www.fantasy-coders.de/ruby/xslt4r/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}4r-${PORTVERSION:S/./_/g}
+DISTNAME=	${PORTNAME}4r-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -21,8 +21,9 @@ USE_RUBY=	yes
 
 RUBY_SHEBANG_FILES=	${WRKSRC}/xslt.rb
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
+
+DOCS=		ChangeLog ToDo
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/xslt.rb ${RUBY_SITELIBDIR}/
@@ -31,7 +32,9 @@ do-install:
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/test/*.x* ${RUBY_EXAMPLESDIR}/${PORTNAME}
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/ToDo ${RUBY_DOCDIR}/${PORTNAME}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}
+.endfor
 .endif
 
 .include <bsd.port.mk>
