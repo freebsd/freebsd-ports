@@ -100,9 +100,9 @@ BDB_WO:=
 BDB_W:=		${BDB_W} ${WITH_BDB_${v}}
 BDB_WO:=	${BDB_WO} ${WITHOUT_BDB_${v}}
 .endfor
-BDB_NUM_W!=	echo ${BDB_W} | wc -w
-BDB_NUM_WO!=	echo ${BDB_WO} | wc -w
-BDB_NUM_VERS!=	echo ${BDB_VERS} | wc -w
+BDB_NUM_W!=	${ECHO_CMD} ${BDB_W} | wc -w
+BDB_NUM_WO!=	${ECHO_CMD} ${BDB_WO} | wc -w
+BDB_NUM_VERS!=	${ECHO_CMD} ${BDB_VERS} | wc -w
 
 .if ${BDB_NUM_W} == 0
 .if ${BDB_NUM_WO} == ${BDB_NUM_VERS}
