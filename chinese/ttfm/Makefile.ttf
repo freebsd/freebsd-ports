@@ -1,0 +1,91 @@
+# makefile for use of:	chinese/*ttf
+# Date created:		17 Feb 2005
+# Whom:			leeym
+#
+# $FreeBSD$
+#
+# The variable(s) for installing TrueType fonts.
+# TTF		- Name(s) of font file(s) installed in FONTSDIR. Mandatory.
+#
+# The variable(s) to change the behavior of installing TrueType fonts.
+# WITH_GS	- Add Ghostscript support
+# WITHOUT_X11	- Remove X Window support
+#
+
+FONTSDIR?=	${PREFIX}/share/fonts/TrueType
+FONTSDIR_REL=	${FONTSDIR:S,^${PREFIX}/,,}
+PLIST_SUB+=	FONTSDIR=${FONTSDIR_REL}
+
+XFONTSDIR?=	${X11BASE}/lib/X11/fonts/TrueType
+XFONTSDIR_REL=	${XFONTSDIR:S,${X11BASE}/,,}
+PLIST_SUB+=	XFONTSDIR=${XFONTSDIR_REL}
+
+.if !defined(WITHOUT_X11)
+RUN_DEPENDS+=	${X11BASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+_TTF_MODULES=	xttfm
+.endif
+
+.if defined(WITH_GS)
+RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
+_TTF_MODULES+=	gscjk
+.endif
+
+.if defined(_TTF_MODULES)
+RUN_DEPENDS+=	${PREFIX}/bin/ttfm.sh:${PORTSDIR}/chinese/ttfm
+.endif
+
+check-makefile: check-makefile-ttf
+check-makefile-ttf:
+.if !defined(_TTF_MODULES)
+	@${ECHO_CMD} "Makefile warning: You choose neither X11 nor GS. Only font files themselves are installed"
+.else
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "You may use the following options:"
+	@${ECHO_CMD} "	WITH_GS		- if you want Ghostscript support"
+	@${ECHO_CMD} "	WITHOUT_X11	- if you DON'T want X Window support"
+	@${ECHO_CMD} ""
+.endif
+.if !defined(TTF)
+	@${ECHO_CMD} "Makefile error: You need to define TTF for installing TrueType fonts"
+	@${FALSE}
+.endif
+
+post-install: do-install-ttf
+do-install-ttf:
+.if defined(_TTF_MODULES)
+	@${ECHO_MSG} "===>  Running ttfm.sh"
+.endif
+.for module in ${_TTF_MODULES}
+.	for ttf in ${TTF}
+		${PREFIX}/bin/ttfm.sh --add ${module} ${FONTSDIR}/${ttf}
+.	endfor
+.endfor
+.if !defined(WITHOUT_X11)
+	@${ECHO_MSG} "===>  Running fc-cache"
+	-@${X11BASE}/bin/fc-cache -f -v ${XFONTSDIR}
+.endif
+
+add-plist-post: add-plist-ttf
+add-plist-ttf:
+.for module in ${_TTF_MODULES}
+.	for ttf in ${TTF}
+		@${ECHO_CMD} "@unexec %D/bin/ttfm.sh --remove ${module} ${FONTSDIR}/${ttf} || true" >> ${TMPPLIST}
+.	endfor
+.endfor
+.for ttf in ${TTF}
+	@${ECHO_CMD} "${FONTSDIR_REL}/${ttf}" >> ${TMPPLIST}
+.endfor
+.for module in ${_TTF_MODULES}
+.	for ttf in ${TTF}
+		@${ECHO_CMD} "@exec %D/bin/ttfm.sh --add ${module} ${FONTSDIR}/${ttf} || true" >> ${TMPPLIST}
+.	endfor
+.endfor
+.if !defined(WITHOUT_X11)
+	@${ECHO_CMD} "@unexec ${X11BASE}/bin/fc-cache -f -v ${XFONTSDIR} || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${X11BASE}/bin/fc-cache -f -v ${XFONTSDIR} || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec find ${XFONTSDIR} -size -3c -delete || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir ${XFONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
+.endif
+	@${ECHO_CMD} "@unexec rmdir ${FONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/share/fonts 2>/dev/null || true" >> ${TMPPLIST}
+

@@ -1,8 +1,2 @@
-share/fonts/TrueType/moe_kai.ttf
-share/fonts/TrueType/moe_kai_pc.ttf
-share/fonts/TrueType/moe_lishu.ttf
-share/fonts/TrueType/moe_sung.ttf
-share/fonts/TrueType/moe_sungext.ttf
-share/fonts/TrueType/moe_sungsym.ttf
-@unexec rmdir %D/share/fonts/TrueType 2>/dev/null || true
-@unexec rmdir %D/share/fonts 2>/dev/null || true
+@exec sed -e "s/ ° ê ¦ r ¼ Ð · Ç § º Å é/twmoe_sung/g" -e "s/ t w m o e _ k a i/twmoe_kai/g" %%X11BASE%%/%%XFONTSDIR%%/fonts.dir > %%X11BASE%%/%%XFONTSDIR%%/fonts.dir.tmp && mv %%X11BASE%%/%%XFONTSDIR%%/fonts.dir.tmp %%X11BASE%%/%%XFONTSDIR%%/fonts.dir
+@exec sed -e "s/ ° ê ¦ r ¼ Ð · Ç § º Å é/twmoe_sung/g" -e "s/ t w m o e _ k a i/twmoe_kai/g" %%X11BASE%%/%%XFONTSDIR%%/fonts.alias > %%X11BASE%%/%%XFONTSDIR%%/fonts.alias.tmp && mv %%X11BASE%%/%%XFONTSDIR%%/fonts.alias.tmp %%X11BASE%%/%%XFONTSDIR%%/fonts.alias

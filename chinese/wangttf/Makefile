@@ -24,30 +24,22 @@ EXTRACT_ONLY=
 MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 COMMENT=	Many Chinese Big5 TrueType fonts, made by Dr. Hann-Tzong Wang
 
-BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig \
-		ttfm.sh:${PORTSDIR}/chinese/ttfm
-RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig \
-		ttfm.sh:${PORTSDIR}/chinese/ttfm
-
 DIST_SUBDIR=	zh-wangttf
-USE_BZIP2=	yes
-USE_XLIB=	yes
 NO_BUILD=	yes
-SHAREMODE=	644
-FONTDIR=	${PREFIX}/share/fonts/TrueType
-XFONTDIR=	${X11BASE}/lib/X11/fonts/TrueType
 
-.include <bsd.port.pre.mk>
+TTF=		${DISTFILES}
+PORTDOCS=	wangttf.txt
 
 do-install:
-	@${MKDIR} ${FONTDIR}
-	@${ECHO_MSG} "===> Running ttfm.sh"
-.for i in ${DISTFILES}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${i} ${FONTDIR}
-	-@${LOCALBASE}/bin/ttfm.sh --add xttfm ${i}
+	@${MKDIR} ${FONTSDIR}
+.for i in ${TTF}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${i} ${FONTSDIR}
 .endfor
-	@${ECHO_MSG} "===> Running fc-cache"
-	-@${X11BASE}/bin/fc-cache -f -v ${XFONTDIR}
-	@${INSTALL_DATA} ${FILESDIR}/wangttf.txt ${FONTDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/${PORTDOCS} ${DOCSDIR}
+.endif
 
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
 .include <bsd.port.post.mk>

@@ -1,10 +1,5 @@
 bin/ttfinfo
 bin/ttfm.sh
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/USAGE
 %%DATADIR%%/gscjk.ttfm
 %%DATADIR%%/xttfm.ttfm
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/fonts/TrueType 2>/dev/null || true
-@unexec rmdir %D/share/fonts 2>/dev/null || true

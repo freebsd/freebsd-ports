@@ -21,55 +21,44 @@ MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 COMMENT=	Three Chinese BIG5 TrueType fonts: Kai LiShu Sung SungExt
 
 EXTRACT_DEPENDS=unrar:${PORTSDIR}/archivers/unrar
-RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm
 
-USE_XLIB=	yes
 DIST_SUBDIR=	zh-moettf
 
 NO_CDROM=	"Contact Taiwan's Ministry of Education for commercial use."
 NO_BUILD=	yes
-SHAREMODE=	644
-FONTDIR=	${PREFIX}/share/fonts/TrueType
-XFONTDIR=	${X11BASE}/lib/X11/fonts/TrueType
+NO_WRKSUBDIR=	yes
 
-OPTIONS=	CJK "CJK support" off \
-		GS "Ghostscript support" off \
-		X "X Window support" on \
-		DEFAULT "set MOETTF the default font" off
-
-.include <bsd.port.pre.mk>
-
-INSTALL_ENV=	PKG_PREFIX=${PREFIX} \
-		DEFAULT=${WITH_DEFAULT} WANT_CJK=${WITH_CJK} \
-		WANT_GS=${WITH_GS} WITHOUT_X=${WITHOUT_X}
-
-.if defined(WITH_CJK)
-RUN_DEPENDS+=	bg5latex:${PORTSDIR}/chinese/CJK
-.endif
-.if defined(WITH_GS)
-RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
-.endif
+TTF_DEFAULT=	moe_sung.ttf
+TTF_DEFAULTKAI=	moe_kai.ttf
+TTF=		moe_lishu.ttf moe_kai.ttf moe_sung.ttf moe_sungext.ttf moe_sungsym.ttf
 
 do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@unrar x ${DISTDIR}/${DIST_SUBDIR}/edustd-15.exe ${WRKDIR}
-	@${MV} ${WRKDIR}/Edustd-15.TTF ${WRKDIR}/moe_lishu.ttf
-	@unrar x ${DISTDIR}/${DIST_SUBDIR}/edustds1.exe ${WRKDIR}
-	@${MV} ${WRKDIR}/edustds1.ttf ${WRKDIR}/moe_sungext.ttf
-	@unrar x ${DISTDIR}/${DIST_SUBDIR}/edustds2.exe ${WRKDIR}
-	@${MV} ${WRKDIR}/edustds2.ttf ${WRKDIR}/moe_sungsym.ttf
+	@${MKDIR} ${WRKSRC}
+	@unrar x ${DISTDIR}/${DIST_SUBDIR}/edustd-15.exe ${WRKSRC}
+	@${MV} ${WRKSRC}/Edustd-15.TTF ${WRKSRC}/moe_lishu.ttf
+	@unrar x ${DISTDIR}/${DIST_SUBDIR}/edustds1.exe ${WRKSRC}
+	@${MV} ${WRKSRC}/edustds1.ttf ${WRKSRC}/moe_sungext.ttf
+	@unrar x ${DISTDIR}/${DIST_SUBDIR}/edustds2.exe ${WRKSRC}
+	@${MV} ${WRKSRC}/edustds2.ttf ${WRKSRC}/moe_sungsym.ttf
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/moe_kai.ttf ${WRKSRC}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/moe_sung.ttf ${WRKSRC}
 
 do-install:
-.if !exists(${FONTDIR})
-	@${MKDIR} ${FONTDIR}
-.endif
-	@${INSTALL_DATA} ${WRKDIR}/moe_lishu.ttf ${FONTDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/moe_kai.ttf ${FONTDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/kai-pc.ttf ${FONTDIR}/moe_kai_pc.ttf
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/moe_sung.ttf ${FONTDIR}
-	@${INSTALL_DATA} ${WRKDIR}/moe_sungext.ttf ${FONTDIR}
-	@${INSTALL_DATA} ${WRKDIR}/moe_sungsym.ttf ${FONTDIR}
-	@${SETENV} ${INSTALL_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${MKDIR} ${FONTSDIR}
+.for ttf in ${TTF}
+	${INSTALL_DATA} ${WRKSRC}/${ttf} ${FONTSDIR}
+.endfor
 
+post-install:
+.if !defined(WITHOUT_X11)
+.for f in fonts.dir fonts.alias
+	${SED} -e "s/ t w m o e _ k a i/twmoe_kai/g" \
+		-e "s/ ° ê ¦ r ¼ Ð · Ç § º Å é/twmoe_sung/g" \
+		${XFONTSDIR}/${f} > ${XFONTSDIR}/${f}.$$ && \
+		${MV} ${XFONTSDIR}/${f}.$$ ${XFONTSDIR}/${f}
+.endfor
+.endif
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
 .include <bsd.port.post.mk>

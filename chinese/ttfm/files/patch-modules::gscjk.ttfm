@@ -1,0 +1,23 @@
+--- modules/gscjk.ttfm.orig	Wed Sep 24 17:51:46 2003
++++ modules/gscjk.ttfm	Sat Feb 19 09:14:28 2005
+@@ -148,9 +148,8 @@
+ remove_fonts()
+ {
+     for f in "$@"; do
+-        targetname=`basename $f`
+-
+-        rm -f ${CJKCIDPath}/${targetname} ${CJKFontPath}/${targetname}*
++        guess_ttf_info "$f"
++        rm -f ${CJKCIDPath}/${TTF_ALIAS}* ${CJKFontPath}/${TTF_ALIAS}*
+     done
+ }
+ 
+@@ -236,7 +235,7 @@
+ #    else
+ #        TTF_ALIAS=${TTFINFO_FOUNDRY_NAME}"`echo $TTFINFO_FONT_NAME |sed -e "s/ //g"`"
+ #    fi
+-    TTF_ALIAS=$TTFINFO_FONT_PSNAME
++    TTF_ALIAS=`echo $TTFINFO_FONT_PSNAME | sed -e "s/ //g"`
+ 
+ #    case "$fontweight" in
+ #    'bold')
