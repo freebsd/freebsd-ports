@@ -14,10 +14,7 @@ MASTER_SITE_SUBDIR= ${PORTNAME}
 
 MAINTAINER=	ports@freebsd.org
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
 GNU_CONFIGURE=	yes
-
 USE_GMAKE=	yes
 
 MAN1=		gengetopt.1
