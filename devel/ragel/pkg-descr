@@ -10,4 +10,4 @@ precisely the way you describe to Ragel how to compile your finite state
 machines. Ragel also understands operators that insert function calls into
 machines and operators that control any non-determinism in machines.
 
-WWW: http://www.essemage.com/ragel/
+WWW: http://www.elude.ca/ragel/
