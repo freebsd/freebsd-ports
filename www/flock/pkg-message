@@ -1,0 +1,37 @@
+======================================================================
+As of version 0.4_4, this port appears to be stable. It will work with
+either of the port versions of perl, provided you do "use.perl port".
+It may work with the base system version of perl; I (AlanE) have not
+tested this.
+
+NOTE: if you use the lang/perl5.8 port, please remove the File::Spec
+package with the command "pkg_deinstall -f p5-File-Spec". If you are
+updating to the 5.8 version of perl, please do this *first*.
+
+Any bug reports should be addressed to the maintainers at:
+	phoenix@geeksrus.net
+You may also Cc: freebsd-ports@freebsd.org. Please do not send
+bug reports to any other addresses. 
+
+Please include the following information with any bug report:
+
+1. Date/time stamp from www/phoenix/Makefile.
+2. Perl version used (/usr/bin/perl --version).
+3. If a port, did you do "use.perl port"? If no, why didn't you
+   follow the instructions provided?
+4. If perl 5.8, did you remove the p5-File-Spec port? If no, why
+   didn't you follow the instructions provided?
+5. Where/when did the problem occur: configuring, building, or
+   running phoenix?
+6. Can you reproduce the problem? If so, how? If not, why do you
+   think we can fix it?
+7. If you just have a philosophical difference of opinion with how
+   this port is set up, without any factual basis, why are you
+   bothering us with it? I (AlanE) have other PRs to attend to, and
+   Trevor has work to do as well.
+
+Thank you for your help in testing and report bugs, and we hope you
+enjoy using Phoenix.
+The Maintainers (alane@ & trevor@)
+======================================================================
+
