@@ -10,7 +10,10 @@ PORTVERSION=	1.3.5
 PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://sunfreeware.risq.qc.ca/SOURCES/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/solaris-freeware/SOURCES/
+		ftp://sunsite.cnlab-switch.ch/mirror/solaris-freeware/SOURCES/ \
+		ftp://ftp.ibiblio.org/pub/packages/solaris/freeware/SOURCES/ \
+		ftp://sunsite.belnet.be/mirror/ftp.sunfreeware.com/pub/freeware/SOURCES/ \
+		ftp://planetmirror.com/pub/sunfreeware/SOURCES/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	cyrille.lefevre@laposte.net
