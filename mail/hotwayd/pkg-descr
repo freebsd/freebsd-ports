@@ -3,8 +3,4 @@ servers such as Hotmail.  The software acts as a proxy mail server, allowing
 you to access e-mail on Hotmail and similar servers using standard POP3 mail
 clients.
 
-Starting with version 0.8, the port also includes hotsmtpd which can be used
-for sending e-mail through Hotmail and similar servers with standard SMTP
-mail clients.
-
 WWW: http://hotwayd.sourceforge.net
