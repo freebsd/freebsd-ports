@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ORBit
-PORTVERSION=	0.5.16
+PORTVERSION=	0.5.17
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/ORBit
@@ -22,7 +22,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GLIB=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	configure popt/configure libIDL/configure
 CONFIGURE_ARGS= --disable-indent
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
