@@ -1,0 +1,33 @@
+bin/prokyon3
+share/prokyon3/images/action_append.png
+share/prokyon3/images/action_connect.png
+share/prokyon3/images/action_createdb.png
+share/prokyon3/images/action_discard.png
+share/prokyon3/images/action_disconnect.png
+share/prokyon3/images/action_quit.png
+share/prokyon3/images/action_readtags.png
+share/prokyon3/images/action_remove.png
+share/prokyon3/images/action_settings.png
+share/prokyon3/images/action_switchbottom.png
+share/prokyon3/images/action_switchleft.png
+share/prokyon3/images/action_switchright.png
+share/prokyon3/images/action_synchronize.png
+share/prokyon3/images/action_updateonly.png
+share/prokyon3/images/action_writetags.png
+share/prokyon3/images/action_xmms.png
+share/prokyon3/images/help.png
+share/prokyon3/images/lvi_album.png
+share/prokyon3/images/lvi_artist.png
+share/prokyon3/images/lvi_artist_favourite.png
+share/prokyon3/images/lvi_cdrom.png
+share/prokyon3/images/lvi_changed.png
+share/prokyon3/images/lvi_hdd.png
+share/prokyon3/images/lvi_nfs.png
+share/prokyon3/images/lvi_playlist.png
+share/prokyon3/images/lvi_smb.png
+share/prokyon3/images/madsmiley.png
+share/prokyon3/images/pink_marble.png
+share/prokyon3/images/smiley.png
+share/prokyon3/images/splash4.png
+@dirrm share/prokyon3/images
+@dirrm share/prokyon3
