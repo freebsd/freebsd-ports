@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	allegro
-PORTVERSION=	4.1.4
+PORTVERSION=	4.1.12
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	alleg
@@ -18,16 +18,19 @@ USE_XLIB=	yes
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	213
+USE_AUTOCONF_VER=	253
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -DHAVE_LIBPTHREAD" \
 		LDFLAGS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-vga=no
 MAKEFILE=	makefile
+ALL_TARGET=	full-build
 INSTALLS_SHLIB=	yes
 
 SHLIB_VER=	41
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 DEMO=		demo.c demo.dat demo.h music.txt ../readme.txt
+
+INFO=		allegro
 
 .include <bsd.port.pre.mk>
 
@@ -38,6 +41,17 @@ PLIST_SUB+=	ESOUND=""
 .else
 CONFIGURE_ARGS+=	--enable-esddigi=no
 PLIST_SUB+=	ESOUND="@comment "
+.endif
+
+.if exists(${LOCALBASE}/lib/libartsc.so.0)
+WITH_ARTS=	yes
+.endif
+.if defined(WITH_ARTS)
+LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+PLIST_SUB+=	ARTS=""
+.else
+CONFIGURE_ARGS+=	--disable-artsdigi
+PLIST_SUB+=	ARTS="@comment "
 .endif
 
 .if defined(WITHOUT_DEVEL)

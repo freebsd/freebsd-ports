@@ -7,6 +7,7 @@ MAN3=	\
 	DATAFILE.3 \
 	DIALOG.3 \
 	DIALOG_PLAYER.3 \
+	END_OF_MAIN.3 \
 	FONT.3 \
 	GFX_MODE.3 \
 	GFX_MODE_LIST.3 \
@@ -22,6 +23,7 @@ MAN3=	\
 	MATRIX.3 \
 	MATRIX_f.3 \
 	MENU.3 \
+	MENU_PLAYER.3 \
 	MIDI.3 \
 	PACKFILE.3 \
 	PALETTE.3 \
@@ -76,18 +78,15 @@ MAN3=	\
 	bitmap_mask_color.3 \
 	black_palette.3 \
 	blit.3 \
-	bmp_read_line.3 \
-	bmp_unwrite_line.3 \
-	bmp_write_line.3 \
 	broadcast_dialog_message.3 \
 	calc_spline.3 \
 	calibrate_joystick.3 \
 	calibrate_joystick_name.3 \
+	canonicalize_filename.3 \
 	centre_dialog.3 \
 	check_cpu.3 \
 	circle.3 \
 	circlefill.3 \
-	clear.3 \
 	clear_bitmap.3 \
 	clear_keybuf.3 \
 	clear_scene.3 \
@@ -164,7 +163,6 @@ MAN3=	\
 	do_uconvert.3 \
 	dot_product.3 \
 	dot_product_f.3 \
-	draw_character.3 \
 	draw_character_ex.3 \
 	draw_compiled_sprite.3 \
 	draw_gouraud_sprite.3 \
@@ -182,7 +180,54 @@ MAN3=	\
 	ellipsefill.3 \
 	empty_string.3 \
 	enable_triple_buffer.3 \
+	ex12bit.3 \
+	ex3buf.3 \
+	ex3d.3 \
+	exaccel.3 \
+	exalpha.3 \
+	exbitmap.3 \
+	exblend.3 \
+	excamera.3 \
+	excolmap.3 \
+	exconfig.3 \
+	excustom.3 \
+	exdata.3 \
+	exdbuf.3 \
+	exdodgy.3 \
+	exexedat.3 \
+	exfixed.3 \
+	exflame.3 \
+	exflip.3 \
+	exgui.3 \
+	exhello.3 \
 	exists.3 \
+	exjoy.3 \
+	exkeys.3 \
+	exlights.3 \
+	exmem.3 \
+	exmidi.3 \
+	exmouse.3 \
+	expal.3 \
+	expat.3 \
+	exquat.3 \
+	exrgbhsv.3 \
+	exsample.3 \
+	exscale.3 \
+	exscn3d.3 \
+	exscroll.3 \
+	exshade.3 \
+	exspline.3 \
+	exsprite.3 \
+	exstars.3 \
+	exstream.3 \
+	exswitch.3 \
+	extimer.3 \
+	extrans.3 \
+	extruec.3 \
+	exunicod.3 \
+	exupdate.3 \
+	exxfade.3 \
+	exzbuf.3 \
 	fade_from.3 \
 	fade_from_range.3 \
 	fade_in.3 \
@@ -191,7 +236,6 @@ MAN3=	\
 	fade_out.3 \
 	fade_out_range.3 \
 	file_exists.3 \
-	file_select.3 \
 	file_select_ex.3 \
 	file_size.3 \
 	file_time.3 \
@@ -199,7 +243,6 @@ MAN3=	\
 	find_datafile_object.3 \
 	find_dialog_focus.3 \
 	fix_filename_case.3 \
-	fix_filename_path.3 \
 	fix_filename_slashes.3 \
 	fixacos.3 \
 	fixadd.3 \
@@ -232,7 +275,7 @@ MAN3=	\
 	floodfill.3 \
 	flush_config_file.3 \
 	font.3 \
-	for_each_file.3 \
+	for_each_file_ex.3 \
 	free_audio_stream_buffer.3 \
 	freeze_mouse_flag.3 \
 	ftofix.3 \
@@ -244,6 +287,8 @@ MAN3=	\
 	get_camera_matrix.3 \
 	get_camera_matrix_f.3 \
 	get_color.3 \
+	get_color_conversion.3 \
+	get_color_depth.3 \
 	get_compiled_sprite.3 \
 	get_config_argv.3 \
 	get_config_float.3 \
@@ -318,6 +363,7 @@ MAN3=	\
 	gfx_capabilities.3 \
 	gfx_mode_select.3 \
 	gfx_mode_select_ex.3 \
+	gfx_mode_select_filter.3 \
 	gui_bg_color.3 \
 	gui_button_proc.3 \
 	gui_ctext_proc.3 \
@@ -336,7 +382,6 @@ MAN3=	\
 	gui_shadow_box_proc.3 \
 	gui_strlen.3 \
 	gui_text_list_proc.3 \
-	gui_textout.3 \
 	gui_textout_ex.3 \
 	hline.3 \
 	hook_config_section.3 \
@@ -345,6 +390,7 @@ MAN3=	\
 	identity_matrix_f.3 \
 	identity_quat.3 \
 	init_dialog.3 \
+	init_menu.3 \
 	initialise_joystick.3 \
 	install_allegro.3 \
 	install_int.3 \
@@ -361,6 +407,7 @@ MAN3=	\
 	is_linear_bitmap.3 \
 	is_memory_bitmap.3 \
 	is_planar_bitmap.3 \
+	is_relative_filename.3 \
 	is_same_bitmap.3 \
 	is_screen_bitmap.3 \
 	is_sub_bitmap.3 \
@@ -395,6 +442,8 @@ MAN3=	\
 	lock_bitmap.3 \
 	lock_midi.3 \
 	lock_sample.3 \
+	make_absolute_filename.3 \
+	make_relative_filename.3 \
 	makeacol.3 \
 	makeacol32.3 \
 	makeacol_depth.3 \
@@ -575,6 +624,7 @@ MAN3=	\
 	set_blender_mode_ex.3 \
 	set_burn_blender.3 \
 	set_clip.3 \
+	set_close_button_callback.3 \
 	set_color.3 \
 	set_color_blender.3 \
 	set_color_conversion.3 \
@@ -614,14 +664,13 @@ MAN3=	\
 	set_uformat.3 \
 	set_volume.3 \
 	set_volume_per_voice.3 \
-	set_window_close_button.3 \
-	set_window_close_hook.3 \
 	set_window_title.3 \
 	set_write_alpha_blender.3 \
 	set_zbuffer.3 \
 	show_mouse.3 \
 	show_video_bitmap.3 \
 	shutdown_dialog.3 \
+	shutdown_menu.3 \
 	simulate_keypress.3 \
 	simulate_ukeypress.3 \
 	solid_mode.3 \
@@ -635,22 +684,13 @@ MAN3=	\
 	stretch_sprite.3 \
 	text_height.3 \
 	text_length.3 \
-	text_mode.3 \
-	textout.3 \
-	textout_centre.3 \
 	textout_centre_ex.3 \
 	textout_ex.3 \
-	textout_justify.3 \
 	textout_justify_ex.3 \
-	textout_right.3 \
 	textout_right_ex.3 \
-	textprintf.3 \
-	textprintf_centre.3 \
 	textprintf_centre_ex.3 \
 	textprintf_ex.3 \
-	textprintf_justify.3 \
 	textprintf_justify_ex.3 \
-	textprintf_right.3 \
 	textprintf_right_ex.3 \
 	three_finger_flag.3 \
 	timer_can_simulate_retrace.3 \
@@ -679,6 +719,7 @@ MAN3=	\
 	unselect_palette.3 \
 	uoffset.3 \
 	update_dialog.3 \
+	update_menu.3 \
 	ureadkey.3 \
 	uremove.3 \
 	usetat.3 \

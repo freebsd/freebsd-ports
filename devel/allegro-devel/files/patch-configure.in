@@ -1,22 +1,6 @@
---- configure.in.orig	Wed Oct 23 08:08:26 2002
-+++ configure.in	Sun Nov 10 00:24:54 2002
-@@ -183,12 +183,12 @@
-     TARGET_ARCH=
-   fi
-   if test "X$allegro_cv_support_fomit_frame_pointer" = "Xyes"; then
--    CFLAGS="$TARGET_ARCH -O2 -funroll-loops -ffast-math -fomit-frame-pointer $WFLAGS"
-+    CFLAGS="$TARGET_ARCH $CFLAGS -funroll-loops -ffast-math -fomit-frame-pointer $WFLAGS"
-   else
--    CFLAGS="$TARGET_ARCH -O2 -funroll-loops -ffast-math $WFLAGS"
-+    CFLAGS="$TARGET_ARCH $CFLAGS -funroll-loops -ffast-math $WFLAGS"
-   fi
-   ALLEGRO_DEBUG_CFLAGS="-g $WFLAGS -DDEBUGMODE"
--  ALLEGRO_PROFILE_CFLAGS="-pg $TARGET_ARCH -O2 -funroll-loops -ffast-math $WFLAGS"
-+  ALLEGRO_PROFILE_CFLAGS="-pg $TARGET_ARCH $CFLAGS -funroll-loops -ffast-math $WFLAGS"
-   if test "X$allegro_cv_can_use_pipe" = "Xyes"; then
-     CFLAGS="-pipe $CFLAGS"
-     ALLEGRO_DEBUG_CFLAGS="-pipe $ALLEGRO_DEBUG_CFLAGS"
-@@ -245,8 +245,8 @@
+--- configure.in.orig	Sun Nov  9 19:43:06 2003
++++ configure.in	Thu Dec 11 22:22:35 2003
+@@ -256,8 +256,8 @@
    LINK_WITH_STATIC_LIBS=yes
    allegro_static_libraries=yes
  else
@@ -27,7 +11,7 @@
    LINK_WITH_STATIC_LIBS=no
    allegro_shared_libraries=yes
  fi
-@@ -273,13 +273,13 @@
+@@ -286,13 +286,13 @@
  fi
  if test "X$allegro_shared_libraries" = "Xyes"; then
    if test "X$allegro_build_normal_library" = "Xyes"; then
@@ -44,12 +28,27 @@
    fi
  fi
  AC_SUBST(ALLEGRO_LIB_TARGETS)
-@@ -550,7 +550,7 @@
+@@ -647,11 +647,11 @@
+   if test "X$allegro_debug_with_fortify" = "Xyes"; then
+      ALLEGRO_DEBUG_CFLAGS="$ALLEGRO_DEBUG_CFLAGS -DFORTIFY"
+   fi
+-  ALLEGRO_PROFILE_CFLAGS="$CFLAGS -pg $TARGET_ARCH -O2 -funroll-loops -ffast-math $WFLAGS"
++  ALLEGRO_PROFILE_CFLAGS="$CFLAGS -pg $TARGET_ARCH -funroll-loops -ffast-math $WFLAGS"
+   if test "X$allegro_cv_support_fomit_frame_pointer" = "Xyes"; then
+-    CFLAGS="$CFLAGS $TARGET_ARCH -O2 -funroll-loops -ffast-math -fomit-frame-pointer $WFLAGS"
++    CFLAGS="$CFLAGS $TARGET_ARCH $CFLAGS -funroll-loops -ffast-math -fomit-frame-pointer $WFLAGS"
+   else
+-    CFLAGS="$CFLAGS $TARGET_ARCH -O2 -funroll-loops -ffast-math $WFLAGS"
++    CFLAGS="$CFLAGS $TARGET_ARCH $CFLAGS -funroll-loops -ffast-math $WFLAGS"
+   fi
+   ALLEGRO_SFLAGS="-x assembler-with-cpp"
+   ALLEGRO_SHAREDLIB_CFLAGS="-fPIC -DALLEGRO_SHARED"
+@@ -740,7 +740,7 @@
      ${MAKE-make} depend
    else
      AC_MSG_WARN([Non-GNU make detected, trying gmake to build dependencies.])
 -    gmake depend
 +    ${MAKE-make} depend
-     AC_MSG_WARN([You need to use GNU make to build Allegro.])
-     AC_MSG_WARN([This might be called gmake on your system.])
    fi
+ fi
+ 
