@@ -70,6 +70,7 @@
     SUBDIR += ethereal
     SUBDIR += everybuddy
     SUBDIR += fidelio
+    SUBDIR += firetalk
     SUBDIR += flow-tools
     SUBDIR += fping
     SUBDIR += freewais-sf

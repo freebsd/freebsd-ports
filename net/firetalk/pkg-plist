@@ -1,0 +1,8 @@
+bin/firetalk
+include/firetalk/firetalk-int.h
+include/firetalk/firetalk.h
+include/firetalk/icqv5.h
+include/firetalk/irc.h
+include/firetalk/toc.h
+lib/libfiretalk.a
+@dirrm include/firetalk

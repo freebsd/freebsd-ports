@@ -1,0 +1,18 @@
+--- Makefile.orig	Sat Jan  6 13:50:16 2001
++++ Makefile	Sat Jan  6 13:53:06 2001
+@@ -1,5 +1,5 @@
+ OBJECTS = firetalk.o icqv5.o irc.o toc.o
+-MYFLAGS = -Wall -ansi -pedantic-errors -g
++MYFLAGS = -Wall
+ 
+ all: firetalk
+ 
+@@ -27,7 +27,7 @@
+ 	gcc $(CFLAGS) $(MYFLAGS) -c webchat.c
+ 
+ firetalk: libfiretalk.a gui.o Makefile
+-	gcc $(CFLAGS) $(MYFLAGS) -lcurses -lnsl -lresolv -o firetalk gui.o libfiretalk.a
++	gcc $(CFLAGS) $(MYFLAGS) -lcurses -o firetalk gui.o libfiretalk.a
+ 
+ clean:
+ 	rm -f *.o *.a firetalk

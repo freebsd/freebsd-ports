@@ -1,0 +1,10 @@
+--- irc.c.orig	Sat Jan  6 13:52:16 2001
++++ irc.c	Sat Jan  6 13:52:27 2001
+@@ -16,6 +16,7 @@
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+ #define _GNU_SOURCE
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <stdlib.h>
+ #include <stdarg.h>
