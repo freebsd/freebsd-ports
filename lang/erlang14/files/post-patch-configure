@@ -1,0 +1,10 @@
+--- configure.orig	Fri Dec  7 16:13:39 2001
++++ configure	Fri Dec  7 16:19:33 2001
+@@ -1081,6 +1081,7 @@
+       *) # Relative path.
+         ac_sub_cache_file="$ac_dots$cache_file" ;;
+       esac
++  ac_given_INSTALL="$INSTALL"
+   case "$ac_given_INSTALL" in
+         [/$]*) INSTALL="$ac_given_INSTALL" ;;
+         *) INSTALL="$ac_dots$ac_given_INSTALL" ;;

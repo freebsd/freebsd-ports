@@ -1,6 +1,5 @@
 bin/erl
 bin/erlc
-lib/erlang/man/windex
 @comment Insert PLIST.lib-erlang here
 @comment -=[ begin PLIST.lib-erlang ]=-
 @comment -=[ end PLIST.lib-erlang ]=-
