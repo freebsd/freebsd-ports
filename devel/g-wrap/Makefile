@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	g-wrap
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.gnucash.org/pub/g-wrap/source/
 
