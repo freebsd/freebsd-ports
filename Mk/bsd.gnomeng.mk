@@ -175,7 +175,7 @@ glibwww_USE_GNOME_IMPL=	gnomelibs
 
 gtkhtml_LIB_DEPENDS=	gtkhtml.21:${PORTSDIR}/www/gtkhtml
 gtkhtml_DETECT=		${X11BASE}/etc/gtkhtmlConf.sh
-gtkhtml_USE_GNOME_IMPL=	glibwww gal ghttp libcapplet
+gtkhtml_USE_GNOME_IMPL=	glibwww gal libghttp libcapplet
 
 libpanel_LIB_DEPENDS=	panel_applet.5:${PORTSDIR}/x11/libpanel
 libpanel_DETECT=	${X11BASE}/etc/appletsConf.sh
