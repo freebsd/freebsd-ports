@@ -4650,6 +4650,7 @@ ncplib		ports/net/ncplib
 ncplist		src/usr.bin/ncplist
 ncplogin	src/usr.bin/ncplogin
 ncrcontrol	src/usr.sbin/ncrcontrol
+ncurses		ports/devel/ncurses
 nd		ports/www/nd
 ndc		src/usr.sbin/ndc
 ndir		ports/sysutils/ndir

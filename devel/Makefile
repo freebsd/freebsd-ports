@@ -375,6 +375,7 @@
     SUBDIR += msrc0
     SUBDIR += nana
     SUBDIR += nasm
+    SUBDIR += ncurses
     SUBDIR += newt
     SUBDIR += ngpt
     SUBDIR += noweb
