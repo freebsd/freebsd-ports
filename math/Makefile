@@ -168,6 +168,7 @@
     SUBDIR += p5-Statistics-Descriptive
     SUBDIR += p5-Statistics-Distributions
     SUBDIR += p5-Statistics-LTU
+    SUBDIR += p5-Statistics-Lite
     SUBDIR += p5-Statistics-OLS
     SUBDIR += p5-Statistics-Table-F
     SUBDIR += pari

@@ -1,0 +1,8 @@
+The Statistics::Lite module is a lightweight, functional alternative
+to larger, more complete, object-oriented statistics packages.
+As such, it is likely to be better suited, in general, to smaller
+data sets.
+
+WWW: http://search.cpan.org/dist/Statistics-Lite
+
+Author: Brian Lalonde <brian@webcoder.info>
