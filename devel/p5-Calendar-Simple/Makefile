@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Calendar-Simple
-PORTVERSION=	1.08
+PORTVERSION=	1.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Calendar
@@ -15,9 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to create simple calendars
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod
-
-PERL_CONFIGURE=	YES
+PERL_MODBUILD=	yes
 
 MAN3=		Calendar::Simple.3
 
