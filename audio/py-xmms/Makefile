@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	xmms
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.via.ecp.fr/~flo/2002/PyXMMS/dist/ \
 		http://www3.kr.freebsd.org/~perky/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyXMMS-${PORTVERSION}
+DISTNAME=	pyxmms-${PORTVERSION}
 
 MAINTAINER=	perky@fallin.lv
 
