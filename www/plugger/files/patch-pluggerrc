@@ -55,7 +55,7 @@
  text/pdf: pdf: PDF file
  text/x-pdf: pdf: PDF file
 -	repeat swallow(documentShell) fill: acroread -geometry +9000+9000 -xrm '*userFrontEndProgram: FALSE' "$file"
-+	repeat swallow(documentShell) fill: acroread4 -geometry +9000+9000 -xrm '*userFrontEndProgram: FALSE' "$file"
++	repeat swallow(documentShell) fill: acroread5 -geometry +9000+9000 -xrm '*userFrontEndProgram: FALSE' "$file"
  	repeat swallow(gv) fill: gv -safer -quiet -antialias -geometry +9000+9000 "$file" 2>/dev/null
  	repeat swallow(xpdf) fill: xpdf -g +9000+9000 -err "$file"
  

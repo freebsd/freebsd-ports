@@ -7,12 +7,13 @@
 
 PORTNAME=	plugger
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	www audio graphics
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/ \
 		ftp://ftp.netscape.com/pub/sdk/plugin/unix/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} unix-sdk-3.0b5.tar.Z
 
-MAINTAINER=	jmcoopr@webmail.bmi.net
+MAINTAINER=	coop9211@uidaho.edu
 
 RUN_DEPENDS=	${X11BASE}/bin/mozilla:${PORTSDIR}/www/mozilla \
 		${X11BASE}/bin/xanim:${PORTSDIR}/graphics/xanim \
@@ -26,9 +27,10 @@ RUN_DEPENDS=	${X11BASE}/bin/mozilla:${PORTSDIR}/www/mozilla \
 		${X11BASE}/bin/gv:${PORTSDIR}/print/gv \
 		${X11BASE}/bin/abiword:${PORTSDIR}/editors/AbiWord \
 		${X11BASE}/bin/gnumeric:${PORTSDIR}/math/gnumeric \
-		${LOCALBASE}/bin/acroread4:${PORTSDIR}/print/acroread4
+		${LOCALBASE}/bin/acroread5:${PORTSDIR}/print/acroread5
 
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 
 MAN7=		plugger.7
 MANCOMPRESSED=	no
@@ -66,6 +68,8 @@ post-patch:
 	@${SED} \
 	  -e 's#/usr/local/#${PREFIX}/#' \
 	  ${WRKSRC}/plugger.c.orig > ${WRKSRC}/plugger.c
+# CC safeness
+	@${REINPLACE_CMD} -e 's|CC=gcc|CC=${CC}|' ${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/plugger-${PORTVERSION} \
