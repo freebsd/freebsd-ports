@@ -3,7 +3,7 @@
 # Date created:		12 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.9 1996/11/18 09:54:57 asami Exp $
+# $Id: Makefile,v 1.10 1997/12/25 22:29:46 asami Exp $
 #
 
 DISTNAME=	xsysstats1.34
@@ -12,7 +12,7 @@ CATEGORIES=	sysutils x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	obrien@FreeBSD.ORG
 
 USE_IMAKE=	yes
 
