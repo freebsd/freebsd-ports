@@ -16,7 +16,6 @@ MAINTAINER=	sobomax@FreeBSD.org
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 
-NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 
 ALL_TARGET=
