@@ -1,50 +1,29 @@
-*** src/support/log_server_status.orig	Tue Mar 31 16:53:50 1998
---- src/support/log_server_status	Tue Apr 21 17:18:10 1998
-***************
-*** 67,76 ****
-  #
-  require 'sys/socket.ph';
-  
-! $wherelog = "/var/log/graph/";  # Logs will be like "/var/log/graph/960312"
-  $server = "localhost";          # Name of server, could be "www.foo.com"
-  $port = "80";                   # Port on server
-! $request = "/status/?auto";     # Request to send
-  
-  sub tcp_connect
-  {
---- 67,76 ----
-  #
-  require 'sys/socket.ph';
-  
-! $wherelog = "/var/log/httpd-status-";  # Logs will be like "/var/log/graph/960312"
-  $server = "localhost";          # Name of server, could be "www.foo.com"
-  $port = "80";                   # Port on server
-! $request = "/server-status/?auto";     # Request to send
-  
-  sub tcp_connect
-  {
-***************
-*** 93,103 ****
-  ### Main
-  
-  {
-! 	$date=`date +%y%m%d:%H%M%S`;
-  	chop($date);
-  	($day,$time)=split(/:/,$date);
-  	$res=&tcp_connect($server,$port);
-! 	open(OUT,">>$wherelog$day");
-  	if ($res) {
-  		print OUT "$time:-1:-1:-1:-1:$res\n";
-  		exit 1;
---- 93,103 ----
-  ### Main
-  
-  {
-! 	$date=`LC_TIME=C date +%y%m%d:%H%M%S`;
-  	chop($date);
-  	($day,$time)=split(/:/,$date);
-  	$res=&tcp_connect($server,$port);
-! 	open(OUT,">>$wherelog$day.log");
-  	if ($res) {
-  		print OUT "$time:-1:-1:-1:-1:$res\n";
-  		exit 1;
+--- src/support/log_server_status.orig	Fri Jan  1 13:05:34 1999
++++ src/support/log_server_status	Mon Jan 18 17:18:16 1999
+@@ -67,10 +67,10 @@
+ #
+ require 'sys/socket.ph';
+ 
+-$wherelog = "/var/log/graph/";  # Logs will be like "/var/log/graph/960312"
++$wherelog = "/var/log/httpd-status-";  # Logs will be like "/var/log/httpd-status-960312"
+ $server = "localhost";          # Name of server, could be "www.foo.com"
+ $port = "80";                   # Port on server
+-$request = "/status/?auto";     # Request to send
++$request = "/server-status/?auto";     # Request to send
+ 
+ sub tcp_connect
+ {
+@@ -93,11 +93,11 @@
+ ### Main
+ 
+ {
+-	$date=`date +%y%m%d:%H%M%S`;
++	$date=`LC_TIME=C date +%y%m%d:%H%M%S`;
+ 	chop($date);
+ 	($day,$time)=split(/:/,$date);
+ 	$res=&tcp_connect($server,$port);
+-	open(OUT,">>$wherelog$day");
++	open(OUT,">>$wherelog$day.log");
+ 	if ($res) {
+ 		print OUT "$time:-1:-1:-1:-1:$res\n";
+ 		exit 1;

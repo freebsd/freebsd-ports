@@ -22,13 +22,18 @@ new_key() {
 # Main
 #
 
+if [ -x PREFIX/libexec/apache/mod_frontpage.so ]
+then
+	MODULES="fp"
+fi
+
 case "$1" in
 
 start)
         if [ -x PREFIX/sbin/apachectl ]
         then
 		new_key
-		PREFIX/sbin/apachectl start && echo -n ' httpd'
+		PREFIX/sbin/apachectl start${MODULES} && echo -n ' httpd'
 	fi
 	;;
 

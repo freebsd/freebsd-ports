@@ -3,31 +3,32 @@
 # Date created:         Sat Oct 31 16:30:00 CDT 1997
 # Whom:                 hetzels@westbend.net
 #
-# $Id: Makefile,v 1.5 1998/11/25 20:49:01 billf Exp $
+# $Id: Makefile,v 1.6 1998/12/02 00:32:38 obrien Exp $
 #
 
-DISTNAME=       apache_1.3.3
-PKGNAME=        apache_fp-1.3.3
+DISTNAME=       apache_${AP_VERS}
+PKGNAME=        apache_fp-${AP_VERS}
 CATEGORIES=	www
 MASTER_SITES=	ftp://www.apache.org/apache/dist/ \
 		ftp://ftp.microsoft.com/products/frontpage/ \
 		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.microsoft.com/Products/frontpage/
+DISTFILES=	${APACHE} ${FRONTPAGE}
 
-PATCH_SITES=    ftp://www.apache.org/apache/dist/patches/apply_to_1.3.3/ \
-		http://www.apache.org/dist/patches/apply_to_1.3.3/
-PATCHFILES=	core_404_log_bug.txt proxy_segv.txt server_error_filename.txt
+MAINTAINER=	hetzels@westbend.net
+
+#PATCH_SITES=    ftp://www.apache.org/apache/dist/patches/apply_to_${AP_VERS}/ \
+#		http://www.apache.org/dist/patches/apply_to_${AP_VERS}/
+#PATCHFILES=
+
 .if defined(PATCH_DEBUG)
 PATCH_DIST_ARGS=       -d ${WRKSRC}/src -E ${PATCH_DIST_STRIP}
 .else
 PATCH_DIST_ARGS=       -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 
-MAINTAINER=	hetzels@westbend.net
-
+AP_VERS=	1.3.4
 APACHE=		${DISTNAME}${EXTRACT_SUFX}
 FRONTPAGE=	fp30.bsdi3.tar.Z
-
-DISTFILES=	${APACHE} ${FRONTPAGE}
 
 EXTRACT_ONLY=	${APACHE}
 
@@ -41,16 +42,19 @@ MOD_FP=		${FILESDIR}/mod_frontpage.c
 
 INSTALL_FILE=${INSTALL} -c -m 555 -o bin -g bin
 
+Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
+
 #
 # Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
 #
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS= \
+		 --prefix=${PREFIX} \
+		 --with-layout=GNU \
 		 --sysconfdir=${PREFIX}/etc/apache \
 		 --includedir=${PREFIX}/include/apache \
-		 --logfiledir=/var/log \
-		 --runtimedir=/var/run \
+		 --localstatedir=/var \
 		 --datadir=${PREFIX}/www \
 		 --proxycachedir=${PREFIX}/www/proxy \
 		 --libexecdir=${PREFIX}/libexec/apache \
@@ -63,7 +67,8 @@ CONFIGURE_ARGS= \
 		 --enable-shared=frontpage
 
 # Currently perl version doesn't matter
-#                 --with-perl=${PERL5}
+USE_PERL5=	 YES
+CONFIGURE_ARGS+= --with-perl=${PERL5}
 
 OPTIM=-DHARD_SERVER_LIMIT=512 \
 -DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
@@ -84,7 +89,10 @@ HTTPD_USER?=www
 USER_DIR?=public_html
 CONFIGURE_ARGS+= --enable-suexec \
 		 --suexec-caller=${HTTPD_USER} \
-		 --suexec-userdir=${USER_DIR}
+		 --suexec-docroot=${PREFIX}/www/data \
+		 --suexec-logfile=/var/log/httpd-suexec.log \
+		 --suexec-userdir=${USER_DIR} \
+		 --suexec-safepath='/bin:/usr/bin:${PREFIX}/bin'
 MAN8+=	suexec.8
 .endif
 
@@ -102,17 +110,18 @@ post-extract:
 	@cd ${WRKSRC} && \
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${FRONTPAGE} ${FPINSTALL} ${CHANGESERVER}
 
-pre-patch:
-	@${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/http_protocol.patch
-
 post-install:
 	@${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh file."
 	@${CAT} ${FILESDIR}/apache.sh.tmpl | \
 		${SED} -e 's;PREFIX;${PREFIX};' -e 's;PERL5;${PERL};' \
 		> ${PREFIX}/etc/rc.d/apache.sh
 	@chmod 751 ${PREFIX}/etc/rc.d/apache.sh
-	@${SH} ${WRKSRC}/${FPINSTALL}
-	@${INSTALL_FILE} ${WRKSRC}/${FPINSTALL} ${PREFIX}/${FPINSTALL}
-	@${INSTALL_FILE} ${WRKSRC}/${CHANGESERVER} ${PREFIX}/${CHANGESERVER}
+	@${CAT} ${WRKSRC}/${FPINSTALL} | \
+		${SED} -e 's;PREFIX;${PREFIX};' > ${WRKDIR}/tmp.fpinstall
+	@${SH} ${WRKDIR}/tmp.fpinstall
+	@${INSTALL_FILE} ${WRKDIR}/tmp.fpinstall ${PREFIX}/${FPINSTALL}
+	@${CAT} ${WRKSRC}/${CHANGESERVER} | \
+		${SED} -e 's;PREFIX;${PREFIX};' > ${WRKDIR}/tmp.changeserver
+	@${INSTALL_FILE} ${WRKDIR}/tmp.changeserver ${PREFIX}/${CHANGESERVER}
 
 .include <bsd.port.mk>
