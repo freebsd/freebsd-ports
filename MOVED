@@ -617,3 +617,5 @@ japanese/tcsh-nls-ruri2||2003-09-28|Port was broken and out of date
 mail/exim-ldap||2003-09-29|Depends on ancient OpenLDAP, which should be retired
 editors/wordperfect||2003-09-29|obsolete, sources pulled from the internet
 sysutils/arson||2003-09-30|unfetchable, maintainer request to remove, 
+www/mozilla-embedded||2003-10-01|was seldom used and broken
+www/mozilla-embedded-devel||2003-10-01|was seldom used and broken
