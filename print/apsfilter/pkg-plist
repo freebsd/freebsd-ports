@@ -3,6 +3,7 @@ apsfilter/bin/apsfilter
 apsfilter/bin/setup_dvips.sh
 apsfilter/filter/.keep_me
 apsfilter/global/GLOBAL.sh
+apsfilter/lib/redir_gs_msg.ps
 apsfilter/setup/README
 apsfilter/setup/compile
 apsfilter/setup/devices.txt
@@ -27,6 +28,7 @@ share/doc/apsfilter/readme.hp8
 @dirrm apsfilter/bin
 @dirrm apsfilter/filter
 @dirrm apsfilter/global
+@dirrm apsfilter/lib
 @dirrm apsfilter/setup
 @dirrm apsfilter/template
 @dirrm apsfilter
