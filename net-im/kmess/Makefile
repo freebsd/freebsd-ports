@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	perky@FreeBSD.org
 
+BROKEN=		"Does not compile"
+
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 

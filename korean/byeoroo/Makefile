@@ -13,6 +13,8 @@ MASTER_SITES=	http://master.debian.or.kr/~cwryu/archive/byeoroo/
 
 MAINTAINER=	cjh@FreeBSD.org
 
+BROKEN=		"Does not compile"
+
 RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/local/johabm16.pcf.gz:${PORTSDIR}/korean/johabfonts \
 		${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 
