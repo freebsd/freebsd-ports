@@ -1,0 +1,11 @@
+--- other-licenses/libical/src/libical/Makefile.in.orig	Thu Feb 13 15:50:58 2003
++++ other-licenses/libical/src/libical/Makefile.in	Thu Feb 13 15:51:07 2003
+@@ -179,7 +179,7 @@
+ 	$(PERL) $(ICALSCRIPTS)/mkrestrictiontable.pl  -i $(srcdir)/icalrestriction.c.in \
+                 $(DESIGNDATA)/restrictions.csv > icalrestriction.c
+ 
+-ifneq (,$(filter BeOS Darwin OpenVMS,$(OS_ARCH)))
++ifneq (,$(filter BeOS Darwin OpenVMS FreeBSD,$(OS_ARCH)))
+ DEFINES	+= -D__USE_BSD=1
+ endif
+ 
