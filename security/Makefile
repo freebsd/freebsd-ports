@@ -106,6 +106,7 @@
     SUBDIR += libgcrypt
     SUBDIR += libgringotts
     SUBDIR += libident
+    SUBDIR += libksba
     SUBDIR += libmcrypt
     SUBDIR += libparanoia
     SUBDIR += libtasn1
