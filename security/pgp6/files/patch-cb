@@ -1,0 +1,10 @@
+--- libs/pgpcdk/unix/ui/PGPKeyServerDialogs.cpp.orig	Tue Mar  9 18:52:17 1999
++++ libs/pgpcdk/unix/ui/PGPKeyServerDialogs.cpp	Fri Sep 29 20:51:02 2000
+@@ -5,6 +5,7 @@
+ 	$Id: PGPKeyServerDialogs.cpp,v 1.2 1999/03/10 02:52:17 heller Exp $
+ ____________________________________________________________________________*/
+ #include <string.h>
++#include <stdlib.h>
+ 
+ #include "pgpDialogs.h"
+ #include "pgpKeyServerDialogCommon.h"
