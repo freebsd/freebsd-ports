@@ -1,0 +1,11 @@
+--- fltk-config.in.orig	Mon Sep  6 13:20:52 2004
++++ fltk-config.in	Thu Feb  3 23:03:41 2005
+@@ -199,7 +199,7 @@
+     LDSTATIC="$libdir/libfltk_images.a $IMAGELIBS $LDSTATIC"
+ fi
+ 
+-LDLIBS="$DSOLINK $LDFLAGS $libs $LDLIBS"
++LDLIBS="$DSOLINK $libs $LDLIBS"
+ LDSTATIC="$LDFLAGS $libs $LDSTATIC"
+ 
+ # Answer to user requests
