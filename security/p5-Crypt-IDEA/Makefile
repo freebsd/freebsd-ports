@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.3 1996/11/17 07:57:59 obrien Exp $
+#   $Id: Makefile,v 1.4 1996/11/18 08:46:54 asami Exp $
 #
 
 DISTNAME=	Crypt-IDEA-1.0
@@ -18,6 +18,7 @@ BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
 MAN3=		Crypt::IDEA.3
+MANPREFIX=	${PREFIX}/lib/perl5
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
