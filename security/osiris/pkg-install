@@ -56,7 +56,7 @@ make_account() {
 	echo "You need a user \"${u}\"."
 	if which -s pw && yesno "Would you like me to create it" y
 	then
-	    pw useradd ${u} -g ${g} -h - -d /usr/local/etc/osiris -s /sbin/nologin -c "${gcos}" || exit
+	    pw useradd ${u} -g ${g} -h - -d /nonexistent -s /sbin/nologin -c "${gcos}" || exit
 	    echo "Done."
 	else
 	    echo "Please create it, and try again."
