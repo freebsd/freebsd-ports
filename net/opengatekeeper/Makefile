@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/opengate
 
 NOCLEANDEPENDS=	yes
 
+USE_BISON=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	opt
 MAKE_ENV=	PWLIBDIR= ${WRKDIRPREFIX}${PORTSDIR}/net/openh323/work/pwlib \
