@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cvsd
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://tiefighter.et.tudelft.nl/~arthur/cvsd/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -27,12 +27,16 @@ CONFIGURE_ARGS=	--with-libwrap
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
-MAN5=	cvsd.conf.5
-MAN8=	cvsd.8 cvsd-buildroot.8 cvsd-passwd.8
+MAN5=		cvsd.conf.5
+MAN8=		cvsd.8 cvsd-buginfo.8 cvsd-buildroot.8 cvsd-passwd.8
+PORTDOCS=	README
+PLIST_FILES=	etc/cvsd/cvsd.conf.sample etc/rc.d/cvsd.sh.sample \
+		sbin/cvsd sbin/cvsd-buginfo sbin/cvsd-buildroot sbin/cvsd-passwd
+PLIST_DIRS=	etc/cvsd
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cvsd ${PREFIX}/sbin/cvsd
-.for FILE in cvsd-buildroot cvsd-passwd
+.for FILE in cvsd-buginfo cvsd-buildroot cvsd-passwd
 	${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${PREFIX}/sbin
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/cvsd.init ${PREFIX}/etc/rc.d/cvsd.sh.sample

@@ -1,8 +1,0 @@
-etc/cvsd/cvsd.conf.sample
-etc/rc.d/cvsd.sh.sample
-sbin/cvsd
-sbin/cvsd-buildroot
-sbin/cvsd-passwd
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm etc/cvsd
