@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-05-06
+SNAPDATE=	2002-05-21
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc
@@ -81,13 +81,13 @@ CONFIGURE_ARGS+= --enable-threads
 CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
-MAN1=		cpp31.1 g++31.1 g77-31.1 gcc31.1 gcov31.1 \
-		gcj31.1 gcjh31.1 gij.1 \
-		jcf-dump31.1 jv-scan31.1 jv-convert.1
-MAN7=		fsf-funding.7 gfdl.7 gpl.7
+#MAN1=		cpp31.1 g++31.1 g77-31.1 gcc31.1 gcov31.1 \
+#		gcj31.1 gcjh31.1 gij.1 \
+#		jcf-dump31.1 jv-scan31.1 jv-convert.1
+#MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 pre-fetch:
-	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${ARCH}-portbld-freebsd${OSREL}"
+	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
 
 .if defined(NETWINDER_SS)
 post-extract:
@@ -131,7 +131,9 @@ post-install:
 .endfor
 .for file in g77
 	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}-31
-	${MV} -f ${PREFIX}/man/man1/${file}.1 ${PREFIX}/man/man1/${file}-31.1
+	-( ${TEST} -e ${PREFIX}/man/man1/${file}.1 \
+		&& ${MV} -f ${PREFIX}/man/man1/${file}.1 \
+		${PREFIX}/man/man1/${file}-31.1
 .endfor
 	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${SNAPVER}
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
