@@ -43,7 +43,7 @@
  0.*|1.0*) ;;
  
 -3.*|4.0*)
-+2.*)	cccdlflags='-DPIC -fpic'
++2.*)	cccdlflags='-DPIC -fPIC'
 +	lddlflags="-Bshareable $lddlflags"
 +	;;
 +
@@ -53,7 +53,8 @@
              libpth="/usr/lib /usr/local/lib"
 @@ -115,10 +137,6 @@
          fi
-         cccdlflags='-DPIC -fpic'
+-        cccdlflags='-DPIC -fpic'
++        cccdlflags='-DPIC -fPIC'
          ;;
 -
 -*)	cccdlflags='-DPIC -fpic'
