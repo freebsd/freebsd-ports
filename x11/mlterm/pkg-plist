@@ -1,0 +1,27 @@
+bin/mlterm
+etc/mlterm/aafont
+etc/mlterm/color
+etc/mlterm/font
+etc/mlterm/key
+etc/mlterm/main
+etc/mlterm/termcap
+etc/mlterm/xim
+lib/libkik.a
+lib/libkik.la
+lib/libkik.so
+lib/libkik.so.3
+lib/libmkf.a
+lib/libmkf.la
+lib/libmkf.so
+lib/libmkf.so.9
+lib/mlterm/libsample.a
+lib/mlterm/libsample.la
+lib/mlterm/libsample.so
+lib/mlterm/libsample.so.0
+lib/mlterm/libsample2.a
+lib/mlterm/libsample2.la
+lib/mlterm/libsample2.so
+lib/mlterm/libsample2.so.0
+libexec/mlconfig
+@dirrm etc/mlterm
+@dirrm lib/mlterm

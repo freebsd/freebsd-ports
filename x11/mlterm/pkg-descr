@@ -1,0 +1,19 @@
+mlterm is a multilingual X11 terminal emulator.
+mlterm has these features.
+
+* multilingual
+  [supported charsets]
+    US_ASCII,ISO8859[1-11],ISO8859[13-16],TCVN5712,VISCII,KOI8_R,KOI8_U,
+    JISX0201,JISX0208,JISX0212,JISX0213,GB2312,GBK,KSC5601,UHC,CNS11643-N,
+    Big5, UCS2(4)
+  [supported encodings]
+   ISO-8859-[1-11],ISO-8859-[13-16],TCVN5612,VISCII,KOI8_R,KOI8_U,EUC-JP,
+   EUC-JISX0213, ISO-2022-JP[1,2,3],Shift_JIS,Shift_JISX0213,EUC-KR,UHC,
+   JOHAB,ISO-2022-KR,ISO-2022-CN, GB2312(EUC-CN),GBK,GB18030,EUC-TW,Big5,
+   Hz,UTF-8
+* anti-aliased fonts
+* transparent background
+* background images
+* scroll by wheel mouse
+
+WWW: http://mlterm.sourceforge.net/
