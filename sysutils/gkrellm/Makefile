@@ -9,7 +9,7 @@ PORTNAME=	gkrellm
 PORTVERSION=	1.2.13
 PORTREVISION=	3
 CATEGORIES=	sysutils ipv6
-MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
+MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ume
 
