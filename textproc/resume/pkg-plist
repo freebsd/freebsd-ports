@@ -17,6 +17,8 @@ share/xml/resume/xsl/fr-a4.xsl
 share/xml/resume/xsl/fr-html.xsl
 share/xml/resume/xsl/fr-params.xsl
 share/xml/resume/xsl/fr-text.xsl
+share/xml/resume/xsl/html_contemporary.xsl
+share/xml/resume/xsl/html_professional.xsl
 share/xml/resume/xsl/it-a4.xsl
 share/xml/resume/xsl/it-html.xsl
 share/xml/resume/xsl/it-params.xsl
@@ -28,9 +30,9 @@ share/xml/resume/xsl/uk-text.xsl
 share/xml/resume/xsl/us-html.xsl
 share/xml/resume/xsl/us-letter.xsl
 share/xml/resume/xsl/us-text.xsl
-@dirrm share/xml/resume/dtd
 @dirrm share/xml/resume/xsl/common
 @dirrm share/xml/resume/xsl
+@dirrm share/xml/resume/dtd
 @dirrm share/xml/resume
 share/examples/resume/Makefile
 share/examples/resume/addressing/Makefile
@@ -46,10 +48,12 @@ share/examples/resume/addressing/untagged.xml
 share/examples/resume/addressing/usa.xml
 share/examples/resume/css/resume1.css
 share/examples/resume/css/resume2.css
+share/examples/resume/css/resume_contemporary.css
+share/examples/resume/css/resume_professional.css
 share/examples/resume/example1.xml
 share/examples/resume/example2.xml
-@dirrm share/examples/resume/addressing
 @dirrm share/examples/resume/css
+@dirrm share/examples/resume/addressing
 @dirrm share/examples/resume
 %%PORTDOCS%%share/doc/resume/address.html
 %%PORTDOCS%%share/doc/resume/authors/index.html
@@ -58,13 +62,124 @@ share/examples/resume/example2.xml
 %%PORTDOCS%%share/doc/resume/header.html
 %%PORTDOCS%%share/doc/resume/index.html
 %%PORTDOCS%%share/doc/resume/install/index.html
+%%PORTDOCS%%share/doc/resume/manual/html/cssref.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.academics.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.achievement.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.achievements.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.address.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.annotation.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.artTitle.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.author.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.birth.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.bookTitle.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.break.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.citation.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.city.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.company.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.contact.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.copyright.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.country.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.county.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.date.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.dayOfMonth.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.degree.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.degrees.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.description.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.docpath.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.email.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.emphasis.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.employer.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.firstname.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.from.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.head.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.header.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.history.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.institution.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.job.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.jobtitle.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.keyword.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.keywords.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.label.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.legalnotice.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.level.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.link.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.major.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.membership.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.memberships.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.middlenames.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.misc.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.month.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.name.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.node.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.note.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.objective.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.organization.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.pageNums.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.para.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.period.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.phone.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.postalCode.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.prefecture.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.present.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.project.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.projects.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.province.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.pub.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.pubDate.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.publisher.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.pubs.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.referee.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.referees.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.result.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.resume.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.resumes.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.skill.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.skillarea.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.skillareas.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.skills.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.skillset.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.state.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.street.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.street2.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.subject.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.subjects.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.suburb.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.suffix.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.surname.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.tail.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.title.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.to.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.uri.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.url.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.ward.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.year.html
+%%PORTDOCS%%share/doc/resume/manual/html/element.zip.html
+%%PORTDOCS%%share/doc/resume/manual/html/elementref.html
+%%PORTDOCS%%share/doc/resume/manual/html/gloss.html
+%%PORTDOCS%%share/doc/resume/manual/html/guide.create.html
+%%PORTDOCS%%share/doc/resume/manual/html/guide.html
+%%PORTDOCS%%share/doc/resume/manual/html/guide.overview.html
+%%PORTDOCS%%share/doc/resume/manual/html/index.html
+%%PORTDOCS%%share/doc/resume/manual/html/intro.html
+%%PORTDOCS%%share/doc/resume/manual/html/manual.css
+%%PORTDOCS%%share/doc/resume/manual/html/param.address.format.html
+%%PORTDOCS%%share/doc/resume/manual/html/param.css.href.html
+%%PORTDOCS%%share/doc/resume/manual/html/param.header.format.html
+%%PORTDOCS%%share/doc/resume/manual/html/param.skills.format.html
+%%PORTDOCS%%share/doc/resume/manual/html/paramref.html
+%%PORTDOCS%%share/doc/resume/manual/html/ref.html
+%%PORTDOCS%%share/doc/resume/manual/manual.css
+%%PORTDOCS%%share/doc/resume/manual/manual.html
+%%PORTDOCS%%share/doc/resume/manual/manual.txt
 %%PORTDOCS%%share/doc/resume/news/index.html
 %%PORTDOCS%%share/doc/resume/skills.html
 %%PORTDOCS%%share/doc/resume/todo/index.html
-%%PORTDOCS%%@dirrm share/doc/resume/authors
-%%PORTDOCS%%@dirrm share/doc/resume/changelog
-%%PORTDOCS%%@dirrm share/doc/resume/copying
-%%PORTDOCS%%@dirrm share/doc/resume/install
-%%PORTDOCS%%@dirrm share/doc/resume/news
 %%PORTDOCS%%@dirrm share/doc/resume/todo
+%%PORTDOCS%%@dirrm share/doc/resume/news
+%%PORTDOCS%%@dirrm share/doc/resume/manual/html
+%%PORTDOCS%%@dirrm share/doc/resume/manual
+%%PORTDOCS%%@dirrm share/doc/resume/install
+%%PORTDOCS%%@dirrm share/doc/resume/copying
+%%PORTDOCS%%@dirrm share/doc/resume/changelog
+%%PORTDOCS%%@dirrm share/doc/resume/authors
 %%PORTDOCS%%@dirrm share/doc/resume
