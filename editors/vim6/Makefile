@@ -4,10 +4,10 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.12 1997/11/16 02:04:50 obrien Exp $
+# $Id: Makefile,v 1.13 1997/11/24 16:54:23 obrien Exp $
 #
 
-DISTNAME=	vim-5.0r
+DISTNAME=	vim-5.0s
 CATEGORIES=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/beta-test/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/beta-test/unix/ \
@@ -37,6 +37,5 @@ post-install:
 	[ -e ${PREFIX}/bin/gvim ] || /bin/ln -s ${PREFIX}/bin/vim ${PREFIX}/bin/gvim
 	@${RM} -f ${PREFIX}/man/man1/etags.1
 	@/bin/ln -sf ${PREFIX}/man/man1/ctags.1.gz ${PREFIX}/man/man1/etags.1.gz
-
 
 .include <bsd.port.mk>

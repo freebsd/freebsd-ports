@@ -71,6 +71,7 @@ share/vim/syntax/asm.vim
 share/vim/syntax/asn.vim
 share/vim/syntax/asmh8300.vim
 share/vim/syntax/awk.vim
+share/vim/syntax/bib.vim
 share/vim/syntax/c.vim
 share/vim/syntax/cpp.vim
 share/vim/syntax/csh.vim
@@ -90,6 +91,7 @@ share/vim/syntax/javacc.vim
 share/vim/syntax/javascript.vim
 share/vim/syntax/lex.vim
 share/vim/syntax/lisp.vim
+share/vim/syntax/lss.vim
 share/vim/syntax/mail.vim
 share/vim/syntax/make.vim
 share/vim/syntax/maple.vim
@@ -100,6 +102,7 @@ share/vim/syntax/nosyntax.vim
 share/vim/syntax/objc.vim
 share/vim/syntax/pascal.vim
 share/vim/syntax/perl.vim
+share/vim/syntax/pod.vim
 share/vim/syntax/postscr.vim
 share/vim/syntax/procmail.vim
 share/vim/syntax/prolog.vim
@@ -123,6 +126,7 @@ share/vim/syntax/vrml.vim
 share/vim/syntax/xmath.vim
 share/vim/syntax/yacc.vim
 share/vim/syntax/zsh.vim
+share/vim/bugreport.vim
 share/vim/menu.vim
 @dirrm share/vim/doc
 @dirrm share/vim/syntax
