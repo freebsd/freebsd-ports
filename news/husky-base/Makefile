@@ -19,15 +19,9 @@ USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's^/usr/local^${PREFIX}^' \
-		-e 's^CFGDIR=/etc/fido^CFGDIR=${PREFIX}/etc/fido^' \
-		-e 's^# INFODIR=/usr/local/info^INFODIR=${PREFIX}/info^' \
-		-e 's^#HTMLDIR=$$(PREFIX)/lib/husky^HTMLDIR=${PREFIX}/share/doc/husky^' \
-		-e 's^$$(CFGDIR)/msged.cfg^~/.msged^' \
-		-e 's^CC=gcc^CC=${CC}^' \
-		-e 's^CXX=g++^CXX=${CXX}^' \
-		-e 's^MKSHARED=gcc^MKSHARED=${CC}^' \
-		-e 's^OPTCFLAGS=^OPTCFLAGS=-c ${CFLAGS}^' \
+		-e 's^CFGDIR=/etc/fido^CFGDIR=$$(PREFIX)/etc/fido^' \
+		-e 's^# INFODIR=/usr/local^INFODIR=$$(PREFIX)^' \
+		-e 's^#HTMLDIR=$$(PREFIX)/lib/husky^HTMLDIR=$$(PREFIX)/share/doc/husky^' \
 			${WRKSRC}/huskymak.cfg
 
 pre-install:

@@ -17,6 +17,8 @@ LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+MAKE_ARGS=	MSGEDCFG="\\\"~/.msged\\\""
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/news/husky-base/Makefile.inc"
 .include <bsd.port.post.mk>
