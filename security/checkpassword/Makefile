@@ -3,7 +3,7 @@
 # Date created:		05 August 1998
 # Whom:			sada@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.2 1999/01/07 20:59:07 sada Exp $
+# $Id: Makefile,v 1.3 1999/03/31 16:41:31 sada Exp $
 #
 
 DISTNAME=	checkpassword-0.81
@@ -17,7 +17,7 @@ MAINTAINER=	sada@FreeBSD.ORG
 ALL_TARGET=	it
 INSTALL_TARGET=	setup
 MAN8=		checkpassword.8
-RESTRICTED=	Unsure of djb's license
+RESTRICTED=	"Unsure of djb's license"
 
 DOCDIR=		${PREFIX}/share/doc/checkpassword
 
