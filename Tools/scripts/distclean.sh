@@ -14,7 +14,7 @@
 # Maxim Sobolev
 # ----------------------------------------------------------------------------
 #
-# $FreeBSD: /tmp/pcvs/ports/Tools/scripts/distclean.sh,v 1.13 2002-05-10 09:14:40 sobomax Exp $
+# $FreeBSD: /tmp/pcvs/ports/Tools/scripts/distclean.sh,v 1.14 2002-05-10 14:16:18 sobomax Exp $
 #
 # MAINTAINER= sobomax@FreeBSD.org
 
@@ -37,9 +37,6 @@ fi
 DISTDIR=`(make -V DISTDIR -f ${PORTSDIR}/Mk/bsd.port.mk) 2>/dev/null`
 DISTDIR=${DISTDIR:-/usr/ports/distfiles}
 
-PORTSDIR="${PORTSDIR}/"
-DISTDIR="${DISTDIR}/"
-
 echo "Assumes that your ports are in ${PORTSDIR} and distfiles in ${DISTDIR}."
 echo ""
 
@@ -61,13 +58,13 @@ trap cleanup 1 2 3 4 5 6 7 8 10 11 12 13 14 15 16 21 22 23 24 25 26 27 28 \
 	     30 31
 
 echo -n "Building ports md5 index..."
-find ${PORTSDIR} -name "distinfo" -or -name "distinfo.i386" -or -name "distinfo.alpha" -type f | xargs cat | grep "^MD5 ("| sort | uniq > $FN_PORTS
+find ${PORTSDIR}/ -name "distinfo" -or -name "distinfo.i386" -or -name "distinfo.alpha" -type f | xargs cat | grep "^MD5 ("| sort | uniq > $FN_PORTS
 echo "Done."
 P_MD5_COUNT=`wc -l $FN_PORTS | sed "s| $FN_PORTS|| ; s| ||g"`
 echo "Found $P_MD5_COUNT md5 entries in your ports directory."
 
 echo -n "Building distfiles md5 index..."
-find ${DISTDIR} -type f | xargs md5 | sed 's|'${DISTDIR}'/||' | sort > $FN_DISTFILES
+find ${DISTDIR}/ -type f | xargs md5 | sed 's|'${DISTDIR}'/||' | sort > $FN_DISTFILES
 echo "Done."
 D_MD5_COUNT=`wc -l $FN_DISTFILES | sed "s| $FN_DISTFILES|| ; s| ||g"`
 echo "Found $D_MD5_COUNT distfile(s) in your distfiles directory."
