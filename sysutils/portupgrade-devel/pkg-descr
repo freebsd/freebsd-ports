@@ -1,21 +1,21 @@
 Portupgrade is a tool to upgrade installed packages via ports or
-packages.  Also, it allows you to install new ports/packages in a
-handy way.
-
-It upgrades installed packages without reinstalling depending or
-dependent packages by directly updating the package registry database
-located under /var/db/pkg.  Moreover, it can trace dependency chains
-up and down and upgrade packages recursively.
+packages.  It upgrades installed packages without reinstalling
+depending or dependent packages by directly updating the package
+registry database located under /var/db/pkg.  It can also trace
+dependency chains up and down and upgrade packages recursively.
 
 This package also includes the following utilities:
-portinstall:	This is an equivalent to `portupgrade -N', which means
-		it by default tries to install a new one when a
-		specified package is not installed.
+portinstall:	This helps you install new ports in a handy way.
+		Equivalent to `portupgrade -N'.
 portversion:	This is a replacement of pkg_version(8), which runs
 		faster than pkg_version and is cooperative with
 		portupgrade.
 portsdb:	This is a tool to create, update or look up ports
 		database, which is made from the ports index file.
+pkg_deinstall:	This is a package deinstaller with wildcards and
+		dependency recursion support.
+pkg_glob:	This is a package glob expander with wildcards and
+		dependency recursion support.
 pkgdepfix:	This is an interactive tool to fix /var/db/pkg's
 		@pkgdep vs. +REQUIRED_BY discrepancies, and stale or
 		missing origins, optionally.
