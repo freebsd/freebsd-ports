@@ -1,0 +1,25 @@
+--- include/vt.h.orig	Fri Jan 24 16:08:13 1997
++++ include/vt.h	Sat Aug  7 05:06:49 1999
+@@ -59,7 +59,12 @@
+ 	ins,
+ 	active,
+ 	wrap,
++#if defined(__FreeBSD__)
++	text_mode,
++	cursor_key_mode;
++#else
+ 	text_mode;
++#endif
+ };
+ 
+ extern struct	_con_info con;
+@@ -75,6 +80,9 @@
+ extern void	VtStart(void);
+ extern void	VtEmu(const char*, int nchars);
+ extern void	VtCleanup(void);
++#if defined(__FreeBSD__)
++extern int      cons25tovt100(u_char *buff, int len, const int max);
++#endif
+ 
+ #define	sjistojis(ch, cl)\
+ {\

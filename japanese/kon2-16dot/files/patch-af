@@ -1,6 +1,13 @@
---- src/term.c.orig	Sat Jan 25 00:03:58 1997
-+++ src/term.c	Sat Apr 26 03:54:03 1997
-@@ -205,7 +205,7 @@
+--- src/term.c.orig	Sat Aug  7 05:07:34 1999
++++ src/term.c	Sat Aug  7 05:07:39 1999
+@@ -201,11 +201,14 @@
+ 	}
+ 	if (FD_ISSET(0, &readFds)) {
+ 	    i = read(0, buff, BUFSIZ);
++#if defined(__FreeBSD__)
++            i = cons25tovt100(buff, i, BUFSIZ);
++#endif
+ 	    if (i > 0) write(masterPty, buff, i);
  	    PollCursor(TRUE);
  	}
  	if (FD_ISSET(sockFd, &readFds)) SocketInterface(sockFd);
