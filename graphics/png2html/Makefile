@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.engr.mun.ca/~holden/
 MAINTAINER=	jedgar@fxp.org
 
 LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
-		gd.0:${PORTSDIR}/graphics/gd
+		gd.1:${PORTSDIR}/graphics/gd
 
 do-configure:
 		@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig
