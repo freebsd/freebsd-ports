@@ -1,5 +1,5 @@
-# New ports collection makefile for:	Jakarta Commons Collections
-# Date created:				October 18, 2002
+# New ports collection makefile for:	Jakarta Commons CLI
+# Date created:				November 14, 2002
 # Whom:					Ernst de Haan <znerd@FreeBSD.org>
 #
 # $FreeBSD$
