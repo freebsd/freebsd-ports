@@ -1,0 +1,10 @@
+--- lib/yaflib/yaf/frontend/producer/image/imageGenerator.h.orig	Sun Jan 23 16:54:23 2000
++++ lib/yaflib/yaf/frontend/producer/image/imageGenerator.h	Sun Jan 23 16:54:31 2000
+@@ -27,6 +27,7 @@
+ // with a yaf internal Image class!
+ 
+ #include <qpixmap.h>
++#include <unistd.h>
+ 
+ /**
+    This class produces QImages.

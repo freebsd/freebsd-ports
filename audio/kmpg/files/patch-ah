@@ -1,0 +1,11 @@
+--- lib/kmpglib/lib/id/tag.cpp.orig	Sun Jan 23 17:04:33 2000
++++ lib/kmpglib/lib/id/tag.cpp	Sun Jan 23 17:04:54 2000
+@@ -86,7 +86,7 @@
+   }
+   
+   if (fseek(file, -128, SEEK_END) < 0) {
+-    close(file);
++    fclose(file);
+     perror("fseek");
+     initTagVars();
+     return(0);

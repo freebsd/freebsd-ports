@@ -1,0 +1,11 @@
+--- lib/yaflib/yaf/shared/yafcore/streamWriter.cpp.orig	Sun Jan 23 16:52:02 2000
++++ lib/yaflib/yaf/shared/yafcore/streamWriter.cpp	Sun Jan 23 16:52:11 2000
+@@ -42,7 +42,7 @@
+ static OutputInterface* output;
+ 
+ static AudioWrapper* audioWrapper=NULL;
+-static lInternalDevice;
++static int lInternalDevice;
+ 
+ void StreamWriter_sendSpeed(int speed);
+ void StreamWriter_sendSampleSize(int size);

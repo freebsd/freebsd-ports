@@ -1,0 +1,11 @@
+--- lib/widgetlib/widgetbasic/examples/example6/videoPlayer.cpp.orig	Sun Jan 23 17:00:48 2000
++++ lib/widgetlib/widgetbasic/examples/example6/videoPlayer.cpp	Sun Jan 23 17:01:26 2000
+@@ -96,7 +96,7 @@
+   str=strlist.first(); 
+   if (str != NULL) {
+     KURL url( str );
+-    char *path = url.path();
++    const char *path = url.path();
+     open(&url);
+     cout << "dropped:"<<path<<endl;
+   }
