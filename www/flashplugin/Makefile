@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION= 	0.4.3
+PORTVERSION=	0.4.3
 CATEGORIES=	www graphics
 MASTER_SITES=	http://www.geocities.com/TimesSquare/Labyrinth/5084/flash/Linux/ \
 		http://perso.club-internet.fr/odebon/flash/Linux/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	harvest
-PORTVERSION= 	1.5
+PORTVERSION=	1.5
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.tardis.ed.ac.uk/pub/harvest/ \
 		ftp://nic.nasa.gov/software/harvest-dist/ \

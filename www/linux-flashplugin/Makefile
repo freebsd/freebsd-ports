@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux-flashplugin
-PORTVERSION= 	4.0.r12
+PORTVERSION=	4.0.r12
 CATEGORIES=	www graphics linux
 MASTER_SITES=	http://download.macromedia.com/pub/shockwave/flash/english/linux/4.0r12/
 DISTNAME=	flash_linux

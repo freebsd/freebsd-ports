@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	squirm
-PORTVERSION= 	1.23
+PORTVERSION=	1.23
 CATEGORIES=	www
 MASTER_SITES=	http://www.senet.com.au/squirm/ \
 		http://www.elab.co.za/squirm/

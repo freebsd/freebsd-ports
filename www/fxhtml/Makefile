@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fxhtml
-PORTVERSION= 	1.6.7
+PORTVERSION=	1.6.7
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.flevel.co.uk/pub/fxhtml/
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netscape-remote
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	www
 MASTER_SITES=	http://home.netscape.com/newsref/std/
 DISTFILES=	remote.c vroot.h

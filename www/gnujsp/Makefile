@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnujsp
-PORTVERSION= 	1.0.1
+PORTVERSION=	1.0.1
 CATEGORIES=	www java
 MASTER_SITES=	http://www.klomp.org/gnujsp/downloads/
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adzapper
-PORTVERSION= 	0.3.0
+PORTVERSION=	0.3.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.zaplet.org/adzapper/ \
 		ftp://ftp.aquezada.com/pub/distrib/adzapper/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weblint
-PORTVERSION= 	1.020
+PORTVERSION=	1.020
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.cre.canon.co.uk/pub/weblint/
 

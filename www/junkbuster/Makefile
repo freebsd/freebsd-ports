@@ -10,7 +10,7 @@
 # in the next revision.
 
 PORTNAME=	junkbuster
-PORTVERSION= 	2.0.2
+PORTVERSION=	2.0.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.junkbusters.com/ht/en/
 DISTNAME=	ijb20

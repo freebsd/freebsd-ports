@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tidy
-PORTVERSION= 	20000804
+PORTVERSION=	20000804
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/People/Raggett/
 DISTNAME=	tidy4aug00

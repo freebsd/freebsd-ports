@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cgiparse
-PORTVERSION= 	0.9b
+PORTVERSION=	0.9b
 CATEGORIES=	www devel
 MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/jmpc/dist/	\
 		http://www.funkthat.com/~jmg/

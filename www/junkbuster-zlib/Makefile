@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	junkbuster-zlib
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	www
 MASTER_SITES=	http://server44.hypermart.net/f2org/ \
 		http://f2.org/download/

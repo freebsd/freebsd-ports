@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plugger
-PORTVERSION= 	3.2
+PORTVERSION=	3.2
 CATEGORIES=	www
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/ \
 		ftp://ftp.netscape.com/pub/sdk/plugin/unix/

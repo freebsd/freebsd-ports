@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chimera
-PORTVERSION= 	2.0a19
+PORTVERSION=	2.0a19
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.cs.unlv.edu/pub/chimera-alpha/ \
 		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/WWW/chimera/ \

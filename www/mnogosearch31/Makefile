@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=       mnogosearch
-PORTVERSION=    3.1.9
-PORTREVISION=   3
+PORTNAME=	mnogosearch
+PORTVERSION=	3.1.9
+PORTREVISION=	3
 CATEGORIES=	www databases
-MASTER_SITES=   http://search.mnogo.ru/Download/
+MASTER_SITES=	http://search.mnogo.ru/Download/
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=	ache@FreeBSD.org
 
 MAN1=		indexer.1
 MAN5=		indexer.conf.5

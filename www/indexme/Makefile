@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	indexme
-PORTVERSION= 	0.1
+PORTVERSION=	0.1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ukug.uk.freebsd.org/pub/lord_cj/	\
 		http://kyb.homepage.com/perl/

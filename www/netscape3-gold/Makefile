@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netscape-gold
-PORTVERSION= 	3.04
+PORTVERSION=	3.04
 MASTER_SITES=	ftp://archive:oldies@archive.netscape.com/archive/navigator/3.04/shipping/english/unix/bsdi11/navigator_gold_complete/
 
 DIST_SUBDIR=	gold

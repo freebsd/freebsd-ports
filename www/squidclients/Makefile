@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	squidclients
-PORTVERSION= 	1.6
+PORTVERSION=	1.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.cineca.it/~nico/binaries/
 DISTNAME=	squidclients-1.6-freebsd.bin

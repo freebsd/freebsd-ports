@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cgiwrap
-PORTVERSION= 	3.6.3
+PORTVERSION=	3.6.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.unixtools.org/cgiwrap/dist/ \
 		ftp://ftp.umr.edu/pub/cgi/cgiwrap/ \

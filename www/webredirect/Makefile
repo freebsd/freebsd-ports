@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webredirect
-PORTVERSION= 	0.1
+PORTVERSION=	0.1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.Raditex.se/pub/kaj/
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdreamsite
-PORTVERSION= 	0.2
+PORTVERSION=	0.2
 CATEGORIES=	www kde
 MASTER_SITES=	http://neptune.spaceports.com/%7Eatnet/files/
 

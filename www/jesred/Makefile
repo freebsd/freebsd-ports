@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jesred
-PORTVERSION= 	1.2.1
+PORTVERSION=	1.2.1
 CATEGORIES=	www
 MASTER_SITES=	http://ivs.cs.uni-magdeburg.de/~elkner/webtools/src/
 DISTNAME=	jesred-1.2pl1

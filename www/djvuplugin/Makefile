@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	djvuplugin
-PORTVERSION= 	0.9
+PORTVERSION=	0.9
 CATEGORIES=	www graphics
 MASTER_SITES=	http://www.djvu.com/products/plugin/unix/
 DISTNAME=	npdjvu-freebsd

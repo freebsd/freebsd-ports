@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fcgi-devkit
-PORTVERSION= 	2.2.0
+PORTVERSION=	2.2.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.fastcgi.com/dist/
 DISTNAME=	devkit_2.2.0
