@@ -1,0 +1,4 @@
+Patch is a spline based 3D modeling tool. It allows to create 3D models which
+can be rendered with POV-Ray or RenderMan compatible renderers (e.g. Aqsis).
+
+WWW: http://jpatch.sourceforge.net/

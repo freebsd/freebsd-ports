@@ -178,6 +178,7 @@
     SUBDIR += jgraph
     SUBDIR += jgv
     SUBDIR += jhead
+    SUBDIR += jpatch
     SUBDIR += jpeg
     SUBDIR += jpeg2ps-a4
     SUBDIR += jpeg2ps-letter
