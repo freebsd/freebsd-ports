@@ -1,131 +1,150 @@
-bin/pygtk-codegen-1.2
-include/pygtk/pygdkimlib.h
-include/pygtk/pygdkpixbuf.h
-include/pygtk/pygtk.h
-%%PYTHON_SITELIBDIR%%/gtk-1.2/GDK.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/GDK.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/GDK.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/GTK.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/GTK.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/GTK.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/GdkImlib.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/GdkImlib.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/GdkImlib.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/GtkExtra.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/GtkExtra.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/GtkExtra.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/_gdkimlibmodule.so
-%%PYTHON_SITELIBDIR%%/gtk-1.2/_gtkglmodule.so
-%%PYTHON_SITELIBDIR%%/gtk-1.2/_gtkmodule.so
-%%PYTHON_SITELIBDIR%%/gtk-1.2/_libglademodule.so
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gdkpixbufmodule.so
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gtk.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gtk.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gtk.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gtkgl.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gtkgl.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gtkgl.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/libglade.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/libglade.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/libglade.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/__init__.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/build.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/build.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/build.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/style.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/style.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/style.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/xmlparse.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/xmlparse.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade/xmlparse.pyo
-%%PYTHON_SITELIBDIR%%/pygtk.pth
-%%PYTHON_SITELIBDIR%%/pygtk.py
-%%PYTHON_SITELIBDIR%%/pygtk.pyc
-%%PYTHON_SITELIBDIR%%/pygtk.pyo
-share/doc/py-gtk/MAPPING
-share/examples/py-gtk/gl/README
-share/examples/py-gtk/gl/cone.py
-share/examples/py-gtk/gl/dots.py
-share/examples/py-gtk/gl/gears.py
-share/examples/py-gtk/glade/README
-share/examples/py-gtk/glade/glade.py
-share/examples/py-gtk/glade/test.glade
-share/examples/py-gtk/glade/test2.glade
-share/examples/py-gtk/ide/README
-share/examples/py-gtk/ide/break.xpm
-share/examples/py-gtk/ide/browse.py
-share/examples/py-gtk/ide/continue.xpm
-share/examples/py-gtk/ide/edit.py
-share/examples/py-gtk/ide/edit.xpm
-share/examples/py-gtk/ide/gtkcons.py
-share/examples/py-gtk/ide/gtkdb.py
-share/examples/py-gtk/ide/gtkprof.py
-share/examples/py-gtk/ide/minibreak.xpm
-share/examples/py-gtk/ide/next.xpm
-share/examples/py-gtk/ide/pyide.py
-share/examples/py-gtk/ide/quit.xpm
-share/examples/py-gtk/ide/return.xpm
-share/examples/py-gtk/ide/run.xpm
-share/examples/py-gtk/ide/step.xpm
-share/examples/py-gtk/imlib/view.py
-share/examples/py-gtk/neil/README
-share/examples/py-gtk/neil/TAppli.py
-share/examples/py-gtk/neil/TAppli2.py
-share/examples/py-gtk/neil/TAppli3.py
-share/examples/py-gtk/neil/TAppli4.py
-share/examples/py-gtk/neil/TAppli5.py
-share/examples/py-gtk/neil/bomb.xpm
-share/examples/py-gtk/neil/gtk-logo.xpm
-share/examples/py-gtk/neil/notebook.py
-share/examples/py-gtk/neil/question.xpm
-share/examples/py-gtk/simple/README
-share/examples/py-gtk/simple/dnd.py
-share/examples/py-gtk/simple/dndpixmap.py
-share/examples/py-gtk/simple/hello1.py
-share/examples/py-gtk/simple/hello2.py
-share/examples/py-gtk/simple/scribble.py
-share/examples/py-gtk/simple/simple1.py
-share/examples/py-gtk/simple/simple2.py
-share/examples/py-gtk/simple/tooltip1.py
-share/examples/py-gtk/simple/tooltip2.py
-share/examples/py-gtk/testgtk/README
-share/examples/py-gtk/testgtk/test.xpm
-share/examples/py-gtk/testgtk/testgtk.py
-share/examples/py-gtk/testgtk/testgtkrc
-share/pygtk/1.2/codegen/generate.py
-share/pygtk/1.2/codegen/generate.pyc
-share/pygtk/1.2/codegen/generate.pyo
-share/pygtk/1.2/codegen/scmexpr.py
-share/pygtk/1.2/codegen/scmexpr.pyc
-share/pygtk/1.2/codegen/scmexpr.pyo
-share/pygtk/1.2/defs/gtk.defs
-share/pygtk/1.2/defs/gtkbase.defs
-share/pygtk/1.2/defs/gtkcontainers.defs
-share/pygtk/1.2/defs/gtkdata.defs
-share/pygtk/1.2/defs/gtkdnd.defs
-share/pygtk/1.2/defs/gtkedit.defs
-share/pygtk/1.2/defs/gtkenums.defs
-share/pygtk/1.2/defs/gtkgl.defs
-share/pygtk/1.2/defs/gtklists.defs
-share/pygtk/1.2/defs/gtkmenus.defs
-share/pygtk/1.2/defs/gtkmisc.defs
-share/pygtk/1.2/defs/gtkranges.defs
-share/pygtk/1.2/defs/libglade.defs
-@dirrm share/pygtk/1.2/defs
-@dirrm share/pygtk/1.2/codegen
-@dirrm share/pygtk/1.2
+bin/pygtk-codegen-2.0
+include/pygtk-2.0/pygtk/pygtk.h
+include/pygtk-2.0/pygobject.h
+%%PYTHON_SITELIBDIR%%/atkmodule.la
+%%PYTHON_SITELIBDIR%%/atkmodule.so
+%%PYTHON_SITELIBDIR%%/gobjectmodule.la
+%%PYTHON_SITELIBDIR%%/gobjectmodule.so
+%%PYTHON_SITELIBDIR%%/gtk/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk/_gtkmodule.la
+%%PYTHON_SITELIBDIR%%/gtk/_gtkmodule.so
+%%PYTHON_SITELIBDIR%%/gtk/compat.py
+%%PYTHON_SITELIBDIR%%/gtk/compat.pyc
+%%PYTHON_SITELIBDIR%%/gtk/compat.pyo
+%%PYTHON_SITELIBDIR%%/gtk/glademodule.la
+%%PYTHON_SITELIBDIR%%/gtk/glademodule.so
+%%PYTHON_SITELIBDIR%%/gtk/keysyms.py
+%%PYTHON_SITELIBDIR%%/gtk/keysyms.pyc
+%%PYTHON_SITELIBDIR%%/gtk/keysyms.pyo
+%%PYTHON_SITELIBDIR%%/pangomodule.la
+%%PYTHON_SITELIBDIR%%/pangomodule.so
+lib/pkgconfig/pygtk-2.0.pc
+%%PORTDOCS%%share/doc/py-gtk/MAPPING
+%%PORTDOCS%%share/doc/py-gtk/THREADS
+%%PORTDOCS%%share/examples/py-gtk/atk/atk-demo.py
+%%PORTDOCS%%share/examples/py-gtk/gl/README
+%%PORTDOCS%%share/examples/py-gtk/gl/cone.py
+%%PORTDOCS%%share/examples/py-gtk/gl/dots.py
+%%PORTDOCS%%share/examples/py-gtk/gl/gears.py
+%%PORTDOCS%%share/examples/py-gtk/glade/README
+%%PORTDOCS%%share/examples/py-gtk/glade/glade-demo.py
+%%PORTDOCS%%share/examples/py-gtk/glade/test.glade
+%%PORTDOCS%%share/examples/py-gtk/gobject/properties.py
+%%PORTDOCS%%share/examples/py-gtk/gobject/signal.py
+%%PORTDOCS%%share/examples/py-gtk/ide/README
+%%PORTDOCS%%share/examples/py-gtk/ide/break.xpm
+%%PORTDOCS%%share/examples/py-gtk/ide/browse.py
+%%PORTDOCS%%share/examples/py-gtk/ide/continue.xpm
+%%PORTDOCS%%share/examples/py-gtk/ide/edit.py
+%%PORTDOCS%%share/examples/py-gtk/ide/edit.xpm
+%%PORTDOCS%%share/examples/py-gtk/ide/gtkcons.py
+%%PORTDOCS%%share/examples/py-gtk/ide/gtkdb.py
+%%PORTDOCS%%share/examples/py-gtk/ide/gtkprof.py
+%%PORTDOCS%%share/examples/py-gtk/ide/minibreak.xpm
+%%PORTDOCS%%share/examples/py-gtk/ide/next.xpm
+%%PORTDOCS%%share/examples/py-gtk/ide/pyide.py
+%%PORTDOCS%%share/examples/py-gtk/ide/quit.xpm
+%%PORTDOCS%%share/examples/py-gtk/ide/return.xpm
+%%PORTDOCS%%share/examples/py-gtk/ide/run.xpm
+%%PORTDOCS%%share/examples/py-gtk/ide/step.xpm
+%%PORTDOCS%%share/examples/py-gtk/neil/README
+%%PORTDOCS%%share/examples/py-gtk/neil/TAppli.py
+%%PORTDOCS%%share/examples/py-gtk/neil/TAppli2.py
+%%PORTDOCS%%share/examples/py-gtk/neil/TAppli3.py
+%%PORTDOCS%%share/examples/py-gtk/neil/TAppli4.py
+%%PORTDOCS%%share/examples/py-gtk/neil/TAppli5.py
+%%PORTDOCS%%share/examples/py-gtk/neil/bomb.xpm
+%%PORTDOCS%%share/examples/py-gtk/neil/gtk-logo.xpm
+%%PORTDOCS%%share/examples/py-gtk/neil/notebook.py
+%%PORTDOCS%%share/examples/py-gtk/neil/question.xpm
+%%PORTDOCS%%share/examples/py-gtk/pango/utf8-demo.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/__init__.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/appwindow.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/buttonbox.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/colorsel.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/dialogs.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/dnd.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/dndpixmap.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/itemfactory.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/list_store.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/menu.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/panes.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/sizegroup.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/toolbar.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/treemodel.py
+%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/pygtk-demo.py
+%%PORTDOCS%%share/examples/py-gtk/simple/README
+%%PORTDOCS%%share/examples/py-gtk/simple/dnd.py
+%%PORTDOCS%%share/examples/py-gtk/simple/dndpixmap.py
+%%PORTDOCS%%share/examples/py-gtk/simple/hello.py
+%%PORTDOCS%%share/examples/py-gtk/simple/scribble.py
+%%PORTDOCS%%share/examples/py-gtk/simple/simple.py
+%%PORTDOCS%%share/examples/py-gtk/simple/tooltip.py
+share/pygtk/2.0/codegen/__init__.py
+share/pygtk/2.0/codegen/__init__.pyc
+share/pygtk/2.0/codegen/__init__.pyo
+share/pygtk/2.0/codegen/argtypes.py
+share/pygtk/2.0/codegen/argtypes.pyc
+share/pygtk/2.0/codegen/argtypes.pyo
+share/pygtk/2.0/codegen/codegen.py
+share/pygtk/2.0/codegen/codegen.pyc
+share/pygtk/2.0/codegen/codegen.pyo
+share/pygtk/2.0/codegen/definitions.py
+share/pygtk/2.0/codegen/definitions.pyc
+share/pygtk/2.0/codegen/definitions.pyo
+share/pygtk/2.0/codegen/defsparser.py
+share/pygtk/2.0/codegen/defsparser.pyc
+share/pygtk/2.0/codegen/defsparser.pyo
+share/pygtk/2.0/codegen/docextract.py
+share/pygtk/2.0/codegen/docextract.pyc
+share/pygtk/2.0/codegen/docextract.pyo
+share/pygtk/2.0/codegen/docgen.py
+share/pygtk/2.0/codegen/docgen.pyc
+share/pygtk/2.0/codegen/docgen.pyo
+share/pygtk/2.0/codegen/h2def.py
+share/pygtk/2.0/codegen/h2def.pyc
+share/pygtk/2.0/codegen/h2def.pyo
+share/pygtk/2.0/codegen/mergedefs.py
+share/pygtk/2.0/codegen/mergedefs.pyc
+share/pygtk/2.0/codegen/mergedefs.pyo
+share/pygtk/2.0/codegen/mkskel.py
+share/pygtk/2.0/codegen/mkskel.pyc
+share/pygtk/2.0/codegen/mkskel.pyo
+share/pygtk/2.0/codegen/override.py
+share/pygtk/2.0/codegen/override.pyc
+share/pygtk/2.0/codegen/override.pyo
+share/pygtk/2.0/codegen/scmexpr.py
+share/pygtk/2.0/codegen/scmexpr.pyc
+share/pygtk/2.0/codegen/scmexpr.pyo
+share/pygtk/2.0/defs/gtk.defs
+share/pygtk/2.0/defs/gtk-types.defs
+share/pygtk/2.0/defs/gtk-extrafuncs.defs
+share/pygtk/2.0/defs/gdk.defs
+share/pygtk/2.0/defs/gdk-types.defs
+share/pygtk/2.0/defs/libglade.defs
+share/pygtk/2.0/defs/gtkgl.defs
+share/pygtk/2.0/defs/pango.defs
+share/pygtk/2.0/defs/pango-types.defs
+share/pygtk/2.0/defs/atk.defs
+share/pygtk/2.0/defs/atk-types.defs
+@dirrm share/pygtk/2.0/defs
+@dirrm share/pygtk/2.0/codegen
+@dirrm share/pygtk/2.0
 @dirrm share/pygtk
-@dirrm share/examples/py-gtk/testgtk
-@dirrm share/examples/py-gtk/simple
-@dirrm share/examples/py-gtk/neil
-@dirrm share/examples/py-gtk/imlib
-@dirrm share/examples/py-gtk/ide
-@dirrm share/examples/py-gtk/glade
-@dirrm share/examples/py-gtk/gl
-@dirrm share/examples/py-gtk
-@dirrm share/doc/py-gtk
-@dirrm %%PYTHON_SITELIBDIR%%/gtk-1.2/pyglade
-@dirrm %%PYTHON_SITELIBDIR%%/gtk-1.2
-@dirrm include/pygtk
+%%PORTDOCS%%@dirrm share/examples/py-gtk/simple
+%%PORTDOCS%%@dirrm share/examples/py-gtk/pygtk-demo/demos
+%%PORTDOCS%%@dirrm share/examples/py-gtk/pygtk-demo
+%%PORTDOCS%%@dirrm share/examples/py-gtk/pango
+%%PORTDOCS%%@dirrm share/examples/py-gtk/neil
+%%PORTDOCS%%@dirrm share/examples/py-gtk/ide
+%%PORTDOCS%%@dirrm share/examples/py-gtk/gobject
+%%PORTDOCS%%@dirrm share/examples/py-gtk/glade
+%%PORTDOCS%%@dirrm share/examples/py-gtk/gl
+%%PORTDOCS%%@dirrm share/examples/py-gtk/atk
+%%PORTDOCS%%@dirrm share/examples/py-gtk
+%%PORTDOCS%%@dirrm share/doc/py-gtk
+@dirrm %%PYTHON_SITELIBDIR%%/gtk
+@dirrm include/pygtk-2.0/pygtk
+@dirrm include/pygtk-2.0

@@ -116,6 +116,7 @@
     SUBDIR += py-anygui
     SUBDIR += py-gnome
     SUBDIR += py-gtk
+    SUBDIR += py-gtk2
     SUBDIR += py-gtkscintilla
     SUBDIR += py-qt
     SUBDIR += py-tkinter
