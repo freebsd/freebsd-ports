@@ -142,9 +142,9 @@ post-install:
 .endif
 .if !exists(${DB_DIR}) || defined(OVERWRITE_DB)
 .if defined(SKIP_DNS_CHECK)
-	${PREFIX}/bin/mysql_install_db --force
+	${PREFIX}/bin/mysql_install_db --force --ldata=${DB_DIR}
 .else
-	${PREFIX}/bin/mysql_install_db
+	${PREFIX}/bin/mysql_install_db --ldata=${DB_DIR}
 .endif
 .endif
 	@${SETENV} DB_DIR=${DB_DIR} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
