@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	caudium12
-PORTVERSION=	1.2.26
-PORTREVISION=	1
+PORTVERSION=	1.2.32
+PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.oav.net/caudium/source/	\
 		ftp://ftp.caudium.net/caudium/source/ \
@@ -20,19 +20,19 @@ DISTNAME=	caudium-${PORTVERSION}
 MAINTAINER=	kiwi@oav.net
 COMMENT=	A free webserver which is based on the Roxen Challenger 1.3 code base
 
-BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike72/ \
-		bash:${PORTSDIR}/shells/bash2/
+BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike72/
 LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron/
 RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof/
 DEPENDS=	${PORTSDIR}/lang/pexts/
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-PIKEVERSION=	7.2.492
+PIKEVERSION=	7.2.570
 
-SH=		${PREFIX}/bin/bash
-GNU_CONFIGURE=  yes
-CONFIGURE_ARGS+= --without-debug --with-PiXSL --prefix=${PREFIX} \
+# bash:${PORTSDIR}/shells/bash2/
+#SH=		${PREFIX}/bin/bash
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--without-debug --with-PiXSL --prefix=${PREFIX} \
 		 --with-pike=${LOCALBASE}/bin/pike
 
 USE_GMAKE=	yes
