@@ -1,0 +1,17 @@
+bin/xfmedia
+etc/xdg/xfmedia/keybindings.rc
+include/xfmedia/xfmedia-interface.h
+include/xfmedia/xfmedia-plugin.h
+include/xfmedia/xfmedia-settings.h
+lib/xfmedia/plugins/xfmedia-infopipe.so
+libdata/pkgconfig/xfmedia-plugin.pc
+share/applications/xfmedia.desktop
+share/icons/hicolor/48x48/apps/xfmedia.png
+share/icons/hicolor/22x22/actions/xfmedia-repeat.png
+share/icons/hicolor/22x22/actions/xfmedia-shuffle.png
+@dirrm etc/xdg/xfmedia
+@dirrm include/xfmedia
+@dirrm lib/xfmedia/plugins
+@dirrm lib/xfmedia
+@unexec rmdir %D/etc/xdg 2>/dev/null || true
+@unexec rmdir %D/share/applications 2>/dev/null || true
