@@ -127,6 +127,11 @@ share/doc/HTML/en/kaspaliste/publication-doc.png
 share/doc/HTML/en/kaspaliste/schema.png
 share/doc/HTML/en/kaspaliste/scheme.png
 share/doc/HTML/en/kaspaliste/search-doc.png
+share/icons/hicolor/32x32/apps/kaspaliste.png
+share/icons/hicolor/48x48/apps/kaspaliste.png
+share/icons/hicolor/16x16/apps/kaspaliste.png
+share/icons/locolor/16x16/apps/kaspaliste.png
+share/icons/locolor/32x32/apps/kaspaliste.png
 @dirrm share/apps/kaspaliste/icons/hicolor/16x16/apps
 @dirrm share/apps/kaspaliste/icons/hicolor/16x16
 @dirrm share/apps/kaspaliste/icons/hicolor
