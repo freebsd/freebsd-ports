@@ -1,0 +1,15 @@
+--- cos/naming/Makefile.am.orig	Mon Jul  3 19:08:30 2000
++++ cos/naming/Makefile.am	Wed Aug  2 16:27:32 2000
+@@ -6,9 +6,9 @@
+ 	-I../../src \
+ 	-I$(srcdir)/../../src \
+ 	-I$(COS_DIRS) \
+-	-I../../adasockets/src \
+-	-I$(srcdir)/../../adasockets/src \
+-	-g -O2 -m -gnata
++	$(ADASOCKETS_INCLUDE) \
++	-g -O2 -m -gnata \
++	-largs $(ADASOCKETS_LIBS)
+ 
+ PROGS= ab_names test_naming
+ 

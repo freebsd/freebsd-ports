@@ -1,0 +1,11 @@
+--- examples/Makefile.common.orig	Wed Aug  2 16:43:46 2000
++++ examples/Makefile.common	Wed Aug  2 16:43:56 2000
+@@ -10,7 +10,7 @@
+ 	-I$(EXAMPLES_ROOT)/../cos/naming \
+ 	-I$(EXAMPLES_ROOT)/../idls/cos/naming $(ADASOCKETS_INCLUDE) \
+ 	-g -O2 -m -gnata \
+-	$(EXAMPLE_GNATMAKE_FLAGS)
++	$(EXAMPLE_GNATMAKE_FLAGS) \
+ 	-largs $(ADASOCKETS_LIBS)
+ 
+ # Due to a bug in Automake 1.4, this line must not be splitted.
