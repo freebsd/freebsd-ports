@@ -9,9 +9,7 @@ PORTNAME=	eterm
 PORTVERSION=	0.9.2
 PORTREVISION=	1
 CATEGORIES+=	x11
-MASTER_SITES=	http://www.eterm.org/download/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.eterm.org/download/
 DISTNAME=	Eterm-${PORTVERSION}
 
 MAINTAINER?=	olgeni@FreeBSD.org
