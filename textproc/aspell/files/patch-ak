@@ -1,0 +1,15 @@
+--- Makefile.in.orig	Mon Jan 29 10:13:57 2001
++++ Makefile.in	Fri Feb 16 19:58:25 2001
+@@ -84,7 +84,11 @@
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
+-SUBDIRS = util filter lib src data scripts manual pspell-module
++ifndef NOPORTDOCS
++MANUALSUBDIR = manual
++endif
++
++SUBDIRS = util filter lib src data scripts $(MANUALSUBDIR) pspell-module
+ 
+ EXTRA_DIST = TODO misc/* README-bin        mkbindist.sh long_name_test.hh        ltcf-c.sh ltcf-cxx.sh 
+ 
