@@ -1,0 +1,11 @@
+--- configure.in.orig	Thu Mar 14 12:52:32 2002
++++ configure.in	Thu Mar 14 12:52:39 2002
+@@ -46,7 +46,7 @@
+ 
+ 	 dnl -- and whether the build system is installed
+       AC_MSG_CHECKING(whether Python development environment is installed)
+-	 if test ! -f "${PYTHONDIR}/Makefile.pre.in"; then
++	 if test ! -f "${PYTHONDIR}/Makefile"; then
+ 	 	AC_MSG_RESULT(not found)
+ 		AC_MSG_ERROR(Perhaps you need to install the Python development tools?)
+       else

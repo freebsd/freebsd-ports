@@ -1,5 +1,5 @@
 bin/fugu
-bin/fugu-config
+bin/pygale-config
 lib/fugu-%%PORTVERSION%%/DefaultConfig.py
 lib/fugu-%%PORTVERSION%%/DefaultConfig.pyc
 lib/fugu-%%PORTVERSION%%/HistoryCombo.py
@@ -13,8 +13,6 @@ lib/fugu-%%PORTVERSION%%/config.pyc
 lib/fugu-%%PORTVERSION%%/connection.py
 lib/fugu-%%PORTVERSION%%/connection.pyc
 lib/fugu-%%PORTVERSION%%/fugu-icon.xbm
-lib/fugu-%%PORTVERSION%%/fugusetup.py
-lib/fugu-%%PORTVERSION%%/fugusetup.pyc
 lib/fugu-%%PORTVERSION%%/openssl/__init__.py
 lib/fugu-%%PORTVERSION%%/openssl/__init__.pyc
 lib/fugu-%%PORTVERSION%%/openssl/bn.py
@@ -62,6 +60,8 @@ lib/fugu-%%PORTVERSION%%/pygale/userinfo.py
 lib/fugu-%%PORTVERSION%%/pygale/userinfo.pyc
 lib/fugu-%%PORTVERSION%%/pygale/version.py
 lib/fugu-%%PORTVERSION%%/pygale/version.pyc
+lib/fugu-%%PORTVERSION%%/pygalesetup.py
+lib/fugu-%%PORTVERSION%%/pygalesetup.pyc
 lib/fugu-%%PORTVERSION%%/search.py
 lib/fugu-%%PORTVERSION%%/search.pyc
 lib/fugu-%%PORTVERSION%%/thumbcache.py
