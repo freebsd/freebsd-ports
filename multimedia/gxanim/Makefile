@@ -8,10 +8,11 @@
 PORTNAME=	gxanim
 PORTVERSION=	0.50
 CATEGORIES=	graphics
-MASTER_SITES=		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	fenner
+MASTER_SITES=	http://www.greslin.org/code/
+DISTNAME=	GXAnim-${PORTVERSION}
+EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	rbt@zort.on.ca
+MAINTAINER=	rbt@zort.ca
 
 RUN_DEPENDS=	xanim:${PORTSDIR}/graphics/xanim
 
