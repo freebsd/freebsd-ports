@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	gutenfetch
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gutenfetch
 
-MAINTAINER=	rf358197@ohio.edu
+MAINTAINER=	johntabularasa@users.sf.net
 COMMENT=	Fetch listings and books from Project Gutenberg
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl:install
+LIB_DEPENDS=	gutenfetch:${PORTSDIR}/devel/libgutenfetch
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GETOPT_LONG=	yes

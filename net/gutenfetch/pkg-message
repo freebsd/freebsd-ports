@@ -1,10 +1,15 @@
 ----------------------------------------------------------------
-gutenfetch must be run once to pick out local Project Gutenberg
-servers.  If you are an administrator please copy the generated
+gutenfetch can be run once to pick out local Project Gutenberg
+servers with the following command line.
+
+# gutenfetch -m
+
+If you are an administrator please copy the generated
 file ~/.gutenfetchrc to %%PREFIX%%/etc/gutenfetchrc.  This will
 prevent other users from having to pick out their favorite
 servers.
 
 gutenfetch also performs best with a caching proxy server such
-as wwwoffle or squid.
+as wwwoffle or squid.  Although, this version will cache fetched
+books in the ~/.libgutenfetch/ directory by default.
 ----------------------------------------------------------------
