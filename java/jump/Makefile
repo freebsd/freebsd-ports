@@ -7,6 +7,7 @@
 
 PORTNAME=	jump
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	java math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jump-math
@@ -20,9 +21,10 @@ USE_JAVA=	1.2+
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 TARGET_DIR?=	${PREFIX}/share/java/${PORTNAME}-${PORTVERSION}
 ANT?=		${LOCALBASE}/bin/ant
+ANT_TARGET=	jar javadoc
 
 do-build:
-	@cd ${WRKSRC} && ${ANT}
+	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
 
 do-install:
 	@${ECHO} -n ">> Creating directory ${TARGET_DIR}..."
