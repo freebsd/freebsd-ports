@@ -15,6 +15,7 @@
     SUBDIR += p5-Convert-UU
     SUBDIR += p5-MIME-Base64
     SUBDIR += recode
+    SUBDIR += tcs
     SUBDIR += trans
     SUBDIR += tuc
     SUBDIR += unix2dos
