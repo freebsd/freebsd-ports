@@ -263,8 +263,15 @@ lib/dotfile-2.2/fvwm1/tools.tcl
 lib/dotfile-2.2/procmail/exports/contents
 lib/dotfile-2.2/procmail/exports/examples.export
 lib/dotfile-2.2/procmail/save-files/examples.save
+lib/dotfile-2.2/procmail/bytecompile
+lib/dotfile-2.2/procmail/config.log
+lib/dotfile-2.2/procmail/config.status
 lib/dotfile-2.2/procmail/configure.in.orig
 lib/dotfile-2.2/procmail/configure.in~
+lib/dotfile-2.2/procmail/filter
+lib/dotfile-2.2/procmail/logcheck
+lib/dotfile-2.2/procmail/mkdirhier
+lib/dotfile-2.2/procmail/system.tcl
 lib/dotfile-2.2/procmail/system.tcl.in
 lib/dotfile-2.2/procmail/recipes.template
 lib/dotfile-2.2/procmail/recipes-save.template
