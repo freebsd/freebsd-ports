@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${X11BASE}/include/mozilla${HEADERS_SUFX}/gtkembedmoz/gtkmozembed
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
-MOZ_CONFIGURE_ARGS=--with-mozilla-snapshot="1.5b"
+MOZ_CONFIGURE_ARGS=--with-mozilla-snapshot="trunk"
 
 .if !defined(WITH_MOZILLA)
 MOZILLA=	mozilla

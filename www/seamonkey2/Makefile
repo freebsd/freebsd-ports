@@ -6,15 +6,15 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.5b
+PORTVERSION=	1.6.a
 PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 	      	${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.rc/rc/}/src \
+MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.a/a/}/src \
 		marcus/:local
-DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.rc/rc/}${EXTRACT_SUFX} \
+DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.a/a/}${EXTRACT_SUFX} \
 		libart_lgpl${EXTRACT_SUFX}:local
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -140,8 +140,6 @@ CONFIGURE_ARGS+=	--disable-composer
 
 .if defined(WITH_GTK2)
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
-PKGCONFIG_FILES=	mozilla-gtkmozembed mozilla-js mozilla-xpcom \
-			mozilla-nspr mozilla-nss mozilla-plugin
 .else
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk
 .endif
@@ -151,6 +149,9 @@ CONFIGURE_ARGS+=	--enable-xft
 .else
 CONFIGURE_ARGS+=	--disable-xft
 .endif
+
+PKGCONFIG_FILES=mozilla-gtkmozembed mozilla-js mozilla-xpcom \
+		mozilla-nspr mozilla-nss mozilla-plugin
 
 .include <bsd.port.pre.mk>
 
@@ -203,19 +204,18 @@ post-patch:
 	@${FIND} ${WRKSRC}/other-licenses/libical -name "*.c" | ${XARGS} \
 		${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|g'
 	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure
+		${WRKSRC}/configure \
+		${WRKSRC}/nsprpub/configure
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/nsprpub/config/FreeBSD.mk \
+		${WRKSRC}/nsprpub/configure \
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
 		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
-.if defined(WITH_GTK2)
 	@for pcfile in ${PKGCONFIG_FILES}; do \
-	    ${REINPLACE_CMD} -e 's|mozilla-xpcom|mozilla-xpcom${MOZ_SUFX}|g ; \
-	    	s|mozilla-nspr|mozilla-nspr${MOZ_SUFX}|g' \
+	    ${REINPLACE_CMD} -e 's|mozilla-xpcom|mozilla-xpcom${MOZ_SUFX}${PKGNAMESUFFIX}|g ; \
+	    	s|mozilla-nspr|mozilla-nspr${MOZ_SUFX}${PKGNAMESUFFIX}|g' \
 		${WRKSRC}/build/unix/$${pcfile}.pc.in; \
 	done
-.endif
 
 post-build:
 	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%MOZILLA%%|${MOZILLA}|g" \
@@ -243,11 +243,9 @@ pre-install:
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's:^:@dirrm lib/${MOZILLA}/:' >> ${PLIST}
 	${ECHO_CMD} @dirrm lib/${MOZILLA} >> ${PLIST}
-.if defined(WITH_GTK2)
 	for pcfile in ${PKGCONFIG_FILES}; do \
-	    	${ECHO_CMD} libdata/pkgconfig/$${pcfile}${MOZ_SUFX}.pc >> ${PLIST} ; \
+	    	${ECHO_CMD} libdata/pkgconfig/$${pcfile}${MOZ_SUFX}${PKGNAMESUFFIX}.pc >> ${PLIST} ; \
 	done
-.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/${MOZILLA}
@@ -265,12 +263,10 @@ do-install:
 	    ${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
 	    	${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
 	fi
-.if defined(WITH_GTK2)
 	for pcfile in ${PKGCONFIG_FILES}; do \
 	    	${INSTALL_DATA} ${WRKSRC}/build/unix/$${pcfile}.pc \
-			${PREFIX}/libdata/pkgconfig/$${pcfile}${MOZ_SUFX}.pc ; \
+			${PREFIX}/libdata/pkgconfig/$${pcfile}${MOZ_SUFX}${PKGNAMESUFFIX}.pc ; \
 	done
-.endif
 
 post-install:
 	@${CHMOD} -R u-w ${PREFIX}/lib/${MOZILLA}/components
