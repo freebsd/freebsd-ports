@@ -19,7 +19,10 @@ LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
-CONFIGURE_TARGET=
+CONFIGURE_TARGET=	--build ${MACHINE_ARCH}-portbld-freebsd${OSREL}
+.if ${MACHINE_CPU:Mi586}
+MACHINE_ARCH=	i586
+.endif
 CFLAGS:=	${CFLAGS:S/-pipe//g}
 MAN1=		gpg.1 gpgv.1
 
