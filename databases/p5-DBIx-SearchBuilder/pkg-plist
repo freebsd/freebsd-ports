@@ -6,7 +6,9 @@
 %%SITE_PERL%%/DBIx/SearchBuilder/Handle/Pg.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Handle/mysql.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Handle/mysqlPP.pm
+%%SITE_PERL%%/DBIx/SearchBuilder/Handle/ODBC.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Handle/Oracle.pm
+%%SITE_PERL%%/DBIx/SearchBuilder/Handle/SQLite.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/SearchBuilder
 @dirrm %%SITE_PERL%%/DBIx/SearchBuilder/Record
 @dirrm %%SITE_PERL%%/DBIx/SearchBuilder/Handle
