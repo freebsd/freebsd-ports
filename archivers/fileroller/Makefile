@@ -7,7 +7,7 @@
 
 PORTNAME=	fileroller
 PORTVERSION=	2.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -36,5 +36,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
+
+post-install:
+	@-update-desktop-database > /dev/null
 
 .include <bsd.port.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	gpdf
 PORTVERSION=	2.8.3
+PORTREVISION=	1
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.8
@@ -26,5 +27,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	gpdf.schemas
+
+post-install:
+	@-update-desktop-database > /dev/null
 
 .include <bsd.port.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	ggv
 PORTVERSION=	2.8.3
+PORTREVISION=	1
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.8
@@ -34,5 +35,8 @@ pre-everything::
 	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
 	@${ECHO_MSG} ""
 .endif
+
+post-install:
+	@-update-desktop-database > /dev/null
 
 .include <bsd.port.mk>

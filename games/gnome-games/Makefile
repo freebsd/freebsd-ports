@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomegames2
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-games/2.8
@@ -40,5 +41,8 @@ CONFLICTS=	sol-1.0.*
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
+
+post-install:
+	@-update-desktop-database > /dev/null
 
 .include <bsd.port.mk>
