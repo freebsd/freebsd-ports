@@ -74,4 +74,3 @@ share/themes/Xfce/gtk-2.0/gtkrc
 @dirrm share/themes/Xfce-basic
 @dirrm share/themes/Xfce-b5/gtk-2.0
 @dirrm share/themes/Xfce-b5
-@unexec rmdir %D/lib/gtk-2.0/2.4.0/engines 2>/dev/null || true
