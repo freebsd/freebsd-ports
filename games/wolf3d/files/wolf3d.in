@@ -3,6 +3,33 @@
 #
 # 2004 Travis Poppe
 
+USERDIR=$HOME/.wolf3d
+
+if [ -x $USERDIR ]; then
+	echo "wolf3d appears to be installed to $USERDIR/"
+	echo ""
+	echo "Basic options:"
+	echo ""
+	echo "-nowait           Skips introduction"
+	echo "-nojoy            Disables joystick"
+	echo "-nomouse          Disables mouse"
+	echo "-x2               Increases screen size by x2"
+	echo "-x3               Increases screen size by x3"
+	echo "-fullscreen       Enables fullscreen mode"
+	echo "-demotest         Starts wolf3d in demonstration mode"
+	echo "-version          Reports game version"
+	echo ""
+
+	cd $USERDIR
+	./sdlwolf3d $*
+	exit
+fi
+
+mkdir $USERDIR
+ln -s %%PREFIX%%/libexec/wolf3d/* $USERDIR
+
+echo "Installed wolf3d to $USERDIR/"
+echo ""
 echo "Basic options:"
 echo ""
 echo "-nowait           Skips introduction"
@@ -14,5 +41,6 @@ echo "-fullscreen       Enables fullscreen mode"
 echo "-demotest         Starts wolf3d in demonstration mode"
 echo "-version          Reports game version"
 echo ""
-cd %%PREFIX%%/libexec/wolf3d
+
+cd $USERDIR
 ./sdlwolf3d $*

@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+This port's wrapper script will install the wolf3d data to your home directory
+the first time you run it. If for some odd reason you already have a directory
+called .wolf3d in your home directory, you must (re)move it before this port 
+will function correctly.
+
+-tlp
+-------------------------------------------------------------------------------

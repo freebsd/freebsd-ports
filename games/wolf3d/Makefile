@@ -7,13 +7,14 @@
 
 PORTNAME=	wolf3d
 PORTVERSION=	20011028
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.icculus.org/wolf3d/:wolf \
 		http://www.liquidx.org/distfiles/:wolfdata
 DISTFILES=	wolf3d-20011028.tar.gz:wolf wolfdata.tar.gz:wolfdata
 
 MAINTAINER=	tlp@liquidx.org
-COMMENT=	Wolfenstein 3D by Steven Fuller, based on 1992 id Software game
+COMMENT=	"Wolfenstein 3D Linux" by Steven Fuller (1992)
 
 USE_SDL=	yes
 USE_GZIP=	yes
@@ -42,5 +43,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
 	${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}/TODO
 .endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
