@@ -1,23 +1,7 @@
 SWATCH - The Simple WATCHer and filter
 
-       Swatch is designed to  monitor  system  activity.   Swatch
-       requires a configuration file which contains pattern(s) to
-       look for and action(s) to do when each pattern is found.
+Swatch is designed to  monitor  system  activity.   Swatch
+requires a configuration file which contains pattern(s) to
+look for and action(s) to do when each pattern is found.
 
-      The file contains four TAB separated fields:
-
-/pattern/[,/pattern/,...] action[,action,...] [[HH:]MM:]SS start:length
-
-       A pattern must be a regular expression which perl(1)  will
-       accept,  which  is very similar to the regular expressions
-       which egrep(1) accepts.
-
-       The following actions are acceptable:
-
-       echo[=mode]
-       bell[=N]
-       exec=command
-       ignore
-       mail[=address:address:...]
-       pipe=command
-       write[=user:user:...]
+WWW: http://www.stanford.edu/~atkins/swatch/
