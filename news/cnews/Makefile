@@ -3,7 +3,7 @@
 # Date created:		28 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.1.1.1 1994/09/25 18:59:07 adam Exp $
+# $Id: Makefile,v 1.1.1.1 1994/09/30 15:09:34 adam Exp $
 #
 
 DISTNAME=	cnews
@@ -19,21 +19,26 @@ MANDIR=		/usr/local/man
 
 install: all
 	@echo "===>  installing for ${DISTNAME}"
-	@mkdir -p ${NEWSSPOOL}
-	@ln -s ${NEWSSPOOL} /var/news
-	@mkdir -p ${NEWSBIN} ${NEWSLIB}
-	@chown news.news ${NEWSSPOOL} ${NEWSLIB}
-	@chown bin.bin ${NEWSBIN}
-	@cd ${WRKSRC}; su -m bin -c ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install
-	@cd ${WRKSRC}; su -m news -c ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} setup
-	@cd ${WRKSRC}; su -m bin -c ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ui \
-		readpostcheck
-	@chown news.news ${NEWSBIN}/input/newsspool
-	@chmod 6755 ${NEWSBIN}/input/newsspool
-	@mkdir -p ${MANDIR}/man1 ${MANDIR}/man5 ${MANDIR}/man8
-	@install -o bin -g bin -m 444 ${WRKSRC}/man/*.1* ${MANDIR}/man1
-	@install -o bin -g bin -m 444 ${WRKSRC}/man/*.5* ${MANDIR}/man5
-	@install -o bin -g bin -m 444 ${WRKSRC}/man/*.8* ${MANDIR}/man8
+	mkdir -p ${NEWSSPOOL}
+	ln -s ${NEWSSPOOL} /var/news
+	mkdir -p ${NEWSBIN} ${NEWSLIB}
+	chown news.news ${NEWSSPOOL} ${NEWSLIB}
+	chown bin.bin ${NEWSBIN}
+	cd ${WRKSRC}; \
+		echo ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install | \
+		su -m bin
+	cd ${WRKSRC}; \
+		echo ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} setup | \
+		su -m news
+	cd ${WRKSRC}; \
+		echo ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ui readpostcheck | \
+		su -m bin
+	chown news.news ${NEWSBIN}/input/newsspool
+	chmod 6755 ${NEWSBIN}/input/newsspool
+	mkdir -p ${MANDIR}/man1 ${MANDIR}/man5 ${MANDIR}/man8
+	install -o bin -g bin -m 444 ${WRKSRC}/man/*.1* ${MANDIR}/man1
+	install -o bin -g bin -m 444 ${WRKSRC}/man/*.5* ${MANDIR}/man5
+	install -o bin -g bin -m 444 ${WRKSRC}/man/*.8* ${MANDIR}/man8
 	@echo ""
 	@echo "!!!!!!!!"
 	@echo "you MUST change the configuration of this news setup:"
