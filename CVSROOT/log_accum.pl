@@ -615,6 +615,7 @@ while (<STDIN>) {
 		    /^Reviewed by:$/i ||
 		    /^Submitted by:$/i ||
 		    /^Obtained from:$/i ||
+		    /^MFC after:$/i ||
 		    /^Approved by:$/i) {
 			push @log_lines, $_;
 		}

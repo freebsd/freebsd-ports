@@ -50,6 +50,18 @@ while(<IN>) {
 		    /^PR:$/i) {
 			next;
 		}
+
+		# Special handling for type checking the 'MFC after' field.
+		if (/^MFC after:\s*(.*)$/) {
+			# Ignore it if no value was filled in.
+			next unless $1;
+
+			unless ($1 =~ /[\d]+ (days?|weeks?)$/) {
+				print "Parse error in 'MFC after:'\n";
+				exit 1;
+			}
+		}
+				
 		if ($blank && $first) {
 			# Previous line(s) was blank, this isn't. Close the
 			# collapsed section.
