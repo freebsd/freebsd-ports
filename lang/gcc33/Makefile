@@ -17,7 +17,6 @@ CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots
 .if !defined(CVS_DATE)
-EXTRACT_SUFX=	.tar.gz
 DISTFILES=	\
 		gcc-core-${PORTVERSION}-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-g++-${PORTVERSION}-${SNAPVER}${EXTRACT_SUFX} \
@@ -31,7 +30,7 @@ COMMENT?=	GNU Compiler Collection 3.3
 
 LATEST_LINK?=	gcc33${PKGNAMESUFFIX}
 
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 USE_REINPLACE=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
@@ -61,7 +60,6 @@ CONFIGURE_ARGS=	--disable-nls \
 #CONFIGURE_ARGS+=	--program-suffix=33
 #	Java
 CONFIGURE_ARGS+=	--with-system-zlib #--includedir=${TARGLIB}/include/Java -libdir=${TARGLIB}
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+=	--enable-shared
