@@ -1,0 +1,11 @@
+--- src/defs.h	2000/05/26 09:38:10	1.1
++++ src/defs.h	2000/05/26 09:38:24
+@@ -42,7 +42,7 @@
+ 
+ #include <time.h>
+ 
+-#include <regex.h>
++#include <gnuregex.h>
+ #include "pred.h"
+ #include "win.h"
+ 

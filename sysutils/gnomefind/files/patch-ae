@@ -1,0 +1,11 @@
+--- src/parser.c.orig	Tue Jun  6 13:37:39 2000
++++ src/parser.c	Tue Jun  6 13:37:49 2000
+@@ -23,7 +23,7 @@
+ #include <stdio.h>
+ #include <pwd.h>
+ #include <grp.h>
+-#include <regex.h>
++#include <gnuregex.h>
+ #include "modechange.h"
+ #include "defs.h"
+ #include "modetype.h"

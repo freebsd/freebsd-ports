@@ -1,0 +1,20 @@
+--- src/fstype.c	2000/05/26 09:54:55	1.1
++++ src/fstype.c	2000/05/26 10:08:03
+@@ -318,7 +318,7 @@
+   char *p;
+ 
+   if (S_ISLNK (statp->st_mode))
+-    p = dirname (relpath);
++    readlink(relpath, (p = malloc(MAXPATHLEN)), MAXPATHLEN);
+   else
+     p = relpath;
+ 
+@@ -332,7 +332,7 @@
+   else
+     {
+ #ifdef MFSNAMELEN		/* NetBSD.  */
+-      type = xstrdup (fss.f_fstypename);
++      type = strdup (fss.f_fstypename);
+ #else
+       type = fstype_to_string (fss.f_type);
+ #endif

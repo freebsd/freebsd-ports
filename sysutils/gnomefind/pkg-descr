@@ -1,0 +1,22 @@
+gnome-find is an easy-to-use, but powerful, graphical version of the GNU "find"
+utility. 
+
+It is not just a front-end which just forks and execs "find", nor is it a
+utility that reinvents the wheel by rewriting the "find" utility itself. 
+
+The original source code to the GNU "find" utility (as found in findutils-4.1)
+was used, and a GUI component was integrated into it. Consequently, the actual
+file finding backend component is based on the very stable and mature code in
+GNU "find", while the GUI component provides a modern, easy-to-use, yet
+powerful, interface. 
+
+By making it a truely graphical program, it avoids the common portability
+problems typically encountered by front-ends when they run on systems without
+GNU "find", as well as avoiding messy issues with forking a new process and
+communicating with it (e.g., pipes, temporary files, etc.). 
+
+gnome-find features a default, no-nonsense dialog for use in most commonly
+specified searches. Additionally, a second, more detailed and advanced dialog
+is available to specify more powerful search parameters. 
+
+WWW: http://gnome-find.sourceforge.net/
