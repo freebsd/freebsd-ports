@@ -128,6 +128,7 @@
     SUBDIR += isoqlog
     SUBDIR += isync
     SUBDIR += jamlib
+    SUBDIR += jboss-mailservices
     SUBDIR += junkfilter
     SUBDIR += kavmilter
     SUBDIR += kbiff
