@@ -13,9 +13,7 @@ MASTER_SITE_SUBDIR=	stable/sources/esound
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
