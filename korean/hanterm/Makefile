@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hanterm
-PORTVERSION=	3.1.5
-PORTREVISION=	1
+PORTVERSION=	3.1.6
 CATEGORIES=	korean x11
 MASTER_SITES=	http://hanterm.org/download/ \
 		ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
@@ -25,7 +24,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Hanterm.ad \
 		${PREFIX}/lib/X11/app-defaults/Hanterm
 	${MKDIR} ${PREFIX}/share/doc/hanterm
-	${INSTALL_DATA} ${WRKSRC}/doc/hanterm.html ${PREFIX}/share/doc/hanterm/
+.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKSRC}/doc/devel/hanterm.html ${PREFIX}/share/doc/hanterm/
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/hanterm/
+.endif
 
 .include <bsd.port.mk>
