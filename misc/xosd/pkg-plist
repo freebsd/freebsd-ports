@@ -1,4 +1,5 @@
 bin/osd_cat
+include/xosd.h
 lib/libxosd.so
 lib/libxosd.so.0
 %%WITH_XMMS%%lib/xmms/General/libxmms_osd.so

@@ -7,6 +7,7 @@
 
 PORTNAME=	xosd
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.ignavus.net/ \
 		http://www3.kr.freebsd.org/~perky/distfiles/
@@ -18,10 +19,17 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 LIB_DEPENDS+=	xmms.1:${PORTSDIR}/audio/xmms
 .endif
 
+XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GTK=	yes
+USE_GLIB=	yes
 INSTALLS_SHLIB=	yes
-MAKE_ENV=	CFLAGS='${CFLAGS}' PREFIX='${PREFIX}'
+MAKE_ENV=	CFLAGS='${CFLAGS}' PREFIX='${PREFIX}' \
+		X11BASE='${X11BASE}' LOCALBASE='${LOCALBASE}' \
+		GTK_CONFIG='${GTK_CONFIG}' GLIB_CONFIG="${GLIB_CONFIG}" \
+		XMMS_CONFIG="${XMMS_CONFIG}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 MAN1=		osd_cat.1
 MAN3=		xosd.3
@@ -32,5 +40,8 @@ PLIST_SUB+=	WITH_XMMS=""
 .else
 PLIST_SUB+=	WITH_XMMS="@comment "
 .endif
+
+pre-build:
+	${PERL} -pi -e "s@gcc@${CC}@g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
