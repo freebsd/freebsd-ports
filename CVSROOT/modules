@@ -3813,6 +3813,7 @@ libebml		ports/textproc/libebml
 libecc		ports/security/libecc
 libelf		ports/devel/libelf
 libelysium	ports/misc/libelysium
+libemf		ports/graphics/libemf
 libepplet	ports/x11-wm/libepplet
 liberator	ports/net/liberator
 libesmtp	ports/mail/libesmtp
