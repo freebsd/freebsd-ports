@@ -9,50 +9,51 @@ PORTNAME=	linux-netscape
 PORTVERSION?=	6.2.3
 PORTREVISION?=	0
 CATEGORIES?=	www linux
-MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.cica.es/pub6/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.ciril.fr/pub2/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.cs.tu-berlin.de/pub/net/www/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.cuhk.edu.hk/.3/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.darenet.dk/mirrors/ftp2.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.dei.uc.pt/.raid0/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.fu-berlin.de/unix/network/www/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.hu-berlin.de/pub/www/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.informatik.uni-hamburg.de/pub/soft/infosystems/www/clients/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.jaist.ac.jp/net/Netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.nsysu.edu.tw/Netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.ruhr-uni-bochum.de/mirrors/ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.sunet.se/pub/www/Netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.uit.no/pub/www/Netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.uni-bielefeld.de/pub/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.uni-c.dk/mirrors/ftp2.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.uni-magdeburg.de/pub/mirror/ftp.netscape.com/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.uniovi.es/pub/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.unipi.it/pub/mirror/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.uniroma2.it/%7bC/Netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.ut.ee/pub/WWW/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://sunsite.tus.ac.jp/pub/archives/WWW/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.mirror.ac.uk/sites/ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.rediris.es/sites/ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/ \
-		ftp://ftp.ntua.gr/pub/www/Netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.fct.unl.pt/.1/Netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.sunsite.auc.dk/disk3/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.skynet.be/mirror2/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.etse.urv.es/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://sunfreeware.unam.mx/pub/Netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.fh-wolfenbuettel.de/pub/www/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.tu-darmstadt.de/pub/networking/www/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.uni-bremen.de/pub/mirrors/ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.cyf-kr.edu.pl/pub/mirror/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/
-DIST_SUBDIR=	netscape6/${NETSCAPE6_LANG}/${PORTVERSION}
+MASTER_SITES=	\
+ftp://ftp.netscape.com/pub/${FTPDIR}/ \
+ftp://ftp.cica.es/pub6/netscape/${FTPDIR}/ \
+ftp://ftp.ciril.fr/pub2/netscape/${FTPDIR}/ \
+ftp://ftp.cs.tu-berlin.de/pub/net/www/netscape/${FTPDIR}/ \
+ftp://ftp.cuhk.edu.hk/.3/netscape/${FTPDIR}/ \
+ftp://ftp.darenet.dk/mirrors/ftp2.netscape.com/pub/${FTPDIR}/ \
+ftp://ftp.dei.uc.pt/.raid0/netscape/${FTPDIR}/ \
+ftp://ftp.fu-berlin.de/unix/network/www/netscape/${FTPDIR}/ \
+ftp://ftp.hu-berlin.de/pub/www/netscape/${FTPDIR}/ \
+ftp://ftp.informatik.uni-hamburg.de/pub/soft/infosystems/www/clients/netscape/${FTPDIR}/ \
+ftp://ftp.jaist.ac.jp/net/Netscape/${FTPDIR}/ \
+ftp://ftp.nsysu.edu.tw/Netscape/${FTPDIR}/ \
+ftp://ftp.ruhr-uni-bochum.de/mirrors/ftp.netscape.com/pub/${FTPDIR}/ \
+ftp://ftp.sunet.se/pub/www/Netscape/${FTPDIR}/ \
+ftp://ftp.uit.no/pub/www/Netscape/${FTPDIR}/ \
+ftp://ftp.uni-bielefeld.de/pub/netscape/${FTPDIR}/ \
+ftp://ftp.uni-c.dk/mirrors/ftp2.netscape.com/pub/${FTPDIR}/ \
+ftp://ftp.uni-magdeburg.de/pub/mirror/ftp.netscape.com/${FTPDIR}/ \
+ftp://ftp.uniovi.es/pub/netscape/${FTPDIR}/ \
+ftp://ftp.unipi.it/pub/mirror/netscape/${FTPDIR}/ \
+ftp://ftp.uniroma2.it/%7bC/Netscape/${FTPDIR}/ \
+ftp://ftp.ut.ee/pub/WWW/netscape/${FTPDIR}/ \
+ftp://sunsite.cnlab-switch.ch/mirror/netscape/${FTPDIR}/ \
+ftp://sunsite.tus.ac.jp/pub/archives/WWW/netscape/${FTPDIR}/ \
+ftp://ftp.mirror.ac.uk/sites/ftp.netscape.com/pub/${FTPDIR}/ \
+ftp://ftp.ntua.gr/pub/www/Netscape/${FTPDIR}/ \
+ftp://ftp.fct.unl.pt/.1/Netscape/${FTPDIR}/ \
+ftp://ftp.sunsite.auc.dk/disk3/netscape/${FTPDIR}/ \
+ftp://ftp.skynet.be/mirror2/netscape/${FTPDIR}/ \
+ftp://ftp.etse.urv.es/netscape/${FTPDIR}/ \
+ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/pub/${FTPDIR}/ \
+ftp://sunfreeware.unam.mx/pub/Netscape/${FTPDIR}/ \
+ftp://ftp.fh-wolfenbuettel.de/pub/www/netscape/${FTPDIR}/ \
+ftp://ftp.tu-darmstadt.de/pub/networking/www/netscape/${FTPDIR}/ \
+ftp://ftp.uni-bremen.de/pub/mirrors/ftp.netscape.com/pub/${FTPDIR}/ \
+ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.netscape.com/pub/${FTPDIR}/ \
+ftp://ftp.cyf-kr.edu.pl/pub/mirror/netscape/${FTPDIR}/ \
+ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.netscape.com/pub/${FTPDIR}/
+DIST_SUBDIR=	${MAJ}/${NETSCAPE6_LANG}/${VER}
+FTPDIR=		${DIST_SUBDIR}/unix/linux22/xpi
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	trevor
-PATCHFILES=	linux-netscape6-${PORTVERSION}-generated-files.tar.gz
+PATCHFILES=	linux-${MAJ}-${VER}-generated-files.tar.gz
 
 MAINTAINER?=	trevor@FreeBSD.org
 
@@ -60,7 +61,8 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0.5.0:${PORTSDIR}/x11-toolkits/linux-gtk \
 		${LINUXBASE}/usr/lib/libjpeg.so.62.0.0:${PORTSDIR}/graphics/linux-jpeg
 
-LATEST_LINK=	linux-netscape6
+LATEST_LINK=	linux-${MAJ}
+MAJ?=		netscape6
 NETSCAPE6_LANG?=english
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
@@ -69,10 +71,11 @@ RESTRICTED=	"License for Java plugin allows internal use only.  Also see license
 NO_CDROM=	${RESTRICTED}
 USE_LINUX=	yes
 USE_XLIB=	yes
+VER?=		${PORTVERSION}
 WRKSRC=	${WRKDIR}/netscape-installer/xpi
-INSTALL_DIR=	lib/linux-netscape6-${NETSCAPE6_LANG}
+INSTALL_DIR=	lib/linux-${MAJ}-${NETSCAPE6_LANG}
 PLIST=		${WRKDIR}/pkg-plist
-STARTUP_CMD=	${WRKDIR}/netscape6${NETSCAPE6_LANG}
+STARTUP_CMD=	${WRKDIR}/${MAJ}${NETSCAPE6_LANG}
 
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes
@@ -158,7 +161,7 @@ do-configure:
 	${ECHO_CMD}	'exec ./netscape $$*'	>> ${STARTUP_CMD}
 
 pre-install:
-	${ECHO_CMD} bin/netscape6${NETSCAPE6_LANG} > ${PLIST}
+	${ECHO_CMD} bin/${MAJ}${NETSCAPE6_LANG} > ${PLIST}
 	cd ${WRKSRC}/bin; for i in `find * \! -type d | sort`; do \
 		${ECHO_CMD} ${INSTALL_DIR}/$${i} >> ${PLIST}; \
 	done
