@@ -1,0 +1,14 @@
+*** defaults.h~	Sat Dec 28 01:45:30 1996
+--- defaults.h	Sat Dec 28 01:45:33 1996
+***************
+*** 30,34 ****
+--- 30,38 ----
+   * file for setups and defaults
+   */
++ #ifdef __FreeBSD__
++ static char *file_appl_def   ="/usr/X11R6/lib/X11/app-defaults/XBlast";
++ #else
+  static char *file_appl_def   ="/usr/lib/X11/app-defaults/XBlast";
++ #endif
+  static char *file_setup      ="/.xblast";
+  static char *file_setup_dir  ="/.xblast-setups";
