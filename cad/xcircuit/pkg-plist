@@ -38,7 +38,8 @@ share/examples/xcircuit/.xcircuitrc
 share/examples/xcircuit/USAflag.ps
 share/examples/xcircuit/analog1.ps
 share/examples/xcircuit/analog2.ps
-share/examples/xcircuit/analoglib.lps
+share/examples/xcircuit/analoglib1.lps
+share/examples/xcircuit/analoglib2.lps
 share/examples/xcircuit/border.ps
 share/examples/xcircuit/diffamp_test.ps
 share/examples/xcircuit/logic8.ps
