@@ -1,0 +1,26 @@
+--- src/Makefile.in.orig	Fri Dec  1 03:58:38 2000
++++ src/Makefile.in	Wed Mar 21 17:52:10 2001
+@@ -39,7 +39,7 @@
+ GTK_CFLAGS  = @GTK_CFLAGS@
+ GIMP_LIBS   = @GIMP_LIBS@
+ 
+-BINPROGS = @BINPROGS@
++BINPROGS = @GUIPROGS@
+ 
+ COMPILE = $(CC) -c $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(GTK_CFLAGS)
+ LINK = $(CC) $(LDFLAGS) -o $@
+@@ -59,12 +59,12 @@
+ all: $(PROGRAMS)
+ 
+ install: $(PROGRAMS)
+-	$(MKDIR) $(bindir) $(datadir)
++	$(MKDIR) $(bindir) $(sanedatadir)
+ 	@for program in $(BINPROGS); do \
+ 	  $(INSTALL_PROGRAM) $${program} \
+ 	    $(bindir)/$${program}; \
+ 	done
+-	$(INSTALL_DATA) $(srcdir)/sane-style.rc $(datadir)/sane-style.rc
++	$(INSTALL_DATA) $(srcdir)/sane-style.rc $(sanedatadir)/sane-style.rc
+ 
+ xscanimage: $(XSCAN_OBJS) $(LIBSANEI) $(LIBLIB)
+ 	$(LINK) $(XSCAN_OBJS) $(LIBSANEI) \
