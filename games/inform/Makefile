@@ -3,7 +3,7 @@
 # Date created:				28 June 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1999/02/03 11:11:44 asami Exp $
+# $Id: Makefile,v 1.4 1999/05/01 12:34:18 jseger Exp $
 #
 
 DISTNAME=	inform-6.15
@@ -18,6 +18,8 @@ MAINTAINER=	mph@freebsd.org
 MASTER_SITES+=	ftp://ftp.gmd.de/if-archive/infocom/compilers/inform6/manuals/
 DISTFILES+=	designers_manual_html.zip
 .endif
+
+BROKEN=		fetch
 
 DIST_SUBDIR=	inform
 NO_WRKSUBDIR=	yes
