@@ -1,0 +1,59 @@
+bin/race
+share/race/config
+share/race/data/all/.xvpics/font.jpg
+share/race/data/all/.xvpics/font.png
+share/race/data/all/.xvpics/fontoutline.png
+share/race/data/all/.xvpics/loading.jpg
+share/race/data/all/font.png
+share/race/data/all/fontoutline.png
+share/race/data/all/loading.jpg
+share/race/data/all/menu.jpg
+share/race/data/all/pz.jpg
+share/race/data/all/speed.jpg
+share/race/data/all/speed.png
+share/race/data/desert/.xvpics/bk.jpg
+share/race/data/desert/.xvpics/dn.jpg
+share/race/data/desert/.xvpics/ft.jpg
+share/race/data/desert/.xvpics/lf.jpg
+share/race/data/desert/.xvpics/rt.jpg
+share/race/data/desert/.xvpics/terrain.jpg
+share/race/data/desert/.xvpics/up.jpg
+share/race/data/desert/bk.jpg
+share/race/data/desert/dn.jpg
+share/race/data/desert/ft.jpg
+share/race/data/desert/lf.jpg
+share/race/data/desert/map.bmp
+share/race/data/desert/rt.jpg
+share/race/data/desert/terrain.jpg
+share/race/data/desert/up.jpg
+share/race/data/models/ship.mdl
+share/race/data/music/fuck.xm
+share/race/data/music/lktheme.mod
+share/race/data/sea/.xvpics/bk.jpg
+share/race/data/sea/.xvpics/dn.jpg
+share/race/data/sea/.xvpics/ft.jpg
+share/race/data/sea/.xvpics/lf.jpg
+share/race/data/sea/.xvpics/map.bmp
+share/race/data/sea/.xvpics/rt.jpg
+share/race/data/sea/.xvpics/terrain.jpg
+share/race/data/sea/.xvpics/up.jpg
+share/race/data/sea/bk.jpg
+share/race/data/sea/dn.jpg
+share/race/data/sea/ft.jpg
+share/race/data/sea/lf.jpg
+share/race/data/sea/map.bmp
+share/race/data/sea/rt.jpg
+share/race/data/sea/terrain.jpg
+share/race/data/sea/up.jpg
+share/race/data/sounds/menu.wav
+@dirrm share/race/data/all/.xvpics
+@dirrm share/race/data/all
+@dirrm share/race/data/desert/.xvpics
+@dirrm share/race/data/desert
+@dirrm share/race/data/models
+@dirrm share/race/data/music
+@dirrm share/race/data/sea/.xvpics
+@dirrm share/race/data/sea
+@dirrm share/race/data/sounds
+@dirrm share/race/data
+@dirrm share/race

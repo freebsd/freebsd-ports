@@ -236,6 +236,7 @@
     SUBDIR += qstat
     SUBDIR += quakeforge
     SUBDIR += quakeserver
+    SUBDIR += race
     SUBDIR += robocode
     SUBDIR += rocksndiamonds
     SUBDIR += rollemup
