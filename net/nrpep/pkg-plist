@@ -1,0 +1,8 @@
+sbin/nrpep
+etc/netsaint/nrpep.cfg
+libexec/netsaint/check_nrpep
+etc/netsaint/check_nrpep.cfg
+share/doc/nrpep/README
+@dirrm share/doc/nrpep
+@unexec rmdir %D/libexec/netsaint 2>/dev/null || true
+@unexec rmdir %D/etc/netsaint 2>/dev/null || true

@@ -323,6 +323,7 @@
     SUBDIR += nocol
     SUBDIR += noip
     SUBDIR += nrpe
+    SUBDIR += nrpep
     SUBDIR += ns
     SUBDIR += nsc
     SUBDIR += nsd
