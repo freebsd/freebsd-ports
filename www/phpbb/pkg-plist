@@ -1,16 +1,19 @@
 @unexec [ -s %D/%%PHPBBDIR%%/config.php ] || rm -f %D/%%PHPBBDIR%%/config.php
-%%PORTDOCS%%share/doc/phpbb/AUTHORS
-%%PORTDOCS%%share/doc/phpbb/CHANGELOG.html
-%%PORTDOCS%%share/doc/phpbb/FAQ.html
-%%PORTDOCS%%share/doc/phpbb/INSTALL.html
-%%PORTDOCS%%share/doc/phpbb/README.html
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.html
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.html
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/coding-guidelines.txt
+%%PORTDOCS%%%%DOCSDIR%%/codingstandards.htm
 share/phpbb/contrib/README.html
 share/phpbb/contrib/dbinformer.php
+share/phpbb/contrib/fixfiles.sh
 share/phpbb/contrib/template_db_cache.php
 share/phpbb/contrib/template_file_cache.php
 share/phpbb/contrib/visual_confirmation.tar.bz2
 share/phpbb/install.php
-share/phpbb/update_to_206.php
+share/phpbb/update_to_207.php
 share/phpbb/upgrade.php
 %%PHPBBDIR%%/admin/admin_board.php
 %%PHPBBDIR%%/admin/admin_db_utilities.php
@@ -111,7 +114,7 @@ share/phpbb/upgrade.php
 %%PHPBBDIR%%/install/schemas/mysql_schema.sql
 %%PHPBBDIR%%/install/schemas/postgres_basic.sql
 %%PHPBBDIR%%/install/schemas/postgres_schema.sql
-%%PHPBBDIR%%/install/update_to_206.php
+%%PHPBBDIR%%/install/update_to_207.php
 %%PHPBBDIR%%/install/upgrade.php
 %%PHPBBDIR%%/language/index.htm
 %%PHPBBDIR%%/language/lang_english/email/admin_activate.tpl
@@ -302,7 +305,7 @@ share/phpbb/upgrade.php
 %%PHPBBDIR%%/viewtopic.php
 @exec touch %B/config.php
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %B
-%%PORTDOCS%%@dirrm share/doc/phpbb
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/share/doc 2>/dev/null || true
 @dirrm share/phpbb/contrib
 @dirrm share/phpbb
