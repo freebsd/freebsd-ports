@@ -7,13 +7,13 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst${PKGNAMESUFFIX}/
 PKGNAMESUFFIX=	-monkeysaudio
 DISTNAME=	gst${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	kwm@rainbow-runner.nl
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GStreamer plugin for monkeysaudio files
 
 USE_X_PREFIX=	yes
@@ -34,6 +34,7 @@ post-install:
 		${DOCSDIR}/GStreamer-monkeysaudio-permit
 .endif
 # register plugins
-	-@${X11BASE}/bin/gst-register-${GST_VERSION} 2>/dev/null
+	-@${X11BASE}/bin/gst-register-${GST_VERSION} \
+		--gst-registry=${PREFIX}/share/gnome/cache/gstreamer-${GST_VERSION}/registry.xml 2>/dev/null
 
 .include <bsd.port.mk>
