@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dclib
-PORTVERSION=	0.2.22
+PORTVERSION=	0.3.0
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/dcgui/
 
@@ -28,5 +28,7 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g; s/-pedantic //g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
