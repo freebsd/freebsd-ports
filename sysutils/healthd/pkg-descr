@@ -4,7 +4,7 @@ capable of monitoring up to 3 tempuratures, 3 fan speeds and 7 voltages.
 The configuration file specifies which functions are active and their
 acceptable ranges.
 
-WWW: http://thehousleys.net/healthd/
+WWW: http://healthd.thehousleys.net/
 
 - Jim
 jim@thehousleys.net

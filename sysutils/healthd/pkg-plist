@@ -1,2 +1,3 @@
 bin/healthd
 etc/healthd.conf.sample
+etc/rc.d/healthd.sh
