@@ -15,7 +15,6 @@ MAINTAINER=	bogorodskiy@inbox.ru
 COMMENT=	Create a tags file from PHP sources
 
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		phptags.1
