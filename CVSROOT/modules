@@ -2908,6 +2908,7 @@ ifstat		ports/net/ifstat
 iftop		ports/net/iftop
 igal		ports/www/igal
 iiimecf		ports/editors/iiimecf
+iiimf-protocol-lib	ports/textproc/iiimf-protocol-lib
 iip		ports/irc/iip
 ija		ports/news/ija
 ike-scan	ports/security/ike-scan
