@@ -1,7 +1,8 @@
 sbin/freebsd-update
-freebsd-update/Makefile
-freebsd-update/CHANGELOG
-freebsd-update/LICENSE
+sbin/freebsd-update-verify
 etc/freebsd-update.conf.sample
-freebsd-update/verify
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/VERSION
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm freebsd-update
