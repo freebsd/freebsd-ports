@@ -51,15 +51,6 @@ ${PATCH_COOKIE}: ${PATCHLIST}
 	fi
 	@touch -f ${PATCH_COOKIE}
 
-bundle: extract
-	@echo "===>  Bundling for ${DISTNAME}.${PATCHLEVEL}"
-	@if [ -f ${CONFIGURE_COOKIE} ]; then \
-		echo ">> WARNING:  This source has been configured and may"; \
-		echo ">> produce a tainted distfile!"; \
-	fi
-	tar -C ${WRKDIR} -cf - dgd | gzip -9 \
-		>${DISTDIR}/${DISTNAME}.${PATCHLEVEL}${EXTRACT_SUFX}
-
 install: all
 	@chown -R mud.mud ${WRKDIR}/dgd
 	@tar -C ${WRKDIR} -cf - `grep '^dgd/' pkg/PLIST` \

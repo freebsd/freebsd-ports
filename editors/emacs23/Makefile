@@ -3,13 +3,13 @@
 # Date created:		13 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.4 1994/09/13 06:34:46 jkh Exp $
+# $Id: Makefile,v 1.5 1994/09/13 08:37:24 jkh Exp $
 #
 
 DISTNAME=	emacs-19.26
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	i386--freebsd
-MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu
+MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 
 .include <bsd.port.mk>

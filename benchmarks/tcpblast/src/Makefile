@@ -1,7 +1,6 @@
-PROG=tcpblast
-SRCS=tcpblast.c
-NOMAN=noman
-DESTDIR?=/usr/local
-BINDIR=/bin
+PROG=		tcpblast
+SRCS=		tcpblast.c
+NOMAN=		yes
+BINDIR=		/usr/local/bin
 
-.include<bsd.prog.mk>
+.include <bsd.prog.mk>
