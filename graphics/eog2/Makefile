@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	eog2
-PORTVERSION=	2.8.1
-PORTREVISION=	1
+PORTVERSION=	2.8.2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.8
@@ -20,8 +19,8 @@ COMMENT=	The Eye Of Gnome image viewer
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack eel2 libgnomeprintui \
-		librsvg2 desktopfileutils
+USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack libgnomeprintui \
+		librsvg2 desktopfileutils libgnomeui
 USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_LIBTOOL_VER=15
