@@ -122,7 +122,6 @@
     SUBDIR += mailcrypt
     SUBDIR += maildirsync
     SUBDIR += maildrop
-    SUBDIR += mailfilter
     SUBDIR += mailfmt
     SUBDIR += mailfront
     SUBDIR += mailgraph
