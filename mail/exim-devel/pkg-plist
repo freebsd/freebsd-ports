@@ -1,8 +1,9 @@
 etc/exim/configure.default
-info/exim_overview.info
 info/exim.info
 info/exim_filter.info
 sbin/exim
+sbin/exim-3.951-1
+sbin/exim_checkaccess
 sbin/exim_dumpdb
 sbin/exim_fixdb
 sbin/exim_lock
@@ -15,8 +16,15 @@ sbin/exigrep
 sbin/eximstats
 sbin/exiqsumm
 %%PORTDOCS%%share/doc/exim/POST-INSTALL-NOTES
+%%PORTDOCS%%share/doc/exim/Exim3.upgrade
+%%PORTDOCS%%share/doc/exim/Exim4.upgrade
+%%PORTDOCS%%share/doc/exim/OptionLists.txt
+%%PORTDOCS%%share/doc/exim/README
+%%PORTDOCS%%share/doc/exim/dbm.discuss.txt
+%%PORTDOCS%%share/doc/exim/exim.8
 %%PORTDOCS%%share/doc/exim/filter.txt
-%%PORTDOCS%%share/doc/exim/oview.txt
+%%PORTDOCS%%share/doc/exim/pcre.txt
+%%PORTDOCS%%share/doc/exim/pcretest.txt
 %%PORTDOCS%%share/doc/exim/spec.txt
 @unexec install-info --delete %D/info/exim_overview.info %D/info/dir
 @unexec install-info --delete %D/info/exim.info %D/info/dir
