@@ -9,4 +9,4 @@ lib/libpng.so
 lib/libpng.so.%%SHLIB_VER%%
 libdata/pkgconfig/libpng12.pc
 @dirrm include/libpng
-@unexec rmdir libdata/pkgconfig 2>/dev/null || true
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
