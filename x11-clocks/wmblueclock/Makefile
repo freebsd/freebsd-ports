@@ -8,8 +8,8 @@
 PORTNAME=	wmblueclock
 PORTVERSION=	0.0
 CATEGORIES=	x11-clocks windowmaker
-MASTER_SITES=	http://ibiblio.org/pub/linux/X11/xutils/ \
-		ftp://ftp.ibiblio.org/pub/linux/X11/xutils/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	X11/xutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple dockable clock application
