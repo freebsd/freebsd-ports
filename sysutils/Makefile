@@ -15,6 +15,7 @@
     SUBDIR += asfsm
     SUBDIR += asmem
     SUBDIR += asmon
+    SUBDIR += barry
     SUBDIR += battstat-applet
     SUBDIR += bchunk
     SUBDIR += bkpupsd

@@ -1,0 +1,33 @@
+--- Makefile	Mon Aug  5 17:30:26 2002
++++ Makefile.new	Fri Sep 20 20:11:35 2002
+@@ -1,6 +1,7 @@
+ CXX=g++
+ QTDIR?=/usr/X11R6
+ KDEDIR?=/usr/local
++PREFIX?=/usr/local
+ MOC=$(QTDIR)/bin/moc
+ INCLUDES=-I$(QTDIR)/include -I$(KDEDIR)/include
+ LIBRARIES=-L$(QTDIR)/lib -L$(KDEDIR)/lib
+@@ -39,14 +40,14 @@
+ 
+ install: barry
+ 	echo Installing barry $(VERSION)...
+-	install -o root -g wheel -p -s -m 755 barry $(KDEDIR)/bin
+-	mkdir -p $(KDEDIR)/share/apps/barry
+-	install -o root -g wheel -p -m 444 barryui.rc $(KDEDIR)/share/apps/barry
+-	install -o root -g wheel -p -m 444 barry.desktop $(KDEDIR)/share/applnk/Utilities
+-	install -o root -g wheel -p -m 444 hi16-app-barry.png $(KDEDIR)/share/icons/hicolor/16x16/apps/barry.png
+-	install -o root -g wheel -p -m 444 hi32-app-barry.png $(KDEDIR)/share/icons/hicolor/32x32/apps/barry.png
+-	install -o root -g wheel -p -m 444 hi48-app-barry.png $(KDEDIR)/share/icons/hicolor/48x48/apps/barry.png
+-	install -o root -g wheel -p -m 444 eventsrc $(KDEDIR)/share/apps/barry
++	install -o root -g wheel -p -s -m 755 barry $(PREFIX)/bin
++	mkdir -p $(PREFIX)/share/apps/barry
++	install -o root -g wheel -p -m 444 barryui.rc $(PREFIX)/share/apps/barry
++	install -o root -g wheel -p -m 444 barry.desktop $(PREFIX)/share/applnk/Utilities
++	install -o root -g wheel -p -m 444 hi16-app-barry.png $(PREFIX)/share/icons/hicolor/16x16/apps/barry.png
++	install -o root -g wheel -p -m 444 hi32-app-barry.png $(PREFIX)/share/icons/hicolor/32x32/apps/barry.png
++	install -o root -g wheel -p -m 444 hi48-app-barry.png $(PREFIX)/share/icons/hicolor/48x48/apps/barry.png
++	install -o root -g wheel -p -m 444 eventsrc $(PREFIX)/share/apps/barry
+ 	cd po/; $(MAKE) $(.TARGET)
+ 	cd splashdata/; $(MAKE) $(.TARGET)
+ 
