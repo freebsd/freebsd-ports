@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Wikipedia
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl module of Automated interface to the Wikipedia
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/Text/Autoformat.pm:${PORTSDIR}/textproc/p5-Text-Autoformat
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
