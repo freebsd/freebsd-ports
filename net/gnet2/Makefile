@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	gnet
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.9
 CATEGORIES=	net
 MASTER_SITES=	http://www.gnetlibrary.org/src/
+PKGNAMESUFFIX=	-glib2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A simple network library built upon Glib
+COMMENT=	A simple network library built upon Glib-2
 
-LATEST_LINK=	gnet-glib2
 USE_REINPLACE=	yes
 USE_GNOME=	gnomehack glib20
 USE_LIBTOOL=	yes
