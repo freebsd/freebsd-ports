@@ -32,6 +32,46 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="da690355-1159-11d9-bc4a-000c41e2cdad">
+    <topic>mozilla -- vCard stack buffer overflow</topic>
+    <affects>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>0.7.3_1</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7.2_2,2</lt></range>
+	<range><ge>1.8.a,2</ge><lt>1.8.a3_1,2</lt></range>
+      </package>
+      <package>
+	<name>mozilla-gtk1</name>
+	<range><lt>1.7.2_3</lt></range>
+      </package>
+      <package>
+	<name>linux-mozilla</name>
+	<range><lt>1.7.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Georgi Guninski discovered a stack buffer overflow which
+          may be triggered when viewing email messages with vCard
+          attachments.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-9893</cvename>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=257314</url>
+      <uscertta>TA04-261A</uscertta>
+      <certvu>414240</certvu>
+    </references>
+    <dates>
+      <discovery>2004-09-13</discovery>
+      <entry>2004-09-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="93d6162f-1153-11d9-bc4a-000c41e2cdad">
     <topic>mozilla -- multiple heap buffer overflows</topic>
     <affects>
@@ -58,7 +98,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <package>
 	<name>linux-mozillafirebird</name>
-	<range><lt>1.0.p</lt></range>
+	<range><ge>0</ge></range>
       </package>
     </affects>
     <description>
