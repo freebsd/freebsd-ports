@@ -1,0 +1,60 @@
+@unexec install-info --delete %D/info/semantic.info %D/info/dir
+info/semantic.info
+info/semantic.info-1
+info/semantic.info-2
+info/semantic.info-3
+@exec install-info %D/info/semantic.info %D/info/dir
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/document-vars.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/document-vars.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/document.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/document.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-analyze.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-analyze.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-bnf.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-bnf.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-c.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-c.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-chart.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-chart.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-ctxt.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-ctxt.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-el.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-el.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-imenu.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-imenu.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-java.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-java.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-load.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-make.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-make.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-sb.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-sb.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-scm.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-scm.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-skel.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-texi.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-texi.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-util-modes.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-util-modes.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-util.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-util.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semanticdb.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semanticdb.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/senator.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/senator.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/sformat.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/sformat.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/working.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/working.elc
+@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/semantic
+share/examples/semantic/c.bnf
+share/examples/semantic/java.bnf
+share/examples/semantic/make.bnf
+share/examples/semantic/scheme.bnf
+share/examples/semantic/skeleton.bnf
+@dirrm share/examples/semantic
+%%PORTDOCS%%share/doc/semantic/INSTALL
+%%PORTDOCS%%share/doc/semantic/NEWS
+%%PORTDOCS%%@dirrm share/doc/semantic

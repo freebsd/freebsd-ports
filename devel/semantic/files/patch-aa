@@ -1,0 +1,15 @@
+--- semantic.texi.orig	Mon Dec 10 14:10:54 2001
++++ semantic.texi	Mon Dec 10 14:11:23 2001
+@@ -7,9 +7,10 @@
+
+ @ifinfo
+ @format
+-START-INFO-DIR-ENTRY
++@dircategory The Emacs editor and associated tools
++@direntry
+ * semantic: (semantic).       Semantic Parsing for Emacs
+-END-INFO-DIR-ENTRY
++@end direntry
+ @end format
+ @end ifinfo
+
