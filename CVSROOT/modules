@@ -10503,6 +10503,7 @@ xpm		ports/graphics/xpm
 xpns		ports/misc/xpns
 xpostit		ports/deskutils/xpostit
 xpostitPlus	ports/deskutils/xpostitPlus
+xpp3		ports/textproc/xpp3
 xprobe		ports/net/xprobe
 xprompt		ports/x11/xprompt
 xproto		ports/x11/xproto
