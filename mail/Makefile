@@ -135,6 +135,7 @@
     SUBDIR += mmr
     SUBDIR += movemail
     SUBDIR += mreport
+    SUBDIR += msgconvert
     SUBDIR += mulberry
     SUBDIR += mutt
     SUBDIR += mutt-devel
