@@ -8,9 +8,17 @@
 PORTNAME=	webfonts
 PORTVERSION=	0.21
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.microsoft.com/typography/downloads/ \
-		http://www.eu.microsoft.com/typography/downloads/ \
-		http://www.asia.microsoft.com/typography/downloads/
+MASTER_SITES=	${MASTER_SITE_NETBSD:S/%SUBDIR%/ms-ttf/} \
+	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/corefonts/} \
+	ftp://ftp.uni-koeln.de/pc/win32/msoft-95/ \
+	ftp://ftp.extra.ouh.nl/studie/alg/hulp/win/fonts/ \
+	ftp://ftp.vn.ua/pub/win/freefont/ \
+	ftp://ftp.vsu.ru/pub/tex/font-packs/mscore/ \
+	ftp://ftp.directnet.ru/pub/fonts-win/ \
+	ftp://ftp.sinn.ru/pub/win95/fonts/ \
+	ftp://ftp.lexa.ru/pub/mirrors/ftp.vsu.ru/pub/tex/font-packs/mscore/ \
+	ftp://ftp.botik.ru/rented/znamensk/distributions/ftp.vsu.ru/pub/tex/font-packs/mscore/
+
 DISTFILES=	andale32.exe trebuc32.exe georgi32.exe verdan32.exe \
 		comic32.exe arialb32.exe impact32.exe arial32.exe \
 		times32.exe courie32.exe webdin32.exe
