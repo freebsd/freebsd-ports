@@ -6,21 +6,19 @@
 #
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.35
-PORTREVISION=	4
+PORTVERSION=	1.36
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	matthias.andree@gmx.de
-COMMENT=	Utilities and library to manipulate an ext2 or ext3 filesystem
+COMMENT=	Utilities and library to manipulate ext2/ext3 filesystems
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 .endif
 
 PATCH_STRIP=	-p1
-USE_AUTOCONF_VER=	213
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 INSTALL_TARGET=	install install-libs
@@ -37,12 +35,12 @@ MAKE_ARGS+=	STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a ../lib/libblkid.
 PLIST_SUB=	NLS=""
 .endif
 
-CONFLICTS=	ossp-uuid-*
+CONFLICTS=	ossp-uuid-[0-9]*
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=	chattr.1 lsattr.1 uuidgen.1 compile_et.1 mk_cmds.1
-MAN3=	libuuid.3 uuid_clear.3 com_err.3 uuid_compare.3 uuid_copy.3 \
+MAN3=	uuid.3 uuid_clear.3 com_err.3 uuid_compare.3 uuid_copy.3 \
 	uuid_generate.3 uuid_is_null.3 uuid_parse.3 uuid_time.3 \
 	uuid_unparse.3 uuid_generate_random.3 uuid_generate_time.3 \
 	libblkid.3
@@ -67,22 +65,17 @@ post-extract:
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-DRESOURCE_TRACK||' ${WRKSRC}/e2fsck/Makefile.in
-	${GUNZIP_CMD} ${WRKSRC}/tests/m_*/expect*.gz
-	${REINPLACE_CMD} -e 's|OS type: Linux|OS type: (unknown os)|' \
-	-e 's|Filesystem OS type:       Linux|Filesystem OS type:       unknown|' \
-	-e 's|group root|group wheel|' \
-	-e '/Exit status is 0/ N;s/Exit status is 0\n/Exit status is 0/' \
-	${WRKSRC}/tests/m_*/expect.1
-.if ${ARCH} == "alpha" || ${ARCH} == "sparc64"
-	${RM} -rf ${WRKSRC}/tests/m_large_file
-.endif
+	${REINPLACE_CMD} -E -e 's:\$$\(libdir\)/pkgconfig:${PREFIX}/libdata/pkgconfig:' \
+		${WRKSRC}/lib/*/Makefile.in
 
 pre-install:
 	${RM} -f ${PKGMESSAGE}
 	${SED} -e "s:%%PREFIX%%:${PREFIX}:" ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 
 post-build:
+.if !defined(WITHOUT_NLS)
+	cd ${WRKSRC}/po && ${GMAKE} update-gmo
+.endif
 	${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} ${LIBS} -o ${WRKSRC}/fsck_ext2fs ${FILESDIR}/fsck_ext2fs.c
 	cd ${WRKSRC}/tests && ${GMAKE} check
 

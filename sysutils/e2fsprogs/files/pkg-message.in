@@ -1,6 +1,6 @@
 Note: this is a modified version of the e2fsprogs package, not the official
 package. Report all building and run-time trouble that originates in the
-package to the port maintainer, matthias.andree@gmx.de.
+package to the port maintainer, <matthias.andree@gmx.de>.
 
 To have your ext2 and ext3 filesystems fsck'ed correctly without explicitly
 invoking the fsck_ext2fs utility installed by this port you will need to
@@ -11,4 +11,4 @@ ln -f %%PREFIX%%/sbin/fsck_ext2fs /sbin/ 2>/dev/null \
 ln -f %%PREFIX%%/sbin/e2fsck /sbin/e2fsck 2>/dev/null \
   || install -m755 %%PREFIX%%/sbin/e2fsck /sbin/e2fsck
 
-IMPORTANT: you also need to repeat the above steps after a port upgrade!
+IMPORTANT: you also need to repeat the steps above after a port upgrade!
