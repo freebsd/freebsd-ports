@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Aug  9 12:55:44 2001
-+++ Makefile	Thu Aug  9 13:04:50 2001
-@@ -1,19 +1,12 @@
+--- Makefile.orig	Thu Oct  4 22:18:29 2001
++++ Makefile	Fri Oct  5 21:00:34 2001
+@@ -1,23 +1,14 @@
 -PLATFORM = LINUX
 +#PLATFORM = LINUX
  #PLATFORM = SOLARIS
@@ -11,7 +11,11 @@
  #DEBUG = yes
  #CFLAGS = -g
  #CFLAGS = -O6
+-STRIP = strip
++#STRIP = strip
+ #STRIP = gstrip
  LIBS = -lm
+-CFLAGS = -I/usr/lib/glib/include
 -
 -ifeq ($(PLATFORM),SOLARIS)
 -	LIBS += -lsocket -lnsl -lresolv
@@ -20,30 +24,31 @@
 -ifeq ($(DEBUG),yes)
 -	CFLAGS += -g
 -endif
+-
 +CFLAGS+= -DASNCDIR=\"${PREFIX}/share/ehnt\"
  
- 
  all: ehntserv ehnt asnc.txt
-@@ -37,11 +30,6 @@
+ 	@echo
+@@ -40,11 +31,6 @@
  
  ehnt : ehnt_client.o ehnt_lookup.o ehnt_display.o ehnt_processflow.o ehnt_main.o
  	$(CC) -o ehnt ehnt_client.o ehnt_lookup.o ehnt_display.o ehnt_processflow.o ehnt_main.o $(LIBS) $(CFLAGS)
 -ifeq ($(DEBUG),yes)
 -	@echo Debug mode - ehnt not stripped
 -else
--	strip ehnt
+-	$(STRIP) ehnt
 -endif
  
  
  ehntserv.o : ehntserv.c ehnt.h netflowv5.h config.h
-@@ -49,11 +37,6 @@
+@@ -52,11 +38,6 @@
  
  ehntserv : ehntserv.o
  	$(CC) $(CFLAGS) -o ehntserv ehntserv.o  $(LIBS) $(CFLAGS)
 -ifeq ($(DEBUG),yes)
 -	@echo Debug mode - ehnt not stripped
 -else
--	strip ehntserv
+-	$(STRIP) ehntserv
 -endif
  
  asnc.txt :
