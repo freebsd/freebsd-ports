@@ -1,16 +1,16 @@
 # New ports collection makefile for:    tracker
-# Version required:     4.28
+# Version required:     4.29
 # Date created:         2 Oct 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.18 1995/04/12 04:54:23 asami Exp $
+# $Id: Makefile,v 1.19 1995/04/28 00:21:06 ache Exp $
 #
 
 DISTNAME=       tracker
-PKGNAME=        tracker-4.28
+PKGNAME=        tracker-4.29
 CATEGORIES+=	audio
 MASTER_SITES=   ftp://ftp.ens.fr/pub/dmi/users/espie/beta/
-DISTFILES=      tracker-4.28.tar.Z
+DISTFILES=      tracker-4.29.tar.Z
 
 MAINTAINER=     ache@FreeBSD.ORG
 
