@@ -3,7 +3,7 @@
 # Date created:		16 Mar 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.5 1998/10/10 08:15:01 steve Exp $
+# $Id: Makefile,v 1.6 1998/10/16 02:36:15 jseger Exp $
 #
 
 DISTNAME=	xfntmizi-1.1-2.noarch
@@ -44,11 +44,11 @@ do-build:
 	done
 
 do-install:
-	@mkdir -p ${PREFIX}/lib/X11/fonts/misc
+	@mkdir -p ${PREFIX}/lib/X11/fonts/local
 	for i in ${WRKDIR}/*.gz; do \
-		${INSTALL_DATA} $$i ${PREFIX}/lib/X11/fonts/misc/; \
+		${INSTALL_DATA} $$i ${PREFIX}/lib/X11/fonts/local/; \
 	done
-	cd ${PREFIX}/lib/X11/fonts/misc/ ; mkfontdir
+	cd ${PREFIX}/lib/X11/fonts/local/ ; mkfontdir
 
 post-install:
 	@cat ${PKGDIR}/MESSAGE
