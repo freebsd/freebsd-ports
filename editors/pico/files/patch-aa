@@ -1,6 +1,6 @@
---- pico/search.c.old	Tue Oct  5 01:49:41 1999
-+++ pico/search.c	Wed Feb 16 03:41:45 2000
-@@ -97,12 +97,15 @@
+--- pico/search.c.orig	Thu Jun 21 10:50:05 2001
++++ pico/search.c	Fri Sep 28 00:08:23 2001
+@@ -98,12 +98,15 @@
  int bc;
  int pc;
  {
@@ -20,7 +20,7 @@
      }
  
      return(bc == pc);
-@@ -804,7 +807,7 @@
+@@ -805,7 +808,7 @@
  int maxlength;	/* maximum chars in destination */
  
  {
