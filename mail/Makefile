@@ -14,6 +14,7 @@
     SUBDIR += coolmail
     SUBDIR += courier-imap
     SUBDIR += cucipop
+    SUBDIR += cvsmail
     SUBDIR += cyrus
     SUBDIR += distribute
     SUBDIR += elm
