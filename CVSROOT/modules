@@ -3188,16 +3188,6 @@ ja-srd-fpw-package	ports/japanese/srd-fpw-package
 ja-t2ps		ports/japanese/t2ps
 ja-tcl76	ports/japanese/tcl76
 ja-tcl80	ports/japanese/tcl80
-ja-tcsh-nls-asuka	ports/japanese/tcsh-nls-asuka
-ja-tcsh-nls-ayanami	ports/japanese/tcsh-nls-ayanami
-ja-tcsh-nls-generic	ports/japanese/tcsh-nls-generic
-ja-tcsh-nls-koshiki	ports/japanese/tcsh-nls-koshiki
-ja-tcsh-nls-merril	ports/japanese/tcsh-nls-merril
-ja-tcsh-nls-miyakonjo	ports/japanese/tcsh-nls-miyakonjo
-ja-tcsh-nls-multi	ports/japanese/tcsh-nls-multi
-ja-tcsh-nls-rishu	ports/japanese/tcsh-nls-rishu
-ja-tcsh-nls-roomi	ports/japanese/tcsh-nls-roomi
-ja-tcsh-nls-ruri2	ports/japanese/tcsh-nls-ruri2
 ja-tdiary	ports/japanese/tdiary
 ja-texinfo	ports/japanese/texinfo
 ja-tgif		ports/japanese/tgif
