@@ -29,6 +29,7 @@
     SUBDIR += fbsd-icons
     SUBDIR += finder
     SUBDIR += gbackground
+    SUBDIR += gdkxft
     SUBDIR += gdm
     SUBDIR += gmessage
     SUBDIR += gnome

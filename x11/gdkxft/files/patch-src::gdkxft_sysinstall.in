@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- src/gdkxft_sysinstall.in	2001/09/03 16:29:51	1.1
++++ src/gdkxft_sysinstall.in	2001/09/03 16:30:09
+@@ -276,7 +276,7 @@
+ 
+ # create a theme to show off anti-aliased fonts
+ sub install_theme {
+-    my $themedir=`gtk-config --prefix`;
++    my $themedir=`gtk12-config --prefix`;
+     chomp $themedir;
+     $themedir.="/share/themes";
+ 
+@@ -342,7 +342,7 @@
+     return 1;
+ }
+ sub uninstall_theme {
+-    my $themedir=`gtk-config --prefix`;
++    my $themedir=`gtk12-config --prefix`;
+     chomp $themedir;
+     $themedir.="/share/themes";
+ 
