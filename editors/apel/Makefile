@@ -53,6 +53,13 @@ RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}-common
 .else
 RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .endif
+
+# depends on custom: emacs-19.34 or mule-19.34
+.if (${EMACS_VER} == "19.34")
+BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_PORT}
+RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_PORT}
+.endif
+
 SCRIPTS_ENV=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
 		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER} \
 		TARGETS="${APEL_SETUPEL}"
