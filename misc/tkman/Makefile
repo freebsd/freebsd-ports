@@ -3,7 +3,7 @@
 # Date created:         27 Dec 1994
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.9 1995/10/04 02:02:14 asami Exp $
+# $Id: Makefile,v 1.10 1995/11/26 10:48:46 asami Exp $
 #
 
 DISTNAME=	tkman-1.7.3
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
 EXTRACT_SUFX=	.tar.Z
 
 LIB_DEPENDS=	tk40\\.1\\.:${PORTSDIR}/x11/tk4
-RUN_DEPENDS=	rman:${PORTSDIR}/utils/rman
+RUN_DEPENDS=	rman:${PORTSDIR}/misc/rman
 
 # Restrictive copyright
 NO_PACKAGE=	yes
