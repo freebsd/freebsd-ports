@@ -8,7 +8,7 @@
 PORTNAME=	wmsmixer
 PORTVERSION=	0.5
 CATEGORIES=	audio windowmaker
-MASTER_SITES=	http://www.hibernaculum.demon.co.uk/download/
+MASTER_SITES=	http://www.hibernaculum.net/download/
 
 MAINTAINER=	kkonstan@daemon.gr
 
