@@ -18,10 +18,13 @@ lib/emelfm2/plugins/view.so
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/PLUGINS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/ROADMAP
 %%PORTDOCS%%%%DOCSDIR%%/SPEC
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/WARNING
 %%PORTDOCS%%%%DOCSDIR%%/help.txt
+share/pixmaps/emelfm2/icon_bookmark_24.png
+share/pixmaps/emelfm2/icon_copy_24.png
 share/pixmaps/emelfm2/icon_dirparent.xpm
 share/pixmaps/emelfm2/icon_down.xpm
 share/pixmaps/emelfm2/icon_emelfm2.svg
@@ -32,6 +35,13 @@ share/pixmaps/emelfm2/icon_emelfm2_048.png
 share/pixmaps/emelfm2/icon_emelfm2_064.png
 share/pixmaps/emelfm2/icon_emelfm2_128.png
 share/pixmaps/emelfm2/icon_emelfm2_256.png
+share/pixmaps/emelfm2/icon_emelfm2_alt_016.png
+share/pixmaps/emelfm2/icon_emelfm2_alt_022.png
+share/pixmaps/emelfm2/icon_emelfm2_alt_032.png
+share/pixmaps/emelfm2/icon_emelfm2_alt_048.png
+share/pixmaps/emelfm2/icon_emelfm2_alt_346.png
+share/pixmaps/emelfm2/icon_move2_24.png
+share/pixmaps/emelfm2/icon_move_24.png
 share/pixmaps/emelfm2/icon_up.xpm
 @dirrm share/pixmaps/emelfm2
 @dirrm share/pixmaps
