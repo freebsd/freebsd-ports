@@ -10,7 +10,7 @@ PORTVERSION=	0.31
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/arla/
 
-MAINTAINER=	thepish@freebsd.org
+MAINTAINER=	assar@stacken.kth.se
 
 .if !exists(/usr/lib/libkafs.a)
 BROKEN=		requires kerberos
