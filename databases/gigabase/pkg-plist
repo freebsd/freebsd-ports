@@ -1,4 +1,4 @@
-bin/subsql
+bin/subsql_gb
 include/gigabase/array.h
 include/gigabase/blob.h
 include/gigabase/btree.h
@@ -19,9 +19,9 @@ include/gigabase/selection.h
 include/gigabase/stdtp.h
 include/gigabase/sync.h
 include/gigabase/wwwapi.h
-lib/libcli_r.a
-lib/libcli_r.so
-lib/libcli_r.so.2
+lib/libcligb_r.a
+lib/libcligb_r.so
+lib/libcligb_r.so.2
 lib/libgigabase_r.a
 lib/libgigabase_r.so
 lib/libgigabase_r.so.2

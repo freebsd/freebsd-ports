@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed Nov  6 01:30:34 2002
-+++ Makefile.in	Mon Nov 11 20:07:30 2002
+--- Makefile.in.orig	Sat May  3 20:35:46 2003
++++ Makefile.in	Wed Jun 18 20:04:48 2003
 @@ -7,6 +7,8 @@
  VPATH = @srcdir@
  LIBTOOL = $(srcdir)/libtool
@@ -9,6 +9,15 @@
  
  # Coment this for AIX/xlC 5.0
  LIBEXT=la
+@@ -41,7 +43,7 @@
+ SUFF=@SUFF@
+ 
+ GB_LIB = libgigabase$(SUFF).${LIBEXT}
+-CLI_LIB = libcli$(SUFF).${LIBEXT}
++CLI_LIB = libcligb$(SUFF).${LIBEXT}
+ EXES = subsql
+ 
+ EXAMPLES = guess testdb testjoin testddl testperf testspat testperf2 testsync testiref testtrav testidx testidx2 clitest testblob testleak
 @@ -49,7 +51,7 @@
  
  CXX = @CXX@
@@ -29,10 +38,10 @@
  	mkdir -p $(bindir)
  	if test -x .libs/subsql ; then \
 -		cp .libs/subsql $(bindir); \
-+		$(INSTALL_PROGRAM) .libs/subsql $(bindir); \
++		$(INSTALL_PROGRAM) .libs/subsql $(bindir)/subsql_gb; \
  	else \
 -		cp subsql $(bindir); \
-+		$(INSTALL_PROGRAM) subsql $(bindir); \
++		$(INSTALL_PROGRAM) subsql $(bindir)/subsql_gb; \
  	fi
  #	strip $(bindir)/subsql
  
