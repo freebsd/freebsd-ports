@@ -189,6 +189,7 @@
     SUBDIR += pidentd
     SUBDIR += pks
     SUBDIR += pktsuckers
+    SUBDIR += poc
     SUBDIR += portscanner
     SUBDIR += portsentry
     SUBDIR += ppgen
