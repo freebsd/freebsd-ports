@@ -31,7 +31,7 @@
 +INSTALLPROG	= ${BSD_INSTALL_PROGRAM}
 +MKDIRP		= mkdir -p
 +
-+DEFINES		= -DVERSION=\"$(VERSION)\"
++DEFINES		= -DVERSION=\"$(VERSION)\" -D_ANSI_SOURCE
  
  ###########################################################################
  
