@@ -308,6 +308,7 @@
     SUBDIR += linux_devtools-7
     SUBDIR += linux_kdump
     SUBDIR += linuxthreads
+    SUBDIR += log4c
     SUBDIR += log4cpp
     SUBDIR += lwp
     SUBDIR += m4
