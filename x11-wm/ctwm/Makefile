@@ -6,20 +6,23 @@
 # $FreeBSD$
 #
 
-DISTNAME=	ctwm-3.5
-PKGNAME=	ctwm-3.5.2
+DISTNAME=	ctwm-3.5.2b
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://slhp1.epfl.ch/pub/
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	ctwm-3.5-3.5.1.diffs.gz ctwm-3.5.1-3.5.2.diffs.gz
-PATCH_DIST_STRIP=	-p1
+DISTFILES+=	ctwm-3.5.2b.tar.gz ctwm-images.tar.gz
 
 MAINTAINER=	torstenb@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+BUILD_DEPENDS=  gm4:${PORTSDIR}/devel/m4
+RUN_DEPENDS=    gm4:${PORTSDIR}/devel/m4
+
+MAKE_ENV+=	LOCALBASE=${LOCALBASE}
 
 USE_IMAKE=	yes
 MAN1=		ctwm.1
+
+post-extract:
+	@(cd ${WRKSRC} && ${LN} -s ../xpm xpm)
 
 .include <bsd.port.mk>
