@@ -22,6 +22,7 @@
     SUBDIR += cvsmail
     SUBDIR += cyrus
     SUBDIR += cyrus-imapd
+    SUBDIR += demime
     SUBDIR += distribute
     SUBDIR += drac
     SUBDIR += elm
