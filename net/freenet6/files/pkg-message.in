@@ -5,3 +5,6 @@ Now that the package is installed, please finish it with the following steps:
   the website, fill in your userid and password there.
 - Run @@PREFIX@@/etc/rc.d/freenet6.sh to start the tunnel.
 - Try to ping a IPv6 host, for example: ping6 www.jp.freebsd.org
+
+Please note that tsps[12].freenet6.net are not in service anymore,
+please use broker.freenet6.net instead.
