@@ -7,11 +7,14 @@
 
 PORTNAME=	daemontools
 PORTVERSION=	0.76
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/daemontools/ \
 		ftp://cr.yp.to/daemontools/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+
+MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"Service monitoring and logging utilities by djb"
 
 .if !defined(WITHOUT_MAN)
 MANDATE=	-20010714
@@ -24,9 +27,6 @@ MAN8=		envdir.8 envuidgid.8 fghack.8 multilog.8 pgrphack.8 \
 		tai64n.8 tai64nlocal.8
 MANCOMPRESSED=	no
 .endif
-
-MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"Service monitoring and logging utilities by djb"
 
 USE_RC_SUBR=	yes
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} SERVICEDIR=${SERVICEDIR}
