@@ -1,0 +1,24 @@
+bin/gnurobots
+bin/gnurobots_logfile
+bin/xgnurobots
+share/gnurobots/maps/maze.map
+share/gnurobots/maps/pattern.map
+share/gnurobots/maps/small.map
+share/gnurobots/scheme/beep.scm
+share/gnurobots/scheme/greedy.scm
+share/gnurobots/scheme/mapper.scm
+share/gnurobots/scheme/simple.scm
+share/gnurobots/scheme/stop.scm
+share/gnurobots/scheme/zap.scm
+share/doc/gnurobots/BUGS
+share/doc/gnurobots/COPYING
+share/doc/gnurobots/INSTALL
+share/doc/gnurobots/NEWS
+share/doc/gnurobots/README
+share/doc/gnurobots/Robots-HOWTO
+share/doc/gnurobots/contrib
+share/doc/gnurobots/guile-proj.scm
+@dirrm share/gnurobots/scheme
+@dirrm share/gnurobots/maps
+@dirrm share/gnurobots
+@dirrm share/doc/gnurobots

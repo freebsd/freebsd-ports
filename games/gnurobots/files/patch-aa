@@ -1,0 +1,11 @@
+--- src/Makefile.in	Sun Jun 18 11:26:24 2000
++++ src/Makefile.in	Fri Sep 22 01:12:42 2000
+@@ -17,7 +17,7 @@
+ 
+ # Macros:
+ 
+-SOURCES=api.c sign.c loadmap.c drawmap.c
++SOURCES=api.c sign.c loadmap.c drawmap.c getopt.c getopt1.c
+ OBJECTS=$(SOURCES:.c=.o)
+ 
+ CFLAGS_X=@X_CFLAGS@

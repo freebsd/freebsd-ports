@@ -78,6 +78,7 @@
     SUBDIR += gnomememoryblocks
     SUBDIR += gnuchess
     SUBDIR += gnugo
+    SUBDIR += gnurobots
     SUBDIR += gnushogi
     SUBDIR += golddig
     SUBDIR += gomoku.app
