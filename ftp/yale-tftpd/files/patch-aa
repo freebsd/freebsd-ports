@@ -36,57 +36,6 @@
 + 	@echo not installing library
 + 
   .include <bsd.lib.mk>
-*** tftpd.c	Tue Oct  4 22:20:49 1994
---- tftpd.c	Thu Oct 27 14:36:32 1994
-***************
-*** 500,509 ****
-  	/* Rules 6&7:
-  	 */
-  	if (stat(filename, &stbuf) < 0) {
-- 		extern char* sys_errlist[];
-  		if (tftpDebugLevel > 1)
-  			syslog(LOG_DEBUG, "stat '%s' fails: %s",
-! 				filename, sys_errlist[errno]);
-  		return (errno == ENOENT ? ENOTFOUND : EACCESS);
-  	}
-  
---- 500,508 ----
-  	/* Rules 6&7:
-  	 */
-  	if (stat(filename, &stbuf) < 0) {
-  		if (tftpDebugLevel > 1)
-  			syslog(LOG_DEBUG, "stat '%s' fails: %s",
-! 				filename, strerror(errno));
-  		return (errno == ENOENT ? ENOTFOUND : EACCESS);
-  	}
-  
-***************
-*** 763,774 ****
-  		syslog(LOG_ERR, "nak: %m\n");
-  }
-  
-  /* Here if you need it */
-  char* strerror(n)
-  int	n;
-  {
-! 	extern char* sys_errlist[];
-! 	extern int errno, sys_nerr;
-! 
-  	return n > sys_nerr ? "unknown error" : sys_errlist[n];
-  }
---- 762,773 ----
-  		syslog(LOG_ERR, "nak: %m\n");
-  }
-  
-+ #ifndef	HAVE_STRERROR
-  /* Here if you need it */
-  char* strerror(n)
-  int	n;
-  {
-! 	extern int sys_nerr;
-  	return n > sys_nerr ? "unknown error" : sys_errlist[n];
-  }
-+ #endif
 *** tftpyale.c	Tue Oct  4 22:20:49 1994
 --- tftpyale.c	Thu Oct 27 14:37:03 1994
 ***************
@@ -140,37 +89,3 @@
   				else
   					tftpRootDirectory = newString(cargv[1]);
   			}
-*** tftpyale.h	Tue Oct  4 22:18:20 1994
---- tftpyale.h	Thu Oct 27 14:38:14 1994
-***************
-*** 22,33 ****
-  #ifdef __STDC__
-  	extern int	errno;
-  	extern void*	malloc(unsigned);
-- 	extern char*	sys_errlist[];
-  	extern char*	strchr(const char*, int);
-  #else
-  	extern int	errno;
-  	extern char*	malloc();
-- 	extern char*	sys_errlist[];
-  	extern char*	index();
-  # define strchar(S,C)	index(S,C)
-  #endif
---- 22,38 ----
-  #ifdef __STDC__
-  	extern int	errno;
-  	extern void*	malloc(unsigned);
-  	extern char*	strchr(const char*, int);
-+ # ifndef	HAVE_STRERROR
-+ 	extern char*	strerror(int);
-+ # endif
-  #else
-  	extern int	errno;
-  	extern char*	malloc();
-  	extern char*	index();
-+ # ifndef	HAVE_STRERROR
-+ 	extern char*	strerror();
-+ # endif
-  # define strchar(S,C)	index(S,C)
-  #endif
-+ 
