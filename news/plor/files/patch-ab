@@ -1,37 +1,13 @@
-diff -ud work/plor/main.c src/main.c
---- work/plor/main.c	Sun Oct 27 09:24:00 1996
-+++ ./main.c	Mon Dec 30 09:40:07 1996
-@@ -19,10 +19,20 @@
- 
+diff -ur plor-0.3.1/video.c plor-new/video.c
+--- plor-0.3.1/video.c	Sat Mar 15 07:15:40 1997
++++ video.c	Thu Jul  3 12:17:24 1997
+@@ -8,9 +8,7 @@
+  * see file COPYING for more information on copyright policy
   */
  
-+#ifdef _HAVE_PARAM_H
-+#include <sys/param.h>
-+#endif
+-#ifdef _HAVE_PARAM_H
+ #include <sys/param.h>
+-#endif
  #include <stdio.h>
- #include <string.h>
- #include <stdlib.h>
-+#if !defined(BSD)
- #include <getopt.h>
-+#else
-+#if BSD >= 199506
-+/* Lite2, need getopt() prototypes */
-+#include <unistd.h>
-+#endif
-+#endif
- 
- /* will be included when we will have locale support
- #include <locale.h>
-@@ -75,10 +80,10 @@
-       Show_SConf();
-       break;
-     case '3':
--      printf("Help on Line, not yet supported!!!");
-+      printf("Help on Line, not yet supported!!!\n");
-       continue;
-     case '4':
--      printf("Replies not yet implemented!!!");
-+      printf("Replies not yet implemented!!!\n");
-       continue;
-     case '5':
-     case 'q':
+ #include <sys/types.h>
+ #include <sys/stat.h>
