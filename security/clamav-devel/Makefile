@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20030720
-PORTREVISION?=	1
+PORTVERSION=	20030803
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.elektrapro.com/snapshot/ \
 		http://clamav.essentkabel.com/snapshot/ \
 		http://clamav.ozforces.com/ \
 		http://clamav.rulez.pl/snapshot/
 PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	rob@debank.tv
 COMMENT=	Command line virus scanner written entirely in C
