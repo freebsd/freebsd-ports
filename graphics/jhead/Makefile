@@ -15,9 +15,14 @@ COMMENT=	Exif Jpeg camera setting parser and thumbnail remover
 
 MAKEFILE=	${WRKSRC}/makefile
 USE_GMAKE=	yes
+MAKE_ENV=	CC="${CC}"
+USE_REINPLACE=	yes
 
 PORTDOCS=	usage.html
 PLIST_FILES=	bin/jhead
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jhead ${PREFIX}/bin
