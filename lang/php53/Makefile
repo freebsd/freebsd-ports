@@ -128,8 +128,8 @@ PLIST_SUB+=	CLI=""
 SAPI_FILE=	"bin/php"
 .endif
 
-ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DB4 DBASE DBX DOM \
-		EXIF FILEPRO FTP GD GDBM GETTEXT GMP ICONV IMAP INTERBASE \
+ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DB4 DBASE DBX DIO \
+		DOM EXIF FILEPRO FTP GD GDBM GETTEXT GMP ICONV IMAP INTERBASE \
 		INIFILE MBSTRING MCVE MCRYPT MHASH MIME MING MNOGOSEARCH MSSQL \
 		MYSQL NCURSES OPENLDAP OPENSSL ORACLE PCNTL PCRE PDFLIB POSIX \
 		POSTGRESQL PSPELL READLINE RECODE SESSION SHMOP SIMPLEXML SNMP \
@@ -243,7 +243,12 @@ CONFIGURE_ARGS+=--with-curl=${LOCALBASE}
 .endif
 
 .if defined(WITH_DB4)
+WITH_DB4_VER?=	41
+.if ${WITH_DB4_VER} == 4
 LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
+.else
+LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
+.endif
 CONFIGURE_ARGS+=--with-db4=${LOCALBASE}
 .endif
 
@@ -257,6 +262,10 @@ CONFIGURE_ARGS+=--enable-dbase
 
 .if defined(WITH_DBX)
 CONFIGURE_ARGS+=--enable-dbx
+.endif
+
+.if defined(WITH_DIO)
+CONFIGURE_ARGS+=--enable-dio
 .endif
 
 .if defined(WITH_DOM)
@@ -411,7 +420,8 @@ CONFIGURE_ARGS+=--enable-posix
 .endif
 
 .if defined(WITH_POSTGRESQL)
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql-client
+POSTGRESQL_PORT?=	databases/postgresql-client
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
 .endif
 
@@ -586,7 +596,7 @@ CONFIGURE_ARGS+=--with-ncurses=${NCURSESBASE}
 .endif
 
 .if defined(WITH_SNMP)
-.if exists(${LOCALBASE}/lib/libsnmp.so.4)
+.if exists(${LOCALBASE}/lib/libsnmp.so.4) || defined(WITH_SNMP4)
 LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net/net-snmp4
 .else
 LIB_DEPENDS+=	netsnmp.6:${PORTSDIR}/net/net-snmp
