@@ -8,7 +8,9 @@
 PORTNAME=	diction
 PORTVERSION=	1.02
 CATEGORIES=	misc
-MASTER_SITES=	http://www.moria.de/~michael/diction/
+MASTER_SITES=	${MASTER_SITE_GNU} \
+		http://www.moria.de/~michael/diction/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU diction and style
