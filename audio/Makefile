@@ -255,6 +255,7 @@
     SUBDIR += streamripper
     SUBDIR += streamtuner
     SUBDIR += streamtuner-live365
+    SUBDIR += streamtuner-local
     SUBDIR += sweep
     SUBDIR += swhplugins
     SUBDIR += tclmidi
