@@ -17,7 +17,7 @@ COMMENT=	The GGZ Gaming Zone - Console (Text) Frontend
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		ggz.1:${PORTSDIR}/games/libggz \
-		ggzcore.3:${PORTSDIR}/games/ggz-clientp-libs
+		ggzcore.3:${PORTSDIR}/games/ggz-client-libs
 
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
