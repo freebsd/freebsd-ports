@@ -1,0 +1,19 @@
+*** image.c.orig	Tue Sep 25 09:25:40 2001
+--- image.c	Tue Sep 25 09:26:26 2001
+***************
+*** 205,211 ****
+  	cinfo.image_width = output_width;
+  	cinfo.image_height = output_height;
+  	cinfo.input_components = out_color_components;
+! 	cinfo.in_color_space = JCS_RGB;
+  
+  	/* compression parameters */
+  	jpeg_set_defaults(&cinfo);
+--- 205,211 ----
+  	cinfo.image_width = output_width;
+  	cinfo.image_height = output_height;
+  	cinfo.input_components = out_color_components;
+! 	cinfo.in_color_space = dinfo.out_color_space;
+  
+  	/* compression parameters */
+  	jpeg_set_defaults(&cinfo);
