@@ -1,0 +1,7 @@
+bin/atlantikdesigner
+share/applications/atlantikdesigner-3.2.1
+share/applications/kde/atlantikdesigner.desktop
+share/apps/atlantikdesigner/atlantikdesignerui.rc
+share/icons/crystalsvg/16x16/apps/atlantikdesigner.png
+share/icons/crystalsvg/32x32/apps/atlantikdesigner.png
+@dirrm share/apps/atlantikdesigner
