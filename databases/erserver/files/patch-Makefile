@@ -1,5 +1,5 @@
 --- Makefile.orig	Wed Aug 27 04:00:14 2003
-+++ Makefile	Mon Sep  1 15:52:21 2003
++++ Makefile	Tue Sep  2 17:18:50 2003
 @@ -37,8 +37,8 @@
  	templates/replication.cfg-template
  CONFS	= etc/repliclog.cfg
@@ -11,7 +11,14 @@
  RHSCRIPT = scripts/erserver.redhat
  FBSCRIPT = scripts/erserver.freebsd
  NBSCRIPT = scripts/erserver.netbsd
-@@ -70,16 +70,15 @@
+@@ -64,22 +64,21 @@
+ 	  $(INSTALL_DATA) $$file $(docdir) || exit ; \
+ 	done
+ 	for file in $(CONFS); do \
+-	  $(INSTALL_DATA) $$file $(sysconfdir) || exit ; \
++	  $(INSTALL_DATA) $$file $(prefix)/$${file}.sample || exit ; \
+ 	done
+ 	for file in $(OSQLS); do \
  	  $(INSTALL_DATA) $$file $(sqldir) || exit ; \
  	done
  	for file in $(JARS); do \
