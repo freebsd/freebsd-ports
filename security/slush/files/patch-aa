@@ -1,7 +1,7 @@
 *** Makefile.in.orig	Tue Apr  6 03:05:04 1999
---- Makefile.in	Sun May  9 00:05:44 1999
+--- Makefile.in	Sun May 16 21:37:14 1999
 ***************
-*** 9,27 ****
+*** 9,16 ****
   
   CC=@CC@
   INSTALL=@INSTALL@
@@ -10,18 +10,7 @@
   
   all: slush slushd
   
-  slushd: slushd.o common.o
-! 	$(CC) $(LDFLAGS) -s -o $@ slushd.o common.o $(LIBS)
-  
-  slushd.o: slushd.c common.o
-  	$(CC) -c $(CFLAGS) slushd.c
-  
-  slush: slush.o common.o
-! 	$(CC) $(LDFLAGS) -s -o $@ slush.o common.o $(LIBS)
-  
-  slush.o: slush.c common.o
-  	$(CC) -c $(CFLAGS) slush.c
---- 9,27 ----
+--- 9,16 ----
   
   CC=@CC@
   INSTALL=@INSTALL@
@@ -30,17 +19,6 @@
   
   all: slush slushd
   
-  slushd: slushd.o common.o
-! 	$(CC) -static $(LDFLAGS) -o $@ slushd.o common.o $(LIBS)
-  
-  slushd.o: slushd.c common.o
-  	$(CC) -c $(CFLAGS) slushd.c
-  
-  slush: slush.o common.o
-! 	$(CC) -static $(LDFLAGS) -o $@ slush.o common.o $(LIBS)
-  
-  slush.o: slush.c common.o
-  	$(CC) -c $(CFLAGS) slush.c
 ***************
 *** 38,44 ****
   install: $(SBINDIR)/slushd $(MANDIR)/slush.8
