@@ -1,0 +1,11 @@
+#! /bin/sh
+#
+# $FreeBSD$
+
+if perl $CVSROOT/CVSROOT/cvs_acls.pl ${1+"$@"}; then
+   if perl $CVSROOT/CVSROOT/commit_prep.pl ${1+"$@"}; then
+      exit 0
+   fi
+fi
+
+exit 1
