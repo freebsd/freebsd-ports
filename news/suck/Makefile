@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	suck
-PORTVERSION=	4.3.1
+PORTVERSION=	4.3.2
 CATEGORIES=	news
 MASTER_SITES=	http://www.sucknews.org/
 
@@ -22,7 +22,7 @@ EX_DATA=	suckkillfile.sample sucknewsrc.sample suckothermsgs.sample
 
 MAKE_ENV+=	CHKHISTORY=chkhistory_db.o
 .if defined(NEWSBIN) && !defined(SUCK_WITH_INN)
-PKGNAMESUFFIX=	-cnews
+PKGNAMESUFFIX?=	-cnews
 MAKE_ENV+=	DB_TYPE=-DUSE_DBZ DB_LIB=-lcnews
 MAKE_ENV+=	DB_LIB_LOC=-L${LOCALBASE}/lib
 MAKE_ENV+=	INCDIR2=-I${LOCALBASE}/include
