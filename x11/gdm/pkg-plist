@@ -7,24 +7,17 @@ bin/gdmlogin
 bin/gdmmktemp
 bin/gdmphotosetup
 etc/gdm/Init/Default
-@unexec rm -f %D/etc/gdm/Init/Default.orig :: true
 etc/gdm/PostSession/Default
-@unexec rm -f %D/etc/gdm/PostSession/Default.orig :: true
 etc/gdm/PreSession/Default
-@unexec rm -f %D/etc/gdm/PreSession/Default.orig :: true
 etc/gdm/Sessions/Gnome
-@unexec rm -f %D/etc/gdm/Sessions/Gnome.orig :: true
 etc/gdm/Sessions/Xsession
-@unexec rm -f %D/etc/gdm/Sessions/Xsession.orig :: true
 etc/gdm/XKeepsCrashing
 etc/gdm/factory-gdm.conf
 etc/gdm/gdm.conf
 etc/gdm/gnomerc
 etc/gdm/locale.alias
-@unexec rm -f %D/etc/gdm/locale.alias.orig :: true
 sbin/gdm-restart
 sbin/gdm-safe-restart
-sbin/gdmaskpass
 share/gnome/apps/Settings/gdmphotosetup.desktop
 share/gnome/apps/System/gdmconfig.desktop
 share/gnome/apps/System/gdmflexiserver-xnest.desktop
@@ -33,15 +26,19 @@ share/gnome/gdm/gdmchooser.glade
 share/gnome/gdm/gdmconfig.glade
 share/gnome/help/gdm/C/configuration.html
 share/gnome/help/gdm/C/daemonov.html
+share/gnome/help/gdm/C/docbook.css
 share/gnome/help/gdm/C/f39.html
 share/gnome/help/gdm/C/gdm.html
 share/gnome/help/gdm/C/index.html
 share/gnome/help/gdm/C/intro.html
-share/gnome/help/gdm/C/ln33.html
 share/gnome/help/gdm/C/x156.html
 share/gnome/help/gdm/C/x80.html
 share/gnome/help/gdm/C/x89.html
+share/gnome/help/gdmconfig/C/authors.html
 share/gnome/help/gdmconfig/C/basic.html
+share/gnome/help/gdmconfig/C/bugs.html
+share/gnome/help/gdmconfig/C/docbook.css
+share/gnome/help/gdmconfig/C/expert.html
 share/gnome/help/gdmconfig/C/figures/GDM_auto_login.png
 share/gnome/help/gdmconfig/C/figures/GDM_background.png
 share/gnome/help/gdmconfig/C/figures/GDM_chooser.png
@@ -59,14 +56,63 @@ share/gnome/help/gdmconfig/C/figures/GDM_xdmcp.png
 share/gnome/help/gdmconfig/C/figures/GDM_xserv_setup.png
 share/gnome/help/gdmconfig/C/gdmconfig.sgml
 share/gnome/help/gdmconfig/C/index.html
+share/gnome/help/gdmconfig/C/license.html
 share/gnome/help/gdmconfig/C/ln7.html
+share/gnome/help/gdmconfig/C/stylesheet-images/caution.gif
+share/gnome/help/gdmconfig/C/stylesheet-images/home.gif
+share/gnome/help/gdmconfig/C/stylesheet-images/important.gif
+share/gnome/help/gdmconfig/C/stylesheet-images/next.gif
+share/gnome/help/gdmconfig/C/stylesheet-images/note.gif
+share/gnome/help/gdmconfig/C/stylesheet-images/prev.gif
+share/gnome/help/gdmconfig/C/stylesheet-images/tip.gif
+share/gnome/help/gdmconfig/C/stylesheet-images/toc-blank.gif
+share/gnome/help/gdmconfig/C/stylesheet-images/toc-minus.gif
+share/gnome/help/gdmconfig/C/stylesheet-images/toc-plus.gif
+share/gnome/help/gdmconfig/C/stylesheet-images/up.gif
+share/gnome/help/gdmconfig/C/stylesheet-images/warning.gif
+share/gnome/help/gdmconfig/C/system.html
 share/gnome/help/gdmconfig/C/topic.dat
 share/gnome/help/gdmconfig/C/usage.html
+share/gnome/help/gdmconfig/eu/basic.html
+share/gnome/help/gdmconfig/eu/figures/GDM_auto_login.png
+share/gnome/help/gdmconfig/eu/figures/GDM_background.png
+share/gnome/help/gdmconfig/eu/figures/GDM_chooser.png
+share/gnome/help/gdmconfig/eu/figures/GDM_enviro.png
+share/gnome/help/gdmconfig/eu/figures/GDM_face_brow.png
+share/gnome/help/gdmconfig/eu/figures/GDM_full.png
+share/gnome/help/gdmconfig/eu/figures/GDM_login_appear.png
+share/gnome/help/gdmconfig/eu/figures/GDM_login_behav.png
+share/gnome/help/gdmconfig/eu/figures/GDM_login_sessions.png
+share/gnome/help/gdmconfig/eu/figures/GDM_menubar.png
+share/gnome/help/gdmconfig/eu/figures/GDM_misc.png
+share/gnome/help/gdmconfig/eu/figures/GDM_paths.png
+share/gnome/help/gdmconfig/eu/figures/GDM_security.png
+share/gnome/help/gdmconfig/eu/figures/GDM_xdmcp.png
+share/gnome/help/gdmconfig/eu/figures/GDM_xserv_setup.png
+share/gnome/help/gdmconfig/eu/gdmconfig.sgml
+share/gnome/help/gdmconfig/eu/index.html
+share/gnome/help/gdmconfig/eu/ln10.html
+share/gnome/help/gdmconfig/eu/stylesheet-images/caution.gif
+share/gnome/help/gdmconfig/eu/stylesheet-images/home.gif
+share/gnome/help/gdmconfig/eu/stylesheet-images/important.gif
+share/gnome/help/gdmconfig/eu/stylesheet-images/next.gif
+share/gnome/help/gdmconfig/eu/stylesheet-images/note.gif
+share/gnome/help/gdmconfig/eu/stylesheet-images/prev.gif
+share/gnome/help/gdmconfig/eu/stylesheet-images/tip.gif
+share/gnome/help/gdmconfig/eu/stylesheet-images/toc-blank.gif
+share/gnome/help/gdmconfig/eu/stylesheet-images/toc-minus.gif
+share/gnome/help/gdmconfig/eu/stylesheet-images/toc-plus.gif
+share/gnome/help/gdmconfig/eu/stylesheet-images/up.gif
+share/gnome/help/gdmconfig/eu/stylesheet-images/warning.gif
+share/gnome/help/gdmconfig/eu/topic.dat
+share/gnome/help/gdmconfig/eu/usage.html
 share/gnome/omf/gdm/gdmconfig-C.omf
+share/gnome/omf/gdm/gdmconfig-eu.omf
 share/gnome/pixmaps/gdm.xpm
 share/gnome/pixmaps/nobody.png
 share/gnome/pixmaps/nohost.png
 share/locale/az/LC_MESSAGES/gdm.mo
+share/locale/bg/LC_MESSAGES/gdm.mo
 share/locale/ca/LC_MESSAGES/gdm.mo
 share/locale/cs/LC_MESSAGES/gdm.mo
 share/locale/da/LC_MESSAGES/gdm.mo
@@ -74,6 +120,7 @@ share/locale/de/LC_MESSAGES/gdm.mo
 share/locale/el/LC_MESSAGES/gdm.mo
 share/locale/es/LC_MESSAGES/gdm.mo
 share/locale/et/LC_MESSAGES/gdm.mo
+share/locale/eu/LC_MESSAGES/gdm.mo
 share/locale/fi/LC_MESSAGES/gdm.mo
 share/locale/fr/LC_MESSAGES/gdm.mo
 share/locale/ga/LC_MESSAGES/gdm.mo
@@ -99,9 +146,18 @@ share/locale/sv/LC_MESSAGES/gdm.mo
 share/locale/ta/LC_MESSAGES/gdm.mo
 share/locale/tr/LC_MESSAGES/gdm.mo
 share/locale/uk/LC_MESSAGES/gdm.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/gdm.mo
+share/locale/zh_CN/LC_MESSAGES/gdm.mo
 share/locale/zh_TW/LC_MESSAGES/gdm.mo
+@unexec rm -f %D/etc/gdm/Init/Default.orig :: true
+@unexec rm -f %D/etc/gdm/PostSession/Default.orig :: true
+@unexec rm -f %D/etc/gdm/PreSession/Default.orig :: true
+@unexec rm -f %D/etc/gdm/Sessions/Gnome.orig :: true
+@unexec rm -f %D/etc/gdm/Sessions/Xsession.orig :: true
+@unexec rm -f %D/etc/gdm/locale.alias.orig :: true
 @dirrm share/gnome/omf/gdm
+@dirrm share/gnome/help/gdmconfig/eu/stylesheet-images
+@dirrm share/gnome/help/gdmconfig/eu/figures
+@dirrm share/gnome/help/gdmconfig/eu
 @dirrm share/gnome/help/gdmconfig/C/stylesheet-images
 @dirrm share/gnome/help/gdmconfig/C/figures
 @dirrm share/gnome/help/gdmconfig/C

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- docs/Makefile.in	2002/03/13 23:43:57	1.1
++++ docs/Makefile.in	2002/03/13 23:44:08
+@@ -147,7 +147,7 @@
+ XPM_LIBS = @XPM_LIBS@
+ ZVT_LIBS = @ZVT_LIBS@
+ 
+-SUBDIRS = C eu gdmconfig
++SUBDIRS = C gdmconfig
+ 
+ EXTRA_DIST = sgmldocs.make
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
