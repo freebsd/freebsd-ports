@@ -23,7 +23,8 @@ NO_WRKSUBDIR=   yes
 
 do-install:
 	cd ${WRKSRC} && \
-	${INSTALL_DATA} russian.hash russian.aff ${PREFIX}/share/ispell
+		${INSTALL_DATA} russian.hash russian.dict russian.aff \
+		${PREFIX}/share/ispell
 	${INSTALL_SCRIPT} ${FILESDIR}/ispell-ru.sh ${PREFIX}/bin/ispell-ru
 
 .include <bsd.port.mk>
