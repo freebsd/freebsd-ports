@@ -3,7 +3,7 @@
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/09 16:22:35 shige Exp $
+# $Id: Makefile,v 1.2 1999/05/21 13:26:51 shige Exp $
 #
 
 MAINTAINER=	shige@FreeBSD.ORG
@@ -17,7 +17,8 @@ MASTERDIR=	${.CURDIR}/../../editors/flim-emacs
 EMACS_NAME=	mule
 EMACS_PORT=	mule
 EMACS_VER=	19.34
-EMACS_LIBDIR=	share/${EMACS_NAME}
+EMACS_LIBDIR=		share/${EMACS_NAME}
+EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}/${EMACS_NAME}
 
 HAVE_COMMON_PORT=	YES
 REQUIRE_SETUPEL=	YES
