@@ -17,8 +17,9 @@ DIST_SUBDIR=	festival
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	American English female voice for Festival (no commercial use)
 
-RUN_DEPENDS=	festival:${.CURDIR}/../festival \
-		${LOCALBASE}/share/festival/lib/dicts/ogi_lex.out:${.CURDIR}/../festlex-ogi
+RUN_DEPENDS=	\
+${PREFIX}/share/festival/lib/ogi_token.scm:${PORTSDIR}/audio/festival+OGI \
+		${LOCALBASE}/share/festival/lib/dicts/ogi_lex.out:${PORTSDIR}/audio/festlex-ogi
 
 RESTRICTED=	no-commercial-use
 
