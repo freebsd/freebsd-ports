@@ -1,17 +1,29 @@
 # New ports collection makefile for:	bjorb
-# Version required:	0.5.3p1
+# Version required:	0.5.4p4
 # Date created:		May 16, 1998
-# Whom:			issei@t-cnet.or.jp
+# Whom:			issei@jp.FreeBSD.ORG
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/20 02:39:04 steve Exp $
+#
 
-DISTNAME=	bjorb-0.5.3p1
-PKGNAME=	bjorb-0.5.3.1
+DISTNAME=	bjorb-0.5.4p4
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.hitachi-ms.co.jp/pub/bjorb/
 
-MAINTAINER=	issei@t-cnet.or.jp
+MAINTAINER=	issei@jp.FreeBSD.ORG
 
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
+pre-fetch:
+	@${ECHO}
+	@${ECHO} You must set variable USA_RESIDENT to YES, if you are USA resident
+	@${ECHO} or to NO, if you aren\'t USA resident to build this package.
+	@${ECHO} You must also have installed RSAREF if you are USA resident.
+	@${FALSE}
+.elif defined(USA_RESIDENT)
+.if ${USA_RESIDENT} == YES
+LIB_DEPENDS=		rsaref\\.2\\.:${PORTSDIR}/security/rsaref
+.endif
+.endif
 BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
 RUN_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
 
@@ -22,19 +34,20 @@ INSTALL_TARGET=		install certificate
 .endif
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-ssltop=${PREFIX}
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 DOCSRC=		${WRKDIR}/${DISTNAME}
-DOCS=		COPYRIGHT \
+DOCS=		ChangeLog \
+		COPYRIGHT \
+		INSTALL \
 		README \
+		ChangeLog.jp \
 		COPYRIGHT.jp \
 		INSTALL.jp \
 		README.jp \
 		doc/bjorb.conf.5.jp.txt \
 		doc/features.jp
-EXAMPLES=	doc/sample/mail-server.conf \
-		doc/sample/mail-client.conf \
-		doc/sample/telnet-server.conf \
-		doc/sample/telnet-client.conf
+EXAMPLES=	doc/sample/bjorb.conf.doc
 
 post-install:
 	@${INSTALL_SCRIPT} ${DOCSRC}/doc/sample/bjorb.sh ${PREFIX}/etc/rc.d/bjorb.sh.sample
