@@ -31,6 +31,7 @@ share/java/classes/pircbot.jar
 %%PORTDOCS%%share/doc/pircbot/package-list
 %%PORTDOCS%%share/doc/pircbot/help-doc.html
 %%PORTDOCS%%share/doc/pircbot/stylesheet.css
+%%PORTDOCS%%share/doc/pircbot/pircbot-style.css
 %%PORTDOCS%%@dirrm share/doc/pircbot/org/jibble/pircbot/class-use
 %%PORTDOCS%%@dirrm share/doc/pircbot/org/jibble/pircbot
 %%PORTDOCS%%@dirrm share/doc/pircbot/org/jibble
