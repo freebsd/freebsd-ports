@@ -1,5 +1,5 @@
---- icqlib-1.2/cyrillic.c.orig	Mon Jul  2 09:38:19 2001
-+++ icqlib-1.2/cyrillic.c	Mon Jul  2 09:41:54 2001
+--- icqlib-0.1/cyrillic.c.orig	Mon Jul  2 09:38:19 2001
++++ icqlib-0.1/cyrillic.c	Mon Jul  2 09:41:54 2001
 @@ -30,8 +30,8 @@
  
  BYTE kw[] = {128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,
