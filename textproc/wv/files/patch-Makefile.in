@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Oct 15 18:09:43 2001
-+++ Makefile.in	Sat Nov 17 08:24:35 2001
-@@ -61,6 +61,8 @@
+--- Makefile.in.orig	Sat Nov 17 02:11:20 2001
++++ Makefile.in	Sat Jan 26 04:53:33 2002
+@@ -62,6 +62,8 @@
  RM = rm
  
  INSTALL = @INSTALL@
@@ -9,7 +9,7 @@
  INSTALL_DATA = @INSTALL_DATA@
  
  @SET_MAKE@
-@@ -81,7 +83,7 @@
+@@ -82,7 +84,7 @@
  VPATH = @srcdir@
  
  DEFS = @DEFS@ -DVERSION=\"@VERSION@\" -DXMLCONFIG=\"$(datadir)/wv/wvConfig.xml\" -DHTMLCONFIG=\"$(datadir)/wv/wvHtml.xml\"
@@ -18,7 +18,7 @@
  CFLAGS = @CFLAGS@ -ansi -pedantic
  INCLUDES = -I. -I./ -I$(srcdir)/ -I$(srcdir)/magick/  -I$(srcdir)/libole2/ -I$(srcdir)/oledecod/
  
-@@ -422,31 +424,25 @@
+@@ -420,30 +422,24 @@
  	$(includedir)	
  
  install: installdirs all
@@ -29,7 +29,6 @@
 -	chmod +x $(srcdir)/wvCleanLatex
 -	chmod +x $(srcdir)/wvAbw	
 -	$(INSTALL) $(srcdir)/wvSummary$(EXEEXT) $(bindir)/wvSummary$(EXEEXT)
--	$(INSTALL) $(srcdir)/wvSimpleCLX$(EXEEXT) $(bindir)/wvSimpleCLX$(EXEEXT)
 -	$(INSTALL) $(srcdir)/wvVersion$(EXEEXT) $(bindir)/wvVersion$(EXEEXT)
 -	$(INSTALL) $(srcdir)/wvConvert$(EXEEXT) $(bindir)/wvConvert$(EXEEXT)
 -	$(INSTALL) $(srcdir)/wvWare$(EXEEXT) $(bindir)/wvWare$(EXEEXT)
@@ -48,7 +47,6 @@
 -	$(INSTALL) $(srcdir)/wv-incconfig $(bindir)/wv-incconfig
 -	$(INSTALL) $(srcdir)/make_epses.sh $(bindir)/make_epses.sh
 +	$(INSTALL_PROGRAM) $(srcdir)/wvSummary$(EXEEXT) $(bindir)/wvSummary$(EXEEXT)
-+	$(INSTALL_PROGRAM) $(srcdir)/wvSimpleCLX$(EXEEXT) $(bindir)/wvSimpleCLX$(EXEEXT)
 +	$(INSTALL_PROGRAM) $(srcdir)/wvVersion$(EXEEXT) $(bindir)/wvVersion$(EXEEXT)
 +	$(INSTALL_PROGRAM) $(srcdir)/wvConvert$(EXEEXT) $(bindir)/wvConvert$(EXEEXT)
 +	$(INSTALL_PROGRAM) $(srcdir)/wvWare$(EXEEXT) $(bindir)/wvWare$(EXEEXT)
