@@ -2313,7 +2313,7 @@ gnu_usr.bin	src/gnu/usr.bin
 gnu_usr.sbin	src/gnu/usr.sbin
 gnuboy		ports/emulators/gnuboy
 gnucap		ports/cad/gnucap
-gnucash		ports/deskutils/gnucash
+gnucash		ports/finance/gnucash
 gnuchess	ports/games/gnuchess
 gnugadu		ports/net/gnugadu
 gnugo		ports/games/gnugo
