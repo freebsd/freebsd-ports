@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	sqwebmail
-PORTVERSION=	3.5.3
-PORTREVISION=	1
+PORTVERSION=	3.6.0
+PORTREVISION=	0
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -71,7 +71,8 @@ CONFIGURE_ARGS=	\
 	--libexecdir=${PREFIX}/libexec/sqwebmail \
 	--mandir=${PREFIX}/man \
 	--prefix=${PREFIX}/share/sqwebmail \
-	--enable-imageurl=/${IMAGEURL}
+	--enable-imageurl=/${IMAGEURL} \
+	--with-locking-method=fcntl
 
 PLIST_SUB+=	CGIBINDIR=${CGIBINDIR} CGIBINSUBDIR=${CGIBINSUBDIR} WEBDATADIR=${WEBDATADIR} WEBDATASUBDIR=${WEBDATASUBDIR}
 
@@ -195,6 +196,9 @@ CONFIGURE_ARGS+=	${CONFIGURE_TARGET}
 post-patch:
 	@${REINPLACE_CMD} -e 's|^@INSTALLAUTHMODULES@$$|& @AUTHMODULES@|' \
 		${WRKSRC}/authlib/installlist.in
+
+	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
+		${WRKSRC}/liblock/configure
 
 .if !defined(WITHOUT_AUTHDAEMON)
 post-install:

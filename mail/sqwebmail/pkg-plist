@@ -15,7 +15,6 @@ libexec/sqwebmail/sqwebmail/deliverquota
 libexec/sqwebmail/sqwebmail/maildirmake
 libexec/sqwebmail/sqwebmail/makedatprog
 libexec/sqwebmail/sqwebmail/makemime
-libexec/sqwebmail/sqwebmail/mimegpg
 libexec/sqwebmail/sqwebmail/pcpd
 libexec/sqwebmail/sqwebmail/reformime
 %%AUTHDFLAG%%share/sqwebmail/authdaemonrc.dist
