@@ -15,7 +15,7 @@ MAINTAINER=	rael@vectorstar.net
 COMMENT=	A simple turing machine simulator for gnome 2
 
 LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
+		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui20
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
