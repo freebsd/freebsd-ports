@@ -68,7 +68,7 @@ EOM
 	}
 
 	if ($> != 0) {
-		print "It is necessary to add missing vpopmail users/groups at";
+		print "It is necessary to add missing vsftpd users/groups at";
 		print "this stage.  Please either add them manually or retry";
 		print "as root.";
 		# Let pw(1) signal the failure so the user can see which

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vsftpd
-PORTVERSION=	0.0.10
+PORTVERSION=	0.0.15
 CATEGORIES=	ftp
 MASTER_SITES= 	ftp://ferret.lmh.ox.ac.uk/pub/linux/
 
