@@ -8,14 +8,26 @@ share/apps/bookcase/bookcase.dtd
 share/apps/bookcase/bookcase.tips
 share/apps/bookcase/bookcase2html.xsl
 share/apps/bookcase/bookcaseui.rc
+share/apps/bookcase/entry-templates/Album.xsl
+share/apps/bookcase/entry-templates/Default.xsl
+share/apps/bookcase/entry-templates/Video.xsl
 share/apps/bookcase/pics/album.png
 share/apps/bookcase/pics/bibtex.png
 share/apps/bookcase/pics/book.png
 share/apps/bookcase/pics/bookcase.png
+share/apps/bookcase/pics/card.png
+share/apps/bookcase/pics/cassette-logo.png
+share/apps/bookcase/pics/cd-logo.png
+share/apps/bookcase/pics/coin.png
+share/apps/bookcase/pics/comic.png
+share/apps/bookcase/pics/dvd-logo.png
 share/apps/bookcase/pics/person-open.png
 share/apps/bookcase/pics/person.png
+share/apps/bookcase/pics/record-logo.png
+share/apps/bookcase/pics/stamp.png
+share/apps/bookcase/pics/vhs-logo.png
 share/apps/bookcase/pics/video.png
-share/doc/HTML/en/bookcase-apidocs/common
+share/apps/bookcase/pics/wine.png
 share/doc/HTML/en/bookcase/common
 share/doc/HTML/en/bookcase/index.cache.bz2
 share/doc/HTML/en/bookcase/index.docbook
@@ -25,6 +37,7 @@ share/locale/bg/LC_MESSAGES/bookcase.mo
 share/locale/de/LC_MESSAGES/bookcase.mo
 share/locale/ee/LC_MESSAGES/bookcase.mo
 share/locale/es/LC_MESSAGES/bookcase.mo
+share/locale/fi/LC_MESSAGES/bookcase.mo
 share/locale/fr/LC_MESSAGES/bookcase.mo
 share/locale/hu/LC_MESSAGES/bookcase.mo
 share/locale/it/LC_MESSAGES/bookcase.mo
@@ -36,19 +49,45 @@ share/locale/sv/LC_MESSAGES/bookcase.mo
 share/mimelnk/application/x-bookcase.desktop
 @unexec rmdir %D/share/mimelnk/application 2>/dev/null || true
 @unexec rmdir %D/share/mimelnk 2>/dev/null || true
+@unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sv 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl 2>/dev/null || true
+@unexec rmdir %D/share/locale/nb/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nb 2>/dev/null || true
+@unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ja 2>/dev/null || true
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi 2>/dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
+@unexec rmdir %D/share/locale/ee/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ee 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/bg/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/bg 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/en/bookcase-apidocs/src/html 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/en/bookcase-apidocs/src 2>/dev/null || true
-@dirrm share/doc/HTML/en/bookcase-apidocs
 @dirrm share/doc/HTML/en/bookcase
 @unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML 2>/dev/null || true
 @dirrm share/apps/bookcase/pics
+@dirrm share/apps/bookcase/entry-templates
 @dirrm share/apps/bookcase
+@unexec rmdir %D/share/apps 2>/dev/null || true
 @unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
 @unexec rmdir %D/share/applnk 2>/dev/null || true
