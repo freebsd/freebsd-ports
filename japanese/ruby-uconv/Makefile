@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uconv
-PORTVERSION=	0.4.8
+PORTVERSION=	0.4.9
 CATEGORIES=	japanese converters ruby
 MASTER_SITES=	http://www.yoshidam.net/
 DIST_SUBDIR=	ruby
@@ -19,7 +19,9 @@ USE_RUBY_EXTCONF=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_TARGET=	site-install
 
-EXAMPLES=	euc2unicode.rb	test-utf.rb	test_euc.txt	test_euc.xml \
+EXAMPLES=	euc2unicode.rb \
+		test-utf.rb	test-utf2.rb \
+		test_euc.txt	test_euc.xml \
 		trilang.xml	unicode2euc.rb	xmlconv.rb
 
 .include <bsd.port.pre.mk>
