@@ -1,0 +1,42 @@
+Index: EditresCom.c
+===================================================================
+RCS file: /cvs/xlibs/Xmu/EditresCom.c,v
+retrieving revision 1.23
+diff -u -r1.23 EditresCom.c
+--- a/EditresCom.c	12 Apr 2004 14:37:50 -0000	1.23
++++ b/EditresCom.c	13 May 2004 04:13:52 -0000
+@@ -40,7 +40,6 @@
+ #include <X11/Xatom.h>
+ #include <X11/Xos.h>		/* for strcpy declaration */
+ #include <X11/Xfuncs.h>
+-#include <X11/Xaw/Cardinals.h>
+ #include <X11/Xmu/EditresP.h>
+ #include <X11/Xmd.h>
+ #include <X11/Xmu/CharSet.h>
+Index: WidgetNode.c
+===================================================================
+RCS file: /cvs/xlibs/Xmu/WidgetNode.c,v
+retrieving revision 1.14
+diff -u -r1.14 WidgetNode.c
+--- a/WidgetNode.c	23 Dec 2003 04:10:32 -0000	1.14
++++ b/WidgetNode.c	13 May 2004 04:16:59 -0000
+@@ -38,10 +38,6 @@
+ #include <stdlib.h>
+ #include <X11/Xos.h>
+ #include <X11/IntrinsicP.h>
+-/* #include <X11/Xaw/Cardinals.h> */
+-#ifndef ZERO
+-#define ZERO	((Cardinal)0)
+-#endif
+ #include <X11/Xmu/CharSet.h>
+ #include <X11/Xmu/WidgetNode.h>
+ 
+@@ -221,7 +217,7 @@
+     if (node->have_resources) return;
+ 
+     dummy = XtCreateWidget (node->label, XmuWnClass(node), toplevel,
+-			    NULL, ZERO);
++			    NULL, ((Cardinal)0));
+     if (dummy) XtDestroyWidget (dummy);
+ 
+ 
