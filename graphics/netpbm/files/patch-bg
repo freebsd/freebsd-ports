@@ -1,0 +1,92 @@
+--- ppm/Makefile.orig	Fri Mar 24 17:04:20 2000
++++ ppm/Makefile	Sat Apr  1 12:00:00 2000
+@@ -16,7 +16,7 @@
+ 
+ MERGENAME = ppmmerge
+ 
+-INCLUDE= -I.. $(INCLUDEPGM) $(INCLUDEPBM) -I../shhopt
++INCLUDE= -I$(SRCDIR) $(INCLUDEPGM) $(INCLUDEPBM) -I$(SRCDIR)/shhopt
+ 
+ ifneq ($(JPEGHDR_DIR), NONE)
+   INCLUDE+= -I$(JPEGHDR_DIR)
+@@ -29,6 +29,7 @@
+ endif
+ 
+ NETPBMLIBS = $(LIBPPM) $(PBMDIR)/$(LIBPBM) $(PGMDIR)/$(LIBPGM)
++NETPBMLD = -L. -lppm -L$(PBMDIR) -lpbm -L$(PGMDIR) -lpgm
+ 
+ PORTBINARIES =	bmptoppm gouldtoppm hpcdtoppm ilbmtoppm imgtoppm \
+ 		mtvtoppm pcxtoppm pgmtoppm pi1toppm picttoppm \
+@@ -46,6 +47,7 @@
+ 		sputoppm tgatoppm ximtoppm xpmtoppm xvminitoppm \
+ 		yuvtoppm yuvsplittoppm
+ 
++NOMERGEBINARIES =
+ ifneq ($(JPEGLIB_DIR), NONE)
+   ifneq ($(JPEGHDR_DIR), NONE)
+       NOMERGEBINARIES += ppmtojpeg
+@@ -53,7 +55,7 @@
+ endif
+ 
+ MATHBINARIES = ppmcie ppmforge ppmlabel ppmpat ppmqvga ppmtomap
+-BINARIES = $(PORTBINARIES) $(NOMERGEBINARIES) $(MATHBINARIES)
++BINARIES = $(PORTBINARIES) $(MATHBINARIES) $(NOMERGEBINARIES)
+ SCRIPTS = ppmquantall ppmshadow
+ 
+ OBJECTS = $(patsubst %, %.o, $(BINARIES))
+@@ -61,6 +63,7 @@
+ MERGE_OBJECTS = $(patsubst %,%.o2, $(PORTBINARIES) $(MATHBINARIES))
+ 
+ LIBOBJECTS = libppm1.o libppm2.o libppm3.o libppm4.o libppm5.o bitio.o
++LIBSOBJECTS = libppm1.so libppm2.so libppm3.so libppm4.so libppm5.so bitio.so
+ 
+ MANUALS1 = $(BINARIES) $(SCRIPTS)
+ MANUALS3 = libppm
+@@ -68,7 +71,7 @@
+ 
+ MERGENAME= ppmmerge
+ 
+-INTERFACE_HEADERS = ppm.h
++INTERFACE_HEADERS = ppm.h ppmcmap.h ppmdraw.h
+ 
+ .PHONY: all
+ all:        $(BINARIES)
+@@ -77,26 +80,32 @@
+ 
+ 
+ # Rules for plain programs.
+-$(PORTBINARIES) ppmtojpeg: %: %.o $(NETPBMLIBS) ../shhopt/libshhopt.a
+-	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) ../shhopt/libshhopt.a \
+-	  $(JPEGLD) $(CDEBUG)
++$(PORTBINARIES): %: %.o $(NETPBMLIBS)
++	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) $(CDEBUG)
+ 
+ # Rule for math-dependent programs.
+ $(MATHBINARIES): %: %.o $(NETPBMLIBS)
+-	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLIBS) $(CDEBUG)
++	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLD) $(CDEBUG)
++
++ppmtojpeg: %: %.o $(NETPBMLIBS) ../shhopt/libshhopt.a
++	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) ../shhopt/libshhopt.a \
++	  $(JPEGLD) $(CDEBUG)
+ 
+ # Rule for objects.
+ $(OBJECTS) $(LIBOBJECTS): %.o: %.c
+ 	$(CC) -c $(CFLAGS) $(INCLUDE) -o $@ $<
+ 
++$(LIBSOBJECTS): %.so: %.c
++	$(CC) -c -fpic -DPIC $(CFLAGS) $(INCLUDE) -o $@ $<
++
+ $(MERGE_OBJECTS): %.o2: %.c
+ 	$(CC) -c $(CFLAGS) $(INCLUDE) "-Dmain=$*_main" -o $@ $<
+ 
+ # And libraries.
+ $(PBMDIR)/$(LIBPBM):
+-	cd $(PBMDIR) ; make $(LIBPBM)
++	cd $(PBMDIR) ; $(MAKE) $(LIBPBM)
+ $(PGMDIR)/$(LIBPGM):
+-	cd $(PGMDIR) ; make $(LIBPGM)
++	cd $(PGMDIR) ; $(MAKE) $(LIBPGM)
+ 
+ ../shhopt/libshhopt.a:
+ 	cd ../shhopt; $(MAKE) libshhopt.a

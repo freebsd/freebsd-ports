@@ -1,36 +1,44 @@
---- pbmplus.h.orig	Tue Mar  1 18:46:36 1994
-+++ pbmplus.h	Thu Jan  7 19:23:15 1999
-@@ -20,6 +20,9 @@
- #include <perror.h>
+--- pbmplus.h.orig	Fri Mar 24 09:08:33 2000
++++ pbmplus.h	Sat Apr  1 10:32:36 2000
+@@ -24,6 +24,9 @@
  #include <errno.h>
+ #endif
  #endif
 +#if (defined(__unix__) || defined(unix)) && !defined(USG)
 +#include <sys/param.h>
 +#endif
  
- #if defined(USG) || defined(SVR4) || defined(VMS)
+ #if defined(USG) || defined(SVR4) || defined(VMS) || defined(__SVR4)
  #define SYSV
-@@ -30,7 +33,9 @@
+@@ -34,7 +37,7 @@
  ** and if you run on an Amiga, set AMIGA. If your compiler is ANSI C, you're
  ** probably better off setting SYSV - all it affects is string handling.
  */
 -#define BSD
-+#ifndef BSD
-+#define BSD 1
-+#endif
++/* #define BSD */
  /* #define SYSV */
  /* #define MSDOS */
  /* #define AMIGA */
-@@ -119,10 +124,12 @@
+@@ -46,7 +49,7 @@
+ ** hex and decimal forms to specify colors (see ppm/pgmtoppm.1 for details).
+ */
+ #ifndef RGB_DB
+-#define RGB_DB "/usr/lib/X11/rgb"
++#define RGB_DB "%%X11BASE%%/lib/X11/rgb"
+ /*#define RGB_DB "/usr/openwin/lib/rgb.txt"*/
+ #ifdef VMS
+ #define RGB_DB "PBMplus_Dir:RGB.TXT"
+@@ -117,11 +120,13 @@
  #ifndef VMS
  #include <unistd.h>
  #endif
 +#if !(defined(BSD) && (BSD >= 199306))
  extern int atoi();
  extern void exit();
+ #ifndef __osf__
  extern long time();
  extern int write();
 +#endif
  #endif
+ #endif
  
- /* CONFIGURE: On most BSD systems, malloc() gets declared in stdlib.h, on

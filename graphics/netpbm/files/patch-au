@@ -1,5 +1,5 @@
---- ppm/ppmtobmp.c.orig	Mon Oct  4 18:12:36 1993
-+++ ppm/ppmtobmp.c	Sat Oct 16 02:53:18 1999
+--- ppm/ppmtobmp.c.orig	Thu Mar 23 16:34:34 2000
++++ ppm/ppmtobmp.c	Sun Apr  1 12:00:00 2000
 @@ -75,7 +75,7 @@
      unsigned short cBitCount, pixel **pixels, colorhash_table cht));
  static int colorstobpp ARGS((int colors));
@@ -7,103 +7,87 @@
 -    int colors, colorhash_table cht, pixval *R, pixval *G, pixval *B));
 +    int bpp, int colors, colorhash_table cht, pixval *R, pixval *G, pixval *B));
  static void
- PutByte(fp, v)
-         FILE           *fp;
-@@ -253,19 +253,23 @@
+ PutByte(FILE *fp, char v)
+ {
+@@ -244,16 +244,20 @@
          int             i;
          long            ncolors;
  
 -        for (i = 0; i < colors; i++)
--        {
++        if (bpp != 24)
+         {
 -                nbyte += BMPwritergb(fp,class,R[i],G[i],B[i]);
 -        }
--
+ 
 -        ncolors = (1 << bpp);
-+	if (bpp != 24)
-+	{
++                for (i = 0; i < colors; i++)
++                {
++                        nbyte += BMPwritergb(fp,class,R[i],G[i],B[i]);
++                }
++
++                ncolors = (1 << bpp);
  
 -        for (; i < ncolors; i++)
 -        {
 -                nbyte += BMPwritergb(fp,class,0,0,0);
--        }
-+		for (i = 0; i < colors; i++)
-+		{
-+			nbyte += BMPwritergb(fp,class,R[i],G[i],B[i]);
-+		}
-+
-+		ncolors = (1 << bpp);
-+
-+		for (; i < ncolors; i++)
-+		{
-+			nbyte += BMPwritergb(fp,class,0,0,0);
-+		}
-+	}
++                for (; i < ncolors; i++)
++                {
++                        nbyte += BMPwritergb(fp,class,0,0,0);
++                }
+         }
  
--        return nbyte;
-+	return nbyte;
- }
- 
- /*
-@@ -284,26 +288,38 @@
+         return nbyte;
+@@ -271,26 +275,38 @@
          int             rc;
          unsigned        x;
  
 -        if ((b = pm_bitinit(fp, "w")) == (BITSTREAM) 0)
--        {
++        if (bpp != 24)
+         {
 -                return -1;
 -        }
--
++                if ((b = pm_bitinit(fp, "w")) == (BITSTREAM) 0)
++                {
++                        return -1;
++                }
+ 
 -        for (x = 0; x < cx; x++, row++)
 -        {
 -                if ((rc = pm_bitwrite(b, bpp, ppm_lookupcolor(cht, row))) == -1)
--                {
--                        return -1;
--                }
--                nbyte += rc;
--        }
++                for (x = 0; x < cx; x++, row++)
++                {
++                        if ((rc = pm_bitwrite(b, bpp, ppm_lookupcolor(cht, row))) == -1)
++                        {
++                                return -1;
++                        }
++                        nbyte += rc;
++                }
++
++                if ((rc = pm_bitfini(b)) == -1)
+                 {
+                         return -1;
+                 }
+                 nbyte += rc;
+         }
 -
 -        if ((rc = pm_bitfini(b)) == -1)
--        {
++        else
+         {
 -                return -1;
--        }
++                for (x = 0; x < cx; x++, row++)
++                {
++                        PutByte(fp, PPM_GETB(*row));
++                        PutByte(fp, PPM_GETG(*row));
++                        PutByte(fp, PPM_GETR(*row));
++                        nbyte += 3;
++                }
+         }
 -        nbyte += rc;
 -
-+	if (bpp != 24)
-+	{
-+		if ((b = pm_bitinit(fp, "w")) == (BITSTREAM) 0)
-+		{
-+			return -1;
-+		}
-+
-+		for (x = 0; x < cx; x++, row++)
-+		{
-+			if ((rc = pm_bitwrite(b, bpp, ppm_lookupcolor(cht, row))) == -1)
-+			{
-+				return -1;
-+			}
-+			nbyte += rc;
-+		}
-+
-+		if ((rc = pm_bitfini(b)) == -1)
-+		{
-+			return -1;
-+		}
-+		nbyte += rc;
-+	}
-+	else
-+	{
-+		for (x = 0; x < cx; x++, row++)
-+		{
-+			PutByte(fp, PPM_GETB(*row));
-+			PutByte(fp, PPM_GETG(*row));
-+			PutByte(fp, PPM_GETR(*row));
-+			nbyte += 3;
-+		}
-+	}
          /*
           * Make sure we write a multiple of 4 bytes.
           */
-@@ -394,48 +410,21 @@
+@@ -376,48 +392,21 @@
   * arrays are undefined.
   */
  static void
@@ -114,7 +98,7 @@
          int             x;
          int             y;
          pixel         **pixels;
-+	int		bpp;	/* bits per pixel */
++        int             bpp;    /* bits per pixel */
          int             colors; /* number of valid entries in R,G,B */
          colorhash_table cht;
          pixval         *R;
@@ -154,7 +138,7 @@
          nbyte += BMPwritefileheader(fp, class, bpp, x, y);
          nbyte += BMPwriteinfoheader(fp, class, bpp, x, y);
          nbyte += BMPwritergbtable(fp, class, bpp, colors, R, G, B);
-@@ -517,13 +506,15 @@
+@@ -499,13 +488,15 @@
          char          **argv;
  {
          FILE           *ifp = stdin;
@@ -166,12 +150,12 @@
          int             rows;
          int             cols;
          int             colors;
-+	int		maxcolors = MAXCOLORS;
-+        int		bpp = 0;
++        int             maxcolors = MAXCOLORS;
++        int             bpp = 0;
          int             i;
          pixval          maxval;
          colorhist_vector chv;
-@@ -545,6 +536,14 @@
+@@ -527,6 +518,14 @@
                          class = C_WIN;
                  else if (pm_keymatch(argv[argn], "-os2", 2))
                          class = C_OS2;
@@ -186,19 +170,13 @@
                  else
                          pm_usage(usage);
                  ++argn;
-@@ -585,44 +584,90 @@
+@@ -567,44 +566,90 @@
  #endif
  
          /* Figure out the colormap. */
 -        pm_message("computing colormap...");
 -        chv = ppm_computecolorhist(pixels, cols, rows, MAXCOLORS, &colors);
-+	chv = (colorhist_vector) 0;
-+        if(bpp != 24)
-+	{
-+		pm_message("computing colormap...");
-+		chv = ppm_computecolorhist(pixels, cols, rows, maxcolors, &colors);
-+	}
-         if (chv == (colorhist_vector) 0)
+-        if (chv == (colorhist_vector) 0)
 -                pm_error("too many colors - try doing a 'ppmquant %d'"
 -                        , MAXCOLORS);
 -        pm_message("%d colors found", colors);
@@ -208,100 +186,99 @@
 -         * colormap.
 -         */
 -        if (maxval > 255)
--        {
++        chv = (colorhist_vector) 0;
++        if (bpp != 24)
+         {
 -                pm_message("maxval is not 255 - automatically rescaling colors");
--        }
++                pm_message("computing colormap...");
++                chv = ppm_computecolorhist(pixels, cols, rows, maxcolors, &colors);
+         }
 -        for (i = 0; i < colors; ++i)
--        {
++        if (chv == (colorhist_vector) 0)
+         {
 -                if (maxval == 255)
--                {
++                if (bpp == 0)
+                 {
 -                        Red[i] = PPM_GETR(chv[i].color);
 -                        Green[i] = PPM_GETG(chv[i].color);
 -                        Blue[i] = PPM_GETB(chv[i].color);
--                }
++                        pm_message("over 256 colors found");
++                        bpp = 24;
+                 }
 -                else
--                {
++                else if (bpp != 24)
++                        pm_error("too many colors - try doing a 'ppmquant %d'"
++                                , maxcolors);
++        }
++        else
++        {
++                pm_message("%d colors found", colors);
++
++               /*
++                * I have found empirically at least one BMP-displaying program
++                * that can't deal with (for instance) using 3 bits per pixel.
++                * I have seen no programs that can deal with using 3 bits per
++                * pixel.  I have seen programs which can deal with 1, 4, and
++                * 8 bits per pixel.
++                *
++                * Based on this, I adjust actual the number of bits per pixel
++                * as follows.  If anyone knows better, PLEASE tell me!
++                */
++
++               if (!bpp)
++               {
++                       bpp = colorstobpp(colors);
++
++                       switch(bpp)
++                       {
++                       case 2:
++                       case 3:
++                               bpp = 4;
++                               break;
++                       case 5:
++                       case 6:
++                       case 7:
++                               bpp = 8;
++                               break;
++                       }
++                }
++
++                /*
++                 * Now turn the ppm colormap into the appropriate GIF
++                 * colormap.
++                 */
++                if (maxval > 255)
++                {
++                        pm_message("maxval is not 255 - automatically rescaling colors");
++                }
++                for (i = 0; i < colors; ++i)
+                 {
 -                        Red[i] = (pixval) PPM_GETR(chv[i].color) * 255 / maxval;
 -                        Green[i] = (pixval) PPM_GETG(chv[i].color) * 255 / maxval;
 -                        Blue[i] = (pixval) PPM_GETB(chv[i].color) * 255 / maxval;
--                }
--        }
-+	{
-+		if (bpp == 0)
-+		{
-+			pm_message("over 256 colors found");
-+			bpp = 24;
-+		}
-+		else if (bpp != 24)
-+			pm_error("too many colors - try doing a 'ppmquant %d'"
-+				, maxcolors);
-+	}
-+	else
-+	{
-+		pm_message("%d colors found", colors);
++                        if (maxval == 255)
++                        {
++                                Red[i] = PPM_GETR(chv[i].color);
++                                Green[i] = PPM_GETG(chv[i].color);
++                                Blue[i] = PPM_GETB(chv[i].color);
++                        }
++                        else
++                        {
++                                Red[i] = (pixval) PPM_GETR(chv[i].color) * 255 / maxval;
++                                Green[i] = (pixval) PPM_GETG(chv[i].color) * 255 / maxval;
++                                Blue[i] = (pixval) PPM_GETB(chv[i].color) * 255 / maxval;
++                        }
+                 }
 +
-+		/*
-+		 * I have found empirically at least one BMP-displaying program
-+		 * that can't deal with (for instance) using 3 bits per pixel.
-+		 * I have seen no programs that can deal with using 3 bits per
-+		 * pixel.  I have seen programs which can deal with 1, 4, and
-+		 * 8 bits per pixel.
-+		 *
-+		 * Based on this, I adjust actual the number of bits per pixel
-+		 * as follows.  If anyone knows better, PLEASE tell me!
-+		 */
-+
-+		if (!bpp)
-+		{
-+			bpp = colorstobpp(colors);
-+
-+			switch(bpp)
-+			{
-+			case 2:
-+			case 3:
-+				bpp = 4;
-+				break;
-+			case 5:
-+			case 6:
-+			case 7:
-+				bpp = 8;
-+				break;
-+			}
-+		}
-+
-+		/*
-+		 * Now turn the ppm colormap into the appropriate GIF
-+		 * colormap.
-+		 */
-+		if (maxval > 255)
-+		{
-+			pm_message("maxval is not 255 - automatically rescaling colors");
-+		}
-+		for (i = 0; i < colors; ++i)
-+		{
-+			if (maxval == 255)
-+			{
-+				Red[i] = PPM_GETR(chv[i].color);
-+				Green[i] = PPM_GETG(chv[i].color);
-+				Blue[i] = PPM_GETB(chv[i].color);
-+			}
-+			else
-+			{
-+				Red[i] = (pixval) PPM_GETR(chv[i].color) * 255 / maxval;
-+				Green[i] = (pixval) PPM_GETG(chv[i].color) * 255 / maxval;
-+				Blue[i] = (pixval) PPM_GETB(chv[i].color) * 255 / maxval;
-+			}
-+		}
-+
-+		/* And make a hash table for fast lookup. */
-+		cht = ppm_colorhisttocolorhash(chv, colors);
-+		ppm_freecolorhist(chv);
-+	}
++                /* And make a hash table for fast lookup. */
++                cht = ppm_colorhisttocolorhash(chv, colors);
++                ppm_freecolorhist(chv);
+         }
  
 -        /* And make a hash table for fast lookup. */
 -        cht = ppm_colorhisttocolorhash(chv, colors);
 -        ppm_freecolorhist(chv);
-+	pm_message("Using %d bits per pixel", bpp);
++        pm_message("Using %d bits per pixel", bpp);
  
          /* All set, let's do it. */
          BMPEncode(stdout, class

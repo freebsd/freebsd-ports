@@ -16,6 +16,7 @@ bin/hpcdtoppm
 bin/icontopbm
 bin/ilbmtoppm
 bin/imgtoppm
+bin/jpegtopnm
 bin/lispmtopgm
 bin/macptopbm
 bin/mgrtopbm
@@ -77,6 +78,7 @@ bin/pi3topbm
 bin/picttoppm
 bin/pjtoppm
 bin/pktopbm
+bin/pngtopnm
 bin/pnmalias
 bin/pnmarith
 bin/pnmcat
@@ -96,7 +98,6 @@ bin/pnminvert
 bin/pnmmargin
 bin/pnmmerge
 bin/pnmnlfilt
-bin/pnmnoraw
 bin/pnmpad
 bin/pnmpaste
 bin/pnmrotate
@@ -106,21 +107,26 @@ bin/pnmsmooth
 bin/pnmtile
 bin/pnmtoddif
 bin/pnmtofits
+bin/pnmtoplainpnm
+bin/pnmtopng
 bin/pnmtops
 bin/pnmtorast
 bin/pnmtosgi
 bin/pnmtosir
 bin/pnmtotiff
+bin/pnmtotiffcmyk
 bin/pnmtoxwd
 bin/ppm3d
 bin/ppmbrighten
 bin/ppmchange
+bin/ppmcie
 bin/ppmdim
 bin/ppmdist
 bin/ppmdither
 bin/ppmflash
 bin/ppmforge
 bin/ppmhist
+bin/ppmlabel
 bin/ppmmake
 bin/ppmmerge
 bin/ppmmix
@@ -131,6 +137,7 @@ bin/ppmquant
 bin/ppmquantall
 bin/ppmqvga
 bin/ppmrelief
+bin/ppmshadow
 bin/ppmshift
 bin/ppmspread
 bin/ppmtoacad
@@ -138,6 +145,7 @@ bin/ppmtobmp
 bin/ppmtogif
 bin/ppmtoicr
 bin/ppmtoilbm
+bin/ppmtojpeg
 bin/ppmtomap
 bin/ppmtomitsu
 bin/ppmtopcx
@@ -161,6 +169,7 @@ bin/rasttopnm
 bin/rawtopgm
 bin/rawtoppm
 bin/rgb3toppm
+bin/sbigtopgm
 bin/sgitopnm
 bin/sirtopnm
 bin/sldtoppm
@@ -184,7 +193,18 @@ include/pgm.h
 include/pnm.h
 include/ppm.h
 include/ppmcmap.h
+include/ppmdraw.h
 lib/libpbm.a
+lib/libpbm.so
+lib/libpbm.so.1
 lib/libpgm.a
+lib/libpgm.so
+lib/libpgm.so.1
 lib/libpnm.a
+lib/libpnm.so
+lib/libpnm.so.1
 lib/libppm.a
+lib/libppm.so
+lib/libppm.so.1
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R

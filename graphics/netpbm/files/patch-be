@@ -1,0 +1,47 @@
+--- pgm/Makefile.orig	Fri Mar 24 07:43:44 2000
++++ pgm/Makefile	Sat Apr  1 12:00:00 2000
+@@ -13,6 +13,7 @@
+ INCLUDE = -I$(SRCDIR) $(INCLUDEPBM)
+ 
+ NETPBMLIBS = $(LIBPGM) $(PBMDIR)/$(LIBPBM)
++NETPBMLD = -L. -lpgm -L$(PBMDIR) -lpbm
+ 
+ PORTBINARIES =	asciitopgm bioradtopgm fstopgm hipstopgm \
+ 		lispmtopgm pbmtopgm pgmbentley pgmenhance pgmhist \
+@@ -25,6 +26,7 @@
+ MERGE_OBJECTS = $(patsubst %,%.o2, $(BINARIES))
+ 
+ LIBOBJECTS = libpgm1.o libpgm2.o
++LIBSOBJECTS = libpgm1.so libpgm2.so
+ 
+ MANUALS1 =	$(BINARIES)
+ MANUALS3 =	libpgm
+@@ -41,22 +43,25 @@
+ 
+ # Rules for plain programs.
+ $(PORTBINARIES): %: %.o $(NETPBMLIBS)
+-	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) $(CDEBUG)
++	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) $(CDEBUG)
+ 
+ # Rule for math-dependent programs.
+ $(MATHBINARIES): %: %.o $(NETPBMLIBS)
+-	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLIBS) $(CDEBUG)
++	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLD) $(CDEBUG)
+ 
+ # Rule for objects.
+ $(OBJECTS) $(LIBOBJECTS): %.o: %.c
+ 	$(CC) -c $(CFLAGS) $(INCLUDE) -o $@ $<
+ 
++$(LIBSOBJECTS): %.so: %.c
++	$(CC) -c -fpic -DPIC $(CFLAGS) $(INCLUDE) -o $@ $<
++
+ $(MERGE_OBJECTS): %.o2: %.c
+ 	$(CC) -c $(CFLAGS) $(INCLUDE) "-Dmain=$*_main" -o $@ $<
+ 
+ # And libraries.
+ $(PBMDIR)/$(LIBPBM):
+-	cd $(PBMDIR) ; make $(LIBPBM)
++	cd $(PBMDIR) ; $(MAKE) $(LIBPBM)
+ 
+ .PHONY: install.bin
+ install.bin: install.bin.common
