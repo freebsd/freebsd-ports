@@ -100,6 +100,8 @@ PLIST_SUB+=	 	WXCONS="@comment "
 .endif
 .else
 # Server only Options
+PLIST_SUB+=		GNOMECONS="@comment "
+PLIST_SUB+=	 	WXCONS="@comment "
 CONFFILES=		sd dir
 .if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	--with-mysql=yes
