@@ -7,12 +7,12 @@
 
 PORTNAME=	guile
 PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	guile
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
 
@@ -35,5 +35,7 @@ post-extract:
 post-patch:
 	cd ${WRKSRC} ; \
 	  ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' ${REINPLACE_FILES}
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g ; \
+		s|%%LOCALBASE|${LOCALBASE}|g' ${WRKSRC}/libguile/load.c
 
 .include <bsd.port.mk>
