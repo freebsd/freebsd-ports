@@ -219,6 +219,7 @@
     SUBDIR += hat
     SUBDIR += hmake
     SUBDIR += hp48cc
+    SUBDIR += hpl
     SUBDIR += hypersrc
     SUBDIR += i386-rtems-binutils
     SUBDIR += i386-rtems-chill

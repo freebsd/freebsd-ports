@@ -1,0 +1,13 @@
+The Haskell Ports Library (HPL)
+
+Ports are an abstraction for modelling variables whose values evolve over time
+without the need to resort to mutable variable, such as IORefs. More precisely,
+a port represents all values that a time-dependent variable successively takes
+as a stream, where each element of the stream corresponds to a state change -
+we can also say that a port represents a time series. Moreover, a port supports
+concurrent construction of the time series, or stream of values.
+
+WWW: http://www.cse.unsw.edu.au/~chak/haskell/ports/
+
+-- Oliver Braun
+obraun@FreeBSD.org
