@@ -21,7 +21,7 @@ MAINTAINER=	ixtl@utmc.or.jp
 RUN_DEPENDS=	${PREFIX}/bin/latex:${PORTSDIR}/print/latex \
 		${PREFIX}/bin/dvips:${PORTSDIR}/print/dvips \
 		${PREFIX}/bin/gs:${PORTSDIR}/print/ghostscript5 \
-		${X11BASE}/bin/anytopnm:${PORTSDIR}/graphics/netpbm
+		${LOCALBASE}/bin/anytopnm:${PORTSDIR}/graphics/netpbm
 
 .ifdef USE_PNG
 RUN_DEPENDS +=	${X11BASE}/bin/pnmtopng:${PORTSDIR}/graphics/pnmtopng

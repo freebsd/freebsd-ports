@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/tools/
 
 MAINTAINER=	erich@FreeBSD.org
 
-BUILD_DEPENDS=	${X11BASE}/include/pbmplus.h:${PORTSDIR}/graphics/netpbm
+BUILD_DEPENDS=	${LOCALBASE}/include/pbmplus.h:${PORTSDIR}/graphics/netpbm
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} > 400002 && ${OSVERSION} < 400012
