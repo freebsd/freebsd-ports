@@ -1,5 +1,5 @@
 bin/epic
-bin/epic-EPIC4-1.1.16
+bin/epic-EPIC4-2.0
 libexec/wserv4
 share/epic/help/1_General/1_General
 share/epic/help/1_General/away
@@ -509,6 +509,7 @@ share/epic/help/5_Programming/wait
 share/epic/help/5_Programming/while
 share/epic/help/5_Programming/xecho
 share/epic/help/5_Programming/xeval
+share/epic/help/5_Programming/xquote
 share/epic/help/5_Programming/xtype
 share/epic/help/6_Functions/6_Functions
 share/epic/help/6_Functions/abs
@@ -653,6 +654,7 @@ share/epic/help/6_Functions/notifywindows
 share/epic/help/6_Functions/notw
 share/epic/help/6_Functions/numarrays
 share/epic/help/6_Functions/numitems
+share/epic/help/6_Functions/numlines
 share/epic/help/6_Functions/numonchannel
 share/epic/help/6_Functions/numsort
 share/epic/help/6_Functions/numwords
@@ -844,6 +846,7 @@ share/epic/help/8_Scripts/netsplit.env
 share/epic/help/8_Scripts/newaway
 share/epic/help/8_Scripts/newformat
 share/epic/help/8_Scripts/nicks
+share/epic/help/8_Scripts/notify
 share/epic/help/8_Scripts/old-dcc
 share/epic/help/8_Scripts/pipe
 share/epic/help/8_Scripts/prefix
@@ -864,6 +867,7 @@ share/epic/help/README_FIRST
 share/epic/script/2.8script
 share/epic/script/alias
 share/epic/script/altchan
+share/epic/script/altchan.bj
 share/epic/script/autoget
 share/epic/script/autokick
 share/epic/script/autoop
@@ -897,6 +901,7 @@ share/epic/script/genalias
 share/epic/script/global
 share/epic/script/grep
 share/epic/script/guh
+share/epic/script/help
 share/epic/script/hold_mode
 share/epic/script/hybrid6
 share/epic/script/imap
@@ -915,6 +920,7 @@ share/epic/script/mail
 share/epic/script/man
 share/epic/script/map
 share/epic/script/meta
+share/epic/script/meta-compat
 share/epic/script/mkpdir
 share/epic/script/more
 share/epic/script/motd
@@ -925,6 +931,7 @@ share/epic/script/newaway
 share/epic/script/newformat
 share/epic/script/nicks
 share/epic/script/nopaste
+share/epic/script/notify
 share/epic/script/old-dcc
 share/epic/script/paste
 share/epic/script/pipe
@@ -939,6 +946,7 @@ share/epic/script/sdiff
 share/epic/script/setmail
 share/epic/script/silent
 share/epic/script/sound
+share/epic/script/sping
 share/epic/script/starutils
 share/epic/script/stat
 share/epic/script/status_lag
@@ -950,6 +958,7 @@ share/epic/script/tabkey.th
 share/epic/script/tc
 share/epic/script/time
 share/epic/script/tls
+share/epic/script/urlgrab
 share/epic/script/utime
 share/epic/script/vi-binds
 share/epic/script/webster

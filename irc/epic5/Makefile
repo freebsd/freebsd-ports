@@ -6,32 +6,38 @@
 #
 
 PORTNAME=	epic4
-PORTVERSION=	1.1.16
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	irc ipv6
-MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-ALPHA/ \
-		ftp://ftp.archive.de.uu.net/pub/unix/irc/epic/EPIC4-ALPHA/
+MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/ \
+		ftp://ftp.irc.org/irc/clients/unix/epic/ \
+		ftp://ftp.parodius.com/pub/epic/EPIC4-PRODUCTION/ \
+		ftp://planetmirror.com/pub/irc/epic/ \
+		ftp://ftp.eu.uu.net/pub/unix/irc/epic/ \
+		ftp://totem.fix.no/pub/mirrors/epic/ \
+		ftp://ftp.freenet.de/pub/ftp.prbh.org/pub/epic/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTFILE_HELP}
 
 MAINTAINER=	anders@andersa.net
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
 
-LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
-
-USE_REINPLACE=	yes
-USE_PERL5=	yes
 USE_OPENSSL=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--without-tcl
+
+.if defined(WITH_TCL)
+LIB_DEPENDS=		tcl84:${PORTSDIR}/lang/tcl84
+CONFIGURE_ARGS+=	--with-tcl
+.endif
 
 MAN1=		epic.1
-DISTFILE_HELP=	${PORTNAME}-help-20031106.tar.gz
+DISTFILE_HELP=	${PORTNAME}-help-20040308.tar.gz
 
 post-extract:
-	@${FIND} ${WRKSRC} -type d -name CVS | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKDIR} -type d -name CVS | ${XARGS} ${RM} -rf
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|8.3|8.4|g' ${WRKSRC}/configure
 	@${RM} ${WRKDIR}/help/Makefile
 
 post-install:
