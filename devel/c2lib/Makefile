@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	c2lib
-PORTVERSION=	1.2.12
+PORTVERSION=	1.2.14
 CATEGORIES=	devel
 MASTER_SITES=	http://www.annexia.org/freeware/c2lib/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobez@FreeBSD.org
 
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
@@ -20,6 +20,9 @@ INSTALLS_SHLIB=	yes
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 	REALCURDIR="${.CURDIR}" \
 	DISTNAME="${DISTNAME}"
+
+post-install:
+	${RM} ${PREFIX}/lib/libc2.la
 
 .include <bsd.port.pre.mk>
 
