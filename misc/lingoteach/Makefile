@@ -7,7 +7,7 @@
 
 PORTNAME=	lingoteach
 PORTVERSION=	0.3.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ DISTFILES+=	${PORTNAME}-sound-${SOUNDV}.tar.gz
 MAINTAINER=	mva@sysfault.org
 COMMENT=	A language teaching program with sound
 
-LIB_DEPENDS=	lingoteach.0:${PORTSDIR}/textproc/liblingoteach
+LIB_DEPENDS=	lingoteach.3:${PORTSDIR}/textproc/liblingoteach
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-ui-${PORTVERSION}
 
