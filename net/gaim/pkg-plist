@@ -120,6 +120,7 @@ lib/gaim/spellchk.so
 %%DATADIR%%/pixmaps/gaim/register.xpm
 %%DATADIR%%/pixmaps/gaim/sad.xpm
 %%DATADIR%%/pixmaps/gaim/save.xpm
+%%DATADIR%%/pixmaps/gaim/save_small.xpm
 %%DATADIR%%/pixmaps/gaim/scream.xpm
 %%DATADIR%%/pixmaps/gaim/search_small.xpm
 %%DATADIR%%/pixmaps/gaim/send_small.xpm
