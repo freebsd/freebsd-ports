@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.opensc.org/files/
 MAINTAINER=	bms@spc.org
 COMMENT=	ISO 7816 Smartcard API Library (OpenSSH Compatible)
 
-BROKEN=		"Creates /usr/lib/mozilla"
-
 LIB_DEPENDS=	pcsclite.0:${PORTSDIR}/devel/pcsc-lite	\
 		ldap.2:${PORTSDIR}/net/openldap20
 
@@ -24,7 +22,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pcsclite=${LOCALBASE}	\
 		--with-ldap-lib=openldap	\
-		--with-ldap-dir=${LOCALBASE}
+		--with-ldap-dir=${LOCALBASE}	\
+		--with-plugin-dir=${LOCALBASE}/share/opensc/plugins
 
 MAN1=		pkcs15-crypt.1 pkcs15-init.1
 MAN5=		pkcs15-profile.5
