@@ -6,6 +6,7 @@ bin/prm
 bin/prmdir
 bin/prun
 bin/pstatus
+bin/rapiconfig
 bin/synce-install-cab
 bin/synce-list-programs
 bin/synce-remove-program
