@@ -7,7 +7,7 @@
 
 PORTNAME=	I18N
 PORTVERSION=	0.8.6
-CATEGORIES=	devel www
+CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR internationalization package

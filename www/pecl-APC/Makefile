@@ -7,7 +7,7 @@
 
 PORTNAME=	APC
 PORTVERSION=	2.0
-CATEGORIES=	www
+CATEGORIES=	www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alternative PHP Cache

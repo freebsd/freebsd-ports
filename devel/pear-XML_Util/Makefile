@@ -7,7 +7,7 @@
 
 PORTNAME=	XML_Util
 PORTVERSION=	0.2
-CATEGORIES=	devel www
+CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR XML utility class

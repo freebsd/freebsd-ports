@@ -7,7 +7,7 @@
 
 PORTNAME=	Config
 PORTVERSION=	1.8
-CATEGORIES=	devel www
+CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Config package provides methods for configuration manipulation

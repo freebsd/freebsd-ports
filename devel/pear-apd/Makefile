@@ -7,7 +7,7 @@
 
 PORTNAME=	apd
 PORTVERSION=	0.4p2
-CATEGORIES=	devel
+CATEGORIES=	devel pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-featured engine-level PHP profiler/debugger

@@ -7,7 +7,7 @@
 
 PORTNAME=	XML_Serializer
 PORTVERSION=	0.6
-CATEGORIES=	devel www
+CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Swiss-army knive for reading and writing XML files

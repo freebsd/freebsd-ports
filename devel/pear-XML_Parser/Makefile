@@ -7,7 +7,7 @@
 
 PORTNAME=	XML_Parser
 PORTVERSION=	1.0.1
-CATEGORIES=	devel www
+CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR XML parsing class based on PHP's bundled expat

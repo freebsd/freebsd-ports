@@ -7,7 +7,7 @@
 
 PORTNAME=	HTML_Template_PHPLIB
 PORTVERSION=	1.3.1
-CATEGORIES=	devel www
+CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR template API ported from PHPLIB

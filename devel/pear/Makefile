@@ -7,7 +7,7 @@
 
 PORTNAME=	pear
 PORTVERSION=	${PHP_VERSION:C/RC.//}
-CATEGORIES=	devel www
+CATEGORIES=	devel www pear
 MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty

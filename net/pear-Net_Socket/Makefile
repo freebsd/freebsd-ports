@@ -8,7 +8,7 @@
 PORTNAME=	Net_Socket
 PORTVERSION=	1.0.1
 PORTREVISION=	1
-CATEGORIES=	net www
+CATEGORIES=	net www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Network Socket Interface

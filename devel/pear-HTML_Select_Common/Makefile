@@ -8,7 +8,7 @@
 PORTNAME=	HTML_Select_Common
 PORTVERSION=	1.1
 PORTREVISION=	2
-CATEGORIES=	devel www
+CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Some small PEAR classes to handle common <select> lists

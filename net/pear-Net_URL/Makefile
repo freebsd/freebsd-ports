@@ -7,7 +7,7 @@
 
 PORTNAME=	Net_URL
 PORTVERSION=	1.0.10
-CATEGORIES=	net www
+CATEGORIES=	net www pear
 MASTER_SITES=	http://pear.php.net/get/
 PKGNAMEPREFIX=	pear-
 EXTRACT_SUFX=	.tgz

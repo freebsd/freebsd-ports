@@ -7,7 +7,7 @@
 
 PORTNAME=	HTML_Common
 PORTVERSION=	1.2.1
-CATEGORIES=	devel www
+CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR::HTML_Common is a base class for other HTML classes

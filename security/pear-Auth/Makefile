@@ -7,7 +7,7 @@
 
 PORTNAME=	Auth
 PORTVERSION=	1.2.2
-CATEGORIES=	security www
+CATEGORIES=	security www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR authentication methods
