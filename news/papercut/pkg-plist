@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/papercut
 %%DATADIR%%/papercut.py
 %%DATADIR%%/papercut_cache.py
@@ -6,6 +7,7 @@ bin/papercut
 %%DATADIR%%/auth/__init__.py
 %%DATADIR%%/auth/mysql.py
 %%DATADIR%%/auth/phorum_mysql_users.py
+%%DATADIR%%/auth/phorum_pgsql_users.py
 %%DATADIR%%/auth/phpbb_mysql_users.py
 %%DATADIR%%/storage/__init__.py
 %%DATADIR%%/storage/forwarding_proxy.py
@@ -30,6 +32,7 @@ bin/papercut
 @unexec [ -f %D/%%DATADIR%%/auth/__init__.pyc ] && rm %D/%%DATADIR%%/auth/__init__.pyc || true
 @unexec [ -f %D/%%DATADIR%%/auth/mysql.pyc ] && rm %D/%%DATADIR%%/auth/mysql.pyc || true
 @unexec [ -f %D/%%DATADIR%%/auth/phorum_mysql_users.pyc ] && rm %D/%%DATADIR%%/auth/phorum_mysql_users.pyc || true
+@unexec [ -f %D/%%DATADIR%%/auth/phorum_pgsql_users.pyc ] && rm %D/%%DATADIR%%/auth/phorum_mysql_users.pyc || true
 @unexec [ -f %D/%%DATADIR%%/auth/phpbb_mysql_users.pyc ] && rm %D/%%DATADIR%%/auth/phpbb_mysql_users.pyc || true
 @unexec [ -f %D/%%DATADIR%%/storage/__init__.pyc ] && rm %D/%%DATADIR%%/storage/__init__.pyc || true
 @unexec [ -f %D/%%DATADIR%%/storage/forwarding_proxy.pyc ] && rm %D/%%DATADIR%%/storage/forwarding_proxy.pyc || true
@@ -45,4 +48,6 @@ bin/papercut
 @unexec [ -d %D/%%DATADIR%%/cache ] && rmdir %%DATADIR%%/cache 2>/dev/null || true
 @unexec [ -d %D/%%DATADIR%%/logs ] && rmdir %%DATADIR%%/logs 2>/dev/null || true
 @dirrm %%DATADIR%%/storage
-@unexec [ -d %D/%%DATADIR%% ] && echo "If you are permanently removing this port, you should do a ``rm -rf %D/%%DATADIR%%`` to remove any files left." | fmt 
+@unexec rmdir %D/%%DATADIR%%/cache || true
+@unexec rmdir %D/%%DATADIR%%/logs || true
+@unexec rmdir %D/%%DATADIR%% || echo "If you are permanently removing this port, you should do a ``rm -rf %D/%%DATADIR%%`` to remove any files left." | fmt
