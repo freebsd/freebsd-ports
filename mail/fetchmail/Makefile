@@ -11,6 +11,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	5.8.17
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
 		ftp://ftp.ccil.org/pub/esr/fetchmail/
@@ -19,7 +20,8 @@ MAINTAINER=	ve@sci.fi
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 .if defined(WITH_X11)
-RUN_DEPENDS=	${LOCALBASE}/lib/python2.0/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+USE_PYTHON=	yes
+RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 .endif
 
 USE_GMAKE=	yes
