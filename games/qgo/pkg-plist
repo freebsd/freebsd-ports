@@ -2,6 +2,7 @@ bin/qgo
 share/qgo/sounds/stone.au
 share/qgo/sounds/stone.wav
 share/qgo/translations/qgo_de.qm
+share/qgo/translations/qgo_fr.qm
 @dirrm share/qgo/sounds
 @dirrm share/qgo/translations
 @dirrm share/qgo
