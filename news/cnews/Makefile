@@ -29,8 +29,8 @@ PATCHFILES=	c-news-patch-fileart.c c-news-patch-namecheck.awk \
 		c-news-patch-doexpire c-news-patch-queuelen.tay \
 		c-news-patch-bunzip2 \
 		c-news-patch-ctl-underscore \
-		c-news-patch-y2k \
-		c-news-patch-pgpverify-1.12
+		c-news-patch-y2k-2 \
+		c-news-patch-pgpverify-1.12-perl4
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
@@ -60,6 +60,9 @@ PGPVERIFY?=	pgpverify-1.12
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 300000
+.if make(makesum) || defined(FETCH_ALL)
+PATCHFILES+=	c-news-patch-gawk3
+.endif
 .else
 PATCHFILES+=	c-news-patch-gawk3
 .endif
