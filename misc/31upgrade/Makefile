@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	31upgrade-1999.01.05
+DISTNAME=	31upgrade-2000.02.02
 CATEGORIES=	misc
 DISTFILES=	# empty
 
