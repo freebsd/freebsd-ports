@@ -15,11 +15,16 @@ COMMENT=	GTK2 send-pr tool
 
 LIB_DEPENDS=	esmtp.6:${PORTSDIR}/mail/libesmtp
 
+USE_REINPLACE=	yes
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 
 MAN1=		gtk-send-pr.1
 PLIST_FILES=	bin/gtk-send-pr
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/gtk-send-pr ${PREFIX}/bin
