@@ -1,0 +1,57 @@
+diff -cr Makefile.orig Makefile
+*** Makefile.orig	Fri May 26 02:37:09 1995
+--- Makefile	Sat Jul 15 16:21:45 1995
+***************
+*** 2,14 ****
+  # See file COPYRIGHT for more information.
+  #
+  # Adjust these two lines for your ANSI C compiler
+! CC=gcc
+! CFLAGS=
+  # If you have Icon, you should use the Icon versions of the noweb pipeline.
+! # Set LIBSRC=icon
+! LIBSRC=awk
+  # If you have no Icon compiler, but do have icont, make ICONC=icont
+! ICONC=iconc
+  ICONT=icont
+  
+  # BIN is where the commands (notangle, noweave, nountangle, noroots) land
+--- 2,14 ----
+  # See file COPYRIGHT for more information.
+  #
+  # Adjust these two lines for your ANSI C compiler
+! #CC=gcc
+! #CFLAGS=
+  # If you have Icon, you should use the Icon versions of the noweb pipeline.
+! LIBSRC=icon
+! #LIBSRC=awk
+  # If you have no Icon compiler, but do have icont, make ICONC=icont
+! ICONC=icont
+  ICONT=icont
+  
+  # BIN is where the commands (notangle, noweave, nountangle, noroots) land
+***************
+*** 16,26 ****
+  # MAN is the root of your local man pages directory
+  # MANEXT is the extension for your commands' man pages (usually 1 or l)
+  # TEXINPUTS is the directory for TeX macro files
+! BIN=/usr/public/pkg/noweb/bin
+! LIB=/usr/public/pkg/noweb/lib
+! MAN=/usr/public/pkg/noweb/man
+  MANEXT=1
+! TEXINPUTS=/usr/public/pkg/tex/tex/inputs
+  
+  # change WEAVE if you want a different version of noweave to be installed
+  WEAVE=noweave		
+--- 16,26 ----
+  # MAN is the root of your local man pages directory
+  # MANEXT is the extension for your commands' man pages (usually 1 or l)
+  # TEXINPUTS is the directory for TeX macro files
+! BIN=/usr/local/bin
+! LIB=/usr/local/share/noweb
+! MAN=/usr/local/man
+  MANEXT=1
+! TEXINPUTS=/usr/local/lib/texmf/tex/misc
+  
+  # change WEAVE if you want a different version of noweave to be installed
+  WEAVE=noweave		
