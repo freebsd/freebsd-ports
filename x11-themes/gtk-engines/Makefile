@@ -3,7 +3,7 @@
 # Date Created:				23 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1999/01/30 19:42:47 vanilla Exp $
+# $Id: Makefile,v 1.6 1999/01/31 16:59:44 vanilla Exp $
 #
 
 DISTNAME=	gtk-engines-0.1
@@ -13,8 +13,7 @@ MASTER_SITE_SUBDIR=	gtk-engines
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-LIB_DEPENDS=	gtk11d.1:${PORTSDIR}/x11-toolkits/gtk11-devel \
-		gdk_imlib.2:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	gdk_imlib.2:${PORTSDIR}/graphics/imlib
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
