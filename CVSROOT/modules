@@ -7042,6 +7042,7 @@ ruby-quota	ports/sysutils/ruby-quota
 ruby-racc	ports/devel/ruby-racc
 ruby-radius	ports/net/ruby-radius
 ruby-raspell	ports/textproc/ruby-raspell
+ruby-rbbr	ports/devel/ruby-rbbr
 ruby-rbison	ports/devel/ruby-rbison
 ruby-rbtree	ports/devel/ruby-rbtree
 ruby-rd-mode.el	ports/textproc/ruby-rd-mode.el
