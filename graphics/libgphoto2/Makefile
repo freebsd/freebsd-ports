@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libgphoto2
-PORTVERSION=	2.1.2
-PORTREVISION=	2
+PORTVERSION=	2.1.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -20,28 +19,29 @@ LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		exif.10:${PORTSDIR}/graphics/libexif
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnometarget pkgconfig
+USE_GETOPT_LONG=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 MAN3=		libgphoto2.3 libgphoto2_port.3
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
 .for file in configure libgphoto2_port/configure
 	@${REINPLACE_CMD} -e \
-		's|[{]libdir[}]/pkgconfig|{prefix}/libdata/pkgconfig|g ; \
+		's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|g ; \
 		 s|-g ||g' ${WRKSRC}/${file}
 .endfor
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|po packaging doc|po doc|g ; \
 		 s|: install-docDATA|:|g'
-	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|<malloc\.h>|<stdlib.h>|g'
 
 post-install:
 .if !defined(NOPORTDOCS)

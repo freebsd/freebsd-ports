@@ -18,73 +18,75 @@ include/gphoto2/gphoto2-setting.h
 include/gphoto2/gphoto2-version.h
 include/gphoto2/gphoto2-widget.h
 include/gphoto2/gphoto2.h
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_agfa_cl20.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_barbie.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_canon.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_casio_qv.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_digita.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_dimera3500.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_directory.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_fuji.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_gsmart300.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_jamcam.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_jd11.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_kodak_dc120.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_kodak_dc210.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_kodak_dc240.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_kodak_dc3200.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_konica.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_konica_qm150.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_largan.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_dimagev.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_mustek.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_panasonic_coolshot.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_panasonic_l859.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_panasonic_dc1000.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_panasonic_dc1580.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_pccam300.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_pccam600.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_polaroid_pdc320.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_polaroid_pdc640.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_polaroid_pdc700.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_ptp2.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_ricoh.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_samsung.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_sierra.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_sipix_blink.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_sipix_blink2.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_sipix_web2.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_smal.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_sony_dscf1.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_sony_dscf55.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_soundvision.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_spca50x.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_sq905.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_stv0674.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_stv0680.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_sx330z.so
-lib/gphoto2/%%PORTVERSION%%/libgphoto2_toshiba.so
+lib/gphoto2/%%VERSION%%/libgphoto2_agfa_cl20.so
+lib/gphoto2/%%VERSION%%/libgphoto2_barbie.so
+lib/gphoto2/%%VERSION%%/libgphoto2_canon.so
+lib/gphoto2/%%VERSION%%/libgphoto2_casio_qv.so
+lib/gphoto2/%%VERSION%%/libgphoto2_digita.so
+lib/gphoto2/%%VERSION%%/libgphoto2_dimagev.so
+lib/gphoto2/%%VERSION%%/libgphoto2_dimera3500.so
+lib/gphoto2/%%VERSION%%/libgphoto2_directory.so
+lib/gphoto2/%%VERSION%%/libgphoto2_fuji.so
+lib/gphoto2/%%VERSION%%/libgphoto2_gsmart300.so
+lib/gphoto2/%%VERSION%%/libgphoto2_jamcam.so
+lib/gphoto2/%%VERSION%%/libgphoto2_jd11.so
+lib/gphoto2/%%VERSION%%/libgphoto2_kodak_dc120.so
+lib/gphoto2/%%VERSION%%/libgphoto2_kodak_dc210.so
+lib/gphoto2/%%VERSION%%/libgphoto2_kodak_dc240.so
+lib/gphoto2/%%VERSION%%/libgphoto2_kodak_dc3200.so
+lib/gphoto2/%%VERSION%%/libgphoto2_konica.so
+lib/gphoto2/%%VERSION%%/libgphoto2_konica_qm150.so
+lib/gphoto2/%%VERSION%%/libgphoto2_largan.so
+lib/gphoto2/%%VERSION%%/libgphoto2_mustek.so
+lib/gphoto2/%%VERSION%%/libgphoto2_panasonic_coolshot.so
+lib/gphoto2/%%VERSION%%/libgphoto2_panasonic_dc1000.so
+lib/gphoto2/%%VERSION%%/libgphoto2_panasonic_dc1580.so
+lib/gphoto2/%%VERSION%%/libgphoto2_panasonic_l859.so
+lib/gphoto2/%%VERSION%%/libgphoto2_pccam300.so
+lib/gphoto2/%%VERSION%%/libgphoto2_pccam600.so
+lib/gphoto2/%%VERSION%%/libgphoto2_polaroid_pdc320.so
+lib/gphoto2/%%VERSION%%/libgphoto2_polaroid_pdc640.so
+lib/gphoto2/%%VERSION%%/libgphoto2_polaroid_pdc700.so
+lib/gphoto2/%%VERSION%%/libgphoto2_ptp2.so
+lib/gphoto2/%%VERSION%%/libgphoto2_ricoh.so
+lib/gphoto2/%%VERSION%%/libgphoto2_ricoh_g3.so
+lib/gphoto2/%%VERSION%%/libgphoto2_samsung.so
+lib/gphoto2/%%VERSION%%/libgphoto2_sierra.so
+lib/gphoto2/%%VERSION%%/libgphoto2_sipix_blink.so
+lib/gphoto2/%%VERSION%%/libgphoto2_sipix_blink2.so
+lib/gphoto2/%%VERSION%%/libgphoto2_sipix_web2.so
+lib/gphoto2/%%VERSION%%/libgphoto2_smal.so
+lib/gphoto2/%%VERSION%%/libgphoto2_sony_dscf1.so
+lib/gphoto2/%%VERSION%%/libgphoto2_sony_dscf55.so
+lib/gphoto2/%%VERSION%%/libgphoto2_soundvision.so
+lib/gphoto2/%%VERSION%%/libgphoto2_spca50x.so
+lib/gphoto2/%%VERSION%%/libgphoto2_sq905.so
+lib/gphoto2/%%VERSION%%/libgphoto2_stv0674.so
+lib/gphoto2/%%VERSION%%/libgphoto2_stv0680.so
+lib/gphoto2/%%VERSION%%/libgphoto2_sx330z.so
+lib/gphoto2/%%VERSION%%/libgphoto2_toshiba.so
 lib/gphoto2_port/0.5.1/libgphoto2_port_serial.so
 lib/gphoto2_port/0.5.1/libgphoto2_port_usb.so
-libdata/pkgconfig/libgphoto2.pc
 lib/libgphoto2.a
 lib/libgphoto2.so
 lib/libgphoto2.so.2
 lib/libgphoto2_port.a
 lib/libgphoto2_port.so
 lib/libgphoto2_port.so.5
-%%PORTDOCS%%share/doc/libgphoto2/AUTHORS
-%%PORTDOCS%%share/doc/libgphoto2/NEWS
-%%PORTDOCS%%share/doc/libgphoto2/README
+libdata/pkgconfig/libgphoto2.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%share/doc/libgphoto2_port/AUTHORS
 %%PORTDOCS%%share/doc/libgphoto2_port/NEWS
 %%PORTDOCS%%share/doc/libgphoto2_port/README
-share/libgphoto2/%%PORTVERSION%%/konica/english
-share/libgphoto2/%%PORTVERSION%%/konica/french
-share/libgphoto2/%%PORTVERSION%%/konica/german
-share/libgphoto2/%%PORTVERSION%%/konica/japanese
-share/libgphoto2/%%PORTVERSION%%/konica/korean
-share/libgphoto2/%%PORTVERSION%%/konica/spanish
+share/libgphoto2/%%VERSION%%/konica/english
+share/libgphoto2/%%VERSION%%/konica/french
+share/libgphoto2/%%VERSION%%/konica/german
+share/libgphoto2/%%VERSION%%/konica/japanese
+share/libgphoto2/%%VERSION%%/konica/korean
+share/libgphoto2/%%VERSION%%/konica/spanish
+share/locale/cs/LC_MESSAGES/libgphoto2_port-0.mo
 share/locale/da/LC_MESSAGES/libgphoto2-2.mo
 share/locale/da/LC_MESSAGES/libgphoto2_port-0.mo
 share/locale/de/LC_MESSAGES/libgphoto2-2.mo
@@ -93,12 +95,14 @@ share/locale/es/LC_MESSAGES/libgphoto2-2.mo
 share/locale/es/LC_MESSAGES/libgphoto2_port-0.mo
 share/locale/fr/LC_MESSAGES/libgphoto2-2.mo
 share/locale/fr/LC_MESSAGES/libgphoto2_port-0.mo
+share/locale/hu/LC_MESSAGES/libgphoto2-2.mo
 share/locale/it/LC_MESSAGES/libgphoto2-2.mo
 share/locale/it/LC_MESSAGES/libgphoto2_port-0.mo
 share/locale/ja/LC_MESSAGES/libgphoto2-2.mo
 share/locale/ja/LC_MESSAGES/libgphoto2_port-0.mo
 share/locale/no/LC_MESSAGES/libgphoto2-2.mo
 share/locale/no/LC_MESSAGES/libgphoto2_port-0.mo
+share/locale/pt_BR/LC_MESSAGES/libgphoto2_port-0.mo
 share/locale/ru/LC_MESSAGES/libgphoto2-2.mo
 share/locale/ru/LC_MESSAGES/libgphoto2_port-0.mo
 share/locale/sl/LC_MESSAGES/libgphoto2-2.mo
@@ -109,13 +113,13 @@ share/locale/uk/LC_MESSAGES/libgphoto2-2.mo
 share/locale/uk/LC_MESSAGES/libgphoto2_port-0.mo
 share/locale/zh_CN/LC_MESSAGES/libgphoto2-2.mo
 share/locale/zh_CN/LC_MESSAGES/libgphoto2_port-0.mo
-@dirrm share/libgphoto2/%%PORTVERSION%%/konica
-@dirrm share/libgphoto2/%%PORTVERSION%%
+@dirrm share/libgphoto2/%%VERSION%%/konica
+@dirrm share/libgphoto2/%%VERSION%%
 @dirrm share/libgphoto2
 %%PORTDOCS%%@dirrm share/doc/libgphoto2_port
-%%PORTDOCS%%@dirrm share/doc/libgphoto2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/gphoto2_port/0.5.1
 @dirrm lib/gphoto2_port
-@dirrm lib/gphoto2/%%PORTVERSION%%
+@dirrm lib/gphoto2/%%VERSION%%
 @dirrm lib/gphoto2
 @dirrm include/gphoto2
