@@ -1,0 +1,12 @@
+--- sysinfo.c.orig	Thu Sep  9 20:54:08 1999
++++ sysinfo.c	Thu Sep  9 20:54:25 1999
+@@ -13,7 +13,9 @@
+ #include <sys/ioctl_compat.h>	/* XXX NTTYDISC is too well hidden */
+ #include <sys/tty.h>
+ #include <sys/conf.h>
++#if __FreeBSD_version < 400000
+ #include <sys/rlist.h>
++#endif
+ #include <sys/sysctl.h>
+ #include <sys/socket.h>
+ #include <err.h>
