@@ -27,7 +27,7 @@ MAN3=		XML::Stream.3 XML::Stream::Hash.3 XML::Stream::Namespace.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000 && !exists(${SITE_PERL}/${PERL_ARCH}/IO/Select.pm)
+.if ${PERL_LEVEL} < 500600
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Select.pm:${PORTSDIR}/devel/p5-IO
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Select.pm:${PORTSDIR}/devel/p5-IO
 .endif
