@@ -1,0 +1,27 @@
+This is a program designed to speed up writing tapes on remote tape
+drives.  Requirements are shared memory and locks which normally
+means that these are supported in your kernel.
+
+[for FreeBSD, this means you MUST have a kernel with 
+ options SYSVSHM
+ compiled in - markm]
+
+Buffer has been tested under SunOS 4.0.*, SunOS 4.1.*, Solarix, HP-UX 7.0,
+and Gould UTX 2.1A (sv universe).
+
+The program splits itself into two processes.  The first process reads
+(and reblocks) from stdin into a shared memory buffer.  The second
+writes from the shared memory buffer to stdout.  Doing it this way
+means that the writing side effectly sits in a tight write loop and
+doesn't have to wait for input.  Similarly for the input side.  It is
+this waiting that slows down other reblocking processes, like dd.
+
+I run an archive and need to write large chunks out to tape regularly
+with an ethernet in the way.  Using 'buffer' in a command like:
+
+	tar cvf - stuff | rsh somebox "buffer > /dev/rst8"
+
+is a factor of 5 faster than the best alternative, gnu tar with its
+remote tape option:
+
+	tar cvf somebox:/dev/rst8 stuff

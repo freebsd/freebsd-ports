@@ -1,0 +1,3 @@
+@cwd /usr/local
+bin/buffer
+man/manl/buffer.l.gz
