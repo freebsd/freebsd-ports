@@ -1,0 +1,12 @@
+ssltunnel is a client/server software to establish PPP links over
+SSL/TLS sessions. Client and server are mutually authenticated using
+X509 certificates, PPP packets are encrypted/decrypted realtime on
+each side. The client has the ability to initiate the connection
+through an HTTP/HTTPS relay, even if an authentification is needed.
+
+This is the server part.
+
+WWW: http://www.hsc.fr/ressources/outils/ssltunnel/
+
+- HSC (Herver Schauer Consultants) http://www.hsc.fr/
+  Alain Thivillon (at@rominet.net)

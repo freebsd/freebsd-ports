@@ -1,0 +1,10 @@
+etc/rc.d/ssltunnel.sh.sample
+@unexec if cmp -s %D/etc/ssltunnel/client.conf %D/etc/ssltunnel/client.conf.sample; then rm -f %D/etc/ssltunnel/client.conf; fi
+etc/ssltunnel/tunnel.conf.default
+etc/ssltunnel/users.sample
+libexec/pppserver
+sbin/pppwho
+%%PORTDOCS%%%%DOCSDIR%%/LISEZ-MOI
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/ssltunnel
