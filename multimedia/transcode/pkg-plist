@@ -28,8 +28,6 @@ lib/transcode/export_xvid.so
 lib/transcode/export_xvid.la
 lib/transcode/export_net.so
 lib/transcode/export_net.la
-lib/transcode/export_mpeg.so
-lib/transcode/export_mpeg.la
 lib/transcode/export_af6.conf
 lib/transcode/import_nuv.so
 lib/transcode/import_nuv.la
@@ -69,6 +67,8 @@ lib/transcode/filter_dnr.so
 lib/transcode/filter_dnr.la
 lib/transcode/filter_testframe.so
 lib/transcode/filter_testframe.la
+%%WITH_LAME%%lib/transcode/export_mpeg.so
+%%WITH_LAME%%lib/transcode/export_mpeg.la
 %%WITH_LAME%%lib/transcode/import_mp3.la
 %%WITH_LAME%%lib/transcode/import_mp3.so
 %%WITH_LIBA52%%lib/transcode/a52_decore.la
