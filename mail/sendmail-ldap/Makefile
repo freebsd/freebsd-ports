@@ -4,6 +4,10 @@
 #
 # $FreeBSD$
 
+PKGNAMESUFFIX?=	-ldap
+
+MAINTAINER=	dinoex@FreeBSD.org
+
 SENDMAIL_WITH_LDAP=	yes
 SENDMAIL_WITH_TLS=	yes
 .if defined(SENDMAIL_WITH_SUID)
@@ -16,7 +20,6 @@ MASTERDIR?=	${.CURDIR}/../sendmail-old
 SENDMAIL_WITH_SASL2=	yes
 MASTERDIR?=	${.CURDIR}/../sendmail
 .endif
-PKGNAMESUFFIX?=	-ldap
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"

@@ -7,4 +7,3 @@ bin/sma
 %%PORTDOCS%%@dirrm share/doc/sma
 %%PORTDOCS%%share/examples/sma/sma.conf
 %%PORTDOCS%%@dirrm share/examples/sma
-

@@ -4,6 +4,10 @@
 #
 # $FreeBSD$
 
+PKGNAMESUFFIX?=	-sasl
+
+MAINTAINER=	dinoex@FreeBSD.org
+
 SENDMAIL_WITH_TLS=	yes
 .if defined(SENDMAIL_WITH_SUID)
 # only for compatibility with sendmail 8.11.x
@@ -15,7 +19,6 @@ MASTERDIR?=	${.CURDIR}/../sendmail-old
 SENDMAIL_WITH_SASL2=	yes
 MASTERDIR?=	${.CURDIR}/../sendmail
 .endif
-PKGNAMESUFFIX?=	-sasl
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"

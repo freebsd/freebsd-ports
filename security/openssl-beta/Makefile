@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	openssl
-PKGNAMESUFFIX=	-beta
 PORTVERSION=	0.9.7
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/openssl/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
+PKGNAMESUFFIX=	-beta
 
 MAINTAINER=	dinoex@FreeBSD.org
 

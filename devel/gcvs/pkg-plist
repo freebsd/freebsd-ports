@@ -3,6 +3,8 @@ bin/cvsbug
 bin/cvstree
 bin/gcvs
 bin/rcs2log
+@unexec install-info --delete %D/info/cvs.info %D/info/dir
+@unexec install-info --delete %D/info/cvsclient.info %D/info/dir
 info/cvs.info
 info/cvs.info-1
 info/cvs.info-2
@@ -17,6 +19,8 @@ info/cvsclient.info
 info/cvsclient.info-1
 info/cvsclient.info-2
 info/cvsclient.info-3
+@exec install-info %D/info/cvs.info %D/info/dir
+@exec install-info %D/info/cvsclient.info %D/info/dir
 lib/cvs/contrib/README
 lib/cvs/contrib/clmerge
 lib/cvs/contrib/cln_hist

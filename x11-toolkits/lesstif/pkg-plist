@@ -354,5 +354,5 @@ lib/libXm.so.2
 @dirrm include/Xm
 @dirrm include/uil
 @dirrm lib/X11/mwm
-@cwd %%PREFIX%%
+@cwd %%LOCALBASE%%
 share/aclocal/ac_find_motif.m4

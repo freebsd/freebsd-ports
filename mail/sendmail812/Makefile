@@ -232,8 +232,8 @@ install-sasldb:
 # create certificates for TLS/SSL
 #
 tls-install:
-	env DESTDIR=${DESTDIR} FILESDIR=${FILESDIR} \
-		sh ${FILESDIR}/tls-install.sh
+	${SETENV} DESTDIR=${DESTDIR} FILESDIR=${FILESDIR} \
+		${SH} ${FILESDIR}/tls-install.sh
 
 .include <bsd.port.pre.mk>
 

@@ -73,7 +73,7 @@ info/gcc.info-6
 info/gcc.info-7
 info/gcc.info-8
 info/gcc.info-9
-@exec install-info %D/info/f77.info %D/info/dir
+@exec install-info %D/info/g77.info %D/info/dir
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
 lib/gcc-lib/m6811-elf/%%GCC_VER%%/include/assert.h
