@@ -1,0 +1,20 @@
+--- configure.orig	Mon Nov 16 15:24:41 1998
++++ configure	Fri Jan 29 00:24:27 1999
+@@ -4825,7 +4825,7 @@
+ char tgetent();
+ 
+ int main() {
+-tgetent()
++XXXtgetent()
+ ; return 0; }
+ EOF
+ if { (eval echo configure:4832: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+@@ -4855,7 +4855,7 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-for ac_hdr in termcap.h term.h curses.h termios.h termio.h
++for ac_hdr in termcap.h termios.h termio.h
+ do
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
