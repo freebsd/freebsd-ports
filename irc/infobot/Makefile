@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	infobot
-PORTVERSION=	0.44.3
+PORTVERSION=	0.44.5
 CATEGORIES=	irc
-MASTER_SITES=	http://www.infobot.org/src/
+MASTER_SITES=	http://www.infobot.org/src/ \
+		http://www.infobot.org/src/prior/
+
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	perlguy@perlguy.com
