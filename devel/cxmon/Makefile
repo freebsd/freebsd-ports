@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cxmon
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	devel
-MASTER_SITES=	http://iphcip1.physik.uni-mainz.de/~cbauer/
+MASTER_SITES=	http://wwwthep.physik.uni-mainz.de/~cbauer/
 
 MAINTAINER=	watchman@ludd.luth.se
 COMMENT=	Interactive file manipulation tool and disassembler
