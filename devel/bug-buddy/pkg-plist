@@ -56,6 +56,7 @@ share/gnome/pixmaps/bug-buddy.png
 share/locale/az/LC_MESSAGES/bug-buddy.mo
 share/locale/ca/LC_MESSAGES/bug-buddy.mo
 share/locale/cs/LC_MESSAGES/bug-buddy.mo
+share/locale/da/LC_MESSAGES/bug-buddy.mo
 share/locale/de/LC_MESSAGES/bug-buddy.mo
 share/locale/el/LC_MESSAGES/bug-buddy.mo
 share/locale/en_AU/LC_MESSAGES/bug-buddy.mo
@@ -82,7 +83,9 @@ share/locale/sl/LC_MESSAGES/bug-buddy.mo
 share/locale/sv/LC_MESSAGES/bug-buddy.mo
 share/locale/tr/LC_MESSAGES/bug-buddy.mo
 share/locale/uk/LC_MESSAGES/bug-buddy.mo
+share/locale/wa/LC_MESSAGES/bug-buddy.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/bug-buddy.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/bug-buddy.mo
 @dirrm share/gnome/help/bug-buddy/it/stylesheet-images
 @dirrm share/gnome/help/bug-buddy/it/figures
 @dirrm share/gnome/help/bug-buddy/it
