@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 
 MAINTAINER=	ahze@FreeBSD.org
-COMMENT=	Cairo is a vector graphics library with cross-device output support
+COMMENT=	Vector graphics library with cross-device output support
 
 LIB_DEPENDS=	pixman.1:${PORTSDIR}/graphics/libpixman \
 		freetype.9:${PORTSDIR}/print/freetype2 \
