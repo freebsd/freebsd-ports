@@ -18,15 +18,14 @@ LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext
 INSTALL_TARGET=	install install-config install-i18n
 MANCOMPRESSES=	no
 MAN8=	fwlogwatch.8
+MAKE_ENV=	MKDIR="${MKDIR}"
 
 post-patch:
-	@${PERL} -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g ; \
-		s,/etc,${PREFIX}/etc,g ; \
-		s,/usr/local,${PREFIX},g ; \
-		s,/usr/share,${PREFIX}/share,g" ${WRKSRC}/Makefile
-	@${PERL} -pi -e "s,/etc,${PREFIX}/etc,g ; \
-		s,/usr/share,${PREFIX}/share,g ; \
-		s,/usr/local,${PREFIX},g" ${WRKSRC}/main.h
+	@${PERL} -pi -e 's,/etc,${PREFIX}/etc,g; \
+		s,/usr/local,${PREFIX},g; \
+		s,/usr/share,${PREFIX}/share,g; \
+		s,%%LOCALBASE%%,${LOCALBASE},g' \
+		${WRKSRC}/Makefile ${WRKSRC}/main.h
 	@${PERL} -pi -e "s,/etc,${PREFIX}/etc,g" ${WRKSRC}/${MAN8}
 
 post-install:
