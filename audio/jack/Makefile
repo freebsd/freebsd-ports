@@ -29,6 +29,12 @@ ONLY_FOR_ARCHS=		i386 amd64
 
 MAN1=	jackd.1 jackstart.1
 
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} > 500000) && (${OSVERSION} < 502102)
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},"  \
 		${WRKSRC}/configure ${WRKSRC}/libjack/Makefile.in \
@@ -41,4 +47,4 @@ post-patch:
 		${WRKSRC}/example-clients/Makefile.in
 	${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/drivers/oss
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
