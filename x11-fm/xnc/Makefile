@@ -23,10 +23,14 @@ MAINTAINER=	dima@Chg.RU
 #		unarj:${PORTSDIR}/archivers/unarj	\
 #		lha:${PORTSDIR}/archivers/lha		\
 #		bzip2:${PORTSDIR}/archivers/bzip2
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.3:${PORTSDIR}/graphics/png
 
-USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${PKGNAME}
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		es.1 ives.1 vs.1 xjpegroot.1 xnc.1 xnlaunch.1
 
@@ -35,6 +39,6 @@ post-install:
 		${MKDIR} ${PREFIX}/share/doc/xnc
 		${INSTALL_DATA} ${WRKSRC}/Docs/* ${PREFIX}/share/doc/xnc
 .endif
-		@${CAT} ${PKGDIR}/MESSAGE
+		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
