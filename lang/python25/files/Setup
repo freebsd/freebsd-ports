@@ -51,7 +51,13 @@
 # Don't add any whitespace or comments!
 
 # Don't edit this (usually)
-DESTLIB=$(prefix)/lib/python
+DESTLIB=$(prefix)/share/python
+
+# Site specific path insertions -- should begin with : if non-empty
+SITEPATH=
+
+# Standard path -- don't edit
+DESTPATH=:$(DESTLIB)
 
 # Standard enabled (tests are always available)
 TESTPATH=:$(DESTLIB)/test
@@ -59,7 +65,7 @@ TESTPATH=:$(DESTLIB)/test
 # Path for machine- or system-dependent modules (and shared libraries)
 MACHDEPPATH=:$(DESTLIB)/$(MACHDEP)
 
-COREPYTHONPATH=.:$(DESTLIB)$(TESTPATH)$(MACHDEPPATH)$(STDWINPATH)$(TKPATH)
+COREPYTHONPATH=.$(SITEPATH)$(DESTPATH)$(TESTPATH)$(MACHDEPPATH)$(STDWINPATH)$(TKPATH)
 PYTHONPATH=$(COREPYTHONPATH)
 
 
@@ -94,7 +100,6 @@ signal signalmodule.c		# signal(2)
 
 array arraymodule.c	# array objects
 math mathmodule.c -lm	# math library functions, e.g. sin()
-parser parsermodule.c	# raw interface to the Python parser
 regex regexmodule.c regexpr.c	# Regular expressions, GNU Emacs style
 strop stropmodule.c	# fast string operations implemented in C
 struct structmodule.c	# binary structure packing/unpacking
@@ -136,7 +141,7 @@ rgbimg rgbimgmodule.c   # Read SGI RGB image files (but coded portably)
 # STDWIN toplevel directory.
 
 # Uncomment and edit as needed:
-#STDWIN=/usr/ports/devel/stdwin/work/stdwin1.0
+#STDWIN=/ufs/guido/src/stdwin
 
 # Uncomment these lines:
 #STDWINPATH=:$(DESTLIB)/stdwin
@@ -227,12 +232,10 @@ md5 md5module.c md5c.c
 #
 # In all cases also enable the last line (TKPATH).
 #
-# This was designed to build with Tk 3.6 and Tcl 7.3, but also seems
-# to work Tk 4.0 beta.  (Tkinter.py hasn't been fixed though, so for
-# the time being Tk 3.6 is the version of choice!)
+# See the section "The Tk interface" in ../README for more info.
 
 # *** Use ONE of the following two lines, see previous comments ***
-tkinter tkintermodule.c -I/usr/local/include -I/usr/X11R6/include -L/usr/local/lib -L/usr/X11R6/lib -ltk -ltcl -lX11
+tkinter tkintermodule.c -I/usr/local/include -I/usr/X11R6/include -L/usr/local/lib -L/usr/X11R6/lib -ltk40 -ltcl74 -lX11
 #tkinter tkintermodule.c tkappinit.c -DWITH_APPINIT -I/usr/local/include -L/usr/local/lib -ltk -ltcl -lX11
 
 # *** ALWAYS use this line as well ***
@@ -243,8 +246,14 @@ TKPATH=:$(DESTLIB)/tkinter
 
 rotor rotormodule.c		# enigma-inspired encryption
 syslog syslogmodule.c		# syslog daemon interface
-curses cursesmodule.c -lncurses -ltermcap	# guess what?
-				# (On Linux, try -lncurses)
+
+
+# Lance's curses module.  This requires the System V version of
+# curses, sometimes known as ncurses (e.g. on Linux, link with
+# -lncurses instead of -lcurses; on SunOS 4.1.3, insert -I/usr/5include
+# -L/usr/5lib before -lcurses).
+
+curses cursesmodule.c -lncurses -ltermcap
 
 
 
@@ -254,6 +263,7 @@ curses cursesmodule.c -lncurses -ltermcap	# guess what?
 
 
 # John Redford's sybase module (requires sybase):
+# (Unfortunately this code is orphaned.  Read the source for documentation.)
 
 #sybase sybasemodule.c
 
@@ -270,6 +280,39 @@ curses cursesmodule.c -lncurses -ltermcap	# guess what?
 # GNU dbm(3) will require -lgdbm:
 
 #gdbm gdbmmodule.c -I/usr/local/include -L/usr/local/lib -lgdbm
+
+
+# Berkeley DB interface.
+#
+# This requires the Berkeley DB code, see
+# ftp://ftp.cs.berkeley.edu/pub/4bsd/db.1.85.tar.gz
+#
+# Edit the variables DB and DBPORT to point to the db top directory
+# and the subdirectory of PORT where you built it.
+
+#DB=/depot/sundry/src/db.1.85/
+#DBPORT=$(DB)/PORT/sunos.5.2
+#bsddb bsddbmodule.o -I$(DB)/include -I$(DBPORT) $(DBPORT)/libdb.a
+bsddb bsddbmodule.o
+
+
+
+# Andy Bensky's "environment" module (contains putenv())
+environment environment.c
+
+# David Wayne Williams' soundex module
+#soundex soundex.c
+
+# Objective-C (incomplete!!!)
+#objc.c
+
+# Helper module for various ascii-encoders
+binascii binascii.c
+
+# Fred Drake's interface to the Python parser.
+# (Not enabled by default because it is big and doesn't compile with
+# cc on SunOS 4.1.3)
+#parser parsermodule.c
 
 
 # Example -- included for reference only:
