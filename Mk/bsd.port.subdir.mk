@@ -250,7 +250,7 @@ README.html:
 
 
 search: ${PORTSDIR}/INDEX
-	@here="${.CURDIR}"; \
+	@here=`pwd`; \
 	cd ${PORTSDIR}; \
 	top=`pwd`; \
 	there=`echo "$$here/" | sed s%$$top%${PORTSDIR}%`; \
