@@ -1,0 +1,27 @@
+--- Makefile	Wed Apr 10 14:35:25 2002
++++ Makefile	Wed Jan 15 23:28:44 2003
+@@ -3,10 +3,10 @@
+ # Copyright (c) 1996-2002 by Solar Designer
+ #
+ 
+-CPP = gcc
+-CC = gcc
+-AS = gcc
+-LD = gcc
++CC ?= gcc
++CPP = $(CC)
++AS = $(CC)
++LD = $(CC)
+ CP = cp
+ LN = ln -sf
+ RM = rm -f
+@@ -14,7 +14,8 @@
+ SED = sed
+ NULL = /dev/null
+ CPPFLAGS = -E
+-CFLAGS = -c -Wall -O2 -fomit-frame-pointer
++CFLAGS ?= -O2
++CFLAGS += -c -Wall -fomit-frame-pointer
+ ASFLAGS = -c
+ LDFLAGS = -s
+ OPT_NORMAL = -funroll-loops

@@ -7,49 +7,43 @@
 #
 
 PORTNAME=	john
-PORTVERSION=	1.6
+PORTVERSION=	1.6.32
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.ca.openwall.com/pub/projects/john/ \
-		http://www.openwall.com/john/ \
-		ftp://ftp.ru.openwall.com/pub/projects/john/ \
-		ftp://ftp.false.com/pub/security/projects/ \
-		http://www.false.com/security/john/
+MASTER_SITES=	http://www.openwall.com/john/ \
+		ftp://ftp.ca.openwall.com/pub/projects/john/ \
+		ftp://ftp.ru.openwall.com/pub/projects/john/
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
+		${PORTNAME}-1.6.tar.gz
+
+MAINTAINER=	d.marks@student.umist.ac.uk
 
 USE_REINPLACE=	yes
-MAINTAINER=	d.marks@student.umist.ac.uk
 
 .include <bsd.port.pre.mk>
 
 OSNAME=		${OPSYS:S/F/f/:S/N/n/:S/O/o/:S/B/b/:S/S/s/:S/D/d/}
 
+ALL_TARGET=	generic
 .if ${MACHINE_ARCH} == "i386"
-ARCHNAME=	x86
-. if ${MACHINE_CPU:Mk6}
-ALL_TARGET=	${OSNAME}-${ARCHNAME}-k6-elf
-. elif ${MACHINE_CPU:Mmmx}
-ALL_TARGET=	${OSNAME}-${ARCHNAME}-mmx-elf
+. if ${MACHINE_CPU:Mmmx}
+ALL_TARGET=	${OSNAME}-x86-mmx-elf
 . else
-ALL_TARGET=	${OSNAME}-${ARCHNAME}-any-elf
+ALL_TARGET=	${OSNAME}-x86-any-elf
 . endif
 .elif ${MACHINE_ARCH} == "alpha"
-ARCHNAME=	alpha
-ALL_TARGET=	${OSNAME}-${ARCHNAME}-any-elf
-.else
-ALL_TARGET=	generic
+ALL_TARGET=	${OSNAME}-alpha
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+OLDSRC=		${WRKDIR}/${PORTNAME}-1.6/run
 
-pre-fetch:
+pre-build:
 	@${ECHO} "Building for ${ALL_TARGET}"
 
 do-configure:
-	@${REINPLACE_CMD} \
-		-e 's,~/all.chr,${PREFIX}/share/john/all.chr,' \
-		-e 's,~/alpha.chr,${PREFIX}/share/john/alpha.chr,' \
-		-e 's,~/digits.chr,${PREFIX}/share/john/digits.chr,' \
-		-e 's,~/lanman.chr,${PREFIX}/share/john/lanman.chr,' \
-	${WRKDIR}/${DISTNAME}/run/john.ini
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
+		${WRKDIR}/${DISTNAME}/src/params.h \
+		${WRKDIR}/${DISTNAME}/run/john.conf
 
 do-install:
 	@${MKDIR} ${DATADIR}
@@ -57,17 +51,16 @@ do-install:
 	@cd ${PREFIX}/bin ; ${LN} -sf john xtract
 	@cd ${PREFIX}/bin ; ${LN} -sf john unshadow
 	@${INSTALL_DATA} \
-		${WRKDIR}/${DISTNAME}/run/all.chr \
-		${WRKDIR}/${DISTNAME}/run/alpha.chr \
-		${WRKDIR}/${DISTNAME}/run/digits.chr \
-		${WRKDIR}/${DISTNAME}/run/lanman.chr \
+		${OLDSRC}/all.chr \
+		${OLDSRC}/alpha.chr \
+		${OLDSRC}/digits.chr \
+		${OLDSRC}/lanman.chr \
 		${WRKDIR}/${DISTNAME}/run/password.lst \
-		${WRKDIR}/${DISTNAME}/run/john.ini \
-		${DATADIR}
+		${WRKDIR}/${DISTNAME}/run/john.conf \
+			${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/* ${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

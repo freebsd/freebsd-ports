@@ -1,2 +1,0 @@
-Before running John the Ripper, copy $LOCALBASE/share/john/john.ini
-to the current directory. By default $LOCALBASE is /usr/local.
