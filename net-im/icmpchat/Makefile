@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	icmpchat
 
-MAINTAINER=	mwest@uct.ac.za
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple console-based chat that uses the ICMP protocol
 
 USE_REINPLACE=	yes

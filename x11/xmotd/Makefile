@@ -10,7 +10,7 @@ PORTVERSION=	1.16
 CATEGORIES=	x11
 MASTER_SITES=	http://www.ee.ryerson.ca/~elf/pub/
 
-MAINTAINER=	mwest@uct.ac.za
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A message-of-the-day browser for X11 and dumb-terminals
 
 USE_IMAKE=	yes

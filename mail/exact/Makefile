@@ -10,7 +10,7 @@ PORTVERSION=	1.38
 CATEGORIES=	mail
 MASTER_SITES=	http://www.britishsteal.com/dist/exact/
 
-MAINTAINER=	mwest@uct.ac.za
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program that implements POP Before SMTP Relay Authentication
 
 MAILUSER?=	mailnull

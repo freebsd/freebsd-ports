@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	net java
 MASTER_SITES=	ftp://ftp.cs.uct.ac.za/pub/FreeBSD/distfiles-local/
 
-MAINTAINER=	mwest@uct.ac.za
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Petri Net editor for correctness and performance analysis
 
 USE_JAVA=	1.1+

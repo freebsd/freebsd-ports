@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.haskell.org/hmake/ \
 		http://www.cs.york.ac.uk/fp/hmake/
 PKGNAMEPREFIX=	hs-
 
-MAINTAINER=	mwest@uct.ac.za
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intelligent compilation management tool for Haskell programs
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
