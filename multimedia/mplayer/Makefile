@@ -30,7 +30,8 @@ USE_GMAKE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS=${PTHREAD_LIBS}
+		PTHREAD_LIBS=${PTHREAD_LIBS} \
+		TMPDIR="${WRKSRC}"
 CONFIGURE_ARGS= --with-extralibdir=${LOCALBASE}/lib \
 		--with-extraincdir=${LOCALBASE}/include \
 		--disable-vidix
