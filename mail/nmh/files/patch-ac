@@ -1,0 +1,116 @@
+diff -ur Makefile.in-dist Makefile.in
+--- Makefile.in-dist	Mon Apr 21 12:02:36 1997
++++ Makefile.in	Mon May 12 20:54:23 1997
+@@ -26,10 +26,10 @@
+ bindir      = @bindir@
+ 
+ # location of nmh configuration and formats files
+-etcdir      = @etcdir@
++etcdir      = @sysconfdir@
+ 
+ # location of support binaries and scripts
+-libdir      = @libdir@
++libdir      = @libexecdir@
+ 
+ # location of man pages
+ mandir      = @mandir@
+diff -ur config/Makefile.in-dist config/Makefile.in
+--- config/Makefile.in-dist	Mon Jan  6 00:44:54 1997
++++ config/Makefile.in	Fri May 16 07:05:23 1997
+@@ -16,7 +16,7 @@
+ prefix      = @prefix@
+ exec_prefix = @exec_prefix@
+ bindir      = @bindir@
+-etcdir      = @etcdir@
+-libdir      = @libdir@
++etcdir      = @sysconfdir@
++libdir      = @libexecdir@
+ 
+ default_editor = @vipath@
+diff -ur man/Makefile.in-dist man/Makefile.in
+--- man/Makefile.in-dist	Sun Apr 27 18:48:11 1997
++++ man/Makefile.in	Fri May 16 07:05:24 1997
+@@ -15,7 +15,7 @@
+ prefix      = @prefix@
+ exec_prefix = @exec_prefix@
+ bindir      = @bindir@
+-etcdir      = @etcdir@
+-libdir      = @libdir@
++etcdir      = @sysconfdir@
++libdir      = @libexecdir@
+ mandir      = @mandir@
+ manext1     = 1
+diff -ur mts/mmdf/Makefile.in-dist mts/mmdf/Makefile.in
+--- mts/mmdf/Makefile.in-dist	Thu Jan  2 15:00:35 1997
++++ mts/mmdf/Makefile.in	Fri May 16 07:05:23 1997
+@@ -12,7 +12,7 @@
+ prefix      = @prefix@
+ exec_prefix = @exec_prefix@
+ bindir      = @bindir@
+-etcdir      = @etcdir@
+-libdir      = @libdir@
++etcdir      = @sysconfdir@
++libdir      = @libexecdir@
+ 
+ .SUFFIXES:
+diff -ur mts/sendmail/Makefile.in-dist mts/sendmail/Makefile.in
+--- mts/sendmail/Makefile.in-dist	Tue Apr 15 15:59:41 1997
++++ mts/sendmail/Makefile.in	Fri May 16 07:05:23 1997
+@@ -13,7 +13,7 @@
+ prefix      = @prefix@
+ exec_prefix = @exec_prefix@
+ bindir      = @bindir@
+-etcdir      = @etcdir@
+-libdir      = @libdir@
++etcdir      = @sysconfdir@
++libdir      = @libexecdir@
+ 
+ CC       = @CC@
+diff -ur support/general/Makefile.in-dist support/general/Makefile.in
+--- support/general/Makefile.in-dist	Sat Mar  8 00:44:27 1997
++++ support/general/Makefile.in	Fri May 16 07:05:24 1997
+@@ -13,7 +13,7 @@
+ prefix      = @prefix@
+ exec_prefix = @exec_prefix@
+ bindir      = @bindir@
+-etcdir      = @etcdir@
+-libdir      = @libdir@
++etcdir      = @sysconfdir@
++libdir      = @libexecdir@
+ 
+ INSTALL         = @INSTALL@
+@@ -79,7 +79,7 @@
+ install-scripts:
+ 	$(top_srcdir)/mkinstalldirs $(libdir)
+ 	for script in $(SCRIPTS); do \
+-	  $(INSTALL_PROGRAM) $(srcdir)/$$script $(libdir)/$$script; \
++	  $(INSTALL) -m 555 $(srcdir)/$$script $(libdir)/$$script; \
+ 	done
+ 
+ uninstall: uninstall-files uninstall-scripts
+diff -ur uip/Makefile.in-dist uip/Makefile.in
+--- uip/Makefile.in-dist	Wed Feb  5 22:28:41 1997
++++ uip/Makefile.in	Fri May 16 07:05:24 1997
+@@ -13,7 +13,7 @@
+ prefix      = @prefix@
+ exec_prefix = @exec_prefix@
+ bindir      = @bindir@
+-etcdir      = @etcdir@
+-libdir      = @libdir@
++etcdir      = @sysconfdir@
++libdir      = @libexecdir@
+ 
+ CC       = @CC@
+diff -ur zotnet/mts/Makefile.in-dist zotnet/mts/Makefile.in
+--- zotnet/mts/Makefile.in-dist	Sat Mar  8 00:48:14 1997
++++ zotnet/mts/Makefile.in	Fri May 16 07:05:23 1997
+@@ -13,7 +13,7 @@
+ prefix      = @prefix@
+ exec_prefix = @exec_prefix@
+ bindir      = @bindir@
+-etcdir      = @etcdir@
+-libdir      = @libdir@
++etcdir      = @sysconfdir@
++libdir      = @libdir@
+ 
+ mailspool    = @mailspool@
