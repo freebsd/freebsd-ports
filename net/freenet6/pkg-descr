@@ -17,14 +17,6 @@ filling a Web form and running a script. Freenet6's TSP is representing
 another very important step to accelerate the deployment at large
 scale of IPv6 to everyone on the net.
 
-Instead of a Web interface to request configured tunnels and IPv6
-addresses, Freenet6's TSP is a new model based on a client/server
-approach. A protocol is used to request one single IPv6 address to
-a full IPv6 prefix from a client to a tunnel server according to
-the IPv6 broker model. The protocol could be integrated directly
-into the operating system to give a service like DHCP but for
-requesting IPv6 addresses or prefixes over an IPv4 network (Internet).
-
 WWW: http://www.freenet6.net/
 
 - Edwin Groothuis
