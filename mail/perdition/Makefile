@@ -42,34 +42,9 @@ INSTALLS_SHLIB=	yes
 # WITH_NIS: Enable NIS database backend
 # WITH_GDBM: Enable gdbm database backend
 # WITH_MYSQL: Enable MySQL database backend
-# WITH_MYSQL_VER:
-#		- 323 use MySQL 3.23.x
-#		- 40 use MySQL 4.0.x
-#		- 41 use MySQL 4.1.x
 # WITH_PGSQL: Enable PostgreSQL database backend
 # WITH_OPENLDAP: Enable OpenLDAP database backend
 # WITH_ODBC: Enable ODBC database backend
-
-LDAP_VER?=	21
-
-# MySQL deps hack (revision 2)
-MYSQL323_LIBVER=10
-MYSQL40_LIBVER=	12
-MYSQL41_LIBVER=	14
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_MYSQL_VER)
-MYSQL_VER=	${WITH_MYSQL_VER}
-.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL_323_LIBVER})
-MYSQL_VER=	323
-.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL40_LIBVER})
-MYSQL_VER=	40
-.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL41_LIBVER})
-MYSQL_VER=	41
-.else
-MYSQL_VER=	40
-.endif
 
 .if !defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--enable-ssl
@@ -115,8 +90,8 @@ PLIST_SUB+=		GDBM="@comment "
 .endif
 
 .if defined(WITH_MYSQL)
+USE_MYSQL=		YES
 CONFIGURE_ARGS+=	--enable-mysql
-LIB_DEPENDS+=		mysqlclient.${MYSQL${MYSQL_VER}_LIBVER}:${PORTSDIR}/databases/mysql${MYSQL_VER}-client
 PLIST_SUB+=		MYSQL=""
 MAN8+=			perditiondb_mysql_makedb.8
 .else
@@ -135,8 +110,8 @@ PLIST_SUB+=		PGSQL="@comment "
 .endif
 
 .if defined(WITH_OPENLDAP)
+USE_OPENLDAP=		YES
 CONFIGURE_ARGS+=	--enable-ldap --with-ldap-schema-directory=${LOCALBASE}/etc/openldap/schema/
-LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap${LDAP_VER}-client
 PLIST_SUB+=		OPENLDAP=""
 MAN8+=			perditiondb_ldap_makedb.8
 .else
@@ -164,4 +139,4 @@ post-install:
 	@${ECHO_MSG} "/********************************************************/"
 	@${ECHO_MSG} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
