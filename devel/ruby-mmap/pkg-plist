@@ -1,6 +1,7 @@
 %%RUBY_SITEARCHLIBDIR%%/mmap.so
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mmap/b.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/mmap
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mmap/Changes
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mmap/README.en
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mmap/mmap.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mmap/mmap.rd

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mmap
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
-DOCS=		README.en	mmap.html	mmap.rd
+DOCS=		Changes		README.en	mmap.html	mmap.rd
 EXAMPLES=	b.rb
 
 post-install:
