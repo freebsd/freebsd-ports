@@ -26,4 +26,5 @@
 %%URLDICT:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiURLDict.so
 %%WMF:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiWMF.so
 %%WIKIPEDIA:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiWikipedia.so
+%%WORDPERFECT:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiWordPerfect.so
 %%XSLFO:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiXSLFO.so
