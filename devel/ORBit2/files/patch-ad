@@ -1,5 +1,8 @@
---- orbit-config.in.orig	Thu Oct  7 23:49:07 1999
-+++ orbit-config.in	Tue Feb 22 18:20:47 2000
+
+$FreeBSD$
+
+--- orbit-config.in.orig	Wed Sep 19 20:09:00 2001
++++ orbit-config.in	Wed Oct  3 14:51:10 2001
 @@ -28,8 +28,8 @@
  
  Known values for TARGET are:
@@ -16,24 +19,9 @@
  
      client|server)
 -	the_libs="$the_libs -L$libdir -lORBit -lIIOP -lORBitutil `glib-config --libs` @LIBS@ -lm"
--	the_flags="$the_flags `glib-config --cflags` -I$includedir "
-+	the_libs="$the_libs -L$libdir -lORBit -lIIOP -lORBitutil `@GLIB_CONFIG@ --libs` @LIBS@ -lm"
-+	the_flags="$the_flags `@GLIB_CONFIG@ --cflags` -I$includedir "
+-        the_flags="$the_flags `glib-config --cflags` "
++	the_libs="$the_libs -L$libdir -lORBit -lIIOP -lORBitutil `@GLIB_CONFIG@ --libs` @LIBS@ @LIB_WRAP@ -lm"
++        the_flags="$the_flags `@GLIB_CONFIG@ --cflags` "
+         test "x$includedir" = "x/usr/include" \
+           || the_flags="$the_flags -I$includedir "
  	;;
- 
-    --use-service=*)
---- libIDL/libIDL-config.in.orig	Fri Apr 16 09:52:20 1999
-+++ libIDL/libIDL-config.in	Wed Oct 13 20:49:40 1999
-@@ -74,10 +74,10 @@
- 	echo $exec_prefix
- fi
- if test "$echo_cflags" = "yes"; then
--	all_flags="$all_flags $includes $cflags `glib-config --cflags`"
-+	all_flags="$all_flags $includes $cflags `@GLIB_CONFIG@ --cflags`"
- fi
- if test "$echo_libs" = "yes"; then
--	all_flags="$all_flags -L@libdir@ -lIDL `glib-config --libs`"
-+	all_flags="$all_flags -L@libdir@ -lIDL `@GLIB_CONFIG@ --libs`"
- fi
- 
- # Straight out any possible duplicates, but be careful to

@@ -10,68 +10,74 @@ etc/libIDLConf.sh
 @unexec if cmp -s %D/etc/orbitrc.default %D/etc/orbitrc; then rm -f %D/etc/orbitrc; fi
 etc/orbitrc.default
 @exec if [ ! -f %D/etc/orbitrc ] ; then cp -p %D/%F %B/orbitrc; fi
-include/IIOP/IIOP-config.h
-include/IIOP/IIOP-types.h
-include/IIOP/IIOP.h
-include/IIOP/giop-msg-buffer.h
-include/IIOP/iiop-encoders.h
-include/IIOP/iiop-endian.h
-include/ORBitservices/CosEventChannel.idl
-include/ORBitservices/CosEventComm.idl
-include/ORBitservices/CosNaming.h
-include/ORBitservices/CosNaming.idl
-include/ORBitservices/CosNaming_impl.h
-include/ORBitservices/CosTypedEventChannel.idl
-include/ORBitservices/CosTypedEventComm.idl
-include/ORBitservices/LName.pidl
-include/ORBitutil/basic_types.h
-include/ORBitutil/compat.h
-include/ORBitutil/orbit-os-config.h
-include/ORBitutil/os-feature-alloca.h
-include/ORBitutil/os-specifics.h
-include/ORBitutil/thread-safety.h
-include/ORBitutil/trace.h
-include/ORBitutil/util.h
-include/libIDL/IDL.h
-include/orb/allocator-defs.h
-include/orb/allocators.h
-include/orb/cdr.h
-include/orb/corba_any.h
-include/orb/corba_any_proto.h
-include/orb/corba_any_type.h
-include/orb/corba_basic_sequences_type.h
-include/orb/corba_context.h
-include/orb/corba_env.h
-include/orb/corba_env_type.h
-include/orb/corba_object.h
-include/orb/corba_object_type.h
-include/orb/corba_orb.h
-include/orb/corba_orb_type.h
-include/orb/corba_portableserver.h
-include/orb/corba_portableserver_type.h
-include/orb/corba_sequences.h
-include/orb/corba_sequences_type.h
-include/orb/corba_typecode.h
-include/orb/corba_typecode_type.h
-include/orb/dii.h
-include/orb/dynany.h
-include/orb/env.h
-include/orb/interface_repository.h
-include/orb/iop.h
-include/orb/ir.h
-include/orb/options.h
-include/orb/orb.h
-include/orb/orbit.h
-include/orb/orbit_config.h
-include/orb/orbit_object.h
-include/orb/orbit_object_type.h
-include/orb/orbit_poa.h
-include/orb/orbit_poa_type.h
-include/orb/orbit_typecode.h
-include/orb/orbit_types.h
-include/orb/poa.h
-include/orb/sequences.h
-include/orb/typecode.h
+include/IIOP
+include/ORBitservices
+include/ORBitutil
+include/libIDL
+include/libIDL-1.0/libIDL/IDL.h
+include/orb
+include/orbit-1.0/IIOP/IIOP-config.h
+include/orbit-1.0/IIOP/IIOP-types.h
+include/orbit-1.0/IIOP/IIOP.h
+include/orbit-1.0/IIOP/giop-msg-buffer.h
+include/orbit-1.0/IIOP/iiop-encoders.h
+include/orbit-1.0/IIOP/iiop-endian.h
+include/orbit-1.0/ORBitservices/CosEventChannel.idl
+include/orbit-1.0/ORBitservices/CosEventComm.idl
+include/orbit-1.0/ORBitservices/CosNaming.h
+include/orbit-1.0/ORBitservices/CosNaming.idl
+include/orbit-1.0/ORBitservices/CosNaming_impl.h
+include/orbit-1.0/ORBitservices/CosTypedEventChannel.idl
+include/orbit-1.0/ORBitservices/CosTypedEventComm.idl
+include/orbit-1.0/ORBitservices/LName.pidl
+include/orbit-1.0/ORBitutil/basic_types.h
+include/orbit-1.0/ORBitutil/compat.h
+include/orbit-1.0/ORBitutil/orbit-os-config.h
+include/orbit-1.0/ORBitutil/os-feature-alloca.h
+include/orbit-1.0/ORBitutil/os-specifics.h
+include/orbit-1.0/ORBitutil/thread-safety.h
+include/orbit-1.0/ORBitutil/trace.h
+include/orbit-1.0/ORBitutil/util.h
+include/orbit-1.0/orb/allocator-defs.h
+include/orbit-1.0/orb/allocators.h
+include/orbit-1.0/orb/cdr.h
+include/orbit-1.0/orb/corba_any.h
+include/orbit-1.0/orb/corba_any_proto.h
+include/orbit-1.0/orb/corba_any_type.h
+include/orbit-1.0/orb/corba_basic_sequences_type.h
+include/orbit-1.0/orb/corba_context.h
+include/orbit-1.0/orb/corba_env.h
+include/orbit-1.0/orb/corba_env_type.h
+include/orbit-1.0/orb/corba_object.h
+include/orbit-1.0/orb/corba_object_type.h
+include/orbit-1.0/orb/corba_orb.h
+include/orbit-1.0/orb/corba_orb_type.h
+include/orbit-1.0/orb/corba_portableserver.h
+include/orbit-1.0/orb/corba_portableserver_type.h
+include/orbit-1.0/orb/corba_sequences.h
+include/orbit-1.0/orb/corba_sequences_type.h
+include/orbit-1.0/orb/corba_typecode.h
+include/orbit-1.0/orb/corba_typecode_type.h
+include/orbit-1.0/orb/dii.h
+include/orbit-1.0/orb/dynany.h
+include/orbit-1.0/orb/env.h
+include/orbit-1.0/orb/interface_repository.h
+include/orbit-1.0/orb/iop.h
+include/orbit-1.0/orb/ir.h
+include/orbit-1.0/orb/options.h
+include/orbit-1.0/orb/orb.h
+include/orbit-1.0/orb/orbit.h
+include/orbit-1.0/orb/orbit_config.h
+include/orbit-1.0/orb/orbit_object.h
+include/orbit-1.0/orb/orbit_object_type.h
+include/orbit-1.0/orb/orbit_poa.h
+include/orbit-1.0/orb/orbit_poa_type.h
+include/orbit-1.0/orb/orbit_typecode.h
+include/orbit-1.0/orb/orbit_types.h
+include/orbit-1.0/orb/poa.h
+include/orbit-1.0/orb/sequences.h
+include/orbit-1.0/orb/typecode.h
+include/orbit-1.0/orbit-idl2.h
 include/orbit-idl2.h
 @unexec install-info --delete %D/info/libIDL.info %D/info/dir
 info/libIDL.info
@@ -97,8 +103,10 @@ libdata/pkgconfig/ORBit.pc
 libdata/pkgconfig/libIDL.pc
 share/aclocal/ORBit.m4
 share/aclocal/libIDL.m4
-@dirrm include/IIOP
-@dirrm include/ORBitservices
-@dirrm include/ORBitutil
-@dirrm include/libIDL
-@dirrm include/orb
+@dirrm include/orbit-1.0/orb
+@dirrm include/orbit-1.0/ORBitutil
+@dirrm include/orbit-1.0/ORBitservices
+@dirrm include/orbit-1.0/IIOP
+@dirrm include/orbit-1.0
+@dirrm include/libIDL-1.0/libIDL
+@dirrm include/libIDL-1.0

@@ -20,18 +20,6 @@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../../config.h
  CONFIG_CLEAN_FILES = 
---- src/orb/Makefile.in.orig	Tue Jan 30 14:56:07 2001
-+++ src/orb/Makefile.in	Thu Mar  8 11:16:44 2001
-@@ -113,3 +113,3 @@
- 
--libORBit_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libORBit_la_LDFLAGS = -version-info 2:0:0
- libORBit_la_LIBADD = $(GLIB_LIBS) -lm
-@@ -121,3 +121,3 @@
- 
--CFLAGS = -g -O0
-+CFLAGS = @CFLAGS@
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 --- src/services/name/Makefile.in.orig	Thu Oct 12 11:07:08 2000
 +++ src/services/name/Makefile.in	Thu Oct 12 13:11:55 2000
 @@ -109,3 +109,3 @@
