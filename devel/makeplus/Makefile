@@ -19,6 +19,7 @@ COMMENT=	A set of GNU Make rules for building packages with gmake
 
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 
+USE_GMAKE=	yes
 PREFIX?=	${LOCALBASE}
 MAKE_ENV+=	MAKEPLUS_HOME=${WRKSRC}
 NO_MTREE=	yes
