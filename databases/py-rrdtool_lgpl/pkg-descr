@@ -1,0 +1,6 @@
+The python-rrdtool provides a interface to rrdtool, the
+wonderful graphing and logging utility. This wrapper
+implementation has worked from the scratch (without SWIG),
+and it's under LGPL.
+
+WWW: http://www.nongnu.org/py-rrdtool/
