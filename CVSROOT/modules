@@ -7863,6 +7863,7 @@ ski		ports/emulators/ski
 skill		ports/sysutils/skill
 skip		ports/security/skip
 sl		ports/games/sl
+slash		ports/www/slash
 slashem-tty	ports/games/slashem-tty
 slay		ports/sysutils/slay
 sleuth		ports/dns/sleuth
