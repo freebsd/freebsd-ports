@@ -1911,6 +1911,7 @@ gini		ports/net/gini
 giram		ports/graphics/giram
 git		ports/misc/git
 gkermit		ports/comms/gkermit
+gkleds2		ports/sysutils/gkleds2
 gkrellflynn	ports/sysutils/gkrellflynn
 gkrellkam	ports/graphics/gkrellkam
 gkrellkam2	ports/graphics/gkrellkam2
