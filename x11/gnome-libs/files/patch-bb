@@ -1,0 +1,20 @@
+--- gtk-xmhtml/Makefile.in.orig	Tue Feb 16 01:09:23 1999
++++ gtk-xmhtml/Makefile.in	Fri Feb 19 00:20:20 1999
+@@ -148,7 +148,7 @@
+ 
+ libgtkxmhtmlincludedir = $(includedir)/gtk-xmhtml
+ 
+-INCLUDES = -I.. -I$(srcdir)/.. -I$(includedir) @GTK_CFLAGS@            -DWITH_GTK -DDEBUG -DGNOME_LIB
++INCLUDES = -I.. -I$(srcdir)/.. -I$(includedir) @GTK_CFLAGS@            -DWITH_GTK -DGNOME_LIB
+ 
+ 
+ lib_LTLIBRARIES = libgtkxmhtml.la
+@@ -460,7 +460,7 @@
+ uninstall-am: uninstall-libLTLIBRARIES \
+ 		uninstall-libgtkxmhtmlincludeHEADERS
+ uninstall: uninstall-am
+-all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
++all-am: Makefile $(LTLIBRARIES) $(HEADERS)
+ all-redirect: all-am
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install

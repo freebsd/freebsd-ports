@@ -1,0 +1,30 @@
+--- zvt/Makefile.in.orig	Sun Feb 28 02:22:21 1999
++++ zvt/Makefile.in	Mon Mar  1 21:01:11 1999
+@@ -158,7 +158,7 @@
+ libzvt_la_SOURCES =  	gnome-login-support.h		gnome-login-support.c		lists.c				subshell.h			subshell.c			subshell-includes.h		update.c			vt.c				zvtterm.c
+ 
+ 
+-libzvt_la_LDFLAGS = -version-info 3:3:1 -rpath $(libdir)
++libzvt_la_LDFLAGS = -version-info 1:0:0 -rpath $(libdir)
+ 
+ libzvtinclude_HEADERS =  	lists.h				vt.h				vtx.h				zvtterm.h
+ 
+@@ -433,8 +433,7 @@
+ check: check-am
+ installcheck-am:
+ installcheck: installcheck-am
+-install-exec-am: install-libLTLIBRARIES install-sbinPROGRAMS \
+-		install-exec-local
++install-exec-am: install-libLTLIBRARIES
+ install-exec: install-exec-am
+ 
+ install-data-am: install-libzvtincludeHEADERS
+@@ -446,7 +445,7 @@
+ uninstall-am: uninstall-libLTLIBRARIES uninstall-sbinPROGRAMS \
+ 		uninstall-libzvtincludeHEADERS
+ uninstall: uninstall-am
+-all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
++all-am: Makefile $(LTLIBRARIES) $(HEADERS)
+ all-redirect: all-am
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
