@@ -1,16 +1,23 @@
---- Makefile.orig	Wed Feb  7 10:16:18 2001
-+++ Makefile	Mon Feb 19 07:24:11 2001
-@@ -4,19 +4,19 @@
- # if you change this variable, remember to put "\" before the directory,
+--- Makefile.orig	Mon Jul 23 15:15:37 2001
++++ Makefile	Sun Aug 12 03:17:31 2001
+@@ -8,24 +8,22 @@
+ # if you change RINGDIR, remember to put "\" before the directory,
  # and \"" after it, so the preprocessor will insert quotes correctly
  
+-INSTDIR = /usr/local/bin
+-INSTRING = /usr/local/lib/xdrawchem
 -RINGDIR = "\"/usr/local/lib/xdrawchem/\""
-+RINGDIR = "\"${PREFIX}/share/xdrawchem\""
- #RINGDIR = "\"ring/\""
++INSTDIR = ${PREFIX}/bin
++INSTRING = ${PREFIX}/share/xdrawchem
++RINGDIR = "\"${PREFIX}/share/xdrawchem/\""
  
  ## Compiler stuff
+ ## Uncomment the appropriate compiler line
  
+ ## For Linux, SGI IRIX 6.5 (as tested)
 -CXX	=	g++
+ ## for Sun
+ ##CXX	=	CC
 -CXXFLAGS = -g -DRINGHOME=$(RINGDIR)
 -CC	=	gcc
 -CFLAGS	=	-g -DRINGHOME=$(RINGDIR)
@@ -18,12 +25,10 @@
 -LFLAGS	=	-g -L$(QTDIR)/lib -L/usr/lib -L/usr/X11R6/lib
 -LIBS	=	-lqt -lXext -lX11 -lm
 -MOC	=	moc
-+CXX	?=	g++
-+CXXFLAGS += -g -DRINGHOME=$(RINGDIR)
-+CC	?=	gcc
-+CFLAGS	+=	-g -DRINGHOME=$(RINGDIR)
++CXXFLAGS += -DRINGHOME=$(RINGDIR)
++CFLAGS	+=	-DRINGHOME=$(RINGDIR)
 +INCPATH =	-I$(QTDIR)/include/qt2
-+LFLAGS	=	-g -L$(QTDIR)/lib
++LFLAGS	=	-L$(QTDIR)/lib -L/usr/lib -L/usr/X11R6/lib
 +LIBS	=	-lqt2 -lXext -lX11 -lm
 +MOC	=	$(QTDIR)/bin/moc2
  
