@@ -1,0 +1,25 @@
+Index: Make.rules.in
+===================================================================
+RCS file: /home/wine/wine/Make.rules.in,v
+retrieving revision 1.17
+diff -u -u -r1.17 Make.rules.in
+--- Make.rules.in	1999/08/15 12:45:53	1.17
++++ Make.rules.in	1999/09/24 23:39:10
+@@ -21,7 +21,7 @@
+ CC        = @CC@
+ CPP       = @CPP@
+ CFLAGS    = @CFLAGS@
+-OPTIONS   = @OPTIONS@ -D_REENTRANT
++OPTIONS   = @OPTIONS@ -D_REENTRANT -D_THREAD_SAFE
+ X_CFLAGS  = @X_CFLAGS@
+ X_LIBS    = @X_LIBS@
+ XLIB      = @X_PRE_LIBS@ @XLIB@ @X_EXTRA_LIBS@
+@@ -81,7 +81,7 @@
+ 
+ # Implicit rules
+ 
+-.SUFFIXES:
++#.SUFFIXES:
+ .SUFFIXES: .rc .res .spec .spec.c .spec.o .glue.c $(SUFFIXES)
+ 
+ .c.o:

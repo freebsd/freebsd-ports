@@ -1,0 +1,40 @@
+Here are two patches for FreeBSD's kernel that are necessary for wine
+(well not strictly _necessary_ but without them parts of it won't work.)
+They unfortunately didn't make it into the base distribution in time
+for the 3.3 release code freeze...
+
+patch-3.3-sys-ldtshare:
+make kernel threads (rfork(), which wine uses) share one LDT instead of
+each having its own.  this fixes the same problem that wine also had on
+linux kernels before 2.2.
+
+patch-3.3-sys-sigtrap:
+stop wine's SIGTRAP handler from being called in the sigreturn syscall,
+causing problems for wine's internal debugger.  (it would still
+correctly show a crash backtrace but all commands that use single-
+stepping failed.)
+
+Apply as follows:
+
+	(cd /usr/src/sys && patch ) <patch-3.3-sys-ldtshare
+	(cd /usr/src/sys && patch ) <patch-3.3-sys-sigtrap
+
+then build a new kernel. (don't forget to include the options USER_LDT,
+SYSVSHM, SYSVSEM, and SYSVMSG, wine needs these.)
+
+-current users:
+someone of you :) needs to implement a runtime check in wine for the
+FreeBSD version and based on that use/set the sc_gs and sc_fs values
+in the sigcontext struct in signal handlers for versions >= 4.0.
+(see the `wine signal handlers lose %fs on FreeBSD' thread on the
+wine-devel list for details, can be read at
+http://www.integrita.com/cgi-local/lwgate.pl/WINE-DEVEL/archives/1999-09/Subject/article-15.html
+at least i ended up there when i searched it today.  yes you could also
+simply define FS_sig and GS_sig in wine's include/sig_context.h and be
+done with it but the resulting wine would only work on 4.0 and
+Alexandre (wine maintainer) didn't like that idea...)
+
+A LDT patch for -current is at http://www.freebsd.org/~luoqi
+(not included since i don't know if it still applies), the sigtrap
+patch looks like it could also apply to -current but i haven't tried.
+(and if not, i guess a similar fix will be committed soon anyway.)
