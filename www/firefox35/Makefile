@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.9.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}
@@ -42,6 +41,7 @@ USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/mozilla
 PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 PKGCONFIG_FILES=mozilla-gtkmozembed mozilla-js mozilla-xpcom \
 		mozilla-nspr mozilla-nss mozilla-plugin
@@ -171,6 +171,8 @@ pre-install:
 		${FAKEDIR}/lib/${PORTNAME}/lib/${PORTNAME}-${PORTVERSION}/extensions.port
 	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}|g' \
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
+	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}|g' \
+		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
 
 .if !defined (WITH_HEADERS)
 	@${RM} -fr ${FAKEDIR}/share/idl ${FAKEDIR}/include
