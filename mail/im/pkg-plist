@@ -40,10 +40,10 @@ lib/perl5/site_perl/IM/Scan.pm
 lib/perl5/site_perl/IM/Smtp.pm
 lib/perl5/site_perl/IM/Stdio.pm
 lib/perl5/site_perl/IM/TcpTransaction.pm
-man/ja_JP.EUC/man1/imali.1.gz
-man/ja_JP.EUC/man1/imget.1.gz
-man/ja_JP.EUC/man1/imsetup.1.gz
-man/ja_JP.EUC/man1/imstore.1.gz
+man/ja/man1/imali.1.gz
+man/ja/man1/imget.1.gz
+man/ja/man1/imsetup.1.gz
+man/ja/man1/imstore.1.gz
 share/examples/im/Config
 share/examples/im/Petnames
 share/examples/im/get.sbr

@@ -3,7 +3,7 @@
 # Date created:		13 November 1997
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/30 10:34:47 max Exp $
+# $Id: Makefile,v 1.2 1998/01/09 21:37:57 max Exp $
 #
 
 DISTNAME=	im-76
@@ -18,7 +18,7 @@ USE_PERL5=	yes
 
 GNU_CONFIGURE=	yes
 
-MANLANG=	ja_JP.EUC
+MANLANG=	ja
 MAN1=		imali.1 imget.1 imsetup.1 imstore.1
 
 PORTDOCDIR=	${PREFIX}/share/doc/im
@@ -36,7 +36,7 @@ post-install:
 .endif
 .for f in ${MANFILES}
 	@${INSTALL_MAN} ${WRKSRC}/man/${f} \
-		${PREFIX}/man/ja_JP.EUC/man1/`${BASENAME} ${f} .jis`.1
+		${PREFIX}/man/ja/man1/`${BASENAME} ${f} .jis`.1
 .endfor
 
 .include <bsd.port.mk>
