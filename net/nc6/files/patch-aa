@@ -1,0 +1,19 @@
+*** configure	Sun May 11 14:30:20 2003
+--- files/configure	Wed Jun  4 16:07:13 2003
+***************
+*** 9534,9540 ****
+  #define NDEBUG 1
+  _ACEOF
+  
+!   CFLAGS="-O2"
+    if test "X$GCC" = "Xyes"; then
+      NC6_CFLAGS="${NC6_CFLAGS} -finline-functions"
+    fi
+--- 9534,9540 ----
+  #define NDEBUG 1
+  _ACEOF
+  
+!   CFLAGS="${CFLAGS} -O2"
+    if test "X$GCC" = "Xyes"; then
+      NC6_CFLAGS="${NC6_CFLAGS} -finline-functions"
+    fi
