@@ -4,12 +4,12 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/28 23:43:24 obrien Exp $
+# $Id: Makefile,v 1.2 1998/08/08 03:26:21 obrien Exp $
 #
 
 DISTNAME=	xacc-1.0.17
 PKGNAME=	gnucash-1.0.17
-CATEGORIES=	misc
+CATEGORIES=	deskutils
 MASTER_SITES=	http://www.gnucash.org/xacc/download/  \
 		ftp://ftp.gnucash.org/pub/xacc/
 

@@ -1,8 +1,9 @@
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/07 22:08:20 asami Exp $
 #
 
     SUBDIR += cal
     SUBDIR += cbb
+    SUBDIR += gnucash
     SUBDIR += ical
     SUBDIR += korganizer
     SUBDIR += kproject
